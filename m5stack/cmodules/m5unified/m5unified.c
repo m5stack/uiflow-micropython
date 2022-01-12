@@ -4,38 +4,48 @@
 #define MAKE_METHOD_0(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t                  ); STATIC MP_DEFINE_CONST_FUN_OBJ_1( prefix##_##func##_obj, prefix##_##func );
 #define MAKE_METHOD_1(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t,mp_obj_t         ); STATIC MP_DEFINE_CONST_FUN_OBJ_2( prefix##_##func##_obj, prefix##_##func );
 #define MAKE_METHOD_2(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t,mp_obj_t,mp_obj_t); STATIC MP_DEFINE_CONST_FUN_OBJ_3( prefix##_##func##_obj, prefix##_##func );
+#define MAKE_METHOD_KW(prefix, func, args) extern mp_obj_t prefix##_##func(size_t,const mp_obj_t*,mp_map_t*); STATIC MP_DEFINE_CONST_FUN_OBJ_KW( prefix##_##func##_obj, args, prefix##_##func ); 
 
 #define MAKE_TABLE( prefix, func ) \
   { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
 
 //-------- GFX common wrapper
-MAKE_METHOD_0( gfx, width             );
-MAKE_METHOD_0( gfx, height            );
-MAKE_METHOD_0( gfx, getRotation       );
-MAKE_METHOD_0( gfx, getColorDepth     );
-MAKE_METHOD_1( gfx, setRotation       );
-MAKE_METHOD_1( gfx, setColorDepth     );
-MAKE_METHOD_1( gfx, print             );
-MAKE_METHOD_2( gfx, setCursor         );
-MAKE_METHOD_V( gfx, fillScreen , 1, 2 );
-MAKE_METHOD_V( gfx, drawPixel  , 3, 4 );
-MAKE_METHOD_V( gfx, drawCircle , 4, 5 );
-MAKE_METHOD_V( gfx, fillCircle , 4, 5 );
-MAKE_METHOD_V( gfx, drawLine   , 5, 6 );
-MAKE_METHOD_V( gfx, drawRect   , 5, 6 );
-MAKE_METHOD_V( gfx, fillRect   , 5, 6 );
-MAKE_METHOD_V( gfx, printf     , 2, 32);
-MAKE_METHOD_V( gfx, newCanvas  , 3, 5 );
+MAKE_METHOD_0( gfx, width        );
+MAKE_METHOD_0( gfx, height       );
+MAKE_METHOD_0( gfx, getRotation  );
+MAKE_METHOD_0( gfx, getColorDepth);
+MAKE_METHOD_0( gfx, getCursor    );
+MAKE_METHOD_1( gfx, setRotation  );
+MAKE_METHOD_1( gfx, setColorDepth);
+MAKE_METHOD_1( gfx, setFont      );
+MAKE_METHOD_1( gfx, print        );
+MAKE_METHOD_2( gfx, setCursor    );
+MAKE_METHOD_V( gfx, clear        , 1, 2 );
+MAKE_METHOD_V( gfx, fillScreen   , 1, 2 );
+MAKE_METHOD_V( gfx, drawPixel    , 3, 4 );
+MAKE_METHOD_V( gfx, drawCircle   , 4, 5 );
+MAKE_METHOD_V( gfx, fillCircle   , 4, 5 );
+MAKE_METHOD_V( gfx, drawLine     , 5, 6 );
+MAKE_METHOD_V( gfx, drawRect     , 5, 6 );
+MAKE_METHOD_V( gfx, fillRect     , 5, 6 );
+MAKE_METHOD_V( gfx, drawRoundRect, 6, 7 );
+MAKE_METHOD_V( gfx, fillRoundRect, 6, 7 );
+MAKE_METHOD_V( gfx, printf       , 2, 32);
+MAKE_METHOD_V( gfx, newCanvas    , 3, 5 );
 
 #define TABLE_PARTS_GFX_BASE \
+  MAKE_TABLE( gfx, clear        ), \
   MAKE_TABLE( gfx, drawCircle   ), \
   MAKE_TABLE( gfx, drawLine     ), \
   MAKE_TABLE( gfx, drawPixel    ), \
   MAKE_TABLE( gfx, drawRect     ), \
+  MAKE_TABLE( gfx, drawRoundRect), \
   MAKE_TABLE( gfx, fillCircle   ), \
   MAKE_TABLE( gfx, fillRect     ), \
+  MAKE_TABLE( gfx, fillRoundRect), \
   MAKE_TABLE( gfx, fillScreen   ), \
   MAKE_TABLE( gfx, getColorDepth), \
+  MAKE_TABLE( gfx, getCursor    ), \
   MAKE_TABLE( gfx, getRotation  ), \
   MAKE_TABLE( gfx, height       ), \
   MAKE_TABLE( gfx, newCanvas    ), \
@@ -43,27 +53,39 @@ MAKE_METHOD_V( gfx, newCanvas  , 3, 5 );
   MAKE_TABLE( gfx, printf       ), \
   MAKE_TABLE( gfx, setColorDepth), \
   MAKE_TABLE( gfx, setCursor    ), \
+  MAKE_TABLE( gfx, setFont      ), \
   MAKE_TABLE( gfx, setRotation  ), \
   MAKE_TABLE( gfx, width        ), \
-  { MP_ROM_QSTR(MP_QSTR_BLACK      ), MP_ROM_INT( 0x000000 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_NAVY       ), MP_ROM_INT( 0x000080 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_DARKGREEN  ), MP_ROM_INT( 0x008000 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_DARKCYAN   ), MP_ROM_INT( 0x008080 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_MAROON     ), MP_ROM_INT( 0x800000 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_PURPLE     ), MP_ROM_INT( 0x800080 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_OLIVE      ), MP_ROM_INT( 0x808000 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_LIGHTGREY  ), MP_ROM_INT( 0xC0C0C0 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_DARKGREY   ), MP_ROM_INT( 0x808080 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_BLUE       ), MP_ROM_INT( 0x0000FF ) }, \
-  { MP_ROM_QSTR(MP_QSTR_GREEN      ), MP_ROM_INT( 0x00FF00 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_CYAN       ), MP_ROM_INT( 0x00FFFF ) }, \
-  { MP_ROM_QSTR(MP_QSTR_RED        ), MP_ROM_INT( 0xFF0000 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_MAGENTA    ), MP_ROM_INT( 0xFF00FF ) }, \
-  { MP_ROM_QSTR(MP_QSTR_YELLOW     ), MP_ROM_INT( 0xFFFF00 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_WHITE      ), MP_ROM_INT( 0xFFFFFF ) }, \
-  { MP_ROM_QSTR(MP_QSTR_ORANGE     ), MP_ROM_INT( 0xFFA500 ) }, \
-  { MP_ROM_QSTR(MP_QSTR_GREENYELLOW), MP_ROM_INT( 0xADFF2F ) }, \
-  { MP_ROM_QSTR(MP_QSTR_PINK       ), MP_ROM_INT( 0xFFC0CB ) }
+  { MP_ROM_QSTR(MP_QSTR_FONT0        ), MP_ROM_PTR(&gfx_font_0_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT2        ), MP_ROM_PTR(&gfx_font_2_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT4        ), MP_ROM_PTR(&gfx_font_4_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT6        ), MP_ROM_PTR(&gfx_font_6_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT7        ), MP_ROM_PTR(&gfx_font_7_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT8        ), MP_ROM_PTR(&gfx_font_8_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu9 ), MP_ROM_PTR(&gfx_font_DejaVu9_obj ) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu12), MP_ROM_PTR(&gfx_font_DejaVu12_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu18), MP_ROM_PTR(&gfx_font_DejaVu18_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu24), MP_ROM_PTR(&gfx_font_DejaVu24_obj) }, \
+  { MP_ROM_QSTR(MP_QSTR_BLACK        ), MP_ROM_INT( 0x000000 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_NAVY         ), MP_ROM_INT( 0x000080 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_DARKGREEN    ), MP_ROM_INT( 0x008000 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_DARKCYAN     ), MP_ROM_INT( 0x008080 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_MAROON       ), MP_ROM_INT( 0x800000 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_PURPLE       ), MP_ROM_INT( 0x800080 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_OLIVE        ), MP_ROM_INT( 0x808000 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_LIGHTGREY    ), MP_ROM_INT( 0xC0C0C0 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_DARKGREY     ), MP_ROM_INT( 0x808080 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_BLUE         ), MP_ROM_INT( 0x0000FF ) }, \
+  { MP_ROM_QSTR(MP_QSTR_GREEN        ), MP_ROM_INT( 0x00FF00 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_CYAN         ), MP_ROM_INT( 0x00FFFF ) }, \
+  { MP_ROM_QSTR(MP_QSTR_RED          ), MP_ROM_INT( 0xFF0000 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_MAGENTA      ), MP_ROM_INT( 0xFF00FF ) }, \
+  { MP_ROM_QSTR(MP_QSTR_YELLOW       ), MP_ROM_INT( 0xFFFF00 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_WHITE        ), MP_ROM_INT( 0xFFFFFF ) }, \
+  { MP_ROM_QSTR(MP_QSTR_ORANGE       ), MP_ROM_INT( 0xFFA500 ) }, \
+  { MP_ROM_QSTR(MP_QSTR_GREENYELLOW  ), MP_ROM_INT( 0xADFF2F ) }, \
+  { MP_ROM_QSTR(MP_QSTR_PINK         ), MP_ROM_INT( 0xFFC0CB ) }
+
 
 //-------- GFX device wrapper
 MAKE_METHOD_0( gfx, startWrite        );

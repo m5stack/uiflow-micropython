@@ -1,6 +1,8 @@
 #define M5ATOMDISPLAY_LOGICAL_WIDTH 320
 #define M5ATOMDISPLAY_LOGICAL_HEIGHT 240
 #include <M5AtomDisplay.h>
+#include <M5UnitOLED.h>
+#include <M5UnitLCD.h>
 #include <M5Unified.h>
 
 extern "C"

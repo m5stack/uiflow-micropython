@@ -11,6 +11,7 @@ typedef union {
 
 extern "C"
 {
+  #include <py/obj.h>
   #include "mpy_m5gfx.h"
 
   static inline LovyanGFX* getGfx(const mp_obj_t* args)
@@ -71,6 +72,30 @@ extern "C"
     gfx->setCursor( mp_obj_get_int(x)
                   , mp_obj_get_int(y)
                   );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_getCursor(mp_obj_t self)
+  {
+    auto gfx = getGfx(&self);
+    mp_obj_t tuple[2] = { mp_obj_new_int(gfx->getCursorX())
+                        , mp_obj_new_int(gfx->getCursorY())
+                        };
+    return mp_obj_new_tuple(2, tuple);
+  }
+
+  mp_obj_t gfx_setFont(mp_obj_t self, mp_obj_t font)
+  {
+    auto gfx = getGfx(&self);
+    gfx->setFont((const m5gfx::IFont*) ((font_obj_t*)MP_OBJ_TO_PTR(font))->font);
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_clear(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 2) { gfx->setBaseColor((uint32_t)mp_obj_get_int(args[1])); }
+    gfx->clear();
     return mp_const_none;
   }
 
@@ -150,6 +175,32 @@ extern "C"
     return mp_const_none;
   }
 
+  mp_obj_t gfx_drawRoundRect(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 7) { gfx->setColor((uint32_t)mp_obj_get_int(args[6])); }
+    gfx->drawRoundRect( mp_obj_get_int(args[1])
+                      , mp_obj_get_int(args[2])
+                      , mp_obj_get_int(args[3])
+                      , mp_obj_get_int(args[4])
+                      , mp_obj_get_int(args[5])
+                      );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_fillRoundRect(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 7) { gfx->setColor((uint32_t)mp_obj_get_int(args[6])); }
+    gfx->fillRoundRect( mp_obj_get_int(args[1])
+                      , mp_obj_get_int(args[2])
+                      , mp_obj_get_int(args[3])
+                      , mp_obj_get_int(args[4])
+                      , mp_obj_get_int(args[5])
+                      );
+    return mp_const_none;
+  }
+
   mp_obj_t gfx_printf(size_t n_args, const mp_obj_t *args)
   {
     auto types  = (ffi_type**)alloca(n_args * sizeof(ffi_type *));
@@ -184,14 +235,17 @@ extern "C"
     return mp_const_none;
   }
 
-  mp_obj_t gfx_push(mp_obj_t self, mp_obj_t x, mp_obj_t y)
+  mp_obj_t gfx_newCanvas(  size_t n_args, const mp_obj_t *args)
   {
-    auto gfx = getGfx(&self);
-    if (gfx)
-    {
-      ((M5Canvas*)gfx)->pushSprite(mp_obj_get_int(x), mp_obj_get_int(y));
-    }
-    return mp_const_none;
+    auto gfx = getGfx(args);
+    auto canvas = new M5Canvas(gfx);
+    if (n_args >= 5) { canvas->setPsram(mp_obj_get_int(args[4])); }
+    if (n_args >= 4) { canvas->setColorDepth(mp_obj_get_int(args[3])); }
+    if (n_args >= 3) { canvas->createSprite(mp_obj_get_int(args[1]), mp_obj_get_int(args[2])); }
+    gfx_obj_t *res = m_new_obj_with_finaliser(gfx_obj_t);
+    res->base.type = &gfxcanvas_type;
+    res->gfx = canvas;
+    return MP_OBJ_FROM_PTR(res);
   }
 
 //-------- GFX device wrapper
@@ -212,6 +266,16 @@ extern "C"
 
 //-------- GFX canvas wrapper
 
+  mp_obj_t gfx_push(mp_obj_t self, mp_obj_t x, mp_obj_t y)
+  {
+    auto gfx = getGfx(&self);
+    if (gfx)
+    {
+      ((M5Canvas*)gfx)->pushSprite(mp_obj_get_int(x), mp_obj_get_int(y));
+    }
+    return mp_const_none;
+  }
+
   mp_obj_t gfx_delete(mp_obj_t self)
   {
     auto gfx = getGfx(&self);
@@ -224,18 +288,15 @@ extern "C"
     return mp_const_none;
   }
 
-  mp_obj_t gfx_newCanvas(  size_t n_args, const mp_obj_t *args)
-  {
-    auto gfx = getGfx(args);
-    auto canvas = new M5Canvas(gfx);
-    if (n_args >= 5) { canvas->setPsram(mp_obj_get_int(args[4])); }
-    if (n_args >= 4) { canvas->setColorDepth(mp_obj_get_int(args[3])); }
-    if (n_args >= 3) { canvas->createSprite(mp_obj_get_int(args[1]), mp_obj_get_int(args[2])); }
-    gfx_obj_t *res = m_new_obj_with_finaliser(gfx_obj_t);
-    res->base.type = &gfxcanvas_type;
-    res->gfx = canvas;
-    return MP_OBJ_FROM_PTR(res);
-  }
-
+  const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
+  const font_obj_t gfx_font_2_obj = {{ &mp_type_object }, &m5gfx::fonts::Font2 };
+  const font_obj_t gfx_font_4_obj = {{ &mp_type_object }, &m5gfx::fonts::Font4 };
+  const font_obj_t gfx_font_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Font6 };
+  const font_obj_t gfx_font_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Font7 };
+  const font_obj_t gfx_font_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Font8 };
+  const font_obj_t gfx_font_DejaVu9_obj  = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
+  const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
+  const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
+  const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
 
 }
