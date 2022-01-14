@@ -17,7 +17,7 @@ PYTHON ?= python3
 
 GIT_SUBMODULES = lib/berkeley-db-1.xx
 
-.PHONY: all clean deploy erase submodules FORCE
+.PHONY: all clean deploy erase mpy-cross submodules FORCE
 
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -61,5 +61,9 @@ erase:
 mpy-cross:
 	make -C ../micropython/mpy-cross
 
+# The two submodules do not belong to the same repository
+# micropython submodule belong to uiflow_micropython
+# berkeley-db-1.xx submodule belong to micropython submodule
 submodules:
+	git submodule update --init ../micropython
 	cd ./../micropython	&& git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
