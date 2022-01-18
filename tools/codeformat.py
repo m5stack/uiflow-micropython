@@ -37,10 +37,11 @@ PATHS = [
     # C
     "m5stack/*.[ch]",
     "m5stack/cmodules/**/*.[ch]",
+    "tools/littlefs/*.[ch]",
     # Python
     "m5stack/*.py",
     "m5stack/modules/*.py",
-    "tools/**/*.py",
+    "tools/*.py",
     "tests/**/*.py",
 ]
 
