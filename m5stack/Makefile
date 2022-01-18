@@ -68,10 +68,12 @@ flash: all
 	write_flash 0x1000 $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 fs:
+	[ -d $(BUILD) ] || mkdir -p $(BUILD)
 	./../tools/littlefs/prebuilt/linux/littlefs2 -c -v -i ./fs \
 	-o $(BUILD)/fs.bin -s 0x14e000 # defined in partitions.csv
 
 nvs:
+	[ -d $(BUILD) ] || mkdir -p $(BUILD)
 	python ./../tools/nvs_partition_gen.py generate partition_nvs.csv \
 	$(BUILD)/nvs.bin 0x6000 # defined in partitions.csv
 
