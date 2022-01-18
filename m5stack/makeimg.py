@@ -99,3 +99,10 @@ with open(file_out, "wb") as fout:
                 )
                 sys.exit(1)
     print("%-22s% 8d" % ("total", cur_offset))
+    print(
+        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x1000.\r\n"
+        "Example command:\r\n"
+        "    1. make flash\r\n"
+        "    2. esptool.py --chip esp32 --port /dev/ttyUSBx --baud 1500000 write_flash 0x1000 %s"
+        % (cur_offset, file_out, file_out)
+    )
