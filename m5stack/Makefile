@@ -75,6 +75,10 @@ nvs:
 	python ./../tools/nvs_partition_gen.py generate partition_nvs.csv \
 	$(BUILD)/nvs.bin 0x6000 # defined in partitions.csv
 
+littlefs:
+	cd ./../tools/littlefs && rm ./build -rf && mkdir build && cd build && \
+	cmake .. && make -j && cp ./littlefs2 ./../prebuilt/linux
+
 mpy-cross:
 	make -C ../micropython/mpy-cross
 
@@ -82,5 +86,6 @@ mpy-cross:
 # micropython submodule belong to uiflow_micropython
 # berkeley-db-1.xx submodule belong to micropython submodule
 submodules:
+	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ../micropython
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -	

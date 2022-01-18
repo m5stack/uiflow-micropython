@@ -14,6 +14,7 @@ git -C esp-idf submodule update --init --recursive
 ```shell
 git clone https://github.com/m5stack/uiflow_micropython
 cd uiflow_micropython/m5stack
+make littlefs
 make submodules
 make mpy-cross
 make -j

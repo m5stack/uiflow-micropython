@@ -92,6 +92,7 @@ function ci_esp32_idf44_setup {
 
 function ci_esp32_build {
     source esp-idf/export.sh
+    make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack
