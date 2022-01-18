@@ -28,8 +28,10 @@ def load_partition_table(filename):
 arg_sdkconfig = sys.argv[1]
 arg_bootloader_bin = sys.argv[2]
 arg_partitions_bin = sys.argv[3]
-arg_application_bin = sys.argv[4]
-arg_output_bin = sys.argv[5]
+arg_nvs_bin = sys.argv[4]
+arg_application_bin = sys.argv[5]
+arg_filesystem_bin = sys.argv[6]
+arg_output_bin = sys.argv[7]
 
 # Load required sdkconfig values.
 offset_bootloader = load_sdkconfig_hex_value(
@@ -44,22 +46,34 @@ partition_table = load_partition_table(arg_partitions_bin)
 
 max_size_bootloader = offset_partitions - offset_bootloader
 max_size_partitions = 0
+offset_nvs = 0
+max_size_nvs = 0
 offset_application = 0
 max_size_application = 0
+offset_filesystem = 0
+max_size_filesystem = 0
 
 # Inspect the partition table to find offsets and maximum sizes.
 for part in partition_table:
     if part.name == "nvs":
         max_size_partitions = part.offset - offset_partitions
+        offset_nvs = part.offset
+        max_size_nvs = part.size
     elif part.type == gen_esp32part.APP_TYPE and offset_application == 0:
         offset_application = part.offset
         max_size_application = part.size
+    elif part.type == gen_esp32part.DATA_TYPE and part.name == "vfs":
+        offset_filesystem = part.offset
+        max_size_filesystem = part.size
+
 
 # Define the input files, their location and maximum size.
 files_in = [
     ("bootloader", offset_bootloader, max_size_bootloader, arg_bootloader_bin),
     ("partitions", offset_partitions, max_size_partitions, arg_partitions_bin),
+    ("nvs", offset_nvs, max_size_nvs, arg_nvs_bin),
     ("application", offset_application, max_size_application, arg_application_bin),
+    ("filesystem", offset_filesystem, max_size_filesystem, arg_filesystem_bin),
 ]
 file_out = arg_output_bin
 
