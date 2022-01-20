@@ -45,6 +45,7 @@ set(MICROPY_SOURCE_DRIVERS
 
 set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/main.c
+    ${PROJECT_DIR}/esp32_nvs.c
     ${PROJECT_DIR}/../micropython/ports/esp32/uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb_serial_jtag.c
@@ -71,7 +72,6 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/mpnimbleport.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modsocket.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/esp32_nvs.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_partition.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c

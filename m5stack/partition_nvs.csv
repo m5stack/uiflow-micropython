@@ -1,0 +1,8 @@
+key,type,encoding,value
+uiflow,namespace,,
+ssid,data,string,
+pswd,data,string,
+ssid1,data,string,
+pswd1,data,string,
+ssid2,data,string,
+pswd2,data,string,

@@ -1,0 +1,25 @@
+name: m5stack port
+
+on:
+  push:
+  pull_request:
+    paths:
+      - '.github/workflows/*.yml'
+      - 'tools/**'
+      - 'micropython/py/**'
+      - 'micropython/extmod/**'
+      - 'micropython/lib/**'
+      - 'micropython/drivers/**'
+      - 'm5stack/**'
+
+jobs:
+  build_idf44:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true
+    - name: Install packages
+      run: source tools/ci.sh && ci_esp32_idf44_setup
+    - name: Build
+      run: source tools/ci.sh && ci_esp32_build
