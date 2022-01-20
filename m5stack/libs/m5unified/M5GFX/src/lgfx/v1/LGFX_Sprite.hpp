@@ -159,6 +159,7 @@ namespace lgfx
       _panel_sprite.setBuffer(buffer, w, h, &_write_conv);
       _img = _panel_sprite.getBuffer();
 
+//      _bitwidth = (w + _write_conv.x_mask) & (~(uint32_t)_write_conv.x_mask);
       _sw = w;
       _clip_r = w - 1;
       _xpivot = w >> 1;
@@ -172,11 +173,12 @@ namespace lgfx
     {
       _img = _panel_sprite.createSprite(w, h, &_write_conv, _psram);
       if (_img) {
-        if (getColorDepth() & color_depth_t::has_palette)
+        if (!_palette && 0 == _write_conv.bytes)
         {
           createPalette();
         }
       }
+//      _bitwidth = (w + _write_conv.x_mask) & (~(uint32_t)_write_conv.x_mask);
       setRotation(getRotation());
 
       _sw = width();
@@ -325,17 +327,13 @@ namespace lgfx
       if (_palette && index < _palette_count) { _palette.img24()[index].set(r, g, b); }
     }
 
-    LGFX_INLINE void* setColorDepth(uint8_t bpp)
-    {
-      _write_conv.setColorDepth(bpp, bpp < 8);
-      return setColorDepth(_write_conv.depth);
-    }
+    LGFX_INLINE void* setColorDepth(uint8_t bpp) { return setColorDepth((color_depth_t)bpp); }
     void* setColorDepth(color_depth_t depth)
     {
-      _write_conv.setColorDepth(depth);
-      _read_conv = _write_conv;
+      _panel_sprite.setColorDepth(depth);
 
-      _panel_sprite.setColorDepth(_write_conv.depth);
+      _write_conv.setColorDepth(depth, hasPalette());
+      _read_conv = _write_conv;
 
       if (_panel_sprite.getBuffer() == nullptr) return nullptr;
       auto w = _panel_sprite._panel_width;
@@ -412,6 +410,7 @@ namespace lgfx
     LovyanGFX* _parent;
 
     SpriteBuffer _palette;
+//    int32_t _bitwidth;
 
     bool _psram = false;
 
@@ -423,16 +422,12 @@ namespace lgfx
 
       size_t palettes = 1 << _write_conv.bits;
       _palette.reset(palettes * sizeof(bgr888_t), AllocationSource::Normal);
-      if (!_palette) { return false; }
-
-      if (!(_write_conv.depth & color_depth_t::has_palette))
-      {
-        auto depth = (color_depth_t)(_write_conv.bits | color_depth_t::has_palette);
-        _write_conv.setColorDepth(depth);
-        _read_conv = _write_conv;
-        _panel_sprite.setColorDepth(depth);
+      if (!_palette) {
+        _write_conv.setColorDepth(_write_conv.depth, false);
+        return false;
       }
       _palette_count = palettes;
+      _write_conv.setColorDepth(_write_conv.depth, true);
       return true;
     }
 

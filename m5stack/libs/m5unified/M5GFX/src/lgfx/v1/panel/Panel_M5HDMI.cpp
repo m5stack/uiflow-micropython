@@ -740,8 +740,7 @@ namespace lgfx
       _bus->beginRead();
       while (_bus->readData(8) == 0x00)
       {
-        vTaskDelay(1);
-        // delayMicroseconds(++length>>3);
+        delayMicroseconds(++length>>3);
       }
       cs_control(true);
       _bus->endRead();
@@ -1160,24 +1159,11 @@ namespace lgfx
     else
     {
       uint32_t offscreen = _cfg.memory_height << 16;
-/*
       do
       {
         _copy_rect(offscreen, src_x + ((src_y+h) << 16), w);
         _copy_rect(dst_x + ((dst_y+h) << 16), offscreen, w);
       } while (h--);
-/*/
-      do
-      {
-        size_t ch = ((h-1)&15);
-        _copy_rect(offscreen, src_x + ((src_y) << 16), w + (ch<<16));
-        _copy_rect(dst_x + ((dst_y) << 16), offscreen, w + (ch<<16));
-        ++ch;
-        src_y += ch;
-        dst_y += ch;
-        h -= ch;
-      } while (h);
-//*/
     }
     endWrite();
   }
