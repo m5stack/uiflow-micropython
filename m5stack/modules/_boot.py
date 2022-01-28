@@ -12,6 +12,7 @@ uiflow_str = """
 print(uiflow_str)
 del uiflow_str
 
+# monut flash file system
 try:
     if bdev:
         vfs = os.VfsLfs2(bdev, progsize=32, readsize=128, lookahead=128)
@@ -21,10 +22,15 @@ except OSError:
 
     vfs = inisetup.setup()
 
-
 gc.collect()
 gc.threshold(56 * 1024)
 
 import micropython
+import sys
 
 micropython.alloc_emergency_exception_buf(256)
+# system path
+sys.path.append("/flash/libs")
+sys.path.append("/flash/libs/micropython")
+# change directory to "/flash"
+os.chdir("/flash")

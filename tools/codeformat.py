@@ -40,6 +40,7 @@ PATHS = [
     "tools/littlefs/*.[ch]",
     # Python
     "m5stack/*.py",
+    "m5stack/fs/**/*.py",
     "m5stack/modules/*.py",
     "tools/*.py",
     "tests/**/*.py",

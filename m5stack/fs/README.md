@@ -1,8 +1,12 @@
+```shell
 ├── apps
 │   └── helloworld.py
 ├── libs
-│   └── __init__.py
-├── res
+│   ├── __init__.py
+│   ├── micropython
+│   │   └── README.md
+│   └── README.md
+│── res
 │   ├── font
 │   │   └── README.md
 │   └── img
@@ -11,3 +15,4 @@
 ├── boot.py
 ├── main.py
 └── README.md
+```
