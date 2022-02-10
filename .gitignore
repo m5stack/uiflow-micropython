@@ -48,3 +48,4 @@ genrst/
 .DS_Store
 
 .vscode/
+tools/littlefs/prebuilt/linux/littlefs2
