@@ -89,7 +89,7 @@ with open(file_out, "wb") as fout:
             fout.write(data)
             cur_offset += len(data)
             print(
-                "%-12s@0x%06x % 8d  (% 8d remaining)"
+                "%-12s@0x%06x % 9d  (% 8d remaining)"
                 % (name, offset, len(data), max_size - len(data))
             )
             if len(data) > max_size:
@@ -98,7 +98,7 @@ with open(file_out, "wb") as fout:
                     % (name, max_size, len(data) - max_size)
                 )
                 sys.exit(1)
-    print("%-22s% 8d" % ("total", cur_offset))
+    print("%-23s% 8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
         "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x1000.\r\n"
         "Example command:\r\n"
