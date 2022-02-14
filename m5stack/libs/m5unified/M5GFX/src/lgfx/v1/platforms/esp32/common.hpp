@@ -30,6 +30,23 @@ Contributors:
 #include <soc/soc.h>
 #include <soc/spi_reg.h>
 
+#ifdef MICROPY_VFS_LFS2
+extern "C"
+{
+#include "extmod/vfs.h"
+#include "extmod/vfs_lfs.h"
+#include "lib/littlefs/lfs2.h"
+
+typedef struct _mp_obj_vfs_lfs2_t {
+    mp_obj_base_t base;
+    mp_vfs_blockdev_t blockdev;
+    bool enable_mtime;
+    vstr_t cur_dir;
+    struct lfs2_config config;
+    lfs2_t lfs;
+} mp_obj_vfs_lfs2_t;
+#endif
+
 #if !defined ( REG_SPI_BASE )
 //#define REG_SPI_BASE(i) (DR_REG_SPI0_BASE - (i) * 0x1000)
 #define REG_SPI_BASE(i)     (DR_REG_SPI2_BASE)
@@ -184,6 +201,61 @@ public:
     {
       need_transaction = true;
     }
+#if MICROPY_VFS_LFS2
+    // Not formatted yet, only for micropython porting
+    bool open(const char* path) override {
+        const char* full_path;
+        memset(&cfg, 0, sizeof(struct lfs2_file_config));
+        mp_vfs_mount_t* _fm = mp_vfs_lookup_path(path, &full_path);
+        if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
+            mp_printf(&mp_plat_print, "MP_VFS_NONE\r\n");
+            return false;
+        }
+        _fs = (lfs2_t*)malloc(1 * sizeof(lfs2_t));
+        _fs = &((mp_obj_vfs_lfs2_t*)MP_OBJ_TO_PTR(_fm->obj))->lfs;
+        enum lfs2_error res = (lfs2_error)lfs2_stat(_fs, full_path, &fno);
+        if (res != LFS2_ERR_OK) {
+            mp_printf(&mp_plat_print, "lfs2_stat error: %s  %d\r\n",
+                      strerror(res), res);
+            return false;
+        }
+        _fhndl     = (lfs2_file_t*)malloc(1 * sizeof(lfs2_file_t));
+        cfg.buffer = malloc(_fs->cfg->cache_size * sizeof(uint8_t));
+        if (!cfg.buffer) {
+            mp_printf(&mp_plat_print, "cfg.buffer malloc error\r\n");
+            return false;
+        }
+        return ((lfs2_file_opencfg(_fs, _fhndl, full_path, LFS2_O_RDONLY,
+                                   &cfg) == LFS2_ERR_OK)
+                    ? true
+                    : false);
+    }
+    int read(uint8_t* buf, uint32_t len) override {
+        return lfs2_file_read(_fs, _fhndl, (char*)buf, len);
+    }
+    void skip(int32_t offset) override {
+        lfs2_file_seek(_fs, _fhndl, offset, LFS2_SEEK_CUR);
+    }
+    bool seek(uint32_t offset) override {
+        return lfs2_file_seek(_fs, _fhndl, offset, LFS2_SEEK_SET);
+    }
+    bool seek(uint32_t offset, int origin) {
+        return lfs2_file_seek(_fs, _fhndl, offset, origin);
+    }
+    void close() override {
+        if (cfg.buffer) free(cfg.buffer);
+        if (_fs) lfs2_file_close(_fs, _fhndl);
+    }
+    int32_t tell(void) override {
+        return lfs2_file_tell(_fs, _fhndl);
+    }
+
+   protected:
+    lfs2_t* _fs         = nullptr;
+    lfs2_file_t* _fhndl = nullptr;
+    struct lfs2_info fno;
+    struct lfs2_file_config cfg;
+#else
     FILE* _fp;
     bool open(const char* path) override { return (_fp = fopen(path, "r")); }
     int read(uint8_t *buf, uint32_t len) override { return fread((char*)buf, 1, len, _fp); }
@@ -192,6 +264,7 @@ public:
     bool seek(uint32_t offset, int origin) { return fseek(_fp, offset, origin); }
     void close() override { if (_fp) fclose(_fp); }
     int32_t tell(void) override { return ftell(_fp); }
+#endif
   };
 
 #endif
@@ -207,3 +280,6 @@ public:
 //----------------------------------------------------------------------------
  }
 }
+#ifdef MICROPY_VFS_LFS2
+}
+#endif

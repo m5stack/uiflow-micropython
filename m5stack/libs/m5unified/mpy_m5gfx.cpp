@@ -59,10 +59,11 @@ extern "C"
     return mp_const_none;
   }
 
-  mp_obj_t gfx_print(mp_obj_t self, mp_obj_t str)
+  mp_obj_t gfx_print(size_t n_args, const mp_obj_t *args)
   {
-    auto gfx = getGfx(&self);
-    gfx->print( mp_obj_str_get_str(str));
+    auto gfx = getGfx(args);
+    if (n_args >= 3) { gfx->setTextColor((uint32_t)mp_obj_get_int(args[2])); }
+    gfx->print( mp_obj_str_get_str(args[1]));
     return mp_const_none;
   }
 
@@ -88,6 +89,13 @@ extern "C"
   {
     auto gfx = getGfx(&self);
     gfx->setFont((const m5gfx::IFont*) ((font_obj_t*)MP_OBJ_TO_PTR(font))->font);
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_setTextColor(mp_obj_t self, mp_obj_t color)
+  {
+    auto gfx = getGfx(&self);
+    gfx->setTextColor((uint32_t)mp_obj_get_int(color));
     return mp_const_none;
   }
 
@@ -232,6 +240,44 @@ extern "C"
     ffi_arg result;
     ffi_call(&cif, FFI_FN(&LovyanGFX::printf), &result, arg_values);
 
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawJPG(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    gfx->drawJpgFile(mp_obj_str_get_str(args[1])
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawPNG(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    gfx->drawPngFile(mp_obj_str_get_str(args[1])
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawBMP(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    gfx->drawBmpFile(mp_obj_str_get_str(args[1])
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawQR(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    gfx->qrcode( mp_obj_str_get_str(args[1])
+               , mp_obj_get_int(args[2])
+               , mp_obj_get_int(args[3])
+               , mp_obj_get_int(args[4])
+               , mp_obj_get_int(args[5]));
     return mp_const_none;
   }
 
