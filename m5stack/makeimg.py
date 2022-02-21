@@ -19,6 +19,25 @@ def load_sdkconfig_hex_value(filename, value, default):
     return default
 
 
+def load_sdkconfig_spiram_value(filename):
+    value = "CONFIG_ESP32_SPIRAM_SUPPORT="
+    with open(filename, "r") as f:
+        for line in f:
+            if line.startswith(value):
+                if line.split("=", 1)[1][0] == "y":
+                    return "SPIRAM"
+    return "NOSPIRAM"
+
+
+def load_sdkconfig_flash_size_value(filename):
+    value = "CONFIG_ESPTOOLPY_FLASHSIZE="
+    with open(filename, "r") as f:
+        for line in f:
+            if line.startswith(value):
+                return str(line.split("_")[-1].split("=", 1)[1][1:-2])
+    return "4MB"
+
+
 def load_partition_table(filename):
     with open(filename, "rb") as f:
         return gen_esp32part.PartitionTable.from_binary(f.read())
@@ -75,7 +94,14 @@ files_in = [
     ("application", offset_application, max_size_application, arg_application_bin),
     ("filesystem", offset_filesystem, max_size_filesystem, arg_filesystem_bin),
 ]
+
 file_out = arg_output_bin
+
+release_file_out = "{}-{}-{}.bin".format(
+    arg_output_bin.split(".")[0],
+    load_sdkconfig_spiram_value(arg_sdkconfig),
+    load_sdkconfig_flash_size_value(arg_sdkconfig),
+)
 
 # Write output file with combined firmware.
 cur_offset = offset_bootloader
@@ -106,3 +132,5 @@ with open(file_out, "wb") as fout:
         "    2. esptool.py --chip esp32 --port /dev/ttyUSBx --baud 1500000 write_flash 0x1000 %s"
         % (cur_offset, file_out, file_out)
     )
+
+os.system("cp {} {}".format(file_out, release_file_out))

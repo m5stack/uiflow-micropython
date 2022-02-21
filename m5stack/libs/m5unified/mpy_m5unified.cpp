@@ -27,4 +27,9 @@ extern "C"
     M5.update();
     return mp_const_none;
   }
+
+  mp_obj_t m5_getBoard(void)
+  {
+    return mp_obj_new_int(M5.getBoard());
+  }
 }

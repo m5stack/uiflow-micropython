@@ -59,10 +59,11 @@ extern "C"
     return mp_const_none;
   }
 
-  mp_obj_t gfx_print(mp_obj_t self, mp_obj_t str)
+  mp_obj_t gfx_print(size_t n_args, const mp_obj_t *args)
   {
-    auto gfx = getGfx(&self);
-    gfx->print( mp_obj_str_get_str(str));
+    auto gfx = getGfx(args);
+    if (n_args >= 3) { gfx->setTextColor((uint32_t)mp_obj_get_int(args[2])); }
+    gfx->print( mp_obj_str_get_str(args[1]));
     return mp_const_none;
   }
 
@@ -88,6 +89,20 @@ extern "C"
   {
     auto gfx = getGfx(&self);
     gfx->setFont((const m5gfx::IFont*) ((font_obj_t*)MP_OBJ_TO_PTR(font))->font);
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_setTextColor(mp_obj_t self, mp_obj_t color)
+  {
+    auto gfx = getGfx(&self);
+    gfx->setTextColor((uint32_t)mp_obj_get_int(color));
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_setTextScroll(mp_obj_t self, mp_obj_t scroll)
+  {
+    auto gfx = getGfx(&self);
+    gfx->setTextScroll((bool)mp_obj_get_int(scroll));
     return mp_const_none;
   }
 
@@ -235,7 +250,145 @@ extern "C"
     return mp_const_none;
   }
 
-  mp_obj_t gfx_newCanvas(  size_t n_args, const mp_obj_t *args)
+  mp_obj_t gfx_drawBmp(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
+    {
+      gfx->drawBmpFile( mp_obj_str_get_str(args[1])
+                      , mp_obj_get_int(args[2])
+                      , mp_obj_get_int(args[3]));
+    }
+    else // buffer
+    {
+      mp_buffer_info_t bufinfo;
+      mp_get_buffer_raise(args[1], &bufinfo, MP_BUFFER_READ);
+      gfx->drawBmp( (const uint8_t*)bufinfo.buf
+                  , bufinfo.len
+                  , mp_obj_get_int(args[2])
+                  , mp_obj_get_int(args[3]));
+    }
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawJpg(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
+    {
+      gfx->drawJpgFile( mp_obj_str_get_str(args[1])
+                      , mp_obj_get_int(args[2])
+                      , mp_obj_get_int(args[3]));
+    }
+    else // buffer
+    {
+      mp_buffer_info_t bufinfo;
+      mp_get_buffer_raise(args[1], &bufinfo, MP_BUFFER_READ);
+      gfx->drawJpg( (const uint8_t*)bufinfo.buf
+                  , bufinfo.len
+                  , mp_obj_get_int(args[2])
+                  , mp_obj_get_int(args[3]));
+    }
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawPng(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
+    {
+      gfx->drawPngFile( mp_obj_str_get_str(args[1])
+                      , mp_obj_get_int(args[2])
+                      , mp_obj_get_int(args[3]));
+    }
+    else // buffer
+    {
+      mp_buffer_info_t bufinfo;
+      mp_get_buffer_raise(args[1], &bufinfo, MP_BUFFER_READ);
+      gfx->drawPng( (const uint8_t*)bufinfo.buf
+                  , bufinfo.len
+                  , mp_obj_get_int(args[2])
+                  , mp_obj_get_int(args[3]));
+    }
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawImage(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
+    {
+      char ftype[5] = {0};
+      const char *file_path = mp_obj_str_get_str(args[1]);
+
+      for (size_t i = 0; i < 4; i++)
+      {
+        ftype[i] = tolower((char)file_path[i + strlen(file_path) - 4]);
+      }
+      ftype[4] = '\0';
+
+      if (strstr(ftype, "bmp") != NULL)
+      {
+        gfx->drawBmpFile( file_path
+                        , mp_obj_get_int(args[2])
+                        , mp_obj_get_int(args[3]));
+      }
+      else if ((strstr(ftype, "jpg") != NULL) || (strstr(ftype, "jpeg") != NULL))
+      {
+        gfx->drawJpgFile( file_path
+                        , mp_obj_get_int(args[2])
+                        , mp_obj_get_int(args[3]));
+      }
+      else if (strstr(ftype, "png") != NULL)
+      {
+        gfx->drawPngFile( file_path
+                        , mp_obj_get_int(args[2])
+                        , mp_obj_get_int(args[3]));
+      }
+    }
+    else // buffer
+    {
+      mp_buffer_info_t bufinfo;
+      mp_get_buffer_raise(args[1], &bufinfo, MP_BUFFER_READ);
+      uint8_t* type_ptr = (uint8_t *)bufinfo.buf;
+
+      if ((type_ptr[0] == 0x42) && (type_ptr[1] == 0x4D))
+      {
+        gfx->drawBmp( (const uint8_t*)bufinfo.buf
+                    , bufinfo.len
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+      }
+      else if ((type_ptr[0] == 0xFF) && (type_ptr[1] == 0xD8))
+      {
+        gfx->drawJpg( (const uint8_t*)bufinfo.buf
+                    , bufinfo.len
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+      }
+      else if ((type_ptr[0] == 0x89) && (type_ptr[1] == 0x50))
+      {
+        gfx->drawPng( (const uint8_t*)bufinfo.buf
+                    , bufinfo.len
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3]));
+      }
+    }
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawQR(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    gfx->qrcode( mp_obj_str_get_str(args[1])
+               , mp_obj_get_int(args[2])
+               , mp_obj_get_int(args[3])
+               , mp_obj_get_int(args[4])
+               , mp_obj_get_int(args[5]));
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *args)
   {
     auto gfx = getGfx(args);
     auto canvas = new M5Canvas(gfx);
