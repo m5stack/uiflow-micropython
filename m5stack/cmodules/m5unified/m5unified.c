@@ -1,12 +1,12 @@
 #include <mpy_m5unified.h>
 
-/*  *FORMAT-OFF* */
+/* *FORMAT-OFF* */
 #define MAKE_METHOD_V(prefix, func, arg_min, arg_max) extern mp_obj_t prefix##_##func(size_t,const mp_obj_t*); STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN( prefix##_##func##_obj, arg_min, arg_max, prefix##_##func ); 
 #define MAKE_METHOD_0(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t                  ); STATIC MP_DEFINE_CONST_FUN_OBJ_1( prefix##_##func##_obj, prefix##_##func );
 #define MAKE_METHOD_1(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t,mp_obj_t         ); STATIC MP_DEFINE_CONST_FUN_OBJ_2( prefix##_##func##_obj, prefix##_##func );
 #define MAKE_METHOD_2(prefix, func) extern mp_obj_t prefix##_##func(mp_obj_t,mp_obj_t,mp_obj_t); STATIC MP_DEFINE_CONST_FUN_OBJ_3( prefix##_##func##_obj, prefix##_##func );
 #define MAKE_METHOD_KW(prefix, func, args) extern mp_obj_t prefix##_##func(size_t,const mp_obj_t*,mp_map_t*); STATIC MP_DEFINE_CONST_FUN_OBJ_KW( prefix##_##func##_obj, args, prefix##_##func ); 
-/*  *FORMAT-ON* */
+/* *FORMAT-ON* */
 
 #define MAKE_TABLE(prefix, func) \
     { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
@@ -21,6 +21,7 @@ MAKE_METHOD_1(gfx, setRotation);
 MAKE_METHOD_1(gfx, setColorDepth);
 MAKE_METHOD_1(gfx, setFont);
 MAKE_METHOD_1(gfx, setTextColor);
+MAKE_METHOD_1(gfx, setTextScroll);
 MAKE_METHOD_2(gfx, setCursor);
 MAKE_METHOD_V(gfx, print, 2, 3);
 MAKE_METHOD_V(gfx, clear, 1, 2);
@@ -34,9 +35,10 @@ MAKE_METHOD_V(gfx, fillRect, 5, 6);
 MAKE_METHOD_V(gfx, drawRoundRect, 6, 7);
 MAKE_METHOD_V(gfx, fillRoundRect, 6, 7);
 MAKE_METHOD_V(gfx, drawQR, 6, 6);
-MAKE_METHOD_V(gfx, drawJPG, 4, 4);
-MAKE_METHOD_V(gfx, drawPNG, 4, 4);
-MAKE_METHOD_V(gfx, drawBMP, 4, 4);
+MAKE_METHOD_V(gfx, drawJpg, 4, 4);
+MAKE_METHOD_V(gfx, drawPng, 4, 4);
+MAKE_METHOD_V(gfx, drawBmp, 4, 4);
+MAKE_METHOD_V(gfx, drawImage, 4, 4);
 MAKE_METHOD_V(gfx, printf, 2, 32);
 MAKE_METHOD_V(gfx, newCanvas, 3, 5);
 
@@ -48,9 +50,10 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
     MAKE_TABLE(gfx, drawRect), \
     MAKE_TABLE(gfx, drawRoundRect), \
     MAKE_TABLE(gfx, drawQR), \
-    MAKE_TABLE(gfx, drawJPG), \
-    MAKE_TABLE(gfx, drawPNG), \
-    MAKE_TABLE(gfx, drawBMP), \
+    MAKE_TABLE(gfx, drawJpg), \
+    MAKE_TABLE(gfx, drawPng), \
+    MAKE_TABLE(gfx, drawBmp), \
+    MAKE_TABLE(gfx, drawImage), \
     MAKE_TABLE(gfx, fillCircle), \
     MAKE_TABLE(gfx, fillRect), \
     MAKE_TABLE(gfx, fillRoundRect), \
@@ -66,6 +69,7 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
     MAKE_TABLE(gfx, setCursor), \
     MAKE_TABLE(gfx, setFont), \
     MAKE_TABLE(gfx, setTextColor), \
+    MAKE_TABLE(gfx, setTextScroll), \
     MAKE_TABLE(gfx, setRotation), \
     MAKE_TABLE(gfx, width), \
     { MP_ROM_QSTR(MP_QSTR_FONT0), MP_ROM_PTR(&gfx_font_0_obj) }, \
