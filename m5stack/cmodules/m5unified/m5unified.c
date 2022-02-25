@@ -186,16 +186,18 @@ STATIC const mp_rom_map_elem_t board_enum_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5Tough), MP_ROM_INT(8) },
     { MP_ROM_QSTR(MP_QSTR_M5Station), MP_ROM_INT(9) },
     // non display boards
-    { MP_ROM_QSTR(MP_QSTR_M5ATOM), MP_ROM_INT(10) },
-    { MP_ROM_QSTR(MP_QSTR_M5Camera), MP_ROM_INT(11) },
-    { MP_ROM_QSTR(MP_QSTR_M5TimerCam), MP_ROM_INT(12) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampPico), MP_ROM_INT(13) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3), MP_ROM_INT(14) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3U), MP_ROM_INT(15) },
+    { MP_ROM_QSTR(MP_QSTR_M5Atom), MP_ROM_INT(10) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomPsram), MP_ROM_INT(11) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomU), MP_ROM_INT(12) },
+    { MP_ROM_QSTR(MP_QSTR_M5Camera), MP_ROM_INT(13) },
+    { MP_ROM_QSTR(MP_QSTR_M5TimerCam), MP_ROM_INT(14) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampPico), MP_ROM_INT(15) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3), MP_ROM_INT(16) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3U), MP_ROM_INT(17) },
     // external displays
-    { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay), MP_ROM_INT(16) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD), MP_ROM_INT(17) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED), MP_ROM_INT(18) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomDisplay), MP_ROM_INT(18) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD), MP_ROM_INT(19) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED), MP_ROM_INT(20) },
 };
 STATIC MP_DEFINE_CONST_DICT(board_enum_locals_dict, board_enum_locals_dict_table);
 

@@ -11,8 +11,80 @@ typedef union {
 
 extern "C"
 {
+  #include <extmod/vfs.h>
+  #include <extmod/vfs_lfs.h>
+  #include <lib/littlefs/lfs2.h>
   #include <py/obj.h>
   #include "mpy_m5gfx.h"
+
+  typedef struct _mp_obj_vfs_lfs2_t {
+    mp_obj_base_t base;
+    mp_vfs_blockdev_t blockdev;
+    bool enable_mtime;
+    vstr_t cur_dir;
+    struct lfs2_config config;
+    lfs2_t lfs;
+  } mp_obj_vfs_lfs2_t;
+
+  struct LFS2Wrapper : public m5gfx::DataWrapper
+  {
+    LFS2Wrapper() : DataWrapper()
+    {
+      need_transaction = true;
+    }
+
+    // Not formatted yet, only for micropython porting
+    bool open(const char* path) override {
+      const char* full_path;
+      struct lfs2_info _finfo;
+      mp_vfs_mount_t* _fm = mp_vfs_lookup_path(path, &full_path);
+      if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
+        if (_fm == MP_VFS_NONE) mp_printf(&mp_plat_print, "path not found");
+        if (_fm == MP_VFS_ROOT)
+            mp_printf(&mp_plat_print, "path is \"\" or \"/\"");
+        return false;
+      }
+      _fp = &((mp_obj_vfs_lfs2_t*)MP_OBJ_TO_PTR(_fm->obj))->lfs;
+      enum lfs2_error res = (lfs2_error)lfs2_stat(_fp, full_path, &_finfo);
+      if (res != LFS2_ERR_OK) {
+        mp_printf(&mp_plat_print, "%s\r\n", strerror(res));
+        return false;
+      }
+      _file = (lfs2_file_t*)malloc(1 * sizeof(lfs2_file_t));
+      memset(&_fcfg, 0, sizeof(lfs2_file_config));
+      _fcfg.buffer = malloc(_fp->cfg->cache_size * sizeof(uint8_t));
+      return ((lfs2_file_opencfg(_fp, _file, full_path,
+                                LFS2_O_RDWR | LFS2_O_CREAT,
+                                &_fcfg) == LFS2_ERR_OK)
+                ? true
+                : false);
+    }
+    int read(uint8_t* buf, uint32_t len) override {
+      return lfs2_file_read(_fp, _file, (char*)buf, len);
+    }
+    void skip(int32_t offset) override {
+      lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_CUR);
+    }
+    bool seek(uint32_t offset) override {
+      return lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_SET);
+    }
+    bool seek(uint32_t offset, int origin) {
+      return lfs2_file_seek(_fp, _file, offset, origin);
+    }
+    void close() override {
+      if (_fp) lfs2_file_close(_fp, _file);
+      if (_file) free(_file);
+      if (_fcfg.buffer) free(_fcfg.buffer);
+    }
+    int32_t tell(void) override {
+      return lfs2_file_tell(_fp, _file);
+    }
+
+   protected:
+    lfs2_t* _fp        = nullptr;
+    lfs2_file_t* _file = nullptr;
+    struct lfs2_file_config _fcfg;
+  };
 
   static inline LovyanGFX* getGfx(const mp_obj_t* args)
   {
@@ -255,9 +327,12 @@ extern "C"
     auto gfx = getGfx(args);
     if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
     {
-      gfx->drawBmpFile( mp_obj_str_get_str(args[1])
+      LFS2Wrapper wrapper;
+      gfx->drawBmpFile( &wrapper
+                      , mp_obj_str_get_str(args[1])
                       , mp_obj_get_int(args[2])
-                      , mp_obj_get_int(args[3]));
+                      , mp_obj_get_int(args[3])
+                      , 0, 0, 0, 0, 1.0f, 0.0f, m5gfx::datum_t::top_left);
     }
     else // buffer
     {
@@ -276,7 +351,9 @@ extern "C"
     auto gfx = getGfx(args);
     if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
     {
-      gfx->drawJpgFile( mp_obj_str_get_str(args[1])
+      LFS2Wrapper wrapper;
+      gfx->drawJpgFile( &wrapper
+                      , mp_obj_str_get_str(args[1])
                       , mp_obj_get_int(args[2])
                       , mp_obj_get_int(args[3]));
     }
@@ -297,7 +374,9 @@ extern "C"
     auto gfx = getGfx(args);
     if (mp_obj_is_str(args[1]) && ((size_t)mp_obj_len(args[1]) < 128)) // file
     {
-      gfx->drawPngFile( mp_obj_str_get_str(args[1])
+      LFS2Wrapper wrapper;
+      gfx->drawPngFile( &wrapper
+                      , mp_obj_str_get_str(args[1])
                       , mp_obj_get_int(args[2])
                       , mp_obj_get_int(args[3]));
     }
@@ -327,21 +406,25 @@ extern "C"
       }
       ftype[4] = '\0';
 
+      LFS2Wrapper wrapper;
       if (strstr(ftype, "bmp") != NULL)
       {
-        gfx->drawBmpFile( file_path
+        gfx->drawBmpFile( &wrapper
+                        , file_path
                         , mp_obj_get_int(args[2])
                         , mp_obj_get_int(args[3]));
       }
       else if ((strstr(ftype, "jpg") != NULL) || (strstr(ftype, "jpeg") != NULL))
       {
-        gfx->drawJpgFile( file_path
+        gfx->drawJpgFile( &wrapper
+                        , file_path
                         , mp_obj_get_int(args[2])
                         , mp_obj_get_int(args[3]));
       }
       else if (strstr(ftype, "png") != NULL)
       {
-        gfx->drawPngFile( file_path
+        gfx->drawPngFile( &wrapper
+                        , file_path
                         , mp_obj_get_int(args[2])
                         , mp_obj_get_int(args[3]));
       }
