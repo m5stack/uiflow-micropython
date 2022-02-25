@@ -300,6 +300,12 @@ namespace lgfx
       return drawJpgFile(path, x, y, maxWidth, maxHeight, offX, offY, 1.0f / (1 << scale));
     }
 
+    void loadFont(const char *path)
+    {
+      init_font_file<FileWrapper>();
+      load_font_with_path(path);
+    }
+
 #endif
 
 #define LGFX_URL_MAXLENGTH 2083
@@ -691,53 +697,8 @@ namespace lgfx
 
 #undef LGFX_URL_MAXLENGTH
 
-  private:
-
-    template<typename T, typename Tfs>
-    void init_font_file(Tfs &fs)
-    {
-      this->unloadFont();
-      if (this->_font_file != nullptr)
-      {
-        delete this->_font_file;
-      }
-      auto wrapper = new T(fs);
-      //wrapper->setFS(fs);
-      this->_font_file = wrapper;
-    }
-
-    bool load_font_with_path(const char *path)
-    {
-      this->unloadFont();
-
-      if (this->_font_file == nullptr) return false;
-      //if (this->_font_file == nullptr) { init_font_file<FileWrapper>(SD); }
-
-      this->prepareTmpTransaction(this->_font_file);
-      this->_font_file->preRead();
-
-      bool result = this->_font_file->open(path);
-      if (!result)
-      {
-        char filename[strlen(path) + 8] = {'/', 0 };
-        strcpy(&filename[1], &path[(path[0] == '/') ? 1 : 0]);
-        int len = strlen(filename);
-        if (memcmp(&filename[len - 4], ".vlw", 4))
-        {
-          strcpy(&filename[len], ".vlw");
-        }
-        result = this->_font_file->open(filename);
-      }
-
-      if (result) {
-        result = this->load_font(this->_font_file);
-      }
-      this->_font_file->postRead();
-      return result;
-    }
-
   #define LGFX_FUNCTION_GENERATOR(drawImg, draw_img) \
-    bool drawImg##File(DataWrapper* file, const char *path, int32_t x, int32_t y, int32_t maxWidth, int32_t maxHeight, int32_t offX, int32_t offY, float scale_x, float scale_y, datum_t datum) \
+    bool drawImg##File(DataWrapper* file, const char *path, int32_t x = 0, int32_t y = 0, int32_t maxWidth = 0, int32_t maxHeight = 0, int32_t offX = 0, int32_t offY = 0, float scale_x = 1.0f, float scale_y = 0.0f, datum_t datum = datum_t::top_left) \
     { \
       bool res = false; \
       this->prepareTmpTransaction(file); \
@@ -757,6 +718,66 @@ namespace lgfx
     LGFX_FUNCTION_GENERATOR(drawQoi, draw_qoi)
 
   #undef LGFX_FUNCTION_GENERATOR
+
+  private:
+
+    template<typename T, typename Tfs>
+    void init_font_file(Tfs &fs)
+    {
+      this->unloadFont();
+      if (this->_font_file != nullptr)
+      {
+        delete this->_font_file;
+      }
+      auto wrapper = new T(fs);
+      this->_font_file = wrapper;
+    }
+
+    template<typename T>
+    void init_font_file(void)
+    {
+      this->unloadFont();
+      if (this->_font_file != nullptr)
+      {
+        delete this->_font_file;
+      }
+      auto wrapper = new T();
+      this->_font_file = wrapper;
+    }
+
+    bool load_font_with_path(const char *path)
+    {
+      this->unloadFont();
+
+      if (this->_font_file == nullptr) return false;
+      //if (this->_font_file == nullptr) { init_font_file<FileWrapper>(SD); }
+
+      this->prepareTmpTransaction(this->_font_file);
+      this->_font_file->preRead();
+
+      bool result = this->_font_file->open(path);
+      if (!result)
+      {
+        size_t alloclen = strlen(path) + 8;
+        auto filename = (char*)alloca(alloclen);
+        memset(filename, 0, alloclen);
+        filename[0] = '/';
+
+        strcpy(&filename[1], &path[(path[0] == '/') ? 1 : 0]);
+        int len = strlen(filename);
+        if (memcmp(&filename[len - 4], ".vlw", 4))
+        {
+          strcpy(&filename[len], ".vlw");
+        }
+        result = this->_font_file->open(filename);
+      }
+
+      if (result) {
+        result = this->load_font(this->_font_file);
+      }
+      this->_font_file->postRead();
+      return result;
+    }
   };
 
 //----------------------------------------------------------------------------

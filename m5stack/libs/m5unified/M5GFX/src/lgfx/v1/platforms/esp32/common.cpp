@@ -43,19 +43,34 @@ Contributors:
  #include <driver/periph_ctrl.h>
 #endif
 
+#if __has_include(<esp_arduino_version.h>)
+ #include <esp_arduino_version.h>
+#endif
+
 #if defined (ESP_IDF_VERSION_VAL)
  #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(3, 4, 0)
 
-// include <esp_efuse.h> でエラーが出るバージョンが存在するため、エラー回避用の記述を行ってからincludeする。; 
-  #define _ROM_SECURE_BOOT_H_
-  #define MAX_KEY_DIGESTS 3
-  struct ets_secure_boot_key_digests
-  {
-    const void *key_digests[MAX_KEY_DIGESTS];
-    bool allow_key_revoke;
-  };
-  typedef struct ets_secure_boot_key_digests ets_secure_boot_key_digests_t;
+  #if defined (ESP_ARDUINO_VERSION_VAL)
+   #if ESP_ARDUINO_VERSION < ESP_ARDUINO_VERSION_VAL(2, 0, 3)
+     #define LGFX_EFUSE_WORKAROUND
+   #endif
+  #else
+   #if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(4, 4, 0)
+    #define LGFX_EFUSE_WORKAROUND
+   #endif
+  #endif
 
+  #if defined ( LGFX_EFUSE_WORKAROUND )
+// include <esp_efuse.h> でエラーが出るバージョンが存在するため、エラー回避用の記述を行ってからincludeする。; 
+   #define _ROM_SECURE_BOOT_H_
+   #define MAX_KEY_DIGESTS 3
+   struct ets_secure_boot_key_digests
+   {
+     const void *key_digests[MAX_KEY_DIGESTS];
+     bool allow_key_revoke;
+   };
+   typedef struct ets_secure_boot_key_digests ets_secure_boot_key_digests_t;
+  #endif
   #include <esp_efuse.h>
   #define USE_ESP_EFUSE_GET_PKG_VER
  #endif
@@ -349,7 +364,10 @@ namespace lgfx
       *reg(SPI_MISC_REG( spi_port)) = pin;
 #endif
       *reg(SPI_CLOCK_REG(spi_port)) = clkdiv;
-      //gpio_lo(spi_cs);
+
+#if defined ( SPI_UPDATE )
+      *reg(SPI_CMD_REG(spi_port)) |= SPI_UPDATE;
+#endif
     }
 
     void endTransaction(int spi_host)
@@ -380,10 +398,10 @@ namespace lgfx
       uint32_t spi_port = (spi_host + 1);
       (void)spi_port;
       if (len > 64) len = 64;
-      memcpy(reinterpret_cast<void*>(SPI_W0_REG(spi_port)), data, len);
+      memcpy(reinterpret_cast<void*>(SPI_W0_REG(spi_port)), data, (len + 3) & ~3);
       *reg(SPI_MOSI_DLEN_REG(spi_port)) = (len << 3) - 1;
-      *reg(SPI_CMD_REG(      spi_port)) = SPI_USR;
-      while (*reg(SPI_CMD_REG(spi_port)) & SPI_EXECUTE);
+      *reg(SPI_CMD_REG(      spi_port)) = SPI_EXECUTE;
+      while (*reg(SPI_CMD_REG(spi_port)) & SPI_USR);
     }
 
     void readBytes(int spi_host, uint8_t* data, size_t len)
@@ -391,10 +409,10 @@ namespace lgfx
       uint32_t spi_port = (spi_host + 1);
       (void)spi_port;
       if (len > 64) len = 64;
-      memcpy(reinterpret_cast<void*>(SPI_W0_REG(spi_port)), data, len);
+      memcpy(reinterpret_cast<void*>(SPI_W0_REG(spi_port)), data, (len + 3) & ~3);
       *reg(SPI_MOSI_DLEN_REG(spi_port)) = (len << 3) - 1;
-      *reg(SPI_CMD_REG(      spi_port)) = SPI_USR;
-      while (*reg(SPI_CMD_REG(spi_port)) & SPI_EXECUTE);
+      *reg(SPI_CMD_REG(      spi_port)) = SPI_EXECUTE;
+      while (*reg(SPI_CMD_REG(spi_port)) & SPI_USR);
 
       memcpy(data, reinterpret_cast<const void*>(SPI_W0_REG(spi_port)), len);
     }
