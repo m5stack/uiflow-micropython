@@ -45,7 +45,6 @@ set(MICROPY_SOURCE_DRIVERS
 
 set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/main.c
-    ${PROJECT_DIR}/esp32_nvs.c
     ${PROJECT_DIR}/../micropython/ports/esp32/uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb_serial_jtag.c
@@ -63,15 +62,16 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_dac.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2c.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_pwm.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modnetwork.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_ppp.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpnimbleport.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modsocket.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp.c
+    ${PROJECT_DIR}/esp32_nvs.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_partition.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c
