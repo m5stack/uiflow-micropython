@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+# text scroll
 import m5
 import time
 
