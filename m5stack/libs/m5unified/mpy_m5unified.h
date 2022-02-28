@@ -3,6 +3,8 @@
 #include <py/runtime.h>
 #include <py/objstr.h>
 #include <py/objmodule.h>
+#include <py/stream.h>
+#include <py/builtin.h>
 #include "mpy_m5gfx.h"
 #include "mpy_m5btn.h"
 

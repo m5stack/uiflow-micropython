@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+# draw moving circle with circle id
 import m5
 from m5 import lcd
 import random
@@ -38,30 +40,29 @@ for i in range(0, 100):
     )
 
 
-def run():
-    while True:
-        for ball in balls:
-            ball.x += ball.dx
-            ball.y += ball.dy
+while True:
+    for ball in balls:
+        ball.x += ball.dx
+        ball.y += ball.dy
 
-            xmax = WIDTH - ball.r
-            xmin = ball.r
-            ymax = HEIGHT - ball.r
-            ymin = ball.r
+        xmax = WIDTH - ball.r
+        xmin = ball.r
+        ymax = HEIGHT - ball.r
+        ymin = ball.r
 
-            if ball.x <= xmin or ball.x >= xmax:
-                ball.dx *= -1
+        if ball.x <= xmin or ball.x >= xmax:
+            ball.dx *= -1
 
-            if ball.y <= ymin or ball.y >= ymax:
-                ball.dy *= -1
+        if ball.y <= ymin or ball.y >= ymax:
+            ball.dy *= -1
 
-            canvas.drawCircle(ball.x, ball.y, ball.r, ball.color)
-            canvas.setCursor(ball.x - 4, ball.y - 4)
-            canvas.print(str(ball.index), ball.color)
+        canvas.drawCircle(ball.x, ball.y, ball.r, ball.color)
+        canvas.setCursor(ball.x - 4, ball.y - 4)
+        canvas.print(str(ball.index), ball.color)
 
-        canvas.push(0, 0)
+    canvas.push(0, 0)
 
-        for ball in balls:
-            canvas.drawCircle(ball.x, ball.y, ball.r, lcd.BLACK)
-            canvas.setCursor(ball.x - 4, ball.y - 4)
-            canvas.print(str(ball.index), lcd.BLACK)
+    for ball in balls:
+        canvas.drawCircle(ball.x, ball.y, ball.r, lcd.BLACK)
+        canvas.setCursor(ball.x - 4, ball.y - 4)
+        canvas.print(str(ball.index), lcd.BLACK)
