@@ -11,6 +11,11 @@
 #define MAKE_TABLE(prefix, func) \
     { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
 
+// stream function
+extern mp_uint_t gfx_read(mp_obj_t self_in, void *buf, mp_uint_t size, int *errcode);
+extern mp_uint_t gfx_write(mp_obj_t self_in, const void *buf, mp_uint_t size, int *errcode);
+extern mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode);
+
 // -------- GFX common wrapper
 MAKE_METHOD_0(gfx, width);
 MAKE_METHOD_0(gfx, height);
@@ -110,11 +115,23 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
     MAKE_TABLE(gfx, endWrite),
+    // stream function
+    { MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&mp_stream_read_obj) },
+    { MP_ROM_QSTR(MP_QSTR_write), MP_ROM_PTR(&mp_stream_write_obj) },
+    { MP_ROM_QSTR(MP_QSTR_close), MP_ROM_PTR(&mp_stream_close_obj) },
 };
 STATIC MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
 
+// stream function
+STATIC const mp_stream_p_t gfx_stream_p = {
+    .read = gfx_read,
+    .write = gfx_write,
+    .ioctl = gfx_ioctl,
+};
+
 const mp_obj_type_t gfxdevice_type = {
     { &mp_type_type },
+    .protocol = &gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
 
@@ -132,6 +149,7 @@ STATIC MP_DEFINE_CONST_DICT(gfxcanvas_member, gfxcanvas_member_table);
 const mp_obj_type_t gfxcanvas_type = {
     { &mp_type_type },
     .flags = MP_TYPE_FLAG_IS_SUBCLASSED,
+    .protocol = &gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxcanvas_member,
 };
 

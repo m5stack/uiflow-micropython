@@ -3,6 +3,8 @@
 #include <py/runtime.h>
 #include <py/objstr.h>
 #include <py/objmodule.h>
+#include <py/stream.h>
+#include <py/builtin.h>
 
 typedef struct _gfx_obj_t {
     mp_obj_base_t base;
