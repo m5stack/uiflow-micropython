@@ -3,8 +3,16 @@
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
 
 # Select the board to build for, defaulting to GENERIC.
-BOARD ?= M5STACK_4MB
+BOARD ?= M5STACK_C3
+
+# esp32c3's bootloader is different with esp32
+ifeq (C3, $(findstring C3,${BOARD}))
+CHIP ?= esp32c3
+BOOTLOADR_OFFSET ?= 0x0
+else
 CHIP ?= esp32
+BOOTLOADR_OFFSET ?= 0x1000
+endif
 
 # If the build directory is not given, make it reflect the board name.
 BUILD ?= build-$(BOARD)
@@ -22,7 +30,7 @@ GIT_SUBMODULES = lib/berkeley-db-1.xx
 
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-USER_C_MODULES = $(MAKEFILE_DIR)/cmodules/cmodules.cmake
+USER_C_MODULES = $(MAKEFILE_DIR)cmodules/cmodules.cmake
 
 CMAKE_ARGS =
 
@@ -46,7 +54,8 @@ all: build fs nvs
 		$(BUILD)/nvs.bin \
 		$(BUILD)/micropython.bin \
 		$(BUILD)/fs.bin \
-		$(BUILD)/uiflow-$(GIT_VERSION).bin
+		$(BUILD)/uiflow-$(GIT_VERSION).bin \
+		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 
 $(BUILD)/bootloader/bootloader.bin $(BUILD)/partition_table/partition-table.bin $(BUILD)/micropython.bin: FORCE
 
@@ -66,7 +75,7 @@ erase:
 	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) erase_flash
 
 flash: all
-	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash 0x1000 $(BUILD)/uiflow-$(GIT_VERSION).bin
+	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 fs: build
 	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/linux/littlefs2 ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin

@@ -178,15 +178,34 @@ set(APPEND_M5UNIFIED_LIB_INC
 file(GLOB APPEND_LIBFFI_LIB_SRCS
     ${CMAKE_SOURCE_DIR}/libs/libffi/src/prep_cif.c
     ${CMAKE_SOURCE_DIR}/libs/libffi/src/types.c
-    ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/ffi.c
-    ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/sysv.S
 )
+# different architecture
+if(IDF_TARGET STREQUAL "esp32")
+    list(APPEND APPEND_LIBFFI_LIB_SRCS
+        ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/ffi.c
+        ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/sysv.S
+    )
+elseif(IDF_TARGET STREQUAL "esp32c3")
+    list(APPEND APPEND_LIBFFI_LIB_SRCS
+        ${CMAKE_SOURCE_DIR}/libs/libffi/src/riscv/ffi.cpp
+        ${CMAKE_SOURCE_DIR}/libs/libffi/src/riscv/sysv.S
+    )
+endif()
 
 # libffi include
 set(APPEND_LIBFFI_LIB_INC
     ${CMAKE_SOURCE_DIR}/libs/libffi/include
-    ${CMAKE_SOURCE_DIR}/libs/libffi/include/xtensa
 )
+# different architecture
+if(IDF_TARGET STREQUAL "esp32")
+    list(APPEND APPEND_LIBFFI_LIB_INC
+        ${CMAKE_SOURCE_DIR}/libs/libffi/include/xtensa
+    )
+elseif(IDF_TARGET STREQUAL "esp32c3")
+    list(APPEND APPEND_LIBFFI_LIB_INC
+        ${CMAKE_SOURCE_DIR}/libs/libffi/include/riscv
+    )
+endif()
 
 # Register the libs sources
 set(APPEND_LIBS_SRCS
