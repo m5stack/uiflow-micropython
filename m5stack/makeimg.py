@@ -1,5 +1,6 @@
 # Combine bootloader, partition table and application into a final binary.
 
+from datetime import date
 import os, sys
 
 sys.path.append(os.getenv("IDF_PATH") + "/components/partition_table")
@@ -34,8 +35,8 @@ def load_sdkconfig_spiram_value(filename):
         for line in f:
             if line.startswith(value):
                 if line.split("=", 1)[1][0] == "y":
-                    return "SPIRAM"
-    return "NOSPIRAM"
+                    return "SPIRAM-"
+    return ""
 
 
 def load_sdkconfig_flash_size_value(filename):
@@ -115,12 +116,6 @@ files_in = [
 
 file_out = arg_output_bin
 
-release_file_out = "{}-{}-{}.bin".format(
-    arg_output_bin.split(".")[0],
-    load_sdkconfig_spiram_value(arg_sdkconfig),
-    load_sdkconfig_flash_size_value(arg_sdkconfig),
-)
-
 # Write output file with combined firmware.
 cur_offset = offset_bootloader
 with open(file_out, "wb") as fout:
@@ -162,4 +157,20 @@ if idf_target in ("ESP32S2", "ESP32S3"):
     with open(arg_application_bin, "rb") as fin, open(arg_output_uf2, "wb") as fout:
         fout.write(uf2conv.convert_to_uf2(fin.read()))
 
+# uiflow-[git describe]-[target]-<feature_str->[flash size]-[date]
+today = date.today()
+feature_str = ""
+if idf_target == "ESP32C3":
+    if load_sdkconfig_str_value(arg_sdkconfig, "ESP_CONSOLE_USB_SERIAL_JTAG", "").upper() == "Y":
+        feature_str = "usb-"
+else:
+    feature_str = load_sdkconfig_spiram_value(arg_sdkconfig).lower()
+
+release_file_out = "{}-{}-{}{}-{}.bin".format(
+    file_out.split(".bin")[0],
+    idf_target.lower(),
+    feature_str.lower(),
+    load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
+    today.strftime("%Y%m%d"),
+)
 os.system("cp {} {}".format(file_out, release_file_out))

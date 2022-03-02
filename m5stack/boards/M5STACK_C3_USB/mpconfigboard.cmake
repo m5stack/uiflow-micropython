@@ -4,7 +4,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
     ./boards/sdkconfig.flash_4mb
     ./boards/sdkconfig.ble
-    ./boards/M5STACK_C3_USB/sdkconfig.board
+    ./boards/M5STACK_C3_USB/sdkconfig.usb
 )
 
 if(NOT MICROPY_FROZEN_MANIFEST)
