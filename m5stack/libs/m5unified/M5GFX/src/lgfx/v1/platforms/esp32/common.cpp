@@ -134,12 +134,7 @@ namespace lgfx
   {
     if (pin < 0) return;
 
-#if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
-    if (pin < 6 || pin > 11)
-#endif
-    {
-      gpio_set_direction((gpio_num_t)pin, GPIO_MODE_DISABLE);
-    }
+    gpio_set_direction((gpio_num_t)pin, GPIO_MODE_DISABLE);
 #if defined (ARDUINO)
     int m;
     switch (mode)
