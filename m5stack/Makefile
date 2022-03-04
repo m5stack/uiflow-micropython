@@ -3,7 +3,7 @@
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
 
 # Select the board to build for, defaulting to GENERIC.
-BOARD ?= M5STACK_C3
+BOARD ?= M5STACK_4MB
 
 # esp32c3's bootloader is different with esp32
 ifeq (C3, $(findstring C3,${BOARD}))
