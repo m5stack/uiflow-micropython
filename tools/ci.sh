@@ -95,12 +95,13 @@ function ci_esp32_build {
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack submodules
-    make ${MAKEOPTS} -C m5stack
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB
     
-    # NOT SUPPORTED FOR NOW
-    # if [ -d $IDF_PATH/components/esp32c3 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_C3
-    # fi
+    if [ -d $IDF_PATH/components/esp32c3 ]; then
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3_USB
+    fi
     # if [ -d $IDF_PATH/components/esp32s2 ]; then
     #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S2
     # fi

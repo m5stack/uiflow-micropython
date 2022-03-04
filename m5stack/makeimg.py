@@ -1,5 +1,6 @@
 # Combine bootloader, partition table and application into a final binary.
 
+from datetime import date
 import os, sys
 
 sys.path.append(os.getenv("IDF_PATH") + "/components/partition_table")
@@ -8,6 +9,15 @@ import gen_esp32part
 
 OFFSET_BOOTLOADER_DEFAULT = 0x1000
 OFFSET_PARTITIONS_DEFAULT = 0x8000
+
+
+def load_sdkconfig_value(filename, value, default):
+    value = "CONFIG_" + value + "="
+    with open(filename, "r") as f:
+        for line in f:
+            if line.startswith(value):
+                return line.split("=", 1)[1]
+    return
 
 
 def load_sdkconfig_hex_value(filename, value, default):
@@ -25,8 +35,8 @@ def load_sdkconfig_spiram_value(filename):
         for line in f:
             if line.startswith(value):
                 if line.split("=", 1)[1][0] == "y":
-                    return "SPIRAM"
-    return "NOSPIRAM"
+                    return "SPIRAM-"
+    return ""
 
 
 def load_sdkconfig_flash_size_value(filename):
@@ -36,6 +46,13 @@ def load_sdkconfig_flash_size_value(filename):
             if line.startswith(value):
                 return str(line.split("_")[-1].split("=", 1)[1][1:-2])
     return "4MB"
+
+
+def load_sdkconfig_str_value(filename, value, default):
+    value = load_sdkconfig_value(filename, value, None)
+    if value is None:
+        return default
+    return value.strip().strip('"')
 
 
 def load_partition_table(filename):
@@ -51,8 +68,10 @@ arg_nvs_bin = sys.argv[4]
 arg_application_bin = sys.argv[5]
 arg_filesystem_bin = sys.argv[6]
 arg_output_bin = sys.argv[7]
+arg_output_uf2 = sys.argv[8]
 
 # Load required sdkconfig values.
+idf_target = load_sdkconfig_str_value(arg_sdkconfig, "IDF_TARGET", "").upper()
 offset_bootloader = load_sdkconfig_hex_value(
     arg_sdkconfig, "BOOTLOADER_OFFSET_IN_FLASH", OFFSET_BOOTLOADER_DEFAULT
 )
@@ -97,12 +116,6 @@ files_in = [
 
 file_out = arg_output_bin
 
-release_file_out = "{}-{}-{}.bin".format(
-    arg_output_bin.split(".")[0],
-    load_sdkconfig_spiram_value(arg_sdkconfig),
-    load_sdkconfig_flash_size_value(arg_sdkconfig),
-)
-
 # Write output file with combined firmware.
 cur_offset = offset_bootloader
 with open(file_out, "wb") as fout:
@@ -126,11 +139,38 @@ with open(file_out, "wb") as fout:
                 sys.exit(1)
     print("%-23s% 8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
-        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x1000.\r\n"
+        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n"
         "Example command:\r\n"
         "    1. make flash\r\n"
-        "    2. esptool.py --chip esp32 --port /dev/ttyUSBx --baud 1500000 write_flash 0x1000 %s"
-        % (cur_offset, file_out, file_out)
+        "    2. esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
+        % (cur_offset, file_out, offset_bootloader, idf_target, offset_bootloader, file_out)
     )
 
+# Generate .uf2 file if the SoC has native USB.
+if idf_target in ("ESP32S2", "ESP32S3"):
+    sys.path.append(os.path.join(os.path.dirname(__file__), "../../tools"))
+    import uf2conv
+
+    families = uf2conv.load_families()
+    uf2conv.appstartaddr = 0
+    uf2conv.familyid = families[idf_target]
+    with open(arg_application_bin, "rb") as fin, open(arg_output_uf2, "wb") as fout:
+        fout.write(uf2conv.convert_to_uf2(fin.read()))
+
+# uiflow-[git describe]-[target]-<feature_str->[flash size]-[date]
+today = date.today()
+feature_str = ""
+if idf_target == "ESP32C3":
+    if load_sdkconfig_str_value(arg_sdkconfig, "ESP_CONSOLE_USB_SERIAL_JTAG", "").upper() == "Y":
+        feature_str = "usb-"
+else:
+    feature_str = load_sdkconfig_spiram_value(arg_sdkconfig).lower()
+
+release_file_out = "{}-{}-{}{}-{}.bin".format(
+    file_out.split(".bin")[0],
+    idf_target.lower(),
+    feature_str.lower(),
+    load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
+    today.strftime("%Y%m%d"),
+)
 os.system("cp {} {}".format(file_out, release_file_out))

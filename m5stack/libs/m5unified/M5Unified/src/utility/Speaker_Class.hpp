@@ -25,7 +25,7 @@ namespace m5
     int pin_ws = I2S_PIN_NO_CHANGE;
 
     /// output sampling rate (Hz)
-    uint32_t sample_rate = 48000;
+    uint32_t sample_rate = 64000;
 
     /// use stereo output
     bool stereo = false;
@@ -122,12 +122,12 @@ namespace m5
     /// @param duration tone duration (msec)
     /// @param channel virtual channel number. (0~7), (default = automatically selected)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
-    /// @param wav_data Single amplitude audio data. 8bit unsigned wav.
-    /// @param array_len size of wav_data.
+    /// @param raw_data Single amplitude audio data. 8bit unsigned wav.
+    /// @param array_len size of raw_data.
     /// @param stereo true=data is stereo / false=data is mono.
-    bool tone(float frequency, uint32_t duration, int channel, bool stop_current_sound, const uint8_t* wav_data, size_t array_len, bool stereo = false)
+    bool tone(float frequency, uint32_t duration, int channel, bool stop_current_sound, const uint8_t* raw_data, size_t array_len, bool stereo = false)
     {
-      return _play_raw(wav_data, array_len, false, false, (int)(frequency * array_len) >> stereo, stereo, (duration != ~0u) ? (duration * frequency / 1000) : ~0u, channel, stop_current_sound, true);
+      return _play_raw(raw_data, array_len, false, false, (int)(frequency * array_len) >> stereo, stereo, (duration != ~0u) ? (duration * frequency / 1000) : ~0u, channel, stop_current_sound, true);
     }
 
     /// play simple tone sound.
@@ -137,49 +137,57 @@ namespace m5
     bool tone(float frequency, uint32_t duration = ~0u, int channel = -1, bool stop_current_sound = true) { return tone(frequency, duration, channel, stop_current_sound, _default_tone_wav, sizeof(_default_tone_wav), false); }
 
     /// play raw sound wave data. (for signed 8bit wav data)
-    /// @param wav_data wave data.
+    /// @param raw_data wave data.
     /// @param array_len Number of data array elements.
     /// @param sample_rate the sampling rate (Hz) (default = 44100)
     /// @param stereo true=data is stereo / false=data is monaural.
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
-    bool playRAW(const int8_t* wav_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    bool playRAW(const int8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
-      return _play_raw(static_cast<const void* >(wav_data), array_len, false, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+      return _play_raw(static_cast<const void* >(raw_data), array_len, false, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
     }
 
     /// play raw sound wave data. (for unsigned 8bit wav data)
-    /// @param wav_data wave data.
+    /// @param raw_data wave data.
     /// @param array_len Number of data array elements.
     /// @param sample_rate the sampling rate (Hz) (default = 44100)
     /// @param stereo true=data is stereo / false=data is monaural.
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
-    bool playRAW(const uint8_t* wav_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    bool playRAW(const uint8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
-      return _play_raw(static_cast<const void* >(wav_data), array_len, false, false, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+      return _play_raw(static_cast<const void* >(raw_data), array_len, false, false, sample_rate, stereo, repeat, channel, stop_current_sound, false);
     }
 
     /// play raw sound wave data. (for signed 16bit wav data)
-    /// @param wav_data wave data.
+    /// @param raw_data wave data.
     /// @param array_len Number of data array elements.
     /// @param sample_rate the sampling rate (Hz) (default = 44100)
     /// @param stereo true=data is stereo / false=data is monaural.
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
-    bool playRAW(const int16_t* wav_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    bool playRAW(const int16_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
-      return _play_raw(static_cast<const void* >(wav_data), array_len, true, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+      return _play_raw(static_cast<const void* >(raw_data), array_len, true, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
     }
+
+    /// play WAV format sound data.
+    /// @param wav_data wave data. (WAV header included)
+    /// @param repeat number of times played repeatedly. (default = 1)
+    /// @param channel virtual channel number (If omitted, use an available channel.)
+    /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
+    bool playWav(const uint8_t* wav_data, size_t data_len = ~0u, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false);
 
   protected:
 
     static constexpr const size_t sound_channel_max = 8;
 
-    static const uint8_t _default_tone_wav[2];
+    static const uint8_t _default_tone_wav[12];
+    static const uint8_t _sound_off_wav[1];
 
     void setCallback(void* args, bool(*func)(void*, bool)) { _cb_set_enabled = func; _cb_set_enabled_args = args; }
 
@@ -208,9 +216,12 @@ namespace m5
     {
       wav_info_t wavinfo[2]; // current/next flip info.
       size_t index = 0;
-      size_t diff = 0;
+      int diff = 0;
       volatile uint8_t volume = 64; // channel volume (not master volume)
       volatile bool flip = false;
+
+      bool liner_flip = false;
+      float liner_buf[2][2] = { { 0, 0 }, { 0, 0 } };
     };
 
     channel_info_t _ch_info[sound_channel_max];

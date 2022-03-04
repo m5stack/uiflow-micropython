@@ -7,7 +7,7 @@ set(MICROPY_PORT_DIR ${CMAKE_SOURCE_DIR}/../micropython/ports/esp32)
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
-    set(MICROPY_BOARD m5stack)
+    set(MICROPY_BOARD M5STACK_4MB)
 endif()
 
 # Set the board directory and check that it exists.
