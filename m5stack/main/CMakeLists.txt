@@ -121,6 +121,8 @@ set(IDF_COMPONENTS
     ulp
     vfs
     xtensa
+    libffi
+    M5Unified
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)
@@ -151,75 +153,6 @@ elseif(IDF_TARGET STREQUAL "esp32s3")
     list(APPEND IDF_COMPONENTS tinyusb)
 endif()
 
-# M5Unified & M5GFX sources
-file(GLOB APPEND_M5UNIFIED_LIB_SRCS
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/Fonts/efont/*.c
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/Fonts/IPA/*.c
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/utility/*.c
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/misc/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/panel/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/platforms/esp32/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/platforms/esp32c3/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src/lgfx/v1/touch/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5Unified/src/*.cpp
-     ${CMAKE_SOURCE_DIR}/libs/m5unified/M5Unified/src/utility/*.cpp
-)
-
-# M5Unified & M5GFX include
-set(APPEND_M5UNIFIED_LIB_INC
-   ${CMAKE_SOURCE_DIR}/libs/m5unified
-   ${CMAKE_SOURCE_DIR}/libs/m5unified/M5GFX/src
-   ${CMAKE_SOURCE_DIR}/libs/m5unified/M5Unified/src
-)
-
-# libffi sources
-file(GLOB APPEND_LIBFFI_LIB_SRCS
-    ${CMAKE_SOURCE_DIR}/libs/libffi/src/prep_cif.c
-    ${CMAKE_SOURCE_DIR}/libs/libffi/src/types.c
-)
-# different architecture
-if(IDF_TARGET STREQUAL "esp32")
-    list(APPEND APPEND_LIBFFI_LIB_SRCS
-        ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/ffi.c
-        ${CMAKE_SOURCE_DIR}/libs/libffi/src/xtensa/sysv.S
-    )
-elseif(IDF_TARGET STREQUAL "esp32c3")
-    list(APPEND APPEND_LIBFFI_LIB_SRCS
-        ${CMAKE_SOURCE_DIR}/libs/libffi/src/riscv/ffi.cpp
-        ${CMAKE_SOURCE_DIR}/libs/libffi/src/riscv/sysv.S
-    )
-endif()
-
-# libffi include
-set(APPEND_LIBFFI_LIB_INC
-    ${CMAKE_SOURCE_DIR}/libs/libffi/include
-)
-# different architecture
-if(IDF_TARGET STREQUAL "esp32")
-    list(APPEND APPEND_LIBFFI_LIB_INC
-        ${CMAKE_SOURCE_DIR}/libs/libffi/include/xtensa
-    )
-elseif(IDF_TARGET STREQUAL "esp32c3")
-    list(APPEND APPEND_LIBFFI_LIB_INC
-        ${CMAKE_SOURCE_DIR}/libs/libffi/include/riscv
-    )
-endif()
-
-# Register the libs sources
-set(APPEND_LIBS_SRCS
-    ${APPEND_M5UNIFIED_LIB_SRCS}
-    ${APPEND_LIBFFI_LIB_SRCS}
-)
-
-# Register the libs include
-set(APPEND_LIBS_INC
-    ${APPEND_M5UNIFIED_LIB_INC}
-    ${APPEND_LIBFFI_LIB_INC}
-)
-
 # Register the main IDF component.
 idf_component_register(
     SRCS
@@ -230,14 +163,12 @@ idf_component_register(
         ${MICROPY_SOURCE_DRIVERS}
         ${MICROPY_SOURCE_PORT}
         ${MICROPY_SOURCE_BOARD}
-        ${APPEND_LIBS_SRCS}
     INCLUDE_DIRS
         ${MICROPY_INC_CORE}
         ${MICROPY_INC_USERMOD}
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
-        ${APPEND_LIBS_INC}
     REQUIRES
         ${IDF_COMPONENTS}
 )
