@@ -34,11 +34,19 @@ MAKE_METHOD_V(gfx, fillScreen, 1, 2);
 MAKE_METHOD_V(gfx, drawPixel, 3, 4);
 MAKE_METHOD_V(gfx, drawCircle, 4, 5);
 MAKE_METHOD_V(gfx, fillCircle, 4, 5);
+MAKE_METHOD_V(gfx, drawEllipse, 5, 6);
+MAKE_METHOD_V(gfx, fillEllipse, 5, 6);
 MAKE_METHOD_V(gfx, drawLine, 5, 6);
 MAKE_METHOD_V(gfx, drawRect, 5, 6);
 MAKE_METHOD_V(gfx, fillRect, 5, 6);
 MAKE_METHOD_V(gfx, drawRoundRect, 6, 7);
 MAKE_METHOD_V(gfx, fillRoundRect, 6, 7);
+MAKE_METHOD_V(gfx, drawTriangle, 7, 8);
+MAKE_METHOD_V(gfx, fillTriangle, 7, 8);
+MAKE_METHOD_V(gfx, drawArc, 7, 8);
+MAKE_METHOD_V(gfx, fillArc, 7, 8);
+MAKE_METHOD_V(gfx, drawEllipseArc, 9, 10);
+MAKE_METHOD_V(gfx, fillEllipseArc, 9, 10);
 MAKE_METHOD_V(gfx, drawQR, 6, 6);
 MAKE_METHOD_V(gfx, drawJpg, 4, 4);
 MAKE_METHOD_V(gfx, drawPng, 4, 4);
@@ -49,7 +57,10 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
 
 #define TABLE_PARTS_GFX_BASE \
     MAKE_TABLE(gfx, clear), \
+    MAKE_TABLE(gfx, drawArc), \
     MAKE_TABLE(gfx, drawCircle), \
+    MAKE_TABLE(gfx, drawEllipse), \
+    MAKE_TABLE(gfx, drawEllipseArc), \
     MAKE_TABLE(gfx, drawLine), \
     MAKE_TABLE(gfx, drawPixel), \
     MAKE_TABLE(gfx, drawRect), \
@@ -59,10 +70,15 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
     MAKE_TABLE(gfx, drawPng), \
     MAKE_TABLE(gfx, drawBmp), \
     MAKE_TABLE(gfx, drawImage), \
+    MAKE_TABLE(gfx, drawTriangle), \
+    MAKE_TABLE(gfx, fillArc), \
     MAKE_TABLE(gfx, fillCircle), \
+    MAKE_TABLE(gfx, fillEllipse), \
+    MAKE_TABLE(gfx, fillEllipseArc), \
     MAKE_TABLE(gfx, fillRect), \
     MAKE_TABLE(gfx, fillRoundRect), \
     MAKE_TABLE(gfx, fillScreen), \
+    MAKE_TABLE(gfx, fillTriangle), \
     MAKE_TABLE(gfx, getColorDepth), \
     MAKE_TABLE(gfx, getCursor), \
     MAKE_TABLE(gfx, getRotation), \

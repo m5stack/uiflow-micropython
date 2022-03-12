@@ -263,6 +263,30 @@ extern "C"
     return mp_const_none;
   }
 
+  mp_obj_t gfx_drawEllipse(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 6) { gfx->setColor((uint32_t)mp_obj_get_int(args[5])); }
+    gfx->drawEllipse( mp_obj_get_int(args[1])
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3])
+                    , mp_obj_get_int(args[4])
+                    );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_fillEllipse(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 6) { gfx->setColor((uint32_t)mp_obj_get_int(args[5])); }
+    gfx->fillEllipse( mp_obj_get_int(args[1])
+                    , mp_obj_get_int(args[2])
+                    , mp_obj_get_int(args[3])
+                    , mp_obj_get_int(args[4])
+                    );
+    return mp_const_none;
+  }
+
   mp_obj_t gfx_drawRoundRect(size_t n_args, const mp_obj_t *args)
   {
     auto gfx = getGfx(args);
@@ -286,6 +310,94 @@ extern "C"
                       , mp_obj_get_int(args[4])
                       , mp_obj_get_int(args[5])
                       );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawTriangle(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 8) { gfx->setColor((uint32_t)mp_obj_get_int(args[7])); }
+    gfx->drawTriangle( mp_obj_get_int(args[1])
+                     , mp_obj_get_int(args[2])
+                     , mp_obj_get_int(args[3])
+                     , mp_obj_get_int(args[4])
+                     , mp_obj_get_int(args[5])
+                     , mp_obj_get_int(args[6])
+                     );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_fillTriangle(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 8) { gfx->setColor((uint32_t)mp_obj_get_int(args[7])); }
+    gfx->fillTriangle( mp_obj_get_int(args[1])
+                     , mp_obj_get_int(args[2])
+                     , mp_obj_get_int(args[3])
+                     , mp_obj_get_int(args[4])
+                     , mp_obj_get_int(args[5])
+                     , mp_obj_get_int(args[6])
+                     );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawArc(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 8) { gfx->setColor((uint32_t)mp_obj_get_int(args[7])); }
+    gfx->drawArc( mp_obj_get_int(args[1])
+                , mp_obj_get_int(args[2])
+                , mp_obj_get_int(args[3])
+                , mp_obj_get_int(args[4])
+                , mp_obj_get_float(args[5])
+                , mp_obj_get_float(args[6])
+                );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_fillArc(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 8) { gfx->setColor((uint32_t)mp_obj_get_int(args[7])); }
+    gfx->fillArc( mp_obj_get_int(args[1])
+                , mp_obj_get_int(args[2])
+                , mp_obj_get_int(args[3])
+                , mp_obj_get_int(args[4])
+                , mp_obj_get_float(args[5])
+                , mp_obj_get_float(args[6])
+                );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_drawEllipseArc(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 10) { gfx->setColor((uint32_t)mp_obj_get_int(args[9])); }
+    gfx->drawEllipseArc( mp_obj_get_int(args[1])
+                       , mp_obj_get_int(args[2])
+                       , mp_obj_get_int(args[3])
+                       , mp_obj_get_int(args[4])
+                       , mp_obj_get_int(args[5])
+                       , mp_obj_get_int(args[6])
+                       , mp_obj_get_float(args[7])
+                       , mp_obj_get_float(args[8])
+                       );
+    return mp_const_none;
+  }
+
+  mp_obj_t gfx_fillEllipseArc(size_t n_args, const mp_obj_t *args)
+  {
+    auto gfx = getGfx(args);
+    if (n_args >= 10) { gfx->setColor((uint32_t)mp_obj_get_int(args[9])); }
+    gfx->fillEllipseArc( mp_obj_get_int(args[1])
+                       , mp_obj_get_int(args[2])
+                       , mp_obj_get_int(args[3])
+                       , mp_obj_get_int(args[4])
+                       , mp_obj_get_int(args[5])
+                       , mp_obj_get_int(args[6])
+                       , mp_obj_get_float(args[7])
+                       , mp_obj_get_float(args[8])
+                       );
     return mp_const_none;
   }
 

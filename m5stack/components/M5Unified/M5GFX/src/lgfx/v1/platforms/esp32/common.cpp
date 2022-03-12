@@ -595,6 +595,7 @@ namespace lgfx
       gpio_num_t scl_io = i2c_context[i2c_port].pin_scl;
       gpio_set_level(scl_io, 1);
       gpio_set_direction(scl_io, GPIO_MODE_OUTPUT_OD);
+      ets_delay_us(I2C_CLR_BUS_HALF_PERIOD_US);
 
       auto mod = getPeriphModule(i2c_port);
       // ESP-IDF環境でperiph_module_disableを使うと、後でenableできなくなる問題が起きたためコメントアウト;
@@ -653,8 +654,8 @@ namespace lgfx
 #endif
           do
           {
-            vTaskDelay(0);
-            auto us = lgfx::micros() - start_us;
+            taskYIELD();
+            us = lgfx::micros() - start_us;
             int_raw.val = dev->int_raw.val;
           } while (!(int_raw.val & intmask) && (us <= us_limit));
         }
@@ -1006,7 +1007,7 @@ namespace lgfx
         dev->int_clr.val = intmask;
         updateDev(dev);
         dev->ctr.trans_start = 1;
-        vTaskDelay(0);
+        taskYIELD();
         do
         {
           uint32_t us = lgfx::micros();

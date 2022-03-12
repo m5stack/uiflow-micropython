@@ -268,6 +268,10 @@ namespace m5
     {
       M5.Power.setLed(_cfg.led_brightness);
     }
+    if (Power.getType() == Power_Class::pmic_t::pmic_axp192)
+    { /// Slightly lengthen the acceptance time of the AXP192 power button multiclick.
+      BtnPWR.setHoldThresh(BtnPWR.getHoldThresh() * 1.2);
+    }
 
     if (_cfg.clear_display)
     {
@@ -601,9 +605,13 @@ namespace m5
     if (Power.Axp192.isEnabled())
     {
       auto tmp = Power.Axp192.getPekPress();
-      if (tmp == 1) { tmp = 2; }
-      else if (tmp == 2) { tmp = 1; }
-      BtnPWR.setState(ms, tmp);
+      static constexpr const Button_Class::button_state_t
+        state_tbl[] = { Button_Class::button_state_t::state_nochange
+                      , Button_Class::button_state_t::state_hold
+                      , Button_Class::button_state_t::state_clicked
+                      , Button_Class::button_state_t::state_nochange
+                      };
+      BtnPWR.setState(ms, state_tbl[tmp]);
     }
 
 #elif defined (CONFIG_IDF_TARGET_ESP32C3)
