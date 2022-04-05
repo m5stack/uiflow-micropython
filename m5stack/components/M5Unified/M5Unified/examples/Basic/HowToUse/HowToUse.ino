@@ -80,7 +80,7 @@ void setup(void)
     while (M5.Speaker.isPlaying()) { vTaskDelay(1); }
 
 
-    M5.Speaker.playRAW(wav_8bit_44100, sizeof(wav_8bit_44100), 44100, false);
+    M5.Speaker.playRaw(wav_8bit_44100, sizeof(wav_8bit_44100), 44100, false);
   }
 
   if (M5.Rtc.isEnabled())
@@ -228,7 +228,7 @@ void loop(void)
             : 0;
   if (state)
   {
-    M5.Speaker.tone(391.995, 100);
+    M5.Speaker.tone(783.991, 100);
     ESP_LOGI("loop", "BtnPWR:%s  count:%d", names[state], M5.BtnPWR.getClickCount());
     if (!M5.Display.displayBusy())
     {
@@ -247,7 +247,7 @@ void loop(void)
         : 0;
   if (state)
   {
-    M5.Speaker.tone(261.626, 100);
+    M5.Speaker.tone(523.251, 100);
     ESP_LOGI("loop", "BtnA:%s  count:%d", names[state], M5.BtnA.getClickCount());
     if (!M5.Display.displayBusy())
     {
@@ -265,7 +265,7 @@ void loop(void)
         : 0;
   if (state)
   {
-    M5.Speaker.tone(293.665, 100);
+    M5.Speaker.tone(587.330, 100);
     ESP_LOGI("loop", "BtnB:%s  count:%d", names[state], M5.BtnB.getClickCount());
     if (!M5.Display.displayBusy())
     {
@@ -283,7 +283,7 @@ void loop(void)
         : 0;
   if (state)
   {
-    M5.Speaker.tone(329.628, 100);
+    M5.Speaker.tone(659.255, 100);
     ESP_LOGI("loop", "BtnC:%s", names[state]);
     if (!M5.Display.displayBusy())
     {
@@ -301,7 +301,7 @@ void loop(void)
         : 0;
   if (state)
   {
-    M5.Speaker.tone(349.228, 100);
+    M5.Speaker.tone(698.456, 100);
     ESP_LOGI("loop", "BtnEXT:%s", names[state]);
     if (!M5.Display.displayBusy())
     {

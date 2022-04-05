@@ -144,6 +144,11 @@ namespace m5
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
+    bool playRaw(const int8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    {
+      return _play_raw(static_cast<const void* >(raw_data), array_len, false, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+    }
+    [[deprecated("The playRAW function has been renamed to playRaw")]]
     bool playRAW(const int8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
       return _play_raw(static_cast<const void* >(raw_data), array_len, false, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
@@ -157,6 +162,11 @@ namespace m5
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
+    bool playRaw(const uint8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    {
+      return _play_raw(static_cast<const void* >(raw_data), array_len, false, false, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+    }
+    [[deprecated("The playRAW function has been renamed to playRaw")]]
     bool playRAW(const uint8_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
       return _play_raw(static_cast<const void* >(raw_data), array_len, false, false, sample_rate, stereo, repeat, channel, stop_current_sound, false);
@@ -170,6 +180,11 @@ namespace m5
     /// @param repeat number of times played repeatedly. (default = 1)
     /// @param channel virtual channel number (If omitted, use an available channel.)
     /// @param stop_current_sound true=start a new output without waiting for the current one to finish.
+    bool playRaw(const int16_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
+    {
+      return _play_raw(static_cast<const void* >(raw_data), array_len, true, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);
+    }
+    [[deprecated("The playRAW function has been renamed to playRaw")]]
     bool playRAW(const int16_t* raw_data, size_t array_len, uint32_t sample_rate = 44100, bool stereo = false, uint32_t repeat = 1, int channel = -1, bool stop_current_sound = false)
     {
       return _play_raw(static_cast<const void* >(raw_data), array_len, true, true, sample_rate, stereo, repeat, channel, stop_current_sound, false);

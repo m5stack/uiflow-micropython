@@ -1,5 +1,5 @@
-#define M5ATOMDISPLAY_LOGICAL_WIDTH 320
-#define M5ATOMDISPLAY_LOGICAL_HEIGHT 240
+#define M5ATOMDISPLAY_LOGICAL_WIDTH 640
+#define M5ATOMDISPLAY_LOGICAL_HEIGHT 360
 #include <M5AtomDisplay.h>
 #include <M5UnitOLED.h>
 #include <M5UnitLCD.h>
@@ -14,6 +14,7 @@ extern "C"
   const btn_obj_t m5_btnC = {{&btn_type}, &(M5.BtnC) };
   const btn_obj_t m5_btnPWR = {{&btn_type}, &(M5.BtnPWR) };
   const btn_obj_t m5_btnEXT = {{&btn_type}, &(M5.BtnEXT) };
+  const spk_obj_t m5_speaker = {{&spk_type}, &(M5.Speaker) };
   const gfx_obj_t m5_display = {{&gfxdevice_type}, &(M5.Display) };
 
   mp_obj_t m5_begin(void)

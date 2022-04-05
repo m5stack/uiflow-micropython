@@ -183,6 +183,10 @@ MAKE_METHOD_1(btn, pressedFor);
 MAKE_METHOD_1(btn, releasedFor);
 MAKE_METHOD_1(btn, setDebounceThresh);
 MAKE_METHOD_1(btn, setHoldThresh);
+MAKE_METHOD_1(btn, wasSingleClicked);
+MAKE_METHOD_1(btn, wasDoubleClicked);
+MAKE_METHOD_1(btn, wasDeciedClickCount);
+MAKE_METHOD_1(btn, getClickCount);
 
 STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, isHolding),
@@ -198,6 +202,10 @@ STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, releasedFor),
     MAKE_TABLE(btn, setDebounceThresh),
     MAKE_TABLE(btn, setHoldThresh),
+    MAKE_TABLE(btn, wasSingleClicked),
+    MAKE_TABLE(btn, wasDoubleClicked),
+    MAKE_TABLE(btn, wasDeciedClickCount),
+    MAKE_TABLE(btn, getClickCount),
 };
 STATIC MP_DEFINE_CONST_DICT(btn_member, btn_member_table);
 
@@ -205,6 +213,33 @@ const mp_obj_type_t btn_type = {
     { &mp_type_type },
     .locals_dict = (mp_obj_dict_t *)&btn_member,
 };
+
+
+// -------- Speaker wrapper
+MAKE_METHOD_0(spk, getVolume);
+MAKE_METHOD_1(spk, setVolume);
+MAKE_METHOD_1(spk, setAllChannelVolume);
+MAKE_METHOD_1(spk, getChannelVolume);
+MAKE_METHOD_2(spk, setChannelVolume);
+MAKE_METHOD_V(spk, stop, 1, 2);
+MAKE_METHOD_V(spk, tone, 3, 5);
+
+STATIC const mp_rom_map_elem_t spk_member_table[] = {
+    MAKE_TABLE(spk, getVolume),
+    MAKE_TABLE(spk, setVolume),
+    MAKE_TABLE(spk, setAllChannelVolume),
+    MAKE_TABLE(spk, getChannelVolume),
+    MAKE_TABLE(spk, setChannelVolume),
+    MAKE_TABLE(spk, stop),
+    MAKE_TABLE(spk, tone),
+};
+STATIC MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
+
+const mp_obj_type_t spk_type = {
+    { &mp_type_type },
+    .locals_dict = (mp_obj_dict_t *)&spk_member,
+};
+
 
 // board type
 STATIC const mp_rom_map_elem_t board_enum_locals_dict_table[] = {
@@ -258,6 +293,7 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_btnEXT), MP_OBJ_FROM_PTR(&m5_btnEXT) },
     { MP_ROM_QSTR(MP_QSTR_display), MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_lcd), MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_speaker), MP_OBJ_FROM_PTR(&m5_speaker) },
 };
 STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, m5_globals_table);
 
