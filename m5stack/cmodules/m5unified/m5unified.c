@@ -34,11 +34,19 @@ MAKE_METHOD_V(gfx, fillScreen, 1, 2);
 MAKE_METHOD_V(gfx, drawPixel, 3, 4);
 MAKE_METHOD_V(gfx, drawCircle, 4, 5);
 MAKE_METHOD_V(gfx, fillCircle, 4, 5);
+MAKE_METHOD_V(gfx, drawEllipse, 5, 6);
+MAKE_METHOD_V(gfx, fillEllipse, 5, 6);
 MAKE_METHOD_V(gfx, drawLine, 5, 6);
 MAKE_METHOD_V(gfx, drawRect, 5, 6);
 MAKE_METHOD_V(gfx, fillRect, 5, 6);
 MAKE_METHOD_V(gfx, drawRoundRect, 6, 7);
 MAKE_METHOD_V(gfx, fillRoundRect, 6, 7);
+MAKE_METHOD_V(gfx, drawTriangle, 7, 8);
+MAKE_METHOD_V(gfx, fillTriangle, 7, 8);
+MAKE_METHOD_V(gfx, drawArc, 7, 8);
+MAKE_METHOD_V(gfx, fillArc, 7, 8);
+MAKE_METHOD_V(gfx, drawEllipseArc, 9, 10);
+MAKE_METHOD_V(gfx, fillEllipseArc, 9, 10);
 MAKE_METHOD_V(gfx, drawQR, 6, 6);
 MAKE_METHOD_V(gfx, drawJpg, 4, 4);
 MAKE_METHOD_V(gfx, drawPng, 4, 4);
@@ -49,7 +57,10 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
 
 #define TABLE_PARTS_GFX_BASE \
     MAKE_TABLE(gfx, clear), \
+    MAKE_TABLE(gfx, drawArc), \
     MAKE_TABLE(gfx, drawCircle), \
+    MAKE_TABLE(gfx, drawEllipse), \
+    MAKE_TABLE(gfx, drawEllipseArc), \
     MAKE_TABLE(gfx, drawLine), \
     MAKE_TABLE(gfx, drawPixel), \
     MAKE_TABLE(gfx, drawRect), \
@@ -59,10 +70,15 @@ MAKE_METHOD_V(gfx, newCanvas, 3, 5);
     MAKE_TABLE(gfx, drawPng), \
     MAKE_TABLE(gfx, drawBmp), \
     MAKE_TABLE(gfx, drawImage), \
+    MAKE_TABLE(gfx, drawTriangle), \
+    MAKE_TABLE(gfx, fillArc), \
     MAKE_TABLE(gfx, fillCircle), \
+    MAKE_TABLE(gfx, fillEllipse), \
+    MAKE_TABLE(gfx, fillEllipseArc), \
     MAKE_TABLE(gfx, fillRect), \
     MAKE_TABLE(gfx, fillRoundRect), \
     MAKE_TABLE(gfx, fillScreen), \
+    MAKE_TABLE(gfx, fillTriangle), \
     MAKE_TABLE(gfx, getColorDepth), \
     MAKE_TABLE(gfx, getCursor), \
     MAKE_TABLE(gfx, getRotation), \
@@ -167,6 +183,10 @@ MAKE_METHOD_1(btn, pressedFor);
 MAKE_METHOD_1(btn, releasedFor);
 MAKE_METHOD_1(btn, setDebounceThresh);
 MAKE_METHOD_1(btn, setHoldThresh);
+MAKE_METHOD_1(btn, wasSingleClicked);
+MAKE_METHOD_1(btn, wasDoubleClicked);
+MAKE_METHOD_1(btn, wasDeciedClickCount);
+MAKE_METHOD_1(btn, getClickCount);
 
 STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, isHolding),
@@ -182,6 +202,10 @@ STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, releasedFor),
     MAKE_TABLE(btn, setDebounceThresh),
     MAKE_TABLE(btn, setHoldThresh),
+    MAKE_TABLE(btn, wasSingleClicked),
+    MAKE_TABLE(btn, wasDoubleClicked),
+    MAKE_TABLE(btn, wasDeciedClickCount),
+    MAKE_TABLE(btn, getClickCount),
 };
 STATIC MP_DEFINE_CONST_DICT(btn_member, btn_member_table);
 
@@ -189,6 +213,33 @@ const mp_obj_type_t btn_type = {
     { &mp_type_type },
     .locals_dict = (mp_obj_dict_t *)&btn_member,
 };
+
+
+// -------- Speaker wrapper
+MAKE_METHOD_0(spk, getVolume);
+MAKE_METHOD_1(spk, setVolume);
+MAKE_METHOD_1(spk, setAllChannelVolume);
+MAKE_METHOD_1(spk, getChannelVolume);
+MAKE_METHOD_2(spk, setChannelVolume);
+MAKE_METHOD_V(spk, stop, 1, 2);
+MAKE_METHOD_V(spk, tone, 3, 5);
+
+STATIC const mp_rom_map_elem_t spk_member_table[] = {
+    MAKE_TABLE(spk, getVolume),
+    MAKE_TABLE(spk, setVolume),
+    MAKE_TABLE(spk, setAllChannelVolume),
+    MAKE_TABLE(spk, getChannelVolume),
+    MAKE_TABLE(spk, setChannelVolume),
+    MAKE_TABLE(spk, stop),
+    MAKE_TABLE(spk, tone),
+};
+STATIC MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
+
+const mp_obj_type_t spk_type = {
+    { &mp_type_type },
+    .locals_dict = (mp_obj_dict_t *)&spk_member,
+};
+
 
 // board type
 STATIC const mp_rom_map_elem_t board_enum_locals_dict_table[] = {
@@ -242,6 +293,7 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_btnEXT), MP_OBJ_FROM_PTR(&m5_btnEXT) },
     { MP_ROM_QSTR(MP_QSTR_display), MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_lcd), MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_speaker), MP_OBJ_FROM_PTR(&m5_speaker) },
 };
 STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, m5_globals_table);
 

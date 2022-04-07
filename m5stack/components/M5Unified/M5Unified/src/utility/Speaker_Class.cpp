@@ -41,8 +41,7 @@ namespace m5
 #define SAMPLE_RATE_TYPE int
 #endif
 
-  const uint8_t Speaker_Class::_default_tone_wav[12] = { 162, 221, 255, 255, 221, 162, 94, 35, 1, 1, 35, 94 }; // sin wave data
-  const uint8_t Speaker_Class::_sound_off_wav[1] = { 128 };
+  const uint8_t Speaker_Class::_default_tone_wav[16] = { 177, 219, 246, 255, 246, 219, 177, 128, 79, 37, 10, 1, 10, 37, 79, 128 }; // sin wave data
 
   esp_err_t Speaker_Class::_setup_i2s(void)
   {
@@ -65,7 +64,7 @@ namespace m5
     i2s_config.mode                 = (i2s_mode_t)( I2S_MODE_MASTER | I2S_MODE_TX );
     i2s_config.sample_rate          = sample_rate;
     i2s_config.bits_per_sample      = I2S_BITS_PER_SAMPLE_16BIT;
-    i2s_config.channel_format       = _cfg.stereo
+    i2s_config.channel_format       = _cfg.stereo || _cfg.buzzer
                                     ? I2S_CHANNEL_FMT_RIGHT_LEFT
                                     : I2S_CHANNEL_FMT_ONLY_RIGHT;
     i2s_config.communication_format = (i2s_comm_format_t)( COMM_FORMAT_I2S );
@@ -82,8 +81,6 @@ namespace m5
     esp_err_t err = i2s_driver_install(_cfg.i2s_port, &i2s_config, 0, nullptr);
     if (err != ESP_OK) { return err; }
 
-    i2s_zero_dma_buffer(_cfg.i2s_port);
-
 #if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
     if (_cfg.use_dac)
     {
@@ -96,7 +93,7 @@ namespace m5
       }
       err = i2s_set_dac_mode(dac_mode);
       if (_cfg.i2s_port == I2S_NUM_0)
-      { /// レジスタを操作してDACモードの設定を有効にする ;
+      { /// レジスタを操作してDACモードの設定を有効にする(I2S0のみ。I2S1はDAC,ADC非対応) ;
         I2S0.conf2.lcd_en = true;
         I2S0.conf.tx_right_first = true;
         I2S0.conf.tx_msb_shift = 0;
@@ -112,266 +109,56 @@ namespace m5
     return err;
   }
 
-  void Speaker_Class::output_task(void* args)
+  void Speaker_Class::spk_task(void* args)
   {
     auto self = (Speaker_Class*)args;
-
+    const i2s_port_t i2s_port = self->_cfg.i2s_port;
     const bool out_stereo = self->_cfg.stereo;
-    const int32_t spk_sample_rate = self->_cfg.sample_rate;
+    const int32_t spk_sample_rate = self->_cfg.sample_rate & (self->_cfg.use_dac ? ~15u : ~0u);
+    const float magnification = (float)self->_cfg.magnification / spk_sample_rate
+                              / (~0u >> ((self->_cfg.use_dac || self->_cfg.buzzer) ? 0 : 8));
     const size_t dma_buf_len = self->_cfg.dma_buf_len & ~1;
     int nodata_count = 0;
     int32_t dac_offset = self->_cfg.dac_zero_level << 8;
-    int32_t surplus[2] = { 0, 0 };
     bool flg_i2s_started = false;
-    bool in_stereo = false;
-    float ch_v = 0.0f;
-    const void* data = nullptr;
+
+    union
+    {
+      int16_t surplus16 = 0;
+      uint8_t surplus[2];
+    };
 
     union
     {
       float* float_buf;
       int16_t* sound_buf;
+      int32_t* sound_buf32;
     };
     float_buf = (float*)alloca(dma_buf_len * sizeof(float));
 
     while (self->_task_running)
     {
-      if (++nodata_count > self->_cfg.dma_buf_count * 2)
+      if (nodata_count)
       {
-        nodata_count = 0;
-        flg_i2s_started = false;
-        i2s_stop(self->_cfg.i2s_port);
-#if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
-        if (self->_cfg.use_dac)
+        if (nodata_count > self->_cfg.dma_buf_count)
         {
-          i2s_set_dac_mode(i2s_dac_mode_t::I2S_DAC_CHANNEL_DISABLE);
-        }
+          nodata_count = 0;
+          flg_i2s_started = false;
+          i2s_stop(i2s_port);
+#if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
+          if (self->_cfg.use_dac)
+          {
+            i2s_set_dac_mode(i2s_dac_mode_t::I2S_DAC_CHANNEL_DISABLE);
+          }
 #endif
-        ulTaskNotifyTake( pdTRUE, portMAX_DELAY );
-        continue;
+          ulTaskNotifyTake( pdTRUE, portMAX_DELAY );
+          continue;
+        }
+        ulTaskNotifyTake( pdTRUE, 0 );
       }
 
       memset(float_buf, 0, dma_buf_len * sizeof(float));
-
-      for (size_t ch = 0; ch < sound_channel_max; ++ch)
-      {
-        if (0 == (self->_play_channel_bits.load() & (1 << ch))) { continue; }
-        nodata_count = 0;
-
-        auto ch_info = &(self->_ch_info[ch]);
-        wav_info_t* current_wav = &(ch_info->wavinfo[!ch_info->flip]);
-        wav_info_t* next_wav = &(ch_info->wavinfo[ch_info->flip]);
-
-        size_t idx = 0;
-        int ch_diff = ch_info->diff;
-
-        if (current_wav->repeat != 0 && !next_wav->stop_current)
-        {
-          goto label_start;
-        }
-
-        do
-        {
-          if (current_wav->repeat == 0 || next_wav->stop_current)
-          {
-            {
-              bool clear_idx = (next_wav->repeat == 0
-                            || !next_wav->no_clear_index
-                            || (next_wav->data != current_wav->data));
-              current_wav->clear();
-              ch_info->flip = !ch_info->flip;
-              xSemaphoreGive(self->_task_semaphore);
-              std::swap(current_wav, next_wav);
-
-              if (clear_idx)
-              {
-                ch_info->index = 0;
-                if (current_wav->repeat == 0)
-                {
-                  if (fabsf(ch_info->liner_buf[ch_info->liner_flip][0] + ch_info->liner_buf[ch_info->liner_flip][1]) >= 1)
-                  {
-                    current_wav->data = _sound_off_wav;
-                    current_wav->length = sizeof(_sound_off_wav);
-                    current_wav->repeat = 1;
-                    current_wav->flg = 0;
-                    current_wav->sample_rate = ((spk_sample_rate - 1) >> 4) + 1;
-                  }
-                  else
-                  {
-                    self->_play_channel_bits.fetch_and(~(1 << ch));
-                    if (current_wav->repeat == 0)
-                    {
-                      ch_diff = 0;
-                      break;
-                    }
-                    self->_play_channel_bits.fetch_or(1 << ch);
-                  }
-                }
-              }
-            }
-label_start:
-            in_stereo = current_wav->is_stereo;
-            int32_t tmp = ch_info->volume;
-            tmp *= tmp;
-            if (!current_wav->is_16bit) { tmp <<= 8; }
-            if (out_stereo) { tmp <<= 1; }
-            ch_v = (float)tmp / spk_sample_rate;
-            data = current_wav->data;
-          }
-
-          if (ch_diff >= 0)
-          {
-            do
-            {
-              size_t ch_index = ch_info->index;
-              int32_t l, r;
-              if (current_wav->is_16bit)
-              {
-                auto wav = (const int16_t*)data;
-                l = wav[ch_index];
-                r = wav[ch_index += in_stereo];
-                if (!current_wav->is_signed)
-                {
-                  l = (l & 0xFFFF) + INT16_MIN;
-                  r = (r & 0xFFFF) + INT16_MIN;
-                }
-              }
-              else
-              {
-                auto wav = (const uint8_t*)data;
-                l = wav[ch_index];
-                r = wav[ch_index += in_stereo];
-                if (current_wav->is_signed)
-                {
-                  l = (int8_t)l;
-                  r = (int8_t)r;
-                }
-                else
-                {
-                  l += INT8_MIN;
-                  r += INT8_MIN;
-                }
-              }
-              bool liner_flip = !ch_info->liner_flip;
-              ch_info->liner_flip = liner_flip;
-              if (!out_stereo) { l += r; }
-              else
-              {
-                ch_info->liner_buf[liner_flip][1] = r * ch_v;
-              }
-              ch_info->liner_buf[liner_flip][0] = l * ch_v;
-
-              if (++ch_index >= current_wav->length)
-              {
-                ch_index -= current_wav->length;
-                if (current_wav->repeat && current_wav->repeat != ~0u)
-                {
-                  --current_wav->repeat;
-                }
-              }
-              ch_info->index = ch_index;
-              ch_diff -= spk_sample_rate;
-            } while (ch_diff >= 0);
-          }
-
-          const auto in_rate = current_wav->sample_rate;
-          float base_l = ch_info->liner_buf[ ch_info->liner_flip][0];
-          float next_l = base_l - ch_info->liner_buf[!ch_info->liner_flip][0];
-          base_l *= spk_sample_rate;
-          if (out_stereo)
-          {
-            float base_r = ch_info->liner_buf[ ch_info->liner_flip][1];
-            float next_r = base_r - ch_info->liner_buf[!ch_info->liner_flip][1];
-            base_r *= spk_sample_rate;
-            do
-            {
-              float_buf[  idx] += next_l * ch_diff + base_l;
-              float_buf[++idx] += next_r * ch_diff + base_r;
-              ch_diff += in_rate;
-            } while (++idx < dma_buf_len && ch_diff < 0);
-          }
-          else
-          {
-            do
-            {
-              float_buf[idx] += next_l * ch_diff + base_l;
-              ch_diff += in_rate;
-            } while (++idx < dma_buf_len && ch_diff < 0);
-          }
-        } while (idx < dma_buf_len);
-        ch_info->diff = ch_diff;
-      }
-
-      float volume = ((float)(self->_master_volume * self->_master_volume * self->_cfg.magnification)) / 0x1000000u;
-      size_t idx = 0;
-      if (self->_cfg.use_dac)
-      {
-        volume /= 256;
-        const bool zero_bias = (self->_cfg.dac_zero_level == 0);
-        if (zero_bias && nodata_count)
-        {
-          do
-          {
-            dac_offset = (dac_offset * 255) >> 8;
-            int32_t v = dac_offset + surplus[idx & out_stereo];
-            surplus[idx & out_stereo] = v & 255;
-            sound_buf[idx ^ 1] = v;
-          } while (++idx < dma_buf_len);
-        }
-        else
-        {
-          do
-          {
-            int32_t v = volume * float_buf[idx];
-            if (zero_bias)
-            {
-              int32_t vabs = abs(v);
-              if (vabs > INT16_MAX) { vabs = INT16_MAX; }
-              if (--dac_offset < vabs) { dac_offset = vabs; }
-            }
-            v += surplus[idx & out_stereo] + dac_offset;
-            surplus[idx & out_stereo] = v & 255;
-            if (v < 0) { v = 0; }
-            else if (v > UINT16_MAX) { v = UINT16_MAX; }
-            sound_buf[idx ^ 1] = v;
-          } while (++idx < dma_buf_len);
-        }
-      }
-      else if (self->_cfg.buzzer)
-      {
-        volume /= 256;
-        int32_t tmp = surplus[0];
-        do
-        {
-          int32_t v = volume * float_buf[idx];
-          uint_fast16_t bitdata = 0;
-          uint_fast16_t bit = 0x8000;
-          v += 0x8000;
-          do
-          {
-            if ((tmp += v) >= 0)
-            {
-              tmp -= 0x10000;
-              bitdata |= bit;
-            }
-          } while (bit >>= 1);
-          sound_buf[idx] = bitdata;
-        } while (++idx < dma_buf_len);
-        surplus[0] = tmp;
-      }
-      else
-      {
-        do
-        {
-          int32_t v = volume * float_buf[idx];
-          v += surplus[idx & out_stereo];
-          surplus[idx & out_stereo] = v & 255;
-          v >>= 8;
-          if (v < INT16_MIN) { v = INT16_MIN; }
-          else if (v > INT16_MAX) { v = INT16_MAX; }
-          sound_buf[idx] = v;
-        } while (++idx < dma_buf_len);
-      }
+      ++nodata_count;
 
       if (!flg_i2s_started)
       {
@@ -389,13 +176,280 @@ label_start:
           i2s_set_dac_mode(dac_mode);
         }
 #endif
-        i2s_start(self->_cfg.i2s_port);
+        i2s_zero_dma_buffer(i2s_port);
+        i2s_start(i2s_port);
+        if (self->_cfg.use_dac && self->_cfg.dac_zero_level != 0)
+        {
+          size_t idx = 0;
+          do
+          {
+            sound_buf[idx^1] = dac_offset * idx / dma_buf_len;
+          } while (++idx < dma_buf_len);
+          size_t write_bytes;
+          i2s_write(i2s_port, sound_buf, dma_buf_len * sizeof(int16_t), &write_bytes, portMAX_DELAY);
+          memset(float_buf, 0, dma_buf_len * sizeof(float));
+        }
+      }
+
+      float volume = magnification * (self->_master_volume * self->_master_volume);
+
+      for (size_t ch = 0; ch < sound_channel_max; ++ch)
+      {
+        if (0 == (self->_play_channel_bits.load() & (1 << ch))) { continue; }
+        nodata_count = 0;
+
+        auto ch_info = &(self->_ch_info[ch]);
+        wav_info_t* current_wav = &(ch_info->wavinfo[!ch_info->flip]);
+        wav_info_t* next_wav    = &(ch_info->wavinfo[ ch_info->flip]);
+
+        size_t idx = 0;
+        int ch_diff = ch_info->diff;
+
+        if (current_wav->repeat == 0 || next_wav->stop_current)
+        {
+label_next_wav:
+          bool clear_idx = (next_wav->repeat == 0
+                        || !next_wav->no_clear_index
+                        || (next_wav->data != current_wav->data));
+          current_wav->clear();
+          ch_info->flip = !ch_info->flip;
+          xSemaphoreGive(self->_task_semaphore);
+          std::swap(current_wav, next_wav);
+
+          if (clear_idx)
+          {
+            ch_info->index = 0;
+            if (current_wav->repeat == 0)
+            {
+              self->_play_channel_bits.fetch_and(~(1 << ch));
+              if (current_wav->repeat == 0)
+              {
+                ch_info->diff = 0;
+                continue;
+              }
+              self->_play_channel_bits.fetch_or(1 << ch);
+            }
+          }
+        }
+        const void* data = current_wav->data;
+        const bool in_stereo = current_wav->is_stereo;
+        const int32_t in_rate = current_wav->sample_rate;
+        int32_t tmp = ch_info->volume;
+        tmp *= tmp;
+        if (!current_wav->is_16bit) { tmp <<= 8; }
+        if (self->_cfg.stereo) { tmp <<= 1; }
+        const float ch_v = volume * tmp;
+
+        bool liner_flip = ch_info->liner_flip;
+        auto liner_base = ch_info->liner_buf[ liner_flip];
+        auto liner_prev = ch_info->liner_buf[!liner_flip];
+
+        if (ch_diff < 0) { goto label_continue_sample; }
+
+        do
+        {
+          {
+            size_t ch_index = ch_info->index;
+            do
+            {
+              if (ch_index >= current_wav->length)
+              {
+                ch_index -= current_wav->length;
+                auto repeat = current_wav->repeat;
+                if (repeat != ~0u)
+                {
+                  current_wav->repeat = --repeat;
+                  if (repeat == 0)
+                  {
+                    ch_info->index = ch_index;
+                    ch_info->liner_flip = (liner_prev < liner_base);
+
+                    goto label_next_wav;
+                  }
+                }
+              }
+
+              int32_t l, r;
+              if (current_wav->is_16bit)
+              {
+                auto wav = (const int16_t*)data;
+                l = wav[ch_index + in_stereo];
+                r = wav[ch_index];
+                ch_index += in_stereo + 1;
+                if (!current_wav->is_signed)
+                {
+                  l = (l & 0xFFFF) + INT16_MIN;
+                  r = (r & 0xFFFF) + INT16_MIN;
+                }
+              }
+              else
+              {
+                auto wav = (const uint8_t*)data;
+                l = wav[ch_index + in_stereo];
+                r = wav[ch_index];
+                ch_index += in_stereo + 1;
+                if (current_wav->is_signed)
+                {
+                  l = (int8_t)l;
+                  r = (int8_t)r;
+                }
+                else
+                {
+                  l += INT8_MIN;
+                  r += INT8_MIN;
+                }
+              }
+              std::swap(liner_base, liner_prev);
+
+              if (!out_stereo) { l += r; }
+              else
+              {
+                liner_base[1] = r * ch_v;
+              }
+              liner_base[0] = l * ch_v;
+
+              ch_diff -= spk_sample_rate;
+            } while (ch_diff >= 0);
+            ch_info->index = ch_index;
+          }
+
+label_continue_sample:
+
+/// liner_prevからliner_baseへの２サンプル間の線形補間;
+          float base_l = liner_base[0];
+          float step_l = base_l - liner_prev[0];
+          base_l *= spk_sample_rate;
+          base_l += step_l * ch_diff;
+          step_l *= in_rate;
+          if (out_stereo)
+          {
+            float base_r = liner_base[1];
+            float step_r = base_r - liner_prev[1];
+            base_r *= spk_sample_rate;
+            base_r += step_r * ch_diff;
+            step_r *= in_rate;
+            do
+            {
+              float_buf[  idx] += base_l;
+              float_buf[++idx] += base_r;
+              base_l += step_l;
+              base_r += step_r;
+              ch_diff += in_rate;
+            } while (++idx < dma_buf_len && ch_diff < 0);
+          }
+          else
+          {
+            do
+            {
+              float_buf[idx] += base_l;
+              base_l += step_l;
+              ch_diff += in_rate;
+            } while (++idx < dma_buf_len && ch_diff < 0);
+          }
+        } while (idx < dma_buf_len);
+        ch_info->liner_flip = (liner_prev < liner_base);
+        ch_info->diff = ch_diff;
+      }
+
+      if (self->_cfg.use_dac)
+      {
+/// DAC出力は cfg.dac_zero_levelが0に設定されている場合、振幅のオフセットを動的に変更する。;
+/// これはESP32のDAC出力は高ければ高いほどノイズも増加するため、なるべく低いDAC出力を用いてノイズを低減することを目的とする。;
+        const bool zero_bias = (self->_cfg.dac_zero_level == 0);
+        if (nodata_count == 0)
+        {
+          if (zero_bias) { dac_offset -= (dac_offset * dma_buf_len) >> 15; }
+          size_t idx = 0;
+          do
+          {
+            int32_t v = float_buf[idx];
+            if (zero_bias)
+            {
+              int32_t vabs = abs(v);
+              if (dac_offset < vabs)
+              {
+                dac_offset = (INT16_MAX < vabs) ? INT16_MAX : vabs;
+              }
+            }
+            v += dac_offset;
+            auto s = &surplus[idx & out_stereo];
+            v += *s;
+            *s = v;
+
+            if (v < 0) { v = 0; }
+            else if (v > UINT16_MAX) { v = UINT16_MAX; }
+            sound_buf[idx ^ 1] = v;
+          } while (++idx < dma_buf_len);
+        }
+        else
+        {
+          if (nodata_count == 1)
+          {
+            surplus16 = dac_offset;
+          }
+          uint_fast16_t offset = surplus16;
+          if (offset)
+          {
+            nodata_count = 1;
+            if (--offset > 16)
+            {
+              size_t idx = 0;
+              do
+              {
+                offset = (offset * 255) >> 8;
+                sound_buf[idx] = offset;
+              } while (++idx < dma_buf_len);
+              if (offset <= 16) { offset = 16; }
+            }
+            surplus16 = offset;
+            if (zero_bias) { dac_offset = offset; }
+          }
+        }
+      }
+      else if (self->_cfg.buzzer)
+      {
+/// ブザー出力は 1bit ΔΣ方式。 I2Sデータ出力をブザーの駆動信号として利用する;
+/// 出力はモノラル限定だが、I2Sへはステレオ扱いで出力する。;
+/// (I2Sをモノラル設定にした場合は同じデータが２チャンネル分送信されてしまうため、敢えてステレオ扱いとしている);
+        int32_t tmp = (uint16_t)surplus16;
+        size_t idx = 0;
+        do
+        {
+          int32_t v = float_buf[idx];
+          v = INT16_MIN - v;
+          uint32_t bitdata = 0;
+          uint32_t bit = 0x80000000;
+          do
+          {
+            if ((tmp += v) < 0)
+            {
+              tmp += 0x10000;
+              bitdata |= bit;
+            }
+          } while (bit >>= 1);
+          sound_buf32[idx] = bitdata;
+        } while (++idx < dma_buf_len);
+        surplus16 = nodata_count ? 0x8000 : tmp;
+      }
+      else
+      {
+        size_t idx = 0;
+        do
+        {
+          int32_t v = float_buf[idx];
+          v += surplus[idx & out_stereo];
+          surplus[idx & out_stereo] = v;
+          v >>= 8;
+          if (v < INT16_MIN) { v = INT16_MIN; }
+          else if (v > INT16_MAX) { v = INT16_MAX; }
+          sound_buf[idx ^ 1] = v;
+        } while (++idx < dma_buf_len);
       }
 
       size_t write_bytes;
-      i2s_write(self->_cfg.i2s_port, sound_buf, dma_buf_len * sizeof(int16_t), &write_bytes, portMAX_DELAY);
+      i2s_write(i2s_port, sound_buf, dma_buf_len * sizeof(int16_t) << self->_cfg.buzzer, &write_bytes, portMAX_DELAY);
     }
-    i2s_stop(self->_cfg.i2s_port);
+    i2s_stop(i2s_port);
 #if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
     if (self->_cfg.use_dac)
     {
@@ -422,13 +476,15 @@ label_start:
     {
       size_t stack_size = 1024 + (_cfg.dma_buf_len * sizeof(float));
       _task_running = true;
-      if ((size_t)_cfg.task_pinned_core < portNUM_PROCESSORS)
+#if portNUM_PROCESSORS > 1
+      if (((size_t)_cfg.task_pinned_core) < portNUM_PROCESSORS)
       {
-        xTaskCreatePinnedToCore(output_task, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle, _cfg.task_pinned_core);
+        xTaskCreatePinnedToCore(spk_task, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle, _cfg.task_pinned_core);
       }
       else
+#endif
       {
-        xTaskCreate(output_task, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle);
+        xTaskCreate(spk_task, "spk_task", stack_size, this, _cfg.task_priority, &_task_handle);
       }
     }
 
@@ -489,8 +545,11 @@ label_start:
     uint8_t chmask = 1 << ch;
     if (!wav.stop_current)
     {
-      if (isPlaying(ch) > 1) { return false; }
-      while ((_play_channel_bits.load() & chmask) && (chinfo->wavinfo[chinfo->flip].repeat)) { xSemaphoreTake(_task_semaphore, 1); }
+      while ((_play_channel_bits.load() & chmask) && (chinfo->wavinfo[chinfo->flip].repeat))
+      {
+        if (chinfo->wavinfo[!chinfo->flip].repeat == ~0u) { return false; }
+        xSemaphoreTake(_task_semaphore, 1);
+      }
     }
     chinfo->wavinfo[chinfo->flip] = wav;
     _play_channel_bits.fetch_or(chmask);
@@ -502,7 +561,7 @@ label_start:
   bool Speaker_Class::_play_raw(const void* data, size_t array_len, bool flg_16bit, bool flg_signed, uint32_t sample_rate, bool flg_stereo, uint32_t repeat_count, int channel, bool stop_current_sound, bool no_clear_index)
   {
     if (!begin() || (_task_handle == nullptr)) { return true; }
-    if (array_len == 0) { return true; }
+    if (array_len == 0 || data == nullptr) { return true; }
     size_t ch = (size_t)channel;
     if (ch >= sound_channel_max)
     {
