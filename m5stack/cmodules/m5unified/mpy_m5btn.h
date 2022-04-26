@@ -6,8 +6,7 @@
 
 typedef struct _btn_obj_t {
     mp_obj_base_t base;
-    void* btn;
+    void *btn;
 } btn_obj_t;
 
 extern const mp_obj_type_t btn_type;
-
