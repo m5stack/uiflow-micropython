@@ -22,38 +22,38 @@ MAKE_METHOD_0(gfx, height);
 MAKE_METHOD_0(gfx, getRotation);
 MAKE_METHOD_0(gfx, getColorDepth);
 MAKE_METHOD_0(gfx, getCursor);
-MAKE_METHOD_1(gfx, setRotation);
-MAKE_METHOD_1(gfx, setColorDepth);
-MAKE_METHOD_1(gfx, setFont);
-MAKE_METHOD_1(gfx, setTextColor);
-MAKE_METHOD_1(gfx, setTextScroll);
-MAKE_METHOD_2(gfx, setCursor);
-MAKE_METHOD_V(gfx, print, 2, 3);
-MAKE_METHOD_V(gfx, clear, 1, 2);
-MAKE_METHOD_V(gfx, fillScreen, 1, 2);
-MAKE_METHOD_V(gfx, drawPixel, 3, 4);
-MAKE_METHOD_V(gfx, drawCircle, 4, 5);
-MAKE_METHOD_V(gfx, fillCircle, 4, 5);
-MAKE_METHOD_V(gfx, drawEllipse, 5, 6);
-MAKE_METHOD_V(gfx, fillEllipse, 5, 6);
-MAKE_METHOD_V(gfx, drawLine, 5, 6);
-MAKE_METHOD_V(gfx, drawRect, 5, 6);
-MAKE_METHOD_V(gfx, fillRect, 5, 6);
-MAKE_METHOD_V(gfx, drawRoundRect, 6, 7);
-MAKE_METHOD_V(gfx, fillRoundRect, 6, 7);
-MAKE_METHOD_V(gfx, drawTriangle, 7, 8);
-MAKE_METHOD_V(gfx, fillTriangle, 7, 8);
-MAKE_METHOD_V(gfx, drawArc, 7, 8);
-MAKE_METHOD_V(gfx, fillArc, 7, 8);
-MAKE_METHOD_V(gfx, drawEllipseArc, 9, 10);
-MAKE_METHOD_V(gfx, fillEllipseArc, 9, 10);
-MAKE_METHOD_V(gfx, drawQR, 6, 6);
-MAKE_METHOD_V(gfx, drawJpg, 4, 4);
-MAKE_METHOD_V(gfx, drawPng, 4, 4);
-MAKE_METHOD_V(gfx, drawBmp, 4, 4);
-MAKE_METHOD_V(gfx, drawImage, 4, 4);
+MAKE_METHOD_KW(gfx, setRotation, 1);
+MAKE_METHOD_KW(gfx, setColorDepth, 1);
+MAKE_METHOD_KW(gfx, setFont, 1);
+MAKE_METHOD_KW(gfx, setTextColor, 1);
+MAKE_METHOD_KW(gfx, setTextScroll, 1);
+MAKE_METHOD_KW(gfx, setCursor, 1);
+MAKE_METHOD_KW(gfx, clear, 1);
+MAKE_METHOD_KW(gfx, fillScreen, 1);
+MAKE_METHOD_KW(gfx, drawPixel, 1);
+MAKE_METHOD_KW(gfx, drawCircle, 1);
+MAKE_METHOD_KW(gfx, fillCircle, 1);
+MAKE_METHOD_KW(gfx, drawEllipse, 1);
+MAKE_METHOD_KW(gfx, fillEllipse, 1);
+MAKE_METHOD_KW(gfx, drawLine, 1);
+MAKE_METHOD_KW(gfx, drawRect, 1);
+MAKE_METHOD_KW(gfx, fillRect, 1);
+MAKE_METHOD_KW(gfx, drawRoundRect, 1);
+MAKE_METHOD_KW(gfx, fillRoundRect, 1);
+MAKE_METHOD_KW(gfx, drawTriangle, 1);
+MAKE_METHOD_KW(gfx, fillTriangle, 1);
+MAKE_METHOD_KW(gfx, drawArc, 1);
+MAKE_METHOD_KW(gfx, fillArc, 1);
+MAKE_METHOD_KW(gfx, drawEllipseArc, 1);
+MAKE_METHOD_KW(gfx, fillEllipseArc, 1);
+MAKE_METHOD_KW(gfx, drawQR, 1);
+MAKE_METHOD_KW(gfx, drawJpg, 1);
+MAKE_METHOD_KW(gfx, drawPng, 1);
+MAKE_METHOD_KW(gfx, drawBmp, 1);
+MAKE_METHOD_KW(gfx, drawImage, 1);
+MAKE_METHOD_KW(gfx, print, 1);
 MAKE_METHOD_V(gfx, printf, 2, 32);
-MAKE_METHOD_V(gfx, newCanvas, 3, 5);
+MAKE_METHOD_KW(gfx, newCanvas, 1);
 
 #define TABLE_PARTS_GFX_BASE \
     MAKE_TABLE(gfx, clear), \
@@ -217,21 +217,23 @@ const mp_obj_type_t btn_type = {
 
 // -------- Speaker wrapper
 MAKE_METHOD_0(spk, getVolume);
-MAKE_METHOD_1(spk, setVolume);
-MAKE_METHOD_1(spk, setAllChannelVolume);
 MAKE_METHOD_1(spk, getChannelVolume);
-MAKE_METHOD_2(spk, setChannelVolume);
-MAKE_METHOD_V(spk, stop, 1, 2);
-MAKE_METHOD_V(spk, tone, 3, 5);
+MAKE_METHOD_KW(spk, setVolume, 1);
+MAKE_METHOD_KW(spk, setChannelVolume, 1);
+MAKE_METHOD_KW(spk, setAllChannelVolume, 1);
+MAKE_METHOD_KW(spk, stop, 1);
+MAKE_METHOD_KW(spk, tone, 1);
+MAKE_METHOD_KW(spk, playWav, 1);
 
 STATIC const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, getVolume),
-    MAKE_TABLE(spk, setVolume),
-    MAKE_TABLE(spk, setAllChannelVolume),
     MAKE_TABLE(spk, getChannelVolume),
+    MAKE_TABLE(spk, setVolume),
     MAKE_TABLE(spk, setChannelVolume),
+    MAKE_TABLE(spk, setAllChannelVolume),
     MAKE_TABLE(spk, stop),
     MAKE_TABLE(spk, tone),
+    MAKE_TABLE(spk, playWav),
 };
 STATIC MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
 

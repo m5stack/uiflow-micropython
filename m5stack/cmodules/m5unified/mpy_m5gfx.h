@@ -8,12 +8,12 @@
 
 typedef struct _gfx_obj_t {
     mp_obj_base_t base;
-    void* gfx;
+    void *gfx;
 } gfx_obj_t;
 
 typedef struct _font_obj_t {
     mp_obj_base_t base;
-    const void* font;
+    const void *font;
 } font_obj_t;
 
 
@@ -26,8 +26,7 @@ extern const font_obj_t gfx_font_4_obj;
 extern const font_obj_t gfx_font_6_obj;
 extern const font_obj_t gfx_font_7_obj;
 extern const font_obj_t gfx_font_8_obj;
-extern const font_obj_t gfx_font_DejaVu9_obj ;
+extern const font_obj_t gfx_font_DejaVu9_obj;
 extern const font_obj_t gfx_font_DejaVu12_obj;
 extern const font_obj_t gfx_font_DejaVu18_obj;
 extern const font_obj_t gfx_font_DejaVu24_obj;
-

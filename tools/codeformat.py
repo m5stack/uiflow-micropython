@@ -37,6 +37,8 @@ PATHS = [
     # C
     "m5stack/*.[ch]",
     "m5stack/cmodules/**/*.[ch]",
+    "m5stack/cmodules/**/*.[c][p][p]",
+    "m5stack/cmodules/**/*.[h][p][p]",
     "tools/littlefs/*.[ch]",
     # Python
     "m5stack/*.py",
@@ -53,7 +55,9 @@ UNCRUSTIFY_CFG = os.path.join(TOP, "tools/uncrustify.cfg")
 
 C_EXTS = (
     ".c",
+    ".cpp",
     ".h",
+    ".hpp",
 )
 PY_EXTS = (".py",)
 

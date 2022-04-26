@@ -20,4 +20,3 @@ extern const btn_obj_t m5_btnB;
 extern const btn_obj_t m5_btnC;
 extern const btn_obj_t m5_btnPWR;
 extern const btn_obj_t m5_btnEXT;
-
