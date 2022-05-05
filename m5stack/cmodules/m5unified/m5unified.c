@@ -27,6 +27,7 @@ MAKE_METHOD_KW(gfx, setColorDepth, 1);
 MAKE_METHOD_KW(gfx, setFont, 1);
 MAKE_METHOD_KW(gfx, setTextColor, 1);
 MAKE_METHOD_KW(gfx, setTextScroll, 1);
+MAKE_METHOD_KW(gfx, setTextSize, 1);
 MAKE_METHOD_KW(gfx, setCursor, 1);
 MAKE_METHOD_KW(gfx, clear, 1);
 MAKE_METHOD_KW(gfx, fillScreen, 1);
@@ -56,43 +57,44 @@ MAKE_METHOD_V(gfx, printf, 2, 32);
 MAKE_METHOD_KW(gfx, newCanvas, 1);
 
 #define TABLE_PARTS_GFX_BASE \
+    MAKE_TABLE(gfx, height), \
+    MAKE_TABLE(gfx, width), \
+    MAKE_TABLE(gfx, getRotation), \
+    MAKE_TABLE(gfx, getColorDepth), \
+    MAKE_TABLE(gfx, getCursor), \
+    MAKE_TABLE(gfx, setRotation), \
+    MAKE_TABLE(gfx, setColorDepth), \
+    MAKE_TABLE(gfx, setFont), \
+    MAKE_TABLE(gfx, setTextColor), \
+    MAKE_TABLE(gfx, setTextScroll), \
+    MAKE_TABLE(gfx, setTextSize), \
+    MAKE_TABLE(gfx, setCursor), \
     MAKE_TABLE(gfx, clear), \
-    MAKE_TABLE(gfx, drawArc), \
-    MAKE_TABLE(gfx, drawCircle), \
-    MAKE_TABLE(gfx, drawEllipse), \
-    MAKE_TABLE(gfx, drawEllipseArc), \
-    MAKE_TABLE(gfx, drawLine), \
+    MAKE_TABLE(gfx, fillScreen), \
     MAKE_TABLE(gfx, drawPixel), \
+    MAKE_TABLE(gfx, drawCircle), \
+    MAKE_TABLE(gfx, fillCircle), \
+    MAKE_TABLE(gfx, drawEllipse), \
+    MAKE_TABLE(gfx, fillEllipse), \
+    MAKE_TABLE(gfx, drawLine), \
     MAKE_TABLE(gfx, drawRect), \
+    MAKE_TABLE(gfx, fillRect), \
     MAKE_TABLE(gfx, drawRoundRect), \
+    MAKE_TABLE(gfx, fillRoundRect), \
+    MAKE_TABLE(gfx, drawTriangle), \
+    MAKE_TABLE(gfx, fillTriangle), \
+    MAKE_TABLE(gfx, drawArc), \
+    MAKE_TABLE(gfx, fillArc), \
+    MAKE_TABLE(gfx, drawEllipseArc), \
+    MAKE_TABLE(gfx, fillEllipseArc), \
     MAKE_TABLE(gfx, drawQR), \
     MAKE_TABLE(gfx, drawJpg), \
     MAKE_TABLE(gfx, drawPng), \
     MAKE_TABLE(gfx, drawBmp), \
     MAKE_TABLE(gfx, drawImage), \
-    MAKE_TABLE(gfx, drawTriangle), \
-    MAKE_TABLE(gfx, fillArc), \
-    MAKE_TABLE(gfx, fillCircle), \
-    MAKE_TABLE(gfx, fillEllipse), \
-    MAKE_TABLE(gfx, fillEllipseArc), \
-    MAKE_TABLE(gfx, fillRect), \
-    MAKE_TABLE(gfx, fillRoundRect), \
-    MAKE_TABLE(gfx, fillScreen), \
-    MAKE_TABLE(gfx, fillTriangle), \
-    MAKE_TABLE(gfx, getColorDepth), \
-    MAKE_TABLE(gfx, getCursor), \
-    MAKE_TABLE(gfx, getRotation), \
-    MAKE_TABLE(gfx, height), \
-    MAKE_TABLE(gfx, newCanvas), \
     MAKE_TABLE(gfx, print), \
     MAKE_TABLE(gfx, printf), \
-    MAKE_TABLE(gfx, setColorDepth), \
-    MAKE_TABLE(gfx, setCursor), \
-    MAKE_TABLE(gfx, setFont), \
-    MAKE_TABLE(gfx, setTextColor), \
-    MAKE_TABLE(gfx, setTextScroll), \
-    MAKE_TABLE(gfx, setRotation), \
-    MAKE_TABLE(gfx, width), \
+    MAKE_TABLE(gfx, newCanvas), \
     { MP_ROM_QSTR(MP_QSTR_FONT0), MP_ROM_PTR(&gfx_font_0_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT2), MP_ROM_PTR(&gfx_font_2_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT4), MP_ROM_PTR(&gfx_font_4_obj) }, \
