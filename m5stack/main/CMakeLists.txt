@@ -83,6 +83,13 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
 
+set(MICROPY_SOURCE_M5UNIFIED
+    ${PROJECT_DIR}/components/M5Unified/mpy_m5btn.cpp
+    ${PROJECT_DIR}/components/M5Unified/mpy_m5gfx.cpp
+    ${PROJECT_DIR}/components/M5Unified/mpy_m5spk.cpp
+    ${PROJECT_DIR}/components/M5Unified/mpy_m5unified.cpp
+)
+
 set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PY}
     ${MICROPY_SOURCE_EXTMOD}
@@ -91,6 +98,7 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_LIB}
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
+    ${MICROPY_SOURCE_M5UNIFIED}
 )
 
 set(IDF_COMPONENTS
