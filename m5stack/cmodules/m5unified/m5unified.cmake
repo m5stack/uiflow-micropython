@@ -9,7 +9,6 @@ target_include_directories(usermod_M5UNIFIED INTERFACE
 )
 
 target_compile_definitions(usermod_M5UNIFIED INTERFACE
-    MODULE_M5UNIFIED_ENABLED=1
     ESP_PLATFORM=1  # Very important
 )
 

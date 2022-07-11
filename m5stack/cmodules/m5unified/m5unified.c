@@ -307,4 +307,4 @@ const mp_obj_module_t m5m5unified_user_cmodule = {
     .globals = (mp_obj_dict_t *)&mp_module_m5_globals,
 };
 
-MP_REGISTER_MODULE(MP_QSTR_m5, m5m5unified_user_cmodule, MODULE_M5UNIFIED_ENABLED);
+MP_REGISTER_MODULE(MP_QSTR_m5, m5m5unified_user_cmodule);
