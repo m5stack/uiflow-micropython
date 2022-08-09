@@ -9,6 +9,9 @@ BOARD ?= M5STACK_4MB
 ifeq (C3, $(findstring C3,${BOARD}))
 CHIP ?= esp32c3
 BOOTLOADR_OFFSET ?= 0x0
+else ifeq (S3, $(findstring S3,${BOARD}))
+CHIP ?= esp32s3
+BOOTLOADR_OFFSET ?= 0x0
 else
 CHIP ?= esp32
 BOOTLOADR_OFFSET ?= 0x1000
