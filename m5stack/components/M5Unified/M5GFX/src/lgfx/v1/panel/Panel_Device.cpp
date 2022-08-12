@@ -56,8 +56,8 @@ namespace lgfx
 
   bool Panel_Device::init(bool use_reset)
   {
-    _bus->init();
     init_cs();
+    _bus->init();
     init_rst();
     if (_light)
     {
@@ -388,11 +388,9 @@ namespace lgfx
     }
 
     {
-      float det = 1;
       for ( int k = 0; k < 3; ++k )
       {
         float t = mat[k][k];
-        det *= t;
         for ( int i = 0; i < 3; ++i ) mat[k][i] /= t;
 
         mat[k][k] = 1 / t;

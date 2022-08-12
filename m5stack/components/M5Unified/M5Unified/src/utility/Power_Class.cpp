@@ -216,6 +216,7 @@ namespace m5
       case board_t::board_M5StackCore2:
         Axp192.setLDO2(3300); // LCD + SD peripheral power supply
         Axp192.setLDO3(0);    // VIB_MOTOR STOP
+        Axp192.setGPIO2(false);   // SPEAKER STOP
         Axp192.writeRegister8(0x9A, 255);  // PWM 255 (LED OFF)
         Axp192.writeRegister8(0x92, 0x02); // GPIO1 PWM
         Axp192.setChargeCurrent(390); // Core2 battery = 390mAh
@@ -223,6 +224,7 @@ namespace m5
 
       case board_t::board_M5Tough:
         Axp192.setLDO2(3300); // LCD + SD peripheral
+        Axp192.setGPIO2(false);   // SPEAKER STOP
         Axp192.setDCDC3(0);
         break;
 
@@ -260,7 +262,15 @@ namespace m5
 
     case board_t::board_M5StackCore2:
     case board_t::board_M5Tough:
-      Axp192.writeRegister8(0x90, enable ? 0x02 : 0x07); // GPIO0 : enable=LDO / disable=float
+      if (enable && !Axp192.isACIN() && (0 >= Axp192.getBatteryLevel()))
+      { /// ACINがfalseの時(USB非接続)かつバッテリー無しの状態のときは、M-BusやPort.A等から電力を得ている状態と判断できる。;
+        /// 電力を外部に供給する設定にすると、外部からの電力供給を受けられなくなり、電源を喪失するため、設定不可とする;
+        ESP_LOGD("Power","setExtPower(true) but non ACIN.");
+      }
+      else
+      {
+        Axp192.writeRegister8(0x90, enable ? 0x02 : 0x07); // GPIO0 : enable=LDO / disable=float
+      }
       NON_BREAK;
 
     case board_t::board_M5StickC:

@@ -43,8 +43,16 @@ namespace m5
     inline void setDCDC2(int voltage) { _set_DCDC(1, voltage); }
     inline void setDCDC3(int voltage) { _set_DCDC(2, voltage); }
 
+    /// set LDOio0 voltage
+    /// @param voltage milli volt. (0 - 3300).
     inline void setLDO0(int voltage) { _set_LDO(0, voltage); }
+
+    /// set LDO2 voltage
+    /// @param voltage milli volt. (0 - 3300).
     inline void setLDO2(int voltage) { _set_LDO(2, voltage); }
+
+    /// set LDO3 voltage
+    /// @param voltage milli volt. (0 - 3300).
     inline void setLDO3(int voltage) { _set_LDO(3, voltage); }
 
     inline void setGPIO(uint8_t gpio_num, bool state) { if (gpio_num < 3) { _set_GPIO0_2(gpio_num, state); } else { _set_GPIO3_4(gpio_num - 3, state); } }
@@ -71,7 +79,7 @@ namespace m5
     float getBatteryDischargeCurrent(void);
     float getBatteryChargeCurrent(void);
     float getBatteryPower(void);
-    float getACINVolatge(void);
+    float getACINVoltage(void);
     float getACINCurrent(void);
     float getVBUSVoltage(void);
     float getVBUSCurrent(void);
@@ -79,6 +87,10 @@ namespace m5
     float getInternalTemperature(void);
 
     std::uint8_t getPekPress(void);
+
+    [[deprecated("use getACINVoltage()")]]
+    inline float getACINVolatge(void) { return getACINVoltage(); }
+
   private:
     std::size_t readRegister12(std::uint8_t addr);
     std::size_t readRegister13(std::uint8_t addr);

@@ -240,13 +240,8 @@ namespace m5
             ;
       *((volatile uint32_t *)(IO_MUX_GPIO20_REG)) = tmp;
     }
-
-    {
-      i2c_port_t in_port = I2C_NUM_0;
-      gpio_num_t in_sda = GPIO_NUM_1;
-      gpio_num_t in_scl = GPIO_NUM_0;
-      In_I2C.begin(in_port, in_sda, in_scl);
-    }
+    /// StampC3 does not have internal i2c.
+    In_I2C.setPort(-1, -1, -1);
 
     { /// setup External I2C
       i2c_port_t ex_port = I2C_NUM_0;
@@ -277,6 +272,29 @@ namespace m5
     {
       Display.clear();
     }
+
+    switch (_board)
+    {
+    case board_t::board_M5Stack:
+      // Countermeasure to the problem that GPIO15 affects WiFi sensitivity when M5GO bottom is connected.
+      m5gfx::pinMode(GPIO_NUM_15, m5gfx::pin_mode_t::output);
+      m5gfx::gpio_lo(GPIO_NUM_15);
+      break;
+
+    case board_t::board_M5StickC:
+    case board_t::board_M5StickCPlus:
+    case board_t::board_M5Atom:
+    case board_t::board_M5AtomU:
+      // Countermeasure to the problem that CH552 applies 4v to GPIO0, thus reducing WiFi sensitivity.
+      // Setting output_high adds a bias of 3.3v and suppresses overvoltage.
+      m5gfx::pinMode(GPIO_NUM_0, m5gfx::pin_mode_t::output);
+      m5gfx::gpio_hi(GPIO_NUM_0);
+      break;
+
+    default:
+      break;
+    }
+
     if (nullptr != Display.touch())
     {
       Touch.begin(&Display);
@@ -302,7 +320,7 @@ namespace m5
       case board_t::board_M5Stack:
         if (_cfg.internal_mic)
         {
-          mic_cfg.pin_data_in = 34;  // M5GO bottom MIC
+          mic_cfg.pin_data_in = GPIO_NUM_34;  // M5GO bottom MIC
           mic_cfg.use_adc = true;    // use ADC analog input
           mic_cfg.input_offset = 192;
           mic_cfg.over_sampling = 4;
@@ -315,23 +333,23 @@ namespace m5
       case board_t::board_M5StackCore2:
         if (_cfg.internal_mic)
         { /// builtin PDM mic
-          mic_cfg.pin_data_in = 34;
-          mic_cfg.pin_ws = 0;
+          mic_cfg.pin_data_in = GPIO_NUM_34;
+          mic_cfg.pin_ws = GPIO_NUM_0;
         }
         break;
 
       case board_t::board_M5AtomU:
         { /// ATOM U builtin PDM mic
-          mic_cfg.pin_data_in = 19;
-          mic_cfg.pin_ws = 5;
+          mic_cfg.pin_data_in = GPIO_NUM_19;
+          mic_cfg.pin_ws = GPIO_NUM_5;
           mic_cfg.input_offset = - 768;
         }
         break;
 
       case board_t::board_M5Atom:
         { /// ATOM ECHO builtin PDM mic
-          mic_cfg.pin_data_in = 23;
-          mic_cfg.pin_ws = 33;
+          mic_cfg.pin_data_in = GPIO_NUM_23;
+          mic_cfg.pin_ws = GPIO_NUM_33;
         }
         break;
 #endif
@@ -359,7 +377,7 @@ namespace m5
           m5gfx::gpio_lo(GPIO_NUM_25);
           m5gfx::pinMode(GPIO_NUM_25, m5gfx::pin_mode_t::output);
           spk_cfg.use_dac = true;
-          spk_cfg.pin_data_out = 25;
+          spk_cfg.pin_data_out = GPIO_NUM_25;
           spk_cfg.magnification = 8;
         }
         break;
@@ -369,7 +387,7 @@ namespace m5
         if (_cfg.internal_spk)
         {
           spk_cfg.buzzer = true;
-          spk_cfg.pin_data_out = 2;
+          spk_cfg.pin_data_out = GPIO_NUM_2;
           spk_cfg.magnification = 32;
         }
         NON_BREAK;
@@ -381,7 +399,7 @@ namespace m5
           m5gfx::pinMode(pin_en, m5gfx::pin_mode_t::output);
           m5gfx::gpio_lo(GPIO_NUM_26);
           m5gfx::pinMode(GPIO_NUM_26, m5gfx::pin_mode_t::output);
-          spk_cfg.pin_data_out = 26;
+          spk_cfg.pin_data_out = GPIO_NUM_26;
           spk_cfg.use_dac = true;
           spk_cfg.buzzer = false;
           spk_cfg.magnification = 32;
@@ -395,18 +413,18 @@ namespace m5
       case board_t::board_M5StackCore2:
         if (_cfg.internal_spk)
         {
-          spk_cfg.pin_bck = 12;
-          spk_cfg.pin_ws = 0;
-          spk_cfg.pin_data_out = 2;
+          spk_cfg.pin_bck = GPIO_NUM_12;
+          spk_cfg.pin_ws = GPIO_NUM_0;
+          spk_cfg.pin_data_out = GPIO_NUM_2;
         }
         break;
 
       case board_t::board_M5Atom:
         if (_cfg.internal_spk && (Display.getBoard() != board_t::board_M5AtomDisplay))
         { // for ATOM ECHO
-          spk_cfg.pin_bck = 19;
-          spk_cfg.pin_ws = 33;
-          spk_cfg.pin_data_out = 22;
+          spk_cfg.pin_bck = GPIO_NUM_19;
+          spk_cfg.pin_ws = GPIO_NUM_33;
+          spk_cfg.pin_data_out = GPIO_NUM_22;
           spk_cfg.magnification = 12;
         }
         NON_BREAK;
@@ -424,9 +442,9 @@ namespace m5
           {
             _cfg.internal_imu = false; /// avoid conflict with i2c
             _cfg.internal_rtc = false; /// avoid conflict with i2c
-            spk_cfg.pin_bck = 22;
-            spk_cfg.pin_ws = 21;
-            spk_cfg.pin_data_out = 25;
+            spk_cfg.pin_bck = GPIO_NUM_22;
+            spk_cfg.pin_ws = GPIO_NUM_21;
+            spk_cfg.pin_data_out = GPIO_NUM_25;
             spk_cfg.magnification = 16;
             auto mic = Mic.config();
             mic.pin_data_in = -1;   // disable mic for ECHO
@@ -498,7 +516,7 @@ namespace m5
       M5.Ex_I2C.begin();
     }
 
-    if (_cfg.internal_rtc)
+    if (_cfg.internal_rtc && In_I2C.isEnabled())
     {
       M5.Rtc.begin();
     }
@@ -509,7 +527,7 @@ namespace m5
 
     M5.Rtc.setSystemTimeFromRtc();
 
-    if (_cfg.internal_imu)
+    if (_cfg.internal_imu && In_I2C.isEnabled())
     {
       if (M5.Imu.begin())
       {

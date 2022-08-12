@@ -11,10 +11,17 @@ file(GLOB SRCS
      src/lgfx/v1/panel/*.cpp
      src/lgfx/v1/platforms/esp32/*.cpp
      src/lgfx/v1/platforms/esp32c3/*.cpp
+     src/lgfx/v1/platforms/esp32s3/*.cpp
      src/lgfx/v1/touch/*.cpp
      )
 set(COMPONENT_SRCS ${SRCS})
 set(COMPONENT_REQUIRES nvs_flash efuse)
 
-register_component()
 
+### If you use arduino-esp32 components, please activate next comment line.
+# list(APPEND COMPONENT_REQUIRES arduino-esp32)
+
+
+message(STATUS "M5GFX use components = ${COMPONENT_REQUIRES}")
+
+register_component()
