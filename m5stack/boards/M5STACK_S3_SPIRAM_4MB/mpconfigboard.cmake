@@ -8,6 +8,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.flash_4mb
+    ./boards/sdkconfig.spiram_sx
 )
 
 if(NOT MICROPY_FROZEN_MANIFEST)
