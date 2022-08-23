@@ -1058,12 +1058,16 @@ namespace m5gfx
         auto chk_axp = lgfx::i2c::readRegister8(i2c_port, axp_i2c_addr, 0x03, i2c_freq);
         if (chk_axp.has_value() && chk_axp.value() == 0x4A)
         {
+          m5gfx::i2c::bitOn(i2c_port, axp_i2c_addr, 0x90, 0b10110000);  // Enable DLDO1 BLDO1 BLDO2
+          m5gfx::i2c::writeRegister8(i2c_port, axp_i2c_addr, 0x96, (0b11110 - 7)); // BLDO1 => CAM AVDD 2.8V
+          m5gfx::i2c::writeRegister8(i2c_port, axp_i2c_addr, 0x97, (0b00000 + 7)); // BLDO2 => CAM DVDD 1.2V
           auto chk_aw  = lgfx::i2c::readRegister8(i2c_port, aw9523_i2c_addr, 0x10, i2c_freq);
           if (chk_aw .has_value() && chk_aw .value() == 0x23)
           {
-            m5gfx::i2c::bitOn(i2c_port, aw9523_i2c_addr, 0x03, 0b10100000);
             m5gfx::i2c::writeRegister8(i2c_port, aw9523_i2c_addr, 0x04, 0b01111000);  // CONFIG_P0
             m5gfx::i2c::writeRegister8(i2c_port, aw9523_i2c_addr, 0x05, 0b01011000);  // CONFIG_P1
+            m5gfx::i2c::bitOn(i2c_port, aw9523_i2c_addr, 0x02, 0b10000100);  // P0 AW88298&CAM RST => OUTPUT HIGH
+            m5gfx::i2c::bitOn(i2c_port, aw9523_i2c_addr, 0x03, 0b10100000);  // P1 LCD&TP RST => OUTPUT HIGH
             m5gfx::i2c::writeRegister8(i2c_port, aw9523_i2c_addr, 0x11, 0b00010000);  // GCR P0 port is Push-Pull mode.
             m5gfx::i2c::writeRegister8(i2c_port, aw9523_i2c_addr, 0x12, 0b11111110);  // LEDMODE_P0
             m5gfx::i2c::writeRegister8(i2c_port, aw9523_i2c_addr, 0x13, 0b11111000);  // LEDMODE_P1
