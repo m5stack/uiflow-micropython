@@ -914,6 +914,37 @@ mp_obj_t gfx_drawImage(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     return mp_const_none;
 }
 
+mp_obj_t gfx_drawRawBuf(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_buf, ARG_x, ARG_y, ARG_w, ARG_h, ARG_len, ARG_swap};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_buf,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_y,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_w,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_h,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_len,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_swap,   MP_ARG_BOOL                 , {.u_bool = false } },
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+
+    // The raw buf
+    mp_buffer_info_t bufinfo;
+    mp_get_buffer_raise(args[ARG_buf].u_obj, &bufinfo, MP_BUFFER_READ);
+
+    gfx->startWrite();
+    gfx->setAddrWindow(args[ARG_x].u_int, args[ARG_y].u_int, args[ARG_w].u_int, args[ARG_h].u_int);
+    gfx->writePixels((const uint16_t *)bufinfo.buf, args[ARG_len].u_int, args[ARG_swap].u_bool);
+    gfx->endWrite();
+
+    return mp_const_none;
+}
+
 mp_obj_t gfx_print(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_str, ARG_color};
     /* *FORMAT-OFF* */
