@@ -94,6 +94,13 @@ set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5unified.cpp
 )
 
+if(M5_CAMERA_MODULE_ENABLE)
+    set(MICROPY_SOURCE_M5CAMERA
+        ${PROJECT_DIR}/cmodules/m5camera/m5camera.c
+    )
+endif()
+
+
 set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PY}
     ${MICROPY_SOURCE_EXTMOD}
@@ -103,6 +110,7 @@ set(MICROPY_SOURCE_QSTR
     ${MICROPY_SOURCE_PORT}
     ${MICROPY_SOURCE_BOARD}
     ${MICROPY_SOURCE_M5UNIFIED}
+    ${MICROPY_SOURCE_M5CAMERA}
 )
 
 set(IDF_COMPONENTS
@@ -134,6 +142,7 @@ set(IDF_COMPONENTS
     xtensa
     libffi
     M5Unified
+    esp32-camera
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

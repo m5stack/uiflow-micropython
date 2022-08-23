@@ -27,7 +27,7 @@ BAUD ?= 1500000
 
 PYTHON ?= python3
 
-GIT_SUBMODULES = lib/berkeley-db-1.xx
+GIT_SUBMODULES = lib/berkeley-db-1.xx 
 
 .PHONY: all clean deploy erase mpy-cross submodules fs nvs FORCE
 
@@ -97,5 +97,6 @@ mpy-cross:
 # berkeley-db-1.xx submodule belong to micropython submodule
 submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
+	git submodule update --init ./components/esp32-camera
 	git submodule update --init ../micropython
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -	

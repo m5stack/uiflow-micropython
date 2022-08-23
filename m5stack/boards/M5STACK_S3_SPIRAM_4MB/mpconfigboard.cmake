@@ -1,4 +1,6 @@
 set(IDF_TARGET esp32s3)
+# Enable camera module
+set(M5_CAMERA_MODULE_ENABLE TRUE)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/M5STACK_S3_4MB/sdkconfig.board
