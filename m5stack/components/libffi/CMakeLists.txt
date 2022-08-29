@@ -1,6 +1,6 @@
 idf_build_get_property(target IDF_TARGET)
 
-if(target STREQUAL "esp32")
+if(target STREQUAL "esp32" OR target STREQUAL "esp32s3")
     set(srcs
         "libffi/src/prep_cif.c"
         "libffi/src/types.c"

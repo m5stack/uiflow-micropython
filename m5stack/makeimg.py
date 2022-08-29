@@ -148,7 +148,7 @@ with open(file_out, "wb") as fout:
 
 # Generate .uf2 file if the SoC has native USB.
 if idf_target in ("ESP32S2", "ESP32S3"):
-    sys.path.append(os.path.join(os.path.dirname(__file__), "../../tools"))
+    sys.path.append(os.path.join(os.path.dirname(__file__), "../micropython/tools"))
     import uf2conv
 
     families = uf2conv.load_families()

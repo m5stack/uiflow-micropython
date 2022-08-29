@@ -4,3 +4,6 @@
 [submodule "tools/littlefs/mbed-littlefs"]
 	path = tools/littlefs/mbed-littlefs
 	url = https://github.com/ARMmbed/mbed-littlefs.git
+[submodule "m5stack/components/esp32-camera"]
+	path = m5stack/components/esp32-camera
+	url = https://github.com/espressif/esp32-camera.git
