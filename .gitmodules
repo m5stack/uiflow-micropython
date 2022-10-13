@@ -7,3 +7,9 @@
 [submodule "m5stack/components/esp32-camera"]
 	path = m5stack/components/esp32-camera
 	url = https://github.com/espressif/esp32-camera.git
+[submodule "m5stack/components/M5Unified/M5GFX"]
+	path = m5stack/components/M5Unified/M5GFX
+	url = https://github.com/m5stack/M5GFX.git
+[submodule "m5stack/components/M5Unified/M5Unified"]
+	path = m5stack/components/M5Unified/M5Unified
+	url = https://github.com/m5stack/M5Unified.git
