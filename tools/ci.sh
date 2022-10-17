@@ -98,16 +98,17 @@ function ci_esp32_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB
     
-    if [ -d $IDF_PATH/components/esp32c3 ]; then
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3_USB
-    fi
+    # if [ -d $IDF_PATH/components/esp32c3 ]; then
+    #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
+    #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3_USB
+    # fi
     # if [ -d $IDF_PATH/components/esp32s2 ]; then
     #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S2
     # fi
-    # if [ -d $IDF_PATH/components/esp32s3 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S3
-    # fi
+    if [ -d $IDF_PATH/components/esp32s3 ]; then
+        make ${MAKEOPTS} -C ports/esp32 BOARD=M5STACK_S3_4MB
+        make ${MAKEOPTS} -C ports/esp32 BOARD=M5STACK_S3_SPIRAM_4MB
+    fi
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE
