@@ -213,7 +213,7 @@ mp_obj_t gfx_setTextSize(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_a
     enum {ARG_size};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_size, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 1 } }
+        { MP_QSTR_size, MP_ARG_INT | MP_ARG_REQUIRED, {.u_obj = mp_const_true } }  // 1.0
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -221,7 +221,7 @@ mp_obj_t gfx_setTextSize(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_a
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     auto gfx = getGfx(&pos_args[0]);
-    gfx->setTextSize(args[ARG_size].u_int);
+    gfx->setTextSize(mp_obj_get_float(args[ARG_size].u_obj));
     return mp_const_none;
 }
 
@@ -1028,7 +1028,6 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
 }
 
 // -------- GFX device wrapper
-
 mp_obj_t gfx_startWrite(mp_obj_t self) {
     auto gfx = getGfx(&self);
     gfx->startWrite();
@@ -1042,7 +1041,6 @@ mp_obj_t gfx_endWrite(mp_obj_t self) {
 }
 
 // -------- GFX canvas wrapper
-
 mp_obj_t gfx_push(mp_obj_t self, mp_obj_t x, mp_obj_t y) {
     auto gfx = getGfx(&self);
     if (gfx) {
@@ -1061,7 +1059,18 @@ mp_obj_t gfx_delete(mp_obj_t self) {
     return mp_const_none;
 }
 
-// stream functions
+const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
+const font_obj_t gfx_font_2_obj = {{ &mp_type_object }, &m5gfx::fonts::Font2 };
+const font_obj_t gfx_font_4_obj = {{ &mp_type_object }, &m5gfx::fonts::Font4 };
+const font_obj_t gfx_font_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Font6 };
+const font_obj_t gfx_font_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Font7 };
+const font_obj_t gfx_font_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Font8 };
+const font_obj_t gfx_font_DejaVu9_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
+const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
+const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
+const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
+
+// ------------------------ stream functions start ------------------------
 mp_uint_t gfx_read(mp_obj_t self, void *buf, mp_uint_t size, int *errcode) {
     return 0;
 }
@@ -1159,16 +1168,6 @@ mp_uint_t gfx_write(mp_obj_t self, const byte *buf, mp_uint_t size, int *errcode
 mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode) {
     return 0;
 }
-
-const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
-const font_obj_t gfx_font_2_obj = {{ &mp_type_object }, &m5gfx::fonts::Font2 };
-const font_obj_t gfx_font_4_obj = {{ &mp_type_object }, &m5gfx::fonts::Font4 };
-const font_obj_t gfx_font_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Font6 };
-const font_obj_t gfx_font_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Font7 };
-const font_obj_t gfx_font_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Font8 };
-const font_obj_t gfx_font_DejaVu9_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
-const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
-const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
-const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
+// ------------------------ stream functions end ------------------------
 
 }

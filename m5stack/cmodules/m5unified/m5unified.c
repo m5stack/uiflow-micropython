@@ -11,7 +11,7 @@
 #define MAKE_TABLE(prefix, func) \
     { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
 
-// stream function
+// -------- stream function
 extern mp_uint_t gfx_read(mp_obj_t self_in, void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_write(mp_obj_t self_in, const void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode);
@@ -135,7 +135,7 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
     MAKE_TABLE(gfx, endWrite),
-    // stream function
+    // -------- stream function
     { MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&mp_stream_read_obj) },
     { MP_ROM_QSTR(MP_QSTR_write), MP_ROM_PTR(&mp_stream_write_obj) },
     { MP_ROM_QSTR(MP_QSTR_close), MP_ROM_PTR(&mp_stream_close_obj) },
@@ -247,32 +247,73 @@ const mp_obj_type_t spk_type = {
 };
 
 
+// -------- Power wrapper
+// power port mask
+STATIC const mp_rom_map_elem_t power_port_mask_enum_locals_dict_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_A),          MP_ROM_INT(0b00000001) },
+    { MP_ROM_QSTR(MP_QSTR_B1),         MP_ROM_INT(0b00000010) },
+    { MP_ROM_QSTR(MP_QSTR_B2),         MP_ROM_INT(0b00000100) },
+    { MP_ROM_QSTR(MP_QSTR_C1),         MP_ROM_INT(0b00001000) },
+    { MP_ROM_QSTR(MP_QSTR_C2),         MP_ROM_INT(0b00010000) },
+    { MP_ROM_QSTR(MP_QSTR_USB),        MP_ROM_INT(0b00100000) },
+    { MP_ROM_QSTR(MP_QSTR_HAT),        MP_ROM_INT(0b01000000) },
+    /* *FORMAT-ON* */
+};
+STATIC MP_DEFINE_CONST_DICT(power_port_mask_enum_locals_dict, power_port_mask_enum_locals_dict_table);
+
+const mp_obj_type_t power_port_mask_enum_type = {
+    { &mp_type_type },
+    .locals_dict = (mp_obj_dict_t *)&power_port_mask_enum_locals_dict,
+};
+
+MAKE_METHOD_KW(power, setExtPower, 1);
+MAKE_METHOD_KW(power, setLed, 1);
+MAKE_METHOD_0(power, powerOff);
+
+STATIC const mp_rom_map_elem_t power_member_table[] = {
+    { MP_ROM_QSTR(MP_QSTR_PORT),        MP_ROM_PTR(&power_port_mask_enum_type) },
+    // control functions
+    MAKE_TABLE(power, setExtPower),
+    MAKE_TABLE(power, setLed),
+    MAKE_TABLE(power, powerOff),
+};
+
+STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);
+
+const mp_obj_type_t power_type = {
+    { &mp_type_type },
+    .locals_dict = (mp_obj_dict_t *)&power_member,
+};
+
 // board type
 STATIC const mp_rom_map_elem_t board_enum_locals_dict_table[] = {
+    /* *FORMAT-OFF* */
     // with display boards
-    { MP_ROM_QSTR(MP_QSTR_unknown), MP_ROM_INT(0) },
-    { MP_ROM_QSTR(MP_QSTR_Non_Panel), MP_ROM_INT(1) },
-    { MP_ROM_QSTR(MP_QSTR_M5Stack), MP_ROM_INT(2) },
-    { MP_ROM_QSTR(MP_QSTR_M5StackCore2), MP_ROM_INT(3) },
-    { MP_ROM_QSTR(MP_QSTR_M5StickC), MP_ROM_INT(4) },
-    { MP_ROM_QSTR(MP_QSTR_M5StickCPlus), MP_ROM_INT(5) },
-    { MP_ROM_QSTR(MP_QSTR_M5StackCoreInk), MP_ROM_INT(6) },
-    { MP_ROM_QSTR(MP_QSTR_M5Paper), MP_ROM_INT(7) },
-    { MP_ROM_QSTR(MP_QSTR_M5Tough), MP_ROM_INT(8) },
-    { MP_ROM_QSTR(MP_QSTR_M5Station), MP_ROM_INT(9) },
+    { MP_ROM_QSTR(MP_QSTR_unknown),         MP_ROM_INT(0) },
+    { MP_ROM_QSTR(MP_QSTR_Non_Panel),       MP_ROM_INT(1) },
+    { MP_ROM_QSTR(MP_QSTR_M5Stack),         MP_ROM_INT(2) },
+    { MP_ROM_QSTR(MP_QSTR_M5StackCore2),    MP_ROM_INT(3) },
+    { MP_ROM_QSTR(MP_QSTR_M5StickC),        MP_ROM_INT(4) },
+    { MP_ROM_QSTR(MP_QSTR_M5StickCPlus),    MP_ROM_INT(5) },
+    { MP_ROM_QSTR(MP_QSTR_M5StackCoreInk),  MP_ROM_INT(6) },
+    { MP_ROM_QSTR(MP_QSTR_M5Paper),         MP_ROM_INT(7) },
+    { MP_ROM_QSTR(MP_QSTR_M5Tough),         MP_ROM_INT(8) },
+    { MP_ROM_QSTR(MP_QSTR_M5Station),       MP_ROM_INT(9) },
     // non display boards
-    { MP_ROM_QSTR(MP_QSTR_M5Atom), MP_ROM_INT(10) },
-    { MP_ROM_QSTR(MP_QSTR_M5AtomPsram), MP_ROM_INT(11) },
-    { MP_ROM_QSTR(MP_QSTR_M5AtomU), MP_ROM_INT(12) },
-    { MP_ROM_QSTR(MP_QSTR_M5Camera), MP_ROM_INT(13) },
-    { MP_ROM_QSTR(MP_QSTR_M5TimerCam), MP_ROM_INT(14) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampPico), MP_ROM_INT(15) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3), MP_ROM_INT(16) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3U), MP_ROM_INT(17) },
+    { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(10) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(11) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomU),         MP_ROM_INT(12) },
+    { MP_ROM_QSTR(MP_QSTR_M5Camera),        MP_ROM_INT(13) },
+    { MP_ROM_QSTR(MP_QSTR_M5TimerCam),      MP_ROM_INT(14) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampPico),     MP_ROM_INT(15) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3),       MP_ROM_INT(16) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3U),      MP_ROM_INT(17) },
     // external displays
-    { MP_ROM_QSTR(MP_QSTR_M5AtomDisplay), MP_ROM_INT(18) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD), MP_ROM_INT(19) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED), MP_ROM_INT(20) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomDisplay),   MP_ROM_INT(18) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(19) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(20) },
+    /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(board_enum_locals_dict, board_enum_locals_dict_table);
 
@@ -287,19 +328,22 @@ STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
 
 STATIC const mp_rom_map_elem_t m5_globals_table[] = {
-    { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_m5) },
-    { MP_ROM_QSTR(MP_QSTR_begin), MP_ROM_PTR(&m5_begin_obj) },
-    { MP_ROM_QSTR(MP_QSTR_update), MP_ROM_PTR(&m5_update_obj) },
-    { MP_ROM_QSTR(MP_QSTR_BOARD), MP_ROM_PTR(&board_enum_type) },
-    { MP_ROM_QSTR(MP_QSTR_getBoard), MP_ROM_PTR(&m5_getBoard_obj) },
-    { MP_ROM_QSTR(MP_QSTR_btnA), MP_OBJ_FROM_PTR(&m5_btnA) },
-    { MP_ROM_QSTR(MP_QSTR_btnB), MP_OBJ_FROM_PTR(&m5_btnB) },
-    { MP_ROM_QSTR(MP_QSTR_btnC), MP_OBJ_FROM_PTR(&m5_btnC) },
-    { MP_ROM_QSTR(MP_QSTR_btnPWR), MP_OBJ_FROM_PTR(&m5_btnPWR) },
-    { MP_ROM_QSTR(MP_QSTR_btnEXT), MP_OBJ_FROM_PTR(&m5_btnEXT) },
-    { MP_ROM_QSTR(MP_QSTR_display), MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_lcd), MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_speaker), MP_OBJ_FROM_PTR(&m5_speaker) },
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR___name__),     MP_ROM_QSTR(MP_QSTR_m5) },
+    { MP_ROM_QSTR(MP_QSTR_begin),        MP_ROM_PTR(&m5_begin_obj) },
+    { MP_ROM_QSTR(MP_QSTR_update),       MP_ROM_PTR(&m5_update_obj) },
+    { MP_ROM_QSTR(MP_QSTR_BOARD),        MP_ROM_PTR(&board_enum_type) },
+    { MP_ROM_QSTR(MP_QSTR_getBoard),     MP_ROM_PTR(&m5_getBoard_obj) },
+    { MP_ROM_QSTR(MP_QSTR_btnA),         MP_OBJ_FROM_PTR(&m5_btnA) },
+    { MP_ROM_QSTR(MP_QSTR_btnB),         MP_OBJ_FROM_PTR(&m5_btnB) },
+    { MP_ROM_QSTR(MP_QSTR_btnC),         MP_OBJ_FROM_PTR(&m5_btnC) },
+    { MP_ROM_QSTR(MP_QSTR_btnPWR),       MP_OBJ_FROM_PTR(&m5_btnPWR) },
+    { MP_ROM_QSTR(MP_QSTR_btnEXT),       MP_OBJ_FROM_PTR(&m5_btnEXT) },
+    { MP_ROM_QSTR(MP_QSTR_display),      MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_lcd),          MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_speaker),      MP_OBJ_FROM_PTR(&m5_speaker) },
+    { MP_ROM_QSTR(MP_QSTR_power),        MP_OBJ_FROM_PTR(&m5_power) },
+    /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, m5_globals_table);
 

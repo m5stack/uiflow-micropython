@@ -9,13 +9,16 @@ extern "C"
 {
 #include "mpy_m5unified.h"
 
-const btn_obj_t m5_btnA = {{&btn_type}, &(M5.BtnA) };
-const btn_obj_t m5_btnB = {{&btn_type}, &(M5.BtnB) };
-const btn_obj_t m5_btnC = {{&btn_type}, &(M5.BtnC) };
-const btn_obj_t m5_btnPWR = {{&btn_type}, &(M5.BtnPWR) };
-const btn_obj_t m5_btnEXT = {{&btn_type}, &(M5.BtnEXT) };
-const spk_obj_t m5_speaker = {{&spk_type}, &(M5.Speaker) };
-const gfx_obj_t m5_display = {{&gfxdevice_type}, &(M5.Display) };
+/* *FORMAT-OFF* */
+const btn_obj_t m5_btnA    = {{&btn_type},        &(M5.BtnA)    };
+const btn_obj_t m5_btnB    = {{&btn_type},        &(M5.BtnB)    };
+const btn_obj_t m5_btnC    = {{&btn_type},        &(M5.BtnC)    };
+const btn_obj_t m5_btnPWR  = {{&btn_type},        &(M5.BtnPWR)  };
+const btn_obj_t m5_btnEXT  = {{&btn_type},        &(M5.BtnEXT)  };
+const spk_obj_t m5_speaker = {{&spk_type},        &(M5.Speaker) };
+const gfx_obj_t m5_display = {{&gfxdevice_type},  &(M5.Display) };
+const pwr_obj_t m5_power   = {{&power_type},      &(M5.Power)   };
+/* *FORMAT-ON* */
 
 mp_obj_t m5_begin(void) {
     M5.begin();

@@ -8,6 +8,7 @@
 #include "mpy_m5gfx.h"
 #include "mpy_m5btn.h"
 #include "mpy_m5spk.h"
+#include "mpy_m5power.h"
 
 extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);
@@ -20,3 +21,4 @@ extern const btn_obj_t m5_btnB;
 extern const btn_obj_t m5_btnC;
 extern const btn_obj_t m5_btnPWR;
 extern const btn_obj_t m5_btnEXT;
+extern const pwr_obj_t m5_power;
