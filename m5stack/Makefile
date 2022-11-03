@@ -100,5 +100,6 @@ submodules:
 	git submodule update --init ./components/esp32-camera
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
+	git submodule update --init --recursive ./components/lv_bindings
 	git submodule update --init ../micropython
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -	
