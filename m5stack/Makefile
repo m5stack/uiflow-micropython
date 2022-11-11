@@ -41,7 +41,7 @@ ifdef USER_C_MODULES
 	CMAKE_ARGS += -DUSER_C_MODULES=${USER_C_MODULES}
 endif
 
-IDFPY_FLAGS += -D MICROPY_BOARD=$(BOARD) -B $(BUILD) $(CMAKE_ARGS)
+IDFPY_FLAGS += -D MICROPY_BOARD=$(BOARD) -D BUILD_WITH_LVGL=$(LVGL) -B $(BUILD) $(CMAKE_ARGS)
 
 ifdef FROZEN_MANIFEST
        IDFPY_FLAGS += -D MICROPY_FROZEN_MANIFEST=$(FROZEN_MANIFEST)
@@ -95,6 +95,7 @@ mpy-cross:
 # The two submodules do not belong to the same repository
 # micropython submodule belong to uiflow_micropython
 # berkeley-db-1.xx submodule belong to micropython submodule
+# TODO: need update this :)
 submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ./components/esp32-camera
@@ -102,4 +103,7 @@ submodules:
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
 	git submodule update --init ../micropython
-	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -	
+	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && \
+	git apply ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
+	cd ./components/lv_bindings && \
+	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -

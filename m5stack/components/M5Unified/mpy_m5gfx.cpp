@@ -18,6 +18,12 @@ extern "C"
 #include "mpy_m5gfx.h"
 #include "esp_log.h"
 
+#if MICROPY_PY_LVGL
+#include "lvgl/lvgl.h"
+#include "lvgl/src/hal/lv_hal_disp.h"
+#include "./../../components/lv_bindings/driver/include/common.h"
+#endif
+
 typedef struct _mp_obj_vfs_lfs2_t {
     mp_obj_base_t base;
     mp_vfs_blockdev_t blockdev;
@@ -1059,17 +1065,6 @@ mp_obj_t gfx_delete(mp_obj_t self) {
     return mp_const_none;
 }
 
-const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
-const font_obj_t gfx_font_2_obj = {{ &mp_type_object }, &m5gfx::fonts::Font2 };
-const font_obj_t gfx_font_4_obj = {{ &mp_type_object }, &m5gfx::fonts::Font4 };
-const font_obj_t gfx_font_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Font6 };
-const font_obj_t gfx_font_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Font7 };
-const font_obj_t gfx_font_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Font8 };
-const font_obj_t gfx_font_DejaVu9_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
-const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
-const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
-const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
-
 // ------------------------ stream functions start ------------------------
 mp_uint_t gfx_read(mp_obj_t self, void *buf, mp_uint_t size, int *errcode) {
     return 0;
@@ -1170,4 +1165,33 @@ mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcod
 }
 // ------------------------ stream functions end ------------------------
 
+// ------------------------- lvgl display port --------------------------
+#if MICROPY_PY_LVGL
+extern LovyanGFX *g_gfx;
+void gfx_lvgl_flush(struct _disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
+{
+    if (g_gfx == nullptr) {
+        return;
+    }
+    int w = (area->x2 - area->x1 + 1);
+    int h = (area->y2 - area->y1 + 1);
+    g_gfx->startWrite();
+    g_gfx->setAddrWindow(area->x1, area->y1, w, h);
+    g_gfx->writePixels((lgfx::rgb565_t *)&color_p->full, w * h);
+    g_gfx->endWrite();
+    lv_disp_flush_ready((lv_disp_drv_t*)disp_drv);
+}
+#endif 
+
+// --------------------------- builtin fonts ----------------------------
+const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
+const font_obj_t gfx_font_2_obj = {{ &mp_type_object }, &m5gfx::fonts::Font2 };
+const font_obj_t gfx_font_4_obj = {{ &mp_type_object }, &m5gfx::fonts::Font4 };
+const font_obj_t gfx_font_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Font6 };
+const font_obj_t gfx_font_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Font7 };
+const font_obj_t gfx_font_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Font8 };
+const font_obj_t gfx_font_DejaVu9_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
+const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
+const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
+const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
 }

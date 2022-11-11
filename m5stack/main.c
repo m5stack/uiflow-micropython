@@ -218,6 +218,11 @@ soft_reset_exit:
     usocket_events_deinit();
 
     mp_deinit();
+
+    #if MICROPY_PY_LVGL
+    MICROPY_PORT_DEINIT_FUNC;
+    #endif
+
     fflush(stdout);
     goto soft_reset;
 }

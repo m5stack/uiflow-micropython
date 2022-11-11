@@ -1,0 +1,119 @@
+diff --git a/driver/esp32/espidf.h b/driver/esp32/espidf.h
+index 34559442..78c36949 100644
+--- a/driver/esp32/espidf.h
++++ b/driver/esp32/espidf.h
+@@ -82,8 +82,13 @@ void * memset ( void * ptr, int value, size_t num );
+ 
+ static inline void SPH0645_WORKAROUND(int i2s_num)
+ {
++#if CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32S2
+     REG_SET_BIT( I2S_TIMING_REG(i2s_num), BIT(9));
+     REG_SET_BIT( I2S_CONF_REG(i2s_num), I2S_RX_MSB_SHIFT);
++#elif CONFIG_IDF_TARGET_ESP32S3
++    REG_SET_BIT( I2S_RX_TIMING_REG(i2s_num), BIT(9));
++    REG_SET_BIT( I2S_RX_CONF_REG(i2s_num), I2S_RX_MSB_SHIFT);
++#endif
+ }
+ 
+ /////////////////////////////////////////////////////////////////////////////////////////////
+@@ -176,11 +181,13 @@ void ex_spi_post_cb_isr(spi_transaction_t *trans);
+ 
+ #if defined(ESP_IDF_VERSION_MAJOR) && ESP_IDF_VERSION_MAJOR >= 4
+ // SPI HOST enum was changed to macros on v4
++#if CONFIG_IDF_TARGET_ESP32
+ enum {
+     ENUM_SPI_HOST = SPI_HOST,
+     ENUM_HSPI_HOST = HSPI_HOST,
+     ENUM_VSPI_HOST = VSPI_HOST,
+ };
++#endif /* CONFIG_IDF_TARGET_ESP32 */
+ #endif
+ 
+ enum {
+diff --git a/driver/esp32/modrtch.c b/driver/esp32/modrtch.c
+index 8d32ef69..871a5ba6 100644
+--- a/driver/esp32/modrtch.c
++++ b/driver/esp32/modrtch.c
+@@ -57,6 +57,8 @@ static const char TAG[] = "[RTCH]";
+ #endif
+ 
+ #define GPIO_TO_ADC_ELEMENT(x) [x] = CONCAT3(ADC1_GPIO, x, _CHANNEL)
++#if CONFIG_IDF_TARGET_ESP32
++// ESP32 ADC1 has 8 channels
+ static const int gpio_to_adc[] = {
+         GPIO_TO_ADC_ELEMENT(36),
+         GPIO_TO_ADC_ELEMENT(37),
+@@ -67,6 +69,30 @@ static const int gpio_to_adc[] = {
+         GPIO_TO_ADC_ELEMENT(34),
+         GPIO_TO_ADC_ELEMENT(35),
+ };
++#elif CONFIG_IDF_TARGET_ESP32C3 || CONFIG_IDF_TARGET_ESP32H2
++// ESP32-C3 & ESP32-H2 ADC1 has 5 channels
++static const int gpio_to_adc[] = {
++        GPIO_TO_ADC_ELEMENT(0),
++        GPIO_TO_ADC_ELEMENT(1),
++        GPIO_TO_ADC_ELEMENT(2),
++        GPIO_TO_ADC_ELEMENT(3),
++        GPIO_TO_ADC_ELEMENT(4),
++};
++#elif CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3
++// ESP32-S2 & ESP32-S3 ADC1 has 10 channels
++static const int gpio_to_adc[] = {
++        GPIO_TO_ADC_ELEMENT(1),
++        GPIO_TO_ADC_ELEMENT(2),
++        GPIO_TO_ADC_ELEMENT(3),
++        GPIO_TO_ADC_ELEMENT(4),
++        GPIO_TO_ADC_ELEMENT(5),
++        GPIO_TO_ADC_ELEMENT(6),
++        GPIO_TO_ADC_ELEMENT(7),
++        GPIO_TO_ADC_ELEMENT(8),
++        GPIO_TO_ADC_ELEMENT(9),
++        GPIO_TO_ADC_ELEMENT(10),
++};
++#endif
+ 
+ //////////////////////////////////////////////////////////////////////////////
+ // Module definition
+@@ -392,7 +418,9 @@ STATIC int measure_axis(
+ 
+     adc1_channel_t adc_channel = gpio_to_adc[measure];
+ 
++#if CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32S2
+     adc_gpio_init(ADC_UNIT_1, adc_channel);
++#endif
+     adc1_config_width(ADC_WIDTH_BIT_12);
+     adc1_config_channel_atten(adc_channel,ADC_ATTEN_DB_11);
+ 
+diff --git a/driver/include/common.h b/driver/include/common.h
+index 1be34cf7..f6751ea9 100644
+--- a/driver/include/common.h
++++ b/driver/include/common.h
+@@ -18,7 +18,7 @@ typedef struct mp_ptr_t
+ 
+ STATIC mp_int_t mp_ptr_get_buffer(mp_obj_t self_in, mp_buffer_info_t *bufinfo, mp_uint_t flags)
+ {
+-    mp_ptr_t *self = MP_OBJ_TO_PTR(self_in);
++    mp_ptr_t *self = (mp_ptr_t*)MP_OBJ_TO_PTR(self_in);
+ 
+     if (flags & MP_BUFFER_WRITE) {
+         // read-only ptr
+diff --git a/mkrules.cmake b/mkrules.cmake
+index 145faedf..7f94d75a 100644
+--- a/mkrules.cmake
++++ b/mkrules.cmake
+@@ -120,6 +120,14 @@ function(all_lv_bindings)
+             GEN_OPTIONS
+                  -M espidf
+             FILTER
++                clk.h
++                FreeRTOSConfig_arch.h
++                gpio.h
++                lldesc.h
++                rtc_io.h
++                esp_eth.h
++                esp_eth_phy.h
++                esp_eth_netif_glue.h
+                 i2s_ll.h
+                 i2s_hal.h
+                 esp_intr_alloc.h
+

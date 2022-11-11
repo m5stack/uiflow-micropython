@@ -1,4 +1,9 @@
 #include <mpy_m5unified.h>
+#if MICROPY_PY_LVGL
+#include "lvgl/lvgl.h"
+#include "lvgl/src/hal/lv_hal_disp.h"
+#include "./../../components/lv_bindings/driver/include/common.h"
+#endif
 
 /* *FORMAT-OFF* */
 #define MAKE_METHOD_V(prefix, func, arg_min, arg_max) extern mp_obj_t prefix##_##func(size_t,const mp_obj_t*); STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN( prefix##_##func##_obj, arg_min, arg_max, prefix##_##func ); 
@@ -15,6 +20,14 @@
 extern mp_uint_t gfx_read(mp_obj_t self_in, void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_write(mp_obj_t self_in, const void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode);
+
+#if MICROPY_PY_LVGL
+// lvgl function
+extern void gfx_lvgl_flush(struct _disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);
+extern bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data);
+DEFINE_PTR_OBJ(gfx_lvgl_flush);
+DEFINE_PTR_OBJ(gfx_lvgl_touch_read);
+#endif
 
 // -------- GFX common wrapper
 MAKE_METHOD_0(gfx, width);
@@ -56,6 +69,10 @@ MAKE_METHOD_KW(gfx, drawRawBuf, 1);
 MAKE_METHOD_KW(gfx, print, 1);
 MAKE_METHOD_V(gfx, printf, 2, 32);
 MAKE_METHOD_KW(gfx, newCanvas, 1);
+#if MICROPY_PY_LVGL
+MAKE_METHOD_0(gfx, lvgl_init);
+MAKE_METHOD_0(gfx, lvgl_deinit);
+#endif
 
 #define TABLE_PARTS_GFX_BASE \
     MAKE_TABLE(gfx, height), \
@@ -139,10 +156,17 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&mp_stream_read_obj) },
     { MP_ROM_QSTR(MP_QSTR_write), MP_ROM_PTR(&mp_stream_write_obj) },
     { MP_ROM_QSTR(MP_QSTR_close), MP_ROM_PTR(&mp_stream_close_obj) },
+    #if MICROPY_PY_LVGL
+    // -------- lvgl port
+    { MP_ROM_QSTR(MP_QSTR_lvgl_init), MP_ROM_PTR(&gfx_lvgl_init_obj) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_deinit), MP_ROM_PTR(&gfx_lvgl_deinit_obj) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_flush)) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_read), MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_touch_read)) },
+    #endif
 };
 STATIC MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
 
-// stream function
+// -------- stream function
 STATIC const mp_stream_p_t gfx_stream_p = {
     .read = gfx_read,
     .write = gfx_write,
@@ -154,6 +178,53 @@ const mp_obj_type_t gfxdevice_type = {
     .protocol = &gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
+
+// -------- lvgl port
+#if MICROPY_PY_LVGL
+#include "freertos/FreeRTOS.h"
+#include "freertos/timers.h"
+#include "esp_log.h"
+
+static TimerHandle_t lvgl_timer = NULL;
+
+void lvgl_deinit() {
+    lv_deinit();
+    if (lvgl_timer) {
+        xTimerDelete(lvgl_timer, portMAX_DELAY);
+        lvgl_timer = NULL;
+    }
+}
+
+mp_obj_t mp_lv_task_handler(mp_obj_t self_in) {
+    lv_task_handler();
+    return mp_const_none;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(mp_lv_task_handler_obj, mp_lv_task_handler);
+
+static void vTimerCallback(TimerHandle_t plvgl_timer) {
+    lv_tick_inc(portTICK_RATE_MS * 10);
+    mp_sched_schedule((mp_obj_t)&mp_lv_task_handler_obj, mp_const_none);
+}
+
+mp_obj_t gfx_lvgl_init(mp_obj_t self) {
+    if (lvgl_timer) {
+        return mp_const_none;
+    }
+
+    lv_init();
+    lvgl_timer = xTimerCreate("lvgl_timer", 10, pdTRUE, NULL, vTimerCallback);
+
+    if (lvgl_timer == NULL || xTimerStart(lvgl_timer, 0) != pdPASS) {
+        ESP_LOGE("LVGL", "Failed creating or starting LVGL timer!");
+    }
+    return mp_const_none;
+}
+
+mp_obj_t gfx_lvgl_deinit(mp_obj_t self) {
+    lvgl_deinit();
+    return mp_const_none;
+}
+#endif
 
 // -------- GFX canvas wrapper
 MAKE_METHOD_0(gfx, delete);

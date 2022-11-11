@@ -20,6 +20,12 @@ const gfx_obj_t m5_display = {{&gfxdevice_type},  &(M5.Display) };
 const pwr_obj_t m5_power   = {{&power_type},      &(M5.Power)   };
 /* *FORMAT-ON* */
 
+#if MICROPY_PY_LVGL
+#include "lvgl/lvgl.h"
+#include "lvgl/src/hal/lv_hal_disp.h"
+LovyanGFX *g_gfx = &(M5.Display);
+#endif
+
 mp_obj_t m5_begin(void) {
     M5.begin();
     return mp_const_none;
@@ -33,4 +39,26 @@ mp_obj_t m5_update(void) {
 mp_obj_t m5_getBoard(void) {
     return mp_obj_new_int(M5.getBoard());
 }
+
+#if MICROPY_PY_LVGL
+bool gfx_lvgl_touch_read(lv_indev_drv_t * indev_drv, lv_indev_data_t *data)
+{
+    if (g_gfx == nullptr) {
+        return false;
+    }
+
+    M5.update();
+    
+    if (!M5.Touch.getCount()) {
+        data->point = (lv_point_t){ 0, 0 };
+        data->state = LV_INDEV_STATE_RELEASED;
+        return false;
+    }
+
+    auto tp = M5.Touch.getTouchPointRaw(1);
+    data->point = (lv_point_t){ tp.x, tp.y };
+    data->state = LV_INDEV_STATE_PRESSED;
+    return true;
+}
+#endif
 }
