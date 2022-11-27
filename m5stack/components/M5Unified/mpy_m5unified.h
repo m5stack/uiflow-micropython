@@ -22,3 +22,6 @@ extern const btn_obj_t m5_btnC;
 extern const btn_obj_t m5_btnPWR;
 extern const btn_obj_t m5_btnEXT;
 extern const pwr_obj_t m5_power;
+
+// user display
+extern const gfx_obj_t user_display;

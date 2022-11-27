@@ -21,12 +21,10 @@ extern mp_uint_t gfx_read(mp_obj_t self_in, void *buf, mp_uint_t size, int *errc
 extern mp_uint_t gfx_write(mp_obj_t self_in, const void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode);
 
+extern mp_obj_t user_lcd_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
 #if MICROPY_PY_LVGL
-// lvgl function
-extern void gfx_lvgl_flush(struct _disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);
-extern bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data);
-DEFINE_PTR_OBJ(gfx_lvgl_flush);
-DEFINE_PTR_OBJ(gfx_lvgl_touch_read);
+#include "m5unified_lvgl.c"
 #endif
 
 // -------- GFX common wrapper
@@ -160,8 +158,11 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     // -------- lvgl port
     { MP_ROM_QSTR(MP_QSTR_lvgl_init), MP_ROM_PTR(&gfx_lvgl_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_deinit), MP_ROM_PTR(&gfx_lvgl_deinit_obj) },
+
     { MP_ROM_QSTR(MP_QSTR_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_flush)) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_read), MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_touch_read)) },
+
+    { MP_ROM_QSTR(MP_QSTR_user_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(user_lvgl_flush)) },
     #endif
 };
 STATIC MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
@@ -179,52 +180,12 @@ const mp_obj_type_t gfxdevice_type = {
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
 
-// -------- lvgl port
-#if MICROPY_PY_LVGL
-#include "freertos/FreeRTOS.h"
-#include "freertos/timers.h"
-#include "esp_log.h"
-
-static TimerHandle_t lvgl_timer = NULL;
-
-void lvgl_deinit() {
-    lv_deinit();
-    if (lvgl_timer) {
-        xTimerDelete(lvgl_timer, portMAX_DELAY);
-        lvgl_timer = NULL;
-    }
-}
-
-mp_obj_t mp_lv_task_handler(mp_obj_t self_in) {
-    lv_task_handler();
-    return mp_const_none;
-}
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(mp_lv_task_handler_obj, mp_lv_task_handler);
-
-static void vTimerCallback(TimerHandle_t plvgl_timer) {
-    lv_tick_inc(portTICK_RATE_MS * 10);
-    mp_sched_schedule((mp_obj_t)&mp_lv_task_handler_obj, mp_const_none);
-}
-
-mp_obj_t gfx_lvgl_init(mp_obj_t self) {
-    if (lvgl_timer) {
-        return mp_const_none;
-    }
-
-    lv_init();
-    lvgl_timer = xTimerCreate("lvgl_timer", 10, pdTRUE, NULL, vTimerCallback);
-
-    if (lvgl_timer == NULL || xTimerStart(lvgl_timer, 0) != pdPASS) {
-        ESP_LOGE("LVGL", "Failed creating or starting LVGL timer!");
-    }
-    return mp_const_none;
-}
-
-mp_obj_t gfx_lvgl_deinit(mp_obj_t self) {
-    lvgl_deinit();
-    return mp_const_none;
-}
-#endif
+const mp_obj_type_t user_lcd_type = {
+    { &mp_type_type },
+    .protocol = &gfx_stream_p,
+    .make_new = user_lcd_make_new,
+    .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
+};
 
 // -------- GFX canvas wrapper
 MAKE_METHOD_0(gfx, delete);
@@ -403,8 +364,8 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__),     MP_ROM_QSTR(MP_QSTR_m5) },
     { MP_ROM_QSTR(MP_QSTR_begin),        MP_ROM_PTR(&m5_begin_obj) },
     { MP_ROM_QSTR(MP_QSTR_update),       MP_ROM_PTR(&m5_update_obj) },
-    { MP_ROM_QSTR(MP_QSTR_BOARD),        MP_ROM_PTR(&board_enum_type) },
     { MP_ROM_QSTR(MP_QSTR_getBoard),     MP_ROM_PTR(&m5_getBoard_obj) },
+    { MP_ROM_QSTR(MP_QSTR_BOARD),        MP_ROM_PTR(&board_enum_type) },
     { MP_ROM_QSTR(MP_QSTR_btnA),         MP_OBJ_FROM_PTR(&m5_btnA) },
     { MP_ROM_QSTR(MP_QSTR_btnB),         MP_OBJ_FROM_PTR(&m5_btnB) },
     { MP_ROM_QSTR(MP_QSTR_btnC),         MP_OBJ_FROM_PTR(&m5_btnC) },
@@ -412,6 +373,7 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_btnEXT),       MP_OBJ_FROM_PTR(&m5_btnEXT) },
     { MP_ROM_QSTR(MP_QSTR_display),      MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_lcd),          MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_user_lcd),     MP_OBJ_FROM_PTR(&user_lcd_type) },
     { MP_ROM_QSTR(MP_QSTR_speaker),      MP_OBJ_FROM_PTR(&m5_speaker) },
     { MP_ROM_QSTR(MP_QSTR_power),        MP_OBJ_FROM_PTR(&m5_power) },
     /* *FORMAT-ON* */
@@ -419,9 +381,9 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
 STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, m5_globals_table);
 
 // Define module object.
-const mp_obj_module_t m5m5unified_user_cmodule = {
+const mp_obj_module_t m5unified_user_cmodule = {
     .base = { &mp_type_module },
     .globals = (mp_obj_dict_t *)&mp_module_m5_globals,
 };
 
-MP_REGISTER_MODULE(MP_QSTR_m5, m5m5unified_user_cmodule);
+MP_REGISTER_MODULE(MP_QSTR_m5, m5unified_user_cmodule);
