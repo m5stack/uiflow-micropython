@@ -97,17 +97,30 @@ function ci_esp32_build {
     make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB
+
+    # before lvgl build test, we need make clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB LVGL=1
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB LVGL=1
     
     # if [ -d $IDF_PATH/components/esp32c3 ]; then
     #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
     #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3_USB
     # fi
     # if [ -d $IDF_PATH/components/esp32s2 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S2
+    #     make ${MAKEOPTS} -C m5stack BOARD=GENERIC_S2
     # fi
+
     if [ -d $IDF_PATH/components/esp32s3 ]; then
-        make ${MAKEOPTS} -C ports/esp32 BOARD=M5STACK_S3_4MB
-        make ${MAKEOPTS} -C ports/esp32 BOARD=M5STACK_S3_SPIRAM_4MB
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB
+
+        # before lvgl build test, we need make clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB LVGL=1
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB LVGL=1
     fi
 }
 
