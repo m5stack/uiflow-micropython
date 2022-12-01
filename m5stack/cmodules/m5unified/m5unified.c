@@ -21,7 +21,7 @@ extern mp_uint_t gfx_read(mp_obj_t self_in, void *buf, mp_uint_t size, int *errc
 extern mp_uint_t gfx_write(mp_obj_t self_in, const void *buf, mp_uint_t size, int *errcode);
 extern mp_uint_t gfx_ioctl(mp_obj_t self, mp_uint_t request, uintptr_t arg, int *errcode);
 
-extern mp_obj_t user_lcd_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+extern mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #if MICROPY_PY_LVGL
 #include "m5unified_lvgl.c"
@@ -180,10 +180,10 @@ const mp_obj_type_t gfxdevice_type = {
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
 
-const mp_obj_type_t user_lcd_type = {
+const mp_obj_type_t user_panel_type = {
     { &mp_type_type },
     .protocol = &gfx_stream_p,
-    .make_new = user_lcd_make_new,
+    .make_new = user_panel_make_new,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
 
@@ -332,19 +332,23 @@ STATIC const mp_rom_map_elem_t board_enum_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5Paper),         MP_ROM_INT(7) },
     { MP_ROM_QSTR(MP_QSTR_M5Tough),         MP_ROM_INT(8) },
     { MP_ROM_QSTR(MP_QSTR_M5Station),       MP_ROM_INT(9) },
+    { MP_ROM_QSTR(MP_QSTR_M5StackCoreS3),   MP_ROM_INT(10) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomS3LCD),     MP_ROM_INT(11) },
     // non display boards
-    { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(10) },
-    { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(11) },
-    { MP_ROM_QSTR(MP_QSTR_M5AtomU),         MP_ROM_INT(12) },
-    { MP_ROM_QSTR(MP_QSTR_M5Camera),        MP_ROM_INT(13) },
-    { MP_ROM_QSTR(MP_QSTR_M5TimerCam),      MP_ROM_INT(14) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampPico),     MP_ROM_INT(15) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3),       MP_ROM_INT(16) },
-    { MP_ROM_QSTR(MP_QSTR_M5StampC3U),      MP_ROM_INT(17) },
+    { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(12) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(13) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomU),         MP_ROM_INT(14) },
+    { MP_ROM_QSTR(MP_QSTR_M5Camera),        MP_ROM_INT(15) },
+    { MP_ROM_QSTR(MP_QSTR_M5TimerCam),      MP_ROM_INT(16) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampPico),     MP_ROM_INT(17) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3),       MP_ROM_INT(18) },
+    { MP_ROM_QSTR(MP_QSTR_M5StampC3U),      MP_ROM_INT(19) },
     // external displays
-    { MP_ROM_QSTR(MP_QSTR_M5AtomDisplay),   MP_ROM_INT(18) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(19) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(20) },
+    { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(20) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(21) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(22) },
+    { MP_ROM_QSTR(MP_QSTR_M5ModuleDisplay), MP_ROM_INT(23) },
+    { MP_ROM_QSTR(MP_QSTR_M5RCAModule),     MP_ROM_INT(24) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(board_enum_locals_dict, board_enum_locals_dict_table);
@@ -373,7 +377,7 @@ STATIC const mp_rom_map_elem_t m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_btnEXT),       MP_OBJ_FROM_PTR(&m5_btnEXT) },
     { MP_ROM_QSTR(MP_QSTR_display),      MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_lcd),          MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_user_lcd),     MP_OBJ_FROM_PTR(&user_lcd_type) },
+    { MP_ROM_QSTR(MP_QSTR_user_lcd),     MP_OBJ_FROM_PTR(&user_panel_type) },
     { MP_ROM_QSTR(MP_QSTR_speaker),      MP_OBJ_FROM_PTR(&m5_speaker) },
     { MP_ROM_QSTR(MP_QSTR_power),        MP_OBJ_FROM_PTR(&m5_power) },
     /* *FORMAT-ON* */

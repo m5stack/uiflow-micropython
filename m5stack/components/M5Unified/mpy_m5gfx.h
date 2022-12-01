@@ -20,7 +20,7 @@ typedef struct _font_obj_t {
 extern const mp_obj_type_t gfxdevice_type;
 extern const mp_obj_type_t gfxcanvas_type;
 
-extern const mp_obj_type_t user_lcd_type;
+extern const mp_obj_type_t user_panel_type;
 
 extern const font_obj_t gfx_font_0_obj;
 extern const font_obj_t gfx_font_2_obj;

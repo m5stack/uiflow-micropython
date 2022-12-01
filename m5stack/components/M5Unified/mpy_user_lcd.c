@@ -4,133 +4,295 @@
 #include "lgfx/v1/panel/Panel_ST7789.hpp"
 #include "lgfx/v1/panel/Panel_GC9A01.hpp"
 #include "lgfx/v1/panel/Panel_GDEW0154M09.hpp"
+#include "lgfx/v1/panel/Panel_SSD1306.hpp"
 #include "lgfx/v1/panel/Panel_IT8951.hpp"
 #include "lgfx/v1/touch/Touch_FT5x06.hpp"
 #include "lgfx/v1/touch/Touch_GT911.hpp"
 
-class Customers_GFX : public lgfx::LGFX_Device {
-    lgfx::Panel_Device* _panel_instance;
-    lgfx::Bus_SPI _spi_bus_instance;
+enum panel_t {
+    PANEL_UNKNOWN,
 
-   public:
-    Customers_GFX(void){
+    SPI_LCD_ILI9342,
+    SPI_LCD_ST7735,
+    SPI_LCD_ST7735S,
+    SPI_LCD_ST7789,
+    SPI_LCD_GC9A01,
+    SPI_LCD_GC9107,
+    SPI_EINK_GDEW0154M09,
+    SPI_EINK_IT8951,
+    SPI_PANEL_TYPE_MAX,
+
+    I2C_OLED_SSD1306,
+    I2C_OLED_SH110x,
+    I2C_PANEL_TYPE_MAX,
+};
+
+enum tp_t {
+    TP_UNKNOWN,
+    I2C_TP_FT5X06,
+    I2C_TP_GT911,
+    TP_TYPE_MAX
+};
+
+class User_GFX: public lgfx::LGFX_Device {
+    lgfx::Panel_Device *_user_panel_instance;
+    lgfx::ITouch *_user_touch_instance;
+
+    lgfx::Bus_SPI _spi_bus_instance;
+    lgfx::Bus_I2C _i2c_bus_instance;
+
+public:
+    User_GFX(void) {
 
     };
 
-    void setup(uint8_t lcd_type, uint8_t spi_host, int16_t width, int16_t height,
-               int16_t offset_x = 0, int16_t offset_y = 0, bool invert = false,
-               bool rgb_order = false, uint32_t freq_write = 40,
-               uint32_t freq_read = 16, int16_t pin_sclk = -1,
-               int16_t pin_mosi = -1, int16_t pin_miso = -1,
-               int16_t pin_dc = -1, int16_t pin_cs = -1, int16_t pin_rst = -1,
-               int16_t pin_busy = -1) {
+    void spiPanelSetup(panel_t panel_type, int16_t width, int16_t height,
+        int16_t offset_x, int16_t offset_y, bool invert, bool rgb_order,
+        uint8_t spi_host, uint32_t spi_freq = 40, int16_t pin_sclk = -1,
+        int16_t pin_mosi = -1, int16_t pin_miso = -1, int16_t pin_dc = -1,
+        int16_t pin_cs = -1, int16_t pin_rst = -1, int16_t pin_busy = -1) {
+
         {
             auto cfg = _spi_bus_instance.config();
 
-            cfg.spi_host    = (spi_host_device_t)spi_host;
-            cfg.spi_mode    = 0;
-            cfg.freq_write  = freq_write * 1000000;
-            cfg.freq_read   = freq_read * 1000000;
-            cfg.spi_3wire   = true;
-            cfg.use_lock    = true;
-            cfg.dma_channel = 3;  // AUTO
-            cfg.pin_sclk    = pin_sclk;
-            cfg.pin_mosi    = pin_mosi;
-            cfg.pin_miso    = pin_miso;
-            cfg.pin_dc      = pin_dc;
+            cfg.spi_host = (spi_host_device_t)spi_host;
+            cfg.spi_mode = 0;
+            cfg.freq_write = spi_freq * 1000000;
+            cfg.freq_read = spi_freq * 1000000;
+            cfg.spi_3wire = true;
+            cfg.use_lock = true;
+            cfg.dma_channel = 3; // AUTO
+            cfg.pin_sclk = pin_sclk;
+            cfg.pin_mosi = pin_mosi;
+            cfg.pin_miso = pin_miso;
+            cfg.pin_dc = pin_dc;
 
             _spi_bus_instance.config(cfg);
         }
-        {
-            // TODO:
-            switch (lcd_type) {
-                case 0: {
-                    auto p          = new lgfx::Panel_ILI9342();
-                    _panel_instance = p;
-                } break;
-                case 1: {
-                    auto p          = new lgfx::Panel_GC9A01();
-                    _panel_instance = p;
-                } break;
 
+        {
+            switch ((panel_t)panel_type) {
+                case SPI_LCD_ILI9342: {
+                    auto p = new lgfx::Panel_ILI9342();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_LCD_ST7735: {
+                    auto p = new lgfx::Panel_ST7735();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_LCD_ST7735S: {
+                    auto p = new lgfx::Panel_ST7735S();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_LCD_ST7789: {
+                    auto p = new lgfx::Panel_ST7789();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_LCD_GC9A01: {
+                    auto p = new lgfx::Panel_GC9A01();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_LCD_GC9107: {
+                    auto p = new lgfx::Panel_GC9107();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_EINK_GDEW0154M09: {
+                    auto p = new lgfx::Panel_GDEW0154M09();
+                    _user_panel_instance = p;
+                } break;
+                case SPI_EINK_IT8951: {
+                    auto p = new lgfx::Panel_IT8951();
+                    _user_panel_instance = p;
+                } break;
                 default: {
-                    auto p          = new lgfx::Panel_ILI9342();
-                    _panel_instance = p;
+                    auto p = new lgfx::Panel_ILI9342();
+                    _user_panel_instance = p;
                 } break;
             }
 
-            auto cfg = _panel_instance->config();
+            auto cfg = _user_panel_instance->config();
 
-            cfg.pin_cs   = pin_cs;
-            cfg.pin_rst  = pin_rst;
+            cfg.pin_cs = pin_cs;
+            cfg.pin_rst = pin_rst;
             cfg.pin_busy = pin_busy;
 
-            cfg.panel_width      = width;
-            cfg.panel_height     = height;
-            cfg.offset_x         = offset_x;
-            cfg.offset_y         = offset_y;
-            cfg.offset_rotation  = 0;
+            cfg.panel_width = width;
+            cfg.panel_height = height;
+            cfg.offset_x = offset_x;
+            cfg.offset_y = offset_y;
+            cfg.offset_rotation = 0;
             cfg.dummy_read_pixel = 8;
-            cfg.dummy_read_bits  = 1;
-            cfg.readable         = true;
-            cfg.invert           = invert;
-            cfg.rgb_order        = false;
-            cfg.dlen_16bit       = false;
-            cfg.bus_shared       = true;
+            cfg.dummy_read_bits = 1;
+            cfg.readable = true;
+            cfg.invert = invert;
+            cfg.rgb_order = false;
+            cfg.dlen_16bit = false;
+            cfg.bus_shared = true;
 
-            _panel_instance->setBus(&_spi_bus_instance);
-            _panel_instance->config(cfg);
-            setPanel(_panel_instance);
+            _user_panel_instance->setBus(&_spi_bus_instance);
+            _user_panel_instance->config(cfg);
+            setPanel(_user_panel_instance);
         }
+    }
+    ;
+
+    void i2cPanelSetup(panel_t panel_type, int16_t width, int16_t height,
+        int16_t offset_x, int16_t offset_y, uint8_t i2c_host,
+        uint8_t i2c_addr, uint32_t i2c_freq = 400, int16_t pin_sda = -1,
+        int16_t pin_scl = -1) {
+
+        {
+            auto cfg = _i2c_bus_instance.config();
+
+            cfg.freq_write = i2c_freq * 1000;
+            cfg.freq_read = i2c_freq * 1000;
+            cfg.pin_scl = pin_scl;
+            cfg.pin_sda = pin_sda;
+            cfg.i2c_port = i2c_host;
+            cfg.i2c_addr = i2c_addr;
+            cfg.prefix_cmd = 0x00;
+            cfg.prefix_data = 0x40;
+            cfg.prefix_len = 1;
+
+            _i2c_bus_instance.config(cfg);
+        }
+
+        {
+            switch ((panel_t)panel_type) {
+                case I2C_OLED_SSD1306: {
+                    auto p = new lgfx::Panel_SSD1306();
+                    _user_panel_instance = p;
+                } break;
+                case I2C_OLED_SH110x: {
+                    auto p = new lgfx::Panel_SH110x();
+                    _user_panel_instance = p;
+                } break;
+                default: {
+                    auto p = new lgfx::Panel_SSD1306();
+                    _user_panel_instance = p;
+                } break;
+            }
+            auto cfg = _user_panel_instance->config();
+
+            cfg.panel_height = height;
+            cfg.panel_width = width;
+            cfg.offset_x = offset_x;
+            cfg.offset_y = offset_y;
+
+            _user_panel_instance->setBus(&_i2c_bus_instance);
+            _user_panel_instance->config(cfg);
+
+            setPanel(_user_panel_instance);
+        }
+    };
+
+    void i2cTpSetup() {
+        // _user_panel_instance.setTouch();
     }
 };
 
-Customers_GFX user_lcd;
+User_GFX user_panel;
 
-mp_obj_t user_lcd_make_new(const mp_obj_type_t *type, size_t n_args,
-                               size_t n_kw, const mp_obj_t *all_args) {
+mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
+    size_t n_kw, const mp_obj_t *all_args) {
+
     enum {
-        ARG_lcd_type, ARG_spi_host, ARG_width, ARG_height, ARG_offset_x,
-        ARG_offset_y, ARG_invert, ARG_rgb_order, ARG_freq_write, ARG_freq_read,
-        ARG_pin_sclk, ARG_pin_mosi, ARG_pin_miso, ARG_pin_dc, ARG_pin_cs,
-        ARG_pin_rst, ARG_pin_busy};
+        ARG_panel_type, ARG_tp_type,
+        ARG_width, ARG_height, ARG_offset_x, ARG_offset_y, ARG_invert,
+        ARG_rgb_order,
+        ARG_spi_host, ARG_spi_freq, ARG_pin_sclk, ARG_pin_mosi, ARG_pin_miso,
+        ARG_pin_dc, ARG_pin_cs, ARG_pin_rst, ARG_pin_busy,
+        ARG_i2c_host, ARG_i2c_addr, ARG_i2c_freq, ARG_pin_sda, ARG_pin_scl,
+        ARG_tp_i2c_host, ARG_tp_i2c_addr, ARG_tp_i2c_freq,
+        ARG_tp_width, ARG_tp_height, ARG_tp_offset_x, ARG_tp_offset_y,
+        ARG_tp_pin_sda, ARG_tp_pin_scl, ARG_tp_pin_int,
+    };
+
     /* *FORMAT-OFF* */
     static const mp_arg_t allowed_args[] = {
-        { MP_QSTR_lcd_type,   MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_spi_host,   MP_ARG_INT                   , {.u_int = 2 } },
-        { MP_QSTR_width,      MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_height,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_offset_x,   MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_offset_y,   MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_invert,     MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_false } },
-        { MP_QSTR_rgb_order,  MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_false } },
-        { MP_QSTR_freq_write, MP_ARG_INT                   , {.u_int = 40 } },
-        { MP_QSTR_freq_read,  MP_ARG_INT                   , {.u_int = 16 } },
-        { MP_QSTR_pin_sclk,   MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_pin_mosi,   MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_pin_miso,   MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_dc,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_pin_cs,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_pin_rst,    MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_pin_busy,   MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_panel_type,  MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = PANEL_UNKNOWN } },
+        { MP_QSTR_tp_type,     MP_ARG_INT                   , {.u_int = TP_UNKNOWN } },
+        // commom setting
+        { MP_QSTR_width,       MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_height,      MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_offset_x,    MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_offset_y,    MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_invert,      MP_ARG_BOOL                  , {.u_bool = mp_const_false } },
+        { MP_QSTR_rgb_order,   MP_ARG_BOOL                  , {.u_bool = mp_const_false } },
+        // spi setting
+        { MP_QSTR_spi_host,    MP_ARG_INT                   , {.u_int = 2 } },
+        { MP_QSTR_spi_freq,    MP_ARG_INT                   , {.u_int = 40 } },
+        { MP_QSTR_pin_sclk,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_mosi,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_miso,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_dc,      MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_cs,      MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_rst,     MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_busy,    MP_ARG_INT                   , {.u_int = -1 } },
+        // i2c setting
+        { MP_QSTR_i2c_host,    MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_i2c_addr,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_i2c_freq,    MP_ARG_INT                   , {.u_int = 400 } },
+        { MP_QSTR_pin_sda,     MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_pin_scl,     MP_ARG_INT                   , {.u_int = -1 } },
+        // tp setting
+        { MP_QSTR_tp_i2c_host, MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_i2c_addr, MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_i2c_freq, MP_ARG_INT                   , {.u_int = 400 } },
+        { MP_QSTR_tp_width,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_height,   MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_offset_x, MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_tp_offset_y, MP_ARG_INT                   , {.u_int = 0 } },
+        { MP_QSTR_tp_pin_sda,  MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_pin_scl,  MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_pin_int,  MP_ARG_INT                   , {.u_int = -1 } },
     };
     /* *FORMAT-ON* */
+
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
-    mp_arg_parse_all_kw_array(n_args, n_kw, all_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+    mp_arg_parse_all_kw_array(n_args, n_kw, all_args,
+        MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    user_lcd.setup(args[ARG_lcd_type].u_int, args[ARG_spi_host].u_int,
-                       args[ARG_width].u_int, args[ARG_height].u_int,
-                       args[ARG_offset_x].u_int, args[ARG_offset_y].u_bool,
-                       args[ARG_invert].u_bool, args[ARG_rgb_order].u_int,
-                       args[ARG_freq_write].u_int, args[ARG_freq_read].u_int,
-                       args[ARG_pin_sclk].u_int, args[ARG_pin_mosi].u_int,
-                       args[ARG_pin_miso].u_int, args[ARG_pin_dc].u_int,
-                       args[ARG_pin_cs].u_int, args[ARG_pin_rst].u_int,
-                       args[ARG_pin_busy].u_int);
-    user_lcd.init();
+    uint8_t panel_type = args[ARG_panel_type].u_int;
 
-    gfx_obj_t *self = mp_obj_malloc(gfx_obj_t, &user_lcd_type);
-    self->gfx = &(user_lcd);
+    if (panel_type == PANEL_UNKNOWN) {
+        mp_raise_msg_varg(&mp_type_TypeError, MP_ERROR_TEXT("No display panel type specified."));
+        return mp_const_none;
+    }
+
+    // panel initial
+    if (panel_type < SPI_PANEL_TYPE_MAX) {
+        // spi panel interface, lcd, eink...
+        user_panel.spiPanelSetup(
+            (panel_t)panel_type, args[ARG_width].u_int, args[ARG_height].u_int,
+            args[ARG_offset_x].u_int, args[ARG_offset_y].u_int,
+            args[ARG_invert].u_bool, args[ARG_rgb_order].u_bool,
+            args[ARG_spi_host].u_int, args[ARG_spi_freq].u_int,
+            args[ARG_pin_sclk].u_int, args[ARG_pin_mosi].u_int,
+            args[ARG_pin_miso].u_int, args[ARG_pin_dc].u_int,
+            args[ARG_pin_cs].u_int, args[ARG_pin_rst].u_int,
+            args[ARG_pin_busy].u_int);
+    } else if ((panel_type > SPI_PANEL_TYPE_MAX) && (panel_type < I2C_PANEL_TYPE_MAX)) {
+        // i2c panel interface, oled...
+        user_panel.i2cPanelSetup((panel_t)panel_type, args[ARG_width].u_int,
+            args[ARG_height].u_int, args[ARG_offset_x].u_int,
+            args[ARG_offset_y].u_int, args[ARG_i2c_host].u_int,
+            args[ARG_i2c_addr].u_int, args[ARG_i2c_freq].u_int,
+            args[ARG_pin_sda].u_int, args[ARG_pin_scl].u_int);
+    }
+
+    uint8_t tp_type = args[ARG_tp_type].u_int;
+
+    // has touch, then do touch initial
+    if (tp_type != TP_UNKNOWN) {
+
+    }
+
+    // initialization user panel
+    user_panel.init();
+
+    gfx_obj_t *self = mp_obj_malloc(gfx_obj_t, &user_panel_type);
+    self->gfx = &(user_panel);
 
     return MP_OBJ_FROM_PTR(self);
 }
