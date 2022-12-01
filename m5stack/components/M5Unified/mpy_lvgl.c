@@ -39,10 +39,10 @@ bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data) {
 void user_lvgl_flush(struct _disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p) {
     int w = (area->x2 - area->x1 + 1);
     int h = (area->y2 - area->y1 + 1);
-    user_lcd.startWrite();
-    user_lcd.setAddrWindow(area->x1, area->y1, w, h);
-    user_lcd.writePixels((lgfx::rgb565_t *)&color_p->full, w * h);
-    user_lcd.endWrite();
+    user_panel.startWrite();
+    user_panel.setAddrWindow(area->x1, area->y1, w, h);
+    user_panel.writePixels((lgfx::rgb565_t *)&color_p->full, w * h);
+    user_panel.endWrite();
     lv_disp_flush_ready((lv_disp_drv_t *)disp_drv);
 }
 #endif
