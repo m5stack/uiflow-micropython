@@ -4,11 +4,9 @@ import m5
 from m5 import lcd
 import random
 
-WIDTH = 320
-HEIGHT = 240
-
-m5.begin()
-canvas = m5.lcd.newCanvas(WIDTH, HEIGHT, 1, 1)
+scr_width = 0
+scr_height = 0
+canvas = None
 
 
 class Ball:
@@ -24,30 +22,31 @@ class Ball:
 
 # initialise shapes
 balls = []
-for i in range(0, 100):
-    r = random.randint(10, 25) + 3
-    balls.append(
-        Ball(
-            int(random.randint(r, r + (WIDTH - 2 * r))),
-            int(random.randint(r, r + (HEIGHT - 2 * r))),
-            r,
-            int((10 - r) / 2),
-            int((10 - r) / 2),
-            # int(random.randint(0x0, 0x01)),
-            1,
-            i,
-        )
-    )
 
 
-while True:
+def setup():
+    global canvas, balls, scr_width, scr_height
+    m5.begin()
+    scr_width = m5.lcd.width()
+    scr_height = m5.lcd.height()
+    canvas = m5.lcd.newCanvas(scr_width, scr_height, 1, 1)
+
+    for i in range(0, 100):
+        r = random.randint(10, 25) + 3
+        x = int(random.randint(r, r + (scr_width - (2 * r))))
+        y = int(random.randint(r, r + (scr_height - (2 * r))))
+        balls.append(Ball(x, y, r, int((10 - r) / 2), int((10 - r) / 2), 1, i))
+
+
+def loop():
+    global canvas, balls, scr_width, scr_height
     for ball in balls:
         ball.x += ball.dx
         ball.y += ball.dy
 
-        xmax = WIDTH - ball.r
+        xmax = scr_width - ball.r
         xmin = ball.r
-        ymax = HEIGHT - ball.r
+        ymax = scr_height - ball.r
         ymin = ball.r
 
         if ball.x <= xmin or ball.x >= xmax:
@@ -66,3 +65,13 @@ while True:
         canvas.drawCircle(ball.x, ball.y, ball.r, lcd.BLACK)
         canvas.setCursor(ball.x - 4, ball.y - 4)
         canvas.print(str(ball.index), lcd.BLACK)
+
+
+if __name__ == "__main__":
+    setup()
+    try:
+        while True:
+            loop()
+    except Exception as e:
+        # if use canvas, need manual delete it for now :)
+        canvas.delete()
