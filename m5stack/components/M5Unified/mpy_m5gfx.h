@@ -23,12 +23,13 @@ extern const mp_obj_type_t gfxcanvas_type;
 extern const mp_obj_type_t user_panel_type;
 
 extern const font_obj_t gfx_font_0_obj;
-extern const font_obj_t gfx_font_2_obj;
-extern const font_obj_t gfx_font_4_obj;
-extern const font_obj_t gfx_font_6_obj;
-extern const font_obj_t gfx_font_7_obj;
-extern const font_obj_t gfx_font_8_obj;
 extern const font_obj_t gfx_font_DejaVu9_obj;
 extern const font_obj_t gfx_font_DejaVu12_obj;
 extern const font_obj_t gfx_font_DejaVu18_obj;
 extern const font_obj_t gfx_font_DejaVu24_obj;
+extern const font_obj_t gfx_font_DejaVu40_obj;
+extern const font_obj_t gfx_font_DejaVu56_obj;
+extern const font_obj_t gfx_font_DejaVu72_obj;
+extern const font_obj_t gfx_font_efontCN_24_obj;
+extern const font_obj_t gfx_font_efontJA_24_obj;
+extern const font_obj_t gfx_font_efontKR_24_obj;
