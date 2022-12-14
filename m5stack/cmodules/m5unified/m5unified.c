@@ -112,16 +112,17 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, print), \
     MAKE_TABLE(gfx, printf), \
     MAKE_TABLE(gfx, newCanvas), \
-    { MP_ROM_QSTR(MP_QSTR_FONT0), MP_ROM_PTR(&gfx_font_0_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT2), MP_ROM_PTR(&gfx_font_2_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT4), MP_ROM_PTR(&gfx_font_4_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT6), MP_ROM_PTR(&gfx_font_6_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT7), MP_ROM_PTR(&gfx_font_7_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT8), MP_ROM_PTR(&gfx_font_8_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_ASCII7), MP_ROM_PTR(&gfx_font_0_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu9), MP_ROM_PTR(&gfx_font_DejaVu9_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu12), MP_ROM_PTR(&gfx_font_DejaVu12_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu18), MP_ROM_PTR(&gfx_font_DejaVu18_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu24), MP_ROM_PTR(&gfx_font_DejaVu24_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu40), MP_ROM_PTR(&gfx_font_DejaVu40_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu56), MP_ROM_PTR(&gfx_font_DejaVu56_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu72), MP_ROM_PTR(&gfx_font_DejaVu72_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) }, \
+    { MP_ROM_QSTR(MP_QSTR_FONT_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) }, \
     { MP_ROM_QSTR(MP_QSTR_BLACK), MP_ROM_INT(0x000000) }, \
     { MP_ROM_QSTR(MP_QSTR_NAVY), MP_ROM_INT(0x000080) }, \
     { MP_ROM_QSTR(MP_QSTR_DARKGREEN), MP_ROM_INT(0x008000) }, \

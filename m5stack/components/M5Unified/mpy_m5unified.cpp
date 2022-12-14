@@ -22,6 +22,8 @@ const pwr_obj_t m5_power   = {{&power_type},      &(M5.Power)   };
 
 mp_obj_t m5_begin(void) {
     M5.begin();
+    // Set default font to DejaVu9, keep same style with UIFlow website UI design.
+    M5.Display.setTextFont(&fonts::DejaVu9);
     return mp_const_none;
 }
 
