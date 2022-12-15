@@ -9,4 +9,4 @@ typedef struct _pwr_obj_t {
     void *btn;
 } pwr_obj_t;
 
-extern const mp_obj_type_t power_type;
+extern const mp_obj_type_t mp_power_type;

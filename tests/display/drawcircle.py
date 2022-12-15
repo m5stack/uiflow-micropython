@@ -1,7 +1,6 @@
 # -*- encoding: utf-8 -*-
 # draw moving circle with circle id
-import m5
-from m5 import lcd
+import M5
 import random
 
 scr_width = 0
@@ -26,10 +25,10 @@ balls = []
 
 def setup():
     global canvas, balls, scr_width, scr_height
-    m5.begin()
-    scr_width = m5.lcd.width()
-    scr_height = m5.lcd.height()
-    canvas = m5.lcd.newCanvas(scr_width, scr_height, 1, 1)
+    M5.begin()
+    scr_width = M5.Display.width()
+    scr_height = M5.Display.height()
+    canvas = M5.Display.newCanvas(scr_width, scr_height, 1, 1)
 
     for i in range(0, 100):
         r = random.randint(10, 25) + 3
@@ -62,16 +61,18 @@ def loop():
     canvas.push(0, 0)
 
     for ball in balls:
-        canvas.drawCircle(ball.x, ball.y, ball.r, lcd.BLACK)
+        canvas.drawCircle(ball.x, ball.y, ball.r, M5.Display.BLACK)
         canvas.setCursor(ball.x - 4, ball.y - 4)
-        canvas.print(str(ball.index), lcd.BLACK)
+        canvas.print(str(ball.index), M5.Display.BLACK)
 
 
 if __name__ == "__main__":
-    setup()
     try:
+        setup()
         while True:
             loop()
-    except Exception as e:
-        # if use canvas, need manual delete it for now :)
-        canvas.delete()
+    except:
+        # error handler
+        # if use canvas, need manual delete it to free allocated memory for now
+        if canvas:
+            canvas.delete()

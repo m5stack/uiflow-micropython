@@ -67,8 +67,9 @@ arg_partitions_bin = sys.argv[3]
 arg_nvs_bin = sys.argv[4]
 arg_application_bin = sys.argv[5]
 arg_filesystem_bin = sys.argv[6]
-arg_output_bin = sys.argv[7]
-arg_output_uf2 = sys.argv[8]
+arg_lvgl_flag = sys.argv[7]
+arg_output_bin = sys.argv[8]
+arg_output_uf2 = sys.argv[9]
 
 # Load required sdkconfig values.
 idf_target = load_sdkconfig_str_value(arg_sdkconfig, "IDF_TARGET", "").upper()
@@ -166,11 +167,17 @@ if idf_target == "ESP32C3":
 else:
     feature_str = load_sdkconfig_spiram_value(arg_sdkconfig).lower()
 
-release_file_out = "{}-{}-{}{}-{}.bin".format(
+if arg_lvgl_flag == "1":
+    arg_lvgl_flag = "lvgl-"
+else:
+    arg_lvgl_flag = ""
+
+release_file_out = "{}-{}-{}{}-{}{}.bin".format(
     file_out.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
+    arg_lvgl_flag,
     today.strftime("%Y%m%d"),
 )
 os.system("cp {} {}".format(file_out, release_file_out))

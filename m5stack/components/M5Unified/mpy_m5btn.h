@@ -9,4 +9,4 @@ typedef struct _btn_obj_t {
     void *btn;
 } btn_obj_t;
 
-extern const mp_obj_type_t btn_type;
+extern const mp_obj_type_t mp_btn_type;
