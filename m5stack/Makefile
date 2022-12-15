@@ -36,15 +36,18 @@ MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 USER_C_MODULES = $(MAKEFILE_DIR)cmodules/cmodules.cmake
 
 CMAKE_ARGS =
-
 ifdef USER_C_MODULES
 	CMAKE_ARGS += -DUSER_C_MODULES=${USER_C_MODULES}
 endif
 
 IDFPY_FLAGS += -D MICROPY_BOARD=$(BOARD) -D BUILD_WITH_LVGL=$(LVGL) -B $(BUILD) $(CMAKE_ARGS)
-
 ifdef FROZEN_MANIFEST
        IDFPY_FLAGS += -D MICROPY_FROZEN_MANIFEST=$(FROZEN_MANIFEST)
+endif
+
+LVGL_FLAG = 0
+ifdef LVGL
+	LVGL_FLAG = 1
 endif
 
 GIT_VERSION := $(shell git describe --abbrev=7 --dirty --always --tags)
@@ -57,6 +60,7 @@ all: build fs nvs
 		$(BUILD)/nvs.bin \
 		$(BUILD)/micropython.bin \
 		$(BUILD)/fs.bin \
+		$(LVGL_FLAG) \
 		$(BUILD)/uiflow-$(GIT_VERSION).bin \
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 

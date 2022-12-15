@@ -1028,7 +1028,7 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     }
     canvas->createSprite(args[ARG_w].u_int, args[ARG_h].u_int);
     gfx_obj_t *res = m_new_obj_with_finaliser(gfx_obj_t);
-    res->base.type = &gfxcanvas_type;
+    res->base.type = &mp_gfxcanvas_type;
     res->gfx = canvas;
     return MP_OBJ_FROM_PTR(res);
 }

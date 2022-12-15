@@ -262,7 +262,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
 
     // panel initial
     if (panel_type < SPI_PANEL_TYPE_MAX) {
-        // spi panel interface, lcd, eink...
+        // spi panel interface, lcd, eink ...
         user_panel.spiPanelSetup(
             (panel_t)panel_type, args[ARG_width].u_int, args[ARG_height].u_int,
             args[ARG_offset_x].u_int, args[ARG_offset_y].u_int,
@@ -273,7 +273,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
             args[ARG_pin_cs].u_int, args[ARG_pin_rst].u_int,
             args[ARG_pin_busy].u_int);
     } else if ((panel_type > SPI_PANEL_TYPE_MAX) && (panel_type < I2C_PANEL_TYPE_MAX)) {
-        // i2c panel interface, oled...
+        // i2c panel interface, oled ...
         user_panel.i2cPanelSetup((panel_t)panel_type, args[ARG_width].u_int,
             args[ARG_height].u_int, args[ARG_offset_x].u_int,
             args[ARG_offset_y].u_int, args[ARG_i2c_host].u_int,
@@ -291,7 +291,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
     // initialization user panel
     user_panel.init();
 
-    gfx_obj_t *self = mp_obj_malloc(gfx_obj_t, &user_panel_type);
+    gfx_obj_t *self = mp_obj_malloc(gfx_obj_t, &mp_user_panel_type);
     self->gfx = &(user_panel);
 
     return MP_OBJ_FROM_PTR(self);

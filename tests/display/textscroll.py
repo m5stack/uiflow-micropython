@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 # text scroll
-import m5
+import M5
 import gc
 import time
 
@@ -21,8 +21,8 @@ canvas = None
 
 def setup():
     global canvas
-    m5.begin()
-    canvas = m5.lcd.newCanvas(128, 128, 1, 1)
+    M5.begin()
+    canvas = M5.Display.newCanvas(M5.Display.width(), M5.Display.height(), 1, 1)
     canvas.setTextScroll(True)
 
 
@@ -35,10 +35,12 @@ def loop():
 
 
 if __name__ == "__main__":
-    setup()
     try:
+        setup()
         while True:
             loop()
-    except Exception as e:
-        # if use canvas, need manual delete it for now :)
-        canvas.delete()
+    except:
+        # error handler
+        # if use canvas, need manual delete it to free allocated memory for now
+        if canvas:
+            canvas.delete()

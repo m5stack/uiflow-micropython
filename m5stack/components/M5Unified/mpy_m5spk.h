@@ -9,4 +9,4 @@ typedef struct _spk_obj_t {
     void *spk;
 } spk_obj_t;
 
-extern const mp_obj_type_t spk_type;
+extern const mp_obj_type_t mp_spk_type;
