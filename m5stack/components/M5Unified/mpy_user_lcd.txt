@@ -193,8 +193,7 @@ public:
 
 User_GFX user_panel;
 
-mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
-    size_t n_kw, const mp_obj_t *all_args) {
+mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
 
     enum {
         ARG_panel_type, ARG_tp_type,
@@ -210,48 +209,46 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args,
 
     /* *FORMAT-OFF* */
     static const mp_arg_t allowed_args[] = {
-        { MP_QSTR_panel_type,  MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = PANEL_UNKNOWN } },
-        { MP_QSTR_tp_type,     MP_ARG_INT                   , {.u_int = TP_UNKNOWN } },
+        { MP_QSTR_panel_type,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = PANEL_UNKNOWN } },
+        { MP_QSTR_tp_type,     MP_ARG_INT                  , {.u_int = TP_UNKNOWN } },
         // commom setting
-        { MP_QSTR_width,       MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_height,      MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_offset_x,    MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_offset_y,    MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_invert,      MP_ARG_BOOL                  , {.u_bool = mp_const_false } },
-        { MP_QSTR_rgb_order,   MP_ARG_BOOL                  , {.u_bool = mp_const_false } },
+        { MP_QSTR_width,       MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_height,      MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_offset_x,    MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_offset_y,    MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_invert,      MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
+        { MP_QSTR_rgb_order,   MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
         // spi setting
-        { MP_QSTR_spi_host,    MP_ARG_INT                   , {.u_int = 2 } },
-        { MP_QSTR_spi_freq,    MP_ARG_INT                   , {.u_int = 40 } },
-        { MP_QSTR_pin_sclk,    MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_mosi,    MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_miso,    MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_dc,      MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_cs,      MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_rst,     MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_busy,    MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_spi_host,    MP_ARG_INT                  , {.u_int = 2 } },
+        { MP_QSTR_spi_freq,    MP_ARG_INT                  , {.u_int = 40 } },
+        { MP_QSTR_pin_sclk,    MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_mosi,    MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_miso,    MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_dc,      MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_cs,      MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_rst,     MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_busy,    MP_ARG_INT                  , {.u_int = -1 } },
         // i2c setting
-        { MP_QSTR_i2c_host,    MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_i2c_addr,    MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_i2c_freq,    MP_ARG_INT                   , {.u_int = 400 } },
-        { MP_QSTR_pin_sda,     MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_pin_scl,     MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_i2c_host,    MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_i2c_addr,    MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_i2c_freq,    MP_ARG_INT                  , {.u_int = 400 } },
+        { MP_QSTR_pin_sda,     MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_pin_scl,     MP_ARG_INT                  , {.u_int = -1 } },
         // tp setting
-        { MP_QSTR_tp_i2c_host, MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_i2c_addr, MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_i2c_freq, MP_ARG_INT                   , {.u_int = 400 } },
-        { MP_QSTR_tp_width,    MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_height,   MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_offset_x, MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_tp_offset_y, MP_ARG_INT                   , {.u_int = 0 } },
-        { MP_QSTR_tp_pin_sda,  MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_pin_scl,  MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_tp_pin_int,  MP_ARG_INT                   , {.u_int = -1 } },
+        { MP_QSTR_tp_i2c_host, MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_i2c_addr, MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_i2c_freq, MP_ARG_INT                  , {.u_int = 400 } },
+        { MP_QSTR_tp_width,    MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_height,   MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_offset_x, MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_tp_offset_y, MP_ARG_INT                  , {.u_int = 0 } },
+        { MP_QSTR_tp_pin_sda,  MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_pin_scl,  MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_tp_pin_int,  MP_ARG_INT                  , {.u_int = -1 } },
     };
     /* *FORMAT-ON* */
-
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
-    mp_arg_parse_all_kw_array(n_args, n_kw, all_args,
-        MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+    mp_arg_parse_all_kw_array(n_args, n_kw, all_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     uint8_t panel_type = args[ARG_panel_type].u_int;
 

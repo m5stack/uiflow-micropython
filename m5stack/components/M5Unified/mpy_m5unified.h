@@ -5,10 +5,11 @@
 #include <py/objmodule.h>
 #include <py/stream.h>
 #include <py/builtin.h>
-#include "mpy_m5gfx.h"
 #include "mpy_m5btn.h"
-#include "mpy_m5spk.h"
+#include "mpy_m5gfx.h"
 #include "mpy_m5power.h"
+#include "mpy_m5spk.h"
+#include "mpy_m5widgets.h"
 
 extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);

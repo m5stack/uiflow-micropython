@@ -4,13 +4,13 @@
 // power port mask
 STATIC const mp_rom_map_elem_t power_port_mask_enum_locals_dict_table[] = {
     /* *FORMAT-OFF* */
-    { MP_ROM_QSTR(MP_QSTR_A),          MP_ROM_INT(0b00000001) },
-    { MP_ROM_QSTR(MP_QSTR_B1),         MP_ROM_INT(0b00000010) },
-    { MP_ROM_QSTR(MP_QSTR_B2),         MP_ROM_INT(0b00000100) },
-    { MP_ROM_QSTR(MP_QSTR_C1),         MP_ROM_INT(0b00001000) },
-    { MP_ROM_QSTR(MP_QSTR_C2),         MP_ROM_INT(0b00010000) },
-    { MP_ROM_QSTR(MP_QSTR_USB),        MP_ROM_INT(0b00100000) },
-    { MP_ROM_QSTR(MP_QSTR_HAT),        MP_ROM_INT(0b01000000) },
+    { MP_ROM_QSTR(MP_QSTR_A),   MP_ROM_INT(0b00000001) },
+    { MP_ROM_QSTR(MP_QSTR_B1),  MP_ROM_INT(0b00000010) },
+    { MP_ROM_QSTR(MP_QSTR_B2),  MP_ROM_INT(0b00000100) },
+    { MP_ROM_QSTR(MP_QSTR_C1),  MP_ROM_INT(0b00001000) },
+    { MP_ROM_QSTR(MP_QSTR_C2),  MP_ROM_INT(0b00010000) },
+    { MP_ROM_QSTR(MP_QSTR_USB), MP_ROM_INT(0b00100000) },
+    { MP_ROM_QSTR(MP_QSTR_HAT), MP_ROM_INT(0b01000000) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(power_port_mask_enum_locals_dict, power_port_mask_enum_locals_dict_table);
