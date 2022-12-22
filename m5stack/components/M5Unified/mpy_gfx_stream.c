@@ -1,3 +1,7 @@
+#include <py/obj.h>
+#include "mpy_m5gfx.h"
+#include "esp_log.h"
+
 mp_uint_t gfx_read(mp_obj_t self, void *buf, mp_uint_t size, int *errcode) {
     return 0;
 }

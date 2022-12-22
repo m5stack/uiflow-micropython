@@ -37,8 +37,8 @@ namespace m5
         enum {ARG_ch, ARG_vol};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_ch,      MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-            { MP_QSTR_vol,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } }
+            { MP_QSTR_ch,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+            { MP_QSTR_vol, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } }
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -53,7 +53,7 @@ namespace m5
         enum {ARG_vol};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_vol,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } }
+            { MP_QSTR_vol, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } }
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -68,10 +68,10 @@ namespace m5
         enum {ARG_freq, ARG_msec, ARG_ch, ARG_stop};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_freq,    MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-            { MP_QSTR_msec,    MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-            { MP_QSTR_ch,      MP_ARG_INT                   , {.u_int = -1 } },
-            { MP_QSTR_stop,    MP_ARG_BOOL                  , {.u_bool = mp_const_true } }
+            { MP_QSTR_freq, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+            { MP_QSTR_msec, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+            { MP_QSTR_ch,   MP_ARG_INT                  , {.u_int = -1 } },
+            { MP_QSTR_stop, MP_ARG_BOOL                 , {.u_bool = mp_const_true } }
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -87,7 +87,7 @@ namespace m5
         enum {ARG_ch};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_ch,      MP_ARG_INT                   , {.u_int = -1 } }
+            { MP_QSTR_ch, MP_ARG_INT, {.u_int = -1 } }
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -102,10 +102,10 @@ namespace m5
         enum {ARG_wav, ARG_repeat, ARG_ch, ARG_stop};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_wav,     MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
-            { MP_QSTR_repeat,  MP_ARG_INT                  , {.u_int = 1 } },
-            { MP_QSTR_ch,      MP_ARG_INT                  , {.u_int = -1 } },
-            { MP_QSTR_stop,    MP_ARG_BOOL                 , {.u_bool = mp_const_true } }
+            { MP_QSTR_wav,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+            { MP_QSTR_repeat, MP_ARG_INT                  , {.u_int = 1 } },
+            { MP_QSTR_ch,     MP_ARG_INT                  , {.u_int = -1 } },
+            { MP_QSTR_stop,   MP_ARG_BOOL                 , {.u_bool = mp_const_true } }
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

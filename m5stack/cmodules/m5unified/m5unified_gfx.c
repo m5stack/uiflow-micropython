@@ -31,6 +31,7 @@ MAKE_METHOD_KW(gfx, setTextColor, 1);
 MAKE_METHOD_KW(gfx, setTextScroll, 1);
 MAKE_METHOD_KW(gfx, setTextSize, 1);
 MAKE_METHOD_KW(gfx, setCursor, 1);
+MAKE_METHOD_KW(gfx, setBrightness, 1);
 MAKE_METHOD_KW(gfx, clear, 1);
 MAKE_METHOD_KW(gfx, fillScreen, 1);
 MAKE_METHOD_KW(gfx, drawPixel, 1);
@@ -76,6 +77,7 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, setTextScroll), \
     MAKE_TABLE(gfx, setTextSize), \
     MAKE_TABLE(gfx, setCursor), \
+    MAKE_TABLE(gfx, setBrightness), \
     MAKE_TABLE(gfx, clear), \
     MAKE_TABLE(gfx, fillScreen), \
     MAKE_TABLE(gfx, drawPixel), \
@@ -102,57 +104,78 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, drawRawBuf), \
     MAKE_TABLE(gfx, print), \
     MAKE_TABLE(gfx, printf), \
-    MAKE_TABLE(gfx, newCanvas), \
-    { MP_ROM_QSTR(MP_QSTR_FONT_ASCII7), MP_ROM_PTR(&gfx_font_0_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu9), MP_ROM_PTR(&gfx_font_DejaVu9_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu12), MP_ROM_PTR(&gfx_font_DejaVu12_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu18), MP_ROM_PTR(&gfx_font_DejaVu18_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu24), MP_ROM_PTR(&gfx_font_DejaVu24_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu40), MP_ROM_PTR(&gfx_font_DejaVu40_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu56), MP_ROM_PTR(&gfx_font_DejaVu56_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_DejaVu72), MP_ROM_PTR(&gfx_font_DejaVu72_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_FONT_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) }, \
-    { MP_ROM_QSTR(MP_QSTR_BLACK), MP_ROM_INT(0x000000) }, \
-    { MP_ROM_QSTR(MP_QSTR_NAVY), MP_ROM_INT(0x000080) }, \
-    { MP_ROM_QSTR(MP_QSTR_DARKGREEN), MP_ROM_INT(0x008000) }, \
-    { MP_ROM_QSTR(MP_QSTR_DARKCYAN), MP_ROM_INT(0x008080) }, \
-    { MP_ROM_QSTR(MP_QSTR_MAROON), MP_ROM_INT(0x800000) }, \
-    { MP_ROM_QSTR(MP_QSTR_PURPLE), MP_ROM_INT(0x800080) }, \
-    { MP_ROM_QSTR(MP_QSTR_OLIVE), MP_ROM_INT(0x808000) }, \
-    { MP_ROM_QSTR(MP_QSTR_LIGHTGREY), MP_ROM_INT(0xC0C0C0) }, \
-    { MP_ROM_QSTR(MP_QSTR_DARKGREY), MP_ROM_INT(0x808080) }, \
-    { MP_ROM_QSTR(MP_QSTR_BLUE), MP_ROM_INT(0x0000FF) }, \
-    { MP_ROM_QSTR(MP_QSTR_GREEN), MP_ROM_INT(0x00FF00) }, \
-    { MP_ROM_QSTR(MP_QSTR_CYAN), MP_ROM_INT(0x00FFFF) }, \
-    { MP_ROM_QSTR(MP_QSTR_RED), MP_ROM_INT(0xFF0000) }, \
-    { MP_ROM_QSTR(MP_QSTR_MAGENTA), MP_ROM_INT(0xFF00FF) }, \
-    { MP_ROM_QSTR(MP_QSTR_YELLOW), MP_ROM_INT(0xFFFF00) }, \
-    { MP_ROM_QSTR(MP_QSTR_WHITE), MP_ROM_INT(0xFFFFFF) }, \
-    { MP_ROM_QSTR(MP_QSTR_ORANGE), MP_ROM_INT(0xFFA500) }, \
-    { MP_ROM_QSTR(MP_QSTR_GREENYELLOW), MP_ROM_INT(0xADFF2F) }, \
-    { MP_ROM_QSTR(MP_QSTR_PINK), MP_ROM_INT(0xFFC0CB) }
+    MAKE_TABLE(gfx, newCanvas)
 
 // -------- GFX device wrapper
 MAKE_METHOD_0(gfx, startWrite);
 MAKE_METHOD_0(gfx, endWrite);
 
-// -------- GFX canvas wrapper
-MAKE_METHOD_0(gfx, delete);
-MAKE_METHOD_2(gfx, push);
+STATIC const mp_rom_map_elem_t fonts_member_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_ASCII7),    MP_ROM_PTR(&gfx_font_0_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu9),   MP_ROM_PTR(&gfx_font_DejaVu9_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu12),  MP_ROM_PTR(&gfx_font_DejaVu12_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu18),  MP_ROM_PTR(&gfx_font_DejaVu18_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu24),  MP_ROM_PTR(&gfx_font_DejaVu24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu40),  MP_ROM_PTR(&gfx_font_DejaVu40_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu56),  MP_ROM_PTR(&gfx_font_DejaVu56_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu72),  MP_ROM_PTR(&gfx_font_DejaVu72_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
+    /* *FORMAT-ON* */
+};
+STATIC MP_DEFINE_CONST_DICT(fonts_member, fonts_member_table);
+const mp_obj_type_t mp_fonts_type = {
+    .base = { &mp_type_type },
+    .name = MP_QSTR_Fonts,
+    .locals_dict = (mp_obj_dict_t *)&fonts_member,
+};
+
+STATIC const mp_rom_map_elem_t color_member_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_BLACK),       MP_ROM_INT(0x000000) },
+    { MP_ROM_QSTR(MP_QSTR_NAVY),        MP_ROM_INT(0x000080) },
+    { MP_ROM_QSTR(MP_QSTR_DARKGREEN),   MP_ROM_INT(0x008000) },
+    { MP_ROM_QSTR(MP_QSTR_DARKCYAN),    MP_ROM_INT(0x008080) },
+    { MP_ROM_QSTR(MP_QSTR_MAROON),      MP_ROM_INT(0x800000) },
+    { MP_ROM_QSTR(MP_QSTR_PURPLE),      MP_ROM_INT(0x800080) },
+    { MP_ROM_QSTR(MP_QSTR_OLIVE),       MP_ROM_INT(0x808000) },
+    { MP_ROM_QSTR(MP_QSTR_LIGHTGREY),   MP_ROM_INT(0xC0C0C0) },
+    { MP_ROM_QSTR(MP_QSTR_DARKGREY),    MP_ROM_INT(0x808080) },
+    { MP_ROM_QSTR(MP_QSTR_BLUE),        MP_ROM_INT(0x0000FF) },
+    { MP_ROM_QSTR(MP_QSTR_GREEN),       MP_ROM_INT(0x00FF00) },
+    { MP_ROM_QSTR(MP_QSTR_CYAN),        MP_ROM_INT(0x00FFFF) },
+    { MP_ROM_QSTR(MP_QSTR_RED),         MP_ROM_INT(0xFF0000) },
+    { MP_ROM_QSTR(MP_QSTR_MAGENTA),     MP_ROM_INT(0xFF00FF) },
+    { MP_ROM_QSTR(MP_QSTR_YELLOW),      MP_ROM_INT(0xFFFF00) },
+    { MP_ROM_QSTR(MP_QSTR_WHITE),       MP_ROM_INT(0xFFFFFF) },
+    { MP_ROM_QSTR(MP_QSTR_ORANGE),      MP_ROM_INT(0xFFA500) },
+    { MP_ROM_QSTR(MP_QSTR_GREENYELLOW), MP_ROM_INT(0xADFF2F) },
+    { MP_ROM_QSTR(MP_QSTR_PINK),        MP_ROM_INT(0xFFC0CB) }
+    /* *FORMAT-ON* */
+};
+STATIC MP_DEFINE_CONST_DICT(color_member,color_member_table);
+const mp_obj_type_t mp_color_type = {
+    .base = { &mp_type_type },
+    .name = MP_QSTR_Colors,
+    .locals_dict = (mp_obj_dict_t *)&color_member,
+};
 
 STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
     MAKE_TABLE(gfx, endWrite),
-    // -------- Widget class
-    { MP_ROM_QSTR(MP_QSTR_Widget),          MP_OBJ_FROM_PTR(&mp_widget_type) },
-    // -------- stream function
+    // fonts
+    { MP_ROM_QSTR(MP_QSTR_FONTS),           MP_OBJ_FROM_PTR(&mp_fonts_type) },
+    // colors
+    { MP_ROM_QSTR(MP_QSTR_COLOR),           MP_OBJ_FROM_PTR(&mp_color_type) },
+    // stream function
     { MP_ROM_QSTR(MP_QSTR_read),            MP_ROM_PTR(&mp_stream_read_obj) },
     { MP_ROM_QSTR(MP_QSTR_write),           MP_ROM_PTR(&mp_stream_write_obj) },
     { MP_ROM_QSTR(MP_QSTR_close),           MP_ROM_PTR(&mp_stream_close_obj) },
     #if MICROPY_PY_LVGL
+    // lvgl port function
     { MP_ROM_QSTR(MP_QSTR_lvgl_init),       MP_ROM_PTR(&gfx_lvgl_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_deinit),     MP_ROM_PTR(&gfx_lvgl_deinit_obj) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_flush),      MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_flush)) },
@@ -168,6 +191,10 @@ STATIC const mp_stream_p_t mp_gfx_stream_p = {
     .write = gfx_write,
     .ioctl = gfx_ioctl,
 };
+
+// -------- GFX canvas wrapper
+MAKE_METHOD_0(gfx, delete);
+MAKE_METHOD_2(gfx, push);
 
 // -------- GFX canvas function
 STATIC const mp_rom_map_elem_t gfxcanvas_member_table[] = {
@@ -189,7 +216,7 @@ const mp_obj_type_t mp_gfxcanvas_type = {
 // -------- GFX user panel class
 const mp_obj_type_t mp_user_panel_type = {
     .base = { &mp_type_type },
-    .name = MP_QSTR_User_Lcd,
+    .name = MP_QSTR_UserDisplay,
     .protocol = &mp_gfx_stream_p,
     .make_new = user_panel_make_new,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
@@ -198,7 +225,7 @@ const mp_obj_type_t mp_user_panel_type = {
 // -------- GFX panel class
 const mp_obj_type_t mp_gfxdevice_type = {
     .base = { &mp_type_type },
-    .name = MP_QSTR_Lcd,
+    .name = MP_QSTR_Display,
     .protocol = &mp_gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };

@@ -11,10 +11,8 @@ typedef union {
 
 extern "C"
 {
-#include <extmod/vfs.h>
-#include <extmod/vfs_lfs.h>
-#include <lib/littlefs/lfs2.h>
 #include <py/obj.h>
+#include "mpy_m5unified.h"
 #include "mpy_m5gfx.h"
 #include "esp_log.h"
 
@@ -24,90 +22,13 @@ extern "C"
 #include "./../../components/lv_bindings/driver/include/common.h"
 #endif
 
-typedef struct _mp_obj_vfs_lfs2_t {
-    mp_obj_base_t base;
-    mp_vfs_blockdev_t blockdev;
-    bool enable_mtime;
-    vstr_t cur_dir;
-    struct lfs2_config config;
-    lfs2_t lfs;
-} mp_obj_vfs_lfs2_t;
+#include "mpy_m5lfs2.txt"
 
-struct LFS2Wrapper : public m5gfx::DataWrapper
-{
-    LFS2Wrapper() : DataWrapper()
-    {
-        need_transaction = true;
-    }
-
-    // Not formatted yet, only for micropython porting
-    bool open(const char *path) override {
-        const char *full_path;
-        struct lfs2_info _finfo;
-        mp_vfs_mount_t *_fm = mp_vfs_lookup_path(path, &full_path);
-        if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
-            if (_fm == MP_VFS_NONE) {
-                mp_printf(&mp_plat_print, "path not found");
-            }
-            if (_fm == MP_VFS_ROOT) {
-                mp_printf(&mp_plat_print, "path is \"\" or \"/\"");
-            }
-            return false;
-        }
-        _fp = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(_fm->obj))->lfs;
-        enum lfs2_error res = (lfs2_error)lfs2_stat(_fp, full_path, &_finfo);
-        if (res != LFS2_ERR_OK) {
-            mp_printf(&mp_plat_print, "%s\r\n", strerror(res));
-            return false;
-        }
-        _file = (lfs2_file_t *)malloc(1 * sizeof(lfs2_file_t));
-        memset(&_fcfg, 0, sizeof(lfs2_file_config));
-        _fcfg.buffer = malloc(_fp->cfg->cache_size * sizeof(uint8_t));
-        return (lfs2_file_opencfg(_fp, _file, full_path,
-            LFS2_O_RDWR | LFS2_O_CREAT,
-            &_fcfg) == LFS2_ERR_OK)
-                ? true
-                : false;
-    }
-    int read(uint8_t *buf, uint32_t len) override {
-        return lfs2_file_read(_fp, _file, (char *)buf, len);
-    }
-    void skip(int32_t offset) override {
-        lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_CUR);
-    }
-    bool seek(uint32_t offset) override {
-        return lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_SET);
-    }
-    bool seek(uint32_t offset, int origin) {
-        return lfs2_file_seek(_fp, _file, offset, origin);
-    }
-    void close() override {
-        if (_fp) {
-            lfs2_file_close(_fp, _file);
-        }
-        if (_file) {
-            free(_file);
-        }
-        if (_fcfg.buffer) {
-            free(_fcfg.buffer);
-        }
-    }
-    int32_t tell(void) override {
-        return lfs2_file_tell(_fp, _file);
-    }
-
-protected:
-    lfs2_t *_fp = nullptr;
-    lfs2_file_t *_file = nullptr;
-    struct lfs2_file_config _fcfg;
-};
-
-static inline LovyanGFX *getGfx(const mp_obj_t *args) {
-    return (LovyanGFX *)(((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx);
+static inline LGFX_Device *getGfx(const mp_obj_t *args) {
+    return (LGFX_Device *)(((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx);
 }
 
 // -------- GFX common wrapper
-
 mp_obj_t gfx_width(mp_obj_t self) {
     auto gfx = getGfx(&self);
     return mp_obj_new_int(gfx->width());
@@ -184,10 +105,11 @@ mp_obj_t gfx_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
 }
 
 mp_obj_t gfx_setTextColor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_color};
+    enum {ARG_fgcolor, ARG_bgcolor};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_color, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } }
+        { MP_QSTR_fgcolor, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_bgcolor, MP_ARG_INT                  , {.u_int = 0x000000 } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -195,7 +117,7 @@ mp_obj_t gfx_setTextColor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     auto gfx = getGfx(&pos_args[0]);
-    gfx->setTextColor((uint32_t)args[ARG_color].u_int);
+    gfx->setTextColor((uint32_t)args[ARG_fgcolor].u_int, (uint32_t)args[ARG_bgcolor].u_int);
     return mp_const_none;
 }
 
@@ -219,7 +141,7 @@ mp_obj_t gfx_setTextSize(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_a
     enum {ARG_size};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_size, MP_ARG_INT | MP_ARG_REQUIRED, {.u_obj = mp_const_true } }  // 1.0
+        { MP_QSTR_size, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_true } }  // 1.0
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -245,6 +167,22 @@ mp_obj_t gfx_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
 
     auto gfx = getGfx(&pos_args[0]);
     gfx->setCursor(args[ARG_x].u_int, args[ARG_y].u_int);
+    return mp_const_none;
+}
+
+mp_obj_t gfx_setBrightness(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_percent};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_percent, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 80 } },
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+    gfx->setBrightness(args[ARG_percent].u_int);
     return mp_const_none;
 }
 
@@ -692,12 +630,12 @@ mp_obj_t gfx_fillEllipseArc(size_t n_args, const mp_obj_t *pos_args, mp_map_t *k
 }
 
 mp_obj_t gfx_drawQR(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_str, ARG_x, ARG_y, ARG_w, ARG_version};
+    enum {ARG_text, ARG_x, ARG_y, ARG_w, ARG_version};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_str,     MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
-        { MP_QSTR_x,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = -1 } },
-        { MP_QSTR_y,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = -1 } },
+        { MP_QSTR_text,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_y,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_w,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = -1 } },
         { MP_QSTR_version, MP_ARG_INT                  , {.u_int = 1 } }
     };
@@ -707,7 +645,7 @@ mp_obj_t gfx_drawQR(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) 
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     auto gfx = getGfx(&pos_args[0]);
-    gfx->qrcode(mp_obj_str_get_str(args[ARG_str].u_obj)
+    gfx->qrcode(mp_obj_str_get_str(args[ARG_text].u_obj)
         , args[ARG_x].u_int, args[ARG_y].u_int
         , args[ARG_w].u_int, args[ARG_version].u_int);
     return mp_const_none;
@@ -924,13 +862,13 @@ mp_obj_t gfx_drawRawBuf(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
     enum {ARG_buf, ARG_x, ARG_y, ARG_w, ARG_h, ARG_len, ARG_swap};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_buf,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
-        { MP_QSTR_x,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_y,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_w,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_h,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_len,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_swap,   MP_ARG_BOOL                 , {.u_bool = false } },
+        { MP_QSTR_buf,  MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_y,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_w,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_h,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_len,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_swap, MP_ARG_BOOL                 , {.u_bool = false } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -952,10 +890,10 @@ mp_obj_t gfx_drawRawBuf(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
 }
 
 mp_obj_t gfx_print(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_str, ARG_color};
+    enum {ARG_text, ARG_color};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_str,  MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_text,  MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
         { MP_QSTR_color, MP_ARG_INT                  , {.u_int = -1 } },
     };
     /* *FORMAT-ON* */
@@ -969,7 +907,7 @@ mp_obj_t gfx_print(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
         gfx->setTextColor((uint32_t)args[ARG_color].u_int);
     }
 
-    gfx->print(mp_obj_str_get_str(args[ARG_str].u_obj));
+    gfx->print(mp_obj_str_get_str(args[ARG_text].u_obj));
     return mp_const_none;
 }
 
@@ -1010,10 +948,10 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     enum {ARG_w, ARG_h, ARG_bpp, ARG_psram};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_w,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_h,     MP_ARG_INT  | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_bpp,   MP_ARG_INT                   , {.u_int = -1 } },
-        { MP_QSTR_psram, MP_ARG_BOOL                  , {.u_bool = mp_const_false } },
+        { MP_QSTR_w,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_h,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_bpp,   MP_ARG_INT                  , {.u_int = -1 } },
+        { MP_QSTR_psram, MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

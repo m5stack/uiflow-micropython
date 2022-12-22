@@ -10,14 +10,14 @@ extern "C"
 #include "mpy_m5unified.h"
 
 /* *FORMAT-OFF* */
-const btn_obj_t m5_btnA    = {{&mp_btn_type},        &(M5.BtnA)    };
-const btn_obj_t m5_btnB    = {{&mp_btn_type},        &(M5.BtnB)    };
-const btn_obj_t m5_btnC    = {{&mp_btn_type},        &(M5.BtnC)    };
-const btn_obj_t m5_btnPWR  = {{&mp_btn_type},        &(M5.BtnPWR)  };
-const btn_obj_t m5_btnEXT  = {{&mp_btn_type},        &(M5.BtnEXT)  };
-const spk_obj_t m5_speaker = {{&mp_spk_type},        &(M5.Speaker) };
-const gfx_obj_t m5_display = {{&mp_gfxdevice_type},  &(M5.Display) };
-const pwr_obj_t m5_power   = {{&mp_power_type},      &(M5.Power)   };
+const btn_obj_t m5_btnA    = { {&mp_btn_type},       &(M5.BtnA)    };
+const btn_obj_t m5_btnB    = { {&mp_btn_type},       &(M5.BtnB)    };
+const btn_obj_t m5_btnC    = { {&mp_btn_type},       &(M5.BtnC)    };
+const btn_obj_t m5_btnPWR  = { {&mp_btn_type},       &(M5.BtnPWR)  };
+const btn_obj_t m5_btnEXT  = { {&mp_btn_type},       &(M5.BtnEXT)  };
+const spk_obj_t m5_speaker = { {&mp_spk_type},       &(M5.Speaker) };
+const gfx_obj_t m5_display = { {&mp_gfxdevice_type}, &(M5.Display) };
+const pwr_obj_t m5_power   = { {&mp_power_type},     &(M5.Power)   };
 /* *FORMAT-ON* */
 
 mp_obj_t m5_begin(void) {
@@ -36,9 +36,9 @@ mp_obj_t m5_getBoard(void) {
     return mp_obj_new_int(M5.getBoard());
 }
 
-#include "mpy_user_lcd.c"
+#include "mpy_user_lcd.txt"
 
 #if MICROPY_PY_LVGL
-#include "mpy_lvgl.c"
+#include "mpy_lvgl.txt"
 #endif
 }

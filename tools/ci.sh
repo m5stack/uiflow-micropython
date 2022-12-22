@@ -95,14 +95,14 @@ function ci_esp32_build {
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack submodules
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB
 
     # before lvgl build test, we need make clean
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB clean
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB clean
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_4MB LVGL=1
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_4MB LVGL=1
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB LVGL=1
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB LVGL=1
     
     # if [ -d $IDF_PATH/components/esp32c3 ]; then
     #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
@@ -113,14 +113,14 @@ function ci_esp32_build {
     # fi
 
     if [ -d $IDF_PATH/components/esp32s3 ]; then
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB
 
         # before lvgl build test, we need make clean
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB clean
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB clean
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_4MB LVGL=1
-        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_4MB LVGL=1
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB LVGL=1
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB LVGL=1
     fi
 }
 
