@@ -34,7 +34,7 @@ typedef struct _widgets_size_t {
 } widgets_size_t;
 
 // -------- M5Widgets Common
-static inline LGFX_Device *getGfx(const mp_obj_t *args) {
+static LGFX_Device *getGfx(const mp_obj_t *args) {
     return (LGFX_Device *)(((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx);
 }
 
@@ -85,13 +85,13 @@ typedef struct _widgets_label_obj_t {
     widgets_size_t size;
 }widgets_label_obj_t;
 
-static inline void m5widgets_label_erase_helper(const widgets_label_obj_t *self) {
+static void m5widgets_label_erase_helper(const widgets_label_obj_t *self) {
     self->gfx->setTextColor((uint32_t)self->color.bg_color, (uint32_t)self->color.bg_color);
     self->gfx->setTextSize(self->size.text_size);
     self->gfx->drawString(self->text, self->text_pos.x0, self->text_pos.y0, self->font);
 }
 
-static inline void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
+static void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
     self->gfx->setTextColor((uint32_t)self->color.fg_color, (uint32_t)self->color.bg_color);
     self->gfx->setTextSize(self->size.text_size);
     self->gfx->drawString(self->text, self->text_pos.x0, self->text_pos.y0, self->font);
@@ -288,13 +288,13 @@ typedef struct _widgets_title_obj_t {
     widgets_size_t size;
 }widgets_title_obj_t;
 
-static inline void m5widgets_title_erase_helper(widgets_title_obj_t *self) {
+static void m5widgets_title_erase_helper(widgets_title_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
     self->gfx->fillRect(0, 0, self->size.w, self->size.h, (uint32_t)self->color.bg_color);
     self->gfx->setRawColor(stash_color);
 }
 
-static inline void m5widgets_title_draw_helper(widgets_title_obj_t *self) {
+static void m5widgets_title_draw_helper(widgets_title_obj_t *self) {
     m5widgets_title_erase_helper(self);
     // text
     self->gfx->setTextColor((uint32_t)self->color.fg_color, (uint32_t)self->color.bg_color);
@@ -327,10 +327,10 @@ mp_obj_t m5widgets_title_setText(size_t n_args, const mp_obj_t *pos_args, mp_map
 }
 
 mp_obj_t m5widgets_title_setColor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_t_c, ARG_bg_c};
+    enum {ARG_text_c, ARG_bg_c};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_t_c,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0xFFFFFF } },
+        { MP_QSTR_text_c,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0xFFFFFF } },
         { MP_QSTR_bg_c, MP_ARG_INT                  , {.u_int = 0xFF00FF } },
     };
     /* *FORMAT-ON* */
@@ -341,7 +341,7 @@ mp_obj_t m5widgets_title_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
 
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_erase_helper(self);
-    self->color.fg_color = args[ARG_t_c].u_int;
+    self->color.fg_color = args[ARG_text_c].u_int;
     self->color.bg_color = args[ARG_bg_c].u_int;
     m5widgets_title_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
@@ -475,54 +475,108 @@ typedef struct _widgets_image_obj_t {
     widgets_size_t size;
 }widgets_image_obj_t;
 
-#define MAKE_U32(a) (uint32_t)((uint8_t)a[0] << 24 | (uint8_t)a[1] << 16 | (uint8_t)a[2] << 8 | (uint8_t)a[3] << 0)
-
-static inline void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
+static void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
     // TODO: background color
     self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h);
 }
 
-static inline bool m5widgets_image_bmp_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
-    lgfx::v1::bitmap_header_t bmpdata;
-
-    if (!bmpdata.load_bmp_header(file) || (bmpdata.biCompression > 3)) {
-      return false;
-    }
-    m5widgets_image_erase_helper(self);
-    self->size.w = bmpdata.biWidth;
-    self->size.h = bmpdata.biHeight;
-    return true;
-}
-
-static inline bool m5widgets_image_jpg_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
-    if (!file->open(self->img, LFS2_O_RDONLY)) {
-        return false;
-    }
-    m5widgets_image_erase_helper(self);
-    // TODO:
-    return true;
-}
-
-static inline bool m5widgets_image_png_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+static bool m5widgets_image_bmp_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
     if (!file->open(self->img, LFS2_O_RDONLY)) {
         return false;
     }
 
-    uint8_t buf[4] = {0};
-    for (size_t i = 0; i < 4; i++)
+    uint8_t buf[2] = {0};
+    for (size_t i = 0; i < 2; i++)
         buf[i] = file->read8();
-    if (MAKE_U32(buf) != 0x89504E47) {
+    if (buf[0] != 'B' && buf[1] != 'M') {
+        return false;
+    }
+    m5widgets_image_erase_helper(self);
+    file->seek(16, LFS2_SEEK_CUR);
+    self->size.w = file->read32();
+    self->size.h = file->read32();
+    file->close();
+    // printf("%s W:%d H:%d\r\n", self->img, self->size.w, self->size.h);
+    return true;
+}
+
+static bool m5widgets_image_jpg_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+    if (!file->open(self->img, LFS2_O_RDONLY)) {
+        return false;
+    }
+    m5widgets_image_erase_helper(self);
+
+	uint8_t idx, result = 0;
+    uint16_t value;
+    while (!result) {
+        if (!file->read(&idx, 1) || idx != 0xff || !file->read(&idx, 1)) {
+            result = 3;
+            break;
+        }
+
+        if (idx >= 0xE0 && idx <= 0xEF) {
+            value = file->read16swap();
+			file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
+            continue;
+        }
+
+        switch (idx)
+		{
+            case 0xD8:
+                break;
+            case 0xFE:
+            case 0xDB:
+            case 0xC4:
+            case 0xDC:
+            case 0xDD:
+                value = file->read16swap();
+                file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
+                break;
+            case 0xC0:
+                file->seek(0x03, LFS2_SEEK_CUR);
+                self->size.h = (uint32_t)file->read16swap();
+                self->size.w = (uint32_t)file->read16swap();
+                result = 1;
+                break;
+            case 0xDA:
+            case 0xD9:
+            case 0x00:
+                result = 2;
+                break;
+            default:
+                value = file->read16swap();
+                if (file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR) != 0) {
+                    result = 3;
+                }
+                break;
+		}
+    }
+    file->close();
+    // printf("%s W:%d H:%d result:%d\r\n", self->img, self->size.w, self->size.h, result);
+    return result == 1? true: false;
+}
+
+static bool m5widgets_image_png_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+    if (!file->open(self->img, LFS2_O_RDONLY)) {
+        return false;
+    }
+
+    uint16_t buf[2] = {0};
+    for (size_t i = 0; i < 2; i++)
+        buf[i] = file->read16swap();
+    if ((buf[0] << 16 | buf[1]) != 0x89504E47) {
         return false;
     }
     m5widgets_image_erase_helper(self);
     file->seek(16);
-    for (size_t i = 0; i < 4; i++)
-        buf[i] = file->read8();
-    self->size.w = MAKE_U32(buf);
-    for (size_t i = 0; i < 4; i++)
-        buf[i] = file->read8();
-    self->size.h = MAKE_U32(buf);
+    for (size_t i = 0; i < 2; i++)
+        buf[i] = file->read16swap();
+    self->size.w = buf[0] << 16 | buf[1];
+    for (size_t i = 0; i < 2; i++)
+        buf[i] = file->read16swap();
+    self->size.h = buf[0] << 16 | buf[1];
     file->close();
+    // printf("%s W:%d H:%d\r\n", self->img, self->size.w, self->size.h);
     return true;
 }
 
@@ -535,18 +589,22 @@ static bool m5widgets_image_draw_helper(widgets_image_obj_t *self) {
     ftype[4] = '\0';
 
     LFS2Wrapper wrapper;
-    bool ret = false;
+    bool ret = true;
     if (strstr(ftype, "bmp") != NULL) {
-        m5widgets_image_bmp_helper(&wrapper, self);
-        ret = self->gfx->drawBmpFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        ret = m5widgets_image_bmp_helper(&wrapper, self);
+        self->gfx->drawBmpFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
     } else if ((strstr(ftype, "jpg") != NULL) || (strstr(ftype, "jpeg") != NULL)) {
-        m5widgets_image_jpg_helper(&wrapper, self);
-        ret = self->gfx->drawJpgFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        ret = m5widgets_image_jpg_helper(&wrapper, self);
+        self->gfx->drawJpgFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
     } else if (strstr(ftype, "png") != NULL) {
-        m5widgets_image_png_helper(&wrapper, self);
-        ret = self->gfx->drawPngFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        ret = m5widgets_image_png_helper(&wrapper, self);
+        self->gfx->drawPngFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
     } else {
-        ret = false;
+        printf("Image format was not bmp, jpg, png\r\n");
+    }
+
+    if (!ret) {
+        printf("Get %s width and height failed\r\n", self->img);
     }
     return ret;
 }
@@ -635,6 +693,8 @@ mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size
 
     self->pos.x0 = args[ARG_x].u_int;
     self->pos.y0 = args[ARG_y].u_int;
+    self->size.w = 0;
+    self->size.h = 0;
 
     if (args[ARG_img].u_obj == mp_const_none) {
         self->img = "res/img/default.png";
@@ -654,12 +714,12 @@ typedef struct _widgets_line_obj_t {
     widgets_color_t color;
 }widgets_line_obj_t;
 
-static inline void m5widgets_line_erase_helper(const widgets_line_obj_t *self) {
+static void m5widgets_line_erase_helper(const widgets_line_obj_t *self) {
     // TODO: background color
     self->gfx->drawLine(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1);
 }
 
-static inline void m5widgets_line_draw_helper(const widgets_line_obj_t *self) {
+static void m5widgets_line_draw_helper(const widgets_line_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
     self->gfx->drawLine(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->color.fg_color);
     self->gfx->setRawColor(stash_color);
@@ -767,15 +827,15 @@ typedef struct _widgets_circle_obj_t {
     widgets_color_t color;
 }widgets_circle_obj_t;
 
-static inline void m5widgets_circle_erase_helper(const widgets_circle_obj_t *self) {
+static void m5widgets_circle_erase_helper(const widgets_circle_obj_t *self) {
     // TODO: background color
     self->gfx->fillCircle(self->pos.x0, self->pos.y0, self->size.r0);
 }
 
-static inline void m5widgets_circle_draw_helper(const widgets_circle_obj_t *self) {
+static void m5widgets_circle_draw_helper(const widgets_circle_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
+    self->gfx->fillCircle(self->pos.x0, self->pos.y0, self->size.r0, self->color.bg_color);
     self->gfx->drawCircle(self->pos.x0, self->pos.y0, self->size.r0, self->color.fg_color);
-    self->gfx->fillCircle(self->pos.x0, self->pos.y0, self->size.r0 - 1, self->color.bg_color);
     self->gfx->setRawColor(stash_color);
 }
 
@@ -896,15 +956,15 @@ typedef struct _widgets_rectangle_obj_t {
     widgets_color_t color;
 }widgets_rectangle_obj_t;
 
-static inline void m5widgets_rectangle_erase_helper(const widgets_rectangle_obj_t *self) {
+static void m5widgets_rectangle_erase_helper(const widgets_rectangle_obj_t *self) {
     // TODO: background color
     self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h);
 }
 
-static inline void m5widgets_rectangle_draw_helper(const widgets_rectangle_obj_t *self) {
+static void m5widgets_rectangle_draw_helper(const widgets_rectangle_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
+    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h, self->color.bg_color);
     self->gfx->drawRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h, self->color.fg_color);
-    self->gfx->fillRect(self->pos.x0 + 1, self->pos.y0 + 1, self->size.w - 1, self->size.h - 1, self->color.bg_color);
     self->gfx->setRawColor(stash_color);
 }
 
@@ -1019,7 +1079,7 @@ mp_obj_t m5widgets_rectangle_make_new(const mp_obj_type_t *type, size_t n_args, 
     self->size.w = args[ARG_w].u_int;
     self->size.h = args[ARG_h].u_int;
     self->color.fg_color = args[ARG_color].u_int;
-    self->color.bg_color = args[ARG_color].u_int;
+    self->color.bg_color = args[ARG_fill_c].u_int;
     m5widgets_rectangle_draw_helper(self);
     return MP_OBJ_FROM_PTR(self);
 }
@@ -1033,15 +1093,15 @@ typedef struct _widgets_triangle_obj_t {
     widgets_color_t color;
 }widgets_triangle_obj_t;
 
-static inline void m5widgets_triangle_erase_helper(const widgets_triangle_obj_t *self) {
+static void m5widgets_triangle_erase_helper(const widgets_triangle_obj_t *self) {
     // TODO: background color
     self->gfx->fillTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2);
 }
 
-static inline void m5widgets_triangle_draw_helper(const widgets_triangle_obj_t *self) {
+static void m5widgets_triangle_draw_helper(const widgets_triangle_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
-    self->gfx->drawTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2, self->color.fg_color);
     self->gfx->fillTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2, self->color.bg_color);
+    self->gfx->drawTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2, self->color.fg_color);
     self->gfx->setRawColor(stash_color);
 }
 
@@ -1161,12 +1221,12 @@ typedef struct _widgets_qrcode_obj_t {
     uint8_t version;
 }widgets_qrcode_obj_t;
 
-static inline void m5widgets_qrcode_erase_helper(const widgets_qrcode_obj_t *self) {
+static void m5widgets_qrcode_erase_helper(const widgets_qrcode_obj_t *self) {
     // TODO: background color
     self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.w);
 }
 
-static inline void m5widgets_qrcode_draw_helper(const widgets_qrcode_obj_t *self) {
+static void m5widgets_qrcode_draw_helper(const widgets_qrcode_obj_t *self) {
     uint32_t stash_color = self->gfx->getRawColor();
     self->gfx->qrcode(self->text, self->pos.x0, self->pos.y0, self->size.w, self->version);
     self->gfx->setRawColor(stash_color);
@@ -1276,7 +1336,7 @@ mp_obj_t m5widgets_qrcode_make_new(const mp_obj_type_t *type, size_t n_args, siz
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all_kw_array(n_args, n_kw, all_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = mp_obj_malloc(widgets_qrcode_obj_t, &mp_widgets_triangle_type);
+    widgets_qrcode_obj_t *self = mp_obj_malloc(widgets_qrcode_obj_t, &mp_widgets_qrcode_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
         self->gfx = (LGFX_Device*)&(M5.Display);
