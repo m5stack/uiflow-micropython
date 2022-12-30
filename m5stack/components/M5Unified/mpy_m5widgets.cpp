@@ -17,12 +17,12 @@ typedef struct _widgets_color_t {
 } widgets_color_t;
 
 typedef struct _widgets_pos_t {
-    uint16_t x0;
-    uint16_t y0;
-    uint16_t x1;
-    uint16_t y1;
-    uint16_t x2;
-    uint16_t y2;
+    int16_t x0;
+    int16_t y0;
+    int16_t x1;
+    int16_t y1;
+    int16_t x2;
+    int16_t y2;
 } widgets_pos_t;
 
 typedef struct _widgets_size_t {
@@ -412,11 +412,10 @@ mp_obj_t m5widgets_title_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
 }
 
 mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
-    enum {ARG_text, ARG_h, ARG_text_x, ARG_text_c, ARG_bg_c, ARG_font, ARG_parent};
+    enum {ARG_text, ARG_text_x, ARG_text_c, ARG_bg_c, ARG_font, ARG_parent};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
         { MP_QSTR_text,   MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
-        { MP_QSTR_h,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 9 } },
         { MP_QSTR_text_x, MP_ARG_INT                  , {.u_int = 0 } },
         { MP_QSTR_text_c, MP_ARG_INT                  , {.u_int = 0xFFFFFF } },
         { MP_QSTR_bg_c,   MP_ARG_INT                  , {.u_int = 0xFF00FF } },
@@ -442,12 +441,6 @@ mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size
         self->text = mp_obj_str_get_str(args[ARG_text].u_obj);
     }
 
-    self->size.h = args[ARG_h].u_int;
-    self->text_pos.x0 = args[ARG_text_x].u_int;
-    self->text_pos.y0 = 0;
-    self->color.fg_color = args[ARG_text_c].u_int;
-    self->color.bg_color = args[ARG_bg_c].u_int;
-
     if (args[ARG_font].u_obj != mp_const_none) {
         self->font = (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font;
     } else {
@@ -455,11 +448,13 @@ mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size
     }
 
     self->size.w = self->gfx->width();
-    if (self->size.h < self->gfx->fontHeight(self->font)) {
-        self->size.h = self->gfx->fontHeight(self->font);
-    }
+    self->size.h = self->gfx->fontHeight(self->font);
+    self->text_pos.x0 = args[ARG_text_x].u_int;
+    self->text_pos.y0 = 0;
+    self->color.fg_color = args[ARG_text_c].u_int;
+    self->color.bg_color = args[ARG_bg_c].u_int;
+    self->size.text_size = 1.0;
 
-    self->size.text_size = (float)(self->size.h / self->gfx->fontHeight(self->font));
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
