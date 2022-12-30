@@ -71,7 +71,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/modnetwork.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_ppp.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
+    ${PROJECT_DIR}/network_wlan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpnimbleport.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modsocket.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp.c
@@ -148,6 +148,8 @@ set(IDF_COMPONENTS
     libffi
     M5Unified
     esp32-camera
+    m5things
+    mqtt
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

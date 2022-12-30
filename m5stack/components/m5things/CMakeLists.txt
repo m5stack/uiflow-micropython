@@ -1,0 +1,10 @@
+idf_component_register(SRCS "m5things.c"
+                    INCLUDE_DIRS "include"
+                    REQUIRES json nvs_flash freertos main
+                    )
+set_property(TARGET ${COMPONENT_LIB} APPEND PROPERTY LINK_INTERFACE_MULTIPLICITY 3)
+
+# idf_component_register(
+#                     INCLUDE_DIRS "include"
+#                     REQUIRES nvs_flash main)
+# target_link_libraries(${COMPONENT_TARGET} INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/libm5things.a")

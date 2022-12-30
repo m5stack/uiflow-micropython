@@ -62,6 +62,7 @@
 #include "modmachine.h"
 #include "modnetwork.h"
 #include "mpthreadport.h"
+#include "m5things.h"
 
 #if MICROPY_BLUETOOTH_NIMBLE
 #include "extmod/modbluetooth.h"
@@ -242,6 +243,8 @@ void app_main(void) {
 
     // Create and transfer control to the MicroPython task.
     xTaskCreatePinnedToCore(mp_task, "mp_task", MP_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);
+    // Create m5 task for remote control.
+    xTaskCreatePinnedToCore(m5thing_task, "m5thing_task", MP_TASK_STACK_SIZE / sizeof(StackType_t) / 2, NULL, MP_TASK_PRIORITY + 1, &m5thing_task_handle, MP_TASK_COREID);
 }
 
 void nlr_jump_fail(void *val) {
