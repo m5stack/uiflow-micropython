@@ -49,3 +49,5 @@ genrst/
 
 .vscode/
 tools/littlefs/prebuilt/linux/littlefs2
+
+dependencies.lock
