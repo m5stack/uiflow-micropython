@@ -172,12 +172,17 @@ if arg_lvgl_flag == "1":
 else:
     arg_lvgl_flag = ""
 
-release_file_out = "{}-{}-{}{}-{}{}.bin".format(
+uiflow_version = ""
+with open("./version.txt", "r") as f:
+    uiflow_version = f.readline() + "-"
+
+release_file_out = "{}-{}-{}{}-{}{}{}.bin".format(
     file_out.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
     arg_lvgl_flag,
+    uiflow_version.lower(),
     today.strftime("%Y%m%d"),
 )
 os.system("cp {} {}".format(file_out, release_file_out))
