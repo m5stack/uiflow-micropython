@@ -5,8 +5,9 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_wifi.h"
-#include "esp_log.h"
+#include "esp_ota_ops.h"
 #include "esp_sntp.h"
+#include "esp_log.h"
 #include "uart.h"
 #include "aes/esp_aes.h"
 #include "mqtt_client.h"
@@ -42,19 +43,15 @@
 #define PKG_ERR_INDEX -2
 #define PKG_ERR_LENGTH -3
 #define PKG_ERR_EXECUTE -4
+#define PKG_ERR_FILE_OPEN -5
+#define PKG_ERR_FILE_READ -6
+#define PKG_ERR_FILE_WRITE -7
+#define PKG_ERR_FILE_CLOSE -8
+
+#define OTA_UPDATE_FILE_NAME "main_ota_temp.py"
 
 #define M5THINGS_OTA_TOPIC_TEMPLATE \
     "$m5/uiflow/v1/%s/%02x%02x%02x%02x%02x%02x/%s"
-
-typedef enum {
-    M5THINGS_DOWNLINK_NULL = 0,
-    M5THINGS_DOWNLINK_PING,
-    M5THINGS_DOWNLINK_OTA,
-    M5THINGS_DOWNLINK_EXEC,
-    M5THINGS_DOWNLINK_CMD,
-    M5THINGS_DOWNLINK_FILE,
-    M5THINGS_DOWNLINK_MAX
-} mqtt_down_cmd_t;
 
 // typedef
 typedef struct _mp_obj_vfs_lfs2_t {
@@ -76,30 +73,22 @@ volatile bool mqtt_connect_flag               = false;
 volatile uint8_t last_downlink_topic          = 0;
 
 // order is request.
-static char topic_action_list[5][6] = {"ping", "ota", "exec", "cmd", "file"};
+static char topic_action_list[5][6] = {"ping", "exec", "file"};
 
 // This topic is used for send status to cloud.
 static char mqtt_up_ping_topic[64]   = {0};
 static char mqtt_down_ping_topic[64] = {0};
-// This topic is used for update "main.py" file, mostly use for download.
-static char mqtt_up_ota_topic[64]   = {0};
-static char mqtt_down_ota_topic[64] = {0};
-// This topic is used for single execute code.
+// This topic is used for execute code.
 static char mqtt_up_exec_topic[64]   = {0};
 static char mqtt_down_exec_topic[64] = {0};
-// This topic is used for execute command.
-static char mqtt_up_command_topic[64]   = {0};
-static char mqtt_down_command_topic[64] = {0};
 // This topic is used for send file to device from cloud.
 static char mqtt_up_file_topic[64]   = {0};
 static char mqtt_down_file_topic[64] = {0};
 
-static char *up_topic_list[5]   = {mqtt_up_ping_topic, mqtt_up_ota_topic,
-                                   mqtt_up_exec_topic, mqtt_up_command_topic,
-                                   mqtt_up_file_topic};
-static char *down_topic_list[5] = {
-    mqtt_down_ping_topic, mqtt_down_ota_topic, mqtt_down_exec_topic,
-    mqtt_down_command_topic, mqtt_down_file_topic};
+static char *up_topic_list[3] = {mqtt_up_ping_topic, mqtt_up_exec_topic,
+                                 mqtt_up_file_topic};
+static char *down_topic_list[3] = {mqtt_down_ping_topic, mqtt_down_exec_topic,
+                                   mqtt_down_file_topic};
 /******************************************************************************/
 static lfs2_t *_fp        = NULL;
 static lfs2_file_t *_file = NULL;
@@ -110,7 +99,7 @@ static bool lfs2_open_file(const char *path, int flags) {
 
     mp_vfs_mount_t *_fm = mp_vfs_lookup_path(path, &full_path);
     if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
-        mp_printf(&mp_plat_print, "UiFlOW OTA Failed(OS Error:-99)");
+        // mp_printf(&mp_plat_print, "UiFlOW OTA Failed(OS Error:-99)");
         return false;
     }
     _fp          = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(_fm->obj))->lfs;
@@ -130,9 +119,10 @@ static int lfs2_seek_file(lfs2_soff_t off, int whence) {
     return lfs2_file_seek(_fp, _file, off, whence);
 }
 
-static void lfs2_close_file(void) {
+static int lfs2_close_file(void) {
+    int ret = LFS2_ERR_OK;
     if (_fp) {
-        lfs2_file_close(_fp, _file);
+        ret = lfs2_file_close(_fp, _file);
     }
     if (_file) {
         free(_file);
@@ -140,6 +130,7 @@ static void lfs2_close_file(void) {
     if (_fcfg.buffer) {
         free(_fcfg.buffer);
     }
+    return ret;
 }
 
 static void log_error_if_nonzero(const char *message, int error_code) {
@@ -160,6 +151,67 @@ static bool nvs_read_helper(char *key, char *_value, size_t *_len) {
 
     ESP_LOGI(TAG, "Key: %s Value: %s", key, _value);
     return ret == ESP_OK ? true : false;
+}
+
+static int8_t mqtt_file_write_helper(cJSON* _fs_path, cJSON* _pkg_ctx, uint8_t _pkg_idx, size_t _pkg_len) {
+    int8_t ret = PKG_OK;
+    size_t decode_len = 0;
+
+    // TODO: sometimes will cause StoreProhibited
+    unsigned char *ctx_buf = (unsigned char *)base64_decode(
+        _pkg_ctx->valuestring, strlen(_pkg_ctx->valuestring), &decode_len);
+    ctx_buf[decode_len] = '\0';
+
+    if (_pkg_len != decode_len) {
+        ESP_LOGE(TAG, "file decode failed");
+        ret = PKG_ERR_LENGTH;
+        goto end;
+    }
+
+    if (_pkg_idx == 0) {
+        // open file, NEW + RW + ZERO File
+        if (!lfs2_open_file(_fs_path->valuestring, LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC)){
+            ESP_LOGE(TAG, "file create and open failed");
+            ret = PKG_ERR_FILE_OPEN;
+            goto close;
+        }
+    } else {
+        // open file, RW + MOVE to END
+        if (!lfs2_open_file(_fs_path->valuestring, LFS2_O_RDWR | LFS2_O_APPEND)){
+            ESP_LOGE(TAG, "file open failed");
+            ret = PKG_ERR_FILE_OPEN;
+            goto close;
+        }
+    }
+
+    // write file
+    size_t write_len = lfs2_write_file(ctx_buf, decode_len);
+    if (write_len != decode_len) {
+        ESP_LOGW(TAG, "file write error, write_len: %d != decode_len: %d", write_len, decode_len);
+        ret = PKG_ERR_FILE_WRITE;
+        goto close;
+    }
+close:
+    // close file
+    if (lfs2_close_file() != LFS2_ERR_OK) {
+        ESP_LOGW(TAG, "file close failed");
+        ret = PKG_ERR_FILE_CLOSE;
+    }
+end:
+    free(ctx_buf);
+    return ret;
+}
+
+static int8_t mqtt_file_read_helper(cJSON* _fs_path) {
+    int8_t ret = PKG_OK;
+
+    return ret;
+}
+
+static int8_t mqtt_file_list_helper(cJSON* _fs_path) {
+    int8_t ret = PKG_OK;
+
+    return ret;
 }
 /******************************************************************************/
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
@@ -188,7 +240,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
             mqtt_connect_flag = false;
             break;
         case MQTT_EVENT_CONNECTED: {
-            for (size_t i = 0; i < 5; i++) {
+            for (size_t i = 0; i < 3; i++) {
                 msg_id = esp_mqtt_client_subscribe(m5things_mqtt_client,
                                                    down_topic_list[i], 0);
                 ESP_LOGI(TAG, "sent %s topic subscribe successful, msg_id=%d",
@@ -231,13 +283,7 @@ static int8_t mqtt_ping_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     return ret;
 }
 
-static int8_t mqtt_ota_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
-    int8_t ret = PKG_OK;
-    *_pkg_sn   = 0;
-    return ret;
-}
-
-static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
+static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn, uint8_t *_pkg_idx) {
     int8_t ret        = PKG_OK;
     size_t decode_len = 0;
 
@@ -254,6 +300,7 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
 
     *_pkg_sn = pkg_sn->valueint;
+    *_pkg_idx = pkg_idx->valueint;
 
     if (NULL == pkg_idx) {
         ret = PKG_ERR_INDEX;
@@ -285,7 +332,7 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
 
         uint64_t timeout = esp_timer_get_time();
         while (ringbuf_free(&stdin_ringbuf) <= 0) {
-            vTaskDelay(40);
+            vTaskDelay(40 / portTICK_PERIOD_MS);
             ESP_LOGW(TAG, "ringbuf free byte: %d", ringbuf_free(&stdin_ringbuf));
             if ((esp_timer_get_time() - timeout) > 30000000) {
                 ESP_LOGE(TAG, "wait ringbuf free timeout");
@@ -305,15 +352,56 @@ end:
     return ret;
 }
 
-static int8_t mqtt_cmd_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
+static int8_t mqtt_file_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn, uint8_t *_pkg_idx) {
     int8_t ret = PKG_OK;
-    *_pkg_sn   = 0;
-    return ret;
-}
 
-static int8_t mqtt_file_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
-    int8_t ret = PKG_OK;
-    *_pkg_sn   = 0;
+    cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
+    if (NULL == root) {
+        ret = PKG_ERR_PARSE;
+        goto end;
+    }
+
+    cJSON *pkg_sn  = cJSON_GetObjectItemCaseSensitive(root, "pkg_sn");
+    cJSON *pkg_tot = cJSON_GetObjectItemCaseSensitive(root, "pkg_tot");
+    cJSON *pkg_idx = cJSON_GetObjectItemCaseSensitive(root, "pkg_idx");
+    cJSON *pkg_len = cJSON_GetObjectItemCaseSensitive(root, "pkg_len");
+    cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
+    cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
+    cJSON *fs_path = cJSON_GetObjectItemCaseSensitive(root, "fs_path");
+
+    ESP_LOGI(TAG, "file_op: %d file_path: %s", file_op->valueint, fs_path->valuestring);
+
+    *_pkg_sn  = pkg_sn->valueint;
+    *_pkg_idx = pkg_idx->valueint;
+
+    if (NULL == pkg_idx) {
+        ret = PKG_ERR_INDEX;
+        goto end;
+    }
+
+    // file operate
+    if (file_op->valueint == 0) {
+        // OTA + file download use same function
+        ret = mqtt_file_write_helper(fs_path, pkg_ctx, pkg_idx->valueint, pkg_len->valueint);
+    } else if (file_op->valueint == 1) {
+        ret = mqtt_file_read_helper(fs_path);
+    } else if (file_op->valueint == 2) {
+        ret = mqtt_file_list_helper(fs_path);
+    }
+
+    if (ret == PKG_OK) {
+        ESP_LOGI(TAG, "file operate success!");
+    }
+
+    // when OTA done need restart device
+    if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
+        if ((strncmp(OTA_UPDATE_FILE_NAME, fs_path->valuestring, strlen(fs_path->valuestring)) == 0)) {
+            ESP_LOGW(TAG, "restart now :)");
+            esp_restart();
+        }
+    }
+end:
+    cJSON_Delete(root);
     return ret;
 }
 
@@ -327,10 +415,12 @@ static void mqtt_message_handle(void *event_data) {
         "\r\nTopic:  %.*s\r\nTopic length: %d\r\nData length: %d\r\nOffset: %d",
         event->topic_len, event->topic, event->topic_len, event->data_len,
         event->current_data_offset);
+
     // esp_log_buffer_hex("data", event->data, event->data_len);
 
-    char resp_buf[32];
+    char resp_buf[64];
     uint64_t resp_pkg_sn = 0;
+    uint8_t resp_pkg_idx = 0;
     int8_t result = 0;
     if ((strncmp(mqtt_up_ping_topic, event->topic, event->topic_len) == 0)) {
         ESP_LOGI(TAG, "Downlink msg's topic is match ping topic");
@@ -338,31 +428,18 @@ static void mqtt_message_handle(void *event_data) {
         sprintf(resp_buf, "{\"pkg_sn\":%lld,\"err_code\":%d}", resp_pkg_sn, result);
         esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_ping_topic,
                                 resp_buf, strlen(resp_buf), 0, 0);
-    } else if ((strncmp(mqtt_down_ota_topic, event->topic, event->topic_len) == 0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match ota topic");
-        result = mqtt_ota_process(event, &resp_pkg_sn);
-        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"err_code\":%d}", resp_pkg_sn, result);
-        esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_ota_topic,
-                                resp_buf, strlen(resp_buf), 0, 0);
     } else if ((strncmp(mqtt_down_exec_topic, event->topic, event->topic_len) ==
                 0)) {
         ESP_LOGI(TAG, "Downlink msg's topic is match exec topic");
-        result = mqtt_exec_process(event, &resp_pkg_sn);
-        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"err_code\":%d}", resp_pkg_sn, result);
+        result = mqtt_exec_process(event, &resp_pkg_sn, &resp_pkg_idx);
+        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}", resp_pkg_sn, resp_pkg_idx, result);
         esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_exec_topic,
-                                resp_buf, strlen(resp_buf), 0, 0);
-    } else if ((strncmp(mqtt_down_command_topic, event->topic, event->topic_len) ==
-                0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match command topic");
-        result = mqtt_cmd_process(event, &resp_pkg_sn);
-        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"err_code\":%d}", resp_pkg_sn, result);
-        esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_command_topic,
                                 resp_buf, strlen(resp_buf), 0, 0);
     } else if ((strncmp(mqtt_down_file_topic, event->topic, event->topic_len) ==
                 0)) {
         ESP_LOGI(TAG, "Downlink msg's topic is match file topic");
-        result = mqtt_file_process(event, &resp_pkg_sn);
-        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"err_code\":%d}", resp_pkg_sn, result);
+        result = mqtt_file_process(event, &resp_pkg_sn, &resp_pkg_idx);
+        sprintf(resp_buf, "{\"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}", resp_pkg_sn, resp_pkg_idx, result);
         esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic,
                                 resp_buf, strlen(resp_buf), 0, 0);
     }
@@ -404,7 +481,7 @@ static esp_err_t mqtt_app_start(void) {
 
     esp_efuse_mac_get_default(sta_mac);
 
-    for (size_t i = 0; i < 5; i++) {
+    for (size_t i = 0; i < 3; i++) {
         topic_len = sprintf(up_topic_list[i], M5THINGS_OTA_TOPIC_TEMPLATE, "up",
                             MAC2STR(sta_mac), topic_action_list[i]);
         up_topic_list[i][topic_len] = '\0';
@@ -416,12 +493,8 @@ static esp_err_t mqtt_app_start(void) {
 
     ESP_LOGI(TAG, "PING:\r\n\t%s\r\n\t%s", mqtt_up_ping_topic,
              mqtt_down_ping_topic);
-    ESP_LOGI(TAG, "OTA:\r\n\t%s\r\n\t%s", mqtt_up_ota_topic,
-             mqtt_down_ota_topic);
     ESP_LOGI(TAG, "EXEC:\r\n\t%s\r\n\t%s", mqtt_up_exec_topic,
              mqtt_down_exec_topic);
-    ESP_LOGI(TAG, "CMD:\r\n\t%s\r\n\t%s", mqtt_up_command_topic,
-             mqtt_down_command_topic);
     ESP_LOGI(TAG, "FILE:\r\n\t%s\r\n\t%s", mqtt_up_file_topic,
              mqtt_down_file_topic);
 
@@ -429,12 +502,12 @@ static esp_err_t mqtt_app_start(void) {
     sprintf(username, "uiflow-%02x%02x", sta_mac[4], sta_mac[5]);
     password = calculate_password(client_id);
 
-    ESP_LOGI(TAG,
-             "MQTT Info:\r\n\tclient_id: %s\r\n\tusername: %s\r\n\tpasswd: %s",
-             client_id, username, password);
+    // ESP_LOGI(TAG,
+    //          "MQTT Info:\r\n\tclient_id: %s\r\n\tusername: %s\r\n\tpasswd: %s",
+    //          client_id, username, password);
 
     esp_mqtt_client_config_t mqtt_cfg = {.buffer_size     = 4096,
-                                         .out_buffer_size = 2048,
+                                         .out_buffer_size = 4096,
                                          .client_id       = client_id,
                                          .username        = username,
                                          .password        = password,
@@ -443,12 +516,15 @@ static esp_err_t mqtt_app_start(void) {
     ESP_LOGI(TAG, "[APP] Free memory: %d bytes", esp_get_free_heap_size());
 
     char server_uri[64];
-    size_t uri_len = sizeof(server_uri);
-    if (nvs_read_helper("server", server_uri, &uri_len)) {
+    char nvs_server_uri[32];
+    size_t uri_len = sizeof(nvs_server_uri);
+    if (nvs_read_helper("server", nvs_server_uri, &uri_len)) {
+        sprintf(server_uri, "mqtt://%s:1883", nvs_server_uri);
         mqtt_cfg.uri = server_uri;
     } else {
-        mqtt_cfg.uri = "mqtt://flow.m5stack.com:1883";  // default
+        mqtt_cfg.uri = "mqtt://uiflow2.m5stack.com:1883";  // default
     }
+    ESP_LOGI(TAG, "mqtt_cfg.uri: %s", mqtt_cfg.uri);
 
     m5things_mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(m5things_mqtt_client, ESP_EVENT_ANY_ID,
@@ -462,6 +538,7 @@ void time_sync_notification_cb(struct timeval *tv) {
 
 static bool sync_time_by_sntp(void) {
     time_t now = 0;
+
     time(&now);
     if (now > 1670484240) {  // magic day :)
         return true;
@@ -490,12 +567,12 @@ static bool sync_time_by_sntp(void) {
     sntp_init();
 
     int retry             = 0;
-    const int retry_count = 20;
+    const int retry_count = 30;
     while ((sntp_get_sync_status() == SNTP_SYNC_STATUS_RESET) &&
            (++retry < retry_count)) {
         ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry,
                  retry_count);
-        vTaskDelay(2000);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
     }
 
     char strftime_buf[64];
@@ -510,14 +587,19 @@ static bool sync_time_by_sntp(void) {
 
 void m5thing_task(void *pvParameter) {
     char mqtt_report_buf[128];
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    esp_app_desc_t running_app_info;
+    if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
+        ESP_LOGI(TAG, "Running firmware version: %s", running_app_info.version);
+    }
 soft_reset:
     mqtt_connect_flag = false;
     ESP_LOGI(TAG, "waiting connect to Wi-Fi");
     while (!wifi_sta_connected) {
-        vTaskDelay(1000);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
     }
     ESP_LOGI(TAG, "Wi-Fi is connected, connect to server");
-    vTaskDelay(2000);
+    vTaskDelay(500 / portTICK_PERIOD_MS);
 
     if (!sync_time_by_sntp()) {
         ESP_LOGI(TAG, "synchronize time failed");
@@ -535,7 +617,7 @@ soft_reset:
     uint64_t last_ping_time = esp_timer_get_time();
 
     for (;;) {
-        vTaskDelay(1000);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
 
         if (!mqtt_connect_flag) {
             ESP_LOGI(TAG, "disconnected from the server for some reason");
@@ -545,7 +627,8 @@ soft_reset:
             if ((esp_timer_get_time() - last_ping_time) > 30000000 /* microseconds */) {
                 last_ping_time = esp_timer_get_time();
                 size_t len = sprintf(mqtt_report_buf, "{\"status\":\"online\",\""
-                        "system\":{\"free_heap\":%u}}", esp_get_free_heap_size());
+                        "system\":{\"free_heap\":%u}, \"version\":\"%s\"}",
+                        esp_get_free_heap_size(), running_app_info.version);
                 esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_ping_topic,
                         mqtt_report_buf, len, 0, 0);
             }
@@ -559,6 +642,6 @@ soft_reset_exit:
     ESP_LOGI(TAG, "destroy mqtt client and reconnect");
     esp_mqtt_client_disconnect(m5things_mqtt_client);
     esp_mqtt_client_destroy(m5things_mqtt_client);
-    vTaskDelay(10000);
+    vTaskDelay(15000 / portTICK_PERIOD_MS);
     goto soft_reset;
 }
