@@ -206,6 +206,14 @@ int create_fs_image(const char *path, const uint32_t size,
             continue;
         }
 
+        // Ignore MacOS desktop metadata files
+        if (strstr(&file_path[i][0], ".DS_Store") != NULL) {
+            if (verbose) {
+                printf("[ LFS2 Pack ] Ignore -> %s\r\n", &file_path[i][strlen(path) + 1]);
+            }
+            continue;
+        }
+
         ff = fopen(&file_path[i][0], "r");
         fseek(ff, 0, SEEK_END);
         file_size = ftell(ff);
