@@ -85,13 +85,13 @@ flash: all
 	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 fs: build
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/linux/littlefs2 ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin
 
 nvs:
 	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000 # fixed size
 
 littlefs:
-	cd ./../tools/littlefs && rm ./build -rf && mkdir build && cd build && cmake .. && make -j && cp ./littlefs2 ./../prebuilt/linux
+	cd ./../tools/littlefs && rm -rf ./build && mkdir build && cd build && cmake .. && make -j && cp ./littlefs2 ./../prebuilt/
 
 mpy-cross:
 	make -C ../micropython/mpy-cross
