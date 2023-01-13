@@ -50,7 +50,7 @@ ifdef LVGL
 	LVGL_FLAG = 1
 endif
 
-GIT_VERSION := $(shell git describe --abbrev=7 --dirty --always --tags)
+GIT_VERSION := $(shell git describe --abbrev=7 --always)
 
 all: build fs nvs
 	@$(PYTHON) makeimg.py \
