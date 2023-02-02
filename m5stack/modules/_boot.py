@@ -34,3 +34,15 @@ sys.path.append("/flash/libs")
 sys.path.append("/flash/libs/micropython")
 # change directory to "/flash"
 os.chdir("/flash")
+
+# copy OTA update file to main.py
+# main_ota_temp.py this file name is fixed
+try:
+    s = open("main_ota_temp.py", "rb")
+    f = open("main.py", "wb")
+    f.write(s.read())
+    s.close()
+    f.close()
+    os.remove("main_ota_temp.py")
+except:
+    pass
