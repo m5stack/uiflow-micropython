@@ -34,6 +34,9 @@ namespace m5
     mp_obj_t btn_wasReleased(mp_obj_t self) {
         return mp_obj_new_bool(getBtn(self)->wasReleased());
     }
+    mp_obj_t btn_lastChange(mp_obj_t self) {
+        return mp_obj_new_int(getBtn(self)->lastChange());
+    }
     mp_obj_t btn_wasSingleClicked(mp_obj_t self) {
         return mp_obj_new_bool(getBtn(self)->wasSingleClicked());
     }
@@ -45,9 +48,6 @@ namespace m5
     }
     mp_obj_t btn_getClickCount(mp_obj_t self) {
         return mp_obj_new_int(getBtn(self)->getClickCount());
-    }
-    mp_obj_t btn_lastChange(mp_obj_t self) {
-        return mp_obj_new_int(getBtn(self)->lastChange());
     }
     mp_obj_t btn_pressedFor(mp_obj_t self, mp_obj_t msec) {
         return mp_obj_new_bool(getBtn(self)->pressedFor(mp_obj_get_int(msec)));
