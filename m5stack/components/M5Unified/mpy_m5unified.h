@@ -7,8 +7,9 @@
 #include <py/builtin.h>
 #include "mpy_m5btn.h"
 #include "mpy_m5gfx.h"
-#include "mpy_m5power.h"
+#include "mpy_m5imu.h"
 #include "mpy_m5spk.h"
+#include "mpy_m5power.h"
 #include "mpy_m5widgets.h"
 
 extern mp_obj_t m5_begin(void);
@@ -23,3 +24,4 @@ extern const btn_obj_t m5_btnC;
 extern const btn_obj_t m5_btnPWR;
 extern const btn_obj_t m5_btnEXT;
 extern const pwr_obj_t m5_power;
+extern const pwr_obj_t m5_imu;
