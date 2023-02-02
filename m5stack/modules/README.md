@@ -3,7 +3,6 @@
 ```bash
 ├── README.md          ---->  this file
 ├── _boot.py           ---->  system boot script, user can\'t change this
-├── apa106.py
 ├── flashbdev.py
 ├── inisetup.py
 └── startup            ---->  different board startup scripts
