@@ -10,3 +10,4 @@ pswd2,data,string,
 sntp0,data,string,
 sntp1,data,string,
 sntp2,data,string,
+boot_option,data,u8,1
