@@ -4,6 +4,8 @@
 
 # Select the board to build for, defaulting to GENERIC.
 BOARD ?= M5STACK_8MB
+# Select the board type to pack fs, defaulting None
+BOARD_TYPE ?= None
 
 # esp32c3's bootloader is different with esp32
 ifeq (C3, $(findstring C3,${BOARD}))
@@ -85,7 +87,7 @@ flash: all
 	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 fs: build
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin
 
 nvs:
 	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000 # fixed size
