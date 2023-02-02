@@ -34,9 +34,9 @@ class AtomS3_Startup(Startup):
             self.show_msg(ssid)
 
     def show_mac(self) -> None:
-        mac = binascii.hexlify(machine.unique_id()).decode('utf-8').upper()
+        mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
         M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu9)
-        M5.Lcd.drawCenterString(mac[0:6] + '_' + mac[6:], 65, 85)
+        M5.Lcd.drawCenterString(mac[0:6] + "_" + mac[6:], 65, 85)
 
     def show_error(self, ssid, error) -> None:
         M5.Lcd.clear()
@@ -52,7 +52,7 @@ class AtomS3_Startup(Startup):
         M5.Lcd.drawImage(self.MODE_DEV, 0, 98)
         self.show_mac()
 
-        if (super().connect_network(ssid=ssid, pswd=pswd)):
+        if super().connect_network(ssid=ssid, pswd=pswd):
             self.show_ssid(ssid)
             count = 1
             status = super().connect_status()
@@ -68,7 +68,7 @@ class AtomS3_Startup(Startup):
                     self.show_error(ssid, "HANDSHAKE ERR")
                     break
                 elif status is network.STAT_CONNECTING:
-                    self.show_hits('.' * count)
+                    self.show_hits("." * count)
                     count = count + 1
                     if count > 5:
                         count = 1
@@ -84,6 +84,5 @@ class AtomS3_Startup(Startup):
 
 # AtomS3Lite startup menu
 class AtomS3Lite_Startup(Startup):
-
     def __init__(self):
         super().__init__()
