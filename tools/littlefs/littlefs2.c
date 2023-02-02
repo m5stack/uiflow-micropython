@@ -13,6 +13,17 @@ static lfs2_t lfs2;
 static uint8_t *image;
 static int verbose = 0;
 
+/*****************************************************************************/
+uint8_t is_int_string(char *str) {
+    for (uint16_t i = 0; i < strlen(str); i++)
+    {
+        if (str[i] < '0' || str[i] > '9') {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 /* input hex string, format: 0xAA111 or AA111 or abc11 */
 int ahextoi(char *p) {
     int n = 0;
@@ -46,6 +57,42 @@ int ahextoi(char *p) {
     return n;
 }
 
+char *strlwr(char *s) {
+    char *t = s;
+
+    if (!s) {
+        return 0;
+    }
+
+    int i = 0;
+    while (*t != '\0') {
+        if (*t >= 'A' && *t <= 'Z') {
+            *t = *t + ('a' - 'A');
+        }
+        t++;
+    }
+
+    return s;
+}
+
+char *strupr(char *s) {
+    char *t = s;
+
+    if (!s) {
+        return 0;
+    }
+
+    int i = 0;
+    while (*t != '\0') {
+        if (*t >= 'a' && *t <= 'z') {
+            *t = *t + ('A' - 'a');
+        }
+        t++;
+    }
+
+    return s;
+}
+/*****************************************************************************/
 static int lfs2_read(const struct lfs2_config *c, lfs2_block_t block,
     lfs2_off_t off, void *buffer, lfs2_size_t size) {
     memcpy(buffer, image + (block * c->block_size) + off, size);
@@ -66,27 +113,8 @@ static int lfs2_erase(const struct lfs2_config *c, lfs2_block_t block) {
 static int lfs2_sync(const struct lfs2_config *c) {
     return 0;
 }
-
-static void image_initialize(uint32_t fs_size) {
-    cfg.read = lfs2_read;
-    cfg.prog = lfs2_prog;
-    cfg.erase = lfs2_erase;
-    cfg.sync = lfs2_sync;
-
-    cfg.block_size = 4096U;
-    cfg.read_size = 128U;
-    cfg.prog_size = 128U;
-    cfg.block_count = fs_size / cfg.block_size;
-    cfg.lookahead_size = 256;
-    cfg.cache_size = 4 * 128;
-    cfg.block_cycles = 100;
-
-    image = (uint8_t *)calloc(sizeof(uint8_t), fs_size);
-    memset(image, 0xff, fs_size);
-    lfs2_format(&lfs2, &cfg);
-}
-
-int cpt_scan_files(const char *basePath, char (*file_path)[257],
+/*****************************************************************************/
+int cpt_scan_files(const char *board, const char *basePath, char (*file_path)[257],
     uint16_t *file_count) {
     DIR *dir;
     struct dirent *ptr;
@@ -97,10 +125,11 @@ int cpt_scan_files(const char *basePath, char (*file_path)[257],
     }
 
     while ((ptr = readdir(dir)) != NULL) {
-        if (strcmp(ptr->d_name, ".") == 0 ||
-            strcmp(ptr->d_name, "..") == 0) { /// current dir OR parrent dir
+        if (strcmp(ptr->d_name, ".") == 0 ||  // current dir
+            strcmp(ptr->d_name, "..") == 0 || // parrent dir
+            strcmp(ptr->d_name, ".DS_Store") == 0) { // MacOS desktop metadata files
             continue;
-        } else if (ptr->d_type == 8) { /// file
+        } else if (ptr->d_type == 8) { // file
             sprintf(&file_path[*file_count][0], "%s/%s", basePath, ptr->d_name);
             *file_count += 1;
             if (*file_count == 255) {
@@ -109,9 +138,14 @@ int cpt_scan_files(const char *basePath, char (*file_path)[257],
         } else if (ptr->d_type == 4) {
             char path_new[300] = {0x00};
             sprintf(path_new, "%s/%s", basePath, ptr->d_name);
+            if (strstr(path_new, "sys/") != NULL) {
+                if (strstr(path_new, board) == NULL) {
+                    continue;
+                }
+            }
             sprintf(&file_path[*file_count][0], "%s/.", path_new);
             *file_count += 1;
-            cpt_scan_files(path_new, file_path, file_count);
+            cpt_scan_files(board, path_new, file_path, file_count);
         }
     }
 
@@ -131,7 +165,8 @@ int16_t write_file(lfs2_t *fs, const char *path, const char *data,
     char path_dir[256] = {0x00};
     sprintf(path_dir, "%s", path);
 
-    for (;;) {
+    for (;;)
+    {
         split_ptr = strchr(&path_dir[split_pos + 1], '/');
         if (split_ptr == NULL) {
             break;
@@ -161,6 +196,25 @@ int16_t write_file(lfs2_t *fs, const char *path, const char *data,
     return LFS2_ERR_OK;
 }
 
+static void image_initialize(uint32_t fs_size) {
+    cfg.read = lfs2_read;
+    cfg.prog = lfs2_prog;
+    cfg.erase = lfs2_erase;
+    cfg.sync = lfs2_sync;
+
+    cfg.block_size = 4096U;
+    cfg.read_size = 128U;
+    cfg.prog_size = 128U;
+    cfg.block_count = fs_size / cfg.block_size;
+    cfg.lookahead_size = 256;
+    cfg.cache_size = 4 * 128;
+    cfg.block_cycles = 100;
+
+    image = (uint8_t *)calloc(sizeof(uint8_t), fs_size);
+    memset(image, 0xff, fs_size);
+    lfs2_format(&lfs2, &cfg);
+}
+
 void save_fs_image(const char *path, const uint32_t image_size) {
     FILE *fp = NULL;
     char file_path[200];
@@ -173,11 +227,11 @@ void save_fs_image(const char *path, const uint32_t image_size) {
     fclose(fp);
 }
 
-int create_fs_image(const char *path, const uint32_t size,
+int create_fs_image(const char *board, const char *path, const uint32_t size,
     const char *image_path) {
     int32_t file_size = 0;
     int64_t total_size = 0;
-    uint8_t *read_buff;
+    char *read_buff;
     FILE *ff;
 
     if (size % 4096) {
@@ -193,10 +247,11 @@ int create_fs_image(const char *path, const uint32_t size,
     }
 
     char file_path[255][257];
-    int16_t file_count = 0;
-    cpt_scan_files(path, file_path, &file_count);
+    uint16_t file_count = 0;
+    cpt_scan_files(board, path, file_path, &file_count);
 
-    for (size_t i = 0; i < file_count; i++) {
+    for (size_t i = 0; i < file_count; i++)
+    {
         if (file_path[i][strlen(file_path[i]) - 1] == '.') {
             if (write_file(&lfs2, &file_path[i][strlen(path) + 1], read_buff,
                 file_size) != LFS2_ERR_OK) {
@@ -206,19 +261,11 @@ int create_fs_image(const char *path, const uint32_t size,
             continue;
         }
 
-        // Ignore MacOS desktop metadata files
-        if (strstr(&file_path[i][0], ".DS_Store") != NULL) {
-            if (verbose) {
-                printf("[ LFS2 Pack ] Ignore -> %s\r\n", &file_path[i][strlen(path) + 1]);
-            }
-            continue;
-        }
-
         ff = fopen(&file_path[i][0], "r");
         fseek(ff, 0, SEEK_END);
         file_size = ftell(ff);
         rewind(ff);
-        read_buff = (uint8_t *)calloc(file_size, sizeof(uint8_t));
+        read_buff = (char *)calloc(file_size, sizeof(uint8_t));
         if (fread(read_buff, sizeof(uint8_t), file_size, ff) != file_size) {
             printf("[ LFS2 Pack ] file '%s' read failed\r\n", &file_path[i][0]);
             exit(1);
@@ -237,20 +284,14 @@ int create_fs_image(const char *path, const uint32_t size,
     lfs2_unmount(&lfs2);
     save_fs_image(image_path, size);
 
-    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n");
-    printf("[ LFS2 Pack ] vfs size: 0x%x bytes\r\n", size);
-    printf("[ LFS2 Pack ] vfs used: 0x%06lx bytes  %f%%\r\n", total_size, (double)((double)total_size / (double)size) * 100.0);
-    printf("[ LFS2 Pack ] save path: %s\r\n", image_path);
-    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
-}
+    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n");
+    printf("[ LFS2 Pack ] board type: \e[1;32m%s\e[0m\r\n", board);
+    printf("[ LFS2 Pack ] fs size:    \e[1;32m%0.1fMB\e[0m\r\n", (size / 1024.0f / 1024.0f));
+    printf("[ LFS2 Pack ] fs used:    \e[1;32m%0.1f%%\e[0m\r\n", (float)((float)total_size / (float)size) * 100.0f);
+    printf("[ LFS2 Pack ] save path:  \e[1;32m%s\e[0m\r\n", image_path);
+    printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
 
-uint8_t is_int_string(char *str) {
-    for (uint16_t i = 0; i < strlen(str); i++) {
-        if (str[i] < '0' || str[i] > '9') {
-            return 0;
-        }
-    }
-    return 1;
+    return 0;
 }
 
 int main(int argc, char *argv[]) {
@@ -259,30 +300,33 @@ int main(int argc, char *argv[]) {
         {"create", no_argument, &lopt, 0},
         {"unpack", no_argument, &lopt, 1},
         {"verbose", no_argument, &verbose, 0},
+        {"board", required_argument, NULL, 'b'},
         {"input", required_argument, NULL, 'i'},
         {"size", required_argument, NULL, 's'},
-        {"output", required_argument, NULL, 'o'},
+        {"output", required_argument, NULL, 'o'}
     };
 
     static int opt = 0;
     static uint32_t size = 0;
     static char *input = NULL;
+    static char *board = NULL;
     static char *output = NULL;
 
-    while ((opt = getopt_long(argc, argv, "cuvi:s:o:", param_option, NULL)) !=
+    while ((opt = getopt_long(argc, argv, "cuvb:i:s:o:", param_option, NULL)) !=
            -1) {
-        switch (opt) {
+        switch (opt)
+        {
+            case 'b':
+                board = strlwr(optarg);
+                break;
             case 'i':
                 input = optarg;
-                // printf("input: %s\r\n", input);
                 break;
             case 's':
                 size = ahextoi(optarg);
-                // printf("size: %d\r\n", size);
                 break;
             case 'o':
                 output = optarg;
-                // printf("output: %s\r\n", output);
                 break;
             case 'c':
                 lopt = 0;
@@ -300,12 +344,11 @@ int main(int argc, char *argv[]) {
         assert(size != 0);
         assert(input != NULL);
         assert(output != NULL);
-        create_fs_image(input, size, output);
+        create_fs_image(board, input, size, output);
     } else if (lopt == 1) {
         assert(input != NULL);
         assert(output != NULL);
-        if (input != NULL && output != NULL) {
-        }
+        // unpack not support now :)
     }
 
     return 0;

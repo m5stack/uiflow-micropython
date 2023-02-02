@@ -1,18 +1,27 @@
+## file system directory structure
+
 ```shell
-├── apps
+├── README.md           ----> this file
+├── apps                ----> user app scripts
 │   └── helloworld.py
-├── libs
-│   ├── __init__.py
-│   ├── micropython
-│   │   └── README.md
-│   └── README.md
-│── res
-│   ├── font
-│   │   └── README.md
-│   └── img
-│       ├── README.md
-│       └── uiflow.png
-├── boot.py
-├── main.py
-└── README.md
+├── boot.py             ----> secondary boot file
+├── libs                ----> libraries
+│   ├── README.md
+│   └── __init__.py
+├── main.py             ----> main file
+└── res                 ----> resource files
+    ├── font            ----> font files
+    │   └── README.md
+    ├── img             ----> image files
+    │   ├── README.md
+    │   ├── default.jpg
+    │   ├── default.png
+    │   ├── uiflow.bmp
+    │   ├── uiflow.jpg
+    │   └── uiflow.png
+    └── sys             ----> system resource files
+        ├── README.md
+        ├── atoms3
+        ├── cores3
+        └── ...
 ```

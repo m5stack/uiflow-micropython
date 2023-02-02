@@ -15,9 +15,10 @@ def load_partition_table(filename):
 
 # Extract command-line arguments.
 arg_littlefs2_exec = sys.argv[1]
-arg_filesystem_in = sys.argv[2]
-arg_filesystem_out = sys.argv[3]
-arg_partitions_bin = sys.argv[4]
+arg_board_type_in = sys.argv[2]
+arg_filesystem_in = sys.argv[3]
+arg_filesystem_out = sys.argv[4]
+arg_partitions_bin = sys.argv[5]
 
 # Load the partition table.
 partition_table = load_partition_table(arg_partitions_bin)
@@ -29,8 +30,12 @@ for part in partition_table:
 
 # print("fs partition size: 0x%x bytes" % max_size_filesystem)
 
-cmd_line = "{} -c -i {} -o {} -s {}".format(
-    arg_littlefs2_exec, arg_filesystem_in, arg_filesystem_out, hex(max_size_filesystem)
+cmd_line = "{} -c -b {} -i {} -o {} -s {}".format(
+    arg_littlefs2_exec,
+    arg_board_type_in,
+    arg_filesystem_in,
+    arg_filesystem_out,
+    hex(max_size_filesystem),
 )
 
 os.system(cmd_line)
