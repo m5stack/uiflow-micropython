@@ -11,7 +11,6 @@ BOOT_OPT_NETWORK = 2
 
 
 class Startup:
-
     def __init__(self) -> None:
         self.wlan = network.WLAN(network.STA_IF)
         self.wlan.active(False)
@@ -30,6 +29,7 @@ class Startup:
     def local_ip(self) -> str:
         return self.wlan.ifconfig()[0]
 
+
 def startup(boot_opt):
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
@@ -43,6 +43,7 @@ def startup(boot_opt):
     elif boot_opt is BOOT_OPT_MENU_NET:
         if M5.BOARD.M5AtomS3 == M5.getBoard():
             from .atoms3 import AtomS3_Startup
+
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd)
         if M5.BOARD.unknown == M5.getBoard():

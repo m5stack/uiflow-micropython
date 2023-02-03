@@ -21,9 +21,10 @@ extern const mp_obj_type_t mp_fonts_type;
 extern const mp_obj_type_t mp_color_type;
 
 extern const mp_obj_type_t mp_btn_type;
+extern const mp_obj_type_t mp_imu_type;
+extern const mp_obj_type_t mp_spk_type;
+extern const mp_obj_type_t mp_power_type;
 extern const mp_obj_type_t mp_gfxcanvas_type;
 extern const mp_obj_type_t mp_user_panel_type;
 extern const mp_obj_type_t mp_gfxdevice_type;
-extern const mp_obj_type_t mp_power_type;
-extern const mp_obj_type_t mp_spk_type;
 extern const mp_obj_module_t mp_module_widgets;

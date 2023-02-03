@@ -18,6 +18,7 @@ const btn_obj_t m5_btnEXT  = { {&mp_btn_type},       &(M5.BtnEXT)  };
 const spk_obj_t m5_speaker = { {&mp_spk_type},       &(M5.Speaker) };
 const gfx_obj_t m5_display = { {&mp_gfxdevice_type}, &(M5.Display) };
 const pwr_obj_t m5_power   = { {&mp_power_type},     &(M5.Power)   };
+const pwr_obj_t m5_imu     = { {&mp_imu_type},     &(M5.Imu)     };
 /* *FORMAT-ON* */
 
 mp_obj_t m5_begin(void) {

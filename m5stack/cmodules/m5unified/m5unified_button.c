@@ -10,14 +10,14 @@ MAKE_METHOD_0(btn, wasHold);
 MAKE_METHOD_0(btn, wasPressed);
 MAKE_METHOD_0(btn, wasReleased);
 MAKE_METHOD_0(btn, lastChange);
+MAKE_METHOD_0(btn, wasSingleClicked);
+MAKE_METHOD_0(btn, wasDoubleClicked);
+MAKE_METHOD_0(btn, wasDeciedClickCount);
+MAKE_METHOD_0(btn, getClickCount);
 MAKE_METHOD_1(btn, pressedFor);
 MAKE_METHOD_1(btn, releasedFor);
 MAKE_METHOD_1(btn, setDebounceThresh);
 MAKE_METHOD_1(btn, setHoldThresh);
-MAKE_METHOD_1(btn, wasSingleClicked);
-MAKE_METHOD_1(btn, wasDoubleClicked);
-MAKE_METHOD_1(btn, wasDeciedClickCount);
-MAKE_METHOD_1(btn, getClickCount);
 
 STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, isHolding),
