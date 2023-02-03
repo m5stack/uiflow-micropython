@@ -69,12 +69,22 @@ class NeoPixel:
 
     def set_color(self, i, c):
         offset = i * self.bpp
+        v = None
         if self.bpp == 3:
             v = self.color_to_rgb(c)
         elif self.bpp == 4:
             v = self.color_to_wrgb(c)
         for i in range(self.bpp):
             self.buf[offset + self.ORDER[i]] = v[i]
+        self.write()
+
+    def fill_color(self, c):
+        v = None
+        if self.bpp == 3:
+            v = self.color_to_rgb(c)
+        elif self.bpp == 4:
+            v = self.color_to_wrgb(c)
+        self.fill(v)
         self.write()
 
     def set_brightness(self, br):
