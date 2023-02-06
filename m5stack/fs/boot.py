@@ -9,4 +9,7 @@ if __name__ == "__main__":
     from startup import startup
 
     nvs = esp32.NVS("uiflow")
-    startup(nvs.get_u8("boot_option"))
+    try:
+        startup(nvs.get_u8("boot_option"))
+    except OSError:
+        startup(1)

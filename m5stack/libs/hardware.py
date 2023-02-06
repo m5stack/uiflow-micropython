@@ -11,9 +11,11 @@ class RGB:
         if cls._instance == None:
             if M5.BOARD.M5AtomS3 == M5.getBoard():
                 cls._instance = None
-            elif M5.BOARD.unknown == M5.getBoard():  # temporary for AtomS3-Lite
-                cls._instance = WS2812(35, 1)
+            elif M5.BOARD.M5AtomS3Lite == M5.getBoard():
+                cls._instance = WS2812(pin=35, n=1)
                 return cls._instance
+            else:
+                pass
         else:
             return cls._instance
 

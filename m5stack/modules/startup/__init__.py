@@ -46,11 +46,13 @@ def startup(boot_opt):
 
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd)
-        if M5.BOARD.unknown == M5.getBoard():  # temporary for AtomS3-Lite
+        elif M5.BOARD.M5AtomS3Lite == M5.getBoard():
             from .atoms3 import AtomS3Lite_Startup
 
             atoms3 = AtomS3Lite_Startup()
             atoms3.startup(ssid, pswd)
+        else:
+            pass
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()
