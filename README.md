@@ -18,8 +18,7 @@ cd uiflow_micropython/m5stack
 make submodules
 make littlefs
 make mpy-cross
-make -j
-# make BAORD_TYPE=AtomS3 -j # Build for AtomS3 baord
-# make -j LVGL=1 # Build with LVGL enable
+make BAORD_TYPE=atoms3 -j # Build for atoms3 baord
+# make BAORD_TYPE=atoms3 LVGL=1 -j
 make deploy PORT=/dev/ttyUSBx BAUD=1500000
 ```

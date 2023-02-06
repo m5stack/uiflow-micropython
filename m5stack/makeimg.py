@@ -67,9 +67,10 @@ arg_partitions_bin = sys.argv[3]
 arg_nvs_bin = sys.argv[4]
 arg_application_bin = sys.argv[5]
 arg_filesystem_bin = sys.argv[6]
-arg_lvgl_flag = sys.argv[7]
-arg_output_bin = sys.argv[8]
-arg_output_uf2 = sys.argv[9]
+arg_board_type_flag = sys.argv[7]
+arg_lvgl_flag = sys.argv[8]
+arg_output_bin = sys.argv[9]
+arg_output_uf2 = sys.argv[10]
 
 # Load required sdkconfig values.
 idf_target = load_sdkconfig_str_value(arg_sdkconfig, "IDF_TARGET", "").upper()
@@ -158,7 +159,7 @@ if idf_target in ("ESP32S2", "ESP32S3"):
     with open(arg_application_bin, "rb") as fin, open(arg_output_uf2, "wb") as fout:
         fout.write(uf2conv.convert_to_uf2(fin.read()))
 
-# uiflow-[git describe]-[target]-<feature_str->[flash size]-[date]
+# uiflow-0973efa-esp32s3-8mb-atoms3-v2.0.0-alpha-2-20230206.bin
 today = date.today()
 feature_str = ""
 if idf_target == "ESP32C3":
@@ -166,6 +167,8 @@ if idf_target == "ESP32C3":
         feature_str = "usb-"
 else:
     feature_str = load_sdkconfig_spiram_value(arg_sdkconfig).lower()
+
+arg_board_type_flag = arg_board_type_flag + "-"
 
 if arg_lvgl_flag == "1":
     arg_lvgl_flag = "lvgl-"
@@ -176,11 +179,12 @@ uiflow_version = ""
 with open("./version.txt", "r") as f:
     uiflow_version = f.readline() + "-"
 
-release_file_out = "{}-{}-{}{}-{}{}{}.bin".format(
+release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
     file_out.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
+    arg_board_type_flag.lower(),
     arg_lvgl_flag,
     uiflow_version.lower(),
     today.strftime("%Y%m%d"),
