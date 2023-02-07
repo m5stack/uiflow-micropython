@@ -10,11 +10,14 @@
 BOARD ?= M5STACK_8MB
 
 
-# Select the board type to build, default is None
-BOARD_TYPE ?= None
-
 # Board type list
-BOARD_TYPE_DEF := atoms3 stamps3 cores3
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3
+
+# Select the board type to build, default is None
+# This value affects which folder in the "./fs/res/sys/" directory is pack into "fs.bin"
+# If use default value, it means no directory will pack into "fs.bin"
+BOARD_TYPE ?= none
+
 ifneq ($(filter $(BOARD_TYPE),$(BOARD_TYPE_DEF)),)
 else
     $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
