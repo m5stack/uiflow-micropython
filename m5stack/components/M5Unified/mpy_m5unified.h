@@ -16,7 +16,7 @@ extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);
 extern mp_obj_t m5_getBoard(void);
 
-extern const gfx_obj_t m5_display;
+extern gfx_obj_t m5_display;
 extern const spk_obj_t m5_speaker;
 extern const btn_obj_t m5_btnA;
 extern const btn_obj_t m5_btnB;
