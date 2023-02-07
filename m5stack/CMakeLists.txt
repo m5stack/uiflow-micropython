@@ -2,6 +2,9 @@
 
 cmake_minimum_required(VERSION 3.12)
 
+set(CMAKE_C_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable")
+set(CMAKE_CXX_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-pmf-conversions")
+
 # Set the location of this port's directory.
 set(MICROPY_PORT_DIR ${CMAKE_SOURCE_DIR}/../micropython/ports/esp32)
 

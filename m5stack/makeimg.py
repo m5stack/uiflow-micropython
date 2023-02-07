@@ -142,10 +142,10 @@ with open(file_out, "wb") as fout:
     print("%-23s% 8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
         "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n"
-        "Example command:\r\n"
-        "    1. make flash\r\n"
-        "    2. esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
-        % (cur_offset, file_out, offset_bootloader, idf_target, offset_bootloader, file_out)
+        "\033[1;32mExample command:\033[0m\r\n"
+        "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
+        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
+        % (cur_offset, file_out, offset_bootloader, file_out[6:].split('/')[0], arg_board_type_flag.lower(), idf_target.lower(), offset_bootloader, file_out)
     )
 
 # Generate .uf2 file if the SoC has native USB.
@@ -189,4 +189,5 @@ release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
     uiflow_version.lower(),
     today.strftime("%Y%m%d"),
 )
+print("\033[1;32mRelease Firmware:\033[0m\r\n    \033[1;33m" + arg_board_type_flag[:-1].upper() + ":\033[0m " + release_file_out)
 os.system("cp {} {}".format(file_out, release_file_out))
