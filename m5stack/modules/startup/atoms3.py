@@ -13,9 +13,9 @@ from hardware import RGB
 
 class AtomS3_Startup(Startup):
 
-    WIFI_OK = "res/sys/atoms3/wifi_ok.png"
-    WIFI_ERR = "res/sys/atoms3/wifi_err.png"
-    MODE_DEV = "res/sys/atoms3/mode_dev.png"
+    WIFI_OK = "/flash/res/sys/atoms3/wifi_ok.png"
+    WIFI_ERR = "/flash/res/sys/atoms3/wifi_err.png"
+    MODE_DEV = "/flash/res/sys/atoms3/mode_dev.png"
 
     def __init__(self):
         super().__init__()
@@ -50,7 +50,7 @@ class AtomS3_Startup(Startup):
         self.show_mac()
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid, pswd) -> None:
+    def startup(self, ssid, pswd, timeout=60) -> None:
         M5.Lcd.drawImage(self.WIFI_OK, 0, 0)
         M5.Lcd.drawImage(self.MODE_DEV, 0, 98)
         self.show_mac()
@@ -59,6 +59,7 @@ class AtomS3_Startup(Startup):
             self.show_ssid(ssid)
             count = 1
             status = super().connect_status()
+            start = time.time()
             while status is not network.STAT_GOT_IP:
                 time.sleep_ms(300)
                 if status is network.STAT_NO_AP_FOUND:
@@ -76,6 +77,10 @@ class AtomS3_Startup(Startup):
                     if count > 5:
                         count = 1
                 status = super().connect_status()
+                # connect to network timeout
+                if (time.time() - start) > timeout:
+                    self.show_error(ssid, "TIMEOUT")
+                    break
 
             if status is network.STAT_GOT_IP:
                 self.show_hits(super().local_ip())
@@ -114,13 +119,14 @@ class AtomS3Lite_Startup(Startup):
     def show_error(self, ssid, error) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid, pswd) -> None:
+    def startup(self, ssid, pswd, timeout=60) -> None:
         self.show_mac()
 
         if super().connect_network(ssid=ssid, pswd=pswd):
             print("Connecting to " + ssid + " ", end="")
             status = super().connect_status()
             self.rgb.set_brightness(60)
+            start = time.time()
             while status is not network.STAT_GOT_IP:
                 time.sleep_ms(300)
                 if status is network.STAT_NO_AP_FOUND:
@@ -135,6 +141,10 @@ class AtomS3Lite_Startup(Startup):
                 elif status is network.STAT_CONNECTING:
                     print(".", end="")
                 status = super().connect_status()
+                # connect to network timeout
+                if (time.time() - start) > timeout:
+                    self.show_error(ssid, "TIMEOUT")
+                    break
 
             print(" ")
             if status is network.STAT_GOT_IP:
