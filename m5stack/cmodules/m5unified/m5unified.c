@@ -25,12 +25,13 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5StampPico),     MP_ROM_INT(17) },
     { MP_ROM_QSTR(MP_QSTR_M5StampC3),       MP_ROM_INT(18) },
     { MP_ROM_QSTR(MP_QSTR_M5StampC3U),      MP_ROM_INT(19) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomS3Lite),    MP_ROM_INT(20) },
     // external displays
-    { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(20) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(21) },
-    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(22) },
-    { MP_ROM_QSTR(MP_QSTR_M5ModuleDisplay), MP_ROM_INT(23) },
-    { MP_ROM_QSTR(MP_QSTR_M5RCAModule),     MP_ROM_INT(24) },
+    { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(21) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(22) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(23) },
+    { MP_ROM_QSTR(MP_QSTR_M5ModuleDisplay), MP_ROM_INT(24) },
+    { MP_ROM_QSTR(MP_QSTR_M5RCAModule),     MP_ROM_INT(25) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(m5_board_member, m5_board_member_table);

@@ -67,9 +67,10 @@ arg_partitions_bin = sys.argv[3]
 arg_nvs_bin = sys.argv[4]
 arg_application_bin = sys.argv[5]
 arg_filesystem_bin = sys.argv[6]
-arg_lvgl_flag = sys.argv[7]
-arg_output_bin = sys.argv[8]
-arg_output_uf2 = sys.argv[9]
+arg_board_type_flag = sys.argv[7]
+arg_lvgl_flag = sys.argv[8]
+arg_output_bin = sys.argv[9]
+arg_output_uf2 = sys.argv[10]
 
 # Load required sdkconfig values.
 idf_target = load_sdkconfig_str_value(arg_sdkconfig, "IDF_TARGET", "").upper()
@@ -141,10 +142,10 @@ with open(file_out, "wb") as fout:
     print("%-23s% 8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
         "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n"
-        "Example command:\r\n"
-        "    1. make flash\r\n"
-        "    2. esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
-        % (cur_offset, file_out, offset_bootloader, idf_target, offset_bootloader, file_out)
+        "\033[1;32mExample command:\033[0m\r\n"
+        "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
+        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
+        % (cur_offset, file_out, offset_bootloader, file_out[6:].split('/')[0], arg_board_type_flag.lower(), idf_target.lower(), offset_bootloader, file_out)
     )
 
 # Generate .uf2 file if the SoC has native USB.
@@ -158,7 +159,7 @@ if idf_target in ("ESP32S2", "ESP32S3"):
     with open(arg_application_bin, "rb") as fin, open(arg_output_uf2, "wb") as fout:
         fout.write(uf2conv.convert_to_uf2(fin.read()))
 
-# uiflow-[git describe]-[target]-<feature_str->[flash size]-[date]
+# uiflow-0973efa-esp32s3-8mb-atoms3-v2.0.0-alpha-2-20230206.bin
 today = date.today()
 feature_str = ""
 if idf_target == "ESP32C3":
@@ -166,6 +167,8 @@ if idf_target == "ESP32C3":
         feature_str = "usb-"
 else:
     feature_str = load_sdkconfig_spiram_value(arg_sdkconfig).lower()
+
+arg_board_type_flag = arg_board_type_flag + "-"
 
 if arg_lvgl_flag == "1":
     arg_lvgl_flag = "lvgl-"
@@ -176,13 +179,15 @@ uiflow_version = ""
 with open("./version.txt", "r") as f:
     uiflow_version = f.readline() + "-"
 
-release_file_out = "{}-{}-{}{}-{}{}{}.bin".format(
+release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
     file_out.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
+    arg_board_type_flag.lower(),
     arg_lvgl_flag,
     uiflow_version.lower(),
     today.strftime("%Y%m%d"),
 )
+print("\033[1;32mRelease Firmware:\033[0m\r\n    \033[1;33m" + arg_board_type_flag[:-1].upper() + ":\033[0m " + release_file_out)
 os.system("cp {} {}".format(file_out, release_file_out))

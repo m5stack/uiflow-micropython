@@ -2,10 +2,26 @@
 #
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
 
-# Select the board to build for, defaulting to GENERIC.
+# Select the mcu type to build, default is M5STACK_8MB
+# M5STACK_xxx    -> ESP32
+# M5STACK_C3_xxx -> ESP32 C3
+# M5STACK_S3_xxx -> ESP32 S3
+
 BOARD ?= M5STACK_8MB
-# Select the board type to pack fs, defaulting None
-BOARD_TYPE ?= None
+
+
+# Board type list
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3
+
+# Select the board type to build, default is None
+# This value affects which folder in the "./fs/res/sys/" directory is pack into "fs.bin"
+# If use default value, it means no directory will pack into "fs.bin"
+BOARD_TYPE ?= none
+
+ifneq ($(filter $(BOARD_TYPE),$(BOARD_TYPE_DEF)),)
+else
+    $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
+endif
 
 # esp32c3's bootloader is different with esp32
 ifeq (C3, $(findstring C3,${BOARD}))
@@ -42,7 +58,7 @@ ifdef USER_C_MODULES
 	CMAKE_ARGS += -DUSER_C_MODULES=${USER_C_MODULES}
 endif
 
-IDFPY_FLAGS += -D MICROPY_BOARD=$(BOARD) -D BUILD_WITH_LVGL=$(LVGL) -B $(BUILD) $(CMAKE_ARGS)
+IDFPY_FLAGS += -DMICROPY_BOARD=$(BOARD) -DBUILD_WITH_LVGL=$(LVGL) -B$(BUILD) $(CMAKE_ARGS)
 ifdef FROZEN_MANIFEST
        IDFPY_FLAGS += -D MICROPY_FROZEN_MANIFEST=$(FROZEN_MANIFEST)
 endif
@@ -62,6 +78,7 @@ all: build fs nvs
 		$(BUILD)/nvs.bin \
 		$(BUILD)/micropython.bin \
 		$(BUILD)/fs.bin \
+		$(BOARD_TYPE) \
 		$(LVGL_FLAG) \
 		$(BUILD)/uiflow-$(GIT_VERSION).bin \
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2

@@ -1,4 +1,5 @@
 #include <M5GFX.h>
+#include <M5Unified.h>
 
 #include <ffi.h>
 typedef union {
@@ -24,8 +25,8 @@ extern "C"
 
 #include "mpy_m5lfs2.txt"
 
-static inline LGFX_Device *getGfx(const mp_obj_t *args) {
-    return (LGFX_Device *)(((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx);
+static inline M5GFX *getGfx(const mp_obj_t *args) {
+    return (M5GFX *)((((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx));
 }
 
 // -------- GFX common wrapper

@@ -10,19 +10,22 @@ extern "C"
 #include "mpy_m5unified.h"
 
 /* *FORMAT-OFF* */
-const btn_obj_t m5_btnA    = { {&mp_btn_type},       &(M5.BtnA)    };
-const btn_obj_t m5_btnB    = { {&mp_btn_type},       &(M5.BtnB)    };
-const btn_obj_t m5_btnC    = { {&mp_btn_type},       &(M5.BtnC)    };
-const btn_obj_t m5_btnPWR  = { {&mp_btn_type},       &(M5.BtnPWR)  };
-const btn_obj_t m5_btnEXT  = { {&mp_btn_type},       &(M5.BtnEXT)  };
-const spk_obj_t m5_speaker = { {&mp_spk_type},       &(M5.Speaker) };
-const gfx_obj_t m5_display = { {&mp_gfxdevice_type}, &(M5.Display) };
-const pwr_obj_t m5_power   = { {&mp_power_type},     &(M5.Power)   };
-const pwr_obj_t m5_imu     = { {&mp_imu_type},     &(M5.Imu)     };
+const btn_obj_t m5_btnA    = { {&mp_btn_type},       &(M5.BtnA)          };
+const btn_obj_t m5_btnB    = { {&mp_btn_type},       &(M5.BtnB)          };
+const btn_obj_t m5_btnC    = { {&mp_btn_type},       &(M5.BtnC)          };
+const btn_obj_t m5_btnPWR  = { {&mp_btn_type},       &(M5.BtnPWR)        };
+const btn_obj_t m5_btnEXT  = { {&mp_btn_type},       &(M5.BtnEXT)        };
+const spk_obj_t m5_speaker = { {&mp_spk_type},       &(M5.Speaker)       };
+const pwr_obj_t m5_power   = { {&mp_power_type},     &(M5.Power)         };
+const pwr_obj_t m5_imu     = { {&mp_imu_type},       &(M5.Imu)           };
+      gfx_obj_t m5_display = { {&mp_gfxdevice_type}, NULL                };
 /* *FORMAT-ON* */
 
 mp_obj_t m5_begin(void) {
-    M5.begin();
+    auto cfg = M5.config();
+    cfg.clear_display = true;
+    M5.begin(cfg);
+    m5_display.gfx = (void*)(&(M5.Display));
     // Set default font to DejaVu9, keep same style with UIFlow website UI design.
     M5.Display.setTextFont(&fonts::DejaVu9);
     return mp_const_none;
