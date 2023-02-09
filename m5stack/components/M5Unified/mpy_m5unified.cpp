@@ -1,9 +1,14 @@
 #define M5ATOMDISPLAY_LOGICAL_WIDTH 640
 #define M5ATOMDISPLAY_LOGICAL_HEIGHT 360
-#include <M5Unified.h>
+#include <esp_log.h>
+#include <sdkconfig.h>
 #include <M5AtomDisplay.h>
+#include <M5ModuleDisplay.h>
+#include <M5ModuleRCA.h>
 #include <M5UnitOLED.h>
 #include <M5UnitLCD.h>
+#include <M5UnitRCA.h>
+#include <M5Unified.h>
 
 extern "C"
 {
@@ -21,7 +26,9 @@ const pwr_obj_t m5_imu     = { {&mp_imu_type},       &(M5.Imu)           };
       gfx_obj_t m5_display = { {&mp_gfxdevice_type}, NULL                };
 /* *FORMAT-ON* */
 
+// TODO: pass configuration parameters
 mp_obj_t m5_begin(void) {
+    // config
     auto cfg = M5.config();
     cfg.clear_display = true;
     M5.begin(cfg);
@@ -38,6 +45,31 @@ mp_obj_t m5_update(void) {
 
 mp_obj_t m5_getBoard(void) {
     return mp_obj_new_int(M5.getBoard());
+}
+
+/********************************Multi Display*********************************/
+mp_obj_t m5_getDisplayCount(void) {
+    return mp_obj_new_int(M5.getDisplayCount());
+}
+
+mp_obj_t m5_Displays(mp_obj_t index) {
+    m5_display.gfx = (void *)&(M5.Displays(mp_obj_get_int(index)));
+    return MP_OBJ_FROM_PTR(&m5_display);
+}
+
+mp_obj_t m5_getDisplay(mp_obj_t index) {
+    m5_display.gfx = (void *)&(M5.getDisplay(mp_obj_get_int(index)));
+    return MP_OBJ_FROM_PTR(&m5_display);
+}
+
+mp_obj_t m5_getDisplayIndex(mp_obj_t board) {
+    return mp_obj_new_int(M5.getDisplayIndex((lgfx::boards::board_t)mp_obj_get_int(board)));
+}
+
+mp_obj_t m5_setPrimaryDisplay(mp_obj_t index) {
+    M5.setPrimaryDisplay(mp_obj_get_int(index));
+    m5_display.gfx = (void *)(&(M5.Display));
+    return mp_const_none;
 }
 
 #include "mpy_user_lcd.txt"
