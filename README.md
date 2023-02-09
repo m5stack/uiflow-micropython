@@ -15,8 +15,8 @@ git -C esp-idf submodule update --init --recursive
 ```shell
 git clone https://github.com/m5stack/uiflow_micropython
 cd uiflow_micropython/m5stack
-make submodules
+make submodules # Only need once
 make littlefs
 make mpy-cross
-make BOARD=M5STACK_S3_8MB BOARD_TYPE=atoms3 BAORD_TYPE=atoms3 flash # Build and flash to atoms3 baord
+make BOARD=M5STACK_S3_8MB BOARD_TYPE=atoms3 flash # Build and flash to atoms3 baord
 ```

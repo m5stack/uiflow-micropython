@@ -10,7 +10,6 @@ class RGB:
     n = 0
 
     def __new__(cls, **kwargs):
-
         if len(kwargs) > 0:
             try:
                 cls.pin = kwargs["pin"]

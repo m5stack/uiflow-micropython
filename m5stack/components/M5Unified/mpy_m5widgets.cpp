@@ -52,7 +52,7 @@ mp_obj_t m5widgets_fillScreen(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
 
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        auto gfx = (LGFX_Device*)&(M5.Display);
+        auto gfx = (LGFX_Device *)&(M5.Display);
         gfx->fillScreen((uint32_t)args[ARG_color].u_int);
     } else {
         // Canvas, UserDisplay
@@ -63,13 +63,13 @@ mp_obj_t m5widgets_fillScreen(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
 }
 
 mp_obj_t m5widgets_setRotation(mp_obj_t rotation) {
-    auto gfx = (LGFX_Device*)&(M5.Display);
+    auto gfx = (LGFX_Device *)&(M5.Display);
     gfx->setRotation((uint8_t)mp_obj_get_int(rotation));
     return mp_const_none;
 }
 
 mp_obj_t m5widgets_setBrightness(mp_obj_t brightness) {
-    auto gfx = (LGFX_Device*)&(M5.Display);
+    auto gfx = (LGFX_Device *)&(M5.Display);
     gfx->setBrightness((uint8_t)mp_obj_get_int(brightness));
     return mp_const_none;
 }
@@ -107,7 +107,7 @@ mp_obj_t m5widgets_label_setText(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
 
     const char *new_text = mp_obj_str_get_str(args[ARG_text].u_obj);
     if (strcmp(self->text, new_text) == 0) {
@@ -132,7 +132,7 @@ mp_obj_t m5widgets_label_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_label_erase_helper(self);
     self->color.fg_color = args[ARG_text_c].u_int;
@@ -153,7 +153,7 @@ mp_obj_t m5widgets_label_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
 
     if ((self->text_pos.x0 == args[ARG_x].u_int) && (self->text_pos.y0 == args[ARG_y].u_int)) {
         return mp_const_none;
@@ -177,7 +177,7 @@ mp_obj_t m5widgets_label_setSize(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_label_erase_helper(self);
     self->size.text_size = mp_obj_get_float(args[ARG_text_sz].u_obj);
@@ -196,7 +196,7 @@ mp_obj_t m5widgets_label_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_label_erase_helper(self);
     self->font = (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font;
@@ -215,7 +215,7 @@ mp_obj_t m5widgets_label_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_label_obj_t *self = (widgets_label_obj_t*)pos_args[0];
+    widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     if (args[ARG_visible].u_bool) {
         m5widgets_label_draw_helper(self);
@@ -247,7 +247,7 @@ mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size
 
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -312,7 +312,7 @@ mp_obj_t m5widgets_title_setText(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_title_obj_t *self = (widgets_title_obj_t*)pos_args[0];
+    widgets_title_obj_t *self = (widgets_title_obj_t *)pos_args[0];
 
     const char *new_text = mp_obj_str_get_str(args[ARG_text].u_obj);
     if (strcmp(self->text, new_text) == 0) {
@@ -337,7 +337,7 @@ mp_obj_t m5widgets_title_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_title_obj_t *self = (widgets_title_obj_t*)pos_args[0];
+    widgets_title_obj_t *self = (widgets_title_obj_t *)pos_args[0];
 
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_erase_helper(self);
@@ -358,7 +358,7 @@ mp_obj_t m5widgets_title_setSize(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_title_obj_t *self = (widgets_title_obj_t*)pos_args[0];
+    widgets_title_obj_t *self = (widgets_title_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_erase_helper(self);
     self->size.h = args[ARG_h].u_int;
@@ -381,7 +381,7 @@ mp_obj_t m5widgets_title_setTextCursor(size_t n_args, const mp_obj_t *pos_args, 
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_title_obj_t *self = (widgets_title_obj_t*)pos_args[0];
+    widgets_title_obj_t *self = (widgets_title_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_erase_helper(self);
     self->text_pos.x0 = args[ARG_text_x].u_int;
@@ -400,7 +400,7 @@ mp_obj_t m5widgets_title_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_title_obj_t *self = (widgets_title_obj_t*)pos_args[0];
+    widgets_title_obj_t *self = (widgets_title_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     if (args[ARG_visible].u_bool) {
         m5widgets_title_draw_helper(self);
@@ -429,7 +429,7 @@ mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size
     _widgets_title_obj_t *self = mp_obj_malloc(_widgets_title_obj_t, &mp_widgets_title_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -475,14 +475,15 @@ static void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
     self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h);
 }
 
-static bool m5widgets_image_bmp_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
     if (!file->open(self->img, LFS2_O_RDONLY)) {
         return false;
     }
 
     uint8_t buf[2] = {0};
-    for (size_t i = 0; i < 2; i++)
+    for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read8();
+    }
     if (buf[0] != 'B' && buf[1] != 'M') {
         return false;
     }
@@ -495,13 +496,13 @@ static bool m5widgets_image_bmp_helper(LFS2Wrapper* file, widgets_image_obj_t *s
     return true;
 }
 
-static bool m5widgets_image_jpg_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
     if (!file->open(self->img, LFS2_O_RDONLY)) {
         return false;
     }
     m5widgets_image_erase_helper(self);
 
-	uint8_t idx, result = 0;
+    uint8_t idx, result = 0;
     uint16_t value;
     while (!result) {
         if (!file->read(&idx, 1) || idx != 0xff || !file->read(&idx, 1)) {
@@ -511,12 +512,12 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper* file, widgets_image_obj_t *s
 
         if (idx >= 0xE0 && idx <= 0xEF) {
             value = file->read16swap();
-			file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
+            file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
             continue;
         }
 
         switch (idx)
-		{
+        {
             case 0xD8:
                 break;
             case 0xFE:
@@ -544,31 +545,34 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper* file, widgets_image_obj_t *s
                     result = 3;
                 }
                 break;
-		}
+        }
     }
     file->close();
     // printf("%s W:%d H:%d result:%d\r\n", self->img, self->size.w, self->size.h, result);
     return result == 1? true: false;
 }
 
-static bool m5widgets_image_png_helper(LFS2Wrapper* file, widgets_image_obj_t *self) {
+static bool m5widgets_image_png_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
     if (!file->open(self->img, LFS2_O_RDONLY)) {
         return false;
     }
 
     uint16_t buf[2] = {0};
-    for (size_t i = 0; i < 2; i++)
+    for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read16swap();
+    }
     if ((buf[0] << 16 | buf[1]) != 0x89504E47) {
         return false;
     }
     m5widgets_image_erase_helper(self);
     file->seek(16);
-    for (size_t i = 0; i < 2; i++)
+    for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read16swap();
+    }
     self->size.w = buf[0] << 16 | buf[1];
-    for (size_t i = 0; i < 2; i++)
+    for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read16swap();
+    }
     self->size.h = buf[0] << 16 | buf[1];
     file->close();
     // printf("%s W:%d H:%d\r\n", self->img, self->size.w, self->size.h);
@@ -614,7 +618,7 @@ mp_obj_t m5widgets_image_setImage(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_image_obj_t *self = (widgets_image_obj_t*)pos_args[0];
+    widgets_image_obj_t *self = (widgets_image_obj_t *)pos_args[0];
     if (args[ARG_img].u_obj == mp_const_none) {
         return mp_const_none;
     } else {
@@ -636,7 +640,7 @@ mp_obj_t m5widgets_image_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_image_obj_t *self = (widgets_image_obj_t*)pos_args[0];
+    widgets_image_obj_t *self = (widgets_image_obj_t *)pos_args[0];
     m5widgets_image_erase_helper(self);
 
     self->pos.x0 = args[ARG_x].u_int;
@@ -655,7 +659,7 @@ mp_obj_t m5widgets_image_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_image_obj_t *self = (widgets_image_obj_t*)pos_args[0];
+    widgets_image_obj_t *self = (widgets_image_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_image_draw_helper(self);
     } else {
@@ -680,7 +684,7 @@ mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size
     widgets_image_obj_t *self = mp_obj_malloc(widgets_image_obj_t, &mp_widgets_image_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -730,7 +734,7 @@ mp_obj_t m5widgets_line_setColor(size_t n_args, const mp_obj_t *pos_args, mp_map
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_line_obj_t *self = (widgets_line_obj_t*)pos_args[0];
+    widgets_line_obj_t *self = (widgets_line_obj_t *)pos_args[0];
 
     self->color.fg_color = args[ARG_color].u_int;
     m5widgets_line_draw_helper(self);
@@ -750,7 +754,7 @@ mp_obj_t m5widgets_line_setPoints(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_line_obj_t *self = (widgets_line_obj_t*)pos_args[0];
+    widgets_line_obj_t *self = (widgets_line_obj_t *)pos_args[0];
     m5widgets_line_erase_helper(self);
 
     self->pos.x0 = args[ARG_x0].u_int;
@@ -771,7 +775,7 @@ mp_obj_t m5widgets_line_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_line_obj_t *self = (widgets_line_obj_t*)pos_args[0];
+    widgets_line_obj_t *self = (widgets_line_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_line_draw_helper(self);
     } else {
@@ -798,7 +802,7 @@ mp_obj_t m5widgets_line_make_new(const mp_obj_type_t *type, size_t n_args, size_
     widgets_line_obj_t *self = mp_obj_malloc(widgets_line_obj_t, &mp_widgets_line_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -844,7 +848,7 @@ mp_obj_t m5widgets_circle_setRadius(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_circle_obj_t *self = (widgets_circle_obj_t*)pos_args[0];
+    widgets_circle_obj_t *self = (widgets_circle_obj_t *)pos_args[0];
     m5widgets_circle_erase_helper(self);
 
     self->size.r0 = args[ARG_r].u_int;
@@ -863,7 +867,7 @@ mp_obj_t m5widgets_circle_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_circle_obj_t *self = (widgets_circle_obj_t*)pos_args[0];
+    widgets_circle_obj_t *self = (widgets_circle_obj_t *)pos_args[0];
     m5widgets_circle_erase_helper(self);
 
     self->pos.x0 = args[ARG_x].u_int;
@@ -883,7 +887,7 @@ mp_obj_t m5widgets_circle_setColor(size_t n_args, const mp_obj_t *pos_args, mp_m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_circle_obj_t *self = (widgets_circle_obj_t*)pos_args[0];
+    widgets_circle_obj_t *self = (widgets_circle_obj_t *)pos_args[0];
     self->color.fg_color = args[ARG_color].u_int;
     self->color.bg_color = args[ARG_fill_c].u_int;
     m5widgets_circle_draw_helper(self);
@@ -900,7 +904,7 @@ mp_obj_t m5widgets_circle_setVisible(size_t n_args, const mp_obj_t *pos_args, mp
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_circle_obj_t *self = (widgets_circle_obj_t*)pos_args[0];
+    widgets_circle_obj_t *self = (widgets_circle_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_circle_draw_helper(self);
     } else {
@@ -927,7 +931,7 @@ mp_obj_t m5widgets_circle_make_new(const mp_obj_type_t *type, size_t n_args, siz
     widgets_circle_obj_t *self = mp_obj_malloc(widgets_circle_obj_t, &mp_widgets_circle_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -974,7 +978,7 @@ mp_obj_t m5widgets_rectangle_setSize(size_t n_args, const mp_obj_t *pos_args, mp
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t*)pos_args[0];
+    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t *)pos_args[0];
 
     m5widgets_rectangle_erase_helper(self);
 
@@ -996,7 +1000,7 @@ mp_obj_t m5widgets_rectangle_setColor(size_t n_args, const mp_obj_t *pos_args, m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t*)pos_args[0];
+    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t *)pos_args[0];
     m5widgets_rectangle_erase_helper(self);
 
     self->color.fg_color = args[ARG_color].u_int;
@@ -1016,7 +1020,7 @@ mp_obj_t m5widgets_rectangle_setCursor(size_t n_args, const mp_obj_t *pos_args, 
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t*)pos_args[0];
+    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t *)pos_args[0];
     m5widgets_rectangle_erase_helper(self);
 
     self->pos.x0 = args[ARG_x].u_int;
@@ -1035,7 +1039,7 @@ mp_obj_t m5widgets_rectangle_setVisible(size_t n_args, const mp_obj_t *pos_args,
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t*)pos_args[0];
+    widgets_rectangle_obj_t *self = (widgets_rectangle_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_rectangle_draw_helper(self);
     } else {
@@ -1063,7 +1067,7 @@ mp_obj_t m5widgets_rectangle_make_new(const mp_obj_type_t *type, size_t n_args, 
     widgets_rectangle_obj_t *self = mp_obj_malloc(widgets_rectangle_obj_t, &mp_widgets_rectangle_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -1111,7 +1115,7 @@ mp_obj_t m5widgets_triangle_setColor(size_t n_args, const mp_obj_t *pos_args, mp
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_triangle_obj_t *self = (widgets_triangle_obj_t*)pos_args[0];
+    widgets_triangle_obj_t *self = (widgets_triangle_obj_t *)pos_args[0];
     m5widgets_triangle_erase_helper(self);
 
     self->color.fg_color = args[ARG_color].u_int;
@@ -1135,7 +1139,7 @@ mp_obj_t m5widgets_triangle_setPoints(size_t n_args, const mp_obj_t *pos_args, m
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_triangle_obj_t *self = (widgets_triangle_obj_t*)pos_args[0];
+    widgets_triangle_obj_t *self = (widgets_triangle_obj_t *)pos_args[0];
     m5widgets_triangle_erase_helper(self);
 
     self->pos.x0 = args[ARG_x0].u_int;
@@ -1158,7 +1162,7 @@ mp_obj_t m5widgets_triangle_setVisible(size_t n_args, const mp_obj_t *pos_args, 
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_triangle_obj_t *self = (widgets_triangle_obj_t*)pos_args[0];
+    widgets_triangle_obj_t *self = (widgets_triangle_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_triangle_draw_helper(self);
     } else {
@@ -1188,7 +1192,7 @@ mp_obj_t m5widgets_triangle_make_new(const mp_obj_type_t *type, size_t n_args, s
     widgets_triangle_obj_t *self = mp_obj_malloc(widgets_triangle_obj_t, &mp_widgets_triangle_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);
@@ -1237,7 +1241,7 @@ mp_obj_t m5widgets_qrcode_setText(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t*)pos_args[0];
+    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t *)pos_args[0];
 
     const char *new_text = mp_obj_str_get_str(args[ARG_text].u_obj);
     if (strcmp(self->text, new_text) == 0) {
@@ -1257,7 +1261,7 @@ mp_obj_t m5widgets_qrcode_setSize(size_t n_args, const mp_obj_t *pos_args, mp_ma
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t*)pos_args[0];
+    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t *)pos_args[0];
     self->size.w = args[ARG_w].u_int;
     m5widgets_qrcode_draw_helper(self);
     return mp_const_none;
@@ -1273,7 +1277,7 @@ mp_obj_t m5widgets_qrcode_setVersion(size_t n_args, const mp_obj_t *pos_args, mp
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t*)pos_args[0];
+    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t *)pos_args[0];
     self->version = args[ARG_version].u_int;
     m5widgets_qrcode_draw_helper(self);
     return mp_const_none;
@@ -1290,7 +1294,7 @@ mp_obj_t m5widgets_qrcode_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t*)pos_args[0];
+    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t *)pos_args[0];
     self->pos.x0 = args[ARG_x].u_int;
     self->pos.y0 = args[ARG_y].u_int;
     m5widgets_qrcode_draw_helper(self);
@@ -1307,7 +1311,7 @@ mp_obj_t m5widgets_qrcode_setVisible(size_t n_args, const mp_obj_t *pos_args, mp
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t*)pos_args[0];
+    widgets_qrcode_obj_t *self = (widgets_qrcode_obj_t *)pos_args[0];
     if (args[ARG_visible].u_bool) {
         m5widgets_qrcode_draw_helper(self);
     } else {
@@ -1334,7 +1338,7 @@ mp_obj_t m5widgets_qrcode_make_new(const mp_obj_type_t *type, size_t n_args, siz
     widgets_qrcode_obj_t *self = mp_obj_malloc(widgets_qrcode_obj_t, &mp_widgets_qrcode_type);
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
-        self->gfx = (LGFX_Device*)&(M5.Display);
+        self->gfx = (LGFX_Device *)&(M5.Display);
     } else {
         // Canvas, UserDisplay
         self->gfx = getGfx(&args[ARG_parent].u_obj);

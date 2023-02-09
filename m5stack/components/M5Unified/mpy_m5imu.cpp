@@ -11,19 +11,19 @@ namespace m5
     }
 
     mp_obj_t imu_getAccel(mp_obj_t self) {
-        float x=0.0f,y=0.0f,z=0.0f;
+        float x = 0.0f,y = 0.0f,z = 0.0f;
         getImu(self)->getAccel(&x, &y, &z);
         mp_obj_t tuple[3] = { mp_obj_new_float(x)
-                            , mp_obj_new_float(y)
-                            , mp_obj_new_float(x)};
+                              , mp_obj_new_float(y)
+                              , mp_obj_new_float(x)};
         return mp_obj_new_tuple(3, tuple);
     }
     mp_obj_t imu_getGyro(mp_obj_t self) {
-        float x=0.0f,y=0.0f,z=0.0f;
+        float x = 0.0f,y = 0.0f,z = 0.0f;
         getImu(self)->getGyro(&x, &y, &z);
         mp_obj_t tuple[3] = { mp_obj_new_float(x)
-                            , mp_obj_new_float(y)
-                            , mp_obj_new_float(x)};
+                              , mp_obj_new_float(y)
+                              , mp_obj_new_float(x)};
         return mp_obj_new_tuple(3, tuple);
     }
     mp_obj_t imu_getType(mp_obj_t self) {

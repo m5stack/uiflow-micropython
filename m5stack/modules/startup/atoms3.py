@@ -12,7 +12,6 @@ from hardware import RGB
 
 
 class AtomS3_Startup(Startup):
-
     WIFI_OK = "/flash/res/sys/atoms3/wifi_ok.png"
     WIFI_ERR = "/flash/res/sys/atoms3/wifi_err.png"
     MODE_DEV = "/flash/res/sys/atoms3/mode_dev.png"
@@ -92,7 +91,6 @@ class AtomS3_Startup(Startup):
 
 # AtomS3Lite startup menu
 class AtomS3Lite_Startup(Startup):
-
     COLOR_RED = 0xFF0000  # WiFi not connected
     COLOR_BLUE = 0x0000FF  # WiFi connected, server not connected
     COLOR_GREEN = 0x00FF00  # WiFi connected, server connected

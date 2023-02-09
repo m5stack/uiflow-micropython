@@ -25,7 +25,7 @@ mp_obj_t m5_begin(void) {
     auto cfg = M5.config();
     cfg.clear_display = true;
     M5.begin(cfg);
-    m5_display.gfx = (void*)(&(M5.Display));
+    m5_display.gfx = (void *)(&(M5.Display));
     // Set default font to DejaVu9, keep same style with UIFlow website UI design.
     M5.Display.setTextFont(&fonts::DejaVu9);
     return mp_const_none;

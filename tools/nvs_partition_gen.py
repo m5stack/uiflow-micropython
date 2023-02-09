@@ -941,7 +941,6 @@ def generate(args, is_encr_enabled=False, encr_key=None):
     ) as output_file, nvs_open(
         output_file, input_size, args.version, is_encrypt=is_encr_enabled, key=encr_key
     ) as nvs_obj:
-
         if nvs_obj.version == Page.VERSION1:
             version_set = VERSION1_PRINT
         else:
