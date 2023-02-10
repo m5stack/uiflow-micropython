@@ -589,20 +589,12 @@ static bool sync_time_by_sntp(void) {
     ESP_LOGI(TAG, "Initializing SNTP");
     sntp_setoperatingmode(SNTP_OPMODE_POLL);
 
-    char sntp[32];
+    char sntp[64];
     size_t len = sizeof(sntp);
-    if (nvs_read_helper("sntp0", sntp, &len)) {
+    if (nvs_read_helper("sntp0", sntp, &len) && len > 0 && strlen(sntp) > 0) {
         sntp_setservername(0, sntp);
     } else {
-        sntp_setservername(0, "ntp.aliyun.com");  // default
-    }
-    len = sizeof(sntp);
-    if (nvs_read_helper("sntp1", sntp, &len)) {
-        sntp_setservername(1, sntp);
-    }
-    len = sizeof(sntp);
-    if (nvs_read_helper("sntp2", sntp, &len)) {
-        sntp_setservername(2, sntp);
+        sntp_setservername(0, "uiflow2.m5stack.com");  // default
     }
 
     sntp_set_time_sync_notification_cb(time_sync_notification_cb);
