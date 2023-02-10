@@ -32,7 +32,6 @@ micropython.alloc_emergency_exception_buf(256)
 
 # system path
 sys.path.append("/flash/libs")
-sys.path.append("/flash/libs/micropython")
 
 # change directory to "/flash"
 os.chdir("/flash")
@@ -40,11 +39,11 @@ os.chdir("/flash")
 # copy OTA update file to main.py
 # main_ota_temp.py this file name is fixed
 try:
-    s = open("main_ota_temp.py", "rb")
-    f = open("main.py", "wb")
+    s = open("/flash/main_ota_temp.py", "rb")
+    f = open("/flash/main.py", "wb")
     f.write(s.read())
     s.close()
     f.close()
-    os.remove("main_ota_temp.py")
+    os.remove("/flash/main_ota_temp.py")
 except:
     pass

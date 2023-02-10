@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 # startup script
+import os
 import M5
 import time
 import esp32
@@ -41,6 +42,7 @@ def startup(boot_opt, timeout=60):
         if M5.BtnA.isPressed():
             boot_opt = BOOT_OPT_MENU_NET
             nvs.set_u8("boot_option", boot_opt)
+            os.remove("/flash/main.py")
 
     # Do nothing
     if boot_opt is BOOT_OPT_NOTHING:

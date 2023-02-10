@@ -45,26 +45,37 @@ const mp_obj_type_t m5_board_type = {
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_begin_obj, m5_begin);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getDisplayCount_obj, m5_getDisplayCount);
+MAKE_METHOD_0(m5, Displays);
+MAKE_METHOD_0(m5, getDisplay);
+MAKE_METHOD_0(m5, getDisplayIndex);
+MAKE_METHOD_0(m5, setPrimaryDisplay);
 
 STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     /* *FORMAT-OFF* */
-    { MP_ROM_QSTR(MP_QSTR___name__),    MP_ROM_QSTR(MP_QSTR_M5) },
-    { MP_ROM_QSTR(MP_QSTR_begin),       MP_ROM_PTR(&m5_begin_obj) },
-    { MP_ROM_QSTR(MP_QSTR_update),      MP_ROM_PTR(&m5_update_obj) },
-    { MP_ROM_QSTR(MP_QSTR_getBoard),    MP_ROM_PTR(&m5_getBoard_obj) },
-    { MP_ROM_QSTR(MP_QSTR_BOARD),       MP_ROM_PTR(&m5_board_type) },
-    { MP_ROM_QSTR(MP_QSTR_BtnA),        MP_OBJ_FROM_PTR(&m5_btnA) },
-    { MP_ROM_QSTR(MP_QSTR_BtnB),        MP_OBJ_FROM_PTR(&m5_btnB) },
-    { MP_ROM_QSTR(MP_QSTR_BtnC),        MP_OBJ_FROM_PTR(&m5_btnC) },
-    { MP_ROM_QSTR(MP_QSTR_BtnPWR),      MP_OBJ_FROM_PTR(&m5_btnPWR) },
-    { MP_ROM_QSTR(MP_QSTR_BtnEXT),      MP_OBJ_FROM_PTR(&m5_btnEXT) },
-    { MP_ROM_QSTR(MP_QSTR_Lcd),         MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_Display),     MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_UserDisplay), MP_OBJ_FROM_PTR(&mp_user_panel_type) },
-    { MP_ROM_QSTR(MP_QSTR_Speaker),     MP_OBJ_FROM_PTR(&m5_speaker) },
-    { MP_ROM_QSTR(MP_QSTR_Power),       MP_OBJ_FROM_PTR(&m5_power) },
-    { MP_ROM_QSTR(MP_QSTR_Imu),         MP_OBJ_FROM_PTR(&m5_imu) },
-    { MP_ROM_QSTR(MP_QSTR_Widgets),     MP_OBJ_FROM_PTR(&mp_module_widgets) },
+    { MP_ROM_QSTR(MP_QSTR___name__),          MP_ROM_QSTR(MP_QSTR_M5) },
+    { MP_ROM_QSTR(MP_QSTR_BOARD),             MP_ROM_PTR(&m5_board_type) },
+    { MP_ROM_QSTR(MP_QSTR_BtnA),              MP_OBJ_FROM_PTR(&m5_btnA) },
+    { MP_ROM_QSTR(MP_QSTR_BtnB),              MP_OBJ_FROM_PTR(&m5_btnB) },
+    { MP_ROM_QSTR(MP_QSTR_BtnC),              MP_OBJ_FROM_PTR(&m5_btnC) },
+    { MP_ROM_QSTR(MP_QSTR_BtnPWR),            MP_OBJ_FROM_PTR(&m5_btnPWR) },
+    { MP_ROM_QSTR(MP_QSTR_BtnEXT),            MP_OBJ_FROM_PTR(&m5_btnEXT) },
+    { MP_ROM_QSTR(MP_QSTR_Lcd),               MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_Display),           MP_OBJ_FROM_PTR(&m5_display) },
+    { MP_ROM_QSTR(MP_QSTR_UserDisplay),       MP_OBJ_FROM_PTR(&mp_user_panel_type) },
+    { MP_ROM_QSTR(MP_QSTR_Speaker),           MP_OBJ_FROM_PTR(&m5_speaker) },
+    { MP_ROM_QSTR(MP_QSTR_Power),             MP_OBJ_FROM_PTR(&m5_power) },
+    { MP_ROM_QSTR(MP_QSTR_Imu),               MP_OBJ_FROM_PTR(&m5_imu) },
+    { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&mp_module_widgets) },
+
+    { MP_ROM_QSTR(MP_QSTR_begin),             MP_ROM_PTR(&m5_begin_obj) },
+    { MP_ROM_QSTR(MP_QSTR_update),            MP_ROM_PTR(&m5_update_obj) },
+    { MP_ROM_QSTR(MP_QSTR_getBoard),          MP_ROM_PTR(&m5_getBoard_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Displays),          MP_ROM_PTR(&m5_Displays_obj) },
+    { MP_ROM_QSTR(MP_QSTR_getDisplay),        MP_ROM_PTR(&m5_getDisplay_obj) },
+    { MP_ROM_QSTR(MP_QSTR_getDisplayIndex),   MP_ROM_PTR(&m5_getDisplayIndex_obj) },
+    { MP_ROM_QSTR(MP_QSTR_getDisplayCount),   MP_ROM_PTR(&m5_getDisplayCount_obj) },
+    { MP_ROM_QSTR(MP_QSTR_setPrimaryDisplay), MP_ROM_PTR(&m5_setPrimaryDisplay_obj) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, mp_module_m5_globals_table);
