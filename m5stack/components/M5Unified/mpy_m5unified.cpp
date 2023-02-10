@@ -1,5 +1,14 @@
 #define M5ATOMDISPLAY_LOGICAL_WIDTH 640
 #define M5ATOMDISPLAY_LOGICAL_HEIGHT 360
+
+// #define M5MODULERCA_LOGICAL_WIDTH 216
+// #define M5MODULERCA_LOGICAL_HEIGHT 144
+// #define M5MODULERCA_SIGNAL_TYPE signal_type_t::PAL
+
+// #define M5MODULERCA_USE_PSRAM use_psram_t::psram_use      // all psram
+// #define M5MODULERCA_USE_PSRAM use_psram_t::psram_half_use // half sram :half psram
+// #define M5MODULERCA_USE_PSRAM use_psram_t::psram_no_use   // all sram
+
 #include <esp_log.h>
 #include <sdkconfig.h>
 #include <M5AtomDisplay.h>
@@ -68,6 +77,12 @@ mp_obj_t m5_getDisplayIndex(mp_obj_t board) {
 
 mp_obj_t m5_setPrimaryDisplay(mp_obj_t index) {
     M5.setPrimaryDisplay(mp_obj_get_int(index));
+    m5_display.gfx = (void *)(&(M5.Display));
+    return mp_const_none;
+}
+
+mp_obj_t m5_setPrimaryDisplayType(mp_obj_t type) {
+    M5.setPrimaryDisplayType((m5gfx::board_t)mp_obj_get_int(type));
     m5_display.gfx = (void *)(&(M5.Display));
     return mp_const_none;
 }

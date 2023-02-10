@@ -16,7 +16,7 @@ def setup():
 def loop():
     global index
     index = index + 1
-    if index > 2:  # screen number - 1
+    if index > M5.getDisplayCount() - 1:
         index = 0
     M5.setPrimaryDisplay(index)
     if M5.Lcd.width() == 64:
