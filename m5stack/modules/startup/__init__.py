@@ -59,8 +59,11 @@ def startup(boot_opt, timeout=60):
 
             atoms3 = AtomS3Lite_Startup()
             atoms3.startup(ssid, pswd, timeout)
-        else:
-            pass
+        elif M5.BOARD.M5StampS3 == M5.getBoard():
+            from .stamps3 import StampS3_Startup
+
+            stamps3 = StampS3_Startup()
+            stamps3.startup(ssid, pswd, timeout)
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

@@ -28,6 +28,9 @@ class RGB:
             elif M5.BOARD.M5AtomS3Lite == M5.getBoard():
                 cls._instance = WS2812(pin=35, n=1)
                 return cls._instance
+            elif M5.BOARD.M5StampS3 == M5.getBoard():
+                cls._instance = WS2812(pin=21, n=1)
+                return cls._instance
             else:
                 pass
         else:
