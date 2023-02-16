@@ -17,7 +17,7 @@ class Startup:
         self.wlan.active(False)
         self.wlan.active(True)
 
-    def connect_network(self, ssid, pswd) -> bool:
+    def connect_network(self, ssid: str, pswd: str) -> bool:
         if (len(ssid) > 0) or (len(pswd) > 0):
             self.wlan.connect(ssid, pswd)
             return True
@@ -31,7 +31,7 @@ class Startup:
         return self.wlan.ifconfig()[0]
 
 
-def startup(boot_opt, timeout=60):
+def startup(boot_opt, timeout: int = 60) -> None:
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
     ssid = nvs.get_str("ssid0")
