@@ -39,8 +39,16 @@ const pwr_obj_t m5_imu     = { {&mp_imu_type},       &(M5.Imu)           };
 mp_obj_t m5_begin(void) {
     // config
     auto cfg = M5.config();
-    cfg.clear_display = true;
+    cfg.external_display.module_display = 0;
+    cfg.external_display.atom_display = 0;
+    cfg.external_display.unit_oled = 0;
+    cfg.external_display.unit_lcd = 0;
+    cfg.external_display.unit_rca = 0;
+    cfg.external_display.module_rca = 0;
+
+    // initial
     M5.begin(cfg);
+
     M5.Display.clear();
     m5_display.gfx = (void *)(&(M5.Display));
     // Set default font to DejaVu9, keep same style with UIFlow website UI design.
