@@ -15,29 +15,29 @@ class StampS3_Startup(Startup):
     COLOR_BLUE = 0x0000FF  # WiFi connected, server not connected
     COLOR_GREEN = 0x00FF00  # WiFi connected, server connected
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.rgb = RGB()
         self.rgb.set_color(0, self.COLOR_RED)
         self.rgb.set_brightness(30)
 
-    def show_hits(self, hits) -> None:
+    def show_hits(self, hits: str) -> None:
         pass
 
-    def show_msg(self, msg) -> None:
+    def show_msg(self, msg: str) -> None:
         pass
 
-    def show_ssid(self, ssid) -> None:
+    def show_ssid(self, ssid: str) -> None:
         pass
 
     def show_mac(self) -> None:
         mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
         print("Mac: " + mac[0:6] + "_" + mac[6:])
 
-    def show_error(self, ssid, error) -> None:
+    def show_error(self, ssid: str, error: str) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid, pswd, timeout=60) -> None:
+    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         self.show_mac()
 
         if super().connect_network(ssid=ssid, pswd=pswd):

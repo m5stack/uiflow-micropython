@@ -16,20 +16,20 @@ class AtomS3_Startup(Startup):
     WIFI_ERR = "/flash/res/sys/atoms3/wifi_err.png"
     MODE_DEV = "/flash/res/sys/atoms3/mode_dev.png"
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
-    def show_hits(self, hits) -> None:
+    def show_hits(self, hits: str) -> None:
         M5.Lcd.fillRect(24, 70, 95, 11, M5.Lcd.COLOR.BLACK)
         M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu9)
         M5.Lcd.drawCenterString(hits, 73, 70)
 
-    def show_msg(self, msg) -> None:
+    def show_msg(self, msg: str) -> None:
         M5.Lcd.fillRect(36, 49, 82, 17, M5.Lcd.COLOR.BLACK)
         M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu12)
         M5.Lcd.drawCenterString(msg, 71, 51)
 
-    def show_ssid(self, ssid) -> None:
+    def show_ssid(self, ssid: str) -> None:
         if len(ssid) > 9:
             self.show_msg(ssid[:7] + "...")
         else:
@@ -40,7 +40,7 @@ class AtomS3_Startup(Startup):
         M5.Lcd.setFont(M5.Lcd.FONTS.DejaVu9)
         M5.Lcd.drawCenterString(mac[0:6] + "_" + mac[6:], 65, 85)
 
-    def show_error(self, ssid, error) -> None:
+    def show_error(self, ssid: str, error: str) -> None:
         M5.Lcd.clear()
         M5.Lcd.drawImage(self.WIFI_ERR, 0, 0)
         M5.Lcd.drawImage(self.MODE_DEV, 0, 98)
@@ -49,7 +49,7 @@ class AtomS3_Startup(Startup):
         self.show_mac()
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid, pswd, timeout=60) -> None:
+    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         M5.Lcd.drawImage(self.WIFI_OK, 0, 0)
         M5.Lcd.drawImage(self.MODE_DEV, 0, 98)
         self.show_mac()
@@ -95,29 +95,29 @@ class AtomS3Lite_Startup(Startup):
     COLOR_BLUE = 0x0000FF  # WiFi connected, server not connected
     COLOR_GREEN = 0x00FF00  # WiFi connected, server connected
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
         self.rgb = RGB()
         self.rgb.set_color(0, self.COLOR_RED)
         self.rgb.set_brightness(30)
 
-    def show_hits(self, hits) -> None:
+    def show_hits(self, hits: str) -> None:
         pass
 
-    def show_msg(self, msg) -> None:
+    def show_msg(self, msg: str) -> None:
         pass
 
-    def show_ssid(self, ssid) -> None:
+    def show_ssid(self, ssid: str) -> None:
         pass
 
     def show_mac(self) -> None:
         mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
         print("Mac: " + mac[0:6] + "_" + mac[6:])
 
-    def show_error(self, ssid, error) -> None:
+    def show_error(self, ssid: str, error: str) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid, pswd, timeout=60) -> None:
+    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         self.show_mac()
 
         if super().connect_network(ssid=ssid, pswd=pswd):
