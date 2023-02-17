@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
 # ENV I/II/III
-from . import UnitError
-from .pahub import PAHUB
 from machine import I2C
 from micropython import const
+from .pahub import PAHUB
+from .unit_helper import UnitError
 from driver.sht30 import SHT30
 from driver.bmp280 import BMP280
 from driver.qmp6988 import QMP6988
@@ -35,7 +35,7 @@ class ENV:
             self._temp_humid = SHT30(i2c=i2c)
             self._pressure = QMP6988(i2c=i2c)
         else:
-            raise UnitError("Unknow ENV type")
+            raise UnitError("Unknown ENV type")
 
     def read_temperature(self) -> float:
         return round(self._temp_humid.measure()[0], 2)
