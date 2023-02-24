@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wunused-function"
 #include <stdio.h>
 #include <string.h>
 #include <stdarg.h>
@@ -10,71 +11,19 @@
 #include "esp_log.h"
 #include "uart.h"
 #include "aes/esp_aes.h"
-#include "mqtt_client.h"
 #include "nvs_flash.h"
 #include "nvs.h"
-
-#include "m5things.h"
-
-#include "py/stackctrl.h"
-#include "py/nlr.h"
-#include "py/compile.h"
-#include "py/runtime.h"
-#include "py/persistentcode.h"
-#include "py/repl.h"
-#include "py/gc.h"
-#include "py/mphal.h"
-#include "py/ringbuf.h"
-#include "shared/readline/readline.h"
-#include "shared/runtime/pyexec.h"
-#include "shared/runtime/interrupt_char.h"
-
-#include "modnetwork.h"
-
-#include "extmod/vfs.h"
-#include "extmod/vfs_lfs.h"
-#include "lib/littlefs/lfs2.h"
 #include "cJSON.h"
+#include "m5things.h"
 
 #define TAG "M5Things"
 
-#define PKG_OK 0
-#define PKG_ERR_PARSE -1
-#define PKG_ERR_INDEX -2
-#define PKG_ERR_LENGTH -3
-#define PKG_ERR_EXECUTE -4
-#define PKG_ERR_FILE_OPEN -5
-#define PKG_ERR_FILE_READ -6
-#define PKG_ERR_FILE_WRITE -7
-#define PKG_ERR_FILE_CLOSE -8
-
-#define OTA_UPDATE_FILE_NAME "main_ota_temp.py"  // Fixed name!!!
-
-#define M5THINGS_OTA_TOPIC_TEMPLATE \
-    "$m5/uiflow/v1/%s/%02x%02x%02x%02x%02x%02x/%s"
-
-#define BOOT_OPT_NOTHING  0  // Run main.py(after download code to device set to this)
-#define BOOT_OPT_MENU_NET 1  // Show startup menu and network setup
-#define BOOT_OPT_NETWORK  2  // Only Network setup
-
-// typedef
-typedef struct _mp_obj_vfs_lfs2_t {
-    mp_obj_base_t base;
-    mp_vfs_blockdev_t blockdev;
-    bool enable_mtime;
-    vstr_t cur_dir;
-    struct lfs2_config config;
-    lfs2_t lfs;
-} mp_obj_vfs_lfs2_t;
-
 static void mqtt_message_handle(void *event_data);
-
-extern ringbuf_t stdin_ringbuf;  // mp_task will take code form this buffer
 
 TaskHandle_t m5thing_task_handle;
 esp_mqtt_client_handle_t m5things_mqtt_client = NULL;
-volatile bool mqtt_connect_flag = false;
-volatile uint8_t last_downlink_topic = 0;
+
+volatile m5things_status_t m5things_cnct_status = M5THING_STATUS_STANDBY;
 
 // order is request.
 static char topic_action_list[5][6] = {"ping", "exec", "file"};
@@ -94,9 +43,6 @@ static char *up_topic_list[3] = {mqtt_up_ping_topic, mqtt_up_exec_topic,
 static char *down_topic_list[3] = {mqtt_down_ping_topic, mqtt_down_exec_topic,
                                    mqtt_down_file_topic};
 
-#define TOPIC_PING_IDX 0
-#define TOPIC_EXEC_IDX 1
-#define TOPIC_FILE_IDX 2
 /******************************************************************************/
 static lfs2_t *_fp = NULL;
 static lfs2_file_t *_file = NULL;
@@ -274,7 +220,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                     TAG, "Last errno string (%s)",
                     strerror(event->error_handle->esp_transport_sock_errno));
             }
-            mqtt_connect_flag = false;
+            m5things_cnct_status = M5THING_STATUS_CNCT_ERR;
             break;
         case MQTT_EVENT_CONNECTED: {
             for (size_t i = 0; i < 3; i++) {
@@ -283,11 +229,11 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                 ESP_LOGI(TAG, "sent %s topic subscribe successful, msg_id=%d",
                     topic_action_list[i], msg_id);
             }
-            mqtt_connect_flag = true;
+            m5things_cnct_status = M5THING_STATUS_CONNECTED;
         } break;
         case MQTT_EVENT_DISCONNECTED:
             ESP_LOGI(TAG, "MQTT_EVENT_DISCONNECTED");
-            mqtt_connect_flag = false;
+            m5things_cnct_status = M5THING_STATUS_DISCONNECT;
             break;
         case MQTT_EVENT_SUBSCRIBED:
             ESP_LOGI(TAG, "MQTT_EVENT_SUBSCRIBED, msg_id=%d", event->msg_id);
@@ -627,7 +573,6 @@ void m5thing_task(void *pvParameter) {
         ESP_LOGI(TAG, "Running firmware version: %s", running_app_info.version);
     }
 soft_reset:
-    mqtt_connect_flag = false;
     ESP_LOGI(TAG, "waiting connect to Wi-Fi");
     while (!wifi_sta_connected) {
         vTaskDelay(500 / portTICK_PERIOD_MS);
@@ -636,24 +581,26 @@ soft_reset:
     vTaskDelay(500 / portTICK_PERIOD_MS);
 
     if (!sync_time_by_sntp()) {
+        m5things_cnct_status = M5THING_STATUS_SNTP_ERR;
         ESP_LOGI(TAG, "synchronize time failed");
         goto soft_reset;
     }
 
+    m5things_cnct_status = M5THING_STATUS_CONNECTING;
     if (mqtt_app_start() != ESP_OK) {
         ESP_LOGI(TAG, "connect to server error");
         goto soft_reset_exit;
     }
+    m5things_cnct_status = M5THING_STATUS_CONNECTED;
 
     ESP_LOGI(TAG,
         "connect to server success, waiting downlink data or command");
 
     uint64_t last_ping_time = esp_timer_get_time();
-
     for (;;) {
         vTaskDelay(1000 / portTICK_PERIOD_MS);
 
-        if (!mqtt_connect_flag) {
+        if (m5things_cnct_status != M5THING_STATUS_CONNECTED) {
             ESP_LOGI(TAG, "disconnected from the server for some reason");
             break;
         } else {
