@@ -1,6 +1,7 @@
 #include "m5unified.h"
 
 // -------- Speaker wrapper
+MAKE_METHOD_KW(spk, config, 1);
 MAKE_METHOD_0(spk, getVolume);
 MAKE_METHOD_1(spk, getChannelVolume);
 MAKE_METHOD_KW(spk, setVolume, 1);
@@ -11,6 +12,7 @@ MAKE_METHOD_KW(spk, tone, 1);
 MAKE_METHOD_KW(spk, playWav, 1);
 
 STATIC const mp_rom_map_elem_t spk_member_table[] = {
+    MAKE_TABLE(spk, config),
     MAKE_TABLE(spk, getVolume),
     MAKE_TABLE(spk, getChannelVolume),
     MAKE_TABLE(spk, setVolume),

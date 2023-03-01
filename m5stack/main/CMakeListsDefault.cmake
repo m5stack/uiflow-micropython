@@ -146,6 +146,7 @@ set(IDF_COMPONENTS
     esp-tls
     nghttp
     libffi
+    json
     M5Unified
     esp32-camera
 )
