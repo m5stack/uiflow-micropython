@@ -1,4 +1,8 @@
 # -*- encoding: utf-8 -*-
 from machine import *
 from .rgb import *
-from .imu import *
+
+try:
+    from .imu import *
+except ImportError:
+    pass

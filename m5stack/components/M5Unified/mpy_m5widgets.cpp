@@ -11,6 +11,8 @@ extern "C"
 #include "mpy_m5lfs2.txt"
 
 // -------- M5Widgets Common Attributes
+static uint32_t _bg_color_g = 0x000000;
+
 typedef struct _widgets_color_t {
     uint32_t bg_color;  // fill color
     uint32_t fg_color;  // text, outline...
@@ -47,7 +49,6 @@ mp_obj_t m5widgets_fillScreen(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
-    // The first parameter is the GFX object, parse from second parameter.
     mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     if (args[ARG_parent].u_obj == mp_const_none) {
@@ -59,18 +60,53 @@ mp_obj_t m5widgets_fillScreen(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
         auto gfx = getGfx(&args[ARG_parent].u_obj);
         gfx->fillScreen((uint32_t)args[ARG_color].u_int);
     }
+    _bg_color_g = (uint32_t)args[ARG_color].u_int;
     return mp_const_none;
 }
 
-mp_obj_t m5widgets_setRotation(mp_obj_t rotation) {
-    auto gfx = (LGFX_Device *)&(M5.Display);
-    gfx->setRotation((uint8_t)mp_obj_get_int(rotation));
+mp_obj_t m5widgets_setRotation(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_rotation, ARG_parent};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_rotation,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_parent,    MP_ARG_OBJ                  , {.u_obj =  mp_const_none} }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    if (args[ARG_parent].u_obj == mp_const_none) {
+        // default Display
+        auto gfx = (LGFX_Device *)&(M5.Display);
+        gfx->setRotation((uint8_t)args[ARG_rotation].u_int);
+    } else {
+        // Canvas, UserDisplay
+        auto gfx = getGfx(&args[ARG_parent].u_obj);
+        gfx->setRotation((uint8_t)args[ARG_rotation].u_int);
+    }
     return mp_const_none;
 }
 
-mp_obj_t m5widgets_setBrightness(mp_obj_t brightness) {
-    auto gfx = (LGFX_Device *)&(M5.Display);
-    gfx->setBrightness((uint8_t)mp_obj_get_int(brightness));
+mp_obj_t m5widgets_setBrightness(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_brightness, ARG_parent};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_brightness,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_parent,      MP_ARG_OBJ                  , {.u_obj =  mp_const_none} }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    if (args[ARG_parent].u_obj == mp_const_none) {
+        // default Display
+        auto gfx = (LGFX_Device *)&(M5.Display);
+        gfx->setBrightness((uint8_t)args[ARG_brightness].u_int);
+    } else {
+        // Canvas, UserDisplay
+        auto gfx = getGfx(&args[ARG_parent].u_obj);
+        gfx->setBrightness((uint8_t)args[ARG_brightness].u_int);
+    }
     return mp_const_none;
 }
 
@@ -86,9 +122,10 @@ typedef struct _widgets_label_obj_t {
 }widgets_label_obj_t;
 
 static void m5widgets_label_erase_helper(const widgets_label_obj_t *self) {
-    self->gfx->setTextColor((uint32_t)self->color.bg_color, (uint32_t)self->color.bg_color);
-    self->gfx->setTextSize(self->size.text_size);
-    self->gfx->drawString(self->text, self->text_pos.x0, self->text_pos.y0, self->font);
+    self->gfx->fillRect(self->text_pos.x0, self->text_pos.y0,
+        self->gfx->textWidth(self->text, self->font),
+        self->gfx->fontHeight(self->font),
+        _bg_color_g);
 }
 
 static void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
@@ -126,7 +163,7 @@ mp_obj_t m5widgets_label_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
         { MP_QSTR_text_c, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0xFFFFFF } },
-        { MP_QSTR_bg_c, MP_ARG_INT                  , {.u_int = 0x000000 } }
+        { MP_QSTR_bg_c,   MP_ARG_INT                  , {.u_int = 0x000000 } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

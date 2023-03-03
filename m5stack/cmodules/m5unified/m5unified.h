@@ -25,6 +25,6 @@ extern const mp_obj_type_t mp_imu_type;
 extern const mp_obj_type_t mp_spk_type;
 extern const mp_obj_type_t mp_power_type;
 extern const mp_obj_type_t mp_gfxcanvas_type;
-extern const mp_obj_type_t mp_user_panel_type;
+extern const mp_obj_type_t m5_user_display;
 extern const mp_obj_type_t mp_gfxdevice_type;
-extern const mp_obj_module_t mp_module_widgets;
+extern const mp_obj_module_t m5_widgets;

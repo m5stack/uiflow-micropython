@@ -37,8 +37,8 @@ const pwr_obj_t m5_imu     = { {&mp_imu_type},       &(M5.Imu)           };
 
 // TODO: pass configuration parameters
 mp_obj_t m5_begin(void) {
-    // config
     auto cfg = M5.config();
+    // disable all external display
     cfg.external_display.module_display = 0;
     cfg.external_display.atom_display = 0;
     cfg.external_display.unit_oled = 0;
@@ -64,6 +64,8 @@ mp_obj_t m5_update(void) {
 mp_obj_t m5_getBoard(void) {
     return mp_obj_new_int(M5.getBoard());
 }
+/********************************Configuration*********************************/
+
 
 /********************************Multi Display*********************************/
 mp_obj_t m5_getDisplayCount(void) {

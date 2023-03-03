@@ -63,11 +63,11 @@ STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_BtnEXT),            MP_OBJ_FROM_PTR(&m5_btnEXT) },
     { MP_ROM_QSTR(MP_QSTR_Lcd),               MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_Display),           MP_OBJ_FROM_PTR(&m5_display) },
-    { MP_ROM_QSTR(MP_QSTR_UserDisplay),       MP_OBJ_FROM_PTR(&mp_user_panel_type) },
+    { MP_ROM_QSTR(MP_QSTR_UserDisplay),       MP_OBJ_FROM_PTR(&m5_user_display) },
     { MP_ROM_QSTR(MP_QSTR_Speaker),           MP_OBJ_FROM_PTR(&m5_speaker) },
     { MP_ROM_QSTR(MP_QSTR_Power),             MP_OBJ_FROM_PTR(&m5_power) },
     { MP_ROM_QSTR(MP_QSTR_Imu),               MP_OBJ_FROM_PTR(&m5_imu) },
-    { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&mp_module_widgets) },
+    { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&m5_widgets) },
 
     { MP_ROM_QSTR(MP_QSTR_begin),             MP_ROM_PTR(&m5_begin_obj) },
     { MP_ROM_QSTR(MP_QSTR_update),            MP_ROM_PTR(&m5_update_obj) },
