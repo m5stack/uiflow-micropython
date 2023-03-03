@@ -187,7 +187,7 @@ STATIC const mp_rom_map_elem_t widgets_module_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_QRCode),    MP_OBJ_FROM_PTR(&mp_widgets_qrcode_type) }
 };
 STATIC MP_DEFINE_CONST_DICT(widgets_module_member, widgets_module_member_table);
-const mp_obj_module_t mp_module_widgets = {
+const mp_obj_module_t m5_widgets = {
     .base = { &mp_type_module },
     .globals = (mp_obj_dict_t *)&widgets_module_member,
 };

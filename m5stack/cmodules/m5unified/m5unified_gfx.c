@@ -189,6 +189,67 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
 
+STATIC const mp_rom_map_elem_t user_panel_member_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_ILI9342),      MP_ROM_INT(SPI_LCD_ILI9342) },
+    { MP_ROM_QSTR(MP_QSTR_ST7735),       MP_ROM_INT(SPI_LCD_ST7735) },
+    { MP_ROM_QSTR(MP_QSTR_ST7735S),      MP_ROM_INT(SPI_LCD_ST7735S) },
+    { MP_ROM_QSTR(MP_QSTR_ST7789),       MP_ROM_INT(SPI_LCD_ST7789) },
+    { MP_ROM_QSTR(MP_QSTR_GC9A01),       MP_ROM_INT(SPI_LCD_GC9A01) },
+    { MP_ROM_QSTR(MP_QSTR_GC9107),       MP_ROM_INT(SPI_LCD_GC9107) },
+    { MP_ROM_QSTR(MP_QSTR_GDEW0154M09),  MP_ROM_INT(SPI_EINK_GDEW0154M09) },
+    { MP_ROM_QSTR(MP_QSTR_IT8951),       MP_ROM_INT(SPI_EINK_IT8951) },
+    { MP_ROM_QSTR(MP_QSTR_SSD1306),      MP_ROM_INT(I2C_OLED_SSD1306) },
+    { MP_ROM_QSTR(MP_QSTR_SH110x),       MP_ROM_INT(I2C_OLED_SH110x) },
+    /* *FORMAT-ON* */
+};
+STATIC MP_DEFINE_CONST_DICT(user_panel_member,user_panel_member_table);
+const mp_obj_type_t mp_user_panel_type = {
+    .base = { &mp_type_type },
+    .name = MP_QSTR_Panels,
+    .locals_dict = (mp_obj_dict_t *)&user_panel_member,
+};
+
+STATIC const mp_rom_map_elem_t user_tp_member_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_FT5X06),      MP_ROM_INT(I2C_TP_FT5X06) },
+    { MP_ROM_QSTR(MP_QSTR_GT911),       MP_ROM_INT(I2C_TP_GT911) },
+    /* *FORMAT-ON* */
+};
+STATIC MP_DEFINE_CONST_DICT(user_tp_member,user_tp_member_table);
+const mp_obj_type_t mp_user_tp_type = {
+    .base = { &mp_type_type },
+    .name = MP_QSTR_Panels,
+    .locals_dict = (mp_obj_dict_t *)&user_tp_member,
+};
+
+STATIC const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
+    TABLE_PARTS_GFX_BASE,
+    MAKE_TABLE(gfx, startWrite),
+    MAKE_TABLE(gfx, endWrite),
+    // font
+    { MP_ROM_QSTR(MP_QSTR_FONTS),           MP_OBJ_FROM_PTR(&mp_fonts_type) },
+    // color
+    { MP_ROM_QSTR(MP_QSTR_COLOR),           MP_OBJ_FROM_PTR(&mp_color_type) },
+    // Panel
+    { MP_ROM_QSTR(MP_QSTR_PANEL),           MP_OBJ_FROM_PTR(&mp_user_panel_type) },
+    // Touch
+    { MP_ROM_QSTR(MP_QSTR_TOUCH),           MP_OBJ_FROM_PTR(&mp_user_tp_type) },
+    // stream function
+    { MP_ROM_QSTR(MP_QSTR_read),            MP_ROM_PTR(&mp_stream_read_obj) },
+    { MP_ROM_QSTR(MP_QSTR_write),           MP_ROM_PTR(&mp_stream_write_obj) },
+    { MP_ROM_QSTR(MP_QSTR_close),           MP_ROM_PTR(&mp_stream_close_obj) },
+    #if MICROPY_PY_LVGL
+    // lvgl port function
+    { MP_ROM_QSTR(MP_QSTR_lvgl_init),       MP_ROM_PTR(&gfx_lvgl_init_obj) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_deinit),     MP_ROM_PTR(&gfx_lvgl_deinit_obj) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_flush),      MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_flush)) },
+    { MP_ROM_QSTR(MP_QSTR_lvgl_read),       MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_touch_read)) },
+    { MP_ROM_QSTR(MP_QSTR_user_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(user_lvgl_flush)) },
+    #endif
+};
+STATIC MP_DEFINE_CONST_DICT(gfxuserdevice_member, gfxuserdevice_member_table);
+
 // -------- GFX stream function
 STATIC const mp_stream_p_t mp_gfx_stream_p = {
     .read = gfx_read,
@@ -218,12 +279,12 @@ const mp_obj_type_t mp_gfxcanvas_type = {
 };
 
 // -------- GFX user panel class
-const mp_obj_type_t mp_user_panel_type = {
+const mp_obj_type_t m5_user_display = {
     .base = { &mp_type_type },
     .name = MP_QSTR_UserDisplay,
     .protocol = &mp_gfx_stream_p,
     .make_new = user_panel_make_new,
-    .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
+    .locals_dict = (mp_obj_dict_t *)&gfxuserdevice_member,
 };
 
 // -------- GFX panel class
