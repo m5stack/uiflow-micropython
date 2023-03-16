@@ -17,12 +17,12 @@ extern mp_obj_t m5_update(void);
 extern mp_obj_t m5_getBoard(void);
 extern mp_obj_t m5_getDisplayCount(void);
 
-extern gfx_obj_t m5_display;
 extern const spk_obj_t m5_speaker;
-extern const btn_obj_t m5_btnA;
-extern const btn_obj_t m5_btnB;
-extern const btn_obj_t m5_btnC;
-extern const btn_obj_t m5_btnPWR;
-extern const btn_obj_t m5_btnEXT;
 extern const pwr_obj_t m5_power;
 extern const pwr_obj_t m5_imu;
+extern btn_obj_t m5_btnA;
+extern btn_obj_t m5_btnB;
+extern btn_obj_t m5_btnC;
+extern btn_obj_t m5_btnPWR;
+extern btn_obj_t m5_btnEXT;
+extern gfx_obj_t m5_display;
