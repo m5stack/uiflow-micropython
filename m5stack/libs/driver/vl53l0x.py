@@ -296,13 +296,13 @@ class VL53L0X:
         while self._read_u8(0xC0) == 0xEE:
             time.sleep(0.1)
         self._write_u8(_SOFT_RESET_GO2_SOFT_RESET_N, 0x01)
+        time.sleep(0.1)
         while True:
             try:
-                self._read_u8(0xC0)
+                if self._read_u8(0xC0) == 0xEE:
+                    break
             except OSError:
                 time.sleep(0.1)
-            if self._read_u8(0xC0) == 0xEE:
-                break
 
     def _read_u8(self, reg: int) -> int:
         buf = memoryview(self._BUFFER)
