@@ -69,6 +69,15 @@ class MCP4725:
         raw_value = val >> 4
         self._write_fast_mode(raw_value)
 
+    def get_voltage(self) -> float:
+        raw_value = self._read()
+        return (raw_value / 4095.0) * 3.3
+
+    def set_voltage(self, val: float) -> None:
+        assert 0.0 <= val <= 3.3
+        raw_value = int(val / 3.3 * 4095.0)
+        self._write_fast_mode(raw_value)
+
     def get_raw_value(self) -> int:
         """The DAC value as a 12-bit unsigned value.  This is the the true resolution of the DAC
         and will never peform scaling or run into quantization error.
