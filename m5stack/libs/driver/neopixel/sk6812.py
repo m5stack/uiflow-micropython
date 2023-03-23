@@ -5,7 +5,7 @@ from machine import Pin
 
 class SK6812(NeoPixel):
     # G R B W
-    ORDER = (0, 1, 2, 3)
+    ORDER = (1, 0, 2, 3)
 
     def __init__(self, io: int, n: int, bpp: int = 3, timing: int = 1) -> None:
         pin = Pin(io)
