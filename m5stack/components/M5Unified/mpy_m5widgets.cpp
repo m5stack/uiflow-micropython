@@ -65,10 +65,10 @@ mp_obj_t m5widgets_fillScreen(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
 }
 
 mp_obj_t m5widgets_setRotation(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_rotation, ARG_parent};
+    enum {ARG_r, ARG_parent};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_rotation,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_r,         MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_parent,    MP_ARG_OBJ                  , {.u_obj =  mp_const_none} }
     };
     /* *FORMAT-ON* */
@@ -78,11 +78,11 @@ mp_obj_t m5widgets_setRotation(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     if (args[ARG_parent].u_obj == mp_const_none) {
         // default Display
         auto gfx = (LGFX_Device *)&(M5.Display);
-        gfx->setRotation((uint8_t)args[ARG_rotation].u_int);
+        gfx->setRotation((uint8_t)args[ARG_r].u_int);
     } else {
         // Canvas, UserDisplay
         auto gfx = getGfx(&args[ARG_parent].u_obj);
-        gfx->setRotation((uint8_t)args[ARG_rotation].u_int);
+        gfx->setRotation((uint8_t)args[ARG_r].u_int);
     }
     return mp_const_none;
 }

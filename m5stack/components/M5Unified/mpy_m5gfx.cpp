@@ -172,10 +172,10 @@ mp_obj_t gfx_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
 }
 
 mp_obj_t gfx_setBrightness(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_percent};
+    enum {ARG_brightness};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_percent, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 80 } },
+        { MP_QSTR_brightness, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 80 } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -183,7 +183,7 @@ mp_obj_t gfx_setBrightness(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     auto gfx = getGfx(&pos_args[0]);
-    gfx->setBrightness(args[ARG_percent].u_int);
+    gfx->setBrightness(args[ARG_brightness].u_int);
     return mp_const_none;
 }
 

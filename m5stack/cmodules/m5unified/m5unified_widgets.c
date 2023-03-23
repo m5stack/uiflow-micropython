@@ -164,8 +164,8 @@ const mp_obj_type_t mp_widgets_qrcode_type = {
 
 // -------- M5Widgets common funciton
 MAKE_METHOD_KW(m5widgets, fillScreen, 1);
-MAKE_METHOD_0(m5widgets, setRotation);
-MAKE_METHOD_0(m5widgets, setBrightness);
+MAKE_METHOD_KW(m5widgets, setRotation, 1);
+MAKE_METHOD_KW(m5widgets, setBrightness, 1);
 STATIC const mp_rom_map_elem_t widgets_module_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__),  MP_ROM_QSTR(MP_QSTR_Widgets) },
     // common funciton

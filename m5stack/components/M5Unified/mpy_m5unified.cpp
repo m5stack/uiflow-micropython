@@ -38,7 +38,7 @@ const pwr_obj_t m5_imu     = {&mp_imu_type,       &(M5.Imu)    };
       btn_obj_t m5_btnC    = {&mp_btn_type,       &(M5.BtnC)   };
       btn_obj_t m5_btnPWR  = {&mp_btn_type,       &(M5.BtnPWR) };
       btn_obj_t m5_btnEXT  = {&mp_btn_type,       &(M5.BtnEXT) };
-      gfx_obj_t m5_display = {&mp_gfxdevice_type, NULL         };
+      gfx_obj_t m5_display = {&mp_gfxdevice_type, &(M5.Display)};
 
 static btn_obj_t *m5_btn_list[5] = {&m5_btnA, &m5_btnB, &m5_btnC, &m5_btnPWR, &m5_btnEXT};
 /* *FORMAT-ON* */
