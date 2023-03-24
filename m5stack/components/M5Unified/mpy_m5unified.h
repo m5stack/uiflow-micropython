@@ -14,6 +14,7 @@
 
 extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);
+extern mp_obj_t m5_end(void);
 extern mp_obj_t m5_getBoard(void);
 extern mp_obj_t m5_getDisplayCount(void);
 

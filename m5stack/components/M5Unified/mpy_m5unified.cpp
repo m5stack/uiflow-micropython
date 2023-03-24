@@ -26,8 +26,8 @@ extern "C"
 #include "mpy_m5unified.h"
 #include "mphalport.h"
 
-static void m5_btns_callbacks_init(void);
 static void m5_btns_callbacks_check(void);
+static void m5_btns_callbacks_deinit(void);
 
 /* *FORMAT-OFF* */
 const spk_obj_t m5_speaker = {&mp_spk_type,       &(M5.Speaker)};
@@ -58,7 +58,6 @@ mp_obj_t m5_begin(void) {
     // set default font to DejaVu9, keep same style with UIFlow website UI design.
     M5.Display.setTextFont(&fonts::DejaVu9);
 
-    m5_btns_callbacks_init();
     return mp_const_none;
 }
 
@@ -66,6 +65,11 @@ mp_obj_t m5_update(void) {
     M5.update();
 
     m5_btns_callbacks_check();
+    return mp_const_none;
+}
+
+mp_obj_t m5_end(void) {
+    m5_btns_callbacks_deinit();
     return mp_const_none;
 }
 
@@ -107,13 +111,6 @@ mp_obj_t m5_setPrimaryDisplayType(mp_obj_t type) {
 }
 
 /****************************Button Callback handler***************************/
-static void m5_btns_callbacks_init(void) {
-    // clear all callback flag bit
-    for (uint8_t i = 0; i < 5; i++) {
-        m5_btn_list[i]->callbacks.flag = 0;
-    }
-}
-
 static void m5_btns_callbacks_check(void) {
     // mp_hal_wake_main_task_from_isr();
     for (uint8_t i = 0; i < 5; i++) {
@@ -121,13 +118,6 @@ static void m5_btns_callbacks_check(void) {
             if (m5_btn_list[i]->callbacks.flag_bit.wasClicked) {
                 if (((m5::Button_Class *)(m5_btn_list[i]->btn))->wasClicked()) {
                     mp_sched_schedule(m5_btn_list[i]->callbacks.wasClicked_cb,
-                        mp_obj_new_int(((m5::Button_Class *)(m5_btn_list[i]->btn))->getState()));
-                }
-            }
-
-            if (m5_btn_list[i]->callbacks.flag_bit.wasSingleClicked) {
-                if (((m5::Button_Class *)(m5_btn_list[i]->btn))->wasSingleClicked()) {
-                    mp_sched_schedule(m5_btn_list[i]->callbacks.wasSingleClicked_cb,
                         mp_obj_new_int(((m5::Button_Class *)(m5_btn_list[i]->btn))->getState()));
                 }
             }
@@ -160,6 +150,13 @@ static void m5_btns_callbacks_check(void) {
                 }
             }
         }
+    }
+}
+
+static void m5_btns_callbacks_deinit(void) {
+    // clear all callback flag bit
+    for (uint8_t i = 0; i < 5; i++) {
+        m5_btn_list[i]->callbacks.flag = 0;
     }
 }
 
