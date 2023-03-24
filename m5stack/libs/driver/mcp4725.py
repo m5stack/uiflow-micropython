@@ -71,11 +71,11 @@ class MCP4725:
 
     def get_voltage(self) -> float:
         raw_value = self._read()
-        return (raw_value / 4095.0) * 3.3
+        return (raw_value / 4095.0) * 5.0
 
     def set_voltage(self, val: float) -> None:
         assert 0.0 <= val <= 3.3
-        raw_value = int(val / 3.3 * 4095.0)
+        raw_value = int(val / 3.3 * 4095.0 * (3.3 / 5.0))
         self._write_fast_mode(raw_value)
 
     def get_raw_value(self) -> int:
