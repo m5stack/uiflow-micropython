@@ -64,11 +64,11 @@ namespace m5
         return mp_const_none;
     }
     mp_obj_t btn_setCallback(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-        enum {ARG_type, ARG_callback};
+        enum {ARG_type, ARG_cb};
         /* *FORMAT-OFF* */
         const mp_arg_t allowed_args[] = {
-            { MP_QSTR_type, MP_ARG_INT     | MP_ARG_REQUIRED, {.u_int = 0 } },
-            { MP_QSTR_callback, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+            { MP_QSTR_type, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = -1 } },
+            { MP_QSTR_cb,   MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -78,33 +78,64 @@ namespace m5
         {
             case BTN_TYPE_WAS_CLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = args[ARG_callback].u_obj;
-                break;
-            case BTN_TYPE_WAS_SINGLECLICKED:
-                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasSingleClicked = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasSingleClicked_cb = args[ARG_callback].u_obj;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_DOUBLECLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = args[ARG_callback].u_obj;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_HOLD:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasHold = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = args[ARG_callback].u_obj;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_PRESSED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasPressed = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = args[ARG_callback].u_obj;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_RELEASED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasReleased = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = args[ARG_callback].u_obj;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = args[ARG_cb].u_obj;
                 break;
-
             default:
                 break;
         }
+        return mp_const_none;
+    }
+    mp_obj_t btn_removeCallback(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+        enum {ARG_type};
+        /* *FORMAT-OFF* */
+        const mp_arg_t allowed_args[] = {
+            { MP_QSTR_type, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = -1 } },
+        };
+        /* *FORMAT-ON* */
+        mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+        mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
+        switch ((btn_cb_type_t)args[ARG_type].u_int)
+        {
+            case BTN_TYPE_WAS_CLICKED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 0;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = NULL;
+                break;
+            case BTN_TYPE_WAS_DOUBLECLICKED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 0;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = NULL;
+                break;
+            case BTN_TYPE_WAS_HOLD:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasHold = 0;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = NULL;
+                break;
+            case BTN_TYPE_WAS_PRESSED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasPressed = 0;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = NULL;
+                break;
+            case BTN_TYPE_WAS_RELEASED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasReleased = 0;
+                ((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = NULL;
+                break;
+            default:
+                break;
+        }
         return mp_const_none;
     }
 }

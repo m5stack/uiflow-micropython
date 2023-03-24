@@ -22,12 +22,15 @@ class MCP4725:
     # Note this is not thread-safe or re-entrant by design!
     _BUFFER = bytearray(3)
 
-    def __init__(self, i2c: I2C, address: int = _MCP4725_DEFAULT_ADDRESS) -> None:
+    def __init__(self, i2c: I2C, address: int=_MCP4725_DEFAULT_ADDRESS, vdd: float=5.0, vout: float=3.3) -> None:
         # This device doesn't use registers and instead just accepts a single
         # command string over I2C.  As a result we don't use bus device or
         # other abstractions and just talk raw I2C protocol.
         self._i2c = i2c
         self._addr = address
+        self._vdd = vdd
+        self._vout = vout
+        self._max_value = int(4095 * (vout / vdd))
 
     def _write_fast_mode(self, val: int) -> None:
         # Perform a 'fast mode' write to update the DAC value.
@@ -61,12 +64,21 @@ class MCP4725:
         """
         raw_value = self._read()
         # Scale up to 16-bit range.
-        return raw_value << 4
+        return int(raw_value / self._max_value * 65535)
 
     def set_value(self, val: int) -> None:
         assert 0 <= val <= 65535
         # Scale from 16-bit to 12-bit value (quantization errors will occur!).
-        raw_value = val >> 4
+        raw_value = int(self._max_value * (val / 65535))
+        self._write_fast_mode(raw_value)
+
+    def get_voltage(self) -> float:
+        raw_value = self._read()
+        return (raw_value / 4095.0) * self._vdd
+
+    def set_voltage(self, val: float) -> None:
+        assert 0.0 <= val <= 3.3
+        raw_value = int(val / self._vdd * 4095.0)
         self._write_fast_mode(raw_value)
 
     def get_raw_value(self) -> int:
@@ -80,11 +92,11 @@ class MCP4725:
 
     def get_normalized_value(self) -> float:
         """The DAC value as a floating point number in the range 0.0 to 1.0."""
-        return self._read() / 4095.0
+        return self._read() / self._max_value
 
     def set_normalized_value(self, val: float) -> None:
         assert 0.0 <= val <= 1.0
-        raw_value = int(val * 4095.0)
+        raw_value = int(val * self._max_value)
         self._write_fast_mode(raw_value)
 
     def save_to_eeprom(self) -> None:
@@ -97,7 +109,7 @@ class MCP4725:
         self._i2c.writeto(self._addr, self._BUFFER)
         # wait for EEPROM write to complete
         buf = memoryview(self._BUFFER)[0:1]
-        buf = 0x00
+        buf[0] = 0x00
         while not buf[0] & 0x80:
             time.sleep(0.05)
             self._i2c.readfrom_into(self._addr, buf)

@@ -3,7 +3,6 @@
 STATIC const mp_rom_map_elem_t btn_callback_types_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_WAS_CLICKED),       MP_ROM_INT(BTN_TYPE_WAS_CLICKED) },
-    { MP_ROM_QSTR(MP_QSTR_WAS_SINGLECLICKED), MP_ROM_INT(BTN_TYPE_WAS_SINGLECLICKED) },
     { MP_ROM_QSTR(MP_QSTR_WAS_DOUBLECLICKED), MP_ROM_INT(BTN_TYPE_WAS_DOUBLECLICKED) },
     { MP_ROM_QSTR(MP_QSTR_WAS_HOLD),          MP_ROM_INT(BTN_TYPE_WAS_HOLD) },
     { MP_ROM_QSTR(MP_QSTR_WAS_PRESSED),       MP_ROM_INT(BTN_TYPE_WAS_PRESSED) },
@@ -37,9 +36,10 @@ MAKE_METHOD_1(btn, releasedFor);
 MAKE_METHOD_1(btn, setDebounceThresh);
 MAKE_METHOD_1(btn, setHoldThresh);
 MAKE_METHOD_KW(btn, setCallback, 1);
+MAKE_METHOD_KW(btn, removeCallback, 1);
 
 STATIC const mp_rom_map_elem_t btn_member_table[] = {
-    { MP_ROM_QSTR(MP_QSTR_CALLBACK_TYPE), MP_ROM_PTR(&mp_btn_cb_type) },
+    { MP_ROM_QSTR(MP_QSTR_CB_TYPE), MP_ROM_PTR(&mp_btn_cb_type) },
     MAKE_TABLE(btn, isHolding),
     MAKE_TABLE(btn, isPressed),
     MAKE_TABLE(btn, isReleased),
@@ -58,6 +58,7 @@ STATIC const mp_rom_map_elem_t btn_member_table[] = {
     MAKE_TABLE(btn, setDebounceThresh),
     MAKE_TABLE(btn, setHoldThresh),
     MAKE_TABLE(btn, setCallback),
+    MAKE_TABLE(btn, removeCallback),
 };
 STATIC MP_DEFINE_CONST_DICT(btn_member, btn_member_table);
 

@@ -85,6 +85,59 @@ class TCS3472:
         blue  = min(blue,  255)
         return (red, green, blue)
 
+    def get_color_r(self) -> int:
+        r, _, _, clear = self.get_color_raw()
+        # Avoid divide by zero errors ... if clear = 0 return black
+        if clear == 0:
+            return 0
+        red   = int(pow((int((r / clear) * 256) / 255), 2.5) * 255)
+        return min(red,   255)
+
+    def get_color_g(self) -> int:
+        _, g, _, clear = self.get_color_raw()
+        # Avoid divide by zero errors ... if clear = 0 return black
+        if clear == 0:
+            return 0
+        green = int(pow((int((g / clear) * 256) / 255), 2.5) * 255)
+        return min(green, 255)
+
+    def get_color_b(self) -> int:
+        _, _, b, clear = self.get_color_raw()
+        # Avoid divide by zero errors ... if clear = 0 return black
+        if clear == 0:
+            return 0
+        blue  = int(pow((int((b / clear) * 256) / 255), 2.5) * 255)
+        return min(blue, 255)
+
+    def get_color_h(self) -> int:
+        rgb = self.get_color_rgb_bytes()
+        c_max = max(rgb[0], rgb[1], rgb[2])
+        c_min = min(rgb[0], rgb[1], rgb[2])
+        if c_max == c_min:
+            return 0
+        elif c_max == rgb[0] and rgb[1] >= rgb[2]:
+            return int(60 * ((rgb[1] - rgb[2]) / (c_max) - (c_min)))
+        elif c_max == rgb[0] and rgb[1] < rgb[2]:
+            return int(60 * ((rgb[1] - rgb[2]) / (c_max - c_min))) + 360
+        elif c_max == rgb[1]:
+            return int(60 * ((rgb[2] - rgb[0]) / (c_max - c_min))) + 120
+        elif c_max == rgb[2]:
+            return int(60 * ((rgb[0] - rgb[1]) / (c_max - c_min))) + 240
+
+    def get_color_s(self) -> float:
+        rgb = self.get_color_rgb_bytes()
+        c_max = max(rgb[0], rgb[1], rgb[2])
+        c_min = min(rgb[0], rgb[1], rgb[2])
+        if c_max == 0:
+            return 0
+        else:
+            return (1.0 - c_min / c_max)
+
+    def get_color_v(self) -> float:
+        rgb = self.get_color_rgb_bytes()
+        c_max = max(rgb[0], rgb[1], rgb[2])
+        return c_max / 255
+
     def get_color(self):
         """Read the RGB color detected by the sensor. Returns an int with 8 bits per channel.
         Examples: Red = 16711680 (0xff0000), Green = 65280 (0x00ff00),
