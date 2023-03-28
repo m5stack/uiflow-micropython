@@ -34,7 +34,7 @@ class Pin:
             self._port.digit_write(self._id, value)
 
     def init(self, mode: int=-1, value=None):
-        self._port.set_pin_mode(self._id, self._mode)
+        self._port.set_pin_mode(self._id, mode)
         if value is not None:
             self._port.digit_write(self._id, value)
 
