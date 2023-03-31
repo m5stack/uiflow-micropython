@@ -6,3 +6,4 @@ from .tof import *
 from .adc import *
 from .dac import *
 from .extio import *
+from .earth import *
