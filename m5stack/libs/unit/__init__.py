@@ -8,3 +8,4 @@ from .dac import *
 from .extio import *
 from .earth import *
 from .angle import *
+from .rgb import *
