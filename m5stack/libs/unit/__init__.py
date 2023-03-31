@@ -9,3 +9,4 @@ from .extio import *
 from .earth import *
 from .angle import *
 from .rgb import *
+from .extio2 import EXTIO2
