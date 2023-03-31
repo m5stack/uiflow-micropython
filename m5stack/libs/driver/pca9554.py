@@ -82,6 +82,12 @@ class Pin:
         elif len(args) == 1:
             self._port.digit_write(self._id, args[0])
 
+    def on(self):
+        self._port.digit_write(self._id, 1)
+
+    def off(self):
+        self._port.digit_write(self._id, 0)
+
 class PCA9554:
     IN  = 0x01
     OUT = 0x00
