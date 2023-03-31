@@ -34,7 +34,7 @@ class Pin:
             self._port.digit_write(self._id, value)
 
     def init(self, mode: int=-1, value=None):
-        self._port.set_pin_mode(self._id, self._mode)
+        self._port.set_pin_mode(self._id, mode)
         if value is not None:
             self._port.digit_write(self._id, value)
 
@@ -81,6 +81,12 @@ class Pin:
             return self._port.digit_read(self._id)
         elif len(args) == 1:
             self._port.digit_write(self._id, args[0])
+
+    def on(self):
+        self._port.digit_write(self._id, 1)
+
+    def off(self):
+        self._port.digit_write(self._id, 0)
 
 class PCA9554:
     IN  = 0x01
