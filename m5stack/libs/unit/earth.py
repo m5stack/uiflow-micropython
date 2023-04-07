@@ -3,7 +3,7 @@ try:
 except ImportError:
     pass
 
-class Earth:
+class EarthBase:
     def __init__(self, aim, dim) -> None:
         self._aim = ADC(Pin(aim), atten=ADC.ATTN_11DB)
         self._dim = Pin(dim, mode=Pin.IN)
@@ -43,3 +43,8 @@ class Earth:
 
     def get_digital_value(self):
         return self._dim()
+
+class Earth(EarthBase):
+
+    def __init__(self, port):
+        super().__init__(port[0], port[1])

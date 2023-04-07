@@ -6,7 +6,10 @@ from .tof import *
 from .adc import *
 from .dac import *
 from .extio import *
-from .earth import *
+from .earth import Earth
 from .angle import *
-from .rgb import *
+from .rgb import RGB
 from .extio2 import EXTIO2
+from .finger import Finger
+from .pir import PIR
+from .ir import IR
