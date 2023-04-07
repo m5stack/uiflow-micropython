@@ -47,4 +47,4 @@ class EarthBase:
 class Earth(EarthBase):
 
     def __init__(self, port):
-        super.__init__(port[0], port[1])
+        super().__init__(port[0], port[1])
