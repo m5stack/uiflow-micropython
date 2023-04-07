@@ -11,3 +11,4 @@ from .angle import *
 from .rgb import RGB
 from .extio2 import EXTIO2
 from .finger import Finger
+from .pir import PIR
