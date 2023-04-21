@@ -4,27 +4,27 @@ from M5 import UserDisplay, Widgets
 
 user_lcd = UserDisplay(
     # LCD type
-    panel_type=UserDisplay.PANEL.GC9A01,
+    panel=UserDisplay.PANEL.GC9A01,
     # resolution
-    width=240,
-    height=240,
-    offset_x=0,
-    offset_y=0,
+    w=240,
+    h=240,
+    ox=0,
+    oy=0,
     # color order
     invert=True,
-    rgb_order=False,
+    rgb=False,
     # SPI bus
     spi_host=2,
     spi_freq=40,
-    pin_sclk=6,
-    pin_mosi=5,
-    pin_miso=-1,
-    pin_dc=4,
-    pin_cs=7,
-    pin_rst=8,
-    pin_busy=-1,
+    sclk=6,
+    mosi=5,
+    miso=-1,
+    dc=4,
+    cs=7,
+    rst=8,
+    busy=-1,
     # backlight
-    pin_bl=9,
+    bl=9,
     bl_invert=False,
     bl_pwm_freq=44100,
     bl_pwm_chn=7,
