@@ -1,14 +1,15 @@
 from driver.ir.nec import NEC, NEC_8
 from machine import Pin
 
-class IR():
+
+class IR:
     # def __new__(cls, port, proto):
     #     if proto.upper() == "NEC":
     #         return NEC(Pin(port[1], Pin.IN))
 
     def __init__(self, port) -> None:
         self._port = port
-        self._transmitter = NEC(Pin(self._port[1], Pin.OUT, value = 0))
+        self._transmitter = NEC(Pin(self._port[1], Pin.OUT, value=0))
         self._receiver = None
 
     def tx(self, cmd, data):

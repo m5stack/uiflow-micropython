@@ -43,8 +43,9 @@ _UART_SERVICE = (
     (_UART_TX, _UART_RX),
 )
 
+
 class BLEUARTClient:
-    def __init__(self, verbose = False):
+    def __init__(self, verbose=False):
         self._verbose = verbose
         self._ble = bluetooth.BLE()
         self._ble.active(True)
@@ -85,9 +86,7 @@ class BLEUARTClient:
         if event == _IRQ_SCAN_RESULT:
             self._verbose and print("Scan result")
             addr_type, addr, adv_type, rssi, adv_data = data
-            if adv_type in (_ADV_IND, _ADV_DIRECT_IND) and _UART_UUID in decode_services(
-                adv_data
-            ):
+            if adv_type in (_ADV_IND, _ADV_DIRECT_IND) and _UART_UUID in decode_services(adv_data):
                 # Found a potential device, remember it and stop scanning.
                 self._addr_type = addr_type
                 self._addr = bytes(
@@ -179,9 +178,11 @@ class BLEUARTClient:
 
     # Returns true if we've successfully connected and discovered characteristics.
     def is_connected(self):
-        return (self._conn_handle is not None and
-                self._rx_handle is not None and
-                self._tx_handle is not None)
+        return (
+            self._conn_handle is not None
+            and self._rx_handle is not None
+            and self._tx_handle is not None
+        )
 
     # Find a device advertising the environmental sensor service.
     def scan(self, callback=None):

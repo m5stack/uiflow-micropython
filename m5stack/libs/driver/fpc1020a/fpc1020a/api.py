@@ -1,4 +1,3 @@
-
 from machine import UART
 from micropython import const
 
@@ -17,7 +16,8 @@ import binascii
 
 from . import types as t
 
-class CommandId():
+
+class CommandId:
     SLEEP = const(0x2C)
     ADD_MODE = const(0x2D)
     ADD_1 = const(0x01)
@@ -38,6 +38,7 @@ class CommandId():
     UPLOAD_USER_INFO = const(0x41)
     UPLOAD_CHARACTERISTIC = const(0x44)
     GET_UNREGISTERED_USER_ID = const(0x47)
+
 
 COMMANDS = {
     CommandId.SLEEP: (t.uint8_t, t.uint8_t, t.uint8_t, t.uint8_t),
@@ -85,9 +86,10 @@ RESPONSES = {
     CommandId.GET_UNREGISTERED_USER_ID: (t.uint16_t, t.uint8_t, t.uint8_t),
 }
 
+
 class FPC1020A:
-    _START = b'\xF5'
-    _END = b'\xF5'
+    _START = b"\xF5"
+    _END = b"\xF5"
 
     _ACK_SUCCESS = 0x00
     _ACK_FAIL = 0x01
@@ -112,19 +114,19 @@ class FPC1020A:
             raise RuntimeError("FPC1020A not found")
 
     def sleep(self) -> bool:
-        '''After calling this method successfully, FPC1020A will not be able to
+        """After calling this method successfully, FPC1020A will not be able to
         respond to any messages.
-        '''
+        """
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.SLEEP])
         rxcmd, _, rest = self.command(CommandId.SLEEP, data)
         if rest == True and rxcmd == CommandId.SLEEP:
             return True
 
     def get_add_mode(self) -> int:
-        '''In the no-repeat mode, only one user can be added with the same
+        """In the no-repeat mode, only one user can be added with the same
         finger, and an error message will be returned if the second round of
         adding is forced.
-        '''
+        """
         data = t.serialize([0, 0, 1, 0], COMMANDS[CommandId.ADD_MODE])
         rxcmd, rxdata, rest = self.command(CommandId.ADD_MODE, data)
         if rest == True and rxcmd == CommandId.ADD_MODE:
@@ -143,11 +145,7 @@ class FPC1020A:
         return self._add_mode
 
     def _add(
-        self,
-        cmd: Literal[1, 2, 3],
-        id: int,
-        permission: Literal[1, 2, 3],
-        timeout=5000
+        self, cmd: Literal[1, 2, 3], id: int, permission: Literal[1, 2, 3], timeout=5000
     ) -> bool:
         data = t.serialize([id, permission, 0], COMMANDS[cmd])
         rxcmd, rxdata, rest = self.command(cmd, data, timeout)
@@ -158,10 +156,10 @@ class FPC1020A:
         return False
 
     def add_user(self, id: int, permission: Literal[1, 2, 3]) -> int:
-        '''add new user
+        """add new user
 
         After calling this method, you need to put your finger on the fingerprint module.
-        '''
+        """
         rest = self._add(1, id, permission)
         if rest == True:
             for _ in range(4):
@@ -174,7 +172,7 @@ class FPC1020A:
             return -1
 
     def delete_user(self, id: int) -> int:
-        '''Delete the user with the specified id.'''
+        """Delete the user with the specified id."""
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.DELETE_USER])
         rxcmd, rxdata, rest = self.command(CommandId.DELETE_USER, data)
         if rest == True and rxcmd == CommandId.DELETE_USER:
@@ -184,7 +182,7 @@ class FPC1020A:
             return -1
 
     def delete_all_user(self) -> bool:
-        '''Delete all users.'''
+        """Delete all users."""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.DELETE_ALL_USER])
         rxcmd, rxdata, rest = self.command(CommandId.DELETE_ALL_USER, data)
         if rest == True and rxcmd == CommandId.DELETE_ALL_USER:
@@ -194,11 +192,11 @@ class FPC1020A:
             return False
 
     def get_user_count(self) -> int:
-        '''Get registered users'''
+        """Get registered users"""
         return self._get_user_count(False)
 
     def get_user_capacity(self) -> int:
-        '''Get user capacity'''
+        """Get user capacity"""
         return self._get_user_count(True)
 
     def _get_user_count(self, is_cap) -> int:
@@ -213,9 +211,9 @@ class FPC1020A:
             return -1
 
     def compare_id(self, id, timeout=5000) -> bool:
-        '''Check whether the currently collected fingerprint matches
+        """Check whether the currently collected fingerprint matches
         the specified user id.
-        '''
+        """
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.MATCH_1])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_1, data, timeout)
         if rest == True and rxcmd == CommandId.MATCH_1:
@@ -225,7 +223,7 @@ class FPC1020A:
             return False
 
     def compare_finger(self, timeout=5000) -> int:
-        '''Detect whether the currently collected fingerprint is a registered user.'''
+        """Detect whether the currently collected fingerprint is a registered user."""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.MATCH_N])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_N, data, timeout)
         if rest == True and rxcmd == CommandId.MATCH_N:
@@ -252,7 +250,7 @@ class FPC1020A:
         user_count, _ = t.deserialize(rxdata[0:2], (t.uint16_t,))
         for i in range(int(user_count[0])):
             pos = 2 + i * 3
-            r, _ = t.deserialize(rxdata[pos:pos + 3], (t.uint16_t, t.uint8_t))
+            r, _ = t.deserialize(rxdata[pos : pos + 3], (t.uint16_t, t.uint8_t))
             infos.append((int(r[0])))
         return infos
 
@@ -282,18 +280,15 @@ class FPC1020A:
 
     def get_user_characteristic(self, id: int) -> bytes:
         info = self.get_user_info(id)
-        return info[2] if info != None else b''
+        return info[2] if info != None else b""
 
     def add_user_info(self, id, permissions, characteristic, timeout=5000) -> bool:
-        '''Register a new user with FPC1020A.'''
+        """Register a new user with FPC1020A."""
         head = t.serialize([196, 0, 0], COMMANDS[CommandId.UPLOAD_USER_INFO])
         data = t.serialize([id, permissions], (t.uint16_t, t.uint8_t))
         data += characteristic
         rxcmd, rxdata, rest = self.command_ext(
-            CommandId.UPLOAD_USER_INFO,
-            head,
-            data,
-            timeout=timeout
+            CommandId.UPLOAD_USER_INFO, head, data, timeout=timeout
         )
         if rest != True or rxcmd != CommandId.UPLOAD_USER_INFO:
             return False
@@ -302,7 +297,7 @@ class FPC1020A:
         return True if r[1] == self._ACK_SUCCESS else False
 
     def capture_characteristic(self, timeout=5000):
-        img = b''
+        img = b""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.CAPTURE_CHARACTERISTIC])
         rxcmd, rxdata, rest = self.command(CommandId.CAPTURE_CHARACTERISTIC, data, timeout=timeout)
         if rest != True or rxcmd != CommandId.CAPTURE_CHARACTERISTIC:
@@ -318,9 +313,9 @@ class FPC1020A:
         return info[3]
 
     def get_match_level(self) -> int:
-        '''The comparison level ranges from 0 to 9, the larger the value,
+        """The comparison level ranges from 0 to 9, the larger the value,
         the stricter the comparison, and the default value is 5.
-        '''
+        """
         data = t.serialize([0, 0, 1, 0], COMMANDS[CommandId.MATCH_LEVEL])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_LEVEL, data)
         if rest == True and rxcmd == CommandId.MATCH_LEVEL:
@@ -339,7 +334,7 @@ class FPC1020A:
         return self._match_level
 
     def get_version(self) -> str:
-        '''Get the version information of FPC1020A'''
+        """Get the version information of FPC1020A"""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.GET_VERSION])
         rxcmd, rxdata, rest = self.command(CommandId.GET_VERSION, data)
         if rest != True or rxcmd != CommandId.GET_VERSION:
@@ -353,19 +348,19 @@ class FPC1020A:
             return ""
         return rxdata[:8].decode()
 
-    def capture_raw_img(self, file_name: str, hd: bool=False) -> bytes:
-        '''TODO: 保存到文件'''
+    def capture_raw_img(self, file_name: str, hd: bool = False) -> bytes:
+        """TODO: 保存到文件"""
         data = t.serialize([0, 0, 0x20 if hd else 0, 0], COMMANDS[CommandId.CAPTURE_RAW_IMG])
         rxcmd, rxdata, rest = self.command(CommandId.CAPTURE_RAW_IMG, data)
         if rest != True or rxcmd != CommandId.CAPTURE_RAW_IMG:
-            return b''
+            return b""
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.CAPTURE_RAW_IMG])
         if r[1] != self._ACK_SUCCESS:
-            return b''
+            return b""
 
         rxdata, rest = self._receive(timeout=100000)
         if rest != True or int(r[0]) != len(rxdata):
-            return b''
+            return b""
         return rxdata
 
     def upload_characteristic(self, characteristic: bytes, timeout=5000) -> bool:
@@ -373,10 +368,7 @@ class FPC1020A:
         data = t.serialize([0, 0, 0], (t.uint8_t, t.uint8_t, t.uint8_t))
         data += characteristic
         rxcmd, rxdata, rest = self.command_ext(
-            CommandId.UPLOAD_CHARACTERISTIC,
-            head,
-            data,
-            timeout=timeout
+            CommandId.UPLOAD_CHARACTERISTIC, head, data, timeout=timeout
         )
         if rest != True or rxcmd != CommandId.UPLOAD_CHARACTERISTIC:
             return False
@@ -385,7 +377,7 @@ class FPC1020A:
         return True if r[1] == self._ACK_SUCCESS else False
 
     def get_unregistered_user_id(self):
-        '''FIXME'''
+        """FIXME"""
         head = t.serialize([4, 0, 0], COMMANDS[CommandId.GET_UNREGISTERED_USER_ID])
         data = t.serialize([0, 150], (t.uint16_t, t.uint16_t))
         rxcmd, rxdata, rest = self.command_ext(CommandId.GET_UNREGISTERED_USER_ID, head, data)
@@ -395,60 +387,56 @@ class FPC1020A:
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.GET_UNREGISTERED_USER_ID])
         return int(r[0]) if r[1] == self._ACK_SUCCESS else -1
 
-    def command(self, cmd, data=b'', timeout=5000):
+    def command(self, cmd, data=b"", timeout=5000):
         self._send(cmd, data)
         rxdata, rest = self._receive(timeout=timeout)
         if rest != True:
-            return 0, b'', False
+            return 0, b"", False
 
-        cmd, data = struct.unpack('>B%ds' % (len(rxdata) - 1), rxdata)
+        cmd, data = struct.unpack(">B%ds" % (len(rxdata) - 1), rxdata)
         return cmd, data, True
 
     def command_ext(self, cmd, head, data, timeout=1000):
         checksum = self._checksum(cmd, head)
-        frame = struct.pack('sB%dsBs' % len(head),
-            self._START, cmd, head, checksum, self._END)
+        frame = struct.pack("sB%dsBs" % len(head), self._START, cmd, head, checksum, self._END)
         checksum = self._checksum(data)
-        frame += struct.pack('s%dsBs' % len(data),
-            self._START, data, checksum, self._END)
-        self._verbose and print('Frame to send: %s' % (binascii.hexlify(frame)))
+        frame += struct.pack("s%dsBs" % len(data), self._START, data, checksum, self._END)
+        self._verbose and print("Frame to send: %s" % (binascii.hexlify(frame)))
         txdata = memoryview(frame)
         pos = 0
         while pos < len(frame):
-            rest = self._uart.write(txdata[pos:pos + 32])
+            rest = self._uart.write(txdata[pos : pos + 32])
             if rest is None:
                 break
             pos += rest
 
         rxdata, rest = self._receive(timeout=timeout)
         if rest != True:
-            return 0, b'', False
+            return 0, b"", False
 
-        cmd, data = struct.unpack('>B%ds' % (len(rxdata) - 1), rxdata)
+        cmd, data = struct.unpack(">B%ds" % (len(rxdata) - 1), rxdata)
         return cmd, data, True
 
-    def _send(self, cmd, data=b''):
+    def _send(self, cmd, data=b""):
         checksum = self._checksum(cmd, data)
-        frame = struct.pack('sB%dsBs' % len(data),
-            self._START, cmd, data, checksum, self._END)
-        self._verbose and print('Frame to send: %s' % (binascii.hexlify(frame)))
+        frame = struct.pack("sB%dsBs" % len(data), self._START, cmd, data, checksum, self._END)
+        self._verbose and print("Frame to send: %s" % (binascii.hexlify(frame)))
         self._uart.write(frame)
 
     def _send_data(self, data):
         checksum = self._checksum(data)
-        frame = struct.pack('s%dsBs' % len(data),
-            self._START, data, checksum, self._END)
-        self._verbose and print('Frame to send: %s' % (binascii.hexlify(frame)))
+        frame = struct.pack("s%dsBs" % len(data), self._START, data, checksum, self._END)
+        self._verbose and print("Frame to send: %s" % (binascii.hexlify(frame)))
         txdata = memoryview(frame)
         pos = 0
         while pos < len(frame):
-            rest = self._uart.write(txdata[pos:pos + 32])
+            rest = self._uart.write(txdata[pos : pos + 32])
             if rest is None:
                 break
             pos += rest
 
-    def _receive(self, length: int=8, timeout=1000):
-        _buffer = b''
+    def _receive(self, length: int = 8, timeout=1000):
+        _buffer = b""
         startpos = -1
         endpos = -1
         count = timeout
@@ -471,19 +459,16 @@ class FPC1020A:
         if startpos != -1 and endpos != -1:
             self._verbose and print("Recv buffer: %s" % binascii.hexlify(_buffer))
             frame = _buffer[startpos + 1 : endpos]
-            rxdata, checksum = struct.unpack(
-                '>%dsB' % (len(frame) - 1),
-                frame
-            )
+            rxdata, checksum = struct.unpack(">%dsB" % (len(frame) - 1), frame)
             if self._checksum(rxdata) != checksum:
-                self._verbose and print("Invalid checksum: %s, data: 0x%s" % (
-                    checksum, binascii.hexlify(frame))
+                self._verbose and print(
+                    "Invalid checksum: %s, data: 0x%s" % (checksum, binascii.hexlify(frame))
                 )
-                return b'', False
+                return b"", False
             return rxdata, True
         else:
             self._verbose and print("Malformed packet received, ignore it")
-            return b'', False
+            return b"", False
 
     def _checksum(self, *args):
         chcksum = 0

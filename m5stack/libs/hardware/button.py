@@ -1,12 +1,14 @@
 from driver.button import Button as ButtonBase
 from machine import Pin
 
+
 class CB_TYPE:
     WAS_CLICKED = 0
     WAS_DOUBLECLICKED = 1
     WAS_HOLD = 2
     WAS_PRESSED = 3
     WAS_RELEASED = 4
+
 
 class Button(ButtonBase):
     WAS_CLICKED = 0
@@ -23,10 +25,14 @@ class Button(ButtonBase):
         return super().last_state == super().current_state and super().last_state == super().HOLD
 
     def isPressed(self):
-        return super().last_state == super().current_state and super().last_state == super().PRESSED
+        return (
+            super().last_state == super().current_state and super().last_state == super().PRESSED
+        )
 
     def isReleased(self):
-        return super().last_state == super().current_state and super().last_state == super().RELEASED
+        return (
+            super().last_state == super().current_state and super().last_state == super().RELEASED
+        )
 
     def wasHold(self):
         return super().last_state == super().HOLD

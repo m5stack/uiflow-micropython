@@ -3,8 +3,8 @@ from extio2 import EXTIO2
 import unittest
 import time
 
-class TestEXTIO2(unittest.TestCase):
 
+class TestEXTIO2(unittest.TestCase):
     def __init__(self):
         i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
         self._extio2_0 = EXTIO2(i2c0)
@@ -67,6 +67,6 @@ class TestEXTIO2(unittest.TestCase):
         self._extio2_0.set_address(0x45)
         self.assertEqual(result, 0x12)
 
-if __name__ == '__main__':
-    unittest.main()
 
+if __name__ == "__main__":
+    unittest.main()

@@ -41,7 +41,9 @@ class BLEUARTServer:
         self._rx_buffer = bytearray()
         self._handler = None
         # Optionally add services=[_UART_UUID], but this is likely to make the payload too large.
-        self._payload = advertising_payload(name=name, services=[_UART_UUID], appearance=_ADV_APPEARANCE_GENERIC_COMPUTER)
+        self._payload = advertising_payload(
+            name=name, services=[_UART_UUID], appearance=_ADV_APPEARANCE_GENERIC_COMPUTER
+        )
         self._advertise()
 
     def irq(self, handler):

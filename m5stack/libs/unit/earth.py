@@ -3,6 +3,7 @@ try:
 except ImportError:
     pass
 
+
 class EarthBase:
     def __init__(self, aim, dim) -> None:
         self._aim = ADC(Pin(aim), atten=ADC.ATTN_11DB)
@@ -11,17 +12,17 @@ class EarthBase:
         self._max = 1630
 
     def set_calibrate(self, min_val, max_val) -> None:
-        '''
+        """
         - ``min_val`` is the voltage value at which the probe just touches the water surface.
         - ``max_val`` is the voltage value at which the probe is fully immersed.
-        '''
+        """
         self._min = min_val
         self._max = max_val
 
     def humidity(self) -> float:
-        '''warn!
+        """warn!
         Humidity is not distributed linearly from 0% to 100%.
-        '''
+        """
         val = self.get_voltage_mv()
         if self._min > self._max:
             if val > self._min:
@@ -44,7 +45,7 @@ class EarthBase:
     def get_digital_value(self):
         return self._dim()
 
-class Earth(EarthBase):
 
+class Earth(EarthBase):
     def __init__(self, port):
         super().__init__(port[0], port[1])
