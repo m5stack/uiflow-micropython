@@ -7,6 +7,7 @@ try:
 except ImportError:
     pass
 
+
 class PIR:
     IRQ_NEGATIVE = const(0)
     IRQ_ACTIVE = const(1)
@@ -14,10 +15,7 @@ class PIR:
     def __init__(self, port: tuple) -> None:
         self._pin = Pin(port[0])
         self._pin.init(mode=self._pin.IN)
-        self._pin.irq(
-            self._callback, 
-            trigger=self._pin.IRQ_FALLING | self._pin.IRQ_RISING
-        )
+        self._pin.irq(self._callback, trigger=self._pin.IRQ_FALLING | self._pin.IRQ_RISING)
         self._handlers = [None, None]
 
     def get_status(self) -> bool:
@@ -30,10 +28,7 @@ class PIR:
         self._pin.irq(None)
 
     def enable_irq(self) -> None:
-        self._pin.irq(
-            self._callback, 
-            trigger=self._pin.IRQ_FALLING | self._pin.IRQ_RISING
-        )
+        self._pin.irq(self._callback, trigger=self._pin.IRQ_FALLING | self._pin.IRQ_RISING)
 
     def _callback(self, pin) -> None:
         trigger = pin()

@@ -22,7 +22,8 @@ dac.set_normalized_value(1.0)  # Use the normalized_value property to set the
 # 0 to 1.0 where 0 is minimum/ground and 1.0 is
 # maximum/Vout.
 
-class Voltage():
+
+class Voltage:
     def __init__(self, start, stop, step):
         self._start = start
         self._stop = stop
@@ -47,6 +48,7 @@ class Voltage():
                 return x
             else:
                 raise StopIteration
+
 
 # Main loop will go up and down through the range of DAC values forever.
 while True:

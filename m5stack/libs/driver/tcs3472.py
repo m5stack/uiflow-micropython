@@ -3,35 +3,35 @@ from micropython import const
 import time
 
 # Register and command constants:
-_REGISTER_ENABLE   = const(0x00)
-_REGISTER_ATIME    = const(0x01)
-_REGISTER_WTIME    = const(0x03)
-_REGISTER_AILT     = const(0x04)
-_REGISTER_AILTH    = const(0x05)
-_REGISTER_AIHT     = const(0x06)
-_REGISTER_AIHTH    = const(0x07)
-_REGISTER_APERS    = const(0x0C)
-_REGISTER_CONFIG   = const(0x0D)
-_REGISTER_CONTROL  = const(0x0F)
+_REGISTER_ENABLE = const(0x00)
+_REGISTER_ATIME = const(0x01)
+_REGISTER_WTIME = const(0x03)
+_REGISTER_AILT = const(0x04)
+_REGISTER_AILTH = const(0x05)
+_REGISTER_AIHT = const(0x06)
+_REGISTER_AIHTH = const(0x07)
+_REGISTER_APERS = const(0x0C)
+_REGISTER_CONFIG = const(0x0D)
+_REGISTER_CONTROL = const(0x0F)
 _REGISTER_SENSORID = const(0x12)
-_REGISTER_STATUS   = const(0x13)
-_REGISTER_CDATA    = const(0x14)
-_REGISTER_CDATAH   = const(0x15)
-_REGISTER_RDATA    = const(0x16)
-_REGISTER_RDATAH   = const(0x17)
-_REGISTER_GDATA    = const(0x18)
-_REGISTER_GDATAH   = const(0x19)
-_REGISTER_BDATA    = const(0x1A)
-_REGISTER_BDATAH   = const(0x1B)
+_REGISTER_STATUS = const(0x13)
+_REGISTER_CDATA = const(0x14)
+_REGISTER_CDATAH = const(0x15)
+_REGISTER_RDATA = const(0x16)
+_REGISTER_RDATAH = const(0x17)
+_REGISTER_GDATA = const(0x18)
+_REGISTER_GDATAH = const(0x19)
+_REGISTER_BDATA = const(0x1A)
+_REGISTER_BDATAH = const(0x1B)
 
 # Select Command Register. Must write as 1 when addressing COMMAND register.
 _COMMAND_BIT = const(0x80)
 
 # Enable Register Fields
 _ENABLE_AIEN = const(0x10)
-_ENABLE_WEN  = const(0x08)
-_ENABLE_AEN  = const(0x02)
-_ENABLE_PON  = const(0x01)
+_ENABLE_WEN = const(0x08)
+_ENABLE_AEN = const(0x02)
+_ENABLE_PON = const(0x01)
 
 _GAINS = (1, 4, 16, 60)
 _CYCLES = (0, 1, 2, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60)
@@ -40,8 +40,9 @@ _INTEGRATION_TIME_THRESHOLD_HIGH = 614.4
 
 _TCS3472_DEFAULT_ADDR = const(0x29)
 
+
 class TCS3472:
-    def __init__(self, i2c: I2C, address: int=_TCS3472_DEFAULT_ADDR):
+    def __init__(self, i2c: I2C, address: int = _TCS3472_DEFAULT_ADDR):
         self._i2c = i2c
         self._addr = address
         self._active = False
@@ -51,7 +52,7 @@ class TCS3472:
         self.set_glass_attenuation(1.0)
         # Check sensor ID is expectd value.
         sensor_id = self._read_u8(_REGISTER_SENSORID)
-        if sensor_id not in (0x4d, 0x44, 0x10):
+        if sensor_id not in (0x4D, 0x44, 0x10):
             raise RuntimeError("incorrect sensor id({0:#0X})".format(sensor_id))
 
     def get_lux(self):
@@ -75,14 +76,14 @@ class TCS3472:
         # Each color value is normalized to clear, to obtain int values between 0 and 255.
         # A gamma correction of 2.5 is applied to each value as well, first dividing by 255,
         # since gamma is applied to values between 0 and 1
-        red   = int(pow((int((r / clear) * 256) / 255), 2.5) * 255)
+        red = int(pow((int((r / clear) * 256) / 255), 2.5) * 255)
         green = int(pow((int((g / clear) * 256) / 255), 2.5) * 255)
-        blue  = int(pow((int((b / clear) * 256) / 255), 2.5) * 255)
+        blue = int(pow((int((b / clear) * 256) / 255), 2.5) * 255)
 
         # Handle possible 8-bit overflow
-        red   = min(red,   255)
+        red = min(red, 255)
         green = min(green, 255)
-        blue  = min(blue,  255)
+        blue = min(blue, 255)
         return (red, green, blue)
 
     def get_color_r(self) -> int:
@@ -90,8 +91,8 @@ class TCS3472:
         # Avoid divide by zero errors ... if clear = 0 return black
         if clear == 0:
             return 0
-        red   = int(pow((int((r / clear) * 256) / 255), 2.5) * 255)
-        return min(red,   255)
+        red = int(pow((int((r / clear) * 256) / 255), 2.5) * 255)
+        return min(red, 255)
 
     def get_color_g(self) -> int:
         _, g, _, clear = self.get_color_raw()
@@ -106,7 +107,7 @@ class TCS3472:
         # Avoid divide by zero errors ... if clear = 0 return black
         if clear == 0:
             return 0
-        blue  = int(pow((int((b / clear) * 256) / 255), 2.5) * 255)
+        blue = int(pow((int((b / clear) * 256) / 255), 2.5) * 255)
         return min(blue, 255)
 
     def get_color_h(self) -> int:
@@ -131,7 +132,7 @@ class TCS3472:
         if c_max == 0:
             return 0
         else:
-            return (1.0 - c_min / c_max)
+            return 1.0 - c_min / c_max
 
     def get_color_v(self) -> float:
         rgb = self.get_color_rgb_bytes()
@@ -179,32 +180,23 @@ class TCS3472:
         return self._integration_time
 
     def set_integration_time(self, val: float):
-        if (
-            not _INTEGRATION_TIME_THRESHOLD_LOW
-            <= val
-            <= _INTEGRATION_TIME_THRESHOLD_HIGH
-        ):
+        if not _INTEGRATION_TIME_THRESHOLD_LOW <= val <= _INTEGRATION_TIME_THRESHOLD_HIGH:
             raise ValueError(
                 "Integration Time must be between '{0}' and '{1}'".format(
                     _INTEGRATION_TIME_THRESHOLD_LOW, _INTEGRATION_TIME_THRESHOLD_HIGH
                 )
             )
         cycles = int(val / 2.4)
-        self._integration_time = (
-            cycles * 2.4
-        )  # pylint: disable=attribute-defined-outside-init
+        self._integration_time = cycles * 2.4  # pylint: disable=attribute-defined-outside-init
         self._write_u8(_REGISTER_ATIME, 256 - cycles)
 
     def get_gain(self):
-        """The gain of the sensor.  Should be a value of 1, 4, 16, or 60.
-        """
+        """The gain of the sensor.  Should be a value of 1, 4, 16, or 60."""
         return _GAINS[self._read_u8(_REGISTER_CONTROL) & 0x11]
 
     def set_gain(self, val: int):
         if val not in _GAINS:
-            raise ValueError(
-                "Gain should be one of the following values: {0}".format(_GAINS)
-            )
+            raise ValueError("Gain should be one of the following values: {0}".format(_GAINS))
         self._write_u8(_REGISTER_CONTROL, _GAINS.index(val))
 
     def read_interrupt(self):
@@ -248,9 +240,7 @@ class TCS3472:
             self._write_u8(_REGISTER_ENABLE, enable & ~(_ENABLE_AIEN))
         else:
             if val not in _CYCLES:
-                raise ValueError(
-                    "Only the following cycles are permitted: {0}".format(_CYCLES)
-                )
+                raise ValueError("Only the following cycles are permitted: {0}".format(_CYCLES))
             self._write_u8(_REGISTER_ENABLE, enable | _ENABLE_AIEN)
             self._write_u8(_REGISTER_APERS, _CYCLES.index(val))
 
@@ -287,7 +277,7 @@ class TCS3472:
         R, G, B, C = self.get_color_raw()
 
         # Device specific values (DN40 Table 1 in Appendix I)
-        GA = self.get_glass_attenuation() # Glass Attenuation Factor
+        GA = self.get_glass_attenuation()  # Glass Attenuation Factor
         DF = 310.0  # Device Factor
         R_Coef = 0.136  # |
         G_Coef = 1.0  # | used in lux computation

@@ -1,20 +1,26 @@
 from hardware import *
 import time
 
+
 def click_event():
     print("click")
+
 
 def double_click_event():
     print("double_click")
 
+
 def pressed_event():
     print("pressed")
+
 
 def released_event():
     print("released")
 
+
 def hold_event():
     print("hold")
+
 
 b = Button(1, pullup_active=False)
 b.attach_click_event(click_event)

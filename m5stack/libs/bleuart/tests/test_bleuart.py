@@ -22,10 +22,12 @@ def server_demo():
 
     uart.close()
 
+
 def client_demo():
     uart = bleuart.BLEUARTClient(verbose=False)
 
     not_found = False
+
     def on_scan(addr_type, addr, name):
         if addr_type is not None:
             print("Found sensor:", addr_type, addr, name)
@@ -58,5 +60,6 @@ def client_demo():
         pass
 
     uart.close()
+
 
 client_demo()

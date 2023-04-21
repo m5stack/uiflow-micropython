@@ -1,38 +1,43 @@
 try:
     from machine import I2C
 except ImportError:
+
     class I2C:
         pass
+
 
 try:
     from micropython import const
 except ImportError:
+
     def const(expr):
         return expr
+
 
 try:
     from typing_extensions import Literal
 except ImportError:
     pass
 
-_REG_MODE_CH_1                 = const(0x00)
-_REG_OUTPUT_REG_CH_1           = const(0x10)
-_REG_INPUT_REG_CH_1            = const(0x20)
-_REG_ANALOG_INPUT_8B_REG_CH_1  = const(0x30)
+_REG_MODE_CH_1 = const(0x00)
+_REG_OUTPUT_REG_CH_1 = const(0x10)
+_REG_INPUT_REG_CH_1 = const(0x20)
+_REG_ANALOG_INPUT_8B_REG_CH_1 = const(0x30)
 _REG_ANALOG_INPUT_12B_REG_CH_1 = const(0x40)
-_REG_SERVO_ANGLE_8B_REG_CH_1   = const(0x50)
-_REG_SERVO_PULSE_16B_REG_CH_1  = const(0x60)
-_REG_RGB_24B_REG_CH_1          = const(0x70)
-_REG_FW_VERSION                = const(0xFE)
-_REG_ADDR_CONFIG               = const(0xFF)
+_REG_SERVO_ANGLE_8B_REG_CH_1 = const(0x50)
+_REG_SERVO_PULSE_16B_REG_CH_1 = const(0x60)
+_REG_RGB_24B_REG_CH_1 = const(0x70)
+_REG_FW_VERSION = const(0xFE)
+_REG_ADDR_CONFIG = const(0xFF)
 
 _DEFAULT_ADDRESS = const(0x45)
 
+
 class Pin:
-    IN  = 0x01
+    IN = 0x01
     OUT = 0x00
 
-    def __init__(self, port, id, mode: int=IN, value=None) -> None:
+    def __init__(self, port, id, mode: int = IN, value=None) -> None:
         self._port = port
         self._id = id
         self._mode = mode
@@ -41,13 +46,13 @@ class Pin:
         if value is not None:
             self._port.digit_write(self._id, value)
 
-    def init(self, mode: int=-1, value=None):
+    def init(self, mode: int = -1, value=None):
         self._port.set_config_mode(self._id, mode)
         if value is not None:
             self._port.write_output_pin(self._id, value)
 
     def value(self, *args):
-        '''This method allows to set and get the value of the pin, depending on
+        """This method allows to set and get the value of the pin, depending on
         whether the argument x is supplied or not.
 
         If the argument is omitted then this method gets the digital logic level
@@ -74,17 +79,17 @@ class Pin:
             ``Pin.OUT`` - The output buffer is set to the given value immediately.
 
         When setting the value this method returns None.
-        '''
+        """
         if len(args) == 0:
             return self._port.read_input_pin(self._id)
         elif len(args) == 1:
             self._port.write_output_pin(self._id, args[0])
 
     def __call__(self, *args):
-        '''Pin objects are callable. The call method provides a (fast) shortcut
+        """Pin objects are callable. The call method provides a (fast) shortcut
         to set and get the value of the pin. It is equivalent to Pin.value([x]).
         See Pin.value() for more details.
-        '''
+        """
         if len(args) == 0:
             return self._port.read_input_pin(self._id)
         elif len(args) == 1:
@@ -96,14 +101,15 @@ class Pin:
     def off(self):
         self._port.write_output_pin(self._id, 0)
 
+
 class EXTIO2:
-    IN       = const(0)
-    OUT      = const(1)
-    ANALOG   = const(2)
-    SERVO    = const(3)
+    IN = const(0)
+    OUT = const(1)
+    ANALOG = const(2)
+    SERVO = const(3)
     NEOPIXEL = const(4)
 
-    def __init__(self, i2c: I2C, address: int=_DEFAULT_ADDRESS) -> None:
+    def __init__(self, i2c: I2C, address: int = _DEFAULT_ADDRESS) -> None:
         self._i2c = i2c
         self._addr = address
         self._BUFFER = memoryview(bytearray(3))
@@ -157,7 +163,7 @@ class EXTIO2:
     def get_address(self) -> int:
         return self._read_u8(_REG_ADDR_CONFIG)
 
-    def Pin(self, id, mode: int=IN, value=None):
+    def Pin(self, id, mode: int = IN, value=None):
         return Pin(self, id, mode, value)
 
     def _write_u8(self, reg: int, val: int) -> None:

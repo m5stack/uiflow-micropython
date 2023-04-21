@@ -11,8 +11,9 @@ from .transmitter import IR, STOP
 _TBURST = const(563)
 _T_ONE = const(1687)
 
+
 class NEC(IR):
-    valid = (0xffff, 0xff, 0)  # Max addr, data, toggle
+    valid = (0xFFFF, 0xFF, 0)  # Max addr, data, toggle
     samsung = False
 
     def __init__(self, pin, freq=38000, verbose=False):  # NEC specifies 38KHz also Samsung
@@ -28,13 +29,13 @@ class NEC(IR):
             self.append(9000, 4500)
         if addr < 256:  # Short address: append complement
             if self.samsung:
-              addr |= addr << 8
+                addr |= addr << 8
             else:
-              addr |= ((addr ^ 0xff) << 8)
+                addr |= (addr ^ 0xFF) << 8
         for _ in range(16):
             self._bit(addr & 1)
             addr >>= 1
-        data |= ((data ^ 0xff) << 8)
+        data |= (data ^ 0xFF) << 8
         for _ in range(16):
             self._bit(data & 1)
             data >>= 1
@@ -44,6 +45,7 @@ class NEC(IR):
         self.aptr = 0
         self.append(9000, 2250, _TBURST)
         self.trigger()  # Initiate physical transmission.
+
 
 # nec.py Decoder for IR remote control using synchronous code
 # Supports NEC and Samsung protocols.
@@ -56,6 +58,7 @@ class NEC(IR):
 
 from utime import ticks_us, ticks_diff
 from .receiver import IR_RX
+
 
 class NEC_ABC(IR_RX):
     def __init__(self, pin, extended, samsung, callback, *args):
@@ -84,18 +87,20 @@ class NEC_ABC(IR_RX):
                     val >>= 1
                     if ticks_diff(self._times[edge + 1], self._times[edge]) > 1120:
                         val |= 0x80000000
-            elif width > 1700: # 2.5ms space for a repeat code. Should have exactly 4 edges.
-                raise RuntimeError(self.REPEAT if self.edge == 4 else self.BADREP)  # Treat REPEAT as error.
+            elif width > 1700:  # 2.5ms space for a repeat code. Should have exactly 4 edges.
+                raise RuntimeError(
+                    self.REPEAT if self.edge == 4 else self.BADREP
+                )  # Treat REPEAT as error.
             else:
                 raise RuntimeError(self.BADSTART)
-            addr = val & 0xff  # 8 bit addr
-            cmd = (val >> 16) & 0xff
-            if cmd != (val >> 24) ^ 0xff:
+            addr = val & 0xFF  # 8 bit addr
+            cmd = (val >> 16) & 0xFF
+            if cmd != (val >> 24) ^ 0xFF:
                 raise RuntimeError(self.BADDATA)
-            if addr != ((val >> 8) ^ 0xff) & 0xff:  # 8 bit addr doesn't match check
+            if addr != ((val >> 8) ^ 0xFF) & 0xFF:  # 8 bit addr doesn't match check
                 if not self._extended:
                     raise RuntimeError(self.BADADDR)
-                addr |= val & 0xff00  # pass assumed 16 bit address to callback
+                addr |= val & 0xFF00  # pass assumed 16 bit address to callback
             self._addr = addr
         except RuntimeError as e:
             cmd = e.args[0]
@@ -103,13 +108,16 @@ class NEC_ABC(IR_RX):
         # Set up for new data burst and run user callback
         self.do_callback(cmd, addr, 0, self.REPEAT)
 
+
 class NEC_8(NEC_ABC):
     def __init__(self, pin, callback, *args):
         super().__init__(pin, False, False, callback, *args)
 
+
 class NEC_16(NEC_ABC):
     def __init__(self, pin, callback, *args):
         super().__init__(pin, True, False, callback, *args)
+
 
 class SAMSUNG(NEC_ABC):
     def __init__(self, pin, callback, *args):
