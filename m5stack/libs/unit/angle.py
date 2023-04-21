@@ -3,8 +3,8 @@ try:
 except ImportError:
     pass
 
-class Angle:
 
+class Angle:
     def __init__(self, port):
         self._adc = ADC(Pin(port[0]), atten=ADC.ATTN_11DB)
 

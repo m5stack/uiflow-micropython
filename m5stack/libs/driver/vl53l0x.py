@@ -11,66 +11,66 @@ except ImportError:
     pass
 
 # Configuration constants:
-_SYSRANGE_START                              = const(0x00)
-_SYSTEM_THRESH_HIGH                          = const(0x0C)
-_SYSTEM_THRESH_LOW                           = const(0x0E)
-_SYSTEM_SEQUENCE_CONFIG                      = const(0x01)
-_SYSTEM_RANGE_CONFIG                         = const(0x09)
-_SYSTEM_INTERMEASUREMENT_PERIOD              = const(0x04)
-_SYSTEM_INTERRUPT_CONFIG_GPIO                = const(0x0A)
-_GPIO_HV_MUX_ACTIVE_HIGH                     = const(0x84)
-_SYSTEM_INTERRUPT_CLEAR                      = const(0x0B)
-_RESULT_INTERRUPT_STATUS                     = const(0x13)
-_RESULT_RANGE_STATUS                         = const(0x14)
-_RESULT_CORE_AMBIENT_WINDOW_EVENTS_RTN       = const(0xBC)
-_RESULT_CORE_RANGING_TOTAL_EVENTS_RTN        = const(0xC0)
-_RESULT_CORE_AMBIENT_WINDOW_EVENTS_REF       = const(0xD0)
-_RESULT_CORE_RANGING_TOTAL_EVENTS_REF        = const(0xD4)
-_RESULT_PEAK_SIGNAL_RATE_REF                 = const(0xB6)
-_ALGO_PART_TO_PART_RANGE_OFFSET_MM           = const(0x28)
-_I2C_SLAVE_DEVICE_ADDRESS                    = const(0x8A)
-_MSRC_CONFIG_CONTROL                         = const(0x60)
-_PRE_RANGE_CONFIG_MIN_SNR                    = const(0x27)
-_PRE_RANGE_CONFIG_VALID_PHASE_LOW            = const(0x56)
-_PRE_RANGE_CONFIG_VALID_PHASE_HIGH           = const(0x57)
-_PRE_RANGE_MIN_COUNT_RATE_RTN_LIMIT          = const(0x64)
-_FINAL_RANGE_CONFIG_MIN_SNR                  = const(0x67)
-_FINAL_RANGE_CONFIG_VALID_PHASE_LOW          = const(0x47)
-_FINAL_RANGE_CONFIG_VALID_PHASE_HIGH         = const(0x48)
+_SYSRANGE_START = const(0x00)
+_SYSTEM_THRESH_HIGH = const(0x0C)
+_SYSTEM_THRESH_LOW = const(0x0E)
+_SYSTEM_SEQUENCE_CONFIG = const(0x01)
+_SYSTEM_RANGE_CONFIG = const(0x09)
+_SYSTEM_INTERMEASUREMENT_PERIOD = const(0x04)
+_SYSTEM_INTERRUPT_CONFIG_GPIO = const(0x0A)
+_GPIO_HV_MUX_ACTIVE_HIGH = const(0x84)
+_SYSTEM_INTERRUPT_CLEAR = const(0x0B)
+_RESULT_INTERRUPT_STATUS = const(0x13)
+_RESULT_RANGE_STATUS = const(0x14)
+_RESULT_CORE_AMBIENT_WINDOW_EVENTS_RTN = const(0xBC)
+_RESULT_CORE_RANGING_TOTAL_EVENTS_RTN = const(0xC0)
+_RESULT_CORE_AMBIENT_WINDOW_EVENTS_REF = const(0xD0)
+_RESULT_CORE_RANGING_TOTAL_EVENTS_REF = const(0xD4)
+_RESULT_PEAK_SIGNAL_RATE_REF = const(0xB6)
+_ALGO_PART_TO_PART_RANGE_OFFSET_MM = const(0x28)
+_I2C_SLAVE_DEVICE_ADDRESS = const(0x8A)
+_MSRC_CONFIG_CONTROL = const(0x60)
+_PRE_RANGE_CONFIG_MIN_SNR = const(0x27)
+_PRE_RANGE_CONFIG_VALID_PHASE_LOW = const(0x56)
+_PRE_RANGE_CONFIG_VALID_PHASE_HIGH = const(0x57)
+_PRE_RANGE_MIN_COUNT_RATE_RTN_LIMIT = const(0x64)
+_FINAL_RANGE_CONFIG_MIN_SNR = const(0x67)
+_FINAL_RANGE_CONFIG_VALID_PHASE_LOW = const(0x47)
+_FINAL_RANGE_CONFIG_VALID_PHASE_HIGH = const(0x48)
 _FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT = const(0x44)
-_PRE_RANGE_CONFIG_SIGMA_THRESH_HI            = const(0x61)
-_PRE_RANGE_CONFIG_SIGMA_THRESH_LO            = const(0x62)
-_PRE_RANGE_CONFIG_VCSEL_PERIOD               = const(0x50)
-_PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI          = const(0x51)
-_PRE_RANGE_CONFIG_TIMEOUT_MACROP_LO          = const(0x52)
-_SYSTEM_HISTOGRAM_BIN                        = const(0x81)
-_HISTOGRAM_CONFIG_INITIAL_PHASE_SELECT       = const(0x33)
-_HISTOGRAM_CONFIG_READOUT_CTRL               = const(0x55)
-_FINAL_RANGE_CONFIG_VCSEL_PERIOD             = const(0x70)
-_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI        = const(0x71)
-_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_LO        = const(0x72)
-_CROSSTALK_COMPENSATION_PEAK_RATE_MCPS       = const(0x20)
-_MSRC_CONFIG_TIMEOUT_MACROP                  = const(0x46)
-_SOFT_RESET_GO2_SOFT_RESET_N                 = const(0xBF)
-_IDENTIFICATION_MODEL_ID                     = const(0xC0)
-_IDENTIFICATION_REVISION_ID                  = const(0xC2)
-_OSC_CALIBRATE_VAL                           = const(0xF8)
-_GLOBAL_CONFIG_VCSEL_WIDTH                   = const(0x32)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_0            = const(0xB0)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_1            = const(0xB1)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_2            = const(0xB2)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_3            = const(0xB3)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_4            = const(0xB4)
-_GLOBAL_CONFIG_SPAD_ENABLES_REF_5            = const(0xB5)
-_GLOBAL_CONFIG_REF_EN_START_SELECT           = const(0xB6)
-_DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD         = const(0x4E)
-_DYNAMIC_SPAD_REF_EN_START_OFFSET            = const(0x4F)
-_POWER_MANAGEMENT_GO1_POWER_FORCE            = const(0x80)
-_VHV_CONFIG_PAD_SCL_SDA_EXTSUP_HV            = const(0x89)
-_ALGO_PHASECAL_LIM                           = const(0x30)
-_ALGO_PHASECAL_CONFIG_TIMEOUT                = const(0x30)
+_PRE_RANGE_CONFIG_SIGMA_THRESH_HI = const(0x61)
+_PRE_RANGE_CONFIG_SIGMA_THRESH_LO = const(0x62)
+_PRE_RANGE_CONFIG_VCSEL_PERIOD = const(0x50)
+_PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI = const(0x51)
+_PRE_RANGE_CONFIG_TIMEOUT_MACROP_LO = const(0x52)
+_SYSTEM_HISTOGRAM_BIN = const(0x81)
+_HISTOGRAM_CONFIG_INITIAL_PHASE_SELECT = const(0x33)
+_HISTOGRAM_CONFIG_READOUT_CTRL = const(0x55)
+_FINAL_RANGE_CONFIG_VCSEL_PERIOD = const(0x70)
+_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI = const(0x71)
+_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_LO = const(0x72)
+_CROSSTALK_COMPENSATION_PEAK_RATE_MCPS = const(0x20)
+_MSRC_CONFIG_TIMEOUT_MACROP = const(0x46)
+_SOFT_RESET_GO2_SOFT_RESET_N = const(0xBF)
+_IDENTIFICATION_MODEL_ID = const(0xC0)
+_IDENTIFICATION_REVISION_ID = const(0xC2)
+_OSC_CALIBRATE_VAL = const(0xF8)
+_GLOBAL_CONFIG_VCSEL_WIDTH = const(0x32)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_0 = const(0xB0)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_1 = const(0xB1)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_2 = const(0xB2)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_3 = const(0xB3)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_4 = const(0xB4)
+_GLOBAL_CONFIG_SPAD_ENABLES_REF_5 = const(0xB5)
+_GLOBAL_CONFIG_REF_EN_START_SELECT = const(0xB6)
+_DYNAMIC_SPAD_NUM_REQUESTED_REF_SPAD = const(0x4E)
+_DYNAMIC_SPAD_REF_EN_START_OFFSET = const(0x4F)
+_POWER_MANAGEMENT_GO1_POWER_FORCE = const(0x80)
+_VHV_CONFIG_PAD_SCL_SDA_EXTSUP_HV = const(0x89)
+_ALGO_PHASECAL_LIM = const(0x30)
+_ALGO_PHASECAL_CONFIG_TIMEOUT = const(0x30)
 
-_VCSEL_PERIOD_PRE_RANGE   = const(0)
+_VCSEL_PERIOD_PRE_RANGE = const(0)
 _VCSEL_PERIOD_FINAL_RANGE = const(1)
 
 
@@ -93,17 +93,13 @@ def _encode_timeout(timeout_mclks: float) -> int:
     return 0
 
 
-def _timeout_mclks_to_microseconds(
-    timeout_period_mclks: int, vcsel_period_pclks: int
-) -> int:
+def _timeout_mclks_to_microseconds(timeout_period_mclks: int, vcsel_period_pclks: int) -> int:
     macro_period_ns = ((2304 * (vcsel_period_pclks) * 1655) + 500) // 1000
     # return ((timeout_period_mclks * macro_period_ns) + (macro_period_ns // 2)) // 1000
     return ((timeout_period_mclks * macro_period_ns) + 500) // 1000
 
 
-def _timeout_microseconds_to_mclks(
-    timeout_period_us: int, vcsel_period_pclks: int
-) -> int:
+def _timeout_microseconds_to_mclks(timeout_period_us: int, vcsel_period_pclks: int) -> int:
     macro_period_ns = ((2304 * (vcsel_period_pclks) * 1655) + 500) // 1000
     return ((timeout_period_us * 1000) + (macro_period_ns // 2)) // macro_period_ns
 
@@ -134,9 +130,7 @@ class VL53L0X:
             or self._read_u8(0xC1) != 0xAA
             or self._read_u8(0xC2) != 0x10
         ):
-            raise RuntimeError(
-                "Failed to find expected ID register values. Check wiring!"
-            )
+            raise RuntimeError("Failed to find expected ID register values. Check wiring!")
         # Initialize access to the sensor.
         #
         # This is based on the logic from:
@@ -275,10 +269,7 @@ class VL53L0X:
 
         self._write_u8(_SYSTEM_INTERRUPT_CONFIG_GPIO, 0x04)
         gpio_hv_mux_active_high = self._read_u8(_GPIO_HV_MUX_ACTIVE_HIGH)
-        self._write_u8(
-            _GPIO_HV_MUX_ACTIVE_HIGH,
-            gpio_hv_mux_active_high & ~0x10
-        )  # active low
+        self._write_u8(_GPIO_HV_MUX_ACTIVE_HIGH, gpio_hv_mux_active_high & ~0x10)  # active low
         self._write_u8(_SYSTEM_INTERRUPT_CLEAR, 0x01)
 
         self._measurement_timing_budget_us = self.get_measurement_timing_budget()
@@ -328,7 +319,7 @@ class VL53L0X:
         buf[1] = val & 0xFF
         self._i2c.writeto_mem(self._addr, reg & 0xFF, buf)
 
-    def _write_buf(self, reg: int, buf: bytearray|bytes) -> None:
+    def _write_buf(self, reg: int, buf: bytearray | bytes) -> None:
         self._i2c.writeto_mem(self._addr, reg & 0xFF, buf)
 
     def _get_spad_info(self) -> Tuple[int, bool]:
@@ -351,10 +342,7 @@ class VL53L0X:
         self._write_u8(0x83, 0x00)
         start = time.ticks_ms()
         while self._read_u8(0x83) == 0x00:
-            if (
-                self.io_timeout_ms > 0
-                and (time.ticks_ms() - start) >= self.io_timeout_ms
-            ):
+            if self.io_timeout_ms > 0 and (time.ticks_ms() - start) >= self.io_timeout_ms:
                 raise RuntimeError("Timeout waiting for VL53L0X!")
         self._write_u8(0x83, 0x01)
         tmp = self._read_u8(0x92)
@@ -379,10 +367,7 @@ class VL53L0X:
         self._write_u8(_SYSRANGE_START, 0x01 | vhv_init_byte & 0xFF)
         start = time.ticks_ms()
         while (self._read_u8(_RESULT_INTERRUPT_STATUS) & 0x07) == 0:
-            if (
-                self.io_timeout_ms > 0
-                and (time.ticks_ms() - start) >= self.io_timeout_ms
-            ):
+            if self.io_timeout_ms > 0 and (time.ticks_ms() - start) >= self.io_timeout_ms:
                 raise RuntimeError("Timeout waiting for VL53L0X!")
         self._write_u8(_SYSTEM_INTERRUPT_CLEAR, 0x01)
         self._write_u8(_SYSRANGE_START, 0x00)
@@ -401,38 +386,28 @@ class VL53L0X:
     def _get_sequence_step_enables(self) -> Tuple[bool, bool, bool, bool, bool]:
         # based on VL53L0X_GetSequenceStepEnables() from ST API
         sequence_config = self._read_u8(_SYSTEM_SEQUENCE_CONFIG)
-        tcc         = (sequence_config >> 4) & 0x1 > 0
-        dss         = (sequence_config >> 3) & 0x1 > 0
-        msrc        = (sequence_config >> 2) & 0x1 > 0
-        pre_range   = (sequence_config >> 6) & 0x1 > 0
+        tcc = (sequence_config >> 4) & 0x1 > 0
+        dss = (sequence_config >> 3) & 0x1 > 0
+        msrc = (sequence_config >> 2) & 0x1 > 0
+        pre_range = (sequence_config >> 6) & 0x1 > 0
         final_range = (sequence_config >> 7) & 0x1 > 0
         return (tcc, dss, msrc, pre_range, final_range)
 
-    def _get_sequence_step_timeouts(
-        self, pre_range: int
-    ) -> Tuple[int, int, int, int, float]:
+    def _get_sequence_step_timeouts(self, pre_range: int) -> Tuple[int, int, int, int, float]:
         # based on get_sequence_step_timeout() from ST API but modified by
         # pololu here:
         #   https://github.com/pololu/vl53l0x-arduino/blob/master/VL53L0X.cpp
-        pre_range_vcsel_period_pclks = self._get_vcsel_pulse_period(
-            _VCSEL_PERIOD_PRE_RANGE
-        )
+        pre_range_vcsel_period_pclks = self._get_vcsel_pulse_period(_VCSEL_PERIOD_PRE_RANGE)
         msrc_dss_tcc_mclks = (self._read_u8(_MSRC_CONFIG_TIMEOUT_MACROP) + 1) & 0xFF
         msrc_dss_tcc_us = _timeout_mclks_to_microseconds(
             msrc_dss_tcc_mclks, pre_range_vcsel_period_pclks
         )
-        pre_range_mclks = _decode_timeout(
-            self._read_u16(_PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI)
-        )
+        pre_range_mclks = _decode_timeout(self._read_u16(_PRE_RANGE_CONFIG_TIMEOUT_MACROP_HI))
         pre_range_us = _timeout_mclks_to_microseconds(
             pre_range_mclks, pre_range_vcsel_period_pclks
         )
-        final_range_vcsel_period_pclks = self._get_vcsel_pulse_period(
-            _VCSEL_PERIOD_FINAL_RANGE
-        )
-        final_range_mclks = _decode_timeout(
-            self._read_u16(_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI)
-        )
+        final_range_vcsel_period_pclks = self._get_vcsel_pulse_period(_VCSEL_PERIOD_FINAL_RANGE)
+        final_range_mclks = _decode_timeout(self._read_u16(_FINAL_RANGE_CONFIG_TIMEOUT_MACROP_HI))
         if pre_range:
             final_range_mclks -= pre_range_mclks
         final_range_us = _timeout_mclks_to_microseconds(
@@ -555,10 +530,7 @@ class VL53L0X:
         self._write_u8(_SYSRANGE_START, 0x01)
         start = time.ticks_ms()
         while (self._read_u8(_SYSRANGE_START) & 0x01) > 0:
-            if (
-                self.io_timeout_ms > 0
-                and (time.ticks_ms() - start) >= self.io_timeout_ms
-            ):
+            if self.io_timeout_ms > 0 and (time.ticks_ms() - start) >= self.io_timeout_ms:
                 raise RuntimeError("Timeout waiting for VL53L0X!")
 
     def read_range(self) -> int:
@@ -571,10 +543,7 @@ class VL53L0X:
         #   https://github.com/pololu/vl53l0x-arduino/blob/master/VL53L0X.cpp
         start = time.ticks_ms()
         while not self.get_data_ready():
-            if (
-                self.io_timeout_ms > 0
-                and (time.ticks_ms() - start) >= self.io_timeout_ms
-            ):
+            if self.io_timeout_ms > 0 and (time.ticks_ms() - start) >= self.io_timeout_ms:
                 raise RuntimeError("Timeout waiting for VL53L0X!")
         # assumptions: Linearity Corrective Gain is 1000 (default)
         # fractional ranging is not enabled
@@ -621,10 +590,7 @@ class VL53L0X:
         self._write_u8(_SYSRANGE_START, 0x02)
         start = time.ticks_ms()
         while (self._read_u8(_SYSRANGE_START) & 0x01) > 0:
-            if (
-                self.io_timeout_ms > 0
-                and (time.ticks_ms() - start) >= self.io_timeout_ms
-            ):
+            if self.io_timeout_ms > 0 and (time.ticks_ms() - start) >= self.io_timeout_ms:
                 raise RuntimeError("Timeout waiting for VL53L0X!")
         self._continuous_mode = True
 

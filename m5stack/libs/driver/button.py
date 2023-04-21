@@ -1,7 +1,4 @@
-from micropython import (
-    const,
-    schedule
-)
+from micropython import const, schedule
 import time
 
 OCS_INIT = const(0)
@@ -13,6 +10,7 @@ OCS_PRESSEND = const(7)
 UNKNOWN = const(99)
 
 VERBOSE = False
+
 
 class Button:
 
@@ -144,7 +142,7 @@ class Button:
             elif wait_time > self._click_ticks or self._n_clicks == self._max_clicks:
                 if self._n_clicks == 1:
                     self._update_state(self.CLICKED)
-                    VERBOSE and print('click')
+                    VERBOSE and print("click")
                     if self._click_handler is not None:
                         if self._click_param is None:
                             self._click_handler()

@@ -22,7 +22,13 @@ class MCP4725:
     # Note this is not thread-safe or re-entrant by design!
     _BUFFER = bytearray(3)
 
-    def __init__(self, i2c: I2C, address: int=_MCP4725_DEFAULT_ADDRESS, vdd: float=5.0, vout: float=3.3) -> None:
+    def __init__(
+        self,
+        i2c: I2C,
+        address: int = _MCP4725_DEFAULT_ADDRESS,
+        vdd: float = 5.0,
+        vout: float = 3.3,
+    ) -> None:
         # This device doesn't use registers and instead just accepts a single
         # command string over I2C.  As a result we don't use bus device or
         # other abstractions and just talk raw I2C protocol.

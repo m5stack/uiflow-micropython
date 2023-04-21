@@ -2,18 +2,20 @@ class int_t(int):
     _signed = True
     _size = 0
 
-    def serialize(self, byteorder='big'):
+    def serialize(self, byteorder="big"):
         return self.to_bytes(self._size, byteorder)
 
     @classmethod
-    def deserialize(cls, data, byteorder='big'):
+    def deserialize(cls, data, byteorder="big"):
         # Work around https://bugs.python.org/issue23640
-        r = cls(int.from_bytes(data[:cls._size], byteorder))
-        data = data[cls._size:]
+        r = cls(int.from_bytes(data[: cls._size], byteorder))
+        data = data[cls._size :]
         return r, data
+
 
 class uint_t(int_t):
     _signed = False
+
 
 class uint8_t(uint_t):
     _size = 1
@@ -61,7 +63,6 @@ class LVList(list):
         return type.__new__(metaclass, name, bases, namespaces, **kwargs)
 
 
-
-r, d = LVList[uint8_t, uint8_t].deserialize(b'\x12\x34')
+r, d = LVList[uint8_t, uint8_t].deserialize(b"\x12\x34")
 print(r)
 print(d)
