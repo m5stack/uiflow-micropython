@@ -31,8 +31,10 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(22) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(23) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitOLED),      MP_ROM_INT(24) },
-    { MP_ROM_QSTR(MP_QSTR_M5ModuleDisplay), MP_ROM_INT(25) },
-    { MP_ROM_QSTR(MP_QSTR_M5RCAModule),     MP_ROM_INT(26) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitGLASS),     MP_ROM_INT(25) },
+    { MP_ROM_QSTR(MP_QSTR_M5UnitRCA),       MP_ROM_INT(26) },
+    { MP_ROM_QSTR(MP_QSTR_M5ModuleDisplay), MP_ROM_INT(27) },
+    { MP_ROM_QSTR(MP_QSTR_M5RCAModule),     MP_ROM_INT(28) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(m5_board_member, m5_board_member_table);
@@ -65,6 +67,7 @@ STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_Lcd),               MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_Display),           MP_OBJ_FROM_PTR(&m5_display) },
     { MP_ROM_QSTR(MP_QSTR_UserDisplay),       MP_OBJ_FROM_PTR(&m5_user_display) },
+    { MP_ROM_QSTR(MP_QSTR_Touch),             MP_OBJ_FROM_PTR(&m5_touch) },
     { MP_ROM_QSTR(MP_QSTR_Speaker),           MP_OBJ_FROM_PTR(&m5_speaker) },
     { MP_ROM_QSTR(MP_QSTR_Power),             MP_OBJ_FROM_PTR(&m5_power) },
     { MP_ROM_QSTR(MP_QSTR_Imu),               MP_OBJ_FROM_PTR(&m5_imu) },
