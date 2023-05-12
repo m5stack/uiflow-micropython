@@ -16,3 +16,4 @@ from .ir import IR
 from .dual_button import DualButton
 from .ncir import *
 from .relay import Relay
+from .light import Light
