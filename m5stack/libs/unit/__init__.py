@@ -15,3 +15,4 @@ from .pir import PIR
 from .ir import IR
 from .dual_button import DualButton
 from .ncir import *
+from .relay import Relay
