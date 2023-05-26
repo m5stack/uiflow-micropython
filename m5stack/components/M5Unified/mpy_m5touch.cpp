@@ -35,8 +35,21 @@ namespace m5
         // The first parameter is the Touch object, parse from second parameter.
         mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-        getTouch(&pos_args[0])->getDetail(args[ARG_i].u_int);
-        return mp_const_none;
+        auto detail = getTouch(&pos_args[0])->getDetail(args[ARG_i].u_int);
+        mp_obj_t tuple[11] = {
+            mp_obj_new_int(detail.deltaX()), // 0
+            mp_obj_new_int(detail.deltaY()),
+            mp_obj_new_int(detail.distanceX()),
+            mp_obj_new_int(detail.distanceY()),
+            mp_obj_new_bool(detail.isPressed()),
+            mp_obj_new_bool(detail.wasPressed()), // 5
+            mp_obj_new_bool(detail.wasClicked()),
+            mp_obj_new_bool(detail.isReleased()),
+            mp_obj_new_bool(detail.wasReleased()),
+            mp_obj_new_bool(detail.isHolding()),
+            mp_obj_new_bool(detail.wasHold()), // 10
+        };
+        return mp_obj_new_tuple(11, tuple);
     }
 
     mp_obj_t touch_getTouchPointRaw(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {

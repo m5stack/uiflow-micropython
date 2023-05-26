@@ -24,6 +24,14 @@ const mp_obj_type_t mp_power_port_mask_enum = {
 MAKE_METHOD_KW(power, setExtPower, 1);
 MAKE_METHOD_KW(power, setLed, 1);
 MAKE_METHOD_0(power, powerOff);
+MAKE_METHOD_0(power, getBatteryLevel);
+MAKE_METHOD_KW(power, setBatteryCharge, 1);
+MAKE_METHOD_KW(power, setChargeCurrent, 1);
+MAKE_METHOD_KW(power, setExtOutput, 1);
+MAKE_METHOD_0(power, getExtOutput);
+MAKE_METHOD_KW(power, setUsbOutput, 1);
+MAKE_METHOD_0(power, getUsbOutput);
+MAKE_METHOD_0(power, isCharging);
 
 STATIC const mp_rom_map_elem_t power_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_PORT),        MP_ROM_PTR(&mp_power_port_mask_enum) },
@@ -31,6 +39,14 @@ STATIC const mp_rom_map_elem_t power_member_table[] = {
     MAKE_TABLE(power, setExtPower),
     MAKE_TABLE(power, setLed),
     MAKE_TABLE(power, powerOff),
+    MAKE_TABLE(power, getBatteryLevel),
+    MAKE_TABLE(power, setBatteryCharge),
+    MAKE_TABLE(power, setChargeCurrent),
+    MAKE_TABLE(power, setExtOutput),
+    MAKE_TABLE(power, getExtOutput),
+    MAKE_TABLE(power, setUsbOutput),
+    MAKE_TABLE(power, getUsbOutput),
+    MAKE_TABLE(power, isCharging),
 };
 
 STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);
