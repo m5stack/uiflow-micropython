@@ -41,6 +41,7 @@ PATHS = [
     "m5stack/cmodules/**/*.[h][p][p]",
     "m5stack/components/M5Unified/*.[ch]",
     "m5stack/components/M5Unified/*.cpp",
+    "m5stack/components/m5things/*.[ch]",
     "tools/littlefs/*.[ch]",
     # Python
     "m5stack/boards/**/*.py",

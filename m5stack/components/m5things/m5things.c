@@ -18,15 +18,31 @@
 
 #define TAG "M5Things"
 
+#define DEBUG_printf(fmt, ...) // mp_printf(&mp_plat_print, fmt"\r\n", ##__VA_ARGS__)
+
 static void mqtt_message_handle(void *event_data);
 
 TaskHandle_t m5thing_task_handle;
 esp_mqtt_client_handle_t m5things_mqtt_client = NULL;
 
 volatile m5things_status_t m5things_cnct_status = M5THING_STATUS_STANDBY;
+volatile m5things_info_t m5things_info;
 
 // order is request.
-static char topic_action_list[5][6] = {"ping", "exec", "file"};
+const char *topic_action_list[] = {"ping", "exec", "file"};
+const char *file_operation[] = {"WRITE", "READ", "LIST"};
+const char *resulet_msg[] = {
+    "Success",
+    "JSON parse error",
+    "Packet data is not continuous",
+    "Inconsistent data length",
+    "Inconsistent data length",
+    "File open error",
+    "File read error",
+    "File write error",
+    "File close error",
+    "No such file or directory"
+};
 
 // This topic is used for send status to cloud.
 static char mqtt_up_ping_topic[64] = {0};
@@ -191,8 +207,45 @@ static int8_t mqtt_file_read_helper(cJSON *_fs_path) {
     return ret;
 }
 
-static int8_t mqtt_file_list_helper(cJSON *_fs_path) {
+static int8_t file_list_helper(const char *path, cJSON *file_list) {
     int8_t ret = PKG_OK;
+    const char *full_path = {'\0'};
+    lfs2_dir_t dir;
+
+    if (path == NULL || file_list == NULL || !cJSON_IsArray(file_list)) {
+        return PKG_ERR_PARSE;
+    }
+
+    mp_vfs_mount_t *vfs = mp_vfs_lookup_path(path, &full_path);
+    if (vfs == MP_VFS_NONE || vfs == MP_VFS_ROOT) {
+        return PKG_ERR_FILE_OPEN;
+    }
+
+    lfs2_t *fs = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(vfs->obj))->lfs;
+    if (lfs2_dir_open(fs, &dir, path)) {
+        return PKG_ERR_FILE_OPEN;
+    }
+
+    for (;;) {
+        struct lfs2_info info;
+        int dir_ret = lfs2_dir_read(fs, &dir, &info);
+        if (dir_ret == 0) {
+            lfs2_dir_close(fs, &dir);
+            ESP_LOGI(TAG, "Read to the end of directory");
+            break;
+        } else if (dir_ret < 0) {
+            return PKG_ERR_FILE_OPEN;
+        }
+        if (!(
+            info.name[0] == '.' && (
+                info.name[1] == '\0' || (
+                    info.name[1] == '.' && info.name[2] == '\0'
+                    )
+                )
+            )) {
+            cJSON_AddItemToArray(file_list, cJSON_CreateString(info.name));
+        }
+    }
 
     return ret;
 }
@@ -216,9 +269,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                 log_error_if_nonzero(
                     "captured as transport's socket errno",
                     event->error_handle->esp_transport_sock_errno);
-                ESP_LOGI(
-                    TAG, "Last errno string (%s)",
-                    strerror(event->error_handle->esp_transport_sock_errno));
+                ESP_LOGI(TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
             }
             m5things_cnct_status = M5THING_STATUS_CNCT_ERR;
             break;
@@ -270,6 +321,55 @@ static int mqtt_response_helper(uint8_t _topic_idx, uint64_t _pkg_sn, uint32_t _
 static int8_t mqtt_ping_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
     int8_t ret = PKG_OK;
     *_pkg_sn = 0;
+    return ret;
+}
+
+static int8_t mqtt_ping_down_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
+    int8_t ret = PKG_OK;
+    *_pkg_sn = 0;
+
+    cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
+    if (NULL == root) {
+        ret = PKG_ERR_PARSE;
+        goto end;
+    }
+
+    cJSON *category_obj = cJSON_GetObjectItemCaseSensitive(root, "category");
+    cJSON *device_key_obj = cJSON_GetObjectItemCaseSensitive(root, "deviceKey");
+    cJSON *email_obj = cJSON_GetObjectItemCaseSensitive(root, "email");
+    cJSON *mac_obj = cJSON_GetObjectItemCaseSensitive(root, "mac");
+    cJSON *user_name_obj = cJSON_GetObjectItemCaseSensitive(root, "userName");
+
+    memset((void *)&m5things_info, 0x00, sizeof(m5things_info));
+
+    sscanf(category_obj->valuestring, "%d", &m5things_info.category);
+
+    memcpy(
+        (void *)m5things_info.device_key,
+        device_key_obj->valuestring,
+        strlen(device_key_obj->valuestring)
+        );
+
+    memcpy(
+        (void *)m5things_info.account,
+        email_obj->valuestring,
+        strlen(email_obj->valuestring)
+        );
+
+    memcpy(
+        (void *)m5things_info.mac,
+        mac_obj->valuestring,
+        strlen(mac_obj->valuestring)
+        );
+
+    memcpy(
+        (void *)m5things_info.user_name,
+        user_name_obj->valuestring,
+        strlen(user_name_obj->valuestring)
+        );
+
+end:
+    cJSON_Delete(root);
     return ret;
 }
 
@@ -342,7 +442,201 @@ end:
     return ret;
 }
 
-static int8_t mqtt_file_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn, uint8_t *_pkg_idx) {
+
+static int8_t file_write_helper(
+    const char *path,
+    const char *ctx,
+    size_t ctx_len,
+    size_t pkg_len,
+    bool is_new_file
+    ) {
+    int8_t ret = PKG_OK;
+    size_t decode_len = 0;
+
+    uint8_t *ctx_buf = (uint8_t *)base64_decode(ctx, ctx_len, &decode_len);
+    ctx_buf[decode_len] = '\0';
+
+    if (pkg_len != decode_len) {
+        ESP_LOGW(TAG, "Base64 decode failed");
+        ret = PKG_ERR_LENGTH;
+        goto ERROR;
+    }
+
+    int flags = 0;
+    if (is_new_file) {
+        // NEW + RW + ZERO File
+        flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
+    } else {
+        // open file, RW + MOVE to END
+        flags = LFS2_O_RDWR | LFS2_O_APPEND;
+    }
+
+    // open file
+    if (!lfs2_open_file(path, flags)) {
+        ESP_LOGW(TAG, "File create and open failed");
+        ret = PKG_ERR_FILE_OPEN;
+        goto OUT;
+    }
+
+    // write file
+    size_t write_len = lfs2_write_file(ctx_buf, decode_len);
+    if (write_len != decode_len) {
+        ESP_LOGW(TAG,
+            "File write error, written: %d, total length: %d",
+            write_len,
+            decode_len
+            );
+        ret = PKG_ERR_FILE_WRITE;
+        goto OUT;
+    }
+
+OUT:
+    // close file
+    if (lfs2_close_file() != LFS2_ERR_OK) {
+        ESP_LOGW(TAG, "File close failed");
+        ret = PKG_ERR_FILE_CLOSE;
+    }
+
+ERROR:
+    free(ctx_buf);
+    return ret;
+}
+
+static int mqtt_handle_file_write_response_helper(
+    uint8_t topic_idx,
+    uint64_t pkg_sn,
+    uint32_t pkg_idx,
+    int8_t result
+    ) {
+    char resp_buf[128];
+    sprintf(
+        resp_buf,
+        "{\"file_op\": %d, \"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}",
+        0,
+        pkg_sn,
+        pkg_idx,
+        result
+        );
+    return esp_mqtt_client_publish(
+        m5things_mqtt_client,
+        up_topic_list[topic_idx],
+        resp_buf,
+        strlen(resp_buf),
+        0,
+        0
+        );
+}
+
+static int8_t mqtt_handle_file_write(cJSON *root) {
+    int8_t ret = PKG_ERR_PARSE;
+    static int last_idx = 0;
+
+    // cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
+    cJSON *fs_path = cJSON_GetObjectItemCaseSensitive(root, "fs_path");
+    cJSON *pkg_sn = cJSON_GetObjectItemCaseSensitive(root, "pkg_sn");
+    cJSON *pkg_tot = cJSON_GetObjectItemCaseSensitive(root, "pkg_tot");
+    cJSON *pkg_idx = cJSON_GetObjectItemCaseSensitive(root, "pkg_idx");
+    cJSON *pkg_len = cJSON_GetObjectItemCaseSensitive(root, "pkg_len");
+    cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
+
+    if (pkg_idx->valueint == 0) {
+        last_idx = 0;
+    } else if (pkg_idx->valueint != last_idx + 1) {
+        // Packet data is not continuous
+        ESP_LOGW(TAG, "Packet data is not continuous");
+        ret = PKG_ERR_INDEX;
+        goto ERROR;
+    }
+
+    ret = file_write_helper(
+        fs_path->valuestring,
+        pkg_ctx->valuestring,
+        strlen(pkg_ctx->valuestring),
+        pkg_len->valueint,
+        pkg_idx->valueint == 0
+        );
+    mqtt_handle_file_write_response_helper(
+        TOPIC_FILE_IDX,
+        pkg_sn->valueint,
+        pkg_idx->valueint,
+        ret
+        );
+    vTaskDelay(500 / portTICK_PERIOD_MS);
+
+    // when OTA done need restart device
+    if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
+        // path: /flash/main_ota_temp.py
+        if ((strstr(fs_path->valuestring, OTA_UPDATE_FILE_NAME) != NULL)) {
+            nvs_write_u8_helper("boot_option", BOOT_OPT_NETWORK);
+            ESP_LOGW(TAG, "restart now :)");
+            esp_restart();
+        }
+    }
+
+ERROR:
+    return ret;
+}
+
+static void mqtt_handle_file_read(cJSON *root) {
+}
+
+
+static int8_t mqtt_handle_file_list(cJSON *root) {
+    int8_t ret = PKG_ERR_PARSE;
+
+    cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
+    cJSON *fs_path = cJSON_GetObjectItemCaseSensitive(root, "fs_path");
+    cJSON *pkg_sn = cJSON_GetObjectItemCaseSensitive(root, "pkg_sn");
+    // cJSON *pkg_tot = cJSON_GetObjectItemCaseSensitive(root, "pkg_tot");
+    // cJSON *pkg_idx = cJSON_GetObjectItemCaseSensitive(root, "pkg_idx");
+    // cJSON *pkg_len = cJSON_GetObjectItemCaseSensitive(root, "pkg_len");
+    // cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
+
+    if (file_op == NULL || fs_path == NULL || pkg_sn == NULL) {
+        return ret;
+    }
+
+    cJSON *resp_root = cJSON_CreateObject();
+    if (resp_root == NULL) {
+        return ret;
+    }
+    cJSON *file_list = cJSON_CreateArray();
+    if (file_list == NULL) {
+        goto OUT_ROOT_OBJECT;
+    }
+
+    ret = file_list_helper(fs_path->valuestring, file_list);
+    cJSON_AddNumberToObject(resp_root, "file_op", file_op->valueint);
+    cJSON_AddStringToObject(resp_root, "fs_path", fs_path->valuestring);
+    cJSON_AddItemToObject(resp_root, "file_list", file_list);
+    cJSON_AddNumberToObject(resp_root, "pkg_sn", pkg_sn->valueint);
+    cJSON_AddNumberToObject(resp_root, "err_code", ret);
+
+    char *json_str = cJSON_Print(resp_root);
+
+    esp_mqtt_client_publish(
+        m5things_mqtt_client,
+        mqtt_up_file_topic,
+        json_str,
+        strlen(json_str),
+        0,
+        0
+        );
+
+    cJSON_Delete(resp_root);
+    free(json_str);
+    return ret;
+
+OUT_ROOT_OBJECT:
+    cJSON_Delete(resp_root);
+    return ret;
+}
+
+static int8_t mqtt_file_process(
+    esp_mqtt_event_handle_t event,
+    uint64_t *_pkg_sn,
+    uint8_t *_pkg_idx
+    ) {
     int8_t ret = PKG_OK;
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
@@ -351,50 +645,38 @@ static int8_t mqtt_file_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
         goto end;
     }
 
-    cJSON *pkg_sn = cJSON_GetObjectItemCaseSensitive(root, "pkg_sn");
-    cJSON *pkg_tot = cJSON_GetObjectItemCaseSensitive(root, "pkg_tot");
-    cJSON *pkg_idx = cJSON_GetObjectItemCaseSensitive(root, "pkg_idx");
-    cJSON *pkg_len = cJSON_GetObjectItemCaseSensitive(root, "pkg_len");
-    cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
     cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
-    cJSON *fs_path = cJSON_GetObjectItemCaseSensitive(root, "fs_path");
-
-    ESP_LOGI(TAG, "file_op: %d file_path: %s", file_op->valueint, fs_path->valuestring);
-
-    *_pkg_sn = pkg_sn->valueint;
-    *_pkg_idx = pkg_idx->valueint;
-
-    if (NULL == pkg_idx) {
-        ret = PKG_ERR_INDEX;
+    if (file_op == NULL) {
+        ret = PKG_ERR_PARSE;
         goto end;
     }
 
-    // file operate
-    if (file_op->valueint == 0) {
-        // Code + File download use same function
-        ret = mqtt_file_write_helper(fs_path, pkg_ctx, pkg_idx->valueint, pkg_len->valueint);
-    } else if (file_op->valueint == 1) {
-        ret = mqtt_file_read_helper(fs_path);
-    } else if (file_op->valueint == 2) {
-        ret = mqtt_file_list_helper(fs_path);
+    ESP_LOGI(TAG,
+        "File Operation: %s(%d)",
+        file_operation[file_op->valueint],
+        file_op->valueint
+        );
+
+    switch (file_op->valueint) {
+        case 0:
+            ret = mqtt_handle_file_write(root);
+            break;
+
+        // case 1:
+        //     ret = mqtt_handle_file_read(root);
+        // break
+
+        case 2:
+            ret = mqtt_handle_file_list(root);
+            break;
+
+        default:
+            ESP_LOGW(TAG, "Unsupported file operation");
+            break;
     }
 
-    if (ret == PKG_OK) {
-        ESP_LOGI(TAG, "file operate success!");
-    }
+    ESP_LOGI(TAG, "Result: %s(%d)", resulet_msg[-ret], ret);
 
-    // when OTA done need restart device
-    if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
-        // path: /flash/main_ota_temp.py
-        if ((strstr(fs_path->valuestring, OTA_UPDATE_FILE_NAME) != NULL)) {
-            nvs_write_u8_helper("boot_option", BOOT_OPT_NETWORK);
-            // response to server
-            mqtt_response_helper(TOPIC_FILE_IDX, pkg_sn->valueint, pkg_idx->valueint, ret);
-            vTaskDelay(500 / portTICK_PERIOD_MS);
-            ESP_LOGW(TAG, "restart now :)");
-            esp_restart();
-        }
-    }
 end:
     cJSON_Delete(root);
     return ret;
@@ -405,10 +687,9 @@ static void mqtt_message_handle(void *event_data) {
 
     event->data[event->data_len] = '\0';
     ESP_LOGI(TAG, "Free memory: %d bytes", esp_get_free_heap_size());
-    ESP_LOGI(
-        TAG,
-        "\r\nTopic:  %.*s\r\nTopic length: %d\r\nData length: %d\r\nOffset: %d",
-        event->topic_len, event->topic, event->topic_len, event->data_len,
+    ESP_LOGI(TAG,
+        "\r\nTopic: '%.*s'\r\nMessage: '%.*s'\r\nOffset: %d",
+        event->topic_len, event->topic, event->data_len, event->data,
         event->current_data_offset);
 
     // esp_log_buffer_hex("data", event->data, event->data_len);
@@ -420,6 +701,10 @@ static void mqtt_message_handle(void *event_data) {
         ESP_LOGI(TAG, "Downlink msg's topic is match ping topic");
         result = mqtt_ping_process(event, &resp_pkg_sn);
         mqtt_response_helper(TOPIC_PING_IDX, resp_pkg_sn, 0, result);
+    } else if ((strncmp(mqtt_down_ping_topic, event->topic, event->topic_len) == 0)) {
+        ESP_LOGI(TAG, "Downlink msg's topic is match ping topic");
+        result = mqtt_ping_down_process(event, &resp_pkg_sn);
+        mqtt_response_helper(TOPIC_PING_IDX, resp_pkg_sn, 0, result);
     } else if ((strncmp(mqtt_down_exec_topic, event->topic, event->topic_len) ==
                 0)) {
         ESP_LOGI(TAG, "Downlink msg's topic is match exec topic");
@@ -429,7 +714,7 @@ static void mqtt_message_handle(void *event_data) {
                 0)) {
         ESP_LOGI(TAG, "Downlink msg's topic is match file topic");
         result = mqtt_file_process(event, &resp_pkg_sn, &resp_pkg_idx);
-        mqtt_response_helper(TOPIC_FILE_IDX, resp_pkg_sn, resp_pkg_idx, result);
+        // mqtt_response_helper(TOPIC_FILE_IDX, resp_pkg_sn, resp_pkg_idx, result);
     }
 }
 
@@ -615,7 +900,7 @@ soft_reset:
             }
         }
 
-        ESP_LOGI(TAG, "heap:%u ringbuf free: %d", esp_get_free_heap_size(),
+        ESP_LOGD(TAG, "heap:%u ringbuf free: %d", esp_get_free_heap_size(),
             ringbuf_free(&stdin_ringbuf));
     }
 

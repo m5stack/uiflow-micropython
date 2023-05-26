@@ -58,6 +58,14 @@ typedef enum {
     M5THING_STATUS_DISCONNECT = 3,
 }m5things_status_t;
 
+typedef struct {
+    int category;
+    char device_key[64];
+    char account[32];
+    char mac[9];
+    char user_name[64];
+} m5things_info_t;
+
 typedef struct _mp_obj_vfs_lfs2_t {
     mp_obj_base_t base;
     mp_vfs_blockdev_t blockdev;
