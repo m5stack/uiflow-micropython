@@ -2,7 +2,6 @@
 # startup script
 import os
 import M5
-import time
 import esp32
 import network
 
@@ -30,6 +29,9 @@ class Startup:
     def local_ip(self) -> str:
         return self.wlan.ifconfig()[0]
 
+    def get_rssi(self) -> int:
+        return self.wlan.status("rssi")
+
 
 def startup(boot_opt, timeout: int = 60) -> None:
     # Read saved Wi-Fi information from NVS
@@ -49,6 +51,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
         pass
     # Show startup menu and connect to network
     elif boot_opt is BOOT_OPT_MENU_NET:
+        M5.begin()
         if M5.BOARD.M5AtomS3 == M5.getBoard():
             from .atoms3 import AtomS3_Startup
 
@@ -64,6 +67,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             stamps3 = StampS3_Startup()
             stamps3.startup(ssid, pswd, timeout)
+        elif M5.BOARD.M5StackCoreS3 == M5.getBoard():
+            from .cores3 import CoreS3_Startup
+
+            cores3 = CoreS3_Startup()
+            cores3.startup(ssid, pswd, timeout)
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()
