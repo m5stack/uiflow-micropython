@@ -1,12 +1,12 @@
 # apps/helloworld.py
 
-import m5
-from m5 import lcd
+import M5
+from M5 import Lcd
 
-m5.begin()
+M5.begin()
 
 print("Hello world,M5STACK!")
 
-lcd.clear(0)
-lcd.setCursor(int(lcd.width() / 2) - 60, int(lcd.height() / 2) - 15)
-lcd.print("M5STACK")
+Lcd.clear(0)
+Lcd.setCursor(int(Lcd.width() / 2) - 60, int(Lcd.height() / 2) - 15)
+Lcd.print("M5STACK")
