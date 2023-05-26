@@ -83,7 +83,7 @@ class LabelPlus(Widgets.Label):
                 else:
                     try:
                         data = r.json()
-                        self._data = data.get(self._key)
+                        self._data = self._find_key(data)
                         self._show(str(self._data))
                     except ValueError:
                         self._show_error("ValueError")
@@ -93,6 +93,21 @@ class LabelPlus(Widgets.Label):
             r.close()
         except OSError:
             self._show_error("OSError")
+
+    def _find_key(self, data):
+        self._data = data.get(self._key)
+        if self._data is not None:
+            return self._data
+        for _, value in data.items():
+            if type(value) == list:
+                for item in value:
+                    self._find_key(item)
+                    if self._data is not None:
+                        return self._data
+            elif type(value) == dict:
+                self._find_key(value)
+            if self._data is not None:
+                return self._data
 
     def update(self):
         self._tim.deinit()
