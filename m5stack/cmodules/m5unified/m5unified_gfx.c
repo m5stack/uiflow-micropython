@@ -30,6 +30,8 @@ MAKE_METHOD_KW(gfx, setFont, 1);
 MAKE_METHOD_KW(gfx, setTextColor, 1);
 MAKE_METHOD_KW(gfx, setTextScroll, 1);
 MAKE_METHOD_KW(gfx, setTextSize, 1);
+MAKE_METHOD_KW(gfx, textWidth, 1);
+MAKE_METHOD_KW(gfx, fontHeight, 1);
 MAKE_METHOD_KW(gfx, setCursor, 1);
 MAKE_METHOD_KW(gfx, setBrightness, 1);
 MAKE_METHOD_KW(gfx, clear, 1);
@@ -78,6 +80,8 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, setTextColor), \
     MAKE_TABLE(gfx, setTextScroll), \
     MAKE_TABLE(gfx, setTextSize), \
+    MAKE_TABLE(gfx, textWidth), \
+    MAKE_TABLE(gfx, fontHeight), \
     MAKE_TABLE(gfx, setCursor), \
     MAKE_TABLE(gfx, setBrightness), \
     MAKE_TABLE(gfx, clear), \
@@ -127,6 +131,11 @@ STATIC const mp_rom_map_elem_t fonts_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat6), MP_ROM_PTR(&gfx_font_montserrat_6_obj)},
+    // { MP_ROM_QSTR(MP_QSTR_Montserrat7), MP_ROM_PTR(&gfx_font_montserrat_7_obj)},
+    { MP_ROM_QSTR(MP_QSTR_Montserrat8), MP_ROM_PTR(&gfx_font_montserrat_8_obj)},
+    { MP_ROM_QSTR(MP_QSTR_Montserrat9), MP_ROM_PTR(&gfx_font_montserrat_9_obj)},
+    // { MP_ROM_QSTR(MP_QSTR_Montserrat10), MP_ROM_PTR(&gfx_font_montserrat_10_obj)},
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(fonts_member, fonts_member_table);

@@ -154,6 +154,50 @@ mp_obj_t gfx_setTextSize(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_a
     return mp_const_none;
 }
 
+
+mp_obj_t gfx_textWidth(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_text, ARG_font};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_text, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_font, MP_ARG_OBJ                  , {.u_obj = mp_const_none } }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+
+    if (args[ARG_font].u_obj != mp_const_none) {
+        gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);
+    }
+    int32_t width = gfx->textWidth(mp_obj_str_get_str(
+        args[ARG_text].u_obj),
+        (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font
+        );
+    return mp_obj_new_int(width);
+}
+
+
+mp_obj_t gfx_fontHeight(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_font};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_font, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+
+    int32_t height = gfx->fontHeight((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);
+    return mp_obj_new_int(height);
+}
+
+
 mp_obj_t gfx_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_x, ARG_y};
     /* *FORMAT-OFF* */
@@ -1064,4 +1108,9 @@ const font_obj_t gfx_font_DejaVu72_obj = {{ &mp_type_object }, &m5gfx::fonts::De
 const font_obj_t gfx_font_efontCN_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontCN_24 };
 const font_obj_t gfx_font_efontJA_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontJA_24 };
 const font_obj_t gfx_font_efontKR_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontKR_24 };
+const font_obj_t gfx_font_montserrat_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat6pt7b };
+// const font_obj_t gfx_font_montserrat_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat7pt7b };
+const font_obj_t gfx_font_montserrat_8_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat8pt7b };
+const font_obj_t gfx_font_montserrat_9_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat9pt7b };
+// const font_obj_t gfx_font_montserrat_10_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat9pt7b };
 }

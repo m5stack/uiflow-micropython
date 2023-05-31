@@ -17,3 +17,5 @@ from .dual_button import DualButton
 from .ncir import *
 from .relay import Relay
 from .light import Light
+from .dlight import DLight
+from .cardkb import CardKB

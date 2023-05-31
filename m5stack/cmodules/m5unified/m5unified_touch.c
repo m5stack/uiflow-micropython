@@ -4,12 +4,14 @@
 MAKE_METHOD_0(touch, getX);
 MAKE_METHOD_0(touch, getY);
 MAKE_METHOD_0(touch, getCount);
+MAKE_METHOD_KW(touch, getDetail, 1);
 MAKE_METHOD_KW(touch, getTouchPointRaw, 1);
 
 STATIC const mp_rom_map_elem_t touch_member_table[] = {
     MAKE_TABLE(touch, getX),
     MAKE_TABLE(touch, getY),
     MAKE_TABLE(touch, getCount),
+    MAKE_TABLE(touch, getDetail),
     MAKE_TABLE(touch, getTouchPointRaw),
 };
 STATIC MP_DEFINE_CONST_DICT(touch_member, touch_member_table);

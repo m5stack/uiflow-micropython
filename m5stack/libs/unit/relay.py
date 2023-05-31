@@ -6,8 +6,11 @@ class Relay:
         self._pin = Pin(port[1])
         self._pin.init(mode=self._pin.OUT)
 
-    def on(self):
+    def on(self) -> None:
         self._pin(1)
 
-    def off(self):
+    def off(self) -> None:
         self._pin(0)
+
+    def value(self, x: bool) -> None:
+        self.value(int(x))
