@@ -30,10 +30,10 @@ def load_sdkconfig_hex_value(filename, value, default):
 
 
 def load_sdkconfig_spiram_value(filename):
-    value = "CONFIG_ESP32_SPIRAM_SUPPORT="
+    value = "SPIRAM_SUPPORT="
     with open(filename, "r") as f:
         for line in f:
-            if line.startswith(value):
+            if value in line:
                 if line.split("=", 1)[1][0] == "y":
                     return "SPIRAM-"
     return ""
@@ -139,7 +139,7 @@ with open(file_out, "wb") as fout:
                     % (name, max_size, len(data) - max_size)
                 )
                 sys.exit(1)
-    print("%-23s% 8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
+    print("%-23s%8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
         "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n"
         "\033[1;32mExample command:\033[0m\r\n"
