@@ -163,7 +163,7 @@ mp_obj_t m5widgets_label_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
         { MP_QSTR_text_c, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0xFFFFFF } },
-        { MP_QSTR_bg_c,   MP_ARG_INT                  , {.u_int = 0x000000 } }
+        { MP_QSTR_bg_c,   MP_ARG_INT                  , {.u_int = -1 } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -173,7 +173,9 @@ mp_obj_t m5widgets_label_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_label_erase_helper(self);
     self->color.fg_color = args[ARG_text_c].u_int;
-    self->color.bg_color = args[ARG_bg_c].u_int;
+    if (args[ARG_bg_c].u_int >= 0) {
+        self->color.bg_color = args[ARG_bg_c].u_int;
+    }
     m5widgets_label_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
     return mp_const_none;
@@ -368,7 +370,7 @@ mp_obj_t m5widgets_title_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
         { MP_QSTR_text_c,  MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0xFFFFFF } },
-        { MP_QSTR_bg_c, MP_ARG_INT                  , {.u_int = 0xFF00FF } },
+        { MP_QSTR_bg_c, MP_ARG_INT                     , {.u_int = -1 } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -379,7 +381,9 @@ mp_obj_t m5widgets_title_setColor(size_t n_args, const mp_obj_t *pos_args, mp_ma
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_title_erase_helper(self);
     self->color.fg_color = args[ARG_text_c].u_int;
-    self->color.bg_color = args[ARG_bg_c].u_int;
+    if (args[ARG_bg_c].u_int >= 0) {
+        self->color.bg_color = args[ARG_bg_c].u_int;
+    }
     m5widgets_title_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
     return mp_const_none;
@@ -508,8 +512,7 @@ typedef struct _widgets_image_obj_t {
 }widgets_image_obj_t;
 
 static void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
-    // TODO: background color
-    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h);
+    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h, _bg_color_g);
 }
 
 static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
@@ -751,8 +754,7 @@ typedef struct _widgets_line_obj_t {
 }widgets_line_obj_t;
 
 static void m5widgets_line_erase_helper(const widgets_line_obj_t *self) {
-    // TODO: background color
-    self->gfx->drawLine(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1);
+    self->gfx->drawLine(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, _bg_color_g);
 }
 
 static void m5widgets_line_draw_helper(const widgets_line_obj_t *self) {
@@ -864,8 +866,7 @@ typedef struct _widgets_circle_obj_t {
 }widgets_circle_obj_t;
 
 static void m5widgets_circle_erase_helper(const widgets_circle_obj_t *self) {
-    // TODO: background color
-    self->gfx->fillCircle(self->pos.x0, self->pos.y0, self->size.r0);
+    self->gfx->fillCircle(self->pos.x0, self->pos.y0, self->size.r0, _bg_color_g);
 }
 
 static void m5widgets_circle_draw_helper(const widgets_circle_obj_t *self) {
@@ -993,8 +994,7 @@ typedef struct _widgets_rectangle_obj_t {
 }widgets_rectangle_obj_t;
 
 static void m5widgets_rectangle_erase_helper(const widgets_rectangle_obj_t *self) {
-    // TODO: background color
-    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h);
+    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h, _bg_color_g);
 }
 
 static void m5widgets_rectangle_draw_helper(const widgets_rectangle_obj_t *self) {
@@ -1130,8 +1130,7 @@ typedef struct _widgets_triangle_obj_t {
 }widgets_triangle_obj_t;
 
 static void m5widgets_triangle_erase_helper(const widgets_triangle_obj_t *self) {
-    // TODO: background color
-    self->gfx->fillTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2);
+    self->gfx->fillTriangle(self->pos.x0, self->pos.y0, self->pos.x1, self->pos.y1, self->pos.x2, self->pos.y2, _bg_color_g);
 }
 
 static void m5widgets_triangle_draw_helper(const widgets_triangle_obj_t *self) {
@@ -1258,8 +1257,7 @@ typedef struct _widgets_qrcode_obj_t {
 }widgets_qrcode_obj_t;
 
 static void m5widgets_qrcode_erase_helper(const widgets_qrcode_obj_t *self) {
-    // TODO: background color
-    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.w);
+    self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.w, _bg_color_g);
 }
 
 static void m5widgets_qrcode_draw_helper(const widgets_qrcode_obj_t *self) {
