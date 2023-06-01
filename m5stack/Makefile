@@ -130,5 +130,3 @@ submodules:
 	git apply ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
-	cd ./components/M5Unified/M5GFX && \
-	git apply ./../../../patches/1000-add-montserrat-font.patch && cd -

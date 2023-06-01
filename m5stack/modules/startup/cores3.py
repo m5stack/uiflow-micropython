@@ -16,6 +16,11 @@ import binascii
 from unit import CardKB
 import gc
 
+from res.font import MontserratMedium10
+from res.font import MontserratMedium14
+from res.font import MontserratMedium16
+from res.font import MontserratMedium18
+
 micropython.alloc_emergency_exception_buf(100)
 
 try:
@@ -25,7 +30,7 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
-DEBUG = True
+DEBUG = False
 
 
 class KeyCode:
@@ -55,6 +60,16 @@ class ServerStatus:
     INIT = 0
     CONNECTED = 1
     DISCONNECTED = 2
+
+
+M5THINGS_STATUS = {
+    -2: "SNTP_ERROR",
+    -1: "CNCT_ERROR",
+    0: "STANDBY",
+    1: "CONNECTING",
+    2: "CONNECTED",
+    3: "DISCONNECT",
+}
 
 
 class WiFiStatus:
@@ -213,28 +228,36 @@ class Label:
         self._font = font
 
     def _erase_helper(self):
-        width = M5.Lcd.textWidth(self._text, self._font)
-        height = M5.Lcd.fontHeight(self._font)
+        width = M5.Lcd.textWidth(self._text)
+        height = M5.Lcd.fontHeight()
         if self._font_align == self.LEFT_ALIGNED:
             M5.Lcd.fillRect(self._x, self._y, width, height, self._bg_color)
         elif self._font_align == self.CENTER_ALIGNED:
             M5.Lcd.fillRect(self._x - int(width / 2), self._y, width, height, self._bg_color)
 
     def setText(self, text=None) -> None:
+        self._load_font()
         self._erase_helper()
         if text is not None:
             self._text = text
         M5.Lcd.setTextColor(self._fg_color, self._bg_color)
         if self._font_align == self.LEFT_ALIGNED:
-            M5.Lcd.drawString(self._text, self._x, self._y, self._font)
+            M5.Lcd.drawString(self._text, self._x, self._y)
         elif self._font_align == self.CENTER_ALIGNED:
-            M5.Lcd.drawCenterString(self._text, self._x, self._y, self._font)
+            M5.Lcd.drawCenterString(self._text, self._x, self._y)
         else:
             print("Warning: unknown alignment")
 
     def setTextColor(self, fg_color, bg_color):
         self._fg_color = fg_color
         self._bg_color = bg_color
+
+    def _load_font(self):
+        if type(self._font) == bytes:
+            M5.Lcd.unloadFont()
+            M5.Lcd.loadFont(self._font)
+        else:
+            M5.Lcd.setFont(self._font)
 
 
 class AppBase:
@@ -272,7 +295,7 @@ class AppBase:
         DEBUG and print("Touch Y: ", y)
 
     def handle_input(self, event: KeyEvent):
-        DEBUG and print("key: %d" % event.key)
+        DEBUG and print("keyboard value: %d" % event.key)
 
     def umount(self) -> None:
         """
@@ -325,7 +348,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._pwd_label = Label(
             "pwd",
@@ -334,7 +357,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._server_label = Label(
             "server",
@@ -343,7 +366,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._apps = [
             Rect(4, 20 + 4 + 56 + 4, 244, 108),  # option select
@@ -421,17 +444,17 @@ class WiFiSetting(AppBase):
         if self.ssid != self.ssid_tmp:
             self.ssid = self.ssid_tmp
             self.nvs.set_str("ssid0", self.ssid)
-            DEBUG and print("new ssid: ", self.ssid)
+            DEBUG and print("set new ssid: ", self.ssid)
             is_save = True
         if self.pswd != self.pswd_tmp:
             self.pswd = self.pswd_tmp
             self.nvs.set_str("pswd0", self.pswd)
-            DEBUG and print("new ssid: ", self.ssid)
+            DEBUG and print("set new ssid: ", self.ssid)
             is_save = True
         if self.server != self.server_tmp:
             self.server = self.server_tmp
             self.nvs.set_str("server", self.server)
-            DEBUG and print("new server: ", self.server)
+            DEBUG and print("set new server: ", self.server)
             is_save = True
 
         if is_save is True:
@@ -894,7 +917,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._account_label = Label(
@@ -903,7 +926,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57 + 40,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._account1_label = Label(
@@ -912,7 +935,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57 + 40 + 16,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         # self._token_label = Label(
@@ -921,7 +944,7 @@ class DevApp(AppBase):
         #     (20 + 4 + 56 + 4) + 57 + 40 + 40,
         #     fg_color = 0x000000,
         #     bg_color = 0xeeeeef,
-        #     font=M5.Lcd.FONTS.Montserrat9
+        #     font=MontserratMedium18.FONT
         # )
 
         super().__init__(ico)
@@ -952,9 +975,10 @@ class DevApp(AppBase):
                 self.src = "ui/Develop/private.png"
             elif infos[0] is 2:
                 self.src = "ui/Develop/public.png"
-            DEBUG and print("Device mac: ", mac)
-            DEBUG and print("Permissions: ", Permissions.get(infos[0]))
-            DEBUG and print("Account: ", infos[1])
+            DEBUG and print("Develop info:")
+            DEBUG and print("  Device mac: ", mac)
+            DEBUG and print("  Permissions: ", Permissions.get(infos[0]))
+            DEBUG and print("  Account: ", infos[1])
             return (mac, infos[1])
         else:
             self.src = "ui/Develop/private.png"
@@ -982,7 +1006,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 4,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._mtime_label = Label(
@@ -991,7 +1015,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._account_label = Label(
@@ -1000,7 +1024,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._ver_label = Label(
@@ -1009,7 +1033,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32 + 18 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._apps = [
@@ -1240,7 +1264,7 @@ class StatusBarApp:
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._battery_label = Label(
             "78%",
@@ -1249,7 +1273,7 @@ class StatusBarApp:
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat6,
+            font=MontserratMedium10.FONT,
         )
         self._wifi_status = WiFiStatus.INIT
         if _HAS_SERVER is False:
@@ -1316,12 +1340,14 @@ class StatusBarApp:
     def get_server_status():
         if _HAS_SERVER is True:
             status = M5Things.status()
-            DEBUG and print("Server connect status: ", status)
-            if status in (-1, -2, 0, 1):
+            DEBUG and print(
+                "Server connect status: %d(%s)" % (status, M5THINGS_STATUS.get(status))
+            )
+            if status in (0, 1):
                 return ServerStatus.INIT
             elif status == 2:
                 return ServerStatus.CONNECTED
-            elif status == 3:
+            elif status in (-2, -1, 3):
                 return ServerStatus.DISCONNECTED
         else:
             return ServerStatus.DISCONNECTED
