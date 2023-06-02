@@ -14,3 +14,9 @@ class Relay:
 
     def value(self, x: bool) -> None:
         self.value(int(x))
+
+    def set_status(self, x: bool) -> None:
+        self.value(int(x))
+
+    def get_status(self) -> bool:
+        return bool(self.value())
