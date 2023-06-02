@@ -13,10 +13,10 @@ class Relay:
         self._pin(0)
 
     def value(self, x: bool) -> None:
-        self.value(int(x))
+        self._pin(int(x))
 
     def set_status(self, x: bool) -> None:
-        self.value(int(x))
+        self._pin(int(x))
 
     def get_status(self) -> bool:
-        return bool(self.value())
+        return bool(self._pin())
