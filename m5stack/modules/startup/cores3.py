@@ -13,7 +13,7 @@ from machine import I2C, Pin
 import esp32
 import sys
 import binascii
-from unit import CardKB
+from unit import (CardKB, KeyCode)
 import gc
 
 from res.font import MontserratMedium10
@@ -31,21 +31,6 @@ except ImportError:
     _HAS_SERVER = False
 
 DEBUG = False
-
-
-class KeyCode:
-    KEYCODE_UNKNOWN = 0x00
-    KEYCODE_BACKSPACE = 0x08
-    KEYCODE_TAB = 0x09
-    KEYCODE_ENTER = 0x0D
-    KEYCODE_ESC = 0x1B
-    KEYCODE_SPACE = 0x20
-    KEYCODE_DEL = 0x7F
-
-    KEYCODE_LEFT = 180
-    KEYCODE_UP = 181
-    KEYCODE_DOWN = 182
-    KEYCODE_RIGHT = 183
 
 
 Permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
@@ -80,75 +65,75 @@ class WiFiStatus:
     DISCONNECTED = 4
 
 
-ImageDescriptor = namedtuple("ImageDescriptor", ["x", "y", "width", "height"])
+ImageDesc = namedtuple("ImageDesc", ["x", "y", "width", "height"])
 
 _IMAGE_LIST = {
-    "res/sys/cores3/Battery/battery_Gray.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Green.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Red.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Yellow.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Selection/appList_selected.png": ImageDescriptor(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appList_unselected.png": ImageDescriptor(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appRun_selected.png": ImageDescriptor(5 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appRun_unselected.png": ImageDescriptor(5 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/develop_selected.png": ImageDescriptor(5 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/develop_unselected.png": ImageDescriptor(5 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/ezdata_selected.png": ImageDescriptor(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDescriptor(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/setting_selected.png": ImageDescriptor(5, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/setting_unselected.png": ImageDescriptor(5, 20 + 4, 62, 56),
-    "res/sys/cores3/Server/server_blue.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_empty.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_error.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/Server_Green.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_red.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Title/title_blue.png": ImageDescriptor(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_gray.png": ImageDescriptor(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_green.png": ImageDescriptor(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_red.png": ImageDescriptor(0, 0, 320, 20),
-    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_empty.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_good.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_mid.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_worse.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/boot.png": ImageDescriptor(0, 0, 320, 240),
-    "res/sys/cores3/boot/boot0.png": ImageDescriptor(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot1.png": ImageDescriptor(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot2.png": ImageDescriptor(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot3.png": ImageDescriptor(60, 45, 320, 240),
-    "res/sys/cores3/Setting/wifiServer.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/pass.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/server.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/ssid.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/charge100.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge500.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge900.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge1000.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge1500.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge2000.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/bootNo.png": ImageDescriptor(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/bootYes.png": ImageDescriptor(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/comxDisable.png": ImageDescriptor(
+    "res/sys/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Green.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Red.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/ezdata_selected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "res/sys/cores3/Server/server_blue.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_empty.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_error.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/Server_Green.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_red.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_green.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_red.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_good.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/boot.png": ImageDesc(0, 0, 320, 240),
+    "res/sys/cores3/boot/boot0.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot1.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot2.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot3.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/Setting/wifiServer.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/pass.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/server.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/ssid.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/charge100.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge900.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge1000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge1500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge2000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/bootNo.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/bootYes.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/comxDisable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/comxEnable.png": ImageDescriptor(
+    "res/sys/cores3/Setting/comxEnable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/usbInput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/usbInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/usbOutput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/usbOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/busInput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/busInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/busOutput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/busOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Develop/public.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
-    "res/sys/cores3/Develop/private.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
-    "res/sys/cores3/Run/run.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
 }
 
 _APPLIST_ICO = {
@@ -175,14 +160,6 @@ _SETTING_ICO = {
 _EZDATA_ICO = {
     True: "res/sys/cores3/Selection/ezdata_selected.png",
     False: "res/sys/cores3/Selection/ezdata_unselected.png",
-}
-
-
-_WIFI_SETTINGS_ICO = {
-    "res/sys/cores3/Setting/wifiServer.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/wifi_area_pass.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/wifi_area_server.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/wifi_area_ssid.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
 }
 
 
