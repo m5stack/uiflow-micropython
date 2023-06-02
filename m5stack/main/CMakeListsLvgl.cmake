@@ -97,6 +97,7 @@ set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5gfx.cpp
     ${PROJECT_DIR}/components/M5Unified/mpy_m5power.cpp
     ${PROJECT_DIR}/components/M5Unified/mpy_m5spk.cpp
+    ${PROJECT_DIR}/components/M5Unified/mpy_m5touch.cpp
     ${PROJECT_DIR}/components/M5Unified/mpy_m5unified.cpp
     ${PROJECT_DIR}/components/M5Unified/mpy_m5widgets.cpp
 )
@@ -152,6 +153,7 @@ set(IDF_COMPONENTS
     esp-tls
     nghttp
     libffi
+    json
     M5Unified
     esp32-camera
     m5things

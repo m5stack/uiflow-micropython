@@ -11,7 +11,7 @@ BOARD ?= M5STACK_8MB
 
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 stamps3 cores3
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/res/sys/" directory is pack into "fs.bin"
@@ -90,6 +90,12 @@ build:
 
 clean:
 	idf.py $(IDFPY_FLAGS) fullclean
+	cd ./../micropython && \
+	git apply --reverse ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
+	cd ./components/lv_bindings && \
+	git apply --reverse ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
+	cd ./components/M5Unified/M5Unified && \
+	git apply --reverse ./../../../patches/2000-M5Unified-support-atoms3u.patch && cd -
 
 deploy:
 	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash
@@ -130,5 +136,5 @@ submodules:
 	git apply ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
-	cd ./components/M5Unified/M5GFX && \
-	git apply ./../../../patches/1000-add-montserrat-font.patch && cd -
+	cd ./components/M5Unified/M5Unified && \
+	git apply ./../../../patches/2000-M5Unified-support-atoms3u.patch && cd -

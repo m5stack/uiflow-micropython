@@ -13,8 +13,13 @@ from machine import I2C, Pin
 import esp32
 import sys
 import binascii
-from unit import CardKB
+from unit import (CardKB, KeyCode)
 import gc
+
+from res.font import MontserratMedium10
+from res.font import MontserratMedium14
+from res.font import MontserratMedium16
+from res.font import MontserratMedium18
 
 micropython.alloc_emergency_exception_buf(100)
 
@@ -25,22 +30,7 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
-DEBUG = True
-
-
-class KeyCode:
-    KEYCODE_UNKNOWN = 0x00
-    KEYCODE_BACKSPACE = 0x08
-    KEYCODE_TAB = 0x09
-    KEYCODE_ENTER = 0x0D
-    KEYCODE_ESC = 0x1B
-    KEYCODE_SPACE = 0x20
-    KEYCODE_DEL = 0x7F
-
-    KEYCODE_LEFT = 180
-    KEYCODE_UP = 181
-    KEYCODE_DOWN = 182
-    KEYCODE_RIGHT = 183
+DEBUG = False
 
 
 Permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
@@ -57,6 +47,16 @@ class ServerStatus:
     DISCONNECTED = 2
 
 
+M5THINGS_STATUS = {
+    -2: "SNTP_ERROR",
+    -1: "CNCT_ERROR",
+    0: "STANDBY",
+    1: "CONNECTING",
+    2: "CONNECTED",
+    3: "DISCONNECT",
+}
+
+
 class WiFiStatus:
     INIT = 0
     RSSI_GOOD = 1
@@ -65,109 +65,101 @@ class WiFiStatus:
     DISCONNECTED = 4
 
 
-ImageDescriptor = namedtuple("ImageDescriptor", ["x", "y", "width", "height"])
+ImageDesc = namedtuple("ImageDesc", ["x", "y", "width", "height"])
 
 _IMAGE_LIST = {
-    "ui/Battery/battery_Gray.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "ui/Battery/battery_Green.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "ui/Battery/battery_Red.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "ui/Battery/battery_Yellow.png": ImageDescriptor(320 - 44, 0, 44, 20),
-    "ui/Selection/appList_selected.png": ImageDescriptor(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/appList_unselected.png": ImageDescriptor(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/appRun_selected.png": ImageDescriptor(5 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/appRun_unselected.png": ImageDescriptor(5 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/develop_selected.png": ImageDescriptor(5 + 62, 20 + 4, 62, 56),
-    "ui/Selection/develop_unselected.png": ImageDescriptor(5 + 62, 20 + 4, 62, 56),
-    "ui/Selection/ezdata_selected.png": ImageDescriptor(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/ezdata_unselected.png": ImageDescriptor(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "ui/Selection/setting_selected.png": ImageDescriptor(5, 20 + 4, 62, 56),
-    "ui/Selection/setting_unselected.png": ImageDescriptor(5, 20 + 4, 62, 56),
-    "ui/Server/server_blue.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "ui/Server/server_empty.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "ui/Server/server_error.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "ui/Server/Server_Green.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "ui/Server/server_red.png": ImageDescriptor(320 - 44 - 20 - 5, 0, 20, 20),
-    "ui/Title/title_blue.png": ImageDescriptor(0, 0, 320, 20),
-    "ui/Title/title_gray.png": ImageDescriptor(0, 0, 320, 20),
-    "ui/Title/title_green.png": ImageDescriptor(0, 0, 320, 20),
-    "ui/Title/title_red.png": ImageDescriptor(0, 0, 320, 20),
-    "ui/WiFi/wifi_disconnected.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "ui/WiFi/wifi_empty.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "ui/WiFi/wifi_good.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "ui/WiFi/wifi_mid.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "ui/WiFi/wifi_worse.png": ImageDescriptor(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "ui/boot.png": ImageDescriptor(0, 0, 320, 240),
-    "ui/boot/boot0.png": ImageDescriptor(60, 45, 320, 240),
-    "ui/boot/boot1.png": ImageDescriptor(60, 45, 320, 240),
-    "ui/boot/boot2.png": ImageDescriptor(60, 45, 320, 240),
-    "ui/boot/boot3.png": ImageDescriptor(60, 45, 320, 240),
-    "ui/Setting/wifiServer.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/pass.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/server.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/ssid.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/charge100.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/charge500.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/charge900.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/charge1000.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/charge1500.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/charge2000.png": ImageDescriptor(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/bootNo.png": ImageDescriptor(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/bootYes.png": ImageDescriptor(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "ui/Setting/comxDisable.png": ImageDescriptor(
+    "res/sys/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Green.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Red.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/ezdata_selected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "res/sys/cores3/Server/server_blue.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_empty.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_error.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/Server_Green.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_red.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_green.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/Title/title_red.png": ImageDesc(0, 0, 320, 20),
+    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_good.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/boot.png": ImageDesc(0, 0, 320, 240),
+    "res/sys/cores3/boot/boot0.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot1.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot2.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/boot/boot3.png": ImageDesc(60, 45, 320, 240),
+    "res/sys/cores3/Setting/wifiServer.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/pass.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/server.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/ssid.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "res/sys/cores3/Setting/charge100.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge900.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge1000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge1500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/charge2000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/bootNo.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/bootYes.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "res/sys/cores3/Setting/comxDisable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Setting/comxEnable.png": ImageDescriptor(
+    "res/sys/cores3/Setting/comxEnable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Setting/usbInput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/usbInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Setting/usbOutput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/usbOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Setting/busInput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/busInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Setting/busOutput.png": ImageDescriptor(
+    "res/sys/cores3/Setting/busOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "ui/Develop/public.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
-    "ui/Develop/private.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
-    "ui/Run/run.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
 }
 
 _APPLIST_ICO = {
-    True: "ui/Selection/appList_selected.png",
-    False: "ui/Selection/appList_unselected.png",
+    True: "res/sys/cores3/Selection/appList_selected.png",
+    False: "res/sys/cores3/Selection/appList_unselected.png",
 }
 
 _APPRUN_ICO = {
-    True: "ui/Selection/appRun_selected.png",
-    False: "ui/Selection/appRun_unselected.png",
+    True: "res/sys/cores3/Selection/appRun_selected.png",
+    False: "res/sys/cores3/Selection/appRun_unselected.png",
 }
 
 _DEVELOP_ICO = {
-    True: "ui/Selection/develop_selected.png",
-    False: "ui/Selection/develop_unselected.png",
+    True: "res/sys/cores3/Selection/develop_selected.png",
+    False: "res/sys/cores3/Selection/develop_unselected.png",
 }
 
 _SETTING_ICO = {
-    True: "ui/Selection/setting_selected.png",
-    False: "ui/Selection/setting_unselected.png",
+    True: "res/sys/cores3/Selection/setting_selected.png",
+    False: "res/sys/cores3/Selection/setting_unselected.png",
 }
 
 
 _EZDATA_ICO = {
-    True: "ui/Selection/ezdata_selected.png",
-    False: "ui/Selection/ezdata_unselected.png",
-}
-
-
-_WIFI_SETTINGS_ICO = {
-    "ui/Setting/wifiServer.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/wifi_area_pass.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/wifi_area_server.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
-    "ui/Setting/wifi_area_ssid.png": ImageDescriptor(4, 20 + 4 + 56 + 4, 312, 108),
+    True: "res/sys/cores3/Selection/ezdata_selected.png",
+    False: "res/sys/cores3/Selection/ezdata_unselected.png",
 }
 
 
@@ -213,28 +205,36 @@ class Label:
         self._font = font
 
     def _erase_helper(self):
-        width = M5.Lcd.textWidth(self._text, self._font)
-        height = M5.Lcd.fontHeight(self._font)
+        width = M5.Lcd.textWidth(self._text)
+        height = M5.Lcd.fontHeight()
         if self._font_align == self.LEFT_ALIGNED:
             M5.Lcd.fillRect(self._x, self._y, width, height, self._bg_color)
         elif self._font_align == self.CENTER_ALIGNED:
             M5.Lcd.fillRect(self._x - int(width / 2), self._y, width, height, self._bg_color)
 
     def setText(self, text=None) -> None:
+        self._load_font()
         self._erase_helper()
         if text is not None:
             self._text = text
         M5.Lcd.setTextColor(self._fg_color, self._bg_color)
         if self._font_align == self.LEFT_ALIGNED:
-            M5.Lcd.drawString(self._text, self._x, self._y, self._font)
+            M5.Lcd.drawString(self._text, self._x, self._y)
         elif self._font_align == self.CENTER_ALIGNED:
-            M5.Lcd.drawCenterString(self._text, self._x, self._y, self._font)
+            M5.Lcd.drawCenterString(self._text, self._x, self._y)
         else:
             print("Warning: unknown alignment")
 
     def setTextColor(self, fg_color, bg_color):
         self._fg_color = fg_color
         self._bg_color = bg_color
+
+    def _load_font(self):
+        if type(self._font) == bytes:
+            M5.Lcd.unloadFont()
+            M5.Lcd.loadFont(self._font)
+        else:
+            M5.Lcd.setFont(self._font)
 
 
 class AppBase:
@@ -272,7 +272,7 @@ class AppBase:
         DEBUG and print("Touch Y: ", y)
 
     def handle_input(self, event: KeyEvent):
-        DEBUG and print("key: %d" % event.key)
+        DEBUG and print("keyboard value: %d" % event.key)
 
     def umount(self) -> None:
         """
@@ -325,7 +325,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._pwd_label = Label(
             "pwd",
@@ -334,7 +334,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._server_label = Label(
             "server",
@@ -343,7 +343,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._apps = [
             Rect(4, 20 + 4 + 56 + 4, 244, 108),  # option select
@@ -372,7 +372,7 @@ class WiFiSetting(AppBase):
         self._select_default_option()
 
     def _select_default_option(self):
-        _draw_png("ui/Setting/wifiServer.png")
+        _draw_png("res/sys/cores3/Setting/wifiServer.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -381,7 +381,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_ssid_option(self):
-        _draw_png("ui/Setting/ssid.png")
+        _draw_png("res/sys/cores3/Setting/ssid.png")
         self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -390,7 +390,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_psd_option(self):
-        _draw_png("ui/Setting/pass.png")
+        _draw_png("res/sys/cores3/Setting/pass.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -399,7 +399,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_server_option(self):
-        _draw_png("ui/Setting/server.png")
+        _draw_png("res/sys/cores3/Setting/server.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xDCDDDD)
@@ -421,17 +421,17 @@ class WiFiSetting(AppBase):
         if self.ssid != self.ssid_tmp:
             self.ssid = self.ssid_tmp
             self.nvs.set_str("ssid0", self.ssid)
-            DEBUG and print("new ssid: ", self.ssid)
+            DEBUG and print("set new ssid: ", self.ssid)
             is_save = True
         if self.pswd != self.pswd_tmp:
             self.pswd = self.pswd_tmp
             self.nvs.set_str("pswd0", self.pswd)
-            DEBUG and print("new ssid: ", self.ssid)
+            DEBUG and print("set new ssid: ", self.ssid)
             is_save = True
         if self.server != self.server_tmp:
             self.server = self.server_tmp
             self.nvs.set_str("server", self.server)
-            DEBUG and print("new server: ", self.server)
+            DEBUG and print("set new server: ", self.server)
             is_save = True
 
         if is_save is True:
@@ -551,12 +551,12 @@ class WiFiSetting(AppBase):
 
 
 CURRENT_OPTION = (
-    (100, "ui/Setting/charge100.png"),
-    (500, "ui/Setting/charge500.png"),
-    (900, "ui/Setting/charge900.png"),
-    (1000, "ui/Setting/charge1000.png"),
-    # (1500, "ui/Setting/charge1500.png"),
-    # (2000, "ui/Setting/charge2000.png"),
+    (100, "res/sys/cores3/Setting/charge100.png"),
+    (500, "res/sys/cores3/Setting/charge500.png"),
+    (900, "res/sys/cores3/Setting/charge900.png"),
+    (1000, "res/sys/cores3/Setting/charge1000.png"),
+    # (1500, "res/sys/cores3/Setting/charge1500.png"),
+    # (2000, "res/sys/cores3/Setting/charge2000.png"),
 )
 
 
@@ -611,8 +611,8 @@ class BatteryChargeSetting(AppBase):
 
 
 BOOT_OPTION = (
-    (0, "ui/Setting/bootNo.png"),
-    (1, "ui/Setting/bootYes.png"),
+    (0, "res/sys/cores3/Setting/bootNo.png"),
+    (1, "res/sys/cores3/Setting/bootYes.png"),
 )
 
 
@@ -669,8 +669,8 @@ class ComLinkSetting(AppBase):
     def __init__(self, ico) -> None:
         self.icos = charge_ico(
             (
-                "ui/Setting/comxEnable.png",
-                "ui/Setting/comxDisable.png",
+                "res/sys/cores3/Setting/comxEnable.png",
+                "res/sys/cores3/Setting/comxDisable.png",
             )
         )
         self.src = next(self.icos)
@@ -700,8 +700,8 @@ class ComLinkSetting(AppBase):
 
 
 USBPOWER_OPTION = (
-    (False, "ui/Setting/usbInput.png"),
-    (True, "ui/Setting/usbOutput.png"),
+    (False, "res/sys/cores3/Setting/usbInput.png"),
+    (True, "res/sys/cores3/Setting/usbOutput.png"),
 )
 
 
@@ -748,8 +748,8 @@ class USBPowerSetting(AppBase):
 
 
 BUSPOWER_OPTION = (
-    (False, "ui/Setting/busInput.png"),
-    (True, "ui/Setting/busOutput.png"),
+    (False, "res/sys/cores3/Setting/busInput.png"),
+    (True, "res/sys/cores3/Setting/busOutput.png"),
 )
 
 
@@ -894,7 +894,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._account_label = Label(
@@ -903,7 +903,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57 + 40,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._account1_label = Label(
@@ -912,7 +912,7 @@ class DevApp(AppBase):
             (20 + 4 + 56 + 4) + 57 + 40 + 16,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         # self._token_label = Label(
@@ -921,7 +921,7 @@ class DevApp(AppBase):
         #     (20 + 4 + 56 + 4) + 57 + 40 + 40,
         #     fg_color = 0x000000,
         #     bg_color = 0xeeeeef,
-        #     font=M5.Lcd.FONTS.Montserrat9
+        #     font=MontserratMedium18.FONT
         # )
 
         super().__init__(ico)
@@ -949,15 +949,16 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if infos[0] is 0 or infos[0] is 1:
-                self.src = "ui/Develop/private.png"
+                self.src = "res/sys/cores3/Develop/private.png"
             elif infos[0] is 2:
-                self.src = "ui/Develop/public.png"
-            DEBUG and print("Device mac: ", mac)
-            DEBUG and print("Permissions: ", Permissions.get(infos[0]))
-            DEBUG and print("Account: ", infos[1])
+                self.src = "res/sys/cores3/Develop/public.png"
+            DEBUG and print("Develop info:")
+            DEBUG and print("  Device mac: ", mac)
+            DEBUG and print("  Permissions: ", Permissions.get(infos[0]))
+            DEBUG and print("  Account: ", infos[1])
             return (mac, infos[1])
         else:
-            self.src = "ui/Develop/private.png"
+            self.src = "res/sys/cores3/Develop/private.png"
             return (mac, None, None)
 
     def handle(self, x, y):
@@ -982,7 +983,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 4,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat9,
+            font=MontserratMedium18.FONT,
         )
 
         self._mtime_label = Label(
@@ -991,7 +992,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._account_label = Label(
@@ -1000,7 +1001,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._ver_label = Label(
@@ -1009,7 +1010,7 @@ class RunApp(AppBase):
             (20 + 4 + 56 + 4) + 32 + 18 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium14.FONT,
         )
 
         self._apps = [
@@ -1020,7 +1021,7 @@ class RunApp(AppBase):
 
     def mount(self):
         _draw_png(self.ico.get(True))
-        _draw_png("ui/Run/run.png")
+        _draw_png("res/sys/cores3/Run/run.png")
         self.update_file_info("main.py")
 
     def update_file_info(self, filename):
@@ -1201,26 +1202,26 @@ class Theme:
 
 
 _WIFI_STATUS_ICO = {
-    WiFiStatus.INIT: "ui/WiFi/wifi_empty.png",
-    WiFiStatus.RSSI_GOOD: "ui/WiFi/wifi_good.png",
-    WiFiStatus.RSSI_MID: "ui/WiFi/wifi_mid.png",
-    WiFiStatus.RSSI_WORSE: "ui/WiFi/wifi_worse.png",
-    WiFiStatus.DISCONNECTED: "ui/WiFi/wifi_disconnected.png",
+    WiFiStatus.INIT: "res/sys/cores3/WiFi/wifi_empty.png",
+    WiFiStatus.RSSI_GOOD: "res/sys/cores3/WiFi/wifi_good.png",
+    WiFiStatus.RSSI_MID: "res/sys/cores3/WiFi/wifi_mid.png",
+    WiFiStatus.RSSI_WORSE: "res/sys/cores3/WiFi/wifi_worse.png",
+    WiFiStatus.DISCONNECTED: "res/sys/cores3/WiFi/wifi_disconnected.png",
 }
 
 
 _SERVER_STATUS_ICO = {
-    ServerStatus.INIT: "ui/Server/server_empty.png",
-    ServerStatus.CONNECTED: "ui/Server/Server_Green.png",
-    ServerStatus.DISCONNECTED: "ui/Server/server_error.png",
+    ServerStatus.INIT: "res/sys/cores3/Server/server_empty.png",
+    ServerStatus.CONNECTED: "res/sys/cores3/Server/Server_Green.png",
+    ServerStatus.DISCONNECTED: "res/sys/cores3/Server/server_error.png",
 }
 
 
 _BATTERY_THEME_ICO = {
-    Theme.Gray: "ui/Battery/battery_Gray.png",
-    Theme.Green: "ui/Battery/battery_Green.png",
-    Theme.Red: "ui/Battery/battery_Red.png",
-    Theme.Yellow: "ui/Battery/battery_Yellow.png",
+    Theme.Gray: "res/sys/cores3/Battery/battery_Gray.png",
+    Theme.Green: "res/sys/cores3/Battery/battery_Green.png",
+    Theme.Red: "res/sys/cores3/Battery/battery_Red.png",
+    Theme.Yellow: "res/sys/cores3/Battery/battery_Yellow.png",
 }
 
 
@@ -1240,7 +1241,7 @@ class StatusBarApp:
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font=M5.Lcd.FONTS.Montserrat8,
+            font=MontserratMedium16.FONT,
         )
         self._battery_label = Label(
             "78%",
@@ -1249,7 +1250,7 @@ class StatusBarApp:
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=M5.Lcd.FONTS.Montserrat6,
+            font=MontserratMedium10.FONT,
         )
         self._wifi_status = WiFiStatus.INIT
         if _HAS_SERVER is False:
@@ -1262,7 +1263,7 @@ class StatusBarApp:
         self._load_view()
 
     def _load_view(self):
-        _draw_png("ui/Title/title_blue.png")
+        _draw_png("res/sys/cores3/Title/title_blue.png")
         self.handle(None, None)
 
     def _update_time(self, struct_time):
@@ -1270,28 +1271,28 @@ class StatusBarApp:
 
     def _update_wifi(self, status):
         self._wifi_status = status
-        src = _WIFI_STATUS_ICO.get(self._wifi_status, "ui/WiFi/wifi_empty.png")
+        src = _WIFI_STATUS_ICO.get(self._wifi_status, "res/sys/cores3/WiFi/wifi_empty.png")
         _draw_png(src)
 
     def _update_server(self, status):
         self._server_status = status
-        src = _SERVER_STATUS_ICO.get(self._server_status, "ui/Server/server_error.png")
+        src = _SERVER_STATUS_ICO.get(self._server_status, "res/sys/cores3/Server/server_error.png")
         _draw_png(src)
 
     def _update_battery(self, battery):
         if battery >= 0 and battery <= 100:
             if battery < 20:
-                src = _BATTERY_THEME_ICO.get(Theme.Red, "ui/Battery/battery_Green.png")
+                src = _BATTERY_THEME_ICO.get(Theme.Red, "res/sys/cores3/Battery/battery_Green.png")
                 _draw_png(src)
             elif battery < 40:
-                src = _BATTERY_THEME_ICO.get(Theme.Yellow, "ui/Battery/battery_Green.png")
+                src = _BATTERY_THEME_ICO.get(Theme.Yellow, "res/sys/cores3/Battery/battery_Green.png")
                 _draw_png(src)
             elif battery <= 100:
-                src = _BATTERY_THEME_ICO.get(Theme.Green, "ui/Battery/battery_Green.png")
+                src = _BATTERY_THEME_ICO.get(Theme.Green, "res/sys/cores3/Battery/battery_Green.png")
                 _draw_png(src)
             self._battery_label.setText("{:d}%".format(battery))
         else:
-            src = _BATTERY_THEME_ICO.get(Theme.Gray, "ui/Battery/battery_Green.png")
+            src = _BATTERY_THEME_ICO.get(Theme.Gray, "res/sys/cores3/Battery/battery_Green.png")
             _draw_png(src)
             self._battery_label.setText("null")
 
@@ -1316,12 +1317,14 @@ class StatusBarApp:
     def get_server_status():
         if _HAS_SERVER is True:
             status = M5Things.status()
-            DEBUG and print("Server connect status: ", status)
-            if status in (-1, -2, 0, 1):
+            DEBUG and print(
+                "Server connect status: %d(%s)" % (status, M5THINGS_STATUS.get(status))
+            )
+            if status in (0, 1):
                 return ServerStatus.INIT
             elif status == 2:
                 return ServerStatus.CONNECTED
-            elif status == 3:
+            elif status in (-2, -1, 3):
                 return ServerStatus.DISCONNECTED
         else:
             return ServerStatus.DISCONNECTED
@@ -1348,7 +1351,7 @@ class BootView:
 
     @classmethod
     def load(self) -> None:
-        _draw_png("ui/boot.png")
+        _draw_png("res/sys/cores3/boot.png")
         time.sleep(0.2)
 
 
@@ -1393,13 +1396,13 @@ class CoreS3_Startup:
                     # elif detail[8] and detail[4]:  # wasReleased and isPressed
                     #     pass
                     else:
-                        _playWav("ui/click.wav")
+                        _playWav("res/sys/cores3/click.wav")
                         self._apps.load_app(M5.Touch.getX(), M5.Touch.getY())
                     last_touch_time = time.ticks_ms()
 
             try:
                 if self._kb.is_pressed():
-                    _playWav("ui/click.wav")
+                    _playWav("res/sys/cores3/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     self._apps.handle_input(self._event)

@@ -1,0 +1,72 @@
+diff --git a/src/M5Unified.cpp b/src/M5Unified.cpp
+index 34ceeb4..cc0483f 100644
+--- a/src/M5Unified.cpp
++++ b/src/M5Unified.cpp
+@@ -298,12 +298,14 @@ for (int i = 0; i < 0x50; ++i)
+     if (board == board_t::board_unknown)
+     { // AtomS3Lite or StampS3 ?
+       uint32_t g4backup = *((volatile uint32_t *)(IO_MUX_GPIO4_REG));
++      uint32_t g12backup = *((volatile uint32_t *)(IO_MUX_GPIO12_REG));
+       m5gfx::pinMode(GPIO_NUM_4, m5gfx::pin_mode_t::input_pullup);
++      m5gfx::pinMode(GPIO_NUM_12, m5gfx::pin_mode_t::input_pullup);
+       // AtomS3Lite has an IR LED connected to GPIO4, which is LOW when read even with input_pullup.
+       // Therefore, if it is HIGH, it can be determined that it is not AtomS3Lite and can be assumed to be StampS3.
+       // However, even if it goes LOW, something may be connected to GPIO4 at StampS3, so it is treated as unknown.
+       // The AtomS3Lite determination uses the fallback_board setting.
+-      if (m5gfx::gpio_in(GPIO_NUM_4) == true)
++      if (m5gfx::gpio_in(GPIO_NUM_4) == true && m5gfx::gpio_in(GPIO_NUM_12) == true)
+       {
+         board = board_t::board_M5StampS3;
+       }
+@@ -316,13 +318,18 @@ for (int i = 0; i < 0x50; ++i)
+         auto tmp1 = m5gfx::gpio_in(GPIO_NUM_41);
+         m5gfx::pinMode(GPIO_NUM_41, m5gfx::pin_mode_t::input_pullup);
+         auto tmp2 = m5gfx::gpio_in(GPIO_NUM_41);
+-        if (tmp1 == tmp2)
++        if (tmp1 == tmp2 && m5gfx::gpio_in(GPIO_NUM_12) == true)
+         {
+           board = board_t::board_M5AtomS3Lite;
+         }
++        if (tmp1 == tmp2 && m5gfx::gpio_in(GPIO_NUM_12) == false)
++        {
++          board = board_t::board_M5AtomS3U;
++        }
+         *((volatile uint32_t *)(IO_MUX_GPIO41_REG)) = g41backup;
+       }
+       *((volatile uint32_t *)(IO_MUX_GPIO4_REG)) = g4backup;
++      *((volatile uint32_t *)(IO_MUX_GPIO12_REG)) = g12backup;
+     }
+ 
+ #elif defined (CONFIG_IDF_TARGET_ESP32C3)
+@@ -430,6 +437,7 @@ for (int i = 0; i < 0x50; ++i)
+ 
+     case board_t::board_M5AtomS3:
+     case board_t::board_M5AtomS3Lite:
++    case board_t::board_M5AtomS3U:
+       break;
+ 
+     case board_t::board_M5StampS3:
+@@ -563,6 +571,7 @@ for (int i = 0; i < 0x50; ++i)
+ #elif defined (CONFIG_IDF_TARGET_ESP32S3)
+     case board_t::board_M5AtomS3:
+     case board_t::board_M5AtomS3Lite:
++    case board_t::board_M5AtomS3U:
+       m5gfx::pinMode(GPIO_NUM_41, m5gfx::pin_mode_t::input);
+       break;
+ 
+@@ -681,6 +690,7 @@ for (int i = 0; i < 0x50; ++i)
+ 
+       case board_t::board_M5AtomS3:
+       case board_t::board_M5AtomS3Lite:
++      case board_t::board_M5AtomS3U:
+         if (cfg.external_speaker.atomic_spk && (Display.getBoard() != board_t::board_M5AtomDisplay))
+         { // for ATOMIC SPK
+           m5gfx::pinMode(GPIO_NUM_6, m5gfx::pin_mode_t::input_pulldown); // MOSI
+@@ -996,6 +1006,7 @@ for (int i = 0; i < 0x50; ++i)
+     {
+     case board_t::board_M5AtomS3:
+     case board_t::board_M5AtomS3Lite:
++    case board_t::board_M5AtomS3U:
+       BtnA.setRawState(ms, !m5gfx::gpio_in(GPIO_NUM_41));
+       break;
+ 

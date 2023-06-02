@@ -58,7 +58,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd, timeout)
         elif M5.BOARD.M5AtomS3Lite == M5.getBoard():
-            from .atoms3 import AtomS3Lite_Startup
+            from .atoms3lite import AtomS3Lite_Startup
 
             atoms3 = AtomS3Lite_Startup()
             atoms3.startup(ssid, pswd, timeout)
@@ -72,6 +72,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cores3 = CoreS3_Startup()
             cores3.startup(ssid, pswd, timeout)
+        elif M5.BOARD.M5AtomS3U == M5.getBoard():
+            from .atoms3u import AtomS3U_Startup
+
+            atoms3u = AtomS3U_Startup()
+            atoms3u.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

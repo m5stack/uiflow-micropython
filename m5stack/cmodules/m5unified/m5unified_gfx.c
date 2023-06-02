@@ -10,8 +10,8 @@ extern mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, si
 
 // -------- lvgl port funciton
 #if MICROPY_PY_LVGL
-extern void gfx_lvgl_flush(struct _disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);
-extern void user_lvgl_flush(struct _disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);
+extern void gfx_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p);
+extern void user_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p);
 extern bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data);
 DEFINE_PTR_OBJ(gfx_lvgl_flush);
 DEFINE_PTR_OBJ(user_lvgl_flush);
@@ -26,6 +26,8 @@ MAKE_METHOD_0(gfx, getColorDepth);
 MAKE_METHOD_0(gfx, getCursor);
 MAKE_METHOD_KW(gfx, setRotation, 1);
 MAKE_METHOD_KW(gfx, setColorDepth, 1);
+MAKE_METHOD_KW(gfx, loadFont, 1);
+MAKE_METHOD_0(gfx, unloadFont);
 MAKE_METHOD_KW(gfx, setFont, 1);
 MAKE_METHOD_KW(gfx, setTextColor, 1);
 MAKE_METHOD_KW(gfx, setTextScroll, 1);
@@ -77,6 +79,8 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, setRotation), \
     MAKE_TABLE(gfx, setColorDepth), \
     MAKE_TABLE(gfx, setFont), \
+    MAKE_TABLE(gfx, loadFont), \
+    MAKE_TABLE(gfx, unloadFont), \
     MAKE_TABLE(gfx, setTextColor), \
     MAKE_TABLE(gfx, setTextScroll), \
     MAKE_TABLE(gfx, setTextSize), \
@@ -131,10 +135,10 @@ STATIC const mp_rom_map_elem_t fonts_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
-    { MP_ROM_QSTR(MP_QSTR_Montserrat6), MP_ROM_PTR(&gfx_font_montserrat_6_obj)},
+    // { MP_ROM_QSTR(MP_QSTR_Montserrat6), MP_ROM_PTR(&gfx_font_montserrat_6_obj)},
     // { MP_ROM_QSTR(MP_QSTR_Montserrat7), MP_ROM_PTR(&gfx_font_montserrat_7_obj)},
-    { MP_ROM_QSTR(MP_QSTR_Montserrat8), MP_ROM_PTR(&gfx_font_montserrat_8_obj)},
-    { MP_ROM_QSTR(MP_QSTR_Montserrat9), MP_ROM_PTR(&gfx_font_montserrat_9_obj)},
+    // { MP_ROM_QSTR(MP_QSTR_Montserrat8), MP_ROM_PTR(&gfx_font_montserrat_8_obj)},
+    // { MP_ROM_QSTR(MP_QSTR_Montserrat9), MP_ROM_PTR(&gfx_font_montserrat_9_obj)},
     // { MP_ROM_QSTR(MP_QSTR_Montserrat10), MP_ROM_PTR(&gfx_font_montserrat_10_obj)},
     /* *FORMAT-ON* */
 };
