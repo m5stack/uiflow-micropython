@@ -562,6 +562,7 @@ static int8_t mqtt_handle_file_write(cJSON *root) {
         ret
         );
     vTaskDelay(500 / portTICK_PERIOD_MS);
+    last_idx = pkg_idx->valueint;
 
     // when OTA done need restart device
     if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
