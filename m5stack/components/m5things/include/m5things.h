@@ -47,6 +47,10 @@ typedef enum {
     PKG_ERR_FILE_READ = -6,
     PKG_ERR_FILE_WRITE = -7,
     PKG_ERR_FILE_CLOSE = -8,
+    PKG_ERR_NO_FILE_OR_DIR = -9,
+    PKG_ERR_FILE_REMOVE = -10,
+    PKG_ERR_FILE_LIST = -11,
+    PKG_ERR_NO_MEMORY_AVAILABLE = -12
 }m5things_pkg_err_t;
 
 typedef enum {
@@ -64,6 +68,7 @@ typedef struct {
     char account[32];
     char mac[9];
     char user_name[64];
+    char avatar[128];
 } m5things_info_t;
 
 typedef struct _mp_obj_vfs_lfs2_t {
