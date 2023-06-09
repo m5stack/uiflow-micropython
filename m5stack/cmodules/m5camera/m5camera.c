@@ -19,6 +19,7 @@
 #include "py/obj.h"
 #include "py/runtime.h"
 #include "py/binary.h"
+#include "mphalport.h"
 
 #include "esp_system.h"
 #include "esp_spi_flash.h"
@@ -73,6 +74,11 @@ static camera_config_t camera_config = {
     .grab_mode = CAMERA_GRAB_LATEST,
 };
 
+static enum {
+    E_CAMERA_INIT,
+    E_CAMERA_DEINIT
+} status = E_CAMERA_DEINIT;
+
 // STATIC camera_obj_t camera_obj;
 STATIC bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_pixformat, ARG_framesize, ARG_fb_count, ARG_fb_location};
@@ -111,10 +117,15 @@ STATIC bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     }
     camera_config.fb_location = fb_location;
 
+    if (status == E_CAMERA_INIT) {
+        esp_camera_deinit();
+    }
     esp_err_t err = esp_camera_init(&camera_config);
     if (err != ESP_OK) {
+        status = E_CAMERA_DEINIT;
         return false;
     }
+    status = E_CAMERA_INIT;
     return true;
 }
 
@@ -135,10 +146,46 @@ STATIC mp_obj_t camera_deinit() {
         ESP_LOGE(TAG, "Camera deinit Failed");
         return mp_const_false;
     }
-
+    status = E_CAMERA_DEINIT;
     return mp_const_true;
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(camera_deinit_obj, camera_deinit);
+
+STATIC mp_obj_t camera_skip_frames(uint n_args, const mp_obj_t *args, mp_map_t *kw_args) {
+    mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_time), MP_MAP_LOOKUP);
+    mp_int_t time = 300; // OV Recommended.
+
+    if (kw_arg != NULL) {
+        time = mp_obj_get_int(kw_arg->value);
+    }
+
+    uint32_t millis = mp_hal_ticks_us() / 1000;
+
+    if (!n_args) {
+        while ((mp_hal_ticks_us() / 1000 - millis) < time) { // 32-bit math handles wrap around...
+            camera_fb_t *fb = esp_camera_fb_get();
+            if (fb == NULL) {
+                continue;
+            }
+            esp_camera_fb_return(fb);
+        }
+    } else {
+        for (int i = 0, j = mp_obj_get_int(args[0]); i < j; i++) {
+            if ((kw_arg != NULL) && ((mp_hal_ticks_us() / 1000 - millis) >= time)) {
+                break;
+            }
+
+            camera_fb_t *fb = esp_camera_fb_get();
+            if (fb == NULL) {
+                continue;
+            }
+            esp_camera_fb_return(fb);
+        }
+    }
+
+    return mp_const_none;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_KW(camera_skip_frames_obj, 0, camera_skip_frames);
 
 STATIC mp_obj_t camera_capture() {
     // acquire a frame
@@ -153,6 +200,53 @@ STATIC mp_obj_t camera_capture() {
     return image;
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(camera_capture_obj, camera_capture);
+
+STATIC mp_obj_t camera_capture_to_jpg(mp_obj_t quality_in) {
+    // acquire a frame
+    camera_fb_t *fb = esp_camera_fb_get();
+    if (!fb) {
+        ESP_LOGE(TAG, "Camera capture Failed");
+        return mp_const_false;
+    }
+
+    mp_obj_t image = mp_const_none;
+    if (fb->format == PIXFORMAT_JPEG) {
+        image = mp_obj_new_bytes(fb->buf, fb->len);
+    } else {
+        uint8_t quality = mp_obj_get_int(quality_in);
+        uint8_t *out = NULL;
+        size_t out_len = 0;
+        if (frame2jpg(fb, quality, &out, &out_len)) {
+            image = mp_obj_new_bytes(out, out_len);
+            free(out);
+        }
+    }
+
+    esp_camera_fb_return(fb);
+    return image;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_capture_to_jpg_obj, camera_capture_to_jpg);
+
+STATIC mp_obj_t camera_capture_to_bmp() {
+    // acquire a frame
+    camera_fb_t *fb = esp_camera_fb_get();
+    if (!fb) {
+        ESP_LOGE(TAG, "Camera capture Failed");
+        return mp_const_false;
+    }
+
+    mp_obj_t image = mp_const_none;
+    uint8_t *out = NULL;
+    size_t out_len = 0;
+    if (frame2bmp(fb, &out, &out_len)) {
+        image = mp_obj_new_bytes(out, out_len);
+        free(out);
+    }
+
+    esp_camera_fb_return(fb);
+    return image;
+}
+STATIC MP_DEFINE_CONST_FUN_OBJ_0(camera_capture_to_bmp_obj, camera_capture_to_bmp);
 
 STATIC mp_obj_t camera_pixformat(mp_obj_t pixformat) {
     int format = mp_obj_get_int(pixformat);
@@ -256,7 +350,10 @@ STATIC const mp_rom_map_elem_t m5_camera_globals_table[] = {
     // functions
     { MP_ROM_QSTR(MP_QSTR_init),            MP_ROM_PTR(&camera_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_deinit),          MP_ROM_PTR(&camera_deinit_obj) },
+    { MP_ROM_QSTR(MP_QSTR_skip_frames),     MP_ROM_PTR(&camera_skip_frames_obj) },
     { MP_ROM_QSTR(MP_QSTR_capture),         MP_ROM_PTR(&camera_capture_obj) },
+    { MP_ROM_QSTR(MP_QSTR_capture_to_jpg),  MP_ROM_PTR(&camera_capture_to_jpg_obj) },
+    { MP_ROM_QSTR(MP_QSTR_capture_to_bmp),  MP_ROM_PTR(&camera_capture_to_bmp_obj) },
     { MP_ROM_QSTR(MP_QSTR_pixformat),       MP_ROM_PTR(&camera_pixformat_obj) },
     { MP_ROM_QSTR(MP_QSTR_framesize),       MP_ROM_PTR(&camera_framesize_obj) },
     { MP_ROM_QSTR(MP_QSTR_contrast),        MP_ROM_PTR(&camera_contrast_obj) },

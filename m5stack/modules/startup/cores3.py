@@ -13,11 +13,17 @@ from machine import I2C, Pin
 import esp32
 import sys
 import binascii
-from unit import (CardKB, KeyCode)
+from unit import CardKB, KeyCode
 import gc
 
+try:
+    import urequests as requests
+except ImportError:
+    import requests
+
 from res.font import MontserratMedium10
-from res.font import MontserratMedium14
+
+# from res.font import MontserratMedium14
 from res.font import MontserratMedium16
 from res.font import MontserratMedium18
 
@@ -30,7 +36,7 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
-DEBUG = False
+DEBUG = True
 
 
 Permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
@@ -68,34 +74,42 @@ class WiFiStatus:
 ImageDesc = namedtuple("ImageDesc", ["x", "y", "width", "height"])
 
 _IMAGE_LIST = {
-    "res/sys/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Green.png": ImageDesc(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Red.png": ImageDesc(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
+    # "res/sys/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Green.png": ImageDesc(320 - 56, 0, 56, 20),
+    "res/sys/cores3/Battery/battery_Green_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
+    "res/sys/cores3/Battery/battery_Red.png": ImageDesc(320 - 56, 0, 56, 20),
+    "res/sys/cores3/Battery/battery_Red_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
+    # "res/sys/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
+    "res/sys/cores3/Battery/battery_Black.png": ImageDesc(320 - 56, 0, 56, 20),
+    "res/sys/cores3/Battery/battery_Black_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
     "res/sys/cores3/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/ezdata_selected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDesc(5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "res/sys/cores3/Selection/ezdata_selected.png": ImageDesc(
+        5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
+    ),
+    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDesc(
+        5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
+    ),
     "res/sys/cores3/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
     "res/sys/cores3/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
-    "res/sys/cores3/Server/server_blue.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_empty.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_error.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/Server_Green.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_red.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_blue.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_empty.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_error.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/Server_Green.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/Server/server_red.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
     "res/sys/cores3/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
     "res/sys/cores3/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
     "res/sys/cores3/Title/title_green.png": ImageDesc(0, 0, 320, 20),
     "res/sys/cores3/Title/title_red.png": ImageDesc(0, 0, 320, 20),
-    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_good.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_good.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "res/sys/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
     "res/sys/cores3/boot.png": ImageDesc(0, 0, 320, 240),
     "res/sys/cores3/boot/boot0.png": ImageDesc(60, 45, 320, 240),
     "res/sys/cores3/boot/boot1.png": ImageDesc(60, 45, 320, 240),
@@ -134,6 +148,12 @@ _IMAGE_LIST = {
     "res/sys/cores3/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
     "res/sys/cores3/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
     "res/sys/cores3/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "res/sys/cores3/List/main.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    # w 2 + 30
+    # h 2
+    "res/sys/cores3/List/left_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
+    # w -10 -60
+    "res/sys/cores3/List/right_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
 }
 
 _APPLIST_ICO = {
@@ -165,7 +185,7 @@ _EZDATA_ICO = {
 
 def _draw_png(src: str):
     descriptor = _IMAGE_LIST.get(src)
-    M5.Lcd.drawPng(src, descriptor.x, descriptor.y)
+    M5.Lcd.drawImage(src, descriptor.x, descriptor.y)
 
 
 binary_data = None
@@ -937,11 +957,18 @@ class DevApp(AppBase):
             return
 
         if len(data[1]) > 14:
-            self._account_label.setText(data[1][:14])
-            self._account1_label.setText(data[1][14:])
+            self._account_label.setText(data[1][:8])
+            self._account1_label.setText(data[1][8:])
         else:
             self._account_label.setText(data[1])
             self._account1_label.setText("")
+        try:
+            if self.avatar == "res/img/avatar.jpg":
+                M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
+            else:
+                M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
+        except OSError:
+            pass
         # self._token_label.setText(data[2])
 
     def load_data(self):
@@ -956,6 +983,18 @@ class DevApp(AppBase):
             DEBUG and print("  Device mac: ", mac)
             DEBUG and print("  Permissions: ", Permissions.get(infos[0]))
             DEBUG and print("  Account: ", infos[1])
+            DEBUG and print("  Avatar: ", infos[4])
+            if len(infos[4]) is 0:
+                self.avatar = "res/img/avatar.jpg"
+            else:
+                self.avatar = str(infos[4]).split("/")[-1]
+            try:
+                os.stat(self.avatar)
+            except OSError:
+                resp = requests.get("https://community.m5stack.com" + str(infos[4]))
+                f = open(self.avatar, "wb")
+                f.write(resp.content)
+                f.close()
             return (mac, infos[1])
         else:
             self.src = "res/sys/cores3/Develop/private.png"
@@ -989,28 +1028,28 @@ class RunApp(AppBase):
         self._mtime_label = Label(
             "Time: 2023/5/14 12:23:43",
             4 + 10,
-            (20 + 4 + 56 + 4) + 32,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._account_label = Label(
             "Account: XXABC",
             4 + 10,
-            (20 + 4 + 56 + 4) + 32 + 18,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._ver_label = Label(
             "Ver: UIFLOW2.0 a18",
             4 + 10,
-            (20 + 4 + 56 + 4) + 32 + 18 + 18,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18 + 18,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._apps = [
@@ -1085,6 +1124,70 @@ class RunApp(AppBase):
     def umount(self) -> None:
         _draw_png(self.ico.get(False))
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
+
+
+class ListApp(AppBase):
+    def __init__(self, ico, data=None) -> None:
+        self.ico = ico
+        self.src = ico.get(False)
+        self.descriptor = _IMAGE_LIST.get(self.src)
+        self.x = self.descriptor.x
+        self.y = self.descriptor.y
+        self.data = None
+
+    def create(self):
+        pass
+
+    def mount(self):
+        _draw_png(self.ico.get(True))
+        _draw_png("res/sys/cores3/List/main.png")
+        M5.Lcd.drawImage("res/sys/cores3/List/left_cursor.png", 4 + 2 + 30, (20 + 4 + 56 + 4) + 2)
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/right_cursor.png", 320 - 4 - 60 - 10, (20 + 4 + 56 + 4) + 2
+        )
+
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/left_cursor.png", 4 + 2 + 30, (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2
+        )
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/right_cursor.png",
+            320 - 4 - 60 - 10,
+            (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2,
+        )
+
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/left_cursor.png",
+            4 + 2 + 30,
+            (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2 + 36 + 2 + 2,
+        )
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/right_cursor.png",
+            320 - 4 - 60 - 10,
+            (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2 + 36 + 2 + 2,
+        )
+
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/left_cursor.png",
+            4 + 2 + 30,
+            (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2 + 36 + 2 + 2 + 36 + 2 + 2,
+        )
+        M5.Lcd.drawImage(
+            "res/sys/cores3/List/right_cursor.png",
+            320 - 4 - 60 - 10,
+            (20 + 4 + 56 + 4) + 2 + 36 + 2 + 2 + 36 + 2 + 2 + 36 + 2 + 2,
+        )
+
+    def load_data(self):
+        self.data = os.listdir("apps")
+
+    def handle(self, x, y):
+        return super().handle(x, y)
+
+    def handle_input(self, event: KeyEvent):
+        return super().handle_input(event)
+
+    def umount(self) -> None:
+        return super().umount()
 
 
 def app_id_generator(n):
@@ -1217,14 +1320,6 @@ _SERVER_STATUS_ICO = {
 }
 
 
-_BATTERY_THEME_ICO = {
-    Theme.Gray: "res/sys/cores3/Battery/battery_Gray.png",
-    Theme.Green: "res/sys/cores3/Battery/battery_Green.png",
-    Theme.Red: "res/sys/cores3/Battery/battery_Red.png",
-    Theme.Yellow: "res/sys/cores3/Battery/battery_Yellow.png",
-}
-
-
 class StatusBarApp:
     def __init__(self, ico, wifi) -> None:
         self.id = 0
@@ -1245,7 +1340,7 @@ class StatusBarApp:
         )
         self._battery_label = Label(
             "78%",
-            320 - 44 + 22 + 1,
+            320 - 56 + 22,
             4,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
@@ -1279,22 +1374,30 @@ class StatusBarApp:
         src = _SERVER_STATUS_ICO.get(self._server_status, "res/sys/cores3/Server/server_error.png")
         _draw_png(src)
 
-    def _update_battery(self, battery):
-        if battery >= 0 and battery <= 100:
+    def _update_battery(self, battery, charging):
+        src = ""
+        if battery > 0 and battery <= 100:
             if battery < 20:
-                src = _BATTERY_THEME_ICO.get(Theme.Red, "res/sys/cores3/Battery/battery_Green.png")
-                _draw_png(src)
-            elif battery < 40:
-                src = _BATTERY_THEME_ICO.get(Theme.Yellow, "res/sys/cores3/Battery/battery_Green.png")
-                _draw_png(src)
+                src = (
+                    "res/sys/cores3/Battery/battery_Red_Charge.png"
+                    if charging
+                    else "res/sys/cores3/Battery/battery_Red.png"
+                )
             elif battery <= 100:
-                src = _BATTERY_THEME_ICO.get(Theme.Green, "res/sys/cores3/Battery/battery_Green.png")
-                _draw_png(src)
+                src = (
+                    "res/sys/cores3/Battery/battery_Green_Charge.png"
+                    if charging
+                    else "res/sys/cores3/Battery/battery_Green.png"
+                )
+            _draw_png(src)
             self._battery_label.setText("{:d}%".format(battery))
         else:
-            src = _BATTERY_THEME_ICO.get(Theme.Gray, "res/sys/cores3/Battery/battery_Green.png")
+            src = (
+                "res/sys/cores3/Battery/battery_Black_Charge.png"
+                if charging
+                else "res/sys/cores3/Battery/battery_Black.png"
+            )
             _draw_png(src)
-            self._battery_label.setText("null")
 
     @staticmethod
     def get_local_time():
@@ -1329,14 +1432,14 @@ class StatusBarApp:
         else:
             return ServerStatus.DISCONNECTED
 
-    def get_battery_percentage(self):
-        return M5.Power.getBatteryLevel()
+    # def get_battery_status(self):
+    #     return M5.Power.getBatteryLevel(), M5.Power.isCharging()
 
     def handle(self, x, y):
         self._update_time(self.get_local_time())
         self._update_wifi(self.get_wifi_status())
         self._update_server(self.get_server_status())
-        self._update_battery(self.get_battery_percentage())
+        self._update_battery(M5.Power.getBatteryLevel(), M5.Power.isCharging())
 
     def umount(self):
         pass
