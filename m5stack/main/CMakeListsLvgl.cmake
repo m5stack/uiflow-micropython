@@ -56,7 +56,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/mphalport.c
     ${PROJECT_DIR}/../micropython/ports/esp32/fatfs_port.c
     ${PROJECT_DIR}/../micropython/ports/esp32/help.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/modutime.c
+    ${PROJECT_DIR}/modutime.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_bitstream.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_timer.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_pin.c
@@ -83,7 +83,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_rtc.c
+    ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
 
