@@ -33,6 +33,7 @@ static void m5_btns_callbacks_deinit(void);
 const spk_obj_t m5_speaker = {&mp_spk_type,       &(M5.Speaker)};
 const pwr_obj_t m5_power   = {&mp_power_type,     &(M5.Power)  };
 const pwr_obj_t m5_imu     = {&mp_imu_type,       &(M5.Imu)    };
+      als_obj_t m5_als     = {&mp_als_type,       &(M5.Als)    };
       btn_obj_t m5_btnA    = {&mp_btn_type,       &(M5.BtnA)   };
       btn_obj_t m5_btnB    = {&mp_btn_type,       &(M5.BtnB)   };
       btn_obj_t m5_btnC    = {&mp_btn_type,       &(M5.BtnC)   };

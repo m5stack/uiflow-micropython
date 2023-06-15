@@ -1,6 +1,7 @@
 add_library(usermod_M5UNIFIED INTERFACE)
 
 target_sources(usermod_M5UNIFIED INTERFACE
+    ${CMAKE_CURRENT_LIST_DIR}/m5unified_als.c
     ${CMAKE_CURRENT_LIST_DIR}/m5unified_button.c
     ${CMAKE_CURRENT_LIST_DIR}/m5unified_gfx.c
     ${CMAKE_CURRENT_LIST_DIR}/m5unified_imu.c
