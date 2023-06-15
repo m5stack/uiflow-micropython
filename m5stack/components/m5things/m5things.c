@@ -1188,6 +1188,16 @@ void m5thing_task(void *pvParameter) {
     if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
         ESP_LOGI(TAG, "Running firmware version: %s", running_app_info.version);
     }
+
+    // set timezone
+    char tz[64];
+    size_t len = sizeof(tz);
+    if (nvs_read_helper("tz", tz, &len) && len > 0 && strlen(tz) > 0) {
+        ESP_LOGI(TAG, "Read timezone: %s", tz);
+        setenv("TZ", tz, 1);
+        tzset();
+    }
+
 soft_reset:
     ESP_LOGI(TAG, "waiting connect to Wi-Fi");
     while (!wifi_sta_connected) {
