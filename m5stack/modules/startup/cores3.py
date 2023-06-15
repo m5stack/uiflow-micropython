@@ -1313,6 +1313,7 @@ class ListApp(AppBase):
         return super().handle_input(event)
 
     def umount(self) -> None:
+        super().umount()
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
     def _btn_up_event_handler(self, event):
