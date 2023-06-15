@@ -633,13 +633,15 @@ ERROR:
 
 
 static int mqtt_file_read_response_helper(cJSON *resp, const char *resp_buf) {
+    int ret = -1;
     if (resp != NULL) {
         char *json_str = cJSON_Print(resp);
-        return esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
+        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
+        free(json_str);
     } else if (resp_buf != NULL) {
-        return esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
+        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
     }
-    return -1;
+    return ret;
 }
 
 void read_task(void *pvParameter) {
@@ -778,7 +780,8 @@ void read_task(void *pvParameter) {
 
         // release resources
         free(ctx_buf);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        free(json_str);
+        vTaskDelay(200 / portTICK_PERIOD_MS);
         index += 1;
         if (index == total) {
             ESP_LOGI(TAG, "File read complete, total: %d, packages: %d", info.size, total);
@@ -828,13 +831,15 @@ static int8_t mqtt_handle_file_read(cJSON *root) {
 
 
 static int mqtt_file_list_response_helper(cJSON *resp, const char *resp_buf) {
+    int ret = -1;
     if (resp != NULL) {
         char *json_str = cJSON_Print(resp);
-        return esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
+        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
+        free(json_str);
     } else if (resp_buf != NULL) {
-        return esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
+        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
     }
-    return -1;
+    return ret;
 }
 
 
