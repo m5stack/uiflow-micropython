@@ -130,3 +130,20 @@ class Label:
             self._long_fn = self._long_dot
         elif mode is self.LONG_WARP:
             self._long_fn = self._long_wrap
+
+    def setPos(self, x, y):
+        self._x = x
+        self._y = y
+        self.setText(None)
+
+    def getX(self):
+        return self._x
+
+    def getY(self):
+        return self._y
+
+    def setX(self, x):
+        self._x = x
+
+    def setY(self, y):
+        self._y = y
