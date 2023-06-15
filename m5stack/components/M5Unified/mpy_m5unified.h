@@ -12,6 +12,7 @@
 #include "mpy_m5power.h"
 #include "mpy_m5widgets.h"
 #include "mpy_m5touch.h"
+#include "mpy_m5als.h"
 
 extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);
@@ -29,3 +30,4 @@ extern btn_obj_t m5_btnPWR;
 extern btn_obj_t m5_btnEXT;
 extern gfx_obj_t m5_display;
 extern touch_obj_t m5_touch;
+extern als_obj_t m5_als;

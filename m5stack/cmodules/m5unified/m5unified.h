@@ -29,3 +29,4 @@ extern const mp_obj_type_t m5_user_display;
 extern const mp_obj_type_t mp_gfxdevice_type;
 extern const mp_obj_module_t m5_widgets;
 extern const mp_obj_type_t mp_touch_type;
+extern const mp_obj_type_t mp_als_type;
