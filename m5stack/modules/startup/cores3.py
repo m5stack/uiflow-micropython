@@ -236,13 +236,19 @@ def _draw_png(src: str):
 
 
 binary_data = None
+_wav_path = None
 
 
 def _playWav(wav: str):
-    global binary_data
-    if binary_data is None:
+    global binary_data, _wav_path
+    if binary_data is None or _wav_path is not wav:
         with open(wav, "rb") as f:
             binary_data = f.read()
+        _wav_path = wav
+        if wav is "res/media/click.wav":
+            M5.Speaker.setVolume(64)
+        else:
+            M5.Speaker.setVolume(127)
     M5.Speaker.playWav(binary_data)
 
 
@@ -1183,7 +1189,10 @@ class ListApp(AppBase):
     def mount(self):
         self.load_data()
         _draw_image(self.icos.get(True))
-        _draw_png("res/sys/cores3/List/main.png")
+        self._main_img = Image()
+        self._main_img.set_pos(4, 20 + 4 + 56 + 4)
+        self._main_img.set_size(312, 156)
+        self._main_img.set_src("res/sys/cores3/List/main.png")
         # button up
         # x 4 + 2
         # y (20 + 4 + 56 + 4) + 2
@@ -1233,14 +1242,14 @@ class ListApp(AppBase):
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = 4 + 2 + 30
         self._left_cursor_y = (20 + 4 + 56 + 4) + 2
-        self._left_img = Image(None)
+        self._left_img = Image()
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
         self._left_img.set_src("res/sys/cores3/List/left_cursor.png")
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (20 + 4 + 56 + 4) + 2
-        self._right_img = Image(None)
+        self._right_img = Image()
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
         self._right_img.set_src("res/sys/cores3/List/right_cursor.png")
@@ -1318,19 +1327,21 @@ class ListApp(AppBase):
 
     def _btn_up_event_handler(self, event):
         if self._file_pos is 0 and self._cursor_pos == 0:
+            _playWav("res/media/bg.wav")
             return
 
         self._file_pos -= 1
-        self._cursor_pos -= 1
         if self._cursor_pos < 0:
             self._cursor_pos = 0
+
+        self._cursor_pos -= 1
         if self._file_pos < 0:
             self._file_pos = 0
 
         DEBUG and print("cursor:", self._cursor_pos)
         DEBUG and print("file:", self._file_pos)
 
-        _draw_png("res/sys/cores3/List/main.png")
+        self._main_img._draw(False)
         if self._file_pos < self._cursor_pos:
             for label, file in zip(self._labels, self._files):
                 if file is None or label is None:
@@ -1363,11 +1374,13 @@ class ListApp(AppBase):
             self._cursor_pos = max_cursor_pos
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
+            _playWav("res/media/bg.wav")
+            return
 
         DEBUG and print("cursor:", self._cursor_pos)
         DEBUG and print("file:", self._file_pos)
 
-        _draw_png("res/sys/cores3/List/main.png")
+        self._main_img._draw(False)
         if self._file_pos < 4:
             for label, file in zip(self._labels, self._files):
                 if file is None or label is None:
@@ -1678,6 +1691,7 @@ class CoreS3_Startup:
     def __init__(self) -> None:
         self._wifi = Startup()
         self._status_bar = StatusBarApp(None, self._wifi)
+        # M5.Speaker.setVolume(150)
 
     def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         gc.enable()
@@ -1701,6 +1715,7 @@ class CoreS3_Startup:
         self.i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
         self._kb = CardKB(self.i2c0)
         self._event = KeyEvent()
+        self._kb_status = False
 
         while True:
             M5.update()
@@ -1715,18 +1730,23 @@ class CoreS3_Startup:
                     # elif detail[8] and detail[4]:  # wasReleased and isPressed
                     #     pass
                     else:
-                        _playWav("res/sys/cores3/click.wav")
+                        _playWav("res/media/click.wav")
                         self._apps.load_app(M5.Touch.getX(), M5.Touch.getY())
                     last_touch_time = time.ticks_ms()
 
             try:
                 if self._kb.is_pressed():
-                    _playWav("res/sys/cores3/click.wav")
+                    _playWav("res/media/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     self._apps.handle_input(self._event)
+                if self._kb_status is False:
+                    _playWav("res/media/insert.wav")
+                    self._kb_status = True
             except OSError:
-                pass
+                if self._kb_status is True:
+                    _playWav("res/media/remove.wav")
+                    self._kb_status = False
 
             if time.ticks_ms() - last_update_status_time > 5000:
                 # 会影响触摸发处理速度

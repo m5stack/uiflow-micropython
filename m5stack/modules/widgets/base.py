@@ -4,6 +4,7 @@ class Base:
         self._y = 0
         self._w = 0
         self._h = 0
+        self._buf = None
         self._parent = parent
         self._event_handler = None
 
