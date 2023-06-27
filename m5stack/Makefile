@@ -95,11 +95,7 @@ clean:
 	cd ./components/lv_bindings && \
 	git apply --reverse ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
 	cd ./components/M5Unified/M5Unified && \
-	git apply --reverse ./../../../patches/2002-M5Unified-fix-LTR553.patch && cd -
-	cd ./components/M5Unified/M5Unified && \
-	git apply --reverse ./../../../patches/2001-Support-LTR553.patch && cd -
-	cd ./components/M5Unified/M5Unified && \
-	git apply --reverse ./../../../patches/2000-M5Unified-support-atoms3u.patch && cd -
+	git apply --reverse ./../../../patches/2003-Support-LTR553.patch && cd -
 
 deploy:
 	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash
@@ -141,8 +137,4 @@ submodules:
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
 	cd ./components/M5Unified/M5Unified && \
-	git apply ./../../../patches/2000-M5Unified-support-atoms3u.patch && cd -
-	cd ./components/M5Unified/M5Unified && \
-	git apply ./../../../patches/2001-Support-LTR553.patch && cd -
-	cd ./components/M5Unified/M5Unified && \
-	git apply ./../../../patches/2002-M5Unified-fix-LTR553.patch && cd -
+	git apply ./../../../patches/2003-Support-LTR553.patch && cd -

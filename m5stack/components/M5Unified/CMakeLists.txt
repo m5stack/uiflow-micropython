@@ -17,6 +17,7 @@ file(GLOB SRCS
     M5GFX/src/lgfx/v1/touch/*.cpp
     M5Unified/src/*.cpp
     M5Unified/src/utility/*.cpp
+    M5Unified/src/utility/imu/*.cpp
     *.cpp
 )
 
