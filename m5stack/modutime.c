@@ -52,7 +52,7 @@ STATIC mp_obj_t time_gmttime(size_t n_args, const mp_obj_t *args) {
         tuple[3] = mp_obj_new_int(tm.tm_hour),         // hour is 0-23
         tuple[4] = mp_obj_new_int(tm.tm_min),          // minute is 0-59
         tuple[5] = mp_obj_new_int(tm.tm_sec),          // second is 0-59
-        tuple[6] = mp_obj_new_int(tm.tm_wday - 1),     // weekday is 0-6 for Mon-Sun
+        tuple[6] = mp_obj_new_int(tm.tm_wday),     // weekday is 0-6 for Mon-Sun
         tuple[7] = mp_obj_new_int(tm.tm_yday),         // yearday is 1-366
     };
     return mp_obj_new_tuple(8, tuple);
@@ -77,7 +77,7 @@ STATIC mp_obj_t time_localtime(size_t n_args, const mp_obj_t *args) {
         tuple[3] = mp_obj_new_int(tm.tm_hour),         // hour is 0-23
         tuple[4] = mp_obj_new_int(tm.tm_min),          // minute is 0-59
         tuple[5] = mp_obj_new_int(tm.tm_sec),          // second is 0-59
-        tuple[6] = mp_obj_new_int(tm.tm_wday - 1),     // weekday is 0-6 for Mon-Sun
+        tuple[6] = mp_obj_new_int(tm.tm_wday),     // weekday is 0-6 for Mon-Sun
         tuple[7] = mp_obj_new_int(tm.tm_yday),         // yearday is 1-366
     };
     return mp_obj_new_tuple(8, tuple);
