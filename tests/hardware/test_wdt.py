@@ -2,31 +2,35 @@ import os, sys, io
 import M5
 from M5 import *
 from hardware import *
-from unit import *
+import time
 
 
-i2c0 = None
-cardkb_0 = None
+label0 = None
+wdt = None
 
 
-def cardkb_0_pressed_event(kb):
-    global i2c0, cardkb_0
-    print(cardkb_0.get_string())
+count = None
 
 
 def setup():
-    global i2c0, cardkb_0
+    global label0, wdt, count
 
-    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    cardkb_0 = CardKB(i2c0)
-    cardkb_0.set_callback(cardkb_0_pressed_event)
     M5.begin()
+    Widgets.fillScreen(0x222222)
+    label0 = Widgets.Label("Text", 39, 34, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
+
+    wdt = WDT(timeout=5000)
+    count = (count if isinstance(count, (int, float)) else 0) + 0
+    label0.setText(str(count))
 
 
 def loop():
-    global i2c0, cardkb_0
+    global label0, wdt, count
     M5.update()
-    cardkb_0.tick()
+    time.sleep(4)
+    wdt.feed()
+    count = 1 + count
+    label0.setText(str(count))
 
 
 if __name__ == "__main__":
