@@ -24,11 +24,11 @@ try:
 except ImportError:
     import requests
 
-from res.font import MontserratMedium10
+from common.font import MontserratMedium10
 
-# from res.font import MontserratMedium14
-from res.font import MontserratMedium16
-from res.font import MontserratMedium18
+# from common.font import MontserratMedium14
+from common.font import MontserratMedium16
+from common.font import MontserratMedium18
 
 micropython.alloc_emergency_exception_buf(100)
 
@@ -78,128 +78,128 @@ ImageDesc = namedtuple("ImageDesc", ["x", "y", "w", "h"])
 ImageDesc1 = namedtuple("ImageDesc1", ["src", "x", "y", "w", "h"])
 
 _IMAGE_LIST = {
-    # "res/sys/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Green.png": ImageDesc(320 - 56, 0, 56, 20),
-    "res/sys/cores3/Battery/battery_Green_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
-    "res/sys/cores3/Battery/battery_Red.png": ImageDesc(320 - 56, 0, 56, 20),
-    "res/sys/cores3/Battery/battery_Red_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
-    # "res/sys/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
-    "res/sys/cores3/Battery/battery_Black.png": ImageDesc(320 - 56, 0, 56, 20),
-    "res/sys/cores3/Battery/battery_Black_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
-    "res/sys/cores3/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/ezdata_selected.png": ImageDesc(
+    # "/system/cores3/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
+    "/system/cores3/Battery/battery_Green.png": ImageDesc(320 - 56, 0, 56, 20),
+    "/system/cores3/Battery/battery_Green_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
+    "/system/cores3/Battery/battery_Red.png": ImageDesc(320 - 56, 0, 56, 20),
+    "/system/cores3/Battery/battery_Red_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
+    # "/system/cores3/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
+    "/system/cores3/Battery/battery_Black.png": ImageDesc(320 - 56, 0, 56, 20),
+    "/system/cores3/Battery/battery_Black_Charge.png": ImageDesc(320 - 56, 0, 56, 20),
+    "/system/cores3/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
+    "/system/cores3/Selection/ezdata_selected.png": ImageDesc(
         5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
     ),
-    "res/sys/cores3/Selection/ezdata_unselected.png": ImageDesc(
+    "/system/cores3/Selection/ezdata_unselected.png": ImageDesc(
         5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
     ),
-    "res/sys/cores3/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
-    "res/sys/cores3/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
-    "res/sys/cores3/Server/server_blue.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_empty.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_error.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/Server_Green.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Server/server_red.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_green.png": ImageDesc(0, 0, 320, 20),
-    "res/sys/cores3/Title/title_red.png": ImageDesc(0, 0, 320, 20),
-    "res/sys/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_good.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "res/sys/cores3/boot.png": ImageDesc(0, 0, 320, 240),
-    "res/sys/cores3/boot/boot0.png": ImageDesc(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot1.png": ImageDesc(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot2.png": ImageDesc(60, 45, 320, 240),
-    "res/sys/cores3/boot/boot3.png": ImageDesc(60, 45, 320, 240),
-    "res/sys/cores3/Setting/wifiServer.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/pass.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/server.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/ssid.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "res/sys/cores3/Setting/charge100.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge900.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge1000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge1500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/charge2000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/bootNo.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/bootYes.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "res/sys/cores3/Setting/comxDisable.png": ImageDesc(
+    "/system/cores3/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "/system/cores3/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
+    "/system/cores3/Server/server_blue.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "/system/cores3/Server/server_empty.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "/system/cores3/Server/server_error.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "/system/cores3/Server/Server_Green.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "/system/cores3/Server/server_red.png": ImageDesc(320 - 56 - 20 - 5, 0, 20, 20),
+    "/system/cores3/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
+    "/system/cores3/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
+    "/system/cores3/Title/title_green.png": ImageDesc(0, 0, 320, 20),
+    "/system/cores3/Title/title_red.png": ImageDesc(0, 0, 320, 20),
+    "/system/cores3/WiFi/wifi_disconnected.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "/system/cores3/WiFi/wifi_empty.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "/system/cores3/WiFi/wifi_good.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "/system/cores3/WiFi/wifi_mid.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "/system/cores3/WiFi/wifi_worse.png": ImageDesc(320 - 56 - 20 - 5 - 20 - 5, 0, 20, 20),
+    "/system/cores3/boot.png": ImageDesc(0, 0, 320, 240),
+    "/system/cores3/boot/boot0.png": ImageDesc(60, 45, 320, 240),
+    "/system/cores3/boot/boot1.png": ImageDesc(60, 45, 320, 240),
+    "/system/cores3/boot/boot2.png": ImageDesc(60, 45, 320, 240),
+    "/system/cores3/boot/boot3.png": ImageDesc(60, 45, 320, 240),
+    "/system/cores3/Setting/wifiServer.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "/system/cores3/Setting/pass.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "/system/cores3/Setting/server.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "/system/cores3/Setting/ssid.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
+    "/system/cores3/Setting/charge100.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/charge500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/charge900.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/charge1000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/charge1500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/charge2000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/bootNo.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/bootYes.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
+    "/system/cores3/Setting/comxDisable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/comxEnable.png": ImageDesc(
+    "/system/cores3/Setting/comxEnable.png": ImageDesc(
         4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/usbInput.png": ImageDesc(
+    "/system/cores3/Setting/usbInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/usbOutput.png": ImageDesc(
+    "/system/cores3/Setting/usbOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/busInput.png": ImageDesc(
+    "/system/cores3/Setting/busInput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Setting/busOutput.png": ImageDesc(
+    "/system/cores3/Setting/busOutput.png": ImageDesc(
         4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
     ),
-    "res/sys/cores3/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-    "res/sys/cores3/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-    "res/sys/cores3/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-    "res/sys/cores3/List/main.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "/system/cores3/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "/system/cores3/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "/system/cores3/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
+    "/system/cores3/List/main.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
     # w 2 + 30
     # h 2
-    "res/sys/cores3/List/left_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
+    "/system/cores3/List/left_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
     # w -10 -60
-    "res/sys/cores3/List/right_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
+    "/system/cores3/List/right_cursor.png": ImageDesc(4, 20 + 4 + 56 + 4, 10, 36),
 }
 
 
 _SETTING_ICO = {
     True: ImageDesc1(
-        src="res/sys/cores3/Selection/setting_selected.png", x=5, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/setting_selected.png", x=5, y=20 + 4, w=62, h=56
     ),
     False: ImageDesc1(
-        src="res/sys/cores3/Selection/setting_unselected.png", x=5, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/setting_unselected.png", x=5, y=20 + 4, w=62, h=56
     ),
 }
 
 
 _DEVELOP_ICO = {
     True: ImageDesc1(
-        src="res/sys/cores3/Selection/develop_selected.png", x=5 + 62, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/develop_selected.png", x=5 + 62, y=20 + 4, w=62, h=56
     ),
     False: ImageDesc1(
-        src="res/sys/cores3/Selection/develop_unselected.png", x=5 + 62, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/develop_unselected.png", x=5 + 62, y=20 + 4, w=62, h=56
     ),
 }
 
 
 _APPRUN_ICO = {
     True: ImageDesc1(
-        src="res/sys/cores3/Selection/appRun_selected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/appRun_selected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
     ),
     False: ImageDesc1(
-        src="res/sys/cores3/Selection/appRun_unselected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
+        src="/system/cores3/Selection/appRun_unselected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
     ),
 }
 
 _APPLIST_ICO = {
     True: ImageDesc1(
-        src="res/sys/cores3/Selection/appList_selected.png",
+        src="/system/cores3/Selection/appList_selected.png",
         x=5 + 62 + 62 + 62,
         y=20 + 4,
         w=62,
         h=56,
     ),
     False: ImageDesc1(
-        src="res/sys/cores3/Selection/appList_unselected.png",
+        src="/system/cores3/Selection/appList_unselected.png",
         x=5 + 62 + 62 + 62,
         y=20 + 4,
         w=62,
@@ -210,14 +210,14 @@ _APPLIST_ICO = {
 
 _EZDATA_ICO = {
     True: ImageDesc1(
-        src="res/sys/cores3/Selection/ezdata_selected.png",
+        src="/system/cores3/Selection/ezdata_selected.png",
         x=5 + 62 + 62 + 62 + 62,
         y=20 + 4,
         w=62,
         h=56,
     ),
     False: ImageDesc1(
-        src="res/sys/cores3/Selection/ezdata_unselected.png",
+        src="/system/cores3/Selection/ezdata_unselected.png",
         x=5 + 62 + 62 + 62 + 62,
         y=20 + 4,
         w=62,
@@ -245,7 +245,7 @@ def _playWav(wav: str):
         with open(wav, "rb") as f:
             binary_data = f.read()
         _wav_path = wav
-        if wav is "res/media/click.wav":
+        if wav is "/system/common/wav/click.wav":
             M5.Speaker.setVolume(64)
         else:
             M5.Speaker.setVolume(127)
@@ -392,7 +392,7 @@ class WiFiSetting(AppBase):
         self._select_default_option()
 
     def _select_default_option(self):
-        _draw_png("res/sys/cores3/Setting/wifiServer.png")
+        _draw_png("/system/cores3/Setting/wifiServer.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -401,7 +401,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_ssid_option(self):
-        _draw_png("res/sys/cores3/Setting/ssid.png")
+        _draw_png("/system/cores3/Setting/ssid.png")
         self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -410,7 +410,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_psd_option(self):
-        _draw_png("res/sys/cores3/Setting/pass.png")
+        _draw_png("/system/cores3/Setting/pass.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
@@ -419,7 +419,7 @@ class WiFiSetting(AppBase):
         self._server_label.setText(self.server_tmp)
 
     def _select_server_option(self):
-        _draw_png("res/sys/cores3/Setting/server.png")
+        _draw_png("/system/cores3/Setting/server.png")
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xDCDDDD)
@@ -574,7 +574,7 @@ CURRENT_OPTION = (
     (
         100,
         ImageDesc1(
-            src="res/sys/cores3/Setting/charge100.png",
+            src="/system/cores3/Setting/charge100.png",
             x=4,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -584,7 +584,7 @@ CURRENT_OPTION = (
     (
         500,
         ImageDesc1(
-            src="res/sys/cores3/Setting/charge500.png",
+            src="/system/cores3/Setting/charge500.png",
             x=4,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -594,7 +594,7 @@ CURRENT_OPTION = (
     (
         900,
         ImageDesc1(
-            src="res/sys/cores3/Setting/charge900.png",
+            src="/system/cores3/Setting/charge900.png",
             x=4,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -604,15 +604,15 @@ CURRENT_OPTION = (
     (
         1000,
         ImageDesc1(
-            src="res/sys/cores3/Setting/charge1000.png",
+            src="/system/cores3/Setting/charge1000.png",
             x=4,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
             h=44,
         ),
     ),
-    # (1500, ImageDesc1(src="res/sys/cores3/Setting/charge1500.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
-    # (2000, ImageDesc1(src="res/sys/cores3/Setting/charge2000.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
+    # (1500, ImageDesc1(src="/system/cores3/Setting/charge1500.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
+    # (2000, ImageDesc1(src="/system/cores3/Setting/charge2000.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
 )
 
 
@@ -666,7 +666,7 @@ BOOT_OPTION = (
     (
         0,
         ImageDesc1(
-            src="res/sys/cores3/Setting/bootNo.png",
+            src="/system/cores3/Setting/bootNo.png",
             x=4 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -676,7 +676,7 @@ BOOT_OPTION = (
     (
         1,
         ImageDesc1(
-            src="res/sys/cores3/Setting/bootYes.png",
+            src="/system/cores3/Setting/bootYes.png",
             x=4 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -738,8 +738,8 @@ class ComLinkSetting(AppBase):
     def __init__(self, icos: dict) -> None:
         self.icos = charge_ico(
             (
-                "res/sys/cores3/Setting/comxEnable.png",
-                "res/sys/cores3/Setting/comxDisable.png",
+                "/system/cores3/Setting/comxEnable.png",
+                "/system/cores3/Setting/comxDisable.png",
             )
         )
         self.src = next(self.icos)
@@ -772,7 +772,7 @@ USBPOWER_OPTION = (
     (
         False,
         ImageDesc1(
-            src="res/sys/cores3/Setting/usbInput.png",
+            src="/system/cores3/Setting/usbInput.png",
             x=4 + 60 + 3 + 60 + 3 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -782,7 +782,7 @@ USBPOWER_OPTION = (
     (
         True,
         ImageDesc1(
-            src="res/sys/cores3/Setting/usbOutput.png",
+            src="/system/cores3/Setting/usbOutput.png",
             x=4 + 60 + 3 + 60 + 3 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -835,7 +835,7 @@ BUSPOWER_OPTION = (
     (
         False,
         ImageDesc1(
-            src="res/sys/cores3/Setting/busInput.png",
+            src="/system/cores3/Setting/busInput.png",
             x=4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -845,7 +845,7 @@ BUSPOWER_OPTION = (
     (
         True,
         ImageDesc1(
-            src="res/sys/cores3/Setting/busOutput.png",
+            src="/system/cores3/Setting/busOutput.png",
             x=4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3,
             y=20 + 4 + 56 + 4 + 108 + 4,
             w=60,
@@ -1002,7 +1002,7 @@ class DevApp(AppBase):
         )
         self._account_label.setLongMode(Label.LONG_WARP)
 
-        self.avatar = "res/common/avatar.jpg"
+        self.avatar = "/system/common/img/avatar.jpg"
 
         super().__init__(icos)
 
@@ -1014,7 +1014,7 @@ class DevApp(AppBase):
         self._account_label.setText(str(data[1]))
 
         try:
-            if self.avatar == "res/common/avatar.jpg":
+            if self.avatar == "/system/common/img/avatar.jpg":
                 M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
             else:
                 M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
@@ -1026,18 +1026,19 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if infos[0] is 0 or infos[0] is 1:
-                self.src = "res/sys/cores3/Develop/private.png"
+                self.src = "/system/cores3/Develop/private.png"
             elif infos[0] is 2:
-                self.src = "res/sys/cores3/Develop/public.png"
+                self.src = "/system/cores3/Develop/public.png"
             DEBUG and print("Develop info:")
             DEBUG and print("  Device mac:", mac)
             DEBUG and print("  Permissions:", Permissions.get(infos[0]))
             DEBUG and print("  Account:", infos[1])
             DEBUG and print("  Avatar:", infos[4])
             if len(infos[4]) is 0:
-                self.avatar = "res/common/avatar.jpg"
+                self.avatar = "/system/common/img/avatar.jpg"
             else:
-                self.avatar = "res/common/" + str(infos[4]).split("/")[-1]
+                # FIXME: avatar.jpg path is not right
+                self.avatar = "/system/common/" + str(infos[4]).split("/")[-1]
 
             try:
                 os.stat(self.avatar)
@@ -1048,7 +1049,7 @@ class DevApp(AppBase):
                 f.close()
             return (mac, None if len(infos[1]) is 0 else infos[1])
         else:
-            self.src = "res/sys/cores3/Develop/private.png"
+            self.src = "/system/cores3/Develop/private.png"
             return (mac, None, None)
 
     def handle(self, x, y):
@@ -1111,7 +1112,7 @@ class RunApp(AppBase):
 
     def mount(self):
         _draw_image(self.icos.get(True))
-        _draw_png("res/sys/cores3/Run/run.png")
+        _draw_png("/system/cores3/Run/run.png")
         self.update_file_info("main.py")
 
     def update_file_info(self, filename):
@@ -1192,7 +1193,7 @@ class ListApp(AppBase):
         self._main_img = Image()
         self._main_img.set_pos(4, 20 + 4 + 56 + 4)
         self._main_img.set_size(312, 156)
-        self._main_img.set_src("res/sys/cores3/List/main.png")
+        self._main_img.set_src("/system/cores3/List/main.png")
         # button up
         # x 4 + 2
         # y (20 + 4 + 56 + 4) + 2
@@ -1245,14 +1246,14 @@ class ListApp(AppBase):
         self._left_img = Image()
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
-        self._left_img.set_src("res/sys/cores3/List/left_cursor.png")
+        self._left_img.set_src("/system/cores3/List/left_cursor.png")
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (20 + 4 + 56 + 4) + 2
         self._right_img = Image()
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
-        self._right_img.set_src("res/sys/cores3/List/right_cursor.png")
+        self._right_img.set_src("/system/cores3/List/right_cursor.png")
 
         self._label0 = Label(
             "",
@@ -1327,7 +1328,7 @@ class ListApp(AppBase):
 
     def _btn_up_event_handler(self, event):
         if self._file_pos is 0 and self._cursor_pos == 0:
-            _playWav("res/media/bg.wav")
+            _playWav("/system/common/wav/bg.wav")
             return
 
         self._file_pos -= 1
@@ -1374,7 +1375,7 @@ class ListApp(AppBase):
             self._cursor_pos = max_cursor_pos
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
-            _playWav("res/media/bg.wav")
+            _playWav("/system/common/wav/bg.wav")
             return
 
         DEBUG and print("cursor:", self._cursor_pos)
@@ -1532,18 +1533,18 @@ class AppManage:
 
 
 _WIFI_STATUS_ICO = {
-    WiFiStatus.INIT: "res/sys/cores3/WiFi/wifi_empty.png",
-    WiFiStatus.RSSI_GOOD: "res/sys/cores3/WiFi/wifi_good.png",
-    WiFiStatus.RSSI_MID: "res/sys/cores3/WiFi/wifi_mid.png",
-    WiFiStatus.RSSI_WORSE: "res/sys/cores3/WiFi/wifi_worse.png",
-    WiFiStatus.DISCONNECTED: "res/sys/cores3/WiFi/wifi_disconnected.png",
+    WiFiStatus.INIT: "/system/cores3/WiFi/wifi_empty.png",
+    WiFiStatus.RSSI_GOOD: "/system/cores3/WiFi/wifi_good.png",
+    WiFiStatus.RSSI_MID: "/system/cores3/WiFi/wifi_mid.png",
+    WiFiStatus.RSSI_WORSE: "/system/cores3/WiFi/wifi_worse.png",
+    WiFiStatus.DISCONNECTED: "/system/cores3/WiFi/wifi_disconnected.png",
 }
 
 
 _SERVER_STATUS_ICO = {
-    ServerStatus.INIT: "res/sys/cores3/Server/server_empty.png",
-    ServerStatus.CONNECTED: "res/sys/cores3/Server/Server_Green.png",
-    ServerStatus.DISCONNECTED: "res/sys/cores3/Server/server_error.png",
+    ServerStatus.INIT: "/system/cores3/Server/server_empty.png",
+    ServerStatus.CONNECTED: "/system/cores3/Server/Server_Green.png",
+    ServerStatus.DISCONNECTED: "/system/cores3/Server/server_error.png",
 }
 
 
@@ -1587,7 +1588,7 @@ class StatusBarApp:
         self._load_view()
 
     def _load_view(self):
-        _draw_png("res/sys/cores3/Title/title_blue.png")
+        _draw_png("/system/cores3/Title/title_blue.png")
         self.handle(None, None)
 
     def _update_time(self, struct_time):
@@ -1595,12 +1596,12 @@ class StatusBarApp:
 
     def _update_wifi(self, status):
         self._wifi_status = status
-        src = _WIFI_STATUS_ICO.get(self._wifi_status, "res/sys/cores3/WiFi/wifi_empty.png")
+        src = _WIFI_STATUS_ICO.get(self._wifi_status, "/system/cores3/WiFi/wifi_empty.png")
         _draw_png(src)
 
     def _update_server(self, status):
         self._server_status = status
-        src = _SERVER_STATUS_ICO.get(self._server_status, "res/sys/cores3/Server/server_error.png")
+        src = _SERVER_STATUS_ICO.get(self._server_status, "/system/cores3/Server/server_error.png")
         _draw_png(src)
 
     def _update_battery(self, battery, charging):
@@ -1608,23 +1609,23 @@ class StatusBarApp:
         if battery > 0 and battery <= 100:
             if battery < 20:
                 src = (
-                    "res/sys/cores3/Battery/battery_Red_Charge.png"
+                    "/system/cores3/Battery/battery_Red_Charge.png"
                     if charging
-                    else "res/sys/cores3/Battery/battery_Red.png"
+                    else "/system/cores3/Battery/battery_Red.png"
                 )
             elif battery <= 100:
                 src = (
-                    "res/sys/cores3/Battery/battery_Green_Charge.png"
+                    "/system/cores3/Battery/battery_Green_Charge.png"
                     if charging
-                    else "res/sys/cores3/Battery/battery_Green.png"
+                    else "/system/cores3/Battery/battery_Green.png"
                 )
             _draw_png(src)
             self._battery_label.setText("{:d}%".format(battery))
         else:
             src = (
-                "res/sys/cores3/Battery/battery_Black_Charge.png"
+                "/system/cores3/Battery/battery_Black_Charge.png"
                 if charging
-                else "res/sys/cores3/Battery/battery_Black.png"
+                else "/system/cores3/Battery/battery_Black.png"
             )
             _draw_png(src)
 
@@ -1683,7 +1684,7 @@ class BootView:
 
     @classmethod
     def load(self) -> None:
-        _draw_png("res/sys/cores3/boot.png")
+        _draw_png("/system/cores3/boot.png")
         time.sleep(0.2)
 
 
@@ -1730,22 +1731,22 @@ class CoreS3_Startup:
                     # elif detail[8] and detail[4]:  # wasReleased and isPressed
                     #     pass
                     else:
-                        _playWav("res/media/click.wav")
+                        _playWav("/system/common/wav/click.wav")
                         self._apps.load_app(M5.Touch.getX(), M5.Touch.getY())
                     last_touch_time = time.ticks_ms()
 
             try:
                 if self._kb.is_pressed():
-                    _playWav("res/media/click.wav")
+                    _playWav("/system/common/wav/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     self._apps.handle_input(self._event)
                 if self._kb_status is False:
-                    _playWav("res/media/insert.wav")
+                    _playWav("/system/common/wav/insert.wav")
                     self._kb_status = True
             except OSError:
                 if self._kb_status is True:
-                    _playWav("res/media/remove.wav")
+                    _playWav("/system/common/wav/remove.wav")
                     self._kb_status = False
 
             if time.ticks_ms() - last_update_status_time > 5000:

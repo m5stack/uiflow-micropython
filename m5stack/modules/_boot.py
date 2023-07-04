@@ -1,6 +1,6 @@
 import gc
 import uos as os
-from flashbdev import bdev
+from flashbdev import sys_bdev, vfs_bdev
 
 uiflow_str = """
        _  __ _               
@@ -14,9 +14,12 @@ del uiflow_str
 
 # monut flash file system
 try:
-    if bdev:
-        vfs = os.VfsLfs2(bdev, progsize=32, readsize=128, lookahead=128)
-        os.mount(vfs, "/flash")
+    if sys_bdev:
+        fs_sys = os.VfsLfs2(sys_bdev, progsize=32, readsize=128, lookahead=128)
+        os.mount(fs_sys, "/system")
+    if vfs_bdev:
+        fs_vfs = os.VfsLfs2(vfs_bdev, progsize=32, readsize=128, lookahead=128)
+        os.mount(fs_vfs, "/flash")
 except OSError:
     import inisetup
 
@@ -30,6 +33,7 @@ import sys
 
 micropython.alloc_emergency_exception_buf(256)
 # system path
+sys.path.append("/system")
 sys.path.append("/flash/libs")
 
 # change directory to "/flash"

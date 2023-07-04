@@ -138,9 +138,11 @@ int cpt_scan_files(const char *board, const char *basePath, char (*file_path)[25
         } else if (ptr->d_type == 4) {
             char path_new[300] = {0x00};
             sprintf(path_new, "%s/%s", basePath, ptr->d_name);
-            if (strstr(path_new, "sys/") != NULL) {
-                if (strstr(path_new, board) == NULL) {
-                    continue;
+            if (strstr(path_new, "system/") != NULL) {
+                if (strstr(path_new, "system/common") == NULL) {
+                    if (strstr(path_new, board) == NULL) {
+                        continue;
+                    }
                 }
             }
             sprintf(&file_path[*file_count][0], "%s/.", path_new);

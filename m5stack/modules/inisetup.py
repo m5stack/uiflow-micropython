@@ -1,10 +1,10 @@
 import uos
-from flashbdev import bdev
+from flashbdev import vfs_bdev
 
 
 def check_bootsec():
-    buf = bytearray(bdev.ioctl(5, 0))  # 5 is SEC_SIZE
-    bdev.readblocks(0, buf)
+    buf = bytearray(vfs_bdev.ioctl(5, 0))  # 5 is SEC_SIZE
+    vfs_bdev.readblocks(0, buf)
     empty = True
     for b in buf:
         if b != 0xFF:
@@ -33,17 +33,59 @@ by firmware programming).
 def setup():
     # check_bootsec()
     print("Performing initial setup")
-    uos.VfsLfs2.mkfs(bdev)
-    vfs = uos.VfsLfs2(bdev, progsize=32, readsize=128, lookahead=128)
+    uos.VfsLfs2.mkfs(vfs_bdev)
+    vfs = uos.VfsLfs2(vfs_bdev, progsize=32, readsize=128, lookahead=128)
     uos.mount(vfs, "/flash")
     with open("/flash/boot.py", "w") as f:
         f.write(
             """\
-# This file is executed on every boot (including wake-boot from deepsleep)
-#import esp
-#esp.osdebug(None)
-#import webrepl
-#webrepl.start()
+# -*- encoding: utf-8 -*-
+# boot.py
+import M5
+import esp32
+
+\"\"\"
+boot_option:
+    0 -> Run main.py directly
+    1 -> Show startup menu and network setup
+    2 -> Only network setup
+
+Quick reference:
+    when use uiflow2.m5stack.com website, click RUN button to run workspace
+    code, boot_option won't change, if you click DOWNLOAD button to download
+    workspace code to device, boot_option will change to 2, it means after
+    download code done, device will auto reboot and won't show startup menu, 
+    only do the network connect, but after network connect success, you can
+    still download or run workspace code. If you don't want do anything after
+    boot, you can delete this whole file. If you want show startup menu again,
+    you can hold BtnA(most device) and click reset button or repower device
+    until show the startup menu(for those devices with screens, and this is a
+    temporary method and may change in the future), after that the boot_option
+    will change to 1, so next time still will show the startup menu.
+
+    BTW, the network connection time has a default timeout (60s), you can modify
+    the following definition to change this default value.
+\"\"\"
+
+NETWORK_TIMEOUT = 60
+
+# Execute startup script, if not needed, delete the code below
+if __name__ == "__main__":
+    M5.begin()
+    from startup import startup
+
+    nvs = esp32.NVS("uiflow")
+    try:
+        boot_option = nvs.get_u8("boot_option")
+    except:
+        boot_option = 1  # default
+    startup(boot_option, NETWORK_TIMEOUT)
+
 """
         )
+    uos.mkdir("/flash/apps")
+    uos.mkdir("/flash/libs")
+    uos.mkdir("/flash/res")
+    uos.mkdir("/flash/res/font")
+    uos.mkdir("/flash/res/img")
     return vfs
