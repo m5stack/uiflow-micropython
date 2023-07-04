@@ -1,4 +1,4 @@
-## file system directory structure
+## user file system directory structure
 
 ```shell
 ├── README.md           ----> this file
@@ -12,16 +12,12 @@
 └── res                 ----> resource files
     ├── font            ----> font files
     │   └── README.md
-    ├── img             ----> image files
-    │   ├── README.md
-    │   ├── default.jpg
-    │   ├── default.png
-    │   ├── uiflow.bmp
-    │   ├── uiflow.jpg
-    │   └── uiflow.png
-    └── sys             ----> system resource files
+    └── img             ----> image files
         ├── README.md
-        ├── atoms3
-        ├── cores3
+        ├── default.jpg
+        ├── default.png
+        ├── uiflow.bmp
+        ├── uiflow.jpg
+        └── uiflow.png
         └── ...
 ```

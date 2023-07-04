@@ -25,7 +25,9 @@ partition_table = load_partition_table(arg_partitions_bin)
 
 # Inspect the partition table to find offsets and maximum sizes.
 for part in partition_table:
-    if part.type == gen_esp32part.DATA_TYPE and part.name == "vfs":
+    if part.type == gen_esp32part.DATA_TYPE and part.name == "sys" and "system" in arg_filesystem_out:
+        max_size_filesystem = part.size
+    elif part.type == gen_esp32part.DATA_TYPE and part.name == "vfs" and "user" in arg_filesystem_out:
         max_size_filesystem = part.size
 
 # print("fs partition size: 0x%x bytes" % max_size_filesystem)

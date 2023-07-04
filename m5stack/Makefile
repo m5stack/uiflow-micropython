@@ -14,8 +14,8 @@ BOARD ?= M5STACK_8MB
 BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u
 
 # Select the board type to build, default is None
-# This value affects which folder in the "./fs/res/sys/" directory is pack into "fs.bin"
-# If use default value, it means no directory will pack into "fs.bin"
+# This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
+# If use default value, it means no directory will pack into "fs-system.bin"
 BOARD_TYPE ?= none
 
 ifneq ($(filter $(BOARD_TYPE),$(BOARD_TYPE_DEF)),)
@@ -25,14 +25,14 @@ endif
 
 # esp32c3's bootloader is different with esp32
 ifeq (C3, $(findstring C3,${BOARD}))
-CHIP ?= esp32c3
-BOOTLOADR_OFFSET ?= 0x0
+	CHIP ?= esp32c3
+	BOOTLOADR_OFFSET ?= 0x0
 else ifeq (S3, $(findstring S3,${BOARD}))
-CHIP ?= esp32s3
-BOOTLOADR_OFFSET ?= 0x0
+	CHIP ?= esp32s3
+	BOOTLOADR_OFFSET ?= 0x0
 else
-CHIP ?= esp32
-BOOTLOADR_OFFSET ?= 0x1000
+	CHIP ?= esp32
+	BOOTLOADR_OFFSET ?= 0x1000
 endif
 
 # If the build directory is not given, make it reflect the board name.
@@ -46,8 +46,6 @@ BAUD ?= 1500000
 PYTHON ?= python3
 
 GIT_SUBMODULES = lib/berkeley-db-1.xx 
-
-.PHONY: all clean deploy erase mpy-cross submodules fs nvs FORCE
 
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -70,24 +68,46 @@ endif
 
 GIT_VERSION := $(shell git describe --abbrev=7 --always)
 
-all: build fs nvs
-	@$(PYTHON) makeimg.py \
+define pack_fw
+	$(1) makeimg.py \
 		$(BUILD)/sdkconfig \
 		$(BUILD)/bootloader/bootloader.bin \
 		$(BUILD)/partition_table/partition-table.bin \
 		$(BUILD)/nvs.bin \
 		$(BUILD)/micropython.bin \
-		$(BUILD)/fs.bin \
+		$(BUILD)/fs-system.bin \
+		$(2) \
 		$(BOARD_TYPE) \
 		$(LVGL_FLAG) \
 		$(BUILD)/uiflow-$(GIT_VERSION).bin \
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
+endef
+
+.PHONY: all build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
+
+all: nvs fs pack
+	@echo ""
+	@echo "Done, default packed firmware don't include vfs filesystem, if need vfs filesystem, please use 'make pack_all' command."
 
 $(BUILD)/bootloader/bootloader.bin $(BUILD)/partition_table/partition-table.bin $(BUILD)/micropython.bin: FORCE
 
-build:
+# Build the MicroPython firmware.
+build: nvs
 	idf.py $(IDFPY_FLAGS) build
 
+# Deploy the MicroPython.
+deploy: build
+	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash
+
+# Deploy the MicroPython and system filesystem.
+flash: pack
+	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
+
+# Deploy the MicroPython, system filesystem and user filesystem.
+flash_all: pack_all
+	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
+
+# Clean the build directory.
 clean:
 	idf.py $(IDFPY_FLAGS) fullclean
 	cd ./../micropython && \
@@ -97,27 +117,38 @@ clean:
 	cd ./components/M5Unified/M5Unified && \
 	git apply --reverse ./../../../patches/2003-Support-LTR553.patch && cd -
 
-deploy:
-	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) flash
-
-monitor:
-	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) monitor
-
+# Erase the flash chip.
 erase:
 	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) erase_flash
 
-flash: all
-	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
+# Run the serial monitor.
+monitor:
+	idf.py $(IDFPY_FLAGS) -p $(PORT) -b $(BAUD) monitor
 
-fs: build
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs $(BUILD)/fs.bin $(BUILD)/partition_table/partition-table.bin
-
+# Build the NVS partition firmware.
+# fixed size 0x6000
 nvs:
-	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000 # fixed size
+	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000
 
+# Build the system and user filesystem firmware.
+fs: build
+	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/system $(BUILD)/fs-system.bin $(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/user $(BUILD)/fs-user.bin $(BUILD)/partition_table/partition-table.bin
+
+# Pack the firmware into a single binary without user filesystem.
+# Released firmware needn't user filesystem.
+pack: fs
+	$(call pack_fw,$(PYTHON),none)
+
+# Pack the firmware into a single binary with user filesystem.
+pack_all: fs
+	$(call pack_fw,$(PYTHON),$(BUILD)/fs-user.bin)
+
+# Build littlefs tool
 littlefs:
 	cd ./../tools/littlefs && rm -rf ./build && mkdir build && cd build && cmake .. && make -j && cp ./littlefs2 ./../prebuilt/
 
+# Build mpy-cross compiler
 mpy-cross:
 	make -C ../micropython/mpy-cross
 

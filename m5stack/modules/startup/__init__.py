@@ -44,6 +44,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
         if M5.BtnA.isPressed():
             boot_opt = BOOT_OPT_MENU_NET
             nvs.set_u8("boot_option", boot_opt)
+            # FIXME: remove this file is temporary solution
             os.remove("/flash/main.py")
 
     # Do nothing

@@ -1,4 +1,7 @@
 from esp32 import Partition
 
-bdev = Partition.find(Partition.TYPE_DATA, label="vfs")
-bdev = bdev[0] if bdev else None
+sys_bdev = Partition.find(Partition.TYPE_DATA, label="sys")
+sys_bdev = sys_bdev[0] if sys_bdev else None
+
+vfs_bdev = Partition.find(Partition.TYPE_DATA, label="vfs")
+vfs_bdev = vfs_bdev[0] if vfs_bdev else None

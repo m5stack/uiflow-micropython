@@ -66,11 +66,12 @@ arg_bootloader_bin = sys.argv[2]
 arg_partitions_bin = sys.argv[3]
 arg_nvs_bin = sys.argv[4]
 arg_application_bin = sys.argv[5]
-arg_filesystem_bin = sys.argv[6]
-arg_board_type_flag = sys.argv[7]
-arg_lvgl_flag = sys.argv[8]
-arg_output_bin = sys.argv[9]
-arg_output_uf2 = sys.argv[10]
+arg_fs_sys_bin = sys.argv[6]
+arg_fs_vfs_bin = sys.argv[7]
+arg_board_type_flag = sys.argv[8]
+arg_lvgl_flag = sys.argv[9]
+arg_output_bin = sys.argv[10]
+arg_output_uf2 = sys.argv[11]
 
 # Load required sdkconfig values.
 idf_target = load_sdkconfig_str_value(arg_sdkconfig, "IDF_TARGET", "").upper()
@@ -90,8 +91,10 @@ offset_nvs = 0
 max_size_nvs = 0
 offset_application = 0
 max_size_application = 0
-offset_filesystem = 0
-max_size_filesystem = 0
+offset_fs_sys = 0
+max_size_fs_sys = 0
+offset_fs_vfs = 0
+max_size_fs_vfs = 0
 
 # Inspect the partition table to find offsets and maximum sizes.
 for part in partition_table:
@@ -102,9 +105,12 @@ for part in partition_table:
     elif part.type == gen_esp32part.APP_TYPE and offset_application == 0:
         offset_application = part.offset
         max_size_application = part.size
+    elif part.type == gen_esp32part.DATA_TYPE and part.name == "sys":
+        offset_fs_sys = part.offset
+        max_size_fs_sys = part.size
     elif part.type == gen_esp32part.DATA_TYPE and part.name == "vfs":
-        offset_filesystem = part.offset
-        max_size_filesystem = part.size
+        offset_fs_vfs = part.offset
+        max_size_fs_vfs = part.size
 
 
 # Define the input files, their location and maximum size.
@@ -113,8 +119,13 @@ files_in = [
     ("partitions", offset_partitions, max_size_partitions, arg_partitions_bin),
     ("nvs", offset_nvs, max_size_nvs, arg_nvs_bin),
     ("application", offset_application, max_size_application, arg_application_bin),
-    ("filesystem", offset_filesystem, max_size_filesystem, arg_filesystem_bin),
+    ("fs_sys", offset_fs_sys, max_size_fs_sys, arg_fs_sys_bin),
+    ("fs_vfs", offset_fs_vfs, max_size_fs_vfs, arg_fs_vfs_bin),
 ]
+
+# Remove files that are not present.
+if arg_fs_vfs_bin == "none":
+    files_in.pop()
 
 file_out = arg_output_bin
 
@@ -141,7 +152,7 @@ with open(file_out, "wb") as fout:
                 sys.exit(1)
     print("%-23s%8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
-        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n"
+        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n\r\n"
         "\033[1;32mExample command:\033[0m\r\n"
         "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
         "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"

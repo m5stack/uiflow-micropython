@@ -12,9 +12,9 @@ from hardware import RGB
 
 
 class AtomS3_Startup(Startup):
-    WIFI_OK = "/flash/res/sys/atoms3/wifi_ok.png"
-    WIFI_ERR = "/flash/res/sys/atoms3/wifi_err.png"
-    MODE_DEV = "/flash/res/sys/atoms3/mode_dev.png"
+    WIFI_OK = "/system/atoms3/wifi_ok.png"
+    WIFI_ERR = "/system/atoms3/wifi_err.png"
+    MODE_DEV = "/system/atoms3/mode_dev.png"
 
     def __init__(self) -> None:
         super().__init__()
