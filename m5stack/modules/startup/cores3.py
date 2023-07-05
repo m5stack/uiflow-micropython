@@ -397,7 +397,10 @@ class WiFiSetting(AppBase):
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
+        if len(self.pswd_tmp) is 0:
+            self._pwd_label.setText("")
+        else:
+            self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_ssid_option(self):
@@ -406,7 +409,10 @@ class WiFiSetting(AppBase):
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
+        if len(self.pswd_tmp) is 0:
+            self._pwd_label.setText("")
+        else:
+            self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_psd_option(self):
@@ -415,7 +421,10 @@ class WiFiSetting(AppBase):
         self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
+        if len(self.pswd_tmp) is 0:
+            self._pwd_label.setText("")
+        else:
+            self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_server_option(self):
@@ -424,7 +433,10 @@ class WiFiSetting(AppBase):
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xDCDDDD)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
+        if len(self.pswd_tmp) is 0:
+            self._pwd_label.setText("")
+        else:
+            self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def get_data(self):
@@ -720,7 +732,12 @@ class BootScreenSetting(AppBase):
 
     def get_data(self):
         nvs = esp32.NVS("uiflow")
-        self.boot_option = nvs.get_u8("boot_option")
+        try:
+            self.boot_option = nvs.get_u8("boot_option")
+            if self.boot_option == 2:
+                self.boot_option = 1
+        except:
+            self.boot_option = 1
 
     def set_data(self):
         nvs = esp32.NVS("uiflow")
@@ -1116,17 +1133,22 @@ class RunApp(AppBase):
         self.update_file_info("main.py")
 
     def update_file_info(self, filename):
-        self._path = filename
-        infos = self._get_file_info(self._path)
-
-        self._name_label.setText(filename)
-        self._mtime_label.setText(
-            "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
-                infos[0][0], infos[0][1], infos[0][2], infos[0][3], infos[0][4], infos[0][5]
+        try:
+            self._path = filename
+            infos = self._get_file_info(self._path)
+            self._name_label.setText(filename)
+            self._mtime_label.setText(
+                "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
+                    infos[0][0], infos[0][1], infos[0][2], infos[0][3], infos[0][4], infos[0][5]
+                )
             )
-        )
-        self._account_label.setText("Account: {:s}".format(str(infos[1])))
-        self._ver_label.setText("Ver: {:s}".format(str(infos[2])))
+            self._account_label.setText("Account: {:s}".format(str(infos[1])))
+            self._ver_label.setText("Ver: {:s}".format(str(infos[2])))
+        except OSError:
+            self._name_label.setText("None")
+            self._mtime_label.setText("Time: None")
+            self._account_label.setText("Account: None")
+            self._ver_label.setText("Ver: None")
 
     def handle(self, x, y):
         if self.is_select(self._apps[0], x, y):
