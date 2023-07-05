@@ -493,7 +493,7 @@ class VL53L0X:
         """Perform a single reading of the range for an object in front of
         the sensor and return the distance in centimeters.
         """
-        return self.range / 10
+        return self.get_range() / 10
 
     def get_range(self) -> int:
         """Perform a single (or continuous if `start_continuous` called)
