@@ -33,6 +33,7 @@
 #include "py/runtime.h"
 #include "shared/timeutils/timeutils.h"
 #include "extmod/utime_mphal.h"
+#include "uiflow_utility.h"
 
 STATIC mp_obj_t time_gmttime(size_t n_args, const mp_obj_t *args) {
     struct tm tm;
@@ -127,7 +128,7 @@ STATIC mp_obj_t time_timezone(size_t n_args, const mp_obj_t *args) {
         setenv("TZ", tz, 1);
         tzset();
 
-        // TODO: save to nvs
+        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
         return mp_const_none;
     }
 }
