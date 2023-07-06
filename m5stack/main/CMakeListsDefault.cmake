@@ -152,6 +152,7 @@ set(IDF_COMPONENTS
     esp32-camera
     m5things
     mqtt
+    uiflow_utility
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

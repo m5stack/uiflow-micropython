@@ -7,3 +7,5 @@ try:
     from .imu import *
 except ImportError:
     pass
+
+from .ir import IR
