@@ -11,7 +11,7 @@ BOARD ?= M5STACK_8MB
 
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
