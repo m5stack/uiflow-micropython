@@ -15,6 +15,7 @@
 #include "nvs.h"
 #include "cJSON.h"
 #include "m5things.h"
+#include "uiflow_utility.h"
 
 
 /** macro definitions */
@@ -124,49 +125,6 @@ static void log_error_if_nonzero(const char *message, int error_code) {
     if (error_code != 0) {
         ESP_LOGE(TAG, "Last error %s: 0x%x", message, error_code);
     }
-}
-
-static bool nvs_read_helper(char *key, char *_value, size_t *_len) {
-    nvs_handle_t nvs_handle;
-    esp_err_t ret = nvs_open("uiflow", NVS_READONLY, &nvs_handle);
-    if (ret != ESP_OK) {
-        return false;
-    }
-
-    // Read
-    ret = nvs_get_str(nvs_handle, key, _value, _len);
-
-    // Close
-    nvs_close(nvs_handle);
-
-    ESP_LOGI(TAG, "Read Key: %s Value: %s", key, _value);
-    return ret == ESP_OK ? true : false;
-}
-
-static bool nvs_write_u8_helper(char *key, uint8_t _value) {
-    nvs_handle_t nvs_handle;
-    esp_err_t ret = nvs_open("uiflow", NVS_READWRITE, &nvs_handle);
-    if (ret != ESP_OK) {
-        return false;
-    }
-
-    // Write
-    ret = nvs_set_u8(nvs_handle, key, _value);
-    if (ret != ESP_OK) {
-        return false;
-    }
-
-    // Commit
-    ret = nvs_commit(nvs_handle);
-    if (ret != ESP_OK) {
-        return false;
-    }
-
-    // Close
-    nvs_close(nvs_handle);
-
-    ESP_LOGI(TAG, "Write Key: %s Value: %d", key, _value);
-    return ret == ESP_OK ? true : false;
 }
 
 static int8_t mqtt_file_write_helper(cJSON *_fs_path, cJSON *_pkg_ctx, uint8_t _pkg_idx, size_t _pkg_len) {
@@ -621,7 +579,7 @@ static int8_t mqtt_handle_file_write(cJSON *root) {
     if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
         // path: /flash/main_ota_temp.py
         if ((strstr(fs_path->valuestring, OTA_UPDATE_FILE_NAME) != NULL)) {
-            nvs_write_u8_helper("boot_option", BOOT_OPT_NETWORK);
+            nvs_write_u8_helper(UIFLOW_NVS_NAMESPACE, "boot_option", BOOT_OPT_NETWORK);
             ESP_LOGW(TAG, "restart now :)");
             esp_restart();
         }
@@ -1127,7 +1085,7 @@ static esp_err_t mqtt_app_start(void) {
     char server_uri[64];
     char nvs_server_uri[32];
     size_t uri_len = sizeof(nvs_server_uri);
-    if (nvs_read_helper("server", nvs_server_uri, &uri_len)) {
+    if (nvs_read_str_helper(UIFLOW_NVS_NAMESPACE, "server", nvs_server_uri, &uri_len)) {
         sprintf(server_uri, "mqtt://%s:1883", nvs_server_uri);
         mqtt_cfg.uri = server_uri;
     } else {
@@ -1158,7 +1116,7 @@ static bool sync_time_by_sntp(void) {
 
     char sntp[64];
     size_t len = sizeof(sntp);
-    if (nvs_read_helper("sntp0", sntp, &len) && len > 0 && strlen(sntp) > 0) {
+    if (nvs_read_str_helper(UIFLOW_NVS_NAMESPACE, "sntp0", sntp, &len) && len > 0 && strlen(sntp) > 0) {
         sntp_setservername(0, sntp);
     } else {
         sntp_setservername(0, "uiflow2.m5stack.com");  // default
@@ -1192,15 +1150,6 @@ void m5thing_task(void *pvParameter) {
     esp_app_desc_t running_app_info;
     if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
         ESP_LOGI(TAG, "Running firmware version: %s", running_app_info.version);
-    }
-
-    // set timezone
-    char tz[64];
-    size_t len = sizeof(tz);
-    if (nvs_read_helper("tz", tz, &len) && len > 0 && strlen(tz) > 0) {
-        ESP_LOGI(TAG, "Read timezone: %s", tz);
-        setenv("TZ", tz, 1);
-        tzset();
     }
 
 soft_reset:
