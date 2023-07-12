@@ -264,6 +264,11 @@ mp_obj_t gfx_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     return mp_const_none;
 }
 
+mp_obj_t gfx_getBrightness(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->getBrightness());
+}
+
 mp_obj_t gfx_setBrightness(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_brightness};
     /* *FORMAT-OFF* */
