@@ -9,17 +9,25 @@ from collections import namedtuple
 import os
 import micropython
 import machine
-
-# from machine import I2C, Pin
+from machine import I2C, Pin
 import esp32
 import sys
 import binascii
 from unit import CardKB, KeyCode
 import gc
+from widgets.label import Label
+from widgets.button import Button
+from widgets.image import Image
+from tiny_gui.app import AppManage, AppBase, KeyEvent
+
+try:
+    import urequests as requests
+except ImportError:
+    import requests
 
 from common.font import MontserratMedium10
 
-from common.font import MontserratMedium14
+# from common.font import MontserratMedium14
 from common.font import MontserratMedium16
 from common.font import MontserratMedium18
 
@@ -35,23 +43,18 @@ except ImportError:
 DEBUG = False
 
 
-Permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
+_permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
 
 
-class KeyEvent:
-    key = 0
-    status = False
-
-
-class ServerStatus:
+class _ServerStatus:
     INIT = 0
     CONNECTED = 1
     DISCONNECTED = 2
 
 
-M5THINGS_STATUS = {
-    -2: "SNTP ERROR",
-    -1: "CNCT ERROR",
+_m5things_status = {
+    -2: "SNTP_ERROR",
+    -1: "CNCT_ERROR",
     0: "STANDBY",
     1: "CONNECTING",
     2: "CONNECTED",
@@ -59,257 +62,101 @@ M5THINGS_STATUS = {
 }
 
 
-class WiFiStatus:
+class _WiFiStatus:
     INIT = 0
     RSSI_GOOD = 1
     RSSI_MID = 2
     RSSI_WORSE = 3
     DISCONNECTED = 4
 
-binary_data = None
+
+ImageDesc = namedtuple("ImageDesc", ["src", "x", "y", "w", "h"])
+
+
+_setting_icos = {
+    True: ImageDesc(src="/system/core2/Selection/setting_selected.png", x=5, y=20 + 4, w=62, h=56),
+    False: ImageDesc(
+        src="/system/core2/Selection/setting_unselected.png", x=5, y=20 + 4, w=62, h=56
+    ),
+}
+
+
+_develop_icos = {
+    True: ImageDesc(
+        src="/system/core2/Selection/develop_selected.png", x=5 + 62, y=20 + 4, w=62, h=56
+    ),
+    False: ImageDesc(
+        src="/system/core2/Selection/develop_unselected.png", x=5 + 62, y=20 + 4, w=62, h=56
+    ),
+}
+
+
+_apprun_icos = {
+    True: ImageDesc(
+        src="/system/core2/Selection/appRun_selected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
+    ),
+    False: ImageDesc(
+        src="/system/core2/Selection/appRun_unselected.png", x=5 + 62 + 62, y=20 + 4, w=62, h=56
+    ),
+}
+
+_applist_icos = {
+    True: ImageDesc(
+        src="/system/core2/Selection/appList_selected.png",
+        x=5 + 62 + 62 + 62,
+        y=20 + 4,
+        w=62,
+        h=56,
+    ),
+    False: ImageDesc(
+        src="/system/core2/Selection/appList_unselected.png",
+        x=5 + 62 + 62 + 62,
+        y=20 + 4,
+        w=62,
+        h=56,
+    ),
+}
+
+
+_ezdata_icos = {
+    True: ImageDesc(
+        src="/system/core2/Selection/ezdata_selected.png",
+        x=5 + 62 + 62 + 62 + 62,
+        y=20 + 4,
+        w=62,
+        h=56,
+    ),
+    False: ImageDesc(
+        src="/system/core2/Selection/ezdata_unselected.png",
+        x=5 + 62 + 62 + 62 + 62,
+        y=20 + 4,
+        w=62,
+        h=56,
+    ),
+}
+
+
+_binary_data = None
 _wav_path = None
 
 
-def _playWav(wav: str):
-    global binary_data, _wav_path
-    if binary_data is None or _wav_path is not wav:
+def _play_wav(wav: str):
+    global _binary_data, _wav_path
+    if _binary_data is None or _wav_path is not wav:
         with open(wav, "rb") as f:
-            binary_data = f.read()
+            _binary_data = f.read()
         _wav_path = wav
         if wav is "/system/common/wav/click.wav":
             M5.Speaker.setVolume(64)
         else:
             M5.Speaker.setVolume(127)
-    M5.Speaker.playWav(binary_data)
-
-ImageDesc = namedtuple("ImageDesc", ["x", "y", "width", "height"])
-
-_IMAGE_LIST = {
-    "/system/core2/Battery/battery_Gray.png": ImageDesc(320 - 44, 0, 44, 20),
-    "/system/core2/Battery/battery_Green.png": ImageDesc(320 - 44, 0, 44, 20),
-    "/system/core2/Battery/battery_Red.png": ImageDesc(320 - 44, 0, 44, 20),
-    "/system/core2/Battery/battery_Yellow.png": ImageDesc(320 - 44, 0, 44, 20),
-    "/system/core2/Selection/appList_selected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/appList_unselected.png": ImageDesc(5 + 62 + 62 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/appRun_selected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/appRun_unselected.png": ImageDesc(5 + 62 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/develop_selected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/develop_unselected.png": ImageDesc(5 + 62, 20 + 4, 62, 56),
-    "/system/core2/Selection/ezdata_selected.png": ImageDesc(
-        5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
-    ),
-    "/system/core2/Selection/ezdata_unselected.png": ImageDesc(
-        5 + 62 + 62 + 62 + 62, 20 + 4, 62, 56
-    ),
-    "/system/core2/Selection/setting_selected.png": ImageDesc(5, 20 + 4, 62, 56),
-    "/system/core2/Selection/setting_unselected.png": ImageDesc(5, 20 + 4, 62, 56),
-    "/system/core2/Server/server_blue.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "/system/core2/Server/server_empty.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "/system/core2/Server/server_error.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "/system/core2/Server/Server_Green.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "/system/core2/Server/server_red.png": ImageDesc(320 - 44 - 20 - 5, 0, 20, 20),
-    "/system/core2/Title/title_blue.png": ImageDesc(0, 0, 320, 20),
-    "/system/core2/Title/title_gray.png": ImageDesc(0, 0, 320, 20),
-    "/system/core2/Title/title_green.png": ImageDesc(0, 0, 320, 20),
-    "/system/core2/Title/title_red.png": ImageDesc(0, 0, 320, 20),
-    "/system/core2/WiFi/wifi_disconnected.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "/system/core2/WiFi/wifi_empty.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "/system/core2/WiFi/wifi_good.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "/system/core2/WiFi/wifi_mid.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "/system/core2/WiFi/wifi_worse.png": ImageDesc(320 - 44 - 20 - 5 - 20 - 5, 0, 20, 20),
-    "/system/core2/boot.png": ImageDesc(0, 0, 320, 240),
-    "/system/core2/boot/boot0.png": ImageDesc(60, 45, 320, 240),
-    "/system/core2/boot/boot1.png": ImageDesc(60, 45, 320, 240),
-    "/system/core2/boot/boot2.png": ImageDesc(60, 45, 320, 240),
-    "/system/core2/boot/boot3.png": ImageDesc(60, 45, 320, 240),
-    "/system/core2/Setting/wifiServer.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "/system/core2/Setting/pass.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "/system/core2/Setting/server.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "/system/core2/Setting/ssid.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 108),
-    "/system/core2/Setting/charge100.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/charge500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/charge900.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/charge1000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/charge1500.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/charge2000.png": ImageDesc(4, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/bootNo.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/bootYes.png": ImageDesc(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44),
-    "/system/core2/Setting/comxDisable.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Setting/comxEnable.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Setting/usbInput.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Setting/usbOutput.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Setting/busInput.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Setting/busOutput.png": ImageDesc(
-        4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4, 60, 44
-    ),
-    "/system/core2/Develop/public.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-    "/system/core2/Develop/private.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-    "/system/core2/Run/run.png": ImageDesc(4, 20 + 4 + 56 + 4, 312, 156),
-}
-
-_APPLIST_ICO = {
-    True: "/system/core2/Selection/appList_selected.png",
-    False: "/system/core2/Selection/appList_unselected.png",
-}
-
-_APPRUN_ICO = {
-    True: "/system/core2/Selection/appRun_selected.png",
-    False: "/system/core2/Selection/appRun_unselected.png",
-}
-
-_DEVELOP_ICO = {
-    True: "/system/core2/Selection/develop_selected.png",
-    False: "/system/core2/Selection/develop_unselected.png",
-}
-
-_SETTING_ICO = {
-    True: "/system/core2/Selection/setting_selected.png",
-    False: "/system/core2/Selection/setting_unselected.png",
-}
+    M5.Speaker.playWav(_binary_data)
 
 
-_EZDATA_ICO = {
-    True: "/system/core2/Selection/ezdata_selected.png",
-    False: "/system/core2/Selection/ezdata_unselected.png",
-}
+Rect = namedtuple("Rect", ["x", "y", "w", "h"])
 
 
-def _draw_png(src: str):
-    descriptor = _IMAGE_LIST.get(src)
-    M5.Lcd.drawPng(src, descriptor.x, descriptor.y)
-
-
-class Label:
-
-    LEFT_ALIGNED = 0
-    CENTER_ALIGNED = 1
-
-    def __init__(
-        self,
-        text: str,
-        x: int,
-        y: int,
-        size: float = 1.0,
-        font_align: int = LEFT_ALIGNED,
-        fg_color: int = 0xFFFFFF,
-        bg_color: int = 0x000000,
-        font=M5.Lcd.FONTS.DejaVu12,
-    ) -> None:
-        self._text = text
-        self._x = x
-        self._y = y
-        self._size = size
-        self._font_align = font_align
-        self._fg_color = fg_color
-        self._bg_color = bg_color
-        self._font = font
-
-    def _erase_helper(self):
-        width = M5.Lcd.textWidth(self._text)
-        height = M5.Lcd.fontHeight()
-        if self._font_align == self.LEFT_ALIGNED:
-            M5.Lcd.fillRect(self._x, self._y, width, height, self._bg_color)
-        elif self._font_align == self.CENTER_ALIGNED:
-            M5.Lcd.fillRect(self._x - int(width / 2), self._y, width, height, self._bg_color)
-
-    def setText(self, text=None) -> None:
-        self._load_font()
-        self._erase_helper()
-        if text is not None:
-            self._text = text
-        M5.Lcd.setTextColor(self._fg_color, self._bg_color)
-        if self._font_align == self.LEFT_ALIGNED:
-            M5.Lcd.drawString(self._text, self._x, self._y)
-        elif self._font_align == self.CENTER_ALIGNED:
-            M5.Lcd.drawCenterString(self._text, self._x, self._y)
-        else:
-            print("Warning: unknown alignment")
-
-    def setTextColor(self, fg_color, bg_color):
-        self._fg_color = fg_color
-        self._bg_color = bg_color
-
-    def _load_font(self):
-        if type(self._font) == bytes:
-            M5.Lcd.unloadFont()
-            M5.Lcd.loadFont(self._font)
-        else:
-            M5.Lcd.setFont(self._font)
-
-
-class AppBase:
-    def __init__(self, ico, data=None) -> None:
-        self.id = 0
-        self.ico = ico
-        self.src = ico.get(False)
-        self.descriptor = _IMAGE_LIST.get(self.src)
-        self.x = 0
-        self.y = 80
-        self.width = 320
-        self.height = 160
-
-    def registered(self):
-        """
-        注册到 AppManage 之后，由 AppManage 调用
-        """
-        _draw_png(self.ico.get(False))
-
-    def mount(self):
-        """
-        应用加载，由 AppManage 调用
-        """
-        self._load_view()
-
-    def _load_view(self):
-        _draw_png(self.ico.get(True))
-        M5.Lcd.fillRect(self.x, self.y, self.width, self.height, 0x000000)
-
-    def ready(self):
-        pass
-
-    def handle(self, x, y):
-        DEBUG and print("Touch X: ", x)
-        DEBUG and print("Touch Y: ", y)
-
-    def handle_input(self, event: KeyEvent):
-        DEBUG and print("keyboard value: %d" % event.key)
-
-    def umount(self) -> None:
-        """
-        应用退出的方法，由 AppManage 调用
-        """
-        self._disappear_view()
-
-    def _disappear_view(self):
-        _draw_png(self.ico.get(False))
-        # M5.Lcd.fillRect(self.x, self.y, self.width, self.height, 0x000000)
-
-    def is_select(self, x, y):
-        if x < self.x:
-            return False
-        if x > (self.x + self.width):
-            return False
-        if y < self.y:
-            return False
-        if y > (self.y + self.height):
-            return False
-        return True
-
-
-Rect = namedtuple("Rect", ["x", "y", "width", "height"])
-
-
-def charge_ico(icos):
+def _charge_ico(icos):
     try:
         len(icos)
     except TypeError:
@@ -322,48 +169,68 @@ def charge_ico(icos):
         yield from icos
 
 
+_ssid_img_desc = ImageDesc(
+    src="/system/core2/Setting/ssid.png", x=4, y=20 + 4 + 56 + 4, w=312, h=108
+)
+
+_pwd_img_desc = ImageDesc(
+    src="/system/core2/Setting/pass.png", x=4, y=20 + 4 + 56 + 4, w=312, h=108
+)
+
+_wifiserver_img_desc = ImageDesc(
+    src="/system/core2/Setting/wifiServer.png", x=4, y=20 + 4 + 56 + 4, w=312, h=108
+)
+
+_server_img_desc = ImageDesc(
+    src="/system/core2/Setting/server.png", x=4, y=20 + 4 + 56 + 4, w=312, h=108
+)
+
+
 class WiFiSetting(AppBase):
-    def __init__(self, ico, data=None) -> None:
+    def __init__(self, icos: dict, data=None) -> None:
         self.x = 4
         self.y = 20 + 4 + 56 + 4
-        self.width = 312
-        self.height = 108
+        self.w = 312
+        self.h = 108
         self._ssid_label = Label(
             "ssid",
             4 + 56 + 2,
             20 + 4 + 56 + 4 + 12,
+            w=180,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium16.FONT,
         )
+        self._ssid_label.setLongMode(Label.LONG_DOT)
         self._pwd_label = Label(
             "pwd",
             4 + 56 + 2,
             20 + 4 + 56 + 4 + 12 + 35,
+            w=180,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium16.FONT,
         )
+        self._pwd_label.setLongMode(Label.LONG_DOT)
         self._server_label = Label(
             "server",
             4 + 56 + 2,
             20 + 4 + 56 + 4 + 12 + 35 + 34,
+            w=190,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium16.FONT,
         )
+        self._server_label.setLongMode(Label.LONG_DOT)
         self._apps = [
             Rect(4, 20 + 4 + 56 + 4, 244, 108),  # option select
             Rect(4 + 249, 20 + 4 + 56 + 4, 63, 64),  # save & link
             Rect(4 + 249, 20 + 4 + 56 + 4 + 64, 63, 44),  # option select
         ]
-        self._option_views = charge_ico(
+        self._option_views = _charge_ico(
             (
                 (0, self._select_ssid_option),
                 (1, self._select_psd_option),
@@ -385,39 +252,39 @@ class WiFiSetting(AppBase):
         self._select_default_option()
 
     def _select_default_option(self):
-        _draw_png("/system/core2/Setting/wifiServer.png")
+        M5.Lcd.drawImage(_wifiserver_img_desc.src, _wifiserver_img_desc.x, _wifiserver_img_desc.y)
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * len(self.pswd_tmp))
+        self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_ssid_option(self):
-        _draw_png("/system/core2/Setting/ssid.png")
+        M5.Lcd.drawImage(_ssid_img_desc.src, _ssid_img_desc.x, _ssid_img_desc.y)
         self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * len(self.pswd_tmp))
+        self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_psd_option(self):
-        _draw_png("/system/core2/Setting/pass.png")
+        M5.Lcd.drawImage(_pwd_img_desc.src, _pwd_img_desc.x, _pwd_img_desc.y)
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
         self._server_label.setTextColor(0x000000, 0xFEFEFE)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * len(self.pswd_tmp))
+        self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def _select_server_option(self):
-        _draw_png("/system/core2/Setting/server.png")
+        M5.Lcd.drawImage(_server_img_desc.src, _server_img_desc.x, _server_img_desc.y)
         self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
         self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
         self._server_label.setTextColor(0x000000, 0xDCDDDD)
         self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * len(self.pswd_tmp))
+        self._pwd_label.setText("*" * 20)
         self._server_label.setText(self.server_tmp)
 
     def get_data(self):
@@ -554,55 +421,87 @@ class WiFiSetting(AppBase):
     def is_select_option(rect: Rect, x, y):
         if x < rect.x:
             return False
-        if x > (rect.x + rect.width):
+        if x > (rect.x + rect.w):
             return False
         if y < rect.y:
             return False
-        if y > (rect.y + rect.height):
+        if y > (rect.y + rect.h):
             return False
         return True
 
 
-CURRENT_OPTION = (
-    (100, "/system/core2/Setting/charge100.png"),
-    (500, "/system/core2/Setting/charge500.png"),
-    (900, "/system/core2/Setting/charge900.png"),
-    (1000, "/system/core2/Setting/charge1000.png"),
-    # (1500, "/system/core2/Setting/charge1500.png"),
-    # (2000, "/system/core2/Setting/charge2000.png"),
+_current_options = (
+    (
+        100,
+        ImageDesc(
+            src="/system/core2/Setting/charge100.png",
+            x=4,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        500,
+        ImageDesc(
+            src="/system/core2/Setting/charge500.png",
+            x=4,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        900,
+        ImageDesc(
+            src="/system/core2/Setting/charge900.png",
+            x=4,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        1000,
+        ImageDesc(
+            src="/system/core2/Setting/charge1000.png",
+            x=4,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    # (1500, ImageDesc(src="/system/core2/Setting/charge1500.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
+    # (2000, ImageDesc(src="/system/core2/Setting/charge2000.png", x=4, y=20 + 4 + 56 + 4 + 108 + 4, w=60, h=44)),
 )
 
 
 class BatteryChargeSetting(AppBase):
-    def __init__(self, ico) -> None:
-        self.icos = charge_ico(CURRENT_OPTION)
-        self._current, self.src = next(self.icos)
-        self.descriptor = _IMAGE_LIST.get(self.src)
+    def __init__(self, icos: dict) -> None:
+        self.icos = _charge_ico(_current_options)
+        self._current, self.descriptor = next(self.icos)
         self.x = self.descriptor.x
         self.y = self.descriptor.y
-        self.width = self.descriptor.width
-        self.height = self.descriptor.height
+        self.w = self.descriptor.w
+        self.h = self.descriptor.h
 
     def mount(self):
         self.get_data()
         while True:
-            current, self.src = next(self.icos)
+            current, self.descriptor = next(self.icos)
             if current == self._current:
                 break
-        _draw_png(self.src)
+        M5.Lcd.drawImage(self.descriptor.src, self.descriptor.x, self.descriptor.y)
 
     def handle(self, x, y):
         if self.is_select(x, y):
-            self._current, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._current, self.descriptor = next(self.icos)
             self.set_data()
-
             self.mount()
 
     def handle_input(self, event: KeyEvent):
         if event.key == KeyCode.KEYCODE_ENTER:
-            self._current, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._current, self.descriptor = next(self.icos)
             self.set_data()
             self.mount()
 
@@ -623,42 +522,59 @@ class BatteryChargeSetting(AppBase):
         pass
 
 
-BOOT_OPTION = (
-    (0, "/system/core2/Setting/bootNo.png"),
-    (1, "/system/core2/Setting/bootYes.png"),
+_boot_options = (
+    (
+        0,
+        ImageDesc(
+            src="/system/core2/Setting/bootNo.png",
+            x=4 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        1,
+        ImageDesc(
+            src="/system/core2/Setting/bootYes.png",
+            x=4 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
 )
 
 
 class BootScreenSetting(AppBase):
-    def __init__(self, ico) -> None:
-        self.icos = charge_ico(BOOT_OPTION)
-        self.boot_option, self.src = next(self.icos)
-        self.descriptor = _IMAGE_LIST.get(self.src)
+    def __init__(self, icos: dict) -> None:
+        self.icos = _charge_ico(_boot_options)
+        self.boot_option, self.descriptor = next(self.icos)
         self.x = self.descriptor.x
         self.y = self.descriptor.y
-        self.width = self.descriptor.width
-        self.height = self.descriptor.height
+        self.w = self.descriptor.w
+        self.h = self.descriptor.h
 
     def mount(self):
         self.get_data()
         while True:
-            boot_option, self.src = next(self.icos)
+            boot_option, self.descriptor = next(self.icos)
             if boot_option == self.boot_option:
                 break
         self._load_view()
 
     def _load_view(self):
-        _draw_png(self.src)
+        M5.Lcd.drawImage(self.descriptor.src, self.descriptor.x, self.descriptor.y)
 
     def handle(self, x, y):
         if self.is_select(x, y):
-            self.boot_option, self.src = next(self.icos)
+            self.boot_option, self.descriptor = next(self.icos)
             self._load_view()
             self.set_data()
 
     def handle_input(self, event: KeyEvent):
         if event.key == KeyCode.KEYCODE_ENTER:
-            self.boot_option, self.src = next(self.icos)
+            self.boot_option, self.descriptor = next(self.icos)
             self._load_view()
             self.set_data()
 
@@ -676,83 +592,134 @@ class BootScreenSetting(AppBase):
         pass
 
 
+_comlink_options = (
+    (
+        False,
+        ImageDesc(
+            src="/system/core2/Setting/comxDisable.png",
+            x=4 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        True,
+        ImageDesc(
+            src="/system/core2/Setting/comxEnable.png",
+            x=4 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+)
+
+
 class ComLinkSetting(AppBase):
     # TODO
 
-    def __init__(self, ico) -> None:
-        self.icos = charge_ico(
-            (
-                "/system/core2/Setting/comxEnable.png",
-                "/system/core2/Setting/comxDisable.png",
-            )
-        )
-        self.src = next(self.icos)
-        self.descriptor = _IMAGE_LIST.get(self.src)
+    def __init__(self, icos: dict) -> None:
+        self.icos = _charge_ico(_comlink_options)
+        self._data, self.descriptor = next(self.icos)
         self.x = self.descriptor.x
         self.y = self.descriptor.y
-        self.width = self.descriptor.width
-        self.height = self.descriptor.height
+        self.w = self.descriptor.w
+        self.h = self.descriptor.h
 
     def mount(self):
-        _draw_png(self.src)
+        M5.Lcd.drawImage(self.descriptor.src, self.descriptor.x, self.descriptor.y)
 
     def handle(self, x, y):
         if self.is_select(x, y):
-            self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.mount()
 
     def handle_input(self, event: KeyEvent):
         if event.key == KeyCode.KEYCODE_ENTER:
-            self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.mount()
 
     def umount(self) -> None:
         pass
 
 
-USBPOWER_OPTION = (
-    (False, "/system/core2/Setting/usbInput.png"),
-    (True, "/system/core2/Setting/usbOutput.png"),
+_brightness_options = (
+    (
+        64,
+        ImageDesc(
+            src="/system/core2/Setting/screen25.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        127,
+        ImageDesc(
+            src="/system/core2/Setting/screen50.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        192,
+        ImageDesc(
+            src="/system/core2/Setting/screen75.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        255,
+        ImageDesc(
+            src="/system/core2/Setting/screen100.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
 )
 
 
-class USBPowerSetting(AppBase):
-    def __init__(self, ico) -> None:
-        self.icos = charge_ico(USBPOWER_OPTION)
-        self._data, self.src = next(self.icos)
-        self.descriptor = _IMAGE_LIST.get(self.src)
+class BrightnessSetting(AppBase):
+    def __init__(self, icos: dict) -> None:
+        self.icos = _charge_ico(_brightness_options)
+        self._data, self.descriptor = next(self.icos)
         self.x = self.descriptor.x
         self.y = self.descriptor.y
-        self.width = self.descriptor.width
-        self.height = self.descriptor.height
+        self.w = self.descriptor.w
+        self.h = self.descriptor.h
 
     def mount(self):
         self.get_data()
         while True:
-            data, self.src = next(self.icos)
+            data, self.descriptor = next(self.icos)
             if data == self._data:
                 break
-        _draw_png(self.src)
+        M5.Lcd.drawImage(self.descriptor.src, self.descriptor.x, self.descriptor.y)
 
     def get_data(self):
-        self._data = M5.Power.getUsbOutput()
+        self._data = M5.Lcd.getBrightness()
 
     def set_data(self):
-        M5.Power.setUsbOutput(self._data)
+        M5.Lcd.setBrightness(self._data)
 
     def handle(self, x, y):
         if self.is_select(x, y):
-            self._data, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.set_data()
             self.mount()
 
     def handle_input(self, event: KeyEvent):
         if event.key == KeyCode.KEYCODE_ENTER:
-            self._data, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.set_data()
             self.mount()
 
@@ -760,29 +727,46 @@ class USBPowerSetting(AppBase):
         pass
 
 
-BUSPOWER_OPTION = (
-    (False, "/system/core2/Setting/busInput.png"),
-    (True, "/system/core2/Setting/busOutput.png"),
+_buspower_options = (
+    (
+        False,
+        ImageDesc(
+            src="/system/core2/Setting/busInput.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
+    (
+        True,
+        ImageDesc(
+            src="/system/core2/Setting/busOutput.png",
+            x=4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3,
+            y=20 + 4 + 56 + 4 + 108 + 4,
+            w=60,
+            h=44,
+        ),
+    ),
 )
 
 
 class BUSPowerSetting(AppBase):
-    def __init__(self, ico) -> None:
-        self.icos = charge_ico(BUSPOWER_OPTION)
-        self._data, self.src = next(self.icos)
-        self.descriptor = _IMAGE_LIST.get(self.src)
+    def __init__(self, icos: dict) -> None:
+        self.icos = _charge_ico(_buspower_options)
+        self._data, self.descriptor = next(self.icos)
         self.x = self.descriptor.x
         self.y = self.descriptor.y
-        self.width = self.descriptor.width
-        self.height = self.descriptor.height
+        self.w = self.descriptor.w
+        self.h = self.descriptor.h
 
     def mount(self):
         self.get_data()
         while True:
-            data, self.src = next(self.icos)
+            data, self.descriptor = next(self.icos)
             if data == self._data:
                 break
-        _draw_png(self.src)
+        M5.Lcd.drawImage(self.descriptor.src, self.descriptor.x, self.descriptor.y)
 
     def get_data(self):
         self._data = M5.Power.getExtOutput()
@@ -792,15 +776,13 @@ class BUSPowerSetting(AppBase):
 
     def handle(self, x, y):
         if self.is_select(x, y):
-            self._data, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.set_data()
             self.mount()
 
     def handle_input(self, event: KeyEvent):
         if event.key == KeyCode.KEYCODE_ENTER:
-            self._data, self.src = next(self.icos)
-            self.descriptor = _IMAGE_LIST.get(self.src)
+            self._data, self.descriptor = next(self.icos)
             self.set_data()
             self.mount()
 
@@ -809,18 +791,15 @@ class BUSPowerSetting(AppBase):
 
 
 class SettingsApp(AppBase):
-    def __init__(self, ico, data=None) -> None:
-        self.ico = ico
-        self.src = ico.get(False)
-        self.descriptor = _IMAGE_LIST.get(self.src)
-        self.x = self.descriptor.x
-        self.y = self.descriptor.y
+    def __init__(self, icos: dict, data=None) -> None:
+        self.icos = icos
+        self.descriptor = self.icos.get(False)
         self._apps = [
             WiFiSetting(None, data=data),
             BatteryChargeSetting(None),
             BootScreenSetting(None),
             ComLinkSetting(None),
-            USBPowerSetting(None),
+            BrightnessSetting(None),
             BUSPowerSetting(None),
         ]
 
@@ -839,7 +818,8 @@ class SettingsApp(AppBase):
         self._focus = True
 
     def mount(self):
-        _draw_png(self.ico.get(True))
+        desc = self.icos.get(True)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
         for app in self._apps:
             app.mount()
 
@@ -889,25 +869,30 @@ class SettingsApp(AppBase):
     def umount(self) -> None:
         for app in self._apps:
             app.umount()
-        _draw_png(self.ico.get(False))
+        desc = self.icos.get(False)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
 
-class DevApp(AppBase):
-    def __init__(self, ico) -> None:
-        self.ico = ico
-        self.src = ico.get(False)
-        self.descriptor = _IMAGE_LIST.get(self.src)
-        self.x = self.descriptor.x
-        self.y = self.descriptor.y
+_dev_private_desc = ImageDesc(
+    src="/system/core2/Develop/private.png", x=4, y=20 + 4 + 56 + 4, w=312, h=156
+)
+_dev_pulic_desc = ImageDesc(
+    src="/system/core2/Develop/public.png", x=4, y=20 + 4 + 56 + 4, w=312, h=156
+)
 
+
+class DevApp(AppBase):
+    def __init__(self, icos: dict) -> None:
+        self.icos = icos
+        self.descriptor = self.icos.get(False)
         self._mac_label = Label(
             "aabbcc112233",
             4 + 6,
             (20 + 4 + 56 + 4) + 57,
+            w=177,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium18.FONT,
         )
 
@@ -915,122 +900,116 @@ class DevApp(AppBase):
             "XXABC",
             4 + 6,
             (20 + 4 + 56 + 4) + 57 + 40,
+            w=110,
+            h=60,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium18.FONT,
         )
+        self._account_label.setLongMode(Label.LONG_WARP)
 
-        self._account1_label = Label(
-            "",
-            4 + 6,
-            (20 + 4 + 56 + 4) + 57 + 40 + 16,
-            fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            # font=M5.Lcd.FONTS.DejaVu9,
-            font=MontserratMedium18.FONT,
-        )
+        self.avatar = "/system/common/img/avatar.jpg"
 
-        # self._token_label = Label(
-        #     "AABBCCDDEEFF",
-        #     4 + 6,
-        #     (20 + 4 + 56 + 4) + 57 + 40 + 40,
-        #     fg_color = 0x000000,
-        #     bg_color = 0xeeeeef,
-        #     font=MontserratMedium18.FONT
-        # )
-
-        super().__init__(ico)
+        super().__init__(icos)
 
     def mount(self):
         data = self.load_data()
-        _draw_png(self.ico.get(True))
-        _draw_png(self.src)
+        desc = self.icos.get(True)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
+        M5.Lcd.drawImage(self.src.src, self.src.x, self.src.y)
         self._mac_label.setText(data[0])
-        if data[1] is None:
-            self._account_label.setText(str(data[1]))
-            self._account1_label.setText("")
-            return
+        self._account_label.setText(str(data[1]))
 
-        if len(data[1]) > 14:
-            self._account_label.setText(data[1][:14])
-            self._account1_label.setText(data[1][14:])
-        else:
-            self._account_label.setText(data[1])
-            self._account1_label.setText("")
-        # self._token_label.setText(data[2])
+        try:
+            if self.avatar == "/system/common/img/avatar.jpg":
+                M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
+            else:
+                M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
+        except OSError:
+            pass
 
     def load_data(self):
         mac = binascii.hexlify(machine.unique_id()).upper()
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if infos[0] is 0 or infos[0] is 1:
-                self.src = "/system/core2/Develop/private.png"
+                self.src = _dev_private_desc
             elif infos[0] is 2:
-                self.src = "/system/core2/Develop/public.png"
+                self.src = _dev_pulic_desc
             DEBUG and print("Develop info:")
-            DEBUG and print("  Device mac: ", mac)
-            DEBUG and print("  Permissions: ", Permissions.get(infos[0]))
-            DEBUG and print("  Account: ", infos[1])
-            return (mac, infos[1])
+            DEBUG and print("  Device mac:", mac)
+            DEBUG and print("  Permissions:", _permissions.get(infos[0]))
+            DEBUG and print("  Account:", infos[1])
+            DEBUG and print("  Avatar:", infos[4])
+            if len(infos[4]) is 0:
+                self.avatar = "/system/common/img/avatar.jpg"
+            else:
+                # FIXME: avatar.jpg path is not right
+                self.avatar = "/system/common/" + str(infos[4]).split("/")[-1]
+
+            try:
+                os.stat(self.avatar)
+            except OSError:
+                resp = requests.get("https://community.m5stack.com" + str(infos[4]))
+                f = open(self.avatar, "wb")
+                f.write(resp.content)
+                f.close()
+            return (mac, None if len(infos[1]) is 0 else infos[1])
         else:
-            self.src = "/system/core2/Develop/private.png"
+            self.src = _dev_private_desc
             return (mac, None, None)
 
     def handle(self, x, y):
         pass
 
     def umount(self) -> None:
-        _draw_png(self.ico.get(False))
+        desc = self.icos.get(False)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
 
 class RunApp(AppBase):
-    def __init__(self, ico) -> None:
-        self.ico = ico
-        self.src = ico.get(False)
-        self.descriptor = _IMAGE_LIST.get(self.src)
-        self.x = self.descriptor.x
-        self.y = self.descriptor.y
-
+    def __init__(self, icos: dict) -> None:
+        self.icos = icos
+        self.descriptor = self.icos.get(False)
         self._name_label = Label(
             "name",
             4 + 10,
             (20 + 4 + 56 + 4) + 4,
+            w=312,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium18.FONT,
         )
 
         self._mtime_label = Label(
             "Time: 2023/5/14 12:23:43",
-            4 + 10,
-            (20 + 4 + 56 + 4) + 32,
+            4 + 10 + 8,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6,
+            w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            # font=M5.Lcd.FONTS.DejaVu9,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._account_label = Label(
             "Account: XXABC",
-            4 + 10,
-            (20 + 4 + 56 + 4) + 32 + 18,
+            4 + 10 + 8,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18,
+            w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            # font=M5.Lcd.FONTS.DejaVu9,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._ver_label = Label(
             "Ver: UIFLOW2.0 a18",
-            4 + 10,
-            (20 + 4 + 56 + 4) + 32 + 18 + 18,
+            4 + 10 + 8,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18 + 18,
+            w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            # font=M5.Lcd.FONTS.DejaVu9,
-            font=MontserratMedium14.FONT,
+            font=MontserratMedium16.FONT,
         )
 
         self._apps = [
@@ -1040,22 +1019,28 @@ class RunApp(AppBase):
         self._path = None
 
     def mount(self):
-        _draw_png(self.ico.get(True))
-        _draw_png("/system/core2/Run/run.png")
+        desc = self.icos.get(True)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
+        M5.Lcd.drawImage("/system/core2/Run/run.png", 4, 20 + 4 + 56 + 4)
         self.update_file_info("main.py")
 
     def update_file_info(self, filename):
-        self._path = filename
-        infos = self._get_file_info(self._path)
-
-        self._name_label.setText(filename)
-        self._mtime_label.setText(
-            "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
-                infos[0][0], infos[0][1], infos[0][2], infos[0][3], infos[0][4], infos[0][5]
+        try:
+            self._path = filename
+            infos = self._get_file_info(self._path)
+            self._name_label.setText(filename)
+            self._mtime_label.setText(
+                "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
+                    infos[0][0], infos[0][1], infos[0][2], infos[0][3], infos[0][4], infos[0][5]
+                )
             )
-        )
-        self._account_label.setText("Account: {:s}".format(str(infos[1])))
-        self._ver_label.setText("Ver: {:s}".format(str(infos[2])))
+            self._account_label.setText("Account: {:s}".format(str(infos[1])))
+            self._ver_label.setText("Ver: {:s}".format(str(infos[2])))
+        except OSError:
+            self._name_label.setText("None")
+            self._mtime_label.setText("Time: None")
+            self._account_label.setText("Account: None")
+            self._ver_label.setText("Ver: None")
 
     def handle(self, x, y):
         if self.is_select(self._apps[0], x, y):
@@ -1077,11 +1062,11 @@ class RunApp(AppBase):
     def is_select(rect: Rect, x, y):
         if x < rect.x:
             return False
-        if x > (rect.x + rect.width):
+        if x > (rect.x + rect.w):
             return False
         if y < rect.y:
             return False
-        if y > (rect.y + rect.height):
+        if y > (rect.y + rect.h):
             return False
         return True
 
@@ -1103,180 +1088,331 @@ class RunApp(AppBase):
         return (time.localtime(stat[8]), account, ver)
 
     def umount(self) -> None:
-        _draw_png(self.ico.get(False))
+        desc = self.icos.get(False)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
 
-def app_id_generator(n):
-    for i in range(n):
-        yield i
+_list_main_desc = ImageDesc(
+    src="/system/core2/List/main.png", x=4, y=20 + 4 + 56 + 4, w=312, h=156
+)
 
 
-class AppManage:
-    def __init__(self, app_num) -> None:
-        self._apps = []
-        self._last_app = None
-        self._id_generator = app_id_generator(app_num)
-        self._id = 0
-        self.app = self
-        self.focus = True
+class ListApp(AppBase):
+    def __init__(self, icos: dict, data=None) -> None:
+        self.icos = icos
+        self.data = None
+        self.descriptor = self.icos.get(False)
 
-    def register_app(self, app: AppBase):
-        self._apps.append(app)
-        app.id = next(self._id_generator)
-
-    def select_app(self, id):
-        for app in self._apps:
-            if id is app.id:
-                self._load_app(app)
-                break
+    def create(self):
+        pass
 
     def mount(self):
-        for app in self._apps:
-            app.registered()
+        self.load_data()
+        desc = self.icos.get(True)
+        M5.Lcd.drawImage(desc.src, desc.x, desc.y)
+        M5.Lcd.drawImage(_list_main_desc.src, _list_main_desc.x, _list_main_desc.y)
 
-    def load_app(self, x, y):
-        select_app = None
-        for app in self._apps:
-            if self._is_select(app, x, y):
-                select_app = app
+        # button up
+        # x 4 + 2
+        # y (20 + 4 + 56 + 4) + 2
+        # w 30
+        # h 75
+        self._btn_up = Button(None)
+        self._btn_up.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2)
+        self._btn_up.set_size(60, 75)
+        self._btn_up.add_event(self._btn_up_event_handler)
+
+        # button down
+        # x 4 + 2
+        # y (20 + 4 + 56 + 4) + 2 + 75 + 2
+        # w 30
+        # h 75
+        self._btn_down = Button(None)
+        self._btn_down.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2 + 75 + 2)
+        self._btn_down.set_size(60, 75)
+        self._btn_down.add_event(self._btn_down_event_handler)
+
+        # run once
+        # x 4 + (312 - 60)
+        # y (20 + 4 + 56 + 4) + 30
+        # w 60
+        # h 63
+        self._btn_once = Button(None)
+        self._btn_once.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30)
+        self._btn_once.set_size(100, 63)
+        self._btn_once.add_event(self._btn_once_event_handler)
+
+        # run always
+        # x 4 + (312 - 60)
+        # y (20 + 4 + 56 + 4) + 30 + 63
+        # w 60
+        # h 63
+        self._btn_always = Button(None)
+        self._btn_always.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30 + 63)
+        self._btn_always.set_size(100, 63)
+        self._btn_always.add_event(self._btn_always_event_handler)
+
+        self._buttons = []
+        self._buttons.append(self._btn_up)
+        self._buttons.append(self._btn_down)
+        self._buttons.append(self._btn_once)
+        self._buttons.append(self._btn_always)
+
+        self._line_spacing = 36 + 2 + 2
+        self._left_cursor_x = 4 + 2 + 30
+        self._left_cursor_y = (20 + 4 + 56 + 4) + 2
+        self._left_img = Image()
+        self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
+        self._left_img.set_size(10, 36)
+        self._left_img.set_src("/system/core2/List/left_cursor.png")
+
+        self._right_cursor_x = 320 - 4 - 60 - 10
+        self._right_cursor_y = (20 + 4 + 56 + 4) + 2
+        self._right_img = Image()
+        self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
+        self._right_img.set_size(10, 36)
+        self._right_img.set_src("/system/core2/List/right_cursor.png")
+
+        self._label0 = Label(
+            "",
+            self._left_cursor_x + 10,
+            self._left_cursor_y + 8,
+            w=200,
+            h=36,
+            fg_color=0x000000,
+            bg_color=0xFEFEFE,
+            font=MontserratMedium18.FONT,
+        )
+        self._label1 = Label(
+            "",
+            self._left_cursor_x + 10,
+            self._left_cursor_y + 8 + self._line_spacing,
+            w=200,
+            h=36,
+            fg_color=0x000000,
+            bg_color=0xFEFEFE,
+            font=MontserratMedium18.FONT,
+        )
+        self._label2 = Label(
+            "",
+            self._left_cursor_x + 10,
+            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
+            w=200,
+            h=36,
+            fg_color=0x000000,
+            bg_color=0xFEFEFE,
+            font=MontserratMedium18.FONT,
+        )
+        self._label3 = Label(
+            "",
+            self._left_cursor_x + 10,
+            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
+            w=200,
+            h=36,
+            fg_color=0x000000,
+            bg_color=0xFEFEFE,
+            font=MontserratMedium18.FONT,
+        )
+        self._labels = []
+        self._labels.append(self._label0)
+        self._labels.append(self._label1)
+        self._labels.append(self._label2)
+        self._labels.append(self._label3)
+        for label, file in zip(self._labels, self._files):
+            if file is None or label is None:
+                break
+            label.setText(file)
+
+    def load_data(self):
+        self._files = []
+        for file in os.listdir("apps"):
+            if file.endswith(".py"):
+                self._files.append(file)
+        self._files_number = len(self._files)
+        self._cursor_pos = 0
+        self._file_pos = 0
+
+    def handle(self, x, y):
+        for btn in self._buttons:
+            if btn.handle(x, y):
                 break
 
-        if select_app is not None:
-            # Handle app switching
-            if self._last_app is not select_app and self._last_app is not None:
-                # destroy old app
-                self._last_app.umount()
-
-            if self._last_app is not select_app:
-                # load app
-                select_app.mount()
-                self._last_app = select_app
-                self._id = select_app.id
-        else:
-            # Handle the functionality of the app
-            if self._last_app is not None:
-                self._last_app.handle(x, y)
-
-    def _load_app(self, new_app: AppBase):
-        if new_app is not None:
-            # Handle app switching
-            if self._last_app is not new_app and self._last_app is not None:
-                # destroy old app
-                self._last_app.umount()
-
-            if self._last_app is not new_app:
-                # load app
-                new_app.mount()
-                self._last_app = new_app
-                self._id = new_app.id
-
     def handle_input(self, event: KeyEvent):
-        # if self.focus == True:
-        #     if key == KeyCode.KEYCODE_DOWN or key == KeyCode.KEYCODE_ENTER:
-        #         self.focus = False
-        # else:
-        #     self.app.handle_input(key)
+        return super().handle_input(event)
 
-        if self.app == self:
-            if event.key in (KeyCode.KEYCODE_DOWN, KeyCode.KEYCODE_ENTER):
-                self.app = self._last_app
-                event.status = True
-            if event.key is KeyCode.KEYCODE_RIGHT:
-                id = (self._id + 1) % len(self._apps)
-                self.select_app(id)
-                event.status = True
-            if KeyCode.KEYCODE_LEFT == event.key:
-                id = len(self._apps) - 1 if (self._id - 1 < 0) else (self._id - 1)
-                self.select_app(id)
-                event.status = True
-        else:
-            self.app.handle_input(event)
+    def umount(self) -> None:
+        super().umount()
+        M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
-        if event.status is False and event.key is KeyCode.KEYCODE_ESC:
-            event.status = True
-            self.app = self
-            self._last_app.umount()
-            self._last_app.mount()
+    def _btn_up_event_handler(self, event):
+        if self._file_pos is 0 and self._cursor_pos == 0:
+            _play_wav("/system/common/wav/bg.wav")
             return
 
-    @staticmethod
-    def _is_select(app: AppBase, x, y):
-        descriptor = app.descriptor
-        if x < descriptor.x:
-            return False
-        if x > (descriptor.x + descriptor.width):
-            return False
-        if y < descriptor.y:
-            return False
-        if y > (descriptor.y + descriptor.height):
-            return False
-        return True
+        self._file_pos -= 1
+        if self._cursor_pos < 0:
+            self._cursor_pos = 0
 
+        self._cursor_pos -= 1
+        if self._file_pos < 0:
+            self._file_pos = 0
 
-class Theme:
-    Gray = 0
-    Green = 1
-    Red = 2
-    Yellow = 3
+        DEBUG and print("cursor:", self._cursor_pos)
+        DEBUG and print("file:", self._file_pos)
+
+        M5.Lcd.drawImage(_list_main_desc.src, _list_main_desc.x, _list_main_desc.y)
+        if self._file_pos < self._cursor_pos:
+            for label, file in zip(self._labels, self._files):
+                if file is None or label is None:
+                    break
+                label.setText(file)
+        else:
+            for label, file in zip(
+                self._labels,
+                self._files[
+                    self._file_pos - self._cursor_pos : self._file_pos + (4 - self._cursor_pos)
+                ],
+            ):
+                if file is None or label is None:
+                    break
+                label.setText(file)
+
+        self._left_img.set_pos(
+            self._left_cursor_x, self._left_cursor_y + self._line_spacing * self._cursor_pos
+        )
+        self._right_img.set_pos(
+            self._right_cursor_x, self._right_cursor_y + self._line_spacing * self._cursor_pos
+        )
+
+    def _btn_down_event_handler(self, event):
+        # FIXME
+        self._file_pos += 1
+        self._cursor_pos += 1
+
+        max_cursor_pos = len(self._files) - 1 if len(self._files) < 4 else 3
+        if self._cursor_pos > max_cursor_pos:
+            self._cursor_pos = max_cursor_pos
+        if self._file_pos >= len(self._files):
+            self._file_pos = len(self._files) - 1
+            _play_wav("/system/common/wav/bg.wav")
+            return
+
+        DEBUG and print("cursor:", self._cursor_pos)
+        DEBUG and print("file:", self._file_pos)
+
+        M5.Lcd.drawImage(_list_main_desc.src, _list_main_desc.x, _list_main_desc.y)
+        if self._file_pos < 4:
+            for label, file in zip(self._labels, self._files):
+                if file is None or label is None:
+                    break
+                label.setText(file)
+        else:
+            for label, file in zip(
+                self._labels, self._files[self._file_pos - 3 : self._file_pos + 1]
+            ):
+                if file is None or label is None:
+                    break
+                label.setText(file)
+
+        # cursor img
+        self._left_img.set_pos(
+            self._left_cursor_x, self._left_cursor_y + self._cursor_pos * self._line_spacing
+        )
+        self._right_img.set_pos(
+            self._right_cursor_x, self._right_cursor_y + self._cursor_pos * self._line_spacing
+        )
+
+    def _btn_once_event_handler(self, event):
+        DEBUG and print("run once")
+        execfile("apps/" + self._files[self._file_pos])
+        sys.exit(0)
+
+    def _btn_always_event_handler(self, event):
+        DEBUG and print("run always")
+        nvs = esp32.NVS("uiflow")
+        nvs.set_u8("boot_option", 0)
+        nvs.commit()
+        with open("apps/" + self._files[self._file_pos], "rb") as f_src, open(
+            "main.py", "wb"
+        ) as f_dst:
+            while True:
+                chunk = f_src.read(1024)
+                if not chunk:
+                    break
+                f_dst.write(chunk)
+        time.sleep(0.1)
+        machine.reset()
 
 
 _WIFI_STATUS_ICO = {
-    WiFiStatus.INIT: "/system/core2/WiFi/wifi_empty.png",
-    WiFiStatus.RSSI_GOOD: "/system/core2/WiFi/wifi_good.png",
-    WiFiStatus.RSSI_MID: "/system/core2/WiFi/wifi_mid.png",
-    WiFiStatus.RSSI_WORSE: "/system/core2/WiFi/wifi_worse.png",
-    WiFiStatus.DISCONNECTED: "/system/core2/WiFi/wifi_disconnected.png",
+    _WiFiStatus.INIT: ImageDesc(
+        src="/system/core2/WiFi/wifi_empty.png", x=320 - 56 - 20 - 5 - 20 - 5, y=0, w=20, h=20
+    ),
+    _WiFiStatus.RSSI_GOOD: ImageDesc(
+        src="/system/core2/WiFi/wifi_good.png", x=320 - 56 - 20 - 5 - 20 - 5, y=0, w=20, h=20
+    ),
+    _WiFiStatus.RSSI_MID: ImageDesc(
+        src="/system/core2/WiFi/wifi_mid.png", x=320 - 56 - 20 - 5 - 20 - 5, y=0, w=20, h=20
+    ),
+    _WiFiStatus.RSSI_WORSE: ImageDesc(
+        src="/system/core2/WiFi/wifi_worse.png", x=320 - 56 - 20 - 5 - 20 - 5, y=0, w=20, h=20
+    ),
+    _WiFiStatus.DISCONNECTED: ImageDesc(
+        src="/system/core2/WiFi/wifi_disconnected.png",
+        x=320 - 56 - 20 - 5 - 20 - 5,
+        y=0,
+        w=20,
+        h=20,
+    ),
 }
 
 
 _SERVER_STATUS_ICO = {
-    ServerStatus.INIT: "/system/core2/Server/server_empty.png",
-    ServerStatus.CONNECTED: "/system/core2/Server/Server_Green.png",
-    ServerStatus.DISCONNECTED: "/system/core2/Server/server_error.png",
-}
-
-
-_BATTERY_THEME_ICO = {
-    Theme.Gray: "/system/core2/Battery/battery_Gray.png",
-    Theme.Green: "/system/core2/Battery/battery_Green.png",
-    Theme.Red: "/system/core2/Battery/battery_Red.png",
-    Theme.Yellow: "/system/core2/Battery/battery_Yellow.png",
+    _ServerStatus.INIT: ImageDesc(
+        src="/system/core2/Server/server_empty.png", x=320 - 56 - 20 - 5, y=0, w=20, h=20
+    ),
+    _ServerStatus.CONNECTED: ImageDesc(
+        src="/system/core2/Server/Server_Green.png", x=320 - 56 - 20 - 5, y=0, w=20, h=20
+    ),
+    _ServerStatus.DISCONNECTED: ImageDesc(
+        src="/system/core2/Server/server_error.png", x=320 - 56 - 20 - 5, y=0, w=20, h=20
+    ),
 }
 
 
 class StatusBarApp:
-    def __init__(self, ico, wifi) -> None:
+    def __init__(self, icos: dict, wifi) -> None:
         self.id = 0
         self.x = 0
         self.y = 0
-        self.width = 320
-        self.height = 20
+        self.w = 320
+        self.h = 20
 
         self._wifi = wifi
         self._time_label = Label(
             "12:23",
             160,
             2,
+            w=312,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            # font=M5.Lcd.FONTS.DejaVu9,
             font=MontserratMedium16.FONT,
         )
         self._battery_label = Label(
             "78%",
-            320 - 44 + 22 + 1,
+            320 - 56 + 22,
             4,
+            w=312,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            # font=M5.Lcd.FONTS.DejaVu9
             font=MontserratMedium10.FONT,
         )
-        self._wifi_status = WiFiStatus.INIT
+        self._wifi_status = _WiFiStatus.INIT
         if _HAS_SERVER is False:
-            self._server_status = ServerStatus.DISCONNECTED
+            self._server_status = _ServerStatus.DISCONNECTED
 
     def registered(self):
         pass
@@ -1285,7 +1421,7 @@ class StatusBarApp:
         self._load_view()
 
     def _load_view(self):
-        _draw_png("/system/core2/Title/title_blue.png")
+        M5.Lcd.drawImage("/system/core2/Title/title_blue.png", 0, 0)
         self.handle(None, None)
 
     def _update_time(self, struct_time):
@@ -1293,34 +1429,38 @@ class StatusBarApp:
 
     def _update_wifi(self, status):
         self._wifi_status = status
-        src = _WIFI_STATUS_ICO.get(self._wifi_status, "/system/core2/WiFi/wifi_empty.png")
-        _draw_png(src)
+        src = _WIFI_STATUS_ICO.get(self._wifi_status)
+        M5.Lcd.drawImage(src.src, src.x, src.y)
 
     def _update_server(self, status):
         self._server_status = status
-        src = _SERVER_STATUS_ICO.get(self._server_status, "/system/core2/Server/server_error.png")
-        _draw_png(src)
+        src = _SERVER_STATUS_ICO.get(self._server_status)
+        M5.Lcd.drawImage(src.src, src.x, src.y)
 
-    def _update_battery(self, battery):
-        if battery >= 0 and battery <= 100:
+    def _update_battery(self, battery, charging):
+        src = ""
+        if battery > 0 and battery <= 100:
             if battery < 20:
-                src = _BATTERY_THEME_ICO.get(Theme.Red, "/system/core2/Battery/battery_Green.png")
-                _draw_png(src)
-            elif battery < 40:
-                src = _BATTERY_THEME_ICO.get(
-                    Theme.Yellow, "/system/core2/Battery/battery_Green.png"
+                src = (
+                    "/system/core2/Battery/battery_Red_Charge.png"
+                    if charging
+                    else "/system/core2/Battery/battery_Red.png"
                 )
-                _draw_png(src)
             elif battery <= 100:
-                src = _BATTERY_THEME_ICO.get(
-                    Theme.Green, "/system/core2/Battery/battery_Green.png"
+                src = (
+                    "/system/core2/Battery/battery_Green_Charge.png"
+                    if charging
+                    else "/system/core2/Battery/battery_Green.png"
                 )
-                _draw_png(src)
+            M5.Lcd.drawImage(src, 320 - 56, 0)
             self._battery_label.setText("{:d}%".format(battery))
         else:
-            src = _BATTERY_THEME_ICO.get(Theme.Gray, "/system/core2/Battery/battery_Green.png")
-            _draw_png(src)
-            self._battery_label.setText("null")
+            src = (
+                "/system/core2/Battery/battery_Black_Charge.png"
+                if charging
+                else "/system/core2/Battery/battery_Black.png"
+            )
+            M5.Lcd.drawImage(src, 320 - 56, 0)
 
     @staticmethod
     def get_local_time():
@@ -1331,38 +1471,35 @@ class StatusBarApp:
         if status is network.STAT_GOT_IP:
             rssi = self._wifi.get_rssi()
             if rssi <= -80:
-                return WiFiStatus.RSSI_WORSE
+                return _WiFiStatus.RSSI_WORSE
             elif rssi <= -60:
-                return WiFiStatus.RSSI_MID
+                return _WiFiStatus.RSSI_MID
             else:
-                return WiFiStatus.RSSI_GOOD
+                return _WiFiStatus.RSSI_GOOD
         else:
-            return WiFiStatus.DISCONNECTED
+            return _WiFiStatus.DISCONNECTED
 
     @staticmethod
     def get_server_status():
         if _HAS_SERVER is True:
             status = M5Things.status()
             DEBUG and print(
-                "Server connect status: %d(%s)" % (status, M5THINGS_STATUS.get(status))
+                "Server connect status: %d(%s)" % (status, _m5things_status.get(status))
             )
             if status in (0, 1):
-                return ServerStatus.INIT
+                return _ServerStatus.INIT
             elif status == 2:
-                return ServerStatus.CONNECTED
+                return _ServerStatus.CONNECTED
             elif status in (-2, -1, 3):
-                return ServerStatus.DISCONNECTED
+                return _ServerStatus.DISCONNECTED
         else:
-            return ServerStatus.DISCONNECTED
-
-    def get_battery_percentage(self):
-        return M5.Power.getBatteryLevel()
+            return _ServerStatus.DISCONNECTED
 
     def handle(self, x, y):
         self._update_time(self.get_local_time())
         self._update_wifi(self.get_wifi_status())
         self._update_server(self.get_server_status())
-        self._update_battery(self.get_battery_percentage())
+        self._update_battery(M5.Power.getBatteryLevel(), M5.Power.isCharging())
 
     def umount(self):
         pass
@@ -1377,7 +1514,7 @@ class BootView:
 
     @classmethod
     def load(self) -> None:
-        _draw_png("/system/core2/boot.png")
+        M5.Lcd.drawImage("/system/core2/boot.png", 0, 0)
         time.sleep(0.2)
 
 
@@ -1392,11 +1529,11 @@ class Core2_Startup:
         BootView.load()
         M5.Lcd.clear(0x000000)
         self._apps = AppManage(5)
-        self._apps.register_app(SettingsApp(_SETTING_ICO, data=self._wifi))
-        self._apps.register_app(DevApp(_DEVELOP_ICO))
-        self._apps.register_app(RunApp(_APPRUN_ICO))
-        self._apps.register_app(AppBase(_APPLIST_ICO))
-        self._apps.register_app(AppBase(_EZDATA_ICO))
+        self._apps.register_app(SettingsApp(_setting_icos, data=self._wifi))
+        self._apps.register_app(DevApp(_develop_icos))
+        self._apps.register_app(RunApp(_apprun_icos))
+        self._apps.register_app(ListApp(_applist_icos))
+        self._apps.register_app(AppBase(_ezdata_icos))
         self._status_bar.mount()
         self._apps.mount()
         self._apps.select_app(1)
@@ -1405,9 +1542,10 @@ class Core2_Startup:
         last_touch_time = time.ticks_ms()
         last_update_status_time = last_touch_time
 
-        # self.i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-        # self._kb = CardKB(self.i2c0)
-        # self._event = KeyEvent()
+        self.i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+        self._kb = CardKB(self.i2c0)
+        self._event = KeyEvent()
+        self._kb_status = False
 
         while True:
             M5.update()
@@ -1422,21 +1560,34 @@ class Core2_Startup:
                     # elif detail[8] and detail[4]:  # wasReleased and isPressed
                     #     pass
                     else:
-                        _playWav("/system/common/wav/click.wav")
+                        _play_wav("/system/common/wav/click.wav")
                         self._apps.load_app(M5.Touch.getX(), M5.Touch.getY())
                     last_touch_time = time.ticks_ms()
 
             # try:
             #     if self._kb.is_pressed():
-            #         M5.Speaker.playWav(click.RAW_DATA)
+            #         _play_wav("/system/common/wav/click.wav")
             #         self._event.key = self._kb.get_key()
             #         self._event.status = False
             #         self._apps.handle_input(self._event)
+            #     if self._kb_status is False:
+            #         _play_wav("/system/common/wav/insert.wav")
+            #         self._kb_status = True
             # except OSError:
-            #     pass
+            #     if self._kb_status is True:
+            #         _play_wav("/system/common/wav/remove.wav")
+            #         self._kb_status = False
+
+            # if self._kb.is_pressed():
+            #     _play_wav("/system/common/wav/click.wav")
+            #     self._event.key = self._kb.get_key()
+            #     self._event.status = False
+            #     self._apps.handle_input(self._event)
 
             if time.ticks_ms() - last_update_status_time > 5000:
                 # 会影响触摸发处理速度
                 self._status_bar.handle(None, None)
                 last_update_status_time = time.ticks_ms()
                 gc.collect()
+                # print("alloc:", gc.mem_alloc())
+                # print("free:", gc.mem_free())
