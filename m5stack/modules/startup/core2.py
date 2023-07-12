@@ -1104,6 +1104,21 @@ class ListApp(AppBase):
         self.data = None
         self.descriptor = self.icos.get(False)
 
+        self._btn_up = None
+        self._btn_down = None
+        self._btn_once = None
+        self._btn_always = None
+        self._buttons = []
+
+        self._left_img = None
+        self._right_img = None
+
+        self._labels = []
+        self._label0 = None
+        self._label1 = None
+        self._label2 = None
+        self._label3 = None
+
     def create(self):
         pass
 
@@ -1118,107 +1133,121 @@ class ListApp(AppBase):
         # y (20 + 4 + 56 + 4) + 2
         # w 30
         # h 75
-        self._btn_up = Button(None)
-        self._btn_up.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2)
-        self._btn_up.set_size(60, 75)
-        self._btn_up.add_event(self._btn_up_event_handler)
+        if self._btn_up is None:
+            self._btn_up = Button(None)
+            self._btn_up.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2)
+            self._btn_up.set_size(60, 75)
+            self._btn_up.add_event(self._btn_up_event_handler)
 
         # button down
         # x 4 + 2
         # y (20 + 4 + 56 + 4) + 2 + 75 + 2
         # w 30
         # h 75
-        self._btn_down = Button(None)
-        self._btn_down.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2 + 75 + 2)
-        self._btn_down.set_size(60, 75)
-        self._btn_down.add_event(self._btn_down_event_handler)
+        if self._btn_down is None:
+            self._btn_down = Button(None)
+            self._btn_down.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2 + 75 + 2)
+            self._btn_down.set_size(60, 75)
+            self._btn_down.add_event(self._btn_down_event_handler)
 
         # run once
         # x 4 + (312 - 60)
         # y (20 + 4 + 56 + 4) + 30
         # w 60
         # h 63
-        self._btn_once = Button(None)
-        self._btn_once.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30)
-        self._btn_once.set_size(100, 63)
-        self._btn_once.add_event(self._btn_once_event_handler)
+        if self._btn_once is None:
+            self._btn_once = Button(None)
+            self._btn_once.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30)
+            self._btn_once.set_size(100, 63)
+            self._btn_once.add_event(self._btn_once_event_handler)
 
         # run always
         # x 4 + (312 - 60)
         # y (20 + 4 + 56 + 4) + 30 + 63
         # w 60
         # h 63
-        self._btn_always = Button(None)
-        self._btn_always.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30 + 63)
-        self._btn_always.set_size(100, 63)
-        self._btn_always.add_event(self._btn_always_event_handler)
+        if self._btn_always is None:
+            self._btn_always = Button(None)
+            self._btn_always.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30 + 63)
+            self._btn_always.set_size(100, 63)
+            self._btn_always.add_event(self._btn_always_event_handler)
 
-        self._buttons = []
-        self._buttons.append(self._btn_up)
-        self._buttons.append(self._btn_down)
-        self._buttons.append(self._btn_once)
-        self._buttons.append(self._btn_always)
+        if len(self._buttons) is not 0:
+            self._buttons.clear()
+            self._buttons.append(self._btn_up)
+            self._buttons.append(self._btn_down)
+            self._buttons.append(self._btn_once)
+            self._buttons.append(self._btn_always)
 
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = 4 + 2 + 30
         self._left_cursor_y = (20 + 4 + 56 + 4) + 2
-        self._left_img = Image()
+        if self._left_img is None:
+            self._left_img = Image()
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
         self._left_img.set_src("/system/core2/List/left_cursor.png")
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (20 + 4 + 56 + 4) + 2
-        self._right_img = Image()
+        if self._right_img is None:
+            self._right_img = Image()
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
         self._right_img.set_src("/system/core2/List/right_cursor.png")
 
-        self._label0 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
-        )
-        self._label1 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
-        )
-        self._label2 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
-        )
-        self._label3 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
-        )
-        self._labels = []
-        self._labels.append(self._label0)
-        self._labels.append(self._label1)
-        self._labels.append(self._label2)
-        self._labels.append(self._label3)
+        if self._label0 is None:
+            self._label0 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=MontserratMedium18.FONT,
+            )
+        if self._label1 is None:
+            self._label1 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8 + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=MontserratMedium18.FONT,
+            )
+        if self._label2 is None:
+            self._label2 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=MontserratMedium18.FONT,
+            )
+        if self._label3 is None:
+            self._label3 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=MontserratMedium18.FONT,
+            )
+
+        if len(self._labels) is not 4:
+            self._labels.clear()
+            self._labels.append(self._label0)
+            self._labels.append(self._label1)
+            self._labels.append(self._label2)
+            self._labels.append(self._label3)
+
         for label, file in zip(self._labels, self._files):
             if file is None or label is None:
                 break
