@@ -329,8 +329,8 @@ static int8_t mqtt_ping_down_process(esp_mqtt_event_handle_t event, uint64_t *_p
     }
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
-    if (NULL == root) {
-        ESP_LOGW(TAG, "JSON parsing failed");
+    if (NULL == root || cJSON_IsNull(root)) {
+        ESP_LOGW(TAG, "PING JSON parsing failed");
         ret = PKG_ERR_PARSE;
         goto end;
     }
@@ -387,7 +387,7 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
     if (NULL == root) {
-        ESP_LOGW(TAG, "JSON parsing failed");
+        ESP_LOGW(TAG, "EXEC JSON parsing failed");
         ret = PKG_ERR_PARSE;
         goto end;
     }
@@ -926,7 +926,7 @@ static int8_t mqtt_file_process(
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
     if (NULL == root) {
-        ESP_LOGW(TAG, "JSON parsing failed");
+        ESP_LOGW(TAG, "FILE JSON parsing failed");
         ret = PKG_ERR_PARSE;
         goto end;
     }
@@ -987,20 +987,16 @@ static void mqtt_message_handle(void *event_data) {
     uint64_t resp_pkg_sn = 0;
     uint8_t resp_pkg_idx = 0;
     int8_t result = 0;
-    if ((strncmp(mqtt_up_ping_topic, event->topic, event->topic_len) == 0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match ping topic");
-        result = mqtt_ping_process(event, &resp_pkg_sn);
-        mqtt_response_helper(TOPIC_PING_IDX, resp_pkg_sn, 0, result);
-    } else if ((strncmp(mqtt_down_ping_topic, event->topic, event->topic_len) == 0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match ping topic");
+    if ((strncmp(mqtt_down_ping_topic, event->topic, event->topic_len) == 0)) {
+        ESP_LOGI(TAG, "Downlink msg's topic is match down ping topic");
         result = mqtt_ping_down_process(event, &resp_pkg_sn);
         mqtt_response_helper(TOPIC_PING_IDX, resp_pkg_sn, 0, result);
     } else if ((strncmp(mqtt_down_exec_topic, event->topic, event->topic_len) == 0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match exec topic");
+        ESP_LOGI(TAG, "Downlink msg's topic is match down exec topic");
         result = mqtt_exec_process(event, &resp_pkg_sn, &resp_pkg_idx);
         mqtt_response_helper(TOPIC_EXEC_IDX, resp_pkg_sn, resp_pkg_idx, result);
     } else if ((strncmp(mqtt_down_file_topic, event->topic, event->topic_len) == 0)) {
-        ESP_LOGI(TAG, "Downlink msg's topic is match file topic");
+        ESP_LOGI(TAG, "Downlink msg's topic is match down file topic");
         result = mqtt_file_process(event, &resp_pkg_sn, &resp_pkg_idx);
         // mqtt_response_helper(TOPIC_FILE_IDX, resp_pkg_sn, resp_pkg_idx, result);
     }
