@@ -86,7 +86,7 @@ class BLEUARTClient:
         if event == _IRQ_SCAN_RESULT:
             self._verbose and print("Scan result")
             addr_type, addr, adv_type, rssi, adv_data = data
-            if adv_type in (_ADV_IND, _ADV_DIRECT_IND) and _UART_UUID in decode_services(adv_data):
+            if adv_type in (_ADV_IND, _ADV_DIRECT_IND) and decode_name(adv_data) == self._name:
                 # Found a potential device, remember it and stop scanning.
                 self._addr_type = addr_type
                 self._addr = bytes(
@@ -97,14 +97,16 @@ class BLEUARTClient:
 
         elif event == _IRQ_SCAN_DONE:
             self._verbose and print("Scan done")
-            if self._scan_callback:
-                if self._addr:
-                    # Found a device during the scan (and the scan was explicitly stopped).
-                    self._scan_callback(self._addr_type, self._addr, self._name)
-                    self._scan_callback = None
-                else:
-                    # Scan timed out.
-                    self._scan_callback(None, None, None)
+            # if self._scan_callback:
+            if self._addr:
+                # Found a device during the scan (and the scan was explicitly stopped).
+                # self._scan_callback(self._addr_type, self._addr, self._name)
+                # self._scan_callback = None
+                self._ble.gap_connect(self._addr_type, self._addr)
+            else:
+                # Scan timed out.
+                # self._scan_callback(None, None, None)
+                pass
 
         elif event == _IRQ_PERIPHERAL_CONNECT:
             # Connect successful.
@@ -185,21 +187,27 @@ class BLEUARTClient:
         )
 
     # Find a device advertising the environmental sensor service.
-    def scan(self, callback=None):
+    # def scan(self, callback=None):
+    #     self._addr_type = None
+    #     self._addr = None
+    #     self._scan_callback = callback
+    #     self._ble.gap_scan(2000, 30000, 30000)
+
+    # # Connect to the specified device (otherwise use cached address from a scan).
+    # def connect(self, addr_type=None, addr=None, callback=None):
+    #     self._addr_type = addr_type or self._addr_type
+    #     self._addr = addr or self._addr
+    #     self._conn_callback = callback
+    #     if self._addr_type is None or self._addr is None:
+    #         return False
+    #     self._ble.gap_connect(self._addr_type, self._addr)
+    #     return True
+
+    def connect(self, name, timeout=2000):
+        self._name = name
         self._addr_type = None
         self._addr = None
-        self._scan_callback = callback
-        self._ble.gap_scan(2000, 30000, 30000)
-
-    # Connect to the specified device (otherwise use cached address from a scan).
-    def connect(self, addr_type=None, addr=None, callback=None):
-        self._addr_type = addr_type or self._addr_type
-        self._addr = addr or self._addr
-        self._conn_callback = callback
-        if self._addr_type is None or self._addr is None:
-            return False
-        self._ble.gap_connect(self._addr_type, self._addr)
-        return True
+        self._ble.gap_scan(timeout, 30000, 30000)
 
     def any(self):
         return len(self._rx_buffer)
@@ -222,3 +230,6 @@ class BLEUARTClient:
             return
         self._ble.gap_disconnect(self._conn_handle)
         self._reset()
+
+    def deinit(self):
+        self._ble.active(False)

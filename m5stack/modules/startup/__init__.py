@@ -73,6 +73,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cores3 = CoreS3_Startup()
             cores3.startup(ssid, pswd, timeout)
+        elif M5.getBoard() in (M5.BOARD.M5StackCore2, M5.BOARD.M5Tough):
+            from .core2 import Core2_Startup
+
+            core2 = Core2_Startup()
+            core2.startup(ssid, pswd, timeout)
         elif M5.BOARD.M5AtomS3U == M5.getBoard():
             from .atoms3u import AtomS3U_Startup
 
