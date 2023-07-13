@@ -156,7 +156,7 @@ with open(file_out, "wb") as fout:
         "\033[1;32mExample command:\033[0m\r\n"
         "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
         "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
-        % (cur_offset, file_out, offset_bootloader, file_out[6:].split('/')[0], arg_board_type_flag.lower(), idf_target.lower(), offset_bootloader, file_out)
+        % (cur_offset, file_out, 0x0, file_out[6:].split('/')[0], arg_board_type_flag.lower(), idf_target.lower(), 0x0, file_out)
     )
 
 # Generate .uf2 file if the SoC has native USB.
