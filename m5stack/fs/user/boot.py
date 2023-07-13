@@ -2,6 +2,7 @@
 # boot.py
 import M5
 import esp32
+import time
 
 """
 boot_option:
@@ -34,6 +35,12 @@ if __name__ == "__main__":
     from startup import startup
 
     nvs = esp32.NVS("uiflow")
+    try:
+        tz = nvs.get_str("tz")
+        time.timezone(tz)
+    except:
+        pass
+
     try:
         boot_option = nvs.get_u8("boot_option")
     except:

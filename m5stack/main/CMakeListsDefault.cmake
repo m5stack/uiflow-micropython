@@ -150,6 +150,7 @@ set(IDF_COMPONENTS
     json
     M5Unified
     esp32-camera
+    uiflow_utility
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

@@ -39,6 +39,7 @@
 #include "shared/timeutils/timeutils.h"
 #include "modmachine.h"
 #include "machine_rtc.h"
+#include "uiflow_utility.h"
 
 typedef struct _machine_rtc_obj_t {
     mp_obj_base_t base;
@@ -197,7 +198,7 @@ STATIC mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
         setenv("TZ", tz, 1);
         tzset();
 
-        // TODO: save to nvs
+        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
         return mp_const_none;
     }
 }
