@@ -165,6 +165,7 @@ class ENCODER8:
     def read_reg_data(self, reg: int = 0, num: int = 0) -> bytearray:
         buf = bytearray(1)
         buf[0] = reg
+        time.sleep_ms(1)
         self.encoder8_i2c.writeto(self.i2c_addr, buf)
         buf = bytearray(num)
         self.encoder8_i2c.readfrom_into(self.i2c_addr, buf)
@@ -174,6 +175,7 @@ class ENCODER8:
         buf = bytearray(1 + len(byte_lst))
         buf[0] = reg
         buf[1:] = bytes(byte_lst)
+        time.sleep_ms(1)
         self.encoder8_i2c.writeto(self.i2c_addr, buf)
 
     def deinit(self):

@@ -35,6 +35,7 @@ MAKE_METHOD_KW(gfx, setTextSize, 1);
 MAKE_METHOD_KW(gfx, textWidth, 1);
 MAKE_METHOD_KW(gfx, fontHeight, 1);
 MAKE_METHOD_KW(gfx, setCursor, 1);
+MAKE_METHOD_0(gfx, getBrightness);
 MAKE_METHOD_KW(gfx, setBrightness, 1);
 MAKE_METHOD_KW(gfx, clear, 1);
 MAKE_METHOD_KW(gfx, fillScreen, 1);
@@ -87,6 +88,7 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, textWidth), \
     MAKE_TABLE(gfx, fontHeight), \
     MAKE_TABLE(gfx, setCursor), \
+    MAKE_TABLE(gfx, getBrightness), \
     MAKE_TABLE(gfx, setBrightness), \
     MAKE_TABLE(gfx, clear), \
     MAKE_TABLE(gfx, fillScreen), \

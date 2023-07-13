@@ -11,7 +11,7 @@ BOARD ?= M5STACK_8MB
 
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -26,13 +26,10 @@ endif
 # esp32c3's bootloader is different with esp32
 ifeq (C3, $(findstring C3,${BOARD}))
 	CHIP ?= esp32c3
-	BOOTLOADR_OFFSET ?= 0x0
 else ifeq (S3, $(findstring S3,${BOARD}))
 	CHIP ?= esp32s3
-	BOOTLOADR_OFFSET ?= 0x0
 else
 	CHIP ?= esp32
-	BOOTLOADR_OFFSET ?= 0x1000
 endif
 
 # If the build directory is not given, make it reflect the board name.
@@ -101,11 +98,11 @@ deploy: build
 
 # Deploy the MicroPython and system filesystem.
 flash: pack
-	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
+	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash 0x0 $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 # Deploy the MicroPython, system filesystem and user filesystem.
 flash_all: pack_all
-	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash $(BOOTLOADR_OFFSET) $(BUILD)/uiflow-$(GIT_VERSION).bin
+	esptool.py --chip $(CHIP) --port $(PORT) --baud $(BAUD) write_flash 0x0 $(BUILD)/uiflow-$(GIT_VERSION).bin
 
 # Clean the build directory.
 clean:
