@@ -130,7 +130,7 @@ if arg_fs_vfs_bin == "none":
 file_out = arg_output_bin
 
 # Write output file with combined firmware.
-cur_offset = offset_bootloader
+cur_offset = 0
 with open(file_out, "wb") as fout:
     for name, offset, max_size, file_in in files_in:
         assert offset >= cur_offset
