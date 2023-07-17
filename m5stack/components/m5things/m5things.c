@@ -24,6 +24,19 @@
 #define DEBUG_printf(fmt, ...) // mp_printf(&mp_plat_print, fmt"\r\n", ##__VA_ARGS__)
 
 /** type definitions */
+typedef struct _msg_file_req_t
+{
+    unsigned char operator;
+    const char *path;
+    int sn;
+
+    union {
+        int total;
+        int index;
+        int len;
+        const char *ctx;
+    } data;
+} msg_file_req_t;
 
 /** local function prototypes */
 static void mqtt_message_handle(void *event_data);
@@ -77,10 +90,12 @@ static char *down_topic_list[3] = {
     mqtt_down_file_topic
 };
 
+SemaphoreHandle_t xSemaphore = NULL;
+char *json_buf = NULL;
 
 /******************************************************************************/
 static lfs2_t *_fp = NULL;
-static lfs2_file_t *_file = NULL;
+static lfs2_file_t _file;
 static struct lfs2_file_config _fcfg;
 
 static bool lfs2_open_file(const char *path, int flags) {
@@ -92,28 +107,25 @@ static bool lfs2_open_file(const char *path, int flags) {
         return false;
     }
     _fp = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(_fm->obj))->lfs;
-    _file = (lfs2_file_t *)malloc(1 * sizeof(lfs2_file_t));
+    memset(&_file, 0x00, sizeof(_file));
     _fcfg.buffer = malloc(_fp->cfg->cache_size * sizeof(uint8_t));
-    return (lfs2_file_opencfg(_fp, _file, full_path, flags, &_fcfg) == LFS2_ERR_OK)
+    return (lfs2_file_opencfg(_fp, &_file, full_path, flags, &_fcfg) == LFS2_ERR_OK)
             ? true
             : false;
 }
 
-static int lfs2_write_file(const void *buffer, lfs2_size_t size) {
-    return lfs2_file_write(_fp, _file, buffer, size);
+static inline int lfs2_write_file(const void *buffer, lfs2_size_t size) {
+    return lfs2_file_write(_fp, &_file, buffer, size);
 }
 
-static int lfs2_seek_file(lfs2_soff_t off, int whence) {
-    return lfs2_file_seek(_fp, _file, off, whence);
+static inline int lfs2_seek_file(lfs2_soff_t off, int whence) {
+    return lfs2_file_seek(_fp, &_file, off, whence);
 }
 
 static int lfs2_close_file(void) {
     int ret = LFS2_ERR_OK;
     if (_fp) {
-        ret = lfs2_file_close(_fp, _file);
-    }
-    if (_file) {
-        free(_file);
+        ret = lfs2_file_close(_fp, &_file);
     }
     if (_fcfg.buffer) {
         free(_fcfg.buffer);
@@ -131,13 +143,16 @@ static int8_t mqtt_file_write_helper(cJSON *_fs_path, cJSON *_pkg_ctx, uint8_t _
     int8_t ret = PKG_OK;
     size_t decode_len = 0;
 
-    // TODO: sometimes will cause StoreProhibited
     unsigned char *ctx_buf = (unsigned char *)base64_decode(
         _pkg_ctx->valuestring, strlen(_pkg_ctx->valuestring), &decode_len);
-    ctx_buf[decode_len] = '\0';
+
+    if (ctx_buf == NULL && strlen(_pkg_ctx->valuestring)) {
+        ESP_LOGE(TAG, "No memory(@base64_decode)");
+        return PKG_ERR_NO_MEMORY_AVAILABLE;
+    }
 
     if (_pkg_len != decode_len) {
-        ESP_LOGE(TAG, "File decode failed");
+        ESP_LOGE(TAG, "base64 decode failed");
         ret = PKG_ERR_LENGTH;
         goto end;
     }
@@ -176,12 +191,6 @@ end:
     return ret;
 }
 
-static int8_t mqtt_file_read_helper(cJSON *_fs_path) {
-    int8_t ret = PKG_OK;
-
-    return ret;
-}
-
 static int8_t file_list_helper(const char *path, cJSON *file_list) {
     int8_t ret = PKG_OK;
     const char *full_path = {'\0'};
@@ -193,11 +202,13 @@ static int8_t file_list_helper(const char *path, cJSON *file_list) {
 
     mp_vfs_mount_t *vfs = mp_vfs_lookup_path(path, &full_path);
     if (vfs == MP_VFS_NONE || vfs == MP_VFS_ROOT) {
+        ESP_LOGW(TAG, "vfs not found");
         return PKG_ERR_FILE_OPEN;
     }
 
     lfs2_t *fs = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(vfs->obj))->lfs;
     if (lfs2_dir_open(fs, &dir, path)) {
+        ESP_LOGW(TAG, "No such file or directory");
         return PKG_ERR_FILE_OPEN;
     }
 
@@ -318,6 +329,31 @@ static int8_t mqtt_ping_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     return ret;
 }
 
+static void mqtt_ping_report() {
+    char mqtt_report_buf[128] = { 0 };
+    const esp_partition_t *running = esp_ota_get_running_partition();
+    esp_app_desc_t running_app_info;
+    if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
+        ESP_LOGD(TAG, "Running firmware version: %s", running_app_info.version);
+    }
+
+    size_t len = sprintf(
+        mqtt_report_buf,
+        "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"version\":\"%s\"}",
+        esp_get_free_heap_size(),
+        running_app_info.version
+        );
+
+    esp_mqtt_client_publish(
+        m5things_mqtt_client,
+        mqtt_up_ping_topic,
+        mqtt_report_buf,
+        len,
+        0,
+        0
+        );
+}
+
 static int8_t mqtt_ping_down_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn) {
     int8_t ret = PKG_OK;
     *_pkg_sn = 0;
@@ -376,8 +412,8 @@ static int8_t mqtt_ping_down_process(esp_mqtt_event_handle_t event, uint64_t *_p
         strlen(avatar_obj->valuestring)
         );
 
-end:
     cJSON_Delete(root);
+end:
     return ret;
 }
 
@@ -386,7 +422,7 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     size_t decode_len = 0;
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
-    if (NULL == root) {
+    if (cJSON_IsNull(root) || NULL == root) {
         ESP_LOGW(TAG, "EXEC JSON parsing failed");
         ret = PKG_ERR_PARSE;
         goto end;
@@ -398,29 +434,37 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     cJSON *pkg_len = cJSON_GetObjectItemCaseSensitive(root, "pkg_len");
     cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
 
-    if (NULL == pkg_idx) {
+    if (cJSON_IsNull(root) || NULL == pkg_idx) {
         ESP_LOGW(TAG, "Unable to get 'pkg_idx' object");
         ret = PKG_ERR_INDEX;
-        goto end;
+        goto error_index;
     }
 
     *_pkg_sn = pkg_sn->valueint;
     *_pkg_idx = pkg_idx->valueint;
 
-    // TODO: sometimes will cause StoreProhibited
     unsigned char *ctx_buf = (unsigned char *)base64_decode(
         pkg_ctx->valuestring, strlen(pkg_ctx->valuestring), &decode_len);
-    ctx_buf[decode_len] = '\0';
+
+    if (ctx_buf == NULL && strlen(pkg_ctx->valuestring)) {
+        ESP_LOGE(TAG, "No memory(@base64_decode)");
+        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
+        goto error_index;
+    }
 
     if (pkg_len->valueint != decode_len) {
+        ESP_LOGE(TAG, "base64 decode failed");
         ret = PKG_ERR_LENGTH;
-        goto end;
+        goto error_exec;
     }
 
     if (pkg_idx->valueint == 0) {
-        if (0x03 == mp_interrupt_char) {
-            mp_sched_keyboard_interrupt();
+        while (ringbuf_get(&stdin_ringbuf) != -1) {
+            ;
         }
+
+        // enter paste mode
+        mp_sched_keyboard_interrupt();
         ringbuf_put(&stdin_ringbuf, 0x03);  // CTRL + C
         ringbuf_put(&stdin_ringbuf, 0x05);  // CTRL + E
     }
@@ -434,11 +478,11 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
         uint64_t timeout = esp_timer_get_time();
         while (ringbuf_free(&stdin_ringbuf) <= 0) {
             vTaskDelay(40 / portTICK_PERIOD_MS);
-            ESP_LOGW(TAG, "ringbuf free byte: %d", ringbuf_free(&stdin_ringbuf));
+            ESP_LOGI(TAG, "ringbuf free: %d bytes", ringbuf_free(&stdin_ringbuf));
             if ((esp_timer_get_time() - timeout) > 30000000) {
                 ESP_LOGE(TAG, "wait ringbuf free timeout");
                 ret = PKG_ERR_EXECUTE;
-                goto end;
+                goto error_exec;
             }
         }
         ringbuf_put(&stdin_ringbuf, c);  // User Code
@@ -447,9 +491,12 @@ static int8_t mqtt_exec_process(esp_mqtt_event_handle_t event, uint64_t *_pkg_sn
     if (pkg_idx->valueint == (pkg_tot->valueint - 1)) {
         ringbuf_put(&stdin_ringbuf, 0x04);  // CTRL + D
     }
+
+error_exec:
     free(ctx_buf);
-end:
+error_index:
     cJSON_Delete(root);
+end:
     return ret;
 }
 
@@ -465,7 +512,11 @@ static int8_t file_write_helper(
     size_t decode_len = 0;
 
     uint8_t *ctx_buf = (uint8_t *)base64_decode(ctx, ctx_len, &decode_len);
-    ctx_buf[decode_len] = '\0';
+
+    if (ctx_buf == NULL && ctx_len > 0) {
+        ESP_LOGE(TAG, "No memory(@base64_decode)");
+        return PKG_ERR_NO_MEMORY_AVAILABLE;
+    }
 
     if (pkg_len != decode_len) {
         ESP_LOGW(TAG, "Base64 decode failed");
@@ -593,11 +644,30 @@ ERROR:
 static int mqtt_file_read_response_helper(cJSON *resp, const char *resp_buf) {
     int ret = -1;
     if (resp != NULL) {
-        char *json_str = cJSON_Print(resp);
-        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
-        free(json_str);
+        xSemaphoreTake(xSemaphore, portMAX_DELAY);
+        memset(json_buf, 0x00, 4096 + 8);
+        if (cJSON_PrintPreallocated(resp, json_buf, 4096 + 8, false)) {
+            esp_mqtt_client_publish(
+                m5things_mqtt_client,
+                mqtt_up_file_topic,
+                json_buf,
+                strlen(json_buf),
+                0,
+                0
+                );
+        } else {
+            ESP_LOGW(TAG, "json object serialization failed");
+        }
+        xSemaphoreGive(xSemaphore);
     } else if (resp_buf != NULL) {
-        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
+        ret = esp_mqtt_client_publish(
+            m5things_mqtt_client,
+            mqtt_up_file_topic,
+            resp_buf,
+            strlen(resp_buf),
+            0,
+            0
+            );
     }
     return ret;
 }
@@ -660,7 +730,7 @@ void read_task(void *pvParameter) {
     // get file stat
     struct lfs2_info info;
     if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "Cannot find Find info about file");
+        ESP_LOGW(TAG, "No such file or directory");
         err_obj->valueint = PKG_ERR_NO_FILE_OR_DIR;
         mqtt_file_read_response_helper(resp, NULL);
         goto OUT_OF_FS;
@@ -717,32 +787,33 @@ void read_task(void *pvParameter) {
         // base64 encode
         size_t encode_len = 0;
         char *ctx_buf = base64_encode(buffer, pkg_len, &encode_len);
-        ctx_buf[encode_len] = '\0';
 
         // json load
         cJSON_SetIntValue(index_obj, index);
         cJSON_SetIntValue(len_obj, pkg_len);
         cJSON_SetValuestring(ctx_obj, ctx_buf);
-        char *json_str = cJSON_Print(resp);
-
-        // mqtt
-        // fixme: retransmit
-        esp_mqtt_client_publish(
-            m5things_mqtt_client,
-            mqtt_up_file_topic,
-            json_str,
-            strlen(json_str),
-            0,
-            0
-            );
+        xSemaphoreTake(xSemaphore, portMAX_DELAY);
+        memset(json_buf, 0x00, 4096 + 8);
+        if (cJSON_PrintPreallocated(resp, json_buf, 4096 + 8, false)) {
+            esp_mqtt_client_publish(
+                m5things_mqtt_client,
+                mqtt_up_file_topic,
+                json_buf,
+                strlen(json_buf),
+                0,
+                0
+                );
+        } else {
+            ESP_LOGW(TAG, "json object serialization failed");
+        }
+        xSemaphoreGive(xSemaphore);
 
         // release resources
         free(ctx_buf);
-        free(json_str);
         vTaskDelay(200 / portTICK_PERIOD_MS);
         index += 1;
         if (index == total) {
-            ESP_LOGI(TAG, "File read complete, total: %d, packages: %d", info.size, total);
+            ESP_LOGI(TAG, "File read complete, total: %d bytes, packages: %d", info.size, total);
             break;
         }
     }
@@ -751,16 +822,9 @@ void read_task(void *pvParameter) {
 OUT:
     free(config.buffer);
     free(buffer);
-    cJSON_Delete(req);
-    cJSON_Delete(resp);
-    vTaskDelete(NULL);
-    return;
 
 OUT_OF_FS:
-    cJSON_Delete(req);
     cJSON_Delete(resp);
-    vTaskDelete(NULL);
-    return;
 
 OUT_OF_RESP_OBJ:
     cJSON_Delete(req);
@@ -776,7 +840,7 @@ static int8_t mqtt_handle_file_read(cJSON *root) {
         ret = xTaskCreatePinnedToCore(
             read_task,
             "read_task",
-            4096,
+            6000,
             (void *)req,
             ESP_TASK_PRIO_MAX - 1,
             NULL,
@@ -791,9 +855,21 @@ static int8_t mqtt_handle_file_read(cJSON *root) {
 static int mqtt_file_list_response_helper(cJSON *resp, const char *resp_buf) {
     int ret = -1;
     if (resp != NULL) {
-        char *json_str = cJSON_Print(resp);
-        ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, json_str, strlen(json_str), 0, 0);
-        free(json_str);
+        xSemaphoreTake(xSemaphore, portMAX_DELAY);
+        memset(json_buf, 0x00, 4096 + 8);
+        if (cJSON_PrintPreallocated(resp, json_buf, 4096 + 8, false)) {
+            esp_mqtt_client_publish(
+                m5things_mqtt_client,
+                mqtt_up_file_topic,
+                json_buf,
+                strlen(json_buf),
+                0,
+                0
+                );
+        } else {
+            ESP_LOGW(TAG, "json object serialization failed");
+        }
+        xSemaphoreGive(xSemaphore);
     } else if (resp_buf != NULL) {
         ret = esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_file_topic, resp_buf, strlen(resp_buf), 0, 0);
     }
@@ -855,20 +931,21 @@ static int8_t mqtt_handle_file_list(cJSON *root) {
     cJSON_AddNumberToObject(resp_root, "pkg_sn", pkg_sn->valueint);
     cJSON_AddNumberToObject(resp_root, "err_code", ret);
 
-    char *json_str = cJSON_Print(resp_root);
-
-    esp_mqtt_client_publish(
-        m5things_mqtt_client,
-        mqtt_up_file_topic,
-        json_str,
-        strlen(json_str),
-        0,
-        0
-        );
-
-    cJSON_Delete(resp_root);
-    free(json_str);
-    return ret;
+    xSemaphoreTake(xSemaphore, portMAX_DELAY);
+    memset(json_buf, 0x00, 4096 + 8);
+    if (cJSON_PrintPreallocated(resp_root, json_buf, 4096 + 8, false)) {
+        esp_mqtt_client_publish(
+            m5things_mqtt_client,
+            mqtt_up_file_topic,
+            json_buf,
+            strlen(json_buf),
+            0,
+            0
+            );
+    } else {
+        ESP_LOGW(TAG, "json object serialization failed");
+    }
+    xSemaphoreGive(xSemaphore);
 
 OUT_ROOT_OBJECT:
     cJSON_Delete(resp_root);
@@ -887,6 +964,7 @@ static int8_t mqtt_handle_file_remove(cJSON *root) {
     // cJSON *pkg_ctx = cJSON_GetObjectItemCaseSensitive(root, "pkg_ctx");
 
     if (file_op == NULL || fs_path == NULL || pkg_sn == NULL) {
+        // There is no need to consider destroying the json object here.
         return ret;
     }
 
@@ -901,19 +979,23 @@ static int8_t mqtt_handle_file_remove(cJSON *root) {
     cJSON_AddNumberToObject(resp_root, "pkg_sn", pkg_sn->valueint);
     cJSON_AddNumberToObject(resp_root, "err_code", ret);
 
-    char *json_str = cJSON_Print(resp_root);
-
-    esp_mqtt_client_publish(
-        m5things_mqtt_client,
-        mqtt_up_file_topic,
-        json_str,
-        strlen(json_str),
-        0,
-        0
-        );
+    xSemaphoreTake(xSemaphore, portMAX_DELAY);
+    memset(json_buf, 0x00, 4096 + 8);
+    if (cJSON_PrintPreallocated(resp_root, json_buf, 4096 + 8, false)) {
+        esp_mqtt_client_publish(
+            m5things_mqtt_client,
+            mqtt_up_file_topic,
+            json_buf,
+            strlen(json_buf),
+            0,
+            0
+            );
+    } else {
+        ESP_LOGW(TAG, "json object serialization failed");
+    }
+    xSemaphoreGive(xSemaphore);
 
     cJSON_Delete(resp_root);
-    free(json_str);
     return ret;
 }
 
@@ -925,17 +1007,17 @@ static int8_t mqtt_file_process(
     int8_t ret = PKG_OK;
 
     cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
-    if (NULL == root) {
+    if (cJSON_IsNull(root) || NULL == root) {
         ESP_LOGW(TAG, "FILE JSON parsing failed");
         ret = PKG_ERR_PARSE;
         goto end;
     }
 
     cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
-    if (file_op == NULL) {
+    if (cJSON_IsNull(file_op) || file_op == NULL) {
         ESP_LOGW(TAG, "Unable to get 'file_op' object");
         ret = PKG_ERR_PARSE;
-        goto end;
+        goto error_file_op;
     }
 
     ESP_LOGI(TAG,
@@ -968,8 +1050,9 @@ static int8_t mqtt_file_process(
 
     ESP_LOGI(TAG, "Result: %s(%d)", resulet_msg[-ret], ret);
 
-end:
+error_file_op:
     cJSON_Delete(root);
+end:
     return ret;
 }
 
@@ -977,7 +1060,7 @@ static void mqtt_message_handle(void *event_data) {
     esp_mqtt_event_handle_t event = event_data;
 
     event->data[event->data_len] = '\0';
-    ESP_LOGI(TAG, "Free memory: %d bytes", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "Heap free: %d bytes", esp_get_free_heap_size());
     ESP_LOGI(TAG, "\r\nTopic: '%.*s'\r\nMessage: '%.*s'\r\nOffset: %d",
         event->topic_len, event->topic, event->data_len, event->data,
         event->current_data_offset);
@@ -1141,11 +1224,23 @@ static bool sync_time_by_sntp(void) {
 }
 
 void m5thing_task(void *pvParameter) {
-    char mqtt_report_buf[128];
-    const esp_partition_t *running = esp_ota_get_running_partition();
-    esp_app_desc_t running_app_info;
-    if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
-        ESP_LOGI(TAG, "Running firmware version: %s", running_app_info.version);
+
+creat_mutex:
+    xSemaphore = xSemaphoreCreateMutex();
+    if (xSemaphore == NULL) {
+        ESP_LOGE(TAG, "xSemaphoreCreateMutex failed!");
+        goto creat_mutex;
+    }
+
+json_buffer_preallocated:
+    #if CONFIG_SPIRAM_SUPPORT
+    json_buf = (char *)heap_caps_malloc(4096 + 8, MALLOC_CAP_8BIT);
+    #else
+    json_buf = (char *)malloc(4096 + 8);
+    #endif
+    if (json_buf == NULL) {
+        ESP_LOGE(TAG, "waiting connect to Wi-Fi");
+        goto json_buffer_preallocated;
     }
 
 soft_reset:
@@ -1183,11 +1278,7 @@ soft_reset:
             // report device status
             if ((esp_timer_get_time() - last_ping_time) > 30000000 /* microseconds */) {
                 last_ping_time = esp_timer_get_time();
-                size_t len = sprintf(mqtt_report_buf, "{\"status\":\"online\",\""
-                    "system\":{\"free_heap\":%u}, \"version\":\"%s\"}",
-                    esp_get_free_heap_size(), running_app_info.version);
-                esp_mqtt_client_publish(m5things_mqtt_client, mqtt_up_ping_topic,
-                    mqtt_report_buf, len, 0, 0);
+                mqtt_ping_report();
             }
         }
 
@@ -1196,7 +1287,7 @@ soft_reset:
     }
 
 soft_reset_exit:
-    ESP_LOGI(TAG, "destroy mqtt client and reconnect");
+    ESP_LOGI(TAG, "Destroy mqtt client and reconnect");
     esp_mqtt_client_disconnect(m5things_mqtt_client);
     esp_mqtt_client_destroy(m5things_mqtt_client);
     vTaskDelay(15000 / portTICK_PERIOD_MS);
