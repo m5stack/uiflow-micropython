@@ -80,12 +80,17 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp32.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
+
+if (BOARD_TYPE STREQUAL "cores3")
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
+else()
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c)
+endif()
 
 # Include LVGL bindings rules
 if(NOT CMAKE_BUILD_EARLY_EXPANSION)
