@@ -9,11 +9,13 @@ from collections import namedtuple
 import os
 import micropython
 import machine
-from machine import I2C, Pin
+
+# from machine import I2C, Pin
 import esp32
 import sys
 import binascii
-from unit import CardKB, KeyCode
+
+# from unit import CardKB, KeyCode
 import gc
 from widgets.label import Label
 from widgets.button import Button
@@ -44,6 +46,21 @@ DEBUG = False
 
 
 _permissions = {0: "Private", 1: "ToKen Required", 2: "Public"}
+
+
+class KeyCode:
+    KEYCODE_UNKNOWN = 0x00
+    KEYCODE_BACKSPACE = 0x08
+    KEYCODE_TAB = 0x09
+    KEYCODE_ENTER = 0x0D
+    KEYCODE_ESC = 0x1B
+    KEYCODE_SPACE = 0x20
+    KEYCODE_DEL = 0x7F
+
+    KEYCODE_LEFT = 180
+    KEYCODE_UP = 181
+    KEYCODE_DOWN = 182
+    KEYCODE_RIGHT = 183
 
 
 class _ServerStatus:
@@ -920,13 +937,10 @@ class DevApp(AppBase):
         self._mac_label.setText(data[0])
         self._account_label.setText(str(data[1]))
 
-        try:
-            if self.avatar == "/system/common/img/avatar.jpg":
-                M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
-            else:
-                M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
-        except OSError:
-            pass
+        if self.avatar == "/system/common/img/avatar.jpg":
+            M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
+        else:
+            M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
 
     def load_data(self):
         mac = binascii.hexlify(machine.unique_id()).upper()
@@ -950,10 +964,11 @@ class DevApp(AppBase):
             try:
                 os.stat(self.avatar)
             except OSError:
-                resp = requests.get("https://community.m5stack.com" + str(infos[4]))
+                rsp = requests.get("https://community.m5stack.com" + str(infos[4]))
                 f = open(self.avatar, "wb")
-                f.write(resp.content)
+                f.write(rsp.content)
                 f.close()
+                rsp.close()
             return (mac, None if len(infos[1]) is 0 else infos[1])
         else:
             self.src = _dev_private_desc
@@ -1012,6 +1027,9 @@ class RunApp(AppBase):
             font=MontserratMedium16.FONT,
         )
 
+        self._main_canvas = M5.Lcd.newCanvas(312, 156, 16, True)
+        self._main_canvas.drawImage("/system/core2/Run/run.png", 0, 0)
+
         self._apps = [
             Rect(4, 20 + 4 + 56 + 4 + 84, 156, 72),
             Rect(4 + 156, 20 + 4 + 56 + 4 + 84, 156, 72),
@@ -1021,7 +1039,8 @@ class RunApp(AppBase):
     def mount(self):
         desc = self.icos.get(True)
         M5.Lcd.drawImage(desc.src, desc.x, desc.y)
-        M5.Lcd.drawImage("/system/core2/Run/run.png", 4, 20 + 4 + 56 + 4)
+        # M5.Lcd.drawImage("/system/core2/Run/run.png", 4, 20 + 4 + 56 + 4)
+        self._main_canvas.push(4, 20 + 4 + 56 + 4)
         self.update_file_info("main.py")
 
     def update_file_info(self, filename):
@@ -1233,7 +1252,11 @@ class ListApp(AppBase):
             self._label3 = Label(
                 "",
                 self._left_cursor_x + 10,
-                self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
+                self._left_cursor_y
+                + 8
+                + self._line_spacing
+                + self._line_spacing
+                + self._line_spacing,
                 w=200,
                 h=36,
                 fg_color=0x000000,
@@ -1571,11 +1594,12 @@ class Core2_Startup:
         last_touch_time = time.ticks_ms()
         last_update_status_time = last_touch_time
 
-        self.i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-        self._kb = CardKB(self.i2c0)
-        self._event = KeyEvent()
-        self._kb_status = False
+        # self.i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+        # self._kb = CardKB(self.i2c0)
+        # self._event = KeyEvent()
+        # self._kb_status = False
 
+        # try:
         while True:
             M5.update()
             if M5.Touch.getCount() > 0:
@@ -1620,3 +1644,5 @@ class Core2_Startup:
                 gc.collect()
                 # print("alloc:", gc.mem_alloc())
                 # print("free:", gc.mem_free())
+        # except KeyboardInterrupt:
+        #     gc.collect()
