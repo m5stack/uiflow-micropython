@@ -69,6 +69,47 @@ const char *resulet_msg[] = {
     "No memory",
 };
 
+const char *boards[] = {
+    "unknown",  // 0
+    "unknown",  // 1
+    "basic",    // 2
+    "core2",    // 3
+    "stickc",   // 4
+    "stickc-plus",  // 5
+    "coreink",  // 6
+    "paper",  // 7
+    "tough",  // 8
+    "station",  // 9
+    "cores3",  // 10
+    "atoms3",  // 11
+
+    /// non display boards
+    "atom",  // 12
+    "atom-psram", // 13
+    "atomu",  // 14
+    "m5camera", // 15
+    "timercam",  // 16
+    "stamppico", // 17
+    "stampc3",  // 18
+    "stampc3u",  // 19
+    "stamps3",  // 20
+    "atoms3-lite",  // 21
+    "atoms3u",  // 22
+
+    /// external displays
+    "atom-display",  // 23
+    "unit-lcd",  // 24
+    "unit-oled",  // 25
+    "unit-glass", // 26
+    "unit-rca",  // 27
+    "module-display", // 28
+    "module-rca",  // 29
+
+    /// temporary
+    "fire",  // 30
+    "atom-matrix",  // 31
+};
+
 // This topic is used for send status to cloud.
 static char mqtt_up_ping_topic[64] = {0};
 static char mqtt_down_ping_topic[64] = {0};
@@ -337,10 +378,14 @@ static void mqtt_ping_report() {
         ESP_LOGD(TAG, "Running firmware version: %s", running_app_info.version);
     }
 
+    uint32_t board_id = 0;
+    nvs_read_u32_helper("M5GFX", "AUTODETECT", &board_id);
     size_t len = sprintf(
         mqtt_report_buf,
-        "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"version\":\"%s\"}",
+        "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
         esp_get_free_heap_size(),
+        board_id,
+        boards[board_id],
         running_app_info.version
         );
 
