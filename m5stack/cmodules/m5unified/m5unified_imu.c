@@ -12,11 +12,20 @@ STATIC const mp_rom_map_elem_t m5_imu_types_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5_imu_types, m5_imu_types_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_m5_imu_type,
+    MP_QSTR_IMU_Type,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&m5_imu_types
+    );
+#else
 const mp_obj_type_t mp_m5_imu_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_IMU_Type,
     .locals_dict = (mp_obj_dict_t *)&m5_imu_types,
 };
+#endif
 
 // -------- IMU wrapper
 MAKE_METHOD_0(imu, getAccel);
@@ -34,8 +43,17 @@ STATIC const mp_rom_map_elem_t imu_member_table[] = {
 
 STATIC MP_DEFINE_CONST_DICT(imu_member, imu_member_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_imu_type,
+    MP_QSTR_IMU,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&imu_member
+    );
+#else
 const mp_obj_type_t mp_imu_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_IMU,
     .locals_dict = (mp_obj_dict_t *)&imu_member,
 };
+#endif

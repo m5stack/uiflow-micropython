@@ -68,7 +68,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/modnetwork.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/network_common.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_ppp.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
@@ -229,6 +229,11 @@ target_compile_options(${MICROPY_TARGET} PUBLIC
     -Wno-clobbered
     -Wno-deprecated-declarations
     -Wno-missing-field-initializers
+)
+
+# Additional include directories needed for private NimBLE headers.
+target_include_directories(${MICROPY_TARGET} PUBLIC
+    ${IDF_PATH}/components/bt/host/nimble/nimble
 )
 
 # Add additional extmod and usermod components.
