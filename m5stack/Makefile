@@ -42,7 +42,7 @@ BAUD ?= 1500000
 
 PYTHON ?= python3
 
-GIT_SUBMODULES = lib/berkeley-db-1.xx 
+GIT_SUBMODULES = lib/berkeley-db-1.xx lib/micropython-lib
 
 MAKEFILE_DIR:=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -54,6 +54,7 @@ ifdef USER_C_MODULES
 endif
 
 IDFPY_FLAGS += -DMICROPY_BOARD=$(BOARD) -DBUILD_WITH_LVGL=$(LVGL) -B$(BUILD) $(CMAKE_ARGS)
+IDFPY_FLAGS += -DBOARD_TYPE=$(BOARD_TYPE)
 ifdef FROZEN_MANIFEST
        IDFPY_FLAGS += -D MICROPY_FROZEN_MANIFEST=$(FROZEN_MANIFEST)
 endif
@@ -107,8 +108,8 @@ flash_all: pack_all
 # Clean the build directory.
 clean:
 	idf.py $(IDFPY_FLAGS) fullclean
-	cd ./../micropython && \
-	git apply --reverse ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
+	# cd ./../micropython && \
+	# git apply --reverse ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
 	cd ./components/lv_bindings && \
 	git apply --reverse ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
 	cd ./components/M5Unified/M5Unified && \
@@ -160,8 +161,7 @@ submodules:
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
 	git submodule update --init ../micropython
-	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && \
-	git apply ./../m5stack/patches/0001_mpconfigport_lvgl_support.patch && cd -
+	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
 	cd ./components/M5Unified/M5Unified && \

@@ -11,11 +11,20 @@ STATIC const mp_rom_map_elem_t btn_callback_types_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(btn_callback_types, btn_callback_types_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_btn_cb_type,
+    MP_QSTR_Callback_Type,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&btn_callback_types
+    );
+#else
 const mp_obj_type_t mp_btn_cb_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Callback_Type,
     .locals_dict = (mp_obj_dict_t *)&btn_callback_types,
 };
+#endif
 
 // -------- Button wrapper
 MAKE_METHOD_0(btn, isHolding);
@@ -62,8 +71,17 @@ STATIC const mp_rom_map_elem_t btn_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(btn_member, btn_member_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_btn_type,
+    MP_QSTR_Button,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&btn_member
+    );
+#else
 const mp_obj_type_t mp_btn_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Button,
     .locals_dict = (mp_obj_dict_t *)&btn_member,
 };
+#endif

@@ -145,11 +145,20 @@ STATIC const mp_rom_map_elem_t fonts_member_table[] = {
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(fonts_member, fonts_member_table);
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_fonts_type,
+    MP_QSTR_Fonts,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&fonts_member
+    );
+#else
 const mp_obj_type_t mp_fonts_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Fonts,
     .locals_dict = (mp_obj_dict_t *)&fonts_member,
 };
+#endif
 
 STATIC const mp_rom_map_elem_t color_pre_define_members_table[] = {
     /* *FORMAT-OFF* */
@@ -175,11 +184,20 @@ STATIC const mp_rom_map_elem_t color_pre_define_members_table[] = {
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(color_pre_define_members, color_pre_define_members_table);
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_color_type,
+    MP_QSTR_Color,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&color_pre_define_members
+    );
+#else
 const mp_obj_type_t mp_color_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Color,
     .locals_dict = (mp_obj_dict_t *)&color_pre_define_members,
 };
+#endif
 
 STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
@@ -219,11 +237,20 @@ STATIC const mp_rom_map_elem_t user_panel_types_table[] = {
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(user_panel_types, user_panel_types_table);
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_user_panel_type,
+    MP_QSTR_Panel,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&user_panel_types
+    );
+#else
 const mp_obj_type_t mp_user_panel_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Panel,
     .locals_dict = (mp_obj_dict_t *)&user_panel_types,
 };
+#endif
 
 STATIC const mp_rom_map_elem_t user_touch_types_table[] = {
     /* *FORMAT-OFF* */
@@ -232,11 +259,21 @@ STATIC const mp_rom_map_elem_t user_touch_types_table[] = {
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(user_touch_types, user_touch_types_table);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_user_touch_type,
+    MP_QSTR_Touch,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&user_touch_types
+    );
+#else
 const mp_obj_type_t mp_user_touch_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Touch,
     .locals_dict = (mp_obj_dict_t *)&user_touch_types,
 };
+#endif
 
 STATIC const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
@@ -285,6 +322,15 @@ STATIC const mp_rom_map_elem_t gfxcanvas_member_table[] = {
 STATIC MP_DEFINE_CONST_DICT(gfxcanvas_member, gfxcanvas_member_table);
 
 // -------- GFX canvas panel class
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_gfxcanvas_type,
+    MP_QSTR_Canvas,
+    MP_TYPE_FLAG_IS_SUBCLASSED,
+    protocol, &mp_gfx_stream_p,
+    locals_dict, (mp_obj_dict_t *)&gfxcanvas_member
+    );
+#else
 const mp_obj_type_t mp_gfxcanvas_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Canvas,
@@ -292,8 +338,19 @@ const mp_obj_type_t mp_gfxcanvas_type = {
     .protocol = &mp_gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxcanvas_member,
 };
+#endif
 
 // -------- GFX user panel class
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    m5_user_display,
+    MP_QSTR_UserDisplay,
+    MP_TYPE_FLAG_NONE,
+    protocol, &mp_gfx_stream_p,
+    make_new, user_panel_make_new,
+    locals_dict, (mp_obj_dict_t *)&gfxuserdevice_member
+    );
+#else
 const mp_obj_type_t m5_user_display = {
     .base = { &mp_type_type },
     .name = MP_QSTR_UserDisplay,
@@ -301,11 +358,22 @@ const mp_obj_type_t m5_user_display = {
     .make_new = user_panel_make_new,
     .locals_dict = (mp_obj_dict_t *)&gfxuserdevice_member,
 };
+#endif
 
 // -------- GFX panel class
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_gfxdevice_type,
+    MP_QSTR_Display,
+    MP_TYPE_FLAG_NONE,
+    protocol, &mp_gfx_stream_p,
+    locals_dict, (mp_obj_dict_t *)&gfxdevice_member
+    );
+#else
 const mp_obj_type_t mp_gfxdevice_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Display,
     .protocol = &mp_gfx_stream_p,
     .locals_dict = (mp_obj_dict_t *)&gfxdevice_member,
 };
+#endif

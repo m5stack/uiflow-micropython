@@ -166,7 +166,7 @@ soft_reset:
     #endif
 
     // run boot-up scripts
-    pyexec_frozen_module("_boot.py");
+    pyexec_frozen_module("_boot.py", false);
     pyexec_file_if_exists("boot.py");
     if (pyexec_mode_kind == PYEXEC_MODE_FRIENDLY_REPL) {
         int ret = pyexec_file_if_exists("main.py");
@@ -220,14 +220,11 @@ soft_reset_exit:
     // TODO: machine_rmt_deinit_all();
     machine_pins_deinit();
     machine_deinit();
+    #if MICROPY_PY_USOCKET_EVENTS
     usocket_events_deinit();
-
-    mp_deinit();
-
-    #if MICROPY_PY_LVGL
-    MICROPY_PORT_DEINIT_FUNC;
     #endif
 
+    mp_deinit();
     fflush(stdout);
     goto soft_reset;
 }
@@ -277,3 +274,5 @@ void *esp_native_code_commit(void *buf, size_t len, void *reloc) {
     memcpy(p, buf, len);
     return p;
 }
+
+MP_REGISTER_ROOT_POINTER(mp_obj_t native_code_pointers);
