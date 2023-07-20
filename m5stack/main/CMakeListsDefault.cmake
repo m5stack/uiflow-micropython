@@ -68,7 +68,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/modnetwork.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/network_common.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_ppp.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
@@ -80,12 +80,17 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp32.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
+
+if (BOARD_TYPE STREQUAL "cores3")
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
+else()
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c)
+endif()
 
 set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5btn.cpp
@@ -224,6 +229,11 @@ target_compile_options(${MICROPY_TARGET} PUBLIC
     -Wno-clobbered
     -Wno-deprecated-declarations
     -Wno-missing-field-initializers
+)
+
+# Additional include directories needed for private NimBLE headers.
+target_include_directories(${MICROPY_TARGET} PUBLIC
+    ${IDF_PATH}/components/bt/host/nimble/nimble
 )
 
 # Add additional extmod and usermod components.

@@ -3,6 +3,7 @@ import M5
 try:
     from unit import KeyCode
 except ImportError:
+
     class KeyCode:
         KEYCODE_UNKNOWN = 0x00
         KEYCODE_BACKSPACE = 0x08
@@ -22,7 +23,9 @@ class KeyEvent:
     key = 0
     status = False
 
-DEBUG = True
+
+DEBUG = False
+
 
 class AppBase:
     def __init__(self, icos: dict, data=None) -> None:
@@ -84,9 +87,11 @@ class AppBase:
             return False
         return True
 
+
 def app_id_generator(n):
     for i in range(n):
         yield i
+
 
 class AppManage:
     def __init__(self, app_num) -> None:

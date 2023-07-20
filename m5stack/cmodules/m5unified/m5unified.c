@@ -40,10 +40,20 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5_board_member, m5_board_member_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    m5_board_type,
+    MP_QSTR_BOARD,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&m5_board_member
+    );
+#else
 const mp_obj_type_t m5_board_type = {
     .base = { &mp_type_type },
+    .name = MP_QSTR_BOARD,
     .locals_dict = (mp_obj_dict_t *)&m5_board_member,
 };
+#endif
 
 // -------- M5 wrapper
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_begin_obj, m5_begin);

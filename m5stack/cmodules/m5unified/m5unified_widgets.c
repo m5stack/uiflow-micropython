@@ -17,12 +17,23 @@ STATIC const mp_rom_map_elem_t m5widgets_label_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_label_member, m5widgets_label_member_table);
 extern mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_label_type,
+    MP_QSTR_Label,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_label_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_label_member
+    );
+#else
 const mp_obj_type_t mp_widgets_label_type = {
     { &mp_type_type },
     .name = MP_QSTR_Label,
     .make_new = m5widgets_label_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_label_member,
 };
+#endif
 
 // -------- M5Widgets Title
 MAKE_METHOD_KW(m5widgets_title, setText, 1);
@@ -39,12 +50,23 @@ STATIC const mp_rom_map_elem_t m5widgets_title_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_title_member, m5widgets_title_member_table);
 extern mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_title_type,
+    MP_QSTR_Label,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_title_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_title_member
+    );
+#else
 const mp_obj_type_t mp_widgets_title_type = {
     { &mp_type_type },
     .name = MP_QSTR_Label,
     .make_new = m5widgets_title_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_title_member,
 };
+#endif
 
 // -------- M5Widgets Image
 MAKE_METHOD_KW(m5widgets_image, setImage, 1);
@@ -57,12 +79,23 @@ STATIC const mp_rom_map_elem_t m5widgets_image_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_image_member, m5widgets_image_member_table);
 extern mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_image_type,
+    MP_QSTR_Image,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_image_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_image_member
+    );
+#else
 const mp_obj_type_t mp_widgets_image_type = {
     { &mp_type_type },
     .name = MP_QSTR_Image,
     .make_new = m5widgets_image_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_image_member,
 };
+#endif
 
 // -------- M5Widgets Line
 MAKE_METHOD_KW(m5widgets_line, setColor, 1);
@@ -75,12 +108,23 @@ STATIC const mp_rom_map_elem_t m5widgets_line_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_line_member, m5widgets_line_member_table);
 extern mp_obj_t m5widgets_line_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_line_type,
+    MP_QSTR_Line,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_line_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_line_member
+    );
+#else
 const mp_obj_type_t mp_widgets_line_type = {
     { &mp_type_type },
     .name = MP_QSTR_Line,
     .make_new = m5widgets_line_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_line_member,
 };
+#endif
 
 // -------- M5Widgets Circle
 MAKE_METHOD_KW(m5widgets_circle, setRadius, 1);
@@ -95,12 +139,23 @@ STATIC const mp_rom_map_elem_t m5widgets_circle_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_circle_member, m5widgets_circle_member_table);
 extern mp_obj_t m5widgets_circle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_circle_type,
+    MP_QSTR_Circle,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_circle_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_circle_member
+    );
+#else
 const mp_obj_type_t mp_widgets_circle_type = {
     { &mp_type_type },
     .name = MP_QSTR_Circle,
     .make_new = m5widgets_circle_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_circle_member,
 };
+#endif
 
 // -------- M5Widgets Rectangle
 MAKE_METHOD_KW(m5widgets_rectangle, setSize, 1);
@@ -115,12 +170,23 @@ STATIC const mp_rom_map_elem_t m5widgets_rectangle_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_rectangle_member, m5widgets_rectangle_member_table);
 extern mp_obj_t m5widgets_rectangle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_rectangle_type,
+    MP_QSTR_Rectangle,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_rectangle_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_rectangle_member
+    );
+#else
 const mp_obj_type_t mp_widgets_rectangle_type = {
     { &mp_type_type },
     .name = MP_QSTR_Rectangle,
     .make_new = m5widgets_rectangle_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_rectangle_member,
 };
+#endif
 
 // -------- M5Widgets Triangle
 MAKE_METHOD_KW(m5widgets_triangle, setColor, 1);
@@ -133,12 +199,23 @@ STATIC const mp_rom_map_elem_t m5widgets_triangle_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_triangle_member, m5widgets_triangle_member_table);
 extern mp_obj_t m5widgets_triangle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_triangle_type,
+    MP_QSTR_Triangle,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_triangle_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_triangle_member
+    );
+#else
 const mp_obj_type_t mp_widgets_triangle_type = {
     { &mp_type_type },
     .name = MP_QSTR_Triangle,
     .make_new = m5widgets_triangle_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_triangle_member,
 };
+#endif
 
 // -------- M5Widgets QRCode
 MAKE_METHOD_KW(m5widgets_qrcode, setText, 1);
@@ -155,12 +232,23 @@ STATIC const mp_rom_map_elem_t m5widgets_qrcode_member_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_qrcode_member, m5widgets_qrcode_member_table);
 extern mp_obj_t m5widgets_qrcode_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
+
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_widgets_qrcode_type,
+    MP_QSTR_QRCode,
+    MP_TYPE_FLAG_NONE,
+    make_new, m5widgets_qrcode_make_new,
+    locals_dict, (mp_obj_dict_t *)&m5widgets_qrcode_member
+    );
+#else
 const mp_obj_type_t mp_widgets_qrcode_type = {
     { &mp_type_type },
     .name = MP_QSTR_QRCode,
     .make_new = m5widgets_qrcode_make_new,
     .locals_dict = (mp_obj_dict_t *)&m5widgets_qrcode_member,
 };
+#endif
 
 // -------- M5Widgets common funciton
 MAKE_METHOD_KW(m5widgets, fillScreen, 1);

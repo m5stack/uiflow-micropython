@@ -15,11 +15,20 @@ STATIC const mp_rom_map_elem_t power_port_masks_table[] = {
 };
 STATIC MP_DEFINE_CONST_DICT(power_port_masks, power_port_masks_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_power_port_mask_enum,
+    MP_QSTR_PORT,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&power_port_masks
+    );
+#else
 const mp_obj_type_t mp_power_port_mask_enum = {
     .base = { &mp_type_type },
     .name = MP_QSTR_PORT,
     .locals_dict = (mp_obj_dict_t *)&power_port_masks,
 };
+#endif
 
 MAKE_METHOD_KW(power, setExtPower, 1);
 MAKE_METHOD_KW(power, setLed, 1);
@@ -51,8 +60,17 @@ STATIC const mp_rom_map_elem_t power_member_table[] = {
 
 STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);
 
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_power_type,
+    MP_QSTR_Power,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&power_member
+    );
+#else
 const mp_obj_type_t mp_power_type = {
     .base = { &mp_type_type },
     .name = MP_QSTR_Power,
     .locals_dict = (mp_obj_dict_t *)&power_member,
 };
+#endif
