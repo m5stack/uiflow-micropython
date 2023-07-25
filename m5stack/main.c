@@ -141,7 +141,7 @@ void mp_task(void *pvParameter) {
         size_t heap_total = info.total_free_bytes + info.total_allocated_bytes;
         #endif
         #if CONFIG_IDF_TARGET_ESP32S3
-        mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2) - (30 * 1024);
+        mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2) - (60 * 1024);
         #else
         mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2);
         #endif
@@ -245,7 +245,7 @@ void app_main(void) {
     // Create and transfer control to the MicroPython task.
     xTaskCreatePinnedToCore(mp_task, "mp_task", MP_TASK_STACK_SIZE / sizeof(StackType_t), NULL, MP_TASK_PRIORITY, &mp_main_task_handle, MP_TASK_COREID);
     // Create m5 task for remote control.
-    xTaskCreatePinnedToCore(m5thing_task, "m5thing_task", MP_TASK_STACK_SIZE / sizeof(StackType_t) / 2, NULL, MP_TASK_PRIORITY + 1, &m5thing_task_handle, MP_TASK_COREID);
+    xTaskCreatePinnedToCore(m5thing_task, "m5thing_task", 6000, NULL, MP_TASK_PRIORITY + 1, &m5thing_task_handle, MP_TASK_COREID);
 }
 
 void nlr_jump_fail(void *val) {
