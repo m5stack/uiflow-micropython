@@ -11,7 +11,7 @@ BOARD ?= M5STACK_8MB
 
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2 stickcplus2
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -65,6 +65,8 @@ ifdef LVGL
 endif
 
 GIT_VERSION := $(shell git describe --abbrev=7 --always)
+
+include ./include/files.mk
 
 define pack_fw
 	$(1) makeimg.py \
@@ -129,9 +131,35 @@ nvs:
 	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000
 
 # Build the system and user filesystem firmware.
+ifeq ($(BOARD_TYPE),stickcplus2)
 fs: build
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/system $(BUILD)/fs-system.bin $(BUILD)/partition_table/partition-table.bin
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/user $(BUILD)/fs-user.bin $(BUILD)/partition_table/partition-table.bin
+	@if [ ! -d $(BUILD)/base-files ]; then \
+		mkdir -p $(BUILD)/base-files; \
+	fi
+	$(call base-files/install,$(BOARD_TYPE),$(BUILD)/base-files)
+	@$(PYTHON) \
+			./../tools/fs_packed.py \
+			./../tools/littlefs/prebuilt/littlefs2 \
+			$(BOARD_TYPE) \
+			$(BUILD)/base-files \
+			$(BUILD)/fs-user.bin \
+			$(BUILD)/partition_table/partition-table.bin
+else
+fs: build
+	@$(PYTHON) \
+			./../tools/fs_packed.py \
+			./../tools/littlefs/prebuilt/littlefs2 \
+			$(BOARD_TYPE) \
+			./fs/system \
+			$(BUILD)/fs-system.bin \
+			$(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON) \
+			./../tools/fs_packed.py \
+			./../tools/littlefs/prebuilt/littlefs2 \
+			$(BOARD_TYPE) \
+			./fs/user $(BUILD)/fs-user.bin \
+			$(BUILD)/partition_table/partition-table.bin
+endif
 
 # Pack the firmware into a single binary without user filesystem.
 # Released firmware needn't user filesystem.

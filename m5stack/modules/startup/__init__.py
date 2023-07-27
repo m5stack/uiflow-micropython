@@ -84,6 +84,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             atoms3u = AtomS3U_Startup()
             atoms3u.startup(ssid, pswd, timeout)
 
+        elif M5.BOARD.M5StickCPlus2 == M5.getBoard():
+            from .stickcplus2 import StickCPlus2_Startup
+
+            stickcplus2 = StickCPlus2_Startup()
+            stickcplus2.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()
