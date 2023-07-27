@@ -86,7 +86,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
 
-if (BOARD_TYPE STREQUAL "cores3")
+if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
 else()
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c)
