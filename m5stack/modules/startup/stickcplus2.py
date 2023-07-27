@@ -39,6 +39,7 @@ class WiFiStatusApp:
             bg_color=0x003F8C,
             font=M5.Lcd.FONTS.DejaVu18,
         )
+        self._ssid_label.setLongMode(Label.LONG_DOT)
         self._bg_img = Image()
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
@@ -95,14 +96,23 @@ class CloudStatusApp:
 
     async def mount(self):
         self._status = TaskStatus.running
+        self._src = None
+        if _HAS_SERVER and M5Things.status() is 2:
+            self._src = "res/stickcplus2/cloud-connect.png"
+        else:
+            self._src = "res/stickcplus2/cloud-disconnect.png"
+        self._status_img.set_src(self._src)
         asyncio.create_task(self.run())
 
     async def run(self):
+        self._update = False
         while self._status is TaskStatus.running:
             if _HAS_SERVER and M5Things.status() is 2:
-                self._status_img.set_src("res/stickcplus2/cloud-connect.png")
+                self._update = self._src is not "res/stickcplus2/cloud-connect.png"
             else:
-                self._status_img.set_src("res/stickcplus2/cloud-disconnect.png")
+                self._update = self._src is not "res/stickcplus2/cloud-disconnect.png"
+
+            self._update and self._status_img.set_src(self._src)
             await asyncio.sleep_ms(200)
 
         self._status = TaskStatus.stop
