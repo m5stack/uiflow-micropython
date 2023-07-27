@@ -93,38 +93,39 @@ const char *boards[] = {
     "core2",    // 3
     "stickc",   // 4
     "stickc-plus",  // 5
-    "coreink",  // 6
-    "paper",  // 7
-    "tough",  // 8
-    "station",  // 9
-    "cores3",  // 10
-    "atoms3",  // 11
+    "stickc-plus 2",  // 6
+    "coreink",  // 7
+    "paper",  // 8
+    "tough",  // 9
+    "station",  // 10
+    "cores3",  // 11
+    "atoms3",  // 12
 
     /// non display boards
-    "atom",  // 12
-    "atom-psram", // 13
-    "atomu",  // 14
-    "m5camera", // 15
-    "timercam",  // 16
-    "stamppico", // 17
-    "stampc3",  // 18
-    "stampc3u",  // 19
-    "stamps3",  // 20
-    "atoms3-lite",  // 21
-    "atoms3u",  // 22
+    "atom",  // 13
+    "atom-psram", // 14
+    "atomu",  // 15
+    "m5camera", // 16
+    "timercam",  // 17
+    "stamppico", // 18
+    "stampc3",  // 19
+    "stampc3u",  // 20
+    "stamps3",  // 21
+    "atoms3-lite",  // 22
+    "atoms3u",  // 23
 
     /// external displays
-    "atom-display",  // 23
-    "unit-lcd",  // 24
-    "unit-oled",  // 25
-    "unit-glass", // 26
-    "unit-rca",  // 27
-    "module-display", // 28
-    "module-rca",  // 29
+    "atom-display",  // 24
+    "unit-lcd",  // 25
+    "unit-oled",  // 26
+    "unit-glass", // 27
+    "unit-rca",  // 28
+    "module-display", // 29
+    "module-rca",  // 30
 
     /// temporary
-    "fire",  // 30
-    "atom-matrix",  // 31
+    "fire",  // 31
+    "atom-matrix",  // 32
 };
 
 // This topic is used for send status to cloud.
