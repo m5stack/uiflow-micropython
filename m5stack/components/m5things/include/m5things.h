@@ -65,6 +65,7 @@ typedef enum {
 typedef struct {
     int category;
     char device_key[64];
+    char device_token[64];
     char account[32];
     char mac[9];
     char user_name[64];

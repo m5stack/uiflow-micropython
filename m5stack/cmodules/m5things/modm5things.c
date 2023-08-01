@@ -29,8 +29,9 @@ STATIC mp_obj_t m5things_infos() {
         mp_obj_new_str((const char *)m5things_info.mac, strlen((const char *)m5things_info.mac)),
         mp_obj_new_str((const char *)m5things_info.user_name, strlen((const char *)m5things_info.user_name)),
         mp_obj_new_str((const char *)m5things_info.avatar, strlen((const char *)m5things_info.avatar)),
+        mp_obj_new_str((const char *)m5things_info.device_token, strlen((const char *)m5things_info.device_token)),
     };
-    return mp_obj_new_tuple(5, tuple);
+    return mp_obj_new_tuple(6, tuple);
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5things_info_obj, m5things_infos);
 

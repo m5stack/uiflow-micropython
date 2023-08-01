@@ -28,6 +28,7 @@ typedef struct _msg_ping_req_t
 {
     int category;
     char device_key[64];
+    char device_token[64];
     char account[32];
     char mac[9];
     char user_name[64];
@@ -400,6 +401,18 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
             (void *)m5things_info.device_key,
             device_key_obj->valuestring,
             strlen(device_key_obj->valuestring)
+            );
+    }
+
+    cJSON *device_token_obj = cJSON_GetObjectItemCaseSensitive(root, "deviceToken");
+    if (device_token_obj == NULL || cJSON_IsNull(device_token_obj)) {
+        ESP_LOGW(TAG, "'deviceKey' parsing failed");
+        ret = PKG_ERR_PARSE;
+    } else {
+        memcpy(
+            (void *)m5things_info.device_token,
+            device_token_obj->valuestring,
+            strlen(device_token_obj->valuestring)
             );
     }
 
