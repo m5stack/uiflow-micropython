@@ -56,7 +56,7 @@ class WiFiStatusApp:
         pass
 
     async def mount(self):
-        self._bg_img.set_src("res/stickcplus2/wificonnect.png")
+        self._bg_img.set_src("/system/stickcplus2/wificonnect.png")
         self._ssid_label.setText(self._ssid)
         self._status = TaskStatus.running
         asyncio.create_task(self.run())
@@ -66,7 +66,7 @@ class WiFiStatusApp:
             if self._wifi.connect_status() is not network.STAT_GOT_IP:
                 M5.Lcd.fillCircle(68, 165, 36, 0xEEEEEE)
                 await asyncio.sleep_ms(500)
-                self._logo.set_src("res/stickcplus2/wifi_logo.jpg")
+                self._logo.set_src("/system/stickcplus2/wifi_logo.jpg")
                 await asyncio.sleep_ms(500)
             else:
                 await asyncio.sleep_ms(500)
@@ -88,7 +88,7 @@ class CloudStatusApp:
         self._status_img.set_x(0)
         self._status_img.set_y(0)
         self._status_img.set_size(135, 240)
-        # self._status_img.set_src("res/stickcplus2/cloud-disconnect.jpg")
+        # self._status_img.set_src("/system/stickcplus2/cloud-disconnect.jpg")
         self._status = TaskStatus.init
 
     def registered(self):
@@ -98,9 +98,9 @@ class CloudStatusApp:
         self._status = TaskStatus.running
         self._src = None
         if _HAS_SERVER and M5Things.status() is 2:
-            self._src = "res/stickcplus2/cloud-connect.png"
+            self._src = "/system/stickcplus2/cloud-connect.png"
         else:
-            self._src = "res/stickcplus2/cloud-disconnect.png"
+            self._src = "/system/stickcplus2/cloud-disconnect.png"
         self._status_img.set_src(self._src)
         asyncio.create_task(self.run())
 
@@ -108,9 +108,9 @@ class CloudStatusApp:
         self._update = False
         while self._status is TaskStatus.running:
             if _HAS_SERVER and M5Things.status() is 2:
-                self._update = self._src is not "res/stickcplus2/cloud-connect.png"
+                self._update = self._src is not "/system/stickcplus2/cloud-connect.png"
             else:
-                self._update = self._src is not "res/stickcplus2/cloud-disconnect.png"
+                self._update = self._src is not "/system/stickcplus2/cloud-disconnect.png"
 
             self._update and self._status_img.set_src(self._src)
             await asyncio.sleep_ms(200)
