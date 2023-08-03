@@ -5,6 +5,7 @@ class Label:
 
     LEFT_ALIGNED = 0
     CENTER_ALIGNED = 1
+    RIGHT_ALIGNED = 2
 
     LONG_WARP = 0
     LONG_DOT = 1
@@ -46,6 +47,8 @@ class Label:
                 M5.Lcd.fillRect(self._x, self._y, w, h, self._bg_color)
             elif self._font_align == self.CENTER_ALIGNED:
                 M5.Lcd.fillRect(self._x - int(w / 2), self._y, w, h, self._bg_color)
+            elif self._font_align == self.RIGHT_ALIGNED:
+                M5.Lcd.fillRect(self._x - w, self._y, w, h, self._bg_color)
 
     def setText(self, text=None) -> None:
         self._load_font()
@@ -61,6 +64,8 @@ class Label:
                 M5.Lcd.drawString(text, self._x, yy)
             elif self._font_align == self.CENTER_ALIGNED:
                 M5.Lcd.drawCenterString(text, self._x, yy)
+            elif self._font_align == self.RIGHT_ALIGNED:
+                M5.Lcd.drawRightString(text, self._x, yy)
             else:
                 print("Warning: unknown alignment")
             yy += self._line_spacing
