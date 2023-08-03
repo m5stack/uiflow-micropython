@@ -63,6 +63,7 @@ MAKE_METHOD_KW(gfx, drawImage, 1);
 MAKE_METHOD_KW(gfx, drawRawBuf, 1);
 MAKE_METHOD_KW(gfx, drawString, 1);
 MAKE_METHOD_KW(gfx, drawCenterString, 1);
+MAKE_METHOD_KW(gfx, drawRightString, 1);
 MAKE_METHOD_KW(gfx, print, 1);
 MAKE_METHOD_V(gfx, printf, 2, 32);
 MAKE_METHOD_KW(gfx, newCanvas, 1);
@@ -116,6 +117,7 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, drawRawBuf), \
     MAKE_TABLE(gfx, drawString), \
     MAKE_TABLE(gfx, drawCenterString), \
+    MAKE_TABLE(gfx, drawRightString), \
     MAKE_TABLE(gfx, print), \
     MAKE_TABLE(gfx, printf), \
     MAKE_TABLE(gfx, newCanvas)
@@ -134,9 +136,15 @@ STATIC const mp_rom_map_elem_t fonts_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_DejaVu40),  MP_ROM_PTR(&gfx_font_DejaVu40_obj) },
     { MP_ROM_QSTR(MP_QSTR_DejaVu56),  MP_ROM_PTR(&gfx_font_DejaVu56_obj) },
     { MP_ROM_QSTR(MP_QSTR_DejaVu72),  MP_ROM_PTR(&gfx_font_DejaVu72_obj) },
+#if TINY_FONT
+    { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_14_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_14_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_14_obj) },
+#else
     { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
     { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
+#endif
     // { MP_ROM_QSTR(MP_QSTR_Montserrat6), MP_ROM_PTR(&gfx_font_montserrat_6_obj)},
     // { MP_ROM_QSTR(MP_QSTR_Montserrat7), MP_ROM_PTR(&gfx_font_montserrat_7_obj)},
     // { MP_ROM_QSTR(MP_QSTR_Montserrat8), MP_ROM_PTR(&gfx_font_montserrat_8_obj)},

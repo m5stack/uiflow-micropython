@@ -133,6 +133,8 @@ file_out = arg_output_bin
 cur_offset = 0
 with open(file_out, "wb") as fout:
     for name, offset, max_size, file_in in files_in:
+        if name == "fs_sys" and offset == 0:
+            continue
         assert offset >= cur_offset
         fout.write(b"\xff" * (offset - cur_offset))
         cur_offset = offset

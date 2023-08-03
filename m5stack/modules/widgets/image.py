@@ -3,7 +3,7 @@ from . import base
 
 
 class Image(base.Base):
-    def __init__(self, parent=None) -> None:
+    def __init__(self, parent=M5.Lcd) -> None:
         super().__init__(parent)
         self._src = None
         self._sprite = None
@@ -27,10 +27,7 @@ class Image(base.Base):
         self._draw(True)
 
     def set_src(self, src):
-        if self._src is src:
-            return
         self._src = src
-        self._sprite_init()
         self._draw(True)
 
     def set_x(self, x):
@@ -59,10 +56,10 @@ class Image(base.Base):
             is_decode and self._sprite.drawImage(self._src, 0, 0)
             self._sprite.push(self._x, self._y)
         else:
-            M5.Lcd.drawImage(self._src, self._x, self._y)
+            self._parent.drawImage(self._src, self._x, self._y)
 
     def _sprite_init(self):
         self._sprite and self._sprite.delete()
         if self._w is not 0 and self._h is not 0:
-            self._sprite = M5.Lcd.newCanvas(self._w, self._h, 16, True)
+            self._sprite = self._parent.newCanvas(self._w, self._h, 16, True)
             self._src and self._sprite.drawImage(self._src, 0, 0)
