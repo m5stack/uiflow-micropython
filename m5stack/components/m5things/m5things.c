@@ -397,6 +397,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'deviceKey' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.device_key,
             device_key_obj->valuestring,
@@ -409,6 +410,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'deviceKey' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.device_token,
             device_token_obj->valuestring,
@@ -421,6 +423,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'email' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.account,
             email_obj->valuestring,
@@ -433,6 +436,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'mac' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.mac,
             mac_obj->valuestring,
@@ -445,6 +449,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'userName' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.user_name,
             user_name_obj->valuestring,
@@ -457,6 +462,7 @@ static int8_t mqtt_ping_parse_all(const char *data, size_t len, msg_ping_req_t *
         ESP_LOGW(TAG, "'avatar' parsing failed");
         ret = PKG_ERR_PARSE;
     } else {
+        memset(m5things_info.device_key, 0x00, sizeof(m5things_info.device_key));
         memcpy(
             (void *)m5things_info.avatar,
             avatar_obj->valuestring,
@@ -1032,6 +1038,7 @@ static int8_t mqtt_file_parse_all(const char *data, size_t len, msg_file_req_t *
         goto end;
     }
 
+    memset(msg, 0x00, sizeof(msg_file_req_t));
     cJSON *file_op = cJSON_GetObjectItemCaseSensitive(root, "file_op");
     if (file_op == NULL || cJSON_IsNull(file_op)) {
         ESP_LOGW(TAG, "'file_op' parsing failed");
