@@ -11,7 +11,7 @@ BOARD ?= M5STACK_8MB
 
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2
+BOARD_TYPE_DEF := none atoms3 stamps3 cores3 atoms3u core2 stickcplus2
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -130,8 +130,21 @@ nvs:
 
 # Build the system and user filesystem firmware.
 fs: build
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/system $(BUILD)/fs-system.bin $(BUILD)/partition_table/partition-table.bin
-	@$(PYTHON) ./../tools/fs_packed.py ./../tools/littlefs/prebuilt/littlefs2 $(BOARD_TYPE) ./fs/user $(BUILD)/fs-user.bin $(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON)                                     \
+			./../tools/fs_packed.py                \
+			./../tools/littlefs/prebuilt/littlefs2 \
+			$(BOARD_TYPE)                          \
+			./fs/system                            \
+			$(BUILD)/fs-system.bin                 \
+			$(BUILD)/partition_table/partition-table.bin
+	@$(PYTHON)                                     \
+			./../tools/fs_packed.py                \
+			./../tools/littlefs/prebuilt/littlefs2 \
+			$(BOARD_TYPE)                          \
+			./fs/user                              \
+			$(BUILD)/fs-user.bin                   \
+			$(BUILD)/partition_table/partition-table.bin
+
 
 # Pack the firmware into a single binary without user filesystem.
 # Released firmware needn't user filesystem.

@@ -1034,6 +1034,29 @@ mp_obj_t gfx_drawCenterString(size_t n_args, const mp_obj_t *pos_args, mp_map_t 
     return mp_const_none;
 }
 
+mp_obj_t gfx_drawRightString(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_text, ARG_x, ARG_y, ARG_font};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_text, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_y,    MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_font, MP_ARG_OBJ                  , {.u_obj = mp_const_none } }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+
+    if (args[ARG_font].u_obj != mp_const_none) {
+        gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);
+    }
+    gfx->drawRightString(mp_obj_str_get_str(args[ARG_text].u_obj), args[ARG_x].u_int, args[ARG_y].u_int);
+    return mp_const_none;
+}
+
 mp_obj_t gfx_print(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_text, ARG_color};
     /* *FORMAT-OFF* */
@@ -1159,8 +1182,11 @@ const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::De
 const font_obj_t gfx_font_DejaVu40_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu40 };
 const font_obj_t gfx_font_DejaVu56_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu56 };
 const font_obj_t gfx_font_DejaVu72_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu72 };
+const font_obj_t gfx_font_efontCN_14_obj = {{ &mp_type_object }, &m5gfx::fonts::efontCN_14 };
 const font_obj_t gfx_font_efontCN_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontCN_24 };
+const font_obj_t gfx_font_efontJA_14_obj = {{ &mp_type_object }, &m5gfx::fonts::efontJA_14 };
 const font_obj_t gfx_font_efontJA_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontJA_24 };
+const font_obj_t gfx_font_efontKR_14_obj = {{ &mp_type_object }, &m5gfx::fonts::efontKR_14 };
 const font_obj_t gfx_font_efontKR_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontKR_24 };
 // const font_obj_t gfx_font_montserrat_6_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat6pt7b };
 // const font_obj_t gfx_font_montserrat_7_obj = {{ &mp_type_object }, &m5gfx::fonts::Montserrat7pt7b };
