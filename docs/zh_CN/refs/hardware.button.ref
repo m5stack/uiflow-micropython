@@ -1,0 +1,24 @@
+.. |example.m5f2| replace:: ../../_static/unit/env/example.m5f2
+
+.. |example.svg| image:: ../../_static/hardware/button/example.svg
+
+.. |isHolding.svg| image:: ../../_static/hardware/button/isHolding.svg
+
+.. |isPressed.svg| image:: ../../_static/hardware/button/isPressed.svg
+
+.. |isReleased.svg| image:: ../../_static/hardware/button/isReleased.svg
+
+.. |wasClicked.svg| image:: ../../_static/hardware/button/wasClicked.svg
+
+.. |wasDoubleClicked.svg| image:: ../../_static/hardware/button/wasDoubleClicked.svg
+
+.. |wasHold.svg| image:: ../../_static/hardware/button/wasHold.svg
+
+.. |wasPressed.svg| image:: ../../_static/hardware/button/wasPressed.svg
+
+.. |wasReleased.svg| image:: ../../_static/hardware/button/wasReleased.svg
+
+.. |wasSingleClicked.svg| image:: ../../_static/hardware/button/wasSingleClicked.svg
+
+.. |setCallback.svg| image:: ../../_static/hardware/button/setCallback.svg
+

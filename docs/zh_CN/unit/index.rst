@@ -1,5 +1,5 @@
-Units
-=====
+Unit
+====
 
 .. toctree::
     :maxdepth: 1
