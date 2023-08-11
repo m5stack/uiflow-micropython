@@ -63,6 +63,7 @@ class RunApp(AppBase):
         super().__init__()
 
     async def on_ready(self):
+        M5.Lcd.clear()
         execfile("main.py")
         sys.exit(0)
 
@@ -212,6 +213,7 @@ class ListApp(AppBase):
 
     async def _keycode_enter_event_handler(self, fw):
         print("_keycode_enter_event_handler")
+        M5.Lcd.clear()
         execfile("apps/" + self._files[self._file_pos])
         sys.exit(0)
 
@@ -607,7 +609,7 @@ class Framework:
         M5.BtnB.setCallback(type=M5.BtnB.CB_TYPE.WAS_CLICKED, cb=self._BtnB_wasClicked_event)
         M5.BtnB.setCallback(type=M5.BtnB.CB_TYPE.WAS_HOLD, cb=self._BtnB_wasHold_event)
         asyncio.create_task(self.load(self._launcher))
-        asyncio.create_task(self.gc_task())
+        # asyncio.create_task(self.gc_task())
         while True:
             M5.update()
             await asyncio.sleep_ms(100)
@@ -620,20 +622,14 @@ class Framework:
             await asyncio.sleep_ms(5000)
 
     def _BtnA_wasClicked_event(self, state):
-        asyncio.create_task(self._BtnA_wasClicked_task(state))
-
-    async def _BtnA_wasClicked_task(self, state):
-        print("_BtnA_wasClicked_task")
+        print("_BtnA_wasClicked_event")
         app = self._apps[-1]
-        await app._keycode_enter_event_handler(self)
+        asyncio.create_task(app._keycode_enter_event_handler(self))
 
     def _BtnB_wasClicked_event(self, state):
-        asyncio.create_task(self._BtnB_wasClicked_task(state))
-
-    async def _BtnB_wasClicked_task(self, state):
-        print("BtnB_wasClicked_task")
+        print("_BtnB_wasClicked_event")
         app = self._apps[-1]
-        await app._keycode_dpad_down_event_handler(self)
+        asyncio.create_task(app._keycode_dpad_down_event_handler(self))
 
     def _BtnB_wasHold_event(self, state):
         asyncio.create_task(self._BtnB_wasHold_task(state))
@@ -666,7 +662,4 @@ class StickCPlus2_Startup:
 
         fw = Framework()
         fw.install_launcher(launcher)
-
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(fw.run())
-        loop.close()
+        asyncio.run(fw.run())
