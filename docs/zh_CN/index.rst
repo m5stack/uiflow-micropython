@@ -7,7 +7,8 @@ MicroPython documentation and references
     get-started/index.rst
     library/index.rst
     controllers/index.rst
+    widgets/index.rst
     software/index.rst
     hardware/index.rst
-    units/index.rst
+    unit/index.rst
     COPYRIGHT.rst

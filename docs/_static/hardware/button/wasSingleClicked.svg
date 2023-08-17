@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="245.3607940673828" height="38">
+  <g data-id="Psm/[?7GYnxFtZQr#.Eg" class="blocklyDraggable" transform="translate(2,2)">
+    <path class="blocklyPathDark" transform="translate(1,1)" fill="#59aa53"
+      d=" m 8,0  h 228.3607940673828  v 5  H 236.3607940673828  V 5  H 236.3607940673828  V 25  H 236.3607940673828  V 25  V 29  h -228.3607940673828  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;" />
+    <path class="blocklyPath" stroke="none" fill="#6fd568"
+      d=" m 8,0  h 228.3607940673828  v 5  H 236.3607940673828  V 5  H 236.3607940673828  V 25  H 236.3607940673828  V 25  V 29  h -228.3607940673828  H 8  V 20  c 0,-10  -8,8  -8,-7.5  s 8,2.5  8,-7.5 z&#10;" />
+    <g class="blocklyEditableText" transform="translate(13,5)" style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" height="20" width="84.03724670410156" class="blocklyFieldRect blocklyDropdownRect"
+        fill="#fff" fill-opacity=".6" stroke="none" /><text class="blocklyFieldText blocklyDropdownText" fill="#000"
+        style="font: normal 11pt sans-serif;" text-anchor="start" x="5" y="16">BtnPWR<tspan
+          style="fill: rgb(111, 213, 104);"> ▾</tspan></text>
+      <image style="display: none;" />
+    </g>
+    <g transform="translate(102.03724670410156,5)"><text class="blocklyText" fill="#fff"
+        style="font: normal 11pt sans-serif;" x="0" y="16">was single clicked</text></g>
+  </g>
+</svg>
