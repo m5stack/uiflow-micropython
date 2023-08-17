@@ -19,7 +19,7 @@ Button用于控制主机内部集成的按键。以下是主机的Button支持�
     +-----------------+------+------+------+--------+--------+
     | AtomS3U         | |S|  |      |      |        |        |
     +-----------------+------+------+------+--------+--------+
-    | StampS3         |      |      |      |        |        |
+    | StampS3         | |S|  |      |      |        |        |
     +-----------------+------+------+------+--------+--------+
     | CoreS3          |      |      |      | |S|    |        |
     +-----------------+------+------+------+--------+--------+
@@ -60,7 +60,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    :download:`example <../../_static/hardware/button/example.m5f2>`.
+    :download:`example.m5f2 <../../_static/hardware/button/example.m5f2>`
 
 class Button
 ------------
@@ -146,7 +146,6 @@ Methods
 
         |wasSingleClicked.svg|
 
-
 Event Handling
 --------------
 
@@ -158,14 +157,12 @@ Event Handling
 
         |setCallback.svg|
 
-
 Constants
 ---------
 
 .. data:: Button.CB_TYPE
 
     一个 Callback_Type 对象。
-
 
 class Callback_Type
 -------------------

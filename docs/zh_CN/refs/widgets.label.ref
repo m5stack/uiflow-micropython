@@ -1,11 +1,13 @@
-.. |setColor.svg| image:: ../../_static/widgets/label/setColor.svg
+.. |example.svg| image:: ../../_static/widgets/label/example.svg
 
-.. |setCursor.svg| image:: ../../_static/widgets/label/setCursor.svg
+.. |setColor.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setColor.svg
 
-.. |setFont.svg| image:: ../../_static/widgets/label/setFont.svg
+.. |setCursor.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setCursor.svg
 
-.. |setSize.svg| image:: ../../_static/widgets/label/setSize.svg
+.. |setFont.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setFont.svg
 
-.. |setText.svg| image:: ../../_static/widgets/label/setText.svg
+.. |setSize.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setSize.svg
 
-.. |setVisible.svg| image:: ../../_static/widgets/label/setVisible.svg
+.. |setText.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setText.svg
+
+.. |setVisible.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/widgets/label/setVisible.svg

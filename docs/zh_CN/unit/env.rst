@@ -27,14 +27,13 @@ Micropython Example::
     print(env_0.read_humidity())
     print(env_0.read_pressure())
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
 .. only:: builder_html
 
-    :download:`example <../../_static/unit/env/example.m5f2>`.
+    :download:`example.m5f2 <../../_static/unit/env/example.m5f2>`
 
 class ENV
 ---------
