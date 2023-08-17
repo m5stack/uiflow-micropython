@@ -22,3 +22,5 @@ from .cardkb import CardKB, KeyCode
 from .encoder8 import ENCODER8
 from .lorawan import LoRaWAN
 from .gps import GPS
+from .hbridge import HBRIDGE
+from .pbhub import PBHUB

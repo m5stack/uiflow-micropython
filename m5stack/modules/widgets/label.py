@@ -2,7 +2,6 @@ import M5
 
 
 class Label:
-
     LEFT_ALIGNED = 0
     CENTER_ALIGNED = 1
     RIGHT_ALIGNED = 2

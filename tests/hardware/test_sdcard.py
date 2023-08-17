@@ -14,6 +14,7 @@ label4 = None
 dir2 = None
 ret = None
 
+
 # Describe this function...
 def test_chg_dir():
     global dir2, ret, label0, label1, label3, label2, label4

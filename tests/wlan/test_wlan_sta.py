@@ -8,7 +8,6 @@ sta_record = None
 
 
 def setup():
-
     M5.begin()
     wlan = network.WLAN(network.STA_IF)
     wlan.config(reconnects=3)
