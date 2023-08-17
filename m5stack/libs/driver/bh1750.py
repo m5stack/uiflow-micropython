@@ -13,7 +13,6 @@ class Power:
 
 
 class BH1750:
-
     CONTINUOUSLY = 0b00010000
     ONE_TIME = 0b00100000
 

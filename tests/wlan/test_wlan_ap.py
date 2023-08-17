@@ -8,7 +8,6 @@ ap_client = None
 
 
 def setup():
-
     M5.begin()
     wlan = network.WLAN(network.AP_IF)
     wlan.active(False)

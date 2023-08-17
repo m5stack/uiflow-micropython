@@ -3,9 +3,10 @@ from . import base
 
 
 class Image(base.Base):
-    def __init__(self, parent=M5.Lcd) -> None:
+    def __init__(self, use_sprite=True, parent=M5.Lcd) -> None:
         super().__init__(parent)
         self._src = None
+        self._use_sprite = use_sprite
         self._sprite = None
         self._sprite_init()
 
@@ -59,7 +60,12 @@ class Image(base.Base):
             self._parent.drawImage(self._src, self._x, self._y)
 
     def _sprite_init(self):
+        if self._use_sprite is False:
+            return
         self._sprite and self._sprite.delete()
         if self._w is not 0 and self._h is not 0:
             self._sprite = self._parent.newCanvas(self._w, self._h, 16, True)
             self._src and self._sprite.drawImage(self._src, 0, 0)
+
+    def __del__(self):
+        self._sprite and self._sprite.delete()

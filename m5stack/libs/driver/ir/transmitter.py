@@ -27,6 +27,7 @@ from time import ticks_us, ticks_diff
 # Shared by NEC
 STOP = const(0)  # End of data
 
+
 # IR abstract base class. Array holds periods in μs between toggling 36/38KHz
 # carrier on or off. Physical transmission occurs in an ISR context controlled
 # by timer 2 and timer 5. See TRANSMITTER.md for details of operation.
