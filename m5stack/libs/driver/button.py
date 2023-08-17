@@ -13,7 +13,6 @@ VERBOSE = False
 
 
 class Button:
-
     NO_ACTIVE = 0
     HOLD = 1
     PRESSED = 2

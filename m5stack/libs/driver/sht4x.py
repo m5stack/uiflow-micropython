@@ -131,7 +131,7 @@ class SHT4x:
         self.i2c_device.writeto(self.sht4x_i2c_addr, bytearray([command]))
         time.sleep(Mode.delay[self._mode])
         self._buffer = self.i2c_device.readfrom(self.sht4x_i2c_addr, 6)
-        
+
         # separate the read data
         temp_data = self._buffer[0:2]
         temp_crc = self._buffer[2]
@@ -139,9 +139,7 @@ class SHT4x:
         humidity_crc = self._buffer[5]
 
         # check CRC of bytes
-        if temp_crc != self._crc8(temp_data) or humidity_crc != self._crc8(
-            humidity_data
-        ):
+        if temp_crc != self._crc8(temp_data) or humidity_crc != self._crc8(humidity_data):
             raise RuntimeError("Invalid CRC calculated")
 
         # decode data into human values:
