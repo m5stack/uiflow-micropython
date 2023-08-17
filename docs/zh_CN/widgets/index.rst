@@ -2,7 +2,7 @@
 =================================
 
 .. module:: Widgets
-   :synopsis: 一个基础的UI库
+    :synopsis: 一个基础的UI库
 
 .. include:: ../refs/widgets.ref
 
@@ -20,6 +20,9 @@ UIFLOW2 Example:
 
     |example.svg|
 
+.. only:: builder_html
+
+    :download:`example.m5f2 <../../_static/widgets/example.m5f2>`
 
 Screen functions
 ----------------
@@ -54,7 +57,6 @@ Screen functions
     UIFLOW2:
 
         |setRotation.svg|
-
 
 Classes
 -------
