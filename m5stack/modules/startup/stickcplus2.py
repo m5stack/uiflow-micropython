@@ -57,8 +57,8 @@ class AppBase:
     async def on_exit(self):
         pass
 
-class RunApp(AppBase):
 
+class RunApp(AppBase):
     def __init__(self) -> None:
         super().__init__()
 
@@ -230,17 +230,18 @@ class ListApp(AppBase):
         for label in self._labels:
             label.setText("")
 
-        for label, file in zip(self._labels, self._files[self._file_pos:]):
+        for label, file in zip(self._labels, self._files[self._file_pos :]):
             file and label and label.setText(file)
 
         for label in self._lebals:
             label.setText("")
 
-        files = self._files[:self._file_pos]
+        files = self._files[: self._file_pos]
         files.reverse()
 
         for label, file in zip(self._lebals, files):
             file and label and label.setText(file)
+
 
 _cloud_icos_0 = {
     0: "/system/stickcplus2/cloud1.png",
@@ -500,7 +501,7 @@ class MenuApp(AppBase):
             w=135,
             h=20,
             font_align=Label.CENTER_ALIGNED,
-            fg_color=0x00ccff,
+            fg_color=0x00CCFF,
             bg_color=0x000000,
             font=M5.Lcd.FONTS.DejaVu18,
         )
