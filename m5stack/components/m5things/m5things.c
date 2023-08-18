@@ -16,7 +16,7 @@
 #include "cJSON.h"
 #include "m5things.h"
 #include "uiflow_utility.h"
-
+#include "boards.h"
 
 /** macro definitions */
 #define TAG "M5Things"
@@ -85,48 +85,6 @@ const char *resulet_msg[] = {
     "File remove error",
     "File list error",
     "No memory",
-};
-
-const char *boards[] = {
-    "unknown",  // 0
-    "unknown",  // 1
-    "basic",    // 2
-    "core2",    // 3
-    "stickc",   // 4
-    "stickc-plus",  // 5
-    "stickc-plus 2",  // 6
-    "coreink",  // 7
-    "paper",  // 8
-    "tough",  // 9
-    "station",  // 10
-    "cores3",  // 11
-    "atoms3",  // 12
-
-    /// non display boards
-    "atom",  // 13
-    "atom-psram", // 14
-    "atomu",  // 15
-    "m5camera", // 16
-    "timercam",  // 17
-    "stamppico", // 18
-    "stampc3",  // 19
-    "stampc3u",  // 20
-    "stamps3",  // 21
-    "atoms3-lite",  // 22
-    "atoms3u",  // 23
-
-    /// external displays
-    "atom-display",  // 24
-    "unit-lcd",  // 25
-    "unit-oled",  // 26
-    "unit-glass", // 27
-    "unit-rca",  // 28
-    "module-display", // 29
-    "module-rca",  // 30
-
-    /// temporary
-    "fire",  // 31
-    "atom-matrix",  // 32
 };
 
 // This topic is used for send status to cloud.
