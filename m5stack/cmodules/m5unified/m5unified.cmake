@@ -13,6 +13,7 @@ target_sources(usermod_M5UNIFIED INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/m5unified_widgets.c
     ${CMAKE_CURRENT_LIST_DIR}/m5unified.c
     ${CMAKE_CURRENT_LIST_DIR}/mic_config_t.c
+    ${CMAKE_CURRENT_LIST_DIR}/speaker_config_t.c
 )
 
 target_include_directories(usermod_M5UNIFIED INTERFACE
