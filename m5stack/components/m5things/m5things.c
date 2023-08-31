@@ -977,6 +977,14 @@ static int8_t mqtt_handle_file_remove(msg_file_req_t *msg) {
         ret
         );
 
+        esp_mqtt_client_publish(
+            m5things_mqtt_client,
+            mqtt_up_file_topic,
+            rsp_buf,
+            strlen(rsp_buf),
+            0,
+            0
+            );
     return ret;
 }
 
