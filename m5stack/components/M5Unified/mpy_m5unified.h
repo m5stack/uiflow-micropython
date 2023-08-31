@@ -13,6 +13,8 @@
 #include "mpy_m5widgets.h"
 #include "mpy_m5touch.h"
 #include "mpy_m5als.h"
+#include "mpy_m5mic.h"
+#include "mic_config_t.h"
 
 extern mp_obj_t m5_begin(void);
 extern mp_obj_t m5_update(void);
@@ -31,3 +33,4 @@ extern btn_obj_t m5_btnEXT;
 extern gfx_obj_t m5_display;
 extern touch_obj_t m5_touch;
 extern als_obj_t m5_als;
+extern const mic_obj_t m5_mic;

@@ -1,0 +1,36 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg" width="420.58660888671875" height="48">
+  <g data-id="@xBv~1-nrGA##gOa]2-*" class="blocklyDraggable" transform="translate(2,2)">
+    <path class="blocklyPathDark" transform="translate(1,1)" fill="#59aa53" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 331.5866241455078  v 5  H 361.5866241455078  V 5  H 361.5866241455078  V 31  H 361.5866241455078  V 31  V 35  h -332.0866241455078  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10; M 171.96994018554688,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 6  h 14.5  v -26 z"/>
+    <path class="blocklyPath" stroke="none" fill="#6fd568" d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 331.5866241455078  v 5  H 361.5866241455078  V 5  H 361.5866241455078  V 31  H 361.5866241455078  V 31  V 35  h -332.0866241455078  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10; M 171.96994018554688,5  v 5  c 0,10  -8,-8  -8,7.5  s 8,-2.5  8,7.5  v 6  h 14.5  v -26 z"/>
+    <g class="blocklyEditableText" transform="translate(5,10)" style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" height="20" width="55.0322265625" class="blocklyFieldRect blocklyDropdownRect" fill="#fff" fill-opacity=".6" stroke="none"/>
+      <text class="blocklyFieldText blocklyDropdownText" fill="#000" style="font: normal 11pt sans-serif;" text-anchor="start" x="5" y="16">Mic
+        <tspan style="fill: rgb(45, 84, 207);"> ▾</tspan>
+      </text>
+      <image style="display: none;"/>
+    </g>
+    <g transform="translate(65.0322265625,10)">
+      <text class="blocklyText" fill="#fff" style="font: normal 11pt sans-serif;" x="0" y="16">record into buf</text>
+    </g>
+    <g transform="translate(190.0322265625,10)">
+      <text class="blocklyText" fill="#fff" style="font: normal 11pt sans-serif;" x="0" y="16">rate</text>
+    </g>
+    <g class="blocklyEditableText" transform="translate(220,10)" style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" height="20" width="55.0322265625" class="blocklyFieldRect blocklyDropdownRect" fill="#fff" fill-opacity=".6" stroke="none"/>
+      <text class="blocklyFieldText blocklyDropdownText" fill="#000" style="font: normal 11pt sans-serif;" text-anchor="start" x="5" y="16">8000
+        <tspan style="fill: rgb(45, 84, 207);"> ▾</tspan>
+      </text>
+      <image style="display: none;"/>
+    </g>
+    <g transform="translate(280.0322265625,10)">
+      <text class="blocklyText" fill="#fff" style="font: normal 11pt sans-serif;" x="0" y="16">stereo</text>
+    </g>
+    <g class="blocklyEditableText" transform="translate(330,10)">
+      <rect rx="10" ry="10" x="0" y="0" height="20" class="blocklyFieldSwitchInner blocklyFieldSwitchUnChecked" fill-opacity=".9" width="68.30921936035156" fill="#898989"/>
+      <text class="blocklyFieldSwitchLabel" y="16" fill="#fff" style="font: 11pt sans-serif; display: block;" x="10">False</text>
+      <circle cy="10" r="7" class="blocklyFieldSwitchHandle" fill="#fff" cx="58.30921936035156"/>
+      <text class="blocklyFieldSwitchLabel" y="16" fill="#fff" style="font: 11pt sans-serif; display: none;" x="68.30921936035156">True</text>
+    </g>
+  </g>
+</svg>
