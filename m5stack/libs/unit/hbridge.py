@@ -75,6 +75,19 @@ class HBRIDGE:
         """
         self.write_mem_list(PWM16BIT_REG, [(duty & 0xFF), ((duty >> 8) & 0xFF)])
 
+    def set_percentage_pwm(self, duty=0, res=8):
+        """
+        set 8bit or 16bit pwm dutycycle
+        duty : 0 to 100%
+        resolution: 8 or 16 bit
+        """
+        duty = max(min(duty, 100), 0)
+        if res == 8:
+            duty = self.map(duty, 0, 100, 0, 255)
+        else:
+            duty = self.map(duty, 0, 100, 0, 65535)
+        self.write_mem_list(PWM8BIT_REG, [duty])
+
     def set_pwm_freq(self, freq=0):
         """
         set direction
@@ -126,6 +139,9 @@ class HBRIDGE:
 
     def read_reg(self, reg, num):
         return self.hbridge_i2c.readfrom_mem(self.i2c_addr, reg, num)
+
+    def map(self, x, in_min, in_max, out_min, out_max):
+        return round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
     def deinit(self):
         pass
