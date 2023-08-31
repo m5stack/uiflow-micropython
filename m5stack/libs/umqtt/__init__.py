@@ -14,7 +14,20 @@ class MQTTClient(robust.MQTTClient):
         ssl=False,
         ssl_params={},
     ):
-        super().__init__(client_id, server, port, user, password, keepalive, ssl, ssl_params)
+        ssl_params1 = ssl_params
+        if ssl:
+            pass
+            key_path = ssl_params1.get("key", None)
+            key_value = self._load_file(key_path)
+            if key_value:
+                ssl_params1['key'] = key_value
+
+            cert_path = ssl_params1.get("cert", None)
+            cert_value = self._load_file(cert_path)
+            if cert_value:
+                ssl_params1['cert'] = cert_value
+
+        super().__init__(client_id, server, port, user, password, keepalive, ssl, ssl_params1)
         self.set_callback(self._callback)
         self._topics = {}
 
@@ -34,3 +47,14 @@ class MQTTClient(robust.MQTTClient):
     def subscribe(self, topic, handler, qos=0):
         self._topics[topic] = handler
         return super().subscribe(topic, qos)
+
+    @staticmethod
+    def _load_file(path):
+        if type(path) is str and path.startswith("/flash"):
+            try:
+                with open(path, "r") as f:
+                    return f.read()
+            except:
+                return None
+        else:
+            return None

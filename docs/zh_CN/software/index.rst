@@ -5,3 +5,4 @@ Software
     :maxdepth: 1
 
     time.rst
+    umqtt.rst

@@ -71,7 +71,7 @@ Functions
     * weekday is 0-6 for Mon-Sun
     * yearday is 1-366
 
-     UIFLOW2:
+    UIFLOW2:
 
         |gmtime.svg|
         |localtime.svg|

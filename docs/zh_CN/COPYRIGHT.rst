@@ -14,6 +14,7 @@ Third Party
 ============
 
 * `micropython`_ Copyright (c) 2013-2023 Damien P. George and licensed under MIT License.
+* `umqtt`_ Copyright (c) 2013-2014 micropython-lib contributors and licensed under MIT License.
 
 Documentation
 ==============

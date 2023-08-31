@@ -1,8 +1,6 @@
 # -*- encoding: utf-8 -*-
 # boot.py
-import M5
 import esp32
-import time
 
 """
 boot_option:
@@ -31,18 +29,12 @@ NETWORK_TIMEOUT = 60
 
 # Execute startup script, if not needed, delete the code below
 if __name__ == "__main__":
-    M5.begin()
     from startup import startup
 
     nvs = esp32.NVS("uiflow")
     try:
-        tz = nvs.get_str("tz")
-        time.timezone(tz)
-    except:
-        pass
-
-    try:
         boot_option = nvs.get_u8("boot_option")
     except:
         boot_option = 1  # default
+
     startup(boot_option, NETWORK_TIMEOUT)

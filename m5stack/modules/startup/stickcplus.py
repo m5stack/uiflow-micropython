@@ -21,40 +21,112 @@ except ImportError:
 
 DEBUG = True
 
-
-class TaskStatus:
-    init = const(0)
-    running = const(1)
-    pending = const(2)
-    stop = const(3)
+if M5.getBoard() == M5.BOARD.M5StickCPlus:
+    APPLIST_IMG = "res/stickcplus/APPLIST.jpg"
+    BK_IMG = "res/stickcplus/bk.jpg"
+    CLOUD1_IMG = "res/stickcplus/cloud1.jpg"
+    CLOUD2_IMG = "res/stickcplus/cloud2.jpg"
+    CLOUD3_IMG = "res/stickcplus/cloud3.jpg"
+    CLOUD4_IMG = "res/stickcplus/cloud4.jpg"
+    CLOUD5_IMG = "res/stickcplus/cloud5.jpg"
+    CLOUD6_IMG = "res/stickcplus/cloud6.jpg"
+    CLOUD7_IMG = "res/stickcplus/cloud7.jpg"
+    CLOUD8_IMG = "res/stickcplus/cloud8.jpg"
+    CLOUD9_IMG = "res/stickcplus/cloud9.jpg"
+    CLOUD10_IMG = "res/stickcplus/cloud10.jpg"
+    MODE1_IMG = "res/stickcplus/mode1.jpg"
+    MODE2_IMG = "res/stickcplus/mode2.jpg"
+    MODE3_IMG = "res/stickcplus/mode3.jpg"
+    MODE4_IMG = "res/stickcplus/mode4.jpg"
+    USB_IMG = "res/stickcplus/usb.jpg"
+elif M5.getBoard() == M5.BOARD.M5StickCPlus2:
+    APPLIST_IMG = "/system/stickcplus2/APPLIST.png"
+    BK_IMG = "/system/stickcplus2/bk.png"
+    CLOUD1_IMG = "/system/stickcplus2/cloud1.png"
+    CLOUD2_IMG = "/system/stickcplus2/cloud2.png"
+    CLOUD3_IMG = "/system/stickcplus2/cloud3.png"
+    CLOUD4_IMG = "/system/stickcplus2/cloud4.png"
+    CLOUD5_IMG = "/system/stickcplus2/cloud5.png"
+    CLOUD6_IMG = "/system/stickcplus2/cloud6.png"
+    CLOUD7_IMG = "/system/stickcplus2/cloud7.png"
+    CLOUD8_IMG = "/system/stickcplus2/cloud8.png"
+    CLOUD9_IMG = "/system/stickcplus2/cloud9.png"
+    CLOUD10_IMG = "/system/stickcplus2/cloud10.png"
+    MODE1_IMG = "/system/stickcplus2/mode1.png"
+    MODE2_IMG = "/system/stickcplus2/mode2.png"
+    MODE3_IMG = "/system/stickcplus2/mode3.png"
+    MODE4_IMG = "/system/stickcplus2/mode4.png"
+    USB_IMG = "/system/stickcplus2/usb.png"
 
 
 class AppBase:
     def __init__(self) -> None:
-        self._status = TaskStatus.init
+        self._task = None
 
-    async def on_launch(self):
+    def on_launch(self):
         pass
 
-    async def on_view(self):
+    def on_view(self):
         pass
 
-    async def on_ready(self):
-        self._status = TaskStatus.running
-        asyncio.create_task(self.on_run())
+    def on_ready(self):
+        self._task = asyncio.create_task(self.on_run())
 
     async def on_run(self):
-        while self._status is TaskStatus.running:
+        while True:
             await asyncio.sleep_ms(500)
-        self._status = TaskStatus.stop
 
     async def on_hide(self):
-        if self._status is TaskStatus.running:
-            self._status = TaskStatus.pending
-            while self._status is not TaskStatus.stop:
-                await asyncio.sleep_ms(100)
+        self._task.cancel()
 
-    async def on_exit(self):
+    def on_exit(self):
+        pass
+
+
+class UsbApp(AppBase):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def on_launch(self):
+        self._battery_label = Label(
+            str(None),
+            135 - 14,
+            6,
+            w=135,
+            h=20,
+            font_align=Label.RIGHT_ALIGNED,
+            fg_color=0x000000,
+            bg_color=0xFFFFFF,
+            font=M5.Lcd.FONTS.DejaVu12,
+        )
+
+        self._bg_img = Image(use_sprite=False)
+        self._bg_img.set_x(0)
+        self._bg_img.set_y(0)
+        self._bg_img.set_size(135, 240)
+
+    def on_view(self):
+        self._bg_img.set_src(USB_IMG)
+
+    async def on_run(self):
+        while True:
+            # battery
+            self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+            await asyncio.sleep_ms(1000)
+
+    def on_exit(self):
+        del self._bg_img, self._battery_label
+
+    async def _keycode_enter_event_handler(self, fw):
+        # print("_keycode_enter_event_handler")
+        pass
+
+    async def _keycode_back_event_handler(self, fw):
+        # print("_keycode_back_event_handler")
+        pass
+
+    async def _keycode_dpad_down_event_handler(self, fw):
+        # print("_keycode_dpad_down_event_handler")
         pass
 
 
@@ -62,7 +134,7 @@ class RunApp(AppBase):
     def __init__(self) -> None:
         super().__init__()
 
-    async def on_ready(self):
+    def on_ready(self):
         M5.Lcd.clear()
         execfile("main.py")
         sys.exit(0)
@@ -70,9 +142,9 @@ class RunApp(AppBase):
 
 class ListApp(AppBase):
     def __init__(self) -> None:
-        pass
+        super().__init__()
 
-    async def on_launch(self):
+    def on_launch(self):
         self._battery_label = Label(
             str(None),
             135 - 14,
@@ -106,8 +178,8 @@ class ListApp(AppBase):
         self._cursor_pos = 0
         self._file_pos = 0
 
-    async def on_view(self):
-        self._bg_img.set_src("/system/stickcplus2/APPLIST.png")
+    def on_view(self):
+        self._bg_img.set_src(APPLIST_IMG)
         if self._label0 is None:
             self._label0 = Label(
                 "",
@@ -197,31 +269,30 @@ class ListApp(AppBase):
             self._lebals.append(self._lebal2)
 
         for label, file in zip(self._labels, self._files):
-            print("file:", file)
+            # print("file:", file)
             file and label and label.setText(file)
 
     async def on_run(self):
-        while self._status is TaskStatus.running:
+        while True:
             # battery
             self._battery_label.setText(str(M5.Power.getBatteryLevel()))
             await asyncio.sleep_ms(1000)
 
-        self._status = TaskStatus.stop
-
-    async def on_exit(self):
+    def on_exit(self):
         del self._bg_img, self._battery_label, self._labels, self._files, self._lebals
 
     async def _keycode_enter_event_handler(self, fw):
-        print("_keycode_enter_event_handler")
+        # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
         execfile("apps/" + self._files[self._file_pos])
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):
-        print("_keycode_back_event_handler")
+        # print("_keycode_back_event_handler")
+        pass
 
     async def _keycode_dpad_down_event_handler(self, fw):
-        print("_keycode_dpad_down_event_handler")
+        # print("_keycode_dpad_down_event_handler")
         self._file_pos += 1
 
         if self._file_pos >= len(self._files):
@@ -244,19 +315,19 @@ class ListApp(AppBase):
 
 
 _cloud_icos_0 = {
-    0: "/system/stickcplus2/cloud1.png",
-    1: "/system/stickcplus2/cloud2.png",
-    2: "/system/stickcplus2/cloud3.png",
-    3: "/system/stickcplus2/cloud4.png",
-    4: "/system/stickcplus2/cloud5.png",
+    0: CLOUD1_IMG,
+    1: CLOUD2_IMG,
+    2: CLOUD3_IMG,
+    3: CLOUD4_IMG,
+    4: CLOUD5_IMG,
 }
 
 _cloud_icos_1 = {
-    0: "/system/stickcplus2/cloud6.png",
-    1: "/system/stickcplus2/cloud7.png",
-    2: "/system/stickcplus2/cloud8.png",
-    3: "/system/stickcplus2/cloud10.png",
-    4: "/system/stickcplus2/cloud9.png",
+    0: CLOUD6_IMG,
+    1: CLOUD7_IMG,
+    2: CLOUD8_IMG,
+    3: CLOUD10_IMG,
+    4: CLOUD9_IMG,
 }
 
 _txt_bg_colors = {
@@ -358,7 +429,7 @@ class CloudApp(AppBase):
         # battery
         self._battery_label.setText(str(M5.Power.getBatteryLevel()))
 
-    async def on_launch(self):
+    def on_launch(self):
         self._server = self._get_server()
         self._icos = {
             "uiflow2.m5stack.com": _cloud_icos_0,
@@ -367,7 +438,7 @@ class CloudApp(AppBase):
         self._cloud_status = self._get_cloud_status()
         self._user_id = self._get_user_id()
 
-    async def on_view(self):
+    def on_view(self):
         self._battery_label = Label(
             str(None),
             135 - 14,
@@ -427,7 +498,7 @@ class CloudApp(AppBase):
         self._load_view()
 
     async def on_run(self):
-        while self._status is TaskStatus.running:
+        while True:
             t = self._get_cloud_status()
             if t is not self._cloud_status:
                 self._cloud_status = t
@@ -437,20 +508,20 @@ class CloudApp(AppBase):
             else:
                 await asyncio.sleep_ms(1000)
 
-        self._status = TaskStatus.stop
-
-    async def on_exit(self):
+    def on_exit(self):
         del self._battery_label, self._ssid_label, self._rssi_label, self._user_id_label
         del self._bg_img
 
     async def _keycode_enter_event_handler(self, fw):
-        print("_keycode_enter_event_handler")
+        # print("_keycode_enter_event_handler")
+        pass
 
     async def _keycode_back_event_handler(self, fw):
-        print("_keycode_back_event_handler")
+        # print("_keycode_back_event_handler")
+        pass
 
     async def _keycode_dpad_down_event_handler(self, fw):
-        print("_keycode_dpad_down_event_handler")
+        # print("_keycode_dpad_down_event_handler")
         if self._server == "uiflow2.m5stack.com":
             self._server = "sg.m5stack.com"
         else:
@@ -477,17 +548,17 @@ class MenuApp(AppBase):
     def __init__(self, data=None) -> None:
         self._cloud_app = data
         self._menus = (
-            (self._cloud_app, "/system/stickcplus2/mode1.png"),
-            (None, "/system/stickcplus2/mode2.png"),
-            (RunApp(), "/system/stickcplus2/mode3.png"),
-            (ListApp(), "/system/stickcplus2/mode4.png"),
+            (self._cloud_app, MODE1_IMG),
+            (UsbApp(), MODE2_IMG),
+            (RunApp(), MODE3_IMG),
+            (ListApp(), MODE4_IMG),
         )
 
-    async def on_launch(self):
+    def on_launch(self):
         self._icos = _charge_ico(self._menus)
         self._app, self._img_src = next(self._icos)
 
-    async def on_view(self):
+    def on_view(self):
         self._status_img = Image(use_sprite=False)
         self._status_img.set_x(0)
         self._status_img.set_y(0)
@@ -520,24 +591,23 @@ class MenuApp(AppBase):
         self._battery_label.setText(str(M5.Power.getBatteryLevel()))
 
     async def on_run(self):
-        while self._status is TaskStatus.running:
+        while True:
             # battery
             self._battery_label.setText(str(M5.Power.getBatteryLevel()))
             await asyncio.sleep_ms(1000)
 
-        self._status = TaskStatus.stop
-
     async def _keycode_enter_event_handler(self, fw):
-        print("_keycode_enter_event_handler")
+        # print("_keycode_enter_event_handler")
         if self._app:
             await fw.unload(self)
             await fw.load(self._app)
 
     async def _keycode_back_event_handler(self, fw):
-        print("_keycode_back_event_handler")
+        # print("_keycode_back_event_handler")
+        pass
 
     async def _keycode_dpad_down_event_handler(self, fw):
-        print("_keycode_dpad_down_event_handler")
+        # print("_keycode_dpad_down_event_handler")
         self._app, src = next(self._icos)
         self._status_img.set_src(src)
         self._battery_label.setText(str(M5.Power.getBatteryLevel()))
@@ -549,33 +619,26 @@ class LauncherApp(AppBase):
     def __init__(self, data=None) -> None:
         self._cloud_app, self._menu_app = data
 
-    async def on_view(self):
+    def on_view(self):
         self._bg_img = Image(use_sprite=False)
         self._bg_img.set_pos(0, 0)
         self._bg_img.set_size(135, 240)
-        self._bg_img.set_src("/system/stickcplus2/bk.png")
+        self._bg_img.set_src(BK_IMG)
 
-    async def mount(self):
-        await self.on_view()
-        await super().mount()
-
-    async def on_exit(self):
+    def on_exit(self):
         del self._bg_img
 
-    async def umount(self):
-        await super().umount()
-        await self.on_hide()
-
     async def _keycode_enter_event_handler(self, fw):
-        print("_keycode_enter_event_handler")
+        # print("_keycode_enter_event_handler")
         await fw.unload(self)
         await fw.load(self._cloud_app)
 
     async def _keycode_back_event_handler(self, fw):
-        print("_keycode_back_event_handler")
+        # print("_keycode_back_event_handler")
+        pass
 
     async def _keycode_dpad_down_event_handler(self, fw):
-        print("_keycode_dpad_down_event_handler")
+        # print("_keycode_dpad_down_event_handler")
         await fw.unload(self)
         await fw.load(self._menu_app)
 
@@ -597,64 +660,66 @@ class Framework:
 
     async def load(self, app: AppBase):
         self._apps.append(app)
-        await app.on_launch()
-        await app.on_view()
-        await app.on_ready()
+        app.on_launch()
+        app.on_view()
+        app.on_ready()
 
     async def reload(self, app: AppBase):
         await app.on_hide()
-        await app.on_ready()
+        app.on_ready()
 
     async def run(self):
-        M5.BtnA.setCallback(type=M5.BtnA.CB_TYPE.WAS_CLICKED, cb=self._BtnA_wasClicked_event)
-        M5.BtnB.setCallback(type=M5.BtnB.CB_TYPE.WAS_CLICKED, cb=self._BtnB_wasClicked_event)
-        M5.BtnB.setCallback(type=M5.BtnB.CB_TYPE.WAS_HOLD, cb=self._BtnB_wasHold_event)
         asyncio.create_task(self.load(self._launcher))
         # asyncio.create_task(self.gc_task())
         while True:
             M5.update()
+            if M5.BtnA.wasClicked():
+                M5.Speaker.tone(4000, 50)
+                app = self._apps[-1]
+                asyncio.create_task(app._keycode_enter_event_handler(self))
+            if M5.BtnB.wasClicked():
+                M5.Speaker.tone(6000, 50)
+                app = self._apps[-1]
+                asyncio.create_task(app._keycode_dpad_down_event_handler(self))
+            if M5.BtnPWR.wasClicked():
+                M5.Speaker.tone(3500, 50)
+                if self._apps and len(self._apps) > 1:
+                    app = self._apps.pop()
+                    await app._keycode_back_event_handler(self)
+                    await app.on_hide()
+                    app.on_exit()
+                    app = self._apps[-1]
+                    app.on_launch()
+                    app.on_view()
+                    app.on_ready()
             await asyncio.sleep_ms(100)
 
     async def gc_task(self):
         while True:
             gc.collect()
-            print("free:", gc.mem_free())
-            print("alloc:", gc.mem_alloc())
+            print("heap RAM free:", gc.mem_free())
+            print("heap RAM alloc:", gc.mem_alloc())
             await asyncio.sleep_ms(5000)
 
-    def _BtnA_wasClicked_event(self, state):
-        print("_BtnA_wasClicked_event")
-        app = self._apps[-1]
-        asyncio.create_task(app._keycode_enter_event_handler(self))
 
-    def _BtnB_wasClicked_event(self, state):
-        print("_BtnB_wasClicked_event")
-        app = self._apps[-1]
-        asyncio.create_task(app._keycode_dpad_down_event_handler(self))
-
-    def _BtnB_wasHold_event(self, state):
-        asyncio.create_task(self._BtnB_wasHold_task(state))
-
-    async def _BtnB_wasHold_task(self, state):
-        print("BtnB_wasHold_event")
-        if self._apps and len(self._apps) > 1:
-            app = self._apps.pop()
-            await app._keycode_back_event_handler(self)
-            await app.on_hide()
-            await app.on_exit()
-            app = self._apps[-1]
-            await app.on_launch()
-            await app.on_view()
-            await app.on_ready()
-
-
-class StickCPlus2_Startup:
+class StickCPlus_Startup:
     def __init__(self) -> None:
         self._wifi = Startup()
 
     def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         self._wifi.connect_network(ssid, pswd)
+        M5.Speaker.setVolume(255)
+        M5.Speaker.tone(4000, 50)
 
+        bg_img = Image(use_sprite=False)
+        bg_img.set_pos(0, 0)
+        bg_img.set_size(135, 240)
+        bg_img.set_src(BK_IMG)
+        M5.Lcd.setBrightness(0)
+        import time
+        for i in range(0, 128, 20):
+            M5.Lcd.setBrightness(i)
+            time.sleep_ms(80)
         DEBUG and print("Run startup menu")
 
         cloud_app = CloudApp((self._wifi, ssid))
