@@ -717,6 +717,7 @@ class StickCPlus_Startup:
         bg_img.set_src(BK_IMG)
         M5.Lcd.setBrightness(0)
         import time
+
         for i in range(0, 128, 20):
             M5.Lcd.setBrightness(i)
             time.sleep_ms(80)

@@ -58,6 +58,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
     board_id = M5.getBoard()
     if board_id == M5.BOARD.M5StickCPlus2:
         from machine import Pin
+
         pin4 = Pin(4, Pin.OUT)
         pin4.value(1)
 
