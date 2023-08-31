@@ -55,7 +55,7 @@ Constructors
 
     Create an ENV object.
 
-    parameter is：
+    parameter is:
 
         - ``i2c`` is an I2C object.
         - ``type`` is the type of ENV

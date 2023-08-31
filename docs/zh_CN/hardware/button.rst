@@ -67,9 +67,9 @@ class Button
 
 .. important::
 
-    Button Class的方法重度依赖 ``M5.begin()`` |begin.svg| 和 ``M5.update()`` |update.svg|。
+    Button Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` |M5.update.svg|。
 
-    调用 Button 对象的所有方法，需要放在 ``M5.begin()`` |begin.svg| 的后面，并在 主循环中调用 ``M5.update()`` |update.svg|。
+    调用 Button 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在 主循环中调用 ``M5.update()`` |M5.update.svg|。
 
 Methods
 -------
