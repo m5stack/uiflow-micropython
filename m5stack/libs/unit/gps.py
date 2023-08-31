@@ -21,8 +21,8 @@ class GPS:
         self.course = "0.0"
         self.uart = UART(1, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
-        self.tx = port[0]
-        self.rx = port[1]
+        self.tx = port[1]
+        self.rx = port[0]
         self._timer = timTh.addTimer(50, timTh.PERIODIC, self._monitor)
         self._state = ""
         self.time_offset = 8
