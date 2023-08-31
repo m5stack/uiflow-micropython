@@ -350,7 +350,7 @@ namespace m5
             { MP_QSTR_rate,               MP_ARG_INT,                   {.u_int = 44100}           },
             { MP_QSTR_stereo,             MP_ARG_BOOL,                  {.u_bool = mp_const_false} },
             { MP_QSTR_repeat,             MP_ARG_INT,                   {.u_int = 1}               },
-            { MP_QSTR_channel,            MP_ARG_INT,                   {.u_int = 1}               },
+            { MP_QSTR_channel,            MP_ARG_INT,                   {.u_int = -1}              },
             { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = mp_const_false} },
         };
         /* *FORMAT-ON* */
