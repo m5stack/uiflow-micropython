@@ -238,21 +238,21 @@ class QMP6988:
 
         # Compensation based on datasheet section 4.3
         d = self.i2c.readfrom_mem(self.addr, _QMP6988_DATA, _QMP6988_DATA_LEN)
-        dp = ((d[0] << 16) | (d[1] << 8) | d[2]) - 2 ** 23
-        dt = ((d[3] << 16) | (d[4] << 8) | d[5]) - 2 ** 23
+        dp = ((d[0] << 16) | (d[1] << 8) | d[2]) - 2**23
+        dt = ((d[3] << 16) | (d[4] << 8) | d[5]) - 2**23
 
-        tr = self.a0 + (self.a1 * dt) + (self.a2 * (dt ** 2))
+        tr = self.a0 + (self.a1 * dt) + (self.a2 * (dt**2))
 
         pr = (
             self.b00
             + (self.bt1 * tr)
             + (self.bp1 * dp)
             + (self.b11 * tr * dp)
-            + (self.bt2 * tr ** 2)
-            + (self.bp2 * dp ** 2)
-            + (self.b12 * dp * (tr ** 2))
-            + (self.b21 * (dp ** 2) * tr)
-            + (self.bp3 * (dp ** 3))
+            + (self.bt2 * tr**2)
+            + (self.bp2 * dp**2)
+            + (self.b12 * dp * (tr**2))
+            + (self.b21 * (dp**2) * tr)
+            + (self.bp3 * (dp**3))
         )
 
         temperature = (tr / 256) if temp_en else 0.0

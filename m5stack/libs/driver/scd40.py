@@ -48,7 +48,7 @@ class SCD40:
         await self._write_values(_SCD40_CMD_REINIT, delay_ms=1000)
         # temperature offset can only be configured in idle mode
         if self.temp_offset is not None:
-            t = int((self.temp_offset * 2 ** 16) / 175)
+            t = int((self.temp_offset * 2**16) / 175)
             await self._write_values(_SCD40_CMD_SET_TEMPERATURE_OFFSET, (t,))
 
         # create background task and wait for measurements to arrive
