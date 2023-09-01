@@ -130,4 +130,3 @@ class UWB:
                                     line[separate + 1 : -3]
                                 )
                                 rx_times += 1
-

@@ -389,7 +389,7 @@ class CloudApp(AppBase):
 
     def _get_user_id(self):
         if _HAS_SERVER:
-            return None if len(M5Things.status()[1]) is 0 else M5Things.status()[1]
+            return None if len(M5Things.info()[1]) is 0 else M5Things.info()[1]
         else:
             return None
 
@@ -526,7 +526,7 @@ class CloudApp(AppBase):
             self._server = "sg.m5stack.com"
         else:
             self._server = "uiflow2.m5stack.com"
-        self._set_server(self._server)
+        # self._set_server(self._server)
         self._update_data()
         self._load_view()
 
@@ -717,6 +717,7 @@ class StickCPlus_Startup:
         bg_img.set_src(BK_IMG)
         M5.Lcd.setBrightness(0)
         import time
+
         for i in range(0, 128, 20):
             M5.Lcd.setBrightness(i)
             time.sleep_ms(80)

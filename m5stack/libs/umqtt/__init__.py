@@ -20,12 +20,12 @@ class MQTTClient(robust.MQTTClient):
             key_path = ssl_params1.get("key", None)
             key_value = self._load_file(key_path)
             if key_value:
-                ssl_params1['key'] = key_value
+                ssl_params1["key"] = key_value
 
             cert_path = ssl_params1.get("cert", None)
             cert_value = self._load_file(cert_path)
             if cert_value:
-                ssl_params1['cert'] = cert_value
+                ssl_params1["cert"] = cert_value
 
         super().__init__(client_id, server, port, user, password, keepalive, ssl, ssl_params1)
         self.set_callback(self._callback)

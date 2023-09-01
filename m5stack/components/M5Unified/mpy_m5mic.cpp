@@ -23,67 +23,67 @@ namespace m5
                         switch (mp_obj_str_get_qstr(kwargs->table[i].key)) {
                             case MP_QSTR_pin_data_in:
                                 cfg.pin_data_in = (int)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_pin_bck:
                                 cfg.pin_bck = (int)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_pin_mck:
                                 cfg.pin_mck = (int)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_pin_ws:
                                 cfg.pin_ws = (int)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_sample_rate:
                                 cfg.sample_rate = (uint32_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_stereo:
                                 cfg.stereo = (bool)mp_obj_is_true(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_input_offset:
                                 cfg.input_offset = (int)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_over_sampling:
                                 cfg.over_sampling = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_magnification:
                                 cfg.magnification = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_noise_filter_level:
                                 cfg.noise_filter_level = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_use_adc:
                                 cfg.use_adc = (bool)mp_obj_is_true(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_dma_buf_len:
                                 cfg.dma_buf_len = (size_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_dma_buf_count:
                                 cfg.dma_buf_count = (size_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_task_priority:
                                 cfg.task_priority = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_task_pinned_core:
                                 cfg.task_pinned_core = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             case MP_QSTR_i2s_port:
                                 cfg.i2s_port = (i2s_port_t)mp_obj_get_int(kwargs->table[i].value);
-                            break;
+                                break;
 
                             default:
                                 goto unknown;
@@ -120,67 +120,67 @@ namespace m5
                 switch (mp_obj_str_get_qstr(args[1])) {
                     case MP_QSTR_pin_data_in:
                         return mp_obj_new_int(cfg.pin_data_in);
-                    break;
+                        break;
 
                     case MP_QSTR_pin_bck:
                         return mp_obj_new_int(cfg.pin_bck);
-                    break;
+                        break;
 
                     case MP_QSTR_pin_mck:
                         return mp_obj_new_int(cfg.pin_mck);
-                    break;
+                        break;
 
                     case MP_QSTR_pin_ws:
                         return mp_obj_new_int(cfg.pin_ws);
-                    break;
+                        break;
 
                     case MP_QSTR_sample_rate:
                         return mp_obj_new_int(cfg.sample_rate);
-                    break;
+                        break;
 
                     case MP_QSTR_stereo:
                         return mp_obj_new_bool(cfg.stereo);
-                    break;
+                        break;
 
                     case MP_QSTR_input_offset:
                         return mp_obj_new_int(cfg.input_offset);
-                    break;
+                        break;
 
                     case MP_QSTR_over_sampling:
                         return mp_obj_new_int(cfg.over_sampling);
-                    break;
+                        break;
 
                     case MP_QSTR_magnification:
                         return mp_obj_new_int(cfg.magnification);
-                    break;
+                        break;
 
                     case MP_QSTR_noise_filter_level:
                         return mp_obj_new_int(cfg.noise_filter_level);
-                    break;
+                        break;
 
                     case MP_QSTR_use_adc:
                         return mp_obj_new_bool(cfg.use_adc);
-                    break;
+                        break;
 
                     case MP_QSTR_dma_buf_len:
                         return mp_obj_new_int(cfg.dma_buf_len);
-                    break;
+                        break;
 
                     case MP_QSTR_dma_buf_count:
                         return mp_obj_new_int(cfg.dma_buf_count);
-                    break;
+                        break;
 
                     case MP_QSTR_task_priority:
                         return mp_obj_new_int(cfg.task_priority);
-                    break;
+                        break;
 
                     case MP_QSTR_task_pinned_core:
                         return mp_obj_new_int(cfg.task_pinned_core);
-                    break;
+                        break;
 
                     case MP_QSTR_i2s_port:
                         return mp_obj_new_int(cfg.i2s_port);
-                    break;
+                        break;
 
                     default:
                         goto unknown;
