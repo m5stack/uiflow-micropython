@@ -31,14 +31,17 @@ def _get_token():
 
 
 class EzData:
-    def __init__(self, token, key) -> None:
+    def __init__(self, token, key, public=False) -> None:
         self._device_token = token if token else _get_token()
         self._key = key
         self._value = None
         self._data_token = None
         self._date_type = None
+        self._public = public
 
     def set(self, value, is_file=False):
+        if self._public:
+            return
         if is_file:
             return self._set_file(value)
         else:
@@ -103,7 +106,11 @@ class EzData:
             del url
 
     def get(self):
-        url = "{0}/{1}/dataByKey/{2}".format(_server, self._device_token, self._key)
+        url = None
+        if self._public:
+            url = "{0}/{1}/data".format(_server, self._device_token)
+        else:
+            url = "{0}/{1}/dataByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'getDeviceEzData' url:", url)
         try:
             rsp = urequests.get(url, headers={})
@@ -131,8 +138,12 @@ class EzData:
                 pass
 
     def history(self) -> list:
+        url = None
         res = []
-        url = "{0}/{1}/historyByKey/{2}".format(_server, self._device_token, self._key)
+        if self._public:
+            url = "{0}/{1}/history".format(_server, self._device_token)
+        else:
+            url = "{0}/{1}/historyByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'history' url:", url)
         try:
             rsp = urequests.get(url, headers={})
@@ -147,6 +158,8 @@ class EzData:
             del url, res
 
     def delete(self):
+        if self._public:
+            return
         url = "{0}/{1}/delete/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'delete' url:", url)
         try:
