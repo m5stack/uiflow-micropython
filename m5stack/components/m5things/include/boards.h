@@ -7,7 +7,7 @@ const char *boards[] = {
     "core2",          // 2
     "stickc",         // 3
     "stickc-plus",    // 4
-    "stickc-plus 2",  // 5
+    "stickc-plus2",   // 5
     "coreink",        // 6
     "paper",          // 7
     "tough",          // 8
