@@ -3,11 +3,13 @@
 // IMU type
 STATIC const mp_rom_map_elem_t m5_imu_types_table[] = {
     /* *FORMAT-OFF* */
-    { MP_ROM_QSTR(MP_QSTR_unknown),       MP_ROM_INT(0) },
-    { MP_ROM_QSTR(MP_QSTR_SH200Q),        MP_ROM_INT(1) },
-    { MP_ROM_QSTR(MP_QSTR_MPU6050),       MP_ROM_INT(2) },
-    { MP_ROM_QSTR(MP_QSTR_MPU6886),       MP_ROM_INT(3) },
-    { MP_ROM_QSTR(MP_QSTR_MPU9250),       MP_ROM_INT(4) },
+    { MP_ROM_QSTR(MP_QSTR_NULL),          MP_ROM_INT(0) },
+    { MP_ROM_QSTR(MP_QSTR_UNKNOWN),       MP_ROM_INT(1) },
+    { MP_ROM_QSTR(MP_QSTR_SH200Q),        MP_ROM_INT(2) },
+    { MP_ROM_QSTR(MP_QSTR_MPU6050),       MP_ROM_INT(3) },
+    { MP_ROM_QSTR(MP_QSTR_MPU6886),       MP_ROM_INT(4) },
+    { MP_ROM_QSTR(MP_QSTR_MPU9250),       MP_ROM_INT(5) },
+    { MP_ROM_QSTR(MP_QSTR_BMI270),        MP_ROM_INT(6) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(m5_imu_types, m5_imu_types_table);
