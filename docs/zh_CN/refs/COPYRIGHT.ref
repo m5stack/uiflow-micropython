@@ -1,2 +1,14 @@
 .. _micropython: https://github.com/micropython/micropython
 .. _umqtt: https://github.com/micropython/micropython-lib
+.. _urequests: https://github.com/micropython/micropython-lib
+.. _ir: https://github.com/peterhinch/micropython_ir
+.. _neopixel: https://github.com/micropython/micropython-lib
+.. _bh1750fvi: https://github.com/gandro/micropython-m5stamp-c3u
+.. _bmp280: https://github.com/gandro/micropython-m5stickc-plus
+.. _checksum: https://github.com/gandro/micropython-m5stamp-c3u
+.. _dht12: https://github.com/gandro/micropython-m5stickc-plus
+.. _pcf8563: https://github.com/gandro/micropython-m5stickc-plus
+.. _qmp6988: https://github.com/gandro/micropython-m5stamp-c3u
+.. _scd40: https://github.com/gandro/micropython-m5stamp-c3u
+.. _sgp30: https://github.com/gandro/micropython-m5stamp-c3u
+.. _sht4x: https://github.com/adafruit/Adafruit_CircuitPython_SHT4x

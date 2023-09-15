@@ -31,14 +31,19 @@ def _get_token():
 
 
 class EzData:
-    def __init__(self, token, key) -> None:
+    def __init__(self, token, key, public=False) -> None:
         self._device_token = token if token else _get_token()
         self._key = key
         self._value = None
         self._data_token = None
         self._date_type = None
+        self._public = public
+        self._data_status = False
+        self._update_time = 0
 
     def set(self, value, is_file=False):
+        if self._public:
+            return
         if is_file:
             return self._set_file(value)
         else:
@@ -60,12 +65,15 @@ class EzData:
             rsp = urequests.post(url, json=payload, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
+                rsp.close()
                 if rsp_data["code"] == 200:
                     self._value = value
                     return self._value
                 return None
             else:
                 return None
+        except:
+            return None
         finally:
             del url, payload
 
@@ -93,29 +101,53 @@ class EzData:
             rsp = urequests.post(url, headers=headers, data=form.content())
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
+                rsp.close()
                 if rsp_data["code"] == 200:
                     self._value = path.split("/")[-1]
                     return self._value
                 return None
             else:
                 return None
+        except:
+            return None
         finally:
             del url
 
+    def get_update_time(self):
+        if self._update_time == 0:
+            self.get()
+        return self._update_time
+
+    def has_new_data(self):
+        last_time = self._update_time
+        self.get()
+        self._data_status = True if self._update_time > last_time else False
+        return self._data_status
+
     def get(self):
-        url = "{0}/{1}/dataByKey/{2}".format(_server, self._device_token, self._key)
+        if self._data_status:
+            return self._value
+        url = None
+        if self._public:
+            url = "{0}/{1}/data".format(_server, self._device_token)
+        else:
+            url = "{0}/{1}/dataByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'getDeviceEzData' url:", url)
         try:
             rsp = urequests.get(url, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
+                rsp.close()
                 if rsp_data["code"] == 200:
                     self._value = rsp_data["data"]["value"]
                     self._date_type = rsp_data["data"]["dataType"]
+                    self._update_time = int(rsp_data["data"]["updateTime"])
                     return self._value
                 return None
             else:
                 return None
+        except:
+            return None
         finally:
             del url
 
@@ -127,26 +159,36 @@ class EzData:
                 f = open(path, "wb")
                 f.write(rsp.content)
                 f.close()
+            except:
+                return None
             finally:
                 pass
 
     def history(self) -> list:
+        url = None
         res = []
-        url = "{0}/{1}/historyByKey/{2}".format(_server, self._device_token, self._key)
+        if self._public:
+            url = "{0}/{1}/history".format(_server, self._device_token)
+        else:
+            url = "{0}/{1}/historyByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'history' url:", url)
         try:
             rsp = urequests.get(url, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
+                rsp.close()
                 if rsp_data["code"] == 200:
                     for i in rsp_data["data"]["rows"]:
                         res.append(i["value"])
-                    rsp.close()
             return res
+        except:
+            return None
         finally:
             del url, res
 
     def delete(self):
+        if self._public:
+            return
         url = "{0}/{1}/delete/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'delete' url:", url)
         try:
@@ -155,8 +197,10 @@ class EzData:
             )
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
-                if rsp_data["code"] == 200:
-                    rsp.close()
+                rsp.close()
+                return True if rsp_data["code"] == 200 else False
+        except:
+            return False
         finally:
             del url
 
@@ -171,6 +215,7 @@ def get_key_list(device_token=None):
         rsp = urequests.get(url, headers={})
         if rsp.status_code == 200:
             rsp_data = json.loads(rsp.text)
+            rsp.close()
             if rsp_data["code"] == 200:
                 for iterm in rsp_data["data"]["rows"]:
                     DEBUG and print("key:", iterm["name"])
@@ -180,5 +225,7 @@ def get_key_list(device_token=None):
             return None
         else:
             return None
+    except:
+        return None
     finally:
         del url
