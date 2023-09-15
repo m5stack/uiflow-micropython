@@ -18,6 +18,14 @@
 #include "uiflow_utility.h"
 #include "boards.h"
 
+#if CONFIG_IDF_TARGET_ESP32
+#include "esp32/spiram.h"
+#elif CONFIG_IDF_TARGET_ESP32S2
+#include "esp32s2/spiram.h"
+#elif CONFIG_IDF_TARGET_ESP32S3
+#include "esp32s3/spiram.h"
+#endif
+
 /** macro definitions */
 #define TAG "M5Things"
 
@@ -305,15 +313,33 @@ static void mqtt_ping_report() {
     }
 
     uint32_t board_id = 0;
+    size_t len = 0;
     nvs_read_u32_helper("M5GFX", "AUTODETECT", &board_id);
-    size_t len = sprintf(
-        mqtt_report_buf,
-        "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
-        esp_get_free_heap_size(),
-        board_id,
-        boards[board_id],
-        running_app_info.version
-        );
+#if CONFIG_IDF_TARGET_ESP32 && CONFIG_ESP32_SPIRAM_SUPPORT
+    if (board_id == 1) {
+        esp_spiram_size_t size = esp_spiram_get_chip_size();
+        if (size != ESP_SPIRAM_SIZE_INVALID) {
+            len = sprintf(
+                mqtt_report_buf,
+                "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
+                esp_get_free_heap_size(),
+                board_id,
+                "fire",
+                running_app_info.version
+                );
+        }
+    } else
+#endif
+    {
+        len = sprintf(
+            mqtt_report_buf,
+            "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
+            esp_get_free_heap_size(),
+            board_id,
+            boards[board_id],
+            running_app_info.version
+            );
+    }
 
     esp_mqtt_client_publish(
         m5things_mqtt_client,
