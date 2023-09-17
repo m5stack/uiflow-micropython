@@ -1,0 +1,27 @@
+diff --git a/src/utility/LTR553_Class.cpp b/src/utility/LTR553_Class.cpp
+index 5c7bd68..4654a9c 100644
+--- a/src/utility/LTR553_Class.cpp
++++ b/src/utility/LTR553_Class.cpp
+@@ -18,15 +18,19 @@ namespace m5
+         // bool ret = writeRegister8(0x80, 0x02);
+ 
+         // active als
+-        bool ret = bitOn(0x80, 0);
++        // bool ret = bitOn(0x80, 0);
++        bool ret = writeRegister8(0x80, 0x01);
+         // active ps
+         ret = ret && writeRegister8(0x81, 0x03);
+         return ret;
+     }
+ 
+     bool LTR553_Class::sleep() {
+-        // active als
+-        return bitOn(0x80, 0);
++        // deactivate als
++        bool ret = writeRegister8(0x80, 0x00);
++        // deactivate ps
++        ret = ret && writeRegister8(0x81, 0x00);
++        return ret;
+     }
+ 
+     bool LTR553_Class::softwareReset() {

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="248.2913360595703" height="42">
+  <g data-id="4y~L0Zqpygc/p)V^,d2N" class="blocklyDraggable" transform="translate(2,2)">
+    <path class="blocklyPathDark" transform="translate(1,1)" fill="#59aa53"
+      d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 209.2913360595703  v 5  H 239.2913360595703  V 5  H 239.2913360595703  V 25  H 239.2913360595703  V 25  V 29  h -209.7913360595703  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;" />
+    <path class="blocklyPath" stroke="none" fill="#6fd568"
+      d=" m 0,0  m 0,8 a 8 8 0 0,1 8,-8  h 7  l 6,4  3,0  6,-4  h 209.2913360595703  v 5  H 239.2913360595703  V 5  H 239.2913360595703  V 25  H 239.2913360595703  V 25  V 29  h -209.7913360595703  l -6,4  -3,0  -6,-4  h -6.5 a 8 8 0 0,1 -8,-8 z&#10;" />
+    <g transform="translate(10,5)"><text class="blocklyText" fill="#fff" style="font: normal 11pt sans-serif;" x="0"
+        y="16">Set</text></g>
+    <g class="blocklyEditableText" transform="translate(37.240509033203125,5)" style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" height="20" width="68.76878356933594" class="blocklyFieldRect blocklyDropdownRect"
+        fill="#fff" fill-opacity=".6" stroke="none" /><text class="blocklyFieldText blocklyDropdownText" fill="#000"
+        style="font: normal 11pt sans-serif;" text-anchor="start" x="5" y="16">label0<tspan
+          style="fill: rgb(111, 213, 104);"> ▾</tspan></text>
+      <image style="display: none;" />
+    </g>
+    <g transform="translate(111.00929260253906,5)"><text class="blocklyText" fill="#fff"
+        style="font: normal 11pt sans-serif;" x="0" y="16">font</text></g>
+    <g class="blocklyEditableText" transform="translate(144.9069366455078,5)" style="cursor: default;">
+      <rect rx="4" ry="4" x="0" y="0" height="20" width="89.3843994140625" class="blocklyFieldRect blocklyDropdownRect"
+        fill="#fff" fill-opacity=".6" stroke="none" /><text class="blocklyFieldText blocklyDropdownText" fill="#000"
+        style="font: normal 11pt sans-serif;" text-anchor="start" x="5" y="16">DejaVu 9<tspan
+          style="fill: rgb(111, 213, 104);"> ▾</tspan></text>
+      <image style="display: none;" />
+    </g>
+  </g>
+</svg>

@@ -92,21 +92,52 @@ function ci_esp32_idf44_setup {
 
 function ci_esp32_build {
     source esp-idf/export.sh
+    make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
-    make ${MAKEOPTS} -C m5stack submodules
-    make ${MAKEOPTS} -C m5stack
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB
+
+    # before lvgl build test, we need make clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB clean
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_8MB LVGL=1
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_SPIRAM_8MB LVGL=1
     
-    # NOT SUPPORTED FOR NOW
     # if [ -d $IDF_PATH/components/esp32c3 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_C3
+    #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3
+    #     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_C3_USB
     # fi
     # if [ -d $IDF_PATH/components/esp32s2 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S2
+    #     make ${MAKEOPTS} -C m5stack BOARD=GENERIC_S2
     # fi
-    # if [ -d $IDF_PATH/components/esp32s3 ]; then
-    #     make ${MAKEOPTS} -C ports/esp32 BOARD=GENERIC_S3
-    # fi
+
+    if [ -d $IDF_PATH/components/esp32s3 ]; then
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB
+
+        # before lvgl build test, we need make clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB clean
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB LVGL=1
+        make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB LVGL=1
+    fi
+}
+
+function ci_esp32_nightly_build {
+    source esp-idf/export.sh
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3_Lite pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3U pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Core2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE

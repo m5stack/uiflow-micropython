@@ -1,0 +1,20 @@
+diff --git a/ports/esp32/mpconfigport.h b/ports/esp32/mpconfigport.h
+index 1877a0143..540207229 100644
+--- a/ports/esp32/mpconfigport.h
++++ b/ports/esp32/mpconfigport.h
+@@ -145,6 +145,7 @@ struct mp_bluetooth_nimble_root_pointers_t;
+ #define MICROPY_PORT_ROOT_POINTER_BLUETOOTH_NIMBLE
+ #endif
+ 
++#ifndef MICROPY_PORT_ROOT_POINTERS
+ #define MICROPY_PORT_ROOT_POINTERS \
+     const char *readline_hist[8]; \
+     mp_obj_t machine_pin_irq_handler[40]; \
+@@ -152,6 +153,7 @@ struct mp_bluetooth_nimble_root_pointers_t;
+     struct _machine_i2s_obj_t *machine_i2s_obj[I2S_NUM_MAX]; \
+     mp_obj_t native_code_pointers; \
+     MICROPY_PORT_ROOT_POINTER_BLUETOOTH_NIMBLE
++#endif
+ 
+ // type definitions for the specific machine
+ 

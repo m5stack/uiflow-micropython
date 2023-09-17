@@ -48,3 +48,6 @@ genrst/
 .DS_Store
 
 .vscode/
+tools/littlefs/prebuilt/
+
+dependencies.lock
