@@ -8,12 +8,14 @@ import sys
 import machine
 import os
 import time
+
 try:
     import M5Things
 
     _HAS_SERVER = True
 except ImportError:
     _HAS_SERVER = False
+
 
 class RunApp(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
@@ -122,12 +124,7 @@ class RunApp(AppBase):
             mtime = "Time: ----/--/-- --:--:--"
         else:
             mtime = "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
-                mtime[0],
-                mtime[1],
-                mtime[2],
-                mtime[3],
-                mtime[4],
-                mtime[5]
+                mtime[0], mtime[1], mtime[2], mtime[3], mtime[4], mtime[5]
             )
 
         with open(path, "r") as f:
@@ -149,5 +146,3 @@ class RunApp(AppBase):
             ver = "Ver: None"
 
         return (mtime, account, ver)
-
-

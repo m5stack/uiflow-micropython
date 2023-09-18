@@ -7,7 +7,7 @@ import os
 import sys
 
 
-class Rectangle():
+class Rectangle:
     def __init__(self, x, y, w, h, color, fill_c, parent=M5.Lcd) -> None:
         self._x = x
         self._y = y
@@ -203,4 +203,3 @@ class ListApp(AppBase):
     async def _btnc_event_handler(self, fw):
         execfile("apps/" + self._files[self._file_pos])
         sys.exit(0)
-

@@ -6,6 +6,7 @@ from widgets.label import Label
 import esp32
 from common.font import MontserratMedium16
 
+
 class WiFiSetting(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
@@ -31,7 +32,7 @@ class WiFiSetting(AppBase):
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._ssid_label.setLongMode(Label.LONG_DOT)
         self._ssid_label.setText(self.ssid)
@@ -45,10 +46,10 @@ class WiFiSetting(AppBase):
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._pwd_label.setLongMode(Label.LONG_DOT)
-        self._pwd_label.setText('*' * 20)
+        self._pwd_label.setText("*" * 20)
 
         self._server_label = Label(
             "server",
@@ -59,7 +60,7 @@ class WiFiSetting(AppBase):
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._server_label.setLongMode(Label.LONG_DOT)
         self._server_label.setText(self.server)

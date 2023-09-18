@@ -2,6 +2,7 @@ from ..app import AppBase
 import M5
 from widgets.image import Image
 from widgets.label import Label
+
 try:
     import uasyncio as asyncio
 except ImportError:
@@ -27,6 +28,7 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
+
 class NetworkStatus:
     INIT = 0
     RSSI_GOOD = 1
@@ -34,24 +36,27 @@ class NetworkStatus:
     RSSI_WORSE = 3
     DISCONNECTED = 4
 
+
 class CloudStatus:
     INIT = 0
     CONNECTED = 1
     DISCONNECTED = 2
+
 
 _NETWORK_STATUS_ICOS = {
     NetworkStatus.INIT: "/system/fire/WiFi/wifi_empty.png",
     NetworkStatus.RSSI_GOOD: "/system/fire/WiFi/wifi_good.png",
     NetworkStatus.RSSI_MID: "/system/fire/WiFi/wifi_mid.png",
     NetworkStatus.RSSI_WORSE: "/system/fire/WiFi/wifi_worse.png",
-    NetworkStatus.DISCONNECTED: "/system/fire/WiFi/wifi_disconnected.png"
+    NetworkStatus.DISCONNECTED: "/system/fire/WiFi/wifi_disconnected.png",
 }
 
 _CLOUD_STATUS_ICOS = {
     CloudStatus.INIT: "/system/fire/Server/server_empty.png",
     CloudStatus.CONNECTED: "/system/fire/Server/Server_Green.png",
-    CloudStatus.DISCONNECTED: "/system/fire/Server/server_error.png"
+    CloudStatus.DISCONNECTED: "/system/fire/Server/server_error.png",
 }
+
 
 class DevApp(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
@@ -71,7 +76,9 @@ class DevApp(AppBase):
         self._cloud_status = self._get_cloud_status()
         self._network_status_src = _NETWORK_STATUS_ICOS[self._network_status]
         self._cloud_status_src = _CLOUD_STATUS_ICOS[self._cloud_status]
-        self._battery_src = self._get_battery_src(M5.Power.getBatteryLevel(), M5.Power.isCharging())
+        self._battery_src = self._get_battery_src(
+            M5.Power.getBatteryLevel(), M5.Power.isCharging()
+        )
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
         self._avatar_src = self._get_avatar()
 
@@ -94,7 +101,7 @@ class DevApp(AppBase):
             fg_color=0x000000,
             bg_color=0xEEEEEF,
             font=MontserratMedium18.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._mac_label.setText(self._mac_text)
 
@@ -107,7 +114,7 @@ class DevApp(AppBase):
             fg_color=0x000000,
             bg_color=0xEEEEEF,
             font=MontserratMedium18.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._account_label.setText(self._account_text)
 
@@ -146,7 +153,7 @@ class DevApp(AppBase):
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
             font=MontserratMedium10.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._battery_label.setText(self._battery_text)
         self._lcd.push(self._origin_x, self._origin_y)
@@ -283,7 +290,7 @@ class DevApp(AppBase):
     def _get_bg_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
-            if infos[0] is 0 :
+            if infos[0] is 0:
                 return "/system/fire/developPrivate.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/developPublic.png"
@@ -293,7 +300,7 @@ class DevApp(AppBase):
     def _get_bar_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
-            if infos[0] is 0 :
+            if infos[0] is 0:
                 return "/system/fire/bar2.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/bar3.png"
@@ -357,5 +364,3 @@ class DevApp(AppBase):
             return "{:d}%".format(battery)
         else:
             return ""
-
-

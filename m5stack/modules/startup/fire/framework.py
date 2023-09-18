@@ -1,4 +1,5 @@
 from .app import AppBase, AppSelector
+
 try:
     import uasyncio as asyncio
 except ImportError:
@@ -6,6 +7,7 @@ except ImportError:
 
 import M5
 import gc
+
 
 class Framework:
     def __init__(self) -> None:

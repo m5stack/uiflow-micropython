@@ -3,6 +3,7 @@ try:
 except ImportError:
     import asyncio
 
+
 def generator(d):
     try:
         len(d)
@@ -15,7 +16,8 @@ def generator(d):
     while d:
         yield from d
 
-class AppSelector():
+
+class AppSelector:
     def __init__(self, apps) -> None:
         self._apps = apps
         self._id = 0
@@ -26,6 +28,7 @@ class AppSelector():
 
     def current(self):
         return self._apps[self._id]
+
 
 class AppBase:
     def __init__(self) -> None:
@@ -76,4 +79,3 @@ class AppBase:
 
     def uninstall(self):
         self.on_uninstall()
-
