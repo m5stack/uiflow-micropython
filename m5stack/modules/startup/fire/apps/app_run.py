@@ -8,6 +8,12 @@ import sys
 import machine
 import os
 import time
+from ..res import (
+    APPRUN_UNSELECTED_IMG,
+    APPRUN_SELECTED_IMG,
+    RUN_IMG,
+    BAR4_IMG,
+)
 
 try:
     import M5Things
@@ -22,21 +28,16 @@ class RunApp(AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/fire/appRun_unselected.png", 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        # M5.Lcd.clear()
-        # M5.Lcd.drawImage("/system/fire/setting_unselected.png", 5 + 62 * 0, 0)
-        # M5.Lcd.drawImage("/system/fire/develop_unselected.png", 5 + 62 * 1, 0)
-        M5.Lcd.drawImage("/system/fire/appRun_selected.png", 5 + 62 * 2, 0)
-        # M5.Lcd.drawImage("/system/fire/appList_unselected.png", 5 + 62 * 3, 0)
-        # M5.Lcd.drawImage("/system/fire/ezdata_unselected.png", 5 + 62 * 4, 0)
+        M5.Lcd.drawImage(APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
 
-        M5.Lcd.drawImage("/system/fire/run.png", 4, 56 + 4)
-        M5.Lcd.drawImage("/system/fire/bar4.png", 0, 220)
+        M5.Lcd.drawImage(RUN_IMG, 4, 56 + 4)
+        M5.Lcd.drawImage(BAR4_IMG, 0, 220)
 
         self._name_label = Label(
             "name",
@@ -89,20 +90,17 @@ class RunApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/fire/appRun_unselected.png", 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
         del self._name_label, self._mtime_label, self._account_label, self._ver_label
 
     async def _btna_event_handler(self, fw):
-        # print("_btna_event_handler")
         pass
 
     async def _btnb_event_handler(self, fw):
-        # print("_btnb_event_handler")
         execfile("main.py")
         sys.exit(0)
 
     async def _btnc_event_handler(self, fw):
-        # print("_btnc_event_handler")
         nvs = esp32.NVS("uiflow")
         nvs.set_u8("boot_option", 2)
         nvs.commit()

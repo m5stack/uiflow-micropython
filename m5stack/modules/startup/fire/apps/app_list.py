@@ -5,6 +5,14 @@ from widgets.label import Label
 import M5
 import os
 import sys
+from ..res import (
+    APPLIST_UNSELECTED_IMG,
+    APPLIST_SELECTED_IMG,
+    APPLIST_IMG,
+    BAR5_IMG,
+    APPLIST_LEFT_IMG,
+    APPLIST_RIGHT_IMG,
+)
 
 
 class Rectangle:
@@ -60,7 +68,7 @@ class ListApp(AppBase):
         pass
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/fire/appList_unselected.png", 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -69,14 +77,14 @@ class ListApp(AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/fire/appList_selected.png", 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(APPLIST_SELECTED_IMG, 5 + 62 * 3, 0)
 
         self._bg_img = Image(use_sprite=False)
         self._bg_img.set_pos(4, 56 + 4)
         self._bg_img.set_size(312, 156)
-        self._bg_img.set_src("/system/fire/applist.png")
+        self._bg_img.set_src(APPLIST_IMG)
 
-        M5.Lcd.drawImage("/system/fire/bar5.png", 0, 220)
+        M5.Lcd.drawImage(BAR5_IMG, 0, 220)
 
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = 4
@@ -90,7 +98,7 @@ class ListApp(AppBase):
         self._left_img = Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
-        self._left_img.set_src("/system/fire/applistLeft.png")
+        self._left_img.set_src(APPLIST_LEFT_IMG)
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (56 + 4) + 2
@@ -103,7 +111,7 @@ class ListApp(AppBase):
         self._right_img = Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
-        self._right_img.set_src("/system/fire/applistRight.png")
+        self._right_img.set_src(APPLIST_RIGHT_IMG)
 
         self._label0 = Label(
             "",
@@ -158,7 +166,7 @@ class ListApp(AppBase):
             file and label and label.setText(file)
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/fire/appList_unselected.png", 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
         del self._bg_img, self._left_img, self._right_img
         del self._label0, self._label1, self._label2, self._label3, self._labels
         del self._files

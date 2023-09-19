@@ -5,6 +5,20 @@ from widgets.image import Image
 from widgets.label import Label
 import esp32
 from common.font import MontserratMedium16
+from ..res import (
+    SETTING_WIFI_IMG,
+    SCREEN25_IMG,
+    SCREEN50_IMG,
+    SCREEN75_IMG,
+    SCREEN100_IMG,
+    SETTING_SELECT_IMG,
+    SETTING_UNSELECT_IMG,
+    BOOT_YES_IMG,
+    BOOT_NO_IMG,
+    SETTING_UNSELECTED_IMG,
+    SETTING_SELECTED_IMG,
+    BAR1_IMG,
+)
 
 
 class WiFiSetting(AppBase):
@@ -21,7 +35,7 @@ class WiFiSetting(AppBase):
         self._bg_img = Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(origin_x, origin_y)
         self._bg_img.set_size(312, 108)
-        self._bg_img.set_src("/system/fire/SettingWifi.png")
+        self._bg_img.set_src(SETTING_WIFI_IMG)
 
         self._ssid_label = Label(
             "ssid",
@@ -110,10 +124,10 @@ class WiFiSetting(AppBase):
 
 
 _brightness_options = {
-    64: "/system/fire/screen25.png",
-    128: "/system/fire/screen50.png",
-    192: "/system/fire/screen75.png",
-    255: "/system/fire/screen100.png",
+    64: SCREEN25_IMG,
+    128: SCREEN50_IMG,
+    192: SCREEN75_IMG,
+    255: SCREEN100_IMG,
 }
 
 
@@ -143,7 +157,7 @@ class BrightnessSetting(AppBase):
         self._select_img = Image(use_sprite=False, parent=self._lcd)
         self._select_img.set_pos(self._origin_x + 0, self._origin_y + 6)
         self._select_img.set_size(72, 32)
-        self._select_img.set_src("/system/fire/settingSelect.png")
+        self._select_img.set_src(SETTING_SELECT_IMG)
 
         self._brightness_img = Image(use_sprite=False, parent=self._lcd)
         self._brightness_img.set_pos(self._origin_x + 6, self._origin_y + 0)
@@ -152,12 +166,12 @@ class BrightnessSetting(AppBase):
 
     def on_ready(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src("/system/fire/settingSelect.png")
+        self._select_img.set_src(SETTING_SELECT_IMG)
         self._brightness_img._draw(False)
 
     def on_hide(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src("/system/fire/settingUnselect.png")
+        self._select_img.set_src(SETTING_UNSELECT_IMG)
         self._brightness_img._draw(False)
 
     def on_exit(self):
@@ -185,8 +199,8 @@ class BrightnessSetting(AppBase):
 
 
 _boot_options = {
-    1: "/system/fire/boot_Yes.png",
-    2: "/system/fire/boot_No.png",
+    1: BOOT_YES_IMG,
+    2: BOOT_NO_IMG,
 }
 
 
@@ -216,7 +230,7 @@ class BootScreenSetting(AppBase):
         self._select_img = Image(use_sprite=False, parent=self._lcd)
         self._select_img.set_pos(self._origin_x + 0, self._origin_y + 6)
         self._select_img.set_size(72, 32)
-        self._select_img.set_src("/system/fire/settingSelect.png")
+        self._select_img.set_src(SETTING_SELECT_IMG)
 
         self._boot_option_img = Image(use_sprite=False, parent=self._lcd)
         self._boot_option_img.set_pos(self._origin_x + 6, self._origin_y + 0)
@@ -225,12 +239,12 @@ class BootScreenSetting(AppBase):
 
     def on_ready(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src("/system/fire/settingSelect.png")
+        self._select_img.set_src(SETTING_SELECT_IMG)
         self._boot_option_img._draw(True)
 
     def on_hide(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src("/system/fire/settingUnselect.png")
+        self._select_img.set_src(SETTING_UNSELECT_IMG)
         self._boot_option_img._draw(True)
 
     def on_exit(self):
@@ -270,7 +284,7 @@ class SettingsApp(AppBase):
         self._menu_selector = AppSelector(self._menus)
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/fire/setting_unselected.png", 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
 
     def on_launch(self):
         pass
@@ -279,12 +293,12 @@ class SettingsApp(AppBase):
         self._origin_x = 0
         self._origin_y = 56
 
-        M5.Lcd.drawImage("/system/fire/setting_selected.png", 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(SETTING_SELECTED_IMG, 5 + 62 * 0, 0)
 
         self._lcd.clear()
         self._lcd.fillRect(4 + 72 + 8 + 72 + 8, 4 + 108 + 4, 72, 44, 0x404040)
         self._lcd.fillRect(4 + 72 + 8 + 72 + 8 + 72 + 8, 4 + 108 + 4, 72, 44, 0x404040)
-        self._lcd.drawImage("/system/fire/bar1.png", 0, 220 - 56)
+        self._lcd.drawImage(BAR1_IMG, 0, 220 - 56)
 
     def on_ready(self):
         pass
@@ -293,7 +307,7 @@ class SettingsApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/fire/setting_unselected.png", 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
 
     async def _btna_event_handler(self, fw):
         pass
