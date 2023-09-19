@@ -15,6 +15,18 @@ Third Party
 
 * `micropython`_ Copyright (c) 2013-2023 Damien P. George and licensed under MIT License.
 * `umqtt`_ Copyright (c) 2013-2014 micropython-lib contributors and licensed under MIT License.
+* `urequests`_ Copyright (c) 2013-2014 micropython-lib contributors and licensed under MIT License.
+* `ir`_ Copyright (c) 2020 Peter Hinch and licensed under MIT License.
+* `neopixel`_ Copyright (c) 2013-2014 micropython-lib contributors and licensed under MIT License.
+* `bh1750fvi`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
+* `bmp280`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT License.
+* `checksum`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
+* `dht12`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT License.
+* `pcf8563`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT License.
+* `qmp6988`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
+* `scd40`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
+* `sgp30`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
+* `sht4x`_ Copyright (c) 2021 ladyada for Adafruit and licensed under MIT License.
 
 Documentation
 ==============

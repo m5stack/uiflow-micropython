@@ -22,6 +22,7 @@ class Label:
         fg_color: int = 0xFFFFFF,
         bg_color: int = 0x000000,
         font=M5.Lcd.FONTS.DejaVu12,
+        parent=M5.Lcd,
     ) -> None:
         self._text = text
         self._texts = []
@@ -34,20 +35,21 @@ class Label:
         self._fg_color = fg_color
         self._bg_color = bg_color
         self._font = font
+        self._parent = parent
         self._long_fn = self._long_wrap
         self._load_font()
-        self._line_spacing = int(M5.Lcd.fontHeight() * 1.2)
+        self._line_spacing = int(self._parent.fontHeight() * 1.2)
 
     def _erase_helper(self):
         for text in self._texts:
-            w = M5.Lcd.textWidth(text)
-            h = M5.Lcd.fontHeight()
+            w = self._parent.textWidth(text)
+            h = self._parent.fontHeight()
             if self._font_align == self.LEFT_ALIGNED:
-                M5.Lcd.fillRect(self._x, self._y, w, h, self._bg_color)
+                self._parent.fillRect(self._x, self._y, w, h, self._bg_color)
             elif self._font_align == self.CENTER_ALIGNED:
-                M5.Lcd.fillRect(self._x - int(w / 2), self._y, w, h, self._bg_color)
+                self._parent.fillRect(self._x - int(w / 2), self._y, w, h, self._bg_color)
             elif self._font_align == self.RIGHT_ALIGNED:
-                M5.Lcd.fillRect(self._x - w, self._y, w, h, self._bg_color)
+                self._parent.fillRect(self._x - w, self._y, w, h, self._bg_color)
 
     def setText(self, text=None) -> None:
         self._load_font()
@@ -56,21 +58,21 @@ class Label:
         if text is not None:
             self._text = text
         self._long_fn()
-        M5.Lcd.setTextColor(self._fg_color, self._bg_color)
+        self._parent.setTextColor(self._fg_color, self._bg_color)
         yy = self._y
         for text in self._texts:
             if self._font_align == self.LEFT_ALIGNED:
-                M5.Lcd.drawString(text, self._x, yy)
+                self._parent.drawString(text, self._x, yy)
             elif self._font_align == self.CENTER_ALIGNED:
-                M5.Lcd.drawCenterString(text, self._x, yy)
+                self._parent.drawCenterString(text, self._x, yy)
             elif self._font_align == self.RIGHT_ALIGNED:
-                M5.Lcd.drawRightString(text, self._x, yy)
+                self._parent.drawRightString(text, self._x, yy)
             else:
                 print("Warning: unknown alignment")
             yy += self._line_spacing
 
     def _long_dot(self):
-        w = M5.Lcd.textWidth(self._text)
+        w = self._parent.textWidth(self._text)
         start = 1
         end = 0
         if w < self._max_w:
@@ -78,16 +80,16 @@ class Label:
             return
 
         while True:
-            ww = M5.Lcd.textWidth(self._text[0:end])
+            ww = self._parent.textWidth(self._text[0:end])
             if ww > int(self._max_w / 2):
                 end -= 1
                 break
             end += 1
 
         start = end
-        w = M5.Lcd.textWidth("...")
+        w = self._parent.textWidth("...")
         while True:
-            ww = M5.Lcd.textWidth(self._text[start:-1])
+            ww = self._parent.textWidth(self._text[start:-1])
             if ww < (int(self._max_w / 2) - w):
                 start += 1
                 break
@@ -96,14 +98,14 @@ class Label:
         self._texts.append(self._text[0:end] + "..." + self._text[start:])
 
     def _long_wrap(self):
-        if M5.Lcd.textWidth(self._text) < self._max_w:
+        if self._parent.textWidth(self._text) < self._max_w:
             self._texts.append(self._text)
             return
 
         start = 0
         end = 0
         while end < len(self._text):
-            ww = M5.Lcd.textWidth(self._text[start:end])
+            ww = self._parent.textWidth(self._text[start:end])
             if ww > self._max_w:
                 self._texts.append(self._text[start:end])
                 start = end
@@ -113,7 +115,7 @@ class Label:
         if start is not end:
             self._texts.append(self._text[start:end])
 
-        text_h = M5.Lcd.fontHeight()
+        text_h = self._parent.fontHeight()
         for _ in self._texts:
             if sum(text_h for _ in self._texts) > self._max_h:
                 self._texts.pop()
@@ -124,10 +126,10 @@ class Label:
 
     def _load_font(self):
         if type(self._font) == bytes:
-            M5.Lcd.unloadFont()
-            M5.Lcd.loadFont(self._font)
+            self._parent.unloadFont()
+            self._parent.loadFont(self._font)
         else:
-            M5.Lcd.setFont(self._font)
+            self._parent.setFont(self._font)
 
     def setLongMode(self, mode):
         if mode is self.LONG_DOT:
