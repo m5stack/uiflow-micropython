@@ -34,6 +34,14 @@ class Startup:
         return self.wlan.status("rssi")
 
 
+def _is_psram():
+    sum = 0
+    infos = esp32.idf_heap_info(esp32.HEAP_DATA)
+    for info in infos:
+        sum += info[0]
+    return True if sum > 520 * 1024 else False
+
+
 def startup(boot_opt, timeout: int = 60) -> None:
     M5.begin()
     # Read saved Wi-Fi information from NVS
@@ -114,10 +122,16 @@ def startup(boot_opt, timeout: int = 60) -> None:
             stickcplus2 = StickCPlus_Startup()
             stickcplus2.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5Stack:
-            from .fire import Fire_Startup
+            if _is_psram():
+                from .fire import Fire_Startup
 
-            fire = Fire_Startup()
-            fire.startup(ssid, pswd, timeout)
+                fire = Fire_Startup()
+                fire.startup(ssid, pswd, timeout)
+            else:
+                from .basic import Basic_Startup
+
+                basic = Basic_Startup()
+                basic.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:

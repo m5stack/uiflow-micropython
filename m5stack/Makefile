@@ -10,22 +10,34 @@
 BOARD ?= M5STACK_8MB
 
 boards := \
-	M5STACK_AtomS3:atoms3 \
-	M5STACK_AtomS3_Lite:atoms3-lite \
-	M5STACK_StampS3:stamps3 \
-	M5STACK_CoreS3:cores3 \
-	M5STACK_AtomS3U:atoms3u \
-	M5STACK_Core2:core2 \
+	M5STACK_AtomS3:atoms3            \
+	M5STACK_AtomS3_Lite:atoms3-lite  \
+	M5STACK_StampS3:stamps3          \
+	M5STACK_CoreS3:cores3            \
+	M5STACK_AtomS3U:atoms3u          \
+	M5STACK_Core2:core2              \
 	M5STACK_StickC_PLUS2:stickcplus2 \
-	M5STACK_StickC_PLUS:stickcplus \
-	M5STACK_Fire:fire
+	M5STACK_StickC_PLUS:stickcplus   \
+	M5STACK_Fire:fire                \
+	M5STACK_Basic:basic
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
 endef
 
 # Board type list
-BOARD_TYPE_DEF := none atoms3 atoms3-lite stamps3 cores3 atoms3u core2 stickcplus2 stickcplus fire
+BOARD_TYPE_DEF := \
+	none        \
+	atoms3      \
+	atoms3-lite \
+	stamps3     \
+	cores3      \
+	atoms3u     \
+	core2       \
+	stickcplus2 \
+	stickcplus  \
+	fire        \
+	basic
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
