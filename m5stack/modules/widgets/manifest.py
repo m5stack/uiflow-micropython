@@ -1,0 +1,12 @@
+package(
+    "widgets",
+    (
+        "__init__.py",
+        "base.py",
+        "button.py",
+        "image.py",
+        "label.py",
+    ),
+    base_path="..",
+    opt=0,
+)

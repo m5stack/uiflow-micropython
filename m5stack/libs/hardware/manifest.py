@@ -1,0 +1,12 @@
+package(
+    "hardware",
+    (
+        "__init__.py",
+        "button.py",
+        "ir.py",
+        "rgb.py",
+        "sdcard.py",
+    ),
+    base_path="..",
+    opt=0,
+)
