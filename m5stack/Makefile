@@ -21,7 +21,7 @@ boards := \
 	M5STACK_Fire:fire
 
 define find_board
-$(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),$(error Mapping not found for $(1)))
+$(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
 endef
 
 # Board type list
