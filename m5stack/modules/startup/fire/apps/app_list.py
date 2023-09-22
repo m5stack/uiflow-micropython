@@ -26,9 +26,28 @@ class Rectangle:
         self._parent = parent
         self.set_pos(self._x, self._y)
 
+    def set_x(self, x):
+        self._x = x
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
+    def get_y(self):
+        return self._y
+
+    def set_y(self, y):
+        self._y = y
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
     def set_pos(self, x, y):
         self._x = x
         self._y = y
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
+    def set_color(self, color, fill_c):
+        self._color = color
+        self._fill_c = fill_c
         self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
         self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
 
