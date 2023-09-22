@@ -132,7 +132,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
                 basic = Basic_Startup()
                 basic.startup(ssid, pswd, timeout)
-        elif board_id == M5.BOARD.M5Stack:
+        elif board_id == M5.BOARD.M5Capsule:
             from .capsule import Capsule_Startup
 
             capsule = Capsule_Startup()
