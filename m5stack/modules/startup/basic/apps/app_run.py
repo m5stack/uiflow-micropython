@@ -97,6 +97,8 @@ class RunApp(AppBase):
     def on_exit(self):
         M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
         del self._name_label, self._mtime_label, self._account_label, self._ver_label
+        del self._origin_x, self._origin_y
+        del self._mtime_text, self._account_text, self._ver_text
 
     async def _btna_event_handler(self, fw):
         # print("_btna_event_handler")
@@ -133,14 +135,14 @@ class RunApp(AppBase):
                 mtime[0], mtime[1], mtime[2], mtime[3], mtime[4], mtime[5]
             )
 
-        with open(path, "r") as f:
-            for line in f:
-                if line.find("Account") != -1:
-                    account = line.split(":")[1].strip()
-                if line.find("Ver") != -1:
-                    ver = line.split(":")[1].strip()
-                if account != None and ver != None:
-                    break
+        # with open(path, "r") as f:
+        #     for line in f:
+        #         if line.find("Account") != -1:
+        #             account = line.split(":")[1].strip()
+        #         if line.find("Ver") != -1:
+        #             ver = line.split(":")[1].strip()
+        #         if account != None and ver != None:
+        #             break
 
         if account == None and _HAS_SERVER and M5Things.status() is 2:
             infos = M5Things.info()

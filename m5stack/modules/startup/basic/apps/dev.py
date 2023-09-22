@@ -5,8 +5,6 @@ from widgets.image import Image
 from widgets.label import Label
 import uasyncio as asyncio
 import urequests as requests
-
-
 import os
 import binascii
 import machine
@@ -159,8 +157,9 @@ class DevApp(AppBase):
         self._battery_label = Label(
             "0%",
             320 - 56 + 22,
-            240 - 56 + 4,
-            w=312,
+            220 + 6,
+            w=22,
+            h=10,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
@@ -240,6 +239,18 @@ class DevApp(AppBase):
         del self._bg_img, self._mac_label, self._account_label, self._avatar_img
         del self._bar_img, self._network_img, self._cloud_img, self._battery_img
         del self._battery_label
+        del self._origin_x, self._origin_y
+        del self._mac_text
+        del self._account_text
+        del self._bg_src
+        del self._status_bar_src
+        del self._network_status
+        del self._cloud_status
+        del self._network_status_src
+        del self._cloud_status_src
+        del self._battery_src
+        del self._battery_text
+        del self._avatar_src
 
     async def _btna_event_handler(self, fw):
         # print("_btna_event_handler")

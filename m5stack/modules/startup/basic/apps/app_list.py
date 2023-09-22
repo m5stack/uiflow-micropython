@@ -26,9 +26,28 @@ class Rectangle:
         self._parent = parent
         self.set_pos(self._x, self._y)
 
+    def set_x(self, x):
+        self._x = x
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
+    def get_y(self):
+        return self._y
+
+    def set_y(self, y):
+        self._y = y
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
     def set_pos(self, x, y):
         self._x = x
         self._y = y
+        self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
+        self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
+
+    def set_color(self, color, fill_c):
+        self._color = color
+        self._fill_c = fill_c
         self._parent.fillRect(self._x, self._y, self._w, self._h, self._fill_c)
         self._parent.drawRect(self._x, self._y, self._w, self._h, self._color)
 
@@ -170,7 +189,8 @@ class ListApp(AppBase):
         M5.Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
         del self._bg_img, self._left_img, self._right_img
         del self._label0, self._label1, self._label2, self._label3, self._labels
-        del self._files
+        del self._rect0
+        del self._files, self._max_file_num, self._cursor_pos, self._file_pos
 
     async def _btna_event_handler(self, fw):
         pass

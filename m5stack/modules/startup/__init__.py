@@ -18,7 +18,7 @@ class Startup:
         self.wlan.active(True)
 
     def connect_network(self, ssid: str, pswd: str) -> bool:
-        if (len(ssid) > 0) or (len(pswd) > 0):
+        if len(ssid) > 0:
             self.wlan.connect(ssid, pswd)
             return True
         else:
@@ -132,6 +132,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
                 basic = Basic_Startup()
                 basic.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5Stack:
+            from .capsule import Capsule_Startup
+
+            capsule = Capsule_Startup()
+            capsule.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:

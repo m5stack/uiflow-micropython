@@ -19,7 +19,8 @@ boards := \
 	M5STACK_StickC_PLUS2:stickcplus2 \
 	M5STACK_StickC_PLUS:stickcplus   \
 	M5STACK_Fire:fire                \
-	M5STACK_Basic:basic
+	M5STACK_Basic:basic              \
+	M5STACK_Basic_4MB:basic
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -47,6 +48,13 @@ BOARD_TYPE ?= $(call find_board,$(BOARD))
 ifneq ($(filter $(BOARD_TYPE),$(BOARD_TYPE_DEF)),)
 else
     $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
+endif
+
+TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB
+ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
+TINY_FLAG ?= 1
+else
+TINY_FLAG ?= 0
 endif
 
 # esp32c3's bootloader is different with esp32
@@ -157,7 +165,7 @@ nvs:
 	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000
 
 # Build the system and user filesystem firmware.
-ifeq ($(BOARD_TYPE),stickcplus)
+ifeq ($(TINY_FLAG),1)
 fs: build
 	@if [ ! -d $(BUILD)/base-files ]; then \
 		mkdir -p $(BUILD)/base-files; \

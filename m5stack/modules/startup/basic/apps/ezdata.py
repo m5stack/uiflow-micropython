@@ -26,6 +26,7 @@ class EzDataApp(AppBase):
 
     def on_exit(self):
         M5.Lcd.drawImage(EZDATA_UNSELECTED_IMG, 5 + 62 * 4, 0)
+        del self._origin_x, self._origin_y
 
     async def _btna_event_handler(self, fw):
         pass

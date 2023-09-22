@@ -29,6 +29,10 @@ class AppSelector:
     def current(self):
         return self._apps[self._id]
 
+    def prev(self):
+        self._id = (self._id - 1) % len(self._apps)
+        return self._apps[self._id]
+
 
 class AppBase:
     def __init__(self) -> None:
