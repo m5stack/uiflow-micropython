@@ -2,7 +2,7 @@
 
 #if MICROPY_PY_LVGL
 #include "lvgl/lvgl.h"
-#include "lvgl/src/hal/lv_hal_disp.h"
+#include "lvgl/src/hal/lv_hal.h"
 #include "./../../components/lv_bindings/driver/include/common.h"
 #endif
 

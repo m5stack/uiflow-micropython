@@ -97,7 +97,7 @@ define pack_fw
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 endef
 
-.PHONY: all build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
+.PHONY: all fix_lv_bindings build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
 
 all: nvs fs pack
 	@echo ""
@@ -105,8 +105,14 @@ all: nvs fs pack
 
 $(BUILD)/bootloader/bootloader.bin $(BUILD)/partition_table/partition-table.bin $(BUILD)/micropython.bin: FORCE
 
+# Change lv_bindings
+# fix lv_bindings path bug as lv_micropython sub project 
+fix_lv_bindings:
+	sed -i 's|lib/lv_bindings/include/|include/|g' components/lv_bindings/lv_conf.h
+	sed -i 's|MP_OBJ_TO_PTR(self_in);|(mp_ptr_t*)(MP_OBJ_TO_PTR(self_in));|g' components/lv_bindings/driver/include/common.h
+
 # Build the MicroPython firmware.
-build: nvs
+build: nvs fix_lv_bindings
 	idf.py $(IDFPY_FLAGS) build
 
 # Deploy the MicroPython.
