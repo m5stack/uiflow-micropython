@@ -56,6 +56,8 @@ if is_4mb():
         "SETTING_SELECT_IMG": "res/basic/settingSelect.jpg",
         "SETTING_UNSELECT_IMG": "res/basic/settingUnselect.jpg",
         "SETTING_WIFI_IMG": "res/basic/SettingWifi.jpg",
+        "AVATAR_IMG": "res/img/avatar.jpg",
+        "USER_AVATAR_PATH": "res/img/",
     }
 else:
     _attrs = {
@@ -108,6 +110,8 @@ else:
         "SETTING_SELECT_IMG": "/system/basic/settingSelect.jpg",
         "SETTING_UNSELECT_IMG": "/system/basic/settingUnselect.jpg",
         "SETTING_WIFI_IMG": "/system/basic/SettingWifi.jpg",
+        "AVATAR_IMG": "/system/common/img/avatar.jpg",
+        "USER_AVATAR_PATH": "/system/common/img/",
     }
 
 

@@ -1,7 +1,4 @@
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import uasyncio as asyncio
 
 
 def generator(d):

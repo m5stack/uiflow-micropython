@@ -1,7 +1,5 @@
 from ..app import AppBase
-import M5
-from M5 import Widgets
-from widgets.label import Label
+from M5 import Lcd, Widgets
 import esp32
 import sys
 import machine
@@ -28,65 +26,35 @@ class RunApp(AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
+        Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        M5.Lcd.drawImage(APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
-
         self._origin_x = 0
         self._origin_y = 56
+        Lcd.drawImage(APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
+        Lcd.fillRect(self._origin_x, self._origin_y, 320, 184, 0x000000)
+        Lcd.drawImage(RUN_IMG, self._origin_x + 4, self._origin_y + 4)
+        Lcd.drawImage(BAR4_IMG, self._origin_x, 220)
 
-        M5.Lcd.fillRect(self._origin_x, self._origin_y, 320, 184, 0x000000)
+        # file name
+        Lcd.setFont(Widgets.FONTS.DejaVu18)
+        Lcd.setTextColor(0x000000, 0xEEEEEF)
+        Lcd.drawString("main.py", 4 + 10, self._origin_y + 4 + 4)
 
-        M5.Lcd.drawImage(RUN_IMG, self._origin_x + 4, self._origin_y + 4)
-        M5.Lcd.drawImage(BAR4_IMG, self._origin_x, 220)
+        Lcd.setFont(Widgets.FONTS.DejaVu12)
+        Lcd.setTextColor(0x000000, 0xDCDDDD)
+        Lcd.drawString(self._mtime_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6)
 
-        self._name_label = Label(
-            "name",
-            4 + 10,
-            self._origin_y + 4 + 4,
-            w=312,
-            fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font=Widgets.FONTS.DejaVu18,
-        )
-        self._name_label.setText("main.py")
+        Lcd.setFont(Widgets.FONTS.DejaVu12)
+        Lcd.setTextColor(0x000000, 0xDCDDDD)
+        Lcd.drawString(self._account_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18)
 
-        self._mtime_label = Label(
-            "Time: 2023/5/14 12:23:43",
-            4 + 10 + 8,
-            self._origin_y + 4 + 4 + 20 + 6,
-            w=312,
-            fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font=Widgets.FONTS.DejaVu12,
-        )
-        self._mtime_label.setText(self._mtime_text)
-
-        self._account_label = Label(
-            "Account: XXABC",
-            4 + 10 + 8,
-            self._origin_y + 4 + 4 + 20 + 6 + 18,
-            w=312,
-            fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font=Widgets.FONTS.DejaVu12,
-        )
-        self._account_label.setText(self._account_text)
-
-        self._ver_label = Label(
-            "Ver: UIFLOW2.0 a18",
-            4 + 10 + 8,
-            self._origin_y + 4 + 4 + 20 + 6 + 18 + 18,
-            w=312,
-            fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font=Widgets.FONTS.DejaVu12,
-        )
-        self._ver_label.setText(self._ver_text)
+        Lcd.setFont(Widgets.FONTS.DejaVu12)
+        Lcd.setTextColor(0x000000, 0xDCDDDD)
+        Lcd.drawString(self._ver_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18 + 18)
 
     def on_ready(self):
         pass
@@ -95,14 +63,13 @@ class RunApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
-        del self._name_label, self._mtime_label, self._account_label, self._ver_label
+        Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
         del self._origin_x, self._origin_y
         del self._mtime_text, self._account_text, self._ver_text
 
-    async def _btna_event_handler(self, fw):
-        # print("_btna_event_handler")
-        pass
+    # async def _btna_event_handler(self, fw):
+    #     # print("_btna_event_handler")
+    #     pass
 
     async def _btnb_event_handler(self, fw):
         # print("_btnb_event_handler")

@@ -193,9 +193,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh_bg:
-                print(refresh_bg)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.setText(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)
@@ -207,7 +204,7 @@ class DevApp(AppBase):
                     os.stat(self._avatar_src)
                     self._avatar_img.set_src(self._avatar_src)
                 except OSError:
-                    asyncio.create_task(self._dl_avatar(self._avatar_src))
+                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
             elif refresh_bg:
                 self._avatar_img._draw(False)
 
@@ -250,6 +247,11 @@ class DevApp(AppBase):
             refresh_bar = False
             await asyncio.sleep_ms(1500)
 
+    def on_hide(self):
+        if hasattr(self, "_dl_task"):
+            self._dl_task.cancel()
+        self._task.cancel()
+
     def on_exit(self):
         M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
         del self._bg_img, self._mac_label, self._account_label, self._avatar_img
@@ -277,8 +279,11 @@ class DevApp(AppBase):
                     f.write(rsp.content)
                     f.close()
                     rsp.close()
+                    self._avatar_img.set_src(dst)
                 except:
                     self._avatar_img.set_src("/system/common/img/avatar.jpg")
+                finally:
+                    self._lcd.push(self._origin_x, self._origin_y)
         else:
             self._avatar_img.set_src("/system/common/img/avatar.jpg")
 
@@ -301,7 +306,7 @@ class DevApp(AppBase):
             if len(infos[4]) is 0:
                 return "/system/common/img/avatar.jpg"
             else:
-                return "/system/common/" + str(infos[4]).split("/")[-1]
+                return "/system/common/img/" + str(infos[4]).split("/")[-1]
         else:
             return "/system/common/img/avatar.jpg"
 

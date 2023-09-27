@@ -119,7 +119,7 @@ class DevApp(AppBase):
                     os.stat(self._avatar_src)
                     self._avatar_img.set_src(self._avatar_src)
                 except OSError:
-                    asyncio.create_task(self._dl_avatar(self._avatar_src))
+                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
             elif refresh:
                 self._avatar_img._draw(False)
 
@@ -128,6 +128,11 @@ class DevApp(AppBase):
 
             refresh = False
             await asyncio.sleep_ms(1500)
+
+    def on_hide(self):
+        if hasattr(self, "_dl_task"):
+            self._dl_task.cancel()
+        self._task.cancel()
 
     def on_exit(self):
         M5.Lcd.drawImage("/system/cores3/Selection/develop_unselected.png", 5 + 62, 20 + 4)
@@ -157,8 +162,11 @@ class DevApp(AppBase):
                     f.write(rsp.content)
                     f.close()
                     rsp.close()
+                    self._avatar_img.set_src(dst)
                 except:
                     self._avatar_img.set_src("/system/common/img/avatar.jpg")
+                finally:
+                    self._lcd.push(self._origin_x, self._origin_y)
         else:
             self._avatar_img.set_src("/system/common/img/avatar.jpg")
 
@@ -181,7 +189,7 @@ class DevApp(AppBase):
             if len(infos[4]) is 0:
                 return "/system/common/img/avatar.jpg"
             else:
-                return "/system/common/" + str(infos[4]).split("/")[-1]
+                return "/system/common/img/" + str(infos[4]).split("/")[-1]
         else:
             return "/system/common/img/avatar.jpg"
 

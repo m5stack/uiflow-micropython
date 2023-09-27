@@ -104,9 +104,9 @@ class Framework:
             if hasattr(app, "_kb_event_handler"):
                 await app._kb_event_handler(event, self)
 
-    async def gc_task(self):
-        while True:
-            gc.collect()
-            print("heap RAM free:", gc.mem_free())
-            print("heap RAM alloc:", gc.mem_alloc())
-            await asyncio.sleep_ms(5000)
+    # async def gc_task(self):
+    #     while True:
+    #         gc.collect()
+    #         print("heap RAM free:", gc.mem_free())
+    #         print("heap RAM alloc:", gc.mem_alloc())
+    #         await asyncio.sleep_ms(5000)

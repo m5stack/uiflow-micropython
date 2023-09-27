@@ -31,6 +31,8 @@ from ..res import (
     BATTERY_GREEN_IMG,
     BATTERY_BLACK_CHARGE_IMG,
     BATTERY_BLACK_IMG,
+    AVATAR_IMG,
+    USER_AVATAR_PATH,
 )
 
 try:
@@ -85,8 +87,6 @@ class DevApp(AppBase):
         self._status_bar_src = self._get_bar_src()
         self._network_status = self._get_network_status()
         self._cloud_status = self._get_cloud_status()
-        self._network_status_src = _NETWORK_STATUS_ICOS[self._network_status]
-        self._cloud_status_src = _CLOUD_STATUS_ICOS[self._cloud_status]
         self._battery_src = self._get_battery_src(
             M5.Power.getBatteryLevel(), M5.Power.isCharging()
         )
@@ -132,7 +132,11 @@ class DevApp(AppBase):
         self._avatar_img.set_pos(130, self._origin_y + 100)
         self._avatar_img.set_size(56, 56)
         self._avatar_img.set_scale(0.28, 0.28)
-        self._avatar_img.set_src(self._avatar_src)
+        try:
+            os.stat(self._avatar_src)
+            self._avatar_img.set_src(self._avatar_src)
+        except OSError:
+            self._avatar_img.set_src(AVATAR_IMG)
 
         self._bar_img = Image(use_sprite=False)
         self._bar_img.set_pos(0, self._origin_y + 164)
@@ -142,12 +146,12 @@ class DevApp(AppBase):
         self._network_img = Image(use_sprite=False)
         self._network_img.set_pos(320 - 56 - 20 - 5 - 20 - 5, self._origin_y + 164)
         self._network_img.set_size(20, 20)
-        self._network_img.set_src(self._network_status_src)
+        self._network_img.set_src(_NETWORK_STATUS_ICOS[self._network_status])
 
         self._cloud_img = Image(use_sprite=False)
         self._cloud_img.set_pos(320 - 56 - 20 - 5, self._origin_y + 164)
         self._cloud_img.set_size(20, 20)
-        self._cloud_img.set_src(self._cloud_status_src)
+        self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
 
         self._battery_img = Image(use_sprite=False)
         self._battery_img.set_pos(320 - 56, self._origin_y + 164)
@@ -181,9 +185,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh_bg:
-                print(refresh_bg)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.setText(self._account_text)
 
@@ -194,7 +195,7 @@ class DevApp(AppBase):
                     os.stat(self._avatar_src)
                     self._avatar_img.set_src(self._avatar_src)
                 except OSError:
-                    asyncio.create_task(self._dl_avatar(self._avatar_src))
+                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
             elif refresh_bg:
                 self._avatar_img._draw(False)
 
@@ -234,6 +235,11 @@ class DevApp(AppBase):
             refresh_bar = False
             await asyncio.sleep_ms(1500)
 
+    def on_hide(self):
+        if hasattr(self, "_dl_task"):
+            self._dl_task.cancel()
+        self._task.cancel()
+
     def on_exit(self):
         M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
         del self._bg_img, self._mac_label, self._account_label, self._avatar_img
@@ -246,8 +252,6 @@ class DevApp(AppBase):
         del self._status_bar_src
         del self._network_status
         del self._cloud_status
-        del self._network_status_src
-        del self._cloud_status_src
         del self._battery_src
         del self._battery_text
         del self._avatar_src
@@ -268,18 +272,22 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if len(infos[4]) is 0:
-                self._avatar_img.set_src("/system/common/img/avatar.jpg")
+                self._avatar_img.set_src(AVATAR_IMG)
             else:
                 try:
-                    rsp = requests.get("https://community.m5stack.com" + str(infos[4]))
+                    rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
                     f = open(dst, "wb")
                     f.write(rsp.content)
                     f.close()
+                    self._avatar_img.set_src(dst)
+                except Exception as e:
+                    print(e)
+                    os.remove(dst)
+                    self._avatar_img.set_src(AVATAR_IMG)
+                finally:
                     rsp.close()
-                except:
-                    self._avatar_img.set_src("/system/common/img/avatar.jpg")
         else:
-            self._avatar_img.set_src("/system/common/img/avatar.jpg")
+            self._avatar_img.set_src(AVATAR_IMG)
 
     @staticmethod
     def _get_mac():
@@ -298,11 +306,11 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if len(infos[4]) is 0:
-                return "/system/common/img/avatar.jpg"
+                return AVATAR_IMG
             else:
-                return "/system/common/" + str(infos[4]).split("/")[-1]
+                return USER_AVATAR_PATH + str(infos[4]).split("/")[-1]
         else:
-            return "/system/common/img/avatar.jpg"
+            return AVATAR_IMG
 
     def _get_bg_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:

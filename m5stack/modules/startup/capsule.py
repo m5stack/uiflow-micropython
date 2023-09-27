@@ -55,4 +55,3 @@ class Capsule_Startup(StampS3_Startup):
             self.rgb.set_color(0, self.COLOR_RED)
             self.rgb.set_brightness(100)
             self.show_error("Not Found", "Please use M5Burner setup :)")
-
