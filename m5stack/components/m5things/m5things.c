@@ -315,7 +315,7 @@ static void mqtt_ping_report() {
     uint32_t board_id = 0;
     size_t len = 0;
     nvs_read_u32_helper("M5GFX", "AUTODETECT", &board_id);
-#if CONFIG_IDF_TARGET_ESP32 && CONFIG_ESP32_SPIRAM_SUPPORT
+    #if CONFIG_IDF_TARGET_ESP32 && CONFIG_ESP32_SPIRAM_SUPPORT
     if (board_id == 1) {
         esp_spiram_size_t size = esp_spiram_get_chip_size();
         if (size != ESP_SPIRAM_SIZE_INVALID) {
@@ -329,7 +329,7 @@ static void mqtt_ping_report() {
                 );
         }
     } else
-#endif
+    #endif
     {
         len = sprintf(
             mqtt_report_buf,
@@ -1003,14 +1003,14 @@ static int8_t mqtt_handle_file_remove(msg_file_req_t *msg) {
         ret
         );
 
-        esp_mqtt_client_publish(
-            m5things_mqtt_client,
-            mqtt_up_file_topic,
-            rsp_buf,
-            strlen(rsp_buf),
-            0,
-            0
-            );
+    esp_mqtt_client_publish(
+        m5things_mqtt_client,
+        mqtt_up_file_topic,
+        rsp_buf,
+        strlen(rsp_buf),
+        0,
+        0
+        );
     return ret;
 }
 
