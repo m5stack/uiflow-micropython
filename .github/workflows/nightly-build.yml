@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  build_atoms3:
+  build:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3.3.0
@@ -62,3 +62,18 @@ jobs:
       with:
         name: M5STACK_Fire_firmware
         path: ./m5stack/build-M5STACK_Fire/uiflow-*.bin
+    - name: Deliver Basic firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Basic_firmware
+        path: ./m5stack/build-M5STACK_Basic/uiflow-*.bin
+    - name: Deliver Basic(4MB Flash) firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Basic_4MB_Flash_firmware
+        path: ./m5stack/build-M5STACK_Basic_4MB/uiflow-*.bin
+    - name: Deliver Capsule firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Capsule_firmware
+        path: ./m5stack/build-M5STACK_Capsule/uiflow-*.bin
