@@ -7,8 +7,7 @@ from .apps.app_run import RunApp
 from .apps.app_list import ListApp
 from .apps.ezdata import EzDataApp
 import time
-
-BK_IMG = "/system/stack/logo.png"
+from .res import LOGO_IMG
 
 
 class Sprite:
@@ -30,7 +29,7 @@ class Fire_Startup:
         M5.Speaker.setVolume(80)
         M5.Speaker.tone(4000, 50)
 
-        M5.Lcd.drawImage(BK_IMG)
+        M5.Lcd.drawImage(LOGO_IMG)
         time.sleep_ms(200)
 
         sprite = M5.Lcd.newCanvas(320, 184, 16, True)

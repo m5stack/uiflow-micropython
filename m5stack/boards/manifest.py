@@ -1,5 +1,4 @@
-freeze("$(MPY_DIR)/../m5stack/modules")
-freeze("$(MPY_DIR)/../m5stack/libs")
+include("manifest_m5stack.py")
 require("mip")
 require("ntptime")
 require("dht")

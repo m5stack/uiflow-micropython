@@ -2,6 +2,7 @@ from ..app import AppBase
 import M5
 from widgets.image import Image
 from widgets.label import Label
+
 try:
     import uasyncio as asyncio
 except ImportError:
@@ -14,7 +15,28 @@ except ImportError:
 
 from common.font import MontserratMedium10
 from common.font import MontserratMedium18
-
+from ..res import (
+    WIFI_EMPTY_IMG,
+    WIFI_GOOD_IMG,
+    WIFI_MID_IMG,
+    WIFI_WORSE_IMG,
+    WIFI_DISCONNECTED_IMG,
+    SERVER_EMPTY_IMG,
+    SERVER_GREEN_IMG,
+    SERVER_ERROR_IMG,
+    DEVELOP_UNSELECTED_IMG,
+    DEVELOP_SELECTED_IMG,
+    DEVELOP_PRIVATE_IMG,
+    DEVELOP_PUBLIC_IMG,
+    BAR2_IMG,
+    BAR3_IMG,
+    BATTERY_RED_CHARGE_IMG,
+    BATTERY_RED_IMG,
+    BATTERY_GREEN_CHARGE_IMG,
+    BATTERY_GREEN_IMG,
+    BATTERY_BLACK_CHARGE_IMG,
+    BATTERY_BLACK_IMG,
+)
 import os
 import binascii
 import machine
@@ -27,6 +49,7 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
+
 class NetworkStatus:
     INIT = 0
     RSSI_GOOD = 1
@@ -34,24 +57,27 @@ class NetworkStatus:
     RSSI_WORSE = 3
     DISCONNECTED = 4
 
+
 class CloudStatus:
     INIT = 0
     CONNECTED = 1
     DISCONNECTED = 2
 
+
 _NETWORK_STATUS_ICOS = {
-    NetworkStatus.INIT: "/system/fire/WiFi/wifi_empty.png",
-    NetworkStatus.RSSI_GOOD: "/system/fire/WiFi/wifi_good.png",
-    NetworkStatus.RSSI_MID: "/system/fire/WiFi/wifi_mid.png",
-    NetworkStatus.RSSI_WORSE: "/system/fire/WiFi/wifi_worse.png",
-    NetworkStatus.DISCONNECTED: "/system/fire/WiFi/wifi_disconnected.png"
+    NetworkStatus.INIT: WIFI_EMPTY_IMG,
+    NetworkStatus.RSSI_GOOD: WIFI_GOOD_IMG,
+    NetworkStatus.RSSI_MID: WIFI_MID_IMG,
+    NetworkStatus.RSSI_WORSE: WIFI_WORSE_IMG,
+    NetworkStatus.DISCONNECTED: WIFI_DISCONNECTED_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: "/system/fire/Server/server_empty.png",
-    CloudStatus.CONNECTED: "/system/fire/Server/Server_Green.png",
-    CloudStatus.DISCONNECTED: "/system/fire/Server/server_error.png"
+    CloudStatus.INIT: SERVER_EMPTY_IMG,
+    CloudStatus.CONNECTED: SERVER_GREEN_IMG,
+    CloudStatus.DISCONNECTED: SERVER_ERROR_IMG,
 }
+
 
 class DevApp(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
@@ -60,7 +86,7 @@ class DevApp(AppBase):
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage("/system/fire/develop_unselected.png", 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -71,12 +97,14 @@ class DevApp(AppBase):
         self._cloud_status = self._get_cloud_status()
         self._network_status_src = _NETWORK_STATUS_ICOS[self._network_status]
         self._cloud_status_src = _CLOUD_STATUS_ICOS[self._cloud_status]
-        self._battery_src = self._get_battery_src(M5.Power.getBatteryLevel(), M5.Power.isCharging())
+        self._battery_src = self._get_battery_src(
+            M5.Power.getBatteryLevel(), M5.Power.isCharging()
+        )
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
         self._avatar_src = self._get_avatar()
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/fire/develop_selected.png", 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(DEVELOP_SELECTED_IMG, 5 + 62 * 1, 0)
         self._origin_x = 0
         self._origin_y = 56
         self._lcd.clear()
@@ -94,7 +122,7 @@ class DevApp(AppBase):
             fg_color=0x000000,
             bg_color=0xEEEEEF,
             font=MontserratMedium18.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._mac_label.setText(self._mac_text)
 
@@ -107,7 +135,7 @@ class DevApp(AppBase):
             fg_color=0x000000,
             bg_color=0xEEEEEF,
             font=MontserratMedium18.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._account_label.setText(self._account_text)
 
@@ -146,7 +174,7 @@ class DevApp(AppBase):
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
             font=MontserratMedium10.FONT,
-            parent=self._lcd
+            parent=self._lcd,
         )
         self._battery_label.setText(self._battery_text)
         self._lcd.push(self._origin_x, self._origin_y)
@@ -165,9 +193,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh_bg:
-                print(refresh_bg)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.setText(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)
@@ -179,7 +204,7 @@ class DevApp(AppBase):
                     os.stat(self._avatar_src)
                     self._avatar_img.set_src(self._avatar_src)
                 except OSError:
-                    asyncio.create_task(self._dl_avatar(self._avatar_src))
+                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
             elif refresh_bg:
                 self._avatar_img._draw(False)
 
@@ -222,22 +247,24 @@ class DevApp(AppBase):
             refresh_bar = False
             await asyncio.sleep_ms(1500)
 
+    def on_hide(self):
+        if hasattr(self, "_dl_task"):
+            self._dl_task.cancel()
+        self._task.cancel()
+
     def on_exit(self):
-        M5.Lcd.drawImage("/system/fire/develop_unselected.png", 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
         del self._bg_img, self._mac_label, self._account_label, self._avatar_img
         del self._bar_img, self._network_img, self._cloud_img, self._battery_img
         del self._battery_label
 
     async def _btna_event_handler(self, fw):
-        # print("_btna_event_handler")
         pass
 
     async def _btnb_event_handler(self, fw):
-        # print("_btnb_event_handler")
         pass
 
     async def _btnc_event_handler(self, fw):
-        # print("_btnc_event_handler")
         pass
 
     async def _dl_avatar(self, dst):
@@ -252,8 +279,11 @@ class DevApp(AppBase):
                     f.write(rsp.content)
                     f.close()
                     rsp.close()
+                    self._avatar_img.set_src(dst)
                 except:
                     self._avatar_img.set_src("/system/common/img/avatar.jpg")
+                finally:
+                    self._lcd.push(self._origin_x, self._origin_y)
         else:
             self._avatar_img.set_src("/system/common/img/avatar.jpg")
 
@@ -276,14 +306,14 @@ class DevApp(AppBase):
             if len(infos[4]) is 0:
                 return "/system/common/img/avatar.jpg"
             else:
-                return "/system/common/" + str(infos[4]).split("/")[-1]
+                return "/system/common/img/" + str(infos[4]).split("/")[-1]
         else:
             return "/system/common/img/avatar.jpg"
 
     def _get_bg_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
-            if infos[0] is 0 :
+            if infos[0] is 0:
                 return "/system/fire/developPrivate.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/developPublic.png"
@@ -293,7 +323,7 @@ class DevApp(AppBase):
     def _get_bar_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
-            if infos[0] is 0 :
+            if infos[0] is 0:
                 return "/system/fire/bar2.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/bar3.png"
@@ -357,5 +387,3 @@ class DevApp(AppBase):
             return "{:d}%".format(battery)
         else:
             return ""
-
-

@@ -1,0 +1,9 @@
+package(
+    "startup",
+    (
+        "__init__.py",
+        "atoms3.py",
+    ),
+    base_path="..",
+    opt=3,
+)

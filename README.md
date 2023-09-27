@@ -53,6 +53,8 @@ make BOARD=M5STACK_4MB BOARD_TYPE=stickcplus flash
 - [scd40][] Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
 - [sgp30][] Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
 - [sht4x][] Copyright (c) 2021 ladyada for Adafruit and licensed under MIT License.
+- [vl53l0x][] Copyright (c) 2017 Tony DiCola for Adafruit Industries and licensed under MIT License.
+- [camera][] Copyright (c) 2021 Mauro Riva and licensed under Apache License Version 2.0.
 
 [micropython]: https://github.com/micropython/micropython
 [umqtt]: https://github.com/micropython/micropython-lib
@@ -68,3 +70,5 @@ make BOARD=M5STACK_4MB BOARD_TYPE=stickcplus flash
 [scd40]: https://github.com/gandro/micropython-m5stamp-c3u
 [sgp30]: https://github.com/gandro/micropython-m5stamp-c3u
 [sht4x]: https://github.com/adafruit/Adafruit_CircuitPython_SHT4x
+[vl53l0x]: https://github.com/adafruit/Adafruit_CircuitPython_VL53L0X
+[camera]: https://github.com/lemariva/micropython-camera-driver
