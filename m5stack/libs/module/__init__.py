@@ -3,6 +3,7 @@ from . import mbus
 
 _attrs = {
     "DualKmeter": "dual_kmeter",
+    "Relay4": "relay_4",
 }
 
 # Lazy loader, effectively does:
