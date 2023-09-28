@@ -13,14 +13,10 @@ class Image(base.Base):
         self._sprite_init()
 
     def set_width(self, w):
-        if self._w is w:
-            return
         self._sprite_init()
         self._draw(True)
 
     def set_height(self, h):
-        if self._h is h:
-            return
         self._sprite_init()
         self._draw(True)
 
@@ -34,20 +30,14 @@ class Image(base.Base):
         self._draw(True)
 
     def set_x(self, x):
-        if self._x is x:
-            return
         self._x = x
         self._draw(False)
 
     def set_y(self, y):
-        if self._y is y:
-            return
         self._y = y
         self._draw(False)
 
     def set_pos(self, x, y):
-        if self._x is x and self._y is y:
-            return
         self._x = x
         self._y = y
         self._draw(False)

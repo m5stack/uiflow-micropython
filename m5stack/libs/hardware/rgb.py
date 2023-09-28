@@ -28,13 +28,14 @@ class RGB:
                 return WS2812(io=cls._io, n=cls._n)  # default
 
         # If not provided any io, according to board type, initialize the built-in rgb
+        board_id = M5.getBoard()
         if cls._instance == None:
-            if M5.BOARD.M5AtomS3 == M5.getBoard():
+            if M5.BOARD.M5AtomS3 == board_id:
                 pass
-            elif M5.getBoard() in (M5.BOARD.M5AtomS3Lite, M5.BOARD.M5AtomS3U):
+            elif board_id in (M5.BOARD.M5AtomS3Lite, M5.BOARD.M5AtomS3U):
                 cls._instance = WS2812(io=35, n=1)
                 return cls._instance
-            elif M5.BOARD.M5StampS3 == M5.getBoard():
+            elif board_id in (M5.BOARD.M5StampS3, M5.BOARD.M5Capsule):
                 cls._instance = WS2812(io=21, n=1)
                 return cls._instance
             else:
