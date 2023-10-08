@@ -1031,10 +1031,7 @@ class DevApp(AppBase):
         self._account_label.setText(str(data[1]))
 
         try:
-            if self.avatar == "/system/common/img/avatar.jpg":
-                M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
-            else:
-                M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
+            M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
         except OSError:
             pass
 
@@ -1054,7 +1051,6 @@ class DevApp(AppBase):
             if len(infos[4]) is 0:
                 self.avatar = "/system/common/img/avatar.jpg"
             else:
-                # FIXME: avatar.jpg path is not right
                 self.avatar = "/system/common/" + str(infos[4]).split("/")[-1]
 
             try:

@@ -541,7 +541,7 @@ class BatteryChargeSetting(AppBase):
 
 _boot_options = (
     (
-        0,
+        2,
         ImageDesc(
             src="/system/core2/Setting/bootNo.png",
             x=4 + 60 + 3,
@@ -937,10 +937,7 @@ class DevApp(AppBase):
         self._mac_label.setText(data[0])
         self._account_label.setText(str(data[1]))
 
-        if self.avatar == "/system/common/img/avatar.jpg":
-            M5.Lcd.drawJpg(self.avatar, 130, 180, 60, 60)
-        else:
-            M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
+        M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
 
     def load_data(self):
         mac = binascii.hexlify(machine.unique_id()).upper()
@@ -958,7 +955,6 @@ class DevApp(AppBase):
             if len(infos[4]) is 0:
                 self.avatar = "/system/common/img/avatar.jpg"
             else:
-                # FIXME: avatar.jpg path is not right
                 self.avatar = "/system/common/" + str(infos[4]).split("/")[-1]
 
             try:
@@ -1073,7 +1069,7 @@ class RunApp(AppBase):
 
     def _handle_run_always(self):
         nvs = esp32.NVS("uiflow")
-        nvs.set_u8("boot_option", 0)
+        nvs.set_u8("boot_option", 2)
         nvs.commit()
         machine.reset()
 
@@ -1383,7 +1379,7 @@ class ListApp(AppBase):
     def _btn_always_event_handler(self, event):
         DEBUG and print("run always")
         nvs = esp32.NVS("uiflow")
-        nvs.set_u8("boot_option", 0)
+        nvs.set_u8("boot_option", 2)
         nvs.commit()
         with open("apps/" + self._files[self._file_pos], "rb") as f_src, open(
             "main.py", "wb"
