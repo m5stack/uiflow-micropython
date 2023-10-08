@@ -7,10 +7,15 @@ REM Command file for Sphinx documentation
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
-set SOURCEDIR=zh_CN
-set BUILDDIR=build
+
+set SOURCEDIR=%1
+set BUILDDIR=build/%SOURCEDIR%
+
+@REM set SOURCEDIR=en
+@REM set BUILDDIR=build/en
 
 if "%1" == "" goto help
+if "%2" == "" goto help
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -27,7 +32,7 @@ if errorlevel 9009 (
 
 doxygen.exe
 
-%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
+%SPHINXBUILD% -M %2 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
 
 :help
