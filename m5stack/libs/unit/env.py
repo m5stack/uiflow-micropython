@@ -49,4 +49,4 @@ class ENV:
         return round(self._temp_humid.measure()[1], 2)
 
     def read_pressure(self) -> float:
-        return round(self._pressure.measure()[1], 2)
+        return round((self._pressure.measure()[1]/100), 2)

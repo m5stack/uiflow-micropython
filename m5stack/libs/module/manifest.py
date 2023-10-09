@@ -4,6 +4,8 @@ package(
         "__init__.py",
         "dual_kmeter.py",
         "mbus.py",
+        "relay_4.py",
+        "module_helper.py",
     ),
     base_path="..",
     opt=0,
