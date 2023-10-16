@@ -69,7 +69,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
         pin4 = Pin(4, Pin.OUT)
         pin4.value(1)
-    if board_id in (M5.BOARD.M5AtomS3U, M5.BOARD.M5AtomS3Lite, M5.BOARD.M5StampS3):
+    if board_id in (
+        M5.BOARD.M5AtomS3U,
+        M5.BOARD.M5AtomS3Lite,
+        M5.BOARD.M5StampS3,
+        M5.BOARD.M5Capsule,
+    ):
         # M5AtomS3U may fail to enter the AUTODETECT process, which will cause
         # m5things to fail to obtain the board id.
         nvs = esp32.NVS("M5GFX")
