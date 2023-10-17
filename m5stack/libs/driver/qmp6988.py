@@ -99,7 +99,7 @@ class QMP6988:
         if chipid[0] != _QMP6988_CHIP_ID_VALUE:
             raise ValueError("device not found")
 
-        self.reset()
+        # self.reset()
 
         # read OTP values (datasheet section 4.3)
         calibration = self.i2c.readfrom_mem(
