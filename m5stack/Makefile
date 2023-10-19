@@ -21,7 +21,8 @@ boards := \
 	M5STACK_Fire:fire                \
 	M5STACK_Basic:basic              \
 	M5STACK_Basic_4MB:basic          \
-	M5STACK_Capsule:capsule
+	M5STACK_Capsule:capsule          \
+	M5STACK_Dial:dial
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -40,7 +41,8 @@ BOARD_TYPE_DEF := \
 	stickcplus  \
 	fire        \
 	basic       \
-	capsule
+	capsule     \
+	dial
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"

@@ -9,3 +9,4 @@ except ImportError:
     pass
 
 from .ir import IR
+from .rotary import Rotary

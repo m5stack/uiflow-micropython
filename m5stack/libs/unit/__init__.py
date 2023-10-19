@@ -26,3 +26,7 @@ from .hbridge import HBRIDGE
 from .pbhub import PBHUB
 from .uwb import UWB
 from .ac_measure import AC_MEASURE
+from .rs485 import RS485
+from .rs485_iso import ISO485
+from .ultrasonic_io import ULTRASONIC_IO
+from .ultrasonic_i2c import ULTRASONIC_I2C
