@@ -7,6 +7,7 @@ import machine
 from machine import Pin
 import utime
 
+
 class ULTRASONIC_IO:
     def __init__(self, port, echo_timeout_us=1000000):
         self.echo_timeout_us = echo_timeout_us
@@ -17,8 +18,8 @@ class ULTRASONIC_IO:
         self.echo = Pin(port[0], mode=Pin.IN, pull=None)
 
     def tx_pulse_rx_echo(self):
-        
-        self.trigger.value(0) 
+
+        self.trigger.value(0)
         utime.sleep_us(5)
         # Send a 10us pulse.
         self.trigger.value(1)
@@ -29,7 +30,7 @@ class ULTRASONIC_IO:
             return echo_time
         except:
             pass
-    
+
     def get_target_distance(self, mode=1):
         """
         Get the distance in milimeters or centimeters.
@@ -42,4 +43,3 @@ class ULTRASONIC_IO:
         elif mode == 2:
             cm = (echo_time * 100 // 582) / 10
             return cm
-        
