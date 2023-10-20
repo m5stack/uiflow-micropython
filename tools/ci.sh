@@ -141,6 +141,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Capsule pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Dial pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE
