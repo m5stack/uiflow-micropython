@@ -69,6 +69,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
         pin4 = Pin(4, Pin.OUT)
         pin4.value(1)
+    if board_id == M5.BOARD.M5Dial:
+        from machine import Pin
+
+        pin4 = Pin(46, Pin.OUT)
+        pin4.value(1)
+
     if board_id in (
         M5.BOARD.M5AtomS3U,
         M5.BOARD.M5AtomS3Lite,
@@ -142,6 +148,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             capsule = Capsule_Startup()
             capsule.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5Dial:
+            from .dial import Dial_Startup
+
+            dial = Dial_Startup()
+            dial.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
