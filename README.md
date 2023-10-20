@@ -10,7 +10,7 @@ git clone https://github.com/m5stack/esp-idf.git
 git -C esp-idf checkout 014ee65f1f5e291230e398c4913020be9a6278a1
 git -C esp-idf submodule update --init --recursive
 ./esp-idf/install.sh
-. ./esp-idf/export.sh 
+. ./esp-idf/export.sh
 ```
 
 ### Building the firmware
@@ -21,21 +21,38 @@ cd uiflow_micropython/m5stack
 make submodules # Only need once
 make littlefs
 make mpy-cross
-# atoms3, atoms3-lite
-make BOARD=M5STACK_S3_8MB BOARD_TYPE=atoms3 flash # Build and flash to atoms3 baord
-# stamps3
-make BOARD=M5STACK_S3_8MB BOARD_TYPE=stamps3 flash
-# cores3
-make BOARD=M5STACK_S3_SPIRAM_16MB BOARD_TYPE=cores3 flash
+# Build and flash
+# atoms3
+make BOARD=M5STACK_AtomS3 pack_all flash
+# atoms3-lite
+make BOARD=M5STACK_AtomS3_Lite pack_all flash
 # atoms3u
-make BOARD=M5STACK_S3_8MB BOARD_TYPE=atoms3u flash
+make BOARD=M5STACK_AtomS3U pack_all flash
+# core(BASIC/M5GO/GRAY) (Falsh 16MB)
+make BOARD=M5STACK_Basic pack_all flash
+# core(BASIC/M5GO/GRAY) (Falsh 4MB)
+make BOARD=M5STACK_Basic_4MB pack_all flash
+# capsule
+make BOARD=M5STACK_Capsule pack_all flash
 # core2,tough
-make BOARD=M5STACK_SPIRAM_16MB BOARD_TYPE=core2 flash
-# stickcplus2
-make BOARD=M5STACK_SPIRAM_8MB BOARD_TYPE=stickcplus2 flash
+make BOARD=M5STACK_Core2 pack_all flash
+# cores3
+make BOARD=M5STACK_CoreS3 pack_all flash
+# dial
+make BOARD=M5STACK_Dial pack_all flash
+# fire
+make BOARD=M5STACK_Fire pack_all flash
+# stamps3
+make BOARD=M5STACK_StampS3 pack_all flash
 # stickcplus
-make BOARD=M5STACK_4MB BOARD_TYPE=stickcplus flash
+make BOARD=M5STACK_StickC_PLUS pack_all flash
+# stickcplus2
+make BOARD=M5STACK_StickC_PLUS2 pack_all flash
 ```
+
+## Documentation
+
+API documentation for this library can be found on [Read the Docs](https://uiflow-micropython.readthedocs.io/en/latest/).
 
 ## License
 
