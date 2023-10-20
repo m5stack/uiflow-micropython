@@ -1,23 +1,13 @@
 ENV Unit
 ========
 
+.. include:: ../refs/unit.env.ref
+
 The following products are supported：
 
 ================== ================== ==================
-|ENV|_             |ENV II|_          |ENV III|_
+|ENV|              |ENV II|           |ENV III|
 ================== ================== ==================
-
-.. |ENV| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/env/env_01.webp
-    :target: https://docs.m5stack.com/en/unit/env
-.. _ENV: replace:: |ENV|_
-
-.. |ENV II| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/envII/envII_01.webp
-    :target: https://docs.m5stack.com/en/unit/envII
-.. _ENV II: replace:: |ENV II|_
-
-.. |ENV III| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/envIII/envIII_01.webp
-    :target: https://docs.m5stack.com/en/unit/envIII
-.. _ENV III: replace:: |ENV III|_
 
 
 Micropython Example::
@@ -41,12 +31,15 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-.. image:: ../../_static/units/env/example.svg
+    |example.svg|
 
 .. only:: builder_html
 
-    :download:`example <../../_static/units/env/example.m5f2>`.
+|env_core_example.m5f2|
 
+
+class ENV
+---------
 
 Constructors
 ------------
@@ -66,7 +59,7 @@ Constructors
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/init.svg
+        |init.svg|
 
 
 Methods
@@ -78,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_temperature.svg
+        |read_temperature.svg|
 
 .. method:: ENV.read_humidity()
 
@@ -86,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_humidity.svg
+        |read_humidity.svg|
 
 .. method:: ENV.read_pressure()
 
@@ -94,4 +87,4 @@ Methods
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_pressure.svg
+        |read_pressure.svg|

@@ -33,7 +33,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/unit/env/example.m5f2>`
+|env_core_example.m5f2|
 
 class ENV
 ---------
