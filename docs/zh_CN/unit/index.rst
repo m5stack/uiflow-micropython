@@ -6,3 +6,4 @@ Unit
 
     env.rst
     angle.rst
+    rgb.rst

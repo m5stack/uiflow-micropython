@@ -35,7 +35,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-|env_core_example.m5f2|
+|env_cores3_example.m5f2|
 
 
 class ENV

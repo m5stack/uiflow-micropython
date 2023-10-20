@@ -53,7 +53,7 @@ Methods
 
 .. method:: Angle.get_value()
 
-    此方法允许读取Angle的旋转值并返回一个整型数值。范围为0-65535.。
+    此方法允许读取Angle的旋转值并返回一个整型数值。范围为0-65535。
 
     UIFLOW2:
 
