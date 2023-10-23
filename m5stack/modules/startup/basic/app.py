@@ -1,17 +1,17 @@
 import uasyncio as asyncio
 
 
-def generator(d):
-    try:
-        len(d)
-    except TypeError:
-        cache = []
-        for i in d:
-            yield i
-            cache.append(i)
-        d = cache
-    while d:
-        yield from d
+# def generator(d):
+#     try:
+#         len(d)
+#     except TypeError:
+#         cache = []
+#         for i in d:
+#             yield i
+#             cache.append(i)
+#         d = cache
+#     while d:
+#         yield from d
 
 
 class AppSelector:
@@ -30,6 +30,8 @@ class AppSelector:
         self._id = (self._id - 1) % len(self._apps)
         return self._apps[self._id]
 
+    def select(self, app):
+        self._id = self._apps.index(app)
 
 class AppBase:
     def __init__(self) -> None:

@@ -4,8 +4,6 @@ from M5 import Widgets
 from widgets.image import Image
 from widgets.label import Label
 import uasyncio as asyncio
-import urequests as requests
-import os
 import binascii
 import machine
 import network
@@ -32,7 +30,7 @@ from ..res import (
     BATTERY_BLACK_CHARGE_IMG,
     BATTERY_BLACK_IMG,
     AVATAR_IMG,
-    USER_AVATAR_PATH,
+    # USER_AVATAR_PATH,
 )
 
 try:
@@ -42,33 +40,29 @@ try:
 except ImportError:
     _HAS_SERVER = False
 
+NETWORK_STATUS_INIT = 0
+NETWORK_STATUS_RSSI_GOOD = 1
+NETWORK_STATUS_RSSI_MID = 2
+NETWORK_STATUS_RSSI_WORSE = 3
+NETWORK_STATUS_DISCONNECTED = 4
 
-class NetworkStatus:
-    INIT = 0
-    RSSI_GOOD = 1
-    RSSI_MID = 2
-    RSSI_WORSE = 3
-    DISCONNECTED = 4
-
-
-class CloudStatus:
-    INIT = 0
-    CONNECTED = 1
-    DISCONNECTED = 2
+CLOUD_STATUS_INIT = 0
+CLOUD_STATUS_CONNECTED = 1
+CLOUD_STATUS_DISCONNECTED = 2
 
 
 _NETWORK_STATUS_ICOS = {
-    NetworkStatus.INIT: WIFI_EMPTY_IMG,
-    NetworkStatus.RSSI_GOOD: WIFI_GOOD_IMG,
-    NetworkStatus.RSSI_MID: WIFI_MID_IMG,
-    NetworkStatus.RSSI_WORSE: WIFI_WORSE_IMG,
-    NetworkStatus.DISCONNECTED: WIFI_DISCONNECTED_IMG,
+    NETWORK_STATUS_INIT: WIFI_EMPTY_IMG,
+    NETWORK_STATUS_RSSI_GOOD: WIFI_GOOD_IMG,
+    NETWORK_STATUS_RSSI_MID: WIFI_MID_IMG,
+    NETWORK_STATUS_RSSI_WORSE: WIFI_WORSE_IMG,
+    NETWORK_STATUS_DISCONNECTED: WIFI_DISCONNECTED_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: SERVER_EMPTY_IMG,
-    CloudStatus.CONNECTED: SERVER_GREEN_IMG,
-    CloudStatus.DISCONNECTED: SERVER_ERROR_IMG,
+    CLOUD_STATUS_INIT: SERVER_EMPTY_IMG,
+    CLOUD_STATUS_CONNECTED: SERVER_GREEN_IMG,
+    CLOUD_STATUS_DISCONNECTED: SERVER_ERROR_IMG,
 }
 
 
@@ -91,7 +85,7 @@ class DevApp(AppBase):
             M5.Power.getBatteryLevel(), M5.Power.isCharging()
         )
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
-        self._avatar_src = self._get_avatar()
+        # self._avatar_src = self._get_avatar()
 
     def on_view(self):
         M5.Lcd.drawImage(DEVELOP_SELECTED_IMG, 5 + 62 * 1, 0)
@@ -128,15 +122,16 @@ class DevApp(AppBase):
         )
         self._account_label.setText(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False)
-        self._avatar_img.set_pos(130, self._origin_y + 100)
-        self._avatar_img.set_size(56, 56)
-        self._avatar_img.set_scale(0.28, 0.28)
-        try:
-            os.stat(self._avatar_src)
-            self._avatar_img.set_src(self._avatar_src)
-        except OSError:
-            self._avatar_img.set_src(AVATAR_IMG)
+        # self._avatar_img = Image(use_sprite=False)
+        # self._avatar_img.set_pos(130, self._origin_y + 100)
+        # self._avatar_img.set_size(56, 56)
+        # self._avatar_img.set_scale(0.28, 0.28)
+        # try:
+        #     os.stat(self._avatar_src)
+        #     self._avatar_img.set_src(self._avatar_src)
+        # except OSError:
+        #     self._avatar_img.set_src(AVATAR_IMG)
+        M5.Lcd.drawImage(AVATAR_IMG, 130, self._origin_y + 100, 56, 56, 0, 0, 0.28, 0.28)
 
         self._bar_img = Image(use_sprite=False)
         self._bar_img.set_pos(0, self._origin_y + 164)
@@ -188,16 +183,18 @@ class DevApp(AppBase):
                 self._account_text = t
                 self._account_label.setText(self._account_text)
 
-            t = self._get_avatar()
-            if t != self._avatar_src:
-                self._avatar_src = t
-                try:
-                    os.stat(self._avatar_src)
-                    self._avatar_img.set_src(self._avatar_src)
-                except OSError:
-                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
-            elif refresh_bg:
-                self._avatar_img._draw(False)
+            # t = self._get_avatar()
+            # if t != self._avatar_src:
+            #     self._avatar_src = t
+            #     try:
+            #         os.stat(self._avatar_src)
+            #         self._avatar_img.set_src(self._avatar_src)
+            #     except OSError:
+            #         self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
+            # elif refresh_bg:
+            #     self._avatar_img._draw(False)
+            if refresh_bg:
+                M5.Lcd.drawImage(AVATAR_IMG, 130, self._origin_y + 100, 56, 56, 0, 0, 0.28, 0.28)
 
             t = self._get_bar_src()
             if t != self._status_bar_src:
@@ -236,25 +233,31 @@ class DevApp(AppBase):
             await asyncio.sleep_ms(1500)
 
     def on_hide(self):
-        if hasattr(self, "_dl_task"):
-            self._dl_task.cancel()
+        # if hasattr(self, "_dl_task"):
+        #     self._dl_task.cancel()
         self._task.cancel()
 
     def on_exit(self):
         M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
-        del self._bg_img, self._mac_label, self._account_label, self._avatar_img
-        del self._bar_img, self._network_img, self._cloud_img, self._battery_img
-        del self._battery_label
-        del self._origin_x, self._origin_y
-        del self._mac_text
-        del self._account_text
-        del self._bg_src
-        del self._status_bar_src
-        del self._network_status
-        del self._cloud_status
-        del self._battery_src
-        del self._battery_text
-        del self._avatar_src
+        del self._bg_img,
+        del self._mac_label,
+        del self._account_label,
+        del self._bar_img,
+        del self._network_img,
+        del self._cloud_img,
+        del self._battery_img,
+        del self._battery_label,
+        del self._origin_x,
+        del self._origin_y,
+        del self._mac_text,
+        del self._account_text,
+        del self._bg_src,
+        del self._status_bar_src,
+        del self._network_status,
+        del self._cloud_status,
+        del self._battery_src,
+        del self._battery_text,
+        # del self._avatar_src,
 
     async def _btna_event_handler(self, fw):
         # print("_btna_event_handler")
@@ -268,26 +271,26 @@ class DevApp(AppBase):
         # print("_btnc_event_handler")
         pass
 
-    async def _dl_avatar(self, dst):
-        if _HAS_SERVER is True and M5Things.status() is 2:
-            infos = M5Things.info()
-            if len(infos[4]) is 0:
-                self._avatar_img.set_src(AVATAR_IMG)
-            else:
-                try:
-                    rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
-                    f = open(dst, "wb")
-                    f.write(rsp.content)
-                    f.close()
-                    self._avatar_img.set_src(dst)
-                except Exception as e:
-                    print(e)
-                    os.remove(dst)
-                    self._avatar_img.set_src(AVATAR_IMG)
-                finally:
-                    rsp.close()
-        else:
-            self._avatar_img.set_src(AVATAR_IMG)
+    # async def _dl_avatar(self, dst):
+    #     if _HAS_SERVER is True and M5Things.status() is 2:
+    #         infos = M5Things.info()
+    #         if len(infos[4]) is 0:
+    #             self._avatar_img.set_src(AVATAR_IMG)
+    #         else:
+    #             try:
+    #                 rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
+    #                 f = open(dst, "wb")
+    #                 f.write(rsp.content)
+    #                 f.close()
+    #                 self._avatar_img.set_src(dst)
+    #             except Exception as e:
+    #                 print(e)
+    #                 os.remove(dst)
+    #                 self._avatar_img.set_src(AVATAR_IMG)
+    #             finally:
+    #                 rsp.close()
+    #     else:
+    #         self._avatar_img.set_src(AVATAR_IMG)
 
     @staticmethod
     def _get_mac():
@@ -301,16 +304,16 @@ class DevApp(AppBase):
         else:
             return "None"
 
-    @staticmethod
-    def _get_avatar():
-        if _HAS_SERVER is True and M5Things.status() is 2:
-            infos = M5Things.info()
-            if len(infos[4]) is 0:
-                return AVATAR_IMG
-            else:
-                return USER_AVATAR_PATH + str(infos[4]).split("/")[-1]
-        else:
-            return AVATAR_IMG
+    # @staticmethod
+    # def _get_avatar():
+    #     if _HAS_SERVER is True and M5Things.status() is 2:
+    #         infos = M5Things.info()
+    #         if len(infos[4]) is 0:
+    #             return AVATAR_IMG
+    #         else:
+    #             return USER_AVATAR_PATH + str(infos[4]).split("/")[-1]
+    #     else:
+    #         return AVATAR_IMG
 
     def _get_bg_src(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
@@ -337,27 +340,27 @@ class DevApp(AppBase):
         if status is network.STAT_GOT_IP:
             rssi = self._wifi.get_rssi()
             if rssi <= -80:
-                return NetworkStatus.RSSI_WORSE
+                return NETWORK_STATUS_RSSI_WORSE
             elif rssi <= -60:
-                return NetworkStatus.RSSI_MID
+                return NETWORK_STATUS_RSSI_MID
             else:
-                return NetworkStatus.RSSI_GOOD
+                return NETWORK_STATUS_RSSI_GOOD
         else:
-            return NetworkStatus.DISCONNECTED
+            return NETWORK_STATUS_DISCONNECTED
 
     def _get_cloud_status(self):
         if _HAS_SERVER is True:
             status = M5Things.status()
             return {
-                -2: CloudStatus.DISCONNECTED,
-                -1: CloudStatus.DISCONNECTED,
-                0: CloudStatus.INIT,
-                1: CloudStatus.INIT,
-                2: CloudStatus.CONNECTED,
-                3: CloudStatus.DISCONNECTED,
+                -2: CLOUD_STATUS_DISCONNECTED,
+                -1: CLOUD_STATUS_DISCONNECTED,
+                0: CLOUD_STATUS_INIT,
+                1: CLOUD_STATUS_INIT,
+                2: CLOUD_STATUS_CONNECTED,
+                3: CLOUD_STATUS_DISCONNECTED,
             }[status]
         else:
-            return CloudStatus.DISCONNECTED
+            return CLOUD_STATUS_DISCONNECTED
 
     @staticmethod
     def _get_battery_src(battery, charging):

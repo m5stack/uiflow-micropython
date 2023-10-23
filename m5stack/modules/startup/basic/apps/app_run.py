@@ -1,10 +1,10 @@
 from ..app import AppBase
 from M5 import Lcd, Widgets
-import esp32
 import sys
 import machine
 import os
 import time
+import boot_option
 from ..res import (
     APPRUN_UNSELECTED_IMG,
     APPRUN_SELECTED_IMG,
@@ -78,9 +78,7 @@ class RunApp(AppBase):
 
     async def _btnc_event_handler(self, fw):
         # print("_btnc_event_handler")
-        nvs = esp32.NVS("uiflow")
-        nvs.set_u8("boot_option", 2)
-        nvs.commit()
+        boot_option.set_boot_option(2)
         machine.reset()
 
     @staticmethod
