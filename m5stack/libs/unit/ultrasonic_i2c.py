@@ -8,8 +8,8 @@ try:
 except ImportError:
     pass
 
-class ULTRASONIC_I2C:
 
+class ULTRASONIC_I2C:
     def __init__(self, i2c: Union[I2C, PAHUB], addr=0x57):
         self.i2c = i2c
         self.i2c_addr = addr
@@ -29,6 +29,5 @@ class ULTRASONIC_I2C:
         except OSError:
             pass
         if mode == 2:
-            self._distance = self._distance / 10 
+            self._distance = self._distance / 10
         return round(self._distance, 2)
-    

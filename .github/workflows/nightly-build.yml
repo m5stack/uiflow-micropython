@@ -77,3 +77,8 @@ jobs:
       with:
         name: M5STACK_Capsule_firmware
         path: ./m5stack/build-M5STACK_Capsule/uiflow-*.bin
+    - name: Deliver Dial firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Dial_firmware
+        path: ./m5stack/build-M5STACK_Dial/uiflow-*.bin

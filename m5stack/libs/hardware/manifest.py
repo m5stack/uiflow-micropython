@@ -6,6 +6,7 @@ package(
         "ir.py",
         "rgb.py",
         "sdcard.py",
+        "rotary.py",
     ),
     base_path="..",
     opt=0,
