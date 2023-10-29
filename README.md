@@ -34,7 +34,7 @@ make BOARD=M5STACK_SPIRAM_16MB BOARD_TYPE=core2 flash
 # stickcplus2
 make BOARD=M5STACK_SPIRAM_8MB BOARD_TYPE=stickcplus2 flash
 # stickcplus
-make BOARD=M5STACK_4MB BOARD_TYPE=stickcplus flash
+make BOARD=M5STACK_StickC_PLUS BOARD_TYPE=stickcplus flash
 ```
 
 ## License
