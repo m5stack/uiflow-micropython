@@ -8,3 +8,4 @@ Unit
     angle.rst
     rgb.rst
     earth.rst
+    adc.rst

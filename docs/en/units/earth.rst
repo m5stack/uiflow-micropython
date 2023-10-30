@@ -5,9 +5,9 @@ EARTH Unit
 
 Support the following products:
 
-================== 
+
 |EARTH|              
-================== 
+
 
 Micropython Example::
 
