@@ -45,10 +45,10 @@ Constructors
 
 .. class:: ADCUnit(i2c0)
 
-    创建一个ADCUnit对象.
+    Create an ADCUnit object.
 
-    参数是:
-        - ``I2C0`` 是I2C端口.
+    parameters is:
+        - ``I2C0`` is I2C Port.
 
  
     UIFLOW2:
@@ -62,7 +62,7 @@ Methods
 .. method:: ADCUnit.get_value()
 
 
-    获取adc读取的原始值。    
+    Gets the original value read by the adc.   
 
     UIFLOW2:
 
@@ -70,7 +70,7 @@ Methods
 
 .. method:: ADCUnit.get_voltage()
 
-    获取电压值。
+    Get the voltage value.
 
     UIFLOW2:
 
@@ -78,7 +78,7 @@ Methods
 
 .. method:: ADCUnit.get_raw_value()
 
-    读取原始数值。
+    Read the raw value.
 
     UIFLOW2:
 
@@ -86,7 +86,7 @@ Methods
 
 .. method:: ADCUnit.get_operating_mode()
 
-    获取工作模式。（单次读取还是连续读取）
+    Get working mode. (Single read or continuous read)
 
     UIFLOW2:
 
@@ -94,7 +94,7 @@ Methods
 
 .. method:: ADCUnit.get_data_rate()
 
-    获取数据的读取速率。
+    Get the read rate of the data.
 
     UIFLOW2:
 
@@ -102,7 +102,7 @@ Methods
 
 .. method:: ADCUnit.get_gain()
 
-    获取数据的增益倍数。
+    Get the gain multiple of the data.
 
     UIFLOW2:
 
@@ -110,7 +110,7 @@ Methods
 
 .. method:: ADCUnit.operating_mode()
 
-    设置工作模式（单次读取还是连续读取）
+    Set working mode (single read or continuous read)
 
     UIFLOW2:
 
@@ -118,7 +118,7 @@ Methods
 
 .. method:: ADCUnit.data_rate()
 
-    设置获取数据的速率。
+    Set the data acquisition rate.
 
     UIFLOW2:
 
@@ -126,7 +126,7 @@ Methods
 
 .. method:: ADCUnit.gain()
 
-    设置读取数据的增益倍数。
+    Set the gain multiple for reading data.
 
     UIFLOW2:
 
