@@ -3,13 +3,13 @@
    :height: 200px
    :width: 200 px
 
-.. |example.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/angle/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/angle/example.svg
 
-.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/angle/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/angle/init.svg
 
-.. |get_value.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/angle/get_value.svg
+.. |get_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/angle/get_value.svg
 
-.. |get_voltage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/angle/get_voltage.svg
+.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/angle/get_voltage.svg
 
 .. |angle_core_example.m5f2| raw:: html 
 

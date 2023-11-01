@@ -3,27 +3,27 @@
    :height: 200px
    :width: 200 px
 
-.. |example.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/example.svg
 
-.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/init.svg
 
-.. |get_value.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_value.svg
+.. |get_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_value.svg
 
-.. |get_voltage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_voltage.svg
+.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_voltage.svg
 
-.. |get_raw_value.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_raw_value.svg
+.. |get_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_raw_value.svg
 
-.. |get_operating_mode.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_operating_mode.svg
+.. |get_operating_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_operating_mode.svg
 
-.. |get_data_rate.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_data_rate.svg
+.. |get_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_data_rate.svg
 
-.. |get_gain.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/get_gain.svg
+.. |get_gain.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_gain.svg
 
-.. |set_operating_mode.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/set_operating_mode.svg
+.. |set_operating_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_operating_mode.svg
 
-.. |set_data_rate.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/set_data_rate.svg
+.. |set_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_data_rate.svg
 
-.. |set_gain.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/adc/set_gain.svg
+.. |set_gain.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_gain.svg
 
 .. |adc_core_example.m5f2| raw:: html 
 
