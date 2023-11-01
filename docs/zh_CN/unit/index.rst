@@ -9,3 +9,4 @@ Unit
     rgb.rst
     earth.rst
     adc.rst
+    ir.rst
