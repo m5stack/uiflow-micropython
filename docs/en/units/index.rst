@@ -11,3 +11,4 @@ Unit
     adc.rst
     ir.rst
     dual_button.rst
+    light.rst
