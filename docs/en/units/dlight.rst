@@ -51,7 +51,7 @@ Constructors
 
     Create a DLight object.
 
-    参数是:
+    The parameters is:
         - ``PORT`` Define an i2c port.
 
  
