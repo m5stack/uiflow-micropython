@@ -10,6 +10,6 @@ Unit
     earth.rst
     adc.rst
     ir.rst
-    dual_button.rst
+    dualbutton.rst
     light.rst
     dlight.rst
