@@ -1,14 +1,14 @@
 .. |Ultrasonic| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/ULTRASONIC%20I2C/img-1e58d893-802c-4b8b-ad5e-704933a3c76e.webp
-    :target: https://docs.m5stack.com/en/unit/ULTRASONIC%20I2C
+    :target: https://docs.m5stack.com/zh_CN/unit/ULTRASONIC%20I2C
     :height: 200px
     :width: 200 px
 
     
-.. |example.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ultrasonic/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/example.svg
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/init.svg
 
-.. |get_target_distance.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/get_lux.svg
+.. |get_target_distance.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/get_target_distance.svg
 
 
 .. |ultrasonic_core_example.m5f2| raw:: html 

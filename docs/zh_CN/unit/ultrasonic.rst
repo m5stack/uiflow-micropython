@@ -41,7 +41,7 @@ UIFLOW2 Example:
 |ultrasonic_core_example.m5f2|
 
 class ULTRASONIC_I2C
------------------
+----------------------
 
 Constructors
 --------------
