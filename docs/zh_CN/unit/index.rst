@@ -13,3 +13,4 @@ Unit
     dualbutton.rst
     light.rst
     dlight.rst
+    ultrasonic.rst
