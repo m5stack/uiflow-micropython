@@ -93,7 +93,7 @@ class Relay_Stack:
 # *******************************************************************#
 
 
-class Relay4(Relay_Stack):
+class Relay4Module(Relay_Stack):
     def __init__(self, address: int = DEV_I2C_ADDR):
         super().__init__(i2c1, address)
         self._available()
