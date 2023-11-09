@@ -239,24 +239,24 @@ class DevApp(AppBase):
 
     def on_exit(self):
         M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
-        del self._bg_img,
-        del self._mac_label,
-        del self._account_label,
-        del self._bar_img,
-        del self._network_img,
-        del self._cloud_img,
-        del self._battery_img,
-        del self._battery_label,
-        del self._origin_x,
-        del self._origin_y,
-        del self._mac_text,
-        del self._account_text,
-        del self._bg_src,
-        del self._status_bar_src,
-        del self._network_status,
-        del self._cloud_status,
-        del self._battery_src,
-        del self._battery_text,
+        del (self._bg_img,)
+        del (self._mac_label,)
+        del (self._account_label,)
+        del (self._bar_img,)
+        del (self._network_img,)
+        del (self._cloud_img,)
+        del (self._battery_img,)
+        del (self._battery_label,)
+        del (self._origin_x,)
+        del (self._origin_y,)
+        del (self._mac_text,)
+        del (self._account_text,)
+        del (self._bg_src,)
+        del (self._status_bar_src,)
+        del (self._network_status,)
+        del (self._cloud_status,)
+        del (self._battery_src,)
+        del (self._battery_text,)
         # del self._avatar_src,
 
     async def _btna_event_handler(self, fw):

@@ -170,7 +170,11 @@ class ListApp(AppBase):
             self._label3 = Label(
                 "",
                 self._left_cursor_x + 10,
-                self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
+                self._left_cursor_y
+                + 8
+                + self._line_spacing
+                + self._line_spacing
+                + self._line_spacing,
                 w=200,
                 h=36,
                 fg_color=0x000000,
@@ -207,7 +211,7 @@ class ListApp(AppBase):
             self._files,
             self._max_file_num,
             self._cursor_pos,
-            self._file_pos
+            self._file_pos,
         )
 
     async def _btna_event_handler(self, fw):

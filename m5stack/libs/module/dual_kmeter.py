@@ -51,7 +51,11 @@ class DualKmeterBase:
         return "{:+.2f}".format(float(self._i2c.readfrom_mem(self._addr, reg, 8)))
 
     def get_kmeter_temperature_string(self, scale=0):
-        reg = _TEMP_INTSTR_CELSIUS_REG if scale == DualKmeterBase.CELSIUS else _FTEMP_INTSTR_FAHREN_REG
+        reg = (
+            _TEMP_INTSTR_CELSIUS_REG
+            if scale == DualKmeterBase.CELSIUS
+            else _FTEMP_INTSTR_FAHREN_REG
+        )
         return "{:+.2f}".format(float(self._i2c.readfrom_mem(self._addr, reg, 8)))
 
     def get_fw_ver(self) -> int:

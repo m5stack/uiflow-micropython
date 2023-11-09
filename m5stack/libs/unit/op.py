@@ -3,8 +3,8 @@ from machine import Pin
 SWITCH = 1
 COUNTER = 2
 
-class OPUnit:
 
+class OPUnit:
     def __init__(self, port, type=SWITCH):
         self.count_value = 0
         self.pin = Pin(port[0], Pin.IN, Pin.PULL_UP)
@@ -14,9 +14,9 @@ class OPUnit:
     @property
     def get_value(self):
         return self.pin.value()
-    
+
     def _cb_irq(self, arg):
         self.count_value += 1
-    
+
     def count_reset(self):
         self.count_value = 0

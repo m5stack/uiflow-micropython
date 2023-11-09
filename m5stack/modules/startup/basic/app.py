@@ -33,6 +33,7 @@ class AppSelector:
     def select(self, app):
         self._id = self._apps.index(app)
 
+
 class AppBase:
     def __init__(self) -> None:
         self._task = None

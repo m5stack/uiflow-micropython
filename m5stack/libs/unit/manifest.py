@@ -36,7 +36,7 @@ package(
         "ultrasonic_i2c.py",
         "can.py",
         "limit.py",
-        "op.py"
+        "op.py",
     ),
     base_path="..",
     opt=0,

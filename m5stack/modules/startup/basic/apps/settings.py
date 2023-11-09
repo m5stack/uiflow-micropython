@@ -456,32 +456,32 @@ class SettingsApp(AppBase):
         self._pos += 1
         if self._pos % 2 == 0:
             Lcd.fillRect(4 + 72 + 8, 56 + 4 + 108 + 4, 72, 44, 0x000000)
-            Lcd.drawImage(_boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0)
+            Lcd.drawImage(
+                _boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0
+            )
             Lcd.fillRect(4, 56 + 4 + 108 + 4, 72, 44, 0x000000)
             Lcd.drawImage(SETTING_SELECT_IMG, 4 + 0, 56 + 4 + 108 + 4 + 6)
-            Lcd.drawImage(
-                _brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0
-            )
+            Lcd.drawImage(_brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0)
         else:
             Lcd.fillRect(4, 56 + 4 + 108 + 4, 72, 44, 0x000000)
-            Lcd.drawImage(
-                _brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0
-            )
+            Lcd.drawImage(_brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0)
             Lcd.fillRect(4 + 72 + 8, 56 + 4 + 108 + 4, 72, 44, 0x000000)
             Lcd.drawImage(SETTING_SELECT_IMG, 4 + 72 + 8 + 0, 56 + 4 + 108 + 4 + 6)
-            Lcd.drawImage(_boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0)
+            Lcd.drawImage(
+                _boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0
+            )
 
     async def _btnc_event_handler(self, fw):
         if self._pos % 2 == 0:
             self._brightness = self._brightness_options.next()
             Lcd.setBrightness(self._brightness)
-            Lcd.drawImage(
-                _brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0
-            )
+            Lcd.drawImage(_brightness_options.get(self._brightness), 4 + 6, 56 + 4 + 108 + 4 + 0)
         else:
             self._boot_option = self._boot_options.next()
             boot_option.set_boot_option(self._boot_option)
-            Lcd.drawImage(_boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0)
+            Lcd.drawImage(
+                _boot_options.get(self._boot_option), 4 + 72 + 8 + 6, 56 + 4 + 108 + 4 + 0
+            )
 
     def start(self):
         super().start()
