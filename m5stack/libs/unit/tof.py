@@ -1,1 +1,1 @@
-from driver.vl53l0x import VL53L0X as ToF
+from driver.vl53l0x import VL53L0X as ToFUnit

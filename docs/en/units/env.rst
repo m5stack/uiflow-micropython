@@ -1,23 +1,13 @@
 ENV Unit
 ========
 
-The following products are supported：
+.. include:: ../refs/unit.env.ref
+
+The following products are supported:
 
 ================== ================== ==================
-|ENV|_             |ENV II|_          |ENV III|_
+|ENV|              |ENV II|           |ENV III|
 ================== ================== ==================
-
-.. |ENV| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/env/env_01.webp
-    :target: https://docs.m5stack.com/en/unit/env
-.. _ENV: replace:: |ENV|_
-
-.. |ENV II| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/envII/envII_01.webp
-    :target: https://docs.m5stack.com/en/unit/envII
-.. _ENV II: replace:: |ENV II|_
-
-.. |ENV III| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/envIII/envIII_01.webp
-    :target: https://docs.m5stack.com/en/unit/envIII
-.. _ENV III: replace:: |ENV III|_
 
 
 Micropython Example::
@@ -30,9 +20,9 @@ Micropython Example::
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
 
-    env_0 = ENV(i2c=i2c0, type=1) # ENV
-    env2_0 = ENV(i2c=i2c0, type=2) # ENV II
-    env3_0 = ENV(i2c=i2c0, type=3) # ENV III
+    env_0 = ENVUnit(i2c=i2c0, type=1) # ENVUnit
+    env2_0 = ENVUnit(i2c=i2c0, type=2) # ENVUnit II
+    env3_0 = ENVUnit(i2c=i2c0, type=3) # ENVUnit III
 
     print(env_0.read_temperature())
     print(env_0.read_humidity())
@@ -41,24 +31,27 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-.. image:: ../../_static/units/env/example.svg
+    |example.svg|
 
 .. only:: builder_html
 
-    :download:`example <../../_static/units/env/example.m5f2>`.
+|env_cores3_example.m5f2|
 
+
+class ENVUnit
+-------------
 
 Constructors
 ------------
 
-.. class:: ENV(i2c: Union[I2C, PAHUB], type: Literal[1, 2, 3])
+.. class:: ENVUnit(i2c: Union[I2C, PAHUBUnit], type: Literal[1, 2, 3])
 
-    Create an ENV object.
+    Create an ENVUnit object.
 
     parameter is:
 
         - ``i2c`` is an I2C object.
-        - ``type`` is the type of ENV
+        - ``type`` is the type of ENVUnit
 
             - ``1`` - ENV
             - ``2`` - ENV II
@@ -66,32 +59,32 @@ Constructors
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/init.svg
+        |init.svg|
 
 
 Methods
 -------
 
-.. method:: ENV.read_temperature()
+.. method:: ENVUnit.read_temperature()
 
     This method allows to read the temperature value collected by ENV and returns a floating point value. The unit of measurement is °C.
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_temperature.svg
+        |read_temperature.svg|
 
-.. method:: ENV.read_humidity()
+.. method:: ENVUnit.read_humidity()
 
     This method allows to read the relative humidity value collected by ENV and returns a floating point value. The unit of measurement is %RH.
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_humidity.svg
+        |read_humidity.svg|
 
-.. method:: ENV.read_pressure()
+.. method:: ENVUnit.read_pressure()
 
     This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is Pa.
 
     UIFLOW2:
 
-        .. image:: ../../_static/units/env/read_pressure.svg
+        |read_pressure.svg|

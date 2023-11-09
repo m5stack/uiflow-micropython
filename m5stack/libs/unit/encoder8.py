@@ -1,9 +1,8 @@
 # -*- encoding: utf-8 -*-
 
 from machine import I2C
-from micropython import const
 import struct
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 
@@ -32,8 +31,8 @@ I2C_ADDR_REG = 0xFF
 TOTAL_LED = 9
 
 
-class ENCODER8:
-    def __init__(self, i2c: Union[I2C, PAHUB], slave_addr: int = ENCODER8_ADDR) -> None:
+class ENCODER8Unit:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr: int = ENCODER8_ADDR) -> None:
         """
         Encoder 8 Channel Initialize Function
         Set I2C port

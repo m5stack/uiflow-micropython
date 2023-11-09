@@ -19,7 +19,7 @@ PAHUB_CHN5 = const(5)
 PAHUB_DEFAULT_ADDR = const(0x70)
 
 
-class PAHUB:
+class PAHUBUnit:
     _i2c = None
     _chn = -1
     _addr = PAHUB_DEFAULT_ADDR

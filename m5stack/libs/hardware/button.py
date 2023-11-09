@@ -22,44 +22,43 @@ class Button(ButtonBase):
         self.CB_TYPE = CB_TYPE()
 
     def isHolding(self):
-        return super().last_state == super().current_state and super().last_state == super().HOLD
+        return self.last_state == self.current_state and self.last_state == self.HOLD
 
     def isPressed(self):
-        return (
-            super().last_state == super().current_state and super().last_state == super().PRESSED
-        )
+        return self.last_state == self.current_state and self.last_state == self.PRESSED
 
     def isReleased(self):
-        return (
-            super().last_state == super().current_state and super().last_state == super().RELEASED
-        )
+        return self.last_state == self.current_state and self.last_state == self.RELEASED
+
+    def isClicked(self):
+        return self.last_state == self.current_state and self.last_state == self.CLICKED
 
     def wasHold(self):
-        return super().last_state == super().HOLD
+        return self.last_state == self.HOLD
 
     def wasPressed(self):
-        return super().last_state == super().PRESSED
+        return self.last_state == self.PRESSED
 
     def wasReleased(self):
-        return super().last_state == super().RELEASED
+        return self.last_state == self.RELEASED
 
     def wasClicked(self):
-        return super().last_state == super().CLICKED
+        return self.last_state == self.CLICKED
 
     def wasSingleClicked(self):
-        return super().last_state == super().CLICKED
+        return self.last_state == self.CLICKED
 
     def wasDoubleClicked(self):
-        return super().last_state == super().DOUBLE_CLICKED
+        return self.last_state == self.DOUBLE_CLICKED
 
     def setCallback(self, type=None, cb=None):
         if type == 0:
-            super().attach_click_event(cb, parameter=self.WAS_CLICKED)
+            self.attach_click_event(cb, parameter=self.WAS_CLICKED)
         elif type == 1:
-            super().attach_double_click(cb, parameter=self.WAS_DOUBLECLICKED)
+            self.attach_double_click(cb, parameter=self.WAS_DOUBLECLICKED)
         elif type == 2:
-            super().attach_during_long_press(cb, parameter=self.WAS_HOLD)
+            self.attach_during_long_press(cb, parameter=self.WAS_HOLD)
         elif type == 3:
-            super().attach_long_press_start(cb, parameter=self.WAS_PRESSED)
+            self.attach_long_press_start(cb, parameter=self.WAS_PRESSED)
         elif type == 4:
-            super().attach_long_press_stop(cb, parameter=self.WAS_RELEASED)
+            self.attach_long_press_stop(cb, parameter=self.WAS_RELEASED)

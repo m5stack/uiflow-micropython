@@ -67,9 +67,9 @@ class DevApp(AppBase):
         self._account_label = Label(
             "XXABC",
             55,
-            181,
+            176,
             w=100,
-            h=30,
+            h=40,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font=MontserratMedium18,

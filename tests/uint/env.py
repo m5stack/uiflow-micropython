@@ -1,11 +1,11 @@
 # main.py
 # -*- encoding: utf-8 -*-
-# UNIT ENV
+# UNIT ENVUnit
 import M5
 import time
 from M5 import *
 from machine import Pin, I2C
-from unit.env import ENV
+from unit.env import ENVUnit
 
 label0 = None
 label1 = None
@@ -22,7 +22,7 @@ def setup():
 
     # ATOMS3 PortA
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    env = ENV(i2c=i2c0, type=2)
+    env = ENVUnit(i2c=i2c0, type=2)
 
 
 def loop():

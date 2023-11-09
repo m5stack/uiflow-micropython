@@ -1,5 +1,5 @@
 from machine import I2C, Pin
-from unit.color import Color
+from unit.color import ColorUnit
 import time
 
 i2c0 = None
@@ -9,7 +9,7 @@ sensor = None
 def setup():
     global i2c0, sensor
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
-    sensor = Color(i2c0)
+    sensor = ColorUnit(i2c0)
 
 
 def loop():

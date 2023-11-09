@@ -1,7 +1,4 @@
-try:
-    from machine import Pin, ADC
-except ImportError:
-    pass
+from machine import Pin, ADC
 
 
 class EarthBase:
@@ -46,6 +43,6 @@ class EarthBase:
         return self._dim()
 
 
-class Earth(EarthBase):
+class EarthUnit(EarthBase):
     def __init__(self, port):
         super().__init__(port[0], port[1])

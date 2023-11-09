@@ -2,7 +2,7 @@ from driver.ir.nec import NEC, NEC_8
 from machine import Pin
 
 
-class IR:
+class IRUnit:
     # def __new__(cls, port, proto):
     #     if proto.upper() == "NEC":
     #         return NEC(Pin(port[1], Pin.IN))

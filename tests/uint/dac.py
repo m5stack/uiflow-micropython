@@ -2,13 +2,13 @@
 # of values.
 import time
 from machine import I2C, Pin
-from unit.dac import DAC
+from unit.dac import DACUnit
 
 # Initialize I2C bus.
 i2c = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
 
 # Initialize MCP4725.
-dac = DAC(i2c)
+dac = DACUnit(i2c)
 
 # There are a three ways to set the DAC output, you can use any of these:
 dac.set_value(65535)  # Use the value property with a 16-bit number just like
