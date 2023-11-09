@@ -30,3 +30,6 @@ from .rs485 import RS485
 from .rs485_iso import ISO485
 from .ultrasonic_io import ULTRASONIC_IO
 from .ultrasonic_i2c import ULTRASONIC_I2C
+from .can import CANUnit
+from .limit import LIMITUnit
+from .op import OPUnit
