@@ -34,7 +34,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |init.svg|
+    |example.svg|
 
 .. only:: builder_html
 
@@ -48,10 +48,10 @@ Constructors
 
 .. class:: DualButton(IO1,IO2)
 
-    创建一个DualButton对象.
+    Create a DualButton object.
 
-    参数是:
-        - ``IO1,IO2`` Define two key pins.
+    The parameters are:
+        - ``IO1,IO2`` 定义两个按键引脚。
 
  
     UIFLOW2:
@@ -65,7 +65,7 @@ Methods
 .. method:: Dual_Button.isHolding()
 
 
-    Gets the status value of the key.  
+    The parameters are:
 
     UIFLOW2:
 
@@ -73,7 +73,7 @@ Methods
 
 .. method:: Dual_Button.setCallback()
 
-    Gets the status value of the key.
+    Execute the program when the key is pressed.
 
     UIFLOW2:
 
