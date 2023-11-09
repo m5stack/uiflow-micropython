@@ -51,7 +51,7 @@ Constructors
     Create a DualButton object.
 
     The parameters are:
-        - ``IO1,IO2`` 定义两个按键引脚。
+        - ``IO1,IO2`` Define two key pins.
 
  
     UIFLOW2:
