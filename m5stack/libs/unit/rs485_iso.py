@@ -1,3 +1,1 @@
-from .rs485 import RS485
-
-ISO485 = RS485
+from .rs485 import RS485Unit as ISO485Unit

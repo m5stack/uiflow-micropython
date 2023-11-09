@@ -8,7 +8,7 @@ except ImportError:
     pass
 
 
-class PIR:
+class PIRUnit:
     IRQ_NEGATIVE = const(0)
     IRQ_ACTIVE = const(1)
 

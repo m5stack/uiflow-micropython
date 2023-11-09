@@ -14,7 +14,7 @@ light_0 = None
 def setup():
     global label0, label1, label2, light_0
 
-    light_0 = Light((1, 2))
+    light_0 = LightUnit((1, 2))
     M5.begin()
     label0 = Widgets.Label("Text", 2, 2, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("Text", 2, 30, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)

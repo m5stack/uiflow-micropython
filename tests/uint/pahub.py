@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
-# UNIT PAHUB + ENV
+# UNIT PAHUBUnit + ENVUnit
 import M5
 import time
 from M5 import Widgets
 from machine import Pin, I2C
-from unit import ENV, PAHUB
+from unit import ENVUnit, PAHUBUnit
 
 label0 = None
 label1 = None
@@ -34,11 +34,11 @@ def setup():
     # I2C Bus
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
     # PAHUB Bus, up to 6 channel to use
-    pahub0_0 = PAHUB(i2c=i2c0, channel=0)
-    pahub0_1 = PAHUB(i2c=i2c0, channel=1)
-    # ENV connect to PAHUB port
-    env2_0 = ENV(i2c=pahub0_0, type=2)
-    env2_1 = ENV(i2c=pahub0_1, type=2)
+    pahub0_0 = PAHUBUnit(i2c=i2c0, channel=0)
+    pahub0_1 = PAHUBUnit(i2c=i2c0, channel=1)
+    # ENVUnit connect to PAHUB port
+    env2_0 = ENVUnit(i2c=pahub0_0, type=2)
+    env2_1 = ENVUnit(i2c=pahub0_1, type=2)
 
 
 def loop():

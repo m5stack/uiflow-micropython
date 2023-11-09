@@ -1,5 +1,5 @@
 from machine import I2C
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 
@@ -9,8 +9,8 @@ except ImportError:
     pass
 
 
-class ULTRASONIC_I2C:
-    def __init__(self, i2c: Union[I2C, PAHUB], addr=0x57):
+class ULTRASONIC_I2CUnit:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x57):
         self.i2c = i2c
         self.i2c_addr = addr
         self._distance = 0

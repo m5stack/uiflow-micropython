@@ -3,7 +3,7 @@ import uasyncio as asyncio
 import M5
 import gc
 from machine import I2C, Pin
-from unit import CardKB, KeyCode
+from unit import CardKBUnit, KeyCode
 
 
 class KeyEvent:
@@ -52,7 +52,7 @@ class Framework:
         self.i2c0 = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
         self._kb_status = False
         if 0x5F in self.i2c0.scan():
-            self._kb = CardKB(self.i2c0)
+            self._kb = CardKBUnit(self.i2c0)
             self._event = KeyEvent()
             self._kb_status = True
 

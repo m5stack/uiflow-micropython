@@ -1,7 +1,6 @@
 from machine import I2C
-from micropython import const
 import struct
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 
@@ -33,8 +32,8 @@ FIRM_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
 
-class AC_MEASURE:
-    def __init__(self, i2c: Union[I2C, PAHUB], slave_addr: int = AC_MEASURE_ADDR) -> None:
+class AC_MEASUREUnit:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr: int = AC_MEASURE_ADDR) -> None:
         """
         AC Measure Initialize Function
         Set I2C port, AC Measure Slave Address

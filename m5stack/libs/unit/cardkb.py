@@ -16,7 +16,7 @@ class KeyCode:
     KEYCODE_RIGHT = 183
 
 
-class CardKB:
+class CardKBUnit:
     def __init__(self, i2c, address=0x5F):
         self._i2c = i2c
         self._addr = address

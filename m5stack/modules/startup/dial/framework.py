@@ -4,7 +4,7 @@ import M5
 import gc
 import time
 from machine import I2C, Pin
-from unit import CardKB, KeyCode
+from unit import CardKBUnit, KeyCode
 from hardware import Rotary
 
 
@@ -49,7 +49,7 @@ class Framework:
         self.i2c0 = I2C(0, scl=Pin(15), sda=Pin(13), freq=100000)
         self._kb_status = False
         if 0x5F in self.i2c0.scan():
-            self._kb = CardKB(self.i2c0)
+            self._kb = CardKBUnit(self.i2c0)
             self._event = KeyEvent()
             self._kb_status = True
         rotary = Rotary()

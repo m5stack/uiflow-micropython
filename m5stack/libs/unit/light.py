@@ -1,7 +1,7 @@
 from machine import Pin, ADC
 
 
-class Light:
+class LightUnit:
     def __init__(self, port: tuple) -> None:
         self._ain = ADC(Pin(port[0]), atten=ADC.ATTN_11DB)
         self._din = Pin(port[1], mode=Pin.IN)

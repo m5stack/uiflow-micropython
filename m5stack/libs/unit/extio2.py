@@ -1,17 +1,5 @@
-try:
-    from machine import I2C
-except ImportError:
-
-    class I2C:
-        pass
-
-
-try:
-    from micropython import const
-except ImportError:
-
-    def const(expr):
-        return expr
+from machine import I2C
+from micropython import const
 
 
 try:
@@ -102,7 +90,7 @@ class Pin:
         self._port.write_output_pin(self._id, 0)
 
 
-class EXTIO2:
+class EXTIO2Unit:
     IN = const(0)
     OUT = const(1)
     ANALOG = const(2)

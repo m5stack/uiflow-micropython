@@ -18,7 +18,7 @@ def setup():
     global i2c0, cardkb_0
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    cardkb_0 = CardKB(i2c0)
+    cardkb_0 = CardKBUnit(i2c0)
     cardkb_0.set_callback(cardkb_0_pressed_event)
     M5.begin()
 

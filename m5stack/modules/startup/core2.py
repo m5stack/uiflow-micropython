@@ -15,7 +15,7 @@ import esp32
 import sys
 import binascii
 
-# from unit import CardKB, KeyCode
+# from unit import CardKBUnit, KeyCode
 import gc
 from widgets.label import Label
 from widgets.button import Button
@@ -1591,7 +1591,7 @@ class Core2_Startup:
         last_update_status_time = last_touch_time
 
         # self.i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-        # self._kb = CardKB(self.i2c0)
+        # self._kb = CardKBUnit(self.i2c0)
         # self._event = KeyEvent()
         # self._kb_status = False
 

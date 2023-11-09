@@ -4,7 +4,7 @@ from driver.timer_thread import TimerThread
 timTh = TimerThread()
 
 
-class GPS:
+class GPSUnit:
     def __init__(self, port):
         self.uart_data = ""
         self.gps_time = "00:00:00"

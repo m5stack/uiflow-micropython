@@ -3,7 +3,7 @@ ENV Unit
 
 .. include:: ../refs/unit.env.ref
 
-The following products are supported：
+The following products are supported:
 
 ================== ================== ==================
 |ENV|              |ENV II|           |ENV III|
@@ -20,9 +20,9 @@ Micropython Example::
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
 
-    env_0 = ENV(i2c=i2c0, type=1) # ENV
-    env2_0 = ENV(i2c=i2c0, type=2) # ENV II
-    env3_0 = ENV(i2c=i2c0, type=3) # ENV III
+    env_0 = ENVUnit(i2c=i2c0, type=1) # ENVUnit
+    env2_0 = ENVUnit(i2c=i2c0, type=2) # ENVUnit II
+    env3_0 = ENVUnit(i2c=i2c0, type=3) # ENVUnit III
 
     print(env_0.read_temperature())
     print(env_0.read_humidity())
@@ -38,20 +38,20 @@ UIFLOW2 Example:
 |env_cores3_example.m5f2|
 
 
-class ENV
----------
+class ENVUnit
+-------------
 
 Constructors
 ------------
 
-.. class:: ENV(i2c: Union[I2C, PAHUB], type: Literal[1, 2, 3])
+.. class:: ENVUnit(i2c: Union[I2C, PAHUBUnit], type: Literal[1, 2, 3])
 
-    Create an ENV object.
+    Create an ENVUnit object.
 
     parameter is:
 
         - ``i2c`` is an I2C object.
-        - ``type`` is the type of ENV
+        - ``type`` is the type of ENVUnit
 
             - ``1`` - ENV
             - ``2`` - ENV II
@@ -65,7 +65,7 @@ Constructors
 Methods
 -------
 
-.. method:: ENV.read_temperature()
+.. method:: ENVUnit.read_temperature()
 
     This method allows to read the temperature value collected by ENV and returns a floating point value. The unit of measurement is °C.
 
@@ -73,7 +73,7 @@ Methods
 
         |read_temperature.svg|
 
-.. method:: ENV.read_humidity()
+.. method:: ENVUnit.read_humidity()
 
     This method allows to read the relative humidity value collected by ENV and returns a floating point value. The unit of measurement is %RH.
 
@@ -81,7 +81,7 @@ Methods
 
         |read_humidity.svg|
 
-.. method:: ENV.read_pressure()
+.. method:: ENVUnit.read_pressure()
 
     This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is Pa.
 

@@ -19,9 +19,9 @@ Micropython Example::
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
 
-    env_0 = ENV(i2c=i2c0, type=1) # ENV
-    env2_0 = ENV(i2c=i2c0, type=2) # ENV II
-    env3_0 = ENV(i2c=i2c0, type=3) # ENV III
+    env_0 = ENVUnit(i2c=i2c0, type=1) # ENVUnit
+    env2_0 = ENVUnit(i2c=i2c0, type=2) # ENVUnit II
+    env3_0 = ENVUnit(i2c=i2c0, type=3) # ENVUnit III
 
     print(env_0.read_temperature())
     print(env_0.read_humidity())
@@ -35,13 +35,13 @@ UIFLOW2 Example:
 
 |env_cores3_example.m5f2|
 
-class ENV
----------
+class ENVUnit
+-------------
 
 Constructors
 ------------
 
-.. class:: ENV(i2c: Union[I2C, PAHUB], type: Literal[1, 2, 3])
+.. class:: ENVUnit(i2c: Union[I2C, PAHUB], type: Literal[1, 2, 3])
 
     创建一个ENV对象。
 
@@ -62,7 +62,7 @@ Constructors
 Methods
 -------
 
-.. method:: ENV.read_temperature()
+.. method:: ENVUnit.read_temperature()
 
     此方法允许读取ENV采集的温度值并返回一个浮点型数值。计量单位为°C。
 
@@ -70,7 +70,7 @@ Methods
 
         |read_temperature.svg|
 
-.. method:: ENV.read_humidity()
+.. method:: ENVUnit.read_humidity()
 
     此方法允许读取ENV采集的相对湿度值并返回一个浮点型数值。计量单位为%RH。
 
@@ -78,7 +78,7 @@ Methods
 
         |read_humidity.svg|
 
-.. method:: ENV.read_pressure()
+.. method:: ENVUnit.read_pressure()
 
     此方法允许读取ENV采集的大气压并返回一个浮点型数值。计量单位为Pa。
 
