@@ -1,10 +1,7 @@
-try:
-    from machine import Pin, ADC
-except ImportError:
-    pass
+from machine import Pin, ADC
 
 
-class Angle:
+class AngleUnit:
     def __init__(self, port):
         self._adc = ADC(Pin(port[0]), atten=ADC.ATTN_11DB)
 

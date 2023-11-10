@@ -4,7 +4,7 @@ import M5
 import gc
 import time
 from machine import I2C, Pin
-from unit import CardKB, KeyCode
+from unit import CardKBUnit, KeyCode
 
 
 class KeyEvent:
@@ -70,7 +70,7 @@ class Framework:
             self._last_app = self._launcher
 
         self.i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-        self._kb = CardKB(self.i2c0)
+        self._kb = CardKBUnit(self.i2c0)
         self._event = KeyEvent()
         self._kb_status = False
 

@@ -16,7 +16,7 @@ def setup():
     global label0, label1, i2c0, ncir_0
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    ncir_0 = NCIR(i2c0)
+    ncir_0 = NCIRUnit(i2c0)
     M5.begin()
     label0 = Widgets.Label("Text", 5, 12, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("Text", 14, 44, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)

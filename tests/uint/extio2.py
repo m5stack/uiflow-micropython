@@ -1,5 +1,5 @@
 from machine import I2C, Pin
-from extio2 import EXTIO2
+from extio2 import EXTIO2Unit
 import unittest
 import time
 
@@ -7,7 +7,7 @@ import time
 class TestEXTIO2(unittest.TestCase):
     def __init__(self):
         i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
-        self._extio2_0 = EXTIO2(i2c0)
+        self._extio2_0 = EXTIO2Unit(i2c0)
 
     def test_fw_version(self):
         result = self._extio2_0.read_fw_version()

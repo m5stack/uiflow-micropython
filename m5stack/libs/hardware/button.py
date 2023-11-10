@@ -25,14 +25,10 @@ class Button(ButtonBase):
         return self.last_state == self.current_state and self.last_state == self.HOLD
 
     def isPressed(self):
-        return (
-            self.last_state == self.current_state and self.last_state == self.PRESSED
-        )
+        return self.last_state == self.current_state and self.last_state == self.PRESSED
 
     def isReleased(self):
-        return (
-            self.last_state == self.current_state and self.last_state == self.RELEASED
-        )
+        return self.last_state == self.current_state and self.last_state == self.RELEASED
 
     def isClicked(self):
         return self.last_state == self.current_state and self.last_state == self.CLICKED

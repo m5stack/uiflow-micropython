@@ -26,12 +26,12 @@ class DualKmeterBase:
         self._addr = address
 
     def get_thermocouple_temperature(self, scale=0) -> int:
-        reg = _TEMP_CELSIUS_REG if scale == DualKmeter.CELSIUS else _TEMP_FAHREN_REG
+        reg = _TEMP_CELSIUS_REG if scale == DualKmeterBase.CELSIUS else _TEMP_FAHREN_REG
         buff = self._i2c.readfrom_mem(self._addr, reg, 4)
         return round((self._int_convert(buff) / 100), 2)
 
     def get_kmeter_temperature(self, scale=0) -> int:
-        reg = _TEMP_INT_CELSIUS_REG if scale == DualKmeter.CELSIUS else _TEMP_INT_FAHREN_REG
+        reg = _TEMP_INT_CELSIUS_REG if scale == DualKmeterBase.CELSIUS else _TEMP_INT_FAHREN_REG
         buff = self._i2c.readfrom_mem(self._addr, reg, 4)
         return round(self._int_convert(buff) / 100, 2)
 
@@ -47,11 +47,15 @@ class DualKmeterBase:
         return True if status == 0 else False
 
     def get_thermocouple_temperature_string(self, scale=0):
-        reg = _TEMP_STR_CELSIUS_REG if scale == DualKmeter.CELSIUS else _TEMP_STR_FAHREN_REG
+        reg = _TEMP_STR_CELSIUS_REG if scale == DualKmeterBase.CELSIUS else _TEMP_STR_FAHREN_REG
         return "{:+.2f}".format(float(self._i2c.readfrom_mem(self._addr, reg, 8)))
 
     def get_kmeter_temperature_string(self, scale=0):
-        reg = _TEMP_INTSTR_CELSIUS_REG if scale == DualKmeter.CELSIUS else _FTEMP_INTSTR_FAHREN_REG
+        reg = (
+            _TEMP_INTSTR_CELSIUS_REG
+            if scale == DualKmeterBase.CELSIUS
+            else _FTEMP_INTSTR_FAHREN_REG
+        )
         return "{:+.2f}".format(float(self._i2c.readfrom_mem(self._addr, reg, 8)))
 
     def get_fw_ver(self) -> int:
@@ -64,6 +68,6 @@ class DualKmeterBase:
         return struct.unpack("<i", value)[0]
 
 
-class DualKmeter(DualKmeterBase):
+class DualKmeterModule(DualKmeterBase):
     def __init__(self, address: int = _DUAL_KMETER_DEFAULT_ADDRESS):
         super().__init__(i2c1, address)

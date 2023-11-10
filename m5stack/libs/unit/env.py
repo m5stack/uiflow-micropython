@@ -1,8 +1,8 @@
 # -*- encoding: utf-8 -*-
-# ENV I/II/III/IV
+# ENVUnit I/II/III/IV
 from machine import I2C
 from micropython import const
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 from driver.sht30 import SHT30
 from driver.bmp280 import BMP280
@@ -22,11 +22,11 @@ ENV_III = const(3)
 ENV_IV = const(4)
 
 
-class ENV:
+class ENVUnit:
     _temp_humid = None
     _pressure = None
 
-    def __init__(self, i2c: Union[I2C, PAHUB], type: Literal[1, 2, 3, 4]) -> None:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], type: Literal[1, 2, 3, 4]) -> None:
         if type == ENV_I:
             self._temp_humid = DHT12(i2c=i2c)
             self._pressure = BMP280(i2c=i2c)
@@ -40,7 +40,7 @@ class ENV:
             self._temp_humid = SHT4x(i2c=i2c)
             self._pressure = BMP280(i2c=i2c)
         else:
-            raise UnitError("Unknown ENV type")
+            raise UnitError("Unknown ENVUnit type")
 
     def read_temperature(self) -> float:
         return round(self._temp_humid.measure()[0], 2)

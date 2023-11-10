@@ -2,7 +2,7 @@ from driver.asr650x import LoRaWAN_470
 import machine
 
 
-class LoRaWAN(LoRaWAN_470):
+class LoRaWANUnit(LoRaWAN_470):
     def __init__(self, port):
         super(LoRaWAN, self).__init__(tx=port[1], rx=port[0])
         self.tx = port[1]

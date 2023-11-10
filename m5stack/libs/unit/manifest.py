@@ -34,9 +34,9 @@ package(
         "rs485_iso.py",
         "ultrasonic_io.py",
         "ultrasonic_i2c.py",
-        "can.py",
+        # "can.py",
         "limit.py",
-        "op.py"
+        "op.py",
     ),
     base_path="..",
     opt=0,

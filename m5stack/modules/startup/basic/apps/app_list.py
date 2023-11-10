@@ -4,6 +4,9 @@ from widgets.label import Label
 from M5 import Lcd, Widgets
 import os
 import sys
+import time
+import machine
+import boot_option
 from ..res import (
     APPLIST_UNSELECTED_IMG,
     APPLIST_SELECTED_IMG,
@@ -83,7 +86,7 @@ class FileList:
 
 class ListApp(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
-        pass
+        super().__init__()
 
     def on_install(self):
         Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
@@ -127,64 +130,89 @@ class ListApp(AppBase):
         self._right_img.set_size(10, 36)
         self._right_img.set_src(APPLIST_RIGHT_IMG)
 
-        self._label0 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=Widgets.FONTS.DejaVu18,
-        )
+        if not hasattr(self, "_label0"):
+            self._label0 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=Widgets.FONTS.DejaVu18,
+            )
 
-        self._label1 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=Widgets.FONTS.DejaVu18,
-        )
+        if not hasattr(self, "_label1"):
+            self._label1 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8 + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=Widgets.FONTS.DejaVu18,
+            )
 
-        self._label2 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=Widgets.FONTS.DejaVu18,
-        )
+        if not hasattr(self, "_label2"):
+            self._label2 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=Widgets.FONTS.DejaVu18,
+            )
 
-        self._label3 = Label(
-            "",
-            self._left_cursor_x + 10,
-            self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
-            w=200,
-            h=36,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font=Widgets.FONTS.DejaVu18,
-        )
-        self._labels = []
-        self._labels.append(self._label0)
-        self._labels.append(self._label1)
-        self._labels.append(self._label2)
-        self._labels.append(self._label3)
+        if not hasattr(self, "_label3"):
+            self._label3 = Label(
+                "",
+                self._left_cursor_x + 10,
+                self._left_cursor_y
+                + 8
+                + self._line_spacing
+                + self._line_spacing
+                + self._line_spacing,
+                w=200,
+                h=36,
+                fg_color=0x000000,
+                bg_color=0xFEFEFE,
+                font=Widgets.FONTS.DejaVu18,
+            )
+        if not hasattr(self, "_labels"):
+            self._labels = (self._label0, self._label1, self._label2, self._label3)
+        # self._labels.append(self._label0)
+        # self._labels.append(self._label1)
+        # self._labels.append(self._label2)
+        # self._labels.append(self._label3)
 
         for label, file in zip(self._labels, self._files):
             file and label and label.setText(file)
 
+    def on_ready(self):
+        pass
+
+    def on_hide(self):
+        pass
+
     def on_exit(self):
         Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
-        del self._left_img, self._right_img
-        del self._label0, self._label1, self._label2, self._label3, self._labels
-        del self._rect0
-        del self._files, self._max_file_num, self._cursor_pos, self._file_pos
+        del (
+            self._left_img,
+            self._right_img,
+            # del self._label0,
+            # self._label1,
+            # self._label2,
+            # self._label3,
+            # self._labels
+            self._rect0,
+            self._files,
+            self._max_file_num,
+            self._cursor_pos,
+            self._file_pos,
+        )
 
     async def _btna_event_handler(self, fw):
         pass
@@ -223,3 +251,16 @@ class ListApp(AppBase):
     async def _btnc_event_handler(self, fw):
         execfile("apps/" + self._files[self._file_pos])
         sys.exit(0)
+
+    async def _btnc_hold_event_handler(self, fw):
+        boot_option.set_boot_option(2)
+        with open("apps/" + self._files[self._file_pos], "rb") as f_src, open(
+            "main.py", "wb"
+        ) as f_dst:
+            while True:
+                chunk = f_src.read(256)
+                if not chunk:
+                    break
+                f_dst.write(chunk)
+        time.sleep(0.1)
+        machine.reset()

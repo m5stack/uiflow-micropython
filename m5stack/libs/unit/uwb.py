@@ -6,7 +6,7 @@ UWB_RESULT_HEADER = "an"
 UWB_GET_TIMEOUT = 12
 
 
-class UWB:
+class UWBUnit:
     def __init__(self, port, id=None, debug=False):
         self._debug = debug
         Pinx = Pin(port[0], Pin.IN, Pin.PULL_UP)

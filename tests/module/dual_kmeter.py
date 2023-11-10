@@ -1,7 +1,7 @@
 import os, sys, io
 import M5
 from M5 import *
-from module import DualKmeter
+from module import DualKmeterModule
 
 
 label0 = None
@@ -21,7 +21,7 @@ def setup():
     label2 = Widgets.Label("Text", 17, 139, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label3 = Widgets.Label("Text", 174, 146, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
-    km_0 = DualKmeter(address=0x11)
+    km_0 = DualKmeterModule(address=0x11)
     km_0.set_kmeter_channel(0)
     label0.setText(str(km_0.get_kmeter_channel()))
     label0.setText(str(km_0.get_fw_ver()))

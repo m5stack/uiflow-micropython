@@ -1,9 +1,7 @@
 from machine import I2C
-from micropython import const
 import struct
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import time
 
 try:
     from typing import Union
@@ -23,8 +21,8 @@ I2C_ADDR_REG = 0xFF
 FW_VER_REG = 0xFE
 
 
-class HBRIDGE:
-    def __init__(self, i2c: Union[I2C, PAHUB], slave_addr=HBRIDGE_ADDR):
+class HBRIDGEUnit:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr=HBRIDGE_ADDR):
         """
         Hbridge Initialize Function
         Set I2C port, Hbridge Slave Address

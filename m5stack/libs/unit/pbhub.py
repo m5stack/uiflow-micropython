@@ -1,7 +1,7 @@
 from machine import I2C
 from micropython import const
 import struct
-from .pahub import PAHUB
+from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 
@@ -17,8 +17,8 @@ FW_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
 
-class PBHUB:
-    def __init__(self, i2c: Union[I2C, PAHUB], addr=PBHUB_ADDR):
+class PBHUBUnit:
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=PBHUB_ADDR):
         self.i2c_addr = addr
         self.pbhub_i2c = i2c
         self.init_i2c_address(addr)

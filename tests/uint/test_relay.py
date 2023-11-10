@@ -11,7 +11,7 @@ relay_0 = None
 def setup():
     global relay_0
 
-    relay_0 = Relay((1, 2))
+    relay_0 = RelayUnit((1, 2))
     M5.begin()
 
 
