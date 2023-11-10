@@ -14,3 +14,4 @@ Unit
     light.rst
     dlight.rst
     ultrasonic.rst
+    pir.rst
