@@ -16,3 +16,4 @@ Unit
     ultrasonic.rst
     pir.rst
     ncir.rst
+    relay.rst
