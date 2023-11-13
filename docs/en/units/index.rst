@@ -17,3 +17,4 @@ Unit
     pir.rst
     ncir.rst
     relay.rst
+    op90.rst
