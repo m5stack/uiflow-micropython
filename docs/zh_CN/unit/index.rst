@@ -15,3 +15,4 @@ Unit
     dlight.rst
     ultrasonic.rst
     pir.rst
+    ncir.rst
