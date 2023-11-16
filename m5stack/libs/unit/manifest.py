@@ -37,6 +37,7 @@ package(
         # "can.py",
         "limit.py",
         "op.py",
+        'lora_e220_jp.py',
     ),
     base_path="..",
     opt=0,

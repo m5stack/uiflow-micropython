@@ -32,3 +32,4 @@ from .ultrasonic_io import ULTRASONIC_IOUnit
 from .ultrasonic_i2c import ULTRASONIC_I2CUnit
 from .limit import LIMITUnit
 from .op import OPUnit
+from .lora_e220_jp import LoRaE220JPUnit

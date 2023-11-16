@@ -51,3 +51,4 @@ genrst/
 tools/littlefs/prebuilt/
 
 dependencies.lock
+m5stack/.workenv
