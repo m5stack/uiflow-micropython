@@ -38,6 +38,7 @@ package(
         "limit.py",
         "op.py",
         'lora_e220_jp.py',
+        "rfid.py",
     ),
     base_path="..",
     opt=0,

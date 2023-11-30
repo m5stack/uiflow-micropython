@@ -4,6 +4,7 @@ package(
         "__init__.py",
         "button.py",
         "ir.py",
+        "rfid.py",
         "rgb.py",
         "sdcard.py",
         "rotary.py",
