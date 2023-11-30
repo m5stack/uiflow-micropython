@@ -37,6 +37,8 @@ package(
         # "can.py",
         "limit.py",
         "op.py",
+        "weight.py",
+        "scales.py",
     ),
     base_path="..",
     opt=0,

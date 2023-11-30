@@ -32,3 +32,5 @@ from .ultrasonic_io import ULTRASONIC_IOUnit
 from .ultrasonic_i2c import ULTRASONIC_I2CUnit
 from .limit import LIMITUnit
 from .op import OPUnit
+from .weight import WEIGHTUnit
+from .scales import SCALESUnit
