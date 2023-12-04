@@ -521,7 +521,7 @@ class MFRC522:
                     rxAlign=rxAlign,
                 )
                 if responseBuffer1:
-                    responseBuffer[0:len(responseBuffer1)] = responseBuffer1
+                    responseBuffer[0 : len(responseBuffer1)] = responseBuffer1
 
                 if status == self.STATUS_COLLISION:
                     # More than one PICC in the field => collision.
@@ -735,7 +735,12 @@ class MFRC522:
         status = self.mifare_read(blockAddr, self._BUFFER18)
         if status == self.STATUS_OK:
             # Extract the value
-            value = (self._BUFFER18[3] << 24) | (self._BUFFER18[2] << 16) | (self._BUFFER18[1] << 8) | (self._BUFFER18[0])
+            value = (
+                (self._BUFFER18[3] << 24)
+                | (self._BUFFER18[2] << 16)
+                | (self._BUFFER18[1] << 8)
+                | (self._BUFFER18[0])
+            )
         return status, value
 
     def mifare_set_value(self, blockAddr, value):
@@ -773,7 +778,9 @@ class MFRC522:
         cmdBuffer = sendData + self._CRC_BUFFER
 
         # Transceive the data, store the reply in cmdBuffer[]
-        status, rspBuffer, validBits = self.pcd_communicate_with_picc(PCD_TRANSCEIVE, 0x30, cmdBuffer, validBits=0)
+        status, rspBuffer, validBits = self.pcd_communicate_with_picc(
+            PCD_TRANSCEIVE, 0x30, cmdBuffer, validBits=0
+        )
         # print("pcd_communicate_with_picc() status:", status)
         if acceptTimeout and status == self.STATUS_TIMEOUT:
             return self.STATUS_OK
@@ -1049,7 +1056,7 @@ class MFRC522:
             bytearray([0x40]), validBits=validBits
         )
         if response1:
-            response[:len(response1)] = response1
+            response[: len(response1)] = response1
         if status != self.STATUS_OK:
             logErrors and print(
                 "Card did not respond to 0x40 after HALT command. Are you sure it is a UID changeable one?"
@@ -1069,7 +1076,7 @@ class MFRC522:
             bytearray([0x43]), validBits=validBits, rxAlign=0, rxAlign=False
         )
         if response1:
-            response[:len(response1)] = response1
+            response[: len(response1)] = response1
         if status != self.STATUS_OK:
             logErrors and print(
                 "Error in communication at command 0x43, after successfully executing 0x40"
@@ -1110,7 +1117,9 @@ class MFRC522:
                     )
                     return False
             else:
-                logErrors and print("PCD_Authenticate() failed:", self.get_status_code_name(status))
+                logErrors and print(
+                    "PCD_Authenticate() failed:", self.get_status_code_name(status)
+                )
 
         # Read block 0
         block0_buffer = bytearray(18)

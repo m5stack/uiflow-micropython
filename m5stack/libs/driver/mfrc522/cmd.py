@@ -35,13 +35,13 @@ PCD_SOFTRESET = const(0x0F)
 # Commands sent to the PICC.
 # The commands used by the PCD to manage communication with several PICCs (ISO 14443-3, Type A, section 6.4)
 
-# REQuest command, Type A. 
+# REQuest command, Type A.
 # Invites PICCs in state IDLE to go to READY and prepare for anticollision or
 # selection. 7 bit frame.
 PICC_CMD_REQA = const(0x26)
 
-# Wake-UP command, Type A. 
-# Invites PICCs in state IDLE and HALT to go to READY(*) and prepare for 
+# Wake-UP command, Type A.
+# Invites PICCs in state IDLE and HALT to go to READY(*) and prepare for
 # anticollision or selection. 7 bit frame.
 PICC_CMD_WUPA = const(0x52)
 

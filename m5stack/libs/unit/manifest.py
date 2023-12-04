@@ -37,7 +37,7 @@ package(
         # "can.py",
         "limit.py",
         "op.py",
-        'lora_e220_jp.py',
+        "lora_e220_jp.py",
         "rfid.py",
         "weight.py",
         "scales.py",

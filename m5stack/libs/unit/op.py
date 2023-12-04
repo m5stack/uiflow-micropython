@@ -4,6 +4,7 @@ from hardware import Button
 SWITCH = 1
 COUNTER = 2
 
+
 class OPUnit(Button):
     def __init__(self, port, active_low=True, type=SWITCH):
         self.count_value = 0
@@ -18,7 +19,7 @@ class OPUnit(Button):
         self.curr_status = self.pin.value()
         if self.curr_status != self.prev_status:
             self.count_value += 1
-        self.prev_status = self.curr_status     
+        self.prev_status = self.curr_status
 
     def count_reset(self):
         self.count_value = 0

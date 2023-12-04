@@ -1,26 +1,27 @@
 # -*- encoding: utf-8 -*-
-'''
+"""
 @File    :   _imu_pro.py
 @Time    :   2023/11/06 xx:xx:xx
 @Author  :   TONG YIHAN
 @E-mail  :   icyqwq@gmail.com
 @License :   (C)Copyright 2015-2023, M5STACK
 @Desc    :   The LoRaE220 Unit is a LoRa communication module, designed for the 920MHz frequency band.
-'''
+"""
 # UART: ['any', 'read', 'readinto', 'readline', 'write', 'INV_CTS', 'INV_RTS', 'INV_RX', 'INV_TX', 'deinit', 'init', 'sendbreak']
 import machine
 import time
 import _thread
 
+
 class Def:
     # Baud Rate Values
-    BAUD_1200   = 0b000
-    BAUD_2400   = 0b001
-    BAUD_4800   = 0b010
-    BAUD_9600   = 0b011
-    BAUD_19200  = 0b100
-    BAUD_38400  = 0b101
-    BAUD_57600  = 0b110
+    BAUD_1200 = 0b000
+    BAUD_2400 = 0b001
+    BAUD_4800 = 0b010
+    BAUD_9600 = 0b011
+    BAUD_19200 = 0b100
+    BAUD_38400 = 0b101
+    BAUD_57600 = 0b110
     BAUD_115200 = 0b111
 
     # Data Rate Values
@@ -76,8 +77,9 @@ class Def:
     WOR_1500MS = 0b010
     WOR_2000MS = 0b011
 
+
 class LoRaE220JPUnit:
-    def __init__(self, port, port_id = 1) -> None:
+    def __init__(self, port, port_id=1) -> None:
         # print('Port: ', port)
         self.uart = machine.UART(port_id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
@@ -86,11 +88,24 @@ class LoRaE220JPUnit:
 
     def _conf_range(self, target, min, max):
         return min <= target <= max
-    
-    def setup(self, own_address = 0, own_channel = 0, encryption_key = 0x2333, air_data_rate = Def.BW125K_SF9, subpacket_size = Def.SUBPACKET_200_BYTE, rssi_ambient_noise_flag = Def.RSSI_AMBIENT_NOISE_ENABLE, transmitting_power = Def.TX_POWER_13dBm,rssi_byte_flag = Def.RSSI_BYTE_ENABLE, transmission_method_type = Def.UART_P2P_MODE, lbt_flag = Def.LBT_DISABLE, wor_cycle = Def.WOR_2000MS):
+
+    def setup(
+        self,
+        own_address=0,
+        own_channel=0,
+        encryption_key=0x2333,
+        air_data_rate=Def.BW125K_SF9,
+        subpacket_size=Def.SUBPACKET_200_BYTE,
+        rssi_ambient_noise_flag=Def.RSSI_AMBIENT_NOISE_ENABLE,
+        transmitting_power=Def.TX_POWER_13dBm,
+        rssi_byte_flag=Def.RSSI_BYTE_ENABLE,
+        transmission_method_type=Def.UART_P2P_MODE,
+        lbt_flag=Def.LBT_DISABLE,
+        wor_cycle=Def.WOR_2000MS,
+    ):
         if not self._conf_range(own_channel, 0, 30):
             return False
-        
+
         self.subpacket_size = subpacket_size
         self.max_len = 0
         if self.subpacket_size == Def.SUBPACKET_128_BYTE:
@@ -102,9 +117,9 @@ class LoRaE220JPUnit:
         else:
             self.max_len = 200
 
-        command = [0xc0, 0x00, 0x08]
+        command = [0xC0, 0x00, 0x08]
         ADDH = own_address >> 8
-        ADDL = own_address & 0xff
+        ADDL = own_address & 0xFF
         command.extend([ADDH, ADDL])
 
         REG0 = (Def.BAUD_9600 << 5) | air_data_rate
@@ -115,26 +130,30 @@ class LoRaE220JPUnit:
 
         command.append(own_channel)
 
-        REG3 = (rssi_byte_flag << 7) | (transmission_method_type << 6) | (lbt_flag << 4) | wor_cycle
+        REG3 = (
+            (rssi_byte_flag << 7) | (transmission_method_type << 6) | (lbt_flag << 4) | wor_cycle
+        )
         command.append(REG3)
 
         CRYPT_H = encryption_key >> 8
-        CRYPT_L = encryption_key & 0xff
+        CRYPT_L = encryption_key & 0xFF
         command.extend([CRYPT_H, CRYPT_L])
 
         self.uart.write(bytes(command))
-        
-        time.sleep_ms(100) # wait for response
+
+        time.sleep_ms(100)  # wait for response
 
         response = []
         if self.uart.any():
             response = self.uart.read()
 
         if len(response) != len(command):
-            print("[WARN] Setup LoRa unit failed, please check connection and wether unit in configuration mode.")
+            print(
+                "[WARN] Setup LoRa unit failed, please check connection and wether unit in configuration mode."
+            )
             return False
         return True
-    
+
     def _recvCallback(self):
         response = bytes()
         rssi = 0
@@ -149,7 +168,7 @@ class LoRaE220JPUnit:
                     self.receive_callback(response[:-1], rssi)
                     response = bytes()
             time.sleep_ms(10)
-    
+
     def receiveNoneBlock(self, receive_callback):
         if not self.recv_running:
             self.recv_running = True
@@ -160,9 +179,9 @@ class LoRaE220JPUnit:
         self.recv_running = False
         time.sleep_ms(50)
         self.receive_callback = None
-    
-    def receive(self, timeout = 1000):
-        start = time.ticks_ms() 
+
+    def receive(self, timeout=1000):
+        start = time.ticks_ms()
         response = bytes()
         rssi = 0
         while True:
@@ -179,20 +198,20 @@ class LoRaE220JPUnit:
                     break
             time.sleep_ms(10)
         return response[:-1], rssi
-    
+
     def send(self, target_address, target_channel, send_data):
         if type(send_data) is str:
-            send_data = send_data.encode('utf-8')
+            send_data = send_data.encode("utf-8")
 
         if type(send_data) is list:
             send_data = bytearray(send_data)
-            
+
         if len(send_data) > self.max_len:  # Adjust based on allowed packet size
-            print('ERROR: Length of send_data over %d bytes.' %self.max_len)
+            print("ERROR: Length of send_data over %d bytes." % self.max_len)
             return False
 
         target_address_H = target_address >> 8
-        target_address_L = target_address & 0xff
+        target_address_L = target_address & 0xFF
 
         frame = bytearray([target_address_H, target_address_L, target_channel])
         frame.extend(send_data)

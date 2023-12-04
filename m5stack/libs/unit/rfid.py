@@ -1,5 +1,6 @@
 from driver.mfrc522 import MFRC522
 
+
 class RFIDUnit(MFRC522):
     def __init__(self, i2c, addr=0x28) -> None:
         super().__init__(i2c, addr)
@@ -19,7 +20,7 @@ class RFIDUnit(MFRC522):
 
     def read(self, block_addr):
         buffer = bytearray(16)
-        self.pcd_authenticate(0x60, block_addr, bytearray(b'\xFF\xFF\xFF\xFF\xFF\xFF'), self._uid)
+        self.pcd_authenticate(0x60, block_addr, bytearray(b"\xFF\xFF\xFF\xFF\xFF\xFF"), self._uid)
         if self.mifare_read(block_addr, buffer) == self.STATUS_OK:
             return buffer
         else:
@@ -27,7 +28,7 @@ class RFIDUnit(MFRC522):
 
     def write(self, block_addr, buffer) -> int:
         BUFFER16 = bytearray(16)
-        self.pcd_authenticate(0x60, block_addr, bytearray(b'\xFF\xFF\xFF\xFF\xFF\xFF'), self._uid)
+        self.pcd_authenticate(0x60, block_addr, bytearray(b"\xFF\xFF\xFF\xFF\xFF\xFF"), self._uid)
         self.mifare_read(block_addr, BUFFER16)
         l = 16 if len(buffer) > 16 else len(buffer)
         BUFFER16[:l] = buffer[:l]
