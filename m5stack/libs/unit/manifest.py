@@ -39,6 +39,8 @@ package(
         "op.py",
         'lora_e220_jp.py',
         "rfid.py",
+        "weight.py",
+        "scales.py",
     ),
     base_path="..",
     opt=0,

@@ -37,6 +37,8 @@ _attrs = {
     "OPUnit": "op",
     "RFIDUnit": "rfid",
     "LoRaE220JPUnit": "lora_e220_jp",
+    "WEIGHTUnit": "weight",
+    "SCALESUnit": "scales",
 }
 
 def __getattr__(attr):
