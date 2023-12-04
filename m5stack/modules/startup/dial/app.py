@@ -1,7 +1,4 @@
 import uasyncio as asyncio
-from collections import namedtuple
-
-Descriptor = namedtuple("Descriptor", ["x", "y", "w", "h"])
 
 
 def generator(d):

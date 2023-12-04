@@ -6,6 +6,7 @@
 # M5STACK_xxx    -> ESP32
 # M5STACK_C3_xxx -> ESP32 C3
 # M5STACK_S3_xxx -> ESP32 S3
+-include .workenv
 
 BOARD ?= M5STACK_8MB
 

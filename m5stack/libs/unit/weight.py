@@ -7,8 +7,9 @@ CHANNEL_A_64 = const(3)
 CHANNEL_B_32 = const(2)
 
 DATA_BITS = const(24)
-MAX_VALUE = const(0x7fffff)
+MAX_VALUE = const(0x7FFFFF)
 MIN_VALUE = const(0x800000)
+
 
 class WEIGHTUnit:
     def __init__(self, port) -> None:
@@ -16,9 +17,9 @@ class WEIGHTUnit:
         self.hx711clk = Pin(port[1], Pin.OUT)
         self.zero_value = 0
         self.hx711clk.value(0)
-        self._channel=1
-        self._scale=1.0
-        
+        self._channel = 1
+        self._scale = 1.0
+
     @property
     def get_raw_weight(self) -> int:
         count = 0
@@ -33,7 +34,7 @@ class WEIGHTUnit:
                 count = count << 1
         else:
             return 0
-        
+
         gain_m = self._channel
         while gain_m:
             self.hx711clk.value(1)
@@ -50,7 +51,7 @@ class WEIGHTUnit:
 
     def set_tare(self) -> None:
         self.zero_value = self.get_raw_weight
-    
+
     def set_calibrate_scale(self, weight):
         self._scale = (1.0 * weight) / (self.get_raw_weight - self.zero_value)
 
@@ -59,10 +60,10 @@ class WEIGHTUnit:
         while self.hx711data.value():
             times += 1
             time.sleep_ms(10)
-            if times > 25: 
-                break 
+            if times > 25:
+                break
         return not self.hx711data.value()
-    
+
     def set_channel(self, chan: int) -> None:
         self._channel = chan
         for i in range(self._channel):
@@ -70,4 +71,3 @@ class WEIGHTUnit:
             time.sleep_us(1)
             self.hx711clk.value(0)
             time.sleep_us(1)
-    
