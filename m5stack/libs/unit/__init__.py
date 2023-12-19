@@ -39,6 +39,7 @@ _attrs = {
     "LoRaE220JPUnit": "lora_e220_jp",
     "WEIGHTUnit": "weight",
     "SCALESUnit": "scales",
+    "MiniScale": "miniscale",
 }
 
 
