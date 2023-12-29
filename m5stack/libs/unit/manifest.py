@@ -38,6 +38,7 @@ package(
         "limit.py",
         "op.py",
         "lora_e220_jp.py",
+        "miniscale.py",
         "rfid.py",
         "weight.py",
         "scales.py",

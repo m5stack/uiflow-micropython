@@ -19,11 +19,11 @@ try:
 except ImportError:
     pass
 
-class Miniscale:
+class MiniScale:
     """! MiniScale is a weight sensor, includes a hx711 22bit ADC.
     
     """
-	def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x26):
+    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x26):
         self.i2c = i2c
         self.addr = addr
         self._available()
