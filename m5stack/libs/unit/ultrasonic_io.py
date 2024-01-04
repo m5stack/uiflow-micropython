@@ -18,7 +18,6 @@ class ULTRASONIC_IOUnit:
         self.echo = Pin(port[0], mode=Pin.IN, pull=None)
 
     def tx_pulse_rx_echo(self):
-
         self.trigger.value(0)
         time.sleep_us(5)
         # Send a 10us pulse.

@@ -29,7 +29,6 @@ class RotaryIRQ(Rotary):
         half_step=False,
         invert=False,
     ):
-
         if platform == "esp8266":
             if pin_num_clk in _esp8266_deny_pins:
                 raise ValueError(
