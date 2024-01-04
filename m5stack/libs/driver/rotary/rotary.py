@@ -71,7 +71,6 @@ def _trigger(rotary_instance):
 
 
 class Rotary(object):
-
     RANGE_UNBOUNDED = const(1)
     RANGE_WRAP = const(2)
     RANGE_BOUNDED = const(3)

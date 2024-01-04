@@ -14,3 +14,8 @@ Unit
     light.rst
     dlight.rst
     ultrasonic.rst
+    pir.rst
+    ncir.rst
+    relay.rst
+    op90.rst
+    op180.rst

@@ -1,0 +1,97 @@
+OP90 Unit
+==================
+
+.. include:: ../refs/unit.op90.ref
+
+The following products are supported:
+
+
+|OP90|              
+
+
+Micropython Example::
+
+    import os, sys, io
+    import M5
+    from M5 import *
+    from hardware import *
+    import time
+    from unit import *
+
+    i2c0 = None
+    op90_0 = None
+
+    def setup():
+    global i2c0, op90_0
+
+    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+    op90_0 = OPUnit((8, 9), type=1)
+    M5.begin()
+    Widgets.fillScreen(0x222222)
+
+    print(op90_0.get_value)
+    time.sleep(1)
+    print(op90_0.count_value)
+    time.sleep(1)
+    op90_0.count_reset()
+    time.sleep(1)
+
+
+
+UIFLOW2 Example:
+
+    |example.svg|
+
+.. only:: builder_html
+
+|op90_core_example.m5f2|
+
+class OPUnit
+-----------------
+
+Constructors
+--------------
+
+.. class:: OPUnit(io)
+
+    Create an OPUnit object.
+
+    The parameters is:
+        - ``io`` is the detection pin.
+
+ 
+    UIFLOW2:
+
+        |init.svg|
+
+
+Methods
+-------
+
+.. method:: OPUnit.get_value()
+
+
+    Gets the switch status.
+
+    UIFLOW2:
+
+        |get_switch_value.svg|
+
+.. method:: OPUnit.count_value()
+
+   Get the count value.
+
+    UIFLOW2:
+
+        |get_count_value.svg|
+
+.. method:: OPUnit.count_reset()
+
+    Reset the meter value.
+
+    UIFLOW2:
+
+        |reset_count_value.svg|
+
+
+

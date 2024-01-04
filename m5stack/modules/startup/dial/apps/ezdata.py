@@ -1,4 +1,4 @@
-from ..app import AppBase, Descriptor
+from ..app import AppBase
 import M5
 from ..res import EZDATA_IMG
 from .status_bar import StatusBarApp

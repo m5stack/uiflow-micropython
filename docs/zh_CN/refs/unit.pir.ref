@@ -1,0 +1,23 @@
+.. |PIR| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/PIR/img-4647c010-1e57-4cc9-85e3-cbd450882074.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/PIR
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/example.svg
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/init.svg
+
+.. |get_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/get_status.svg
+
+.. |enable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/enable_irq.svg
+
+.. |disable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/disable_irq.svg
+
+.. |set_callback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/set_callback.svg
+
+
+.. |pir_core_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/pir/pir_core_example.m5f2" target="_blank">pir_core_example.m5f2</a>
+

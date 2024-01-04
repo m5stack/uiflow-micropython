@@ -1,11 +1,10 @@
 from micropython import const
 from micropython import schedule
 from machine import Pin
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Literal
-except ImportError:
-    pass
 
 
 class PIRUnit:

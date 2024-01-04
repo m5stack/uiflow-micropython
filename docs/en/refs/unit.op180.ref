@@ -1,0 +1,22 @@
+.. |OP180| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/OP180/img-a3e126ec-af40-4f42-a85e-880460d46f7d.webp
+    :target: https://docs.m5stack.com/en/unit/OP180
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/op180/example.svg
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/op180/init.svg
+
+.. |get_switch_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/op180/get_switch_value.svg
+
+.. |get_count_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/op180/get_counter_value.svg
+
+.. |reset_count_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/op180/reset_counter_value.svg
+
+
+
+.. |op180_core_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/op180/op180_core_example.m5f2" target="_blank">op180_core_example.m5f2</a>
+

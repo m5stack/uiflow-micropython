@@ -1,0 +1,20 @@
+.. |NCIR| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/ncir/ncir_01.webp
+    :target: https://docs.m5stack.com/en/unit/ncir
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/example.svg
+
+.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/init.svg
+
+.. |get_ambient_temperature.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/get_object_temperature.svg
+
+.. |get_object_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/enable_irq.svg
+
+
+
+.. |ncir_core_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/ncir/ncir_core_example.m5f2" target="_blank">ncir_core_example.m5f2</a>
+
