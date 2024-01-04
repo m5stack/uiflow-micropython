@@ -4,11 +4,11 @@ import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
-except ImportError:
-    pass
+
 
 hub_addr = [0x40, 0x50, 0x60, 0x70, 0x80, 0xA0]
 
