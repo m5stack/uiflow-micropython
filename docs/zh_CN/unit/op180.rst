@@ -1,12 +1,12 @@
 OP180 Unit
 ==================
 
-.. include:: ../refs/unit.OP180.ref
+.. include:: ../refs/unit.op180.ref
 
 支持以下产品:
 
 
-|OP180|              
+|OP180|
 
 
 Micropython Example::

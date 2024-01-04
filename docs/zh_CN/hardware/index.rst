@@ -7,3 +7,4 @@ Hardware
     button.rst
     mic.rst
     speaker.rst
+    imu.rst
