@@ -24,11 +24,11 @@ class Rotary(RotaryIRQ):
         self._last_value = self.value()
         return self.value()
 
-    def reset_rotary_vlaue(self):
+    def reset_rotary_value(self):
         self._last_value = 0
         super().reset()
 
-    def set_rotary_vlaue(self, val):
+    def set_rotary_value(self, val):
         self._last_value = val
         super().set(val)
 
