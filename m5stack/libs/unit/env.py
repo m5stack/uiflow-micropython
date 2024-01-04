@@ -9,12 +9,12 @@ from driver.bmp280 import BMP280
 from driver.qmp6988 import QMP6988
 from driver.dht12 import DHT12
 from driver.sht4x import SHT4x
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
     from typing_extensions import Literal
-except ImportError:
-    pass
+
 
 ENV_I = const(1)
 ENV_II = const(2)

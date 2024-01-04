@@ -109,7 +109,6 @@ class uSerial:
         )
 
     def _validate_resp_hdr(self, response, slave_addr, function_code, count):
-
         if len(response):
             self.print_debug("ModBus", "R <= {}".format(self.BytesToHexStr(response)))
 

@@ -2,11 +2,11 @@ from machine import I2C
 import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
-except ImportError:
-    pass
+
 
 HBRIDGE_ADDR = 0x20
 
