@@ -41,6 +41,8 @@ package(
         "rfid.py",
         "weight.py",
         "scales.py",
+        "gesture.py",
+        "thermal.py",
     ),
     base_path="..",
     opt=0,

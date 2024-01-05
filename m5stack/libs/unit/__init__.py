@@ -40,6 +40,8 @@ _attrs = {
     "WEIGHTUnit": "weight",
     "SCALESUnit": "scales",
     "MiniScaleUnit": "miniscale",
+    "GESTUREUnit": "gesture",
+    "THERMALUnit": "thermal",
 }
 
 
