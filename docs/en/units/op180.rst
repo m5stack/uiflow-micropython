@@ -1,7 +1,7 @@
 OP180 Unit
 ==================
 
-.. include:: ../refs/unit.OP180.ref
+.. include:: ../refs/unit.op180.ref
 
 The following products are supported:
 

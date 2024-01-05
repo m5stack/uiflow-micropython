@@ -2,11 +2,10 @@ from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
-except ImportError:
-    pass
 
 
 class ULTRASONIC_I2CUnit:

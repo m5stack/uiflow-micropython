@@ -3,11 +3,10 @@ from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 import struct
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
-except ImportError:
-    pass
 
 
 SCALES_ADDR = 0x26

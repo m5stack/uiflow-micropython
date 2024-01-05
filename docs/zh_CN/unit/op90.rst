@@ -1,12 +1,12 @@
 OP90 Unit
 ==================
 
-.. include:: ../refs/unit.OP90.ref
+.. include:: ../refs/unit.op90.ref
 
 支持以下产品:
 
 
-|OP90|              
+|OP90|
 
 
 Micropython Example::
@@ -59,7 +59,7 @@ Constructors
     参数如下：
         - ``io`` 为检测引脚。
 
- 
+
     UIFLOW2:
 
         |init.svg|

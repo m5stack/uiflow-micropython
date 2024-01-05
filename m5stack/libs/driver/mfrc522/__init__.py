@@ -117,7 +117,6 @@ class MFRC522:
     #
     #  @param self The object pointer.
     def pcd_init(self):
-
         self.pcd_reset()
 
         # When communicating with a PICC we need a timeout if something goes wrong.

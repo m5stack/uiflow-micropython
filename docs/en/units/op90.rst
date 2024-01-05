@@ -1,7 +1,7 @@
 OP90 Unit
 ==================
 
-.. include:: ../refs/unit.OP90.ref
+.. include:: ../refs/unit.op90.ref
 
 The following products are supported:
 

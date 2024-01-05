@@ -3,11 +3,11 @@ import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
+import sys
 
-try:
+if sys.platform != "esp32":
     from typing import Union
-except ImportError:
-    pass
+
 
 AC_MEASURE_ADDR = 0x42
 

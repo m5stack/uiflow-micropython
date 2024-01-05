@@ -1,11 +1,10 @@
 from machine import I2C
 from micropython import const
+import sys
 
+if sys.platform != "esp32":
+    from typing import Literal
 
-try:
-    from typing_extensions import Literal
-except ImportError:
-    pass
 
 _REG_MODE_CH_1 = const(0x00)
 _REG_OUTPUT_REG_CH_1 = const(0x10)
