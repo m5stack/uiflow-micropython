@@ -31,10 +31,11 @@
 #include "py/runtime.h"
 #include "py/stream.h"
 #include "py/mphal.h"
-#include "extmod/machine_spi.h"
-#include "modmachine.h"
+#include "extmod/modmachine.h"
 
 #include "driver/spi_master.h"
+#include "soc/gpio_sig_map.h"
+#include "soc/spi_pins.h"
 
 // SPI mappings by device, naming used by IDF old/new
 // upython   | ESP32     | ESP32S2   | ESP32S3 | ESP32C3
@@ -42,25 +43,21 @@
 // SPI(id=1) | HSPI/SPI2 | FSPI/SPI2 | SPI2    | SPI2
 // SPI(id=2) | VSPI/SPI3 | HSPI/SPI3 | SPI3    | err
 
+// Number of available hardware SPI peripherals.
+#if SOC_SPI_PERIPH_NUM > 2
+#define MICROPY_HW_SPI_MAX (2)
+#else
+#define MICROPY_HW_SPI_MAX (1)
+#endif
+
 // Default pins for SPI(id=1) aka IDF SPI2, can be overridden by a board
 #ifndef MICROPY_HW_SPI1_SCK
-#ifdef SPI2_IOMUX_PIN_NUM_CLK
 // Use IO_MUX pins by default.
 // If SPI lines are routed to other pins through GPIO matrix
 // routing adds some delay and lower limit applies to SPI clk freq
-#define MICROPY_HW_SPI1_SCK SPI2_IOMUX_PIN_NUM_CLK      // pin 14 on ESP32
-#define MICROPY_HW_SPI1_MOSI SPI2_IOMUX_PIN_NUM_MOSI    // pin 13 on ESP32
-#define MICROPY_HW_SPI1_MISO SPI2_IOMUX_PIN_NUM_MISO    // pin 12 on ESP32
-// Only for compatibility with IDF 4.2 and older
-#elif CONFIG_IDF_TARGET_ESP32S2
-#define MICROPY_HW_SPI1_SCK FSPI_IOMUX_PIN_NUM_CLK
-#define MICROPY_HW_SPI1_MOSI FSPI_IOMUX_PIN_NUM_MOSI
-#define MICROPY_HW_SPI1_MISO FSPI_IOMUX_PIN_NUM_MISO
-#else
-#define MICROPY_HW_SPI1_SCK HSPI_IOMUX_PIN_NUM_CLK
-#define MICROPY_HW_SPI1_MOSI HSPI_IOMUX_PIN_NUM_MOSI
-#define MICROPY_HW_SPI1_MISO HSPI_IOMUX_PIN_NUM_MISO
-#endif
+#define MICROPY_HW_SPI1_SCK SPI2_IOMUX_PIN_NUM_CLK
+#define MICROPY_HW_SPI1_MOSI SPI2_IOMUX_PIN_NUM_MOSI
+#define MICROPY_HW_SPI1_MISO SPI2_IOMUX_PIN_NUM_MISO
 #endif
 
 // Default pins for SPI(id=2) aka IDF SPI3, can be overridden by a board
@@ -150,8 +147,8 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
 
     for (int i = 0; i < 3; i++) {
         if (pins[i] != -1) {
-            gpio_pad_select_gpio(pins[i]);
-            gpio_matrix_out(pins[i], SIG_GPIO_OUT_IDX, false, false);
+            esp_rom_gpio_pad_select_gpio(pins[i]);
+            esp_rom_gpio_connect_out_signal(pins[i], SIG_GPIO_OUT_IDX, false, false);
             gpio_set_direction(pins[i], GPIO_MODE_INPUT);
         }
     }

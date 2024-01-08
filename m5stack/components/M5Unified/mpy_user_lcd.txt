@@ -212,8 +212,8 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_
         { MP_QSTR_h,           MP_ARG_INT                  , {.u_int = 0 } },
         { MP_QSTR_ox,          MP_ARG_INT                  , {.u_int = 0 } },
         { MP_QSTR_oy,          MP_ARG_INT                  , {.u_int = 0 } },
-        { MP_QSTR_invert,      MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
-        { MP_QSTR_rgb,         MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
+        { MP_QSTR_invert,      MP_ARG_BOOL                 , {.u_bool = false } },
+        { MP_QSTR_rgb,         MP_ARG_BOOL                 , {.u_bool = false } },
         // spi display panel setting
         { MP_QSTR_spi_host,    MP_ARG_INT                  , {.u_int = 2 } },
         { MP_QSTR_spi_freq,    MP_ARG_INT                  , {.u_int = 40 } },

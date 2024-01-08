@@ -1,9 +1,9 @@
 # Top-level cmake file for building MicroPython on ESP32.
 
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16)
 
 set(CMAKE_C_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable")
-set(CMAKE_CXX_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-pmf-conversions")
+set(CMAKE_CXX_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable -Wno-pmf-conversions -Wno-error=narrowing")
 
 # Set the location of this port's directory.
 set(MICROPY_PORT_DIR ${CMAKE_SOURCE_DIR}/../micropython/ports/esp32)

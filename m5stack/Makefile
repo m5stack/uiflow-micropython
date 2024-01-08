@@ -122,13 +122,20 @@ define pack_fw
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 endef
 
-.PHONY: all build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
+.PHONY: all target build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
 
 all: nvs fs pack
 	@echo ""
 	@echo "Done, default packed firmware don't include vfs filesystem, if need vfs filesystem, please use 'make pack_all' command."
 
 $(BUILD)/bootloader/bootloader.bin $(BUILD)/partition_table/partition-table.bin $(BUILD)/micropython.bin: FORCE
+
+# set the target
+target:
+	idf.py $(IDFPY_FLAGS) set-target $(CHIP)
+
+size: 
+	idf.py $(IDFPY_FLAGS) size
 
 # Build the MicroPython firmware.
 build: nvs
@@ -226,11 +233,11 @@ mpy-cross:
 # TODO: need update this :)
 submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
-	git submodule update --init ./components/esp32-camera
-	git submodule update --init ./components/M5Unified/M5GFX
-	git submodule update --init ./components/M5Unified/M5Unified
+	# git submodule update --init ./components/esp32-camera
+	# git submodule update --init ./components/M5Unified/M5GFX
+	# git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
-	git submodule update --init ../micropython
+	# git submodule update --init ../micropython
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -

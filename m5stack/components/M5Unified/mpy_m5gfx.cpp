@@ -162,7 +162,7 @@ mp_obj_t gfx_setTextScroll(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
     enum {ARG_scroll};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_scroll, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_false } }
+        { MP_QSTR_scroll, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = false } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -1119,7 +1119,7 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
         { MP_QSTR_w,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_h,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_bpp,   MP_ARG_INT                  , {.u_int = -1 } },
-        { MP_QSTR_psram, MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
+        { MP_QSTR_psram, MP_ARG_BOOL                 , {.u_bool = false } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

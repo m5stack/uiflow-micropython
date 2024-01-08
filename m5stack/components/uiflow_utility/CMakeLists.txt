@@ -9,4 +9,6 @@ file(GLOB SRCS
 set(COMPONENT_SRCS ${SRCS})
 set(COMPONENT_REQUIRES nvs_flash)
 
+
 register_component()
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")

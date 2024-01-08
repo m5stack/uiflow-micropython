@@ -326,7 +326,7 @@ namespace m5
             { MP_QSTR_frequency,          MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0}              },
             { MP_QSTR_duration,           MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0}              },
             { MP_QSTR_channel,            MP_ARG_INT,                   {.u_int = 0}              },
-            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = mp_const_true} },
+            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = true} },
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -348,10 +348,10 @@ namespace m5
         const mp_arg_t allowed_args[] = {
             { MP_QSTR_raw,                MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none  } },
             { MP_QSTR_rate,               MP_ARG_INT,                   {.u_int = 44100}           },
-            { MP_QSTR_stereo,             MP_ARG_BOOL,                  {.u_bool = mp_const_false} },
+            { MP_QSTR_stereo,             MP_ARG_BOOL,                  {.u_bool = false} },
             { MP_QSTR_repeat,             MP_ARG_INT,                   {.u_int = 1}               },
             { MP_QSTR_channel,            MP_ARG_INT,                   {.u_int = -1}              },
-            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = mp_const_false} },
+            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = false} },
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -385,7 +385,7 @@ namespace m5
             { MP_QSTR_wav_data,           MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none}  },
             { MP_QSTR_repeat,             MP_ARG_INT,                   {.u_int = 1}              },
             { MP_QSTR_ch,                 MP_ARG_INT,                   {.u_int = 0}              },
-            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = mp_const_true} },
+            { MP_QSTR_stop_current_sound, MP_ARG_BOOL,                  {.u_bool = true} },
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

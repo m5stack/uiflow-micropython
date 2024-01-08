@@ -34,7 +34,7 @@ set(MICROPY_SOURCE_LIB
     ${MICROPY_DIR}/lib/littlefs/lfs1_util.c
     ${MICROPY_DIR}/lib/littlefs/lfs2.c
     ${MICROPY_DIR}/lib/littlefs/lfs2_util.c
-    ${MICROPY_DIR}/lib/mbedtls_errors/mp_mbedtls_errors.c
+    # ${MICROPY_DIR}/lib/mbedtls_errors/mp_mbedtls_errors.c
     ${MICROPY_DIR}/lib/oofatfs/ff.c
     ${MICROPY_DIR}/lib/oofatfs/ffunicode.c
 )
@@ -49,6 +49,8 @@ set(MICROPY_SOURCE_DRIVERS
 
 set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/main.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/adc.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/ppp_set_auth.c
     ${PROJECT_DIR}/../micropython/ports/esp32/uart.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb.c
     ${PROJECT_DIR}/../micropython/ports/esp32/usb_serial_jtag.c
@@ -61,13 +63,13 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_timer.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_pin.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_touchpad.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_adc.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_adcblock.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/machine_adc.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/machine_adcblock.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_dac.c
     ${PROJECT_DIR}/machine_i2c.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_common.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_ppp.c
@@ -80,10 +82,11 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modesp32.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
+    # ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
 )
 
 if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
@@ -91,6 +94,9 @@ if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
 else()
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c)
 endif()
+
+# list(TRANSFORM MICROPY_SOURCE_PORT PREPEND ${MICROPY_PORT_DIR}/)
+list(APPEND MICROPY_SOURCE_PORT ${CMAKE_BINARY_DIR}/pins.c)
 
 set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5btn.cpp
@@ -123,13 +129,17 @@ set(MICROPY_SOURCE_QSTR
 
 set(IDF_COMPONENTS
     app_update
+    esp_app_format
     bootloader_support
     bt
     driver
-    esp_adc_cal
+    # esp_adc_cal
+    esp_adc
+    esp_app_format
     esp_common
     esp_eth
     esp_event
+    esp_hw_support
     esp_ringbuf
     esp_rom
     esp_wifi
@@ -144,7 +154,10 @@ set(IDF_COMPONENTS
     sdmmc
     soc
     spi_flash
-    tcpip_adapter
+    esp_psram
+    esp_partition
+    # tcpip_adapter
+    esp_netif
     ulp
     vfs
     xtensa
@@ -173,18 +186,19 @@ if(IDF_VERSION_MINOR GREATER_EQUAL 3 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)
     list(APPEND IDF_COMPONENTS hal)
 endif()
 
-if(IDF_TARGET STREQUAL "esp32")
-    list(APPEND IDF_COMPONENTS esp32)
-elseif(IDF_TARGET STREQUAL "esp32c3")
-    list(APPEND IDF_COMPONENTS esp32c3)
-    list(APPEND IDF_COMPONENTS riscv)
-elseif(IDF_TARGET STREQUAL "esp32s2")
-    list(APPEND IDF_COMPONENTS esp32s2)
-    list(APPEND IDF_COMPONENTS tinyusb)
-elseif(IDF_TARGET STREQUAL "esp32s3")
-    list(APPEND IDF_COMPONENTS esp32s3)
-    list(APPEND IDF_COMPONENTS tinyusb)
-endif()
+# if(IDF_TARGET STREQUAL "esp32")
+#     list(APPEND IDF_COMPONENTS esp32)
+# elseif(IDF_TARGET STREQUAL "esp32c3")
+#     list(APPEND IDF_COMPONENTS esp32c3)
+#     list(APPEND IDF_COMPONENTS riscv)
+# elseif(IDF_TARGET STREQUAL "esp32s2")
+#     list(APPEND IDF_COMPONENTS esp32s2)
+#     list(APPEND IDF_COMPONENTS tinyusb)
+# elseif(IDF_TARGET STREQUAL "esp32s3")
+    # list(APPEND IDF_COMPONENTS esp32s3)
+    # list(APPEND IDF_COMPONENTS tinyusb)
+    # list(APPEND IDF_COMPONENTS esp_tinyusb)
+# endif()
 
 # Register the main IDF component.
 idf_component_register(
@@ -210,11 +224,14 @@ idf_component_register(
 set(MICROPY_TARGET ${COMPONENT_TARGET})
 
 # Define mpy-cross flags, for use with frozen code.
+if(NOT IDF_TARGET STREQUAL "esp32c3")
 set(MICROPY_CROSS_FLAGS -march=xtensawin)
+endif()
 
 # Set compile options for this port.
 target_compile_definitions(${MICROPY_TARGET} PUBLIC
     ${MICROPY_DEF_CORE}
+    ${MICROPY_DEF_BOARD}
     MICROPY_ESP_IDF_4=1
     MICROPY_VFS_FAT=1
     MICROPY_VFS_LFS2=1
@@ -244,6 +261,7 @@ target_link_libraries(${MICROPY_TARGET} usermod)
 # Collect all of the include directories and compile definitions for the IDF components.
 foreach(comp ${IDF_COMPONENTS})
     micropy_gather_target_properties(__idf_${comp})
+    micropy_gather_target_properties(${comp})
 endforeach()
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 2 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)
@@ -259,3 +277,32 @@ endif()
 
 # Include the main MicroPython cmake rules.
 include(${MICROPY_DIR}/py/mkrules.cmake)
+
+# Generate source files for named pins (requires mkrules.cmake for MICROPY_GENHDR_DIR).
+
+set(GEN_PINS_PREFIX "${MICROPY_PORT_DIR}/boards/pins_prefix.c")
+set(GEN_PINS_MKPINS "${MICROPY_PORT_DIR}/boards/make-pins.py")
+set(GEN_PINS_SRC "${CMAKE_BINARY_DIR}/pins.c")
+set(GEN_PINS_HDR "${MICROPY_GENHDR_DIR}/pins.h")
+
+if(EXISTS "${MICROPY_BOARD_DIR}/pins.csv")
+    set(GEN_PINS_BOARD_CSV "${MICROPY_BOARD_DIR}/pins.csv")
+    set(GEN_PINS_BOARD_CSV_ARG --board-csv "${GEN_PINS_BOARD_CSV}")
+endif()
+
+target_sources(${MICROPY_TARGET} PRIVATE ${GEN_PINS_HDR})
+
+add_custom_command(
+    OUTPUT ${GEN_PINS_SRC} ${GEN_PINS_HDR}
+    COMMAND ${Python3_EXECUTABLE} ${GEN_PINS_MKPINS} ${GEN_PINS_BOARD_CSV_ARG}
+        --prefix ${GEN_PINS_PREFIX} --output-source ${GEN_PINS_SRC} --output-header ${GEN_PINS_HDR}
+    DEPENDS
+        ${MICROPY_MPVERSION}
+        ${GEN_PINS_MKPINS}
+        ${GEN_PINS_BOARD_CSV}
+        ${GEN_PINS_PREFIX}
+    VERBATIM
+    COMMAND_EXPAND_LISTS
+)
+
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
