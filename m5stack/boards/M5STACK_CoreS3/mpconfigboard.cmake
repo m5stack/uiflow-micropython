@@ -3,7 +3,7 @@ set(IDF_TARGET esp32s3)
 set(M5_CAMERA_MODULE_ENABLE TRUE)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_S3_8MB/sdkconfig.board
+    ./boards/M5STACK_CoreS3/sdkconfig.board
     ./boards/sdkconfig.base
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
