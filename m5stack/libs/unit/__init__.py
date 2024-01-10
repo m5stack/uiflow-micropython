@@ -41,6 +41,8 @@ _attrs = {
     "SCALESUnit": "scales",
     "MiniScaleUnit": "miniscale",
     "DAC2Unit": "dac2",
+    "GESTUREUnit": "gesture",
+    "THERMALUnit": "thermal",
 }
 
 
