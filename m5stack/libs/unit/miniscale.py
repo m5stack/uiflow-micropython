@@ -33,7 +33,7 @@ class MiniScaleUnit:
         Raises:
             UnitError: If the sensor is not found.
         """
-        if not (self.i2c_addr in self.i2c.scan()):
+        if not (self.addr in self.i2c.scan()):
             raise UnitError("MiniScale Unit not found.")
 
     @property
