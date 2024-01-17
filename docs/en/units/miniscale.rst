@@ -1,24 +1,24 @@
 Miniscale Unit
 ==============
 
-.. include:: ../refs/unit.adc.ref
+.. include:: ../refs/unit.miniscale.ref
 
 The ``Miniscale`` class is designed for interfacing with a mini scale weight sensor, which includes a HX711 22-bit ADC. This sensor is capable of measuring weight and also includes additional functionalities like LED control and various filters.
 
 Support the following products:
 
 
-|ADC|              
+|MINISCALE|              
 
 
 
 Micropython Example::
 
 	import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import MiniScaleUnit
+	import M5
+	from M5 import *
+	import time
+	from unit import MiniScaleUnit
 
 	i2c = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
 	scale = MiniScaleUnit(i2c)
@@ -28,157 +28,157 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+	|example.svg|
 
 
 .. only:: builder_html
 
 
+class MiniScaleUnit
+-------------------
 
-Creating a Miniscale Object
+Constructors
 ---------------------------
 
-To create a new ``Miniscale`` object, initialize it with the following parameters:
+.. class:: MiniScaleUnit(i2c0)
 
-.. code-block:: python
+	Create an MiniScaleUnit object.
 
-    miniscale = unit.get(unit.MINISCALE, unit.PORTA)
+	- ``I2C0`` is I2C Port.
 
-Methods and Properties
+ 
+	UIFLOW2:
+
+		|init.svg|
+
+
+Methods
 ----------------------
 
-adc (Property)
-^^^^^^^^^^^^^^
+.. method:: MiniScaleUnit.adc
 
-Returns the raw ADC value.
 
-.. code-block:: python
+	Gets the raw adc readout.   
 
-    adc_value = miniscale.adc
+	UIFLOW2:
 
-weight (Property)
-^^^^^^^^^^^^^^^^^
+		|get_adc.svg|
 
-Returns the weight in grams.
+.. method:: MiniScaleUnit.weight
 
-.. code-block:: python
 
-    weight_value = miniscale.weight
+	Gets the weight readout in grams.   
 
-button (Property)
-^^^^^^^^^^^^^^^^^
+	UIFLOW2:
 
-Returns the button state. True: pressing, False: Not pressing.
+		|get_weight.svg|
 
-.. code-block:: python
 
-    button_state = miniscale.button
+.. method:: MiniScaleUnit.button
 
-setLed
-^^^^^^
 
-Sets the RGB LED color.
+	Gets the button state.   
 
-.. code-block:: python
+	UIFLOW2:
 
-    miniscale.setLed(r, g, b)
+		|get_button.svg|
 
-- ``r``: Red value (0 - 255).
-- ``g``: Green value (0 - 255).
-- ``b``: Blue value (0 - 255).
+.. method:: MiniScaleUnit.setLed(r, g, b)
 
-Reset
-^^^^^
+	Sets the RGB LED color.
 
-Resets sensor.
+	- ``r``: Red value (0 - 255).
+	- ``g``: Green value (0 - 255).
+	- ``b``: Blue value (0 - 255).
 
-.. code-block:: python
+	UIFLOW2:
 
-    miniscale.reset()
+		|setLed.svg|
 
-calibration
-^^^^^^^^^^^
+.. method:: MiniScaleUnit.reset
 
-Calibrates the MiniScale sensor.
+	Resets sensor.
 
-.. code-block:: python
 
-    miniscale.calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)
+	UIFLOW2:
 
-- ``weight1_g``: Weight1 in grams.
-- ``weight1_adc``: Weight1 in ADC value.
-- ``weight2_g``: Weight2 in grams.
-- ``weight2_adc``: Weight2 in ADC value.
+		|reset.svg|
 
-calibration steps:
+.. method:: MiniScaleUnit.calibration(weight1_g, weight1_adc, weight2_g, weight2_adc)
 
-1. Reset sensor;
-2. Get adc, this is weight1_adc (should be zero). And weight1_g is also 0.
-3. Put some weight on it, then get adc, this is weight2_adc. And weight2_g is weight in gram you put on it.
+	
+	Calibrates the MiniScale sensor.
 
-setLowPassFilter
-^^^^^^^^^^^^^^^^
+	- ``weight1_g``: Weight1 in grams.
+	- ``weight1_adc``: Weight1 in ADC value.
+	- ``weight2_g``: Weight2 in grams.
+	- ``weight2_adc``: Weight2 in ADC value.
 
-Enables or disables the low pass filter.
+	calibration steps:
 
-.. code-block:: python
+	1. Reset sensor;
+	2. Get adc, this is weight1_adc (should be zero). And weight1_g is also 0.
+	3. Put some weight on it, then get adc, this is weight2_adc. And weight2_g is weight in gram you put on it.
 
-    miniscale.setLowPassFilter(enabled)
 
-- ``enabled``: Boolean to enable or disable the filter.
+	UIFLOW2:
 
-getLowPassFilter
-^^^^^^^^^^^^^^^^
+		|calibration.svg|
 
-Returns the status of the low pass filter (enabled or not).
+.. method:: MiniScaleUnit.setLowPassFilter(enable)
 
-.. code-block:: python
+	Enables or disables the low pass filter.
 
-    filter_status = miniscale.getLowPassFilter()
 
-setAverageFilterLevel
-^^^^^^^^^^^^^^^^^^^^^
+	UIFLOW2:
 
-Sets the level of the average filter.
+		|setLowPassFilter.svg|
 
-.. code-block:: python
 
-    miniscale.setAverageFilterLevel(level)
+.. method:: MiniScaleUnit.getLowPassFilter
 
-- ``level``: Level of the average filter (0 - 50). Larger value for smoother result but more latency
+	Returns the status of the low pass filter (enabled or not).
 
-getAverageFilterLevel
-^^^^^^^^^^^^^^^^^^^^^
 
-Returns the level of the average filter.
+	UIFLOW2:
 
-.. code-block:: python
+		|getLowPassFilter.svg|
 
-    filter_level = miniscale.getAverageFilterLevel()
+.. method:: MiniScaleUnit.setAverageFilterLevel(level)
 
-setEMAFilterAlpha
-^^^^^^^^^^^^^^^^^
+	Sets the level of the average filter.
 
-Sets the alpha value for the EMA filter.
+	- ``level``: Level of the average filter (0 - 50). Larger value for smoother result but more latency
 
-The EMA (Exponential Moving Average) filter is more sensitive to changes in data compared to the average filter.
+	UIFLOW2:
 
-.. code-block:: python
+		|setAverageFilterLevel.svg|
 
-    miniscale.setEMAFilterAlpha(alpha)
+.. method:: MiniScaleUnit.getAverageFilterLevel
 
-- ``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for smoother result but more latency
+	Returns the level of the average filter.
 
-getEMAFilterAlpha
-^^^^^^^^^^^^^^^^^
+	UIFLOW2:
 
-Returns the alpha value for the EMA filter.
+		|getAverageFilterLevel.svg|
 
-.. code-block:: python
+.. method:: MiniScaleUnit.setEMAFilterAlpha(alpha)
 
-    alpha_value = miniscale.getEMAFilterAlpha()
+	Sets the alpha value for the EMA filter.
 
-Filter Compare
-^^^^^^^^^^^^^^
+	The EMA (Exponential Moving Average) filter is more sensitive to changes in data compared to the average filter.
 
-.. image:: C:\Users\tongy\OneDrive\work\M5\uiflow\image\filter.png
+	- ``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for smoother result but more latency
+
+	UIFLOW2:
+
+		|setEMAFilterAlpha.svg|
+
+.. method:: MiniScaleUnit.getEMAFilterAlpha
+
+	Returns the alpha value for the EMA filter.
+
+	UIFLOW2:
+
+		|getEMAFilterAlpha.svg|
+
