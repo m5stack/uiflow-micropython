@@ -54,6 +54,7 @@ mp_obj_t m5_begin(void) {
 
     // initial
     M5.begin(cfg);
+    M5.In_I2C.release();
 
     M5.Display.clear();
     // default display

@@ -122,7 +122,7 @@ define pack_fw
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 endef
 
-.PHONY: all target build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
+.PHONY: all target menu build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
 
 all: nvs fs pack
 	@echo ""
@@ -134,11 +134,15 @@ $(BUILD)/bootloader/bootloader.bin $(BUILD)/partition_table/partition-table.bin 
 target:
 	idf.py $(IDFPY_FLAGS) set-target $(CHIP)
 
+# config the menu
+menu:
+	idf.py $(IDFPY_FLAGS) menuconfig
+
 size: 
 	idf.py $(IDFPY_FLAGS) size
 
 # Build the MicroPython firmware.
-build: nvs
+build: target nvs
 	idf.py $(IDFPY_FLAGS) build
 
 # Deploy the MicroPython.
