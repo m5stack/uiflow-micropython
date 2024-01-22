@@ -10,8 +10,8 @@ except ImportError:
 
 THERMAL_ADDR = 0x33
 
-class THERMALUnit(MLX90640):
 
+class THERMALUnit(MLX90640):
     def __init__(self, i2c: Union[I2C, PAHUBUnit]):
         self._thermal_addr = THERMAL_ADDR
         self._thermal_i2c = i2c
@@ -61,4 +61,3 @@ class THERMALUnit(MLX90640):
 
     def update_temperature_buffer(self):
         return self.getFrame()
-
