@@ -1,8 +1,9 @@
 from ..app import AppBase
 from widgets.label import Label
 from widgets.image import Image
-from common.font import MontserratMedium10
-from common.font import MontserratMedium16
+
+# from common.font import MontserratMedium10
+# from common.font import MontserratMedium16
 import time
 import M5
 import network
@@ -69,7 +70,7 @@ class StatusBarApp(AppBase):
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._time_label.setText(self._time_text)
 
@@ -96,7 +97,7 @@ class StatusBarApp(AppBase):
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=MontserratMedium10.FONT,
+            font="/system/common/font/Montserrat-Medium-10.vlw",
         )
         self._battery_label.setText(self._battery_text)
 

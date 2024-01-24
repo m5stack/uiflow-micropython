@@ -129,7 +129,8 @@ class Label:
             self._parent.unloadFont()
             self._parent.loadFont(self._font)
         else:
-            self._parent.setFont(self._font)
+            self._parent.loadFont(self._font)
+            # self._parent.setFont(self._font)
 
     def setLongMode(self, mode):
         if mode is self.LONG_DOT:
