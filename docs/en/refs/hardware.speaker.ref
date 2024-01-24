@@ -1,0 +1,39 @@
+.. |example.svg| image:: ../../_static/hardware/button/example.svg
+
+.. |config.svg| image:: ../../_static/hardware/speaker/config.svg
+
+.. |config1.svg| image:: ../../_static/hardware/speaker/config1.svg
+
+.. |begin.svg| image:: ../../_static/hardware/speaker/begin.svg
+
+.. |end.svg| image:: ../../_static/hardware/speaker/end.svg
+
+.. |isRunning.svg| image:: ../../_static/hardware/speaker/isRunning.svg
+
+.. |isEnabled.svg| image:: ../../_static/hardware/speaker/isEnabled.svg
+
+.. |isPlaying.svg| image:: ../../_static/hardware/speaker/isPlaying.svg
+
+.. |getPlayingChannels.svg| image:: ../../_static/hardware/speaker/getPlayingChannels.svg
+
+.. |setVolume.svg| image:: ../../_static/hardware/speaker/setVolume.svg
+
+.. |getVolume.svg| image:: ../../_static/hardware/speaker/getVolume.svg
+
+.. |setVolumePercentage.svg| image:: ../../_static/hardware/speaker/setVolumePercentage.svg
+
+.. |getVolumePercentage.svg| image:: ../../_static/hardware/speaker/getVolumePercentage.svg
+
+.. |setAllChannelVolume.svg| image:: ../../_static/hardware/speaker/setAllChannelVolume.svg
+
+.. |setChannelVolume.svg| image:: ../../_static/hardware/speaker/setChannelVolume.svg
+
+.. |getChannelVolume.svg| image:: ../../_static/hardware/speaker/getChannelVolume.svg
+
+.. |stop.svg| image:: ../../_static/hardware/speaker/stop.svg
+
+.. |tone.svg| image:: ../../_static/hardware/speaker/tone.svg
+
+.. |playRaw.svg| image:: ../../_static/hardware/speaker/playRaw.svg
+
+.. |playWav.svg| image:: ../../_static/hardware/speaker/playWav.svg

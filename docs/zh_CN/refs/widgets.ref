@@ -1,0 +1,7 @@
+.. |example.svg| image:: ../../_static/widgets/example.svg
+
+.. |setBrightness.svg| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/screen/setBrightness.svg
+
+.. |fillScreen.svg| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/screen/fillScreen.svg
+
+.. |setRotation.svg| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/screen/setRotation.svg
