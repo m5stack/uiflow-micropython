@@ -274,7 +274,11 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
         SET_CONFIG_PIN(dev_config, gpio_cd, ARG_cd);
         SET_CONFIG_PIN(dev_config, gpio_wp, ARG_wp);
 
-        if (spi_host_id == HSPI_HOST || spi_host_id == SPI2_HOST) {
+        #if CONFIG_IDF_TARGET_ESP32
+        if (spi_host_id == HSPI_HOST) {
+        #else
+        if (spi_host_id == SPI2_HOST) {
+        #endif
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
             //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
@@ -334,7 +338,11 @@ STATIC mp_obj_t sd_deinit(mp_obj_t self_in) {
         }
         if (self->host.flags & SDMMC_HOST_FLAG_SPI) {
             // SD card used a (dedicated) SPI bus, so free that SPI bus.
-            if ((self->host.slot + 2) == HSPI_HOST || (self->host.slot + 2) == SPI2_HOST) {
+            #if CONFIG_IDF_TARGET_ESP32
+            if ((self->host.slot + 2) == HSPI_HOST) {
+            #else
+            if ((self->host.slot + 2) == SPI2_HOST) {
+            #endif
                 spi_bus_free(self->host.slot);
             }
         }
