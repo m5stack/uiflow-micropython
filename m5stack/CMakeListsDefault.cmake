@@ -85,13 +85,14 @@ set(MICROPY_SOURCE_PORT
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
 )
 
 if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_sdcard.c)
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
 else()
+    LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c)
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/../micropython/ports/esp32/machine_hw_spi.c)
 endif()
 

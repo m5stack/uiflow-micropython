@@ -64,9 +64,9 @@
 #ifndef MICROPY_HW_SPI2_SCK
 #if CONFIG_IDF_TARGET_ESP32
 // ESP32 has IO_MUX pins for VSPI/SPI3 lines, use them as defaults
-#define MICROPY_HW_SPI2_SCK VSPI_IOMUX_PIN_NUM_CLK      // pin 18
-#define MICROPY_HW_SPI2_MOSI VSPI_IOMUX_PIN_NUM_MOSI    // pin 23
-#define MICROPY_HW_SPI2_MISO VSPI_IOMUX_PIN_NUM_MISO    // pin 19
+#define MICROPY_HW_SPI2_SCK SPI3_IOMUX_PIN_NUM_CLK      // pin 18
+#define MICROPY_HW_SPI2_MOSI SPI3_IOMUX_PIN_NUM_MOSI    // pin 23
+#define MICROPY_HW_SPI2_MISO SPI3_IOMUX_PIN_NUM_MISO    // pin 19
 #elif CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3
 // ESP32S2 and S3 uses GPIO matrix for SPI3 pins, no IO_MUX possible
 // Set defaults to the pins used by SPI2 in Octal mode
@@ -78,13 +78,6 @@
 
 #define MP_HW_SPI_MAX_XFER_BYTES (4092)
 #define MP_HW_SPI_MAX_XFER_BITS (MP_HW_SPI_MAX_XFER_BYTES * 8) // Has to be an even multiple of 8
-
-#if CONFIG_IDF_TARGET_ESP32C3
-#define HSPI_HOST SPI2_HOST
-#elif CONFIG_IDF_TARGET_ESP32S3
-#define HSPI_HOST SPI3_HOST
-#define FSPI_HOST SPI2_HOST
-#endif
 
 typedef struct _machine_hw_spi_default_pins_t {
     int8_t sck;
@@ -112,15 +105,15 @@ typedef struct _machine_hw_spi_obj_t {
 } machine_hw_spi_obj_t;
 
 // Default pin mappings for the hardware SPI instances
-STATIC const machine_hw_spi_default_pins_t machine_hw_spi_default_pins[2] = {
+STATIC const machine_hw_spi_default_pins_t machine_hw_spi_default_pins[MICROPY_HW_SPI_MAX] = {
     { .sck = MICROPY_HW_SPI1_SCK, .mosi = MICROPY_HW_SPI1_MOSI, .miso = MICROPY_HW_SPI1_MISO },
     #ifdef MICROPY_HW_SPI2_SCK
     { .sck = MICROPY_HW_SPI2_SCK, .mosi = MICROPY_HW_SPI2_MOSI, .miso = MICROPY_HW_SPI2_MISO },
     #endif
 };
 
-// Static objects mapping to HSPI and VSPI hardware peripherals
-STATIC machine_hw_spi_obj_t machine_hw_spi_obj[2];
+// Static objects mapping to SPI2 (and SPI3 if available) hardware peripherals.
+STATIC machine_hw_spi_obj_t machine_hw_spi_obj[MICROPY_HW_SPI_MAX];
 
 STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
     switch (spi_bus_remove_device(self->spi)) {
@@ -129,18 +122,28 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
             return;
 
         case ESP_ERR_INVALID_STATE:
-            mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI device already freed"));
-            return;
+            // NOTE:
+            //     core2和cores3的屏幕和sd卡复用一个spi，
+            //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+            if (self->host != SPI2_HOST) {
+                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI device already freed"));
+                return;
+            }
     }
 
-    switch (spi_bus_free(self->host)) {
-        case ESP_ERR_INVALID_ARG:
-            mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("invalid configuration"));
-            return;
+    // NOTE:
+    //     core2和cores3的屏幕和sd卡复用一个spi，
+    //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+    if (self->host != SPI2_HOST) {
+        switch (spi_bus_free(self->host)) {
+            case ESP_ERR_INVALID_ARG:
+                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("invalid configuration"));
+                return;
 
-        case ESP_ERR_INVALID_STATE:
-            mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI bus already freed"));
-            return;
+            case ESP_ERR_INVALID_STATE:
+                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI bus already freed"));
+                return;
+        }
     }
 
     int8_t pins[3] = {self->miso, self->mosi, self->sck};
@@ -223,17 +226,6 @@ STATIC void machine_hw_spi_init_internal(
         changed = true;
     }
 
-    if (self->host != HSPI_HOST
-        #ifdef FSPI_HOST
-        && self->host != FSPI_HOST
-        #endif
-        #ifdef VSPI_HOST
-        && self->host != VSPI_HOST
-        #endif
-        ) {
-        mp_raise_msg_varg(&mp_type_ValueError, MP_ERROR_TEXT("SPI(%d) doesn't exist"), self->host);
-    }
-
     if (changed) {
         if (self->state == MACHINE_HW_SPI_STATE_INIT) {
             self->state = MACHINE_HW_SPI_STATE_DEINIT;
@@ -267,7 +259,7 @@ STATIC void machine_hw_spi_init_internal(
     #if CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3 || CONFIG_IDF_TARGET_ESP32C3
     dma_chan = SPI_DMA_CH_AUTO;
     #else
-    if (self->host == HSPI_HOST) {
+    if (self->host == SPI2_HOST) {
         dma_chan = 1;
     } else {
         dma_chan = 2;
@@ -281,10 +273,13 @@ STATIC void machine_hw_spi_init_internal(
             return;
 
         case ESP_ERR_INVALID_STATE:
-            if (self->host != HSPI_HOST) {
+            // NOTE:
+            //     core2和cores3的屏幕和sd卡复用一个spi，
+            //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+            if (self->host != SPI2_HOST) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI host already in use"));
+                return;
             }
-            return;
     }
 
     ret = spi_bus_add_device(self->host, &devcfg, &self->spi);
@@ -482,13 +477,14 @@ mp_obj_t machine_hw_spi_make_new(const mp_obj_type_t *type, size_t n_args, size_
 
     machine_hw_spi_obj_t *self;
     const machine_hw_spi_default_pins_t *default_pins;
-    if (args[ARG_id].u_int == 1) { // SPI2_HOST which is FSPI_HOST on ESP32Sx, HSPI_HOST on others
-        self = &machine_hw_spi_obj[0];
-        default_pins = &machine_hw_spi_default_pins[0];
+    mp_int_t spi_id = args[ARG_id].u_int;
+    if (1 <= spi_id && spi_id <= MICROPY_HW_SPI_MAX) {
+        self = &machine_hw_spi_obj[spi_id - 1];
+        default_pins = &machine_hw_spi_default_pins[spi_id - 1];
     } else {
-        self = &machine_hw_spi_obj[1];
-        default_pins = &machine_hw_spi_default_pins[1];
+        mp_raise_msg_varg(&mp_type_ValueError, MP_ERROR_TEXT("SPI(%d) doesn't exist"), spi_id);
     }
+
     self->base.type = &machine_spi_type;
 
     int8_t sck, mosi, miso;
