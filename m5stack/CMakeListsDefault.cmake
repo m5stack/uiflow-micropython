@@ -129,41 +129,40 @@ set(MICROPY_SOURCE_QSTR
 
 set(IDF_COMPONENTS
     app_update
-    esp_app_format
     bootloader_support
     bt
     driver
-    # esp_adc_cal
     esp_adc
     esp_app_format
     esp_common
     esp_eth
     esp_event
     esp_hw_support
+    esp_netif
+    esp_partition
+    esp_pm
+    esp_psram
     esp_ringbuf
     esp_rom
+    esp_system
+    esp_timer
     esp_wifi
     freertos
+    hal
     heap
     log
     lwip
     mbedtls
-    mdns
     newlib
     nvs_flash
     sdmmc
     soc
     spi_flash
-    esp_psram
-    esp_partition
-    # tcpip_adapter
-    esp_netif
     ulp
     vfs
     xtensa
     esp_http_client
     esp-tls
-    nghttp
     libffi
     json
     M5Unified
