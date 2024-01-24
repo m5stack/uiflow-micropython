@@ -237,7 +237,7 @@ submodules:
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
-	# git submodule update --init ../micropython
+	git submodule update --init ../micropython
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -

@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3.3.0
     - name: Install packages
-      run: source tools/ci.sh && ci_esp32_idf44_setup
+      run: source tools/ci.sh && ci_esp32_idf504_setup
     - name: Build
       run: source tools/ci.sh && ci_esp32_nightly_build
     - name: Deliver AtomS3 firmware
