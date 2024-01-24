@@ -129,7 +129,7 @@ STATIC bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     return true;
 }
 
-STATIC mp_obj_t camera_init(mp_uint_t n_pos_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+STATIC mp_obj_t camera_init(size_t n_pos_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     bool init = camera_init_helper(n_pos_args, pos_args, kw_args);
     if (init) {
         return mp_const_true;
@@ -151,7 +151,7 @@ STATIC mp_obj_t camera_deinit() {
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(camera_deinit_obj, camera_deinit);
 
-STATIC mp_obj_t camera_skip_frames(uint n_args, const mp_obj_t *args, mp_map_t *kw_args) {
+STATIC mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_time), MP_MAP_LOOKUP);
     mp_int_t time = 300; // OV Recommended.
 
@@ -260,8 +260,12 @@ STATIC mp_obj_t camera_pixformat(mp_obj_t pixformat) {
         return mp_const_false;
     }
 
-    s->set_pixformat(s, format);
-    return mp_const_none;
+    int ret = s->set_pixformat(s, format);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_pixformat_obj, camera_pixformat);
 
@@ -277,8 +281,12 @@ STATIC mp_obj_t camera_framesize(mp_obj_t framesize) {
         return mp_const_false;
     }
 
-    s->set_framesize(s, size);
-    return mp_const_none;
+    int ret = s->set_framesize(s, size);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_framesize_obj, camera_framesize);
 
@@ -290,8 +298,12 @@ STATIC mp_obj_t camera_contrast(mp_obj_t contrast) {
     }
 
     int val = mp_obj_get_int(contrast); // -2,2 (default 0). 2 highcontrast
-    s->set_contrast(s, val);
-    return mp_const_none;
+    int ret = s->set_contrast(s, val);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_contrast_obj, camera_contrast);
 
@@ -303,8 +315,12 @@ STATIC mp_obj_t camera_global_gain(mp_obj_t gain_level) {
     }
 
     int val = mp_obj_get_int(gain_level); // -2,2 (default 0). 2 highcontrast
-    s->set_gain_ctrl(s, val);
-    return mp_const_none;
+    int ret = s->set_gain_ctrl(s, val);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_global_gain_obj, camera_global_gain);
 
@@ -315,8 +331,12 @@ STATIC mp_obj_t camera_hmirror(mp_obj_t direction) {
         return mp_const_false;
     }
     int dir = mp_obj_get_int(direction);
-    s->set_hmirror(s, dir);
-    return mp_const_none;
+    int ret = s->set_hmirror(s, dir);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_hmirror_obj, camera_hmirror);
 
@@ -327,8 +347,12 @@ STATIC mp_obj_t camera_vflip(mp_obj_t direction) {
         return mp_const_false;
     }
     int dir = mp_obj_get_int(direction);
-    s->set_vflip(s, dir);
-    return mp_const_none;
+    int ret = s->set_vflip(s, dir);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_vflip_obj, camera_vflip);
 
@@ -339,8 +363,12 @@ STATIC mp_obj_t camera_colorbar(mp_obj_t enable) {
         return mp_const_false;
     }
     int val = mp_obj_get_int(enable);
-    s->set_colorbar(s, (bool)val);
-    return mp_const_none;
+    int ret = s->set_colorbar(s, (bool)val);
+    if (ret == 0) {
+        return mp_const_true;
+    } else {
+        return mp_const_false;
+    }
 }
 STATIC MP_DEFINE_CONST_FUN_OBJ_1(camera_colorbar_obj, camera_colorbar);
 
