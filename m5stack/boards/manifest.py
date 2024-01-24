@@ -3,7 +3,7 @@ require("mip")
 require("ntptime")
 require("dht")
 require("onewire")
-include("$(MPY_DIR)/extmod/uasyncio")
+include("$(MPY_DIR)/extmod/asyncio")
 require("webrepl")
 require("upysh")
 

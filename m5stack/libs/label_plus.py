@@ -1,5 +1,8 @@
 from M5 import Widgets
-import urequests as requests
+try:
+    import urequests as requests
+except ImportError:
+    import requests
 from machine import Timer
 
 # from micropython import schedule

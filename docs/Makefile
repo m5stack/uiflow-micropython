@@ -5,7 +5,7 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = zh_CN
+SOURCEDIR     = en
 BUILDDIR      = build/$(SOURCEDIR)
 
 # Put it first so that "make" without argument is like "make help".

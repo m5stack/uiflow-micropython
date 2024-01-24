@@ -90,6 +90,10 @@ function ci_esp32_idf44_setup {
     ci_esp32_setup_helper 014ee65f1f5e291230e398c4913020be9a6278a1
 }
 
+function ci_esp32_idf504_setup {
+    ci_esp32_setup_helper 8fbf4ba6058bcf736317d8a7aa75d0578563c38b
+}
+
 function ci_esp32_build {
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
