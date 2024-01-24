@@ -8,7 +8,7 @@
 # M5STACK_S3_xxx -> ESP32 S3
 -include .workenv
 
-BOARD ?= M5STACK_8MB
+BOARD ?= M5STACK_AtomS3
 
 boards := \
 	M5STACK_AtomS3:atoms3            \
@@ -17,6 +17,7 @@ boards := \
 	M5STACK_CoreS3:cores3            \
 	M5STACK_AtomS3U:atoms3u          \
 	M5STACK_Core2:core2              \
+	M5STACK_Tough:tough              \
 	M5STACK_StickC_PLUS2:stickcplus2 \
 	M5STACK_StickC_PLUS:stickcplus   \
 	M5STACK_Fire:fire                \
@@ -38,6 +39,7 @@ BOARD_TYPE_DEF := \
 	cores3      \
 	atoms3u     \
 	core2       \
+	tough       \
 	stickcplus2 \
 	stickcplus  \
 	fire        \

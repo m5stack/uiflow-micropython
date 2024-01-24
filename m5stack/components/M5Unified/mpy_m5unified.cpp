@@ -78,7 +78,7 @@ mp_obj_t m5_end(void) {
 }
 
 mp_obj_t m5_getBoard(void) {
-    return mp_obj_new_int(M5.getBoard());
+    return mp_obj_new_int(BOARD_ID);
 }
 /********************************Configuration*********************************/
 

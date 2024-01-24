@@ -1,16 +1,14 @@
-set(IDF_TARGET esp32s3)
-
-# atoms3u https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L26
-set(BOARD_ID 138)
+# tough https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L10
+set(BOARD_ID 8)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_S3_8MB/sdkconfig.board
     ./boards/sdkconfig.base
+    ./boards/sdkconfig.flash_16mb
+    ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
-    ./boards/sdkconfig.ble
-    ./boards/sdkconfig.usb
-    ./boards/sdkconfig.flash_8mb
+    ./boards/M5STACK_Tough/sdkconfig.board
+    ./boards/sdkconfig.spiram
 )
 
 # If not enable LVGL, ignore this...

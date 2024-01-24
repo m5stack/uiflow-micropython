@@ -1,3 +1,6 @@
+# core2 https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L4
+set(BOARD_ID 2)
+
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
     ./boards/sdkconfig.flash_16mb
