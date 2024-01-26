@@ -151,8 +151,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
         elif board_id == M5.BOARD.M5Dial:
             from .dial import Dial_Startup
 
-            dial = Dial_Startup()
-            dial.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5StackCoreInk:
+            from .coreink import CoreInk_Startup
+
+            coreink = CoreInk_Startup()
+            coreink.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
