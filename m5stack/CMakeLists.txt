@@ -49,6 +49,7 @@ set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 if(BUILD_WITH_LVGL)
     # Include LVGL component, ignore KCONFIG
     idf_build_set_property(LV_MICROPYTHON 1)
+    include_directories(${CMAKE_SOURCE_DIR}/components/lv_bindings)
     idf_build_component(${CMAKE_SOURCE_DIR}/components/lv_bindings/lvgl)
     idf_build_set_property(COMPILE_DEFINITIONS "-DLV_KCONFIG_IGNORE" APPEND)
     separate_arguments(LV_CFLAGS_ENV UNIX_COMMAND $ENV{LV_CFLAGS})

@@ -8,35 +8,24 @@ M5.begin()
 # lvgl init
 M5.Lcd.lvgl_init()
 
-# create a display 0 buffer
-disp_buf0 = lv.disp_draw_buf_t()
-buf1_0 = bytearray(M5.getDisplay(0).width() * 10)
-disp_buf0.init(buf1_0, None, len(buf1_0) // lv.color_t.__SIZE__)
+# init function update in lvgl9. ref: https://github.com/lvgl/lvgl/issues/4011 
+# lv_disp_t * disp = lv_disp_create(hor_res, ver_res)
+# lv_disp_set_flush_cb(disp, flush_cb);
+# lv_disp_set_draw_buffers(disp, buf1, buf2, buf_size_in_bytes, mode);
 
-# register display 0 driver
-disp_drv_0 = lv.disp_drv_t()
-disp_drv_0.init()
-disp_drv_0.draw_buf = disp_buf0
-disp_drv_0.flush_cb = M5.Lcd.lvgl_flush
-disp_drv_0.hor_res = M5.getDisplay(0).width()
-disp_drv_0.ver_res = M5.getDisplay(0).height()
-disp_drv_0.user_data = {"display_index": 0}
-disp0 = disp_drv_0.register()
+# create display 0
+disp0 = lv.disp_create(M5.getDisplay(0).width(), M5.getDisplay(0).height())
+disp0.set_flush_cb(M5.Lcd.lvgl_flush)
+buf1_0 = bytearray(M5.getDisplay(0).width() * 10 * lv.color_t.__SIZE__)
+disp0.set_draw_buffers(buf1_0, None, len(buf1_0), lv.DISP_RENDER_MODE.PARTIAL)
+disp0.set_user_data({"display_index": 0})
 
-# create a display 1 buffer
-disp_buf1 = lv.disp_draw_buf_t()
-buf1_1 = bytearray(M5.getDisplay(1).width() * 10)
-disp_buf1.init(buf1_1, None, len(buf1_1) // lv.color_t.__SIZE__)
-
-# register display 1 driver
-disp_drv_1 = lv.disp_drv_t()
-disp_drv_1.init()
-disp_drv_1.draw_buf = disp_buf1
-disp_drv_1.flush_cb = M5.Lcd.lvgl_flush
-disp_drv_1.hor_res = M5.getDisplay(1).width()
-disp_drv_1.ver_res = M5.getDisplay(1).height()
-disp_drv_1.user_data = {"display_index": 1}
-disp1 = disp_drv_1.register()
+# create display 1
+disp1 = lv.disp_create(M5.getDisplay(1).width(), M5.getDisplay(1).height())
+disp1.set_flush_cb(M5.Lcd.lvgl_flush)
+buf1_1 = bytearray(M5.getDisplay(1).width() * 10 * lv.color_t.__SIZE__)
+disp1.set_draw_buffers(buf1_1, None, len(buf1_1), lv.DISP_RENDER_MODE.PARTIAL)
+disp1.set_user_data({"display_index": 1})
 
 # set default display to screen 0
 lv.disp_t.set_default(disp0)
@@ -59,12 +48,14 @@ label1.set_text("LVGL Screen 1")
 lv.scr_load(scr1)
 
 # touch driver init
-indev_drv = lv.indev_drv_t()
-indev_drv.init()
-indev_drv.disp = disp0  # input device assigned to display 0
-indev_drv.type = lv.INDEV_TYPE.POINTER
-indev_drv.read_cb = M5.Lcd.lvgl_read
-indev = indev_drv.register()
+# init function update in lvgl9. ref: https://github.com/lvgl/lvgl/issues/4011 
+# lv_indev_t * indev = lv_indev_create();
+# lv_indev_set_type(indev, LV_INDEV_TYPE_...);
+# lv_indev_set_read_cb(indev, read_cb);
+indev_drv = lv.indev_create()
+indev_drv.set_disp(disp0)  # input device assigned to display 0
+indev_drv.set_type(lv.INDEV_TYPE.POINTER)
+indev_drv.set_read_cb(M5.Lcd.lvgl_read)
 
 # Create an image from the jpg file
 try:
