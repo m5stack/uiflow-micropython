@@ -1,6 +1,6 @@
 set(IDF_TARGET esp32s3)
 
-# atoms3-lite https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L25
+# atoms3-lite https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L27
 set(BOARD_ID 137)
 
 set(SDKCONFIG_DEFAULTS
