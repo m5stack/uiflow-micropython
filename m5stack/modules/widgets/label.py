@@ -128,9 +128,10 @@ class Label:
         if type(self._font) == bytes:
             self._parent.unloadFont()
             self._parent.loadFont(self._font)
-        else:
+        elif type(self._font) == str:
             self._parent.loadFont(self._font)
-            # self._parent.setFont(self._font)
+        else:
+            self._parent.setFont(self._font)
 
     def setLongMode(self, mode):
         if mode is self.LONG_DOT:
