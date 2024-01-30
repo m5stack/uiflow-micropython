@@ -28,6 +28,7 @@ DEBUG = True
 STARTUP_BG_IMG = '/flash/res/coreink/Startup.bmp'
 FLOW_BG_IMG = '/flash/res/coreink/Flow.bmp'
 CONFIG_BG_IMG = '/flash/res/coreink/Config.bmp'
+APPLIST_BG_IMG = '/flash/res/coreink/AppList.bmp'
 
 WIFI_IMG = '/flash/res/coreink/wifi.bmp'
 WIFI_ERR_IMG = '/flash/res/coreink/wifi_err.bmp'
@@ -283,33 +284,11 @@ class ConfigApp(AppBase):
         finally:
             pass
 
-    def _get_cloud_status(self):
-        _cloud_status = {
-            network.STAT_IDLE: 0,
-            network.STAT_CONNECTING: 0,
-            network.STAT_GOT_IP: 1,
-            network.STAT_NO_AP_FOUND: 2,
-            network.STAT_WRONG_PASSWORD: 2,
-            network.STAT_BEACON_TIMEOUT: 2,
-            network.STAT_ASSOC_FAIL: 2,
-            network.STAT_HANDSHAKE_TIMEOUT: 2,
-        }[self._wifi.connect_status()]
-
-        if _cloud_status is not 1 or _HAS_SERVER is not True:
-            return _cloud_status
-
-        if M5Things.status() == 2:
-            _cloud_status = 4
-        else:
-            _cloud_status = 3
-        return _cloud_status
-
     def _load_data(self):
         self._server = self._get_server()
-        self._cloud_status = self._get_cloud_status()
 
     def _update_data(self):
-        self._cloud_status = self._get_cloud_status()
+        pass
 
     def _load_view(self, load_bg = True):
         # bg img
@@ -326,7 +305,6 @@ class ConfigApp(AppBase):
     def on_launch(self):
         DEBUG and print("Config Launch")
         self._server = self._get_server()
-        self._cloud_status = self._get_cloud_status()
 
     def on_view(self):
         self._ssid_label = Label(
@@ -364,21 +342,11 @@ class ConfigApp(AppBase):
 
     async def on_run(self):
         while True:
-            t = self._get_cloud_status()
-            if t is not self._cloud_status:
-                self._cloud_status = t
-                self._update_data()
-                self._load_view()
-                await asyncio.sleep_ms(1000)
-            else:
-                await asyncio.sleep_ms(1000)
+            await asyncio.sleep_ms(1000)
 
     def on_exit(self):
         DEBUG and print("Config Exit")
-        try:
-            del self._ssid_label, self._server_label
-        except:
-            pass
+        del self._ssid_label, self._server_label
         del self._bg_img
 
     async def _keycode_enter_event_handler(self, fw):
@@ -400,6 +368,82 @@ class ConfigApp(AppBase):
         self._load_view(load_bg=False)
 
 
+class AppListApp(AppBase):
+    def __init__(self) -> None:
+        super().__init__()
+
+    def on_launch(self):
+        self._bg_img = Image(use_sprite=False)
+        self._bg_img.set_x(0)
+        self._bg_img.set_y(0)
+        self._bg_img.set_size(200, 200)
+
+        self._labels = []
+
+        self._files = []
+        for file in os.listdir("apps"):
+            if file.endswith(".py"):
+                self._files.append(file)
+        self._files_number = len(self._files)
+        self._cursor_pos = 0
+        self._file_pos = 0
+
+    def on_view(self):
+        self._bg_img.set_src(APPLIST_BG_IMG)
+
+        if len(self._labels) is not 5:
+            for i in range(5):
+                self._labels.append(Label(
+                    "",
+                    14,
+                    37 + 27 * i,
+                    w=138,
+                    h=24,
+                    fg_color=0x000000,
+                    bg_color=0xFFFFFF,
+                    font=M5.Lcd.FONTS.DejaVu18,
+                ))
+                self._labels[-1].setLongMode(Label.LONG_DOT)
+
+        for label, file in zip(self._labels, self._files):
+            # print("file:", file)
+            file and label and label.setText(file)
+
+    async def on_run(self):
+        while True:
+            await asyncio.sleep_ms(1000)
+
+    def on_exit(self):
+        del self._bg_img, self._labels, self._files
+
+    async def _keycode_enter_event_handler(self, fw):
+        # print("_keycode_enter_event_handler")
+        M5.Lcd.clear()
+        execfile("apps/" + self._files[self._file_pos])
+        sys.exit(0)
+
+    async def _keycode_back_event_handler(self, fw):
+        # print("_keycode_back_event_handler")
+        pass
+
+    async def _keycode_dpad_down_event_handler(self, fw):
+        # print("_keycode_dpad_down_event_handler")
+        self._file_pos += 1
+
+        if self._file_pos >= len(self._files):
+            self._file_pos = 0
+
+        if self._file_pos >= len(self._labels):
+            self._file_pos = 0
+
+        for i in range(len(self._labels)):
+            file = self._files[i]
+            if self._file_pos == i:
+                self._labels[i].setText('>' + file)
+            else:
+                self._labels[i].setText(file)
+
+
 # CoreInk startup menu
 class CoreInk_Startup:
     def __init__(self) -> None:
@@ -407,22 +451,22 @@ class CoreInk_Startup:
 
     def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
         DEBUG and print('Corink startup')
-        DEBUG and M5.Lcd.drawCenterString("Corink startup2", 100, 100)
+        # DEBUG and M5.Lcd.drawCenterString("Corink startup2", 100, 100)
         self._wifi.connect_network(ssid, pswd)
+
+        M5.Lcd.drawImage(STARTUP_BG_IMG, 0, 0)
 
         # bg_img = Image(use_sprite=False)
         # bg_img.set_pos(0, 0)
         # bg_img.set_size(200, 200)
         # bg_img.set_src(STARTUP_BG_IMG)
 
-        # import time
-        # time.sleep_ms(3000)
+        import time
+        time.sleep_ms(3000)
 
         flow_app = FlowApp((self._wifi, ssid))
         config_app = ConfigApp((self._wifi, ssid))
+        applist_app = AppListApp()
 
-        fw = Framework([flow_app, config_app])
+        fw = Framework([flow_app, config_app, applist_app])
         asyncio.run(fw.run())
-
-coreink = CoreInk_Startup()
-coreink.startup('Real-Internet', 'ENIAC2333')
