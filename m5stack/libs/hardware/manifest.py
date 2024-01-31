@@ -6,6 +6,7 @@ package(
         "keyboard/asciimap.py",
         "button.py",
         "ir.py",
+        "matrix_keyboard.py",
         "rfid.py",
         "rgb.py",
         "rotary.py",
