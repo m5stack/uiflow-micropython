@@ -108,12 +108,13 @@ class Framework:
 
 
 class FlowApp(AppBase):
-    def __init__(self, data) -> None:
+    def __init__(self, sprite, data) -> None:
         self._wifi = data[0]
         self._ssid = str(data[1]) if len(data[1]) else str(None)
         self._mac = None
         self._user_id = None
         self._cloud_status = 0
+        self._sprite = sprite
 
     @staticmethod
     def _get_mac():
@@ -177,6 +178,8 @@ class FlowApp(AppBase):
         else:
             self._server_img.set_src(SERVER_ERR_IMG)
 
+        self._sprite.push(0, 0)
+
     def on_launch(self):
         DEBUG and print("Flow Launch")
         self._mac = self._get_mac()
@@ -194,6 +197,7 @@ class FlowApp(AppBase):
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
+            parent=self._sprite,
         )
         self._mac_label.setLongMode(Label.LONG_DOT)
 
@@ -207,20 +211,21 @@ class FlowApp(AppBase):
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
+            parent=self._sprite,
         )
         self._user_id_label.setLongMode(Label.LONG_DOT)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = Image(use_sprite=False, parent=self._sprite,)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
 
-        self._wifi_img = Image(use_sprite=False)
+        self._wifi_img = Image(use_sprite=False, parent=self._sprite,)
         self._wifi_img.set_x(4)
         self._wifi_img.set_y(176)
         self._wifi_img.set_size(32, 24)
 
-        self._server_img = Image(use_sprite=False)
+        self._server_img = Image(use_sprite=False, parent=self._sprite,)
         self._server_img.set_x(40)
         self._server_img.set_y(176)
         self._server_img.set_size(32, 24)
@@ -259,11 +264,12 @@ class FlowApp(AppBase):
 
 
 class ConfigApp(AppBase):
-    def __init__(self, data) -> None:
+    def __init__(self, sprite, data) -> None:
         self._wifi = data[0]
         self._ssid = str(data[1]) if len(data[1]) else str(None)
         self._server = None
         self._cloud_status = 0
+        self._sprite = sprite
 
     def _get_server(self):
         import esp32
@@ -302,6 +308,8 @@ class ConfigApp(AppBase):
         # user id
         self._server_label.setText(self._server)
 
+        self._sprite.push(0,0)
+
     def on_launch(self):
         DEBUG and print("Config Launch")
         self._server = self._get_server()
@@ -317,6 +325,7 @@ class ConfigApp(AppBase):
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
+            parent=self._sprite,
         )
         self._ssid_label.setLongMode(Label.LONG_DOT)
 
@@ -330,10 +339,11 @@ class ConfigApp(AppBase):
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
+            parent=self._sprite,
         )
         self._server_label.setLongMode(Label.LONG_DOT)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = Image(use_sprite=False, parent=self._sprite)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
@@ -369,11 +379,12 @@ class ConfigApp(AppBase):
 
 
 class AppListApp(AppBase):
-    def __init__(self) -> None:
+    def __init__(self, sprite) -> None:
+        self._sprite = sprite
         super().__init__()
 
     def on_launch(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = Image(use_sprite=False,parent=self._sprite)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
@@ -402,12 +413,15 @@ class AppListApp(AppBase):
                     fg_color=0x000000,
                     bg_color=0xFFFFFF,
                     font=M5.Lcd.FONTS.DejaVu18,
+                    parent=self._sprite,
                 ))
                 self._labels[-1].setLongMode(Label.LONG_DOT)
 
         for label, file in zip(self._labels, self._files):
             # print("file:", file)
             file and label and label.setText(file)
+
+        self._sprite.push(0, 0)
 
     async def on_run(self):
         while True:
@@ -424,6 +438,22 @@ class AppListApp(AppBase):
 
     async def _keycode_back_event_handler(self, fw):
         # print("_keycode_back_event_handler")
+        self._file_pos -= 1
+
+        if self._file_pos < 0:
+            self._file_pos = 0
+
+        try:
+            for i in range(len(self._labels)):
+                file = self._files[i]
+                if self._file_pos == i:
+                    self._labels[i].setText('>' + file)
+                else:
+                    self._labels[i].setText(file)
+        except:
+            pass
+
+        self._sprite.push(0, 0)
         pass
 
     async def _keycode_dpad_down_event_handler(self, fw):
@@ -436,12 +466,17 @@ class AppListApp(AppBase):
         if self._file_pos >= len(self._labels):
             self._file_pos = 0
 
-        for i in range(len(self._labels)):
-            file = self._files[i]
-            if self._file_pos == i:
-                self._labels[i].setText('>' + file)
-            else:
-                self._labels[i].setText(file)
+        try:
+            for i in range(len(self._labels)):
+                file = self._files[i]
+                if self._file_pos == i:
+                    self._labels[i].setText('>' + file)
+                else:
+                    self._labels[i].setText(file)
+        except:
+            pass
+
+        self._sprite.push(0, 0)
 
 
 # CoreInk startup menu
@@ -454,19 +489,17 @@ class CoreInk_Startup:
         # DEBUG and M5.Lcd.drawCenterString("Corink startup2", 100, 100)
         self._wifi.connect_network(ssid, pswd)
 
-        M5.Lcd.drawImage(STARTUP_BG_IMG, 0, 0)
-
-        # bg_img = Image(use_sprite=False)
-        # bg_img.set_pos(0, 0)
-        # bg_img.set_size(200, 200)
-        # bg_img.set_src(STARTUP_BG_IMG)
+        sprite = M5.Lcd.newCanvas(200, 200, 1, False)
+        sprite.drawBmp(STARTUP_BG_IMG, 0, 0)
+        sprite.push(0, 0)
 
         import time
         time.sleep_ms(3000)
+        M5.Lcd.clear()
 
-        flow_app = FlowApp((self._wifi, ssid))
-        config_app = ConfigApp((self._wifi, ssid))
-        applist_app = AppListApp()
+        flow_app = FlowApp(sprite, (self._wifi, ssid))
+        config_app = ConfigApp(sprite, (self._wifi, ssid))
+        applist_app = AppListApp(sprite)
 
         fw = Framework([flow_app, config_app, applist_app])
         asyncio.run(fw.run())
