@@ -9,3 +9,5 @@ Controllers
     atoms3u.rst
     stamps3.rst
     cardputer.rst
+    coreink.rst
+    airq.rst
