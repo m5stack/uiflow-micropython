@@ -1,7 +1,16 @@
-idf_component_register(SRCS "m5things.c"
-                    INCLUDE_DIRS "include"
-                    REQUIRES json nvs_flash freertos main uiflow_utility
-                    )
+idf_component_register(
+    SRCS
+        "m5things.c"
+    INCLUDE_DIRS
+        "include"
+    REQUIRES
+        json
+        nvs_flash
+        freertos
+        main
+        uiflow_utility
+)
+
 set_property(TARGET ${COMPONENT_LIB} APPEND PROPERTY LINK_INTERFACE_MULTIPLICITY 3)
 
 # idf_component_register(

@@ -16,8 +16,8 @@ const char *boards[] = {
     "atoms3",         // 11
     "dial",           // 12
     "dinmeter",       // 13
-    "unknown",        // 14
-    "unknown",        // 15
+    "cardputer",      // 14
+    "airq",           // 15
     "unknown",        // 16
     "unknown",        // 17
     "unknown",        // 18

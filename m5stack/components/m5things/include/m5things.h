@@ -29,6 +29,8 @@
 #define M5THINGS_OTA_TOPIC_TEMPLATE \
     "$m5/uiflow/v1/%s/%02x%02x%02x%02x%02x%02x/%s"
 
+#define FILE_RECORD_PATH "res/res.json"
+
 #define BOOT_OPT_NOTHING  0  // Run main.py(after download code to device set to this)
 #define BOOT_OPT_MENU_NET 1  // Show startup menu and network setup
 #define BOOT_OPT_NETWORK  2  // Only Network setup
