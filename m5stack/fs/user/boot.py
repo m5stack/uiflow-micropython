@@ -30,6 +30,7 @@ NETWORK_TIMEOUT = 60
 # Execute startup script, if not needed, delete the code below
 if __name__ == "__main__":
     from startup import startup
+    from m5sync import sync
 
     nvs = esp32.NVS("uiflow")
     try:
@@ -38,3 +39,4 @@ if __name__ == "__main__":
         boot_option = 1  # default
 
     startup(boot_option, NETWORK_TIMEOUT)
+    sync.run()

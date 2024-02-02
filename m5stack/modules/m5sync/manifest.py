@@ -1,0 +1,10 @@
+package(
+    "m5sync",
+    (
+        "__init__.py",
+        "gen.py",
+        "sync.py",
+    ),
+    base_path="..",
+    opt=3,
+)
