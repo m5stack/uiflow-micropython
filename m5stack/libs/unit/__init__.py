@@ -40,8 +40,14 @@ _attrs = {
     "WEIGHTUnit": "weight",
     "SCALESUnit": "scales",
     "MiniScaleUnit": "miniscale",
+    "DAC2Unit": "dac2",
     "GESTUREUnit": "gesture",
     "THERMALUnit": "thermal",
+    "SYNTHUnit": "synth",
+    "SERVOS8Unit": "servos8",
+    "RTC8563Unit": "rtc8563",
+    "VMeterUnit": "vmeter",
+    "AMeterUnit": "ameter",
 }
 
 

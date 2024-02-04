@@ -19,3 +19,5 @@ Unit
     relay.rst
     op90.rst
     op180.rst
+    miniscale.rst
+    dac2.rst

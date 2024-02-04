@@ -256,7 +256,7 @@ namespace m5
         const mp_arg_t allowed_args[] = {
             { MP_QSTR_buf,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = MP_OBJ_NULL }     },
             { MP_QSTR_rate,   MP_ARG_INT,                   {.u_int = 16000 }           },
-            { MP_QSTR_stereo, MP_ARG_BOOL,                  {.u_bool = mp_const_false } },
+            { MP_QSTR_stereo, MP_ARG_BOOL,                  {.u_bool = false } },
         };
         /* *FORMAT-ON* */
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

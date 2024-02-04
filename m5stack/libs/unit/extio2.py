@@ -110,8 +110,8 @@ class EXTIO2Unit:
     def write_servo_angle(self, id: int, angle: int) -> None:
         self._write_u8(_REG_SERVO_ANGLE_8B_REG_CH_1 + id, angle)
 
-    def write_servo_pluse(self, id: int, pluse: int) -> None:
-        self._write_u16(_REG_SERVO_PULSE_16B_REG_CH_1 + (id * 2), pluse & 0xFF, pluse >> 8)
+    def write_servo_pulse(self, id: int, pulse: int) -> None:
+        self._write_u16(_REG_SERVO_PULSE_16B_REG_CH_1 + (id * 2), pulse & 0xFF, pulse >> 8)
 
     def write_rgb_led(self, id: int, value) -> None:
         r = (value >> 16) & 0xFF

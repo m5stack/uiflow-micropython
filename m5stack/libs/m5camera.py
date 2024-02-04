@@ -35,7 +35,7 @@ IN_PSRAM = camera.PSRAM
 
 FrameSize = namedtuple("FrameSize", ["width", "height"])
 
-_frame_sizes = {
+_frame_size_table = {
     FRAME_96X96: FrameSize(width=96, height=96),
     FRAME_QQVGA: FrameSize(width=160, height=120),
     FRAME_QCIF: FrameSize(width=176, height=144),
@@ -54,20 +54,21 @@ _width = 0
 _height = 0
 _max_width = 0
 _max_height = 0
+_frame_size = None
 _visible = True
 
 
 def init(
     x, y, width, height, pixformat=RGB565, framesize=FRAME_QVGA, fb_count=2, fb_location=IN_PSRAM
 ) -> None:
-    global _x, _y, _width, _height, _max_width, _max_height
+    global _x, _y, _width, _height, _max_width, _max_height, _frame_size
     _x = x
     _y = y
     _max_width = width
     _max_height = height
-    frame_size = _frame_sizes.get(framesize)
-    _width = frame_size.width if frame_size.width < _max_width else _max_width
-    _height = frame_size.height if frame_size.height < _max_height else _max_height
+    _frame_size = _frame_size_table.get(framesize)
+    _width = _frame_size.width if _frame_size.width < _max_width else _max_width
+    _height = _frame_size.height if _frame_size.height < _max_height else _max_height
     camera.init(
         pixformat=pixformat, framesize=framesize, fb_count=fb_count, fb_location=fb_location
     )
@@ -75,7 +76,7 @@ def init(
 
 
 def framesize(size) -> None:
-    frame_size = _frame_sizes.get(size)
+    frame_size = _frame_size_table.get(size)
     if frame_size is None:
         return
     global _width, _height, _max_width, _max_height
@@ -94,12 +95,11 @@ def disp_to_screen():
             gc.collect()
 
 
-# fixme
 def setCursor(x=0, y=0, w=0, h=0):
-    global _x, _y, _max_width, _width, _max_height, _height
+    global _x, _y, _max_width, _width, _max_height, _height, _frame_size
     _x = x
     _y = y
-    frame_size = _frame_sizes.get(framesize)
+    frame_size = _frame_size_table.get(_frame_size)
     if w is not 0:
         _max_width = w
         _width = frame_size.width if frame_size.width < _max_width else _max_width
@@ -108,7 +108,6 @@ def setCursor(x=0, y=0, w=0, h=0):
         _height = frame_size.height if frame_size.height < _max_height else _max_height
 
 
-# fixme
 def setVisible(enable: bool):
     global _visible
     _visible = enable

@@ -90,6 +90,7 @@ mp_obj_t gfx_setColorDepth(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
 }
 
 
+LFS2Wrapper fontWrapper;
 mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_font};
     /* *FORMAT-OFF* */
@@ -104,10 +105,9 @@ mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args
     bool ret = false;
     auto gfx = getGfx(&pos_args[0]);
     if (mp_obj_is_str(args[ARG_font].u_obj) && ((size_t)mp_obj_len(args[ARG_font].u_obj) < 128)) { // file
-        // TODO
-        // LFS2Wrapper fontWrapper;
-        // wrapper.open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
-        // gfx->loadFont((lgfx::DataWrapper *)&wrapper);
+        gfx->unloadFont();
+        fontWrapper.open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        ret = gfx->loadFont((lgfx::DataWrapper *)&fontWrapper);
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_font].u_obj, &bufinfo, MP_BUFFER_READ);
@@ -162,7 +162,7 @@ mp_obj_t gfx_setTextScroll(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
     enum {ARG_scroll};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_scroll, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_false } }
+        { MP_QSTR_scroll, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = false } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -1119,7 +1119,7 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
         { MP_QSTR_w,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_h,     MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
         { MP_QSTR_bpp,   MP_ARG_INT                  , {.u_int = -1 } },
-        { MP_QSTR_psram, MP_ARG_BOOL                 , {.u_bool = mp_const_false } },
+        { MP_QSTR_psram, MP_ARG_BOOL                 , {.u_bool = false } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

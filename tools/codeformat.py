@@ -50,6 +50,7 @@ PATHS = [
     "m5stack/modules/**/*.py",
     "tools/*.py",
     "tests/**/*.py",
+    "examples/**/*.py",
 ]
 
 # Path to repo top-level dir.

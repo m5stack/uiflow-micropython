@@ -1,7 +1,7 @@
 try:
-    import urequests
+    import urequests as requests
 except ImportError:
-    import requests as urequests
+    import requests
 import json
 
 _server = "https://ezdata2.m5stack.com/api/v2"
@@ -62,7 +62,7 @@ class EzData:
         DEBUG and print("payload:", payload)
         url = "{0}/{1}/add".format(_server, self._device_token)
         try:
-            rsp = urequests.post(url, json=payload, headers={})
+            rsp = requests.post(url, json=payload, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
                 rsp.close()
@@ -98,7 +98,7 @@ class EzData:
         headers["Content-Type"] = str(form.content_type())
         url = "{0}/{1}/uploadFile".format(_server, self._device_token)
         try:
-            rsp = urequests.post(url, headers=headers, data=form.content())
+            rsp = requests.post(url, headers=headers, data=form.content())
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
                 rsp.close()
@@ -134,7 +134,7 @@ class EzData:
             url = "{0}/{1}/dataByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'getDeviceEzData' url:", url)
         try:
-            rsp = urequests.get(url, headers={})
+            rsp = requests.get(url, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
                 rsp.close()
@@ -155,7 +155,7 @@ class EzData:
         self.get()
         if self._date_type == "file":
             try:
-                rsp = urequests.get(self._value)
+                rsp = requests.get(self._value)
                 f = open(path, "wb")
                 f.write(rsp.content)
                 f.close()
@@ -173,7 +173,7 @@ class EzData:
             url = "{0}/{1}/historyByKey/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'history' url:", url)
         try:
-            rsp = urequests.get(url, headers={})
+            rsp = requests.get(url, headers={})
             if rsp.status_code == 200:
                 rsp_data = json.loads(rsp.text)
                 rsp.close()
@@ -192,7 +192,7 @@ class EzData:
         url = "{0}/{1}/delete/{2}".format(_server, self._device_token, self._key)
         DEBUG and print("'delete' url:", url)
         try:
-            rsp = urequests.delete(
+            rsp = requests.delete(
                 url, headers={"deviceToken": self._device_token, "key": self._key}
             )
             if rsp.status_code == 200:
@@ -212,7 +212,7 @@ def get_key_list(device_token=None):
     url = "{0}/{1}/list".format(_server, device_token)
     DEBUG and print("'list' url:", url)
     try:
-        rsp = urequests.get(url, headers={})
+        rsp = requests.get(url, headers={})
         if rsp.status_code == 200:
             rsp_data = json.loads(rsp.text)
             rsp.close()

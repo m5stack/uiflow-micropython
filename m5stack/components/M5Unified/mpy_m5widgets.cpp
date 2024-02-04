@@ -248,7 +248,7 @@ mp_obj_t m5widgets_label_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } },
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -435,7 +435,7 @@ mp_obj_t m5widgets_title_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -693,7 +693,7 @@ mp_obj_t m5widgets_image_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -808,7 +808,7 @@ mp_obj_t m5widgets_line_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_m
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -936,7 +936,7 @@ mp_obj_t m5widgets_circle_setVisible(size_t n_args, const mp_obj_t *pos_args, mp
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -1070,7 +1070,7 @@ mp_obj_t m5widgets_rectangle_setVisible(size_t n_args, const mp_obj_t *pos_args,
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -1192,7 +1192,7 @@ mp_obj_t m5widgets_triangle_setVisible(size_t n_args, const mp_obj_t *pos_args, 
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -1340,7 +1340,7 @@ mp_obj_t m5widgets_qrcode_setVisible(size_t n_args, const mp_obj_t *pos_args, mp
     enum {ARG_visible};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = mp_const_true } }
+        { MP_QSTR_visible, MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true } }
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];

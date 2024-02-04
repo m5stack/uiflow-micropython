@@ -1,4 +1,4 @@
 MicroPython libraries
 =====================
 
-https://docs.micropython.org/en/v1.20.0/library/index.html
+https://docs.micropython.org/en/v1.22.0/library/index.html

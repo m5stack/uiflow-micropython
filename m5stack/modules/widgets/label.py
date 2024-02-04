@@ -128,6 +128,8 @@ class Label:
         if type(self._font) == bytes:
             self._parent.unloadFont()
             self._parent.loadFont(self._font)
+        elif type(self._font) == str:
+            self._parent.loadFont(self._font)
         else:
             self._parent.setFont(self._font)
 

@@ -27,6 +27,7 @@ OPENAIR_TA_SHIFT = 8
 
 class RefreshRate:  # pylint: disable=too-few-public-methods
     """Enum-like class for MLX90640's refresh rate"""
+
     REFRESH_0_5_HZ = 0b000  # 0.5Hz
     REFRESH_1_HZ = 0b001  # 1Hz
     REFRESH_2_HZ = 0b010  # 2Hz
@@ -64,7 +65,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
     cpOffset = [0] * 2
     ilChessC = [0] * 3
     brokenPixels = []
-    outlierPixels = [] 
+    outlierPixels = []
     cpKta = 0
     cpKv = 0
 
@@ -172,9 +173,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
             vdd -= 65536
 
         resolutionRAM = (frameData[832] & 0x0C00) >> 10
-        resolutionCorrection = math.pow(2, self.resolutionEE) / math.pow(
-            2, resolutionRAM
-        )
+        resolutionCorrection = math.pow(2, self.resolutionEE) / math.pow(2, resolutionRAM)
         vdd = (resolutionCorrection * vdd - self.vdd25) / self.kVdd + 3.3
 
         return vdd
@@ -224,15 +223,11 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
             irDataCP[i] *= gain
 
         irDataCP[0] -= (
-            self.cpOffset[0]
-            * (1 + self.cpKta * (ta - 25))
-            * (1 + self.cpKv * (vdd - 3.3))
+            self.cpOffset[0] * (1 + self.cpKta * (ta - 25)) * (1 + self.cpKv * (vdd - 3.3))
         )
         if mode == self.calibrationModeEE:
             irDataCP[1] -= (
-                self.cpOffset[1]
-                * (1 + self.cpKta * (ta - 25))
-                * (1 + self.cpKv * (vdd - 3.3))
+                self.cpOffset[1] * (1 + self.cpKta * (ta - 25)) * (1 + self.cpKv * (vdd - 3.3))
             )
         else:
             irDataCP[1] -= (
@@ -269,11 +264,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
 
                 kta = self.kta[pixelNumber] / ktaScale
                 kv = self.kv[pixelNumber] / kvScale
-                irData -= (
-                    self.offset[pixelNumber]
-                    * (1 + kta * (ta - 25))
-                    * (1 + kv * (vdd - 3.3))
-                )
+                irData -= self.offset[pixelNumber] * (1 + kta * (ta - 25)) * (1 + kv * (vdd - 3.3))
 
                 if mode != self.calibrationModeEE:
                     irData += (
@@ -298,9 +289,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
                 To = (
                     math.sqrt(
                         math.sqrt(
-                            irData
-                            / (alphaCompensated * (1 - self.ksTo[1] * 273.15) + Sx)
-                            + taTr
+                            irData / (alphaCompensated * (1 - self.ksTo[1] * 273.15) + Sx) + taTr
                         )
                     )
                     - 273.15
@@ -524,9 +513,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
                     alphaTemp[p] -= 64
                 alphaTemp[p] *= 1 << accRemScale
                 alphaTemp[p] += (
-                    alphaRef
-                    + (accRow[i] << accRowScale)
-                    + (accColumn[j] << accColumnScale)
+                    alphaRef + (accRow[i] << accRowScale) + (accColumn[j] << accColumnScale)
                 )
                 alphaTemp[p] /= math.pow(2, alphaScale)
                 alphaTemp[p] -= self.tgc * (self.cpAlpha[0] + self.cpAlpha[1]) / 2
@@ -593,13 +580,12 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
                     self.offset[p] -= 64
                 self.offset[p] *= 1 << occRemScale
                 self.offset[p] += (
-                    offsetRef
-                    + (occRow[i] << occRowScale)
-                    + (occColumn[j] << occColumnScale)
+                    offsetRef + (occRow[i] << occRowScale) + (occColumn[j] << occColumnScale)
                 )
         del occRow
         del occColumn
         gc.collect()
+
     def _ExtractKtaPixelParameters(self) -> None:  # pylint: disable=too-many-locals
         # extract KtaPixel
         gc.collect()
@@ -743,11 +729,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
         # pylint: disable=too-many-branches
         pixCnt = 0
 
-        while (
-            (pixCnt < 768)
-            and (len(self.brokenPixels) < 5)
-            and (len(self.outlierPixels) < 5)
-        ):
+        while (pixCnt < 768) and (len(self.brokenPixels) < 5) and (len(self.outlierPixels) < 5):
             if eeData[pixCnt + 64] == 0:
                 self.brokenPixels.append(pixCnt)
             elif (eeData[pixCnt + 64] & 0x0001) != 0:
@@ -818,7 +800,12 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
         #    return -2
 
     def _I2CReadWords(
-        self, addr: int, buffer: Union[int, List[int]], *, end: Optional[int] = None, ) -> None:
+        self,
+        addr: int,
+        buffer: Union[int, List[int]],
+        *,
+        end: Optional[int] = None,
+    ) -> None:
         if end is None:
             readwords = len(buffer)
         else:
@@ -834,7 +821,7 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
         time.sleep_ms(1)
         inbuf = memoryview(bytearray(2 * readwords))
         self.i2c_device.readfrom_into(self.i2c_addr, inbuf)
-        outdata = list(struct.unpack('>' + 'H' * readwords, inbuf))
+        outdata = list(struct.unpack(">" + "H" * readwords, inbuf))
         for i in range(0, len(outdata)):
             buffer[i] = outdata[i]
 

@@ -22,6 +22,12 @@ file(GLOB SRCS
 )
 
 set(COMPONENT_SRCS ${SRCS})
-set(COMPONENT_REQUIRES esp_adc_cal nvs_flash efuse main)
+if (IDF_VERSION_MAJOR GREATER_EQUAL 5)
+    set(COMPONENT_REQUIRES esp_adc nvs_flash efuse driver esp_timer main_${IDF_TARGET})
+else()
+    set(COMPONENT_REQUIRES esp_adc_cal nvs_flash efuse main)
+endif()
 
 register_component()
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
+target_compile_definitions(${COMPONENT_LIB} PRIVATE BOARD_ID=${BOARD_ID})

@@ -1,3 +1,6 @@
+# stickc-plus2 https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L7
+set(BOARD_ID 5)
+
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
     ./boards/sdkconfig.flash_8mb
@@ -5,6 +8,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/M5STACK_StickC_PLUS2/sdkconfig.board
+    ./boards/sdkconfig.spiram
 )
 
 # If not enable LVGL, ignore this...
