@@ -6,8 +6,7 @@
 
 ```shell
 mkdir uiflow_workspace && cd uiflow_workspace
-git clone https://github.com/m5stack/esp-idf.git
-git -C esp-idf checkout 8fbf4ba6058bcf736317d8a7aa75d0578563c38b
+git clone -b uiflow/v2.0-idf5.0.4 https://github.com/m5stack/esp-idf.git 
 git -C esp-idf submodule update --init --recursive
 ./esp-idf/install.sh
 . ./esp-idf/export.sh
@@ -18,37 +17,16 @@ git -C esp-idf submodule update --init --recursive
 ```shell
 git clone https://github.com/m5stack/uiflow_micropython
 cd uiflow_micropython/m5stack
-make submodules # Only need once
+make submodules
+make patch
 make littlefs
 make mpy-cross
-# Build and flash
-# atoms3
-make BOARD=M5STACK_AtomS3 pack_all flash
-# atoms3-lite
-make BOARD=M5STACK_AtomS3_Lite pack_all flash
-# atoms3u
-make BOARD=M5STACK_AtomS3U pack_all flash
-# core(BASIC/M5GO/GRAY) (Falsh 16MB)
-make BOARD=M5STACK_Basic pack_all flash
-# core(BASIC/M5GO/GRAY) (Falsh 4MB)
-make BOARD=M5STACK_Basic_4MB pack_all flash
-# capsule
-make BOARD=M5STACK_Capsule pack_all flash
-# core2,tough
-make BOARD=M5STACK_Core2 pack_all flash
-# cores3
-make BOARD=M5STACK_CoreS3 pack_all flash
-# dial
-make BOARD=M5STACK_Dial pack_all flash
-# fire
-make BOARD=M5STACK_Fire pack_all flash
-# stamps3
-make BOARD=M5STACK_StampS3 pack_all flash
-# stickcplus
-make BOARD=M5STACK_StickC_PLUS pack_all flash
-# stickcplus2
-make BOARD=M5STACK_StickC_PLUS2 pack_all flash
+make flash_all
 ```
+
+The default board build the M5STACK_AtomS3 one, You can specify a different board by passing `BOARD=<board>` to the make commands. More BOARD type define is under [m5satck/boards](./m5stack/boards/) path.
+
+More command support, you can check the [Makefile](./m5stack/Makefile).
 
 ## Documentation
 

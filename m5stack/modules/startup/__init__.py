@@ -150,9 +150,19 @@ def startup(boot_opt, timeout: int = 60) -> None:
             capsule.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5Dial:
             from .dial import Dial_Startup
-
             dial = Dial_Startup()
             dial.startup(ssid, pswd, timeout)
+
+        elif board_id == M5.BOARD.M5StackCoreInk:
+            from .coreink import CoreInk_Startup
+
+            coreink = CoreInk_Startup()
+            coreink.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5AirQ:
+            from .airq import AirQ_Startup
+
+            airq = AirQ_Startup()
+            airq.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5Cardputer:
             from .cardputer import Cardputer_Startup
 

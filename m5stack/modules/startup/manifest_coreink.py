@@ -1,0 +1,9 @@
+package(
+    "startup",
+    (
+        "__init__.py",
+        "coreink.py",
+    ),
+    base_path="..",
+    opt=3,
+)
