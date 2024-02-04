@@ -26,7 +26,10 @@ import json
 import M5
 import os
 import hashlib
-import urequests
+try:
+    import urequests as requests
+except ImportError:
+    import requests
 import network
 from hardware import RGB
 import time
@@ -91,7 +94,7 @@ def downloadFile(url, save_path, retry=3):
 
     def _downloadFile(url, save_path):
         # 发送GET请求
-        response = urequests.get(url, stream=True)
+        response = requests.get(url, stream=True)
 
         if response.status_code == 200:
             length = int(response.headers["Content-Length"])

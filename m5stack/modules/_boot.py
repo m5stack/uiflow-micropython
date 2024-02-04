@@ -42,12 +42,12 @@ os.chdir("/flash")
 
 # copy OTA update file to main.py
 # main_ota_temp.py this file name is fixed
-try:
-    s = open("/flash/main_ota_temp.py", "rb")
-    f = open("/flash/main.py", "wb")
-    f.write(s.read())
-    s.close()
-    f.close()
-    os.remove("/flash/main_ota_temp.py")
-except:
-    pass
+# try:
+#     s = open("/flash/main_ota_temp.py", "rb")
+#     f = open("/flash/main.py", "wb")
+#     f.write(s.read())
+#     s.close()
+#     f.close()
+#     os.remove("/flash/main_ota_temp.py")
+# except:
+#     pass

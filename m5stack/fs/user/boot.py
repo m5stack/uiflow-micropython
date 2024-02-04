@@ -31,6 +31,7 @@ NETWORK_TIMEOUT = 60
 if __name__ == "__main__":
     from startup import startup
     from m5sync import sync
+    import os
 
     nvs = esp32.NVS("uiflow")
     try:
@@ -40,3 +41,14 @@ if __name__ == "__main__":
 
     startup(boot_option, NETWORK_TIMEOUT)
     sync.run()
+    # copy OTA update file to main.py
+    # main_ota_temp.py this file name is fixed
+    try:
+        s = open("/flash/main_ota_temp.py", "rb")
+        f = open("/flash/main.py", "wb")
+        f.write(s.read())
+        s.close()
+        f.close()
+        os.remove("/flash/main_ota_temp.py")
+    except:
+        pass

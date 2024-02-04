@@ -17,14 +17,9 @@
 #include "m5things.h"
 #include "uiflow_utility.h"
 #include "boards.h"
-
-#if CONFIG_IDF_TARGET_ESP32
-#include "esp32/spiram.h"
-#elif CONFIG_IDF_TARGET_ESP32S2
-#include "esp32s2/spiram.h"
-#elif CONFIG_IDF_TARGET_ESP32S3
-#include "esp32s3/spiram.h"
-#endif
+#include "esp_timer.h"
+#include "esp_mac.h"
+#include "esp_psram.h"
 
 /** macro definitions */
 #define TAG "M5Things"
@@ -285,7 +280,7 @@ static int8_t file_remove_helper(const char *path) {
 /******************************************************************************/
 static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
     int32_t event_id, void *event_data) {
-    ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%d", base,
+    ESP_LOGD(TAG, "Event dispatched from event loop base=%s, event_id=%ld", base,
         event_id);
     esp_mqtt_event_handle_t event = event_data;
     esp_mqtt_client_handle_t m5things_mqtt_client = event->client;
@@ -346,7 +341,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
 
 static int mqtt_response_helper(uint8_t _topic_idx, uint64_t _pkg_sn, uint32_t _pkg_idx, int8_t _result) {
     char rsp_buf[64];
-    sprintf(rsp_buf, "{\"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}", _pkg_sn, _pkg_idx, _result);
+    sprintf(rsp_buf, "{\"pkg_sn\":%lld,\"pkg_idx\":%ld,\"err_code\":%d}", _pkg_sn, _pkg_idx, _result);
     return esp_mqtt_client_publish(m5things_mqtt_client, up_topic_list[_topic_idx],
         rsp_buf, strlen(rsp_buf), 0, 0);
 }
@@ -365,34 +360,16 @@ static void mqtt_ping_report() {
         ESP_LOGD(TAG, "Running firmware version: %s", running_app_info.version);
     }
 
-    uint32_t board_id = 0;
     size_t len = 0;
-    nvs_read_u32_helper("M5GFX", "AUTODETECT", &board_id);
-    #if CONFIG_IDF_TARGET_ESP32 && CONFIG_ESP32_SPIRAM_SUPPORT
-    if (board_id == 1) {
-        esp_spiram_size_t size = esp_spiram_get_chip_size();
-        if (size != ESP_SPIRAM_SIZE_INVALID) {
-            len = sprintf(
-                mqtt_report_buf,
-                "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
-                esp_get_free_heap_size(),
-                board_id,
-                "fire",
-                running_app_info.version
-                );
-        }
-    } else
-    #endif
-    {
-        len = sprintf(
-            mqtt_report_buf,
-            "{\"status\":\"online\",\"system\":{\"free_heap\":%u}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
-            esp_get_free_heap_size(),
-            board_id,
-            boards[board_id],
-            running_app_info.version
-            );
-    }
+
+    len = sprintf(
+        mqtt_report_buf,
+        "{\"status\":\"online\",\"system\":{\"free_heap\":%lu}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
+        esp_get_free_heap_size(),
+        BOARD_ID,
+        boards[BOARD_ID],
+        running_app_info.version
+        );
 
     esp_mqtt_client_publish(
         m5things_mqtt_client,
@@ -712,7 +689,7 @@ static int mqtt_handle_file_write_response_helper(
     char rsp_buf[128];
     sprintf(
         rsp_buf,
-        "{\"file_op\": %d, \"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}",
+        "{\"file_op\": %d, \"pkg_sn\":%lld,\"pkg_idx\":%ld,\"err_code\":%d}",
         4,
         pkg_sn,
         pkg_idx,
@@ -739,7 +716,7 @@ static int mqtt_handle_multi_file_write_response_helper(
     char rsp_buf[128];
     sprintf(
         rsp_buf,
-        "{\"file_op\": %d, \"pkg_sn\":%lld,\"pkg_idx\":%d,\"err_code\":%d}",
+        "{\"file_op\": %d, \"pkg_sn\":%lld,\"pkg_idx\":%ld,\"err_code\":%d}",
         5,
         pkg_sn,
         pkg_idx,
@@ -888,7 +865,7 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
         goto out;
     }
 
-    ESP_LOGI(TAG, "'%s' file size: %d", FILE_RECORD_PATH, info.size);
+    ESP_LOGI(TAG, "'%s' file size: %ld", FILE_RECORD_PATH, info.size);
 
     if (info.type == LFS2_TYPE_DIR) {
         ESP_LOGW(TAG, "Directory read request not accepted");
@@ -1024,6 +1001,14 @@ static int8_t mqtt_handle_file_write_v2(msg_file_req_t *msg) {
 
     ret = mqtt_handle_file_write_v2_helper(msg);
     mqtt_handle_file_write_response_helper(TOPIC_FILE_IDX, msg->sn, msg->index, ret);
+
+    if ((strstr(msg->path, OTA_UPDATE_FILE_NAME) != NULL)) {
+        nvs_write_u8_helper(UIFLOW_NVS_NAMESPACE, "boot_option", BOOT_OPT_NETWORK);
+        ESP_LOGW(TAG, "restart now :)");
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        esp_restart();
+    }
+
 error:
     return ret;
 }
@@ -1057,7 +1042,7 @@ static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) 
         ret = PKG_ERR_FILE_OPEN;
         goto out;
     }
-    ESP_LOGI(TAG, "'%s' file size: %d", FILE_RECORD_PATH, info.size);
+    ESP_LOGI(TAG, "'%s' file size: %ld", FILE_RECORD_PATH, info.size);
 
     if (info.type == LFS2_TYPE_DIR) {
         ESP_LOGW(TAG, "Directory read request not accepted");
@@ -1369,7 +1354,7 @@ static void read_task(void *pvParameter) {
         vTaskDelay(200 / portTICK_PERIOD_MS);
         index += 1;
         if (index == total) {
-            ESP_LOGI(TAG, "File read complete, total: %d bytes, packages: %d", info.size, total);
+            ESP_LOGI(TAG, "File read complete, total: %ld bytes, packages: %d", info.size, total);
             break;
         }
     }
@@ -1685,7 +1670,7 @@ static int8_t file_remove_helper_v2(const char *path)
         ESP_LOGW(TAG, "'%s' file does not exist, create it", FILE_RECORD_PATH);
         return ret;
     }
-    ESP_LOGI(TAG, "'%s' file size: %d", FILE_RECORD_PATH, info.size);
+    ESP_LOGI(TAG, "'%s' file size: %ld", FILE_RECORD_PATH, info.size);
 
     if (info.type == LFS2_TYPE_DIR) {
         ESP_LOGW(TAG, "Directory read request not accepted");
@@ -2002,7 +1987,7 @@ static void mqtt_message_handle(void *event_data) {
     esp_mqtt_event_handle_t event = event_data;
 
     event->data[event->data_len] = '\0';
-    ESP_LOGI(TAG, "Heap free: %d bytes", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "Heap free: %ld bytes", esp_get_free_heap_size());
     ESP_LOGI(TAG, "\r\nTopic: '%.*s'\r\nMessage: '%.*s'\r\nOffset: %d",
         event->topic_len, event->topic, event->data_len, event->data,
         event->current_data_offset);
@@ -2053,7 +2038,7 @@ static char *calculate_password(char *client_id) {
     esp_aes_free(&ctx);
 
     time(&now);
-    len = sprintf((char *)singn, "%s-%ld", client_id, (now - (now % 60)));
+    len = sprintf((char *)singn, "%s-%lld", client_id, (now - (now % 60)));
     hmac_sha256(encrypted_key, 16, singn, len, hash);
 
     return (char *)base64_encode(hash, 32, &len);
@@ -2093,26 +2078,26 @@ static esp_err_t mqtt_app_start(void) {
     //          client_id, username, password);
 
     esp_mqtt_client_config_t mqtt_cfg = {
-        .buffer_size = 4096,
-        .out_buffer_size = 4096,
-        .client_id = client_id,
-        .username = username,
-        .password = password,
-        .keepalive = 10
+        .buffer.size = 4096,
+        .buffer.out_size = 4096,
+        .credentials.client_id = client_id,
+        .credentials.username = username,
+        .credentials.authentication.password = password,
+        .session.keepalive = 10
     };
 
-    ESP_LOGI(TAG, "[APP] Free memory: %d bytes", esp_get_free_heap_size());
+    ESP_LOGI(TAG, "[APP] Free memory: %ld bytes", esp_get_free_heap_size());
 
     char server_uri[64];
     char nvs_server_uri[32];
     size_t uri_len = sizeof(nvs_server_uri);
     if (nvs_read_str_helper(UIFLOW_NVS_NAMESPACE, "server", nvs_server_uri, &uri_len)) {
         sprintf(server_uri, "mqtt://%s:1883", nvs_server_uri);
-        mqtt_cfg.uri = server_uri;
+        mqtt_cfg.broker.address.uri = server_uri;
     } else {
-        mqtt_cfg.uri = "mqtt://uiflow2.m5stack.com:1883";  // default
+        mqtt_cfg.broker.address.uri = "mqtt://uiflow2.m5stack.com:1883";  // default
     }
-    ESP_LOGI(TAG, "mqtt_cfg.uri: %s", mqtt_cfg.uri);
+    ESP_LOGI(TAG, "mqtt_cfg.broker.address.uri: %s", mqtt_cfg.broker.address.uri);
 
     m5things_mqtt_client = esp_mqtt_client_init(&mqtt_cfg);
     esp_mqtt_client_register_event(m5things_mqtt_client, ESP_EVENT_ANY_ID,
@@ -2160,7 +2145,7 @@ static bool sync_time_by_sntp(void) {
     time(&now);
     localtime_r(&now, &timeinfo);
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
-    ESP_LOGI(TAG, "date/time is: %s, timestamp: %ld", strftime_buf, now);
+    ESP_LOGI(TAG, "date/time is: %s, timestamp: %lld", strftime_buf, now);
 
     return retry < retry_count ? true : false;
 }
@@ -2224,7 +2209,7 @@ soft_reset:
             }
         }
 
-        ESP_LOGD(TAG, "heap:%u ringbuf free: %d", esp_get_free_heap_size(),
+        ESP_LOGD(TAG, "heap:%lu ringbuf free: %d", esp_get_free_heap_size(),
             ringbuf_free(&stdin_ringbuf));
     }
 
