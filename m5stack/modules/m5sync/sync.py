@@ -157,32 +157,32 @@ def open_or_create_json(file_path):
         with open(file_path, "r") as f:
             return json.load(f)
     else:
-        return {"time": time.localtime(), "fileList": []}
+        return {"time": time.mktime(time.localtime()), "fileList": []}
 
 
 def save_json(file_path, data):
     DEBUG and print("Debug: save record.json path:", file_path)
     with open(file_path, "w") as f:
-        json.dump({"time": time.localtime(), "fileList": data}, f)
+        json.dump({"time": time.mktime(time.localtime()), "fileList": data}, f)
 
 
 def process_files(record, sync):
+    # TODO
     err = ""
 
     # 检查sync文件中的记录在不在record中，不在就删除
     for old_file in record:
         no_exist = True
         for file in sync:
-            if file["name"] == old_file["name"]:
+            if file["devicePath"] == old_file["devicePath"]:
                 no_exist = False
                 break
         if no_exist:
             try:
-                os.remove(old_file["name"])
-                INFO and print("Info: Deleted file:", old_file["name"])
+                os.remove(old_file["devicePath"])
+                INFO and print("Info: Deleted file:", old_file["devicePath"])
             except OSError as e:
-                WARN and print(f"Warn: Error deleting file {old_file['name']}: {e}")
-                err = f"Error deleting: {old_file['name']}"
+                WARN and print(f"Warn: Error deleting file {old_file['devicePath']}: {e}")
             record.remove(old_file)
             continue  # 继续下一个循环，不增加索引
 
@@ -191,14 +191,14 @@ def process_files(record, sync):
     file_num = len(sync)
     for file in sync:
         update_info(f"{i+1}/{file_num}")
-        if file_exists(file["name"]):
+        if file_exists(file["devicePath"]):
             # 如果文件存在，检查md5
-            if calculateMD5(file["name"]) == file["md5"]:
-                INFO and print(f"Info: File {file['name']} already downloaded.")
+            if calculateMD5(file["devicePath"]) == file["md5"]:
+                INFO and print(f"Info: File {file['devicePath']} already downloaded.")
                 i += 1
                 update_progress(i / file_num, 1.0)
                 for index in range(len(record)):
-                    if record[index]["name"] == file["name"]:
+                    if record[index]["devicePath"] == file["devicePath"]:
                         record.pop(index)
                         break
                 record.append(file)
@@ -207,13 +207,13 @@ def process_files(record, sync):
         # 如果文件不存在，或者md5不匹配，下载文件
         INFO and print(f"Info: MD5 mismatch for file: {file['name']}")
         for _ in range(3):
-            if downloadFile(file["url"], file["name"]) is False:
-                INFO and print(f"Info: Failed to download file: {file['name']}")
+            if downloadFile(file["url"], file["devicePath"]) is False:
+                INFO and print(f"Info: Failed to download file: {file['devicePath']}")
                 continue
-            if calculateMD5(file["name"]) == file["md5"]:
-                INFO and print(f"Info: Downloaded and verified file: {file['name']}")
+            if calculateMD5(file["devicePath"]) == file["md5"]:
+                INFO and print(f"Info: Downloaded and verified file: {file['devicePath']}")
                 for index in range(len(record)):
-                    if record[index]["name"] == file["name"]:
+                    if record[index]["devicePath"] == file["devicePath"]:
                         record.pop(index)
                         break
                 record.append(file)
@@ -300,8 +300,33 @@ def run():
         time.sleep(1)
         timeout -= 1
 
+    if not wlan.isconnected():
+        WARN and print("Warn: WiFi not connected.")
+        WARN and print("Warn: quit sync.")
+        return
+
     INFO and print("Info: WiFi connected!")
 
+    # STEP1: create or open record.json
+    cache_records = open_or_create_chche(RECORD_JSON_PATH)
+    # record = open_or_create_json(RECORD_JSON_PATH)
+    DEBUG and print("Debug: record.json:", cache_records)
+
+    # STEP2: open res.json
+    file_records = []
+    if not file_exists(SYNC_JSON_PATH):
+        return
+    else:
+        with open(SYNC_JSON_PATH, "r") as f:
+            sync = json.load(f)
+        DEBUG and print("Debug: res.json:", sync)
+        file_records = sync["fileList"]
+
+    if len(cache_records) == 0 and len(file_records) == 0:
+        INFO and print("Info: No files to sync.")
+        return # no files to sync
+
+    # STEP3: init lcd or led
     if M5.Lcd.width() != 0:
         lcd_param["mode"] = "lcd"
         lcd_param["w"] = M5.Lcd.width()
@@ -317,25 +342,11 @@ def run():
         rgb.set_color(0, COLOR_RED)
         rgb.set_brightness(30)
 
-    # STEP1: create or open record.json
-    cache_records = open_or_create_chche(RECORD_JSON_PATH)
-    # record = open_or_create_json(RECORD_JSON_PATH)
-    DEBUG and print("Debug: record.json:", cache_records)
-
-    # STEP2: open res.json
-    if not file_exists(SYNC_JSON_PATH):
-        return
-    with open(SYNC_JSON_PATH, "r") as f:
-        sync = json.load(f)
-    DEBUG and print("Debug: res.json:", sync)
-
-    file_records = sync["fileList"]
-
     draw_status(f"Sync...")
     update_progress(0, 0)
     update_info("pending")
 
-    # STEP3: process files
+    # STEP4: process files
     err = process_files(cache_records, file_records)
 
     if len(err) > 0:
@@ -349,7 +360,7 @@ def run():
         if lcd_param["mode"] == "led":
             rgb.set_color(0, COLOR_GREEN)
 
-    # STEP4: save record, remove res.json
+    # STEP5: save record, remove res.json
     save_json(RECORD_JSON_PATH, cache_records)
     if len(err) > 0:
         wait_key()
@@ -357,4 +368,6 @@ def run():
     if lcd_param["mode"] == "led":
         rgb.set_color(0, 0)
     else:
+        print("Press any key to continue...")
         M5.Lcd.clear(0x000000)
+        M5.Lcd.setTextColor(0xFFFFFF, 0)
