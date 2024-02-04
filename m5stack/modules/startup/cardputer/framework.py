@@ -104,7 +104,7 @@ class Framework:
 
         if event.status == False:
 
-            if event.key == 96: # ESC key
+            if event.key == 96:  # ESC key
                 app = self._app_selector.current()
                 if hasattr(app, "_btna_event_handler"):
                     await app._btna_event_handler(self)

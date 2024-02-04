@@ -10,6 +10,7 @@ from .apps.ezdata import EzDataApp
 from startup import Startup
 import M5
 import time
+
 # from .res import LOGO_IMG
 
 

@@ -15,7 +15,6 @@ import M5
 
 
 class SidebarApp(AppBase):
-
     def __init__(self) -> None:
         super().__init__()
 

@@ -1,6 +1,7 @@
 from .keyboard import Keyboard
 from micropython import schedule
 
+
 class MatrixKeyboard(Keyboard):
     def __init__(self) -> None:
         super().__init__()

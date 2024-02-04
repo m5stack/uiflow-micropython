@@ -1,6 +1,5 @@
 _attrs = {
     "LOGO_IMG": "/system/cardputer/boot/boot_logo_1.jpeg",
-
     "APPLIST_IMG": "/system/cardputer/applist/main.jpeg",
     "APPLIST_LEFT_IMG": "/system/cardputer/applist/left_cursor.jpeg",
     "APPLIST_RIGHT_IMG": "/system/cardputer/applist/right_cursor.jpeg",

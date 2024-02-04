@@ -150,6 +150,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             capsule.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5Dial:
             from .dial import Dial_Startup
+
             dial = Dial_Startup()
             dial.startup(ssid, pswd, timeout)
 

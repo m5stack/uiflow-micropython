@@ -36,7 +36,7 @@ class RunApp(AppBase):
             34,
             26,
             w=206,
-            font_align = Label.LEFT_ALIGNED,
+            font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
             font="/system/common/font/Montserrat-Medium-16.vlw",
@@ -159,7 +159,7 @@ class RunApp(AppBase):
         return (mtime, account, ver)
 
     async def _kb_event_handler(self, event, fw):
-        if event.key in (ord('o'), ord('O'), 0x0D): # Enter key
+        if event.key in (ord("o"), ord("O"), 0x0D):  # Enter key
             self._handle_run_once(fw)
-        elif event.key in (ord('a'), ord('A')):
+        elif event.key in (ord("a"), ord("A")):
             self._handle_run_always(fw)

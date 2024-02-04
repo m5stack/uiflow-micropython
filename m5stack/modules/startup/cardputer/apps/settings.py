@@ -132,7 +132,7 @@ class WiFiSetting(AppBase):
         self._option1_button.handle(x, y)
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D: # Enter key
+        if event.key == 0x0D:  # Enter key
             event.status = True
             self.focus = True
             self._option, view_fn = next(self._option_views)
@@ -142,7 +142,7 @@ class WiFiSetting(AppBase):
         if self.focus is False:
             return
 
-        if event.key == 96: # ESC key
+        if event.key == 96:  # ESC key
             self.ssid_tmp = self.ssid
             self.psk_tmp = self.psk
             self.server_tmp = self.server
@@ -338,7 +338,7 @@ class BootScreenSetting(AppBase):
         self._boot_option_img.set_src(_boot_options.get(self._boot_option))
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D: # Enter key
+        if event.key == 0x0D:  # Enter key
             self._handle_boot_option(fw)
             event.status = True
 
@@ -399,7 +399,7 @@ class ComLinkSetting(AppBase):
         self._option_img.set_src(_comlink_options.get(self._option))
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D: # Enter key
+        if event.key == 0x0D:  # Enter key
             self._handle_option(fw)
             event.status = True
 
@@ -470,7 +470,7 @@ class BrightnessSetting(AppBase):
                 return v
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D: # Enter key
+        if event.key == 0x0D:  # Enter key
             self._handle_brightness(fw)
             event.status = True
 
@@ -514,11 +514,10 @@ class SettingsApp(AppBase):
         super().stop()
 
     async def _kb_event_handler(self, event, fw):
-        if event.key in (47, 63): # right key
+        if event.key in (47, 63):  # right key
             self._menu_selector.current().pause()
             self._menu_selector.next().resume()
         else:
             app = self._menu_selector.current()
             if hasattr(app, "_kb_event_handler"):
                 await app._kb_event_handler(event, fw)
-

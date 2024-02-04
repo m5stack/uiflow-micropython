@@ -13,6 +13,7 @@ from collections import namedtuple
 
 Icon = namedtuple("Icon", ["name", "src"])
 
+
 class LauncherApp(AppBase):
     def __init__(self) -> None:
         super().__init__()
@@ -31,7 +32,7 @@ class LauncherApp(AppBase):
         self._bg_img.set_size(206, 103)
         self._bg_img.set_src(SELETE_BK_IMG)
 
-        left = (len(self._icos) -1) if self._id - 1 < 0 else self._id - 1
+        left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
         self._left_img = Image(use_sprite=False)
         self._left_img.set_pos(49, 43)
         self._left_img.set_size(48, 48)
@@ -67,7 +68,7 @@ class LauncherApp(AppBase):
         )
         self._center_label.setText(self._icos[self._id].name)
 
-        right = 0 if self._id + 1 > (len(self._icos) -1) else self._id + 1
+        right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
         self._right_img = Image(use_sprite=False)
         self._right_img.set_pos(177, 43)
         self._right_img.set_size(48, 48)
@@ -102,16 +103,16 @@ class LauncherApp(AppBase):
         left = 0
         right = 0
         refresh = False
-        if event.key in (47, 63): # right key
+        if event.key in (47, 63):  # right key
             self._id = self._id + 1 if self._id + 1 < len(self._icos) else 0
-            left = (len(self._icos) -1) if self._id - 1 < 0 else self._id - 1
-            right = 0 if self._id + 1 > (len(self._icos) -1) else self._id + 1
+            left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
+            right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
             refresh = True
 
-        if event.key in (44, 60): #  left key
-            self._id = self._id - 1 if self._id - 1 >= 0 else (len(self._icos) -1)
-            left = (len(self._icos) -1) if self._id - 1 < 0 else self._id - 1
-            right = 0 if self._id + 1 > (len(self._icos) -1) else self._id + 1
+        if event.key in (44, 60):  #  left key
+            self._id = self._id - 1 if self._id - 1 >= 0 else (len(self._icos) - 1)
+            left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
+            right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
             refresh = True
 
         if refresh:

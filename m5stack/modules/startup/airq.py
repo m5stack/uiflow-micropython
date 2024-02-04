@@ -25,15 +25,16 @@ except ImportError:
 
 DEBUG = True
 
-STARTUP_BG_IMG = '/system/airq/Startup.bmp'
-FLOW_BG_IMG = '/system/airq/Flow.bmp'
-CONFIG_BG_IMG = '/system/airq/Config.bmp'
-APPLIST_BG_IMG = '/system/airq/AppList.bmp'
+STARTUP_BG_IMG = "/system/airq/Startup.bmp"
+FLOW_BG_IMG = "/system/airq/Flow.bmp"
+CONFIG_BG_IMG = "/system/airq/Config.bmp"
+APPLIST_BG_IMG = "/system/airq/AppList.bmp"
 
-WIFI_IMG = '/system/airq/wifi.bmp'
-WIFI_ERR_IMG = '/system/airq/wifi_err.bmp'
-SERVER_IMG = '/system/airq/server.bmp'
-SERVER_ERR_IMG = '/system/airq/server_err.bmp'
+WIFI_IMG = "/system/airq/wifi.bmp"
+WIFI_ERR_IMG = "/system/airq/wifi_err.bmp"
+SERVER_IMG = "/system/airq/server.bmp"
+SERVER_ERR_IMG = "/system/airq/server_err.bmp"
+
 
 class AppBase:
     def __init__(self) -> None:
@@ -93,7 +94,7 @@ class Framework:
 
             if M5.BtnA.wasClicked():
                 self._current_app = (self._current_app + 1) % len(self._apps)
-                DEBUG and print('Switch to %d' %self._current_app)
+                DEBUG and print("Switch to %d" % self._current_app)
                 await self._app.on_hide()
                 self._app.on_exit()
                 await self.load(self._current_app)
@@ -161,7 +162,7 @@ class FlowApp(AppBase):
         self._bg_img.set_src(FLOW_BG_IMG)
 
         # ssid
-        self._mac_label.setTextColor(0x000000, 0xffffff)
+        self._mac_label.setTextColor(0x000000, 0xFFFFFF)
         self._mac_label.setText(self._mac)
 
         # user id
@@ -215,17 +216,26 @@ class FlowApp(AppBase):
         )
         self._user_id_label.setLongMode(Label.LONG_DOT)
 
-        self._bg_img = Image(use_sprite=False, parent=self._sprite,)
+        self._bg_img = Image(
+            use_sprite=False,
+            parent=self._sprite,
+        )
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
 
-        self._wifi_img = Image(use_sprite=False, parent=self._sprite,)
+        self._wifi_img = Image(
+            use_sprite=False,
+            parent=self._sprite,
+        )
         self._wifi_img.set_x(4)
         self._wifi_img.set_y(176)
         self._wifi_img.set_size(32, 24)
 
-        self._server_img = Image(use_sprite=False, parent=self._sprite,)
+        self._server_img = Image(
+            use_sprite=False,
+            parent=self._sprite,
+        )
         self._server_img.set_x(40)
         self._server_img.set_y(176)
         self._server_img.set_size(32, 24)
@@ -296,19 +306,19 @@ class ConfigApp(AppBase):
     def _update_data(self):
         pass
 
-    def _load_view(self, load_bg = True):
+    def _load_view(self, load_bg=True):
         # bg img
         if load_bg:
             self._bg_img.set_src(CONFIG_BG_IMG)
 
         # ssid
-        self._ssid_label.setTextColor(0x000000, 0xffffff)
+        self._ssid_label.setTextColor(0x000000, 0xFFFFFF)
         self._ssid_label.setText(self._ssid)
 
         # user id
         self._server_label.setText(self._server)
 
-        self._sprite.push(0,0)
+        self._sprite.push(0, 0)
 
     def on_launch(self):
         DEBUG and print("Config Launch")
@@ -384,7 +394,7 @@ class AppListApp(AppBase):
         super().__init__()
 
     def on_launch(self):
-        self._bg_img = Image(use_sprite=False,parent=self._sprite)
+        self._bg_img = Image(use_sprite=False, parent=self._sprite)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
@@ -404,17 +414,19 @@ class AppListApp(AppBase):
 
         if len(self._labels) is not 5:
             for i in range(5):
-                self._labels.append(Label(
-                    "",
-                    14,
-                    37 + 27 * i,
-                    w=138,
-                    h=24,
-                    fg_color=0x000000,
-                    bg_color=0xFFFFFF,
-                    font=M5.Lcd.FONTS.DejaVu18,
-                    parent=self._sprite,
-                ))
+                self._labels.append(
+                    Label(
+                        "",
+                        14,
+                        37 + 27 * i,
+                        w=138,
+                        h=24,
+                        fg_color=0x000000,
+                        bg_color=0xFFFFFF,
+                        font=M5.Lcd.FONTS.DejaVu18,
+                        parent=self._sprite,
+                    )
+                )
                 self._labels[-1].setLongMode(Label.LONG_DOT)
 
         for label, file in zip(self._labels, self._files):
@@ -447,7 +459,7 @@ class AppListApp(AppBase):
             for i in range(len(self._labels)):
                 file = self._files[i]
                 if self._file_pos == i:
-                    self._labels[i].setText('>' + file)
+                    self._labels[i].setText(">" + file)
                 else:
                     self._labels[i].setText(file)
         except:
@@ -470,7 +482,7 @@ class AppListApp(AppBase):
             for i in range(len(self._labels)):
                 file = self._files[i]
                 if self._file_pos == i:
-                    self._labels[i].setText('>' + file)
+                    self._labels[i].setText(">" + file)
                 else:
                     self._labels[i].setText(file)
         except:
@@ -478,13 +490,14 @@ class AppListApp(AppBase):
 
         self._sprite.push(0, 0)
 
+
 # AirQ startup menu
 class AirQ_Startup:
     def __init__(self) -> None:
         self._wifi = Startup()
 
     def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
-        DEBUG and print('Corink startup')
+        DEBUG and print("Corink startup")
         # DEBUG and M5.Lcd.drawCenterString("Corink startup2", 100, 100)
         self._wifi.connect_network(ssid, pswd)
 
@@ -493,6 +506,7 @@ class AirQ_Startup:
         sprite.push(0, 0)
 
         import time
+
         time.sleep_ms(3000)
         M5.Lcd.clear()
 

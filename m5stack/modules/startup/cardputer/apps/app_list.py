@@ -288,12 +288,12 @@ class ListApp(AppBase):
         machine.reset()
 
     async def _kb_event_handler(self, event, fw):
-        if event.key in (46, 62): # down key
+        if event.key in (46, 62):  # down key
             self._btn_down_event_handler(None)
-        if event.key in (59, 58): # up key
+        if event.key in (59, 58):  # up key
             self._btn_up_event_handler(None)
 
-        if event.key in (ord('o'), ord('O'), 0x0D): # Enter key
+        if event.key in (ord("o"), ord("O"), 0x0D):  # Enter key
             self._btn_once_event_handler(event)
-        elif event.key in (ord('a'), ord('A')):
+        elif event.key in (ord("a"), ord("A")):
             self._btn_always_event_handler(event)

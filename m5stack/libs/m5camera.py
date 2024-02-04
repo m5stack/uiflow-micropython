@@ -58,7 +58,6 @@ _frame_size = None
 _visible = True
 
 
-
 def init(
     x, y, width, height, pixformat=RGB565, framesize=FRAME_QVGA, fb_count=2, fb_location=IN_PSRAM
 ) -> None:

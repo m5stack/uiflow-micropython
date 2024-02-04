@@ -12,9 +12,9 @@ from .asciimap import (
     kb_asciimap,
 )
 
-Point2D = namedtuple('Point2D', ['x', 'y'])
-Chart = namedtuple('Chart', ['value', 'x_1', 'x_2'])
-KeyValue = namedtuple('KeyValue', ['first', 'second'])
+Point2D = namedtuple("Point2D", ["x", "y"])
+Chart = namedtuple("Chart", ["value", "x_1", "x_2"])
+KeyValue = namedtuple("KeyValue", ["first", "second"])
 
 _X_map_chart = (
     Chart(1, 0, 1),
@@ -28,83 +28,83 @@ _X_map_chart = (
 
 _key_value_map = (
     (
-        KeyValue(ord('`'), ord('~')),
-        KeyValue(ord('1'), ord('!')),
-        KeyValue(ord('2'), ord('@')),
-        KeyValue(ord('3'), ord('#')),
-        KeyValue(ord('4'), ord('$')),
-        KeyValue(ord('5'), ord('%')),
-        KeyValue(ord('6'), ord('^')),
-        KeyValue(ord('7'), ord('&')),
-        KeyValue(ord('8'), ord('*')),
-        KeyValue(ord('9'), ord('(')),
-        KeyValue(ord('0'), ord(')')),
-        KeyValue(ord('-'), ord('_')),
-        KeyValue(ord('='), ord('+')),
+        KeyValue(ord("`"), ord("~")),
+        KeyValue(ord("1"), ord("!")),
+        KeyValue(ord("2"), ord("@")),
+        KeyValue(ord("3"), ord("#")),
+        KeyValue(ord("4"), ord("$")),
+        KeyValue(ord("5"), ord("%")),
+        KeyValue(ord("6"), ord("^")),
+        KeyValue(ord("7"), ord("&")),
+        KeyValue(ord("8"), ord("*")),
+        KeyValue(ord("9"), ord("(")),
+        KeyValue(ord("0"), ord(")")),
+        KeyValue(ord("-"), ord("_")),
+        KeyValue(ord("="), ord("+")),
         KeyValue(KEY_BACKSPACE, KEY_BACKSPACE),
     ),
     (
         KeyValue(KEY_TAB, KEY_TAB),
-        KeyValue(ord('q'), ord('Q')),
-        KeyValue(ord('w'), ord('W')),
-        KeyValue(ord('e'), ord('E')),
-        KeyValue(ord('r'), ord('R')),
-        KeyValue(ord('t'), ord('T')),
-        KeyValue(ord('y'), ord('Y')),
-        KeyValue(ord('u'), ord('U')),
-        KeyValue(ord('i'), ord('I')),
-        KeyValue(ord('o'), ord('O')),
-        KeyValue(ord('p'), ord('P')),
-        KeyValue(ord('['), ord('{')),
-        KeyValue(ord(']'), ord('}')),
-        KeyValue(ord('\\'), ord('|')),
+        KeyValue(ord("q"), ord("Q")),
+        KeyValue(ord("w"), ord("W")),
+        KeyValue(ord("e"), ord("E")),
+        KeyValue(ord("r"), ord("R")),
+        KeyValue(ord("t"), ord("T")),
+        KeyValue(ord("y"), ord("Y")),
+        KeyValue(ord("u"), ord("U")),
+        KeyValue(ord("i"), ord("I")),
+        KeyValue(ord("o"), ord("O")),
+        KeyValue(ord("p"), ord("P")),
+        KeyValue(ord("["), ord("{")),
+        KeyValue(ord("]"), ord("}")),
+        KeyValue(ord("\\"), ord("|")),
     ),
     (
         KeyValue(KEY_FN, KEY_FN),
         KeyValue(KEY_LEFT_SHIFT, KEY_LEFT_SHIFT),
-        KeyValue(ord('a'), ord('A')),
-        KeyValue(ord('s'), ord('S')),
-        KeyValue(ord('d'), ord('D')),
-        KeyValue(ord('f'), ord('F')),
-        KeyValue(ord('g'), ord('G')),
-        KeyValue(ord('h'), ord('H')),
-        KeyValue(ord('j'), ord('J')),
-        KeyValue(ord('k'), ord('K')),
-        KeyValue(ord('l'), ord('L')),
-        KeyValue(ord(';'), ord(':')),
-        KeyValue(ord('\''), ord('\"')),
+        KeyValue(ord("a"), ord("A")),
+        KeyValue(ord("s"), ord("S")),
+        KeyValue(ord("d"), ord("D")),
+        KeyValue(ord("f"), ord("F")),
+        KeyValue(ord("g"), ord("G")),
+        KeyValue(ord("h"), ord("H")),
+        KeyValue(ord("j"), ord("J")),
+        KeyValue(ord("k"), ord("K")),
+        KeyValue(ord("l"), ord("L")),
+        KeyValue(ord(";"), ord(":")),
+        KeyValue(ord("'"), ord('"')),
         KeyValue(KEY_ENTER, KEY_ENTER),
     ),
     (
         KeyValue(KEY_LEFT_CTRL, KEY_LEFT_CTRL),
         KeyValue(KEY_OPT, KEY_OPT),
         KeyValue(KEY_LEFT_ALT, KEY_LEFT_ALT),
-        KeyValue(ord('z'), ord('Z')),
-        KeyValue(ord('x'), ord('X')),
-        KeyValue(ord('c'), ord('C')),
-        KeyValue(ord('v'), ord('V')),
-        KeyValue(ord('b'), ord('B')),
-        KeyValue(ord('n'), ord('N')),
-        KeyValue(ord('m'), ord('M')),
-        KeyValue(ord(','), ord('<')),
-        KeyValue(ord('.'), ord('>')),
-        KeyValue(ord('/'), ord('?')),
-        KeyValue(ord(' '), ord(' ')),
+        KeyValue(ord("z"), ord("Z")),
+        KeyValue(ord("x"), ord("X")),
+        KeyValue(ord("c"), ord("C")),
+        KeyValue(ord("v"), ord("V")),
+        KeyValue(ord("b"), ord("B")),
+        KeyValue(ord("n"), ord("N")),
+        KeyValue(ord("m"), ord("M")),
+        KeyValue(ord(","), ord("<")),
+        KeyValue(ord("."), ord(">")),
+        KeyValue(ord("/"), ord("?")),
+        KeyValue(ord(" "), ord(" ")),
     ),
 )
 
 
 class KeysState:
-    tab          = False
-    fn           = False
-    shift        = False
-    ctrl         = False
-    opt          = False
-    alt          = False
-    delete       = False
-    enter        = False
-    space        = False
-    modifiers    = 0
+    tab = False
+    fn = False
+    shift = False
+    ctrl = False
+    opt = False
+    alt = False
+    delete = False
+    enter = False
+    space = False
+    modifiers = 0
 
     def __init__(self) -> None:
         self.word = bytearray(0)
@@ -112,26 +112,25 @@ class KeysState:
         self.modifier_keys = bytearray(0)
 
     def reset(self):
-        self.tab          = False
-        self.fn           = False
-        self.shift        = False
-        self.ctrl         = False
-        self.opt          = False
-        self.alt          = False
-        self.delete       = False
-        self.enter        = False
-        self.space        = False
-        self.modifiers    = 0
+        self.tab = False
+        self.fn = False
+        self.shift = False
+        self.ctrl = False
+        self.opt = False
+        self.alt = False
+        self.delete = False
+        self.enter = False
+        self.space = False
+        self.modifiers = 0
         self.word = bytearray(0)
         self.hid_keys = bytearray(0)
         self.modifier_keys = bytearray(0)
 
 
 class Keyboard:
-
     def __init__(self):
-        self.output_list = [ Pin(id, Pin.OUT, Pin.PULL_DOWN) for id in (8, 9, 11) ]
-        self.input_list = [ Pin(id, Pin.IN, Pin.PULL_UP) for id in (13, 15, 3, 4, 5, 6, 7) ]
+        self.output_list = [Pin(id, Pin.OUT, Pin.PULL_DOWN) for id in (8, 9, 11)]
+        self.input_list = [Pin(id, Pin.IN, Pin.PULL_UP) for id in (13, 15, 3, 4, 5, 6, 7)]
 
         for pin in self.output_list:
             pin.value(0)
@@ -148,20 +147,20 @@ class Keyboard:
 
     @staticmethod
     def _set_output(pin_list, output):
-        output = output & 0B00000111
-        pin_list[0].value(output & 0B00000001)
-        pin_list[1].value(output & 0B00000010)
-        pin_list[2].value(output & 0B00000100)
+        output = output & 0b00000111
+        pin_list[0].value(output & 0b00000001)
+        pin_list[1].value(output & 0b00000010)
+        pin_list[2].value(output & 0b00000100)
 
     @staticmethod
     def _get_input(pin_list):
-        buffer    = 0x00
+        buffer = 0x00
         pin_value = 0x00
 
         for i in range(7):
             pin_value = 0x00 if pin_list[i].value() == 1 else 0x01
             pin_value = pin_value << i
-            buffer    = buffer | pin_value
+            buffer = buffer | pin_value
 
         return buffer
 
@@ -171,11 +170,7 @@ class Keyboard:
         if point.x < 0 or point.y < 0:
             return ret
 
-        if (
-            self._keys_state_buffer.ctrl
-            or self._keys_state_buffer.shift
-            or self._is_caps_locked
-        ):
+        if self._keys_state_buffer.ctrl or self._keys_state_buffer.shift or self._is_caps_locked:
             ret = _key_value_map[point.x][point.y].second
         else:
             ret = _key_value_map[point.x][point.y].first
@@ -272,7 +267,7 @@ class Keyboard:
                 self._key_pos_hid_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == ' ':
+            if self.getKeyValue(i).first == " ":
                 self._keys_state_buffer.space = True
 
             self._key_pos_hid_keys.append(i)
@@ -283,7 +278,7 @@ class Keyboard:
             self._keys_state_buffer.modifier_keys.append(key)
 
         for k in self._keys_state_buffer.modifier_keys:
-            self._keys_state_buffer.modifiers |= (1 << (k - 0x80))
+            self._keys_state_buffer.modifiers |= 1 << (k - 0x80)
 
         for i in self._key_pos_hid_keys:
             k = self.getKeyValue(i).first

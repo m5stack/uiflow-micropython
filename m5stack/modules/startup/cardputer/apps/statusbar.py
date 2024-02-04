@@ -196,23 +196,11 @@ class StatusBarApp(AppBase):
         src = ""
         if battery > 0 and battery <= 100:
             if battery < 20:
-                src = (
-                    BATTERY_RED_CHARGE_IMG
-                    if charging
-                    else BATTERY_RED_IMG
-                )
+                src = BATTERY_RED_CHARGE_IMG if charging else BATTERY_RED_IMG
             elif battery <= 100:
-                src = (
-                    BATTERY_GREEN_CHARGE_IMG
-                    if charging
-                    else BATTERY_GREEN_IMG
-                )
+                src = BATTERY_GREEN_CHARGE_IMG if charging else BATTERY_GREEN_IMG
         else:
-            src = (
-                BATTERY_BLACK_CHARGE_IMG
-                if charging
-                else BATTERY_BLACK_IMG
-            )
+            src = BATTERY_BLACK_CHARGE_IMG if charging else BATTERY_BLACK_IMG
         return src
 
     @staticmethod
