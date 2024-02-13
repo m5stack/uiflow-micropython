@@ -4,7 +4,7 @@ import machine
 
 class LoRaWANUnit(LoRaWAN_470):
     def __init__(self, port):
-        super(LoRaWAN, self).__init__(tx=port[1], rx=port[0])
+        super(LoRaWANUnit, self).__init__(tx=port[1], rx=port[0])
         self.tx = port[1]
         self.rx = port[0]
 
