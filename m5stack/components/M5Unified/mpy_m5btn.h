@@ -26,11 +26,11 @@ typedef struct _btn_callback_t {
         } flag_bit;
         uint8_t flag;
     };
-    mp_obj_t wasClicked_cb;        // flag bit[1]
-    mp_obj_t wasDoubleClicked_cb;  // flag bit[3]
-    mp_obj_t wasHold_cb;           // flag bit[4]
-    mp_obj_t wasPressed_cb;        // flag bit[5]
-    mp_obj_t wasReleased_cb;       // flag bit[6]
+    mp_obj_t *wasClicked_cb;        // flag bit[1]
+    mp_obj_t *wasDoubleClicked_cb;  // flag bit[3]
+    mp_obj_t *wasHold_cb;           // flag bit[4]
+    mp_obj_t *wasPressed_cb;        // flag bit[5]
+    mp_obj_t *wasReleased_cb;       // flag bit[6]
 } btn_callback_t;
 
 typedef struct _btn_obj_t {
