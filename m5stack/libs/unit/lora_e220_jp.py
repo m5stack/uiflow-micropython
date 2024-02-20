@@ -11,82 +11,88 @@
 import machine
 import time
 import _thread
-
-
-class Def:
-    # Baud Rate Values
-    BAUD_1200 = 0b000
-    BAUD_2400 = 0b001
-    BAUD_4800 = 0b010
-    BAUD_9600 = 0b011
-    BAUD_19200 = 0b100
-    BAUD_38400 = 0b101
-    BAUD_57600 = 0b110
-    BAUD_115200 = 0b111
-
-    # Data Rate Values
-    BW125K_SF5 = 0b00000
-    BW125K_SF6 = 0b00100
-    BW125K_SF7 = 0b01000
-    BW125K_SF8 = 0b01100
-    BW125K_SF9 = 0b10000
-    BW250K_SF5 = 0b00001
-    BW250K_SF6 = 0b00101
-    BW250K_SF7 = 0b01001
-    BW250K_SF8 = 0b01101
-    BW250K_SF9 = 0b10001
-    BW250K_SF10 = 0b10101
-    BW500K_SF5 = 0b00010
-    BW500K_SF6 = 0b00110
-    BW500K_SF7 = 0b01010
-    BW500K_SF8 = 0b01110
-    BW500K_SF9 = 0b10010
-    BW500K_SF10 = 0b10110
-    BW500K_SF11 = 0b11010
-
-    # Subpacket Size Values
-    SUBPACKET_200_BYTE = 0b00
-    SUBPACKET_128_BYTE = 0b01
-    SUBPACKET_64_BYTE = 0b10
-    SUBPACKET_32_BYTE = 0b11
-
-    # RSSI Ambient Noise Flag Values
-    RSSI_AMBIENT_NOISE_ENABLE = 0b1
-    RSSI_AMBIENT_NOISE_DISABLE = 0b0
-
-    # Transmitting Power Values
-    TX_POWER_13dBm = 0b01
-    TX_POWER_7dBm = 0b10
-    TX_POWER_0dBm = 0b11
-
-    # RSSI Byte Flag Values
-    RSSI_BYTE_ENABLE = 0b1
-    RSSI_BYTE_DISABLE = 0b0
-
-    # Transmission Method Type Values
-    UART_TT_MODE = 0b0
-    UART_P2P_MODE = 0b1
-
-    # LBT Flag Values
-    LBT_ENABLE = 0b1
-    LBT_DISABLE = 0b0
-
-    # WOR Cycle Values
-    WOR_500MS = 0b000
-    WOR_1000MS = 0b001
-    WOR_1500MS = 0b010
-    WOR_2000MS = 0b011
+import struct
 
 
 class LoRaE220JPUnit:
+    # Baud Rate Values
+    BAUD_1200 = 0b0000_0000
+    BAUD_2400 = 0b0010_0000
+    BAUD_4800 = 0b0100_0000
+    BAUD_9600 = 0b0110_0000
+    BAUD_19200 = 0b1000_0000
+    BAUD_38400 = 0b1010_0000
+    BAUD_57600 = 0b1100_0000
+    BAUD_115200 = 0b1110_0000
+
+    # Data Rate Values
+    BW125K_SF5 = 0b0000_0000
+    BW125K_SF6 = 0b0000_0100
+    BW125K_SF7 = 0b0000_1000
+    BW125K_SF8 = 0b0000_1100
+    BW125K_SF9 = 0b0001_0000
+    BW250K_SF5 = 0b0000_0001
+    BW250K_SF6 = 0b0000_0101
+    BW250K_SF7 = 0b0000_1001
+    BW250K_SF8 = 0b0000_1101
+    BW250K_SF9 = 0b0001_0001
+    BW250K_SF10 = 0b0001_0101
+    BW500K_SF5 = 0b0000_0010
+    BW500K_SF6 = 0b0000_0110
+    BW500K_SF7 = 0b0000_1010
+    BW500K_SF8 = 0b0000_1110
+    BW500K_SF9 = 0b0001_0010
+    BW500K_SF10 = 0b0001_0110
+    BW500K_SF11 = 0b0001_1010
+
+    # Subpacket Size Values
+    SUBPACKET_200_BYTE = 0b0000_0000
+    SUBPACKET_128_BYTE = 0b0100_0000
+    SUBPACKET_64_BYTE = 0b1000_0000
+    SUBPACKET_32_BYTE = 0b1100_0000
+
+    # RSSI Ambient Noise Flag Values
+    RSSI_AMBIENT_NOISE_ENABLE = 0b0010_0000
+    RSSI_AMBIENT_NOISE_DISABLE = 0b0000_0000
+
+    # Transmitting Power Values
+    TX_POWER_13dBm = 0b0000_0000
+    TX_POWER_12dBm = 0b0000_0001
+    TX_POWER_7dBm = 0b0000_0010
+    TX_POWER_0dBm = 0b0000_0011
+
+    # RSSI Byte Flag Values
+    RSSI_BYTE_ENABLE = 0b1000_0000
+    RSSI_BYTE_DISABLE = 0b0000_0000
+
+    # Transmission Method Type Values
+    UART_TT_MODE = 0b0000_0000
+    UART_P2P_MODE = 0b0100_0000
+
+    # LBT Flag Values
+    # LBT_ENABLE = 0b0001_0000
+    # LBT_DISABLE = 0b0000_0000
+
+    # WOR Cycle Values
+    WOR_500MS = 0b0000_0000
+    WOR_1000MS = 0b0000_0001
+    WOR_1500MS = 0b0000_0010
+    WOR_2000MS = 0b0000_0011
+    WOR_2500MS = 0b0000_0100
+    WOR_3000MS = 0b0000_0101
+
     def __init__(self, port, port_id=1) -> None:
         # print('Port: ', port)
         self.uart = machine.UART(port_id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
         self.recv_running = False
         self.receive_callback = None
+        self._TXD_BUFFER = bytearray(200)
+        self._RXD_BUFFER = bytearray(200)
+        self.max_len = 200
+        self.rssi_byte_flag = self.RSSI_BYTE_DISABLE
 
-    def _conf_range(self, target, min, max):
+    def _conf_range(self, target, min, max) -> bool:
         return min <= target <= max
 
     def setup(
@@ -94,53 +100,56 @@ class LoRaE220JPUnit:
         own_address=0,
         own_channel=0,
         encryption_key=0x2333,
-        air_data_rate=Def.BW125K_SF9,
-        subpacket_size=Def.SUBPACKET_200_BYTE,
-        rssi_ambient_noise_flag=Def.RSSI_AMBIENT_NOISE_ENABLE,
-        transmitting_power=Def.TX_POWER_13dBm,
-        rssi_byte_flag=Def.RSSI_BYTE_ENABLE,
-        transmission_method_type=Def.UART_P2P_MODE,
-        lbt_flag=Def.LBT_DISABLE,
-        wor_cycle=Def.WOR_2000MS,
-    ):
+        air_data_rate=0b0000_0010,  # BW500K_SF5
+        subpacket_size=0b0000_0000,  # SUBPACKET_200_BYTE
+        rssi_ambient_noise_flag=0b0000_0000,  # RSSI_AMBIENT_NOISE_DISABLE
+        transmitting_power=0b0000_0000,  # TX_POWER_13dBm
+        rssi_byte_flag=0b0000_0000,  # RSSI_BYTE_DISABLE
+        transmission_method_type=0b0000_0000,  # UART_TT_MODE
+        lbt_flag=0b0000_0000,  # LBT_DISABLE
+        wor_cycle=0b0000_0011,  # WOR_2000MS
+    ) -> bool:
         if not self._conf_range(own_channel, 0, 30):
             return False
 
-        self.subpacket_size = subpacket_size
-        self.max_len = 0
-        if self.subpacket_size == Def.SUBPACKET_128_BYTE:
+        if subpacket_size == self.SUBPACKET_128_BYTE:
             self.max_len = 128
-        elif self.subpacket_size == Def.SUBPACKET_64_BYTE:
+        elif subpacket_size == self.SUBPACKET_64_BYTE:
             self.max_len = 64
-        elif self.subpacket_size == Def.SUBPACKET_32_BYTE:
+        elif subpacket_size == self.SUBPACKET_32_BYTE:
             self.max_len = 32
         else:
             self.max_len = 200
 
-        command = [0xC0, 0x00, 0x08]
-        ADDH = own_address >> 8
-        ADDL = own_address & 0xFF
-        command.extend([ADDH, ADDL])
+        # Configuration
+        struct.pack_into(">B", self._TXD_BUFFER, 0, 0xC0)
+        struct.pack_into(">B", self._TXD_BUFFER, 1, 0x00)
+        struct.pack_into(">B", self._TXD_BUFFER, 2, 0x08)
 
-        REG0 = (Def.BAUD_9600 << 5) | air_data_rate
-        command.append(REG0)
+        # Register Address 00H, 01H
+        struct.pack_into(">H", self._TXD_BUFFER, 3, own_address)
 
-        REG1 = (subpacket_size << 6) | (rssi_ambient_noise_flag << 5) | transmitting_power
-        command.append(REG1)
+        # Register Address 02H
+        REG0 = self.BAUD_9600 | air_data_rate
+        struct.pack_into(">B", self._TXD_BUFFER, 5, REG0)
 
-        command.append(own_channel)
+        # Register Address 03H
+        REG1 = subpacket_size | rssi_ambient_noise_flag | transmitting_power
+        struct.pack_into(">B", self._TXD_BUFFER, 6, REG1)
 
-        REG3 = (
-            (rssi_byte_flag << 7) | (transmission_method_type << 6) | (lbt_flag << 4) | wor_cycle
-        )
-        command.append(REG3)
+        # Register Address 04H
+        struct.pack_into(">B", self._TXD_BUFFER, 7, own_channel)
 
-        CRYPT_H = encryption_key >> 8
-        CRYPT_L = encryption_key & 0xFF
-        command.extend([CRYPT_H, CRYPT_L])
+        # Register Address 05H
+        self.rssi_byte_flag = rssi_byte_flag
+        REG3 = self.rssi_byte_flag | transmission_method_type | wor_cycle
+        struct.pack_into(">B", self._TXD_BUFFER, 8, REG3)
 
-        self.uart.write(bytes(command))
+        # Register Address 06H, 07H
+        struct.pack_into(">H", self._TXD_BUFFER, 9, encryption_key)
 
+        command = memoryview(self._TXD_BUFFER[0:11])
+        self.uart.write(command)
         time.sleep_ms(100)  # wait for response
 
         response = []
@@ -154,68 +163,73 @@ class LoRaE220JPUnit:
             return False
         return True
 
-    def _recvCallback(self):
+    def _recv_task(self) -> None:
         response = bytes()
         rssi = 0
         _ = self.uart.read()
         while self.recv_running:
-            if self.uart.any():
-                response += self.uart.read()
-            elif len(response) > 0:
-                time.sleep_ms(10)
-                if not self.uart.any():
-                    rssi = int(response[-1]) - 256
-                    self.receive_callback(response[:-1], rssi)
-                    response = bytes()
+            response, rssi = self.receive()
+            if len(response):
+                self.receive_callback(response, rssi)
             time.sleep_ms(10)
 
-    def receiveNoneBlock(self, receive_callback):
+    def receive_none_block(self, receive_callback: function) -> None:
         if not self.recv_running:
             self.recv_running = True
             self.receive_callback = receive_callback
-            _thread.start_new_thread(self._recvCallback, ())
+            # FIXME: Threads cannot be automatically destroyed when the
+            # application is interrupted.
+            _thread.start_new_thread(self._recv_task, ())
 
-    def stopReceive(self):
+    def receiveNoneBlock(self, receive_callback: function) -> None:
+        return self.receive_none_block(receive_callback)
+
+    def stop_receive(self) -> None:
         self.recv_running = False
         time.sleep_ms(50)
         self.receive_callback = None
 
-    def receive(self, timeout=1000):
+    def stopReceive(self) -> None:
+        return self.stop_receive()
+
+    def receive(self, timeout=1000) -> tuple[bytes, int]:
         start = time.ticks_ms()
+        read_length = 0
         response = bytes()
-        rssi = 0
+        rssi = 1
         while True:
             if time.ticks_ms() - start > timeout:
                 break
 
             if self.uart.any():
-                response += self.uart.read()
-
-            elif len(response) > 0:
+                read_length += self.uart.readinto(self._RXD_BUFFER)
+            elif read_length > 0:
                 time.sleep_ms(10)
                 if not self.uart.any():
-                    rssi = int(response[-1]) - 256
+                    RXD_BUFFER = memoryview(self._RXD_BUFFER[0:read_length])
+                    if self.rssi_byte_flag == self.RSSI_BYTE_ENABLE:
+                        response, rssi = struct.unpack_from(
+                            "<%dsB" % (read_length - 1), RXD_BUFFER
+                        )
+                        rssi = rssi - 256
+                    else:
+                        response = struct.unpack_from("<%ds" % read_length, RXD_BUFFER)
                     break
             time.sleep_ms(10)
-        return response[:-1], rssi
+        return response, rssi
 
-    def send(self, target_address, target_channel, send_data):
-        if type(send_data) is str:
-            send_data = send_data.encode("utf-8")
-
-        if type(send_data) is list:
-            send_data = bytearray(send_data)
-
+    def send(self, target_address: int, target_channel: int, send_data: bytes | str) -> bool:
         if len(send_data) > self.max_len:  # Adjust based on allowed packet size
             print("ERROR: Length of send_data over %d bytes." % self.max_len)
             return False
 
-        target_address_H = target_address >> 8
-        target_address_L = target_address & 0xFF
-
-        frame = bytearray([target_address_H, target_address_L, target_channel])
-        frame.extend(send_data)
-
-        self.uart.write(frame)
+        FRAME = memoryview(self._TXD_BUFFER[0 : 3 + len(send_data)])
+        struct.pack_into(">HB", FRAME, 0, target_address, target_channel)
+        if type(send_data) is str:
+            struct.pack_into("%ds" % len(send_data), FRAME, 3, send_data)
+        else:
+            for i in range(len(send_data)):
+                FRAME[3 + i] = send_data[i]
+        self.uart.write(FRAME)
 
         return True
