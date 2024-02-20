@@ -6,6 +6,12 @@ _pin_map = {
     M5.BOARD.M5AtomS3: (None, 4),
     M5.BOARD.M5AtomS3Lite: (None, 4),
     M5.BOARD.M5AtomS3U: (None, 12),
+    M5.BOARD.M5Capsule: (None, 4),
+    M5.BOARD.M5Cardputer: (None, 44),
+    M5.BOARD.M5StickCPlus: (None, 9),
+    M5.BOARD.M5StickC: (None, 9),
+    M5.BOARD.M5StickCPlus2: (None, 19),
+    M5.BOARD.M5AtomU: (None, 12),
 }
 
 
