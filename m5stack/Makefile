@@ -21,7 +21,7 @@ boards := \
 	M5STACK_Basic_4MB:basic          \
 	M5STACK_Capsule:capsule          \
 	M5STACK_CoreInk:coreink          \
-	M5STACK_AirQS3:airq              \
+	M5STACK_AirQ:airq                \
 	M5STACK_Dial:dial                \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper

@@ -1,6 +1,6 @@
 set(IDF_TARGET esp32s3)
 
-# stamps3 https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L26
+# airq https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L17
 set(BOARD_ID 15)
 
 set(SDKCONFIG_DEFAULTS
