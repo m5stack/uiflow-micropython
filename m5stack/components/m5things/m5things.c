@@ -116,6 +116,8 @@ static char *down_topic_list[3] = {
 static SemaphoreHandle_t xSemaphore = NULL;
 static char *json_buf = NULL;
 
+static void mqtt_ping_report();
+
 /******************************************************************************/
 static lfs2_t *_fp = NULL;
 static lfs2_file_t _file;
@@ -307,6 +309,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                 ESP_LOGI(TAG, "sent %s topic subscribe successful, msg_id=%d",
                     topic_action_list[i], msg_id);
             }
+            mqtt_ping_report();
             m5things_cnct_status = M5THING_STATUS_CONNECTED;
         } break;
         case MQTT_EVENT_DISCONNECTED:
@@ -794,7 +797,7 @@ static int8_t create_res_record(msg_file_req_t *msg_file_req) {
 
     cJSON_AddNumberToObject(root, "time", msg_file_req->time);
     cJSON_AddBoolToObject(root, "cache", false);
-    cJSON_AddNumberToObject(root, "totalSize", msg_file_req->total_size);
+    cJSON_AddNumberToObject(root, "totalSize", 0);
     cJSON_AddItemToObject(root, "fileList", file_list);
 
     const char *full_path = {'\0'};
@@ -922,9 +925,7 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
         cJSON_SetNumberValue(time, msg_file_req->time);
     }
     cJSON *totalSize = cJSON_GetObjectItemCaseSensitive(json, "totalSize");
-    if (totalSize) {
-        cJSON_SetNumberValue(totalSize, totalSize->valueint + msg_file_req->total_size);
-    }
+    int total_size = totalSize->valueint;
 
     cJSON *old_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
     int old_file_num = cJSON_GetArraySize(old_file_list);
@@ -937,6 +938,8 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
             cJSON *path = cJSON_GetObjectItemCaseSensitive(file, "devicePath");
             if (strcmp(path->valuestring, msg_file_req->path) == 0) {
                 // NOTE: 添加 "devicePath" 保存文件路径
+                total_size -= cJSON_GetObjectItemCaseSensitive(file, "size")->valueint;
+                total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
                 cJSON_AddStringToObject(new_file, "devicePath", msg_file_req->path);
                 cJSON_ReplaceItemInArray(old_file_list, i, cJSON_Duplicate(new_file, true));
                 exist = true;
@@ -944,6 +947,7 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
         }
         if (exist == false) {
             // NOTE: 添加 "devicePath" 保存文件路径
+            total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
             cJSON_AddStringToObject(new_file, "devicePath", msg_file_req->path);
             cJSON_AddItemToArray(old_file_list, cJSON_Duplicate(new_file, true));
         }
@@ -952,6 +956,7 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
         ret = PKG_ERR_PARSE;
         goto error_read;
     }
+    cJSON_SetNumberValue(totalSize, total_size);
 
     // save res.json
     flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
@@ -1101,9 +1106,7 @@ static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) 
         cJSON_SetNumberValue(time, msg_file_req->time);
     }
     cJSON *totalSize = cJSON_GetObjectItemCaseSensitive(json, "totalSize");
-    if (totalSize) {
-        cJSON_SetNumberValue(totalSize, totalSize->valueint + msg_file_req->total_size);
-    }
+    int total_size = totalSize->valueint;
 
     cJSON *old_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
     int old_file_num = cJSON_GetArraySize(old_file_list);
@@ -1132,16 +1135,20 @@ static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) 
             cJSON *file = cJSON_GetArrayItem(old_file_list, i);
             cJSON *old_path = cJSON_GetObjectItemCaseSensitive(file, "devicePath");
             if (strcmp(new_file_path, old_path->valuestring) == 0) {
+                total_size -= cJSON_GetObjectItemCaseSensitive(file, "size")->valueint;
+                total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
                 cJSON_ReplaceItemInObject(new_file, "devicePath", cJSON_CreateString(new_file_path));
                 cJSON_ReplaceItemInArray(old_file_list, i, cJSON_Duplicate(new_file, true));
                 exist = true;
             }
         }
         if (exist == false) {
+            total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
             cJSON_ReplaceItemInObject(new_file, "devicePath", cJSON_CreateString(new_file_path));
             cJSON_AddItemToArray(old_file_list, cJSON_Duplicate(new_file, true));
         }
     }
+    cJSON_SetNumberValue(totalSize, total_size);
 
     flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
     lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
@@ -1651,8 +1658,7 @@ no_memory:
 }
 
 
-static int8_t file_remove_helper_v2(const char *path)
-{
+static int8_t file_remove_helper_v2(const char *path) {
     int8_t ret = PKG_OK;
 
     // find vfs
@@ -1723,16 +1729,20 @@ static int8_t file_remove_helper_v2(const char *path)
     }
 
     cJSON *old_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
+    cJSON *totalSize = cJSON_GetObjectItemCaseSensitive(json, "totalSize");
+    int total_size = totalSize->valueint;
     int old_file_num = cJSON_GetArraySize(old_file_list);
     int i = 0;
     for (i = 0; i < old_file_num; i++) {
         cJSON *file = cJSON_GetArrayItem(old_file_list, i);
         cJSON *devicePath = cJSON_GetObjectItemCaseSensitive(file, "devicePath");
         if (strcmp(devicePath->valuestring, path) == 0) {
-            break ;
+            total_size -= cJSON_GetObjectItemCaseSensitive(file, "size")->valueint;
+            break;
         }
     }
     cJSON_DeleteItemFromArray(old_file_list, i);
+    cJSON_SetNumberValue(totalSize, total_size);
 
     // save res.json
     flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
