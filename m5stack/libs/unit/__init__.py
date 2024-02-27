@@ -48,6 +48,7 @@ _attrs = {
     "RTC8563Unit": "rtc8563",
     "VMeterUnit": "vmeter",
     "AMeterUnit": "ameter",
+    "WEIGHT_I2CUnit": "weight_i2c",
 }
 
 
