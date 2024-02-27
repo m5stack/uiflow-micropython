@@ -21,3 +21,4 @@ Unit
     op180.rst
     miniscale.rst
     dac2.rst
+    weight_i2c.rst
