@@ -1,7 +1,14 @@
 from ..app import AppBase
-from ..res import RUN_IMG
+from ..res import (
+    RUN_INFO_IMG,
+    RUN_ONCE_SELECT_IMG,
+    RUN_ONCE_UNSELECT_IMG,
+    RUN_ALWAYS_SELECT_IMG,
+    RUN_ALWAYS_UNSELECT_IMG,
+    MontserratMedium10_VLW,
+    MontserratMedium16_VLW,
+)
 from widgets.label import Label
-from widgets.button import Button
 import M5
 import esp32
 import machine
@@ -19,8 +26,8 @@ except ImportError:
 
 class RunApp(AppBase):
     def __init__(self, icos: dict, data=None) -> None:
-        self._wlan = data
         super().__init__()
+        self._enter_handler = self._handle_run_once
 
     def on_install(self):
         pass
@@ -29,72 +36,66 @@ class RunApp(AppBase):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        M5.Lcd.drawImage(RUN_IMG, 32, 26)
+        M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
+        M5.Lcd.drawImage(RUN_INFO_IMG, 6, 22)
 
         self._name_label = Label(
             "name",
-            34,
-            26,
-            w=206,
+            16,
+            23,
+            w=208,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font="/system/common/font/Montserrat-Medium-16.vlw",
+            bg_color=0xCDCDCD,
+            font=MontserratMedium16_VLW,
         )
         self._name_label.setText("main.py")
 
         self._mtime_label = Label(
             "Time: 2023/5/14 12:23:43",
-            34,
-            45,
-            w=206,
+            16,
+            46,
+            w=208,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font="/system/common/font/Montserrat-Medium-10.vlw",
+            bg_color=0xFFFFFF,
+            font=MontserratMedium10_VLW,
         )
         self._mtime_label.setText(self._mtime_text)
 
         self._account_label = Label(
             "Account: XXABC",
-            34,
-            57,
-            w=206,
+            16,
+            60,
+            w=208,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font="/system/common/font/Montserrat-Medium-10.vlw",
+            bg_color=0xFFFFFF,
+            font=MontserratMedium10_VLW,
         )
         self._account_label.setText(self._account_text)
 
         self._ver_label = Label(
             "Ver: UIFLOW2.0 a18",
-            34,
-            69,
-            w=206,
+            16,
+            74,
+            w=208,
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font="/system/common/font/Montserrat-Medium-10.vlw",
+            bg_color=0xFFFFFF,
+            font=MontserratMedium10_VLW,
         )
         self._ver_label.setText(self._ver_text)
 
-        _button_run_once = Button(None)
-        _button_run_once.set_pos(0, 50)
-        _button_run_once.set_size(120, 51)
-        _button_run_once.add_event(self._handle_run_once)
-
-        _button_run_always = Button(None)
-        _button_run_always.set_pos(120, 50)
-        _button_run_always.set_size(120, 51)
-        _button_run_always.add_event(self._handle_run_always)
-        self._buttons = (_button_run_once, _button_run_always)
+        M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
+        M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)
 
     def on_ready(self):
         pass
 
     def on_hide(self):
-        M5.Lcd.fillRect(32, 26, 206, 103, 0x333333)
+        self._enter_handler = self._handle_run_once
+        M5.Lcd.fillRect(32, 26, 206, 103, 0xEEEEEF)
 
     def on_exit(self):
         del (
@@ -103,11 +104,6 @@ class RunApp(AppBase):
             self._account_label,
             self._ver_label,
         )
-
-    async def _click_event_handler(self, x, y, fw):
-        for button in self._buttons:
-            if button.handle(x, y):
-                break
 
     def _handle_run_once(self, fw):
         execfile("main.py")
@@ -159,7 +155,13 @@ class RunApp(AppBase):
         return (mtime, account, ver)
 
     async def _kb_event_handler(self, event, fw):
-        if event.key in (ord("o"), ord("O"), 0x0D):  # Enter key
-            self._handle_run_once(fw)
-        elif event.key in (ord("a"), ord("A")):
-            self._handle_run_always(fw)
+        if event.key == 183:  # Right key
+            M5.Lcd.drawImage(RUN_ONCE_UNSELECT_IMG, 6, 100)
+            M5.Lcd.drawImage(RUN_ALWAYS_SELECT_IMG, 123, 100)
+            self._enter_handler = self._handle_run_always
+        elif event.key == 180:  # Left key
+            M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
+            M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)
+            self._enter_handler = self._handle_run_once
+        elif event.key == 0x0D:  # Enter key
+            self._enter_handler(fw)

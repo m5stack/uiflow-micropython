@@ -1,8 +1,8 @@
 from ..app import AppBase
 from ..res import (
-    APPLIST_IMG,
-    APPLIST_LEFT_IMG,
-    APPLIST_RIGHT_IMG,
+    CARD_228x32_SELECT_IMG,
+    CARD_228x32_UNSELECT_IMG,
+    MontserratMedium18_VLW,
 )
 from widgets.image import Image
 from widgets.label import Label
@@ -68,6 +68,9 @@ class FileList:
 
 
 class ListApp(AppBase):
+    # log control
+    DEBUG = False
+
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         super().__init__()
@@ -77,92 +80,92 @@ class ListApp(AppBase):
 
     def on_launch(self):
         self._files = FileList("apps")
-        self._max_file_num = 4 if len(self._files) > 4 else len(self._files)
+        self._imgs = []
+        self._icos = []
+        self._labels = []
+        self._max_file_num = 3 if len(self._files) > 3 else len(self._files)
         self._cursor_pos = 0
         self._file_pos = 0
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
-        self._bg_img.set_pos(32, 26)
-        self._bg_img.set_size(206, 103)
-        self._bg_img.set_src(APPLIST_IMG)
+        M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
 
-        self._line_spacing = 27
-        self._left_cursor_x = 53
-        self._left_cursor_y = 27
+        if self._max_file_num > 0:
+            self._img0 = Image(use_sprite=False)
+            self._img0.set_pos(6, 22)
+            self._img0.set_size(228, 32)
+            self._img0.set_src(CARD_228x32_SELECT_IMG)
+            self._imgs.append(self._img0)
 
-        self._rect0 = Rectangle(
-            self._left_cursor_x, self._left_cursor_y, 7, 24, 0xFEFEFE, 0xFEFEFE
-        )
+            self._ico0 = Image(use_sprite=False)
+            self._ico0.set_pos(9, 25)
+            self._ico0.set_size(26, 26)
+            self._icos.append(self._ico0)
 
-        self._left_img = Image(use_sprite=False)
-        self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
-        self._left_img.set_size(7, 24)
-        self._left_img.set_src(APPLIST_LEFT_IMG)
+            self._label0 = Label(
+                "",
+                40,
+                27,
+                w=182,
+                h=22,
+                fg_color=0x000000,
+                bg_color=0xFFFFFF,
+                font=MontserratMedium18_VLW,
+            )
+            self._labels.append(self._label0)
 
-        self._right_cursor_x = 192
-        self._right_cursor_y = 27
+        if self._max_file_num > 1:
+            self._img1 = Image(use_sprite=False)
+            self._img1.set_pos(6, 60)
+            self._img1.set_size(228, 32)
+            self._img1.set_src(CARD_228x32_UNSELECT_IMG)
+            self._imgs.append(self._img1)
 
-        self._rect1 = Rectangle(
-            self._right_cursor_x, self._right_cursor_y, 7, 24, 0xFEFEFE, 0xFEFEFE
-        )
+            self._ico1 = Image(use_sprite=False)
+            self._ico1.set_pos(9, 63)
+            self._ico1.set_size(26, 26)
+            self._icos.append(self._ico1)
 
-        self._right_img = Image(use_sprite=False)
-        self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
-        self._right_img.set_size(7, 24)
-        self._right_img.set_src(APPLIST_RIGHT_IMG)
+            self._label1 = Label(
+                "",
+                40,
+                65,
+                w=182,
+                h=22,
+                fg_color=0x000000,
+                bg_color=0xFFFFFF,
+                font=MontserratMedium18_VLW,
+            )
+            self._labels.append(self._label1)
 
-        self._label0 = Label(
-            "",
-            60,
-            28,
-            w=131,
-            h=22,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
-        )
+        if self._max_file_num > 2:
+            self._img2 = Image(use_sprite=False)
+            self._img2.set_pos(6, 98)
+            self._img2.set_size(228, 32)
+            self._img2.set_src(CARD_228x32_UNSELECT_IMG)
+            self._imgs.append(self._img2)
 
-        self._label1 = Label(
-            "",
-            60,
-            55,
-            w=131,
-            h=22,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
-        )
+            self._ico2 = Image(use_sprite=False)
+            self._ico2.set_pos(7, 101)
+            self._ico2.set_size(26, 26)
+            self._icos.append(self._ico2)
 
-        self._label2 = Label(
-            "",
-            60,
-            81,
-            w=131,
-            h=22,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
-        )
+            self._label2 = Label(
+                "",
+                40,
+                103,
+                w=182,
+                h=22,
+                fg_color=0x000000,
+                bg_color=0xFFFFFF,
+                font=MontserratMedium18_VLW,
+            )
+            self._labels.append(self._label2)
 
-        self._label3 = Label(
-            "",
-            60,
-            107,
-            w=131,
-            h=22,
-            fg_color=0x000000,
-            bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
-        )
-        self._labels = []
-        self._labels.append(self._label0)
-        self._labels.append(self._label1)
-        self._labels.append(self._label2)
-        self._labels.append(self._label3)
-
-        for label, file in zip(self._labels, self._files):
-            file and label and label.setText(file)
+        for label, icos, file in zip(self._labels, self._icos, self._files):
+            ico_name = file[0].lower()
+            icos.set_src(f"/system/cardputer/ico/{ico_name}.jpeg")
+            label.setText(file)
 
     def on_ready(self):
         pass
@@ -172,30 +175,20 @@ class ListApp(AppBase):
 
     def on_exit(self):
         del (
-            self._bg_img,
-            self._left_img,
-            self._right_img,
-            self._label0,
-            self._label1,
-            self._label2,
-            self._label3,
+            self._imgs,
+            self._icos,
             self._labels,
             self._files,
         )
 
     def _btn_up_event_handler(self, event):
-        print("_btn_up_event_handler")
+        self.DEBUG and print("_btn_up_event_handler")
         if self._file_pos is 0 and self._cursor_pos == 0:
             M5.Speaker.tone(4500, 60)
             return
 
         # Clear selection cursor
-        self._rect0.set_pos(
-            self._left_cursor_x, self._left_cursor_y + self._cursor_pos * self._line_spacing
-        )
-        self._rect1.set_pos(
-            self._right_cursor_x, self._right_cursor_y + self._cursor_pos * self._line_spacing
-        )
+        self._imgs[self._cursor_pos].set_src(CARD_228x32_UNSELECT_IMG)
 
         # Calculate cursor and file positions
         self._file_pos -= 1
@@ -206,67 +199,60 @@ class ListApp(AppBase):
         if self._cursor_pos < 0:
             self._cursor_pos = 0
 
+        # cursor img
+        self._imgs[self._cursor_pos].set_src(CARD_228x32_SELECT_IMG)
+
         if self._file_pos < self._cursor_pos:
-            for label, file in zip(self._labels, self._files):
+            for label, icos, file in zip(self._labels, self._icos, self._files):
+                ico_name = file[0].lower()
+                icos.set_src(f"/system/cardputer/ico/{ico_name}.jpeg")
                 label.setText(file)
         else:
-            for label, file in zip(
+            for label, icos, file in zip(
                 self._labels,
+                self._icos,
                 self._files[
-                    self._file_pos - self._cursor_pos : self._file_pos + (4 - self._cursor_pos)
+                    self._file_pos - self._cursor_pos : self._file_pos + (3 - self._cursor_pos)
                 ],
             ):
+                ico_name = file[0].lower()
+                icos.set_src(f"/system/cardputer/ico/{ico_name}.jpeg")
                 label.setText(file)
-
-        self._left_img.set_pos(
-            self._left_cursor_x, self._left_cursor_y + self._line_spacing * self._cursor_pos
-        )
-        self._right_img.set_pos(
-            self._right_cursor_x, self._right_cursor_y + self._line_spacing * self._cursor_pos
-        )
 
     def _btn_down_event_handler(self, fw):
         # Clear selection cursor
-        self._rect0.set_pos(
-            self._left_cursor_x, self._left_cursor_y + self._cursor_pos * self._line_spacing
-        )
-        self._rect1.set_pos(
-            self._right_cursor_x, self._right_cursor_y + self._cursor_pos * self._line_spacing
-        )
+        self.DEBUG and print("_btn_down_event_handler")
+        self.DEBUG and print("_cursor_pos:", self._cursor_pos)
+        self._imgs[self._cursor_pos].set_src(CARD_228x32_UNSELECT_IMG)
 
         # Calculate cursor and file positions
         self._file_pos += 1
         self._cursor_pos += 1
 
-        max_cursor_pos = len(self._files) - 1 if len(self._files) < 4 else 3
+        max_cursor_pos = len(self._files) - 1 if len(self._files) < 3 else 2
         if self._cursor_pos > max_cursor_pos:
             self._cursor_pos = max_cursor_pos
 
         # cursor img
-        self._left_img.set_pos(
-            self._left_cursor_x, self._left_cursor_y + self._cursor_pos * self._line_spacing
-        )
-        self._right_img.set_pos(
-            self._right_cursor_x, self._right_cursor_y + self._cursor_pos * self._line_spacing
-        )
+        self.DEBUG and print("_cursor_pos:", self._cursor_pos)
+        self._imgs[self._cursor_pos].set_src(CARD_228x32_SELECT_IMG)
 
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
             M5.Speaker.tone(4500, 60)
-            return
 
         # Show File
-        if self._file_pos < 4:
-            for label, file in zip(self._labels, self._files):
-                if file is None or label is None:
-                    break
+        if self._file_pos < 3:
+            for label, icos, file in zip(self._labels, self._icos, self._files):
+                ico_name = file[0].lower()
+                icos.set_src(f"/system/cardputer/ico/{ico_name}.jpeg")
                 label.setText(file)
         else:
-            for label, file in zip(
-                self._labels, self._files[self._file_pos - 3 : self._file_pos + 1]
+            for label, icos, file in zip(
+                self._labels, self._icos, self._files[self._file_pos - 2 : self._file_pos + 1]
             ):
-                if file is None or label is None:
-                    break
+                ico_name = file[0].lower()
+                icos.set_src(f"/system/cardputer/ico/{ico_name}.jpeg")
                 label.setText(file)
 
     def _btn_once_event_handler(self, event):
@@ -288,12 +274,12 @@ class ListApp(AppBase):
         machine.reset()
 
     async def _kb_event_handler(self, event, fw):
-        if event.key in (46, 62):  # down key
+        if event.key == 182:  # down key
             self._btn_down_event_handler(None)
-        if event.key in (59, 58):  # up key
+        if event.key == 181:  # up key
             self._btn_up_event_handler(None)
 
-        if event.key in (ord("o"), ord("O"), 0x0D):  # Enter key
+        if event.key == 0x0D:  # Enter key
             self._btn_once_event_handler(event)
         elif event.key in (ord("a"), ord("A")):
             self._btn_always_event_handler(event)

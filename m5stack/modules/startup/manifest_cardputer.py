@@ -12,7 +12,6 @@ package(
         "cardputer/apps/ezdata.py",
         "cardputer/apps/launcher.py",
         "cardputer/apps/settings.py",
-        "cardputer/apps/sidebar.py",
         "cardputer/apps/statusbar.py",
     ),
     base_path="..",

@@ -1,5 +1,6 @@
 from ..app import AppBase
 from ..res import (
+    BLUE_TITLE_IMG,
     BATTERY_BLACK_CHARGE_IMG,
     BATTERY_BLACK_IMG,
     BATTERY_GREEN_CHARGE_IMG,
@@ -14,6 +15,8 @@ from ..res import (
     WIFI_GOOD_IMG,
     WIFI_MID_IMG,
     WIFI_WORSE_IMG,
+    MontserratMedium10_VLW,
+    MontserratMedium12_VLW,
 )
 from widgets.label import Label
 from widgets.image import Image
@@ -74,43 +77,44 @@ class StatusBarApp(AppBase):
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
 
     def on_view(self):
-        M5.Lcd.fillRoundRect(32, 3, 206, 16, 10, 0xEEEEEF)
+        M5.Lcd.fillRect(0, 0, 240, 16, 0xEEEEEF)
+        M5.Lcd.drawImage(BLUE_TITLE_IMG, 0, 0)
         self._time_label = Label(
             "12:23",
-            32 + 206 // 2,
-            4,
+            120,
+            1,
             w=48,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font="/system/common/font/Montserrat-Medium-12.vlw",
+            font=MontserratMedium12_VLW,
         )
         self._time_label.setText(self._time_text)
 
         self._network_img = Image(use_sprite=False)
-        self._network_img.set_pos(41, 3)
+        self._network_img.set_pos(163, 0)
         self._network_img.set_size(16, 16)
         self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
 
         self._cloud_img = Image(use_sprite=False)
-        self._cloud_img.set_pos(59, 3)
+        self._cloud_img.set_pos(179, 0)
         self._cloud_img.set_size(16, 16)
         self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
 
         self._battery_img = Image(use_sprite=False)
-        self._battery_img.set_pos(186, 3)
+        self._battery_img.set_pos(195, 0)
         self._battery_img.set_size(45, 16)
         self._battery_img.set_src(self._battery_src)
 
         self._battery_label = Label(
             "78%",
-            203,
-            5,
+            212,
+            2,
             w=26 + 4,
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-10.vlw",
+            font=MontserratMedium10_VLW,
         )
         self._battery_label.setText(self._battery_text)
 

@@ -1,5 +1,5 @@
 from .app import AppBase, AppSelector
-from hardware import Keyboard
+from hardware import MatrixKeyboard
 import M5
 import gc
 import asyncio
@@ -16,6 +16,7 @@ class Framework:
         self._app_selector = AppSelector(self._apps)
         self._launcher = None
         self._bar = None
+        self._sidebar = None
 
     def install_bar(self, bar: AppBase):
         self._bar = bar
@@ -46,7 +47,7 @@ class Framework:
         app.start()
 
     async def run(self):
-        kb = Keyboard()
+        kb = MatrixKeyboard()
         event = KeyEvent()
 
         self._bar and self._bar.start()
@@ -57,33 +58,12 @@ class Framework:
 
         while True:
             M5.update()
-            kb.updateKeyList()
-            kb.updateKeysState()
-            if kb.isChange():
-                if kb.isPressed():
-                    M5.Speaker.tone(3500, 50)
-                    status = kb.keysState()
-                    self._sidebar and self._sidebar.on_key(status)
-                    if status.enter:
-                        event.key = 0x0D
-                        event.status = False
-                        await self.handle_input(event)
-                    elif status.delete:
-                        event.key = 0x08
-                        event.status = False
-                        await self.handle_input(event)
-                    elif status.space:
-                        event.key = 0x20
-                        event.status = False
-                        await self.handle_input(event)
-                    else:
-                        for word in status.word:
-                            event.key = word
-                            event.status = False
-                            await self.handle_input(event)
-                else:
-                    status = kb.keysState()
-                    self._sidebar and self._sidebar.on_key(status)
+            kb.tick()
+            if kb.is_pressed():
+                M5.Speaker.tone(3500, 50)
+                event.key = kb.get_key()
+                event.status = False
+                await self.handle_input(event)
 
             if M5.BtnA.wasClicked():
                 app = self._app_selector.current()
