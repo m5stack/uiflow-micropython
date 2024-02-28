@@ -170,6 +170,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             cardputer = Cardputer_Startup()
             cardputer.startup(ssid, pswd, timeout)
 
+        elif board_id == M5.BOARD.M5Paper:
+            from .paper import Paper_Startup
+
+            paper = Paper_Startup()
+            paper.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

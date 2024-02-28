@@ -23,7 +23,8 @@ boards := \
 	M5STACK_CoreInk:coreink			 \
 	M5STACK_AirQS3:airq 				 \
 	M5STACK_Dial:dial                \
-	M5STACK_Cardputer:cardputer
+	M5STACK_Cardputer:cardputer		\
+	M5STACK_Paper:paper
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -47,7 +48,8 @@ BOARD_TYPE_DEF := \
 	coreink		\
 	airq		\
 	dial        \
-	cardputer
+	cardputer	\
+	paper
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
