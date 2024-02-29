@@ -12,3 +12,4 @@ Controllers
     coreink.rst
     airq.rst
     paper.rst
+    dinmeter.rst
