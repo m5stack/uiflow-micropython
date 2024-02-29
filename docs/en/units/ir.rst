@@ -1,12 +1,11 @@
 IR Unit
-==================
+=======
 
 .. include:: ../refs/unit.ir.ref
 
 Support the following products:
 
-
-|IR|              
+    |IR|
 
 
 Micropython Example::
@@ -27,16 +26,15 @@ Micropython Example::
     Widgets.fillScreen(0x222222)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|ir_core_example.m5f2|
+    |ir_core_example.m5f2|
+
 
 class IR
 --------------
@@ -51,7 +49,6 @@ Constructors
     The parameters is:
         - ``IO1,IO2`` Receive and transmit pin definitions.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -62,12 +59,12 @@ Methods
 
 .. method:: ir.tx()
 
-
-    Sends an ir signal value to an address.  
+    Sends an ir signal value to an address.
 
     UIFLOW2:
 
         |tx.svg|
+
 
 .. method:: ir.rx_event()
 
@@ -76,4 +73,3 @@ Methods
     UIFLOW2:
 
         |rx_event.svg|
-

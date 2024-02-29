@@ -5,9 +5,9 @@ ENV Unit
 
 The following products are supported:
 
-================== ================== ==================
-|ENV|              |ENV II|           |ENV III|
-================== ================== ==================
+    ================== ================== ==================
+    |ENV|              |ENV II|           |ENV III|
+    ================== ================== ==================
 
 
 Micropython Example::
@@ -35,7 +35,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-|env_cores3_example.m5f2|
+    |env_cores3_example.m5f2|
 
 
 class ENVUnit
@@ -73,6 +73,7 @@ Methods
 
         |read_temperature.svg|
 
+
 .. method:: ENVUnit.read_humidity()
 
     This method allows to read the relative humidity value collected by ENV and returns a floating point value. The unit of measurement is %RH.
@@ -80,6 +81,7 @@ Methods
     UIFLOW2:
 
         |read_humidity.svg|
+
 
 .. method:: ENVUnit.read_pressure()
 

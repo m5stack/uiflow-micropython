@@ -5,8 +5,7 @@ RELAY Unit
 
 Support the following products:
 
-
-|RELAY|              
+    |RELAY|
 
 
 Micropython Example::
@@ -35,20 +34,21 @@ Micropython Example::
     time.sleep(1)
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|relay_core_example.m5f2|
+    |relay_core_example.m5f2|
+
 
 class RelayUnit
------------------
+---------------
 
 Constructors
---------------
+------------
 
 .. class:: RelayUnit(io)
 
@@ -57,7 +57,6 @@ Constructors
     The parameters is:
         - ``io`` Define the control pin.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -68,12 +67,12 @@ Methods
 
 .. method:: RelayUnit.get_status()
 
-
     Gets the relay switch status.
 
     UIFLOW2:
 
         |get_status.svg|
+
 
 .. method:: RealyUnit.on()
 
@@ -83,6 +82,7 @@ Methods
 
         |on.svg|
 
+
 .. method:: RealyUnit.off()
 
    Turn off the relay.
@@ -91,12 +91,11 @@ Methods
 
         |off.svg|
 
+
 .. method:: RealyUnit.set_status()
 
    Set the relay status (True or false).
 
     UIFLOW2:
 
-        |set_status.svg| 
-
-
+        |set_status.svg|

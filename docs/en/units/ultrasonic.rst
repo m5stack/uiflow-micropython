@@ -1,12 +1,11 @@
 Ultrasonic Unit
-==================
+===============
 
 .. include:: ../refs/unit.ultrasonic.ref
 
 Support the following products:
 
-
-|Ultrasonic|              
+    |Ultrasonic|
 
 
 Micropython Example::
@@ -29,19 +28,18 @@ Micropython Example::
     Widgets.fillScreen(0x222222)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|ultrasonic_core_example.m5f2|
+    |ultrasonic_core_example.m5f2|
+
 
 class ULTRASONIC_I2C
----------------------
+--------------------
 
 Constructors
 --------------
@@ -53,7 +51,6 @@ Constructors
     The parameters is:
         - ``PORT`` Define an i2c port.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -64,12 +61,8 @@ Methods
 
 .. method:: ULTRASONIC_I2C.get_target_distance()
 
-
-    Acquire transmitting distance    
+    Acquire transmitting distance
 
     UIFLOW2:
 
         |get_target_distance.svg|
-
-
-

@@ -3,10 +3,9 @@ Light Unit
 
 .. include:: ../refs/unit.light.ref
 
-Support the following products:
+支持以下产品：
 
-
-|Light|              
+    |Light|
 
 
 Micropython Example::
@@ -30,21 +29,21 @@ Micropython Example::
     print(light_0.get_analog_value())
 
 
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|light_core_example.m5f2|
+    |light_core_example.m5f2|
+
 
 class Light
------------------
+-----------
 
 Constructors
---------------
+------------
 
 .. class:: Light(IO1,IO2)
 
@@ -53,7 +52,6 @@ Constructors
     参数是:
         - ``IO1,IO2`` 定义数字和模拟输出引脚。
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -64,12 +62,12 @@ Methods
 
 .. method:: Light.get_digital_value()
 
-
-    获取数字量(0或者1)。   
+    获取数字量(0或者1)。
 
     UIFLOW2:
 
         |get_digital_value.svg|
+
 
 .. method:: Light.get_analog_value()
 
@@ -79,6 +77,7 @@ Methods
 
         |get_analog_value.svg|
 
+
 .. method:: Light.get_ohm()
 
     获取阻值(返回整数)。
@@ -86,4 +85,3 @@ Methods
     UIFLOW2:
 
         |get_ohm.svg|
-

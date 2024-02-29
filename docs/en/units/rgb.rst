@@ -1,11 +1,12 @@
 RGB Unit
-==========
+========
 
 .. include:: ../refs/unit.rgb.ref
 
-The following products are supported：
+The following products are supported:
 
-|RGB| 
+    |RGB|
+
 
 Micropython Example::
 
@@ -21,16 +22,19 @@ Micropython Example::
     rgb_0.fill_color(0xff0000)
     rgb_0.set_color(0, 0x33ff33)
 
+
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|rgb_core_example.m5f2|
+    |rgb_core_example.m5f2|
+
 
 class RGB
------------
+---------
 
 Constructors
 ------------
@@ -48,7 +52,6 @@ Constructors
         |init.svg|
 
 
-
 Methods
 -------
 
@@ -60,6 +63,7 @@ Methods
 
         |set_brightness.svg|
 
+
 .. method:: RGB.fill_color(c: int)
 
     This method is used to set the color of all RGB lamp beads, and the input value is 3-byte RGB888.
@@ -68,6 +72,7 @@ Methods
 
         |fill_color.svg|
 
+
 .. method:: RGB.set_color(i, c: int)
 
     This method is used to set the specified RGB lamp bead color. The input value is the lamp bead index and 3-byte RGB888.
@@ -75,4 +80,3 @@ Methods
     UIFLOW2:
 
         |set_color.svg|
-

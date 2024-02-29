@@ -1,12 +1,11 @@
 DLight Unit
-==================
+===========
 
 .. include:: ../refs/unit.dlight.ref
 
 Support the following products:
 
-
-|Dlight|              
+    |Dlight|
 
 
 Micropython Example::
@@ -30,22 +29,21 @@ Micropython Example::
     Widgets.fillScreen(0x222222)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|dlight_core_example.m5f2|
+    |dlight_core_example.m5f2|
+
 
 class DLight
------------------
+------------
 
 Constructors
---------------
+------------
 
 .. class:: DLight(port)
 
@@ -54,7 +52,6 @@ Constructors
     The parameters is:
         - ``PORT`` Define an i2c port.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -65,12 +62,12 @@ Methods
 
 .. method:: dlight.get_lux()
 
-
    Get light lux.
 
     UIFLOW2:
 
         |get_lux.svg|
+
 
 .. method:: dlight.configure()
 
@@ -79,5 +76,3 @@ Methods
     UIFLOW2:
 
         |configure.svg|
-
-

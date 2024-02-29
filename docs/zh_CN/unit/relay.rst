@@ -5,8 +5,7 @@ RELAY Unit
 
 支持以下产品:
 
-
-|RELAY|              
+    |RELAY|
 
 
 Micropython Example::
@@ -35,17 +34,18 @@ Micropython Example::
     time.sleep(1)
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|relay_core_example.m5f2|
+    |relay_core_example.m5f2|
+
 
 class RelayUnit
------------------
+---------------
 
 Constructors
 --------------
@@ -57,7 +57,6 @@ Constructors
     参数如下：
         - ``io`` 定义控制引脚。
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -68,12 +67,12 @@ Methods
 
 .. method:: RelayUnit.get_status()
 
-
     获取继电器开关状态。
 
     UIFLOW2:
 
         |get_status.svg|
+
 
 .. method:: RealyUnit.on()
 
@@ -83,6 +82,7 @@ Methods
 
         |on.svg|
 
+
 .. method:: RealyUnit.off()
 
    打开继电器。
@@ -91,12 +91,11 @@ Methods
 
         |off.svg|
 
+
 .. method:: RealyUnit.set_status()
 
-   设置继电器状态（True 或者 false）。
+   设置继电器状态（ True 或者 false ）。
 
     UIFLOW2:
 
-        |set_status.svg| 
-
-
+        |set_status.svg|

@@ -5,7 +5,8 @@ LoRaE220 Unit
 
 Support the following products:
 
-|LoRaE220|
+    |LoRaE220|
+
 
 Micropython TX Example::
 
@@ -38,15 +39,18 @@ UIFLOW2 TX Example:
 
     |tx_example.svg|
 
+
 UIFLOW2 RX Example:
 
     |rx_example.svg|
 
+
 .. only:: builder_html
 
-|lora_e220_tx_core2.m5f2|
+    |lora_e220_tx_core2.m5f2|
 
-|lora_e220_rx_dial.m5f2|
+    |lora_e220_rx_dial.m5f2|
+
 
 Working Mode
 ------------

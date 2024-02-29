@@ -3,9 +3,10 @@ LoRaE220 Unit
 
 .. include:: ../refs/unit.lora_e220.ref
 
-Support the following products:
+支持以下产品：
 
-|LoRaE220|
+    |LoRaE220|
+
 
 Micropython TX Example::
 
@@ -38,15 +39,18 @@ UIFLOW2 TX Example:
 
     |tx_example.svg|
 
+
 UIFLOW2 RX Example:
 
     |rx_example.svg|
 
+
 .. only:: builder_html
 
-|lora_e220_tx_core2.m5f2|
+    |lora_e220_tx_core2.m5f2|
 
-|lora_e220_rx_dial.m5f2|
+    |lora_e220_rx_dial.m5f2|
+
 
 工作模式
 --------
@@ -57,27 +61,27 @@ UIFLOW2 RX Example:
     ===================== === === =========
     Mode (0-3)            M1  M0  功能描述
     --------------------- --- --- ---------
-    0:Transmission Mode   0   0   SEND: Users can enter data through the serial port, and the module will start wireless transmission.
+    0:Transmission Mode   0   0   SEND: 用户可以通过串口输入数据，模块将开始无线传输。
 
-                                  RECEIVE: The wireless receiving function of the module is enabled, and the wireless data will be output through the TXD pin of the serial port after receiving it.
+                                  RECEIVE: 模块的无线接收功能打开， 无线数据接收后将通过串口的TXD引脚输出。
     --------------------- --- --- ---------
-    1:WOR Sending Mode    0   1   SEND: Wirelessly sending data on
+    1:WOR Sending Mode    0   1   SEND: 无线发送数据打开。
 
-                                  RECEIVE: Wireless receiving data on
+                                  RECEIVE: 无线接收数据打开。
 
-                                  NOTE: Support Air Wake Up
+                                  NOTE: 支持空中唤醒。
     --------------------- --- --- ---------
-    2:WOR Receiving Mode  1   0   SEND: Wirelessly sending data off
+    2:WOR Receiving Mode  1   0   SEND: 无线发送数据关闭。
 
-                                  RECEIVE: Wireless receiving data on
+                                  RECEIVE: 无线接收数据打开。
 
-                                  NOTE: Support Air Wake Up
+                                  NOTE: 支持空中唤醒。
     --------------------- --- --- ---------
-    3:Configuration Mode  1   1   SEND: Wirelessly sending data off
+    3:Configuration Mode  1   1   SEND: 无线发送数据关闭。
 
-                                  RECEIVE: Wireless receiving data off
+                                  RECEIVE: 无线接收数据关闭。
 
-                                  CONFIGURATION: Users can access registers to configure module status
+                                  CONFIGURATION: 用户可以访问寄存器来配置模块状态。
     ===================== === === =========
 
 |working mode.jpg|
@@ -93,7 +97,7 @@ Constructors
 
     创建一个 LoRaE220JPUnit 对象.
 
-    The parameters is:
+    参数为：
         - ``port`` uart的引脚元组，其中包含: ``(tx_pin, rx_pin)``。
         - ``port_id`` uart端口ID。
 
@@ -111,7 +115,7 @@ Methods
 
     设置模块的参数。
 
-    The parameters is:
+    参数为：
         - ``own_address``: 本机地址。
         - ``own_channel``: 本机通道。
         - ``encryption_key``: 加密密钥。
@@ -191,7 +195,7 @@ Methods
 
     .. NOTE:: 当 LoRaE220JPUnit 的工作模式为 0 / 1 / 2 时可用。工作模式请参考 :ref:`工作模式表 <working-mode>` 。
 
-   停止非阻塞模式接收数据。
+    停止非阻塞模式接收数据。
 
     UIFLOW2:
 
@@ -215,7 +219,7 @@ Methods
 
     向指定的目标地址和信道发送数据。
 
-    The parameters is:
+    参数为：
 
         - ``target_address`` 目标地址，地址范围是 0x0000 - 0xFFFF ，其中 0xFFFF 是广播地址。
         - ``target_channel`` 目标信道，有效的信道范围是 0 - 30。

@@ -1,12 +1,11 @@
 OP180 Unit
-==================
+==========
 
 .. include:: ../refs/unit.op180.ref
 
 The following products are supported:
 
-
-|OP180|              
+    |OP180|
 
 
 Micropython Example::
@@ -34,20 +33,21 @@ Micropython Example::
     time.sleep(1)
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|op180_core_example.m5f2|
+    |op180_core_example.m5f2|
+
 
 class OPUnit
------------------
+------------
 
 Constructors
---------------
+------------
 
 .. class:: OP180(io)
 
@@ -56,7 +56,6 @@ Constructors
     The parameters is:
         - ``io`` is the detection pin.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -74,6 +73,7 @@ Methods
 
         |get_switch_value.svg|
 
+
 .. method:: OP180.count_value()
 
    Get the count value.
@@ -89,6 +89,3 @@ Methods
     UIFLOW2:
 
         |reset_count_value.svg|
-
-
-

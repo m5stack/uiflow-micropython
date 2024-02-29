@@ -1,12 +1,11 @@
 Dual_Button Unit
-==================
+================
 
 .. include:: ../refs/unit.dual_button.ref
 
 Support the following products:
 
-
-|Dual_Button|              
+    |Dual_Button|
 
 
 Micropython Example::
@@ -30,21 +29,20 @@ Micropython Example::
     print(dual_button_0_blue.isHolding())
 
 
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
 .. only:: builder_html
 
-|dual_button_core_example.m5f2|
+    |dual_button_core_example.m5f2|
+
 
 class DualButton
 -----------------
 
 Constructors
---------------
+------------
 
 .. class:: DualButton(IO1,IO2)
 
@@ -53,7 +51,6 @@ Constructors
     The parameters are:
         - ``IO1,IO2`` Define two key pins.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -64,12 +61,12 @@ Methods
 
 .. method:: Dual_Button.isHolding()
 
-
     The parameters are:
 
     UIFLOW2:
 
         |get_status.svg|
+
 
 .. method:: Dual_Button.setCallback()
 
@@ -79,6 +76,7 @@ Methods
 
         |setCallback.svg|
 
+
 .. method:: Dual_Button.tick()
 
     The polling method, placed in the loop function, constantly detects the state of the key.
@@ -86,4 +84,3 @@ Methods
     UIFLOW2:
 
         |tick.svg|
-

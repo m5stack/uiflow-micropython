@@ -1,12 +1,11 @@
 IR Unit
-==================
+=======
 
 .. include:: ../refs/unit.ir.ref
 
-Support the following products:
+支持以下产品：
 
-
-|IR|              
+    |IR|
 
 
 Micropython Example::
@@ -27,22 +26,21 @@ Micropython Example::
     Widgets.fillScreen(0x222222)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|ir_core_example.m5f2|
+    |ir_core_example.m5f2|
+
 
 class IR
---------------
+--------
 
 Constructors
---------------
+------------
 
 .. class:: IR(IO1,IO2)
 
@@ -51,7 +49,6 @@ Constructors
     参数是:
         - ``IO1,IO2`` 接收和发射引脚定义.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -62,12 +59,12 @@ Methods
 
 .. method:: ir.tx()
 
-
-    向某个地址发送ir信号值。    
+    向某个地址发送ir信号值。
 
     UIFLOW2:
 
         |tx.svg|
+
 
 .. method:: ir.rx_event()
 
@@ -76,4 +73,3 @@ Methods
     UIFLOW2:
 
         |rx_event.svg|
-
