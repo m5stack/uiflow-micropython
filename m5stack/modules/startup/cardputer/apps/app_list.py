@@ -146,7 +146,7 @@ class ListApp(AppBase):
             self._imgs.append(self._img2)
 
             self._ico2 = Image(use_sprite=False)
-            self._ico2.set_pos(7, 101)
+            self._ico2.set_pos(9, 101)
             self._ico2.set_size(26, 26)
             self._icos.append(self._ico2)
 
