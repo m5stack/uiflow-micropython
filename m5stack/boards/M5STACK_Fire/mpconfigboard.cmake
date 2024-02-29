@@ -1,5 +1,5 @@
 # NOTE: fire和basic共用一个bid
-# basic https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L3
+# basic https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L3
 set(BOARD_ID 1)
 
 set(SDKCONFIG_DEFAULTS
