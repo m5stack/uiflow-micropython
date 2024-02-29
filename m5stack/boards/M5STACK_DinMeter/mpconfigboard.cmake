@@ -4,7 +4,7 @@ set(IDF_TARGET esp32s3)
 set(BOARD_ID 13)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_Cardputer/sdkconfig.board
+    ./boards/M5STACK_DinMeter/sdkconfig.board
     ./boards/sdkconfig.base
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
