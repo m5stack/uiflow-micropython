@@ -8,6 +8,10 @@ CoreInk
 UI
 **********
 
+|op.png|
+
+CoreInk拥有4个按键，分别是 **上**、**下**、**中** 和 **Btn.EXT**。
+
 |flow.png|
 
 **Btn.EXT** 键循环浏览可用的应用程序。
