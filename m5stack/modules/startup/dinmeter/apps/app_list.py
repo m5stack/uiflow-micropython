@@ -276,6 +276,9 @@ class ListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         self._btn_once_event_handler(None)
 
+    async def _keycode_ctrl_event_handler(self, fw):
+        self._btn_always_event_handler(None)
+
     async def _keycode_back_event_handler(self, fw):
         pass
 
