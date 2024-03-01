@@ -11,4 +11,4 @@ Controllers
     cardputer.rst
     coreink.rst
     airq.rst
-
+    paper.rst
