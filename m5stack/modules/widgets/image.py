@@ -72,5 +72,11 @@ class Image(base.Base):
                 self._src, 0, 0, self._w, self._h, 0, 0, self._scale_x, self._scale_y
             )
 
+    def clear(self, color):
+        if self._sprite:
+            self._sprite.clear(color)
+        else:
+            self._parent.fillRect(self._x, self._y, self._w, self._h, color)
+
     def __del__(self):
         self._sprite and self._sprite.delete()

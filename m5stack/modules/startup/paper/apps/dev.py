@@ -8,7 +8,6 @@ try:
     import urequests as requests
 except ImportError:
     import requests
-from common.font import MontserratMedium18
 import os
 import binascii
 import machine
@@ -43,76 +42,79 @@ class DevApp(AppBase):
         super().__init__()
 
     def on_install(self):
-        self.descriptor = Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = Descriptor(x=493, y=1, w=48, h=181)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
         self._account_text = self._get_account()
         self._avatar_src = self._get_avatar()
+        self._mode_text = self._get_mode()
 
     def on_view(self):
-        M5.Lcd.drawImage("/system/core2/Selection/develop_selected.png", 5 + 62, 20 + 4)
-        self._origin_x = 0
-        self._origin_y = 80
-        self._lcd.clear()
+        M5.Lcd.drawImage("/system/paper/flow.png", 0, 0)
+        # self._lcd.drawImage("/system/paper/flow.png", 0, 0)
 
-        self._bg_img = Image(use_sprite=False, parent=self._lcd)
-        self._bg_img.set_pos(4, 4)
-        self._bg_img.set_size(312, 156)
-        self._bg_img.set_src(self._bg_src)
+        self._mode_label = Label(
+            "------",
+            89,
+            476,
+            w=360,
+            fg_color=0x000000,
+            bg_color=0xE3E3E3,
+            font=M5.Lcd.FONTS.DejaVu40,
+            parent=self._lcd,
+        )
+        self._mode_label.setText(self._mode_text)
 
         self._mac_label = Label(
             "aabbcc112233",
-            4 + 6,
-            4 + 57,
-            w=177,
+            89,
+            611,
+            w=360,
             fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            bg_color=0xE3E3E3,
+            font=M5.Lcd.FONTS.DejaVu40,
             parent=self._lcd,
         )
         self._mac_label.setText(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
-            4 + 6,
-            4 + 57 + 40,
+            89,
+            747,
             w=110,
             h=60,
             fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            bg_color=0xE3E3E3,
+            font=M5.Lcd.FONTS.DejaVu40,
             parent=self._lcd,
         )
         self._account_label.setText(self._account_text)
 
         self._avatar_img = Image(use_sprite=False, parent=self._lcd)
-        self._avatar_img.set_pos(130, 100)
+        self._avatar_img.set_pos(379, 679)
         self._avatar_img.set_size(56, 56)
         self._avatar_img.set_scale(0.28, 0.28)
         self._avatar_img.set_src(self._avatar_src)
 
-        self._lcd.push(self._origin_x, self._origin_y)
+        # self._lcd.push(0, 0)
 
     async def on_run(self):
         refresh = False
         while True:
-            t = self._get_bg_src()
-            if t != self._bg_src:
-                self._bg_src = t
-                self._bg_img.set_src(self._bg_src)
+            t = self._get_mode()
+            if t != self._mode_text:
+                self._mode_text = t
+                self._mode_label.setText(self._mode_text)
                 refresh = True
 
             refresh and self._mac_label.setText(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.setText(self._account_text)
-                self._lcd.push(self._origin_x, self._origin_y)
+                refresh = True
 
             t = self._get_avatar()
             if t != self._avatar_src:
@@ -125,8 +127,8 @@ class DevApp(AppBase):
             elif refresh:
                 self._avatar_img._draw(False)
 
-            if refresh:
-                self._lcd.push(self._origin_x, self._origin_y)
+            # if refresh:
+            #     self._lcd.push(0, 0)
 
             refresh = False
             await asyncio.sleep_ms(1500)
@@ -137,8 +139,7 @@ class DevApp(AppBase):
         self._task.cancel()
 
     def on_exit(self):
-        M5.Lcd.drawImage("/system/core2/Selection/develop_unselected.png", 5 + 62, 20 + 4)
-        del self._bg_img, self._mac_label, self._account_label, self._avatar_img
+        del self._mode_label, self._mac_label, self._account_label, self._avatar_img
 
     async def _click_event_handler(self, x, y, fw):
         pass
@@ -195,12 +196,12 @@ class DevApp(AppBase):
         else:
             return "/system/common/img/avatar.jpg"
 
-    def _get_bg_src(self):
+    def _get_mode(self):
         if _HAS_SERVER is True and M5Things.status() is 2:
             infos = M5Things.info()
             if infos[0] is 0:
-                return "/system/core2/Develop/private.png"
+                return "PRIVATE"
             elif infos[0] in (1, 2):
-                return "/system/core2/Develop/public.png"
+                return "PUBLIC"
         else:
-            return "/system/core2/Develop/private.png"
+            return "PRIVATE"

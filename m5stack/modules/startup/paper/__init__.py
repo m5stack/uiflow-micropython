@@ -7,6 +7,9 @@ from .framework import Framework
 import time
 
 from .apps.status_bar import StatusBarApp
+from .apps.settings import SettingsApp
+from .apps.dev import DevApp
+from .apps.app_list import ListApp
 
 class Paper_Startup:
     def __init__(self) -> None:
@@ -21,12 +24,12 @@ class Paper_Startup:
         # sprite = M5.Lcd.newCanvas(540, 960, 4, True)
 
         fw = Framework()
-        # settings_app = SettingsApp(sprite, data=self._wlan)
-        # dev_app = DevApp(sprite, data=self._wlan)
-        # list_app = ListApp(sprite)
+        settings_app = SettingsApp(M5.Lcd, data=self._wlan)
+        dev_app = DevApp(M5.Lcd, data=self._wlan)
+        list_app = ListApp(M5.Lcd)
         fw.install_bar(StatusBarApp(None, self._wlan))
-        # fw.install_launcher(dev_app)
-        # fw.install(settings_app)
-        # fw.install(dev_app)
-        # fw.install(list_app)
+        fw.install_launcher(dev_app)
+        fw.install(settings_app)
+        fw.install(dev_app)
+        fw.install(list_app)
         fw.start()

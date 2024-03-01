@@ -57,14 +57,15 @@ class StatusBarApp(AppBase):
         self._network_img = Image(use_sprite=False)
         self._network_img.set_pos(40, 925)
         self._network_img.set_size(32, 26)
-        self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
+        # self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
 
         self._cloud_img = Image(use_sprite=False)
         self._cloud_img.set_pos(80, 925)
         self._cloud_img.set_size(32, 260)
-        self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
+        # self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
 
     async def on_run(self):
+        await asyncio.sleep_ms(1000)
         while True:
             t = self._get_network_status()
             if t != self._network_status:
