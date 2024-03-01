@@ -1,0 +1,46 @@
+[tool.codespell]
+count = ""
+ignore-regex = '\b[A-Z]{3}\b'
+ignore-words-list = "ans,asend,deques,dout,extint,hsi,iput,mis,numer,shft,technic,ure"
+quiet-level = 3
+skip = """
+*/build*,\
+./.git,\
+./micropython,\
+"""
+
+[tool.ruff]
+# Exclude third-party code from linting and formatting
+extend-exclude = ["docs", "micropython", "tools", "m5stack/components/lv_bindings"]
+line-length = 99
+target-version = "py37"
+
+[tool.ruff.lint]
+extend-select = ["C9", "PLC"]
+ignore = [
+  "E401",
+  "E402",
+  "E722",
+  "E731",
+  "E741",
+  "F401",
+  "F403",
+  "F405",
+  "PLC1901",
+]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 40
+
+[tool.ruff.lint.per-file-ignores]
+# manifest.py files are evaluated with some global names pre-defined
+"m5stack/**/manifest*.py" = ["F821"]
+"m5stack/boards/**/manifes.py" = ["F821"]
+# pyi files are evaluated with some global names pre-defined
+"m5stack/**/*.pyi" = ["F821"]
+# specific files are evaluated with some global names pre-defined
+"m5stack/**/status_bar.py" = ["F821"]
+"m5stack/modules/tiny_gui/**.py" = ["F821"]
+
+[tool.ruff.format]
+exclude = ["docs/**/*.py", "micropython/**/*.py", "tools/**/*.py"]
