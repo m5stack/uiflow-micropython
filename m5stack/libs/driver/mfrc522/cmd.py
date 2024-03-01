@@ -1,3 +1,4 @@
+from micropython import const
 # MFRC522 commands. Described in chapter 10 of the datasheet.
 
 # no action, cancels current command execution
