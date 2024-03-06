@@ -1,0 +1,9 @@
+package(
+    "startup",
+    (
+        "__init__.py",
+        "stickc.py",
+    ),
+    base_path="..",
+    opt=0,
+)

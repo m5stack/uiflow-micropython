@@ -25,7 +25,8 @@ boards := \
 	M5STACK_Dial:dial                \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
-	M5STACK_DinMeter:dinmeter
+	M5STACK_DinMeter:dinmeter        \
+	M5STACK_StickC:stickc
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -51,7 +52,8 @@ BOARD_TYPE_DEF := \
 	dial        \
 	cardputer   \
 	paper       \
-	dinmeter
+	dinmeter    \
+	stickc
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -63,7 +65,7 @@ else
     $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
 endif
 
-TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB M5STACK_CoreInk
+TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB M5STACK_CoreInk M5STACK_StickC
 ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
 TINY_FLAG ?= 1
 else
