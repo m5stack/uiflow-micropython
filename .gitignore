@@ -52,3 +52,4 @@ tools/littlefs/prebuilt/
 
 dependencies.lock
 m5stack/.workenv
+managed_components/

@@ -40,6 +40,7 @@
 #include "modmachine.h"
 #include "machine_rtc.h"
 #include "uiflow_utility.h"
+#include "extmod/modmachine.h"
 
 typedef struct _machine_rtc_obj_t {
     mp_obj_base_t base;

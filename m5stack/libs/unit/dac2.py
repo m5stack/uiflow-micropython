@@ -56,7 +56,7 @@ class DAC2Unit:
             Exception: If the sensor is not found.
         """
         if not (self.addr in self.i2c.scan()):
-            raise UnitError("DAC2 Unit not found.")
+            raise UnitError("DAC2 Unit/Hat not found.")
 
     def setDACOutputVoltageRange(self, _range: int = 0):
         """!

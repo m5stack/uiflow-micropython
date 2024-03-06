@@ -8,3 +8,7 @@ Controllers
     atoms3-lite.rst
     atoms3u.rst
     stamps3.rst
+    cardputer.rst
+    coreink.rst
+    airq.rst
+    paper.rst

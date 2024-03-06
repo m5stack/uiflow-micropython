@@ -54,6 +54,7 @@ mp_obj_t m5_begin(void) {
 
     // initial
     M5.begin(cfg);
+    M5.In_I2C.release();
 
     M5.Display.clear();
     // default display
@@ -77,7 +78,7 @@ mp_obj_t m5_end(void) {
 }
 
 mp_obj_t m5_getBoard(void) {
-    return mp_obj_new_int(M5.getBoard());
+    return mp_obj_new_int(BOARD_ID);
 }
 /********************************Configuration*********************************/
 

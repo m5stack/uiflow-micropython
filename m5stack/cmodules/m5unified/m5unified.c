@@ -18,6 +18,8 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5AtomS3),        MP_ROM_INT(11) },
     { MP_ROM_QSTR(MP_QSTR_M5Dial),          MP_ROM_INT(12) },
     { MP_ROM_QSTR(MP_QSTR_M5DinMeter),      MP_ROM_INT(13) },
+    { MP_ROM_QSTR(MP_QSTR_M5Cardputer),     MP_ROM_INT(14) },
+    { MP_ROM_QSTR(MP_QSTR_M5AirQ),          MP_ROM_INT(15) },
     // non display boards
     { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(128) },
     { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(129) },

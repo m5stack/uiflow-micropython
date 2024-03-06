@@ -301,7 +301,7 @@ class MFRC522:
     ):
         _validBits = 0
 
-        txLastBits = validBits if validBits != None else 0
+        txLastBits = validBits if validBits is not None else 0
         bitFraming = (rxAlign << 4) + txLastBits
 
         self.pcd_write_register(COMMAND_REG, PCD_IDLE)
@@ -345,7 +345,7 @@ class MFRC522:
             backData = bytearray(l)
             self.pcd_read_bytes(FIFODATA_REG, backData, rxAlign)
             _validBits = self.pcd_read_register(CONTROL_REG) & 0x07
-            if validBits != None:
+            if validBits is not None:
                 validBits = _validBits
 
         # print("backData:", backData)
@@ -1072,7 +1072,7 @@ class MFRC522:
 
         validBits = 8
         status, response1, validBits = self.pcd_transceive_data(
-            bytearray([0x43]), validBits=validBits, rxAlign=0, rxAlign=False
+            bytearray([0x43]), validBits=validBits, rxAlign=0, checkCRC=False
         )
         if response1:
             response[: len(response1)] = response1

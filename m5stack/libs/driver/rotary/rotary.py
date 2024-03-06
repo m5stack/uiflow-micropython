@@ -8,6 +8,7 @@
 #   https://github.com/MikeTeachman/micropython-rotary
 
 import micropython
+from micropython import const
 
 _DIR_CW = const(0x10)  # Clockwise step
 _DIR_CCW = const(0x20)  # Counter-clockwise step

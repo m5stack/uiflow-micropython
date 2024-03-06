@@ -90,6 +90,10 @@ function ci_esp32_idf44_setup {
     ci_esp32_setup_helper 014ee65f1f5e291230e398c4913020be9a6278a1
 }
 
+function ci_esp32_idf504_setup {
+    ci_esp32_setup_helper 8fbf4ba6058bcf736317d8a7aa75d0578563c38b
+}
+
 function ci_esp32_build {
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
@@ -127,6 +131,7 @@ function ci_esp32_build {
 function ci_esp32_nightly_build {
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
@@ -142,6 +147,9 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Capsule pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Dial pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AirQS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreInk pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Cardputer pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE

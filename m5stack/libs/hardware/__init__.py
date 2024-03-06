@@ -11,3 +11,5 @@ except ImportError:
 from .ir import IR
 from .rfid import RFID
 from .rotary import Rotary
+from .keyboard import Keyboard
+from .matrix_keyboard import MatrixKeyboard

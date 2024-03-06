@@ -3,7 +3,11 @@ import M5
 from widgets.image import Image
 from widgets.label import Label
 import uasyncio as asyncio
-import urequests as requests
+
+try:
+    import urequests as requests
+except ImportError:
+    import requests
 from common.font import MontserratMedium18
 import os
 import binascii
