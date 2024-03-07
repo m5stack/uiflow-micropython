@@ -7,6 +7,7 @@ package(
         "relay_4.py",
         "module_helper.py",
         "encoder4_motor.py",
+        "pps.py",
     ),
     base_path="..",
     opt=0,

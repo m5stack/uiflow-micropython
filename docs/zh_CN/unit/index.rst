@@ -6,6 +6,7 @@ Unit
 
     env.rst
     angle.rst
+    dac2.rst
     rgb.rst
     earth.rst
     adc.rst

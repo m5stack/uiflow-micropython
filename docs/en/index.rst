@@ -9,6 +9,7 @@ MicroPython documentation and references
     controllers/index.rst
     software/index.rst
     hardware/index.rst
+    module/index.rst
     units/index.rst
     quick-reference/index.rst
     COPYRIGHT.rst
