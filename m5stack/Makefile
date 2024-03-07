@@ -13,17 +13,17 @@ boards := \
 	M5STACK_CoreS3:cores3            \
 	M5STACK_AtomS3U:atoms3u          \
 	M5STACK_Core2:core2              \
-	M5STACK_Tough:tough              \
+	M5STACK_Tough:core2              \
 	M5STACK_StickC_PLUS2:stickcplus2 \
 	M5STACK_StickC_PLUS:stickcplus   \
 	M5STACK_Fire:fire                \
 	M5STACK_Basic:basic              \
 	M5STACK_Basic_4MB:basic          \
 	M5STACK_Capsule:capsule          \
-	M5STACK_CoreInk:coreink			 \
-	M5STACK_AirQS3:airq 				 \
+	M5STACK_CoreInk:coreink          \
+	M5STACK_AirQS3:airq              \
 	M5STACK_Dial:dial                \
-	M5STACK_Cardputer:cardputer		\
+	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper
 
 define find_board
@@ -45,10 +45,10 @@ BOARD_TYPE_DEF := \
 	fire        \
 	basic       \
 	capsule     \
-	coreink		\
-	airq		\
+	coreink     \
+	airq        \
 	dial        \
-	cardputer	\
+	cardputer   \
 	paper
 
 # Select the board type to build, default is None
