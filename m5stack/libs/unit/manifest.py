@@ -51,6 +51,7 @@ package(
         "vmeter.py",
         "ameter.py",
         "weight_i2c.py",
+        "kmeter_iso.py",
     ),
     base_path="..",
     opt=0,

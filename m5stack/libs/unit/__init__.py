@@ -49,6 +49,7 @@ _attrs = {
     "VMeterUnit": "vmeter",
     "AMeterUnit": "ameter",
     "WEIGHT_I2CUnit": "weight_i2c",
+    "KMETER_ISOUnit": "kmeter_iso",
 }
 
 
