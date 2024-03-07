@@ -16,7 +16,7 @@ line-length = 99
 target-version = "py37"
 
 [tool.ruff.lint]
-extend-select = ["C9", "PLC"]
+extend-select = ["C9", "PLC", "N802", "N806"]
 ignore = [
   "E401",
   "E402",
