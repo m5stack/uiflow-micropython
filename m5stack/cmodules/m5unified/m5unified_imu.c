@@ -32,6 +32,7 @@ const mp_obj_type_t mp_m5_imu_type = {
 // -------- IMU wrapper
 MAKE_METHOD_0(imu, getAccel);
 MAKE_METHOD_0(imu, getGyro);
+MAKE_METHOD_0(imu, getMag);
 MAKE_METHOD_0(imu, isEnabled);
 MAKE_METHOD_0(imu, getType);
 
@@ -39,6 +40,7 @@ STATIC const mp_rom_map_elem_t imu_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_IMU_TYPE),       MP_ROM_PTR(&mp_m5_imu_type) },
     MAKE_TABLE(imu, getAccel),
     MAKE_TABLE(imu, getGyro),
+    MAKE_TABLE(imu, getMag),
     MAKE_TABLE(imu, isEnabled),
     MAKE_TABLE(imu, getType),
 };

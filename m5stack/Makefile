@@ -13,17 +13,20 @@ boards := \
 	M5STACK_CoreS3:cores3            \
 	M5STACK_AtomS3U:atoms3u          \
 	M5STACK_Core2:core2              \
-	M5STACK_Tough:tough              \
+	M5STACK_Tough:core2              \
 	M5STACK_StickC_PLUS2:stickcplus2 \
 	M5STACK_StickC_PLUS:stickcplus   \
 	M5STACK_Fire:fire                \
 	M5STACK_Basic:basic              \
 	M5STACK_Basic_4MB:basic          \
 	M5STACK_Capsule:capsule          \
-	M5STACK_CoreInk:coreink			 \
-	M5STACK_AirQS3:airq 				 \
+	M5STACK_CoreInk:coreink          \
+	M5STACK_AirQ:airq                \
 	M5STACK_Dial:dial                \
-	M5STACK_Cardputer:cardputer
+	M5STACK_Cardputer:cardputer      \
+	M5STACK_Paper:paper              \
+	M5STACK_DinMeter:dinmeter        \
+	M5STACK_StickC:stickc
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -44,10 +47,13 @@ BOARD_TYPE_DEF := \
 	fire        \
 	basic       \
 	capsule     \
-	coreink		\
-	airq		\
+	coreink     \
+	airq        \
 	dial        \
-	cardputer
+	cardputer   \
+	paper       \
+	dinmeter    \
+	stickc
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -59,7 +65,7 @@ else
     $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
 endif
 
-TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB M5STACK_CoreInk
+TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB M5STACK_CoreInk M5STACK_StickC
 ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
 TINY_FLAG ?= 1
 else
@@ -240,12 +246,16 @@ submodules:
 patch:
 	cd ./components/lv_bindings && \
 	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
+	cd ./../micropython && \
+	git apply ./../m5stack/patches/0003-modtime-Add-timezone.patch && cd -
 	cd ./components/M5Unified/M5Unified && \
 	git apply ./../../../patches/2003-Support-LTR553.patch && cd -
 
 # Unapply patches
 unpatch:
-	cd ./components/lv_bindings && \
-	git apply -R ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
 	cd ./components/M5Unified/M5Unified && \
 	git apply -R ./../../../patches/2003-Support-LTR553.patch && cd -
+	cd ./../micropython && \
+	git apply -R ./../m5stack/patches/0003-modtime-Add-timezone.patch && cd -
+	cd ./components/lv_bindings && \
+	git apply -R ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -

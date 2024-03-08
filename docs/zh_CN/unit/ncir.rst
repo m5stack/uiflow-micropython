@@ -1,12 +1,11 @@
 NCIR Unit
-==================
+=========
 
 .. include:: ../refs/unit.ncir.ref
 
-Support the following products:
+支持以下产品：
 
-
-|NCIR|              
+    |NCIR|
 
 
 Micropython Example::
@@ -32,20 +31,21 @@ Micropython Example::
     print(ncir_0.get_object_temperature())
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|ncir_core_example.m5f2|
+    |ncir_core_example.m5f2|
+
 
 class NCIRUnit
------------------
+--------------
 
 Constructors
---------------
+------------
 
 .. class:: NCIRUnit(i2c)
 
@@ -54,7 +54,6 @@ Constructors
     The parameters is:
         - ``i2c`` 定义i2c引脚。
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -65,12 +64,12 @@ Methods
 
 .. method:: ncir.get_ambient_temperature()
 
-
-    获取环境温度。 
+    获取环境温度。
 
     UIFLOW2:
 
         |get_ambient_temperature.svg|
+
 
 .. method:: ncir.get_object_temperature()
 
@@ -79,5 +78,3 @@ Methods
     UIFLOW2:
 
         |get_object_temperature.svg|
-
-

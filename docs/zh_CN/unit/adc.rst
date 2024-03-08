@@ -1,12 +1,11 @@
 ADC Unit
-==================
+========
 
 .. include:: ../refs/unit.adc.ref
 
-Support the following products:
+支持以下产品：
 
-
-|ADC|              
+    |ADC|
 
 
 Micropython Example::
@@ -26,22 +25,21 @@ Micropython Example::
     time.sleep(1)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|adc_core_example.m5f2|
+    |adc_core_example.m5f2|
+
 
 class ADCUnit
---------------
+-------------
 
 Constructors
---------------
+------------
 
 .. class:: ADCUnit(i2c0)
 
@@ -50,7 +48,6 @@ Constructors
     参数是:
         - ``I2C0`` 是I2C端口.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -61,12 +58,12 @@ Methods
 
 .. method:: ADCUnit.get_value()
 
-
-    获取adc读取的原始值。    
+    获取adc读取的原始值。
 
     UIFLOW2:
 
         |get_value.svg|
+
 
 .. method:: ADCUnit.get_voltage()
 
@@ -76,6 +73,7 @@ Methods
 
         |get_voltage.svg|
 
+
 .. method:: ADCUnit.get_raw_value()
 
     读取原始数值。
@@ -83,6 +81,7 @@ Methods
     UIFLOW2:
 
         |get_raw_value.svg|
+
 
 .. method:: ADCUnit.get_operating_mode()
 
@@ -92,6 +91,7 @@ Methods
 
         |get_operating_mode.svg|
 
+
 .. method:: ADCUnit.get_data_rate()
 
     获取数据的读取速率。
@@ -100,13 +100,15 @@ Methods
 
         |get_data_rate.svg|
 
+
 .. method:: ADCUnit.get_gain()
 
     获取数据的增益倍数。
 
     UIFLOW2:
 
-        |get_gain.svg|   
+        |get_gain.svg|
+
 
 .. method:: ADCUnit.operating_mode()
 
@@ -114,7 +116,8 @@ Methods
 
     UIFLOW2:
 
-        |set_operating_mode.svg|                           
+        |set_operating_mode.svg|
+
 
 .. method:: ADCUnit.data_rate()
 
@@ -122,7 +125,8 @@ Methods
 
     UIFLOW2:
 
-        |set_data_rate.svg|  
+        |set_data_rate.svg|
+
 
 .. method:: ADCUnit.gain()
 
@@ -130,4 +134,4 @@ Methods
 
     UIFLOW2:
 
-        |set_gain.svg|          
+        |set_gain.svg|

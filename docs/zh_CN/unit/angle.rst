@@ -5,7 +5,7 @@ Angle Unit
 
 支持以下产品：
 
-|Angle| 
+    |Angle|
 
 Micropython Example::
 
@@ -21,13 +21,16 @@ Micropython Example::
         print(angle_0.get_voltage())
         print(angle_0.get_value())
 
+
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|angle_core_example.m5f2|
+    |angle_core_example.m5f2|
+
 
 class Angle
 -----------
@@ -47,7 +50,6 @@ Constructors
         |init.svg|
 
 
-
 Methods
 -------
 
@@ -59,6 +61,7 @@ Methods
 
         |get_value.svg|
 
+
 .. method:: Angle.get_voltage()
 
     此方法允许读取Angle的电压值, 返回值为一个浮点型数值。
@@ -66,4 +69,3 @@ Methods
     UIFLOW2:
 
         |get_voltage.svg|
-

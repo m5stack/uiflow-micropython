@@ -5,3 +5,4 @@ Module
     :maxdepth: 1
 
     dualkmeter.rst
+    pps.rst

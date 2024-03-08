@@ -124,7 +124,7 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
         case ESP_ERR_INVALID_STATE:
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
-            //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+            //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
             if (self->host != SPI2_HOST) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI device already freed"));
                 return;
@@ -133,7 +133,7 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
 
     // NOTE:
     //     core2和cores3的屏幕和sd卡复用一个spi，
-    //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+    //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
     if (self->host != SPI2_HOST) {
         switch (spi_bus_free(self->host)) {
             case ESP_ERR_INVALID_ARG:
@@ -275,7 +275,7 @@ STATIC void machine_hw_spi_init_internal(
         case ESP_ERR_INVALID_STATE:
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
-            //     所以这里不需要对VSPI_HOST和SPI3_HOST进行初始化。
+            //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
             if (self->host != SPI2_HOST) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI host already in use"));
                 return;

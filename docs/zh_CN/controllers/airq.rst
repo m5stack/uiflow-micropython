@@ -2,7 +2,7 @@
 AirQ
 #########
 
-.. include:: ../refs/controllers.coreink.ref
+.. include:: ../refs/controllers.airq.ref
 
 **********
 UI

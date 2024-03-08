@@ -43,28 +43,18 @@ PATHS = [
     "m5stack/components/M5Unified/*.cpp",
     "m5stack/components/m5things/*.[ch]",
     "tools/littlefs/*.[ch]",
-    # Python
-    "m5stack/boards/**/*.py",
-    "m5stack/fs/**/*.py",
-    "m5stack/libs/**/*.py",
-    "m5stack/modules/**/*.py",
-    "tools/*.py",
-    "tests/**/*.py",
-    "examples/**/*.py",
+]
+
+EXCLUSIONS = [
+    # micropython upstream files that we don't want to format
+    "micropython/*",
+    "tools/*",
 ]
 
 # Path to repo top-level dir.
 TOP = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 UNCRUSTIFY_CFG = os.path.join(TOP, "tools/uncrustify.cfg")
-
-C_EXTS = (
-    ".c",
-    ".cpp",
-    ".h",
-    ".hpp",
-)
-PY_EXTS = (".py",)
 
 
 def list_files(paths, exclusions=None, prefix=""):
@@ -123,6 +113,11 @@ def main():
     cmd_parser.add_argument("-c", action="store_true", help="Format C code only")
     cmd_parser.add_argument("-p", action="store_true", help="Format Python code only")
     cmd_parser.add_argument("-v", action="store_true", help="Enable verbose output")
+    cmd_parser.add_argument(
+        "-f",
+        action="store_true",
+        help="Filter files provided on the command line against the default list of files to check.",
+    )
     cmd_parser.add_argument("files", nargs="*", help="Run on specific globs")
     args = cmd_parser.parse_args()
 
@@ -134,19 +129,24 @@ def main():
     files = []
     if args.files:
         files = list_files(args.files)
+        if args.f:
+            # Filter against the default list of files. This is a little fiddly
+            # because we need to apply both the inclusion globs given in PATHS
+            # as well as the EXCLUSIONS, and use absolute paths
+            files = set(os.path.abspath(f) for f in files)
+            all_files = set(list_files(PATHS, EXCLUSIONS, TOP))
+            if args.v:  # In verbose mode, log any files we're skipping
+                for f in files - all_files:
+                    print("Not checking: {}".format(f))
+            files = list(files & all_files)
     else:
-        files = list_files(PATHS, None, TOP)
-
-    # Extract files matching a specific language.
-    def lang_files(exts):
-        for file in files:
-            if os.path.splitext(file)[1].lower() in exts:
-                yield file
+        files = list_files(PATHS, EXCLUSIONS, TOP)
 
     # Run tool on N files at a time (to avoid making the command line too long).
-    def batch(cmd, files, N=200):
+    def batch(cmd, N=200):
+        files_iter = iter(files)
         while True:
-            file_args = list(itertools.islice(files, N))
+            file_args = list(itertools.islice(files_iter, N))
             if not file_args:
                 break
             subprocess.check_call(cmd + file_args)
@@ -156,18 +156,19 @@ def main():
         command = ["uncrustify", "-c", UNCRUSTIFY_CFG, "-lC", "--no-backup"]
         if not args.v:
             command.append("-q")
-        batch(command, lang_files(C_EXTS))
-        for file in lang_files(C_EXTS):
+        batch(command)
+        for file in files:
             fixup_c(file)
 
-    # Format Python files with black.
+    # Format Python files with "ruff format" (using config in pyproject.toml).
     if format_py:
-        command = ["black", "--fast", "--line-length=99"]
+        command = ["ruff", "format"]
         if args.v:
             command.append("-v")
         else:
             command.append("-q")
-        batch(command, lang_files(PY_EXTS))
+        command.append(".")
+        subprocess.check_call(command, cwd=TOP)
 
 
 if __name__ == "__main__":

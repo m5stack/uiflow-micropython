@@ -1,5 +1,7 @@
-.. |applist.png| image:: ../../_static/controllers/coreink/AppList.png
+.. |applist.png| image:: ../../_static/controllers/coreink/coreink_applist.png
 
-.. |config.png| image:: ../../_static/controllers/coreink/Config.png
+.. |config.png| image:: ../../_static/controllers/coreink/coreink_config.png
 
-.. |flow.png| image:: ../../_static/controllers/coreink/Flow.png
+.. |flow.png| image:: ../../_static/controllers/coreink/coreink_flow.png
+
+.. |op.png| image:: ../../_static/controllers/coreink/coreink_op.png

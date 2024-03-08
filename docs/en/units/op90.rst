@@ -1,12 +1,11 @@
 OP90 Unit
-==================
+=========
 
 .. include:: ../refs/unit.op90.ref
 
 The following products are supported:
 
-
-|OP90|              
+|OP90|
 
 
 Micropython Example::
@@ -37,20 +36,21 @@ Micropython Example::
     time.sleep(1)
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|op90_core_example.m5f2|
+    |op90_core_example.m5f2|
+
 
 class OPUnit
------------------
+------------
 
 Constructors
---------------
+------------
 
 .. class:: OPUnit(io)
 
@@ -59,7 +59,6 @@ Constructors
     The parameters is:
         - ``io`` is the detection pin.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -70,12 +69,12 @@ Methods
 
 .. method:: OPUnit.get_value()
 
-
     Gets the switch status.
 
     UIFLOW2:
 
         |get_switch_value.svg|
+
 
 .. method:: OPUnit.count_value()
 
@@ -85,6 +84,7 @@ Methods
 
         |get_count_value.svg|
 
+
 .. method:: OPUnit.count_reset()
 
     Reset the meter value.
@@ -92,6 +92,3 @@ Methods
     UIFLOW2:
 
         |reset_count_value.svg|
-
-
-

@@ -1,12 +1,11 @@
 PIR Unit
-==================
+========
 
 .. include:: ../refs/unit.pir.ref
 
-Support the following products:
+支持以下产品：
 
-
-|PIR|              
+    |PIR|
 
 
 Micropython Example::
@@ -31,20 +30,21 @@ Micropython Example::
     print(pir_0.get_status())
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|pir_core_example.m5f2|
+    |pir_core_example.m5f2|
+
 
 class PIR
------------------
+---------
 
 Constructors
---------------
+------------
 
 .. class:: PIR(IO1,IO2)
 
@@ -53,7 +53,6 @@ Constructors
     参数是:
         - ``IO1,IO2`` I2C引脚。
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -64,12 +63,12 @@ Methods
 
 .. method:: PIR.get_status()
 
-
-    获取检测状态    
+    获取检测状态
 
     UIFLOW2:
 
         |get_status.svg|
+
 
 .. method:: PIR.enable_irq()
 
@@ -79,6 +78,7 @@ Methods
 
         |enable_irq.svg|
 
+
 .. method:: PIR.disable_irq()
 
     关闭人体检测功能。
@@ -86,6 +86,7 @@ Methods
     UIFLOW2:
 
         |disable_irq.svg|
+
 
 .. method:: PIR.set_callback()
 

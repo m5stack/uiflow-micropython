@@ -1,12 +1,11 @@
 Ultrasonic Unit
-==================
+===============
 
 .. include:: ../refs/unit.ultrasonic.ref
 
 Support the following products:
 
-
-|Ultrasonic|              
+    |Ultrasonic|
 
 
 Micropython Example::
@@ -29,22 +28,21 @@ Micropython Example::
     Widgets.fillScreen(0x222222)
 
 
-
-
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|ultrasonic_core_example.m5f2|
+    |ultrasonic_core_example.m5f2|
+
 
 class ULTRASONIC_I2C
-----------------------
+--------------------
 
 Constructors
---------------
+------------
 
 .. class:: ULTRASONIC_I2C(PORT)
 
@@ -53,7 +51,6 @@ Constructors
     参数是:
         - ``PORT`` 定义i2c端口。
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -65,11 +62,8 @@ Methods
 .. method:: ULTRASONIC_I2C.get_target_distance()
 
 
-    获取发射距离    
+    获取发射距离
 
     UIFLOW2:
 
         |get_target_distance.svg|
-
-
-

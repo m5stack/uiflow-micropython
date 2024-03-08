@@ -58,7 +58,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/mphalport.c
     ${PROJECT_DIR}/../micropython/ports/esp32/fatfs_port.c
     ${PROJECT_DIR}/../micropython/ports/esp32/help.c
-    ${PROJECT_DIR}/modutime.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/modtime.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_bitstream.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_timer.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_pin.c

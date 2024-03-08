@@ -5,8 +5,7 @@ EARTH Unit
 
 支持以下产品：
 
-
-|EARTH|              
+    |EARTH|
 
 
 Micropython Example::
@@ -27,7 +26,8 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-|earth_core_example.m5f2|
+    |earth_core_example.m5f2|
+
 
 class Earth
 ------------
@@ -58,6 +58,7 @@ Methods
 
         |get_analog_value.svg|
 
+
 .. method:: EARTH.get_digital_value()
 
     此方法允许读取EARTH采集的数字量并返回一个整数型数值。范围为0或者1。
@@ -65,6 +66,7 @@ Methods
     UIFLOW2:
 
         |get_digital_value.svg|
+
 
 .. method:: EARTH.get_voltage_mv()
 
@@ -74,6 +76,7 @@ Methods
 
         |get_voltage_mv.svg|
 
+
 .. method:: EARTH.humidity()
 
     此方法允许读取EARTH采集的电压值并返回一个浮点型数值。范围0.0-1.0。
@@ -82,10 +85,11 @@ Methods
 
         |humidity.svg|
 
+
 .. method:: EARTH.set_calibrate()
 
     此方法允许设置校准EARTH传感器的最大（0-3300）和最小值（0-3300）。
 
     UIFLOW2:
 
-        |set_calibrate.svg|        
+        |set_calibrate.svg|

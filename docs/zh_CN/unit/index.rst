@@ -6,6 +6,7 @@ Unit
 
     env.rst
     angle.rst
+    dac2.rst
     rgb.rst
     earth.rst
     adc.rst
@@ -19,3 +20,4 @@ Unit
     relay.rst
     op90.rst
     op180.rst
+    lora_e220.rst

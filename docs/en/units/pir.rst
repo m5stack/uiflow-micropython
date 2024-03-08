@@ -1,12 +1,11 @@
 PIR Unit
-==================
+========
 
 .. include:: ../refs/unit.pir.ref
 
 Support the following products:
 
-
-|PIR|              
+    |PIR|
 
 
 Micropython Example::
@@ -31,20 +30,21 @@ Micropython Example::
     print(pir_0.get_status())
 
 
-
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|pir_core_example.m5f2|
+    |pir_core_example.m5f2|
+
 
 class PIR
------------------
+---------
 
 Constructors
---------------
+------------
 
 .. class:: PIR(IO1,IO2)
 
@@ -53,7 +53,6 @@ Constructors
     The parameters are:
         - ``IO1,IO2`` I2C pin.
 
- 
     UIFLOW2:
 
         |init.svg|
@@ -64,12 +63,12 @@ Methods
 
 .. method:: PIR.get_status()
 
-
-    Get detection status.  
+    Get detection status.
 
     UIFLOW2:
 
         |get_status.svg|
+
 
 .. method:: PIR.enable_irq()
 
@@ -79,6 +78,7 @@ Methods
 
         |enable_irq.svg|
 
+
 .. method:: PIR.disable_irq()
 
     Disable Human detection function.
@@ -86,6 +86,7 @@ Methods
     UIFLOW2:
 
         |disable_irq.svg|
+
 
 .. method:: PIR.set_callback()
 

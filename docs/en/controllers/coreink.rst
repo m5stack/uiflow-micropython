@@ -8,6 +8,10 @@ CoreInk
 UI
 **********
 
+|op.png|
+
+CoreInk has 4 buttons, **Up**, **Down**, **Center**, and **Btn.EXT**.
+
 |flow.png|
 
 **Btn.EXT** key cycles through the available applications.

@@ -30,32 +30,48 @@ const mp_obj_type_t mp_power_port_mask_enum = {
 };
 #endif
 
-MAKE_METHOD_KW(power, setExtPower, 1);
-MAKE_METHOD_KW(power, setLed, 1);
-MAKE_METHOD_0(power, powerOff);
-MAKE_METHOD_0(power, getBatteryLevel);
-MAKE_METHOD_KW(power, setBatteryCharge, 1);
-MAKE_METHOD_KW(power, setChargeCurrent, 1);
 MAKE_METHOD_KW(power, setExtOutput, 1);
 MAKE_METHOD_0(power, getExtOutput);
 MAKE_METHOD_KW(power, setUsbOutput, 1);
 MAKE_METHOD_0(power, getUsbOutput);
+MAKE_METHOD_KW(power, setLed, 1);
+MAKE_METHOD_0(power, powerOff);
+MAKE_METHOD_V(power, timerSleep, 2, 5);
+MAKE_METHOD_KW(power, deepSleep, 1);
+MAKE_METHOD_KW(power, lightSleep, 1);
+MAKE_METHOD_0(power, getBatteryLevel);
+MAKE_METHOD_KW(power, setBatteryCharge, 1);
+MAKE_METHOD_KW(power, setChargeCurrent, 1);
+MAKE_METHOD_1(power, setChargeVoltage);
 MAKE_METHOD_0(power, isCharging);
+MAKE_METHOD_0(power, getBatteryVoltage);
+MAKE_METHOD_0(power, getBatteryCurrent);
+MAKE_METHOD_0(power, getKeyState);
+MAKE_METHOD_1(power, setVibration);
+MAKE_METHOD_0(power, getType);
 
 STATIC const mp_rom_map_elem_t power_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_PORT),        MP_ROM_PTR(&mp_power_port_mask_enum) },
     // control functions
-    MAKE_TABLE(power, setExtPower),
-    MAKE_TABLE(power, setLed),
-    MAKE_TABLE(power, powerOff),
-    MAKE_TABLE(power, getBatteryLevel),
-    MAKE_TABLE(power, setBatteryCharge),
-    MAKE_TABLE(power, setChargeCurrent),
     MAKE_TABLE(power, setExtOutput),
     MAKE_TABLE(power, getExtOutput),
     MAKE_TABLE(power, setUsbOutput),
     MAKE_TABLE(power, getUsbOutput),
+    MAKE_TABLE(power, setLed),
+    MAKE_TABLE(power, powerOff),
+    MAKE_TABLE(power, timerSleep),
+    MAKE_TABLE(power, deepSleep),
+    MAKE_TABLE(power, lightSleep),
+    MAKE_TABLE(power, getBatteryLevel),
+    MAKE_TABLE(power, setBatteryCharge),
+    MAKE_TABLE(power, setChargeCurrent),
+    MAKE_TABLE(power, setChargeVoltage),
     MAKE_TABLE(power, isCharging),
+    MAKE_TABLE(power, getBatteryVoltage),
+    MAKE_TABLE(power, getBatteryCurrent),
+    MAKE_TABLE(power, getKeyState),
+    MAKE_TABLE(power, setVibration),
+    MAKE_TABLE(power, getType),
 };
 
 STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);

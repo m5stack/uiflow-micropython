@@ -1,4 +1,4 @@
-# tough https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L10
+# tough https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L10
 set(BOARD_ID 8)
 
 set(SDKCONFIG_DEFAULTS

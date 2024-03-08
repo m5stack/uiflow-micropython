@@ -102,8 +102,9 @@ class NEC_ABC(IR_RX):
                     raise RuntimeError(self.BADADDR)
                 addr |= val & 0xFF00  # pass assumed 16 bit address to callback
             self._addr = addr
+            self._cmd = cmd
         except RuntimeError as e:
-            cmd = e.args[0]
+            cmd = self._cmd if e.args[0] == self.REPEAT else -1
             addr = self._addr if cmd == self.REPEAT else 0  # REPEAT uses last address
         # Set up for new data burst and run user callback
         self.do_callback(cmd, addr, 0, self.REPEAT)

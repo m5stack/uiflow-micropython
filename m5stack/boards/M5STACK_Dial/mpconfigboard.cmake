@@ -1,10 +1,10 @@
 set(IDF_TARGET esp32s3)
 
-# dial https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L14
+# dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L14
 set(BOARD_ID 12)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_S3_8MB/sdkconfig.board
+    ./boards/M5STACK_Dial/sdkconfig.board
     ./boards/sdkconfig.base
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram

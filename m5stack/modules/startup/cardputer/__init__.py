@@ -4,7 +4,6 @@ from .apps.dev import DevApp
 from .apps.launcher import LauncherApp
 from .apps.app_run import RunApp
 from .apps.app_list import ListApp
-from .apps.sidebar import SidebarApp
 from .apps.statusbar import StatusBarApp
 from .apps.ezdata import EzDataApp
 from startup import Startup
@@ -28,7 +27,7 @@ class Cardputer_Startup:
 
         M5.Lcd.clear(0x333333)
         fw = Framework()
-        sidebar = SidebarApp()
+        # sidebar = SidebarApp()
         setting_app = SettingsApp(None, data=self._wlan)
         dev_app = DevApp(None, data=self._wlan)
         launcher = LauncherApp()
@@ -36,7 +35,7 @@ class Cardputer_Startup:
         list_app = ListApp(None, data=self._wlan)
         ezdata_app = EzDataApp(None, data=self._wlan)
         fw.install_bar(StatusBarApp(None, self._wlan))
-        fw.install_sidebar(sidebar)
+        # fw.install_sidebar(sidebar)
         fw.install_launcher(launcher)
         fw.install(launcher)
         fw.install(setting_app)

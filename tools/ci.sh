@@ -130,26 +130,31 @@ function ci_esp32_build {
 
 function ci_esp32_nightly_build {
     source esp-idf/export.sh
+    make ${MAKEOPTS} -C m5stack unpatch
     make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack patch
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AirQ pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3_Lite pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3U pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Core2 pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Capsule pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Dial pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AirQS3 pack_all
-    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreInk pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Cardputer pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Core2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreInk pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Dial pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_DinMeter pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Paper pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE

@@ -78,23 +78,23 @@ namespace m5
         {
             case BTN_TYPE_WAS_CLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = args[ARG_cb].u_obj;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_DOUBLECLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = args[ARG_cb].u_obj;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_HOLD:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasHold = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = args[ARG_cb].u_obj;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_PRESSED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasPressed = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = args[ARG_cb].u_obj;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = args[ARG_cb].u_obj;
                 break;
             case BTN_TYPE_WAS_RELEASED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasReleased = 1;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = args[ARG_cb].u_obj;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = args[ARG_cb].u_obj;
                 break;
             default:
                 break;
@@ -115,23 +115,23 @@ namespace m5
         {
             case BTN_TYPE_WAS_CLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 0;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = NULL;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = NULL;
                 break;
             case BTN_TYPE_WAS_DOUBLECLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 0;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = NULL;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = NULL;
                 break;
             case BTN_TYPE_WAS_HOLD:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasHold = 0;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = NULL;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasHold_cb = NULL;
                 break;
             case BTN_TYPE_WAS_PRESSED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasPressed = 0;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = NULL;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasPressed_cb = NULL;
                 break;
             case BTN_TYPE_WAS_RELEASED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasReleased = 0;
-                ((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = NULL;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasReleased_cb = NULL;
                 break;
             default:
                 break;

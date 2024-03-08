@@ -5,9 +5,10 @@ ENV Unit
 
 支持以下产品：
 
-================== ================== ==================
-|ENV|              |ENV II|           |ENV III|
-================== ================== ==================
+    ================== ================== ==================
+    |ENV|              |ENV II|           |ENV III|
+    ================== ================== ==================
+
 
 Micropython Example::
 
@@ -27,13 +28,14 @@ Micropython Example::
     print(env_0.read_humidity())
     print(env_0.read_pressure())
 
+
 UIFLOW2 Example:
 
     |example.svg|
 
 .. only:: builder_html
 
-|env_cores3_example.m5f2|
+    |env_cores3_example.m5f2|
 
 class ENVUnit
 -------------
@@ -70,6 +72,7 @@ Methods
 
         |read_temperature.svg|
 
+
 .. method:: ENVUnit.read_humidity()
 
     此方法允许读取ENV采集的相对湿度值并返回一个浮点型数值。计量单位为%RH。
@@ -77,6 +80,7 @@ Methods
     UIFLOW2:
 
         |read_humidity.svg|
+
 
 .. method:: ENVUnit.read_pressure()
 

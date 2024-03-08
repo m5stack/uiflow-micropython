@@ -1,10 +1,10 @@
 set(IDF_TARGET esp32s3)
 
-# atoms3 https://github.com/m5stack/m5stack-board-id/blob/558d0c4e4fc55a72805827c65a5255aa4b844515/board.csv#L13
+# atoms3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L13
 set(BOARD_ID 11)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_S3_8MB/sdkconfig.board
+    ./boards/M5STACK_AtomS3/sdkconfig.board
     ./boards/sdkconfig.base
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram

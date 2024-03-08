@@ -3,9 +3,9 @@ Angle Unit
 
 .. include:: ../refs/unit.angle.ref
 
-The following products are supported：
+The following products are supported:
 
-|Angle| 
+    |Angle|
 
 Micropython Example::
 
@@ -21,13 +21,16 @@ Micropython Example::
         print(angle_0.get_voltage())
         print(angle_0.get_value())
 
+
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-|angle_core_example.m5f2|
+    |angle_core_example.m5f2|
+
 
 class Angle
 -----------
@@ -47,7 +50,6 @@ Constructors
         |init.svg|
 
 
-
 Methods
 -------
 
@@ -59,6 +61,7 @@ Methods
 
         |get_value.svg|
 
+
 .. method:: Angle.get_voltage()
 
     This method allows reading the voltage value of Angle, and the return value is a floating point value.
@@ -66,4 +69,3 @@ Methods
     UIFLOW2:
 
         |get_voltage.svg|
-
