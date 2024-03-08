@@ -9,3 +9,4 @@ Hardware
     speaker.rst
     imu.rst
     power.rst
+    rotary.rst
