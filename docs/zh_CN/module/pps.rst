@@ -1,5 +1,5 @@
 PPS Module
-========
+==========
 
 .. include:: ../refs/module.pps.ref
 
