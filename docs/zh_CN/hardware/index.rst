@@ -8,3 +8,4 @@ Hardware
     mic.rst
     speaker.rst
     imu.rst
+    power.rst
