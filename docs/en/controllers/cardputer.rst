@@ -4,6 +4,7 @@ Cardputer
 
 .. include:: ../refs/controllers.cardputer.ref
 
+
 **********
 Startup UI
 **********
@@ -17,6 +18,7 @@ Launcher
 
 ``Enter`` launches the selected application.
 
+
 Setting
 *******
 
@@ -27,6 +29,7 @@ Setting
 ``Enter`` launches the selected application.
 
 ``BtnA`` quits the application.
+
 
 WLAN
 ====
@@ -39,6 +42,7 @@ WLAN
 
 ``BtnA`` quits the application.
 
+
 Gerneral
 ========
 
@@ -50,12 +54,14 @@ The ``FN`` + ``UP`` and ``FN`` + ``DOWN`` keys select menus.
 
 ``BtnA`` quits the application.
 
+
 Develop
 *******
 
 |develop.png|
 
 ``BtnA`` quits the application.
+
 
 APP.RUN
 *******
@@ -67,6 +73,7 @@ APP.RUN
 ``Enter`` runs main.py according to the corresponding action.
 
 ``BtnA`` quits the application.
+
 
 APP.LIST
 ********

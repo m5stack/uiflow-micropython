@@ -5,6 +5,7 @@ Get Started
 
 Currently UIFLOW2 supports the following boards:
 
+
 CORE
 ----
 
@@ -29,6 +30,7 @@ CORE
 ------------------  ------------------  ------------------
 `Cardputer`_        `Core2 v1.1`_
 ==================  ==================  ==================
+
 
 STICK
 -----

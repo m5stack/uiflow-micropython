@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/adc.rst:2 678f316ed54f4143ae369f66b578e2ce
+msgid "ADC Unit"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref 4f1a6eb0b12b4d59826f4badf042d7bb
+#: dd86b36f092c4ad9b77d82487c8e13be
+msgid "ADC"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:6 14f98601e8094b389b78de17cc1bb609
+#: ee57d25625e44d54bd0fed7d8c7c2674
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:8 685ea3980f494812b7084f07bd57c86b
+#: e0975042861d4b169e8e02c8f57050b9
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:10 0e282b83519a48f3a2cd76bf0a79999b
+#: 7bfcb2b345904a9897d893bc7fce4426
+msgid "get_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:12 02f3052bcb4d4ed18fb03bc507ed94c2
+#: afda1ae952034dac884fb7a4c300010e
+msgid "get_voltage.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:14 2014d9f7c8af459d84d1b8c4b3e0cf68
+#: 8d9e61c4641e4008945e65e2bdcc1638
+msgid "get_raw_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:16 4acf515205bc4f26a569b49df6777c11
+#: b806cd96bdda494db7d449b69d7e45ef
+msgid "get_operating_mode.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:18 277d033a7d7b40b380b3572056ca3007
+#: 4b578f98fbe047eda9c77e322f4c57dd
+msgid "get_data_rate.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:20 9436d994bd6b4c07ae2abaef70d01068
+#: e86d7bffe285439abab3c10b2088046e
+msgid "get_gain.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:22 30a819d354bf43f98eb11d43f20bb4bf
+#: f733e7475f924d198a50b8bc212bb116
+msgid "set_operating_mode.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:24 a366671dd1084ef395def55c9dd1c6d5
+#: f4dc03ebf59f4a168ece98396ebbb9c8
+msgid "set_data_rate.svg"
+msgstr ""
+
+#: ../../en/refs/unit.adc.ref:26 2273f58b30d4475e9b0e487c98e540ce
+#: dd00cf3b74174c2aac92a58cd8d51690
+msgid "set_gain.svg"
+msgstr ""
+
+#: ../../en/units/adc.rst:6 bcdceb65da0f464a95194e3693deaea5
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/adc.rst:8 cb93eb9e79aa4073949208f1faf5424a
+msgid "|ADC|"
+msgstr ""
+
+#: ../../en/units/adc.rst:11 111c33086b49483994810429ffb31893
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/adc.rst:28 925a13b7668c437280307248b2705ce9
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/adc.rst:30 95df4c01ba7e4c2e8e3ec8bc22b16a86
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:35 20d96f7771bc450a990dba904d07e763
+msgid "|adc_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/adc.rst:39 130f8042829d41068b19f61d88daef1b
+msgid "class ADCUnit"
+msgstr ""
+
+#: ../../en/units/adc.rst:42 962c0095aa0d49fb92e8fb4cff29ea61
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/adc.rst:46 27d991980804494ca547d53f952abf1a
+msgid "Create an ADCUnit object."
+msgstr ""
+
+#: ../../en/units/adc.rst:49 341d744eef2343cfa8e93354f73eabcc
+msgid "parameters is:"
+msgstr ""
+
+#: ../../en/units/adc.rst:49 bf356b32cab5402fab82d2a8149f76e9
+msgid "``I2C0`` is I2C Port."
+msgstr ""
+
+#: ../../en/units/adc.rst:51 ../../en/units/adc.rst:63
+#: ../../en/units/adc.rst:72 ../../en/units/adc.rst:81
+#: ../../en/units/adc.rst:90 ../../en/units/adc.rst:99
+#: ../../en/units/adc.rst:108 ../../en/units/adc.rst:117
+#: ../../en/units/adc.rst:126 ../../en/units/adc.rst:135
+#: 2db9aa682dd14136aaa62258f1505346 3b58077d78b0406c944fe72cc2481e9a
+#: 44b9111e77a444a0836a155b7bb180b6 59fc4f128b774b41b6307599f9e13df2
+#: 9141c3c3838e462aa4ea6f8cef0f8d35 b9ae3fd6fe394c16908c12d10c5706e7
+#: bba26f369e2a492581d15a1f500c9959 eb03e5a9f5cb4bf1b47e1a831c75a2c4
+#: f9d2043b97204742938d7cdbcb2250b3 fb51e42bb66f4331a9c3c61588dd0006
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/adc.rst:53 c2450faafc1d449d9491aa7f4bee5426
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:57 d45d711e062441dfb212676cf6b03774
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/adc.rst:61 e1045cae71014ba2b4d693c5bc49ab4f
+msgid "Gets the original value read by the adc."
+msgstr ""
+
+#: ../../en/units/adc.rst:65 c2885d4c3c244e2a820b8291fb773d67
+msgid "|get_value.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:70 420a415c36804a809b197d21f44f86a5
+msgid "Get the voltage value."
+msgstr ""
+
+#: ../../en/units/adc.rst:74 04c60268c3ac4638a51537931ea69bc0
+msgid "|get_voltage.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:79 e73fd29385314de487ac6ca233218a79
+msgid "Read the raw value."
+msgstr ""
+
+#: ../../en/units/adc.rst:83 d2733291a89e4f1fa1d6877cc1a126a4
+msgid "|get_raw_value.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:88 1d88ce0765ee46c3b00f1e8424282b14
+msgid "Get working mode. (Single read or continuous read)"
+msgstr ""
+
+#: ../../en/units/adc.rst:92 8972e058afcc410c8c70c5cab8f33d1e
+msgid "|get_operating_mode.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:97 68865685ac0b4f71aac73c0b9dceaf94
+msgid "Get the read rate of the data."
+msgstr ""
+
+#: ../../en/units/adc.rst:101 90415b40a9fd499ca7d70284c26cfc5b
+msgid "|get_data_rate.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:106 a6741030516d4f0aadcc64fc68a121be
+msgid "Get the gain multiple of the data."
+msgstr ""
+
+#: ../../en/units/adc.rst:110 530676dff9044f519238a9a9e2f39228
+msgid "|get_gain.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:115 d5423f48c0cf46a3a7090444b7467956
+msgid "Set working mode (single read or continuous read)"
+msgstr ""
+
+#: ../../en/units/adc.rst:119 d162bcf8be794e4082a3d3e7839be558
+msgid "|set_operating_mode.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:124 e57f1a8bd48d479ca7761be3867df532
+msgid "Set the data acquisition rate."
+msgstr ""
+
+#: ../../en/units/adc.rst:128 e17e1f1ef65c4786a92ab86bd5e37793
+msgid "|set_data_rate.svg|"
+msgstr ""
+
+#: ../../en/units/adc.rst:133 af072c6fc4d5459594e8d471d065f4fe
+msgid "Set the gain multiple for reading data."
+msgstr ""
+
+#: ../../en/units/adc.rst:137 6b6e58461e8f4bdc90291dae2911ec31
+msgid "|set_gain.svg|"
+msgstr ""
+

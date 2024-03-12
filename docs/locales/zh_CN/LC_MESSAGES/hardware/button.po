@@ -1,0 +1,379 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 18:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/hardware/button.rst:2 e6367ca90dd7491499951bf77833bf86
+msgid "Button"
+msgstr ""
+
+#: ../../en/hardware/button.rst:7 b501db5a7c054b43ba44659dd5d54cad
+msgid ""
+"Button is used to control the built-in buttons inside the host device. "
+"Below is the detailed Button support for the host:"
+msgstr "Button用于控制主机内部集成的按键。以下是主机的Button支持详细："
+
+#: ../../en/hardware/button.rst:15 0b2752f615b147b2b4c7aff5d8e08199
+msgid "BtnA"
+msgstr ""
+
+#: ../../en/hardware/button.rst:15 76d8e9d86e254abab5593d01da8be130
+msgid "BtnB"
+msgstr ""
+
+#: ../../en/hardware/button.rst:15 b97a55092d77475aae6381f251eadd90
+msgid "BtnC"
+msgstr ""
+
+#: ../../en/hardware/button.rst:15 7fdbf4da7fdb4ce2984accffd0eb26ad
+msgid "BtnPWR"
+msgstr ""
+
+#: ../../en/hardware/button.rst:15 2e95cb4687ea4c899ce86b4bb137d2a2
+msgid "BtnEXT"
+msgstr ""
+
+#: ../../en/hardware/button.rst:17 e5091c474bfa4e478dc56d8b9db9994f
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/hardware/button.rst:17 ../../en/hardware/button.rst:19
+#: ../../en/hardware/button.rst:21 ../../en/hardware/button.rst:23
+#: ../../en/hardware/button.rst:25 ../../en/hardware/button.rst:27
+#: 38e1e1084a094cd8a2c472ceb58dedd9 3ce49411d2af465dba134c4810d25dcc
+#: 548e72da3ed14ccb82c10aeec4fc53fa 5988731a5cce446ea9f6b49297934019
+#: 5c9a37e9fc7b42bc85ea7406818b2238 75380867cc6e48e0990969a32408c7c1
+#: ac6eea32a9be45dea53278186a3d2c1b d96581f1b99e4edbbb267a21b1eff790
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/button.rst:19 7533bcfde729444284a4594d082fb2b0
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/hardware/button.rst:21 72f22f1581544011a050a402a5b2eba1
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/hardware/button.rst:23 747b16160ca040b6b9bd207cc66d55a5
+msgid "StampS3"
+msgstr ""
+
+#: ../../en/hardware/button.rst:25 91a1350bc92447c88142bbe7d9d6517b
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/hardware/button.rst:27 2e9289da0e7a4bf9aa114640b5fe5a8a
+msgid "Core2"
+msgstr ""
+
+#: ../../en/hardware/button.rst:29 3dfb22ffdee142bc94e3e24aaebd6c34
+msgid "TOUGH"
+msgstr ""
+
+#: ../../en/hardware/button.rst:34 ea328257d67e4e7f8e045056e6db24da
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hardware/button.rst:58 3f68b843e87e4573b744d069169866fa
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/button.rst:60 3286639102874467bf6f7252415c6c79
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:1 90defd376abb4f2bbffac0ea6efef2aa
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:64 0783b05b80674122b5258a8b59492b99
+msgid ":download:`example.m5f2 <../../_static/hardware/button/example.m5f2>`"
+msgstr ""
+
+#: ../../en/hardware/button.rst:67 667074b3a65e42aea7c1b66f3b093102
+msgid "class Button"
+msgstr ""
+
+#: ../../en/hardware/button.rst:71 a3175a00491a46e9bc7394a43f7aec30
+msgid ""
+"Methods of Button Class heavily rely on ``M5.begin()`` |M5.begin.svg| and"
+" ``M5.update()`` |M5.update.svg|."
+msgstr "Button Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` |M5.update.svg|。"
+
+#: ../../en/refs/system.ref:1 1a8af82819c6455396db240b7f486620
+#: ee98839873d9469392eb7a33fd366393
+msgid "M5.begin.svg"
+msgstr ""
+
+#: ../../en/refs/system.ref:3 ef1151a2dde54df39a02a6be60983779
+#: f22d47c8181b4e6caf2b364174c7d854
+msgid "M5.update.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:73 3b878562738340c7b0e22c3165b0e294
+msgid ""
+"All calls to methods of Button objects should be placed after "
+"``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg| should "
+"be called in the main loop."
+msgstr "调用 Button 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在 主循环中调用 ``M5.update()`` |M5.update.svg|。"
+
+#: ../../en/hardware/button.rst:76 4ca780dbd0ac42b2902983145c1093ee
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/button.rst:80 85fd12f62de1478e94668eaaf90cf566
+msgid "Returns whether the Button object is in a long press state."
+msgstr "返回 Button 对象是否处于长按状态。"
+
+#: ../../en/hardware/button.rst:82 ../../en/hardware/button.rst:90
+#: ../../en/hardware/button.rst:98 ../../en/hardware/button.rst:106
+#: ../../en/hardware/button.rst:114 ../../en/hardware/button.rst:122
+#: ../../en/hardware/button.rst:130 ../../en/hardware/button.rst:138
+#: ../../en/hardware/button.rst:146 ../../en/hardware/button.rst:157
+#: 07e76d9fa8594f0893962fff0588ccaf 138ffa0f0133403f93f18bc776a53942
+#: 54fb9aba755e453782c1efc300b55838 5952ca5462514b8cbbc1a133c741ebc2
+#: 5ec8ea8ae73f46769a5c6e01066dd30d 7d9cea5e82c2419fa8c6a8497e8bdf2e
+#: a394c813dd18454d938dbf4cd7c87afb ae57b6bfdd8748e2bb98540faf76d292
+#: c993e3890fd94e8ab102f5fcf913f69a f435ec8a541b4c5eae518d8f593c214f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/button.rst:84 1dcf51ac78604a7b82e0023c2f4fe0a9
+msgid "|isHolding.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:3 40689c92dfe04d5aa58515711372eabf
+msgid "isHolding.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:88 a648b31d4a984d2d8c3573f1f7ddb604
+msgid "Returns whether the Button object is in a pressed state."
+msgstr "返回 Button 对象是否处于按下状态。"
+
+#: ../../en/hardware/button.rst:92 6e090dbcf94c4cedb07d2bec0b44db75
+msgid "|isPressed.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:5 e3a2b18356c241e0b45326582e2e8dbc
+msgid "isPressed.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:96 c7d642ca95cd40df8103fdc94396f1e3
+msgid "Returns whether the Button object is in a released state."
+msgstr "返回 Button 对象是否处于松开状态。"
+
+#: ../../en/hardware/button.rst:100 b9f6319afebc4941ad5619bee9ab15b1
+msgid "|isReleased.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:7 a925192cba9f4cd9a1b1383cafead35e
+msgid "isReleased.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:104 83daec88aa0c4cb78c309cb84f328ae7
+msgid "Returns True when the Button object is briefly pressed and released."
+msgstr "当 Button 对象被短暂按下并释放时返回 True。"
+
+#: ../../en/hardware/button.rst:108 9cf4c4dd073542b98dfb95daa6e6763d
+msgid "|wasClicked.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:9 ffdc0fafa62d4f1b94fe673a4b7eb303
+msgid "wasClicked.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:112 43b7426881e84d4c8b0c148bc6bfd1b5
+msgid ""
+"Returns True when the Button object is double-clicked after a certain "
+"amount of time."
+msgstr "当 Button 对象被双击后经过一段时间后返回 True。"
+
+#: ../../en/hardware/button.rst:116 a52a6fa636f3435fbb5182b209e5c8fc
+msgid "|wasDoubleClicked.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:11 42c513a6554a49f491b5717c67e4d3e8
+msgid "wasDoubleClicked.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:120 60e213de554b4a32ad67929b9a620a33
+msgid ""
+"Returns True when the Button object is held down for a certain amount of "
+"time."
+msgstr "当 Button 对象被按住一段时间时返回 True。"
+
+#: ../../en/hardware/button.rst:124 4d58c088360b42eeaee9f84b4403a119
+msgid "|wasHold.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:13 e3b5c17360854eb98e21ddc671eb017c
+msgid "wasHold.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:128 a7c1f680f49a4b1480955abbb8eebc1c
+msgid "Returns True when the Button object is pressed."
+msgstr "当 Button 对象被按下时返回 True。"
+
+#: ../../en/hardware/button.rst:132 5f1f6ea456364ff2a1980a89a488df85
+msgid "|wasPressed.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:15 6b38575c6abd42418f195ed446d25db7
+msgid "wasPressed.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:136 fe643275213e417484c46940db3874f2
+msgid "Returns True when the Button object is released."
+msgstr "当 Button 对象被松开时返回 True。"
+
+#: ../../en/hardware/button.rst:140 19d4493ee2b146c988ec5852abfca25d
+msgid "|wasReleased.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:17 eeb2e1bcf5124b38b4117fbe8259c7f2
+msgid "wasReleased.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:144 9845e3aa17d14cf7b98064bea6d91331
+msgid ""
+"Returns True when the Button object is single-clicked after a certain "
+"amount of time."
+msgstr "当 Button 对象被单击后经过一段时间后返回 True。"
+
+#: ../../en/hardware/button.rst:148 855bf4eb41c64c51989bea1c21b64b78
+msgid "|wasSingleClicked.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:19 8cc2b5f7a293419ebf2ee3d390abc31d
+msgid "wasSingleClicked.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:151 ab1f22d5ec3b4bf6bd51a9584305c18a
+msgid "Event Handling"
+msgstr ""
+
+#: ../../en/hardware/button.rst:155 e5f2569d317946e2af1d21cb50a0cd90
+msgid "Sets the event callback function."
+msgstr "设置事件回调函数"
+
+#: ../../en/hardware/button.rst:159 5172284dba6a433aabb4ae5459072bd4
+msgid "|setCallback.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.button.ref:21 a388645da7a9438eb02d45fa4e283d6a
+msgid "setCallback.svg"
+msgstr ""
+
+#: ../../en/hardware/button.rst:162 ../../en/hardware/button.rst:172
+#: 36ec520df96f4fb09e97fc37bd357043 425c8d1401d44f6482baa82bea3f1cb0
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hardware/button.rst:166 c17216856f8d4c96b726721e04b06b8e
+msgid "A Callback_Type object."
+msgstr ""
+
+#: ../../en/hardware/button.rst:169 b140ac0912d64419bbfaaebdd8761066
+msgid "class Callback_Type"
+msgstr "一个 Callback_Type 对象。"
+
+#: ../../en/hardware/button.rst:176 42c4d68bb9c546ad9a39af333be14b7d
+msgid "Single click event type."
+msgstr "单击事件类型。"
+
+#: ../../en/hardware/button.rst:180 22771c0193eb4bf096d73bcf807b8d45
+msgid "Double click event type."
+msgstr "双击事件类型。"
+
+#: ../../en/hardware/button.rst:184 d24cac87e5434214a57af4c1f9f024a5
+msgid "Long press event type."
+msgstr "长按事件类型。"
+
+#: ../../en/hardware/button.rst:188 5aa32c4f886743a4821493662cdf9f90
+msgid "Press event type"
+msgstr "按下事件类型。"
+
+#: ../../en/hardware/button.rst:192 c83faebb7d4b459ca521f513bc588d26
+msgid "Release event type"
+msgstr ""
+
+#~ msgid "Button用于控制主机内部集成的按键。以下是主机的Button支持详细："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Button Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg|"
+#~ " 和 ``M5.update()`` |M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "调用 Button 对象的所有方法，需要放在 ``M5.begin()`` "
+#~ "|M5.begin.svg| 的后面，并在 主循环中调用 ``M5.update()`` "
+#~ "|M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid "返回 Button 对象是否处于长按状态。"
+#~ msgstr ""
+
+#~ msgid "返回 Button 对象是否处于按下状态。"
+#~ msgstr ""
+
+#~ msgid "返回 Button 对象是否处于松开状态。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被短暂按下并释放时返回 True。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被双击后经过一段时间后返回 True。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被按住一段时间时返回 True。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被按下时返回 True。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被松开时返回 True。"
+#~ msgstr ""
+
+#~ msgid "当 Button 对象被单击后经过一段时间后返回 True。"
+#~ msgstr ""
+
+#~ msgid "设置事件回调函数"
+#~ msgstr ""
+
+#~ msgid "一个 Callback_Type 对象。"
+#~ msgstr ""
+
+#~ msgid "单击事件类型"
+#~ msgstr ""
+
+#~ msgid "双击事件类型"
+#~ msgstr ""
+
+#~ msgid "长按事件类型"
+#~ msgstr ""
+
+#~ msgid "按下事件类型"
+#~ msgstr ""
+
+#~ msgid "松开事件类型"
+#~ msgstr ""
+

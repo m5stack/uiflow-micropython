@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/ncir.rst:2 03253259af204320a67dbcf32461a9d5
+msgid "NCIR Unit"
+msgstr ""
+
+#: ../../en/refs/unit.ncir.ref 9731328687864c4e8ffd8fb332c88399
+#: ce508219f93940babcf7ea4ef16e41df
+msgid "NCIR"
+msgstr ""
+
+#: ../../en/refs/unit.ncir.ref:7 2018accc2c104b33a67b9c387ab2105a
+#: 7863d07cf2554a778fde9825f7736616
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ncir.ref:9 3fda75bbc45849179dd1d5852b65e604
+#: f25d57dfafb8478cb1c4874ac5473791
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ncir.ref:11 7d91e06c275b4857b5306b2d722cc386
+#: ed9fdff2254d4bb2a316cfb695866aad
+msgid "get_ambient_temperature.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ncir.ref:13 07c60e9ae352429fb16c1989780b0da6
+#: 49009a2a48284c27aee6611e0a1f4f58
+msgid "get_object_temperature.svg"
+msgstr ""
+
+#: ../../en/units/ncir.rst:6 576f0d60a7f84a2ea0282f9b7eda2032
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ncir.rst:8 ee2999cef89e4125b7e6638f198de91d
+msgid "|NCIR|"
+msgstr ""
+
+#: ../../en/units/ncir.rst:11 daa8507b12e04cf48660f6fd847af084
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/ncir.rst:34 94acd9f50f4641d9a373f57429e8d57b
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ncir.rst:36 04da070c1b1f4d07ba150b3002084636
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/ncir.rst:41 f0ab4b38144249c8b9e518db4209e746
+msgid "|ncir_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ncir.rst:45 63a7ec0fc63a48509cd16e6b296dba8c
+msgid "class NCIRUnit"
+msgstr ""
+
+#: ../../en/units/ncir.rst:48 e382e8d8dbae4bd79b4e3437d7336675
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ncir.rst:52 e75bbfef4600497e976fba0d22a1d429
+msgid "Create an NCIRUnit object."
+msgstr ""
+
+#: ../../en/units/ncir.rst:55 72816b5d0e83424dac542857bd1d334b
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/ncir.rst:55 0274419f6ab8422d95a54b6693dbfc81
+msgid "``i2c`` Define the i2c pin."
+msgstr ""
+
+#: ../../en/units/ncir.rst:57 ../../en/units/ncir.rst:69
+#: ../../en/units/ncir.rst:78 15af97836ae247e484736d6e4649c895
+#: 6c750a854ee6425c92019f31348d509a a7f7a042a78c48a5b7c05d58a1344726
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ncir.rst:59 16a8630cc8d540178352b117e9c8524f
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/ncir.rst:63 02ecbe1710144f3b8ca1212a0524cc6a
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ncir.rst:67 162240ab47e24b4680a9b7063d8d86f7
+msgid "Obtain the ambient temperature."
+msgstr ""
+
+#: ../../en/units/ncir.rst:71 60048f22fe6245649d0d66359a5f1ef8
+msgid "|get_ambient_temperature.svg|"
+msgstr ""
+
+#: ../../en/units/ncir.rst:76 4756ad13a9464a54be2aad1592ac35a8
+msgid "Get the temperature of the measured object."
+msgstr ""
+
+#: ../../en/units/ncir.rst:80 bbbe259c22c24c579943fa8261e334a2
+msgid "|get_object_temperature.svg|"
+msgstr ""
+

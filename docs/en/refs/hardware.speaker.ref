@@ -1,39 +1,43 @@
 .. |example.svg| image:: ../../_static/hardware/button/example.svg
 
-.. |config.svg| image:: ../../_static/hardware/speaker/config.svg
+.. |get_config.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/get_config.svg
 
-.. |config1.svg| image:: ../../_static/hardware/speaker/config1.svg
+.. |get_config1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/get_config1.svg
 
-.. |begin.svg| image:: ../../_static/hardware/speaker/begin.svg
+.. |set_config.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/set_config.svg
 
-.. |end.svg| image:: ../../_static/hardware/speaker/end.svg
+.. |set_config1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/set_config1.svg
 
-.. |isRunning.svg| image:: ../../_static/hardware/speaker/isRunning.svg
+.. |begin.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/begin.svg
 
-.. |isEnabled.svg| image:: ../../_static/hardware/speaker/isEnabled.svg
+.. |end.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/end.svg
 
-.. |isPlaying.svg| image:: ../../_static/hardware/speaker/isPlaying.svg
+.. |isRunning.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/isRunning.svg
 
-.. |getPlayingChannels.svg| image:: ../../_static/hardware/speaker/getPlayingChannels.svg
+.. |isEnabled.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/isEnabled.svg
 
-.. |setVolume.svg| image:: ../../_static/hardware/speaker/setVolume.svg
+.. |isPlaying.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/isPlaying.svg
 
-.. |getVolume.svg| image:: ../../_static/hardware/speaker/getVolume.svg
+.. |getPlayingChannels.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/getPlayingChannels.svg
 
-.. |setVolumePercentage.svg| image:: ../../_static/hardware/speaker/setVolumePercentage.svg
+.. |setVolume.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/setVolume.svg
 
-.. |getVolumePercentage.svg| image:: ../../_static/hardware/speaker/getVolumePercentage.svg
+.. |getVolume.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/getVolume.svg
 
-.. |setAllChannelVolume.svg| image:: ../../_static/hardware/speaker/setAllChannelVolume.svg
+.. |setVolumePercentage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/setVolumePercentage.svg
 
-.. |setChannelVolume.svg| image:: ../../_static/hardware/speaker/setChannelVolume.svg
+.. |getVolumePercentage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/getVolumePercentage.svg
 
-.. |getChannelVolume.svg| image:: ../../_static/hardware/speaker/getChannelVolume.svg
+.. |setAllChannelVolume.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/setAllChannelVolume.svg
 
-.. |stop.svg| image:: ../../_static/hardware/speaker/stop.svg
+.. |setChannelVolume.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/setChannelVolume.svg
 
-.. |tone.svg| image:: ../../_static/hardware/speaker/tone.svg
+.. |getChannelVolume.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/getChannelVolume.svg
 
-.. |playRaw.svg| image:: ../../_static/hardware/speaker/playRaw.svg
+.. |stop.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/stop.svg
 
-.. |playWav.svg| image:: ../../_static/hardware/speaker/playWav.svg
+.. |tone.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/tone.svg
+
+.. |playRaw.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/playRaw.svg
+
+.. |playWav.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/speaker/playWav.svg

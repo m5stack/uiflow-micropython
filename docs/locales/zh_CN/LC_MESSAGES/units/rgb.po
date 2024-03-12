@@ -1,0 +1,149 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/rgb.rst:2 ba00c602b2ab4d73bf2790c52fbbb02d
+msgid "RGB Unit"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref 10490323322446809f67dfff8960d3c5
+#: c8170e90bb784b23b8bb697ebc3af749
+msgid "RGB"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:6 2dbec74834a943cb8b2a44031c17ca68
+#: d406582ca72a41c0a86dd302e19a760b
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:8 47bfe18bb5c64086bce417088fd05d86
+#: 6d603fe9109049e0b972cf2c3469f7a8
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:10 692eb1871f9843cda79e37887f50ef73
+#: e596e7a6403348f19ccba862fd9fef69
+msgid "set_brightness.svg"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:12 2bec3a51ebb24b6b92281bc057a72a0b
+#: 7a4b1c821cec4ea7887a7171f9c7c384
+msgid "fill_color.svg"
+msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:14 ac3da54544a34922818c9b6ed479eb37
+#: fb2816a31617492fbc66c7cee6d297a3
+msgid "set_color.svg"
+msgstr ""
+
+#: ../../en/units/rgb.rst:6 9d362cf8490949f9aaa63a61707d919b
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/rgb.rst:8 4ea378848d6f47aca3b33c1443b4e3c0
+msgid "|RGB|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:11 47d6d120ae074a81a9f736c7fc170e03
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/rgb.rst:26 99eca9618d8743b189c712b4f5adc216
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rgb.rst:28 ca9e3cd7f2ef41c487ca213967490081
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:33 9f0bc713212e4802b09b218e724e9a27
+msgid "|rgb_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:37 55b3fbdaf1a64ed28acb49570f778f54
+msgid "class RGB"
+msgstr ""
+
+#: ../../en/units/rgb.rst:40 54aaab02747f4eeea2f1a268b3fb640d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/rgb.rst:44 7733e65440be4e34adf6bfe02524d5b4
+msgid "Create an RGB object."
+msgstr ""
+
+#: ../../en/units/rgb.rst:48 c59938454f0b44eb894f3b8358f4ff29
+msgid "parameter is:"
+msgstr ""
+
+#: ../../en/units/rgb.rst:47 6d1922796e804324aa3f365b11ea19a1
+msgid "``port`` is the pins number of the port"
+msgstr ""
+
+#: ../../en/units/rgb.rst:48 4002a7e67b934cfcb2bfd402a41c8f9c
+msgid "``number`` is the number of RGB lamp beads"
+msgstr ""
+
+#: ../../en/units/rgb.rst:50 ../../en/units/rgb.rst:62
+#: ../../en/units/rgb.rst:71 ../../en/units/rgb.rst:80
+#: 07cb9859e4b94769b637a3c615c0d0bd dba569c06d8b48e48d0ef5af476f78b4
+#: e1f13b3b50dc404c9e9caaccf0ddcc78 f6e61df9dfa3456ba435a97088086f3f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/rgb.rst:52 ba84770f2717480cbfca52462eac655e
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:56 559de38dc610451f9ad8048bd4bee7f0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/rgb.rst:60 b5917c338d844683b90161bf0d73fa92
+msgid ""
+"This method is used to set the brightness of RGB lamp beads, and the "
+"setting range is 0-100."
+msgstr ""
+
+#: ../../en/units/rgb.rst:64 2a1003adecbd46479703458e06fe8cce
+msgid "|set_brightness.svg|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:69 d4436e5148c64ece821de8ba258f6fec
+msgid ""
+"This method is used to set the color of all RGB lamp beads, and the input"
+" value is 3-byte RGB888."
+msgstr ""
+
+#: ../../en/units/rgb.rst:73 27cf2498f92a4b3ab419b66a631452b3
+msgid "|fill_color.svg|"
+msgstr ""
+
+#: ../../en/units/rgb.rst:78 8abc5cea66cc4dab99e6572bd7265898
+msgid ""
+"This method is used to set the specified RGB lamp bead color. The input "
+"value is the lamp bead index and 3-byte RGB888."
+msgstr ""
+
+#: ../../en/units/rgb.rst:82 638d24049b3742fe8f713737a7381a42
+msgid "|set_color.svg|"
+msgstr ""
+

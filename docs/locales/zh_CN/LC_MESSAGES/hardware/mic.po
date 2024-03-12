@@ -1,0 +1,597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-12 09:36+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/hardware/mic.rst:2 e8ad391f5e094be6b39f956fca83a80c
+msgid "Mic"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:8 8da6cb55c3054fe0bac1afde4aee8ad5
+msgid ""
+"Mic is used to control the built-in microphone inside the host device. "
+"Below is the detailed Mic support for the host:"
+msgstr "Mic 用于控制主机内部集成的按键。以下是主机的 Mic 支持详细："
+
+#: ../../en/hardware/mic.rst:16 bf749cc6dff64cd5baa33c2d3927e74d
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:16 d33c4abdca6a47f3a9294fa5d5b9824a
+msgid "SPM1423"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:16 10f3dca35da1402fa312aa7cbd0f708d
+msgid "ES7210"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:18 a47608aec23f4b7bb9730192740dc806
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:20 c5716d63e5b14c20b72ff8a7158c4ad8
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:22 29bf819a1deb48d299d744259b88001a
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:22 ../../en/hardware/mic.rst:26
+#: ../../en/hardware/mic.rst:28 0cb854338df4410e8ce1dea707d91c6c
+#: 3d2af9c9301d406793eebceb7549e2eb 551c5d7bb8e7458aa3d578fc57fb6082
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:24 3612257d6fb848418a8b85a9a885179d
+msgid "StampS3"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:26 ed7daead7fb24f12977ad76943507d4d
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:28 a36f22a36d664f8fabf0b4aef22e3f15
+msgid "Core2"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:30 d06ce9f32462468e9a9d83d43182f36c
+msgid "TOUGH"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:36 bb7cf957a15c41199ae19630ded5e67c
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:41 9d6e01ed3d7441a0891a8eb6439e4cdb
+msgid "UIFLOW2 Example::"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:47 e8c52865331c45e481de8228f08c1d54
+msgid "class Mic"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:51 b6f81af15dcb4d31a2121468240f347f
+msgid ""
+"Methods of the Mic Class heavily rely on ``M5.begin()`` |M5.begin.svg| "
+"and ``M5.update()`` |M5.update.svg|."
+msgstr ""
+"Mic Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` "
+"|M5.update.svg|。"
+
+#: ../../en/refs/system.ref:1 b4ccca095d7d401cba68d35a0614a3b6
+#: c7d41e57bf1943c6825a8c1d6eb9db98
+msgid "M5.begin.svg"
+msgstr ""
+
+#: ../../en/refs/system.ref:3 2d5c7427b9574910aabd30c1c60b1957
+#: 363e5eb9e85a4593b785302f6e51fdc6
+msgid "M5.update.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:53 808cf8f2808e4f968f1a980e85e14e28
+msgid ""
+"All calls to methods of Mic objects should be placed after ``M5.begin()``"
+" |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in "
+"the main loop."
+msgstr ""
+"调用 Mic 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在 主循环中调用 "
+"``M5.update()`` |M5.update.svg|。"
+
+#: ../../en/hardware/mic.rst:57 f7ed173bcb684ee7ba3a3b9f09dcf088
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:63 f3df97697ac54d9eb385565e8d3a9dd2
+msgid "Get or set the parameters of the Mic object."
+msgstr "获取或者设置 Mic 对象的参数。"
+
+#: ../../en/hardware/mic.rst:65 2860e809917541218bf257330e2cdc31
+msgid ""
+"When no parameters are passed, it returns an object of "
+":py:class:`mic_config_t`. When a :py:class:`mic_config_t` object is "
+"passed, Mic sets all supported parameters of the Mic."
+msgstr ""
+"当不传入任何参数时，会返回 :py:class:`mic_config_t` 的对象。当传入一个 :py:class:`mic_config_t`"
+" 的对象， Mic 会设置 Mic 的所有支持的参数。"
+
+#: ../../en/hardware/mic.rst:68 3ad897a7313443f9af7e4d00be2dfbc6
+msgid ""
+"When passing parameters from the table below, Mic will get or set the "
+"passed parameters."
+msgstr "当传入下表中的参数， Mic 会对传入的参数进行获取或者设置。"
+
+#: ../../en/hardware/mic.rst:70 ca079bea1b90479daf47d3d040162477
+msgid "The following parameters are supported:"
+msgstr "以下是支持的参数:"
+
+#: ../../en/hardware/mic.rst:73 c3c44dc9d8284bf092e1052815247b21
+msgid "Parameter"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:73 9b6db146209e453a924e53f16b5c9223
+msgid "Type"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:73 76c43f141907413990cebc6d152acdac
+msgid "Description"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:75 de59972856134010ae59d0b4cb5ac590
+msgid "pin_data_in"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:75 ../../en/hardware/mic.rst:76
+#: ../../en/hardware/mic.rst:77 ../../en/hardware/mic.rst:78
+#: ../../en/hardware/mic.rst:79 ../../en/hardware/mic.rst:81
+#: ../../en/hardware/mic.rst:82 ../../en/hardware/mic.rst:83
+#: ../../en/hardware/mic.rst:85 ../../en/hardware/mic.rst:86
+#: ../../en/hardware/mic.rst:87 ../../en/hardware/mic.rst:88
+#: ../../en/hardware/mic.rst:89 2f67e50aacf34c47af4a001a73dc1f0e
+#: 36dd8f2e9ad94532b6a20da53bcbc7a6 391a70f6c94f4cb28c794dc8e0d3923e
+#: 4ab534252d184c84964cef6fd227c4af 5d4fc4ecca954f1282209b387c03fcf6
+#: 5db6282f4bc7488e804d7b37fe9f7d89 82870b655ef94bd7a70c7ccbfdd45c26
+#: 98657212594c418eb9aaef83bc623e91 b92785d133864d9daacfda66ad3564f6
+#: d1c7b61577ab4fd59d4fa409b88131d0 d3e2cf3862e84df78369ab284641c68d
+#: e190f7d10b564b50996247c5982295f4 f76d8d9a40aa4fc3a481e073286cd088
+msgid "(integer)"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:75 ../../en/hardware/mic.rst:190
+#: 39abcf8799114f4c95307aec69403eed 892ad4c6132e483da93ee97f1ba50047
+msgid "Serial data line of I2S, representing audio data in binary complement."
+msgstr "I2S 的串行数据线，用二进制补码表示的音频数据。"
+
+#: ../../en/hardware/mic.rst:76 6b40730315f0422fa8a7518232f7e693
+msgid "pin_bck"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:76 ../../en/hardware/mic.rst:196
+#: 01b8760e9ae54ef5b9cef23b2bb70b78 51351ba003084a2694281099024211b8
+msgid "Serial clock line of I2S, corresponding to each bit of digital audio data."
+msgstr "I2S 的串行时钟线，对应数字音频的每一位数据。"
+
+#: ../../en/hardware/mic.rst:77 2ef6112c87d44d05908223b5c6a05342
+msgid "pin_mck"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:77 ../../en/hardware/mic.rst:202
+#: a6dabfa4661b483c8330ae0985f28870 caff18d812244fd5b457045b2d4acbce
+msgid ""
+"Master clock line of I2S. Generally, to better synchronize between "
+"systems, increase the MCLK signal, MCLK frequency = 256 * sampling "
+"frequency."
+msgstr "I2S 的主时钟线。一般为了使系统间能够更好地同步时增加MCLK信号，MCLK的频率 = 256 * 采样频率。"
+
+#: ../../en/hardware/mic.rst:78 8aa5bab7e99c4e1ca2721a1e7fa216cc
+msgid "pin_ws"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:78 ../../en/hardware/mic.rst:209
+#: 3dd0fb8f25c446b1a0ac794c21f06ffb 765f238d16ab4ed7a450ccd311172e0c
+msgid "Frame clock of I2S, used to switch left and right channel data."
+msgstr "I2S 的帧时钟，用于切换左右声道的数据。"
+
+#: ../../en/hardware/mic.rst:79 6328e97cdab848b6a12a7da83014409a
+msgid "sample_rate"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:79 ../../en/hardware/mic.rst:215
+#: 143b471535c142e38902f3b4e3e194a6 527483de1841423880a4c1c9fd60b92d
+msgid "Target sampling rate of input audio."
+msgstr "输入音频的目标采样率。"
+
+#: ../../en/hardware/mic.rst:80 947cde6bc98f487aaf8db23dcfe437cc
+msgid "stereo"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:80 ../../en/hardware/mic.rst:84
+#: 3e1f319452704c6b80899248039b54d4 851297f5881c453fbc3366b91162b42f
+msgid "(boolean)"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:80 ../../en/hardware/mic.rst:221
+#: 22c70dd44a8b4107815e686879a5dc8d 40af11c8ee1845c9a861343a9a0c9701
+msgid "Use stereo output."
+msgstr "使用双声道输出。"
+
+#: ../../en/hardware/mic.rst:81 5664de8c2de94ba8a5b6794a9aa5f9b7
+msgid "over_sampling"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:81 ../../en/hardware/mic.rst:233
+#: 806ab3843c45440baee358e723cc14e1 b80f02a467ba42ea951f6f3e652ff8b4
+msgid "Number of times to average the sampling."
+msgstr "求平均值的采样次数。"
+
+#: ../../en/hardware/mic.rst:82 b1ddd4f5b8dc4103bf9568b26f489beb
+msgid "magnification"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:82 ../../en/hardware/mic.rst:239
+#: 105dd880e1364736a76434861d4c1756 833db2c02ec342348f77543045c407fa
+msgid "Multiplier of the input value."
+msgstr "输入值的乘数。"
+
+#: ../../en/hardware/mic.rst:83 05bb49b3facc426a8e8631cafadd1674
+msgid "noise_filter_level"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:83 ../../en/hardware/mic.rst:245
+#: 4e86bb470b1046c99346b6b3eca1c0c8 4ecf993c352045b08b5f1c68a533e553
+msgid "Coefficient of the previous value used for noise filtering."
+msgstr "先前值的系数，用于噪声过滤。"
+
+#: ../../en/hardware/mic.rst:84 a644265cd8c1423f97ac518cc9d02c31
+msgid "use_adc"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:84 ../../en/hardware/mic.rst:251
+#: 1bc7a6ec9e8d4496b6b7a835557964ed 87a9e5265001466baf95a8c39b1c740e
+msgid "Use analog input microphone (only pin_data_in is needed)."
+msgstr "使用模拟输入麦克风（仅需要 pin_data_in ）。"
+
+#: ../../en/hardware/mic.rst:85 254fb0dd97d249e883a4854b39f99771
+msgid "dma_buf_len"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:85 ../../en/hardware/mic.rst:257
+#: 23ec324951374dbba63dcc57207d7790 eaa3d330a81048f9a30d53607b0be683
+msgid "DMA buffer length of I2S."
+msgstr "I2S 的DMA缓冲区长度。"
+
+#: ../../en/hardware/mic.rst:86 5cf5fccb81d64d1ea2c1882b5c366d11
+msgid "dma_buf_count"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:86 ../../en/hardware/mic.rst:263
+#: d4e1a9ed2fa14e77be2e84e27b6a717a e3159390314447c1b18871ae7ea78548
+msgid "Number of DMA buffers of I2S."
+msgstr "I2S 的DMA缓冲区数量。"
+
+#: ../../en/hardware/mic.rst:87 43e171e365b24965a8ece295c3fc465d
+msgid "task_priority"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:87 ../../en/hardware/mic.rst:269
+#: ac7132821717430bbdd3e91064902e7b fdb7ea732ec64f4bb7748ad371dafa33
+msgid "Priority of background tasks."
+msgstr "后台任务优先级。"
+
+#: ../../en/hardware/mic.rst:88 77b31e59d07a48549c092849731d87fe
+msgid "task_pinned_core"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:88 ../../en/hardware/mic.rst:275
+#: 9256f7f294e049e7a3c675c94605468a b09730fdc74e4771b4a41de78f64d23d
+msgid "CPU used by background tasks."
+msgstr "后台任务使用的CPU。"
+
+#: ../../en/hardware/mic.rst:89 afa49ba139f344fa96812dc9533a00c0
+msgid "i2s_port"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:89 ../../en/hardware/mic.rst:281
+#: a8aa5d023ed74a56a8f06fb102392542 f7716b7c876440bdb8f27d6bc6cca6a6
+msgid "I2S port."
+msgstr "I2S端口。"
+
+#: ../../en/hardware/mic.rst:92 ../../en/hardware/mic.rst:115
+#: ../../en/hardware/mic.rst:124 ../../en/hardware/mic.rst:133
+#: ../../en/hardware/mic.rst:142 ../../en/hardware/mic.rst:157
+#: ../../en/hardware/mic.rst:166 ../../en/hardware/mic.rst:179
+#: 0d43196bf65a44d5998ad975e830b2e9 21a6c31c22124260927c1755d79a9cda
+#: 73045ea8fa644eec985d8df3c7182d91 9b33c540f927450684c6a833e1e60a7d
+#: c1b7e482485e4d9b849101c1a29c962b
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:94 34ea4ca883b84b2f98a3dc6748c73a00
+msgid "Read property:"
+msgstr "读取属性："
+
+#: ../../en/hardware/mic.rst:96 ../../en/hardware/mic.rst:104
+#: 0b01cac5a0b547ee88f25bc1e6dcca17 e68f225428564b0db7cc4c867f0e4c64
+msgid "Python::"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:100 a5afc59fd20a475caec96a5bb700518c
+msgid "|config.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:3 4d90b53ce07c4e3aa8504b19306d7e47
+msgid "config.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:102 067311ee1074427ea1306388de4eea2f
+msgid "Set property:"
+msgstr "设置属性："
+
+#: ../../en/hardware/mic.rst:108 811e4269821146aaa34907b815573c11
+msgid "|config1.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:5 89bd0c22f7944a37916f280e3d356bd8
+msgid "config1.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:113 d3116a42f4874488be6c6023531c288b
+msgid "Start the Mic function. Returns True if successful."
+msgstr "启动 Mic 功能。执行成功返回 True 。"
+
+#: ../../en/hardware/mic.rst:117 66f4415c322c42f49bc4af371620e586
+msgid "|begin.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:7 37c2fec011b745f7b0bc7f8047974e42
+msgid "begin.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:122 86c429e7e20c43e8890267b423af0ea2
+#, fuzzy
+msgid "Stop the Mic function. Returns True if successful."
+msgstr "启动 Mic 功能。执行成功返回 True 。"
+
+#: ../../en/hardware/mic.rst:126 7b707730f7c243dd8025f41fe2212e3e
+msgid "|end.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:9 8d79dd91b45042fbac31c3ba8ea26913
+msgid "end.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:131 7efc59812e8a40e5ba1a8bec9082298e
+msgid "Check if Mic is running. Returns a boolean value."
+msgstr "获取 Mic 是否处于运行状态， 返回bool类型。"
+
+#: ../../en/hardware/mic.rst:135 8712f832208444d8ab67a9327107a31f
+msgid "|isRunning.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:11 13eeec33ea4343ad8c3067b66bcaeecb
+msgid "isRunning.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:140 aa25f78739ee43de9dff7c349816a1a6
+msgid "Check if Mic is enabled. Returns a boolean value."
+msgstr "获取 Mic 是否处于使能状态， 返回bool类型。"
+
+#: ../../en/hardware/mic.rst:144 140977f92ecf40588a9ffe3af7d8f316
+msgid "|isEnabled.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:13 26a8c80d2a774c13aaa4dfdcf4cce6a5
+msgid "isEnabled.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:149 a557c8f6c12f497ab6e1048b5de3bb6f
+msgid "Check if Mic is recording. Returns an integer value."
+msgstr "获取 Mic 是否处于录音状态， 返回int类型。"
+
+#: ../../en/hardware/mic.rst:151 655240eb1d2a4ca382f6de0fb278f2e5
+msgid "Return values:"
+msgstr "返回值："
+
+#: ../../en/hardware/mic.rst:153 c0a8030b39d84286949c233ccc3786b5
+msgid "0=not recording"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:154 26e8b2b2feaf4d2d9e80a452e7e9add1
+msgid "1=recording (There's room in the queue)"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:155 b3a652475acf4486ba27b0f412b3ab54
+msgid "2=recording (There's no room in the queue.)"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:159 611aa18a305c41899a5d0febb70e4bf1
+msgid "|isRecording.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:15 5eba94aea52f42a8959d9f88805125c8
+msgid "isRecording.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:164 bba5ed8f6de34833ad2826e2f64b674b
+msgid ""
+"Set the sampling rate. The parameter sample_rate generally includes 8000,"
+" 11025, 22050, 32000, 44100."
+msgstr "设置采样率。参数 sample_rate 一般有 8000 ， 11025 ，22050 ，32000 ，44100"
+
+#: ../../en/hardware/mic.rst:168 90d4f21ae088488f98c5159b102c102c
+msgid "|setSampleRate.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:17 0e8c88932eb4460ebf738920e239f953
+msgid "setSampleRate.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:173 24cdc6f20b244455ab305efcb84f5760
+msgid "Record audio data."
+msgstr ""
+
+#: ../../en/hardware/mic.rst:175 65733cf3d73040a3b1572c1cfb794f80
+msgid ""
+"The parameter rec_data requires passing a buffer. The parameter rate "
+"generally includes 8000, 11025, 22050, 32000, 44100, with a default of "
+"8000. The parameter stereo is passed as True or False."
+msgstr ""
+"参数 rec_data 要求传入一个buffer。参数 rate 一般有 8000， 11025，22050，32000，44100， "
+"默认填8000。参数 stereo 传入True或者False。"
+
+#: ../../en/hardware/mic.rst:181 57d26c8747154a0e82cd17c61f77f591
+msgid "|record.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.mic.ref:19 538c85185afa41db969a15d70e519a9a
+msgid "record.svg"
+msgstr ""
+
+#: ../../en/hardware/mic.rst:185 74467838b2b448aebc15699926f692d3
+msgid "class mic_config_t"
+msgstr ""
+
+#~ msgid "Mic 用于控制主机内部集成的按键。以下是主机的 Mic 支持详细："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Mic Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| "
+#~ "和 ``M5.update()`` |M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "调用 Mic 对象的所有方法，需要放在 ``M5.begin()`` "
+#~ "|M5.begin.svg| 的后面，并在 主循环中调用 ``M5.update()`` "
+#~ "|M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid "获取或者设置 Mic 对象的参数。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "当不传入任何参数时，会返回 :py:class:`mic_config_t` 的对象。 当传入一个"
+#~ " :py:class:`mic_config_t` 的对象， Mic 会设置 Mic"
+#~ " 的所有支持的参数。"
+#~ msgstr ""
+
+#~ msgid "当传入下表中的参数， Mic 会对传入的参数进行获取或者设置。"
+#~ msgstr ""
+
+#~ msgid "以下是支持的参数:"
+#~ msgstr ""
+
+#~ msgid "I2S 的串行数据线，用二进制补码表示的音频数据。"
+#~ msgstr ""
+
+#~ msgid "I2S 的串行时钟线，对应数字音频的每一位数据。"
+#~ msgstr ""
+
+#~ msgid "I2S 的主时钟线。一般为了使系统间能够更好地同步时增加MCLK信号，MCLK的频率 = 256 * 采样频率。"
+#~ msgstr ""
+
+#~ msgid "I2S 的帧时钟，用于切换左右声道的数据。"
+#~ msgstr ""
+
+#~ msgid "输入音频的目标采样率。"
+#~ msgstr ""
+
+#~ msgid "使用双声道输出。"
+#~ msgstr ""
+
+#~ msgid "求平均值的采样次数。"
+#~ msgstr ""
+
+#~ msgid "输入值的乘数。"
+#~ msgstr ""
+
+#~ msgid "先前值的系数，用于噪声过滤。"
+#~ msgstr ""
+
+#~ msgid "使用模拟输入麦克风（仅需要 pin_data_in ）。"
+#~ msgstr ""
+
+#~ msgid "I2S 的DMA缓冲区长度。"
+#~ msgstr ""
+
+#~ msgid "I2S 的DMA缓冲区数量。"
+#~ msgstr ""
+
+#~ msgid "后台任务优先级。"
+#~ msgstr ""
+
+#~ msgid "后台任务使用的CPU。"
+#~ msgstr ""
+
+#~ msgid "I2S端口。"
+#~ msgstr ""
+
+#~ msgid "读取属性："
+#~ msgstr ""
+
+#~ msgid "设置属性："
+#~ msgstr ""
+
+#~ msgid "启动 Mic 功能。执行成功返回 True 。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "uiflow2 的需要做成两种块， 一种忽略返回值的块， 一种有返回值（ 返回bool类型"
+#~ " ）的块。 有返回值的块放到 Advanced 栏中。"
+#~ msgstr ""
+
+#~ msgid "描述"
+#~ msgstr ""
+
+#~ msgid "获取 Mic 是否处于运行状态， 返回bool类型。 uiflow2的需要做成有返回值的块。"
+#~ msgstr ""
+
+#~ msgid "获取 Mic 是否处于使能状态， 返回bool类型。 uiflow2的需要做成有返回值的块。"
+#~ msgstr ""
+
+#~ msgid "获取 Mic 是否处于录音状态， 返回int类型。"
+#~ msgstr ""
+
+#~ msgid "返回值："
+#~ msgstr ""
+
+#~ msgid "uiflow2的需要做成有返回值的块。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "设置采样率， uiflow2 的需要做成无返回值的块。 参数 sample_rate "
+#~ "一般有 8000 ， 11025 ，22050 ，32000 "
+#~ "，44100"
+#~ msgstr ""
+
+#~ msgid "描述。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "参数 rec_data 要求传入一个buffer，。 参数 rate 一般有"
+#~ " 8000， 11025，22050，32000，44100， 默认填8000。 参数 "
+#~ "stereo 传入True或者False。"
+#~ msgstr ""
+
+#~ msgid "停止麦克风功能。 如果成功则返回 True。"
+#~ msgstr ""
+
+#~ msgid "记录音频数据。"
+#~ msgstr ""
+
