@@ -1,5 +1,5 @@
 PPS Module
-========
+==========
 
 .. include:: ../refs/module.pps.ref
 
@@ -14,7 +14,7 @@ Micropython Example::
     import os, sys, io
 	import M5
 	from M5 import *
-    from pps import PPS
+    from module import PPS
 
     pps = PPS(addr=0x35)
     pps.set_output_voltage(5.5)
