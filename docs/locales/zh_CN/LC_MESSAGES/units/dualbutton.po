@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/dualbutton.rst:2 3f72b40a61314567b50e9159e97d151b
+msgid "Dual_Button Unit"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref ced95f0e5a19498889a03eaca09b7dea
+#: f51441cbbba440fdb16a33f8903cf0d1
+msgid "Dual_Button"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:7 175aa32f3892488086dfab4fa770485b
+#: ed2f82bfc2214a6380339fa237bcfbd2
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:9 3c0ea7dcac1a476faf1f2fc2473aa117
+#: 61573fc48749431aad302075884dfe11
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:11 59f2fbe5504d4ef28fdeb7f5be83997e
+#: cb262ecae1e544868033853ff8d06fc9
+msgid "get_status.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:13 37284ef3c71e47b88d40cb08df008ee7
+#: e889e927f10c4ef28c6084a5c66a39e9
+msgid "setCallback.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:15 135da047d97644a68a4565d6dbd307d8
+#: faa31578864a4941a18263705b09a7c8
+msgid "tick.svg"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:6 25da538ad91f45e7afac8cf7e7151709
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:8 363f136c5b7745ef890ce32931e51726
+msgid "|Dual_Button|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:11 295f213b39004b1f97c97f503cc2047f
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:32 f3e9ceb23cf1421ba2cf013cf8f62e7b
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:34 e337721f7e56489dbac19777471df9e8
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:38 1ac294fe4cd241bfa8a424b40bb7cf01
+msgid "|dual_button_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:42 e5e2b4bfe1574349a4afe6d5c6565064
+msgid "class DualButton"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:45 5599da475e8942d1b98b02380dba84a2
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:49 18e3ddbddc83420893991d7332db5fc8
+msgid "Create a DualButton object."
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:52 ../../en/units/dualbutton.rst:64
+#: 5d85501ef0a344c7a76f9750f5b9e243 6b94f483a2bc41f99d1f9187e35d276b
+msgid "The parameters are:"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:52 d10ef8e6d8f141ce8d6028f65428d328
+msgid "``IO1,IO2`` Define two key pins."
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:54 ../../en/units/dualbutton.rst:66
+#: ../../en/units/dualbutton.rst:75 ../../en/units/dualbutton.rst:84
+#: 6c86de5f54ac4399a4195c1a9c80076e 83fd7076d5e2431bb9583f4faf1aeaa5
+#: c1e32531dc6241958f41ffb55ee21e17 fb5fd5ae0a3247daa283b8aa39cfa076
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:56 e3c842e4a9ec4a8087fe4fbdb67dea76
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:60 1588ec3dd3b848ad868c17d1822d63ce
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:68 4897b906d0234e69b0dac2a59be3a0c0
+msgid "|get_status.svg|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:73 246c2cfba0e24c589ec7ec48b557cd80
+msgid "Execute the program when the key is pressed."
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:77 f84674a5c2b34aac93046fd34fdb2db9
+msgid "|setCallback.svg|"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:82 b8aafd83105c4d698f5cc58f7c7f8cf8
+msgid ""
+"The polling method, placed in the loop function, constantly detects the "
+"state of the key."
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:86 8a012dd170a0471bbf90c615d0558a0e
+msgid "|tick.svg|"
+msgstr ""
+

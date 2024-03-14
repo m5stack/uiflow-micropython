@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/weight_i2c.rst:2 cada76f7674e49d8a837f65731a9b077
+msgid "Weight I2C Unit"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref 1518e84df34243729653c9cd60ecc4eb
+#: a0715071cd2d4f65a9baa8d545f883f3
+msgid "WEIGHT I2C"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:6 ddd51394d0894c9f964206d558a0967b
+#: f534c52d60964c6d885400f3832e962c
+msgid "init_i2c_address.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:8 9e9f75843875412291b90df56b838c60
+#: ea0a05cc7d7e406a991f490d0e6d0ff1
+msgid "get_adc_raw.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:10 05532f2beff343f6b8fdeaa5d0f22c3d
+#: da989fec1fb74e089469676b0bbb4ab6
+msgid "get_weight_float.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:12 1363ff824a6f4c33b7b5446172cb6ec5
+#: a86b9767465741f4b9110b8a5032e97c
+msgid "get_weight_int.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:14 7a0e6079bec945d68c1915ca17745255
+#: f7986bf7b2164fdf8c28036891cfc34e
+msgid "get_weight_str.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:16 68d2e5d2a4ef4ba39cbd75974e03cfe3
+#: 910462ce265e4f57b51827e253ea3eef
+msgid "set_reset_offset.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:18 0c0d87b63974401194cf876244724278
+#: 6ad32a60feab4c61a72024b747f47f3d
+msgid "set_calibration.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:20 334df6abacd2409e8f2603710f43848b
+#: 9c23f3f797534c12a4dcc36acf45a036
+msgid "set_lowpass_filter.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:22 19abe2eed2bf4061a242a14d64eed62d
+#: 8a288cf9ebfe4c23beb9067b889b8d0a
+msgid "get_lowpass_filter.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:24 4d4206cead994e9f8d8bfc9b0eaf6459
+#: 4e690952bfac4db19ffbc934ad035056
+msgid "set_average_filter_level.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:26 0a386f827bf04c5090cd7900e5e16434
+#: b661025f0ec94f91bc3ec0717e03a938
+msgid "get_average_filter_level.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:28 07f3ce7f21fa40f78d2f9f5bd3d44ffe
+#: bf039d95bca54382a15d6305effa802e
+msgid "set_ema_filter_alpha.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:30 290b1c33716543b4928c4cd7e4beda9b
+#: 81497f3c8ce94f59bce05ecfb8a362ed
+msgid "get_ema_filter_alpha.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:32 46283c8b40c94fc3a20ec71f653fc882
+#: 8dc7a9df38e24b148177255a38c40bb3
+msgid "set_i2c_address.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:34 36ce4633b21a476aa427bd6397825d98
+#: 3fb62dae6e7a41a6aa83eb6e3998c17d
+msgid "get_device_spec.svg"
+msgstr ""
+
+#: ../../en/refs/unit.weight_i2c.ref:36 8bb15c87a0b4472486690900e1582b3b
+#: fd8684713f534c819849592a05027296
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:6 c79fe3573c494acdaa05d8b5b9a581c5
+msgid ""
+"The ``Weight I2C`` Unit is a weighing acquisition transmitter unit that "
+"adopts the \"STM32+HX711 chip\" solution to achieve 24-bit precision "
+"weight measurement through I2C communication and does not include a load "
+"cell sensor. This unit is capable of measuring weight and also includes "
+"various filters."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:8 31b238ab4fb148289d5ab7e2e99d4f84
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:11 a74f2ebc94cb4b06b052c9612c8a1578
+msgid "|WEIGHT I2C|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:15 85fa69b3beb8436baf2d603cdddac2b8
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:31 04efee9edc5c42b49f366b6e2ab7a8b2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:33 d257c77330ee48549b94e936d249fcd7
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:40 07dfa5f572e04b3da539869202aa55b9
+msgid "class WEIGHT_I2CUnit"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:43 bc83dc34f0ab4ddbb620e87287ce34a4
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:47 7fb788eff9684c56be88b3b6b44231aa
+msgid "Create an WEIGHT_I2CUnit object."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:49 62d3324e862c4259a1cf12bbf155504c
+msgid "``I2C0`` is I2C Port."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:50 db64829a72754906ad14f3b3e088a16a
+msgid "``0x26`` is default I2C address"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:53 ../../en/units/weight_i2c.rst:66
+#: ../../en/units/weight_i2c.rst:75 ../../en/units/weight_i2c.rst:84
+#: ../../en/units/weight_i2c.rst:93 ../../en/units/weight_i2c.rst:102
+#: ../../en/units/weight_i2c.rst:123 ../../en/units/weight_i2c.rst:132
+#: ../../en/units/weight_i2c.rst:142 ../../en/units/weight_i2c.rst:152
+#: ../../en/units/weight_i2c.rst:160 ../../en/units/weight_i2c.rst:172
+#: ../../en/units/weight_i2c.rst:180 ../../en/units/weight_i2c.rst:190
+#: ../../en/units/weight_i2c.rst:200 018bdf75616543d2b1f8a0aa067f1ed6
+#: 0e1e091e49414610b75468a0a264aae7 19b9fad555bd4110baa36af8cbe4b690
+#: 410856bdfeb148fc87ca108dda0b7724 7b41436cb17542a2913044ab4563149b
+#: 90a6b9b5e02b4e78bec0a914c9855885 960d8aa9fac941fb8294fb8ae00aa875
+#: 9cc8ce62d42d48d381396afae069afdb 9e74065368d74271bc65b52e0ac21efa
+#: a3ba2c79a34d4b2084910cfd7e5fec18 afc10b47b95b44f4b0e750487ccbadde
+#: c67813afcddf4d21b8a33b53c2ec1b06 ccbf93c22186475cbb2521dafebda91b
+#: ccea2017f3fa493e947be526fbf34e8a dc8412bbbbbc44ccaf24a56008bc81bd
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:55 e70846d5e8cf4231baa745ec543e91a8
+msgid "|init_i2c_address.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:59 74d6ec5724ef4410a654acbb6baaf011
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:64 1dfa33867b7e42568b36bbfa0449cccd
+msgid "Gets the raw adc value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:68 1f44c05ccfa349a5894dc02c9b655f1c
+msgid "|get_adc_raw.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:73 f20d7a10d0f24ea186f8a953c48d5f79
+msgid "Gets the weight in grams float value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:77 2d81c3d3ba914eb68ac78111f83e2bd8
+msgid "|get_weight_float.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:82 0417d9f7add7497d90f8f33754cb401e
+msgid "Gets the weight in grams int value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:86 d01a6bc5caad4aa2abb7fa0023cf72f6
+msgid "|get_weight_int.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:91 4f3ef7fba6df4d2fb93abcd51c3b527b
+msgid "Gets the weight in grams string value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:95 209f1c7ad59c4bdd9fd438aa3b5c7af6
+msgid "|get_weight_str.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:99 5e642b5a35114c5995026d1183e96a61
+msgid "Reset the offset value(Tare)."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:104 e33c877a6c974f5da727e105f5deb72d
+msgid "|set_reset_offset.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:109 cf57a4b468e5448188d483ec8c276547
+msgid "Calibrates the Load sensor."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:111 ef7840c94f904aa48b46a73417960caf
+msgid "``weight1_g``: Weight1 in grams."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:112 df0c107d78d44fb38574f8097d3544b0
+msgid "``weight1_adc``: Weight1 in ADC value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:113 29cf3862eeda4c7aa9287f89de11f91f
+msgid "``weight2_g``: Weight2 in grams."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:114 b5b5c777e8844625bf86d3726160cb38
+msgid "``weight2_adc``: Weight2 in ADC value."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:116 401dedc756cf4f7aac080468f5ba75f5
+msgid "calibration steps:"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:118 0b06a074b11a4cfb99021a6f1712059a
+msgid ""
+"1.Reset offset(Tare). 2.Get the raw ADC value at no-load weight, this is "
+"the Raw ADC of zero weight in 0g. 3.Put some weight on it, then get adc, "
+"this is the load weight adc value and the gram weight you put on it."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:125 e14db23747df464d8ec34bd630c1fa8d
+msgid "|set_calibration.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:129 29d7dd2169544720b9296dbf86291e28
+msgid "Enable or disable the low pass filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:134 e3f7af5bcf1e444ca056472af9df6c66
+msgid "|set_lowpass_filter.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:139 86358c5ce2c441599b408cf8c6c095c0
+msgid "Returns the status of the low pass filter (enable or disable)."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:144 9e1209159a404eea90a2dbe970e9c9e5
+msgid "|get_lowpass_filter.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:148 4a9725d57fd743cab46c4c13dd201327
+msgid "Sets the level of the average filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:150 1e795afce69b4101b6ddcb8b3b6c2c39
+msgid ""
+"``level``: Level of the average filter (0 - 50). Larger value for "
+"smoother result but more latency"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:154 ed6550ccd43c44d6b69b645046c4043d
+msgid "|set_average_filter_level.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:158 77acb7dbfba4489280596fe1e3f75014
+msgid "Returns the level of the average filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:162 9150f7a2a3f84fa2a458db7f385ece0b
+msgid "|get_average_filter_level.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:166 e155ed441e604396a6d6557cbf4ac641
+msgid "Sets the alpha value for the EMA filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:168 377f0134284e43a79992c681e21feeb3
+msgid ""
+"The EMA (Exponential Moving Average) filter is more sensitive to changes "
+"in data compared to the average filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:170 d1970d17b13d4bba93d6ea0ac160ec53
+msgid ""
+"``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for "
+"smoother result but more latency"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:174 eac19807e32e46b1bea3284673d4fa39
+msgid "|set_ema_filter_alpha.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:178 66063d353ab74b52ad109269a469903b
+msgid "Returns the alpha value for the EMA filter."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:182 e793bebda0ee43c9901e1e85e3e6c8ab
+msgid "|get_ema_filter_alpha.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:186 e024d57011fe469689bbfde64f5983e4
+msgid ""
+"The i2c address can be changed by the user and this address should be "
+"between 0x01 and 0x7F."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:188 c87d5a17456a44558c711a8d15624cea
+msgid "``address``: range of address(0x01 - 0x7F)."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:192 60aa976d8aad4dbf9984428bb521dc00
+msgid "|set_i2c_address.svg|"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:196 f67295a32ce246a2b56ec5d405ae2ef1
+msgid "Get the firmware version details and I2c address of this device."
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:198 dd2f3619dcae4b16a28eee840d2ecf0b
+msgid "``info``: (0xFE, 0xFF)"
+msgstr ""
+
+#: ../../en/units/weight_i2c.rst:202 99d0e72b9da94fd9a74dc85623e33124
+msgid "|get_device_spec.svg|"
+msgstr ""
+

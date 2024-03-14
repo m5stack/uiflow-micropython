@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/op90.rst:2 07df7a6260484963aa4e045efad79b48
+msgid "OP90 Unit"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref 670914b88e54453198ba29fa51d0108b
+#: 83cdd86e6a824f7085b9060e37b6801b
+msgid "OP90"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref:7 429992b93f4544108f90f428b35e8fae
+#: f33169e69cfd47d8993ecdeabd8a172c
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref:9 34e4ae7c3ad04f63a448b363720652d5
+#: 7931bdae025a41f0b187dd48b970416b
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref:11 0646c272270c4044b17dbe14aecae908
+#: 1509415501554856901b5bbc1acac77a
+msgid "get_switch_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref:13 0b0f9297d467480bbf48ec1727518d1e
+#: 212738b2abff4430a2a3176475cae82c
+msgid "get_count_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op90.ref:15 2c171eced18047a6b34c812f7accf737
+#: 45f01f8fa93b45f8873fefe351585e3d
+msgid "reset_count_value.svg"
+msgstr ""
+
+#: ../../en/units/op90.rst:6 50f44e043be84fd28e9e55577e686616
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/op90.rst:8 e69b1895d79f4f3cbe1dcb96aead4543
+msgid "|OP90|"
+msgstr ""
+
+#: ../../en/units/op90.rst:11 6be1b63826984b1faa0d5f0aff501d6f
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/op90.rst:39 da81ab1fad604a17af2e5bb7e0fdce59
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/op90.rst:41 19b58c5ea9274eff8197822fe22a1ea6
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/op90.rst:46 88867795d2c34c0e959df182d71871ff
+msgid "|op90_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/op90.rst:50 ed8640af13134361b57cc4dbe17655b1
+msgid "class OPUnit"
+msgstr ""
+
+#: ../../en/units/op90.rst:53 5800e85778a242429cf094cd8e058912
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/op90.rst:57 acd0419abaae4fb19b1e2a41af23e10d
+msgid "Create an OPUnit object."
+msgstr ""
+
+#: ../../en/units/op90.rst:60 115e78297f3d4c519df944f403a36596
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/op90.rst:60 c4f753bbbeb343a6a62ab304ec1dbcbb
+msgid "``io`` is the detection pin."
+msgstr ""
+
+#: ../../en/units/op90.rst:62 ../../en/units/op90.rst:74
+#: ../../en/units/op90.rst:83 ../../en/units/op90.rst:92
+#: 140bbcf65b584685b735fc6100b5d5f2 1d1e0b4ddbe04b96bc52a6469d3f2379
+#: 42ab107ef2be450899f82278d7f7a6fc 951c2535bb7a416985542f1dc6cd4e3a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/op90.rst:64 e3ce8b13e69040619ac4d68978302234
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/op90.rst:68 46282fe0f52a47618288f3cdcad995c3
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/op90.rst:72 5b2e891dba594974bebaa9fa1a08c8b9
+msgid "Gets the switch status."
+msgstr ""
+
+#: ../../en/units/op90.rst:76 6d1e6098959a4326990c8d576c71f5fd
+msgid "|get_switch_value.svg|"
+msgstr ""
+
+#: ../../en/units/op90.rst:81 b12988810cff4cd9ab3637e41dfe1d8f
+msgid "Get the count value."
+msgstr ""
+
+#: ../../en/units/op90.rst:85 97e05d28cbdc493e9175025594b930b3
+msgid "|get_count_value.svg|"
+msgstr ""
+
+#: ../../en/units/op90.rst:90 7bc516c911bd4c6a91ae745f511af909
+msgid "Reset the meter value."
+msgstr ""
+
+#: ../../en/units/op90.rst:94 04e07cee260b4467af0fb5fd01fea461
+msgid "|reset_count_value.svg|"
+msgstr ""
+

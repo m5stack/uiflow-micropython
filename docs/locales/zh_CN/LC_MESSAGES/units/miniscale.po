@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/miniscale.rst:2 f363988e45c848c099a22f2e6bab3b61
+msgid "Miniscale Unit"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref 1e5058cd1bf54776b0954fce2c2b57ac
+#: e0d594ecc05e4623869f85ef36adb739
+msgid "MINISCALE"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:6 5282585bc09e4b93a5f3c037adab8a5f
+#: 924ff837a9a64f8f8d1c4080f8732973
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:8 73304adf232447c9b89985e7087d386e
+#: b82e8cfd99f5459da02fbd82aca1d13a
+msgid "calibration.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:10 1f8c3bccdd594eada48c8ae0a295412c
+#: 59a1cb69ee0e439d80750a516eb373b9
+msgid "getAverageFilterLevel.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:12 286e8791b3e34ad8b351cdf256bcff40
+#: c873e9a7a0c34cd0b8f739bb90a988ec
+msgid "getEMAFilterAlpha.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:14 8cba93be4f5b4893bb04f9601ccd4b61
+#: e3cc24d3b48344c1aad1729b43236bd1
+msgid "getLowPassFilter.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:16 e1c9fa0aad9e4deabfae8977f536dff6
+#: e39902adf7da404399a31cdb7de2ce69
+msgid "get_adc.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:18 0144c0f2d396401d9c66b05291411bd3
+#: fb37822b21d34285ae7c77e16f5fe15c
+msgid "get_button.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:20 9f7c01d272994c77917170de1fbc41a6
+#: c9e77d6ddf494f448f6d4348c76584d1
+msgid "get_weight.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:22 6778dec469fb4a24a59e173535c43161
+#: 8be804b32c654d78814c989806758dce
+msgid "reset.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:24 35c3b925498c432ea82bbb764f680221
+#: a592fa972fcd4b56a1dbdf5fbb26c780
+msgid "setAverageFilterLevel.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:26 309939ce9b9a48d7a08aa92cc49230bd
+#: 423a52c2b5954f288ca9591bb205e5ec
+msgid "setEMAFilterAlpha.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:28 b925abb79c6b456e9cddda7d345812d4
+#: c1ba7edc8e5d47879dd01ab8d97570f9
+msgid "setLed.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:30 9346b6aa11f34229915f837284d174fd
+#: d5d410dfe1854926b508c2423300f831
+msgid "setLowPassFilter.svg"
+msgstr ""
+
+#: ../../en/refs/unit.miniscale.ref:32 82664d8b87b7468eaf81643d575d101b
+#: f8269e9d8acd475daf1b9d9a013c7426
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:6 605fe0de387f4e0b8e9c6da696a098a0
+msgid ""
+"The ``Miniscale`` class is designed for interfacing with a mini scale "
+"weight sensor, which includes a HX711 22-bit ADC. This sensor is capable "
+"of measuring weight and also includes additional functionalities like LED"
+" control and various filters."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:8 82e27e7fdbfa4d5f832db101af4f2eb2
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:11 df5377fd3c2f4a978cacebc557adf499
+msgid "|MINISCALE|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:15 bb91cbe7c79b4e24b06cfe90741a192f
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:29 d258c575af0c429fb4ef3c06feb88d2c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:31 858f384a9db7452a85d5712919d752e9
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:38 f43a3c0b7167441880f413b0cc2d92af
+msgid "class MiniScaleUnit"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:41 1f87e08d8e3348d996718226f0cfbdcb
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:45 704407b487a848a1ac0f861eb9f2eb2b
+msgid "Create an MiniScaleUnit object."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:47 fab4c54311ec4e1dbf1ea380a10fad22
+msgid "``I2C0`` is I2C Port."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:50 ../../en/units/miniscale.rst:63
+#: ../../en/units/miniscale.rst:72 ../../en/units/miniscale.rst:82
+#: ../../en/units/miniscale.rst:94 ../../en/units/miniscale.rst:103
+#: ../../en/units/miniscale.rst:124 ../../en/units/miniscale.rst:133
+#: ../../en/units/miniscale.rst:143 ../../en/units/miniscale.rst:153
+#: ../../en/units/miniscale.rst:161 ../../en/units/miniscale.rst:173
+#: ../../en/units/miniscale.rst:181 019a6e87cc7b4c5f8f8622784b127ce9
+#: 0623f9c71df14119a3763705a9b0f355 19a2bdd5d34d43a2b75e261563a7d351
+#: 42d7d324529246778f1f920045794df5 57193918c84147fc9c2253d74770016a
+#: 579941e5aff3468582dedc915e1884e8 ad71ec002410480c95920baa518a77fe
+#: afd6400d22f5477e80838d232e677064 b162e87665694d3b9fa83f730a6cf63f
+#: ccc3dfd610514bfea740055322720ae9 d05963dcef85441eb4c566c7a4a07da5
+#: e450591082ac4b3cbc8e8060185d192f ff455ad2b68643878eba8efa24480ba0
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:52 982e8da62fa4457ca776e574d63fba3f
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:56 e83f253c5f5f4a158a16efc1cf820f29
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:61 7bc7ca823e234ac48ba3309a99add795
+msgid "Gets the raw adc readout."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:65 54bf7feb6bf945bf880687f547a7c755
+msgid "|get_adc.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:70 9aa65ba0a74b4737893b556d08b9f4ac
+msgid "Gets the weight readout in grams."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:74 523e1e6ecae3446ebdfe7052a80bd062
+msgid "|get_weight.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:80 05b5f6e6db2947de9a0a25aa50a65b41
+msgid "Gets the button state."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:84 980903712c424c318ffd4118ae57f38e
+msgid "|get_button.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:88 2ca64f384d5a4ff0b5b18da03062ee55
+msgid "Sets the RGB LED color."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:90 90ffbe60dc044aa58a1baa286a8ed0e0
+msgid "``r``: Red value (0 - 255)."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:91 a0e89b7757d74551a1c6d3391ceb970a
+msgid "``g``: Green value (0 - 255)."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:92 a2fa4189f9fe47d2b4c571244979d472
+msgid "``b``: Blue value (0 - 255)."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:96 f88ffc43f03f494d9f9f78193ae804f8
+msgid "|setLed.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:100 701d7329a0ef42db9425471a60482412
+msgid "Resets sensor."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:105 6ff56a2cd256450c9c54f8cd24c5b835
+msgid "|reset.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:110 9d1ec267b4cf4d68977a11d05584d2bb
+msgid "Calibrates the MiniScale sensor."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:112 5479d0ada3424ca6ab5854d188399538
+msgid "``weight1_g``: Weight1 in grams."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:113 2d8dc91f6201449b9ef69e720d639168
+msgid "``weight1_adc``: Weight1 in ADC value."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:114 7fa93106f4f5400e9fcba1f6ccb9328a
+msgid "``weight2_g``: Weight2 in grams."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:115 b850d1b602be4d379642f48bedd32892
+msgid "``weight2_adc``: Weight2 in ADC value."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:117 359af77ff5564200801629f867cd4c32
+msgid "calibration steps:"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:119 c82497538be440069e3602ca11253191
+msgid "Reset sensor;"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:120 41636694306047ae9d6b8bd99a3e7077
+msgid "Get adc, this is weight1_adc (should be zero). And weight1_g is also 0."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:121 242e481288614881a4a00e91b878e05e
+msgid ""
+"Put some weight on it, then get adc, this is weight2_adc. And weight2_g "
+"is weight in gram you put on it."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:126 a073e586dfe34d838896b8096769cb0b
+msgid "|calibration.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:130 5884c6805b65490fa29aa2539ebda0b3
+msgid "Enables or disables the low pass filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:135 b5d6bf41ce3f4b188398d39d37f9ca97
+msgid "|setLowPassFilter.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:140 79fc1225abd44f1a8489898cd29a225f
+msgid "Returns the status of the low pass filter (enabled or not)."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:145 ea028a3d80164de7b65dd9db440b8178
+msgid "|getLowPassFilter.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:149 ca9b895d2c7d4be589cd825ecc80b7e8
+msgid "Sets the level of the average filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:151 3ed2c35300af4824a66585cf189ee2f0
+msgid ""
+"``level``: Level of the average filter (0 - 50). Larger value for "
+"smoother result but more latency"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:155 183e04657b974597b4972921abcb2d3f
+msgid "|setAverageFilterLevel.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:159 763b6ff855644b629f4b02f012b0a68c
+msgid "Returns the level of the average filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:163 462b63a831de477f8d119f2773f09af2
+msgid "|getAverageFilterLevel.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:167 1f230a7c24e04338bbaa76e85df1e5dc
+msgid "Sets the alpha value for the EMA filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:169 47c3d3b714d9422f812321b23fb3fb04
+msgid ""
+"The EMA (Exponential Moving Average) filter is more sensitive to changes "
+"in data compared to the average filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:171 f9d3a8fd33fe46bb89a8e73471041b05
+msgid ""
+"``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for "
+"smoother result but more latency"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:175 fd5c7df1a4644484b9e981a171484bc8
+msgid "|setEMAFilterAlpha.svg|"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:179 154c40e00e0e4f70a8f3c6a89c3fe366
+msgid "Returns the alpha value for the EMA filter."
+msgstr ""
+
+#: ../../en/units/miniscale.rst:183 de83966c42024c29b80844d8c79ff5f3
+msgid "|getEMAFilterAlpha.svg|"
+msgstr ""
+

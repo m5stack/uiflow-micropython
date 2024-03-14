@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/angle.rst:2 416671239b7a4296bd7df29f6ae2b46e
+msgid "Angle Unit"
+msgstr ""
+
+#: ../../en/refs/unit.angle.ref 169830dc48744b1591e0a29aa2121f18
+#: 95039787b9f94c39b84bb51c8839ca77
+msgid "Angle"
+msgstr ""
+
+#: ../../en/refs/unit.angle.ref:6 441f06fccaa24b55aa9154a9fb980f70
+#: 6f9295067bd74097a9e4d3cbd861f354
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.angle.ref:8 34f6334b119c49809733ca9761a9c21a
+#: fcb72a8cac624375bb02aca45fb83f6f
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.angle.ref:10 73e66f956e5d4b658985312c93a6c6b9
+#: 9b3b108b819b4c4bb7519f1498797a12
+msgid "get_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.angle.ref:12 9a475e7279d1404fba64d40baa8b8a9e
+#: eb3607650ed34473977839e401a195de
+msgid "get_voltage.svg"
+msgstr ""
+
+#: ../../en/units/angle.rst:6 596cd95831cc43a3aff1df74332a0a47
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/angle.rst:8 99d4126a0fc04ea38ec1613684a7dab8
+msgid "|Angle|"
+msgstr ""
+
+#: ../../en/units/angle.rst:10 538f88505731452eb1ccbad309f3f37a
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/angle.rst:25 1843233c9dd54b62bd3fdfe922c27328
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/angle.rst:27 8df7b678b2774e1ab57eaf62b3a3eb24
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/angle.rst:32 4bb8ca5d079d4faca0f7ab1aed94e926
+msgid "|angle_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/angle.rst:36 c7c3991d4a4b4590bcc522120c36a1d4
+msgid "class Angle"
+msgstr ""
+
+#: ../../en/units/angle.rst:39 c1d88060769949719ada9cfe142918a8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/angle.rst:43 65d8f81ca0e44cc9965fe9eb27698209
+msgid "Create an Angle object."
+msgstr ""
+
+#: ../../en/units/angle.rst:46 d5d2e9191a384ed182d8c72bd92c1254
+msgid "parameter is:"
+msgstr ""
+
+#: ../../en/units/angle.rst:46 26d1f2a4525a494e8218ae5f5fcb2a7e
+msgid "``port`` is the pins number of the port"
+msgstr ""
+
+#: ../../en/units/angle.rst:48 ../../en/units/angle.rst:60
+#: ../../en/units/angle.rst:69 30286798f2504f70b9c330d00dbe1628
+#: bb995e98ea874c0ca759ebf272c193c6 e0ab47bdbabe41acb30e1d74ee9ca98d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/angle.rst:50 ef394f389e6d44e7b4e24923301ce124
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/angle.rst:54 ae5ae21222fc48a6a579de920cff1ea3
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/angle.rst:58 f455e3e6599a45db985536ee3512c865
+msgid ""
+"This method allows reading the Angle's rotation value and returning an "
+"integer value. The range is 0-65535."
+msgstr ""
+
+#: ../../en/units/angle.rst:62 6749e6cb641449848dd792b01ef29b45
+msgid "|get_value.svg|"
+msgstr ""
+
+#: ../../en/units/angle.rst:67 dfa8ed43b0034ddb90b154fc3da7434c
+msgid ""
+"This method allows reading the voltage value of Angle, and the return "
+"value is a floating point value."
+msgstr ""
+
+#: ../../en/units/angle.rst:71 85732b9876454cf28303581eea39ff10
+msgid "|get_voltage.svg|"
+msgstr ""
+

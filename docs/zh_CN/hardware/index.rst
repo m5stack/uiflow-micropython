@@ -5,6 +5,8 @@ Hardware
     :maxdepth: 1
 
     button.rst
-    mic.rst
-    speaker.rst
     imu.rst
+    mic.rst
+    power.rst
+    rotary.rst
+    speaker.rst

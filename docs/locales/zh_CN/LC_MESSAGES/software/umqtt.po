@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/software/umqtt.rst:2 9c4528d4c0ea4b2facfffb674823b5d1
+msgid ":py:mod:`umqtt` -- a simple MQTT client"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:9 76f2abf5773743a384bf67778903bd48
+msgid ""
+"umqtt is a simple MQTT client for MicroPython. (Note that it uses some "
+"MicroPython shortcuts and doesn't work with CPython)."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:13 c9dd2a02f92a48c0a25f2276aabda22a
+msgid "Supported MQTT features"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:15 232b92430214489da5b3d4996a85da6e
+msgid ""
+"QoS 0 and 1 are supported for both publish and subscribe. QoS2 isn't "
+"supported to keep code size small. Besides ClientID, only \"clean "
+"session\" parameter is supported for connect as of now."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:20 357bfcd335cf4afeb1299d2a8ca1fdf9
+msgid "Design requirements"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:22 0c0cae8eb67c4a58a0ecf03ce00eee8e
+msgid "Memory efficiency."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:23 0014d18b466d41eb80270f8dee968d8d
+msgid "Avoid infamous design anti-patterns like \"callback hell\"."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:24 a0e9b7dbb1e149ddace547e7814e637e
+msgid ""
+"Support for both publishing and subscription via a single client object "
+"(another alternative would be to have separate client classes for "
+"publishing and subscription)."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:29 7ea4891ce0bc4524a2e940bbc7c21a32
+msgid "MQTT client with automatic reconnect"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:31 1655b82992f34d869fdeacc13f064954
+msgid ""
+"There's a separate `umqtt.robust`_ module which builds on `umqtt.simple`_"
+" and adds automatic reconnect support in case of network errors. Please "
+"see its |umqtt.robust|_ for further details."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:36 aba19d9dac4b400c920a2eb4ccaadec8
+msgid "MQTT client with SSL file"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:38 090f3df32d06470993cda7c9aeb7c13a
+msgid ""
+"There is a separate `umqtt.default`_ module that builds on top of "
+"`umqtt.robust`_ and supports SSL certificates passed in as files and "
+"callback delivery for each subscribed topic. Please see its "
+"|umqtt.default|_ for further details."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:44 db09c1337f7648d799acd34926a06b52
+msgid "API design"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:46 564a88c38721480eac22fea38e8abf6d
+msgid "Based on the requirements above, there are following API traits:"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:48 1a200fa0983748788ad2796beadc783e
+msgid ""
+"All data related to MQTT messages is encoded as bytes. This includes both"
+" message content AND topic names (even though MQTT spec states that topic"
+" name is UTF-8 encoded). The reason for this is simple: what is received "
+"over network socket is binary data (bytes) and it would require extra "
+"step to convert that to a string, spending memory on that. Note that this"
+" applies only to topic names (because they can be both sent and "
+"received). Other parameters specified by MQTT as UTF-8 encoded (e.g. "
+"ClientID) are accepted as strings."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:56 4e8d8f44bc4542efbc1c163258ef2121
+msgid ""
+"Subscribed messages are delivered via a callback. This is to avoid using "
+"a queue for subscribed messages, as otherwise they may be received at any"
+" time (including when client expects other type of server response, so "
+"there're 2 choices: either deliver them immediately via a callback or "
+"queue up until an \"expected\" response arrives). Note that lack of need "
+"for a queue is delusive: the runtime call stack forms an implicit queue "
+"in this case. And unlike explicit queue, it's much harder to control. "
+"This design was chosen because in a common case of processing subscribed "
+"messages it's the most efficient. However, if in subscription callback, "
+"new messages of QoS>0 are published, this may lead to deep, or infinite "
+"recursion (the latter means an application will terminate with "
+"``RuntimeException``)."
+msgstr ""
+
+#: ../../en/software/umqtt.rst:70 995fd1ecdc814ac98539d22af6984a1c
+msgid "Usage Model::"
+msgstr ""
+
+#: ../../en/software/umqtt.rst:82 435ef6cf23be401a8dec948303aa073a
+msgid "Classes"
+msgstr ""
+

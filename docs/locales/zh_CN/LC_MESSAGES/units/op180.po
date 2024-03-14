@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/op180.rst:2 7672808b575441f284bf6c6c8f79ec19
+msgid "OP180 Unit"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref 55d48db2f70243e0bc84b864d0b35f9d
+#: 69ef6fe007e04294820447f5d915a8a2
+msgid "OP180"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref:7 01645dc7e6bb49929b93c64f15bbe443
+#: 2d9cb4389c98469f9e85efa6dfa1ca71
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref:9 08c0c3a6921a420e8089e12c52257710
+#: afb8c0e60ca3460bbd57374245f0f700
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref:11 6d5bb1c0c8cc4d56b5dc142c55727266
+#: e4254b7eacf548488fce0a7b4ddfaac2
+msgid "get_switch_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref:13 0412698e32974d8a900dd0f34c37e868
+#: d6843b5d95c844679aae6f6d5f7b9e97
+msgid "get_count_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.op180.ref:15 57c1b9035aeb4bfa9ea2c8496f2e6283
+#: e15a4b0d0a5c4c8d84e8951ff2655bfc
+msgid "reset_count_value.svg"
+msgstr ""
+
+#: ../../en/units/op180.rst:6 a0e5641c64c04773acc2135947b0d441
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/op180.rst:8 4adefbbc1229404ba38363b2a0a037ed
+msgid "|OP180|"
+msgstr ""
+
+#: ../../en/units/op180.rst:11 01fbc135882341bd951a0b6e8dd150a2
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/op180.rst:36 6afee34e84844e2aa0f53451578f83f9
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/op180.rst:38 88544d42b84d44719e14917cc5c2f320
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/op180.rst:43 77f05e7df5754a81947182623be5e1a1
+msgid "|op180_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/op180.rst:47 6bb37c4776a94e2d9eebb76024ef01ed
+msgid "class OPUnit"
+msgstr ""
+
+#: ../../en/units/op180.rst:50 a0547399699b47d0a89faca95d671ac7
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/op180.rst:54 884fcd5a962346858c1adfe2d53a159e
+msgid "Create an OP180 object."
+msgstr ""
+
+#: ../../en/units/op180.rst:57 d9efad3f599442e2b4295cc7343f12c3
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/op180.rst:57 b82f72838d324b0ca8c8e85ff172dc4b
+msgid "``io`` is the detection pin."
+msgstr ""
+
+#: ../../en/units/op180.rst:59 ../../en/units/op180.rst:72
+#: ../../en/units/op180.rst:81 ../../en/units/op180.rst:89
+#: 0fdfb4570208423ab81a055f9fa6ea6c 6114bb89218a41c89803af72ff8f1709
+#: b44d64c4f9084f7ca487028a321e5af7 b4994fe63c1d4de4938c61e630a8fff7
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/op180.rst:61 33efd63c521b4f6787600456eb267279
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/op180.rst:65 467ecc92a8c240fb99fa4726cbbf328d
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/op180.rst:70 6aaf489b4fa34fba9857e37b9a265aa1
+msgid "Gets the switch status."
+msgstr ""
+
+#: ../../en/units/op180.rst:74 1a320858def84834abac4f92948ac5bc
+msgid "|get_switch_value.svg|"
+msgstr ""
+
+#: ../../en/units/op180.rst:79 40a38a0f796d41c09d2a6eb55fd0901d
+msgid "Get the count value."
+msgstr ""
+
+#: ../../en/units/op180.rst:83 74bf782751ee4bfd87f8e09edc63093f
+msgid "|get_count_value.svg|"
+msgstr ""
+
+#: ../../en/units/op180.rst:87 d17a4d6d4d5540ee8848de95b43004fb
+msgid "Reset the meter value."
+msgstr ""
+
+#: ../../en/units/op180.rst:91 6bbccc75fcc648bdb7a4e590e1fca2cd
+msgid "|reset_count_value.svg|"
+msgstr ""
+

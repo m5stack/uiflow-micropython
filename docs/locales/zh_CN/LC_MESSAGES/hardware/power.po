@@ -1,0 +1,423 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 18:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/hardware/power.rst:2 ab2f673e15574f6bb3880beb6c648967
+msgid "Power"
+msgstr ""
+
+#: ../../en/hardware/power.rst:8 5392edeb0974421a8834a8eb56a7be13
+msgid "class Power"
+msgstr ""
+
+#: ../../en/hardware/power.rst:12 2ba3dda863534850abd573d144fb97ca
+msgid "Methods of the Power Class depend on ``M5.begin()`` |M5.begin.svg|."
+msgstr "Power Class的方法依赖 ``M5.begin()`` |M5.begin.svg|。"
+
+#: ../../en/refs/system.ref:1 0076ae5f84a1400f815706a480fa6c79
+#: 6a55ae9c1d9946f3aadeebe0d641e37b
+msgid "M5.begin.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:14 938bba83a8d34b27a08857b21bc54746
+msgid ""
+"All methods calling the Power object need to be placed after "
+"``M5.begin()`` |M5.begin.svg|."
+msgstr "调用 Power 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面。"
+
+#: ../../en/hardware/power.rst:17 a3d0d261d6ec427d97eae35c4f98eebf
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/power.rst:21 c4c978a100d54003b2300da500d66aa4
+msgid "Set power output of the external ports."
+msgstr "设置外接端口的电源输出。"
+
+#: ../../en/hardware/power.rst:23 bad4de0af3c84365bbe145ab9e3d5368
+msgid ""
+"When ``enable`` is True, the power output of the external ports is in "
+"output mode. When ``enable`` is False, the power output of the external "
+"ports is in input mode."
+msgstr "``enable`` 为 True 时，外接端口电源为输出模式。 ``enable`` 为 False 时，外接端口电源为输入模式。"
+
+#: ../../en/hardware/power.rst:27 fa14ae9dbb1041feba0c74d2a83fa23b
+msgid ""
+"``port`` is the port number, optional values are available in :ref:`class"
+" PORT`, only valid for M5Stack Station."
+msgstr "``port`` 为端口号，可选值请参考 :ref:`class PORT`, 仅在 M5Stack Station 有效。"
+
+#: ../../en/hardware/power.rst:30 ../../en/hardware/power.rst:44
+#: ../../en/hardware/power.rst:57 ../../en/hardware/power.rst:69
+#: ../../en/hardware/power.rst:81 ../../en/hardware/power.rst:90
+#: ../../en/hardware/power.rst:111 ../../en/hardware/power.rst:126
+#: ../../en/hardware/power.rst:139 ../../en/hardware/power.rst:148
+#: ../../en/hardware/power.rst:157 ../../en/hardware/power.rst:168
+#: ../../en/hardware/power.rst:179 ../../en/hardware/power.rst:188
+#: ../../en/hardware/power.rst:197 ../../en/hardware/power.rst:206
+#: ../../en/hardware/power.rst:215 ../../en/hardware/power.rst:225
+#: 06c5507f25f74bc495df4eddc9800f41 0e6d8b8e6d0c43c09632e84da19eb85d
+#: 0f7a42e220914bfc93b8d4acf3dff300 134616c69cbf48cb9beec25e298b7c2c
+#: 19babe286d914d9e8b6e9c3a98700c76 1b65643ff01f455db48d2c9a68180872
+#: 4c0a745173fd4c7585569d1da76c4089 68e12ebd49574aeab1f16eba0d059113
+#: 79faaeecdaef4e568867ea569d97a911 7b51c06c76c44187bdcbcd62152368a2
+#: 9b3d6503dd8f44d4ab59f9cf10597b36 b22135f8bd854e398ecebb6209b72bfa
+#: bffeed4605e84b74a66d57e2622895b6 c2f1a5c261374092957e09ad756b6c86
+#: c385dc4baad547e4a6cdb7e81e50cbaa ce559b9c08c84277a1b11462b85a3b02
+#: d86c6af4db6c4c648be9106370c204c3 f166eb737e0e4e50a98369ae236d1755
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/power.rst:32 d9f9dfcf21d242ea805c33696edd2745
+msgid "|setExtOutput1.svg| |setExtOutput2.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:1 47a61d0e46dd42eb9487c2e4a52074ce
+msgid "setExtOutput1.svg"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:2 618ff7a4fd7c4ca285f8523398a36630
+msgid "setExtOutput2.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:38 6a5763fee974420c8791db69664a7ce0
+msgid "Get power output of the external ports."
+msgstr "获取外部端口的电源输出。"
+
+#: ../../en/hardware/power.rst:40 aaf01bc37aa946e6a5194b5ba64c048b
+msgid ""
+"Returns ``True`` if the power output of the external ports is in output "
+"mode. Returns ``False`` if the power output of the external ports is in "
+"input mode."
+msgstr "返回值为 ``True``, 外接端口电源为输出模式。 返回值为 ``False``, 外接端口电源为输入模式。"
+
+#: ../../en/hardware/power.rst:46 d7b3e633bd6b48b99c0fafb6c4932c94
+msgid "|getExtOutput.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:4 8b9d701b403647418cd95b2c6a38b72a
+msgid "getExtOutput.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:51 44caeab58a3c4649b62add81c0ac5e4b
+msgid "Set power output of the main USB port."
+msgstr "设置主 USB 端口的电源输出。"
+
+#: ../../en/hardware/power.rst:53 f58dce423fe24248b9c22f3f74bd9b8b
+msgid ""
+"When ``enable`` is True, the power output of the main USB port is in "
+"output mode. When ``enable`` is False, the power output of the main USB "
+"port is in input mode."
+msgstr "``enable`` 为 True 时，主 USB 端口电源为输出模式。 ``enable`` 为 False 时，主 USB 端口电源为输入模式。"
+
+#: ../../en/hardware/power.rst:59 59d60338bd144e0da72bb7657b7b5a9f
+msgid "|setUsbOutput.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:6 0066d2738d2a4b62a1866fa6a090c6bf
+msgid "setUsbOutput.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:64 88e500bb027d411bbfe109e2b48cfe53
+msgid "Get power output of the main USB port."
+msgstr "获取主USB端口的电源输出。"
+
+#: ../../en/hardware/power.rst:66 900828fe4c794b1091329bc4f3d1f9e9
+msgid ""
+"Returns ``True`` if the power output of the main USB port is in output "
+"mode. Returns ``False`` if the power output of the main USB port is in "
+"input mode."
+msgstr "返回值为 ``True``, 主 USB 端口电源为输出模式。 返回值为 ``False``, 主 USB 端口电源为输入模式。"
+
+#: ../../en/hardware/power.rst:71 c1b104a82f484e22a4c9c6f71323416b
+msgid "|getUsbOutput.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:8 5a12d1365850454ab40fa76513f47308
+msgid "getUsbOutput.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:76 6ea2aa7388c242ce99031a11850876b4
+msgid "Turn on/off the power LED."
+msgstr "打开/关闭电源 LED。"
+
+#: ../../en/hardware/power.rst:78 2b6eb29acf5747729675a2829ab95f03
+msgid ""
+"``brightness`` is the brightness value, ranging from 0 to 255. 0 is off, "
+"255 is the maximum brightness."
+msgstr "``brightness`` 为亮度值，范围为 0-255。 0 为关闭，255 为最大亮度。"
+
+#: ../../en/hardware/power.rst:83 1ffa5f118c1b49758b60340cf4e11522
+msgid "|setLed.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:10 dbbf714a26814452a560b08d5e6bc6fa
+msgid "setLed.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:88 aef10b64619048ee8376a193d3271a0d
+msgid "Turn off all power."
+msgstr "所有电源关闭。"
+
+#: ../../en/hardware/power.rst:92 bc9d7fbc987b4b689cc96a702c870a8d
+msgid "|powerOff.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:12 130e0457a1cd4f5eb98bcd494ffcdab2
+msgid "powerOff.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:99 c04e72e83d4741309378465f90a02d4e
+msgid "sleep and timer boot. The boot condition can be specified by the argument."
+msgstr "睡眠和定时器启动。 启动条件可以通过参数指定。"
+
+#: ../../en/hardware/power.rst:101 195c094d410a4e0a91f511dbb7c4e587
+msgid "``seconds``: Range is 1 - 15300, in seconds."
+msgstr "``seconds``: 取值范围是 1 - 15300, 单位是秒。"
+
+#: ../../en/hardware/power.rst:103 f3df8f6159ad42c7bbfdd1b331fed5b2
+msgid "``minutes``: Range is 0 - 59, in minutes."
+msgstr "``minutes``: 取值范围是 0 - 59, 单位是分钟。"
+
+#: ../../en/hardware/power.rst:105 9c6e032c164c450ca65f94c8aef07c51
+msgid "``hours``: Range is 0 - 23, in hours."
+msgstr "``hours``: 取值范围是 0 - 23, 单位是小时。"
+
+#: ../../en/hardware/power.rst:107 a5678c0a68544bc591f6fda213a1cfdc
+msgid "``date``: Range is 1 - 31, in days."
+msgstr "``date``: 取值范围是 1 - 31, 单位是天。"
+
+#: ../../en/hardware/power.rst:109 0f762b5d9f7a4645bb3b5dd5cc000018
+msgid "``weekDay``: Range is 0 - 6."
+msgstr "``weekDay``: 取值范围是 0 - 6。"
+
+#: ../../en/hardware/power.rst:113 6cfad747a5664cd89008f393953d6654
+msgid "|timerSleep1.svg| |timerSleep2.svg| |timerSleep3.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:14 32b7232534934872b2cb63451fea51b5
+msgid "timerSleep1.svg"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:15 5cca9c8db1ba4049bd562717b43e6e75
+msgid "timerSleep2.svg"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:16 4c0ad90fcf904fa4b626231bd2a34e4d
+msgid "timerSleep3.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:120 1bdd8c1077544304883f6b85e2b69435
+msgid "ESP32 deepsleep."
+msgstr "ESP32 深度睡眠。"
+
+#: ../../en/hardware/power.rst:122 ../../en/hardware/power.rst:135
+#: e64dce12b3b447d4bfae9087b0061686 fad927ea3e3745f896034a67e240cdb9
+msgid "``micro_seconds``: Number of micro seconds to wakeup."
+msgstr "``micro_seconds``: 唤醒的微秒数。"
+
+#: ../../en/hardware/power.rst:124 ../../en/hardware/power.rst:137
+#: 64c9a9436e9d4c36b65925fbd8e0f19b de57c4f5e8954f83841ce3a547ea287b
+msgid "``wakeup``: Whether to wake up."
+msgstr "``wakeup``: 是否唤醒。"
+
+#: ../../en/hardware/power.rst:128 3feee3842bf844f2998f6bcaa2a44928
+msgid "|deepSleep.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:19 93b9d97f15f14cc5926d579f4add19a9
+msgid "deepSleep.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:133 53834fbe24b0404fab4c499b9bceeb0c
+msgid "ESP32 lightsleep."
+msgstr "ESP32 浅睡眠。"
+
+#: ../../en/hardware/power.rst:141 ab5cc4c1a6ef4a9f96d6587d291d277e
+msgid "|lightSleep.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:21 cef99152d77b467aad6f5e48854a028e
+msgid "lightSleep.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:146 961904d19fb842ffb24b02cc4014137b
+msgid "Get the remaining battery power percentage. Returns a value between 0-100."
+msgstr "获取剩余电池电量百分比。返回值范围是 0-100。"
+
+#: ../../en/hardware/power.rst:150 65115467f6904fc785fa094695fb4212
+msgid "|getBatteryLevel.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:23 91bbdd84d878416f9db9fce472d921b5
+msgid "getBatteryLevel.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:155 56f7d5cf6cf84bc2b56e68ec0e0734e0
+msgid "Set battery charging enable."
+msgstr "设置电池充电使能。"
+
+#: ../../en/hardware/power.rst:159 39a7ade4b03f484f9a31e7c063afe829
+msgid "|setBatteryCharge.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:25 db78e56b47ab43d497ed12994eebd725
+msgid "setBatteryCharge.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:164 70e95cee82514ed098cf7fc399821c21
+msgid "Set battery charge current."
+msgstr "设置电池充电电流。"
+
+#: ../../en/hardware/power.rst:166 f97d544875e14c7a95b061022f4157d9
+msgid "``max_mA``: Range is 0-2000, in milliamps."
+msgstr ""
+
+#: ../../en/hardware/power.rst:170 a5fdb695148347a99c4df902f000fe20
+msgid "|setChargeCurrent.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:27 bfdab5fef5ea4c9e97984599e045862d
+msgid "setChargeCurrent.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:175 5921b91c96f4474d9c017a353937d921
+msgid "Set battery charge voltage."
+msgstr "设置电池充电电压。"
+
+#: ../../en/hardware/power.rst:177 72dd8b9c7a134611989bae660ff1e854
+msgid "``max_mV``: Range is 4100-4600, in millivolts."
+msgstr "``max_mV`` 取值范围是 4100-4600, 单位是毫伏。"
+
+#: ../../en/hardware/power.rst:181 2d0b7ade58c14b05b0e4fa5a4264869e
+msgid "|setChargeVoltage.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:29 cfe867d34aa245e39525e9ce2e279b0f
+msgid "setChargeVoltage.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:186 753060e41dca476587ba0e70d74238a2
+msgid "Get whether the battery is currently charging or not."
+msgstr "获取电池当前是否正在充电。"
+
+#: ../../en/hardware/power.rst:190 90bda9e6172144f98b557ebe7bd07ec6
+msgid "|isCharging.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:31 b4c7ec04788e43df9bff8e379c540c32
+msgid "isCharging.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:195 264627c4397c46f18f6f5eae73ba890f
+msgid "Get battery voltage. Unit is millivolts."
+msgstr "获取电池电压。单位是毫伏。"
+
+#: ../../en/hardware/power.rst:199 1384237441f24017b8594dde47782042
+msgid "|getBatteryVoltage.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:33 5dcb57f7dc5343bd82684977404482cc
+msgid "getBatteryVoltage.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:204 331fe95d491d4db7a31cfab2a7f086d4
+msgid "Get battery current. Unit is milliamps."
+msgstr "获取电池电流。单位是毫安。"
+
+#: ../../en/hardware/power.rst:208 96310133f366465dba8a5c9bf7bdb13b
+msgid "|getBatteryCurrent.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:35 00c6b6eed1084575b35aabdb0f6691ef
+msgid "getBatteryCurrent.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:213 5568f442fbbb48e7b173b055a3836185
+msgid "Get Power Key Press condition."
+msgstr "获取电源键按下情况。"
+
+#: ../../en/hardware/power.rst:217 ce2c784ac13048b3b8b9ce395d4574be
+msgid "|getKeyState.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:37 514a9f1dac1b4fb0b603054089afc2ba
+msgid "getKeyState.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:221 79b4a2acb2be4336a894a985a1be3769
+msgid "Operate the vibration motor."
+msgstr "操作振动电机。"
+
+#: ../../en/hardware/power.rst:223 198a1f8a946b4e0da0c87e08c5d91e41
+msgid "``level``: Vibration intensity, ranging from 0-255."
+msgstr "``level``: 振动强度，取值范围是 0-255。"
+
+#: ../../en/hardware/power.rst:227 5526e4f1d0464f8ab4ca32b3cf86092d
+msgid "|setVibration.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.power.ref:39 f06fe09914cc4d71b74f0a9e7eff5c30
+msgid "setVibration.svg"
+msgstr ""
+
+#: ../../en/hardware/power.rst:232 318c7c918fde46ff80b8521d25a1c076
+msgid "class PORT"
+msgstr ""
+
+#: ../../en/hardware/power.rst:235 fbda555a793b4d0bbcabd6a683cab812
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hardware/power.rst:239 448b3c197a2e46d6908d5e8c399534b2
+msgid "Port A."
+msgstr "端口 A。"
+
+#: ../../en/hardware/power.rst:243 a6514060570e47c4b66b3013306b9f35
+msgid "Port B1."
+msgstr "端口 B1。"
+
+#: ../../en/hardware/power.rst:247 f6bfe49d8ef840519754fdd70db2b48e
+msgid "Port B2."
+msgstr "端口 B2。"
+
+#: ../../en/hardware/power.rst:251 524a8a19270547429913c1b1c602d6d9
+msgid "Port C1."
+msgstr "端口 C1。"
+
+#: ../../en/hardware/power.rst:255 4215893a937f43ab92d44fe0948c88d0
+msgid "Port C2."
+msgstr "端口 C2。"
+
+#: ../../en/hardware/power.rst:259 e668ece0039b4a0b8bd63690fed64b49
+msgid "USB Port."
+msgstr "USB 端口。"
+
+#: ../../en/hardware/power.rst:263 4bc16c1cc0594fd8b368ef35b1e8516c
+msgid "HAT Port."
+msgstr "HAT 端口。"
+
+#: ../../en/hardware/power.rst:267 567ccc65ed7c42f2835304e8402e51fa
+msgid "All Ports."
+msgstr "所有端口。"
+
+#~ msgid "M5.update.svg"
+#~ msgstr ""
+

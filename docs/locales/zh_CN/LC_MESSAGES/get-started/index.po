@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 18:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/get-started/index.rst:2 253283b2735a4477b5956ec9f8477770
+msgid "Get Started"
+msgstr ""
+
+#: ../../en/get-started/index.rst:6 4526dddd0d944f73906eeb97563120ee
+msgid "Currently UIFLOW2 supports the following boards:"
+msgstr "目前 UIFLOW2 支持以下板卡："
+
+#: ../../en/get-started/index.rst:10 2e675dff9c9a4e93b5f87d3b47056b3f
+msgid "CORE"
+msgstr ""
+
+#: ../../en/get-started/index.rst:13 b653804de7a44f96988570787076b671
+msgid "|CoreS3|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 3200488451404380987e0833c8e6fdfa
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/get-started/index.rst:13 fe80dbb236464f0bbbefd56ca331c773
+msgid "|Core2|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref edc2e36bbf3f4281857c85c2d30719ae
+msgid "Core2"
+msgstr ""
+
+#: ../../en/get-started/index.rst:13 80e751288e334084be7557eb42238358
+msgid "|TOUGH|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 5c340e3b8ed947d9baf0a9fd0821a0eb
+msgid "TOUGH"
+msgstr ""
+
+#: ../../en/get-started/index.rst:15 4cce55ec8c2f4ca593f9d79f854a848a
+msgid "`CoreS3`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:15 573613c7028a45b48eab01f334110b04
+msgid "`Core2`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:15 6795fb35cb5748aa99372ee5ba566066
+msgid "`TOUGH`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:17 eab611c346df4edd9125b46ab4a3cbc3
+msgid "|BASIC|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref db4843d17dc44c08abf0562b94521ca7
+msgid "BASIC"
+msgstr ""
+
+#: ../../en/get-started/index.rst:17 df61c5864cc2453cb83b3265645cdc35
+msgid "|BASIC v2.6|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 5e6dd7b8cdac4c5588c29df02de7037b
+msgid "BASIC v2.6"
+msgstr ""
+
+#: ../../en/get-started/index.rst:17 d16c1b238171419d99ee98c04cd3807b
+msgid "|BASIC v2.7|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref e6eeb38b372d439cadb2e846df8a68a8
+msgid "BASIC v2.7"
+msgstr ""
+
+#: ../../en/get-started/index.rst:19 86365a816801485c8133e6ab15d9d603
+msgid "`BASIC`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:19 85ef101ae0594d14a1201b8b13eb9f23
+msgid "`BASIC v2.6`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:19 030f5460164742fda219beba8d3e30a9
+msgid "`BASIC v2.7`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:21 92ee3d89655347998b5ef3a538ef84db
+msgid "|GRAY|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref f1069a1e4e97486e9e884650c2f7e333
+msgid "GRAY"
+msgstr ""
+
+#: ../../en/get-started/index.rst:21 34b21acf136e43cca6162664810e3ecf
+msgid "|FIRE|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref a8383e8c3c034c909c56ac7ef792548c
+msgid "FIRE"
+msgstr ""
+
+#: ../../en/get-started/index.rst:21 3128be9aec9b4a39b6a8728aceeac7b4
+msgid "|FIRE v2.6|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 6e812120b3ac4ba6b9408225fef05f48
+msgid "FIRE v2.6"
+msgstr ""
+
+#: ../../en/get-started/index.rst:23 672b4821babf406c84c1b80801080465
+msgid "`GRAY`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:23 dcc6866f175243748b55d00a48a03469
+msgid "`FIRE`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:23 b0c008a0d59a44619e3e6ab4109abd97
+msgid "`FIRE v2.6`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:25 da9073fce9da4dfc8e1e6e33be6338d2
+msgid "|FIRE v2.7|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 11af27293fca4c1597a97bc69c6752b1
+msgid "FIRE v2.7"
+msgstr ""
+
+#: ../../en/get-started/index.rst:25 fcecc1c0d63c4a0eb9d73a1eb3f776bf
+msgid "|M5Capsule|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 039a49f1b6284c2598b626a21b9a4daa
+msgid "M5Capsule"
+msgstr ""
+
+#: ../../en/get-started/index.rst:25 471d1d0905b64b9899f2df75de2dafde
+msgid "|M5Dial|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 7855c80f03e04b55985f2b05bde56d24
+msgid "M5Dial"
+msgstr ""
+
+#: ../../en/get-started/index.rst:27 9baa4a5431f0487d8394a7b9e6a3f5cb
+msgid "`FIRE v2.7`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:27 c0411a54d1214f8296d73bcb5d9f4e1a
+msgid "`M5Capsule`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:27 99a58a6624bf4f899806a6c2056d3e24
+msgid "`M5Dial`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:29 ffd6bf25afae46d3b48d0b6de11f87de
+msgid "|Cardputer|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 69dcaf39ab0f47a4806b66b6f3591c1d
+msgid "Cardputer"
+msgstr ""
+
+#: ../../en/get-started/index.rst:29 3c97074b53b549b591c54866534573e4
+msgid "|Core2 v1.1|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 404f533a8ef04d378e49a97b677631ce
+msgid "Core2 v1.1"
+msgstr ""
+
+#: ../../en/get-started/index.rst:31 68b7741af36c46a1b3728c5bb774bc7e
+msgid "`Cardputer`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:31 9bd7264795134275887dfc17e0cf0ca3
+msgid "`Core2 v1.1`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:36 d2692df554ae44f283e3eef551ab7bf1
+msgid "STICK"
+msgstr ""
+
+#: ../../en/get-started/index.rst:39 7152765e23f74b3e88d748224ba82222
+msgid "|M5StickC PLUS|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 9e0e5ae29e984be68986dcaa46999cc2
+msgid "M5StickC PLUS"
+msgstr ""
+
+#: ../../en/get-started/index.rst:39 ea637ecb4d03468d92a12e2e4e5cadce
+msgid "|M5StickC PLUS2|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 9f1903444b144949ab066cae863ea052
+msgid "M5StickC PLUS2"
+msgstr ""
+
+#: ../../en/get-started/index.rst:41 a19f6a116c184ac08eec3baa1d09c5f5
+msgid "`M5StickC PLUS`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:41 eb0005af46f0456db05cf9e6e69f3294
+msgid "`M5StickC PLUS2`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:46 2dc5b34258ad4fe0af2d77307e461f4a
+msgid "ATOM"
+msgstr ""
+
+#: ../../en/get-started/index.rst:49 85c0f829aaeb427488a86fdf188cea4d
+msgid "|AtomS3|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref 896d7a404ddb47389ac4e2a8f22ed762
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/get-started/index.rst:49 6b52055bfb58483d82575b020f491149
+msgid "|AtomS3 Lite|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref e29c456a19d74560b73ac64a85b7056b
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/get-started/index.rst:49 0e40dca83b56451594a8fca792870a66
+msgid "|AtomS3U|"
+msgstr ""
+
+#: ../../en/refs/controllers.ref c13ca60390374f98a94a38d947613b3d
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/get-started/index.rst:51 2d811e6e44d641139f2170c6b2836e9b
+msgid "`AtomS3`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:51 a8fb4872e29a462b9a50bd99c78c86b2
+msgid "`AtomS3 Lite`_"
+msgstr ""
+
+#: ../../en/get-started/index.rst:51 295423cd51c743c59a3f1d387dffea7d
+msgid "`AtomS3U`_"
+msgstr ""
+
+#~ msgid "StampS3"
+#~ msgstr ""
+
