@@ -1,4 +1,6 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 # CoreInk startup script
 from startup import Startup
 import M5

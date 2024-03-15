@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from widgets.label import Label
 from widgets.image import Image
@@ -118,5 +122,3 @@ class StatusBarApp(AppBase):
             }[status]
         else:
             return CloudStatus.DISCONNECTED
-
-

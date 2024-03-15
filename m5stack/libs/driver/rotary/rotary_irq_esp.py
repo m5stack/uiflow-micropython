@@ -1,5 +1,6 @@
 # MIT License (MIT)
 # Copyright (c) 2020 Mike Teachman
+
 # https://opensource.org/licenses/MIT
 
 # Platform-specific MicroPython code for the rotary encoder module
@@ -43,7 +44,7 @@ class RotaryIRQ(Rotary):
 
         super().__init__(min_val, max_val, incr, reverse, range_mode, half_step, invert)
 
-        if pull_up == True:
+        if pull_up is True:
             self._pin_clk = Pin(pin_num_clk, Pin.IN, Pin.PULL_UP)
             self._pin_dt = Pin(pin_num_dt, Pin.IN, Pin.PULL_UP)
         else:

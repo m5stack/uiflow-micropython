@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # stickc-plus2 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L7
 set(BOARD_ID 5)
 

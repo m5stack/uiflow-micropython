@@ -1,4 +1,6 @@
 # Copyright (c) 2022 Sebastian Wicki
+# Copyright (c) 2024 M5Stack Technology CO LTD
+#
 # SPDX-License-Identifier: MIT
 
 

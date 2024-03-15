@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # Makefile for MicroPython on ESP32.
 #
 # This is a simple, convenience wrapper around idf.py (which uses cmake).

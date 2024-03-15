@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import gc
 import uos as os
 from flashbdev import sys_bdev, vfs_bdev

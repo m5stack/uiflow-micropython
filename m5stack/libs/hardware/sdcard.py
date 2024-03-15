@@ -1,4 +1,9 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import machine, os
+
 
 def create_sdcard_closure():
     sd = None
@@ -14,11 +19,20 @@ def create_sdcard_closure():
             print(e)
         finally:
             sd = machine.SDCard(
-                slot=slot, width=width, cd=cd, wp=wp, sck=sck, miso=miso, mosi=mosi, cs=cs, freq=freq
+                slot=slot,
+                width=width,
+                cd=cd,
+                wp=wp,
+                sck=sck,
+                miso=miso,
+                mosi=mosi,
+                cs=cs,
+                freq=freq,
             )
             sd.info()
             os.mount(sd, "/sd")
 
     return SDCard
+
 
 SDCard = create_sdcard_closure()

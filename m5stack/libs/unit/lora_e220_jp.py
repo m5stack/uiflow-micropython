@@ -1,12 +1,7 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   _imu_pro.py
-@Time    :   2023/11/06 xx:xx:xx
-@Author  :   TONG YIHAN
-@E-mail  :   icyqwq@gmail.com
-@License :   (C)Copyright 2015-2023, M5STACK
-@Desc    :   The LoRaE220 Unit is a LoRa communication module, designed for the 920MHz frequency band.
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # UART: ['any', 'read', 'readinto', 'readline', 'write', 'INV_CTS', 'INV_RTS', 'INV_RX', 'INV_TX', 'deinit', 'init', 'sendbreak']
 import machine
 import time

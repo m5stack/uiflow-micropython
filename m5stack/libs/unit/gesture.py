@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError

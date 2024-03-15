@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from driver.fpc1020a.fpc1020a import FPC1020A
 from machine import UART
 

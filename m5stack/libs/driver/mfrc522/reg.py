@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from micropython import const
 # MFRC522 registers. Described in chapter 9 of the datasheet.
 # Page 0: Command and status

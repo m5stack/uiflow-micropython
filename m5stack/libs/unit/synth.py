@@ -1,7 +1,9 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 """
-    Refer to https://github.com/fluxly/Fluxamasynth.
+Refer to https://github.com/fluxly/Fluxamasynth.
 """
-
 
 from machine import UART, Pin
 
@@ -268,7 +270,6 @@ class SYNTHUnit:
         medhighfreq,
         highfreq,
     ):
-
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,

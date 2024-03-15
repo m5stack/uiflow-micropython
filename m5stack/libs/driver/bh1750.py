@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2020 Bryan Siepert for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from micropython import const
 from struct import unpack_from
 import time

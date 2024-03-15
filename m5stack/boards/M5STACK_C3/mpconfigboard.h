@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 // This configuration is for a generic ESP32C3 board with 4MiB (or more) of flash.
 
 #define MICROPY_HW_BOARD_NAME               "M5STACK C3"

@@ -1,4 +1,5 @@
 # SPDX-FileCopyrightText: 2019 ladyada for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 

@@ -1,12 +1,6 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   _miniscale.py
-@Time    :   2023/12/19
-@Author  :   TONG YIHAN
-@E-mail  :   icyqwq@gmail.com
-@License :   (C)Copyright 2015-2023, M5STACK
-@Desc    :   This sensor is capable of measuring weight and also includes additional functionalities like LED control and various filters.
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 # Import necessary libraries
 from machine import I2C

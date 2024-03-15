@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from .app import AppBase, AppSelector
 from hardware import MatrixKeyboard
 import M5
@@ -83,7 +87,6 @@ class Framework:
             await app._kb_event_handler(event, self)
 
         if event.status == False:
-
             if event.key == 96:  # ESC key
                 app = self._app_selector.current()
                 if hasattr(app, "_btna_event_handler"):

@@ -4,6 +4,7 @@
  * The MIT License (MIT)
  *
  * Copyright (c) 2019 Nicko van Someren
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -278,7 +279,7 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
         if (spi_host_id == HSPI_HOST) {
         #else
         if (spi_host_id == SPI3_HOST) {
-        #endif
+            #endif
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
             //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
@@ -342,7 +343,7 @@ STATIC mp_obj_t sd_deinit(mp_obj_t self_in) {
             if (self->host.slot == HSPI_HOST) {
             #else
             if (self->host.slot == SPI3_HOST) {
-            #endif
+                #endif
                 spi_bus_free(self->host.slot);
             }
         }

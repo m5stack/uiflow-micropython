@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from common.font.MontserratMedium18 import FONT as MontserratMedium18
 from widgets.image import Image

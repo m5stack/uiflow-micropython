@@ -3,6 +3,7 @@
 
 # Author: Peter Hinch
 # Copyright Peter Hinch 2020-2022 Released under the MIT license
+# Copyright (c) 2024 M5Stack Technology CO LTD
 
 # With thanks to J.E. Tannenbaum for information re Samsung protocol
 from micropython import const

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase, generator, AppSelector
 from ..res import (
     WIFI_DEFAULT_IMG,
@@ -327,7 +331,6 @@ class BootScreenSetting(AppBase):
 
 
 class ComLinkSetting(AppBase):
-
     _comlink_options = {
         False: DISABLE_IMG,
         True: ENABLE_IMG,

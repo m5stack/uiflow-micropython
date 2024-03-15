@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 import time
 from .reg import (
     COMMAND_REG,
@@ -1097,7 +1100,7 @@ class MFRC522:
             logErrors and print("New UID buffer empty, size 0, or size > 15 given")
             return False
 
-        key = b"\xFF\xFF\xFF\xFF\xFF\xFF"
+        key = b"\xff\xff\xff\xff\xff\xff"
         status = self.pcd_authenticate(PICC_CMD_MF_AUTH_KEY_A, 1, key, self._uid)
         if status != self.STATUS_OK:
             if status == self.STATUS_TIMEOUT:

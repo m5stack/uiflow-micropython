@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 class StatusBarApp:
     def __init__(self, icos: dict, wifi) -> None:
         self.id = 0

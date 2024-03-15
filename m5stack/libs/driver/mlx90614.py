@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2018 Mikey Sklar for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from micropython import const
 

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # https://www.displayfuture.com/Display/datasheet/controller/SH1107.pdf
 
 from micropython import const

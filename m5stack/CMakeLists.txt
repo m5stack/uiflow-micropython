@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # Top-level cmake file for building MicroPython on ESP32.
 
 cmake_minimum_required(VERSION 3.16)

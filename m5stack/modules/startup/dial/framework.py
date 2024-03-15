@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from .app import AppBase, AppSelector
 import uasyncio as asyncio
 import M5

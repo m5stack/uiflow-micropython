@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import UART
 from micropython import const
 
@@ -88,8 +92,8 @@ RESPONSES = {
 
 
 class FPC1020A:
-    _START = b"\xF5"
-    _END = b"\xF5"
+    _START = b"\xf5"
+    _END = b"\xf5"
 
     _ACK_SUCCESS = 0x00
     _ACK_FAIL = 0x01

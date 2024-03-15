@@ -1,5 +1,14 @@
-# Source: https://github.com/pycom/pycom-modbus/tree/master/uModbus (2018-07-16)
-# This file has been modified and differ from its source version.
+#!/usr/bin/env python
+#
+# Copyright (c) 2019, Pycom Limited.
+# Copyright (c) 2024 M5Stack Technology CO LTD
+#
+# This software is licensed under the GNU GPL version 3 or any
+# later version, with permitted additional terms. For more information
+# see the Pycom Licence v1.0 document supplied with this file, or
+# available at https://www.pycom.io/opensource/licensing
+#
+
 from . import uFunctions as functions
 from . import uConst as Const
 from machine import UART

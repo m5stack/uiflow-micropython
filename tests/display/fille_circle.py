@@ -1,4 +1,7 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # Fill random size and position to circle to screen
 import M5
 from M5 import Display

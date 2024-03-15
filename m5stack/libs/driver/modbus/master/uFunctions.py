@@ -1,4 +1,13 @@
-# Source: https://github.com/pycom/pycom-modbus/tree/master/uModbus (2018-07-16)
+#!/usr/bin/env python
+#
+# Copyright (c) 2019, Pycom Limited.
+#
+# This software is licensed under the GNU GPL version 3 or any
+# later version, with permitted additional terms. For more information
+# see the Pycom Licence v1.0 document supplied with this file, or
+# available at https://www.pycom.io/opensource/licensing
+#
+
 from . import uConst as Const
 import struct
 
@@ -60,7 +69,7 @@ def write_multiple_coils(starting_address, value_list):
         starting_address,
         len(value_list),
         (len(value_list) // 8) + 1,
-        *output_value
+        *output_value,
     )
 
 
@@ -77,7 +86,7 @@ def write_multiple_registers(starting_address, register_values, signed=True):
         starting_address,
         quantity,
         quantity * 2,
-        *register_values
+        *register_values,
     )
 
 

@@ -1,6 +1,11 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from driver.ir.nec import NEC, NEC_8
 import M5
 from machine import Pin
+
 
 class IR:
     _pin_map = {

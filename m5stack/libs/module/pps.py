@@ -1,11 +1,6 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   _dac2.py
-@Time    :   2024/3/7
-@Author  :   TONG YIHAN
-@E-mail  :   icyqwq@gmail.com
-@License :   (C)Copyright 2015-2024, M5STACK
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 # Import necessary libraries
 from .mbus import i2c1

@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #define M5ATOMDISPLAY_LOGICAL_WIDTH 640
 #define M5ATOMDISPLAY_LOGICAL_HEIGHT 360
 

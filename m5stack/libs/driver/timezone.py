@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from time import localtime
 from socket import socket, getaddrinfo, AF_INET, SOCK_DGRAM
 from struct import unpack
@@ -83,7 +87,7 @@ class TZONE(object):
             a = (14 - month) // 12
             y = year - a
             m = month + 12 * a - 2
-            if (((d + y + y // 4 - y // 100 + y // 400 + (31 * m) // 12)) % 7) == 0:
+            if ((d + y + y // 4 - y // 100 + y // 400 + (31 * m) // 12) % 7) == 0:
                 if d + 7 > 31:
                     return d
 

@@ -1,12 +1,6 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   LoRaWAN.py
-@Time    :   2021/04/12 12:28:51
-@Author  :   IAMLIUBO
-@E-mail  :   imliubo@makingfun.xyz
-@License :   (C)Copyright 2015-2021, M5STACK
-@Desc    :   Driver for COM.LoRaWAN modules.
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 import machine
 import time

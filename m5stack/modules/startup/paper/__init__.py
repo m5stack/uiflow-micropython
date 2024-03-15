@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from startup import Startup
 import M5
 import network
@@ -10,6 +14,7 @@ from .apps.status_bar import StatusBarApp
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp
 from .apps.app_list import ListApp
+
 
 class Paper_Startup:
     def __init__(self) -> None:

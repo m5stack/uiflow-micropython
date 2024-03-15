@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from .framework import Framework
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp

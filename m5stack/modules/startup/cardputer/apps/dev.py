@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from ..res import DEVELOP_PRIVATE_IMG, DEVELOP_PUBLIC_IMG, AVATAR_IMG, MontserratMedium12_VLW
 from widgets.image import Image
