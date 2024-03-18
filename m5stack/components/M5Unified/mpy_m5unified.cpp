@@ -46,11 +46,152 @@ const mic_obj_t m5_mic     = {&mp_mic_type,       &(M5.Mic)    };
 static btn_obj_t *m5_btn_list[5] = {&m5_btnA, &m5_btnB, &m5_btnC, &m5_btnPWR, &m5_btnEXT};
 /* *FORMAT-ON* */
 
-// TODO: pass configuration parameters
-mp_obj_t m5_begin(void) {
-    // disable all external display
+static void m5_config_helper_module_display(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("module_display must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.module_display = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "width") == 0) {
+                cfg.module_display.logical_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "height") == 0) {
+                cfg.module_display.logical_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "refresh_rate") == 0) {
+                cfg.module_display.refresh_rate = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_width") == 0) {
+                cfg.module_display.output_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_height") == 0) {
+                cfg.module_display.output_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "scale_w") == 0) {
+                cfg.module_display.scale_w = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "scale_h") == 0) {
+                cfg.module_display.scale_h = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pixel_clock") == 0) {
+                cfg.module_display.pixel_clock = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+static void m5_config_helper_module_rca(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("module_rca must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.module_rca = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "width") == 0) {
+                cfg.module_rca.logical_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "height") == 0) {
+                cfg.module_rca.logical_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_width") == 0) {
+                cfg.module_rca.output_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_height") == 0) {
+                cfg.module_rca.output_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "signal_type") == 0) {
+                cfg.module_rca.signal_type = (M5ModuleRCA::signal_type_t)mp_obj_get_int(value);
+            } else if (strcmp(key_str, "use_psram") == 0) {
+                cfg.module_rca.use_psram = (M5ModuleRCA::use_psram_t)mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_dac") == 0) {
+                cfg.module_rca.pin_dac = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_level") == 0) {
+                cfg.module_rca.output_level = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "module_display") == 0) {
+                m5_config_helper_module_display(value, cfg);
+            } else if (strcmp(key_str, "module_rca") == 0) {
+                m5_config_helper_module_rca(value, cfg);
+            }
+        }
+    }
+}
+
+mp_obj_t m5_add_display(mp_obj_t dict) {
+    if (!MP_OBJ_IS_TYPE(dict, &mp_type_dict)) {
+        mp_raise_TypeError("parameter must be a dict");
+    }
+
     auto cfg = M5.config();
-    cfg.external_display_value = 0;
+    cfg.external_display_value = 0; // disable all external display
+    m5_config_helper(dict, cfg);
+
+    mp_printf(&mp_plat_print, "external_display_value: %02X\n", cfg.external_display_value);
+
+    m5::board_t board = M5.getBoard();
+
+    if (cfg.external_display.module_display) {
+        if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough || board == m5::board_t::board_M5StackCoreS3) {
+            M5ModuleDisplay dsp(cfg.module_display);
+            if (dsp.init()) {
+                M5.addDisplay(dsp);
+                mp_printf(&mp_plat_print, "module_display added\n");
+            }
+        } else {
+            mp_raise_NotImplementedError("module_display is not supported on this board");
+        }
+    }
+    if (cfg.external_display.module_rca) {
+        if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough) {
+            M5ModuleRCA dsp(cfg.module_rca);
+            if (dsp.init()) {
+                M5.addDisplay(dsp);
+                mp_printf(&mp_plat_print, "module_rca added\n");
+            }
+        } else {
+            mp_raise_NotImplementedError("module_rca is not supported on this board");
+        }
+    }
+
+    return mp_const_none;
+}
+
+// TODO: pass configuration parameters
+mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
+    mp_obj_t config_obj = mp_const_none;
+
+    auto cfg = M5.config();
+    cfg.external_display_value = 0; // disable all external display
+
+    if (n_args > 0) {
+        config_obj = args[0];
+        if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+            mp_raise_TypeError("parameter must be a dict");
+        }
+        m5_config_helper(config_obj, cfg);
+    }
 
     // initial
     M5.begin(cfg);
