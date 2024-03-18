@@ -42,7 +42,12 @@ class LoRaWAN_Asr650x(object):
         """
         pass
 
+    def get_device_address(self):
+        # 2.0.3添加
+        return self.get_DevAddr()
+
     def get_DevAddr(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get Device address.
         Parameter:
@@ -57,7 +62,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][10:]
 
+    def set_device_address(self, devaddr):
+        # 2.0.3添加
+        return self.set_DevAddr(devaddr)
+
     def set_DevAddr(self, devaddr):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set Device address.
         Parameter:
@@ -70,7 +80,12 @@ class LoRaWAN_Asr650x(object):
         result, error = self.__at_cmd(cmd)
         return not error
 
+    def get_device_eui(self):
+        # 2.0.3添加
+        return self.get_DevEui()
+
     def get_DevEui(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get Device EUI.
         Parameter:
@@ -85,7 +100,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][9:]
 
+    def set_device_eui(self, deveui):
+        # 2.0.3添加
+        return self.set_DevEui(deveui)
+
     def set_DevEui(self, deveui):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set Device EUI.
         Parameter:
@@ -98,7 +118,12 @@ class LoRaWAN_Asr650x(object):
         result, error = self.__at_cmd(cmd)
         return not error
 
+    def get_app_eui(self):
+        # 2.0.3添加
+        return self.get_AppEui()
+
     def get_AppEui(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get Application EUI.
         Parameter:
@@ -113,7 +138,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][9:]
 
+    def set_app_eui(self, appeui):
+        # 2.0.3添加
+        return self.set_AppEui(appeui)
+
     def set_AppEui(self, appeui):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set Application EUI.
         Parameter:
@@ -126,7 +156,12 @@ class LoRaWAN_Asr650x(object):
         result, error = self.__at_cmd(cmd)
         return not error
 
+    def get_appkey(self):
+        # 2.0.3添加
+        return self.get_AppKey()
+
     def get_AppKey(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         get App Key.
         Parameter:
@@ -142,7 +177,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][9:]
 
+    def set_appkey(self, key):
+        # 2.0.3添加
+        return self.set_AppKey(key)
+
     def set_AppKey(self, key):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set App Key.
         Parameter:
@@ -155,7 +195,12 @@ class LoRaWAN_Asr650x(object):
         result, error = self.__at_cmd(cmd)
         return not error
 
+    def get_app_session_key(self):
+        # 2.0.3添加
+        return self.get_APPSKEY()
+
     def get_APPSKEY(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set App Session Key.
         Parameter:
@@ -171,7 +216,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][10:]
 
+    def set_app_session_key(self, AppSKEY):
+        # 2.0.3添加
+        return self.set_APPSKEY(AppSKEY)
+
     def set_APPSKEY(self, AppSKEY):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set App Session Key.
         Parameter:
@@ -184,7 +234,12 @@ class LoRaWAN_Asr650x(object):
         result, error = self.__at_cmd(cmd)
         return not error
 
+    def get_nwk_session_key(self):
+        # 2.0.3添加
+        return self.get_NWKSKEY()
+
     def get_NWKSKEY(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get Network Session Key.
         Parameter:
@@ -200,7 +255,12 @@ class LoRaWAN_Asr650x(object):
         result = self.__message_recv_data(result)
         return result[1][10:]
 
+    def set_nwk_session_key(self, NWKSKEY):
+        # 2.0.3添加
+        return self.set_NWKSKEY(NWKSKEY)
+
     def set_NWKSKEY(self, NWKSKEY):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Set Network Session Key.
         Parameter:
@@ -692,7 +752,12 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         """
         super(LoRaWAN_470, self).__init__(tx, rx, debug)
 
+    def config_abp(self, devaddr, appskey, nwkskey):
+        # 2.0.3添加
+        self.config_ABP(devaddr, appskey, nwkskey)
+
     def config_ABP(self, devaddr, appskey, nwkskey):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Config the ABP join mode information.
         Parameter:
@@ -704,7 +769,12 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         self.set_NWKSKEY(nwkskey)
         self.set_join_mode(1)
 
+    def get_abp_config(self):
+        # 2.0.3添加
+        return self.get_ABP_config()
+
     def get_ABP_config(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get the ABP join mode information.
         Parameter:
@@ -714,7 +784,12 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         """
         return (self.get_DevAddr(), self.get_APPSKEY(), self.get_NWKSKEY())
 
+    def config_otaa(self, deveui, appeui, appkey):
+        # 2.0.3添加
+        self.config_OTAA(deveui, appeui, appkey)
+
     def config_OTAA(self, deveui, appeui, appkey):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Config the OTAA join mode information.
         Parameter:
@@ -728,7 +803,12 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         self.set_AppKey(appkey)
         self.set_join_mode(0)
 
+    def get_otaa_config(self):
+        # 2.0.3添加
+        return self.get_OTAA_config()
+
     def get_OTAA_config(self):  # noqa: N802
+        # TODO: 2.0.6删除
         """
         Get the OTAA join mode information.
         Parameter:
