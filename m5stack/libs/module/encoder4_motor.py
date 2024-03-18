@@ -128,13 +128,23 @@ class Encoder4MotorModule:
         value = struct.pack("<b", value)
         self.mtr_i2c.writeto_mem(self.i2c_addr, MTR1_MODE + (0x10 * pos) + 0x08, value)
 
+    def get_position_pid_value(self, pos):
+        # 2.0.3 添加
+        return self.get_position_PID_value(pos)
+
     def get_position_PID_value(self, pos):  # noqa: N802
+        # TODO: 2.0.6 删除
         """
         pos: [ONE or TWO or THREE or FOUR]
         """
         return list(self.mtr_i2c.readfrom_mem(self.i2c_addr, MTR1_MODE + (0x10 * pos) + 0x01, 3))
 
+    def set_position_pid_value(self, pos, p, i, d):
+        # 2.0.3 添加
+        self.set_position_PID_value(pos, p, i, d)
+
     def set_position_PID_value(self, pos, P, I, D):  # noqa: N802
+        # TODO: 2.0.6 删除
         """
         pos: [ONE or TWO or THREE or FOUR]
         P: 0 ~ 255
@@ -145,13 +155,23 @@ class Encoder4MotorModule:
             self.i2c_addr, MTR1_MODE + (0x10 * pos) + 0x01, bytearray([P, I, D])
         )
 
+    def get_speed_pid_value(self, pos):
+        # 2.0.3 添加
+        return self.get_speed_PID_value(pos)
+
     def get_speed_PID_value(self, pos):  # noqa: N802
+        # TODO: 2.0.6 删除
         """
         pos: [ONE or TWO or THREE or FOUR]
         """
         return list(self.mtr_i2c.readfrom_mem(self.i2c_addr, MTR1_MODE + (0x10 * pos) + 0x09, 3))
 
+    def set_speed_pid_value(self, pos, p, i, d):
+        # 2.0.3 添加
+        self.set_speed_PID_value(pos, p, i, d)
+
     def set_speed_PID_value(self, pos, P, I, D):  # noqa: N802
+        # TODO: 2.0.6 删除
         """
         pos: [ONE or TWO or THREE or FOUR]
         P: 0 ~ 255
