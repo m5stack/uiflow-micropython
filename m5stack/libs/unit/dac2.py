@@ -53,7 +53,12 @@ class DAC2Unit:
         if self.addr not in self.i2c.scan():
             raise UnitError("DAC2 Unit/Hat not found.")
 
+    def set_dacoutput_voltage_range(self, _range: int = 0):
+        # 2.0.3 添加
+        self.setDACOutputVoltageRange(_range)
+
     def setDACOutputVoltageRange(self, _range: int = 0):  # noqa: N802
+        # TODO: 2.0.6 移除
         """!
 
         @en Set the DAC %1 output voltage range to %2.
@@ -69,7 +74,12 @@ class DAC2Unit:
             data = 0x11
             self.i2c.writeto_mem(self.addr, 0x01, struct.pack("b", data))
 
+    def set_voltage(self, voltage: float, channel: int = 2):
+        # 2.0.3 添加
+        self.setVoltage(voltage, channel)
+
     def setVoltage(self, voltage: float, channel: int = 2):  # noqa: N802
+        # TODO: 2.0.6 移除
         """!
         @en Set %1 channel %3 to %2 V.
         @cn 设置DAC %1 通道 %3 的输出电压为 %1 V。
@@ -98,7 +108,12 @@ class DAC2Unit:
         elif channel == self.CHANNEL_1:
             self.i2c.writeto_mem(self.addr, 0x04, struct.pack("<H", data))
 
+    def set_voltage_both(self, voltage0: float, voltage1: float):
+        # 2.0.3 添加
+        self.setVoltageBoth(voltage0, voltage1)
+
     def setVoltageBoth(self, voltage0: float, voltage1: float):  # noqa: N802
+        # TODO: 2.0.6 移除
         """!
         @en Set the DAC %1 channel 0 %2 V, channel 1 %3 V.
         @cn 设置 %1 通道0的电压为 %2 V，通道1的电压为 %3 V。
