@@ -50,10 +50,10 @@ class DAC2Unit:
         Raises:
             Exception: If the sensor is not found.
         """
-        if not (self.addr in self.i2c.scan()):
+        if self.addr not in self.i2c.scan():
             raise UnitError("DAC2 Unit/Hat not found.")
 
-    def setDACOutputVoltageRange(self, _range: int = 0):
+    def setDACOutputVoltageRange(self, _range: int = 0):  # noqa: N802
         """!
 
         @en Set the DAC %1 output voltage range to %2.
@@ -69,7 +69,7 @@ class DAC2Unit:
             data = 0x11
             self.i2c.writeto_mem(self.addr, 0x01, struct.pack("b", data))
 
-    def setVoltage(self, voltage: float, channel: int = 2):
+    def setVoltage(self, voltage: float, channel: int = 2):  # noqa: N802
         """!
         @en Set %1 channel %3 to %2 V.
         @cn 设置DAC %1 通道 %3 的输出电压为 %1 V。
@@ -98,7 +98,7 @@ class DAC2Unit:
         elif channel == self.CHANNEL_1:
             self.i2c.writeto_mem(self.addr, 0x04, struct.pack("<H", data))
 
-    def setVoltageBoth(self, voltage0: float, voltage1: float):
+    def setVoltageBoth(self, voltage0: float, voltage1: float):  # noqa: N802
         """!
         @en Set the DAC %1 channel 0 %2 V, channel 1 %3 V.
         @cn 设置 %1 通道0的电压为 %2 V，通道1的电压为 %3 V。

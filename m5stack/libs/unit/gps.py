@@ -26,7 +26,7 @@ class GPSUnit:
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
         self.tx = port[1]
         self.rx = port[0]
-        self._timer = timTh.addTimer(50, timTh.PERIODIC, self._monitor)
+        self._timer = timTh.add_timer(50, timTh.PERIODIC, self._monitor)
         self._state = ""
         self.time_offset = 8
 
@@ -44,13 +44,13 @@ class GPSUnit:
 
         self.satellite_num = gps_list[7]
         if gps_list[1]:
-            nowTime = gps_list[1]
-            gps_hour = int(nowTime[:2]) + self.time_offset
+            now_time = gps_list[1]
+            gps_hour = int(now_time[:2]) + self.time_offset
             if gps_hour > 23:
                 gps_hour = gps_hour - 24
             if gps_hour < 0:
                 gps_hour = gps_hour + 24
-            self.gps_time = "{:0>2d}".format(gps_hour) + ":" + nowTime[2:4] + ":" + nowTime[4:6]
+            self.gps_time = "{:0>2d}".format(gps_hour) + ":" + now_time[2:4] + ":" + now_time[4:6]
 
         if self.pos_quality == "0":
             return
@@ -77,8 +77,8 @@ class GPSUnit:
         gps_list = data.split(",")
         # self.uart_data = data
         if gps_list[9]:
-            nowDate = gps_list[9]
-            self.gps_date = nowDate[:2] + "/" + nowDate[2:4] + "/" + nowDate[4:6]
+            now_date = gps_list[9]
+            self.gps_date = now_date[:2] + "/" + now_date[2:4] + "/" + now_date[4:6]
 
     def decode_vtg(self, data):
         gps_list = data.split(",")

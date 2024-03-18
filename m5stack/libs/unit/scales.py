@@ -48,7 +48,7 @@ class SCALESUnit:
         self._available()
 
     def _available(self) -> None:
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise UnitError("Scales unit maybe not connect")
 
     def get_button_status(self, status) -> int:

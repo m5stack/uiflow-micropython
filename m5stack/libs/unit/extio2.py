@@ -153,7 +153,7 @@ class EXTIO2Unit:
     def get_address(self) -> int:
         return self._read_u8(_REG_ADDR_CONFIG)
 
-    def Pin(self, id, mode: int = IN, value=None):
+    def pin(self, id, mode: int = IN, value=None):
         return Pin(self, id, mode, value)
 
     def _write_u8(self, reg: int, val: int) -> None:

@@ -31,11 +31,11 @@ class MatrixKeyboard(Keyboard):
         self._handler = handler
 
     def tick(self) -> None:
-        self.updateKeyList()
-        self.updateKeysState()
-        if self.isChange():
-            if self.isPressed():
-                status = self.keysState()
+        self.update_key_list()
+        self.update_keys_state()
+        if self.is_change():
+            if super().is_pressed():
+                status = self.keys_state()
                 if status.tab:
                     self._keys.append(0x09)
                 elif status.enter:

@@ -125,20 +125,20 @@ class LoRaE220JPUnit:
         struct.pack_into(">H", self._TXD_BUFFER, 3, own_address)
 
         # Register Address 02H
-        REG0 = self.BAUD_9600 | air_data_rate
-        struct.pack_into(">B", self._TXD_BUFFER, 5, REG0)
+        reg0 = self.BAUD_9600 | air_data_rate
+        struct.pack_into(">B", self._TXD_BUFFER, 5, reg0)
 
         # Register Address 03H
-        REG1 = subpacket_size | rssi_ambient_noise_flag | transmitting_power
-        struct.pack_into(">B", self._TXD_BUFFER, 6, REG1)
+        reg1 = subpacket_size | rssi_ambient_noise_flag | transmitting_power
+        struct.pack_into(">B", self._TXD_BUFFER, 6, reg1)
 
         # Register Address 04H
         struct.pack_into(">B", self._TXD_BUFFER, 7, own_channel)
 
         # Register Address 05H
         self.rssi_byte_flag = rssi_byte_flag
-        REG3 = self.rssi_byte_flag | transmission_method_type | wor_cycle
-        struct.pack_into(">B", self._TXD_BUFFER, 8, REG3)
+        reg3 = self.rssi_byte_flag | transmission_method_type | wor_cycle
+        struct.pack_into(">B", self._TXD_BUFFER, 8, reg3)
 
         # Register Address 06H, 07H
         struct.pack_into(">H", self._TXD_BUFFER, 9, encryption_key)
@@ -168,7 +168,7 @@ class LoRaE220JPUnit:
                 self.receive_callback(response, rssi)
             time.sleep_ms(10)
 
-    def receive_none_block(self, receive_callback: function) -> None:
+    def receive_none_block(self, receive_callback) -> None:
         if not self.recv_running:
             self.recv_running = True
             self.receive_callback = receive_callback
@@ -176,7 +176,7 @@ class LoRaE220JPUnit:
             # application is interrupted.
             _thread.start_new_thread(self._recv_task, ())
 
-    def receiveNoneBlock(self, receive_callback: function) -> None:
+    def receiveNoneBlock(self, receive_callback) -> None:  # noqa: N802
         return self.receive_none_block(receive_callback)
 
     def stop_receive(self) -> None:
@@ -184,7 +184,7 @@ class LoRaE220JPUnit:
         time.sleep_ms(50)
         self.receive_callback = None
 
-    def stopReceive(self) -> None:
+    def stopReceive(self) -> None:  # noqa: N802
         return self.stop_receive()
 
     def receive(self, timeout=1000) -> tuple[bytes, int]:
@@ -201,14 +201,14 @@ class LoRaE220JPUnit:
             elif read_length > 0:
                 time.sleep_ms(10)
                 if not self.uart.any():
-                    RXD_BUFFER = memoryview(self._RXD_BUFFER[0:read_length])
+                    rxd_buffer = memoryview(self._RXD_BUFFER[0:read_length])
                     if self.rssi_byte_flag == self.RSSI_BYTE_ENABLE:
                         response, rssi = struct.unpack_from(
-                            "<%dsB" % (read_length - 1), RXD_BUFFER
+                            "<%dsB" % (read_length - 1), rxd_buffer
                         )
                         rssi = rssi - 256
                     else:
-                        response = struct.unpack_from("<%ds" % read_length, RXD_BUFFER)
+                        response = struct.unpack_from("<%ds" % read_length, rxd_buffer)
                     break
             time.sleep_ms(10)
         return response, rssi
@@ -218,13 +218,13 @@ class LoRaE220JPUnit:
             print("ERROR: Length of send_data over %d bytes." % self.max_len)
             return False
 
-        FRAME = memoryview(self._TXD_BUFFER[0 : 3 + len(send_data)])
-        struct.pack_into(">HB", FRAME, 0, target_address, target_channel)
-        if type(send_data) is str:
-            struct.pack_into("%ds" % len(send_data), FRAME, 3, send_data)
+        frame = memoryview(self._TXD_BUFFER[0 : 3 + len(send_data)])
+        struct.pack_into(">HB", frame, 0, target_address, target_channel)
+        if isinstance(send_data, str):
+            struct.pack_into("%ds" % len(send_data), frame, 3, send_data)
         else:
             for i in range(len(send_data)):
-                FRAME[3 + i] = send_data[i]
-        self.uart.write(FRAME)
+                frame[3 + i] = send_data[i]
+        self.uart.write(frame)
 
         return True

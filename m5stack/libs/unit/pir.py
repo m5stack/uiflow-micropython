@@ -23,7 +23,7 @@ class PIRUnit:
     def get_status(self) -> bool:
         return bool(self._pin())
 
-    def set_callback(self, handler: function, trigger: Literal[0, 1]) -> None:
+    def set_callback(self, handler, trigger: Literal[0, 1]) -> None:
         self._handlers[trigger] = handler
 
     def disable_irq(self) -> None:

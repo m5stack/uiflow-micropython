@@ -54,7 +54,7 @@ class MQTTClient(robust.MQTTClient):
 
     @staticmethod
     def _load_file(path):
-        if type(path) is str and path.startswith("/flash"):
+        if isinstance(path, str) and path.startswith("/flash"):
             try:
                 with open(path, "r") as f:
                     return f.read()

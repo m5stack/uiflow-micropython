@@ -50,8 +50,8 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
-        self._ssid_label.setText(self.ssid)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_text(self.ssid)
 
         self._psk_label = Label(
             "psk",
@@ -64,11 +64,11 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._psk_label.setLongMode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(Label.LONG_DOT)
         if len(self.psk):
-            self._psk_label.setText("*" * 20)
+            self._psk_label.set_text("*" * 20)
         else:
-            self._psk_label.setText("")
+            self._psk_label.set_text("")
 
         self._server_label = Label(
             "server",
@@ -81,8 +81,8 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
-        self._server_label.setText(self.server)
+        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_text(self.server)
 
         self._submit_button = Image(use_sprite=False)
         self._submit_button.set_pos(6, 105)
@@ -168,74 +168,74 @@ class WiFiSettingApp(AppBase):
             print("backspace")
             if self._option == 1:
                 self.ssid_tmp = self.ssid_tmp[:-1]
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 2:
                 self.psk_tmp = self.psk_tmp[:-1]
-                self._psk_label.setText(self.psk_tmp)
+                self._psk_label.set_text(self.psk_tmp)
             elif self._option == 3:
                 self.server_tmp = self.server_tmp[:-1]
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
         elif event.key >= 0x20 and event.key <= 126:
             if self._option == 1:
                 self.ssid_tmp += chr(event.key)
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 2:
                 self.psk_tmp += chr(event.key)
-                self._psk_label.setText(self.psk_tmp)
+                self._psk_label.set_text(self.psk_tmp)
             elif self._option == 3:
                 self.server_tmp += chr(event.key)
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
     def _select_default_option(self):
         M5.Lcd.drawImage(WIFI_DEFAULT_IMG, 6, 22)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
         self._submit_button.set_src(SUBMIT_UNSELECT_BUTTON_IMG)
 
     def _select_ssid_option(self):
         M5.Lcd.drawImage(WIFI_SSID_IMG, 6, 22)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
         self._submit_button.set_src(SUBMIT_UNSELECT_BUTTON_IMG)
 
     def _select_psk_option(self):
         M5.Lcd.drawImage(WIFI_PSK_IMG, 6, 22)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
         self._submit_button.set_src(SUBMIT_UNSELECT_BUTTON_IMG)
 
     def _select_server_option(self):
         M5.Lcd.drawImage(WIFI_SERVER_IMG, 6, 22)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
         self._submit_button.set_src(SUBMIT_UNSELECT_BUTTON_IMG)
 
     def _select_submit_button_option(self):
         M5.Lcd.drawImage(WIFI_DEFAULT_IMG, 6, 22)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
         self._submit_button.set_src(SUBMIT_SELECT_BUTTON_IMG)
 
     def get_data(self):
@@ -316,12 +316,12 @@ class BootScreenSetting(AppBase):
 
     def on_ready(self):
         M5.Lcd.drawImage(CARD_228x32_SELECT_IMG, 6, 60)
-        self._menu_label.setText("Boot Screen")
+        self._menu_label.set_text("Boot Screen")
         self._option_img.set_src(self._boot_options.get(self._option))
 
     def on_hide(self):
         M5.Lcd.drawImage(CARD_228x32_UNSELECT_IMG, 6, 60)
-        self._menu_label.setText("Boot Screen")
+        self._menu_label.set_text("Boot Screen")
         self._option_img.set_src(self._boot_options.get(self._option))
 
     def on_exit(self):
@@ -394,12 +394,12 @@ class ComLinkSetting(AppBase):
 
     def on_ready(self):
         M5.Lcd.drawImage(CARD_228x32_SELECT_IMG, 6, 98)
-        self._menu_label.setText("COM.X Link")
+        self._menu_label.set_text("COM.X Link")
         self._option_img.set_src(self._comlink_options.get(self._option))
 
     def on_hide(self):
         M5.Lcd.drawImage(CARD_228x32_UNSELECT_IMG, 6, 98)
-        self._menu_label.setText("COM.X Link")
+        self._menu_label.set_text("COM.X Link")
         self._option_img.set_src(self._comlink_options.get(self._option))
 
     def on_exit(self):
@@ -468,13 +468,13 @@ class BrightnessSettingApp(AppBase):
 
     def on_ready(self):
         M5.Lcd.drawImage(CARD_228x32_SELECT_IMG, 6, 22)
-        self._menu_label.setText("Brightness")
-        self._brightness_label.setText(self._brightness_options.get(self._brightness))
+        self._menu_label.set_text("Brightness")
+        self._brightness_label.set_text(self._brightness_options.get(self._brightness))
 
     def on_hide(self):
         M5.Lcd.drawImage(CARD_228x32_UNSELECT_IMG, 6, 22)
-        self._menu_label.setText("Brightness")
-        self._brightness_label.setText(self._brightness_options.get(self._brightness))
+        self._menu_label.set_text("Brightness")
+        self._brightness_label.set_text(self._brightness_options.get(self._brightness))
 
     def on_exit(self):
         del (self._menu_label, self._brightness_label)
@@ -482,7 +482,7 @@ class BrightnessSettingApp(AppBase):
     def _handle_brightness(self, fw):
         self._brightness = next(self._options)
         M5.Lcd.setBrightness(self._brightness)
-        self._brightness_label.setText(self._brightness_options.get(self._brightness))
+        self._brightness_label.set_text(self._brightness_options.get(self._brightness))
 
     @staticmethod
     def approximate(number):
@@ -547,7 +547,7 @@ class GeneralSettingApp(AppBase):
 
     async def _keycode_dpad_down_event_handler(self, fw):
         self._menu_selector.current().pause()
-        app = self._menu_selector.next().resume()
+        self._menu_selector.next().resume()
 
     async def _keycode_dpad_up_event_handler(self, fw):
         self._menu_selector.current().pause()
@@ -611,7 +611,7 @@ class SettingsApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium18_VLW,
         )
-        self._label0.setText("WLAN")
+        self._label0.set_text("WLAN")
         self._labels.append(self._label0)
 
         M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
@@ -638,7 +638,7 @@ class SettingsApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium18_VLW,
         )
-        self._label1.setText("General")
+        self._label1.set_text("General")
         self._labels.append(self._label1)
 
         M5.Lcd.drawImage(CARET_RIGHT, 213, 63)
@@ -671,13 +671,13 @@ class SettingsApp(AppBase):
         self._imgs[0].set_src(CARD_228x32_UNSELECT_IMG)
         self._icos[0].refresh()
         # self._labels[0].refresh()
-        self._labels[0].setText("WLAN")
+        self._labels[0].set_text("WLAN")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
         self._imgs[1].set_src(CARD_228x32_SELECT_IMG)
         self._icos[1].refresh()
         # self._labels[1].refresh()
-        self._labels[1].setText("General")
+        self._labels[1].set_text("General")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 63)
 
     async def _keycode_dpad_up_event_handler(self, fw):
@@ -689,13 +689,13 @@ class SettingsApp(AppBase):
         self._imgs[0].set_src(CARD_228x32_SELECT_IMG)
         self._icos[0].refresh()
         # self._labels[0].refresh()
-        self._labels[0].setText("WLAN")
+        self._labels[0].set_text("WLAN")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
         self._imgs[1].set_src(CARD_228x32_UNSELECT_IMG)
         self._icos[1].refresh()
         # self._labels[1].refresh()
-        self._labels[1].setText("General")
+        self._labels[1].set_text("General")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 63)
 
     async def _kb_event_handler(self, event, fw):
@@ -713,13 +713,13 @@ class SettingsApp(AppBase):
             self._imgs[0].set_src(CARD_228x32_UNSELECT_IMG)
             self._icos[0].refresh()
             # self._labels[0].refresh()
-            self._labels[0].setText("WLAN")
+            self._labels[0].set_text("WLAN")
             M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
             self._imgs[1].set_src(CARD_228x32_SELECT_IMG)
             self._icos[1].refresh()
             # self._labels[1].refresh()
-            self._labels[1].setText("General")
+            self._labels[1].set_text("General")
             M5.Lcd.drawImage(CARET_RIGHT, 213, 63)
 
             event.status = True
@@ -728,13 +728,13 @@ class SettingsApp(AppBase):
             self._imgs[0].set_src(CARD_228x32_SELECT_IMG)
             self._icos[0].refresh()
             # self._labels[0].refresh()
-            self._labels[0].setText("WLAN")
+            self._labels[0].set_text("WLAN")
             M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
             self._imgs[1].set_src(CARD_228x32_UNSELECT_IMG)
             self._icos[1].refresh()
             # self._labels[1].refresh()
-            self._labels[1].setText("General")
+            self._labels[1].set_text("General")
             M5.Lcd.drawImage(CARET_RIGHT, 213, 63)
             event.status = True
 

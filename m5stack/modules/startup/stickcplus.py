@@ -115,7 +115,7 @@ class UsbApp(AppBase):
     async def on_run(self):
         while True:
             # battery
-            self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+            self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
             await asyncio.sleep_ms(1000)
 
     def on_exit(self):
@@ -140,7 +140,7 @@ class RunApp(AppBase):
 
     def on_ready(self):
         M5.Lcd.clear()
-        execfile("main.py")
+        execfile("main.py")  # noqa: F821
         sys.exit(0)
 
 
@@ -195,7 +195,7 @@ class ListApp(AppBase):
                 bg_color=0x333333,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label0.setLongMode(Label.LONG_DOT)
+            self._label0.set_long_mode(Label.LONG_DOT)
         if self._label1 is None:
             self._label1 = Label(
                 "",
@@ -207,7 +207,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label1.setLongMode(Label.LONG_DOT)
+            self._label1.set_long_mode(Label.LONG_DOT)
         if self._label2 is None:
             self._label2 = Label(
                 "",
@@ -219,9 +219,9 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label2.setLongMode(Label.LONG_DOT)
+            self._label2.set_long_mode(Label.LONG_DOT)
 
-        if len(self._labels) is not 3:
+        if len(self._labels) != 3:
             self._labels.clear()
             self._labels.append(self._label0)
             self._labels.append(self._label1)
@@ -238,7 +238,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal0.setLongMode(Label.LONG_DOT)
+            self._lebal0.set_long_mode(Label.LONG_DOT)
 
         if self._lebal1 is None:
             self._lebal1 = Label(
@@ -251,7 +251,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal1.setLongMode(Label.LONG_DOT)
+            self._lebal1.set_long_mode(Label.LONG_DOT)
 
         if self._lebal2 is None:
             self._lebal2 = Label(
@@ -264,9 +264,9 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal2.setLongMode(Label.LONG_DOT)
+            self._lebal2.set_long_mode(Label.LONG_DOT)
 
-        if len(self._lebals) is not 3:
+        if len(self._lebals) != 3:
             self._lebals.clear()
             self._lebals.append(self._lebal0)
             self._lebals.append(self._lebal1)
@@ -274,12 +274,12 @@ class ListApp(AppBase):
 
         for label, file in zip(self._labels, self._files):
             # print("file:", file)
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
     async def on_run(self):
         while True:
             # battery
-            self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+            self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
             await asyncio.sleep_ms(1000)
 
     def on_exit(self):
@@ -288,7 +288,7 @@ class ListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):
@@ -303,19 +303,19 @@ class ListApp(AppBase):
             self._file_pos = 0
 
         for label in self._labels:
-            label.setText("")
+            label.set_text("")
 
         for label, file in zip(self._labels, self._files[self._file_pos :]):
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
         for label in self._lebals:
-            label.setText("")
+            label.set_text("")
 
         files = self._files[: self._file_pos]
         files.reverse()
 
         for label, file in zip(self._lebals, files):
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
 
 _cloud_icos_0 = {
@@ -382,7 +382,7 @@ class CloudApp(AppBase):
             network.STAT_HANDSHAKE_TIMEOUT: 2,
         }[self._wifi.connect_status()]
 
-        if _cloud_status is not 1 or _HAS_SERVER is not True:
+        if _cloud_status != 1 or _HAS_SERVER is not True:
             return _cloud_status
 
         if M5Things.status() == 2:
@@ -393,7 +393,7 @@ class CloudApp(AppBase):
 
     def _get_user_id(self):
         if _HAS_SERVER:
-            return None if len(M5Things.info()[1]) is 0 else M5Things.info()[1]
+            return None if len(M5Things.info()[1]) == 0 else M5Things.info()[1]
         else:
             return None
 
@@ -419,19 +419,19 @@ class CloudApp(AppBase):
         self._bg_img.set_src(self._icos.get(self._cloud_status))
 
         # ssid
-        self._ssid_label.setTextColor(0x000000, _txt_bg_colors.get(self._cloud_status))
-        self._ssid_label.setText(self._ssid)
+        self._ssid_label.set_text_color(0x000000, _txt_bg_colors.get(self._cloud_status))
+        self._ssid_label.set_text(self._ssid)
 
         # user id
-        self._user_id_label.setText(str(self._user_id))
+        self._user_id_label.set_text(str(self._user_id))
 
         # rssi
         if self._cloud_status in (3, 4):
-            self._rssi_label.setTextColor(0x000000, _txt_bg_colors.get(self._cloud_status))
-            self._rssi_label.setText(str(self._wifi.get_rssi()))
+            self._rssi_label.set_text_color(0x000000, _txt_bg_colors.get(self._cloud_status))
+            self._rssi_label.set_text(str(self._wifi.get_rssi()))
 
         # battery
-        self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+        self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
 
     def on_launch(self):
         self._server = self._get_server()
@@ -466,7 +466,7 @@ class CloudApp(AppBase):
             bg_color=0xCCCCCC,
             font=M5.Lcd.FONTS.DejaVu18,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
 
         self._rssi_label = Label(
             str(None),
@@ -479,7 +479,7 @@ class CloudApp(AppBase):
             bg_color=0xCCCCCC,
             font=M5.Lcd.FONTS.DejaVu12,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
 
         self._user_id_label = Label(
             str(None),
@@ -492,7 +492,7 @@ class CloudApp(AppBase):
             bg_color=0x000000,
             font=M5.Lcd.FONTS.DejaVu18,
         )
-        self._user_id_label.setLongMode(Label.LONG_DOT)
+        self._user_id_label.set_long_mode(Label.LONG_DOT)
 
         self._bg_img = Image(use_sprite=False)
         self._bg_img.set_x(0)
@@ -592,12 +592,12 @@ class MenuApp(AppBase):
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu12,
         )
-        self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+        self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
 
     async def on_run(self):
         while True:
             # battery
-            self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+            self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
             await asyncio.sleep_ms(1000)
 
     async def _keycode_enter_event_handler(self, fw):
@@ -614,9 +614,9 @@ class MenuApp(AppBase):
         # print("_keycode_dpad_down_event_handler")
         self._app, src = next(self._icos)
         self._status_img.set_src(src)
-        self._battery_label.setText(str(M5.Power.getBatteryLevel()))
+        self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
         if type(self._app) == RunApp:
-            self._tips_label.setText("main.py")
+            self._tips_label.set_text("main.py")
 
 
 class LauncherApp(AppBase):

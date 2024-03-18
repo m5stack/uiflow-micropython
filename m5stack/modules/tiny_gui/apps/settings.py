@@ -80,39 +80,39 @@ class WiFiSetting(AppBase):
 
     def _select_default_option(self):
         _draw_png("res/sys/cores3/Setting/wifiServer.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
         _draw_png("res/sys/cores3/Setting/ssid.png")
-        self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+        self._ssid_label.set_text_color(0x000000, 0xDCDDDD)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_psd_option(self):
         _draw_png("res/sys/cores3/Setting/pass.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xDCDDDD)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
         _draw_png("res/sys/cores3/Setting/server.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xDCDDDD)
-        self._ssid_label.setText(self.ssid_tmp)
-        self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xDCDDDD)
+        self._ssid_label.set_text(self.ssid_tmp)
+        self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def get_data(self):
         self.nvs = esp32.NVS("uiflow")
@@ -180,16 +180,16 @@ class WiFiSetting(AppBase):
         if event.key == KeyCode.KEYCODE_BACKSPACE and self._option in (0, 1, 2):
             if self._option == 0:
                 self.ssid_tmp = self.ssid_tmp[:-1]
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.pswd_tmp == self.pswd:
                     self.pswd_tmp = ""
                 else:
                     self.pswd_tmp = self.pswd_tmp[:-1]
-                self._pwd_label.setText(self.pswd_tmp)
+                self._pwd_label.set_text(self.pswd_tmp)
             elif self._option == 2:
                 self.server_tmp = self.server_tmp[:-1]
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
         if event.key in (
@@ -229,16 +229,16 @@ class WiFiSetting(AppBase):
         elif event.key >= 0x20 and event.key <= 126:
             if self._option == 0:
                 self.ssid_tmp += chr(event.key)
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.pswd_tmp == self.pswd:
                     self.pswd_tmp = ""
                 else:
                     self.pswd_tmp += chr(event.key)
-                self._pwd_label.setText(self.pswd_tmp)
+                self._pwd_label.set_text(self.pswd_tmp)
             elif self._option == 2:
                 self.server_tmp += chr(event.key)
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
     def umount(self) -> None:

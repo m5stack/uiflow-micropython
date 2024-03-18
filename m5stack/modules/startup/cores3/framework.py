@@ -20,13 +20,13 @@ binary_data = None
 _wav_path = None
 
 
-def _playWav(wav: str):
+def _play_wav(wav: str):
     global binary_data, _wav_path
     if binary_data is None or _wav_path is not wav:
         with open(wav, "rb") as f:
             binary_data = f.read()
         _wav_path = wav
-        if wav is "/system/common/wav/click.wav":
+        if wav == "/system/common/wav/click.wav":
             M5.Speaker.setVolume(64)
         else:
             M5.Speaker.setVolume(127)
@@ -88,7 +88,7 @@ class Framework:
                     if detail[9]:  # isHolding
                         pass
                     else:
-                        _playWav("/system/common/wav/click.wav")
+                        _play_wav("/system/common/wav/click.wav")
                         x = M5.Touch.getX()
                         y = M5.Touch.getY()
                         select_app = None
@@ -97,8 +97,8 @@ class Framework:
                                 select_app = app
                                 self._app_selector.select(select_app)
                                 break
-                        if select_app != None:
-                            if self._last_app != select_app and self._last_app != None:
+                        if select_app is not None:
+                            if self._last_app != select_app and self._last_app is not None:
                                 self._last_app.stop()
                                 select_app.start()
                                 self._last_app = select_app
@@ -110,16 +110,16 @@ class Framework:
 
             try:
                 if self._kb.is_pressed():
-                    _playWav("/system/common/wav/click.wav")
+                    _play_wav("/system/common/wav/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     await self.handle_input(self._event)
                 if self._kb_status is False:
-                    _playWav("/system/common/wav/insert.wav")
+                    _play_wav("/system/common/wav/insert.wav")
                     self._kb_status = True
             except OSError:
                 if self._kb_status is True:
-                    _playWav("/system/common/wav/remove.wav")
+                    _play_wav("/system/common/wav/remove.wav")
                     self._kb_status = False
 
             await asyncio.sleep_ms(10)
@@ -137,7 +137,7 @@ class Framework:
             app.start()
             self._last_app = app
             event.status = True
-        if event.status == False:
+        if event.status is False:
             app = self._app_selector.current()
             if hasattr(app, "_kb_event_handler"):
                 await app._kb_event_handler(event, self)

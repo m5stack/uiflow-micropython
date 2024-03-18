@@ -40,7 +40,7 @@ class HBRIDGEUnit:
         """
         if slave_addr >= 0x20 and slave_addr <= 0x2F:
             self.i2c_addr = slave_addr
-        if not (self.i2c_addr in self.hbridge_i2c.scan()):
+        if self.i2c_addr not in self.hbridge_i2c.scan():
             raise UnitError("Hbridge unit maybe not connect")
 
     def get_driver_config(self, reg=0):

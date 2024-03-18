@@ -47,7 +47,7 @@ class SERVOS8Unit:
         self.available()
 
     def available(self):
-        if not (self.i2c_addr in self.servos8_i2c.scan()):
+        if self.i2c_addr not in self.servos8_i2c.scan():
             raise UnitError("8 Servos unit maybe not connect")
 
     def get_mode(self, channel):

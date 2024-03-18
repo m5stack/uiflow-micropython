@@ -66,7 +66,7 @@ class DevApp(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium18,
         )
-        self._mac_label.setText(self._mac_text)
+        self._mac_label.set_text(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
@@ -78,7 +78,7 @@ class DevApp(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium18,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
     def on_ready(self):
         self._status_bar = StatusBarApp(None, self._wlan)
@@ -94,7 +94,7 @@ class DevApp(AppBase):
                 self._bg_img.set_src(self._bg_src)
                 refresh = True
 
-            refresh and self._mac_label.setText(self._mac_text)
+            refresh and self._mac_label.set_text(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh:
@@ -102,7 +102,7 @@ class DevApp(AppBase):
                 print(self._account_text)
                 print(t)
                 self._account_text = t
-                self._account_label.setText(self._account_text)
+                self._account_label.set_text(self._account_text)
 
             refresh = False
             await asyncio.sleep_ms(1500)
@@ -120,16 +120,16 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_account():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            return "None" if len(infos[1]) is 0 else infos[1]
+            return "None" if len(infos[1]) == 0 else infos[1]
         else:
             return "None"
 
     def _get_bg_src(self):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0:
+            if infos[0] == 0:
                 return DEVELOP_PRIVATE_IMG
             elif infos[0] in (1, 2):
                 return DEVELOP_PUBLIC_IMG

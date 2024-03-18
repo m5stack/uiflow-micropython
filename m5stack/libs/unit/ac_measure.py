@@ -52,7 +52,7 @@ class AC_MEASUREUnit:
         """
         if slave_addr >= 0x01 and slave_addr <= 0x7F:
             self.i2c_addr = slave_addr
-        if not (self.i2c_addr in self.ac_measure_i2c.scan()):
+        if self.i2c_addr not in self.ac_measure_i2c.scan():
             raise UnitError("AC Measure unit maybe not connect")
 
     def get_voltage_str(self) -> str:

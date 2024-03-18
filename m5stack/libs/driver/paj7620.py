@@ -361,7 +361,7 @@ class PAJ7620U2:
         """
         self._select_bank(self.BANK_0)
         partid = self._read_reg(PAJ7620_ADDR_PART_ID_LOW, 4)
-        if partid == None:
+        if partid is None:
             #   print("bus data access error")
             return self.ERR_DATA_BUS
         time.sleep(0.1)

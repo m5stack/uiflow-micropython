@@ -27,10 +27,10 @@ class PBHUBUnit:
         self.init_i2c_address(addr)
 
     def _available(self):
-        if not (self.i2c_addr in self.pbhub_i2c.scan()):
+        if self.i2c_addr not in self.pbhub_i2c.scan():
             raise UnitError("Pb.hub unit maybe not connect")
 
-    def digitalRead(self, num, pos):
+    def digitalRead(self, num, pos):  # noqa: N802
         """
         digital read.
         num :  0 to 5
@@ -42,7 +42,7 @@ class PBHUBUnit:
         data = self.read_reg((hub_addr[num] | offset), 1)[0] > 0
         return data
 
-    def digitalWrite(self, num, pos, value):
+    def digitalWrite(self, num, pos, value):  # noqa: N802
         """
         digital write.
         num :  0 to 5
@@ -54,7 +54,7 @@ class PBHUBUnit:
         offset = 0x00 if pos else 0x01
         self.write_mem_list(hub_addr[num] | offset, [value])
 
-    def pwmRead(self, num, pos):
+    def pwmRead(self, num, pos):  # noqa: N802
         """
         pwm read.
         num :  0 to 5
@@ -67,7 +67,7 @@ class PBHUBUnit:
         data = self.map(data, 0, 255, 0, 100)
         return data
 
-    def pwmWrite(self, num, pos, value):
+    def pwmWrite(self, num, pos, value):  # noqa: N802
         """
         pwm write.
         num :  0 to 5
@@ -80,7 +80,7 @@ class PBHUBUnit:
         offset = 0x02 if pos else 0x03
         self.write_mem_list(hub_addr[num] | offset, [value])
 
-    def analogRead(self, num):
+    def analogRead(self, num):  # noqa: N802
         """
         analog read.
         num :  0 to 5
@@ -93,7 +93,7 @@ class PBHUBUnit:
         return data
 
     # default: 16
-    def setRgbNum(self, num, length):
+    def setRgbNum(self, num, length):  # noqa: N802
         """
         set RGB Max length.
         num :  0 to 5
@@ -102,7 +102,7 @@ class PBHUBUnit:
         num = max(min(num, 5), 0)
         self.write_mem_list(hub_addr[num] | 0x08, [(length & 0xFF), ((length >> 8) & 0xFF)])
 
-    def setColorPos(self, num, led, color_in):
+    def setColorPos(self, num, led, color_in):  # noqa: N802
         """
         set RGB led Color.
         num :  0 to 5
@@ -113,7 +113,7 @@ class PBHUBUnit:
         out_buf = led.to_bytes(2, "little") + color_in.to_bytes(3, "big")
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x09, out_buf)
 
-    def setColor(self, num, begin, count, color_in):
+    def setColor(self, num, begin, count, color_in):  # noqa: N802
         """
         set RGB led Color.
         num :  0 to 5
@@ -127,7 +127,7 @@ class PBHUBUnit:
         )
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x0A, out_buf)
 
-    def setBrightness(self, num, value):
+    def setBrightness(self, num, value):  # noqa: N802
         """
         set RGB led brightness.
         num :  0 to 5
@@ -136,7 +136,7 @@ class PBHUBUnit:
         num = max(min(num, 5), 0)
         self.write_mem_list(hub_addr[num] | 0x0B, [value])
 
-    def setServoAngle(self, num, pos, value):
+    def setServoAngle(self, num, pos, value):  # noqa: N802
         """
         set servo angle.
         num :  0 to 5
@@ -148,7 +148,7 @@ class PBHUBUnit:
         offset = 0x0C if pos else 0x0D
         self.write_mem_list(hub_addr[num] | offset, [value])
 
-    def setServoPulse(self, num, pos, value):
+    def setServoPulse(self, num, pos, value):  # noqa: N802
         """
         set servo pulse.
         num :  0 to 5

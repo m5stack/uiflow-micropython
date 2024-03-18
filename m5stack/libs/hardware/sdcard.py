@@ -8,7 +8,7 @@ import machine, os
 def create_sdcard_closure():
     sd = None
 
-    def SDCard(
+    def sdcard(
         slot=1, width=1, cd=None, wp=None, sck=None, miso=None, mosi=None, cs=None, freq=20000000
     ):
         nonlocal sd
@@ -32,7 +32,7 @@ def create_sdcard_closure():
             sd.info()
             os.mount(sd, "/sd")
 
-    return SDCard
+    return sdcard
 
 
 SDCard = create_sdcard_closure()

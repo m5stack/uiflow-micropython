@@ -25,37 +25,37 @@ class Button(ButtonBase):
         super().__init__(Pin(pin_num), active_low, pullup_active)
         self.CB_TYPE = CB_TYPE()
 
-    def isHolding(self):
+    def isHolding(self):  # noqa: N802
         return self.last_state == self.current_state and self.last_state == self.HOLD
 
-    def isPressed(self):
+    def isPressed(self):  # noqa: N802
         return self.last_state == self.current_state and self.last_state == self.PRESSED
 
-    def isReleased(self):
+    def isReleased(self):  # noqa: N802
         return self.last_state == self.current_state and self.last_state == self.RELEASED
 
-    def isClicked(self):
+    def isClicked(self):  # noqa: N802
         return self.last_state == self.current_state and self.last_state == self.CLICKED
 
-    def wasHold(self):
+    def wasHold(self):  # noqa: N802
         return self.last_state == self.HOLD
 
-    def wasPressed(self):
+    def wasPressed(self):  # noqa: N802
         return self.last_state == self.PRESSED
 
-    def wasReleased(self):
+    def wasReleased(self):  # noqa: N802
         return self.last_state == self.RELEASED
 
-    def wasClicked(self):
+    def wasClicked(self):  # noqa: N802
         return self.last_state == self.CLICKED
 
-    def wasSingleClicked(self):
+    def wasSingleClicked(self):  # noqa: N802
         return self.last_state == self.CLICKED
 
-    def wasDoubleClicked(self):
+    def wasDoubleClicked(self):  # noqa: N802
         return self.last_state == self.DOUBLE_CLICKED
 
-    def setCallback(self, type=None, cb=None):
+    def setCallback(self, type=None, cb=None):  # noqa: N802
         if type == 0:
             self.attach_click_event(cb, parameter=self.WAS_CLICKED)
         elif type == 1:

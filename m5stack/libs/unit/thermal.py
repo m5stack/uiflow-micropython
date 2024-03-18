@@ -23,7 +23,7 @@ class THERMALUnit(MLX90640):
         super().__init__(self._thermal_i2c, self._thermal_addr)
 
     def _available(self):
-        if not (self._thermal_addr in self._thermal_i2c.scan()):
+        if self._thermal_addr not in self._thermal_i2c.scan():
             raise UnitError("Thermal unit maybe not connect")
 
     @property
@@ -64,4 +64,4 @@ class THERMALUnit(MLX90640):
         return self.refresh_rate
 
     def update_temperature_buffer(self):
-        return self.getFrame()
+        return self.get_frame()

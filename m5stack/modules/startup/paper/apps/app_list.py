@@ -42,7 +42,7 @@ class TextButton(Button):
     def set_pos(self, x, y):
         self._x = x
         self._y = y
-        self._label.setPos(x, y)
+        self._label.set_pos(x, y)
 
 
 class ImageButton(Button):
@@ -165,7 +165,7 @@ class ListApp(AppBase):
             self._btns.append(btn)
 
         for btn, file in zip(self._btns, self._files):
-            file and btn and btn._label.setText(file)
+            file and btn and btn._label.set_text(file)
 
     def on_exit(self):
         del self._btns, self._run_btn, self._rect
@@ -182,7 +182,7 @@ class ListApp(AppBase):
         if self._max_file_num == 0:
             return
         print("run %d, %s" % (self._file_pos, self._files[self._file_pos]))
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     async def _click_event_handler(self, x, y, fw):

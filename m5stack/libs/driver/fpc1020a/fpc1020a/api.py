@@ -123,7 +123,7 @@ class FPC1020A:
         """
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.SLEEP])
         rxcmd, _, rest = self.command(CommandId.SLEEP, data)
-        if rest == True and rxcmd == CommandId.SLEEP:
+        if rest is True and rxcmd == CommandId.SLEEP:
             return True
 
     def get_add_mode(self) -> int:
@@ -133,7 +133,7 @@ class FPC1020A:
         """
         data = t.serialize([0, 0, 1, 0], COMMANDS[CommandId.ADD_MODE])
         rxcmd, rxdata, rest = self.command(CommandId.ADD_MODE, data)
-        if rest == True and rxcmd == CommandId.ADD_MODE:
+        if rest is True and rxcmd == CommandId.ADD_MODE:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[2] == self._ACK_SUCCESS:
                 self._add_mode = r[1]
@@ -142,7 +142,7 @@ class FPC1020A:
     def set_add_mode(self, mode: Literal[0, 1]) -> int:
         data = t.serialize([0, mode, 0, 0], COMMANDS[CommandId.ADD_MODE])
         rxcmd, rxdata, rest = self.command(CommandId.ADD_MODE, data)
-        if rest == True and rxcmd == CommandId.ADD_MODE:
+        if rest is True and rxcmd == CommandId.ADD_MODE:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[2] == self._ACK_SUCCESS:
                 self._add_mode = mode
@@ -153,7 +153,7 @@ class FPC1020A:
     ) -> bool:
         data = t.serialize([id, permission, 0], COMMANDS[cmd])
         rxcmd, rxdata, rest = self.command(cmd, data, timeout)
-        if rest == True and rxcmd == cmd:
+        if rest is True and rxcmd == cmd:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[2] == self._ACK_SUCCESS:
                 return True
@@ -165,13 +165,13 @@ class FPC1020A:
         After calling this method, you need to put your finger on the fingerprint module.
         """
         rest = self._add(1, id, permission)
-        if rest == True:
+        if rest is True:
             for _ in range(4):
                 rest = self._add(2, id, permission)
-                if rest != True:
+                if rest is not True:
                     return -1
             rest = self._add(3, id, permission)
-            return id if rest == True else -1
+            return id if rest is True else -1
         else:
             return -1
 
@@ -179,7 +179,7 @@ class FPC1020A:
         """Delete the user with the specified id."""
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.DELETE_USER])
         rxcmd, rxdata, rest = self.command(CommandId.DELETE_USER, data)
-        if rest == True and rxcmd == CommandId.DELETE_USER:
+        if rest is True and rxcmd == CommandId.DELETE_USER:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             return id if r[2] == self._ACK_SUCCESS else -1
         else:
@@ -189,7 +189,7 @@ class FPC1020A:
         """Delete all users."""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.DELETE_ALL_USER])
         rxcmd, rxdata, rest = self.command(CommandId.DELETE_ALL_USER, data)
-        if rest == True and rxcmd == CommandId.DELETE_ALL_USER:
+        if rest is True and rxcmd == CommandId.DELETE_ALL_USER:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             return True if r[2] == self._ACK_SUCCESS else False
         else:
@@ -207,7 +207,7 @@ class FPC1020A:
         cap = 0xFF if is_cap else 0x00
         data = t.serialize([0, 0, cap, 0], COMMANDS[CommandId.GET_USER_CNT])
         rxcmd, rxdata, rest = self.command(CommandId.GET_USER_CNT, data)
-        if rest == True and rxcmd == CommandId.GET_USER_CNT:
+        if rest is True and rxcmd == CommandId.GET_USER_CNT:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[1] == self._ACK_SUCCESS or r[1] == 0xFF:
                 return int(r[0])
@@ -220,7 +220,7 @@ class FPC1020A:
         """
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.MATCH_1])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_1, data, timeout)
-        if rest == True and rxcmd == CommandId.MATCH_1:
+        if rest is True and rxcmd == CommandId.MATCH_1:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             return True if r[2] == self._ACK_SUCCESS else False
         else:
@@ -230,7 +230,7 @@ class FPC1020A:
         """Detect whether the currently collected fingerprint is a registered user."""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.MATCH_N])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_N, data, timeout)
-        if rest == True and rxcmd == CommandId.MATCH_N:
+        if rest is True and rxcmd == CommandId.MATCH_N:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[1] in [1, 2, 3]:
                 return r[0]
@@ -241,14 +241,14 @@ class FPC1020A:
         infos = []
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.GET_USER_INFO])
         rxcmd, rxdata, rest = self.command(CommandId.GET_USER_INFO, data)
-        if rest != True or rxcmd != CommandId.GET_USER_INFO:
+        if rest is not True or rxcmd != CommandId.GET_USER_INFO:
             return infos
         r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
         if r[1] != self._ACK_SUCCESS:
             return infos
 
         rxdata, rest = self._receive(length=int(r[0]) + 3, timeout=5000)
-        if rest != True or r[0] != len(rxdata):
+        if rest is not True or r[0] != len(rxdata):
             return infos
         rxdata = memoryview(rxdata)
         user_count, _ = t.deserialize(rxdata[0:2], (t.uint16_t,))
@@ -261,14 +261,14 @@ class FPC1020A:
     def get_user_info(self, id: int) -> Union[tuple, None]:
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.GET_USER_CHARACTERISTIC])
         rxcmd, rxdata, rest = self.command(CommandId.GET_USER_CHARACTERISTIC, data)
-        if rest != True or rxcmd != CommandId.GET_USER_CHARACTERISTIC:
+        if rest is not True or rxcmd != CommandId.GET_USER_CHARACTERISTIC:
             return None
         r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
         if r[1] != self._ACK_SUCCESS:
             return None
 
         rxdata, rest = self._receive(length=int(r[0]) + 3, timeout=5000)
-        if rest != True or r[0] != len(rxdata):
+        if rest is not True or r[0] != len(rxdata):
             return None
         info, _ = t.deserialize(rxdata, (t.uint16_t, t.uint8_t, t.Bytes))
         return (int(info[0]), int(info[1]), info[2])
@@ -276,7 +276,7 @@ class FPC1020A:
     def get_user_permission(self, id: int) -> Literal[1, 2, 3]:
         data = t.serialize([id, 0, 0], COMMANDS[CommandId.GET_USER_PERMISSIONS])
         rxcmd, rxdata, rest = self.command(CommandId.GET_USER_PERMISSIONS, data)
-        if rest == True and rxcmd == CommandId.GET_USER_PERMISSIONS:
+        if rest is True and rxcmd == CommandId.GET_USER_PERMISSIONS:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             return r[2] if r[2] in (1, 2, 3) else -1
         else:
@@ -284,7 +284,7 @@ class FPC1020A:
 
     def get_user_characteristic(self, id: int) -> bytes:
         info = self.get_user_info(id)
-        return info[2] if info != None else b""
+        return info[2] if info is not None else b""
 
     def add_user_info(self, id, permissions, characteristic, timeout=5000) -> bool:
         """Register a new user with FPC1020A."""
@@ -294,7 +294,7 @@ class FPC1020A:
         rxcmd, rxdata, rest = self.command_ext(
             CommandId.UPLOAD_USER_INFO, head, data, timeout=timeout
         )
-        if rest != True or rxcmd != CommandId.UPLOAD_USER_INFO:
+        if rest is not True or rxcmd != CommandId.UPLOAD_USER_INFO:
             return False
 
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.UPLOAD_USER_INFO])
@@ -304,14 +304,14 @@ class FPC1020A:
         img = b""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.CAPTURE_CHARACTERISTIC])
         rxcmd, rxdata, rest = self.command(CommandId.CAPTURE_CHARACTERISTIC, data, timeout=timeout)
-        if rest != True or rxcmd != CommandId.CAPTURE_CHARACTERISTIC:
+        if rest is not True or rxcmd != CommandId.CAPTURE_CHARACTERISTIC:
             return img
         r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
         if r[1] != self._ACK_SUCCESS:
             return img
 
         rxdata, rest = self._receive(length=int(r[0]) + 3, timeout=timeout)
-        if rest != True or r[0] != len(rxdata):
+        if rest is not True or r[0] != len(rxdata):
             return img
         info, _ = t.deserialize(rxdata, (t.uint8_t, t.uint8_t, t.uint8_t, t.Bytes))
         return info[3]
@@ -322,7 +322,7 @@ class FPC1020A:
         """
         data = t.serialize([0, 0, 1, 0], COMMANDS[CommandId.MATCH_LEVEL])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_LEVEL, data)
-        if rest == True and rxcmd == CommandId.MATCH_LEVEL:
+        if rest is True and rxcmd == CommandId.MATCH_LEVEL:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[2] == self._ACK_SUCCESS:
                 self._match_level = r[1]
@@ -331,7 +331,7 @@ class FPC1020A:
     def set_match_level(self, level: int) -> int:
         data = t.serialize([0, level, 0, 0], COMMANDS[CommandId.MATCH_LEVEL])
         rxcmd, rxdata, rest = self.command(CommandId.MATCH_LEVEL, data)
-        if rest == True and rxcmd == CommandId.MATCH_LEVEL:
+        if rest is True and rxcmd == CommandId.MATCH_LEVEL:
             r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
             if r[2] == self._ACK_SUCCESS:
                 self._match_level = level
@@ -341,14 +341,14 @@ class FPC1020A:
         """Get the version information of FPC1020A"""
         data = t.serialize([0, 0, 0, 0], COMMANDS[CommandId.GET_VERSION])
         rxcmd, rxdata, rest = self.command(CommandId.GET_VERSION, data)
-        if rest != True or rxcmd != CommandId.GET_VERSION:
+        if rest is not True or rxcmd != CommandId.GET_VERSION:
             return ""
         r, _ = t.deserialize(rxdata, RESPONSES[rxcmd])
         if r[1] != self._ACK_SUCCESS:
             return ""
 
         rxdata, rest = self._receive(length=int(r[0]) + 3, timeout=5000)
-        if rest != True or r[0] != len(rxdata):
+        if rest is not True or r[0] != len(rxdata):
             return ""
         return rxdata[:8].decode()
 
@@ -356,14 +356,14 @@ class FPC1020A:
         """TODO: 保存到文件"""
         data = t.serialize([0, 0, 0x20 if hd else 0, 0], COMMANDS[CommandId.CAPTURE_RAW_IMG])
         rxcmd, rxdata, rest = self.command(CommandId.CAPTURE_RAW_IMG, data)
-        if rest != True or rxcmd != CommandId.CAPTURE_RAW_IMG:
+        if rest is not True or rxcmd != CommandId.CAPTURE_RAW_IMG:
             return b""
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.CAPTURE_RAW_IMG])
         if r[1] != self._ACK_SUCCESS:
             return b""
 
         rxdata, rest = self._receive(timeout=100000)
-        if rest != True or int(r[0]) != len(rxdata):
+        if rest is not True or int(r[0]) != len(rxdata):
             return b""
         return rxdata
 
@@ -374,7 +374,7 @@ class FPC1020A:
         rxcmd, rxdata, rest = self.command_ext(
             CommandId.UPLOAD_CHARACTERISTIC, head, data, timeout=timeout
         )
-        if rest != True or rxcmd != CommandId.UPLOAD_CHARACTERISTIC:
+        if rest is not True or rxcmd != CommandId.UPLOAD_CHARACTERISTIC:
             return False
 
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.UPLOAD_CHARACTERISTIC])
@@ -385,7 +385,7 @@ class FPC1020A:
         head = t.serialize([4, 0, 0], COMMANDS[CommandId.GET_UNREGISTERED_USER_ID])
         data = t.serialize([0, 150], (t.uint16_t, t.uint16_t))
         rxcmd, rxdata, rest = self.command_ext(CommandId.GET_UNREGISTERED_USER_ID, head, data)
-        if rest != True or rxcmd != CommandId.GET_UNREGISTERED_USER_ID:
+        if rest is not True or rxcmd != CommandId.GET_UNREGISTERED_USER_ID:
             return -1
 
         r, _ = t.deserialize(rxdata, RESPONSES[CommandId.GET_UNREGISTERED_USER_ID])
@@ -394,7 +394,7 @@ class FPC1020A:
     def command(self, cmd, data=b"", timeout=5000):
         self._send(cmd, data)
         rxdata, rest = self._receive(timeout=timeout)
-        if rest != True:
+        if rest is not True:
             return 0, b"", False
 
         cmd, data = struct.unpack(">B%ds" % (len(rxdata) - 1), rxdata)
@@ -415,7 +415,7 @@ class FPC1020A:
             pos += rest
 
         rxdata, rest = self._receive(timeout=timeout)
-        if rest != True:
+        if rest is not True:
             return 0, b"", False
 
         cmd, data = struct.unpack(">B%ds" % (len(rxdata) - 1), rxdata)

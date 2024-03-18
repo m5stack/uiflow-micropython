@@ -4,7 +4,6 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import struct
 import sys
 
 if sys.platform != "esp32":
@@ -36,7 +35,7 @@ class KMETER_ISOUnit:
         self.kmeter_i2c = i2c
         if addr >= 0x01 and addr <= 0x7F:
             self.unit_addr = addr
-        if not (self.unit_addr in self.kmeter_i2c.scan()):
+        if self.unit_addr not in self.kmeter_i2c.scan():
             raise UnitError("Kmeter iso unit maybe not connect")
 
     def get_kmeter_thermo(self, temp=0):

@@ -241,13 +241,13 @@ binary_data = None
 _wav_path = None
 
 
-def _playWav(wav: str):
+def _play_wav(wav: str):
     global binary_data, _wav_path
     if binary_data is None or _wav_path is not wav:
         with open(wav, "rb") as f:
             binary_data = f.read()
         _wav_path = wav
-        if wav is "/system/common/wav/click.wav":
+        if wav == "/system/common/wav/click.wav":
             M5.Speaker.setVolume(64)
         else:
             M5.Speaker.setVolume(127)
@@ -344,7 +344,7 @@ class WiFiSetting(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
         self._pwd_label = Label(
             "pwd",
             4 + 56 + 2,
@@ -355,7 +355,7 @@ class WiFiSetting(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
         )
-        self._pwd_label.setLongMode(Label.LONG_DOT)
+        self._pwd_label.set_long_mode(Label.LONG_DOT)
         self._server_label = Label(
             "server",
             4 + 56 + 2,
@@ -366,7 +366,7 @@ class WiFiSetting(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium16.FONT,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
+        self._server_label.set_long_mode(Label.LONG_DOT)
         self._apps = [
             Rect(4, 20 + 4 + 56 + 4, 244, 108),  # option select
             Rect(4 + 249, 20 + 4 + 56 + 4, 63, 64),  # save & link
@@ -395,51 +395,51 @@ class WiFiSetting(AppBase):
 
     def _select_default_option(self):
         _draw_png("/system/cores3/Setting/wifiServer.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.pswd_tmp) is 0:
-            self._pwd_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.pswd_tmp) == 0:
+            self._pwd_label.set_text("")
         else:
-            self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
         _draw_png("/system/cores3/Setting/ssid.png")
-        self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.pswd_tmp) is 0:
-            self._pwd_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xDCDDDD)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.pswd_tmp) == 0:
+            self._pwd_label.set_text("")
         else:
-            self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_psd_option(self):
         _draw_png("/system/cores3/Setting/pass.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xDCDDDD)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.pswd_tmp) is 0:
-            self._pwd_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xDCDDDD)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.pswd_tmp) == 0:
+            self._pwd_label.set_text("")
         else:
-            self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
         _draw_png("/system/cores3/Setting/server.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._pwd_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xDCDDDD)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.pswd_tmp) is 0:
-            self._pwd_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._pwd_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xDCDDDD)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.pswd_tmp) == 0:
+            self._pwd_label.set_text("")
         else:
-            self._pwd_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._pwd_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def get_data(self):
         self.nvs = esp32.NVS("uiflow")
@@ -507,16 +507,16 @@ class WiFiSetting(AppBase):
         if event.key == KeyCode.KEYCODE_BACKSPACE and self._option in (0, 1, 2):
             if self._option == 0:
                 self.ssid_tmp = self.ssid_tmp[:-1]
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.pswd_tmp == self.pswd:
                     self.pswd_tmp = ""
                 else:
                     self.pswd_tmp = self.pswd_tmp[:-1]
-                self._pwd_label.setText(self.pswd_tmp)
+                self._pwd_label.set_text(self.pswd_tmp)
             elif self._option == 2:
                 self.server_tmp = self.server_tmp[:-1]
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
         if event.key in (
@@ -556,16 +556,16 @@ class WiFiSetting(AppBase):
         elif event.key >= 0x20 and event.key <= 126:
             if self._option == 0:
                 self.ssid_tmp += chr(event.key)
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.pswd_tmp == self.pswd:
                     self.pswd_tmp = ""
                 else:
                     self.pswd_tmp += chr(event.key)
-                self._pwd_label.setText(self.pswd_tmp)
+                self._pwd_label.set_text(self.pswd_tmp)
             elif self._option == 2:
                 self.server_tmp += chr(event.key)
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
     def umount(self) -> None:
@@ -1019,7 +1019,7 @@ class DevApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium18.FONT,
         )
-        self._account_label.setLongMode(Label.LONG_WARP)
+        self._account_label.set_long_mode(Label.LONG_WARP)
 
         self.avatar = "/system/common/img/avatar.jpg"
 
@@ -1029,8 +1029,8 @@ class DevApp(AppBase):
         data = self.load_data()
         _draw_image(self.icos.get(True))
         _draw_png(self.src)
-        self._mac_label.setText(data[0])
-        self._account_label.setText(str(data[1]))
+        self._mac_label.set_text(data[0])
+        self._account_label.set_text(str(data[1]))
 
         try:
             M5.Lcd.drawJpg(self.avatar, 130, 180, 56, 56, 0, 0, 0.28, 0.28)
@@ -1039,18 +1039,18 @@ class DevApp(AppBase):
 
     def load_data(self):
         mac = binascii.hexlify(machine.unique_id()).upper()
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0 or infos[0] is 1:
+            if infos[0] == 0 or infos[0] == 1:
                 self.src = "/system/cores3/Develop/private.png"
-            elif infos[0] is 2:
+            elif infos[0] == 2:
                 self.src = "/system/cores3/Develop/public.png"
             DEBUG and print("Develop info:")
             DEBUG and print("  Device mac:", mac)
             DEBUG and print("  Permissions:", Permissions.get(infos[0]))
             DEBUG and print("  Account:", infos[1])
             DEBUG and print("  Avatar:", infos[4])
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 self.avatar = "/system/common/img/avatar.jpg"
             else:
                 self.avatar = "/system/common/" + str(infos[4]).split("/")[-1]
@@ -1062,7 +1062,7 @@ class DevApp(AppBase):
                 f = open(self.avatar, "wb")
                 f.write(resp.content)
                 f.close()
-            return (mac, None if len(infos[1]) is 0 else infos[1])
+            return (mac, None if len(infos[1]) == 0 else infos[1])
         else:
             self.src = "/system/cores3/Develop/private.png"
             return (mac, None, None)
@@ -1134,19 +1134,19 @@ class RunApp(AppBase):
         try:
             self._path = filename
             infos = self._get_file_info(self._path)
-            self._name_label.setText(filename)
-            self._mtime_label.setText(
+            self._name_label.set_text(filename)
+            self._mtime_label.set_text(
                 "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
                     infos[0][0], infos[0][1], infos[0][2], infos[0][3], infos[0][4], infos[0][5]
                 )
             )
-            self._account_label.setText("Account: {:s}".format(str(infos[1])))
-            self._ver_label.setText("Ver: {:s}".format(str(infos[2])))
+            self._account_label.set_text("Account: {:s}".format(str(infos[1])))
+            self._ver_label.set_text("Ver: {:s}".format(str(infos[2])))
         except OSError:
-            self._name_label.setText("None")
-            self._mtime_label.setText("Time: None")
-            self._account_label.setText("Account: None")
-            self._ver_label.setText("Ver: None")
+            self._name_label.set_text("None")
+            self._mtime_label.set_text("Time: None")
+            self._account_label.set_text("Account: None")
+            self._ver_label.set_text("Ver: None")
 
     def handle(self, x, y):
         if self.is_select(self._apps[0], x, y):
@@ -1188,7 +1188,7 @@ class RunApp(AppBase):
                     account = line.split(":")[1].strip()
                 if line.find("Ver") != -1:
                     ver = line.split(":")[1].strip()
-                if account != None and ver != None:
+                if account is not None and ver is not None:
                     break
 
         return (time.localtime(stat[8]), account, ver)
@@ -1323,7 +1323,7 @@ class ListApp(AppBase):
         for label, file in zip(self._labels, self._files):
             if file is None or label is None:
                 break
-            label.setText(file)
+            label.set_text(file)
 
     def load_data(self):
         self._files = []
@@ -1347,8 +1347,8 @@ class ListApp(AppBase):
         M5.Lcd.fillRect(0, 80, 320, 160, 0x000000)
 
     def _btn_up_event_handler(self, event):
-        if self._file_pos is 0 and self._cursor_pos == 0:
-            _playWav("/system/common/wav/bg.wav")
+        if self._file_pos == 0 and self._cursor_pos == 0:
+            _play_wav("/system/common/wav/bg.wav")
             return
 
         self._file_pos -= 1
@@ -1367,7 +1367,7 @@ class ListApp(AppBase):
             for label, file in zip(self._labels, self._files):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, file in zip(
                 self._labels,
@@ -1377,7 +1377,7 @@ class ListApp(AppBase):
             ):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
 
         self._left_img.set_pos(
             self._left_cursor_x, self._left_cursor_y + self._line_spacing * self._cursor_pos
@@ -1395,7 +1395,7 @@ class ListApp(AppBase):
             self._cursor_pos = max_cursor_pos
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
-            _playWav("/system/common/wav/bg.wav")
+            _play_wav("/system/common/wav/bg.wav")
             return
 
         DEBUG and print("cursor:", self._cursor_pos)
@@ -1406,14 +1406,14 @@ class ListApp(AppBase):
             for label, file in zip(self._labels, self._files):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, file in zip(
                 self._labels, self._files[self._file_pos - 3 : self._file_pos + 1]
             ):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
 
         # cursor img
         self._left_img.set_pos(
@@ -1612,7 +1612,7 @@ class StatusBarApp:
         self.handle(None, None)
 
     def _update_time(self, struct_time):
-        self._time_label.setText("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
+        self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
         self._wifi_status = status
@@ -1640,7 +1640,7 @@ class StatusBarApp:
                     else "/system/cores3/Battery/battery_Green.png"
                 )
             _draw_png(src)
-            self._battery_label.setText("{:d}%".format(battery))
+            self._battery_label.set_text("{:d}%".format(battery))
         else:
             src = (
                 "/system/cores3/Battery/battery_Black_Charge.png"
@@ -1751,22 +1751,22 @@ class CoreS3_Startup:
                     # elif detail[8] and detail[4]:  # wasReleased and isPressed
                     #     pass
                     else:
-                        _playWav("/system/common/wav/click.wav")
+                        _play_wav("/system/common/wav/click.wav")
                         self._apps.load_app(M5.Touch.getX(), M5.Touch.getY())
                     last_touch_time = time.ticks_ms()
 
             try:
                 if self._kb.is_pressed():
-                    _playWav("/system/common/wav/click.wav")
+                    _play_wav("/system/common/wav/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     self._apps.handle_input(self._event)
                 if self._kb_status is False:
-                    _playWav("/system/common/wav/insert.wav")
+                    _play_wav("/system/common/wav/insert.wav")
                     self._kb_status = True
             except OSError:
                 if self._kb_status is True:
-                    _playWav("/system/common/wav/remove.wav")
+                    _play_wav("/system/common/wav/remove.wav")
                     self._kb_status = False
 
             if time.ticks_ms() - last_update_status_time > 5000:

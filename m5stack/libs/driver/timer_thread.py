@@ -45,18 +45,18 @@ class TimerThread:
         self.timerList = []
         self._thread_run = False
 
-    def checkInit(self):
+    def check_init(self):
         if not self._thread_run:
             self._thread_run = True
-            _thread.start_new_thread(self.timeCb, ())
+            _thread.start_new_thread(self.time_cb, ())
 
-    def addTimer(self, period, mode, callback):
-        self.checkInit()
+    def add_timer(self, period, mode, callback):
+        self.check_init()
         timer = Timer(period, mode, callback)
         self.timerList.append(timer)
         return timer
 
-    def timeCb(self):
+    def time_cb(self):
         global delete_num
         while True:
             for i in self.timerList:

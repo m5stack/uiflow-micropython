@@ -113,7 +113,7 @@ class Framework:
             app = self._app_selector.prev()
             app.start()
             event.status = True
-        if event.status == False:
+        if event.status is False:
             app = self._app_selector.current()
             if hasattr(app, "_kb_event_handler"):
                 await app._kb_event_handler(event, self)

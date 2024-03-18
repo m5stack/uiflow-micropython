@@ -53,8 +53,8 @@ class TZONE(object):
 
     def getntp(self, host="cn.pool.ntp.org"):
         # print('Get UTC time from NTP server...')
-        NTP_QUERY = bytearray(48)
-        NTP_QUERY[0] = 0x1B
+        ntp_query = bytearray(48)
+        ntp_query[0] = 0x1B
         self.host = host
 
         if wlan_sta.isconnected() is False:
@@ -68,8 +68,8 @@ class TZONE(object):
             return 0
         s = socket(AF_INET, SOCK_DGRAM)
         s.settimeout(1)
-        # res = s.sendto(NTP_QUERY, addr)
-        s.sendto(NTP_QUERY, addr)
+        # res = s.sendto(ntp_query, addr)
+        s.sendto(ntp_query, addr)
 
         try:
             msg = s.recv(48)

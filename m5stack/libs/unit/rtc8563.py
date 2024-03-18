@@ -104,7 +104,7 @@ class RTC8563Unit:
         self.turn_off_timer()
 
     def _available(self):
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise UnitError("RTC unit maybe not connect")
 
     def __write_byte(self, reg, val):
@@ -212,7 +212,7 @@ class RTC8563Unit:
             tzone = int(3600 * (int(tzone) + ((tzone - int(tzone)) * 100 / 60)))
             utc = localtime(ntp + tzone)
 
-        (yy, MM, mday, hh, mm, ss, wday, yday) = utc
+        (yy, MM, mday, hh, mm, ss, wday, yday) = utc  # noqa: N806
         self.datetime((yy - 2000, MM, mday, hh, mm, ss, wday))
 
     def set_clk_out_frequency(self, frequency=CLOCK_CLK_OUT_FREQ_1_HZ):

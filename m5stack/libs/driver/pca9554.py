@@ -142,5 +142,5 @@ class PCA9554:
         buf[0] = val & 0xFF
         self._i2c.writeto_mem(self._addr, reg & 0xFF, buf)
 
-    def Pin(self, id, mode: int = IN, value=None):
+    def pin(self, id, mode: int = IN, value=None):
         return Pin(self, id, mode, value)

@@ -54,7 +54,7 @@ class Image(base.Base):
         self._draw(False)
 
     def _draw(self, is_decode):
-        if self._src is None or len(self._src) is 0:
+        if self._src is None or len(self._src) == 0:
             return
         if self._sprite:
             is_decode and self._sprite.drawImage(
@@ -70,7 +70,7 @@ class Image(base.Base):
         if self._use_sprite is False:
             return
         self._sprite and self._sprite.delete()
-        if self._w is not 0 and self._h is not 0:
+        if self._w != 0 and self._h != 0:
             self._sprite = self._parent.newCanvas(self._w, self._h, 16, True)
             self._src and self._sprite.drawImage(
                 self._src, 0, 0, self._w, self._h, 0, 0, self._scale_x, self._scale_y

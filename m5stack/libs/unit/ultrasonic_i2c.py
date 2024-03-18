@@ -20,7 +20,7 @@ class ULTRASONIC_I2CUnit:
         self._available()
 
     def _available(self):
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise UnitError("Ultrasonic unit maybe not connect")
 
     def get_target_distance(self, mode=1):

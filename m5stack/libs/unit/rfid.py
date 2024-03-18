@@ -11,11 +11,11 @@ class RFIDUnit(MFRC522):
         self.pcd_init()
 
     def is_new_card_present(self) -> bool:
-        bufferATQA = bytearray(2)
-        result = self.picc_request_a(bufferATQA)
+        buffer_atqa = bytearray(2)
+        result = self.picc_request_a(buffer_atqa)
         if result == self.STATUS_OK or result == self.STATUS_COLLISION:
             return True
-        result = self.picc_wakeup_a(bufferATQA)
+        result = self.picc_wakeup_a(buffer_atqa)
         return result == self.STATUS_OK
 
     def read_card_uid(self):
@@ -31,17 +31,17 @@ class RFIDUnit(MFRC522):
             return None
 
     def write(self, block_addr, buffer) -> int:
-        BUFFER16 = bytearray(16)
+        buffer16 = bytearray(16)
         self.pcd_authenticate(0x60, block_addr, bytearray(b"\xff\xff\xff\xff\xff\xff"), self._uid)
-        self.mifare_read(block_addr, BUFFER16)
+        self.mifare_read(block_addr, buffer16)
         l = 16 if len(buffer) > 16 else len(buffer)
-        BUFFER16[:l] = buffer[:l]
+        buffer16[:l] = buffer[:l]
 
-        if self.mifare_write(block_addr, BUFFER16) == self.STATUS_OK:
-            del BUFFER16
+        if self.mifare_write(block_addr, buffer16) == self.STATUS_OK:
+            del buffer16
             return l
         else:
-            del BUFFER16
+            del buffer16
             return 0
 
     def close(self) -> None:
@@ -49,8 +49,8 @@ class RFIDUnit(MFRC522):
         self.pcd_stop_crypto1()
 
     def wakeup_all(self) -> bool:
-        bufferATQA = bytearray()
-        return self.picc_wakeup_a(bufferATQA) == self.STATUS_OK
+        buffer_atqa = bytearray()
+        return self.picc_wakeup_a(buffer_atqa) == self.STATUS_OK
 
     def picc_select_card(self) -> bool:
         return self.picc_select(self._uid) == self.STATUS_OK

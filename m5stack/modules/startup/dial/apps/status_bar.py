@@ -79,7 +79,7 @@ class StatusBarApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium16.FONT,
         )
-        self._time_label.setText(self._time_text)
+        self._time_label.set_text(self._time_text)
 
         self._network_img = Image(use_sprite=False)
         self._network_img.set_pos(46, 32)
@@ -95,7 +95,7 @@ class StatusBarApp(AppBase):
         while True:
             t = self._get_local_time_text()
             if t != self._time_text:
-                self._time_label.setText(t)
+                self._time_label.set_text(t)
                 self._time_text = t
 
             t = self._get_network_status()
@@ -110,7 +110,7 @@ class StatusBarApp(AppBase):
             await asyncio.sleep_ms(5000)
 
     def _update_time(self, struct_time):
-        self._time_label.setText("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
+        self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
         self._wifi_status = status

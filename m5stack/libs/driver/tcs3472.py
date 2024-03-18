@@ -268,7 +268,7 @@ class TCS3472:
         self._write_u16(_REGISTER_AIHT, val)
 
     def _temperature_and_lux_dn40(self) -> tuple[float, float]:
-        """Converts the raw R/G/B values to color temperature in degrees
+        """Converts the raw r/g/b values to color temperature in degrees
         Kelvin using the algorithm described in DN40 from Taos (now AMS).
         Also computes lux. Returns tuple with both values or tuple of Nones
         if computation can not be done.
@@ -276,54 +276,54 @@ class TCS3472:
         # pylint: disable=invalid-name, too-many-locals
 
         # Initial input values
-        ATIME = self._read_u8(_REGISTER_ATIME)
-        ATIME_ms = (256 - ATIME) * 2.4
-        AGAINx = self.get_gain()
-        R, G, B, C = self.get_color_raw()
+        atime = self._read_u8(_REGISTER_ATIME)
+        atime_ms = (256 - atime) * 2.4
+        againx = self.get_gain()
+        r, g, b, c = self.get_color_raw()
 
         # Device specific values (DN40 Table 1 in Appendix I)
-        GA = self.get_glass_attenuation()  # Glass Attenuation Factor
-        DF = 310.0  # Device Factor
-        R_Coef = 0.136  # |
-        G_Coef = 1.0  # | used in lux computation
-        B_Coef = -0.444  # |
-        CT_Coef = 3810  # Color Temperature Coefficient
-        CT_Offset = 1391  # Color Temperatuer Offset
+        ga = self.get_glass_attenuation()  # Glass Attenuation Factor
+        df = 310.0  # Device Factor
+        r_coef = 0.136  # |
+        g_coef = 1.0  # | used in lux computation
+        b_coef = -0.444  # |
+        ct_coef = 3810  # Color Temperature Coefficient
+        ct_offset = 1391  # Color Temperatuer Offset
 
         # Analog/Digital saturation (DN40 3.5)
-        SATURATION = 65535 if 256 - ATIME > 63 else 1024 * (256 - ATIME)
+        saturation = 65535 if 256 - atime > 63 else 1024 * (256 - atime)
 
         # Ripple saturation (DN40 3.7)
-        if ATIME_ms < 150:
-            SATURATION -= SATURATION / 4
+        if atime_ms < 150:
+            saturation -= saturation / 4
 
         # Check for saturation and mark the sample as invalid if true
-        if C >= SATURATION:
+        if c >= saturation:
             return None, None
 
-        # IR Rejection (DN40 3.1)
-        IR = (R + G + B - C) / 2 if R + G + B > C else 0.0
-        R2 = R - IR
-        G2 = G - IR
-        B2 = B - IR
+        # ir Rejection (DN40 3.1)
+        ir = (r + g + b - c) / 2 if r + g + b > c else 0.0
+        r2 = r - ir
+        g2 = g - ir
+        b2 = b - ir
 
         # Lux Calculation (DN40 3.2)
-        G1 = R_Coef * R2 + G_Coef * G2 + B_Coef * B2
-        CPL = (ATIME_ms * AGAINx) / (GA * DF)
-        CPL = 0.001 if CPL == 0 else CPL
-        lux = G1 / CPL
+        g1 = r_coef * r2 + g_coef * g2 + b_coef * b2
+        cpl = (atime_ms * againx) / (ga * df)
+        cpl = 0.001 if cpl == 0 else cpl
+        lux = g1 / cpl
 
-        # CT Calculations (DN40 3.4)
-        R2 = 0.001 if R2 == 0 else R2
-        CT = CT_Coef * B2 / R2 + CT_Offset
+        # ct Calculations (DN40 3.4)
+        r2 = 0.001 if r2 == 0 else r2
+        ct = ct_coef * b2 / r2 + ct_offset
 
-        return lux, CT
+        return lux, ct
 
     def get_glass_attenuation(self):
         """The Glass Attenuation (FA) factor used to compensate for lower light
-        levels at the device due to the possible presence of glass. The GA is
-        the inverse of the glass transmissivity (T), so :math:`GA = 1/T`. A transmissivity
-        of 50% gives GA = 1 / 0.50 = 2. If no glass is present, use GA = 1.
+        levels at the device due to the possible presence of glass. The ga is
+        the inverse of the glass transmissivity (T), so :math:`ga = 1/T`. A transmissivity
+        of 50% gives ga = 1 / 0.50 = 2. If no glass is present, use ga = 1.
         See Application Note: DN40-Rev 1.0 – Lux and CCT Calculations using
         ams Color Sensors for more details.
         """

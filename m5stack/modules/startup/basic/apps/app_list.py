@@ -193,7 +193,7 @@ class ListApp(AppBase):
         # self._labels.append(self._label3)
 
         for label, file in zip(self._labels, self._files):
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
     def on_ready(self):
         pass
@@ -242,7 +242,7 @@ class ListApp(AppBase):
 
         if self._file_pos < 4:
             for label, file in zip(self._labels, self._files):
-                file and label and label.setText(file)
+                file and label and label.set_text(file)
         else:
             for label, file in zip(
                 self._labels,
@@ -250,10 +250,10 @@ class ListApp(AppBase):
                     self._file_pos - self._cursor_pos : self._file_pos + (4 - self._cursor_pos)
                 ],
             ):
-                file and label and label.setText(file)
+                file and label and label.set_text(file)
 
     async def _btnc_event_handler(self, fw):
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     async def _btnc_hold_event_handler(self, fw):

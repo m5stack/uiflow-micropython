@@ -102,11 +102,11 @@ class uSerial:
         # flush the Rx FIFO
         read_data = self._mdbus_uart.read()
         if read_data is not None:
-            self.print_debug("ModBus", "R <= {}".format(self.BytesToHexStr(read_data)))
+            self.print_debug("ModBus", "R <= {}".format(self.bytes_to_hex_str(read_data)))
         if self._ctrlPin:
             self._ctrlPin(1)
 
-        self.print_debug("ModBus", "T => {}".format(self.BytesToHexStr(serial_pdu)))
+        self.print_debug("ModBus", "T => {}".format(self.bytes_to_hex_str(serial_pdu)))
         self._mdbus_uart.write(serial_pdu)
         if self._ctrlPin:
             while not self._mdbus_uart.wait_tx_done(2):
@@ -119,7 +119,7 @@ class uSerial:
 
     def _validate_resp_hdr(self, response, slave_addr, function_code, count):
         if len(response):
-            self.print_debug("ModBus", "R <= {}".format(self.BytesToHexStr(response)))
+            self.print_debug("ModBus", "R <= {}".format(self.bytes_to_hex_str(response)))
 
             resp_crc = response[-Const.CRC_LENGTH :]
             expected_crc = self._calculate_crc16(response[0 : len(response) - Const.CRC_LENGTH])
@@ -139,7 +139,7 @@ class uSerial:
         modbus_pdu = functions.read_coils(starting_addr, coil_qty)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, True, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             status_pdu = self._bytes_to_bool(resp_data)
             return status_pdu
 
@@ -147,7 +147,7 @@ class uSerial:
         modbus_pdu = functions.read_discrete_inputs(starting_addr, input_qty)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, True, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             status_pdu = self._bytes_to_bool(resp_data)
             return status_pdu
 
@@ -157,7 +157,7 @@ class uSerial:
         modbus_pdu = functions.read_holding_registers(starting_addr, register_qty)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, True, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             register_value = self._to_short(resp_data, signed)
             return list(register_value)
 
@@ -167,7 +167,7 @@ class uSerial:
         modbus_pdu = functions.read_input_registers(starting_address, register_quantity)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, True, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             register_value = self._to_short(resp_data, signed)
             return list(register_value)
 
@@ -175,7 +175,7 @@ class uSerial:
         modbus_pdu = functions.write_single_coil(output_address, output_value)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, False, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             operation_status = functions.validate_resp_data(
                 resp_data,
                 Const.WRITE_SINGLE_COIL,
@@ -191,7 +191,7 @@ class uSerial:
         modbus_pdu = functions.write_single_register(register_address, register_value, signed)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, False, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             operation_status = functions.validate_resp_data(
                 resp_data,
                 Const.WRITE_SINGLE_REGISTER,
@@ -205,7 +205,7 @@ class uSerial:
         modbus_pdu = functions.write_multiple_coils(starting_address, output_values)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, False, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             operation_status = functions.validate_resp_data(
                 resp_data,
                 Const.WRITE_MULTIPLE_COILS,
@@ -220,7 +220,7 @@ class uSerial:
         modbus_pdu = functions.write_multiple_registers(starting_address, register_values, signed)
 
         resp_data = self._send_receive(modbus_pdu, slave_addr, False, timeout)
-        if resp_data != None:
+        if resp_data is not None:
             operation_status = functions.validate_resp_data(
                 resp_data,
                 Const.WRITE_MULTIPLE_REGISTERS,
@@ -229,7 +229,7 @@ class uSerial:
             )
             return operation_status
 
-    def BytesToHexStr(self, bins):
+    def bytes_to_hex_str(self, bins):
         return "".join(["%02X" % x for x in bins]).strip()
 
     def print_debug(self, tag, msg):

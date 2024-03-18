@@ -21,9 +21,9 @@ class RS485Unit(uSerial):
         parity=None,
         ctrl_pin=None,
     ):
-        if tx_pin != None and rx_pin != None:
+        if tx_pin is not None and rx_pin is not None:
             self._port = (rx_pin, tx_pin)
-        if data_bits == None and stop_bits == None:
+        if data_bits is None and stop_bits is None:
             data_bits = 8
             stop_bits = 1
         super().__init__(

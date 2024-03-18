@@ -5,7 +5,6 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import struct
 import sys
 
 if sys.platform != "esp32":
@@ -39,7 +38,7 @@ class WEIGHT_I2CUnit:
 
     def _available(self) -> None:
         """! Check if sensor is available on the I2C bus."""
-        if not (self.unit_addr in self.i2c.scan()):
+        if self.unit_addr not in self.i2c.scan():
             raise UnitError("Weight Unit not found in Grove")
 
     @property

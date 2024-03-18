@@ -169,7 +169,7 @@ class ListApp(AppBase):
         for label, icos, file in zip(self._labels, self._icos, self._files):
             ico_name = file[0].lower()
             icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-            label.setText(file)
+            label.set_text(file)
 
     def on_ready(self):
         pass
@@ -187,7 +187,7 @@ class ListApp(AppBase):
 
     def _btn_up_event_handler(self, event):
         self.DEBUG and print("_btn_up_event_handler")
-        if self._file_pos is 0 and self._cursor_pos == 0:
+        if self._file_pos == 0 and self._cursor_pos == 0:
             M5.Speaker.tone(4500, 60)
             return
 
@@ -210,7 +210,7 @@ class ListApp(AppBase):
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, icos, file in zip(
                 self._labels,
@@ -221,7 +221,7 @@ class ListApp(AppBase):
             ):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
 
     def _btn_down_event_handler(self, fw):
         # Clear selection cursor
@@ -250,17 +250,17 @@ class ListApp(AppBase):
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, icos, file in zip(
                 self._labels, self._icos, self._files[self._file_pos - 2 : self._file_pos + 1]
             ):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
 
     def _btn_once_event_handler(self, event):
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     def _btn_always_event_handler(self, event):

@@ -34,8 +34,8 @@ class SettingsApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu24,
             parent=self._lcd,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
-        self._ssid_label.setText(self.ssid)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_text(self.ssid)
 
         self._server_label = Label(
             "server",
@@ -48,8 +48,8 @@ class SettingsApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu24,
             parent=self._lcd,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
-        self._server_label.setText(self.server)
+        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_text(self.server)
 
     def on_ready(self):
         pass

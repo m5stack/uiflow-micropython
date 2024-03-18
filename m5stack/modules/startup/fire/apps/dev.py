@@ -128,7 +128,7 @@ class DevApp(AppBase):
             font=MontserratMedium18.FONT,
             parent=self._lcd,
         )
-        self._mac_label.setText(self._mac_text)
+        self._mac_label.set_text(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
@@ -141,7 +141,7 @@ class DevApp(AppBase):
             font=MontserratMedium18.FONT,
             parent=self._lcd,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._avatar_img = Image(use_sprite=False, parent=self._lcd)
         self._avatar_img.set_pos(130, 100)
@@ -180,7 +180,7 @@ class DevApp(AppBase):
             font=MontserratMedium10.FONT,
             parent=self._lcd,
         )
-        self._battery_label.setText(self._battery_text)
+        self._battery_label.set_text(self._battery_text)
         self._lcd.push(self._origin_x, self._origin_y)
 
     async def on_run(self):
@@ -193,12 +193,12 @@ class DevApp(AppBase):
                 self._bg_img.set_src(self._bg_src)
                 refresh_bg = True
 
-            refresh_bg and self._mac_label.setText(self._mac_text)
+            refresh_bg and self._mac_label.set_text(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh_bg:
                 self._account_text = t
-                self._account_label.setText(self._account_text)
+                self._account_label.set_text(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)
 
             t = self._get_avatar()
@@ -242,7 +242,7 @@ class DevApp(AppBase):
             t = self._get_battery_text(M5.Power.getBatteryLevel())
             if t != self._battery_text or refresh_bar:
                 self._battery_text = t
-                self._battery_label.setText(self._battery_text)
+                self._battery_label.set_text(self._battery_text)
 
             if refresh_bg or refresh_bar:
                 self._lcd.push(self._origin_x, self._origin_y)
@@ -272,9 +272,9 @@ class DevApp(AppBase):
         pass
 
     async def _dl_avatar(self, dst):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 self._avatar_img.set_src("/system/common/img/avatar.jpg")
             else:
                 try:
@@ -297,17 +297,17 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_account():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            return "None" if len(infos[1]) is 0 else infos[1]
+            return "None" if len(infos[1]) == 0 else infos[1]
         else:
             return "None"
 
     @staticmethod
     def _get_avatar():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 return "/system/common/img/avatar.jpg"
             else:
                 return "/system/common/img/" + str(infos[4]).split("/")[-1]
@@ -315,9 +315,9 @@ class DevApp(AppBase):
             return "/system/common/img/avatar.jpg"
 
     def _get_bg_src(self):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0:
+            if infos[0] == 0:
                 return "/system/fire/developPrivate.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/developPublic.png"
@@ -325,9 +325,9 @@ class DevApp(AppBase):
             return "/system/fire/developPrivate.png"
 
     def _get_bar_src(self):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0:
+            if infos[0] == 0:
                 return "/system/fire/bar2.png"
             elif infos[0] in (1, 2):
                 return "/system/fire/bar3.png"

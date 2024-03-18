@@ -5,7 +5,6 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import struct
 import sys
 
 if sys.platform != "esp32":
@@ -91,7 +90,7 @@ class VMeterUnit:
     def __init__(self, i2c: Union[I2C, PAHUBUnit], ads_addr=ADS1115_ADDR):
         self.ads_i2c = i2c
         self.ads_i2c_addr = ads_addr
-        if not (self.ads_i2c_addr in self.ads_i2c.scan()):
+        if self.ads_i2c_addr not in self.ads_i2c.scan():
             raise UnitError("Vmeter unit maybe not connect")
         self.eeprom_i2c = i2c
         self.eeprom_i2c_addr = EEPROM_ADDR

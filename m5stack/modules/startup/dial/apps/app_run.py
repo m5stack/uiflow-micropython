@@ -47,7 +47,7 @@ class RunApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium18,
         )
-        self._name_label.setText("main.py")
+        self._name_label.set_text("main.py")
 
         self._mtime_label = Label(
             "Time: 2023/5/14 12:23:43",
@@ -59,7 +59,7 @@ class RunApp(AppBase):
             bg_color=0xDCDDDD,
             font=MontserratMedium16,
         )
-        self._mtime_label.setText(self._mtime_text)
+        self._mtime_label.set_text(self._mtime_text)
 
         self._account_label = Label(
             "Account: XXABC",
@@ -71,7 +71,7 @@ class RunApp(AppBase):
             bg_color=0xDCDDDD,
             font=MontserratMedium16,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._ver_label = Label(
             "Ver: UIFLOW2.0 a18",
@@ -83,7 +83,7 @@ class RunApp(AppBase):
             bg_color=0xDCDDDD,
             font=MontserratMedium16,
         )
-        self._ver_label.setText(self._ver_text)
+        self._ver_label.set_text(self._ver_text)
 
         _button_run_once = Button(None)
         _button_run_once.set_pos(0, 50)
@@ -117,7 +117,7 @@ class RunApp(AppBase):
                 break
 
     def _handle_run_once(self, fw):
-        execfile("main.py")
+        execfile("main.py")  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):
@@ -138,7 +138,7 @@ class RunApp(AppBase):
         except OSError:
             pass
 
-        if mtime == None or mtime[0] < 2023 and mtime[1] < 9:
+        if mtime is None or mtime[0] < 2023 and mtime[1] < 9:
             mtime = "Time: ----/--/-- --:--:--"
         else:
             mtime = "Time: {:04d}/{:d}/{:d} {:02d}:{:02d}:{:02d}".format(
@@ -151,16 +151,16 @@ class RunApp(AppBase):
                     account = line.split(":")[1].strip()
                 if line.find("Ver") != -1:
                     ver = line.split(":")[1].strip()
-                if account != None and ver != None:
+                if account is not None and ver is not None:
                     break
 
-        if account == None and _HAS_SERVER and M5Things.status() is 2:
+        if account is None and _HAS_SERVER and M5Things.status() == 2:
             infos = M5Things.info()
-            account = "Account: None" if len(infos[1]) is 0 else "Account: {:s}".format(infos[1])
+            account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
 
-        if ver == None:
+        if ver is None:
             ver = "Ver: None"
 
         return (mtime, account, ver)

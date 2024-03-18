@@ -27,7 +27,7 @@ class MiniScaleUnit:
         Raises:
             UnitError: If the sensor is not found.
         """
-        if not (self.addr in self.i2c.scan()):
+        if self.addr not in self.i2c.scan():
             raise UnitError("MiniScale Unit not found.")
 
     @property
@@ -48,7 +48,7 @@ class MiniScaleUnit:
         data = self.i2c.readfrom_mem(self.addr, 0x20, 1)
         return struct.unpack("b", data)[0] == 0
 
-    def setLed(self, r: int, g: int, b: int):
+    def setLed(self, r: int, g: int, b: int):  # noqa: N802
         """! Set the RGB LED color.
 
         @param r Red value. 0 - 255
@@ -79,7 +79,7 @@ class MiniScaleUnit:
         gap = (weight2_adc - weight1_adc) / (weight2_g - weight1_g)
         self.i2c.writeto_mem(self.addr, 0x40, struct.pack("<f", gap))
 
-    def setLowPassFilter(self, enabled: bool):
+    def setLowPassFilter(self, enabled: bool):  # noqa: N802
         """! Set low pass filter enabled or not
 
         @param enabled Enable filter or not
@@ -89,12 +89,12 @@ class MiniScaleUnit:
         else:
             self.i2c.writeto_mem(self.addr, 0x80, b"\x00")
 
-    def getLowPassFilter(self) -> bool:
+    def getLowPassFilter(self) -> bool:  # noqa: N802
         """! Get low pass filter enabled or not"""
         data = self.i2c.readfrom_mem(self.addr, 0x80, 1)
         return data == b"\x01"
 
-    def setAverageFilterLevel(self, level: int):
+    def setAverageFilterLevel(self, level: int):  # noqa: N802
         """! Set average filter level
 
         @param level level of average filter, larger value for smoother result but more latency
@@ -104,12 +104,12 @@ class MiniScaleUnit:
 
         self.i2c.writeto_mem(self.addr, 0x81, struct.pack("b", level))
 
-    def getAverageFilterLevel(self) -> int:
+    def getAverageFilterLevel(self) -> int:  # noqa: N802
         """! Get average filter level"""
         data = self.i2c.readfrom_mem(self.addr, 0x81, 1)
         return struct.unpack("b", data)[0]
 
-    def setEMAFilterAlpha(self, alpha: int):
+    def setEMAFilterAlpha(self, alpha: int):  # noqa: N802
         """! Set ema filter alpha
 
         @param alpha alpha of ema filter, smaller value for smoother result but more latency
@@ -119,7 +119,7 @@ class MiniScaleUnit:
 
         self.i2c.writeto_mem(self.addr, 0x82, struct.pack("b", alpha))
 
-    def getEMAFilterAlpha(self) -> int:
+    def getEMAFilterAlpha(self) -> int:  # noqa: N802
         """! Get ema filter alpha"""
         data = self.i2c.readfrom_mem(self.addr, 0x82, 1)
         return struct.unpack("b", data)[0]
