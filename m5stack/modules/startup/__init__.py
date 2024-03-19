@@ -100,6 +100,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5Atom:
+            from .atoms3lite import AtomS3Lite_Startup
+
+            atomlite = AtomS3Lite_Startup()
+            atomlite.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5AtomS3Lite:
             from .atoms3lite import AtomS3Lite_Startup
 
