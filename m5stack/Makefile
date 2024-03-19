@@ -34,7 +34,8 @@ boards := \
 	M5STACK_Station:station          \
 	M5STACK_Atom_Lite:atom-lite      \
 	M5STACK_Stamp_PICO:stamppico     \
-	M5STACK_Atom_Matrix:atommatrix
+	M5STACK_Atom_Matrix:atommatrix   \
+	M5STACK_AtomU:atomu
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -65,7 +66,8 @@ BOARD_TYPE_DEF := \
 	station     \
 	atom-lite   \
 	stamppico   \
-	atommatrix
+	atommatrix  \
+	atomu
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -84,7 +86,8 @@ TINY_BOARD_TYPE_DEF = \
 	M5STACK_StickC      \
 	M5STACK_Atom_Lite   \
 	M5STACK_Stamp_PICO  \
-	M5STACK_Atom_Matrix
+	M5STACK_Atom_Matrix \
+	M5STACK_AtomU
 
 ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
 TINY_FLAG ?= 1
