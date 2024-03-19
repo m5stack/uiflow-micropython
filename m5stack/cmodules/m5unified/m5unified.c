@@ -39,6 +39,7 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5AtomS3Lite),    MP_ROM_INT(137) },
     { MP_ROM_QSTR(MP_QSTR_M5AtomS3U),       MP_ROM_INT(138) },
     { MP_ROM_QSTR(MP_QSTR_M5Capsule),       MP_ROM_INT(139) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomMatrix),    MP_ROM_INT(140) },
     // external displays
     { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(192) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(193) },
