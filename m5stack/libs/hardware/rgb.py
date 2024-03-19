@@ -35,7 +35,7 @@ class RGB:
         if cls._instance is None:
             if M5.BOARD.M5AtomS3 == board_id:
                 pass
-            elif board_id == M5.BOARD.M5Atom:
+            elif board_id in (M5.BOARD.M5Atom, M5.BOARD.M5StampPico):
                 cls._instance = SK6812(io=27, n=1)
                 return cls._instance
             elif board_id in (M5.BOARD.M5AtomS3Lite, M5.BOARD.M5AtomS3U):
