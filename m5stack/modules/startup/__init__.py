@@ -186,6 +186,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             stickc = StickC_Startup()
             stickc.startup(ssid, pswd, timeout)
 
+        elif board_id == M5.BOARD.M5Station:
+            from .station import Station_Startup
+
+            station = Station_Startup()
+            station.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

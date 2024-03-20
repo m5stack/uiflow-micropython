@@ -29,7 +29,7 @@ class RGB:
 
         # If not provided any io, according to board type, initialize the built-in rgb
         board_id = M5.getBoard()
-        if cls._instance == None:
+        if cls._instance is None:
             if M5.BOARD.M5AtomS3 == board_id:
                 pass
             elif board_id in (M5.BOARD.M5AtomS3Lite, M5.BOARD.M5AtomS3U):
@@ -37,6 +37,9 @@ class RGB:
                 return cls._instance
             elif board_id in (M5.BOARD.M5StampS3, M5.BOARD.M5Capsule):
                 cls._instance = WS2812(io=21, n=1)
+                return cls._instance
+            elif M5.BOARD.M5Station == board_id:
+                cls._instance = WS2812(io=4, n=7)
                 return cls._instance
             else:
                 pass
