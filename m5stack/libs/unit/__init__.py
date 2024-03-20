@@ -35,7 +35,6 @@ _attrs = {
     "ULTRASONIC_I2CUnit": "ultrasonic_i2c",
     "LIMITUnit": "limit",
     "OPUnit": "op",
-    "RFIDUnit": "rfid",
     "LoRaE220JPUnit": "lora_e220_jp",
     "WEIGHTUnit": "weight",
     "SCALESUnit": "scales",
@@ -50,6 +49,7 @@ _attrs = {
     "AMeterUnit": "ameter",
     "WEIGHT_I2CUnit": "weight_i2c",
     "KMETER_ISOUnit": "kmeter_iso",
+    "THERMAL2Unit": "thermal2",
 }
 
 

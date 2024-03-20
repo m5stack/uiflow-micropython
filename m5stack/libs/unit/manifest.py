@@ -52,6 +52,7 @@ package(
         "ameter.py",
         "weight_i2c.py",
         "kmeter_iso.py",
+        "thermal2.py",
     ),
     base_path="..",
     opt=0,
