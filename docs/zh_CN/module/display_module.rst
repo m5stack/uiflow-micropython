@@ -13,10 +13,22 @@ Display Module
 Micropython 示例::
 
 	import M5
-	M5.addDisplay({"module_display":{"enabled":True}}) # 添加RCA模块
-	M5.getDisplayCount() # 获取显示数量
-	M5.setPrimaryDisplay(1) # 设置主显示
-	M5.Display.clear(0xffffff) # 清屏
+    display = M5.addDisplay({"module_display":{"enabled":True}}) # 添加Display模块
+	# or
+    display = M5.addDisplay({
+        "module_display":{
+            "enabled":True,
+            "width": 1280,
+            "height": 720,
+            "refresh_rate": 60,
+            "output_width": 0, # 0 default
+            "output_height": 0,
+            "scale_w": 0, # intger
+            "scale_h": 0,
+            "pixel_clock": 74250000,
+        }
+    })
+	display.clear(0xffffff) # 清屏
 
 UIFLOW2 示例:
 

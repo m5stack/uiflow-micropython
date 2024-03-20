@@ -13,10 +13,22 @@ Supported products:
 Micropython example::
 
     import M5
-    M5.addDisplay({"module_display":{"enabled":True}}) # Add ModuleDisplay module
-    M5.getDisplayCount() # Get display count
-    M5.setPrimaryDisplay(1) # Set primary display
-    M5.Display.clear(0xffffff) # Clear screen
+    display = M5.addDisplay({"module_display":{"enabled":True}}) # Add ModuleDisplay module
+    # or
+    display = M5.addDisplay({
+        "module_display":{
+            "enabled":True,
+            "width": 1280,
+            "height": 720,
+            "refresh_rate": 60,
+            "output_width": 0, # 0 default
+            "output_height": 0,
+            "scale_w": 0, # intger
+            "scale_h": 0,
+            "pixel_clock": 74250000,
+        }
+    })
+    display.clear(0xffffff) # Clear screen
 
 UIFLOW2 example:
 

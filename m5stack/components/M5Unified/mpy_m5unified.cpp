@@ -28,6 +28,7 @@ extern "C"
 
 static void m5_btns_callbacks_check(void);
 static void m5_btns_callbacks_deinit(void);
+mp_obj_t m5_getDisplay(mp_obj_t index);
 
 /* *FORMAT-OFF* */
 const spk_obj_t m5_speaker = {&mp_spk_type,       &(M5.Speaker)};
@@ -162,8 +163,7 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
         } else {
             mp_raise_NotImplementedError("module_display is not supported on this board");
         }
-    }
-    if (cfg.external_display.module_rca) {
+    } else if (cfg.external_display.module_rca) {
         if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough) {
             M5ModuleRCA dsp(cfg.module_rca);
             if (dsp.init()) {
@@ -175,7 +175,7 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
         }
     }
 
-    return mp_const_none;
+    return m5_getDisplay(mp_obj_new_int(M5.getDisplayCount() - 1));
 }
 
 // TODO: pass configuration parameters

@@ -12,10 +12,22 @@ RCA Module
 Micropython 示例::
 
 	import M5
-	M5.addDisplay({"module_rca":{"enabled":True}}) # 添加ModuleDisplay模块
-	M5.getDisplayCount() # 获取显示数量
-	M5.setPrimaryDisplay(1) # 设置主显示
-	M5.Display.clear(0xffffff) # 清屏
+	display = M5.addDisplay({"module_rca":{"enabled":True}}) # 添加RCA模块
+	# or
+	display = M5.addDisplay({
+		"module_rca":{
+			"enabled":True,
+			"width": 216,
+			"height": 144,
+			"output_width": 0,
+			"output_height": 0,
+			"signal_type": 0, # NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4
+			"use_psram": 0,
+			"pin_dac": 26,
+			"output_level": 0,
+		}
+	})
+	display.clear(0xffffff) # 清屏
 
 UIFLOW2 示例:
 

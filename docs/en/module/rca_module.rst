@@ -12,10 +12,22 @@ Supported products:
 Micropython example::
 
 	import M5
-	M5.addDisplay({"module_rca":{"enabled":True}}) # Add RCA module
-    M5.getDisplayCount() # Get display count
-    M5.setPrimaryDisplay(1) # Set primary display
-    M5.Display.clear(0xffffff) # Clear screen
+	display = M5.addDisplay({"module_rca":{"enabled":True}}) # Add RCA module
+	# or
+	display = M5.addDisplay({
+		"module_rca":{
+			"enabled":True,
+			"width": 216,
+			"height": 144,
+			"output_width": 0,
+			"output_height": 0,
+			"signal_type": 0, # NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4
+			"use_psram": 0,
+			"pin_dac": 26,
+			"output_level": 0,
+		}
+	})
+    display.clear(0xffffff) # Clear screen
 
 UIFLOW2 example:
 
