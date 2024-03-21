@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include "m5unified.h"
 
 // board type
@@ -33,6 +39,8 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5AtomS3Lite),    MP_ROM_INT(137) },
     { MP_ROM_QSTR(MP_QSTR_M5AtomS3U),       MP_ROM_INT(138) },
     { MP_ROM_QSTR(MP_QSTR_M5Capsule),       MP_ROM_INT(139) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomMatrix),    MP_ROM_INT(140) },
+    { MP_ROM_QSTR(MP_QSTR_M5AtomEcho),      MP_ROM_INT(141) },
     // external displays
     { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(192) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(193) },
@@ -63,7 +71,8 @@ const mp_obj_type_t m5_board_type = {
 #endif
 
 // -------- M5 wrapper
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_begin_obj, m5_begin);
+STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_begin_obj, 0, 1, m5_begin);
+STATIC MP_DEFINE_CONST_FUN_OBJ_1(m5_add_display_obj, m5_add_display);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_end_obj, m5_end);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
@@ -94,6 +103,7 @@ STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&m5_widgets) },
 
     { MP_ROM_QSTR(MP_QSTR_begin),             MP_ROM_PTR(&m5_begin_obj) },
+    { MP_ROM_QSTR(MP_QSTR_addDisplay),        MP_ROM_PTR(&m5_add_display_obj) },
     { MP_ROM_QSTR(MP_QSTR_update),            MP_ROM_PTR(&m5_update_obj) },
     { MP_ROM_QSTR(MP_QSTR_end),               MP_ROM_PTR(&m5_end_obj) },
     { MP_ROM_QSTR(MP_QSTR_getBoard),          MP_ROM_PTR(&m5_getBoard_obj) },

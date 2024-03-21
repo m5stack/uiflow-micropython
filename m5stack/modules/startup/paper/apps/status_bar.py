@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from widgets.label import Label
 from widgets.image import Image
@@ -79,7 +83,7 @@ class StatusBarApp(AppBase):
             await asyncio.sleep_ms(5000)
 
     def _update_time(self, struct_time):
-        self._time_label.setText("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
+        self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
         self._wifi_status = status
@@ -118,5 +122,3 @@ class StatusBarApp(AppBase):
             }[status]
         else:
             return CloudStatus.DISCONNECTED
-
-

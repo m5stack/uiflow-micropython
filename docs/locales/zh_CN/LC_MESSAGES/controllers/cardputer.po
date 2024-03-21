@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/controllers/cardputer.rst:3 f1113987195b48f29b7639f7bff08374
+msgid "Cardputer"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:1 d360c70c2a6248ca90b570c5e46780cb
+#: f12b9952b80d46b89da5151e1f821a04
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:3 78cef3240fb74bbfbcfa955483a6b6f3
+#: 9710956069ec4f6bb5c7cd9aa42da245
+msgid "apprun.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:5 02d4acf6af874f948849343df14c8b2c
+#: 23896529a69f4e88aa93f72c3f657722
+msgid "develop.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:7 e4f837b9e8dc469ebee2e75ba706e6c3
+#: fad06a1049c54aa0ba6581aefa03e439
+msgid "launcher.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:9 4c6d42cacd734c33af0708fc02f06876
+#: f14874c3be974dad96d35da6b6e76eda
+msgid "setting.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:11 7aba8c031772463daba52a89a6b76e26
+#: 9fd84c970868444aa9f834845b814f54
+msgid "wlan.png"
+msgstr ""
+
+#: ../../en/refs/controllers.cardputer.ref:13 505ab397fab14242b5a10652fd68bb8d
+#: b6c6eba9ee9b49c9a1bb1608dbb6cd88
+msgid "general.png"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:9 4702016564c44d2c9fb8f2e26c2b345c
+msgid "Startup UI"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:12 5211d5892d65427db0d7262b7d30cd5c
+msgid "Launcher"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:14 dd030848b1ac40a8b3e812f68b06b7c0
+msgid "|launcher.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:16 ../../en/controllers/cardputer.rst:25
+#: 3adafdb375d14ccea755d542b0f9c2a3 f77b27a7167847c3849a71a4ceb2744d
+msgid ""
+"``FN`` + ``LEFT`` and ``FN`` + ``RIGHT`` key cycle through the available "
+"applications."
+msgstr "``FN`` + ``左`` 和 ``FN`` + ``右`` 键循环浏览可用的应用程序。"
+
+#: ../../en/controllers/cardputer.rst:18 ../../en/controllers/cardputer.rst:27
+#: 9a5dcfffbd3d453a80a86aff3b87aacb a70c17fad0554a708d3342f4b7e6ba32
+msgid "``Enter`` launches the selected application."
+msgstr "``Enter`` 启动选定的应用程序。"
+
+#: ../../en/controllers/cardputer.rst:21 f885a26af46a411f84a2bc82199490e8
+msgid "Setting"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:23 1225882dc1094ea39cc3c25ef8501005
+msgid "|setting.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:29 ../../en/controllers/cardputer.rst:40
+#: ../../en/controllers/cardputer.rst:51 ../../en/controllers/cardputer.rst:58
+#: ../../en/controllers/cardputer.rst:69 ../../en/controllers/cardputer.rst:82
+#: 2a15d31aa3b349c28799b3e4ee0db31d 2ca6fe5785014fe7aa0864e51358ee59
+#: 3745384c7be94a8391715c31a8fac17f 64c3c9c5cb684029809ed40fb002cd8b
+#: bb554ad709cd4527b0a5d9063e6ac6d2 cdaeea95c50b42ad9dc79a9c19b27c27
+msgid "``BtnA`` quits the application."
+msgstr "``BtnA`` 退出应用程序。"
+
+#: ../../en/controllers/cardputer.rst:32 afdfc621634f41469be0b512c35b3dba
+msgid "WLAN"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:34 f2284ff27f9f4d2caa96563e80fba56a
+msgid "|wlan.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:36 acabcf02d9964e66ae341d50b016d717
+msgid ""
+"``FN`` + ``UP`` and ``FN`` + ``DOWN`` keys select the corresponding input"
+" box or button."
+msgstr "``FN`` + ``上`` 和 ``FN`` + ``下`` 键选择对应的输入框或者按键。"
+
+#: ../../en/controllers/cardputer.rst:38 c289e5ccd77f44168788899522245b20
+msgid "``Enter`` performs the corresponding action."
+msgstr "``Enter`` 执行相应的动作。"
+
+#: ../../en/controllers/cardputer.rst:43 e1eaddf2f3db4b46b5066bf348c92bc8
+msgid "Gerneral"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:45 efb87cdbbf31497a945c6c539c888070
+msgid "|general.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:47 7b5feafc3ba44be79dc91d285623ad66
+msgid "The ``FN`` + ``UP`` and ``FN`` + ``DOWN`` keys select menus."
+msgstr "``FN`` + ``上`` 和 ``FN`` + ``下`` 键选择菜单。"
+
+#: ../../en/controllers/cardputer.rst:49 00673286e19447ba94ec03d5fcb2a827
+msgid "``Enter`` set."
+msgstr "``Enter`` 设置。"
+
+#: ../../en/controllers/cardputer.rst:54 e3b153684a714d6ab8f60398367b090f
+msgid "Develop"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:56 59c36f70405e4fa484451ca1000b8411
+msgid "|develop.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:61 d9f4ec89752f4f4b8e3db87a762b33b3
+msgid "APP.RUN"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:63 6a5e63b8e8a04560b19c75141798ccdc
+msgid "|apprun.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:65 ab596b474f7543898017137b037fd97a
+msgid ""
+"``FN`` + ``LEFT`` and ``FN`` + ``RIGHT`` keys select the corresponding "
+"execution action."
+msgstr "``FN`` + ``左`` 和 ``FN`` + ``右`` 键选择对应的执行动作。"
+
+#: ../../en/controllers/cardputer.rst:67 8ba09673ccf14225b7efc100c6c9aa42
+msgid "``Enter`` runs main.py according to the corresponding action."
+msgstr "``Enter`` 按照对应的动作运行 main.py 。"
+
+#: ../../en/controllers/cardputer.rst:72 b93f72e5158a42969800b257b40e192f
+msgid "APP.LIST"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:74 de199484371b412999644b4c4642bf07
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/controllers/cardputer.rst:76 dd90d031d799437d8d6cc03f85d22fab
+msgid ""
+"``FN`` + ``UP` and ``FN`` + ``DOWN`` key cycle through the available "
+"applications."
+msgstr "``FN`` + ``上`` 和 ``FN`` + ``下`` 键在可用的应用程序之间循环。"
+
+#: ../../en/controllers/cardputer.rst:78 c5b07f02ea754f7da8df44f901c345c3
+msgid "``Enter`` key runs the application once."
+msgstr "``Enter`` 键运行应用程序一次。"
+
+#: ../../en/controllers/cardputer.rst:80 7e4be8c70c56463a827d9067dd859e9a
+msgid "``A`` key runs the application always."
+msgstr "``A`` 键始终运行应用程序。"
+

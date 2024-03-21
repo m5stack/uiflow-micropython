@@ -3,6 +3,7 @@
 """
 I2C-based driver for the SGP30 air quality sensor.
 """
+
 from math import exp
 from micropython import const
 from ustruct import pack, pack_into, unpack_from

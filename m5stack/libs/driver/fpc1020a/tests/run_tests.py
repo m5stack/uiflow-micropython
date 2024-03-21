@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import os
 import sys
 from os.path import abspath, dirname, exists, join, isdir, isfile

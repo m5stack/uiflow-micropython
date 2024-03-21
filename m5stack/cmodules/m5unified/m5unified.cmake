@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 add_library(usermod_M5UNIFIED INTERFACE)
 
 target_sources(usermod_M5UNIFIED INTERFACE

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 import os, sys, io
 import M5
 from M5 import *
@@ -20,7 +23,7 @@ def test_chg_dir():
     global dir2, ret, label0, label1, label3, label2, label4
     os.chdir("/sd")
     dir2 = os.getcwd()
-    label0.setText(str(((str("test chg: ") + str((dir2 == "/sd"))))))
+    label0.setText(str((str("test chg: ") + str((dir2 == "/sd")))))
 
 
 # Describe this function...
@@ -29,7 +32,7 @@ def test_mkdir():
     os.mkdir("/sd/test")
     os.rename("/sd/test", "/sd/test1")
     os.rmdir("/sd/test1")
-    label1.setText(str(((str("test mkdir: ") + str(True)))))
+    label1.setText(str((str("test mkdir: ") + str(True))))
 
 
 # Describe this function...
@@ -39,7 +42,7 @@ def test_isexist():
     os.mkdir("/sd/test/test1")
     dir2 = os.listdir("/sd/test")
     ret = "test1" in os.listdir("/sd/test")
-    label4.setText(str(((str("test isexist: ") + str(ret)))))
+    label4.setText(str((str("test isexist: ") + str(ret))))
     os.rmdir("/sd/test/test1")
     os.rmdir("/sd/test")
 
@@ -50,7 +53,7 @@ def test_isfile():
     os.mkdir("/sd/test")
     os.mkdir("/sd/test/test1")
     ret = not (os.stat("/sd/test/test1")[0] == 0x8000)
-    label2.setText(str(((str("test isfile: ") + str(ret)))))
+    label2.setText(str((str("test isfile: ") + str(ret))))
     os.rmdir("/sd/test/test1")
     os.rmdir("/sd/test")
 
@@ -61,7 +64,7 @@ def test_isdir():
     os.mkdir("/sd/test")
     os.mkdir("/sd/test/test1")
     ret = os.stat("/sd/test/test1")[0] == 0x4000
-    label3.setText(str(((str("test isdir: ") + str(ret)))))
+    label3.setText(str((str("test isdir: ") + str(ret))))
     os.rmdir("/sd/test/test1")
     os.rmdir("/sd/test")
 

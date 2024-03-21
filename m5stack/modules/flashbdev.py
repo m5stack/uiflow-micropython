@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from esp32 import Partition
 
 sys_bdev = Partition.find(Partition.TYPE_DATA, label="sys")

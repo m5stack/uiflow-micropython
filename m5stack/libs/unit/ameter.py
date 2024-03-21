@@ -1,14 +1,13 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import struct
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
-
 import time
 import struct
+
 
 ADS1115_ADDR = 0x48
 EEPROM_ADDR = 0x51
@@ -84,10 +83,17 @@ Rate_list = {
 
 
 class AMeterUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], ads_addr=ADS1115_ADDR):
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        ads_addr=ADS1115_ADDR,
+        address: int | list | tuple = ADS1115_ADDR,
+    ):
+        # TODO: 2.0.6 移除 ads_addr 参数
+        address = ads_addr
         self.ads_i2c = i2c
-        self.ads_i2c_addr = ads_addr
-        if not (self.ads_i2c_addr in self.ads_i2c.scan()):
+        self.ads_i2c_addr = address
+        if self.ads_i2c_addr not in self.ads_i2c.scan():
             raise UnitError("Ameter unit maybe not connect")
         self.eeprom_i2c = i2c
         self.eeprom_i2c_addr = EEPROM_ADDR

@@ -1,4 +1,5 @@
 # Copyright (c) 2020 Sebastian Wicki
+# Copyright (c) 2024 M5Stack Technology CO LTD
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,6 +21,7 @@
 """
 I2C-based driver for the BMP280 temperature and pressure sensor.
 """
+
 from micropython import const
 from ustruct import unpack_from
 from utime import sleep_ms, sleep_us

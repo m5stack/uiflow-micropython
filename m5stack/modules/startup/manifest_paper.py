@@ -5,7 +5,7 @@ package(
         "paper/__init__.py",
         "paper/app.py",
         "paper/framework.py",
-		"paper/apps/app_list.py",
+        "paper/apps/app_list.py",
         "paper/apps/dev.py",
         "paper/apps/settings.py",
         "paper/apps/status_bar.py",

@@ -4,6 +4,7 @@
 # Released under the MIT License (MIT). See LICENSE.
 
 # Copyright (c) 2020-2021 Peter Hinch
+# Copyright (c) 2024 M5Stack Technology CO LTD
 from sys import platform
 
 ESP32 = platform == "esp32"  # Loboris not supported owing to RMT
@@ -60,7 +61,7 @@ class IR:
             self._duty = duty
             self._tim = Timer(5)  # Timer 5 controls carrier on/off times
         self._tcb = self._cb  # Pre-allocate
-        self._arr = array("H", 0 for _ in range(asize))  # on/off times (μs)
+        self._arr = array("H", (0 for _ in range(asize)))  # on/off times (μs)
         self._mva = memoryview(self._arr)
         # Subclass interface
         self.verbose = verbose

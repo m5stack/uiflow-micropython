@@ -1,4 +1,6 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 # _boot.py
 import sys
 import micropython
@@ -11,7 +13,7 @@ uiflow_str = """
  _   _(_)/ _| | _____      __
 | | | | | |_| |/ _ \ \ /\ / /
 | |_| | |  _| | (_) \ V  V / 
- \__,_|_|_| |_|\___/ \_/\_/  2.0.2
+ \__,_|_|_| |_|\___/ \_/\_/  2.0.3
 """
 print(uiflow_str)
 del uiflow_str

@@ -1,3 +1,5 @@
+# Copyright (c) 2024 M5Stack Technology CO LTD
+
 import bluetooth
 from .ble_advertising import advertising_payload
 

@@ -1,0 +1,454 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 18:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/units/lora_e220.rst:2 a87e349fd5d04067adacab6b3271f53a
+msgid "LoRaE220 Unit"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:6 4c86730b18cb4a2b80da5bfce9187d68
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:8 d6caaad28b734aceafecdb0c6004aa01
+msgid "|LoRaE220|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref 3b2a546162324bca919638f639f15fd7
+msgid "LoRaE220"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:11 8cbf150e47c34d49b351c544f17889a7
+msgid "Micropython TX Example::"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:26 f838e3f3e37d45c5ad6a68f63c8df1bd
+msgid "Micropython RX Example::"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:38 6c622b4793b443248303423d3bded235
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:40 bc8dcfab4a3e47ad93f38630aee67ace
+msgid "|tx_example.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:6 323d841860f94106bf1ec1d3dc820d3f
+msgid "tx_example.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:43 9cf66553c02a441d9a0ca05a953bdfc5
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:45 36225b8b1fad43cfb7000326be590226
+msgid "|rx_example.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:8 cd624f397e8f402b9b4393c5e70bf423
+msgid "rx_example.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:50 b1ffd4e6fc1d4f4e9b8fe856ab21ca4e
+msgid "|lora_e220_tx_core2.m5f2|"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:52 9be9dc53ecb3494db5b42dce248d61f9
+msgid "|lora_e220_rx_dial.m5f2|"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:56 fccb396eb8ce41a798eb8525a06c646c
+msgid "Working Mode"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:58 7f51f641e967453292ab2ae55bf8adde
+msgid "Working mode table"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:62 2807d722171e4ebbbba28d0cfcb1ccc0
+msgid "Mode (0-3)"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:62 aeb070401f0a40c2944bc12c4fa51ff1
+msgid "M1"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:62 85a43dd7e98e440cbc555126bbf900d9
+msgid "M0"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:62 f74cf531b5234da0a5815e230b84425f
+msgid "Function description"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:64 39d23ade5620443098fada71f1d0e5a7
+msgid "0:Transmission Mode"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:64 ../../en/units/lora_e220.rst:68
+#: ../../en/units/lora_e220.rst:74 553e0cf7c4144d6181183ac7421ba12c
+#: 5af07708e54e499c930d4516f319f848 867e6ba4b5bb416e872441a55c4340f0
+#: 905e6639c0924937aad1bb88c475e57a
+msgid "0"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:64 4ba95a5a0be44d1e9c9335fdfe55c6ed
+msgid ""
+"SEND: Users can enter data through the serial port, and the module will "
+"start wireless transmission."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:66 25e50a32562746889e3807fa5668a3fb
+msgid ""
+"RECEIVE: The wireless receiving function of the module is enabled, and "
+"the wireless data will be output through the TXD pin of the serial port "
+"after receiving it."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:68 88eda382228c4ecda785c98aebc024c3
+msgid "1:WOR Sending Mode"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:68 ../../en/units/lora_e220.rst:74
+#: ../../en/units/lora_e220.rst:80 8200fefd3a60448dacc28840f1ced780
+#: 8cab0c82765d46038f30d3fdfda0ad44 94a94f7e328643109625eb0ac38df6ed
+#: fc1eaa8be2504610820e6089b3014a1b
+msgid "1"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:68 16e33eb4a37f4e3b9d81686ef267d57c
+msgid "SEND: Wirelessly sending data on"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:70 ../../en/units/lora_e220.rst:76
+#: 241ae7deba6d44b888bba93611ae9bff 56059da8cbd24c73aed41d39df1dc7b2
+msgid "RECEIVE: Wireless receiving data on"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:72 ../../en/units/lora_e220.rst:78
+#: 0d946ff8f22b4d81a7482fc50d036989 2fa53c359faa40599f9b413ac98421dd
+msgid "NOTE: Support Air Wake Up"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:74 5b79da1ec2814b1a9b7d7558987b9569
+msgid "2:WOR Receiving Mode"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:74 ../../en/units/lora_e220.rst:80
+#: 4e03e971eb5a4d018e1b017203fafd63 be71bc3219f24cbba1f0d0a959189988
+msgid "SEND: Wirelessly sending data off"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:80 2134e38ee2ef45f5bf8a2bee1edac0c8
+msgid "3:Configuration Mode"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:82 993f2f30c05c4ea0be40f7cbe2af31b5
+msgid "RECEIVE: Wireless receiving data off"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:84 ba2c8847716641ecb302d9a62a64bf2e
+msgid "CONFIGURATION: Users can access registers to configure module status"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:87 7c6d875cd0514710a32839fbf08fe3dc
+msgid "|working mode.jpg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:12 838f6270216a4effa3a8dac03f4507d5
+msgid "working mode.jpg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:91 82b9bf7bcb5548d6acc612cd2353083d
+msgid "class LoRaE220JPUnit"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:94 10ab282692084194bda00b611c65a769
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:98 801fbeff7dee44bc9ee9b142e4fe87e8
+msgid "Create a LoRaE220JPUnit object."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:102 ../../en/units/lora_e220.rst:129
+#: ../../en/units/lora_e220.rst:222 98eb40c1aafb47cb9bed1a291ac22243
+#: bcd46e820da84a39ae167363dcab81cd db7b6651abb441fca6130f2c7f335f86
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:101 ad3f12c0840b4e158b25a37d10d08e57
+msgid "``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:102 593d4993adf34297ad20af7345c3f7cb
+msgid "``port_id`` uart port ID."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:104 ../../en/units/lora_e220.rst:131
+#: ../../en/units/lora_e220.rst:150 ../../en/units/lora_e220.rst:169
+#: ../../en/units/lora_e220.rst:185 ../../en/units/lora_e220.rst:200
+#: ../../en/units/lora_e220.rst:211 ../../en/units/lora_e220.rst:228
+#: 391ea6b269dd4f14b0eab35ab7501a1f 3be12b49b68c4904ac3a8d868e3b7667
+#: 56e26d85b62d4e409e6ba98dc81a7d4b 985b898008094b6fb174a2958d67e4c6
+#: 9a51f587160b4c85a9b7834587be3601 9c3bc63b3e064489b39d19384290932e
+#: ce06d6acc1e54231a7c7da0c42e7234f d442e37bfa584486b05304659bc5ffdd
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:106 c91c7b9068c744e6ba80e649f97b63b0
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:14 00b4bef0f77347b3b38e27c3e1b866d6
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:110 2da6718d9d3a471bb78ce1f97afa2a5f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:114 8b96cc0c4d0a4745a5d3ce70b512818b
+msgid ""
+"Available when LoRaE220JPUnit working mode is 3. Please refer to "
+":ref:`working mode table <working-mode>` for the working mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:116 6c8c0a71bcc74438a5362da332c0f110
+msgid "Set module parameters."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:119 ba409719b3fb4fada93ac888b785a929
+msgid "``own_address``: Local address."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:120 73e6722da98c436cb69f6bf1dc5a79bc
+msgid "``own_channel``: Native channel."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:121 b3b79500c5a844aab9ebfbca0641dfd4
+msgid "``encryption_key``: Encryption key."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:122 af6a180bf50241be82e0dc2adfd9ff9a
+msgid "``air_data_rate``: rate."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:123 ba06e33bdfb94c1e903a84b765629b7d
+msgid "``subpacket_size``: Maximum packet length."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:124 c18d83ff90b6401ea8aa0b1a788e8add
+msgid "``rssi_ambient_noise_flag``: RSSI Ambient Noise."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:125 b4147281ad5f4011943c8d3e14d89b4d
+msgid "``transmitting_power``: Transmit power."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:126 b4c38143097147d687fb91adc6a307b1
+msgid "``rssi_byte_flag``: Output RSSI strength bytes."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:127 8b397480eef34c28b159e1a7f2649375
+msgid "``transmission_method_type``: transmission mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:128 a57dcef19aea40eeb1e06bdbec143de6
+msgid "``lbt_flag``: Parameter no longer used."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:129 8d56ab17673248ba8a0e2dd54de82b2b
+msgid "``wor_cycle``: Wireless wake-up time."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:133 745d8c38a8504d4d87a0995dd3dd6e03
+msgid "|setup.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:16 b69cf440cd84403b89b719bdc5bf0c7d
+msgid "setup.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:140 ../../en/units/lora_e220.rst:179
+#: 25a8e19cd8f74b76ac7b5b11d256bac8 639a743f77da4434a4754065716ed2a0
+msgid "This method is deprecated and will be removed in version 2.0.2."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:142 ../../en/units/lora_e220.rst:161
+#: ../../en/units/lora_e220.rst:181 ../../en/units/lora_e220.rst:196
+#: ../../en/units/lora_e220.rst:207 36780f11773f4b7ea90e2625751c91b1
+#: 495cd5fcc9fb434682af8069bd90bf0a 83006b6d79f94b83a40627c45a081337
+#: 8328f7bb0b83405483efbc730ec72032 f1d38202ee6f4c1ea4191f810c3c3aa3
+msgid ""
+"Available when the working mode of LoRaE220JPUnit is 0 / 1 / 2. Please "
+"refer to :ref:`working mode table <working-mode>` for the working mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:144 ../../en/units/lora_e220.rst:163
+#: b0ced03d59fb43ce85c5aebf0a4eceb2 f898b3bb41c8471fb82cc4ffd62dcd4d
+msgid ""
+"Use non-blocking mode to receive data. ``receive_callback`` The callback "
+"function passed in will be called when data is received."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:146 ../../en/units/lora_e220.rst:165
+#: 62707d266c87467dac7fe228c5c6c2e4 c1d5c77b9f214b86961b2b4f10cc784a
+msgid "The format of receive_callback is::"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:152 20142a623f43485c808acff1c924aa8d
+msgid "|receiveNoneBlock.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:18 650a091dc0824090a5bff2a7f7833b16
+#: a90add93d9f545d1a53afd4069006a57
+msgid "receiveNoneBlock.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:159 ../../en/units/lora_e220.rst:194
+#: 86a2412737584e11ab6fe1f755396139 e8d13c14be5c41d0952bd6ee1d4d4bda
+msgid "This method will be added in version 2.0.2."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:171 457cf3171c12447e82177dae385aa0b2
+msgid "|receiveNoneBlock.svg| |receive_callback1.svg| |receive_callback2.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:20 5599024be8db4574970f218ada721afe
+msgid "receive_callback1.svg"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:22 c6b0b5ee191c4390bf4f1ab0e45fae82
+msgid "receive_callback2.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:183 ../../en/units/lora_e220.rst:198
+#: 5a787e5debc143e782c458ace7cea23a 8a01cfbe72a34e31ad4dbb23f486344c
+msgid "Stop receiving data in non-blocking mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:187 ../../en/units/lora_e220.rst:202
+#: 0dcba1543a1f44ad9f3223f556913bc0 7938b32d2eec496d97e5100e279613dd
+msgid "|stopReceive.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:24 800928c644854ebab754c0cc7ff040ca
+#: ce91be4b336c4754a9c6c8f6bb4768a2
+msgid "stopReceive.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:209 008138468fb8431b81ed1fd94e4c752a
+msgid ""
+"Use blocking method to receive data. ``timeout`` is used to set the "
+"reception timeout, the unit is ms."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:213 d02219019ab54e5e98cf27bd77e8b347
+msgid "|receive.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:26 a93146551ad84ee8b1b3729f1cad2141
+msgid "receive.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:218 fe3560ac19404b499632905787b98434
+msgid ""
+"Available when the working mode of LoRaE220JPUnit is 0 or 1. Please refer"
+" to :ref:`working mode table <working-mode>` for the working mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:220 d9e8196cc6004aee96356d1aa5fce973
+msgid "Send data to the specified destination address and channel."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:224 ee9da0951a6e4a03ad434eac88c3a3b4
+msgid ""
+"``target_address`` Target address, the address range is 0x0000 - 0xFFFF, "
+"where 0xFFFF is the broadcast address."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:225 1a2a8c8d3d354f4da87d9cf3525875a4
+msgid "``target_channel`` Target channel, valid channel range is 0 - 30."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:226 6335ada9c735433ba4baf5b7f9b263ac
+msgid "``send_data`` The data needs to be sent."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:230 eb584fcf2b5d432b87b06b3ff95f4af4
+msgid "|send1.svg| |send2.svg| |send3.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:28 6c8bee49dbaf467497d011381ec5ed1c
+msgid "send1.svg"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:30 044f24b879ab4c239a3e126e630942e7
+msgid "send2.svg"
+msgstr ""
+
+#: ../../en/refs/unit.lora_e220.ref:32 827e6b78d94c49319c5ba3b458434ebe
+msgid "send3.svg"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:236 fbffc4b050934e47afbd3ff3b67e0ef9
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:248 485a9598c5334683a1cf15e4fafe0515
+msgid "baud rate."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:270 f2cde4d1922945cf835c7d2e89efc4f4
+msgid "rate."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:278 874bad24034844ac831391df73ed14f8
+msgid "Maximum packet length."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:284 c01a44901e4c4ac48c19a4bafc2e37ce
+msgid "RSSI ambient noise."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:292 7a8fa30f648e4c219f2997c1ce6585f5
+msgid "Transmit power."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:298 58765d5c571e417894498dac85357719
+msgid ""
+"RSSI bytes. When enabled, the module will append a byte of RSSI value "
+"after the data each time it receives data."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:304 61c294a0451345f7b9e5b548826ae855
+msgid "transmission mode."
+msgstr ""
+
+#: ../../en/units/lora_e220.rst:314 381d7b921b7541f7b7cc7623441b4600
+msgid "Wireless wake-up time."
+msgstr ""
+
+#~ msgid "lora_e220_core_example.m5f2"
+#~ msgstr ""
+

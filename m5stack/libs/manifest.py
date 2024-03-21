@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 include("bleuart/manifest.py")
 include("driver/manifest.py")
 include("ezdata/manifest.py")

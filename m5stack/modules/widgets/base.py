@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+
 class Base:
     def __init__(self, parent) -> None:
         self._x = 0

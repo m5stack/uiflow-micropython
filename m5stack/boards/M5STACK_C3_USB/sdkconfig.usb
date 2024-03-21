@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 CONFIG_ESP32C3_REV_MIN_3=y
 CONFIG_ESP32C3_REV_MIN=3
 CONFIG_ESP32C3_BROWNOUT_DET=y

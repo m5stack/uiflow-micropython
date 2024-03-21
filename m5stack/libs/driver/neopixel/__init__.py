@@ -1,5 +1,6 @@
 # NeoPixel driver for MicroPython
 # MIT license; Copyright (c) 2016 Damien P. George, 2021 Jim Mussared
+# Copyright (c) 2024 M5Stack Technology CO LTD
 
 from machine import bitstream, Pin
 

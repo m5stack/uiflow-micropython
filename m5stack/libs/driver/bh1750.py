@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2017 Scott Shawcroft, written for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2020 Bryan Siepert for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from micropython import const
 from struct import unpack_from
 import time
@@ -50,9 +55,9 @@ class BH1750:
 
     def set_sensitivity(self, sensitivity) -> None:
         self._sensitivity = sensitivity
-        MTreg = int(69 * sensitivity)
-        self._write_byte((0b01000 << 3) | (MTreg >> 5))
-        self._write_byte((0b011 << 5) | (MTreg & 0b11111))
+        mt_reg = int(69 * sensitivity)
+        self._write_byte((0b01000 << 3) | (mt_reg >> 5))
+        self._write_byte((0b011 << 5) | (mt_reg & 0b11111))
         self._configure()
 
     def _configure(self) -> None:

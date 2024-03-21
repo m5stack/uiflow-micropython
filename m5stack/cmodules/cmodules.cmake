@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # add m5unified module
 include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/m5things/m5things.cmake)

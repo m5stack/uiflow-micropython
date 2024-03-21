@@ -1,4 +1,6 @@
-# -*- coding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 import time
 import json
@@ -343,12 +345,12 @@ class PAJ7620U2:
         [0x7E, 0x01],
     ]
 
-    def __init__(self, bus):
+    def __init__(self, bus, address=PAJ7620_IIC_ADDR):
         """!
         @brief Constuctor
         @param bus  iic bus
         """
-        self.i2c_addr = PAJ7620_IIC_ADDR
+        self.i2c_addr = address
         self.i2cbus = bus
         self._gesture_high_rate = True
 
@@ -359,7 +361,7 @@ class PAJ7620U2:
         """
         self._select_bank(self.BANK_0)
         partid = self._read_reg(PAJ7620_ADDR_PART_ID_LOW, 4)
-        if partid == None:
+        if partid is None:
             #   print("bus data access error")
             return self.ERR_DATA_BUS
         time.sleep(0.1)

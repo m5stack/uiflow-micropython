@@ -1,0 +1,75 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/controllers/airq.rst:3 16570d9ee0c74f0ba95b803fecc902d2
+msgid "AirQ"
+msgstr ""
+
+#: ../../en/refs/controllers.airq.ref:1 1d2db5a35cfd4dfeba7461f540ca1312
+#: df231ddab4e548309116a7da02731775
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/refs/controllers.airq.ref:3 19fae4cbc823484f97cc583752e0b652
+#: 8b5ef565fab448f58b956573d67d3f2b
+msgid "config.png"
+msgstr ""
+
+#: ../../en/refs/controllers.airq.ref:5 7f918de402c742e5812406ea7cbb285e
+#: f7dcea0fd035455fb28d5a34ca06eceb
+msgid "flow.png"
+msgstr ""
+
+#: ../../en/controllers/airq.rst:9 80e04c94d19a488ca91b508ffcda9c3b
+msgid "UI"
+msgstr ""
+
+#: ../../en/controllers/airq.rst:11 030a85f29e754112813fc2a0a2e244d1
+msgid "|flow.png|"
+msgstr ""
+
+#: ../../en/controllers/airq.rst:13 ../../en/controllers/airq.rst:19
+#: ../../en/controllers/airq.rst:27 78e6183cdc6442558b81a614a24f29f5
+#: d631e0afe59a48f7b5cd5af4289ce6b7 df83631906d14d3eb313f28a1a41c9ec
+msgid "**A** key cycles through the available applications."
+msgstr "**A** 键循环浏览可用的应用程序。"
+
+#: ../../en/controllers/airq.rst:15 1dc6a99ac1f946dba647c0c5edb6e3dd
+msgid "|config.png|"
+msgstr ""
+
+#: ../../en/controllers/airq.rst:17 24b95659f8c74a3e9aaca5879149057b
+msgid "**B** key toggles between available servers."
+msgstr ""
+
+#: ../../en/controllers/airq.rst:21 6e3e69882c3142c3b0227db896c958fb
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/controllers/airq.rst:23 a7244c5f0ea94646af047c28ba61e2bf
+msgid "**B** key cycles through scripts."
+msgstr "**B** 键循切换脚本。"
+
+#: ../../en/controllers/airq.rst:25 b367f11918494fefb146f4d9ff301b46
+msgid "**A** and **B** keys **pressed simultaneously** run the specified script."
+msgstr "**A** 和 **B** 键 **同时按下** 运行指定脚本。"
+

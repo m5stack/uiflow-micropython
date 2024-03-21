@@ -49,6 +49,11 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
+# multi-language docs
+language = 'en'
+locale_dirs = ['../locales/']
+gettext_compact = False  # optional.
+gettext_uuid = True  # optional.
 
 # -- Options for HTML output -------------------------------------------------
 

@@ -1,6 +1,11 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from driver.ir.nec import NEC, NEC_8
 import M5
 from machine import Pin
+
 
 class IR:
     _pin_map = {
@@ -13,6 +18,7 @@ class IR:
         M5.BOARD.M5StickC: (None, 9),
         M5.BOARD.M5StickCPlus2: (None, 19),
         M5.BOARD.M5AtomU: (None, 12),
+        M5.BOARD.M5Atom: (None, 12),
     }
 
     def __init__(self) -> None:

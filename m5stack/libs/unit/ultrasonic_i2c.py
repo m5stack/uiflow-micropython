@@ -1,22 +1,24 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 class ULTRASONIC_I2CUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x57):
+    def __init__(self, i2c: I2C | PAHUBUnit, addr=0x57, address: int | list | tuple = 0x57):
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
         self.i2c = i2c
-        self.i2c_addr = addr
+        self.i2c_addr = address
         self._distance = 0
         self._available()
 
     def _available(self):
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise UnitError("Ultrasonic unit maybe not connect")
 
     def get_target_distance(self, mode=1):
@@ -30,3 +32,8 @@ class ULTRASONIC_I2CUnit:
         if mode == 2:
             self._distance = self._distance / 10
         return round(self._distance, 2)
+
+
+class UltrasoundI2CUnit(ULTRASONIC_I2CUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x57):
+        super().__init__(i2c, addr=address)

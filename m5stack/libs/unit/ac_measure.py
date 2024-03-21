@@ -1,12 +1,12 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 AC_MEASURE_ADDR = 0x42
@@ -33,13 +33,20 @@ I2C_ADDR_REG = 0xFF
 
 
 class AC_MEASUREUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr: int = AC_MEASURE_ADDR) -> None:
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        slave_addr: int = AC_MEASURE_ADDR,
+        address: int | list | tuple = AC_MEASURE_ADDR,
+    ) -> None:
+        # TODO: 2.0.6 移除 addr 参数
         """
         AC Measure Initialize Function
         Set I2C port, AC Measure Slave Address
         """
+        address = slave_addr
         self.ac_measure_i2c = i2c
-        self.init_i2c_address(slave_addr)
+        self.init_i2c_address(address)
 
     def init_i2c_address(self, slave_addr: int = AC_MEASURE_ADDR) -> None:
         """
@@ -48,7 +55,7 @@ class AC_MEASUREUnit:
         """
         if slave_addr >= 0x01 and slave_addr <= 0x7F:
             self.i2c_addr = slave_addr
-        if not (self.i2c_addr in self.ac_measure_i2c.scan()):
+        if self.i2c_addr not in self.ac_measure_i2c.scan():
             raise UnitError("AC Measure unit maybe not connect")
 
     def get_voltage_str(self) -> str:
@@ -192,3 +199,10 @@ class AC_MEASUREUnit:
                 self.ac_measure_i2c.writeto_mem(self.i2c_addr, I2C_ADDR_REG, bytearray([addr]))
                 self.i2c_addr = addr
                 time.sleep_ms(100)
+
+
+class ACMeasureUnit(AC_MEASUREUnit):
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = AC_MEASURE_ADDR
+    ) -> None:
+        super().__init__(i2c, address)

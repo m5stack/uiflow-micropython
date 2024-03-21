@@ -1,25 +1,25 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 from driver.mlx90640 import MLX90640
 
-try:
-    from typing import Union
-except ImportError:
-    pass
 
 THERMAL_ADDR = 0x33
 
 
 class THERMALUnit(MLX90640):
-    def __init__(self, i2c: Union[I2C, PAHUBUnit]):
-        self._thermal_addr = THERMAL_ADDR
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = THERMAL_ADDR):
+        self._thermal_addr = address
         self._thermal_i2c = i2c
         self._available()
         super().__init__(self._thermal_i2c, self._thermal_addr)
 
     def _available(self):
-        if not (self._thermal_addr in self._thermal_i2c.scan()):
+        if self._thermal_addr not in self._thermal_i2c.scan():
             raise UnitError("Thermal unit maybe not connect")
 
     @property
@@ -60,4 +60,9 @@ class THERMALUnit(MLX90640):
         return self.refresh_rate
 
     def update_temperature_buffer(self):
-        return self.getFrame()
+        return self.get_frame()
+
+
+class ThermalUnit(THERMALUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = THERMAL_ADDR):
+        super().__init__(i2c, address)

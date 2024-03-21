@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/controllers/coreink.rst:3 257ce5bb51534259b16dd93d85116483
+msgid "CoreInk"
+msgstr ""
+
+#: ../../en/refs/controllers.coreink.ref:1 c387799faa2c489cb2cb2143e8ca4eaf
+#: f35ff93c91424b53a4cc617aab880e89
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/refs/controllers.coreink.ref:3 1b7aa774921044408c76fc967182b232
+#: caa6cc09a3e340a382c74a3249dbd428
+msgid "config.png"
+msgstr ""
+
+#: ../../en/refs/controllers.coreink.ref:5 2dc7d75da014439eb255beb7f8bcdacd
+#: d858d03e30e5463ab7758d9a7346c4af
+msgid "flow.png"
+msgstr ""
+
+#: ../../en/refs/controllers.coreink.ref:7 4ccd6fcaaf1b40669d9b8e8efb93a467
+#: a6ff29d7b00c41e6b05a3df9c69c1088
+msgid "op.png"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:9 cf8e5183ecff4d04a72e4ed1146fa17a
+msgid "UI"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:11 449790e181674272ac94cd3bc8f27175
+msgid "|op.png|"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:13 118144c113a044f3bb6176b4add49701
+msgid "CoreInk has 4 buttons, **Up**, **Down**, **Center**, and **Btn.EXT**."
+msgstr "CoreInk拥有4个按键，分别是 **上**、**下**、**中** 和 **Btn.EXT**。"
+
+#: ../../en/controllers/coreink.rst:15 b348034755b34c7fb0f85b3e8d760221
+msgid "|flow.png|"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:17 ../../en/controllers/coreink.rst:23
+#: ../../en/controllers/coreink.rst:31 4ccf76cfb65b4363ba0dd6e5aa84d459
+#: a8e9355993f74f45ae57de4ea2adacf2 e81de9f8fe1c476c88f7dffa832200fd
+msgid "**Btn.EXT** key cycles through the available applications."
+msgstr "**Btn.EXT** 键循环浏览可用的应用程序。"
+
+#: ../../en/controllers/coreink.rst:19 81a9b0e0c0d04399b0b8399a172b3462
+msgid "|config.png|"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:21 b4ea2d4f87724f2cb162dfbd96b0a2cf
+msgid "**Down** key toggles between available servers."
+msgstr "**下** 键循切换可用服务器。"
+
+#: ../../en/controllers/coreink.rst:25 520d3b1668d94cc799e47a9358107293
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/controllers/coreink.rst:27 27d0056bb17d4819951a7995acccef84
+msgid "**Up** and **Down** keys cycle through scripts."
+msgstr "**上** 和 **下** 键循切换脚本。"
+
+#: ../../en/controllers/coreink.rst:29 dd840cb0769d42e99be775a6811c4783
+msgid "**Center** key runs the specified script."
+msgstr "**中** 键运行指定脚本。"
+

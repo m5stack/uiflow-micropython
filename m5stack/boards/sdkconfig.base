@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2014 Damien P. George
+#
+# SPDX-License-Identifier: MIT
+
 # MicroPython on ESP32, ESP IDF configuration
 # The following options override the defaults
 

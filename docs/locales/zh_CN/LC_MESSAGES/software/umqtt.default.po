@@ -1,0 +1,336 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 18:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/software/umqtt.default.rst:4 37dbf96662d1418293e70b545ed5747e
+msgid "umqtt.default"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:8 b523caee28d64d738c76bb498341fc66
+msgid ""
+"`umqtt.default` rewrites the :py:meth:`subscribe` method and supports ca "
+"file."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:10 85ae3e9d9744411295a3d59848b4fbd1
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:32 b885616dc607493e8b88cd3ece06624a
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:34 8c3292473aec49089c17a01cabdb650c
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:1 63194beb5ff949ca80e9ca34a535f12b
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:38 06c1ec9c373d43908a7f2b7c940f4359
+msgid ":download:`example.m5f2 <../../_static/software/umqtt/example.m5f2>`"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:41 0b53e3bce1c249ad9017c546c55725e7
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:45 c2645bb30dc645bc813f62bc2f935bcd
+msgid "Create an MQTTClient object."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst 6ad9ce2bd06b4c058b4793a06c15fea5
+#: 6b878358bfa148afa72e43f1497e39da 8d0ca542ed694f989857c47f3ec189e1
+#: f8d6a0d0bfd742d6a73fad315e3ccd31
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:47 fea080f64ca2416fb2c7886878dabb1f
+msgid "the unique client id string used when connecting to the broker."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:49 b827a2cce31f4095b10f83ef8e88d1c5
+msgid "the hostname or IP address of the remote broker."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:50 c9f3efb5baa34d27a8f93a38e843c205
+msgid "the network port of the server host to connect to."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:51 adf1ee5a7a2e45abad9e40ca3e807a76
+msgid "a username for broker authentication."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:53 5b199b9225124bff8cf805ed726dc8b9
+msgid "a password for broker authentication."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:55 29424d3a81db4781b874163864454194
+msgid ""
+"maximum period in seconds allowed between communications with the broker."
+" If no other messages are being exchanged, this controls the rate at "
+"which the client will send ping messages to the broker."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:59 b0d3fae7e1ce4db3a2f4f1283c34a0cd
+msgid "Whether to use ssl."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:60 b2d851c65ed8406d938480aae91e3b1b
+msgid "Some parameters required to initiate an ssl connection."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst 96a54d44f87a403cbe5d8872259ceb3e
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:61 ddb94fa53fe74113b188eb6d47a63b92
+msgid "MQTTClient object"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst 839087f42e1048c280066aa1bd4ac7f3
+msgid "Return type"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:64
+#: ../../en/software/umqtt.default.rst:78
+#: ../../en/software/umqtt.default.rst:86
+#: ../../en/software/umqtt.default.rst:94
+#: ../../en/software/umqtt.default.rst:102
+#: ../../en/software/umqtt.default.rst:118
+#: ../../en/software/umqtt.default.rst:134
+#: ../../en/software/umqtt.default.rst:164
+#: ../../en/software/umqtt.default.rst:185
+#: ../../en/software/umqtt.default.rst:194 10156beffd0d45bc8bf73048f7bf9f04
+#: 17916293246c4d13854a035dce15fbbb 398994ce513943039035f6f5bc73a018
+#: 478469f7524446f3b66b1a79a0c5b165 6837dbf14406492cafff4dedf4d49ce3
+#: 889506fb274242e9833ff2ffaef2c919 8c37433002f649d8a0da8dca8b2d518a
+#: a3eb9077b67c41ed94fd5d058b2b986b ac24f482ee0c4dceae63242eabacc80c
+#: d8bdfefc8d284a8f826d2290edab2f20
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:66 7c10a6198fde4ae295e51b286912c03c
+msgid "|init.svg| |init1.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:3 c404e32e54e44bf4b79ea6eeb50cc665
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:5 23fe2d6b36b94153af94c1cf074c9d07
+msgid "init1.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:70 ceb1f79912d740e5bdfba8c207e7e67c
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:74 380b480dd9ae48a1b4c1cfc21d9dad6d
+msgid ""
+"Connect to a server. Returns True if this connection uses persisten "
+"session stored on a server (this will be always False if "
+"clean_session=True argument is used (default))."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:80 e3912a000d454516a112a659760cad8c
+msgid "|connect.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:7 cc5f97d03ab04c7e9cfc6a239f8b5ee9
+msgid "connect.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:84
+#: ../../en/software/umqtt.default.rst:92 1451759bef4145e993345600e286458a
+#: 6b05d03440004dc7bf962fcf835dbf89
+msgid "Disconnect from a server, release resources."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:88 fd3cd9f089804e2ab8a196dc3b46f71e
+msgid "|disconnect.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:9 5e8b4b38690f4a898ad67a4fa8e83856
+msgid "disconnect.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:96 9d8ecd33e35c4e9281d4c779f515de65
+msgid "|reconnect.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:11 c86867337a804aa88b97b4c2c709db3d
+msgid "reconnect.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:100 f18a6e8d70914348b37fbf61068f2f91
+msgid ""
+"Ping server (response is processed automatically by "
+":py:meth:`wait_msg()`)."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:104
+#: ../../en/software/umqtt.default.rst:196 2b1ddfcd060e4505b316544a7586746e
+#: 9bc64bf8d88d4c449243cf756a669a9f
+msgid "None"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:108 120dd4fb687b4200ada9b28c11a2b288
+msgid "Publish a message."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:110 cba8402f67a54b4d82115ac71d555bcc
+msgid "the topic that the message should be published on."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:112 13fe2a946edc41cfa209bd2f4da77a58
+msgid "the message to send as a will."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:114
+#: ../../en/software/umqtt.default.rst:160 523f6629e4564ac7b7006059eb2c72fe
+#: 639a5491ec9149958bf9afe9293053ca
+msgid ""
+"if set to True, the will message will be set as the \"last "
+"will\"/retained message for the topic."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:116 a4dcba9d169f498abc217918e10e01ad
+msgid "the quality of service level to use"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:120 4c2df6cd15924dcf913bd11db5fbc524
+msgid "|publish.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:13 0c9cf68490b646368c9948795affcfe6
+msgid "publish.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:124 29e4103da2b0463f8eaa885b362c42aa
+msgid "Subscribe to a topic."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:126 e917261b3c3743d8b232909c5809724e
+msgid "a string specifying the subscription topic to subscribe to."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:128 f672739d26054808bb0849c9149deaf0
+msgid ""
+"called when a message has been received on a topic that the client "
+"subscribes to and the message does match an existing topic filter "
+"callback."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:131 5eea7bf859a3439594dc171e75a2bc82
+msgid "the desired quality of service level for the subscription. Defaults to 0."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:136
+#: ../../en/software/umqtt.default.rst:166 0da9bf721a864d118172775310b0b91b
+#: 65f4c00b595f4d7fa8c2fe4ebd14c34e
+msgid "|subscribe.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:15 5bcf1e9320b54fa5a9f0e7294d1e4f15
+#: 7a61a796863541929c95e5184fec9905
+msgid "subscribe.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:138 76c43f0868264ea7a8912f05c9049b6a
+msgid "An handler showing a message has been received::"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:144 263746db9c99427f8d6ca6b125a65e3f
+msgid ""
+"On uiflow2, you can get the **topic** and **message** of the current "
+"handler through |get_topic.svg| and |get_msg.svg|."
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:17 b01ce30da235472fa23ae7c5761dd818
+msgid "get_topic.svg"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:19 e9f80a3e489440fb91c9ff45eacf1582
+msgid "get_msg.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:151 24ea7445901646afaefd9f13a65e6683
+msgid "Should be called before :py:meth:`connect()`."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:153 987be485bb444d0590e049f4ce7dd3e5
+msgid "Set MQTT \"last will\" message."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:155 e332f3c34faa49748f26b6cc02a8b516
+msgid "the topic that the will message should be published on."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:157 8a81442fb9ef4de5bb893839dea176ea
+msgid ""
+"the message to send as a will. If not given, or set to None a zero length"
+" message will be used as the will."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:162 cc501ee780c142f3a16484503f8039df
+msgid "the quality of service level to use for the will."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:172 4968301067324b57a79016c1335a340d
+msgid ""
+":py:meth:`wait_msg()` and :py:meth:`check_msg()` are \"main loop "
+"iteration\" methods, blocking and non-blocking version. They should be "
+"called periodically in a loop, :py:meth:`wait_msg()` if you don't have "
+"any other foreground tasks to perform (i.e. your app just reacts to "
+"subscribed MQTT messages), :py:meth:`check_msg()` if you process other "
+"foreground tasks too."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:179 c946c4bb0a164001af4fbbfe8de404e6
+msgid ""
+"Note that you don't need to call :py:meth:`wait_msg()` / "
+":py:meth:`check_msg()` if you only publish messages, never subscribe to "
+"them."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:183 0706b11c7e8041a99b93bc52096c6dd6
+msgid "Wait for a server message."
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:187 1f733d5808004a9ca430797b9136ca5d
+msgid "|wait_msg.svg|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:23 0d97af2f8f2c4511b3975ea260e6cdec
+msgid "wait_msg.svg"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:191 0826800002e8471c952c9824a708d637
+msgid ""
+"Check if there's pending message from server. If yes, process the same "
+"way as :py:meth:`wait_msg()`, if not, return immediately."
+msgstr ""
+
+#~ msgid "set_last_will.svg"
+#~ msgstr ""
+

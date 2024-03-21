@@ -1,12 +1,13 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import struct
-from time import sleep_ms
-import sys
+import time
 
-if sys.platform != "esp32":
-    from typing import Union
 
 SERVOS_8_ADDR = 0x25
 
@@ -32,10 +33,14 @@ I2C_ADDR_REG = 0xFF
 
 
 class SERVOS8Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=SERVOS_8_ADDR):
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, addr=SERVOS_8_ADDR, address: int | list | tuple = SERVOS_8_ADDR
+    ):
+        # TODO: 2.0.6 移除 addr 参数
         """
         slave_addr : 1 to 127
         """
+        addr = address
         self.servos8_i2c = i2c
         self.i2c_addr = addr
         if addr >= 1 and addr <= 127:
@@ -43,7 +48,7 @@ class SERVOS8Unit:
         self.available()
 
     def available(self):
-        if not (self.i2c_addr in self.servos8_i2c.scan()):
+        if self.i2c_addr not in self.servos8_i2c.scan():
             raise UnitError("8 Servos unit maybe not connect")
 
     def get_mode(self, channel):
@@ -228,4 +233,9 @@ class SERVOS8Unit:
             if addr != self.i2c_addr:
                 self.servos8_i2c.writeto_mem(self.i2c_addr, I2C_ADDR_REG, bytearray([addr]))
                 self.i2c_addr = addr
-                sleep_ms(150)
+                time.sleep_ms(150)
+
+
+class Servos8Unit(SERVOS8Unit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = SERVOS_8_ADDR):
+        super().__init__(i2c, addr=address)

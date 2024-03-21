@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/ir.rst:2 124ed5f174034355b1bdeeac3eb75f66
+msgid "IR Unit"
+msgstr ""
+
+#: ../../en/refs/unit.ir.ref 7f24f9fbe21f45d698f3f83555754cce
+#: 813af9edb0524d9caab0401a80566c65
+msgid "IR"
+msgstr ""
+
+#: ../../en/refs/unit.ir.ref:7 ecb85f2e4837450199861e1d5f32a594
+#: f7b9feee6d3046ee9195edf1bf460b1e
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ir.ref:9 4fc3d2ec813145a8af93955e657d8b0a
+#: a337f381801f4f9f816f4dcda73a5c14
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ir.ref:11 143b44c026de4a2fad41e7258a714fdf
+#: 2ac728c4b18c43b98292c80031b5cd18
+msgid "rx_event.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ir.ref:13 4f507da3622f422d827110e9c1751f50
+#: 796b6fa4db2149859c08f93fddae24cf
+msgid "tx.svg"
+msgstr ""
+
+#: ../../en/units/ir.rst:6 3bc3fb602dd145f2b074daceea824e4f
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ir.rst:8 478f9d00ecc9484ebab8521b518af6f3
+msgid "|IR|"
+msgstr ""
+
+#: ../../en/units/ir.rst:11 76c9dc20165a44bc8ca8b1ea74a4ea37
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/ir.rst:29 29cebb3f608e4c39ac2bc9077ead4206
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ir.rst:31 054d362c99bf481295af87e24783cbdd
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/ir.rst:36 ef18f6c41b214764b8f91f573c0d369e
+msgid "|ir_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ir.rst:40 c35c72a5c51a4b48b7bd05dec7012174
+msgid "class IR"
+msgstr ""
+
+#: ../../en/units/ir.rst:43 9cc75d927ae94254b2bed07268cbeccd
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ir.rst:47 52e59e28361548dc9a00a9bef2e0a38b
+msgid "Create an IR object."
+msgstr ""
+
+#: ../../en/units/ir.rst:50 7005e46ea72e4719b9f85ae15562c415
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/ir.rst:50 2f27010ea79e4355b65621aa61346372
+msgid "``IO1,IO2`` Receive and transmit pin definitions."
+msgstr ""
+
+#: ../../en/units/ir.rst:52 ../../en/units/ir.rst:64 ../../en/units/ir.rst:73
+#: 5495a3eff59d4b7392274b3894d9071f de3e435e3b73447a9bfdd2def3973d1c
+#: e0f41c6e035640fcb441ab189fda35e3
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ir.rst:54 0342f3600d1d438eaea0b84902e19ce9
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/ir.rst:58 7a7a978a6cc64644bf447355c8c998cd
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ir.rst:62 edb3a5f08b6849918449d3db6f9f2a5a
+msgid "Sends an ir signal value to an address."
+msgstr ""
+
+#: ../../en/units/ir.rst:66 371e06493dac40d199ab1b3ee74e2e2b
+msgid "|tx.svg|"
+msgstr ""
+
+#: ../../en/units/ir.rst:71 65dc79e7fd8c4c548249d18392f3d32a
+msgid ""
+"Determine when the infrared signal is read and start to do some "
+"processing procedures."
+msgstr ""
+
+#: ../../en/units/ir.rst:75 8bca230f852346e995a1514f30d2490c
+msgid "|rx_event.svg|"
+msgstr ""
+

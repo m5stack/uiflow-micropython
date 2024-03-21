@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/controllers/dinmeter.rst:3 9f89479f4e004b86869d3c46e22e0789
+msgid "DinMeter"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:1 ce7d697850ff4a178750fb755c44d2bb
+#: d1354beb8fca4fa7894d92ecbf0e9733
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:3 54ef0b59d9de4989a96c7ff1287dd544
+#: 72d6590aa4cf42969fad276c2ba54ea5
+msgid "apprun.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:5 83ad417428344c2c94e357b4c7b848b3
+#: bd3e426ec09543e581d0b3176ea387e6
+msgid "develop.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:7 3e578ed018d843d9a6d672f436496621
+#: 544fbc01bafa45ba90fe07d7843d146f
+msgid "launcher.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:9 400fb97c9b914658bef4e2561dee4acf
+#: 647f3f9c8e384d0dbd7819277c388ab8
+msgid "setting.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:11 90cca68f17fb4e3f82634004294659f2
+#: a69c7cf57c944cc4955e10908c17413e
+msgid "wlan.png"
+msgstr ""
+
+#: ../../en/refs/controllers.dinmeter.ref:13 102240ada57e43a8a4be5904bdd55147
+#: 6e9ed92d056643ffb6ee32ecffe560d1
+msgid "general.png"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:9 d12223f7ec0f4bfba18b151d1aa72ef0
+msgid "Startup UI"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:12 12c31691d9aa4764be5e842ad7531829
+msgid "``ENCODER`` is used for menu selection."
+msgstr "``ENCODER`` 用于选择菜单。"
+
+#: ../../en/controllers/dinmeter.rst:13 bcf7115e353a48dd9e914fc46f632b7b
+msgid "``BtnA`` is used to execute menu items."
+msgstr "``BtnA`` 用于执行菜单项。"
+
+#: ../../en/controllers/dinmeter.rst:14 ../../en/controllers/dinmeter.rst:35
+#: ../../en/controllers/dinmeter.rst:46 ../../en/controllers/dinmeter.rst:57
+#: ../../en/controllers/dinmeter.rst:64 ../../en/controllers/dinmeter.rst:75
+#: ../../en/controllers/dinmeter.rst:88 2a296bf19c134ee5ac6fde18b1999853
+#: 2eb4570ac837471e9e985ed6a071f520 70152f6ecd97422b87e788215636af08
+#: 92f939e7e35841b08bbb7aa889159c70 98dce7096b424703a527b55d463a60dd
+#: ccf28ae3c2d8442eb35255f0b6a812f7 d5d4d2e7352b4b09bd11054b8ecca439
+msgid "Long press ``BtnA`` to exit the application."
+msgstr "``BtnA`` 长按退出应用程序。"
+
+#: ../../en/controllers/dinmeter.rst:15 3b2bb165348547f0b66cdac9f5341ab6
+msgid "``CardKB Unit`` is used for input."
+msgstr "``CardKB Unit`` 用于输入。"
+
+#: ../../en/controllers/dinmeter.rst:18 09222134db1547628099eb91301e6eda
+msgid "Launcher"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:20 0fa2c915675f4247bf64bb6b28bc8f19
+msgid "|launcher.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:22 ../../en/controllers/dinmeter.rst:31
+#: ../../en/controllers/dinmeter.rst:82 20d62133b73547d880d7fb2e9beb13e2
+#: b2d05259ec8a4cbe98bcdd3dfab9069e cba3dc80cca44c59a829d3cb9dadff3f
+msgid "``ENCODER`` cycles through available applications."
+msgstr "``ENCODER`` 循环浏览可用的应用程序。"
+
+#: ../../en/controllers/dinmeter.rst:24 ../../en/controllers/dinmeter.rst:33
+#: 2ee922948d714e2c80fdc668a3e64892 b803ef8ba14b4a328b7395ca5308499d
+msgid "``BtnA`` click to launch the selected application."
+msgstr "``BtnA`` 单击启动选定的应用程序。"
+
+#: ../../en/controllers/dinmeter.rst:27 9a1b0b232818413a8a7bf762286d8e4c
+msgid "Setting"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:29 17328dfb46c44851b30d3586a5a695cd
+msgid "|setting.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:38 4e3762e0ec1f48108a4aa959fbc935bd
+msgid "WLAN"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:40 d0e52338538f4754a40e70418cebf140
+msgid "|wlan.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:42 51a6697481e4440db9b9cba82c778c3e
+msgid "``ENCODER`` selects the corresponding input box or button."
+msgstr "``ENCODER`` 选择对应的输入框或者按键。"
+
+#: ../../en/controllers/dinmeter.rst:44 fd0b3e7351924ca3a97b8eea57d0b757
+msgid "``BtnA`` click to perform the corresponding action."
+msgstr "``BtnA`` 单击执行相应的动作。"
+
+#: ../../en/controllers/dinmeter.rst:49 e6bbd68c65cf4dd4ad4e7d5291b3538d
+msgid "General"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:51 d97e76a4b1d444faa56db243633ad285
+msgid "|general.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:53 bd242115297349bf95bfa71b840f236a
+msgid "``ENCODER`` selects menu."
+msgstr "``ENCODER`` 选择菜单。"
+
+#: ../../en/controllers/dinmeter.rst:55 cb5ff3341d5f416c9dd4530e12368b26
+msgid "``BtnA`` click to set."
+msgstr "``BtnA`` 单击设置。"
+
+#: ../../en/controllers/dinmeter.rst:60 cfe9233c083643928ef452229e999629
+msgid "Develop"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:62 44cbf34089174995b654e5a5300dd9b6
+msgid "|develop.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:67 aea71bdf307647efb64718c4e0ef90c8
+msgid "APP.RUN"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:69 58d2e16572c249eda559feb60ff154cb
+msgid "|apprun.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:71 7cea9ffa1e414c518265131eadf7702e
+msgid "``ENCODER`` selects the corresponding action."
+msgstr "``ENCODER`` 选择对应的执行动作。"
+
+#: ../../en/controllers/dinmeter.rst:73 71b72ef5c33044eea2b72fda92ef6b41
+msgid "``BtnA`` click to run main.py according to the corresponding action."
+msgstr "``BtnA`` 单击按照对应的动作运行 main.py 。"
+
+#: ../../en/controllers/dinmeter.rst:78 f9b930dcf10f4090995ecee6b70a3983
+msgid "APP.LIST"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:80 2b7f452925784dcfa3e4ee495977b807
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/controllers/dinmeter.rst:84 3fea888cc19340a0bbe8e5bcf18a90d5
+msgid "``BtnA`` click to run the application once."
+msgstr "``BtnA`` 单击运行应用程序一次。"
+
+#: ../../en/controllers/dinmeter.rst:86 fca35cbb42aa4b599c0335f1c509265d
+msgid "Double click ``BtnA`` to always run the application."
+msgstr "``BtnA`` 双击始终运行应用程序。"
+

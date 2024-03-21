@@ -1,4 +1,7 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # startup script
 import os
 import M5
@@ -97,6 +100,21 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd, timeout)
+        elif board_id in (
+            M5.BOARD.M5Atom,
+            M5.BOARD.M5StampPico,
+            M5.BOARD.M5AtomU,
+            M5.BOARD.M5AtomEcho,
+        ):
+            from .atoms3lite import AtomS3Lite_Startup
+
+            atomlite = AtomS3Lite_Startup()
+            atomlite.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5AtomMatrix:
+            from .atommatrix import AtomMatrix_Startup
+
+            atommatrix = AtomMatrix_Startup()
+            atommatrix.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5AtomS3Lite:
             from .atoms3lite import AtomS3Lite_Startup
 
@@ -185,6 +203,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             stickc = StickC_Startup()
             stickc.startup(ssid, pswd, timeout)
+
+        elif board_id == M5.BOARD.M5Station:
+            from .station import Station_Startup
+
+            station = Station_Startup()
+            station.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:

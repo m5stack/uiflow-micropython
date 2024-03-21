@@ -11,10 +11,12 @@ pip3 install -r requirements.txt
 ## 编译
 
 ```shell
-make SOURCEDIR=zh_CN html # 简体中文
-make SOURCEDIR=en html # English
+sphinx-build -b gettext ./en build/gettext
+sphinx-intl update -p ./build/gettext -l zh_CN
+sphinx-build -b html -D language=zh_CN ./en/ build/html/zh_CN # 简体中文
+sphinx-build -b html -D language=en ./en/ build/html/en # English
 ```
 
 ## 预览
 
-打开 build/zh_CN/html/index.html，即可在浏览器上预览。
+打开 build/html/zh_CN/index.html，即可在浏览器上预览。
