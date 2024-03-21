@@ -8,7 +8,7 @@ from .module_helper import ModuleError
 import struct
 
 
-class PPS:
+class PPSModule:
     """! Programmable Power Supply (PPS), supports output up to 30V 5A.
 
     @en The Programmable Power Supply (PPS), capable of providing an output up to 30V and 5A. It allows for precise control over the output voltage and current, with features to read back the actual output values and the module's status.
