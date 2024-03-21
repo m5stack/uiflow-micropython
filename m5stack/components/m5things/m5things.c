@@ -365,6 +365,16 @@ static void mqtt_ping_report() {
 
     size_t len = 0;
 
+    #if CONFIG_IDF_TARGET_ESP32 && CONFIG_ESP32_SPIRAM_SUPPORT && BOARD_ID == 1
+    len = sprintf(
+        mqtt_report_buf,
+        "{\"status\":\"online\",\"system\":{\"free_heap\":%lu}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
+        esp_get_free_heap_size(),
+        BOARD_ID,
+        "fire",
+        running_app_info.version
+        );
+    #else
     len = sprintf(
         mqtt_report_buf,
         "{\"status\":\"online\",\"system\":{\"free_heap\":%lu}, \"board_type\":%d, \"board\":\"%s\", \"version\":\"%s\"}",
@@ -373,6 +383,7 @@ static void mqtt_ping_report() {
         boards[BOARD_ID],
         running_app_info.version
         );
+    #endif
 
     esp_mqtt_client_publish(
         m5things_mqtt_client,
