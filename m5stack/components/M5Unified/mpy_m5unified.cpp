@@ -90,6 +90,7 @@ static void m5_config_helper_module_display(mp_obj_t config_obj, m5::M5Unified::
     }
 }
 
+#if CONFIG_IDF_TARGET_ESP32
 static void m5_config_helper_module_rca(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
     if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
         mp_raise_TypeError("module_rca must be a dict");
@@ -126,6 +127,7 @@ static void m5_config_helper_module_rca(mp_obj_t config_obj, m5::M5Unified::conf
         }
     }
 }
+#endif
 
 static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
     mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
@@ -139,9 +141,12 @@ static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) 
 
             if (strcmp(key_str, "module_display") == 0) {
                 m5_config_helper_module_display(value, cfg);
-            } else if (strcmp(key_str, "module_rca") == 0) {
+            }
+            #if CONFIG_IDF_TARGET_ESP32
+            else if (strcmp(key_str, "module_rca") == 0) {
                 m5_config_helper_module_rca(value, cfg);
             }
+            #endif
         }
     }
 }
@@ -169,7 +174,9 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
         } else {
             mp_raise_NotImplementedError("module_display is not supported on this board");
         }
-    } else if (cfg.external_display.module_rca) {
+    }
+    #if CONFIG_IDF_TARGET_ESP32
+    else if (cfg.external_display.module_rca) {
         if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough) {
             M5ModuleRCA dsp(cfg.module_rca);
             if (dsp.init()) {
@@ -180,6 +187,7 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
             mp_raise_NotImplementedError("module_rca is not supported on this board");
         }
     }
+    #endif
 
     return m5_getDisplay(mp_obj_new_int(M5.getDisplayCount() - 1));
 }
