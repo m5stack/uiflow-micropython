@@ -49,7 +49,7 @@ class PPS:
     OUT_CV_MODE = 1
     OUT_CC_MODE = 2
 
-    def __init__(self, addr=0x35):
+    def __init__(self, address=0x35):
         """! Initialize the PPS.
 
         @param port I2C port to use.
@@ -57,7 +57,7 @@ class PPS:
         """
 
         self.i2c = i2c1
-        self.addr = addr
+        self.addr = address
 
         # Check if the devices are connected and accessible
         self._available()
