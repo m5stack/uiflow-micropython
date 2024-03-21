@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/earth.rst:2 704197d7ea5245eb8546b637cd4cc643
+msgid "EARTH Unit"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref d21315732ca04a9db3d705f7fa2ddf28
+#: e48636439e1b430aad00b4fc418475f0
+msgid "EARTH"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:7 32ed8a71e2f74347a954d8d0e8aed7f1
+#: 3a3ae128f03049319ae72ce7086fc3f5
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:9 136d52f1e1a14abaab801c575e3838a4
+#: 3d8b5c84ccf34454b34329a454a86061
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:11 b9b6687109284878836f1ea2246de394
+#: e07000e3d62e484d916622a080ed07d1
+msgid "get_analog_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:13 7774dfcb110f4a2eae00437df1cdd56c
+#: d482541a2e1e40a39ce3e99b60fea45d
+msgid "get_digital_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:15 5cbeb568b5a04f178eb8c97968903c8f
+#: 9459b1c97eb74cfca8745dc2e8825ce1
+msgid "get_voltage_mv.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:17 25d721310c06429bbe5e44a91104a648
+#: ac0cff54a34e4b1d9b305e986cc4d921
+msgid "humidity.svg"
+msgstr ""
+
+#: ../../en/refs/unit.earth.ref:19 1c436a9cacb443cbb931682d28553666
+#: 42fe83e1070d4792be5a7295f8ec254b
+msgid "set_calibrate.svg"
+msgstr ""
+
+#: ../../en/units/earth.rst:6 7bab97ddffbc4b368c2abea3523abdb4
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/earth.rst:8 67df32dc0092423aa888663c7bdaee79
+msgid "|EARTH|"
+msgstr ""
+
+#: ../../en/units/earth.rst:11 96565f1bfc344946bf9701451521c0c8
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/earth.rst:23 e07f1ee6f47d406bbb98517a347151c8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/earth.rst:25 f6de240c2d364e5abc203dc2f845959b
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:30 fdad5c5bb95c49b8bbf223a78631b936
+msgid "|earth_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/earth.rst:34 0c0faaaf55034a2fb1f2a28dd655c24c
+msgid "class Earth"
+msgstr ""
+
+#: ../../en/units/earth.rst:37 873aec07e7a54257b78c790c3730acec
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/earth.rst:41 8583abd4c42c48df8628589bccb2e34f
+msgid "Create an Earth object."
+msgstr ""
+
+#: ../../en/units/earth.rst:44 6e0807f80bd64317ab40fbe4d2b20ab1
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/earth.rst:44 d0e5f12f7ff84ff999a72939130e227a
+msgid "``port`` Is the pin number of the port"
+msgstr ""
+
+#: ../../en/units/earth.rst:46 ../../en/units/earth.rst:58
+#: ../../en/units/earth.rst:67 ../../en/units/earth.rst:76
+#: ../../en/units/earth.rst:85 ../../en/units/earth.rst:94
+#: 2625a55017474275880e8e8e59bef759 45863efe75b749be920851c27cfb2e90
+#: ac10e8befaec427c8eb29e2970d7b52d eb7492c21269419e85361f08de10fe63
+#: f64439d26a374071b774dd1c01f5491f f6d4934ab9304ec9880f9f9903197f49
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/earth.rst:48 41ab3afe4df74e4c92a412512c249527
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:52 1e9ea8ab37e048dbafd78a6bb480de06
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/earth.rst:56 91f0a3cedafc4fafbc9827bbccfab4a4
+msgid ""
+"This method allows you to read the analog captured by EARTH and return an"
+" integer value. The value ranges from 0 to 65535."
+msgstr ""
+
+#: ../../en/units/earth.rst:60 70be57ced8b14e989781c8273bccc0a2
+msgid "|get_analog_value.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:65 08811fff6a2549598d05f12bda68d308
+msgid ""
+"This method allows you to read the amount of numbers collected by EARTH "
+"and return an integer value. The value ranges from 0 to 1."
+msgstr ""
+
+#: ../../en/units/earth.rst:69 614f1aa02b134d479db021ed68869a71
+msgid "|get_digital_value.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:74 5ee55480f1cd44d6b8cf7835095a5ba1
+msgid ""
+"This method allows you to read the voltage value collected by EARTH and "
+"return an integer value. It ranges from 0 to 3300."
+msgstr ""
+
+#: ../../en/units/earth.rst:78 38aa456b27564b9d9d5d64a733ee9129
+msgid "|get_voltage_mv.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:83 9dfe3a4faf154c4d8721930fe3dfbfca
+msgid ""
+"This method allows you to read the voltage value collected by EARTH and "
+"return a floating-point value. Range 0.0 to 1.0."
+msgstr ""
+
+#: ../../en/units/earth.rst:87 3effec9bdd994cd1bd5b3146f41832bd
+msgid "|humidity.svg|"
+msgstr ""
+
+#: ../../en/units/earth.rst:92 525a361b98694b4cbeee3edc854a6d23
+msgid ""
+"This method allows setting the maximum (0-3300) and minimum (0-3300) "
+"values for calibrating the EARTH sensor."
+msgstr ""
+
+#: ../../en/units/earth.rst:96 876ee003a2e94478a5225d9c13cbf690
+msgid "|set_calibrate.svg|"
+msgstr ""
+

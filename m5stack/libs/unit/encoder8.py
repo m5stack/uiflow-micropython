@@ -1,14 +1,12 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 from machine import I2C
 import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 ENCODER8_ADDR = 0x41
@@ -31,13 +29,20 @@ TOTAL_LED = 9
 
 
 class ENCODER8Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr: int = ENCODER8_ADDR) -> None:
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        slave_addr: int = ENCODER8_ADDR,
+        address: int | list | tuple = 0x59,
+    ) -> None:
         """
         Encoder 8 Channel Initialize Function
         Set I2C port
         """
+        # TODO: 2.0.6 移除 slave_addr 参数
+        address = slave_addr
         self.encoder8_i2c = i2c
-        self.init_i2c_address(slave_addr)
+        self.init_i2c_address(address)
 
     def init_i2c_address(self, slave_addr: int = ENCODER8_ADDR) -> None:
         """
@@ -54,63 +59,63 @@ class ENCODER8Unit:
         else:
             raise UnitError("Encoder 8 unit maybe not connect")
 
-    def get_counter_value(self, Channel: int = 1) -> int:
+    def get_counter_value(self, channel: int = 1) -> int:
         """
         get counter value
         Channels: 1 - 8
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel *= 4
-        if not (Channel >= CNT_START_REG and Channel <= CNT_END_REG):
-            Channel = CNT_START_REG
-        buf = self.read_reg_data(Channel, 4)
+        channel = min(8, max(channel, 1)) - 1
+        channel *= 4
+        if not (channel >= CNT_START_REG and channel <= CNT_END_REG):
+            channel = CNT_START_REG
+        buf = self.read_reg_data(channel, 4)
         return struct.unpack("<i", buf)[0]
 
-    def set_counter_value(self, Channel: int = 1, value: int = 0) -> None:
+    def set_counter_value(self, channel: int = 1, value: int = 0) -> None:
         """
         set counter value
         Channels: 1 - 8
         value: int
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel *= 4
-        if not (Channel >= CNT_START_REG and Channel <= CNT_END_REG):
-            Channel = CNT_START_REG
-        self.write_reg_data(Channel, struct.pack("<i", value))
+        channel = min(8, max(channel, 1)) - 1
+        channel *= 4
+        if not (channel >= CNT_START_REG and channel <= CNT_END_REG):
+            channel = CNT_START_REG
+        self.write_reg_data(channel, struct.pack("<i", value))
 
-    def get_increment_value(self, Channel: int = 1) -> int:
+    def get_increment_value(self, channel: int = 1) -> int:
         """
         get increment value
         Channels: 1 - 8
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel = INC_START_REG + (Channel * 4)
-        if not (Channel >= INC_START_REG and Channel <= INC_END_REG):
-            Channel = INC_START_REG
-        buf = self.read_reg_data(Channel, 4)
+        channel = min(8, max(channel, 1)) - 1
+        channel = INC_START_REG + (channel * 4)
+        if not (channel >= INC_START_REG and channel <= INC_END_REG):
+            channel = INC_START_REG
+        buf = self.read_reg_data(channel, 4)
         return struct.unpack("<i", buf)[0]
 
-    def reset_counter_value(self, Channel: int = 1) -> None:
+    def reset_counter_value(self, channel: int = 1) -> None:
         """
         reset counter value
         Channels: 1 - 8
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel += CNT_RST_START_REG
-        if not (Channel >= CNT_RST_START_REG and Channel <= CNT_RST_END_REG):
-            Channel = CNT_RST_START_REG
-        self.write_reg_data(Channel, [0x01])
+        channel = min(8, max(channel, 1)) - 1
+        channel += CNT_RST_START_REG
+        if not (channel >= CNT_RST_START_REG and channel <= CNT_RST_END_REG):
+            channel = CNT_RST_START_REG
+        self.write_reg_data(channel, [0x01])
 
-    def get_button_status(self, Channel: int = 1) -> bool:
+    def get_button_status(self, channel: int = 1) -> bool:
         """
         get_button_status
         Channels: 1 - 8
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel += BUTTON_START_REG
-        if not (Channel >= BUTTON_START_REG and Channel <= BUTTON_END_REG):
-            Channel = BUTTON_START_REG
-        return bool(self.read_reg_data(Channel, 1)[0])
+        channel = min(8, max(channel, 1)) - 1
+        channel += BUTTON_START_REG
+        if not (channel >= BUTTON_START_REG and channel <= BUTTON_END_REG):
+            channel = BUTTON_START_REG
+        return bool(self.read_reg_data(channel, 1)[0])
 
     def get_switch_status(self) -> bool:
         """
@@ -118,22 +123,22 @@ class ENCODER8Unit:
         """
         return bool(self.read_reg_data(SWITCH_REG, 1)[0])
 
-    def set_led_rgb(self, Channel: int = 1, rgb: int = 0) -> None:
+    def set_led_rgb(self, channel: int = 1, rgb: int = 0) -> None:
         """
         Set Neo Pixel RGB LED Color
-        Channel: 1 - 8
+        channel: 1 - 8
         rgb: 0 - 0xffffff
         """
-        Channel = min(8, max(Channel, 1)) - 1
-        Channel = RGB_START_REG + (Channel * 3)
-        if not (Channel >= RGB_START_REG and Channel <= RGB_END_REG):
-            Channel = RGB_START_REG
-        self.write_reg_data(Channel, rgb.to_bytes(3, "big"))
+        channel = min(8, max(channel, 1)) - 1
+        channel = RGB_START_REG + (channel * 3)
+        if not (channel >= RGB_START_REG and channel <= RGB_END_REG):
+            channel = RGB_START_REG
+        self.write_reg_data(channel, rgb.to_bytes(3, "big"))
 
     def set_led_rgb_from(self, begin: int = 0, end: int = 0, rgb: int = 0) -> None:
         """
         Set Neo Pixel RGB LED Color
-        Channel: 1 - 8
+        channel: 1 - 8
         rgb: 0 - 0xffffff
         """
         begin = min(TOTAL_LED, max(begin, 0))
@@ -178,3 +183,8 @@ class ENCODER8Unit:
 
     def deinit(self):
         pass
+
+
+class Encoder8Unit(ENCODER8Unit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = ENCODER8_ADDR) -> None:
+        super().__init__(i2c, slave_addr=address)

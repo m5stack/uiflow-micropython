@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase, generator, AppSelector, Descriptor
 import M5
 from widgets.image import Image
@@ -38,8 +42,8 @@ class WiFiSetting(AppBase):
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
-        self._ssid_label.setText(self.ssid)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_text(self.ssid)
 
         self._psk_label = Label(
             "pwd",
@@ -52,11 +56,11 @@ class WiFiSetting(AppBase):
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._psk_label.setLongMode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(Label.LONG_DOT)
         if len(self.ssid):
-            self._psk_label.setText("*" * 20)
+            self._psk_label.set_text("*" * 20)
         else:
-            self._psk_label.setText("")
+            self._psk_label.set_text("")
 
         self._server_label = Label(
             "server",
@@ -69,8 +73,8 @@ class WiFiSetting(AppBase):
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
-        self._server_label.setText(self.server)
+        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_text(self.server)
 
         self._option_views = generator(
             (
@@ -130,79 +134,79 @@ class WiFiSetting(AppBase):
         if event.key == KeyCode.KEYCODE_BACKSPACE and self._option in (0, 1, 2):
             if self._option == 0:
                 self.ssid_tmp = self.ssid_tmp[:-1]
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.psk_tmp == self.psk and len(self.psk):
                     self.psk_tmp = ""
                 else:
                     self.psk_tmp = self.psk_tmp[:-1]
-                self._psk_label.setText(self.psk_tmp)
+                self._psk_label.set_text(self.psk_tmp)
             elif self._option == 2:
                 self.server_tmp = self.server_tmp[:-1]
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
         elif event.key >= 0x20 and event.key <= 126:
             if self._option == 0:
                 self.ssid_tmp += chr(event.key)
-                self._ssid_label.setText(self.ssid_tmp)
+                self._ssid_label.set_text(self.ssid_tmp)
             elif self._option == 1:
                 if self.psk_tmp == self.psk and len(self.psk):
                     self.psk_tmp = ""
                 else:
                     self.psk_tmp += chr(event.key)
-                self._psk_label.setText(self.psk_tmp)
+                self._psk_label.set_text(self.psk_tmp)
             elif self._option == 2:
                 self.server_tmp += chr(event.key)
-                self._server_label.setText(self.server_tmp)
+                self._server_label.set_text(self.server_tmp)
             event.status = True
 
     def _select_default_option(self):
         self._bg_img.set_src("/system/cores3/Setting/wifiServer.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._psk_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._psk_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
         self._bg_img.set_src("/system/cores3/Setting/ssid.png")
-        self._ssid_label.setTextColor(0x000000, 0xDCDDDD)
-        self._psk_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xDCDDDD)
+        self._psk_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_psk_option(self):
         self._bg_img.set_src("/system/cores3/Setting/pass.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._psk_label.setTextColor(0x000000, 0xDCDDDD)
-        self._server_label.setTextColor(0x000000, 0xFEFEFE)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._psk_label.set_text_color(0x000000, 0xDCDDDD)
+        self._server_label.set_text_color(0x000000, 0xFEFEFE)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
         self._bg_img.set_src("/system/cores3/Setting/server.png")
-        self._ssid_label.setTextColor(0x000000, 0xFEFEFE)
-        self._psk_label.setTextColor(0x000000, 0xFEFEFE)
-        self._server_label.setTextColor(0x000000, 0xDCDDDD)
-        self._ssid_label.setText(self.ssid_tmp)
-        if len(self.psk_tmp) is 0:
-            self._psk_label.setText("")
+        self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
+        self._psk_label.set_text_color(0x000000, 0xFEFEFE)
+        self._server_label.set_text_color(0x000000, 0xDCDDDD)
+        self._ssid_label.set_text(self.ssid_tmp)
+        if len(self.psk_tmp) == 0:
+            self._psk_label.set_text("")
         else:
-            self._psk_label.setText("*" * 20)
-        self._server_label.setText(self.server_tmp)
+            self._psk_label.set_text("*" * 20)
+        self._server_label.set_text(self.server_tmp)
 
     def _handle_option_button(self, fw):
         self._option, view_fn = next(self._option_views)
@@ -277,7 +281,7 @@ class BatteryChargeSetting(AppBase):
         self._origin_x = 4
         self._origin_y = 4 + 108 + 4
 
-        if hasattr(self, "_option_img") == False:
+        if hasattr(self, "_option_img") is False:
             self._option_img = Image(use_sprite=False, parent=self._lcd)
             self._option_img.set_pos(self._origin_x, self._origin_y)
             self._option_img.set_size(60, 44)

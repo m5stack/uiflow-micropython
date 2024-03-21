@@ -113,7 +113,8 @@ Methods
 
     .. note:: Cannot be used simultaneously with :meth:`Rotary.get_rotary_increments()`.
 
-    Gets the rotation value of the Rotary object.
+    Gets the rotation increment of the Rotary object. Can be used to determine
+    the direction of rotation.
 
     UIFLOW2:
 

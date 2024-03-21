@@ -1,10 +1,15 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 """
-    Refer to https://github.com/fluxly/Fluxamasynth.
+Refer to https://github.com/fluxly/Fluxamasynth.
 """
-
 
 from machine import UART, Pin
+import sys
 
+if sys.platform != "esp32":
+    from typing import Literal
 
 MIDI_CMD_NOTE_OFF = 0x80  # Note Off
 MIDI_CMD_NOTE_ON = 0x90  # Note On
@@ -47,21 +52,21 @@ DRUM_SET = {
     "Hand Clap": [39, 1],
     "Brush Slap": [39, 41],
     "Castanets": [39, 49],
-    "Hand Clap": [39, 128],
-    "Snare Drum 2": [40, 1],
+    "Hand Clap": [39, 128],  # noqa: F601
+    "Snare Drum 2": [40, 1],  # noqa: F601
     "Brush Swirl": [40, 41],
-    "Snare Drum 2": [40, 49],
+    "Snare Drum 2": [40, 49],  # noqa: F601
     "Elec Snare Drum": [40, 128],
     "Low Floor Tom": [41, 1],
     "Timpani F": [41, 49],
     "Acoustic Low Tom": [41, 128],
-    "Closed Hi Hat [EXC1]": [42, 1],
+    "Closed Hi Hat [EXC1]": [42, 1],  # noqa: F601
     "Timpani F#": [42, 49],
     "Closed Hi-Hat [Exc1]": [42, 128],
     "High Floor Tom": [43, 49],
     "Timpani G": [43, 49],
-    "Acoustic Low Tom": [43, 128],
-    "Pedal Hi-Hat [EXC1]": [44, 1],
+    "Acoustic Low Tom": [43, 128],  # noqa: F601
+    "Pedal Hi-Hat [EXC1]": [44, 1],  # noqa: F601
     "Timpani G#": [44, 49],
     "Open Hi-Hat 2": [44, 128],
     "Low Tom": [45, 1],
@@ -72,7 +77,7 @@ DRUM_SET = {
     "Open Hi-Hat 1 [Exc1]": [46, 128],
     "Low-Mid Tom": [47, 1],
     "Timpani B": [47, 49],
-    "Acoustic Middle Tom": [47, 128],
+    "Acoustic Middle Tom": [47, 128],  # noqa: F601
     "Hi Mid Tom": [48, 1],
     "Timpani c": [48, 49],
     "Acoustic High Tom": [48, 128],
@@ -81,10 +86,10 @@ DRUM_SET = {
     "Crash Cymbal": [49, 128],
     "High Tom": [50, 1],
     "Timpani d": [50, 49],
-    "Acoustic High Tom": [50, 128],
+    "Acoustic High Tom": [50, 128],  # noqa: F601
     "Ride Cymbal 1": [51, 1],
     "Timpani d#": [51, 49],
-    "Ride Cymbal": [51, 128],
+    "Ride Cymbal": [51, 128],  # noqa: F601
     "Chinese Cymbal": [52, 1],
     "Timpani e": [52, 49],
     "Ride Bell": [53, 1],
@@ -131,9 +136,11 @@ DRUM_SET = {
 
 
 class SYNTHUnit:
-    def __init__(self, port, port_id=1):
-        Pinx = Pin(port[0], Pin.IN, Pin.PULL_UP)
-        self._uart = UART(port_id, tx=port[1], rx=port[0])
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, port_id=1):
+        # TODO: 2.0.6 移除 port_id 参数
+        id = port_id
+        Pin(port[0], Pin.IN, Pin.PULL_UP)
+        self._uart = UART(id, tx=port[1], rx=port[0])
         self._uart.init(31250, bits=8, parity=None, stop=1)
 
     def set_note_on(self, channel, pitch, velocity):
@@ -268,7 +275,6 @@ class SYNTHUnit:
         medhighfreq,
         highfreq,
     ):
-
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,
@@ -453,3 +459,8 @@ class SYNTHUnit:
 
     def map(self, x, in_min, in_max, out_min, out_max):
         return round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+
+
+class SynthUnit(SYNTHUnit):
+    def __init__(self, id: Literal[0, 1, 2], port: list | tuple):
+        super().__init__(port, id)

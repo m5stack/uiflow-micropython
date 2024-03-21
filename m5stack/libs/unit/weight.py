@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import Pin
 import time
 from micropython import const
@@ -71,3 +75,8 @@ class WEIGHTUnit:
             time.sleep_us(1)
             self.hx711clk.value(0)
             time.sleep_us(1)
+
+
+class WeightUnit(WEIGHTUnit):
+    def __init__(self, port) -> None:
+        super().__init__(port)

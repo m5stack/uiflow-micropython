@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-12 09:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/hardware/imu.rst:2 9b60141a4c534ec292b0f31a3d80ca92
+msgid "IMU"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:7 e736d4a32af2473190ad7ed476e39392
+msgid ""
+"IMU is used to control the built-in accelerometer and gyroscope inside "
+"the host device. Below is the detailed IMU support for the host:"
+msgstr "IMU 用于控制主机内部集成加速计与陀螺仪的按键。以下是主机的 IMU 支持详细："
+
+#: ../../en/hardware/imu.rst:15 1aa9b9ebee594acd85ba20e53cd0d871
+msgid "MPU6886"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:15 3e4955b589ca4e8b98235ecc115fd402
+msgid "BMI270"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:15 5f9ae66e3e024ca28372e81f278ee68b
+msgid "BMM150"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:17 4cf6676209c1461e98cbd1f8509f72a5
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:17 ../../en/hardware/imu.rst:25
+#: ../../en/hardware/imu.rst:27 ../../en/hardware/imu.rst:31
+#: ../../en/hardware/imu.rst:33 1d98524485774e8eb20263c0034f307b
+#: 2f7ce5df36c647b7b4183e400cf50997 749eb7aec7a44a4d92de3070d1b3188c
+#: 84afa24fae1b4a11ae515d542df4f842 cb19847f4fc1470f8f308b79300701fc
+#: e1c330731da549b4b272210a8504e073
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:19 3127293ba4fd4135903d4858893cfeab
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:21 cead15a6348d4a0989a717dbdeb2a625
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:23 1c786da3307c47a8ad086c6ece3fe876
+msgid "StampS3"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:25 e6c2d826b4d442a1b5c37d7467445f3e
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:27 a83ea819bc0845dd86b2432a821557f4
+msgid "Core2"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:29 e9036e6993334396b4dab4e4b25ed95b
+msgid "TOUGH"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:31 4d7135c401b64ed0b7d0f01c067f92fd
+msgid "StickC Plus"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:33 fc0e0af91dca429788d68529a77d7e7f
+msgid "StickC Plus2"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:39 d902a127f26b4146ba06d1234ed5baac
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:44 40a42db0bd384500801612bf288c7fa8
+msgid "UIFLOW2 Example::"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:50 f95ef88ee77c4c888ef3470eeca8cf00
+msgid "class IMU"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:54 bdd859f1b28e449690a17d293c45d81a
+msgid ""
+"Methods of the IMU Class heavily rely on ``M5.begin()`` |M5.begin.svg| "
+"and ``M5.update()`` |M5.update.svg|."
+msgstr "IMU Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` |M5.update.svg|。"
+
+#: ../../en/refs/system.ref:1 25b9aee5cab9457187590805670957be
+#: 67ea03ccfaa342099de30793b58196df
+msgid "M5.begin.svg"
+msgstr ""
+
+#: ../../en/refs/system.ref:3 64d0b886175a42c0a8548b676ffd3b46
+#: f7aa70ec942f4f0c96c6f87a7f89466a
+msgid "M5.update.svg"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:56 a168f08dbb9d44cf94a0fd7559c6f768
+msgid ""
+"All calls to methods of IMU objects should be placed after ``M5.begin()``"
+" |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in "
+"the main loop."
+msgstr "调用 IMU 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在主循环中调用 ``M5.update()`` |M5.update.svg|。"
+
+#: ../../en/hardware/imu.rst:60 a9cc60c239d346f69aedda4e3ccaea76
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:64 62b57eecff9f486c90bc60e9ee60ca4f
+msgid "Get the tuple of x, y, and z values of the accelerometer."
+msgstr "获取加速度计的 x、y 和 z 值的三元组。"
+
+#: ../../en/hardware/imu.rst:66 ../../en/hardware/imu.rst:75
+#: ../../en/hardware/imu.rst:84 ../../en/hardware/imu.rst:93
+#: a10d4c6d757647f6a11dc2082eeb4295 a65e786cce1c48b49d8ea47fa4e40a1b
+#: d99e4669adb44630ac9c0e0ea8fd45c9 fbf3d890931e49feb9a18e635b67be04
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:68 9d36986008b94020b4f370674edfb70e
+msgid "|getAccel.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.imu.ref:2 c07ca6bfb8064ca582010285d7bf7b7f
+msgid "getAccel.svg"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:73 3a83895dd685423380429e6c0ccf2c4c
+msgid "Get the tuple of x, y, and z values of the gyroscope."
+msgstr "获取角速度传感器（陀螺仪）的 x、y 和 z 值的三元组。"
+
+#: ../../en/hardware/imu.rst:77 a091e0e125b34c7baa5cc0947b994dae
+msgid "|getGyro.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.imu.ref:4 1e2a0f907bde4269a6535c33f9a3f504
+msgid "getGyro.svg"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:82 46a31c3591884c8c8aff92a5dfd4118a
+msgid "Get whether the IMU object is enabled."
+msgstr "获取 IMU 对象是否使能。"
+
+#: ../../en/hardware/imu.rst:86 ../../en/hardware/imu.rst:95
+#: 04222f9f3dd24061b6a50a661f9bdceb f2b9f85e77f94feeb91a02ad5c41a742
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:91 eadc5829d58c4eafbf6652b04bb949e6
+msgid "Get the chip model of the IMU."
+msgstr "获取 IMU 的芯片型号。"
+
+#: ../../en/hardware/imu.rst:99 c5435655ecd64ea1a14b11412fd39c22
+msgid "class IMU_TYPE"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:102 5b4dbc5e9f4a4f90bc641d6a3d9f3a18
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hardware/imu.rst:113 4837af6258524c6e97d55a8c0c9b9b83
+msgid "The model of the IMU."
+msgstr "IMU 的型号。"
+
+#~ msgid "IMU 用于控制主机内部集成加速计与陀螺仪的按键。以下是主机的 IMU 支持详细："
+#~ msgstr ""
+
+#~ msgid ""
+#~ "IMU Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| "
+#~ "和 ``M5.update()`` |M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "调用 IMU 对象的所有方法，需要放在 ``M5.begin()`` "
+#~ "|M5.begin.svg| 的后面， 并在主循环中调用 ``M5.update()`` "
+#~ "|M5.update.svg|。"
+#~ msgstr ""
+
+#~ msgid "获取加速度计的 x、y 和 z 值的三元组。"
+#~ msgstr ""
+
+#~ msgid "获取角速度传感器（陀螺仪）的 x、y 和 z 值的三元组。"
+#~ msgstr ""
+
+#~ msgid "获取 IMU 对象是否使能。"
+#~ msgstr ""
+
+#~ msgid "获取 IMU 的芯片型号。"
+#~ msgstr ""
+
+#~ msgid "IMU 的型号。"
+#~ msgstr ""
+

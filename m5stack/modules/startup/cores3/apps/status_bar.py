@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from widgets.label import Label
 from widgets.image import Image
@@ -72,7 +76,7 @@ class StatusBarApp(AppBase):
             bg_color=0xEEEEEF,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
-        self._time_label.setText(self._time_text)
+        self._time_label.set_text(self._time_text)
 
         self._network_img = Image(use_sprite=False)
         self._network_img.set_pos(320 - 56 - 20 - 5 - 20 - 5, 0)
@@ -99,14 +103,14 @@ class StatusBarApp(AppBase):
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-10.vlw",
         )
-        self._battery_label.setText(self._battery_text)
+        self._battery_label.set_text(self._battery_text)
 
     async def on_run(self):
         refresh = False
         while True:
             t = self._get_local_time_text()
             if t != self._time_text:
-                self._time_label.setText(t)
+                self._time_label.set_text(t)
                 self._time_text = t
 
             t = self._get_network_status()
@@ -126,14 +130,14 @@ class StatusBarApp(AppBase):
 
             t = self._get_battery_text(M5.Power.getBatteryLevel())
             if t != self._battery_text or refresh:
-                self._battery_label.setText(t)
+                self._battery_label.set_text(t)
                 self._battery_text = t
                 refresh = False
 
             await asyncio.sleep_ms(5000)
 
     def _update_time(self, struct_time):
-        self._time_label.setText("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
+        self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
         self._wifi_status = status

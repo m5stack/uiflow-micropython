@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2013-2014 micropython-lib contributors
+#
+# SPDX-License-Identifier: MIT
+
 import utime
 from . import simple
 

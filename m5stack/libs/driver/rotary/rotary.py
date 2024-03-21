@@ -1,5 +1,6 @@
 # MIT License (MIT)
 # Copyright (c) 2022 Mike Teachman
+# Copyright (c) 2024 M5Stack Technology CO LTD
 # https://opensource.org/licenses/MIT
 
 # Platform-independent MicroPython code for the rotary encoder module

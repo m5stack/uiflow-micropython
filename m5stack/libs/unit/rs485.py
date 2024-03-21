@@ -1,8 +1,13 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from driver.modbus.master.uSerial import uSerial
 
 
 class RS485Unit(uSerial):
-    def __init__(self, port, debug=False):
+    def __init__(self, id=1, port=None, debug=False):
+        self._id = id
         self._port = port
         self._debug = debug
 
@@ -17,9 +22,9 @@ class RS485Unit(uSerial):
         parity=None,
         ctrl_pin=None,
     ):
-        if tx_pin != None and rx_pin != None:
+        if tx_pin is not None and rx_pin is not None:
             self._port = (rx_pin, tx_pin)
-        if data_bits == None and stop_bits == None:
+        if data_bits is None and stop_bits is None:
             data_bits = 8
             stop_bits = 1
         super().__init__(

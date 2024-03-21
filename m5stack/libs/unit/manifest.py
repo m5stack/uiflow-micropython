@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 package(
     "unit",
     (
@@ -52,7 +55,8 @@ package(
         "ameter.py",
         "weight_i2c.py",
         "kmeter_iso.py",
+        "thermal2.py",
     ),
     base_path="..",
-    opt=0,
+    opt=3,
 )

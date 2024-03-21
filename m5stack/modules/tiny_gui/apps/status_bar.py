@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 class StatusBarApp:
     def __init__(self, icos: dict, wifi) -> None:
         self.id = 0
@@ -42,7 +45,7 @@ class StatusBarApp:
         self.handle(None, None)
 
     def _update_time(self, struct_time):
-        self._time_label.setText("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
+        self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
         self._wifi_status = status
@@ -70,7 +73,7 @@ class StatusBarApp:
                     else "res/sys/cores3/Battery/battery_Green.png"
                 )
             _draw_png(src)
-            self._battery_label.setText("{:d}%".format(battery))
+            self._battery_label.set_text("{:d}%".format(battery))
         else:
             src = (
                 "res/sys/cores3/Battery/battery_Black_Charge.png"

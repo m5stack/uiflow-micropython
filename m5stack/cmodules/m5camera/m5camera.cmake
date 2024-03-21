@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # Create an INTERFACE library for our C module.
 add_library(usermod_M5CAMERA INTERFACE)
 

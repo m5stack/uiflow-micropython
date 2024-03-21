@@ -3,6 +3,7 @@
 """
 I2C-based driver for the QMP6988 temperature and pressure sensor.
 """
+
 from micropython import const
 from struct import unpack_from
 from time import sleep_ms

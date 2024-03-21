@@ -13,6 +13,7 @@ class Power
 
     All methods calling the Power object need to be placed after ``M5.begin()`` |M5.begin.svg|.
 
+
 Methods
 -------
 
@@ -226,6 +227,7 @@ Methods
 
         |setVibration.svg|
 
+
 .. _class PORT:
 
 class PORT
@@ -238,29 +240,36 @@ Constants
 
     Port A.
 
+
 .. data:: PORT.B1
 
     Port B1.
+
 
 .. data:: PORT.B2
 
     Port B2.
 
+
 .. data:: PORT.C1
 
     Port C1.
+
 
 .. data:: PORT.C2
 
     Port C2.
 
+
 .. data:: PORT.USB
 
     USB Port.
 
+
 .. data:: PORT.HAT
 
     HAT Port.
+
 
 .. data:: PORT.ALL
 

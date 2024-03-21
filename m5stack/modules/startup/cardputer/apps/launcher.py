@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from ..res import (
     APPLIST_ICO,
@@ -50,7 +54,7 @@ class LauncherApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium10_VLW,
         )
-        self._left_label.setText(self._icos[left].name)
+        self._left_label.set_text(self._icos[left].name)
 
         self._center_img = Image(use_sprite=False)
         self._center_img.set_pos(88, 36)
@@ -67,7 +71,7 @@ class LauncherApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium12_VLW,
         )
-        self._center_label.setText(self._icos[self._id].name)
+        self._center_label.set_text(self._icos[self._id].name)
 
         right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
         self._right_img = Image(use_sprite=False)
@@ -86,7 +90,7 @@ class LauncherApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium10_VLW,
         )
-        self._right_label.setText(self._icos[right].name)
+        self._right_label.set_text(self._icos[right].name)
 
         M5.Lcd.drawImage(LEFT_ICO, 3, 56)
         M5.Lcd.drawImage(RIGHT_ICO, 227, 56)
@@ -121,11 +125,11 @@ class LauncherApp(AppBase):
 
         if refresh:
             self._left_img.set_src(self._icos[left].src)
-            self._left_label.setText(self._icos[left].name)
+            self._left_label.set_text(self._icos[left].name)
             self._center_img.set_src(self._icos[self._id].src)
-            self._center_label.setText(self._icos[self._id].name)
+            self._center_label.set_text(self._icos[self._id].name)
             self._right_img.set_src(self._icos[right].src)
-            self._right_label.setText(self._icos[right].name)
+            self._right_label.set_text(self._icos[right].name)
 
         if event.key == 0x0D:
             app = fw._app_selector.index(self._id + 1)

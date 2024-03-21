@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import time
 import os
 
@@ -23,11 +27,11 @@ class MultiPartForm:
     def content_length(self):
         res = 0
         part_boundary = ("--" + self.boundary).encode()
-        needs_CLRF = False
+        needs_clrf = False
         for name, value in self.fields:
-            if needs_CLRF:
+            if needs_clrf:
                 res += len(b"\r\n")
-            needs_CLRF = True
+            needs_clrf = True
 
             block = [
                 part_boundary,
@@ -39,9 +43,9 @@ class MultiPartForm:
             res += len(b"\r\n".join(block))
 
         for field, filename, content_type, file_size in self.files:
-            if needs_CLRF:
+            if needs_clrf:
                 res += len(b"\r\n")
-            needs_CLRF = True
+            needs_clrf = True
 
             block = [
                 part_boundary,
@@ -62,11 +66,11 @@ class MultiPartForm:
         data = b""
         part_boundary = ("--" + self.boundary).encode()
 
-        needs_CLRF = False
+        needs_clrf = False
         for name, value in self.fields:
-            if needs_CLRF:
+            if needs_clrf:
                 data += b"\r\n"
-            needs_CLRF = True
+            needs_clrf = True
 
             block = [
                 part_boundary,
@@ -79,9 +83,9 @@ class MultiPartForm:
             data += b"\r\n".join(block)
 
         for field, filename, content_type, _ in self.files:
-            if needs_CLRF:
+            if needs_clrf:
                 data += b"\r\n"
-            needs_CLRF = True
+            needs_clrf = True
 
             block = [
                 part_boundary,

@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/dac2.rst:2 a158582e3bdb43a2a56ecacc61ff6850
+msgid "DAC2 Unit"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref 555fe4ca0a3a4cfe88987f105d1249d3
+#: 5e7d3520eb44413c966fb094b4b78d68
+msgid "DAC2Unit"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref 4354905bf9ba4026a3f6a0a5620b6643
+#: 9a95a4fabbc34c578f3895daea7c15fb
+msgid "DAC2Hat"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref:11 9d780c76606a472b9c51d877e1b43b8c
+#: d0a91d3e35464ba5a251823298d94944
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref:13 6aa2ad75bb7e4292994436b33dd01a27
+#: c47769a29342497f84abebbb3f05b431
+msgid "setDACOutputVoltageRange.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref:15 0585ae3f8a9246f48bc32d3ed2beb6ff
+#: 8a3ac969f87d45eeba5bbbf7b5922b0c
+msgid "setVoltage.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref:17 3f8a81ecf0cd49fb94344fdeb8454ad4
+#: cef7477db297490abf3187b954fb5abb
+msgid "setVoltageBoth.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dac2.ref:19 a49906e1af4f43aabf37105ab7c78104
+#: d142d0aa77654bfcab875e68f79e20b0
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/units/dac2.rst:6 ebea4372c671435d86760922bb663657
+msgid ""
+"The `Dac2` class interfaces with a GP8413 15-bit Digital to Analog "
+"Converter (DAC), capable of converting digital signals into two channels "
+"of analog voltage output, ranging from 0-5V and 0-10V."
+msgstr ""
+
+#: ../../en/units/dac2.rst:8 b3923ad3d8fd40e3a87b2b20d0d292cd
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dac2.rst:11 0361f4432b7544599d29355140e64b42
+msgid "|DAC2Unit|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:13 352f248c4a2d4c42b01913441fb8d153
+msgid "|DAC2Hat|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:17 9172542883b74a94bebec2d9bfbdbaef
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/dac2.rst:31 be8aa0797dc34c838e4da7884ec978ad
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/dac2.rst:33 42ab13e1623b4a33986ab7a58545b1af
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:40 70e427c76cbf47fbb6437b74a26f2f5a
+msgid "class DAC2Unit"
+msgstr ""
+
+#: ../../en/units/dac2.rst:43 5ca0de94e2d24f978c926a386cc0c299
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dac2.rst:47 f19c0ffa26f747cfa5ac373678d0cdd1
+msgid "Create an DAC2Unit object."
+msgstr ""
+
+#: ../../en/units/dac2.rst:49 10a3fcdc17634f4cb2a845fe204bee9c
+msgid "``I2C0`` is I2C Port."
+msgstr ""
+
+#: ../../en/units/dac2.rst:50 ed7a3724d84a460a8c76b24aaf574a54
+msgid "``addr`` I2C address of the DAC (default is `0x59`).."
+msgstr ""
+
+#: ../../en/units/dac2.rst:52 ../../en/units/dac2.rst:67
+#: ../../en/units/dac2.rst:79 ../../en/units/dac2.rst:92
+#: 2fffb5aa36414b85a58159bb15dca3ad 5cb98529f2da4c93b53ca3fca687865f
+#: 7892b14fc8a9494c81be3290d1b28bbd efa50b694a6d46839d730608110d07e2
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dac2.rst:54 d9fbb5fcb42842f3b77124ab9cea98ba
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:58 1689245c4174461e9d451e109aef64da
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/dac2.rst:63 3e57f6e3e07b4395bab96d1086464178
+msgid "Sets the output voltage range of the DAC."
+msgstr ""
+
+#: ../../en/units/dac2.rst:65 3c10c64eee644722b2dba59088a7a970
+msgid ""
+"``_range`` The DAC output voltage range, either `DAC2Unit.RANGE_5V` or "
+"`DAC2Unit.RANGE_10V`.."
+msgstr ""
+
+#: ../../en/units/dac2.rst:69 ff6430014fdd4bd196164923529fda4f
+msgid "|setDACOutputVoltageRange.svg|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:74 9451cda8e37c47258d91643db9703475
+msgid "Sets the output voltage of the DAC."
+msgstr ""
+
+#: ../../en/units/dac2.rst:76 27f4244721de431b88d909bd25fee601
+msgid "``voltage``  Desired output voltage from 0.0 to range maximum (5V or 10V)."
+msgstr ""
+
+#: ../../en/units/dac2.rst:77 f4bd8a55f42e47f9a7c8dc8122d4fb06
+msgid ""
+"``channel``  The DAC channel to set. Options are `Dac2.CHANNEL_0`, "
+"`Dac2.CHANNEL_1`, or `Dac2.CHANNEL_BOTH`."
+msgstr ""
+
+#: ../../en/units/dac2.rst:81 4cce583b4e4e448f8549087e5c943b51
+msgid "|setVoltage.svg|"
+msgstr ""
+
+#: ../../en/units/dac2.rst:87 afedb99a86384de5ac58b18f4917ccde
+msgid "Sets the output voltage for both channels."
+msgstr ""
+
+#: ../../en/units/dac2.rst:89 bf2294088eaf4c2a8a3ecf1e92c38b80
+msgid ""
+"``voltage0``  Desired output voltage from 0.0 to range maximum (5V or "
+"10V)."
+msgstr ""
+
+#: ../../en/units/dac2.rst:90 e0132483861346fea87ef358179169dc
+msgid ""
+"``voltage1``  Desired output voltage from 0.0 to range maximum (5V or "
+"10V)."
+msgstr ""
+
+#: ../../en/units/dac2.rst:94 6f4c6e940e274ad7883d4c84ac0cbbac
+msgid "|setVoltageBoth.svg|"
+msgstr ""
+

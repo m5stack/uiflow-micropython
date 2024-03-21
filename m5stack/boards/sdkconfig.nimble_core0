@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2014 Damien P. George
+#
+# SPDX-License-Identifier: MIT
+
 # For IDF <4.2, we need NimBLE on core 0, and for synchronisation
 # with the ringbuffer and scheduler MP needs to be on the same core.
 # See https://github.com/micropython/micropython/issues/5489

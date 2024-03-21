@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 _attrs = {
     "LOGO_IMG": "/system/cardputer/boot/boot_logo_1.jpeg",
     # apprun

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase, Descriptor
 from widgets.image import Image
 from widgets.label import Label
@@ -6,45 +10,51 @@ import M5
 import os
 import sys
 
+
 class TextButton(Button):
-    def __init__(self, 
-            text: str,
-            x: int,
-            y: int,
-            w: int = 0,
-            h: int = 0,
-            size: float = 1.0,
-            font_align: int = Label.LEFT_ALIGNED,
-            fg_color: int = 0xFFFFFF,
-            bg_color: int = 0x000000,
-            font=M5.Lcd.FONTS.DejaVu12,
-            parent=M5.Lcd,
-            _id = 0,
-        ) -> None:
+    def __init__(
+        self,
+        text: str,
+        x: int,
+        y: int,
+        w: int = 0,
+        h: int = 0,
+        size: float = 1.0,
+        font_align: int = Label.LEFT_ALIGNED,
+        fg_color: int = 0xFFFFFF,
+        bg_color: int = 0x000000,
+        font=M5.Lcd.FONTS.DejaVu12,
+        parent=M5.Lcd,
+        _id=0,
+    ) -> None:
         super().__init__(parent)
         self._label = Label(text, x, y, w, h, size, font_align, fg_color, bg_color, font, parent)
         self.set_pos(x, y)
         self.set_size(w, h)
         self.id = _id
+
     def handle(self, x, y):
         if self._is_select(x, y) and self._event_handler:
             self._event_handler(self)
             return True
         return False
+
     def set_pos(self, x, y):
         self._x = x
         self._y = y
-        self._label.setPos(x, y)
+        self._label.set_pos(x, y)
+
 
 class ImageButton(Button):
-    def __init__(self, 
-            x: int,
-            y: int,
-            w: int = 0,
-            h: int = 0,
-            parent=M5.Lcd,
-            _id = 0,
-        ) -> None:
+    def __init__(
+        self,
+        x: int,
+        y: int,
+        w: int = 0,
+        h: int = 0,
+        parent=M5.Lcd,
+        _id=0,
+    ) -> None:
         super().__init__(parent)
         self._image = Image(use_sprite=False)
         self._image.set_pos(x, y)
@@ -52,16 +62,19 @@ class ImageButton(Button):
         self.set_pos(x, y)
         self.set_size(w, h)
         self.id = _id
+
     def handle(self, x, y):
         if self._is_select(x, y) and self._event_handler:
             self._event_handler(self)
             return True
         return False
+
     def set_pos(self, x, y):
         self._x = x
         self._y = y
-        self._image.clear(0xffffff)
+        self._image.clear(0xFFFFFF)
         self._image.set_pos(x, y)
+
 
 class Rectangle:
     def __init__(self, x, y, w, h, fg, bg, parent=M5.Lcd) -> None:
@@ -126,15 +139,11 @@ class ListApp(AppBase):
     def on_view(self):
         M5.Lcd.drawImage("/system/paper/applist.png", 0, 0)
 
-        self._run_btn = ImageButton(
-            400, 435, 46, 46, parent=M5.Lcd, _id=0
-        )
+        self._run_btn = ImageButton(400, 435, 46, 46, parent=M5.Lcd, _id=0)
         self._run_btn._image.set_src("/system/paper/run.png")
         self._run_btn.add_event(self._btn_run_event_handler)
 
-        self._rect = Rectangle(
-            65, 438, 10, 42, 0, 0xffffff, parent=M5.Lcd
-        )
+        self._rect = Rectangle(65, 438, 10, 42, 0, 0xFFFFFF, parent=M5.Lcd)
 
         self._btns = []
         for i in range(9):
@@ -156,13 +165,13 @@ class ListApp(AppBase):
             self._btns.append(btn)
 
         for btn, file in zip(self._btns, self._files):
-            file and btn and btn._label.setText(file)
+            file and btn and btn._label.set_text(file)
 
     def on_exit(self):
         del self._btns, self._run_btn, self._rect
 
     def _btn_files_event_handler(self, btn):
-        print('%d pressed' %btn.id)
+        print("%d pressed" % btn.id)
         if len(btn._label._text) == 0:
             return
         self._file_pos = btn.id
@@ -172,8 +181,8 @@ class ListApp(AppBase):
     def _btn_run_event_handler(self, btn):
         if self._max_file_num == 0:
             return
-        print('run %d, %s' %(self._file_pos, self._files[self._file_pos]))
-        execfile("apps/" + self._files[self._file_pos])
+        print("run %d, %s" % (self._file_pos, self._files[self._file_pos]))
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     async def _click_event_handler(self, x, y, fw):
@@ -181,4 +190,3 @@ class ListApp(AppBase):
         for button in self._btns:
             button.handle(x, y)
         self._run_btn.handle(x, y)
-

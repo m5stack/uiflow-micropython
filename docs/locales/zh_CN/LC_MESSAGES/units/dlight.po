@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/dlight.rst:2 10bf747db2bf4c7d8ce36d79606a76e2
+msgid "DLight Unit"
+msgstr ""
+
+#: ../../en/refs/unit.dlight.ref 1fa52cdc3de1424987fa248028b83b84
+#: 812db439398b4dd49716faa5e631825d
+msgid "Dlight"
+msgstr ""
+
+#: ../../en/refs/unit.dlight.ref:7 db8a76e735b744f09ded8cf3a280c007
+#: e534b90c9310461087498d3ad8677579
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dlight.ref:9 431a3699fe2c4c9b98bc785fe00f29d0
+#: b55ddf4524274721ba6547fbe35fde65
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dlight.ref:11 20fc2d5c0d1546a98bc261b2f302536a
+#: 58efda00c86b44ef8831d37daadc7dc1
+msgid "get_lux.svg"
+msgstr ""
+
+#: ../../en/refs/unit.dlight.ref:13 2c508b33127f4fd6840671d4b1f1cae1
+#: 368b4108e36245ea9be63862f73e7794
+msgid "configure.svg"
+msgstr ""
+
+#: ../../en/units/dlight.rst:6 8733242a45dd4874b75d5eeed078d569
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dlight.rst:8 10f27f3cfcc048ef806be3a85be8705e
+msgid "|Dlight|"
+msgstr ""
+
+#: ../../en/units/dlight.rst:11 6be5c6b948bd48db92beb287c1000697
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/dlight.rst:32 656b8fb71349404f998cd58960735d98
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/dlight.rst:34 490ddf66858b470bb6101df0ac1110c4
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/dlight.rst:39 084cf397298f4a79aed29b5bbfd743cb
+msgid "|dlight_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/dlight.rst:43 cd623815ceb4416293d76def7a3f1699
+msgid "class DLight"
+msgstr ""
+
+#: ../../en/units/dlight.rst:46 4fae161183714ad786d5af9cf5520ed1
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dlight.rst:50 da7c39af913047a588b12209006e308b
+msgid "Create a DLight object."
+msgstr ""
+
+#: ../../en/units/dlight.rst:53 6e0211b7ef0846bc9e696bff7947fadb
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/dlight.rst:53 2a1bca3828d94ab6b3f2c99788bdb0c1
+msgid "``PORT`` Define an i2c port."
+msgstr ""
+
+#: ../../en/units/dlight.rst:55 ../../en/units/dlight.rst:67
+#: ../../en/units/dlight.rst:76 0afe8df87e88446d95cb2f47bbf06e89
+#: 0ce567ab06644c778fc7da7fc3d9979f 154af9bfde4c4dc69a11d76b001db9d4
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dlight.rst:57 35b0005ff6ae46ab9db639346bca67f5
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/dlight.rst:61 a0f31f88005f434ea840755602dbfa7c
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/dlight.rst:65 828afa60a9c941b88b1f6896305934fc
+msgid "Get light lux."
+msgstr ""
+
+#: ../../en/units/dlight.rst:69 5599a51d83194447a99f645014594aab
+msgid "|get_lux.svg|"
+msgstr ""
+
+#: ../../en/units/dlight.rst:74 9941d61fa99844f486eb9b33fe1d2e64
+msgid ""
+"Configure the measurement mode (continuous measurement/single "
+"measurement) and resolution."
+msgstr ""
+
+#: ../../en/units/dlight.rst:78 35bad0b7f9894de1b582ff02b41c9c3b
+msgid "|configure.svg|"
+msgstr ""
+

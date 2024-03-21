@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # coreink https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L8
 set(BOARD_ID 6)
 

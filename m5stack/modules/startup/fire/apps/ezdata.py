@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 import M5
 from ..res import EZDATA_UNSELECTED_IMG, EZDATA_SELECTED_IMG

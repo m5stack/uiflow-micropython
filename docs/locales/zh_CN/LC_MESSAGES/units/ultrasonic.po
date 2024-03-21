@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/ultrasonic.rst:2 2010a688e87b4172b7edf74c63fdb6e0
+msgid "Ultrasonic Unit"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic.ref 4739453b5ee34455832a3e199a337f75
+#: cdacc292ae4f4c9e8e5aa7cf082e1303
+msgid "Ultrasonic"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic.ref:7 d22102cf16734931b91edad6459de5aa
+#: ef6d4ba6bb284ad284a3514c2a0f3418
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic.ref:9 abbb8afb43a841f6b4f4bf1c13a9b4ef
+#: afa95cc9f731435db877a76dd9aaa43f
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic.ref:11 44f3e0a168484189b3faeee0e9c45f5b
+#: 5bfe74041b9849dbb232b33916503ded
+msgid "get_target_distance.svg"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:6 50b01a50cda349e99d1fa48f052947f0
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:8 9b08a48932aa47268f663c6bffb1a2bf
+msgid "|Ultrasonic|"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:11 3cf7ddef1fca45fe98b92a9c82a46482
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:31 66b5e3235c844288bf48be2a418a0cfa
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:33 47169b832b634598a2c7307c5d24116d
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:38 715e6fec31f64550820f7422678a9dd2
+msgid "|ultrasonic_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:42 66fd48e6f41a48d8801f7e891a5f7ffa
+msgid "class ULTRASONIC_I2C"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:45 94e4ceb1150e430bb0c755da223174d6
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:49 8b71dd0f072b4bad915478e0796f9797
+msgid "Create a ULTRASONIC I2C object."
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:52 5ee13a2cad1844f99ac561eb1e2a9b21
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:52 bc0c9b1672f541928d806f4bd498d26c
+msgid "``PORT`` Define an i2c port."
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:54 ../../en/units/ultrasonic.rst:66
+#: 51d06c9fb2684b3b9e1f75d998eff284 c786bfc52f434e0395369a6e3c6ae83a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:56 db545a3389a142798a82dc0c34480fec
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:60 d76f5e58fef44708bc998b5251bcb777
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:64 5f95b0f956054597bb373eb7aad73037
+msgid "Acquire transmitting distance"
+msgstr ""
+
+#: ../../en/units/ultrasonic.rst:68 6fd63686b78a4d07972759fc713c7235
+msgid "|get_target_distance.svg|"
+msgstr ""
+

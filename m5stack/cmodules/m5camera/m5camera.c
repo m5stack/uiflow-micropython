@@ -1,5 +1,6 @@
 /*
  * Copyright [2021] Mauro Riva <info@lemariva.com>
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.

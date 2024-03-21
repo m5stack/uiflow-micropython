@@ -3,6 +3,7 @@
 
 # Author: Peter Hinch
 # Copyright Peter Hinch 2020-2021 Released under the MIT license
+# Copyright (c) 2024 M5Stack Technology CO LTD
 
 from machine import Timer, Pin
 from array import array
