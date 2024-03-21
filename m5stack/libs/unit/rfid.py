@@ -6,8 +6,10 @@ from driver.mfrc522 import MFRC522
 
 
 class RFIDUnit(MFRC522):
-    def __init__(self, i2c, addr=0x28) -> None:
-        super().__init__(i2c, addr)
+    def __init__(self, i2c, addr=0x28, address: int | list | tuple = 0x28) -> None:
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
+        super().__init__(i2c, address)
         self.pcd_init()
 
     def is_new_card_present(self) -> bool:

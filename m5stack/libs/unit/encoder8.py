@@ -7,10 +7,6 @@ import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 ENCODER8_ADDR = 0x41
@@ -33,13 +29,20 @@ TOTAL_LED = 9
 
 
 class ENCODER8Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr: int = ENCODER8_ADDR) -> None:
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        slave_addr: int = ENCODER8_ADDR,
+        address: int | list | tuple = 0x59,
+    ) -> None:
         """
         Encoder 8 Channel Initialize Function
         Set I2C port
         """
+        # TODO: 2.0.6 移除 slave_addr 参数
+        address = slave_addr
         self.encoder8_i2c = i2c
-        self.init_i2c_address(slave_addr)
+        self.init_i2c_address(address)
 
     def init_i2c_address(self, slave_addr: int = ENCODER8_ADDR) -> None:
         """
@@ -180,3 +183,8 @@ class ENCODER8Unit:
 
     def deinit(self):
         pass
+
+
+class Encoder8Unit(ENCODER8Unit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = ENCODER8_ADDR) -> None:
+        super().__init__(i2c, slave_addr=address)

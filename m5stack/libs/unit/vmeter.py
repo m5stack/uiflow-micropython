@@ -5,13 +5,9 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
-
 import time
 import struct
+
 
 ADS1115_ADDR = 0x49
 EEPROM_ADDR = 0x53
@@ -87,9 +83,16 @@ Rate_list = {
 
 
 class VMeterUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], ads_addr=ADS1115_ADDR):
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        ads_addr=ADS1115_ADDR,
+        address: int | list | tuple = ADS1115_ADDR,
+    ):
+        # TODO: 2.0.6 移除 ads_addr 参数
+        address = ads_addr
         self.ads_i2c = i2c
-        self.ads_i2c_addr = ads_addr
+        self.ads_i2c_addr = address
         if self.ads_i2c_addr not in self.ads_i2c.scan():
             raise UnitError("Vmeter unit maybe not connect")
         self.eeprom_i2c = i2c
@@ -225,3 +228,8 @@ class VMeterUnit:
         expect = read_data[1] << 8 | read_data[2]
         real = read_data[3] << 8 | read_data[4]
         return expect, real
+
+
+class VoltmeterUnit(VMeterUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = ADS1115_ADDR):
+        super().__init__(i2c, ads_addr=address)

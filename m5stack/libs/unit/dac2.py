@@ -7,10 +7,6 @@ from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import struct
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 class DAC2Unit:
@@ -32,14 +28,16 @@ class DAC2Unit:
     CHANNEL_1 = (1,)
     CHANNEL_BOTH = (2,)
 
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x59):
+    def __init__(self, i2c: I2C | PAHUBUnit, addr=0x59, address: int | list | tuple = 0x59):
+        # TODO: 2.0.6 移除 addr 参数
         """! Initialize the DAC.
 
         @param port I2C port to use.
         @param addr I2C address of the sensor.
         """
+        address = addr
         self.i2c = i2c
-        self.addr = addr
+        self.addr = address
         self._available()
         self._range = self.RANGE_5V
         self.setDACOutputVoltageRange(self._range)

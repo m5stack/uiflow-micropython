@@ -2,6 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 from micropython import schedule
+from machine import I2C
+from .pahub import PAHUBUnit
 
 
 class KeyCode:
@@ -20,7 +22,7 @@ class KeyCode:
 
 
 class CardKBUnit:
-    def __init__(self, i2c, address=0x5F):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x5F):
         self._i2c = i2c
         self._addr = address
         self._keys = []

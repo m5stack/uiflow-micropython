@@ -1,15 +1,12 @@
 # SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
 import struct
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 SCALES_ADDR = 0x26
@@ -42,9 +39,13 @@ I2C_ADDR_REG = 0xFF
 
 
 class SCALESUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=SCALES_ADDR) -> None:
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, addr=SCALES_ADDR, address: int | list | tuple = SCALES_ADDR
+    ) -> None:
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
         self.i2c = i2c
-        self.i2c_addr = addr
+        self.i2c_addr = address
         self._available()
 
     def _available(self) -> None:
@@ -103,3 +104,8 @@ class SCALESUnit:
                 self.i2c.writeto_mem(self.i2c_addr, I2C_ADDR_REG, bytes([addr]))
                 self.i2c_addr = addr
                 time.sleep_ms(200)
+
+
+class ScalesUnit(SCALESUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = SCALES_ADDR) -> None:
+        super().__init__(i2c, addr=address)

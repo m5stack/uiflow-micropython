@@ -6,7 +6,8 @@ from driver.modbus.master.uSerial import uSerial
 
 
 class RS485Unit(uSerial):
-    def __init__(self, port, debug=False):
+    def __init__(self, id=1, port=None, debug=False):
+        self._id = id
         self._port = port
         self._debug = debug
 

@@ -75,3 +75,8 @@ class WEIGHTUnit:
             time.sleep_us(1)
             self.hx711clk.value(0)
             time.sleep_us(1)
+
+
+class WeightUnit(WEIGHTUnit):
+    def __init__(self, port) -> None:
+        super().__init__(port)

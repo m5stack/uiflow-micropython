@@ -5,11 +5,6 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
-
 import time
 import struct
 
@@ -29,11 +24,18 @@ I2C_ADDR_REG = 0xFF
 
 
 class WEIGHT_I2CUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=WEIGHT_I2C_ADDR) -> None:
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        addr=WEIGHT_I2C_ADDR,
+        address: int | list | tuple = WEIGHT_I2C_ADDR,
+    ) -> None:
         """Initialize the weight i2c sensor."""
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
         self.i2c = i2c
-        if addr >= 1 and addr <= 127:
-            self.unit_addr = addr
+        if address >= 1 and address <= 127:
+            self.unit_addr = address
         self._available()
 
     def _available(self) -> None:
@@ -147,3 +149,8 @@ class WEIGHT_I2CUnit:
                 self.i2c.writeto_mem(self.unit_addr, I2C_ADDR_REG, struct.pack("b", addr))
                 self.unit_addr = addr
                 time.sleep_ms(200)
+
+
+class WeightI2CUnit(WEIGHT_I2CUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = WEIGHT_I2C_ADDR):
+        super().__init__(i2c, address)

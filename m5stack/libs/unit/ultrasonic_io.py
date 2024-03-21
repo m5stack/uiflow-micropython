@@ -46,3 +46,8 @@ class ULTRASONIC_IOUnit:
         elif mode == 2:
             cm = (echo_time * 100 // 582) / 10
             return cm
+
+
+class UltrasoundIOUnit(ULTRASONIC_IOUnit):
+    def __init__(self, port, echo_timeout_us=1000000):
+        super().__init__(port, echo_timeout_us)

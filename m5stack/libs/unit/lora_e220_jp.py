@@ -76,9 +76,10 @@ class LoRaE220JPUnit:
     WOR_2500MS = 0b0000_0100
     WOR_3000MS = 0b0000_0101
 
-    def __init__(self, port, port_id=1) -> None:
-        # print('Port: ', port)
-        self.uart = machine.UART(port_id, tx=port[1], rx=port[0])
+    def __init__(self, id=1, port=None, port_id=1) -> None:
+        # TODO: 2.0.6 移除 port_id 参数
+        id = port_id
+        self.uart = machine.UART(id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
         self.recv_running = False
         self.receive_callback = None

@@ -7,18 +7,16 @@ from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import struct
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 class MiniScaleUnit:
     """! MiniScale is a weight sensor, includes a hx711 22bit ADC."""
 
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=0x26):
+    def __init__(self, i2c: I2C | PAHUBUnit, addr=0x26, address: int | list | tuple = 0x26):
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
         self.i2c = i2c
-        self.addr = addr
+        self.addr = address
         self._available()
 
     def _available(self):

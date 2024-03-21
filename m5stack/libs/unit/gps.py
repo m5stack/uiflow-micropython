@@ -3,12 +3,16 @@
 # SPDX-License-Identifier: MIT
 from machine import UART
 from driver.timer_thread import TimerThread
+import sys
+
+if sys.platform != "esp32":
+    from typing import Literal
 
 timTh = TimerThread()
 
 
 class GPSUnit:
-    def __init__(self, port):
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None):
         self.uart_data = ""
         self.gps_time = "00:00:00"
         self.gps_date = "01/01/20"
@@ -22,7 +26,7 @@ class GPSUnit:
         self.speed_knot = "0.0"
         self.speed_kph = "0.0"
         self.course = "0.0"
-        self.uart = UART(1, tx=port[1], rx=port[0])
+        self.uart = UART(id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=0, parity=None, stop=1, rxbuf=1024)
         self.tx = port[1]
         self.rx = port[0]

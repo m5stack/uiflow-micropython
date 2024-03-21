@@ -345,12 +345,12 @@ class PAJ7620U2:
         [0x7E, 0x01],
     ]
 
-    def __init__(self, bus):
+    def __init__(self, bus, address=PAJ7620_IIC_ADDR):
         """!
         @brief Constuctor
         @param bus  iic bus
         """
-        self.i2c_addr = PAJ7620_IIC_ADDR
+        self.i2c_addr = address
         self.i2cbus = bus
         self._gesture_high_rate = True
 

@@ -31,14 +31,9 @@ from time import localtime, sleep
 from gc import collect
 from driver.timezone import TZONE
 from micropython import const
-
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 PCF8563_SLAVE_ADDRESS = const(0x51)
 PCF8563_STAT1_REG = const(0x00)
@@ -91,7 +86,7 @@ YEAR = 6
 
 
 class RTC8563Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], address=PCF8563_SLAVE_ADDRESS):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = PCF8563_SLAVE_ADDRESS):
         """Initialization needs to be given an initialized I2C port"""
         self.i2c = i2c
         self.i2c_addr = address

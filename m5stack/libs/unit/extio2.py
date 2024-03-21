@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 from machine import I2C
 from micropython import const
+from .pahub import PAHUBUnit
 import sys
 
 if sys.platform != "esp32":
@@ -99,7 +100,7 @@ class EXTIO2Unit:
     SERVO = const(3)
     NEOPIXEL = const(4)
 
-    def __init__(self, i2c: I2C, address: int = _DEFAULT_ADDRESS) -> None:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int = _DEFAULT_ADDRESS) -> None:
         self._i2c = i2c
         self._addr = address
         self._BUFFER = memoryview(bytearray(3))

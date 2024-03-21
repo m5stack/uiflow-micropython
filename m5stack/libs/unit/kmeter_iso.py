@@ -4,11 +4,6 @@
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
-
 import time
 import struct
 
@@ -28,13 +23,17 @@ I2C_ADDR_REG = 0xFF
 
 
 class KMETER_ISOUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=KMETER_ADDR):
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, addr=KMETER_ADDR, address: int | list | tuple = KMETER_ADDR
+    ):
+        # TODO: 2.0.6 移除 addr 参数
         """! Kmeter Initialize Function
         addr: 1 ~ 127
         """
+        address = addr
         self.kmeter_i2c = i2c
-        if addr >= 0x01 and addr <= 0x7F:
-            self.unit_addr = addr
+        if address >= 0x01 and address <= 0x7F:
+            self.unit_addr = address
         if self.unit_addr not in self.kmeter_i2c.scan():
             raise UnitError("Kmeter iso unit maybe not connect")
 
@@ -97,3 +96,8 @@ class KMETER_ISOUnit:
 
     def int_convert(self, value):
         return struct.unpack("<i", value)[0]
+
+
+class KMeterISOUnit(KMETER_ISOUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = KMETER_ADDR) -> None:
+        super().__init__(i2c, addr=address)

@@ -7,10 +7,6 @@ import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import time
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 hub_addr = [0x40, 0x50, 0x60, 0x70, 0x80, 0xA0]
@@ -21,10 +17,14 @@ I2C_ADDR_REG = 0xFF
 
 
 class PBHUBUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=PBHUB_ADDR):
-        self.i2c_addr = addr
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, addr=PBHUB_ADDR, address: int | list | tuple = PBHUB_ADDR
+    ):
+        # TODO: 2.0.6 移除 addr 参数
+        address = addr
+        self.i2c_addr = address
         self.pbhub_i2c = i2c
-        self.init_i2c_address(addr)
+        self.init_i2c_address(address)
 
     def _available(self):
         if self.i2c_addr not in self.pbhub_i2c.scan():

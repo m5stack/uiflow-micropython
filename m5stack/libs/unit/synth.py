@@ -6,7 +6,10 @@ Refer to https://github.com/fluxly/Fluxamasynth.
 """
 
 from machine import UART, Pin
+import sys
 
+if sys.platform != "esp32":
+    from typing import Literal
 
 MIDI_CMD_NOTE_OFF = 0x80  # Note Off
 MIDI_CMD_NOTE_ON = 0x90  # Note On
@@ -133,9 +136,11 @@ DRUM_SET = {
 
 
 class SYNTHUnit:
-    def __init__(self, port, port_id=1):
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, port_id=1):
+        # TODO: 2.0.6 移除 port_id 参数
+        id = port_id
         Pin(port[0], Pin.IN, Pin.PULL_UP)
-        self._uart = UART(port_id, tx=port[1], rx=port[0])
+        self._uart = UART(id, tx=port[1], rx=port[0])
         self._uart.init(31250, bits=8, parity=None, stop=1)
 
     def set_note_on(self, channel, pitch, velocity):
@@ -454,3 +459,8 @@ class SYNTHUnit:
 
     def map(self, x, in_min, in_max, out_min, out_max):
         return round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
+
+
+class SynthUnit(SYNTHUnit):
+    def __init__(self, id: Literal[0, 1, 2], port: list | tuple):
+        super().__init__(port, id)

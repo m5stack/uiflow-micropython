@@ -1,26 +1,22 @@
 # SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 from driver.paj7620 import PAJ7620U2
 import time
-import struct
 
-try:
-    from typing import Union
-except ImportError:
-    pass
 
 RAWDATA = 1
 STRING = 2
 
 
 class GESTUREUnit(PAJ7620U2):
-    def __init__(self, i2c: Union[I2C, PAHUBUnit]) -> None:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x73) -> None:
         self.i2c = i2c
-        super(GESTUREUnit, self).__init__(i2c)
+        super(GESTUREUnit, self).__init__(i2c, address=address)
         self._available()
         self.begin()
 
@@ -34,3 +30,8 @@ class GESTUREUnit(PAJ7620U2):
 
     def get_hand_gestures(self):
         return self.get_gesture()
+
+
+class GestureUnit(GESTUREUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x73) -> None:
+        super().__init__(i2c, address=address)

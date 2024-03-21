@@ -5,10 +5,6 @@ from machine import I2C
 import struct
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 HBRIDGE_ADDR = 0x20
@@ -25,13 +21,20 @@ FW_VER_REG = 0xFE
 
 
 class HBRIDGEUnit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], slave_addr=HBRIDGE_ADDR):
+    def __init__(
+        self,
+        i2c: I2C | PAHUBUnit,
+        slave_addr=HBRIDGE_ADDR,
+        address: int | list | tuple = HBRIDGE_ADDR,
+    ):
         """
         Hbridge Initialize Function
         Set I2C port, Hbridge Slave Address
         """
+        # TODO: 2.0.6 移除 slave_addr 参数
+        address = slave_addr
         self.hbridge_i2c = i2c
-        self.init_i2c_address(slave_addr)
+        self.init_i2c_address(address)
 
     def init_i2c_address(self, slave_addr=HBRIDGE_ADDR):
         """
@@ -148,10 +151,6 @@ class HBRIDGEUnit:
         pass
 
 
-"""
-if __name__ == "__main__":
-    import unit
-    hbridge = unit.get(unit.HBRIDGE, unit.PORTA)
-    hbridge.get_driver_config(0)
-    hbridge.get_driver_config(1)
-"""
+class HbridgeUnit(HBRIDGEUnit):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = HBRIDGE_ADDR):
+        super().__init__(i2c, slave_addr=address)
