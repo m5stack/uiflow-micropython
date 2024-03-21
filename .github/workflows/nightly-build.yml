@@ -22,6 +22,21 @@ jobs:
       with:
         name: M5STACK_AirQ_firmware
         path: ./m5stack/build-M5STACK_AirQ/uiflow-*.bin
+    - name: Deliver Atom Echo firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Atom_Echo_firmware
+        path: ./m5stack/build-M5STACK_Atom_Echo/uiflow-*.bin
+    - name: Deliver Atom Lite firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Atom_Lite_firmware
+        path: ./m5stack/build-M5STACK_Atom_Lite/uiflow-*.bin
+    - name: Deliver Atom Matrix firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Atom_Matrix_firmware
+        path: ./m5stack/build-M5STACK_Atom_Matrix/uiflow-*.bin
     - name: Deliver AtomS3 firmware
       uses: actions/upload-artifact@v3
       with:
@@ -37,6 +52,11 @@ jobs:
       with:
         name: M5STACK_AtomS3U_firmware
         path: ./m5stack/build-M5STACK_AtomS3U/uiflow-*.bin
+    - name: Deliver AtomU firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_AtomU_firmware
+        path: ./m5stack/build-M5STACK_AtomU/uiflow-*.bin
     - name: Deliver Basic firmware
       uses: actions/upload-artifact@v3
       with:
@@ -92,11 +112,21 @@ jobs:
       with:
         name: M5STACK_Paper_firmware
         path: ./m5stack/build-M5STACK_Paper/uiflow-*.bin
+    - name: Deliver Stamp PICO firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Stamp_PICO_firmware
+        path: ./m5stack/build-M5STACK_Stamp_PICO/uiflow-*.bin
     - name: Deliver StampS3 firmware
       uses: actions/upload-artifact@v3
       with:
         name: M5STACK_StampS3_firmware
         path: ./m5stack/build-M5STACK_StampS3/uiflow-*.bin
+    - name: Deliver Station firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Station_firmware
+        path: ./m5stack/build-M5STACK_Station/uiflow-*.bin
     - name: Deliver StickC firmware
       uses: actions/upload-artifact@v3
       with:
