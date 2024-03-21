@@ -26,7 +26,8 @@ boards := \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
 	M5STACK_DinMeter:dinmeter        \
-	M5STACK_StickC:stickc
+	M5STACK_StickC:stickc            \
+	M5STACK_Station:station
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -53,7 +54,8 @@ BOARD_TYPE_DEF := \
 	cardputer   \
 	paper       \
 	dinmeter    \
-	stickc
+	stickc		\
+	station
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
