@@ -298,7 +298,7 @@ color_table = [
 ]
 
 
-class THERMAL2Unit:
+class Thermal2Unit:
     def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=THERMAL_CAM_ADDR):
         self.thermal_i2c = i2c
         self.unit_addr = addr

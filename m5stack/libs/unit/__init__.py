@@ -49,7 +49,7 @@ _attrs = {
     "AMeterUnit": "ameter",
     "WEIGHT_I2CUnit": "weight_i2c",
     "KMETER_ISOUnit": "kmeter_iso",
-    "THERMAL2Unit": "thermal2",
+    "Thermal2Unit": "thermal2",
 }
 
 
