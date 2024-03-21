@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from common.font.MontserratMedium18 import FONT as MontserratMedium18
 from widgets.image import Image
@@ -161,7 +165,7 @@ class ListApp(AppBase):
         self._labels.append(self._label3)
 
         for label, file in zip(self._labels, self._files):
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
         self._btn_up = Button(None)
         self._btn_up.set_pos(0, 94)
@@ -212,7 +216,7 @@ class ListApp(AppBase):
 
     def _btn_up_event_handler(self, event):
         print("_btn_up_event_handler")
-        if self._file_pos is 0 and self._cursor_pos == 0:
+        if self._file_pos == 0 and self._cursor_pos == 0:
             M5.Speaker.tone(4500, 60)
             return
 
@@ -235,7 +239,7 @@ class ListApp(AppBase):
 
         if self._file_pos < self._cursor_pos:
             for label, file in zip(self._labels, self._files):
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, file in zip(
                 self._labels,
@@ -243,7 +247,7 @@ class ListApp(AppBase):
                     self._file_pos - self._cursor_pos : self._file_pos + (4 - self._cursor_pos)
                 ],
             ):
-                label.setText(file)
+                label.set_text(file)
 
         self._left_img.set_pos(
             self._left_cursor_x, self._left_cursor_y + self._line_spacing * self._cursor_pos
@@ -287,17 +291,17 @@ class ListApp(AppBase):
             for label, file in zip(self._labels, self._files):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, file in zip(
                 self._labels, self._files[self._file_pos - 3 : self._file_pos + 1]
             ):
                 if file is None or label is None:
                     break
-                label.setText(file)
+                label.set_text(file)
 
     def _btn_once_event_handler(self, event):
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     def _btn_always_event_handler(self, event):

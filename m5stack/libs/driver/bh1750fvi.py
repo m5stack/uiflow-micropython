@@ -1,4 +1,6 @@
 # Copyright (c) 2022 Sebastian Wicki
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+#
 # SPDX-License-Identifier: MIT
 """
 I2C-based driver for the BH1750FVI ambient light sensor.

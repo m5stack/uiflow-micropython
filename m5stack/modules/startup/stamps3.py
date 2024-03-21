@@ -1,4 +1,7 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # StampS3 startup script
 import M5
 import time

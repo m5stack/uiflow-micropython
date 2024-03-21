@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 _attrs = {
     "BATTERY_BLACK_CHARGE_IMG": "/system/fire/Battery/battery_Black_Charge.png",
     "BATTERY_BLACK_IMG": "/system/fire/Battery/battery_Black.png",

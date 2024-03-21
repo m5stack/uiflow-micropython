@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import os, sys, io
 import M5
 from M5 import *
@@ -24,9 +28,9 @@ def setup():
 def loop():
     global label0, label1, label2, light_0
     M5.update()
-    label0.setText(str(((str("digital ") + str((light_0.get_digital_value()))))))
-    label1.setText(str(((str("analog ") + str((light_0.get_analog_value()))))))
-    label2.setText(str(((str("ohm ") + str((light_0.get_ohm()))))))
+    label0.setText(str((str("digital ") + str((light_0.get_digital_value())))))
+    label1.setText(str((str("analog ") + str((light_0.get_analog_value())))))
+    label2.setText(str((str("ohm ") + str((light_0.get_ohm())))))
     time.sleep_ms(100)
 
 

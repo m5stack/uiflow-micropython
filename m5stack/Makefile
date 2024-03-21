@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # Makefile for MicroPython on ESP32.
 #
 # This is a simple, convenience wrapper around idf.py (which uses cmake).
@@ -26,7 +30,13 @@ boards := \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
 	M5STACK_DinMeter:dinmeter        \
-	M5STACK_StickC:stickc
+	M5STACK_StickC:stickc            \
+	M5STACK_Station:station          \
+	M5STACK_Atom_Lite:atom-lite      \
+	M5STACK_Stamp_PICO:stamppico     \
+	M5STACK_Atom_Matrix:atommatrix   \
+	M5STACK_AtomU:atomu              \
+	M5STACK_Atom_Echo:atomecho
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -53,7 +63,13 @@ BOARD_TYPE_DEF := \
 	cardputer   \
 	paper       \
 	dinmeter    \
-	stickc
+	stickc      \
+	station     \
+	atom-lite   \
+	stamppico   \
+	atommatrix  \
+	atomu       \
+	atomecho
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -65,7 +81,17 @@ else
     $(error Board type $(BOARD_TYPE) does not exist in list [$(BOARD_TYPE_DEF)])
 endif
 
-TINY_BOARD_TYPE_DEF = M5STACK_StickC_PLUS M5STACK_Basic_4MB M5STACK_CoreInk M5STACK_StickC
+TINY_BOARD_TYPE_DEF = \
+	M5STACK_StickC_PLUS \
+	M5STACK_Basic_4MB   \
+	M5STACK_CoreInk     \
+	M5STACK_StickC      \
+	M5STACK_Atom_Lite   \
+	M5STACK_Stamp_PICO  \
+	M5STACK_Atom_Matrix \
+	M5STACK_AtomU       \
+	M5STACK_Atom_Echo
+
 ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
 TINY_FLAG ?= 1
 else

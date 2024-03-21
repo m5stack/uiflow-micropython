@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/controllers/paper.rst:3 1d2211fb8ab84344be28dcf96f598954
+msgid "Paper"
+msgstr ""
+
+#: ../../en/refs/controllers.paper.ref:1 04c80739e2bc4478bd87d138f85f9128
+#: 0b666968e86d4c1ba14f7a1f8a65e01a
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/refs/controllers.paper.ref:3 5278ebbbb72540edac7b7c355534ab44
+#: 81fad412bc0540e3afe70c435f56e01e
+msgid "config.png"
+msgstr ""
+
+#: ../../en/refs/controllers.paper.ref:5 256b37501cf74440b141202cff4225ff
+#: e23a76e741874bae82ca72e04c605bb4
+msgid "flow.png"
+msgstr ""
+
+#: ../../en/controllers/paper.rst:9 4556719e30ed4e84aefbe073b68ff10f
+msgid "UI"
+msgstr ""
+
+#: ../../en/controllers/paper.rst:11 9b43d0affdc747efb2d2b2ba1a56f8b4
+msgid ""
+"M5Paper features touch panel, allowing you to directly tap on the tabs on"
+" the right side to switch to application."
+msgstr "M5Paper具有触摸功能，您可以直接点击右侧的选项卡来切换到相应的应用程序。"
+
+#: ../../en/controllers/paper.rst:13 fc6bbb00e3e54ff29fc0061b6557fe30
+msgid "|flow.png|"
+msgstr ""
+
+#: ../../en/controllers/paper.rst:15 5493e3d0798d42b28d98c2a0a2e9ae28
+msgid ""
+"In the CODE page, you can see your device's UIFlow mode, MAC address, and"
+" account information. You can also confirm the connection status of WiFi "
+"and the server at the bottom left corner."
+msgstr ""
+"在CODE界面，您可以看到自己设备的UIFlow模式，MAC地址，账号信息。您还可以在UI左下角确"
+"认WiFi和服务器的连接情况。"
+
+#: ../../en/controllers/paper.rst:17 d6a4c6803e374d61bdef8ef9071c5773
+msgid "|config.png|"
+msgstr ""
+
+#: ../../en/controllers/paper.rst:19 3f3e0c5d842a4242a5a6b662f74b177d
+msgid "In the SETTING page, you can view your WiFi and server configuration."
+msgstr "在SETTING界面，您可以看到自己的WiFi配置信息和服务器地址。"
+
+#: ../../en/controllers/paper.rst:21 5efcd0605be34639a05f6a0480a266e1
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/controllers/paper.rst:23 2972746272e34a50a48d11535300c1f9
+msgid ""
+"In the APPLIST page, you can directly tap on the file name and then tap "
+"the run button to execute the code."
+msgstr "在APPLIST界面，您可以直接点击文件名，并点击右侧的运行按钮运行指定的代码。"
+

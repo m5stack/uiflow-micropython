@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include <utility/Power_Class.hpp>
 
 extern "C"
@@ -185,6 +191,22 @@ namespace m5
 
     mp_obj_t power_getType(mp_obj_t self) {
         return mp_obj_new_bool(getPower(self)->getType());
+    }
+
+    mp_obj_t power_getPortVbus(mp_obj_t self, mp_obj_t port) {
+        #if defined(CONFIG_IDF_TARGET_ESP32)
+        return mp_obj_new_float(getPower(self)->Ina3221[(uint8_t)mp_obj_get_int(port) / 3].getBusVoltage((uint8_t)mp_obj_get_int(port) % 3));
+        #else
+        return mp_const_none;
+        #endif
+    }
+
+    mp_obj_t power_getPortCurrent(mp_obj_t self, mp_obj_t port) {
+        #if defined(CONFIG_IDF_TARGET_ESP32)
+        return mp_obj_new_float(getPower(self)->Ina3221[(uint8_t)mp_obj_get_int(port) / 3].getCurrent((uint8_t)mp_obj_get_int(port) % 3));
+        #else
+        return mp_const_none;
+        #endif
     }
 }
 }

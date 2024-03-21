@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-12 10:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/hardware/rotary.rst:2 ../../en/hardware/rotary.rst:15
+#: 395dd92ae89d403c941cc0a68eb539fd 398650ba806948219b4d27187f84b117
+msgid "Rotary"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:7 860015ad1bf14381bb22b09ba3c25d6a
+msgid ""
+"Rotary is used to control the rotary encoder integrated inside the host. "
+"Below is the detailed Rotary support for the host:"
+msgstr "Rotary 用于控制主机内部集成的旋转编码器。以下是主机的 Rotary 支持详细："
+
+#: ../../en/hardware/rotary.rst:15 bf3fdcd28dbb4ece80d623f31a334ace
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:17 0a18a2a699d4482dbcae7404a0d5db9a
+msgid "Dial"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:17 ../../en/hardware/rotary.rst:19
+#: 490983acca1b459db8cade74d85caa84 c624e6c1dbc94b668e12bfa31d2e20f0
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:19 b5327bf5e5cc488ea6329573f28f25cd
+msgid "DinMeter"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:25 3b4d3f02726d490aa56012c83e07a790
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:70 4ea9b6ddaa0e47649d3e48f8dbac72c8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:72 a93050bf7afc4e3eb04a2e22446c8de8
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:1 fcf8712c1617488d96ed93caf8b15dac
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:76 d8eb3d7824e84cd8986c36e1a6d74e87
+msgid "class Rotary"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:79 d758a5b62c254e8e8037d64fceefc85f
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:83 3757f56090ca48a0b651369e0bd75e60
+msgid "Creates a Rotary object."
+msgstr "创建一个 Rotary 对象。"
+
+#: ../../en/hardware/rotary.rst:85 ../../en/hardware/rotary.rst:96
+#: ../../en/hardware/rotary.rst:107 ../../en/hardware/rotary.rst:119
+#: ../../en/hardware/rotary.rst:128 ../../en/hardware/rotary.rst:137
+#: 5b741e1a43474eb58aee9836df94bec2 6b72a5f633de43298310d6f9f0bdf19b
+#: 7132617ba4c14fca8fe0b6794cbe7af1 d0d2c86ea0c94f99bf2da5b640928008
+#: d50ed687c23c4b9dac5472bd7965ead5 f7cc62d67a60449599b537c8b8b847f7
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:87 5ed55848b3d7486598fb3c024e3b24db
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:3 3d8152c59a0145cdb77f2985e892ac75
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:90 7316c24c29f3439ea64ec0c1d8e7fef0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:94 c878e0cabf5643429d8c1877ce4c537b
+msgid "Gets the rotation status of the Rotary object."
+msgstr "获取 Rotary 对象的旋转状态。"
+
+#: ../../en/hardware/rotary.rst:98 917b45b5a6a340b993d3c3cd8b327e9f
+msgid "|get_rotary_status.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:5 e48b40fb019944afa8ee6bb0c6885afe
+msgid "get_rotary_status.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:103 ../../en/hardware/rotary.rst:114
+#: ae3e29de59584130a96791e0e252f25e b1d24471039744b1887336607c027d1c
+msgid "Cannot be used simultaneously with :meth:`Rotary.get_rotary_increments()`."
+msgstr "不能和 :meth:`Rotary.get_rotary_increments()` 同时使用"
+
+#: ../../en/hardware/rotary.rst:105 b7d15b46852045669117be75d478af59
+msgid "Gets the rotation value of the Rotary object."
+msgstr "获取 Rotary 对象的旋转值。"
+
+#: ../../en/hardware/rotary.rst:109 1a32edeae9454216879376b442d8c95d
+msgid "|get_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:7 e45b659e2079427da928d78433ad687d
+msgid "get_rotary_value.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:116 bef813020ad24adebfba2b8df9d5a615
+msgid ""
+"Gets the rotation increment of the Rotary object. Can be used to "
+"determine the direction of rotation."
+msgstr "获取 Rotary 对象的旋转增量。可用于判断旋转方向。"
+
+#: ../../en/hardware/rotary.rst:121 fa85c555a9df4163ad0ac5cf51be9804
+msgid "|get_rotary_increments.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:13 e295008e8a5443edadde7d0652b2e31e
+msgid "get_rotary_increments.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:126 411e5c3a19624b939de224cabd6937e2
+msgid "Resets the rotation value of the Rotary object."
+msgstr "重置 Rotary 对象的旋转值。"
+
+#: ../../en/hardware/rotary.rst:130 cc4307b9cbe8407b8685b7fdce64fc1d
+msgid "|reset_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:9 282c1c3371b145f58ed57923c8d168b7
+msgid "reset_rotary_value.svg"
+msgstr ""
+
+#: ../../en/hardware/rotary.rst:135 bf10cebe4810401b9092f9ac1ea44a4c
+msgid "Sets the rotation value of the Rotary object."
+msgstr "设置 Rotary 对象的旋转值。"
+
+#: ../../en/hardware/rotary.rst:139 8d37907db90b40288d3b5ed5a35fe5b4
+msgid "|set_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/hardware.rotary.ref:11 4fb6923985ba4ecdb75dbc3b5394f3ea
+msgid "set_rotary_value.svg"
+msgstr ""
+

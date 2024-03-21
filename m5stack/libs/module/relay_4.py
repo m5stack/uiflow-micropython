@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from .mbus import i2c1
 from .module_helper import ModuleError
 import struct
@@ -11,12 +15,12 @@ I2C_ADDR_REG = 0xFF
 
 
 class Relay_Stack:
-    def __init__(self, i2c, addr):
+    def __init__(self, i2c, address):
         self.i2c = i2c
-        self.i2c_addr = addr
+        self.i2c_addr = address
 
     def _available(self):
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise ModuleError("4 relay module maybe not connect")
 
     def get_relay_status(self, num):

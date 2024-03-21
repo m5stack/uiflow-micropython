@@ -30,11 +30,11 @@ class SHT30:
     WRITE_STATUS_MASK = 0x0001  # 0
 
     # MSB = 0x2C LSB = 0x06 Repeatability = High, Clock stretching = enabled
-    MEASURE_CMD = b"\x2C\x10"
-    STATUS_CMD = b"\xF3\x2D"
-    RESET_CMD = b"\x30\xA2"
+    MEASURE_CMD = b"\x2c\x10"
+    STATUS_CMD = b"\xf3\x2d"
+    RESET_CMD = b"\x30\xa2"
     CLEAR_STATUS_CMD = b"\x30\x41"
-    ENABLE_HEATER_CMD = b"\x30\x6D"
+    ENABLE_HEATER_CMD = b"\x30\x6d"
     DISABLE_HEATER_CMD = b"\x30\x66"
 
     def __init__(self, i2c=None, delta_temp=0, delta_hum=0, i2c_address=DEFAULT_I2C_ADDRESS):

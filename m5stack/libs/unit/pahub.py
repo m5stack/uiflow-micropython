@@ -1,4 +1,6 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from machine import I2C
 from micropython import const
 
@@ -25,7 +27,7 @@ class PAHUBUnit:
     _addr = PAHUB_DEFAULT_ADDR
 
     def __init__(
-        self, i2c: I2C, channel: Literal[0, 1, 2, 3, 4, 5] = 0, address=PAHUB_DEFAULT_ADDR
+        self, i2c: I2C, address=PAHUB_DEFAULT_ADDR, channel: Literal[0, 1, 2, 3, 4, 5] = 0
     ) -> None:
         self._i2c = i2c
         self._chn = channel

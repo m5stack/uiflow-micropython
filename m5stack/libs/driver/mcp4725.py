@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2017 Tony DiCola for Adafruit Industries
+# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import time
 from micropython import const
 from machine import I2C

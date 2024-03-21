@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include <M5Unified.h>
 #include "lgfx/utility/lgfx_tjpgd.h"
 

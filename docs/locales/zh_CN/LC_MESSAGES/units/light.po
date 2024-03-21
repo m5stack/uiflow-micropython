@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/light.rst:2 8f936cd910824bd3aa7f63c8641a1704
+msgid "Light Unit"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref 1fcf8c4adfce4a00955f9c1555b03012
+#: 49514089ad814caab3f03d76080f191d
+msgid "Light"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref:7 164e7de7297d4c4496134faf93de547d
+#: 27bfc310dddb4d659823c9e3ffcc8d1a
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref:9 0ea09a2b442d4087a98889b44366ef41
+#: 20e8e874888d4f9ea86c6c2ef6e753ef
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref:11 c0b4437e33dd47c78748c922223c3f5d
+#: d09ac2009827400ca4c27c8337da7859
+msgid "get_digital_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref:13 68c468e9f75e4e738a8371d4e787f5de
+#: eff1e7bae632427ab6899d9dc1a5f975
+msgid "get_analog_value.svg"
+msgstr ""
+
+#: ../../en/refs/unit.light.ref:15 572542e2c9574c58820da453e61cc22c
+#: 636c005afb874a1db37d8049195d16aa
+msgid "get_ohm.svg"
+msgstr ""
+
+#: ../../en/units/light.rst:6 a880505fc2dc4550b7c09cfc973056fb
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/light.rst:8 1ba9d08565684b5cac1f51b3bd8f55a0
+msgid "|Light|"
+msgstr ""
+
+#: ../../en/units/light.rst:11 0308b5dc45d5467faa6e4358ba8b306a
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/light.rst:32 c483dd8b804a48b096fb01b1b6cec40e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/light.rst:34 c78e4b34145947778b4e38d054ab0f4e
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/light.rst:39 d87c015a85584d0fb623f03bdaf4ebfb
+msgid "|light_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/light.rst:43 a2e6cc671c3c4962b384eab0b42270f7
+msgid "class Light"
+msgstr ""
+
+#: ../../en/units/light.rst:46 58f4c48927384bf1a39a7d89130d1444
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/light.rst:50 cd15eaaf988844ec8909c7fde218202e
+msgid "Create a Light object."
+msgstr ""
+
+#: ../../en/units/light.rst:53 efa820a7dc1346bba612e391dbf23c69
+msgid "The parameters are:"
+msgstr ""
+
+#: ../../en/units/light.rst:53 f842d16c887240aa82a404c9c9f90228
+msgid "``IO1,IO2`` Define digital and analog output pins."
+msgstr ""
+
+#: ../../en/units/light.rst:55 ../../en/units/light.rst:67
+#: ../../en/units/light.rst:76 ../../en/units/light.rst:85
+#: 295ca49d22a842aba7c08660205c8837 379daf7243784b9091dce7d56fafdf35
+#: 5acf0edf038241ad9f1b7be0883e8462 c0dbbffc751b4337b5606b91e38fe8eb
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/light.rst:57 54ca1b5f13984eeba5fcfbfb466118d1
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/light.rst:61 54b9916ee72e43bdb7ae151063296c4b
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/light.rst:65 0ff80b48fa8142ae8508998be9733c82
+msgid "Define digital and analog output pins."
+msgstr ""
+
+#: ../../en/units/light.rst:69 157386369c094766af0bd18b8e4795ae
+msgid "|get_digital_value.svg|"
+msgstr ""
+
+#: ../../en/units/light.rst:74 07fb2cb0cd62472792afb2cb88593034
+msgid "Gets the analog (returns 0-65535)."
+msgstr ""
+
+#: ../../en/units/light.rst:78 859beedca1ef4952b24001b0a80253df
+msgid "|get_analog_value.svg|"
+msgstr ""
+
+#: ../../en/units/light.rst:83 707cc0b2200c4a378837c5234c4ef032
+msgid "Gets the resistance value (returns an integer)."
+msgstr ""
+
+#: ../../en/units/light.rst:87 fd98b11d06c846f69c54449f9f671b0b
+msgid "|get_ohm.svg|"
+msgstr ""
+

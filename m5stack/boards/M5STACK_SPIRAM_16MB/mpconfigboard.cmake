@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
     ./boards/sdkconfig.flash_16mb

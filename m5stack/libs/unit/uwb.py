@@ -1,16 +1,27 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import UART, Pin
 from .unit_helper import UnitError
 import time
+import sys
+
+if sys.platform != "esp32":
+    from typing import Literal
+
 
 UWB_RESULT_HEADER = "an"
 UWB_GET_TIMEOUT = 12
 
 
 class UWBUnit:
-    def __init__(self, port, id=None, debug=False):
+    def __init__(
+        self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, anchor_id=None, debug=False
+    ):
         self._debug = debug
-        Pinx = Pin(port[0], Pin.IN, Pin.PULL_UP)
-        self._uart = UART(1, tx=port[1], rx=port[0])
+        Pin(port[0], Pin.IN, Pin.PULL_UP)
+        self._uart = UART(id, tx=port[1], rx=port[0])
         self._uart.init(115200, bits=8, parity=None, stop=1)
         self.tx = port[1]
         self.rx = port[0]
@@ -22,12 +33,12 @@ class UWBUnit:
         if self.check_device is False:
             raise UnitError("UWB unit maybe not connect")
         self.continuous_output_value(0)
-        if id == None:
+        if anchor_id is None:
             self.set_mode()
             self.set_range_interval(5)
             self.continuous_output_value(1)
         else:
-            self.set_mode(id)
+            self.set_mode(anchor_id)
 
     def uart_port_id(self, id_num):
         self._uart = UART(id_num, tx=self.tx, rx=self.rx)
@@ -62,7 +73,7 @@ class UWBUnit:
         self.at_cmd_send(cmd, keyword="OK")
 
     def set_mode(self, id=None):
-        cmd = "AT+anchor_tag=1," + str(id) + "\r\n" if (id != None) else "AT+anchor_tag=0\r\n"
+        cmd = "AT+anchor_tag=1," + str(id) + "\r\n" if (id is not None) else "AT+anchor_tag=0\r\n"
         self.at_cmd_send(cmd, keyword="OK")
         time.sleep(0.1)
         self.reset()
@@ -94,7 +105,7 @@ class UWBUnit:
                 if self._debug:
                     print("Got KEYWORD")
                 find_keyword = True
-            if find_keyword == True and self._uart.any() == 0:
+            if find_keyword is True and self._uart.any() == 0:
                 break
 
         if self._debug:

@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from . import Startup
 import M5
 import network
@@ -134,7 +138,7 @@ class DevApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._mac_label.setText(self._mac_text)
+        self._mac_label.set_text(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
@@ -146,7 +150,7 @@ class DevApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium12_VLW,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._avatar_img = Image(use_sprite=False)
         self._avatar_img.set_pos(24, 20)
@@ -166,7 +170,7 @@ class DevApp(AppBase):
                 self._bg_img.set_src(self._bg_src)
                 refresh = True
 
-            refresh and self._mac_label.setText(self._mac_text)
+            refresh and self._mac_label.set_text(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh:
@@ -174,7 +178,7 @@ class DevApp(AppBase):
                 # print(self._account_text)
                 # print(t)
                 self._account_text = t
-                self._account_label.setText(self._account_text)
+                self._account_label.set_text(self._account_text)
 
             t = self._get_avatar()
             if t != self._avatar_src:
@@ -201,21 +205,21 @@ class DevApp(AppBase):
         )
 
     async def _dl_avatar(self, dst):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 self._avatar_img.set_src(AVATAR_IMG)
             else:
                 try:
                     rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
                     length = int(rsp.headers["Content-Length"])
-                    BLOCKLEN = 1024
+                    block_len = 1024
                     source = rsp.raw
                     read = 0
                     with open(dst, "wb") as f:
                         # 逐块读取数据
                         while read < length:
-                            to_read = BLOCKLEN if (length - read) >= BLOCKLEN else length - read
+                            to_read = block_len if (length - read) >= block_len else length - read
                             buf = source.read(to_read)
                             read += len(buf)
                             f.write(buf)
@@ -240,18 +244,18 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_account():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            return "None" if len(infos[1]) is 0 else infos[1]
+            return "None" if len(infos[1]) == 0 else infos[1]
         else:
             return "None"
 
     @staticmethod
     def _get_avatar():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
             # print(infos)
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 return AVATAR_IMG
             else:
                 return "res/img/" + str(infos[4]).split("/")[-1]
@@ -260,9 +264,9 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_bg_src():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0:
+            if infos[0] == 0:
                 return DEVELOP_PRIVATE_IMG
             elif infos[0] in (1, 2):
                 return DEVELOP_PUBLIC_IMG
@@ -300,7 +304,7 @@ class RunApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._date_label.setText(self._date_text)
+        self._date_label.set_text(self._date_text)
 
         self._mtime_label = Label(
             "",
@@ -312,7 +316,7 @@ class RunApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._mtime_label.setText(self._mtime_text)
+        self._mtime_label.set_text(self._mtime_text)
 
         self._account_label = Label(
             "",
@@ -324,7 +328,7 @@ class RunApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._ver_label = Label(
             "",
@@ -337,7 +341,7 @@ class RunApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._ver_label.setText(self._ver_text)
+        self._ver_label.set_text(self._ver_text)
 
         M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 4, 104)
         M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 4, 132)
@@ -368,7 +372,7 @@ class RunApp(AppBase):
 
     def _handle_run_once(self, fw):
         M5.Lcd.clear(0xFFFFFF)
-        execfile("main.py")
+        execfile("main.py")  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):
@@ -391,7 +395,7 @@ class RunApp(AppBase):
         except OSError:
             pass
 
-        if mtime == None or mtime[0] < 2024:
+        if mtime is None or mtime[0] < 2024:
             date = "--/--/--"
             mtime = "--:--:--"
         else:
@@ -405,16 +409,16 @@ class RunApp(AppBase):
                     account = line.split(":")[1].strip()
                 if line.find("Ver") != -1:
                     ver = line.split(":")[1].strip()
-                if account != None and ver != None:
+                if account is not None and ver is not None:
                     break
 
-        if account == None and _HAS_SERVER and M5Things.status() is 2:
+        if account is None and _HAS_SERVER and M5Things.status() == 2:
             infos = M5Things.info()
-            account = "None" if len(infos[1]) is 0 else "{:s}".format(infos[1])
+            account = "None" if len(infos[1]) == 0 else "{:s}".format(infos[1])
         else:
             account = "None"
 
-        if ver == None:
+        if ver is None:
             ver = "None"
 
         return (date, mtime, account, ver)
@@ -449,7 +453,7 @@ class ListApp(AppBase):
                 bg_color=0x343434,
                 font=MontserratMedium12_VLW,
             )
-            self._label0.setLongMode(Label.LONG_DOT)
+            self._label0.set_long_mode(Label.LONG_DOT)
             self._labels.append(self._label0)
         if len(self._files) > 1:
             self._label1 = Label(
@@ -462,7 +466,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=MontserratMedium12_VLW,
             )
-            self._label1.setLongMode(Label.LONG_DOT)
+            self._label1.set_long_mode(Label.LONG_DOT)
             self._labels.append(self._label1)
         if len(self._files) > 2:
             self._label2 = Label(
@@ -475,12 +479,12 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=MontserratMedium12_VLW,
             )
-            self._label2.setLongMode(Label.LONG_DOT)
+            self._label2.set_long_mode(Label.LONG_DOT)
             self._labels.append(self._label2)
 
         for label, file in zip(self._labels, self._files):
             # print("file:", file)
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
     def on_ready(self):
         pass
@@ -498,7 +502,7 @@ class ListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[0])
+        execfile("apps/" + self._files[0])  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):
@@ -510,7 +514,7 @@ class ListApp(AppBase):
         file = self._files.pop(0)
         self._files.append(file)
         for label, file in zip(self._labels, self._files):
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
     @staticmethod
     def approximate(number):
@@ -563,7 +567,7 @@ class CloudApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._ssid_label.setText(self._ssid)
+        self._ssid_label.set_text(self._ssid)
 
         self._server_label = Label(
             "",
@@ -576,7 +580,7 @@ class CloudApp(AppBase):
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
-        self._server_label.setText(self._server)
+        self._server_label.set_text(self._server)
 
     async def on_run(self):
         while True:
@@ -584,8 +588,8 @@ class CloudApp(AppBase):
             if t is not self._cloud_status:
                 self._cloud_status = t
                 self._bg_img.set_src(self.bg_table.get(self._cloud_status, CLOUD_ERROR_IMG))
-                self._ssid_label.setText(self._ssid)
-                self._server_label.setText(self._server)
+                self._ssid_label.set_text(self._ssid)
+                self._server_label.set_text(self._server)
                 await asyncio.sleep_ms(1000)
             else:
                 await asyncio.sleep_ms(1000)
@@ -625,7 +629,7 @@ class CloudApp(AppBase):
             network.STAT_HANDSHAKE_TIMEOUT: 2,
         }[self._wifi.connect_status()]
 
-        if _cloud_status is not 1 or _HAS_SERVER is not True:
+        if _cloud_status != 1 or _HAS_SERVER is not True:
             return _cloud_status
 
         if M5Things.status() == 2:
@@ -708,7 +712,7 @@ class StatusBarApp(AppBase):
             bg_color=0x000000,
             font=MontserratMedium10_VLW,
         )
-        self._time_label.setText(self._time_text)
+        self._time_label.set_text(self._time_text)
 
         self._battery_img = Image(use_sprite=False)
         self._battery_img.set_pos(58, 0)
@@ -721,7 +725,7 @@ class StatusBarApp(AppBase):
 
     async def on_run(self):
         while True:
-            self._time_label.setText(self._get_local_time_text())
+            self._time_label.set_text(self._get_local_time_text())
             self._brightness = self.approximate(M5.Power.getBatteryLevel())
             self._battery_img.set_src("{}{}.jpeg".format(BAT_IMG_PATH, self._brightness))
             await asyncio.sleep_ms(5000)

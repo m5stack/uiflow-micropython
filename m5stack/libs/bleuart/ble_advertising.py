@@ -1,3 +1,4 @@
+# Copyright (c) 2024 M5Stack Technology CO LTD
 # Helpers for generating BLE advertising payloads.
 
 from micropython import const

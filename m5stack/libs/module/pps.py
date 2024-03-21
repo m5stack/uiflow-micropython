@@ -1,11 +1,6 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   _dac2.py
-@Time    :   2024/3/7
-@Author  :   TONG YIHAN
-@E-mail  :   icyqwq@gmail.com
-@License :   (C)Copyright 2015-2024, M5STACK
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 # Import necessary libraries
 from .mbus import i2c1
@@ -13,7 +8,7 @@ from .module_helper import ModuleError
 import struct
 
 
-class PPS:
+class PPSModule:
     """! Programmable Power Supply (PPS), supports output up to 30V 5A.
 
     @en The Programmable Power Supply (PPS), capable of providing an output up to 30V and 5A. It allows for precise control over the output voltage and current, with features to read back the actual output values and the module's status.
@@ -49,7 +44,7 @@ class PPS:
     OUT_CV_MODE = 1
     OUT_CC_MODE = 2
 
-    def __init__(self, addr=0x35):
+    def __init__(self, address=0x35):
         """! Initialize the PPS.
 
         @param port I2C port to use.
@@ -57,7 +52,7 @@ class PPS:
         """
 
         self.i2c = i2c1
-        self.addr = addr
+        self.addr = address
 
         # Check if the devices are connected and accessible
         self._available()

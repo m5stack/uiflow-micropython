@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2014 Damien P. George
+#
+# SPDX-License-Identifier: MIT
+
 # Note this requires building with IDF 4.x
 CONFIG_BT_ENABLED=y
 CONFIG_BTDM_CTRL_MODE_BLE_ONLY=y

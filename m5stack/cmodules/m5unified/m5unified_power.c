@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include "m5unified.h"
 
 // -------- Power wrapper
@@ -10,7 +16,7 @@ STATIC const mp_rom_map_elem_t power_port_masks_table[] = {
     { MP_ROM_QSTR(MP_QSTR_C1),  MP_ROM_INT(0b00001000) },
     { MP_ROM_QSTR(MP_QSTR_C2),  MP_ROM_INT(0b00010000) },
     { MP_ROM_QSTR(MP_QSTR_USB), MP_ROM_INT(0b00100000) },
-    { MP_ROM_QSTR(MP_QSTR_HAT), MP_ROM_INT(0b01000000) },
+    { MP_ROM_QSTR(MP_QSTR_MAIN), MP_ROM_INT(0b10000000) },
     /* *FORMAT-ON* */
 };
 STATIC MP_DEFINE_CONST_DICT(power_port_masks, power_port_masks_table);
@@ -49,6 +55,8 @@ MAKE_METHOD_0(power, getBatteryCurrent);
 MAKE_METHOD_0(power, getKeyState);
 MAKE_METHOD_1(power, setVibration);
 MAKE_METHOD_0(power, getType);
+MAKE_METHOD_1(power, getPortVbus);
+MAKE_METHOD_1(power, getPortCurrent);
 
 STATIC const mp_rom_map_elem_t power_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_PORT),        MP_ROM_PTR(&mp_power_port_mask_enum) },
@@ -72,6 +80,8 @@ STATIC const mp_rom_map_elem_t power_member_table[] = {
     MAKE_TABLE(power, getKeyState),
     MAKE_TABLE(power, setVibration),
     MAKE_TABLE(power, getType),
+    MAKE_TABLE(power, getPortVbus),
+    MAKE_TABLE(power, getPortCurrent),
 };
 
 STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);

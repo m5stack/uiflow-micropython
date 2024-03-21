@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.12.1\n"
+
+#: ../../en/units/relay.rst:2 5990936038fc43718cb5f5d66bebd5e5
+msgid "RELAY Unit"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref 607ae58adb844428b491d0d051cc38bb
+#: d4d7234b1ffa48dbb67ed194430a3b67
+msgid "RELAY"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:7 895f61bd4ad848c2a2ec0792eac9a435
+#: b759f0c1280c4c9ca6b83e5756b23610
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:9 903db9148b3b473983d9c33203797bb4
+#: c2a6d64849c04b87862f0d1ebe822968
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:11 000a3c94cfe5463a9021e8115b68d047
+#: 79e65ea221bd4112b7b3d9315cfb87bf
+msgid "get_status.svg"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:13 22dd14e36916431e853830b1acd3794c
+#: 9b8de380c2954d90b3d3caf095a1fad5
+msgid "on.svg"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:15 c93da857c9ef46a6a59d1d61b6cfe07f
+#: e68bb39a5f40460e84aafe4fc4955a6c
+msgid "off.svg"
+msgstr ""
+
+#: ../../en/refs/unit.relay.ref:17 233d2fa793524aefb292fc0121de67e3
+#: d3507975fb6e48d68b124f0530cdc12e
+msgid "set_status.svg"
+msgstr ""
+
+#: ../../en/units/relay.rst:6 03b1d211820a462ca5108770897b236e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/relay.rst:8 f0a9d1e13f5a4542a136682ff0a26ad1
+msgid "|RELAY|"
+msgstr ""
+
+#: ../../en/units/relay.rst:11 b17c41476fc1409597dd651ab2cc69e0
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/relay.rst:37 b8aab5ba9f5f4d6a9560e628b7acf541
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/relay.rst:39 1cf07e0a85ca4b53bfce28b79c4c8089
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/units/relay.rst:44 6d742a0e4c5c4c8dbd4eb2fedb9f5032
+msgid "|relay_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/relay.rst:48 89d16f0a535c4725b995ee53850aec94
+msgid "class RelayUnit"
+msgstr ""
+
+#: ../../en/units/relay.rst:51 bf8fb76b122846f29f0513c2c0917f03
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/relay.rst:55 530be08e87814ec5b37fd726de5f314d
+msgid "Create a RelayUnit object."
+msgstr ""
+
+#: ../../en/units/relay.rst:58 ab5792e0aa064977820d57d97c1b6cee
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/relay.rst:58 f0a6c905c5e342c9941afb11150a1410
+msgid "``io`` Define the control pin."
+msgstr ""
+
+#: ../../en/units/relay.rst:60 ../../en/units/relay.rst:72
+#: ../../en/units/relay.rst:81 ../../en/units/relay.rst:90
+#: ../../en/units/relay.rst:99 711801e8d80d4375b37e70bc7169768c
+#: c04105ae262e42359b5ac6b4e248b65c d70eddfe32b94b6f92be9c66edbce7aa
+#: dcf8510b89434029a8e555ee54475436 edfd4cd59738406e92b33a55d33c9563
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/relay.rst:62 a936dc04f2944a46b58c5d93404522ca
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/units/relay.rst:66 d3897df25de749bb9b3ec626c372aee6
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/relay.rst:70 0abf56860b164607b049e92068a163f5
+msgid "Gets the relay switch status."
+msgstr ""
+
+#: ../../en/units/relay.rst:74 843c76ed7d6c490cb85a5e25a46ad380
+msgid "|get_status.svg|"
+msgstr ""
+
+#: ../../en/units/relay.rst:79 bd2eeb5f166b40dcbe409ab068cb7093
+msgid "turn on the relay."
+msgstr ""
+
+#: ../../en/units/relay.rst:83 8026f191a3e0468d86bb0d1ae4f735f3
+msgid "|on.svg|"
+msgstr ""
+
+#: ../../en/units/relay.rst:88 ca277345da574e16abf45c1f353522c7
+msgid "Turn off the relay."
+msgstr ""
+
+#: ../../en/units/relay.rst:92 686c0b85e43f4bb0918fd1ab227d254b
+msgid "|off.svg|"
+msgstr ""
+
+#: ../../en/units/relay.rst:97 c8ca05eb2c284389acf8b84e08bc84b3
+msgid "Set the relay status (True or false)."
+msgstr ""
+
+#: ../../en/units/relay.rst:101 077781aff07e4ad5ba326fb172432fe2
+msgid "|set_status.svg|"
+msgstr ""
+

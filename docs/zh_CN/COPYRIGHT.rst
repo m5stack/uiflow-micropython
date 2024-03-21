@@ -4,11 +4,13 @@ Copyrights and Licenses
 
 .. include:: ./refs/COPYRIGHT.ref
 
+
 Software Copyrights
 ====================
 
 All original source code in this repository is Copyright (C) 2023 M5Stack.
 This source code is licensed under the MIT license as described in the file LICENSE.
+
 
 Third Party
 ============
@@ -27,6 +29,9 @@ Third Party
 * `scd40`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
 * `sgp30`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT License.
 * `sht4x`_ Copyright (c) 2021 ladyada for Adafruit and licensed under MIT License.
+* `vl53l0x`_ Copyright (c) 2017 Tony DiCola for Adafruit Industries and licensed under MIT License.
+* `camera`_ Copyright (c) 2021 Mauro Riva and licensed under Apache License Version 2.0.
+
 
 Documentation
 ==============
