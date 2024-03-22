@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import M5
 
 
@@ -51,7 +55,7 @@ class Label:
             elif self._font_align == self.RIGHT_ALIGNED:
                 self._parent.fillRect(self._x - w, self._y, w, h, self._bg_color)
 
-    def setText(self, text=None) -> None:
+    def set_text(self, text=None) -> None:
         self._load_font()
         self._erase_helper()
         self._texts.clear()
@@ -120,38 +124,38 @@ class Label:
             if sum(text_h for _ in self._texts) > self._max_h:
                 self._texts.pop()
 
-    def setTextColor(self, fg_color, bg_color):
+    def set_text_color(self, fg_color, bg_color):
         self._fg_color = fg_color
         self._bg_color = bg_color
 
     def _load_font(self):
-        if type(self._font) == bytes:
+        if isinstance(self._font, bytes):
             self._parent.unloadFont()
             self._parent.loadFont(self._font)
-        elif type(self._font) == str:
+        elif isinstance(self._font, str):
             self._parent.loadFont(self._font)
         else:
             self._parent.setFont(self._font)
 
-    def setLongMode(self, mode):
+    def set_long_mode(self, mode):
         if mode is self.LONG_DOT:
             self._long_fn = self._long_dot
         elif mode is self.LONG_WARP:
             self._long_fn = self._long_wrap
 
-    def setPos(self, x, y):
+    def set_pos(self, x, y):
         self._x = x
         self._y = y
-        self.setText(None)
+        self.set_text(None)
 
-    def getX(self):
+    def get_x(self):
         return self._x
 
-    def getY(self):
+    def get_y(self):
         return self._y
 
-    def setX(self, x):
+    def set_x(self, x):
         self._x = x
 
-    def setY(self, y):
+    def set_y(self, y):
         self._y = y

@@ -1,11 +1,11 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import I2C
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 import struct
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 
 THERMAL_CAM_ADDR = 0x32
@@ -299,9 +299,9 @@ color_table = [
 
 
 class Thermal2Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], addr=THERMAL_CAM_ADDR):
+    def __init__(self, i2c: I2C | PAHUBUnit, address=THERMAL_CAM_ADDR):
         self.thermal_i2c = i2c
-        self.unit_addr = addr
+        self.unit_addr = address
         self.available()
         self.min_temp = 0
         self.max_temp = 128 << 6

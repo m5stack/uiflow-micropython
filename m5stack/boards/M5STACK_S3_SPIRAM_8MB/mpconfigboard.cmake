@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 set(IDF_TARGET esp32s3)
 # Enable camera module
 set(M5_CAMERA_MODULE_ENABLE TRUE)

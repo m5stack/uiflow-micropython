@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from ..res import (
     CARD_228x32_SELECT_IMG,
@@ -165,7 +169,7 @@ class ListApp(AppBase):
         for label, icos, file in zip(self._labels, self._icos, self._files):
             ico_name = file[0].lower()
             icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-            label.setText(file)
+            label.set_text(file)
 
     def on_ready(self):
         pass
@@ -205,7 +209,7 @@ class ListApp(AppBase):
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, icos, file in zip(
                 self._labels,
@@ -216,7 +220,7 @@ class ListApp(AppBase):
             ):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
 
     def _btn_down_event_handler(self, fw):
         # Clear selection cursor
@@ -244,14 +248,14 @@ class ListApp(AppBase):
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
         else:
             for label, icos, file in zip(
                 self._labels, self._icos, self._files[self._file_pos - 2 : self._file_pos + 1]
             ):
                 ico_name = file[0].lower()
                 icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
-                label.setText(file)
+                label.set_text(file)
 
     def _btn_once_event_handler(self, event):
         execfile("apps/" + self._files[self._file_pos])  # noqa: F821

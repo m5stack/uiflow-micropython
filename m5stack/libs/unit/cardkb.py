@@ -1,4 +1,9 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from micropython import schedule
+from machine import I2C
+from .pahub import PAHUBUnit
 
 
 class KeyCode:
@@ -17,7 +22,7 @@ class KeyCode:
 
 
 class CardKBUnit:
-    def __init__(self, i2c, address=0x5F):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x5F):
         self._i2c = i2c
         self._addr = address
         self._keys = []
@@ -32,7 +37,7 @@ class CardKBUnit:
 
     def _get_key(self):
         buf = self._i2c.readfrom(self._addr, 1)
-        if buf[0] is not 0:
+        if buf[0] != 0:
             self._keys.append(buf[0])
             return True
         return False

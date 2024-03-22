@@ -31,14 +31,9 @@ from time import localtime, sleep
 from gc import collect
 from driver.timezone import TZONE
 from micropython import const
-
 from .pahub import PAHUBUnit
 from .unit_helper import UnitError
 
-import sys
-
-if sys.platform != "esp32":
-    from typing import Union
 
 PCF8563_SLAVE_ADDRESS = const(0x51)
 PCF8563_STAT1_REG = const(0x00)
@@ -91,7 +86,7 @@ YEAR = 6
 
 
 class RTC8563Unit:
-    def __init__(self, i2c: Union[I2C, PAHUBUnit], address=PCF8563_SLAVE_ADDRESS):
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = PCF8563_SLAVE_ADDRESS):
         """Initialization needs to be given an initialized I2C port"""
         self.i2c = i2c
         self.i2c_addr = address
@@ -104,7 +99,7 @@ class RTC8563Unit:
         self.turn_off_timer()
 
     def _available(self):
-        if not (self.i2c_addr in self.i2c.scan()):
+        if self.i2c_addr not in self.i2c.scan():
             raise UnitError("RTC unit maybe not connect")
 
     def __write_byte(self, reg, val):
@@ -212,7 +207,7 @@ class RTC8563Unit:
             tzone = int(3600 * (int(tzone) + ((tzone - int(tzone)) * 100 / 60)))
             utc = localtime(ntp + tzone)
 
-        (yy, MM, mday, hh, mm, ss, wday, yday) = utc
+        (yy, MM, mday, hh, mm, ss, wday, yday) = utc  # noqa: N806
         self.datetime((yy - 2000, MM, mday, hh, mm, ss, wday))
 
     def set_clk_out_frequency(self, frequency=CLOCK_CLK_OUT_FREQ_1_HZ):

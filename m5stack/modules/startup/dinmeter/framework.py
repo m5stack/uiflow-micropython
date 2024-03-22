@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from .app import AppBase, AppSelector
 import M5
 import gc
@@ -119,7 +123,7 @@ class Framework:
             if hasattr(app, "_keycode_dpad_down_event_handler"):
                 await app._keycode_dpad_down_event_handler(self)
             event.status = True
-        if event.status == False:
+        if event.status is False:
             app = self._app_selector.current()
             if hasattr(app, "_kb_event_handler"):
                 await app._kb_event_handler(event, self)

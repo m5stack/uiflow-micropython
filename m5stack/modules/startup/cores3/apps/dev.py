@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase, Descriptor
 import M5
 from widgets.image import Image
@@ -73,7 +77,7 @@ class DevApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
-        self._mac_label.setText(self._mac_text)
+        self._mac_label.set_text(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
@@ -86,7 +90,7 @@ class DevApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._avatar_img = Image(use_sprite=False, parent=self._lcd)
         self._avatar_img.set_pos(130, 100)
@@ -105,7 +109,7 @@ class DevApp(AppBase):
                 self._bg_img.set_src(self._bg_src)
                 refresh = True
 
-            refresh and self._mac_label.setText(self._mac_text)
+            refresh and self._mac_label.set_text(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh:
@@ -113,7 +117,7 @@ class DevApp(AppBase):
                 print(self._account_text)
                 print(t)
                 self._account_text = t
-                self._account_label.setText(self._account_text)
+                self._account_label.set_text(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)
 
             t = self._get_avatar()
@@ -155,9 +159,9 @@ class DevApp(AppBase):
         pass
 
     async def _dl_avatar(self, dst):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 self._avatar_img.set_src("/system/common/img/avatar.jpg")
             else:
                 try:
@@ -180,17 +184,17 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_account():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            return "None" if len(infos[1]) is 0 else infos[1]
+            return "None" if len(infos[1]) == 0 else infos[1]
         else:
             return "None"
 
     @staticmethod
     def _get_avatar():
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if len(infos[4]) is 0:
+            if len(infos[4]) == 0:
                 return "/system/common/img/avatar.jpg"
             else:
                 return "/system/common/img/" + str(infos[4]).split("/")[-1]
@@ -198,9 +202,9 @@ class DevApp(AppBase):
             return "/system/common/img/avatar.jpg"
 
     def _get_bg_src(self):
-        if _HAS_SERVER is True and M5Things.status() is 2:
+        if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
-            if infos[0] is 0:
+            if infos[0] == 0:
                 return "/system/cores3/Develop/private.png"
             elif infos[0] in (1, 2):
                 return "/system/cores3/Develop/public.png"

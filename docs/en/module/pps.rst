@@ -1,7 +1,6 @@
 PPS Module
 ==========
 
-
 .. include:: ../refs/module.pps.ref
 
 The `PPS` class controls a Programmable Power Supply (PPS), capable of providing
@@ -20,9 +19,9 @@ Micropython Example::
     import os, sys, io
     import M5
     from M5 import *
-    from pps import PPS
+    from module import PPSModule
 
-    pps = PPS(addr=0x35)
+    pps = PPSModule(addr=0x35)
     pps.set_output_voltage(5.5)
     pps.set_output_current(1)
     pps.enable_output()
@@ -40,13 +39,13 @@ UIFLOW2 Example:
 .. only:: builder_html
 
 
-class PPS
----------
+class PPSModule
+---------------
 
 Constructors
 -------------
 
-.. class:: PPS(addr=0x35)
+.. class:: PPSModule(addr=0x35)
 
     Creates a PPS object to interact with the programmable power supply.
 
@@ -56,7 +55,7 @@ Constructors
 Methods
 -------
 
-.. method:: PPS.set_output(enable: bool)
+.. method:: PPSModule.set_output(enable: bool)
 
     Enable or disable the PPS output.
 
@@ -67,7 +66,7 @@ Methods
         |set_output.svg|
 
 
-.. method:: PPS.enable_output()
+.. method:: PPSModule.enable_output()
 
     Enable the PPS output.
 
@@ -76,7 +75,7 @@ Methods
         |enable_output.svg|
 
 
-.. method:: PPS.disable_output()
+.. method:: PPSModule.disable_output()
 
     Disable the PPS output.
 
@@ -85,7 +84,7 @@ Methods
         |disable_output.svg|
 
 
-.. method:: PPS.set_output_voltage(voltage: float)
+.. method:: PPSModule.set_output_voltage(voltage: float)
 
     Set the output voltage of the PPS.
 
@@ -96,7 +95,7 @@ Methods
         |set_output_voltage.svg|
 
 
-.. method:: PPS.set_output_current(current: float)
+.. method:: PPSModule.set_output_current(current: float)
 
     Set the output current of the PPS.
 
@@ -107,7 +106,7 @@ Methods
         |set_output_current.svg|
 
 
-.. method:: PPS.read_psu_running_mode() -> int
+.. method:: PPSModule.read_psu_running_mode() -> int
 
     Read the PSU running mode.
 
@@ -116,7 +115,7 @@ Methods
         |read_psu_running_mode.svg|
 
 
-.. method:: PPS.read_output_current() -> float
+.. method:: PPSModule.read_output_current() -> float
 
     Read the current output current.
 
@@ -125,7 +124,7 @@ Methods
         |read_output_current.svg|
 
 
-.. method:: PPS.read_output_voltage() -> float
+.. method:: PPSModule.read_output_voltage() -> float
 
     Read the current output voltage.
 
@@ -134,7 +133,7 @@ Methods
         |read_output_voltage.svg|
 
 
-.. method:: PPS.read_input_voltage() -> float
+.. method:: PPSModule.read_input_voltage() -> float
 
     Read the input voltage.
 
@@ -143,7 +142,7 @@ Methods
         |read_input_voltage.svg|
 
 
-.. method:: PPS.read_data_update_flag() -> int
+.. method:: PPSModule.read_data_update_flag() -> int
 
     Read the data update flag.
 
@@ -152,7 +151,7 @@ Methods
         |read_data_update_flag.svg|
 
 
-.. method:: PPS.read_mcu_temperature() -> float
+.. method:: PPSModule.read_mcu_temperature() -> float
 
     Read the MCU temperature.
 
@@ -161,7 +160,7 @@ Methods
         |read_mcu_temperature.svg|
 
 
-.. method:: PPS.read_module_id() -> int
+.. method:: PPSModule.read_module_id() -> int
 
     Read the module ID.
 
@@ -170,7 +169,7 @@ Methods
         |read_module_id.svg|
 
 
-.. method:: PPS.read_uid() -> bytearray
+.. method:: PPSModule.read_uid() -> bytearray
 
     Read the unique identifier (UID).
 
@@ -179,7 +178,7 @@ Methods
         |read_uid.svg|
 
 
-.. method:: PPS.get_i2c_address() -> int
+.. method:: PPSModule.get_i2c_address() -> int
 
     Get the current I2C address of the device.
 
@@ -188,7 +187,7 @@ Methods
         |get_i2c_address.svg|
 
 
-.. method:: PPS.set_i2c_address(new_address: int)
+.. method:: PPSModule.set_i2c_address(new_address: int)
 
     Set a new I2C address for the device.
 

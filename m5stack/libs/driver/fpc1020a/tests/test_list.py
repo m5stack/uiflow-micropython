@@ -1,3 +1,8 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+
 class int_t(int):
     _signed = True
     _size = 0

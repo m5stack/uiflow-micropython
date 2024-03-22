@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include <py/obj.h>
 #include "mpy_m5gfx.h"
 #include "esp_log.h"

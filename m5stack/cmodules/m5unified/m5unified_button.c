@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include "m5unified.h"
 
 STATIC const mp_rom_map_elem_t btn_callback_types_table[] = {

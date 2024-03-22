@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from ..res import DEVELOP_PRIVATE_IMG, DEVELOP_PUBLIC_IMG, AVATAR_IMG, MontserratMedium12_VLW
 from widgets.image import Image
@@ -65,7 +69,7 @@ class DevApp(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium12_VLW,
         )
-        self._mac_label.setText(self._mac_text)
+        self._mac_label.set_text(self._mac_text)
 
         self._account_label = Label(
             "XXABC",
@@ -77,7 +81,7 @@ class DevApp(AppBase):
             bg_color=0xFEFEFE,
             font=MontserratMedium12_VLW,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._avatar_img = Image(use_sprite=False)
         self._avatar_img.set_pos(110, 91)
@@ -97,7 +101,7 @@ class DevApp(AppBase):
                 self._bg_img.set_src(self._bg_src)
                 refresh = True
 
-            refresh and self._mac_label.setText(self._mac_text)
+            refresh and self._mac_label.set_text(self._mac_text)
 
             t = self._get_account()
             if t != self._account_text or refresh:
@@ -105,7 +109,7 @@ class DevApp(AppBase):
                 print(self._account_text)
                 print(t)
                 self._account_text = t
-                self._account_label.setText(self._account_text)
+                self._account_label.set_text(self._account_text)
 
             t = self._get_avatar()
             if t != self._avatar_src:

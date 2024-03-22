@@ -1,11 +1,14 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from . import mbus
 
 _attrs = {
     "DualKmeterModule": "dual_kmeter",
     "Relay4Module": "relay_4",
     "Encoder4MotorModule": "encoder4_motor",
-    "PPS": "pps",
+    "PPSModule": "pps",
 }
 
 # Lazy loader, effectively does:

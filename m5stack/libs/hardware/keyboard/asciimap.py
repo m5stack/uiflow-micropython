@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 SHIFT = 0x80
 
 KEY_LEFT_CTRL = 0x80

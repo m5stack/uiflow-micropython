@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from machine import Pin
 from collections import namedtuple
 from .asciimap import (
@@ -164,7 +168,7 @@ class Keyboard:
 
         return buffer
 
-    def getKey(self, point: Point2D):
+    def get_key(self, point: Point2D):
         ret = 0
 
         if point.x < 0 or point.y < 0:
@@ -176,7 +180,7 @@ class Keyboard:
             ret = _key_value_map[point.x][point.y].first
         return ret
 
-    def updateKeyList(self):
+    def update_key_list(self):
         self._key_list_buffer.clear()
         for i in range(8):
             self._set_output(self.output_list, i)
@@ -197,30 +201,30 @@ class Keyboard:
 
                         self._key_list_buffer.append(Point2D(x, y))
 
-    def keyList(self) -> list:
+    def key_list(self) -> list:
         return self._key_list_buffer
 
-    def getKeyValue(self, point: Point2D) -> KeyValue:
+    def get_key_value(self, point: Point2D) -> KeyValue:
         return _key_value_map[point.y][point.x]
 
-    def isPressed(self) -> bool:
+    def is_pressed(self) -> bool:
         return len(self._key_list_buffer) > 0
 
-    def isChange(self) -> bool:
+    def is_change(self) -> bool:
         if self._last_key_size is not len(self._key_list_buffer):
             self._last_key_size = len(self._key_list_buffer)
             return True
         else:
             return False
 
-    def isKeyPressed(self, ch):
+    def is_key_pressed(self, ch):
         if self._key_list_buffer:
             for i in self._key_list_buffer:
-                if self.getKeyValue(i).first == ch:
+                if self.get_key_value(i).first == ch:
                     return True
         return False
 
-    def updateKeysState(self):
+    def update_keys_state(self):
         self._keys_state_buffer.reset()
         self._key_pos_print_keys.clear()
         self._key_pos_hid_keys.clear()
@@ -229,59 +233,59 @@ class Keyboard:
         # Get special keys
         for i in self._key_list_buffer:
             # modifier
-            if self.getKeyValue(i).first == KEY_FN:
+            if self.get_key_value(i).first == KEY_FN:
                 self._keys_state_buffer.fn = True
                 continue
-            if self.getKeyValue(i).first == KEY_OPT:
+            if self.get_key_value(i).first == KEY_OPT:
                 self._keys_state_buffer.opt = True
                 continue
 
-            if self.getKeyValue(i).first == KEY_LEFT_CTRL:
+            if self.get_key_value(i).first == KEY_LEFT_CTRL:
                 self._keys_state_buffer.ctrl = True
                 self._key_pos_modifier_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == KEY_LEFT_SHIFT:
+            if self.get_key_value(i).first == KEY_LEFT_SHIFT:
                 self._keys_state_buffer.shift = True
                 self._key_pos_modifier_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == KEY_LEFT_ALT:
+            if self.get_key_value(i).first == KEY_LEFT_ALT:
                 self._keys_state_buffer.alt = True
                 self._key_pos_modifier_keys.append(i)
                 continue
 
             # function
-            if self.getKeyValue(i).first == KEY_TAB:
+            if self.get_key_value(i).first == KEY_TAB:
                 self._keys_state_buffer.tab = True
                 self._key_pos_hid_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == KEY_BACKSPACE:
+            if self.get_key_value(i).first == KEY_BACKSPACE:
                 self._keys_state_buffer.delete = True
                 self._key_pos_hid_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == KEY_ENTER:
+            if self.get_key_value(i).first == KEY_ENTER:
                 self._keys_state_buffer.enter = True
                 self._key_pos_hid_keys.append(i)
                 continue
 
-            if self.getKeyValue(i).first == " ":
+            if self.get_key_value(i).first == " ":
                 self._keys_state_buffer.space = True
 
             self._key_pos_hid_keys.append(i)
             self._key_pos_print_keys.append(i)
 
         for i in self._key_pos_modifier_keys:
-            key = self.getKeyValue(i).first
+            key = self.get_key_value(i).first
             self._keys_state_buffer.modifier_keys.append(key)
 
         for k in self._keys_state_buffer.modifier_keys:
             self._keys_state_buffer.modifiers |= 1 << (k - 0x80)
 
         for i in self._key_pos_hid_keys:
-            k = self.getKeyValue(i).first
+            k = self.get_key_value(i).first
             if k in (KEY_TAB, KEY_BACKSPACE, KEY_ENTER):
                 self._keys_state_buffer.hid_keys.append(k)
                 continue
@@ -296,15 +300,15 @@ class Keyboard:
                 or self._keys_state_buffer.shift
                 or self._is_caps_locked
             ):
-                self._keys_state_buffer.word.append(self.getKeyValue(i).second)
+                self._keys_state_buffer.word.append(self.get_key_value(i).second)
             else:
-                self._keys_state_buffer.word.append(self.getKeyValue(i).first)
+                self._keys_state_buffer.word.append(self.get_key_value(i).first)
 
-    def keysState(self) -> KeysState:
+    def keys_state(self) -> KeysState:
         return self._keys_state_buffer
 
     def capslocked(self) -> bool:
         return self._is_caps_locked
 
-    def setCapsLocked(self, isLocked: bool):
+    def set_caps_locked(self, isLocked: bool):
         self._is_caps_locked = isLocked

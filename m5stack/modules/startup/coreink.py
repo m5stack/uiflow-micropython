@@ -1,4 +1,6 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 # CoreInk startup script
 from startup import Startup
 import M5
@@ -133,7 +135,7 @@ class FlowApp(AppBase):
             network.STAT_HANDSHAKE_TIMEOUT: 2,
         }[self._wifi.connect_status()]
 
-        if _cloud_status is not 1 or _HAS_SERVER is not True:
+        if _cloud_status != 1 or _HAS_SERVER is not True:
             return _cloud_status
 
         if M5Things.status() == 2:
@@ -144,7 +146,7 @@ class FlowApp(AppBase):
 
     def _get_user_id(self):
         if _HAS_SERVER:
-            return None if len(M5Things.info()[1]) is 0 else M5Things.info()[1]
+            return None if len(M5Things.info()[1]) == 0 else M5Things.info()[1]
         else:
             return None
 
@@ -162,11 +164,11 @@ class FlowApp(AppBase):
         self._bg_img.set_src(FLOW_BG_IMG)
 
         # ssid
-        self._mac_label.setTextColor(0x000000, 0xFFFFFF)
-        self._mac_label.setText(self._mac)
+        self._mac_label.set_text_color(0x000000, 0xFFFFFF)
+        self._mac_label.set_text(self._mac)
 
         # user id
-        self._user_id_label.setText(str(self._user_id))
+        self._user_id_label.set_text(str(self._user_id))
 
         # server, wifi
         if self._cloud_status == 0 or self._cloud_status == 2:
@@ -200,7 +202,7 @@ class FlowApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._mac_label.setLongMode(Label.LONG_DOT)
+        self._mac_label.set_long_mode(Label.LONG_DOT)
 
         self._user_id_label = Label(
             str(None),
@@ -214,7 +216,7 @@ class FlowApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._user_id_label.setLongMode(Label.LONG_DOT)
+        self._user_id_label.set_long_mode(Label.LONG_DOT)
 
         self._bg_img = Image(
             use_sprite=False,
@@ -312,11 +314,11 @@ class ConfigApp(AppBase):
             self._bg_img.set_src(CONFIG_BG_IMG)
 
         # ssid
-        self._ssid_label.setTextColor(0x000000, 0xFFFFFF)
-        self._ssid_label.setText(self._ssid)
+        self._ssid_label.set_text_color(0x000000, 0xFFFFFF)
+        self._ssid_label.set_text(self._ssid)
 
         # user id
-        self._server_label.setText(self._server)
+        self._server_label.set_text(self._server)
 
         self._sprite.push(0, 0)
 
@@ -337,7 +339,7 @@ class ConfigApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
 
         self._server_label = Label(
             str(None),
@@ -351,7 +353,7 @@ class ConfigApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
+        self._server_label.set_long_mode(Label.LONG_DOT)
 
         self._bg_img = Image(use_sprite=False, parent=self._sprite)
         self._bg_img.set_x(0)
@@ -412,7 +414,7 @@ class AppListApp(AppBase):
     def on_view(self):
         self._bg_img.set_src(APPLIST_BG_IMG)
 
-        if len(self._labels) is not 5:
+        if len(self._labels) != 5:
             for i in range(5):
                 self._labels.append(
                     Label(
@@ -427,11 +429,11 @@ class AppListApp(AppBase):
                         parent=self._sprite,
                     )
                 )
-                self._labels[-1].setLongMode(Label.LONG_DOT)
+                self._labels[-1].set_long_mode(Label.LONG_DOT)
 
         for label, file in zip(self._labels, self._files):
             # print("file:", file)
-            file and label and label.setText(file)
+            file and label and label.set_text(file)
 
         self._sprite.push(0, 0)
 
@@ -445,7 +447,7 @@ class AppListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[self._file_pos])
+        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):
@@ -459,9 +461,9 @@ class AppListApp(AppBase):
             for i in range(len(self._labels)):
                 file = self._files[i]
                 if self._file_pos == i:
-                    self._labels[i].setText(">" + file)
+                    self._labels[i].set_text(">" + file)
                 else:
-                    self._labels[i].setText(file)
+                    self._labels[i].set_text(file)
         except:
             pass
 
@@ -482,9 +484,9 @@ class AppListApp(AppBase):
             for i in range(len(self._labels)):
                 file = self._files[i]
                 if self._file_pos == i:
-                    self._labels[i].setText(">" + file)
+                    self._labels[i].set_text(">" + file)
                 else:
-                    self._labels[i].setText(file)
+                    self._labels[i].set_text(file)
         except:
             pass
 

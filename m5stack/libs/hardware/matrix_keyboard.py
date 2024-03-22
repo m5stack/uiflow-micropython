@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from .keyboard import Keyboard
 from micropython import schedule
 
@@ -27,11 +31,11 @@ class MatrixKeyboard(Keyboard):
         self._handler = handler
 
     def tick(self) -> None:
-        self.updateKeyList()
-        self.updateKeysState()
-        if self.isChange():
-            if self.isPressed():
-                status = self.keysState()
+        self.update_key_list()
+        self.update_keys_state()
+        if self.is_change():
+            if super().is_pressed():
+                status = self.keys_state()
                 if status.tab:
                     self._keys.append(0x09)
                 elif status.enter:
@@ -43,15 +47,15 @@ class MatrixKeyboard(Keyboard):
                 elif status.fn:
                     if len(status.word) == 0:
                         return
-                    if status.word[0] == 47: # right
+                    if status.word[0] == 47:  # right
                         self._keys.append(183)
-                    elif status.word[0] == 44: # left
+                    elif status.word[0] == 44:  # left
                         self._keys.append(180)
-                    elif status.word[0] == 59: # up
+                    elif status.word[0] == 59:  # up
                         self._keys.append(181)
-                    elif status.word[0] == 46: # down
+                    elif status.word[0] == 46:  # down
                         self._keys.append(182)
-                    elif status.word[0] == 96: # ESC
+                    elif status.word[0] == 96:  # ESC
                         self._keys.append(0x1B)
                 else:
                     for word in status.word:

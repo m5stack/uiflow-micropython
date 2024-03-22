@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 from M5 import Widgets
 
 try:
@@ -69,7 +72,7 @@ class LabelPlus(Widgets.Label):
     def get_data(self):
         return self._data
 
-    def setColor(self, fg_color, bg_color=0x000000):
+    def setColor(self, fg_color, bg_color=0x000000):  # noqa: N802
         self._text_color = fg_color
         super().setColor(fg_color, bg_color)
 
@@ -103,12 +106,12 @@ class LabelPlus(Widgets.Label):
         if self._data is not None:
             return self._data
         for _, value in data.items():
-            if type(value) == list:
+            if isinstance(value, list):
                 for item in value:
                     self._find_key(item)
                     if self._data is not None:
                         return self._data
-            elif type(value) == dict:
+            elif isinstance(value, dict):
                 self._find_key(value)
             if self._data is not None:
                 return self._data

@@ -17,6 +17,10 @@ function ci_code_formatting_setup {
     sudo apt-add-repository --yes --update ppa:pybricks/ppa
     sudo apt-get install uncrustify
     pip3 install black
+    pip3 install micropython-typesheds
+    pip3 install ruff==0.3.0
+    pip3 install codespell==2.2.6 tomli==2.0.1
+    pip3 install pre-commit==3.6.2
     uncrustify --version
     black --version
 }
@@ -136,9 +140,13 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack littlefs
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AirQ pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Echo pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Lite pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Matrix pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3_Lite pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3U pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomU pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Capsule pack_all
@@ -150,7 +158,9 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_DinMeter pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Paper pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Station pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all

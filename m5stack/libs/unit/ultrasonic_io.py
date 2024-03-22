@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 # the sound speed on air (343.2 m/s), that It's equivalent to 0.34320 mm/us that is 1mm each 2.91us
 # pulse_time // 2 // 2.91 -> pulse_time // 5.82 -> pulse_time * 100 // 582
 # echo timeout -> max=4500mm, 4500 * 2.91us -> 0.0131 * 2 -> 0.0262 or 26.2ms
@@ -42,3 +46,8 @@ class ULTRASONIC_IOUnit:
         elif mode == 2:
             cm = (echo_time * 100 // 582) / 10
             return cm
+
+
+class UltrasoundIOUnit(ULTRASONIC_IOUnit):
+    def __init__(self, port, echo_timeout_us=1000000):
+        super().__init__(port, echo_timeout_us)

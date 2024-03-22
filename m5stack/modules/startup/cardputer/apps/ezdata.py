@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 from ..app import AppBase
 from ..res import (
     MontserratMedium18_VLW,
@@ -26,7 +30,7 @@ class EzDataApp(AppBase):
             bg_color=0xEEEEEF,
             font=MontserratMedium18_VLW,
         )
-        self._text_label.setText("Please stay tuned")
+        self._text_label.set_text("Please stay tuned")
 
     def on_ready(self):
         pass

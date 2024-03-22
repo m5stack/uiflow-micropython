@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include "uiflow_utility.h"
 
 static const char *TAG = "UIFLOW_UTILITY";

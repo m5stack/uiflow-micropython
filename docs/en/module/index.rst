@@ -6,3 +6,5 @@ Module
 
     dualkmeter.rst
     pps.rst
+    display_module.rst
+    rca_module.rst

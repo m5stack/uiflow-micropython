@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import camera
 from camera import (
     deinit,
@@ -5,7 +9,7 @@ from camera import (
     capture,
     capture_to_jpg,
     capture_to_bmp,
-    pixformat,
+    # pixformat,
     contrast,
     global_gain,
     hmirror,
@@ -95,19 +99,19 @@ def disp_to_screen():
             gc.collect()
 
 
-def setCursor(x=0, y=0, w=0, h=0):
+def setCursor(x=0, y=0, w=0, h=0):  # noqa: N802
     global _x, _y, _max_width, _width, _max_height, _height, _frame_size
     _x = x
     _y = y
     frame_size = _frame_size_table.get(_frame_size)
-    if w is not 0:
+    if w != 0:
         _max_width = w
         _width = frame_size.width if frame_size.width < _max_width else _max_width
-    if h is not 0:
+    if h != 0:
         _max_height = h
         _height = frame_size.height if frame_size.height < _max_height else _max_height
 
 
-def setVisible(enable: bool):
+def setVisible(enable: bool):  # noqa: N802
     global _visible
     _visible = enable
