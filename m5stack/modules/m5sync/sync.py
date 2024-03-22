@@ -1,11 +1,6 @@
-# -*- encoding: utf-8 -*-
-"""
-@File    :   sync.py
-@Time    :   2024/1/22
-@Author  :   TONG YIHAN
-@E-mail  :   icyqwq@gmail.com
-@License :   (C)Copyright 2015-2024, M5STACK
-"""
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 
 """
 HOW TO USE:
@@ -51,7 +46,7 @@ def file_exists(file_path):
         return False
 
 
-def calculateMD5(file_path):
+def calculate_md5(file_path):
     md5_hash = hashlib.md5()
 
     with open(file_path, "rb") as f:
@@ -231,27 +226,27 @@ class DownloadView:
                 "Sync...",
                 self.view_info.title_x,
                 self.view_info.title_y,
-                w=100,
-                h=40,
+                w=M5.Lcd.width(),
+                h=M5.Lcd.height(),
                 font_align=Label.CENTER_ALIGNED,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
                 font=self.view_info.title_font,
             )
-            self.title_label.setText("Sync...")
+            self.title_label.set_text("Sync...")
 
             self.progress_label = Label(
                 "0%",
                 self.view_info.text_x,
                 self.view_info.text_y,
-                w=100,
-                h=40,
+                w=M5.Lcd.width(),
+                h=M5.Lcd.height(),
                 font_align=Label.CENTER_ALIGNED,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
                 font=self.view_info.text_font,
             )
-            self.progress_label.setText("0%")
+            self.progress_label.set_text("0%")
         else:
             self.rgb = RGB()
             self.rgb.set_color(0, self.COLOR_YELLOW)
@@ -264,7 +259,7 @@ class DownloadView:
         self.downloaded_size += size
         percent = int(self.downloaded_size / self.total_size * 100)
         if self.view_info:
-            self.progress_label.setText(f"{percent}%")
+            self.progress_label.set_text(f"{percent}%")
         else:
             self.rgb.set_color(0, self.COLOR_BLACK)
             time.sleep(0.02)
@@ -273,14 +268,14 @@ class DownloadView:
 
     def on_success(self):
         if self.view_info:
-            self.title_label.setText("Success")
+            self.title_label.set_text("Success")
         else:
             self.rgb.set_color(0, self.COLOR_GREEN)
         time.sleep(1)
 
     def on_failed(self):
         if self.view_info:
-            self.title_label.setText("Failed")
+            self.title_label.set_text("Failed")
         else:
             self.rgb.set_color(0, self.COLOR_RED)
 
@@ -365,7 +360,7 @@ class M5Sync:
             # update_info(f"{i+1}/{file_num}")
             if file_exists(file["devicePath"]):
                 # 如果文件存在，检查md5
-                if calculateMD5(file["devicePath"]) == file["md5"]:
+                if calculate_md5(file["devicePath"]) == file["md5"]:
                     INFO and print(f"[INFO] File {file['devicePath']} already downloaded.")
                     self._view.update_progress(file["size"])
                     for index in range(len(record)):
@@ -378,10 +373,10 @@ class M5Sync:
             # 如果文件不存在或者md5不匹配，下载文件
             INFO and print(f"[INFO] MD5 mismatch for file: {file['name']}")
             for _ in range(3):
-                if self.downloadFile(file["url"], file["devicePath"]) is False:
+                if self.download_file(file["url"], file["devicePath"]) is False:
                     INFO and print(f"[INFO] Failed to download file: {file['devicePath']}")
                     continue
-                if calculateMD5(file["devicePath"]) == file["md5"]:
+                if calculate_md5(file["devicePath"]) == file["md5"]:
                     INFO and print(f"[INFO] Downloaded and verified file: {file['devicePath']}")
                     for index in range(len(record)):
                         if record[index]["devicePath"] == file["devicePath"]:
@@ -391,20 +386,20 @@ class M5Sync:
                     break
         return err
 
-    def downloadFile(self, url, save_path, retry=3):
-        def _downloadFile(url, save_path):
+    def download_file(self, url, save_path, retry=3):
+        def _download_file(url, save_path):
             # 发送GET请求
             response = requests.get(url, stream=True)
 
             if response.status_code == 200:
                 length = int(response.headers["Content-Length"])
-                BLOCKLEN = 4096
+                block_len = 4096
                 source = response.raw
                 read = 0
                 with open(save_path, "wb") as file:
                     # 逐块读取数据
                     while read < length:
-                        to_read = BLOCKLEN if (length - read) >= BLOCKLEN else length - read
+                        to_read = block_len if (length - read) >= block_len else length - read
                         buf = source.read(to_read)
                         read += len(buf)
                         DEBUG and print(f"[DEBUG] {read}/{length}; LEN = {len(buf)}", end="\r")
@@ -422,7 +417,7 @@ class M5Sync:
                 return False
 
         for i in range(retry):
-            if _downloadFile(url, save_path):
+            if _download_file(url, save_path):
                 return True
             WARN and print(f"[WARN] Retry {i+1}...")
 
