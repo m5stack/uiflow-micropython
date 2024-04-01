@@ -23,3 +23,4 @@ Unit
     dac2.rst
     lora_e220.rst
     weight_i2c.rst
+    atom_socket.rst
