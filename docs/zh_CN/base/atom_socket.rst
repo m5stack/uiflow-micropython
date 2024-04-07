@@ -1,20 +1,20 @@
-ATOM Socket Unit
+ATOM Socket Base
 ================
 
-.. include:: ../refs/unit.atom_socket.ref
+.. include:: ../refs/base.atom_socket.ref
 
-`ATOMSocketUnit` 是一个智能电源插座，适配ATOM主控。它内置HLW8032高精度电能表IC，能够测量负载的电压、电流、功率和能量。此外，它还可以作为智能插座，控制负载的通断，适用于智能家居、工业控制和能源管理等场景。
+`ATOMSocketBase` 是一个智能电源插座，适配ATOM主控。它内置HLW8032高精度电能表IC，能够测量负载的电压、电流、功率和能量。此外，它还可以作为智能插座，控制负载的通断，适用于智能家居、工业控制和能源管理等场景。
 
 支持以下产品:
 
-|ATOMSocketUnit|      
+|ATOMSocketBase|      
 
 Micropython 示例::
 
     from machine import I2C
-    from atom_socket import ATOMSocketUnit
+    from atom_socket import ATOMSocketBase
 
-    atomsocket = ATOMSocketUnit(1, (22, 33), 23) # 对于ATOM Lite
+    atomsocket = ATOMSocketBase(1, (22, 33), 23) # 对于ATOM Lite
     # 获取数据
     print(atomsocket.get_data()) # 输出 (230.4192, 0.02074951, 0.8106091, 0.0)
     atomsocket.set_relay(True)   # 打开继电器
@@ -38,17 +38,17 @@ UIFLOW2 示例:
 
 .. only:: builder_html
 
-ATOMSocketUnit 类
+ATOMSocketBase 类
 -----------------
 
 构造函数
 ---------
 
-.. class:: ATOMSocketUnit(_id: Literal[0, 1, 2], port: list | tuple, relay: int = 23)
+.. class:: ATOMSocketBase(_id: Literal[0, 1, 2], port: list | tuple, relay: int = 23)
 
     初始化ATOM Socket。
 
-    - ``_id``: 串口ID，对这个Unit没有实际用途。
+    - ``_id``: 串口ID，对这个Base没有实际用途。
     - ``port``: UART引脚号。
     - ``relay``: 继电器引脚号。
     

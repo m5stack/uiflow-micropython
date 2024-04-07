@@ -56,7 +56,6 @@ package(
         "weight_i2c.py",
         "kmeter_iso.py",
         "thermal2.py",
-        "atom_socket.py",
     ),
     base_path="..",
     opt=3,
