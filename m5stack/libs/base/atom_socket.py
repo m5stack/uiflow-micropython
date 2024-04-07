@@ -19,7 +19,7 @@ import _thread
 import struct
 
 
-class ATOMSocketUnit:
+class ATOMSocketBase:
     """! ATOM Socket is a smart power socket adapted to ATOM main control.
 
     @en ATOM Socket is a smart power socket adapted to ATOM main control. Built-in HLW8032 high-precision energy metering IC. It can measure the voltage, current, power, and energy of the load. It can also be used as a smart socket to control the power on and off of the load. It can be used in various scenarios such as smart home, industrial control, and energy management.
@@ -28,11 +28,11 @@ class ATOMSocketUnit:
     @color #0FE6D7
     @link https://docs.m5stack.com/en/atom/atom_socket
     @image https://static-cdn.m5stack.com/resource/docs/products/atom/atom_socket/atom_socket_01.webp
-    @category Unit
+    @category Base
 
     @init
-        from unit import ATOMSocketUnit
-        atomsocket = ATOMSocketUnit(1,(22,33),23) # for atom lite
+        from base import ATOMSocketBase
+        atomsocket = ATOMSocketBase(1,(22,33),23) # for atom lite
 
     @test
         atomsocket.get_data() # got (230.4192, 0.02074951, 0.8106091, 0.0)
@@ -54,7 +54,7 @@ class ATOMSocketUnit:
     def __init__(self, _id: Literal[0, 1, 2], port: list | tuple, relay: int = 23):
         """! Initialize the ATOM Socket.
 
-        @param id serial id, no actual use for this unit.
+        @param id serial id, no actual use for this base.
         @param port UART pin number.
         @param relay The relay pin number.
         """

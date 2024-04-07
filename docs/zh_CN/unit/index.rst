@@ -21,4 +21,3 @@ Unit
     op90.rst
     op180.rst
     lora_e220.rst
-    atom_socket.rst

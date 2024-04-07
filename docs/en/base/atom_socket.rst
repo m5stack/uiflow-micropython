@@ -1,20 +1,20 @@
-ATOM Socket Unit
+ATOM Socket Base
 ================
 
-.. include:: ../refs/unit.atom_socket.ref
+.. include:: ../refs/base.atom_socket.ref
 
-The `ATOMSocketUnit` class is a smart power socket integrated with the M5 ATOM controller. It features a built-in HLW8032 high-precision power measurement IC, enabling it to measure the voltage, current, power, and energy of the load. Additionally, it can function as a smart socket to control the power state of the load, making it suitable for applications in smart homes, industrial control, and energy management.
+The `ATOMSocketBase` class is a smart power socket integrated with the M5 ATOM controller. It features a built-in HLW8032 high-precision power measurement IC, enabling it to measure the voltage, current, power, and energy of the load. Additionally, it can function as a smart socket to control the power state of the load, making it suitable for applications in smart homes, industrial control, and energy management.
 
 Supports the following products:
 
-|ATOMSocketUnit|
+|ATOMSocketBase|
 
 Micropython Example::
 
     from machine import I2C
-    from atom_socket import ATOMSocketUnit
+    from atom_socket import ATOMSocketBase
 
-    atomsocket = ATOMSocketUnit(1, (22, 33), 23)  # For ATOM Lite
+    atomsocket = ATOMSocketBase(1, (22, 33), 23)  # For ATOM Lite
     # Retrieve data
     print(atomsocket.get_data())  # Outputs (230.4192, 0.02074951, 0.8106091, 0.0)
     atomsocket.set_relay(True)    # Turns on the relay
@@ -38,17 +38,17 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-ATOMSocketUnit Class
+ATOMSocketBase Class
 --------------------
 
 Constructors
 ------------
 
-.. class:: ATOMSocketUnit(_id: Literal[0, 1, 2], port: list | tuple, relay: int = 23)
+.. class:: ATOMSocketBase(_id: Literal[0, 1, 2], port: list | tuple, relay: int = 23)
 
     Initializes the ATOM Socket.
 
-    - ``_id``: Serial ID, not actually used by this unit.
+    - ``_id``: Serial ID, not actually used by this base.
     - ``port``: UART pin numbers.
     - ``relay``: The relay pin number.
     
