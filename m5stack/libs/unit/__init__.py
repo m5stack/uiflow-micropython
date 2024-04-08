@@ -19,6 +19,7 @@ _attrs = {
     "Encoder8Unit": "encoder8",  # 2.0.3 添加
     "ENCODER8Unit": "encoder8",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "ENVUnit": "env",
+    "ENVPROUnit": "envpro",
     "EXTIOUnit": "extio",
     "EXTIO2Unit": "extio2",
     "FingerUnit": "finger",

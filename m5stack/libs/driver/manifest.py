@@ -27,6 +27,7 @@ package(
         "asr650x.py",
         "bh1750.py",
         "bh1750fvi.py",
+        "bme68x.py",
         "bmp280.py",
         "button.py",
         "checksum.py",

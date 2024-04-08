@@ -16,6 +16,7 @@ package(
         "earth.py",
         "encoder8.py",
         "env.py",
+        "envpro.py",
         "extio.py",
         "extio2.py",
         "finger.py",
