@@ -12,9 +12,10 @@ ATOM Socket Base
 Micropython 示例::
 
     from machine import I2C
-    from atom_socket import ATOMSocketBase
+    from base import ATOMSocketBase
 
     atomsocket = ATOMSocketBase(1, (22, 33), 23) # 对于ATOM Lite
+    atomsocket = ATOMSocketBase(1, (5, 8), 7) # 对于ATOM S3
     # 获取数据
     print(atomsocket.get_data()) # 输出 (230.4192, 0.02074951, 0.8106091, 0.0)
     atomsocket.set_relay(True)   # 打开继电器

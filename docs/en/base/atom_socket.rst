@@ -12,9 +12,10 @@ Supports the following products:
 Micropython Example::
 
     from machine import I2C
-    from atom_socket import ATOMSocketBase
+    from base import ATOMSocketBase
 
     atomsocket = ATOMSocketBase(1, (22, 33), 23)  # For ATOM Lite
+    atomsocket = ATOMSocketBase(1, (5, 8), 7)  # For ATOM S3
     # Retrieve data
     print(atomsocket.get_data())  # Outputs (230.4192, 0.02074951, 0.8106091, 0.0)
     atomsocket.set_relay(True)    # Turns on the relay

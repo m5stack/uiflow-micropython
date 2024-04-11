@@ -33,6 +33,7 @@ class ATOMSocketBase:
     @init
         from base import ATOMSocketBase
         atomsocket = ATOMSocketBase(1,(22,33),23) # for atom lite
+        atomsocket = ATOMSocketBase(1,(5,8),7) # for atom s3
 
     @test
         atomsocket.get_data() # got (230.4192, 0.02074951, 0.8106091, 0.0)
