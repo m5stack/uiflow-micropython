@@ -52,6 +52,7 @@ package(
         "paj7620.py",
         "mlx90640.py",
         "timezone.py",
+        "vl53l1x.py",
     ),
     base_path="..",
     opt=0,
