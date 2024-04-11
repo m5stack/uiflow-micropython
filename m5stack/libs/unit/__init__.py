@@ -68,6 +68,8 @@ _attrs = {
     "WeightUnit": "weight",  # 2.0.3 添加
     "WEIGHTUnit": "weight",  # TODO: 类名不符合规范, 2.0.6 移除
     "Thermal2Unit": "thermal2",
+    "NCIR2Unit": "ncir2",
+    "TOF4MUnit": "tof4m",
 }
 
 
