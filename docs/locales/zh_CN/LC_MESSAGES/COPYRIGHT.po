@@ -33,7 +33,7 @@ msgid ""
 "All original source code in this repository is Copyright (C) 2023 "
 "M5Stack. This source code is licensed under the MIT license as described "
 "in the file LICENSE."
-msgstr ""
+msgstr "这个存储库中的所有原始源代码版权归(c)2023 M5Stack 所有。此源代码在MIT许可下许可，如文件license中所述。"
 
 #: ../../en/COPYRIGHT.rst:16 7b121a5dbf8642eb8b3b88d9b3d22032
 msgid "Third Party"

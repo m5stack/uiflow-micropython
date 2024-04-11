@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-01 15:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/module/display_module.rst:2 eef56be4af674249a33fbabf97e0f252
+msgid "Display Module"
+msgstr ""
+
+#: ../../en/module/display_module.rst:6 83003bf3053540baab8ab4d8fd4f603a
+msgid ""
+"Display Module 13.2 is an expansion module for HD audio and video, using "
+"GAOYUN GW1NR series FPGA chip to output display signals, and employing "
+"the LT8618S chip for signal output conditioning. It can achieve a 24-bit "
+"color depth display signal and up to 8-channel audio signal output, with "
+"a resolution up to 1080P. The FPGA internally realizes the I2S audio "
+"generation function. This module includes a DC power input socket and "
+"corresponding DC-DC circuit, enabling power supply for the entire device."
+" This product is suitable for various programmable HD AV outputs and "
+"other applications."
+msgstr "显示模块13.2是一个扩展模块，用于高清音视频，采用高云GW1NR系列FPGA芯片输出显示信号，并使用LT8618S芯片作为信号输出调节，能够实现24位色深的显示信号和多达8通道的音频信号输出，分辨率高达1080P，其中FPGA内部实现了I2S音频生成功能。该模块包含直流电源输入插座及相应的直流-直流电路，能够实现整机的供电。该产品适用于各种可编程高清音视频输出及其他场合。"
+
+#: ../../en/module/display_module.rst:9 462ed7cc50834beaa26187752e67e699
+msgid "Supported products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/display_module.rst:11 6c44b7f3cf1a439bb47185decb7ecc9c
+msgid "|DisplayModule|"
+msgstr ""
+
+#: ../../en/refs/module.display.ref d65afbd3f95a4f89af8854c3b7076c25
+msgid "DisplayModule"
+msgstr ""
+
+#: ../../en/module/display_module.rst:13 9c57caa47d48406ebb18b51649e0e039
+msgid "Micropython example::"
+msgstr ""
+
+#: ../../en/module/display_module.rst:33 40a72bf1f0ea46678a2815ccdcaad785
+msgid "UIFLOW2 example:"
+msgstr ""
+
+#: ../../en/module/display_module.rst:35 86a80bbf503a4128974b4db6424ca969
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/module.display.ref:6 a01df9b233104cfea46a498a9ffe2fd9
+msgid "example.svg"
+msgstr ""
+

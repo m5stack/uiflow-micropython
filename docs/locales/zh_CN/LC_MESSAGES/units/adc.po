@@ -86,7 +86,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:6 bcdceb65da0f464a95194e3693deaea5
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/adc.rst:8 cb93eb9e79aa4073949208f1faf5424a
 msgid "|ADC|"
@@ -118,15 +118,15 @@ msgstr ""
 
 #: ../../en/units/adc.rst:46 27d991980804494ca547d53f952abf1a
 msgid "Create an ADCUnit object."
-msgstr ""
+msgstr "创建一个ADCUnit对象."
 
 #: ../../en/units/adc.rst:49 341d744eef2343cfa8e93354f73eabcc
 msgid "parameters is:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/adc.rst:49 bf356b32cab5402fab82d2a8149f76e9
 msgid "``I2C0`` is I2C Port."
-msgstr ""
+msgstr "``I2C0`` 是I2C端口."
 
 #: ../../en/units/adc.rst:51 ../../en/units/adc.rst:63
 #: ../../en/units/adc.rst:72 ../../en/units/adc.rst:81
@@ -151,7 +151,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:61 e1045cae71014ba2b4d693c5bc49ab4f
 msgid "Gets the original value read by the adc."
-msgstr ""
+msgstr "获取adc读取的原始值。"
 
 #: ../../en/units/adc.rst:65 c2885d4c3c244e2a820b8291fb773d67
 msgid "|get_value.svg|"
@@ -159,7 +159,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:70 420a415c36804a809b197d21f44f86a5
 msgid "Get the voltage value."
-msgstr ""
+msgstr "获取电压值。"
 
 #: ../../en/units/adc.rst:74 04c60268c3ac4638a51537931ea69bc0
 msgid "|get_voltage.svg|"
@@ -167,7 +167,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:79 e73fd29385314de487ac6ca233218a79
 msgid "Read the raw value."
-msgstr ""
+msgstr "读取原始数值。"
 
 #: ../../en/units/adc.rst:83 d2733291a89e4f1fa1d6877cc1a126a4
 msgid "|get_raw_value.svg|"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:88 1d88ce0765ee46c3b00f1e8424282b14
 msgid "Get working mode. (Single read or continuous read)"
-msgstr ""
+msgstr "获取工作模式。（单次读取还是连续读取）"
 
 #: ../../en/units/adc.rst:92 8972e058afcc410c8c70c5cab8f33d1e
 msgid "|get_operating_mode.svg|"
@@ -183,7 +183,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:97 68865685ac0b4f71aac73c0b9dceaf94
 msgid "Get the read rate of the data."
-msgstr ""
+msgstr "获取数据的读取速率。"
 
 #: ../../en/units/adc.rst:101 90415b40a9fd499ca7d70284c26cfc5b
 msgid "|get_data_rate.svg|"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:106 a6741030516d4f0aadcc64fc68a121be
 msgid "Get the gain multiple of the data."
-msgstr ""
+msgstr "获取数据的增益倍数。"
 
 #: ../../en/units/adc.rst:110 530676dff9044f519238a9a9e2f39228
 msgid "|get_gain.svg|"
@@ -199,7 +199,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:115 d5423f48c0cf46a3a7090444b7467956
 msgid "Set working mode (single read or continuous read)"
-msgstr ""
+msgstr "设置工作模式（单次读取还是连续读取）"
 
 #: ../../en/units/adc.rst:119 d162bcf8be794e4082a3d3e7839be558
 msgid "|set_operating_mode.svg|"
@@ -207,7 +207,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:124 e57f1a8bd48d479ca7761be3867df532
 msgid "Set the data acquisition rate."
-msgstr ""
+msgstr "设置获取数据的速率。"
 
 #: ../../en/units/adc.rst:128 e17e1f1ef65c4786a92ab86bd5e37793
 msgid "|set_data_rate.svg|"
@@ -215,7 +215,7 @@ msgstr ""
 
 #: ../../en/units/adc.rst:133 af072c6fc4d5459594e8d471d065f4fe
 msgid "Set the gain multiple for reading data."
-msgstr ""
+msgstr "设置读取数据的增益倍数。"
 
 #: ../../en/units/adc.rst:137 6b6e58461e8f4bdc90291dae2911ec31
 msgid "|set_gain.svg|"

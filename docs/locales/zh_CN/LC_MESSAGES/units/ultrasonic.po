@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../en/units/ultrasonic.rst:6 50b01a50cda349e99d1fa48f052947f0
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/ultrasonic.rst:8 9b08a48932aa47268f663c6bffb1a2bf
 msgid "|Ultrasonic|"
@@ -78,15 +78,15 @@ msgstr ""
 
 #: ../../en/units/ultrasonic.rst:49 8b71dd0f072b4bad915478e0796f9797
 msgid "Create a ULTRASONIC I2C object."
-msgstr ""
+msgstr "创建一个ULTRASONIC_I2C对象."
 
 #: ../../en/units/ultrasonic.rst:52 5ee13a2cad1844f99ac561eb1e2a9b21
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/ultrasonic.rst:52 bc0c9b1672f541928d806f4bd498d26c
 msgid "``PORT`` Define an i2c port."
-msgstr ""
+msgstr "``PORT`` 定义i2c端口。"
 
 #: ../../en/units/ultrasonic.rst:54 ../../en/units/ultrasonic.rst:66
 #: 51d06c9fb2684b3b9e1f75d998eff284 c786bfc52f434e0395369a6e3c6ae83a
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../../en/units/ultrasonic.rst:64 5f95b0f956054597bb373eb7aad73037
 msgid "Acquire transmitting distance"
-msgstr ""
+msgstr "获取发射距离"
 
 #: ../../en/units/ultrasonic.rst:68 6fd63686b78a4d07972759fc713c7235
 msgid "|get_target_distance.svg|"
