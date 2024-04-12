@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../en/units/angle.rst:6 596cd95831cc43a3aff1df74332a0a47
 msgid "The following products are supported:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/angle.rst:8 99d4126a0fc04ea38ec1613684a7dab8
 msgid "|Angle|"
@@ -83,15 +83,15 @@ msgstr ""
 
 #: ../../en/units/angle.rst:43 65d8f81ca0e44cc9965fe9eb27698209
 msgid "Create an Angle object."
-msgstr ""
+msgstr "创建一个Angle对象。"
 
 #: ../../en/units/angle.rst:46 d5d2e9191a384ed182d8c72bd92c1254
 msgid "parameter is:"
-msgstr ""
+msgstr "参数是："
 
 #: ../../en/units/angle.rst:46 26d1f2a4525a494e8218ae5f5fcb2a7e
 msgid "``port`` is the pins number of the port"
-msgstr ""
+msgstr "``port`` 是端口的引脚号"
 
 #: ../../en/units/angle.rst:48 ../../en/units/angle.rst:60
 #: ../../en/units/angle.rst:69 30286798f2504f70b9c330d00dbe1628
@@ -111,7 +111,7 @@ msgstr ""
 msgid ""
 "This method allows reading the Angle's rotation value and returning an "
 "integer value. The range is 0-65535."
-msgstr ""
+msgstr "此方法允许读取Angle的旋转值并返回一个整型数值。范围为0-65535。"
 
 #: ../../en/units/angle.rst:62 6749e6cb641449848dd792b01ef29b45
 msgid "|get_value.svg|"
@@ -121,7 +121,7 @@ msgstr ""
 msgid ""
 "This method allows reading the voltage value of Angle, and the return "
 "value is a floating point value."
-msgstr ""
+msgstr "此方法允许读取Angle的电压值, 返回值为一个浮点型数值。"
 
 #: ../../en/units/angle.rst:71 85732b9876454cf28303581eea39ff10
 msgid "|get_voltage.svg|"

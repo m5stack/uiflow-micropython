@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../en/units/rgb.rst:6 9d362cf8490949f9aaa63a61707d919b
 msgid "The following products are supported:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/rgb.rst:8 4ea378848d6f47aca3b33c1443b4e3c0
 msgid "|RGB|"
@@ -88,19 +88,19 @@ msgstr ""
 
 #: ../../en/units/rgb.rst:44 7733e65440be4e34adf6bfe02524d5b4
 msgid "Create an RGB object."
-msgstr ""
+msgstr "创建一个RGB对象。"
 
 #: ../../en/units/rgb.rst:48 c59938454f0b44eb894f3b8358f4ff29
 msgid "parameter is:"
-msgstr ""
+msgstr "参数是："
 
 #: ../../en/units/rgb.rst:47 6d1922796e804324aa3f365b11ea19a1
 msgid "``port`` is the pins number of the port"
-msgstr ""
+msgstr "``port`` 是端口的引脚号"
 
 #: ../../en/units/rgb.rst:48 4002a7e67b934cfcb2bfd402a41c8f9c
 msgid "``number`` is the number of RGB lamp beads"
-msgstr ""
+msgstr "``number`` 是灯珠数量"
 
 #: ../../en/units/rgb.rst:50 ../../en/units/rgb.rst:62
 #: ../../en/units/rgb.rst:71 ../../en/units/rgb.rst:80
@@ -121,7 +121,7 @@ msgstr ""
 msgid ""
 "This method is used to set the brightness of RGB lamp beads, and the "
 "setting range is 0-100."
-msgstr ""
+msgstr "此方法用于设置RGB灯珠亮度, 设置范围为0-100。"
 
 #: ../../en/units/rgb.rst:64 2a1003adecbd46479703458e06fe8cce
 msgid "|set_brightness.svg|"
@@ -131,7 +131,7 @@ msgstr ""
 msgid ""
 "This method is used to set the color of all RGB lamp beads, and the input"
 " value is 3-byte RGB888."
-msgstr ""
+msgstr "此方法用于设置全部RGB灯珠颜色, 传入值为3字节的RGB888。"
 
 #: ../../en/units/rgb.rst:73 27cf2498f92a4b3ab419b66a631452b3
 msgid "|fill_color.svg|"
@@ -141,7 +141,7 @@ msgstr ""
 msgid ""
 "This method is used to set the specified RGB lamp bead color. The input "
 "value is the lamp bead index and 3-byte RGB888."
-msgstr ""
+msgstr "此方法用于设置指定RGB灯珠颜色, 传入值为灯珠索引和3字节的RGB888。"
 
 #: ../../en/units/rgb.rst:82 638d24049b3742fe8f713737a7381a42
 msgid "|set_color.svg|"

@@ -105,11 +105,11 @@ msgid ""
 "weight sensor, which includes a HX711 22-bit ADC. This sensor is capable "
 "of measuring weight and also includes additional functionalities like LED"
 " control and various filters."
-msgstr ""
+msgstr "``Miniscale`` 是为微型称重传感器设计的接口，其中包括一个HX711 22位ADC。此传感器能够测量重量，并且还包括其他功能，如LED控制和各种滤波器。"
 
 #: ../../en/units/miniscale.rst:8 82e27e7fdbfa4d5f832db101af4f2eb2
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/miniscale.rst:11 df5377fd3c2f4a978cacebc557adf499
 msgid "|MINISCALE|"
@@ -137,11 +137,11 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:45 704407b487a848a1ac0f861eb9f2eb2b
 msgid "Create an MiniScaleUnit object."
-msgstr ""
+msgstr "创建一个 MiniScaleUnit 对象。"
 
 #: ../../en/units/miniscale.rst:47 fab4c54311ec4e1dbf1ea380a10fad22
 msgid "``I2C0`` is I2C Port."
-msgstr ""
+msgstr "``I2C0`` is I2C Port."
 
 #: ../../en/units/miniscale.rst:50 ../../en/units/miniscale.rst:63
 #: ../../en/units/miniscale.rst:72 ../../en/units/miniscale.rst:82
@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:61 7bc7ca823e234ac48ba3309a99add795
 msgid "Gets the raw adc readout."
-msgstr ""
+msgstr "获取原始的 ADC 读数。"
 
 #: ../../en/units/miniscale.rst:65 54bf7feb6bf945bf880687f547a7c755
 msgid "|get_adc.svg|"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:70 9aa65ba0a74b4737893b556d08b9f4ac
 msgid "Gets the weight readout in grams."
-msgstr ""
+msgstr "获取以克为单位的重量读数。"
 
 #: ../../en/units/miniscale.rst:74 523e1e6ecae3446ebdfe7052a80bd062
 msgid "|get_weight.svg|"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:80 05b5f6e6db2947de9a0a25aa50a65b41
 msgid "Gets the button state."
-msgstr ""
+msgstr "获取按钮状态。 "
 
 #: ../../en/units/miniscale.rst:84 980903712c424c318ffd4118ae57f38e
 msgid "|get_button.svg|"
@@ -193,19 +193,19 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:88 2ca64f384d5a4ff0b5b18da03062ee55
 msgid "Sets the RGB LED color."
-msgstr ""
+msgstr "设置 RGB LED 的颜色。"
 
 #: ../../en/units/miniscale.rst:90 90ffbe60dc044aa58a1baa286a8ed0e0
 msgid "``r``: Red value (0 - 255)."
-msgstr ""
+msgstr "``r``: Red value (0 - 255)."
 
 #: ../../en/units/miniscale.rst:91 a0e89b7757d74551a1c6d3391ceb970a
 msgid "``g``: Green value (0 - 255)."
-msgstr ""
+msgstr "``g``: Green value (0 - 255)."
 
 #: ../../en/units/miniscale.rst:92 a2fa4189f9fe47d2b4c571244979d472
 msgid "``b``: Blue value (0 - 255)."
-msgstr ""
+msgstr "``b``: Blue value (0 - 255)."
 
 #: ../../en/units/miniscale.rst:96 f88ffc43f03f494d9f9f78193ae804f8
 msgid "|setLed.svg|"
@@ -213,7 +213,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:100 701d7329a0ef42db9425471a60482412
 msgid "Resets sensor."
-msgstr ""
+msgstr "重置传感器。"
 
 #: ../../en/units/miniscale.rst:105 6ff56a2cd256450c9c54f8cd24c5b835
 msgid "|reset.svg|"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:110 9d1ec267b4cf4d68977a11d05584d2bb
 msgid "Calibrates the MiniScale sensor."
-msgstr ""
+msgstr "校准微型称重传感器。"
 
 #: ../../en/units/miniscale.rst:112 5479d0ada3424ca6ab5854d188399538
 msgid "``weight1_g``: Weight1 in grams."
@@ -241,21 +241,21 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:117 359af77ff5564200801629f867cd4c32
 msgid "calibration steps:"
-msgstr ""
+msgstr "校准步骤:"
 
 #: ../../en/units/miniscale.rst:119 c82497538be440069e3602ca11253191
 msgid "Reset sensor;"
-msgstr ""
+msgstr "重置传感器"
 
 #: ../../en/units/miniscale.rst:120 41636694306047ae9d6b8bd99a3e7077
 msgid "Get adc, this is weight1_adc (should be zero). And weight1_g is also 0."
-msgstr ""
+msgstr "得到adc，这是weight1_adc(应该是零)。而weight1_g也是0。"
 
 #: ../../en/units/miniscale.rst:121 242e481288614881a4a00e91b878e05e
 msgid ""
 "Put some weight on it, then get adc, this is weight2_adc. And weight2_g "
 "is weight in gram you put on it."
-msgstr ""
+msgstr "AI润色104/5000给它加一些权重，然后得到adc，这是weight2_adc。而weight2_g是以克为单位的重量。"
 
 #: ../../en/units/miniscale.rst:126 a073e586dfe34d838896b8096769cb0b
 msgid "|calibration.svg|"
@@ -263,7 +263,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:130 5884c6805b65490fa29aa2539ebda0b3
 msgid "Enables or disables the low pass filter."
-msgstr ""
+msgstr "启用或禁用低通滤波器"
 
 #: ../../en/units/miniscale.rst:135 b5d6bf41ce3f4b188398d39d37f9ca97
 msgid "|setLowPassFilter.svg|"
@@ -271,7 +271,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:140 79fc1225abd44f1a8489898cd29a225f
 msgid "Returns the status of the low pass filter (enabled or not)."
-msgstr ""
+msgstr "返回低通滤波器的状态（是否启用）"
 
 #: ../../en/units/miniscale.rst:145 ea028a3d80164de7b65dd9db440b8178
 msgid "|getLowPassFilter.svg|"
@@ -279,13 +279,13 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:149 ca9b895d2c7d4be589cd825ecc80b7e8
 msgid "Sets the level of the average filter."
-msgstr ""
+msgstr "设置平均滤波器的级别"
 
 #: ../../en/units/miniscale.rst:151 3ed2c35300af4824a66585cf189ee2f0
 msgid ""
 "``level``: Level of the average filter (0 - 50). Larger value for "
 "smoother result but more latency"
-msgstr ""
+msgstr "``level``:平均过滤器的电平(0 - 50)。更大的值可以获得更平滑的结果，但延迟更长"
 
 #: ../../en/units/miniscale.rst:155 183e04657b974597b4972921abcb2d3f
 msgid "|setAverageFilterLevel.svg|"
@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:159 763b6ff855644b629f4b02f012b0a68c
 msgid "Returns the level of the average filter."
-msgstr ""
+msgstr "返回平均滤波器的级别"
 
 #: ../../en/units/miniscale.rst:163 462b63a831de477f8d119f2773f09af2
 msgid "|getAverageFilterLevel.svg|"
@@ -301,19 +301,19 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:167 1f230a7c24e04338bbaa76e85df1e5dc
 msgid "Sets the alpha value for the EMA filter."
-msgstr ""
+msgstr "设置EMA滤波器的alpha值。"
 
 #: ../../en/units/miniscale.rst:169 47c3d3b714d9422f812321b23fb3fb04
 msgid ""
 "The EMA (Exponential Moving Average) filter is more sensitive to changes "
 "in data compared to the average filter."
-msgstr ""
+msgstr "与平均滤波器相比，EMA（指数移动平均）滤波器对数据的变化更敏感。"
 
 #: ../../en/units/miniscale.rst:171 f9d3a8fd33fe46bb89a8e73471041b05
 msgid ""
 "``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for "
 "smoother result but more latency"
-msgstr ""
+msgstr "`` alpha``: EMA过滤器的alpha值(0 - 99)。较小的值可以获得更平滑的结果，但会增加延迟"
 
 #: ../../en/units/miniscale.rst:175 fd5c7df1a4644484b9e981a171484bc8
 msgid "|setEMAFilterAlpha.svg|"
@@ -321,7 +321,7 @@ msgstr ""
 
 #: ../../en/units/miniscale.rst:179 154c40e00e0e4f70a8f3c6a89c3fe366
 msgid "Returns the alpha value for the EMA filter."
-msgstr ""
+msgstr "返回EMA滤波器的alpha值。"
 
 #: ../../en/units/miniscale.rst:183 de83966c42024c29b80844d8c79ff5f3
 msgid "|getEMAFilterAlpha.svg|"

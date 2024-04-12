@@ -26,7 +26,7 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:6 4c86730b18cb4a2b80da5bfce9187d68
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/lora_e220.rst:8 d6caaad28b734aceafecdb0c6004aa01
 msgid "|LoRaE220|"
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:58 7f51f641e967453292ab2ae55bf8adde
 msgid "Working mode table"
-msgstr ""
+msgstr "工作模式"
 
 #: ../../en/units/lora_e220.rst:62 2807d722171e4ebbbba28d0cfcb1ccc0
 msgid "Mode (0-3)"
@@ -98,7 +98,7 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:62 f74cf531b5234da0a5815e230b84425f
 msgid "Function description"
-msgstr ""
+msgstr "功能描述"
 
 #: ../../en/units/lora_e220.rst:64 39d23ade5620443098fada71f1d0e5a7
 msgid "0:Transmission Mode"
@@ -115,14 +115,14 @@ msgstr ""
 msgid ""
 "SEND: Users can enter data through the serial port, and the module will "
 "start wireless transmission."
-msgstr ""
+msgstr "SEND: 用户可以通过串口输入数据，模块将开始无线传输。"
 
 #: ../../en/units/lora_e220.rst:66 25e50a32562746889e3807fa5668a3fb
 msgid ""
 "RECEIVE: The wireless receiving function of the module is enabled, and "
 "the wireless data will be output through the TXD pin of the serial port "
 "after receiving it."
-msgstr ""
+msgstr "RECEIVE: 模块的无线接收功能打开， 无线数据接收后将通过串口的TXD引脚输出。"
 
 #: ../../en/units/lora_e220.rst:68 88eda382228c4ecda785c98aebc024c3
 msgid "1:WOR Sending Mode"
@@ -137,17 +137,17 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:68 16e33eb4a37f4e3b9d81686ef267d57c
 msgid "SEND: Wirelessly sending data on"
-msgstr ""
+msgstr "SEND: 无线发送数据打开。"
 
 #: ../../en/units/lora_e220.rst:70 ../../en/units/lora_e220.rst:76
 #: 241ae7deba6d44b888bba93611ae9bff 56059da8cbd24c73aed41d39df1dc7b2
 msgid "RECEIVE: Wireless receiving data on"
-msgstr ""
+msgstr "RECEIVE: 无线接收数据打开。"
 
 #: ../../en/units/lora_e220.rst:72 ../../en/units/lora_e220.rst:78
 #: 0d946ff8f22b4d81a7482fc50d036989 2fa53c359faa40599f9b413ac98421dd
 msgid "NOTE: Support Air Wake Up"
-msgstr ""
+msgstr "NOTE: 支持空中唤醒。"
 
 #: ../../en/units/lora_e220.rst:74 5b79da1ec2814b1a9b7d7558987b9569
 msgid "2:WOR Receiving Mode"
@@ -156,7 +156,7 @@ msgstr ""
 #: ../../en/units/lora_e220.rst:74 ../../en/units/lora_e220.rst:80
 #: 4e03e971eb5a4d018e1b017203fafd63 be71bc3219f24cbba1f0d0a959189988
 msgid "SEND: Wirelessly sending data off"
-msgstr ""
+msgstr "SEND: 无线发送数据关闭。"
 
 #: ../../en/units/lora_e220.rst:80 2134e38ee2ef45f5bf8a2bee1edac0c8
 msgid "3:Configuration Mode"
@@ -164,11 +164,11 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:82 993f2f30c05c4ea0be40f7cbe2af31b5
 msgid "RECEIVE: Wireless receiving data off"
-msgstr ""
+msgstr "RECEIVE: 无线接收数据打开。"
 
 #: ../../en/units/lora_e220.rst:84 ba2c8847716641ecb302d9a62a64bf2e
 msgid "CONFIGURATION: Users can access registers to configure module status"
-msgstr ""
+msgstr "CONFIGURATION: 用户可以访问寄存器来配置模块状态。"
 
 #: ../../en/units/lora_e220.rst:87 7c6d875cd0514710a32839fbf08fe3dc
 msgid "|working mode.jpg|"
@@ -188,21 +188,21 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:98 801fbeff7dee44bc9ee9b142e4fe87e8
 msgid "Create a LoRaE220JPUnit object."
-msgstr ""
+msgstr "创建一个 LoRaE220JPUnit 对象."
 
 #: ../../en/units/lora_e220.rst:102 ../../en/units/lora_e220.rst:129
 #: ../../en/units/lora_e220.rst:222 98eb40c1aafb47cb9bed1a291ac22243
 #: bcd46e820da84a39ae167363dcab81cd db7b6651abb441fca6130f2c7f335f86
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数为："
 
 #: ../../en/units/lora_e220.rst:101 ad3f12c0840b4e158b25a37d10d08e57
 msgid "``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``."
-msgstr ""
+msgstr "``port`` uart的引脚元组，其中包含: ``(tx_pin, rx_pin)``。"
 
 #: ../../en/units/lora_e220.rst:102 593d4993adf34297ad20af7345c3f7cb
 msgid "``port_id`` uart port ID."
-msgstr ""
+msgstr "``port_id`` uart端口ID。"
 
 #: ../../en/units/lora_e220.rst:104 ../../en/units/lora_e220.rst:131
 #: ../../en/units/lora_e220.rst:150 ../../en/units/lora_e220.rst:169
@@ -231,55 +231,55 @@ msgstr ""
 msgid ""
 "Available when LoRaE220JPUnit working mode is 3. Please refer to "
 ":ref:`working mode table <working-mode>` for the working mode."
-msgstr ""
+msgstr "当 LoRaE220JPUnit 的工作模式为 3 时可用。工作模式请参考 :ref:`工作模式表 <working-mode>` 。"
 
 #: ../../en/units/lora_e220.rst:116 6c8c0a71bcc74438a5362da332c0f110
 msgid "Set module parameters."
-msgstr ""
+msgstr "设置模块的参数。"
 
 #: ../../en/units/lora_e220.rst:119 ba409719b3fb4fada93ac888b785a929
 msgid "``own_address``: Local address."
-msgstr ""
+msgstr "``own_address``: 本机地址。"
 
 #: ../../en/units/lora_e220.rst:120 73e6722da98c436cb69f6bf1dc5a79bc
 msgid "``own_channel``: Native channel."
-msgstr ""
+msgstr "``own_channel``: 本机通道。"
 
 #: ../../en/units/lora_e220.rst:121 b3b79500c5a844aab9ebfbca0641dfd4
 msgid "``encryption_key``: Encryption key."
-msgstr ""
+msgstr "``encryption_key``: 加密密钥。"
 
 #: ../../en/units/lora_e220.rst:122 af6a180bf50241be82e0dc2adfd9ff9a
 msgid "``air_data_rate``: rate."
-msgstr ""
+msgstr "``air_data_rate``: 速率。"
 
 #: ../../en/units/lora_e220.rst:123 ba06e33bdfb94c1e903a84b765629b7d
 msgid "``subpacket_size``: Maximum packet length."
-msgstr ""
+msgstr "``subpacket_size``: 数据包最大长度。"
 
 #: ../../en/units/lora_e220.rst:124 c18d83ff90b6401ea8aa0b1a788e8add
 msgid "``rssi_ambient_noise_flag``: RSSI Ambient Noise."
-msgstr ""
+msgstr "``rssi_ambient_noise_flag``: RSSI。"
 
 #: ../../en/units/lora_e220.rst:125 b4147281ad5f4011943c8d3e14d89b4d
 msgid "``transmitting_power``: Transmit power."
-msgstr ""
+msgstr "``transmitting_power``: 发射功率。"
 
 #: ../../en/units/lora_e220.rst:126 b4c38143097147d687fb91adc6a307b1
 msgid "``rssi_byte_flag``: Output RSSI strength bytes."
-msgstr ""
+msgstr "``rssi_byte_flag``: RSSI。"
 
 #: ../../en/units/lora_e220.rst:127 8b397480eef34c28b159e1a7f2649375
 msgid "``transmission_method_type``: transmission mode."
-msgstr ""
+msgstr "``transmission_method_type``: 传输模式。"
 
 #: ../../en/units/lora_e220.rst:128 a57dcef19aea40eeb1e06bdbec143de6
 msgid "``lbt_flag``: Parameter no longer used."
-msgstr ""
+msgstr "``lbt_flag``: LBT Flag。"
 
 #: ../../en/units/lora_e220.rst:129 8d56ab17673248ba8a0e2dd54de82b2b
 msgid "``wor_cycle``: Wireless wake-up time."
-msgstr ""
+msgstr "``wor_cycle``: WOR。"
 
 #: ../../en/units/lora_e220.rst:133 745d8c38a8504d4d87a0995dd3dd6e03
 msgid "|setup.svg|"
@@ -292,7 +292,7 @@ msgstr ""
 #: ../../en/units/lora_e220.rst:140 ../../en/units/lora_e220.rst:179
 #: 25a8e19cd8f74b76ac7b5b11d256bac8 639a743f77da4434a4754065716ed2a0
 msgid "This method is deprecated and will be removed in version 2.0.2."
-msgstr ""
+msgstr "这个方法已被弃用，并将在 2.0.2 版本中移除。"
 
 #: ../../en/units/lora_e220.rst:142 ../../en/units/lora_e220.rst:161
 #: ../../en/units/lora_e220.rst:181 ../../en/units/lora_e220.rst:196
@@ -302,19 +302,19 @@ msgstr ""
 msgid ""
 "Available when the working mode of LoRaE220JPUnit is 0 / 1 / 2. Please "
 "refer to :ref:`working mode table <working-mode>` for the working mode."
-msgstr ""
+msgstr "当 LoRaE220JPUnit 的工作模式为 0 / 1 / 2 时可用。工作模式请参考 :ref:`工作模式表 <working-mode>` 。"
 
 #: ../../en/units/lora_e220.rst:144 ../../en/units/lora_e220.rst:163
 #: b0ced03d59fb43ce85c5aebf0a4eceb2 f898b3bb41c8471fb82cc4ffd62dcd4d
 msgid ""
 "Use non-blocking mode to receive data. ``receive_callback`` The callback "
 "function passed in will be called when data is received."
-msgstr ""
+msgstr "使用非阻塞模式接收数据。 ``receive_callback`` 传入的回调函数，当接收到数据时会被调用。"
 
 #: ../../en/units/lora_e220.rst:146 ../../en/units/lora_e220.rst:165
 #: 62707d266c87467dac7fe228c5c6c2e4 c1d5c77b9f214b86961b2b4f10cc784a
 msgid "The format of receive_callback is::"
-msgstr ""
+msgstr "receive_callback 的格式为::"
 
 #: ../../en/units/lora_e220.rst:152 20142a623f43485c808acff1c924aa8d
 msgid "|receiveNoneBlock.svg|"
@@ -328,7 +328,7 @@ msgstr ""
 #: ../../en/units/lora_e220.rst:159 ../../en/units/lora_e220.rst:194
 #: 86a2412737584e11ab6fe1f755396139 e8d13c14be5c41d0952bd6ee1d4d4bda
 msgid "This method will be added in version 2.0.2."
-msgstr ""
+msgstr "这个方法将在 2.0.2 版本中添加。"
 
 #: ../../en/units/lora_e220.rst:171 457cf3171c12447e82177dae385aa0b2
 msgid "|receiveNoneBlock.svg| |receive_callback1.svg| |receive_callback2.svg|"
@@ -345,7 +345,7 @@ msgstr ""
 #: ../../en/units/lora_e220.rst:183 ../../en/units/lora_e220.rst:198
 #: 5a787e5debc143e782c458ace7cea23a 8a01cfbe72a34e31ad4dbb23f486344c
 msgid "Stop receiving data in non-blocking mode."
-msgstr ""
+msgstr "停止非阻塞模式接收数据。"
 
 #: ../../en/units/lora_e220.rst:187 ../../en/units/lora_e220.rst:202
 #: 0dcba1543a1f44ad9f3223f556913bc0 7938b32d2eec496d97e5100e279613dd
@@ -361,7 +361,7 @@ msgstr ""
 msgid ""
 "Use blocking method to receive data. ``timeout`` is used to set the "
 "reception timeout, the unit is ms."
-msgstr ""
+msgstr "使用阻塞方法接收数据。' ' timeout ' '用于设置“接待超时，单位是Ms。”"
 
 #: ../../en/units/lora_e220.rst:213 d02219019ab54e5e98cf27bd77e8b347
 msgid "|receive.svg|"
@@ -375,25 +375,25 @@ msgstr ""
 msgid ""
 "Available when the working mode of LoRaE220JPUnit is 0 or 1. Please refer"
 " to :ref:`working mode table <working-mode>` for the working mode."
-msgstr ""
+msgstr "当 LoRaE220JPUnit 的工作模式为 0 或者 1 时可用。工作模式请参考 :ref:`工作模式表 <working-mode>` 。"
 
 #: ../../en/units/lora_e220.rst:220 d9e8196cc6004aee96356d1aa5fce973
 msgid "Send data to the specified destination address and channel."
-msgstr ""
+msgstr "目标地址和信道发送数据。"
 
 #: ../../en/units/lora_e220.rst:224 ee9da0951a6e4a03ad434eac88c3a3b4
 msgid ""
 "``target_address`` Target address, the address range is 0x0000 - 0xFFFF, "
 "where 0xFFFF is the broadcast address."
-msgstr ""
+msgstr "``target_address`` 目标地址，地址范围是 0x0000 - 0xFFFF ，其中 0xFFFF 是广播地址。"
 
 #: ../../en/units/lora_e220.rst:225 1a2a8c8d3d354f4da87d9cf3525875a4
 msgid "``target_channel`` Target channel, valid channel range is 0 - 30."
-msgstr ""
+msgstr "``target_channel`` 目标信道，有效的信道范围是 0 - 30。"
 
 #: ../../en/units/lora_e220.rst:226 6335ada9c735433ba4baf5b7f9b263ac
 msgid "``send_data`` The data needs to be sent."
-msgstr ""
+msgstr "``send_data`` 需要发送的数据。"
 
 #: ../../en/units/lora_e220.rst:230 eb584fcf2b5d432b87b06b3ff95f4af4
 msgid "|send1.svg| |send2.svg| |send3.svg|"
@@ -417,37 +417,37 @@ msgstr ""
 
 #: ../../en/units/lora_e220.rst:248 485a9598c5334683a1cf15e4fafe0515
 msgid "baud rate."
-msgstr ""
+msgstr "波特率"
 
 #: ../../en/units/lora_e220.rst:270 f2cde4d1922945cf835c7d2e89efc4f4
 msgid "rate."
-msgstr ""
+msgstr "速率"
 
 #: ../../en/units/lora_e220.rst:278 874bad24034844ac831391df73ed14f8
 msgid "Maximum packet length."
-msgstr ""
+msgstr "数据包最大长度"
 
 #: ../../en/units/lora_e220.rst:284 c01a44901e4c4ac48c19a4bafc2e37ce
 msgid "RSSI ambient noise."
-msgstr ""
+msgstr "RSSI 环境噪声"
 
 #: ../../en/units/lora_e220.rst:292 7a8fa30f648e4c219f2997c1ce6585f5
 msgid "Transmit power."
-msgstr ""
+msgstr "发射功率"
 
 #: ../../en/units/lora_e220.rst:298 58765d5c571e417894498dac85357719
 msgid ""
 "RSSI bytes. When enabled, the module will append a byte of RSSI value "
 "after the data each time it receives data."
-msgstr ""
+msgstr "RSSI 字节。使能后，模块会在每次接收到数据后，会在数据后面追加一个字节的 RSSI 值。"
 
 #: ../../en/units/lora_e220.rst:304 61c294a0451345f7b9e5b548826ae855
 msgid "transmission mode."
-msgstr ""
+msgstr "传输模式"
 
 #: ../../en/units/lora_e220.rst:314 381d7b921b7541f7b7cc7623441b4600
 msgid "Wireless wake-up time."
-msgstr ""
+msgstr "无线唤醒时间"
 
 #~ msgid "lora_e220_core_example.m5f2"
 #~ msgstr ""

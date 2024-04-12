@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../en/units/ncir.rst:6 576f0d60a7f84a2ea0282f9b7eda2032
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/ncir.rst:8 ee2999cef89e4125b7e6638f198de91d
 msgid "|NCIR|"
@@ -83,15 +83,15 @@ msgstr ""
 
 #: ../../en/units/ncir.rst:52 e75bbfef4600497e976fba0d22a1d429
 msgid "Create an NCIRUnit object."
-msgstr ""
+msgstr "创建一个NCIRUnit对象."
 
 #: ../../en/units/ncir.rst:55 72816b5d0e83424dac542857bd1d334b
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数为"
 
 #: ../../en/units/ncir.rst:55 0274419f6ab8422d95a54b6693dbfc81
 msgid "``i2c`` Define the i2c pin."
-msgstr ""
+msgstr "``i2c`` 定义i2c引脚。"
 
 #: ../../en/units/ncir.rst:57 ../../en/units/ncir.rst:69
 #: ../../en/units/ncir.rst:78 15af97836ae247e484736d6e4649c895
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../en/units/ncir.rst:67 162240ab47e24b4680a9b7063d8d86f7
 msgid "Obtain the ambient temperature."
-msgstr ""
+msgstr "获取环境温度"
 
 #: ../../en/units/ncir.rst:71 60048f22fe6245649d0d66359a5f1ef8
 msgid "|get_ambient_temperature.svg|"
@@ -117,7 +117,7 @@ msgstr ""
 
 #: ../../en/units/ncir.rst:76 4756ad13a9464a54be2aad1592ac35a8
 msgid "Get the temperature of the measured object."
-msgstr ""
+msgstr "获取测量物体温度"
 
 #: ../../en/units/ncir.rst:80 bbbe259c22c24c579943fa8261e334a2
 msgid "|get_object_temperature.svg|"
