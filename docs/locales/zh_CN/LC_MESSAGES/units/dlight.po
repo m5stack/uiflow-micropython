@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../en/units/dlight.rst:6 8733242a45dd4874b75d5eeed078d569
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/dlight.rst:8 10f27f3cfcc048ef806be3a85be8705e
 msgid "|Dlight|"
@@ -83,15 +83,15 @@ msgstr ""
 
 #: ../../en/units/dlight.rst:50 da7c39af913047a588b12209006e308b
 msgid "Create a DLight object."
-msgstr ""
+msgstr "创建一个DLight对象."
 
 #: ../../en/units/dlight.rst:53 6e0211b7ef0846bc9e696bff7947fadb
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/dlight.rst:53 2a1bca3828d94ab6b3f2c99788bdb0c1
 msgid "``PORT`` Define an i2c port."
-msgstr ""
+msgstr "``PORT`` 定义i2c端口。"
 
 #: ../../en/units/dlight.rst:55 ../../en/units/dlight.rst:67
 #: ../../en/units/dlight.rst:76 0afe8df87e88446d95cb2f47bbf06e89
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../en/units/dlight.rst:65 828afa60a9c941b88b1f6896305934fc
 msgid "Get light lux."
-msgstr ""
+msgstr "获取光照强度。"
 
 #: ../../en/units/dlight.rst:69 5599a51d83194447a99f645014594aab
 msgid "|get_lux.svg|"
@@ -119,7 +119,7 @@ msgstr ""
 msgid ""
 "Configure the measurement mode (continuous measurement/single "
 "measurement) and resolution."
-msgstr ""
+msgstr "配置测量模式（持续测量/单次测量）和分辨率。"
 
 #: ../../en/units/dlight.rst:78 35bad0b7f9894de1b582ff02b41c9c3b
 msgid "|configure.svg|"

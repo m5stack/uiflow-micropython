@@ -17,6 +17,10 @@ function ci_code_formatting_setup {
     sudo apt-add-repository --yes --update ppa:pybricks/ppa
     sudo apt-get install uncrustify
     pip3 install black
+    pip3 install micropython-typesheds
+    pip3 install ruff==0.3.0
+    pip3 install codespell==2.2.6 tomli==2.0.1
+    pip3 install pre-commit==3.6.2
     uncrustify --version
     black --version
 }

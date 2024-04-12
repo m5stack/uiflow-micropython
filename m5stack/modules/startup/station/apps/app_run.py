@@ -53,7 +53,7 @@ class RunApp(AppBase):
             bg_color=0xCDCDCD,
             font=MontserratMedium16_VLW,
         )
-        self._name_label.setText("main.py")
+        self._name_label.set_text("main.py")
 
         self._mtime_label = Label(
             "Time: 2023/5/14 12:23:43",
@@ -65,7 +65,7 @@ class RunApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._mtime_label.setText(self._mtime_text)
+        self._mtime_label.set_text(self._mtime_text)
 
         self._account_label = Label(
             "Account: XXABC",
@@ -77,7 +77,7 @@ class RunApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._account_label.setText(self._account_text)
+        self._account_label.set_text(self._account_text)
 
         self._ver_label = Label(
             "Ver: UIFLOW2.0 a18",
@@ -89,7 +89,7 @@ class RunApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._ver_label.setText(self._ver_text)
+        self._ver_label.set_text(self._ver_text)
 
         M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
         M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)

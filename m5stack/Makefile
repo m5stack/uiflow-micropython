@@ -270,18 +270,12 @@ submodules:
 
 # Apply patches
 patch:
-	cd ./components/lv_bindings && \
-	git apply ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
-	cd ./../micropython && \
-	git apply ./../m5stack/patches/0003-modtime-Add-timezone.patch && cd -
-	cd ./components/M5Unified/M5Unified && \
-	git apply ./../../../patches/2003-Support-LTR553.patch && cd -
+	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
 
 # Unapply patches
 unpatch:
-	cd ./components/M5Unified/M5Unified && \
-	git apply -R ./../../../patches/2003-Support-LTR553.patch && cd -
-	cd ./../micropython && \
-	git apply -R ./../m5stack/patches/0003-modtime-Add-timezone.patch && cd -
-	cd ./components/lv_bindings && \
-	git apply -R ./../../patches/0002_avoid_lv_bindings_compile_error.patch && cd -
+	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))

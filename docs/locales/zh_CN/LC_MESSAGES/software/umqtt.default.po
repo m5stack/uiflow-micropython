@@ -28,7 +28,7 @@ msgstr ""
 msgid ""
 "`umqtt.default` rewrites the :py:meth:`subscribe` method and supports ca "
 "file."
-msgstr ""
+msgstr "`umqtt.default` 重写了 :py:meth:`subscribe` 方法并支持 ca 文件。"
 
 #: ../../en/software/umqtt.default.rst:10 85ae3e9d9744411295a3d59848b4fbd1
 msgid "Micropython Example::"
@@ -55,7 +55,7 @@ msgid "Constructors"
 msgstr ""
 
 #: ../../en/software/umqtt.default.rst:45 c2645bb30dc645bc813f62bc2f935bcd
-msgid "Create an MQTTClient object."
+msgid "创建 MQTTClient 对象。"
 msgstr ""
 
 #: ../../en/software/umqtt.default.rst 6ad9ce2bd06b4c058b4793a06c15fea5
@@ -66,38 +66,38 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:47 fea080f64ca2416fb2c7886878dabb1f
 msgid "the unique client id string used when connecting to the broker."
-msgstr ""
+msgstr " 连接到MQTT broker时使用的唯一客户端 ID 字符串"
 
 #: ../../en/software/umqtt.default.rst:49 b827a2cce31f4095b10f83ef8e88d1c5
 msgid "the hostname or IP address of the remote broker."
-msgstr ""
+msgstr "远程MQTT broker的主机名或 IP 地址。"
 
 #: ../../en/software/umqtt.default.rst:50 c9f3efb5baa34d27a8f93a38e843c205
 msgid "the network port of the server host to connect to."
-msgstr ""
+msgstr "要连接的服务器主机的网络端口。"
 
 #: ../../en/software/umqtt.default.rst:51 adf1ee5a7a2e45abad9e40ca3e807a76
 msgid "a username for broker authentication."
-msgstr ""
+msgstr "用于MQTT broker身份验证的用户名。"
 
 #: ../../en/software/umqtt.default.rst:53 5b199b9225124bff8cf805ed726dc8b9
 msgid "a password for broker authentication."
-msgstr ""
+msgstr "用于MQTT broker身份验证的密码。"
 
 #: ../../en/software/umqtt.default.rst:55 29424d3a81db4781b874163864454194
 msgid ""
 "maximum period in seconds allowed between communications with the broker."
 " If no other messages are being exchanged, this controls the rate at "
 "which the client will send ping messages to the broker."
-msgstr ""
+msgstr "与代理通信之间允许的最长时间（以秒为单位）。如果没有交换其他消息，这将控制客户端向代理发送 ping 消息的速率。"
 
 #: ../../en/software/umqtt.default.rst:59 b0d3fae7e1ce4db3a2f4f1283c34a0cd
 msgid "Whether to use ssl."
-msgstr ""
+msgstr "是否使用ssl。"
 
 #: ../../en/software/umqtt.default.rst:60 b2d851c65ed8406d938480aae91e3b1b
 msgid "Some parameters required to initiate an ssl connection."
-msgstr ""
+msgstr "启动 ssl 连接所需的一些参数。"
 
 #: ../../en/software/umqtt.default.rst 96a54d44f87a403cbe5d8872259ceb3e
 msgid "Returns"
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:61 ddb94fa53fe74113b188eb6d47a63b92
 msgid "MQTTClient object"
-msgstr ""
+msgstr "MQTTClient 对象"
 
 #: ../../en/software/umqtt.default.rst 839087f42e1048c280066aa1bd4ac7f3
 msgid "Return type"
@@ -150,7 +150,7 @@ msgid ""
 "Connect to a server. Returns True if this connection uses persisten "
 "session stored on a server (this will be always False if "
 "clean_session=True argument is used (default))."
-msgstr ""
+msgstr "连接到服务器。如果此连接使用存储在服务器上的持久会话，则返回 True （如果使用clean_session=True 参数（默认），则始终为 False ）。"
 
 #: ../../en/software/umqtt.default.rst:80 e3912a000d454516a112a659760cad8c
 msgid "|connect.svg|"
@@ -164,7 +164,7 @@ msgstr ""
 #: ../../en/software/umqtt.default.rst:92 1451759bef4145e993345600e286458a
 #: 6b05d03440004dc7bf962fcf835dbf89
 msgid "Disconnect from a server, release resources."
-msgstr ""
+msgstr "断开与服务器的连接，释放资源。"
 
 #: ../../en/software/umqtt.default.rst:88 fd3cd9f089804e2ab8a196dc3b46f71e
 msgid "|disconnect.svg|"
@@ -186,7 +186,8 @@ msgstr ""
 msgid ""
 "Ping server (response is processed automatically by "
 ":py:meth:`wait_msg()`)."
-msgstr ""
+msgstr "Ping 服务器（响应由 "
+":py:meth:`wait_msg()` 自动处理）。"
 
 #: ../../en/software/umqtt.default.rst:104
 #: ../../en/software/umqtt.default.rst:196 2b1ddfcd060e4505b316544a7586746e
@@ -196,15 +197,15 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:108 120dd4fb687b4200ada9b28c11a2b288
 msgid "Publish a message."
-msgstr ""
+msgstr "发布消息。"
 
 #: ../../en/software/umqtt.default.rst:110 cba8402f67a54b4d82115ac71d555bcc
 msgid "the topic that the message should be published on."
-msgstr ""
+msgstr "应发布消息的主题。"
 
 #: ../../en/software/umqtt.default.rst:112 13fe2a946edc41cfa209bd2f4da77a58
 msgid "the message to send as a will."
-msgstr ""
+msgstr "实际要发送的消息。"
 
 #: ../../en/software/umqtt.default.rst:114
 #: ../../en/software/umqtt.default.rst:160 523f6629e4564ac7b7006059eb2c72fe
@@ -212,11 +213,11 @@ msgstr ""
 msgid ""
 "if set to True, the will message will be set as the \"last "
 "will\"/retained message for the topic."
-msgstr ""
+msgstr "如果设置为 True ，则遗嘱消息将被设置为该主题的“最后遗嘱”/保留消息。"
 
 #: ../../en/software/umqtt.default.rst:116 a4dcba9d169f498abc217918e10e01ad
 msgid "the quality of service level to use"
-msgstr ""
+msgstr "使用的服务质量级别"
 
 #: ../../en/software/umqtt.default.rst:120 4c2df6cd15924dcf913bd11db5fbc524
 msgid "|publish.svg|"
@@ -228,22 +229,22 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:124 29e4103da2b0463f8eaa885b362c42aa
 msgid "Subscribe to a topic."
-msgstr ""
+msgstr "订阅主题。"
 
 #: ../../en/software/umqtt.default.rst:126 e917261b3c3743d8b232909c5809724e
 msgid "a string specifying the subscription topic to subscribe to."
-msgstr ""
+msgstr "指定要订阅的订阅主题的字符串。"
 
 #: ../../en/software/umqtt.default.rst:128 f672739d26054808bb0849c9149deaf0
 msgid ""
 "called when a message has been received on a topic that the client "
 "subscribes to and the message does match an existing topic filter "
 "callback."
-msgstr ""
+msgstr "当收到有关客户端订阅的主题的消息并且该消息与现有主题过滤器回调匹配时调用。"
 
 #: ../../en/software/umqtt.default.rst:131 5eea7bf859a3439594dc171e75a2bc82
 msgid "the desired quality of service level for the subscription. Defaults to 0."
-msgstr ""
+msgstr "订阅所需的服务质量级别。 默认为 0。"
 
 #: ../../en/software/umqtt.default.rst:136
 #: ../../en/software/umqtt.default.rst:166 0da9bf721a864d118172775310b0b91b
@@ -258,13 +259,14 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:138 76c43f0868264ea7a8912f05c9049b6a
 msgid "An handler showing a message has been received::"
-msgstr ""
+msgstr "显示已收到消息的处理程序::"
 
 #: ../../en/software/umqtt.default.rst:144 263746db9c99427f8d6ca6b125a65e3f
 msgid ""
 "On uiflow2, you can get the **topic** and **message** of the current "
 "handler through |get_topic.svg| and |get_msg.svg|."
-msgstr ""
+msgstr "在 uiflow2 上，可以通过 |get_topic.svg| 和 |get_msg.svg| 获取当前 handler 的
+    **topic** 和 **message** 。"
 
 #: ../../en/refs/software.umqtt.default.ref:17 b01ce30da235472fa23ae7c5761dd818
 msgid "get_topic.svg"
@@ -276,25 +278,25 @@ msgstr ""
 
 #: ../../en/software/umqtt.default.rst:151 24ea7445901646afaefd9f13a65e6683
 msgid "Should be called before :py:meth:`connect()`."
-msgstr ""
+msgstr "应该在 :py:meth:`connect()` 之前调用。"
 
 #: ../../en/software/umqtt.default.rst:153 987be485bb444d0590e049f4ce7dd3e5
 msgid "Set MQTT \"last will\" message."
-msgstr ""
+msgstr "设置 MQTT 遗嘱消息。"
 
 #: ../../en/software/umqtt.default.rst:155 e332f3c34faa49748f26b6cc02a8b516
 msgid "the topic that the will message should be published on."
-msgstr ""
+msgstr "将发布意愿消息的主题。"
 
 #: ../../en/software/umqtt.default.rst:157 8a81442fb9ef4de5bb893839dea176ea
 msgid ""
 "the message to send as a will. If not given, or set to None a zero length"
 " message will be used as the will."
-msgstr ""
+msgstr " 如果设置为 True ，则遗嘱消息将被设置为该主题的“最后遗嘱”/保留消息。"
 
 #: ../../en/software/umqtt.default.rst:162 cc501ee780c142f3a16484503f8039df
 msgid "the quality of service level to use for the will."
-msgstr ""
+msgstr "用于意愿的服务质量水平。"
 
 #: ../../en/software/umqtt.default.rst:172 4968301067324b57a79016c1335a340d
 msgid ""
@@ -304,18 +306,18 @@ msgid ""
 "any other foreground tasks to perform (i.e. your app just reacts to "
 "subscribed MQTT messages), :py:meth:`check_msg()` if you process other "
 "foreground tasks too."
-msgstr ""
+msgstr ":py:meth:`wait_msg()` 和 :py:meth:`check_msg()` 是主循环迭代方法，有阻塞和非阻塞版本。 如果您没有任何其他前台任务要执行（即您的应用程序仅对订阅的MQTT 消息做出反应），则应在循环中定期调用 :py:meth:`wait_msg()` ，如果您还处理其他前台任务，则使用 :py:meth:`check_msg ()` 。"
 
 #: ../../en/software/umqtt.default.rst:179 c946c4bb0a164001af4fbbfe8de404e6
 msgid ""
 "Note that you don't need to call :py:meth:`wait_msg()` / "
 ":py:meth:`check_msg()` if you only publish messages, never subscribe to "
 "them."
-msgstr ""
+msgstr "请注意，如果您只发布消息，从不订阅消息，则不需要调用 :py:meth:`wait_msg()` / :py:meth:`check_msg()` 。"
 
 #: ../../en/software/umqtt.default.rst:183 0706b11c7e8041a99b93bc52096c6dd6
 msgid "Wait for a server message."
-msgstr ""
+msgstr "等待服务器消息。"
 
 #: ../../en/software/umqtt.default.rst:187 1f733d5808004a9ca430797b9136ca5d
 msgid "|wait_msg.svg|"
@@ -329,7 +331,8 @@ msgstr ""
 msgid ""
 "Check if there's pending message from server. If yes, process the same "
 "way as :py:meth:`wait_msg()`, if not, return immediately."
-msgstr ""
+msgstr "检查是否有来自服务器的待处理消息。如果是， 则与 :py:meth:`wait_msg()` 处理方式相
+    同，如果不是，则立即返回。"
 
 #~ msgid "set_last_will.svg"
 #~ msgstr ""

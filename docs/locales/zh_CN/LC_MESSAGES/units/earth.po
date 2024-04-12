@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../en/units/earth.rst:6 7bab97ddffbc4b368c2abea3523abdb4
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/earth.rst:8 67df32dc0092423aa888663c7bdaee79
 msgid "|EARTH|"
@@ -98,15 +98,15 @@ msgstr ""
 
 #: ../../en/units/earth.rst:41 8583abd4c42c48df8628589bccb2e34f
 msgid "Create an Earth object."
-msgstr ""
+msgstr "创建一个Earth对象。"
 
 #: ../../en/units/earth.rst:44 6e0807f80bd64317ab40fbe4d2b20ab1
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数是："
 
 #: ../../en/units/earth.rst:44 d0e5f12f7ff84ff999a72939130e227a
 msgid "``port`` Is the pin number of the port"
-msgstr ""
+msgstr "``port`` 是端口的引脚号"
 
 #: ../../en/units/earth.rst:46 ../../en/units/earth.rst:58
 #: ../../en/units/earth.rst:67 ../../en/units/earth.rst:76
@@ -129,7 +129,7 @@ msgstr ""
 msgid ""
 "This method allows you to read the analog captured by EARTH and return an"
 " integer value. The value ranges from 0 to 65535."
-msgstr ""
+msgstr "此方法允许读取EARTH采集的模拟量并返回一个整数型数值。范围为0-65535。"
 
 #: ../../en/units/earth.rst:60 70be57ced8b14e989781c8273bccc0a2
 msgid "|get_analog_value.svg|"
@@ -139,7 +139,7 @@ msgstr ""
 msgid ""
 "This method allows you to read the amount of numbers collected by EARTH "
 "and return an integer value. The value ranges from 0 to 1."
-msgstr ""
+msgstr "此方法允许读取EARTH采集的数字量并返回一个整数型数值。范围为0或者1。"
 
 #: ../../en/units/earth.rst:69 614f1aa02b134d479db021ed68869a71
 msgid "|get_digital_value.svg|"
@@ -149,7 +149,7 @@ msgstr ""
 msgid ""
 "This method allows you to read the voltage value collected by EARTH and "
 "return an integer value. It ranges from 0 to 3300."
-msgstr ""
+msgstr "此方法允许读取EARTH采集的电压值并返回一个整数型数值。范围0-3300。"
 
 #: ../../en/units/earth.rst:78 38aa456b27564b9d9d5d64a733ee9129
 msgid "|get_voltage_mv.svg|"
@@ -159,7 +159,7 @@ msgstr ""
 msgid ""
 "This method allows you to read the voltage value collected by EARTH and "
 "return a floating-point value. Range 0.0 to 1.0."
-msgstr ""
+msgstr "此方法允许读取EARTH采集的电压值并返回一个浮点型数值。范围0.0-1.0。"
 
 #: ../../en/units/earth.rst:87 3effec9bdd994cd1bd5b3146f41832bd
 msgid "|humidity.svg|"
@@ -169,7 +169,7 @@ msgstr ""
 msgid ""
 "This method allows setting the maximum (0-3300) and minimum (0-3300) "
 "values for calibrating the EARTH sensor."
-msgstr ""
+msgstr "此方法允许设置校准EARTH传感器的最大（0-3300）和最小值（0-3300）。"
 
 #: ../../en/units/earth.rst:96 876ee003a2e94478a5225d9c13cbf690
 msgid "|set_calibrate.svg|"
