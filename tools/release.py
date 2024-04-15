@@ -1,9 +1,12 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import subprocess
 import sys
 from collections import namedtuple
 import glob
 import logging
-import json
 
 logging.basicConfig(level=logging.INFO)
 
@@ -14,7 +17,6 @@ try:
 except ImportError:
     logging.warning("'requests' module not found. Installing...")
     subprocess.check_call([sys.executable, "-m", "pip", "install", "requests"])
-    # 重新导入requests
     import requests
 
     logging.info("'requests' has been successfully installed.")
