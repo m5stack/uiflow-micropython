@@ -51,9 +51,9 @@ namespace m5
                                 cfg.stereo = (bool)mp_obj_is_true(kwargs->table[i].value);
                                 break;
 
-                            case MP_QSTR_input_offset:
-                                cfg.input_offset = (int)mp_obj_get_int(kwargs->table[i].value);
-                                break;
+                            // case MP_QSTR_input_offset:
+                            //     cfg.input_offset = (int)mp_obj_get_int(kwargs->table[i].value);
+                            //     break;
 
                             case MP_QSTR_over_sampling:
                                 cfg.over_sampling = (uint8_t)mp_obj_get_int(kwargs->table[i].value);
@@ -109,7 +109,7 @@ namespace m5
             config->pin_ws = mp_obj_new_int(cfg.pin_ws);
             config->sample_rate = mp_obj_new_int(cfg.sample_rate);
             config->stereo = mp_obj_new_bool(cfg.stereo);
-            config->input_offset = mp_obj_new_int(cfg.input_offset);
+            // config->input_offset = mp_obj_new_int(cfg.input_offset);
             config->over_sampling = mp_obj_new_int(cfg.over_sampling);
             config->magnification = mp_obj_new_int(cfg.magnification);
             config->noise_filter_level = mp_obj_new_int(cfg.noise_filter_level);
@@ -148,9 +148,9 @@ namespace m5
                         return mp_obj_new_bool(cfg.stereo);
                         break;
 
-                    case MP_QSTR_input_offset:
-                        return mp_obj_new_int(cfg.input_offset);
-                        break;
+                    // case MP_QSTR_input_offset:
+                    //     return mp_obj_new_int(cfg.input_offset);
+                    //     break;
 
                     case MP_QSTR_over_sampling:
                         return mp_obj_new_int(cfg.over_sampling);
@@ -200,7 +200,7 @@ namespace m5
                 cfg.pin_ws = (int)mp_obj_get_int(config->pin_ws);
                 cfg.sample_rate = (uint32_t)mp_obj_get_int(config->sample_rate);
                 cfg.stereo = (bool)mp_obj_is_true(config->stereo);
-                cfg.input_offset = (int)mp_obj_get_int(config->input_offset);
+                // cfg.input_offset = (int)mp_obj_get_int(config->input_offset);
                 cfg.over_sampling = (uint8_t)mp_obj_get_int(config->over_sampling);
                 cfg.magnification = (uint8_t)mp_obj_get_int(config->magnification);
                 cfg.noise_filter_level = (uint8_t)mp_obj_get_int(config->noise_filter_level);
