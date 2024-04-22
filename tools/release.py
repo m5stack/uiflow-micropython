@@ -26,7 +26,7 @@ FirewareInfo = namedtuple("FirewareInfo", ["board", "fid", "suffix"])
 
 fireware_info_table = (
     FirewareInfo("M5STACK_AirQ", "9b14de127a34084d5c8aaedc7e762547", ""),
-    FirewareInfo("M5STACK_Atom_Echo", None, ""),
+    FirewareInfo("M5STACK_Atom_Echo", None, "ATOM-ECHO"),
     FirewareInfo("M5STACK_Atom_Lite", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-LITE"),
     FirewareInfo("M5STACK_Atom_Matrix", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-Matrix"),
     FirewareInfo("M5STACK_AtomS3", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3"),
@@ -47,7 +47,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Stamp_PICO", "d3b966b3ff9b1f1bd29225cc307a0d78", ""),
     FirewareInfo("M5STACK_StampS3", "017e0eef047afb70eb8b9fc1fbccefe0", ""),
     FirewareInfo("M5STACK_Station", "6f1b78c29bfdfc5fbabfcf5614ab2042", ""),
-    FirewareInfo("M5STACK_StickC", "39d70217ff0b53c368b0efbfbf2a11af", ""),
+    FirewareInfo("M5STACK_StickC", "a44718de7ac2c0879b75cd56db8c667e", ""),
     FirewareInfo("M5STACK_StickC_PLUS", "e012605c9ebfebb7159fff2ac35f79c8", ""),
     FirewareInfo("M5STACK_StickC_PLUS2", "39d70217ff0b53c368b0efbfbf2a11af", ""),
     FirewareInfo("M5STACK_Tough", "ffadcb704115b88ca9fd149e567c73f5", "TOUGH"),
