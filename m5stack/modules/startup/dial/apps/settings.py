@@ -9,7 +9,6 @@ from widgets.label import Label
 from widgets.button import Button
 import esp32
 from .status_bar import StatusBarApp
-from common.font.MontserratMedium16 import FONT as MontserratMedium16
 from unit import KeyCode
 from ..res import (
     SETTING_WIFI_IMG,
@@ -55,7 +54,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._ssid_label.set_long_mode(Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
@@ -69,7 +68,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._psk_label.set_long_mode(Label.LONG_DOT)
         if len(self.psk):
@@ -86,7 +85,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._server_label.set_long_mode(Label.LONG_DOT)
         self._server_label.set_text(self.server)

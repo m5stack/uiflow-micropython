@@ -50,7 +50,7 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._ssid_label.setLongMode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
 
         self._psk_label = Label(
@@ -64,7 +64,7 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._psk_label.setLongMode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(Label.LONG_DOT)
         if len(self.psk):
             self._psk_label.set_text("*" * 20)
         else:
@@ -81,7 +81,7 @@ class WiFiSettingApp(AppBase):
             bg_color=0xFFFFFF,
             font=MontserratMedium10_VLW,
         )
-        self._server_label.setLongMode(Label.LONG_DOT)
+        self._server_label.set_long_mode(Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
         self._submit_button = Image(use_sprite=False)
@@ -134,11 +134,11 @@ class WiFiSettingApp(AppBase):
         view_fn()
 
     async def _btna_next_event_handler(self, fw):
-        self._option, view_fn = self._menu_selector.next()
+        self._option, view_fn = self._menu_selector.prev()
         view_fn()
 
     async def _btnc_next_event_handler(self, fw):
-        self._option, view_fn = self._menu_selector.prev()
+        self._option, view_fn = self._menu_selector.next()
         view_fn()
 
     async def _kb_event_handler(self, event, fw):
@@ -562,11 +562,11 @@ class GeneralSettingApp(AppBase):
 
     async def _btna_next_event_handler(self, fw):
         self._menu_selector.current().pause()
-        self._menu_selector.next().resume()
+        self._menu_selector.prev().resume()
 
     async def _btnc_next_event_handler(self, fw):
         self._menu_selector.current().pause()
-        self._menu_selector.prev().resume()
+        self._menu_selector.next().resume()
 
     async def _kb_event_handler(self, event, fw):
         if event.key == 182:  # down key
@@ -682,14 +682,14 @@ class SettingsApp(AppBase):
             await self._app._btna_next_event_handler(fw)
             return
 
-        self._menu_selector.index(1)
-        self._imgs[0].set_src(CARD_228x32_UNSELECT_IMG)
+        self._menu_selector.index(0)
+        self._imgs[0].set_src(CARD_228x32_SELECT_IMG)
         self._icos[0].refresh()
         # self._labels[0].refresh()
         self._labels[0].set_text("WLAN")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
-        self._imgs[1].set_src(CARD_228x32_SELECT_IMG)
+        self._imgs[1].set_src(CARD_228x32_UNSELECT_IMG)
         self._icos[1].refresh()
         # self._labels[1].refresh()
         self._labels[1].set_text("General")
@@ -700,14 +700,14 @@ class SettingsApp(AppBase):
             await self._app._btnc_next_event_handler(fw)
             return
 
-        self._menu_selector.index(0)
-        self._imgs[0].set_src(CARD_228x32_SELECT_IMG)
+        self._menu_selector.index(1)
+        self._imgs[0].set_src(CARD_228x32_UNSELECT_IMG)
         self._icos[0].refresh()
         # self._labels[0].refresh()
         self._labels[0].set_text("WLAN")
         M5.Lcd.drawImage(CARET_RIGHT, 213, 25)
 
-        self._imgs[1].set_src(CARD_228x32_UNSELECT_IMG)
+        self._imgs[1].set_src(CARD_228x32_SELECT_IMG)
         self._icos[1].refresh()
         # self._labels[1].refresh()
         self._labels[1].set_text("General")

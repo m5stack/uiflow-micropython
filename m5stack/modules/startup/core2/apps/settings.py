@@ -8,7 +8,6 @@ from widgets.image import Image
 from widgets.label import Label
 from widgets.button import Button
 import esp32
-from common.font import MontserratMedium16
 from unit import KeyCode
 
 
@@ -40,7 +39,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
         self._ssid_label.set_long_mode(Label.LONG_DOT)
@@ -54,7 +53,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
         self._psk_label.set_long_mode(Label.LONG_DOT)
@@ -71,7 +70,7 @@ class WiFiSetting(AppBase):
             font_align=Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
         self._server_label.set_long_mode(Label.LONG_DOT)
