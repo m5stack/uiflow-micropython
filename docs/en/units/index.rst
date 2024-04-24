@@ -29,3 +29,5 @@ Unit
     unit_lcd.rst
     unit_minioled.rst
     unit_rca.rst
+    fader.rst
+    ssr.rst
