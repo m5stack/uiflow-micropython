@@ -60,6 +60,7 @@ package(
         "ncir2.py",
         "tof4m.py",
         "fader.py",
+        "ssr.py",
     ),
     base_path="..",
     opt=3,
