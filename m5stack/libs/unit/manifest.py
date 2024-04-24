@@ -59,6 +59,7 @@ package(
         "thermal2.py",
         "ncir2.py",
         "tof4m.py",
+        "fader.py",
     ),
     base_path="..",
     opt=3,
