@@ -22,6 +22,10 @@
 #include <M5ModuleRCA.h>
 #include <M5UnitOLED.h>
 #include <M5UnitLCD.h>
+#include <M5UnitMiniOLED.h>
+#include <M5UnitGLASS.h>
+#include <M5UnitGLASS2.h>
+
 #include <M5UnitRCA.h>
 #include <M5Unified.h>
 
@@ -129,6 +133,194 @@ static void m5_config_helper_module_rca(mp_obj_t config_obj, m5::M5Unified::conf
 }
 #endif
 
+
+static void m5_config_helper_unit_lcd(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_lcd must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_lcd = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_scl") == 0) {
+                cfg.unit_lcd.pin_scl = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_sda") == 0) {
+                cfg.unit_lcd.pin_sda = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_addr") == 0) {
+                cfg.unit_lcd.i2c_addr = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_freq") == 0) {
+                cfg.unit_lcd.i2c_freq = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+static void m5_config_helper_unit_oled(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_oled must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_oled = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_scl") == 0) {
+                cfg.unit_oled.pin_scl = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_sda") == 0) {
+                cfg.unit_oled.pin_sda = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_addr") == 0) {
+                cfg.unit_oled.i2c_addr = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_freq") == 0) {
+                cfg.unit_oled.i2c_freq = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+
+static void m5_config_helper_unit_mini_oled(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_mini_oled must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_mini_oled = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_scl") == 0) {
+                cfg.unit_mini_oled.pin_scl = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_sda") == 0) {
+                cfg.unit_mini_oled.pin_sda = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_addr") == 0) {
+                cfg.unit_mini_oled.i2c_addr = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_freq") == 0) {
+                cfg.unit_mini_oled.i2c_freq = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+
+static void m5_config_helper_unit_glass(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_glass must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_glass = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_scl") == 0) {
+                cfg.unit_glass.pin_scl = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_sda") == 0) {
+                cfg.unit_glass.pin_sda = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_addr") == 0) {
+                cfg.unit_glass.i2c_addr = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_freq") == 0) {
+                cfg.unit_glass.i2c_freq = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+
+static void m5_config_helper_unit_glass2(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_glass2 must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_glass2 = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_scl") == 0) {
+                cfg.unit_glass2.pin_scl = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_sda") == 0) {
+                cfg.unit_glass2.pin_sda = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_addr") == 0) {
+                cfg.unit_glass2.i2c_addr = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "i2c_freq") == 0) {
+                cfg.unit_glass2.i2c_freq = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
+#if CONFIG_IDF_TARGET_ESP32
+static void m5_config_helper_unit_rca(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("unit_rca must be a dict");
+    }
+
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.unit_rca = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "width") == 0) {
+                cfg.unit_rca.logical_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "height") == 0) {
+                cfg.unit_rca.logical_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_width") == 0) {
+                cfg.unit_rca.output_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_height") == 0) {
+                cfg.unit_rca.output_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "signal_type") == 0) {
+                cfg.unit_rca.signal_type = (M5UnitRCA::signal_type_t)mp_obj_get_int(value);
+            } else if (strcmp(key_str, "use_psram") == 0) {
+                cfg.unit_rca.use_psram = (M5UnitRCA::use_psram_t)mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pin_dac") == 0) {
+                cfg.unit_rca.pin_dac = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_level") == 0) {
+                cfg.unit_rca.output_level = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+#endif
+
 static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
     mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
 
@@ -145,6 +337,22 @@ static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) 
             #if CONFIG_IDF_TARGET_ESP32
             else if (strcmp(key_str, "module_rca") == 0) {
                 m5_config_helper_module_rca(value, cfg);
+            }
+            #endif
+            else if (strcmp(key_str, "unit_lcd") == 0) {
+                m5_config_helper_unit_lcd(value, cfg);
+            } else if (strcmp(key_str, "unit_oled") == 0) {
+                m5_config_helper_unit_oled(value, cfg);
+            } else if (strcmp(key_str, "unit_mini_oled") == 0) {
+                m5_config_helper_unit_mini_oled(value, cfg);
+            } else if (strcmp(key_str, "unit_glass") == 0) {
+                m5_config_helper_unit_glass(value, cfg);
+            } else if (strcmp(key_str, "unit_glass2") == 0) {
+                m5_config_helper_unit_glass2(value, cfg);
+            }
+            #if CONFIG_IDF_TARGET_ESP32
+            else if (strcmp(key_str, "unit_rca") == 0) {
+                m5_config_helper_unit_rca(value, cfg);
             }
             #endif
         }
@@ -188,6 +396,59 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
         }
     }
     #endif
+    else if (cfg.external_display.unit_lcd) {
+        M5UnitLCD dsp(cfg.unit_lcd);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_lcd added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_lcd init failed\n");
+        }
+    } else if (cfg.external_display.unit_oled) {
+        M5UnitOLED dsp(cfg.unit_oled);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_oled added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_oled init failed\n");
+        }
+    } else if (cfg.external_display.unit_mini_oled) {
+        M5UnitMiniOLED dsp(cfg.unit_mini_oled);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_mini_oled added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_mini_oled init failed\n");
+        }
+    } else if (cfg.external_display.unit_glass) {
+        M5UnitGLASS dsp(cfg.unit_glass);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_glass added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_glass init failed\n");
+        }
+    } else if (cfg.external_display.unit_glass2) {
+        M5UnitGLASS2 dsp(cfg.unit_glass2);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_glass2 added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_glass2 init failed\n");
+        }
+    }
+    #if CONFIG_IDF_TARGET_ESP32
+    else if (cfg.external_display.unit_rca) {
+        M5UnitRCA dsp(cfg.unit_rca);
+        if (dsp.init()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "unit_rca added\n");
+        } else {
+            mp_printf(&mp_plat_print, "unit_rca init failed\n");
+        }
+    }
+    #endif
+
 
     return m5_getDisplay(mp_obj_new_int(M5.getDisplayCount() - 1));
 }
