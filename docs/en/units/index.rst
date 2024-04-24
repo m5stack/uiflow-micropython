@@ -23,3 +23,9 @@ Unit
     dac2.rst
     lora_e220.rst
     weight_i2c.rst
+    unit_oled.rst
+    unit_glass.rst
+    unit_glass2.rst
+    unit_lcd.rst
+    unit_minioled.rst
+    unit_rca.rst
