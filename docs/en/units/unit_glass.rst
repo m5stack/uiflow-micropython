@@ -12,7 +12,7 @@ Supported products:
 Micropython example::
 
     import M5
-    display = M5.addDisplay({"unit_glass":{"enabled":True, "pin_scl": 22, "pin_sda": 21, "i2c_addr": 0x3E, "i2c_freq": 400000}}) # Add Glass unit
+    display = M5.addDisplay({"unit_glass":{"enabled":True, "pin_scl": 33, "pin_sda": 32, "i2c_addr": 0x3D, "i2c_freq": 400000}}) # Add Glass unit
     display.clear(0xffffff) # Clear screen
 
 UIFLOW2 example:

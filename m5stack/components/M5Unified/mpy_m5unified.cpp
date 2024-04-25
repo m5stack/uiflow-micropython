@@ -368,7 +368,7 @@ mp_obj_t m5_add_display(mp_obj_t dict) {
     cfg.external_display_value = 0; // disable all external display
     m5_config_helper(dict, cfg);
 
-    mp_printf(&mp_plat_print, "external_display_value: %02X\n", cfg.external_display_value);
+    // mp_printf(&mp_plat_print, "external_display_value: %02X\n", cfg.external_display_value);
 
     m5::board_t board = M5.getBoard();
 

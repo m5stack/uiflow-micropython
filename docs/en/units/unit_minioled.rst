@@ -12,7 +12,7 @@ Supported products:
 Micropython example::
 
     import M5
-    display = M5.addDisplay({"unit_mini_oled":{"enabled":True, "pin_scl": 22, "pin_sda": 21, "i2c_addr": 0x3E, "i2c_freq": 400000}}) # Add MiniOLED unit
+    display = M5.addDisplay({"unit_mini_oled":{"enabled":True, "pin_scl": 33, "pin_sda": 32, "i2c_addr": 0x3C, "i2c_freq": 400000}}) # Add MiniOLED unit
     display.clear(0xffffff) # Clear screen
 
 UIFLOW2 example:
