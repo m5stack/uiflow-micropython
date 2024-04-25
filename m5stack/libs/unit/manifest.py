@@ -60,6 +60,7 @@ package(
         "tof4m.py",
         "co2.py",
         "co2l.py",
+        "angle8.py",
     ),
     base_path="..",
     opt=3,

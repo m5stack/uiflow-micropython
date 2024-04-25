@@ -71,6 +71,7 @@ _attrs = {
     "TOF4MUnit": "tof4m",
     "CO2Unit": "co2",
     "CO2LUnit": "co2l",
+    "ANGLE8Unit": "angle8",
 }
 
 
