@@ -58,6 +58,8 @@ package(
         "thermal2.py",
         "ncir2.py",
         "tof4m.py",
+        "co2.py",
+        "co2l.py",
     ),
     base_path="..",
     opt=3,

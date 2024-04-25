@@ -69,6 +69,8 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "NCIR2Unit": "ncir2",
     "TOF4MUnit": "tof4m",
+    "CO2Unit": "co2",
+    "CO2LUnit": "co2l",
 }
 
 
