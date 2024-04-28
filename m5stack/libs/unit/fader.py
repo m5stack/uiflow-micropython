@@ -339,7 +339,7 @@ class FaderUnit(SK6812):
         @cn %1 根据adc值更新亮度。
 
         """
-        self.fill(0xFFFFFF)
+        self.fill_color(0xFFFFFF)
         self.set_brightness(self._map(self.get_raw(), 0, 0xFFFF, 0, 0xFF))
 
     def _map(self, val, in_min, in_max, out_min, out_max):
