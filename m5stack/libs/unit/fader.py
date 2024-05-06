@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 """
-@File    :   _dac2.py
+@File    :   fader.py
 @Time    :   2024/4/24
 @Author  :   TONG YIHAN
 @E-mail  :   icyqwq@gmail.com

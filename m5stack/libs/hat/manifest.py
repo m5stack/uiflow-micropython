@@ -4,7 +4,7 @@
 
 package(
     "hat",
-    ("__init__.py", "dac2.py"),
+    ("__init__.py", "dac2.py", "servo8.py"),
     base_path="..",
     opt=0,
 )

@@ -6,6 +6,7 @@ package(
     (
         "__init__.py",
         "atom_socket.py",
+        "motion.py",
     ),
     base_path="..",
     opt=3,
