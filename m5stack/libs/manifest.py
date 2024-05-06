@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 include("bleuart/manifest.py")
+include("m5ble/manifest.py")
 include("driver/manifest.py")
 include("ezdata/manifest.py")
 include("hardware/manifest.py")
