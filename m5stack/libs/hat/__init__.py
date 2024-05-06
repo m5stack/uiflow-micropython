@@ -4,7 +4,7 @@
 
 _attrs = {
     "DAC2Hat": "dac2",
-    "Servo8": "servo8",
+    "Servos8Hat": "servo8",
 }
 
 
