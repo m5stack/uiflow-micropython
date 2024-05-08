@@ -61,6 +61,8 @@ package(
         "co2.py",
         "co2l.py",
         "angle8.py",
+        "catm.py",
+        "catm_gnss.py",
     ),
     base_path="..",
     opt=3,

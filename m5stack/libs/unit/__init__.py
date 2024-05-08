@@ -72,6 +72,8 @@ _attrs = {
     "CO2Unit": "co2",
     "CO2LUnit": "co2l",
     "ANGLE8Unit": "angle8",
+    "CATMUnit": "catm",
+    "CATMGNSSUnit": "catm_gnss",
 }
 
 
