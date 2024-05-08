@@ -77,6 +77,7 @@ _attrs = {
     "LASERTXUnit": "laser_tx",
     "LASERRXUnit": "laser_rx",
     "FANUnit": "fan",
+    "BUTTONUnit": "button",
 }
 
 

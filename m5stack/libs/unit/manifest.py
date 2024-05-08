@@ -66,6 +66,7 @@ package(
         "laser_tx.py",
         "laser_rx.py",
         "fan.py",
+        "button.py",
     ),
     base_path="..",
     opt=3,
