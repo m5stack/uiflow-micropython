@@ -74,6 +74,8 @@ _attrs = {
     "ANGLE8Unit": "angle8",
     "CATMUnit": "catm",
     "CATMGNSSUnit": "catm_gnss",
+    "LASERTXUnit": "laser_tx",
+    "LASERRXUnit": "laser_rx",
 }
 
 

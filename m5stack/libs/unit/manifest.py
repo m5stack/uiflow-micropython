@@ -63,6 +63,8 @@ package(
         "angle8.py",
         "catm.py",
         "catm_gnss.py",
+        "laser_tx.py",
+        "laser_rx.py",
     ),
     base_path="..",
     opt=3,
