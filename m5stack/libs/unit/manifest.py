@@ -65,6 +65,7 @@ package(
         "catm_gnss.py",
         "laser_tx.py",
         "laser_rx.py",
+        "fan.py",
     ),
     base_path="..",
     opt=3,
