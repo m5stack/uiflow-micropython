@@ -8,3 +8,4 @@ HAT
     dac.rst
     dac2.rst
     dlight.rst
+    ncir.rst

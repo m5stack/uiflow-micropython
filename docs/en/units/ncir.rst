@@ -59,6 +59,8 @@ Constructors
         |init.svg|
 
 
+.. _unit.NCIRUnit.Methods:
+
 Methods
 -------
 
