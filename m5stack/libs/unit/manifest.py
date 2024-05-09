@@ -15,6 +15,7 @@ package(
         "dlight.py",
         "dual_button.py",
         "earth.py",
+        "encoder.py",
         "encoder8.py",
         "env.py",
         "envpro.py",

@@ -9,6 +9,7 @@ Unit
     dac2.rst
     dualbutton.rst
     earth.rst
+    encoder.rst
     env.rst
     ir.rst
     light.rst
