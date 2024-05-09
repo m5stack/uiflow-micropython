@@ -1,4 +1,6 @@
-# -*- encoding: utf-8 -*-
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
 """
 @File    :   _dac2.py
 @Time    :   2024/4/24

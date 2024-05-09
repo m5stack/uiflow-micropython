@@ -27,10 +27,10 @@ UIFLOW2 Example:
 .. only:: builder_html
 
 class FaderUnit
----------
+---------------
 
 Constructors
--------------
+------------
 
 .. method:: FaderUnit(port)
 

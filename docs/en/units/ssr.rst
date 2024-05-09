@@ -30,10 +30,10 @@ UIFLOW2 Example:
 .. only:: builder_html
 
 class SSRUnit
----------
+-------------
 
 Constructors
--------------
+------------
 
 .. method:: SSRUnit(port)
 
