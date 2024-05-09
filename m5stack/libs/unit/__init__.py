@@ -79,6 +79,7 @@ _attrs = {
     "FANUnit": "fan",
     "BUTTONUnit": "button",
     "ADCV11Unit": "adc_v11",
+    "BLDCDRIVERUnit": "bldc_driver",
 }
 
 

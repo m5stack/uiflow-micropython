@@ -68,6 +68,7 @@ package(
         "fan.py",
         "button.py",
         "adc_v11.py",
+        "bldc_driver.py",
     ),
     base_path="..",
     opt=3,
