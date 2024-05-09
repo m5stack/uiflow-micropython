@@ -29,6 +29,7 @@ _attrs = {
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "GPSUnit": "gps",
+    "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",  # 2.0.3 添加
     "HBRIDGEUnit": "hbridge",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "IRUnit": "ir",

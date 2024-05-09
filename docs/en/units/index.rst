@@ -11,6 +11,7 @@ Unit
     earth.rst
     encoder.rst
     env.rst
+    hall_effect.rst
     ir.rst
     light.rst
     lora_e220.rst
