@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "ADCHat": "adc",
     "DAC2Hat": "dac2",
 }
 

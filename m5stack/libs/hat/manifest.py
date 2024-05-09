@@ -4,7 +4,11 @@
 
 package(
     "hat",
-    ("__init__.py", "dac2.py"),
+    (
+        "__init__.py",
+        "adc.py",
+        "dac2.py",
+    ),
     base_path="..",
     opt=0,
 )
