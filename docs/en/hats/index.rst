@@ -7,3 +7,4 @@ HAT
     adc.rst
     dac.rst
     dac2.rst
+    dlight.rst

@@ -10,6 +10,7 @@ Unit
     can.rst
     dac.rst
     dac2.rst
+    dlight.rst
     dualbutton.rst
     earth.rst
     encoder.rst

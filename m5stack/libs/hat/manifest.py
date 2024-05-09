@@ -9,6 +9,7 @@ package(
         "adc.py",
         "dac.py",
         "dac2.py",
+        "dlight.py",
     ),
     base_path="..",
     opt=0,

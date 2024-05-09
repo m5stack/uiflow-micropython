@@ -6,6 +6,7 @@ _attrs = {
     "ADCHat": "adc",
     "DACHat": "dac",
     "DAC2Hat": "dac2",
+    "DLightHat": "dlight",
 }
 
 
