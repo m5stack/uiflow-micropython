@@ -11,6 +11,7 @@ package(
         "dac2.py",
         "dlight.py",
         "ncir.py",
+        "tof.py",
     ),
     base_path="..",
     opt=0,

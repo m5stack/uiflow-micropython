@@ -9,3 +9,4 @@ HAT
     dac2.rst
     dlight.rst
     ncir.rst
+    tof.rst

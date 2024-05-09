@@ -8,6 +8,7 @@ _attrs = {
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
     "NCIRHat": "ncir",
+    "ToFHat": "tof",
 }
 
 
