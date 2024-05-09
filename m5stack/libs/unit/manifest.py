@@ -67,6 +67,7 @@ package(
         "laser_rx.py",
         "fan.py",
         "button.py",
+        "adc_v11.py",
     ),
     base_path="..",
     opt=3,

@@ -56,6 +56,7 @@ package(
         "simcom/common.py",
         "simcom/sim7080.py",
         "sht20.py",
+        "ads1110.py",
     ),
     base_path="..",
     opt=0,
