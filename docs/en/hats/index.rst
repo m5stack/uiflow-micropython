@@ -5,3 +5,4 @@ HAT
     :maxdepth: 1
 
     adc.rst
+    dac.rst

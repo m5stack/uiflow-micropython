@@ -8,6 +8,7 @@ Unit
     angle.rst
     buzzer.rst
     can.rst
+    dac.rst
     dac2.rst
     dualbutton.rst
     earth.rst
