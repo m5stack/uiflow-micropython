@@ -8,6 +8,7 @@ package(
         "ac_measure.py",
         "adc.py",
         "angle.py",
+        "buzzer.py",
         "can.py",
         "cardkb.py",
         "color.py",

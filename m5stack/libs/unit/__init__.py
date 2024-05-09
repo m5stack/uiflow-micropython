@@ -8,6 +8,7 @@ _attrs = {
     "ADCUnit": "adc",
     "AMeterUnit": "ameter",
     "AngleUnit": "angle",
+    "BuzzerUnit": "buzzer",
     "CANUnit": "can",
     "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",

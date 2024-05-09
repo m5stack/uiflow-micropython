@@ -5,6 +5,7 @@ Unit
     :maxdepth: 1
 
     angle.rst
+    buzzer.rst
     can.rst
     dac2.rst
     dualbutton.rst
