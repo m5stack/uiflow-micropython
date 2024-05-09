@@ -9,6 +9,7 @@ package(
         "hat_helper.py",
         "dac2.py",
         "rs485.py",
+        "yun.py",
     ),
     base_path="..",
     opt=0,
