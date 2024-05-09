@@ -31,6 +31,7 @@ package(
         "pahub.py",
         "pbhub.py",
         "pir.py",
+        "reflective_ir.py",
         "relay.py",
         "rgb.py",
         "tof.py",

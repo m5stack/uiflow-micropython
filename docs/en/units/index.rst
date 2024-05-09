@@ -19,6 +19,7 @@ Unit
     op90.rst
     op180.rst
     pir.rst
+    reflective_ir.rst
     relay.rst
     rgb.rst
     ultrasonic.rst
