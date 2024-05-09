@@ -10,3 +10,4 @@ HAT
     dlight.rst
     ncir.rst
     tof.rst
+    vibrator.rst

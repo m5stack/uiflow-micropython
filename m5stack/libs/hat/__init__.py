@@ -9,6 +9,7 @@ _attrs = {
     "DLightHat": "dlight",
     "NCIRHat": "ncir",
     "ToFHat": "tof",
+    "VibratorHat": "vibrator",
 }
 
 

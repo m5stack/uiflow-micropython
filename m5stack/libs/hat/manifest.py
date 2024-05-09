@@ -12,6 +12,7 @@ package(
         "dlight.py",
         "ncir.py",
         "tof.py",
+        "vibrator.py",
     ),
     base_path="..",
     opt=0,
