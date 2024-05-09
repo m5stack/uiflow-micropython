@@ -4,6 +4,7 @@
 
 _attrs = {
     "DAC2Hat": "dac2",
+    "RS485Hat": "rs485",
 }
 
 

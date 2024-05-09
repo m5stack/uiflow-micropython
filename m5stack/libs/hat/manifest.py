@@ -4,7 +4,12 @@
 
 package(
     "hat",
-    ("__init__.py", "dac2.py"),
+    (
+        "__init__.py",
+        "hat_helper.py",
+        "dac2.py",
+        "rs485.py",
+    ),
     base_path="..",
     opt=0,
 )
