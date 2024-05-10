@@ -76,6 +76,8 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "NCIR2Unit": "ncir2",
     "TOF4MUnit": "tof4m",
+    "FaderUnit": "fader",
+    "SSRUnit": "ssr",
 }
 
 

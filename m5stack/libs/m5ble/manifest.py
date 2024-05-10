@@ -1,13 +1,13 @@
 # SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
+
 package(
-    "base",
+    "m5ble",
     (
         "__init__.py",
-        "atom_socket.py",
-        "motion.py",
+        "m5ble.py",
     ),
     base_path="..",
-    opt=3,
+    opt=0,
 )

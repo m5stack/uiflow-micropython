@@ -1,0 +1,16 @@
+
+.. |Motion| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic%20Motion%20Base/img-40a0d2ba-04b3-4aa3-8417-0624762b3cc3.webp
+    :target: https://docs.m5stack.com/en/atom/Atomic%20Motion%20Base
+    :height: 200px
+    :width: 200px
+
+.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/__init__.svg
+.. |get_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_angle.svg
+.. |set_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_servo_angle.svg
+.. |get_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_pulse.svg
+.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/write_servo_pulse.svg
+.. |get_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_motor_speed.svg
+.. |set_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_motor_speed.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/example.svg
+

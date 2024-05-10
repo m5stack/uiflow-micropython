@@ -9,6 +9,7 @@ _attrs = {
     "DLightHat": "dlight",
     "MiniEncoderCHat": "mini_encoder_c",
     "NCIRHat": "ncir",
+    "Servos8Hat": "servo8",
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
 }

@@ -1,0 +1,24 @@
+
+.. |FaderUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/fader/fader_01.webp
+    :target: https://docs.m5stack.com/en/unit/fader
+    :height: 200px
+    :width: 200px
+
+.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/__init__.svg
+.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/get_voltage.svg
+.. |get_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/get_raw.svg
+.. |update_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/update_color.svg
+.. |update_brightness.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/update_brightness.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/faderunit/example.svg
+
+
+.. |set_brightness.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_brightness.svg
+
+.. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/fill_color.svg
+
+.. |set_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_color.svg
+
+.. |rgb_core_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rgb/rgb_core.m5f2" target="_blank">rgb_core_example.m5f2</a>

@@ -12,6 +12,7 @@ package(
         "dlight.py",
         "mini_encoder_c.py",
         "ncir.py",
+        "servo8.py",
         "tof.py",
         "vibrator.py",
     ),
