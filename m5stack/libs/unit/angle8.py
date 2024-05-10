@@ -23,7 +23,7 @@ I2C_ADDR_REG = 0xFF
 TOTAL_LED = 9
 
 
-class ANGLE8Unit:
+class Angle8Unit:
     def __init__(self, i2c: I2C | PAHUBUnit, address: int = ANGLE8_ADDR) -> None:
         """! angle 8 channel initialize function
         set I2C port
