@@ -90,7 +90,6 @@ class ADS1110:
         value |= self.gain | self.rate | self.mode | self.start
         self._i2c.writeto(self._i2c_addr, bytearray([value]))
 
-    @property
     def get_adc_raw_value(self):
         buf = bytearray(2)
         self._i2c.readfrom_into(self._i2c_addr, buf)
