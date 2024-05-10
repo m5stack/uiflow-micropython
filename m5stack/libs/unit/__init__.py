@@ -80,11 +80,6 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "NCIR2Unit": "ncir2",
     "TOF4MUnit": "tof4m",
-    "TVOCUnit": "tvoc",
-    "AIN4_20MAUnit": "ain4_20ma",
-    "NECOUnit": "neco",
-    "TubePressureUnit": "tube_pressure",
-    "Relay2Unit": "relay2",
 }
 
 
