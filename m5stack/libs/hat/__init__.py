@@ -3,8 +3,15 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "ADCHat": "adc",
+    "DACHat": "dac",
     "DAC2Hat": "dac2",
+    "DLightHat": "dlight",
+    "MiniEncoderCHat": "mini_encoder_c",
+    "NCIRHat": "ncir",
     "Servos8Hat": "servo8",
+    "ToFHat": "tof",
+    "VibratorHat": "vibrator",
 }
 
 

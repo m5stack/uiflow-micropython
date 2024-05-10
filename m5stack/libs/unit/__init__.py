@@ -8,6 +8,9 @@ _attrs = {
     "ADCUnit": "adc",
     "AMeterUnit": "ameter",
     "AngleUnit": "angle",
+    "BuzzerUnit": "buzzer",
+    "CANUnit": "can",
+    "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",
     "KeyCode": "cardkb",
     "ColorUnit": "color",
@@ -16,6 +19,7 @@ _attrs = {
     "DLightUnit": "dlight",
     "DualButtonUnit": "dual_button",
     "EarthUnit": "earth",
+    "EncoderUnit": "encoder",
     "Encoder8Unit": "encoder8",  # 2.0.3 添加
     "ENCODER8Unit": "encoder8",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "ENVUnit": "env",
@@ -26,6 +30,7 @@ _attrs = {
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "GPSUnit": "gps",
+    "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",  # 2.0.3 添加
     "HBRIDGEUnit": "hbridge",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "IRUnit": "ir",
@@ -41,6 +46,7 @@ _attrs = {
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
     "PIRUnit": "pir",
+    "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",

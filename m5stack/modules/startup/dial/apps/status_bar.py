@@ -5,11 +5,10 @@
 from ..app import AppBase
 from widgets.label import Label
 from widgets.image import Image
-from common.font import MontserratMedium16
 import time
 import M5
 import network
-import uasyncio as asyncio
+import asyncio
 from ..res import (
     SERVER_EMPTY_IMG,
     SERVER_ERROR_IMG,
@@ -77,7 +76,7 @@ class StatusBarApp(AppBase):
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._time_label.set_text(self._time_text)
 

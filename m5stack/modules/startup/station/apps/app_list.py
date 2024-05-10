@@ -168,7 +168,7 @@ class ListApp(AppBase):
 
         for label, icos, file in zip(self._labels, self._icos, self._files):
             ico_name = file[0].lower()
-            icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
+            icos.set_src(f"/system/station/ico/{ico_name}.jpeg")
             label.set_text(file)
 
     def on_ready(self):
@@ -208,7 +208,7 @@ class ListApp(AppBase):
         if self._file_pos < self._cursor_pos:
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
-                icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
+                icos.set_src(f"/system/station/ico/{ico_name}.jpeg")
                 label.set_text(file)
         else:
             for label, icos, file in zip(
@@ -219,7 +219,7 @@ class ListApp(AppBase):
                 ],
             ):
                 ico_name = file[0].lower()
-                icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
+                icos.set_src(f"/system/station/ico/{ico_name}.jpeg")
                 label.set_text(file)
 
     def _btn_down_event_handler(self, fw):
@@ -247,14 +247,14 @@ class ListApp(AppBase):
         if self._file_pos < 3:
             for label, icos, file in zip(self._labels, self._icos, self._files):
                 ico_name = file[0].lower()
-                icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
+                icos.set_src(f"/system/station/ico/{ico_name}.jpeg")
                 label.set_text(file)
         else:
             for label, icos, file in zip(
                 self._labels, self._icos, self._files[self._file_pos - 2 : self._file_pos + 1]
             ):
                 ico_name = file[0].lower()
-                icos.set_src(f"/system/dinmeter/ico/{ico_name}.jpeg")
+                icos.set_src(f"/system/station/ico/{ico_name}.jpeg")
                 label.set_text(file)
 
     def _btn_once_event_handler(self, event):
@@ -285,10 +285,10 @@ class ListApp(AppBase):
         pass
 
     async def _btna_next_event_handler(self, fw):
-        self._btn_down_event_handler(None)
+        self._btn_up_event_handler(None)
 
     async def _btnc_next_event_handler(self, fw):
-        self._btn_up_event_handler(None)
+        self._btn_down_event_handler(None)
 
     async def _kb_event_handler(self, event, fw):
         if event.key == 182:  # down key

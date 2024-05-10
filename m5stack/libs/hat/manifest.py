@@ -4,7 +4,18 @@
 
 package(
     "hat",
-    ("__init__.py", "dac2.py", "servo8.py"),
+    (
+        "__init__.py",
+        "adc.py",
+        "dac.py",
+        "dac2.py",
+        "dlight.py",
+        "mini_encoder_c.py",
+        "ncir.py",
+        "servo8.py",
+        "tof.py",
+        "vibrator.py",
+    ),
     base_path="..",
     opt=0,
 )

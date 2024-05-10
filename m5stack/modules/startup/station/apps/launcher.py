@@ -117,10 +117,12 @@ class LauncherApp(AppBase):
     async def _btna_next_event_handler(self, fw):
         left = 0
         right = 0
-        self._id = self._id + 1 if self._id + 1 < len(self._icos) else 0
+        refresh = False
+        self._id = self._id - 1 if self._id - 1 >= 0 else (len(self._icos) - 1)
         left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
         right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
         refresh = True
+
         if refresh:
             self._left_img.set_src(self._icos[left].src)
             self._left_label.set_text(self._icos[left].name)
@@ -132,12 +134,10 @@ class LauncherApp(AppBase):
     async def _btnc_next_event_handler(self, fw):
         left = 0
         right = 0
-        refresh = False
-        self._id = self._id - 1 if self._id - 1 >= 0 else (len(self._icos) - 1)
+        self._id = self._id + 1 if self._id + 1 < len(self._icos) else 0
         left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
         right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
         refresh = True
-
         if refresh:
             self._left_img.set_src(self._icos[left].src)
             self._left_label.set_text(self._icos[left].name)

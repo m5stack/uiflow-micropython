@@ -1,0 +1,16 @@
+.. |Buzzer| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/buzzer/buzzer_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/buzzer
+    :height: 200px
+    :width: 200 px
+
+.. |init.svg| image:: ../../_static/unit/buzzer/init.svg
+
+.. |once.svg| image:: ../../_static/unit/buzzer/init.svg
+
+.. |set_freq.svg| image:: ../../_static/unit/buzzer/set_freq.svg
+
+.. |set_duty.svg| image:: ../../_static/unit/buzzer/set_duty.svg
+
+.. |turn_off.svg| image:: ../../_static/unit/buzzer/turn_off.svg
+
+.. |deinit.svg| image:: ../../_static/unit/buzzer/deinit.svg

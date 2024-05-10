@@ -31,7 +31,7 @@ Third Party
 * `sht4x`_ Copyright (c) 2021 ladyada for Adafruit and licensed under MIT License.
 * `vl53l0x`_ Copyright (c) 2017 Tony DiCola for Adafruit Industries and licensed under MIT License.
 * `camera`_ Copyright (c) 2021 Mauro Riva and licensed under Apache License Version 2.0.
-
+* `haptic`_ Copyright (c) 2022 lbuque and licensed under MIT License.
 
 Documentation
 ==============
