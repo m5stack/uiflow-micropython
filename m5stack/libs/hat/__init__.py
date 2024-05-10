@@ -9,9 +9,11 @@ _attrs = {
     "DLightHat": "dlight",
     "MiniEncoderCHat": "mini_encoder_c",
     "NCIRHat": "ncir",
+    "RS485Hat": "rs485",
     "Servos8Hat": "servo8",
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
+    "YUNHat": "yun",
 }
 
 
