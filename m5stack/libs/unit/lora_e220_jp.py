@@ -65,8 +65,8 @@ class LoRaE220JPUnit:
     UART_P2P_MODE = 0b0100_0000
 
     # LBT Flag Values
-    # LBT_ENABLE = 0b0001_0000
-    # LBT_DISABLE = 0b0000_0000
+    LBT_ENABLE = 0b0001_0000
+    LBT_DISABLE = 0b0000_0000
 
     # WOR Cycle Values
     WOR_500MS = 0b0000_0000
@@ -96,14 +96,14 @@ class LoRaE220JPUnit:
         own_address=0,
         own_channel=0,
         encryption_key=0x2333,
-        air_data_rate=0b0000_0010,  # BW500K_SF5
-        subpacket_size=0b0000_0000,  # SUBPACKET_200_BYTE
-        rssi_ambient_noise_flag=0b0000_0000,  # RSSI_AMBIENT_NOISE_DISABLE
-        transmitting_power=0b0000_0000,  # TX_POWER_13dBm
-        rssi_byte_flag=0b0000_0000,  # RSSI_BYTE_DISABLE
-        transmission_method_type=0b0000_0000,  # UART_TT_MODE
-        lbt_flag=0b0000_0000,  # LBT_DISABLE
-        wor_cycle=0b0000_0011,  # WOR_2000MS
+        air_data_rate=BW125K_SF9,
+        subpacket_size=SUBPACKET_200_BYTE,
+        rssi_ambient_noise_flag=RSSI_AMBIENT_NOISE_ENABLE,
+        transmitting_power=TX_POWER_13dBm,
+        rssi_byte_flag=RSSI_BYTE_ENABLE,
+        transmission_method_type=UART_P2P_MODE,
+        lbt_flag=LBT_DISABLE,
+        wor_cycle=WOR_2000MS,
     ) -> bool:
         if not self._conf_range(own_channel, 0, 30):
             return False
@@ -145,6 +145,11 @@ class LoRaE220JPUnit:
         struct.pack_into(">H", self._TXD_BUFFER, 9, encryption_key)
 
         command = memoryview(self._TXD_BUFFER[0:11])
+
+        for x in command:
+            print("%02X " % x, end=", ")
+        print("")
+
         self.uart.write(command)
         time.sleep_ms(100)  # wait for response
 
@@ -229,3 +234,8 @@ class LoRaE220JPUnit:
         self.uart.write(frame)
 
         return True
+
+
+if __name__ == "main":
+    lora = LoRaE220JPUnit(id=1, port=(26, 36))
+    lora.setup(own_address=0x01, own_channel=0x01)

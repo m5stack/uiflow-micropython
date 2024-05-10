@@ -165,14 +165,14 @@ class RunApp(AppBase):
         pass
 
     async def _btna_next_event_handler(self, fw):
-        M5.Lcd.drawImage(RUN_ONCE_UNSELECT_IMG, 6, 100)
-        M5.Lcd.drawImage(RUN_ALWAYS_SELECT_IMG, 123, 100)
-        self._enter_handler = self._handle_run_always
-
-    async def _btnc_next_event_handler(self, fw):
         M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
         M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)
         self._enter_handler = self._handle_run_once
+
+    async def _btnc_next_event_handler(self, fw):
+        M5.Lcd.drawImage(RUN_ONCE_UNSELECT_IMG, 6, 100)
+        M5.Lcd.drawImage(RUN_ALWAYS_SELECT_IMG, 123, 100)
+        self._enter_handler = self._handle_run_always
 
     async def _kb_event_handler(self, event, fw):
         if event.key == 183:  # Right key

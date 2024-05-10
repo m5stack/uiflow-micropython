@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../en/units/light.rst:6 a880505fc2dc4550b7c09cfc973056fb
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/light.rst:8 1ba9d08565684b5cac1f51b3bd8f55a0
 msgid "|Light|"
@@ -88,15 +88,15 @@ msgstr ""
 
 #: ../../en/units/light.rst:50 cd15eaaf988844ec8909c7fde218202e
 msgid "Create a Light object."
-msgstr ""
+msgstr "创建一个Light对象."
 
 #: ../../en/units/light.rst:53 efa820a7dc1346bba612e391dbf23c69
 msgid "The parameters are:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/light.rst:53 f842d16c887240aa82a404c9c9f90228
 msgid "``IO1,IO2`` Define digital and analog output pins."
-msgstr ""
+msgstr "``IO1,IO2`` 定义数字和模拟输出引脚。"
 
 #: ../../en/units/light.rst:55 ../../en/units/light.rst:67
 #: ../../en/units/light.rst:76 ../../en/units/light.rst:85
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../../en/units/light.rst:65 0ff80b48fa8142ae8508998be9733c82
 msgid "Define digital and analog output pins."
-msgstr ""
+msgstr "获取数字量(0或者1)。"
 
 #: ../../en/units/light.rst:69 157386369c094766af0bd18b8e4795ae
 msgid "|get_digital_value.svg|"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../../en/units/light.rst:74 07fb2cb0cd62472792afb2cb88593034
 msgid "Gets the analog (returns 0-65535)."
-msgstr ""
+msgstr "获取模拟量(返回0-65535)."
 
 #: ../../en/units/light.rst:78 859beedca1ef4952b24001b0a80253df
 msgid "|get_analog_value.svg|"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../en/units/light.rst:83 707cc0b2200c4a378837c5234c4ef032
 msgid "Gets the resistance value (returns an integer)."
-msgstr ""
+msgstr "获取阻值(返回整数)。"
 
 #: ../../en/units/light.rst:87 fd98b11d06c846f69c54449f9f671b0b
 msgid "|get_ohm.svg|"

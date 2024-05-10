@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-import uasyncio as asyncio
+import asyncio
 
 
 def generator(d):

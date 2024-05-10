@@ -3,14 +3,10 @@
 # SPDX-License-Identifier: MIT
 
 from ..app import AppBase
-from widgets.label import Label
 from widgets.image import Image
-from common.font import MontserratMedium10
-from common.font import MontserratMedium16
-import time
 import M5
 import network
-import uasyncio as asyncio
+import asyncio
 
 try:
     import M5Things

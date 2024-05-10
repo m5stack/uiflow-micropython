@@ -8,7 +8,6 @@ from widgets.image import Image
 from widgets.label import Label
 from widgets.button import Button
 import esp32
-from common.font import MontserratMedium16
 from unit import KeyCode
 
 

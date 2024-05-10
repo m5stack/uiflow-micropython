@@ -50,6 +50,7 @@ API documentation for this library can be found on [Read the Docs](https://uiflo
 - [sht4x][] Copyright (c) 2021 ladyada for Adafruit and licensed under MIT License.
 - [vl53l0x][] Copyright (c) 2017 Tony DiCola for Adafruit Industries and licensed under MIT License.
 - [camera][] Copyright (c) 2021 Mauro Riva and licensed under Apache License Version 2.0.
+- [haptic][] Copyright (c) 2022 lbuque and licensed under MIT License.
 
 [micropython]: https://github.com/micropython/micropython
 [umqtt]: https://github.com/micropython/micropython-lib
@@ -67,3 +68,4 @@ API documentation for this library can be found on [Read the Docs](https://uiflo
 [sht4x]: https://github.com/adafruit/Adafruit_CircuitPython_SHT4x
 [vl53l0x]: https://github.com/adafruit/Adafruit_CircuitPython_VL53L0X
 [camera]: https://github.com/lemariva/micropython-camera-driver
+[haptic]: https://github.com/lbuque/haptic

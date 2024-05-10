@@ -116,11 +116,11 @@ msgid ""
 "weight measurement through I2C communication and does not include a load "
 "cell sensor. This unit is capable of measuring weight and also includes "
 "various filters."
-msgstr ""
+msgstr "Weight I2C 单元是一个称重采集发射单元，它采用“STM32+HX711芯片”方案，通过I2C通信实现24位精度的重量测量，但不包括称重传感器。这个单元能够测量重量，并包含各种滤波器。"
 
 #: ../../en/units/weight_i2c.rst:8 31b238ab4fb148289d5ab7e2e99d4f84
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/weight_i2c.rst:11 a74f2ebc94cb4b06b052c9612c8a1578
 msgid "|WEIGHT I2C|"
@@ -148,15 +148,15 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:47 7fb788eff9684c56be88b3b6b44231aa
 msgid "Create an WEIGHT_I2CUnit object."
-msgstr ""
+msgstr "创建一个 WEIGHT_I2CUnit 对象。"
 
 #: ../../en/units/weight_i2c.rst:49 62d3324e862c4259a1cf12bbf155504c
 msgid "``I2C0`` is I2C Port."
-msgstr ""
+msgstr "``I2C0`` is I2C Port."
 
 #: ../../en/units/weight_i2c.rst:50 db64829a72754906ad14f3b3e088a16a
 msgid "``0x26`` is default I2C address"
-msgstr ""
+msgstr "``0x26`` is default I2C address"
 
 #: ../../en/units/weight_i2c.rst:53 ../../en/units/weight_i2c.rst:66
 #: ../../en/units/weight_i2c.rst:75 ../../en/units/weight_i2c.rst:84
@@ -186,7 +186,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:64 1dfa33867b7e42568b36bbfa0449cccd
 msgid "Gets the raw adc value."
-msgstr ""
+msgstr "获取原始的 ADC 值。"
 
 #: ../../en/units/weight_i2c.rst:68 1f44c05ccfa349a5894dc02c9b655f1c
 msgid "|get_adc_raw.svg|"
@@ -194,7 +194,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:73 f20d7a10d0f24ea186f8a953c48d5f79
 msgid "Gets the weight in grams float value."
-msgstr ""
+msgstr "获取以克为单位的重量浮点值。"
 
 #: ../../en/units/weight_i2c.rst:77 2d81c3d3ba914eb68ac78111f83e2bd8
 msgid "|get_weight_float.svg|"
@@ -202,7 +202,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:82 0417d9f7add7497d90f8f33754cb401e
 msgid "Gets the weight in grams int value."
-msgstr ""
+msgstr "获取以克为单位的重量整数值。 "
 
 #: ../../en/units/weight_i2c.rst:86 d01a6bc5caad4aa2abb7fa0023cf72f6
 msgid "|get_weight_int.svg|"
@@ -210,7 +210,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:91 4f3ef7fba6df4d2fb93abcd51c3b527b
 msgid "Gets the weight in grams string value."
-msgstr ""
+msgstr "获取以克为单位的重量字符串值。"
 
 #: ../../en/units/weight_i2c.rst:95 209f1c7ad59c4bdd9fd438aa3b5c7af6
 msgid "|get_weight_str.svg|"
@@ -218,7 +218,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:99 5e642b5a35114c5995026d1183e96a61
 msgid "Reset the offset value(Tare)."
-msgstr ""
+msgstr "重置偏移值(Tare)."
 
 #: ../../en/units/weight_i2c.rst:104 e33c877a6c974f5da727e105f5deb72d
 msgid "|set_reset_offset.svg|"
@@ -226,7 +226,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:109 cf57a4b468e5448188d483ec8c276547
 msgid "Calibrates the Load sensor."
-msgstr ""
+msgstr "校准称重传感器。"
 
 #: ../../en/units/weight_i2c.rst:111 ef7840c94f904aa48b46a73417960caf
 msgid "``weight1_g``: Weight1 in grams."
@@ -253,7 +253,9 @@ msgid ""
 "1.Reset offset(Tare). 2.Get the raw ADC value at no-load weight, this is "
 "the Raw ADC of zero weight in 0g. 3.Put some weight on it, then get adc, "
 "this is the load weight adc value and the gram weight you put on it."
-msgstr ""
+msgstr "1.重置抵消(皮重)。
+2.得到空载重量下的原始ADC值，这是0克重量下的原始ADC。
+3.给它加一些重量，然后得到adc，这是负载重量adc值和你加在上面的克重量。"
 
 #: ../../en/units/weight_i2c.rst:125 e14db23747df464d8ec34bd630c1fa8d
 msgid "|set_calibration.svg|"
@@ -261,7 +263,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:129 29d7dd2169544720b9296dbf86291e28
 msgid "Enable or disable the low pass filter."
-msgstr ""
+msgstr "启用或禁用低通滤波器。"
 
 #: ../../en/units/weight_i2c.rst:134 e3f7af5bcf1e444ca056472af9df6c66
 msgid "|set_lowpass_filter.svg|"
@@ -269,7 +271,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:139 86358c5ce2c441599b408cf8c6c095c0
 msgid "Returns the status of the low pass filter (enable or disable)."
-msgstr ""
+msgstr "返回低通滤波器的状态（启用或禁用）。"
 
 #: ../../en/units/weight_i2c.rst:144 9e1209159a404eea90a2dbe970e9c9e5
 msgid "|get_lowpass_filter.svg|"
@@ -277,13 +279,13 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:148 4a9725d57fd743cab46c4c13dd201327
 msgid "Sets the level of the average filter."
-msgstr ""
+msgstr "设置平均滤波器的级别。"
 
 #: ../../en/units/weight_i2c.rst:150 1e795afce69b4101b6ddcb8b3b6c2c39
 msgid ""
 "``level``: Level of the average filter (0 - 50). Larger value for "
 "smoother result but more latency"
-msgstr ""
+msgstr "``level``:平均过滤器的电平(0 - 50)。更大的值可以获得更平滑的结果，但延迟更长"
 
 #: ../../en/units/weight_i2c.rst:154 ed6550ccd43c44d6b69b645046c4043d
 msgid "|set_average_filter_level.svg|"
@@ -291,7 +293,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:158 77acb7dbfba4489280596fe1e3f75014
 msgid "Returns the level of the average filter."
-msgstr ""
+msgstr "返回平均滤波器的级别。"
 
 #: ../../en/units/weight_i2c.rst:162 9150f7a2a3f84fa2a458db7f385ece0b
 msgid "|get_average_filter_level.svg|"
@@ -299,13 +301,13 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:166 e155ed441e604396a6d6557cbf4ac641
 msgid "Sets the alpha value for the EMA filter."
-msgstr ""
+msgstr "设置EMA滤波器的alpha值。"
 
 #: ../../en/units/weight_i2c.rst:168 377f0134284e43a79992c681e21feeb3
 msgid ""
 "The EMA (Exponential Moving Average) filter is more sensitive to changes "
 "in data compared to the average filter."
-msgstr ""
+msgstr "与平均滤波器相比，EMA（指数移动平均）滤波器对数据的变化更敏感。"
 
 #: ../../en/units/weight_i2c.rst:170 d1970d17b13d4bba93d6ea0ac160ec53
 msgid ""
@@ -329,11 +331,11 @@ msgstr ""
 msgid ""
 "The i2c address can be changed by the user and this address should be "
 "between 0x01 and 0x7F."
-msgstr ""
+msgstr "i2c地址可以由用户更改，该地址应该在0x01和0x7F之间。"
 
 #: ../../en/units/weight_i2c.rst:188 c87d5a17456a44558c711a8d15624cea
 msgid "``address``: range of address(0x01 - 0x7F)."
-msgstr ""
+msgstr "``address``:地址范围(0x01 - 0x7F)。"
 
 #: ../../en/units/weight_i2c.rst:192 60aa976d8aad4dbf9984428bb521dc00
 msgid "|set_i2c_address.svg|"
@@ -341,7 +343,7 @@ msgstr ""
 
 #: ../../en/units/weight_i2c.rst:196 f67295a32ce246a2b56ec5d405ae2ef1
 msgid "Get the firmware version details and I2c address of this device."
-msgstr ""
+msgstr "获取此设备的固件版本详情和I2c地址。"
 
 #: ../../en/units/weight_i2c.rst:198 dd2f3619dcae4b16a28eee840d2ecf0b
 msgid "``info``: (0xFE, 0xFF)"

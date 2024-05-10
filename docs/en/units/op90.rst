@@ -67,15 +67,6 @@ Constructors
 Methods
 -------
 
-.. method:: OPUnit.get_value()
-
-    Gets the switch status.
-
-    UIFLOW2:
-
-        |get_switch_value.svg|
-
-
 .. method:: OPUnit.count_value()
 
    Get the count value.

@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../en/units/op90.rst:6 50f44e043be84fd28e9e55577e686616
 msgid "The following products are supported:"
-msgstr ""
+msgstr "支持以下产品"
 
 #: ../../en/units/op90.rst:8 e69b1895d79f4f3cbe1dcb96aead4543
 msgid "|OP90|"
@@ -88,15 +88,15 @@ msgstr ""
 
 #: ../../en/units/op90.rst:57 acd0419abaae4fb19b1e2a41af23e10d
 msgid "Create an OPUnit object."
-msgstr ""
+msgstr "创建一个OPUnit对象"
 
 #: ../../en/units/op90.rst:60 115e78297f3d4c519df944f403a36596
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数如下:"
 
 #: ../../en/units/op90.rst:60 c4f753bbbeb343a6a62ab304ec1dbcbb
 msgid "``io`` is the detection pin."
-msgstr ""
+msgstr "``io`` 为检测引脚。"
 
 #: ../../en/units/op90.rst:62 ../../en/units/op90.rst:74
 #: ../../en/units/op90.rst:83 ../../en/units/op90.rst:92
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../../en/units/op90.rst:72 5b2e891dba594974bebaa9fa1a08c8b9
 msgid "Gets the switch status."
-msgstr ""
+msgstr "获取开关状态。"
 
 #: ../../en/units/op90.rst:76 6d1e6098959a4326990c8d576c71f5fd
 msgid "|get_switch_value.svg|"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../../en/units/op90.rst:81 b12988810cff4cd9ab3637e41dfe1d8f
 msgid "Get the count value."
-msgstr ""
+msgstr "获取计数值。"
 
 #: ../../en/units/op90.rst:85 97e05d28cbdc493e9175025594b930b3
 msgid "|get_count_value.svg|"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../en/units/op90.rst:90 7bc516c911bd4c6a91ae745f511af909
 msgid "Reset the meter value."
-msgstr ""
+msgstr "重置计数值。"
 
 #: ../../en/units/op90.rst:94 04e07cee260b4467af0fb5fd01fea461
 msgid "|reset_count_value.svg|"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-12 10:45+0800\n"
+"POT-Creation-Date: 2024-04-01 15:38+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,13 +18,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.14.0\n"
 
-#: ../../en/module/pps.rst:2 304ba9407d3b4c3ca9e5a0628c73a70d
+#: ../../en/module/pps.rst:2 5222acc2f1c84d01be49ef711f693aa8
 msgid "PPS Module"
 msgstr ""
 
-#: ../../en/module/pps.rst:7 888da227eabe46d9a15dffd0f40255a7
+#: ../../en/module/pps.rst:6 f5e2e1debcc24c0db739324c661310d6
 msgid ""
 "The `PPS` class controls a Programmable Power Supply (PPS), capable of "
 "providing an output up to 30V and 5A. It allows for precise control over "
@@ -32,258 +32,268 @@ msgid ""
 "output values and the module's status."
 msgstr "`PPS` 类控制可编程电源（PPS），能够提供最高30V和5A的输出。它允许对输出电压和电流进行精确控制，并具有回读实际输出值和模块状态的功能。"
 
-#: ../../en/module/pps.rst:13 83bc0d5ba7614ba0908199558968f273
+#: ../../en/module/pps.rst:12 5716238a36824f70af6e8ed70a4012a9
 msgid "Support the following products:"
 msgstr "支持以下产品:"
 
-#: ../../en/module/pps.rst:15 6d4290620df3415f95bc7d575e41e517
+#: ../../en/module/pps.rst:14 d1e8d209c85a41b3a6e326cb452916fc
 msgid "|PPSModule|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref 5eb4eb8dabb448f2b92cd77b0a180e4f
+#: ../../en/refs/module.pps.ref 224e3b61c632481b9dd343369aa76ceb
 msgid "PPSModule"
 msgstr ""
 
-#: ../../en/module/pps.rst:18 74bf22488a4646ffa819e6ca9d60228b
+#: ../../en/module/pps.rst:17 f2693ee640ec4976ba6b334c12a8d3e2
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/module/pps.rst:36 e7750e683c3943619d98d131fe884a17
+#: ../../en/module/pps.rst:35 e49f140b5a8448ab8fd01022483d65a7
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/module/pps.rst:38 686341dd386849ba8160018cb3000f30
+#: ../../en/module/pps.rst:37 b1d1dfe57d644154a4476c4c27921759
 msgid "|example.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:38 0360b6cde3974d319a2cf40582221395
+#: ../../en/refs/module.pps.ref:38 5653028488624834acdd394d303212fb
 msgid "example.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:44 22aa6a16fee04e19937e8a76baf3cfa5
-msgid "class PPS"
+#: ../../en/module/pps.rst:43 4c7d2426a2984851bd1a1582ff17cffd
+msgid "class PPSModule"
 msgstr ""
 
-#: ../../en/module/pps.rst:47 917f1ea01a49477aa3f85bba7fbfd277
+#: ../../en/module/pps.rst:46 4396dea861c440c893b6ee13d83237d2
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/module/pps.rst:51 57b5c66dc3884a67aca68e1430cb7cc8
+#: ../../en/module/pps.rst:50 be09f1eb5fd64af5b3d680862c804199
 msgid "Creates a PPS object to interact with the programmable power supply."
 msgstr "创建一个PPS对象以控制可编程电源。"
 
-#: ../../en/module/pps.rst:53 133952cdd78a4f3db3377a8fdfec9e06
+#: ../../en/module/pps.rst:52 d01c6852c2a04774b41035f140845664
 msgid "``addr``: I2C address of the PPS device (default is `0x35`)."
 msgstr "``addr``: PPS设备的I2C地址（默认为`0x35`）。"
 
-#: ../../en/module/pps.rst:57 c0c6db18ccbf4a2d85989b20cdfa41a0
+#: ../../en/module/pps.rst:56 e40f2f37294744f18850f093402ee8cd
 msgid "Methods"
 msgstr ""
 
-#: ../../en/module/pps.rst:61 8ed69ff18d154e2b80a1a1a59036789e
+#: ../../en/module/pps.rst:60 bd6731627a46461e9e7141b21d0fd2d1
 msgid "Enable or disable the PPS output."
 msgstr "启用或禁用PPS输出。"
 
-#: ../../en/module/pps.rst:63 a472d3e317184e6eb194233be4fc943f
+#: ../../en/module/pps.rst:62 02ee492c48ed4e2eb29eaa4236ceaf32
 msgid "``enable``: True to enable, False to disable."
 msgstr "``enable``: True表示启用，False表示禁用。"
 
-#: ../../en/module/pps.rst:65 ../../en/module/pps.rst:74
-#: ../../en/module/pps.rst:83 ../../en/module/pps.rst:94
-#: ../../en/module/pps.rst:105 ../../en/module/pps.rst:114
-#: ../../en/module/pps.rst:123 ../../en/module/pps.rst:132
-#: ../../en/module/pps.rst:141 ../../en/module/pps.rst:150
-#: ../../en/module/pps.rst:159 ../../en/module/pps.rst:168
-#: ../../en/module/pps.rst:177 ../../en/module/pps.rst:186
-#: ../../en/module/pps.rst:197 d4ab65fa8d994f479520fc6c70fb937a
+#: ../../en/module/pps.rst:64 ../../en/module/pps.rst:73
+#: ../../en/module/pps.rst:82 ../../en/module/pps.rst:93
+#: ../../en/module/pps.rst:104 ../../en/module/pps.rst:113
+#: ../../en/module/pps.rst:122 ../../en/module/pps.rst:131
+#: ../../en/module/pps.rst:140 ../../en/module/pps.rst:149
+#: ../../en/module/pps.rst:158 ../../en/module/pps.rst:167
+#: ../../en/module/pps.rst:176 ../../en/module/pps.rst:185
+#: ../../en/module/pps.rst:196 0d653b75e03545ee9b57eb7a3ddd8f09
+#: 0d79df6bc9864eb1b6c1b09e17453096 261f0a77a1164a05be88c4b375cd1787
+#: 28cf004639324e29ae5fea8a4823c335 54ff02e2a6cc4e97addcaeb41680a917
+#: 686deb101d584cb39dc61a284c9097a5 9d532c8d9c6f480e8ad20abffbb1c09e
+#: a7063ab5ad014979b5d21794084e267c cdff35df4c61428dbd4fe0a241665380
+#: ce777bc588c9429083e0ad8c665a771f d37d98a2c76b4288b8511df91beb5384
+#: e3d66b50f4e74c5ab20d37364e2717b3 e4f6fcb6cad34676b5401430af0a0363
+#: edc485b562f54040b01233039115f63d ee4e6fef0892476b95e08b63ba4bf49d
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/module/pps.rst:67 6615423ebd7d42ae968b39490120c6ba
+#: ../../en/module/pps.rst:66 febc9df4b73c472cbb5a760c03cb7904
 msgid "|set_output.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:8 2b3377b905a24bbf89b2fe102b663a3c
+#: ../../en/refs/module.pps.ref:8 deba219339904ac5b1803431a0f2ca04
 msgid "set_output.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:72 ccca64243a9943d8b2a09c798c68d409
+#: ../../en/module/pps.rst:71 09882c1f7a064eecb1bf66cca70630d5
 msgid "Enable the PPS output."
 msgstr "启用PPS输出。"
 
-#: ../../en/module/pps.rst:76 32a21a302e9745669f975cba8661394e
+#: ../../en/module/pps.rst:75 0ca92017811a4288956f51b27b2c0ef7
 msgid "|enable_output.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:10 1b9e2fed426644bfb66442e887324ce4
+#: ../../en/refs/module.pps.ref:10 aaaead653b2a47208e39efb3fb425333
 msgid "enable_output.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:81 ef07219fc4ed4c07b518d25e543c4474
+#: ../../en/module/pps.rst:80 f1fbbfe6657b4ddfad97d588d39a84ee
 msgid "Disable the PPS output."
 msgstr "禁用PPS输出。"
 
-#: ../../en/module/pps.rst:85 07b18b0b579a455d8c3ebd637614f2ca
+#: ../../en/module/pps.rst:84 d4d88e80f87e4003a57a86057dbd351f
 msgid "|disable_output.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:12 8610df256f0a4e478c96bd26bc891bb9
+#: ../../en/refs/module.pps.ref:12 76a167b41a994aca84d6323a1a6c1176
 msgid "disable_output.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:90 e1147a9f67a04a27b72807c612ba4945
+#: ../../en/module/pps.rst:89 4040b318842247fda3429cd2eda96457
 msgid "Set the output voltage of the PPS."
 msgstr "设置PPS的输出电压。"
 
-#: ../../en/module/pps.rst:92 1ea2d596ea98470097d4a4f2fdf5ed42
+#: ../../en/module/pps.rst:91 81f674afe62a4b9bb245585c0289d208
 msgid "``voltage``: Desired output voltage from 0.0 to 30.0 volts."
 msgstr "``voltage``: 期望的输出电压，从0.0到30.0伏特。"
 
-#: ../../en/module/pps.rst:96 955a3a430ccf448c90ee472805939b13
+#: ../../en/module/pps.rst:95 fbcb599ba7044511a7debdbf9165b684
 msgid "|set_output_voltage.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:14 f381e3f12c4a42c092463661426a0acd
+#: ../../en/refs/module.pps.ref:14 44d5e48953704a22b2fc5167e2eb2725
 msgid "set_output_voltage.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:101 ac32061684a448789dfc058abf0b3233
+#: ../../en/module/pps.rst:100 998cf9bdba484b4e8323b7e35fd94cde
 msgid "Set the output current of the PPS."
 msgstr "设置PPS的输出电流。"
 
-#: ../../en/module/pps.rst:103 885fc78f43264d5da232498afd921ad4
+#: ../../en/module/pps.rst:102 83455783fea544b2b26733f4105d1d60
 msgid "``current``: Desired output current from 0.0A to 5.0A."
 msgstr "``current``: 期望的输出电流，从0.0A到5.0A。"
 
-#: ../../en/module/pps.rst:107 42f472ba37b9430b8d4ac3b3fe50c4b0
+#: ../../en/module/pps.rst:106 b2b8e527a2b64df9958b9f8392bcca20
 msgid "|set_output_current.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:16 fb9d42c3ad1e498bb08ada86e99c2803
+#: ../../en/refs/module.pps.ref:16 07ca77d91bda4facb9f7487491995153
 msgid "set_output_current.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:112 a4095ceaaa154202851d529e228adfcd
+#: ../../en/module/pps.rst:111 236cb46eee3844fba193756140810e77
 msgid "Read the PSU running mode."
 msgstr "读取PSU运行模式。"
 
-#: ../../en/module/pps.rst:116 a417119f9e184d7fbaf5ca50c9cad165
+#: ../../en/module/pps.rst:115 b2a33b77c8264a6fa3de1a7e0669cec1
 msgid "|read_psu_running_mode.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:18 feedfd05972547bda03534c9e2014bed
+#: ../../en/refs/module.pps.ref:18 a50d3c77db954f83884299850ef8574f
 msgid "read_psu_running_mode.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:121 e74dbea7f3ec4ad3a34f81e340d5da32
+#: ../../en/module/pps.rst:120 9e29bf3c2699459e81c72fde39fd0c9f
 msgid "Read the current output current."
 msgstr "读取当前输出电流。"
 
-#: ../../en/module/pps.rst:125 473a750530af47baa7413b314d45f5d3
+#: ../../en/module/pps.rst:124 c99ae37eeb2f4221842db160d744e92b
 msgid "|read_output_current.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:20 307ea91263d4482c899c3d1b39a46c68
+#: ../../en/refs/module.pps.ref:20 14706863f61c44c791cad30d5cf1022c
 msgid "read_output_current.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:130 168e6a6076ca4ac38e026318e823b304
+#: ../../en/module/pps.rst:129 f0185c6abb1a4deb99e342bcfa869f2f
 msgid "Read the current output voltage."
 msgstr "读取当前输出电压。"
 
-#: ../../en/module/pps.rst:134 20a98d9736834bffafa71ce8a359a268
+#: ../../en/module/pps.rst:133 3ab8db34abd04eefbdd0b66fc1a6ffde
 msgid "|read_output_voltage.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:22 37df128359464aa0ac3648ab3526bf3f
+#: ../../en/refs/module.pps.ref:22 b3df43b184d34091bf1a1fd189f08ae9
 msgid "read_output_voltage.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:139 3542b6987f6f4caab2945c3ad887a689
+#: ../../en/module/pps.rst:138 7e94f8cc8135493ca5c64e96985b3246
 msgid "Read the input voltage."
 msgstr "读取输入电压。"
 
-#: ../../en/module/pps.rst:143 9369d715b9334a67b35d9bcadf8cadce
+#: ../../en/module/pps.rst:142 d070b66539c94f72acfacb8784639af0
 msgid "|read_input_voltage.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:24 31b82944815340b79fae5d470f92c37f
+#: ../../en/refs/module.pps.ref:24 34647e0668c8498ca4cbd31730e5c23e
 msgid "read_input_voltage.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:148 41e45c905a1c4a78aab18cad4eeb620b
+#: ../../en/module/pps.rst:147 fc9ed5d31d134a4193ec19115f008bf6
 msgid "Read the data update flag."
 msgstr "读取数据更新标志，每当数据更新一次，此标志将增加1。"
 
-#: ../../en/module/pps.rst:152 31313ae05c334aa3bcc6880183c5a46d
+#: ../../en/module/pps.rst:151 685df49b32e1405099a80896d456895d
 msgid "|read_data_update_flag.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:26 f41c0a6cf37e47d09c87bf21414d8d99
+#: ../../en/refs/module.pps.ref:26 3844c725d6ed4f50a33f5c96c5d56eab
 msgid "read_data_update_flag.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:157 61223d9f305b42f388a8871a9cba5539
+#: ../../en/module/pps.rst:156 b0752a9be60640d0a7b252cb83ef35ea
 msgid "Read the MCU temperature."
 msgstr "读取MCU温度。"
 
-#: ../../en/module/pps.rst:161 9b0fcecc98374032aca72bd62f7929d1
+#: ../../en/module/pps.rst:160 63fc2287e2c14176ad7c61f8c1998c13
 msgid "|read_mcu_temperature.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:28 645b8a7bd4c84360a3f437d84374b6f3
+#: ../../en/refs/module.pps.ref:28 9c293f47511b4a2bb32c1ff1042a69d7
 msgid "read_mcu_temperature.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:166 85df5f68a2f84067b9089f13425ed450
+#: ../../en/module/pps.rst:165 c392fb395f1c47ff8ea381ce9deaf88f
 msgid "Read the module ID."
 msgstr "读取模块ID。"
 
-#: ../../en/module/pps.rst:170 888417a5ebd249ef8bb2884429e66d32
+#: ../../en/module/pps.rst:169 bcb9e3b99e9841fc9c98443451badd55
 msgid "|read_module_id.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:30 e17f184bf3604ccdb2a3909b9106e941
+#: ../../en/refs/module.pps.ref:30 b25782fa5b9b439bb715885fc2da0488
 msgid "read_module_id.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:175 83ce8feaae2042798103794bb543003f
+#: ../../en/module/pps.rst:174 21de7aaeb1294619b5b3cc04db765ad5
 msgid "Read the unique identifier (UID)."
 msgstr "读取唯一标识符（UID）。"
 
-#: ../../en/module/pps.rst:179 e465492c74d94ac4be74f254c5e090ce
+#: ../../en/module/pps.rst:178 3d4bdea9c31b4f5a9cc5ddd116bf0a26
 msgid "|read_uid.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:32 eb5e089e1ac741ac869b2f44cdf62c39
+#: ../../en/refs/module.pps.ref:32 e90f8b502ddf4b50807bc1333e1ad5d2
 msgid "read_uid.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:184 9d138ee0441a4777a58ae7c60cc2dfd8
+#: ../../en/module/pps.rst:183 fe955952e965426ca359979c4eaaee13
 msgid "Get the current I2C address of the device."
 msgstr "获取设备的当前I2C地址。"
 
-#: ../../en/module/pps.rst:188 cd09bf4bbe9343ab9fdfae637bc2c51e
+#: ../../en/module/pps.rst:187 94cb914ed44b46b6b737ceda08a2da80
 msgid "|get_i2c_address.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:34 755a3249364c4a2a8303e671c103cfcd
+#: ../../en/refs/module.pps.ref:34 f3655112c8eb4445b8f05785608c7901
 msgid "get_i2c_address.svg"
 msgstr ""
 
-#: ../../en/module/pps.rst:193 184715f6982d4188a36de55859e6b6b3
+#: ../../en/module/pps.rst:192 fe2feb97849842b1b68cab1d13437dd3
 msgid "Set a new I2C address for the device."
 msgstr "为设备设置新的I2C地址。"
 
-#: ../../en/module/pps.rst:195 6e11583a03194d319e2680e5500128a3
+#: ../../en/module/pps.rst:194 391eaf8cc4be441b92b984e27336adea
 msgid "``new_address``: The new I2C address to set."
 msgstr "``new_address``: 要设置的新I2C地址。"
 
-#: ../../en/module/pps.rst:199 b34442a88c0d4b7fa58ebd2b9af5dba8
+#: ../../en/module/pps.rst:198 83203ae3d9824ec9b28a4264ec24a727
 msgid "|set_i2c_address.svg|"
 msgstr ""
 
-#: ../../en/refs/module.pps.ref:36 44656478b912495d881c5f5c9c5acc58
+#: ../../en/refs/module.pps.ref:36 81f7da7a627e4a2381ee7fe0a58efa5c
 msgid "set_i2c_address.svg"
 msgstr ""
+
+#~ msgid "class PPS"
+#~ msgstr ""
 

@@ -1,0 +1,19 @@
+.. |CAN Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/can/can_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/can
+    :height: 200px
+    :width: 200 px
+
+.. |MiniCAN Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Unit-Mini%20CAN/img-027ca92c-9862-4be2-96d3-e88ca7d4ea77.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/Unit-Mini%20CAN
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/env/example.svg
+
+.. |init.svg| image:: ../../_static/unit/can/init.svg
+
+.. |env_cores3_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/env/env_cores3.m5f2" target="_blank">env_cores3_example.m5f2</a>
+

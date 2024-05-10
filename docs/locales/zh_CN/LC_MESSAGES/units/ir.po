@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../../en/units/ir.rst:6 3bc3fb602dd145f2b074daceea824e4f
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/ir.rst:8 478f9d00ecc9484ebab8521b518af6f3
 msgid "|IR|"
@@ -83,15 +83,15 @@ msgstr ""
 
 #: ../../en/units/ir.rst:47 52e59e28361548dc9a00a9bef2e0a38b
 msgid "Create an IR object."
-msgstr ""
+msgstr "创建一个IR对象."
 
 #: ../../en/units/ir.rst:50 7005e46ea72e4719b9f85ae15562c415
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/ir.rst:50 2f27010ea79e4355b65621aa61346372
 msgid "``IO1,IO2`` Receive and transmit pin definitions."
-msgstr ""
+msgstr "``IO1,IO2`` 接收和发射引脚定义."
 
 #: ../../en/units/ir.rst:52 ../../en/units/ir.rst:64 ../../en/units/ir.rst:73
 #: 5495a3eff59d4b7392274b3894d9071f de3e435e3b73447a9bfdd2def3973d1c
@@ -109,7 +109,7 @@ msgstr ""
 
 #: ../../en/units/ir.rst:62 edb3a5f08b6849918449d3db6f9f2a5a
 msgid "Sends an ir signal value to an address."
-msgstr ""
+msgstr "向某个地址发送ir信号值。"
 
 #: ../../en/units/ir.rst:66 371e06493dac40d199ab1b3ee74e2e2b
 msgid "|tx.svg|"
@@ -119,7 +119,7 @@ msgstr ""
 msgid ""
 "Determine when the infrared signal is read and start to do some "
 "processing procedures."
-msgstr ""
+msgstr "判断读取到红外信号的时候，开始做某些处理程序。"
 
 #: ../../en/units/ir.rst:75 8bca230f852346e995a1514f30d2490c
 msgid "|rx_event.svg|"

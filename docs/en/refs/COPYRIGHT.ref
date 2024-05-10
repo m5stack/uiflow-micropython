@@ -14,3 +14,4 @@
 .. _sht4x: https://github.com/adafruit/Adafruit_CircuitPython_SHT4x
 .. _vl53l0x: https://github.com/adafruit/Adafruit_CircuitPython_VL53L0X
 .. _camera: https://github.com/lemariva/micropython-camera-driver
+.. _haptic: https://github.com/lbuque/haptic

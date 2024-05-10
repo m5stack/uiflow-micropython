@@ -1,0 +1,25 @@
+.. |Encoder| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/encoder/encoder_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/encoder
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: ../../_static/unit/encoder/example.svg
+
+.. |init.svg| image:: ../../_static/unit/encoder/init.svg
+
+.. |get_rotary_status.svg| image:: ../../_static/unit/encoder/get_rotary_status.svg
+
+.. |get_rotary_value.svg| image:: ../../_static/unit/encoder/get_rotary_value.svg
+
+.. |get_button_status.svg| image:: ../../_static/unit/encoder/get_button_status.svg
+
+.. |get_rotary_increments.svg| image:: ../../_static/unit/encoder/get_rotary_increments.svg
+
+.. |reset_rotary_value.svg| image:: ../../_static/unit/encoder/reset_rotary_value.svg
+
+.. |set_rotary_value.svg| image:: ../../_static/unit/encoder/set_rotary_value.svg
+
+.. |set_color.svg| image:: ../../_static/unit/encoder/set_color.svg
+
+.. |fill_color.svg| image:: ../../_static/unit/encoder/fill_color.svg

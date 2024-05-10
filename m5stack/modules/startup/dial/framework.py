@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 from .app import AppBase, AppSelector
-import uasyncio as asyncio
+import asyncio
 import M5
 import gc
 import time

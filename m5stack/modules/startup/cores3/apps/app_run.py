@@ -6,9 +6,6 @@ from ..app import AppBase, Descriptor
 import M5
 from widgets.label import Label
 from widgets.button import Button
-
-# from common.font import MontserratMedium16
-# from common.font import MontserratMedium18
 import esp32
 import sys
 import machine
