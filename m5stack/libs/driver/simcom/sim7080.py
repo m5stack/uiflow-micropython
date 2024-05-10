@@ -27,25 +27,19 @@ class SIM7080(Modem):
         # get Preferred Selection between CAT-M and NB-IoT
         CMNB = AT_CMD("AT+CMNB?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CMNB)
-        if error:
-            return False
-        return int(output[-1])
+        return False if error else int(output[-1])
 
     def get_imei_number(self):
         # Request TA Serial Number Identification(IMEI)
         GSN = AT_CMD("AT+GSN", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(GSN)
-        if error:
-            return False
-        return output
+        return False if error else output
 
     def get_ccid_number(self):
         # Show ICCID
         CCID = AT_CMD("AT+CCID", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CCID)
-        if error:
-            return False
-        return output
+        return False if error else output
 
     def set_mode_selection(self, mode=3):
         # get Preferred Selection between CAT-M and NB-IoT
@@ -57,9 +51,7 @@ class SIM7080(Modem):
         # Get APP Network Active or Not
         CNACT = AT_CMD("AT+CNACT?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CNACT)
-        if error:
-            return False
-        return int(output.split("+CNACT: ")[pdp_id + 1][2])
+        return False if error else int(output.split("+CNACT: ")[pdp_id + 1][2])
 
     def set_network_active(self, pdp_id, action):
         # Set APP Network Active
@@ -71,9 +63,7 @@ class SIM7080(Modem):
         # get APP Network IP Address
         CNACT = AT_CMD("AT+CNACT?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CNACT)
-        if error:
-            return False
-        return output.split("+CNACT: ")[pdp_id + 1][5:-1]
+        return False if error else output.split("+CNACT: ")[pdp_id + 1][5:-1]
 
     # MQTT Test Server:mqtt.m5stack.com, Port:1883.
     def mqtt_server_connect(self, server, port, client_id, username, passwd, keepalive):
@@ -180,9 +170,7 @@ class SIM7080(Modem):
         # Check mqtt server connection.
         SMSTATE = AT_CMD("AT+SMSTATE?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(SMSTATE)
-        if error:
-            return False
-        return int(output[-1])
+        return False if error else int(output[-1])
 
     def mqtt_polling_loop(self):
         # self.polling_callback()
@@ -308,9 +296,7 @@ class SIM7080(Modem):
         # Is check http server connect
         SHSTATE = AT_CMD("AT+SHSTATE?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(SHSTATE)
-        if error:
-            return False
-        return int(output[-1])
+        return False if error else int(output[-1])
 
     def http_server_disconnect(self):
         # http server disconnected
@@ -327,9 +313,7 @@ class SIM7080(Modem):
         # Check Power Gnss.
         CGNSPWR = AT_CMD("AT+CGNSPWR?", "+CGNSPWR", 5)  # noqa: N806
         output, error = self.execute_at_command(CGNSPWR)
-        if error:
-            return False
-        return int(output[-1])
+        return False if error else int(output[-1])
 
     def set_gnss_power_ctrl(self, state):
         # Power Gnss Control State.
@@ -445,5 +429,4 @@ class SIM7080(Modem):
         # GNSS Cold, Warm, Hot Start
         CGNS = AT_CMD("AT+CGNS{0}".format(start), "OK", 5)  # noqa: N806
         output, error = self.execute_at_command(CGNS)
-        if error:
-            return False
+        return not error

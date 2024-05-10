@@ -77,41 +77,31 @@ class Modem(object):
         # Get the registration status with the network
         CREG = AT_CMD("AT+CREG?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CREG)
-        if error:
-            return False
-        return int(output[-3:].split(",")[1])
+        return False if error else int(output[-3:].split(",")[1])
 
     def get_signal_strength(self):
         # Get the signal strength
         CSQ = AT_CMD("AT+CSQ", "+CSQ:", 3)  # noqa: N806
         output, error = self.execute_at_command(CSQ)
-        if error:
-            return False
-        return int(output[-5:].split(",")[0])
+        return False if error else int(output[-5:].split(",")[0])
 
     def get_gprs_registration_status(self):
         # Get the registration status with the gprs network
         CGREG = AT_CMD("AT+CGREG?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CGREG)
-        if error:
-            return False
-        return int(output[-3:].split(",")[1])
+        return False if error else int(output[-3:].split(",")[1])
 
     def get_model_identification(self):
         # Query the model identification information
         CGMM = AT_CMD("AT+CGMM", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CGMM)
-        if error:
-            return False
-        return output
+        return False if error else output
 
     def get_gprs_network_status(self):
         # Get attach or detach from the GPRS network
         CGATT = AT_CMD("AT+CGATT?", "OK", 3)  # noqa: N806
         output, error = self.execute_at_command(CGATT)
-        if error:
-            return False
-        return int(output[-1:])
+        return False if error else int(output[-1:])
 
     def set_gprs_network_state(self, enable=1):
         # Set attach or detach from the GPRS network
@@ -129,9 +119,7 @@ class Modem(object):
         # Get Show PDP address.
         CGPADDR = AT_CMD("AT+CGPADDR={}".format(cid), "OK", 12)  # noqa: N806
         output, error = self.execute_at_command(CGPADDR)
-        if error:
-            return False
-        return (output.split(",")[1]).replace('"', "")
+        return False if error else (output.split(",")[1]).replace('"', "")
 
     def get_selected_operator(self):
         # Get selected operator.
