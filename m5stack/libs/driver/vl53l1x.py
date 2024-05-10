@@ -31,23 +31,23 @@ _VL53L1X_IDENTIFICATION__MODEL_ID = const(0x010F)
 
 TB_SHORT_DIST = {
     # ms: (MACROP_A_HI, MACROP_B_HI)
-    15: (b"\x00\x1D", b"\x00\x27"),
-    20: (b"\x00\x51", b"\x00\x6E"),
-    33: (b"\x00\xD6", b"\x00\x6E"),
-    50: (b"\x01\xAE", b"\x01\xE8"),
-    100: (b"\x02\xE1", b"\x03\x88"),
-    200: (b"\x03\xE1", b"\x04\x96"),
-    500: (b"\x05\x91", b"\x05\xC1"),
+    15: (b"\x00\x1d", b"\x00\x27"),
+    20: (b"\x00\x51", b"\x00\x6e"),
+    33: (b"\x00\xd6", b"\x00\x6e"),
+    50: (b"\x01\xae", b"\x01\xe8"),
+    100: (b"\x02\xe1", b"\x03\x88"),
+    200: (b"\x03\xe1", b"\x04\x96"),
+    500: (b"\x05\x91", b"\x05\xc1"),
 }
 
 TB_LONG_DIST = {
     # ms: (MACROP_A_HI, MACROP_B_HI)
-    20: (b"\x00\x1E", b"\x00\x22"),
-    33: (b"\x00\x60", b"\x00\x6E"),
-    50: (b"\x00\xAD", b"\x00\xC6"),
-    100: (b"\x01\xCC", b"\x01\xEA"),
-    200: (b"\x02\xD9", b"\x02\xF8"),
-    500: (b"\x04\x8F", b"\x04\xA4"),
+    20: (b"\x00\x1e", b"\x00\x22"),
+    33: (b"\x00\x60", b"\x00\x6e"),
+    50: (b"\x00\xad", b"\x00\xc6"),
+    100: (b"\x01\xcc", b"\x01\xea"),
+    200: (b"\x02\xd9", b"\x02\xf8"),
+    500: (b"\x04\x8f", b"\x04\xa4"),
 }
 
 
@@ -254,12 +254,12 @@ class VL53L1X:
             self._write_register(_SD_CONFIG__INITIAL_PHASE_SD0, b"\x06\x06")
         elif mode == 2:
             # long distance
-            self._write_register(_PHASECAL_CONFIG__TIMEOUT_MACROP, b"\x0A")
-            self._write_register(_RANGE_CONFIG__VCSEL_PERIOD_A, b"\x0F")
-            self._write_register(_RANGE_CONFIG__VCSEL_PERIOD_B, b"\x0D")
-            self._write_register(_RANGE_CONFIG__VALID_PHASE_HIGH, b"\xB8")
-            self._write_register(_SD_CONFIG__WOI_SD0, b"\x0F\x0D")
-            self._write_register(_SD_CONFIG__INITIAL_PHASE_SD0, b"\x0E\x0E")
+            self._write_register(_PHASECAL_CONFIG__TIMEOUT_MACROP, b"\x0a")
+            self._write_register(_RANGE_CONFIG__VCSEL_PERIOD_A, b"\x0f")
+            self._write_register(_RANGE_CONFIG__VCSEL_PERIOD_B, b"\x0d")
+            self._write_register(_RANGE_CONFIG__VALID_PHASE_HIGH, b"\xb8")
+            self._write_register(_SD_CONFIG__WOI_SD0, b"\x0f\x0d")
+            self._write_register(_SD_CONFIG__INITIAL_PHASE_SD0, b"\x0e\x0e")
         else:
             raise ValueError("Unsupported mode.")
         self.set_measurement_timing_budget(self._timing_budget)
