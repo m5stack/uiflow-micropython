@@ -64,16 +64,6 @@ Constructors
 Methods
 -------
 
-.. method:: OP180.get_value()
-
-
-    Gets the switch status.
-
-    UIFLOW2:
-
-        |get_switch_value.svg|
-
-
 .. method:: OP180.count_value()
 
    Get the count value.

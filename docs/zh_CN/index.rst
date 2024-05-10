@@ -12,5 +12,6 @@ MicroPython documentation and references
     hardware/index.rst
     module/index.rst
     unit/index.rst
+    base/index.rst
     quick-reference/index.rst
     COPYRIGHT.rst

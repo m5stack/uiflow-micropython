@@ -7,7 +7,7 @@ from machine import I2C, Pin
 from unit import CardKBUnit, KeyCode
 import M5
 import gc
-import uasyncio as asyncio
+import asyncio
 
 
 class KeyEvent:

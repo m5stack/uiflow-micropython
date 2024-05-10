@@ -11,7 +11,7 @@ PIN_MODE = 1
 UART_MODE = 2
 
 
-class LaserTxUnit:
+class LaserTXUnit:
     def __init__(self, port: tuple, mode: int = PIN_MODE, id: Literal[1, 2] = 1) -> None:
         self._mode = mode
         if self._mode == PIN_MODE:

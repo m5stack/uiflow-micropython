@@ -4,7 +4,7 @@
 from machine import PWM
 
 
-class FanUnit:
+class FANUnit:
     def __init__(self, port: tuple):
         self._pwm = PWM(port[1], freq=250, duty=0)
 

@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../../en/units/pir.rst:6 b0a21caed9254c4aa7d21b925026fae3
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/pir.rst:8 2eb3ddeca9e94ad79571f199f0e98bbf
 msgid "|PIR|"
@@ -93,15 +93,15 @@ msgstr ""
 
 #: ../../en/units/pir.rst:51 c2d7198d8f73466f9a3080cf6a3e8c10
 msgid "Create a PIR object."
-msgstr ""
+msgstr "创建一个PIR对象."
 
 #: ../../en/units/pir.rst:54 86ae127b8a894485a29d3c2d97e94d56
 msgid "The parameters are:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/pir.rst:54 a003b461e0e54841af1a8e66038a7d1e
 msgid "``IO1,IO2`` I2C pin."
-msgstr ""
+msgstr "``IO1,IO2`` I2C引脚。"
 
 #: ../../en/units/pir.rst:56 ../../en/units/pir.rst:68
 #: ../../en/units/pir.rst:77 ../../en/units/pir.rst:86
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../../en/units/pir.rst:66 538d8c735eed4fecb9dcb6a5e041f297
 msgid "Get detection status."
-msgstr ""
+msgstr "获取检测状态"
 
 #: ../../en/units/pir.rst:70 c3ab0a5d50434c44a6871a6e8176e930
 msgid "|get_status.svg|"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../en/units/pir.rst:75 2d65cbdee5574554b758d8f7952a6356
 msgid "Enable Human detection function."
-msgstr ""
+msgstr "使能人体检测功能。"
 
 #: ../../en/units/pir.rst:79 8643537d7e5941cb97d58503c3065996
 msgid "|enable_irq.svg|"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: ../../en/units/pir.rst:84 375782f8aec142e5a61b1d2cead4322e
 msgid "Disable Human detection function."
-msgstr ""
+msgstr "关闭人体检测功能。"
 
 #: ../../en/units/pir.rst:88 0d24d5481a374efc8b4307f69a7ed13f
 msgid "|disable_irq.svg|"
@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../en/units/pir.rst:93 a600ce7a48c74c4fb44c4c197339bac1
 msgid "Polling method, placed in the loop function, constantly check."
-msgstr ""
+msgstr "轮询方法,放在loop函数里面,不断检测。"
 
 #: ../../en/units/pir.rst:97 bbe928fb03264250a95c1dfd7fdf6500
 msgid "|set_callback.svg|"

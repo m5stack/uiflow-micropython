@@ -41,11 +41,11 @@ msgstr ""
 
 #: ../../en/quick-reference/index.rst:9 4e1ad0c7cb2e4a3e80c35d1f94c99e5f
 msgid "Preparation"
-msgstr ""
+msgstr "准备工作"
 
 #: ../../en/quick-reference/index.rst:12 a8e185efb47c44f9bb09bc6eded5878d
 msgid "Driver Installation"
-msgstr ""
+msgstr "驱动安装"
 
 #: ../../en/quick-reference/index.rst:14 8bf534e7a1a14898b054771203aec34b
 msgid ""
@@ -55,31 +55,33 @@ msgid ""
 "the version you are using. After decompressing the compressed package, "
 "select the installation package corresponding to the number of operating "
 "systems to install."
-msgstr ""
+msgstr "点击下方连接下载匹配操作系统的驱动程序。目前存在两种驱动芯片版本(CP210X/CH9102), 请根
+据你所使用的版本下载对应的驱动程序压缩包. 在解压压缩包后,选择对应操作系统位数的安装包
+进行安装"
 
 #: ../../en/quick-reference/index.rst:20 115e4f22029e41d0bdef6e79549b620f
 msgid ""
 "If you are not sure of the USB chip used by your device, you can install "
 "both drivers at the same time."
-msgstr ""
+msgstr "若您不确定您的设备所使用的USB芯片, 可同时安装两种驱动。"
 
 #: ../../en/quick-reference/index.rst:25 5961efd1bfea4a4cb80ac692ded343c0
 msgid ""
 "During the installation process of CH9102_VCP_SER_MacOS v1.7, an error "
 "may occur, but the installation is actually completed, just ignore it."
-msgstr ""
+msgstr "CH9102_VCP_SER_MacOS v1.7在安装过程中，可能出现报错，但实际上已经完成安装，忽略即可。"
 
 #: ../../en/quick-reference/index.rst:29 e1f201a6ddf948f1902b757b8f976803
 msgid "Driver name"
-msgstr ""
+msgstr "驱动名称 "
 
 #: ../../en/quick-reference/index.rst:29 00de58705a2e4845b42c200b47d3d8ae
 msgid "Applicable driver chip"
-msgstr ""
+msgstr "适用驱动芯片"
 
 #: ../../en/quick-reference/index.rst:29 b4709ef51219413eb6311d634d3cede1
 msgid "Download link"
-msgstr ""
+msgstr "下载链接"
 
 #: ../../en/quick-reference/index.rst:31 2bbf696699d94a8dac483eca22729c87
 msgid "CP210x_VCP_Windows"
@@ -141,15 +143,15 @@ msgid ""
 "Please click the button below to download the corresponding M5Burner "
 "firmware burning tool according to your operating system. Open the "
 "application after decompression."
-msgstr ""
+msgstr "请根据您所使用的操作系统,点击下方按钮下载相应的M5Burner固件烧录工具。解压后打开应用程序。"
 
 #: ../../en/quick-reference/index.rst:50 314239e73500434dae4161a7cf1aa8fc
 msgid "Software"
-msgstr ""
+msgstr "软件版本 "
 
 #: ../../en/quick-reference/index.rst:50 4109f78296754161be7b2b43884960ae
 msgid "Link"
-msgstr ""
+msgstr "下载链接"
 
 #: ../../en/quick-reference/index.rst:52 30bd41dc641842edbd72cb0653f6a91a
 msgid "M5Burner_Windows"
@@ -177,17 +179,17 @@ msgstr ""
 
 #: ../../en/quick-reference/index.rst:61 c4f92b5c69aa458484a3ba93e9684eee
 msgid "Installation UIFLOW2"
-msgstr ""
+msgstr "安装UIFLOW2"
 
 #: ../../en/quick-reference/index.rst:64 5014949d1e3e4dc8bc156462416e22b5
 msgid "Login M5Burner"
-msgstr ""
+msgstr "登录M5Burner"
 
 #: ../../en/quick-reference/index.rst:66 6798a0ab49e54649ab2ea6711f641cad
 msgid ""
 "Before using UIFlow2, you need to log in to your M5Stack account first. "
 "If you don't have an account yet, please register an account first."
-msgstr ""
+msgstr "在使用UIFlow2之前, 你需要先登录M5Stack账号。如果你还没有账号, 请先注册账号。"
 
 #: ../../en/quick-reference/index.rst:69 993c61ddb0544cf2b8194a07ba46681e
 msgid "|login_m5burner.gif|"
@@ -195,20 +197,20 @@ msgstr ""
 
 #: ../../en/quick-reference/index.rst:72 728cf212da164a3790e10985af0101a2
 msgid "Firmware Burning"
-msgstr ""
+msgstr "固件烧录"
 
 #: ../../en/quick-reference/index.rst:74 29c9658115f64058a3401b9df677980e
 msgid ""
 "Before burning firmware, first put the host into download mode. Each "
 "device has different ways of entering download mode. For details, please "
 "refer to the corresponding host product documentation."
-msgstr ""
+msgstr "在烧录固件之前，先将主机进入下载模式。各个设备的进入下载模式的方式不同，具体请参考相应的主机产品文档。"
 
 #: ../../en/quick-reference/index.rst:78 e5683bbee5ff4144b2ad9784cf284f18
 msgid ""
 "Before burning, M5Burner will bind your host and M5Stack account. After "
 "binding, you can use your host in UIFlow2."
-msgstr ""
+msgstr "烧录之前，M5Burner会将你的主机和M5Stack账号进行绑定。绑定之后，你可以在UIFlow2中使用你的主机。"
 
 #: ../../en/quick-reference/index.rst:81 3c27aeb65b354e31a0786d1cd5cea9f2
 msgid "|burn_firmware.gif|"
@@ -216,15 +218,15 @@ msgstr ""
 
 #: ../../en/quick-reference/index.rst:85 2d5a236f6ba24724872b2a6c08546b32
 msgid "Start using UIFLOW2"
-msgstr ""
+msgstr "开始使用UIFLOW2"
 
 #: ../../en/quick-reference/index.rst:88 7255d5ae964e49f49a2c5befc2697349
 msgid "Login UIFlow2"
-msgstr ""
+msgstr "登录UIFlow2.0"
 
 #: ../../en/quick-reference/index.rst:90 2cae2294a21e43e3960bf2e5ccd2648e
 msgid "Log in to https://uiflow2.m5stack.com/"
-msgstr ""
+msgstr "登录到 https://uiflow2.m5stack.com/"
 
 #: ../../en/quick-reference/index.rst:92 a6a34a07e895491dabbcb6eb39cdb905
 msgid "|login_uiflow2.gif|"

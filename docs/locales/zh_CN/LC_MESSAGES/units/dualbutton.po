@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../en/units/dualbutton.rst:6 25da538ad91f45e7afac8cf7e7151709
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
 #: ../../en/units/dualbutton.rst:8 363f136c5b7745ef890ce32931e51726
 msgid "|Dual_Button|"
@@ -88,16 +88,16 @@ msgstr ""
 
 #: ../../en/units/dualbutton.rst:49 18e3ddbddc83420893991d7332db5fc8
 msgid "Create a DualButton object."
-msgstr ""
+msgstr "创建一个DualButton对象."
 
 #: ../../en/units/dualbutton.rst:52 ../../en/units/dualbutton.rst:64
 #: 5d85501ef0a344c7a76f9750f5b9e243 6b94f483a2bc41f99d1f9187e35d276b
 msgid "The parameters are:"
-msgstr ""
+msgstr "参数是:"
 
 #: ../../en/units/dualbutton.rst:52 d10ef8e6d8f141ce8d6028f65428d328
 msgid "``IO1,IO2`` Define two key pins."
-msgstr ""
+msgstr "``IO1,IO2`` 定义两个按键引脚。"
 
 #: ../../en/units/dualbutton.rst:54 ../../en/units/dualbutton.rst:66
 #: ../../en/units/dualbutton.rst:75 ../../en/units/dualbutton.rst:84
@@ -120,7 +120,7 @@ msgstr ""
 
 #: ../../en/units/dualbutton.rst:73 246c2cfba0e24c589ec7ec48b557cd80
 msgid "Execute the program when the key is pressed."
-msgstr ""
+msgstr "当按下键时执行程序。"
 
 #: ../../en/units/dualbutton.rst:77 f84674a5c2b34aac93046fd34fdb2db9
 msgid "|setCallback.svg|"
@@ -130,7 +130,7 @@ msgstr ""
 msgid ""
 "The polling method, placed in the loop function, constantly detects the "
 "state of the key."
-msgstr ""
+msgstr "轮询方法,放在loop函数里面,不断检测按键的状态。"
 
 #: ../../en/units/dualbutton.rst:86 8a012dd170a0471bbf90c615d0558a0e
 msgid "|tick.svg|"

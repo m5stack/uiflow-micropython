@@ -10,7 +10,7 @@ from .unit_helper import UnitError
 import time
 
 
-class AdcV11Unit(ADS1110):
+class ADCV11Unit(ADS1110):
     def __init__(self, i2c: I2C | PAHUBUnit) -> None:
         super().__init__(i2c=i2c)
         self._available()

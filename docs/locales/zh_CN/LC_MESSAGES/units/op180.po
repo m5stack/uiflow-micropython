@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../en/units/op180.rst:6 a0e5641c64c04773acc2135947b0d441
 msgid "The following products are supported:"
-msgstr ""
+msgstr "支持以下产品:"
 
 #: ../../en/units/op180.rst:8 4adefbbc1229404ba38363b2a0a037ed
 msgid "|OP180|"
@@ -88,15 +88,15 @@ msgstr ""
 
 #: ../../en/units/op180.rst:54 884fcd5a962346858c1adfe2d53a159e
 msgid "Create an OP180 object."
-msgstr ""
+msgstr "创建一个OP180对象."
 
 #: ../../en/units/op180.rst:57 d9efad3f599442e2b4295cc7343f12c3
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数如下："
 
 #: ../../en/units/op180.rst:57 b82f72838d324b0ca8c8e85ff172dc4b
 msgid "``io`` is the detection pin."
-msgstr ""
+msgstr "``io`` 为检测引脚。"
 
 #: ../../en/units/op180.rst:59 ../../en/units/op180.rst:72
 #: ../../en/units/op180.rst:81 ../../en/units/op180.rst:89
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../../en/units/op180.rst:70 6aaf489b4fa34fba9857e37b9a265aa1
 msgid "Gets the switch status."
-msgstr ""
+msgstr "获取开关状态。"
 
 #: ../../en/units/op180.rst:74 1a320858def84834abac4f92948ac5bc
 msgid "|get_switch_value.svg|"
@@ -123,7 +123,7 @@ msgstr ""
 
 #: ../../en/units/op180.rst:79 40a38a0f796d41c09d2a6eb55fd0901d
 msgid "Get the count value."
-msgstr ""
+msgstr "获取计数值。"
 
 #: ../../en/units/op180.rst:83 74bf782751ee4bfd87f8e09edc63093f
 msgid "|get_count_value.svg|"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../../en/units/op180.rst:87 d17a4d6d4d5540ee8848de95b43004fb
 msgid "Reset the meter value."
-msgstr ""
+msgstr "重置计数值。"
 
 #: ../../en/units/op180.rst:91 6bbccc75fcc648bdb7a4e590e1fca2cd
 msgid "|reset_count_value.svg|"

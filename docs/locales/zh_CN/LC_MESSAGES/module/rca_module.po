@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2024 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2024.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-01 15:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.14.0\n"
+
+#: ../../en/module/rca_module.rst:2 7e088bc0c27841af8226330de4fe35f6
+msgid "RCA Module"
+msgstr ""
+
+#: ../../en/module/rca_module.rst:6 b8ecc68e127a46979360c4123c3c74fa
+msgid ""
+"Module RCA is a composite signal expansion module for audio and video, "
+"using the common S-terminal RCA connector, divided into two (left and "
+"right channels) audio and one video output. The audio part adopts the I2S"
+" power amplifier chip PCM5102APWR scheme, which can realize 32-bit stereo"
+" audio signal output; In terms of video, the DAC analog video signal "
+"function of the main control ESP32 is applied, which can generate analog "
+"video signals with a resolution of no more than 864 x 576 (PAL, PAL_M); "
+"The module contains a DC socket and a 9-24V to 5V DCDC circuit to supply "
+"power to the whole machine. This product is suitable for audio and video "
+"equipment that drives the S-terminal interface."
+msgstr "模块RCA是一个音视频复合信号扩展模块，使用常见的S端子RCA连接器，分为两个（左右声道）音频和一个视频输出。音频部分采用I2S功放芯片PCM5102APWR方案，能够实现32位立体声音频信号输出；在视频方面，应用了主控ESP32的DAC模拟视频信号功能，能够生成分辨率不超过864 x 576（PAL，PAL_M）的模拟视频信号；该模块包含一个直流插座和一个9-24V转5V的DCDC电路，以供应整机电力。该产品适用于驱动S端子接口的音视频设备。"
+
+#: ../../en/module/rca_module.rst:8 a2c454efe3c148d2bb93b402639769e0
+msgid "Supported products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/rca_module.rst:10 074a88d58c1d40db9f589a9cdb28a027
+msgid "|RCAModule|"
+msgstr ""
+
+#: ../../en/refs/module.rca.ref 000940b4ff714fec889f30057a4bff1b
+msgid "RCAModule"
+msgstr ""
+
+#: ../../en/module/rca_module.rst:12 fa783064d39a473aa4f7c78e94742a22
+msgid "Micropython example::"
+msgstr "Micropython 示例::"
+
+#: ../../en/module/rca_module.rst:32 2c113c50a6a64b6c9e4655fec868b569
+msgid "UIFLOW2 example:"
+msgstr "UIFLOW2 示例:"
+
+#: ../../en/module/rca_module.rst:34 fca22505baa140f48246d6d13c254f42
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/module.rca.ref:6 370aeaad25534b3c8fd063778ea0fb13
+msgid "example.svg"
+msgstr ""
+

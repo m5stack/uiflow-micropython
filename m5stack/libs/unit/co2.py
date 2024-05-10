@@ -36,7 +36,7 @@ POWERDOWN = const(0x36E0)
 WAKEUP = const(0x36F6)
 
 
-class Co2Unit:
+class CO2Unit:
     def __init__(self, i2c: I2C | PAHUBUnit, address: int = CO2_I2C_ADDR) -> None:
         """! initialize Function
         set I2C Pins, CO2 Address

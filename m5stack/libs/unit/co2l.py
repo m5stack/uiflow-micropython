@@ -10,7 +10,7 @@ from .unit_helper import UnitError
 CO2_I2C_ADDR = 0x62
 
 
-class Co2lUnit(Co2Unit):
+class CO2LUnit(Co2Unit):
     def __init__(self, i2c: I2C | PAHUBUnit, address: int = CO2_I2C_ADDR) -> None:
         """! Is there available or Not? Check."""
         if address not in i2c.scan():

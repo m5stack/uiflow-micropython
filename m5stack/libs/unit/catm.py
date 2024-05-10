@@ -14,7 +14,7 @@ if sys.platform != "esp32":
 AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
 
 
-class CatmUnit(SIM7080):
+class CATMUnit(SIM7080):
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None) -> None:
         self.uart = UART(id, tx=port[1], rx=port[0])
         super().__init__(uart=self.uart)

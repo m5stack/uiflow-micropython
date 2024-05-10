@@ -4,11 +4,11 @@
     :width: 200 px
 
 
-.. |example.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/example.svg
 
-.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/init.svg
 
-.. |get_ambient_temperature.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/ncir/get_object_temperature.svg
+.. |get_ambient_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/get_object_temperature.svg
 
 .. |get_object_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pir/enable_irq.svg
 

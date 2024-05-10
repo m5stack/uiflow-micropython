@@ -61,7 +61,7 @@ msgstr ""
 
 #: ../../en/units/relay.rst:6 03b1d211820a462ca5108770897b236e
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品:"
 
 #: ../../en/units/relay.rst:8 f0a9d1e13f5a4542a136682ff0a26ad1
 msgid "|RELAY|"
@@ -93,15 +93,15 @@ msgstr ""
 
 #: ../../en/units/relay.rst:55 530be08e87814ec5b37fd726de5f314d
 msgid "Create a RelayUnit object."
-msgstr ""
+msgstr "创建一个RelayUnit对象."
 
 #: ../../en/units/relay.rst:58 ab5792e0aa064977820d57d97c1b6cee
 msgid "The parameters is:"
-msgstr ""
+msgstr "参数如下："
 
 #: ../../en/units/relay.rst:58 f0a6c905c5e342c9941afb11150a1410
 msgid "``io`` Define the control pin."
-msgstr ""
+msgstr "``io`` 定义控制引脚。"
 
 #: ../../en/units/relay.rst:60 ../../en/units/relay.rst:72
 #: ../../en/units/relay.rst:81 ../../en/units/relay.rst:90
@@ -121,7 +121,7 @@ msgstr ""
 
 #: ../../en/units/relay.rst:70 0abf56860b164607b049e92068a163f5
 msgid "Gets the relay switch status."
-msgstr ""
+msgstr "获取继电器开关状态。"
 
 #: ../../en/units/relay.rst:74 843c76ed7d6c490cb85a5e25a46ad380
 msgid "|get_status.svg|"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../en/units/relay.rst:79 bd2eeb5f166b40dcbe409ab068cb7093
 msgid "turn on the relay."
-msgstr ""
+msgstr "闭合继电器。"
 
 #: ../../en/units/relay.rst:83 8026f191a3e0468d86bb0d1ae4f735f3
 msgid "|on.svg|"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: ../../en/units/relay.rst:88 ca277345da574e16abf45c1f353522c7
 msgid "Turn off the relay."
-msgstr ""
+msgstr "打开继电器。"
 
 #: ../../en/units/relay.rst:92 686c0b85e43f4bb0918fd1ab227d254b
 msgid "|off.svg|"
@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../en/units/relay.rst:97 c8ca05eb2c284389acf8b84e08bc84b3
 msgid "Set the relay status (True or false)."
-msgstr ""
+msgstr "设置继电器状态（ True 或者 false ）。"
 
 #: ../../en/units/relay.rst:101 077781aff07e4ad5ba326fb172432fe2
 msgid "|set_status.svg|"

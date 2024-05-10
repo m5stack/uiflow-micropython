@@ -6,13 +6,8 @@ from ..app import AppBase, Descriptor
 import M5
 from widgets.image import Image
 from widgets.label import Label
-import uasyncio as asyncio
-
-try:
-    import urequests as requests
-except ImportError:
-    import requests
-from common.font import MontserratMedium18
+import asyncio
+import requests
 import os
 import binascii
 import machine
@@ -74,7 +69,7 @@ class DevApp(AppBase):
             w=177,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
         self._mac_label.set_text(self._mac_text)
@@ -87,7 +82,7 @@ class DevApp(AppBase):
             h=60,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
         self._account_label.set_text(self._account_text)
