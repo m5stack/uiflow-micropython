@@ -54,7 +54,6 @@ class ANGLE8Unit:
             channel = ADC8_START_REG
         return self.readfrommem(channel, 1)[0]
 
-    @property
     def get_switch_status(self) -> bool:
         """! get switch status."""
         return bool(self.readfrommem(BUTTON_REG, 1)[0])

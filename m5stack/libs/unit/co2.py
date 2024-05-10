@@ -68,7 +68,6 @@ class CO2Unit:
         self.write_cmd(STOPPERIODICMEASUREMENT)
         time.sleep(0.5)
 
-    @property
     def get_sensor_measurement(self) -> None:
         """! get the temp/hum/co2 from the sensor."""
         self.write_cmd(READMEASUREMENT)
@@ -80,16 +79,14 @@ class CO2Unit:
         humi = (buf[6] << 8) | buf[7]
         self.humidity = round((100 * (humi / (2**16 - 1))), 2)
 
-    @property
     def is_data_ready(self) -> bool:
         """! available the temp/hum/co2 from the sensor."""
-        if self.data_isready:
-            self.get_sensor_measurement
+        if self.data_isready():
+            self.get_sensor_measurement()
             return True
         else:
             return False
 
-    @property
     def get_temperature_offset(self) -> float:
         """! get the temperature offset to be added to the reported measurements."""
         try:
@@ -115,7 +112,6 @@ class CO2Unit:
                 "Indicates that the block cannot be executed while a periodic measurement is running"
             )
 
-    @property
     def get_sensor_altitude(self) -> int:
         """! get the altitude value of the measurement location in meters above sea level."""
         try:
@@ -162,7 +158,6 @@ class CO2Unit:
                 "Indicates that the block cannot be executed while a periodic measurement is running"
             )
 
-    @property
     def get_calibration_enabled(self) -> bool:
         """! get the Enables or disables automatic self calibration (ASC)."""
         try:
@@ -196,7 +191,6 @@ class CO2Unit:
                 "Indicates that the block cannot be executed while a periodic measurement is running"
             )
 
-    @property
     def data_isready(self) -> bool:
         """! check the sensor if new data is available."""
         try:
@@ -219,7 +213,6 @@ class CO2Unit:
                 "Indicates that the block cannot be executed while a periodic measurement is running"
             )
 
-    @property
     def get_serial_number(self) -> tuple:
         """! get a unique serial number for this sensor."""
         try:
