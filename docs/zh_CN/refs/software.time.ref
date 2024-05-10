@@ -1,33 +1,33 @@
-.. |timezone.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/timezone.svg
+.. |timezone.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone.svg
 
-.. |timezone1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/timezone1.svg
+.. |timezone1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone1.svg
 
-.. |timezone2.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/timezone2.svg
+.. |timezone2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone2.svg
 
-.. |gmtime.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/gmtime.svg
+.. |gmtime.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/gmtime.svg
 
-.. |localtime.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/localtime.svg
+.. |localtime.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/localtime.svg
 
-.. |mktime.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/mktime.svg
+.. |mktime.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/mktime.svg
 
-.. |mktime1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/mktime1.svg
+.. |mktime1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/mktime1.svg
 
-.. |sleep_ms.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/sleep_ms.svg
+.. |sleep_ms.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep_ms.svg
 
-.. |sleep_us.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/sleep_us.svg
+.. |sleep_us.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep_us.svg
 
-.. |sleep.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/sleep.svg
+.. |sleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep.svg
 
-.. |ticks_add.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/ticks_add.svg
+.. |ticks_add.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_add.svg
 
-.. |ticks_cpu.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/ticks_cpu.svg
+.. |ticks_cpu.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_cpu.svg
 
-.. |ticks_diff.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/ticks_diff.svg
+.. |ticks_diff.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_diff.svg
 
-.. |ticks_ms.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/ticks_ms.svg
+.. |ticks_ms.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_ms.svg
 
-.. |ticks_us.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/ticks_us.svg
+.. |ticks_us.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_us.svg
 
-.. |time.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/software/time/time.svg
+.. |time.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/time.svg
 
 .. _tz_database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
