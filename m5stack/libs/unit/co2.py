@@ -37,12 +37,12 @@ WAKEUP = const(0x36F6)
 
 
 class CO2Unit:
-    def __init__(self, i2c: I2C | PAHUBUnit, addr: int = CO2_I2C_ADDR) -> None:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int = CO2_I2C_ADDR) -> None:
         """! initialize Function
         set I2C Pins, CO2 Address
         """
         self.co2_i2c = i2c
-        self.unit_addr = addr
+        self.unit_addr = address
         self.available()
         self.co2 = 0
         self.temperature = 0

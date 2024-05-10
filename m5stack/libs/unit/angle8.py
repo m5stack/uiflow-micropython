@@ -24,14 +24,14 @@ TOTAL_LED = 9
 
 
 class ANGLE8Unit:
-    def __init__(self, i2c: I2C | PAHUBUnit, addr: int = ANGLE8_ADDR) -> None:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int = ANGLE8_ADDR) -> None:
         """! angle 8 channel initialize function
         set I2C port
-        addr : 1 to 127
+        address : 1 to 127
         """
         self._i2c = i2c
-        if addr >= 1 and addr <= 127:
-            self._i2c_addr = addr
+        if address >= 1 and address <= 127:
+            self._i2c_addr = address
         self.available()
 
     def available(self) -> None:
@@ -108,15 +108,15 @@ class ANGLE8Unit:
         if mode >= FW_VER_REG and mode <= I2C_ADDR_REG:
             return self.readfrommem(mode, 1)[0]
 
-    def set_i2c_address(self, addr: int) -> None:
+    def set_i2c_address(self, address: int) -> None:
         """! set i2c address.
-        addr :  1 to 127
+        address :  1 to 127
         """
-        if addr >= 1 and addr <= 127:
-            if addr != self._i2c_addr:
+        if address >= 1 and address <= 127:
+            if address != self._i2c_addr:
                 time.sleep_ms(2)
-                self._i2c.writeto_mem(self._i2c_addr, I2C_ADDR_REG, bytearray([addr]))
-                self._i2c_addr = addr
+                self._i2c.writeto_mem(self._i2c_addr, I2C_ADDR_REG, bytearray([address]))
+                self._i2c_addr = address
                 time.sleep_ms(200)
 
     def readfrommem(self, reg, num) -> bytearray:
