@@ -6,9 +6,17 @@ _attrs = {
     "ACMeasureUnit": "ac_measure",  # 2.0.3 添加
     "AC_MEASUREUnit": "ac_measure",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "ADCUnit": "adc",
+    "AdcV11Unit": "adc_v11",
     "AMeterUnit": "ameter",
     "AngleUnit": "angle",
+    "Angle8Unit": "angle8",
+    "ButtonUnit": "button",
+    "BldcDriverUnit": "bldc_driver",
     "CardKBUnit": "cardkb",
+    "CatmGnssUnit": "catm_gnss",
+    "CatmUnit": "catm",
+    "Co2Unit": "co2",
+    "Co2lUnit": "co2l",
     "KeyCode": "cardkb",
     "ColorUnit": "color",
     "DACUnit": "dac",
@@ -21,6 +29,7 @@ _attrs = {
     "ENVUnit": "env",
     "EXTIOUnit": "extio",
     "EXTIO2Unit": "extio2",
+    "FanUnit": "fan",
     "FingerUnit": "finger",
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
@@ -30,6 +39,8 @@ _attrs = {
     "IRUnit": "ir",
     "KMeterISOUnit": "kmeter_iso",  # 2.0.3 添加
     "KMETER_ISOUnit": "kmeter_iso",  # TODO: 类名/型参不符合规范, 2.0.6 移除
+    "LaserRxUnit": "laser_rx",
+    "LaserTxUnit": "laser_tx",
     "LightUnit": "light",
     "LIMITUnit": "limit",
     "LoRaE220JPUnit": "lora_e220_jp",
@@ -69,17 +80,11 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "NCIR2Unit": "ncir2",
     "TOF4MUnit": "tof4m",
-    "CO2Unit": "co2",
-    "CO2LUnit": "co2l",
-    "ANGLE8Unit": "angle8",
-    "CATMUnit": "catm",
-    "CATMGNSSUnit": "catm_gnss",
-    "LASERTXUnit": "laser_tx",
-    "LASERRXUnit": "laser_rx",
-    "FANUnit": "fan",
-    "BUTTONUnit": "button",
-    "ADCV11Unit": "adc_v11",
-    "BLDCDRIVERUnit": "bldc_driver",
+    "TVOCUnit": "tvoc",
+    "AIN4_20MAUnit": "ain4_20ma",
+    "NECOUnit": "neco",
+    "TubePressureUnit": "tube_pressure",
+    "Relay2Unit": "relay2",
 }
 
 

@@ -30,7 +30,7 @@ FW_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
 
-class BLDCDriverUnit:
+class BldcDriverUnit:
     def __init__(
         self,
         i2c: I2C | PAHUBUnit,
