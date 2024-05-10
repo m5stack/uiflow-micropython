@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .limit import LIMITUnit as BUTTONUnit
+from .limit import LIMITUnit as ButtonUnit
