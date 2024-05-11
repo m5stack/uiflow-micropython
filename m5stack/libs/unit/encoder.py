@@ -3,14 +3,13 @@
 # SPDX-License-Identifier: MIT
 
 from .unit_helper import UnitError
-from micropython import const
 import struct
 
 
 class EncoderUnit:
-    _ENCODER_COUNTER_VALUE_REG = const(0x10)
-    _ENCODER_BUTTON_STATUS_REG = const(0x20)
-    _ENCODER_RGB_LED_REG = const(0x30)
+    _ENCODER_COUNTER_VALUE_REG = 0x10
+    _ENCODER_BUTTON_STATUS_REG = 0x20
+    _ENCODER_RGB_LED_REG = 0x30
 
     def __init__(self, i2c, address: int | list | tuple = 0x40) -> None:
         self._i2c = i2c
