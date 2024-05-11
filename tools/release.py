@@ -7,6 +7,7 @@ import sys
 from collections import namedtuple
 import glob
 import logging
+import json
 
 logging.basicConfig(level=logging.INFO)
 
@@ -88,8 +89,17 @@ def upload(fid, version, file_path):
     url = f"http://m5burner-api.m5stack.com/api/admin/firmware/{fid}/version"
     headers = {}
     payload = {"version": version}
-    files = [("firmware", ("file", open(file_path, "rb"), "application/octet-stream"))]
+    files = [("firmware", ("file.bin", open(file_path, "rb"), "application/octet-stream"))]
     response = requests.request("POST", url, headers=headers, data=payload, files=files)
+    logging.info(response.text)
+
+
+def remove(fid, version, file_path):
+    logging.info(f"Remove {file_path}")
+    url = f"http://m5burner-api.m5stack.com/api/admin/firmware/remove/{fid}"
+    headers = {"Content-Type": "application/json"}
+    payload = {"version": version}
+    response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
     logging.info(response.text)
 
 
