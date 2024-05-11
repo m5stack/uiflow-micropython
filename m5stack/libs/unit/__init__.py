@@ -13,9 +13,8 @@ _attrs = {
     "BLDCDriverUnit": "bldc_driver",
     "ButtonUnit": "button",
     "BuzzerUnit": "buzzer",
-    "CardKBUnit": "cardkb",
-    "CardKBUnit": "cardkb",
     "CANUnit": "can",
+    "CardKBUnit": "cardkb",
     "KeyCode": "cardkb",
     "CATMGNSSUnit": "catm_gnss",
     "CATMUnit": "catm",
@@ -35,7 +34,7 @@ _attrs = {
     "EXTIOUnit": "extio",
     "EXTIO2Unit": "extio2",
     "FaderUnit": "fader",
-    "FANUnit": "fan",
+    "FanUnit": "fan",
     "FingerUnit": "finger",
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
