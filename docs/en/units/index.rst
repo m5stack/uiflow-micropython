@@ -15,6 +15,7 @@ Unit
     earth.rst
     encoder.rst
     env.rst
+    extencoder.rst
     hall_effect.rst
     ir.rst
     light.rst

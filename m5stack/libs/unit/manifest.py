@@ -30,6 +30,7 @@ package(
         "encoder8.py",
         "env.py",
         "envpro.py",
+        "extencoder.py",
         "extio.py",
         "extio2.py",
         "fader.py",
