@@ -5,8 +5,6 @@
 from ..app import AppBase
 import M5
 from widgets.label import Label
-from common.font import MontserratMedium16
-from common.font import MontserratMedium18
 import esp32
 import sys
 import machine
@@ -50,7 +48,7 @@ class RunApp(AppBase):
             w=312,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
         )
         self._name_label.set_text("main.py")
 
@@ -61,7 +59,7 @@ class RunApp(AppBase):
             w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._mtime_label.set_text(self._mtime_text)
 
@@ -72,7 +70,7 @@ class RunApp(AppBase):
             w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._account_label.set_text(self._account_text)
 
@@ -83,7 +81,7 @@ class RunApp(AppBase):
             w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
-            font=MontserratMedium16.FONT,
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._ver_label.set_text(self._ver_text)
 

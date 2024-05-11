@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 try:
-    import uasyncio as asyncio
+    import asyncio
 except ImportError:
     import asyncio
 

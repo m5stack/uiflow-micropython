@@ -1,0 +1,17 @@
+.. |init.svg| image:: ../../_static/hardware/can/init.svg
+
+.. |deinit.svg| image:: ../../_static/hardware/can/deinit.svg
+
+.. |restart.svg| image:: ../../_static/hardware/can/restart.svg
+
+.. |state.svg| image:: ../../_static/hardware/can/state.svg
+
+.. |info.svg| image:: ../../_static/hardware/can/info.svg
+
+.. |any.svg| image:: ../../_static/hardware/can/any.svg
+
+.. |recv1.svg| image:: ../../_static/hardware/can/recv1.svg
+
+.. |recv2.svg| image:: ../../_static/hardware/can/recv2.svg
+
+.. |send.svg| image:: ../../_static/hardware/can/send.svg

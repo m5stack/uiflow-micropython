@@ -1,0 +1,26 @@
+.. |DACUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/dac/dac_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/dac
+    :height: 200px
+    :width: 200 px
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac2/example.svg
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/init.svg
+
+.. |get_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_value.svg
+
+.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_voltage.svg
+
+.. |set_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_value.svg
+
+.. |set_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_voltage.svg
+
+.. |get_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_raw_value.svg
+
+.. |set_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_raw_value.svg
+
+.. |get_normalized_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_normalized_value.svg
+
+.. |set_normalized_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_normalized_value.svg
+
+.. |save_to_eeprom.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/save_to_eeprom.svg

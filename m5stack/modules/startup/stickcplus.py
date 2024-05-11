@@ -10,11 +10,7 @@ from widgets.image import Image
 import os
 import sys
 import gc
-
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 try:
     import M5Things

@@ -7,7 +7,7 @@ import M5
 from M5 import Widgets
 from widgets.image import Image
 from widgets.label import Label
-import uasyncio as asyncio
+import asyncio
 import binascii
 import machine
 import network

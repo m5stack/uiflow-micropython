@@ -39,7 +39,14 @@ extensions = [
     'sphinx_markdown_tables',
     'nbsphinx',
     'sphinx_copybutton',
+    "sphinx.ext.intersphinx",
 ]
+
+# API docs fix
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+    "micropython": ("https://docs.micropython.org/en/v1.22.0/", None),
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']

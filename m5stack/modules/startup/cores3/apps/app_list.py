@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: MIT
 from ..app import AppBase, Descriptor
 from ..framework import _play_wav
-from common.font import MontserratMedium18
 from widgets.image import Image
 from widgets.label import Label
 from widgets.button import Button

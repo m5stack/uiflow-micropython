@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: MIT
 
 from ..app import AppBase
-from common.font import MontserratMedium18
 from widgets.image import Image
 from widgets.label import Label
 import M5
@@ -144,7 +143,7 @@ class ListApp(AppBase):
             h=36,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
         self._label1 = Label(
@@ -155,7 +154,7 @@ class ListApp(AppBase):
             h=36,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
         self._label2 = Label(
@@ -166,7 +165,7 @@ class ListApp(AppBase):
             h=36,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
         self._label3 = Label(
@@ -177,7 +176,7 @@ class ListApp(AppBase):
             h=36,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
         )
         self._labels = []
         self._labels.append(self._label0)

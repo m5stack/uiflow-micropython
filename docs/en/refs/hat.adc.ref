@@ -1,0 +1,6 @@
+.. |ADC| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-adc/hat-adc_01.webp
+    :target: https://docs.m5stack.com/zh_CN/hat/hat-adc
+    :height: 200px
+    :width: 200 px
+
+.. |init.svg| image:: ../../_static/hat/adc/init.svg

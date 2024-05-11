@@ -12,11 +12,7 @@ import sys
 import gc
 import machine
 import binascii
-
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 try:
     import M5Things

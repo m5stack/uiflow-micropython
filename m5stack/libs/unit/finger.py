@@ -11,6 +11,5 @@ if sys.platform != "esp32":
 
 class FingerUnit(FPC1020A):
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None):
-        uart1 = UART(id)
-        uart1.init(19200, tx=port[1], rx=port[0])
+        uart1 = UART(id, 19200, tx=port[1], rx=port[0])
         super().__init__(uart1)

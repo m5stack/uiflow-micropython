@@ -12,6 +12,7 @@ package(
         "module_helper.py",
         "encoder4_motor.py",
         "pps.py",
+        "iot_base_catm.py",
     ),
     base_path="..",
     opt=0,

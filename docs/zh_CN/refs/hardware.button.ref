@@ -1,22 +1,22 @@
 .. |example.svg| image:: ../../_static/hardware/button/example.svg
 
-.. |isHolding.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/isHolding.svg
+.. |isHolding.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isHolding.svg
 
-.. |isPressed.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/isPressed.svg
+.. |isPressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isPressed.svg
 
-.. |isReleased.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/isReleased.svg
+.. |isReleased.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isReleased.svg
 
-.. |wasClicked.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasClicked.svg
+.. |wasClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasClicked.svg
 
-.. |wasDoubleClicked.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasDoubleClicked.svg
+.. |wasDoubleClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasDoubleClicked.svg
 
-.. |wasHold.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasHold.svg
+.. |wasHold.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasHold.svg
 
-.. |wasPressed.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasPressed.svg
+.. |wasPressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasPressed.svg
 
-.. |wasReleased.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasReleased.svg
+.. |wasReleased.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasReleased.svg
 
-.. |wasSingleClicked.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/wasSingleClicked.svg
+.. |wasSingleClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasSingleClicked.svg
 
-.. |setCallback.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/hardware/button/setCallback.svg
+.. |setCallback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/setCallback.svg
 
