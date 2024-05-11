@@ -95,7 +95,29 @@ function ci_esp32_idf44_setup {
 }
 
 function ci_esp32_idf504_setup {
-    ci_esp32_setup_helper 8fbf4ba6058bcf736317d8a7aa75d0578563c38b
+    if [ "$(git rev-parse --abbrev-ref HEAD)" == "uiflow/v2.0-idf5.0.4" ]; then
+        echo "esp-idf is on uiflow/v2.0-idf5.0.4 branch."
+        return 0
+    else
+        echo "esp-idf is not on uiflow/v2.0-idf5.0.4 branch."
+    fi
+
+    git clone --depth 1 --branch uiflow/v2.0-idf5.0.4 --recurse-submodules https://github.com/m5stack/esp-idf.git
+    git -C esp-idf submodule update --init \
+        components/bt/host/nimble/nimble \
+        components/esp_wifi \
+        components/esptool_py/esptool \
+        components/lwip/lwip \
+        components/mbedtls/mbedtls
+    if [ -d esp-idf/components/bt/controller/esp32 ]; then
+        git -C esp-idf submodule update --init \
+            components/bt/controller/lib_esp32 \
+            components/bt/controller/lib_esp32c3_family
+    else
+        git -C esp-idf submodule update --init \
+            components/bt/controller/lib
+    fi
+    ./esp-idf/install.sh
 }
 
 function ci_esp32_build {

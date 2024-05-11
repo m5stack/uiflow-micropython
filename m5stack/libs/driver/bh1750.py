@@ -40,7 +40,7 @@ class BH1750:
         self._configure()
         self._last_time = time.ticks_ms()
 
-    def get_lux(self) -> int:
+    def get_lux(self) -> float:
         self._ready()
         raw_lux = self._read_u16()
         return self._convert_to_lux(raw_lux)

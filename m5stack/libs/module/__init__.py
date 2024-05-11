@@ -9,6 +9,7 @@ _attrs = {
     "Relay4Module": "relay_4",
     "Encoder4MotorModule": "encoder4_motor",
     "PPSModule": "pps",
+    "IotBaseCatmModule": "iot_base_catm",
 }
 
 # Lazy loader, effectively does:

@@ -6,19 +6,10 @@ from ..app import AppBase
 import M5
 from widgets.image import Image
 from widgets.label import Label
+import asyncio
+import requests
 
-try:
-    import uasyncio as asyncio
-except ImportError:
-    import asyncio
 
-try:
-    import urequests as requests
-except ImportError:
-    import requests
-
-from common.font import MontserratMedium10
-from common.font import MontserratMedium18
 from ..res import (
     WIFI_EMPTY_IMG,
     WIFI_GOOD_IMG,
@@ -125,7 +116,7 @@ class DevApp(AppBase):
             w=177,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
         self._mac_label.set_text(self._mac_text)
@@ -138,7 +129,7 @@ class DevApp(AppBase):
             h=60,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18.FONT,
+            font="/system/common/font/Montserrat-Medium-18.vlw",
             parent=self._lcd,
         )
         self._account_label.set_text(self._account_text)
@@ -177,7 +168,7 @@ class DevApp(AppBase):
             font_align=Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=MontserratMedium10.FONT,
+            font="/system/common/font/Montserrat-Medium-10.vlw",
             parent=self._lcd,
         )
         self._battery_label.set_text(self._battery_text)

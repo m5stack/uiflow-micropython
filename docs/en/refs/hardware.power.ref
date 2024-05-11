@@ -1,39 +1,39 @@
-.. |setExtOutput1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setExtOutput1.svg
-.. |setExtOutput2.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setExtOutput2.svg
+.. |setExtOutput1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setExtOutput1.svg
+.. |setExtOutput2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setExtOutput2.svg
 
-.. |getExtOutput.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getExtOutput.svg
+.. |getExtOutput.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getExtOutput.svg
 
-.. |setUsbOutput.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setUsbOutput.svg
+.. |setUsbOutput.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setUsbOutput.svg
 
-.. |getUsbOutput.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getUsbOutput.svg
+.. |getUsbOutput.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getUsbOutput.svg
 
-.. |setLed.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setLed.svg
+.. |setLed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setLed.svg
 
-.. |powerOff.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/powerOff.svg
+.. |powerOff.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/powerOff.svg
 
-.. |timerSleep1.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/timerSleep1.svg
-.. |timerSleep2.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/timerSleep2.svg
-.. |timerSleep3.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/timerSleep3.svg
+.. |timerSleep1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/timerSleep1.svg
+.. |timerSleep2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/timerSleep2.svg
+.. |timerSleep3.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/timerSleep3.svg
 
 
-.. |deepSleep.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/deepSleep.svg
+.. |deepSleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/deepSleep.svg
 
-.. |lightSleep.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/lightSleep.svg
+.. |lightSleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/lightSleep.svg
 
-.. |getBatteryLevel.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getBatteryLevel.svg
+.. |getBatteryLevel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getBatteryLevel.svg
 
-.. |setBatteryCharge.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setBatteryCharge.svg
+.. |setBatteryCharge.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setBatteryCharge.svg
 
-.. |setChargeCurrent.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setChargeCurrent.svg
+.. |setChargeCurrent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setChargeCurrent.svg
 
-.. |setChargeVoltage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setChargeVoltage.svg
+.. |setChargeVoltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setChargeVoltage.svg
 
-.. |isCharging.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/isCharging.svg
+.. |isCharging.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/isCharging.svg
 
-.. |getBatteryVoltage.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getBatteryVoltage.svg
+.. |getBatteryVoltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getBatteryVoltage.svg
 
-.. |getBatteryCurrent.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getBatteryCurrent.svg
+.. |getBatteryCurrent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getBatteryCurrent.svg
 
-.. |getKeyState.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/getKeyState.svg
+.. |getKeyState.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/getKeyState.svg
 
-.. |setVibration.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/system/power/setVibration.svg
+.. |setVibration.svg| image:: https://static-cdn.m5stack.com/mpy_docs/system/power/setVibration.svg

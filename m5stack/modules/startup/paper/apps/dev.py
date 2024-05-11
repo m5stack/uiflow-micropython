@@ -6,12 +6,8 @@ from ..app import AppBase, Descriptor
 import M5
 from widgets.image import Image
 from widgets.label import Label
-import uasyncio as asyncio
-
-try:
-    import urequests as requests
-except ImportError:
-    import requests
+import asyncio
+import requests
 import os
 import binascii
 import machine

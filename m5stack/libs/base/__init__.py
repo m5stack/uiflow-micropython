@@ -4,6 +4,7 @@
 
 _attrs = {
     "ATOMSocketBase": "atom_socket",
+    "Motion": "motion",
 }
 
 

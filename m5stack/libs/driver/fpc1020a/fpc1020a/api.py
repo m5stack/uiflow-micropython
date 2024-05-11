@@ -114,7 +114,7 @@ class FPC1020A:
         self._match_level = 5
         while self._uart.any():
             self._uart.read(self._uart.any())
-        if self.get_version() != "B1.10.00":
+        if self.get_version() not in ("B1.10.00", "B1.07.00"):
             raise RuntimeError("FPC1020A not found")
 
     def sleep(self) -> bool:

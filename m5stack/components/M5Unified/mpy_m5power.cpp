@@ -10,6 +10,7 @@ extern "C"
 {
 #include <py/obj.h>
 #include "mpy_m5power.h"
+#include "uiflow_utility.h"
 
 
 namespace m5
@@ -30,7 +31,19 @@ namespace m5
         // The first parameter is the Power object, parse from second parameter.
         mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
+        bool usb_power = getPower(pos_args[0])->getUsbOutput();
+        if (usb_power && args[ARG_enable].u_bool) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_out_bus_out");
+        } else if (usb_power && !args[ARG_enable].u_bool) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_out_bus_in");
+        } else if (!usb_power && args[ARG_enable].u_bool) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_in_bus_out");
+        } else if (!usb_power && !args[ARG_enable].u_bool) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_in_bus_in");
+        }
+
         getPower(pos_args[0])->setExtOutput(args[ARG_enable].u_bool, (ext_port_mask_t)args[ARG_port_mask].u_int);
+
         return mp_const_none;
     }
 
@@ -49,7 +62,19 @@ namespace m5
         // The first parameter is the Power object, parse from second parameter.
         mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
+        bool bus_power = getPower(pos_args[0])->getExtOutput();
+        if (args[ARG_enable].u_bool && bus_power) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_out_bus_out");
+        } else if (args[ARG_enable].u_bool && !bus_power) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_out_bus_in");
+        } else if (!args[ARG_enable].u_bool && bus_power) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_in_bus_out");
+        } else if (!args[ARG_enable].u_bool && !bus_power) {
+            nvs_write_str_helper((char *)"uiflow", (char *)"power_mode", (char *)"usb_in_bus_in");
+        }
+
         getPower(pos_args[0])->setUsbOutput(args[ARG_enable].u_bool);
+
         return mp_const_none;
     }
 

@@ -45,22 +45,24 @@ class DLight
 Constructors
 ------------
 
-.. class:: DLight(port)
+.. class:: DLightUnit(i2c, address: int = 0x23)
 
     Create a DLight object.
 
-    The parameters is:
-        - ``PORT`` Define an i2c port.
+    :param i2c: the I2C object.
+    :param address: the I2C address of the device. Default is 0x23.
 
     UIFLOW2:
 
         |init.svg|
 
 
+.. _unit.DLightUnit.Methods:
+
 Methods
 -------
 
-.. method:: dlight.get_lux()
+.. method:: DLightUnit.get_lux()
 
    Get light lux.
 
@@ -69,7 +71,7 @@ Methods
         |get_lux.svg|
 
 
-.. method:: dlight.configure()
+.. method:: DLightUnit.configure()
 
     Configure the measurement mode (continuous measurement/single measurement) and resolution.
 

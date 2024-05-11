@@ -1,0 +1,27 @@
+.. |Encoder| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/MiniEncoderC%20Hat/img-a743e8b0-eb5e-4dd7-af11-6d02f3e4680f.webp
+    :target: https://docs.m5stack.com/zh_CN/hat/MiniEncoderC%20Hat
+    :height: 200px
+    :width: 200 px
+
+
+.. |example.svg| image:: ../../_static/hat/mini_encoder/example.svg
+
+.. |init.svg| image:: ../../_static/hat/mini_encoder/init.svg
+
+.. |get_rotary_status.svg| image:: ../../_static/hat/mini_encoder/get_rotary_status.svg
+
+.. |get_rotary_value.svg| image:: ../../_static/hat/mini_encoder/get_rotary_value.svg
+
+.. |get_button_status.svg| image:: ../../_static/hat/mini_encoder/get_button_status.svg
+
+.. |fill_color.svg| image:: ../../_static/hat/mini_encoder/fill_color.svg
+
+.. |get_rotary_increments.svg| image:: ../../_static/hat/mini_encoder/get_rotary_increments.svg
+
+.. |reset_rotary_value.svg| image:: ../../_static/hat/mini_encoder/reset_rotary_value.svg
+
+.. |set_rotary_value.svg| image:: ../../_static/hat/mini_encoder/set_rotary_value.svg
+
+.. |read_fw_version.svg| image:: ../../_static/hat/mini_encoder/read_fw_version.svg
+
+.. |set_address.svg| image:: ../../_static/hat/mini_encoder/set_address.svg
