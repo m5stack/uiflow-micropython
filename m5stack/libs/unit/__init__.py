@@ -14,6 +14,7 @@ _attrs = {
     "ButtonUnit": "button",
     "BuzzerUnit": "buzzer",
     "CANUnit": "can",
+    "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",
     "KeyCode": "cardkb",
     "CATMGNSSUnit": "catm_gnss",
