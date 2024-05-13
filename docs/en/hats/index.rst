@@ -8,6 +8,7 @@ HAT
     dac.rst
     dac2.rst
     dlight.rst
+    finger.rst
     mini_encoder.rst
     ncir.rst
     tof.rst

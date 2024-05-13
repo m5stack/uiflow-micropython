@@ -10,6 +10,7 @@ package(
         "dac.py",
         "dac2.py",
         "dlight.py",
+        "finger.py",
         "hat_helper.py",
         "mini_encoder_c.py",
         "ncir.py",

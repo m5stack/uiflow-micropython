@@ -1,0 +1,10 @@
+.. |FingerHat| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-finger/hat-finger_01.webp
+    :target: https://docs.m5stack.com/en/hat/hat-finger
+    :height: 200px
+    :width: 200 px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/init.svg
+
+.. |get_lux.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/get_lux.svg
+
+.. |configure.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/configure.svg
