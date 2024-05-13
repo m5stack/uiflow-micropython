@@ -429,7 +429,7 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_any.svg|
+        |handle_any.svg|
 
 
 .. method:: connected_client_handle.read(uuid, sz=None)
@@ -441,7 +441,9 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_read.svg|
+        |handle_read.svg|
+
+        |handle_read_all.svg|
 
 
 .. method:: connected_client_handle.write(data, uuid)
@@ -453,7 +455,7 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_write.svg|
+        |handle_write.svg|
 
 
 .. method:: connected_client_handle.close()
@@ -462,4 +464,4 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_close.svg|
+        |handle_close.svg|
