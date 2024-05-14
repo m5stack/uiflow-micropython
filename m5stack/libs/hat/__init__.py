@@ -7,6 +7,7 @@ _attrs = {
     "DACHat": "dac",
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
+    "JoyCHat": "joyc",
     "MiniEncoderCHat": "mini_encoder_c",
     "NCIRHat": "ncir",
     "RS485Hat": "rs485",
