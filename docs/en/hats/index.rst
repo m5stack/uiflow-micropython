@@ -9,6 +9,7 @@ HAT
     dac2.rst
     dlight.rst
     mini_encoder.rst
+    mini_joy.rst
     ncir.rst
     tof.rst
     vibrator.rst

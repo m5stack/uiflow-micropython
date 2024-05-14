@@ -12,6 +12,7 @@ package(
         "dlight.py",
         "hat_helper.py",
         "mini_encoder_c.py",
+        "mini_joyc.py",
         "ncir.py",
         "rs485.py",
         "servo8.py",

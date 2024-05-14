@@ -8,6 +8,7 @@ _attrs = {
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
     "MiniEncoderCHat": "mini_encoder_c",
+    "MiniJoyHat": "mini_joyc",
     "NCIRHat": "ncir",
     "RS485Hat": "rs485",
     "Servos8Hat": "servo8",
