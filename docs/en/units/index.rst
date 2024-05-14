@@ -28,6 +28,7 @@ Unit
     reflective_ir.rst
     relay.rst
     rgb.rst
+    thermal.rst
     tof.rst
     ultrasonic.rst
     weight_i2c.rst

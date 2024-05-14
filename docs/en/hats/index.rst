@@ -10,5 +10,6 @@ HAT
     dlight.rst
     mini_encoder.rst
     ncir.rst
+    thermal.rst
     tof.rst
     vibrator.rst

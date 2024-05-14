@@ -11,6 +11,7 @@ _attrs = {
     "NCIRHat": "ncir",
     "RS485Hat": "rs485",
     "Servos8Hat": "servo8",
+    "ThermalHat": "thermal",
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
     "YUNHat": "yun",
