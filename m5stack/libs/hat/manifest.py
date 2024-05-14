@@ -11,6 +11,7 @@ package(
         "dac2.py",
         "dlight.py",
         "hat_helper.py",
+        "joystick.py",
         "mini_encoder_c.py",
         "ncir.py",
         "rs485.py",

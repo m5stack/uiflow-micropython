@@ -8,6 +8,7 @@ HAT
     dac.rst
     dac2.rst
     dlight.rst
+    joystick.rst
     mini_encoder.rst
     ncir.rst
     tof.rst

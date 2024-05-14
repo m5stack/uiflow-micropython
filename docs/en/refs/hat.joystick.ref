@@ -1,0 +1,20 @@
+.. |JoystickHat| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-joystick/hat-joystick_01.webp
+    :target: https://docs.m5stack.com/en/hat/hat-joystick
+    :height: 200px
+    :width: 200 px
+
+.. |init.svg| image:: ../../_static/hat/joystick/init.svg
+
+.. |get_x_raw.svg| image:: ../../_static/hat/joystick/get_x_raw.svg
+
+.. |get_y_raw.svg| image:: ../../_static/hat/joystick/get_y_raw.svg
+
+.. |get_x.svg| image:: ../../_static/hat/joystick/get_x.svg
+
+.. |get_y.svg| image:: ../../_static/hat/joystick/get_y.svg
+
+.. |swap_x.svg| image:: ../../_static/hat/joystick/swap_x.svg
+
+.. |swap_y.svg| image:: ../../_static/hat/joystick/swap_y.svg
+
+.. |get_button_status.svg| image:: ../../_static/hat/joystick/get_button_status.svg
