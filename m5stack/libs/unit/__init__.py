@@ -45,6 +45,7 @@ _attrs = {
     "HbridgeUnit": "hbridge",  # 2.0.3 添加
     "HBRIDGEUnit": "hbridge",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "IRUnit": "ir",
+    "JoystickUnit": "joystick",
     "KMeterISOUnit": "kmeter_iso",  # 2.0.3 添加
     "KMETER_ISOUnit": "kmeter_iso",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "LaserRXUnit": "laser_rx",

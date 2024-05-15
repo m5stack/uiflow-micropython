@@ -41,6 +41,7 @@ package(
         "hall_effect.py",
         "hbridge.py",
         "ir.py",
+        "joystick.py",
         "kmeter_iso.py",
         "laser_rx.py",
         "laser_tx.py",

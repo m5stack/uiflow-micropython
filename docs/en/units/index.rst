@@ -18,6 +18,7 @@ Unit
     extencoder.rst
     hall_effect.rst
     ir.rst
+    joystick.rst
     light.rst
     lora_e220.rst
     miniscale.rst
