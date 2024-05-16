@@ -77,6 +77,7 @@ package(
         "vmeter.py",
         "weight_i2c.py",
         "weight.py",
+        "grove2grove.py",
     ),
     base_path="..",
     opt=3,

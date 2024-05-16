@@ -1,0 +1,14 @@
+
+.. |Grove2GroveUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/unit_grove2grove/unit_grove2grove_01.webp
+    :target: https://docs.m5stack.com/en/unit/unit_grove2grove
+    :height: 200px
+    :width: 200px
+
+.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/__init__.svg
+.. |get_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/get_current.svg
+.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/on.svg
+.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/off.svg
+.. |set_en.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/set_en.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/example.svg
+
