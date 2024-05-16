@@ -1,0 +1,11 @@
+
+.. |FlashLightUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/FlashLight/img-ded1dc49-1697-43d2-857e-551bbb664eda.webp
+    :target: https://docs.m5stack.com/en/unit/FlashLight
+    :height: 200px
+    :width: 200px
+
+.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/flashlightunit/__init__.svg
+.. |flash.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/flashlightunit/flash.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/flashlightunit/example.svg
+
