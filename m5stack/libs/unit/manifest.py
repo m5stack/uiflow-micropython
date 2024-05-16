@@ -77,6 +77,7 @@ package(
         "vmeter.py",
         "weight_i2c.py",
         "weight.py",
+        "digi_clock.py",
     ),
     base_path="..",
     opt=3,
