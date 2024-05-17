@@ -4,11 +4,11 @@
     :height: 200px
     :width: 200px
 
-.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/__init__.svg
-.. |get_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/get_current.svg
-.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/on.svg
-.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/off.svg
-.. |set_en.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/set_en.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/init.svg
+.. |get_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/get_current.svg
+.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/on.svg
+.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/off.svg
+.. |set_en.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/set_en.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/grove2groveunit/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/example.svg
 

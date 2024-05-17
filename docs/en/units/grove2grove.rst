@@ -33,7 +33,7 @@ class Grove2GroveUnit
 Constructors
 ------------
 
-.. method:: Grove2GroveUnit(port)
+.. class:: Grove2GroveUnit(port)
 
     Initialize the Grove2GroveUnit.
 
@@ -42,7 +42,6 @@ Constructors
     UIFLOW2:
 
         |__init__.svg|
-
 
 
 Methods
@@ -84,5 +83,8 @@ Methods
     UIFLOW2:
 
         |set_en.svg|
+
+
+
 
 
