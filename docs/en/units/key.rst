@@ -20,6 +20,8 @@ Micropython Example::
     key.set_color(0x00FF00)
     key.set_brightness(10)
     key.get_key_state()
+    while True:
+        key.tick(None) # update key status
 
 
 UIFLOW2 Example:
@@ -34,7 +36,7 @@ class KeyUnit
 Constructors
 ------------
 
-.. method:: KeyUnit(port)
+.. class:: KeyUnit(port)
 
     Initialize the KeyUnit.
 
@@ -79,3 +81,133 @@ Methods
         |set_brightness.svg|
 
 
+.. method:: KeyUnit.isHolding()
+
+    Returns whether the Button object is in a long press state.
+
+    UIFLOW2:
+
+        |isHolding.svg|
+
+
+.. method:: KeyUnit.isPressed()
+
+    Returns whether the Button object is in a pressed state.
+
+    UIFLOW2:
+
+        |isPressed.svg|
+
+
+.. method:: KeyUnit.isReleased()
+
+    Returns whether the Button object is in a released state.
+
+    UIFLOW2:
+
+        |isReleased.svg|
+
+
+.. method:: KeyUnit.wasClicked()
+
+    Returns True when the Button object is briefly pressed and released.
+
+    UIFLOW2:
+
+        |wasClicked.svg|
+
+
+.. method:: KeyUnit.wasDoubleClicked()
+
+    Returns True when the Button object is double-clicked after a certain amount of time.
+
+    UIFLOW2:
+
+        |wasDoubleClicked.svg|
+
+
+.. method:: KeyUnit.wasHold()
+
+    Returns True when the Button object is held down for a certain amount of time.
+
+    UIFLOW2:
+
+        |wasHold.svg|
+
+
+.. method:: KeyUnit.wasPressed()
+
+    Returns True when the Button object is pressed.
+
+    UIFLOW2:
+
+        |wasPressed.svg|
+
+
+.. method:: KeyUnit.wasReleased()
+
+    Returns True when the Button object is released.
+
+    UIFLOW2:
+
+        |wasReleased.svg|
+
+
+.. method:: KeyUnit.wasSingleClicked()
+
+    Returns True when the Button object is single-clicked after a certain amount of time.
+
+    UIFLOW2:
+
+        |wasSingleClicked.svg|
+
+
+Event Handling
+--------------
+
+.. method:: KeyUnit.setCallback(type:Callback_Type, cb)
+
+    Sets the event callback function.
+
+    UIFLOW2:
+
+        |setCallback.svg|
+
+
+Constants
+---------
+
+.. data:: KeyUnit.CB_TYPE
+
+    A Callback_Type object.
+
+
+class Callback_Type
+-------------------
+
+Constants
+---------
+
+.. data:: Callback_Type.WAS_CLICKED
+
+    Single click event type.
+
+
+.. data:: Callback_Type.WAS_DOUBLECLICKED
+
+    Double click event type.
+
+
+.. data:: Callback_Type.WAS_HOLD
+
+    Long press event type.
+
+
+.. data:: Callback_Type.WAS_PRESSED
+
+
+    Press event type
+
+.. data:: Callback_Type.WAS_RELEASED
+
+    Release event type

@@ -11,10 +11,11 @@
 
 # Import necessary libraries
 from machine import Pin
+from hardware import Button
 from driver.neopixel.sk6812 import SK6812
 
 
-class KeyUnit(SK6812):
+class KeyUnit(SK6812, Button):
     """! Unit Key is a single mechanical key input unit with built-in RGB LED.
 
     @en Unit Key is a single mechanical key input unit with built-in RGB LED. The key shaft adopts Blue switch with tactile bump and audible click features. Embedded with one programable RGB LED - SK6812, supports 256 level brightness. Two digital IOs are available for key status and LED control key status and lighting control. Suitable for multiple HMI applications.
@@ -30,7 +31,7 @@ class KeyUnit(SK6812):
         key = KeyUnit((33,32)) # for core2
         key.set_color(0x00FF00)
         key.set_brightness(10)
-        key.get_key_state()
+        key.wasReleased()
 
     """
 
@@ -39,9 +40,8 @@ class KeyUnit(SK6812):
 
         @param port The port to which the KeyUnit is connected. port[0]: key pin, port[1]: LEDs pin.
         """
-        super().__init__(port[1], 1)
-        self._key = Pin(port[0])
-        self._key.init(mode=self._key.IN)
+        SK6812.__init__(self, port[1], 1)
+        Button.__init__(self, port[0], active_low=True)
         self.set_brightness(10)
 
     def get_key_state(self) -> int:
@@ -51,7 +51,7 @@ class KeyUnit(SK6812):
         @cn %1 获取按键的状态。
         @return: int, The state of the key, 0: pressed, 1: released.
         """
-        return self._key.value()
+        return self._pin.value()
 
     def set_color(self, color: int) -> None:
         """! Set the color of the LED.
@@ -60,7 +60,7 @@ class KeyUnit(SK6812):
         @cn %1 将LED的颜色设置为%2。
         @param color The color of the LED.
         """
-        super().set_color(0, color)
+        SK6812.set_color(self, 0, color)
 
     def set_brightness(self, br: int) -> None:
         """! Set the brightness of the LED.
@@ -69,4 +69,4 @@ class KeyUnit(SK6812):
         @cn %1 将LED的亮度设置为%2。
         @param br The brightness of the LED, range from 0 to 100.
         """
-        super().set_brightness(br)
+        SK6812.set_brightness(self, br)
