@@ -32,7 +32,7 @@ class FlashLightUnit
 Constructors
 ------------
 
-.. method:: FlashLightUnit(port)
+.. class:: FlashLightUnit(port)
 
     Initialize the FlashLightUnit.
 
@@ -41,7 +41,6 @@ Constructors
     UIFLOW2:
 
         |__init__.svg|
-
 
 
 Methods
@@ -70,5 +69,8 @@ Methods
     UIFLOW2:
 
         |flash.svg|
+
+
+
 
 

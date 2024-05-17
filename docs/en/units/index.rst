@@ -39,3 +39,4 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
+    flash_light.rst
