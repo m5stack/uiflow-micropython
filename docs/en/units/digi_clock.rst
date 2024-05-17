@@ -36,7 +36,7 @@ class DigiClockUnit
 Constructors
 ------------
 
-.. method:: DigiClockUnit(i2c, address)
+.. class:: DigiClockUnit(i2c, address)
 
     Initialize the DigiClockUnit.
 
@@ -46,7 +46,6 @@ Constructors
     UIFLOW2:
 
         |__init__.svg|
-
 
 
 Methods
@@ -111,5 +110,8 @@ Methods
     UIFLOW2:
 
         |get_fw_version.svg|
+
+
+
 
 
