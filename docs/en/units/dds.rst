@@ -36,7 +36,7 @@ class DDSUnit
 Constructors
 ------------
 
-.. method:: DDSUnit(i2c, address)
+.. class:: DDSUnit(i2c, address)
 
     Initialize the DDSUnit.
 
@@ -47,17 +47,6 @@ Constructors
 
         |__init__.svg|
 
-
-Attributes
-----------
-
-- ``WAVE_SINE``: Sine wave output.
-- ``WAVE_TRIANGLE``: Triangle wave output.
-- ``WAVE_SQUARE``: Square wave output.
-- ``WAVE_SAWTOOTH``: Sawtooth wave output.
-- ``WAVE_DC``: DC wave output.
-- ``SLEEP_MODE_1``: Disable mclk but keep dac.
-- ``SLEEP_MODE_2``: Disable mclk and dac.
 
 Methods
 -------
@@ -198,5 +187,39 @@ Methods
     UIFLOW2:
 
         |reset.svg|
+
+
+
+Constants
+---------
+
+.. data:: DDSUnit.WAVE_SINE
+
+    Sine wave output.
+
+.. data:: DDSUnit.WAVE_TRIANGLE
+
+    Triangle wave output.
+
+.. data:: DDSUnit.WAVE_SQUARE
+
+    Square wave output.
+
+.. data:: DDSUnit.WAVE_SAWTOOTH
+
+    Sawtooth wave output.
+
+.. data:: DDSUnit.WAVE_DC
+
+    DC wave output.
+
+.. data:: DDSUnit.SLEEP_MODE_1
+
+    Disable mclk but keep dac.
+
+.. data:: DDSUnit.SLEEP_MODE_2
+
+    Disable mclk and dac.
+
 
 
