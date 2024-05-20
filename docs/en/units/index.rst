@@ -39,3 +39,4 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
+    relay4.rst
