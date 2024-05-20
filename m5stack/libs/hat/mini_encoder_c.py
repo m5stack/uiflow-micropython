@@ -3,17 +3,16 @@
 # SPDX-License-Identifier: MIT
 
 import struct
-from micropython import const
 
 
 class MiniEncoderCHat:
-    _ENCODER_COUNTER_VALUE_REG = const(0x00)
-    _ENCODER_INCREMENT_VALUE_REG = const(0x10)
-    _ENCODER_BUTTON_STATUS_REG = const(0x20)
-    _ENCODER_RGB_LED_REG = const(0x30)
-    _ENCODER_RESET_REG = const(0x40)
-    _ENCODER_FIRMWARE_VERSION_REG = const(0xFE)
-    _ENCODER_I2C_ADDRESS_REG = const(0xFF)
+    _ENCODER_COUNTER_VALUE_REG = 0x00
+    _ENCODER_INCREMENT_VALUE_REG = 0x10
+    _ENCODER_BUTTON_STATUS_REG = 0x20
+    _ENCODER_RGB_LED_REG = 0x30
+    _ENCODER_RESET_REG = 0x40
+    _ENCODER_FIRMWARE_VERSION_REG = 0xFE
+    _ENCODER_I2C_ADDRESS_REG = 0xFF
 
     def __init__(self, i2c, address: int | list | tuple = 0x42) -> None:
         self._i2c = i2c

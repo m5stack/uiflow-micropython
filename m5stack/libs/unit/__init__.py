@@ -32,10 +32,11 @@ _attrs = {
     "ENCODER8Unit": "encoder8",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "ENVUnit": "env",
     "ENVPROUnit": "envpro",
+    "ExtEncoderUnit": "extencoder",
     "EXTIOUnit": "extio",
     "EXTIO2Unit": "extio2",
     "FaderUnit": "fader",
-    "FANUnit": "fan",
+    "FanUnit": "fan",
     "FingerUnit": "finger",
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
