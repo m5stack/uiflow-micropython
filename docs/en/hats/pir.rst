@@ -51,7 +51,7 @@ Constructors
     Create a PIR object.
 
     The parameters are:
-        - ``IO1,IO2`` I2C pin.
+        - ``IO1,IO2`` GPIO pin.
 
     UIFLOW2:
 
