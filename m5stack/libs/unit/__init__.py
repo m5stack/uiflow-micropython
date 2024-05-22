@@ -81,6 +81,7 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "ToFUnit": "tof",
     "TOF4MUnit": "tof4m",
+    "TubePressureUnit": "tube_pressure",
     "UltrasoundI2CUnit": "ultrasonic_i2c",  # 2.0.3 添加
     "ULTRASONIC_I2CUnit": "ultrasonic_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "UltrasoundIOUnit": "ultrasonic_io",  # 2.0.3 添加
