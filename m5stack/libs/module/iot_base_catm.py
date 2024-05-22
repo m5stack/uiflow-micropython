@@ -22,7 +22,16 @@ iomap = {
 
 class IotBaseCatmModule(SIM7080, uSerial):
     def __init__(self) -> None:
-        self.modem_uart = UART(1, tx=iomap.modem_tx, rx=iomap.modem_rx)
+        self.modem_uart = UART(
+            1,
+            tx=iomap.modem_tx,
+            rx=iomap.modem_rx,
+            baudrate=115200,
+            bits=8,
+            parity=None,
+            stop=1,
+            rxbuf=1024,
+        )
         SIM7080.__init__(self, uart=self.modem_uart)
         self.pwr_ctrl = Pin(iomap.pwr_ctrl, Pin.OUT)
         self.modem_power_ctrl(1)
