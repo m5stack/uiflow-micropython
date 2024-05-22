@@ -8,6 +8,7 @@ package(
         "ac_measure.py",
         "adc_v11.py",
         "adc.py",
+        "ain4_20ma.py",
         "ameter.py",
         "angle.py",
         "angle8.py",
