@@ -53,7 +53,7 @@ class Modem(object):
                 MODEM_POWER_ON_PIN_OBJ.value(1)
 
             # Setup UART
-            self.uart = UART(1, 115200, timeout=1000, rx=MODEM_TX_PIN, tx=MODEM_RX_PIN)
+            self.uart = UART(1, 115200, timeout=1000, rx=MODEM_TX_PIN, tx=MODEM_RX_PIN, rxbuf=1024)
 
     def check_modem_is_ready(self):
         # Check if modem is ready for AT command
@@ -151,6 +151,7 @@ class Modem(object):
         # Support vars
         processed_lines = 0
         pre_end = True
+        find_keyword = False
         output = ""
         error = False
         empty_reads = 0
@@ -189,6 +190,7 @@ class Modem(object):
                     if kw in line_str:
                         for cb_kw in self.callback_keyword:
                             self.downlink_callback[cb_kw](line_str)
+                        line_str = ""
                         break
 
                 # Do we have an error?
@@ -200,10 +202,9 @@ class Modem(object):
 
                 # If we had a pre-end, do we have the expected end?
                 if line_str == "{}\r\n".format(command.response):
-                    break
+                    find_keyword = True
                 if pre_end and line_str.startswith("{}".format(command.response)):
-                    output += line_str
-                    break
+                    find_keyword = True
 
                 # Do we have a pre-end?
                 if line_str == "\r\n" or line_str == "{}\r\r\n".format(command.command):
@@ -217,6 +218,9 @@ class Modem(object):
                 # Save this line unless in particular conditions
                 output += line_str
 
+                if find_keyword and self.uart.any() == 0:
+                    break
+
         # Remove the command string from the output
         output = output.replace(command.command + "\r\r\n", "")
 
@@ -229,7 +233,6 @@ class Modem(object):
             output = output.replace("OK", "")
             output = output.replace("\r\n", "")
             output = output.replace("\r", "")
-            output = output.replace("\n", "")
             if output.startswith("\n"):
                 output = output[1:]
             if output.endswith("\n"):
