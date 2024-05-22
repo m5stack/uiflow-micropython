@@ -14,6 +14,7 @@ _attrs = {
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
     "YUNHat": "yun",
+    "ServoHat": "servo",
 }
 
 
