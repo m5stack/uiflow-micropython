@@ -12,3 +12,4 @@ HAT
     ncir.rst
     tof.rst
     vibrator.rst
+    neoflash.rst
