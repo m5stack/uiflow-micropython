@@ -52,6 +52,7 @@ package(
         "miniscale.py",
         "ncir.py",
         "ncir2.py",
+        "neco.py",
         "op.py",
         "pahub.py",
         "pbhub.py",

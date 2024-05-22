@@ -56,6 +56,7 @@ _attrs = {
     "MiniScaleUnit": "miniscale",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
+    "NECOUnit": "neco",
     "OPUnit": "op",
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
