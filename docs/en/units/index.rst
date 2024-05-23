@@ -8,6 +8,7 @@ Unit
     angle.rst
     buzzer.rst
     can.rst
+    catch.rst
     dac.rst
     dac2.rst
     dds.rst
@@ -22,6 +23,7 @@ Unit
     grove2grove.rst
     hall_effect.rst
     ir.rst
+    key.rst
     light.rst
     lora_e220.rst
     miniscale.rst
