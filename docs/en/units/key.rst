@@ -1,14 +1,20 @@
-
 KeyUnit
 =======
 
 .. include:: ../refs/unit.key.ref
 
-Unit Key is a single mechanical key input unit with built-in RGB LED. The key shaft adopts Blue switch with tactile bump and audible click features. Embedded with one programable RGB LED - SK6812, supports 256 level brightness. Two digital IOs are available for key status and LED control key status and lighting control. Suitable for multiple HMI applications.
+
+Unit Key is a single mechanical key input unit with built-in RGB LED. The key
+shaft adopts Blue switch with tactile bump and audible click features. Embedded
+with one programable RGB LED - SK6812, supports 256 level brightness.
+Two digital IOs are available for key status and LED control key status and
+lighting control. Suitable for multiple HMI applications.
+
 
 Support the following products:
 
-|KeyUnit|
+    |KeyUnit|
+
 
 Micropython Example::
 
@@ -28,7 +34,9 @@ UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
+
 
 class KeyUnit
 -------------
@@ -36,45 +44,47 @@ class KeyUnit
 Constructors
 ------------
 
-.. class:: KeyUnit(port)
+.. class:: KeyUnit(port: tuple)
 
     Initialize the KeyUnit.
 
-    - ``port``: The port to which the KeyUnit is connected. port[0]: key pin, port[1]: LEDs pin.
+    :param tuple port: The port to which the KeyUnit is connected. port[0]: key pin, port[1]: LEDs pin.
 
     UIFLOW2:
 
-        |__init__.svg|
-
+        |init.svg|
 
 
 Methods
 -------
 
-.. method:: KeyUnit.get_key_state()
+.. method:: KeyUnit.get_key_state() -> int
 
     Get the state of the key.
 
+    :return: 0: released, 1: pressed, 2: long pressed.
 
     UIFLOW2:
 
         |get_key_state.svg|
 
-.. method:: KeyUnit.set_color(color)
+
+.. method:: KeyUnit.set_color(color: int) -> None
 
     Set the color of the LED.
 
-    - ``color``: The color of the LED.
+    :param int color: The color of the LED.
 
     UIFLOW2:
 
         |set_color.svg|
 
-.. method:: KeyUnit.set_brightness(br)
+
+.. method:: KeyUnit.set_brightness(br: int) -> None
 
     Set the brightness of the LED.
 
-    - ``br``: The brightness of the LED, range from 0 to 100.
+    :param int br: The brightness of the LED, range from 0 to 100.
 
     UIFLOW2:
 
