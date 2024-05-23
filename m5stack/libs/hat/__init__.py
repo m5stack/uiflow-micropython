@@ -7,6 +7,7 @@ _attrs = {
     "DACHat": "dac",
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
+    "ENVHat": "env",
     "MiniEncoderCHat": "mini_encoder_c",
     "NCIRHat": "ncir",
     "NeoFlashHat": "neoflash",
@@ -17,7 +18,6 @@ _attrs = {
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
     "YUNHat": "yun",
-    "PIRHat": "pir",
 }
 
 
