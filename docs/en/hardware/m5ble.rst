@@ -96,7 +96,6 @@ M5BLE
 
 Constructor
 -----------
-
 .. class:: M5BLE.Device(name)
 
     Creates an M5BLE object.

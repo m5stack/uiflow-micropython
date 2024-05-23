@@ -10,12 +10,16 @@ Unit
     can.rst
     dac.rst
     dac2.rst
+    dds.rst
+    digi_clock.rst
     dlight.rst
     dualbutton.rst
     earth.rst
     encoder.rst
     env.rst
     extencoder.rst
+    flash_light.rst
+    grove2grove.rst
     hall_effect.rst
     ir.rst
     light.rst
@@ -39,4 +43,3 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
-    grove2grove.rst
