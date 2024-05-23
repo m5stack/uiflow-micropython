@@ -10,6 +10,8 @@ Unit
     can.rst
     dac.rst
     dac2.rst
+    dds.rst
+    digi_clock.rst
     dlight.rst
     dualbutton.rst
     earth.rst
@@ -39,4 +41,3 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
-    digi_clock

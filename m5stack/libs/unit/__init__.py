@@ -24,6 +24,8 @@ _attrs = {
     "ColorUnit": "color",
     "DACUnit": "dac",
     "DAC2Unit": "dac2",
+    "DDSUnit": "dds",
+    "DigiClockUnit": "digi_clock",
     "DLightUnit": "dlight",
     "DualButtonUnit": "dual_button",
     "EarthUnit": "earth",
@@ -90,7 +92,6 @@ _attrs = {
     "WEIGHT_I2CUnit": "weight_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "WeightUnit": "weight",  # 2.0.3 添加
     "WEIGHTUnit": "weight",  # TODO: 类名不符合规范, 2.0.6 移除
-    "DigiClockUnit": "digi_clock",
 }
 
 
