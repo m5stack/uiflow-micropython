@@ -17,6 +17,7 @@ _attrs = {
     "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",
     "KeyCode": "cardkb",
+    "CatchUnit": "catch",
     "CATMGNSSUnit": "catm_gnss",
     "CATMUnit": "catm",
     "CO2Unit": "co2",
@@ -24,6 +25,8 @@ _attrs = {
     "ColorUnit": "color",
     "DACUnit": "dac",
     "DAC2Unit": "dac2",
+    "DDSUnit": "dds",
+    "DigiClockUnit": "digi_clock",
     "DLightUnit": "dlight",
     "DualButtonUnit": "dual_button",
     "EarthUnit": "earth",
@@ -38,13 +41,16 @@ _attrs = {
     "FaderUnit": "fader",
     "FanUnit": "fan",
     "FingerUnit": "finger",
+    "FlashLightUnit": "flash_light",
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "GPSUnit": "gps",
+    "Grove2GroveUnit": "grove2grove",
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",  # 2.0.3 添加
     "HBRIDGEUnit": "hbridge",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "IRUnit": "ir",
+    "KeyUnit": "key",
     "KMeterISOUnit": "kmeter_iso",  # 2.0.3 添加
     "KMETER_ISOUnit": "kmeter_iso",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "LaserRXUnit": "laser_rx",
@@ -62,6 +68,7 @@ _attrs = {
     "PIRUnit": "pir",
     "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",
+    "Relay4Unit": "relay4",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
     "ISO485Unit": "rs485_iso",
@@ -86,10 +93,12 @@ _attrs = {
     "UWBUnit": "uwb",
     "VoltmeterUnit": "vmeter",  # 2.0.3 添加
     "VMeterUnit": "vmeter",  # TODO: 类名/型参不符合规范, 2.0.6 移除
+    "WateringUnit": "watering",
     "WeightI2CUnit": "weight_i2c",  # 2.0.3 添加
     "WEIGHT_I2CUnit": "weight_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "WeightUnit": "weight",  # 2.0.3 添加
     "WEIGHTUnit": "weight",  # TODO: 类名不符合规范, 2.0.6 移除
+    "CatchUnit": "catch",
 }
 
 
