@@ -1,0 +1,15 @@
+
+.. |WateringUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/watering/watering_01.webp
+    :target: https://docs.m5stack.com/en/unit/watering
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/init.svg
+.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_voltage.svg
+.. |get_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_raw.svg
+.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/on.svg
+.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/off.svg
+.. |set_pump.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/set_pump.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/example.svg
+

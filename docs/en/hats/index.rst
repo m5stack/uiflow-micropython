@@ -8,8 +8,11 @@ HAT
     dac.rst
     dac2.rst
     dlight.rst
+    env.rst
     mini_encoder.rst
     ncir.rst
+    neoflash.rst
+    pir.rst
+    servo.rst
     tof.rst
     vibrator.rst
-    env.rst

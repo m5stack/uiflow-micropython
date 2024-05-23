@@ -1,0 +1,13 @@
+
+.. |ServoHat| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-servo/hat-servo_01.webp
+    :target: https://docs.m5stack.com/en/hat/hat-servo
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/init.svg
+.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_duty.svg
+.. |set_percent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_percent.svg
+.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/deinit.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/example.svg
+
