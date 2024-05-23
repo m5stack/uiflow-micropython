@@ -44,7 +44,7 @@ Constructors
 
     UIFLOW2:
 
-        |__init__.svg|
+        |init.svg|
 
 
 Methods
