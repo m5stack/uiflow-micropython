@@ -1,14 +1,19 @@
-
 ServoHat
 ========
 
 .. include:: ../refs/hat.servo.ref
 
-SERVO HAT as the name suggests, is a servo motor module with the new and upgraded "ES9251II" digital servo,This comes with 145°±10° range of motion and can be controlled by PWM signals. The signal pin of the hat is connected to G26 on M5StickC.
+
+SERVO HAT as the name suggests, is a servo motor module with the new and
+upgraded "ES9251II" digital servo,This comes with 145°±10° range of motion and
+can be controlled by PWM signals. The signal pin of the hat is connected to G26
+on M5StickC.
+
 
 Support the following products:
 
-|ServoHat|
+    |ServoHat|
+
 
 Micropython Example::
 
@@ -26,7 +31,9 @@ UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
+
 
 class ServoHat
 --------------
@@ -34,11 +41,11 @@ class ServoHat
 Constructors
 ------------
 
-.. class:: ServoHat(port)
+.. class:: ServoHat(port: tuple)
 
     Initialize the Servo.
 
-    - ``port``: The port to which the Servo is connected. port[0]: servo pin
+    :param tuple port: The port to which the Servo is connected. port[0]: servo pin
 
     UIFLOW2:
 
@@ -48,36 +55,32 @@ Constructors
 Methods
 -------
 
-.. method:: ServoHat.set_duty(duty)
+.. method:: ServoHat.set_duty(duty: int) -> None
 
     Set the duty cycle.
 
-    - ``duty``: The duty cycle. from 26 to 127.
+    :param int duty: The duty cycle. from 26 to 127.
 
     UIFLOW2:
 
         |set_duty.svg|
 
-.. method:: ServoHat.set_percent(percent)
+
+.. method:: ServoHat.set_percent(percent: int) -> None
 
     Set the clamping percentage.
 
-    - ``percent``: The clamping percentage. from 0 to 100.
+    :param int percent: The clamping percentage. from 0 to 100.
 
     UIFLOW2:
 
         |set_percent.svg|
 
+
 .. method:: ServoHat.deinit()
 
     Deinitialize the Servo.
 
-
     UIFLOW2:
 
         |deinit.svg|
-
-
-
-
-

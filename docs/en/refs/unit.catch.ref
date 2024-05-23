@@ -1,0 +1,15 @@
+
+.. |CatchUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/catch/catch_01.webp
+    :target: https://docs.m5stack.com/en/unit/catch
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/init.svg
+.. |clamp.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/clamp.svg
+.. |release.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/release.svg
+.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_duty.svg
+.. |set_clamp_percent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_clamp_percent.svg
+.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/deinit.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/example.svg
+
