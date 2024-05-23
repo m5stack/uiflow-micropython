@@ -18,6 +18,8 @@ Unit
     encoder.rst
     env.rst
     extencoder.rst
+    flash_light.rst
+    grove2grove.rst
     hall_effect.rst
     ir.rst
     light.rst
@@ -41,4 +43,3 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
-    flash_light.rst
