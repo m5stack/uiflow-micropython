@@ -17,6 +17,7 @@ _attrs = {
     "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",
     "KeyCode": "cardkb",
+    "CatchUnit": "catch",
     "CATMGNSSUnit": "catm_gnss",
     "CATMUnit": "catm",
     "CO2Unit": "co2",
@@ -91,6 +92,7 @@ _attrs = {
     "UWBUnit": "uwb",
     "VoltmeterUnit": "vmeter",  # 2.0.3 添加
     "VMeterUnit": "vmeter",  # TODO: 类名/型参不符合规范, 2.0.6 移除
+    "WateringUnit": "watering",
     "WeightI2CUnit": "weight_i2c",  # 2.0.3 添加
     "WEIGHT_I2CUnit": "weight_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "WeightUnit": "weight",  # 2.0.3 添加

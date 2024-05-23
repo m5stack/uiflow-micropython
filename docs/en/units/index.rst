@@ -36,6 +36,7 @@ Unit
     rgb.rst
     tof.rst
     ultrasonic.rst
+    watering.rst
     weight_i2c.rst
     unit_oled.rst
     unit_glass.rst

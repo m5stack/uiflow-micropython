@@ -81,6 +81,7 @@ package(
         "unit_helper.py",
         "uwb.py",
         "vmeter.py",
+        "watering.py",
         "weight_i2c.py",
         "weight.py",
         "key.py",
