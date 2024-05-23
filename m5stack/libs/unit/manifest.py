@@ -63,6 +63,7 @@ package(
         "pir.py",
         "reflective_ir.py",
         "relay.py",
+        "relay4.py",
         "rfid.py",
         "rgb.py",
         "rs485_iso.py",

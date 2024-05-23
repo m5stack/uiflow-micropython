@@ -68,6 +68,7 @@ _attrs = {
     "PIRUnit": "pir",
     "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",
+    "Relay4Unit": "relay4",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
     "ISO485Unit": "rs485_iso",

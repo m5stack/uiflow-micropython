@@ -33,6 +33,7 @@ Unit
     pir.rst
     reflective_ir.rst
     relay.rst
+    relay4.rst
     rgb.rst
     tof.rst
     ultrasonic.rst
