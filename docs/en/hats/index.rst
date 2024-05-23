@@ -10,6 +10,8 @@ HAT
     dlight.rst
     mini_encoder.rst
     ncir.rst
+    pir.rst
+    servo.rst
     tof.rst
     vibrator.rst
     pir.rst
