@@ -254,7 +254,7 @@ class DDSUnit:
         reg |= (0x80 | 0x20) if p_index == 1 else (0x80 | 0x00)
         self.i2c.writeto_mem(self.addr, self.DDS_CTRL_ADDR, struct.pack("B", reg))
 
-    def set_sleep_mode(self, mode: int = WAVE_SINE):
+    def set_sleep_mode(self, mode: int = SLEEP_MODE_1):
         """! Set the sleep mode of the DDS.
 
         @en %1 Set the sleep mode of the DDS to %2.
