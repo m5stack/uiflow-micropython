@@ -3,7 +3,7 @@ DDSUnit
 
 .. include:: ../refs/unit.dds.ref
 
-DDS is a signal source Unit. It uses the AD9833 programmable waveform 
+DDS is a signal source Unit. It uses the AD9833 programmable waveform
 generator + STM32F0 micro controller. Based on I2C communication
 interface (addr:0x31) It can easily control the signal source to output multiple
 waveforms (sine wave, triangle wave, square wave output, sawtooth wave, signal
@@ -25,7 +25,7 @@ Micropython Example::
     i2c = I2C(1, scl=33, sda=32)
     dds = DDSUnit(i2c)
     dds.quick_output(DDSUnit.WAVE_SINE, 1000, 0)
-    
+
     for x in i2c.readfrom_mem(0x31, 0x30, 6): print('%02X' %x);
 
 

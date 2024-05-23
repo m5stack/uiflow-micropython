@@ -24,6 +24,8 @@ _attrs = {
     "ColorUnit": "color",
     "DACUnit": "dac",
     "DAC2Unit": "dac2",
+    "DDSUnit": "dds",
+    "DigiClockUnit": "digi_clock",
     "DLightUnit": "dlight",
     "DualButtonUnit": "dual_button",
     "EarthUnit": "earth",

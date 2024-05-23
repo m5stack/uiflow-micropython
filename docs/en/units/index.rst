@@ -11,6 +11,7 @@ Unit
     dac.rst
     dac2.rst
     dds.rst
+    digi_clock.rst
     dlight.rst
     dualbutton.rst
     earth.rst
