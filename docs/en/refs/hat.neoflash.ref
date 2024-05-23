@@ -1,0 +1,12 @@
+
+.. |NeoFlashHat| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-neoflash/hat-neoflash_01.webp
+    :target: https://docs.m5stack.com/en/hat/hat-neoflash
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/init.svg
+.. |set_pixel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixel.svg
+.. |set_pixels.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixels.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/example.svg
+

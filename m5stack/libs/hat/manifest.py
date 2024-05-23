@@ -13,6 +13,7 @@ package(
         "hat_helper.py",
         "mini_encoder_c.py",
         "ncir.py",
+        "neoflash.py",
         "pir.py",
         "rs485.py",
         "servo.py",
