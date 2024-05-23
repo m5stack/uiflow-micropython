@@ -7,15 +7,15 @@ _attrs = {
     "AC_MEASUREUnit": "ac_measure",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "ADCV11Unit": "adc_v11",
     "ADCUnit": "adc",
+    "AIN4_20MAUnit": "ain4_20ma",
     "AMeterUnit": "ameter",
     "AngleUnit": "angle",
     "Angle8Unit": "angle8",
     "BLDCDriverUnit": "bldc_driver",
     "ButtonUnit": "button",
     "BuzzerUnit": "buzzer",
-    "CANUnit": "can",
-    "MiniCANUnit": "can",
     "CardKBUnit": "cardkb",
+    "CANUnit": "can",
     "KeyCode": "cardkb",
     "CatchUnit": "catch",
     "CATMGNSSUnit": "catm_gnss",
@@ -62,6 +62,7 @@ _attrs = {
     "MiniScaleUnit": "miniscale",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
+    "NECOUnit": "neco",
     "OPUnit": "op",
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
@@ -69,6 +70,7 @@ _attrs = {
     "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",
     "Relay4Unit": "relay4",
+    "Relay2Unit": "relay2",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
     "ISO485Unit": "rs485_iso",
@@ -86,6 +88,7 @@ _attrs = {
     "Thermal2Unit": "thermal2",
     "ToFUnit": "tof",
     "TOF4MUnit": "tof4m",
+    "TubePressureUnit": "tube_pressure",
     "UltrasoundI2CUnit": "ultrasonic_i2c",  # 2.0.3 添加
     "ULTRASONIC_I2CUnit": "ultrasonic_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "UltrasoundIOUnit": "ultrasonic_io",  # 2.0.3 添加

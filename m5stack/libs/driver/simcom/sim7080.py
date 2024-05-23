@@ -270,21 +270,21 @@ class SIM7080(Modem):
         self.response_code = int(output.split(",")[1])
         if self.response_code != 200:
             print('Response code: "{0}"'.format(self.response_code))
+            self.http_server_disconnect()
             return False
 
         length = output.split(",")[2]
         SHREAD = AT_CMD("AT+SHREAD=0,{0}".format(int(length)), "+SHREAD:", 10)  # noqa: N806
         output, error = self.execute_at_command(SHREAD)
-        # find_out = output.find(length)
         if error:
             return False
-        output = self.uart.read().decode("utf-8")
-        self.data_content = output[:-2]
+        find_out_str = "+SHREAD: {}".format(length)
+        find_index = output.find(find_out_str)
+        if find_index != -1:
+            self.data_content = output[(len(find_out_str) + find_index) :]
 
         error = self.http_server_disconnect()
-        if error is False:
-            return False
-        return True
+        return error
 
     def http_server_connect(self):
         # Http server is connect
