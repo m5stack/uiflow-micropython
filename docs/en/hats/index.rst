@@ -15,3 +15,4 @@ HAT
     servo.rst
     tof.rst
     vibrator.rst
+    pir.rst
