@@ -40,18 +40,18 @@ UIFLOW2 Example:
     |pir_core_example.m5f2|
 
 
-class PIR
----------
+class PIRHat
+------------
 
 Constructors
 ------------
 
-.. class:: PIR(IO1,IO2)
+.. class:: PIRHat(port)
 
-    Create a PIR object.
+    Create a PIRHat object.
 
     The parameters are:
-        - ``IO1,IO2`` GPIO pin.
+        - ``port`` GPIO pin.
 
     UIFLOW2:
 
@@ -61,7 +61,7 @@ Constructors
 Methods
 -------
 
-.. method:: PIR.get_status()
+.. method:: PIRHat.get_status()
 
     Get detection status.
 
@@ -70,7 +70,7 @@ Methods
         |get_status.svg|
 
 
-.. method:: PIR.enable_irq()
+.. method:: PIRHat.enable_irq()
 
    Enable Human detection function.
 
@@ -79,7 +79,7 @@ Methods
         |enable_irq.svg|
 
 
-.. method:: PIR.disable_irq()
+.. method:: PIRHat.disable_irq()
 
     Disable Human detection function.
 
@@ -88,7 +88,7 @@ Methods
         |disable_irq.svg|
 
 
-.. method:: PIR.set_callback()
+.. method:: PIRHat.set_callback()
 
     Polling method, placed in the loop function, constantly check.
 
