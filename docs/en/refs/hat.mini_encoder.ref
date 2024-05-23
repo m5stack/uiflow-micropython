@@ -4,24 +4,24 @@
     :width: 200 px
 
 
-.. |example.svg| image:: ../../_static/hat/mini_encoder/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/example.svg
 
-.. |init.svg| image:: ../../_static/hat/mini_encoder/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/init.svg
 
-.. |get_rotary_status.svg| image:: ../../_static/hat/mini_encoder/get_rotary_status.svg
+.. |get_rotary_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/get_rotary_status.svg
 
-.. |get_rotary_value.svg| image:: ../../_static/hat/mini_encoder/get_rotary_value.svg
+.. |get_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/get_rotary_value.svg
 
-.. |get_button_status.svg| image:: ../../_static/hat/mini_encoder/get_button_status.svg
+.. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/get_button_status.svg
 
-.. |fill_color.svg| image:: ../../_static/hat/mini_encoder/fill_color.svg
+.. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/fill_color.svg
 
-.. |get_rotary_increments.svg| image:: ../../_static/hat/mini_encoder/get_rotary_increments.svg
+.. |get_rotary_increments.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/get_rotary_increments.svg
 
-.. |reset_rotary_value.svg| image:: ../../_static/hat/mini_encoder/reset_rotary_value.svg
+.. |reset_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/reset_rotary_value.svg
 
-.. |set_rotary_value.svg| image:: ../../_static/hat/mini_encoder/set_rotary_value.svg
+.. |set_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/set_rotary_value.svg
 
-.. |read_fw_version.svg| image:: ../../_static/hat/mini_encoder/read_fw_version.svg
+.. |read_fw_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/read_fw_version.svg
 
-.. |set_address.svg| image:: ../../_static/hat/mini_encoder/set_address.svg
+.. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/miniencoderc/set_address.svg

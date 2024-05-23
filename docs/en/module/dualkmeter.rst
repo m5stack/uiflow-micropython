@@ -29,9 +29,10 @@ UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/module/dualkmeter/example.m5f2>`
+    |dualkmeter_cores3_example.m5f2|
 
 
 class DualKmeterModule
