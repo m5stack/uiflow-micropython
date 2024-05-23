@@ -32,18 +32,15 @@ class AIN4_20MAUnit:
         if self._i2c_addr not in self._i2c.scan():
             raise UnitError("AIN 4-20mA unit not found in Grove")
 
-    @property
     def get_adc_raw16_value(self) -> int:
         """! get adc raw 16bit value."""
         buf = self._i2c.readfrom_mem(self._i2c_addr, AIN_RAW16_REG, 2)
         return struct.unpack("<H", buf)[0]
 
-    @property
     def get_adc_raw8_value(self) -> int:
         """! get adc raw 8bit value."""
         return self._i2c.readfrom_mem(self._i2c_addr, AIN_RAW8_REG, 1)[0]
 
-    @property
     def get_4_20ma_current_value(self) -> int:
         """! get ain 4-20mA current value."""
         buf = self._i2c.readfrom_mem(self._i2c_addr, AIN_CURRENT_REG, 2)
