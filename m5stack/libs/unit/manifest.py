@@ -79,6 +79,7 @@ package(
         "vmeter.py",
         "weight_i2c.py",
         "weight.py",
+        "flash_light.py",
     ),
     base_path="..",
     opt=3,
