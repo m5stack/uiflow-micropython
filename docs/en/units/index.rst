@@ -8,16 +8,22 @@ Unit
     angle.rst
     buzzer.rst
     can.rst
+    catch.rst
     dac.rst
     dac2.rst
+    dds.rst
+    digi_clock.rst
     dlight.rst
     dualbutton.rst
     earth.rst
     encoder.rst
     env.rst
     extencoder.rst
+    flash_light.rst
+    grove2grove.rst
     hall_effect.rst
     ir.rst
+    key.rst
     light.rst
     lora_e220.rst
     miniscale.rst
@@ -30,6 +36,7 @@ Unit
     rgb.rst
     tof.rst
     ultrasonic.rst
+    watering.rst
     weight_i2c.rst
     unit_oled.rst
     unit_glass.rst
@@ -39,4 +46,3 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
-    watering.rst

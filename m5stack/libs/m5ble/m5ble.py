@@ -3,11 +3,10 @@
 # SPDX-License-Identifier: MIT
 
 import bluetooth
-from micropython import const
+from micropython import const, schedule
 import struct
 import gc
 import time
-import _thread
 
 _ADV_APPEARANCE_GENERIC_COMPUTER = const(128)
 _IRQ_CENTRAL_CONNECT = const(1)
@@ -169,22 +168,6 @@ def decode_services(payload):
     return services
 
 
-class Queue:
-    def __init__(self):
-        self.queue = []
-        self.lock = _thread.allocate_lock()
-
-    def put(self, item):
-        with self.lock:
-            self.queue.append(item)
-
-    def get(self):
-        with self.lock:
-            if len(self.queue) == 0:
-                return 0
-            return self.queue.pop(0)
-
-
 class Server:
     def __init__(self, parent, name, buf_size, verbose=False) -> None:
         self._verbose = verbose
@@ -242,7 +225,8 @@ class Server:
             self._connected_devices.add(client)
             self._verbose and print("Device connected")
             try:
-                self._parent._start_async_task(self._connected_cb, self, client)
+                if self._connected_cb:
+                    schedule(self._connected_cb, (self, client))
             except:
                 pass
         elif event == _IRQ_CENTRAL_DISCONNECT:
@@ -252,7 +236,8 @@ class Server:
                     self._verbose and print("Device disconnected")
                     self._connected_devices.remove(client)
                     try:
-                        self._parent._start_async_task(self._disconnected_cb, self, client)
+                        if self._disconnected_cb:
+                            schedule(self._disconnected_cb, (self, client))
                     except:
                         pass
                     self._start_advertising()
@@ -265,7 +250,8 @@ class Server:
                     continue
                 client._recv(value_handle)
                 try:
-                    self._parent._start_async_task(self._recv_cb, self, client)
+                    if self._recv_cb:
+                        schedule(self._recv_cb, (self, client))
                 except:
                     pass
                 break
@@ -403,15 +389,15 @@ class Client:
                     self._ble.gap_scan(None)
                     self.connect(addr_type, addr)
                 try:
-                    self._parent._start_async_task(
-                        self._server_found_cb, self, self._scan_results[-1]
-                    )
+                    if self._server_found_cb:
+                        schedule(self._server_found_cb, (self, self._scan_results[-1]))
                 except:
                     pass
 
         elif event == _IRQ_SCAN_DONE:
             try:
-                self._parent._start_async_task(self._scan_finished_cb, self, self._scan_results)
+                if self._scan_finished_cb:
+                    schedule(self._scan_finished_cb, (self, self._scan_results))
             except:
                 pass
 
@@ -429,9 +415,8 @@ class Client:
             conn_handle, addr_type, addr = data
             if conn_handle == self._server_conn_handle:
                 try:
-                    self._parent._start_async_task(
-                        self._disconnected_cb, self, conn_handle, addr_type, addr
-                    )
+                    if self._disconnected_cb:
+                        schedule(self._disconnected_cb, (self, conn_handle, addr_type, addr))
                 except:
                     pass
                 self._reset()
@@ -482,7 +467,8 @@ class Client:
             # all characteristics discovered
             self._service_handle_map = self._extract_uuid_items(self._service_handle_map)
             try:
-                self._parent._start_async_task(self._connected_cb, self)
+                if self._connected_cb:
+                    schedule(self._connected_cb, self)
             except:
                 pass
 
@@ -491,9 +477,10 @@ class Client:
             conn_handle, value_handle, char_data = data
             if conn_handle == self._server_conn_handle:
                 try:
-                    self._parent._start_async_task(
-                        self._read_complete_cb, self, conn_handle, value_handle, char_data
-                    )
+                    if self._read_complete_cb:
+                        schedule(
+                            self._read_complete_cb, self, conn_handle, value_handle, char_data
+                        )
                 except:
                     pass
 
@@ -510,7 +497,8 @@ class Client:
                     self.rx_buffers.get(value_handle, b"") + notify_data
                 )
                 try:
-                    self._parent._start_async_task(self._notify_cb, self)
+                    if self._notify_cb:
+                        schedule(self._notify_cb, self)
                 except:
                     pass
 
@@ -578,11 +566,6 @@ class Device:
         self._mtu = self._ble.config("mtu")
         self._ble.irq(self._ble_irq)
 
-        self._cb_queue = Queue()
-        self._async_worker_run = True
-        self._async_worker_exit_flag = False
-        _thread.start_new_thread(self._async_worker, ())
-
     def _ble_irq(self, event, data):
         self._verbose and print("event: (%d)%s" % (event, event_strings[event]))
 
@@ -600,38 +583,7 @@ class Device:
         return self._mtu
 
     def deinit(self):
-        self._stop_async_worker()
         self._ble.active(False)
-
-    def _start_async_task(self, callback, *args, **kwargs):
-        if callback is None:
-            return
-        self._cb_queue.put((callback, args, kwargs))
-
-    def _stop_async_worker(self):
-        self._async_worker_exit_flag = False
-        self._async_worker_run = False
-        self._cb_queue.put(None)  # Ensure the worker loop can exit if it's waiting on the queue.
-        while not self._async_worker_exit_flag:  # Wait for the worker to exit
-            time.sleep(0.1)
-
-    def _async_worker(self):
-        while self._async_worker_run:
-            task = self._cb_queue.get()
-            if task == 0:
-                time.sleep(0.1)
-                continue
-            if task is None:
-                self._verbose and print("Exiting async worker")
-                # None is used as a signal to stop the worker
-                break
-            callback, args, kwargs = task
-            try:
-                callback(*args, **kwargs)
-            except Exception as e:
-                print("Error executing task:", e)
-        gc.collect()
-        self._async_worker_exit_flag = True
 
     def __enter__(self):
         return self
