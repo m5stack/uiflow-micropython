@@ -56,14 +56,27 @@ class ServoHat:
         self.pwm.duty(duty)
 
     def set_percent(self, percent: int) -> None:
-        """! Set the clamping percentage.
+        """! Set the rotate percentage.
 
-        @en %1 Set the clamping percentage to %2.
+        @en %1 Set the rotate percentage to %2.
         @cn %1 将夹持百分比设置为%2。
 
-        @param percent The clamping percentage. from 0 to 100.
+        @param percent The rotate percentage. from 0 to 100.
         """
         percent = min(100, max(0, percent))
+        duty = self.min_duty + (self.max_duty - self.min_duty) * percent / 100
+        self.pwm.duty(int(duty))
+
+    def set_angle(self, angle: int) -> None:
+        """! Set the rotate angle.
+
+        @en %1 Set the rotate angle to %2.
+        @cn %1 将角度设置为%2。
+
+        @param angle The rotate angle. from 0 to 145.
+        """
+        angle = min(145, max(0, angle))
+        percent = angle / 145 * 100
         duty = self.min_duty + (self.max_duty - self.min_duty) * percent / 100
         self.pwm.duty(int(duty))
 
