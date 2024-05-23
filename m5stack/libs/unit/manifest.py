@@ -81,6 +81,7 @@ package(
         "vmeter.py",
         "weight_i2c.py",
         "weight.py",
+        "key.py",
     ),
     base_path="..",
     opt=3,

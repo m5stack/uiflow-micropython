@@ -43,3 +43,4 @@ Unit
     unit_rca.rst
     fader.rst
     ssr.rst
+    key.rst

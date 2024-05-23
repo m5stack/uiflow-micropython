@@ -44,10 +44,12 @@ _attrs = {
     "GestureUnit": "gesture",  # 2.0.3 添加
     "GESTUREUnit": "gesture",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "GPSUnit": "gps",
+    "Grove2GroveUnit": "grove2grove",
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",  # 2.0.3 添加
     "HBRIDGEUnit": "hbridge",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "IRUnit": "ir",
+    "KeyUnit": "key",
     "KMeterISOUnit": "kmeter_iso",  # 2.0.3 添加
     "KMETER_ISOUnit": "kmeter_iso",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "LaserRXUnit": "laser_rx",
@@ -93,7 +95,6 @@ _attrs = {
     "WEIGHT_I2CUnit": "weight_i2c",  # TODO: 类名/型参不符合规范, 2.0.6 移除
     "WeightUnit": "weight",  # 2.0.3 添加
     "WEIGHTUnit": "weight",  # TODO: 类名不符合规范, 2.0.6 移除
-    "Grove2GroveUnit": "grove2grove",
 }
 
 
