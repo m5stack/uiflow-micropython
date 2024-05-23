@@ -23,6 +23,8 @@ package(
         "color.py",
         "dac.py",
         "dac2.py",
+        "dds.py",
+        "digi_clock.py",
         "dlight.py",
         "dual_button.py",
         "earth.py",
