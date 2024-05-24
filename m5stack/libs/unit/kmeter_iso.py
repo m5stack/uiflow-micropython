@@ -22,15 +22,11 @@ FIRM_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
 
-class KMETER_ISOUnit:
-    def __init__(
-        self, i2c: I2C | PAHUBUnit, addr=KMETER_ADDR, address: int | list | tuple = KMETER_ADDR
-    ):
-        # TODO: 2.0.6 移除 addr 参数
+class KMeterISOUnit:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = KMETER_ADDR):
         """! Kmeter Initialize Function
         addr: 1 ~ 127
         """
-        address = addr
         self.kmeter_i2c = i2c
         if address >= 0x01 and address <= 0x7F:
             self.unit_addr = address
@@ -96,8 +92,3 @@ class KMETER_ISOUnit:
 
     def int_convert(self, value):
         return struct.unpack("<i", value)[0]
-
-
-class KMeterISOUnit(KMETER_ISOUnit):
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = KMETER_ADDR) -> None:
-        super().__init__(i2c, addr=address)
