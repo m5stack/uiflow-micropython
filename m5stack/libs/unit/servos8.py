@@ -32,19 +32,15 @@ FW_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
 
-class SERVOS8Unit:
-    def __init__(
-        self, i2c: I2C | PAHUBUnit, addr=SERVOS_8_ADDR, address: int | list | tuple = SERVOS_8_ADDR
-    ):
-        # TODO: 2.0.6 移除 addr 参数
+class Servos8Unit:
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = SERVOS_8_ADDR):
         """
         slave_addr : 1 to 127
         """
-        addr = address
         self.servos8_i2c = i2c
-        self.i2c_addr = addr
-        if addr >= 1 and addr <= 127:
-            self.i2c_addr = addr
+        self.i2c_addr = address
+        if address >= 1 and address <= 127:
+            self.i2c_addr = address
         self.available()
 
     def available(self):
@@ -234,8 +230,3 @@ class SERVOS8Unit:
                 self.servos8_i2c.writeto_mem(self.i2c_addr, I2C_ADDR_REG, bytearray([addr]))
                 self.i2c_addr = addr
                 time.sleep_ms(150)
-
-
-class Servos8Unit(SERVOS8Unit):
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = SERVOS_8_ADDR):
-        super().__init__(i2c, addr=address)

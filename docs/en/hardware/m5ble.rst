@@ -3,11 +3,15 @@ M5 BLE
 
 .. include:: ../refs/library.m5ble.ref
 
-M5 BLE is a library that M5Stack has developed by wrapping the Low Level BLE of Micropython. It provides simpler and more user-friendly APIs.
+M5 BLE is a library that M5Stack has developed by wrapping the Low Level BLE of
+Micropython. It provides simpler and more user-friendly APIs.
 
-Micropython example::
-	
+
+BLE Client example::
+
     # client
+    from m5ble import M5BLE
+
     UUID_SERVICE1 = "6E400011-B5A3-F393-E0A9-E50E24DCCA9E"
     UUID_SERVICE1_WR = "6E400012-B5A3-F393-E0A9-E50E24DCCA9E"
     UUID_SERVICE1_RD = "6E400013-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -44,7 +48,12 @@ Micropython example::
         gc.collect()
         print("\nExiting...")
 
+
+BLE Server example::
+
     # server
+    from m5ble import M5BLE
+
     UUID_SERVICE1 = "6E400011-B5A3-F393-E0A9-E50E24DCCA9E"
     UUID_SERVICE1_WR = "6E400012-B5A3-F393-E0A9-E50E24DCCA9E"
     UUID_SERVICE1_RD = "6E400013-B5A3-F393-E0A9-E50E24DCCA9E"
@@ -74,29 +83,32 @@ Micropython example::
     while True:
         pass
 
+
 UIFLOW2 example:
 
     |example.svg|
 
 .. only:: builder_html
 
+
 M5BLE
---------------
+-----
 
 Constructor
----------------------------
+-----------
 .. class:: M5BLE.Device(name)
 
     Creates an M5BLE object.
 
     - ``name`` The BLE broadcast name, used for device discovery and identification.
- 
+
     UIFLOW2:
 
         |init.svg|
 
+
 Device Methods
-----------------------
+--------------
 
 .. method:: M5BLE.Device.get_mtu()
 
@@ -106,6 +118,7 @@ Device Methods
 
         |get_mtu.svg|
 
+
 .. method:: M5BLE.Device.deinit()
 
     Closes the BLE connection and releases resources.
@@ -114,8 +127,9 @@ Device Methods
 
         |deinit.svg|
 
+
 Client Methods
-----------------------
+--------------
 
 .. method:: M5BLE.Device.client.on_connected(callback)
 
@@ -127,8 +141,9 @@ Client Methods
 
         |client_on_connected.svg|
 
+
 .. method:: M5BLE.Device.client.on_disconnected(callback)
-    
+
     Sets the callback function for BLE disconnection.
 
     - ``callback`` Callback function upon disconnection, parameters are callback(M5BLE.Client, conn_handle, addr_type, addr).
@@ -136,6 +151,7 @@ Client Methods
     UIFLOW2:
 
         |client_on_disconnected.svg|
+
 
 .. method:: M5BLE.Device.client.on_server_found(callback)
 
@@ -147,6 +163,7 @@ Client Methods
 
         |client_on_server_found.svg|
 
+
 .. method:: M5BLE.Device.client.on_scan_finished(callback)
 
     Sets the callback function for the end of BLE scanning.
@@ -156,6 +173,7 @@ Client Methods
     UIFLOW2:
 
         |client_on_scan_finished.svg|
+
 
 .. method:: M5BLE.Device.client.on_read_complete(callback)
 
@@ -167,6 +185,7 @@ Client Methods
 
         |client_on_read_complete.svg|
 
+
 .. method:: M5BLE.Device.client.on_notify(callback)
 
     Sets the callback function for BLE notifications.
@@ -176,6 +195,7 @@ Client Methods
     UIFLOW2:
 
         |client_on_notify.svg|
+
 
 .. method:: M5BLE.Device.client.scan(timeout=2000, connect_on_found=True, target_name_prefix='M5UiFlow', target_uuid=None)
 
@@ -190,8 +210,9 @@ Client Methods
 
         |client_scan.svg|
 
+
 .. method:: M5BLE.Device.client.connect(addr_type, addr)
-    
+
     Connects to a BLE device.
 
     - ``addr_type`` Device address type.
@@ -200,6 +221,7 @@ Client Methods
     UIFLOW2:
 
         |client_connect.svg|
+
 
 .. method:: M5BLE.Device.client.set_current_service_uuid(service_uuid)
 
@@ -211,6 +233,7 @@ Client Methods
 
         |client_set_current_service_uuid.svg|
 
+
 .. method:: M5BLE.Device.client.any(char_uuid, service_uuid=None)
 
     Checks for data availability for reading, returns the byte size of the buffer if available.
@@ -221,6 +244,7 @@ Client Methods
     UIFLOW2:
 
         |client_any.svg|
+
 
 .. method:: M5BLE.Device.client.read(char_uuid, service_uuid=None, sz=None)
 
@@ -234,6 +258,7 @@ Client Methods
 
         |client_read.svg|
 
+
 .. method:: M5BLE.Device.client.write(data, char_uuid, service_uuid=None)
 
     Writes data to a BLE device.
@@ -246,6 +271,7 @@ Client Methods
 
         |client_write.svg|
 
+
 .. method:: M5BLE.Device.client.close()
 
     Closes the BLE connection.
@@ -253,6 +279,7 @@ Client Methods
     UIFLOW2:
 
         |client_close.svg|
+
 
 .. method:: M5BLE.Device.client.get_services()
 
@@ -262,8 +289,9 @@ Client Methods
 
         |client_get_services.svg|
 
+
 .. method:: M5BLE.Device.client.get_characteristics(service_uuid)
-    
+
     Retrieves a list of characteristics for a BLE service.
 
     - ``service_uuid`` UUID of the service.
@@ -271,6 +299,7 @@ Client Methods
     UIFLOW2:
 
         |client_get_characteristics.svg|
+
 
 .. method:: M5BLE.Device.client.set_mtu(mtu)
 
@@ -284,7 +313,7 @@ Client Methods
 
 
 Server Methods
-----------------------
+--------------
 
 .. method:: M5BLE.Device.server.clear_services()
 
@@ -293,6 +322,7 @@ Server Methods
     UIFLOW2:
 
         |server_clear_services.svg|
+
 
 .. method:: M5BLE.Device.server.add_service(uuid, characteristics)
 
@@ -305,6 +335,7 @@ Server Methods
 
         |server_add_service.svg|
 
+
 .. method:: M5BLE.Device.server.create_characteristic(uuid, read, write, notify)
 
     Creates a characteristic
@@ -313,10 +344,11 @@ Server Methods
     - ``read`` Whether the characteristic is readable
     - ``write``  Whether the characteristic is writable
     - ``notify``  Whether the characteristic can notify
-    
+
     UIFLOW2:
 
         |server_create_characteristic.svg|
+
 
 .. method:: M5BLE.Device.server.start(interval_us)
 
@@ -328,6 +360,7 @@ Server Methods
 
         |server_start.svg|
 
+
 .. method:: M5BLE.Device.server.on_receive(callback)
 
     Sets the callback function for receiving data on BLE.
@@ -338,15 +371,16 @@ Server Methods
 
         |server_on_receive.svg|
 
+
 .. method:: M5BLE.Device.server.on_connected(callback)
-    
-        Sets the callback function for successful BLE device connection.
-    
-        - ``callback`` Callback function upon device connection, parameters are callback(M5BLE.Server, connected_client_handle).
-    
-        UIFLOW2:
-    
-            |server_on_connected.svg|
+
+    Sets the callback function for successful BLE device connection.
+
+    - ``callback`` Callback function upon device connection, parameters are callback(M5BLE.Server, connected_client_handle).
+
+    UIFLOW2:
+
+        |server_on_connected.svg|
 
 
 .. method:: M5BLE.Device.server.on_disconnected(callback)
@@ -359,15 +393,17 @@ Server Methods
 
         |server_on_disconnected.svg|
 
+
 .. method:: M5BLE.Device.server.get_client(index)
-    
+
         Retrieves a connected client
-    
+
         - ``index`` Index of the client
-    
+
         UIFLOW2:
-    
+
             |server_get_client.svg|
+
 
 .. method:: M5BLE.Device.server.get_clients()
 
@@ -377,8 +413,9 @@ Server Methods
 
         |server_get_clients.svg|
 
+
 Server - connected_client_handle Methods
-----------------------
+----------------------------------------
 
 connected_client_handle is passed by the callback function's parameters, or obtained using get_client.
 
@@ -391,7 +428,8 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_any.svg|
+        |handle_any.svg|
+
 
 .. method:: connected_client_handle.read(uuid, sz=None)
 
@@ -402,7 +440,10 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_read.svg|
+        |handle_read.svg|
+
+        |handle_read_all.svg|
+
 
 .. method:: connected_client_handle.write(data, uuid)
 
@@ -413,7 +454,8 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_write.svg|
+        |handle_write.svg|
+
 
 .. method:: connected_client_handle.close()
 
@@ -421,4 +463,4 @@ connected_client_handle is passed by the callback function's parameters, or obta
 
     UIFLOW2:
 
-        |client_close.svg|
+        |handle_close.svg|

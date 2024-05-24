@@ -3,16 +3,16 @@
     :height: 200px
     :width: 200 px
 
-.. |example.svg| image:: ../../_static/hat/vibrator/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/example.svg
 
-.. |init.svg| image:: ../../_static/hat/vibrator/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/init.svg
 
-.. |once.svg| image:: ../../_static/hat/vibrator/init.svg
+.. |once.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/init.svg
 
-.. |set_freq.svg| image:: ../../_static/hat/vibrator/set_freq.svg
+.. |set_freq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/set_freq.svg
 
-.. |set_duty.svg| image:: ../../_static/hat/vibrator/set_duty.svg
+.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/set_duty.svg
 
-.. |turn_off.svg| image:: ../../_static/hat/vibrator/turn_off.svg
+.. |turn_off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/turn_off.svg
 
-.. |deinit.svg| image:: ../../_static/hat/vibrator/deinit.svg
+.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/vibrator/deinit.svg

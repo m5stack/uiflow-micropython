@@ -1,0 +1,21 @@
+
+.. |DDSUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/dds/dds_01.webp
+    :target: https://docs.m5stack.com/en/unit/dds
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/init.svg
+.. |set_freq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq.svg
+.. |set_phase.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_phase.svg
+.. |set_freq_phase.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq_phase.svg
+.. |set_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_mode.svg
+.. |set_ctrl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_ctrl.svg
+.. |select_freq_reg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_freq_reg.svg
+.. |select_phase_reg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_phase_reg.svg
+.. |quick_output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/quick_output.svg
+.. |output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/output.svg
+.. |set_sleep_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_sleep_mode.svg
+.. |reset.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/reset.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/example.svg
+

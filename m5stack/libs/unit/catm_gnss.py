@@ -16,7 +16,9 @@ AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
 
 class CATMGNSSUnit(SIM7080):
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None) -> None:
-        self.uart = UART(id, tx=port[1], rx=port[0])
+        self.uart = UART(
+            id, tx=port[1], rx=port[0], baudrate=115200, bits=8, parity=None, stop=1, rxbuf=1024
+        )
         super().__init__(uart=self.uart)
         if not self.check_modem_is_ready():
             raise UnitError("CATM+GNSS unit not found in Grove")

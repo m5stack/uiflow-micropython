@@ -28,19 +28,17 @@ class DAC2Unit:
     CHANNEL_1 = (1,)
     CHANNEL_BOTH = (2,)
 
-    def __init__(self, i2c: I2C | PAHUBUnit, addr=0x59, address: int | list | tuple = 0x59):
-        # TODO: 2.0.6 移除 addr 参数
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x59):
         """! Initialize the DAC.
 
         @param port I2C port to use.
         @param addr I2C address of the sensor.
         """
-        address = addr
         self.i2c = i2c
         self.addr = address
         self._available()
         self._range = self.RANGE_5V
-        self.setDACOutputVoltageRange(self._range)
+        self.set_dacoutput_voltage_range(self._range)
 
     def _available(self):
         """! Check if sensor is available on the I2C bus.
@@ -52,11 +50,6 @@ class DAC2Unit:
             raise UnitError("DAC2 Unit/Hat not found.")
 
     def set_dacoutput_voltage_range(self, _range: int = 0):
-        # 2.0.3 添加
-        self.setDACOutputVoltageRange(_range)
-
-    def setDACOutputVoltageRange(self, _range: int = 0):  # noqa: N802
-        # TODO: 2.0.6 移除
         """!
 
         @en Set the DAC %1 output voltage range to %2.
@@ -73,11 +66,6 @@ class DAC2Unit:
             self.i2c.writeto_mem(self.addr, 0x01, struct.pack("b", data))
 
     def set_voltage(self, voltage: float, channel: int = 2):
-        # 2.0.3 添加
-        self.setVoltage(voltage, channel)
-
-    def setVoltage(self, voltage: float, channel: int = 2):  # noqa: N802
-        # TODO: 2.0.6 移除
         """!
         @en Set %1 channel %3 to %2 V.
         @cn 设置DAC %1 通道 %3 的输出电压为 %1 V。
@@ -107,11 +95,6 @@ class DAC2Unit:
             self.i2c.writeto_mem(self.addr, 0x04, struct.pack("<H", data))
 
     def set_voltage_both(self, voltage0: float, voltage1: float):
-        # 2.0.3 添加
-        self.setVoltageBoth(voltage0, voltage1)
-
-    def setVoltageBoth(self, voltage0: float, voltage1: float):  # noqa: N802
-        # TODO: 2.0.6 移除
         """!
         @en Set the DAC %1 channel 0 %2 V, channel 1 %3 V.
         @cn 设置 %1 通道0的电压为 %2 V，通道1的电压为 %3 V。

@@ -3,14 +3,14 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: ../../_static/unit/buzzer/init.svg
+.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/init.svg
 
-.. |once.svg| image:: ../../_static/unit/buzzer/init.svg
+.. |once.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/play_once.svg
 
-.. |set_freq.svg| image:: ../../_static/unit/buzzer/set_freq.svg
+.. |set_freq.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/set_freq.svg
 
-.. |set_duty.svg| image:: ../../_static/unit/buzzer/set_duty.svg
+.. |set_duty.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/set_duty.svg
 
-.. |turn_off.svg| image:: ../../_static/unit/buzzer/turn_off.svg
+.. |turn_off.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/turn_off.svg
 
-.. |deinit.svg| image:: ../../_static/unit/buzzer/deinit.svg
+.. |deinit.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/deinit.svg

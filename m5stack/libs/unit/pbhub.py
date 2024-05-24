@@ -17,11 +17,7 @@ I2C_ADDR_REG = 0xFF
 
 
 class PBHUBUnit:
-    def __init__(
-        self, i2c: I2C | PAHUBUnit, addr=PBHUB_ADDR, address: int | list | tuple = PBHUB_ADDR
-    ):
-        # TODO: 2.0.6 移除 addr 参数
-        address = addr
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = PBHUB_ADDR):
         self.i2c_addr = address
         self.pbhub_i2c = i2c
         self.init_i2c_address(address)
@@ -31,11 +27,6 @@ class PBHUBUnit:
             raise UnitError("Pb.hub unit maybe not connect")
 
     def digital_read(self, num, pos):
-        # 2.0.3添加
-        return self.digitalRead(num, pos)
-
-    def digitalRead(self, num, pos):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         digital read.
         num :  0 to 5
@@ -48,11 +39,6 @@ class PBHUBUnit:
         return data
 
     def digital_write(self, num, pos, value):
-        # 2.0.3添加
-        self.digitalWrite(num, pos, value)
-
-    def digitalWrite(self, num, pos, value):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         digital write.
         num :  0 to 5
@@ -65,11 +51,6 @@ class PBHUBUnit:
         self.write_mem_list(hub_addr[num] | offset, [value])
 
     def pwm_read(self, num, pos):
-        # 2.0.3添加
-        return self.pwmRead(num, pos)
-
-    def pwmRead(self, num, pos):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         pwm read.
         num :  0 to 5
@@ -83,11 +64,6 @@ class PBHUBUnit:
         return data
 
     def pwm_write(self, num, pos, value):
-        # 2.0.3添加
-        self.pwmWrite(num, pos, value)
-
-    def pwmWrite(self, num, pos, value):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         pwm write.
         num :  0 to 5
@@ -101,11 +77,6 @@ class PBHUBUnit:
         self.write_mem_list(hub_addr[num] | offset, [value])
 
     def analog_read(self, num):
-        # 2.0.3添加
-        return self.analogRead(num)
-
-    def analogRead(self, num):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         analog read.
         num :  0 to 5
@@ -118,12 +89,6 @@ class PBHUBUnit:
         return data
 
     def set_rgb_led_num(self, num, length):
-        # 2.0.3添加
-        self.setRgbNum(num, length)
-
-    # default: 16
-    def setRgbNum(self, num, length):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set RGB Max length.
         num :  0 to 5
@@ -133,11 +98,6 @@ class PBHUBUnit:
         self.write_mem_list(hub_addr[num] | 0x08, [(length & 0xFF), ((length >> 8) & 0xFF)])
 
     def set_rgb_color_pos(self, num, led, color_in):
-        # 2.0.3添加
-        self.setColorPos(num, led, color_in)
-
-    def setColorPos(self, num, led, color_in):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set RGB led Color.
         num :  0 to 5
@@ -149,11 +109,6 @@ class PBHUBUnit:
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x09, out_buf)
 
     def set_rgb_color(self, num, begin, count, color_in):
-        # 2.0.3添加
-        self.setColor(num, begin, count, color_in)
-
-    def setColor(self, num, begin, count, color_in):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set RGB led Color.
         num :  0 to 5
@@ -168,11 +123,6 @@ class PBHUBUnit:
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x0A, out_buf)
 
     def set_rgb_brightness(self, num, value):
-        # 2.0.3添加
-        self.setBrightness(num, value)
-
-    def setBrightness(self, num, value):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set RGB led brightness.
         num :  0 to 5
@@ -182,11 +132,6 @@ class PBHUBUnit:
         self.write_mem_list(hub_addr[num] | 0x0B, [value])
 
     def set_servo_angle(self, num, pos, value):
-        # 2.0.3添加
-        self.setServoAngle(num, pos, value)
-
-    def setServoAngle(self, num, pos, value):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set servo angle.
         num :  0 to 5
@@ -199,11 +144,6 @@ class PBHUBUnit:
         self.write_mem_list(hub_addr[num] | offset, [value])
 
     def set_servo_pulse(self, num, pos, value):
-        # 2.0.3添加
-        self.setServoPulse(num, pos, value)
-
-    def setServoPulse(self, num, pos, value):  # noqa: N802
-        # TODO: 2.0.6移除
         """
         set servo pulse.
         num :  0 to 5

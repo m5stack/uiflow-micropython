@@ -82,15 +82,12 @@ Rate_list = {
 }
 
 
-class VMeterUnit:
+class VoltmeterUnit:
     def __init__(
         self,
         i2c: I2C | PAHUBUnit,
-        ads_addr=ADS1115_ADDR,
         address: int | list | tuple = ADS1115_ADDR,
     ):
-        # TODO: 2.0.6 移除 ads_addr 参数
-        address = ads_addr
         self.ads_i2c = i2c
         self.ads_i2c_addr = address
         if self.ads_i2c_addr not in self.ads_i2c.scan():
@@ -228,8 +225,3 @@ class VMeterUnit:
         expect = read_data[1] << 8 | read_data[2]
         real = read_data[3] << 8 | read_data[4]
         return expect, real
-
-
-class VoltmeterUnit(VMeterUnit):
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = ADS1115_ADDR):
-        super().__init__(i2c, ads_addr=address)
