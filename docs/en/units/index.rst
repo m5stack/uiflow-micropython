@@ -4,6 +4,7 @@ Unit
 .. toctree::
     :maxdepth: 1
 
+    accel.rst
     adc.rst
     angle.rst
     buzzer.rst

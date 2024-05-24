@@ -4,6 +4,7 @@
 
 _attrs = {
     "ACMeasureUnit": "ac_measure",
+    "AccelUnit": "accel",
     "ADCV11Unit": "adc_v11",
     "ADCUnit": "adc",
     "AIN4_20MAUnit": "ain4_20ma",

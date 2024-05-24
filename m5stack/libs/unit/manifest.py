@@ -6,6 +6,7 @@ package(
     (
         "__init__.py",
         "ac_measure.py",
+        "accel.py",
         "adc_v11.py",
         "adc.py",
         "ain4_20ma.py",
