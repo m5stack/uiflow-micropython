@@ -130,7 +130,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cores3 = CoreS3_Startup()
             cores3.startup(ssid, pswd, timeout)
-        elif board_id in (M5.BOARD.M5StackCore2, M5.BOARD.M5Tough):
+        elif board_id == M5.BOARD.M5StackCore2:
             from .core2 import Core2_Startup
 
             core2 = Core2_Startup()
@@ -209,6 +209,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             station = Station_Startup()
             station.startup(ssid, pswd, timeout)
+
+        elif board_id == M5.BOARD.M5Tough:
+            from .tough import Tough_Startup
+
+            tough = Tough_Startup()
+            tough.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
