@@ -14,5 +14,6 @@ HAT
     neoflash.rst
     pir.rst
     servo.rst
+    servo8.rst
     tof.rst
     vibrator.rst

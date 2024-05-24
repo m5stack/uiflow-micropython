@@ -191,6 +191,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
+    make ${MAKEOPTS} -C seeed BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE

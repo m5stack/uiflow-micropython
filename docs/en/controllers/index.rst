@@ -2,6 +2,7 @@ Controllers
 ============
 
 .. toctree::
+    :maxdepth: 1
 
     cores3.rst
     atoms3.rst

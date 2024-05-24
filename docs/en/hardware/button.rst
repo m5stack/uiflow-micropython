@@ -65,7 +65,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/hardware/button/example.m5f2>`
+    |button_cores3_example.m5f2|
 
 
 class Button

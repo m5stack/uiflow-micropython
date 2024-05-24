@@ -4,38 +4,36 @@
     :width: 200 px
 
 
-.. |init.svg| image:: ../../_static/unit/extencoder/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/init.svg
 
-.. |get_rotary_status.svg| image:: ../../_static/unit/extencoder/get_rotary_status.svg
+.. |get_rotary_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_status.svg
 
-.. |get_rotary_value.svg| image:: ../../_static/unit/extencoder/get_rotary_value.svg
+.. |get_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_value.svg
 
-.. |get_button_status.svg| image:: ../../_static/unit/extencoder/get_button_status.svg
+.. |get_rotary_increments.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_increments.svg
 
-.. |get_rotary_increments.svg| image:: ../../_static/unit/extencoder/get_rotary_increments.svg
+.. |reset_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/reset_rotary_value.svg
 
-.. |reset_rotary_value.svg| image:: ../../_static/unit/extencoder/reset_rotary_value.svg
+.. |set_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_rotary_value.svg
 
-.. |set_rotary_value.svg| image:: ../../_static/unit/extencoder/set_rotary_value.svg
+.. |get_perimeter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_perimeter.svg
 
-.. |get_perimeter.svg| image:: ../../_static/unit/extencoder/get_perimeter.svg
+.. |set_perimeter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_perimeter.svg
 
-.. |set_perimeter.svg| image:: ../../_static/unit/extencoder/set_perimeter.svg
+.. |get_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_pulse.svg
 
-.. |get_pulse.svg| image:: ../../_static/unit/extencoder/get_pulse.svg
+.. |set_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_pulse.svg
 
-.. |set_pulse.svg| image:: ../../_static/unit/extencoder/set_pulse.svg
+.. |get_zero_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_mode.svg
 
-.. |get_zero_mode.svg| image:: ../../_static/unit/extencoder/get_zero_mode.svg
+.. |set_zero_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_mode.svg
 
-.. |set_zero_mode.svg| image:: ../../_static/unit/extencoder/set_zero_mode.svg
+.. |get_meter_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_meter_value.svg
 
-.. |get_meter_value.svg| image:: ../../_static/unit/extencoder/get_meter_value.svg
+.. |get_zero_pulse_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_pulse_value.svg
 
-.. |get_zero_pulse_value.svg| image:: ../../_static/unit/extencoder/get_zero_pulse_value.svg
+.. |set_zero_pulse_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_pulse.svg
 
-.. |set_zero_pulse_value.svg| image:: ../../_static/unit/extencoder/set_zero_pulse_value.svg
+.. |get_firmware_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_firmware_version.svg
 
-.. |get_firmware_version.svg| image:: ../../_static/unit/extencoder/get_firmware_version.svg
-
-.. |set_address.svg| image:: ../../_static/unit/extencoder/set_address.svg
+.. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_address.svg

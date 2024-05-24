@@ -1,0 +1,54 @@
+name: UIFLOW2 Firmware Release
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3.3.0
+
+    - name: Install packages
+      run: source tools/ci.sh && ci_esp32_idf504_setup
+
+    - name: Build
+      run: source tools/ci.sh && ci_esp32_nightly_build
+
+    - name: Upload firmware
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: |
+          ./m5stack/build-M5STACK_AirQ/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Atom_Echo/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Atom_Lite/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Atom_Matrix/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_AtomS3/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_AtomS3_Lite/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_AtomS3U/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_AtomU/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Basic/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Basic_4MB/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Capsule/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Cardputer/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Core2/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_CoreInk/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_CoreS3/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Dial/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_DinMeter/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Paper/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_StampS3/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Station/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_StickC/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_Tough/uiflow-*-*.bin
+          ./seeed/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin

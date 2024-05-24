@@ -3,12 +3,12 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: ../../_static/unit/hall_effect/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hall_effect/init.svg
 
-.. |get_status.svg| image:: ../../_static/unit/hall_effect/get_status.svg
+.. |get_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hall_effect/get_status.svg
 
-.. |enable_irq.svg| image:: ../../_static/unit/hall_effect/enable_irq.svg
+.. |enable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hall_effect/enable_irq.svg
 
-.. |disable_irq.svg| image:: ../../_static/unit/hall_effect/disable_irq.svg
+.. |disable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hall_effect/disable_irq.svg
 
-.. |set_callback.svg| image:: ../../_static/unit/hall_effect/set_callback.svg
+.. |set_callback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hall_effect/set_callback.svg
