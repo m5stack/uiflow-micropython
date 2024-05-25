@@ -95,11 +95,15 @@ function ci_esp32_idf44_setup {
 }
 
 function ci_esp32_idf504_setup {
-    if [ "$(git rev-parse --abbrev-ref HEAD)" == "uiflow/v2.0-idf5.0.4" ]; then
-        echo "esp-idf is on uiflow/v2.0-idf5.0.4 branch."
-        return 0
-    else
-        echo "esp-idf is not on uiflow/v2.0-idf5.0.4 branch."
+    if [ -d esp-idf ]; then
+        echo "esp-idf is already cloned."
+        if [ "$(git -C esp-idf rev-parse --abbrev-ref HEAD)" == "uiflow/v2.0-idf5.0.4" ]; then
+            echo "esp-idf is on uiflow/v2.0-idf5.0.4 branch."
+            return 0
+        else
+            echo "esp-idf is not on uiflow/v2.0-idf5.0.4 branch."
+            rm -rf esp-idf
+        fi
     fi
 
     git clone --depth 1 --branch uiflow/v2.0-idf5.0.4 --recurse-submodules https://github.com/m5stack/esp-idf.git
@@ -187,6 +191,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
+    make ${MAKEOPTS} -C seeed BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
 
 # BELOW PLATFORM NOT SUPPORTED FOR NOW, MAYBE SUPPORT IN THE FUTURE

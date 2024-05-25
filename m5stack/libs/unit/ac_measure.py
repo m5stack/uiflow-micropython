@@ -36,15 +36,12 @@ class AC_MEASUREUnit:
     def __init__(
         self,
         i2c: I2C | PAHUBUnit,
-        slave_addr: int = AC_MEASURE_ADDR,
         address: int | list | tuple = AC_MEASURE_ADDR,
     ) -> None:
-        # TODO: 2.0.6 移除 addr 参数
         """
         AC Measure Initialize Function
         Set I2C port, AC Measure Slave Address
         """
-        address = slave_addr
         self.ac_measure_i2c = i2c
         self.init_i2c_address(address)
 

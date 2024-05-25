@@ -4,38 +4,47 @@ Unit
 .. toctree::
     :maxdepth: 1
 
+    accel.rst
     adc.rst
     angle.rst
     buzzer.rst
     can.rst
+    catch.rst
     dac.rst
     dac2.rst
+    dds.rst
+    digi_clock.rst
     dlight.rst
     dualbutton.rst
     earth.rst
     encoder.rst
     env.rst
     extencoder.rst
+    fader.rst
+    flash_light.rst
+    glass.rst
+    glass2.rst
+    grove2grove.rst
     hall_effect.rst
     ir.rst
+    key.rst
+    lcd.rst
     light.rst
     lora_e220.rst
+    minioled.rst
     miniscale.rst
     ncir.rst
+    oled.rst
     op90.rst
     op180.rst
     pir.rst
+    rca.rst
     reflective_ir.rst
     relay.rst
+    relay4.rst
     rgb.rst
+    ssr.rst
     tof.rst
     ultrasonic.rst
+    watering.rst
     weight_i2c.rst
-    unit_oled.rst
-    unit_glass.rst
-    unit_glass2.rst
-    unit_lcd.rst
-    unit_minioled.rst
-    unit_rca.rst
-    fader.rst
-    ssr.rst

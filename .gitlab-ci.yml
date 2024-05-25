@@ -10,6 +10,7 @@ cache:
 
 stages:
   - build
+  - docs
   - release
 
 
@@ -25,6 +26,30 @@ build-job:
       - m5stack/build-*/uiflow-*-*.bin
   tags:
     - uiflow-firmware
+  only:
+    changes:
+      - "m5stack/**"
+      - "tools/**"
+
+
+build-docs:
+  stage: docs
+  script:
+    - echo "Building the documentation..."
+    - cd docs
+    - apt install python3-sphinx
+    - pip3 install -r requirements.txt
+    - sphinx-build -b html -D language=zh_CN ./en/ build/html/zh_CN
+    - sphinx-build -b html -D language=en ./en/ build/html/en
+    - cd -
+  artifacts:
+    paths:
+      - docs/build/
+  tags:
+    - uiflow-firmware
+  only:
+    changes:
+      - "docs/**"
 
 
 release_job:

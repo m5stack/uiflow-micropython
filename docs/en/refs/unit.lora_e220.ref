@@ -3,33 +3,33 @@
     :height: 200px
     :width: 200 px
 
-.. |tx_example.svg| image:: ../../_static/unit/lora_e220/tx_example.svg
+.. |tx_example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/tx_example.svg
 
-.. |rx_example.svg| image:: ../../_static/unit/lora_e220/rx_example.svg
+.. |rx_example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/rx_example.svg
 
 .. |lora_e220_core_example.m5f2| image:: https://static-cdn.m5stack.com/mpy_docs/unit/env/init.svg
 
 .. |working mode.jpg| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/LoRaE220-JP%20Unit/3.jpg
 
-.. |init.svg| image:: ../../_static/unit/lora_e220/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/init.svg
 
-.. |setup.svg| image:: ../../_static/unit/lora_e220/setup.svg
+.. |setup.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/setup.svg
 
-.. |receiveNoneBlock.svg| image:: ../../_static/unit/lora_e220/receiveNoneBlock.svg
+.. |receiveNoneBlock.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/receiveNoneBlock.svg
 
-.. |receive_callback1.svg| image:: ../../_static/unit/lora_e220/receive_callback1.svg
+.. |receive_callback1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/receive_data_event.svg
 
-.. |receive_callback2.svg| image:: ../../_static/unit/lora_e220/receive_callback2.svg
+.. |receive_callback2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/receive_data_str_event.svg
 
-.. |stopReceive.svg| image:: ../../_static/unit/lora_e220/stopReceive.svg
+.. |stopReceive.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/stopReceive.svg
 
-.. |receive.svg| image:: ../../_static/unit/lora_e220/receive.svg
+.. |receive.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/receive.svg
 
-.. |send1.svg| image:: ../../_static/unit/lora_e220/send1.svg
+.. |send1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/send.svg
 
-.. |send2.svg| image:: ../../_static/unit/lora_e220/send2.svg
+.. |send2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/send_line.svg
 
-.. |send3.svg| image:: ../../_static/unit/lora_e220/send3.svg
+.. |send3.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220/send_raw_data.svg
 
 .. |lora_e220_tx_core2.m5f2| raw:: html
 

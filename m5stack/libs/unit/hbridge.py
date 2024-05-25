@@ -20,19 +20,16 @@ I2C_ADDR_REG = 0xFF
 FW_VER_REG = 0xFE
 
 
-class HBRIDGEUnit:
+class HbridgeUnit:
     def __init__(
         self,
         i2c: I2C | PAHUBUnit,
-        slave_addr=HBRIDGE_ADDR,
         address: int | list | tuple = HBRIDGE_ADDR,
     ):
         """
         Hbridge Initialize Function
         Set I2C port, Hbridge Slave Address
         """
-        # TODO: 2.0.6 移除 slave_addr 参数
-        address = slave_addr
         self.hbridge_i2c = i2c
         self.init_i2c_address(address)
 
@@ -149,8 +146,3 @@ class HBRIDGEUnit:
 
     def deinit(self):
         pass
-
-
-class HbridgeUnit(HBRIDGEUnit):
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = HBRIDGE_ADDR):
-        super().__init__(i2c, slave_addr=address)

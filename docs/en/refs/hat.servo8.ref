@@ -1,18 +1,15 @@
-
 .. |Servo8| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat_8servos_1.1/hat_8servos_1.1_01.webp
     :target: https://docs.m5stack.com/en/hat/hat_8servos_1.1
     :height: 200px
     :width: 200px
 
-.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/__init__.svg
-.. |write_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/write_servo_angle.svg
-.. |read_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/read_servo_angle.svg
-.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/write_servo_pulse.svg
-.. |read_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/read_servo_pulse.svg
-.. |power_ctrl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/power_ctrl.svg
-.. |power_on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/power_on.svg
-.. |power_off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/power_off.svg
-.. |get_power_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/get_power_state.svg
-
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo8/example.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/init.svg
+.. |write_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_angle.svg
+.. |read_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_angle.svg
+.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_pulse.svg
+.. |read_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_pulse.svg
+.. |power_ctrl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_ctrl.svg
+.. |power_on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_on.svg
+.. |power_off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_off.svg
+.. |get_power_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/get_power_state.svg
 

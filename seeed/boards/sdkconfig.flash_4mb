@@ -1,0 +1,8 @@
+# SPDX-FileCopyrightText: Copyright (c) 2014 Damien P. George
+#
+# SPDX-License-Identifier: MIT
+
+# For cmake build
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_PARTITION_TABLE_CUSTOM=y
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partitions_4mb.csv"

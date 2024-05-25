@@ -12,9 +12,7 @@ import struct
 class MiniScaleUnit:
     """! MiniScale is a weight sensor, includes a hx711 22bit ADC."""
 
-    def __init__(self, i2c: I2C | PAHUBUnit, addr=0x26, address: int | list | tuple = 0x26):
-        # TODO: 2.0.6 移除 addr 参数
-        address = addr
+    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x26):
         self.i2c = i2c
         self.addr = address
         self._available()
@@ -47,11 +45,6 @@ class MiniScaleUnit:
         return struct.unpack("b", data)[0] == 0
 
     def set_led(self, r: int, g: int, b: int):
-        # 2.0.3 添加
-        self.setLed(r, g, b)
-
-    def setLed(self, r: int, g: int, b: int):  # noqa: N802
-        # TODO: 2.0.6移除
         """! Set the RGB LED color.
 
         @param r Red value. 0 - 255
@@ -83,11 +76,6 @@ class MiniScaleUnit:
         self.i2c.writeto_mem(self.addr, 0x40, struct.pack("<f", gap))
 
     def set_low_pass_filter(self, enabled: bool):
-        # 2.0.3 添加
-        self.setLowPassFilter(enabled)
-
-    def setLowPassFilter(self, enabled: bool):  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Set low pass filter enabled or not
 
         @param enabled Enable filter or not
@@ -98,21 +86,11 @@ class MiniScaleUnit:
             self.i2c.writeto_mem(self.addr, 0x80, b"\x00")
 
     def get_low_pass_filter(self) -> bool:
-        # 2.0.3 添加
-        return self.getLowPassFilter()
-
-    def getLowPassFilter(self) -> bool:  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Get low pass filter enabled or not"""
         data = self.i2c.readfrom_mem(self.addr, 0x80, 1)
         return data == b"\x01"
 
     def set_average_filter_level(self, level: int):
-        # 2.0.3 添加
-        self.setAverageFilterLevel(level)
-
-    def setAverageFilterLevel(self, level: int):  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Set average filter level
 
         @param level level of average filter, larger value for smoother result but more latency
@@ -123,21 +101,11 @@ class MiniScaleUnit:
         self.i2c.writeto_mem(self.addr, 0x81, struct.pack("b", level))
 
     def get_average_filter_level(self) -> int:
-        # 2.0.3 添加
-        return self.getAverageFilterLevel()
-
-    def getAverageFilterLevel(self) -> int:  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Get average filter level"""
         data = self.i2c.readfrom_mem(self.addr, 0x81, 1)
         return struct.unpack("b", data)[0]
 
     def set_ema_filter_alpha(self, alpha: int):
-        # 2.0.3 添加
-        self.setEMAFilterAlpha(alpha)
-
-    def setEMAFilterAlpha(self, alpha: int):  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Set ema filter alpha
 
         @param alpha alpha of ema filter, smaller value for smoother result but more latency
@@ -148,10 +116,6 @@ class MiniScaleUnit:
         self.i2c.writeto_mem(self.addr, 0x82, struct.pack("b", alpha))
 
     def get_ema_filter_alpha(self) -> int:
-        return self.getEMAFilterAlpha()
-
-    def getEMAFilterAlpha(self) -> int:  # noqa: N802
-        # TODO: 2.0.6 移除
         """! Get ema filter alpha"""
         data = self.i2c.readfrom_mem(self.addr, 0x82, 1)
         return struct.unpack("b", data)[0]
