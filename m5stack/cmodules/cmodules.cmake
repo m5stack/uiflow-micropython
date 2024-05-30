@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
+# add cdrivers
+include(${CMAKE_CURRENT_LIST_DIR}/cdriver/cdriver.cmake)
+
 if(M5_CAMERA_MODULE_ENABLE)
     # add m5camera module
     include(${CMAKE_CURRENT_LIST_DIR}/m5camera/m5camera.cmake)

@@ -48,3 +48,4 @@ Unit
     ultrasonic.rst
     watering.rst
     weight_i2c.rst
+    heart.rst

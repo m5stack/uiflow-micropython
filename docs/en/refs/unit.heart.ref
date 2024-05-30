@@ -1,0 +1,21 @@
+
+.. |HeartUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/heart/heart_01.webp
+    :target: https://docs.m5stack.com/en/unit/heart
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/init.svg
+.. |stop.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/stop.svg
+.. |start.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/start.svg
+.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/deinit.svg
+.. |get_heart_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_heart_rate.svg
+.. |get_spo2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_spo2.svg
+.. |get_ir.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_ir.svg
+.. |get_red.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_red.svg
+.. |set_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_mode.svg
+.. |set_led_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_led_current.svg
+.. |set_pulse_width.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_pulse_width.svg
+.. |set_sampling_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_sampling_rate.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/example.svg
+

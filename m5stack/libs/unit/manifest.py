@@ -90,6 +90,7 @@ package(
         "watering.py",
         "weight_i2c.py",
         "weight.py",
+        "heart.py",
     ),
     base_path="..",
     opt=3,
