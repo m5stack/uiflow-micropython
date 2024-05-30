@@ -1,4 +1,10 @@
+
 .. |LCDUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/lcd/lcd_01.webp
     :target: https://docs.m5stack.com/en/unit/lcd
     :height: 200px
     :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lcd/init.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lcd/example.svg
+

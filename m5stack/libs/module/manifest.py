@@ -13,6 +13,8 @@ package(
         "encoder4_motor.py",
         "pps.py",
         "iot_base_catm.py",
+        "rca.py",
+        "display.py",
     ),
     base_path="..",
     opt=0,

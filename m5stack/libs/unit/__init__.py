@@ -88,6 +88,12 @@ _attrs = {
     "WateringUnit": "watering",
     "WeightI2CUnit": "weight_i2c",
     "WeightUnit": "weight",
+    "GlassUnit": "glass",
+    "Glass2Unit": "glass2",
+    "LCDUnit": "lcd",
+    "MiniOLEDUnit": "minioled",
+    "OLEDUnit": "oled",
+    "RCAUnit": "rca",
 }
 
 

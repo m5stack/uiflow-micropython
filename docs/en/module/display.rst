@@ -1,39 +1,58 @@
-Display Module
-==============
+
+DisplayModule
+=============
 
 .. include:: ../refs/module.display.ref
 
-Display Module 13.2 is an expansion module for HD audio and video, using GAOYUN
-GW1NR series FPGA chip to output display signals, and employing the LT8618S chip
-for signal output conditioning. It can achieve a 24-bit color depth display
-signal and up to 8-channel audio signal output, with a resolution up to 1080P.
-The FPGA internally realizes the I2S audio generation function. This module
-includes a DC power input socket and corresponding DC-DC circuit, enabling power
-supply for the entire device. This product is suitable for various programmable
-HD AV outputs and other applications.
+Display Module 13.2 is an expansion module for HD audio and video, using GAOYUN GW1NR series FPGA chip to output display signals, and employing the LT8618S chip for signal output conditioning.
 
+Support the following products:
 
-Supported products:
+|DisplayModule|
 
-    |DisplayModule|
+Micropython Example::
 
-
-Micropython example::
-
+    import os, sys, io
     import M5
-    display = M5.addDisplay({"module_display":{"enabled":True}}) # Add ModuleDisplay module
-    # or
-    display = M5.addDisplay({
-        "module_display":{
-            "enabled":True,
-            "width": 1280,
-            "height": 720,
-            "refresh_rate": 60,
-            "output_width": 0, # 0 default
-            "output_height": 0,
-            "scale_w": 0, # intger
-            "scale_h": 0,
-            "pixel_clock": 74250000,
-        }
-    })
-    display.clear(0xffffff) # Clear screen
+    from M5 import *
+    from module import DisplayModule
+    disp = DisplayModule()
+    disp.display.fill(0)
+
+
+UIFLOW2 Example:
+
+    |example.svg|
+
+.. only:: builder_html
+
+class DisplayModule
+-------------------
+
+Constructors
+------------
+
+.. class:: DisplayModule(port, width, height, refresh_rate, pixel_clock, scale_w, scale_h)
+
+    Initialize the Module Display
+
+    :param tuple port: The port to which the Module Display is connected. port[0]: not used, port[1]: dac pin.
+    :param int width: The width of the Module Display.
+    :param int height: The height of the Module Display.
+    :param int refresh_rate: The refresh rate of the Module Display.
+    :param int pixel_clock: The pixel clock of the Module Display.
+    :param int scale_w: The scale width of the Module Display.
+    :param int scale_h: The scale height of the Module Display.
+
+    UIFLOW2:
+
+        |init.svg|
+
+
+Methods
+-------
+
+
+
+
+
