@@ -28,13 +28,13 @@ class Motion:
     @example
         from base import Motion
         from hardware import *
-        i2c0 = I2C(0, scl=Pin(26), sda=Pin(0), freq=100000)
+        i2c0 = I2C(0, scl=Pin(21), sda=Pin(25), freq=100000)
         motion = Motion(i2c0)
         motion.set_servo_angle(1, 90)
 
     """
 
-    def __init__(self, i2c: I2C, address: int | list | tuple = 0x36) -> None:
+    def __init__(self, i2c: I2C, address: int | list | tuple = 0x38) -> None:
         """! Initialize the Servo8.
 
         @param i2c I2C port to use.
@@ -43,6 +43,15 @@ class Motion:
         self.i2c = i2c
         self.addr = address
         self._available()
+
+    def _available(self) -> None:
+        """! Check if sensor is available on the I2C bus.
+
+        Raises:
+            Exception: If the sensor is not found.
+        """
+        if self.addr not in self.i2c.scan():
+            raise Exception("Motion Base not found, please check your connection.")
 
     def get_servo_angle(self, ch) -> int:
         """! Get the angle of the servo.
