@@ -1015,6 +1015,8 @@ class _MModbusRTUMaster(ModbusMaster):
             bytearray: response
         """
         self._verbose and print("[MODBUS] M->S: " + " ".join("{:02x}".format(x) for x in frame))
+        if self.uart.any() > 0:
+            self.uart.read()
         self.uart.write(frame)
         self.uart.flush()
         time.sleep(self._inter_frame_delay / 1000 / 1000)

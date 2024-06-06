@@ -5,6 +5,7 @@ Unit
     :maxdepth: 1
 
     accel.rst
+    acssr.rst
     adc.rst
     ain4.rst
     angle.rst
@@ -15,6 +16,7 @@ Unit
     catch.rst
     dac.rst
     dac2.rst
+    dcssr.rst
     dds.rst
     digi_clock.rst
     dlight.rst
