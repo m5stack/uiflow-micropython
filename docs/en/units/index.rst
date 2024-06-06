@@ -28,6 +28,7 @@ Unit
     glass2.rst
     grove2grove.rst
     hall_effect.rst
+    heart.rst
     imu.rst
     imupro.rst
     ir.rst
@@ -57,4 +58,4 @@ Unit
     vibrator.rst
     watering.rst
     weight_i2c.rst
-    heart.rst
+    zigbee.rst

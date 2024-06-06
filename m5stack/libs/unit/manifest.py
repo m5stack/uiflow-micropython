@@ -104,6 +104,7 @@ package(
         "watering.py",
         "weight_i2c.py",
         "weight.py",
+        "zigbee.py",
     ),
     base_path="..",
     opt=3,
