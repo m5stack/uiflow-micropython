@@ -81,6 +81,7 @@ _attrs = {
     "ToFUnit": "tof",
     "TOF4MUnit": "tof4m",
     "TubePressureUnit": "tube_pressure",
+    "TVOCUnit": "tvoc",
     "UltrasoundI2CUnit": "ultrasonic_i2c",
     "UltrasoundIOUnit": "ultrasonic_io",
     "UWBUnit": "uwb",
