@@ -9,6 +9,7 @@ _attrs = {
     "DLightHat": "dlight",
     "ENVHat": "env",
     "MiniEncoderCHat": "mini_encoder_c",
+    "MiniJoyHat": "mini_joyc",
     "NCIRHat": "ncir",
     "NeoFlashHat": "neoflash",
     "PIRHat": "pir",

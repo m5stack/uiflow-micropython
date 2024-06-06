@@ -10,6 +10,7 @@ HAT
     dlight.rst
     env.rst
     mini_encoder.rst
+    mini_joy.rst
     ncir.rst
     neoflash.rst
     pir.rst
