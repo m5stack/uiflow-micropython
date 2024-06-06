@@ -85,6 +85,7 @@ _attrs = {
     "TVOCUnit": "tvoc",
     "UltrasoundI2CUnit": "ultrasonic_i2c",
     "UltrasoundIOUnit": "ultrasonic_io",
+    "VibratorUnit": "vibrator",
     "UWBUnit": "uwb",
     "VoltmeterUnit": "vmeter",
     "WateringUnit": "watering",
