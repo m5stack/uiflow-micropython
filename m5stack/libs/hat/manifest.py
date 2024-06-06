@@ -13,6 +13,7 @@ package(
         "env.py",
         "hat_helper.py",
         "joyc.py",
+        "joystick.py",
         "mini_encoder_c.py",
         "mini_joyc.py",
         "ncir.py",

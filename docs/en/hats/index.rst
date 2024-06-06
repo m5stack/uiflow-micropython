@@ -10,6 +10,7 @@ HAT
     dlight.rst
     env.rst
     joyc.rst
+    joystick.rst
     mini_encoder.rst
     mini_joy.rst
     ncir.rst
