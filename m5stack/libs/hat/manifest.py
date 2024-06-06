@@ -19,6 +19,7 @@ package(
         "rs485.py",
         "servo.py",
         "servo8.py",
+        "thermal.py",
         "tof.py",
         "vibrator.py",
         "yun.py",

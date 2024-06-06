@@ -44,6 +44,7 @@ Unit
     relay4.rst
     rgb.rst
     ssr.rst
+    thermal.rst
     tof.rst
     ultrasonic.rst
     watering.rst
