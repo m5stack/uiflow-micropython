@@ -12,6 +12,7 @@ package(
         "dlight.py",
         "env.py",
         "hat_helper.py",
+        "joyc.py",
         "mini_encoder_c.py",
         "mini_joyc.py",
         "ncir.py",

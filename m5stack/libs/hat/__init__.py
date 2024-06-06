@@ -8,6 +8,7 @@ _attrs = {
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
     "ENVHat": "env",
+    "JoyCHat": "joyc",
     "MiniEncoderCHat": "mini_encoder_c",
     "MiniJoyHat": "mini_joyc",
     "NCIRHat": "ncir",
