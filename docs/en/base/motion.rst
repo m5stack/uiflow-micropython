@@ -22,12 +22,6 @@ Micropython Example::
     motion.set_servo_angle(1, 90)
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-.. only:: builder_html
-
 class Motion
 ------------
 
@@ -43,7 +37,7 @@ Constructors
 
     UIFLOW2:
 
-        |__init__.svg|
+        |init.svg|
 
 
 Methods

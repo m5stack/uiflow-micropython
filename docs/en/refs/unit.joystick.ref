@@ -3,18 +3,18 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: ../../_static/unit/joystick/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/init.svg
 
-.. |get_x_raw.svg| image:: ../../_static/unit/joystick/get_x_raw.svg
+.. |get_x_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x_raw.svg
 
-.. |get_y_raw.svg| image:: ../../_static/unit/joystick/get_y_raw.svg
+.. |get_y_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y_raw.svg
 
-.. |get_x.svg| image:: ../../_static/unit/joystick/get_x.svg
+.. |get_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x.svg
 
-.. |get_y.svg| image:: ../../_static/unit/joystick/get_y.svg
+.. |get_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y.svg
 
-.. |swap_x.svg| image:: ../../_static/unit/joystick/swap_x.svg
+.. |swap_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_x.svg
 
-.. |swap_y.svg| image:: ../../_static/unit/joystick/swap_y.svg
+.. |swap_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_y.svg
 
-.. |get_button_status.svg| image:: ../../_static/unit/joystick/get_button_status.svg
+.. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_button_status.svg

@@ -1,17 +1,22 @@
-.. |config.svg| image:: ../../_static/hardware/mic/config.svg
 
-.. |config1.svg| image:: ../../_static/hardware/mic/config1.svg
+.. |get_config_boolean.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_boolean.svg
 
-.. |begin.svg| image:: ../../_static/hardware/mic/begin.svg
+.. |get_config_int.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_int.svg
 
-.. |end.svg| image:: ../../_static/hardware/mic/end.svg
+.. |set_config_int.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_int.svg
 
-.. |isRunning.svg| image:: ../../_static/hardware/mic/isRunning.svg
+.. |set_config_boolean.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_boolean.svg
 
-.. |isEnabled.svg| image:: ../../_static/hardware/mic/isEnabled.svg
+.. |begin.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/begin.svg
 
-.. |isRecording.svg| image:: ../../_static/hardware/mic/isRecording.svg
+.. |end.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/end.svg
 
-.. |setSampleRate.svg| image:: ../../_static/hardware/mic/setSampleRate.svg
+.. |isRunning.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRunning.svg
 
-.. |record.svg| image:: ../../_static/hardware/mic/record.svg
+.. |isEnabled.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isEnabled.svg
+
+.. |isRecording.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRecording.svg
+
+.. |setSampleRate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/setSampleRate.svg
+
+.. |record.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/record.svg

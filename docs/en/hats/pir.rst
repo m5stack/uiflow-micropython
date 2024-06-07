@@ -30,16 +30,6 @@ Micropython Example::
     print(pir_0.get_status())
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-    |pir_core_example.m5f2|
-
-
 class PIRHat
 ------------
 

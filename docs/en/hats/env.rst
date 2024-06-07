@@ -29,15 +29,6 @@ Micropython Example::
     print(env_0.read_pressure())
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-.. only:: builder_html
-
-    |env_cores3_example.m5f2|
-
-
 class ENVHat
 -------------
 

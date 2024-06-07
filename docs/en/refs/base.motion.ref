@@ -4,13 +4,13 @@
     :height: 200px
     :width: 200px
 
-.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/__init__.svg
-.. |get_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_angle.svg
-.. |set_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_servo_angle.svg
-.. |get_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_pulse.svg
-.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/write_servo_pulse.svg
-.. |get_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_motor_speed.svg
-.. |set_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_motor_speed.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/init.svg
+.. |get_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_servo_angle.svg
+.. |set_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_servo_angle.svg
+.. |get_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_servo_pulse.svg
+.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/write_servo_pulse.svg
+.. |get_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_motor_speed.svg
+.. |set_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_motor_speed.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/example.svg
 

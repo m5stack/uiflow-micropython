@@ -3,22 +3,22 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: ../../_static/hat/mini_joy/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/init.svg
 
-.. |get_x_raw.svg| image:: ../../_static/hat/mini_joy/get_x_raw.svg
+.. |get_x_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_x_raw.svg
 
-.. |get_y_raw.svg| image:: ../../_static/hat/mini_joy/get_y_raw.svg
+.. |get_y_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_y_raw.svg
 
-.. |get_x.svg| image:: ../../_static/hat/mini_joy/get_x.svg
+.. |get_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_x.svg
 
-.. |get_y.svg| image:: ../../_static/hat/mini_joy/get_y.svg
+.. |get_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_y.svg
 
-.. |swap_x.svg| image:: ../../_static/hat/mini_joy/swap_x.svg
+.. |swap_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/swap_x.svg
 
-.. |swap_y.svg| image:: ../../_static/hat/mini_joy/swap_y.svg
+.. |swap_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/swap_y.svg
 
-.. |get_button_status.svg| image:: ../../_static/hat/mini_joy/get_button_status.svg
+.. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_button_status.svg
 
-.. |get_firmware_version.svg| image:: ../../_static/hat/mini_joy/get_firmware_version.svg
+.. |get_firmware_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/get_firmware_version.svg
 
-.. |set_i2c_address.svg| image:: ../../_static/hat/mini_joy/set_i2c_address.svg
+.. |set_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/minijoyc/set_i2c_address.svg

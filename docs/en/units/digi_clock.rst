@@ -30,14 +30,6 @@ Micropython Example::
     digi_clock.set_brightness(8)
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class DigiClockUnit
 -------------------
 

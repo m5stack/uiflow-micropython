@@ -4,8 +4,8 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flash_light/init.svg
-.. |flash.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flash_light/flash.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flashlight/init.svg
+.. |flash.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flashlight/flash.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flash_light/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/flashlight/example.svg
 
