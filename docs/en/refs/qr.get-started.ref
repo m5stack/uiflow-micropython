@@ -23,6 +23,6 @@
 .. _M5Burner-v3-beta-linux-x64: https://m5burner.m5stack.com/app/M5Burner-v3-beta-linux-x64.zip
 .. |M5Burner-v3-beta-linux-x64| replace:: M5Burner-v3-beta-linux-x64
 
-.. |burn_firmware.gif| image:: ../../_static/quick-reference/burn_firmware.gif
-.. |login_m5burner.gif| image:: ../../_static/quick-reference/login_m5burner.gif
-.. |login_uiflow2.gif| image:: ../../_static/quick-reference/login_uiflow2.gif
+.. |burn-firmware.gif| image:: ../../_static/quick-reference/get-started/burn-firmware.gif
+.. |login-m5burner.gif| image:: ../../_static/quick-reference/get-started/login-m5burner.gif
+.. |login-uiflow2.gif| image:: ../../_static/quick-reference/get-started/login-uiflow2.gif
