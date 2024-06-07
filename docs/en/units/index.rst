@@ -9,6 +9,7 @@ Unit
     angle.rst
     buzzer.rst
     can.rst
+    cardkb.rst
     catch.rst
     dac.rst
     dac2.rst

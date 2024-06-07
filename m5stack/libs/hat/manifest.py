@@ -7,6 +7,7 @@ package(
     (
         "__init__.py",
         "adc.py",
+        "cardkb.py",
         "dac.py",
         "dac2.py",
         "dlight.py",

@@ -1,0 +1,17 @@
+.. |CardKB Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/cardkb/cardkb_01.webp
+    :target: https://docs.m5stack.com/en/unit/cardkb
+    :height: 200px
+    :width: 200 px
+
+.. |CardKB Unit v1.1| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/cardkb_1.1/cardkb_1.1_01.webp
+    :target: https://docs.m5stack.com/en/unit/cardkb_1.1
+    :height: 200px
+    :width: 200 px
+
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/init.svg
+.. |get_key.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_key.svg
+.. |get_string.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_string.svg
+.. |is_pressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/is_pressed.svg
+.. |pressed_event.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/pressed_event.svg
+.. |tick.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/tick.svg
