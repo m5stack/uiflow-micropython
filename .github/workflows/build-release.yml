@@ -51,4 +51,5 @@ jobs:
           ./m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
           ./m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
           ./m5stack/build-M5STACK_Tough/uiflow-*-*.bin
-          ./seeed/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
+          ./third-party/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
+          ./third-party/build-ESPRESSIF_ESP32_S3_BOX_3/uiflow-*-*.bin
