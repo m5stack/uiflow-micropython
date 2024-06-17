@@ -25,7 +25,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.CardKBUnit.Methods:
@@ -41,7 +41,7 @@ Methods
 
     UIFLOW2:
 
-        |get_key.svg|
+        |get_key.png|
 
 
 .. method:: CardKBUnit.get_string() -> str
@@ -52,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_string.svg|
+        |get_string.png|
 
 
 .. method:: CardKBUnit.is_pressed() -> bool
@@ -63,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |is_pressed.svg|
+        |is_pressed.png|
 
 
 .. method:: CardKBUnit.set_callback(handler)
@@ -74,7 +74,7 @@ Methods
 
     UIFLOW2:
 
-        |pressed_event.svg|
+        |pressed_event.png|
 
     Example:
 
@@ -97,5 +97,5 @@ Methods
 
     UIFLOW2:
 
-        |tick.svg|
+        |tick.png|
 

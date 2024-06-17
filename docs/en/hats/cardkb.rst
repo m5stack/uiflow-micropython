@@ -23,7 +23,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 CardKBHat class inherits CardKBUnit class, See :ref:`unit.CardKBUnit.Methods <unit.CardKBUnit.Methods>` for more details.

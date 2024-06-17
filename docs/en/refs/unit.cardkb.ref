@@ -10,8 +10,19 @@
 
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/init.png
+
 .. |get_key.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_key.svg
+.. |get_key.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_key.png
+
 .. |get_string.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_string.svg
+.. |get_string.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/get_string.png
+
 .. |is_pressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/is_pressed.svg
+.. |is_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/is_pressed.png
+
 .. |pressed_event.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/pressed_event.svg
+.. |pressed_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/pressed_event.png
+
 .. |tick.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/tick.svg
+.. |tick.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/tick.png

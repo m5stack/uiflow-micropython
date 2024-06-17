@@ -3,4 +3,5 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/cardkb_v11/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/cardkb/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/cardkb/init.png
