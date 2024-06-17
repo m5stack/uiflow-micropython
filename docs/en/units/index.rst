@@ -27,6 +27,7 @@ Unit
     grove2grove.rst
     hall_effect.rst
     ir.rst
+    joystick.rst
     key.rst
     lcd.rst
     light.rst
@@ -44,6 +45,7 @@ Unit
     relay4.rst
     rgb.rst
     ssr.rst
+    thermal.rst
     tof.rst
     ultrasonic.rst
     watering.rst

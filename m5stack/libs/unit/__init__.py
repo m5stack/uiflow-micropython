@@ -47,6 +47,7 @@ _attrs = {
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",
     "IRUnit": "ir",
+    "JoystickUnit": "joystick",
     "KeyUnit": "key",
     "KMeterISOUnit": "kmeter_iso",
     "LaserRXUnit": "laser_rx",

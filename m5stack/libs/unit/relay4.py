@@ -49,7 +49,7 @@ class Relay4Unit:
     SYNC_MODE = 1
 
     def __init__(self, i2c: I2C, address: int | list | tuple = 0x26) -> None:
-        """! Initialize the Servo8.
+        """! Initialize the 4Relay.
 
         @param i2c I2C port to use.
         @param address I2C address of the servo8.
@@ -65,7 +65,7 @@ class Relay4Unit:
             Exception: If the sensor is not found.
         """
         if self.addr not in self.i2c.scan():
-            raise Exception("Servo8 Hat not found, please check your connection.")
+            raise Exception("4Relay Unit not found, please check your connection.")
 
     def set_mode(self, mode: int) -> None:
         """! Set the mode of the relay.
