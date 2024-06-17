@@ -4,39 +4,55 @@
     :width: 200px
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/init.png
 
 .. |sleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/sleep.svg
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/sleep.png
 
 .. |get_add_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_add_mode.svg
+.. |get_add_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_add_mode.png
 
 .. |set_add_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/set_add_mode.svg
+.. |set_add_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/set_add_mode.png
 
 .. |add_user.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/add_user.svg
+.. |add_user.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/add_user.png
 
 .. |delete_user.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/delete_user.svg
+.. |delete_user.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/delete_user.png
 
 .. |delete_all_user.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/delete_all_user.svg
+.. |delete_all_user.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/delete_all_user.png
 
 .. |get_user_count.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_count.svg
+.. |get_user_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_count.png
 
 .. |get_user_capacity.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_capacity.svg
+.. |get_user_capacity.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_capacity.png
 
 .. |compare_id.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/compare_id.svg
+.. |compare_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/compare_id.png
 
 .. |compare_finger.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/compare_finger.svg
+.. |compare_finger.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/compare_finger.png
 
 .. |get_user_list.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_list.svg
+.. |get_user_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_list.png
 
 .. |get_user_info.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_info.svg
+.. |get_user_info.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_info.png
 
 .. |get_user_permission.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_permission.svg
+.. |get_user_permission.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_permission.png
 
 .. |get_user_characteristic.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_characteristic.svg
+.. |get_user_characteristic.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_user_characteristic.png
 
 .. |add_user_info.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/add_user_info.svg
-
-.. |capture_characteristic.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/capture_characteristic.svg
+.. |add_user_info.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/add_user_info.png
 
 .. |get_match_level.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_match_level.svg
+.. |get_match_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/get_match_level.png
 
 .. |set_match_level.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/set_match_level.svg
+.. |set_match_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/finger/set_match_level.png

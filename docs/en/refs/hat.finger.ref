@@ -3,8 +3,5 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/init.svg
-
-.. |get_lux.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/get_lux.svg
-
-.. |configure.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/configure.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/finger/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/finger/init.png

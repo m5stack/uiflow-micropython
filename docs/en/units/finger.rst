@@ -21,6 +21,10 @@ Constructors
     :param id: The ID of the UART, 0 or 1 or 2.
     :param port: UART pin numbers.
 
+    UIFLOW2:
+
+        |init.png|
+
 
 .. _unit.FingerUnit.Methods:
 
@@ -35,7 +39,7 @@ Methods
 
     UIFLOW2:
 
-        |sleep.svg|
+        |sleep.png|
 
 
 .. method:: FingerUnit.get_add_mode() -> int
@@ -48,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_add_mode.svg|
+        |get_add_mode.png|
 
 
 .. method:: FingerUnit.set_add_mode(mode: int) -> int
@@ -63,7 +67,7 @@ Methods
 
     UIFLOW2:
 
-        |set_add_mode.svg|
+        |set_add_mode.png|
 
 
 .. method:: FingerUnit.add_user(id: int, permission: Literal[1, 2, 3]) -> int
@@ -79,7 +83,7 @@ Methods
 
     UIFLOW2:
 
-        |add_user.svg|
+        |add_user.png|
 
 
 .. method:: FingerUnit.delete_user(id: int) -> int
@@ -92,7 +96,7 @@ Methods
 
     UIFLOW2:
 
-        |delete_user.svg|
+        |delete_user.png|
 
 
 .. method:: FingerUnit.delete_all_user() -> bool
@@ -103,7 +107,7 @@ Methods
 
     UIFLOW2:
 
-        |delete_all_user.svg|
+        |delete_all_user.png|
 
 
 .. method:: FingerUnit.get_user_count() -> int
@@ -114,7 +118,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_count.svg|
+        |get_user_count.png|
 
 
 .. method:: FingerUnit.get_user_capacity() -> int
@@ -125,7 +129,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_capacity.svg|
+        |get_user_capacity.png|
 
 
 .. method:: FingerUnit.compare_id(id: int, timeout: int=5000) -> bool
@@ -138,7 +142,7 @@ Methods
 
     UIFLOW2:
 
-        |compare_id.svg|
+        |compare_id.png|
 
 
 .. method:: FingerUnit.compare_finger(timeout: int=5000) -> int
@@ -149,7 +153,7 @@ Methods
 
     UIFLOW2:
 
-        |compare_finger.svg|
+        |compare_finger.png|
 
 
 .. method:: FingerUnit.get_user_list() -> list
@@ -160,7 +164,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_list.svg|
+        |get_user_list.png|
 
 
 .. method:: FingerUnit.get_user_info(id: int) -> Union[tuple, None]:
@@ -173,7 +177,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_info.svg|
+        |get_user_info.png|
 
 
 .. method:: FingerUnit.get_user_permission(id: int) -> int
@@ -186,7 +190,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_permission.svg|
+        |get_user_permission.png|
 
 
 .. method:: FingerUnit.get_user_characteristics(id: int) -> Union[bytes, None]
@@ -199,7 +203,7 @@ Methods
 
     UIFLOW2:
 
-        |get_user_characteristics.svg|
+        |get_user_characteristic.png|
 
 
 .. method:: FingerUnit.add_user_info(id, permissions, characteristic, timeout: int=5000) -> bool
@@ -215,7 +219,7 @@ Methods
 
     UIFLOW2:
 
-        |add_user_info.svg|
+        |add_user_info.png|
 
 
 .. method:: FingerUnit.capture_characteristic(timeout: int=5000) -> bytes
@@ -226,10 +230,6 @@ Methods
 
     :returns: bytes of the characteristics if the command was successful, None otherwise.
 
-    UIFLOW2:
-
-        |capture_characteristic.svg|
-
 
 .. method:: FingerUnit.get_match_level() -> int
 
@@ -239,7 +239,7 @@ Methods
 
     UIFLOW2:
 
-        |get_match_level.svg|
+        |get_match_level.png|
 
 
 .. method:: FingerUnit.set_match_level(level: int) -> int
@@ -252,7 +252,7 @@ Methods
 
     UIFLOW2:
 
-        |set_match_level.svg|
+        |set_match_level.png|
 
 
 .. method:: FingerUnit.get_version() -> str

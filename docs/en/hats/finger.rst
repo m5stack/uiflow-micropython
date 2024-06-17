@@ -23,7 +23,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 FingerUnit class inherits FingerUnit class, See :ref:`unit.FingerUnit.Methods <unit.FingerUnit.Methods>` for more details.
