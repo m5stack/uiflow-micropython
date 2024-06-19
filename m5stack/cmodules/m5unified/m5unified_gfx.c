@@ -73,6 +73,14 @@ MAKE_METHOD_KW(gfx, drawRightString, 1);
 MAKE_METHOD_KW(gfx, print, 1);
 MAKE_METHOD_V(gfx, printf, 2, 32);
 MAKE_METHOD_KW(gfx, newCanvas, 1);
+MAKE_METHOD_1(gfx, writeCommand);
+MAKE_METHOD_1(gfx, writeCommand16);
+MAKE_METHOD_1(gfx, writeData);
+MAKE_METHOD_1(gfx, writeData16);
+MAKE_METHOD_1(gfx, writeData32);
+MAKE_METHOD_1(gfx, readData);
+MAKE_METHOD_1(gfx, readData16);
+MAKE_METHOD_1(gfx, readData32);
 #if MICROPY_PY_LVGL
 MAKE_METHOD_0(gfx, lvgl_init);
 MAKE_METHOD_0(gfx, lvgl_deinit);
@@ -126,7 +134,15 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, drawRightString), \
     MAKE_TABLE(gfx, print), \
     MAKE_TABLE(gfx, printf), \
-    MAKE_TABLE(gfx, newCanvas)
+    MAKE_TABLE(gfx, newCanvas), \
+    MAKE_TABLE(gfx, writeCommand), \
+    MAKE_TABLE(gfx, writeCommand16), \
+    MAKE_TABLE(gfx, writeData), \
+    MAKE_TABLE(gfx, writeData16), \
+    MAKE_TABLE(gfx, writeData32), \
+    MAKE_TABLE(gfx, readData), \
+    MAKE_TABLE(gfx, readData16), \
+    MAKE_TABLE(gfx, readData32)
 
 // -------- GFX device wrapper
 MAKE_METHOD_0(gfx, startWrite);
