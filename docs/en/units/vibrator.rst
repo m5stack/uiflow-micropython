@@ -3,9 +3,27 @@ Vibrator Unit
 
 .. include:: ../refs/unit.vibrator.ref
 
+
 Support the following products:
 
     |Vibrator|
+
+
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/vibrator/core_vibrator_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.svg|
+
+
+.. only:: builder_html
+
+    |core_vibrator_example.m5f2|
 
 
 class VibratorUnit
