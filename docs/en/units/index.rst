@@ -21,6 +21,7 @@ Unit
     env.rst
     extencoder.rst
     fader.rst
+    finger.rst
     flash_light.rst
     glass.rst
     glass2.rst

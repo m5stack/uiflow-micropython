@@ -9,6 +9,7 @@ HAT
     dac2.rst
     dlight.rst
     env.rst
+    finger.rst
     joyc.rst
     joystick.rst
     mini_encoder.rst

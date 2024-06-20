@@ -11,6 +11,7 @@ package(
         "dac2.py",
         "dlight.py",
         "env.py",
+        "finger.py",
         "hat_helper.py",
         "joyc.py",
         "joystick.py",

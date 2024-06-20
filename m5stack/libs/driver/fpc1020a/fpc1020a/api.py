@@ -365,6 +365,11 @@ class FPC1020A:
         rxdata, rest = self._receive(timeout=100000)
         if rest is not True or int(r[0]) != len(rxdata):
             return b""
+
+        f = open(file_name, "wb")
+        f.write(rxdata)
+        f.close()
+
         return rxdata
 
     def upload_characteristic(self, characteristic: bytes, timeout=5000) -> bool:
