@@ -30,6 +30,7 @@ build-job:
     changes:
       - "m5stack/**"
       - "tools/**"
+      - "third-party/**"
 
 
 build-docs:
@@ -61,7 +62,7 @@ release_job:
     refs:
       - tags
     variables:
-      - $CI_COMMIT_TAG =~ /^[0-9]+\.[0-9]+\.[0-9]+$/
+      - $CI_COMMIT_TAG =~ /^release\/[0-9]+\.[0-9]+\.[0-9]+$/
       - $CI_COMMIT_REF_SLUG == "develop_m5things"
   tags:
     - uiflow-firmware
