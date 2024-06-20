@@ -8,6 +8,23 @@ The following products are supported:
     |CardKB Hat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/cardkb/stickc_plus2_cardkb_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.svg|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_cardkb_example.m5f2|
+
+
 class CardKBHat
 ---------------
 
