@@ -19,11 +19,6 @@ Micropython Example::
     glass = Glass2Unit()
     glass.display.fill(0)
 
-
-UIFLOW2 Example:
-
-    |example.svg|
-
 .. only:: builder_html
 
 class Glass2Unit

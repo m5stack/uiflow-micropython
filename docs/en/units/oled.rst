@@ -19,11 +19,6 @@ Micropython Example::
     oled = OLEDUnit()
     oled.display.fill(0)
 
-
-UIFLOW2 Example:
-
-    |example.svg|
-
 .. only:: builder_html
 
 class OLEDUnit
