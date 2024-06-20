@@ -8,35 +8,16 @@ Support the following products:
     |RELAY|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import *
-
-    relay_0 = None
-
-    def setup():
-    global relay_0
-
-    relay_0 = RelayUnit((8,9))
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    print(relay_0.get_status())
-    relay_0.on()
-    time.sleep(1)
-    relay_0.off()
-    time.sleep(1)
-    relay_0.set_status(True)
-    time.sleep(1)
+    .. literalinclude:: ../../../examples/unit/relay/relay_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -59,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -71,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_status.svg|
+        |get_status.png|
 
 
 .. method:: RealyUnit.on()
@@ -80,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |on.svg|
+        |on.png|
 
 
 .. method:: RealyUnit.off()
@@ -89,7 +70,7 @@ Methods
 
     UIFLOW2:
 
-        |off.svg|
+        |off.png|
 
 
 .. method:: RealyUnit.set_status()
@@ -98,4 +79,4 @@ Methods
 
     UIFLOW2:
 
-        |set_status.svg|
+        |set_status.png|

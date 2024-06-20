@@ -24,14 +24,6 @@ Micropython Example::
     grove2grove.on()
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class Grove2GroveUnit
 ---------------------
 

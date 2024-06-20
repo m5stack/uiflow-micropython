@@ -8,27 +8,16 @@ Support the following products:
     |IR|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import *
-
-    ir_0 = None
-
-    def setup():
-    global ir_0
-
-    ir_0 = IR((36, 26))
-    ir_0.tx(0, 0)
-    M5.begin()
-    Widgets.fillScreen(0x222222)
+    .. literalinclude:: ../../../examples/unit/ir/ir_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -51,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -63,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |tx.svg|
+        |tx.png|
 
 
 .. method:: ir.rx_event()
@@ -72,4 +61,4 @@ Methods
 
     UIFLOW2:
 
-        |rx_event.svg|
+        |rx_event.png|
