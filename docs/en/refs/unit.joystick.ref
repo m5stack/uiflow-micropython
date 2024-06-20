@@ -3,18 +3,38 @@
     :height: 200px
     :width: 200px
 
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/example.png
+
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/init.png
 
 .. |get_x_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x_raw.svg
+.. |get_x_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x_raw.png
 
 .. |get_y_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y_raw.svg
+.. |get_y_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y_raw.png
 
 .. |get_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x.svg
+.. |get_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_x.png
 
 .. |get_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y.svg
+.. |get_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_y.png
 
 .. |swap_x.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_x.svg
+.. |swap_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_x.png
 
 .. |swap_y.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_y.svg
+.. |swap_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/swap_y.png
 
 .. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_button_status.svg
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick/get_button_status.png
+
+.. |joystick_stickcplus2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/joystick/joystick_stickcplus2_example.m5f2"
+        target="_blank"
+    >
+        joystick_stickcplus2_example.m5f2
+    </a>

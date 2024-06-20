@@ -3,19 +3,26 @@
     :height: 200px
     :width: 200px
 
-
 .. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/example.png
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/init.png
 
 .. |get_digital_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_digital_value.svg
+.. |get_digital_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_digital_value.png
 
 .. |get_analog_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_analog_value.svg
+.. |get_analog_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_analog_value.png
 
 .. |get_ohm.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_ohm.svg
-
+.. |get_ohm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/light/get_ohm.png
 
 .. |light_core_example.m5f2| raw:: html
 
-    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/light/light_core_example.m5f2" target="_blank">light_core_example.m5f2</a>
-
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/light/light_core_example.m5f2"
+        target="_blank"
+    >
+        light_core_example.m5f2
+    </a>

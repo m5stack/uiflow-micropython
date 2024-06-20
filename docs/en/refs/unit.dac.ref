@@ -3,24 +3,44 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac2/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/example.png
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/init.png
 
 .. |get_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_value.svg
+.. |get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_value.png
 
 .. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_voltage.svg
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_voltage.png
 
 .. |set_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_value.svg
+.. |set_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_value.png
 
 .. |set_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_voltage.svg
+.. |set_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_voltage.png
 
 .. |get_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_raw_value.svg
+.. |get_raw_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_raw_value.png
 
 .. |set_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_raw_value.svg
+.. |set_raw_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_raw_value.png
 
 .. |get_normalized_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_normalized_value.svg
+.. |get_normalized_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/get_normalized_value.png
 
 .. |set_normalized_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_normalized_value.svg
+.. |set_normalized_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/set_normalized_value.png
 
 .. |save_to_eeprom.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/save_to_eeprom.svg
+.. |save_to_eeprom.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dac/save_to_eeprom.png
+
+.. |dac_core_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/adc/dac_core_example.m5f2"
+        target="_blank"
+    >
+        dac_core_example.m5f2
+    </a>

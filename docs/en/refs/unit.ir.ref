@@ -1,19 +1,25 @@
-.. |IR| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/earth/earth_01.webp
+.. |IR| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/ir/ir_01.webp
     :target: https://docs.m5stack.com/en/unit/ir
     :height: 200px
     :width: 200px
 
-
 .. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/example.png
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/init.png
 
 .. |rx_event.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/rx_event.svg
+.. |rx_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/rx_event.png
 
 .. |tx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/tx.svg
-
+.. |tx.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ir/tx.png
 
 .. |ir_core_example.m5f2| raw:: html
 
-    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/unit/ir/ir_core_example.m5f2" target="_blank">ir_core_example.m5f2</a>
-
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/ir/ir_core_example.m5f2"
+        target="_blank"
+    >
+        ir_core_example.m5f2
+    </a>
