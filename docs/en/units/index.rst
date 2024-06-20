@@ -53,3 +53,4 @@ Unit
     vibrator.rst
     watering.rst
     weight_i2c.rst
+    heart.rst
