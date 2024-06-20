@@ -8,21 +8,16 @@ Support the following products:
     |EARTH|
 
 
-Micropython Example::
+Micropython Example:
 
-    import M5
-    from M5 import *
-    from unit import *
-
-    M5.begin()
-
-    earth_0 = Earth((36, 26))
-    print(earth_0.humidity())
+    .. literalinclude:: ../../../examples/unit/earth/earth_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html

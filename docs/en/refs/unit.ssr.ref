@@ -1,0 +1,13 @@
+
+.. |SSRUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/ssr/ssr_01.webp
+    :target: https://docs.m5stack.com/en/unit/ssr
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/init.svg
+.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/on.svg
+.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/off.svg
+.. |set_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/set_state.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/example.svg
+

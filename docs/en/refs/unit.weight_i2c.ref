@@ -1,7 +1,7 @@
 .. |WEIGHT I2C| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Unit-Weight%20I2C/img-0634712b-2a27-48cf-894f-d6708a771d47.webp
     :target: https://docs.m5stack.com/en/unit/Unit-Weight%20I2C
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 .. |init_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/init.svg
 

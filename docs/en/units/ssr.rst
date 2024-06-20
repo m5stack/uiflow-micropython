@@ -2,7 +2,7 @@
 SSRUnit
 =======
 
-.. include:: ../refs/unit.ssrunit.ref
+.. include:: ../refs/unit.ssr.ref
 
 UNIT SSR Solid-state relays are different from traditional electromagnetic relays in that their switching life are much longer than that of electromagnetic relays. With integrated MOC3043M optocoupler isolation and zero-crossing detection,It supports input 3.3-5V DC control signal, and control output single-phase 220-250V AC power.
 
@@ -23,12 +23,6 @@ Micropython Example::
     ssr.set_state(0)
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-.. only:: builder_html
-
 class SSRUnit
 -------------
 
@@ -43,7 +37,7 @@ Constructors
 
     UIFLOW2:
 
-        |__init__.svg|
+        |init.svg|
 
 
 Methods

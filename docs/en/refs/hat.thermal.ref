@@ -1,6 +1,6 @@
 .. |ThermalHat| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-thermal/hat-thermal_01.webp
     :target: https://docs.m5stack.com/en/hat/hat-thermal
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
-.. |init.svg| image:: ../../_static/hat/thermal/init.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/thermal/init.svg

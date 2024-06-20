@@ -33,11 +33,6 @@ Micropython Example::
     # Stop receiving data
     atomsocket.stop_receive_data()
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-.. only:: builder_html
 
 ATOMSocketBase Class
 --------------------
@@ -52,7 +47,7 @@ Constructors
     - ``_id``: Serial ID, not actually used by this base.
     - ``port``: UART pin numbers.
     - ``relay``: The relay pin number.
-    
+
 Methods
 -------
 

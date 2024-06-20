@@ -1,23 +1,33 @@
-.. |PIR| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/PIR/img-4647c010-1e57-4cc9-85e3-cbd450882074.webp
+.. |PIR| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/hat-pir/hat-pir_01.webp
     :target: https://docs.m5stack.com/en/hat/hat-pir
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 
 .. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/example.png
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/init.png
 
 .. |get_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/get_status.svg
+.. |get_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/get_status.png
 
 .. |enable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/enable_irq.svg
+.. |enable_irq.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/enable_irq.png
 
 .. |disable_irq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/disable_irq.svg
+.. |disable_irq.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/disable_irq.png
 
 .. |set_callback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/set_callback.svg
+.. |set_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/pir/set_callback.png
 
 
-.. |pir_core_example.m5f2| raw:: html
+.. |stickc_plus2_pir_hat_example.m5f2| raw:: html
 
-    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/m5f2_examples/hat/pir/pir_core_example.m5f2" target="_blank">pir_core_example.m5f2</a>
-
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hat/pir/stickc_plus2_pir_hat_example.m5f2"
+        target="_blank"
+    >
+        stickc_plus2_pir_hat_example.m5f2
+    </a>

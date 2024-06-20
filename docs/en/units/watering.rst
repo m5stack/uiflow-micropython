@@ -31,14 +31,6 @@ Micropython Example::
     print(water.get_raw())
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class WateringUnit
 ------------------
 

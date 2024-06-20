@@ -97,7 +97,9 @@ Methods
 
                 Mic.config("pin_data_in")
 
-            |config.svg|
+            |get_config_boolean.svg|
+
+            |get_config_int.svg|
 
         Set property:
 
@@ -105,7 +107,9 @@ Methods
 
                 Mic.config(pin_data_in=1)
 
-            |config1.svg|
+            |set_config_int.svg|
+
+            |set_config_boolean.svg|
 
 
 .. method:: Mic.begin() -> bool

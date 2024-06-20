@@ -30,14 +30,6 @@ Micropython Example::
         key.tick(None) # update key status
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class KeyUnit
 -------------
 

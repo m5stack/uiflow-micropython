@@ -10,23 +10,23 @@ Support the following products:
 
 |Motion|
 
-Micropython Example::
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from base import Motion
-    from hardware import *
-    i2c0 = I2C(0, scl=Pin(26), sda=Pin(0), freq=100000)
-    motion = Motion(i2c0)
-    motion.set_servo_angle(1, 90)
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/base/motion/atoms3_lite_motion_base_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
     |example.png|
 
+
 .. only:: builder_html
+
+    |atoms3_lite_motion_base_example.m5f2|
+
 
 class Motion
 ------------

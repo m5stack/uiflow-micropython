@@ -7,30 +7,24 @@ The `Dac2` class interfaces with a GP8413 15-bit Digital to Analog Converter (DA
 
 Support the following products:
 
+    |DACUnit|
 
-|DACUnit|
 
+Micropython Example:
 
-Micropython Example::
-
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import DACUnit
-
-    i2c = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
-    dac2_0 = DACUnit(i2c0, 0x59)
-    dac2_0.setDACOutputVoltageRange(dac2_0.RANGE_10V)
-    dac2_0.setVoltage(7.5, channel=dac2_0.CHANNEL_BOTH)
+    .. literalinclude:: ../../../examples/unit/dac/dac_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
+
+    |dac_core_example.m5f2|
 
 
 class DACUnit
