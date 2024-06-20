@@ -24,7 +24,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 .. only:: builder_html
 
@@ -43,7 +43,7 @@ Constructors
 
     UIFLOW2:
 
-        |__init__.svg|
+        |__init__.png|
 
 
 Methods
@@ -57,7 +57,7 @@ Methods
 
     UIFLOW2:
 
-        |get_servo_angle.svg|
+        |get_servo_angle.png|
 
 .. method:: Motion.set_servo_angle(ch, angle)
 
@@ -68,7 +68,7 @@ Methods
 
     UIFLOW2:
 
-        |set_servo_angle.svg|
+        |set_servo_angle.png|
 
 .. method:: Motion.get_servo_pulse(ch)
 
@@ -78,7 +78,7 @@ Methods
 
     UIFLOW2:
 
-        |get_servo_pulse.svg|
+        |get_servo_pulse.png|
 
 .. method:: Motion.write_servo_pulse(ch, pulse)
 
@@ -89,7 +89,7 @@ Methods
 
     UIFLOW2:
 
-        |write_servo_pulse.svg|
+        |write_servo_pulse.png|
 
 .. method:: Motion.get_motor_speed(ch)
 
@@ -99,7 +99,7 @@ Methods
 
     UIFLOW2:
 
-        |get_motor_speed.svg|
+        |get_motor_speed.png|
 
 .. method:: Motion.set_motor_speed(ch, speed)
 
@@ -110,6 +110,6 @@ Methods
 
     UIFLOW2:
 
-        |set_motor_speed.svg|
+        |set_motor_speed.png|
 
 
