@@ -54,6 +54,10 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Tough", "ffadcb704115b88ca9fd149e567c73f5", "TOUGH"),
 )
 
+third_party_info_table = (
+    FirewareInfo("SEEED_STUDIO_XIAO_ESP32S3", "375ae5281d0de5a7dba8296fac53f832", ""),
+)
+
 
 def get_version():
     version = None
@@ -120,6 +124,24 @@ def main():
             full_version = version
         if check_version_exists(online_version_infos, info.fid, full_version):
             pattern = f"./m5stack/build-{info.board}/uiflow-*-*.bin"
+            matching_files = glob.glob(pattern)
+            if matching_files:
+                upload(info.fid, full_version, matching_files[0])
+        else:
+            logging.warning(f"Version {full_version} already exists.")
+
+    for info in third_party_info_table:
+        if info.fid is None:
+            logging.warning(f"Skipping {info.board}")
+            continue
+
+        full_version = None
+        if len(info.suffix):
+            full_version = version + "-" + info.suffix
+        else:
+            full_version = version
+        if check_version_exists(online_version_infos, info.fid, full_version):
+            pattern = f"./third-party/build-{info.board}/uiflow-*-*.bin"
             matching_files = glob.glob(pattern)
             if matching_files:
                 upload(info.fid, full_version, matching_files[0])
