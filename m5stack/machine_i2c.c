@@ -290,9 +290,15 @@ mp_obj_t machine_hw_i2c_make_new(const mp_obj_type_t *type, size_t n_args, size_
         first_init = true;
     }
 
-    if (!first_init) {
-        i2c_driver_delete(self->port);
-    }
+    // if (!first_init) {
+    //     printf("Delete I2C device: %u\r\n", self->port);
+    //     i2c_driver_delete(self->port);
+    //     i2c_port_used[self->port] = DEVICE_NUMBER;
+    //     if (i2c_device[self->pos] != NULL) {
+    //         free(i2c_device[self->pos]);
+    //         i2c_device[self->pos] = NULL;
+    //     }
+    // }
 
     int scl = mp_hal_get_pin_obj(args[ARG_scl].u_obj);
     int sda = mp_hal_get_pin_obj(args[ARG_sda].u_obj);
