@@ -5,6 +5,7 @@ HAT
     :maxdepth: 1
 
     adc.rst
+    cardkb.rst
     dac.rst
     dac2.rst
     dlight.rst

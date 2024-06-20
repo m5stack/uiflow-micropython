@@ -4,6 +4,8 @@
 
 _attrs = {
     "ADCHat": "adc",
+    "CardKBHat": "cardkb",
+    "KeyCode": "cardkb",
     "DACHat": "dac",
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
