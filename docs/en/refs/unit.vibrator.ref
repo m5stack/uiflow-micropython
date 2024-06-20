@@ -1,0 +1,34 @@
+.. |Vibrator| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/vibrator/vibrator_01.webp
+    :target: https://docs.m5stack.com/en/unit/vibrator
+    :height: 200px
+    :width: 200 px
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/example.png
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/init.png
+
+.. |once.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/play_once.svg
+.. |once.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/play_once.png
+
+.. |set_freq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/set_freq.svg
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/set_freq.png
+
+.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/set_duty.svg
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/set_duty.png
+
+.. |turn_off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/turn_off.svg
+.. |turn_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/turn_off.png
+
+.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/deinit.svg
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/vibrator/deinit.png
+
+.. |core_vibrator_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/vibrator/core_vibrator_example.m5f2"
+        target="_blank"
+    >
+        core_vibrator_example.m5f2
+    </a>

@@ -50,5 +50,6 @@ Unit
     thermal.rst
     tof.rst
     ultrasonic.rst
+    vibrator.rst
     watering.rst
     weight_i2c.rst
