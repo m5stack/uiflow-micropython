@@ -242,7 +242,7 @@ bool max30100_detect_pulse(max30100_config_t *this, float sensor_value) {
                 }
 
                 if (this->debug) {
-                    printf("Beat duration: %u\n", beat_duration);
+                    printf("Beat duration: %lu\n", beat_duration);
                     printf("Raw BPM: %f\n", raw_bpm);
                 }
 
