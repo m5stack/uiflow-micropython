@@ -139,7 +139,7 @@ ifdef LVGL
 	LVGL_FLAG = 1
 endif
 
-GIT_VERSION := $(shell git describe --abbrev=7 --always)
+GIT_VERSION := $(shell git rev-parse --short HEAD)
 
 include ./include/files.mk
 
