@@ -24,6 +24,7 @@ build-job:
   artifacts:
     paths:
       - m5stack/build-*/uiflow-*-*.bin
+      - third-party/build-*/uiflow-*-*.bin
   tags:
     - uiflow-firmware
   only:
