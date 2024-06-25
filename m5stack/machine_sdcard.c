@@ -63,6 +63,8 @@ typedef struct _sdcard_obj_t {
     // The card structure duplicates the host. It's not clear if we
     // can avoid this given the way that it is copied.
     sdmmc_card_t card;
+    uint8_t shared_bus;
+
 } sdcard_card_obj_t;
 
 #define SDCARD_CARD_FLAGS_HOST_INIT_DONE 0x01
@@ -227,6 +229,7 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
 
     sdcard_card_obj_t *self = m_new_obj_with_finaliser(sdcard_card_obj_t);
     self->base.type = &machine_sdcard_type;
+    self->shared_bus = 0;
     self->flags = 0;
     // Note that these defaults are macros that expand to structure
     // constants so we can't directly assign them to fields.
@@ -275,16 +278,12 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
         SET_CONFIG_PIN(dev_config, gpio_cd, ARG_cd);
         SET_CONFIG_PIN(dev_config, gpio_wp, ARG_wp);
 
-        #if CONFIG_IDF_TARGET_ESP32
-        if (spi_host_id == HSPI_HOST) {
-        #else
-        if (spi_host_id == SPI3_HOST) {
-            #endif
-            // NOTE:
-            //     core2和cores3的屏幕和sd卡复用一个spi，
-            //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
-            DEBUG_printf("  Calling spi_bus_initialize()");
-            check_esp_err(spi_bus_initialize(spi_host_id, &bus_config, dma_channel));
+        esp_err_t result = spi_bus_initialize(spi_host_id, &bus_config, dma_channel);
+        if (result == ESP_ERR_INVALID_STATE) {
+            // Already initialised, so just return the existing object.
+            self->shared_bus = 1;
+        } else if (result != ESP_OK) {
+            check_esp_err(result);
         }
 
         DEBUG_printf("  Calling sdspi_host_init_device()");
@@ -339,11 +338,7 @@ STATIC mp_obj_t sd_deinit(mp_obj_t self_in) {
         }
         if (self->host.flags & SDMMC_HOST_FLAG_SPI) {
             // SD card used a (dedicated) SPI bus, so free that SPI bus.
-            #if CONFIG_IDF_TARGET_ESP32
-            if (self->host.slot == HSPI_HOST) {
-            #else
-            if (self->host.slot == SPI3_HOST) {
-                #endif
+            if (!self->shared_bus) {
                 spi_bus_free(self->host.slot);
             }
         }
