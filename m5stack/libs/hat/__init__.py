@@ -4,10 +4,13 @@
 
 _attrs = {
     "ADCHat": "adc",
+    "CardKBHat": "cardkb",
+    "KeyCode": "cardkb",
     "DACHat": "dac",
     "DAC2Hat": "dac2",
     "DLightHat": "dlight",
     "ENVHat": "env",
+    "FingerHat": "finger",
     "JoyCHat": "joyc",
     "JoystickHat": "joystick",
     "MiniEncoderCHat": "mini_encoder_c",

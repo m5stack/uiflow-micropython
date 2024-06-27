@@ -8,16 +8,21 @@ Support the following products:
     |ACCEL|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import AccelUnit
+    .. literalinclude:: ../../../examples/unit/accel/stickcplus2_unit_accel_example.py
+        :language: python
+        :linenos:
 
-    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-    accel_0 = AccelUnit(i2c0)
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickcplus2_unit_accel_example.m5f2|
 
 
 class AccelUnit
@@ -35,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -49,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_accel.svg|
+        |get_accel.png|
 
 
 .. method:: AccelUnit.enable_motion_detection(*, threshold: int = 18) -> None
@@ -66,9 +71,9 @@ Methods
 
     UIFLOW2:
 
-        |enable_motion_detection1.svg|
+        |enable_motion_detection1.png|
 
-        |enable_motion_detection2.svg|
+        |enable_motion_detection2.png|
 
 
 .. method:: AccelUnit.disable_motion_detection() -> None
@@ -77,7 +82,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_motion_detection.svg|
+        |disable_motion_detection.png|
 
 
 .. method:: AccelUnit.is_tap() -> bool
@@ -88,7 +93,7 @@ Methods
 
     UIFLOW2:
 
-        |is_tap.svg|
+        |is_tap.png|
 
 
 .. method:: AccelUnit.is_motion() -> bool
@@ -99,7 +104,7 @@ Methods
 
     UIFLOW2:
 
-        |is_motion.svg|
+        |is_motion.png|
 
 
 .. method:: AccelUnit.is_freefall() -> bool
@@ -110,7 +115,7 @@ Methods
 
     UIFLOW2:
 
-        |is_freefall.svg|
+        |is_freefall.png|
 
 
 .. method:: AccelUnit.enable_freefall_detection(*, threshold: int = 10, time: int = 25) -> None
@@ -134,9 +139,9 @@ Methods
 
     UIFLOW2:
 
-        |enable_freefall_detection1.svg|
+        |enable_freefall_detection1.png|
 
-        |enable_freefall_detection2.svg|
+        |enable_freefall_detection2.png|
 
 
 .. method:: AccelUnit.disable_freefall_detection() -> None
@@ -145,7 +150,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_freefall_detection.svg|
+        |disable_freefall_detection.png|
 
 
 .. method:: AccelUnit.enable_tap_detection(*, tap_count: int = 1, threshold: int = 20, duration: int = 50, latency: int = 20, window: int = 255) -> None
@@ -180,9 +185,9 @@ Methods
 
     UIFLOW2:
 
-        |enable_tap_detection1.svg|
+        |enable_tap_detection1.png|
 
-        |enable_tap_detection2.svg|
+        |enable_tap_detection2.png|
 
 
 .. method:: AccelUnit.disable_tap_detection() -> None
@@ -191,7 +196,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_tap_detection.svg|
+        |disable_tap_detection.png|
 
 
 .. method:: AccelUnit.get_data_rate() -> int
@@ -202,7 +207,7 @@ Methods
 
     UIFLOW2:
 
-        |get_data_rate.svg|
+        |get_data_rate.png|
 
 
 .. method:: AccelUnit.set_data_rate(rate: int) -> None
@@ -211,7 +216,7 @@ Methods
 
     UIFLOW2:
 
-        |set_data_rate.svg|
+        |set_data_rate.png|
 
 
 .. method:: AccelUnit.get_range() -> int
@@ -222,7 +227,7 @@ Methods
 
     UIFLOW2:
 
-        |get_range.svg|
+        |get_range.png|
 
 
 .. method:: AccelUnit.set_range(rate: int) -> None
@@ -231,7 +236,7 @@ Methods
 
     UIFLOW2:
 
-        |set_range.svg|
+        |set_range.png|
 
 
 Constants

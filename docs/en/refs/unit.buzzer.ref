@@ -1,7 +1,7 @@
 .. |Buzzer| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/buzzer/buzzer_01.webp
     :target: https://docs.m5stack.com/zh_CN/unit/buzzer
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 .. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/init.svg
 

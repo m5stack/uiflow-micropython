@@ -8,6 +8,23 @@ The following products are supported:
     |JoystickUnit|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/joystick/joystick_stickcplus2_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |joystick_stickcplus2_example.m5f2|
+
+
 class JoystickUnit
 ------------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -37,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x_raw.svg|
+        |get_x_raw.png|
 
 
 .. method:: JoystickUnit.get_y_raw() -> int
@@ -48,7 +65,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y_raw.svg|
+        |get_y_raw.png|
 
 
 .. method:: JoystickUnit.get_x() -> int
@@ -59,7 +76,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x.svg|
+        |get_x.png|
 
 
 .. method:: JoystickUnit.get_y() -> int
@@ -70,7 +87,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y.svg|
+        |get_y.png|
 
 
 .. method:: JoystickUnit.swap_x(swap: bool = True) -> None
@@ -81,7 +98,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_x.svg|
+        |swap_x.png|
 
 
 .. method:: JoystickUnit.swap_y(swap: bool = True) -> None
@@ -92,7 +109,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_y.svg|
+        |swap_y.png|
 
 .. method:: JoystickUnit.get_button_status() -> bool
 
@@ -102,4 +119,4 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|

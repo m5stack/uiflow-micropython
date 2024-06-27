@@ -4,13 +4,21 @@
     :height: 200px
     :width: 200px
 
-.. |__init__.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/__init__.svg
-.. |get_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_angle.svg
-.. |set_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_servo_angle.svg
-.. |get_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_servo_pulse.svg
-.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/write_servo_pulse.svg
-.. |get_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/get_motor_speed.svg
-.. |set_motor_speed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/set_motor_speed.svg
+.. |__init__.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/init.png
+.. |get_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_servo_angle.png
+.. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_servo_angle.png
+.. |get_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_servo_pulse.png
+.. |write_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/write_servo_pulse.png
+.. |get_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_motor_speed.png
+.. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_motor_speed.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/motion/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/example.png
 
+.. |atoms3_lite_motion_base_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/motion/atoms3_lite_motion_base_example.m5f2"
+        target="_blank"
+    >
+        atoms3_lite_motion_base_example.m5f2
+    </a>

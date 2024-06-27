@@ -41,7 +41,7 @@ class Haptic:
     def turn_off(self):
         self._pwm.duty_u16(0)
 
-    def deint(self) -> None:
+    def deinit(self) -> None:
         """Disabled Haptic Driver."""
         self._timer.deinit()
         self._pwm.deinit()

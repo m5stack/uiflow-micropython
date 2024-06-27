@@ -1145,6 +1145,51 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     return MP_OBJ_FROM_PTR(res);
 }
 
+mp_obj_t gfx_writeCommand(mp_obj_t self, mp_obj_t cmd) {
+    auto gfx = getGfx(&self);
+    gfx->writeCommand((uint8_t)mp_obj_get_int(cmd));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeCommand16(mp_obj_t self, mp_obj_t cmd) {
+    auto gfx = getGfx(&self);
+    gfx->writeCommand16((uint16_t)mp_obj_get_int(cmd));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData((uint8_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData16(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData16((uint16_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData32(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData32((uint32_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_readData(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData8((uint8_t)mp_obj_get_int(index)));
+}
+
+mp_obj_t gfx_readData16(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData16((uint8_t)mp_obj_get_int(index)));
+}
+
+mp_obj_t gfx_readData32(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData32((uint8_t)mp_obj_get_int(index)));
+}
+
 // -------- GFX device wrapper
 mp_obj_t gfx_startWrite(mp_obj_t self) {
     auto gfx = getGfx(&self);

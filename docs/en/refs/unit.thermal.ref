@@ -1,7 +1,7 @@
 .. |ThermalUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/THERMAL/img-92fc4d7d-3b52-4ee6-b483-80d7209289e3.webp
     :target: https://docs.m5stack.com/en/unit/THERMAL
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/init.svg

@@ -4,14 +4,14 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/init.svg
-.. |set_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/set_mode.svg
-.. |get_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/get_mode.svg
-.. |get_led_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/get_led_state.svg
-.. |set_led_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/set_led_state.svg
-.. |get_relay_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/get_relay_state.svg
-.. |set_relay_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/set_relay_state.svg
-.. |set_relay_all.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/set_relay_all.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/init.svg
+.. |set_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/set_mode.svg
+.. |get_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/get_mode.svg
+.. |get_led_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/get_led_state.svg
+.. |set_led_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/set_led_state.svg
+.. |get_relay_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/get_relay_state.svg
+.. |set_relay_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/set_relay_state.svg
+.. |set_relay_all.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/set_relay_all.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/relay4/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/4relay/example.svg
 

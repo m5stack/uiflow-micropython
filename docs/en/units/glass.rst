@@ -1,24 +1,49 @@
-Glass Unit
-==========
+
+GlassUnit
+=========
 
 .. include:: ../refs/unit.glass.ref
 
-Unit Glass is a 1.51-inch transparent OLED expansion screen unit. It adopts
-STM32+SSD1309 driver scheme,resolution is 128*64, monochrome display,
-transparent area is 128*56. The MCU adopts STM32F030F4P6, which integrates two
-input buttons and one way buzzer to facilitate user interaction with the screen,
-and supports control and firmware upgrade through I2C (addr: 0x3D) communication
-interface. This transparent OLED screen extension is suitable for embedding in
-various home products or various control devices as a display panel.
+Unit Glass is a 1.51-inch transparent OLED expansion screen unit. It adopts STM32+SSD1309 driver scheme,resolution is 128*64, monochrome display, transparent area is 128*56.
 
+Support the following products:
 
-Supported products:
+|GlassUnit|
 
-    |GlassUnit|
+Micropython Example::
 
-
-Micropython example::
-
+    import os, sys, io
     import M5
-    display = M5.addDisplay({"unit_glass":{"enabled":True, "pin_scl": 33, "pin_sda": 32, "i2c_addr": 0x3D, "i2c_freq": 400000}}) # Add Glass unit
-    display.clear(0xffffff) # Clear screen
+    from M5 import *
+    from unit import GlassUnit
+    glass = GlassUnit()
+    glass.display.fill(0)
+
+.. only:: builder_html
+
+class GlassUnit
+---------------
+
+Constructors
+------------
+
+.. class:: GlassUnit(port, address, freq)
+
+    Initialize the Unit Glass
+
+    :param tuple port: The port to which the Unit Glass is connected. port[0]: scl pin, port[1]: sda pin.
+    :param int|list|tuple address: I2C address of the Unit Glass, default is 0x3D.
+    :param int freq: I2C frequency of the Unit Glass.
+
+    UIFLOW2:
+
+        |init.svg|
+
+
+Methods
+-------
+
+
+
+
+
