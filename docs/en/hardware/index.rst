@@ -12,3 +12,4 @@ Hardware
     rotary.rst
     speaker.rst
     m5ble.rst
+    audio.rst

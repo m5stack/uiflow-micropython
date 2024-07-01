@@ -1,0 +1,20 @@
+
+.. |init.svg| image:: ../../_static/system/audio/player/init.svg
+
+.. |play.svg| image:: ../../_static/system/audio/player/play.svg
+
+.. |play_raw.svg| image:: ../../_static/system/audio/player/play_raw.svg
+
+.. |play_tone.svg| image:: ../../_static/system/audio/player/play_tone.svg
+
+.. |pause.svg| image:: ../../_static/system/audio/player/pause.svg
+
+.. |resume.svg| image:: ../../_static/system/audio/player/resume.svg
+
+.. |stop.svg| image:: ../../_static/system/audio/player/stop.svg
+
+.. |pos.svg| image:: ../../_static/system/audio/player/pos.svg
+
+.. |set_vol.svg| image:: ../../_static/system/audio/player/set_vol.svg
+
+.. |get_vol.svg| image:: ../../_static/system/audio/player/get_vol.svg
