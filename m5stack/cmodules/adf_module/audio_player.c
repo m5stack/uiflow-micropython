@@ -2,6 +2,7 @@
  * ESPRESSIF MIT License
  *
  * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
  * it is free of charge, to any person obtaining a copy of this software and associated
@@ -82,6 +83,7 @@ static TaskHandle_t play_tone_bg_task_handle = NULL;
 static TaskHandle_t play_raw_bg_task_handle = NULL;
 static bool play_tone_task_running = false;
 static bool play_raw_task_running = false;
+static bool pause_flag = false;
 
 static const MP_DEFINE_STR_OBJ(player_info_input_obj, "http|file stream");
 static const MP_DEFINE_STR_OBJ(player_info_codec_obj, "mp3|amr");
@@ -136,8 +138,8 @@ static esp_audio_handle_t audio_player_create(void) {
     // init player
     esp_audio_cfg_t cfg = DEFAULT_ESP_AUDIO_CONFIG();
     cfg.vol_handle = board_codec_init();
-    cfg.vol_set = (audio_volume_set)audio_hal_set_volume;
-    cfg.vol_get = (audio_volume_get)audio_hal_get_volume;
+    cfg.vol_set = (audio_volume_set)board_codec_volume_set;
+    cfg.vol_get = (audio_volume_get)board_codec_volume_get;
     cfg.resample_rate = 48000;
     cfg.prefer_type = ESP_AUDIO_PREFER_MEM;
     esp_audio_handle_t player = esp_audio_create(&cfg);
@@ -164,31 +166,23 @@ static esp_audio_handle_t audio_player_create(void) {
 
     // add decoder
     // mp3
-    mp3_decoder_cfg_t mp3_dec_cfg = DEFAULT_MP3_DECODER_CONFIG();
-    mp3_dec_cfg.task_core = 1;
+    mp3_decoder_cfg_t mp3_dec_cfg = BOARD_MP3_DECODER_CONFIG();
     esp_audio_codec_lib_add(player, AUDIO_CODEC_TYPE_DECODER, mp3_decoder_init(&mp3_dec_cfg));
     // amr
-    amr_decoder_cfg_t amr_dec_cfg = DEFAULT_AMR_DECODER_CONFIG();
-    amr_dec_cfg.task_core = 1;
+    amr_decoder_cfg_t amr_dec_cfg = BOARD_AMR_DECODER_CONFIG();
     esp_audio_codec_lib_add(player, AUDIO_CODEC_TYPE_DECODER, amr_decoder_init(&amr_dec_cfg));
     // wav
-    wav_decoder_cfg_t wav_dec_cfg = DEFAULT_WAV_DECODER_CONFIG();
-    wav_dec_cfg.task_core = 1;
+    wav_decoder_cfg_t wav_dec_cfg = BOARD_WAV_DECODER_CONFIG();
     esp_audio_codec_lib_add(player, AUDIO_CODEC_TYPE_DECODER, wav_decoder_init(&wav_dec_cfg));
     // pcm
-    pcm_decoder_cfg_t pcm_dec_cfg = DEFAULT_PCM_DECODER_CONFIG();
-    pcm_dec_cfg.task_core = 0;
-    pcm_dec_cfg.channels = 1;
-    pcm_dec_cfg.rate = 8000;
+    pcm_decoder_cfg_t pcm_dec_cfg = BOARD_PCM_DECODER_CONFIG();
     pcm_decoder = pcm_decoder_init(&pcm_dec_cfg);
     esp_audio_codec_lib_add(player, AUDIO_CODEC_TYPE_DECODER, pcm_decoder);
 
     // Create writers and add to esp_audio
     // i2s_stream_cfg_t i2s_writer = I2S_STREAM_CFG_DEFAULT_WITH_PARA(I2S_NUM_0, 48000, I2S_DATA_BIT_WIDTH_16BIT, AUDIO_STREAM_WRITER);
     if (i2s_stream_writer == NULL) {
-        i2s_stream_cfg_t i2s_writer = I2S_STREAM_CFG_DEFAULT();
-        i2s_writer.task_core = 1;
-        i2s_writer.uninstall_drv = false;
+        i2s_stream_cfg_t i2s_writer = BOARD_I2S_STREAM_CFG_DEFAULT();
         i2s_stream_writer = i2s_stream_init(&i2s_writer);
         esp_audio_output_stream_add(player, i2s_stream_writer);
     }
@@ -269,7 +263,7 @@ static mp_obj_t audio_player_play_helper(audio_player_obj_t *self, mp_uint_t n_a
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
     if (args[ARG_volume].u_int != -1) {
-        check_esp_err(audio_hal_set_volume(board_codec_init(), volume));
+        check_esp_err(esp_audio_vol_set(self->player, volume));
     }
 
     if (sync == true) {
@@ -312,9 +306,15 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
 
     int index = 0;
     while (play_raw_task_running || sync) {
+
+        if (pause_flag) {
+            vTaskDelay(pdMS_TO_TICKS(100));
+            continue;
+        }
+
         int read_size = 4096;
         if (remaining_length == 0 || remaining_length == 1) {
-            mp_printf(&mp_plat_print, "raw play complete\n");
+            // mp_printf(&mp_plat_print, "raw play complete\n");
             audio_element_set_ringbuf_done(raw_stream_reader);
             audio_element_finish_state(raw_stream_reader);
             break;
@@ -330,7 +330,7 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
     }
 
     if (remaining_length > 0) {
-        mp_printf(&mp_plat_print, "tone raw complete\n");
+        // mp_printf(&mp_plat_print, "tone raw complete\n");
         audio_element_set_ringbuf_done(raw_stream_reader);
         audio_element_finish_state(raw_stream_reader);
     }
@@ -413,7 +413,7 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
     if (args[ARG_volume].u_int != -1) {
-        check_esp_err(audio_hal_set_volume(board_codec_init(), args[ARG_volume].u_int));
+        check_esp_err(esp_audio_vol_set(self->player, volume));
     }
 
     audio_element_info_t info;
@@ -425,6 +425,7 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
     int remaining_length = bufinfo.len;
 
     if (args[ARG_sync].u_bool == true) {
+        pause_flag = false;
         audio_player_play_raw_helper(self->player, bufinfo.buf, bufinfo.len, sample, stereo ? 2 : 1, bits, true);
     } else {
         static play_info_t play_info;
@@ -435,6 +436,7 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
         play_info.info.raw.channels = stereo ? 2 : 1;
         play_info.info.raw.bits = bits;
         play_raw_task_running = true;
+        pause_flag = false;
         BaseType_t createStatus = xTaskCreatePinnedToCore(
             play_raw_bg_task,
             "play_raw_bg_task",
@@ -442,7 +444,7 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
             &play_info,
             5,
             &play_raw_bg_task_handle,
-            0
+            1
             );
         if (createStatus != pdPASS) {
             ESP_LOGI("*", "audio_play_tone_bg create task fail");
@@ -503,9 +505,15 @@ void audio_player_play_tone_helper(esp_audio_handle_t player, uint16_t freq, flo
 
     char *buf = (char *)malloc(4096);
     while (play_tone_task_running || sync) {
+
+        if (pause_flag) {
+            vTaskDelay(pdMS_TO_TICKS(100));
+            continue;
+        }
+
         int read_size = 4096;
         if (remaining_length == 0 || remaining_length == 1) {
-            mp_printf(&mp_plat_print, "tone play complete\n");
+            // mp_printf(&mp_plat_print, "tone play complete\n");
             audio_element_set_ringbuf_done(raw_stream_reader);
             audio_element_finish_state(raw_stream_reader);
             break;
@@ -528,7 +536,7 @@ void audio_player_play_tone_helper(esp_audio_handle_t player, uint16_t freq, flo
     }
 
     if (remaining_length > 0) {
-        mp_printf(&mp_plat_print, "tone play complete\n");
+        // mp_printf(&mp_plat_print, "tone play complete\n");
         audio_element_set_ringbuf_done(raw_stream_reader);
         audio_element_finish_state(raw_stream_reader);
     }
@@ -569,7 +577,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
     bool sync = args[ARG_sync].u_bool;
 
     if (volume != -1) {
-        check_esp_err(audio_hal_set_volume(board_codec_init(), volume));
+        check_esp_err(esp_audio_vol_set(self->player, volume));
     }
 
     // 停止 raw task
@@ -602,6 +610,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
     if (args[ARG_sync].u_bool == true) {
+        pause_flag = false;
         audio_player_play_tone_helper(self->player, freq, time, true);
     } else {
         static play_info_t play_info;
@@ -609,6 +618,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
         play_info.info.tone.freq = freq;
         play_info.info.tone.time = time;
         play_tone_task_running = true;
+        pause_flag = false;
         BaseType_t createStatus = xTaskCreatePinnedToCore(
             play_tone_bg_task,
             "play_tone_bg_task",
@@ -616,7 +626,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
             &play_info,
             5,
             &play_tone_bg_task_handle,
-            0
+            1
             );
         if (createStatus != pdPASS) {
             ESP_LOGI("*", "audio_play_tone_bg create task fail");
@@ -665,6 +675,7 @@ static MP_DEFINE_CONST_FUN_OBJ_KW(audio_player_stop_obj, 1, audio_player_stop);
 
 static mp_obj_t audio_player_pause(mp_obj_t self_in) {
     audio_player_obj_t *self = self_in;
+    pause_flag = true;
     return mp_obj_new_int(esp_audio_pause(self->player));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_pause_obj, audio_player_pause);
@@ -672,6 +683,7 @@ static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_pause_obj, audio_player_pause);
 
 static mp_obj_t audio_player_resume(mp_obj_t self_in) {
     audio_player_obj_t *self = self_in;
+    pause_flag = false;
     return mp_obj_new_int(esp_audio_resume(self->player));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_resume_obj, audio_player_resume);

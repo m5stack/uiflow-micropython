@@ -1,9 +1,15 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include "board_init.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
 
 static char *TAG = "s3_box_3_board";
-static audio_hal_handle_t audio_hal = NULL;
+static void *audio_hal = NULL;
 
 #define AUDIO_CODEC_DEFAULT_CONFIG(){                   \
         .adc_input  = AUDIO_HAL_ADC_INPUT_LINE1,        \
@@ -17,7 +23,7 @@ static audio_hal_handle_t audio_hal = NULL;
         },                                              \
 };
 
-audio_hal_handle_t board_codec_init(void)
+void * board_codec_init(void)
 {
     if (audio_hal) {
         return audio_hal;
@@ -31,4 +37,19 @@ audio_hal_handle_t board_codec_init(void)
     audio_hal_ctrl_codec(adc_hal, AUDIO_HAL_CODEC_MODE_ENCODE, AUDIO_HAL_CTRL_START);
 
     return audio_hal;
+}
+
+
+// NOTE: 使用内联函数???
+int board_codec_volume_set(void *hd, int vol)
+{
+    return audio_hal_set_volume(hd, vol);
+
+}
+
+
+// NOTE: 使用内联函数???
+int board_codec_volume_get(void *hd, int *vol)
+{
+    return audio_hal_get_volume(hd, vol);
 }

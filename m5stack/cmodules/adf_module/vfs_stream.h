@@ -2,6 +2,7 @@
  * ESPRESSIF MIT License
  *
  * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
  * it is free of charge, to any person obtaining a copy of this software and associated

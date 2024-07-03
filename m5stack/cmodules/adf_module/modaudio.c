@@ -2,6 +2,7 @@
  * ESPRESSIF MIT License
  *
  * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
  * it is free of charge, to any person obtaining a copy of this software and associated
@@ -64,8 +65,8 @@ static const mp_rom_map_elem_t audio_module_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_mem_info), MP_ROM_PTR(&audio_mem_info_obj) },
     { MP_ROM_QSTR(MP_QSTR_verno), MP_ROM_PTR(&audio_mod_verno_obj) },
 
-    { MP_ROM_QSTR(MP_QSTR_player), MP_ROM_PTR(&audio_player_type) },
-    { MP_ROM_QSTR(MP_QSTR_recorder), MP_ROM_PTR(&audio_recorder_type) },
+    { MP_ROM_QSTR(MP_QSTR_Player), MP_ROM_PTR(&audio_player_type) },
+    { MP_ROM_QSTR(MP_QSTR_Recorder), MP_ROM_PTR(&audio_recorder_type) },
 
     // audio_err_t
     { MP_ROM_QSTR(MP_QSTR_AUDIO_OK), MP_ROM_INT(ESP_ERR_AUDIO_NO_ERROR) },

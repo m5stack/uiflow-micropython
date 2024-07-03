@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2019 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
+#
+# SPDX-License-Identifier: MIT
+
 add_library(adf_module INTERFACE)
 
 set(ADF_COMPS  "$ENV{ADF_PATH}/components")

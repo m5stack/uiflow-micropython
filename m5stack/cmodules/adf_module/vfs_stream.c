@@ -2,6 +2,7 @@
  * ESPRESSIF MIT License
  *
  * Copyright (c) 2019 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
+ * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
  * it is free of charge, to any person obtaining a copy of this software and associated
@@ -80,6 +81,7 @@ typedef struct vfs_stream {
     } file;
 } vfs_stream_t;
 
+static struct lfs2_file_config lfs2_file_conf = { 0 };
 
 static esp_err_t _vfs_open(audio_element_handle_t self);
 static esp_err_t _vfs_close(audio_element_handle_t self);
@@ -206,8 +208,10 @@ static esp_err_t _vfs_open(audio_element_handle_t self) {
     //     goto _vfs_init_exit;
     // }
     if (strstr(uri, "flash")) {
+        ESP_LOGD(TAG, "in flash");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
-    } else if (strstr(uri, "sdcard")) {
+    } else if (strstr(uri, "sd")) {
+        ESP_LOGD(TAG, "in sd");
         vfs->fatfs = &((fs_user_mount_t *)MP_OBJ_TO_PTR(existing_mount->obj))->fatfs;
     }
 
@@ -218,13 +222,11 @@ static esp_err_t _vfs_open(audio_element_handle_t self) {
 
     if (vfs->lfs2) {
         if (vfs->type == AUDIO_STREAM_READER) {
-
-            struct lfs2_file_config config;
-            memset(&config, 0x00, sizeof(config));
-            // TODO
-            config.buffer = malloc(vfs->lfs2->cfg->cache_size * sizeof(uint8_t));
+            if (lfs2_file_conf.buffer == NULL) {
+                lfs2_file_conf.buffer = malloc(vfs->lfs2->cfg->cache_size * sizeof(uint8_t));
+            }
             vfs->file.lfs2_file = (lfs2_file_t *)malloc(1 * sizeof(lfs2_file_t));
-            int res = lfs2_file_opencfg(vfs->lfs2, vfs->file.lfs2_file, path_out, LFS2_O_RDONLY, &config);
+            int res = lfs2_file_opencfg(vfs->lfs2, vfs->file.lfs2_file, path_out, LFS2_O_RDONLY, &lfs2_file_conf);
 
             if (res == LFS2_ERR_OK) {
                 struct lfs2_info fno;
@@ -242,13 +244,11 @@ static esp_err_t _vfs_open(audio_element_handle_t self) {
                 return ESP_FAIL;
             }
         } else if (vfs->type == AUDIO_STREAM_WRITER) {
-
-            struct lfs2_file_config config;
-            memset(&config, 0x00, sizeof(config));
-            // TODO
-            config.buffer = malloc(vfs->lfs2->cfg->cache_size * sizeof(uint8_t));
+            if (lfs2_file_conf.buffer == NULL) {
+                lfs2_file_conf.buffer = malloc(vfs->lfs2->cfg->cache_size * sizeof(uint8_t));
+            }
             vfs->file.lfs2_file = (lfs2_file_t *)malloc(1 * sizeof(lfs2_file_t));
-            int res = lfs2_file_opencfg(vfs->lfs2, vfs->file.lfs2_file, path_out, LFS2_O_RDWR | LFS2_O_CREAT | LFS2_O_TRUNC, &config);
+            int res = lfs2_file_opencfg(vfs->lfs2, vfs->file.lfs2_file, path_out, LFS2_O_RDWR | LFS2_O_CREAT | LFS2_O_TRUNC, &lfs2_file_conf);
 
             if (res == LFS2_ERR_OK) {
                 vfs->w_type = get_type(path_out);
@@ -274,10 +274,10 @@ static esp_err_t _vfs_open(audio_element_handle_t self) {
         }
     } else if (vfs->fatfs) {
         if (vfs->type == AUDIO_STREAM_READER) {
-            FRESULT ret = f_open(vfs->fatfs, &vfs->file.fat_file, path, FA_READ);
+            FRESULT ret = f_open(vfs->fatfs, &vfs->file.fat_file, path_out, FA_READ);
             if (ret == FR_OK) {
                 FILINFO fno = { 0 };
-                f_stat(vfs->fatfs, path, &fno);
+                f_stat(vfs->fatfs, path_out, &fno);
                 info.total_bytes = fno.fsize;
                 ESP_LOGI(TAG, "File size: %d byte, file position: %d", (int)fno.fsize, (int)info.byte_pos);
                 if (info.byte_pos > 0) {
@@ -291,7 +291,7 @@ static esp_err_t _vfs_open(audio_element_handle_t self) {
                 return ESP_FAIL;
             }
         } else if (vfs->type == AUDIO_STREAM_WRITER) {
-            FRESULT ret = f_open(vfs->fatfs, &vfs->file.fat_file, path, FA_WRITE | FA_CREATE_ALWAYS);
+            FRESULT ret = f_open(vfs->fatfs, &vfs->file.fat_file, path_out, FA_WRITE | FA_CREATE_ALWAYS);
             if (ret == FR_OK) {
                 vfs->w_type = get_type(path_out);
                 UINT bw = 0;
