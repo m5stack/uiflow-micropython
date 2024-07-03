@@ -496,7 +496,7 @@ void audio_player_play_tone_helper(esp_audio_handle_t player, uint16_t freq, flo
     audio_element_setinfo(pcm_decoder, &info);
 
     double increment = 2.0 * PI * freq / TONE_SAMPLE_RATE;
-    size_t sample_data_len = TONE_SAMPLE_RATE * 2 * time;
+    size_t sample_data_len = round((double)(TONE_SAMPLE_RATE * 2 * time));
     int remaining_length = sample_data_len;
     size_t i = 0;
     double phase = 0.0;
@@ -572,7 +572,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
 
     audio_player_obj_t *self = (audio_player_obj_t *)args_in[0];
     int freq = args[ARG_freq].u_int;
-    int time = mp_obj_get_float(args[ARG_time].u_obj);
+    float time = mp_obj_get_float(args[ARG_time].u_obj);
     int volume = args[ARG_volume].u_int;
     bool sync = args[ARG_sync].u_bool;
 
