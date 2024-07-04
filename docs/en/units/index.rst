@@ -28,6 +28,7 @@ Unit
     glass2.rst
     grove2grove.rst
     hall_effect.rst
+    imu.rst
     ir.rst
     joystick.rst
     key.rst

@@ -59,6 +59,7 @@ package(
         "modbus/master/uSerial.py",
         "paj7620.py",
         "mlx90640.py",
+        "mpu6886.py",
         "timezone.py",
         "vl53l1x.py",
     ),
