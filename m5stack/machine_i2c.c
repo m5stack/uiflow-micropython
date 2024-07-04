@@ -210,10 +210,33 @@ void free_bus(uint8_t pos) {
 int machine_hw_i2c_transfer(mp_obj_base_t *self_in, uint16_t addr, size_t n, mp_machine_i2c_buf_t *bufs, unsigned int flags) {
     machine_hw_i2c_obj_t *self = MP_OBJ_TO_PTR(self_in);
     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+
+    int data_len = 0;
+
+    if (flags & MP_MACHINE_I2C_FLAG_WRITE1) {
+        i2c_master_start(cmd);
+        i2c_master_write_byte(cmd, addr << 1, true);
+        i2c_master_write(cmd, bufs->buf, bufs->len, true);
+        data_len += bufs->len;
+        --n;
+        ++bufs;
+    }
+
     i2c_master_start(cmd);
     i2c_master_write_byte(cmd, addr << 1 | (flags & MP_MACHINE_I2C_FLAG_READ), true);
 
-    int data_len = 0;
+    // printf("I2C transfer: addr=%02X, n=%u", addr, n);
+    // if (flags & MP_MACHINE_I2C_FLAG_READ) {
+    //     printf(", read");
+    // }
+    // else if (flags & MP_MACHINE_I2C_FLAG_STOP) {
+    //     printf(", stop");
+    // }
+    // else {
+    //     printf(", write");
+    // }
+    // printf("\n");
+
     for (; n--; ++bufs) {
         if (flags & MP_MACHINE_I2C_FLAG_READ) {
             i2c_master_read(cmd, bufs->buf, bufs->len, n == 0 ? I2C_MASTER_LAST_NACK : I2C_MASTER_ACK);
