@@ -63,6 +63,7 @@ package(
         "lorawan.py",
         "minioled.py",
         "miniscale.py",
+        "mqtt.py",
         "ncir.py",
         "ncir2.py",
         "neco.py",

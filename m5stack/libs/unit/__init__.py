@@ -62,6 +62,7 @@ _attrs = {
     "LoRaWANUnit": "lorawan",
     "MiniOLEDUnit": "minioled",
     "MiniScaleUnit": "miniscale",
+    "MQTTUnit": "mqtt",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
     "NECOUnit": "neco",
