@@ -1,0 +1,8 @@
+menu "Audio Board Configuration"
+
+    config ESP32_S3_BOX_3_BOARD
+        bool "select BOX-3"
+        default y
+        help
+            Enable this option to support codec ES8311.
+endmenu

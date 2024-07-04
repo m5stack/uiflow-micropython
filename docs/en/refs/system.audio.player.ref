@@ -1,0 +1,24 @@
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/init.png
+
+.. |play_local_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_local_file.png
+
+.. |play_local_file1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_local_file1.png
+
+.. |play_sdcard_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_sdcard_file.png
+
+.. |play_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_raw.png
+
+.. |play_tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_tone.png
+
+.. |pause.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/pause.png
+
+.. |resume.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/resume.png
+
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/stop.png
+
+.. |pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/pos.png
+
+.. |set_vol.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/set_vol.png
+
+.. |get_vol.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/get_vol.png

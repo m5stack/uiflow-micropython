@@ -8,21 +8,11 @@ Support the following products:
     |ADC|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import *
-
-    adc_0 = None
-
-    def setup():
-    global adc_0
-
-    print(adc_0.get_voltage())
-    time.sleep(1)
+    .. literalinclude:: ../../../examples/unit/adc/adc_cores3_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
@@ -32,7 +22,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |adc_core_example.m5f2|
+    |adc_cores3_example.m5f2|
 
 
 class ADCUnit
