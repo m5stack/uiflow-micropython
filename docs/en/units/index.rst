@@ -36,6 +36,7 @@ Unit
     lora_e220.rst
     minioled.rst
     miniscale.rst
+    mqtt.rst
     ncir.rst
     oled.rst
     op90.rst
