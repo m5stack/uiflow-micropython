@@ -8,7 +8,6 @@
 .. |modem_is_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/check_modem_is_ready.png
 .. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_firmware_version.png
 .. |get_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_baudrate.png
-.. |get_mqtt_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_mqtt_status.png
 .. |get_network_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_network_status.png
 .. |get_network_parameters.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_network_parameters.png
 .. |get_mac_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt/get_mac_address.png

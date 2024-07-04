@@ -196,17 +196,6 @@ Methods
         |get_baudrate.png|
 
 
-.. method:: MQTTUnit.get_mqtt_status()
-
-    To check whether the MQTT status is connected or disconnected. 
-
-    - Return: ``int``: 0 ~ 1
-
-    UIFLOW2:
-
-        |get_mqtt_status.png|
-
-
 .. method:: MQTTUnit.get_network_status()
 
     To check whether the network status is connected or disconnected. 
