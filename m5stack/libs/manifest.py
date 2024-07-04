@@ -4,6 +4,7 @@
 
 include("bleuart/manifest.py")
 include("m5ble/manifest.py")
+include("m5espnow/manifest.py")
 include("driver/manifest.py")
 include("ezdata/manifest.py")
 include("hardware/manifest.py")

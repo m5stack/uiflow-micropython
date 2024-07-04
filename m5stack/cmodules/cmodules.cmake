@@ -18,3 +18,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/m5things/m5things.cmake)
 
 # add m5unified module
 include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
+
+if(ADF_MODULE_ENABLE)
+    include(${CMAKE_CURRENT_LIST_DIR}/adf_module/micropython.cmake)
+endif()

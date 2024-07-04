@@ -7,35 +7,23 @@ umqtt.default
 
 `umqtt.default` rewrites the :py:meth:`subscribe` method and supports ca file.
 
-Micropython Example::
 
-    import umqtt
-    c = umqtt.MQTTClient(
-        "umqtt_client",
-        "emqxsl.cn",
-        port=8883, user='test', password='test', keepalive=60,
-        ssl=True,
-        ssl_params={"cert": "/flash/ca.crt", "server_hostname": "emqxsl.cn"}
-    )
+Micropython Example:
 
-    def on_sub_cb(data):
-        print("topic:", data[0])
-        print("msg:", data[1])
+    .. literalinclude:: ../../../examples/softwave/mqtt/mqtts_cores3_example.py
+        :language: python
+        :linenos:
 
-    if not c.connect(clean_session=True):
-        print("New session being set up")
-        c.subscribe(b"testtopic", on_sub_cb)
-
-    while True:
-        c.wait_msg()
 
 UIFLOW2 Example:
 
     |example.svg|
 
+
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/software/umqtt/example.m5f2>`
+    |mqtts_cores3_example.m5f2|
+
 
 Constructors
 ------------
@@ -63,8 +51,10 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
-        |init1.svg|
+        |init.png|
+
+        |init_ssl.png|
+
 
 Methods
 -------
@@ -77,7 +67,8 @@ Methods
 
     UIFLOW2:
 
-        |connect.svg|
+        |connect.png|
+
 
 .. method:: MQTTClient.disconnect() -> None
 
@@ -85,7 +76,8 @@ Methods
 
     UIFLOW2:
 
-        |disconnect.svg|
+        |disconnect.png|
+
 
 .. method:: MQTTClient.reconnect() -> None
 
@@ -93,7 +85,8 @@ Methods
 
     UIFLOW2:
 
-        |reconnect.svg|
+        |reconnect.png|
+
 
 .. method:: MQTTClient.ping() -> None
 
@@ -102,6 +95,7 @@ Methods
     UIFLOW2:
 
         None
+
 
 .. method:: MQTTClient.publish(topic, msg, retain=False, qos=0) -> None
 
@@ -117,7 +111,8 @@ Methods
 
     UIFLOW2:
 
-        |publish.svg|
+        |publish.png|
+
 
 .. method:: MQTTClient.subscribe(topic, handler, qos=0) -> None
 
@@ -133,7 +128,7 @@ Methods
 
     UIFLOW2:
 
-        |subscribe.svg|
+        |subscribe.png|
 
     An handler showing a message has been received::
 
@@ -142,7 +137,8 @@ Methods
             print("msg:", data[1])
 
     On uiflow2, you can get the **topic** and **message** of the current handler
-    through |get_topic.svg| and |get_msg.svg|.
+    through |get_topic.png| and |get_msg.png|.
+
 
 .. method:: MQTTClient.set_last_will(topic, msg, retain=False, qos=0) -> None
 
@@ -163,7 +159,8 @@ Methods
 
     UIFLOW2:
 
-        |subscribe.svg|
+        |subscribe.png|
+
 
 .. method:: MQTTClient.wait_msg() -> None
 
@@ -184,7 +181,8 @@ Methods
 
     UIFLOW2:
 
-        |wait_msg.svg|
+        None
+
 
 .. method:: MQTTClient.check_msg(attempts=2) -> None
 
@@ -193,4 +191,4 @@ Methods
 
     UIFLOW2:
 
-        None
+        |wait_msg.png|

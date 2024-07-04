@@ -28,6 +28,8 @@ Unit
     glass2.rst
     grove2grove.rst
     hall_effect.rst
+    imu.rst
+    imupro.rst
     ir.rst
     joystick.rst
     key.rst
@@ -36,6 +38,8 @@ Unit
     lora_e220.rst
     minioled.rst
     miniscale.rst
+    mqtt.rst
+    mqttpoe.rst
     ncir.rst
     oled.rst
     op90.rst

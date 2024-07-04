@@ -80,6 +80,7 @@ list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/M5Unified/M5GFX)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/M5Unified/M5Unified)
 list(APPEND EXTRA_COMPONENT_DIRS ./components/BOX3GFX)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/uiflow_utility)
+# list(APPEND EXTRA_COMPONENT_DIRS ./boards)
 
 # Define the project.
 project(micropython)

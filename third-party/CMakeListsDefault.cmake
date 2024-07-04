@@ -177,6 +177,14 @@ set(IDF_COMPONENTS
     uiflow_utility
 )
 
+list(APPEND IDF_COMPONENTS
+    boards
+    audio_pipeline
+    audio_sal
+    esp-adf-libs
+    esp-sr
+)
+
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)
     list(APPEND IDF_COMPONENTS esp_netif)
 endif()

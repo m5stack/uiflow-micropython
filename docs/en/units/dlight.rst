@@ -8,30 +8,16 @@ Support the following products:
     |Dlight|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-    from unit import *
-
-    i2c0 = None
-    dlight_0 = None
-
-    def setup():
-    global i2c0, dlight_0
-
-    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    dlight_0 = DLight(i2c0)
-    print(dlight_0.get_lux())
-    M5.begin()
-    Widgets.fillScreen(0x222222)
+    .. literalinclude:: ../../../examples/unit/dlight/dlight_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html

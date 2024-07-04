@@ -14,3 +14,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/../../m5stack/cmodules/m5can/m5can.cmake)
 if(M5_UNIFIED_MODULE_ENABLE)
     include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 endif()
+
+if(ADF_MODULE_ENABLE)
+    include(${CMAKE_CURRENT_LIST_DIR}/../../m5stack/cmodules/adf_module/micropython.cmake)
+endif()

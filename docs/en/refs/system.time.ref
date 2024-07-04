@@ -1,0 +1,33 @@
+.. |timezone.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone.png
+
+.. |timezone1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone1.png
+
+.. |timezone2.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/timezone2.png
+
+.. |gmtime.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/gmtime.png
+
+.. |localtime.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/localtime.png
+
+.. |mktime.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/mktime.png
+
+.. |mktime1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/mktime1.png
+
+.. |sleep_ms.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep_ms.png
+
+.. |sleep_us.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep_us.png
+
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/sleep.png
+
+.. |ticks_add.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_add.png
+
+.. |ticks_cpu.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_cpu.png
+
+.. |ticks_diff.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_diff.png
+
+.. |ticks_ms.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_ms.png
+
+.. |ticks_us.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/ticks_us.png
+
+.. |time.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/time/time.png
+
+.. _tz_database: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones

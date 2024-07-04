@@ -1,0 +1,681 @@
+From 728a06c042bad905a74b60f75b7d80f358f10928 Mon Sep 17 00:00:00 2001
+From: lbuque <1102390310@qq.com>
+Date: Wed, 3 Jul 2024 11:58:42 +0800
+Subject: [PATCH] commponents/audio_board: Add M5STACK CoreS3 board.
+
+Signed-off-by: lbuque <1102390310@qq.com>
+---
+ components/audio_board/CMakeLists.txt         |   8 +
+ components/audio_board/cores3/board.c         | 198 ++++++++++++++++++
+ components/audio_board/cores3/board.h         | 131 ++++++++++++
+ components/audio_board/cores3/board_def.h     | 125 +++++++++++
+ .../audio_board/cores3/board_pins_config.c    | 163 ++++++++++++++
+ 5 files changed, 625 insertions(+)
+ create mode 100644 components/audio_board/cores3/board.c
+ create mode 100644 components/audio_board/cores3/board.h
+ create mode 100644 components/audio_board/cores3/board_def.h
+ create mode 100644 components/audio_board/cores3/board_pins_config.c
+
+diff --git a/components/audio_board/CMakeLists.txt b/components/audio_board/CMakeLists.txt
+index 2dfb3c64..8453318b 100644
+--- a/components/audio_board/CMakeLists.txt
++++ b/components/audio_board/CMakeLists.txt
+@@ -4,6 +4,14 @@ set(COMPONENT_ADD_INCLUDEDIRS ./include)
+ set(COMPONENT_REQUIRES )
+ set(COMPONENT_PRIV_REQUIRES esp_peripherals audio_sal audio_hal esp_dispatcher display_service)
+ 
++if (CONFIG_CORES3)
++message(STATUS "Current board name is " CONFIG_CORES3)
++list(APPEND COMPONENT_ADD_INCLUDEDIRS ./cores3)
++set(COMPONENT_SRCS
++./cores3/board.c
++./cores3/board_pins_config.c
++)
++endif()
+ 
+ if (CONFIG_ESP_LYRAT_V4_2_BOARD)
+ message(STATUS "Current board name is " CONFIG_ESP_LYRAT_V4_2_BOARD)
+diff --git a/components/audio_board/cores3/board.c b/components/audio_board/cores3/board.c
+new file mode 100644
+index 00000000..535a6a4c
+--- /dev/null
++++ b/components/audio_board/cores3/board.c
+@@ -0,0 +1,198 @@
++/*
++ * ESPRESSIF MIT License
++ *
++ * Copyright (c) 2023 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
++ *
++ * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
++ * it is free of charge, to any person obtaining a copy of this software and associated
++ * documentation files (the "Software"), to deal in the Software without restriction, including
++ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
++ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
++ * to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in all copies or
++ * substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
++ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
++ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
++ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
++ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++ *
++ */
++
++#include "esp_log.h"
++#include "esp_lcd_panel_ops.h"
++
++#include "audio_mem.h"
++#include "periph_sdcard.h"
++#include "periph_lcd.h"
++#include "periph_button.h"
++#include "tca9554.h"
++#include "board.h"
++
++static const char *TAG = "AUDIO_BOARD";
++
++static audio_board_handle_t board_handle = 0;
++
++audio_board_handle_t audio_board_init(void)
++{
++    if (board_handle) {
++        ESP_LOGW(TAG, "The board has already been initialized!");
++        return board_handle;
++    }
++    board_handle = (audio_board_handle_t) audio_calloc(1, sizeof(struct audio_board_handle));
++    AUDIO_MEM_CHECK(TAG, board_handle, return NULL);
++    board_handle->audio_hal = audio_board_codec_init();
++    board_handle->adc_hal = audio_board_adc_init();
++    return board_handle;
++}
++
++audio_hal_handle_t audio_board_adc_init(void)
++{
++    audio_hal_codec_config_t audio_codec_cfg = AUDIO_CODEC_DEFAULT_CONFIG();
++    audio_hal_handle_t adc_hal = NULL;
++    adc_hal = audio_hal_init(&audio_codec_cfg, &AUDIO_CODEC_ES7210_DEFAULT_HANDLE);
++    AUDIO_NULL_CHECK(TAG, adc_hal, return NULL);
++    return adc_hal;
++}
++
++audio_hal_handle_t audio_board_codec_init(void)
++{
++    audio_hal_codec_config_t audio_codec_cfg = AUDIO_CODEC_DEFAULT_CONFIG();
++    audio_hal_handle_t codec_hal = audio_hal_init(&audio_codec_cfg, &AUDIO_CODEC_ES8311_DEFAULT_HANDLE);
++    AUDIO_NULL_CHECK(TAG, codec_hal, return NULL);
++    return codec_hal;
++}
++
++static esp_err_t _get_lcd_io_bus (void *bus, esp_lcd_panel_io_spi_config_t *io_config,
++                                  esp_lcd_panel_io_handle_t *out_panel_io)
++{
++    return esp_lcd_new_panel_io_spi((esp_lcd_spi_bus_handle_t)bus, io_config, out_panel_io);
++}
++
++void *audio_board_lcd_init(esp_periph_set_handle_t set, void *cb)
++{
++    if  (LCD_CTRL_GPIO >=0) {
++        gpio_config_t bk_gpio_config = {
++            .mode = GPIO_MODE_OUTPUT,
++            .pin_bit_mask = 1ULL << LCD_CTRL_GPIO
++        };
++        gpio_config(&bk_gpio_config);
++        gpio_set_level(LCD_CTRL_GPIO, true);
++    }
++
++    spi_bus_config_t buscfg = {
++        .sclk_io_num = LCD_CLK_GPIO,
++        .mosi_io_num = LCD_MOSI_GPIO,
++        .miso_io_num = -1,
++        .quadwp_io_num = -1,
++        .quadhd_io_num = -1,
++        .max_transfer_sz = LCD_V_RES * LCD_H_RES * 2
++    };
++    ESP_ERROR_CHECK(spi_bus_initialize(SPI2_HOST, &buscfg, SPI_DMA_CH_AUTO));
++
++    esp_lcd_panel_io_spi_config_t io_config = {
++        .dc_gpio_num = LCD_DC_GPIO,
++        .cs_gpio_num = LCD_CS_GPIO,
++        .pclk_hz = 10 * 1000 * 1000,
++        .lcd_cmd_bits = 8,
++        .lcd_param_bits = 8,
++        .spi_mode = 0,
++        .trans_queue_depth = 10,
++        .on_color_trans_done = cb,
++        .user_ctx = NULL
++    };
++    esp_lcd_panel_dev_config_t panel_config = {
++        .reset_gpio_num = LCD_RST_GPIO,
++        .flags.reset_active_high = 1,
++        .color_space = LCD_COLOR_SPACE,
++        .bits_per_pixel = 16
++    };
++    periph_lcd_cfg_t cfg = {
++        .io_bus = (void *)SPI2_HOST,
++        .new_panel_io = _get_lcd_io_bus,
++        .lcd_io_cfg = &io_config,
++        .new_lcd_panel = esp_lcd_new_panel_st7789,
++        .lcd_dev_cfg = &panel_config,
++        .rest_cb = NULL,
++        .rest_cb_ctx = NULL,
++        .lcd_swap_xy = LCD_SWAP_XY,
++        .lcd_mirror_x = LCD_MIRROR_X,
++        .lcd_mirror_y = LCD_MIRROR_Y,
++        .lcd_color_invert = LCD_COLOR_INV
++    };
++    esp_periph_handle_t periph_lcd = periph_lcd_init(&cfg);
++    AUDIO_NULL_CHECK(TAG, periph_lcd, return NULL);
++    esp_periph_start(set, periph_lcd);
++
++    return (void *)periph_lcd_get_panel_handle(periph_lcd);
++}
++
++esp_err_t audio_board_key_init(esp_periph_set_handle_t set)
++{
++    periph_button_cfg_t btn_cfg = {
++        .gpio_mask = (1ULL << get_input_rec_id()) | (1ULL << get_input_play_id()), //REC BTN & PLAY BTN
++    };
++    esp_periph_handle_t button_handle = periph_button_init(&btn_cfg);
++    AUDIO_NULL_CHECK(TAG, button_handle, return ESP_ERR_ADF_MEMORY_LACK);
++    return esp_periph_start(set, button_handle);
++}
++
++esp_err_t audio_board_sdcard_init(esp_periph_set_handle_t set, periph_sdcard_mode_t mode)
++{
++    if (mode != SD_MODE_1_LINE && mode != SD_MODE_4_LINE) {
++        ESP_LOGE(TAG, "Current board only support 1-line and 4-line SD mode!");
++        return ESP_FAIL;
++    }
++    periph_sdcard_cfg_t sdcard_cfg = {
++        .root = "/sdcard",
++        .card_detect_pin = get_sdcard_intr_gpio(),
++        .mode = mode
++    };
++
++    // Enable SDCard power
++    if (get_sdcard_power_ctrl_gpio() >= 0) {
++        gpio_config_t gpio_cfg = {
++            .mode = GPIO_MODE_OUTPUT,
++            .pin_bit_mask = 1ULL << get_sdcard_power_ctrl_gpio()
++        };
++        gpio_config(&gpio_cfg);
++        gpio_set_level(get_sdcard_power_ctrl_gpio(), 0);
++    }
++
++    esp_periph_handle_t sdcard_handle = periph_sdcard_init(&sdcard_cfg);
++    esp_err_t ret = esp_periph_start(set, sdcard_handle);
++    int retry_time = 5;
++    bool mount_flag = false;
++    while (retry_time --) {
++        if (periph_sdcard_is_mounted(sdcard_handle)) {
++            mount_flag = true;
++            break;
++        } else {
++            vTaskDelay(500 / portTICK_PERIOD_MS);
++        }
++    }
++    if (mount_flag == false) {
++        ESP_LOGE(TAG, "Sdcard mount failed");
++        return ESP_FAIL;
++    }
++    return ret;
++}
++
++audio_board_handle_t audio_board_get_handle(void)
++{
++    return board_handle;
++}
++
++esp_err_t audio_board_deinit(audio_board_handle_t audio_board)
++{
++    AUDIO_NULL_CHECK(TAG, audio_board, return ESP_FAIL);
++    esp_err_t ret = ESP_OK;
++    ret |= audio_hal_deinit(audio_board->audio_hal);
++    ret |= audio_hal_deinit(audio_board->adc_hal);
++    audio_free(audio_board);
++    board_handle = NULL;
++    return ret;
++}
+diff --git a/components/audio_board/cores3/board.h b/components/audio_board/cores3/board.h
+new file mode 100644
+index 00000000..edf9ce54
+--- /dev/null
++++ b/components/audio_board/cores3/board.h
+@@ -0,0 +1,131 @@
++/*
++ * ESPRESSIF MIT License
++ *
++ * Copyright (c) 2023 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
++ *
++ * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
++ * it is free of charge, to any person obtaining a copy of this software and associated
++ * documentation files (the "Software"), to deal in the Software without restriction, including
++ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
++ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
++ * to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in all copies or
++ * substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
++ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
++ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
++ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
++ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++ *
++ */
++
++#ifndef _AUDIO_BOARD_H_
++#define _AUDIO_BOARD_H_
++
++#include "audio_hal.h"
++#include "board_def.h"
++#include "board_pins_config.h"
++#include "esp_peripherals.h"
++#include "display_service.h"
++#include "periph_sdcard.h"
++#include "periph_lcd.h"
++
++#ifdef __cplusplus
++extern "C" {
++#endif
++
++/**
++ * @brief Audio board handle
++ */
++struct audio_board_handle {
++    audio_hal_handle_t audio_hal; /*!< audio hardware abstract layer handle */
++    audio_hal_handle_t adc_hal;   /*!< adc hardware abstract layer handle */
++};
++
++typedef struct audio_board_handle *audio_board_handle_t;
++
++/**
++ * @brief Initialize audio board
++ *
++ * @return The audio board handle
++ */
++audio_board_handle_t audio_board_init(void);
++
++/**
++ * @brief Initialize codec chip
++ *
++ * @return The audio hal handle
++ */
++audio_hal_handle_t audio_board_codec_init(void);
++
++/**
++ * @brief Initialize adc
++ *
++ * @return The adc hal handle
++ */
++audio_hal_handle_t audio_board_adc_init(void);
++
++/**
++ * @brief Initialize lcd peripheral
++ *
++ * @param set The handle of esp_periph_set_handle_t
++ * @param cb  The `on_color_trans_done` callback in `esp_lcd_panel_io_spi_config_t`
++ *
++ * @return The `esp_lcd_panel_handle_t` handle
++ */
++void *audio_board_lcd_init(esp_periph_set_handle_t set, void *cb);
++
++/**
++ * @brief Initialize led peripheral and display service
++ *
++ * @return The audio display service handle
++ */
++display_service_handle_t audio_board_blue_led_init(void);
++
++/**
++ * @brief Initialize key peripheral
++ *
++ * @param set The handle of esp_periph_set_handle_t
++ *
++ * @return
++ *     - ESP_OK, success
++ *     - Others, fail
++ */
++esp_err_t audio_board_key_init(esp_periph_set_handle_t set);
++
++/**
++ * @brief Initialize sdcard peripheral
++ *
++ * @param set The handle of esp_periph_set_handle_t
++ *
++ * @return
++ *     - ESP_OK, success
++ *     - Others, fail
++ */
++esp_err_t audio_board_sdcard_init(esp_periph_set_handle_t set, periph_sdcard_mode_t mode);
++
++/**
++ * @brief Query audio_board_handle
++ *
++ * @return The audio board handle
++ */
++audio_board_handle_t audio_board_get_handle(void);
++
++/**
++ * @brief Uninitialize the audio board
++ *
++ * @param audio_board The handle of audio board
++ *
++ * @return  0       success,
++ *          others  fail
++ */
++esp_err_t audio_board_deinit(audio_board_handle_t audio_board);
++
++#ifdef __cplusplus
++}
++#endif
++
++#endif
+diff --git a/components/audio_board/cores3/board_def.h b/components/audio_board/cores3/board_def.h
+new file mode 100644
+index 00000000..8a9287e0
+--- /dev/null
++++ b/components/audio_board/cores3/board_def.h
+@@ -0,0 +1,125 @@
++/*
++ * ESPRESSIF MIT License
++ *
++ * Copyright (c) 2023 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
++ *
++ * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
++ * it is free of charge, to any person obtaining a copy of this software and associated
++ * documentation files (the "Software"), to deal in the Software without restriction, including
++ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
++ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
++ * to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in all copies or
++ * substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
++ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
++ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
++ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
++ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++ *
++ */
++
++#ifndef _AUDIclk_flags
++#define _AUDIO_BOARD_DEFINITION_H_
++
++/**
++ * @brief LCD SCREEN Function Definition
++ */
++#define FUNC_LCD_SCREEN_EN          (1)
++#define LCD_CTRL_GPIO               GPIO_NUM_47
++#define LCD_RST_GPIO                GPIO_NUM_48
++#define LCD_DC_GPIO                 GPIO_NUM_4
++#define LCD_Cclk_flags
++#define LCD_CLK_GPIO                GPIO_NUM_7
++#define LCD_MOSI_GPIO               GPIO_NUM_6
++// The LCD pixel number in horizontal and vertical
++#define LCD_H_RES                   (320)
++#define LCD_V_RES                   (240)
++#define LCD_SWAP_XY                 (false)
++#define LCD_MIRROR_X                (true)
++#define LCD_MIRROR_Y                (true)
++#define LCD_COLOR_INV               (false)
++#define LCD_COLOR_SPACE             ESP_LCD_COLOR_SPACE_BGR
++
++/**
++ * @brief SDCARD Function Definition
++ */
++#define FUNC_SDCARD_EN              (1)
++#define SDCARD_OPEN_FILE_NUM_MAX    (5)
++#define SDCARD_INTR_GPIO            (-1)
++#define SDCARD_PWR_CTRL             GPIO_NUM_43
++#define ESP_SD_PIN_CLK              GPIO_NUM_11
++#define ESP_SD_PIN_CMD              GPIO_NUM_14
++#define ESP_SD_PIN_D0               GPIO_NUM_9
++#define ESP_SD_PIN_D1               GPIO_NUM_13
++#define ESP_SD_PIN_D2               GPIO_NUM_42
++#define ESP_SD_PIN_D3               GPIO_NUM_12
++#define ESP_SD_PIN_D4               (-1)
++#define ESP_SD_PIN_D5               (-1)
++#define ESP_SD_PIN_D6               (-1)
++#define ESP_SD_PIN_D7               (-1)
++#define ESP_SD_PIN_CD               (-1)
++#define ESP_SD_PIN_WP               (-1)
++
++/**
++ * @brief LCD TOUCH PANEL Function Definition
++ */
++#define FUNC_LCD_TOUCH_EN          (1)
++#define TOUCH_PANEL_SWAP_XY        (0)
++#define TOUCH_PANEL_INVERSE_X      (1)
++#define TOUCH_PANEL_INVERSE_Y      (0)
++
++/**
++ * @brief Audio Codec Chip Function Definition
++ */
++#define FUNC_AUDIO_CODEC_EN         (1)
++#define PA_ENABLE_GPIO              GPIO_NUM_46
++#define HEADPHONE_DETECT            (-1)
++#define CODEC_ADC_I2S_PORT          (0)
++#define CODEC_ADC_BITS_PER_SAMPLE   (32) /* 32bit */
++#define CODEC_ADC_SAMPLE_RATE       (48000)
++#define RECORD_HARDWARE_AEC         (true)
++#define BOARD_PA_GAIN               (0) /* Power amplifier gain defined by board (dB) */
++
++extern audio_hal_func_t AUDIO_CODEC_ES8311_DEFAULT_HANDLE;
++extern audio_hal_func_t AUDIO_CODEC_ES7210_DEFAULT_HANDLE;
++#define AUDIO_CODEC_DEFAULT_CONFIG(){                   \
++        .adc_input  = AUDIO_HAL_ADC_INPUT_LINE1,        \
++        .dac_output = AUDIO_HAL_DAC_OUTPUT_ALL,         \
++        .codec_mode = AUDIO_HAL_CODEC_MODE_BOTH,        \
++        .i2s_iface = {                                  \
++            .mode = AUDIO_HAL_MODE_SLAVE,               \
++            .fmt = AUDIO_HAL_I2S_NORMAL,                \
++            .samples = AUDIO_HAL_48K_SAMPLES,           \
++            .bits = AUDIO_HAL_BIT_LENGTH_16BITS,        \
++        },                                              \
++};
++
++/**
++ * @brief Button Function Definition
++ */
++#define FUNC_BUTTON_EN              (1)
++#define INPUT_KEY_NUM               (2)
++#define BUTTON_VOLUP_ID             (-1)
++#define BUTTON_VOLDOWN_ID           (-1)
++#define BUTTON_SET_ID               (-1)
++#define BUTTON_PLAY_ID              (0)
++#define BUTTON_MODE_ID              (-1)
++#define BUTTON_REC_ID               (1)
++
++#define INPUT_KEY_DEFAULT_INFO() {                     \
++    {                                                  \
++        .type = PERIPH_ID_BUTTON,                      \
++        .user_id = INPUT_KEY_USER_ID_REC,              \
++        .act_id = BUTTON_REC_ID,                       \
++    },                                                 \
++    {                                                  \
++        .type = PERIPH_ID_BUTTON,                      \
++        .user_id = INPUT_KEY_USER_ID_PLAY,             \
++        .act_id = BUTTON_PLAY_ID,                      \
++    }                                                  \
++}
++#endif
+diff --git a/components/audio_board/cores3/board_pins_config.c b/components/audio_board/cores3/board_pins_config.c
+new file mode 100644
+index 00000000..fbe063d8
+--- /dev/null
++++ b/components/audio_board/cores3/board_pins_config.c
+@@ -0,0 +1,163 @@
++/*
++ * ESPRESSIF MIT License
++ *
++ * Copyright (c) 2023 <ESPRESSIF SYSTEMS (SHANGHAI) CO., LTD>
++ *
++ * Permission is hereby granted for use on all ESPRESSIF SYSTEMS products, in which case,
++ * it is free of charge, to any person obtaining a copy of this software and associated
++ * documentation files (the "Software"), to deal in the Software without restriction, including
++ * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
++ * and/or sell copies of the Software, and to permit persons to whom the Software is furnished
++ * to do so, subject to the following conditions:
++ *
++ * The above copyright notice and this permission notice shall be included in all copies or
++ * substantial portions of the Software.
++ *
++ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
++ * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
++ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
++ * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
++ * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++ *
++ */
++
++#include <string.h>
++#include "soc/soc_caps.h"
++#include "esp_log.h"
++#include "driver/gpio.h"
++
++#include "audio_error.h"
++#include "audio_mem.h"
++#include "board.h"
++
++static const char *TAG = "CORES3";
++
++esp_err_t get_i2c_pins(i2c_port_t port, i2c_config_t *i2c_config)
++{
++    ESP_LOGI(TAG, "get_i2c_pins !!!");
++    AUDIO_NULL_CHECK(TAG, i2c_config, return ESP_FAIL);
++    if (port == I2C_NUM_0 || port == I2C_NUM_1) {
++        i2c_config->sda_io_num = GPIO_NUM_12;
++        i2c_config->scl_io_num = GPIO_NUM_11;
++    } else {
++        i2c_config->sda_io_num = -1;
++        i2c_config->scl_io_num = -1;
++        ESP_LOGE(TAG, "i2c port %d is not supported", port);
++        return ESP_FAIL;
++    }
++    return ESP_OK;
++}
++
++esp_err_t get_i2s_pins(i2s_port_t port, board_i2s_pin_t *i2s_config)
++{
++    ESP_LOGI(TAG, "get_i2s_pins !!!");
++    AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
++    if (port == 1) {
++        i2s_config->bck_io_num = GPIO_NUM_34;
++        i2s_config->ws_io_num = GPIO_NUM_33;
++        i2s_config->data_out_num = GPIO_NUM_13;
++        i2s_config->data_in_num = GPIO_NUM_14;
++        i2s_config->mck_io_num = GPIO_NUM_0;
++    } else {
++        memset(i2s_config, -1, sizeof(board_i2s_pin_t));
++        ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
++        return ESP_FAIL;
++    }
++    return ESP_OK;
++}
++
++esp_err_t get_spi_pins(spi_bus_config_t *spi_config, spi_device_interface_config_t *spi_device_interface_config)
++{
++    AUDIO_NULL_CHECK(TAG, spi_config, return ESP_FAIL);
++    AUDIO_NULL_CHECK(TAG, spi_device_interface_config, return ESP_FAIL);
++
++    spi_config->mosi_io_num = -1;
++    spi_config->miso_io_num = -1;
++    spi_config->sclk_io_num = -1;
++    spi_config->quadwp_io_num = -1;
++    spi_config->quadhd_io_num = -1;
++
++    spi_device_interface_config->spics_io_num = -1;
++
++    ESP_LOGW(TAG, "SPI interface is not supported");
++    return ESP_OK;
++}
++
++// sdcard
++
++int8_t get_sdcard_intr_gpio(void)
++{
++    return SDCARD_INTR_GPIO;
++}
++
++int8_t get_sdcard_open_file_num_max(void)
++{
++    return SDCARD_OPEN_FILE_NUM_MAX;
++}
++
++int8_t get_sdcard_power_ctrl_gpio(void)
++{
++    return SDCARD_PWR_CTRL;
++}
++
++// input-output pins
++
++int8_t get_headphone_detect_gpio(void)
++{
++    return HEADPHONE_DETECT;
++}
++
++int8_t get_pa_enable_gpio(void)
++{
++    return PA_ENABLE_GPIO;
++}
++
++// adc button id
++
++int8_t get_input_rec_id(void)
++{
++    return BUTTON_REC_ID;
++}
++
++int8_t get_input_mode_id(void)
++{
++    return BUTTON_MODE_ID;
++}
++
++int8_t get_input_set_id(void)
++{
++    return BUTTON_SET_ID;
++}
++
++int8_t get_input_play_id(void)
++{
++    return BUTTON_PLAY_ID;
++}
++
++int8_t get_input_volup_id(void)
++{
++    return BUTTON_VOLUP_ID;
++}
++
++int8_t get_input_voldown_id(void)
++{
++    return BUTTON_VOLDOWN_ID;
++}
++
++// led pins
++
++int8_t get_green_led_gpio(void)
++{
++    return -1;
++}
++
++int8_t get_blue_led_gpio(void)
++{
++    return -1;
++}
++
++int8_t get_es8311_mclk_src(void)
++{
++    return -1;
++}
+-- 
+2.34.1
+
