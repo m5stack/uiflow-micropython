@@ -49,6 +49,7 @@ _attrs = {
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",
     "HeartUnit": "heart",
+    "IMUUnit": "imu",
     "IRUnit": "ir",
     "JoystickUnit": "joystick",
     "KeyUnit": "key",

@@ -1,0 +1,27 @@
+.. |IMUUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/imu/imu_01.webp
+    :target: https://docs.m5stack.com/en/unit/imu
+    :height: 200px
+    :width: 200 px
+    
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/init.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/example.png
+.. |get_accelerometer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/get_accelerometer.png
+.. |get_gyroscope.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/get_gyroscope.png
+.. |get_attitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/get_attitude.png
+.. |set_accel_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_accel_range.png
+.. |set_gyro_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_gyro_range.png
+.. |set_accel_unit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_accel_unit.png
+.. |set_gyro_unit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_gyro_unit.png
+.. |set_gyro_calibrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_gyro_calibrate.png
+.. |set_gyro_offsets.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu/set_gyro_offsets.png
+
+
+.. |unit-imu-demo.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/imu/unit-imu-demo.m5f2"
+        target="_blank"
+    >
+        unit-imu-demo.m5f2
+    </a>
+
