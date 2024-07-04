@@ -64,6 +64,7 @@ package(
         "minioled.py",
         "miniscale.py",
         "mqtt.py",
+        "mqttpoe.py",
         "ncir.py",
         "ncir2.py",
         "neco.py",
