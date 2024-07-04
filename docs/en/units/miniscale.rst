@@ -83,7 +83,16 @@ Methods
 
 		|get_button.svg|
 
-.. method:: MiniScaleUnit.setLed(r, g, b)
+.. method:: MiniScaleUnit.tare()
+
+
+	Tare the scale.
+
+	UIFLOW2:
+
+		|tare.svg|
+
+.. method:: MiniScaleUnit.set_led(r, g, b)
 
 	Sets the RGB LED color.
 
@@ -125,7 +134,7 @@ Methods
 
 		|calibration.svg|
 
-.. method:: MiniScaleUnit.setLowPassFilter(enable)
+.. method:: MiniScaleUnit.set_low_pass_filter(enable)
 
 	Enables or disables the low pass filter.
 
@@ -135,7 +144,7 @@ Methods
 		|setLowPassFilter.svg|
 
 
-.. method:: MiniScaleUnit.getLowPassFilter
+.. method:: MiniScaleUnit.get_low_pass_filter
 
 	Returns the status of the low pass filter (enabled or not).
 
@@ -144,7 +153,7 @@ Methods
 
 		|getLowPassFilter.svg|
 
-.. method:: MiniScaleUnit.setAverageFilterLevel(level)
+.. method:: MiniScaleUnit.set_average_filter_level(level)
 
 	Sets the level of the average filter.
 
@@ -154,7 +163,7 @@ Methods
 
 		|setAverageFilterLevel.svg|
 
-.. method:: MiniScaleUnit.getAverageFilterLevel
+.. method:: MiniScaleUnit.get_average_filter_level
 
 	Returns the level of the average filter.
 
@@ -162,7 +171,7 @@ Methods
 
 		|getAverageFilterLevel.svg|
 
-.. method:: MiniScaleUnit.setEMAFilterAlpha(alpha)
+.. method:: MiniScaleUnit.set_ema_filter_alpha(alpha)
 
 	Sets the alpha value for the EMA filter.
 
@@ -174,7 +183,7 @@ Methods
 
 		|setEMAFilterAlpha.svg|
 
-.. method:: MiniScaleUnit.getEMAFilterAlpha
+.. method:: MiniScaleUnit.get_ema_filter_alpha
 
 	Returns the alpha value for the EMA filter.
 
