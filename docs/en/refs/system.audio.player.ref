@@ -1,20 +1,24 @@
 
-.. |init.svg| image:: ../../_static/system/audio/player/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/init.png
 
-.. |play.svg| image:: ../../_static/system/audio/player/play.svg
+.. |play_local_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_local_file.png
 
-.. |play_raw.svg| image:: ../../_static/system/audio/player/play_raw.svg
+.. |play_local_file1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_local_file1.png
 
-.. |play_tone.svg| image:: ../../_static/system/audio/player/play_tone.svg
+.. |play_sdcard_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_sdcard_file.png
 
-.. |pause.svg| image:: ../../_static/system/audio/player/pause.svg
+.. |play_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_raw.png
 
-.. |resume.svg| image:: ../../_static/system/audio/player/resume.svg
+.. |play_tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_tone.png
 
-.. |stop.svg| image:: ../../_static/system/audio/player/stop.svg
+.. |pause.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/pause.png
 
-.. |pos.svg| image:: ../../_static/system/audio/player/pos.svg
+.. |resume.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/resume.png
 
-.. |set_vol.svg| image:: ../../_static/system/audio/player/set_vol.svg
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/stop.png
 
-.. |get_vol.svg| image:: ../../_static/system/audio/player/get_vol.svg
+.. |pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/pos.png
+
+.. |set_vol.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/set_vol.png
+
+.. |get_vol.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/get_vol.png

@@ -1,23 +1,32 @@
-.. |example.svg| image:: ../../_static/software/umqtt/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/example.svg
 
-.. |init.svg| image:: ../../_static/software/umqtt/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init.png
 
-.. |init1.svg| image:: ../../_static/software/umqtt/init1.svg
+.. |init_ssl.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init_ssl.png
 
-.. |connect.svg| image:: ../../_static/software/umqtt/connect.svg
+.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/connect.png
 
-.. |disconnect.svg| image:: ../../_static/software/umqtt/disconnect.svg
+.. |disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/disconnect.png
 
-.. |reconnect.svg| image:: ../../_static/software/umqtt/reconnect.svg
+.. |reconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/reconnect.png
 
-.. |publish.svg| image:: ../../_static/software/umqtt/publish.svg
+.. |publish.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/publish.png
 
-.. |subscribe.svg| image:: ../../_static/software/umqtt/subscribe.svg
+.. |subscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/subscribe.png
 
-.. |get_topic.svg| image:: ../../_static/software/umqtt/get_topic.svg
+.. |get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_topic.png
 
-.. |get_msg.svg| image:: ../../_static/software/umqtt/get_msg.svg
+.. |get_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_msg.png
 
-.. |set_last_will.svg| image:: ../../_static/software/umqtt/set_last_will.svg
+.. |set_last_will.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/set_last_will.png
 
-.. |wait_msg.svg| image:: ../../_static/software/umqtt/wait_msg.svg
+.. |wait_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/wait_msg.png
+
+.. |mqtts_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/mqtts_cores3_example.m5f2"
+        target="_blank"
+    >
+        mqtts_cores3_example.m5f2
+    </a>
