@@ -50,6 +50,7 @@ package(
         "hall_effect.py",
         "hbridge.py",
         "heart.py",
+        "imu_pro.py",
         "imu.py",
         "ir.py",
         "joystick.py",

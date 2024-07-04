@@ -33,6 +33,7 @@ package(
         "bh1750.py",
         "bh1750fvi.py",
         "bme68x.py",
+        "bmi270_bmm150.py",
         "bmp280.py",
         "button.py",
         "checksum.py",

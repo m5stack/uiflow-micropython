@@ -1,0 +1,30 @@
+.. |IMUProUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/IMU%20Pro%20Mini%20Unit/img-293fc203-f17e-48aa-86bd-0c45b4dd09e3.webp
+    :target: https://docs.m5stack.com/en/unit/IMU%20Pro%20Mini%20Unit
+    :height: 200px
+    :width: 200 px
+    
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/init.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/example.png
+.. |get_accelerometer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_accelerometer.png
+.. |get_gyroscope.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_gyroscope.png
+.. |get_magnetometer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_magnetometer.png
+.. |get_compass.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_compass.png
+.. |get_attitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_attitude.png
+.. |get_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_temperature.png
+.. |get_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/get_pressure.png
+.. |set_accel_gyro_odr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/set_accel_gyro_odr.png
+.. |set_magnet_odr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/set_magnet_odr.png
+.. |set_accel_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/set_accel_range.png
+.. |set_gyro_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/set_gyro_range.png
+.. |set_gyro_offsets.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/imu_pro/set_gyro_offsets.png
+
+
+.. |unit-imu-pro-demo.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/imu_pro/unit-imu-pro-demo.m5f2"
+        target="_blank"
+    >
+        unit-imu-pro-demo.m5f2
+    </a>
+
