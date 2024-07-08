@@ -103,6 +103,13 @@ void * board_codec_init(void)
     };
     audio_hal = esp_codec_dev_new(&dev_cfg);
 
+    esp_codec_dev_sample_info_t fs = {
+        .sample_rate = 48000,
+        .channel = 2,
+        .bits_per_sample = 16,
+    };
+    esp_codec_dev_open(audio_hal, &fs);
+
     return audio_hal;
 }
 

@@ -48,6 +48,7 @@ idf_component_register(
         esp-adf-libs
         esp_http_client
         esp_lcd
+        esp_codec_dev
 )
 
 

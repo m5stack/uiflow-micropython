@@ -25,7 +25,6 @@ public:
             cfg.freq = 1000;
             cfg.pwm_channel = 7;
 
-            ESP_LOGE("LIGHT","bl: %d invert: %s freq: %d chn: %d", cfg.pin_bl, cfg.invert ? "true" : "false", cfg.freq, cfg.pwm_channel);
             _light_instance.config(cfg);
         }
 

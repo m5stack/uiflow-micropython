@@ -52,6 +52,7 @@ typedef struct _audio_player_obj_t {
 
     esp_audio_handle_t player;
     mp_obj_dict_t *state;
+    int volume;
 } audio_player_obj_t;
 
 static const qstr player_info_fields[] = {
@@ -203,6 +204,8 @@ static mp_obj_t audio_player_make_new(const mp_obj_type_t *type, size_t n_args, 
     }
     self->player = basic_player;
     self->state = mp_obj_new_dict(3);
+    self->volume = 50;
+    esp_audio_vol_set(self->player, self->volume);
 
     return MP_OBJ_FROM_PTR(self);
 }
@@ -262,9 +265,7 @@ static mp_obj_t audio_player_play_helper(audio_player_obj_t *self, mp_uint_t n_a
     }
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
-    if (args[ARG_volume].u_int != -1) {
-        check_esp_err(esp_audio_vol_set(self->player, volume));
-    }
+    check_esp_err(esp_audio_vol_set(self->player, volume == -1 ? self->volume : volume));
 
     if (sync == true) {
         mp_obj_t dest[2];
@@ -334,6 +335,20 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
         audio_element_set_ringbuf_done(raw_stream_reader);
         audio_element_finish_state(raw_stream_reader);
     }
+
+    if (sync) {
+        esp_audio_state_t state = { 0 };
+        esp_audio_state_get(player, &state);
+        if (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED) {
+            int wait = 20;
+            esp_audio_state_get(player, &state);
+            while (wait-- && (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED)) {
+                vTaskDelay(pdMS_TO_TICKS(100));
+                esp_audio_state_get(player, &state);
+            }
+        }
+    }
+
 }
 
 
@@ -412,9 +427,7 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
     }
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
-    if (args[ARG_volume].u_int != -1) {
-        check_esp_err(esp_audio_vol_set(self->player, volume));
-    }
+    check_esp_err(esp_audio_vol_set(self->player, volume == -1 ? self->volume : volume));
 
     audio_element_info_t info;
     audio_element_getinfo(pcm_decoder, &info);
@@ -505,7 +518,6 @@ void audio_player_play_tone_helper(esp_audio_handle_t player, uint16_t freq, flo
 
     char *buf = (char *)malloc(4096);
     while (play_tone_task_running || sync) {
-
         if (pause_flag) {
             vTaskDelay(pdMS_TO_TICKS(100));
             continue;
@@ -541,6 +553,18 @@ void audio_player_play_tone_helper(esp_audio_handle_t player, uint16_t freq, flo
         audio_element_finish_state(raw_stream_reader);
     }
 
+    if (sync) {
+        esp_audio_state_t state = { 0 };
+        esp_audio_state_get(player, &state);
+        if (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED) {
+            int wait = 20;
+            esp_audio_state_get(player, &state);
+            while (wait-- && (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED)) {
+                vTaskDelay(pdMS_TO_TICKS(100));
+                esp_audio_state_get(player, &state);
+            }
+        }
+    }
     free(buf);
 }
 
@@ -576,9 +600,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
     int volume = args[ARG_volume].u_int;
     bool sync = args[ARG_sync].u_bool;
 
-    if (volume != -1) {
-        check_esp_err(esp_audio_vol_set(self->player, volume));
-    }
+    check_esp_err(esp_audio_vol_set(self->player, volume == -1 ? self->volume : volume));
 
     // 停止 raw task
     if (play_raw_task_running) {
@@ -609,7 +631,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
     }
     esp_audio_callback_set(self->player, audio_state_cb, self);
 
-    if (args[ARG_sync].u_bool == true) {
+    if (sync == true) {
         pause_flag = false;
         audio_player_play_tone_helper(self->player, freq, time, true);
     } else {
@@ -703,6 +725,7 @@ static mp_obj_t audio_player_vol_helper(audio_player_obj_t *self, size_t n_args,
         return mp_obj_new_int(vol);
     } else {
         if (args[ARG_vol].u_int >= 0 && args[ARG_vol].u_int <= 100) {
+            self->volume = args[ARG_vol].u_int;
             return mp_obj_new_int(esp_audio_vol_set(self->player, args[ARG_vol].u_int));
         } else {
             return mp_obj_new_int(ESP_ERR_AUDIO_INVALID_PARAMETER);
@@ -720,8 +743,8 @@ static MP_DEFINE_CONST_FUN_OBJ_KW(audio_player_vol_obj, 1, audio_player_vol);
 static mp_obj_t audio_player_get_vol(mp_obj_t self_in) {
     audio_player_obj_t *self = self_in;
     int vol = 0;
-    esp_audio_vol_get(self->player, &vol);
-    return mp_obj_new_int(vol);
+    // esp_audio_vol_get(self->player, &vol);
+    return mp_obj_new_int(self->volume);
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_get_vol_obj, audio_player_get_vol);
 
@@ -734,6 +757,7 @@ static mp_obj_t audio_player_set_vol(mp_obj_t self_in, mp_obj_t vol) {
         mp_raise_ValueError("Volume must be between 0 and 100");
     }
 
+    self->volume = volume;
     return mp_obj_new_int(esp_audio_vol_set(self->player, volume));
 }
 static MP_DEFINE_CONST_FUN_OBJ_2(audio_player_set_vol_obj, audio_player_set_vol);
