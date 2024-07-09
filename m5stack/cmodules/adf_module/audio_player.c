@@ -31,6 +31,9 @@
 #include "py/runtime.h"
 #include "py/mphal.h"
 
+#include "extmod/vfs.h"
+#include "py/stream.h"
+
 #include "esp_audio.h"
 
 #include "amr_decoder.h"
@@ -77,6 +80,7 @@ typedef struct play_info_t {
     } info;
 } play_info_t;
 
+static audio_element_handle_t http_stream_reader;
 audio_element_handle_t i2s_stream_writer;
 static audio_element_handle_t raw_stream_reader;
 static audio_element_handle_t pcm_decoder;
@@ -157,8 +161,9 @@ static esp_audio_handle_t audio_player_create(void) {
     http_cfg.type = AUDIO_STREAM_READER;
     http_cfg.enable_playlist_parser = true;
     http_cfg.task_core = 1;
-    audio_element_handle_t http_stream_reader = http_stream_init(&http_cfg);
+    http_stream_reader = http_stream_init(&http_cfg);
     esp_audio_input_stream_add(player, http_stream_reader);
+
     // raw stream
     raw_stream_cfg_t raw_cfg = RAW_STREAM_CFG_DEFAULT();
     raw_cfg.type = AUDIO_STREAM_READER;
@@ -212,13 +217,14 @@ static mp_obj_t audio_player_make_new(const mp_obj_type_t *type, size_t n_args, 
 
 
 static mp_obj_t audio_player_play_helper(audio_player_obj_t *self, mp_uint_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum { ARG_uri, ARG_pos, ARG_volume, ARG_sync, };
+    enum { ARG_uri, ARG_pos, ARG_volume, ARG_sync, ARG_verify };
     static const mp_arg_t allowed_args[] = {
         /* *FORMAT-OFF* */
         { MP_QSTR_uri,    MP_ARG_REQUIRED | MP_ARG_OBJ, { .u_obj = mp_const_none } },
         { MP_QSTR_pos,    MP_ARG_INT,                   { .u_int = 0 }             },
         { MP_QSTR_volume, MP_ARG_INT,                   { .u_int = -1 }            },
         { MP_QSTR_sync,   MP_ARG_BOOL,                  { .u_bool = true }         },
+        { MP_QSTR_verify, MP_ARG_OBJ,                   { .u_obj = mp_const_none } },
         /* *FORMAT-ON* */
     };
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -233,6 +239,34 @@ static mp_obj_t audio_player_play_helper(audio_player_obj_t *self, mp_uint_t n_a
     int pos = args[ARG_pos].u_int;
     bool sync = args[ARG_sync].u_bool;
     int volume = args[ARG_volume].u_int;
+    static mp_obj_t verify_data = mp_const_none;
+    if (mp_obj_is_str(args[ARG_verify].u_obj)) {
+        // TODO: 删除之前的证书数据。如果后续添加 deinit 函数的话，可以在 deinit 里面删除。
+        if (verify_data != mp_const_none) {
+            free(verify_data);
+        }
+        // file = open(args[0], "rb")
+        mp_obj_t ca_path = args[ARG_verify].u_obj;
+        mp_obj_t stat = mp_vfs_stat(ca_path);
+        mp_obj_t vfs_args[2] = {
+            ca_path,
+            MP_OBJ_NEW_QSTR(MP_QSTR_rb),
+        };
+        mp_obj_t file = mp_vfs_open(MP_ARRAY_SIZE(vfs_args), &vfs_args[0], (mp_map_t *)&mp_const_empty_map);
+
+        // data = file.read()
+        mp_obj_t dest[2];
+        mp_load_method(file, MP_QSTR_read, dest);
+        mp_obj_t data = mp_call_method_n_kw(0, 0, dest);
+
+        // file.close()
+        mp_stream_close(file);
+
+        mp_buffer_info_t bufinfo;
+        mp_get_buffer_raise(data, &bufinfo, MP_BUFFER_READ);
+
+        http_stream_set_server_cert(http_stream_reader, (const char *)bufinfo.buf);
+    }
 
     // mp_printf(&mp_plat_print, "audio_player_play_helper: uri=%s, pos=%d, sync=%d, volume=%d\n", uri, pos, sync, volume);
 
@@ -300,21 +334,18 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
     info.bits = bits;
     audio_element_setinfo(pcm_decoder, &info);
 
-    int remaining_length = len;
-    size_t i = 0;
-
     esp_audio_play(player, AUDIO_CODEC_TYPE_DECODER, "raw://48000:1/flash/test.pcm", 0);
 
-    int index = 0;
+    int writed = 0;
+    int remaining_length = len;
     while (play_raw_task_running || sync) {
-
         if (pause_flag) {
             vTaskDelay(pdMS_TO_TICKS(100));
             continue;
         }
 
         int read_size = 4096;
-        if (remaining_length == 0 || remaining_length == 1) {
+        if (writed == len) {
             // mp_printf(&mp_plat_print, "raw play complete\n");
             audio_element_set_ringbuf_done(raw_stream_reader);
             audio_element_finish_state(raw_stream_reader);
@@ -325,9 +356,8 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
             read_size = remaining_length;
         }
 
-        remaining_length -= read_size;
-        raw_stream_write(raw_stream_reader, &buf[index * 4096], read_size);
-        index++;
+        writed += raw_stream_write(raw_stream_reader, &buf[writed], read_size);
+        remaining_length = len - writed;
     }
 
     if (remaining_length > 0) {
@@ -340,7 +370,7 @@ void audio_player_play_raw_helper(esp_audio_handle_t player, char *buf, int len,
         esp_audio_state_t state = { 0 };
         esp_audio_state_get(player, &state);
         if (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED) {
-            int wait = 20;
+            int wait = 50;
             esp_audio_state_get(player, &state);
             while (wait-- && (state.status == AUDIO_STATUS_RUNNING || state.status == AUDIO_STATUS_PAUSED)) {
                 vTaskDelay(pdMS_TO_TICKS(100));
@@ -439,12 +469,20 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
 
     if (args[ARG_sync].u_bool == true) {
         pause_flag = false;
-        audio_player_play_raw_helper(self->player, bufinfo.buf, bufinfo.len, sample, stereo ? 2 : 1, bits, true);
+        audio_player_play_raw_helper(
+            self->player,
+            &((char *)bufinfo.buf)[pos],
+            bufinfo.len - pos,
+            sample,
+            stereo ? 2 : 1,
+            bits,
+            true
+            );
     } else {
         static play_info_t play_info;
         play_info.player = self->player;
-        play_info.info.raw.buf = bufinfo.buf;
-        play_info.info.raw.len = bufinfo.len;
+        play_info.info.raw.buf = &((char *)bufinfo.buf)[pos];
+        play_info.info.raw.len = bufinfo.len - pos;
         play_info.info.raw.sample_rates = sample;
         play_info.info.raw.channels = stereo ? 2 : 1;
         play_info.info.raw.bits = bits;
@@ -457,39 +495,13 @@ static mp_obj_t audio_player_play_raw(size_t n_args, const mp_obj_t *args_in, mp
             &play_info,
             5,
             &play_raw_bg_task_handle,
-            1
+            0
             );
         if (createStatus != pdPASS) {
             ESP_LOGI("*", "audio_play_tone_bg create task fail");
             play_raw_bg_task_handle = NULL;
         }
     }
-
-
-    // if (args[ARG_sync].u_bool == true) {
-
-    // } else {
-    //     esp_audio_play(((audio_player_obj_t *)args_in[0])->player, AUDIO_CODEC_TYPE_DECODER, "raw://48000:1/flash/test.pcm", 0);
-
-    //     int index = 0;
-    //     while (true) {
-    //         int read_size = 4096;
-    //         if (remaining_length == 0 || remaining_length == 1) {
-    //             mp_printf(&mp_plat_print, "raw play complete\n");
-    //             audio_element_set_ringbuf_done(raw_stream_reader);
-    //             audio_element_finish_state(raw_stream_reader);
-    //             break;
-    //         } else if (4096 < remaining_length) {
-    //             read_size = 4096;
-    //         } else if (4096 > remaining_length) {
-    //             read_size = remaining_length;
-    //         }
-
-    //         remaining_length -= read_size;
-    //         raw_stream_write(raw_stream_reader, &(((char *)bufinfo.buf)[index * 4096]), read_size);
-    //         index++;
-    //     }
-    // }
 
     return mp_const_none;
 }
@@ -648,7 +660,7 @@ static mp_obj_t audio_player_play_tone(size_t n_args, const mp_obj_t *args_in, m
             &play_info,
             5,
             &play_tone_bg_task_handle,
-            1
+            0
             );
         if (createStatus != pdPASS) {
             ESP_LOGI("*", "audio_play_tone_bg create task fail");
@@ -804,21 +816,35 @@ static mp_obj_t audio_player_time(mp_obj_t self_in) {
 static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_time_obj, audio_player_time);
 
 
+static mp_obj_t audio_player_is_playing(mp_obj_t self_in) {
+    audio_player_obj_t *self = self_in;
+    esp_audio_state_t state = { 0 };
+    audio_err_t err = esp_audio_state_get(self->player, &state);
+    if (err == ESP_ERR_AUDIO_NO_ERROR) {
+        return mp_obj_new_bool(state.status == AUDIO_STATUS_RUNNING);
+    } else {
+        return mp_obj_new_bool(false);
+    }
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(audio_player_is_playing_obj, audio_player_is_playing);
+
+
 static const mp_rom_map_elem_t player_locals_dict_table[] = {
     /* *FORMAT-OFF* */
-    { MP_ROM_QSTR(MP_QSTR_info),      MP_ROM_PTR(&audio_player_info_obj)      },
-    { MP_ROM_QSTR(MP_QSTR_play),      MP_ROM_PTR(&audio_player_play_obj)      },
-    { MP_ROM_QSTR(MP_QSTR_play_raw),  MP_ROM_PTR(&audio_player_play_raw_obj)  },
-    { MP_ROM_QSTR(MP_QSTR_play_tone), MP_ROM_PTR(&audio_player_play_tone_obj) },
-    { MP_ROM_QSTR(MP_QSTR_stop),      MP_ROM_PTR(&audio_player_stop_obj)      },
-    { MP_ROM_QSTR(MP_QSTR_pause),     MP_ROM_PTR(&audio_player_pause_obj)     },
-    { MP_ROM_QSTR(MP_QSTR_resume),    MP_ROM_PTR(&audio_player_resume_obj)    },
-    { MP_ROM_QSTR(MP_QSTR_vol),       MP_ROM_PTR(&audio_player_vol_obj)       },
-    { MP_ROM_QSTR(MP_QSTR_get_vol),   MP_ROM_PTR(&audio_player_get_vol_obj)   },
-    { MP_ROM_QSTR(MP_QSTR_set_vol),   MP_ROM_PTR(&audio_player_set_vol_obj)   },
-    { MP_ROM_QSTR(MP_QSTR_get_state), MP_ROM_PTR(&audio_player_state_obj)     },
-    { MP_ROM_QSTR(MP_QSTR_pos),       MP_ROM_PTR(&audio_player_pos_obj)       },
-    { MP_ROM_QSTR(MP_QSTR_time),      MP_ROM_PTR(&audio_player_time_obj)      },
+    { MP_ROM_QSTR(MP_QSTR_info),       MP_ROM_PTR(&audio_player_info_obj)       },
+    { MP_ROM_QSTR(MP_QSTR_play),       MP_ROM_PTR(&audio_player_play_obj)       },
+    { MP_ROM_QSTR(MP_QSTR_play_raw),   MP_ROM_PTR(&audio_player_play_raw_obj)   },
+    { MP_ROM_QSTR(MP_QSTR_play_tone),  MP_ROM_PTR(&audio_player_play_tone_obj)  },
+    { MP_ROM_QSTR(MP_QSTR_stop),       MP_ROM_PTR(&audio_player_stop_obj)       },
+    { MP_ROM_QSTR(MP_QSTR_pause),      MP_ROM_PTR(&audio_player_pause_obj)      },
+    { MP_ROM_QSTR(MP_QSTR_resume),     MP_ROM_PTR(&audio_player_resume_obj)     },
+    { MP_ROM_QSTR(MP_QSTR_vol),        MP_ROM_PTR(&audio_player_vol_obj)        },
+    { MP_ROM_QSTR(MP_QSTR_get_vol),    MP_ROM_PTR(&audio_player_get_vol_obj)    },
+    { MP_ROM_QSTR(MP_QSTR_set_vol),    MP_ROM_PTR(&audio_player_set_vol_obj)    },
+    { MP_ROM_QSTR(MP_QSTR_get_state),  MP_ROM_PTR(&audio_player_state_obj)      },
+    { MP_ROM_QSTR(MP_QSTR_pos),        MP_ROM_PTR(&audio_player_pos_obj)        },
+    { MP_ROM_QSTR(MP_QSTR_time),       MP_ROM_PTR(&audio_player_time_obj)       },
+    { MP_ROM_QSTR(MP_QSTR_is_playing), MP_ROM_PTR(&audio_player_is_playing_obj) },
 
     // esp_audio_status_t
     { MP_ROM_QSTR(MP_QSTR_STATUS_UNKNOWN),  MP_ROM_INT(AUDIO_STATUS_UNKNOWN)  },
