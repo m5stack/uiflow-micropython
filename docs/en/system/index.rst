@@ -1,5 +1,5 @@
-Software
-=========
+System
+======
 
 .. include:: ../refs/system.ref
 

@@ -62,8 +62,12 @@ void * board_codec_init(void)
 #endif
     const audio_codec_ctrl_if_t *out_ctrl_if = audio_codec_new_i2c_ctrl(&i2c_cfg);
 
+    i2c_cfg.addr = ES7210_CODEC_DEFAULT_ADDR;
+    const audio_codec_ctrl_if_t *in_ctrl_if = audio_codec_new_i2c_ctrl(&i2c_cfg);
+
     const audio_codec_gpio_if_t *gpio_if = audio_codec_new_gpio();
 
+    // New output codec interface
     es8311_codec_cfg_t es8311_cfg = {
         .ctrl_if = out_ctrl_if,
         .gpio_if = gpio_if,
@@ -83,10 +87,17 @@ void * board_codec_init(void)
     };
     const audio_codec_if_t *out_codec_if = es8311_codec_new(&es8311_cfg);
 
+    // New input codec interface
+    es7210_codec_cfg_t es7210_cfg = {
+        .ctrl_if = in_ctrl_if,
+        .mic_selected = ES7120_SEL_MIC1 | ES7120_SEL_MIC2,
+    };
+    const audio_codec_if_t *in_codec_if = es7210_codec_new(&es7210_cfg);
+
     esp_codec_dev_cfg_t dev_cfg = {
         .codec_if = out_codec_if,
         .data_if = data_if,
-        .dev_type = ESP_CODEC_DEV_TYPE_IN_OUT,
+        .dev_type = ESP_CODEC_DEV_TYPE_OUT,
     };
     audio_hal = esp_codec_dev_new(&dev_cfg);
 
@@ -97,6 +108,16 @@ void * board_codec_init(void)
     };
     esp_codec_dev_open(audio_hal, &fs);
 
+    // New input codec device
+    dev_cfg.codec_if = in_codec_if;
+    dev_cfg.dev_type = ESP_CODEC_DEV_TYPE_IN;
+    esp_codec_dev_handle_t record_dev = esp_codec_dev_new(&dev_cfg);
+    esp_codec_dev_set_in_gain(record_dev, 30.0);
+
+    fs.channel = 2;
+    fs.channel_mask = ESP_CODEC_DEV_MAKE_CHANNEL_MASK(0) | ESP_CODEC_DEV_MAKE_CHANNEL_MASK(3);
+    ret = esp_codec_dev_open(record_dev, &fs);
+
     return audio_hal;
 }
 
@@ -105,6 +126,7 @@ void * board_codec_init(void)
 int board_codec_volume_set(void *hd, int vol)
 {
     return esp_codec_dev_set_out_vol(hd, vol);
+    // return audio_hal_set_volume(hd, vol);
 }
 
 
@@ -112,6 +134,7 @@ int board_codec_volume_set(void *hd, int vol)
 int board_codec_volume_get(void *hd, int *vol)
 {
     return esp_codec_dev_get_out_vol(hd, vol);
+    // return audio_hal_get_volume(hd, vol);
 }
 
 

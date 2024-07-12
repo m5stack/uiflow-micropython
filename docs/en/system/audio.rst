@@ -17,3 +17,4 @@ Classes
     :maxdepth: 1
 
     audio.player.rst
+    audio.recorder.rst
