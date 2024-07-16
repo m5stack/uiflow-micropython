@@ -72,7 +72,7 @@ const mp_obj_type_t m5_board_type = {
 
 // -------- M5 wrapper
 STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_begin_obj, 0, 1, m5_begin);
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(m5_add_display_obj, m5_add_display);
+STATIC MP_DEFINE_CONST_FUN_OBJ_3(m5_add_display_obj, m5_add_display);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_end_obj, m5_end);
 STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
