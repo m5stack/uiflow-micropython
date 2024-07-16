@@ -8,6 +8,23 @@ The following products are supported:
     |MiniJoyCHat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/mini_joy/stickc_plus2_mini_joy_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_mini_joy_example.m5f2|
+
+
 class MiniJoyHat
 -----------------
 
@@ -23,7 +40,24 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
+
+
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/mini_joy/stickc_plus2_mini_joy_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_mini_joy_example.m5f2|
 
 
 Methods
@@ -37,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x_raw.svg|
+        |get_x_raw.png|
 
 
 .. method:: MiniJoyHat.get_y_raw() -> int
@@ -48,7 +82,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y_raw.svg|
+        |get_y_raw.png|
 
 
 .. method:: MiniJoyHat.get_x() -> int
@@ -59,7 +93,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x.svg|
+        |get_x.png|
 
 
 .. method:: MiniJoyHat.get_y() -> int
@@ -70,7 +104,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y.svg|
+        |get_y.png|
 
 
 .. method:: MiniJoyHat.swap_x(swap: bool = True) -> None
@@ -81,7 +115,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_x.svg|
+        |swap_x.png|
 
 
 .. method:: MiniJoyHat.swap_y(swap: bool = True) -> None
@@ -92,7 +126,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_y.svg|
+        |swap_y.png|
 
 .. method:: MiniJoyHat.get_button_status() -> bool
 
@@ -102,7 +136,7 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|
 
 
 .. method:: MiniJoyHat.get_firmware_version() -> str
@@ -113,7 +147,7 @@ Methods
 
     UIFLOW2:
 
-        |get_firmware_version.svg|
+        |get_firmware_version.png|
 
 
 .. method:: MiniJoyHat.set_i2c_address(address: int) -> None
@@ -124,4 +158,4 @@ Methods
 
     UIFLOW2:
 
-        |set_i2c_address.svg|
+        |set_i2c_address.png|

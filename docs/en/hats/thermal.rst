@@ -8,6 +8,23 @@ The following products are supported:
     |ThermalHat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/thermal/stickc_plus2_thermal_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_thermal_example.m5f2|
+
+
 class ThermalHat
 ----------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 ThermalHat class inherits ThermalUnit class, See :ref:`unit.ThermaltUnit.Methods <unit.ThermaltUnit.Methods>` for more details.

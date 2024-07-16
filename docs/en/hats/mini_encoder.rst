@@ -7,21 +7,22 @@ The following products are supported:
 
     |Encoder|
 
+
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/hat/mini_encoder/mini_encoder_stickc_plus2.py
+    .. literalinclude:: ../../../examples/hat/mini_encoder/stickc_plus2_mini_encoder_example.py
         :language: python
         :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
-.. .. only:: builder_html
+.. only:: builder_html
 
-.. ..     |earth_core_example.m5f2|
+    |stickc_plus2_mini_encoder_example.m5f2|
 
 
 class MiniEncoderCHat
@@ -39,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -51,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_status.svg|
+        |get_rotary_status.png|
 
 
 .. method:: MiniEncoderCHat.get_rotary_value() -> int
@@ -60,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_value.svg|
+        |get_rotary_value.png|
 
 
 .. method:: MiniEncoderCHat.get_rotary_increments() -> int
@@ -70,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_increments.svg|
+        |get_rotary_increments.png|
 
 .. method:: MiniEncoderCHat.reset_rotary_value() -> None
 
@@ -78,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        |reset_rotary_value.svg|
+        |reset_rotary_value.png|
 
 .. method:: MiniEncoderCHat.get_button_status() -> bool
 
@@ -86,7 +87,7 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|
 
 
 .. method:: MiniEncoderCHat.set_rotary_value(new_value: int) -> None
@@ -97,7 +98,7 @@ Methods
 
     UIFLOW2:
 
-        |set_rotary_value.svg|
+        |set_rotary_value.png|
 
 .. method:: MiniEncoderCHat.fill_color(rgb: int) -> None
 
@@ -107,7 +108,7 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color.png|
 
 
 .. method:: MiniEncoderCHat.read_fw_version() -> str
@@ -116,7 +117,7 @@ Methods
 
     UIFLOW2:
 
-        |read_fw_version.svg|
+        |read_fw_version.png|
 
 
 .. method:: MiniEncoderCHat.set_address(address) -> None
@@ -125,4 +126,4 @@ Methods
 
     UIFLOW2:
 
-        |set_address.svg|
+        |set_address.png|

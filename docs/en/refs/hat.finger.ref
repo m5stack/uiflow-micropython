@@ -3,5 +3,15 @@
     :height: 200px
     :width: 200 px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/finger/init.svg
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/finger/init.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/finger/example.png
+
+.. |stickc_plus2_finger_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hat/finger/stickc_plus2_finger_example.m5f2"
+        target="_blank"
+    >
+        stickc_plus2_finger_example.m5f2
+    </a>

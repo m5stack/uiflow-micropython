@@ -10,6 +10,23 @@ Support the following products:
     ================== ==================
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/cardkb/cores3_cardkb_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_cardkb_example.m5f2|
+
+
 class CardKBUnit
 ----------------
 

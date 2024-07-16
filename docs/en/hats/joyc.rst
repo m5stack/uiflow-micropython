@@ -8,6 +8,23 @@ The following products are supported:
     |JoyCHat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/joyc/stickc_plus2_joyc_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_joyc_example.m5f2|
+
+
 class JoyCHat
 -------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -39,7 +56,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x_raw.svg|
+        |get_x_raw.png|
 
 
 .. method:: JoyCHat.get_y_raw(channel: int = 0) -> int
@@ -52,7 +69,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y_raw.svg|
+        |get_y_raw.png|
 
 
 .. method:: JoyCHat.get_x(channel: int = 0) -> int
@@ -65,7 +82,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x.svg|
+        |get_x.png|
 
 
 .. method:: JoyCHat.get_y(channel: int = 0) -> int
@@ -78,7 +95,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y.svg|
+        |get_y.png|
 
 
 .. method:: JoyCHat.swap_x(swap: bool = True) -> None
@@ -89,7 +106,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_x.svg|
+        |swap_x.png|
 
 
 .. method:: JoyCHat.swap_y(swap: bool = True) -> None
@@ -100,7 +117,7 @@ Methods
 
     UIFLOW2:
 
-        |swap_y.svg|
+        |swap_y.png|
 
 .. method:: JoyCHat.get_button_status(channel: int = 0) -> bool
 
@@ -111,7 +128,7 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|
 
 
 .. method:: JoyCHat.fill_color() -> None
@@ -120,4 +137,4 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color.png|

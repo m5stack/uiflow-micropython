@@ -8,6 +8,23 @@ The following products are supported:
     |DLightHAT|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/dlight/stickc_plus2_dlight_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_dlight_example.m5f2|
+
+
 class DLightHat
 ---------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 DLightHat class inherits DLightUnit class, See :ref:`unit.DLightUnit.Methods <unit.DLightUnit.Methods>` for more details.

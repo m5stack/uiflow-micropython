@@ -1,7 +1,7 @@
 Vibrator HAT
 ============
 
-.. include:: ../refs/hats.vibrator.ref
+.. include:: ../refs/hat.vibrator.ref
 
 Support the following products:
 
@@ -10,19 +10,19 @@ Support the following products:
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/hat/vibrator/vibrator_stick_plus2.py
+    .. literalinclude:: ../../../examples/hat/vibrator/stick_plus2_vibrator_example.py
         :language: python
         :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
-.. .. only:: builder_html
+.. only:: builder_html
 
-.. ..     |adc_core_example.m5f2|
+    |stick_plus2_vibrator_example.m5f2|
 
 
 class VibratorHAT
@@ -37,7 +37,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -53,7 +53,7 @@ Methods
 
     UIFLOW2:
 
-        |once.svg|
+        |once.png|
 
 
 .. method:: VibratorHAT.set_freq(freq)
@@ -64,7 +64,7 @@ Methods
 
     UIFLOW2:
 
-        |set_freq.svg|
+        |set_freq.png|
 
 
 .. method:: VibratorHAT.set_duty(freq) -> None
@@ -75,7 +75,7 @@ Methods
 
     UIFLOW2:
 
-        |set_duty.svg|
+        |set_duty.png|
 
 
 .. method:: VibratorHAT.turn_off() -> None
@@ -84,7 +84,7 @@ Methods
 
     UIFLOW2:
 
-        |turn_off.svg|
+        |turn_off.png|
 
 
 .. method:: VibratorHAT.deint() -> None
@@ -93,4 +93,4 @@ Methods
 
     UIFLOW2:
 
-        |deinit.svg|
+        |deinit.png|
