@@ -321,7 +321,7 @@ static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, i
     audio_pipeline_cfg_t pipeline_cfg = DEFAULT_AUDIO_PIPELINE_CONFIG();
     self->pipeline = audio_pipeline_init(&pipeline_cfg);
     // I2S
-    i2s_stream_cfg_t i2s_cfg = I2S_STREAM_CFG_DEFAULT();
+    i2s_stream_cfg_t i2s_cfg = BOARD_I2S_STREAM_CFG_DEFAULT();
     i2s_cfg.i2s_config.sample_rate = 48000;
     i2s_cfg.i2s_config.bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT;
     i2s_cfg.type = AUDIO_STREAM_READER;
