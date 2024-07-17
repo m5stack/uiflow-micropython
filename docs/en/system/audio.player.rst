@@ -44,6 +44,8 @@ Methods
 
         |play_sdcard_file.png|
 
+        |play_cloud_file.png|
+
 
 .. method:: Player.play_raw(data, sample=16000, stereo=False, bits=16, pos=0, volume=-1, sync=True)
 

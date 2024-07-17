@@ -40,7 +40,23 @@ Methods
 
     UIFLOW2:
 
-        |record.png|
+        |record_local_file.png|
+
+        |record_sdcard_file.png|
+
+.. method:: Recorder.create_pcm_buf(time) -> bytearray
+
+    Create a buffer to store the audio data. The audio data is in PCM format.
+
+    The length of the data buffer is :math:`sample * bits * time / 8`
+
+    :param int time: The duration of the recording, The unit is seconds.
+
+    :return: The buffer to store the audio data.
+
+    UIFLOW2:
+
+        |create_pcm_buf.png|
 
 
 .. method:: Recorder.record_into(buf, sample=8000, bits=16, stereo=False, sync=True)
