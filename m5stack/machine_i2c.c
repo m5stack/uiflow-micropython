@@ -76,6 +76,9 @@ typedef struct _machine_hw_i2c_obj_t {
     mp_obj_base_t base;
     uint8_t pos;
     i2c_port_t port;
+    int8_t scl;
+    int8_t sda;
+    uint32_t freq;
 } machine_hw_i2c_obj_t;
 
 STATIC machine_hw_i2c_obj_t machine_hw_i2c_obj[I2C_NUM_MAX];
@@ -327,6 +330,9 @@ mp_obj_t machine_hw_i2c_make_new(const mp_obj_type_t *type, size_t n_args, size_
     int sda = mp_hal_get_pin_obj(args[ARG_sda].u_obj);
     self->pos = malloc_bus(scl, sda, args[ARG_freq].u_int, i2c_id);
     self->port = i2c_device[self->pos]->port;
+    self->scl = scl;
+    self->sda = sda;
+    self->freq = args[ARG_freq].u_int;
     // printf("i2c_id: %d, scl: %d, sda: %d, freq: %d\n", self->port , scl, sda, args[ARG_freq].u_int);
 
     return MP_OBJ_FROM_PTR(self);

@@ -24,13 +24,13 @@
 .. |get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_topic.png
 .. |get_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_msg.png
 
-.. |mqttpoeunit_demo.m5f2| raw:: html
+.. |mqttpoe_demo.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/mqtt_poe/mqttpoeunit_demo.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/mqtt_poe/mqttpoe_demo.m5f2"
         target="_blank"
     >
-        mqttpoeunit_demo.m5f2
+        mqttpoe_demo.m5f2
     </a>
 
 

@@ -30,6 +30,9 @@ typedef struct _max30100_hw_i2c_obj_t {
     mp_obj_base_t base;
     uint8_t pos;
     i2c_port_t port;
+    int8_t scl;
+    int8_t sda;
+    uint32_t freq;
 } max30100_hw_i2c_obj_t;
 
 STATIC mp_obj_t mp_MAX30100_get_HeartRate(void) {

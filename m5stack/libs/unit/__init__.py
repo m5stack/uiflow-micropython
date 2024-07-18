@@ -66,6 +66,7 @@ _attrs = {
     "MiniScaleUnit": "miniscale",
     "MQTTUnit": "mqtt",
     "MQTTPoEUnit": "mqttpoe",
+    "NBIOTUnit": "nbiot",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
     "NECOUnit": "neco",
@@ -74,6 +75,7 @@ _attrs = {
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
     "PIRUnit": "pir",
+    "QRCodeUnit": "qrcode",
     "RCAUnit": "rca",
     "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",
@@ -102,6 +104,7 @@ _attrs = {
     "WateringUnit": "watering",
     "WeightI2CUnit": "weight_i2c",
     "WeightUnit": "weight",
+    "ZigbeeUnit": "zigbee",
 }
 
 

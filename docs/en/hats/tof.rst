@@ -8,6 +8,23 @@ The following products are supported:
     |ToFHat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/tof/stickc_plus2_tof_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_tof_example.m5f2|
+
+
 class ToFHat
 -------------
 
@@ -24,7 +41,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 ToFHat class inherits ToFUnit class, See :ref:`unit.ToFUnit.Methods <unit.ToFUnit.Methods>` for more details.

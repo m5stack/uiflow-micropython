@@ -70,7 +70,7 @@ set(MICROPY_SOURCE_PORT
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_adc.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_adcblock.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_dac.c
-    ${PROJECT_DIR}/../m5stack/machine_i2c.c
+    ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2c.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_i2s.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_uart.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/modmachine.c
@@ -183,6 +183,7 @@ list(APPEND IDF_COMPONENTS
     audio_sal
     esp-adf-libs
     esp-sr
+    esp_codec_dev
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

@@ -7,6 +7,8 @@
 
 .. |play_sdcard_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_sdcard_file.png
 
+.. |play_cloud_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_cloud_file.png
+
 .. |play_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_raw.png
 
 .. |play_tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/audio/player/play_tone.png

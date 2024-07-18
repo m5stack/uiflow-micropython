@@ -26,14 +26,15 @@ Constructors
 Methods
 -------
 
-.. method:: Player.play(uri, pos=0, volume=-1, sync=True)
+.. method:: Player.play(uri, pos=0, volume=-1, sync=True, verify=None)
 
     Play the audio file.
 
-    :param str uri: The uri of the audio file. e.g. "file:///flash/test.mp3"
+    :param str uri: The uri of the audio file. e.g. "file:///flash/test.mp3", "file:///sd/test.mp3", "https://dl.espressif.com/dl/audio/ff-16b-2c-44100hz.mp3"
     :param int pos: The position to start playing, in byte.
     :param int volume: The volume of the player, 0-100. -1 means the default volume.
     :param bool sync: Whether to play synchronously.
+    :param str verify: ssl verify, default is None.
 
     UIFLOW2:
 
@@ -42,6 +43,8 @@ Methods
         |play_local_file1.png|
 
         |play_sdcard_file.png|
+
+        |play_cloud_file.png|
 
 
 .. method:: Player.play_raw(data, sample=16000, stereo=False, bits=16, pos=0, volume=-1, sync=True)

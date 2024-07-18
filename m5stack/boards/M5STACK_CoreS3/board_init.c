@@ -84,6 +84,9 @@ void * board_codec_init(void)
 #endif
     const audio_codec_ctrl_if_t *out_ctrl_if = audio_codec_new_i2c_ctrl(&i2c_cfg);
 
+    i2c_cfg.addr = ES7210_CODEC_DEFAULT_ADDR;
+    const audio_codec_ctrl_if_t *in_ctrl_if = audio_codec_new_i2c_ctrl(&i2c_cfg);
+
     const audio_codec_gpio_if_t *gpio_if = audio_codec_new_gpio();
 
     aw88298_codec_cfg_t aw8829_cfg = {
@@ -96,12 +99,36 @@ void * board_codec_init(void)
     };
     const audio_codec_if_t *out_codec_if = aw88298_codec_new(&aw8829_cfg);
 
+    // New input codec interface
+    es7210_codec_cfg_t es7210_cfg = {
+        .ctrl_if = in_ctrl_if,
+        .mic_selected = ES7120_SEL_MIC1 | ES7120_SEL_MIC2,
+    };
+    const audio_codec_if_t *in_codec_if = es7210_codec_new(&es7210_cfg);
+
     esp_codec_dev_cfg_t dev_cfg = {
         .codec_if = out_codec_if,              // aw88298_codec_new 获取到的接口实现
         .data_if = data_if,                    // 这里不实例化 i2s; 后续的 i2s_stream_init 会实例化 i2s。
         .dev_type = ESP_CODEC_DEV_TYPE_OUT, // 设备只播放
     };
     audio_hal = esp_codec_dev_new(&dev_cfg);
+
+    esp_codec_dev_sample_info_t fs = {
+        .sample_rate = 48000,
+        .channel = 2,
+        .bits_per_sample = 16,
+    };
+    esp_codec_dev_open(audio_hal, &fs);
+
+    // New input codec device
+    dev_cfg.codec_if = in_codec_if;
+    dev_cfg.dev_type = ESP_CODEC_DEV_TYPE_IN;
+    esp_codec_dev_handle_t record_dev = esp_codec_dev_new(&dev_cfg);
+    esp_codec_dev_set_in_gain(record_dev, 30.0);
+
+    fs.channel = 2;
+    fs.channel_mask = ESP_CODEC_DEV_MAKE_CHANNEL_MASK(0) | ESP_CODEC_DEV_MAKE_CHANNEL_MASK(3);
+    ret = esp_codec_dev_open(record_dev, &fs);
 
     return audio_hal;
 }

@@ -25,7 +25,7 @@ class SIM7080(Modem):
 
     def get_mode_selection(self):
         # get Preferred Selection between CAT-M and NB-IoT
-        CMNB = AT_CMD("AT+CMNB?", "OK", 3)  # noqa: N806
+        CMNB = AT_CMD("AT+CMNB?", "+CMNB:", 3)  # noqa: N806
         output, error = self.execute_at_command(CMNB)
         return False if error else int(output[-1])
 
@@ -49,7 +49,7 @@ class SIM7080(Modem):
 
     def get_network_activated(self, pdp_id):
         # Get APP Network Active or Not
-        CNACT = AT_CMD("AT+CNACT?", "OK", 3)  # noqa: N806
+        CNACT = AT_CMD("AT+CNACT?", "+CNACT:", 3)  # noqa: N806
         output, error = self.execute_at_command(CNACT)
         return False if error else int(output.split("+CNACT: ")[pdp_id + 1][2])
 
@@ -61,7 +61,7 @@ class SIM7080(Modem):
 
     def get_network_ip(self, pdp_id):
         # get APP Network IP Address
-        CNACT = AT_CMD("AT+CNACT?", "OK", 3)  # noqa: N806
+        CNACT = AT_CMD("AT+CNACT?", "+CNACT:", 3)  # noqa: N806
         output, error = self.execute_at_command(CNACT)
         return False if error else output.split("+CNACT: ")[pdp_id + 1][5:-1]
 

@@ -8,6 +8,23 @@ The following products are supported:
     |FingerHat|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/finger/stickc_plus2_finger_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_finger_example.m5f2|
+
+
 class FingerHat
 ---------------
 

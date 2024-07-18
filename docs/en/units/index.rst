@@ -28,6 +28,7 @@ Unit
     glass2.rst
     grove2grove.rst
     hall_effect.rst
+    heart.rst
     imu.rst
     imupro.rst
     ir.rst
@@ -40,11 +41,13 @@ Unit
     miniscale.rst
     mqtt.rst
     mqttpoe.rst
+    nbiot.rst
     ncir.rst
     oled.rst
     op90.rst
     op180.rst
     pir.rst
+    qrcode.rst
     rca.rst
     reflective_ir.rst
     relay.rst
@@ -57,4 +60,4 @@ Unit
     vibrator.rst
     watering.rst
     weight_i2c.rst
-    heart.rst
+    zigbee.rst

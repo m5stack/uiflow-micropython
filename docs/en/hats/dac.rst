@@ -8,6 +8,23 @@ The following products are supported:
     |DAC|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/dac/stickc_plus2_dac_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_dac_example.m5f2|
+
+
 class DACHat
 ------------
 
@@ -25,7 +42,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 DACHat class inherits DACUnit class, See :ref:`unit.DACUnit.Methods <unit.DACUnit.Methods>` for more details.

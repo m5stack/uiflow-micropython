@@ -3,27 +3,27 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/init.png
 
-.. |get_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_value.svg
+.. |get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_value.png
 
-.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_voltage.svg
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_voltage.png
 
-.. |get_raw_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_raw_value.svg
+.. |get_raw_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_raw_value.png
 
-.. |get_operating_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_operating_mode.svg
+.. |get_operating_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_operating_mode.png
 
-.. |get_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_data_rate.svg
+.. |get_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_data_rate.png
 
-.. |get_gain.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_gain.svg
+.. |get_gain.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/get_gain.png
 
-.. |set_operating_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_operating_mode.svg
+.. |set_operating_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_operating_mode.png
 
-.. |set_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_data_rate.svg
+.. |set_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_data_rate.png
 
-.. |set_gain.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_gain.svg
+.. |set_gain.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/adc/set_gain.png
 
 .. |adc_cores3_example.m5f2| raw:: html
 

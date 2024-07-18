@@ -8,6 +8,23 @@ The following products are supported:
     |NCIRHAT|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/ncir/stickc_plus2_ncir_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_ncir_example.m5f2|
+
+
 class NCIRHat
 -------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 NCIRHat class inherits NCIRUnit class, See :ref:`unit.NCIRUnit.Methods <unit.NCIRUnit.Methods>` for more details.

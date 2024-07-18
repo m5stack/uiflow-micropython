@@ -8,6 +8,23 @@ The following products are supported:
     |ADC|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/adc/stickc_plus2_adc_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_adc_example.m5f2|
+
+
 class CANUnit
 -------------
 
@@ -23,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 ADCHat class inherits ADCUnit class, See :ref:`unit.ADCUnit.Methods <unit.ADCUnit.Methods>` for more details.

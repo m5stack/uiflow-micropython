@@ -8,7 +8,7 @@ from micropython import const
 from ustruct import pack, pack_into, unpack_from
 from uasyncio import Event, create_task, sleep_ms
 
-from checksum import crc8
+from .checksum import crc8
 
 I2C_DEFAULT_ADDR = const(0x62)
 

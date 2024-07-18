@@ -17,7 +17,7 @@ Micropython Example:
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.ADCUnit.Methods:
@@ -54,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_value.svg|
+        |get_value.png|
 
 
 .. method:: ADCUnit.get_voltage()
@@ -63,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|
 
 
 .. method:: ADCUnit.get_raw_value()
@@ -72,7 +72,7 @@ Methods
 
     UIFLOW2:
 
-        |get_raw_value.svg|
+        |get_raw_value.png|
 
 
 .. method:: ADCUnit.get_operating_mode()
@@ -81,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |get_operating_mode.svg|
+        |get_operating_mode.png|
 
 
 .. method:: ADCUnit.get_data_rate()
@@ -90,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |get_data_rate.svg|
+        |get_data_rate.png|
 
 
 .. method:: ADCUnit.get_gain()
@@ -99,7 +99,7 @@ Methods
 
     UIFLOW2:
 
-        |get_gain.svg|
+        |get_gain.png|
 
 
 .. method:: ADCUnit.operating_mode()
@@ -108,7 +108,7 @@ Methods
 
     UIFLOW2:
 
-        |set_operating_mode.svg|
+        |set_operating_mode.png|
 
 
 .. method:: ADCUnit.data_rate()
@@ -117,7 +117,7 @@ Methods
 
     UIFLOW2:
 
-        |set_data_rate.svg|
+        |set_data_rate.png|
 
 
 .. method:: ADCUnit.gain()
@@ -126,4 +126,4 @@ Methods
 
     UIFLOW2:
 
-        |set_gain.svg|
+        |set_gain.png|

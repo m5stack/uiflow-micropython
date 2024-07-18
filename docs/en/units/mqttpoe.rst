@@ -42,7 +42,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |mqttpoeunit_demo.m5f2|
+    |mqttpoe_demo.m5f2|
 
 
 class MQTTPoEUnit
