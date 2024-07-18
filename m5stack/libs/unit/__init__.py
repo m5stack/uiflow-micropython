@@ -66,6 +66,7 @@ _attrs = {
     "MiniScaleUnit": "miniscale",
     "MQTTUnit": "mqtt",
     "MQTTPoEUnit": "mqttpoe",
+    "NBIOTUnit": "nbiot",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
     "NECOUnit": "neco",

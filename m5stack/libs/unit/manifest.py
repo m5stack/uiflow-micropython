@@ -67,6 +67,7 @@ package(
         "miniscale.py",
         "mqtt.py",
         "mqttpoe.py",
+        "nbiot.py",
         "ncir.py",
         "ncir2.py",
         "neco.py",

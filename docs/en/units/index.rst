@@ -41,6 +41,7 @@ Unit
     miniscale.rst
     mqtt.rst
     mqttpoe.rst
+    nbiot.rst
     ncir.rst
     oled.rst
     op90.rst

@@ -75,33 +75,33 @@ class Modem(object):
 
     def get_network_registration_status(self):
         # Get the registration status with the network
-        CREG = AT_CMD("AT+CREG?", "OK", 3)  # noqa: N806
+        CREG = AT_CMD("AT+CREG?", "+CREG:", 3)  # noqa: N806
         output, error = self.execute_at_command(CREG)
-        return False if error else int(output[-3:].split(",")[1])
+        return False if error else int(output[-1])
 
     def get_signal_strength(self):
         # Get the signal strength
         CSQ = AT_CMD("AT+CSQ", "+CSQ:", 3)  # noqa: N806
         output, error = self.execute_at_command(CSQ)
-        return False if error else int(output[-5:].split(",")[0])
+        return False if error else int(output.split(",")[0][-1])
 
     def get_gprs_registration_status(self):
         # Get the registration status with the gprs network
-        CGREG = AT_CMD("AT+CGREG?", "OK", 3)  # noqa: N806
+        CGREG = AT_CMD("AT+CGREG?", "+CGREG:", 3)  # noqa: N806
         output, error = self.execute_at_command(CGREG)
-        return False if error else int(output[-3:].split(",")[1])
+        return False if error else int(output[-1])
 
     def get_model_identification(self):
         # Query the model identification information
-        CGMM = AT_CMD("AT+CGMM", "OK", 3)  # noqa: N806
+        CGMM = AT_CMD("AT+CGMM", "SIM", 3)  # noqa: N806
         output, error = self.execute_at_command(CGMM)
         return False if error else output
 
     def get_gprs_network_status(self):
         # Get attach or detach from the GPRS network
-        CGATT = AT_CMD("AT+CGATT?", "OK", 3)  # noqa: N806
+        CGATT = AT_CMD("AT+CGATT?", "+CGATT:", 3)  # noqa: N806
         output, error = self.execute_at_command(CGATT)
-        return False if error else int(output[-1:])
+        return False if error else int(output[-1])
 
     def set_gprs_network_state(self, enable=1):
         # Set attach or detach from the GPRS network
@@ -117,20 +117,25 @@ class Modem(object):
 
     def get_show_pdp_address(self, cid):
         # Get Show PDP address.
-        CGPADDR = AT_CMD("AT+CGPADDR={}".format(cid), "OK", 12)  # noqa: N806
+        CGPADDR = AT_CMD("AT+CGPADDR={}".format(cid), "+CGPADDR:", 12)  # noqa: N806
         output, error = self.execute_at_command(CGPADDR)
         return False if error else (output.split(",")[1]).replace('"', "")
 
     def get_selected_operator(self):
         # Get selected operator.
-        COPS = AT_CMD("AT+COPS?", "OK", 12)  # noqa: N806
+        COPS = AT_CMD("AT+COPS?", "+COPS", 12)  # noqa: N806
         output, error = self.execute_at_command(COPS)
         if error:
             return False
-        if output.find('"') != -1:
-            return output.split('"')[1]
-        else:
-            return ""
+        return output.split('"')[1] if output.find('"') != -1 else ""
+
+    def get_keyword_index_in_list(self, list_item, keyword):
+        if isinstance(list_item, list):
+            list_item = [list_item]
+        for index, kw in enumerate(list_item):
+            if keyword in kw:
+                return (list_item, index, False)
+        return (list_item, 0, True)
 
     # ----------------------
     # Execute AT commands
