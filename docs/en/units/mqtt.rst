@@ -38,7 +38,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |mqttunit_demo.m5f2|
+    |mqtt_demo.m5f2|
 
 
 class MQTTUnit
