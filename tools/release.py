@@ -56,6 +56,7 @@ fireware_info_table = (
 
 third_party_info_table = (
     FirewareInfo("SEEED_STUDIO_XIAO_ESP32S3", "375ae5281d0de5a7dba8296fac53f832", ""),
+    FirewareInfo("ESPRESSIF_ESP32_S3_BOX_3", "7700011e403808156f1d4869b330303b", ""),
 )
 
 
