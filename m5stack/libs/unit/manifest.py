@@ -75,6 +75,7 @@ package(
         "pahub.py",
         "pbhub.py",
         "pir.py",
+        "qrcode.py",
         "rca.py",
         "reflective_ir.py",
         "relay.py",

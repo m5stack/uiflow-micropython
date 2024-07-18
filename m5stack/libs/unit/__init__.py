@@ -74,6 +74,7 @@ _attrs = {
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
     "PIRUnit": "pir",
+    "QRCodeUnit": "qrcode",
     "RCAUnit": "rca",
     "ReflectiveIRUnit": "reflective_ir",
     "RelayUnit": "relay",

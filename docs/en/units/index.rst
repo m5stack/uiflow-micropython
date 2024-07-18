@@ -46,6 +46,7 @@ Unit
     op90.rst
     op180.rst
     pir.rst
+    qrcode.rst
     rca.rst
     reflective_ir.rst
     relay.rst
