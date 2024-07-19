@@ -12,9 +12,9 @@ RCA Module
 Micropython 示例::
 
 	import M5
-	display = M5.addDisplay({"module_rca":{"enabled":True}}) # 添加RCA模块
+	display = M5.addDisplay(None, 0, {"module_rca":{"enabled":True}}) # 添加RCA模块
 	# or
-	display = M5.addDisplay({
+	display = M5.addDisplay(None, 0, {
 		"module_rca":{
 			"enabled":True,
 			"width": 216,

@@ -45,6 +45,8 @@ class RCAUnit:
         """
 
         self.display = M5.addDisplay(
+            None,
+            0,
             {
                 "unit_rca": {
                     "enabled": True,
@@ -57,5 +59,5 @@ class RCAUnit:
                     "pin_dac": port[1],
                     "output_level": output_level,
                 }
-            }
+            },
         )  # Add RCA unit

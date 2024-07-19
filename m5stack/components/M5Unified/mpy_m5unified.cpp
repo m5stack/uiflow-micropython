@@ -239,6 +239,9 @@ static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg, 
                 m5_config_helper_unit_rca(value, cfg);
             }
             #endif
+            else {
+                mp_printf(&mp_plat_print, "%s is not a valid display.\n", key_str);
+            }
         }
     }
 }

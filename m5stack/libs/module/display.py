@@ -47,6 +47,8 @@ class DisplayModule:
         """
 
         self.display = M5.addDisplay(
+            None,
+            0,
             {
                 "module_display": {
                     "enabled": True,
@@ -59,5 +61,5 @@ class DisplayModule:
                     "scale_h": scale_h,
                     "pixel_clock": pixel_clock,
                 }
-            }
+            },
         )
