@@ -106,7 +106,7 @@ function ci_esp32_idf504_setup {
         fi
     fi
 
-    git clone --depth 1 --branch uiflow/v2.0-idf5.0.4 --recurse-submodules https://github.com/m5stack/esp-idf.git
+    git clone --depth 1 --branch uiflow/v2.0-idf5.0.4 https://github.com/m5stack/esp-idf.git
     git -C esp-idf submodule update --init \
         components/bt/host/nimble/nimble \
         components/esp_wifi \
