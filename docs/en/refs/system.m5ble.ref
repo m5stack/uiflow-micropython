@@ -1,0 +1,53 @@
+.. |client_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_example.png
+.. |server_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_example.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/init.png
+.. |get_mtu.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/get_mtu.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/deinit.png
+.. |client_on_connected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_connected.png
+.. |client_on_disconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_disconnected.png
+.. |client_on_server_found.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_server_found.png
+.. |client_on_scan_finished.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_scan_finished.png
+.. |client_on_read_complete.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_read_complete.png
+.. |client_on_notify.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_on_notify.png
+.. |client_scan.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_scan.png
+.. |client_connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_connect.png
+.. |client_set_current_service_uuid.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_set_current_service_uuid.png
+.. |client_any.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_any.png
+.. |client_read.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_read.png
+.. |client_write.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_write.png
+.. |client_close.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_close.png
+.. |client_get_services.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_get_services.png
+.. |client_get_characteristics.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_get_characteristics.png
+.. |set_mtu.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/client_set_mtu.png
+.. |server_clear_services.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_clear_services.png
+.. |server_add_service.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_add_service.png
+.. |server_create_characteristic.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_create_characteristic.png
+.. |server_start.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_start.png
+.. |server_on_receive.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_on_receive.png
+.. |server_on_connected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_on_connected.png
+.. |server_on_disconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_on_disconnected.png
+.. |server_get_client.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_get_client.png
+.. |server_get_clients.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/server_get_clients.png
+.. |handle_any.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/handle_any.png
+.. |handle_read.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/handle_read.png
+.. |handle_read_all.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/handle_read_all.png
+.. |handle_write.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/handle_write.png
+.. |handle_close.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble/handle_close.png
+
+.. |m5ble_client_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/system/m5ble/m5ble_client_cores3_example.m5f2"
+        target="_blank"
+    >
+        m5ble_client_cores3_example.m5f2
+    </a>
+
+.. |m5ble_server_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/system/m5ble/m5ble_server_cores3_example.m5f2"
+        target="_blank"
+    >
+        m5ble_server_cores3_example.m5f2
+    </a>

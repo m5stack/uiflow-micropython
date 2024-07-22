@@ -8,36 +8,21 @@ Support the following products:
     |PIR|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-    from hat import *
-
-    i2c0 = None
-    pir_0 = None
-
-    def setup():
-    global i2c0, pir_0
-
-    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    pir_0 = PIR((8, 9))
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    print(pir_0.get_status())
+    .. literalinclude:: ../../../examples/hat/pir/stickc_plus2_pir_hat_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
 
-    |pir_core_example.m5f2|
+    |stickc_plus2_pir_hat_example.m5f2|
 
 
 class PIRHat
@@ -55,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -67,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_status.svg|
+        |get_status.png|
 
 
 .. method:: PIRHat.enable_irq()
@@ -76,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |enable_irq.svg|
+        |enable_irq.png|
 
 
 .. method:: PIRHat.disable_irq()
@@ -85,7 +70,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_irq.svg|
+        |disable_irq.png|
 
 
 .. method:: PIRHat.set_callback()
@@ -94,4 +79,4 @@ Methods
 
     UIFLOW2:
 
-        |set_callback.svg|
+        |set_callback.png|

@@ -9,6 +9,7 @@ Unit
     angle.rst
     buzzer.rst
     can.rst
+    cardkb.rst
     catch.rst
     dac.rst
     dac2.rst
@@ -21,30 +22,42 @@ Unit
     env.rst
     extencoder.rst
     fader.rst
+    finger.rst
     flash_light.rst
     glass.rst
     glass2.rst
     grove2grove.rst
     hall_effect.rst
+    heart.rst
+    imu.rst
+    imupro.rst
     ir.rst
+    joystick.rst
     key.rst
     lcd.rst
     light.rst
     lora_e220.rst
     minioled.rst
     miniscale.rst
+    mqtt.rst
+    mqttpoe.rst
+    nbiot.rst
     ncir.rst
     oled.rst
     op90.rst
     op180.rst
     pir.rst
+    qrcode.rst
     rca.rst
     reflective_ir.rst
     relay.rst
     relay4.rst
     rgb.rst
     ssr.rst
+    thermal.rst
     tof.rst
     ultrasonic.rst
+    vibrator.rst
     watering.rst
     weight_i2c.rst
+    zigbee.rst

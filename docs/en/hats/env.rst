@@ -10,32 +10,21 @@ The following products are supported:
     ================== ==================
 
 
-Micropython Example::
+Micropython Example:
 
-    import M5
-    from M5 import *
-    from hat import *
-
-    M5.begin()
-
-    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-
-    env_0 = ENVHat(i2c=i2c0, type=1) # ENVHat
-    env2_0 = ENVHat(i2c=i2c0, type=2) # ENVHat II
-    env3_0 = ENVHat(i2c=i2c0, type=3) # ENVHat III
-
-    print(env_0.read_temperature())
-    print(env_0.read_humidity())
-    print(env_0.read_pressure())
+    .. literalinclude:: ../../../examples/hat/env/stickc_plus2_env_hat_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
 
 .. only:: builder_html
 
-    |env_cores3_example.m5f2|
+    |stickc_plus2_env_hat_example.m5f2|
 
 
 class ENVHat
@@ -59,7 +48,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -71,7 +60,7 @@ Methods
 
     UIFLOW2:
 
-        |read_temperature.svg|
+        |read_temperature.png|
 
 
 .. method:: ENVHat.read_humidity()
@@ -80,7 +69,7 @@ Methods
 
     UIFLOW2:
 
-        |read_humidity.svg|
+        |read_humidity.png|
 
 
 .. method:: ENVHat.read_pressure()
@@ -89,4 +78,4 @@ Methods
 
     UIFLOW2:
 
-        |read_pressure.svg|
+        |read_pressure.png|

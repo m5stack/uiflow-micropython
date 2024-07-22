@@ -1,7 +1,7 @@
 .. |Encoder| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/encoder/encoder_01.webp
     :target: https://docs.m5stack.com/zh_CN/unit/encoder
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 
 .. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/example.svg
@@ -23,3 +23,12 @@
 .. |set_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/set_color.svg
 
 .. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/fill_color.svg
+
+.. |stickc_plus2_encoder_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/encoder/stickc_plus2_encoder_example.m5f2"
+        target="_blank"
+    >
+        stickc_plus2_encoder_example.m5f2
+    </a>

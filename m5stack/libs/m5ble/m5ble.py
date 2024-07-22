@@ -552,6 +552,8 @@ class Client:
         return self._service_handle_map[service_uuid].keys()
 
     def set_mtu(self, mtu):
+        if not self._server_conn_handle:
+            raise ValueError("Not connected to a server")
         self._ble.config(mtu=mtu)
         self._ble.gattc_exchange_mtu(self._server_conn_handle)
 

@@ -1,0 +1,29 @@
+
+.. |HeartUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/heart/heart_01.webp
+    :target: https://docs.m5stack.com/en/unit/heart
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/init.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/stop.png
+.. |start.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/start.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/deinit.png
+.. |get_heart_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_heart_rate.png
+.. |get_spo2.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_spo2.png
+.. |get_ir.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_ir.png
+.. |get_red.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/get_red.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_mode.png
+.. |set_led_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_led_current.png
+.. |set_pulse_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_pulse_width.png
+.. |set_sampling_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/set_sampling_rate.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/heart/example.png
+
+.. |core_heart_unit_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/heart/core_heart_unit_example.m5f2"
+        target="_blank"
+    >
+        core_heart_unit_example.m5f2
+    </a>

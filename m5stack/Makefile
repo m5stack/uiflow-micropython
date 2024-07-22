@@ -139,7 +139,7 @@ ifdef LVGL
 	LVGL_FLAG = 1
 endif
 
-GIT_VERSION := $(shell git describe --abbrev=7 --always)
+GIT_VERSION := $(shell git rev-parse --short HEAD)
 
 include ./include/files.mk
 
@@ -157,6 +157,8 @@ define pack_fw
 		$(BUILD)/uiflow-$(GIT_VERSION).bin \
 		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
 endef
+
+export ADF_PATH=$(abspath ../esp-adf)
 
 .PHONY: all menu build deploy flash flash_all clean erase nvs fs pack pack_all littlefs mpy-cross submodules FORCE
 
@@ -266,16 +268,27 @@ submodules:
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
 	git submodule update --init ../micropython
+	git submodule update --init ../esp-adf
+	cd ../esp-adf && \
+		git submodule update --init components/esp-adf-libs && \
+		git submodule update --init components/esp-sr && \
+		cd -
 	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
 
 # Apply patches
 patch:
 	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/patche,$(abspath ../esp-idf/),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	$(call Package/patche,$(abspath ../esp-adf/),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
+	$(call Package/patche,$(abspath ../esp-adf/),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
 
 # Unapply patches
 unpatch:
 	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/unpatche,$(abspath ../esp-idf/),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	$(call Package/unpatche,$(abspath ../esp-adf/),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
+	$(call Package/unpatche,$(abspath ../esp-adf/),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))

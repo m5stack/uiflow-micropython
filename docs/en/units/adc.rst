@@ -8,31 +8,21 @@ Support the following products:
     |ADC|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import *
-
-    adc_0 = None
-
-    def setup():
-    global adc_0
-
-    print(adc_0.get_voltage())
-    time.sleep(1)
+    .. literalinclude:: ../../../examples/unit/adc/adc_cores3_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
 
-    |adc_core_example.m5f2|
+    |adc_cores3_example.m5f2|
 
 
 class ADCUnit
@@ -50,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.ADCUnit.Methods:
@@ -64,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_value.svg|
+        |get_value.png|
 
 
 .. method:: ADCUnit.get_voltage()
@@ -73,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|
 
 
 .. method:: ADCUnit.get_raw_value()
@@ -82,7 +72,7 @@ Methods
 
     UIFLOW2:
 
-        |get_raw_value.svg|
+        |get_raw_value.png|
 
 
 .. method:: ADCUnit.get_operating_mode()
@@ -91,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |get_operating_mode.svg|
+        |get_operating_mode.png|
 
 
 .. method:: ADCUnit.get_data_rate()
@@ -100,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |get_data_rate.svg|
+        |get_data_rate.png|
 
 
 .. method:: ADCUnit.get_gain()
@@ -109,7 +99,7 @@ Methods
 
     UIFLOW2:
 
-        |get_gain.svg|
+        |get_gain.png|
 
 
 .. method:: ADCUnit.operating_mode()
@@ -118,7 +108,7 @@ Methods
 
     UIFLOW2:
 
-        |set_operating_mode.svg|
+        |set_operating_mode.png|
 
 
 .. method:: ADCUnit.data_rate()
@@ -127,7 +117,7 @@ Methods
 
     UIFLOW2:
 
-        |set_data_rate.svg|
+        |set_data_rate.png|
 
 
 .. method:: ADCUnit.gain()
@@ -136,4 +126,4 @@ Methods
 
     UIFLOW2:
 
-        |set_gain.svg|
+        |set_gain.png|

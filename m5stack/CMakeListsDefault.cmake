@@ -93,7 +93,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
 )
 
-if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
+if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2" OR BOARD_TYPE STREQUAL "paper")
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_sdcard.c)
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
 else()
@@ -166,6 +166,12 @@ set(IDF_COMPONENTS
     spi_flash
     ulp
     vfs
+    boards
+    audio_pipeline
+    audio_sal
+    esp-adf-libs
+    esp-sr
+    esp_codec_dev
     xtensa
     esp_http_client
     esp-tls

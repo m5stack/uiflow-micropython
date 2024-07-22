@@ -34,14 +34,6 @@ Micropython Example::
     time.sleep(1)
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class Relay4Unit
 ----------------
 

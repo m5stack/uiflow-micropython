@@ -8,32 +8,16 @@ Support the following products:
     |NCIR|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-    from unit import *
-
-    i2c0 = None
-    ncir_0 = None
-
-    def setup():
-    global i2c0, ncir_0
-
-    i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    ncir_0 = NCIRUnit(i2c0)
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    print(ncir_0.get_ambient_temperature())
-    print(ncir_0.get_object_temperature())
+    .. literalinclude:: ../../../examples/unit/ncir/ncir_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -56,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.NCIRUnit.Methods:
@@ -70,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_ambient_temperature.svg|
+        |get_ambient_temperature.png|
 
 
 .. method:: ncir.get_object_temperature()
@@ -79,4 +63,4 @@ Methods
 
     UIFLOW2:
 
-        |get_object_temperature.svg|
+        |get_object_temperature.png|

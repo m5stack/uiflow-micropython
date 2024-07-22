@@ -8,25 +8,21 @@ Support the following products:
     |Buzzer|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import BuzzerUnit
-
-    vib_0 = BuzzerUnit((33, 32))
+    .. literalinclude:: ../../../examples/unit/buzzer/cores3_buzzer_example.py
+        :language: python
+        :linenos:
 
 
-.. UIFLOW2 Example:
+UIFLOW2 Example:
 
-.. .. |example.svg|
+    |example.png|
 
 
-.. .. only:: builder_html
+.. only:: builder_html
 
-.. ..     |adc_core_example.m5f2|
+    |cores3_buzzer_example.m5f2|
 
 
 class BuzzerUnit

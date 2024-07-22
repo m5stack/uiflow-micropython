@@ -1,34 +1,52 @@
-RCA Unit
-========
+
+RCAUnit
+=======
 
 .. include:: ../refs/unit.rca.ref
 
+Unit RCA is a female jack terminal block for transmitting composite video (audio or video), one of the most common A/V connectors, which transmits  video or audio signals from a component device to an output  device (i.e., a display or speaker).
 
-Unit RCA is a female jack terminal block for transmitting composite 
-video (audio or video), one of the most common A/V connectors, which transmits 
-video or audio signals from a component device to an output 
-device (i.e., a display or speaker).
+Support the following products:
 
+|RCAUnit|
 
-Supported products:
+Micropython Example::
 
-    |RCAUnit|
-
-
-Micropython example::
-
+    import os, sys, io
     import M5
-    display = M5.addDisplay({
-        "unit_rca":{
-            "enabled":True,
-            "width": 216,
-            "height": 144,
-            "output_width": 0,
-            "output_height": 0,
-            "signal_type": 0, # NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4
-            "use_psram": 0,
-            "pin_dac": 26,
-            "output_level": 0,
-        }
-    })
-    display.clear(0xffffff) # Clear screen
+    from M5 import *
+    from unit import RCAUnit
+    rca = RCAUnit()
+    rca.display.fill(0)
+
+.. only:: builder_html
+
+class RCAUnit
+-------------
+
+Constructors
+------------
+
+.. class:: RCAUnit(port, width, height, signal_type, output_level, use_psram)
+
+    Initialize the Unit RCA
+
+    :param tuple port: The port to which the Unit RCA is connected. port[0]: not used, port[1]: dac pin.
+    :param int width: The width of the RCA display.
+    :param int height: The height of the RCA display.
+    :param int signal_type: The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4.
+    :param int output_level: The output level of the RCA display.
+    :param int use_psram: The use of psram of the RCA display.
+
+    UIFLOW2:
+
+        |init.svg|
+
+
+Methods
+-------
+
+
+
+
+

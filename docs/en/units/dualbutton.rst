@@ -8,30 +8,17 @@ Support the following products:
     |Dual_Button|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import *
-
-
-    dual_button_0_blue = None
-    dual_button_0_red = None
-
-    def setup():
-    global dual_button_0_blue, dual_button_0_red
-
-    dual_button_0_blue, dual_button_0_red = DualButton((36, 26))
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    print(dual_button_0_blue.isHolding())
+    .. literalinclude:: ../../../examples/unit/dualbutton/dual_button_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
 
 .. only:: builder_html
 
@@ -53,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -65,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_status.svg|
+        |get_status.png|
 
 
 .. method:: Dual_Button.setCallback()
@@ -74,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |setCallback.svg|
+        |setCallback.png|
 
 
 .. method:: Dual_Button.tick()
@@ -83,4 +70,4 @@ Methods
 
     UIFLOW2:
 
-        |tick.svg|
+        |tick.png|

@@ -1,0 +1,23 @@
+.. |ThermalUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/THERMAL/img-92fc4d7d-3b52-4ee6-b483-80d7209289e3.webp
+    :target: https://docs.m5stack.com/en/unit/THERMAL
+    :height: 200px
+    :width: 200px
+
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/init.svg
+
+.. |get_max_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_max_temperature.svg
+
+.. |get_midpoint_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_midpoint_temperature.svg
+
+.. |get_min_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_min_temperature.svg
+
+.. |get_pixel_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_pixel_temperature.svg
+
+.. |get_refresh_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_refresh_rate.svg
+
+.. |get_temperature_buffer.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_temperature_buffer.svg
+
+.. |set_refresh_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/set_refresh_rate.svg
+
+.. |update_temperature_buffer.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/update_temperature_buffer.svg

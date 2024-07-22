@@ -10,22 +10,35 @@ The following products are supported:
     ================== ==================
 
 
-Micropython Example::
+Micropython TX Example:
 
-    import M5
-    from M5 import *
-    from unit import CANUnit
-
-    can = CANUnit((15, 13), CANUnit.NORMAL, 125000)
+    .. literalinclude:: ../../../examples/unit/can/stickc_plus2_can_tx_example.py
+        :language: python
+        :linenos:
 
 
-UIFLOW2 Example:
+Micropython RX Example:
 
-    |example.svg|
+    .. literalinclude:: ../../../examples/unit/can/dial_can_rx_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 TX Example:
+
+    |tx_example.png|
+
+
+UIFLOW2 RX Example:
+
+    |rx_example.png|
+
 
 .. only:: builder_html
 
-    |env_cores3_example.m5f2|
+    |stickc_plus2_can_tx_example.m5f2|
+
+    |dial_can_rx_example.m5f2|
 
 
 class CANUnit
@@ -46,7 +59,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 CANUnit class inherits CAN class, See :ref:`hardware.CAN <hardware.CAN>` for more details.

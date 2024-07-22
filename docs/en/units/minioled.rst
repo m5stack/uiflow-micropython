@@ -1,21 +1,49 @@
-MiniOLED Unit
-=============
+
+MiniOLEDUnit
+============
 
 .. include:: ../refs/unit.minioled.ref
 
-MiniOLED UNIT is a 0.42-inch I2C interface OLED screen unit, Its resolution
-is 72*40, monochrome white display,and It communicates with the M5 Controller
-via I2C (addr: 0x3C), This unit is suitable for embedding in various home
-products, smart wearable devices, portable devices and industrial instruments.
+MiniOLED UNIT is a 0.42-inch I2C interface OLED screen unit, it's a 72*40, monochrome white display.
 
+Support the following products:
 
-Supported products:
+|MiniOLEDUnit|
 
-    |MiniOLEDUnit|
+Micropython Example::
 
-
-Micropython example::
-
+    import os, sys, io
     import M5
-    display = M5.addDisplay({"unit_mini_oled":{"enabled":True, "pin_scl": 33, "pin_sda": 32, "i2c_addr": 0x3C, "i2c_freq": 400000}}) # Add MiniOLED unit
-    display.clear(0xffffff) # Clear screen
+    from M5 import *
+    from unit import MiniOLEDUnit
+    oled = MiniOLEDUnit()
+    oled.display.fill(0)
+
+.. only:: builder_html
+
+class MiniOLEDUnit
+------------------
+
+Constructors
+------------
+
+.. class:: MiniOLEDUnit(port, address, freq)
+
+    Initialize the Unit MiniOLED
+
+    :param tuple port: The port to which the Unit MiniOLED is connected. port[0]: scl pin, port[1]: sda pin.
+    :param int|list|tuple address: I2C address of the Unit MiniOLED, default is 0x3D.
+    :param int freq: I2C frequency of the Unit MiniOLED.
+
+    UIFLOW2:
+
+        |init.svg|
+
+
+Methods
+-------
+
+
+
+
+

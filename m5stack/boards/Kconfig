@@ -1,0 +1,8 @@
+menu "Audio Board Configuration"
+
+    config CORES3
+        bool "select CORES3"
+        default y
+        help
+            Enable this option to support codec ES8311.
+endmenu

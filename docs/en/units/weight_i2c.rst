@@ -32,8 +32,9 @@ UIFLOW2 Example:
 
 	|example.svg|
 
-
 .. only:: builder_html
+
+    |weight-i2c-demo.m5f2|
 
 
 class WEIGHT_I2CUnit

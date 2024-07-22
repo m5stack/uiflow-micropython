@@ -7,6 +7,24 @@ Support the following products:
 
     |ToFUnit|
 
+
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/tof/tof_core_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |tof_core_example.m5f2|
+
+
 class ToFUnit
 -------------
 
@@ -23,7 +41,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.ToFUnit.Methods:
@@ -39,7 +57,7 @@ Methods
 
     UIFLOW2:
 
-        |get_distance.svg|
+        |get_distance.png|
 
 
 .. method:: ToFUnit.get_data_ready() -> bool
@@ -50,7 +68,7 @@ Methods
 
     UIFLOW2:
 
-        |get_data_ready.svg|
+        |get_data_ready.png|
 
 
 .. method:: ToFUnit.get_range() -> int
@@ -61,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        |get_range.svg|
+        |get_range.png|
 
 .. method:: ToFUnit.is_continuous_mode() -> bool
 
@@ -71,7 +89,7 @@ Methods
 
     UIFLOW2:
 
-        |is_continuous_mode.svg|
+        |is_continuous_mode.png|
 
 
 .. method:: ToFUnit.get_measurement_timing_budget() -> int
@@ -82,7 +100,7 @@ Methods
 
     UIFLOW2:
 
-        |get_measurement_timing_budget.svg|
+        |get_measurement_timing_budget.png|
 
 
 .. method:: ToFUnit.set_measurement_timing_budget(budget_us: int) -> None
@@ -93,7 +111,7 @@ Methods
 
     UIFLOW2:
 
-        |set_measurement_timing_budget.svg|
+        |set_measurement_timing_budget.png|
 
 
 .. method:: ToFUnit.get_signal_rate_limit() -> float
@@ -104,7 +122,7 @@ Methods
 
     UIFLOW2:
 
-        |get_signal_rate_limit.svg|
+        |get_signal_rate_limit.png|
 
 
 .. method:: ToFUnit.set_signal_rate_limit(val: float) -> None
@@ -115,7 +133,7 @@ Methods
 
     UIFLOW2:
 
-        |set_signal_rate_limit.svg|
+        |set_signal_rate_limit.png|
 
 
 .. method:: ToFUnit.start_continuous() -> None
@@ -124,7 +142,7 @@ Methods
 
     UIFLOW2:
 
-        |start_continuous.svg|
+        |start_continuous.png|
 
 
 .. method:: ToFUnit.stop_continuous() -> None
@@ -133,7 +151,7 @@ Methods
 
     UIFLOW2:
 
-        |stop_continuous.svg|
+        |stop_continuous.png|
 
 
 .. method:: ToFUnit.set_address(new_address: int) -> None
@@ -144,4 +162,4 @@ Methods
 
     UIFLOW2:
 
-        |set_address.svg|
+        |set_address.png|

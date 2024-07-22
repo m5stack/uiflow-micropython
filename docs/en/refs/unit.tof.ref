@@ -1,29 +1,52 @@
 .. |ToFUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/TOF/img-1389686c-b643-4b4f-a74b-4dc070a32103.webp
     :target: https://docs.m5stack.com/zh_CN/unit/TOF
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/example.png
 
 .. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/init.png
 
 .. |get_distance.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_distance.svg
+.. |get_distance.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_distance.png
 
 .. |get_data_ready.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_data_ready.svg
+.. |get_data_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_data_ready.png
 
 .. |get_range.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_range.svg
+.. |get_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_range.png
 
 .. |is_continuous_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/is_continuous_mode.svg
+.. |is_continuous_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/is_continuous_mode.png
 
 .. |get_measurement_timing_budget.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_measurement_timing_budget.svg
+.. |get_measurement_timing_budget.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_measurement_timing_budget.png
 
 .. |get_signal_rate_limit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_signal_rate_limit.svg
+.. |get_signal_rate_limit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/get_signal_rate_limit.png
 
 .. |set_measurement_timing_budget.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_measurement_timing_budget.svg
+.. |set_measurement_timing_budget.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_measurement_timing_budget.png
 
 .. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_address.svg
+.. |set_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_address.png
 
 .. |set_signal_rate_limit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_signal_rate_limit.svg
+.. |set_signal_rate_limit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/set_signal_rate_limit.png
 
 .. |start_continuous.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/start_continuous.svg
+.. |start_continuous.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/start_continuous.png
 
 .. |stop_continuous.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/stop_continuous.svg
+.. |stop_continuous.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof/stop_continuous.png
+
+.. |tof_core_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/tof/tof_core_example.m5f2"
+        target="_blank"
+    >
+        tof_core_example.m5f2
+    </a>

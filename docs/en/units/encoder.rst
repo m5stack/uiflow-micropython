@@ -10,7 +10,7 @@ The following products are supported:
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/unit/encoder/encoder_stickc_plus2.py
+    .. literalinclude:: ../../../examples/unit/encoder/stickc_plus2_encoder_example.py
         :language: python
         :linenos:
 
@@ -20,9 +20,9 @@ UIFLOW2 Example:
     |example.svg|
 
 
-.. .. only:: builder_html
+.. only:: builder_html
 
-.. ..     |earth_core_example.m5f2|
+    |stickc_plus2_encoder_example.m5f2|
 
 
 class EncoderUnit

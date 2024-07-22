@@ -8,6 +8,23 @@ The following products are supported:
     |ExtEncoderUnit|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/extencoder/cores3_extencoder_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_extencoder_example.m5f2|
+
+
 class ExtEncoderUnit
 --------------------
 
@@ -16,11 +33,11 @@ Constructors
 
 .. class:: ExtEncoderUnit(i2c, address: int | list | tuple = 0x59)
 
-    Creates a Rotary object.
+    Creates a ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -28,70 +45,70 @@ Methods
 
 .. method:: ExtEncoderUnit.get_rotary_status() -> bool
 
-    Gets the rotation status of the Rotary object.
+    Gets the rotation status of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |get_rotary_status.svg|
+        |get_rotary_status.png|
 
 
 .. method:: ExtEncoderUnit.get_rotary_value() -> int
 
-    Gets the rotation value of the Rotary object.
+    Gets the rotation value of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |get_rotary_value.svg|
+        |get_rotary_value.png|
 
 
 .. method:: ExtEncoderUnit.get_rotary_increments() -> int
 
-    Gets the rotation increment of the Rotary object. Can be used to determine
+    Gets the rotation increment of the ExtEncoderUnit object. Can be used to determine
     the direction of rotation.
 
     UIFLOW2:
 
-        |get_rotary_increments.svg|
+        |get_rotary_increments.png|
 
 
 .. method:: ExtEncoderUnit.reset_rotary_value() -> None
 
-    Resets the rotation value of the Rotary object.
+    Resets the rotation value of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |reset_rotary_value.svg|
+        |reset_rotary_value.png|
 
 
 .. method:: ExtEncoderUnit.set_rotary_value(new_value: int) -> None
 
-    Sets the rotation value of the Rotary object.
+    Sets the rotation value of the ExtEncoderUnit object.
 
     :param int new_value: adjust the current value.
 
     UIFLOW2:
 
-        |set_rotary_value.svg|
+        |set_rotary_value.png|
 
 
 .. method:: ExtEncoderUnit.get_perimeter() -> int
 
-    Gets the perimeter of the Rotary object. The unit is millimeters.
+    Gets the perimeter of the ExtEncoderUnit object. The unit is millimeters.
 
     UIFLOW2:
 
-        |get_perimeter.svg|
+        |get_perimeter.png|
 
 
 .. method:: ExtEncoderUnit.set_perimeter(perimeter: int) -> None
 
-    Sets the perimeter of the Rotary object.
+    Sets the perimeter of the ExtEncoderUnit object.
 
-    :param int perimeter: the perimeter of the Rotary object. The unit is millimeters.
+    :param int perimeter: the perimeter of the ExtEncoderUnit object. The unit is millimeters.
 
     UIFLOW2:
 
-        |set_perimeter.svg|
+        |set_perimeter.png|
 
 
 .. method:: ExtEncoderUnit.get_pulse() -> int
@@ -100,7 +117,7 @@ Methods
 
     UIFLOW2:
 
-        |get_pulse.svg|
+        |get_pulse.png|
 
 
 .. method:: ExtEncoderUnit.set_pulse(pulse: int) -> None
@@ -111,71 +128,71 @@ Methods
 
     UIFLOW2:
 
-        |set_pulse.svg|
+        |set_pulse.png|
 
 
 .. method:: ExtEncoderUnit.get_zero_mode() -> int
 
-    Gets the zero mode of the Rotary object.
+    Gets the zero mode of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |get_zero_mode.svg|
+        |get_zero_mode.png|
 
 
 .. method:: ExtEncoderUnit.set_zero_mode(mode: int) -> None
 
-    Sets the zero mode of the Rotary object.
+    Sets the zero mode of the ExtEncoderUnit object.
 
-    :param int mode: the zero mode of the Rotary object.
+    :param int mode: the zero mode of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |set_zero_mode.svg|
+        |set_zero_mode.png|
 
 
 .. method:: ExtEncoderUnit.get_meter_value() -> int
 
-    Gets the meter value of the Rotary object. The unit is millimeters.
+    Gets the meter value of the ExtEncoderUnit object. The unit is millimeters.
 
     UIFLOW2:
 
-        |get_meter_value.svg|
+        |get_meter_value.png|
 
 
 .. method:: ExtEncoderUnit.get_zero_pulse_value() -> int
 
-    Gets the zero pulse value of the Rotary object.
+    Gets the zero pulse value of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |get_zero_pulse_value.svg|
+        |get_zero_pulse_value.png|
 
 
 .. method:: ExtEncoderUnit.set_zero_pulse_value(value: int) -> None
 
-    Sets the zero pulse value of the Rotary object.
+    Sets the zero pulse value of the ExtEncoderUnit object.
 
-    :param int value: the zero pulse value of the Rotary object.
+    :param int value: the zero pulse value of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |set_zero_pulse_value.svg|
+        |set_zero_pulse_value.png|
 
 
 .. method:: ExtEncoderUnit.get_firmware_version() -> int
 
-    读版本号
+    Gets the firmware version of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |get_firmware_version.svg|
+        |get_firmware_version.png|
 
 
 .. method:: ExtEncoderUnit.set_address(address) -> int
 
-    设置i2c地址
+    Sets the I2C address of the ExtEncoderUnit object.
 
     UIFLOW2:
 
-        |set_address.svg|
+        |set_address.png|

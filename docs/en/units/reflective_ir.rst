@@ -8,6 +8,23 @@ Support the following products:
     |Reflective IR Unit|
 
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/reflective_ir/stickc_plus_reflectiverir_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus_reflectiverir_example.m5f2|
+
+
 class ReflectiveIRUnit
 ----------------------
 
@@ -22,7 +39,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -34,7 +51,7 @@ Methods
 
     UIFLOW2:
 
-        |get_analog_value.svg|
+        |get_analog_value.png|
 
 
 .. method:: ReflectiveIRUnit.get_digital_value() -> int
@@ -43,7 +60,7 @@ Methods
 
     UIFLOW2:
 
-        |get_digital_value.svg|
+        |get_digital_value.png|
 
 
 .. method:: ReflectiveIRUnit.enable_irq() -> None
@@ -52,7 +69,7 @@ Methods
 
     UIFLOW2:
 
-        |enable_irq.svg|
+        |enable_irq.png|
 
 
 .. method:: ReflectiveIRUnit.disable_irq() -> None
@@ -61,7 +78,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_irq.svg|
+        |disable_irq.png|
 
 
 .. method:: ReflectiveIRUnit.set_callback(handler, trigger=ReflectiveIRUnit.EVENT_DETECTED | ReflectiveIRUnit.EVENT_NOT_DETECTED) -> None
@@ -73,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |set_callback.svg|
+        |set_callback.png|
 
 Constants
 ---------

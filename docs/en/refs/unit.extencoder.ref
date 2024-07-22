@@ -1,39 +1,50 @@
 .. |ExtEncoderUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/ExtEncoder%20Unit/img-d6cf0ce3-d72b-4638-b3c3-3181eeb7cd36.webp
     :target: https://docs.m5stack.com/zh_CN/unit/ExtEncoder%20Unit
     :height: 200px
-    :width: 200 px
+    :width: 200px
 
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/init.png
 
-.. |get_rotary_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_status.svg
+.. |get_rotary_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_status.png
 
-.. |get_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_value.svg
+.. |get_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_value.png
 
-.. |get_rotary_increments.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_increments.svg
+.. |get_rotary_increments.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_rotary_increments.png
 
-.. |reset_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/reset_rotary_value.svg
+.. |reset_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/reset_rotary_value.png
 
-.. |set_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_rotary_value.svg
+.. |set_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_rotary_value.png
 
-.. |get_perimeter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_perimeter.svg
+.. |get_perimeter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_perimeter.png
 
-.. |set_perimeter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_perimeter.svg
+.. |set_perimeter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_perimeter.png
 
-.. |get_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_pulse.svg
+.. |get_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_pulse.png
 
-.. |set_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_pulse.svg
+.. |set_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_pulse.png
 
-.. |get_zero_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_mode.svg
+.. |get_zero_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_mode.png
 
-.. |set_zero_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_mode.svg
+.. |set_zero_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_mode.png
 
-.. |get_meter_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_meter_value.svg
+.. |get_meter_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_meter_value.png
 
-.. |get_zero_pulse_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_pulse_value.svg
+.. |get_zero_pulse_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_zero_pulse_value.png
 
-.. |set_zero_pulse_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_pulse.svg
+.. |set_zero_pulse_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_zero_pulse.png
 
-.. |get_firmware_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_firmware_version.svg
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/get_firmware_version.png
 
-.. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_address.svg
+.. |set_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/set_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extencoder/example.png
+
+.. |cores3_extencoder_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/extencoder/cores3_extencoder_example.m5f2"
+        target="_blank"
+    >
+        cores3_extencoder_example.m5f2
+    </a>

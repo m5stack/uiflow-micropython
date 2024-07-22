@@ -8,30 +8,16 @@ Support the following products:
     |Light|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import *
-
-
-    light_0 = None
-
-
-    def setup():
-    global light_0
-
-    light_0 = Light((8,9))
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    print(light_0.get_analog_value())
+    .. literalinclude:: ../../../examples/unit/light/light_core_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html

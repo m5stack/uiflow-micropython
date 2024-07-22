@@ -1,0 +1,36 @@
+.. |MqttPoeUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/mqtt_poe/mqtt_poe_01.webp
+    :target: https://docs.m5stack.com/en/unit/mqtt_poe
+    :height: 200px
+    :width: 200 px
+    
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/init.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/example.png
+.. |modem_is_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/check_modem_is_ready.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_firmware_version.png
+.. |get_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_baudrate.png
+.. |get_network_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_network_status.png
+.. |get_network_parameters.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_network_parameters.png
+.. |get_mac_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_mac_address.png
+.. |get_static_ip.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_static_ip.png
+.. |get_dhcp_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_dhcp_status.png
+.. |set_dhcp_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_dhcp_state.png
+.. |set_static_ip.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_static_ip.png
+.. |set_client.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_client.png
+.. |set_connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_connect.png
+.. |set_disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_disconnect.png
+.. |set_publish.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_publish.png
+.. |set_subscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/set_subscribe.png
+.. |check_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/check_msg.png
+.. |get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_topic.png
+.. |get_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mqtt_poe/get_msg.png
+
+.. |mqttpoe_demo.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/mqtt_poe/mqttpoe_demo.m5f2"
+        target="_blank"
+    >
+        mqttpoe_demo.m5f2
+    </a>
+
+

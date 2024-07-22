@@ -27,14 +27,6 @@ Micropython Example::
     flash.flash(FlashLightUnit.BRIGHTNESS_100, FlashLightUnit.TIME_220MS, True)
 
 
-UIFLOW2 Example:
-
-    |example.svg|
-
-
-.. only:: builder_html
-
-
 class FlashLightUnit
 --------------------
 

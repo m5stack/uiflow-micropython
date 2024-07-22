@@ -16,3 +16,6 @@
 [submodule "m5stack/components/lv_bindings"]
 	path = m5stack/components/lv_bindings
 	url = https://github.com/lvgl/lv_binding_micropython.git
+[submodule "esp-adf"]
+	path = esp-adf
+	url = https://github.com/espressif/esp-adf.git

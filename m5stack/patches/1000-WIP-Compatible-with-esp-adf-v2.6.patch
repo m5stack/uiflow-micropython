@@ -1,0 +1,90 @@
+From 117efb2900211e296e9a18a0acd7926669607d33 Mon Sep 17 00:00:00 2001
+From: lbuque <1102390310@qq.com>
+Date: Wed, 3 Jul 2024 12:15:35 +0800
+Subject: [PATCH] WIP: Compatible with esp-adf v2.6.
+
+Signed-off-by: lbuque <1102390310@qq.com>
+---
+ components/fatfs/CMakeLists.txt             | 18 ----------
+ components/freertos/FreeRTOS-Kernel/tasks.c | 40 +++++++++++++++++++++
+ 2 files changed, 40 insertions(+), 18 deletions(-)
+ delete mode 100644 components/fatfs/CMakeLists.txt
+
+diff --git a/components/fatfs/CMakeLists.txt b/components/fatfs/CMakeLists.txt
+deleted file mode 100644
+index 05a1446..0000000
+--- a/components/fatfs/CMakeLists.txt
++++ /dev/null
+@@ -1,18 +0,0 @@
+-set(srcs "diskio/diskio.c"
+-         "diskio/diskio_rawflash.c"
+-         "diskio/diskio_sdmmc.c"
+-         "diskio/diskio_wl.c"
+-         "src/ff.c"
+-         "port/freertos/ffsystem.c"
+-         "src/ffunicode.c"
+-         "vfs/vfs_fat.c"
+-         "vfs/vfs_fat_sdmmc.c"
+-         "vfs/vfs_fat_spiflash.c")
+-
+-idf_component_register(SRCS ${srcs}
+-                       INCLUDE_DIRS diskio vfs src
+-                       REQUIRES wear_levelling sdmmc
+-                       PRIV_REQUIRES vfs spi_flash
+-                      )
+-
+-target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
+diff --git a/components/freertos/FreeRTOS-Kernel/tasks.c b/components/freertos/FreeRTOS-Kernel/tasks.c
+index 6b22520..acca485 100644
+--- a/components/freertos/FreeRTOS-Kernel/tasks.c
++++ b/components/freertos/FreeRTOS-Kernel/tasks.c
+@@ -726,6 +726,46 @@ void taskYIELD_OTHER_CORE( BaseType_t xCoreID, UBaseType_t uxPriority )
+ #endif /* SUPPORT_STATIC_ALLOCATION */
+ /*-----------------------------------------------------------*/
+ 
++	BaseType_t xTaskCreateRestrictedPinnedToCore( const TaskParameters_t * const pxTaskDefinition, TaskHandle_t *pxCreatedTask, const BaseType_t xCoreID)
++	{
++	    TCB_t *pxNewTCB;
++	    BaseType_t xReturn = errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY;
++
++		configASSERT( pxTaskDefinition->puxStackBuffer );
++
++		if( pxTaskDefinition->puxStackBuffer != NULL )
++		{
++			/* Allocate space for the TCB.  Where the memory comes from depends
++			on the implementation of the port malloc function and whether or
++			not static allocation is being used. */
++			pxNewTCB = ( TCB_t * ) pvPortMalloc( sizeof( TCB_t ) );
++
++			if( pxNewTCB != NULL )
++			{
++				/* Store the stack location in the TCB. */
++				pxNewTCB->pxStack = pxTaskDefinition->puxStackBuffer;
++
++				/* Tasks can be created statically or dynamically, so note
++				this task had a statically allocated stack in case it is
++				later deleted.  The TCB was allocated dynamically. */
++				pxNewTCB->ucStaticallyAllocated = tskDYNAMICALLY_ALLOCATED_STACK_AND_TCB;
++
++				prvInitialiseNewTask(	pxTaskDefinition->pvTaskCode,
++										pxTaskDefinition->pcName,
++										pxTaskDefinition->usStackDepth,
++										pxTaskDefinition->pvParameters,
++										pxTaskDefinition->uxPriority,
++										pxCreatedTask, pxNewTCB,
++										pxTaskDefinition->xRegions,
++										xCoreID );
++
++				prvAddNewTaskToReadyList( pxNewTCB, pxTaskDefinition->pvTaskCode, xCoreID );
++				xReturn = pdPASS;
++			}
++	    }
++		return xReturn;
++	}
++
+ #if ( ( portUSING_MPU_WRAPPERS == 1 ) && ( configSUPPORT_STATIC_ALLOCATION == 1 ) )
+ 
+     BaseType_t xTaskCreateRestrictedStatic( const TaskParameters_t * const pxTaskDefinition,
+-- 
+2.34.1
+
