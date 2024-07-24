@@ -54,6 +54,7 @@ Unit
     relay4.rst
     rgb.rst
     ssr.rst
+    synth.rst
     thermal.rst
     tof.rst
     ultrasonic.rst

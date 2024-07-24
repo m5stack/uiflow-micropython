@@ -136,37 +136,75 @@ DRUM_SET = {
 
 
 class SYNTHUnit:
-    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, port_id=1):
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, port_id=1) -> None:
         # TODO: 2.0.6 移除 port_id 参数
+        """! Initializes the MIDI unit with a specified UART ID and port pins.
+        The UART interface is used to transmit MIDI messages.
+
+        @param id UART device ID.
+        @param port UART TX and RX pins.
+        """
         id = port_id
         Pin(port[0], Pin.IN, Pin.PULL_UP)
         self._uart = UART(id, tx=port[1], rx=port[0])
         self._uart.init(31250, bits=8, parity=None, stop=1)
 
-    def set_note_on(self, channel, pitch, velocity):
+    def set_note_on(self, channel, pitch, velocity) -> None:
+        """! Sends a MIDI Note On message to the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param pitch Note pitch (0-127).
+        @param velocity Note velocity (0-127).
+        """
         cmd = [MIDI_CMD_NOTE_ON | (channel & 0x0F), pitch, velocity]
         self.cmd_write(cmd)
 
-    def set_note_off(self, channel, pitch):
+    def set_note_off(self, channel, pitch) -> None:
+        """! Sends a MIDI Note Off message to the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param pitch Note pitch (0-127).
+        """
         cmd = [MIDI_CMD_NOTE_OFF | (channel & 0x0F), pitch, 0x00]
         self.cmd_write(cmd)
 
-    def set_instrument(self, bank, channel, value):
+    def set_instrument(self, bank, channel, value) -> None:
+        """! Changes the program (instrument) on the specified channel.
+
+        @param bank Bank selector (MSB) for the program change.
+        @param channel MIDI channel (0-15).
+        @param value Program number (0-127).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x00, bank]
         self.cmd_write(cmd)
         cmd = [MIDI_CMD_PROGRAM_CHANGE | (channel & 0x0F), value]
         self.cmd_write(cmd)
 
-    def set_drums_instrument(self, drum_pitch, velocity):
+    def set_drums_instrument(self, drum_pitch, velocity) -> None:
+        """! Sets a drum instrument and plays a note on MIDI channel 10.
+
+        @param drum_pitch Drum pitch number.
+        @param velocity Note velocity (0-127).
+        """
         self.set_instrument(0, 9, DRUM_SET[drum_pitch][1])
         self.set_note_on(9, DRUM_SET[drum_pitch][0], velocity)
 
-    def set_pitch_bend(self, channel, value):
+    def set_pitch_bend(self, channel, value) -> None:
+        """! Sends a MIDI Pitch Bend message to the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param value Pitch bend value (0-16383).
+        """
         value = self.map(value, 0, 1023, 0, 0x3FFF)
         cmd = [MIDI_CMD_PITCH_BEND | (channel & 0x0F), (value & 0xEF), ((value >> 7) & 0xFF)]
         self.cmd_write(cmd)
 
-    def set_pitch_bend_range(self, channel, value):
+    def set_pitch_bend_range(self, channel, value) -> None:
+        """! Sets the pitch bend range on the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param value Pitch bend range in semitones.
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x65,
@@ -178,18 +216,32 @@ class SYNTHUnit:
         ]
         self.cmd_write(cmd)
 
-    def midi_reset(self):
+    def midi_reset(self) -> None:
+        """! Sends a MIDI System Exclusive Reset command."""
         self.cmd_write([MIDI_CMD_SYSTEM_RESET])
 
-    def set_channel_volume(self, channel, level):
+    def set_channel_volume(self, channel, level) -> None:
+        """! Sets the channel volume for the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param level Volume level (0-127).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x07, level]
         self.cmd_write(cmd)
 
-    def set_all_notes_off(self, channel):
+    def set_all_notes_off(self, channel) -> None:
+        """! Sends a MIDI Control Change message to turn off all notes on the specified channel.
+
+        @param channel MIDI channel (0-15).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x7B, 0x00]
         self.cmd_write(cmd)
 
-    def set_master_volume(self, level):
+    def set_master_volume(self, level) -> None:
+        """! Sets the master volume using a standard System Exclusive message.
+
+        @param level Volume level (0-127).
+        """
         cmd = [
             MIDI_CMD_SYSTEM_EXCLUSIVE,
             0x7F,
@@ -202,7 +254,14 @@ class SYNTHUnit:
         ]
         self.cmd_write(cmd)
 
-    def set_reverb(self, channel, program, level, delayfeedback):
+    def set_reverb(self, channel, program, level, delayfeedback) -> None:
+        """! Configures reverb effect on the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param program Reverb program number (0-7).
+        @param level Reverb level (0-127).
+        @param delayfeedback Delay feedback amount (0-127).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x50, (program & 0x07)]
         self.cmd_write(cmd)
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x5B, (level & 0x7F)]
@@ -223,7 +282,15 @@ class SYNTHUnit:
             ]
             self.cmd_write(cmd)
 
-    def set_chorus(self, channel, program, level, feedback, chorusdelay):
+    def set_chorus(self, channel, program, level, feedback, chorusdelay) -> None:
+        """! Configures chorus effect on the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param program Chorus program number (0-7).
+        @param level Chorus level (0-127).
+        @param feedback Chorus feedback amount (0-127).
+        @param chorusdelay Chorus delay amount (0-127).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x51, (program & 0x07)]
         self.cmd_write(cmd)
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x5D, (level & 0x7F)]
@@ -259,7 +326,12 @@ class SYNTHUnit:
             ]
             self.cmd_write(cmd)
 
-    def set_pan(self, channel, value):
+    def set_pan(self, channel, value) -> None:
+        """! Sets the pan position for the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param value Pan position (0-127).
+        """
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x0A, value]
         self.cmd_write(cmd)
 
@@ -274,7 +346,19 @@ class SYNTHUnit:
         medlowfreq,
         medhighfreq,
         highfreq,
-    ):
+    ) -> None:
+        """! Sets the equalizer levels and frequencies for the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param lowband Low band level (-12dB to +12dB).
+        @param medlowband Mid-low band level (-12dB to +12dB).
+        @param medhighband Mid-high band level (-12dB to +12dB).
+        @param highband High band level (-12dB to +12dB).
+        @param lowfreq Low band frequency (Hz).
+        @param medlowfreq Mid-low band frequency (Hz).
+        @param medhighfreq Mid-high band frequency (Hz).
+        @param highfreq High band frequency (Hz).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,
@@ -307,7 +391,13 @@ class SYNTHUnit:
         cmd[6] = highfreq & 0x7F
         self.cmd_write(cmd)
 
-    def set_tuning(self, channel, fine, coarse):
+    def set_tuning(self, channel, fine, coarse) -> None:
+        """! Sets the tuning for the specified channel.
+
+        @param channel MIDI channel (0-15).
+        @param fine Fine tuning value (cents).
+        @param coarse Coarse tuning value (semitones).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x65,
@@ -322,7 +412,15 @@ class SYNTHUnit:
         cmd[6] = coarse & 0x7F
         self.cmd_write(cmd)
 
-    def set_vibrate(self, channel, rate, depth, delay):
+    def set_vibrate(self, channel, rate, depth, delay) -> None:
+        """! Sets the vibrato effect parameters on the specified channel.
+
+
+        @param channel The MIDI channel to apply the vibrato effect to (0-15).
+        @param rate The vibrato rate (0-127).
+        @param depth The vibrato depth (0-127).
+        @param delay The vibrato delay (0-127).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,
@@ -340,7 +438,14 @@ class SYNTHUnit:
         cmd[6] = delay & 0x7F
         self.cmd_write(cmd)
 
-    def set_tvf(self, channel, cutoff, resonance):
+    def set_tvf(self, channel, cutoff, resonance) -> None:
+        """! Sets the parameters for a TVF (Tone-Voltage Filter) on the specified channel.
+
+
+        @param channel The MIDI channel to apply the filter to (0-15).
+        @param cutoff The filter cutoff frequency (0-127).
+        @param resonance The filter resonance (0-127).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,
@@ -355,7 +460,14 @@ class SYNTHUnit:
         cmd[6] = resonance & 0x7F
         self.cmd_write(cmd)
 
-    def set_envelope(self, channel, attack, decay, release):
+    def set_envelope(self, channel, attack, decay, release) -> None:
+        """! Sets the ADSR (Attack, Decay, Sustain, Release) envelope parameters on the specified channel.
+
+        @param channel The MIDI channel to apply the envelope to (0-15).
+        @param attack The attack time (0-127).
+        @param decay The decay time (0-127).
+        @param release The release time (0-127).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F),
             0x63,
@@ -373,7 +485,12 @@ class SYNTHUnit:
         cmd[6] = release & 0x7F
         self.cmd_write(cmd)
 
-    def set_scale_tuning(self, channel, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12):
+    def set_scale_tuning(self, channel, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12) -> None:
+        """! Sets scale tuning for the specified channel.
+
+        @param channel The MIDI channel to apply the scale tuning to (0-15).
+        @param v1~v12 Tuning values for each note in the scale (0-127).
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE,
             0x41,
@@ -401,7 +518,18 @@ class SYNTHUnit:
 
     def set_mod_wheel(
         self, channel, pitch, tvtcutoff, amplitude, rate, pitchdepth, tvfdepth, tvadepth
-    ):
+    ) -> None:
+        """! Sets modulation wheel parameters that affect various effects on the specified channel.
+
+        @param channel The MIDI channel to apply the modulation to (0-15).
+        @param pitch Pitch modulation depth.
+        @param tvtcutoff Cutoff frequency modulation depth.
+        @param amplitude Amplitude modulation depth.
+        @param rate Modulation rate.
+        @param pitchdepth Depth of pitch modulation.
+        @param tvfdepth Depth of TVF modulation.
+        @param tvadepth Depth of TVA (Tone-Voltage Amplifier) modulation.
+        """
         cmd = [
             MIDI_CMD_CONTROL_CHANGE,
             0x41,
@@ -435,7 +563,8 @@ class SYNTHUnit:
         cmd[9] = tvadepth
         self.cmd_write(cmd)
 
-    def set_all_drums(self):
+    def set_all_drums(self) -> None:
+        """! Sends a System Exclusive message to set all drums on channel 10 to default values."""
         cmd = [
             MIDI_CMD_CONTROL_CHANGE,
             0x41,
@@ -454,10 +583,23 @@ class SYNTHUnit:
             cmd[6] = i
             self.cmd_write(cmd)
 
-    def cmd_write(self, cmd):
+    def cmd_write(self, cmd) -> None:
+        """! Writes a MIDI command to the UART interface.
+
+        @param cmd List of MIDI command bytes.
+        """
         self._uart.write(bytes(cmd))
 
     def map(self, x, in_min, in_max, out_min, out_max):
+        """! Maps a value from one range to another.
+
+        @param x Value to map.
+        @param in_min Minimum value of the input range.
+        @param in_max Maximum value of the input range.
+        @param out_min Minimum value of the output range.
+        @param out_max Maximum value of the output range.
+        @return Mapped value.
+        """
         return round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
 
