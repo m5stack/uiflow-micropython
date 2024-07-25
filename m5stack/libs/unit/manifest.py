@@ -67,6 +67,7 @@ package(
         "lora_e220_433.py",
         "lora_e220_jp.py",
         "lorawan.py",
+        "midi.py",
         "minioled.py",
         "miniscale.py",
         "mqtt.py",

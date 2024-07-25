@@ -47,6 +47,7 @@ package(
         "pca9554.py",
         "pcf8563.py",
         "qmp6988.py",
+        "sam2695.py",
         "scd40.py",
         "sgp30.py",
         "sh1107.py",
