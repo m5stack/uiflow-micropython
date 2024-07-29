@@ -93,6 +93,7 @@ package(
         "synth.py",
         "thermal.py",
         "thermal2.py",
+        "tmos.py",
         "tof.py",
         "tof4m.py",
         "tube_pressure.py",

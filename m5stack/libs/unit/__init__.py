@@ -92,6 +92,7 @@ _attrs = {
     "SynthUnit": "synth",
     "ThermalUnit": "thermal",
     "Thermal2Unit": "thermal2",
+    "TMOSUnit": "tmos",
     "ToFUnit": "tof",
     "TOF4MUnit": "tof4m",
     "TubePressureUnit": "tube_pressure",
