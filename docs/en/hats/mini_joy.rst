@@ -43,23 +43,6 @@ Constructors
         |init.png|
 
 
-Micropython Example:
-
-    .. literalinclude:: ../../../examples/hat/mini_joy/stickc_plus2_mini_joy_example.py
-        :language: python
-        :linenos:
-
-
-UIFLOW2 Example:
-
-    |example.png|
-
-
-.. only:: builder_html
-
-    |stickc_plus2_mini_joy_example.m5f2|
-
-
 Methods
 -------
 
