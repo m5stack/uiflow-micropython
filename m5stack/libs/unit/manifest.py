@@ -14,6 +14,7 @@ package(
         "angle.py",
         "angle8.py",
         "bldc_driver.py",
+        "bps.py",
         "button.py",
         "buzzer.py",
         "can.py",

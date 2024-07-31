@@ -12,6 +12,7 @@ _attrs = {
     "AngleUnit": "angle",
     "Angle8Unit": "angle8",
     "BLDCDriverUnit": "bldc_driver",
+    "BPSUnit": "bps",
     "ButtonUnit": "button",
     "BuzzerUnit": "buzzer",
     "CardKBUnit": "cardkb",

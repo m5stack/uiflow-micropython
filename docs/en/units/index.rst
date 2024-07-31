@@ -7,6 +7,7 @@ Unit
     accel.rst
     adc.rst
     angle.rst
+    bps.rst
     buzzer.rst
     can.rst
     cardkb.rst
