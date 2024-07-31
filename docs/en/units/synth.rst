@@ -1,6 +1,5 @@
-
 Synth Unit
-=======
+==========
 
 .. include:: ../refs/unit.synth.ref
 
@@ -8,60 +7,26 @@ Support the following products:
 
 |SynthUnit|
 
-Micropython Example::
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import SynthUnit
-    import time
+Micropython Example:
 
-    synth_0 = None
+    .. literalinclude:: ../../../examples/unit/synth/synth_cores3_example.py
+        :language: python
+        :linenos:
 
-    def setup():
-        global synth_0
-
-        M5.begin()
-        Widgets.fillScreen(0x222222)
-
-        Power.setExtOutput(True)
-        Widgets.setBrightness(255)
-        Widgets.fillScreen(0xff6600)
-        synth_0 = SynthUnit(port=(13, 14), id=1)
-        synth_0.set_channel_volume(0, 127)
-        synth_0.set_instrument(0, 9, 112)
-
-
-    def loop():
-        global synth_0
-        M5.update()
-        synth_0.set_note_on(9, 0, 61)
-        synth_0.set_note_on(9, 36, 127)
-        time.sleep_ms(300)
-        synth_0.set_note_on(9, 48, 124)
-        synth_0.set_note_on(9, 60, 124)
-
-
-    if __name__ == '__main__':
-        try:
-            setup()
-            while True:
-                loop()
-        except (Exception, KeyboardInterrupt) as e:
-            try:
-                from utility import print_error_msg
-                print_error_msg(e)
-            except ImportError:
-                print("please update to latest firmware")
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
 
 .. only:: builder_html
 
+    |synth_cores3_example.m5f2|
+
+
 class SynthUnit
--------------
+---------------
 
 Constructors
 ------------
@@ -76,7 +41,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -92,9 +57,9 @@ Methods
 
     UIFLOW2:
 
-        |set_note_on2.svg|
+        |set_note_on2.png|
 
-        |set_note_on.svg|
+        |set_note_on.png|
 
 
 .. method:: SynthUnit.set_note_off(channel, pitch)
@@ -106,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |set_note_off.svg|
+        |set_note_off.png|
 
 .. method:: SynthUnit.set_instrument(bank, channel, value)
 
@@ -118,7 +83,7 @@ Methods
 
     UIFLOW2:
 
-        |set_instrument.svg|
+        |set_instrument.png|
 
 .. method:: SynthUnit.set_drums_instrument(drum_pitch, velocity)
 
@@ -129,7 +94,7 @@ Methods
 
     UIFLOW2:
 
-        |set_drums_instrument.svg|
+        |set_drums_instrument.png|
 
 .. method:: SynthUnit.set_pitch_bend(channel, value)
 
@@ -140,7 +105,7 @@ Methods
 
     UIFLOW2:
 
-        |set_pitch_bend.svg|
+        |set_pitch_bend.png|
 
 .. method:: SynthUnit.set_pitch_bend_range(channel, value)
 
@@ -151,7 +116,7 @@ Methods
 
     UIFLOW2:
 
-        |set_pitch_bend_range.svg|
+        |set_pitch_bend_range.png|
 
 .. method:: SynthUnit.midi_reset()
 
@@ -160,18 +125,18 @@ Methods
 
     UIFLOW2:
 
-        |midi_reset.svg|
+        |midi_reset.png|
 
 .. method:: SynthUnit.set_channel_volume(channel, level)
 
     Sets the channel volume for the specified channel.
 
     :param  channel: MIDI channel (0-15).
-    :param  level: Volume level (0-127).
+    :param  level: Volume level (0-100).
 
     UIFLOW2:
 
-        |set_channel_volume.svg|
+        |set_channel_volume.png|
 
 .. method:: SynthUnit.set_all_notes_off(channel)
 
@@ -181,17 +146,17 @@ Methods
 
     UIFLOW2:
 
-        |set_all_notes_off.svg|
+        |set_all_notes_off.png|
 
 .. method:: SynthUnit.set_master_volume(level)
 
     Sets the master volume using a standard System Exclusive message.
 
-    :param  level: Volume level (0-127).
+    :param  level: Volume level (0-100).
 
     UIFLOW2:
 
-        |set_master_volume.svg|
+        |set_master_volume.png|
 
 .. method:: SynthUnit.set_reverb(channel, program, level, delayfeedback)
 
@@ -204,7 +169,7 @@ Methods
 
     UIFLOW2:
 
-        |set_reverb.svg|
+        |set_reverb.png|
 
 .. method:: SynthUnit.set_chorus(channel, program, level, feedback, chorusdelay)
 
@@ -218,7 +183,7 @@ Methods
 
     UIFLOW2:
 
-        |set_chorus.svg|
+        |set_chorus.png|
 
 .. method:: SynthUnit.set_pan(channel, value)
 
@@ -229,7 +194,7 @@ Methods
 
     UIFLOW2:
 
-        |set_pan.svg|
+        |set_pan.png|
 
 .. method:: SynthUnit.set_equalizer(channel, lowband, medlowband, medhighband, highband, lowfreq, medlowfreq, medhighfreq, highfreq)
 
@@ -247,7 +212,7 @@ Methods
 
     UIFLOW2:
 
-        |set_equalizer.svg|
+        |set_equalizer.png|
 
 .. method:: SynthUnit.set_tuning(channel, fine, coarse)
 
@@ -259,7 +224,7 @@ Methods
 
     UIFLOW2:
 
-        |set_tuning.svg|
+        |set_tuning.png|
 
 .. method:: SynthUnit.set_vibrate(channel, rate, depth, delay)
 
@@ -272,7 +237,7 @@ Methods
 
     UIFLOW2:
 
-        |set_vibrate.svg|
+        |set_vibrate.png|
 
 .. method:: SynthUnit.set_tvf(channel, cutoff, resonance)
 
@@ -284,7 +249,7 @@ Methods
 
     UIFLOW2:
 
-        |set_tvf.svg|
+        |set_tvf.png|
 
 .. method:: SynthUnit.set_envelope(channel, attack, decay, release)
 
@@ -297,7 +262,7 @@ Methods
 
     UIFLOW2:
 
-        |set_envelope.svg|
+        |set_envelope.png|
 
 .. method:: SynthUnit.set_scale_tuning(channel, v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12)
 
@@ -308,7 +273,7 @@ Methods
 
     UIFLOW2:
 
-        |set_scale_tuning.svg|
+        |set_scale_tuning.png|
 
 .. method:: SynthUnit.set_mod_wheel(channel, pitch, tvtcutoff, amplitude, rate, pitchdepth, tvfdepth, tvadepth)
 
@@ -325,7 +290,7 @@ Methods
 
     UIFLOW2:
 
-        |set_mod_wheel.svg|
+        |set_mod_wheel.png|
 
 .. method:: SynthUnit.set_all_drums()
 
@@ -334,7 +299,7 @@ Methods
 
     UIFLOW2:
 
-        |set_all_drums.svg|
+        |set_all_drums.png|
 
 .. method:: SynthUnit.cmd_write(cmd)
 

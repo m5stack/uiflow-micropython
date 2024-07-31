@@ -135,16 +135,14 @@ DRUM_SET = {
 }
 
 
-class SYNTHUnit:
-    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, port_id=1) -> None:
-        # TODO: 2.0.6 移除 port_id 参数
+class SynthUnit:
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None) -> None:
         """! Initializes the MIDI unit with a specified UART ID and port pins.
         The UART interface is used to transmit MIDI messages.
 
         @param id UART device ID.
         @param port UART TX and RX pins.
         """
-        id = port_id
         Pin(port[0], Pin.IN, Pin.PULL_UP)
         self._uart = UART(id, tx=port[1], rx=port[0])
         self._uart.init(31250, bits=8, parity=None, stop=1)
@@ -224,8 +222,9 @@ class SYNTHUnit:
         """! Sets the channel volume for the specified channel.
 
         @param channel MIDI channel (0-15).
-        @param level Volume level (0-127).
+        @param level Volume level (0-100).
         """
+        level = self.map(level, 0, 100, 0, 127)
         cmd = [MIDI_CMD_CONTROL_CHANGE | (channel & 0x0F), 0x07, level]
         self.cmd_write(cmd)
 
@@ -242,6 +241,7 @@ class SYNTHUnit:
 
         @param level Volume level (0-127).
         """
+        level = self.map(level, 0, 100, 0, 127)
         cmd = [
             MIDI_CMD_SYSTEM_EXCLUSIVE,
             0x7F,
@@ -601,8 +601,3 @@ class SYNTHUnit:
         @return Mapped value.
         """
         return round((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
-
-
-class SynthUnit(SYNTHUnit):
-    def __init__(self, id: Literal[0, 1, 2], port: list | tuple):
-        super().__init__(port, id)
