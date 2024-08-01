@@ -6,6 +6,7 @@ package(
     "module",
     (
         "__init__.py",
+        "ain4.py",
         "dual_kmeter.py",
         "mbus.py",
         "relay_4.py",
