@@ -20,12 +20,17 @@ extern "C" {
     {
         char power_mode[32] = {0};
         size_t len;
-        bool ret = nvs_read_str_helper((char *)"uiflow", (char *)"power_mode", power_mode, &len);
-        if (ret == false) {
-            return;
-        }
         bool usb_output = false;
         bool bus_output = false;
+
+        bool ret = nvs_read_str_helper((char *)"uiflow", (char *)"power_mode", power_mode, &len);
+        if (ret == false) {
+            // 当 nvs 没有 "power_mode" 时，设置默认值
+            usb_output = false;
+            bus_output = true;
+            goto set_power;
+        }
+
         if (strncmp(power_mode, "usb_in_bus_in", strlen("usb_in_bus_in")) == 0) {
             usb_output = false;
             bus_output = false;
@@ -40,6 +45,7 @@ extern "C" {
             bus_output = true;
         }
 
+set_power:
         M5.Power.setUsbOutput(usb_output);
         M5.Power.setExtOutput(bus_output);
     }
