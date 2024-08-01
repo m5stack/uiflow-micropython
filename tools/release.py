@@ -27,7 +27,7 @@ FirewareInfo = namedtuple("FirewareInfo", ["board", "fid", "suffix"])
 
 fireware_info_table = (
     FirewareInfo("M5STACK_AirQ", "9b14de127a34084d5c8aaedc7e762547", ""),
-    FirewareInfo("M5STACK_Atom_Echo", None, "ATOM-ECHO"),
+    FirewareInfo("M5STACK_Atom_Echo", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-ECHO"),
     FirewareInfo("M5STACK_Atom_Lite", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-LITE"),
     FirewareInfo("M5STACK_Atom_Matrix", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-Matrix"),
     FirewareInfo("M5STACK_AtomS3", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3"),
@@ -92,7 +92,7 @@ def check_version_exists(infos, fid, version):
 def upload(fid, version, file_path):
     logging.info(f"Uploading {file_path}")
     url = f"http://m5burner-api.m5stack.com/api/admin/firmware/{fid}/version"
-    headers = {}
+    headers = {'m5_auth_token': 'HQK0JkEfw8Bk2esfmyt322ssR6Q85Ba0'}
     payload = {"version": version}
     files = [("firmware", ("file.bin", open(file_path, "rb"), "application/octet-stream"))]
     response = requests.request("POST", url, headers=headers, data=payload, files=files)
@@ -102,7 +102,7 @@ def upload(fid, version, file_path):
 def remove(fid, version, file_path):
     logging.info(f"Remove {file_path}")
     url = f"http://m5burner-api.m5stack.com/api/admin/firmware/remove/{fid}"
-    headers = {"Content-Type": "application/json"}
+    headers = {"Content-Type": "application/json", 'm5_auth_token': 'HQK0JkEfw8Bk2esfmyt322ssR6Q85Ba0'}
     payload = {"version": version}
     response = requests.request("POST", url, headers=headers, data=json.dumps(payload))
     logging.info(response.text)
