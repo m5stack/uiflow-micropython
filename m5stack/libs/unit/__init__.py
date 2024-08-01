@@ -61,6 +61,7 @@ _attrs = {
     "LCDUnit": "lcd",
     "LightUnit": "light",
     "LIMITUnit": "limit",
+    "LoRaE220433Unit": "lora_e220_433",
     "LoRaE220JPUnit": "lora_e220_jp",
     "LoRaWANUnit": "lorawan",
     "MiniOLEDUnit": "minioled",

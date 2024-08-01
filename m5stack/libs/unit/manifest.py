@@ -62,6 +62,7 @@ package(
         "lcd.py",
         "light.py",
         "limit.py",
+        "lora_e220_433.py",
         "lora_e220_jp.py",
         "lorawan.py",
         "minioled.py",

@@ -38,6 +38,7 @@ Unit
     lcd.rst
     light.rst
     lora_e220.rst
+    lora_e220_433.rst
     minioled.rst
     miniscale.rst
     mqtt.rst
