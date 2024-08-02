@@ -7,5 +7,6 @@ Module
     ain4.rst
     display.rst
     dualkmeter.rst
+    hmi.rst
     pps.rst
     rca.rst

@@ -12,6 +12,7 @@ package(
         "relay_4.py",
         "module_helper.py",
         "encoder4_motor.py",
+        "hmi.py",
         "pps.py",
         "iot_base_catm.py",
         "rca.py",
