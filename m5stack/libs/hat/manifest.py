@@ -28,6 +28,7 @@ package(
         "tof.py",
         "vibrator.py",
         "yun.py",
+        "heart.py",
     ),
     base_path="..",
     opt=0,
