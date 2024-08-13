@@ -33,14 +33,21 @@ the detailed Mic support for the host:
 .. |S| unicode:: U+2714
 
 
-Micropython Example::
+Micropython Example:
 
-    pass
+    .. literalinclude:: ../../../examples/hardware/mic/cores3_mic_example.py
+        :language: python
+        :linenos:
 
 
-UIFLOW2 Example::
+UIFLOW2 Example:
 
-    pass
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_mic_example.m5f2|
 
 
 class Mic
@@ -97,9 +104,9 @@ Methods
 
                 Mic.config("pin_data_in")
 
-            |get_config_boolean.svg|
+            |get_config_boolean.png|
 
-            |get_config_int.svg|
+            |get_config_int.png|
 
         Set property:
 
@@ -107,9 +114,9 @@ Methods
 
                 Mic.config(pin_data_in=1)
 
-            |set_config_int.svg|
+            |set_config_int.png|
 
-            |set_config_boolean.svg|
+            |set_config_boolean.png|
 
 
 .. method:: Mic.begin() -> bool
@@ -118,7 +125,7 @@ Methods
 
     UIFLOW2:
 
-        |begin.svg|
+        |begin.png|
 
 
 .. method:: Mic.end() -> bool
@@ -127,7 +134,7 @@ Methods
 
     UIFLOW2:
 
-        |end.svg|
+        |end.png|
 
 
 .. method:: Mic.isRunning() -> bool
@@ -136,7 +143,7 @@ Methods
 
     UIFLOW2:
 
-        |isRunning.svg|
+        |isRunning.png|
 
 
 .. method:: Mic.isEnabled() -> bool
@@ -145,7 +152,7 @@ Methods
 
     UIFLOW2:
 
-        |isEnabled.svg|
+        |isEnabled.png|
 
 
 .. method:: Mic.isRecording() -> int
@@ -160,7 +167,7 @@ Methods
 
     UIFLOW2:
 
-        |isRecording.svg|
+        |isRecording.png|
 
 
 .. method:: Mic.setSampleRate(sample_rate) -> None
@@ -169,7 +176,7 @@ Methods
 
     UIFLOW2:
 
-        |setSampleRate.svg|
+        |setSampleRate.png|
 
 
 .. method:: Mic.record(rec_data[, rate[, stereo]]) -> bool
@@ -182,7 +189,7 @@ Methods
 
     UIFLOW2:
 
-        |record.svg|
+        |record.png|
 
 
 class mic_config_t
