@@ -6,6 +6,7 @@ Unit
 
     accel.rst
     adc.rst
+    ain4.rst
     angle.rst
     bps.rst
     buzzer.rst
