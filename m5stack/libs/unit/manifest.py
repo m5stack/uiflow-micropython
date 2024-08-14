@@ -90,6 +90,7 @@ package(
         "rs485.py",
         "rtc8563.py",
         "scales.py",
+        "scroll.py",
         "servos8.py",
         "ssr.py",
         "synth.py",

@@ -56,6 +56,7 @@ Unit
     relay.rst
     relay4.rst
     rgb.rst
+    scroll.rst
     ssr.rst
     synth.rst
     thermal.rst
