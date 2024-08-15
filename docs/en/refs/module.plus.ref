@@ -1,0 +1,22 @@
+.. |PLUS Module| image:: https://static-cdn.m5stack.com/resource/docs/products/module/plus/plus_01.webp
+    :target: https://docs.m5stack.com/en/module/plus
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/init.png
+.. |get_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/get_encoder_value.png
+.. |set_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/set_encoder_value.png
+.. |reset_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/reset_encoder.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/get_button_state.png
+.. |get_rotary_increments.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/get_rotary_increments.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/plus/example.png
+
+
+.. |plus_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/tmos/plus_core2_example.m5f2"
+        target="_blank"
+    >
+        plus_core2_example.m5f2
+    </a>

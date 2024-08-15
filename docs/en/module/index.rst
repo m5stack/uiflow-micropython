@@ -8,5 +8,6 @@ Module
     display.rst
     dualkmeter.rst
     hmi.rst
+    plus.rst
     pps.rst
     rca.rst
