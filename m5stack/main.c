@@ -147,7 +147,7 @@ void mp_task(void *pvParameter) {
         size_t heap_total = info.total_free_bytes + info.total_allocated_bytes;
         #endif
         #if CONFIG_IDF_TARGET_ESP32S3
-        mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2) - (60 * 1024);
+        mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2) - (80 * 1024);
         #else
         mp_task_heap_size = MIN(heap_caps_get_largest_free_block(MALLOC_CAP_8BIT), heap_total / 2) - (40 * 1024);
         #endif
