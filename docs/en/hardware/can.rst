@@ -18,6 +18,9 @@ Example usage for classic CAN controller in Loopback (transceiver-less) mode::
     can.recv(0)                 # receive message
 
 
+For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`
+
+
 Constructors
 ------------
 

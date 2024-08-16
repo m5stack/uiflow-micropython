@@ -19,6 +19,7 @@ class EncoderUnit:
             raise UnitError("Encoder Unit maybe not connect")
         self._last_value = self._get_rotary_value()
         self._zero_value = self._last_value
+        self._start_value = self._last_value
 
     def get_rotary_status(self):
         val = self._get_rotary_value()
@@ -28,7 +29,7 @@ class EncoderUnit:
 
     def get_rotary_value(self):
         self._last_value = self._get_rotary_value()
-        return self._last_value - self._zero_value
+        return self._start_value + self._last_value - self._zero_value
 
     def get_rotary_increments(self):
         tmp = self._last_value
@@ -39,8 +40,13 @@ class EncoderUnit:
         buf = self._read_reg_bytes(self._ENCODER_COUNTER_VALUE_REG, 2)
         return struct.unpack("<h", buf)[0]
 
+    def set_rotary_value(self, value: int) -> None:
+        self._start_value = value
+
     def reset_rotary_value(self):
         self._zero_value = self._get_rotary_value()
+        self._last_value = self._zero_value
+        self._start_value = 0
 
     def get_button_status(self) -> bool:
         buf = self._read_reg_bytes(self._ENCODER_BUTTON_STATUS_REG, 2)

@@ -89,6 +89,7 @@ _attrs = {
     "RS485Unit": "rs485",
     "RTC8563Unit": "rtc8563",
     "ScalesUnit": "scales",
+    "ScrollUnit": "scroll",
     "Servos8Unit": "servos8",
     "SSRUnit": "ssr",
     "SynthUnit": "synth",

@@ -13,9 +13,9 @@ Display Module
 Micropython 示例::
 
 	import M5
-    display = M5.addDisplay({"module_display":{"enabled":True}}) # 添加Display模块
+    display = M5.addDisplay(None, 0, {"module_display":{"enabled":True}}) # 添加Display模块
 	# or
-    display = M5.addDisplay({
+    display = M5.addDisplay(None, 0, {
         "module_display":{
             "enabled":True,
             "width": 1280,

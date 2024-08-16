@@ -1,0 +1,42 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/init.png
+
+.. |is_connected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/is_connected.png
+
+.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/connect.png
+
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/any.png
+
+.. |read_all.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/read_all.png
+
+.. |read_bytes.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/read_bytes.png
+
+.. |read_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/read_raw_data.png
+
+.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/readline.png
+
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write.png
+
+.. |write1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write1.png
+
+.. |write_line.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write_line.png
+
+.. |write_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write_list.png
+
+.. |write_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write_raw_data.png
+
+.. |write_raw_data1.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/write_raw_data1.png
+
+.. |close.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/close.png
+
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/deinit.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/ble_uart/client/example.png
+
+.. |atoms3_bleuart_client_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/system/bleuart/atoms3_bleuart_client_example.py"
+        target="_blank"
+    >
+        atoms3_bleuart_client_example.m5f2
+    </a>

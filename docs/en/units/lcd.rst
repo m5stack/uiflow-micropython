@@ -21,9 +21,11 @@ Support the following products:
 
 
 Micropython example::
-
-    import M5
-    display = M5.addDisplay({"unit_lcd":{"enabled":True, "pin_scl": 22, "pin_sda": 21, "i2c_addr": 0x3E, "i2c_freq": 400000}}) # Add LCD unit
+    from unit import LCDUnit
+    from hardware import *
+    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+    display = LCDUnit(i2c).display
+    
     display.clear(0xffffff) # Clear screen
 
 .. only:: builder_html

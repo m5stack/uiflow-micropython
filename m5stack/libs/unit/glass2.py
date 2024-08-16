@@ -4,6 +4,8 @@
 
 
 import M5
+from .pahub import PAHUBUnit
+from machine import I2C
 
 
 class Glass2Unit:
@@ -19,29 +21,21 @@ class Glass2Unit:
 
     @example
         from unit import Glass2Unit
-                glass = Glass2Unit()
-                glass.display.fill(0)
+        from hardware import *
+        i2c = I2C(1, scl=22, sda=21)
+        display = Glass2Unit(i2c, 0x3c).display
+        display.fill(0)
 
     """
 
     def __init__(
-        self, port: tuple = (33, 32), address: int | list | tuple = 0x3D, freq: int = 400000
+        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3C, freq: int = 400000
     ) -> None:
         """! Initialize the Unit Glass2
 
         @param port The port to which the Unit Glass2 is connected. port[0]: scl pin, port[1]: sda pin.
-        @param address I2C address of the Unit Glass2, default is 0x3D.
+        @param address I2C address of the Unit Glass2, default is 0x3C.
         @param freq I2C frequency of the Unit Glass2.
         """
 
-        self.display = M5.addDisplay(
-            {
-                "unit_glass2": {
-                    "enabled": True,
-                    "pin_scl": port[0],
-                    "pin_sda": port[1],
-                    "i2c_addr": address,
-                    "i2c_freq": freq,
-                }
-            }
-        )  # Add Glass2 unit
+        self.display = M5.addDisplay(i2c, address, {"unit_glass2": True})  # Add Glass2 unit

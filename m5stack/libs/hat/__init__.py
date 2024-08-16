@@ -25,6 +25,7 @@ _attrs = {
     "ToFHat": "tof",
     "VibratorHat": "vibrator",
     "YUNHat": "yun",
+    "HeartHat": "heart",
 }
 
 

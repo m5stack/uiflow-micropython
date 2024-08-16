@@ -6,6 +6,7 @@ Unit
 
     accel.rst
     adc.rst
+    ain4.rst
     angle.rst
     bps.rst
     buzzer.rst
@@ -55,6 +56,7 @@ Unit
     relay.rst
     relay4.rst
     rgb.rst
+    scroll.rst
     ssr.rst
     synth.rst
     thermal.rst
