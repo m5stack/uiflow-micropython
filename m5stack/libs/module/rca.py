@@ -45,6 +45,8 @@ class RCAModule:
         """
 
         self.display = M5.addDisplay(
+            None,
+            0,
             {
                 "module_rca": {
                     "enabled": True,
@@ -57,5 +59,5 @@ class RCAModule:
                     "pin_dac": port[1],
                     "output_level": output_level,
                 }
-            }
+            },
         )

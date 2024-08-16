@@ -1,0 +1,267 @@
+LoRaE220-433 Unit
+=================
+
+.. include:: ../refs/unit.lora_e220_433.ref
+
+Support the following products:
+
+    |LoRaE220-433|
+
+
+Micropython TX Example::
+
+    import os, sys, io
+    import M5
+    from M5 import *
+    from unit import LoRaE220433Unit
+    import time
+
+    lorae220433_0 = LoRaE220433Unit(1, (18, 17))
+
+    while True:
+        lorae220433_0.send(0x9999, 0, 'Hello M5')
+        time.sleep(1)
+
+
+Micropython RX Example::
+
+    import os, sys, io
+    import M5
+    from M5 import *
+    from unit import LoRaE220433Unit
+
+    def lorae220433_0_receive_event(received_data, rssi):
+        print(received_data.decode())
+        print(rssi)
+
+    lorae220433_0 = LoRaE220433Unit(1, (13, 14))
+    lorae220433_0.receive_none_block(lorae220433_0_receive_event)
+
+
+UIFLOW2 TX Example:
+
+    |tx_example.png|
+
+
+UIFLOW2 RX Example:
+
+    |rx_example.png|
+
+
+.. only:: builder_html
+
+    |lora-e220-433-tx.m5f2|
+
+    |lora-e220-433-rx.m5f2|
+
+
+Working Mode
+------------
+
+.. table:: Working mode table
+    :name: working-mode
+
+    ===================== === === =========
+    Mode (0-3)            M1  M0  Function description
+    --------------------- --- --- ---------
+    0:Transmission Mode   0   0   SEND: Users can enter data through the serial port, and the module will start wireless transmission.
+
+                                  RECEIVE: The wireless receiving function of the module is enabled, and the wireless data will be output through the TXD pin of the serial port after receiving it.
+    --------------------- --- --- ---------
+    1:WOR Sending Mode    0   1   SEND: Wirelessly sending data on
+
+                                  RECEIVE: Wireless receiving data on
+
+                                  NOTE: Support Air Wake Up
+    --------------------- --- --- ---------
+    2:WOR Receiving Mode  1   0   SEND: Wirelessly sending data off
+
+                                  RECEIVE: Wireless receiving data on
+
+                                  NOTE: Support Air Wake Up
+    --------------------- --- --- ---------
+    3:Configuration Mode  1   1   SEND: Wirelessly sending data off
+
+                                  RECEIVE: Wireless receiving data off
+
+                                  CONFIGURATION: Users can access registers to configure module status
+    ===================== === === =========
+
+|working mode.jpg|
+
+
+class LoRaE220433Unit
+---------------------
+
+Constructors
+------------
+
+.. class:: LoRaE220433Unit(id, port)
+
+    Create a LoRaE220433Unit object.
+
+    The parameters is:
+        - ``port_id`` uart port ID.
+        - ``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``.
+
+    UIFLOW2:
+
+        |init.png|
+
+
+Methods
+-------
+
+.. method:: LoRaE220433Unit.setup(own_address=0, own_channel=0, encryption_key=0x0000, air_data_rate=LoRaE220433Unit.AIRRATE_2_4K, subpacket_size=LoRaE220433Unit.SUBPACKET_200_BYTE, rssi_ambient_noise_flag=LoRaE220433Unit.RSSI_AMBIENT_NOISE_DISABLE, transmitting_power=LoRaE220433Unit.TX_POWER_22dBm, rssi_byte_flag=LoRaE220433Unit.RSSI_BYTE_DISABLE, transmission_method_type=LoRaE220433Unit.UART_TT_MODE, wor_cycle=LoRaE220433Unit.WOR_2000MS) -> bool
+
+    .. NOTE:: Available when LoRaE220433Unit working mode is 3. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Set module parameters.
+
+    The parameters is:
+        - ``own_address``: Local address.
+        - ``own_channel``: Native channel.
+        - ``encryption_key``: Encryption key.
+        - ``air_data_rate``: Data transmission rate.
+        - ``subpacket_size``: Maximum packet length.
+        - ``rssi_ambient_noise_flag``: RSSI Ambient Noise.
+        - ``transmitting_power``: Transmit power.
+        - ``rssi_byte_flag``: Output RSSI strength bytes.
+        - ``transmission_method_type``: transmission mode.
+        - ``lbt_flag``: Parameter no longer used.
+        - ``wor_cycle``: Wireless wake-up time.
+
+    UIFLOW2:
+
+        |setup.png|
+        |setup_advance.png|
+
+
+.. method:: LoRaE220433Unit.available_data() -> int
+
+    .. NOTE:: Available when the working mode of LoRaE220433Unit is 0 / 1 / 2. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Returns an integer counting the number of bytes that can be read without blocking. 
+    It will return 0 if there are no bytes available and a positive number if there are bytes.
+
+    UIFLOW2:
+
+        |available_data.png|
+
+
+.. method:: LoRaE220433Unit.receive(timeout=1000) -> tuple[bytes, int]
+
+    .. NOTE:: Available when the working mode of LoRaE220433Unit is 0 / 1 / 2. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Use blocking method to receive data. ``timeout`` is used to set the reception timeout, the unit is ms.
+
+    UIFLOW2:
+
+        |receive.png|
+
+
+.. method:: LoRaE220433Unit.receive_none_block(receive_callback: function) -> None
+
+    .. NOTE:: Available when the working mode of LoRaE220433Unit is 0 / 1 / 2. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Use non-blocking mode to receive data. ``receive_callback`` The callback function passed in will be called when data is received.
+
+    The format of receive_callback is::
+
+        def receive_callback(data: bytes, rssi: int)
+
+    UIFLOW2:
+
+        |receive_none_block.png|
+        |receive_callback1.png|
+        |receive_callback2.png|
+
+
+.. method:: LoRaE220433Unit.stop_receive() -> None
+
+    .. NOTE:: Available when the working mode of LoRaE220433Unit is 0 / 1 / 2. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Stop receiving data in non-blocking mode.
+
+    UIFLOW2:
+
+        |stop_receive.png|
+
+
+.. method:: LoRaE220433Unit.send(target_address: int, target_channel: int, send_data: bytes | str) -> bool
+
+    .. NOTE:: Available when the working mode of LoRaE220433Unit is 0 or 1. Please refer to :ref:`working mode table <working-mode>` for the working mode.
+
+    Send data to the specified destination address and channel.
+
+    The parameters is:
+
+        - ``target_address`` Target address, the address range is 0x0000 - 0xFFFF, where 0xFFFF is the broadcast address.
+        - ``target_channel`` Target channel, valid channel range is 0 - 30.
+        - ``send_data`` The data needs to be sent.
+
+    UIFLOW2:
+
+        |send1.png|
+        |send2.png|
+        |send3.png|
+
+
+Constants
+---------
+
+.. data:: LoRaE220433Unit.AIRRATE_2_4K
+	      LoRaE220433Unit.AIRRATE_4_8K
+	      LoRaE220433Unit.AIRRATE_9_6K
+	      LoRaE220433Unit.AIRRATE_19_2K
+	      LoRaE220433Unit.AIRRATE_38_4K
+	      LoRaE220433Unit.AIRRATE_62_5K
+    :type: int
+
+    rate.
+
+.. data:: LoRaE220433Unit.SUBPACKET_200_BYTE
+          LoRaE220433Unit.SUBPACKET_128_BYTE
+          LoRaE220433Unit.SUBPACKET_64_BYTE
+          LoRaE220433Unit.SUBPACKET_32_BYTE
+    :type: int
+
+    Maximum packet length.
+
+.. data:: LoRaE220433Unit.RSSI_AMBIENT_NOISE_ENABLE
+          LoRaE220433Unit.RSSI_AMBIENT_NOISE_DISABLE
+    :type: int
+
+    RSSI ambient noise.
+
+.. data:: LoRaE220433Unit.TX_POWER_22dBm
+          LoRaE220433Unit.TX_POWER_17dBm
+          LoRaE220433Unit.TX_POWER_13dBm
+          LoRaE220433Unit.TX_POWER_10dBm
+    :type: int
+
+    Transmit power.
+
+.. data:: LoRaE220433Unit.RSSI_BYTE_ENABLE
+          LoRaE220433Unit.RSSI_BYTE_DISABLE
+    :type: int
+
+    RSSI bytes. When enabled, the module will append a byte of RSSI value after the data each time it receives data.
+
+.. data:: LoRaE220433Unit.UART_TT_MODE
+          LoRaE220433Unit.UART_P2P_MODE
+    :type: int
+
+    transmission mode.
+
+.. data:: LoRaE220433Unit.WOR_500MS
+          LoRaE220433Unit.WOR_1000MS
+          LoRaE220433Unit.WOR_1500MS
+          LoRaE220433Unit.WOR_2000MS
+          LoRaE220433Unit.WOR_2500MS
+          LoRaE220433Unit.WOR_3000MS
+          LoRaE220433Unit.WOR_3500MS
+	      LoRaE220433Unit.WOR_4000MS
+    :type: int
+
+    Wireless wake-up time.

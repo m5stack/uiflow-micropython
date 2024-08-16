@@ -1,3 +1,5 @@
+.. _unit.CANUnit:
+
 CAN Unit
 ========
 

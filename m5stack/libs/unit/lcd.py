@@ -4,6 +4,8 @@
 
 
 import M5
+from .pahub import PAHUBUnit
+from machine import I2C
 
 
 class LCDUnit:
@@ -19,13 +21,15 @@ class LCDUnit:
 
     @example
         from unit import LCDUnit
-                lcd = LCDUnit()
-                lcd.display.fill(0)
+        from hardware import *
+        i2c = I2C(1, scl=22, sda=21)
+        display = LCDUnit(i2c, 0x3c).display
+        display.fill(0)
 
     """
 
     def __init__(
-        self, port: tuple = (33, 32), address: int | list | tuple = 0x3D, freq: int = 400000
+        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3D, freq: int = 400000
     ) -> None:
         """! Initialize the Unit LCD
 
@@ -33,15 +37,4 @@ class LCDUnit:
         @param address I2C address of the Unit LCD, default is 0x3D.
         @param freq I2C frequency of the Unit LCD.
         """
-
-        self.display = M5.addDisplay(
-            {
-                "unit_lcd": {
-                    "enabled": True,
-                    "pin_scl": port[0],
-                    "pin_sda": port[1],
-                    "i2c_addr": address,
-                    "i2c_freq": freq,
-                }
-            }
-        )  # Add LCD unit
+        self.display = M5.addDisplay(i2c, address, {"unit_lcd": True})  # Add LCD unit

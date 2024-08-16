@@ -5,13 +5,16 @@
 from . import mbus
 
 _attrs = {
-    "DualKmeterModule": "dual_kmeter",
-    "Relay4Module": "relay_4",
-    "Encoder4MotorModule": "encoder4_motor",
-    "PPSModule": "pps",
-    "IotBaseCatmModule": "iot_base_catm",
-    "RCAModule": "rca",
+    "AIN4Module": "ain4",
     "DisplayModule": "display",
+    "DualKmeterModule": "dual_kmeter",
+    "Encoder4MotorModule": "encoder4_motor",
+    "HMIModule": "hmi",
+    "IotBaseCatmModule": "iot_base_catm",
+    "PLUSModule": "plus",
+    "PPSModule": "pps",
+    "RCAModule": "rca",
+    "Relay4Module": "relay_4",
 }
 
 # Lazy loader, effectively does:

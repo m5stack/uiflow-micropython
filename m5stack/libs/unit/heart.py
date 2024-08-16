@@ -184,13 +184,32 @@ class HeartUnit:
         """
         max30100.set_mode(mode)
 
-    def set_led_current(self, led_current: int) -> None:
+    def set_led_current(self, red_current: int, ir_current) -> None:
         """! Set the LED current of the HeartUnit.
 
         @en %1 Set the LED current of the HeartUnit to %2.
         @cn %1 将HeartUnit的LED电流设置为%2。
 
-        @param led_current [field_dropdown] The LED current of the HeartUnit.
+        @param red_current [field_dropdown] The Red current of the HeartUnit.
+            @options {
+                    [0mA, HeartUnit.LED_CURRENT_0MA],
+                    [4.4mA, HeartUnit.LED_CURRENT_4_4MA],
+                    [7.6mA, HeartUnit.LED_CURRENT_7_6MA],
+                    [11mA, HeartUnit.LED_CURRENT_11MA],
+                    [14.2mA, HeartUnit.LED_CURRENT_14_2MA],
+                    [17.4mA, HeartUnit.LED_CURRENT_17_4MA],
+                    [20.8mA, HeartUnit.LED_CURRENT_20_8MA],
+                    [24mA, HeartUnit.LED_CURRENT_24MA],
+                    [27.1mA, HeartUnit.LED_CURRENT_27_1MA],
+                    [30.6mA, HeartUnit.LED_CURRENT_30_6MA],
+                    [33.8mA, HeartUnit.LED_CURRENT_33_8MA],
+                    [37mA, HeartUnit.LED_CURRENT_37MA],
+                    [40.2mA, HeartUnit.LED_CURRENT_40_2MA],
+                    [43.6mA, HeartUnit.LED_CURRENT_43_6MA],
+                    [46.8mA, HeartUnit.LED_CURRENT_46_8MA],
+                    [50mA, HeartUnit.LED_CURRENT_50MA]
+            }
+        @param ir_current [field_dropdown] The IR current of the HeartUnit.
             @options {
                     [0mA, HeartUnit.LED_CURRENT_0MA],
                     [4.4mA, HeartUnit.LED_CURRENT_4_4MA],
@@ -210,7 +229,7 @@ class HeartUnit:
                     [50mA, HeartUnit.LED_CURRENT_50MA]
             }
         """
-        max30100.set_led_current(led_current)
+        max30100.set_led_current(red_current, ir_current)
 
     def set_pulse_width(self, pulse_width: int) -> None:
         """! Set the pulse width of the HeartUnit.

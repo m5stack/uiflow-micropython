@@ -22,54 +22,21 @@ is the detailed Rotary support for the host:
 .. |S| unicode:: U+2714
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-
-    label0 = None
-    rotary = None
-
-    def btnA_wasClicked_event(state):
-        global label0, rotary
-        rotary.reset_rotary_value()
-        label0.setText(str(rotary.get_rotary_value()))
-
-    def setup():
-        global label0, rotary
-
-        M5.begin()
-        Widgets.fillScreen(0x222222)
-        label0 = Widgets.Label("0", 96, 80, 1.0, 0xffa000, 0x222222, Widgets.FONTS.DejaVu72)
-
-        BtnA.setCallback(type=BtnA.CB_TYPE.WAS_CLICKED, cb=btnA_wasClicked_event)
-
-        rotary = Rotary()
-
-    def loop():
-        global label0, rotary
-        M5.update()
-        if rotary.get_rotary_status():
-            label0.setText(str(rotary.get_rotary_value()))
-
-    if __name__ == '__main__':
-        try:
-            setup()
-            while True:
-            loop()
-        except (Exception, KeyboardInterrupt) as e:
-            try:
-            from utility import print_error_msg
-            print_error_msg(e)
-            except ImportError:
-            print("please update to latest firmware")
+    .. literalinclude:: ../../../examples/hardware/rotary/dial_rotary_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
+
+.. only:: builder_html
+
+    |dial_rotary_example.m5f2|
 
 
 class Rotary
@@ -84,7 +51,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 Methods
 -------
@@ -95,7 +62,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_status.svg|
+        |get_rotary_status.png|
 
 
 .. method:: Rotary.get_rotary_value() -> int
@@ -106,7 +73,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_value.svg|
+        |get_rotary_value.png|
 
 
 .. method:: Rotary.get_rotary_increments() -> int
@@ -118,7 +85,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_increments.svg|
+        |get_rotary_increments.png|
 
 
 .. method:: Rotary.reset_rotary_value() -> None
@@ -127,7 +94,7 @@ Methods
 
     UIFLOW2:
 
-        |reset_rotary_value.svg|
+        |reset_rotary_value.png|
 
 
 .. method:: Rotary.set_rotary_value() -> None
@@ -136,4 +103,4 @@ Methods
 
     UIFLOW2:
 
-        |set_rotary_value.svg|
+        |set_rotary_value.png|

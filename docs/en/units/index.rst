@@ -6,7 +6,9 @@ Unit
 
     accel.rst
     adc.rst
+    ain4.rst
     angle.rst
+    bps.rst
     buzzer.rst
     can.rst
     cardkb.rst
@@ -37,6 +39,7 @@ Unit
     lcd.rst
     light.rst
     lora_e220.rst
+    lora_e220_433.rst
     minioled.rst
     miniscale.rst
     mqtt.rst
@@ -53,8 +56,11 @@ Unit
     relay.rst
     relay4.rst
     rgb.rst
+    scroll.rst
     ssr.rst
+    synth.rst
     thermal.rst
+    tmos.rst
     tof.rst
     ultrasonic.rst
     vibrator.rst

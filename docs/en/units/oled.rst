@@ -11,13 +11,12 @@ Support the following products:
 |OLEDUnit|
 
 Micropython Example::
-
-    import os, sys, io
-    import M5
-    from M5 import *
     from unit import OLEDUnit
-    oled = OLEDUnit()
-    oled.display.fill(0)
+    from hardware import *
+    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+    display = OLEDUnit(i2c).display
+    
+    display.clear(0xffffff) # Clear screen
 
 .. only:: builder_html
 

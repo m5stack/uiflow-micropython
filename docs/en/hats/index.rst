@@ -23,3 +23,4 @@ HAT
     thermal.rst
     tof.rst
     vibrator.rst
+    heart.rst

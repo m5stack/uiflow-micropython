@@ -1,0 +1,43 @@
+.. |TMOS| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/UNIT-TMOS%20PIR/4.webp
+    :target: https://docs.m5stack.com/en/unit/UNIT-TMOS%20PIR
+    :height: 200px
+    :width: 200px
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/example.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/init.png
+.. |get_data_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_data_ready.png
+.. |set_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_callback.png
+.. |tick_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/tick_callback.png
+.. |get_motion_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_motion_state.png
+.. |get_presence_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_presence_state.png
+.. |get_motion_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_motion_value.png
+.. |get_presence_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_presence_value.png
+.. |get_tamb_shock_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_tamb_shock_state.png
+.. |get_temperature_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_temperature_data.png
+.. |get_tambient_raw_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_tambient_raw_value.png
+.. |get_presence_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_presence_threshold.png
+.. |get_motion_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_motion_threshold.png
+.. |get_tambient_shock_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_tambient_shock_threshold.png
+.. |get_presence_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_presence_hysteresis.png
+.. |get_motion_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_motion_hysteresis.png
+.. |set_presence_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_presence_threshold.png
+.. |set_motion_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_motion_threshold.png
+.. |set_tambient_shock_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_tambient_shock_threshold.png
+.. |set_presence_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_presence_hysteresis.png
+.. |set_motion_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_motion_hysteresis.png
+.. |set_tambient_shock_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_tambient_shock_hysteresis.png
+.. |set_gain_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_gain_mode.png
+.. |get_gain_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_gain_mode.png
+.. |set_tmos_sensitivity.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/set_tmos_sensitivity.png
+.. |get_tmos_sensitivity.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_tmos_sensitivity.png
+.. |get_tambient_shock_hysteresis.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tmos/get_tambient_shock_hysteresis.png
+
+
+.. |tmos_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/tmos/tmos_cores3_example.m5f2"
+        target="_blank"
+    >
+        tmos_cores3_example.m5f2
+    </a>

@@ -1,13 +1,22 @@
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/init.png
 
-.. |get_rotary_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_status.svg
+.. |get_rotary_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_status.png
 
-.. |get_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_value.svg
+.. |get_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_value.png
 
-.. |reset_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/reset_rotary_value.svg
+.. |reset_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/reset_rotary_value.png
 
-.. |set_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/set_rotary_value.svg
+.. |set_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/set_rotary_value.png
 
-.. |get_rotary_increments.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_increments.svg
+.. |get_rotary_increments.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/rotary/get_rotary_increments.png
+
+.. |dial_rotary_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?pkey=7a1c8a20e6ef4a51acce65d794a7681c"
+        target="_blank"
+    >
+        dial_rotary_example.m5f2
+    </a>

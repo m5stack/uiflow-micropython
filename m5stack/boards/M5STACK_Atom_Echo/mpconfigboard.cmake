@@ -11,7 +11,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
-    ./boards/M5STACK_StickC/sdkconfig.board
+    ./boards/M5STACK_Atom_Echo/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

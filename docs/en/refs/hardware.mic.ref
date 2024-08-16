@@ -1,22 +1,33 @@
 
-.. |get_config_boolean.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_boolean.svg
+.. |get_config_boolean.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_boolean.png
 
-.. |get_config_int.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_int.svg
+.. |get_config_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/get_config_int.png
 
-.. |set_config_int.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_int.svg
+.. |set_config_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_int.png
 
-.. |set_config_boolean.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_boolean.svg
+.. |set_config_boolean.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/set_config_boolean.png
 
-.. |begin.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/begin.svg
+.. |begin.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/begin.png
 
-.. |end.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/end.svg
+.. |end.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/end.png
 
-.. |isRunning.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRunning.svg
+.. |isRunning.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRunning.png
 
-.. |isEnabled.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isEnabled.svg
+.. |isEnabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isEnabled.png
 
-.. |isRecording.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRecording.svg
+.. |isRecording.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/isRecording.png
 
-.. |setSampleRate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/setSampleRate.svg
+.. |setSampleRate.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/setSampleRate.png
 
-.. |record.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/record.svg
+.. |record.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/record.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/microphone/example.png
+
+.. |cores3_mic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?pkey=e1d3556776dd425a9dd8b46ec5984bea"
+        target="_blank"
+    >
+        cores3_mic_example.m5f2
+    </a>

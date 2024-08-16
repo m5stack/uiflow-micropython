@@ -81,6 +81,20 @@ class BLEUARTServer:
         self._rx_buffer = self._rx_buffer[sz:]
         return result
 
+    def readline(self, max_size=-1):
+        if max_size == -1:
+            max_size = 16
+        while True:
+            if b"\n" in self._rx_buffer:
+                pos = self._rx_buffer.index(b"\n") + 1
+                result = self._rx_buffer[0:pos]
+                self._rx_buffer = self._rx_buffer[pos:]
+                return result
+            if len(self._rx_buffer) >= max_size:
+                result = self._rx_buffer[0:max_size]
+                self._rx_buffer = self._rx_buffer[max_size:]
+                return result
+
     def write(self, data):
         for conn_handle in self._connections:
             self._ble.gatts_notify(conn_handle, self._tx_handle, data)

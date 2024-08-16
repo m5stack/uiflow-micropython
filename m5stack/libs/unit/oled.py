@@ -4,6 +4,8 @@
 
 
 import M5
+from .pahub import PAHUBUnit
+from machine import I2C
 
 
 class OLEDUnit:
@@ -25,7 +27,7 @@ class OLEDUnit:
     """
 
     def __init__(
-        self, port: tuple = (33, 32), address: int | list | tuple = 0x3D, freq: int = 400000
+        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3D, freq: int = 400000
     ) -> None:
         """! Initialize the Unit OLED
 
@@ -33,15 +35,4 @@ class OLEDUnit:
         @param address I2C address of the Unit OLED, default is 0x3D.
         @param freq I2C frequency of the Unit OLED.
         """
-
-        self.display = M5.addDisplay(
-            {
-                "unit_oled": {
-                    "enabled": True,
-                    "pin_scl": port[0],
-                    "pin_sda": port[1],
-                    "i2c_addr": address,
-                    "i2c_freq": freq,
-                }
-            }
-        )  # Add OLED unit
+        self.display = M5.addDisplay(i2c, address, {"unit_oled": True})  # Add OLED unit

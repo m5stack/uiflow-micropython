@@ -11,13 +11,12 @@ Support the following products:
 |Glass2Unit|
 
 Micropython Example::
-
-    import os, sys, io
-    import M5
-    from M5 import *
     from unit import Glass2Unit
-    glass = Glass2Unit()
-    glass.display.fill(0)
+    from hardware import *
+    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+    display = Glass2Unit(i2c).display
+    
+    display.clear(0xffffff) # Clear screen
 
 .. only:: builder_html
 
