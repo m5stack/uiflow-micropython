@@ -30,6 +30,7 @@ package(
         "dds.py",
         "digi_clock.py",
         "dlight.py",
+        "dmx.py",
         "dual_button.py",
         "earth.py",
         "encoder.py",

@@ -29,6 +29,7 @@ _attrs = {
     "DDSUnit": "dds",
     "DigiClockUnit": "digi_clock",
     "DLightUnit": "dlight",
+    "DMX512Unit": "dmx",
     "DualButtonUnit": "dual_button",
     "EarthUnit": "earth",
     "EncoderUnit": "encoder",

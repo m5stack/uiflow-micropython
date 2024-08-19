@@ -1,0 +1,39 @@
+
+.. |dmx| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-DMX/4.webp
+    :target: https://docs.m5stack.com/en/unit/dmx
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/init.png
+.. |dmx_init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/dmx_init.png
+.. |write_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/write_data.png
+.. |update_dmx.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/update_dmx.png
+.. |read_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/read_data.png
+.. |clear_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/clear_buffer.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/deinit.png
+.. |receive_none_block.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/receive_none_block.png
+.. |receive_data_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/receive_data_event.png
+.. |stop_receive.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/stop_receive.png
+.. |detach_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/detach_channel.png
+
+.. |tx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/tx_example.png
+.. |rx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dmx/rx_example.png
+
+
+.. |dmx512_core2_receive_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/dmx/dmx512_core2_receive_example.m5f2"
+        target="_blank"
+    >
+        dmx512_core2_receive_example.m5f2
+    </a>
+
+.. |dmx512_core2_send_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/dmx/dmx512_core2_send_example.m5f2"
+        target="_blank"
+    >
+        dmx512_core2_send_example.m5f2
+    </a>

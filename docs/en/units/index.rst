@@ -18,6 +18,7 @@ Unit
     dds.rst
     digi_clock.rst
     dlight.rst
+    dmx.rst
     dualbutton.rst
     earth.rst
     encoder.rst

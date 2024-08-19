@@ -36,14 +36,19 @@ device. Below is the detailed IMU support for the host:
 .. |S| unicode:: U+2714
 
 
-Micropython Example::
+Micropython Example:
 
-    pass
+    .. literalinclude:: ../../../examples/hardware/imu/imu_cores3_example.py
+        :language: python
+        :linenos:
 
+UIFLOW2 Example:
 
-UIFLOW2 Example::
+    |example.png|
 
-    pass
+.. only:: builder_html
+
+    |imu_cores3_example.m5f2|
 
 
 class IMU

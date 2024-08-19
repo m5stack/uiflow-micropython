@@ -39,6 +39,7 @@ package(
         "button.py",
         "checksum.py",
         "dht12.py",
+        "dmx512.py",
         "drf1609h.py",
         "haptic.py",
         "mcp4725.py",
