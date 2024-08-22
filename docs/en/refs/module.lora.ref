@@ -1,0 +1,13 @@
+
+.. |LoraModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/Module-LoRa433_V1.1/img-dac09b0a-7367-4ed9-9374-b604f646ec3b.webp
+    :target: https://docs.m5stack.com/en/module/Module-LoRa433_V1.1
+    :height: 200px
+    :width: 200px
+
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/init.svg
+.. |_validate_range.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/_validate_range.svg
+.. |send.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/send.svg
+.. |recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/recv.svg
+
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/example.svg
+

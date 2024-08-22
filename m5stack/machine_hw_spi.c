@@ -103,6 +103,7 @@ typedef struct _machine_hw_spi_obj_t {
         MACHINE_HW_SPI_STATE_INIT,
         MACHINE_HW_SPI_STATE_DEINIT
     } state;
+    bool is_shared;
 } machine_hw_spi_obj_t;
 
 // Default pin mappings for the hardware SPI instances
@@ -126,7 +127,7 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
             //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
-            if (self->host != SPI2_HOST) {
+            if (!self->is_shared) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI device already freed"));
                 return;
             }
@@ -135,7 +136,7 @@ STATIC void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
     // NOTE:
     //     core2和cores3的屏幕和sd卡复用一个spi，
     //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
-    if (self->host != SPI2_HOST) {
+    if (self->is_shared) {
         switch (spi_bus_free(self->host)) {
             case ESP_ERR_INVALID_ARG:
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("invalid configuration"));
@@ -267,7 +268,7 @@ STATIC void machine_hw_spi_init_internal(
     }
     #endif
 
-    ret = spi_bus_initialize(self->host, &buscfg, dma_chan);
+    ret = spi_bus_initialize(self->host, &buscfg, SPI_DMA_CH_AUTO);
     switch (ret) {
         case ESP_ERR_INVALID_ARG:
             mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("invalid configuration"));
@@ -277,10 +278,8 @@ STATIC void machine_hw_spi_init_internal(
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
             //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
-            if (self->host != SPI2_HOST) {
-                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI host already in use"));
-                return;
-            }
+            self->is_shared = true;
+            mp_warning("hw_spi", "SPI bus already initialized");
     }
 
     ret = spi_bus_add_device(self->host, &devcfg, &self->spi);
@@ -487,6 +486,7 @@ mp_obj_t machine_hw_spi_make_new(const mp_obj_type_t *type, size_t n_args, size_
     }
 
     self->base.type = &machine_spi_type;
+    self->is_shared = false;
 
     int8_t sck, mosi, miso;
 

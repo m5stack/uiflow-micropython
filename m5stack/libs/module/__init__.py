@@ -11,6 +11,7 @@ _attrs = {
     "Encoder4MotorModule": "encoder4_motor",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
+    "LoraModule": "lora",
     "PLUSModule": "plus",
     "PPSModule": "pps",
     "RCAModule": "rca",
