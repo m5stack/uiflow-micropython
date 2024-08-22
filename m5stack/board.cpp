@@ -15,7 +15,7 @@ extern "C" {
         auto cfg = M5.config();
         cfg.output_power = false;
         M5.begin(cfg);
-        if (M5.getBoard() == m5::board_t::board_M5StackCoreS3) {
+        if (M5.getBoard() == m5::board_t::board_M5StackCoreS3 || M5.getBoard() == m5::board_t::board_M5StackCoreS3SE) {
             periph_module_disable(PERIPH_I2C1_MODULE);
             i2c_config_t conf;
             memset(&conf, 0, sizeof(i2c_config_t));
