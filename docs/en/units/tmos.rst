@@ -1,5 +1,5 @@
 TMOS Unit
-========
+=========
 
 .. include:: ../refs/unit.tmos.ref
 
@@ -113,7 +113,7 @@ UIFLOW2 Example:
 
 
 class TMOSUnit
--------------
+--------------
 
 Constructors
 ------------

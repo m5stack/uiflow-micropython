@@ -1,6 +1,6 @@
 
 HMI Module
-=========
+==========
 
 .. include:: ../refs/module.hmi.ref
 
@@ -142,7 +142,6 @@ Methods
 .. method:: HMIModule.reset_rotary_value()
 
     Reset the rotary value.
-
 
     UIFLOW2:
 
