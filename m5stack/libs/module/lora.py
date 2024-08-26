@@ -8,7 +8,7 @@ from machine import Pin, SPI
 from lora import SX1278
 from lora import SX1276
 from lora import RxPacket
-from micropython import const
+from micropython import const, schedule
 
 
 class LoraModule:
@@ -25,9 +25,19 @@ class LoraModule:
 
     example: |
         from module import LoraModule
-        lora = LoraModule()
+        lora = LoraModule(pin_irq=35, pin_rst=13) # basic
+        lora = LoraModule(pin_irq=35, pin_rst=25) # core2
+        lora = LoraModule(pin_irq=10, pin_rst=5) # cores3
         lora.send("Hello, LoRa!")
+
         print(lora.recv())
+
+        def callback(received_data):
+            global lora
+            print(received_data)
+            lora.start_recv()
+        lora.set_irq_callback(callback)
+        lora.start_recv()
 
     """
 
@@ -49,10 +59,10 @@ class LoraModule:
         pin_rst=25,
         freq_band=LORA_433,
         sf=8,
-        bw: str = "500",
+        bw: str = "125",
         coding_rate=8,
         preamble_len=12,
-        output_power=0,
+        output_power=20,
     ):
         """
         note: Initialize the LoRa module.
@@ -107,6 +117,8 @@ class LoraModule:
             lora_cfg=lora_cfg,
         )
 
+        self.irq_callback = None
+
     def _validate_range(self, value, min, max):
         if value < min or value > max:
             raise ValueError(f"Value {value} out of range {min} to {max}")
@@ -151,3 +163,43 @@ class LoraModule:
             note: Returns None on timeout, or an `RxPacket` instance with the packet on success.
         """
         return self.modem.recv(timeout_ms, rx_length, rx_packet)
+
+    def start_recv(self):
+        """
+        note: Start receiving data once, trigger an interrupt when data is received.
+        """
+        self.modem.start_recv(continuous=True)
+
+    def set_irq_callback(self, callback):
+        """
+        note: Set the IRQ callback function.
+
+        params:
+            callback:
+              note: The callback function. The function should accept one argument, which is the received data.
+        """
+
+        def _irq_callback():
+            if self.irq_callback:
+                schedule(self.irq_callback, self.modem.poll_recv())
+
+        self.irq_callback = callback
+        self.modem.set_irq_callback(_irq_callback)
+
+    def standby(self):
+        """
+        note: Set the modem to standby mode.
+        """
+        self.modem.standby()
+
+    def sleep(self):
+        """
+        note: Set the modem to sleep mode.
+        """
+        self.modem.sleep()
+
+    def irq_triggered(self) -> bool:
+        """
+        note: Check if the IRQ has been triggered.
+        """
+        return self.modem.irq_triggered()
