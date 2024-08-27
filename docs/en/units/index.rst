@@ -32,6 +32,7 @@ Unit
     grove2grove.rst
     hall_effect.rst
     heart.rst
+    id.rst
     imu.rst
     imupro.rst
     ir.rst

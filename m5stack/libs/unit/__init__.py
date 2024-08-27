@@ -52,6 +52,7 @@ _attrs = {
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",
     "HeartUnit": "heart",
+    "IDUnit": "id",
     "IMUProUnit": "imu_pro",
     "IMUUnit": "imu",
     "IRUnit": "ir",
