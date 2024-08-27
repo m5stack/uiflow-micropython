@@ -57,6 +57,7 @@ _attrs = {
     "JoystickUnit": "joystick",
     "KeyUnit": "key",
     "KMeterISOUnit": "kmeter_iso",
+    "KMeterUnit": "kmeter",
     "LaserRXUnit": "laser_rx",
     "LaserTXUnit": "laser_tx",
     "LCDUnit": "lcd",

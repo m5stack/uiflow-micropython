@@ -37,6 +37,7 @@ Unit
     ir.rst
     joystick.rst
     key.rst
+    kmeter.rst
     lcd.rst
     light.rst
     lora_e220.rst

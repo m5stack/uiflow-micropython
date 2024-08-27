@@ -1,0 +1,33 @@
+.. |Kmeter Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/kmeter/kmeter_01.webp
+    :target: https://docs.m5stack.com/en/unit/kmeter
+    :height: 200px
+    :width: 200px
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/example.png
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/init.png
+
+.. |get_thermocouple_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/get_thermocouple_temperature.png
+
+.. |get_internal_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/get_internal_temperature.png
+
+.. |get_sleep_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/get_sleep_time.png
+
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/get_firmware_version.png
+
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/get_i2c_address.png
+
+.. |set_sleep_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/set_sleep_time.png
+
+.. |set_wakeup_trigger.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/set_wakeup_trigger.png
+
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeter/set_i2c_address.png
+
+.. |cores3_kmeter_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/kmeter/cores3_kmeter_example.m5f2"
+        target="_blank"
+    >
+        cores3_kmeter_example.m5f2
+    </a>

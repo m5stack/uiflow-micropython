@@ -58,6 +58,7 @@ package(
         "joystick.py",
         "key.py",
         "kmeter_iso.py",
+        "kmeter.py",
         "laser_rx.py",
         "laser_tx.py",
         "lcd.py",
