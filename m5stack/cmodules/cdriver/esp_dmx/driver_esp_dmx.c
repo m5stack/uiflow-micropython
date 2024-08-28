@@ -1,6 +1,8 @@
 /*
- * Copyright (c) 2024 M5Stack Technology CO LTD
- */
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
 #include "esp_dmx.h"
 
 #include <math.h>
