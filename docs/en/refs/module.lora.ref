@@ -4,10 +4,14 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/init.svg
-.. |_validate_range.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/_validate_range.svg
-.. |send.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/send.svg
-.. |recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/recv.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/init.svg
+.. |send.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/send.svg
+.. |recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/recv.svg
+.. |start_recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/start_recv.svg
+.. |set_irq_callback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/set_irq_callback.svg
+.. |standby.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/standby.svg
+.. |sleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/sleep.svg
+.. |irq_triggered.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/irq_triggered.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/loramodule/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example.svg
 

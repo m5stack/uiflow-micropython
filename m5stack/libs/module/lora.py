@@ -140,6 +140,13 @@ class LoraModule:
         return:
             note: The return value is the timestamp when transmission completed, as a`time.ticks_ms()` result. It will be more accurate if the modem was initialized to use interrupts.
         """
+        if isinstance(packet, str):
+            packet = bytes(packet, "utf-8")
+        elif isinstance(packet, list | tuple):
+            packet = bytes(packet)
+        elif isinstance(packet, int):
+            packet = bytes([packet])
+
         return self.modem.send(packet, tx_at_ms)
 
     def recv(self, timeout_ms=None, rx_length=0xFF, rx_packet: RxPacket = None) -> RxPacket:
