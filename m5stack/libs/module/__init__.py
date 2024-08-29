@@ -15,6 +15,7 @@ _attrs = {
     "PPSModule": "pps",
     "RCAModule": "rca",
     "Relay4Module": "relay_4",
+    "RS232Module": "rs232",
 }
 
 # Lazy loader, effectively does:

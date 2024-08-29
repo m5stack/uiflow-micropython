@@ -1,6 +1,6 @@
 
 AIN4_20mA Unit
-==========
+==============
 
 .. include:: ../refs/unit.ain4.ref
 
@@ -67,7 +67,7 @@ UIFLOW2 Example:
 .. only:: builder_html
 
 class AIN4_20MAUnit
-----------------
+-------------------
 
 Constructors
 ------------
