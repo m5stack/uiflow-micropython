@@ -53,7 +53,7 @@ class KMeterUnit:
 
     def set_wakeup_trigger(self, mode=True) -> None:
         #! set wakeup trigger in timer or i2c scl low level.
-        self._i2c.writeto_mem(self._i2c_addr, self._WAKEUP_REG, b"\xEE" if mode else b"\xEF")
+        self._i2c.writeto_mem(self._i2c_addr, self._WAKEUP_REG, b"\xee" if mode else b"\xef")
 
     def get_firmware_version(self) -> float:
         #! get firmware version.
