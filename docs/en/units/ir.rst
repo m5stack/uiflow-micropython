@@ -25,18 +25,17 @@ UIFLOW2 Example:
     |ir_core_example.m5f2|
 
 
-class IR
---------------
+class IRUnit
+------------
 
 Constructors
---------------
+------------
 
-.. class:: IR(IO1,IO2)
+.. class:: IRUnit(port)
 
-    Create an IR object.
+    Create an IRUnit object.
 
-    The parameters is:
-        - ``IO1,IO2`` Receive and transmit pin definitions.
+    :param tuple port: The port to which the IR unit is connected. the tuple is a pair of values, the first value is the receive pin, and the second value is the transmit pin.
 
     UIFLOW2:
 
@@ -46,7 +45,7 @@ Constructors
 Methods
 -------
 
-.. method:: ir.tx()
+.. method:: IRUnit.tx()
 
     Sends an ir signal value to an address.
 
@@ -55,7 +54,7 @@ Methods
         |tx.png|
 
 
-.. method:: ir.rx_event()
+.. method:: IRUnit.rx_event()
 
     Determine when the infrared signal is read and start to do some processing procedures.
 

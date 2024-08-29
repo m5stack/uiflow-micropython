@@ -2,3 +2,15 @@
 .. |getAccel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getAccel.svg
 
 .. |getGyro.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getGyro.svg
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/example.png
+
+
+.. |imu_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/imu/imu_cores3_example.m5f2"
+        target="_blank"
+    >
+        imu_cores3_example.m5f2
+    </a>

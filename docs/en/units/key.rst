@@ -181,35 +181,33 @@ Constants
 
 .. data:: KeyUnit.CB_TYPE
 
-    A Callback_Type object.
+    A CB_TYPE object.
 
 
-class Callback_Type
+class CB_TYPE
 -------------------
 
 Constants
 ---------
 
-.. data:: Callback_Type.WAS_CLICKED
+.. data:: CB_TYPE.WAS_CLICKED
 
     Single click event type.
 
 
-.. data:: Callback_Type.WAS_DOUBLECLICKED
+.. data:: CB_TYPE.WAS_DOUBLECLICKED
 
     Double click event type.
 
 
-.. data:: Callback_Type.WAS_HOLD
+.. data:: CB_TYPE.WAS_HOLD
 
     Long press event type.
 
-
-.. data:: Callback_Type.WAS_PRESSED
-
+.. data:: CB_TYPE.WAS_PRESSED
 
     Press event type
 
-.. data:: Callback_Type.WAS_RELEASED
+.. data:: CB_TYPE.WAS_RELEASED
 
     Release event type
