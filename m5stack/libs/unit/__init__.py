@@ -57,6 +57,7 @@ _attrs = {
     "IMUUnit": "imu",
     "IRUnit": "ir",
     "JoystickUnit": "joystick",
+    "JoystickV2Unit": "joystickv2",
     "KeyUnit": "key",
     "KMeterISOUnit": "kmeter_iso",
     "KMeterUnit": "kmeter",
