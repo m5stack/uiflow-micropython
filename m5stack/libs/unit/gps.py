@@ -66,16 +66,22 @@ class GPSUnit:
                 self.latitude = self.latitude + gps_list[3]
             degree = gps_list[2][0 : gps_list[2].find(".") - 2]
             minute = gps_list[2][gps_list[2].find(".") - 2 :]
-            self.latitude_decimal = int(degree) + round(float(minute) / 60, 6)
+            self.latitude_decimal = self.convert_to_decimal(degree, minute, gps_list[3])
         if gps_list[4]:
             self.longitude = gps_list[4]
             if gps_list[5]:
                 self.longitude = self.longitude + gps_list[5]
             degree = gps_list[4][0 : gps_list[4].find(".") - 2]
             minute = gps_list[4][gps_list[4].find(".") - 2 :]
-            self.longitude_decimal = int(degree) + round(float(minute) / 60, 6)
+            self.longitude_decimal = self.convert_to_decimal(degree, minute, gps_list[5])
         if gps_list[9]:
             self.altitude = gps_list[9]
+
+    def convert_to_decimal(degrees, minutes, direction) -> float:
+        decimal = int(degrees) + round(float(minutes) / 60.0, 6)
+        if direction in ["S", "W"]:
+            decimal = -decimal
+        return decimal
 
     def decode_rmc(self, data):
         gps_list = data.split(",")
