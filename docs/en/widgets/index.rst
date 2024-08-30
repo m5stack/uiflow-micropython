@@ -65,3 +65,4 @@ Classes
     :maxdepth: 1
 
     label.rst
+    circle.rst
