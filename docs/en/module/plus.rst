@@ -1,6 +1,6 @@
 
 PLUS Module
-=========
+============
 
 .. include:: ../refs/module.plus.ref
 
@@ -74,7 +74,7 @@ UIFLOW2 Example:
     |plus_core2_example.m5f2|
 
 class PLUSModule
----------------
+-----------------
 
 Constructors
 ------------
@@ -120,16 +120,6 @@ Methods
 
         |reset_rotary_value.png|
 
-.. method:: PLUSModule.set_rotary_value(value)
-
-    Set the rotary value.
-
-    :param int value: rotary value.
-
-    UIFLOW2:
-
-        |set_rotary_value.png|
-
 .. method:: PLUSModule.get_rotary_increments() -> int
 
     Get the increments of the rotary value since the last call of this function.
@@ -140,7 +130,7 @@ Methods
 
         |get_rotary_increments.png|
 
-.. method:: HMIModule.get_button_status() -> int
+.. method:: PLUSModule.get_button_status() -> int
 
     Get the state of a specific button.
 

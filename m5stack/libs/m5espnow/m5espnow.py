@@ -9,6 +9,7 @@ from _espnow import *
 import network
 import binascii
 import struct
+import time
 
 
 class M5ESPNow(ESPNowBase):
@@ -25,9 +26,22 @@ class M5ESPNow(ESPNowBase):
         self.wlan_sta.active(True)
         self.wlan_ap.active(True)
         self.wifi_channel = wifi_ch
+        if wifi_ch:
+            while (
+                self.wlan_sta.config("channel") != wifi_ch
+                or self.wlan_ap.config("channel") != wifi_ch
+            ):
+                self.wlan_sta.config(channel=wifi_ch)
+                self.wlan_ap.config(channel=wifi_ch)
+                time.sleep(1)
         # Initialize ESP-NOW
         super().__init__()
-        self.active(True)
+        while self.active():
+            self.active(False)
+            time.sleep(0.5)
+        while not self.active():
+            self.active(True)
+            time.sleep(0.5)
         self.peer_list = [None] * 20
         self.broadcast = False
 
@@ -49,7 +63,7 @@ class M5ESPNow(ESPNowBase):
         peer = self.peer_list[peer_id - 1]
         msg = self.convert_to_bytes(msg)
         if peer is not None:
-            self.send(peer, msg)
+            self.send(peer, msg, False)
 
     def broadcast_data(self, msg) -> None:
         #! All devices will also receive messages sent to the broadcast MAC address
@@ -58,7 +72,7 @@ class M5ESPNow(ESPNowBase):
         if self.broadcast is False:
             self.add_peer(peer)
             self.broadcast = True
-        self.send(peer, msg)
+        self.send(peer, msg, False)
 
     def set_pmk_encrypt(self, pmk) -> None:
         #! Set the Primary Master Key (PMK) which is used to encrypt the Local Master Keys (LMK) for encrypting messages.

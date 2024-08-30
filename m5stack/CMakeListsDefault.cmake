@@ -180,6 +180,7 @@ set(IDF_COMPONENTS
     M5Unified
     esp32-camera
     uiflow_utility
+    esp_dmx
 )
 
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)

@@ -18,6 +18,7 @@ Unit
     dds.rst
     digi_clock.rst
     dlight.rst
+    dmx.rst
     dualbutton.rst
     earth.rst
     encoder.rst
@@ -36,10 +37,12 @@ Unit
     ir.rst
     joystick.rst
     key.rst
+    kmeter.rst
     lcd.rst
     light.rst
     lora_e220.rst
     lora_e220_433.rst
+    midi.rst
     minioled.rst
     miniscale.rst
     mqtt.rst

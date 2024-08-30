@@ -1,0 +1,23 @@
+.. |get.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/requests.png
+.. |post.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/requests.png
+.. |put.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/requests.png
+.. |patch.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/requests.png
+.. |delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/requests.png
+.. |close.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/close.png
+.. |content.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/content.png
+.. |headers.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/headers.png
+.. |json.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/json.png
+.. |reason.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/reason.png
+.. |status_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/status_code.png
+.. |text.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/text.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/http/example.png
+
+.. |cores3_http_get_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/http/cores3_http_get_example.m5f2"
+        target="_blank"
+    >
+        cores3_http_get_example.m5f2
+    </a>

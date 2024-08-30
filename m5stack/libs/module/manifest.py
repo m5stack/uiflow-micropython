@@ -18,6 +18,7 @@ package(
         "pps.py",
         "rca.py",
         "relay_4.py",
+        "rs232.py",
     ),
     base_path="..",
     opt=0,

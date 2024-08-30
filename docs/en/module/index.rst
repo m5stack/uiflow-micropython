@@ -11,3 +11,4 @@ Module
     plus.rst
     pps.rst
     rca.rst
+    rs232.rst

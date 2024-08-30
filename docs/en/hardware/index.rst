@@ -7,6 +7,8 @@ Hardware
     button.rst
     can.rst
     imu.rst
+    ir.rst
     mic.rst
+    pin.rst
     rotary.rst
     speaker.rst

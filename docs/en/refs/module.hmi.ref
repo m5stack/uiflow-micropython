@@ -7,7 +7,7 @@
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/init.png
 .. |get_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/get_encoder_value.png
 .. |set_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/set_encoder_value.png
-.. |reset_rotary.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/reset_encoder.png
+.. |reset_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/reset_encoder.png
 .. |get_rotary_increments.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/get_increment_value.png
 .. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/get_button_state.png
 .. |get_led_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/hmi/get_led_state.png
@@ -22,7 +22,7 @@
 .. |hmi_core2_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/tmos/hmi_core2_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/hmi/hmi_core2_example.m5f2"
         target="_blank"
     >
         hmi_core2_example.m5f2

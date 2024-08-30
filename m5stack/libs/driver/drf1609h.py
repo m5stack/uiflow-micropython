@@ -259,7 +259,7 @@ class DRF1609H:
     def read_node_param_command(self, short_address):
         if self.firmware_version >= 8.4:
             txdata = bytearray(6)
-            struct.pack_into("!4s", txdata, 0, b"\x10\x44\x54\x4B")
+            struct.pack_into("!4s", txdata, 0, b"\x10\x44\x54\x4b")
             struct.pack_into("!H", txdata, 4, short_address)
             rxdata, err_code, status = self.command(0xFC, data=txdata)
             if err_code == 0x0A and status:

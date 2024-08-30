@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #include <stdio.h>
 #include "./include/max30102/max30102.h"
 #include "./include/max30102/registers.h"
