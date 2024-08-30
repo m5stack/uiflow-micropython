@@ -13,5 +13,6 @@
 .. |sleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/sleep.svg
 .. |irq_triggered.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/irq_triggered.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example.svg
+.. |example_tx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example_tx.svg
+.. |example_rx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example._rxsvg
 
