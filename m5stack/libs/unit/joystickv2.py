@@ -53,9 +53,6 @@ class JoystickV2Unit:
         self._swap = False
         self._x_mapping = [0, 0, 0, 0]
         self._y_mapping = [0, 0, 0, 0]
-        self._available()
-
-    def _available(self) -> None:
         if self._addr not in self._i2c.scan():
             raise Exception("JoystickV2Unit not found, please check if it's properly connected.")
 
@@ -117,7 +114,7 @@ class JoystickV2Unit:
         """
         self._swap = swap
 
-    def read_adc_value(self) -> tuple:
+    def get_adc_value(self) -> tuple:
         """
         note: Read the ADC value of the joystick.
 
@@ -138,7 +135,7 @@ class JoystickV2Unit:
             x, y = y, x
         return (x, y)
 
-    def read_button_status(self) -> bool:
+    def get_button_status(self) -> bool:
         """
         note: Read the button status of the joystick.
 
@@ -151,7 +148,7 @@ class JoystickV2Unit:
         """
         return not bool(self._read_reg_data(0x20, 1)[0])
 
-    def set_rgb_led(self, r: int, g: int, b: int) -> None:
+    def fill_color(self, r: int, g: int, b: int) -> None:
         """
         note: Set the RGB LED color of the joystick.
 
@@ -168,21 +165,6 @@ class JoystickV2Unit:
               note: The blue value (0-255).
         """
         self._write_reg_data(0x30, [b, g, r])
-
-    def get_rgb_led(self) -> tuple:
-        """
-        note: Get the RGB LED color of the joystick.
-
-        label:
-            en: "%1 get RGB LED color of JoystickV2 Unit"
-            cn: "%1 获取 JoystickV2 Unit 的 RGB LED 颜色"
-
-        return:
-            note: Returns a tuple of the RGB LED color values.
-        """
-        buf = self._read_reg_data(0x30, 3)
-        (b, g, r) = struct.unpack("<BBB", buf)
-        return (r, g, b)
 
     def _set_mapping(
         self, adc_neg_min: int, adc_neg_max: int, adc_pos_min: int, adc_pos_max: int, axis_x=True
@@ -300,7 +282,7 @@ class JoystickV2Unit:
         time.sleep_ms(100)
         self._set_mapping(*self._y_mapping, False)
 
-    def read_axis_position(self) -> tuple:
+    def get_axis_position(self) -> tuple:
         """
         note: Read the position of the joystick.
 
@@ -336,7 +318,7 @@ class JoystickV2Unit:
         self._write_reg_data(0xFF, [address])
         self._addr = address
 
-    def read_fw_version(self) -> int:
+    def get_firmware_version(self) -> int:
         """
         note: Read the firmware version of the JoystickV2 Unit.
 
@@ -348,3 +330,55 @@ class JoystickV2Unit:
             note: Returns the firmware version.
         """
         return self._read_reg_data(0xFE, 1)[0]
+
+    def get_x_raw(self) -> int:
+        """
+        note: Read the raw X-axis value of the joystick.
+
+        label:
+            en: "%1 read raw X-axis ADC value"
+            cn: "%1 读取原始X轴ADC值"
+
+        return:
+            note: Returns the raw X-axis value.
+        """
+        return self.get_adc_value()[0]
+
+    def get_y_raw(self) -> int:
+        """
+        note: Read the raw Y-axis value of the joystick.
+
+        label:
+            en: "%1 read raw Y-axis ADC value"
+            cn: "%1 读取原始Y轴ADC值"
+
+        return:
+            note: Returns the raw Y-axis value.
+        """
+        return self.get_adc_value()[1]
+
+    def get_x_position(self) -> int:
+        """
+        note: Read the X-axis position of the joystick.
+
+        label:
+            en: "%1 read X-axis position"
+            cn: "%1 读取X轴位置"
+
+        return:
+            note: Returns the X-axis position.
+        """
+        return self.get_axis_position()[0]
+
+    def get_y_position(self) -> int:
+        """
+        note: Read the Y-axis position of the joystick.
+
+        label:
+            en: "%1 read Y-axis position"
+            cn: "%1 读取Y轴位置"
+
+        return:
+            note: Returns the Y-axis position.
+        """
+        return self.get_axis_position()[1]

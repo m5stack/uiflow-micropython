@@ -87,7 +87,7 @@ Methods
 
         |set_axis_swap.svg|
 
-.. method:: JoystickV2Unit.read_adc_value()
+.. method:: JoystickV2Unit.get_adc_value()
 
     Read the ADC value of the joystick.
 
@@ -96,9 +96,9 @@ Methods
 
     UIFLOW2:
 
-        |read_adc_value.svg|
+        |get_adc_value.svg|
 
-.. method:: JoystickV2Unit.read_button_status()
+.. method:: JoystickV2Unit.get_button_status()
 
     Read the button status of the joystick.
 
@@ -107,9 +107,9 @@ Methods
 
     UIFLOW2:
 
-        |read_button_status.svg|
+        |get_button_status.svg|
 
-.. method:: JoystickV2Unit.set_rgb_led(r, g, b)
+.. method:: JoystickV2Unit.fill_color(r, g, b)
 
     Set the RGB LED color of the joystick.
 
@@ -120,18 +120,7 @@ Methods
 
     UIFLOW2:
 
-        |set_rgb_led.svg|
-
-.. method:: JoystickV2Unit.get_rgb_led()
-
-    Get the RGB LED color of the joystick.
-
-    :return (tuple): Returns a tuple of the RGB LED color values.
-
-
-    UIFLOW2:
-
-        |get_rgb_led.svg|
+        |fill_color.svg|
 
 .. method:: JoystickV2Unit.set_axis_x_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
 
@@ -203,7 +192,7 @@ Methods
 
         |set_deadzone_position.svg|
 
-.. method:: JoystickV2Unit.read_axis_position()
+.. method:: JoystickV2Unit.get_axis_position()
 
     Read the position of the joystick.
 
@@ -212,7 +201,7 @@ Methods
 
     UIFLOW2:
 
-        |read_axis_position.svg|
+        |get_axis_position.svg|
 
 .. method:: JoystickV2Unit.set_address(address)
 
@@ -225,7 +214,7 @@ Methods
 
         |set_address.svg|
 
-.. method:: JoystickV2Unit.read_fw_version()
+.. method:: JoystickV2Unit.get_firmware_version()
 
     Read the firmware version of the JoystickV2 Unit.
 
@@ -234,7 +223,51 @@ Methods
 
     UIFLOW2:
 
-        |read_fw_version.svg|
+        |get_firmware_version.svg|
+
+.. method:: JoystickV2Unit.get_x_raw()
+
+    Read the raw X-axis value of the joystick.
+
+    :return (int): Returns the raw X-axis value.
+
+
+    UIFLOW2:
+
+        |get_x_raw.svg|
+
+.. method:: JoystickV2Unit.get_y_raw()
+
+    Read the raw Y-axis value of the joystick.
+
+    :return (int): Returns the raw Y-axis value.
+
+
+    UIFLOW2:
+
+        |get_y_raw.svg|
+
+.. method:: JoystickV2Unit.get_x_position()
+
+    Read the X-axis position of the joystick.
+
+    :return (int): Returns the X-axis position.
+
+
+    UIFLOW2:
+
+        |get_x_position.svg|
+
+.. method:: JoystickV2Unit.get_y_position()
+
+    Read the Y-axis position of the joystick.
+
+    :return (int): Returns the Y-axis position.
+
+
+    UIFLOW2:
+
+        |get_y_position.svg|
 
 
 

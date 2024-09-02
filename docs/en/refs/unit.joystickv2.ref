@@ -4,21 +4,24 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/init.svg
-.. |set_axis_x_invert.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_axis_x_invert.svg
-.. |set_axis_y_invert.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_axis_y_invert.svg
-.. |set_axis_swap.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_axis_swap.svg
-.. |read_adc_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/read_adc_value.svg
-.. |read_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/read_button_status.svg
-.. |set_rgb_led.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_rgb_led.svg
-.. |get_rgb_led.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/get_rgb_led.svg
-.. |set_axis_x_mapping.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_axis_x_mapping.svg
-.. |set_axis_y_mapping.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_axis_y_mapping.svg
-.. |set_deadzone_adc.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_deadzone_adc.svg
-.. |set_deadzone_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_deadzone_position.svg
-.. |read_axis_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/read_axis_position.svg
-.. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/set_address.svg
-.. |read_fw_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/read_fw_version.svg
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/init.svg
+.. |set_axis_x_invert.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_axis_x_invert.svg
+.. |set_axis_y_invert.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_axis_y_invert.svg
+.. |set_axis_swap.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_axis_swap.svg
+.. |get_adc_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_adc_value.svg
+.. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_button_status.svg
+.. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/fill_color.svg
+.. |set_axis_x_mapping.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_axis_x_mapping.svg
+.. |set_axis_y_mapping.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_axis_y_mapping.svg
+.. |set_deadzone_adc.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_deadzone_adc.svg
+.. |set_deadzone_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_deadzone_position.svg
+.. |get_axis_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_axis_position.svg
+.. |set_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/set_address.svg
+.. |get_firmware_version.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_firmware_version.svg
+.. |get_x_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_x_raw.svg
+.. |get_y_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_y_raw.svg
+.. |get_x_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_x_position.svg
+.. |get_y_position.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/get_y_position.svg
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2unit/example.svg
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystickv2/example.svg
 
