@@ -1,7 +1,21 @@
 
-.. |getAccel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getAccel.svg
+.. |getAccel.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getAccel.png
 
-.. |getGyro.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getGyro.svg
+.. |getAccel2.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getAccel2.png
+
+.. |getAccel3.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getAccel3.png
+
+.. |getGyro.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getGyro.png
+
+.. |getGyro2.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getGyro2.png
+
+.. |getGyro3.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getGyro3.png
+
+.. |getMag.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getMag.png
+
+.. |getMag2.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getMag2.png
+
+.. |getMag3.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/getMag3.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/imu/example.png
 

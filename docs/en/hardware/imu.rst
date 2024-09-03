@@ -70,7 +70,12 @@ Methods
 
     UIFLOW2:
 
-        |getAccel.svg|
+        |getAccel.png|
+
+        |getAccel2.png|
+
+        |getAccel3.png|
+
 
 
 .. method:: IMU.getGyro() -> tuple[float, float, float]
@@ -79,25 +84,23 @@ Methods
 
     UIFLOW2:
 
-        |getGyro.svg|
+        |getGyro.png|
 
+        |getGyro2.png|
 
-.. method:: IMU.isEnabled() -> bool
+        |getGyro3.png|
 
-    Get whether the IMU object is enabled.
+.. method:: IMU.getMag() -> tuple[float, float, float]
 
-    UIFLOW2:
-
-        None
-
-
-.. method:: IMU.getType() -> int
-
-    Get the chip model of the IMU.
+    Get the tuple of x, y, and z values of the magnetometer.
 
     UIFLOW2:
 
-        None
+        |getMag.png|
+
+        |getMag2.png|
+
+        |getMag3.png|
 
 
 class IMU_TYPE

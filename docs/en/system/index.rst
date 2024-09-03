@@ -12,3 +12,5 @@ System
     power.rst
     time.rst
     m5espnow.rst
+    wlan.sta.rst
+    wlan.ap.rst

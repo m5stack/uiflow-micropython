@@ -36,8 +36,7 @@ Constructors
 Methods
 -------
 
-.. method:: Widgets.setCursor(x: int, y: int)
-    :no-index:
+.. method:: Image.setCursor(x: int, y: int)
 
     Set the position of the Imgae object. Accept the following parameters:
 
@@ -48,7 +47,7 @@ Methods
 
         |setCursor.png|
 
-.. method:: Widgets.setImage(str: file)
+.. method:: Image.setImage(str: file)
 
     Set the image to be displayed.
 
@@ -61,8 +60,7 @@ Methods
         |setImage1.png|
 
 
-.. method:: Widgets.setVisible(visible: bool)
-    :no-index:
+.. method:: Image.setVisible(visible: bool)
 
     Set the visibility of the Imgae object. Accept the following parameters:
 
