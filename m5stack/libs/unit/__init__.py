@@ -17,6 +17,7 @@ _attrs = {
     "BuzzerUnit": "buzzer",
     "CardKBUnit": "cardkb",
     "CANUnit": "can",
+    "MiniCANUnit": "can",
     "KeyCode": "cardkb",
     "CatchUnit": "catch",
     "CATMGNSSUnit": "catm_gnss",
