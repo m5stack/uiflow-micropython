@@ -515,9 +515,13 @@ typedef struct _widgets_image_obj_t {
     const char *img;
     widgets_pos_t pos;
     widgets_size_t size;
+    struct scale_t {
+        float x;
+        float y;
+    } scale;
 }widgets_image_obj_t;
 
-static void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
+static inline void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
     self->gfx->fillRect(self->pos.x0, self->pos.y0, self->size.w, self->size.h, _bg_color_g);
 }
 
@@ -533,11 +537,17 @@ static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *s
     if (buf[0] != 'B' && buf[1] != 'M') {
         return false;
     }
-    m5widgets_image_erase_helper(self);
     file->seek(16, LFS2_SEEK_CUR);
-    self->size.w = file->read32();
-    self->size.h = file->read32();
+    uint32_t w = file->read32();
+    uint32_t h = file->read32();
     file->close();
+
+    if (w != self->size.w || h != self->size.h) {
+        m5widgets_image_erase_helper(self);
+    }
+
+    self->size.w = w * self->scale.x;
+    self->size.h = h * self->scale.y;
     // printf("%s W:%d H:%d\r\n", self->img, self->size.w, self->size.h);
     return true;
 }
@@ -546,10 +556,10 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
     if (!file->open(self->img, LFS2_O_RDONLY)) {
         return false;
     }
-    m5widgets_image_erase_helper(self);
-
     uint8_t idx, result = 0;
     uint16_t value;
+    uint32_t w = self->size.w;
+    uint32_t h = self->size.h;
     while (!result) {
         if (!file->read(&idx, 1) || idx != 0xff || !file->read(&idx, 1)) {
             result = 3;
@@ -576,8 +586,8 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
                 break;
             case 0xC0:
                 file->seek(0x03, LFS2_SEEK_CUR);
-                self->size.h = (uint32_t)file->read16swap();
-                self->size.w = (uint32_t)file->read16swap();
+                h = (uint32_t)file->read16swap();
+                w = (uint32_t)file->read16swap();
                 result = 1;
                 break;
             case 0xDA:
@@ -594,6 +604,12 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
         }
     }
     file->close();
+
+    if (w != self->size.w || h != self->size.h) {
+        m5widgets_image_erase_helper(self);
+    }
+    self->size.w = w * self->scale.x;
+    self->size.h = h * self->scale.y;
     // printf("%s W:%d H:%d result:%d\r\n", self->img, self->size.w, self->size.h, result);
     return result == 1? true: false;
 }
@@ -610,17 +626,23 @@ static bool m5widgets_image_png_helper(LFS2Wrapper *file, widgets_image_obj_t *s
     if ((buf[0] << 16 | buf[1]) != 0x89504E47) {
         return false;
     }
-    m5widgets_image_erase_helper(self);
+
     file->seek(16);
     for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read16swap();
     }
-    self->size.w = buf[0] << 16 | buf[1];
+    uint32_t w = buf[0] << 16 | buf[1];
     for (size_t i = 0; i < 2; i++) {
         buf[i] = file->read16swap();
     }
-    self->size.h = buf[0] << 16 | buf[1];
+    uint32_t h = buf[0] << 16 | buf[1];
     file->close();
+
+    if (w != self->size.w || h != self->size.h) {
+        m5widgets_image_erase_helper(self);
+    }
+    self->size.w = w * self->scale.x;
+    self->size.h = h * self->scale.y;
     // printf("%s W:%d H:%d\r\n", self->img, self->size.w, self->size.h);
     return true;
 }
@@ -637,13 +659,13 @@ static bool m5widgets_image_draw_helper(widgets_image_obj_t *self) {
     bool ret = true;
     if (strstr(ftype, "bmp") != NULL) {
         ret = m5widgets_image_bmp_helper(&wrapper, self);
-        self->gfx->drawBmpFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        self->gfx->drawBmpFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, self->scale.x, self->scale.y);
     } else if ((strstr(ftype, "jpg") != NULL) || (strstr(ftype, "jpeg") != NULL)) {
         ret = m5widgets_image_jpg_helper(&wrapper, self);
-        self->gfx->drawJpgFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        self->gfx->drawJpgFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, self->scale.x, self->scale.y);
     } else if (strstr(ftype, "png") != NULL) {
         ret = m5widgets_image_png_helper(&wrapper, self);
-        self->gfx->drawPngFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, 1.0, 1.0);
+        self->gfx->drawPngFile(&wrapper, self->img, self->pos.x0, self->pos.y0, ~0u, ~0u, 0, 0, self->scale.x, self->scale.y);
     } else {
         printf("Image format was not bmp, jpg, png\r\n");
     }
@@ -687,7 +709,9 @@ mp_obj_t m5widgets_image_setCursor(size_t n_args, const mp_obj_t *pos_args, mp_m
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     widgets_image_obj_t *self = (widgets_image_obj_t *)pos_args[0];
-    m5widgets_image_erase_helper(self);
+    if (args[ARG_x].u_int != self->pos.x0 || self->pos.y0 != args[ARG_y].u_int) {
+        m5widgets_image_erase_helper(self);
+    }
 
     self->pos.x0 = args[ARG_x].u_int;
     self->pos.y0 = args[ARG_y].u_int;
@@ -714,14 +738,42 @@ mp_obj_t m5widgets_image_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     return mp_const_none;
 }
 
-mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
-    enum {ARG_img, ARG_x, ARG_y, ARG_parent};
+
+mp_obj_t m5widgets_image_setScale(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_scale_x, ARG_scale_y};
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_img,    MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
-        { MP_QSTR_x,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_y,      MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
-        { MP_QSTR_parent, MP_ARG_OBJ                  , {.u_obj =  mp_const_none} },
+        { MP_QSTR_scale_x, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = 0 } },
+        { MP_QSTR_scale_y, MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = 0 } },
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    widgets_image_obj_t *self = (widgets_image_obj_t *)pos_args[0];
+    float scale_x = mp_obj_get_float(args[ARG_scale_x].u_obj);
+    float scale_y = mp_obj_get_float(args[ARG_scale_y].u_obj);
+    if (scale_x != self->scale.x || scale_y != self->scale.y) {
+        m5widgets_image_erase_helper(self);
+    }
+
+    self->scale.x = scale_x;
+    self->scale.y = scale_y;
+    m5widgets_image_draw_helper(self);
+    return mp_const_none;
+}
+
+
+mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
+    enum {ARG_img, ARG_x, ARG_y, ARG_scale_x, ARG_scale_y, ARG_parent};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_img,     MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_y,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 0 } },
+        { MP_QSTR_scale_x, MP_ARG_OBJ                  , {.u_obj = mp_const_none} },
+        { MP_QSTR_scale_y, MP_ARG_OBJ                  , {.u_obj = mp_const_none} },
+        { MP_QSTR_parent,  MP_ARG_OBJ                  , {.u_obj = mp_const_none} },
     };
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -740,6 +792,14 @@ mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size
     self->pos.y0 = args[ARG_y].u_int;
     self->size.w = 0;
     self->size.h = 0;
+    self->scale.x = 1.0;
+    self->scale.y = 1.0;
+    if (args[ARG_scale_x].u_obj != mp_const_none) {
+        self->scale.x = mp_obj_get_float(args[ARG_scale_x].u_obj);
+    }
+    if (args[ARG_scale_y].u_obj != mp_const_none) {
+        self->scale.y = mp_obj_get_float(args[ARG_scale_y].u_obj);
+    }
 
     if (args[ARG_img].u_obj == mp_const_none) {
         self->img = "res/img/default.png";
