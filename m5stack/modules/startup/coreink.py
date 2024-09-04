@@ -443,7 +443,7 @@ class AppListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):

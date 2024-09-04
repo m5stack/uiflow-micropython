@@ -3,10 +3,12 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
-    "Base": "base",
-    "Button": "button",
-    "Image": "image",
-    "Label": "label",
+    "ListApp": "app_list",
+    "RunApp": "app_run",
+    "DevApp": "dev",
+    "EzDataApp": "ezdata",
+    "SettingsApp": "settings",
+    "StatusBarApp": "status_bar",
 }
 
 

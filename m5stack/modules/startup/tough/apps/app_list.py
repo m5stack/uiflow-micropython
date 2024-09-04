@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: MIT
 
 from ..app import AppBase, Descriptor
-from ..framework import _play_wav
 from widgets.image import Image
 from widgets.label import Label
 from widgets.button import Button
@@ -198,7 +197,7 @@ class ListApp(AppBase):
     def _btn_up_event_handler(self, event):
         print("_btn_up_event_handler")
         if self._file_pos == 0 and self._cursor_pos == 0:
-            _play_wav("/system/common/wav/bg.wav")
+            M5.Speaker.playWavFile("/system/common/wav/bg.wav")
             return
 
         # Clear selection cursor
@@ -264,7 +263,7 @@ class ListApp(AppBase):
 
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
-            _play_wav("/system/common/wav/bg.wav")
+            M5.Speaker.playWavFile("/system/common/wav/bg.wav")
             return
 
         # Show File
@@ -282,7 +281,7 @@ class ListApp(AppBase):
                 label.set_text(file)
 
     def _btn_once_event_handler(self, event):
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _btn_always_event_handler(self, event):

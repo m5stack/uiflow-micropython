@@ -99,7 +99,7 @@ class RunApp(AppBase):
         pass
 
     async def _btnb_event_handler(self, fw):
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _btnc_event_handler(self, fw):

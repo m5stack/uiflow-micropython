@@ -11,7 +11,7 @@ from .apps.app_run import RunApp
 from .apps.app_list import ListApp
 from .apps.ezdata import EzDataApp
 import time
-from .res import LOGO_IMG
+from . import res
 
 
 class Sprite:
@@ -33,7 +33,7 @@ class Basic_Startup:
         M5.Speaker.setVolume(80)
         M5.Speaker.tone(4000, 50)
 
-        M5.Lcd.drawImage(LOGO_IMG)
+        M5.Lcd.drawImage(res.LOGO_IMG)
         time.sleep_ms(200)
 
         fw = Framework()

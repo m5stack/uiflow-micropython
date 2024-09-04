@@ -2,12 +2,12 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .app import AppBase, AppSelector
+from . import app
 import asyncio
 import M5
 import gc
 import time
-from machine import I2C, Pin
+import machine
 from unit import CardKBUnit, KeyCode
 
 
@@ -16,38 +16,21 @@ class KeyEvent:
     status = False
 
 
-binary_data = None
-_wav_path = None
-
-
-def _play_wav(wav: str):
-    global binary_data, _wav_path
-    if binary_data is None or _wav_path is not wav:
-        with open(wav, "rb") as f:
-            binary_data = f.read()
-        _wav_path = wav
-        if wav == "/system/common/wav/click.wav":
-            M5.Speaker.setVolume(64)
-        else:
-            M5.Speaker.setVolume(127)
-    M5.Speaker.playWav(binary_data)
-
-
 class Framework:
     def __init__(self) -> None:
         self._apps = []
-        self._app_selector = AppSelector(self._apps)
+        self._app_selector = app.AppSelector(self._apps)
         self._launcher = None
         self._bar = None
         self._last_app = None
 
-    def install_bar(self, bar: AppBase):
+    def install_bar(self, bar: app.AppBase):
         self._bar = bar
 
-    def install_launcher(self, launcher: AppBase):
+    def install_launcher(self, launcher: app.AppBase):
         self._launcher = launcher
 
-    def install(self, app: AppBase):
+    def install(self, app: app.AppBase):
         app.install()
         self._apps.append(app)
 
@@ -55,14 +38,14 @@ class Framework:
         # asyncio.create_task(self.gc_task())
         asyncio.run(self.run())
 
-    async def unload(self, app: AppBase):
+    async def unload(self, app: app.AppBase):
         # app = self._apps.pop()
         app.stop()
 
-    async def load(self, app: AppBase):
+    async def load(self, app: app.AppBase):
         app.start()
 
-    async def reload(self, app: AppBase):
+    async def reload(self, app: app.AppBase):
         app.stop()
         app.start()
 
@@ -73,7 +56,7 @@ class Framework:
             self._launcher.start()
             self._last_app = self._launcher
 
-        self.i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+        self.i2c0 = machine.I2C(0, scl=machine.Pin(33), sda=machine.Pin(32), freq=100000)
         self._kb_status = False
         if 0x5F in self.i2c0.scan():
             self._kb = CardKBUnit(self.i2c0)
@@ -90,13 +73,13 @@ class Framework:
                     if detail[9]:  # isHolding
                         pass
                     else:
-                        _play_wav("/system/common/wav/click.wav")
+                        M5.Speaker.playWavFile("/system/common/wav/click.wav")
                         x = M5.Touch.getX()
                         y = M5.Touch.getY()
                         select_app = None
-                        for app in self._apps:
+                        for item in self._apps:
                             if self._is_select(app, x, y):
-                                select_app = app
+                                select_app = item
                                 self._app_selector.select(select_app)
                                 break
                         if select_app is not None:
@@ -105,14 +88,14 @@ class Framework:
                                 select_app.start()
                                 self._last_app = select_app
                         else:
-                            app = self._app_selector.current()
-                            if hasattr(app, "_click_event_handler"):
-                                await app._click_event_handler(x, y, self)
+                            item = self._app_selector.current()
+                            if hasattr(item, "_click_event_handler"):
+                                await item._click_event_handler(x, y, self)
                     last_touch_time = time.ticks_ms()
 
             if self._kb_status:
                 if self._kb.is_pressed():
-                    _play_wav("/system/common/wav/click.wav")
+                    M5.Speaker.playWavFile("/system/common/wav/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     await self.handle_input(self._event)
@@ -145,7 +128,7 @@ class Framework:
             await asyncio.sleep_ms(5000)
 
     @staticmethod
-    def _is_select(app: AppBase, x, y):
+    def _is_select(app: app.AppBase, x, y):
         descriptor = app.descriptor
         if x < descriptor.x:
             return False

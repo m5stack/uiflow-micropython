@@ -182,7 +182,7 @@ class ListApp(AppBase):
         if self._max_file_num == 0:
             return
         print("run %d, %s" % (self._file_pos, self._files[self._file_pos]))
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _click_event_handler(self, x, y, fw):

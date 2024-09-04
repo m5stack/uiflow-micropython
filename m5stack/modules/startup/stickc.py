@@ -372,7 +372,7 @@ class RunApp(AppBase):
 
     def _handle_run_once(self, fw):
         M5.Lcd.clear(0xFFFFFF)
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):
@@ -502,7 +502,7 @@ class ListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[0])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):

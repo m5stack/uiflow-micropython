@@ -2,15 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from ..res import (
-    MontserratMedium18_VLW,
-)
-from widgets.label import Label
+from .. import app
+from .. import res
+import widgets
 import M5
 
 
-class EzDataApp(AppBase):
+class EzDataApp(app.AppBase):
     def __init__(self, icos, data=None) -> None:
         super().__init__()
 
@@ -19,16 +17,16 @@ class EzDataApp(AppBase):
 
     def on_view(self):
         M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
-        self._text_label = Label(
+        self._text_label = widgets.Label(
             "aabbcc112233",
             120,
             69,
             w=240,
             h=22,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x000000,
             bg_color=0xEEEEEF,
-            font=MontserratMedium18_VLW,
+            font=res.MontserratMedium18_VLW,
         )
         self._text_label.set_text("Please stay tuned")
 

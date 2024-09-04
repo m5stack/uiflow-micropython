@@ -2,9 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.label import Label
-from widgets.image import Image
+from .. import app
+import widgets
 import time
 import M5
 import network
@@ -47,7 +46,7 @@ _CLOUD_STATUS_ICOS = {
 }
 
 
-class StatusBarApp(AppBase):
+class StatusBarApp(app.AppBase):
     def __init__(self, icos: dict, wifi) -> None:
         self._wifi = wifi
 
@@ -63,39 +62,39 @@ class StatusBarApp(AppBase):
     def on_view(self):
         M5.Lcd.drawImage("/system/cores3/Title/title_blue.png", 0, 0)
 
-        self._time_label = Label(
+        self._time_label = widgets.Label(
             "12:23",
             160,
             2,
             w=312,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._time_label.set_text(self._time_text)
 
-        self._network_img = Image(use_sprite=False)
+        self._network_img = widgets.Image(use_sprite=False)
         self._network_img.set_pos(320 - 56 - 20 - 5 - 20 - 5, 0)
         self._network_img.set_size(20, 20)
         self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
 
-        self._cloud_img = Image(use_sprite=False)
+        self._cloud_img = widgets.Image(use_sprite=False)
         self._cloud_img.set_pos(320 - 56 - 20 - 5, 0)
         self._cloud_img.set_size(20, 20)
         self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
 
-        self._battery_img = Image(use_sprite=False)
+        self._battery_img = widgets.Image(use_sprite=False)
         self._battery_img.set_pos(320 - 56, 0)
         self._battery_img.set_size(56, 20)
         self._battery_img.set_src(self._battery_src)
 
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             "78%",
             320 - 56 + 22,
             4,
             w=312,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-10.vlw",

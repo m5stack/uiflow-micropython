@@ -2,10 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, Descriptor
+from .. import app
 import M5
-from widgets.label import Label
-from widgets.button import Button
+import widgets
 import esp32
 import sys
 import machine
@@ -20,13 +19,13 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(AppBase):
+class RunApp(app.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/appRun_unselected.png", 5 + 62 + 62, 20 + 4)
-        self.descriptor = Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app.Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
@@ -35,7 +34,7 @@ class RunApp(AppBase):
         M5.Lcd.drawImage("/system/core2/Selection/appRun_selected.png", 5 + 62 + 62, 20 + 4)
         M5.Lcd.drawImage("/system/core2/Run/run.png", 4, 20 + 4 + 56 + 4)
 
-        self._name_label = Label(
+        self._name_label = widgets.Label(
             "name",
             4 + 10,
             (20 + 4 + 56 + 4) + 4,
@@ -46,7 +45,7 @@ class RunApp(AppBase):
         )
         self._name_label.set_text("main.py")
 
-        self._mtime_label = Label(
+        self._mtime_label = widgets.Label(
             "Time: 2023/5/14 12:23:43",
             4 + 10 + 8,
             (20 + 4 + 56 + 4) + 4 + 20 + 6,
@@ -57,7 +56,7 @@ class RunApp(AppBase):
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "Account: XXABC",
             4 + 10 + 8,
             (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18,
@@ -68,7 +67,7 @@ class RunApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._ver_label = Label(
+        self._ver_label = widgets.Label(
             "Ver: UIFLOW2.0 a18",
             4 + 10 + 8,
             (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18 + 18,
@@ -79,12 +78,12 @@ class RunApp(AppBase):
         )
         self._ver_label.set_text(self._ver_text)
 
-        _button_run_once = Button(None)
+        _button_run_once = widgets.Button(None)
         _button_run_once.set_pos(4, 20 + 4 + 56 + 4 + 84)
         _button_run_once.set_size(156, 72)
         _button_run_once.add_event(self._handle_run_once)
 
-        _button_run_always = Button(None)
+        _button_run_always = widgets.Button(None)
         _button_run_always.set_pos(4 + 156, 20 + 4 + 56 + 4 + 84)
         _button_run_always.set_size(156, 72)
         _button_run_always.add_event(self._handle_run_always)
@@ -106,7 +105,7 @@ class RunApp(AppBase):
                 break
 
     def _handle_run_once(self, fw):
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):

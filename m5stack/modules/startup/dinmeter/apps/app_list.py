@@ -260,7 +260,7 @@ class ListApp(AppBase):
                 label.set_text(file)
 
     def _btn_once_event_handler(self, event):
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _btn_always_event_handler(self, event):
