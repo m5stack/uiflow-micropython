@@ -29,7 +29,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 .. only:: builder_html
 
@@ -48,7 +48,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -63,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |set_axis_x_invert.svg|
+        |set_axis_x_invert.png|
 
 .. method:: JoystickV2Unit.set_axis_y_invert(invert)
 
@@ -74,7 +74,7 @@ Methods
 
     UIFLOW2:
 
-        |set_axis_y_invert.svg|
+        |set_axis_y_invert.png|
 
 .. method:: JoystickV2Unit.set_axis_swap(swap)
 
@@ -85,7 +85,7 @@ Methods
 
     UIFLOW2:
 
-        |set_axis_swap.svg|
+        |set_axis_swap.png|
 
 .. method:: JoystickV2Unit.get_adc_value()
 
@@ -96,7 +96,7 @@ Methods
 
     UIFLOW2:
 
-        |get_adc_value.svg|
+        |get_adc_value.png|
 
 .. method:: JoystickV2Unit.get_button_status()
 
@@ -107,9 +107,31 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|
 
-.. method:: JoystickV2Unit.fill_color(r, g, b)
+.. method:: JoystickV2Unit.set_led_brightness(brightness)
+
+    Set the brightness of the RGB LED.
+
+
+    :param float brightness: The brightness value (0-100).
+
+    UIFLOW2:
+
+        |set_led_brightness.png|
+
+.. method:: JoystickV2Unit.fill_color(v)
+
+    Set the RGB LED color of the joystick.
+
+
+    :param  v: The RGB value (0x000000-0xFFFFFF).
+
+    UIFLOW2:
+
+        |fill_color.png|
+
+.. method:: JoystickV2Unit.fill_color_rgb(r, g, b)
 
     Set the RGB LED color of the joystick.
 
@@ -120,7 +142,7 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color_rgb.png|
 
 .. method:: JoystickV2Unit.set_axis_x_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
 
@@ -143,7 +165,7 @@ Methods
 
     UIFLOW2:
 
-        |set_axis_x_mapping.svg|
+        |set_axis_x_mapping.png|
 
 .. method:: JoystickV2Unit.set_axis_y_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
 
@@ -166,7 +188,7 @@ Methods
 
     UIFLOW2:
 
-        |set_axis_y_mapping.svg|
+        |set_axis_y_mapping.png|
 
 .. method:: JoystickV2Unit.set_deadzone_adc(x_adc_raw, y_adc_raw)
 
@@ -178,7 +200,7 @@ Methods
 
     UIFLOW2:
 
-        |set_deadzone_adc.svg|
+        |set_deadzone_adc.png|
 
 .. method:: JoystickV2Unit.set_deadzone_position(x_pos, y_pos)
 
@@ -190,7 +212,7 @@ Methods
 
     UIFLOW2:
 
-        |set_deadzone_position.svg|
+        |set_deadzone_position.png|
 
 .. method:: JoystickV2Unit.get_axis_position()
 
@@ -201,7 +223,7 @@ Methods
 
     UIFLOW2:
 
-        |get_axis_position.svg|
+        |get_axis_position.png|
 
 .. method:: JoystickV2Unit.set_address(address)
 
@@ -212,7 +234,7 @@ Methods
 
     UIFLOW2:
 
-        |set_address.svg|
+        |set_address.png|
 
 .. method:: JoystickV2Unit.get_firmware_version()
 
@@ -223,7 +245,7 @@ Methods
 
     UIFLOW2:
 
-        |get_firmware_version.svg|
+        |get_firmware_version.png|
 
 .. method:: JoystickV2Unit.get_x_raw()
 
@@ -234,7 +256,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x_raw.svg|
+        |get_x_raw.png|
 
 .. method:: JoystickV2Unit.get_y_raw()
 
@@ -245,7 +267,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y_raw.svg|
+        |get_y_raw.png|
 
 .. method:: JoystickV2Unit.get_x_position()
 
@@ -256,7 +278,7 @@ Methods
 
     UIFLOW2:
 
-        |get_x_position.svg|
+        |get_x_position.png|
 
 .. method:: JoystickV2Unit.get_y_position()
 
@@ -267,7 +289,7 @@ Methods
 
     UIFLOW2:
 
-        |get_y_position.svg|
+        |get_y_position.png|
 
 
 

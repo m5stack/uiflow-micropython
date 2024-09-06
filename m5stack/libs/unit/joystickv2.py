@@ -46,6 +46,8 @@ class JoystickV2Unit:
             address:
               note: I2C address of the JoystickV2 Unit.
         """
+        self._color = [0, 0, 0]
+        self._br = 1
         self._i2c = i2c
         self._addr = address
         self._x_inv = False
@@ -148,7 +150,46 @@ class JoystickV2Unit:
         """
         return not bool(self._read_reg_data(0x20, 1)[0])
 
-    def fill_color(self, r: int, g: int, b: int) -> None:
+    def set_led_brightness(self, brightness: float) -> None:
+        """
+        note: Set the brightness of the RGB LED.
+
+        label:
+            en: "%1 set RGB LED brightness to %2"
+            cn: "%1 设置 RGB LED 亮度为 %2"
+
+        params:
+            brightness:
+              note: The brightness value (0-100).
+        """
+        self._br = brightness / 100
+        self._write_reg_data(0x30, [int(c * self._br) for c in self._color])
+
+    def fill_color(self, v) -> None:
+        """
+        note: Set the RGB LED color of the joystick.
+
+        label:
+            en: "%1 set RGB LED color of JoystickV2 Unit to (%2)"
+            cn: "%1 设置 JoystickV2 Unit 的 RGB LED 颜色为 (%2)"
+
+        params:
+            v:
+              note: The RGB value (0x000000-0xFFFFFF).
+        """
+
+        def color_to_bgr(c: int) -> tuple:
+            # color: (R << 16 | G << 8 | B)
+            v = []
+            v.append(int(((c >> 0) & 0xFF) * self._br))  # B
+            v.append(int(((c >> 8) & 0xFF) * self._br))  # G
+            v.append(int(((c >> 16) & 0xFF) * self._br))  # R
+            return list(v)
+
+        self._color = color_to_bgr(v)
+        self._write_reg_data(0x30, [int(c * self._br) for c in self._color])
+
+    def fill_color_rgb(self, r: int, g: int, b: int) -> None:
         """
         note: Set the RGB LED color of the joystick.
 
@@ -164,7 +205,8 @@ class JoystickV2Unit:
             b:
               note: The blue value (0-255).
         """
-        self._write_reg_data(0x30, [b, g, r])
+        self._color = [b, g, r]
+        self._write_reg_data(0x30, [int(c * self._br) for c in self._color])
 
     def _set_mapping(
         self, adc_neg_min: int, adc_neg_max: int, adc_pos_min: int, adc_pos_max: int, axis_x=True
