@@ -4,6 +4,7 @@
 
 # add cdrivers
 include(${CMAKE_CURRENT_LIST_DIR}/cdriver/cdriver.cmake)
+include(${CMAKE_CURRENT_LIST_DIR}/m5utils/m5utils.cmake)
 
 if(M5_CAMERA_MODULE_ENABLE)
     # add m5camera module
