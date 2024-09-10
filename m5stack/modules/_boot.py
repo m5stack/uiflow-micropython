@@ -5,13 +5,14 @@
 import gc
 import uos as os
 from flashbdev import sys_bdev, vfs_bdev
+import esp32
 
-uiflow_str = """
+uiflow_str = f"""
        _  __ _               
  _   _(_)/ _| | _____      __
 | | | | | |_| |/ _ \ \ /\ / /
 | |_| | |  _| | (_) \ V  V / 
- \__,_|_|_| |_|\___/ \_/\_/  2.1.3
+ \__,_|_|_| |_|\___/ \_/\_/  {esp32.firmware_info()[3]}
 """
 print(uiflow_str)
 del uiflow_str
