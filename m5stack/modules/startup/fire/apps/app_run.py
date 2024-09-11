@@ -2,20 +2,15 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
+from .. import app_base
 import M5
-from widgets.label import Label
+import widgets
 import esp32
 import sys
 import machine
 import os
 import time
-from ..res import (
-    APPRUN_UNSELECTED_IMG,
-    APPRUN_SELECTED_IMG,
-    RUN_IMG,
-    BAR4_IMG,
-)
+from .. import res
 
 try:
     import M5Things
@@ -25,23 +20,23 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(res.APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        M5.Lcd.drawImage(APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(res.APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
 
-        M5.Lcd.drawImage(RUN_IMG, 4, 56 + 4)
-        M5.Lcd.drawImage(BAR4_IMG, 0, 220)
+        M5.Lcd.drawImage(res.RUN_IMG, 4, 56 + 4)
+        M5.Lcd.drawImage(res.BAR4_IMG, 0, 220)
 
-        self._name_label = Label(
+        self._name_label = widgets.Label(
             "name",
             4 + 10,
             (56 + 4) + 4,
@@ -52,7 +47,7 @@ class RunApp(AppBase):
         )
         self._name_label.set_text("main.py")
 
-        self._mtime_label = Label(
+        self._mtime_label = widgets.Label(
             "Time: 2023/5/14 12:23:43",
             4 + 10 + 8,
             (56 + 4) + 4 + 20 + 6,
@@ -63,7 +58,7 @@ class RunApp(AppBase):
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "Account: XXABC",
             4 + 10 + 8,
             (56 + 4) + 4 + 20 + 6 + 18,
@@ -74,7 +69,7 @@ class RunApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._ver_label = Label(
+        self._ver_label = widgets.Label(
             "Ver: UIFLOW2.0 a18",
             4 + 10 + 8,
             (56 + 4) + 4 + 20 + 6 + 18 + 18,
@@ -92,7 +87,7 @@ class RunApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(res.APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
         del self._name_label, self._mtime_label, self._account_label, self._ver_label
 
     async def _btna_event_handler(self, fw):
@@ -109,10 +104,10 @@ class RunApp(AppBase):
         machine.reset()
 
     @staticmethod
-    def _get_file_info(path) -> tuple(str, str, str):
+    def _get_file_info(path):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -141,8 +136,5 @@ class RunApp(AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)

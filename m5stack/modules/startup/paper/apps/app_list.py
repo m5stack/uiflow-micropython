@@ -2,16 +2,14 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, Descriptor
-from widgets.image import Image
-from widgets.label import Label
-from widgets.button import Button
+from .. import app_base
+import widgets
 import M5
 import os
 import sys
 
 
-class TextButton(Button):
+class TextButton(widgets.Button):
     def __init__(
         self,
         text: str,
@@ -20,7 +18,7 @@ class TextButton(Button):
         w: int = 0,
         h: int = 0,
         size: float = 1.0,
-        font_align: int = Label.LEFT_ALIGNED,
+        font_align: int = widgets.Label.LEFT_ALIGNED,
         fg_color: int = 0xFFFFFF,
         bg_color: int = 0x000000,
         font=M5.Lcd.FONTS.DejaVu12,
@@ -28,7 +26,9 @@ class TextButton(Button):
         _id=0,
     ) -> None:
         super().__init__(parent)
-        self._label = Label(text, x, y, w, h, size, font_align, fg_color, bg_color, font, parent)
+        self._label = widgets.Label(
+            text, x, y, w, h, size, font_align, fg_color, bg_color, font, parent
+        )
         self.set_pos(x, y)
         self.set_size(w, h)
         self.id = _id
@@ -45,7 +45,7 @@ class TextButton(Button):
         self._label.set_pos(x, y)
 
 
-class ImageButton(Button):
+class ImageButton(widgets.Button):
     def __init__(
         self,
         x: int,
@@ -56,7 +56,7 @@ class ImageButton(Button):
         _id=0,
     ) -> None:
         super().__init__(parent)
-        self._image = Image(use_sprite=False)
+        self._image = widgets.Image(use_sprite=False)
         self._image.set_pos(x, y)
         self._image.set_size(w, h)
         self.set_pos(x, y)
@@ -124,12 +124,12 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
-        self.descriptor = Descriptor(x=493, y=321, w=48, h=181)
+        self.descriptor = app_base.Descriptor(x=493, y=321, w=48, h=181)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -154,7 +154,7 @@ class ListApp(AppBase):
                 w=324,
                 h=32,
                 size=1.0,
-                font_align=Label.LEFT_ALIGNED,
+                font_align=widgets.Label.LEFT_ALIGNED,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
                 font=M5.Lcd.FONTS.DejaVu40,
@@ -186,7 +186,7 @@ class ListApp(AppBase):
         sys.exit(0)
 
     async def _click_event_handler(self, x, y, fw):
-        print("_click_event_handler")
+        # print("_click_event_handler")
         for button in self._btns:
             button.handle(x, y)
         self._run_btn.handle(x, y)

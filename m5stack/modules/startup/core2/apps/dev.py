@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import M5
 import widgets
 import asyncio
@@ -34,7 +34,7 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(app.AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -42,7 +42,7 @@ class DevApp(app.AppBase):
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/develop_unselected.png", 5 + 62, 20 + 4)
-        self.descriptor = app.Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -107,9 +107,6 @@ class DevApp(app.AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)

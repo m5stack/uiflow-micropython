@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
 
 
-class EzDataApp(app.AppBase):
+class EzDataApp(app_base.AppBase):
     def __init__(self, icos, data=None) -> None:
         super().__init__()
 

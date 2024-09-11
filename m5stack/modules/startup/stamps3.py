@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: MIT
 
 # StampS3 startup script
-import M5
 import time
 import network
 import machine

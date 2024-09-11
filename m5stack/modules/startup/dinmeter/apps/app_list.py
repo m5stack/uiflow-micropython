@@ -2,14 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from ..res import (
-    CARD_228x32_SELECT_IMG,
-    CARD_228x32_UNSELECT_IMG,
-    MontserratMedium18_VLW,
-)
-from widgets.image import Image
-from widgets.label import Label
+from .. import app_base
+from .. import res
+import widgets
 import M5
 import esp32
 import machine
@@ -71,7 +66,7 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     # log control
     DEBUG = False
 
@@ -95,18 +90,18 @@ class ListApp(AppBase):
         M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
 
         if self._max_file_num > 0:
-            self._img0 = Image(use_sprite=False)
+            self._img0 = widgets.Image(use_sprite=False)
             self._img0.set_pos(6, 22)
             self._img0.set_size(228, 32)
-            self._img0.set_src(CARD_228x32_SELECT_IMG)
+            self._img0.set_src(res.CARD_228x32_SELECT_IMG)
             self._imgs.append(self._img0)
 
-            self._ico0 = Image(use_sprite=False)
+            self._ico0 = widgets.Image(use_sprite=False)
             self._ico0.set_pos(9, 25)
             self._ico0.set_size(26, 26)
             self._icos.append(self._ico0)
 
-            self._label0 = Label(
+            self._label0 = widgets.Label(
                 "",
                 40,
                 27,
@@ -114,23 +109,23 @@ class ListApp(AppBase):
                 h=22,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
-                font=MontserratMedium18_VLW,
+                font=res.MontserratMedium18_VLW,
             )
             self._labels.append(self._label0)
 
         if self._max_file_num > 1:
-            self._img1 = Image(use_sprite=False)
+            self._img1 = widgets.Image(use_sprite=False)
             self._img1.set_pos(6, 60)
             self._img1.set_size(228, 32)
-            self._img1.set_src(CARD_228x32_UNSELECT_IMG)
+            self._img1.set_src(res.CARD_228x32_UNSELECT_IMG)
             self._imgs.append(self._img1)
 
-            self._ico1 = Image(use_sprite=False)
+            self._ico1 = widgets.Image(use_sprite=False)
             self._ico1.set_pos(9, 63)
             self._ico1.set_size(26, 26)
             self._icos.append(self._ico1)
 
-            self._label1 = Label(
+            self._label1 = widgets.Label(
                 "",
                 40,
                 65,
@@ -138,23 +133,23 @@ class ListApp(AppBase):
                 h=22,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
-                font=MontserratMedium18_VLW,
+                font=res.MontserratMedium18_VLW,
             )
             self._labels.append(self._label1)
 
         if self._max_file_num > 2:
-            self._img2 = Image(use_sprite=False)
+            self._img2 = widgets.Image(use_sprite=False)
             self._img2.set_pos(6, 98)
             self._img2.set_size(228, 32)
-            self._img2.set_src(CARD_228x32_UNSELECT_IMG)
+            self._img2.set_src(res.CARD_228x32_UNSELECT_IMG)
             self._imgs.append(self._img2)
 
-            self._ico2 = Image(use_sprite=False)
+            self._ico2 = widgets.Image(use_sprite=False)
             self._ico2.set_pos(9, 101)
             self._ico2.set_size(26, 26)
             self._icos.append(self._ico2)
 
-            self._label2 = Label(
+            self._label2 = widgets.Label(
                 "",
                 40,
                 103,
@@ -162,7 +157,7 @@ class ListApp(AppBase):
                 h=22,
                 fg_color=0x000000,
                 bg_color=0xFFFFFF,
-                font=MontserratMedium18_VLW,
+                font=res.MontserratMedium18_VLW,
             )
             self._labels.append(self._label2)
 
@@ -192,7 +187,7 @@ class ListApp(AppBase):
             return
 
         # Clear selection cursor
-        self._imgs[self._cursor_pos].set_src(CARD_228x32_UNSELECT_IMG)
+        self._imgs[self._cursor_pos].set_src(res.CARD_228x32_UNSELECT_IMG)
 
         # Calculate cursor and file positions
         self._file_pos -= 1
@@ -204,7 +199,7 @@ class ListApp(AppBase):
             self._cursor_pos = 0
 
         # cursor img
-        self._imgs[self._cursor_pos].set_src(CARD_228x32_SELECT_IMG)
+        self._imgs[self._cursor_pos].set_src(res.CARD_228x32_SELECT_IMG)
 
         if self._file_pos < self._cursor_pos:
             for label, icos, file in zip(self._labels, self._icos, self._files):
@@ -227,7 +222,7 @@ class ListApp(AppBase):
         # Clear selection cursor
         self.DEBUG and print("_btn_down_event_handler")
         self.DEBUG and print("_cursor_pos:", self._cursor_pos)
-        self._imgs[self._cursor_pos].set_src(CARD_228x32_UNSELECT_IMG)
+        self._imgs[self._cursor_pos].set_src(res.CARD_228x32_UNSELECT_IMG)
 
         # Calculate cursor and file positions
         self._file_pos += 1
@@ -239,7 +234,7 @@ class ListApp(AppBase):
 
         # cursor img
         self.DEBUG and print("_cursor_pos:", self._cursor_pos)
-        self._imgs[self._cursor_pos].set_src(CARD_228x32_SELECT_IMG)
+        self._imgs[self._cursor_pos].set_src(res.CARD_228x32_SELECT_IMG)
 
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1

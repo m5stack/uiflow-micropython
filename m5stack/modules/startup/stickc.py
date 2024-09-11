@@ -5,8 +5,7 @@
 from . import Startup
 import M5
 import network
-from widgets.label import Label
-from widgets.image import Image
+import widgets
 import os
 import sys
 import gc
@@ -123,12 +122,12 @@ class DevApp(AppBase):
         self._avatar_src = self._get_avatar()
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 12)
         self._bg_img.set_size(80, 148)
         self._bg_img.set_src(self._bg_src)
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             6,
             68,
@@ -140,7 +139,7 @@ class DevApp(AppBase):
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             6,
             104,
@@ -152,7 +151,7 @@ class DevApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False)
+        self._avatar_img = widgets.Image(use_sprite=False)
         self._avatar_img.set_pos(24, 20)
         self._avatar_img.set_size(32, 32)
         self._avatar_img.set_scale(0.16, 0.16)
@@ -174,9 +173,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                # print(refresh)
-                # print(self._account_text)
-                # print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
 
@@ -289,54 +285,54 @@ class RunApp(AppBase):
         # print("date:", self._date_text)
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 12)
         self._bg_img.set_size(80, 148)
         self._bg_img.set_src(APPRUN_IMG)
 
-        self._date_label = Label(
+        self._date_label = widgets.Label(
             "",
             24,
             32,
             w=46,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
         self._date_label.set_text(self._date_text)
 
-        self._mtime_label = Label(
+        self._mtime_label = widgets.Label(
             "",
             24,
             45,
             w=46,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "",
             24,
             56,
             w=46,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
         self._account_label.set_text(self._account_text)
 
-        self._ver_label = Label(
+        self._ver_label = widgets.Label(
             "",
             24,
             67,
             w=46,
             h=25,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
@@ -383,11 +379,11 @@ class RunApp(AppBase):
         machine.reset()
 
     @staticmethod
-    def _get_file_info(path) -> tuple(str, str, str):
+    def _get_file_info(path):
         date = None
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -418,9 +414,6 @@ class RunApp(AppBase):
         else:
             account = "None"
 
-        if ver is None:
-            ver = "None"
-
         return (date, mtime, account, ver)
 
 
@@ -437,13 +430,13 @@ class ListApp(AppBase):
                 self._files.append(file)
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 12)
         self._bg_img.set_size(80, 148)
         self._bg_img.set_src(APPLIST_IMG)
 
         if len(self._files) > 0:
-            self._label0 = Label(
+            self._label0 = widgets.Label(
                 "",
                 12,
                 65,
@@ -453,10 +446,10 @@ class ListApp(AppBase):
                 bg_color=0x343434,
                 font=MontserratMedium12_VLW,
             )
-            self._label0.set_long_mode(Label.LONG_DOT)
+            self._label0.set_long_mode(widgets.Label.LONG_DOT)
             self._labels.append(self._label0)
         if len(self._files) > 1:
-            self._label1 = Label(
+            self._label1 = widgets.Label(
                 "",
                 18,
                 85,
@@ -466,10 +459,10 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=MontserratMedium12_VLW,
             )
-            self._label1.set_long_mode(Label.LONG_DOT)
+            self._label1.set_long_mode(widgets.Label.LONG_DOT)
             self._labels.append(self._label1)
         if len(self._files) > 2:
-            self._label2 = Label(
+            self._label2 = widgets.Label(
                 "",
                 18,
                 45,
@@ -479,7 +472,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=MontserratMedium12_VLW,
             )
-            self._label2.set_long_mode(Label.LONG_DOT)
+            self._label2.set_long_mode(widgets.Label.LONG_DOT)
             self._labels.append(self._label2)
 
         for label, file in zip(self._labels, self._files):
@@ -551,31 +544,31 @@ class CloudApp(AppBase):
         self._cloud_status = self._get_cloud_status()
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 12)
         self._bg_img.set_size(80, 148)
         self._bg_img.set_src(self.bg_table.get(self._cloud_status, CLOUD_ERROR_IMG))
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             "",
             7,
             30,
             w=64,
             h=38,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
         )
         self._ssid_label.set_text(self._ssid)
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             "",
             7,
             90,
             w=64,
             h=38,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x1C1C1E,
             font=MontserratMedium10_VLW,
@@ -666,7 +659,7 @@ class MenuApp(AppBase):
         self._app, self._img_src = next(self._icos)
 
     def on_view(self):
-        self._status_img = Image(use_sprite=False)
+        self._status_img = widgets.Image(use_sprite=False)
         self._status_img.set_pos(0, 12)
         self._status_img.set_size(135, 240)
         self._status_img.set_src(self._img_src)
@@ -702,19 +695,19 @@ class StatusBarApp(AppBase):
 
     def on_view(self):
         M5.Lcd.fillRect(0, 0, 80, 12, 0x000000)
-        self._time_label = Label(
+        self._time_label = widgets.Label(
             "12:23",
             2,
             0,
             w=32,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x000000,
             font=MontserratMedium10_VLW,
         )
         self._time_label.set_text(self._time_text)
 
-        self._battery_img = Image(use_sprite=False)
+        self._battery_img = widgets.Image(use_sprite=False)
         self._battery_img.set_pos(58, 0)
         self._battery_img.set_size(22, 12)
         self._brightness = self.approximate(M5.Power.getBatteryLevel())
@@ -751,7 +744,7 @@ class LauncherApp(AppBase):
         self._cloud_app, self._menu_app = data
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 0)
         self._bg_img.set_size(80, 160)
         self._bg_img.set_src(LAUNCHER_IMG)

@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "fire/__init__.py",
-        "fire/app.py",
+        "fire/app_base.py",
         "fire/framework.py",
         "fire/res.py",
         "fire/apps/app_list.py",

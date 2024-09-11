@@ -2,20 +2,12 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.image import Image
-from widgets.label import Label
+from .. import app_base
+import widgets
 import M5
 import os
 import sys
-from ..res import (
-    APPLIST_UNSELECTED_IMG,
-    APPLIST_SELECTED_IMG,
-    APPLIST_IMG,
-    BAR5_IMG,
-    APPLIST_LEFT_IMG,
-    APPLIST_RIGHT_IMG,
-)
+from .. import res
 
 
 class Rectangle:
@@ -85,12 +77,12 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         pass
 
     def on_install(self):
-        M5.Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -99,14 +91,14 @@ class ListApp(AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        M5.Lcd.drawImage(APPLIST_SELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_SELECTED_IMG, 5 + 62 * 3, 0)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(4, 56 + 4)
         self._bg_img.set_size(312, 156)
-        self._bg_img.set_src(APPLIST_IMG)
+        self._bg_img.set_src(res.APPLIST_IMG)
 
-        M5.Lcd.drawImage(BAR5_IMG, 0, 220)
+        M5.Lcd.drawImage(res.BAR5_IMG, 0, 220)
 
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = 4
@@ -117,10 +109,10 @@ class ListApp(AppBase):
         )
         # M5.Lcd.fillRect(self._left_cursor_x, self._left_cursor_y, 10, 36, 0xfefefe)
 
-        self._left_img = Image(use_sprite=False)
+        self._left_img = widgets.Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
-        self._left_img.set_src(APPLIST_LEFT_IMG)
+        self._left_img.set_src(res.APPLIST_LEFT_IMG)
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = (56 + 4) + 2
@@ -130,12 +122,12 @@ class ListApp(AppBase):
         )
         # M5.Lcd.fillRect(self._right_cursor_x, self._right_cursor_y, 10, 36, 0xfefefe)
 
-        self._right_img = Image(use_sprite=False)
+        self._right_img = widgets.Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
-        self._right_img.set_src(APPLIST_RIGHT_IMG)
+        self._right_img.set_src(res.APPLIST_RIGHT_IMG)
 
-        self._label0 = Label(
+        self._label0 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8,
@@ -146,7 +138,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label1 = Label(
+        self._label1 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing,
@@ -157,7 +149,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label2 = Label(
+        self._label2 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
@@ -168,7 +160,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label3 = Label(
+        self._label3 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
@@ -188,7 +180,7 @@ class ListApp(AppBase):
             file and label and label.set_text(file)
 
     def on_exit(self):
-        M5.Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
         del self._bg_img, self._left_img, self._right_img
         del self._label0, self._label1, self._label2, self._label3, self._labels
         del self._files

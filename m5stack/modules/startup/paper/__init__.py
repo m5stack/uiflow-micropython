@@ -4,10 +4,7 @@
 
 from startup import Startup
 import M5
-import network
-from widgets.label import Label
-from widgets.image import Image
-from .framework import Framework
+from . import framework
 import time
 
 from .apps.status_bar import StatusBarApp
@@ -28,7 +25,7 @@ class Paper_Startup:
         # M5.Lcd.clear(0x000000)
         # sprite = M5.Lcd.newCanvas(540, 960, 4, True)
 
-        fw = Framework()
+        fw = framework.Framework()
         settings_app = SettingsApp(M5.Lcd, data=self._wlan)
         dev_app = DevApp(M5.Lcd, data=self._wlan)
         list_app = ListApp(M5.Lcd)

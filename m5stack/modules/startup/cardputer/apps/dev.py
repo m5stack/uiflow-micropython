@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
@@ -34,7 +34,7 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(app.AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
@@ -104,9 +104,6 @@ class DevApp(app.AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
 

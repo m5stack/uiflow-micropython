@@ -3,7 +3,7 @@ package(
     (
         "__init__.py",
         "paper/__init__.py",
-        "paper/app.py",
+        "paper/app_base.py",
         "paper/framework.py",
         "paper/apps/app_list.py",
         "paper/apps/dev.py",

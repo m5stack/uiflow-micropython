@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import widgets
 import M5
 from M5 import Widgets
@@ -81,7 +81,7 @@ class FileList:
         return self.files_len
 
 
-class ListApp(app.AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 

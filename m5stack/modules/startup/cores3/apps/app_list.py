@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
-from .. import app
+from .. import app_base
 import widgets
 import M5
 import os
@@ -59,13 +59,13 @@ class FileList:
         return self.files_len
 
 
-class ListApp(app.AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/cores3/Selection/appList_unselected.png", 5 + 62 * 3, 20 + 4)
-        self.descriptor = app.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._files = FileList("apps")

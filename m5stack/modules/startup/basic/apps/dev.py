@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import M5
 from M5 import Widgets
@@ -46,7 +46,7 @@ _CLOUD_STATUS_ICOS = {
 }
 
 
-class DevApp(app.AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wifi = data
         super().__init__()

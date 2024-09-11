@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "core2/__init__.py",
-        "core2/app.py",
+        "core2/app_base.py",
         "core2/framework.py",
         "core2/apps/app_list.py",
         "core2/apps/app_run.py",

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
@@ -66,7 +66,7 @@ class FileList:
         return self.files_len
 
 
-class ListApp(app.AppBase):
+class ListApp(app_base.AppBase):
     # log control
     DEBUG = False
 

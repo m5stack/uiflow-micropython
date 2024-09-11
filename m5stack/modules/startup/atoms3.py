@@ -8,7 +8,6 @@ import network
 import machine
 import binascii
 from . import Startup
-from hardware import RGB
 
 # AtomS3 startup menu
 

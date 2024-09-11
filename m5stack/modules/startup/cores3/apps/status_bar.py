@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import widgets
 import time
 import M5
@@ -46,7 +46,7 @@ _CLOUD_STATUS_ICOS = {
 }
 
 
-class StatusBarApp(app.AppBase):
+class StatusBarApp(app_base.AppBase):
     def __init__(self, icos: dict, wifi) -> None:
         self._wifi = wifi
 

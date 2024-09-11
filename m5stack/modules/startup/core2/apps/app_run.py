@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import M5
 import widgets
 import esp32
@@ -19,13 +19,13 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(app.AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/appRun_unselected.png", 5 + 62 + 62, 20 + 4)
-        self.descriptor = app.Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
@@ -118,7 +118,7 @@ class RunApp(app.AppBase):
     def _get_file_info(path) -> tuple(str, str, str):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -147,8 +147,5 @@ class RunApp(app.AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)

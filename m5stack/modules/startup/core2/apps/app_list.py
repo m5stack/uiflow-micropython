@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import widgets
 import M5
 import os
@@ -60,13 +60,13 @@ class FileList:
         return self.files_len
 
 
-class ListApp(app.AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/appList_unselected.png", 5 + 62 * 3, 20 + 4)
-        self.descriptor = app.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -188,7 +188,7 @@ class ListApp(app.AppBase):
         del self._files
 
     async def _click_event_handler(self, x, y, fw):
-        print("_click_event_handler")
+        # print("_click_event_handler")
         for button in self._buttons:
             button.handle(x, y)
 

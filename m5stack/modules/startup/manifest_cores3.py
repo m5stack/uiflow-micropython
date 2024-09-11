@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "cores3/__init__.py",
-        "cores3/app.py",
+        "cores3/app_base.py",
         "cores3/framework.py",
         "cores3/apps/__init__.py",
         "cores3/apps/app_list.py",

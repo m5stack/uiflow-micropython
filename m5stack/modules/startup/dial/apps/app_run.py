@@ -2,17 +2,16 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
+from .. import app_base
 import M5
-from widgets.label import Label
-from widgets.button import Button
+import widgets
 import esp32
 import sys
 import machine
 import os
 import time
-from ..res import RUN_IMG
-from .status_bar import StatusBarApp
+from .. import res
+from . import status_bar
 
 try:
     import M5Things
@@ -22,7 +21,7 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         super().__init__()
@@ -34,9 +33,9 @@ class RunApp(AppBase):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
-        M5.Lcd.drawImage(RUN_IMG, 0, 0)
+        M5.Lcd.drawImage(res.RUN_IMG, 0, 0)
 
-        self._name_label = Label(
+        self._name_label = widgets.Label(
             "name",
             10,
             105,
@@ -47,55 +46,55 @@ class RunApp(AppBase):
         )
         self._name_label.set_text("main.py")
 
-        self._mtime_label = Label(
+        self._mtime_label = widgets.Label(
             "Time: 2023/5/14 12:23:43",
             120,
             137,
             w=200,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "Account: XXABC",
             120,
             162,
             w=180,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._account_label.set_text(self._account_text)
 
-        self._ver_label = Label(
+        self._ver_label = widgets.Label(
             "Ver: UIFLOW2.0 a18",
             120,
             187,
             w=160,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._ver_label.set_text(self._ver_text)
 
-        _button_run_once = Button(None)
+        _button_run_once = widgets.Button(None)
         _button_run_once.set_pos(0, 50)
         _button_run_once.set_size(120, 51)
         _button_run_once.add_event(self._handle_run_once)
 
-        _button_run_always = Button(None)
+        _button_run_always = widgets.Button(None)
         _button_run_always.set_pos(120, 50)
         _button_run_always.set_size(120, 51)
         _button_run_always.add_event(self._handle_run_always)
         self._buttons = (_button_run_once, _button_run_always)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wlan)
+        self._status_bar = status_bar.StatusBarApp(None, self._wlan)
         self._status_bar.start()
 
     def on_hide(self):
@@ -125,10 +124,10 @@ class RunApp(AppBase):
         machine.reset()
 
     @staticmethod
-    def _get_file_info(path) -> tuple(str, str, str):
+    def _get_file_info(path):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -157,8 +156,5 @@ class RunApp(AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)

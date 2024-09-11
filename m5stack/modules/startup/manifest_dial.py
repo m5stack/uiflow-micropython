@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "dial/__init__.py",
-        "dial/app.py",
+        "dial/app_base.py",
         "dial/framework.py",
         "dial/res.py",
         "dial/apps/app_list.py",
@@ -18,5 +18,5 @@ package(
         "dial/apps/status_bar.py",
     ),
     base_path="..",
-    opt=0,
+    opt=3,
 )

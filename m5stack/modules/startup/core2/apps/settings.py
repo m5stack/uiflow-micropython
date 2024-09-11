@@ -2,14 +2,14 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 import M5
 import widgets
 import esp32
 from unit import KeyCode
 
 
-class WiFiSetting(app.AppBase):
+class WiFiSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -74,7 +74,7 @@ class WiFiSetting(app.AppBase):
         self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
-        self._option_views = app.generator(
+        self._option_views = app_base.generator(
             (
                 (0, self._select_ssid_option),
                 (1, self._select_psk_option),
@@ -257,7 +257,7 @@ _current_options = {
 }
 
 
-class BatteryChargeSetting(app.AppBase):
+class BatteryChargeSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -269,7 +269,7 @@ class BatteryChargeSetting(app.AppBase):
 
     def on_launch(self):
         self._current = self._get_charge_current()
-        self._options = app.generator(_current_options)
+        self._options = app_base.generator(_current_options)
         while True:
             t = next(self._options)
             if t == self._current:
@@ -328,7 +328,7 @@ _boot_options = {
 }
 
 
-class BootScreenSetting(app.AppBase):
+class BootScreenSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -341,7 +341,7 @@ class BootScreenSetting(app.AppBase):
     def on_launch(self):
         self._boot_option = self._get_boot_option()
         self._boot_option = 1 if self._boot_option == 1 else 2
-        self._options = app.generator(_boot_options)
+        self._options = app_base.generator(_boot_options)
         while True:
             t = next(self._options)
             if t == self._boot_option:
@@ -398,7 +398,7 @@ _comlink_options = {
 }
 
 
-class ComLinkSetting(app.AppBase):
+class ComLinkSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -410,7 +410,7 @@ class ComLinkSetting(app.AppBase):
 
     def on_launch(self):
         self._option = False
-        self._options = app.generator(_comlink_options)
+        self._options = app_base.generator(_comlink_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -459,7 +459,7 @@ _brightness_options = {
 }
 
 
-class BrightnessSetting(app.AppBase):
+class BrightnessSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -472,7 +472,7 @@ class BrightnessSetting(app.AppBase):
     def on_launch(self):
         self._brightness = M5.Lcd.getBrightness()
         self._brightness = self.approximate(self._brightness)
-        self._options = app.generator(_brightness_options)
+        self._options = app_base.generator(_brightness_options)
         while True:
             t = next(self._options)
             if t == self._brightness:
@@ -525,7 +525,7 @@ _buspower_options = {
 }
 
 
-class BUSPowerSetting(app.AppBase):
+class BUSPowerSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -537,7 +537,7 @@ class BUSPowerSetting(app.AppBase):
 
     def on_launch(self):
         self._option = M5.Power.getExtOutput()
-        self._options = app.generator(_buspower_options)
+        self._options = app_base.generator(_buspower_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -575,7 +575,7 @@ class BUSPowerSetting(app.AppBase):
         self._lcd.push(0, 80)
 
 
-class SettingsApp(app.AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._menus = (
@@ -586,12 +586,12 @@ class SettingsApp(app.AppBase):
             BrightnessSetting(self._lcd),
             BUSPowerSetting(self._lcd),
         )
-        self._menu_selector = app.AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/setting_unselected.png", 5 + 62 * 0, 20 + 4)
-        self.descriptor = app.Descriptor(x=5, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         pass

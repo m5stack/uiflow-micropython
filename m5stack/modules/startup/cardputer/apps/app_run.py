@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
@@ -20,7 +20,7 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(app.AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
         self._enter_handler = self._handle_run_once
@@ -115,7 +115,7 @@ class RunApp(app.AppBase):
     def _get_file_info(path) -> tuple(str, str, str):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -144,9 +144,6 @@ class RunApp(app.AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)
 

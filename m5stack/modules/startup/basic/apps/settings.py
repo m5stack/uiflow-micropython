@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 
-from .. import app
+from .. import app_base
 from .. import res
 import M5
 from M5 import Widgets
@@ -14,7 +14,7 @@ from . import app_list
 import boot_option
 
 
-class WiFiSetting(app.AppBase):
+class WiFiSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wifi = data
         super().__init__()
@@ -76,7 +76,7 @@ class WiFiSetting(app.AppBase):
         self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
-        # self._option_views = app.AppSelector(
+        # self._option_views = app_base.AppSelector(
         #     (
         #         (0, self._select_ssid_option),
         #         (1, self._select_psk_option),
@@ -160,7 +160,7 @@ class WiFiSetting(app.AppBase):
     #         event.status = True
 
     # def _select_default_option(self):
-    #     M5.Lcd.drawImage(SETTING_WIFI_IMG, self._origin_x, self._origin_y)
+    #     M5.Lcd.drawImage(res.SETTING_WIFI_IMG, self._origin_x, self._origin_y)
     #     self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
     #     self._psk_label.set_text_color(0x000000, 0xFEFEFE)
     #     self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -256,7 +256,7 @@ _brightness_options = {
 }
 
 
-# class BrightnessSetting(app.AppBase):
+# class BrightnessSetting(app_base.AppBase):
 #     def __init__(self, icos: dict) -> None:
 #         super().__init__()
 
@@ -268,7 +268,7 @@ _brightness_options = {
 #     def on_launch(self):
 #         self._brightness = M5.Lcd.getBrightness()
 #         self._brightness = self.approximate(self._brightness)
-#         self._options = app.AppSelector(list(_brightness_options))
+#         self._options = (app_base.AppSelector(list(_brightness_options))
 #         self._options.select(self._brightness)
 
 #     def on_view(self):
@@ -276,14 +276,14 @@ _brightness_options = {
 #         self._origin_y = 56 + 4 + 108 + 4
 
 #         M5.Lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-#         M5.Lcd.drawImage(SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
+#         M5.Lcd.drawImage(res.SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
 #         M5.Lcd.drawImage(
 #             _brightness_options.get(self._brightness), self._origin_x + 6, self._origin_y + 0
 #         )
 
 #     def on_ready(self):
 #         M5.Lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-#         M5.Lcd.drawImage(SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
+#         M5.Lcd.drawImage(res.SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
 #         M5.Lcd.drawImage(
 #             _brightness_options.get(self._brightness), self._origin_x + 6, self._origin_y + 0
 #         )
@@ -327,7 +327,7 @@ _boot_options = {
 }
 
 
-# class BootScreenSetting(app.AppBase):
+# class BootScreenSetting((app_base.AppBase):
 #     def __init__(self, icos: dict) -> None:
 #         super().__init__()
 
@@ -339,7 +339,7 @@ _boot_options = {
 #     def on_launch(self):
 #         self._boot_option = boot_option.get_boot_option()
 #         self._boot_option = 1 if self._boot_option == 1 else 2
-#         self._options = app.AppSelector(list(_boot_options))
+#         self._options = (app_base.AppSelector(list(_boot_options))
 #         self._options.select(self._boot_option)
 
 #     def on_view(self):
@@ -347,12 +347,12 @@ _boot_options = {
 #         self._origin_y = 56 + 4 + 108 + 4
 
 #         M5.Lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-#         M5.Lcd.drawImage(SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
+#         M5.Lcd.drawImage(res.SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
 #         M5.Lcd.drawImage(_boot_options.get(self._boot_option), self._origin_x + 6, self._origin_y + 0)
 
 #     def on_ready(self):
 #         M5.Lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-#         M5.Lcd.drawImage(SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
+#         M5.Lcd.drawImage(res.SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
 #         M5.Lcd.drawImage(_boot_options.get(self._boot_option), self._origin_x + 6, self._origin_y + 0)
 
 #     def on_hide(self):
@@ -375,14 +375,14 @@ _boot_options = {
 #         M5.Lcd.drawImage(_boot_options.get(self._boot_option), self._origin_x + 6, self._origin_y + 0)
 
 
-class SettingsApp(app.AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan_app = WiFiSetting(None, data=data)
         # self._menus = (
         #     BrightnessSetting(None),
         #     BootScreenSetting(None),
         # )
-        # self._menu_selector = app.AppSelector(self._menus)
+        # self._menu_selector = (app_base.AppSelector(self._menus)
 
     def on_install(self):
         M5.Lcd.drawImage(res.SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
@@ -390,12 +390,12 @@ class SettingsApp(app.AppBase):
     def on_launch(self):
         self._brightness = M5.Lcd.getBrightness()
         self._brightness = self.approximate(self._brightness)
-        self._brightness_options = app.AppSelector(list(_brightness_options))
+        self._brightness_options = app_base.AppSelector(list(_brightness_options))
         self._brightness_options.select(self._brightness)
 
         self._boot_option = boot_option.get_boot_option()
         self._boot_option = 1 if self._boot_option == 1 else 2
-        self._boot_options = app.AppSelector(list(_boot_options))
+        self._boot_options = app_base.AppSelector(list(_boot_options))
         self._boot_options.select(self._boot_option)
 
         self._pos = 0
@@ -425,7 +425,7 @@ class SettingsApp(app.AppBase):
         self._origin_y = 56 + 4 + 108 + 4
 
         M5.Lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        # M5.Lcd.drawImage(SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
+        # M5.Lcd.drawImage(res.SETTING_SELECT_IMG, self._origin_x + 0, self._origin_y + 6)
         M5.Lcd.drawImage(
             _boot_options.get(self._boot_option), self._origin_x + 6, self._origin_y + 0
         )

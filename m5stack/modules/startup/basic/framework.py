@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import app
+from . import app_base
 import asyncio
 import M5
 import gc
-# from machine import I2C, Pin
+# import machine
 # from unit import CardKBUnit, KeyCode
 
 
@@ -18,13 +18,13 @@ class KeyEvent:
 class Framework:
     def __init__(self) -> None:
         self._apps = []
-        self._app_selector = app.AppSelector(self._apps)
+        self._app_selector = app_base.AppSelector(self._apps)
         self._launcher = None
 
-    def install_launcher(self, launcher: app.AppBase):
+    def install_launcher(self, launcher: app_base.AppBase):
         self._launcher = launcher
 
-    def install(self, app: app.AppBase):
+    def install(self, app: app_base.AppBase):
         app.install()
         self._apps.append(app)
 
@@ -32,14 +32,14 @@ class Framework:
         gc.enable()
         asyncio.run(self.run())
 
-    async def unload(self, app: app.AppBase):
+    async def unload(self, app: app_base.AppBase):
         # app = self._apps.pop()
         app.stop()
 
-    async def load(self, app: app.AppBase):
+    async def load(self, app: app_base.AppBase):
         app.start()
 
-    async def reload(self, app: app.AppBase):
+    async def reload(self, app: app_base.AppBase):
         app.stop()
         app.start()
 
@@ -54,7 +54,7 @@ class Framework:
             self._launcher.start()
         asyncio.create_task(self.gc_task())
 
-        # self.i2c0 = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
+        # self.i2c0 = machine.I2C(0, scl=machine.Pin(22), sda=machine.Pin(21), freq=100000)
         # self._kb_status = False
         # if 0x5F in self.i2c0.scan():
         #     self._kb = CardKBUnit(self.i2c0)

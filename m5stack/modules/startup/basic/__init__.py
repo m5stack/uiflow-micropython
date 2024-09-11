@@ -4,7 +4,7 @@
 
 from startup import Startup
 import M5
-from .framework import Framework
+from . import framework
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp
 from .apps.app_run import RunApp
@@ -36,7 +36,7 @@ class Basic_Startup:
         M5.Lcd.drawImage(res.LOGO_IMG)
         time.sleep_ms(200)
 
-        fw = Framework()
+        fw = framework.Framework()
         settings_app = SettingsApp(None, data=self._wlan)
         dev_app = DevApp(None, data=self._wlan)
         run_app = RunApp(None)

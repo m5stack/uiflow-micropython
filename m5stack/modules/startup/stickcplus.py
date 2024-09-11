@@ -5,8 +5,7 @@
 from . import Startup
 import M5
 import network
-from widgets.label import Label
-from widgets.image import Image
+import widgets
 import os
 import sys
 import gc
@@ -88,19 +87,19 @@ class UsbApp(AppBase):
         super().__init__()
 
     def on_launch(self):
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             str(None),
             135 - 14,
             6,
             w=135,
             h=20,
-            font_align=Label.RIGHT_ALIGNED,
+            font_align=widgets.Label.RIGHT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu12,
         )
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(135, 240)
@@ -145,18 +144,18 @@ class ListApp(AppBase):
         super().__init__()
 
     def on_launch(self):
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             str(None),
             135 - 14,
             6,
             w=135,
             h=20,
-            font_align=Label.RIGHT_ALIGNED,
+            font_align=widgets.Label.RIGHT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu12,
         )
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(135, 240)
@@ -181,7 +180,7 @@ class ListApp(AppBase):
     def on_view(self):
         self._bg_img.set_src(APPLIST_IMG)
         if self._label0 is None:
-            self._label0 = Label(
+            self._label0 = widgets.Label(
                 "",
                 25,
                 108,
@@ -191,9 +190,9 @@ class ListApp(AppBase):
                 bg_color=0x333333,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label0.set_long_mode(Label.LONG_DOT)
+            self._label0.set_long_mode(widgets.Label.LONG_DOT)
         if self._label1 is None:
-            self._label1 = Label(
+            self._label1 = widgets.Label(
                 "",
                 25,
                 108 + 22 + 5,
@@ -203,9 +202,9 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label1.set_long_mode(Label.LONG_DOT)
+            self._label1.set_long_mode(widgets.Label.LONG_DOT)
         if self._label2 is None:
-            self._label2 = Label(
+            self._label2 = widgets.Label(
                 "",
                 25,
                 108 + 22 + 5 + 22 + 5,
@@ -215,7 +214,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._label2.set_long_mode(Label.LONG_DOT)
+            self._label2.set_long_mode(widgets.Label.LONG_DOT)
 
         if len(self._labels) != 3:
             self._labels.clear()
@@ -224,7 +223,7 @@ class ListApp(AppBase):
             self._labels.append(self._label2)
 
         if self._lebal0 is None:
-            self._lebal0 = Label(
+            self._lebal0 = widgets.Label(
                 "",
                 25,
                 108 - 22 - 5,
@@ -234,10 +233,10 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal0.set_long_mode(Label.LONG_DOT)
+            self._lebal0.set_long_mode(widgets.Label.LONG_DOT)
 
         if self._lebal1 is None:
-            self._lebal1 = Label(
+            self._lebal1 = widgets.Label(
                 "",
                 25,
                 108 - 22 - 5 - 22 - 5,
@@ -247,10 +246,10 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal1.set_long_mode(Label.LONG_DOT)
+            self._lebal1.set_long_mode(widgets.Label.LONG_DOT)
 
         if self._lebal2 is None:
-            self._lebal2 = Label(
+            self._lebal2 = widgets.Label(
                 "",
                 25,
                 108 - 22 - 5 - 22 - 5 - 22 - 5,
@@ -260,7 +259,7 @@ class ListApp(AppBase):
                 bg_color=0x000000,
                 font=M5.Lcd.FONTS.DejaVu18,
             )
-            self._lebal2.set_long_mode(Label.LONG_DOT)
+            self._lebal2.set_long_mode(widgets.Label.LONG_DOT)
 
         if len(self._lebals) != 3:
             self._lebals.clear()
@@ -439,58 +438,58 @@ class CloudApp(AppBase):
         self._user_id = self._get_user_id()
 
     def on_view(self):
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             str(None),
             135 - 14,
             6,
             w=135,
             h=20,
-            font_align=Label.RIGHT_ALIGNED,
+            font_align=widgets.Label.RIGHT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu12,
         )
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             str(None),
             int(135 / 2),
             55,
             w=135,
             h=20,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x000000,
             bg_color=0xCCCCCC,
             font=M5.Lcd.FONTS.DejaVu18,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._rssi_label = Label(
+        self._rssi_label = widgets.Label(
             str(None),
             65,
             82,
             w=135,
             h=20,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xCCCCCC,
             font=M5.Lcd.FONTS.DejaVu12,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._user_id_label = Label(
+        self._user_id_label = widgets.Label(
             str(None),
             int(135 / 2),
             170,
             w=135,
             h=20,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0xFFFFFF,
             bg_color=0x000000,
             font=M5.Lcd.FONTS.DejaVu18,
         )
-        self._user_id_label.set_long_mode(Label.LONG_DOT)
+        self._user_id_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(135, 240)
@@ -559,31 +558,31 @@ class MenuApp(AppBase):
         self._app, self._img_src = next(self._icos)
 
     def on_view(self):
-        self._status_img = Image(use_sprite=False)
+        self._status_img = widgets.Image(use_sprite=False)
         self._status_img.set_x(0)
         self._status_img.set_y(0)
         self._status_img.set_size(135, 240)
         self._status_img.set_src(self._img_src)
 
-        self._tips_label = Label(
+        self._tips_label = widgets.Label(
             "",
             67,
             108 - 22 - 5 - 22 - 5 - 22 - 5,
             w=135,
             h=20,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x00CCFF,
             bg_color=0x000000,
             font=M5.Lcd.FONTS.DejaVu18,
         )
 
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             str(None),
             135 - 14,
             6,
             w=135,
             h=20,
-            font_align=Label.RIGHT_ALIGNED,
+            font_align=widgets.Label.RIGHT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu12,
@@ -620,7 +619,7 @@ class LauncherApp(AppBase):
         self._cloud_app, self._menu_app = data
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 0)
         self._bg_img.set_size(135, 240)
         self._bg_img.set_src(BK_IMG)
@@ -711,7 +710,7 @@ class StickCPlus_Startup:
         M5.Speaker.setVolume(255)
         M5.Speaker.tone(4000, 50)
 
-        bg_img = Image(use_sprite=False)
+        bg_img = widgets.Image(use_sprite=False)
         bg_img.set_pos(0, 0)
         bg_img.set_size(135, 240)
         bg_img.set_src(BK_IMG)

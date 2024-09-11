@@ -2,14 +2,14 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
 import esp32
 
 
-class WiFiSettingApp(app.AppBase):
+class WiFiSettingApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wifi = data
         super().__init__()
@@ -71,7 +71,7 @@ class WiFiSettingApp(app.AppBase):
         self._submit_button.set_size(228, 24)
         self._submit_button.set_src(res.SUBMIT_UNSELECT_BUTTON_IMG)
 
-        self._menu_selector = app.AppSelector(
+        self._menu_selector = app_base.AppSelector(
             (
                 (0, self._select_default_option),
                 (1, self._select_ssid_option),
@@ -236,7 +236,7 @@ class WiFiSettingApp(app.AppBase):
             self._wifi.connect_network(self.ssid, self.psk)
 
 
-class BootScreenSetting(app.AppBase):
+class BootScreenSetting(app_base.AppBase):
     _boot_options = {
         1: res.ENABLE_IMG,
         2: res.DISABLE_IMG,
@@ -253,7 +253,7 @@ class BootScreenSetting(app.AppBase):
     def on_launch(self):
         self._option = self._get_boot_option()
         self._option = 1 if self._option == 1 else 2
-        self._options = app.generator(self._boot_options)
+        self._options = app_base.generator(self._boot_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -312,7 +312,7 @@ class BootScreenSetting(app.AppBase):
             event.status = True
 
 
-class ComLinkSetting(app.AppBase):
+class ComLinkSetting(app_base.AppBase):
     _comlink_options = {
         False: res.DISABLE_IMG,
         True: res.ENABLE_IMG,
@@ -328,7 +328,7 @@ class ComLinkSetting(app.AppBase):
 
     def on_launch(self):
         self._option = False
-        self._options = app.generator(self._comlink_options)
+        self._options = app_base.generator(self._comlink_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -378,7 +378,7 @@ class ComLinkSetting(app.AppBase):
             event.status = True
 
 
-class BrightnessSettingApp(app.AppBase):
+class BrightnessSettingApp(app_base.AppBase):
     _brightness_options = {64: "25%", 128: "50%", 192: "75%", 255: "100%"}
 
     def __init__(self, icos: dict) -> None:
@@ -392,7 +392,7 @@ class BrightnessSettingApp(app.AppBase):
     def on_launch(self):
         self._brightness = M5.Lcd.getBrightness()
         self._brightness = self.approximate(self._brightness)
-        self._options = app.generator(self._brightness_options)
+        self._options = app_base.generator(self._brightness_options)
         while True:
             t = next(self._options)
             if t == self._brightness:
@@ -456,14 +456,14 @@ class BrightnessSettingApp(app.AppBase):
             event.status = True
 
 
-class GeneralSettingApp(app.AppBase):
+class GeneralSettingApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._menus = (
             BrightnessSettingApp(None),
             BootScreenSetting(None),
             ComLinkSetting(None),
         )
-        self._menu_selector = app.AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
         super().__init__()
 
     def on_install(self):
@@ -506,14 +506,14 @@ class GeneralSettingApp(app.AppBase):
             await app._kb_event_handler(event, fw)
 
 
-class SettingsApp(app.AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         self._menus = (
             WiFiSettingApp(None, data=self._wlan),
             GeneralSettingApp(None),
         )
-        self._menu_selector = app.AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
         super().__init__()
 
     def on_install(self):

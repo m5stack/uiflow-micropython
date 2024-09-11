@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 import M5
-from . import Base
+from .base import Base
 
 
 class Image(Base):

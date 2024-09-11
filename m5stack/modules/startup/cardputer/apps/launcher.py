@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import widgets
 import M5
@@ -11,7 +11,7 @@ from collections import namedtuple
 Icon = namedtuple("Icon", ["name", "src"])
 
 
-class LauncherApp(app.AppBase):
+class LauncherApp(app_base.AppBase):
     def __init__(self) -> None:
         super().__init__()
         self._icos = (

@@ -2,17 +2,15 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.image import Image
-from widgets.label import Label
-from widgets.button import Button
+from .. import app_base
+from .. import res
+import widgets
 import M5
 import os
 import sys
 import machine
 import esp32
-from ..res import APPLIST_IMG, APPLIST_LEFT_IMG, APPLIST_RIGHT_IMG
-from .status_bar import StatusBarApp
+from . import status_bar
 
 
 class Rectangle:
@@ -69,7 +67,7 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         super().__init__()
@@ -84,10 +82,10 @@ class ListApp(AppBase):
         self._file_pos = 0
 
     def on_view(self):
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 0)
         self._bg_img.set_size(240, 240)
-        self._bg_img.set_src(APPLIST_IMG)
+        self._bg_img.set_src(res.APPLIST_IMG)
 
         self._line_spacing = 30
         self._left_cursor_x = 45
@@ -97,10 +95,10 @@ class ListApp(AppBase):
             self._left_cursor_x, self._left_cursor_y, 6, 20, 0xFEFEFE, 0xFEFEFE
         )
 
-        self._left_img = Image(use_sprite=False)
+        self._left_img = widgets.Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(6, 20)
-        self._left_img.set_src(APPLIST_LEFT_IMG)
+        self._left_img.set_src(res.APPLIST_LEFT_IMG)
 
         self._right_cursor_x = 190
         self._right_cursor_y = 99
@@ -109,12 +107,12 @@ class ListApp(AppBase):
             self._right_cursor_x, self._right_cursor_y, 6, 20, 0xFEFEFE, 0xFEFEFE
         )
 
-        self._right_img = Image(use_sprite=False)
+        self._right_img = widgets.Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(6, 20)
-        self._right_img.set_src(APPLIST_RIGHT_IMG)
+        self._right_img.set_src(res.APPLIST_RIGHT_IMG)
 
-        self._label0 = Label(
+        self._label0 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y,
@@ -125,7 +123,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label1 = Label(
+        self._label1 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + self._line_spacing,
@@ -136,7 +134,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label2 = Label(
+        self._label2 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + self._line_spacing + self._line_spacing,
@@ -147,7 +145,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label3 = Label(
+        self._label3 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + self._line_spacing + self._line_spacing + self._line_spacing,
@@ -166,22 +164,22 @@ class ListApp(AppBase):
         for label, file in zip(self._labels, self._files):
             file and label and label.set_text(file)
 
-        self._btn_up = Button(None)
+        self._btn_up = widgets.Button(None)
         self._btn_up.set_pos(0, 94)
         self._btn_up.set_size(43 + 30, 123)
         self._btn_up.add_event(self._btn_up_event_handler)
 
-        self._btn_down = Button(None)
+        self._btn_down = widgets.Button(None)
         self._btn_down.set_pos(198 - 30, 94)
         self._btn_down.set_size(43 + 30, 123)
         self._btn_down.add_event(self._btn_down_event_handler)
 
-        self._btn_once = Button(None)
+        self._btn_once = widgets.Button(None)
         self._btn_once.set_pos(70, 49)
         self._btn_once.set_size(79, 34)
         self._btn_once.add_event(self._btn_once_event_handler)
 
-        self._btn_always = Button(None)
+        self._btn_always = widgets.Button(None)
         self._btn_always.set_pos(149, 49)
         self._btn_always.set_size(85, 34)
         self._btn_always.add_event(self._btn_always_event_handler)
@@ -189,7 +187,7 @@ class ListApp(AppBase):
         self._buttons = (self._btn_up, self._btn_down, self._btn_once, self._btn_always)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wlan)
+        self._status_bar = status_bar.StatusBarApp(None, self._wlan)
         self._status_bar.start()
 
     def on_hide(self):
@@ -209,7 +207,7 @@ class ListApp(AppBase):
         )
 
     async def _click_event_handler(self, x, y, fw):
-        print("_click_event_handler")
+        # print("_click_event_handler")
         for button in self._buttons:
             button.handle(x, y)
 

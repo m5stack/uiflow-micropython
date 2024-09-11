@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import app
+from . import app_base
 import asyncio
 import M5
 import gc
@@ -19,18 +19,18 @@ class KeyEvent:
 class Framework:
     def __init__(self) -> None:
         self._apps = []
-        self._app_selector = app.AppSelector(self._apps)
+        self._app_selector = app_base.AppSelector(self._apps)
         self._launcher = None
         self._bar = None
         self._last_app = None
 
-    def install_bar(self, bar: app.AppBase):
+    def install_bar(self, bar: app_base.AppBase):
         self._bar = bar
 
-    def install_launcher(self, launcher: app.AppBase):
+    def install_launcher(self, launcher: app_base.AppBase):
         self._launcher = launcher
 
-    def install(self, app: app.AppBase):
+    def install(self, app: app_base.AppBase):
         app.install()
         self._apps.append(app)
 
@@ -38,14 +38,14 @@ class Framework:
         # asyncio.create_task(self.gc_task())
         asyncio.run(self.run())
 
-    async def unload(self, app: app.AppBase):
+    async def unload(self, app: app_base.AppBase):
         # app = self._apps.pop()
         app.stop()
 
-    async def load(self, app: app.AppBase):
+    async def load(self, app: app_base.AppBase):
         app.start()
 
-    async def reload(self, app: app.AppBase):
+    async def reload(self, app: app_base.AppBase):
         app.stop()
         app.start()
 
@@ -77,9 +77,9 @@ class Framework:
                         x = M5.Touch.getX()
                         y = M5.Touch.getY()
                         select_app = None
-                        for item in self._apps:
+                        for app in self._apps:
                             if self._is_select(app, x, y):
-                                select_app = item
+                                select_app = app
                                 self._app_selector.select(select_app)
                                 break
                         if select_app is not None:
@@ -88,9 +88,9 @@ class Framework:
                                 select_app.start()
                                 self._last_app = select_app
                         else:
-                            item = self._app_selector.current()
-                            if hasattr(item, "_click_event_handler"):
-                                await item._click_event_handler(x, y, self)
+                            app = self._app_selector.current()
+                            if hasattr(app, "_click_event_handler"):
+                                await app._click_event_handler(x, y, self)
                     last_touch_time = time.ticks_ms()
 
             if self._kb_status:
@@ -128,7 +128,7 @@ class Framework:
             await asyncio.sleep_ms(5000)
 
     @staticmethod
-    def _is_select(app: app.AppBase, x, y):
+    def _is_select(app: app_base.AppBase, x, y):
         descriptor = app.descriptor
         if x < descriptor.x:
             return False

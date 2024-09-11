@@ -106,7 +106,7 @@ class RunApp(AppBase):
                 break
 
     def _handle_run_once(self, fw):
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):

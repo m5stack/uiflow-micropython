@@ -2,10 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-try:
-    import asyncio
-except ImportError:
-    import asyncio
+import asyncio
 
 
 def generator(d):

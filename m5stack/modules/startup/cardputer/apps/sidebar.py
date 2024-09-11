@@ -2,12 +2,12 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .. import app
+from .. import app_base
 from .. import res
 import M5
 
 
-class SidebarApp(app.AppBase):
+class SidebarApp(app_base.AppBase):
     def __init__(self) -> None:
         super().__init__()
 
