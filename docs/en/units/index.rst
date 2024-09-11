@@ -39,6 +39,7 @@ Unit
     joystick.rst
     joystick2.rst
     key.rst
+    kmeter_iso.rst
     kmeter.rst
     lcd.rst
     light.rst
