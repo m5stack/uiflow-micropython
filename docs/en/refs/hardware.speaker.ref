@@ -1,41 +1,54 @@
-.. |get_config.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/get_config.svg
+.. |get_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/get_config.png
 
-.. |get_config1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/get_config1.svg
+.. |get_config1.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/get_config1.png
 
-.. |set_config.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/set_config.svg
+.. |set_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/set_config.png
 
-.. |set_config1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/set_config1.svg
+.. |set_config1.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/set_config1.png
 
-.. |begin.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/begin.svg
+.. |begin.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/begin.png
 
-.. |end.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/end.svg
+.. |end.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/end.png
 
-.. |isRunning.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isRunning.svg
+.. |isRunning.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isRunning.png
 
-.. |isEnabled.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isEnabled.svg
+.. |isEnabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isEnabled.png
 
-.. |isPlaying.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isPlaying.svg
+.. |isPlaying.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/isPlaying.png
 
-.. |getPlayingChannels.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getPlayingChannels.svg
+.. |getPlayingChannels.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getPlayingChannels.png
 
-.. |setVolume.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setVolume.svg
+.. |setVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setVolume.png
 
-.. |getVolume.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getVolume.svg
+.. |getVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getVolume.png
 
-.. |setVolumePercentage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setVolumePercentage.svg
+.. |setVolumePercentage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setVolumePercentage.png
 
-.. |getVolumePercentage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getVolumePercentage.svg
+.. |getVolumePercentage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getVolumePercentage.png
 
-.. |setAllChannelVolume.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setAllChannelVolume.svg
+.. |setAllChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setAllChannelVolume.png
 
-.. |setChannelVolume.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setChannelVolume.svg
+.. |setChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/setChannelVolume.png
 
-.. |getChannelVolume.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getChannelVolume.svg
+.. |getChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/getChannelVolume.png
 
-.. |stop.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/stop.svg
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/stop.png
 
-.. |tone.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/tone.svg
+.. |tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/tone.png
 
-.. |playRaw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/playRaw.svg
+.. |playRaw.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/playRaw.png
 
-.. |playWav.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/playWav.svg
+.. |playWav.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/playWav.png
+
+.. |playWavFile.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/playWavFile.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/speaker/example.png
+
+.. |cores3_speaker_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/speaker/cores3_speaker_example.m5f2"
+        target="_blank"
+    >
+        cores3_speaker_example.m5f2
+    </a>

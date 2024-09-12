@@ -12,45 +12,89 @@ Below is the detailed support for Speaker on the host:
     :widths: auto
     :align: center
 
-    +-----------------+---------+---------+
-    |Controller       | NS4168  | AW88298 |
-    +=================+=========+=========+
-    | AtomS3          |         |         |
-    +-----------------+---------+---------+
-    | AtomS3 Lite     |         |         |
-    +-----------------+---------+---------+
-    | AtomS3U         |         |         |
-    +-----------------+---------+---------+
-    | StampS3         |         |         |
-    +-----------------+---------+---------+
-    | CoreS3          |         | |S|     |
-    +-----------------+---------+---------+
-    | Core2           | |S|     |         |
-    +-----------------+---------+---------+
-    | TOUGH           | |S|     |         |
-    +-----------------+---------+---------+
+    +-----------------+---------+---------+---------+
+    |Controller       | NS4168  | AW88298 | Buzzer  |
+    +=================+=========+=========+=========+
+    | AirQ            |         |         | |S|     |
+    +-----------------+---------+---------+---------+
+    | Atom Echo       | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | Atom Lite       |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Atom Martrix    |         |         |         |
+    +-----------------+---------+---------+---------+
+    | AtomS3          |         |         |         |
+    +-----------------+---------+---------+---------+
+    | AtomS3 Lite     |         |         |         |
+    +-----------------+---------+---------+---------+
+    | AtomS3U         |         |         |         |
+    +-----------------+---------+---------+---------+
+    | AtomU           |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Basic           |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Capsule         |         |         | |S|     |
+    +-----------------+---------+---------+---------+
+    | Cardputer       | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | Core2           | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | CoreInk         | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | CoreS3          |         | |S|     |         |
+    +-----------------+---------+---------+---------+
+    | Dial            | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | DinMeter        | |S|     |         |         |
+    +-----------------+---------+---------+---------+
+    | Fire            |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Paper           |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Stamp PICO      |         |         |         |
+    +-----------------+---------+---------+---------+
+    | StampS3         |         |         |         |
+    +-----------------+---------+---------+---------+
+    | Station         |         |         |         |
+    +-----------------+---------+---------+---------+
+    | StickC          |         |         | |S|     |
+    +-----------------+---------+---------+---------+
+    | StickC PLUS     |         |         | |S|     |
+    +-----------------+---------+---------+---------+
+    | StickC PLUS2    |         |         | |S|     |
+    +-----------------+---------+---------+---------+
+    | TOUGH           | |S|     |         |         |
+    +-----------------+---------+---------+---------+
 
 .. |S| unicode:: U+2714
 
 
-Micropython Example::
+Micropython Example:
 
-    pass
+    .. literalinclude:: ../../../examples/hardware/speaker/cores3_speaker_example.py
+        :language: python
+        :linenos:
 
 
-UIFLOW2 Example::
+UIFLOW2 Example:
 
-    pass
+    |example.png|
 
+
+.. only:: builder_html
+
+    |cores3_speaker_example.m5f2|
+
+    :download:`poweron_2_5s.wav <../../../examples/hardware/speaker/poweron_2_5s.wav>`
 
 class Speaker
 -------------
 
 .. important::
 
-    Methods of the Speaker Class heavily rely on ``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg|.
+    Methods of the Speaker Class heavily rely on ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png|.
 
-    All calls to methods of Speaker objects should be placed after ``M5.begin()`` |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in the main loop.
+    All calls to methods of Speaker objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
 
 Methods
@@ -89,8 +133,8 @@ Methods
 
                 Speaker.config("pin_data_in")
 
-            |get_config.svg|
-            |get_config1.svg|
+            |get_config.png|
+            |get_config1.png|
 
         Set property:
 
@@ -98,8 +142,8 @@ Methods
 
                 Speaker.config(pin_data_in=1)
 
-            |set_config.svg|
-            |set_config1.svg|
+            |set_config.png|
+            |set_config1.png|
 
 
 .. method:: Speaker.begin() -> bool
@@ -108,7 +152,7 @@ Methods
 
     UIFLOW2:
 
-        |begin.svg|
+        |begin.png|
 
 
 .. method:: Speaker.end() -> None
@@ -117,7 +161,7 @@ Methods
 
     UIFLOW2:
 
-        |end.svg|
+        |end.png|
 
 
 .. method:: Speaker.isRunning() -> bool
@@ -126,7 +170,7 @@ Methods
 
     UIFLOW2:
 
-        |isRunning.svg|
+        |isRunning.png|
 
 
 .. method:: Speaker.isEnabled() -> bool
@@ -135,7 +179,7 @@ Methods
 
     UIFLOW2:
 
-        |isEnabled.svg|
+        |isEnabled.png|
 
 
 .. method:: Speaker.isPlaying([channel]) -> bool
@@ -147,7 +191,7 @@ Methods
 
     UIFLOW2:
 
-        |isPlaying.svg|
+        |isPlaying.png|
 
 
 .. method:: Speaker.getPlayingChannels() -> int
@@ -156,7 +200,7 @@ Methods
 
     UIFLOW2:
 
-        |getPlayingChannels.svg|
+        |getPlayingChannels.png|
 
 
 .. method:: Speaker.setVolume(volume: int) -> None
@@ -165,7 +209,7 @@ Methods
 
     UIFLOW2:
 
-        |setVolume.svg|
+        |setVolume.png|
 
 
 .. method:: Speaker.getVolume() -> int
@@ -174,7 +218,7 @@ Methods
 
     UIFLOW2:
 
-        |getVolume.svg|
+        |getVolume.png|
 
 
 .. method:: Speaker.setVolumePercentage(percentage: float) -> None
@@ -183,7 +227,7 @@ Methods
 
     UIFLOW2:
 
-        |setVolumePercentage.svg|
+        |setVolumePercentage.png|
 
 
 .. method:: Speaker.getVolumePercentage() -> float
@@ -192,7 +236,7 @@ Methods
 
     UIFLOW2:
 
-        |getVolumePercentage.svg|
+        |getVolumePercentage.png|
 
 
 .. method:: Speaker.setAllChannelVolume(volume: int) -> None
@@ -201,7 +245,7 @@ Methods
 
     UIFLOW2:
 
-        |setAllChannelVolume.svg|
+        |setAllChannelVolume.png|
 
 
 .. method:: Speaker.setChannelVolume(channel: int, volume: int) -> None
@@ -215,7 +259,7 @@ Methods
 
     UIFLOW2:
 
-        |setChannelVolume.svg|
+        |setChannelVolume.png|
 
 
 .. method:: Speaker.getChannelVolume(channel) -> int
@@ -224,7 +268,7 @@ Methods
 
     UIFLOW2:
 
-        |getChannelVolume.svg|
+        |getChannelVolume.png|
 
 
 .. method:: Speaker.stop([channel]) -> None
@@ -234,7 +278,7 @@ Methods
 
     UIFLOW2:
 
-        |stop.svg|
+        |stop.png|
 
 
 .. method:: Speaker.tone(frequency, duration[, channel[, stop_current_sound]]) -> None
@@ -250,7 +294,7 @@ Methods
 
     UIFLOW2:
 
-        |tone.svg|
+        |tone.png|
 
 
 .. method:: Speaker.playRaw(wav_data: bytes|bytearray[, sample_rate: int[, stereo: bool[, repeat: int[, channel: int[, stop_current_sound: bool]]]]]) -> bool
@@ -268,7 +312,7 @@ Methods
 
     UIFLOW2:
 
-        |playRaw.svg|
+        |playRaw.png|
 
 
 .. method:: Speaker.playWav(wav_data: bytes|bytearray[, repeat: int[, channel: int[, stop_current_sound: bool]]]) -> None
@@ -284,4 +328,19 @@ Methods
 
     UIFLOW2:
 
-        |playWav.svg|
+        |playWav.png|
+
+.. method:: Speaker.playWavFile(path: str[, repeat: int[, channel: int[, stop_current_sound: bool]]]) -> None
+
+    Play audio data in WAV format. Requires passing the raw data of the entire audio file.
+
+    Parameters:
+
+        - ``path`` is the path to the audio file.
+        - ``repeat`` is the number of times to repeat the audio. Default is 1.
+        - ``channel`` is the channel to play, ranging from 0 to 7. By default, it is -1, which means using an available channel.
+        - ``stop_current_sound`` controls whether to wait for the previous audio playback to finish. If True, start the new output without waiting for the current output to finish.
+
+    UIFLOW2:
+
+        |playWavFile.png|
