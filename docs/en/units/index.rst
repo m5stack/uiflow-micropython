@@ -71,4 +71,4 @@ Unit
     watering.rst
     weight_i2c.rst
     zigbee.rst
-    joystickv2.rst
+    joystick2.rst

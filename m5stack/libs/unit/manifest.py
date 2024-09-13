@@ -57,7 +57,7 @@ package(
         "imu.py",
         "ir.py",
         "joystick.py",
-        "joystickv2.py",
+        "joystick2.py",
         "key.py",
         "kmeter_iso.py",
         "kmeter.py",

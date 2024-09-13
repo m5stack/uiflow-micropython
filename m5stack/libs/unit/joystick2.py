@@ -6,7 +6,7 @@ import struct
 import time
 
 
-class JoystickV2Unit:
+class Joystick2Unit:
     """
     note:
         en: The joystick is an input unit for control, utilizing an I2C communication interface and supporting three-axis control signals (X/Y-axis analog input for displacement and Z-axis digital input for key presses). It is ideal for applications like gaming and robot control.
@@ -19,10 +19,10 @@ class JoystickV2Unit:
         category: Unit
 
     example: |
-        from unit import JoystickV2Unit
+        from unit import Joystick2Unit
         from hardware import *
         i2c = I2C(1, scl=22, sda=21)
-        joystick = JoystickV2Unit(i2c)
+        joystick = Joystick2Unit(i2c)
         joystick.read_adc_value()
         joystick.read_button_status()
         joystick.set_rgb_led(255, 0, 0)
@@ -34,17 +34,17 @@ class JoystickV2Unit:
 
     def __init__(self, i2c: I2C, address: int | list | tuple = 0x63):
         """
-        note: Initialize the JoystickV2 Unit.
+        note: Initialize the Joystick2 Unit.
 
         label:
-            en: "%1 initialize JoystickV2 Unit with I2C %2, address %3"
-            cn: "%1 初始化 JoystickV2 Unit，使用I2C %2，地址 %3"
+            en: "%1 initialize Joystick2 Unit with I2C %2, address %3"
+            cn: "%1 初始化 Joystick2 Unit，使用I2C %2，地址 %3"
 
         params:
             i2c:
               note: I2C port to use.
             address:
-              note: I2C address of the JoystickV2 Unit.
+              note: I2C address of the Joystick2 Unit.
         """
         self._color = [0, 0, 0]
         self._br = 1
@@ -56,7 +56,7 @@ class JoystickV2Unit:
         self._x_mapping = [0, 0, 0, 0]
         self._y_mapping = [0, 0, 0, 0]
         if self._addr not in self._i2c.scan():
-            raise Exception("JoystickV2Unit not found, please check if it's properly connected.")
+            raise Exception("Joystick2Unit not found, please check if it's properly connected.")
 
     def _read_reg_data(self, reg: int = 0, num: int = 0) -> bytearray:
         buf = bytearray(1)
@@ -142,8 +142,8 @@ class JoystickV2Unit:
         note: Read the button status of the joystick.
 
         label:
-            en: "%1 read button status of JoystickV2 Unit"
-            cn: "%1 读取 JoystickV2 Unit 的按键状态"
+            en: "%1 read button status of Joystick2 Unit"
+            cn: "%1 读取 Joystick2 Unit 的按键状态"
 
         return:
             note: Returns the button status. True if pressed, False if not pressed.
@@ -170,8 +170,8 @@ class JoystickV2Unit:
         note: Set the RGB LED color of the joystick.
 
         label:
-            en: "%1 set RGB LED color of JoystickV2 Unit to (%2)"
-            cn: "%1 设置 JoystickV2 Unit 的 RGB LED 颜色为 (%2)"
+            en: "%1 set RGB LED color of Joystick2 Unit to (%2)"
+            cn: "%1 设置 Joystick2 Unit 的 RGB LED 颜色为 (%2)"
 
         params:
             v:
@@ -194,8 +194,8 @@ class JoystickV2Unit:
         note: Set the RGB LED color of the joystick.
 
         label:
-            en: "%1 set RGB LED color of JoystickV2 Unit to (%2, %3, %4)"
-            cn: "%1 设置 JoystickV2 Unit 的 RGB LED 颜色为 (%2, %3, %4)"
+            en: "%1 set RGB LED color of Joystick2 Unit to (%2, %3, %4)"
+            cn: "%1 设置 Joystick2 Unit 的 RGB LED 颜色为 (%2, %3, %4)"
 
         params:
             r:
@@ -347,7 +347,7 @@ class JoystickV2Unit:
 
     def set_address(self, address: int) -> None:
         """
-        note: Set the I2C address of the JoystickV2 Unit.
+        note: Set the I2C address of the Joystick2 Unit.
 
         label:
             en: "%1 set I2C address to %2"
@@ -362,7 +362,7 @@ class JoystickV2Unit:
 
     def get_firmware_version(self) -> int:
         """
-        note: Read the firmware version of the JoystickV2 Unit.
+        note: Read the firmware version of the Joystick2 Unit.
 
         label:
             en: "%1 read firmware version"
