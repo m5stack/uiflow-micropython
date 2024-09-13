@@ -1,5 +1,5 @@
 
-JoystickUnit
+Joystick2 Unit
 ==============
 
 .. include:: ../refs/unit.joystick2.ref
@@ -8,17 +8,17 @@ The joystick is an input unit for control, utilizing an I2C communication interf
 
 Support the following products:
 
-|JoystickUnit|
+|Joystick2Unit|
 
 Micropython Example::
 
     import os, sys, io
     import M5
     from M5 import *
-    from unit import JoystickUnit
+    from unit import Joystick2Unit
     from hardware import *
     i2c = I2C(1, scl=22, sda=21)
-    joystick = JoystickUnit(i2c)
+    joystick = Joystick2Unit(i2c)
     joystick.read_adc_value()
     joystick.read_button_status()
     joystick.set_rgb_led(255, 0, 0)
@@ -33,13 +33,15 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-class JoystickUnit
+    |cores3_joystick_example.m5f2|
+
+class Joystick2Unit
 --------------------
 
 Constructors
 ------------
 
-.. class:: JoystickUnit(i2c, address)
+.. class:: Joystick2Unit(i2c, address)
 
     Initialize the Joystick Unit.
 
@@ -54,7 +56,7 @@ Constructors
 Methods
 -------
 
-.. method:: JoystickUnit.set_axis_x_invert(invert)
+.. method:: Joystick2Unit.set_axis_x_invert(invert)
 
     Invert the X-axis of the joystick.
 
@@ -65,7 +67,7 @@ Methods
 
         |set_axis_x_invert.png|
 
-.. method:: JoystickUnit.set_axis_y_invert(invert)
+.. method:: Joystick2Unit.set_axis_y_invert(invert)
 
     Invert the Y-axis of the joystick.
 
@@ -76,7 +78,7 @@ Methods
 
         |set_axis_y_invert.png|
 
-.. method:: JoystickUnit.set_axis_swap(swap)
+.. method:: Joystick2Unit.set_axis_swap(swap)
 
     Swap the X-axis and Y-axis of the joystick.
 
@@ -87,7 +89,7 @@ Methods
 
         |set_axis_swap.png|
 
-.. method:: JoystickUnit.get_adc_value()
+.. method:: Joystick2Unit.get_adc_value()
 
     Read the ADC value of the joystick.
 
@@ -98,7 +100,7 @@ Methods
 
         |get_adc_value.png|
 
-.. method:: JoystickUnit.get_button_status()
+.. method:: Joystick2Unit.get_button_status()
 
     Read the button status of the joystick.
 
@@ -109,7 +111,7 @@ Methods
 
         |get_button_status.png|
 
-.. method:: JoystickUnit.set_led_brightness(brightness)
+.. method:: Joystick2Unit.set_led_brightness(brightness)
 
     Set the brightness of the RGB LED.
 
@@ -120,7 +122,7 @@ Methods
 
         |set_led_brightness.png|
 
-.. method:: JoystickUnit.fill_color(v)
+.. method:: Joystick2Unit.fill_color(v)
 
     Set the RGB LED color of the joystick.
 
@@ -131,7 +133,7 @@ Methods
 
         |fill_color.png|
 
-.. method:: JoystickUnit.fill_color_rgb(r, g, b)
+.. method:: Joystick2Unit.fill_color_rgb(r, g, b)
 
     Set the RGB LED color of the joystick.
 
@@ -140,11 +142,8 @@ Methods
     :param int g: The green value (0-255).
     :param int b: The blue value (0-255).
 
-    UIFLOW2:
 
-        |fill_color_rgb.png|
-
-.. method:: JoystickUnit.set_axis_x_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
+.. method:: Joystick2Unit.set_axis_x_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
 
     ::
 
@@ -167,7 +166,7 @@ Methods
 
         |set_axis_x_mapping.png|
 
-.. method:: JoystickUnit.set_axis_y_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
+.. method:: Joystick2Unit.set_axis_y_mapping(adc_neg_min, adc_neg_max, adc_pos_min, adc_pos_max)
 
     ::
 
@@ -190,7 +189,7 @@ Methods
 
         |set_axis_y_mapping.png|
 
-.. method:: JoystickUnit.set_deadzone_adc(x_adc_raw, y_adc_raw)
+.. method:: Joystick2Unit.set_deadzone_adc(x_adc_raw, y_adc_raw)
 
     Set the dead zone of the joystick.
 
@@ -202,7 +201,7 @@ Methods
 
         |set_deadzone_adc.png|
 
-.. method:: JoystickUnit.set_deadzone_position(x_pos, y_pos)
+.. method:: Joystick2Unit.set_deadzone_position(x_pos, y_pos)
 
     Set the dead zone of the joystick.
 
@@ -214,7 +213,7 @@ Methods
 
         |set_deadzone_position.png|
 
-.. method:: JoystickUnit.get_axis_position()
+.. method:: Joystick2Unit.get_axis_position()
 
     Read the position of the joystick.
 
@@ -225,18 +224,14 @@ Methods
 
         |get_axis_position.png|
 
-.. method:: JoystickUnit.set_address(address)
+.. method:: Joystick2Unit.set_address(address)
 
     Set the I2C address of the Joystick Unit.
 
 
     :param int address: The I2C address to set.
 
-    UIFLOW2:
-
-        |set_address.png|
-
-.. method:: JoystickUnit.get_firmware_version()
+.. method:: Joystick2Unit.get_firmware_version()
 
     Read the firmware version of the Joystick Unit.
 
@@ -247,7 +242,7 @@ Methods
 
         |get_firmware_version.png|
 
-.. method:: JoystickUnit.get_x_raw()
+.. method:: Joystick2Unit.get_x_raw()
 
     Read the raw X-axis value of the joystick.
 
@@ -258,7 +253,7 @@ Methods
 
         |get_x_raw.png|
 
-.. method:: JoystickUnit.get_y_raw()
+.. method:: Joystick2Unit.get_y_raw()
 
     Read the raw Y-axis value of the joystick.
 
@@ -269,7 +264,7 @@ Methods
 
         |get_y_raw.png|
 
-.. method:: JoystickUnit.get_x_position()
+.. method:: Joystick2Unit.get_x_position()
 
     Read the X-axis position of the joystick.
 
@@ -280,7 +275,7 @@ Methods
 
         |get_x_position.png|
 
-.. method:: JoystickUnit.get_y_position()
+.. method:: Joystick2Unit.get_y_position()
 
     Read the Y-axis position of the joystick.
 

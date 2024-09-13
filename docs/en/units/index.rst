@@ -37,6 +37,7 @@ Unit
     imupro.rst
     ir.rst
     joystick.rst
+    joystick2.rst
     key.rst
     kmeter.rst
     lcd.rst
@@ -71,4 +72,3 @@ Unit
     watering.rst
     weight_i2c.rst
     zigbee.rst
-    joystick2.rst
