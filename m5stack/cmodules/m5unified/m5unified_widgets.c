@@ -78,10 +78,12 @@ const mp_obj_type_t mp_widgets_title_type = {
 MAKE_METHOD_KW(m5widgets_image, setImage, 1);
 MAKE_METHOD_KW(m5widgets_image, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_image, setVisible, 1);
+MAKE_METHOD_KW(m5widgets_image, setScale, 1);
 STATIC const mp_rom_map_elem_t m5widgets_image_member_table[] = {
     MAKE_TABLE(m5widgets_image, setImage),
     MAKE_TABLE(m5widgets_image, setCursor),
-    MAKE_TABLE(m5widgets_image, setVisible)
+    MAKE_TABLE(m5widgets_image, setVisible),
+    MAKE_TABLE(m5widgets_image, setScale),
 };
 STATIC MP_DEFINE_CONST_DICT(m5widgets_image_member, m5widgets_image_member_table);
 extern mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);

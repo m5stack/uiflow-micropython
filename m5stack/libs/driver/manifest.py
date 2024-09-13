@@ -6,6 +6,10 @@ package(
     "driver",
     (
         "__init__.py",
+        "atecc608b_tngtls/__init__.py",
+        "atecc608b_tngtls/atecc_asn1.py",
+        "atecc608b_tngtls/atecc_cert_util.py",
+        "atecc608b_tngtls/atecc.py",
         "fpc1020a/fpc1020a/__init__.py",
         "fpc1020a/fpc1020a/api.py",
         "fpc1020a/fpc1020a/types.py",

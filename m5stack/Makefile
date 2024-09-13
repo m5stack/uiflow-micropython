@@ -36,7 +36,8 @@ boards := \
 	M5STACK_Stamp_PICO:stamppico     \
 	M5STACK_Atom_Matrix:atommatrix   \
 	M5STACK_AtomU:atomu              \
-	M5STACK_Atom_Echo:atomecho
+	M5STACK_Atom_Echo:atomecho       \
+	M5STACK_AtomS3R:atoms3r
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -69,7 +70,8 @@ BOARD_TYPE_DEF := \
 	stamppico   \
 	atommatrix  \
 	atomu       \
-	atomecho
+	atomecho    \
+	atoms3r
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -281,6 +283,7 @@ patch:
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
 
@@ -289,6 +292,7 @@ unpatch:
 	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
+	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))

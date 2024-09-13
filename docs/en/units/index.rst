@@ -32,11 +32,14 @@ Unit
     grove2grove.rst
     hall_effect.rst
     heart.rst
+    id.rst
     imu.rst
     imupro.rst
     ir.rst
     joystick.rst
+    joystick2.rst
     key.rst
+    kmeter_iso.rst
     kmeter.rst
     lcd.rst
     light.rst

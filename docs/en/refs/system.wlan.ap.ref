@@ -1,0 +1,66 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/init.png
+
+.. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/isconnected.png
+
+.. |get_ssid.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_ssid.png
+
+.. |get_password.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_password.png
+
+.. |active.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/active.png
+
+.. |set_ssid.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_ssid.png
+
+.. |set_password.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_password.png
+
+.. |auth_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/auth_mode.png
+
+.. |get_local_ip.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_local_ip.png
+
+.. |get_subnet.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_subnet.png
+
+.. |get_gateway.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_gateway.png
+
+.. |get_dns.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_dns.png
+
+.. |get_mac.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_mac.png
+
+.. |get_hidden_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_hidden_status.png
+
+.. |get_auth_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_auth_mode.png
+
+.. |get_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_channel.png
+
+.. |get_dhcp_hostname.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_dhcp_hostname.png
+
+.. |get_max_clients.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_max_clients.png
+
+.. |get_txpower.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/get_txpower.png
+
+.. |set_hidden_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_hidden_status.png
+
+.. |set_auth_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_auth_mode.png
+
+.. |set_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_channel.png
+
+.. |set_dhcp_hostname.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_dhcp_hostname.png
+
+.. |set_max_clients.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_max_clients.png
+
+
+.. |set_txpower.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/set_txpower.png
+
+.. |scan.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/scan.png
+
+.. |scan_get_mac.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/scan_get_mac.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_ap/example.png
+
+
+.. |wlan_ap_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/system/wlan_ap/wlan_ap_cores3_example.m5f2"
+        target="_blank"
+    >
+        wlan_ap_cores3_example.m5f2
+    </a>

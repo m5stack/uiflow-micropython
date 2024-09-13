@@ -2,21 +2,21 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
+from .. import app_base
+from .. import res
 import M5
-from ..res import EZDATA_UNSELECTED_IMG, EZDATA_SELECTED_IMG
 
 
-class EzDataApp(AppBase):
+class EzDataApp(app_base.AppBase):
     def __init__(self, icos) -> None:
         self._lcd = icos
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage(EZDATA_UNSELECTED_IMG, 5 + 62 * 4, 0)
+        M5.Lcd.drawImage(res.EZDATA_UNSELECTED_IMG, 5 + 62 * 4, 0)
 
     def on_view(self):
-        M5.Lcd.drawImage(EZDATA_SELECTED_IMG, 5 + 62 * 4, 0)
+        M5.Lcd.drawImage(res.EZDATA_SELECTED_IMG, 5 + 62 * 4, 0)
 
         self._origin_x = 0
         self._origin_y = 56
@@ -30,7 +30,7 @@ class EzDataApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage(EZDATA_UNSELECTED_IMG, 5 + 62 * 4, 0)
+        M5.Lcd.drawImage(res.EZDATA_UNSELECTED_IMG, 5 + 62 * 4, 0)
         self._lcd.clear()
         self._lcd.push(self._origin_x, self._origin_y)
 

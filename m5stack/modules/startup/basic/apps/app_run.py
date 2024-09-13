@@ -2,19 +2,16 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from M5 import Lcd, Widgets
+from .. import app_base
+import M5
+from M5 import Widgets
 import sys
 import machine
 import os
+import esp32
 import time
 import boot_option
-from ..res import (
-    APPRUN_UNSELECTED_IMG,
-    APPRUN_SELECTED_IMG,
-    RUN_IMG,
-    BAR4_IMG,
-)
+from .. import res
 
 
 try:
@@ -25,12 +22,12 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
-        Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(res.APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
 
     def on_launch(self):
         self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
@@ -38,27 +35,27 @@ class RunApp(AppBase):
     def on_view(self):
         self._origin_x = 0
         self._origin_y = 56
-        Lcd.drawImage(APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
-        Lcd.fillRect(self._origin_x, self._origin_y, 320, 184, 0x000000)
-        Lcd.drawImage(RUN_IMG, self._origin_x + 4, self._origin_y + 4)
-        Lcd.drawImage(BAR4_IMG, self._origin_x, 220)
+        M5.Lcd.drawImage(res.APPRUN_SELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.fillRect(self._origin_x, self._origin_y, 320, 184, 0x000000)
+        M5.Lcd.drawImage(res.RUN_IMG, self._origin_x + 4, self._origin_y + 4)
+        M5.Lcd.drawImage(res.BAR4_IMG, self._origin_x, 220)
 
         # file name
-        Lcd.setFont(Widgets.FONTS.DejaVu18)
-        Lcd.setTextColor(0x000000, 0xEEEEEF)
-        Lcd.drawString("main.py", 4 + 10, self._origin_y + 4 + 4)
+        M5.Lcd.setFont(Widgets.FONTS.DejaVu18)
+        M5.Lcd.setTextColor(0x000000, 0xEEEEEF)
+        M5.Lcd.drawString("main.py", 4 + 10, self._origin_y + 4 + 4)
 
-        Lcd.setFont(Widgets.FONTS.DejaVu12)
-        Lcd.setTextColor(0x000000, 0xDCDDDD)
-        Lcd.drawString(self._mtime_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6)
+        M5.Lcd.setFont(Widgets.FONTS.DejaVu12)
+        M5.Lcd.setTextColor(0x000000, 0xDCDDDD)
+        M5.Lcd.drawString(self._mtime_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6)
 
-        Lcd.setFont(Widgets.FONTS.DejaVu12)
-        Lcd.setTextColor(0x000000, 0xDCDDDD)
-        Lcd.drawString(self._account_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18)
+        M5.Lcd.setFont(Widgets.FONTS.DejaVu12)
+        M5.Lcd.setTextColor(0x000000, 0xDCDDDD)
+        M5.Lcd.drawString(self._account_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18)
 
-        Lcd.setFont(Widgets.FONTS.DejaVu12)
-        Lcd.setTextColor(0x000000, 0xDCDDDD)
-        Lcd.drawString(self._ver_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18 + 18)
+        M5.Lcd.setFont(Widgets.FONTS.DejaVu12)
+        M5.Lcd.setTextColor(0x000000, 0xDCDDDD)
+        M5.Lcd.drawString(self._ver_text, 4 + 10 + 8, self._origin_y + 4 + 4 + 20 + 6 + 18 + 18)
 
     def on_ready(self):
         pass
@@ -67,7 +64,7 @@ class RunApp(AppBase):
         pass
 
     def on_exit(self):
-        Lcd.drawImage(APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
+        M5.Lcd.drawImage(res.APPRUN_UNSELECTED_IMG, 5 + 62 * 2, 0)
         del self._origin_x, self._origin_y
         del self._mtime_text, self._account_text, self._ver_text
 
@@ -77,7 +74,7 @@ class RunApp(AppBase):
 
     async def _btnb_event_handler(self, fw):
         # print("_btnb_event_handler")
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _btnc_event_handler(self, fw):
@@ -86,10 +83,10 @@ class RunApp(AppBase):
         machine.reset()
 
     @staticmethod
-    def _get_file_info(path) -> tuple(str, str, str):
+    def _get_file_info(path):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -118,8 +115,5 @@ class RunApp(AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)

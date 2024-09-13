@@ -1,14 +1,14 @@
 # SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
-from .app import AppBase, AppSelector
+from . import app_base
 import asyncio
 import M5
 import gc
 import time
-from machine import I2C, Pin
+import machine
 from unit import CardKBUnit, KeyCode
-from hardware import Rotary
+import hardware
 
 
 class KeyEvent:
@@ -19,17 +19,17 @@ class KeyEvent:
 class Framework:
     def __init__(self) -> None:
         self._apps = []
-        self._app_selector = AppSelector(self._apps)
+        self._app_selector = app_base.AppSelector(self._apps)
         self._launcher = None
         self._bar = None
 
-    def install_bar(self, bar: AppBase):
+    def install_bar(self, bar: app_base.AppBase):
         self._bar = bar
 
-    def install_launcher(self, launcher: AppBase):
+    def install_launcher(self, launcher: app_base.AppBase):
         self._launcher = launcher
 
-    def install(self, app: AppBase):
+    def install(self, app: app_base.AppBase):
         app.install()
         self._apps.append(app)
 
@@ -37,25 +37,25 @@ class Framework:
         # asyncio.create_task(self.gc_task())
         asyncio.run(self.run())
 
-    async def unload(self, app: AppBase):
+    async def unload(self, app: app_base.AppBase):
         # app = self._apps.pop()
         app.stop()
 
-    async def load(self, app: AppBase):
+    async def load(self, app: app_base.AppBase):
         app.start()
 
-    async def reload(self, app: AppBase):
+    async def reload(self, app: app_base.AppBase):
         app.stop()
         app.start()
 
     async def run(self):
-        self.i2c0 = I2C(0, scl=Pin(15), sda=Pin(13), freq=100000)
+        self.i2c0 = machine.I2C(0, scl=machine.Pin(15), sda=machine.Pin(13), freq=100000)
         self._kb_status = False
         if 0x5F in self.i2c0.scan():
             self._kb = CardKBUnit(self.i2c0)
             self._event = KeyEvent()
             self._kb_status = True
-        rotary = Rotary()
+        rotary = hardware.Rotary()
 
         self._bar and self._bar.start()
         if self._launcher:

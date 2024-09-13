@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "basic/__init__.py",
-        "basic/app.py",
+        "basic/app_base.py",
         "basic/framework.py",
         "basic/res.py",
         "basic/apps/app_list.py",

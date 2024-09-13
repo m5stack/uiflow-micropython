@@ -2,30 +2,16 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, generator, AppSelector
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
+import widgets
 import esp32
-from ..res import (
-    SETTING_WIFI_IMG,
-    SCREEN25_IMG,
-    SCREEN50_IMG,
-    SCREEN75_IMG,
-    SCREEN100_IMG,
-    SETTING_SELECT_IMG,
-    SETTING_UNSELECT_IMG,
-    BOOT_YES_IMG,
-    BOOT_NO_IMG,
-    SETTING_UNSELECTED_IMG,
-    SETTING_SELECTED_IMG,
-    BAR1_IMG,
-)
+from .. import res
 from unit import KeyCode
-from .app_list import Rectangle
+from . import app_list
 
 
-class WiFiSetting(AppBase):
+class WiFiSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wifi = data
         self._lcd = icos
@@ -39,61 +25,61 @@ class WiFiSetting(AppBase):
         self._origin_x = 4
         self._origin_y = 4
 
-        self._bg_img = Image(use_sprite=False, parent=self._lcd)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(self._origin_x, self._origin_y)
         self._bg_img.set_size(312, 108)
-        self._bg_img.set_src(SETTING_WIFI_IMG)
+        self._bg_img.set_src(res.SETTING_WIFI_IMG)
 
-        self._rect0 = Rectangle(
+        self._rect0 = app_list.Rectangle(
             self._origin_x + 96, self._origin_y + 7, 144, 26, 0xFEFEFE, 0xFEFEFE, self._lcd
         )
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             "ssid",
             self._origin_x + 98,
             self._origin_y + 12,
             w=144,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
 
-        self._psk_label = Label(
+        self._psk_label = widgets.Label(
             "pwd",
             self._origin_x + 98,
             self._origin_y + 12 + 35,
             w=144,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._psk_label.set_long_mode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(widgets.Label.LONG_DOT)
         if len(self.psk):
             self._psk_label.set_text("*" * 20)
         else:
             self._psk_label.set_text("")
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             "server",
             self._origin_x + 98,
             self._origin_y + 12 + 35 + 34,
             w=144,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
-        self._option_views = generator(
+        self._option_views = app_base.generator(
             (
                 (0, self._select_ssid_option),
                 (1, self._select_psk_option),
@@ -172,7 +158,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
-        # self._bg_img.set_src(SETTING_WIFI_IMG)
+        # self._bg_img.set_src(res.SETTING_WIFI_IMG)
         self._rect0.set_color(0xFEFEFE, 0xFEFEFE)
         self._rect0.set_pos(self._origin_x + 98, self._origin_y + 7)
         self._rect0.set_color(0xDCDDDD, 0xDCDDDD)
@@ -187,7 +173,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_psk_option(self):
-        # self._bg_img.set_src(SETTING_WIFI_IMG)
+        # self._bg_img.set_src(res.SETTING_WIFI_IMG)
         self._rect0.set_color(0xFEFEFE, 0xFEFEFE)
         self._rect0.set_pos(self._origin_x + 98, self._origin_y + 7 + 36)
         self._rect0.set_color(0xDCDDDD, 0xDCDDDD)
@@ -202,7 +188,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
-        # self._bg_img.set_src(SETTING_WIFI_IMG)
+        # self._bg_img.set_src(res.SETTING_WIFI_IMG)
         self._rect0.set_color(0xFEFEFE, 0xFEFEFE)
         self._rect0.set_pos(self._origin_x + 98, self._origin_y + 7 + 36 + 36)
         self._rect0.set_color(0xDCDDDD, 0xDCDDDD)
@@ -252,14 +238,14 @@ class WiFiSetting(AppBase):
 
 
 _brightness_options = {
-    64: SCREEN25_IMG,
-    128: SCREEN50_IMG,
-    192: SCREEN75_IMG,
-    255: SCREEN100_IMG,
+    64: res.SCREEN25_IMG,
+    128: res.SCREEN50_IMG,
+    192: res.SCREEN75_IMG,
+    255: res.SCREEN100_IMG,
 }
 
 
-class BrightnessSetting(AppBase):
+class BrightnessSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
 
@@ -271,7 +257,7 @@ class BrightnessSetting(AppBase):
     def on_launch(self):
         self._brightness = M5.Lcd.getBrightness()
         self._brightness = self.approximate(self._brightness)
-        self._options = generator(_brightness_options)
+        self._options = app_base.generator(_brightness_options)
         while True:
             t = next(self._options)
             if t == self._brightness:
@@ -282,24 +268,24 @@ class BrightnessSetting(AppBase):
         self._origin_y = 4 + 108 + 4
 
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img = Image(use_sprite=False, parent=self._lcd)
+        self._select_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._select_img.set_pos(self._origin_x + 0, self._origin_y + 6)
         self._select_img.set_size(72, 32)
-        self._select_img.set_src(SETTING_SELECT_IMG)
+        self._select_img.set_src(res.SETTING_SELECT_IMG)
 
-        self._brightness_img = Image(use_sprite=False, parent=self._lcd)
+        self._brightness_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._brightness_img.set_pos(self._origin_x + 6, self._origin_y + 0)
         self._brightness_img.set_size(60, 44)
         self._brightness_img.set_src(_brightness_options.get(self._brightness))
 
     def on_ready(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src(SETTING_SELECT_IMG)
+        self._select_img.set_src(res.SETTING_SELECT_IMG)
         self._brightness_img._draw(False)
 
     def on_hide(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src(SETTING_UNSELECT_IMG)
+        self._select_img.set_src(res.SETTING_UNSELECT_IMG)
         self._brightness_img._draw(False)
 
     def on_exit(self):
@@ -327,12 +313,12 @@ class BrightnessSetting(AppBase):
 
 
 _boot_options = {
-    1: BOOT_YES_IMG,
-    2: BOOT_NO_IMG,
+    1: res.BOOT_YES_IMG,
+    2: res.BOOT_NO_IMG,
 }
 
 
-class BootScreenSetting(AppBase):
+class BootScreenSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
 
@@ -344,7 +330,7 @@ class BootScreenSetting(AppBase):
     def on_launch(self):
         self._boot_option = self._get_boot_option()
         self._boot_option = 1 if self._boot_option == 1 else 2
-        self._options = generator(_boot_options)
+        self._options = app_base.generator(_boot_options)
         while True:
             t = next(self._options)
             if t == self._boot_option:
@@ -355,24 +341,24 @@ class BootScreenSetting(AppBase):
         self._origin_y = 4 + 108 + 4
 
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img = Image(use_sprite=False, parent=self._lcd)
+        self._select_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._select_img.set_pos(self._origin_x + 0, self._origin_y + 6)
         self._select_img.set_size(72, 32)
-        self._select_img.set_src(SETTING_SELECT_IMG)
+        self._select_img.set_src(res.SETTING_SELECT_IMG)
 
-        self._boot_option_img = Image(use_sprite=False, parent=self._lcd)
+        self._boot_option_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._boot_option_img.set_pos(self._origin_x + 6, self._origin_y + 0)
         self._boot_option_img.set_size(60, 44)
         self._boot_option_img.set_src(_boot_options.get(self._boot_option))
 
     def on_ready(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src(SETTING_SELECT_IMG)
+        self._select_img.set_src(res.SETTING_SELECT_IMG)
         self._boot_option_img._draw(True)
 
     def on_hide(self):
         self._lcd.fillRect(self._origin_x, self._origin_y, 72, 44, 0x000000)
-        self._select_img.set_src(SETTING_UNSELECT_IMG)
+        self._select_img.set_src(res.SETTING_UNSELECT_IMG)
         self._boot_option_img._draw(True)
 
     def on_exit(self):
@@ -401,7 +387,7 @@ class BootScreenSetting(AppBase):
         self._boot_option_img.set_src(_boot_options.get(self._boot_option))
 
 
-class SettingsApp(AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wlan_app = WiFiSetting(self._lcd, data=data)
@@ -409,10 +395,10 @@ class SettingsApp(AppBase):
             BrightnessSetting(self._lcd),
             BootScreenSetting(self._lcd),
         )
-        self._menu_selector = AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
 
     def on_install(self):
-        M5.Lcd.drawImage(SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(res.SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
 
     def on_launch(self):
         pass
@@ -421,12 +407,12 @@ class SettingsApp(AppBase):
         self._origin_x = 0
         self._origin_y = 56
 
-        M5.Lcd.drawImage(SETTING_SELECTED_IMG, 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(res.SETTING_SELECTED_IMG, 5 + 62 * 0, 0)
 
         self._lcd.clear()
         self._lcd.fillRect(4 + 72 + 8 + 72 + 8, 4 + 108 + 4, 72, 44, 0x404040)
         self._lcd.fillRect(4 + 72 + 8 + 72 + 8 + 72 + 8, 4 + 108 + 4, 72, 44, 0x404040)
-        self._lcd.drawImage(BAR1_IMG, 0, 220 - 56)
+        self._lcd.drawImage(res.BAR1_IMG, 0, 220 - 56)
 
     def on_ready(self):
         pass
@@ -435,7 +421,7 @@ class SettingsApp(AppBase):
         pass
 
     def on_exit(self):
-        M5.Lcd.drawImage(SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
+        M5.Lcd.drawImage(res.SETTING_UNSELECTED_IMG, 5 + 62 * 0, 0)
 
     async def _kb_event_handler(self, event, fw):
         await self._wlan_app._kb_event_handler(event, fw)

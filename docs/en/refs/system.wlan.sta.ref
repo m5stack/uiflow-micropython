@@ -1,0 +1,52 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/init.png
+.. |status.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/status.png
+
+.. |get_rssi.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_rssi.png
+
+.. |get_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_status.png
+
+.. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/isconnected.png
+
+.. |active.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/active.png
+
+.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/connect.png
+
+.. |disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/disconnect.png
+
+.. |get_localip.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_localip.png
+
+.. |get_dhcp_hostname.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_dhcp_hostname.png
+
+.. |get_subnet.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_subnet.png
+
+.. |get_gateway.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_gateway.png
+
+.. |get_dns.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_dns.png
+
+.. |get_mac.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_mac.png
+
+.. |get_reconnects.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_reconnects.png
+
+.. |get_txpower.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/get_txpower.png
+
+.. |set_dhcp_hostname.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/set_dhcp_hostname.png
+
+.. |set_reconnects.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/set_reconnects.png
+
+.. |set_txpower.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/set_txpower.png
+
+.. |scan.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/scan.png
+
+.. |scan_get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/scan_get_value.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/system/wlan_sta/example.png
+
+
+.. |wlan_sta_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/system/wlan_sta/wlan_sta_cores3_example.m5f2"
+        target="_blank"
+    >
+        wlan_sta_cores3_example.m5f2
+    </a>

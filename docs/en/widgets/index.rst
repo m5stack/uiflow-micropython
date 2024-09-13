@@ -64,4 +64,7 @@ Classes
 .. toctree::
     :maxdepth: 1
 
+    circle.rst
+    image.rst
+    image+.rst
     label.rst

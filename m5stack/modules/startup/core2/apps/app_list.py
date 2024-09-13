@@ -2,11 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, Descriptor
-from ..framework import _play_wav
-from widgets.image import Image
-from widgets.label import Label
-from widgets.button import Button
+from .. import app_base
+import widgets
 import M5
 import os
 import sys
@@ -63,13 +60,13 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/core2/Selection/appList_unselected.png", 5 + 62 * 3, 20 + 4)
-        self.descriptor = Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -80,7 +77,7 @@ class ListApp(AppBase):
     def on_view(self):
         M5.Lcd.drawImage("/system/core2/Selection/appList_selected.png", 5 + 62 * 3, 20 + 4)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(4, 20 + 4 + 56 + 4)
         self._bg_img.set_size(312, 156)
         self._bg_img.set_src("/system/core2/List/main.png")
@@ -93,7 +90,7 @@ class ListApp(AppBase):
             self._left_cursor_x, self._left_cursor_y, 10, 36, 0xFEFEFE, 0xFEFEFE
         )
 
-        self._left_img = Image(use_sprite=False)
+        self._left_img = widgets.Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
         self._left_img.set_src("/system/core2/List/left_cursor.png")
@@ -105,12 +102,12 @@ class ListApp(AppBase):
             self._right_cursor_x, self._right_cursor_y, 10, 36, 0xFEFEFE, 0xFEFEFE, parent=M5.Lcd
         )
 
-        self._right_img = Image(use_sprite=False)
+        self._right_img = widgets.Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
         self._right_img.set_src("/system/core2/List/right_cursor.png")
 
-        self._label0 = Label(
+        self._label0 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8,
@@ -121,7 +118,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label1 = Label(
+        self._label1 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing,
@@ -132,7 +129,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label2 = Label(
+        self._label2 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
@@ -143,7 +140,7 @@ class ListApp(AppBase):
             font="/system/common/font/Montserrat-Medium-18.vlw",
         )
 
-        self._label3 = Label(
+        self._label3 = widgets.Label(
             "",
             self._left_cursor_x + 10,
             self._left_cursor_y + 8 + self._line_spacing + self._line_spacing + self._line_spacing,
@@ -162,22 +159,22 @@ class ListApp(AppBase):
         for label, file in zip(self._labels, self._files):
             file and label and label.set_text(file)
 
-        self._btn_up = Button(None)
+        self._btn_up = widgets.Button(None)
         self._btn_up.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2)
         self._btn_up.set_size(60, 75)
         self._btn_up.add_event(self._btn_up_event_handler)
 
-        self._btn_down = Button(None)
+        self._btn_down = widgets.Button(None)
         self._btn_down.set_pos(4 + 2, (20 + 4 + 56 + 4) + 2 + 75 + 2)
         self._btn_down.set_size(60, 75)
         self._btn_down.add_event(self._btn_down_event_handler)
 
-        self._btn_once = Button(None)
+        self._btn_once = widgets.Button(None)
         self._btn_once.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30)
         self._btn_once.set_size(100, 63)
         self._btn_once.add_event(self._btn_once_event_handler)
 
-        self._btn_always = Button(None)
+        self._btn_always = widgets.Button(None)
         self._btn_always.set_pos(4 + (312 - 100), (20 + 4 + 56 + 4) + 30 + 63)
         self._btn_always.set_size(100, 63)
         self._btn_always.add_event(self._btn_always_event_handler)
@@ -191,14 +188,14 @@ class ListApp(AppBase):
         del self._files
 
     async def _click_event_handler(self, x, y, fw):
-        print("_click_event_handler")
+        # print("_click_event_handler")
         for button in self._buttons:
             button.handle(x, y)
 
     def _btn_up_event_handler(self, event):
         print("_btn_up_event_handler")
         if self._file_pos == 0 and self._cursor_pos == 0:
-            _play_wav("/system/common/wav/bg.wav")
+            M5.Speaker.playWavFile("/system/common/wav/bg.wav")
             return
 
         # Clear selection cursor
@@ -264,7 +261,7 @@ class ListApp(AppBase):
 
         if self._file_pos >= len(self._files):
             self._file_pos = len(self._files) - 1
-            _play_wav("/system/common/wav/bg.wav")
+            M5.Speaker.playWavFile("/system/common/wav/bg.wav")
             return
 
         # Show File
@@ -282,7 +279,7 @@ class ListApp(AppBase):
                 label.set_text(file)
 
     def _btn_once_event_handler(self, event):
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _btn_always_event_handler(self, event):

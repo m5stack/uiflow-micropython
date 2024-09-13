@@ -1,0 +1,23 @@
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/init.png
+
+.. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/read.png
+
+.. |read_u16.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/read_u16.png
+
+.. |read_uv.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/read_uv.png
+
+.. |atten.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/atten.png
+
+.. |width.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/width.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/adc/example.png
+
+.. |adc_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/adc/adc_cores3_example.m5f2"
+        target="_blank"
+    >
+        adc_cores3_example.m5f2
+    </a>

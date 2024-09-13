@@ -3,10 +3,10 @@
 # SPDX-License-Identifier: MIT
 
 import M5
-from . import base
+from .base import Base
 
 
-class Image(base.Base):
+class Image(Base):
     def __init__(self, use_sprite=True, parent=M5.Lcd) -> None:
         super().__init__(parent)
         self._src = None

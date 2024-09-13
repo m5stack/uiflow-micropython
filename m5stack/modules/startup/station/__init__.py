@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .framework import Framework
+from . import framework
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp
 from .apps.launcher import LauncherApp
@@ -28,7 +28,7 @@ class Station_Startup:
         time.sleep_ms(200)
         M5.Lcd.clear(0x333333)
 
-        fw = Framework()
+        fw = framework.Framework()
         setting_app = SettingsApp(None, data=self._wlan)
         dev_app = DevApp(None, data=self._wlan)
         launcher = LauncherApp()

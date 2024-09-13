@@ -83,7 +83,7 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_partition.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_rmt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/esp32_ulp.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/modesp32.c
+    ${PROJECT_DIR}/modesp32.c
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_wdt.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpthreadport.c
     ${PROJECT_DIR}/machine_rtc.c

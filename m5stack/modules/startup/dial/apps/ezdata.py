@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
+from .. import app_base
 import M5
-from ..res import EZDATA_IMG
-from .status_bar import StatusBarApp
+from .. import res
+from . import status_bar
 
 
-class EzDataApp(AppBase):
+class EzDataApp(app_base.AppBase):
     def __init__(self, icos, data=None) -> None:
         self._wlan = data
         super().__init__()
@@ -18,10 +18,10 @@ class EzDataApp(AppBase):
 
     def on_view(self):
         M5.Lcd.clear()
-        M5.Lcd.drawImage(EZDATA_IMG, 0, 0)
+        M5.Lcd.drawImage(res.EZDATA_IMG, 0, 0)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wlan)
+        self._status_bar = status_bar.StatusBarApp(None, self._wlan)
         self._status_bar.start()
 
     def on_hide(self):

@@ -2,14 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.image import Image
-from widgets.label import Label
+from .. import app_base
+import widgets
 import asyncio
 import binascii
 import machine
-from ..res import DEVELOP_PRIVATE_IMG, DEVELOP_PUBLIC_IMG
-from .status_bar import StatusBarApp
+from .. import res
+from . import status_bar
 
 try:
     import M5Things
@@ -33,7 +32,7 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         super().__init__()
@@ -50,12 +49,12 @@ class DevApp(AppBase):
         self._origin_x = 0
         self._origin_y = 0
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(0, 0)
         self._bg_img.set_size(240, 240)
         self._bg_img.set_src(self._bg_src)
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             20,
             140,
@@ -67,7 +66,7 @@ class DevApp(AppBase):
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             55,
             176,
@@ -80,7 +79,7 @@ class DevApp(AppBase):
         self._account_label.set_text(self._account_text)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wlan)
+        self._status_bar = status_bar.StatusBarApp(None, self._wlan)
         self._status_bar.start()
         super().on_ready()
 
@@ -97,9 +96,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
 
@@ -129,8 +125,8 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
             if infos[0] == 0:
-                return DEVELOP_PRIVATE_IMG
+                return res.DEVELOP_PRIVATE_IMG
             elif infos[0] in (1, 2):
-                return DEVELOP_PUBLIC_IMG
+                return res.DEVELOP_PUBLIC_IMG
         else:
-            return DEVELOP_PRIVATE_IMG
+            return res.DEVELOP_PRIVATE_IMG

@@ -77,7 +77,7 @@ class GPSUnit:
         if gps_list[9]:
             self.altitude = gps_list[9]
 
-    def convert_to_decimal(degrees, minutes, direction) -> float:
+    def convert_to_decimal(self, degrees, minutes, direction) -> float:
         decimal = int(degrees) + round(float(minutes) / 60.0, 6)
         if direction in ["S", "W"]:
             decimal = -decimal

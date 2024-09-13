@@ -2,10 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, Descriptor
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
+import widgets
 import asyncio
 import requests
 import os
@@ -35,14 +34,14 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
         super().__init__()
 
     def on_install(self):
-        self.descriptor = Descriptor(x=493, y=1, w=48, h=181)
+        self.descriptor = app_base.Descriptor(x=493, y=1, w=48, h=181)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -54,7 +53,7 @@ class DevApp(AppBase):
         M5.Lcd.drawImage("/system/paper/flow.png", 0, 0)
         # self._lcd.drawImage("/system/paper/flow.png", 0, 0)
 
-        self._mode_label = Label(
+        self._mode_label = widgets.Label(
             "------",
             89,
             476,
@@ -66,7 +65,7 @@ class DevApp(AppBase):
         )
         self._mode_label.set_text(self._mode_text)
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             89,
             611,
@@ -78,7 +77,7 @@ class DevApp(AppBase):
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             89,
             747,
@@ -91,7 +90,7 @@ class DevApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False, parent=self._lcd)
+        self._avatar_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._avatar_img.set_pos(379, 679)
         self._avatar_img.set_size(56, 56)
         self._avatar_img.set_scale(0.28, 0.28)
