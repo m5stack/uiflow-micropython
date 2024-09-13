@@ -4,15 +4,50 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/init.svg
-.. |send.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/send.svg
-.. |recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/recv.svg
-.. |start_recv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/start_recv.svg
-.. |set_irq_callback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/set_irq_callback.svg
-.. |standby.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/standby.svg
-.. |sleep.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/sleep.svg
-.. |irq_triggered.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/irq_triggered.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/init.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/send.png
+.. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/recv.png
+.. |start_recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/start_recv.png
+.. |set_irq_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/set_irq_callback.png
+.. |standby.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/standby.png
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/sleep.png
+.. |irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/irq_triggered.png
 
-.. |example_tx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example_tx.svg
-.. |example_rx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora/example._rxsvg
+.. |example_tx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_tx.svg
+.. |example_rx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_rx.svg
 
+.. |cores3_lora433_rx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora433_rx_example.m5f2"
+        target="_blank"
+    >
+        cores3_lora433_rx_example.m5f2
+    </a>
+
+.. |cores3_lora433_tx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora433_tx_example.m5f2"
+        target="_blank"
+    >
+        cores3_lora433_tx_example.m5f2
+    </a>
+
+.. |cores3_lora868_rx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora868_rx_example.m5f2"
+        target="_blank"
+    >
+        cores3_lora868_rx_example.m5f2
+    </a>
+
+.. |cores3_lora868_tx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora868_tx_example.m5f2"
+        target="_blank"
+    >
+        cores3_lora868_tx_example.m5f2
+    </a>

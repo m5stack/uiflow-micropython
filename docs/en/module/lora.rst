@@ -20,9 +20,9 @@ Micropython Example::
     lora = LoraModule(pin_irq=35, pin_rst=25) # core2
     lora = LoraModule(pin_irq=10, pin_rst=5) # cores3
     lora.send("Hello, LoRa!")
-    
+
     print(lora.recv())
-    
+
     def callback(received_data):
         global lora
         print(received_data)
@@ -30,12 +30,24 @@ Micropython Example::
     lora.set_irq_callback(callback)
     lora.start_recv()
 
+
 UIFLOW2 Example:
 
     |example_tx.svg|
+
     |example_rx.svg|
 
+
 .. only:: builder_html
+
+    |cores3_lora433_rx_example.m5f2|
+
+    |cores3_lora433_tx_example.m5f2|
+
+    |cores3_lora868_rx_example.m5f2|
+
+    |cores3_lora868_tx_example.m5f2|
+
 
 class LoraModule
 ----------------
@@ -59,7 +71,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -76,7 +88,7 @@ Methods
 
     UIFLOW2:
 
-        |send.svg|
+        |send.png|
 
 .. method:: LoraModule.recv(timeout_ms, rx_length, rx_packet)
 
@@ -90,7 +102,7 @@ Methods
 
     UIFLOW2:
 
-        |recv.svg|
+        |recv.png|
 
 .. method:: LoraModule.start_recv()
 
@@ -100,7 +112,7 @@ Methods
 
     UIFLOW2:
 
-        |start_recv.svg|
+        |start_recv.png|
 
 .. method:: LoraModule.set_irq_callback(callback)
 
@@ -111,7 +123,7 @@ Methods
 
     UIFLOW2:
 
-        |set_irq_callback.svg|
+        |set_irq_callback.png|
 
 .. method:: LoraModule.standby()
 
@@ -121,7 +133,7 @@ Methods
 
     UIFLOW2:
 
-        |standby.svg|
+        |standby.png|
 
 .. method:: LoraModule.sleep()
 
@@ -131,7 +143,7 @@ Methods
 
     UIFLOW2:
 
-        |sleep.svg|
+        |sleep.png|
 
 .. method:: LoraModule.irq_triggered()
 
@@ -141,7 +153,7 @@ Methods
 
     UIFLOW2:
 
-        |irq_triggered.svg|
+        |irq_triggered.png|
 
 
 
@@ -153,9 +165,9 @@ Constants
 
     Select the LoRa frequency band.
 
-    
+
 .. data:: LoraModule.BANDWIDTHS
 
     Valid bandwidth
 
-    
+
