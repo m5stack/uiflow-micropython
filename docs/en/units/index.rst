@@ -53,6 +53,7 @@ Unit
     mqtt.rst
     mqttpoe.rst
     nbiot.rst
+    nbiot2.rst
     ncir.rst
     oled.rst
     op90.rst

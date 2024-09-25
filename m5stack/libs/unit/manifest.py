@@ -76,6 +76,7 @@ package(
         "mqtt.py",
         "mqttpoe.py",
         "nbiot.py",
+        "nbiot2.py",
         "ncir.py",
         "ncir2.py",
         "neco.py",

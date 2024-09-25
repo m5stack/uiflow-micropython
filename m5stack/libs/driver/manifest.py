@@ -30,6 +30,7 @@ package(
         "simcom/__init__.py",
         "simcom/common.py",
         "simcom/sim7020.py",
+        "simcom/sim7028.py",
         "simcom/sim7080.py",
         "ads1110.py",
         "ads1100.py",

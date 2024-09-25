@@ -77,6 +77,7 @@ _attrs = {
     "MQTTUnit": "mqtt",
     "MQTTPoEUnit": "mqttpoe",
     "NBIOTUnit": "nbiot",
+    "NBIOT2Unit": "nbiot2",
     "NCIRUnit": "ncir",
     "NCIR2Unit": "ncir2",
     "NECOUnit": "neco",
