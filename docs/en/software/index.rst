@@ -6,5 +6,6 @@ Software
 .. toctree::
     :maxdepth: 1
 
+    modbus.rst
     requests2.rst
     umqtt.rst
