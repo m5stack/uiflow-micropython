@@ -53,3 +53,12 @@ class RS485Unit(uSerial):
 
     def any(self) -> int:
         return self._mdbus_uart.any()
+
+    def sendbreak(self) -> None:
+        self._mdbus_uart.sendbreak()
+
+    def flush(self) -> None:
+        self._mdbus_uart.flush()
+
+    def txdone(self) -> bool:
+        return self._mdbus_uart.txdone()
