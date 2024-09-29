@@ -109,6 +109,7 @@ _attrs = {
     "TOF4MUnit": "tof4m",
     "TubePressureUnit": "tube_pressure",
     "TVOCUnit": "tvoc",
+    "UHFRFIDUnit": "uhf_rfid",
     "UltrasoundI2CUnit": "ultrasonic_i2c",
     "UltrasoundIOUnit": "ultrasonic_io",
     "VibratorUnit": "vibrator",

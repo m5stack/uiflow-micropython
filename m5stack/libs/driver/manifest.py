@@ -17,6 +17,7 @@ package(
         "ir/nec.py",
         "ir/receiver.py",
         "ir/transmitter.py",
+        "jrd4035/__init__.py",
         "mfrc522/__init__.py",
         "mfrc522/cmd.py",
         "mfrc522/firmware.py",

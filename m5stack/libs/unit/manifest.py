@@ -108,6 +108,7 @@ package(
         "tof4m.py",
         "tube_pressure.py",
         "tvoc.py",
+        "uhf_rfid.py",
         "ultrasonic_i2c.py",
         "ultrasonic_io.py",
         "unit_helper.py",
