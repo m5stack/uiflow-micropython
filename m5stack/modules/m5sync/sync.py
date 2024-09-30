@@ -181,6 +181,14 @@ class DownloadView:
             text_y=64,
             text_font=M5.Lcd.FONTS.DejaVu18,
         ),
+        M5.BOARD.M5AtomS3R: ViewInfo(
+            title_x=64,
+            title_y=35,
+            title_font=M5.Lcd.FONTS.DejaVu24,
+            text_x=64,
+            text_y=64,
+            text_font=M5.Lcd.FONTS.DejaVu18,
+        ),
         M5.BOARD.M5Dial: ViewInfo(
             title_x=120,
             title_y=71,
