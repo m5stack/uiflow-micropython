@@ -781,7 +781,7 @@ class MFRC522:
         if result != self.STATUS_OK:
             return result
 
-        cmd_buffer = send_data + self._CRC_BUFFER
+        cmd_buffer = memoryview(bytearray(send_data) + bytearray(self._CRC_BUFFER))
 
         # Transceive the data, store the reply in cmd_buffer[]
         status, rsp_buffer, valid_bits = self.pcd_communicate_with_picc(

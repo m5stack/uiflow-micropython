@@ -16,8 +16,8 @@ _data_types = {
     list: "array",
     dict: "dict",
     str: "string",
-    int: "int",
-    float: "double",
+    int: "number",
+    float: "number",
 }
 
 
