@@ -22,7 +22,7 @@ class Test(unittest.TestCase):
                 "coils": [
                     {
                         "register": 1000,
-                        "val": [
+                        "value": [
                             True,
                             False,
                             True,
@@ -62,7 +62,7 @@ class Test(unittest.TestCase):
                 "discrete_inputs": [
                     {
                         "register": 1000,
-                        "val": [
+                        "value": [
                             True,
                             False,
                             True,
@@ -102,7 +102,7 @@ class Test(unittest.TestCase):
                 "holding_registers": [
                     {
                         "register": 1000,
-                        "val": [
+                        "value": [
                             0x0001,
                             0x0203,
                             0x0405,
@@ -142,7 +142,7 @@ class Test(unittest.TestCase):
                 "input_registers": [
                     {
                         "register": 1000,
-                        "val": [
+                        "value": [
                             0x0001,
                             0x0203,
                             0x0405,
@@ -176,7 +176,7 @@ class Test(unittest.TestCase):
 
     def test_server_handle_message_5(self):
         srv = ModbusTCPServer(
-            "", 0, context={"coils": [{"register": 1000, "val": [True, True, True]}]}
+            "", 0, context={"coils": [{"register": 1000, "value": [True, True, True]}]}
         )
 
         msg = ModbusTCPFrame(
@@ -188,7 +188,7 @@ class Test(unittest.TestCase):
             data=bytearray([0xFF, 0x00]),
         )
         srv.handle_message(msg)
-        self.assertEqual(srv.context["coils"][0]["val"], [True, True, True])
+        self.assertEqual(srv.context["coils"][0]["value"], [True, True, True])
 
         msg = ModbusTCPFrame(
             transaction_id=1,
@@ -199,13 +199,13 @@ class Test(unittest.TestCase):
             data=bytearray([0x00, 0x00]),
         )
         srv.handle_message(msg)
-        self.assertEqual(srv.context["coils"][0]["val"], [True, False, True])
+        self.assertEqual(srv.context["coils"][0]["value"], [True, False, True])
 
     def test_server_handle_message_6(self):
         srv = ModbusTCPServer(
             "",
             0,
-            context={"holding_registers": [{"register": 1000, "val": [0x0000, 0x0000, 0x0000]}]},
+            context={"holding_registers": [{"register": 1000, "value": [0x0000, 0x0000, 0x0000]}]},
         )
 
         msg = ModbusTCPFrame(
@@ -218,7 +218,7 @@ class Test(unittest.TestCase):
         )
         srv.handle_message(msg)
         self.assertEqual(
-            srv.context["holding_registers"][0]["val"],
+            srv.context["holding_registers"][0]["value"],
             [0xFF00, 0x0000, 0x0000],
         )
 
@@ -232,13 +232,13 @@ class Test(unittest.TestCase):
         )
         srv.handle_message(msg)
         self.assertEqual(
-            srv.context["holding_registers"][0]["val"],
+            srv.context["holding_registers"][0]["value"],
             [0xFF00, 0xABCD, 0x0000],
         )
 
     def test_server_handle_message_15(self):
         srv = ModbusTCPServer(
-            "", 0, context={"coils": [{"register": 1000, "val": [True, True, True, True]}]}
+            "", 0, context={"coils": [{"register": 1000, "value": [True, True, True, True]}]}
         )
 
         msg = ModbusTCPFrame(
@@ -255,7 +255,7 @@ class Test(unittest.TestCase):
             bytearray([0x00, 0x01, 0x00, 0x00, 0x00, 0x06, 0x02, 0x0F, 0x03, 0xE8, 0x00, 0x04]),
         )
         self.assertEqual(
-            srv.context["coils"][0]["val"],
+            srv.context["coils"][0]["value"],
             [True, True, True, True],
         )
 
@@ -273,7 +273,7 @@ class Test(unittest.TestCase):
             bytearray([0x00, 0x01, 0x00, 0x00, 0x00, 0x06, 0x02, 0x0F, 0x03, 0xE8, 0x00, 0x02]),
         )
         self.assertEqual(
-            srv.context["coils"][0]["val"],
+            srv.context["coils"][0]["value"],
             [False, False, True, True],
         )
 
@@ -282,7 +282,9 @@ class Test(unittest.TestCase):
             "",
             0,
             context={
-                "holding_registers": [{"register": 1000, "val": [0x0000, 0x0000, 0x0000, 0x0000]}]
+                "holding_registers": [
+                    {"register": 1000, "value": [0x0000, 0x0000, 0x0000, 0x0000]}
+                ]
             },
         )
 
@@ -300,7 +302,7 @@ class Test(unittest.TestCase):
             bytearray([0x00, 0x01, 0x00, 0x00, 0x00, 0x06, 0x02, 0x10, 0x03, 0xE8, 0x00, 0x02]),
         )
         self.assertEqual(
-            srv.context["holding_registers"][0]["val"],
+            srv.context["holding_registers"][0]["value"],
             [0xABCD, 0x1234, 0x0000, 0x0000],
         )
 
@@ -318,7 +320,7 @@ class Test(unittest.TestCase):
             bytearray([0x00, 0x01, 0x00, 0x00, 0x00, 0x06, 0x02, 0x10, 0x03, 0xE9, 0x00, 0x01]),
         )
         self.assertEqual(
-            srv.context["holding_registers"][0]["val"],
+            srv.context["holding_registers"][0]["value"],
             [0xABCD, 0xABCD, 0x0000, 0x0000],
         )
 

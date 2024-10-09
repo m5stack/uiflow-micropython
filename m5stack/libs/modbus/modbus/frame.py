@@ -212,6 +212,9 @@ class ModbusRTUFrame(ModbusFrame):
         if debug:
             print("Parsing RTU frame: " + " ".join(["{:02x}".format(x) for x in frame]))
 
+        if len(frame) < 2:
+            return
+
         device_addr = frame[0]
         func_code = frame[1]
 
@@ -420,6 +423,9 @@ class ModbusTCPFrame(ModbusFrame):
         if debug:
             print("Parsing TCP frame: " + " ".join(["{:02x}".format(x) for x in frame]))
 
+        if len(frame) < 8:
+            return
+
         transaction_id = (frame[0] << 8) + frame[1]
         length = (frame[4] << 8) + frame[5]
         unit_id = frame[6]
@@ -503,7 +509,7 @@ class ModbusTCPFrame(ModbusFrame):
                     print(f)
                 return f
 
-        raise ValueError("Could not parse Frame " + " ".join(["{:02x}".format(x) for x in frame]))
+        # raise ValueError("Could not parse Frame " + " ".join(["{:02x}".format(x) for x in frame]))
 
     @classmethod
     def _check_both(cls, frame, length):
