@@ -10,6 +10,7 @@ package(
         "display.py",
         "dual_kmeter.py",
         "encoder4_motor.py",
+        "grbl.py",
         "hmi.py",
         "iot_base_catm.py",
         "lora.py",
