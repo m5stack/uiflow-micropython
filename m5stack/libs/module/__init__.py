@@ -19,6 +19,7 @@ _attrs = {
     "Relay4Module": "relay_4",
     "Relay2Module": "relay_2",
     "RS232Module": "rs232",
+    "StepMotorDriverModule": "step_motor_driver",
 }
 
 # Lazy loader, effectively does:
