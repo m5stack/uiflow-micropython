@@ -22,6 +22,7 @@ package(
         "module_4in8out.py",
         "module_helper.py",
         "nbiot.py",
+        "odrive.py",
         "plus.py",
         "pps.py",
         "rca.py",
