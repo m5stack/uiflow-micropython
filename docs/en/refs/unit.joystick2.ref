@@ -1,0 +1,37 @@
+
+.. |Joystick2Unit| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-JoyStick2/4.webp
+    :target: https://docs.m5stack.com/en/unit/Unit-JoyStick2
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/init.png
+.. |set_axis_x_invert.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_axis_x_invert.png
+.. |set_axis_y_invert.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_axis_y_invert.png
+.. |set_axis_swap.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_axis_swap.png
+.. |get_adc_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_adc_value.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_button_status.png
+.. |set_led_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_led_brightness.png
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/fill_color.png
+.. |fill_color_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/fill_color_rgb.png
+.. |set_axis_x_mapping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_axis_x_mapping.png
+.. |set_axis_y_mapping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_axis_y_mapping.png
+.. |set_deadzone_adc.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_deadzone_adc.png
+.. |set_deadzone_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_deadzone_position.png
+.. |get_axis_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_axis_position.png
+.. |set_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/set_address.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_firmware_version.png
+.. |get_x_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_x_raw.png
+.. |get_y_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_y_raw.png
+.. |get_x_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_x_position.png
+.. |get_y_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/get_y_position.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/joystick2/example.png
+
+.. |cores3_joystick_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/joystick2/cores3_joystick_example.m5f2"
+        target="_blank"
+    >
+        cores3_joystick_example.m5f2
+    </a>

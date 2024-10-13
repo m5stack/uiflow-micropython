@@ -2,17 +2,19 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import I2C, Pin
-from M5 import getBoard, BOARD
+from machine import I2C, Pin, SPI
+import M5
 from collections import namedtuple
 
-MBusIO = namedtuple("MBusIO", ["sda0", "scl0", "sda1", "scl1"])
+MBusIO = namedtuple(
+    "MBusIO", ["sda0", "scl0", "sda1", "scl1", "spi2_sck", "spi2_mosi", "spi2_miso"]
+)
 
 iomap = {
-    BOARD.M5Stack: MBusIO(2, 5, 21, 22),
-    BOARD.M5StackCore2: MBusIO(32, 33, 21, 22),
-    BOARD.M5StackCoreS3: MBusIO(2, 1, 12, 11),
-}.get(getBoard())
+    M5.BOARD.M5Stack: MBusIO(2, 5, 21, 22, 18, 23, 19),
+    M5.BOARD.M5StackCore2: MBusIO(32, 33, 21, 22, 18, 23, 38),
+    M5.BOARD.M5StackCoreS3: MBusIO(2, 1, 12, 11, 36, 37, 35),
+}.get(M5.getBoard())
 
 
 def _i2c0_init():
@@ -23,9 +25,14 @@ def _i2c1_init():
     return I2C(1, scl=Pin(iomap.scl1), sda=Pin(iomap.sda1), freq=100000)
 
 
+def _spi2_init():
+    return SPI(1, sck=Pin(iomap.spi2_sck), mosi=Pin(iomap.spi2_mosi), miso=Pin(iomap.spi2_miso))
+
+
 _attrs = {
     "i2c0": _i2c0_init,
     "i2c1": _i2c1_init,
+    "spi2": _spi2_init,
 }
 
 

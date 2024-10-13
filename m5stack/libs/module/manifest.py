@@ -12,6 +12,7 @@ package(
         "encoder4_motor.py",
         "hmi.py",
         "iot_base_catm.py",
+        "lora.py",
         "mbus.py",
         "module_helper.py",
         "plus.py",

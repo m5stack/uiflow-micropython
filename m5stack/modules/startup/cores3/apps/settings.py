@@ -2,16 +2,14 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, generator, AppSelector, Descriptor
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
-from widgets.button import Button
+import widgets
 import esp32
 from unit import KeyCode
 
 
-class WiFiSetting(AppBase):
+class WiFiSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -25,57 +23,57 @@ class WiFiSetting(AppBase):
         origin_x = 4
         origin_y = 4
 
-        self._bg_img = Image(use_sprite=False, parent=self._lcd)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(origin_x, origin_y)
         self._bg_img.set_size(312, 108)
         self._bg_img.set_src("/system/cores3/Setting/wifiServer.png")
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             "ssid",
             origin_x + 56 + 2,
             origin_y + 12,
             w=180,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
 
-        self._psk_label = Label(
+        self._psk_label = widgets.Label(
             "pwd",
             origin_x + 56 + 2,
             origin_y + 12 + 35,
             w=180,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._psk_label.set_long_mode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(widgets.Label.LONG_DOT)
         if len(self.ssid):
             self._psk_label.set_text("*" * 20)
         else:
             self._psk_label.set_text("")
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             "server",
             origin_x + 56 + 2,
             origin_y + 12 + 35 + 34,
             w=190,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
             parent=self._lcd,
         )
-        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
-        self._option_views = generator(
+        self._option_views = app_base.generator(
             (
                 (0, self._select_ssid_option),
                 (1, self._select_psk_option),
@@ -83,17 +81,17 @@ class WiFiSetting(AppBase):
             )
         )
 
-        self._option_button = Button(None)
+        self._option_button = widgets.Button(None)
         self._option_button.set_pos(4, 20 + 4 + 56 + 4)
         self._option_button.set_size(244, 108)
         self._option_button.add_event(self._handle_option_button)
 
-        self._confirm_button = Button(None)
+        self._confirm_button = widgets.Button(None)
         self._confirm_button.set_pos(4 + 249, 20 + 4 + 56 + 4)
         self._confirm_button.set_size(63, 64)
         self._confirm_button.add_event(self._handle_confirm_button)
 
-        self._option1_button = Button(None)
+        self._option1_button = widgets.Button(None)
         self._option1_button.set_pos(4 + 249, 20 + 4 + 56 + 4 + 64)
         self._option1_button.set_size(63, 64)
         self._option1_button.add_event(self._handle_option_button)
@@ -229,17 +227,17 @@ class WiFiSetting(AppBase):
         if self.ssid != self.ssid_tmp:
             self.ssid = self.ssid_tmp
             self.nvs.set_str("ssid0", self.ssid)
-            print("set new ssid: ", self.ssid)
+            # print("set new ssid: ", self.ssid)
             is_save = True
         if self.psk != self.psk_tmp:
             self.psk = self.psk_tmp
             self.nvs.set_str("pswd0", self.psk)
-            print("set new ssid: ", self.ssid)
+            # print("set new ssid: ", self.ssid)
             is_save = True
         if self.server != self.server_tmp:
             self.server = self.server_tmp
             self.nvs.set_str("server", self.server)
-            print("set new server: ", self.server)
+            # print("set new server: ", self.server)
             is_save = True
 
         if is_save is True:
@@ -258,7 +256,7 @@ _current_options = {
 }
 
 
-class BatteryChargeSetting(AppBase):
+class BatteryChargeSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -270,7 +268,7 @@ class BatteryChargeSetting(AppBase):
 
     def on_launch(self):
         self._current = self._get_charge_current()
-        self._options = generator(_current_options)
+        self._options = app_base.generator(_current_options)
         while True:
             t = next(self._options)
             if t == self._current:
@@ -281,12 +279,12 @@ class BatteryChargeSetting(AppBase):
         self._origin_y = 4 + 108 + 4
 
         if hasattr(self, "_option_img") is False:
-            self._option_img = Image(use_sprite=False, parent=self._lcd)
+            self._option_img = widgets.Image(use_sprite=False, parent=self._lcd)
             self._option_img.set_pos(self._origin_x, self._origin_y)
             self._option_img.set_size(60, 44)
             self._option_img.set_src(_current_options.get(self._current))
 
-        self._button = Button(None)
+        self._button = widgets.Button(None)
         self._button.set_pos(4, 20 + 4 + 56 + 4 + 108 + 4)
         self._button.set_size(60, 44)
         self._button.add_event(self._handle_charge_current)
@@ -329,7 +327,7 @@ _boot_options = {
 }
 
 
-class BootScreenSetting(AppBase):
+class BootScreenSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -342,7 +340,7 @@ class BootScreenSetting(AppBase):
     def on_launch(self):
         self._boot_option = self._get_boot_option()
         self._boot_option = 1 if self._boot_option == 1 else 2
-        self._options = generator(_boot_options)
+        self._options = app_base.generator(_boot_options)
         while True:
             t = next(self._options)
             if t == self._boot_option:
@@ -352,13 +350,13 @@ class BootScreenSetting(AppBase):
         self._origin_x = 4 + 60 + 3
         self._origin_y = 4 + 108 + 4
 
-        self._boot_option_img = Image(use_sprite=False, parent=self._lcd)
+        self._boot_option_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._boot_option_img.set_pos(self._origin_x, self._origin_y)
         self._boot_option_img.set_size(60, 44)
         self._boot_option_img.set_src(_boot_options.get(self._boot_option))
         self._boot_option_img.add_event(self._handle_boot_option)
 
-        self._button = Button(None)
+        self._button = widgets.Button(None)
         self._button.set_pos(4 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4)
         self._button.set_size(60, 44)
         self._button.add_event(self._handle_boot_option)
@@ -399,7 +397,7 @@ _comlink_options = {
 }
 
 
-class ComLinkSetting(AppBase):
+class ComLinkSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -411,7 +409,7 @@ class ComLinkSetting(AppBase):
 
     def on_launch(self):
         self._option = False
-        self._options = generator(_comlink_options)
+        self._options = app_base.generator(_comlink_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -421,12 +419,12 @@ class ComLinkSetting(AppBase):
         self._origin_x = 4 + 60 + 3 + 60 + 3
         self._origin_y = 4 + 108 + 4
 
-        self._option_img = Image(use_sprite=False, parent=self._lcd)
+        self._option_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._option_img.set_pos(self._origin_x, self._origin_y)
         self._option_img.set_size(60, 44)
         self._option_img.set_src(_comlink_options.get(self._option))
 
-        self._button = Button(None)
+        self._button = widgets.Button(None)
         self._button.set_pos(4 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4)
         self._button.set_size(60, 44)
         self._button.add_event(self._handle_option)
@@ -458,7 +456,7 @@ _usbpower_options = {
 }
 
 
-class USBPowerSetting(AppBase):
+class USBPowerSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -470,7 +468,7 @@ class USBPowerSetting(AppBase):
 
     def on_launch(self):
         self._option = M5.Power.getUsbOutput()
-        self._options = generator(_usbpower_options)
+        self._options = app_base.generator(_usbpower_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -480,12 +478,12 @@ class USBPowerSetting(AppBase):
         self._origin_x = 4 + 60 + 3 + 60 + 3 + 60 + 3
         self._origin_y = 4 + 108 + 4
 
-        self._option_img = Image(use_sprite=False, parent=self._lcd)
+        self._option_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._option_img.set_pos(self._origin_x, self._origin_y)
         self._option_img.set_size(60, 44)
         self._option_img.set_src(_usbpower_options.get(self._option))
 
-        self._button = Button(None)
+        self._button = widgets.Button(None)
         self._button.set_pos(4 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4)
         self._button.set_size(60, 44)
         self._button.add_event(self._handle_option)
@@ -518,7 +516,7 @@ _buspower_options = {
 }
 
 
-class BUSPowerSetting(AppBase):
+class BUSPowerSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         self._lcd = icos
         super().__init__()
@@ -530,7 +528,7 @@ class BUSPowerSetting(AppBase):
 
     def on_launch(self):
         self._option = M5.Power.getExtOutput()
-        self._options = generator(_buspower_options)
+        self._options = app_base.generator(_buspower_options)
         while True:
             t = next(self._options)
             if t == self._option:
@@ -540,11 +538,11 @@ class BUSPowerSetting(AppBase):
         self._origin_x = 4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3
         self._origin_y = 4 + 108 + 4
 
-        self._option_img = Image(use_sprite=False, parent=self._lcd)
+        self._option_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._option_img.set_pos(self._origin_x, self._origin_y)
         self._option_img.set_size(60, 44)
         self._option_img.set_src(_buspower_options.get(self._option))
-        self._button = Button(None)
+        self._button = widgets.Button(None)
         self._button.set_pos(4 + 60 + 3 + 60 + 3 + 60 + 3 + 60 + 3, 20 + 4 + 56 + 4 + 108 + 4)
         self._button.set_size(60, 44)
         self._button.add_event(self._handle_power_setting)
@@ -568,7 +566,7 @@ class BUSPowerSetting(AppBase):
         self._lcd.push(0, 80)
 
 
-class SettingsApp(AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._menus = (
@@ -579,12 +577,12 @@ class SettingsApp(AppBase):
             USBPowerSetting(self._lcd),
             BUSPowerSetting(self._lcd),
         )
-        self._menu_selector = AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
         super().__init__()
 
     def on_install(self):
         M5.Lcd.drawImage("/system/cores3/Selection/setting_unselected.png", 5 + 62 * 0, 20 + 4)
-        self.descriptor = Descriptor(x=5, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         pass

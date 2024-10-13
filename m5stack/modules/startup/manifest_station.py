@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "station/__init__.py",
-        "station/app.py",
+        "station/app_base.py",
         "station/framework.py",
         "station/res.py",
         "station/apps/app_list.py",
@@ -19,5 +19,5 @@ package(
         "station/apps/statusbar.py",
     ),
     base_path="..",
-    opt=0,
+    opt=3,
 )

@@ -25,6 +25,7 @@ MAKE_METHOD_KW(spk, stop, 1);
 MAKE_METHOD_KW(spk, tone, 1);
 MAKE_METHOD_KW(spk, playRaw, 1);
 MAKE_METHOD_KW(spk, playWav, 1);
+MAKE_METHOD_KW(spk, playWavFile, 1);
 
 STATIC const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, config),
@@ -45,6 +46,7 @@ STATIC const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, tone),
     MAKE_TABLE(spk, playRaw),
     MAKE_TABLE(spk, playWav),
+    MAKE_TABLE(spk, playWavFile),
 };
 STATIC MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
 

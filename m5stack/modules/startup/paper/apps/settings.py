@@ -2,20 +2,20 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, generator, AppSelector, Descriptor
+from .. import app_base
 import M5
-from widgets.label import Label
+import widgets
 import esp32
 
 
-class SettingsApp(AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
         super().__init__()
 
     def on_install(self):
-        self.descriptor = Descriptor(x=493, y=164, w=48, h=181)
+        self.descriptor = app_base.Descriptor(x=493, y=164, w=48, h=181)
 
     def on_launch(self):
         self.get_data()
@@ -23,32 +23,32 @@ class SettingsApp(AppBase):
     def on_view(self):
         self._lcd.drawImage("/system/paper/config.png", 0, 0)
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             "ssid",
             87,
             630,
             w=333,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xE3E3E3,
             font=M5.Lcd.FONTS.DejaVu24,
             parent=self._lcd,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             "server",
             87,
             747,
             w=333,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xE3E3E3,
             font=M5.Lcd.FONTS.DejaVu24,
             parent=self._lcd,
         )
-        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
     def on_ready(self):

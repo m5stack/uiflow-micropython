@@ -1,0 +1,34 @@
+.. |ACSSR Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/acssr/acssr_01.webp
+    :target: https://docs.m5stack.com/en/unit/acssr
+    :height: 200px
+    :width: 200 px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/init.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/on.png
+.. |call.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/set_relay.png
+.. |value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/value.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/off.png
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/fill_color.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/get_firmware_version.png
+.. |set_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/set_address.png
+.. |set_address1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/set_address1.png
+.. |i2c_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/i2c_example.png
+.. |modbus_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/acssr/modbus_example.png
+
+.. |cores3_acssr_i2c_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/acssr/cores3_acssr_i2c_example.m5f2"
+        target="_blank"
+    >
+        cores3_acssr_i2c_example.m5f2
+    </a>
+
+.. |cores3_acssr_modbus_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/acssr/cores3_acssr_modbus_example.m5f2"
+        target="_blank"
+    >
+        cores3_acssr_modbus_example.m5f2
+    </a>

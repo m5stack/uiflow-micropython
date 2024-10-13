@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from startup import Startup
-from .framework import Framework
+from . import framework
 
 from .apps.status_bar import StatusBarApp
 from .apps.settings import SettingsApp
@@ -29,7 +29,7 @@ class Tough_Startup:
         M5.Lcd.clear(0x000000)
         sprite = M5.Lcd.newCanvas(320, 160, 16, True)
 
-        fw = Framework()
+        fw = framework.Framework()
         settings_app = SettingsApp(sprite, data=self._wlan)
         dev_app = DevApp(sprite, data=self._wlan)
         run_app = RunApp(None)

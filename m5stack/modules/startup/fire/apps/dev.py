@@ -2,36 +2,12 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
+import widgets
 import asyncio
 import requests
-
-
-from ..res import (
-    WIFI_EMPTY_IMG,
-    WIFI_GOOD_IMG,
-    WIFI_MID_IMG,
-    WIFI_WORSE_IMG,
-    WIFI_DISCONNECTED_IMG,
-    SERVER_EMPTY_IMG,
-    SERVER_GREEN_IMG,
-    SERVER_ERROR_IMG,
-    DEVELOP_UNSELECTED_IMG,
-    DEVELOP_SELECTED_IMG,
-    DEVELOP_PRIVATE_IMG,
-    DEVELOP_PUBLIC_IMG,
-    BAR2_IMG,
-    BAR3_IMG,
-    BATTERY_RED_CHARGE_IMG,
-    BATTERY_RED_IMG,
-    BATTERY_GREEN_CHARGE_IMG,
-    BATTERY_GREEN_IMG,
-    BATTERY_BLACK_CHARGE_IMG,
-    BATTERY_BLACK_IMG,
-)
+from .. import res
 import os
 import binascii
 import machine
@@ -60,28 +36,28 @@ class CloudStatus:
 
 
 _NETWORK_STATUS_ICOS = {
-    NetworkStatus.INIT: WIFI_EMPTY_IMG,
-    NetworkStatus.RSSI_GOOD: WIFI_GOOD_IMG,
-    NetworkStatus.RSSI_MID: WIFI_MID_IMG,
-    NetworkStatus.RSSI_WORSE: WIFI_WORSE_IMG,
-    NetworkStatus.DISCONNECTED: WIFI_DISCONNECTED_IMG,
+    NetworkStatus.INIT: res.WIFI_EMPTY_IMG,
+    NetworkStatus.RSSI_GOOD: res.WIFI_GOOD_IMG,
+    NetworkStatus.RSSI_MID: res.WIFI_MID_IMG,
+    NetworkStatus.RSSI_WORSE: res.WIFI_WORSE_IMG,
+    NetworkStatus.DISCONNECTED: res.WIFI_DISCONNECTED_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: SERVER_EMPTY_IMG,
-    CloudStatus.CONNECTED: SERVER_GREEN_IMG,
-    CloudStatus.DISCONNECTED: SERVER_ERROR_IMG,
+    CloudStatus.INIT: res.SERVER_EMPTY_IMG,
+    CloudStatus.CONNECTED: res.SERVER_GREEN_IMG,
+    CloudStatus.DISCONNECTED: res.SERVER_ERROR_IMG,
 }
 
 
-class DevApp(AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
         super().__init__()
 
     def on_install(self):
-        M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(res.DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -99,17 +75,17 @@ class DevApp(AppBase):
         self._avatar_src = self._get_avatar()
 
     def on_view(self):
-        M5.Lcd.drawImage(DEVELOP_SELECTED_IMG, 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(res.DEVELOP_SELECTED_IMG, 5 + 62 * 1, 0)
         self._origin_x = 0
         self._origin_y = 56
         self._lcd.clear()
 
-        self._bg_img = Image(use_sprite=False, parent=self._lcd)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(4, 4)
         self._bg_img.set_size(312, 156)
         self._bg_img.set_src(self._bg_src)
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             4 + 6,
             4 + 57,
@@ -121,7 +97,7 @@ class DevApp(AppBase):
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             4 + 6,
             4 + 57 + 40,
@@ -134,38 +110,38 @@ class DevApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False, parent=self._lcd)
+        self._avatar_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._avatar_img.set_pos(130, 100)
         self._avatar_img.set_size(56, 56)
         self._avatar_img.set_scale(0.28, 0.28)
         self._avatar_img.set_src(self._avatar_src)
 
-        self._bar_img = Image(use_sprite=False, parent=self._lcd)
+        self._bar_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bar_img.set_pos(0, 164)
         self._bar_img.set_size(320, 20)
         self._bar_img.set_src(self._status_bar_src)
 
-        self._network_img = Image(use_sprite=False, parent=self._lcd)
+        self._network_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._network_img.set_pos(320 - 56 - 20 - 5 - 20 - 5, 164)
         self._network_img.set_size(20, 20)
         self._network_img.set_src(self._network_status_src)
 
-        self._cloud_img = Image(use_sprite=False, parent=self._lcd)
+        self._cloud_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._cloud_img.set_pos(320 - 56 - 20 - 5, 164)
         self._cloud_img.set_size(20, 20)
         self._cloud_img.set_src(self._cloud_status_src)
 
-        self._battery_img = Image(use_sprite=False, parent=self._lcd)
+        self._battery_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._battery_img.set_pos(320 - 56, 164)
         self._battery_img.set_size(56, 20)
         self._battery_img.set_src(self._battery_src)
 
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             "0%",
             320 - 56 + 22,
             220 - 56 + 4,
             w=312,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-10.vlw",
@@ -248,7 +224,7 @@ class DevApp(AppBase):
         self._task.cancel()
 
     def on_exit(self):
-        M5.Lcd.drawImage(DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
+        M5.Lcd.drawImage(res.DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
         del self._bg_img, self._mac_label, self._account_label, self._avatar_img
         del self._bar_img, self._network_img, self._cloud_img, self._battery_img
         del self._battery_label

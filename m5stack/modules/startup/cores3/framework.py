@@ -2,12 +2,12 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .app import AppBase, AppSelector
+from . import app_base
 import asyncio
 import M5
 import gc
 import time
-from machine import I2C, Pin
+import machine
 from unit import CardKBUnit, KeyCode
 
 
@@ -16,38 +16,21 @@ class KeyEvent:
     status = False
 
 
-binary_data = None
-_wav_path = None
-
-
-def _play_wav(wav: str):
-    global binary_data, _wav_path
-    if binary_data is None or _wav_path is not wav:
-        with open(wav, "rb") as f:
-            binary_data = f.read()
-        _wav_path = wav
-        if wav == "/system/common/wav/click.wav":
-            M5.Speaker.setVolume(64)
-        else:
-            M5.Speaker.setVolume(127)
-    M5.Speaker.playWav(binary_data)
-
-
 class Framework:
     def __init__(self) -> None:
         self._apps = []
-        self._app_selector = AppSelector(self._apps)
+        self._app_selector = app_base.AppSelector(self._apps)
         self._launcher = None
         self._bar = None
         self._last_app = None
 
-    def install_bar(self, bar: AppBase):
+    def install_bar(self, bar: app_base.AppBase):
         self._bar = bar
 
-    def install_launcher(self, launcher: AppBase):
+    def install_launcher(self, launcher: app_base.AppBase):
         self._launcher = launcher
 
-    def install(self, app: AppBase):
+    def install(self, app: app_base.AppBase):
         app.install()
         self._apps.append(app)
 
@@ -55,14 +38,14 @@ class Framework:
         # asyncio.create_task(self.gc_task())
         asyncio.run(self.run())
 
-    async def unload(self, app: AppBase):
+    async def unload(self, app: app_base.AppBase):
         # app = self._apps.pop()
         app.stop()
 
-    async def load(self, app: AppBase):
+    async def load(self, app: app_base.AppBase):
         app.start()
 
-    async def reload(self, app: AppBase):
+    async def reload(self, app: app_base.AppBase):
         app.stop()
         app.start()
 
@@ -73,7 +56,7 @@ class Framework:
             self._launcher.start()
             self._last_app = self._launcher
 
-        self.i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+        self.i2c0 = machine.I2C(0, scl=machine.Pin(1), sda=machine.Pin(2), freq=100000)
         self._kb = CardKBUnit(self.i2c0)
         self._event = KeyEvent()
         self._kb_status = False
@@ -88,7 +71,7 @@ class Framework:
                     if detail[9]:  # isHolding
                         pass
                     else:
-                        _play_wav("/system/common/wav/click.wav")
+                        M5.Speaker.playWavFile("/system/common/wav/click.wav")
                         x = M5.Touch.getX()
                         y = M5.Touch.getY()
                         select_app = None
@@ -110,16 +93,16 @@ class Framework:
 
             try:
                 if self._kb.is_pressed():
-                    _play_wav("/system/common/wav/click.wav")
+                    M5.Speaker.playWavFile("/system/common/wav/click.wav")
                     self._event.key = self._kb.get_key()
                     self._event.status = False
                     await self.handle_input(self._event)
                 if self._kb_status is False:
-                    _play_wav("/system/common/wav/insert.wav")
+                    M5.Speaker.playWavFile("/system/common/wav/insert.wav")
                     self._kb_status = True
             except OSError:
                 if self._kb_status is True:
-                    _play_wav("/system/common/wav/remove.wav")
+                    M5.Speaker.playWavFile("/system/common/wav/remove.wav")
                     self._kb_status = False
 
             await asyncio.sleep_ms(10)
@@ -150,7 +133,7 @@ class Framework:
             await asyncio.sleep_ms(5000)
 
     @staticmethod
-    def _is_select(app: AppBase, x, y):
+    def _is_select(app: app_base.AppBase, x, y):
         descriptor = app.descriptor
         if x < descriptor.x:
             return False

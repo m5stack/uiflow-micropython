@@ -1,0 +1,21 @@
+
+.. |setImage.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/image/setImage.png
+
+.. |setImage1.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/image/setImage1.png
+
+.. |setCursor.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/image/setCursor.png
+
+.. |setVisible.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/image/setVisible.png
+
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/image/example.png
+
+
+.. |image_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/widgets/image/image_cores3_example.m5f2.m5f2"
+        target="_blank"
+    >
+        image_cores3_example.m5f2
+    </a>

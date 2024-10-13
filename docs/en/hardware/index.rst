@@ -4,6 +4,8 @@ Hardware
 .. toctree::
     :maxdepth: 1
 
+    adc.rst
+    als.rst
     button.rst
     can.rst
     imu.rst
@@ -12,3 +14,4 @@ Hardware
     pin.rst
     rotary.rst
     speaker.rst
+    wdt.rst

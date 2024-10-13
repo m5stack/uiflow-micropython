@@ -5,6 +5,7 @@ Unit
     :maxdepth: 1
 
     accel.rst
+    acssr.rst
     adc.rst
     ain4.rst
     angle.rst
@@ -15,6 +16,7 @@ Unit
     catch.rst
     dac.rst
     dac2.rst
+    dcssr.rst
     dds.rst
     digi_clock.rst
     dlight.rst
@@ -32,11 +34,14 @@ Unit
     grove2grove.rst
     hall_effect.rst
     heart.rst
+    id.rst
     imu.rst
     imupro.rst
     ir.rst
     joystick.rst
+    joystick2.rst
     key.rst
+    kmeter_iso.rst
     kmeter.rst
     lcd.rst
     light.rst
@@ -48,6 +53,7 @@ Unit
     mqtt.rst
     mqttpoe.rst
     nbiot.rst
+    nbiot2.rst
     ncir.rst
     oled.rst
     op90.rst

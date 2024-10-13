@@ -2,10 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, Descriptor
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
+import widgets
 import asyncio
 import requests
 import os
@@ -35,7 +34,7 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._lcd = icos
         self._wifi = data
@@ -43,7 +42,7 @@ class DevApp(AppBase):
 
     def on_install(self):
         M5.Lcd.drawImage("/system/tough/Selection/develop_unselected.png", 5 + 62, 20 + 4)
-        self.descriptor = Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
+        self.descriptor = app_base.Descriptor(x=5 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
         self._mac_text = self._get_mac()
@@ -57,12 +56,12 @@ class DevApp(AppBase):
         self._origin_y = 80
         self._lcd.clear()
 
-        self._bg_img = Image(use_sprite=False, parent=self._lcd)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._bg_img.set_pos(4, 4)
         self._bg_img.set_size(312, 156)
         self._bg_img.set_src(self._bg_src)
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             4 + 6,
             4 + 57,
@@ -74,7 +73,7 @@ class DevApp(AppBase):
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             4 + 6,
             4 + 57 + 40,
@@ -87,7 +86,7 @@ class DevApp(AppBase):
         )
         self._account_label.set_text(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False, parent=self._lcd)
+        self._avatar_img = widgets.Image(use_sprite=False, parent=self._lcd)
         self._avatar_img.set_pos(130, 100)
         self._avatar_img.set_size(56, 56)
         self._avatar_img.set_scale(0.28, 0.28)
@@ -108,9 +107,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
                 self._lcd.push(self._origin_x, self._origin_y)

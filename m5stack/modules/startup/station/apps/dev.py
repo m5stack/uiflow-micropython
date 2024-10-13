@@ -2,10 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from ..res import DEVELOP_PRIVATE_IMG, DEVELOP_PUBLIC_IMG, AVATAR_IMG, MontserratMedium12_VLW
-from widgets.image import Image
-from widgets.label import Label
+from .. import app_base
+from .. import res
+import widgets
 import M5
 import requests
 import machine
@@ -35,7 +34,7 @@ class CloudStatus:
     DISCONNECTED = 2
 
 
-class DevApp(AppBase):
+class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
@@ -53,13 +52,13 @@ class DevApp(AppBase):
 
         M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
 
-        self._bg_img = Image(use_sprite=False)
+        self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(6, 22)
         self._bg_img.set_size(228, 107)
         self._bg_img.set_src(self._bg_src)
         self._avatar_src = self._get_avatar()
 
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             "aabbcc112233",
             15,
             63,
@@ -67,11 +66,11 @@ class DevApp(AppBase):
             h=15,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium12_VLW,
+            font=res.MontserratMedium12_VLW,
         )
         self._mac_label.set_text(self._mac_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "XXABC",
             15,
             92,
@@ -79,11 +78,11 @@ class DevApp(AppBase):
             h=34,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font=MontserratMedium12_VLW,
+            font=res.MontserratMedium12_VLW,
         )
         self._account_label.set_text(self._account_text)
 
-        self._avatar_img = Image(use_sprite=False)
+        self._avatar_img = widgets.Image(use_sprite=False)
         self._avatar_img.set_pos(110, 91)
         self._avatar_img.set_size(38, 38)
         self._avatar_img.set_scale(0.19, 0.19)
@@ -105,9 +104,6 @@ class DevApp(AppBase):
 
             t = self._get_account()
             if t != self._account_text or refresh:
-                print(refresh)
-                print(self._account_text)
-                print(t)
                 self._account_text = t
                 self._account_label.set_text(self._account_text)
 
@@ -136,7 +132,7 @@ class DevApp(AppBase):
         if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
             if len(infos[4]) == 0:
-                self._avatar_img.set_src(AVATAR_IMG)
+                self._avatar_img.set_src(res.AVATAR_IMG)
             else:
                 try:
                     rsp = requests.get("https://community.m5stack.com" + str(infos[4]))
@@ -153,9 +149,9 @@ class DevApp(AppBase):
                             f.write(buf)
                     self._avatar_img.set_src(dst)
                 except:
-                    self._avatar_img.set_src(AVATAR_IMG)
+                    self._avatar_img.set_src(res.AVATAR_IMG)
         else:
-            self._avatar_img.set_src(AVATAR_IMG)
+            self._avatar_img.set_src(res.AVATAR_IMG)
 
     @staticmethod
     def _get_mac():
@@ -175,19 +171,19 @@ class DevApp(AppBase):
             infos = M5Things.info()
             print(infos)
             if len(infos[4]) == 0:
-                return AVATAR_IMG
+                return res.AVATAR_IMG
             else:
                 return "/system/common/img/" + str(infos[4]).split("/")[-1]
         else:
-            return AVATAR_IMG
+            return res.AVATAR_IMG
 
     @staticmethod
     def _get_bg_src():
         if _HAS_SERVER is True and M5Things.status() == 2:
             infos = M5Things.info()
             if infos[0] == 0:
-                return DEVELOP_PRIVATE_IMG
+                return res.DEVELOP_PRIVATE_IMG
             elif infos[0] in (1, 2):
-                return DEVELOP_PUBLIC_IMG
+                return res.DEVELOP_PUBLIC_IMG
         else:
-            return DEVELOP_PRIVATE_IMG
+            return res.DEVELOP_PRIVATE_IMG

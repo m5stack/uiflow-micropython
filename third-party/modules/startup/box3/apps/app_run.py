@@ -106,7 +106,7 @@ class RunApp(AppBase):
                 break
 
     def _handle_run_once(self, fw):
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):
@@ -119,7 +119,7 @@ class RunApp(AppBase):
     def _get_file_info(path) -> tuple(str, str, str):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -148,8 +148,5 @@ class RunApp(AppBase):
             account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
         else:
             account = "Account: None"
-
-        if ver is None:
-            ver = "Ver: None"
 
         return (mtime, account, ver)

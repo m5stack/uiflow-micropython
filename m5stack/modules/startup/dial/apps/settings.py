@@ -2,36 +2,16 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase, generator, AppSelector
+from .. import app_base
 import M5
-from widgets.image import Image
-from widgets.label import Label
-from widgets.button import Button
+import widgets
 import esp32
-from .status_bar import StatusBarApp
+from . import status_bar
 from unit import KeyCode
-from ..res import (
-    SETTING_WIFI_IMG,
-    WIFI_DEFAULT_IMG,
-    WIFI_SSID_IMG,
-    WIFI_PSK_IMG,
-    WIFI_SERVER_IMG,
-    SETTING_COMMON_IMG,
-    BOOT_IMG,
-    BOOT_NO_IMG,
-    BOOT_YES_IMG,
-    COMX_IMG,
-    COMX_DISABLE_IMG,
-    COMX_ENABLE_IMG,
-    SCREEN_IMG,
-    SCREEN25_IMG,
-    SCREEN50_IMG,
-    SCREEN75_IMG,
-    SCREEN100_IMG,
-)
+from .. import res
 
 
-class WiFiSetting(AppBase):
+class WiFiSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wifi = data
         super().__init__()
@@ -42,55 +22,55 @@ class WiFiSetting(AppBase):
         self.focus = True
 
     def on_view(self):
-        M5.Lcd.drawImage(SETTING_WIFI_IMG, 0, 0)
-        M5.Lcd.drawImage(WIFI_DEFAULT_IMG, 9, 83)
+        M5.Lcd.drawImage(res.SETTING_WIFI_IMG, 0, 0)
+        M5.Lcd.drawImage(res.WIFI_DEFAULT_IMG, 9, 83)
 
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             "ssid",
             58,
             92,
             w=164,
             h=23,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
         self._ssid_label.set_text(self.ssid)
 
-        self._psk_label = Label(
+        self._psk_label = widgets.Label(
             "psk",
             58,
             92 + 33,
             w=164,
             h=23,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
-        self._psk_label.set_long_mode(Label.LONG_DOT)
+        self._psk_label.set_long_mode(widgets.Label.LONG_DOT)
         if len(self.psk):
             self._psk_label.set_text("*" * 20)
         else:
             self._psk_label.set_text("")
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             "server",
             58,
             92 + 33 + 30,
             w=164,
             h=23,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
-        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_long_mode(widgets.Label.LONG_DOT)
         self._server_label.set_text(self.server)
 
-        self._option_views = generator(
+        self._option_views = app_base.generator(
             (
                 (0, self._select_ssid_option),
                 (1, self._select_psk_option),
@@ -98,23 +78,23 @@ class WiFiSetting(AppBase):
             )
         )
 
-        self._option_button = Button(None)
+        self._option_button = widgets.Button(None)
         self._option_button.set_pos(145, 49)
         self._option_button.set_size(127, 34)
         self._option_button.add_event(self._handle_option_button)
 
-        self._confirm_button = Button(None)
+        self._confirm_button = widgets.Button(None)
         self._confirm_button.set_pos(0, 49)
         self._confirm_button.set_size(145, 34)
         self._confirm_button.add_event(self._handle_confirm_button)
 
-        self._option1_button = Button(None)
+        self._option1_button = widgets.Button(None)
         self._option1_button.set_pos(9, 83)
         self._option1_button.set_size(219, 95)
         self._option1_button.add_event(self._handle_option_button)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wifi)
+        self._status_bar = status_bar.StatusBarApp(None, self._wifi)
         self._status_bar.start()
 
     def on_hide(self):
@@ -192,7 +172,7 @@ class WiFiSetting(AppBase):
             event.status = True
 
     def _select_default_option(self):
-        M5.Lcd.drawImage(WIFI_DEFAULT_IMG, 9, 83)
+        M5.Lcd.drawImage(res.WIFI_DEFAULT_IMG, 9, 83)
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -204,7 +184,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_ssid_option(self):
-        M5.Lcd.drawImage(WIFI_SSID_IMG, 9, 83)
+        M5.Lcd.drawImage(res.WIFI_SSID_IMG, 9, 83)
         self._ssid_label.set_text_color(0x000000, 0xDCDDDD)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -216,7 +196,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_psk_option(self):
-        M5.Lcd.drawImage(WIFI_PSK_IMG, 9, 83)
+        M5.Lcd.drawImage(res.WIFI_PSK_IMG, 9, 83)
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xDCDDDD)
         self._server_label.set_text_color(0x000000, 0xFEFEFE)
@@ -228,7 +208,7 @@ class WiFiSetting(AppBase):
         self._server_label.set_text(self.server_tmp)
 
     def _select_server_option(self):
-        M5.Lcd.drawImage(WIFI_SERVER_IMG, 9, 83)
+        M5.Lcd.drawImage(res.WIFI_SERVER_IMG, 9, 83)
         self._ssid_label.set_text_color(0x000000, 0xFEFEFE)
         self._psk_label.set_text_color(0x000000, 0xFEFEFE)
         self._server_label.set_text_color(0x000000, 0xDCDDDD)
@@ -283,12 +263,12 @@ class WiFiSetting(AppBase):
 
 
 _boot_options = {
-    1: BOOT_YES_IMG,
-    2: BOOT_NO_IMG,
+    1: res.BOOT_YES_IMG,
+    2: res.BOOT_NO_IMG,
 }
 
 
-class BootScreenSetting(AppBase):
+class BootScreenSetting(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
@@ -300,20 +280,20 @@ class BootScreenSetting(AppBase):
     def on_launch(self):
         self._boot_option = self._get_boot_option()
         self._boot_option = 1 if self._boot_option == 1 else 2
-        self._options = generator(_boot_options)
+        self._options = app_base.generator(_boot_options)
         while True:
             t = next(self._options)
             if t == self._boot_option:
                 break
 
     def on_view(self):
-        self._boot_label_img = Image(use_sprite=False)
+        self._boot_label_img = widgets.Image(use_sprite=False)
         self._boot_label_img.set_pos(0, 49)
         self._boot_label_img.set_size(120, 50)
-        self._boot_label_img.set_src(BOOT_IMG)
+        self._boot_label_img.set_src(res.BOOT_IMG)
         self._boot_label_img.add_event(self._handle_boot_option)
 
-        self._boot_option_img = Image(use_sprite=False)
+        self._boot_option_img = widgets.Image(use_sprite=False)
         self._boot_option_img.set_pos(120, 49)
         self._boot_option_img.set_size(120, 50)
         self._boot_option_img.set_src(_boot_options.get(self._boot_option))
@@ -349,12 +329,12 @@ class BootScreenSetting(AppBase):
 
 
 _comlink_options = {
-    False: COMX_DISABLE_IMG,
-    True: COMX_ENABLE_IMG,
+    False: res.COMX_DISABLE_IMG,
+    True: res.COMX_ENABLE_IMG,
 }
 
 
-class ComLinkSetting(AppBase):
+class ComLinkSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         super().__init__()
 
@@ -365,20 +345,20 @@ class ComLinkSetting(AppBase):
 
     def on_launch(self):
         self._option = False
-        self._options = generator(_comlink_options)
+        self._options = app_base.generator(_comlink_options)
         while True:
             t = next(self._options)
             if t == self._option:
                 break
 
     def on_view(self):
-        self._label_img = Image(use_sprite=False)
+        self._label_img = widgets.Image(use_sprite=False)
         self._label_img.set_pos(0, 155)
         self._label_img.set_size(120, 53)
-        self._label_img.set_src(COMX_IMG)
+        self._label_img.set_src(res.COMX_IMG)
         self._label_img.add_event(self._handle_option)
 
-        self._option_img = Image(use_sprite=False)
+        self._option_img = widgets.Image(use_sprite=False)
         self._option_img.set_pos(120, 155)
         self._option_img.set_size(120, 53)
         self._option_img.set_src(_comlink_options.get(self._option))
@@ -405,14 +385,14 @@ class ComLinkSetting(AppBase):
 
 
 _brightness_options = {
-    64: SCREEN25_IMG,
-    128: SCREEN50_IMG,
-    192: SCREEN75_IMG,
-    255: SCREEN100_IMG,
+    64: res.SCREEN25_IMG,
+    128: res.SCREEN50_IMG,
+    192: res.SCREEN75_IMG,
+    255: res.SCREEN100_IMG,
 }
 
 
-class BrightnessSetting(AppBase):
+class BrightnessSetting(app_base.AppBase):
     def __init__(self, icos: dict) -> None:
         super().__init__()
 
@@ -424,20 +404,20 @@ class BrightnessSetting(AppBase):
     def on_launch(self):
         self._brightness = M5.Lcd.getBrightness()
         self._brightness = self.approximate(self._brightness)
-        self._options = generator(_brightness_options)
+        self._options = app_base.generator(_brightness_options)
         while True:
             t = next(self._options)
             if t == self._brightness:
                 break
 
     def on_view(self):
-        self._brightness_label_img = Image(use_sprite=False)
+        self._brightness_label_img = widgets.Image(use_sprite=False)
         self._brightness_label_img.set_pos(0, 101)
         self._brightness_label_img.set_size(120, 52)
-        self._brightness_label_img.set_src(SCREEN_IMG)
+        self._brightness_label_img.set_src(res.SCREEN_IMG)
         self._brightness_label_img.add_event(self._handle_brightness)
 
-        self._brightness_option_img = Image(use_sprite=False)
+        self._brightness_option_img = widgets.Image(use_sprite=False)
         self._brightness_option_img.set_pos(120, 101)
         self._brightness_option_img.set_size(120, 52)
         self._brightness_option_img.set_src(_brightness_options.get(self._brightness))
@@ -470,7 +450,7 @@ class BrightnessSetting(AppBase):
                 return v
 
 
-class SettingsApp(AppBase):
+class SettingsApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._wlan = data
         self._menus = (
@@ -478,7 +458,7 @@ class SettingsApp(AppBase):
             ComLinkSetting(None),
             BrightnessSetting(None),
         )
-        self._menu_selector = AppSelector(self._menus)
+        self._menu_selector = app_base.AppSelector(self._menus)
         super().__init__()
 
     def on_install(self):
@@ -488,10 +468,10 @@ class SettingsApp(AppBase):
         pass
 
     def on_view(self):
-        M5.Lcd.drawImage(SETTING_COMMON_IMG, 0, 0)
+        M5.Lcd.drawImage(res.SETTING_COMMON_IMG, 0, 0)
 
     def on_ready(self):
-        self._status_bar = StatusBarApp(None, self._wlan)
+        self._status_bar = status_bar.StatusBarApp(None, self._wlan)
         self._status_bar.start()
 
     def on_hide(self):

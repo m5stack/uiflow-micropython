@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "dinmeter/__init__.py",
-        "dinmeter/app.py",
+        "dinmeter/app_base.py",
         "dinmeter/framework.py",
         "dinmeter/res.py",
         "dinmeter/apps/app_list.py",
@@ -19,5 +19,5 @@ package(
         "dinmeter/apps/statusbar.py",
     ),
     base_path="..",
-    # opt=0,
+    opt=3,
 )

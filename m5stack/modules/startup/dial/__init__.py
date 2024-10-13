@@ -4,7 +4,7 @@
 
 from startup import Startup
 import M5
-from .framework import Framework
+from . import framework
 from .apps.settings import SettingsApp, WiFiSetting
 from .apps.dev import DevApp
 from .apps.app_run import RunApp
@@ -12,7 +12,7 @@ from .apps.app_list import ListApp
 
 # from .apps.ezdata import EzDataApp
 import time
-from .res import LOGO_IMG
+from . import res
 
 
 class Dial_Startup:
@@ -24,10 +24,10 @@ class Dial_Startup:
         M5.Speaker.setVolume(80)
         M5.Speaker.tone(4000, 50)
 
-        M5.Lcd.drawImage(LOGO_IMG)
+        M5.Lcd.drawImage(res.LOGO_IMG)
         time.sleep_ms(200)
 
-        fw = Framework()
+        fw = framework.Framework()
         wifi_app = WiFiSetting(None, data=self._wlan)
         setting_app = SettingsApp(None, data=self._wlan)
         dev_app = DevApp(None, data=self._wlan)

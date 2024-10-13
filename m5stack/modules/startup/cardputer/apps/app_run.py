@@ -2,17 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from ..res import (
-    RUN_INFO_IMG,
-    RUN_ONCE_SELECT_IMG,
-    RUN_ONCE_UNSELECT_IMG,
-    RUN_ALWAYS_SELECT_IMG,
-    RUN_ALWAYS_UNSELECT_IMG,
-    MontserratMedium10_VLW,
-    MontserratMedium16_VLW,
-)
-from widgets.label import Label
+from .. import app_base
+from .. import res
+import widgets
 import M5
 import esp32
 import machine
@@ -28,7 +20,7 @@ except ImportError:
     _HAS_SERVER = False
 
 
-class RunApp(AppBase):
+class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
         self._enter_handler = self._handle_run_once
@@ -41,58 +33,58 @@ class RunApp(AppBase):
 
     def on_view(self):
         M5.Lcd.fillRect(0, 16, 240, 119, 0xEEEEEF)
-        M5.Lcd.drawImage(RUN_INFO_IMG, 6, 22)
+        M5.Lcd.drawImage(res.RUN_INFO_IMG, 6, 22)
 
-        self._name_label = Label(
+        self._name_label = widgets.Label(
             "name",
             16,
             23,
             w=208,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xCDCDCD,
-            font=MontserratMedium16_VLW,
+            font=res.MontserratMedium16_VLW,
         )
         self._name_label.set_text("main.py")
 
-        self._mtime_label = Label(
+        self._mtime_label = widgets.Label(
             "Time: 2023/5/14 12:23:43",
             16,
             46,
             w=208,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
-            font=MontserratMedium10_VLW,
+            font=res.MontserratMedium10_VLW,
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = Label(
+        self._account_label = widgets.Label(
             "Account: XXABC",
             16,
             60,
             w=208,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
-            font=MontserratMedium10_VLW,
+            font=res.MontserratMedium10_VLW,
         )
         self._account_label.set_text(self._account_text)
 
-        self._ver_label = Label(
+        self._ver_label = widgets.Label(
             "Ver: UIFLOW2.0 a18",
             16,
             74,
             w=208,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
-            font=MontserratMedium10_VLW,
+            font=res.MontserratMedium10_VLW,
         )
         self._ver_label.set_text(self._ver_text)
 
-        M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
-        M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)
+        M5.Lcd.drawImage(res.RUN_ONCE_SELECT_IMG, 6, 100)
+        M5.Lcd.drawImage(res.RUN_ALWAYS_UNSELECT_IMG, 123, 100)
 
     def on_ready(self):
         pass
@@ -110,7 +102,7 @@ class RunApp(AppBase):
         )
 
     def _handle_run_once(self, fw):
-        execfile("main.py")  # noqa: F821
+        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     def _handle_run_always(self, fw):
@@ -123,7 +115,7 @@ class RunApp(AppBase):
     def _get_file_info(path) -> tuple(str, str, str):
         mtime = None
         account = None
-        ver = None
+        ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
             stat = os.stat(path)
@@ -153,19 +145,16 @@ class RunApp(AppBase):
         else:
             account = "Account: None"
 
-        if ver is None:
-            ver = "Ver: None"
-
         return (mtime, account, ver)
 
     async def _kb_event_handler(self, event, fw):
         if event.key == 183:  # Right key
-            M5.Lcd.drawImage(RUN_ONCE_UNSELECT_IMG, 6, 100)
-            M5.Lcd.drawImage(RUN_ALWAYS_SELECT_IMG, 123, 100)
+            M5.Lcd.drawImage(res.RUN_ONCE_UNSELECT_IMG, 6, 100)
+            M5.Lcd.drawImage(res.RUN_ALWAYS_SELECT_IMG, 123, 100)
             self._enter_handler = self._handle_run_always
         elif event.key == 180:  # Left key
-            M5.Lcd.drawImage(RUN_ONCE_SELECT_IMG, 6, 100)
-            M5.Lcd.drawImage(RUN_ALWAYS_UNSELECT_IMG, 123, 100)
+            M5.Lcd.drawImage(res.RUN_ONCE_SELECT_IMG, 6, 100)
+            M5.Lcd.drawImage(res.RUN_ALWAYS_UNSELECT_IMG, 123, 100)
             self._enter_handler = self._handle_run_once
         elif event.key == 0x0D:  # Enter key
             self._enter_handler(fw)

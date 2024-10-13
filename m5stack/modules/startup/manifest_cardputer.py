@@ -7,7 +7,7 @@ package(
     (
         "__init__.py",
         "cardputer/__init__.py",
-        "cardputer/app.py",
+        "cardputer/app_base.py",
         "cardputer/framework.py",
         "cardputer/res.py",
         "cardputer/apps/app_list.py",
@@ -19,5 +19,5 @@ package(
         "cardputer/apps/statusbar.py",
     ),
     base_path="..",
-    # opt=0,
+    opt=3,
 )

@@ -2,27 +2,20 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.image import Image
-from widgets.label import Label
-from M5 import Lcd, Widgets
+from .. import app_base
+import widgets
+import M5
+from M5 import Widgets
 import os
 import sys
 import time
 import machine
 import boot_option
-from ..res import (
-    APPLIST_UNSELECTED_IMG,
-    APPLIST_SELECTED_IMG,
-    APPLIST_IMG,
-    BAR5_IMG,
-    APPLIST_LEFT_IMG,
-    APPLIST_RIGHT_IMG,
-)
+from .. import res
 
 
 class Rectangle:
-    def __init__(self, x, y, w, h, color, fill_c, parent=Lcd) -> None:
+    def __init__(self, x, y, w, h, color, fill_c, parent=M5.Lcd) -> None:
         self._x = x
         self._y = y
         self._w = w
@@ -88,12 +81,12 @@ class FileList:
         return self.files_len
 
 
-class ListApp(AppBase):
+class ListApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
     def on_install(self):
-        Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
 
     def on_launch(self):
         self._files = FileList("apps")
@@ -105,9 +98,9 @@ class ListApp(AppBase):
         self._origin_x = 0
         self._origin_y = 56
 
-        Lcd.drawImage(APPLIST_SELECTED_IMG, 5 + 62 * 3, 0)
-        Lcd.drawImage(APPLIST_IMG, self._origin_x + 4, self._origin_y + 4)
-        Lcd.drawImage(BAR5_IMG, 0, 220)
+        M5.Lcd.drawImage(res.APPLIST_SELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_IMG, self._origin_x + 4, self._origin_y + 4)
+        M5.Lcd.drawImage(res.BAR5_IMG, 0, 220)
 
         self._line_spacing = 36 + 2 + 2
         self._left_cursor_x = self._origin_x + 4
@@ -117,25 +110,25 @@ class ListApp(AppBase):
             self._left_cursor_x, self._left_cursor_y, 10, 36, 0xFEFEFE, 0xFEFEFE
         )
 
-        self._left_img = Image(use_sprite=False)
+        self._left_img = widgets.Image(use_sprite=False)
         self._left_img.set_pos(self._left_cursor_x, self._left_cursor_y)
         self._left_img.set_size(10, 36)
-        self._left_img.set_src(APPLIST_LEFT_IMG)
+        self._left_img.set_src(res.APPLIST_LEFT_IMG)
 
         self._right_cursor_x = 320 - 4 - 60 - 10
         self._right_cursor_y = self._origin_y + 4 + 2
 
         self._rect1 = Rectangle(
-            self._right_cursor_x, self._right_cursor_y, 10, 36, 0xFEFEFE, 0xFEFEFE, parent=Lcd
+            self._right_cursor_x, self._right_cursor_y, 10, 36, 0xFEFEFE, 0xFEFEFE, parent=M5.Lcd
         )
 
-        self._right_img = Image(use_sprite=False)
+        self._right_img = widgets.Image(use_sprite=False)
         self._right_img.set_pos(self._right_cursor_x, self._right_cursor_y)
         self._right_img.set_size(10, 36)
-        self._right_img.set_src(APPLIST_RIGHT_IMG)
+        self._right_img.set_src(res.APPLIST_RIGHT_IMG)
 
         if not hasattr(self, "_label0"):
-            self._label0 = Label(
+            self._label0 = widgets.Label(
                 "",
                 self._left_cursor_x + 10,
                 self._left_cursor_y + 8,
@@ -147,7 +140,7 @@ class ListApp(AppBase):
             )
 
         if not hasattr(self, "_label1"):
-            self._label1 = Label(
+            self._label1 = widgets.Label(
                 "",
                 self._left_cursor_x + 10,
                 self._left_cursor_y + 8 + self._line_spacing,
@@ -159,7 +152,7 @@ class ListApp(AppBase):
             )
 
         if not hasattr(self, "_label2"):
-            self._label2 = Label(
+            self._label2 = widgets.Label(
                 "",
                 self._left_cursor_x + 10,
                 self._left_cursor_y + 8 + self._line_spacing + self._line_spacing,
@@ -171,7 +164,7 @@ class ListApp(AppBase):
             )
 
         if not hasattr(self, "_label3"):
-            self._label3 = Label(
+            self._label3 = widgets.Label(
                 "",
                 self._left_cursor_x + 10,
                 self._left_cursor_y
@@ -187,10 +180,6 @@ class ListApp(AppBase):
             )
         if not hasattr(self, "_labels"):
             self._labels = (self._label0, self._label1, self._label2, self._label3)
-        # self._labels.append(self._label0)
-        # self._labels.append(self._label1)
-        # self._labels.append(self._label2)
-        # self._labels.append(self._label3)
 
         for label, file in zip(self._labels, self._files):
             file and label and label.set_text(file)
@@ -202,7 +191,7 @@ class ListApp(AppBase):
         pass
 
     def on_exit(self):
-        Lcd.drawImage(APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
+        M5.Lcd.drawImage(res.APPLIST_UNSELECTED_IMG, 5 + 62 * 3, 0)
         del (
             self._left_img,
             self._right_img,
@@ -253,7 +242,7 @@ class ListApp(AppBase):
                 file and label and label.set_text(file)
 
     async def _btnc_event_handler(self, fw):
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _btnc_hold_event_handler(self, fw):

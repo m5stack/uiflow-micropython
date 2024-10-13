@@ -2,29 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from ..res import (
-    BLUE_TITLE_IMG,
-    BATTERY_BLACK_CHARGE_IMG,
-    BATTERY_BLACK_IMG,
-    BATTERY_GREEN_CHARGE_IMG,
-    BATTERY_GREEN_IMG,
-    BATTERY_RED_CHARGE_IMG,
-    BATTERY_RED_IMG,
-    SERVER_EMPTY_IMG,
-    SERVER_ERROR_IMG,
-    SERVER_GREEN_IMG,
-    WIFI_DISCONNECTED_IMG,
-    WIFI_EMPTY_IMG,
-    WIFI_GOOD_IMG,
-    WIFI_MID_IMG,
-    WIFI_WORSE_IMG,
-    MontserratMedium10_VLW,
-    MontserratMedium12_VLW,
-)
-from widgets.label import Label
-from widgets.image import Image
-
+from .. import app_base
+from .. import res
+import widgets
 import M5
 import network
 import asyncio
@@ -53,21 +33,21 @@ class CloudStatus:
 
 
 _WIFI_STATUS_ICO = {
-    NetworkStatus.INIT: WIFI_EMPTY_IMG,
-    NetworkStatus.RSSI_GOOD: WIFI_GOOD_IMG,
-    NetworkStatus.RSSI_MID: WIFI_MID_IMG,
-    NetworkStatus.RSSI_WORSE: WIFI_WORSE_IMG,
-    NetworkStatus.DISCONNECTED: WIFI_DISCONNECTED_IMG,
+    NetworkStatus.INIT: res.WIFI_EMPTY_IMG,
+    NetworkStatus.RSSI_GOOD: res.WIFI_GOOD_IMG,
+    NetworkStatus.RSSI_MID: res.WIFI_MID_IMG,
+    NetworkStatus.RSSI_WORSE: res.WIFI_WORSE_IMG,
+    NetworkStatus.DISCONNECTED: res.WIFI_DISCONNECTED_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: SERVER_EMPTY_IMG,
-    CloudStatus.CONNECTED: SERVER_GREEN_IMG,
-    CloudStatus.DISCONNECTED: SERVER_ERROR_IMG,
+    CloudStatus.INIT: res.SERVER_EMPTY_IMG,
+    CloudStatus.CONNECTED: res.SERVER_GREEN_IMG,
+    CloudStatus.DISCONNECTED: res.SERVER_ERROR_IMG,
 }
 
 
-class StatusBarApp(AppBase):
+class StatusBarApp(app_base.AppBase):
     def __init__(self, icos: dict, wifi) -> None:
         self._wifi = wifi
 
@@ -82,43 +62,43 @@ class StatusBarApp(AppBase):
 
     def on_view(self):
         M5.Lcd.fillRect(0, 0, 240, 16, 0xEEEEEF)
-        M5.Lcd.drawImage(BLUE_TITLE_IMG, 0, 0)
-        self._time_label = Label(
+        M5.Lcd.drawImage(res.BLUE_TITLE_IMG, 0, 0)
+        self._time_label = widgets.Label(
             "12:23",
             120,
             1,
             w=48,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
-            font=MontserratMedium12_VLW,
+            font=res.MontserratMedium12_VLW,
         )
         self._time_label.set_text(self._time_text)
 
-        self._network_img = Image(use_sprite=False)
+        self._network_img = widgets.Image(use_sprite=False)
         self._network_img.set_pos(163, 0)
         self._network_img.set_size(16, 16)
         self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
 
-        self._cloud_img = Image(use_sprite=False)
+        self._cloud_img = widgets.Image(use_sprite=False)
         self._cloud_img.set_pos(179, 0)
         self._cloud_img.set_size(16, 16)
         self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])
 
-        self._battery_img = Image(use_sprite=False)
+        self._battery_img = widgets.Image(use_sprite=False)
         self._battery_img.set_pos(195, 0)
         self._battery_img.set_size(45, 16)
         self._battery_img.set_src(self._battery_src)
 
-        self._battery_label = Label(
+        self._battery_label = widgets.Label(
             "78%",
             212,
             2,
             w=26 + 4,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xFEFEFE,
-            font=MontserratMedium10_VLW,
+            font=res.MontserratMedium10_VLW,
         )
         self._battery_label.set_text(self._battery_text)
 
@@ -204,11 +184,11 @@ class StatusBarApp(AppBase):
         src = ""
         if battery > 0 and battery <= 100:
             if battery < 20:
-                src = BATTERY_RED_CHARGE_IMG if charging else BATTERY_RED_IMG
+                src = res.BATTERY_RED_CHARGE_IMG if charging else res.BATTERY_RED_IMG
             elif battery <= 100:
-                src = BATTERY_GREEN_CHARGE_IMG if charging else BATTERY_GREEN_IMG
+                src = res.BATTERY_GREEN_CHARGE_IMG if charging else res.BATTERY_GREEN_IMG
         else:
-            src = BATTERY_BLACK_CHARGE_IMG if charging else BATTERY_BLACK_IMG
+            src = res.BATTERY_BLACK_CHARGE_IMG if charging else res.BATTERY_BLACK_IMG
         return src
 
     @staticmethod

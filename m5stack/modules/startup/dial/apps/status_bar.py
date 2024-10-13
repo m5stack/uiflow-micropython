@@ -2,23 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from ..app import AppBase
-from widgets.label import Label
-from widgets.image import Image
+from .. import app_base
+from .. import res
+import widgets
 import time
 import M5
 import network
 import asyncio
-from ..res import (
-    SERVER_EMPTY_IMG,
-    SERVER_ERROR_IMG,
-    SERVER_GREEN_IMG,
-    WIFI_DISCONNECTED_IMG,
-    WIFI_EMPTY_IMG,
-    WIFI_GOOD_IMG,
-    WIFI_MID_IMG,
-    WIFI_WORSE_IMG,
-)
 
 
 try:
@@ -44,21 +34,21 @@ class CloudStatus:
 
 
 _WIFI_STATUS_ICO = {
-    NetworkStatus.INIT: WIFI_EMPTY_IMG,
-    NetworkStatus.RSSI_GOOD: WIFI_GOOD_IMG,
-    NetworkStatus.RSSI_MID: WIFI_MID_IMG,
-    NetworkStatus.RSSI_WORSE: WIFI_WORSE_IMG,
-    NetworkStatus.DISCONNECTED: WIFI_DISCONNECTED_IMG,
+    NetworkStatus.INIT: res.WIFI_EMPTY_IMG,
+    NetworkStatus.RSSI_GOOD: res.WIFI_GOOD_IMG,
+    NetworkStatus.RSSI_MID: res.WIFI_MID_IMG,
+    NetworkStatus.RSSI_WORSE: res.WIFI_WORSE_IMG,
+    NetworkStatus.DISCONNECTED: res.WIFI_DISCONNECTED_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
-    CloudStatus.INIT: SERVER_EMPTY_IMG,
-    CloudStatus.CONNECTED: SERVER_GREEN_IMG,
-    CloudStatus.DISCONNECTED: SERVER_ERROR_IMG,
+    CloudStatus.INIT: res.SERVER_EMPTY_IMG,
+    CloudStatus.CONNECTED: res.SERVER_GREEN_IMG,
+    CloudStatus.DISCONNECTED: res.SERVER_ERROR_IMG,
 }
 
 
-class StatusBarApp(AppBase):
+class StatusBarApp(app_base.AppBase):
     def __init__(self, icos: dict, wifi) -> None:
         self._wifi = wifi
 
@@ -68,24 +58,24 @@ class StatusBarApp(AppBase):
         self._cloud_status = self._get_cloud_status()
 
     def on_view(self):
-        self._time_label = Label(
+        self._time_label = widgets.Label(
             "12:23",
             120,
             31,
             w=240,
-            font_align=Label.CENTER_ALIGNED,
+            font_align=widgets.Label.CENTER_ALIGNED,
             fg_color=0x534D4C,
             bg_color=0xEEEEEF,
             font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._time_label.set_text(self._time_text)
 
-        self._network_img = Image(use_sprite=False)
+        self._network_img = widgets.Image(use_sprite=False)
         self._network_img.set_pos(46, 32)
         self._network_img.set_size(15, 15)
         self._network_img.set_src(_WIFI_STATUS_ICO[self._network_status])
 
-        self._cloud_img = Image(use_sprite=False)
+        self._cloud_img = widgets.Image(use_sprite=False)
         self._cloud_img.set_pos(179, 32)
         self._cloud_img.set_size(15, 15)
         self._cloud_img.set_src(_CLOUD_STATUS_ICOS[self._cloud_status])

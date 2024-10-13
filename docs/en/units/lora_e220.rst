@@ -57,7 +57,7 @@ Working Mode
 
 .. table:: Working mode table
     :name: working-mode
-        :no-index:
+        :noindex:
 
     ===================== === === =========
     Mode (0-3)            M1  M0  Function description

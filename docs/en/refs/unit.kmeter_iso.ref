@@ -1,0 +1,26 @@
+.. |KmeterISOUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/KMeterISO%20Unit/img-636d2fa0-a416-48b9-a667-57defaa0291e.webp
+    :target: https://docs.m5stack.com/en/unit/KMeterISO%20Unit
+    :height: 200px
+    :width: 200px
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/example.png
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/init.png
+
+.. |get_thermocouple_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_kmeter_thermo.png
+
+.. |get_internal_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_kmeter_internal.png
+
+.. |is_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_data_available_status.png
+
+.. |get_thermocouple_temperature_string.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_kmeter_thermo_string.png
+
+.. |get_internal_temperature_string.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_kmeter_internal_string.png
+
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/get_device_spec.png
+
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/kmeteriso/set_i2c_address.png
+
+.. |cores3_kmeteriso_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/kmeteriso/cores3_kmeteriso_example.m5f2" target="_blank">cores3_kmeteriso_example.m5f2</a>

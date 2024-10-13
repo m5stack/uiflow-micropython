@@ -5,8 +5,7 @@
 from startup import Startup
 import M5
 import network
-from widgets.label import Label
-from widgets.image import Image
+import widgets
 import os
 import sys
 import gc
@@ -186,35 +185,35 @@ class FlowApp(AppBase):
         self._user_id = self._get_user_id()
 
     def on_view(self):
-        self._mac_label = Label(
+        self._mac_label = widgets.Label(
             str(None),
             15,
             63,
             w=138,
             h=24,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._mac_label.set_long_mode(Label.LONG_DOT)
+        self._mac_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._user_id_label = Label(
+        self._user_id_label = widgets.Label(
             str(None),
             15,
             119,
             w=138,
             h=24,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._user_id_label.set_long_mode(Label.LONG_DOT)
+        self._user_id_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._bg_img = Image(
+        self._bg_img = widgets.Image(
             use_sprite=False,
             parent=self._sprite,
         )
@@ -222,7 +221,7 @@ class FlowApp(AppBase):
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
 
-        self._wifi_img = Image(
+        self._wifi_img = widgets.Image(
             use_sprite=False,
             parent=self._sprite,
         )
@@ -230,7 +229,7 @@ class FlowApp(AppBase):
         self._wifi_img.set_y(176)
         self._wifi_img.set_size(32, 24)
 
-        self._server_img = Image(
+        self._server_img = widgets.Image(
             use_sprite=False,
             parent=self._sprite,
         )
@@ -323,35 +322,35 @@ class ConfigApp(AppBase):
         self._server = self._get_server()
 
     def on_view(self):
-        self._ssid_label = Label(
+        self._ssid_label = widgets.Label(
             str(None),
             15,
             63,
             w=138,
             h=24,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._ssid_label.set_long_mode(Label.LONG_DOT)
+        self._ssid_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._server_label = Label(
+        self._server_label = widgets.Label(
             str(None),
             15,
             119,
             w=138,
             h=24,
-            font_align=Label.LEFT_ALIGNED,
+            font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFFFFFF,
             font=M5.Lcd.FONTS.DejaVu18,
             parent=self._sprite,
         )
-        self._server_label.set_long_mode(Label.LONG_DOT)
+        self._server_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._bg_img = Image(use_sprite=False, parent=self._sprite)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._sprite)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
@@ -392,7 +391,7 @@ class AppListApp(AppBase):
         super().__init__()
 
     def on_launch(self):
-        self._bg_img = Image(use_sprite=False, parent=self._sprite)
+        self._bg_img = widgets.Image(use_sprite=False, parent=self._sprite)
         self._bg_img.set_x(0)
         self._bg_img.set_y(0)
         self._bg_img.set_size(200, 200)
@@ -413,7 +412,7 @@ class AppListApp(AppBase):
         if len(self._labels) != 5:
             for i in range(5):
                 self._labels.append(
-                    Label(
+                    widgets.Label(
                         "",
                         14,
                         37 + 27 * i,
@@ -425,7 +424,7 @@ class AppListApp(AppBase):
                         parent=self._sprite,
                     )
                 )
-                self._labels[-1].set_long_mode(Label.LONG_DOT)
+                self._labels[-1].set_long_mode(widgets.Label.LONG_DOT)
 
         for label, file in zip(self._labels, self._files):
             # print("file:", file)
@@ -443,7 +442,7 @@ class AppListApp(AppBase):
     async def _keycode_enter_event_handler(self, fw):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
-        execfile("apps/" + self._files[self._file_pos])  # noqa: F821
+        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
         sys.exit(0)
 
     async def _keycode_back_event_handler(self, fw):

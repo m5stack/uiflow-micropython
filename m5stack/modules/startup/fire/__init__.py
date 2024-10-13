@@ -4,7 +4,7 @@
 
 from startup import Startup
 import M5
-from .framework import Framework
+from . import framework
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp
 from .apps.app_run import RunApp
@@ -38,7 +38,7 @@ class Fire_Startup:
 
         sprite = M5.Lcd.newCanvas(320, 184, 16, True)
 
-        fw = Framework()
+        fw = framework.Framework()
         settings_app = SettingsApp(sprite, data=self._wlan)
         dev_app = DevApp(sprite, data=self._wlan)
         run_app = RunApp(None)
