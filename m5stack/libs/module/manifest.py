@@ -14,6 +14,7 @@ package(
         "iot_base_catm.py",
         "lora.py",
         "mbus.py",
+        "module_4in8out.py",
         "module_helper.py",
         "plus.py",
         "pps.py",

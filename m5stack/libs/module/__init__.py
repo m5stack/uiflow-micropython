@@ -12,6 +12,7 @@ _attrs = {
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
     "LoraModule": "lora",
+    "Module4In8Out": "module_4in8out",
     "PLUSModule": "plus",
     "PPSModule": "pps",
     "RCAModule": "rca",
