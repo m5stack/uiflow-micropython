@@ -23,9 +23,11 @@ class GRBLModule:
         image: https://static-cdn.m5stack.com/resource/docs/products/module/grbl13.2/grbl13.2_01.webp
         category: Module
 
-    example: |
-        from module import GRBLModule
-        motor = GRBLModule()
+    example:
+        - ../../../examples/module/grbl_example.py
+
+    m5f2:
+        - module/grbl_example.m5f2
 
 
     """
