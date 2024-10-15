@@ -16,6 +16,7 @@ _attrs = {
     "PPSModule": "pps",
     "RCAModule": "rca",
     "Relay4Module": "relay_4",
+    "Relay2Module": "relay_2",
     "RS232Module": "rs232",
 }
 

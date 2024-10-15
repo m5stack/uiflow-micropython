@@ -12,4 +12,5 @@ Module
     plus.rst
     pps.rst
     rca.rst
+    relay_2.rst
     rs232.rst
