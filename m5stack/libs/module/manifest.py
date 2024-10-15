@@ -27,6 +27,7 @@ package(
         "relay_2.py",
         "relay_4.py",
         "rs232.py",
+        "servo2.py",
         "step_motor_driver.py",
     ),
     base_path="..",
