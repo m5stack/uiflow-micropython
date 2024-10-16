@@ -16,9 +16,23 @@ class PCA9685:
         return self.i2c.readfrom_mem(self.address, address, 1)[0]
 
     def reset(self):
+        """
+        note:
+            en: Reset the Servo Driver.
+            cn: 重置舵机驱动器。
+        """
         self._write(0x00, 0x00)  # Mode1
 
     def freq(self, freq=None):
+        """
+        note:
+            en: Set the PWM frequency.
+            cn: 设置PWM频率。
+
+        params:
+            freq:
+              note: The PWM frequency in Hz.
+        """
         if freq is None:
             return int(25000000.0 / 4096 / (self._read(0xFE) - 0.5))
         prescale = int(25000000.0 / 4096.0 / freq + 0.5)
@@ -30,6 +44,21 @@ class PCA9685:
         self._write(0x00, old_mode | 0xA1)  # Mode 1, autoincrement on
 
     def pwm(self, index, on=None, off=None):
+        """
+        note:
+            en: Set the PWM value.
+            cn: 设置PWM值。
+
+        params:
+            index:
+              note: The channel index.
+            on:
+              note: The ON time.
+            off:
+              note: The OFF time.
+
+        """
+
         if on is None or off is None:
             data = self.i2c.readfrom_mem(self.address, 0x06 + 4 * index, 4)
             return ustruct.unpack("<HH", data)
@@ -37,6 +66,19 @@ class PCA9685:
         self.i2c.writeto_mem(self.address, 0x06 + 4 * index, data)
 
     def duty(self, index, value=None, invert=False):
+        """
+        note:
+            en: Set the PWM duty cycle.
+            cn: 设置PWM占空比。
+
+        params:
+            index:
+              note: The channel index.
+            value:
+              note: The PWM value.
+            invert:
+              note: Invert the PWM value.
+        """
         if value is None:
             pwm = self.pwm(index)
             if pwm == (0, 4096):
@@ -61,6 +103,26 @@ class PCA9685:
 
 class Servos:
     def __init__(self, i2c, address=0x40, freq=50, min_us=400, max_us=2350, degrees=180):
+        """
+        note:
+            en: Create a Servo instance.
+            cn: 创建一个舵机实例。
+
+        params:
+            i2c:
+              note: The I2C bus.
+            address:
+              note: The I2C address.
+            freq:
+              note: The PWM frequency in Hz.
+            min_us:
+              note: The minimum pulse width in microseconds.
+            max_us:
+              note: The maximum pulse width in microseconds.
+            degrees:
+              note: The maximum angle in degrees.
+
+        """
         self.period = 1000000 / freq
         self.min_duty = self._us2duty(min_us)
         self.max_duty = self._us2duty(max_us)
@@ -73,6 +135,23 @@ class Servos:
         return int(4095 * value / self.period)
 
     def position(self, index, degrees=None, radians=None, us=None, duty=None):
+        """
+        note:
+            en: Set the servo position.
+            cn: 设置舵机位置。
+
+        params:
+            index:
+              note: The channel index.
+            degrees:
+              note: The angle in degrees.
+            radians:
+              note: The angle in radians.
+            us:
+              note: The pulse width in microseconds.
+            duty:
+              note: The duty cycle in percent.
+        """
         span = self.max_duty - self.min_duty
         if degrees is not None:
             duty = self.min_duty + span * degrees / self.degrees
@@ -88,6 +167,15 @@ class Servos:
         self.pca9685.duty(index, duty)
 
     def release(self, index):
+        """
+        note:
+            en: Release the servo.
+            cn: 释放舵机。
+
+        params:
+            index:
+              note: The channel index.
+        """
         self.pca9685.duty(index, 0)
 
 

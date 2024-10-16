@@ -19,4 +19,5 @@ Module
     rca.rst
     relay_2.rst
     rs232.rst
+    servo2.rst
     step_motor_driver.rst

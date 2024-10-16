@@ -1,5 +1,5 @@
-from pca9685 import Servos
-import i2c_bus
+from driver.pca9685 import Servos
+from .mbus import i2c1
 import module
 
 
@@ -9,8 +9,10 @@ class Servo2Module(Servos):
         self.min_us = min_us
         self.max_us = max_us
         self.degrees = degrees
-        self.i2c = i2c_bus.get(i2c_bus.PORTA)
-        self._available()
+        self.i2c = i2c1
+        if self._addr not in self.i2c.scan():
+            raise module.Module("Servo2 Module not found at I2C address 0x%02X" % self._addr)
+
         super(Servo2Module, self).__init__(
             self.i2c,
             address=self._addr,
@@ -18,12 +20,6 @@ class Servo2Module(Servos):
             max_us=self.max_us,
             degrees=self.degrees,
         )
-
-    def _available(self):
-        if self.i2c.is_ready(self._addr) or self.i2c.is_ready(self._addr):
-            pass
-        else:
-            raise module.Module("module Servo2 maybe not connect")
 
     def deinit(self):
         pass
