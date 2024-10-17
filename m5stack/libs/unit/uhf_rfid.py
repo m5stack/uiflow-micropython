@@ -72,3 +72,18 @@ class UHFRFIDUnit(JRD4035):
 
     def set_impinj_monza_qt_mem(self, qt_mem: bool, persistence: int, password: str = "00000000"):
         return super().set_impinj_monza_qt_mem(persistence, qt_mem, bytes.fromhex(password))
+
+    def nxp_eas_alarm(self):
+        return super().nxp_eas_alarm().hex()
+
+    def get_nxp_config_word(self, password: str = "00000000") -> int:
+        return super().nxp_read_config_word(bytes.fromhex(password))
+
+    def set_nxp_config_word(self, config_word: int, password: str = "00000000"):
+        return super().set_nxp_confog_word(config_word, bytes.fromhex(password))
+
+    def nxp_read_protect(self, set, password: str = "00000000"):
+        return super().nxp_read_protect(set, bytes.fromhex(password))
+
+    def nxp_change_eas(self, set, password: str = "00000000"):
+        return super().nxp_change_eas(set, bytes.fromhex(password))
