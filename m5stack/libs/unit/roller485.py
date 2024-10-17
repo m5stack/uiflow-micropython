@@ -71,16 +71,28 @@ class RollerBase:
     def write(self, register, data: bytes) -> None:
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def read_i2c_slave(self, length) -> bytes:
+    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def write_i2c_slave(self, byte_list, stop_bit) -> None:
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def read_i2c_slave_register(self, register, length) -> bytes:
+    def writeto_mem(self, addr: int, mem_addr: int, byte_list) -> Literal[True]:  # 0x61
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def write_i2c_slave_register(self, register, bytes) -> None:
+    def readfrom(self, addr: int, nbytes: int):  # 0x62
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def scan(self) -> list:
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def deinit(self) -> None:
         raise NotImplementedError("Subclasses should implement this method!")
 
     #! MOTOR CONFIGURATION API !#
@@ -484,7 +496,7 @@ class RollerI2C(RollerBase):
 
 
 class Roller485(RollerBase):
-    def __init__(self, bus, address=_ROLLER485_RS485_ADDR) -> None:
+    def __init__(self, bus, address=_ROLLER485_RS485_ADDR, mode=None) -> None:
         """! Initialize the Roller485 object.
 
         @param bus: The RS485 bus instance.
@@ -581,6 +593,7 @@ class Roller485(RollerBase):
                 if resp_buf[0:2] == b"\xAA\x55":
                     if resp_buf[2:4] == bytes([(0x10 + cmd), id]):  # Write cmd+10 = response cmd
                         if self._crc8(resp_buf[2:-1]) == resp_buf[-1]:
+                            print(f"Response: {[hex(byte) for byte in resp_buf]}")
                             return (True, resp_buf[2:-1])
             time.sleep_ms(100)
         return (False, 0)
@@ -603,7 +616,7 @@ class Roller485(RollerBase):
 
 
 class Roller485ToI2CBus(Roller485):
-    def __init__(self, bus, address=_ROLLER485_RS485_ADDR, i2c_address=0x64) -> None:
+    def __init__(self, bus, address=_ROLLER485_RS485_ADDR, mode=None) -> None:
         """! Initialize the Roller485ToI2CBus object.
 
         @param bus: The RS485 bus instance.
@@ -612,80 +625,34 @@ class Roller485ToI2CBus(Roller485):
         """
         self._rs485_bus = bus
         self._rs485_addr = address  # Motor ID == address
-        self._i2c_addr = i2c_address  # I2C slave address
         super().__init__(bus, address=address)
 
-    def read_i2c_slave(self, length):
-        """! Read data from the I2C slave device via RS485.
-
-        @param length: The number of bytes to read.
-        @return: The data read from the I2C slave.
-        @throws Exception: If the read operation fails.
-        """
-        self.send_command(
-            _READ_I2C_SLAVE_ADDR, self._rs485_addr, [self._i2c_addr, length], buf_len=5
-        )
-        success, output = self.read_response(_READ_I2C_SLAVE_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return output[8 : (8 + length)]
-        else:
-            raise Exception(
-                f"Read I2C Slave failed: register {self._i2c_addr:#04x}, length {length}"
-            )
-
-    def write_i2c_slave(self, byte_list, stop_bit):
-        """! Write data to the I2C slave device via RS485.
-
-        @param byte_list: The data bytes to write.
-        @param stop_bit: Whether to send a stop bit after writing.
-        @return: True if the write operation is successful.
-        @throws Exception: If the write operation fails.
-        """
-        data_len = len(byte_list)
-        data = [self._i2c_addr, data_len, stop_bit, 0, 0, 0] + list(byte_list)
-        self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
-        success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return True
-        else:
-            raise Exception("Write to I2C Slave failed")
-
-    def read_i2c_slave_register(self, register, length) -> bytes:
-        """! Read data from a specific register of the I2C slave device.
-
-        @param register: The register address to read from.
-        @param length: The number of bytes to read.
-        @return: The data read from the register.
-        @throws Exception: If the read operation fails.
-        """
-        byte_len = 2 if register > 0xFF else 1
+    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
+        byte_len = 2 if mem_addr > 0xFF else 1
         if byte_len == 1:
-            data = [self._i2c_addr, 0, register, 0, length]
+            data = [addr, 0, mem_addr, 0, nbytes]
         else:
-            data = [self._i2c_addr, 1, register, (register >> 8), length]
+            data = [addr, 1, mem_addr, (mem_addr >> 8), nbytes]
         self.send_command(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=8)
         success, output = self.read_response(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr)
         if success and output[2]:
-            return output[8 : (8 + length)]
+            return output[8 : (8 + nbytes)]
         else:
             raise Exception(
-                f"Read I2C Slave Register failed: register {register:#04x}, length {length}"
+                f"Read I2C Slave Memory Register failed: register {mem_addr:#04x}, nbytes {nbytes}"
             )
 
-    def write_i2c_slave_register(self, register, byte_list) -> Literal[True]:
-        """! Write data to a specific register of the I2C slave device.
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
+        data = self.readfrom_mem(addr, mem_addr, len(buf))
+        buf[: len(data)] = data
 
-        @param register: The register address to write to.
-        @param byte_list: The data bytes to write.
-        @return: True if the write operation is successful.
-        @throws Exception: If the write operation fails.
-        """
-        byte_len = 2 if register > 0xFF else 1
+    def writeto_mem(self, addr: int, mem_addr: int, byte_list) -> Literal[True]:  # 0x61
+        byte_len = 2 if mem_addr > 0xFF else 1
         data_len = len(byte_list)
         if byte_len == 1:
-            data = [self._i2c_addr, 0, register, 0, data_len, 0]
+            data = [addr, 0, mem_addr, 0, data_len, 0]
         else:
-            data = [self._i2c_addr, 1, register, (register >> 8), data_len, 0]
+            data = [addr, 1, mem_addr, (mem_addr >> 8), data_len, 0]
         data += list(byte_list)
         self.send_command(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=25)
         success, output = self.read_response(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr)
@@ -693,8 +660,49 @@ class Roller485ToI2CBus(Roller485):
             return True
         else:
             raise Exception(
-                f"Write to I2C Slave Register failed: register {register:#04x}, data {byte_list}"
+                f"Write to I2C Memory Register failed: register {mem_addr:#04x}, data {byte_list}"
             )
+
+    def readfrom(self, addr: int, nbytes: int):  # 0x62
+        self.send_command(_READ_I2C_SLAVE_ADDR, self._rs485_addr, [addr, nbytes], buf_len=5)
+        success, output = self.read_response(_READ_I2C_SLAVE_ADDR, self._rs485_addr)
+        if success and output[2]:
+            return output[8 : (8 + nbytes)]
+        else:
+            raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
+
+    def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+        data = self.readfrom(addr, len(buf))
+        buf[: len(data)] = data
+
+    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+        data_len = len(buf)
+        data = [addr, data_len, stop, 0, 0, 0] + list(buf)
+
+        self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
+        success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
+        if success and output[2]:
+            return True
+
+    def _writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+        data_len = len(buf)
+        data = [addr, data_len, stop, 0, 0, 0] + list(buf)
+
+        self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
+        success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
+        if success and output[2]:
+            return True
+
+    def scan(self) -> list:
+        found_devices = []
+        for address in range(0x08, 0x77 + 1):
+            try:
+                if self._writeto(address, bytes(0x01), stop=False):
+                    found_devices.append(address)
+
+            except OSError:
+                pass
+        return found_devices
 
 
 class Roller485Unit:
@@ -718,4 +726,6 @@ class Roller485Unit:
             cls.instance = Roller485(args[0], **kwargs)
         elif kwargs["mode"] == cls._RS485_TO_I2C_MODE:
             cls.instance = Roller485ToI2CBus(args[0], **kwargs)
+        else:
+            raise ValueError("Invalid mode specified")
         return cls.instance

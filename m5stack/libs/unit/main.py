@@ -5,6 +5,7 @@ import machine
 from M5 import *
 from hardware import *
 from roller485 import Roller485Unit
+from myenv import ENVUnit
 import time
 
 # i2c0 = None
@@ -32,12 +33,16 @@ def setup():
         invert=0,
         flow=0,
     )
-    roller485_0 = Roller485Unit(
-        uart, address=0x00, i2c_address=0x44, mode=Roller485Unit._RS485_TO_I2C_MODE
-    )
+    roller485_0 = Roller485Unit(uart, address=0x01, mode=Roller485Unit._RS485_TO_I2C_MODE)
+    env2_0 = ENVUnit(i2c=roller485_0, type=2)
+    print(f"roller485_0 instance: {roller485_0}")  # 打印实例信息
     Widgets.fillScreen(0xFF9900)
 
-    roller485_0.set_motor_output_state(0)
+    print(env2_0.read_temperature())
+
+    # roller485_0.scan()
+
+    # roller485_0.set_motor_output_state(0)
     # I2C Communication
     # roller485_0.write_i2c_slave(bytes((0x2C, 0x06)),0)
     # read_buffer=roller485_0.read_i2c_slave(0x06)
@@ -49,9 +54,9 @@ def setup():
 
     # # #SYSTEM REGISTER
     # roller485_0.set_rgb_color(0x33ff33)
-    print(roller485_0.get_rgb_color())
-    roller485_0.set_rgb_color(0x11FF33)
-    print(roller485_0.get_rgb_color())
+    # print(roller485_0.get_rgb_color())
+    # roller485_0.set_rgb_color(0x11ff33)
+    # print(roller485_0.get_rgb_color())
 
     # print(f"get_rgb_brightness:{roller485_0.get_rgb_brightness()}")
     # roller485_0.set_rgb_brightness(100)
@@ -119,14 +124,14 @@ def setup():
     # roller485_0.set_rgb_brightness(100)
 
     # # Speed Mode
-    roller485_0.set_motor_output_state(0)
-    roller485_0.set_motor_mode(1)
-    roller485_0.set_motor_speed(100)
-    roller485_0.set_speed_max_current(1200)
-    roller485_0.set_motor_output_state(1)
-    print(f"get_motor_status:{roller485_0.get_motor_status()}")
-    print(f"get_motor_error_code:{roller485_0.get_motor_error_code()}")
-    print(f"get_motor_speed_readback:{roller485_0.get_motor_speed_readback()}")
+    # roller485_0.set_motor_output_state(0)
+    # roller485_0.set_motor_mode(1)
+    # roller485_0.set_motor_speed(100)
+    # roller485_0.set_speed_max_current(1200)
+    # roller485_0.set_motor_output_state(1)
+    # print(f"get_motor_status:{roller485_0.get_motor_status()}")
+    # print(f"get_motor_error_code:{roller485_0.get_motor_error_code()}")
+    # print(f"get_motor_speed_readback:{roller485_0.get_motor_speed_readback()}")
 
     # # Position Mode
     # roller485_0.set_motor_output_state(0)
@@ -161,8 +166,8 @@ def loop():
     # global i2c0, roller485_0
     global roller485_0
 
-    roller485_0.write_i2c_slave(bytes((0x2C, 0x06)), 0)
-    read_buffer = roller485_0.read_i2c_slave(0x06)
+    roller485_0.writeto(0x44, bytes((0x2C, 0x06)), False)
+    read_buffer = roller485_0.readfrom(0x44, 0x06)
     print("hex: ", " ".join(f"{byte:02x}" for byte in read_buffer))
     temp = ((((read_buffer[0] * 256.0) + read_buffer[1]) * 175) / 65535.0) - 45
     print("Temperature: ", temp)
@@ -175,12 +180,12 @@ def loop():
 if __name__ == "__main__":
     try:
         setup()
-        while True:
-            elapsed_time = time.time() - start_time
-            if elapsed_time > 10:
-                print("超过10秒，循环终止")
-                break
-            loop()
+        # while True:
+        #     elapsed_time = time.time() - start_time
+        #     if elapsed_time > 10:
+        #         print("超过10秒，循环终止")
+        #         break
+        #     loop()
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
