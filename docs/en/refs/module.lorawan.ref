@@ -1,0 +1,45 @@
+
+.. |LoRaWANModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/comx_lorawan/comx_lorawan_01.webp
+    :target: https://docs.m5stack.com/en/module/comx_lorawan
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/init.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_mode.png
+.. |set_parameters.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_parameters.png
+.. |wake_up.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/wake_up.png
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/sleep.png
+.. |reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/reset.png
+.. |restore_factory_settings.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/restore_factory_settings.png
+.. |set_copyright.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_copyright.png
+.. |set_auto_low_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_auto_low_power.png
+.. |query_chip_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/query_chip_id.png
+.. |enable_rx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/enable_rx.png
+.. |set_deveui.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_deveui.png
+.. |set_appeui.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_appeui.png
+.. |set_appkey.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_appkey.png
+.. |set_nwkskey.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_nwkskey.png
+.. |set_appskey.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_appskey.png
+.. |set_devaddr.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_devaddr.png
+.. |set_otaa_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_otaa_mode.png
+.. |set_adr.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_adr.png
+.. |set_channel_mask.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_channel_mask.png
+.. |join_network.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/join_network.png
+.. |set_duty_cycle.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_duty_cycle.png
+.. |set_class_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_class_mode.png
+.. |set_ack.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_ack.png
+.. |set_app_port.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_app_port.png
+.. |set_retransmission_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/set_retransmission_count.png
+.. |send_hex.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/send_hex.png
+.. |send_string.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/send_string.png
+.. |query_lorawan_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/query_lorawan_mode.png
+.. |save_parameters_to_flash.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/save_parameters_to_flash.png
+.. |at_cmd.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/at_cmd.png
+.. |at_query.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/at_query.png
+.. |at_receive.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/at_receive.png
+.. |flush.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/flush.png
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/any.png
+.. |receive_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/receive_data.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lorawanmodule/example.png
+

@@ -11,6 +11,7 @@ Module
     grbl.rst
     hmi.rst
     lora.rst
+    lorawan.rst
     plus.rst
     pps.rst
     rca.rst

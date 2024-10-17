@@ -14,6 +14,7 @@ package(
         "hmi.py",
         "iot_base_catm.py",
         "lora.py",
+        "lorawan.py",
         "mbus.py",
         "module_4in8out.py",
         "module_helper.py",
