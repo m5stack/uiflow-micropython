@@ -93,6 +93,7 @@ package(
         "relay4.py",
         "rfid.py",
         "rgb.py",
+        "roller485.py",
         "rs485_iso.py",
         "rs485.py",
         "rtc8563.py",

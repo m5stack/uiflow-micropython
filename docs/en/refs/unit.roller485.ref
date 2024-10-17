@@ -1,0 +1,85 @@
+
+.. |Roller485| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-Roller485/4.webp
+    :target: https://docs.m5stack.com/en/unit/Unit-Roller485
+    :height: 200px
+    :width: 200px
+#base
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/init.png
+.. |set_motor_output_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_output_state.png
+.. |get_motor_output_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_output_state.png
+.. |set_motor_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_mode.png
+.. |get_motor_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_mode.png
+.. |set_motor_over_range_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_over_range_protect_state.png
+.. |get_motor_over_range_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_over_range_protect_state.png
+.. |remove_motor_jam_protect.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/remove_motor_jam_protect.png
+.. |get_motor_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_status.png
+.. |get_motor_error_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_error_code.png
+.. |set_button_change_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_button_change_mode.png
+.. |get_button_change_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_button_change_mode.png
+.. |set_motor_jam_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_jam_protect_state.png
+.. |get_motor_jam_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_jam_protect_state.png
+.. |set_motor_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_id.png
+.. |get_motor_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_id.png
+.. |set_485_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_485_baudrate.png
+.. |get_485_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_485_baudrate.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_rgb_brightness.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_rgb_brightness.png
+.. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_speed.png
+.. |get_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_speed.png
+.. |set_speed_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_speed_max_current.png
+.. |get_speed_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_speed_max_current.png
+.. |get_motor_speed_readback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_speed_readback.png
+.. |set_motor_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_speed_pid.png
+.. |get_motor_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_speed_pid.png
+.. |set_motor_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_position.png
+.. |get_motor_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_position.png
+.. |set_position_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_position_max_current.png
+.. |get_position_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_position_max_current.png
+.. |get_motor_position_readback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_position_readback.png
+.. |get_motor_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_position_pid.png
+.. |set_motor_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_position_pid.png
+.. |set_motor_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_motor_max_current.png
+.. |get_motor_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_max_current.png
+.. |get_motor_current_readback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_motor_current_readback.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_rgb_color.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_rgb_color.png
+.. |set_rgb_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_rgb_mode.png
+.. |get_rgb_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_rgb_mode.png
+.. |get_vin_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_vin_voltage.png
+.. |get_temperature_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_temperature_value.png
+.. |set_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_encoder_value.png
+.. |get_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_encoder_value.png
+.. |save_param_to_flash.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/save_param_to_flash.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_firmware_version.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/set_i2c_address.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/get_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/example.png
+
+#i2c
+.. |init2.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/init.png
+.. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/read.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/write.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/example.png
+
+#485
+.. |init3.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/init.png
+.. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/read.png
+.. |create_frame.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/create_frame.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/write.png
+.. |send_command.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/send_command.png
+.. |read_response.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/read_response.png
+.. |_crc8.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/_crc8.png
+
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/example.png
+
+#485->i2c
+.. |init4.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/init.png
+.. |read_i2c_slave.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/read_i2c_slave.png
+.. |write_i2c_slave.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/write_i2c_slave.png
+.. |read_i2c_slave_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/read_i2c_slave_register.png
+.. |write_i2c_slave_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/write_i2c_slave_register.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/roller485/example.png

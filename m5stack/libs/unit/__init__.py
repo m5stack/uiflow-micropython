@@ -94,6 +94,7 @@ _attrs = {
     "Relay2Unit": "relay2",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
+    "Roller485Unit": "roller485",
     "ISO485Unit": "rs485_iso",
     "RS485Unit": "rs485",
     "RTC8563Unit": "rtc8563",
