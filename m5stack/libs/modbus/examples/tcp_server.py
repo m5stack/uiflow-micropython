@@ -1,23 +1,22 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024 lbuque, written for M5Stack
+#
+# SPDX-License-Identifier: MIT
 import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import modbus
-import serial
-import time
 import asyncio
+import modbus
 
-
-ser = serial.Serial("COM22", 115200)
-slave = modbus.ModbusRTUSlave(
-    uart=ser,
-    verbose=True,
+srv = modbus.ModbusTCPServer(
+    "0.0.0.0",
+    5000,
     context={
         "discrete_inputs": [
             {
                 "register": 67,  # register address of the input status register
-                "val": [
+                "value": [
                     0,
                 ],  # used to set a register, not possible for ISTS
                 "description": "Optional description of the input status register",
@@ -28,7 +27,7 @@ slave = modbus.ModbusRTUSlave(
         "coils": [
             {
                 "register": 1000,  # register address of the coil
-                "val": [
+                "value": [
                     True,
                     False,
                     True,
@@ -51,7 +50,7 @@ slave = modbus.ModbusRTUSlave(
         "input_registers": [
             {
                 "register": 10,  # register address of the input register
-                "val": [
+                "value": [
                     60001,
                 ],  # used to set a register, not possible for IREGS
                 "description": "Optional description of the static input register",
@@ -62,7 +61,7 @@ slave = modbus.ModbusRTUSlave(
         "holding_registers": [
             {
                 "register": 93,  # register address of the holding register
-                "val": [
+                "value": [
                     19,
                 ],  # used to set a register
                 "description": "Optional description of the holding register",
@@ -73,57 +72,8 @@ slave = modbus.ModbusRTUSlave(
     },
 )
 
+# asyncio.run(srv.run_async())
 
-def cb_01(start_reg, reg_num, context):
-    print("cb_01:")
-    print("\tstart register:", start_reg)
-    print("\tregister number:", reg_num)
-    print("\tcontext:", context)
-
-
-def cb_02(start_reg, reg_num, context):
-    print("cb_02:")
-    print("\tstart register:", start_reg)
-    print("\tregister number:", reg_num)
-    print("\tcontext:", context)
-
-
-def cb_03(start_reg, reg_num, context):
-    print("cb_03:")
-    print("\tstart register:", start_reg)
-    print("\tregister number:", reg_num)
-    print("\tcontext:", context)
-
-
-def cb_04(start_reg, reg_num, context):
-    print("cb_04:")
-    print("\tstart register:", start_reg)
-    print("\tregister number:", reg_num)
-    print("\tcontext:", context)
-
-
-def cb_05(reg_addr, data, context):
-    print("cb_05:")
-    print("\tregister address:", reg_addr)
-    print("\tdata:", data)
-
-
-def cb_06(reg_addr, data, context):
-    print("cb_06:")
-    print("\tregister address:", reg_addr)
-    print("\tdata:", data)
-
-
-# https://blog.csdn.net/xukai871105/article/details/16368567
-def cb_15(start_reg, reg_num, data, context):
-    print("cb_15:")
-
-
-# https://blog.csdn.net/xukai871105/article/details/16368567
-def cb_16(start_reg, reg_num, data, context):
-    print("cb_16:")
-
-
-slave.cb[0x01] = cb_01
-
-asyncio.run(slave.run_async())
+srv.start()
+while True:
+    srv.tick()

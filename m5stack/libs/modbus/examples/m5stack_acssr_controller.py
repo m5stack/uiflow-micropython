@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2024 lbuque, written for M5Stack
+#
+# SPDX-License-Identifier: MIT
+
 import sys
 import os
 import time

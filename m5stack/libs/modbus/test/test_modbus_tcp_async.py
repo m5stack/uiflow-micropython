@@ -23,25 +23,25 @@ class Test(unittest.TestCase):
                 "coils": [
                     {
                         "register": 1000,
-                        "val": [True, False, True, False, True, False, True, False, True, False],
+                        "value": [True, False, True, False, True, False, True, False, True, False],
                     }
                 ],  # Coils: ON OFF ON OFF ON OFF ON OFF ON OFF
                 "discrete_inputs": [
                     {
                         "register": 1000,
-                        "val": [True, False, True, False, True, False, True, False, True, False],
+                        "value": [True, False, True, False, True, False, True, False, True, False],
                     }
                 ],  # Digital Inputs: ON OFF ON OFF ON OFF ON OFF ON OFF
                 "holding_registers": [
                     {
                         "register": 1000,
-                        "val": [0x0001, 0x0203, 0x0405, 0x0607, 0x0809, 0x0A0B, 0x0C0D, 0x0E0F],
+                        "value": [0x0001, 0x0203, 0x0405, 0x0607, 0x0809, 0x0A0B, 0x0C0D, 0x0E0F],
                     }
                 ],
                 "input_registers": [
                     {
                         "register": 1000,
-                        "val": [0x0001, 0x0203, 0x0405, 0x0607, 0x0809, 0x0A0B, 0x0C0D, 0x0E0F],
+                        "value": [0x0001, 0x0203, 0x0405, 0x0607, 0x0809, 0x0A0B, 0x0C0D, 0x0E0F],
                     }
                 ],
             },

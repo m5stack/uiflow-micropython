@@ -1,0 +1,25 @@
+
+.. |Relay2Module| image:: https://static-cdn.m5stack.com/resource/docs/products/module/2Relay/img-07c98873-5b75-4c92-ab16-64c890c6166e.webp
+    :target: https://docs.m5stack.com/en/module/2Relay
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/init.png
+.. |set_relay_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/set_relay_state.png
+.. |get_relay_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/get_relay_status.png
+.. |set_all_relay_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/set_all_relay_state.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/get_firmware_version.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/set_i2c_address.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/get_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/2relay/example.png
+
+
+.. |relay2_fire_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/relay2/relay2_fire_example.m5f2"
+        target="_blank"
+    >
+        relay2_fire_example.m5f2
+    </a>

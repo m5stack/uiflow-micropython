@@ -1,0 +1,43 @@
+.. |add_coil.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/add_coil.png
+.. |add_discrete_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/add_discrete_input.png
+.. |add_holding_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/add_holding_register.png
+.. |add_input_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/add_input_register.png
+.. |get_coil.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/get_coil.png
+.. |get_discrete_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/get_discrete_input.png
+.. |get_holding_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/get_holding_register.png
+.. |get_input_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/get_input_register.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/init.png
+.. |read_coils_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/read_coils_callback.png
+.. |read_discrete_inputs_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/read_discrete_inputs_callback.png
+.. |read_holding_registers_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/read_holding_registers_callback.png
+.. |read_input_registers_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/read_input_registers_callback.png
+.. |remove_coil.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/remove_coil.png
+.. |remove_discrete_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/remove_discrete_input.png
+.. |remove_holding_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/remove_holding_register.png
+.. |remove_input_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/remove_input_register.png
+.. |set_coil.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_coil.png
+.. |set_discrete_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_discrete_input.png
+.. |set_holding_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_holding_register.png
+.. |set_input_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_input_register.png
+.. |set_multi_coils.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_multi_coils.png
+.. |set_multi_discrete_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_multi_discrete_input.png
+.. |set_multi_holding_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_multi_holding_register.png
+.. |set_multi_input_register.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/set_multi_input_register.png
+.. |start.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/start.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/stop.png
+.. |tick.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/tick.png
+.. |write_multiple_coils_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/write_multiple_coils_callback.png
+.. |write_multiple_registers_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/write_multiple_registers_callback.png
+.. |write_single_coil_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/write_single_coil_callback.png
+.. |write_single_register_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/write_single_register_callback.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_slave/example.png
+
+.. |cores3_rtu_slave_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/modbus/cores3_rtu_slave_example.m5f2"
+        target="_blank"
+    >
+        cores3_rtu_slave_example.m5f2
+    </a>

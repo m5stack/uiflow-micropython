@@ -76,14 +76,14 @@ class JRD4035:
         self._verbose and print("RSSI: %d, PC: %d, EPC: %s, CRC: %d" % (rssi, pc, epc, crc))
         return epc
 
-    def continuous_inventory(self, count: int):
+    def continuous_inventory(self, count: int) -> tuple:
         struct.pack_into(">BH", self._buffer3, 0, 0x22, count)
         rxdata, status = self.command(0x27, data=bytes(self._buffer1))
         if status is False:
-            return
+            return (0, 0, b"", 0)
         rssi, pc, epc, crc = struct.unpack_from(">BH%dsH" % (len(rxdata) - 5), rxdata)
         self._verbose and print("RSSI: %d, PC: %d, EPC: %s, CRC: %d" % (rssi, pc, epc, crc))
-        return rssi, pc, epc, crc
+        return (rssi, pc, epc, crc)
 
     def stop_continuous_inventory(self) -> bool:
         rxdata, status = self.command(0x28)
@@ -97,7 +97,7 @@ class JRD4035:
         pointer: int,
         truncate: bool,
         mask: bytes,
-    ):
+    ) -> bool:
         buffer = struct.pack(
             ">BIBB%ds" % (len(mask)),
             (target << 5 | action << 3 | membank),
@@ -160,7 +160,7 @@ class JRD4035:
 
     def write_mem_bank(
         self, bank: int, offset: int, data: str, access: bytes = b"\x00\x00\x00\x00"
-    ):
+    ) -> bool:
         data = bytes.fromhex(data)
         buffer = bytearray(9 + len(data))
         struct.pack_into(
@@ -182,7 +182,7 @@ class JRD4035:
         tid_lock: int = 0b00,
         user_lock: int = 0b00,
         access: bytes = b"\x00\x00\x00\x00",
-    ):
+    ) -> bool:
         payload = 0b1111_1111_1100_0000_0000
         payload |= kill_lock << 8
         payload |= access_lock << 6
@@ -205,19 +205,19 @@ class JRD4035:
         (_, _, _, param) = struct.unpack_from(">BH%dsB" % (len(rxdata) - 4), rxdata)
         return True if param == 0x00 else False
 
-    def set_access_password(self, password: bytes):
+    def set_access_password(self, password: bytes) -> None:
         self.write_mem_bank(self, self.RFU, 0x00, password)
 
-    def set_kill_password(self, password: bytes):
+    def set_kill_password(self, password: bytes) -> None:
         self.write_mem_bank(self, self.RFU, 0x20, password)
 
-    def kill(self, password: bytes = b"\x00\x00\x00\x00"):
+    def kill(self, password: bytes = b"\x00\x00\x00\x00") -> bool:
         rxdata, status = self.command(0x65, data=password)
         return True if status and rxdata == b"\x00" else False
 
     def set_query_param(
         self, dr=0b0, m=0b00, tr_ext=0b1, sel=0b00, session=0b00, target=0b0, q=0b0100
-    ):
+    ) -> bool:
         if dr != 0b0 and m != 0b00 and tr_ext != 0b1:
             raise ValueError("Invalid query parameters")
         payload = 0b0000_0000_0000_0000
@@ -326,20 +326,20 @@ class JRD4035:
         strengths = self.get_blocking_signal_strength_all()
         return strengths[channel] if strengths else -1
 
-    def get_blocking_signal_strength_all(self) -> [tuple | None]:
+    def get_blocking_signal_strength_all(self) -> tuple:
         rxdata, status = self.command(0xF2)
         if status is False:
-            return None
+            return (-1 for _ in range(20))
         fmt = "".join("b" for _ in range((len(rxdata) - 2)))
         return struct.unpack_from(">%s" % (fmt), rxdata, 2)
 
     def get_channel_rssi(self, channel: int) -> int:
         return self.get_channel_rssi_all()[channel]
 
-    def get_channel_rssi_all(self) -> [tuple | None]:
+    def get_channel_rssi_all(self) -> tuple:
         rxdata, status = self.command(0xF3)
         if status is False:
-            return None
+            return (-1 for _ in range(20))
         fmt = "".join("b" for _ in range((len(rxdata) - 2)))
         return struct.unpack_from(">%s" % (fmt), rxdata, 2)
 
@@ -347,29 +347,29 @@ class JRD4035:
         rxdata, status = self.command(0x17)
         return True if status and rxdata == b"\x00" else False
 
-    def wake(self):
+    def wake(self) -> None:
         self._uart.write(b"\x55")
         time.sleep(0.1)
 
-    def set_automatic_sleep_time(self, min: int):
+    def set_automatic_sleep_time(self, min: int) -> bool:
         struct.pack_into(">B", self._buffer1, 0, min)
         rxdata, status = self.command(0x1D, data=self._buffer1)
         return True if status and rxdata == b"\x00" else False
 
-    def disable_automatic_sleep(self):
+    def disable_automatic_sleep(self) -> bool:
         return self.set_automatic_sleep_time(0)
 
-    def nxp_read_protect(self, set, access_password: bytes = b"\x00\x00\x00\x00"):
+    def nxp_read_protect(self, set, access_password: bytes = b"\x00\x00\x00\x00") -> bool:
         struct.pack_into(">4sB", self._buffer, 0, access_password, set)
         rxdata, status = self.command(0xE1, data=self._buffer[0:5])
         return True if status and rxdata == b"\x00" else False
 
-    def nxp_change_eas(self, set, access_password: bytes = b"\x00\x00\x00\x00"):
-        struct.pack_into(">4sB", self._buffer, 0, access_password, 0x01)
+    def nxp_change_eas(self, set, access_password: bytes = b"\x00\x00\x00\x00") -> bool:
+        struct.pack_into(">4sB", self._buffer, 0, access_password, set)
         rxdata, status = self.command(0xE3, data=self._buffer[0:5])
         return True if status and rxdata == b"\x00" else False
 
-    def nxp_eas_alarm(self):
+    def nxp_eas_alarm(self) -> bytes:
         rxdata, status = self.command(0xE4)
         if status is False:
             return b""
@@ -377,7 +377,7 @@ class JRD4035:
         (code,) = struct.unpack_from(">8s", rxdata)
         return code
 
-    def nxp_read_config_word(self, access_password: bytes = b"\x00\x00\x00\x00"):
+    def nxp_read_config_word(self, access_password: bytes = b"\x00\x00\x00\x00") -> int:
         struct.pack_into(">4sH", self._buffer, 0, access_password, 0x0000)
         rxdata, status = self.command(0xE2, data=self._buffer[0:6])
         if status is False:
@@ -386,20 +386,24 @@ class JRD4035:
         (config_word,) = struct.unpack_from(">H", rxdata, 1)
         return config_word
 
-    def set_nxp_confog_word(self, config_word, access_password: bytes = b"\x00\x00\x00\x00"):
+    def set_nxp_confog_word(
+        self, config_word: int, access_password: bytes = b"\x00\x00\x00\x00"
+    ) -> bool:
         old_config_word = self.nxp_read_config_word(access_password)
         config_word = config_word ^ old_config_word
         struct.pack_into(">4sH", self._buffer, 0, access_password, config_word)
         rxdata, status = self.command(0xE2, data=self._buffer[0:6])
         return True if status and rxdata == b"\x00" else False
 
-    def get_impinj_monza_qt_sr(self, persistence, password: bytes = b"\x00\x00\x00\x00"):
+    def get_impinj_monza_qt_sr(self, persistence, password: bytes = b"\x00\x00\x00\x00") -> bool:
         return self.impinj_monza_qt_read_cmd(persistence, password=password)[0]
 
-    def get_impinj_monza_qt_mem(self, persistence, password: bytes = b"\x00\x00\x00\x00"):
+    def get_impinj_monza_qt_mem(self, persistence, password: bytes = b"\x00\x00\x00\x00") -> bool:
         return self.impinj_monza_qt_read_cmd(persistence, password=password)[1]
 
-    def impinj_monza_qt_read_cmd(self, persistence, password: bytes = b"\x00\x00\x00\x00"):
+    def impinj_monza_qt_read_cmd(
+        self, persistence, password: bytes = b"\x00\x00\x00\x00"
+    ) -> tuple:
         # TODO
         payload = 0b0000_0000_0000_0000
         struct.pack_into(">4sBBH", self._buffer8, 0, password, 0x00, persistence, payload)
@@ -412,19 +416,19 @@ class JRD4035:
 
     def set_impinj_monza_qt_sr(
         self, persistence, qt_sr: bool, password: bytes = b"\x00\x00\x00\x00"
-    ):
+    ) -> bool:
         _, qt_mem = self.impinj_monza_qt_read_cmd(persistence, password)
         return self.impinj_monza_qt_write_cmd(persistence, qt_sr, qt_mem, password)
 
     def set_impinj_monza_qt_mem(
         self, persistence, qt_mem: bool, password: bytes = b"\x00\x00\x00\x00"
-    ):
+    ) -> bool:
         qt_sr, _ = self.impinj_monza_qt_read_cmd(persistence, password)
         return self.impinj_monza_qt_write_cmd(persistence, qt_sr, qt_mem, password)
 
     def impinj_monza_qt_write_cmd(
         self, persistence, qt_sr: bool, qt_mem: bool, password: bytes = b"\x00\x00\x00\x00"
-    ):
+    ) -> bool:
         payload = 0b0000_0000_0000_0000
         payload |= int(qt_sr) << 15
         payload |= int(qt_mem) << 14
@@ -436,12 +440,12 @@ class JRD4035:
         (ul, pc, epc, param) = struct.unpack_from(">BH%dsH" % (len(rxdata) - 4), rxdata)
         return True if param == 0x00 else False
 
-    def command(self, cmd, data=b"", timeout=5000):
+    def command(self, cmd, data=b"", timeout=5000) -> tuple:
         self._send(cmd, data)
         rxdata, status = self._receive(length=100, timeout=timeout)
         return rxdata, status
 
-    def _send(self, cmd, data=b""):
+    def _send(self, cmd, data=b"") -> None:
         checksum = self._checksum(self._FRAME_CMD, cmd, len(data), data)
         frame = struct.pack(
             "!BBBH%dsBB" % len(data),
@@ -456,7 +460,7 @@ class JRD4035:
         self._verbose and print("Frame to send: %s" % (" ".join(f"{byte:02x}" for byte in frame)))
         self._uart.write(frame)
 
-    def _receive(self, length: int = 8, timeout=1000):
+    def _receive(self, length: int = 8, timeout=1000) -> tuple:
         _buffer = b""
         startpos = -1
         endpos = -1
@@ -495,7 +499,7 @@ class JRD4035:
             self._verbose and print("Malformed packet received, ignore it")
             return b"", False
 
-    def _checksum(self, *args):
+    def _checksum(self, *args) -> int:
         chcksum = 0
         for arg in args:
             if isinstance(arg, int):
@@ -505,7 +509,7 @@ class JRD4035:
                 chcksum += x
         return chcksum & 0xFF
 
-    def check_error_code(self, code):
+    def check_error_code(self, code) -> None:
         if code == 0x17:
             raise Exception("Invalid command")
         if code == 0x20:
