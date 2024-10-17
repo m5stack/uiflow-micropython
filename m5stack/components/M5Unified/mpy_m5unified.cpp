@@ -378,7 +378,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     //     ret = i2c_driver_install(I2C_NUM_1, I2C_MODE_MASTER, 0, 0, 0);
     //     ESP_LOGE("*", "i2c_driver_install: %d", ret);
     // }
-    // M5.In_I2C.release();
+    M5.In_I2C.release();
 
     M5.Display.clear();
     // default display
