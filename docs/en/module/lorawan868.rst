@@ -1,40 +1,23 @@
 
-LoRaWANModule
-=============
+LoRaWAN868Module
+================
 
-.. include:: ../refs/module.lorawanmodule.ref
+.. include:: ../refs/module.lorawan868module.ref
 
 COM.LoRaWAN is a LoRaWAN communication module in the M5Stack stackable module series, supporting node-to-node or LoRaWAN communication.
 
 Support the following products:
 
-|LoRaWANModule|
+|LoRaWAN868Module|
 
 Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    # TX Example
-    import time
-    from module import LoRaWANModule
-    lora = LoRaWANModule(port=(16,17))
-    lora.set_mode(LoRaWANModule.MODE_LORA)
-    while True:
-        lora.send_string("Hello, LoRaWAN!")
-        time.sleep(1)
-    
-    # RX Example
-    import time
-    from module import LoRaWANModule
-    lora = LoRaWANModule(port=(16,17))
-    lora.set_mode(LoRaWANModule.MODE_LORA)
-    lora.enable_rx()
-    while True:
-        if lora.any():
-            print(lora.receive_data())
-            lora.enable_rx()
-        time.sleep(0.1)
+    .. literalinclude:: ../../../examples/module/lorawan868_example_tx.py
+        :language: python
+        :linenos:
+    .. literalinclude:: ../../../examples/module/lorawan868_example_rx.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
@@ -43,13 +26,16 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-class LoRaWANModule
--------------------
+    |lorawan868_example_tx.m5f2|
+    |lorawan868_example_rx.m5f2|
+
+class LoRaWAN868Module
+----------------------
 
 Constructors
 ------------
 
-.. class:: LoRaWANModule(id, port, band)
+.. class:: LoRaWAN868Module(id, port, band)
 
     Initialize the LoRaWANModule.
 
@@ -65,7 +51,7 @@ Constructors
 Methods
 -------
 
-.. method:: LoRaWANModule.set_mode(mode)
+.. method:: LoRaWAN868Module.set_mode(mode)
 
     Set the mode of the LoRaWAN module.
 
@@ -75,7 +61,7 @@ Methods
 
         |set_mode.png|
 
-.. method:: LoRaWANModule.set_parameters(freq, power, sf, bw, cr, preamble, crc, iq_inv, save)
+.. method:: LoRaWAN868Module.set_parameters(freq, power, sf, bw, cr, preamble, crc, iq_inv, save)
 
     Set the parameters of the LoRaWAN module.
 
@@ -93,7 +79,7 @@ Methods
 
         |set_parameters.png|
 
-.. method:: LoRaWANModule.wake_up()
+.. method:: LoRaWAN868Module.wake_up()
 
     Wake up the device through a serial port interrupt. After resetting, the device is in sleep state. In theory, sending any data through the serial port can trigger the interrupt and wake up the device.
 
@@ -102,7 +88,7 @@ Methods
 
         |wake_up.png|
 
-.. method:: LoRaWANModule.sleep()
+.. method:: LoRaWAN868Module.sleep()
 
     Put the device into low-power mode.
 
@@ -111,7 +97,7 @@ Methods
 
         |sleep.png|
 
-.. method:: LoRaWANModule.reset()
+.. method:: LoRaWAN868Module.reset()
 
     Reset the device.
 
@@ -120,7 +106,7 @@ Methods
 
         |reset.png|
 
-.. method:: LoRaWANModule.restore_factory_settings()
+.. method:: LoRaWAN868Module.restore_factory_settings()
 
     Restore the device to factory settings. The parameters will reset and the device will enter sleep mode after response ends.
 
@@ -129,7 +115,7 @@ Methods
 
         |restore_factory_settings.png|
 
-.. method:: LoRaWANModule.set_copyright(enable)
+.. method:: LoRaWAN868Module.set_copyright(enable)
 
     Enable or disable copyright information print when boot loader mode begins. Default is enable.
 
@@ -139,7 +125,7 @@ Methods
 
         |set_copyright.png|
 
-.. method:: LoRaWANModule.set_auto_low_power(enable)
+.. method:: LoRaWAN868Module.set_auto_low_power(enable)
 
     Enable or disable automatic low-power mode. Default is enable.
 
@@ -149,7 +135,7 @@ Methods
 
         |set_auto_low_power.png|
 
-.. method:: LoRaWANModule.query_chip_id()
+.. method:: LoRaWAN868Module.query_chip_id()
 
     Query the unique ID of the chip, which can be used to query the corresponding serial number.
 
@@ -158,7 +144,7 @@ Methods
 
         |query_chip_id.png|
 
-.. method:: LoRaWANModule.enable_rx(timeout)
+.. method:: LoRaWAN868Module.enable_rx(timeout)
 
     Enable the LoRaWAN module to receive data.
 
@@ -168,7 +154,7 @@ Methods
 
         |enable_rx.png|
 
-.. method:: LoRaWANModule.set_deveui(deveui)
+.. method:: LoRaWAN868Module.set_deveui(deveui)
 
     Set or query the DevEui. DevEui must be 16 hex characters (0-9, A-F).
 
@@ -178,7 +164,7 @@ Methods
 
         |set_deveui.png|
 
-.. method:: LoRaWANModule.set_appeui(appeui)
+.. method:: LoRaWAN868Module.set_appeui(appeui)
 
     Set or query the AppEui. AppEui must be 16 hex characters (0-9, A-F).
 
@@ -188,7 +174,7 @@ Methods
 
         |set_appeui.png|
 
-.. method:: LoRaWANModule.set_appkey(appkey)
+.. method:: LoRaWAN868Module.set_appkey(appkey)
 
     Set or query the AppKey. AppKey must be 32 hex characters (0-9, A-F).
 
@@ -198,7 +184,7 @@ Methods
 
         |set_appkey.png|
 
-.. method:: LoRaWANModule.set_nwkskey(nwkskey)
+.. method:: LoRaWAN868Module.set_nwkskey(nwkskey)
 
     Set or query the NwkSKey. NwkSKey must be 32 hex characters (0-9, A-F).
 
@@ -208,7 +194,7 @@ Methods
 
         |set_nwkskey.png|
 
-.. method:: LoRaWANModule.set_appskey(appskey)
+.. method:: LoRaWAN868Module.set_appskey(appskey)
 
     Set or query the AppSKey. AppSKey must be 32 hex characters (0-9, A-F).
 
@@ -218,7 +204,7 @@ Methods
 
         |set_appskey.png|
 
-.. method:: LoRaWANModule.set_devaddr(devaddr)
+.. method:: LoRaWAN868Module.set_devaddr(devaddr)
 
     Set or query the DevAddr. DevAddr must be 8 hex characters (0-9, A-F).
 
@@ -228,7 +214,7 @@ Methods
 
         |set_devaddr.png|
 
-.. method:: LoRaWANModule.set_otaa_mode(enable)
+.. method:: LoRaWAN868Module.set_otaa_mode(enable)
 
     Set or query the OTAA mode. 1 for OTAA mode, 0 for ABP mode.
 
@@ -238,7 +224,7 @@ Methods
 
         |set_otaa_mode.png|
 
-.. method:: LoRaWANModule.set_adr(enable)
+.. method:: LoRaWAN868Module.set_adr(enable)
 
     Enable or disable the ADR (Adaptive Data Rate) function. Default is enabled.
 
@@ -248,7 +234,7 @@ Methods
 
         |set_adr.png|
 
-.. method:: LoRaWANModule.set_channel_mask(mask)
+.. method:: LoRaWAN868Module.set_channel_mask(mask)
 
     Set or query the LoRaWAN working channel mask.
 
@@ -258,7 +244,7 @@ Methods
 
         |set_channel_mask.png|
 
-.. method:: LoRaWANModule.join_network()
+.. method:: LoRaWAN868Module.join_network()
 
     Join the network using OTAA (Over-The-Air Activation). This command triggers the join process.
 
@@ -267,7 +253,7 @@ Methods
 
         |join_network.png|
 
-.. method:: LoRaWANModule.set_duty_cycle(cycle)
+.. method:: LoRaWAN868Module.set_duty_cycle(cycle)
 
     Set or query the communication cycle in milliseconds. For example, 60000 means communication every 60 seconds.
 
@@ -277,7 +263,7 @@ Methods
 
         |set_duty_cycle.png|
 
-.. method:: LoRaWANModule.set_class_mode(mode)
+.. method:: LoRaWAN868Module.set_class_mode(mode)
 
     Set or query the device&#x27;s communication mode. Only Class A or Class C are valid.
 
@@ -287,7 +273,7 @@ Methods
 
         |set_class_mode.png|
 
-.. method:: LoRaWANModule.set_ack(enable)
+.. method:: LoRaWAN868Module.set_ack(enable)
 
     Enable or disable the ACK receipt function. If enabled, the device waits for acknowledgment from the gateway.
 
@@ -297,7 +283,7 @@ Methods
 
         |set_ack.png|
 
-.. method:: LoRaWANModule.set_app_port(port)
+.. method:: LoRaWAN868Module.set_app_port(port)
 
     Set or query the application port (fport) for upstream data. Valid range is 0~255.
 
@@ -307,7 +293,7 @@ Methods
 
         |set_app_port.png|
 
-.. method:: LoRaWANModule.set_retransmission_count(count)
+.. method:: LoRaWAN868Module.set_retransmission_count(count)
 
     Set or query the number of retransmissions if communication fails. The valid range is 3~8.
 
@@ -317,7 +303,7 @@ Methods
 
         |set_retransmission_count.png|
 
-.. method:: LoRaWANModule.send_hex(hex_data)
+.. method:: LoRaWAN868Module.send_hex(hex_data)
 
     Send hex data in LoRaWAN or LoRa mode. Hex characters must be in pairs (e.g., &quot;AABB&quot;).
 
@@ -327,7 +313,7 @@ Methods
 
         |send_hex.png|
 
-.. method:: LoRaWANModule.send_string(string_data)
+.. method:: LoRaWAN868Module.send_string(string_data)
 
     Send string data in LoRaWAN or LoRa mode. The string must consist of ASCII characters.
 
@@ -337,7 +323,7 @@ Methods
 
         |send_string.png|
 
-.. method:: LoRaWANModule.query_lorawan_mode()
+.. method:: LoRaWAN868Module.query_lorawan_mode()
 
     Query if the device is in LoRaWAN or normal LoRa mode.
 
@@ -346,7 +332,7 @@ Methods
 
         |query_lorawan_mode.png|
 
-.. method:: LoRaWANModule.save_parameters_to_flash()
+.. method:: LoRaWAN868Module.save_parameters_to_flash()
 
     Save the current LoRa parameters to FLASH memory.
 
@@ -355,7 +341,7 @@ Methods
 
         |save_parameters_to_flash.png|
 
-.. method:: LoRaWANModule.at_cmd(cmd, data)
+.. method:: LoRaWAN868Module.at_cmd(cmd, data)
 
     Send an AT command to the LoRaWAN module.
 
@@ -366,7 +352,7 @@ Methods
 
         |at_cmd.png|
 
-.. method:: LoRaWANModule.at_query(cmd)
+.. method:: LoRaWAN868Module.at_query(cmd)
 
     Query the current settings of the LoRaWAN module.
 
@@ -376,7 +362,7 @@ Methods
 
         |at_query.png|
 
-.. method:: LoRaWANModule.at_receive()
+.. method:: LoRaWAN868Module.at_receive()
 
     Receive a response from the LoRaWAN module.
 
@@ -385,7 +371,7 @@ Methods
 
         |at_receive.png|
 
-.. method:: LoRaWANModule.flush()
+.. method:: LoRaWAN868Module.flush()
 
     Clear the UART buffer.
 
@@ -394,7 +380,7 @@ Methods
 
         |flush.png|
 
-.. method:: LoRaWANModule.any()
+.. method:: LoRaWAN868Module.any()
 
     Check if there is any data in the UART buffer.
 
@@ -403,7 +389,7 @@ Methods
 
         |any.png|
 
-.. method:: LoRaWANModule.receive_data()
+.. method:: LoRaWAN868Module.receive_data()
 
     Receive data from the LoRaWAN module.
 
@@ -417,16 +403,14 @@ Methods
 Constants
 ---------
 
-.. data:: LoRaWANModule.BAND_470
-.. data:: LoRaWANModule.BAND_868
-.. data:: LoRaWANModule.BAND_915
+    .. data:: LoRaWAN868Module.BAND_470
+    .. data:: LoRaWAN868Module.BAND_868
+    .. data:: LoRaWAN868Module.BAND_915
 
     LoRa band frequency
 
-    
-.. data:: LoRaWANModule.MODE_LORA
-.. data:: LoRaWANModule.MODE_LORAWAN
+    .. data:: LoRaWAN868Module.MODE_LORA
+    .. data:: LoRaWAN868Module.MODE_LORAWAN
 
     LoRa Mode
 
-    
