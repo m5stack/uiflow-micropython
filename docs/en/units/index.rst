@@ -65,6 +65,7 @@ Unit
     relay.rst
     relay4.rst
     rgb.rst
+    roller485.rst
     scroll.rst
     ssr.rst
     synth.rst

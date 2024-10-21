@@ -1,26 +1,73 @@
 
-RollerBase
+Roller485
 ==========
 
 .. include:: ../refs/unit.roller485.ref
 
 Support the following products:
 
-|RollerBase|
+|Roller485|
 
-Micropython Example::
+Roller485 I2C Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
+    .. literalinclude:: ../../../examples/unit/roller485/roller485_i2c_fire_example.py
+        :language: python
+        :linenos:
 
+Roller485 I2C UIFLOW2 Example:
 
-
-UIFLOW2 Example:
-
-    |example.png|
+    |i2c_example.png|
 
 .. only:: builder_html
+
+    |roller485_i2c_fire_example.m5f2|
+
+Roller485 RS485 Example:
+
+    .. literalinclude:: ../../../examples/unit/roller485/roller485_485_fire_example.py
+        :language: python
+        :linenos:
+
+Roller485 RS485 UIFLOW2 Example:
+
+    |rs485_example.png|
+
+.. only:: builder_html
+
+    |roller485_485_fire_example.m5f2|
+
+Roller485 RS485ToI2C Example:
+
+    .. literalinclude:: ../../../examples/unit/roller485/roller485_485toi2c_fire_example.py
+        :language: python
+        :linenos:
+
+Roller485 RS485ToI2C UIFLOW2 Example:
+
+    |rs485_i2c_example.png|
+
+.. only:: builder_html
+
+    |roller485_485toi2c_fire_example.m5f2|
+
+
+class Roller485Unit
+-------------------
+
+Constructors
+------------
+
+.. class:: Roller485Unit(bus, address, mode)
+
+    Initialize the Roller485Unit object based on communication mode.
+
+    :param bus: The I2C/RS485 bus instance.
+    :param address: The motor's RS485 address. Defaults to _ROLLER485_RS485_ADDR.
+    :param mode: The Roller485 communication mode.
+
+    UIFLOW2:
+
+        |init.png|
 
 class RollerBase
 ----------------
@@ -29,10 +76,6 @@ Constructors
 ------------
 
 .. class:: RollerBase()
-
-    UIFLOW2:
-
-        |init.png|
 
 
 Methods
@@ -522,7 +565,7 @@ Methods
 
 
 class RollerI2C(RollerBase)
----------------
+---------------------------
 
 Constructors
 ------------
@@ -550,10 +593,6 @@ Methods
     :param length: The number of bytes to read.
     :return: The data read from the device as a bytes object.
 
-    UIFLOW2:
-
-        |read.png|
-
 .. method:: RollerI2C.write(register, bytes) -> None
 
     Write data to a specified register on the I2C device.
@@ -561,12 +600,9 @@ Methods
     :param register: The name of the register to write to.
     :param bytes: The data to write to the register as a bytes object.
 
-    UIFLOW2:
-
-        |write.png|
 
 class Roller485(RollerBase)
----------------
+----------------------------
 
 Constructors
 ------------
@@ -578,11 +614,6 @@ Constructors
     :param bus: The RS485 bus instance.
     :param int address: The motor's RS485 address. Defaults to _ROLLER485_RS485_ADDR.
 
-    UIFLOW2:
-
-        |init1.png|
-
-
 Methods
 -------
 
@@ -593,9 +624,6 @@ Methods
     :param register: The name of the register to read from.
     :param length: The number of bytes to read.
 
-    UIFLOW2:
-
-        |read.png|
 
 .. method:: Roller485.create_frame(cmd, motor_id, *datas) -> None
 
@@ -605,10 +633,6 @@ Methods
     :param motor_id: The ID of the motor.
     :param datas: Additional data bytes to include in the frame.
 
-    UIFLOW2:
-
-        |create_frame.png|
-
 .. method:: Roller485.write(register, bytes) -> bool
 
     Write data to a specified register via RS485.
@@ -616,10 +640,6 @@ Methods
     :param register: The name of the register to write to.
     :param bytes: The data to write to the register as a bytes object.
     :return: The response after writing the data.
-
-    UIFLOW2:
-
-        |write.png|
 
 .. method:: Roller485.send_command(cmd, id, data, buf_len) -> bool
 
@@ -630,9 +650,6 @@ Methods
     :param data: The data to send along with the command.
     :param buf_len: The length of the buffer.
 
-    UIFLOW2:
-
-        |send_command.png|
 
 .. method:: Roller485.read_response(cmd, id) -> tuple[Literal[True], Any]
 
@@ -642,10 +659,6 @@ Methods
     :param id: The motor ID.
     :return: A tuple (success, response). Success is True if the response is valid, and response is the data read.
 
-    UIFLOW2:
-
-        |read_response.png|
-
 .. method:: Roller485._crc8(buffer) -> int
 
     Calculate CRC8 checksum.
@@ -653,80 +666,80 @@ Methods
     :param buffer: The data buffer to compute the checksum for.
     :return: The computed CRC8 value.
 
-    UIFLOW2:
-
-        |_crc8.png|
-
 
 class Roller485ToI2CBus(RollerBase)
----------------
+-----------------------------------
 
 Constructors
 ------------
 
-.. class:: Roller485ToI2CBus(bus, address=_ROLLER485_RS485_ADDR, i2c_address=0x64)
+.. class:: Roller485ToI2CBus(bus, address, mode)
 
     Initialize the Roller485ToI2CBus object.
 
     :param bus: The RS485 bus instance.
     :param address: The motor's RS485 address. Defaults to _ROLLER485_RS485_ADDR.
-    :param i2c_address: The I2C address of the slave device. Defaults to 0x64.
-
-    UIFLOW2:
-
-        |init2.png|
-
 
 Methods
 -------
 
-.. method:: Roller485ToI2CBus.read_i2c_slave(length) -> tuple[Literal[True], Any]
-
-    Read data from the I2C slave device via RS485.
-
-    :param length: The number of bytes to read.
-    :return: The data read from the I2C slave.
-    :throws Exception: If the read operation fails.
-
-    UIFLOW2:
-
-        |read_i2c_slave.png|
-
-.. method:: Roller485ToI2CBus.write_i2c_slave(byte_list, stop_bit) -> Literal[True]
-
-    Write data to the I2C slave device via RS485.
-
-    :param byte_list: The data bytes to write.
-    :param stop_bit: Whether to send a stop bit after writing.
-    :return: True if the write operation is successful.
-    :throws Exception: If the write operation fails.
-
-    UIFLOW2:
-
-        |write_i2c_slave.png|
-
-.. method:: Roller485ToI2CBus.read_i2c_slave_register(register, length) -> bytes
+.. method:: Roller485ToI2CBus.readfrom_mem(addr, mem_addr, nbytes) -> bytes
 
     Read data from a specific register of the I2C slave device.
 
-    :param register: The register address to read from.
-    :param length: The number of bytes to read.
+    :param addr: The I2C slave address to read from.
+    :param mem_addr: Memory register address.
+    :param nbytes: The number of bytes to read.
     :return: The data read from the register.
     :throws Exception: If the read operation fails.
 
-    UIFLOW2:
+.. method:: Roller485ToI2CBus.readfrom_mem_into(addr, mem_addr, buf)
 
-        |read_i2c_slave_register.png|
+    Read data from a specific register of the I2C slave device.
 
-.. method:: Roller485ToI2CBus.write_i2c_slave_register(register, byte_list) -> Literal[True]
+    :param addr: The I2C slave address to read from.
+    :param mem_addr: Memory register address.
+    :param buf: Buffer to store the data.
+
+.. method:: Roller485ToI2CBus.writeto_mem(addr, mem_addr, buf) -> Literal[True]
 
     Write data to a specific register of the I2C slave device.
 
-    :param register: The register address to write to.
-    :param byte_list: The data bytes to write.
+    :param addr: The I2C slave address to write to.
+    :param mem_addr: Memory register address.
+    :param buf: The data bytes to write.
     :return: True if the write operation is successful.
     :throws Exception: If the write operation fails.
 
-    UIFLOW2:
+.. method:: Roller485ToI2CBus.readfrom(addr, nbytes) -> bytes
 
-        |write_i2c_slave_register.png|
+    Read data from the I2C slave device via RS485.
+
+    :param addr: The I2C slave address to read from.
+    :param nbytes: The number of bytes to read.
+    :return: The data read from the I2C slave.
+    :throws Exception: If the read operation fails.
+
+.. method:: Roller485ToI2CBus.readfrom_into(addr, buf)
+
+    Read data from the I2C slave device via RS485.
+
+    :param addr: I2C device address.
+    :param buf: Buffer to store the data.
+
+.. method:: Roller485ToI2CBus.writeto(addr, buf, stop) -> Literal[True]
+
+    Write data to the I2C slave device via RS485.
+
+    :param addr: The I2C slave address to write to.
+    :param buf: The data bytes to write.
+    :param stop: Whether to send a stop bit after writing.
+    :return: True if the write operation is successful.
+    :throws Exception: If the write operation fails.
+
+
+.. method:: Roller485ToI2CBus.scan(addr, buf, stop) -> List
+
+    Scan for I2C devices on the bus.
+
+    :return: A list of addresses of the found I2C devices.

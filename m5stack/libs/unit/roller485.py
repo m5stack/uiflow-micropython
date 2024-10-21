@@ -3,12 +3,15 @@
 # SPDX-License-Identifier: MIT
 
 from machine import I2C, UART
-from typing import Literal
-from pahub import PAHUBUnit
 from micropython import const
-from unit_helper import UnitError
+from .pahub import PAHUBUnit
+from .unit_helper import UnitError
 import struct
 import time
+import sys
+
+if sys.platform != "esp32":
+    from typing import Literal
 
 #! I2C REGISTER MAP
 _ROLLER485_I2C_ADDR = const(0x64)
@@ -48,7 +51,6 @@ _COMMON_REG = {
     "MAX_CURRENT": (0xB0, 0x24, 2, None, None, 0),
     "CURRENT_READBACK": (0xC0, None, None, 0x40, 10, 0),
     #! SYSTEM REGISTER !#
-    #! "COMMAND": (I2C-REGISTER, RS485-WRITE-REGISTER, RS485-WRITE-POSISTION, RS485-READ-REGISTER, RS485-READ-POSISTION, RS485-REGISTER-CONTINUOUS)
     "SYSTEM_RGB": (0x30, 0x0A, 2, 0x42, 14, 2),
     "SYSTEM_RGB_MODE": (0x33, 0x0A, 5, 0x41, 14, 2),
     "SYSTEM_VIN": (0x34, None, None, 0x41, 2, 0),
@@ -77,7 +79,7 @@ class RollerBase:
     def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def writeto_mem(self, addr: int, mem_addr: int, byte_list) -> Literal[True]:  # 0x61
+    def writeto_mem(self, addr: int, mem_addr: int, buf: list) -> Literal[True]:  # 0x61
         raise NotImplementedError("Subclasses should implement this method!")
 
     def readfrom(self, addr: int, nbytes: int):  # 0x62
@@ -467,7 +469,9 @@ class RollerBase:
 
 
 class RollerI2C(RollerBase):
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int = _ROLLER485_I2C_ADDR) -> None:
+    def __init__(
+        self, i2c: I2C | PAHUBUnit, address: int = _ROLLER485_I2C_ADDR, mode=None
+    ) -> None:
         """! Initialize the RollerI2C object.
 
         @param i2c: I2C bus instance or PAHUBUnit instance.
@@ -586,14 +590,52 @@ class Roller485(RollerBase):
         @param id: The motor ID.
         @return: A tuple (success, response). Success is True if the response is valid, and response is the data read.
         """
-        time_out = time.ticks_ms() + 2000
+        # 根据 cmd 确定响应包的长度
+        cmd += 0x10  # Write cmd+10 = response cmd
+        if cmd in [
+            0x10,
+            0x11,
+            0x16,
+            0x17,
+            0x18,
+            0x19,
+            0x1A,
+            0x1B,
+            0x1C,
+            0x1D,
+            0x1E,
+        ] or cmd in range(0x30, 0x35):
+            expected_length = 15 + 2
+        elif cmd in range(0x50, 0x54):  # cmd 0x50~0x53
+            expected_length = 18 + 2
+        elif cmd in [0x70, 0x72]:  # cmd 0x70 和 0x72
+            expected_length = 25 + 2
+        elif cmd in [0x71, 0x73]:  # cmd 0x71 和 0x73
+            expected_length = 4 + 2
+        else:
+            print(f"Unsupported cmd: {cmd:#04x}")
+            return (False, 0)  # 返回失败状态
+
+        time_out = time.ticks_ms() + 500
+        resp_buf = bytearray()  # 用于存储拼接的响应数据
         while time_out > time.ticks_ms():
             if self._rs485_bus.any():
-                resp_buf = self._rs485_bus.read()
-                if resp_buf[0:2] == b"\xAA\x55":
-                    if resp_buf[2:4] == bytes([(0x10 + cmd), id]):  # Write cmd+10 = response cmd
+                new_data = self._rs485_bus.read()
+                resp_buf.extend(new_data)  # 将新读到的数据拼接到 resp_buf
+                # print(f"Response RAW: {[hex(byte) for byte in resp_buf]}")
+                if len(resp_buf) < expected_length:  # 检查当前已接收到的长度是否满足预期
+                    # print(f"Partial response received, current length: {len(resp_buf)}")
+                    continue
+                if len(resp_buf) != expected_length:  # 如果数据多于预期，打印并继续处理
+                    print(
+                        f"Unexpected response length: {len(resp_buf)}, expected: {expected_length}"
+                    )
+                    resp_buf[:] = b""  # 清除当前数据，重新接收
+                    continue
+                if resp_buf[0:2] == b"\xAA\x55":  # 检查包头
+                    if resp_buf[2:4] == bytes([(cmd), id]):
                         if self._crc8(resp_buf[2:-1]) == resp_buf[-1]:
-                            print(f"Response: {[hex(byte) for byte in resp_buf]}")
+                            # print(f"Response: {[hex(byte) for byte in resp_buf]}")
                             return (True, resp_buf[2:-1])
             time.sleep_ms(100)
         return (False, 0)
@@ -621,85 +663,131 @@ class Roller485ToI2CBus(Roller485):
 
         @param bus: The RS485 bus instance.
         @param address: The motor's RS485 address. Defaults to _ROLLER485_RS485_ADDR.
-        @param i2c_address: The I2C address of the slave device. Defaults to 0x64.
         """
         self._rs485_bus = bus
         self._rs485_addr = address  # Motor ID == address
         super().__init__(bus, address=address)
 
     def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
-        byte_len = 2 if mem_addr > 0xFF else 1
-        if byte_len == 1:
-            data = [addr, 0, mem_addr, 0, nbytes]
-        else:
-            data = [addr, 1, mem_addr, (mem_addr >> 8), nbytes]
-        self.send_command(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=8)
-        success, output = self.read_response(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return output[8 : (8 + nbytes)]
-        else:
-            raise Exception(
-                f"Read I2C Slave Memory Register failed: register {mem_addr:#04x}, nbytes {nbytes}"
-            )
+        """Read data from the I2C memory register."""
+        chunk_size = 16  # 设置一次最多读取16字节
+        byte_len = 2 if mem_addr > 0xFF else 1  # 根据寄存器地址长度确定字节数
+        result = bytearray()
+        blocks = (nbytes + chunk_size - 1) // chunk_size  # 计算需要的块数
 
-    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
+        for block in range(blocks):
+            to_read = min(chunk_size, nbytes - block * chunk_size)  # 本次读取的字节数
+            if byte_len == 1:
+                data = [addr, 0, mem_addr + block * chunk_size, 0, to_read]
+            else:
+                data = [
+                    addr,
+                    1,
+                    mem_addr + block * chunk_size,
+                    (mem_addr + block * chunk_size) >> 8,
+                    to_read,
+                ]
+            self.send_command(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=8)
+            success, output = self.read_response(_READ_I2C_SLAVE_REG_ADDR, self._rs485_addr)
+            if success and output[2]:
+                result += output[8 : 8 + to_read]
+            else:
+                raise Exception(
+                    f"Read I2C Slave Memory Register failed: register {mem_addr:#04x}, nbytes {nbytes}"
+                )
+        return bytes(result)
+
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:
+        """! Read data from the I2C memory register and store it in the provided buffer.
+
+        @param addr: I2C device address.
+        @param mem_addr: Memory register address.
+        @param buf: Buffer to store the data.
+        """
         data = self.readfrom_mem(addr, mem_addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto_mem(self, addr: int, mem_addr: int, byte_list) -> Literal[True]:  # 0x61
+    def writeto_mem(self, addr: int, mem_addr: int, buf) -> Literal[True]:  # 0x61
+        """Write data to the I2C memory register in chunks."""
+        # print(f"addr: {addr:#04x}, mem_addr: {mem_addr:#04x}, buf: {buf}")
         byte_len = 2 if mem_addr > 0xFF else 1
-        data_len = len(byte_list)
-        if byte_len == 1:
-            data = [addr, 0, mem_addr, 0, data_len, 0]
-        else:
-            data = [addr, 1, mem_addr, (mem_addr >> 8), data_len, 0]
-        data += list(byte_list)
-        self.send_command(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=25)
-        success, output = self.read_response(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return True
-        else:
-            raise Exception(
-                f"Write to I2C Memory Register failed: register {mem_addr:#04x}, data {byte_list}"
-            )
+        total_len = len(buf)
+        chunk_size = 16
+        for i in range(0, total_len, chunk_size):
+            chunk = buf[i : i + chunk_size]
+            data_len = len(chunk)
+            if byte_len == 1:
+                data = [addr, 0, mem_addr + i, 0, data_len, 0]
+            else:
+                data = [addr, 1, mem_addr + i, (mem_addr + i) >> 8, data_len, 0]
+            data += chunk
+            self.send_command(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr, data, buf_len=25)
+            success, output = self.read_response(_WRITE_I2C_SLAVE_REG_ADDR, self._rs485_addr)
+            if not (success and output[2]):
+                raise Exception(
+                    f"Write to I2C Memory Register failed: register {mem_addr:#04x}, chunk {chunk}"
+                )
+        return True
 
-    def readfrom(self, addr: int, nbytes: int):  # 0x62
-        self.send_command(_READ_I2C_SLAVE_ADDR, self._rs485_addr, [addr, nbytes], buf_len=5)
-        success, output = self.read_response(_READ_I2C_SLAVE_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return output[8 : (8 + nbytes)]
-        else:
-            raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
+    def readfrom(self, addr: int, nbytes: int) -> bytes:
+        """Read data from the I2C slave."""
+        chunk_size = 16
+        blocks = (nbytes + chunk_size - 1) // chunk_size  # 计算需要多少块
+        result = bytearray()
+        for block in range(blocks):
+            to_read: int = min(chunk_size, nbytes - block * chunk_size)
+            self.send_command(_READ_I2C_SLAVE_ADDR, self._rs485_addr, [addr, to_read], buf_len=5)
+            success, output = self.read_response(_READ_I2C_SLAVE_ADDR, self._rs485_addr)
+            if success and output[2]:
+                result += output[8 : 8 + to_read]
+            else:
+                raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
+        return bytes(result)
 
     def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+        """! Read data from the I2C device and store it in the provided buffer.
+
+        @param addr: I2C device address.
+        @param buf: Buffer to store the data.
+        """
         data = self.readfrom(addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
-        data_len = len(buf)
-        data = [addr, data_len, stop, 0, 0, 0] + list(buf)
+    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True) -> Literal[True]:
+        """Write data to the I2C slave in chunks."""
+        total_len = len(buf)
+        chunk_size = 16
 
-        self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
-        success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
-        if success and output[2]:
-            return True
+        for i in range(0, total_len, chunk_size):
+            chunk = buf[i : i + chunk_size]
+            data_len = len(chunk)
+            stop_bit = stop if i + chunk_size >= total_len else False
+            data = [addr, data_len, stop_bit, 0, 0, 0] + list(chunk)
+            self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
+            success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
+            if not (success and output[2]):
+                raise Exception(f"Write to I2C Slave failed for chunk {chunk}")
+        return True
 
     def _writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
         data_len = len(buf)
         data = [addr, data_len, stop, 0, 0, 0] + list(buf)
-
         self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
         success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
         if success and output[2]:
             return True
 
     def scan(self) -> list:
+        """! Scan for I2C devices on the bus.
+
+        @return: A list of addresses of the found I2C devices.
+        """
         found_devices = []
         for address in range(0x08, 0x77 + 1):
             try:
                 if self._writeto(address, bytes(0x01), stop=False):
                     found_devices.append(address)
-
+                    # print(f"Found device at address {address:#04x}")
             except OSError:
                 pass
         return found_devices
@@ -708,9 +796,9 @@ class Roller485ToI2CBus(Roller485):
 class Roller485Unit:
     """! A factory class to create Roller instances based on communication mode."""
 
-    _I2C_MODE = 0  # I2C mode identifier
-    _RS485_MODE = 1  # RS485 mode identifier
-    _RS485_TO_I2C_MODE = 2  # RS485 to I2C mode identifier
+    I2C_MODE = 0  # I2C mode identifier
+    RS485_MODE = 1  # RS485 mode identifier
+    RS485_TO_I2C_MODE = 2  # RS485 to I2C mode identifier
 
     def __new__(cls, *args, **kwargs) -> RollerBase:
         """! Create a new instance of Roller based on the specified communication mode.
@@ -720,11 +808,11 @@ class Roller485Unit:
 
         @return: An instance of RollerBase or one of its subclasses.
         """
-        if kwargs["mode"] == cls._I2C_MODE:
+        if kwargs["mode"] == cls.I2C_MODE:
             cls.instance = RollerI2C(args[0], **kwargs)
-        elif kwargs["mode"] == cls._RS485_MODE:
+        elif kwargs["mode"] == cls.RS485_MODE:
             cls.instance = Roller485(args[0], **kwargs)
-        elif kwargs["mode"] == cls._RS485_TO_I2C_MODE:
+        elif kwargs["mode"] == cls.RS485_TO_I2C_MODE:
             cls.instance = Roller485ToI2CBus(args[0], **kwargs)
         else:
             raise ValueError("Invalid mode specified")
