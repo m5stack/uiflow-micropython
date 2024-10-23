@@ -10,6 +10,7 @@ Module
     dualkmeter.rst
     grbl.rst
     hmi.rst
+    llm.rst
     lora.rst
     lorawan868.rst
     nbiot.rst

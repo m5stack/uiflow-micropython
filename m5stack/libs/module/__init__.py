@@ -12,6 +12,7 @@ _attrs = {
     "GRBLModule": "grbl",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
+    "LlmModule": "llm",
     "LoraModule": "lora",
     "LoRaWANModule": "lorawan",
     "LoRaWAN868Module": "lorawan868",

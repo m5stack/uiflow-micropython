@@ -13,6 +13,7 @@ package(
         "grbl.py",
         "hmi.py",
         "iot_base_catm.py",
+        "llm.py",
         "lora.py",
         "lorawan.py",
         "lorawan868.py",
