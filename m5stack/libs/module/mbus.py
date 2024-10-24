@@ -14,6 +14,7 @@ iomap = {
     M5.BOARD.M5Stack: MBusIO(2, 5, 21, 22, 18, 23, 19),
     M5.BOARD.M5StackCore2: MBusIO(32, 33, 21, 22, 18, 23, 38),
     M5.BOARD.M5StackCoreS3: MBusIO(2, 1, 12, 11, 36, 37, 35),
+    M5.BOARD.M5Tough: MBusIO(32, 33, 21, 22, 18, 23, 38),
 }.get(M5.getBoard())
 
 
