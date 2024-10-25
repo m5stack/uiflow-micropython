@@ -39,17 +39,28 @@ _COMMON_REG = {
     "SPEED_MAX_CURRENT": (0x50, 0x12, None, 0x7018, 4),
     "SPEED_READBACK": (0x60, 0x12, None, 0x7030, 4),
     "SPEED_PID": (0x70, 0x12, None, 0x7020, 4),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
+    "SPEED_PID_I": (
+        None,
+        0x12,
+        None,
+        0x7021,
+        4,
+    ),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
+    "SPEED_PID_D": (
+        None,
+        0x12,
+        None,
+        0x7022,
+        4,
+    ),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
     #! POSITION CONTROL REGISTER !#
     "POSITION_SETTING": (0x80, 0x12, None, 0x7016, 4),
     "POSITION_MAX_CURRENT": (0x20, 0x12, None, 0x7017, 4),
     "POSITION_READBACK": (0x90, 0x12, None, 0x7031, 4),
-    "POSITION_PID": (
-        0xA0,
-        0x12,
-        None,
-        0x7023,
-        4,
-    ),  # POSITION ,P,I,D被分为0x7023~0x7025三个写入地址
+    "POSITION_PID": (0xA0, 0x12, None, 0x7023, 4),
+    "POSITION_PID_I": (None, 0x12, None, 0x7024, 4),
+    "POSITION_PID_D": (None, 0x12, None, 0x7025, 4),
+    # POSITION ,P,I,D被分为0x7023~0x7025三个写入地址
     #! CURRENT CONTROL REGISTER !#
     "MAX_CURRENT": (0xB0, 0x12, None, 0x7006, 4),
     "CURRENT_READBACK": (0xC0, 0x12, None, 0x7032, 4),
@@ -286,15 +297,27 @@ class RollerBase:
         p *= 100000
         i *= 10000000
         d *= 100000
-        self.write("SPEED_PID", struct.pack("<iii", int(p), int(i), int(d)))
+        if self._mode == 1:
+            self.write("SPEED_PID", struct.pack("<i", int(p)))
+            self.write("SPEED_PID_I", struct.pack("<i", int(i)))
+            self.write("SPEED_PID_D", struct.pack("<i", int(d)))
+        else:
+            self.write("SPEED_PID", struct.pack("<iii", int(p), int(i), int(d)))
 
     def get_motor_speed_pid(self) -> tuple:
         """! Get the motor speed PID.
 
         @return: A tuple containing the PID values.
         """
-        buf = self.read("SPEED_PID", 12)
-        return tuple(a / b for a, b in zip(struct.unpack("<iii", buf), (100000, 10000000, 100000)))
+        if self._mode == 1:
+            buf = bytearray()
+            buf.extend(self.read("SPEED_PID", 4))
+            buf.extend(self.read("SPEED_PID_I", 4))
+            buf.extend(self.read("SPEED_PID_D", 4))
+            print(f"buf:{buf}")
+        else:
+            buf = self.read("SPEED_PID", 12)
+        return struct.unpack("<iii", buf)
 
     def set_motor_position(self, position: int) -> None:
         """! Set the motor position and max current setting.
@@ -341,7 +364,14 @@ class RollerBase:
 
         @return: A tuple containing the PID values for position.
         """
-        buf = self.read("POSITION_PID", 12)
+        if self._mode == 1:
+            buf = bytearray()
+            buf.extend(self.read("POSITION_PID", 4))
+            buf.extend(self.read("POSITION_PID_I", 4))
+            buf.extend(self.read("POSITION_PID_D", 4))
+            print(f"buf:{buf}")
+        else:
+            buf = self.read("POSITION_PID", 12)
         return struct.unpack("<iii", buf)
 
     def set_motor_position_pid(self, p: float, i: float, d: float) -> None:
@@ -354,9 +384,12 @@ class RollerBase:
         p *= 100000
         i *= 10000000
         d *= 100000
-        buf = struct.pack("<iii", int(p), int(i), int(d))
-        print(f"buf:{buf}")
-        self.write("POSITION_PID", buf)
+        if self._mode == 1:
+            self.write("POSITION_PID", struct.pack("<i", int(p)))
+            self.write("POSITION_PID_I", struct.pack("<i", int(i)))
+            self.write("POSITION_PID_D", struct.pack("<i", int(d)))
+        else:
+            self.write("POSITION_PID", struct.pack("<iii", int(p), int(i), int(d)))
 
     def set_motor_max_current(self, current: int) -> None:
         """! Set the motor max current.
@@ -489,6 +522,7 @@ class RollerI2C(RollerBase):
         """
         self._i2c_bus = i2c
         self._i2c_addr = address
+        self._mode = mode
         super().__init__()
 
     def read(self, register, length) -> bytes:
@@ -518,6 +552,8 @@ class RollerCAN(RollerBase):
         """
         self._can_bus = bus
         self._can_addr = address  # motor id == address
+        self._mode = mode
+        print(f"mode: {mode}")
         super().__init__()
         self._obuffer = bytearray(15)  # Output buffer for sending commands.
         self._ibuffer = bytearray(17)  # Input buffer for receiving responses.
