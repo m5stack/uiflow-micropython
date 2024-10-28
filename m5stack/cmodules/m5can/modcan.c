@@ -356,7 +356,7 @@ static mp_obj_t pyb_can_send(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     for (int i = 0; i < bufinfo.len; i++) {
         mp_printf(&mp_plat_print, "0x%02X ", tx_msg.data[i]);
     }
-    mp_printf(&mp_plat_print, "\n");
+    mp_printf(&mp_plat_print, "\n\n");
 
     check_esp_err(twai_transmit(&tx_msg, args[ARG_timeout].u_int));
     return mp_const_none;
@@ -381,7 +381,7 @@ static mp_obj_t pyb_can_recv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     twai_message_t rx_msg;
     esp_err_t ret = twai_receive(&rx_msg, args[ARG_timeout].u_int);
 
-    mp_printf(&mp_plat_print, "Received identifier: 0x%02X\n", rx_msg.identifier);
+    mp_printf(&mp_plat_print, "Received identifier: 0x%08X\n", rx_msg.identifier);
     mp_printf(&mp_plat_print, "received data: ");
     for (int i = 0; i < rx_msg.data_length_code; i++) {
         mp_printf(&mp_plat_print, "0x%02X ", rx_msg.data[i]);

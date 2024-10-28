@@ -25,13 +25,15 @@ _COMMON_REG = {
     #! MOTOR CONFIGURATION REGISTER !#                                     这里的LENGTH是指可读写单个参数列表中的字节数
     "MOTOR_OUTPUT": (0x00, 0x12, None, 0x7004, 1),
     "MOTOR_MODE": (0x01, 0x12, None, 0x7005, 1),
-    "MOTOR_ORP": (0x0A, 0x0C, None, None),  # 0x0C:ENABLE,0x0D:DISABLE
+    "MOTOR_ORP": (0x0A, None, None, None),  # 0x0C:ENABLE,0x0D:DISABLE
     "RELEASE_STALL_PROTECT": (0x0B, 0x12, None, 0x7003, 1),
     "MOTOR_STATUS": (0x0C, None, None, None, 22),
     "MOTOR_ERROR_CODE": (0x0D, None, None, None),
     "BTN_SWITCH_MODE_ENABLE": (0x0E, None, None, None),
-    "MOTOR_STALL_PROTRCT": (0x0F, None, None, None),
-    "MOTOR_ID": (0x10, 0x00, 16, None, 8),  # REA CMD ID为0x00,WRITE CMD ID为0x07
+    "MOTOR_STALL_PROTRCT": (0x0F, 0x0C, None, None),
+    "MOTOR_STALL_PROTRCT_REMOVE": (0x0F, 0x0D, None, None),
+    "MOTOR_ID": (0x10, 0x00, 16, None, 8),  # REA CMD ID为0x00
+    "SET_MOTOR_ID": (0x10, 0x07, 16, None, 8),  # WRITE CMD ID为0x07
     "CAN_BSP": (0x11, 0x0B, 16, None),
     "RGB_BRIGHT": (0x12, 0x12, None, 0x7052, 1),
     #! SPEED CONTROL REGISTER !#
@@ -195,7 +197,9 @@ class RollerBase:
 
         @param state: Protection state value (1 to enable, 0 to disable).
         """
-        self.write("MOTOR_STALL_PROTRCT", bytes([state]))
+        self.write(
+            "MOTOR_STALL_PROTRCT" if state else "MOTOR_STALL_PROTRCT_REMOVE", bytes([state])
+        )
 
     def get_motor_jam_protect_state(self) -> bool:
         """! Get the motor jam protection status.
@@ -209,7 +213,9 @@ class RollerBase:
 
         @param id: The ID to assign to the motor.
         """
-        self.write("MOTOR_ID", bytes([id]))
+        self.write(
+            "SET_MOTOR_ID" if self._mode != RollerCANUnit._I2C_MODE else "MOTOR_ID", bytes([id])
+        )
 
     def get_motor_id(self) -> int:
         """! Get the motor ID.
@@ -218,17 +224,17 @@ class RollerBase:
         """
         return self.read("MOTOR_ID", 1)[0]
 
-    def set_485_baudrate(self, bps: int = 0) -> None:
-        """! Set the 485 baudrate.
+    def set_can_baudrate(self, bps: int = 0) -> None:
+        """! Set the can baudrate.
 
         @param bps: Baud rate value.
         """
         self.write("CAN_BSP", bytes([bps]))
 
-    def get_485_baudrate(self) -> int:
-        """! Get the 485 baudrate.
+    def get_can_baudrate(self) -> int:
+        """! Get the can baudrate.
 
-        @return: The current 485 baudrate.
+        @return: The current can baudrate.
         """
         return self.read("CAN_BSP", 1)[0]
 
@@ -563,33 +569,42 @@ class RollerCAN(RollerBase):
     def create_frame(self, register, option, data, is_read=False):
         if len(data) < 4:
             data = data[:4] + b"\x00" * (4 - len(data))
-        identifier = (
-            0x00000000
-            | ((_COMMON_REG[register][1] if not is_read else _COMMON_REG[register][1] - 1) << 24)
-            | (option << 16)
-            | self._can_addr
-        )
-        can_data = (
-            bytes(
-                [_COMMON_REG[register][3] & 0xFF, (_COMMON_REG[register][3] >> 8) & 0xFF, 0x0, 0x0]
-            )
-            + data
-        )
+        cmd_id = _COMMON_REG[register][1]
+        if is_read:
+            if cmd_id == 0x12:
+                cmd_id -= 1
+            elif cmd_id in range(0x0C, 0x0D + 1):
+                cmd_id = 0x02
+        else:
+            if cmd_id == 0x07 or cmd_id == 0x0B:
+                option = data[0]
+        index_id = _COMMON_REG[register][3] or 0
+        identifier = 0x00000000 | (cmd_id << 24) | (option << 16) | self._can_addr
+        can_data = bytes([index_id & 0xFF, (index_id >> 8) & 0xFF, 0x0, 0x0]) + data
         return identifier, can_data
 
     def read(self, register, length):
-        identifier, can_data = self.create_frame(register, 0, bytes(0), is_read=True)
-        self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
+        if _COMMON_REG[register][1] in {0x12, 0x00}:
+            print("0x00 or 0x12")
+            if _COMMON_REG[register][1] == 0x12:
+                self._can_bus.recv(0, timeout=100)  # 清除写入后的返回数据，调整超时为 100ms
+            identifier, can_data = self.create_frame(register, 0, bytes(0), is_read=True)
+            self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
         return self.read_response()
 
-    def write(self, register, bytes):
+    def write(self, register, data):
         try:
-            identifier, can_data = self.create_frame(register, 0, bytes)
+            print(data)
+            identifier, can_data = self.create_frame(register, 0, data)
             self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
-            self._can_bus.recv(0, timeout=100)  # 清除写入后的返回数据，调整超时为 100ms
-            buf = self.read(register, bytes)
-            # if (can_data[4:8], _COMMON_REG[register][3]) == buf:
-            return (can_data[4:8]) == buf
+            buf = self.read(register, data)
+            if _COMMON_REG[register][1] == 0x12:
+                if (can_data[4:8], _COMMON_REG[register][3]) == buf:
+                    return (can_data[4:8]) == buf
+            elif _COMMON_REG[register][1] == 0x0B:
+                return data == buf
+            else:
+                return True
         except Exception as e:
             print(f"Error in write: {e}")
             return False
@@ -597,7 +612,20 @@ class RollerCAN(RollerBase):
     def read_response(self):
         receive_data = self._can_bus.recv(0, timeout=200)
         cmd_id = (receive_data[0] >> 24) & 0x1F  # 24~28 bit
-        master_can_id = (receive_data[0] >> 8) & 0xFFFF  # 8~23 bit
+        if cmd_id == 0x02:
+            print("Feedback data")
+            error_info = (receive_data[0] >> 16) & 0x07
+            over_range = (receive_data[0] >> 18) & 0x01
+            jam_motor = (receive_data[0] >> 17) & 0x01
+            over_voltage = (receive_data[0] >> 16) & 0x01
+            print(
+                f"Error Info: {error_info}, Over Range: {over_range}, Jam Motor: {jam_motor}, Over Voltage: {over_voltage}"
+            )
+        elif cmd_id == 0x0B:
+            print("CAN BPS")
+            can_bps = (receive_data[0] >> 16) & 0xFF  # 16~23bit
+            print(f"CAN BPS:{can_bps}")
+        master_can_id = (receive_data[0] >> 8) & 0xFF  # 8~15 bit
         motor_can_id = (receive_data[0] >> 0) & 0xFF  # 0~7 bit
         index = (receive_data[4][1] << 8) | receive_data[4][0]
         data = receive_data[4][4:8]
@@ -609,7 +637,12 @@ class RollerCAN(RollerBase):
         print(f"Index: 0x{index:04x}")
         print(f"Data: 0x{data.hex()}")
         # return data, index
-        return data
+        if cmd_id == 0x11:
+            return data
+        elif cmd_id == 0x00:
+            return bytes([master_can_id])
+        elif cmd_id == 0x0B:
+            return bytes([can_bps])
 
 
 class RollerCANUnit:
