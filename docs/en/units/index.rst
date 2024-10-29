@@ -70,6 +70,7 @@ Unit
     ssr.rst
     synth.rst
     thermal.rst
+    timerpwr.rst
     tmos.rst
     tof.rst
     ultrasonic.rst

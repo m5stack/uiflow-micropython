@@ -104,6 +104,7 @@ package(
         "synth.py",
         "thermal.py",
         "thermal2.py",
+        "timerpwr.py",
         "tmos.py",
         "tof.py",
         "tof4m.py",
@@ -122,5 +123,5 @@ package(
         "zigbee.py",
     ),
     base_path="..",
-    opt=3,
+    # opt=3,
 )
