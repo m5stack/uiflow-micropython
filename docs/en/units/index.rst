@@ -73,6 +73,7 @@ Unit
     timerpwr.rst
     tmos.rst
     tof.rst
+    uhf_rfid.rst
     ultrasonic.rst
     vibrator.rst
     watering.rst

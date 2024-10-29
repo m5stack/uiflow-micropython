@@ -1,0 +1,63 @@
+.. |UHFRFIDUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/uhf_rfid/uhf_rfid_01.webp
+    :target: https://docs.m5stack.com/en/unit/uhf_rfid
+    :height: 200px
+    :width: 200px
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/example.png
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/init.png
+.. |get_demodulator_mixer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_demodulator_mixer.png
+.. |set_demodulator_mixer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_demodulator_mixer.png
+.. |get_demodulator_amplifier.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_demodulator_amplifier.png
+.. |set_demodulator_amplifier.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_demodulator_amplifier.png
+.. |get_demodulator_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_demodulator_threshold.png
+.. |set_demodulator_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_demodulator_threshold.png
+.. |get_working_region.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_working_region.png
+.. |set_working_region.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_working_region.png
+.. |get_working_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_working_channel.png
+.. |set_working_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_working_channel.png
+.. |insert_working_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/insert_working_channel.png
+.. |clear_working_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/clear_working_channel.png
+.. |set_automatic_hopping.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_automatic_hopping.png
+.. |get_channel_rssi.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_channel_rssi.png
+.. |get_blocking_signal_strength.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_blocking_signal_strength.png
+.. |get_tx_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_tx_power.png
+.. |set_tx_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_tx_power.png
+.. |set_continuous_wave.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_continuous_wave.png
+.. |get_manufacturer_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_manufacturer_id.png
+.. |get_hardware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_hardware_version.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_firmware_version.png
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/sleep.png
+.. |wake.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/wake.png
+.. |set_automatic_sleep_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_automatic_sleep_time.png
+.. |disable_automatic_sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/disable_automatic_sleep.png
+.. |inventory.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/inventory.png
+.. |set_select_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_select_mode.png
+.. |select.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/select.png
+.. |set_access_password.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_access_password.png
+.. |set_kill_password.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_kill_password.png
+.. |kill.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/kill.png
+.. |set_query_param.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_query_param.png
+.. |lock_mem_bank.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/lock_mem_bank.png
+.. |read_mem_bank.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/read_mem_bank.png
+.. |write_mem_bank.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/write_mem_bank.png
+.. |get_impinj_monza_qt_sr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_impinj_monza_qt_sr.png
+.. |set_impinj_monza_qt_sr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_impinj_monza_qt_sr.png
+.. |get_impinj_monza_qt_mem.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_impinj_monza_qt_mem.png
+.. |set_impinj_monza_qt_mem.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_impinj_monza_qt_mem.png
+.. |nxp_eas_alarm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/nxp_eas_alarm.png
+.. |get_nxp_config_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/get_nxp_config_word.png
+.. |set_nxp_config_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/set_nxp_config_word.png
+.. |nxp_read_protect.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/nxp_read_protect.png
+.. |nxp_read_protect1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/nxp_read_protect1.png
+.. |nxp_change_eas.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/nxp_change_eas.png
+.. |nxp_change_eas1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/uhf_rfid/nxp_change_eas1.png
+
+.. |cores3_uhf_rfid_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/uhf_rfid/cores3_uhf_rfid_example.m5f2"
+        target="_blank"
+    >
+        cores3_uhf_rfid_example.m5f2
+    </a>
