@@ -27,7 +27,7 @@ class ADCV11Unit(ADS1110):
             raise UnitError("ADC V1.1 Unit not found in Grove")
 
     def get_voltage(self):
-        data = self.get_adc_raw_value
+        data = self.get_adc_raw_value()
         vol = (
             data
             * 2.048
