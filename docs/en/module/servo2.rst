@@ -18,6 +18,7 @@ Micropython Example:
     from module import Servo2Module
     servo = Servo2Module()
     servo.position(0, degrees=90)
+    servo.release()
 
 
 UIFLOW2 Example:
