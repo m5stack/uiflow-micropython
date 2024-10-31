@@ -19,6 +19,7 @@ package(
         "mbus.py",
         "module_4in8out.py",
         "module_helper.py",
+        "nbiot.py",
         "plus.py",
         "pps.py",
         "rca.py",
