@@ -75,6 +75,7 @@ Unit
     tof.rst
     uhf_rfid.rst
     ultrasonic.rst
+    uwb.rst
     vibrator.rst
     watering.rst
     weight_i2c.rst
