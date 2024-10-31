@@ -3,79 +3,64 @@
 # SPDX-License-Identifier: MIT
 
 from machine import I2C, UART
-from typing import Literal
-from pahub import PAHUBUnit
 from micropython import const
-from unit_helper import UnitError
+from .pahub import PAHUBUnit
+from .unit_helper import UnitError
 import struct
 import time
+import sys
+
+if sys.platform != "esp32":
+    from typing import Literal
 
 #! I2C REGISTER MAP
 _ROLLERCAN_I2C_ADDR = const(0x64)
 _ROLLERCAN_CAN_ADDR = const(0xA8)
 
-#! 485 VIA I2C CONTROL READ & WRITE !#
-_READ_I2C_SLAVE_REG_ADDR = 0x60
-_WRITE_I2C_SLAVE_REG_ADDR = 0x61
-_READ_I2C_SLAVE_ADDR = 0x62
-_WRITE_I2C_SLAVE_ADDR = 0x63
-
 _COMMON_REG = {
-    #! "COMMAND": (I2C-REGISTER, CAN-CMD-ID, CAN-DATA-FIELD, CAN-INDEX-ID, CAN-READ-LENGTH, CAN-DATA-AREA)
-    #! MOTOR CONFIGURATION REGISTER !#                                     这里的LENGTH是指可读写单个参数列表中的字节数
-    "MOTOR_OUTPUT": (0x00, 0x12, None, 0x7004, 1),
-    "MOTOR_MODE": (0x01, 0x12, None, 0x7005, 1),
-    "MOTOR_ORP": (0x0A, None, None, None),  # 0x0C:ENABLE,0x0D:DISABLE
-    "RELEASE_STALL_PROTECT": (0x0B, 0x12, None, 0x7003, 1),
-    "MOTOR_STATUS": (0x0C, None, None, None, 22),
+    #! "COMMAND": (I2C-REGISTER, CAN-CMD-ID, CAN-DATA-FIELD, CAN-INDEX-ID)
+    #! MOTOR CONFIGURATION REGISTER !#
+    "READ_I2C_SLAVE": (None, 0x15, None, None),
+    "WRITE_I2C_SLAVE": (None, 0x16, None, None),
+    "MOTOR_OUTPUT": (0x00, 0x12, None, 0x7004),
+    "MOTOR_MODE": (0x01, 0x12, None, 0x7005),
+    "MOTOR_ORP": (0x0A, None, None, None),  # 0x0C: ENABLE, 0x0D: DISABLE
+    "RELEASE_STALL_PROTECT": (0x0B, 0x12, None, 0x7003),
+    "MOTOR_STATUS": (0x0C, None, None, None),
     "MOTOR_ERROR_CODE": (0x0D, None, None, None),
     "BTN_SWITCH_MODE_ENABLE": (0x0E, None, None, None),
     "MOTOR_STALL_PROTRCT": (0x0F, 0x0C, None, None),
     "MOTOR_STALL_PROTRCT_REMOVE": (0x0F, 0x0D, None, None),
-    "MOTOR_ID": (0x10, 0x00, 16, None, 8),  # REA CMD ID为0x00
-    "SET_MOTOR_ID": (0x10, 0x07, 16, None, 8),  # WRITE CMD ID为0x07
-    "CAN_BSP": (0x11, 0x0B, 16, None),
-    "RGB_BRIGHT": (0x12, 0x12, None, 0x7052, 1),
+    "MOTOR_ID": (0x10, 0x00, None, None),  # REA CMD ID 为 0x00
+    "SET_MOTOR_ID": (0x10, 0x07, None, None),  # WRITE CMD ID 为 0x07
+    "CAN_BSP": (0x11, 0x0B, None, None),
+    "RGB_BRIGHT": (0x12, 0x12, None, 0x7052),
     #! SPEED CONTROL REGISTER !#
-    "SPEED_SETTING": (0x40, 0x12, None, 0x700A, 4),
-    "SPEED_MAX_CURRENT": (0x50, 0x12, None, 0x7018, 4),
-    "SPEED_READBACK": (0x60, 0x12, None, 0x7030, 4),
-    "SPEED_PID": (0x70, 0x12, None, 0x7020, 4),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
-    "SPEED_PID_I": (
-        None,
-        0x12,
-        None,
-        0x7021,
-        4,
-    ),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
-    "SPEED_PID_D": (
-        None,
-        0x12,
-        None,
-        0x7022,
-        4,
-    ),  # 特例SPEED ,P,I,D被分为0x7020~0x7022三个写入地址
+    "SPEED_SETTING": (0x40, 0x12, None, 0x700A),
+    "SPEED_MAX_CURRENT": (0x50, 0x12, None, 0x7018),
+    "SPEED_READBACK": (0x60, 0x12, None, 0x7030),
+    "SPEED_PID": (0x70, 0x12, None, 0x7020),
+    "SPEED_PID_I": (None, 0x12, None, 0x7021),
+    "SPEED_PID_D": (None, 0x12, None, 0x7022),
     #! POSITION CONTROL REGISTER !#
-    "POSITION_SETTING": (0x80, 0x12, None, 0x7016, 4),
-    "POSITION_MAX_CURRENT": (0x20, 0x12, None, 0x7017, 4),
-    "POSITION_READBACK": (0x90, 0x12, None, 0x7031, 4),
-    "POSITION_PID": (0xA0, 0x12, None, 0x7023, 4),
-    "POSITION_PID_I": (None, 0x12, None, 0x7024, 4),
-    "POSITION_PID_D": (None, 0x12, None, 0x7025, 4),
-    # POSITION ,P,I,D被分为0x7023~0x7025三个写入地址
+    "POSITION_SETTING": (0x80, 0x12, None, 0x7016),
+    "POSITION_MAX_CURRENT": (0x20, 0x12, None, 0x7017),
+    "POSITION_READBACK": (0x90, 0x12, None, 0x7031),
+    "POSITION_PID": (0xA0, 0x12, None, 0x7023),
+    "POSITION_PID_I": (None, 0x12, None, 0x7024),
+    "POSITION_PID_D": (None, 0x12, None, 0x7025),
     #! CURRENT CONTROL REGISTER !#
-    "MAX_CURRENT": (0xB0, 0x12, None, 0x7006, 4),
-    "CURRENT_READBACK": (0xC0, 0x12, None, 0x7032, 4),
+    "MAX_CURRENT": (0xB0, 0x12, None, 0x7006),
+    "CURRENT_READBACK": (0xC0, 0x12, None, 0x7032),
     #! SYSTEM REGISTER !#
-    #! "COMMAND": (I2C-REGISTER, CAN-CMD-ID, CAN-INDEX-ID, CAN-READ-WRITE-POSISTION)
-    "SYSTEM_RGB": (0x30, 0x12, None, 0x7051, 4),
-    "SYSTEM_RGB_MODE": (0x33, 0x12, None, 0x7050, 1),
-    "SYSTEM_VIN": (0x34, 0x12, None, 0x7034, 4),
-    "SYSTEM_TEMP": (0x38, 0x12, None, 0x7035, 4),
-    "SYSTEM_ENCODER": (0x3C, 0x12, None, 0x7033, 4),
-    "SYSTEM_FLASH_WRITE": (0xF0, 0x12, None, 0x7002, 1),
-    "SYSTEM_FIRMWARE": (0xFE, None, None),
-    "SYSTEM_I2C_ADDRESS": (0xFF, None, None),
+    "SYSTEM_RGB": (0x30, 0x12, None, 0x7051),
+    "SYSTEM_RGB_MODE": (0x33, 0x12, None, 0x7050),
+    "SYSTEM_VIN": (0x34, 0x12, None, 0x7034),
+    "SYSTEM_TEMP": (0x38, 0x12, None, 0x7035),
+    "SYSTEM_ENCODER": (0x3C, 0x12, None, 0x7033),
+    "SYSTEM_FLASH_WRITE": (0xF0, 0x12, None, 0x7002),
+    "SYSTEM_FIRMWARE": (0xFE, None, None, None),
+    "SYSTEM_I2C_ADDRESS": (0xFF, None, None, None),
 }
 
 
@@ -85,6 +70,12 @@ class RollerBase:
         pass
 
     def read(self, register, length) -> bytes:
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def i2c_read(self, register, length):
+        raise NotImplementedError("Subclasses should implement this method!")
+
+    def i2c_write(self, register, data, stop: bool = True):
         raise NotImplementedError("Subclasses should implement this method!")
 
     def write(self, register, data: bytes):
@@ -214,7 +205,7 @@ class RollerBase:
         @param id: The ID to assign to the motor.
         """
         self.write(
-            "SET_MOTOR_ID" if self._mode != RollerCANUnit._I2C_MODE else "MOTOR_ID", bytes([id])
+            "SET_MOTOR_ID" if self._mode != RollerCANUnit.I2C_MODE else "MOTOR_ID", bytes([id])
         )
 
     def get_motor_id(self) -> int:
@@ -555,10 +546,11 @@ class RollerCAN(RollerBase):
 
         @param bus: The CAN bus instance.
         @param address: The motor's CAN address. Defaults to _ROLLERCAN_CAN_ADDR.
+        @param mode: Optional mode for setting specific operational mode.
         """
         self._can_bus = bus
         self._can_addr = address  # motor id == address
-        self._mode = mode
+        self._mode = RollerCANUnit.CAN_MODE
         print(f"mode: {mode}")
         super().__init__()
         self._obuffer = bytearray(15)  # Output buffer for sending commands.
@@ -567,6 +559,14 @@ class RollerCAN(RollerBase):
         self.rgb_buf = [0] * 8  # Buffer for storing RGB data.
 
     def create_frame(self, register, option, data, is_read=False):
+        """! Create a CAN frame for sending commands.
+
+        @param register: The register for command identification.
+        @param option: Command option to specify the data.
+        @param data: Data payload for the frame.
+        @param is_read: Whether this frame is for a read command.
+        @return: A tuple containing the CAN identifier and data payload.
+        """
         if len(data) < 4:
             data = data[:4] + b"\x00" * (4 - len(data))
         cmd_id = _COMMON_REG[register][1]
@@ -580,19 +580,61 @@ class RollerCAN(RollerBase):
                 option = data[0]
         index_id = _COMMON_REG[register][3] or 0
         identifier = 0x00000000 | (cmd_id << 24) | (option << 16) | self._can_addr
-        can_data = bytes([index_id & 0xFF, (index_id >> 8) & 0xFF, 0x0, 0x0]) + data
+        if cmd_id == 0x15:
+            can_data = data + bytes([0, 0, 0, 0])
+        elif cmd_id == 0x16:
+            can_data = data[:8] + b"\x00" * (8 - len(data))
+        else:
+            can_data = bytes([index_id & 0xFF, (index_id >> 8) & 0xFF, 0x0, 0x0]) + data
         return identifier, can_data
 
     def read(self, register, length):
-        if _COMMON_REG[register][1] in {0x12, 0x00}:
-            print("0x00 or 0x12")
-            if _COMMON_REG[register][1] == 0x12:
-                self._can_bus.recv(0, timeout=100)  # 清除写入后的返回数据，调整超时为 100ms
+        """! Send a read command to a specific register.
+
+        @param register: The register address to read from.
+        @param length: Length of data to read.
+        @return: Data received from the register.
+        """
+        cmd_id = _COMMON_REG[register][1]
+        if cmd_id in {0x12, 0x00, 0x15}:
+            if cmd_id == 0x12:
+                self._can_bus.recv(0, timeout=1)  # 清除写入后的返回数据，调整超时为 100ms
             identifier, can_data = self.create_frame(register, 0, bytes(0), is_read=True)
             self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
         return self.read_response()
 
+    def i2c_read(self, register, length):
+        """! Read data from an I2C slave via CAN.
+
+        @param register: The I2C register address to read from.
+        @param length: Number of bytes to read.
+        @return: A tuple containing success status and read data.
+        """
+        identifier, can_data = self.create_frame("READ_I2C_SLAVE", 0, bytes([register, length]))
+        self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
+        return self.read_response()
+
+    def i2c_write(self, register, data, stop: bool = True):
+        """! Write data to an I2C slave via CAN.
+
+        @param register: The I2C register address to write to.
+        @param data: The data to write.
+        @param stop: Whether to end the transaction with a stop condition.
+        @return: Success status of the write operation.
+        """
+        identifier, can_data = self.create_frame(
+            "WRITE_I2C_SLAVE", register | 0x80 if stop else register, bytes([len(data)]) + data
+        )
+        self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
+        return self.read_response()
+
     def write(self, register, data):
+        """! Write data to a specific register.
+
+        @param register: The register address to write to.
+        @param data: Data payload to send to the register.
+        @return: Boolean indicating whether the write operation was successful.
+        """
         try:
             print(data)
             identifier, can_data = self.create_frame(register, 0, data)
@@ -610,6 +652,10 @@ class RollerCAN(RollerBase):
             return False
 
     def read_response(self):
+        """! Read the response data from the CAN bus.
+
+        @return: Processed response data depending on command type.
+        """
         receive_data = self._can_bus.recv(0, timeout=200)
         cmd_id = (receive_data[0] >> 24) & 0x1F  # 24~28 bit
         if cmd_id == 0x02:
@@ -625,6 +671,19 @@ class RollerCAN(RollerBase):
             print("CAN BPS")
             can_bps = (receive_data[0] >> 16) & 0xFF  # 16~23bit
             print(f"CAN BPS:{can_bps}")
+        elif cmd_id == 0x15:
+            print("I2C Read")
+            is_read_success = (receive_data[0] >> 16) & 0x01
+            print(f"Read Success: {is_read_success}")
+            print(f"Raw Data: 0x{receive_data[4]}")
+            print(f"Rec Data: 0x{receive_data[4].hex()}")
+            return is_read_success, receive_data[4]
+        elif cmd_id == 0x16:
+            print("I2C Write")
+            is_write_success = (receive_data[0] >> 16) & 0x01
+            print(f"Write Success: {is_write_success}")
+            return is_write_success
+
         master_can_id = (receive_data[0] >> 8) & 0xFF  # 8~15 bit
         motor_can_id = (receive_data[0] >> 0) & 0xFF  # 0~7 bit
         index = (receive_data[4][1] << 8) | receive_data[4][0]
@@ -645,12 +704,129 @@ class RollerCAN(RollerBase):
             return bytes([can_bps])
 
 
+class RollerCANToI2CBus(RollerCAN):
+    def __init__(self, bus, address=_ROLLERCAN_I2C_ADDR, mode=None) -> None:
+        """! Initialize RollerCANToI2CBus object with CAN bus and address.
+
+        @param bus: The CAN bus instance.
+        @param address: The I2C device address, default is _ROLLERCAN_I2C_ADDR.
+        @param mode: Optional mode for setting specific operational mode.
+        """
+        self._can_bus = bus
+        self._can_addr = address  # motor id == address
+        self._mode = RollerCANUnit.CAN_TO_I2C_MODE
+        super().__init__(bus, address=address)
+
+    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:
+        """! Read data from an I2C memory register.
+
+        @param addr: I2C device address.
+        @param mem_addr: Memory register address.
+        @param nbytes: Number of bytes to read.
+        @return: Data read from the specified memory address.
+        """
+        self.writeto(addr, bytes([mem_addr]), stop=True)
+        buf = self.readfrom(addr, nbytes)
+        print(f"buf: {buf}")
+        return buf
+
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:
+        """! Read data from an I2C memory register and store it in the provided buffer.
+
+        @param addr: I2C device address.
+        @param mem_addr: Memory register address.
+        @param buf: Buffer to store the data.
+        """
+        data = self.readfrom_mem(addr, mem_addr, len(buf))
+        buf[: len(data)] = data
+
+    def writeto_mem(self, addr: int, mem_addr: int, buf: bytearray) -> Literal[True]:
+        """! Write data to an I2C memory register.
+
+        @param addr: I2C device address.
+        @param mem_addr: Memory register address.
+        @param buf: Data to write.
+        @return: True if the write operation was successful.
+        """
+        print(f"addr: {addr:#04x}, mem_addr: {mem_addr:#04x}, buf: {[hex(b) for b in buf]}")
+        return self.writeto(addr, bytes([mem_addr]) + buf, True)
+
+    def readfrom(self, addr: int, nbytes: int) -> bytes:
+        """! Read data from an I2C device.
+
+        @param addr: I2C device address.
+        @param nbytes: Number of bytes to read.
+        @return: Data read from the specified I2C address.
+        @raises Exception: If reading fails for any chunk.
+        """
+        chunk_size = 8
+        blocks = (nbytes + chunk_size - 1) // chunk_size
+        result = bytearray()
+        for block in range(blocks):
+            to_read = min(chunk_size, nbytes - block * chunk_size)
+            success, output = self.i2c_read(addr, to_read)
+            print(f"success: {success}, output: {output}")
+            if success:
+                result += output[:to_read]
+                print(f"result: {result}\n\n")
+            else:
+                raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
+        return bytes(result)
+
+    def readfrom_into(self, addr: int, buf: bytearray) -> None:
+        """! Read data from an I2C device and store it in the provided buffer.
+
+        @param addr: I2C device address.
+        @param buf: Buffer to store the data.
+        """
+        data = self.readfrom(addr, len(buf))
+        buf[: len(data)] = data
+
+    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True) -> Literal[True]:
+        """! Write data to an I2C device in chunks.
+
+        @param addr: I2C device address.
+        @param buf: Data to write.
+        @param stop: Whether to end the transaction with a stop condition.
+        @return: True if the write operation was successful.
+        """
+        print(f"addr: {addr:#04x}, buf: {[hex(b) for b in buf]}, stop: {stop}")
+        total_len = len(buf)
+        chunk_size = 7
+
+        for i in range(0, total_len, chunk_size):
+            chunk = buf[i : i + chunk_size]
+            stop_bit = stop if (i + chunk_size >= total_len) else False
+            print(f"chunk: {[hex(b) for b in chunk]}")
+            success = self.i2c_write(addr, chunk, stop_bit)
+            print(f"success: {success}\n\n")
+            if not success:
+                print(f"Write to I2C Slave failed for chunk {chunk}")
+                # raise Exception(f"Write to I2C Slave failed for chunk {chunk}")
+        return True
+
+    def scan(self) -> list:
+        """! Scan for I2C devices on the bus.
+
+        @return: List of addresses of detected I2C devices.
+        """
+        found_devices = []
+        for address in range(0x08, 0x77 + 1):
+            try:
+                if self.i2c_write(address, bytes([0x01]), False):
+                    found_devices.append(address)
+                    print(f"Found device at address {address:#04x}")
+            except OSError:
+                pass
+        return found_devices
+
+
 class RollerCANUnit:
     """! A factory class to create Roller instances based on communication mode."""
 
-    _I2C_MODE = 0  # I2C mode identifier
-    _CAN_MODE = 1  # CAN mode identifier
-    _CAN_TO_I2C_MODE = 2  # CAN to I2C mode identifier
+    I2C_MODE = 0  # I2C mode identifier
+    CAN_MODE = 1  # CAN mode identifier
+    CAN_TO_I2C_MODE = 2  # CAN to I2C mode identifier
 
     def __new__(cls, *args, **kwargs) -> RollerBase:
         """! Create a new instance of Roller based on the specified communication mode.
@@ -660,12 +836,12 @@ class RollerCANUnit:
 
         @return: An instance of RollerBase or one of its subclasses.
         """
-        if kwargs["mode"] == cls._I2C_MODE:
+        if kwargs["mode"] == cls.I2C_MODE:
             cls.instance = RollerI2C(args[0], **kwargs)
-        elif kwargs["mode"] == cls._CAN_MODE:
+        elif kwargs["mode"] == cls.CAN_MODE:
             cls.instance = RollerCAN(args[0], **kwargs)
-        # elif kwargs["mode"] == cls._CAN_TO_I2C_MODE:
-        #     cls.instance = RollerCANToI2CBus(args[0], **kwargs)
+        elif kwargs["mode"] == cls.CAN_TO_I2C_MODE:
+            cls.instance = RollerCANToI2CBus(args[0], **kwargs)
         else:
             raise ValueError("Invalid mode specified")
         return cls.instance

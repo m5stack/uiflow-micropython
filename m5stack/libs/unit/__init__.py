@@ -97,6 +97,7 @@ _attrs = {
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
     "Roller485Unit": "roller485",
+    "RollerCANUnit": "rollercan",
     "ISO485Unit": "rs485_iso",
     "RS485Unit": "rs485",
     "RTC8563Unit": "rtc8563",
