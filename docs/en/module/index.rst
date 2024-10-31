@@ -15,6 +15,7 @@ Module
     lora.rst
     lorawan868.rst
     nbiot.rst
+    odrive.rst
     plus.rst
     pps.rst
     rca.rst

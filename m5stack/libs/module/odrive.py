@@ -26,6 +26,11 @@ class ODriveModule:
         from module import ODriveModule
         drive = ODriveModule(port=(13,5))
         drive.get_vbus_voltage()
+        drive.set_velocity(10)
+        drive.set_current(5)
+        drive.set_control_mode(ODriveModule.CONTROL_MODE_POSITION_CONTROL)
+        drive.set_position(1000)
+
 
     """
 
