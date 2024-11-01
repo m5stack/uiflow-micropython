@@ -12,6 +12,7 @@ Module
     hmi.rst
     lora.rst
     lorawan868.rst
+    nbiot.rst
     plus.rst
     pps.rst
     rca.rst
