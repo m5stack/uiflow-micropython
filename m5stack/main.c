@@ -237,9 +237,9 @@ soft_reset_exit:
 
 void boardctrl_startup(void) {
     // cores3 / core2 / tough
-    #if BOARD_ID == 10 || BOARD_ID == 2 || BOARD_ID == 8
+    // #if BOARD_ID == 10 || BOARD_ID == 2 || BOARD_ID == 8
     board_init();
-    #endif
+    // #endif
 
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {

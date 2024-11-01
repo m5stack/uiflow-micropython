@@ -65,13 +65,17 @@ Unit
     relay.rst
     relay4.rst
     rgb.rst
+    roller485.rst
     scroll.rst
     ssr.rst
     synth.rst
     thermal.rst
+    timerpwr.rst
     tmos.rst
     tof.rst
+    uhf_rfid.rst
     ultrasonic.rst
+    uwb.rst
     vibrator.rst
     watering.rst
     weight_i2c.rst

@@ -93,6 +93,7 @@ package(
         "relay4.py",
         "rfid.py",
         "rgb.py",
+        "roller485.py",
         "rs485_iso.py",
         "rs485.py",
         "rtc8563.py",
@@ -103,6 +104,7 @@ package(
         "synth.py",
         "thermal.py",
         "thermal2.py",
+        "timerpwr.py",
         "tmos.py",
         "tof.py",
         "tof4m.py",
@@ -121,5 +123,5 @@ package(
         "zigbee.py",
     ),
     base_path="..",
-    opt=3,
+    # opt=3,
 )

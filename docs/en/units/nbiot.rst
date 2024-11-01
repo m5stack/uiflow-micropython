@@ -56,6 +56,7 @@ Constructors
 
         |init.png|
 
+.. _unit.NBIOTUnit.Methods:
 
 Methods
 -------

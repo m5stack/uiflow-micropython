@@ -282,6 +282,7 @@ patch:
 	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
+	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
@@ -291,6 +292,7 @@ patch:
 unpatch:
 	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
 	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))

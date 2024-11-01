@@ -1,0 +1,44 @@
+
+.. |TimerPWRUnit| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-TimerPWR/4.webp
+    :target: https://docs.m5stack.com/en/unit/Unit-TimerPWR
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/init.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_firmware_version.png
+.. |get_battery_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_battery_voltage.png
+.. |get_battery_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_battery_current.png
+.. |get_usb_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_usb_voltage.png
+.. |get_usb_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_usb_current.png
+.. |get_grove_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_grove_voltage.png
+.. |get_grove_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_grove_current.png
+.. |is_charging.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/is_charging.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_button_status.png
+.. |save_data_to_flash.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/save_data_to_flash.png
+.. |get_grove_output_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_grove_output_status.png
+.. |set_grove_output_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_grove_output_status.png
+.. |get_oled_backlight_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/get_oled_backlight_status.png
+.. |set_oled_backlight_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_oled_backlight_status.png
+.. |sleep_once.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/sleep_once.png
+.. |set_power_on_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_power_on_time.png
+.. |set_power_off_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_power_off_time.png
+.. |sleep_cycle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/sleep_cycle.png
+.. |set_cycle_sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_cycle_sleep.png
+.. |set_wakeup_trigger.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_wakeup_trigger.png
+.. |set_sleep_trigger.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_sleep_trigger.png
+.. .. |set_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/set_callback.png
+.. |usb_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/usb_callback.png
+.. |charging_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/charging_callback.png
+.. |button_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/button_callback.png
+.. |tick.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/tick.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/timerpwr/example.png
+
+.. |atoms3_timerpwr_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/timerpwr/atoms3_timerpwr_example.m5f2"
+        target="_blank"
+    >
+        atoms3_timerpwr_example.m5f2
+    </a>

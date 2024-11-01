@@ -9,16 +9,22 @@ _attrs = {
     "DisplayModule": "display",
     "DualKmeterModule": "dual_kmeter",
     "Encoder4MotorModule": "encoder4_motor",
+    "GRBLModule": "grbl",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
+    "LlmModule": "llm",
     "LoraModule": "lora",
+    "LoRaWANModule": "lorawan",
+    "LoRaWAN868Module": "lorawan868",
     "Module4In8Out": "module_4in8out",
+    "NBIOTModule": "nbiot",
     "PLUSModule": "plus",
     "PPSModule": "pps",
     "RCAModule": "rca",
-    "Relay4Module": "relay_4",
     "Relay2Module": "relay_2",
+    "Relay4Module": "relay_4",
     "RS232Module": "rs232",
+    "StepMotorDriverModule": "step_motor_driver",
 }
 
 # Lazy loader, effectively does:

@@ -9,26 +9,51 @@
 extern "C" {
     #include "uiflow_utility.h"
     #include <driver/periph_ctrl.h>
+    #include "esp_log.h"
+
+    void in_i2c_init(void)
+    {
+        gpio_num_t in_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_scl);
+        gpio_num_t in_sda = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_sda);
+        gpio_num_t ex_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::ex_i2c_scl);
+        gpio_num_t ex_sda = (gpio_num_t)M5.getPin(m5::pin_name_t::ex_i2c_sda);
+        i2c_port_t ex_port = I2C_NUM_0;
+#if SOC_I2C_NUM == 1
+        i2c_port_t in_port = I2C_NUM_0;
+#else
+        i2c_port_t in_port = I2C_NUM_1;
+        if (in_scl == ex_scl && in_sda == ex_sda) {
+            in_port = ex_port;
+        }
+#endif
+
+        if (in_scl != 255 || in_sda != 255) {
+            ESP_LOGW("BOARD", "I2C1 init");
+            if (in_port == I2C_NUM_0) {
+                periph_module_enable(PERIPH_I2C0_MODULE);
+            } else {
+                periph_module_enable(PERIPH_I2C1_MODULE);
+            }
+            i2c_config_t conf;
+            memset(&conf, 0, sizeof(i2c_config_t));
+            conf.mode = I2C_MODE_MASTER;
+            conf.sda_io_num = in_sda;
+            conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
+            conf.scl_io_num = in_scl;
+            conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
+            conf.master.clk_speed = 100000;
+            // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
+            i2c_param_config(in_port, &conf);
+            i2c_driver_install(in_port, I2C_MODE_MASTER, 0, 0, 0);
+        }
+    }
 
     void board_init()
     {
         auto cfg = M5.config();
         cfg.output_power = false;
         M5.begin(cfg);
-        if (M5.getBoard() == m5::board_t::board_M5StackCoreS3 || M5.getBoard() == m5::board_t::board_M5StackCoreS3SE) {
-            periph_module_disable(PERIPH_I2C1_MODULE);
-            i2c_config_t conf;
-            memset(&conf, 0, sizeof(i2c_config_t));
-            conf.mode = I2C_MODE_MASTER;
-            conf.sda_io_num = GPIO_NUM_12;
-            conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
-            conf.scl_io_num = GPIO_NUM_11;
-            conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
-            conf.master.clk_speed = 100000;
-            // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
-            i2c_param_config(I2C_NUM_1, &conf);
-            i2c_driver_install(I2C_NUM_1, I2C_MODE_MASTER, 0, 0, 0);
-        }
+        in_i2c_init();
     }
 
     void power_init()
