@@ -4,9 +4,9 @@
 
 from .mbus import i2c1
 from .module_helper import ModuleError
-import struct
 from micropython import const
-import re, math
+import re
+import math
 import time
 
 
@@ -49,7 +49,7 @@ class GRBLModule:
 
         params:
             address:
-              note: The I2C address of the device.
+                note: The I2C address of the device.
         """
 
         self.i2c = i2c1
@@ -70,7 +70,7 @@ class GRBLModule:
 
         params:
             command:
-              note: The G-code command.
+                note: The G-code command.
         """
         self.i2c.writeto(self.addr, command + "\n")
         return self.get_code_time(command)
@@ -83,10 +83,10 @@ class GRBLModule:
 
         params:
             code:
-              note: The G-code command
+                note: The G-code command
 
         return:
-                        note: The estimated time of the command.
+            note: The estimated time of the command.
 
         """
         x_value = re.search(r"X-*\d+", code)
@@ -116,13 +116,13 @@ class GRBLModule:
 
         params:
             x:
-              note: The position of the X motor, 1.6=360°.
+                note: The position of the X motor, 1.6=360°.
             y:
-              note: The position of the Y motor, 1.6=360°.
+                note: The position of the Y motor, 1.6=360°.
             z:
-              note: The position of the Z motor, 1.6=360°.
+                note: The position of the Z motor, 1.6=360°.
             speed:
-              note: The speed of the motor.
+                note: The speed of the motor.
         """
         command = "G1"
         command += " X{}".format(x) if x is not None else ""
@@ -140,11 +140,11 @@ class GRBLModule:
 
         params:
             mode:
-              note: The mode of the motor.
-              field: dropdown
-              options:
-                Absolute: GRBLModule.MODE_ABSOLUTE
-                Relative: GRBLModule.MODE_RELATIVE
+                note: The mode of the motor.
+                field: dropdown
+                options:
+                    Absolute: GRBLModule.MODE_ABSOLUTE
+                    Relative: GRBLModule.MODE_RELATIVE
         """
         self.mode = mode
         if mode == self.MODE_ABSOLUTE:
@@ -160,13 +160,13 @@ class GRBLModule:
 
         params:
             x_step:
-              note: The step of the X motor.
+                note: The step of the X motor.
             y_step:
-              note: The step of the Y motor.
+                note: The step of the Y motor.
             z_step:
-              note: The step of the Z motor.
+                note: The step of the Z motor.
             acc:
-              note: The acceleration of the motor.
+                note: The acceleration of the motor.
         """
         if x_step:
             self.i2c.writeto(self.addr, "$0={}\n".format(x_step))
@@ -197,7 +197,7 @@ class GRBLModule:
             en: Get the message.
             cn: 获取消息。
         return:
-                        note: The message string.
+            note: The message string.
         """
         i2c_data = ""
         while True:
@@ -214,7 +214,7 @@ class GRBLModule:
             en: Get the status.
             cn: 获取状态。
         return:
-                        note: The status string.
+            note: The status string.
         """
         self.flush()
         self.i2c.writeto(self.addr, "@")
@@ -226,7 +226,7 @@ class GRBLModule:
             en: Get the idle state.
             cn: 获取空闲状态。
         return:
-                        note: The idle state.
+            note: The idle state.
         """
         return self.get_status()[0] == "I"
 
@@ -236,7 +236,7 @@ class GRBLModule:
             en: Get the lock state.
             cn: 获取锁定状态。
         return:
-                        note: The lock state.
+            note: The lock state.
         """
         return self.get_status()[0] == "A"
 
