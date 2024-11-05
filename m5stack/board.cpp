@@ -48,8 +48,8 @@ extern "C" {
         auto cfg = M5.config();
         cfg.output_power = false;
         M5.begin(cfg);
-        // in_i2c_init();
-        // M5.In_I2C.release();
+        in_i2c_init();
+        M5.In_I2C.release();
     }
 
     void power_init()

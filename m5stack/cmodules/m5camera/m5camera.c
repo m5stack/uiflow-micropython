@@ -50,8 +50,8 @@ static camera_config_t camera_config = {
     .pin_pwdn = CORES3_CAMERA_POWER_DOWN_PIN,
     .pin_reset = CORES3_CAMERA_RESET_PIN,
     .pin_xclk = CORES3_CAMERA_XCLK_PIN,
-    .pin_sscb_sda = CORES3_CAMERA_SDA_PIN,
-    .pin_sscb_scl = CORES3_CAMERA_SCL_PIN,
+    .pin_sscb_sda = -1,
+    .pin_sscb_scl = -1,
     .pin_d7 = CORES3_CAMERA_D7_PIN,
     .pin_d6 = CORES3_CAMERA_D6_PIN,
     .pin_d5 = CORES3_CAMERA_D5_PIN,
@@ -73,6 +73,7 @@ static camera_config_t camera_config = {
     .fb_count = 2,
     .fb_location = CAMERA_FB_IN_PSRAM,
     .grab_mode = CAMERA_GRAB_LATEST,
+    .sccb_i2c_port = 1,
 };
 
 static enum {
