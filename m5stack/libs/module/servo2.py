@@ -4,7 +4,7 @@ import module
 
 
 class Servo2Module(Servos):
-    def __init__(self, address=0x40, min_us=400, max_us=2350, degrees=180):
+    def __init__(self, address=0x40, freq=50, min_us=400, max_us=2350, degrees=180):
         self._addr = address
         self.min_us = min_us
         self.max_us = max_us
@@ -15,6 +15,7 @@ class Servo2Module(Servos):
 
         super(Servo2Module, self).__init__(
             self.i2c,
+            freq=freq,
             address=self._addr,
             min_us=self.min_us,
             max_us=self.max_us,

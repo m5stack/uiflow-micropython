@@ -33,11 +33,10 @@ class Servo2Module
 Constructors
 ------------
 
-.. class:: Servo2Module(i2c, address, freq, min_us, max_us, degrees)
+.. class:: Servo2Module(address, freq, min_us, max_us, degrees)
 
     Create a Servo instance.
 
-    :param  i2c: The I2C bus.
     :param int address: The I2C address.
     :param int freq: The PWM frequency in Hz.
     :param int min_us: The minimum pulse width in microseconds.
