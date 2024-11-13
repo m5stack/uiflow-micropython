@@ -164,7 +164,7 @@ esp_err_t max30102_soft_reset(max30102_config_t *this) {
         if ((mode_conf & MAX30102_RESET) == 0) {
             break; // We're done!
         }
-        vTaskDelay(1 / portTICK_RATE_MS); // Let's not over burden the I2C bus
+        vTaskDelay(1 / portTICK_PERIOD_MS); // Let's not over burden the I2C bus
     }
     return ret;
 }
@@ -422,7 +422,7 @@ esp_err_t max30102_write_register(max30102_config_t *this,
     i2c_master_stop(cmd);
     esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
         cmd,
-        1000 / portTICK_RATE_MS);
+        1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(cmd);
     free_bus(this->device_pos);
     if (ret != ESP_OK) {
@@ -450,7 +450,7 @@ esp_err_t max30102_read_register(max30102_config_t *this,
     i2c_master_stop(cmd);
     esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
         cmd,
-        1000 / portTICK_RATE_MS);
+        1000 / portTICK_PERIOD_MS);
 
     i2c_cmd_link_delete(cmd);
     free_bus(this->device_pos);
@@ -486,7 +486,7 @@ esp_err_t max30102_read_from(max30102_config_t *this,
     i2c_master_stop(cmd);
     esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
         cmd,
-        1000 / portTICK_RATE_MS);
+        1000 / portTICK_PERIOD_MS);
     i2c_cmd_link_delete(cmd);
     free_bus(this->device_pos);
     if (ret != ESP_OK) {

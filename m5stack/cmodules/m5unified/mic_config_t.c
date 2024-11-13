@@ -8,7 +8,7 @@
 
 /* *FORMAT-OFF* */
 
-STATIC mp_obj_t mic_config_t_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
+static mp_obj_t mic_config_t_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
     mp_mic_config_t *self = m_new_obj(mp_mic_config_t);
     self->base.type = &mp_mic_config_t_type;
     self->pin_data_in = mp_obj_new_int(-1);
@@ -30,7 +30,7 @@ STATIC mp_obj_t mic_config_t_make_new(const mp_obj_type_t *type, size_t n_args, 
     return MP_OBJ_FROM_PTR(self);
 }
 
-STATIC void mic_config_t_attr(mp_obj_t self_in, qstr attr, mp_obj_t *dest) {
+static void mic_config_t_attr(mp_obj_t self_in, qstr attr, mp_obj_t *dest) {
     mp_mic_config_t *self = (mp_mic_config_t *)MP_OBJ_TO_PTR(self_in);
     if (dest[0] == MP_OBJ_NULL) {
         // Load

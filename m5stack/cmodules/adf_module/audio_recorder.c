@@ -287,6 +287,7 @@ typedef struct i2s_stream {
 } i2s_stream_t;
 
 
+#if (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 2, 0) && ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0))
 static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickType_t ticks_to_wait, void *context) {
     audio_recorder_obj_t *recorder = (audio_recorder_obj_t *)context;
     while (recorder->is_pause) {
@@ -307,7 +308,22 @@ static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickTyp
     }
     return bytes_read;
 }
+#else
+// static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickType_t ticks_to_wait, void *context)
+// {
+//     audio_recorder_obj_t *recorder = (audio_recorder_obj_t *)context;
+//     while (recorder->is_pause) {
+//         vTaskDelay(100 / portTICK_PERIOD_MS);
+//     }
 
+//     size_t bytes_read = 0;
+//     i2s_stream_t *i2s = (i2s_stream_t *)audio_element_getdata(self);
+//     i2s_safe_lock(s_i2s_tx_mutex[i2s->port]);
+//     i2s_channel_read(i2s_key_slot[i2s->port].rx_handle, buffer, len, &bytes_read, ticks_to_wait);
+//     i2s_safe_unlock(s_i2s_tx_mutex[i2s->port]);
+//     return bytes_read;
+// }
+#endif
 
 static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, int format, int sample, int bits, int channels) {
     // init audio board
@@ -322,13 +338,13 @@ static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, i
     self->pipeline = audio_pipeline_init(&pipeline_cfg);
     // I2S
     i2s_stream_cfg_t i2s_cfg = BOARD_I2S_STREAM_CFG_DEFAULT();
-    i2s_cfg.i2s_config.sample_rate = 48000;
-    i2s_cfg.i2s_config.bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT;
-    i2s_cfg.type = AUDIO_STREAM_READER;
-    i2s_cfg.task_core = 1;
-    i2s_cfg.uninstall_drv = false;
+    // i2s_cfg.i2s_config.sample_rate = 48000;
+    // i2s_cfg.i2s_config.bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT;
+    // i2s_cfg.type = AUDIO_STREAM_READER;
+    // i2s_cfg.task_core = 1;
+    // i2s_cfg.uninstall_drv = false;
     self->i2s_stream = i2s_stream_init(&i2s_cfg);
-    audio_element_set_read_cb(self->i2s_stream, _i2s_read, self);
+    // audio_element_set_read_cb(self->i2s_stream, _i2s_read, self);
     // filter
     self->filter = audio_recorder_create_filter(format, sample, bits, channels);
     // encoder

@@ -34,5 +34,6 @@ endif()
 
 register_component()
 target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-format")
+target_compile_options(${COMPONENT_LIB} PRIVATE "-Wno-array-bounds")
 target_compile_definitions(${COMPONENT_LIB} PRIVATE BOARD_ID=${BOARD_ID})
 target_compile_definitions(${COMPONENT_LIB} PRIVATE M5GFX_BOARD=${BOARD_ID})

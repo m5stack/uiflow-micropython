@@ -41,29 +41,29 @@ typedef struct _max30100_hw_i2c_obj_t {
     uint32_t freq;
 } max30100_hw_i2c_obj_t;
 
-STATIC mp_obj_t mp_MAX30100_get_HeartRate(void) {
+static mp_obj_t mp_MAX30100_get_HeartRate(void) {
     return mp_obj_new_int(_heart_bpm);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_get_HeartRate_obj, mp_MAX30100_get_HeartRate);
 
-STATIC mp_obj_t mp_MAX30100_get_SpO2(void) {
+static mp_obj_t mp_MAX30100_get_SpO2(void) {
     return mp_obj_new_int(_spo2);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_get_SpO2_obj, mp_MAX30100_get_SpO2);
 
-STATIC mp_obj_t mp_MAX30100_get_ir(void) {
+static mp_obj_t mp_MAX30100_get_ir(void) {
     return mp_obj_new_int(_ir);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_get_ir_obj, mp_MAX30100_get_ir);
 
 
-STATIC mp_obj_t mp_MAX30100_get_red(void) {
+static mp_obj_t mp_MAX30100_get_red(void) {
     return mp_obj_new_int(_red);
 }
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_get_red_obj, mp_MAX30100_get_red);
 
 
-STATIC mp_obj_t mp_MAX30100_update(void) {
+static mp_obj_t mp_MAX30100_update(void) {
     max30100_data_t result = {};
 
     esp_err_t ret = max30100_update(&max30100, &result);
@@ -92,7 +92,7 @@ STATIC mp_obj_t mp_MAX30100_update(void) {
 }
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_update_obj, mp_MAX30100_update);
 
-STATIC mp_obj_t mp_MAX30100_init(mp_obj_t i2c_bus_in, mp_obj_t addr_in) {
+static mp_obj_t mp_MAX30100_init(mp_obj_t i2c_bus_in, mp_obj_t addr_in) {
     max30100_hw_i2c_obj_t *i2c_bus = (max30100_hw_i2c_obj_t *)i2c_bus_in;
     max30100.device_pos = i2c_bus->pos;
     max30100.i2c_num = i2c_bus->port;
@@ -113,7 +113,7 @@ STATIC mp_obj_t mp_MAX30100_init(mp_obj_t i2c_bus_in, mp_obj_t addr_in) {
 }
 MP_DEFINE_CONST_FUN_OBJ_2(mp_MAX30100_init_obj, mp_MAX30100_init);
 
-STATIC mp_obj_t mp_MAX30100_set_mode(mp_obj_t mode_in) {
+static mp_obj_t mp_MAX30100_set_mode(mp_obj_t mode_in) {
 
     uint8_t mode = mp_obj_get_int(mode_in);
 
@@ -122,7 +122,7 @@ STATIC mp_obj_t mp_MAX30100_set_mode(mp_obj_t mode_in) {
 }
 MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30100_set_mode_obj, mp_MAX30100_set_mode);
 
-STATIC mp_obj_t mp_MAX30100_set_led_current(mp_obj_t red, mp_obj_t ir) {
+static mp_obj_t mp_MAX30100_set_led_current(mp_obj_t red, mp_obj_t ir) {
 
     uint8_t red_current = mp_obj_get_int(red);
     uint8_t ir_current = mp_obj_get_int(ir);
@@ -133,7 +133,7 @@ STATIC mp_obj_t mp_MAX30100_set_led_current(mp_obj_t red, mp_obj_t ir) {
 MP_DEFINE_CONST_FUN_OBJ_2(mp_MAX30100_set_led_current_obj, mp_MAX30100_set_led_current);
 
 
-STATIC mp_obj_t mp_MAX30100_set_pulse_width(mp_obj_t pw) {
+static mp_obj_t mp_MAX30100_set_pulse_width(mp_obj_t pw) {
 
     uint8_t plus_width = mp_obj_get_int(pw);
 
@@ -142,7 +142,7 @@ STATIC mp_obj_t mp_MAX30100_set_pulse_width(mp_obj_t pw) {
 }
 MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30100_set_pulse_width_obj, mp_MAX30100_set_pulse_width);
 
-STATIC mp_obj_t mp_MAX30100_set_sampling_rate(mp_obj_t rate) {
+static mp_obj_t mp_MAX30100_set_sampling_rate(mp_obj_t rate) {
 
     uint8_t sampling_rate = mp_obj_get_int(rate);
 
@@ -152,7 +152,7 @@ STATIC mp_obj_t mp_MAX30100_set_sampling_rate(mp_obj_t rate) {
 MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30100_set_sampling_rate_obj, mp_MAX30100_set_sampling_rate);
 
 
-STATIC mp_obj_t mp_MAX30100_deinit(void) {
+static mp_obj_t mp_MAX30100_deinit(void) {
     _heart_bpm = 0;
     _spo2 = 0;
     return mp_const_none;
@@ -160,7 +160,7 @@ STATIC mp_obj_t mp_MAX30100_deinit(void) {
 MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30100_deinit_obj, mp_MAX30100_deinit);
 
 
-STATIC const mp_rom_map_elem_t max30100_globals_dict_table[] = {
+static const mp_rom_map_elem_t max30100_globals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_init),           (mp_obj_t)&mp_MAX30100_init_obj },
     { MP_ROM_QSTR(MP_QSTR_get_heart_rate),  (mp_obj_t)&mp_MAX30100_get_HeartRate_obj },
     { MP_ROM_QSTR(MP_QSTR_get_spo2),       (mp_obj_t)&mp_MAX30100_get_SpO2_obj },
@@ -176,7 +176,7 @@ STATIC const mp_rom_map_elem_t max30100_globals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_deinit),         (mp_obj_t)&mp_MAX30100_deinit_obj}
 };
 
-STATIC MP_DEFINE_CONST_DICT(max30100_globals_dict, max30100_globals_dict_table);
+static MP_DEFINE_CONST_DICT(max30100_globals_dict, max30100_globals_dict_table);
 
 const mp_obj_module_t mp_module_max30100 = {
     .base = {&mp_type_module},

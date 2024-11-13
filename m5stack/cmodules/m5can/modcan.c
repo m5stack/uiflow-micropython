@@ -78,7 +78,7 @@ const mp_obj_type_t pyb_can_type;
 // static const twai_timing_config_t t_config = TWAI_TIMING_CONFIG_1MBITS();
 // static const twai_filter_config_t f_config = TWAI_FILTER_CONFIG_ACCEPT_ALL();
 
-STATIC void pyb_can_print(const mp_print_t *print, mp_obj_t self_in, mp_print_kind_t kind) {
+static void pyb_can_print(const mp_print_t *print, mp_obj_t self_in, mp_print_kind_t kind) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
     if (!self->is_enabled) {
         mp_printf(print, "CAN(%u)", self->can_id);
@@ -107,7 +107,7 @@ STATIC void pyb_can_print(const mp_print_t *print, mp_obj_t self_in, mp_print_ki
 }
 
 // init(mode, prescaler=100, *, sjw=1, bs1=6, bs2=8)
-STATIC mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_mode, ARG_tx, ARG_rx, ARG_prescaler, ARG_sjw, ARG_bs1, ARG_bs2, ARG_triple_sampling };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_mode,            MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = CAN_MODE_NORMAL} },
@@ -145,7 +145,7 @@ STATIC mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp
 }
 
 // CAN(bus, ...)
-STATIC mp_obj_t pyb_can_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
+static mp_obj_t pyb_can_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
     // check arguments
     mp_arg_check_num(n_args, n_kw, 3, MP_OBJ_FUN_ARGS_MAX, true);
 
@@ -209,13 +209,13 @@ STATIC mp_obj_t pyb_can_make_new(const mp_obj_type_t *type, size_t n_args, size_
     return MP_OBJ_FROM_PTR(self);
 }
 
-STATIC mp_obj_t pyb_can_init(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_init(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     return pyb_can_init_helper(MP_OBJ_TO_PTR(args[0]), n_args - 1, args + 1, kw_args);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_init_obj, 1, pyb_can_init);
+static MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_init_obj, 1, pyb_can_init);
 
 // deinit()
-STATIC mp_obj_t pyb_can_deinit(mp_obj_t self_in) {
+static mp_obj_t pyb_can_deinit(mp_obj_t self_in) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
     if (self->is_enabled) {
         twai_stop();
@@ -224,10 +224,10 @@ STATIC mp_obj_t pyb_can_deinit(mp_obj_t self_in) {
     }
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_deinit_obj, pyb_can_deinit);
+static MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_deinit_obj, pyb_can_deinit);
 
 // Force a software restart of the controller, to allow transmission after a bus error
-STATIC mp_obj_t pyb_can_restart(mp_obj_t self_in) {
+static mp_obj_t pyb_can_restart(mp_obj_t self_in) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
     if (self->is_enabled) {
         twai_stop();
@@ -235,10 +235,10 @@ STATIC mp_obj_t pyb_can_restart(mp_obj_t self_in) {
     }
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_restart_obj, pyb_can_restart);
+static MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_restart_obj, pyb_can_restart);
 
 // Get the state of the controller
-STATIC mp_obj_t pyb_can_state(mp_obj_t self_in) {
+static mp_obj_t pyb_can_state(mp_obj_t self_in) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
 
     mp_int_t state = CAN_STATE_STOPPED;
@@ -257,10 +257,10 @@ STATIC mp_obj_t pyb_can_state(mp_obj_t self_in) {
     }
     return MP_OBJ_NEW_SMALL_INT(state);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_state_obj, pyb_can_state);
+static MP_DEFINE_CONST_FUN_OBJ_1(pyb_can_state_obj, pyb_can_state);
 
 // Get info about error states and TX/RX buffers
-STATIC mp_obj_t pyb_can_info(size_t n_args, const mp_obj_t *args) {
+static mp_obj_t pyb_can_info(size_t n_args, const mp_obj_t *args) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(args[0]);
     mp_obj_list_t *list;
     if (n_args == 1) {
@@ -290,10 +290,10 @@ STATIC mp_obj_t pyb_can_info(size_t n_args, const mp_obj_t *args) {
 
     return MP_OBJ_FROM_PTR(list);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(pyb_can_info_obj, 1, 2, pyb_can_info);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(pyb_can_info_obj, 1, 2, pyb_can_info);
 
 // any(fifo) - return `True` if any message waiting on the FIFO, else `False`
-STATIC mp_obj_t pyb_can_any(mp_obj_t self_in, mp_obj_t fifo_in) {
+static mp_obj_t pyb_can_any(mp_obj_t self_in, mp_obj_t fifo_in) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
     mp_int_t fifo = mp_obj_get_int(fifo_in); // ignored for now, compatible with pyb can
     if (self->is_enabled) {
@@ -307,10 +307,10 @@ STATIC mp_obj_t pyb_can_any(mp_obj_t self_in, mp_obj_t fifo_in) {
     }
     return mp_const_false;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_2(pyb_can_any_obj, pyb_can_any);
+static MP_DEFINE_CONST_FUN_OBJ_2(pyb_can_any_obj, pyb_can_any);
 
 // send(send, addr, *, timeout=5000)
-STATIC mp_obj_t pyb_can_send(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_send(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_data, ARG_id, ARG_timeout, ARG_rtr, ARG_extframe };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_data,     MP_ARG_REQUIRED | MP_ARG_OBJ,   {.u_obj = MP_OBJ_NULL} },
@@ -344,10 +344,10 @@ STATIC mp_obj_t pyb_can_send(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     check_esp_err(twai_transmit(&tx_msg, args[ARG_timeout].u_int));
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_send_obj, 1, pyb_can_send);
+static MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_send_obj, 1, pyb_can_send);
 
 // recv(fifo, list=None, *, timeout=5000)
-STATIC mp_obj_t pyb_can_recv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_recv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_fifo, ARG_list, ARG_timeout };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_fifo,    MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 0} },
@@ -413,9 +413,9 @@ STATIC mp_obj_t pyb_can_recv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     // Return the result
     return ret_obj;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_recv_obj, 1, pyb_can_recv);
+static MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_recv_obj, 1, pyb_can_recv);
 
-STATIC mp_obj_t pyb_can_clearfilter(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_clearfilter(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_extframe };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_extframe, MP_ARG_BOOL, {.u_bool = false} },
@@ -431,11 +431,11 @@ STATIC mp_obj_t pyb_can_clearfilter(size_t n_args, const mp_obj_t *pos_args, mp_
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_clearfilter_obj, 2, pyb_can_clearfilter);
+static MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_clearfilter_obj, 2, pyb_can_clearfilter);
 
 // setfilter(bank, mode, fifo, params, *, rtr)
 #define EXTENDED_ID_TO_16BIT_FILTER(id) (((id & 0xC00000) >> 13) | ((id & 0x38000) >> 15)) | 8
-STATIC mp_obj_t pyb_can_setfilter(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t pyb_can_setfilter(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_bank, ARG_mode, ARG_fifo, ARG_params, ARG_rtr, ARG_extframe };
     static const mp_arg_t allowed_args[] = {
         { MP_QSTR_bank,     MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 0} }, // ignored for now, compatible with pyb can
@@ -455,9 +455,9 @@ STATIC mp_obj_t pyb_can_setfilter(size_t n_args, const mp_obj_t *pos_args, mp_ma
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_setfilter_obj, 1, pyb_can_setfilter);
+static MP_DEFINE_CONST_FUN_OBJ_KW(pyb_can_setfilter_obj, 1, pyb_can_setfilter);
 
-STATIC const mp_rom_map_elem_t pyb_can_locals_dict_table[] = {
+static const mp_rom_map_elem_t pyb_can_locals_dict_table[] = {
     // instance methods
     { MP_ROM_QSTR(MP_QSTR_init), MP_ROM_PTR(&pyb_can_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_deinit), MP_ROM_PTR(&pyb_can_deinit_obj) },
@@ -498,15 +498,15 @@ STATIC const mp_rom_map_elem_t pyb_can_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_RECOVERING), MP_ROM_INT(CAN_STATE_RECOVERING) },
     { MP_ROM_QSTR(MP_QSTR_RUNNING), MP_ROM_INT(CAN_STATE_RUNNING) },
 };
-STATIC MP_DEFINE_CONST_DICT(pyb_can_locals_dict, pyb_can_locals_dict_table);
+static MP_DEFINE_CONST_DICT(pyb_can_locals_dict, pyb_can_locals_dict_table);
 
-STATIC mp_uint_t can_ioctl(mp_obj_t self_in, mp_uint_t request, uintptr_t arg, int *errcode) {
+static mp_uint_t can_ioctl(mp_obj_t self_in, mp_uint_t request, uintptr_t arg, int *errcode) {
     pyb_can_obj_t *self = MP_OBJ_TO_PTR(self_in);
     mp_uint_t ret = 0;
     return ret;
 }
 
-STATIC const mp_stream_p_t can_stream_p = {
+static const mp_stream_p_t can_stream_p = {
     // .read = can_read, // is read sensible for CAN?
     // .write = can_write, // is write sensible for CAN?
     .ioctl = can_ioctl,
@@ -525,12 +525,12 @@ MP_DEFINE_CONST_OBJ_TYPE(
 
 MP_REGISTER_ROOT_POINTER(struct _pyb_can_obj_t *pyb_can_obj_all[1]);
 
-STATIC const mp_rom_map_elem_t m5can_module_globals_table[] = {
+static const mp_rom_map_elem_t m5can_module_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_m5can) },
     { MP_ROM_QSTR(MP_QSTR_CAN), MP_ROM_PTR(&pyb_can_type) },
 };
 
-STATIC MP_DEFINE_CONST_DICT(m5can_module_globals, m5can_module_globals_table);
+static MP_DEFINE_CONST_DICT(m5can_module_globals, m5can_module_globals_table);
 
 const mp_obj_module_t m5can_module = {
     .base = { &mp_type_module },

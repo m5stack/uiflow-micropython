@@ -63,8 +63,9 @@ typedef struct _sdcard_obj_t {
     // The card structure duplicates the host. It's not clear if we
     // can avoid this given the way that it is copied.
     sdmmc_card_t card;
-    uint8_t shared_bus;
-
+    // Start of modification section, by M5Stack
+    bool shared_bus;
+    // End of modification section, by M5Stack
 } sdcard_card_obj_t;
 
 #define SDCARD_CARD_FLAGS_HOST_INIT_DONE 0x01
@@ -138,7 +139,7 @@ static const sdspi_device_config_t spi_dev_defaults[2] = {
     if (arg_vals[arg_id].u_obj != mp_const_none) \
     config.pin_var = machine_pin_get_id(arg_vals[arg_id].u_obj)
 
-STATIC esp_err_t sdcard_ensure_card_init(sdcard_card_obj_t *self, bool force) {
+static esp_err_t sdcard_ensure_card_init(sdcard_card_obj_t *self, bool force) {
     if (force || !(self->flags & SDCARD_CARD_FLAGS_CARD_INIT_DONE)) {
         DEBUG_printf("  Calling card init");
 
@@ -169,7 +170,7 @@ STATIC esp_err_t sdcard_ensure_card_init(sdcard_card_obj_t *self, bool force) {
 // transfers. Only 1-bit is supported on the SPI interfaces.
 // card = SDCard(slot=1, width=None, present_pin=None, wp_pin=None)
 
-STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
+static mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
     // check arguments
     enum {
         ARG_slot,
@@ -182,7 +183,7 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
         ARG_cs,
         ARG_freq,
     };
-    STATIC const mp_arg_t allowed_args[] = {
+    static const mp_arg_t allowed_args[] = {
         { MP_QSTR_slot,     MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 1} },
         { MP_QSTR_width,    MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 1} },
         { MP_QSTR_cd,       MP_ARG_KW_ONLY | MP_ARG_OBJ, {.u_obj = mp_const_none} },
@@ -206,7 +207,7 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
     mp_arg_parse_all(n_args, args, &kw_args,
         MP_ARRAY_SIZE(allowed_args), allowed_args, arg_vals);
 
-    DEBUG_printf("  slot=%d, width=%d, cd=%p, wp=%p",
+    DEBUG_printf("  slot=%ld, width=%ld, cd=%p, wp=%p",
         arg_vals[ARG_slot].u_int, arg_vals[ARG_width].u_int,
         arg_vals[ARG_cd].u_obj, arg_vals[ARG_wp].u_obj);
 
@@ -227,9 +228,10 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
 
     DEBUG_printf("  Setting up host configuration");
 
-    sdcard_card_obj_t *self = m_new_obj_with_finaliser(sdcard_card_obj_t);
-    self->base.type = &machine_sdcard_type;
-    self->shared_bus = 0;
+    sdcard_card_obj_t *self = mp_obj_malloc_with_finaliser(sdcard_card_obj_t, &machine_sdcard_type);
+    // Start of modification section, by M5Stack
+    self->shared_bus = false;
+    // End of modification section, by M5Stack
     self->flags = 0;
     // Note that these defaults are macros that expand to structure
     // constants so we can't directly assign them to fields.
@@ -281,7 +283,7 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
         esp_err_t result = spi_bus_initialize(spi_host_id, &bus_config, dma_channel);
         if (result == ESP_ERR_INVALID_STATE) {
             // Already initialised, so just return the existing object.
-            self->shared_bus = 1;
+            self->shared_bus = true;
         } else if (result != ESP_OK) {
             check_esp_err(result);
         }
@@ -293,11 +295,14 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
             spi_bus_free(spi_host_id);
             check_esp_err(ret);
         }
-        if (self->host.slot != sdspi_handle) {
-            // MicroPython restriction: the SPI bus must be exclusively for the SD card.
-            spi_bus_free(spi_host_id);
-            mp_raise_ValueError(MP_ERROR_TEXT("SPI bus already in use"));
-        }
+
+        // Start of modification section, by M5Stack
+        // if (self->host.slot != sdspi_handle) {
+        //     // MicroPython restriction: the SPI bus must be exclusively for the SD card.
+        //     spi_bus_free(spi_host_id);
+        //     mp_raise_ValueError(MP_ERROR_TEXT("SPI bus already in use"));
+        // }
+        // End of modification section, by M5Stack
     } else {
         // SD/MMC interface
         DEBUG_printf("  Setting up SDMMC slot configuration");
@@ -325,16 +330,17 @@ STATIC mp_obj_t machine_sdcard_make_new(const mp_obj_type_t *type, size_t n_args
     return MP_OBJ_FROM_PTR(self);
 }
 
-STATIC mp_obj_t sd_deinit(mp_obj_t self_in) {
+static mp_obj_t sd_deinit(mp_obj_t self_in) {
     sdcard_card_obj_t *self = self_in;
 
     DEBUG_printf("De-init host\n");
+    DEBUG_printf("shared_bus = %d", self->shared_bus);
 
     if (self->flags & SDCARD_CARD_FLAGS_HOST_INIT_DONE) {
         if (self->host.flags & SDMMC_HOST_FLAG_DEINIT_ARG) {
             self->host.deinit_p(self->host.slot);
         } else {
-            self->host.deinit_p(self->host.slot);
+            self->host.deinit();
         }
         if (self->host.flags & SDMMC_HOST_FLAG_SPI) {
             // SD card used a (dedicated) SPI bus, so free that SPI bus.
@@ -347,9 +353,9 @@ STATIC mp_obj_t sd_deinit(mp_obj_t self_in) {
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(sd_deinit_obj, sd_deinit);
+static MP_DEFINE_CONST_FUN_OBJ_1(sd_deinit_obj, sd_deinit);
 
-STATIC mp_obj_t sd_info(mp_obj_t self_in) {
+static mp_obj_t sd_info(mp_obj_t self_in) {
     sdcard_card_obj_t *self = self_in;
     // We could potential return a great deal more SD card data but it
     // is not clear that it is worth the extra code space to do
@@ -367,9 +373,9 @@ STATIC mp_obj_t sd_info(mp_obj_t self_in) {
     };
     return mp_obj_new_tuple(2, tuple);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_1(sd_info_obj, sd_info);
+static MP_DEFINE_CONST_FUN_OBJ_1(sd_info_obj, sd_info);
 
-STATIC mp_obj_t machine_sdcard_readblocks(mp_obj_t self_in, mp_obj_t block_num, mp_obj_t buf) {
+static mp_obj_t machine_sdcard_readblocks(mp_obj_t self_in, mp_obj_t block_num, mp_obj_t buf) {
     sdcard_card_obj_t *self = self_in;
     mp_buffer_info_t bufinfo;
     esp_err_t err;
@@ -382,11 +388,12 @@ STATIC mp_obj_t machine_sdcard_readblocks(mp_obj_t self_in, mp_obj_t block_num, 
     mp_get_buffer_raise(buf, &bufinfo, MP_BUFFER_WRITE);
     err = sdmmc_read_sectors(&(self->card), bufinfo.buf, mp_obj_get_int(block_num), bufinfo.len / _SECTOR_SIZE(self));
 
-    return mp_obj_new_bool(err == ESP_OK);
+    int ret = err == ESP_OK ? 0 : -MP_EIO;
+    return MP_OBJ_NEW_SMALL_INT(ret);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_readblocks_obj, machine_sdcard_readblocks);
+static MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_readblocks_obj, machine_sdcard_readblocks);
 
-STATIC mp_obj_t machine_sdcard_writeblocks(mp_obj_t self_in, mp_obj_t block_num, mp_obj_t buf) {
+static mp_obj_t machine_sdcard_writeblocks(mp_obj_t self_in, mp_obj_t block_num, mp_obj_t buf) {
     sdcard_card_obj_t *self = self_in;
     mp_buffer_info_t bufinfo;
     esp_err_t err;
@@ -399,11 +406,12 @@ STATIC mp_obj_t machine_sdcard_writeblocks(mp_obj_t self_in, mp_obj_t block_num,
     mp_get_buffer_raise(buf, &bufinfo, MP_BUFFER_READ);
     err = sdmmc_write_sectors(&(self->card), bufinfo.buf, mp_obj_get_int(block_num), bufinfo.len / _SECTOR_SIZE(self));
 
-    return mp_obj_new_bool(err == ESP_OK);
+    int ret = err == ESP_OK ? 0 : -MP_EIO;
+    return MP_OBJ_NEW_SMALL_INT(ret);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_writeblocks_obj, machine_sdcard_writeblocks);
+static MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_writeblocks_obj, machine_sdcard_writeblocks);
 
-STATIC mp_obj_t machine_sdcard_ioctl(mp_obj_t self_in, mp_obj_t cmd_in, mp_obj_t arg_in) {
+static mp_obj_t machine_sdcard_ioctl(mp_obj_t self_in, mp_obj_t cmd_in, mp_obj_t arg_in) {
     sdcard_card_obj_t *self = self_in;
     esp_err_t err = ESP_OK;
     mp_int_t cmd = mp_obj_get_int(cmd_in);
@@ -440,9 +448,9 @@ STATIC mp_obj_t machine_sdcard_ioctl(mp_obj_t self_in, mp_obj_t cmd_in, mp_obj_t
             return MP_OBJ_NEW_SMALL_INT(-1); // error
     }
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_ioctl_obj, machine_sdcard_ioctl);
+static MP_DEFINE_CONST_FUN_OBJ_3(machine_sdcard_ioctl_obj, machine_sdcard_ioctl);
 
-STATIC const mp_rom_map_elem_t machine_sdcard_locals_dict_table[] = {
+static const mp_rom_map_elem_t machine_sdcard_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_info), MP_ROM_PTR(&sd_info_obj) },
     { MP_ROM_QSTR(MP_QSTR___del__), MP_ROM_PTR(&sd_deinit_obj) },
     { MP_ROM_QSTR(MP_QSTR_deinit), MP_ROM_PTR(&sd_deinit_obj) },
@@ -452,7 +460,7 @@ STATIC const mp_rom_map_elem_t machine_sdcard_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_ioctl), MP_ROM_PTR(&machine_sdcard_ioctl_obj) },
 };
 
-STATIC MP_DEFINE_CONST_DICT(machine_sdcard_locals_dict, machine_sdcard_locals_dict_table);
+static MP_DEFINE_CONST_DICT(machine_sdcard_locals_dict, machine_sdcard_locals_dict_table);
 
 MP_DEFINE_CONST_OBJ_TYPE(
     machine_sdcard_type,

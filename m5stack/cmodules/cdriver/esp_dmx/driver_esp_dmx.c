@@ -30,7 +30,7 @@ static uint8_t dmx_data[DMX_PACKET_SIZE] = {};  // Buffer to store DMX data
 dmx_port_t dmxPort;
 bool dmxIsConnected = false;
 
-STATIC mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     static const mp_arg_t allowed_args[] = {
         {MP_QSTR_port_id, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 1}},
         {MP_QSTR_tx_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 13}},  // 1us resolution
@@ -61,9 +61,9 @@ STATIC mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *k
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_init_obj, 5, mp_dmx_init);
+static MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_init_obj, 5, mp_dmx_init);
 
-STATIC mp_obj_t mp_dmx_write_data(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t mp_dmx_write_data(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     static const mp_arg_t allowed_args[] = {
         {MP_QSTR_channel, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 1}},
         {MP_QSTR_ch_data, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 0}},  // 1us resolution
@@ -84,9 +84,9 @@ STATIC mp_obj_t mp_dmx_write_data(size_t n_args, const mp_obj_t *pos_args, mp_ma
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_write_data_obj, 2, mp_dmx_write_data);
+static MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_write_data_obj, 2, mp_dmx_write_data);
 
-STATIC mp_obj_t mp_dmx_read_data(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+static mp_obj_t mp_dmx_read_data(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     static const mp_arg_t allowed_args[] = {
         {MP_QSTR_channel, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 1}},
     };
@@ -107,27 +107,27 @@ STATIC mp_obj_t mp_dmx_read_data(size_t n_args, const mp_obj_t *pos_args, mp_map
     }
     return mp_obj_new_int(dmx_data[channel]);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_read_data_obj, 1, mp_dmx_read_data);
+static MP_DEFINE_CONST_FUN_OBJ_KW(mp_dmx_read_data_obj, 1, mp_dmx_read_data);
 
-STATIC mp_obj_t mp_dmx_clear_buffer() {
+static mp_obj_t mp_dmx_clear_buffer() {
     memset(dmx_data, 0, DMX_PACKET_SIZE);
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_clear_buffer_obj, mp_dmx_clear_buffer);
+static MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_clear_buffer_obj, mp_dmx_clear_buffer);
 
-STATIC mp_obj_t mp_dmx_delete_port() {
+static mp_obj_t mp_dmx_delete_port() {
     dmx_driver_delete(dmxPort);
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_delete_port_obj, mp_dmx_delete_port);
+static MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_delete_port_obj, mp_dmx_delete_port);
 
-STATIC mp_obj_t mp_dmx_deinit() {
+static mp_obj_t mp_dmx_deinit() {
     dmx_driver_delete(dmxPort);
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_deinit_obj, mp_dmx_deinit);
+static MP_DEFINE_CONST_FUN_OBJ_0(mp_dmx_deinit_obj, mp_dmx_deinit);
 
-STATIC const mp_rom_map_elem_t esp_dmx_globals_dict_table[] = {
+static const mp_rom_map_elem_t esp_dmx_globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR_dmx_init), (mp_obj_t)&mp_dmx_init_obj},
     {MP_ROM_QSTR(MP_QSTR_dmx_write_data), (mp_obj_t)&mp_dmx_write_data_obj},
     {MP_ROM_QSTR(MP_QSTR_dmx_read_data), (mp_obj_t)&mp_dmx_read_data_obj},
@@ -136,7 +136,7 @@ STATIC const mp_rom_map_elem_t esp_dmx_globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR_dmx_deinit), (mp_obj_t)&mp_dmx_deinit_obj},
 };
 
-STATIC MP_DEFINE_CONST_DICT(esp_dmx_globals_dict, esp_dmx_globals_dict_table);
+static MP_DEFINE_CONST_DICT(esp_dmx_globals_dict, esp_dmx_globals_dict_table);
 
 const mp_obj_module_t mp_module_esp_dmx = {
     .base = {&mp_type_module},

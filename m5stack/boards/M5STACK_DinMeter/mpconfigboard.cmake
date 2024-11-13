@@ -14,6 +14,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
+    ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
 )
 

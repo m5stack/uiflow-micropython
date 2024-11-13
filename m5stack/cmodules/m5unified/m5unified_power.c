@@ -8,7 +8,7 @@
 
 // -------- Power wrapper
 // power port mask
-STATIC const mp_rom_map_elem_t power_port_masks_table[] = {
+static const mp_rom_map_elem_t power_port_masks_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_A),   MP_ROM_INT(0b00000001) },
     { MP_ROM_QSTR(MP_QSTR_B1),  MP_ROM_INT(0b00000010) },
@@ -19,7 +19,7 @@ STATIC const mp_rom_map_elem_t power_port_masks_table[] = {
     { MP_ROM_QSTR(MP_QSTR_MAIN), MP_ROM_INT(0b10000000) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(power_port_masks, power_port_masks_table);
+static MP_DEFINE_CONST_DICT(power_port_masks, power_port_masks_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
@@ -58,7 +58,7 @@ MAKE_METHOD_0(power, getType);
 MAKE_METHOD_1(power, getPortVbus);
 MAKE_METHOD_1(power, getPortCurrent);
 
-STATIC const mp_rom_map_elem_t power_member_table[] = {
+static const mp_rom_map_elem_t power_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_PORT),        MP_ROM_PTR(&mp_power_port_mask_enum) },
     // control functions
     MAKE_TABLE(power, setExtOutput),
@@ -84,7 +84,7 @@ STATIC const mp_rom_map_elem_t power_member_table[] = {
     MAKE_TABLE(power, getPortCurrent),
 };
 
-STATIC MP_DEFINE_CONST_DICT(power_member, power_member_table);
+static MP_DEFINE_CONST_DICT(power_member, power_member_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(

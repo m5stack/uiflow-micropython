@@ -5,7 +5,7 @@
 */
 
 // NOTE: 使用IDF5会导致 i2s 驱动冲突，暂时不使用。
-#define USE_IDF5 (0)
+#define USE_IDF5 (1)
 
 // #include "esp_idf_version.h"
 #if USE_IDF5
@@ -16,6 +16,7 @@
 #include "driver/i2s.h"
 #endif
 
+#include "string.h"
 #include "board_init.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
@@ -56,6 +57,24 @@ static int ut_i2c_deinit(uint8_t port);
 
 static int ut_i2s_init(uint8_t port);
 
+esp_err_t get_i2s_pins(int port, board_i2s_pin_t *i2s_config)
+{
+    ESP_LOGI(TAG, "get_i2s_pins !!!");
+    AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
+    if (port == 1) {
+        i2s_config->bck_io_num = GPIO_NUM_34;
+        i2s_config->ws_io_num = GPIO_NUM_33;
+        i2s_config->data_out_num = GPIO_NUM_13;
+        i2s_config->data_in_num = GPIO_NUM_14;
+        i2s_config->mck_io_num = GPIO_NUM_0;
+    } else {
+        memset(i2s_config, -1, sizeof(board_i2s_pin_t));
+        ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
 void * board_codec_init(void)
 {
     if (audio_hal) {
@@ -67,10 +86,10 @@ void * board_codec_init(void)
     ret |= ut_i2s_init(1);
 
     audio_codec_i2s_cfg_t i2s_cfg = {
-        .port = 1
+        .port = 1,
 #if USE_IDF5
-        .rx_handle = i2s_keep[0]->rx_handle,
-        .tx_handle = i2s_keep[0]->tx_handle,
+        .rx_handle = i2s_keep[1]->rx_handle,
+        .tx_handle = i2s_keep[1]->tx_handle,
 #endif
     };
     const audio_codec_data_if_t *data_if = audio_codec_new_i2s_data(&i2s_cfg);

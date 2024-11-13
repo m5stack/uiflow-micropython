@@ -27,7 +27,7 @@ MAKE_METHOD_KW(spk, playRaw, 1);
 MAKE_METHOD_KW(spk, playWav, 1);
 MAKE_METHOD_KW(spk, playWavFile, 1);
 
-STATIC const mp_rom_map_elem_t spk_member_table[] = {
+static const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, config),
     MAKE_TABLE(spk, begin),
     MAKE_TABLE(spk, end),
@@ -48,7 +48,7 @@ STATIC const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, playWav),
     MAKE_TABLE(spk, playWavFile),
 };
-STATIC MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
+static MP_DEFINE_CONST_DICT(spk_member, spk_member_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(

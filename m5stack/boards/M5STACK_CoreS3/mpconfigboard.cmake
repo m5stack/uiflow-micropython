@@ -17,6 +17,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
+    ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.spiram_sx
 )
@@ -31,17 +32,17 @@ endif()
 set(ADF_MODULE_ENABLE TRUE)
 
 set(ADF_COMPS     "$ENV{ADF_PATH}/components")
-set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/cores3")
+# set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/cores3")
 
-set(ADF_BOARD_CODEC_SRC
-    ${ADF_COMPS}/audio_hal/driver/es8311/es8311.c
-    ${ADF_COMPS}/audio_hal/driver/es7210/es7210.c
-)
+# set(ADF_BOARD_CODEC_SRC
+#     ${ADF_COMPS}/audio_hal/driver/es8311/es8311.c
+#     ${ADF_COMPS}/audio_hal/driver/es7210/es7210.c
+# )
 
-set(ADF_BOARD_CODEC_INC
-    ${ADF_COMPS}/audio_hal/driver/es8311
-    ${ADF_COMPS}/audio_hal/driver/es7210
-)
+# set(ADF_BOARD_CODEC_INC
+#     ${ADF_COMPS}/audio_hal/driver/es8311
+#     ${ADF_COMPS}/audio_hal/driver/es7210
+# )
 
 set(ADF_BOARD_INIT_SRC
     $ENV{ADF_PATH}/components
