@@ -210,12 +210,6 @@ list(APPEND IDF_COMPONENTS
     ulp
     usb
     vfs
-    boards
-    audio_pipeline
-    audio_sal
-    esp-adf-libs
-    esp-sr
-    esp_codec_dev
     xtensa
     esp_http_client
     esp-tls
@@ -226,6 +220,15 @@ list(APPEND IDF_COMPONENTS
     uiflow_utility
     esp_dmx
 )
+
+if(IDF_TARGET STREQUAL "esp32" OR IDF_TARGET STREQUAL "esp32s3")
+    list(APPEND IDF_COMPONENTS boards)
+    list(APPEND IDF_COMPONENTS audio_pipeline)
+    list(APPEND IDF_COMPONENTS audio_sal)
+    list(APPEND IDF_COMPONENTS esp-adf-libs)
+    list(APPEND IDF_COMPONENTS esp-sr)
+    list(APPEND IDF_COMPONENTS esp_codec_dev)
+endif()
 
 # Register the main IDF component.
 idf_component_register(

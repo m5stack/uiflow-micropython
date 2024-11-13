@@ -21,6 +21,7 @@ boards := \
 	M5STACK_StickC_PLUS2:stickcplus2 \
 	M5STACK_StickC_PLUS:stickcplus   \
 	M5STACK_Fire:fire                \
+	M5STACK_NanoC6:nanoc6            \
 	M5STACK_Basic:basic              \
 	M5STACK_Basic_4MB:basic          \
 	M5STACK_Capsule:capsule          \
@@ -56,6 +57,7 @@ BOARD_TYPE_DEF := \
 	stickcplus2 \
 	stickcplus  \
 	fire        \
+	nanoc6      \
 	basic       \
 	capsule     \
 	coreink     \
@@ -92,7 +94,8 @@ TINY_BOARD_TYPE_DEF = \
 	M5STACK_Stamp_PICO  \
 	M5STACK_Atom_Matrix \
 	M5STACK_AtomU       \
-	M5STACK_Atom_Echo
+	M5STACK_Atom_Echo   \
+	M5STACK_NanoC6
 
 ifneq ($(filter $(BOARD),$(TINY_BOARD_TYPE_DEF)),)
 TINY_FLAG ?= 1

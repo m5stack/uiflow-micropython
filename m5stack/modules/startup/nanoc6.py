@@ -2,4 +2,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-include("$(MPY_DIR)/../m5stack/modules/startup/manifest_nanoc6.py")
+from .stamps3 import StampS3_Startup as NanoC6_Startup
