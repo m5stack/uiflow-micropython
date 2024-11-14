@@ -204,9 +204,11 @@ littlefs:
 mpy-cross:
 	make -C ../micropython/mpy-cross
 
-# The two submodules do not belong to the same repository
-# micropython submodule belong to uiflow_micropython
-# berkeley-db-1.xx submodule belong to micropython submodule
+# Running the build with ECHO_SUBMODULES set will trigger py/mkrules.cmake to
+# print out the value of the GIT_SUBMODULES variable, prefixed with
+# "GIT_SUBMODULES", and then abort. This extracts out that line from the idf.py
+# output and passes the list of submodules to py/mkrules.mk which does the
+# `git submodule init` on each.
 submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ./components/esp32-camera
@@ -219,22 +221,36 @@ submodules:
 		git submodule update --init components/esp-adf-libs && \
 		git submodule update --init components/esp-sr && \
 		cd -
-	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
+	cd ../micropython && \
+		git submodule update --init lib/berkeley-db-1.xx && \
+		git submodule update --init lib/tinyusb && \
+		git submodule update --init lib/micropython-lib && \
+		cd -
 
 # Apply patches
 patch:
-	$(call Package/patche,$(abspath ../m5stack/components/lv_bindings),$(abspath ../m5stack/patches/0002_avoid_lv_bindings_compile_error.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ../m5stack/patches/0003-modtime-Add-timezone.patch))
-	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ../m5stack/patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
-	$(call Package/patche,$(abspath ../m5stack/components/M5Unified/M5Unified),$(abspath ../m5stack/patches/2003-Support-LTR553.patch))
-	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ../m5stack/patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
-	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ../m5stack/patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
+	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	# $(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
+	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
+	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
+	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
+	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
+	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	# $(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
+	# $(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
+	# $(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
 
 # Unapply patches
 unpatch:
-	$(call Package/unpatche,$(abspath ../m5stack/components/lv_bindings),$(abspath ../m5stack/patches/0002_avoid_lv_bindings_compile_error.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ../m5stack/patches/0003-modtime-Add-timezone.patch))
-	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ../m5stack/patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
-	$(call Package/unpatche,$(abspath ../m5stack/components/M5Unified/M5Unified),$(abspath ../m5stack/patches/2003-Support-LTR553.patch))
-	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ../m5stack/patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
-	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ../m5stack/patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
+	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
+	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
+	# $(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
+	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
+	# $(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
+	# $(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
+	# $(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
+	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	# $(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
+	# $(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))

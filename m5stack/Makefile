@@ -263,9 +263,11 @@ littlefs:
 mpy-cross:
 	make -C ../micropython/mpy-cross
 
-# The two submodules do not belong to the same repository
-# micropython submodule belong to uiflow_micropython
-# berkeley-db-1.xx submodule belong to micropython submodule
+# Running the build with ECHO_SUBMODULES set will trigger py/mkrules.cmake to
+# print out the value of the GIT_SUBMODULES variable, prefixed with
+# "GIT_SUBMODULES", and then abort. This extracts out that line from the idf.py
+# output and passes the list of submodules to py/mkrules.mk which does the
+# `git submodule init` on each.
 submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ./components/esp32-camera
@@ -278,7 +280,11 @@ submodules:
 		git submodule update --init components/esp-adf-libs && \
 		git submodule update --init components/esp-sr && \
 		cd -
-	cd ./../micropython && git submodule update --init $(addprefix ./,$(GIT_SUBMODULES)) && cd -
+	cd ../micropython && \
+		git submodule update --init lib/berkeley-db-1.xx && \
+		git submodule update --init lib/tinyusb && \
+		git submodule update --init lib/micropython-lib && \
+		cd -
 
 # Apply patches
 patch:
