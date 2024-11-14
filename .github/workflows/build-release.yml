@@ -44,6 +44,7 @@ jobs:
           ./m5stack/build-M5STACK_Dial/uiflow-*-*.bin
           ./m5stack/build-M5STACK_DinMeter/uiflow-*-*.bin
           ./m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
           ./m5stack/build-M5STACK_Paper/uiflow-*-*.bin
           ./m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
           ./m5stack/build-M5STACK_StampS3/uiflow-*-*.bin

@@ -112,6 +112,11 @@ jobs:
       with:
         name: M5STACK_Fire_firmware
         path: ./m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+    - name: Deliver NanoC6 firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_NanoC6_firmware
+        path: ./m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
     - name: Deliver Paper firmware
       uses: actions/upload-artifact@v3
       with:
