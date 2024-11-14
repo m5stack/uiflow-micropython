@@ -43,7 +43,7 @@ list(APPEND EXTRA_COMPONENT_DIRS
     $ENV{ADF_PATH}/components/esp-adf-libs
     $ENV{ADF_PATH}/components/esp-sr
     ${CMAKE_SOURCE_DIR}/boards
-    ${CMAKE_SOURCE_DIR}/../m5stack/components/esp_codec_dev
+    # esp_codec_dev
 )
 
 message(STATUS "ADF_MODULE_ENABLE=${ADF_MODULE_ENABLE}")

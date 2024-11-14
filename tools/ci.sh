@@ -155,6 +155,7 @@ function ci_esp32_idf522_setup {
 }
 
 function ci_esp32_build {
+    pip install future
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack littlefs

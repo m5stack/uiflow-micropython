@@ -8,7 +8,7 @@
 
 
 // board type
-STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
+static const mp_rom_map_elem_t m5_board_member_table[] = {
     /* *FORMAT-OFF* */
     // with display boards
     { MP_ROM_QSTR(MP_QSTR_unknown),                  MP_ROM_INT(0) },
@@ -16,7 +16,7 @@ STATIC const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_ESPRESSIF_ESP32_S3_BOX_3), MP_ROM_INT(2) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(m5_board_member, m5_board_member_table);
+static MP_DEFINE_CONST_DICT(m5_board_member, m5_board_member_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
@@ -35,13 +35,13 @@ const mp_obj_type_t m5_board_type = {
 
 
 // -------- M5 wrapper
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_begin_obj, 0, 1, m5_begin);
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_end_obj, m5_end);
-STATIC MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_begin_obj, 0, 1, m5_begin);
+static MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
+static MP_DEFINE_CONST_FUN_OBJ_0(m5_end_obj, m5_end);
+static MP_DEFINE_CONST_FUN_OBJ_0(m5_getBoard_obj, m5_getBoard);
 
 
-STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
+static const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR___name__),          MP_ROM_QSTR(MP_QSTR_M5) },
     { MP_ROM_QSTR(MP_QSTR_BOARD),             MP_ROM_PTR(&m5_board_type) },
@@ -56,7 +56,7 @@ STATIC const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_getBoard),          MP_ROM_PTR(&m5_getBoard_obj) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(mp_module_m5_globals, mp_module_m5_globals_table);
+static MP_DEFINE_CONST_DICT(mp_module_m5_globals, mp_module_m5_globals_table);
 
 // Define module object.
 const mp_obj_module_t mp_module_m5 = {
