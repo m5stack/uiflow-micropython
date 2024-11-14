@@ -1,6 +1,5 @@
 from driver.pca9685 import Servos
 from .mbus import i2c1
-import module
 
 
 class Servo2Module(Servos):
@@ -11,7 +10,7 @@ class Servo2Module(Servos):
         self.degrees = degrees
         self.i2c = i2c1
         if self._addr not in self.i2c.scan():
-            raise module.Module("Servo2 Module not found at I2C address 0x%02X" % self._addr)
+            raise Exception("Servo2 Module not found at I2C address 0x%02X" % self._addr)
 
         super(Servo2Module, self).__init__(
             self.i2c,
