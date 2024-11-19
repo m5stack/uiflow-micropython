@@ -100,7 +100,7 @@ static const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_Speaker),           MP_OBJ_FROM_PTR(&m5_speaker) },
     { MP_ROM_QSTR(MP_QSTR_Power),             MP_OBJ_FROM_PTR(&m5_power) },
     { MP_ROM_QSTR(MP_QSTR_Imu),               MP_OBJ_FROM_PTR(&m5_imu) },
-    // { MP_ROM_QSTR(MP_QSTR_Als),               MP_OBJ_FROM_PTR(&m5_als) },
+    { MP_ROM_QSTR(MP_QSTR_Als),               MP_OBJ_FROM_PTR(&m5_als) },
     { MP_ROM_QSTR(MP_QSTR_Mic),               MP_OBJ_FROM_PTR(&m5_mic) },
     { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&m5_widgets) },
 
