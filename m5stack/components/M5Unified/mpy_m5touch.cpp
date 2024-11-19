@@ -70,10 +70,10 @@ namespace m5
         mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
         m5gfx::touch_point_t point = getTouch(&pos_args[0])->getTouchPointRaw(args[ARG_i].u_int);
-        mp_obj_t tuple[4] = { mp_obj_new_float(point.x)
-                              , mp_obj_new_float(point.y)
-                              , mp_obj_new_float(point.size)
-                              , mp_obj_new_float(point.id)};
+        mp_obj_t tuple[4] = { mp_obj_new_int(point.x)
+                              , mp_obj_new_int(point.y)
+                              , mp_obj_new_int(point.size)
+                              , mp_obj_new_int(point.id)};
         return mp_obj_new_tuple(4, tuple);
     }
 }
