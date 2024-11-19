@@ -1,6 +1,6 @@
 
-RollerCAN
-==========
+RollerCANUnit
+=============
 
 .. include:: ../refs/unit.rollercan.ref
 
@@ -24,31 +24,31 @@ RollerCAN I2C UIFLOW2 Example:
 
 RollerCAN CAN Example:
 
-    .. literalinclude:: ../../../examples/unit/rollercan/rollercan_485_fire_example.py
+    .. literalinclude:: ../../../examples/unit/rollercan/rollercan_can_fire_example.py
         :language: python
         :linenos:
 
 RollerCAN CAN UIFLOW2 Example:
 
-    |rs485_example.png|
+    |can_example.png|
 
 .. only:: builder_html
 
-    |rollercan_485_fire_example.m5f2|
+    |rollercan_can_fire_example.m5f2|
 
 RollerCAN CANToI2C Example:
 
-    .. literalinclude:: ../../../examples/unit/rollercan/rollercan_485toi2c_fire_example.py
+    .. literalinclude:: ../../../examples/unit/rollercan/rollercan_cantoi2c_fire_example.py
         :language: python
         :linenos:
 
 RollerCAN CANToI2C UIFLOW2 Example:
 
-    |rs485_i2c_example.png|
+    |can_i2c_example.png|
 
 .. only:: builder_html
 
-    |rollercan_485toi2c_fire_example.m5f2|
+    |rollercan_cantoi2c_fire_example.m5f2|
 
 
 class RollerCANUnit
@@ -76,12 +76,14 @@ Constructors
 ------------
 
 .. class:: RollerBase()
+    :no-index:
 
 
 Methods
 -------
 
 .. method:: RollerBase.set_motor_output_state(ctrl) -> None
+    :no-index:
 
     Set the motor output state.
 
@@ -92,6 +94,7 @@ Methods
         |set_motor_output_state.png|
 
 .. method:: RollerBase.get_motor_output_state() -> bool
+    :no-index:
 
     Get the motor output status.
 
@@ -102,6 +105,7 @@ Methods
         |get_motor_output_state.png|
 
 .. method:: RollerBase.set_motor_mode(mode) -> None
+    :no-index:
 
     Set the motor mode.
 
@@ -112,6 +116,7 @@ Methods
         |set_motor_mode.png|
 
 .. method:: RollerBase.get_motor_mode() -> int
+    :no-index:
 
     Get the motor mode.
 
@@ -122,6 +127,7 @@ Methods
         |get_motor_mode.png|
 
 .. method:: RollerBase.set_motor_over_range_protect_state(state) -> None
+    :no-index:
 
     Set the motor over range protection state.
 
@@ -132,6 +138,7 @@ Methods
         |set_motor_over_range_protect_state.png|
 
 .. method:: RollerBase.get_motor_over_range_protect_state() -> bool
+    :no-index:
 
     Get the motor over range protection status.
 
@@ -142,6 +149,7 @@ Methods
         |get_motor_over_range_protect_state.png|
 
 .. method:: RollerBase.remove_motor_jam_protect() -> None
+    :no-index:
 
     Set the motor jam release protection.
 
@@ -150,6 +158,7 @@ Methods
         |remove_motor_jam_protect.png|
 
 .. method:: RollerBase.get_motor_status() -> int
+    :no-index:
 
     Get the motor status.
 
@@ -160,6 +169,7 @@ Methods
         |get_motor_status.png|
 
 .. method:: RollerBase.get_motor_error_code() -> int
+    :no-index:
 
     Get the motor error code.
 
@@ -170,6 +180,7 @@ Methods
         |get_motor_error_code.png|
 
 .. method:: RollerBase.set_button_change_mode(state) -> None
+    :no-index:
 
     Set the button change mode.
 
@@ -180,6 +191,7 @@ Methods
         |set_button_change_mode.png|
 
 .. method:: RollerBase.get_button_change_mode() -> int
+    :no-index:
 
     Get the button change mode.
 
@@ -190,6 +202,7 @@ Methods
         |get_button_change_mode.png|
 
 .. method:: RollerBase.set_motor_jam_protect_state(state) -> None
+    :no-index:
 
     Set the motor jam protection enable/disable.
 
@@ -200,6 +213,7 @@ Methods
         |set_motor_jam_protect_state.png|
 
 .. method:: RollerBase.get_motor_jam_protect_state() -> bool
+    :no-index:
 
     Get the motor jam protection status.
 
@@ -210,6 +224,7 @@ Methods
         |get_motor_jam_protect_state.png|
 
 .. method:: RollerBase.set_motor_id(id) -> None
+    :no-index:
 
     Set the motor ID.
 
@@ -220,6 +235,7 @@ Methods
         |set_motor_id.png|
 
 .. method:: RollerBase.get_motor_id() -> int
+    :no-index:
 
     Get the motor ID.
 
@@ -229,27 +245,28 @@ Methods
 
         |get_motor_id.png|
 
-.. method:: RollerBase.set_485_baudrate(bps) -> None
+.. method:: RollerBase.set_can_baudrate(bps) -> None
 
-    Set the 485 baudrate.
+    Set the can baudrate.
 
     :param int bps: Baud rate value.
 
     UIFLOW2:
 
-        |set_485_baudrate.png|
+        |set_can_baudrate.png|
 
-.. method:: RollerBase.get_485_baudrate() -> int
+.. method:: RollerBase.get_can_baudrate() -> int
 
-    Get the 485 baudrate.
+    Get the can baudrate.
 
-    :return: The current 485 baudrate.
+    :return: The current can baudrate.
 
     UIFLOW2:
 
-        |get_485_baudrate.png|
+        |get_can_baudrate.png|
 
 .. method:: RollerBase.set_rgb_brightness(bright) -> None
+    :no-index:
 
     Set RGB brightness.
 
@@ -260,6 +277,7 @@ Methods
         |set_rgb_brightness.png|
 
 .. method:: RollerBase.get_rgb_brightness() -> int
+    :no-index:
 
     Get RGB brightness.
 
@@ -270,6 +288,7 @@ Methods
         |get_rgb_brightness.png|
 
 .. method:: RollerBase.set_motor_speed(speed) -> None
+    :no-index:
 
     Set the motor speed and max current setting.
 
@@ -280,6 +299,7 @@ Methods
         |set_motor_speed.png|
 
 .. method:: RollerBase.get_motor_speed() -> int
+    :no-index:
 
     Get the motor speed and max current setting.
 
@@ -290,6 +310,7 @@ Methods
         |get_motor_speed.png|
 
 .. method:: RollerBase.set_speed_max_current(current) -> None
+    :no-index:
 
     Set the motor speed and max current setting.
 
@@ -300,6 +321,7 @@ Methods
         |set_speed_max_current.png|
 
 .. method:: RollerBase.get_speed_max_current() -> int
+    :no-index:
 
     Get the motor speed and max current setting.
 
@@ -310,6 +332,7 @@ Methods
         |get_speed_max_current.png|
 
 .. method:: RollerBase.get_motor_speed_readback() -> float
+    :no-index:
 
     Get the motor speed readback.
 
@@ -320,6 +343,7 @@ Methods
         |get_motor_speed_readback.png|
 
 .. method:: RollerBase.set_motor_speed_pid(p, i, d) -> None
+    :no-index:
 
     Set the motor speed PID.
 
@@ -332,6 +356,7 @@ Methods
         |set_motor_speed_pid.png|
 
 .. method:: RollerBase.get_motor_speed_pid() -> tuple
+    :no-index:
 
     Get the motor speed PID.
 
@@ -342,6 +367,7 @@ Methods
         |get_motor_speed_pid.png|
 
 .. method:: RollerBase.set_motor_position(position) -> None
+    :no-index:
 
     Set the motor position and max current setting.
 
@@ -352,6 +378,7 @@ Methods
         |set_motor_position.png|
 
 .. method:: RollerBase.get_motor_position() -> int
+    :no-index:
 
     Get the motor position and max current setting.
 
@@ -362,6 +389,7 @@ Methods
         |get_motor_position.png|
 
 .. method:: RollerBase.set_position_max_current(current) -> None
+    :no-index:
 
     Set the motor position and max current setting.
 
@@ -372,6 +400,7 @@ Methods
         |set_position_max_current.png|
 
 .. method:: RollerBase.get_position_max_current() -> int
+    :no-index:
 
     Get the motor position and max current setting.
 
@@ -382,6 +411,7 @@ Methods
         |get_position_max_current.png|
 
 .. method:: RollerBase.get_motor_position_readback() -> float
+    :no-index:
 
     Get the motor position readback.
 
@@ -392,6 +422,7 @@ Methods
         |get_motor_position_readback.png|
 
 .. method:: RollerBase.get_motor_position_pid() -> tuple
+    :no-index:
 
     Get the motor position PID.
 
@@ -402,6 +433,7 @@ Methods
         |get_motor_position_pid.png|
 
 .. method:: RollerBase.set_motor_position_pid(p, i, d) -> None
+    :no-index:
 
     Set the motor position PID.
 
@@ -414,6 +446,7 @@ Methods
         |set_motor_position_pid.png|
 
 .. method:: RollerBase.set_motor_max_current(current) -> None
+    :no-index:
 
     Set the motor max current.
 
@@ -424,6 +457,7 @@ Methods
         |set_motor_max_current.png|
 
 .. method:: RollerBase.get_motor_max_current() -> int
+    :no-index:
 
     Get the motor max current.
 
@@ -434,6 +468,7 @@ Methods
         |get_motor_max_current.png|
 
 .. method:: RollerBase.get_motor_current_readback() -> float
+    :no-index:
 
     Get the motor current readback.
 
@@ -444,6 +479,7 @@ Methods
         |get_motor_current_readback.png|
 
 .. method:: RollerBase.set_rgb_color(rgb) -> None
+    :no-index:
 
     Set the system RGB color.
 
@@ -454,6 +490,7 @@ Methods
         |set_rgb_color.png|
 
 .. method:: RollerBase.get_rgb_color() -> tuple
+    :no-index:
 
     Get the system RGB color.
 
@@ -464,6 +501,7 @@ Methods
         |get_rgb_color.png|
 
 .. method:: RollerBase.set_rgb_mode(mode) -> None
+    :no-index:
 
     Set the system RGB mode.
 
@@ -474,6 +512,7 @@ Methods
         |set_rgb_mode.png|
 
 .. method:: RollerBase.get_rgb_mode() -> int
+    :no-index:
 
     Get the system RGB mode.
 
@@ -484,6 +523,7 @@ Methods
         |get_rgb_mode.png|
 
 .. method:: RollerBase.get_vin_voltage() -> int
+    :no-index:
 
     Get the system VIN voltage.
 
@@ -494,6 +534,7 @@ Methods
         |get_vin_voltage.png|
 
 .. method:: RollerBase.get_temperature_value() -> int
+    :no-index:
 
     Get the system temperature.
 
@@ -504,6 +545,7 @@ Methods
         |get_temperature_value.png|
 
 .. method:: RollerBase.set_encoder_value(count) -> None
+    :no-index:
 
     Set the system encoder value.
 
@@ -514,6 +556,7 @@ Methods
         |set_encoder_value.png|
 
 .. method:: RollerBase.get_encoder_value() -> int
+    :no-index:
 
     Get the system encoder value.
 
@@ -524,6 +567,7 @@ Methods
         |get_encoder_value.png|
 
 .. method:: RollerBase.save_param_to_flash() -> None
+    :no-index:
 
     Save the motor data to flash.
 
@@ -533,6 +577,7 @@ Methods
         |save_param_to_flash.png|
 
 .. method:: RollerBase.get_firmware_version() -> int
+    :no-index:
 
     Get the device firmware version.
 
@@ -543,6 +588,7 @@ Methods
         |get_firmware_version.png|
 
 .. method:: RollerBase.set_i2c_address(addr) -> None
+    :no-index:
 
     Set the I2C address.
 
@@ -553,6 +599,7 @@ Methods
         |set_i2c_address.png|
 
 .. method:: RollerBase.get_i2c_address() -> int
+    :no-index:
 
     Get the current I2C address.
 
@@ -570,6 +617,7 @@ Constructors
 ------------
 
 .. class:: RollerI2C(i2c, address)
+    :no-index:
 
     Initialize the RollerI2C object.
 
@@ -580,6 +628,7 @@ Methods
 -------
 
 .. method:: RollerI2C.read(register, length) -> bytes
+    :no-index:
 
     Read data from a specified register on the I2C device.
 
@@ -588,6 +637,7 @@ Methods
     :return: The data read from the device as a bytes object.
 
 .. method:: RollerI2C.write(register, bytes) -> None
+    :no-index:
 
     Write data to a specified register on the I2C device.
 

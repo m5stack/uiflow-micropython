@@ -17,7 +17,7 @@
 #include "py/mphal.h"
 #include "driver/twai.h"
 
-#define DEBUG 1
+#define DEBUG 0
 #if DEBUG
 #define DEBUG_printf(...) mp_printf(&mp_plat_print, __VA_ARGS__)
 #else
@@ -339,25 +339,26 @@ static mp_obj_t pyb_can_send(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     memcpy(tx_msg.data, bufinfo.buf, bufinfo.len);
     tx_msg.rtr = args[ARG_rtr].u_bool;
     tx_msg.extd = args[ARG_extframe].u_bool;
-    mp_printf(&mp_plat_print, "Income Data:");
+    #if DEBUG
+    DEBUG_printf(&mp_plat_print, "Income Data:");
     for (size_t i = 0; i < bufinfo.len; i++) {
-        mp_printf(&mp_plat_print, "0x%02X ", ((uint8_t *)bufinfo.buf)[i]);
+        DEBUG_printf(&mp_plat_print, "0x%02X ", ((uint8_t *)bufinfo.buf)[i]);
     }
-    mp_printf(&mp_plat_print, "\n  - extd: %d\n", tx_msg.extd);
-    mp_printf(&mp_plat_print, "  - rtr: %d\n", tx_msg.rtr);
-    mp_printf(&mp_plat_print, "  - ss: %d\n", tx_msg.ss);
-    mp_printf(&mp_plat_print, "  - self: %d\n", tx_msg.self);
-    mp_printf(&mp_plat_print, "  - dlc_non_comp: %d\n", tx_msg.dlc_non_comp);
-    mp_printf(&mp_plat_print, "Complete tx_msg:\n");
-    mp_printf(&mp_plat_print, "  flags: 0x%08X\n", tx_msg.flags);
-    mp_printf(&mp_plat_print, "  identifier: 0x%08X\n", tx_msg.identifier);
-    mp_printf(&mp_plat_print, "  data_length_code: %d\n", tx_msg.data_length_code);
-    mp_printf(&mp_plat_print, "  data: ");
+    DEBUG_printf(&mp_plat_print, "\n  - extd: %d\n", tx_msg.extd);
+    DEBUG_printf(&mp_plat_print, "  - rtr: %d\n", tx_msg.rtr);
+    DEBUG_printf(&mp_plat_print, "  - ss: %d\n", tx_msg.ss);
+    DEBUG_printf(&mp_plat_print, "  - self: %d\n", tx_msg.self);
+    DEBUG_printf(&mp_plat_print, "  - dlc_non_comp: %d\n", tx_msg.dlc_non_comp);
+    DEBUG_printf(&mp_plat_print, "Complete tx_msg:\n");
+    DEBUG_printf(&mp_plat_print, "  flags: 0x%08X\n", tx_msg.flags);
+    DEBUG_printf(&mp_plat_print, "  identifier: 0x%08X\n", tx_msg.identifier);
+    DEBUG_printf(&mp_plat_print, "  data_length_code: %d\n", tx_msg.data_length_code);
+    DEBUG_printf(&mp_plat_print, "  data: ");
     for (int i = 0; i < bufinfo.len; i++) {
-        mp_printf(&mp_plat_print, "0x%02X ", tx_msg.data[i]);
+        DEBUG_printf(&mp_plat_print, "0x%02X ", tx_msg.data[i]);
     }
-    mp_printf(&mp_plat_print, "\n\n");
-
+    DEBUG_printf(&mp_plat_print, "\n\n");
+    #endif
     check_esp_err(twai_transmit(&tx_msg, args[ARG_timeout].u_int));
     return mp_const_none;
 }
@@ -380,14 +381,14 @@ static mp_obj_t pyb_can_recv(size_t n_args, const mp_obj_t *pos_args, mp_map_t *
     // receive the data
     twai_message_t rx_msg;
     esp_err_t ret = twai_receive(&rx_msg, args[ARG_timeout].u_int);
-
-    mp_printf(&mp_plat_print, "Received identifier: 0x%08X\n", rx_msg.identifier);
-    mp_printf(&mp_plat_print, "received data: ");
+    #if DEBUG
+    DEBUG_printf(&mp_plat_print, "Received identifier: 0x%08X\n", rx_msg.identifier);
+    DEBUG_printf(&mp_plat_print, "received data: ");
     for (int i = 0; i < rx_msg.data_length_code; i++) {
-        mp_printf(&mp_plat_print, "0x%02X ", rx_msg.data[i]);
+        DEBUG_printf(&mp_plat_print, "0x%02X ", rx_msg.data[i]);
     }
-    mp_printf(&mp_plat_print, "\r\n");
-
+    DEBUG_printf(&mp_plat_print, "\r\n");
+    #endif
     if (ret != ESP_OK || rx_msg.data_length_code > 8) {
         return mp_const_none;
     }

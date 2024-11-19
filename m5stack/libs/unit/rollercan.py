@@ -167,7 +167,10 @@ class RollerBase:
 
         @return: The current error code of the motor.
         """
-        return self.read("MOTOR_ERROR_CODE", 1)[0]
+        if self._mode == RollerCANUnit.I2C_MODE:
+            return self.read("MOTOR_ERROR_CODE", 1)[0]
+        else:
+            return self.error_code
 
     def set_button_change_mode(self, state: int = 1) -> None:
         """! Set the button change mode.
@@ -177,7 +180,7 @@ class RollerBase:
         self.write("BTN_SWITCH_MODE_ENABLE", bytes([state]))
 
     def get_button_change_mode(self) -> int:
-        """! Get the button change mode.
+        """! Get Button switching mode status.
 
         @return: The current button change mode value.
         """
@@ -294,7 +297,7 @@ class RollerBase:
         p *= 100000
         i *= 10000000
         d *= 100000
-        if self._mode == 1:
+        if self._mode != RollerCANUnit.I2C_MODE:
             self.write("SPEED_PID", struct.pack("<i", int(p)))
             self.write("SPEED_PID_I", struct.pack("<i", int(i)))
             self.write("SPEED_PID_D", struct.pack("<i", int(d)))
@@ -306,7 +309,7 @@ class RollerBase:
 
         @return: A tuple containing the PID values.
         """
-        if self._mode == 1:
+        if self._mode != RollerCANUnit.I2C_MODE:
             buf = bytearray()
             buf.extend(self.read("SPEED_PID", 4))
             buf.extend(self.read("SPEED_PID_I", 4))
@@ -361,7 +364,7 @@ class RollerBase:
 
         @return: A tuple containing the PID values for position.
         """
-        if self._mode == 1:
+        if self._mode != RollerCANUnit.I2C_MODE:
             buf = bytearray()
             buf.extend(self.read("POSITION_PID", 4))
             buf.extend(self.read("POSITION_PID_I", 4))
@@ -381,7 +384,7 @@ class RollerBase:
         p *= 100000
         i *= 10000000
         d *= 100000
-        if self._mode == 1:
+        if self._mode != RollerCANUnit.I2C_MODE:
             self.write("POSITION_PID", struct.pack("<i", int(p)))
             self.write("POSITION_PID_I", struct.pack("<i", int(i)))
             self.write("POSITION_PID_D", struct.pack("<i", int(d)))
@@ -520,6 +523,8 @@ class RollerI2C(RollerBase):
         self._i2c_bus = i2c
         self._i2c_addr = address
         self._mode = mode
+        if self._i2c_addr not in self._i2c_bus.scan():
+            raise Exception("RollerCAN unit not found in Grove")
         super().__init__()
 
     def read(self, register, length) -> bytes:
@@ -551,7 +556,6 @@ class RollerCAN(RollerBase):
         self._can_bus = bus
         self._can_addr = address  # motor id == address
         self._mode = RollerCANUnit.CAN_MODE
-        print(f"mode: {mode}")
         super().__init__()
         self._obuffer = bytearray(15)  # Output buffer for sending commands.
         self._ibuffer = bytearray(17)  # Input buffer for receiving responses.
@@ -667,6 +671,7 @@ class RollerCAN(RollerBase):
             print(
                 f"Error Info: {error_info}, Over Range: {over_range}, Jam Motor: {jam_motor}, Over Voltage: {over_voltage}"
             )
+            self.error_code = error_info
         elif cmd_id == 0x0B:
             print("CAN BPS")
             can_bps = (receive_data[0] >> 16) & 0xFF  # 16~23bit
@@ -715,6 +720,7 @@ class RollerCANToI2CBus(RollerCAN):
         self._can_bus = bus
         self._can_addr = address  # motor id == address
         self._mode = RollerCANUnit.CAN_TO_I2C_MODE
+        self.error_code = 0
         super().__init__(bus, address=address)
 
     def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:

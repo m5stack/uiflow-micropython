@@ -15,13 +15,12 @@
 .. |get_motor_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_status.png
 .. |get_motor_error_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_error_code.png
 .. |set_button_change_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_button_change_mode.png
-.. |get_button_change_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_button_change_mode.png
 .. |set_motor_jam_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_motor_jam_protect_state.png
 .. |get_motor_jam_protect_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_jam_protect_state.png
 .. |set_motor_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_motor_id.png
 .. |get_motor_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_id.png
-.. |set_485_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_485_baudrate.png
-.. |get_485_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_485_baudrate.png
+.. |set_can_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_can_baudrate.png
+.. |get_can_baudrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_can_baudrate.png
 .. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_rgb_brightness.png
 .. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_rgb_brightness.png
 .. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_motor_speed.png
@@ -37,6 +36,7 @@
 .. |get_position_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_position_max_current.png
 .. |get_motor_position_readback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_position_readback.png
 .. |get_motor_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_position_pid.png
+.. |get_button_change_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_button_change_mode.png
 .. |set_motor_position_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_motor_position_pid.png
 .. |set_motor_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/set_motor_max_current.png
 .. |get_motor_max_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_motor_max_current.png
@@ -55,33 +55,33 @@
 .. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/get_i2c_address.png
 
 .. |i2c_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/i2c_example.png
-.. |rs485_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/rs485_example.png
-.. |rs485_i2c_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/rs485_i2c_example.png
+.. |can_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/can_example.png
+.. |can_i2c_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rollercan/can_i2c_example.png
 
-.. |roller485_i2c_fire_example.m5f2| raw:: html
+.. |rollercan_i2c_fire_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/roller485/roller485_i2c_fire_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rollercan/rollercan_i2c_fire_example.m5f2"
         target="_blank"
     >
-        roller485_i2c_fire_example.m5f2
+        rollercan_i2c_fire_example.m5f2
     </a>
 
-.. |roller485_485_fire_example.m5f2| raw:: html
+.. |rollercan_can_fire_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/roller485/roller485_485_fire_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rollercan/rollercan_can_fire_example.m5f2"
         target="_blank"
     >
-        roller485_485_fire_example.m5f2
+        rollercan_can_fire_example.m5f2
     </a>
 
 
-.. |roller485_485toi2c_fire_example.m5f2| raw:: html
+.. |rollercan_cantoi2c_fire_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/roller485/roller485_485toi2c_fire_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rollercan/rollercan_cantoi2c_fire_example.m5f2"
         target="_blank"
     >
-        roller485_485toi2c_fire_example.m5f2
+        rollercan_cantoi2c_fire_example.m5f2
     </a>
