@@ -33,9 +33,14 @@ static max30102_config_t max30102 = {};
 static volatile int _heart_bpm, previous_heart_bpm, previous_spo2, _spo2, _ir, _red, _curr_mode;
 
 typedef struct _max30102_hw_i2c_obj_t {
+    // from _machine_hw_i2c_obj_t
     mp_obj_base_t base;
+    i2c_port_t port : 8;
+    gpio_num_t scl : 8;
+    gpio_num_t sda : 8;
+    // user defined
     uint8_t pos;
-    i2c_port_t port;
+    uint32_t freq;
 } max30102_hw_i2c_obj_t;
 
 static mp_obj_t mp_MAX30102_get_heart_rate(void) {

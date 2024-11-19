@@ -33,11 +33,13 @@ static max30100_config_t max30100 = {};
 static volatile int _heart_bpm, _spo2, _ir, _red;
 
 typedef struct _max30100_hw_i2c_obj_t {
+    // from _machine_hw_i2c_obj_t
     mp_obj_base_t base;
+    i2c_port_t port : 8;
+    gpio_num_t scl : 8;
+    gpio_num_t sda : 8;
+    // user defined
     uint8_t pos;
-    i2c_port_t port;
-    int8_t scl;
-    int8_t sda;
     uint32_t freq;
 } max30100_hw_i2c_obj_t;
 
