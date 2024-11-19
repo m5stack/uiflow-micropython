@@ -1,18 +1,20 @@
 
-GPSUnit V1.1
-============
+GPSV1.1(SMA) Unit
+=================
 
-.. include:: ../refs/.gpsunit.ref
+.. include:: ../refs/unit.gps_v11.ref
 
 GPS Unit v1.1 is a GNSS global positioning navigation unit, integrating the high-performance CASIC navigation chip AT6668 and signal amplifier chip MAX2659, with a built-in ceramic antenna, providing more precise and reliable satellite positioning services.
 
+GPS SMA Unit is a GNSS global positioning navigation unit that integrates the high-performance CASIC navigation chip AT6668 and the signal amplifier chip MAX2659. It uses an external antenna to provide more accurate and reliable satellite positioning services.
+
 Support the following products:
 
-|GPSV11Unit|
+    |GPSV11Unit|
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/unit/gps_example.py
+    .. literalinclude:: ../../../examples/unit/gps_v11/gpsv11_core2_example.py
         :language: python
         :linenos:
 
@@ -23,10 +25,10 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |gps_example.m5f2|
+    |gpsv11_core2_example.m5f2|
 
 class GPSV11Unit
--------------
+----------------
 
 Constructors
 ------------

@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 from machine import UART
 from driver.timer_thread import TimerThread
+import time
 import sys
 
 if sys.platform != "esp32":
@@ -37,6 +38,8 @@ class GPSV11Unit:
             port:
                 note: A list or tuple containing the TX and RX pins for UART communication.
         """
+        self.mode = 0
+        self.antenna_state = "0"
         self.gps_time = ["00", "00", "00"]
         self.gps_date = ["00", "00", "00"]
         self.gps_date_time = ["00", "00", "00", "00", "00", "00"]
@@ -46,8 +49,9 @@ class GPSV11Unit:
         self.altitude = "0"
         self.satellite_num = "0"
         self.pos_quality = "0"
-        self.antenna_state = "0"
-        self.time_offset = 8
+        self.corse_ground_degree = "0"
+        self.speed_ground_knot = "0"
+        self.time_offset = 0
         self.uart = UART(id, tx=port[1], rx=port[0])
         self.uart.init(115200, bits=8, parity=None, stop=1, rxbuf=1024)
         self._timer = timTh.add_timer(200, timTh.PERIODIC, self._monitor)
@@ -64,7 +68,6 @@ class GPSV11Unit:
         """
         self.mode = mode
         buf = self._add_checksum(f"PCAS04,{mode}")
-        print(f"PCAS04 checksum:{buf}")
         self.uart.write(buf.encode())
 
     def get_work_mode(self):
@@ -117,7 +120,7 @@ class GPSV11Unit:
         """
         return self.gps_date_time
 
-    def get_timestamp(self) -> int:
+    def get_timestamp(self) -> int | float:
         """
         note:
             en: Get the timestamp of the current GPS time.
@@ -297,7 +300,8 @@ class GPSV11Unit:
                 0,
             )
             self.gps_date_time = self.gps_date + self.gps_time
-            self.timestamp = time.mktime(t)
+            buf = time.mktime(t)
+            self.timestamp = buf
 
     def _decode_txt(self, data: str):
         """
@@ -329,63 +333,3 @@ class GPSV11Unit:
                     self._decode_rmc(gps_data.decode())
                 elif gps_data[3:6] == b"TXT" and gps_data[-1] == b"\n"[0]:
                     self._decode_txt(gps_data.decode())
-
-
-import os, sys, io
-import M5
-from M5 import *
-import time
-
-
-gps_0 = None
-
-
-def setup():
-    global gps_0, start_time
-
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-
-    gps_0 = GPSV11Unit(2, port=(33, 32))
-    start_time = time.time()
-
-
-def loop():
-    global gps_0
-    M5.update()
-    if gps_0 is not None:
-        print("GPS Data:")
-        print(f"Antenna State: {gps_0.get_antenna_state()}")
-        print(f"GPS Time: {gps_0.get_gps_time()}")
-        print(f"GPS Date: {gps_0.get_gps_date()}")
-        print(f"GPS Date and Time: {gps_0.get_gps_date_time()}")
-        print(f"Timestamp: {gps_0.get_timestamp()}")
-        print(f"Latitude: {gps_0.get_latitude()}")
-        print(f"Longitude: {gps_0.get_longitude()}")
-        print(f"Altitude: {gps_0.get_altitude()}")
-        print(f"Satellite Number: {gps_0.get_satellite_num()}")
-        print(f"Position Quality: {gps_0.get_pos_quality()}")
-        print(f"Corse Over Ground: {gps_0.get_corse_over_ground()}")
-        print(f"Speed Over Ground: {gps_0.get_speed_over_ground()}")
-
-    time.sleep(1)
-
-
-if __name__ == "__main__":
-    global start_time
-    try:
-        setup()
-        while True:
-            elapsed_time = time.time() - start_time
-            if elapsed_time > 10:
-                print("超过10秒，循环终止")
-                gps_0.deinit()
-                break
-            loop()
-    except (Exception, KeyboardInterrupt) as e:
-        try:
-            from utility import print_error_msg
-
-            print_error_msg(e)
-        except ImportError:
-            print("please update to latest firmware")

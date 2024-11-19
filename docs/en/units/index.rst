@@ -31,6 +31,7 @@ Unit
     flash_light.rst
     glass.rst
     glass2.rst
+    gps_v11.rst
     grove2grove.rst
     hall_effect.rst
     heart.rst

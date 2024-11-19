@@ -50,6 +50,7 @@ _attrs = {
     "GlassUnit": "glass",
     "Glass2Unit": "glass2",
     "GPSUnit": "gps",
+    "GPSV11Unit": "gps_v11",
     "Grove2GroveUnit": "grove2grove",
     "HallEffectUnit": "hall_effect",
     "HbridgeUnit": "hbridge",

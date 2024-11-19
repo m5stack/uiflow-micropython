@@ -49,6 +49,7 @@ package(
         "glass.py",
         "glass2.py",
         "gps.py",
+        "gps_v11.py",
         "grove2grove.py",
         "hall_effect.py",
         "hbridge.py",
