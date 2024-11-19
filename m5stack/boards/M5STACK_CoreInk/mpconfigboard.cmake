@@ -7,10 +7,12 @@ set(BOARD_ID 6)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.flash_4mb
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
+    ./boards/sdkconfig.freertos
     ./boards/M5STACK_CoreInk/sdkconfig.board
 )
 

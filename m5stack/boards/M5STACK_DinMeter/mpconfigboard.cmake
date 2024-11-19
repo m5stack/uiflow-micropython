@@ -8,14 +8,16 @@ set(IDF_TARGET esp32s3)
 set(BOARD_ID 13)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_DinMeter/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_DinMeter/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

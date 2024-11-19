@@ -8,6 +8,7 @@ set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.flash_4mb
     boards/sdkconfig.c6
     boards/sdkconfig.ble
+    boards/sdkconfig.freertos
 )
 
 # If not enable LVGL, ignore this...

@@ -8,13 +8,15 @@ set(IDF_TARGET esp32s3)
 set(BOARD_ID 15)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_AirQ/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.flash_8mb
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_AirQ/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

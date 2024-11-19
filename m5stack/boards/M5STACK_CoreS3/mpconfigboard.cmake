@@ -11,8 +11,8 @@ set(BOARD_ID 10)
 set(M5_CAMERA_MODULE_ENABLE TRUE)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_CoreS3/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
@@ -20,6 +20,8 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.spiram_sx
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_CoreS3/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...
@@ -32,17 +34,6 @@ endif()
 set(ADF_MODULE_ENABLE TRUE)
 
 set(ADF_COMPS     "$ENV{ADF_PATH}/components")
-# set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/cores3")
-
-# set(ADF_BOARD_CODEC_SRC
-#     ${ADF_COMPS}/audio_hal/driver/es8311/es8311.c
-#     ${ADF_COMPS}/audio_hal/driver/es7210/es7210.c
-# )
-
-# set(ADF_BOARD_CODEC_INC
-#     ${ADF_COMPS}/audio_hal/driver/es8311
-#     ${ADF_COMPS}/audio_hal/driver/es7210
-# )
 
 set(ADF_BOARD_INIT_SRC
     $ENV{ADF_PATH}/components
@@ -57,4 +48,4 @@ list(APPEND EXTRA_COMPONENT_DIRS
     ${CMAKE_SOURCE_DIR}/boards
 )
 
-message(STATUS "cores3 CMakeLists.txt: EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
+message(STATUS "M5STACK_CoreS3/CMakeLists.txt: EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")

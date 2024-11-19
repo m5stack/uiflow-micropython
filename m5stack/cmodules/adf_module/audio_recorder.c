@@ -274,6 +274,7 @@ static format_t get_type(const char *str) {
 }
 
 
+#if (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 2, 0) && ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0))
 // from esp-adf/components/audio_stream/i2s_stream.c
 typedef struct i2s_stream {
     audio_stream_type_t type;
@@ -286,8 +287,6 @@ typedef struct i2s_stream {
     int data_bit_width;
 } i2s_stream_t;
 
-
-#if (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(4, 2, 0) && ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 0, 0))
 static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickType_t ticks_to_wait, void *context) {
     audio_recorder_obj_t *recorder = (audio_recorder_obj_t *)context;
     while (recorder->is_pause) {
@@ -309,20 +308,79 @@ static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickTyp
     return bytes_read;
 }
 #else
-// static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickType_t ticks_to_wait, void *context)
-// {
-//     audio_recorder_obj_t *recorder = (audio_recorder_obj_t *)context;
-//     while (recorder->is_pause) {
-//         vTaskDelay(100 / portTICK_PERIOD_MS);
-//     }
+// from esp-adf/components/audio_stream/i2s_stream_idf5.c
+typedef struct i2s_stream {
+    audio_stream_type_t type;
+    i2s_stream_cfg_t config;
+    bool is_open;
+    bool use_alc;
+    void *volume_handle;
+    int volume;
+    bool uninstall_drv;
+    i2s_port_t port;
+    int buffer_length;
+    struct {
+        char *buf;
+        int buffer_size;
+    } expand;
+} i2s_stream_t;
 
-//     size_t bytes_read = 0;
-//     i2s_stream_t *i2s = (i2s_stream_t *)audio_element_getdata(self);
-//     i2s_safe_lock(s_i2s_tx_mutex[i2s->port]);
-//     i2s_channel_read(i2s_key_slot[i2s->port].rx_handle, buffer, len, &bytes_read, ticks_to_wait);
-//     i2s_safe_unlock(s_i2s_tx_mutex[i2s->port]);
-//     return bytes_read;
-// }
+struct i2s_key_slot_s {
+    i2s_chan_handle_t rx_handle;
+    i2s_chan_handle_t tx_handle;
+    union {
+        i2s_std_config_t rx_std_cfg;
+        #if SOC_I2S_SUPPORTS_PDM_RX
+        i2s_pdm_rx_config_t rx_pdm_cfg;
+        #endif // SOC_I2S_SUPPORTS_PDM_RX
+        #if SOC_I2S_SUPPORTS_TDM
+        i2s_tdm_config_t rx_tdm_cfg;
+        #endif // SOC_I2S_SUPPORTS_TDM
+    };
+    union {
+        i2s_std_config_t tx_std_cfg;
+        #if SOC_I2S_SUPPORTS_PDM_TX
+        i2s_pdm_tx_config_t tx_pdm_cfg;
+        #endif // SOC_I2S_SUPPORTS_PDM_TX
+        #if SOC_I2S_SUPPORTS_TDM
+        i2s_tdm_config_t tx_tdm_cfg;
+        #endif // SOC_I2S_SUPPORTS_TDM
+    };
+    i2s_chan_config_t chan_cfg;
+    i2s_dir_t dir;
+    int i2s_refcount;
+};
+
+extern void *s_i2s_tx_mutex[SOC_I2S_NUM];
+extern void *s_i2s_rx_mutex[SOC_I2S_NUM];
+
+extern struct i2s_key_slot_s i2s_key_slot[SOC_I2S_NUM];
+
+#define i2s_safe_lock(lock) do {                       \
+        if (lock) {                                        \
+            xSemaphoreTakeRecursive(lock, portMAX_DELAY);  \
+        }                                                  \
+} while (0)
+
+#define i2s_safe_unlock(lock) do {      \
+        if (lock) {                         \
+            xSemaphoreGiveRecursive(lock);  \
+        }                                   \
+} while (0)
+
+static int _i2s_read(audio_element_handle_t self, char *buffer, int len, TickType_t ticks_to_wait, void *context) {
+    audio_recorder_obj_t *recorder = (audio_recorder_obj_t *)context;
+    while (recorder->is_pause) {
+        vTaskDelay(100 / portTICK_PERIOD_MS);
+    }
+
+    size_t bytes_read = 0;
+    i2s_stream_t *i2s = (i2s_stream_t *)audio_element_getdata(self);
+    i2s_safe_lock(s_i2s_tx_mutex[i2s->port]);
+    i2s_channel_read(i2s_key_slot[i2s->port].rx_handle, buffer, len, &bytes_read, ticks_to_wait);
+    i2s_safe_unlock(s_i2s_tx_mutex[i2s->port]);
+    return bytes_read;
+}
 #endif
 
 static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, int format, int sample, int bits, int channels) {
@@ -338,13 +396,22 @@ static void audio_recorder_create(audio_recorder_obj_t *self, const char *uri, i
     self->pipeline = audio_pipeline_init(&pipeline_cfg);
     // I2S
     i2s_stream_cfg_t i2s_cfg = BOARD_I2S_STREAM_CFG_DEFAULT();
+    // i2s_stream config
     // i2s_cfg.i2s_config.sample_rate = 48000;
     // i2s_cfg.i2s_config.bits_per_sample = I2S_BITS_PER_SAMPLE_16BIT;
     // i2s_cfg.type = AUDIO_STREAM_READER;
     // i2s_cfg.task_core = 1;
     // i2s_cfg.uninstall_drv = false;
+
+    // i2s_stream_idf5 config
+    // i2s_cfg.std_cfg.clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(48000);
+    // i2s_cfg.std_cfg.slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_ADF_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO);
+    i2s_cfg.type = AUDIO_STREAM_READER;
+    // i2s_cfg.task_core = 1;
+    i2s_cfg.uninstall_drv = false;
+
     self->i2s_stream = i2s_stream_init(&i2s_cfg);
-    // audio_element_set_read_cb(self->i2s_stream, _i2s_read, self);
+    audio_element_set_read_cb(self->i2s_stream, _i2s_read, self);
     // filter
     self->filter = audio_recorder_create_filter(format, sample, bits, channels);
     // encoder

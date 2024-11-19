@@ -56,7 +56,5 @@ idf_component_register(
         esp_codec_dev
 )
 
-
-message(WARNING "EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
-message(WARNING "boards/CMakeLists.txt: end")
+message(STATUS "boards/CMakeLists.txt: EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
 endif()

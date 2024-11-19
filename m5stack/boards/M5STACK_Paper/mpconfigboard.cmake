@@ -7,12 +7,14 @@ set(BOARD_ID 7)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
-    ./boards/M5STACK_Paper/sdkconfig.board
     ./boards/sdkconfig.spiram
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_Paper/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

@@ -1,0 +1,18 @@
+Index: b/components/audio_stream/i2s_stream_idf5.c
+===================================================================
+--- a/components/audio_stream/i2s_stream_idf5.c
++++ b/components/audio_stream/i2s_stream_idf5.c
+@@ -79,10 +79,10 @@ struct i2s_key_slot_s {
+     int                     i2s_refcount;
+ };
+ 
+-static void *s_i2s_tx_mutex[SOC_I2S_NUM];
+-static void *s_i2s_rx_mutex[SOC_I2S_NUM];
++void *s_i2s_tx_mutex[SOC_I2S_NUM];
++void *s_i2s_rx_mutex[SOC_I2S_NUM];
+ 
+-static struct i2s_key_slot_s i2s_key_slot[SOC_I2S_NUM];
++struct i2s_key_slot_s i2s_key_slot[SOC_I2S_NUM];
+ 
+ #define i2s_safe_lock_create(lock) do {           \
+     if (lock == NULL) {                           \
