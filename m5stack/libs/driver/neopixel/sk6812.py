@@ -16,7 +16,7 @@ class SK6812(NeoPixel):
         self.br = 1.0
         super().__init__(pin=pin, n=n, bpp=bpp, timing=timing)
 
-    def set_screen(self, color_list: int) -> None:
+    def set_screen(self, color_list: list) -> None:
         for i in range(len(color_list)):
             offset = i * self.bpp
             v = None

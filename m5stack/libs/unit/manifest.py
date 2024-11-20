@@ -85,6 +85,7 @@ package(
         "pahub.py",
         "pbhub.py",
         "pir.py",
+        "puzzle.py",
         "qrcode.py",
         "rca.py",
         "reflective_ir.py",

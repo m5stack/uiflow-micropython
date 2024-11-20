@@ -1,0 +1,27 @@
+
+.. |PuzzleUnit| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit-Puzzle/4.webp
+    :target: https://docs.m5stack.com/en/unit/Unit-Puzzle
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/init.png
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/fill_color.png
+.. |set_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_color.png
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_brightness.png
+.. |set_color_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_color_from.png
+.. |set_color_saturation_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_color_saturation_from.png
+.. |set_color_running_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_color_running_from.png
+.. |set_random_color_random_led_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_random_color_random_led_from.png
+.. |set_screen.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/set_screen.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/puzzle/example.png
+
+.. |puzzle_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/puzzle/puzzle_core2_example.m5f2"
+        target="_blank"
+    >
+        puzzle_core2_example.m5f2
+    </a>
+
