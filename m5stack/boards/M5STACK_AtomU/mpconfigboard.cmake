@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-# stickc-plus https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L20
+# atomu https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L23
 set(BOARD_ID 130)
 
 set(SDKCONFIG_DEFAULTS

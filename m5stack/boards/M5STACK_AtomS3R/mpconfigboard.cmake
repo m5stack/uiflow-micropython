@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# atoms3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L13
+# atoms3r https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L20
 set(BOARD_ID 18)
 
 set(SDKCONFIG_DEFAULTS

@@ -2,8 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-# NOTE: fire和basic共用一个bid
-# basic https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L3
+# NOTE: fire和 basic 共用一个 bid
+# fire https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L3
 set(BOARD_ID 1)
 
 set(SDKCONFIG_DEFAULTS

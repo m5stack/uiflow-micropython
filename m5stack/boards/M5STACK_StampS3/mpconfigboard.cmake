@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# stamps3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L26
+# stamps3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L29
 set(BOARD_ID 136)
 
 set(SDKCONFIG_DEFAULTS

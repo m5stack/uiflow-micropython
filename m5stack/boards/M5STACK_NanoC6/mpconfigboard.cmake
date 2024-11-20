@@ -1,6 +1,11 @@
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 set(IDF_TARGET esp32c6)
 
-set(BOARD_ID 142)
+# nanoc6 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L33
+set(BOARD_ID 140)
 
 set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.base

@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# capsule https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L29
+# capsule https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L32
 set(BOARD_ID 139)
 
 set(SDKCONFIG_DEFAULTS

@@ -2,8 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-# atom-echo https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L31
-set(BOARD_ID 141)
+# atom-echo https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L35
+set(BOARD_ID 142)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

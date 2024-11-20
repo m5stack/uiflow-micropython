@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L16
+# dinmeter https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L15
 set(BOARD_ID 13)
 
 set(SDKCONFIG_DEFAULTS

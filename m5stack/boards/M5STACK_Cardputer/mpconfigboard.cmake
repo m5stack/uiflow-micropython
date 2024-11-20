@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L16
+# cardputer https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L16
 set(BOARD_ID 14)
 
 set(SDKCONFIG_DEFAULTS
