@@ -1,8 +1,8 @@
 
-GNSSModule
-==========
+GNSS Module
+===========
 
-.. include:: ../refs/module.gnssmodule.ref
+.. include:: ../refs/module.gnss.ref
 
 GNSS Module is a global positioning wireless communication module featuring the NEO-M9N-00B GPS module. It incorporates BMI270, BMM150 and a barometric pressure sensor.
 
