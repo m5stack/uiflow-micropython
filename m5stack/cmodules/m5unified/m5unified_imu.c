@@ -7,7 +7,7 @@
 #include "m5unified.h"
 
 // IMU type
-STATIC const mp_rom_map_elem_t m5_imu_types_table[] = {
+static const mp_rom_map_elem_t m5_imu_types_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_NULL),          MP_ROM_INT(0) },
     { MP_ROM_QSTR(MP_QSTR_UNKNOWN),       MP_ROM_INT(1) },
@@ -18,7 +18,7 @@ STATIC const mp_rom_map_elem_t m5_imu_types_table[] = {
     { MP_ROM_QSTR(MP_QSTR_BMI270),        MP_ROM_INT(6) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(m5_imu_types, m5_imu_types_table);
+static MP_DEFINE_CONST_DICT(m5_imu_types, m5_imu_types_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
@@ -42,7 +42,7 @@ MAKE_METHOD_0(imu, getMag);
 MAKE_METHOD_0(imu, isEnabled);
 MAKE_METHOD_0(imu, getType);
 
-STATIC const mp_rom_map_elem_t imu_member_table[] = {
+static const mp_rom_map_elem_t imu_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_IMU_TYPE),       MP_ROM_PTR(&mp_m5_imu_type) },
     MAKE_TABLE(imu, getAccel),
     MAKE_TABLE(imu, getGyro),
@@ -51,7 +51,7 @@ STATIC const mp_rom_map_elem_t imu_member_table[] = {
     MAKE_TABLE(imu, getType),
 };
 
-STATIC MP_DEFINE_CONST_DICT(imu_member, imu_member_table);
+static MP_DEFINE_CONST_DICT(imu_member, imu_member_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(

@@ -3,10 +3,11 @@
 *
 * SPDX-License-Identifier: MIT
 */
-// NOTE: 使用IDF5会导致 i2s 驱动冲突，暂时不使用。
-#define USE_IDF5 (0)
 
-// #include "esp_idf_version.h"
+// NOTE: 使用IDF5的 i2s 驱动
+#define USE_IDF5 (1)
+
+#include "esp_idf_version.h"
 #if USE_IDF5
 #include "driver/i2s_std.h"
 #include "driver/i2s_tdm.h"
@@ -22,6 +23,7 @@
 #include "driver/i2c.h"
 #endif
 
+#include "string.h"
 #include "board_init.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
@@ -31,21 +33,53 @@
 static char *TAG = "s3_box_3_board";
 static void *audio_hal = NULL;
 
+#if USE_IDF5
+
+#define I2S_MAX_KEEP SOC_I2S_NUM
+
+typedef struct {
+    i2s_chan_handle_t tx_handle;
+    i2s_chan_handle_t rx_handle;
+} i2s_keep_t;
+
+static i2s_comm_mode_t i2s_in_mode = I2S_COMM_MODE_STD;
+static i2s_comm_mode_t i2s_out_mode = I2S_COMM_MODE_STD;
+static i2s_keep_t *i2s_keep[I2S_MAX_KEEP];
+#endif
+
 static int ut_i2c_init(uint8_t port);
 static int ut_i2s_init(uint8_t port);
+static int ut_i2s_deinit(uint8_t port);
+
+esp_err_t get_i2s_pins(int port, board_i2s_pin_t *i2s_config)
+{
+    AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
+    if (port == 0) {
+        i2s_config->bck_io_num = GPIO_NUM_17;
+        i2s_config->ws_io_num = GPIO_NUM_45;
+        i2s_config->data_out_num = GPIO_NUM_15;
+        i2s_config->data_in_num = GPIO_NUM_16;
+        i2s_config->mck_io_num = GPIO_NUM_2;
+    } else {
+        memset(i2s_config, -1, sizeof(board_i2s_pin_t));
+        ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
 
 void * board_codec_init(void)
 {
     if (audio_hal) {
         return audio_hal;
     }
-    ESP_LOGI(TAG, "init");
+    ESP_LOGI(TAG, "codec init");
 
     int ret = ut_i2c_init(0);
     ret |= ut_i2s_init(0);
 
     audio_codec_i2s_cfg_t i2s_cfg = {
-        .port = 0
+        .port = 0,
 #if USE_IDF5
         .rx_handle = i2s_keep[0]->rx_handle,
         .tx_handle = i2s_keep[0]->tx_handle,
@@ -118,6 +152,9 @@ void * board_codec_init(void)
     fs.channel_mask = ESP_CODEC_DEV_MAKE_CHANNEL_MASK(0) | ESP_CODEC_DEV_MAKE_CHANNEL_MASK(3);
     ret = esp_codec_dev_open(record_dev, &fs);
 
+    // i2s_stream_init 会实例化 i2s。初始化 codec 之后，需要将 i2s 释放。
+    ut_i2s_deinit(0);
+
     return audio_hal;
 }
 
@@ -150,11 +187,12 @@ static int ut_i2c_init(uint8_t port)
     i2c_bus_config.flags.enable_internal_pullup = true;
     return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
 #else
+    i2c_driver_delete(port);
     i2c_config_t i2c_cfg = {
         .mode = I2C_MODE_MASTER,
         .sda_pullup_en = GPIO_PULLUP_ENABLE,
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
-        .master.clk_speed = 100000,
+        .master.clk_speed = 400000,
     };
     i2c_cfg.sda_io_num = 8;
     i2c_cfg.scl_io_num = 18;
@@ -177,16 +215,16 @@ static int ut_i2s_init(uint8_t port)
     if (i2s_keep[port]) {
         return 0;
     }
-    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(port, I2S_ROLE_MASTER);
     i2s_std_config_t std_cfg = {
         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(16000),
         .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO),
         .gpio_cfg ={
-            .mclk = 0,
-            .bclk = 34,
-            .ws = 33,
-            .dout = 13,
-            .din = -1,
+            .mclk = GPIO_NUM_2,
+            .bclk = GPIO_NUM_17,
+            .ws = GPIO_NUM_45,
+            .dout = GPIO_NUM_15,
+            .din = GPIO_NUM_16,
         },
     };
     i2s_keep[port] = (i2s_keep_t *) calloc(1, sizeof(i2s_keep_t));
@@ -199,11 +237,11 @@ static int ut_i2s_init(uint8_t port)
         .slot_cfg = I2S_TDM_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO, slot_mask),
         .clk_cfg  = I2S_TDM_CLK_DEFAULT_CONFIG(16000),
         .gpio_cfg = {
-            .mclk = 0,
-            .bclk = 34,
-            .ws = 33,
-            .dout = 13,
-            .din = -1,
+            .mclk = GPIO_NUM_2,
+            .bclk = GPIO_NUM_17,
+            .ws = GPIO_NUM_45,
+            .dout = GPIO_NUM_15,
+            .din = GPIO_NUM_16,
         },
     };
     tdm_cfg.slot_cfg.total_slot = 4;
@@ -251,4 +289,27 @@ static int ut_i2s_init(uint8_t port)
     i2s_set_pin(port, &i2s_pin_cfg);
 #endif
     return ret;
+}
+
+
+static int ut_i2s_deinit(uint8_t port)
+{
+#if USE_IDF5
+    if (port >= I2S_MAX_KEEP) {
+        return -1;
+    }
+    // already installed
+    if (i2s_keep[port] == NULL) {
+        return 0;
+    }
+    i2s_channel_disable(i2s_keep[port]->tx_handle);
+    i2s_channel_disable(i2s_keep[port]->rx_handle);
+    i2s_del_channel(i2s_keep[port]->tx_handle);
+    i2s_del_channel(i2s_keep[port]->rx_handle);
+    free(i2s_keep[port]);
+    i2s_keep[port] = NULL;
+#else
+    i2s_driver_uninstall(port);
+#endif
+    return 0;
 }

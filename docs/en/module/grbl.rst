@@ -1,8 +1,8 @@
 
-GRBLModule
-==========
+GRBL Module
+===========
 
-.. include:: ../refs/module.grblmodule.ref
+.. include:: ../refs/module.grbl.ref
 
 GRBL 13.2 is a three-axis stepper motor driver module in the M5Stack stacking module series. It uses an ATmega328P-AU controller with three sets of DRV8825PWPR stepper motor driver chip control ways, which can drive three bipolar steppers at the same time.
 
@@ -12,7 +12,7 @@ Support the following products:
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/module/grbl_example.py
+    .. literalinclude:: ../../../examples/module/grbl/grbl_example.py
         :language: python
         :linenos:
 

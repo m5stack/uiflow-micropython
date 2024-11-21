@@ -1,6 +1,6 @@
 
-DisplayModule
-=============
+Display Module
+==============
 
 .. include:: ../refs/module.display.ref
 

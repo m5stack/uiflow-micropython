@@ -6,6 +6,7 @@ import M5
 from driver.neopixel import NeoPixel
 from driver.neopixel.ws2812 import WS2812
 from driver.neopixel.sk6812 import SK6812
+import machine
 
 
 class RGB:
@@ -54,6 +55,11 @@ class RGB:
                 return cls._instance
             elif M5.BOARD.M5Station == board_id:
                 cls._instance = WS2812(io=4, n=7)
+                return cls._instance
+            elif M5.BOARD.M5NanoC6 == board_id:
+                en = machine.Pin(19, machine.Pin.OUT)
+                en(1)
+                cls._instance = WS2812(io=20, n=1)
                 return cls._instance
             else:
                 pass

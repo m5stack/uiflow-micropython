@@ -1,6 +1,6 @@
 
-Relay2Module
-============
+Relay2 Module
+=============
 
 .. include:: ../refs/module.relay_2.ref
 

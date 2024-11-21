@@ -1,6 +1,6 @@
 
-4In8OutModule
-=============
+4In8Out Module
+==============
 
 .. include:: ../refs/module.module_4in8out.ref
 

@@ -20,6 +20,7 @@ class IR:
         M5.BOARD.M5AtomU: (None, 12),
         M5.BOARD.M5Atom: (None, 12),
         M5.BOARD.M5AtomEcho: (None, 12),
+        M5.BOARD.M5NanoC6: (None, 3),
     }
 
     def __init__(self) -> None:

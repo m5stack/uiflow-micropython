@@ -74,6 +74,7 @@ package(
         "mpu6886.py",
         "timezone.py",
         "vl53l1x.py",
+        "pca9685.py",
     ),
     base_path="..",
     opt=0,

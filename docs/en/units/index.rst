@@ -31,6 +31,7 @@ Unit
     flash_light.rst
     glass.rst
     glass2.rst
+    gps_v11.rst
     grove2grove.rst
     hall_effect.rst
     heart.rst
@@ -59,6 +60,7 @@ Unit
     op90.rst
     op180.rst
     pir.rst
+    puzzle.rst
     qrcode.rst
     rca.rst
     reflective_ir.rst
@@ -66,6 +68,7 @@ Unit
     relay4.rst
     rgb.rst
     roller485.rst
+    rollercan.rst
     scroll.rst
     ssr.rst
     synth.rst

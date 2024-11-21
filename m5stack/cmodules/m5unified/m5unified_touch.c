@@ -13,14 +13,14 @@ MAKE_METHOD_0(touch, getCount);
 MAKE_METHOD_KW(touch, getDetail, 1);
 MAKE_METHOD_KW(touch, getTouchPointRaw, 1);
 
-STATIC const mp_rom_map_elem_t touch_member_table[] = {
+static const mp_rom_map_elem_t touch_member_table[] = {
     MAKE_TABLE(touch, getX),
     MAKE_TABLE(touch, getY),
     MAKE_TABLE(touch, getCount),
     MAKE_TABLE(touch, getDetail),
     MAKE_TABLE(touch, getTouchPointRaw),
 };
-STATIC MP_DEFINE_CONST_DICT(touch_member, touch_member_table);
+static MP_DEFINE_CONST_DICT(touch_member, touch_member_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(

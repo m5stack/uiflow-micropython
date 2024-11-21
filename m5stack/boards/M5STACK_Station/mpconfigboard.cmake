@@ -2,15 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
-# Station https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L11
+# station https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L11
 set(BOARD_ID 9)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
+    ./boards/sdkconfig.freertos
     ./boards/M5STACK_Station/sdkconfig.board
 )
 

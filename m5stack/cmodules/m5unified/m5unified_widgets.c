@@ -13,7 +13,7 @@ MAKE_METHOD_KW(m5widgets_label, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_label, setSize, 1);
 MAKE_METHOD_KW(m5widgets_label, setFont, 1);
 MAKE_METHOD_KW(m5widgets_label, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_label_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_label_member_table[] = {
     MAKE_TABLE(m5widgets_label, setText),
     MAKE_TABLE(m5widgets_label, setColor),
     MAKE_TABLE(m5widgets_label, setCursor),
@@ -21,7 +21,7 @@ STATIC const mp_rom_map_elem_t m5widgets_label_member_table[] = {
     MAKE_TABLE(m5widgets_label, setFont),
     MAKE_TABLE(m5widgets_label, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_label_member, m5widgets_label_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_label_member, m5widgets_label_member_table);
 extern mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -47,14 +47,14 @@ MAKE_METHOD_KW(m5widgets_title, setColor, 1);
 MAKE_METHOD_KW(m5widgets_title, setSize, 1);
 MAKE_METHOD_KW(m5widgets_title, setTextCursor, 1);
 MAKE_METHOD_KW(m5widgets_title, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_title_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_title_member_table[] = {
     MAKE_TABLE(m5widgets_title, setText),
     MAKE_TABLE(m5widgets_title, setColor),
     MAKE_TABLE(m5widgets_title, setSize),
     MAKE_TABLE(m5widgets_title, setTextCursor),
     MAKE_TABLE(m5widgets_title, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_title_member, m5widgets_title_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_title_member, m5widgets_title_member_table);
 extern mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -79,13 +79,13 @@ MAKE_METHOD_KW(m5widgets_image, setImage, 1);
 MAKE_METHOD_KW(m5widgets_image, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_image, setVisible, 1);
 MAKE_METHOD_KW(m5widgets_image, setScale, 1);
-STATIC const mp_rom_map_elem_t m5widgets_image_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_image_member_table[] = {
     MAKE_TABLE(m5widgets_image, setImage),
     MAKE_TABLE(m5widgets_image, setCursor),
     MAKE_TABLE(m5widgets_image, setVisible),
     MAKE_TABLE(m5widgets_image, setScale),
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_image_member, m5widgets_image_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_image_member, m5widgets_image_member_table);
 extern mp_obj_t m5widgets_image_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -109,12 +109,12 @@ const mp_obj_type_t mp_widgets_image_type = {
 MAKE_METHOD_KW(m5widgets_line, setColor, 1);
 MAKE_METHOD_KW(m5widgets_line, setPoints, 1);
 MAKE_METHOD_KW(m5widgets_line, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_line_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_line_member_table[] = {
     MAKE_TABLE(m5widgets_line, setColor),
     MAKE_TABLE(m5widgets_line, setPoints),
     MAKE_TABLE(m5widgets_line, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_line_member, m5widgets_line_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_line_member, m5widgets_line_member_table);
 extern mp_obj_t m5widgets_line_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -139,13 +139,13 @@ MAKE_METHOD_KW(m5widgets_circle, setRadius, 1);
 MAKE_METHOD_KW(m5widgets_circle, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_circle, setColor, 1);
 MAKE_METHOD_KW(m5widgets_circle, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_circle_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_circle_member_table[] = {
     MAKE_TABLE(m5widgets_circle, setRadius),
     MAKE_TABLE(m5widgets_circle, setCursor),
     MAKE_TABLE(m5widgets_circle, setColor),
     MAKE_TABLE(m5widgets_circle, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_circle_member, m5widgets_circle_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_circle_member, m5widgets_circle_member_table);
 extern mp_obj_t m5widgets_circle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -170,13 +170,13 @@ MAKE_METHOD_KW(m5widgets_rectangle, setSize, 1);
 MAKE_METHOD_KW(m5widgets_rectangle, setColor, 1);
 MAKE_METHOD_KW(m5widgets_rectangle, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_rectangle, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_rectangle_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_rectangle_member_table[] = {
     MAKE_TABLE(m5widgets_rectangle, setSize),
     MAKE_TABLE(m5widgets_rectangle, setColor),
     MAKE_TABLE(m5widgets_rectangle, setCursor),
     MAKE_TABLE(m5widgets_rectangle, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_rectangle_member, m5widgets_rectangle_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_rectangle_member, m5widgets_rectangle_member_table);
 extern mp_obj_t m5widgets_rectangle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -200,12 +200,12 @@ const mp_obj_type_t mp_widgets_rectangle_type = {
 MAKE_METHOD_KW(m5widgets_triangle, setColor, 1);
 MAKE_METHOD_KW(m5widgets_triangle, setPoints, 1);
 MAKE_METHOD_KW(m5widgets_triangle, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_triangle_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_triangle_member_table[] = {
     MAKE_TABLE(m5widgets_triangle, setColor),
     MAKE_TABLE(m5widgets_triangle, setPoints),
     MAKE_TABLE(m5widgets_triangle, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_triangle_member, m5widgets_triangle_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_triangle_member, m5widgets_triangle_member_table);
 extern mp_obj_t m5widgets_triangle_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -231,14 +231,14 @@ MAKE_METHOD_KW(m5widgets_qrcode, setVersion, 1);
 MAKE_METHOD_KW(m5widgets_qrcode, setSize, 1);
 MAKE_METHOD_KW(m5widgets_qrcode, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_qrcode, setVisible, 1);
-STATIC const mp_rom_map_elem_t m5widgets_qrcode_member_table[] = {
+static const mp_rom_map_elem_t m5widgets_qrcode_member_table[] = {
     MAKE_TABLE(m5widgets_qrcode, setText),
     MAKE_TABLE(m5widgets_qrcode, setVersion),
     MAKE_TABLE(m5widgets_qrcode, setSize),
     MAKE_TABLE(m5widgets_qrcode, setCursor),
     MAKE_TABLE(m5widgets_qrcode, setVisible)
 };
-STATIC MP_DEFINE_CONST_DICT(m5widgets_qrcode_member, m5widgets_qrcode_member_table);
+static MP_DEFINE_CONST_DICT(m5widgets_qrcode_member, m5widgets_qrcode_member_table);
 extern mp_obj_t m5widgets_qrcode_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
@@ -262,7 +262,7 @@ const mp_obj_type_t mp_widgets_qrcode_type = {
 MAKE_METHOD_KW(m5widgets, fillScreen, 1);
 MAKE_METHOD_KW(m5widgets, setRotation, 1);
 MAKE_METHOD_KW(m5widgets, setBrightness, 1);
-STATIC const mp_rom_map_elem_t widgets_module_member_table[] = {
+static const mp_rom_map_elem_t widgets_module_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__),  MP_ROM_QSTR(MP_QSTR_Widgets) },
     // common funciton
     MAKE_TABLE(m5widgets, fillScreen),
@@ -282,7 +282,7 @@ STATIC const mp_rom_map_elem_t widgets_module_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_Rectangle), MP_OBJ_FROM_PTR(&mp_widgets_rectangle_type) },
     { MP_ROM_QSTR(MP_QSTR_QRCode),    MP_OBJ_FROM_PTR(&mp_widgets_qrcode_type) }
 };
-STATIC MP_DEFINE_CONST_DICT(widgets_module_member, widgets_module_member_table);
+static MP_DEFINE_CONST_DICT(widgets_module_member, widgets_module_member_table);
 const mp_obj_module_t m5_widgets = {
     .base = { &mp_type_module },
     .globals = (mp_obj_dict_t *)&widgets_module_member,

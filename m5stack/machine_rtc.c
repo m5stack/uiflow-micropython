@@ -72,14 +72,14 @@ RTC_DATA_ATTR uint8_t rtc_user_mem_data[MICROPY_HW_RTC_USER_MEM_MAX];
 #endif
 
 // singleton RTC object
-STATIC const machine_rtc_obj_t machine_rtc_obj = {{&machine_rtc_type}};
+static const machine_rtc_obj_t machine_rtc_obj = {{&machine_rtc_type}};
 
 machine_rtc_config_t machine_rtc_config = {
     .ext1_pins = 0,
     .ext0_pin = -1
 };
 
-STATIC mp_obj_t machine_rtc_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
     // check arguments
     mp_arg_check_num(n_args, n_kw, 0, 0, false);
 
@@ -87,7 +87,7 @@ STATIC mp_obj_t machine_rtc_make_new(const mp_obj_type_t *type, size_t n_args, s
     return (mp_obj_t)&machine_rtc_obj;
 }
 
-STATIC mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *args) {
     if (n_args == 1) {
         // Get time
         struct timeval tv;
@@ -132,12 +132,12 @@ STATIC mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
         return mp_const_none;
     }
 }
-STATIC mp_obj_t machine_rtc_datetime(size_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_datetime(size_t n_args, const mp_obj_t *args) {
     return machine_rtc_datetime_helper(n_args, args);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_datetime_obj, 1, 2, machine_rtc_datetime);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_datetime_obj, 1, 2, machine_rtc_datetime);
 
-STATIC mp_obj_t machine_rtc_local_datetime_helper(mp_uint_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_local_datetime_helper(mp_uint_t n_args, const mp_obj_t *args) {
     if (n_args == 1) {
         // Get time
         struct timeval tv;
@@ -181,12 +181,12 @@ STATIC mp_obj_t machine_rtc_local_datetime_helper(mp_uint_t n_args, const mp_obj
         return mp_const_none;
     }
 }
-STATIC mp_obj_t machine_rtc_local_datetime(size_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_local_datetime(size_t n_args, const mp_obj_t *args) {
     return machine_rtc_local_datetime_helper(n_args, args);
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_local_datetime_obj, 1, 2, machine_rtc_local_datetime);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_local_datetime_obj, 1, 2, machine_rtc_local_datetime);
 
-STATIC mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
     if (n_args == 1) {
         char *tz = getenv("TZ");
         if (tz == NULL) {
@@ -204,9 +204,9 @@ STATIC mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
         return mp_const_none;
     }
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_timezone_obj, 1, 2, machine_rtc_timezone);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_timezone_obj, 1, 2, machine_rtc_timezone);
 
-STATIC mp_obj_t machine_rtc_init(mp_obj_t self_in, mp_obj_t date) {
+static mp_obj_t machine_rtc_init(mp_obj_t self_in, mp_obj_t date) {
     mp_obj_t args[2] = {self_in, date};
     machine_rtc_datetime_helper(2, args);
 
@@ -219,10 +219,10 @@ STATIC mp_obj_t machine_rtc_init(mp_obj_t self_in, mp_obj_t date) {
 
     return mp_const_none;
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_2(machine_rtc_init_obj, machine_rtc_init);
+static MP_DEFINE_CONST_FUN_OBJ_2(machine_rtc_init_obj, machine_rtc_init);
 
 #if MICROPY_HW_RTC_USER_MEM_MAX > 0
-STATIC mp_obj_t machine_rtc_memory(size_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_memory(size_t n_args, const mp_obj_t *args) {
     if (n_args == 1) {
         // read RTC memory
         uint8_t rtcram[MICROPY_HW_RTC_USER_MEM_MAX];
@@ -241,10 +241,10 @@ STATIC mp_obj_t machine_rtc_memory(size_t n_args, const mp_obj_t *args) {
         return mp_const_none;
     }
 }
-STATIC MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_memory_obj, 1, 2, machine_rtc_memory);
+static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_memory_obj, 1, 2, machine_rtc_memory);
 #endif
 
-STATIC const mp_rom_map_elem_t machine_rtc_locals_dict_table[] = {
+static const mp_rom_map_elem_t machine_rtc_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_init), MP_ROM_PTR(&machine_rtc_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_datetime), MP_ROM_PTR(&machine_rtc_datetime_obj) },
     { MP_ROM_QSTR(MP_QSTR_local_datetime), MP_ROM_PTR(&machine_rtc_local_datetime_obj) },
@@ -253,7 +253,7 @@ STATIC const mp_rom_map_elem_t machine_rtc_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_memory), MP_ROM_PTR(&machine_rtc_memory_obj) },
     #endif
 };
-STATIC MP_DEFINE_CONST_DICT(machine_rtc_locals_dict, machine_rtc_locals_dict_table);
+static MP_DEFINE_CONST_DICT(machine_rtc_locals_dict, machine_rtc_locals_dict_table);
 
 MP_DEFINE_CONST_OBJ_TYPE(
     machine_rtc_type,

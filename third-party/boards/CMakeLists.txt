@@ -1,13 +1,13 @@
 set(
     srcs
         ${ADF_BOARD_INIT_SRC}
-        ${ADF_BOARD_CODEC_SRC}
-        ${ADF_BOARD_DIR}/board_pins_config.c
+        # ${ADF_BOARD_CODEC_SRC}
+        # ${ADF_BOARD_DIR}/board_pins_config.c
         ${ADF_COMPS}/audio_hal/audio_hal.c
         ${ADF_COMPS}/audio_hal/audio_volume.c
         ${ADF_COMPS}/audio_stream/http_stream.c
-        # ${ADF_COMPS}/audio_stream/i2s_stream_idf5.c
-        ${ADF_COMPS}/audio_stream/i2s_stream.c
+        ${ADF_COMPS}/audio_stream/i2s_stream_idf5.c
+        # ${ADF_COMPS}/audio_stream/i2s_stream.c
         ${ADF_COMPS}/audio_stream/raw_stream.c
         ${ADF_COMPS}/audio_stream/http_playlist.c
         ${ADF_COMPS}/audio_stream/lib/gzip/gzip_miniz.c
@@ -21,7 +21,7 @@ set(
 set(
     includes
         ${ADF_BOARD_DIR}/
-        ${ADF_BOARD_CODEC_INC}
+        # ${ADF_BOARD_CODEC_INC}
         include
         ${ADF_COMPS}/audio_board/include
         ${ADF_COMPS}/audio_hal/include
@@ -52,5 +52,4 @@ idf_component_register(
 )
 
 
-message(STATUS "EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")
-message(STATUS "boards/CMakeLists.txt: end")
+message(STATUS "boards/CMakeLists.txt: EXTRA_COMPONENT_DIRS=${EXTRA_COMPONENT_DIRS}")

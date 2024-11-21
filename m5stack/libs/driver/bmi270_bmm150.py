@@ -580,8 +580,8 @@ class BMI270:
         time.sleep_ms(250)
 
     def accel_gyro_odr(self, accel_odr, gyro_odr) -> None:
-        # Enable accel, gyro and temperature data.
-        self._write_reg(PWR_CTRL, 0x0E)
+        # Enable accel, gyro, aux and temperature data.
+        self._write_reg(PWR_CTRL, 0x0F)
         # acc_filter_perf | acc_bwp normal mode | ODR
         self._write_reg(ACC_CONF, 0xA0 | ODR.index(accel_odr))
         # gyr_filter_perf | gyr_noise_perf | gyr_bwp normal mode | ODR
@@ -714,9 +714,10 @@ class BMI270_BMM150(BMI270):
         i2c,
         address=BMM150_ADDR,
         magnet_odr=30,
+        bmi270_address=BMI270_PRIM_ADDR,
     ) -> None:
         #! Initalizes the Magnetometer.
-        super().__init__(i2c, aux_address=address)
+        super().__init__(i2c, address=bmi270_address, aux_address=address)
 
         # Perform soft reset, and power on.
         self._aux_write_reg(BMM150_SOFTRST, 0x83)

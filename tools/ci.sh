@@ -124,6 +124,36 @@ function ci_esp32_idf504_setup {
     ./esp-idf/install.sh
 }
 
+function ci_esp32_idf522_setup {
+    if [ -d esp-idf ]; then
+        echo "esp-idf is already cloned."
+        if [ "$(git -C esp-idf rev-parse --abbrev-ref HEAD)" == "v5.2.2" ]; then
+            echo "esp-idf is on v5.2.2 branch."
+            return 0
+        else
+            echo "esp-idf is not on v5.2.2 branch."
+            rm -rf esp-idf
+        fi
+    fi
+
+    git clone --depth 1 --branch v5.2.2 https://github.com/espressif/esp-idf.git
+    git -C esp-idf submodule update --init \
+        components/bt/host/nimble/nimble \
+        components/esp_wifi \
+        components/esptool_py/esptool \
+        components/lwip/lwip \
+        components/mbedtls/mbedtls
+    if [ -d esp-idf/components/bt/controller/esp32 ]; then
+        git -C esp-idf submodule update --init \
+            components/bt/controller/lib_esp32 \
+            components/bt/controller/lib_esp32c3_family
+    else
+        git -C esp-idf submodule update --init \
+            components/bt/controller/lib
+    fi
+    ./esp-idf/install.sh
+}
+
 function ci_esp32_build {
     source esp-idf/export.sh
     make ${MAKEOPTS} -C m5stack submodules
@@ -160,6 +190,7 @@ function ci_esp32_build {
 
 function ci_esp32_nightly_build {
     source esp-idf/export.sh
+    pip install future
     make ${MAKEOPTS} -C m5stack unpatch
     make ${MAKEOPTS} -C m5stack submodules
     make ${MAKEOPTS} -C m5stack patch
@@ -184,6 +215,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Dial pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_DinMeter pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Paper pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all

@@ -5,7 +5,8 @@
 import sys
 import micropython
 import gc
-import uos as os
+import vfs
+import os
 from flashbdev import sys_bdev, vfs_bdev
 import esp32
 
@@ -22,15 +23,15 @@ del uiflow_str
 # monut flash file system
 try:
     if sys_bdev:
-        fs_sys = os.VfsLfs2(sys_bdev, progsize=32, readsize=128, lookahead=128)
-        os.mount(fs_sys, "/system")
+        # fs_sys = os.VfsLfs2(sys_bdev, progsize=32, readsize=128, lookahead=128)
+        vfs.mount(sys_bdev, "/system")
     if vfs_bdev:
-        fs_vfs = os.VfsLfs2(vfs_bdev, progsize=32, readsize=128, lookahead=128)
-        os.mount(fs_vfs, "/flash")
+        # fs_vfs = os.VfsLfs2(vfs_bdev, progsize=32, readsize=128, lookahead=128)
+        vfs.mount(vfs_bdev, "/flash")
 except OSError:
     import inisetup
 
-    vfs = inisetup.setup()
+    inisetup.setup()
 
 gc.collect()
 gc.threshold(20 * 1024)

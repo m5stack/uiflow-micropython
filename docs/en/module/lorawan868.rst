@@ -1,8 +1,8 @@
 
-LoRaWAN868Module
-================
+LoRaWAN868 Module
+=================
 
-.. include:: ../refs/module.lorawan868module.ref
+.. include:: ../refs/module.lorawan868.ref
 
 COM.LoRaWAN is a LoRaWAN communication module in the M5Stack stackable module series, supporting node-to-node or LoRaWAN communication.
 
@@ -10,23 +10,30 @@ Support the following products:
 
 |LoRaWAN868Module|
 
-Micropython Example:
+Micropython TX Example:
 
-    .. literalinclude:: ../../../examples/module/lorawan868_example_tx.py
-        :language: python
-        :linenos:
-    .. literalinclude:: ../../../examples/module/lorawan868_example_rx.py
+    .. literalinclude:: ../../../examples/module/lorawan868/lorawan868_example_tx.py
         :language: python
         :linenos:
 
+Micropython RX Example:
 
-UIFLOW2 Example:
+    .. literalinclude:: ../../../examples/module/lorawan868/lorawan868_example_rx.py
+        :language: python
+        :linenos:
 
-    |example.png|
+UIFLOW2 TX Example:
+
+    |tx_example.png|
+
+UIFLOW2 RX Example:
+
+    |rx_example.png|
 
 .. only:: builder_html
 
     |lorawan868_example_tx.m5f2|
+
     |lorawan868_example_rx.m5f2|
 
 class LoRaWAN868Module

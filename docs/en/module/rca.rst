@@ -1,6 +1,6 @@
 
-RCAModule
-=========
+RCA Module
+==========
 
 .. include:: ../refs/module.rca.ref
 

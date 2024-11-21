@@ -36,7 +36,7 @@ extern "C"
 #include "mpy_m5unified.h"
 #include "mphalport.h"
 #include <driver/i2c.h>
-#include <driver/periph_ctrl.h>
+// #include <driver/periph_ctrl.h>
 
 typedef struct _machine_hw_i2c_obj_t {
     mp_obj_base_t base;

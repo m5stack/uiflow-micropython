@@ -8,7 +8,7 @@
 
 extern "C" {
     #include "uiflow_utility.h"
-    #include <driver/periph_ctrl.h>
+    // #include <driver/periph_ctrl.h>
     #include "esp_log.h"
 
     void in_i2c_init(void)
@@ -30,9 +30,9 @@ extern "C" {
         if (in_scl != 255 || in_sda != 255) {
             ESP_LOGW("BOARD", "I2C1 init");
             if (in_port == I2C_NUM_0) {
-                periph_module_enable(PERIPH_I2C0_MODULE);
+                // periph_module_enable(PERIPH_I2C0_MODULE);
             } else {
-                periph_module_enable(PERIPH_I2C1_MODULE);
+                // periph_module_enable(PERIPH_I2C1_MODULE);
             }
             i2c_config_t conf;
             memset(&conf, 0, sizeof(i2c_config_t));
@@ -58,6 +58,16 @@ extern "C" {
 
     void power_init()
     {
+        m5::board_t board_id = M5.getBoard();
+        if (
+            ! (board_id == m5::board_t::board_M5StackCore2
+            || board_id == m5::board_t::board_M5StackCoreS3
+            || board_id == m5::board_t::board_M5StackCoreS3SE
+            || board_id == m5::board_t::board_M5Tough)
+        ) {
+            ESP_LOGW("BOARD", "Power init skipped");
+            return;
+        }
         char power_mode[32] = {0};
         size_t len;
         bool usb_output = false;

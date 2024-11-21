@@ -4,8 +4,8 @@
 * SPDX-License-Identifier: MIT
 */
 
-// NOTE: 使用IDF5会导致 i2s 驱动冲突，暂时不使用。
-#define USE_IDF5 (0)
+// NOTE: 使用IDF5的 i2s 驱动
+#define USE_IDF5 (1)
 
 // #include "esp_idf_version.h"
 #if USE_IDF5
@@ -16,6 +16,7 @@
 #include "driver/i2s.h"
 #endif
 
+#include "string.h"
 #include "board_init.h"
 #include "esp_log.h"
 #include "driver/gpio.h"
@@ -55,6 +56,25 @@ static int ut_i2c_init(uint8_t port);
 static int ut_i2c_deinit(uint8_t port);
 
 static int ut_i2s_init(uint8_t port);
+static int ut_i2s_deinit(uint8_t port);
+
+esp_err_t get_i2s_pins(int port, board_i2s_pin_t *i2s_config)
+{
+    ESP_LOGI(TAG, "get_i2s_pins !!!");
+    AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
+    if (port == 1) {
+        i2s_config->bck_io_num = GPIO_NUM_34;
+        i2s_config->ws_io_num = GPIO_NUM_33;
+        i2s_config->data_out_num = GPIO_NUM_13;
+        i2s_config->data_in_num = GPIO_NUM_14;
+        i2s_config->mck_io_num = GPIO_NUM_0;
+    } else {
+        memset(i2s_config, -1, sizeof(board_i2s_pin_t));
+        ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
 
 void * board_codec_init(void)
 {
@@ -67,10 +87,10 @@ void * board_codec_init(void)
     ret |= ut_i2s_init(1);
 
     audio_codec_i2s_cfg_t i2s_cfg = {
-        .port = 1
+        .port = 1,
 #if USE_IDF5
-        .rx_handle = i2s_keep[0]->rx_handle,
-        .tx_handle = i2s_keep[0]->tx_handle,
+        .rx_handle = i2s_keep[1]->rx_handle,
+        .tx_handle = i2s_keep[1]->tx_handle,
 #endif
     };
     const audio_codec_data_if_t *data_if = audio_codec_new_i2s_data(&i2s_cfg);
@@ -130,6 +150,9 @@ void * board_codec_init(void)
     fs.channel_mask = ESP_CODEC_DEV_MAKE_CHANNEL_MASK(0) | ESP_CODEC_DEV_MAKE_CHANNEL_MASK(3);
     ret = esp_codec_dev_open(record_dev, &fs);
 
+    // i2s_stream_init 会实例化 i2s。初始化 codec 之后，需要将 i2s 释放。
+    ut_i2s_deinit(1);
+
     return audio_hal;
 }
 
@@ -180,11 +203,11 @@ static int ut_i2c_init(uint8_t port)
 static int ut_i2c_deinit(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
-   if (i2c_bus_handle) {
-       i2c_del_master_bus(i2c_bus_handle);
-   }
-   i2c_bus_handle = NULL;
-   return 0;
+    if (i2c_bus_handle) {
+        i2c_del_master_bus(i2c_bus_handle);
+    }
+    i2c_bus_handle = NULL;
+    return 0;
 #else
     return i2c_driver_delete(port);
 #endif
@@ -217,7 +240,7 @@ static int ut_i2s_init(uint8_t port)
     if (i2s_keep[port]) {
         return 0;
     }
-    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(port, I2S_ROLE_MASTER);
     i2s_std_config_t std_cfg = {
         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(16000),
         .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO),

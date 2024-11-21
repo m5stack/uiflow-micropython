@@ -1,6 +1,6 @@
 
-LoraModule
-==========
+Lora Module
+===========
 
 .. include:: ../refs/module.lora.ref
 

@@ -2,16 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
-# stickc-plus https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L30
-set(BOARD_ID 140)
+# atom-matrix https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L34
+set(BOARD_ID 141)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.flash_4mb
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
-    ./boards/M5STACK_StickC/sdkconfig.board
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_Atom_Matrix/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

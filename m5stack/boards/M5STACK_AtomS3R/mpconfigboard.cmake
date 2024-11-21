@@ -4,18 +4,21 @@
 
 set(IDF_TARGET esp32s3)
 
-# atoms3 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L13
+# atoms3r https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L20
 set(BOARD_ID 18)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_AtomS3/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
+    ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
     ./boards/sdkconfig.spiram_oct
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_AtomS3R/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

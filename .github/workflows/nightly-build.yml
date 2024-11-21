@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3.3.0
     - name: Install packages
-      run: source tools/ci.sh && ci_esp32_idf504_setup
+      run: source tools/ci.sh && ci_esp32_idf522_setup
     - name: Build
       run: source tools/ci.sh && ci_esp32_nightly_build
     - name: Deliver AirQ firmware
@@ -112,6 +112,11 @@ jobs:
       with:
         name: M5STACK_Fire_firmware
         path: ./m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+    - name: Deliver NanoC6 firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_NanoC6_firmware
+        path: ./m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
     - name: Deliver Paper firmware
       uses: actions/upload-artifact@v3
       with:

@@ -3,7 +3,6 @@
 *
 * SPDX-License-Identifier: MIT
 */
-
 #include <utility/LTR553_Class.hpp>
 
 extern "C"

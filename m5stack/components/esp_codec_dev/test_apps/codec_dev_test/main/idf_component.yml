@@ -1,6 +1,0 @@
-description: Codec Device Test
-
-dependencies:
-  esp_codec_dev:
-    version: ">=1.1"
-    override_path: "../../../"

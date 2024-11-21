@@ -2,15 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
-# atom-echo https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L31
-set(BOARD_ID 141)
+# atom-echo https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L35
+set(BOARD_ID 142)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.flash_4mb
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
+    ./boards/sdkconfig.freertos
     ./boards/M5STACK_Atom_Echo/sdkconfig.board
 )
 

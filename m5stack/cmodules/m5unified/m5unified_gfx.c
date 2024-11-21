@@ -148,7 +148,7 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
 MAKE_METHOD_0(gfx, startWrite);
 MAKE_METHOD_0(gfx, endWrite);
 
-STATIC const mp_rom_map_elem_t fonts_member_table[] = {
+static const mp_rom_map_elem_t fonts_member_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_ASCII7),    MP_ROM_PTR(&gfx_font_0_obj) },
     { MP_ROM_QSTR(MP_QSTR_DejaVu9),   MP_ROM_PTR(&gfx_font_DejaVu9_obj) },
@@ -174,7 +174,7 @@ STATIC const mp_rom_map_elem_t fonts_member_table[] = {
     // { MP_ROM_QSTR(MP_QSTR_Montserrat10), MP_ROM_PTR(&gfx_font_montserrat_10_obj)},
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(fonts_member, fonts_member_table);
+static MP_DEFINE_CONST_DICT(fonts_member, fonts_member_table);
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
     mp_fonts_type,
@@ -190,7 +190,7 @@ const mp_obj_type_t mp_fonts_type = {
 };
 #endif
 
-STATIC const mp_rom_map_elem_t color_pre_define_members_table[] = {
+static const mp_rom_map_elem_t color_pre_define_members_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_BLACK),       MP_ROM_INT(0x000000) },
     { MP_ROM_QSTR(MP_QSTR_NAVY),        MP_ROM_INT(0x000080) },
@@ -213,7 +213,7 @@ STATIC const mp_rom_map_elem_t color_pre_define_members_table[] = {
     { MP_ROM_QSTR(MP_QSTR_PINK),        MP_ROM_INT(0xFFC0CB) }
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(color_pre_define_members, color_pre_define_members_table);
+static MP_DEFINE_CONST_DICT(color_pre_define_members, color_pre_define_members_table);
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
     mp_color_type,
@@ -229,7 +229,7 @@ const mp_obj_type_t mp_color_type = {
 };
 #endif
 
-STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
+static const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
     MAKE_TABLE(gfx, endWrite),
@@ -250,9 +250,9 @@ STATIC const mp_rom_map_elem_t gfxdevice_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_user_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(user_lvgl_flush)) },
     #endif
 };
-STATIC MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
+static MP_DEFINE_CONST_DICT(gfxdevice_member, gfxdevice_member_table);
 
-STATIC const mp_rom_map_elem_t user_panel_types_table[] = {
+static const mp_rom_map_elem_t user_panel_types_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_ILI9342),      MP_ROM_INT(SPI_LCD_ILI9342) },
     { MP_ROM_QSTR(MP_QSTR_ST7735),       MP_ROM_INT(SPI_LCD_ST7735) },
@@ -266,7 +266,7 @@ STATIC const mp_rom_map_elem_t user_panel_types_table[] = {
     { MP_ROM_QSTR(MP_QSTR_SH110x),       MP_ROM_INT(I2C_OLED_SH110x) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(user_panel_types, user_panel_types_table);
+static MP_DEFINE_CONST_DICT(user_panel_types, user_panel_types_table);
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
     mp_user_panel_type,
@@ -282,13 +282,13 @@ const mp_obj_type_t mp_user_panel_type = {
 };
 #endif
 
-STATIC const mp_rom_map_elem_t user_touch_types_table[] = {
+static const mp_rom_map_elem_t user_touch_types_table[] = {
     /* *FORMAT-OFF* */
     { MP_ROM_QSTR(MP_QSTR_FT5X06),      MP_ROM_INT(I2C_TP_FT5X06) },
     { MP_ROM_QSTR(MP_QSTR_GT911),       MP_ROM_INT(I2C_TP_GT911) },
     /* *FORMAT-ON* */
 };
-STATIC MP_DEFINE_CONST_DICT(user_touch_types, user_touch_types_table);
+static MP_DEFINE_CONST_DICT(user_touch_types, user_touch_types_table);
 
 #ifdef MP_OBJ_TYPE_GET_SLOT
 MP_DEFINE_CONST_OBJ_TYPE(
@@ -305,7 +305,7 @@ const mp_obj_type_t mp_user_touch_type = {
 };
 #endif
 
-STATIC const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
+static const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
     MAKE_TABLE(gfx, endWrite),
@@ -330,10 +330,10 @@ STATIC const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_user_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(user_lvgl_flush)) },
     #endif
 };
-STATIC MP_DEFINE_CONST_DICT(gfxuserdevice_member, gfxuserdevice_member_table);
+static MP_DEFINE_CONST_DICT(gfxuserdevice_member, gfxuserdevice_member_table);
 
 // -------- GFX stream function
-STATIC const mp_stream_p_t mp_gfx_stream_p = {
+static const mp_stream_p_t mp_gfx_stream_p = {
     .read = gfx_read,
     .write = gfx_write,
     .ioctl = gfx_ioctl,
@@ -344,12 +344,12 @@ MAKE_METHOD_0(gfx, delete);
 MAKE_METHOD_2(gfx, push);
 
 // -------- GFX canvas function
-STATIC const mp_rom_map_elem_t gfxcanvas_member_table[] = {
+static const mp_rom_map_elem_t gfxcanvas_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, delete),
     MAKE_TABLE(gfx, push),
 };
-STATIC MP_DEFINE_CONST_DICT(gfxcanvas_member, gfxcanvas_member_table);
+static MP_DEFINE_CONST_DICT(gfxcanvas_member, gfxcanvas_member_table);
 
 // -------- GFX canvas panel class
 #ifdef MP_OBJ_TYPE_GET_SLOT

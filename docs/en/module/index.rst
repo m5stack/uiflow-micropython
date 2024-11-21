@@ -8,6 +8,7 @@ Module
     ain4.rst
     display.rst
     dualkmeter.rst
+    gnss.rst
     grbl.rst
     hmi.rst
     llm.rst
@@ -19,4 +20,5 @@ Module
     rca.rst
     relay_2.rst
     rs232.rst
+    servo2.rst
     step_motor_driver.rst

@@ -4,17 +4,20 @@
 
 set(IDF_TARGET esp32s3)
 
-# dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L16
+# cardputer https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L16
 set(BOARD_ID 14)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_Cardputer/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
+    ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_Cardputer/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...
