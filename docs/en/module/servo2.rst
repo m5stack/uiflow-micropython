@@ -1,8 +1,8 @@
 
-Servo2Module
-============
+Servo2 Module
+=============
 
-.. include:: ../refs/module.servo2module.ref
+.. include:: ../refs/module.servo2.ref
 
 SERVO 2 is an updated servo driver module in the M5Stack stackable module series. It uses a PCA9685 16 channel PWM controller to control 16 channel servos at the same time. The power input is 6-12V DC and two SY8368AQQC chips are used for voltage reduction.
 
@@ -10,7 +10,7 @@ Support the following products:
 
 |Servo2Module|
 
-Micropython Example:
+Micropython Example::
 
     import os, sys, io
     import M5
@@ -63,7 +63,13 @@ Methods
 
     UIFLOW2:
 
-        |position.png|
+        |set_degrees.png|
+
+        |set_duty.png|
+
+        |set_pulse_width.png|
+
+        |set_radians.png|
 
 .. method:: Servo2Module.release(index)
 

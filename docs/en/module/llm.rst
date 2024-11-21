@@ -1,6 +1,6 @@
 
-LlmModule
-=========
+Llm Module
+==========
 
 .. include:: ../refs/module.llm.ref
 

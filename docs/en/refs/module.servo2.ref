@@ -4,10 +4,13 @@
     :height: 200px
     :width: 200px
 
-.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2module/init.png
-.. |_us2duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2module/_us2duty.png
-.. |position.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2module/position.png
-.. |release.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2module/release.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/init.png
+.. |_us2duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/_us2duty.png
+.. |set_degrees.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_degrees.png
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_duty.png
+.. |set_pulse_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_pulse_width.png
+.. |set_radians.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_radians.png
+.. |release.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/release.png
 
-.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2module/example.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/example.png
 

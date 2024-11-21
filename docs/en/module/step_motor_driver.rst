@@ -1,8 +1,8 @@
 
-StepMotorDriverModule
-=====================
+StepMotorDriver Module
+======================
 
-.. include:: ../refs/module.stepmotordrivermodule.ref
+.. include:: ../refs/module.step_motor_driver.ref
 
 StepMotor Driver Module 13.2 V1.1 is a stepper motor driver adapted to M5 main control, using STM32+HR8825 stepper motor drive scheme, providing 3-way bipolar stepper motor control interface.
 
@@ -12,7 +12,7 @@ Support the following products:
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/module/step_motor_driver.py
+    .. literalinclude:: ../../../examples/module/step_motor_driver/step_motor_driver.py
         :language: python
         :linenos:
 

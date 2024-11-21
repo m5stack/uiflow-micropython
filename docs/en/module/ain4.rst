@@ -1,6 +1,6 @@
 
-AIN4Module
-==========
+AIN4 Module
+===========
 
 .. include:: ../refs/module.ain4.ref
 
