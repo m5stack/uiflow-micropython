@@ -1,0 +1,50 @@
+
+.. |GNSSModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/GNSS%20Module/img-b0cdbc6c-d5d5-42bb-bdf6-69016e003b14.webp
+    :target: https://docs.m5stack.com/en/module/GNSS%20Module
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/init.png
+.. |_available.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_available.png
+.. |set_accel_gyro_odr.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_accel_gyro_odr.png
+.. |set_accel_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_accel_range.png
+.. |set_gyro_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_gyro_range.png
+.. |set_magnet_odr.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_magnet_odr.png
+.. |set_gyro_offsets.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_gyro_offsets.png
+.. |get_gyroscope.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_gyroscope.png
+.. |get_accelerometer.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_accelerometer.png
+.. |get_magnetometer.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_magnetometer.png
+.. |get_compass.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_compass.png
+.. |get_attitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_attitude.png
+.. |get_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_temperature.png
+.. |get_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_pressure.png
+.. |set_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/set_time_zone.png
+.. |get_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_time_zone.png
+.. |get_satellite_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_satellite_num.png
+.. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_altitude.png
+.. |get_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_time.png
+.. |get_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_date.png
+.. |get_latitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_latitude.png
+.. |get_longitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_longitude.png
+.. |get_latitude_decimal.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_latitude_decimal.png
+.. |get_longitude_decimal.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_longitude_decimal.png
+.. |get_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_speed.png
+.. |get_course.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/get_course.png
+.. |is_locate_valid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/is_locate_valid.png
+.. |_decode_gga.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_decode_gga.png
+.. |_convert_to_decimal.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_convert_to_decimal.png
+.. |_decode_rmc.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_decode_rmc.png
+.. |_decode_vtg.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_decode_vtg.png
+.. |_monitor.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/_monitor.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gnss/example.png
+
+.. |gnss_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/gnss/gnss_core2_example.m5f2"
+        target="_blank"
+    >
+        gnss_core2_example.m5f2
+    </a>
+

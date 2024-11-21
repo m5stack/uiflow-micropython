@@ -9,6 +9,7 @@ _attrs = {
     "DisplayModule": "display",
     "DualKmeterModule": "dual_kmeter",
     "Encoder4MotorModule": "encoder4_motor",
+    "GNSSModule": "gnss",
     "GRBLModule": "grbl",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",

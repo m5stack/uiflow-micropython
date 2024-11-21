@@ -8,6 +8,7 @@ Module
     ain4.rst
     display.rst
     dualkmeter.rst
+    gnss.rst
     grbl.rst
     hmi.rst
     llm.rst
