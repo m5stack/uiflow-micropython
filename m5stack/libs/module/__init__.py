@@ -13,6 +13,7 @@ _attrs = {
     "GNSSModule": "gnss",
     "GPSModule": "gps",
     "GRBLModule": "grbl",
+    "GoPlus2Module": "goplus2",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
     "LlmModule": "llm",

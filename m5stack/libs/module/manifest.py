@@ -14,6 +14,7 @@ package(
         "gnss.py",
         "gps.py",
         "grbl.py",
+        "goplus2.py",
         "hmi.py",
         "iot_base_catm.py",
         "llm.py",

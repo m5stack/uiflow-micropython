@@ -12,6 +12,7 @@ Module
     gnss.rst
     gps.rst
     grbl.rst
+    goplus2.rst
     hmi.rst
     llm.rst
     lora.rst
