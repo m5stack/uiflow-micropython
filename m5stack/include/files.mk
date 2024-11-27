@@ -5,11 +5,11 @@
 # $(1) board type
 # $(2) target dir
 define base-files/install
-	@cp ./fs/user/* $(2)/ -rf
+	@cp -rf ./fs/user/* $(2)/
 	@ if [ -d ./fs/system/$(1) ]; then \
-		cp ./fs/system/$(1) $(2)/res/ -rf ; \
+		cp -rf ./fs/system/$(1) $(2)/res/;\
 	fi
-	@cp ./fs/system/common/img/avatar.jpg $(2)/res/img/ -rf
+	@cp -rf ./fs/system/common/img/avatar.jpg $(2)/res/img/
 endef
 
 
