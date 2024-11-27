@@ -156,7 +156,7 @@ set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5widgets.cpp
 )
 
-if(M5_CAMERA_MODULE_ENABLE)
+if (M5_CAMERA_MODULE_ENABLE)
     set(MICROPY_SOURCE_M5CAMERA
         ${PROJECT_DIR}/cmodules/m5camera/m5camera.c
     )
@@ -219,7 +219,17 @@ list(APPEND IDF_COMPONENTS
     esp32-camera
     uiflow_utility
     esp_dmx
+    esp_mm
 )
+
+if (M5_CAMERA_MODULE_ENABLE AND BOARD_TYPE STREQUAL "cores3")
+list(APPEND IDF_COMPONENTS
+    esp-dl
+    human_face_detect
+    pedestrian_detect
+    human_face_recognition
+)
+endif()
 
 if(IDF_TARGET STREQUAL "esp32" OR IDF_TARGET STREQUAL "esp32s3")
     list(APPEND IDF_COMPONENTS boards)
@@ -260,6 +270,12 @@ set(MICROPY_TARGET ${COMPONENT_TARGET})
 # Define mpy-cross flags, for use with frozen code.
 if(CONFIG_IDF_TARGET_ARCH STREQUAL "xtensa")
 set(MICROPY_CROSS_FLAGS -march=xtensawin)
+endif()
+
+if (M5_CAMERA_MODULE_ENABLE AND BOARD_TYPE STREQUAL "cores3")
+target_compile_definitions(${MICROPY_TARGET} PUBLIC
+    USE_OMV=1
+)
 endif()
 
 # Set compile options for this port.

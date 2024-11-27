@@ -6,3 +6,7 @@ Software
 
     time.rst
     umqtt.rst
+    display.rst
+    camera.rst
+    image.rst
+    dl.rst

@@ -22,6 +22,7 @@
 .. |similarity.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/similarity.png 
 .. |id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/id.png 
 
+
 .. |cores3_example_human_face_detect.m5f2| raw:: html
 
     <a
@@ -30,7 +31,6 @@
     >
         cores3_example_human_face_detect.m5f2
     </a>    
-
 
 .. |cores3_example_pedestrian_detect.m5f2| raw:: html
 
@@ -48,4 +48,4 @@
         target="_blank"
     >
         cores3_example_human_face_recognition.m5f2
-    </a>    
+    </a>   
