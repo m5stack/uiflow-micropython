@@ -2,9 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-import usocket as socket
-import ustruct as struct
-from ubinascii import hexlify
+import socket
+import struct
 
 
 class MQTTException(Exception):
@@ -71,9 +70,9 @@ class MQTTClient:
         addr = socket.getaddrinfo(self.server, self.port)[0][-1]
         self.sock.connect(addr)
         if self.ssl:
-            import ussl
+            import ssl
 
-            self.sock = ussl.wrap_socket(self.sock, **self.ssl_params)
+            self.sock = ssl.wrap_socket(self.sock, **self.ssl_params)
         premsg = bytearray(b"\x10\0\0\0\0\0")
         msg = bytearray(b"\x04MQTT\x04\x02\0\0")
 
@@ -100,7 +99,6 @@ class MQTTClient:
 
         self.sock.write(premsg, i + 2)
         self.sock.write(msg)
-        # print(hex(len(msg)), hexlify(msg, ":"))
         self._send_str(self.client_id)
         if self.lw_topic:
             self._send_str(self.lw_topic)
@@ -140,7 +138,6 @@ class MQTTClient:
             sz >>= 7
             i += 1
         pkt[i] = sz
-        # print(hex(len(pkt)), hexlify(pkt, ":"))
         self.sock.write(pkt, i + 1)
         self._send_str(topic)
         if qos > 0:
@@ -167,7 +164,6 @@ class MQTTClient:
         pkt = bytearray(b"\x82\0\0\0")
         self.pid += 1
         struct.pack_into("!BH", pkt, 1, 2 + 2 + len(topic) + 1, self.pid)
-        # print(hex(len(pkt)), hexlify(pkt, ":"))
         self.sock.write(pkt)
         self._send_str(topic)
         self.sock.write(qos.to_bytes(1, "little"))

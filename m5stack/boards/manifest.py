@@ -10,6 +10,7 @@ require("onewire")
 include("$(MPY_DIR)/extmod/asyncio")
 require("webrepl")
 require("upysh")
+require("ssl")
 
 # freeze("$(MPY_DIR)/tools", ("upip.py", "upip_utarfile.py"))
 # freeze("$(MPY_DIR)/ports/esp8266/modules", "ntptime.py")
