@@ -292,6 +292,7 @@ patch:
 	# $(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
+	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
 	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
 	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
@@ -304,6 +305,7 @@ patch:
 # Unapply patches
 unpatch:
 	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	# $(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
