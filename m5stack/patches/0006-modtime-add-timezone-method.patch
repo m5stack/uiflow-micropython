@@ -1,0 +1,169 @@
+Index: micropython/extmod/modtime.c
+===================================================================
+--- micropython.orig/extmod/modtime.c
++++ micropython/extmod/modtime.c
+@@ -40,7 +40,8 @@
+ 
+ #include "shared/timeutils/timeutils.h"
+ 
+-// localtime([secs])
++// gmtime([secs])
++// The gmtime() function returns a date-time tuple in UTC.
+ // Convert a time expressed in seconds since the Epoch into an 8-tuple which
+ // contains: (year, month, mday, hour, minute, second, weekday, yearday)
+ // If secs is not provided or None, then the current time is used.
+@@ -52,10 +53,10 @@
+ // - second  is 0-59
+ // - weekday is 0-6 for Mon-Sun
+ // - yearday is 1-366
+-static mp_obj_t time_localtime(size_t n_args, const mp_obj_t *args) {
++static mp_obj_t time_gmtime(size_t n_args, const mp_obj_t *args) {
+     if (n_args == 0 || args[0] == mp_const_none) {
+         // Get current date and time.
+-        return mp_time_localtime_get();
++        return mp_time_gmtime_get();
+     } else {
+         // Convert given seconds to tuple.
+         mp_int_t seconds = mp_obj_get_int(args[0]);
+@@ -74,6 +75,30 @@ static mp_obj_t time_localtime(size_t n_
+         return mp_obj_new_tuple(8, tuple);
+     }
+ }
++MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(mp_time_gmtime_obj, 0, 1, time_gmtime);
++
++// localtime([secs])
++// Convert a time expressed in seconds since the Epoch into an 8-tuple which
++// contains: (year, month, mday, hour, minute, second, weekday, yearday)
++// If secs is not provided or None, then the current time is used.
++// - year    is the full year, eg 2000
++// - month   is 1-12
++// - mday    is 1-31
++// - hour    is 0-23
++// - minute  is 0-59
++// - second  is 0-59
++// - weekday is 0-6 for Mon-Sun
++// - yearday is 1-366
++static mp_obj_t time_localtime(size_t n_args, const mp_obj_t *args) {
++    if (n_args == 0 || args[0] == mp_const_none) {
++        // Get current date and time.
++        return mp_time_localtime_get();
++    } else {
++        // Convert given seconds to tuple.
++        mp_int_t seconds = mp_obj_get_int(args[0]);
++        return mp_time_localtime_convert(seconds);
++    }
++}
+ MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(mp_time_localtime_obj, 0, 1, time_localtime);
+ 
+ // mktime()
+@@ -200,7 +225,7 @@ static const mp_rom_map_elem_t mp_module
+     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_time) },
+ 
+     #if MICROPY_PY_TIME_GMTIME_LOCALTIME_MKTIME
+-    { MP_ROM_QSTR(MP_QSTR_gmtime), MP_ROM_PTR(&mp_time_localtime_obj) },
++    { MP_ROM_QSTR(MP_QSTR_gmtime), MP_ROM_PTR(&mp_time_gmtime_obj) },
+     { MP_ROM_QSTR(MP_QSTR_localtime), MP_ROM_PTR(&mp_time_localtime_obj) },
+     { MP_ROM_QSTR(MP_QSTR_mktime), MP_ROM_PTR(&mp_time_mktime_obj) },
+     #endif
+Index: micropython/ports/esp32/modtime.c
+===================================================================
+--- micropython.orig/ports/esp32/modtime.c
++++ micropython/ports/esp32/modtime.c
+@@ -30,9 +30,48 @@
+ 
+ #include "py/obj.h"
+ #include "shared/timeutils/timeutils.h"
++#include "uiflow_utility.h"
++
++static mp_obj_t mp_time_localtime_convert(time_t sec) {
++    struct tm timeinfo;
++    localtime_r(&sec, &timeinfo);
++    mp_obj_t tuple[8] = {
++        tuple[0] = mp_obj_new_int(timeinfo.tm_year + 1900),
++        tuple[1] = mp_obj_new_int(timeinfo.tm_mon + 1),
++        tuple[2] = mp_obj_new_int(timeinfo.tm_mday),
++        tuple[3] = mp_obj_new_int(timeinfo.tm_hour),
++        tuple[4] = mp_obj_new_int(timeinfo.tm_min),
++        tuple[5] = mp_obj_new_int(timeinfo.tm_sec),
++        tuple[6] = mp_obj_new_int(timeinfo.tm_wday),
++        tuple[7] = mp_obj_new_int(timeinfo.tm_yday),
++    };
++    return mp_obj_new_tuple(8, tuple);
++}
+ 
+ // Return the localtime as an 8-tuple.
+ static mp_obj_t mp_time_localtime_get(void) {
++    timeutils_struct_time_t tm;
++
++    time_t now;
++    struct tm timeinfo;
++    time(&now);
++    localtime_r(&now, &timeinfo);
++
++    mp_obj_t tuple[8] = {
++        tuple[0] = mp_obj_new_int(timeinfo.tm_year + 1900),
++        tuple[1] = mp_obj_new_int(timeinfo.tm_mon + 1),
++        tuple[2] = mp_obj_new_int(timeinfo.tm_mday),
++        tuple[3] = mp_obj_new_int(timeinfo.tm_hour),
++        tuple[4] = mp_obj_new_int(timeinfo.tm_min),
++        tuple[5] = mp_obj_new_int(timeinfo.tm_sec),
++        tuple[6] = mp_obj_new_int(timeinfo.tm_wday),
++        tuple[7] = mp_obj_new_int(timeinfo.tm_yday),
++    };
++    return mp_obj_new_tuple(8, tuple);
++}
++
++// Return the gmtime as an 8-tuple.
++static mp_obj_t mp_time_gmtime_get(void) {
+     struct timeval tv;
+     gettimeofday(&tv, NULL);
+     timeutils_struct_time_t tm;
+@@ -56,3 +95,36 @@ static mp_obj_t mp_time_time_get(void) {
+     gettimeofday(&tv, NULL);
+     return mp_obj_new_int(tv.tv_sec);
+ }
++
++static mp_obj_t time_timezone(size_t n_args, const mp_obj_t *args) {
++    if (n_args == 0 || args[0] == mp_const_none) {
++        char *tz = getenv("TZ");
++        if (tz == NULL) {
++            return mp_const_none;
++        } else {
++            return mp_obj_new_str(tz, strlen(tz));
++        }
++    } else {
++        char tz[64];
++        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[0]));
++        setenv("TZ", tz, 1);
++        tzset();
++
++        time_t now;
++        char strftime_buf[64];
++        struct tm timeinfo;
++
++        time(&now);
++
++        localtime_r(&now, &timeinfo);
++        strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
++        ESP_LOGE("time", "The current date/time in Shanghai is: %s", strftime_buf);
++
++        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
++        return mp_const_none;
++    }
++}
++static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(time_timezone_obj, 0, 1, time_timezone);
++
++#define MICROPY_PY_TIME_EXTRA_GLOBALS \
++    { MP_ROM_QSTR(MP_QSTR_timezone), MP_ROM_PTR(&time_timezone_obj) },
+Index: micropython/ports/esp32/mpconfigport.h
+===================================================================
+--- micropython.orig/ports/esp32/mpconfigport.h
++++ micropython/ports/esp32/mpconfigport.h
+@@ -78,6 +78,7 @@
+ #define MICROPY_PY_IO_BUFFEREDWRITER        (1)
+ #define MICROPY_PY_TIME_GMTIME_LOCALTIME_MKTIME (1)
+ #define MICROPY_PY_TIME_TIME_TIME_NS        (1)
++#define MICROPY_EPOCH_IS_1970               (1)
+ #define MICROPY_PY_TIME_INCLUDEFILE         "ports/esp32/modtime.c"
+ #define MICROPY_PY_THREAD                   (1)
+ #define MICROPY_PY_THREAD_GIL               (1)

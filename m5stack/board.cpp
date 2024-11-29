@@ -11,7 +11,7 @@ extern "C" {
     // #include <driver/periph_ctrl.h>
     #include "esp_log.h"
 
-    void in_i2c_init(void)
+    static void in_i2c_init(void)
     {
         gpio_num_t in_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_scl);
         gpio_num_t in_sda = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_sda);
@@ -28,12 +28,7 @@ extern "C" {
 #endif
 
         if (in_scl != 255 || in_sda != 255) {
-            ESP_LOGW("BOARD", "I2C1 init");
-            if (in_port == I2C_NUM_0) {
-                // periph_module_enable(PERIPH_I2C0_MODULE);
-            } else {
-                // periph_module_enable(PERIPH_I2C1_MODULE);
-            }
+            ESP_LOGI("BOARD", "Internal I2C(%d) init", in_port);
             i2c_config_t conf;
             memset(&conf, 0, sizeof(i2c_config_t));
             conf.mode = I2C_MODE_MASTER;
@@ -54,6 +49,7 @@ extern "C" {
         cfg.output_power = false;
         M5.begin(cfg);
         in_i2c_init();
+        M5.In_I2C.release();
     }
 
     void power_init()

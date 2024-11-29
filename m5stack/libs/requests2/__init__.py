@@ -1,4 +1,4 @@
-import usocket
+import socket
 
 
 class Response:
@@ -48,11 +48,11 @@ def request(
     chunked_data = data and getattr(data, "__next__", None) and not getattr(data, "__len__", None)
 
     if auth is not None:
-        import ubinascii
+        import binascii
 
         username, password = auth
         formated = b"{}:{}".format(username, password)
-        formated = str(ubinascii.b2a_base64(formated)[:-1], "ascii")
+        formated = str(binascii.b2a_base64(formated)[:-1], "ascii")
         headers["Authorization"] = "Basic {}".format(formated)
 
     try:
@@ -63,7 +63,7 @@ def request(
     if proto == "http:":
         port = 80
     elif proto == "https:":
-        import ussl
+        import ssl
 
         port = 443
     else:
@@ -73,14 +73,14 @@ def request(
         host, port = host.split(":", 1)
         port = int(port)
 
-    ai = usocket.getaddrinfo(host, port, 0, usocket.SOCK_STREAM)
+    ai = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
     ai = ai[0]
 
     resp_d = None
     if parse_headers is not False:
         resp_d = {}
 
-    s = usocket.socket(ai[0], usocket.SOCK_STREAM, ai[2])
+    s = socket.socket(ai[0], socket.SOCK_STREAM, ai[2])
 
     if timeout is not None:
         # Note: settimeout is not supported on all platforms, will raise
@@ -90,7 +90,7 @@ def request(
     try:
         s.connect(ai[-1])
         if proto == "https:":
-            s = ussl.wrap_socket(s, server_hostname=host)
+            s = ssl.wrap_socket(s, server_hostname=host)
         s.write(b"%s /%s HTTP/1.0\r\n" % (method, path))
         if "Host" not in headers:
             s.write(b"Host: %s\r\n" % host)
