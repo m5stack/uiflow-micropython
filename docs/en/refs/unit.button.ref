@@ -1,0 +1,22 @@
+
+.. |ButtonUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/button/button_01.webp
+    :target: https://docs.m5stack.com/en/unit/button
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/init.png
+.. |isHolding.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/get_status.png
+.. |setCallback.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/callback.png
+.. |count_reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/count_reset.png
+.. |tick.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/tick.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/button/example.png
+
+.. |button_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/button/button_core2_example.m5f2"
+        target="_blank"
+    >
+        button_core2_example.m5f2
+    </a>
