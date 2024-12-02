@@ -1,29 +1,28 @@
 :mod:`camera`  
 =====================================
-camera 模块用于拍照。
+The camera module is used for taking pictures.
 
-.. include:: ../refs/software.camera.ref
+.. include:: ../refs/hardware.camera.ref
 
-.. note:: 当前模块只适用于 CoreS3 主机
+.. note:: This module is only applicable to the CoreS3 Controller
 
 .. module:: camera
-    :synopsis: camera sensor  
+    :synopsis: camera sensor   
 
-Micropython 案例 
+Micropython Example 
 --------------------------------
 
-拍摄显示 
+capture display 
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/camera/cores3_example_camera_display.py
+    .. literalinclude:: ../../../examples/hardware/camera/cores3_example_camera_display.py
         :language: python
         :linenos:
 
-
-UIFlow2.0 案例 
+UIFlow2.0 Example 
 ------------------------------
 
-拍摄显示
+capture display 
 ++++++++++++++++++++++++++++
 
     |camera_display_example.png|
@@ -32,19 +31,20 @@ UIFlow2.0 案例
 
     |cores3_example_camera_display.m5f2|
 
-
-函数 
+ 
+    
+Functions
 ------------------------------
 
 .. function:: camera.init(pixformat, framesize)
 
-    初始化摄像头
+    Initializes the camera sensor.
 
-    参数 ``pixformat`` 仅接受以下值：  
+    The ``pixformat`` supports:
         
     - ``camera.RGB565``
 
-    参数 ``framesize`` 仅接受以下值：  
+    The ``framesize`` supports:
 
     - ``camera.QQVGA``: 160x120
     - ``camera.QCIF``: 176x144
@@ -58,25 +58,25 @@ UIFlow2.0 案例
 
 .. function:: camera.snapshot() -> image.Iamge
 
-    获取一帧图像 
+    Capture a single frame.
 
-    返回一个 ``image.Image`` 对象。
+    Returns An ``image.Image`` object.
 
     UIFlow2.0
-
+    
         |snapshot.png|
 
-.. function:: camera.set_hmirror(enable: bool)
+.. function:: camera.set_hmirror(enable)
 
-    开启或关闭水平镜像模式（True 表示开启，False 表示关闭）。默认为开启。
+    Turns horizontal mirror mode on (True) or off (False). Defaults to on.
 
     UIFlow2.0
     
         |set_hmirror.png|
 
-.. function:: camera.set_vflip(enable: bool)
+.. function:: camera.set_vflip(enable)
 
-    开启或关闭垂直翻转模式（True 表示开启，False 表示关闭）。默认为关闭。
+    Turns vertical flip mode on (True) or off (False). Defaults to off.
 
     UIFlow2.0
     
@@ -84,7 +84,7 @@ UIFlow2.0 案例
 
 .. function:: camera.get_hmirror()
 
-    返回当前是否启用了水平镜像模式。
+    Returns if horizontal mirror mode is enabled.
 
     UIFlow2.0
     
@@ -92,11 +92,10 @@ UIFlow2.0 案例
 
 .. function:: camera.get_vflip()
 
-    返回当前是否启用了垂直翻转模式。
+    Returns if vertical flip mode is enabled.
 
     UIFlow2.0
     
         |get_vflip.png|
-
 
  

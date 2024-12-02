@@ -15,3 +15,5 @@ Hardware
     rotary.rst
     speaker.rst
     wdt.rst
+    camera.rst
+    display.rst
