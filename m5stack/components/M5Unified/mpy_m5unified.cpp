@@ -40,11 +40,13 @@ extern "C"
 
 typedef struct _machine_hw_i2c_obj_t {
     mp_obj_base_t base;
+    i2c_port_t port : 8;
+    gpio_num_t scl : 8;
+    gpio_num_t sda : 8;
+    // Start of modification section, by M5Stack
     uint8_t pos;
-    i2c_port_t port;
-    int8_t scl;
-    int8_t sda;
     uint32_t freq;
+    // End of modification section, by M5Stack
 } machine_hw_i2c_obj_t;
 
 static void m5_btns_callbacks_check(void);
