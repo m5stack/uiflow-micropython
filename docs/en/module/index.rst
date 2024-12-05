@@ -10,6 +10,7 @@ Module
     dmx.rst
     dualkmeter.rst
     gnss.rst
+    gps.rst
     grbl.rst
     hmi.rst
     llm.rst

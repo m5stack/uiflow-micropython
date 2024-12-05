@@ -12,6 +12,7 @@ package(
         "dual_kmeter.py",
         "encoder4_motor.py",
         "gnss.py",
+        "gps.py",
         "grbl.py",
         "hmi.py",
         "iot_base_catm.py",
