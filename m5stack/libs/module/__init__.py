@@ -21,6 +21,7 @@ _attrs = {
     "NBIOTModule": "nbiot",
     "ODriveModule": "odrive",
     "PLUSModule": "plus",
+    "PM25Module": "pm25",
     "PPSModule": "pps",
     "RCAModule": "rca",
     "Relay2Module": "relay_2",

@@ -24,6 +24,7 @@ package(
         "nbiot.py",
         "odrive.py",
         "plus.py",
+        "pm25.py",
         "pps.py",
         "rca.py",
         "relay_2.py",

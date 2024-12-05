@@ -17,6 +17,7 @@ Module
     nbiot.rst
     odrive.rst
     plus.rst
+    pm25.rst
     pps.rst
     rca.rst
     relay_2.rst

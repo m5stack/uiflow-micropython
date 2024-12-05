@@ -1,0 +1,33 @@
+.. |PM25Module| image:: https://static-cdn.m5stack.com/resource/docs/products/module/PM2.5%20AIR%20QUALITY%20KIT%20(Excluding%20Core)/img-3fdafe0e-bb11-4ad5-b6d6-061919cc735b.webp
+    :height: 200px
+    :width: 200px
+.. |PM25Module-SHT20| image:: https://static-cdn.m5stack.com/resource/docs/products/base/pm2.5/pm2.5_01.webp
+    :height: 200px
+    :width: 200px
+.. |PM25Module-SHT30| image:: https://static-cdn.m5stack.com/resource/docs/products/app/PM2.5%20Air%20Quality%20Kit（SHT30）/img-1e1a8f8e-bea0-4cd1-a82d-274c22ad7e79.webp
+    :height: 200px
+    :width: 200px
+    :target: https://docs.m5stack.com/en/app/PM2.5%20Air%20Quality%20Kit（SHT30）
+
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/init.png
+.. |set_module_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/set_module_power.png
+.. |get_module_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/get_module_power.png
+.. |set_module_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/set_module_mode.png
+.. |refresh_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/refresh_data.png
+.. |request_air_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/request_air_data.png
+.. |get_pm_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/get_pm_data.png
+.. |get_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/get_temperature.png
+.. |get_humidity.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/get_humidity.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pm25/example.png
+
+.. |pm25_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/pm25/pm25_core2_example.m5f2"
+        target="_blank"
+    >
+        pm25_core2_example.m5f2
+    </a>
+
