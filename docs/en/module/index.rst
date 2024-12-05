@@ -7,6 +7,7 @@ Module
     4in8out.rst
     ain4.rst
     display.rst
+    dmx.rst
     dualkmeter.rst
     gnss.rst
     grbl.rst

@@ -8,6 +8,7 @@ package(
         "__init__.py",
         "ain4.py",
         "display.py",
+        "dmx.py",
         "dual_kmeter.py",
         "encoder4_motor.py",
         "gnss.py",
