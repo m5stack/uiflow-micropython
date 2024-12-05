@@ -63,5 +63,27 @@ Constructors
 
         |init.png|
 
+.. class:: CANUnit(tx, rx, mode, prescaler=32, sjw=3, bs1=15, bs2=4, triple_sampling=False)
+    :no-index:
+    
+    Initialise the CAN bus with the given parameters:
+
+        - ``tx`` is the pin to use for transmitting data
+        - ``rx`` is the pin to use for receiving data
+        - ``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY
+        - ``prescaler`` is the value by which the CAN input clock is divided to generate the
+          nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive
+          for classic CAN.
+        - ``sjw`` is the resynchronisation jump width in units of time quanta for nominal bits;
+          it can be a value between 1 and 4 inclusive for classic CAN.
+        - ``bs1`` defines the location of the sample point in units of the time quanta for nominal bits;
+          it can be a value between 1 and 16 inclusive for classic CAN.
+        - ``bs2`` defines the location of the transmit point in units of the time quanta for nominal bits;
+          it can be a value between 1 and 8 inclusive for classic CAN.
+        - ``triple_sampling`` is Enables triple sampling when the TWAI controller samples a bit
+
+    UIFLOW2:
+
+        |init1.png|
 
 CANUnit class inherits CAN class, See :ref:`hardware.CAN <hardware.CAN>` for more details.
