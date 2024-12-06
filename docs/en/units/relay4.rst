@@ -1,4 +1,4 @@
-Relay4Unit
+Relay4 Unit
 ==========
 
 .. include:: ../refs/unit.relay4.ref

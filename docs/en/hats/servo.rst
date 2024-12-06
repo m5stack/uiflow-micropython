@@ -1,4 +1,4 @@
-ServoHat
+Servo Hat
 ========
 
 .. include:: ../refs/hat.servo.ref

@@ -1,4 +1,4 @@
-EXTIOUnit
+EXTIO Unit
 =========
 .. sku:U011
 .. include:: ../refs/unit.extio.ref

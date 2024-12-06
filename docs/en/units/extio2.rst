@@ -1,5 +1,5 @@
 
-EXTIO2Unit
+EXTIO2 Unit
 ==========
 .. sku:U011-B
 .. include:: ../refs/unit.extio2.ref

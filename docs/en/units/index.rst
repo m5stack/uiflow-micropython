@@ -11,7 +11,7 @@ Unit
     ain4.rst
     angle.rst
     bps.rst
-    button.rstx
+    button.rst
     buzzer.rst
     bytebutton.rst
     can.rst

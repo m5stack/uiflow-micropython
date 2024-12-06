@@ -1,5 +1,5 @@
 
-LimitUnit
+Limit Unit
 ==========
 
 .. include:: ../refs/unit.limit.ref

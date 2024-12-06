@@ -1,5 +1,5 @@
 
-ColorUnit
+Color Unit
 =========
 .. sku:U009
 .. include:: ../refs/unit.color.ref

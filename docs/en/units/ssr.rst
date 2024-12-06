@@ -1,5 +1,5 @@
 
-SSRUnit
+SSR Unit
 =======
 
 .. include:: ../refs/unit.ssr.ref

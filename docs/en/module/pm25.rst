@@ -1,5 +1,5 @@
 
-PM25.Module
+PM2.5 Module
 ===========
 
 .. include:: ../refs/module.pm25.ref

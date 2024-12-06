@@ -1,6 +1,6 @@
 
-ButtonUnit
-===========
+Button Unit
+==========
 
 .. include:: ../refs/unit.button.ref
 

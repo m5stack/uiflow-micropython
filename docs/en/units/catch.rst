@@ -1,4 +1,4 @@
-CatchUnit
+Catch Unit
 =========
 
 .. include:: ../refs/unit.catch.ref

@@ -1,5 +1,5 @@
 
-HeartUnit
+Heart Unit
 =========
 
 .. include:: ../refs/unit.heart.ref

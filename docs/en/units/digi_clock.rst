@@ -1,4 +1,4 @@
-DigiClockUnit
+DigiClock Unit
 =============
 
 .. include:: ../refs/unit.digi_clock.ref

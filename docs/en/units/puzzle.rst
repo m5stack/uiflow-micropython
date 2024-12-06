@@ -1,5 +1,5 @@
 
-PuzzleUnit
+Puzzle Unit
 ==========
 
 .. include:: ../refs/unit.puzzle.ref

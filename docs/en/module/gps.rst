@@ -1,5 +1,5 @@
 
-GPSModule
+GPS Module
 =========
 
 .. include:: ../refs/module.gps.ref

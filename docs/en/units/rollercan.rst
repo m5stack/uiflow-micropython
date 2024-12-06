@@ -1,5 +1,5 @@
 
-RollerCANUnit
+RollerCAN Unit
 =============
 
 .. include:: ../refs/unit.rollercan.ref
