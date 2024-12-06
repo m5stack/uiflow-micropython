@@ -6,9 +6,14 @@
 include(${CMAKE_CURRENT_LIST_DIR}/cdriver/cdriver.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/m5utils/m5utils.cmake)
 
-# add m5camera module
-if(M5_CAMERA_MODULE_ENABLE)
-    include(${CMAKE_CURRENT_LIST_DIR}/m5camera/m5camera.cmake)
+if (M5_CAMERA_MODULE_ENABLE)
+    if (BOARD_TYPE STREQUAL "cores3")
+        # Add OMV modules
+        include(${CMAKE_CURRENT_LIST_DIR}/omv/micropython.cmake)
+    else()
+        # Add M5Camera module
+        include(${CMAKE_CURRENT_LIST_DIR}/m5camera/m5camera.cmake)
+    endif()
 endif()
 
 # add m5can module

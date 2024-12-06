@@ -7,13 +7,16 @@ Unit
     accel.rst
     acssr.rst
     adc.rst
+    adc_v11.rst
     ain4.rst
     angle.rst
     bps.rst
+    button.rstx
     buzzer.rst
     can.rst
     cardkb.rst
     catch.rst
+    color.rst
     dac.rst
     dac2.rst
     dcssr.rst
@@ -26,6 +29,8 @@ Unit
     encoder.rst
     env.rst
     extencoder.rst
+    extio.rst
+    extio2.rst
     fader.rst
     finger.rst
     flash_light.rst
@@ -46,6 +51,7 @@ Unit
     kmeter.rst
     lcd.rst
     light.rst
+    limit.rst
     lora_e220.rst
     lora_e220_433.rst
     midi.rst

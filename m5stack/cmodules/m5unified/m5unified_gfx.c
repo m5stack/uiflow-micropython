@@ -67,6 +67,7 @@ MAKE_METHOD_KW(gfx, drawPng, 1);
 MAKE_METHOD_KW(gfx, drawBmp, 1);
 MAKE_METHOD_KW(gfx, drawImage, 1);
 MAKE_METHOD_KW(gfx, drawRawBuf, 1);
+MAKE_METHOD_KW(gfx, show, 1);
 MAKE_METHOD_KW(gfx, drawString, 1);
 MAKE_METHOD_KW(gfx, drawCenterString, 1);
 MAKE_METHOD_KW(gfx, drawRightString, 1);
@@ -129,6 +130,7 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, drawBmp), \
     MAKE_TABLE(gfx, drawImage), \
     MAKE_TABLE(gfx, drawRawBuf), \
+    MAKE_TABLE(gfx, show), \
     MAKE_TABLE(gfx, drawString), \
     MAKE_TABLE(gfx, drawCenterString), \
     MAKE_TABLE(gfx, drawRightString), \

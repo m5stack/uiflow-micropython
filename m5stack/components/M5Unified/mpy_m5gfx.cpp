@@ -994,6 +994,52 @@ mp_obj_t gfx_drawRawBuf(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
     return mp_const_none;
 }
 
+#if USE_OMV 
+#include "py_image.h"
+#include "py_helper.h"
+#include "imlib.h"
+
+mp_obj_t gfx_show(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_img, ARG_x, ARG_y, ARG_w, ARG_h, ARG_swap};
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_image,  MP_ARG_OBJ | MP_ARG_REQUIRED, {.u_obj = mp_const_none } },
+        { MP_QSTR_x, MP_ARG_INT, {.u_int = 0} },
+        { MP_QSTR_y, MP_ARG_INT, {.u_int = 0} },
+        { MP_QSTR_w, MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_h, MP_ARG_OBJ, {.u_obj = mp_const_none} },
+        { MP_QSTR_swap, MP_ARG_BOOL, {.u_bool = false } },
+    };
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    image_t* img = py_helper_arg_to_image(args[ARG_img].u_obj, ARG_IMAGE_ANY | ARG_IMAGE_ALLOC);
+
+    int x = args[ARG_x].u_int;
+    int y = args[ARG_y].u_int;
+    int w = ((args[ARG_w].u_obj == mp_const_none) ? img->w : mp_obj_get_int(args[ARG_w].u_obj));
+    int h = ((args[ARG_h].u_obj == mp_const_none) ? img->h : mp_obj_get_int(args[ARG_h].u_obj));
+
+    auto gfx = getGfx(&pos_args[0]);
+    gfx->startWrite();
+    if (w >= img->w) {
+        gfx->setAddrWindow(x, y, w, h);
+        gfx->writePixels((const uint16_t *)img->data, w*h, args[ARG_swap].u_bool);
+    } else {
+        for (int row = 0; row < h; row++) {
+            gfx->setAddrWindow(x, y + row, w, 1);
+            gfx->writePixels((const uint16_t *)img->data + img->w*row, w, args[ARG_swap].u_bool);
+        }
+    }
+    gfx->endWrite();
+    return mp_const_none;
+}
+#else
+mp_obj_t gfx_show(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    // do nothing 
+    return mp_const_none;
+}
+#endif
+
 mp_obj_t gfx_drawString(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_text, ARG_x, ARG_y, ARG_font};
     /* *FORMAT-OFF* */

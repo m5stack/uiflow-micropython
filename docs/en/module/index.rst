@@ -7,15 +7,19 @@ Module
     4in8out.rst
     ain4.rst
     display.rst
+    dmx.rst
     dualkmeter.rst
     gnss.rst
+    gps.rst
     grbl.rst
     hmi.rst
     llm.rst
     lora.rst
     lorawan868.rst
     nbiot.rst
+    odrive.rst
     plus.rst
+    pm25.rst
     pps.rst
     rca.rst
     relay_2.rst

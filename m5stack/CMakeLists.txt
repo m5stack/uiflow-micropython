@@ -89,7 +89,18 @@ endif()
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # Set the location of the main component for the project (one per target).
-list(APPEND EXTRA_COMPONENT_DIRS main_${IDF_TARGET})
+list(APPEND EXTRA_COMPONENT_DIRS 
+    main_${IDF_TARGET}
+)
+
+if (M5_CAMERA_MODULE_ENABLE AND BOARD_TYPE STREQUAL "cores3")
+list(APPEND EXTRA_COMPONENT_DIRS 
+    components/esp_dl/esp-dl
+    components/esp_dl/models/human_face_detect
+    components/esp_dl/models/pedestrian_detect
+    components/esp_dl/models/human_face_recognition
+)
+endif()
 
 # Enable the panic handler wrapper
 idf_build_set_property(LINK_OPTIONS "-Wl,--wrap=esp_panic_handler" APPEND)

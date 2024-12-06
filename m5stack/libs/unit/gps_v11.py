@@ -283,8 +283,8 @@ class GPSV11Unit:
                 int(time_buf[2:4]),
                 int(time_buf[4:6]),
             ]
-            self.latitude = gps_list[3] + gps_list[4]
-            self.longitude = gps_list[5] + gps_list[6]
+            self.latitude = self._convert_to_decimal(gps_list[3], gps_list[4])
+            self.longitude = self._convert_to_decimal(gps_list[5], gps_list[6], False)
             self.speed_ground_knot = gps_list[7]
             self.corse_ground_degree = gps_list[8]
             data_buf = gps_list[9]
@@ -302,6 +302,33 @@ class GPSV11Unit:
             self.gps_date_time = self.gps_date + self.gps_time
             buf = time.mktime(t)
             self.timestamp = buf
+
+    def _convert_to_decimal(self, degrees_minutes, direction, latitude: bool = True) -> float:
+        """
+        note:
+            en: Convert latitude or longitude from degrees minutes format to decimal format.
+
+        params:
+            degrees_minutes:
+                note: Latitude or Longitude in DDMM.MMMM format (e.g., "2242.10772").
+            direction:
+                note: Direction of the coordinate ("N", "S", "E", "W").
+            latitude:
+                note: True if latitude, False if longitude.
+
+        returns:
+            note: The decimal value of the coordinate.
+        """
+        if latitude:
+            degrees = degrees_minutes[:2]  # First two digits are degrees
+            minutes = degrees_minutes[2:]  # The rest are minutes
+        else:
+            degrees = degrees_minutes[:3]
+            minutes = degrees_minutes[3:]
+        decimal = int(degrees) + round(float(minutes) / 60.0, 6)
+        if direction in ["S", "W"]:
+            decimal = -decimal
+        return decimal
 
     def _decode_txt(self, data: str):
         """

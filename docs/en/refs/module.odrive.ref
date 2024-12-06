@@ -1,0 +1,47 @@
+
+.. |ODriveModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/odrive/odrive_01.webp
+    :target: https://docs.m5stack.com/en/module/odrive
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/init.png
+.. |set_position.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_position.png
+.. |set_velocity.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_velocity.png
+.. |set_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_current.png
+.. |set_gain.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_gain.png
+.. |set_control_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_control_mode.png
+.. |set_control_input_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_control_input_pos.png
+.. |trapezoidal_move.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/trapezoidal_move.png
+.. |run_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/run_state.png
+.. |get_velocity.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_velocity.png
+.. |get_vbus_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_vbus_voltage.png
+.. |get_phase_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_phase_current.png
+.. |get_bus_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_bus_current.png
+.. |get_encoder_shadow_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_encoder_shadow_count.png
+.. |get_encoder_pos_estimate.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_encoder_pos_estimate.png
+.. |get_motor_temp.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/get_motor_temp.png
+.. |erase_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/erase_config.png
+.. |save_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/save_config.png
+.. |reboot.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/reboot.png
+.. |set_default_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/set_default_config.png
+.. |check_error.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/check_error.png
+.. |read_flush.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_flush.png
+.. |read_string.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_string.png
+.. |read_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_float.png
+.. |read_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_int.png
+.. |write_to_device.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/write_to_device.png
+.. |write_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/write_config.png
+.. |read_config_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_config_int.png
+.. |read_config_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/read_config_float.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/odrive/example.png
+
+
+.. |core_odrive_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/odrive/core_odrive_example.m5f2"
+        target="_blank"
+    >
+        core_odrive_example.m5f2
+    </a>

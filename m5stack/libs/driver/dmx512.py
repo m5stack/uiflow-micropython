@@ -21,21 +21,17 @@ class DMX512:
     @link https://docs.m5stack.com/en/unit/UNIT-DMX
     @image https://static-cdn.m5stack.com/resource/docs/products/unit/DMX/heart_01.webp
     @category unit
-
-    @example
-        from unit import HeartUnit
-        from hardware import I2C
-        i2c = I2C(1, scl=33, sda=32)
-        heart = HeartUnit(i2c)
-        heart.start()
-        heart.get_heart_rate();heart.get_spo2()
     """
 
     DMX_MASTER = 1
     DMX_SLAVE = 2
 
     def __init__(
-        self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, mode: int = DMX_MASTER
+        self,
+        id: Literal[0, 1, 2] = 1,
+        port: list | tuple = None,
+        mode: int = DMX_MASTER,
+        en: int = -1,
     ) -> None:
         """! Initializes the DMX512 unit with a specified UART ID and port pins.
 
@@ -47,6 +43,7 @@ class DMX512:
         self.dmx_mode = mode
         self.dmx_tx = port[1]
         self.dmx_rx = port[0]
+        self.dmx_en = en
         self.dmx_ch = 1
         self.recv_running = False
         self.receive_callbacks = {}
@@ -59,7 +56,9 @@ class DMX512:
         @param mode Operating mode (1 for Master, 2 for Slave).
         """
         self.dmx_mode = mode
-        cdriver.esp_dmx.dmx_init(self.port_id, self.dmx_tx, self.dmx_rx, -1, self.dmx_mode)
+        cdriver.esp_dmx.dmx_init(
+            self.port_id, self.dmx_tx, self.dmx_rx, self.dmx_en, self.dmx_mode
+        )
         cdriver.esp_dmx.dmx_clear_buffer()
         time.sleep_ms(50)
 

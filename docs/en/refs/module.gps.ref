@@ -1,0 +1,33 @@
+
+.. |GPSModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/GNSS%20Module/img-824d0251-e9ac-4d4d-ae16-7aaea58827eb.webp
+    :target: https://docs.m5stack.com/en/module/comx_gps
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/init.png
+.. |set_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/set_time_zone.png
+.. |get_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_time_zone.png
+.. |get_satellite_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_satellite_num.png
+.. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_altitude.png
+.. |get_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_time.png
+.. |get_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_date.png
+.. |get_latitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_latitude.png
+.. |get_longitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_longitude.png
+.. |get_latitude_decimal.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_latitude_decimal.png
+.. |get_longitude_decimal.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_longitude_decimal.png
+.. |get_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_speed.png
+.. |get_course.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/get_course.png
+.. |is_locate_valid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/is_locate_valid.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/gps/example.png
+
+.. |gps_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/gps/gps_core2_example.m5f2"
+        target="_blank"
+    >
+        gps_core2_example.m5f2
+    </a>
+
+

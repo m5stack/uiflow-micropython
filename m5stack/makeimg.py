@@ -158,10 +158,10 @@ with open(file_out, "wb") as fout:
                 sys.exit(1)
     print("%-23s%8d  (% 8.1f MB)" % ("total", cur_offset, (cur_offset / 1024 / 1024)))
     print(
-        "\r\nWrote 0x%x bytes to file %s, ready to flash to offset 0x%x.\r\n\r\n"
+        "\r\nWrote 0x%x bytes to file m5stack/%s, ready to flash to offset 0x%x.\r\n\r\n"
         "\033[1;32mExample command:\033[0m\r\n"
         "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
-        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
+        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x m5stack/%s"
         % (
             cur_offset,
             file_out,
@@ -219,6 +219,7 @@ print(
     "\033[1;32mRelease Firmware:\033[0m\r\n    \033[1;33m"
     + arg_board_type_flag[:-1].upper()
     + ":\033[0m "
+    + "m5stack/"
     + release_file_out
 )
 os.system("cp {} {}".format(file_out, release_file_out))

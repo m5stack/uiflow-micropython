@@ -47,7 +47,26 @@ _TCS3472_DEFAULT_ADDR = const(0x29)
 
 
 class TCS3472:
-    def __init__(self, i2c: I2C, address: int = _TCS3472_DEFAULT_ADDR):
+    """! COLOR is color recognition unit integrated with TCS3472 chipset. As the name says, COLOR is able to detect color value and return RGB data as response.
+
+    @en Unit Color 英文介绍
+    @cn Unit Color 中文介绍
+
+    @color #0FE6D7
+    @link https://docs.m5stack.com/en/unit/COLOR
+    @image https://static-cdn.m5stack.com/resource/docs/products/unit/COLOR/img-5e8f77b1-0a2d-4810-8b8d-c2374bd738fb.webp
+    @category unit
+
+    @example
+
+    """
+
+    def __init__(self, i2c: I2C, address: int = _TCS3472_DEFAULT_ADDR) -> None:
+        """! Initialize TCS3472 sensor with the given I2C interface and address.
+
+        @param i2c: The I2C bus instance for communication.
+        @param address: The I2C address of the sensor, default is _TCS3472_DEFAULT_ADDR.
+        """
         self._i2c = i2c
         self._addr = address
         self._active = False
@@ -55,22 +74,29 @@ class TCS3472:
         self.set_integration_time(2.4)
         self._glass_attenuation = None
         self.set_glass_attenuation(1.0)
-        # Check sensor ID is expectd value.
+        # Check sensor ID is expected value.
         sensor_id = self._read_u8(_REGISTER_SENSORID)
         if sensor_id not in (0x4D, 0x44, 0x10):
-            raise RuntimeError("incorrect sensor id({0:#0X})".format(sensor_id))
+            raise RuntimeError("Incorrect sensor ID ({0:#0X})".format(sensor_id))
 
-    def get_lux(self):
-        """The lux value computed from the color channels."""
+    def get_lux(self) -> float:
+        """! Get the lux value computed from the color channels.
+
+        @return: The computed lux value as a float.
+        """
         return self._temperature_and_lux_dn40()[0]
 
-    def get_color_temperature(self):
-        """The color temperature in degrees Kelvin."""
+    def get_color_temperature(self) -> float:
+        """! Get the color temperature in degrees Kelvin.
+
+        @return: The color temperature as a float in Kelvin.
+        """
         return self._temperature_and_lux_dn40()[1]
 
-    def get_color_rgb_bytes(self):
-        """Read the RGB color detected by the sensor.  Returns a 3-tuple of
-        red, green, blue component values as bytes (0-255).
+    def get_color_rgb_bytes(self) -> tuple[int, int, int]:
+        """! Get the RGB color detected by the sensor.
+
+        @return: A tuple of red, green, and blue component values as bytes (0-255).
         """
         r, g, b, clear = self.get_color_raw()
 
@@ -92,6 +118,10 @@ class TCS3472:
         return (red, green, blue)
 
     def get_color_r(self) -> int:
+        """! Get the red component of the RGB color.
+
+        @return: The red component value (0-255).
+        """
         r, _, _, clear = self.get_color_raw()
         # Avoid divide by zero errors ... if clear = 0 return black
         if clear == 0:
@@ -100,6 +130,10 @@ class TCS3472:
         return min(red, 255)
 
     def get_color_g(self) -> int:
+        """! Get the green component of the RGB color.
+
+        @return: The green component value (0-255).
+        """
         _, g, _, clear = self.get_color_raw()
         # Avoid divide by zero errors ... if clear = 0 return black
         if clear == 0:
@@ -108,6 +142,10 @@ class TCS3472:
         return min(green, 255)
 
     def get_color_b(self) -> int:
+        """! Get the blue component of the RGB color.
+
+        @return: The blue component value (0-255).
+        """
         _, _, b, clear = self.get_color_raw()
         # Avoid divide by zero errors ... if clear = 0 return black
         if clear == 0:
@@ -116,6 +154,10 @@ class TCS3472:
         return min(blue, 255)
 
     def get_color_h(self) -> int:
+        """! Get the hue (H) value of the color in degrees.
+
+        @return: The hue value as an integer in the range [0, 360].
+        """
         rgb = self.get_color_rgb_bytes()
         c_max = max(rgb[0], rgb[1], rgb[2])
         c_min = min(rgb[0], rgb[1], rgb[2])
@@ -131,6 +173,10 @@ class TCS3472:
             return int(60 * ((rgb[0] - rgb[1]) / (c_max - c_min))) + 240
 
     def get_color_s(self) -> float:
+        """! Get the saturation (S) value of the color.
+
+        @return: The saturation value as a float in the range [0, 1].
+        """
         rgb = self.get_color_rgb_bytes()
         c_max = max(rgb[0], rgb[1], rgb[2])
         c_min = min(rgb[0], rgb[1], rgb[2])
@@ -140,34 +186,43 @@ class TCS3472:
             return 1.0 - c_min / c_max
 
     def get_color_v(self) -> float:
+        """! Get the value (V) of the color (brightness).
+
+        @return: The value as a float in the range [0, 1].
+        """
         rgb = self.get_color_rgb_bytes()
         c_max = max(rgb[0], rgb[1], rgb[2])
         return c_max / 255
 
-    def get_color(self):
-        """Read the RGB color detected by the sensor. Returns an int with 8 bits per channel.
+    def get_color(self) -> int:
+        """! Get the RGB color as an integer value.
         Examples: Red = 16711680 (0xff0000), Green = 65280 (0x00ff00),
         Blue = 255 (0x0000ff), SlateGray = 7372944 (0x708090)
+        @return: An integer representing the RGB color, with 8 bits per channel.
         """
         r, g, b = self.get_color_rgb_bytes()
         return (r << 16) | (g << 8) | b
 
-    def get_color565(self):
-        """Read the RGB color detected by the sensor. Returns an int with 8 bits per channel.
-        Examples: Red = 16252928 (0xf80000), Green = 64512 (0x00fc00),
-        Blue = 248 (0x0000f8), SlateGray = 7372944 (0x708090)
+    def get_color565(self) -> int:
+        """! Get the RGB color in 5-6-5 format as an integer.
+
+        @return: An integer representing the RGB color in 5-6-5 format.
         """
         r, g, b = self.get_color_rgb_bytes()
         return ((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3)
 
     def get_active(self) -> bool:
-        """The active state of the sensor.  Boolean value that will
-        enable/activate the sensor with a value of True and disable with a
-        value of False.
+        """! Get the active state of the sensor.
+
+        @return: True if the sensor is active, False if it is inactive.
         """
         return self._active
 
     def set_active(self, val: bool) -> None:
+        """! Set the active state of the sensor.
+
+        @param val: True to activate the sensor, False to deactivate it.
+        """
         val = bool(val)
         if self._active == val:
             return
@@ -180,11 +235,19 @@ class TCS3472:
         else:
             self._write_u8(_REGISTER_ENABLE, enable & ~(_ENABLE_PON | _ENABLE_AEN))
 
-    def get_integration_time(self):
-        """The integration time of the sensor in milliseconds."""
+    def get_integration_time(self) -> float:
+        """! Get the integration time of the sensor in milliseconds.
+
+        @return: The integration time as a float.
+        """
         return self._integration_time
 
-    def set_integration_time(self, val: float):
+    def set_integration_time(self, val: float) -> None:
+        """! Set the integration time of the sensor.
+
+        @param val: The desired integration time in milliseconds.
+        @raise ValueError: If the integration time is out of the allowed range.
+        """
         if not _INTEGRATION_TIME_THRESHOLD_LOW <= val <= _INTEGRATION_TIME_THRESHOLD_HIGH:
             raise ValueError(
                 "Integration Time must be between '{0}' and '{1}'".format(
@@ -192,30 +255,41 @@ class TCS3472:
                 )
             )
         cycles = int(val / 2.4)
-        self._integration_time = cycles * 2.4  # pylint: disable=attribute-defined-outside-init
+        self._integration_time = cycles * 2.4
         self._write_u8(_REGISTER_ATIME, 256 - cycles)
 
-    def get_gain(self):
-        """The gain of the sensor.  Should be a value of 1, 4, 16, or 60."""
+    def get_gain(self) -> int:
+        """! Get the gain of the sensor.
+
+        @return: The gain value, which should be one of 1, 4, 16, or 60.
+        """
         return _GAINS[self._read_u8(_REGISTER_CONTROL) & 0x11]
 
-    def set_gain(self, val: int):
+    def set_gain(self, val: int) -> None:
+        """! Set the gain of the sensor.
+
+        @param val: The desired gain value (1, 4, 16, or 60).
+        @raise ValueError: If the gain is not one of the allowed values.
+        """
         if val not in _GAINS:
             raise ValueError("Gain should be one of the following values: {0}".format(_GAINS))
         self._write_u8(_REGISTER_CONTROL, _GAINS.index(val))
 
-    def read_interrupt(self):
-        """True if the interrupt is set. Can be set to False (and only False)
-        to clear the interrupt.
+    def read_interrupt(self) -> bool:
+        """! Read the interrupt status.
+
+        @return: True if the interrupt is set, False otherwise.
         """
         return bool(self._read_u8(_REGISTER_STATUS) & _ENABLE_AIEN)
 
-    def clear_interrupt(self):
+    def clear_interrupt(self) -> None:
+        """! Clear the interrupt status of the sensor by writing to the interrupt register."""
         self._i2c.write(b"\xe6")
 
     def get_color_raw(self):
-        """Read the raw RGBC color detected by the sensor.  Returns a 4-tuple of
-        16-bit red, green, blue, clear component byte values (0-65535).
+        """! Read the raw RGBC color detected by the sensor.
+
+        @return: A tuple containing raw red, green, blue, and clear color data.
         """
         was_active = self.get_active()
         self.set_active(True)
@@ -234,12 +308,20 @@ class TCS3472:
         return data
 
     def get_cycles(self):
-        """The persistence cycles of the sensor."""
+        """! Get the persistence cycles of the sensor.
+
+        @return: The persistence cycles or -1 if interrupts are disabled.
+        """
         if self._read_u8(_REGISTER_ENABLE) & _ENABLE_AIEN:
             return _CYCLES[self._read_u8(_REGISTER_APERS) & 0x0F]
         return -1
 
-    def set_cycles(self, val: int):
+    def set_cycles(self, val: int) -> None:
+        """! Set the persistence cycles for the sensor.
+
+        @param val: The number of persistence cycles, or -1 to disable interrupts.
+        @raise ValueError: If the value is not one of the permitted cycle values.
+        """
         enable = self._read_u8(_REGISTER_ENABLE)
         if val == -1:
             self._write_u8(_REGISTER_ENABLE, enable & ~(_ENABLE_AIEN))
@@ -250,28 +332,37 @@ class TCS3472:
             self._write_u8(_REGISTER_APERS, _CYCLES.index(val))
 
     def get_min_value(self):
-        """The minimum threshold value (AILT register) of the
-        sensor as a 16-bit unsigned value.
+        """! Get the minimum threshold value (AILT register) of the sensor.
+
+        @return: The minimum threshold value.
         """
         return self._read_u16(_REGISTER_AILT)
 
     def set_min_value(self, val: int):
+        """! Set the minimum threshold value (AILT register) of the sensor.
+
+        @param val: The minimum threshold value to set.
+        """
         self._write_u16(_REGISTER_AILT, val)
 
     def get_max_value(self):
-        """The minimum threshold value (AIHT register) of the
-        sensor as a 16-bit unsigned value.
+        """! Get the maximum threshold value (AIHT register) of the sensor.
+
+        @return: The maximum threshold value.
         """
         return self._read_u16(_REGISTER_AIHT)
 
     def set_max_value(self, val: int):
+        """! Set the maximum threshold value (AIHT register) of the sensor.
+
+        @param val: The maximum threshold value to set.
+        """
         self._write_u16(_REGISTER_AIHT, val)
 
     def _temperature_and_lux_dn40(self) -> tuple[float, float]:
-        """Converts the raw r/g/b values to color temperature in degrees
-        Kelvin using the algorithm described in DN40 from Taos (now AMS).
-        Also computes lux. Returns tuple with both values or tuple of Nones
-        if computation can not be done.
+        """! Convert the raw RGBC values to color temperature in degrees Kelvin and compute lux.
+
+        @return: A tuple containing the computed lux and color temperature, or None if the computation fails.
         """
         # pylint: disable=invalid-name, too-many-locals
 
@@ -288,7 +379,7 @@ class TCS3472:
         g_coef = 1.0  # | used in lux computation
         b_coef = -0.444  # |
         ct_coef = 3810  # Color Temperature Coefficient
-        ct_offset = 1391  # Color Temperatuer Offset
+        ct_offset = 1391  # Color Temperature Offset
 
         # Analog/Digital saturation (DN40 3.5)
         saturation = 65535 if 256 - atime > 63 else 1024 * (256 - atime)
@@ -301,7 +392,7 @@ class TCS3472:
         if c >= saturation:
             return None, None
 
-        # ir Rejection (DN40 3.1)
+        # IR Rejection (DN40 3.1)
         ir = (r + g + b - c) / 2 if r + g + b > c else 0.0
         r2 = r - ir
         g2 = g - ir
@@ -320,40 +411,61 @@ class TCS3472:
         return lux, ct
 
     def get_glass_attenuation(self):
-        """The Glass Attenuation (FA) factor used to compensate for lower light
-        levels at the device due to the possible presence of glass. The ga is
-        the inverse of the glass transmissivity (T), so :math:`ga = 1/T`. A transmissivity
-        of 50% gives ga = 1 / 0.50 = 2. If no glass is present, use ga = 1.
-        See Application Note: DN40-Rev 1.0 – Lux and CCT Calculations using
-        ams Color Sensors for more details.
+        """! Get the Glass Attenuation factor used to compensate for lower light levels due to glass presence.
+
+        @return: The glass attenuation factor (ga).
         """
         return self._glass_attenuation
 
     def set_glass_attenuation(self, value: float):
+        """! Set the Glass Attenuation factor used to compensate for lower light levels due to glass presence.
+
+        @param value: The glass attenuation factor to set. Must be greater than or equal to 1.
+        @raise ValueError: If the value is less than 1.
+        """
         if value < 1:
             raise ValueError("Glass attenuation factor must be at least 1.")
         self._glass_attenuation = value
 
     def _valid(self) -> bool:
-        # Check if the status bit is set and the chip is ready.
+        """! Check if the sensor data is valid.
+
+        @return: True if the sensor data is valid, False otherwise.
+        """
         return bool(self._read_u8(_REGISTER_STATUS) & 0x01)
 
     def _read_u8(self, reg: int) -> int:
+        """! Read a single byte from the specified register.
+
+        @param reg: The register address to read from.
+        @return: The byte value read from the register.
+        """
         buf = memoryview(self._BUFFER)
         self._i2c.readfrom_mem_into(self._addr, (reg | _COMMAND_BIT) & 0xFF, buf[0:1])
         return buf[0]
 
     def _write_u8(self, reg: int, val: int) -> None:
+        """! Write a single byte to the specified register.
+
+        @param reg: The register address to write to.
+        @param val: The byte value to write to the register.
+        """
         buf = memoryview(self._BUFFER)[0:1]
         buf[0] = val & 0xFF
         self._i2c.writeto_mem(self._addr, (reg | _COMMAND_BIT) & 0xFF, buf)
 
     def _read_u16(self, reg: int) -> int:
+        """! Read a 16-bit value from the specified register.
+
+        @param reg: The register address to read from.
+        @return: The 16-bit value read from the register.
+        """
         buf = memoryview(self._BUFFER)
         self._i2c.readfrom_mem_into(self._addr, (reg | _COMMAND_BIT) & 0xFF, buf[0:2])
         return (buf[1] << 8) | buf[0]
 
     def _write_u16(self, reg: int, val: int) -> None:
+        """! Write a 16-bit value"""
         buf = memoryview(self._BUFFER)[0:2]
         buf[0] = val & 0xFF
         buf[1] = (val >> 8) & 0xFF

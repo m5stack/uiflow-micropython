@@ -9,3 +9,5 @@ Software
     modbus.rst
     requests2.rst
     umqtt.rst
+    image.rst
+    dl.rst

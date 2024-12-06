@@ -29,7 +29,33 @@ START = const(0x80)
 
 
 class ADS1110:
+    """
+    note:
+        en: EXT.IO2 is an IO extended unit, based on STM32F030 main controller, using I2C communication interface and providing 8 IO expansion. Each IO supports independent configuration of digital I/O, ADC, SERVO control, RGB LED control modes. Supports configuration of device I2C address, which means that users can mount multiple EXT.IO2 UNITs on the same I2C BUS to extend more IO resources. Suitable for multiple digital/analog signal acquisition, with lighting/servo control applications.
+
+    details:
+        link: https://docs.m5stack.com/en/unit/extio2
+        image: https://static-cdn.m5stack.com/resource/docs/products/unit/extio2/extio2_01.webp
+        category: Unit
+
+    example:
+        - ../../../examples/unit/extio2/extio2_core2_example.py
+
+    m5f2:
+        - unit/extio2/extio2_core2_example.m5f2
+    """
+
     def __init__(self, i2c: I2C, address: int = ADDRESS) -> None:
+        """
+        note:
+            en: Initialize the ADS1110 with the given I2C interface and address.
+
+        params:
+            i2c:
+                note: The I2C interface used for communication.
+            address:
+                note: The I2C address of the ADS1110. Default is ADDRESS.
+        """
         self._i2c = i2c
         self._i2c_addr = address
         self.start = NO_EFFECT
@@ -41,40 +67,44 @@ class ADS1110:
 
     def set_gain(self, gain):
         """
-        GA1 GA0 GAIN
-        0   0   1
-        0   1   2
-        1   0   4
-        1   1   8
+        note:
+            en: Set the gain configuration for the ADC.
+
+        params:
+            gain:
+                note: The gain value to configure.
         """
         self.gain = gain
         self.set_config()
 
     def set_sample_rate(self, rate):
         """
-        DR1 DR0 DATARATE
-        0   0   240SPS
-        0   1   60SPS
-        1   0   30SPS
-        1   1   15SPS
+        note:
+            en: Configure the ADC's sampling rate.
+
+        params:
+            rate:
+                note: The sample rate to set.
         """
         self.rate = rate
         self.set_config()
 
     def set_mode(self, mode):
         """
-        SC  MODE
-        0   CONTINUOUS
-        1   SINGLE
+        note:
+            en: Set the ADC's operating mode.
+
+        params:
+            mode:
+                note: The mode to configure, e.g., continuous or single conversion.
         """
         self.mode = mode
         self.set_config()
 
     def start_single_conversion(self):
         """
-        ST/DRDY
-        0   NO EFFECT
-        1   START CONVERSION
+        note:
+            en: Trigger a single conversion on the ADC.
         """
         self.start = START
         self.set_config()
@@ -82,15 +112,28 @@ class ADS1110:
 
     def set_config(self):
         """
-        7   6   5   4   3   2   1   0
-        S/D 0   0   SC  DR1 DR0 GA1 GA0
-        x   0   0   x   x   x   x   x
+        note:
+            en: Update the ADC configuration register with the current settings.
+
+        params:
+            note:
+
         """
         value = 0x00
         value |= self.gain | self.rate | self.mode | self.start
         self._i2c.writeto(self._i2c_addr, bytearray([value]))
 
     def get_adc_raw_value(self):
+        """
+        note:
+            en: Read the raw ADC value.
+
+        params:
+            note:
+
+        returns:
+            note: The raw ADC value as an integer.
+        """
         buf = bytearray(2)
         self._i2c.readfrom_into(self._i2c_addr, buf)
         return struct.unpack(">h", buf)[0]

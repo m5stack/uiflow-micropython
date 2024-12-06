@@ -1,8 +1,8 @@
 /*
-* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-*
-* SPDX-License-Identifier: MIT
-*/
+ * SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+ *
+ * SPDX-License-Identifier: MIT
+ */
 #include "esp_dmx.h"
 
 #include <math.h>
@@ -33,9 +33,9 @@ bool dmxIsConnected = false;
 static mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     static const mp_arg_t allowed_args[] = {
         {MP_QSTR_port_id, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 1}},
-        {MP_QSTR_tx_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 13}},  // 1us resolution
-        {MP_QSTR_rx_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 35}},
-        {MP_QSTR_en_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 12}},
+        {MP_QSTR_tx_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = -1}},  // 1us resolution
+        {MP_QSTR_rx_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = -1}},
+        {MP_QSTR_en_pin, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = -1}},
         {MP_QSTR_sel_mode, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 1}},
     };
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -48,6 +48,11 @@ static mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *k
 
     dmx_config_t dmxConfig = DMX_CONFIG_DEFAULT;
 
+    if (dmx_driver_is_installed(dmxPort)) {
+        mp_printf(&mp_plat_print, "DMX driver already installed on port %d\n", dmxPort);
+        dmx_driver_delete(dmxPort);
+    }
+
     if (sel_mode == 1) {
         const int personality_count = 0;
         dmx_driver_install(dmxPort, &dmxConfig, NULL, personality_count);
@@ -58,6 +63,9 @@ static mp_obj_t mp_dmx_init(size_t n_args, const mp_obj_t *pos_args, mp_map_t *k
         dmx_driver_install(dmxPort, &dmxConfig, personalities, personality_count);
         dmx_set_pin(dmxPort, tx_pin, rx_pin, en_pin);
     }
+
+    mp_printf(&mp_plat_print, "port_id:%d, tx_pin:%d, rx_pin:%d, en_pin:%d, sel_mode:%d\n", dmxPort, tx_pin, rx_pin,
+        en_pin, sel_mode);
 
     return mp_const_none;
 }
@@ -81,6 +89,7 @@ static mp_obj_t mp_dmx_write_data(size_t n_args, const mp_obj_t *pos_args, mp_ma
     dmx_write(dmxPort, dmx_data, DMX_PACKET_SIZE);
     dmx_send_num(dmxPort, DMX_PACKET_SIZE);
     dmx_wait_sent(dmxPort, DMX_TIMEOUT_TICK);
+    mp_printf(&mp_plat_print, "Channel %d set to %d\n", channel, ch_data);
 
     return mp_const_none;
 }
@@ -103,6 +112,7 @@ static mp_obj_t mp_dmx_read_data(size_t n_args, const mp_obj_t *pos_args, mp_map
                 is_connected = true;
             }
             dmx_read(dmxPort, dmx_data, DMX_PACKET_SIZE);
+            mp_printf(&mp_plat_print, "Channel %d read as %d\n", channel, dmx_data[channel]);
         }
     }
     return mp_obj_new_int(dmx_data[channel]);

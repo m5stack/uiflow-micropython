@@ -1,0 +1,149 @@
+
+PM25.Module
+===========
+
+.. include:: ../refs/module.pm25.ref
+
+PM2.5 Air Quality Module is an ambient air quality testing Module. This product adopts PMSA003 digital universal particulate matter concentration sensor. It can quickly collect and calculate the number of suspended particles of different particle sizes in the air per unit volume. 
+
+The other two versions come with the STH30 and SHT20, which can be used to measure ambient temperature and humidity.
+
+Support the following products:
+
+
+    ================== ================== ==================
+      |PM25Module|     |PM25Module-SHT20| |PM25Module-SHT30|
+    ================== ================== ==================
+
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/module/pm25/pm25_core2_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+.. only:: builder_html
+
+    |pm25_core2_example.m5f2|
+
+class PM25Module
+----------------
+
+Constructors
+------------
+
+.. class:: PM25Module()
+
+    Init Module PM2.5 with UART.
+
+    UIFLOW2:
+
+        |init.png|
+
+
+Methods
+-------
+
+.. method:: PM25Module.set_module_power(state)
+
+    Set the PM25Module power state.
+
+    :param  state: Set to True to enable power, False to disable.
+
+    UIFLOW2:
+
+        |set_module_power.png|
+
+.. method:: PM25Module.get_module_power() -> bool
+
+    Get the PM25Module power state.
+
+    :param state: Get the module power state.
+
+    UIFLOW2:
+
+        |get_module_power.png|
+
+.. method:: PM25Module.set_module_mode(mode)
+
+    Set the PM25Module work mode.
+
+    :param  mode:
+
+        Options:
+
+        - ``Active mode``: 1
+        - ``Passive mode``: 0
+
+    UIFLOW2:
+
+        |set_module_mode.png|
+
+.. method:: PM25Module.refresh_data()
+
+    Refresh the PM25Module data.
+
+    :param  mode:
+    
+        Options:
+
+        - ``Active mode``: 1
+        - ``Passive mode``: 0
+
+    UIFLOW2:
+
+        |refresh_data.png|
+
+.. method:: PM25Module.request_air_data()
+
+    Request PM25Module air data.
+
+    UIFLOW2:
+
+        |request_air_data.png|
+
+.. method:: PM25Module.get_pm_data(data_num)
+
+    Select the type of particulate matter data to retrieve.
+
+    :param int data_num: The options range from standard PM concentrations to counts of particles of specific sizes in 0.1 liters of air.
+
+        Options:
+
+        - ``PM1.0 Concentration(Std)``: 0
+        - ``PM2.5 Concentration(Std)``: 1
+        - ``PM10 Concentration(Std)``: 2
+        - ``PM1.0 Concentration(Env)``: 3
+        - ``PM2.5 Concentration(Env)``: 4
+        - ``PM10 Concentration(Env)``: 5
+        - ``Particels more than 0.3um in 0.1 liters of air``: 6
+        - ``Particels more than 0.5um in 0.1 liters of air``: 7
+        - ``Particels more than 1.0um in 0.1 liters of air``: 8
+        - ``Particels more than 2.5um in 0.1 liters of air``: 9
+        - ``Particels more than 5.0um in 0.1 liters of air``: 10
+        - ``Particels more than 10um in 0.1 liters of air``: 11
+
+    UIFLOW2:
+
+        |get_pm_data.png|
+
+
+.. method:: PM25Module.get_temperature()
+
+    Get PM25Module environmental temperature data.
+
+    UIFLOW2:
+
+        |get_temperature.png|
+
+.. method:: PM25Module.get_humidity()
+
+    Get PM25Module environmental humidity data.
+
+    UIFLOW2:
+
+        |get_humidity.png|

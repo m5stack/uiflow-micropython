@@ -1,0 +1,25 @@
+
+.. |EXTIOUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/extio/extio_01.webp
+    :target: https://docs.m5stack.com/en/unit/extio
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/init.png
+.. |set_port_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/set_port_mode.png
+.. |set_pin_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/set_pin_mode.png
+.. |digit_write_port.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/digit_write_port.png
+.. |digit_write.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/digit_write.png
+.. |digit_read_port.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/digit_read_port.png
+.. |digit_read.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/digit_read.png
+.. |pin.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/pin.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/extio/example.png
+
+.. |extio_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/extio/extio_core2_example.m5f2"
+        target="_blank"
+    >
+        extio_core2_example.m5f2
+    </a>

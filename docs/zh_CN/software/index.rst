@@ -6,3 +6,5 @@ Software
 
     time.rst
     umqtt.rst
+    image.rst
+    dl.rst
