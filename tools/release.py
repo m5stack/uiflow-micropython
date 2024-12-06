@@ -45,6 +45,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Dial", "431644329f5431d5ea36bec9ab94f664", ""),
     FirewareInfo("M5STACK_DinMeter", "42e62514d351731e7bcb6ce032789e00", ""),
     FirewareInfo("M5STACK_Fire", "fb3bf2d6484fcc25ae5c962a4245e88a", ""),
+    FirewareInfo("M5STACK_NanoC6", "578da1c556435cd75d67b4810a7e4769", ""),
     FirewareInfo("M5STACK_Paper", "a003515b05be5c2aba5282630ecb3a51", ""),
     FirewareInfo("M5STACK_Stamp_PICO", "d3b966b3ff9b1f1bd29225cc307a0d78", ""),
     FirewareInfo("M5STACK_StampS3", "017e0eef047afb70eb8b9fc1fbccefe0", ""),

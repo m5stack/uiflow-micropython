@@ -362,7 +362,6 @@ static void mqtt_ping_report() {
     if (esp_ota_get_partition_description(running, &running_app_info) == ESP_OK) {
         ESP_LOGD(TAG, "Running firmware version: %s", running_app_info.version);
     }
-    strcpy(running_app_info.version, "V2.1.8");
 
     size_t len = 0;
 
