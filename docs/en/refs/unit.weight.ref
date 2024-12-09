@@ -1,0 +1,25 @@
+
+.. |WEIGHTUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/WEIGHT/img-a0113c8c-ed62-43b9-ad38-5cb934811d9e.webp
+    :target: https://docs.m5stack.com/en/unit/WEIGHT
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/init.png
+.. |get_raw_weight.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/get_raw_weight.png
+.. |get_scale_weight.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/get_scale_weight.png
+.. |set_tare.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/set_tare.png
+.. |set_calibrate_scale.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/set_calibrate_scale.png
+.. |is_ready_wait.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/is_ready_wait.png
+.. |set_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/set_channel.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight/example.png
+
+.. |weight_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/weight/weight_cores3_example.m5f2"
+        target="_blank"
+    >
+        weight_cores3_example.m5f2
+    </a>
+

@@ -1,6 +1,6 @@
 
-ByteButtonUnit
-==============
+ByteButton Unit
+===============
 .. sku:U192
 .. include:: ../refs/unit.bytebutton.ref
 

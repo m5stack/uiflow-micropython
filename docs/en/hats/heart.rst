@@ -1,5 +1,5 @@
 
-HeartHat
+Heart Hat
 =========
 
 .. include:: ../refs/hat.heart.ref

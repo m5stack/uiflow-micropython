@@ -1,5 +1,5 @@
 EXTIO Unit
-=========
+===========
 .. sku:U011
 .. include:: ../refs/unit.extio.ref
 
@@ -7,19 +7,21 @@ Support the following products:
 
 |EXTIOUnit|
 
-.. Micropython Example:
-    
-..     .. literalinclude:: ../../../examples/unit/extio/extio_core2_example.py
-..         :language: python
-..         :linenos:
+..
+    Micropython Example:
 
-.. UIFLOW2 Example:
+        .. literalinclude:: ../../../examples/unit/extio/extio_core2_example.py
+            :language: python
+            :linenos:
 
-..     |example.png|
+    UIFLOW2 Example:
 
-.. .. only:: builder_html
+        |example.png|
 
-..     |extio_core2_example.m5f2|
+    .. only:: builder_html
+
+        |extio_core2_example.m5f2|
+
 
 class EXTIOUnit
 ---------------

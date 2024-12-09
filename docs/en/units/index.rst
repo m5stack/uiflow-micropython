@@ -10,6 +10,7 @@ Unit
     adc_v11.rst
     ain4.rst
     angle.rst
+    angle8.rst
     bps.rst
     button.rst
     buzzer.rst
@@ -17,6 +18,8 @@ Unit
     can.rst
     cardkb.rst
     catch.rst
+    co2.rst
+    co2l.rst
     color.rst
     dac.rst
     dac2.rst
@@ -29,6 +32,7 @@ Unit
     earth.rst
     encoder.rst
     env.rst
+    envpro.rst
     extencoder.rst
     extio.rst
     extio2.rst
@@ -73,6 +77,7 @@ Unit
     reflective_ir.rst
     relay.rst
     relay4.rst
+    rfid.rst
     rgb.rst
     roller485.rst
     rollercan.rst
@@ -83,10 +88,12 @@ Unit
     timerpwr.rst
     tmos.rst
     tof.rst
+    tvoc.rst
     uhf_rfid.rst
     ultrasonic.rst
     uwb.rst
     vibrator.rst
     watering.rst
+    weight.rst
     weight_i2c.rst
     zigbee.rst

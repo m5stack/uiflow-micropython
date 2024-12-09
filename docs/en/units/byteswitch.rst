@@ -10,20 +10,21 @@ Support the following products:
 
 |ByteSwitchUnit|
 
-Micropython Example:
+..
+    Micropython Example:
 
-    .. literalinclude:: ../../../examples/unit/byteswitch/byteswitch_cores3_example.py
-        :language: python
-        :linenos:
+        .. literalinclude:: ../../../examples/unit/byteswitch/byteswitch_cores3_example.py
+            :language: python
+            :linenos:
 
+    UIFLOW2 Example:
 
-UIFLOW2 Example:
+        |example.png|
 
-    |example.png|
+    .. only:: builder_html
 
-.. only:: builder_html
+        |byteswitch_cores3_example.m5f2|
 
-    |byteswitch_cores3_example.m5f2|
 
 class ByteSwitchUnit
 --------------------

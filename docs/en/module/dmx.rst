@@ -1,5 +1,5 @@
 DMX512 Module
-===========
+=============
 
 .. include:: ../refs/module.dmx.ref
 
@@ -40,7 +40,7 @@ UIFLOW2 Slave Example:
 
 
 class DMX512Module
-----------------
+------------------
 
 Constructors
 ------------

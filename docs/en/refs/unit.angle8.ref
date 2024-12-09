@@ -1,0 +1,27 @@
+
+.. |Angle8Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/8Angle/img-b698604d-29dd-4506-b662-4752e1f03a28.webp
+    :target: https://docs.m5stack.com/en/unit/8Angle
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/init.png
+.. |get_adc12_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/get_adc12_raw.png
+.. |get_adc8_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/get_adc8_raw.png
+.. |get_switch_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/get_switch_status.png
+.. |set_led_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/set_led_rgb.png
+.. |set_led_rgb_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/set_led_rgb_from.png
+.. |set_angle_sync_bright.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/set_angle_sync_bright.png
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/get_device_spec.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8angle/example.png
+
+.. |angle8unit_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/angle8unit/angle8unit_cores3_example.m5f2"
+        target="_blank"
+    >
+        angle8unit_cores3_example.m5f2
+    </a>
+

@@ -1,6 +1,6 @@
 
 OLED Unit
-========
+==========
 
 .. include:: ../refs/unit.oled.ref
 
