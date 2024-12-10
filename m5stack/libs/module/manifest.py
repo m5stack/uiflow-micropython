@@ -34,6 +34,7 @@ package(
         "rs232.py",
         "servo2.py",
         "step_motor_driver.py",
+        "zigbee.py",
     ),
     base_path="..",
     opt=0,

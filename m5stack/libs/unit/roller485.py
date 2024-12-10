@@ -632,7 +632,7 @@ class Roller485(RollerBase):
                     )
                     resp_buf[:] = b""  # 清除当前数据，重新接收
                     continue
-                if resp_buf[0:2] == b"\xAA\x55":  # 检查包头
+                if resp_buf[0:2] == b"\xaa\x55":  # 检查包头
                     if resp_buf[2:4] == bytes([(cmd), id]):
                         if self._crc8(resp_buf[2:-1]) == resp_buf[-1]:
                             # print(f"Response: {[hex(byte) for byte in resp_buf]}")
