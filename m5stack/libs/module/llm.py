@@ -45,15 +45,17 @@ class ModuleMsg:
         self.add_msg_from_response(response["msg"])
 
     def add_msg_from_response(self, response):
-        try:
-            # Try parse response
-            doc = ujson.loads(response)
-        except ValueError:
-            return
-
-        # Push into resonse msg list
-        self.response_msg_list.append(doc)
-        # print(f"[DEBUG] Received message:\n{doc}")
+        json_strings = response.strip().splitlines()
+        for json_str in json_strings:
+            try:
+                # Try parse response
+                doc = ujson.loads(json_str)
+                # Push into resonse msg list
+                self.response_msg_list.append(doc)
+                # print(f"[DEBUG] Received message:\n{doc}")
+            except ValueError:
+                continue
+        return
 
     def clear_msg(self, request_id):
         self.response_msg_list = [
@@ -93,11 +95,40 @@ class ApiSys:
 
     def __init__(self, module_msg):
         self._module_msg = module_msg
+        self._llm_work_id = None
         self._ret = self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
 
     def ping(self) -> int:
         cmd_ping = '{"request_id":"sys_ping","work_id":"sys","action":"ping","object":"None","data":"None"}'
         return self._send_cmd_and_wait(cmd_ping, "sys_ping", 2000)
+
+    def version(self) -> int:
+        cmd_version = '{"request_id":"sys_version","work_id":"sys","action":"version","object":"None","data":"None"}'
+        return self._send_cmd_and_wait_verson(cmd_version, "sys_version", 2000)
+
+    def lsmode(self) -> int:
+        cmd_version = '{"request_id":"sys_lsmode","work_id":"sys","action":"lsmode","object":"None","data":"None"}'
+        return self._send_cmd_and_wait_lsmode(cmd_version, "sys_lsmode", 2000)
+
+    def rmmode(
+        self,
+        model=None,
+        request_id="llm_rmmode",
+    ) -> str:
+        cmd = {
+            "request_id": "sys_rmmode",
+            "work_id": "sys",
+            "action": "rmmode",
+            "object": "sys.rmmode",
+            "data": model if model is not None else "None",
+        }
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 20000
+        )
+
+        ret_work_id = self._llm_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
 
     def reset(self, wait_reset_finish=True) -> int:
         cmd_reset = '{"request_id":"sys_reset","work_id":"sys","action":"reset","object":"None","data":"None"}'
@@ -122,12 +153,58 @@ class ApiSys:
         )
         return self._ret if success else self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
 
+    def _send_cmd_and_wait_verson(self, cmd, request_id, timeout):
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            cmd, request_id, self._set_data_code, timeout
+        )
+        return self._ret if success else self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
+
+    def _send_cmd_and_wait_lsmode(self, cmd, request_id, timeout):
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            cmd, request_id, self._set_mode_code, timeout
+        )
+        return self._ret if success else self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
+
     def _set_ret_code(self, msg):
         self._ret = (
             msg["error"]["code"]
             if "error" in msg and "code" in msg["error"]
             else self._MODULE_LLM_RESPONSE_PARSE_FAILED
         )
+
+    def _set_data_code(self, msg):
+        if "error" in msg and "code" in msg["error"]:
+            code = msg["error"]["code"]
+            if code == 0 and "data" in msg:
+                self._ret = msg["data"]
+            elif code == -3:
+                self._ret = "v1.0"
+            else:
+                self._ret = code
+        else:
+            self._ret = self._MODULE_LLM_RESPONSE_PARSE_FAILED
+
+    def _set_mode_code(self, msg):
+        if "error" in msg and "code" in msg["error"]:
+            code = msg["error"]["code"]
+            if code == 0 and "data" in msg:
+                self._ret = [
+                    {"type": item["type"], "mode": item["mode"]}
+                    for item in msg["data"]
+                    if "type" in item and "mode" in item
+                ]
+            else:
+                self._ret = code
+        else:
+            self._ret = self._MODULE_LLM_RESPONSE_PARSE_FAILED
+
+    def _set_llm_work_id(self, msg):
+        if "work_id" in msg:
+            self._llm_work_id = msg["work_id"]
+
+    def _free_temp(self):
+        self._llm_work_id = None
+        self._ret = self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
 
 
 class ApiLlm:
@@ -143,7 +220,7 @@ class ApiLlm:
     def setup(
         self,
         prompt="",
-        model="qwen2.5-0.5b",
+        model="qwen2.5-0.5B-prefill-20e",
         response_format="llm.utf-8.stream",
         input="llm.utf-8.stream",
         enoutput=True,
@@ -167,7 +244,7 @@ class ApiLlm:
             },
         }
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
-            ujson.dumps(cmd), request_id, self._set_llm_work_id, 10000
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 20000
         )
 
         ret_work_id = self._llm_work_id if success else ""
@@ -271,6 +348,54 @@ class ApiAudio:
         self._audio_work_id = None
 
 
+class ApiCamera:
+    _MODULE_LLM_OK = 0
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._camera_work_id = None
+
+    def setup(
+        self,
+        input="/dev/video0",
+        frame_width=320,
+        frame_height=320,
+        enoutput=False,
+        response_format="camera.raw",
+        request_id="camera_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "camera",
+            "action": "setup",
+            "object": "camera.setup",
+            "data": {
+                "response_format": response_format,
+                "input": input,
+                "frame_width": frame_width,
+                "frame_height": frame_height,
+                "enoutput": enoutput,
+            },
+        }
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_camera_work_id, 10000
+        )
+
+        ret_work_id = self._camera_work_id if success else ""
+        self._free_temp()
+
+        return ret_work_id
+
+    def _set_camera_work_id(self, msg):
+        if "work_id" in msg:
+            self._camera_work_id = msg["work_id"]
+
+    def _free_temp(self):
+        self._camera_work_id = None
+
+
 class ApiTts:
     _MODULE_LLM_OK = 0
     _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
@@ -283,10 +408,10 @@ class ApiTts:
     def setup(
         self,
         model="single_speaker_english_fast",
-        response_format="tts.base64.wav",
+        response_format="sys.pcm",
         input="tts.utf-8.stream",
-        enoutput=True,
-        enkws=True,
+        enoutput=False,
+        enkws=False,
         request_id="tts_setup",
     ) -> str:
         cmd = {
@@ -317,7 +442,77 @@ class ApiTts:
             "work_id": work_id,
             "action": "inference",
             "object": "tts.utf-8.stream",
-            "data": {"delta": input_data, "index": 1, "finish": True},
+            "data": {"delta": input_data, "index": 0, "finish": True},
+        }
+
+        if timeout == 0:
+            self._module_msg.send_cmd(ujson.dumps(cmd))
+            return self._MODULE_LLM_OK
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_ret_code, timeout
+        )
+
+        return self._ret if success else self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
+
+    def _set_llm_work_id(self, msg):
+        if "work_id" in msg:
+            self._llm_work_id = msg["work_id"]
+
+    def _set_ret_code(self, msg):
+        if "error" in msg and "code" in msg["error"]:
+            self._ret = msg["error"]["code"]
+
+    def _free_temp(self):
+        self._llm_work_id = None
+        self._ret = self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
+
+
+class ApiMelotts:
+    _MODULE_LLM_OK = 0
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._llm_work_id = None
+        self._ret = self._MODULE_LLM_WAIT_RESPONSE_TIMEOUT
+
+    def setup(
+        self,
+        model="melotts_zh-cn",
+        response_format="sys.pcm",
+        input="tts.utf-8.stream",
+        enoutput=False,
+        request_id="melotts_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "melotts",
+            "action": "setup",
+            "object": "melotts.setup",
+            "data": {
+                "model": model,
+                "response_format": response_format,
+                "input": input,
+                "enoutput": enoutput,
+            },
+        }
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 15000
+        )
+
+        ret_work_id = self._llm_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
+
+    def inference(self, work_id, input_data, timeout=0, request_id="tts_inference"):
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "tts.utf-8.stream",
+            "data": {"delta": input_data, "index": 0, "finish": True},
         }
 
         if timeout == 0:
@@ -357,6 +552,7 @@ class ApiKws:
         response_format="kws.bool",
         input="sys.pcm",
         enoutput=True,
+        enaudio=True,
         request_id="kws_setup",
     ) -> str:
         cmd = {
@@ -369,6 +565,7 @@ class ApiKws:
                 "response_format": response_format,
                 "input": input,
                 "enoutput": enoutput,
+                "enwake_audio": enaudio,
                 "kws": kws,
             },
         }
@@ -402,7 +599,7 @@ class ApiAsr:
         response_format="asr.utf-8.stream",
         input="sys.pcm",
         enoutput=True,
-        enkws=True,
+        enkws=False,
         rule1=2.4,
         rule2=1.2,
         rule3=30.0,
@@ -441,6 +638,50 @@ class ApiAsr:
         self._llm_work_id = None
 
 
+class ApiYolo:
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._yolo_work_id = None
+
+    def setup(
+        self,
+        model="yolo11n",
+        response_format="yolo.box.stream",
+        input="yolo.jpg.base64",
+        enoutput=True,
+        request_id="yolo_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "yolo",
+            "action": "setup",
+            "object": "yolo.setup",
+            "data": {
+                "model": model,
+                "response_format": response_format,
+                "input": input,
+                "enoutput": enoutput,
+            },
+        }
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_yolo_work_id, 10000
+        )
+
+        ret_work_id = self._yolo_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
+
+    def _set_yolo_work_id(self, msg):
+        if "work_id" in msg:
+            self._yolo_work_id = msg["work_id"]
+
+    def _free_temp(self):
+        self._yolo_work_id = None
+
+
 class LlmModule:
     def __init__(self, uart_id=1, tx=17, rx=16) -> None:
         self._uart = UART(
@@ -461,8 +702,11 @@ class LlmModule:
         self.llm = ApiLlm(self.msg)
         self.audio = ApiAudio(self.msg)
         self.tts = ApiTts(self.msg)
+        self.melotts = ApiMelotts(self.msg)
         self.kws = ApiKws(self.msg)
         self.asr = ApiAsr(self.msg)
+        self.camera = ApiCamera(self.msg)
+        self.yolo = ApiYolo(self.msg)
 
         # Temp voice assistant callback setup
         self.on_keyword_detected = None
@@ -473,9 +717,13 @@ class LlmModule:
         self.latest_llm_work_id = "llm"
         self.latest_audio_work_id = "audio"
         self.latest_tts_work_id = "tts"
+        self.latest_melotts_work_id = "melotts"
         self.latest_kws_work_id = "kws"
         self.latest_asr_work_id = "asr"
+        self.latest_camera_work_id = "camera"
+        self.latest_yolo_work_id = "yolo"
         self.latest_error_code = 0
+        self.version = 0
 
         # Voice assistant preset
         self._preset_va = None
@@ -492,7 +740,22 @@ class LlmModule:
         Returns:
             bool: Is module connection ok
         """
-        return self.sys.ping() == 0
+        result = self.sys.ping() == 0
+        self.version = self.sys.version()
+        return result
+
+    def get_version(self):
+        return self.sys.version()
+
+    def ls_mode(self):
+        return self.sys.lsmode()
+
+    def rm_mode(
+        self,
+        model=None,
+    ) -> str:
+        self.latest_error_code = self.sys.rmmode(model)
+        return self.latest_error_code
 
     def get_response_msg_list(self) -> list:
         """
@@ -521,14 +784,28 @@ class LlmModule:
     def llm_setup(
         self,
         prompt="",
-        model="qwen2.5-0.5b",
+        model="qwen2.5-0.5B-prefill-20e",
         response_format="llm.utf-8.stream",
-        input="llm.utf-8.stream",
+        input=None,
         enoutput=True,
-        enkws=True,
+        enkws=None,
         max_token_len=127,
         request_id="llm_setup",
     ) -> str:
+        if self.version == "v1.0":
+            model = "qwen2.5-0.5b"
+
+        if input is None:
+            input = "llm.utf-8.stream" if self.version == "v1.0" else ["llm.utf-8.stream"]
+
+        if enkws:
+            if self.version == "v1.0":
+                enkws = True
+            else:
+                input.append(enkws)
+        else:
+            enkws = bool(enkws)
+
         self.latest_llm_work_id = self.llm.setup(
             prompt, model, response_format, input, enoutput, enkws, max_token_len, request_id
         )
@@ -553,15 +830,56 @@ class LlmModule:
         )
         return self.latest_audio_work_id
 
+    def camera_setup(
+        self,
+        request_id="camera_setup",
+        input="/dev/video0",
+        frame_width=320,
+        frame_height=320,
+        enoutput=False,
+        response_format="camera.raw",
+    ) -> str:
+        self.latest_camera_work_id = self.camera.setup(
+            input, frame_width, frame_height, enoutput, response_format, request_id
+        )
+        return self.latest_camera_work_id
+
+    def yolo_setup(
+        self,
+        model="yolo11n",
+        response_format="yolo.box.stream",
+        input="camera.1000",
+        enoutput=True,
+        request_id="yolo_setup",
+    ) -> str:
+        self.latest_yolo_work_id = self.yolo.setup(
+            model, response_format, input, enoutput, request_id
+        )
+        return self.latest_yolo_work_id
+
     def tts_setup(
         self,
         model="single_speaker_english_fast",
-        response_format="tts.base64.wav",
-        input="tts.utf-8.stream",
-        enoutput=True,
-        enkws=True,
+        response_format="sys.pcm",
+        input=None,
+        enoutput=False,
+        enkws=None,
         request_id="tts_setup",
     ) -> str:
+        if self.version == "v1.0":
+            response_format = "tts.base64.wav"
+
+        if input is None:
+            input = "tts.utf-8.stream" if self.version == "v1.0" else ["tts.utf-8.stream"]
+
+        if enkws:
+            if self.version == "v1.0":
+                enkws = True
+            else:
+                input.append(enkws)
+        else:
+            enkws = bool(enkws)
+
         self.latest_tts_work_id = self.tts.setup(
             model, response_format, input, enoutput, enkws, request_id
         )
@@ -571,6 +889,30 @@ class LlmModule:
         self.latest_error_code = self.tts.inference(work_id, input_data, timeout, request_id)
         return self.latest_error_code
 
+    def melotts_setup(
+        self,
+        model="melotts_zh-cn",
+        response_format="sys.pcm",
+        input=None,
+        enoutput=False,
+        enkws=None,
+        request_id="tts_setup",
+    ) -> str:
+        if input is None:
+            input = ["tts.utf-8.stream"]
+
+        if enkws:
+            input.append(enkws)
+
+        self.latest_melotts_work_id = self.melotts.setup(
+            model, response_format, input, enoutput, request_id
+        )
+        return self.latest_melotts_work_id
+
+    def melotts_inference(self, work_id, input_data, timeout=0, request_id="tts_inference") -> int:
+        self.latest_error_code = self.melotts.inference(work_id, input_data, timeout, request_id)
+        return self.latest_error_code
+
     def kws_setup(
         self,
         kws="HELLO",
@@ -578,10 +920,11 @@ class LlmModule:
         response_format="kws.bool",
         input="sys.pcm",
         enoutput=True,
+        enaudio=True,
         request_id="kws_setup",
     ) -> str:
         self.latest_kws_work_id = self.kws.setup(
-            kws, model, response_format, input, enoutput, request_id
+            kws, model, response_format, input, enoutput, enaudio, request_id
         )
         return self.latest_kws_work_id
 
@@ -589,14 +932,25 @@ class LlmModule:
         self,
         model="sherpa-ncnn-streaming-zipformer-20M-2023-02-17",
         response_format="asr.utf-8.stream",
-        input="sys.pcm",
+        input=None,
         enoutput=True,
-        enkws=True,
+        enkws=None,
         rule1=2.4,
         rule2=1.2,
         rule3=30.0,
         request_id="asr_setup",
     ) -> str:
+        if input is None:
+            input = "sys.pcm" if self.version == "v1.0" else ["sys.pcm"]
+
+        if enkws:
+            if self.version == "v1.0":
+                enkws = True
+            else:
+                input.append(enkws)
+        else:
+            enkws = bool(enkws)
+
         self.latest_asr_work_id = self.asr.setup(
             model, response_format, input, enoutput, enkws, rule1, rule2, rule3, request_id
         )
@@ -611,11 +965,20 @@ class LlmModule:
     def get_latest_tts_work_id(self) -> str:
         return self.latest_tts_work_id
 
+    def get_latest_melotts_work_id(self) -> str:
+        return self.latest_melotts_work_id
+
     def get_latest_kws_work_id(self) -> str:
         return self.latest_kws_work_id
 
     def get_latest_asr_work_id(self) -> str:
         return self.latest_asr_work_id
+
+    def get_latest_camera_work_id(self) -> str:
+        return self.latest_camera_work_id
+
+    def get_latest_yolo_work_id(self) -> str:
+        return self.latest_yolo_work_id
 
     def get_latest_error_code(self) -> int:
         return self.latest_error_code
@@ -665,6 +1028,7 @@ class PresetVoiceAssistant:
         self.on_keyword_detected = None
         self.on_asr_data_input = None
         self.on_llm_data_input = None
+        self.version = None
 
     def begin(self, wake_up_keyword="HELLO", prompt="") -> bool:
         # Check connection
@@ -672,6 +1036,7 @@ class PresetVoiceAssistant:
         if not self._module_llm.check_connection():
             return False
 
+        self.version = self._module_llm.get_version()
         # Reset module
         print("[VoiceAssistant] Reset ModuleLLM..")
         self._module_llm.sys_reset(True)
@@ -690,21 +1055,40 @@ class PresetVoiceAssistant:
 
         # Setup ASR
         print("[VoiceAssistant] Setup module ASR..")
-        self._work_id["asr"] = self._module_llm.asr_setup()
+        if self.version == "v1.0":
+            self._work_id["asr"] = self._module_llm.asr_setup(input="sys.pcm", enkws=True)
+        else:
+            self._work_id["asr"] = self._module_llm.asr_setup(
+                input=["sys.pcm", self._work_id["kws"]]
+            )
+
         if not self._work_id["asr"]:
             return False
 
         # Setup LLM
         print("[VoiceAssistant] Setup module LLM..")
-        self._work_id["llm"] = self._module_llm.llm_setup(
-            prompt=prompt, input=self._work_id["asr"]
-        )
+        if self.version == "v1.0":
+            self._work_id["llm"] = self._module_llm.llm_setup(
+                prompt=prompt, input=self._work_id["asr"], enkws=True
+            )
+        else:
+            self._work_id["llm"] = self._module_llm.llm_setup(
+                prompt=prompt, input=[self._work_id["asr"], self._work_id["kws"]]
+            )
         if not self._work_id["llm"]:
             return False
 
         # Setup TTS
         print("[VoiceAssistant] Setup module TTS..")
-        self._work_id["tts"] = self._module_llm.tts_setup(input=self._work_id["llm"])
+        if self.version == "v1.0":
+            self._work_id["tts"] = self._module_llm.tts_setup(
+                input=self._work_id["llm"], enkws=True
+            )
+        else:
+            self._work_id["tts"] = self._module_llm.melotts_setup(
+                input=[self._work_id["llm"], self._work_id["kws"]], enkws=None
+            )
+
         if not self._work_id["tts"]:
             return False
 
