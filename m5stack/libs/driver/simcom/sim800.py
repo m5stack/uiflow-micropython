@@ -2,34 +2,131 @@
 #
 # SPDX-License-Identifier: MIT
 
-
 from .common import Modem
 from .common import AT_CMD
 import re
+import socket
 
 
-class SIM7028(Modem):
+class socket_simcom:
+    AF_INET = socket.AF_INET
+    AF_INET6 = socket.AF_INET6
+
+    SOCK_STREAM = socket.SOCK_STREAM
+    SOCK_DGRAM = socket.SOCK_DGRAM
+    SOCK_RAW = socket.SOCK_RAW
+
+    IPPROTO_IP = socket.IPPROTO_IP
+    IPPROTO_TCP = socket.IPPROTO_TCP
+    IPPROTO_UDP = socket.IPPROTO_UDP
+
+    def __init__(self, af=AF_INET, type=SOCK_STREAM, proto=IPPROTO_TCP):
+        self._domain = af
+        self._type = type
+        self._proto = proto
+        # todo: fd(cmux?)
+        self._fd = 0
+
+    def close(self):
+        pass
+
+    def bind(self, address):
+        pass
+
+    def listen(self, backlog):
+        pass
+
+    def accept(self):
+        pass
+
+    def connect(self, address):
+        cipstart = AT_CMD(  # noqa: F841
+            "AT+CIPSTART={},{},{},{}".format(self._fd, address[0], address[1], 0), "OK", 3
+        )
+
+    def send(self, data):
+        pass
+
+    def sendall(self, data):
+        pass
+
+    def sendto(self, data, address):
+        pass
+
+    def recv(self, size):
+        pass
+
+    def recvfrom(self, size):
+        pass
+
+    def setsockopt(self, level, optname, value):
+        pass
+
+    def settimeout(self, timeout):
+        pass
+
+    def setblocking(self):
+        pass
+
+    def makefile(self, mode):
+        pass
+
+    def fileno(self):
+        pass
+
+    def read(self, size):
+        pass
+
+    def readinto(self, buffer):
+        pass
+
+    def readline(self):
+        pass
+
+    def write(self, data):
+        pass
+
+
+class SIM800(Modem):
     def __init__(
-        self,
-        uart=None,
-        pwrkey_pin=None,
-        reset_pin=None,
-        power_pin=None,
-        tx_pin=None,
-        rx_pin=None,
-    ) -> None:
+        self, uart=None, pwrkey_pin=None, reset_pin=None, power_pin=None, tx_pin=None, rx_pin=None
+    ):
         super().__init__(uart, pwrkey_pin, reset_pin, power_pin, tx_pin, rx_pin)
 
-    def get_imei_number(self) -> str | bool:
+    def getaddrinfo(self, host, port, af=0, type=0, proto=0, flags=0):
+        pass
+
+    def socket(self, af=0, type=0, proto=0):
+        pass
+
+    def connect(self, address):
+        # CIPSTART
+        pass
+
+    def write(self, data):
+        # CIPSEND
+        pass
+
+    def readline(self):
+        pass
+
+    def read(self, size):
+        # CIPRXGET
+        pass
+
+    def close(self):
+        pass
+
+    def get_imei_number(self):
         # Request TA Serial Number Identification(IMEI)
-        CGSN = AT_CMD("AT+CGSN=1", "OK", 3)  # noqa: N806
-        output, error = self.execute_at_command(CGSN)
+        cgsn = AT_CMD("AT+CGSN=1", "OK", 3)
+        output, error = self.execute_at_command(cgsn)
         return False if error else output
 
     def get_ccid_number(self) -> str | bool:
         # Show ICCID
-        CICCID = AT_CMD("AT+CICCID", "+CICCID:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CICCID)
+        iccid = AT_CMD("AT+ICCID", "+ICCID:", 3)
+        output, error = self.execute_at_command(iccid)
         return False if error else output.split(" ")[1]
 
     def get_pdp_context_dynamic_parameters(self, param=1) -> str | bool:
