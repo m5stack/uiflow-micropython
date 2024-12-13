@@ -131,6 +131,7 @@ if (
     BOARD_TYPE STREQUAL "cores3" 
     OR BOARD_TYPE STREQUAL "core2" 
     OR BOARD_TYPE STREQUAL "paper" 
+    OR BOARD_TYPE STREQUAL "papers3" 
     OR BOARD_TYPE STREQUAL "basic"
     OR BOARD_TYPE STREQUAL "fire"
     OR BOARD_TYPE STREQUAL "capsule"
@@ -229,6 +230,13 @@ list(APPEND IDF_COMPONENTS
     pedestrian_detect
     human_face_recognition
     esp-code-scanner
+)
+endif()
+
+if (M5_EPDIY_ENABLE AND BOARD_TYPE STREQUAL "papers3")
+message(STATUS "Enable EPDiy component")
+list(APPEND IDF_COMPONENTS
+    epdiy
 )
 endif()
 

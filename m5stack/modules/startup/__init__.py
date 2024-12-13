@@ -225,6 +225,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             tough = Tough_Startup()
             tough.startup(ssid, pswd, timeout)
 
+        elif board_id == M5.BOARD.M5PaperS3:
+            from .papers3 import PaperS3_Startup
+
+            papers3 = PaperS3_Startup()
+            papers3.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

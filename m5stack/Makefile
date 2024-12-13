@@ -30,6 +30,7 @@ boards := \
 	M5STACK_Dial:dial                \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
+	M5STACK_PaperS3:papers3          \
 	M5STACK_DinMeter:dinmeter        \
 	M5STACK_StickC:stickc            \
 	M5STACK_Station:station          \
@@ -65,6 +66,7 @@ BOARD_TYPE_DEF := \
 	dial        \
 	cardputer   \
 	paper       \
+	papers3     \
 	dinmeter    \
 	stickc      \
 	station     \
@@ -273,6 +275,7 @@ submodules:
 	git submodule update --init ./components/esp32-camera
 	git submodule update --init ./components/esp_dl
 	git submodule update --init ./components/esp-code-scanner
+	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings

@@ -1,0 +1,15 @@
+package(
+    "startup",
+    (
+        "__init__.py",
+        "papers3/__init__.py",
+        "papers3/app_base.py",
+        "papers3/framework.py",
+        "papers3/apps/app_list.py",
+        "papers3/apps/dev.py",
+        "papers3/apps/settings.py",
+        "papers3/apps/status_bar.py",
+    ),
+    base_path="..",
+    opt=3,
+)
