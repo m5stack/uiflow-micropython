@@ -17,6 +17,8 @@ _attrs = {
     "BPSUnit": "bps",
     "ButtonUnit": "button",
     "BuzzerUnit": "buzzer",
+    "ByteButtonUnit": "bytebutton",
+    "ByteSwitchUnit": "bytebutton",
     "CardKBUnit": "cardkb",
     "CANUnit": "can",
     "MiniCANUnit": "can",

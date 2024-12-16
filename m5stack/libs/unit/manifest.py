@@ -18,6 +18,7 @@ package(
         "bps.py",
         "button.py",
         "buzzer.py",
+        "bytebutton.py",
         "can.py",
         "catch.py",
         "cardkb.py",

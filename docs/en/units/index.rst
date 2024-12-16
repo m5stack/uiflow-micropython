@@ -13,6 +13,7 @@ Unit
     bps.rst
     button.rstx
     buzzer.rst
+    bytebutton.rst
     can.rst
     cardkb.rst
     catch.rst
