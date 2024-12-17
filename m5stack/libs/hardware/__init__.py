@@ -10,3 +10,5 @@ from .rfid import RFID
 from .rotary import Rotary
 from .keyboard import Keyboard
 from .matrix_keyboard import MatrixKeyboard
+from .scd40 import SCD40
+from .sen55 import SEN55

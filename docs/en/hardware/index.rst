@@ -13,6 +13,8 @@ Hardware
     mic.rst
     pin.rst
     rotary.rst
+    scd40.rst
+    sen55.rst
     speaker.rst
     wdt.rst
     camera.rst

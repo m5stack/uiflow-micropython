@@ -1,0 +1,31 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/init.png
+.. |set_start_periodic_measurement.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_start_periodic_measurement.png
+.. |set_stop_periodic_measurement.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_stop_periodic_measurement.png
+.. |is_data_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/is_data_ready.png
+.. |get_temperature_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/get_temperature_offset.png
+.. |set_temperature_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_temperature_offset.png
+.. |get_sensor_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/get_sensor_altitude.png
+.. |set_sensor_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_sensor_altitude.png
+.. |set_ambient_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_ambient_pressure.png
+.. |set_force_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_force_calibration.png
+.. |get_calibration_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/get_calibration_enabled.png
+.. |set_calibration_enabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_calibration_enabled.png
+.. |set_start_low_periodic_measurement.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_start_low_periodic_measurement.png
+.. |save_to_eeprom.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/save_to_eeprom.png
+.. |get_serial_number.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/get_serial_number.png
+.. |set_self_test.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_self_test.png
+.. |set_factory_reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/set_factory_reset.png
+.. |reinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/reinit.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/scd40/example.png
+
+
+
+.. |airq_scd40_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/scd40/airq_scd40_example.m5f2"
+        target="_blank"
+    >
+        airq_scd40_example.m5f2
+    </a>
