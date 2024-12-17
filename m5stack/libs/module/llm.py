@@ -23,8 +23,11 @@ class ModuleComm:
 
         while time.ticks_diff(time.ticks_ms(), start_time) < timeout:
             if self._serial.any():
-                response += self._serial.read().decode("utf-8")  # Decode bytes to string
-                start_time = time.ticks_ms()  # Reset timeout after receiving data
+                try:
+                    response += self._serial.read().decode("utf-8")  # Decode bytes to string
+                    start_time = time.ticks_ms()  # Reset timeout after receiving data
+                except Exception:
+                    pass
 
             time.sleep_ms(5)  # Small delay to prevent busy-waiting
 
@@ -859,6 +862,7 @@ class LlmModule:
 
     def tts_setup(
         self,
+        language="en_US",
         model="single_speaker_english_fast",
         response_format="sys.pcm",
         input=None,
@@ -868,7 +872,8 @@ class LlmModule:
     ) -> str:
         if self.version == "v1.0":
             response_format = "tts.base64.wav"
-
+        if language == "zh_CN":
+            model = "single_speaker_fast"
         if input is None:
             input = "tts.utf-8.stream" if self.version == "v1.0" else ["tts.utf-8.stream"]
 
@@ -891,6 +896,7 @@ class LlmModule:
 
     def melotts_setup(
         self,
+        language="en_US",
         model="melotts_zh-cn",
         response_format="sys.pcm",
         input=None,
@@ -898,6 +904,8 @@ class LlmModule:
         enkws=None,
         request_id="tts_setup",
     ) -> str:
+        if language == "zh_CN":
+            model = "melotts_zh-cn"
         if input is None:
             input = ["tts.utf-8.stream"]
 
@@ -916,6 +924,7 @@ class LlmModule:
     def kws_setup(
         self,
         kws="HELLO",
+        language="en_US",
         model="sherpa-onnx-kws-zipformer-gigaspeech-3.3M-2024-01-01",
         response_format="kws.bool",
         input="sys.pcm",
@@ -923,6 +932,8 @@ class LlmModule:
         enaudio=True,
         request_id="kws_setup",
     ) -> str:
+        if language == "zh_CN":
+            model = "sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01"
         self.latest_kws_work_id = self.kws.setup(
             kws, model, response_format, input, enoutput, enaudio, request_id
         )
@@ -930,6 +941,7 @@ class LlmModule:
 
     def asr_setup(
         self,
+        language="en_US",
         model="sherpa-ncnn-streaming-zipformer-20M-2023-02-17",
         response_format="asr.utf-8.stream",
         input=None,
@@ -942,7 +954,8 @@ class LlmModule:
     ) -> str:
         if input is None:
             input = "sys.pcm" if self.version == "v1.0" else ["sys.pcm"]
-
+        if language == "zh_CN":
+            model = "sherpa-ncnn-streaming-zipformer-zh-14M-2023-02-23"
         if enkws:
             if self.version == "v1.0":
                 enkws = True
@@ -983,12 +996,19 @@ class LlmModule:
     def get_latest_error_code(self) -> int:
         return self.latest_error_code
 
-    def begin_voice_assistant(self, wake_up_keyword="HELLO", prompt="") -> bool:
+    def begin_voice_assistant(
+        self,
+        wake_up_keyword="HELLO",
+        prompt="",
+        language="en_US",
+    ) -> bool:
         self._preset_va = PresetVoiceAssistant(self)
         self._preset_va.on_keyword_detected = self.on_keyword_detected
         self._preset_va.on_asr_data_input = self.on_asr_data_input
         self._preset_va.on_llm_data_input = self.on_llm_data_input
-        return self._preset_va.begin(wake_up_keyword=wake_up_keyword, prompt=prompt)
+        return self._preset_va.begin(
+            wake_up_keyword=wake_up_keyword, prompt=prompt, language=language
+        )
 
     def set_voice_assistant_on_keyword_detected_callback(self, on_keyword_detected) -> None:
         """
@@ -1030,7 +1050,7 @@ class PresetVoiceAssistant:
         self.on_llm_data_input = None
         self.version = None
 
-    def begin(self, wake_up_keyword="HELLO", prompt="") -> bool:
+    def begin(self, wake_up_keyword="HELLO", prompt="", language="en_US") -> bool:
         # Check connection
         print("[VoiceAssistant] Check connection..")
         if not self._module_llm.check_connection():
@@ -1049,17 +1069,19 @@ class PresetVoiceAssistant:
 
         # Setup KWS
         print("[VoiceAssistant] Setup module KWS..")
-        self._work_id["kws"] = self._module_llm.kws_setup(kws=wake_up_keyword)
+        self._work_id["kws"] = self._module_llm.kws_setup(kws=wake_up_keyword, language=language)
         if not self._work_id["kws"]:
             return False
 
         # Setup ASR
         print("[VoiceAssistant] Setup module ASR..")
         if self.version == "v1.0":
-            self._work_id["asr"] = self._module_llm.asr_setup(input="sys.pcm", enkws=True)
+            self._work_id["asr"] = self._module_llm.asr_setup(
+                input="sys.pcm", enkws=True, language=language
+            )
         else:
             self._work_id["asr"] = self._module_llm.asr_setup(
-                input=["sys.pcm", self._work_id["kws"]]
+                input=["sys.pcm", self._work_id["kws"]], language=language
             )
 
         if not self._work_id["asr"]:
@@ -1082,11 +1104,11 @@ class PresetVoiceAssistant:
         print("[VoiceAssistant] Setup module TTS..")
         if self.version == "v1.0":
             self._work_id["tts"] = self._module_llm.tts_setup(
-                input=self._work_id["llm"], enkws=True
+                input=self._work_id["llm"], enkws=True, language=language
             )
         else:
             self._work_id["tts"] = self._module_llm.melotts_setup(
-                input=[self._work_id["llm"], self._work_id["kws"]], enkws=None
+                input=[self._work_id["llm"], self._work_id["kws"]], enkws=None, language=language
             )
 
         if not self._work_id["tts"]:
