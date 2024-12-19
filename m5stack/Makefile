@@ -272,6 +272,7 @@ submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ./components/esp32-camera
 	git submodule update --init ./components/esp_dl
+	git submodule update --init ./components/esp-code-scanner
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings

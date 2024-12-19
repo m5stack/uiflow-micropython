@@ -228,6 +228,7 @@ list(APPEND IDF_COMPONENTS
     human_face_detect
     pedestrian_detect
     human_face_recognition
+    esp-code-scanner
 )
 endif()
 
