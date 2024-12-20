@@ -122,6 +122,11 @@ jobs:
       with:
         name: M5STACK_Paper_firmware
         path: ./m5stack/build-M5STACK_Paper/uiflow-*-*.bin
+    - name: Deliver PaperS3 firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_Paper_firmware
+        path: ./m5stack/build-M5STACK_PaperS3/uiflow-*-*.bin
     - name: Deliver Stamp PICO firmware
       uses: actions/upload-artifact@v3
       with:

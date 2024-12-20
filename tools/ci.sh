@@ -217,6 +217,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Paper pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PaperS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Station pack_all
