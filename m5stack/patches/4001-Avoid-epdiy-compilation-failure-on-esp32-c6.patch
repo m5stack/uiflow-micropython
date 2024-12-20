@@ -1,0 +1,16 @@
+Index: CMakeLists.txt
+===================================================================
+--- CMakeLists.txt
++++ CMakeLists.txt
+@@ -1,3 +1,6 @@
++idf_build_get_property(target IDF_TARGET)
++
++if(target STREQUAL "esp32s3")
+ 
+ set(app_sources "src/epdiy.c"
+                 "src/render.c"
+@@ -40,3 +43,4 @@ endif()
+ # formatting specifiers maybe incompatible between idf versions because of different int definitions
+ component_compile_options(-Wno-error=format= -Wno-format)
+ set_source_files_properties("src/output_common/lut.c" PROPERTIES COMPILE_OPTIONS -mno-fix-esp32-psram-cache-issue)
++endif()
