@@ -1,5 +1,6 @@
-:mod:`Display`  
-=====================================
+Display  
+=======
+
 A lcd display library
 
 .. module:: Display

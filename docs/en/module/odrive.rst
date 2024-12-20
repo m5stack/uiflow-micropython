@@ -1,6 +1,6 @@
 
-ODriveModule
-============
+ODrive Module
+===============
 
 .. include:: ../refs/module.odrive.ref
 

@@ -1,6 +1,6 @@
 
-ADCV11Unit
-==========
+ADC V1.1 Unit
+=============
 .. sku:U013-V11
 .. include:: ../refs/unit.adc_v11.ref
 

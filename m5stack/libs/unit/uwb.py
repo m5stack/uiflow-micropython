@@ -96,6 +96,8 @@ class UWBUnit:
         if self.isconnected() is False:
             raise UnitError("UWB unit maybe not connect")
 
+        self._rb = micropython.RingIO(512)
+
         self._interval = 5
         self.set_device_mode(self._device_mode, self._device_id)
 
@@ -281,9 +283,13 @@ class UWBUnit:
             line = self._uart.readline()
             if line is not None:
                 line = line.decode()
-                msgs.append(line)
+                if "an" in line:
+                    self._rb.write(line)
+                else:
+                    msgs.append(line)
             elif line is None or line == "":
                 continue
+
             if keyword is not None and keyword in line:
                 self._verbose and print("Got KEYWORD")
                 find_keyword = True
@@ -325,8 +331,17 @@ class UWBUnit:
         label:
             en: '%1 update in loop'
         """
-        if self.continuous_op and self._device_mode == self.TAG and self._uart.any():
-            line = self._uart.readline()
+        if (
+            self.continuous_op
+            and self._device_mode == self.TAG
+            and self._uart.any()
+            or self._rb.any()
+        ):
+            line = None
+            if self._rb.any():
+                line = self._rb.read()
+            elif self._uart.any():
+                line = self._uart.readline()
             # parse anchor id and distance
             text = self._extract_text(line, "an", ":")
             index = int(text) if text else None
@@ -369,3 +384,6 @@ class UWBUnit:
                     callback = self._callbacks[i * 2 + int(self._anchor_status[i])]
                     callback and micropython.schedule(callback, (self, i))
             self._last_time = time.time()
+
+    def __del__(self):
+        self._rb.close()

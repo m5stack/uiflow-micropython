@@ -1,5 +1,5 @@
-KeyUnit
-=======
+Key Unit
+========
 
 .. include:: ../refs/unit.key.ref
 

@@ -1,8 +1,9 @@
-:mod:`camera`  
-=====================================
-The camera module is used for taking pictures.
+camera  
+=============
 
 .. include:: ../refs/hardware.camera.ref
+
+The camera module is used for taking pictures.
 
 .. note:: This module is only applicable to the CoreS3 Controller
 

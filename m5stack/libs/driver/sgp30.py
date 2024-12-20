@@ -82,13 +82,28 @@ class SGP30:
             self.iaq_init()
 
     def iaq_init(self):
-        """Initialises the IAQ algorithm"""
+        """
+        note:
+            en: Initialize the IAQ (Indoor Air Quality) algorithm for the sensor.
+
+        params:
+            note:
+        """
         self._i2c_read_words_from_cmd(
             SGP30_CMD_IAQ_INIT_HEX, SGP30_CMD_IAQ_INIT_MAX_MS, SGP30_CMD_IAQ_INIT_WORDS
         )
 
     def measure_iaq(self):
-        """Measures the CO2eq and TVOC"""
+        """
+        note:
+            en: Measure the CO2 equivalent (CO2eq) and TVOC values.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple containing CO2eq and TVOC values.
+        """
         return self._i2c_read_words_from_cmd(
             SGP30_CMD_MEASURE_IAQ_HEX,
             SGP30_CMD_MEASURE_IAQ_MS,
@@ -96,7 +111,16 @@ class SGP30:
         )
 
     def get_iaq_baseline(self):
-        """Retreives the IAQ algorithm baseline for CO2eq and TVOC"""
+        """
+        note:
+            en: Retrieve the IAQ algorithm baseline values for CO2eq and TVOC.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple containing baseline values for CO2eq and TVOC.
+        """
         return self._i2c_read_words_from_cmd(
             SGP30_CMD_GET_IAQ_BASELINE_HEX,
             SGP30_CMD_GET_IAQ_BASELINE_MAX_MS,
@@ -104,7 +128,16 @@ class SGP30:
         )
 
     def set_iaq_baseline(self, co2eq, tvoc):
-        """Sets the previously recorded IAQ algorithm baseline for CO2eq and TVOC"""
+        """
+        note:
+            en: Set the previously recorded IAQ algorithm baseline values for CO2eq and TVOC.
+
+        params:
+            co2eq:
+                note: The CO2 equivalent baseline value.
+            tvoc:
+                note: The TVOC baseline value.
+        """
         if co2eq == 0 and tvoc == 0:
             raise ValueError("Invalid baseline values used")
         buffer = []
@@ -119,8 +152,14 @@ class SGP30:
         )
 
     def set_absolute_humidity(self, absolute_humidity):
-        """Sets absolute humidity compensation. To disable,
-        set 0."""
+        """
+        note:
+            en: Set the absolute humidity compensation for the sensor. To disable, set the value to 0.
+
+        params:
+            absolute_humidity:
+                note: The absolute humidity value to set.
+        """
         buffer = []
         arr = [absolute_humidity >> 8, absolute_humidity & 0xFF]
         arr.append(generate_crc(arr))
@@ -132,7 +171,16 @@ class SGP30:
         )
 
     def measure_test(self):
-        """Runs on-chip self test"""
+        """
+        note:
+            en: Run the on-chip self-test.
+
+        params:
+            note:
+
+        returns:
+            note: The result of the self-test.
+        """
         return self._i2c_read_words_from_cmd(
             SGP30_CMD_MEASURE_TEST_HEX,
             SGP30_CMD_MEASURE_TEST_MAX_MS,
@@ -140,7 +188,16 @@ class SGP30:
         )[0]
 
     def get_feature_set(self):
-        """Retrieves feature set of sensor"""
+        """
+        note:
+            en: Retrieve the feature set of the sensor.
+
+        params:
+            note:
+
+        returns:
+            note: The feature set value.
+        """
         return self._i2c_read_words_from_cmd(
             SGP30_CMD_GET_FEATURE_SET_HEX,
             SGP30_CMD_GET_FEATURE_SET_MAX_MS,
@@ -148,7 +205,16 @@ class SGP30:
         )[0]
 
     def measure_raw(self):
-        """Returns raw H2 and Ethanol signals, used for part verification and testing"""
+        """
+        note:
+            en: Return raw H2 and Ethanol signals for part verification and testing.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple containing raw H2 and Ethanol signals.
+        """
         return self._i2c_read_words_from_cmd(
             SGP30_CMD_MEASURE_RAW_HEX,
             SGP30_CMD_MEASURE_RAW_MAX_MS,
@@ -160,8 +226,17 @@ class SGP30:
     # TODO: Soft Reset (datasheet section 6.4)
 
     def get_serial(self):
-        """Retrieves sensor serial"""
-        serial = self.serial = self._i2c_read_words_from_cmd(
+        """
+        note:
+            en: Retrieve the sensor serial ID.
+
+        params:
+            note:
+
+        returns:
+            note: The serial ID as a hexadecimal string.
+        """
+        serial = self._i2c_read_words_from_cmd(
             SGP30_CMD_GET_SERIAL_ID_HEX,
             SGP30_CMD_GET_SERIAL_ID_MAX_MS,
             SGP30_CMD_GET_SERIAL_ID_WORDS,
@@ -169,31 +244,99 @@ class SGP30:
         return hex(int.from_bytes(bytearray(serial), "large"))
 
     def co2eq(self):
-        """Carbon Dioxide Equivalent in parts per million (ppm)"""
+        """
+        note:
+            en: Retrieve the Carbon Dioxide Equivalent (CO2eq) in parts per million (ppm).
+
+        params:
+            note:
+
+        returns:
+            note: The CO2eq value in ppm.
+        """
         return self.measure_iaq()[0]
 
     def baseline_co2eq(self):
-        """Carbon Dioxide Equivalent baseline value"""
+        """
+        note:
+            en: Retrieve the baseline value for CO2eq.
+
+        params:
+            note:
+
+        returns:
+            note: The baseline CO2eq value.
+        """
         return self.get_iaq_baseline()[0]
 
     def tvoc(self):
-        """Total Volatile Organic Compound in parts per billion (ppb)"""
+        """
+        note:
+            en: Retrieve the Total Volatile Organic Compound (TVOC) in parts per billion (ppb).
+
+        params:
+            note:
+
+        returns:
+            note: The TVOC value in ppb.
+        """
         return self.measure_iaq()[1]
 
     def baseline_tvoc(self):
-        """Total Volatile Organic Compound baseline value"""
+        """
+        note:
+            en: Retrieve the baseline value for TVOC.
+
+        params:
+            note:
+
+        returns:
+            note: The baseline TVOC value.
+        """
         return self.get_iaq_baseline()[1]
 
     def raw_h2(self):
-        """Raw H2 signal"""
+        """
+        note:
+            en: Retrieve the raw H2 signal value.
+
+        params:
+            note:
+
+        returns:
+            note: The raw H2 signal value.
+        """
         return self.measure_raw()[0]
 
     def raw_ethanol(self):
-        """Raw Ethanol signal"""
+        """
+        note:
+            en: Retrieve the raw Ethanol signal value.
+
+        params:
+            note:
+
+        returns:
+            note: The raw Ethanol signal value.
+        """
         return self.measure_raw()[1]
 
     def _i2c_read_words_from_cmd(self, command, delay, reply_size):
-        """Runs an SGP command query, gets a reply and CRC results if necessary"""
+        """
+        note:
+            en: Execute an I2C command query and retrieve the response, including CRC validation.
+
+        params:
+            command:
+                note: The command to send to the sensor.
+            delay:
+                note: The delay in milliseconds before reading the response.
+            reply_size:
+                note: The size of the expected response in words.
+
+        returns:
+            note: A list of response words from the sensor.
+        """
         self._i2c.writeto(self.addr, bytes(command))
         sleep_ms(delay)
         if not reply_size:
@@ -210,24 +353,43 @@ class SGP30:
         return result
 
     def convert_r_to_a_humidity(self, temp_c, r_humidity_perc, fixed_point=True):
-        """Converts relative to absolute humidity as per the equation
-        found in datasheet"""
+        """
+        note:
+            en: Convert relative humidity to absolute humidity based on the sensor's equation.
+
+        params:
+            temp_c:
+                note: The ambient temperature in Celsius (°C).
+            r_humidity_perc:
+                note: The relative humidity in percentage (%).
+            fixed_point:
+                note: Whether to return the value in 8.8 fixed-point format. Defaults to True.
+
+        returns:
+            note: The absolute humidity value, either in g/m³ or fixed-point format.
+        """
         a_humidity_gm3 = 216.7 * (
             (r_humidity_perc / 100 * 6.112 * exp(17.62 * temp_c / (243.12 + temp_c)))
             / (273.15 + temp_c)
         )
-        # Return in 8.8 bit fixed point format (for setting humidity compensation), if not
-        # simply return the calculated value in g/m^3
         if fixed_point:
             a_humidity_gm3 = (int(a_humidity_gm3) << 8) + (int(a_humidity_gm3 % 1 * 256))
         return a_humidity_gm3
 
 
 def generate_crc(data):
-    """8-bit CRC algorithm for checking data.
-    Calculation described in section 6.6 of SGP30 datasheet"""
+    """
+    note:
+        en: Calculate an 8-bit CRC checksum based on the sensor's specified algorithm.
+
+    params:
+        data:
+            note: The data array for which to calculate the CRC checksum.
+
+    returns:
+        note: The calculated 8-bit CRC checksum.
+    """
     crc = SGP30_CRC8_INIT
-    # Calculates 8-Bit CRC checksum with given polynomial
     for byte in data:
         crc ^= byte
         for _ in range(8):

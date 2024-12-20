@@ -30,6 +30,7 @@ boards := \
 	M5STACK_Dial:dial                \
 	M5STACK_Cardputer:cardputer      \
 	M5STACK_Paper:paper              \
+	M5STACK_PaperS3:papers3          \
 	M5STACK_DinMeter:dinmeter        \
 	M5STACK_StickC:stickc            \
 	M5STACK_Station:station          \
@@ -65,6 +66,7 @@ BOARD_TYPE_DEF := \
 	dial        \
 	cardputer   \
 	paper       \
+	papers3     \
 	dinmeter    \
 	stickc      \
 	station     \
@@ -272,6 +274,8 @@ submodules:
 	git submodule update --init ../tools/littlefs/mbed-littlefs
 	git submodule update --init ./components/esp32-camera
 	git submodule update --init ./components/esp_dl
+	git submodule update --init ./components/esp-code-scanner
+	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
 	git submodule update --init --recursive ./components/lv_bindings
@@ -290,18 +294,13 @@ submodules:
 # Apply patches
 patch:
 	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
-	# $(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
-	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
-	# $(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
-	# $(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
-	# $(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
-	# $(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
+	$(call Package/patche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
 
 # Unapply patches
 unpatch:
@@ -309,12 +308,7 @@ unpatch:
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
-	# $(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0003-modtime-Add-timezone.patch))
 	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
-	# $(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1001-Fix-I2C-timeout.patch))
-	# $(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1000-WIP-Compatible-with-esp-adf-v2.6.patch))
-	# $(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2004-Support-AtomS3R.patch))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
-	# $(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3001-commponents-audio_board-Add-M5STACK-CoreS3-board.patch))
-	# $(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3000-commponents-audio_board-Add-ESP32_S3_BOX_3-board.patch))
+	$(call Package/unpatche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))

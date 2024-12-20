@@ -4,10 +4,8 @@
 
 from machine import I2C
 from .pahub import PAHUBUnit
-from .unit_helper import UnitError
-import time
-import struct
 from micropython import const
+from driver.scd40 import SCD40
 
 
 CO2_I2C_ADDR = const(0x62)
@@ -37,9 +35,33 @@ WAKEUP = const(0x36F6)
 
 
 class CO2Unit:
+    """
+    note:
+        en: CO2Unit is a hardware module designed for measuring CO2 concentration, temperature, and humidity.
+        It communicates via I2C and provides functions for calibration, measurement, and configuration.
+
+    details:
+        link: https://docs.m5stack.com/en/unit/co2unit
+        image: https://static-cdn.m5stack.com/resource/docs/products/unit/co2unit/co2unit_01.webp
+        category: Unit
+
+    example:
+        - ../../../examples/unit/co2unit/co2unit_cores3_example.py
+
+    m5f2:
+        - unit/co2unit/co2unit_cores3_example.m5f2
+    """
+
     def __init__(self, i2c: I2C | PAHUBUnit, address: int = CO2_I2C_ADDR) -> None:
-        """! initialize Function
-        set I2C Pins, CO2 Address
+        """
+        note:
+            en: Initialize the CO2Unit with the I2C interface and address.
+
+        params:
+            i2c:
+                note: I2C interface or PAHUBUnit instance for communication.
+            address:
+                note: I2C address of the CO2 sensor, default is 0x62.
         """
         self.co2_i2c = i2c
         self.unit_addr = address
@@ -49,12 +71,24 @@ class CO2Unit:
         self.humidity = 0
 
     def available(self) -> None:
-        """! Is there available or Not? Check."""
+        """
+        note:
+            en: Check if the CO2 unit is available on the I2C bus.
+
+        params:
+            note:
+        """
         if self.unit_addr not in self.co2_i2c.scan():
-            raise UnitError("CO2 unit maybe not connect")
+            raise UnitError("CO2 unit may not be connected")
 
     def set_start_periodic_measurement(self) -> None:
-        """! set sensor into working mode, about 5s per measurement."""
+        """
+        note:
+            en: Set the sensor into working mode, which takes about 5 seconds per measurement.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(STARTPERIODICMEASUREMENT)
             time.sleep_ms(1)
@@ -64,12 +98,24 @@ class CO2Unit:
             )
 
     def set_stop_periodic_measurement(self) -> None:
-        """! stop measurement mode."""
+        """
+        note:
+            en: Stop the measurement mode for the sensor.
+
+        params:
+            note:
+        """
         self.write_cmd(STOPPERIODICMEASUREMENT)
         time.sleep(0.5)
 
     def get_sensor_measurement(self) -> None:
-        """! get the temp/hum/co2 from the sensor."""
+        """
+        note:
+            en: Get temperature, humidity, and CO2 concentration from the sensor.
+
+        params:
+            note:
+        """
         self.write_cmd(READMEASUREMENT)
         time.sleep_ms(1)
         buf = self.read_response(9)
@@ -80,7 +126,16 @@ class CO2Unit:
         self.humidity = round((100 * (humi / (2**16 - 1))), 2)
 
     def is_data_ready(self) -> bool:
-        """! available the temp/hum/co2 from the sensor."""
+        """
+        note:
+            en: Check if the data (temperature, humidity, CO2) is ready from the sensor.
+
+        params:
+            note:
+
+        returns:
+            note: True if data is ready, otherwise False.
+        """
         if self.data_isready():
             self.get_sensor_measurement()
             return True
@@ -88,7 +143,16 @@ class CO2Unit:
             return False
 
     def get_temperature_offset(self) -> float:
-        """! get the temperature offset to be added to the reported measurements."""
+        """
+        note:
+            en: Get the temperature offset to be added to the reported measurements.
+
+        params:
+            note:
+
+        returns:
+            note: The temperature offset in degrees Celsius.
+        """
         try:
             self.write_cmd(GETTEMPOFFSET)
             buf = self.read_response(3)
@@ -101,7 +165,14 @@ class CO2Unit:
             )
 
     def set_temperature_offset(self, offset: int = 0) -> None:
-        """! set the maximum value of 374 C temperature offset."""
+        """
+        note:
+            en: Set the maximum value of 374°C temperature offset.
+
+        params:
+            offset:
+                note: The temperature offset to set, default is 0.
+        """
         try:
             offset = min(374, offset)
             temp = int(offset * (2**16 / 175))
@@ -113,7 +184,16 @@ class CO2Unit:
             )
 
     def get_sensor_altitude(self) -> int:
-        """! get the altitude value of the measurement location in meters above sea level."""
+        """
+        note:
+            en: Get the altitude value of the measurement location in meters above sea level.
+
+        params:
+            note:
+
+        returns:
+            note: The altitude value in meters.
+        """
         try:
             self.write_cmd(GETALTITUDE)
             time.sleep_ms(1)
@@ -125,7 +205,14 @@ class CO2Unit:
             )
 
     def set_sensor_altitude(self, height: int) -> None:
-        """! set the altitude value of the measurement location in meters above sea level."""
+        """
+        note:
+            en: Set the altitude value of the measurement location in meters above sea level.
+
+        params:
+            height:
+                note: The altitude in meters to set. Must be between 0 and 65535 meters.
+        """
         try:
             height = min(65535, max(height, 0))
             self.write_cmd(SETALTITUDE, int(height))
@@ -136,13 +223,27 @@ class CO2Unit:
             )
 
     def set_ambient_pressure(self, ambient_pressure: int) -> None:
-        """! set the ambient pressure in hPa at any time to adjust CO2 calculations."""
+        """
+        note:
+            en: Set the ambient pressure in hPa at any time to adjust CO2 calculations.
+
+        params:
+            ambient_pressure:
+                note: The ambient pressure in hPa, constrained to the range [0, 65535].
+        """
         ambient_pressure = min(65535, max(ambient_pressure, 0))
         self.write_cmd(SETPRESSURE, int(ambient_pressure))
         time.sleep_ms(1)
 
     def set_force_calibration(self, target_co2: int) -> None:
-        """! set forces the sensor to recalibrate with a given current CO2."""
+        """
+        note:
+            en: Force the sensor to recalibrate with a given current CO2 level.
+
+        params:
+            target_co2:
+                note: The current CO2 concentration to be used for recalibration.
+        """
         try:
             self.set_stop_periodic_measurement()
             self.write_cmd(FORCEDRECAL, int(target_co2))
@@ -159,7 +260,16 @@ class CO2Unit:
             )
 
     def get_calibration_enabled(self) -> bool:
-        """! get the Enables or disables automatic self calibration (ASC)."""
+        """
+        note:
+            en: Get whether automatic self-calibration (ASC) is enabled or disabled.
+
+        params:
+            note:
+
+        returns:
+            note: True if ASC is enabled, otherwise False.
+        """
         try:
             self.write_cmd(GETASCE)
             time.sleep_ms(1)
@@ -171,8 +281,14 @@ class CO2Unit:
             )
 
     def set_calibration_enabled(self, enabled: bool) -> None:
-        """! set the Enables or disables automatic self calibration (ASC)."""
+        """
+        note:
+            en: Enable or disable automatic self-calibration (ASC).
 
+        params:
+            enabled:
+                note: Set to True to enable ASC, or False to disable it.
+        """
         try:
             enabled = min(1, max(enabled, 0))
             self.write_cmd(SETASCE, enabled)
@@ -183,7 +299,13 @@ class CO2Unit:
             )
 
     def set_start_low_periodic_measurement(self) -> None:
-        """! set sensor into low power working mode, about 30s per measurement."""
+        """
+        note:
+            en: Set the sensor into low power working mode, with about 30 seconds per measurement.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(STARTLOWPOWERPERIODICMEASUREMENT)
         except:
@@ -192,7 +314,16 @@ class CO2Unit:
             )
 
     def data_isready(self) -> bool:
-        """! check the sensor if new data is available."""
+        """
+        note:
+            en: Check if new data is available from the sensor.
+
+        params:
+            note:
+
+        returns:
+            note: True if new data is available, otherwise False.
+        """
         try:
             self.write_cmd(DATAREADY)
             time.sleep_ms(1)
@@ -204,7 +335,13 @@ class CO2Unit:
             )
 
     def save_to_eeprom(self) -> None:
-        """! save temperature offset, altitude offset, and selfcal enable settings to EEPROM."""
+        """
+        note:
+            en: Save temperature offset, altitude offset, and self-calibration enable settings to EEPROM.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(PERSISTSETTINGS)
             time.sleep(0.8)
@@ -214,7 +351,16 @@ class CO2Unit:
             )
 
     def get_serial_number(self) -> tuple:
-        """! get a unique serial number for this sensor."""
+        """
+        note:
+            en: Get a unique serial number for this sensor.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple representing the unique serial number of the sensor.
+        """
         try:
             self.write_cmd(SERIALNUMBER)
             time.sleep_ms(1)
@@ -226,7 +372,13 @@ class CO2Unit:
             )
 
     def set_self_test(self) -> None:
-        """! set a self test, takes up to 10 seconds."""
+        """
+        note:
+            en: Perform a self-test, which can take up to 10 seconds.
+
+        params:
+            note:
+        """
         try:
             self.set_stop_periodic_measurement()
             self.write_cmd(SELFTEST)
@@ -240,7 +392,13 @@ class CO2Unit:
             )
 
     def set_factory_reset(self) -> None:
-        """! resets all configuration settings stored in the EEPROM and erases the FRC and ASC algorithm history."""
+        """
+        note:
+            en: Reset all configuration settings stored in the EEPROM and erase the FRC and ASC algorithm history.
+
+        params:
+            note:
+        """
         try:
             self.set_stop_periodic_measurement()
             self.write_cmd(FACTORYRESET)
@@ -251,7 +409,13 @@ class CO2Unit:
             )
 
     def reinit(self) -> None:
-        """! reinitializes the sensor by reloading user settings from EEPROM."""
+        """
+        note:
+            en: Reinitialize the sensor by reloading user settings from EEPROM.
+
+        params:
+            note:
+        """
         try:
             self.set_stop_periodic_measurement()
             self.write_cmd(REINIT)
@@ -262,7 +426,13 @@ class CO2Unit:
             )
 
     def set_single_shot_measurement_all(self) -> None:
-        """! set single shot measure in Co2, humidity and temperature."""
+        """
+        note:
+            en: Set the sensor to perform a single-shot measurement for CO2, humidity, and temperature.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(SINGLESHOTMEASUREALL)
             time.sleep(5)
@@ -272,7 +442,13 @@ class CO2Unit:
             )
 
     def set_single_shot_measurement_ht(self) -> None:
-        """! set single shot measure in humidity and temperature."""
+        """
+        note:
+            en: Set the sensor to perform a single-shot measurement for humidity and temperature.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(SINGLESHOTMEASUREHT)
             time.sleep_ms(50)
@@ -282,7 +458,13 @@ class CO2Unit:
             )
 
     def set_sleep_mode(self) -> None:
-        """! set power down the sensor from idle to sleep and reduce current consumption."""
+        """
+        note:
+            en: Put the sensor into sleep mode to reduce current consumption.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(POWERDOWN)
             time.sleep_ms(1)
@@ -292,7 +474,13 @@ class CO2Unit:
             )
 
     def set_wake_up(self) -> None:
-        """! set wake up the sensor from sleep mode into idle mode."""
+        """
+        note:
+            en: Wake up the sensor from sleep mode into idle mode.
+
+        params:
+            note:
+        """
         try:
             self.write_cmd(WAKEUP)
             time.sleep_ms(20)
@@ -302,9 +490,15 @@ class CO2Unit:
             )
 
     def write_cmd(self, cmd_wr: int, value: int = None) -> None:
-        """! write the command of sensor
-        cmd_wr : 2 byte value
-        value : None or 2 byte value
+        """
+        note:
+            en: Write a command to the sensor.
+
+        params:
+            cmd_wr:
+                note: The command to write to the sensor.
+            value:
+                note: The value to send with the command, if any.
         """
         if value is not None:
             byte_val = struct.pack(">h", value)
@@ -314,16 +508,32 @@ class CO2Unit:
             self.co2_i2c.writeto(self.unit_addr, struct.pack(">h", cmd_wr))
 
     def read_response(self, num: int) -> bytearray:
-        """! read response of sensor
-        num : number of byte read
+        """
+        note:
+            en: Read the sensor's response.
+
+        params:
+            num:
+                note: The number of bytes to read from the sensor.
+
+        returns:
+            note: The read response as a bytearray.
         """
         buff = self.co2_i2c.readfrom(self.unit_addr, num)
         self.check_crc(buff)
         return buff
 
     def check_crc(self, buf: bytearray) -> bool:
-        """! check the crc
-        buf : buffer of bytes
+        """
+        note:
+            en: Check the CRC of the received data to ensure it is correct.
+
+        params:
+            buf:
+                note: The buffer of bytes to check the CRC.
+
+        returns:
+            note: True if the CRC check passes, otherwise raises an error.
         """
         for i in range(0, len(buf), 3):
             if self.crc8(buf[i : (i + 2)]) != buf[i + 2]:
@@ -331,8 +541,16 @@ class CO2Unit:
         return True
 
     def crc8(self, buffer: bytearray) -> int:
-        """! crc 8 bits
-        buffer : buffer of bytes
+        """
+        note:
+            en: Calculate the CRC-8 checksum for a given buffer.
+
+        params:
+            buffer:
+                note: The buffer of bytes to calculate the CRC for.
+
+        returns:
+            note: The CRC-8 checksum as an integer.
         """
         crc = 0xFF
         for byte in buffer:
@@ -342,4 +560,4 @@ class CO2Unit:
                     crc = (crc << 1) ^ 0x31
                 else:
                     crc = crc << 1
-        return crc & 0xFF  # return the bottom 8 bits
+        return crc & 0xFF  # Return the bottom 8 bits

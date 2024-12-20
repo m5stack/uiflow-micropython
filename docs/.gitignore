@@ -1,2 +1,9 @@
+bin
 build
+include
+lib
+lib64
+share
+pyvenv.cfg
+LICENSE
 *.mo

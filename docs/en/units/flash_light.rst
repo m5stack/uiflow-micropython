@@ -1,6 +1,6 @@
 
-FlashLightUnit
-==============
+FlashLight Unit
+================
 
 .. include:: ../refs/unit.flash_light.ref
 

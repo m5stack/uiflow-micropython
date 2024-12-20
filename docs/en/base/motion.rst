@@ -1,6 +1,6 @@
 
-Motion
-======
+Motion Base
+===========
 
 .. include:: ../refs/base.motion.ref
 

@@ -1,0 +1,13 @@
+.. |qrcode_detect_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode_detect_example.png
+.. |find_qrcodes.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/code_scanner/find_qrcodes.png
+.. |type_name.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/code_scanner/type_name.png
+.. |payload.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/code_scanner/payload.png
+ 
+.. |qrcode_detect_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/software/camera/qrcode_detect_example.m5f2"
+        target="_blank"
+    >
+        qrcode_detect_example.m5f2
+    </a>  

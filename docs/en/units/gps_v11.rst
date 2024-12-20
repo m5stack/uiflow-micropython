@@ -1,6 +1,6 @@
 
-GPSV1.1(SMA) Unit
-=================
+GPS V1.1(SMA) Unit
+==================
 
 .. include:: ../refs/unit.gps_v11.ref
 

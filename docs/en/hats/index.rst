@@ -11,6 +11,7 @@ HAT
     dlight.rst
     env.rst
     finger.rst
+    heart.rst
     joyc.rst
     joystick.rst
     mini_encoder.rst
@@ -23,4 +24,3 @@ HAT
     thermal.rst
     tof.rst
     vibrator.rst
-    heart.rst

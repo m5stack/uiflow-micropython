@@ -1,5 +1,5 @@
 
-AIN4_20mA Unit
+AIN4-20mA Unit
 ==============
 
 .. include:: ../refs/unit.ain4.ref

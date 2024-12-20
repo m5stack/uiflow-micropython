@@ -1,5 +1,5 @@
-NeoFlashHat
-===========
+NeoFlash Hat
+=============
 
 .. include:: ../refs/hat.neoflash.ref
 

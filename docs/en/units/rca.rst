@@ -1,6 +1,6 @@
 
-RCAUnit
-=======
+RCA Unit
+=========
 
 .. include:: ../refs/unit.rca.ref
 

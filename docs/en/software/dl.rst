@@ -167,7 +167,7 @@ The HumanFaceRecognizer object is returned by `dl.HumanFaceRecognizer()`.
         |enrolled_id_num.png| 
 
 class DetectionResult -- DetectionResult object
-------------------------------
+-----------------------------------------------
 
 The line object is returned by `ObjectDetector.infer()`.
 
@@ -234,7 +234,7 @@ The line object is returned by `ObjectDetector.infer()`.
         |get_keypoint.png| 
 
 class RecognitionResult -- RecognitionResult object
-------------------------------
+--------------------------------------------------- 
 
 The ``RecognitionResult`` is returned by `HumanFaceRecognizer.recognize(img, keypoint)`.
 

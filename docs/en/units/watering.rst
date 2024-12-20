@@ -1,5 +1,5 @@
-WateringUnit
-============
+Watering Unit
+=============
 
 .. include:: ../refs/unit.watering.ref
 

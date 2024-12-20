@@ -5,7 +5,7 @@
 
 from driver.drf1609h import DRF1609H
 from driver.soft_timer import SoftTimer
-from machine import UART
+import machine
 import sys
 
 if sys.platform != "esp32":
@@ -30,7 +30,7 @@ class ZigbeeUnit(DRF1609H):
     ENCRYPTION_DISABLE = 0xA0
 
     def __init__(self, id: Literal[0, 1, 2], port: list | tuple, verbose: bool = True) -> None:
-        uart1 = UART(id, 38400, tx=port[1], rx=port[0])
+        uart1 = machine.UART(id, 38400, tx=port[1], rx=port[0])
         super().__init__(uart1, verbose=verbose)
         self._timer = SoftTimer()
         self._receive_callback = None

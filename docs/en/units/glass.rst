@@ -1,6 +1,6 @@
 
-GlassUnit
-=========
+Glass Unit
+===========
 
 .. include:: ../refs/unit.glass.ref
 

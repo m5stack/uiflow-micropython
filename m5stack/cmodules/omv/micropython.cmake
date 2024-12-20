@@ -18,6 +18,8 @@ target_sources(moudle_omv INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/modules/py_esp_dl_.cpp
     ${CMAKE_CURRENT_LIST_DIR}/modules/py_helper.c
     ${CMAKE_CURRENT_LIST_DIR}/modules/py_image.c
+    ${CMAKE_CURRENT_LIST_DIR}/modules/py_jpg.c
+    ${CMAKE_CURRENT_LIST_DIR}/modules/py_code_scanner.c
     ${CMAKE_CURRENT_LIST_DIR}/utils/utils.c
 )
 
@@ -50,6 +52,8 @@ target_include_directories(moudle_omv INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/../../components/esp_dl/models/human_face_detect
     ${CMAKE_CURRENT_LIST_DIR}/../../components/esp_dl/models/pedestrian_detect
     ${CMAKE_CURRENT_LIST_DIR}/../../components/esp_dl/models/human_face_recognition
+    # esp-code-scanner
+    ${CMAKE_CURRENT_LIST_DIR}/../../components/esp-code-scanner/include
 )
 
 # Link our INTERFACE library to the usermod target.

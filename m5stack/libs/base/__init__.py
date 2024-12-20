@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "ATOMCANBase": "atom_can",
     "ATOMSocketBase": "atom_socket",
     "Motion": "motion",
 }

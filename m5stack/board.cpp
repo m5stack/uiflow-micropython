@@ -59,6 +59,10 @@ extern "C" {
             ! (board_id == m5::board_t::board_M5StackCore2
             || board_id == m5::board_t::board_M5StackCoreS3
             || board_id == m5::board_t::board_M5StackCoreS3SE
+            || board_id == m5::board_t::board_M5Paper
+            || board_id == m5::board_t::board_M5Station
+            || board_id == m5::board_t::board_M5StickC
+            || board_id == m5::board_t::board_M5StickCPlus
             || board_id == m5::board_t::board_M5Tough)
         ) {
             ESP_LOGW("BOARD", "Power init skipped");

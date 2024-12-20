@@ -39,7 +39,8 @@ build-docs:
   script:
     - echo "Building the documentation..."
     - cd docs
-    - apt install python3-sphinx
+    - python3 -m venv .
+    - source bin/activate
     - pip3 install -r requirements.txt
     - sphinx-build -b html -D language=zh_CN ./en/ build/html/zh_CN
     - sphinx-build -b html -D language=en ./en/ build/html/en

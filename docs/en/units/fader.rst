@@ -1,6 +1,6 @@
 
-FaderUnit
-=========
+Fader Unit
+===========
 
 .. include:: ../refs/unit.fader.ref
 

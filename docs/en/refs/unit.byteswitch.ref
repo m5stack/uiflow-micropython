@@ -1,0 +1,40 @@
+
+.. |ByteSwitchUnit| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/Unit%20ByteSwitch/4.webp
+    :target: https://docs.m5stack.com/en/unit/Unit%20ByteSwitch
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/init.png
+.. |get_byte_switch_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_byte_switch_status.png
+.. |get_switch_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_switch_state.png
+.. |get_led_show_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_led_show_mode.png
+.. |set_led_show_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_led_show_mode.png
+.. |set_led_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_led_brightness.png
+.. |get_led_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_led_brightness.png
+.. |set_led_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_led_color.png
+.. |get_led_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_led_color.png
+.. |set_indicator_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_indicator_brightness.png
+.. |get_indicator_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_indicator_brightness.png
+.. |set_indicator_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_indicator_color.png
+.. |get_indicator_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_indicator_color.png
+.. |rgb888_to_rgb233.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/rgb888_to_rgb233.png
+.. |set_rgb233.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_rgb233.png
+.. |get_rgb233.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_rgb233.png
+.. |set_irq_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_irq_enable.png
+.. |get_irq_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_irq_enable.png
+.. |save_to_flash.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/save_to_flash.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_firmware_version.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/set_i2c_address.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/get_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/byteswitch/example.png
+
+.. |byteswitch_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/byteswitch/byteswitch_cores3_example.m5f2"
+        target="_blank"
+    >
+        byteswitch_cores3_example.m5f2
+    </a>
+

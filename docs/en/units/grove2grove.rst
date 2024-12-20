@@ -1,5 +1,5 @@
-Grove2GroveUnit
-===============
+Grove2Grove Unit
+================
 
 .. include:: ../refs/unit.grove2grove.ref
 

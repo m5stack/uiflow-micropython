@@ -1,6 +1,6 @@
 
-MiniOLEDUnit
-============
+MiniOLED Unit
+==============
 
 .. include:: ../refs/unit.minioled.ref
 
