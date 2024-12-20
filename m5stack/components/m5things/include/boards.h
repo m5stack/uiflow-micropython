@@ -19,9 +19,9 @@ const char *boards[] = {
     "cardputer",      // 14
     "airq",           // 15
     "vameter",        // 16
-    "cores3se",        // 17
+    "cores3se",       // 17
     "atoms3r",        // 18
-    "unknown",        // 19
+    "papers3",        // 19
     "unknown",        // 20
     "unknown",        // 21
     "unknown",        // 22
