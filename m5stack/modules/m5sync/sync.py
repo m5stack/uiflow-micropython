@@ -149,6 +149,14 @@ class DownloadView:
             text_y=480,
             text_font=M5.Lcd.FONTS.DejaVu40,
         ),
+        M5.BOARD.M5PaperS3: ViewInfo(
+            title_x=280,
+            title_y=412,
+            title_font=M5.Lcd.FONTS.DejaVu56,
+            text_x=280,
+            text_y=480,
+            text_font=M5.Lcd.FONTS.DejaVu40,
+        ),
         M5.BOARD.M5Tough: ViewInfo(
             title_x=160,
             title_y=71,
