@@ -81,13 +81,14 @@ class DevApp(app_base.AppBase):
             "XXABC",
             89,
             747,
-            w=110,
-            h=60,
+            w=360,
+            h=50,
             fg_color=0x000000,
             bg_color=0xE3E3E3,
             font=M5.Lcd.FONTS.DejaVu40,
             parent=self._lcd,
         )
+        self._account_label.set_long_mode(self._account_label.LONG_DOT)
         self._account_label.set_text(self._account_text)
 
         self._avatar_img = widgets.Image(use_sprite=False, parent=self._lcd)
