@@ -3,30 +3,27 @@
 class Label -- display text
 ===========================
 
-Label is the basic object type used to display text.
-
 .. include:: ../refs/widgets.label.ref
 
-Micropython Example::
+Label is the basic object type used to display text.
 
-    import os, sys, io
-    import M5
-    from M5 import *
 
-    M5.begin()
-    Widgets.fillScreen(0x222222)
-    label0 = Widgets.Label("Text", 38, 47, 1.0, 0xffffff, 0x222222, Widgets.FONTS.DejaVu18)
+Micropython Example:
 
-    label0.setText('Label')
-    label0.setFont(Widgets.FONTS.DejaVu12)
+    .. literalinclude:: ../../../examples/widgets/label/cores3_label_example.py
+        :language: python
+        :linenos:
+
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
 
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/widgets/label/example.m5f2>`
+    |cores3_label_example.m5f2|
+
 
 Constructors
 ------------
@@ -56,7 +53,7 @@ Methods
 
     UIFLOW2:
 
-        |setColor.svg|
+        |setColor.png|
 
 
 .. method:: Label.setCursor(x: int, y: int)
@@ -68,7 +65,7 @@ Methods
 
     UIFLOW2:
 
-        |setCursor.svg|
+        |setCursor.png|
 
 .. method:: Label.setFont(font)
 
@@ -76,7 +73,7 @@ Methods
 
     UIFLOW2:
 
-        |setFont.svg|
+        |setFont.png|
 
 .. method:: Label.setSize(text_sz: float)
 
@@ -84,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |setSize.svg|
+        |setSize.png|
 
 .. method:: Label.setText(text: str)
 
@@ -92,7 +89,7 @@ Methods
 
     UIFLOW2:
 
-        |setText.svg|
+        |setText.png|
 
 .. method:: Label.setVisible(visible: bool)
     
@@ -100,4 +97,4 @@ Methods
 
     UIFLOW2:
 
-        |setVisible.svg|
+        |setVisible.png|

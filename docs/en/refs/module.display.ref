@@ -4,5 +4,16 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/display/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/display/init.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/display/example.png
+
+.. |cores3_display_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/display/cores3_display_example.m5f2"
+        target="_blank"
+    >
+        cores3_display_example.m5f2
+    </a>
 

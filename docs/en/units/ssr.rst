@@ -10,17 +10,21 @@ Support the following products:
 
 |SSRUnit|
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import SSRUnit
-    ssr = SSRUnit((33, 32))  # for core2
-    ssr.on()
-    ssr.off()
-    ssr.set_state(1)
-    ssr.set_state(0)
+    .. literalinclude:: ../../../examples/unit/ssr/cores3_ssr_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_ssr_example.m5f2|
 
 
 class SSRUnit
@@ -37,7 +41,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -50,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |on.svg|
+        |on.png|
 
 .. method:: SSRUnit.off()
 
@@ -59,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |off.svg|
+        |off.png|
 
 .. method:: SSRUnit.set_state(state)
 
@@ -69,6 +73,6 @@ Methods
 
     UIFLOW2:
 
-        |set_state.svg|
+        |set_state.png|
 
 

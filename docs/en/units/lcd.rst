@@ -20,15 +20,22 @@ Support the following products:
     |LCDUnit|
 
 
-Micropython example::
-    from unit import LCDUnit
-    from hardware import *
-    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-    display = LCDUnit(i2c).display
-    
-    display.clear(0xffffff) # Clear screen
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/lcd/cores3_lcd_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
 
 .. only:: builder_html
+
+    |cores3_lcd_example.m5f2|
+
 
 class LCDUnit
 -------------
@@ -36,23 +43,14 @@ class LCDUnit
 Constructors
 ------------
 
-.. class:: LCDUnit(port, address, freq)
+.. class:: LCDUnit(i2c, address: int = 0x3e, freq: int = 400000)
 
     Initialize the Unit LCD
 
-    :param tuple port: The port to which the Unit LCDUnit is connected. port[0]: scl pin, port[1]: sda pin.
-    :param int|list|tuple address: I2C address of the Unit LCDUnit, default is 0x3D.
+    :param I2C i2c: the I2C object.
+    :param int address: I2C address of the Unit LCDUnit, default is 0x3e.
     :param int freq: I2C frequency of the Unit LCDUnit.
 
     UIFLOW2:
 
-        |init.svg|
-
-
-Methods
--------
-
-
-
-
-
+        |init.png|

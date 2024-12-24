@@ -16,20 +16,21 @@ Support the following products:
 
     |WateringUnit|
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import WateringUnit
-    water = WateringUnit((33,32)) # for core2
-    water.on()
-    time.sleep(1)
-    water.off()
-    print(water.get_voltage())
-    print(water.get_raw())
+    .. literalinclude:: ../../../examples/unit/watering/cores3_watering_example.py
+        :language: python
+        :linenos:
 
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_watering_example.m5f2|
 
 class WateringUnit
 ------------------
@@ -45,7 +46,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -59,7 +60,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|
 
 
 .. method:: WateringUnit.get_raw() -> int
@@ -70,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |get_raw.svg|
+        |get_raw.png|
 
 
 .. method:: WateringUnit.on() -> None
@@ -79,7 +80,7 @@ Methods
 
     UIFLOW2:
 
-        |on.svg|
+        |on.png|
 
 
 .. method:: WateringUnit.off() -> None
@@ -88,7 +89,7 @@ Methods
 
     UIFLOW2:
 
-        |off.svg|
+        |off.png|
 
 
 .. method:: WateringUnit.set_pump(state: int) -> None
@@ -99,4 +100,4 @@ Methods
 
     UIFLOW2:
 
-        |set_pump.svg|
+        |set_pump.png|

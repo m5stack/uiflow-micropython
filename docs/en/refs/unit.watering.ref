@@ -4,12 +4,20 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/init.svg
-.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_voltage.svg
-.. |get_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_raw.svg
-.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/on.svg
-.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/off.svg
-.. |set_pump.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/set_pump.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/init.png
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_voltage.png
+.. |get_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/get_raw.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/on.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/off.png
+.. |set_pump.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/set_pump.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/watering/example.png
 
+.. |cores3_watering_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/weight_i2c/weight-i2c-demo.m5f2"
+        target="_blank"
+    >
+        cores3_watering_example.m5f2
+    </a>

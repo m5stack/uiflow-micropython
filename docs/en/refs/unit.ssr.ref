@@ -4,10 +4,18 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/init.svg
-.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/on.svg
-.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/off.svg
-.. |set_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/set_state.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/init.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/on.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/off.png
+.. |set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/set_state.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ssr/example.png
 
+.. |cores3_ssr_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/ssr/cores3_ssr_example.m5f2"
+        target="_blank"
+    >
+        cores3_ssr_example.m5f2
+    </a>

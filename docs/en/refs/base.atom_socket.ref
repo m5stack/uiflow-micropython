@@ -3,28 +3,37 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/init.png
 
-.. |set_relay.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/set_relay.svg
+.. |set_relay.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/set_relay.png
 
-.. |get_data.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_data.svg
+.. |get_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_data.png
 
-.. |get_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_voltage.svg
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_voltage.png
 
-.. |get_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_current.svg
+.. |get_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_current.png
 
-.. |get_power.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_power.svg
+.. |get_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_power.png
 
-.. |get_pf.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_pf.svg
+.. |get_pf.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_pf.png
 
-.. |get_inspecting_power.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_inspecting_power.svg
+.. |get_inspecting_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_inspecting_power.png
 
-.. |get_power_factor.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_power_factor.svg
+.. |get_power_factor.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_power_factor.png
 
-.. |get_kwh.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/get_kwh.svg
+.. |get_kwh.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/get_kwh.png
 
-.. |receive_none_block.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/receive_none_block.svg
+.. |receive_none_block.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/receive_none_block.png
 
-.. |stop_receive_data.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/stop_receive_data.svg
+.. |stop_receive_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/stop_receive_data.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/atom/atom_socket/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/atom_socket/example.png
+
+.. |atomlite_socket_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/atom_socket/atomlite_socket_example.m5f2"
+        target="_blank"
+    >
+        atomlite_socket_example.m5f2
+    </a>

@@ -13,15 +13,20 @@ Support the following products:
 
     |Grove2GroveUnit|
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import Grove2GroveUnit
-    grove2grove = Grove2GroveUnit((33,32)) # for core2
-    grove2grove.on()
+    .. literalinclude:: ../../../examples/unit/grove2grove/cores3_grove2_grove_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+.. only:: builder_html
+
+    |cores3_grove2_grove_example.m5f2|
 
 
 class Grove2GroveUnit
@@ -38,7 +43,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -52,7 +57,7 @@ Methods
 
     UIFLOW2:
 
-        |get_current.svg|
+        |get_current.png|
 
 
 .. method:: Grove2GroveUnit.on() -> None
@@ -61,7 +66,7 @@ Methods
 
     UIFLOW2:
 
-        |on.svg|
+        |on.png|
 
 
 .. method:: Grove2GroveUnit.off() -> None
@@ -70,7 +75,7 @@ Methods
 
     UIFLOW2:
 
-        |off.svg|
+        |off.png|
 
 
 .. method:: Grove2GroveUnit.set_en(state: int) -> None
@@ -81,4 +86,4 @@ Methods
 
     UIFLOW2:
 
-        |set_en.svg|
+        |set_en.png|

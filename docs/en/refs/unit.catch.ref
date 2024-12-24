@@ -4,12 +4,20 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/init.svg
-.. |clamp.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/clamp.svg
-.. |release.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/release.svg
-.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_duty.svg
-.. |set_clamp_percent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_clamp_percent.svg
-.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/deinit.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/init.png
+.. |clamp.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/clamp.png
+.. |release.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/release.png
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_duty.png
+.. |set_clamp_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/set_clamp_percent.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/deinit.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/catch/example.png
 
+.. |cores3_catch_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/catch/cores3_catch_example.m5f2"
+        target="_blank"
+    >
+        cores3_catch_example.m5f2
+    </a>

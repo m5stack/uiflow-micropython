@@ -4,11 +4,19 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/init.svg
-.. |get_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/get_current.svg
-.. |on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/on.svg
-.. |off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/off.svg
-.. |set_en.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/set_en.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/init.png
+.. |get_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/get_current.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/on.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/off.png
+.. |set_en.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/set_en.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/grove2grove/example.png
 
+.. |cores3_grove2_grove_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/grove2grove/cores3_grove2_grove_example.m5f2"
+        target="_blank"
+    >
+        cores3_grove2_grove_example.m5f2
+    </a>

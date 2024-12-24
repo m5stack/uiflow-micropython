@@ -10,15 +10,21 @@ Support the following products:
 
 |Glass2Unit|
 
-Micropython Example::
-    from unit import Glass2Unit
-    from hardware import *
-    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-    display = Glass2Unit(i2c).display
-    
-    display.clear(0xffffff) # Clear screen
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/glass2/cores3_glass2_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
 
 .. only:: builder_html
+
+    |cores3_glass2_example.m5f2|
 
 class Glass2Unit
 ----------------
@@ -26,23 +32,14 @@ class Glass2Unit
 Constructors
 ------------
 
-.. class:: Glass2Unit(port, address, freq)
+.. class:: Glass2Unit(i2c, address: int = 0x3c, freq: int = 400000)
 
     Initialize the Unit Glass2
 
-    :param tuple port: The port to which the Unit Glass2 is connected. port[0]: scl pin, port[1]: sda pin.
-    :param int|list|tuple address: I2C address of the Unit Glass2, default is 0x3D.
+    :param I2C i2c: the I2C object.
+    :param int address: I2C address of the Unit Glass2, default is 0x3c.
     :param int freq: I2C frequency of the Unit Glass2.
 
     UIFLOW2:
 
-        |init.svg|
-
-
-Methods
--------
-
-
-
-
-
+        |init.png|

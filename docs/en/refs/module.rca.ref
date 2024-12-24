@@ -4,7 +4,16 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/rca/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/rca/init.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/rca/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/rca/example.png
+
+.. |core2_rca_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/rca/core2_rca_example.m5f2"
+        target="_blank"
+    >
+        core2_rca_example.m5f2
+    </a>
 

@@ -10,15 +10,20 @@ Support the following products:
 
 |OLEDUnit|
 
-Micropython Example::
-    from unit import OLEDUnit
-    from hardware import *
-    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-    display = OLEDUnit(i2c).display
-    
-    display.clear(0xffffff) # Clear screen
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/oled/cores3_oled_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
 
 .. only:: builder_html
+
+    |cores3_oled_example.m5f2|
 
 class OLEDUnit
 --------------
@@ -26,23 +31,14 @@ class OLEDUnit
 Constructors
 ------------
 
-.. class:: OLEDUnit(port, address, freq)
+.. class:: OLEDUnit(i2c, address: int = 0x3c, freq: int = 400000)
 
     Initialize the Unit OLED
 
-    :param tuple port: The port to which the Unit OLED is connected. port[0]: scl pin, port[1]: sda pin.
-    :param int|list|tuple address: I2C address of the Unit OLED, default is 0x3D.
+    :param I2C i2c: the I2C object.
+    :param int address: I2C address of the Unit OLED, default is 0x3c.
     :param int freq: I2C frequency of the Unit OLED.
 
     UIFLOW2:
 
-        |init.svg|
-
-
-Methods
--------
-
-
-
-
-
+        |init.png|

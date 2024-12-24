@@ -3,36 +3,45 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/init.png
 
-.. |set_output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output.svg
+.. |set_output.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output.png
 
-.. |enable_output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/enable_output.svg
+.. |enable_output.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/enable_output.png
 
-.. |disable_output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/disable_output.svg
+.. |disable_output.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/disable_output.png
 
-.. |set_output_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output_voltage.svg
+.. |set_output_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output_voltage.png
 
-.. |set_output_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output_current.svg
+.. |set_output_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_output_current.png
 
-.. |read_psu_running_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_psu_running_mode.svg
+.. |read_psu_running_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_psu_running_mode.png
 
-.. |read_output_current.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_output_current.svg
+.. |read_output_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_output_current.png
 
-.. |read_output_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_output_voltage.svg
+.. |read_output_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_output_voltage.png
 
-.. |read_input_voltage.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_input_voltage.svg
+.. |read_input_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_input_voltage.png
 
-.. |read_data_update_flag.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_data_update_flag.svg
+.. |read_data_update_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_data_update_flag.png
 
-.. |read_mcu_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_mcu_temperature.svg
+.. |read_mcu_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_mcu_temperature.png
 
-.. |read_module_id.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_module_id.svg
+.. |read_module_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_module_id.png
 
-.. |read_uid.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_uid.svg
+.. |read_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/read_uid.png
 
-.. |get_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/get_i2c_address.svg
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/get_i2c_address.png
 
-.. |set_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_i2c_address.svg
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/set_i2c_address.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pps/example.png
+
+.. |cores3_pps_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/pps/cores3_pps_example.m5f2"
+        target="_blank"
+    >
+        cores3_pps_example.m5f2
+    </a>

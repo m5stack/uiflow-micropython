@@ -14,26 +14,21 @@ Support the following products:
 |DAC2Unit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from unit import DAC2Unit
-
-    i2c = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
-    dac2_0 = DAC2Unit(i2c0, 0x59)
-    dac2_0.setDACOutputVoltageRange(dac2_0.RANGE_10V)
-    dac2_0.setVoltage(7.5, channel=dac2_0.CHANNEL_BOTH)
+    .. literalinclude:: ../../../examples/unit/dac2/cores3_dac2_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
+
+    |cores3_dac2_example.m5f2|
 
 
 class DAC2Unit
@@ -51,7 +46,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.DAC2Unit.Methods:
@@ -68,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |setDACOutputVoltageRange.svg|
+        |setDACOutputVoltageRange.png|
 
 .. method:: DAC2Unit.setVoltage(voltage, channel=Dac2.CHANNEL_BOTH)
 
@@ -80,7 +75,7 @@ Methods
 
     UIFLOW2:
 
-        |setVoltage.svg|
+        |setVoltage.png|
 
 
 .. method:: DAC2Unit.setVoltageBoth(voltage0, voltage1)
@@ -93,4 +88,4 @@ Methods
 
     UIFLOW2:
 
-        |setVoltageBoth.svg|
+        |setVoltageBoth.png|

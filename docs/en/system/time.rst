@@ -32,6 +32,20 @@ If actual calendar time is not maintained with a system/MicroPython RTC,
 functions below which require reference to current absolute time may
 behave not as expected.
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/system/time/cores3_time_example.py
+        :language: python
+        :linenos:
+
+UIFLOW2 Example:
+
+    |example.png|
+
+.. only:: builder_html
+
+    |cores3_time_example.m5f2|
+
 Functions
 ---------
 

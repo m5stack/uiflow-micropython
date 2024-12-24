@@ -1,5 +1,10 @@
 
-.. |GPSModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/GNSS%20Module/img-824d0251-e9ac-4d4d-ae16-7aaea58827eb.webp
+.. |GPSModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/gps/gps_01.webp
+    :target: https://docs.m5stack.com/en/module/gps
+    :height: 200px
+    :width: 200px
+
+.. |COM.GPSModule| image:: https://static-cdn.m5stack.com/resource/docs/products/module/comx_gps/comx_gps_01.webp
     :target: https://docs.m5stack.com/en/module/comx_gps
     :height: 200px
     :width: 200px

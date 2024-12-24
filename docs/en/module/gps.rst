@@ -8,7 +8,10 @@ COM.GPS is a satellite positioning module in the M5Stack stacking module series.
 
 Support the following products:
 
-|GPSModule|
+    +-------------------------+-------------------------+
+    | |GPSModule|             | |COM.GPSModule|         |
+    +-------------------------+-------------------------+
+
 
 Micropython Example:
 
@@ -23,7 +26,8 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |gps_core2_example.m5f2|    
+    |gps_core2_example.m5f2|
+
 
 class GPSModule
 ---------------
@@ -180,6 +184,3 @@ Methods
     UIFLOW2:
 
         |is_locate_valid.png|
-
-
-
