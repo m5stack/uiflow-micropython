@@ -67,7 +67,7 @@ class ADS1100:
         time.sleep(0.1)
         self._read()
         self._config = self._BUFFER[2]
-        return self._BUFFER
+        return self._BUFFER[0:2]
 
     def get_operating_mode(self) -> Literal[0, 1]:
         """The conversion mode of the ads1100"""
