@@ -1,0 +1,39 @@
+
+.. |ACMeasureUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/AC%20Measure%20Unit/img-28a2411d-d63c-4596-b474-2db9d9b6dcc5.webp
+    :target: https://docs.m5stack.com/en/unit/AC%20Measure%20Unit
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/init.png
+.. |get_voltage_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_voltage_str.png
+.. |get_current_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_current_str.png
+.. |get_active_power_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_active_power_str.png
+.. |get_apparent_power_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_apparent_power_str.png
+.. |get_power_factor_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_power_factor_str.png
+.. |get_kwh_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_kwh_str.png
+.. |get_voltage_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_voltage_byte.png
+.. |get_current_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_current_byte.png
+.. |get_active_power_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_active_power_byte.png
+.. |get_apparent_power_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_apparent_power_byte.png
+.. |get_power_factor_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_power_factor_byte.png
+.. |get_kwh_byte.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_kwh_byte.png
+.. |get_voltage_coeff.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_voltage_coeff.png
+.. |set_voltage_coeff.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/set_voltage_coeff.png
+.. |get_current_coeff.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_current_coeff.png
+.. |set_current_coeff.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/set_current_coeff.png
+.. |set_save_coeff.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/set_save_coeff.png
+.. |get_data_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_data_ready.png
+.. |get_device_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/get_device_status.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ac_measure/example.png
+
+.. |acmeasure_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/ac_measure/acmeasure_cores3_example.m5f2"
+        target="_blank"
+    >
+        acmeasure_cores3_example.m5f2
+    </a>
+

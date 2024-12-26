@@ -1,0 +1,29 @@
+
+.. |Encoder8Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/8Encoder/img-f745fc18-6237-4bc8-8500-6c91ce7e2d75.webp
+    :target: https://docs.m5stack.com/en/unit/8Encoder
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/init.png
+.. |get_counter_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/get_counter_value.png
+.. |set_counter_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/set_counter_value.png
+.. |get_increment_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/get_increment_value.png
+.. |reset_counter_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/reset_counter_value.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/get_button_status.png
+.. |get_switch_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/get_switch_status.png
+.. |set_led_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/set_led_rgb.png
+.. |set_led_rgb_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/set_led_rgb_from.png
+.. |get_device_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/get_device_status.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8encoder/example.png
+
+.. |encoder8_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/encoder8/encoder8_cores3_example.m5f2"
+        target="_blank"
+    >
+        encoder8_cores3_example.m5f2
+    </a>
+

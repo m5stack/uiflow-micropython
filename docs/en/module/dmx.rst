@@ -109,6 +109,7 @@ Methods
         |read_data.png|
 
 .. method:: DMX512.receive_none_block() -> None
+    :no-index:
 
     Starts non-blocking data reception for the specified channels with associated callbacks.
 
@@ -128,7 +129,8 @@ Methods
         |receive_data_event.png|
 
 .. method:: DMX512.stop_receive() -> None
-
+    :no-index:
+    
     Stops the non-blocking data reception task.
 
     UIFLOW2:
