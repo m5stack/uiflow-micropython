@@ -7,14 +7,17 @@ set(BOARD_ID 19)
 set(M5_EPDIY_ENABLE TRUE)
 
 set(SDKCONFIG_DEFAULTS
-    ./boards/M5STACK_PaperS3/sdkconfig.board
     ./boards/sdkconfig.base
+    ${SDKCONFIG_IDF_VERSION_SPECIFIC}
     ./boards/sdkconfig.240mhz
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
+    ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.spiram_oct
+    ./boards/sdkconfig.freertos
+    ./boards/M5STACK_PaperS3/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...
