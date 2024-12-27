@@ -314,4 +314,4 @@ class Modem(object):
         #         output = output[:-1]
 
         # Return
-        return (output.decode("utf-8"), error)
+        return (output, error)

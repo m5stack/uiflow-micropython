@@ -6,7 +6,7 @@ from .common import Modem
 from .common import ATCommand
 from . import utils
 from .toolkit import requests2
-import re
+from .toolkit import umqtt
 import socket
 import micropython
 import time
@@ -109,7 +109,8 @@ class _socket:
 
         self._state = self._STATE_CLOSE
         self._ringio = micropython.RingIO(1500)
-        self._timeout = 500
+        self._timeout = 2000
+        self.blocking = False
 
     def __del__(self):
         self.close()
@@ -118,7 +119,7 @@ class _socket:
         if self._fd == -1:
             return
         close = ATCommand(
-            "AT+CIPCLOSE={}".format(self._fd), "OK\r\n", "ERROR\r\n", self._modem._default_timeout
+            "AT+CIPCLOSE={}".format(self._fd), "OK", "ERROR", self._modem._default_timeout
         )
         self._modem.execute_at_command2(close)
         self._modem.release_fd(self._fd)
@@ -152,7 +153,7 @@ class _socket:
                 address[1],
             ),
             "+CIPOPEN",
-            "ERROR\r\n",
+            "ERROR",
             120000,  # Maximum Response Time
         )
         output, error = self._modem.execute_at_command2(cipstart)
@@ -162,27 +163,24 @@ class _socket:
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cipstart.cmd)
         elif error == self._modem.ERR_GENERIC:
-            err = utils.extract_int(output, "\+CIPOPEN: {},".format(self._fd), "\r\n")
+            err = utils.extract_int(output, "+CIPOPEN: {},".format(self._fd), "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipstart.cmd)
 
     def send(self, data: bytes | str | bytearray) -> int:
         # data type check
-        if isinstance(data, str):
-            data = data.encode("utf-8")
-        if isinstance(data, bytearray):
-            data = bytes(data)
+        data = utils.converter(data, bytes)
 
         # send cmd
         to_send = len(data)
         cipsend = ATCommand(
             "AT+CIPSEND={},{}".format(self._fd, to_send),
             ">",
-            "ERROR\r\n",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(cipsend, line_end="")
         if error == self._modem.ERR_GENERIC:
-            err = utils.extract_int(output, "\+CIPSEND: ", "\r\n")
+            err = utils.extract_int(output, "+CIPSEND: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
@@ -193,18 +191,18 @@ class _socket:
             cipsend = ATCommand(
                 "AT+CIPSEND={},{}".format(self._fd, to_send),
                 "+CIPSEND:",
-                "ERROR\r\n",
+                "ERROR",
                 self._modem._default_timeout,
             )
             output, error = self._modem.response_at_command2(cipsend)
             if error == self._modem.ERR_GENERIC:
-                err = utils.extract_int(output, "\+CIPERROR: ", "\r\n")
+                err = utils.extract_int(output, "+CIPERROR: ", "\r\n")
                 raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
             elif error == self._modem.ERR_TIMEOUT:
                 raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
             elif error == self._modem.ERR_NONE:
                 cnf = utils.extract_text(
-                    output, "\+CIPSEND: {},{},".format(self._fd, to_send), "\r\n"
+                    output, "+CIPSEND: {},{},".format(self._fd, to_send), "\r\n"
                 )
                 sented = int(cnf) if cnf else 0
         return to_send
@@ -221,23 +219,20 @@ class _socket:
                     "".join(['"', self._proto_type.get(self._proto, ""), '"']),
                     self._local_port,
                 ),
-                "OK\r\n",
-                "ERROR\r\n",
+                "OK",
+                "ERROR",
                 self._modem._default_timeout,
             )
             output, error = self._modem.execute_at_command2(cipopen)
             if error == self._modem.ERR_GENERIC:
-                errno = utils.extract_int(output, "\+CIPOPEN: ", "\r\n")
+                errno = utils.extract_int(output, "+CIPOPEN: ", "\r\n")
                 raise SIMComError(SIMComError.D_TCPIP_ERR, errno, cipopen.cmd)
             elif error == self._modem.ERR_TIMEOUT:
                 raise SIMComError(SIMComError.D_GENERIC, error, cipopen.cmd)
             self._state = self._STATE_OPEN
 
         # data type check
-        if isinstance(data, str):
-            data = data.encode("utf-8")
-        if isinstance(data, bytearray):
-            data = bytes(data)
+        data = utils.converter(data, bytes)
 
         # send cmd
         to_send = len(data)
@@ -246,12 +241,12 @@ class _socket:
                 self._fd, to_send, "".join(['"', address[0], '"']), address[1]
             ),
             ">",
-            "ERROR\r\n",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(cipsend, line_end="")
         if error == self._modem.ERR_GENERIC:
-            errno = utils.extract_int(output, "\+CIPSEND: ", "\r\n")
+            errno = utils.extract_int(output, "+CIPSEND: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR, errno, cipsend.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
@@ -262,18 +257,18 @@ class _socket:
             cipsend = ATCommand(
                 "AT+CIPSEND={},{}".format(self._fd, to_send),
                 "+CIPSEND:",
-                "ERROR\r\n",
+                "ERROR",
                 self._modem._default_timeout,
             )
             output, error = self._modem.response_at_command2(cipsend)
             if error == self._modem.ERR_GENERIC:
-                errno = utils.extract_int(output, "\+CIPERROR: ", "\r\n")
+                errno = utils.extract_int(output, "+CIPERROR: ", "\r\n")
                 raise SIMComError(SIMComError.D_TCPIP_ERR, errno, cipsend.cmd)
             elif error == self._modem.ERR_TIMEOUT:
                 raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
             else:
                 cnf = utils.extract_text(
-                    output, "\+CIPSEND: {},{},".format(self._fd, to_send), "\r\n"
+                    output, "+CIPSEND: {},{},".format(self._fd, to_send), "\r\n"
                 )
                 sented = int(cnf) if cnf else 0
         return to_send
@@ -281,18 +276,18 @@ class _socket:
     def _recv(self) -> None:
         ciprxget = ATCommand(
             "AT+CIPRXGET=4,{}".format(self._fd),
-            "OK\r\n",
-            "ERROR\r\n",
+            "OK",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(ciprxget)
         if error == self._modem.ERR_GENERIC:
-            errno = utils.extract_int(output, "\+IP ERROR: ", "\r\n")
+            errno = utils.extract_int(output, "+IP ERROR: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, ciprxget.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, ciprxget.cmd)
 
-        to_recv = int(utils.extract_text(output, "\+CIPRXGET: 4,{},".format(self._fd), "\r\n"))
+        to_recv = int(utils.extract_text(output, "+CIPRXGET: 4,{},".format(self._fd), "\r\n"))
         if to_recv == 0:
             return
 
@@ -300,30 +295,32 @@ class _socket:
 
         ciprxget = ATCommand(
             "AT+CIPRXGET=2,{},{}".format(self._fd, to_recv),
-            "OK\r\n",
-            "ERROR\r\n",
+            "OK",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(ciprxget)
         if error == self._modem.ERR_GENERIC:
-            errno = utils.extract_int(output, "\+IP ERROR: ", "\r\n")
+            errno = utils.extract_int(output, "+IP ERROR: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, ciprxget.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, ciprxget.cmd)
 
         # prase data
-        read_len = utils.extract_text(output, "\+CIPRXGET: 2,{},".format(self._fd), ",")
+        read_len = utils.extract_text(output, "+CIPRXGET: 2,{},".format(self._fd), ",")
         read_len = int(read_len) if read_len else 0
         rest_len = utils.extract_text(
-            output, "\+CIPRXGET: 2,{},{},".format(self._fd, read_len), "\r\n"
+            output, "+CIPRXGET: 2,{},{},".format(self._fd, read_len), "\r\n"
         )
         rest_len = int(rest_len) if rest_len else 0
-        fstr = "+CIPRXGET: 2,{},{},{}\r\n".format(self._fd, read_len, rest_len)
+        fstr = utils.converter(
+            "+CIPRXGET: 2,{},{},{}\r\n".format(self._fd, read_len, rest_len), type(output)
+        )
         start = output.find(fstr) + len(fstr)
 
-        self._ringio.write(output[start : start + read_len].encode("utf-8"))
+        self._ringio.write(output[start : start + read_len])
 
-    def recv(self, bufsize) -> bytes:
+    def recv(self, bufsize) -> bytes | None:
         return self.recvfrom(bufsize)
 
     def readall(self) -> bytes:
@@ -337,7 +334,7 @@ class _socket:
 
         return bytes(out)
 
-    def recvfrom(self, bufsize) -> bytes:
+    def recvfrom(self, bufsize: int) -> bytes | None:
         if bufsize == -1:
             return self.readall()
 
@@ -354,33 +351,24 @@ class _socket:
             out.extend(buf)
             read_len += len(buf)
 
+        # https://docs.python.org/3.4/library/io.html#io.RawIOBase.read
+        # "If the object is in non-blocking mode and no bytes are available,
+        # None is returned."
+        # This is actually very weird, as naive truth check will treat
+        # this as EOF.
+        if self.blocking is False and read_len == 0:
+            return None
+
         return bytes(out)
 
     def setsockopt(self, level, optname, value):
-        raise NotImplementedError
+        print("setsockopt is not implemented")
 
     def settimeout(self, timeout):
-        if timeout is None:
-            self._timeout = 500
+        self._timeout = 2000 if timeout is None else timeout
 
-        cipccfg = ATCommand("AT+CIPCCFG?", "OK\r\n", "ERROR\r\n", self._modem._default_timeout)
-        output, error = self._modem.execute_at_command2(cipccfg)
-        if error == self._modem.ERR_TIMEOUT:
-            raise SIMComError(SIMComError.D_GENERIC, error, cipccfg.cmd)
-
-        params = utils.extract_number(output)
-
-        cipccfg = ATCommand(
-            "AT+CIPCCFG={},{},{},{},{},{},{}".format(
-                params[0], params[1], params[2], params[3], params[4], params[5], self._timeout
-            ),
-            "OK\r\n",
-            "ERROR\r\n",
-            self._modem._default_timeout,
-        )
-
-    def setblocking(self):
-        raise NotImplementedError
+    def setblocking(self, flag):
+        self.blocking = flag
 
     def makefile(self, mode):
         return self
@@ -388,7 +376,7 @@ class _socket:
     def fileno(self):
         return self._fd
 
-    def read(self, *args) -> bytes:
+    def read(self, *args) -> bytes | None:
         return self.recvfrom(args[0] if len(args) > 0 else -1)
 
     def readinto(self, *args) -> int:
@@ -410,8 +398,21 @@ class _socket:
             self._recv()
         return self._ringio.readline()
 
-    def write(self, data) -> int:
-        return self.send(data)
+    def write(self, *args) -> int:
+        data = args[0]
+        l = len(data)
+        max_len = len(data)
+        off = 0
+        if len(args) == 2:
+            max_len = args[1]
+        if len(args) == 3:
+            off = args[1]
+            max_len = args[2]
+        if off > l:
+            off = l
+        l = l - off
+        max_len = l if l < max_len else max_len
+        return self.send(data[off : off + max_len])
 
 
 class _sockets(_socket):
@@ -446,7 +447,8 @@ class _sockets(_socket):
 
         self._state = self._STATE_CLOSE
         self._ringio = micropython.RingIO(1500)
-        self._timeout = 500
+        self._timeout = 2000
+        self.blocking = False
 
     def __del__(self):
         self.close()
@@ -455,7 +457,7 @@ class _sockets(_socket):
         if self._fd == -1:
             return
         close = ATCommand(
-            "AT+CCHCLOSE={}".format(self._fd), "OK\r\n", "ERROR\r\n", self._modem._default_timeout
+            "AT+CCHCLOSE={}".format(self._fd), "OK", "ERROR", self._modem._default_timeout
         )
         self._modem.execute_at_command2(close)
         self._modem.release_session_id(self._fd)
@@ -483,8 +485,8 @@ class _sockets(_socket):
         # Set the first SSL context to be used in the SSL connection
         at = ATCommand(
             "AT+CCHSSLCFG={},0".format(self._fd),
-            "OK\r\n",
-            "ERROR\r\n",
+            "OK",
+            "ERROR",
             self._modem._default_timeout,
         )
         self._modem.execute_at_command2(at)
@@ -496,7 +498,7 @@ class _sockets(_socket):
                 self._fd, "".join(['"', address[0], '"']), address[1], 2
             ),
             "+CCHOPEN",
-            "ERROR\r\n",
+            "ERROR",
             120000,  # Maximum Response Time
         )
         output, error = self._modem.execute_at_command2(cipstart)
@@ -506,27 +508,24 @@ class _sockets(_socket):
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cipstart.cmd)
         elif error == self._modem.ERR_GENERIC:
-            err = utils.extract_int(output, "\+CCHOPEN: {},".format(self._fd), "\r\n")
+            err = utils.extract_int(output, "+CCHOPEN: {},".format(self._fd), "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipstart.cmd)
 
     def send(self, data: bytes | str | bytearray) -> int:
         # data type check
-        if isinstance(data, str):
-            data = data.encode("utf-8")
-        if isinstance(data, bytearray):
-            data = bytes(data)
+        data = utils.converter(data, bytes)
 
         # send cmd
         to_send = len(data)
         cipsend = ATCommand(
             "AT+CCHSEND={},{}".format(self._fd, to_send),
             ">",
-            "ERROR\r\n",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(cipsend, line_end="")
         if error == self._modem.ERR_GENERIC:
-            err = utils.extract_int(output, "\+CCHSEND: ", "\r\n")
+            err = utils.extract_int(output, "+CCHSEND: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
@@ -537,12 +536,12 @@ class _sockets(_socket):
             cipsend = ATCommand(
                 "AT+CCHSEND={},{}".format(self._fd, to_send),
                 "+CCHSEND:",
-                "ERROR\r\n",
+                "ERROR",
                 self._modem._default_timeout,
             )
             output, error = self._modem.response_at_command2(cipsend)
             if error == self._modem.ERR_GENERIC:
-                err = utils.extract_int(output, "\+CIPERROR: ", "\r\n")
+                err = utils.extract_int(output, "+CIPERROR: ", "\r\n")
                 raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
             elif error == self._modem.ERR_TIMEOUT:
                 raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
@@ -563,14 +562,14 @@ class _sockets(_socket):
         )
         output, error = self._modem.execute_at_command2(cchrecv)
         if error == self._modem.ERR_GENERIC:
-            errno = utils.extract_int(output, "\+IP ERROR: ", "\r\n")
+            errno = utils.extract_int(output, "+IP ERROR: ", "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, cchrecv.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, cchrecv.cmd)
 
-        cache_len_0 = int(utils.extract_text(output, "\+CCHRECV: LEN,", ","))
+        cache_len_0 = int(utils.extract_text(output, "+CCHRECV: LEN,", ","))
         cache_len_1 = int(
-            utils.extract_text(output, "\+CCHRECV: LEN,{},".format(cache_len_0), "\r\n")
+            utils.extract_text(output, "+CCHRECV: LEN,{},".format(cache_len_0), "\r\n")
         )
         to_recv = cache_len_0 if self._fd == 0 else cache_len_1
         if to_recv == 0:
@@ -584,22 +583,22 @@ class _sockets(_socket):
         ciprxget = ATCommand(
             "AT+CCHRECV={},{}".format(self._fd, to_recv),
             "+CCHRECV: {},0".format(self._fd),
-            "ERROR\r\n",
+            "ERROR",
             self._modem._default_timeout,
         )
         output, error = self._modem.execute_at_command2(ciprxget)
         if error == self._modem.ERR_GENERIC:
-            errno = utils.extract_int(output, "\+CCHRECV: {},".format(self._fd), "\r\n")
+            errno = utils.extract_int(output, "+CCHRECV: {},".format(self._fd), "\r\n")
             raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, ciprxget.cmd)
         elif error == self._modem.ERR_TIMEOUT:
             raise SIMComError(SIMComError.D_GENERIC, error, ciprxget.cmd)
 
         # prase data
-        recv_len = utils.extract_int(output, "\+CCHRECV: DATA,{},".format(self._fd), "\r\n")
-        fstr = "+CCHRECV: DATA,{},{}\r\n".format(self._fd, recv_len)
+        recv_len = utils.extract_int(output, "+CCHRECV: DATA,{},".format(self._fd), "\r\n")
+        fstr = utils.converter("+CCHRECV: DATA,{},{}\r\n".format(self._fd, recv_len), type(output))
         start = output.find(fstr) + len(fstr)
 
-        self._ringio.write(output[start : start + recv_len].encode("utf-8"))
+        self._ringio.write(output[start : start + recv_len])
 
     def recv(self, bufsize) -> bytes:
         return self.recvfrom(bufsize)
@@ -632,16 +631,27 @@ class _sockets(_socket):
             out.extend(buf)
             read_len += len(buf)
 
+        # https://docs.python.org/3.4/library/io.html#io.RawIOBase.read
+        # "If the object is in non-blocking mode and no bytes are available,
+        # None is returned."
+        # This is actually very weird, as naive truth check will treat
+        # this as EOF.
+        if self.blocking is False and read_len == 0:
+            return None
+
         return bytes(out)
 
     def setsockopt(self, level, optname, value):
-        raise NotImplementedError
+        print("setsockopt is not implemented")
+        return None
 
     def settimeout(self, timeout):
-        raise NotImplementedError
+        print("settimeout is not implemented")
+        return None
 
-    def setblocking(self):
-        raise NotImplementedError
+    def setblocking(self, flag):
+        self.blocking = flag
+        return None
 
     def makefile(self, mode):
         return self
@@ -698,40 +708,46 @@ class SIM7600(Modem):
         self._default_timeout = 5000
 
         # disable echo
-        self.execute_at_command2(ATCommand("ATE0", "OK\r\n", "ERROR\r\n", self._default_timeout))
+        self.execute_at_command2(ATCommand("ATE0", "OK", "ERROR", self._default_timeout))
 
         # buffer access mode
-        self.execute_at_command2(
-            ATCommand("AT+CIPRXGET=1", "OK\r\n", "ERROR\r\n", self._default_timeout)
-        )
+        self.execute_at_command2(ATCommand("AT+CIPRXGET=1", "OK", "ERROR", self._default_timeout))
         # No transparent transmission mode
-        self.execute_at_command2(
-            ATCommand("AT+CIPMODE=0", "OK\r\n", "ERROR\r\n", self._default_timeout)
-        )
+        self.execute_at_command2(ATCommand("AT+CIPMODE=0", "OK", "ERROR", self._default_timeout))
         # open network
-        self.execute_at_command2(
-            ATCommand("AT+NETOPEN", "OK\r\n", "ERROR\r\n", self._default_timeout)
-        )
+        self.execute_at_command2(ATCommand("AT+NETOPEN", "OK", "ERROR", self._default_timeout))
 
         # Set the SSL version of the first SSL context
         self.execute_at_command2(
-            ATCommand('AT+CSSLCFG="sslversion",0,4', "OK\r\n", "ERROR\r\n", self._default_timeout)
+            ATCommand('AT+CSSLCFG="sslversion",0,4', "OK", "ERROR", self._default_timeout)
         )
 
         # Set the authentication mode(not verify server) of the first SSL context
         self.execute_at_command2(
-            ATCommand('AT+CSSLCFG="authmode",0,0', "OK\r\n", "ERROR\r\n", self._default_timeout)
+            ATCommand('AT+CSSLCFG="authmode",0,0', "OK", "ERROR", self._default_timeout)
         )
 
         # Enable reporting +CCHSEND result,
-        self.execute_at_command2(
-            ATCommand("AT+CCHSET=1,1", "OK\r\n", "ERROR\r\n", self._default_timeout)
-        )
+        self.execute_at_command2(ATCommand("AT+CCHSET=1,1", "OK", "ERROR", self._default_timeout))
 
         # start SSL service, activate PDP context
         self.execute_at_command2(
-            ATCommand("AT+CCHSTART", "+CCHSTART\r\n", "ERROR\r\n", self._default_timeout)
+            ATCommand("AT+CCHSTART", "+CCHSTART", "ERROR", self._default_timeout)
         )
+
+    def deinit(self):
+        for i in range(10):
+            if self._fds[i] != -1:
+                self.execute_at_command2(
+                    ATCommand("AT+CIPCLOSE={}".format(self._fds[i]), "OK", "ERROR", 10000)
+                )
+                self._fds[i] = -1
+        for i in range(2):
+            if self._session_id[i] != -1:
+                self.execute_at_command2(
+                    ATCommand("AT+CCHCLOSE={}".format(self._session_id[i]), "OK", "ERROR", 10000)
+                )
+                self._session_id[i] = -1
 
     """fd/port management"""
 
@@ -774,7 +790,7 @@ class SIM7600(Modem):
         """
         res = []
 
-        at = ATCommand('AT+CDNSGIP="{}"'.format(host), "OK\r\n", "ERROR\r\n", 10000)
+        at = ATCommand('AT+CDNSGIP="{}"'.format(host), "OK", "ERROR", 10000)
         output, error = self.execute_at_command2(at)
 
         ip = "0.0.0.0"
@@ -785,7 +801,15 @@ class SIM7600(Modem):
         elif error == self.ERR_GENERIC:
             raise SIMComError(SIMComError.D_DNS_ERROR_CODE, 10, at.cmd)
 
-        res.append((socket.AF_INET, socket.SOCK_STREAM, socket.IPPROTO_TCP, host, (ip, port)))
+        res.append(
+            (
+                socket.AF_INET,
+                socket.SOCK_STREAM,
+                socket.IPPROTO_TCP,
+                host,
+                (utils.converter(ip, str), port),
+            )
+        )
         return res
 
     def socket(self, af=socket.AF_INET, type=socket.SOCK_STREAM, proto=socket.IPPROTO_TCP):
@@ -843,6 +867,31 @@ class SIM7600(Modem):
     def delete(self, url, **kw):
         return self.request("DELETE", url, **kw)
 
+    """mqtt method"""
+
+    def MQTTClient(  # noqa: N802
+        self,
+        client_id,
+        server,
+        port=0,
+        user=None,
+        password=None,
+        keepalive=0,
+        ssl=False,
+        ssl_params={},
+    ):
+        return umqtt.MQTTClient(
+            self,
+            client_id,
+            server,
+            port=port,
+            user=user,
+            password=password,
+            keepalive=keepalive,
+            ssl=ssl,
+            ssl_params=ssl_params,
+        )
+
     """common method"""
 
     def check_modem_is_ready(self) -> bool:
@@ -863,7 +912,7 @@ class SIM7600(Modem):
         output, error = self.execute_at_command2(at)
         if error:
             return False
-        return True if output.find("READY") != -1 else False
+        return True if output.find(utils.converter("READY", type(output))) != -1 else False
 
     REG_NO_RESULT = -1
     REG_UNREGISTERED = 0
@@ -880,7 +929,7 @@ class SIM7600(Modem):
         if error:
             return self.REG_NO_RESULT
         n = utils.extract_int(output, "+CGREG: ", ",")
-        stat = utils.extract_int(output, "+CGREG: {}".format(n), "\r\n" if n == 0 else ",")
+        stat = utils.extract_int(output, "+CGREG: {},".format(n), "\r\n" if n == 0 else ",")
         return stat
 
     def get_signal_strength(self) -> int:
@@ -903,7 +952,8 @@ class SIM7600(Modem):
         output, error = self.execute_at_command2(cgmm)
         if error:
             return ""
-        return utils.extract_text(output, "\r\n", "\r\n")
+        id = utils.extract_text(output, "\r\n", "\r\n")
+        return utils.converter(id, str)
 
     def get_gprs_network_status(self) -> bool:
         # Get attach or detach from the GPRS network
@@ -918,10 +968,7 @@ class SIM7600(Modem):
         # Set attach or detach from the GPRS network
         cgatt = ATCommand("AT+CGATT={0}".format(enable), "OK", "ERROR", self._default_timeout)
         output, error = self.execute_at_command2(cgatt)
-        if error:
-            return False
-        state = utils.extract_int(output, "+CGATT: ", "\r\n")
-        return True if state == enable else False
+        return not error
 
     def set_pdp_context(self, apn=""):
         # Set Define PDP Context
@@ -938,8 +985,8 @@ class SIM7600(Modem):
         output, error = self.execute_at_command2(cgpaddr)
         if error:
             return "0.0.0.0"
-        address = utils.extract_text(output, '+CGPADDR: {},"'.format(cid), '"')
-        return address
+        address = utils.extract_text(output, "+CGPADDR: {},".format(cid), "\r\n")
+        return utils.converter(address, str)
 
     def get_selected_operator(self) -> int:
         # Get selected operator.
@@ -949,13 +996,14 @@ class SIM7600(Modem):
             return 0
         return utils.extract_int(output, "+COPS: ", ",")
 
-    def get_imei_number(self):
+    def get_imei_number(self) -> str:
         # Request TA Serial Number Identification(IMEI)
-        cgsn = ATCommand("AT+CGSN=1", "OK", "ERROR", self._default_timeout)
+        cgsn = ATCommand("AT+CGSN", "OK", "ERROR", self._default_timeout)
         output, error = self.execute_at_command2(cgsn)
         if error:
             return ""
-        return utils.extract_text(output, "\r\n", "\r\n")
+        imei = utils.extract_text(output, "\r\n", "\r\n")
+        return utils.converter(imei, str)
 
     def get_ccid_number(self) -> str:
         # Show ICCID
@@ -963,7 +1011,8 @@ class SIM7600(Modem):
         output, error = self.execute_at_command2(iccid)
         if error:
             return ""
-        return utils.extract_text(output, "+ICCID: ", "\r\n")
+        ccid = utils.extract_text(output, "+ICCID: ", "\r\n")
+        return utils.converter(ccid, str)
 
     PDP_PARAM_IP = 1
     PDP_PARAM_APN = 2
@@ -977,4 +1026,5 @@ class SIM7600(Modem):
             output, error = self.execute_at_command2(cgdcont)
             if error:
                 return ""
-            return utils.extract_text(output, '+CGDCONT: 1,"IP","', '"')
+            anp = utils.extract_text(output, '+CGDCONT: 1,"IP","', '"')
+            return utils.converter(anp, str)
