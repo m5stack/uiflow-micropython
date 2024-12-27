@@ -109,7 +109,7 @@ class _socket:
 
         self._state = self._STATE_CLOSE
         self._ringio = micropython.RingIO(1500)
-        self._timeout = 5000
+        self._timeout = 500
 
     def __del__(self):
         self.close()
@@ -414,9 +414,272 @@ class _socket:
         return self.send(data)
 
 
+class _sockets(_socket):
+    AF_INET = socket.AF_INET
+    AF_INET6 = socket.AF_INET6
+
+    SOCK_STREAM = socket.SOCK_STREAM
+    SOCK_DGRAM = socket.SOCK_DGRAM
+    SOCK_RAW = socket.SOCK_RAW
+
+    IPPROTO_IP = socket.IPPROTO_IP
+    IPPROTO_TCP = socket.IPPROTO_TCP
+    IPPROTO_UDP = socket.IPPROTO_UDP
+
+    _proto_type = {
+        IPPROTO_TCP: "TCP",
+        IPPROTO_UDP: "UDP",
+    }
+
+    _STATE_OPEN = 0
+    _STATE_CLOSE = 1
+
+    def __init__(self, modem, af=AF_INET, type=SOCK_STREAM, proto=IPPROTO_TCP):
+        self._modem = modem
+        self._domain = af
+        self._type = type
+        self._proto = proto
+        self._fd = self._modem.apply_session_id()
+        self._address = None
+        if self._fd == -1:
+            raise SIMComError("No available session")
+
+        self._state = self._STATE_CLOSE
+        self._ringio = micropython.RingIO(1500)
+        self._timeout = 500
+
+    def __del__(self):
+        self.close()
+
+    def close(self) -> None:
+        if self._fd == -1:
+            return
+        close = ATCommand(
+            "AT+CCHCLOSE={}".format(self._fd), "OK\r\n", "ERROR\r\n", self._modem._default_timeout
+        )
+        self._modem.execute_at_command2(close)
+        self._modem.release_session_id(self._fd)
+        self._fd = -1
+        self._state = self._STATE_CLOSE
+        if hasattr(self, "_local_port"):
+            self._modem.release_port(self._local_port)
+
+    def bind(self, address):
+        pass
+
+    def listen(self, backlog):
+        pass
+
+    def accept(self):
+        pass
+
+    def connect(self, address):
+        if self._fd == -1:
+            raise SIMComError("socket closed")
+
+        if self._state == self._STATE_OPEN:
+            return
+
+        # Set the first SSL context to be used in the SSL connection
+        at = ATCommand(
+            "AT+CCHSSLCFG={},0".format(self._fd),
+            "OK\r\n",
+            "ERROR\r\n",
+            self._modem._default_timeout,
+        )
+        self._modem.execute_at_command2(at)
+        # TODO: check error
+
+        self._address = address
+        cipstart = ATCommand(
+            "AT+CCHOPEN={},{},{},{}".format(
+                self._fd, "".join(['"', address[0], '"']), address[1], 2
+            ),
+            "+CCHOPEN",
+            "ERROR\r\n",
+            120000,  # Maximum Response Time
+        )
+        output, error = self._modem.execute_at_command2(cipstart)
+        if error == self._modem.ERR_NONE:
+            self._state = self._STATE_OPEN
+            return True
+        elif error == self._modem.ERR_TIMEOUT:
+            raise SIMComError(SIMComError.D_GENERIC, error, cipstart.cmd)
+        elif error == self._modem.ERR_GENERIC:
+            err = utils.extract_int(output, "\+CCHOPEN: {},".format(self._fd), "\r\n")
+            raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipstart.cmd)
+
+    def send(self, data: bytes | str | bytearray) -> int:
+        # data type check
+        if isinstance(data, str):
+            data = data.encode("utf-8")
+        if isinstance(data, bytearray):
+            data = bytes(data)
+
+        # send cmd
+        to_send = len(data)
+        cipsend = ATCommand(
+            "AT+CCHSEND={},{}".format(self._fd, to_send),
+            ">",
+            "ERROR\r\n",
+            self._modem._default_timeout,
+        )
+        output, error = self._modem.execute_at_command2(cipsend, line_end="")
+        if error == self._modem.ERR_GENERIC:
+            err = utils.extract_int(output, "\+CCHSEND: ", "\r\n")
+            raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
+        elif error == self._modem.ERR_TIMEOUT:
+            raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
+
+        sented = 0
+        while sented < to_send:
+            self._modem.uart.write(data[sented:to_send])
+            cipsend = ATCommand(
+                "AT+CCHSEND={},{}".format(self._fd, to_send),
+                "+CCHSEND:",
+                "ERROR\r\n",
+                self._modem._default_timeout,
+            )
+            output, error = self._modem.response_at_command2(cipsend)
+            if error == self._modem.ERR_GENERIC:
+                err = utils.extract_int(output, "\+CIPERROR: ", "\r\n")
+                raise SIMComError(SIMComError.D_TCPIP_ERR, err, cipsend.cmd)
+            elif error == self._modem.ERR_TIMEOUT:
+                raise SIMComError(SIMComError.D_GENERIC, error, cipsend.cmd)
+            elif error == self._modem.ERR_NONE:
+                # FIXME: check sented
+                sented = to_send - sented
+        return to_send
+
+    def sendall(self, data: bytes | str | bytearray) -> None:
+        self.send(data)
+
+    def _recv(self) -> None:
+        cchrecv = ATCommand(
+            "AT+CCHRECV?",
+            "OK",
+            "ERROR",
+            self._modem._default_timeout,
+        )
+        output, error = self._modem.execute_at_command2(cchrecv)
+        if error == self._modem.ERR_GENERIC:
+            errno = utils.extract_int(output, "\+IP ERROR: ", "\r\n")
+            raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, cchrecv.cmd)
+        elif error == self._modem.ERR_TIMEOUT:
+            raise SIMComError(SIMComError.D_GENERIC, error, cchrecv.cmd)
+
+        cache_len_0 = int(utils.extract_text(output, "\+CCHRECV: LEN,", ","))
+        cache_len_1 = int(
+            utils.extract_text(output, "\+CCHRECV: LEN,{},".format(cache_len_0), "\r\n")
+        )
+        to_recv = cache_len_0 if self._fd == 0 else cache_len_1
+        if to_recv == 0:
+            return
+
+        if to_recv > 1024:
+            to_recv = 1024
+
+        to_recv = (1500 - self._ringio.any()) if to_recv > (1500 - self._ringio.any()) else to_recv
+
+        ciprxget = ATCommand(
+            "AT+CCHRECV={},{}".format(self._fd, to_recv),
+            "+CCHRECV: {},0".format(self._fd),
+            "ERROR\r\n",
+            self._modem._default_timeout,
+        )
+        output, error = self._modem.execute_at_command2(ciprxget)
+        if error == self._modem.ERR_GENERIC:
+            errno = utils.extract_int(output, "\+CCHRECV: {},".format(self._fd), "\r\n")
+            raise SIMComError(SIMComError.D_TCPIP_ERR_INFO, errno, ciprxget.cmd)
+        elif error == self._modem.ERR_TIMEOUT:
+            raise SIMComError(SIMComError.D_GENERIC, error, ciprxget.cmd)
+
+        # prase data
+        recv_len = utils.extract_int(output, "\+CCHRECV: DATA,{},".format(self._fd), "\r\n")
+        fstr = "+CCHRECV: DATA,{},{}\r\n".format(self._fd, recv_len)
+        start = output.find(fstr) + len(fstr)
+
+        self._ringio.write(output[start : start + recv_len].encode("utf-8"))
+
+    def recv(self, bufsize) -> bytes:
+        return self.recvfrom(bufsize)
+
+    def readall(self) -> bytes:
+        out = bytearray(self._ringio.any())
+        self._ringio.readinto(out)
+        last_time = time.ticks_ms()
+        while time.ticks_diff(time.ticks_ms(), last_time) < self._timeout:
+            self._recv()
+            buf = self._ringio.read()
+            out.extend(buf)
+
+        return bytes(out)
+
+    def recvfrom(self, bufsize) -> bytes:
+        if bufsize == -1:
+            return self.readall()
+
+        if self._ringio.any() > bufsize:
+            return self._ringio.read(bufsize)
+
+        read_len = self._ringio.any()
+        out = bytearray(read_len)
+        self._ringio.readinto(out)
+        last_time = time.ticks_ms()
+        while read_len < bufsize and time.ticks_diff(time.ticks_ms(), last_time) < self._timeout:
+            self._recv()
+            buf = self._ringio.read(bufsize - read_len)
+            out.extend(buf)
+            read_len += len(buf)
+
+        return bytes(out)
+
+    def setsockopt(self, level, optname, value):
+        raise NotImplementedError
+
+    def settimeout(self, timeout):
+        raise NotImplementedError
+
+    def setblocking(self):
+        raise NotImplementedError
+
+    def makefile(self, mode):
+        return self
+
+    def fileno(self):
+        return self._fd
+
+    def read(self, *args) -> bytes:
+        return self.recvfrom(args[0] if len(args) > 0 else -1)
+
+    def readinto(self, *args) -> int:
+        buf = args[0]
+        nbytes = len(buf)
+        if len(args) > 1:
+            nbytes = args[1] if args[1] < nbytes else nbytes
+
+        if self._ringio.any() < nbytes:
+            self._recv()
+
+        return self._ringio.readinto(buf, nbytes)
+
+    def readline(self) -> bytes:
+        last_time = time.ticks_ms()
+        while (
+            self._ringio.any() == 0 and time.ticks_diff(time.ticks_ms(), last_time) < self._timeout
+        ):
+            self._recv()
+        return self._ringio.readline()
+
+    def write(self, data) -> int:
+        return self.send(data)
+
+
 class SIM7600(Modem):
     # tcp/udp socket fd list
     _fds = [-1 for _ in range(10)]
+
+    _session_id = [-1 for _ in range(2)]
 
     # tcp/udp socket port list
     _used_port = []
@@ -450,6 +713,26 @@ class SIM7600(Modem):
             ATCommand("AT+NETOPEN", "OK\r\n", "ERROR\r\n", self._default_timeout)
         )
 
+        # Set the SSL version of the first SSL context
+        self.execute_at_command2(
+            ATCommand('AT+CSSLCFG="sslversion",0,4', "OK\r\n", "ERROR\r\n", self._default_timeout)
+        )
+
+        # Set the authentication mode(not verify server) of the first SSL context
+        self.execute_at_command2(
+            ATCommand('AT+CSSLCFG="authmode",0,0', "OK\r\n", "ERROR\r\n", self._default_timeout)
+        )
+
+        # Enable reporting +CCHSEND result,
+        self.execute_at_command2(
+            ATCommand("AT+CCHSET=1,1", "OK\r\n", "ERROR\r\n", self._default_timeout)
+        )
+
+        # start SSL service, activate PDP context
+        self.execute_at_command2(
+            ATCommand("AT+CCHSTART", "+CCHSTART\r\n", "ERROR\r\n", self._default_timeout)
+        )
+
     """fd/port management"""
 
     def apply_fd(self) -> int:
@@ -461,6 +744,16 @@ class SIM7600(Modem):
 
     def release_fd(self, fd: int) -> None:
         self._fds[fd] = -1
+
+    def apply_session_id(self) -> int:
+        for i in range(2):
+            if self._session_id[i] == -1:
+                self._session_id[i] = i
+                return i
+        return -1
+
+    def release_session_id(self, session_id: int) -> None:
+        self._session_id[session_id] = -1
 
     def apply_port(self) -> int:
         for i in range(1024, 65535):
@@ -498,21 +791,21 @@ class SIM7600(Modem):
     def socket(self, af=socket.AF_INET, type=socket.SOCK_STREAM, proto=socket.IPPROTO_TCP):
         return _socket(self, af, type, proto)
 
-    # def wrap_socket(
-    #     self,
-    #     sock,
-    #     server_side=False,
-    #     key=None,
-    #     cert=None,
-    #     cert_reqs=CERT_NONE,
-    #     cadata=None,
-    #     server_hostname=None,
-    #     do_handshake=True,
-    # ):
-    #     sock.close()
-    #     s = _sockets(self, sock._domain, sock._type, sock._proto)
-    #     s.connect(sock._address)
-    #     return s
+    def wrap_socket(
+        self,
+        sock,
+        # server_side=False,
+        # key=None,
+        # cert=None,
+        # cert_reqs=CERT_NONE,
+        # cadata=None,
+        server_hostname=None,
+        # do_handshake=True,
+    ):
+        sock.close()
+        s = _sockets(self, sock._domain, sock._type, sock._proto)
+        s.connect(sock._address)
+        return s
 
     """request method"""
 

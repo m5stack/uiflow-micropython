@@ -94,7 +94,7 @@ def _request(
     try:
         s.connect(ai[-1])
         if proto == "https:":
-            s = ssl.wrap_socket(s, server_hostname=host)
+            s = modem.wrap_socket(s, server_hostname=host)
         s.write(b"%s /%s HTTP/1.0\r\n" % (method, path))
         if "Host" not in headers:
             s.write(b"Host: %s\r\n" % host)
