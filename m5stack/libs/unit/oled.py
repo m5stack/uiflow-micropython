@@ -26,13 +26,13 @@ class OLEDUnit:
 
     """
 
-    def __init__(
-        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3D, freq: int = 400000
+    def __new__(
+        cls, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3C, freq: int = 400000
     ) -> None:
         """! Initialize the Unit OLED
 
         @param port The port to which the Unit OLED is connected. port[0]: scl pin, port[1]: sda pin.
-        @param address I2C address of the Unit OLED, default is 0x3D.
+        @param address I2C address of the Unit OLED, default is 0x3c.
         @param freq I2C frequency of the Unit OLED.
         """
-        self.display = M5.addDisplay(i2c, address, {"unit_oled": True})  # Add OLED unit
+        return M5.addDisplay(i2c, address, {"unit_oled": True})  # Add OLED unit

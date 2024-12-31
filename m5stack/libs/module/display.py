@@ -24,15 +24,17 @@ class DisplayModule:
 
     """
 
-    def __init__(
-        self,
+    def __new__(
+        cls,
         port: tuple = (36, 26),
-        width: int = 216,
-        height: int = 144,
+        width: int = 1280,
+        height: int = 720,
         refresh_rate: int = 60,
+        output_width: int = 1280,
+        output_height: int = 720,
+        scale_w: int = 1,
+        scale_h: int = 1,
         pixel_clock: int = 74250000,
-        scale_w: int = 0,
-        scale_h: int = 0,
     ) -> None:
         """! Initialize the Module Display
 
@@ -40,24 +42,26 @@ class DisplayModule:
         @param width The width of the Module Display.
         @param height The height of the Module Display.
         @param refresh_rate The refresh rate of the Module Display.
-        @param pixel_clock The pixel clock of the Module Display.
+        @param output_width The width of the output of the Module Display.
+        @param output_height The height of the output of the Module Display.
         @param scale_w The scale width of the Module Display.
         @param scale_h The scale height of the Module Display.
+        @param pixel_clock The pixel clock of the Module Display.
 
         """
-
-        self.display = M5.addDisplay(
+        return M5.addDisplay(
             None,
             0,
             {
                 "module_display": {
                     "enabled": True,
+                    # see to M5ModuleDisplay::config_t
                     "width": width,
                     "height": height,
                     "refresh_rate": refresh_rate,
-                    "output_width": 0,  # 0 default
-                    "output_height": 0,
-                    "scale_w": scale_w,  # intger
+                    "output_width": output_width,
+                    "output_height": output_height,
+                    "scale_w": scale_w,
                     "scale_h": scale_h,
                     "pixel_clock": pixel_clock,
                 }
