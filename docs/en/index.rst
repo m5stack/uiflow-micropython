@@ -11,6 +11,7 @@ MicroPython documentation and references
     widgets/index.rst
     software/index.rst
     hardware/index.rst
+    advanced/index.rst
     module/index.rst
     units/index.rst
     hats/index.rst
