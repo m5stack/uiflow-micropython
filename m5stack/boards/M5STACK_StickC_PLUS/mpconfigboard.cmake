@@ -27,7 +27,7 @@ set(TINY_FLAG 1)
 
 # NOTE: 这里的配置是无效的，仅为了兼容ADF，保证编译通过
 set(ADF_COMPS     "$ENV{ADF_PATH}/components")
-set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/lyrat_mini_v1_1")
+#set(ADF_BOARD_DIR "$ENV{ADF_PATH}/components/audio_board/lyrat_mini_v1_1")
 
 list(APPEND EXTRA_COMPONENT_DIRS
     $ENV{ADF_PATH}/components/audio_pipeline

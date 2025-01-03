@@ -7,6 +7,7 @@ package(
         "__init__.py",
         "atom_can.py",
         "atom_socket.py",
+        "echo.py",
         "motion.py",
     ),
     base_path="..",

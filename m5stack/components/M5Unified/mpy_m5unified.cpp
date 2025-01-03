@@ -351,6 +351,22 @@ mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
 }
 
 
+mp_obj_t m5_create_speaker(void) {
+    auto spk = new m5::Speaker_Class();
+    spk_obj_t *o = mp_obj_malloc_with_finaliser(spk_obj_t, &mp_spk_type);
+    o->spk = spk;
+    return MP_OBJ_FROM_PTR(o);
+}
+
+
+mp_obj_t m5_create_mic(void) {
+    auto mic = new m5::Mic_Class();
+    mic_obj_t *o = mp_obj_malloc_with_finaliser(mic_obj_t, &mp_mic_type);
+    o->mic = mic;
+    return MP_OBJ_FROM_PTR(o);
+}
+
+
 static void in_i2c_init(void) {
     gpio_num_t in_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_scl);
     gpio_num_t in_sda = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_sda);

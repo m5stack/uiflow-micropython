@@ -24,6 +24,8 @@
 
 extern mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args);
 extern mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict);
+extern mp_obj_t m5_create_speaker(void);
+extern mp_obj_t m5_create_mic(void);
 
 extern mp_obj_t m5_update(void);
 extern mp_obj_t m5_end(void);

@@ -145,3 +145,6 @@ class Motion:
         speed = int(min(127, speed))
         speed = int(max(-127, speed))
         self.i2c.writeto_mem(self.addr, ch + 0x20, struct.pack("b", speed))
+
+
+MotionBase = Motion
