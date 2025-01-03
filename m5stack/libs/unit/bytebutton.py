@@ -9,18 +9,18 @@ class ByteUnit:
     BYTEBUTTON_LED_USER_MODE = 0
     BYTEBUTTON_LED_SYS_MODE = 1
 
-    _BYTEBUTTON_BYTE_BUTTON_STATUS_REG = 0x00
-    _BYTEBUTTON_BUTTON_STATUS_REG = 0x60
-    _BYTEBUTTON_LED_BRIGHTNESS_REG = 0x10
-    _BYTEBUTTON_LED_SHOW_MODE_REG = 0x19
-    _BYTEBUTTON_LED_USER_RGB888_REG = 0x20
-    _BYTEBUTTON_LED_USER_RGB232_REG = 0x50
-    _BYTEBUTTON_LED_SYS_RGB888_REG = 0x70
-    _BYTEBUTTON_LED_SYS_RGB888_UNPRESED_REG = 0x90
-    _BYTEBUTTON_IRQ_ENABLE_REG = 0xF1
-    _BYTEBUTTON_FLASH_WRITE_BACK_REG = 0xF0
-    _BYTEBUTTON_I2C_ADDRESS_REG = 0xFF
-    _BYTEBUTTON_FIRMWARE_VERSION_REG = 0xFE
+    _BYTEUNIT_BYTE_BUTTON_STATUS_REG = 0x00
+    _BYTEUNIT_BUTTON_STATUS_REG = 0x60
+    _BYTEUNIT_LED_BRIGHTNESS_REG = 0x10
+    _BYTEUNIT_LED_SHOW_MODE_REG = 0x19
+    _BYTEUNIT_LED_USER_RGB888_REG = 0x20
+    _BYTEUNIT_LED_USER_RGB232_REG = 0x50
+    _BYTEUNIT_LED_SYS_RGB888_REG = 0x70
+    _BYTEUNIT_LED_SYS_RGB888_UNPRESED_REG = 0x90
+    _BYTEUNIT_IRQ_ENABLE_REG = 0xF1
+    _BYTEUNIT_FLASH_WRITE_BACK_REG = 0xF0
+    _BYTEUNIT_I2C_ADDRESS_REG = 0xFF
+    _BYTEUNIT_FIRMWARE_VERSION_REG = 0xFE
     """
     note:
         en: Unit ByteButton is an 8-button touch switch input unit equipped with 8 button inputs and 9 WS2812C RGB LEDs. It uses the STM32 microcontroller and supports I2C communication. The board includes two Port A interfaces and supports cascading multiple Unit ByteButton modules, making it suitable for complex systems. It can achieve button input detection and dynamic lighting feedback, ideal for smart home control, gaming devices, educational platforms, industrial status displays, and interactive exhibitions.
@@ -60,7 +60,7 @@ class ByteUnit:
         params:
             note:
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_BYTE_BUTTON_STATUS_REG, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_BYTE_BUTTON_STATUS_REG, 1)[0]
 
     def get_button_state(self, num: int) -> bool:
         """
@@ -72,8 +72,7 @@ class ByteUnit:
                 note: The index of the button (0-7).
         """
         return (
-            self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_BUTTON_STATUS_REG + num, 1)[0]
-            == 0
+            self.i2c.readfrom_mem(self.address, self._BYTEUNIT_BUTTON_STATUS_REG + num, 1)[0] == 0
         )
 
     def get_led_show_mode(self) -> int:
@@ -84,7 +83,7 @@ class ByteUnit:
         params:
             note:
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_LED_SHOW_MODE_REG, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_LED_SHOW_MODE_REG, 1)[0]
 
     def set_led_show_mode(self, mode: int) -> None:
         """
@@ -93,9 +92,9 @@ class ByteUnit:
 
         params:
             mode:
-                note: The LED show mode to set. (BYTEBUTTON_LED_USER_MODE or BYTEBUTTON_LED_SYS_MODE)
+                note: The LED show mode to set. (BYTEBUTTON_LED_USER_MODE or _BYTEUNIT_LED_SYS_MODE)
         """
-        self.i2c.writeto_mem(self.address, self._BYTEBUTTON_LED_SHOW_MODE_REG, bytes([mode]))
+        self.i2c.writeto_mem(self.address, self._BYTEUNIT_LED_SHOW_MODE_REG, bytes([mode]))
 
     def set_led_brightness(self, num: int, brightness: int) -> None:
         """
@@ -109,7 +108,7 @@ class ByteUnit:
                 note: The brightness level (0-255).
         """
         self.i2c.writeto_mem(
-            self.address, self._BYTEBUTTON_LED_BRIGHTNESS_REG + num, bytes([brightness])
+            self.address, self._BYTEUNIT_LED_BRIGHTNESS_REG + num, bytes([brightness])
         )
 
     def get_led_brightness(self, num: int) -> int:
@@ -121,7 +120,7 @@ class ByteUnit:
             num:
                 note: The index of the LED (0-7).
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_LED_BRIGHTNESS_REG + num, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_LED_BRIGHTNESS_REG + num, 1)[0]
 
     def set_led_color(
         self,
@@ -146,12 +145,12 @@ class ByteUnit:
         """
         color_bytes = color.to_bytes(3, "little")
         if led_show_mode == self.BYTEBUTTON_LED_USER_MODE:
-            reg_addr = self._BYTEBUTTON_LED_USER_RGB888_REG
+            reg_addr = self._BYTEUNIT_LED_USER_RGB888_REG
         else:
             reg_addr = (
-                self._BYTEBUTTON_LED_SYS_RGB888_REG
+                self._BYTEUNIT_LED_SYS_RGB888_REG
                 if btn_is_pressed
-                else self._BYTEBUTTON_LED_SYS_RGB888_UNPRESED_REG
+                else self._BYTEUNIT_LED_SYS_RGB888_UNPRESED_REG
             )
 
         self.i2c.writeto_mem(
@@ -174,12 +173,12 @@ class ByteUnit:
                 note: Whether the button is pressed (affects color in SYS mode).
         """
         if led_show_mode == self.BYTEBUTTON_LED_USER_MODE:
-            reg_addr = self._BYTEBUTTON_LED_USER_RGB888_REG
+            reg_addr = self._BYTEUNIT_LED_USER_RGB888_REG
         else:
             reg_addr = (
-                self._BYTEBUTTON_LED_SYS_RGB888_REG
+                self._BYTEUNIT_LED_SYS_RGB888_REG
                 if btn_is_pressed
-                else self._BYTEBUTTON_LED_SYS_RGB888_UNPRESED_REG
+                else self._BYTEUNIT_LED_SYS_RGB888_UNPRESED_REG
             )
         color_bytes = self.i2c.readfrom_mem(
             self.address, reg_addr + ((num // 4) * 0x10 + (num % 4) * 4), 3
@@ -254,7 +253,7 @@ class ByteUnit:
                 note: The RGB233 color value to set.
         """
         color_bytes = bytes([self.rgb888_to_rgb233(color)])
-        self.i2c.writeto_mem(self.address, self._BYTEBUTTON_LED_USER_RGB232_REG + num, color_bytes)
+        self.i2c.writeto_mem(self.address, self._BYTEUNIT_LED_USER_RGB232_REG + num, color_bytes)
 
     def get_rgb233(self, num: int):
         """
@@ -265,9 +264,7 @@ class ByteUnit:
             num:
                 note: The index of the LED (0-7).
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_LED_USER_RGB232_REG + num, 1)[
-            0
-        ]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_LED_USER_RGB232_REG + num, 1)[0]
 
     def set_irq_enable(self, enable: bool):
         """
@@ -279,7 +276,7 @@ class ByteUnit:
                 note: Whether to enable (True) or disable (False) IRQ.
         """
         self.i2c.writeto_mem(
-            self.address, self._BYTEBUTTON_IRQ_ENABLE_REG, bytes([1 if enable else 0])
+            self.address, self._BYTEUNIT_IRQ_ENABLE_REG, bytes([1 if enable else 0])
         )
 
     def get_irq_enable(self):
@@ -290,7 +287,7 @@ class ByteUnit:
         params:
             note:
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_IRQ_ENABLE_REG, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_IRQ_ENABLE_REG, 1)[0]
 
     def save_to_flash(self):
         """
@@ -300,7 +297,7 @@ class ByteUnit:
         params:
             note:
         """
-        self.i2c.writeto_mem(self.address, self._BYTEBUTTON_FLASH_WRITE_BACK_REG, bytes([0x01]))
+        self.i2c.writeto_mem(self.address, self._BYTEUNIT_FLASH_WRITE_BACK_REG, bytes([0x01]))
 
     def get_firmware_version(self):
         """
@@ -310,7 +307,7 @@ class ByteUnit:
         params:
             note:
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_FIRMWARE_VERSION_REG, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_FIRMWARE_VERSION_REG, 1)[0]
 
     def set_i2c_address(self, new_addr: int):
         """
@@ -324,7 +321,7 @@ class ByteUnit:
         if new_addr >= 0x08 and new_addr <= 0x78:
             if new_addr != self.address:
                 self.i2c.writeto_mem(
-                    self.address, self._BYTEBUTTON_I2C_ADDRESS_REG, bytearray([new_addr])
+                    self.address, self._BYTEUNIT_I2C_ADDRESS_REG, bytearray([new_addr])
                 )
                 self.address = new_addr
         else:
@@ -338,7 +335,7 @@ class ByteUnit:
         params:
             note:
         """
-        return self.i2c.readfrom_mem(self.address, self._BYTEBUTTON_I2C_ADDRESS_REG, 1)[0]
+        return self.i2c.readfrom_mem(self.address, self._BYTEUNIT_I2C_ADDRESS_REG, 1)[0]
 
 
 class ByteButtonUnit(ByteUnit):
@@ -349,6 +346,9 @@ class ByteButtonUnit(ByteUnit):
 
 
 class ByteSwitchUnit(ByteUnit):
+    BYTESWITCH_LED_USER_MODE = 0
+    BYTESWITCH_LED_SYS_MODE = 1
+
     def __init__(self, i2c: I2C, address: int = ByteUnit.BYTESWITCH_I2C_ADDRESS):
         super().__init__(i2c, address)
         if self.address not in self.i2c.scan():

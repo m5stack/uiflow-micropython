@@ -15,6 +15,7 @@ Unit
     button.rst
     buzzer.rst
     bytebutton.rst
+    byteswitch.rst
     can.rst
     cardkb.rst
     catch.rst

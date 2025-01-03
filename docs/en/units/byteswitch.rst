@@ -1,6 +1,6 @@
 
-ByteSwitchUnit
-==============
+ByteSwitch Unit
+===============
 .. sku:U191
 .. include:: ../refs/unit.byteswitch.ref
 
@@ -10,20 +10,19 @@ Support the following products:
 
 |ByteSwitchUnit|
 
-..
-    Micropython Example:
+Micropython Example:
 
-        .. literalinclude:: ../../../examples/unit/byteswitch/byteswitch_cores3_example.py
-            :language: python
-            :linenos:
+    .. literalinclude:: ../../../examples/unit/byteswitch/byteswitch_cores3_example.py
+        :language: python
+        :linenos:
 
-    UIFLOW2 Example:
+UIFLOW2 Example:
 
-        |example.png|
+    |example.png|
 
-    .. only:: builder_html
+.. only:: builder_html
 
-        |byteswitch_cores3_example.m5f2|
+    |byteswitch_cores3_example.m5f2|
 
 
 class ByteSwitchUnit
@@ -80,8 +79,8 @@ Methods
     :param int mode: The LED show mode to set.
 
         Options:
-            - ``BYTEBUTTON_LED_USER_MODE``: 0
-            - ``BYTEBUTTON_LED_SYS_MODE``: 1
+            - ``BYTESWITCH_LED_USER_MODE``: 0
+            - ``BYTESWITCH_LED_SYS_MODE``: 1
 
     UIFLOW2:
 
@@ -114,24 +113,29 @@ Methods
 
     :param int num: The index of the LED (0-7).
     :param int color: The RGB888 color value to set.
-    :param int led_show_mode: The LED show mode, default is BYTEBUTTON_LED_SYS_MODE.
+    :param int led_show_mode: The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
     :param bool btn_is_pressed: Whether the switch is pressed (affects color in SYS mode).
 
     UIFLOW2:
 
-        |set_led_color.png|
+        |set_sys_mode_led_color.png|
+
+        |set_user_mode_led_color.png|
 
 .. method:: ByteSwitchUnit.get_led_color(num, led_show_mode, btn_is_pressed) -> int
 
     Get the color of a specific LED.
 
     :param int num: The index of the LED (0-7).
-    :param int led_show_mode: The LED show mode, default is BYTEBUTTON_LED_SYS_MODE.
+    :param int led_show_mode: The LED show mode, default is BYTESWITCH_LED_SYS_MODE.
     :param bool btn_is_pressed: Whether the switch is pressed (affects color in SYS mode).
 
     UIFLOW2:
 
-        |get_led_color.png|
+        |get_sys_mode_led_color.png|
+
+        |get_user_mode_led_color.png|
+
 
 .. method:: ByteSwitchUnit.set_indicator_brightness(brightness)
 
@@ -177,10 +181,6 @@ Methods
 
     :param int color: The RGB888 color value as a 32-bit integer.
 
-    UIFLOW2:
-
-        |rgb888_to_rgb233.png|
-
 .. method:: ByteSwitchUnit.set_rgb233(num, color)
 
     Set the color of a specific LED in RGB233 format.
@@ -188,19 +188,11 @@ Methods
     :param int num: The index of the LED (0-7).
     :param int color: The RGB233 color value to set.
 
-    UIFLOW2:
-
-        |set_rgb233.png|
-
 .. method:: ByteSwitchUnit.get_rgb233(num)
 
     Get the color of a specific LED in RGB233 format.
 
     :param int num: The index of the LED (0-7).
-
-    UIFLOW2:
-
-        |get_rgb233.png|
 
 .. method:: ByteSwitchUnit.set_irq_enable(enable)
 
@@ -208,23 +200,13 @@ Methods
 
     :param bool enable: Whether to enable (True) or disable (False) IRQ.
 
-    UIFLOW2:
-
-        |set_irq_enable.png|
-
 .. method:: ByteSwitchUnit.get_irq_enable()
 
     Get the current IRQ enable status.
 
-
-    UIFLOW2:
-
-        |get_irq_enable.png|
-
 .. method:: ByteSwitchUnit.save_to_flash()
 
     Save the current user settings to flash.
-
 
     UIFLOW2:
 
