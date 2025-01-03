@@ -51,14 +51,6 @@ Methods
 
     :return: Raw ADC value as a 12-bit integer.
 
-.. method:: AIN4_20MAUnit.get_adc_raw16_value() -> int
-
-    Retrieves the raw ADC value from the channel.
-
-    Note: This method will be removed in the next few versions, please use get_adc_raw_value()
-
-    :return: Raw ADC value as a 12-bit integer.
-
     UIFLOW2:
 
         |get_adc_raw16_value.png|
@@ -66,14 +58,6 @@ Methods
 .. method:: AIN4_20MAUnit.get_current_value() -> float
 
     Retrieves the current value (in mA) from the channel.
-
-    :return: Current value in milliamperes (mA).
-
-.. method:: AIN4_20MAUnit.get_4_20ma_current_value() -> float
-
-    Retrieves the current value (in mA) from the channel.
-
-    Note: This method will be removed in the next few versions, please use get_current_value()
 
     :return: Current value in milliamperes (mA).
 
@@ -90,18 +74,6 @@ Methods
     UIFLOW2:
 
         |set_cal_current.png|
-
-.. method:: AIN4_20MAUnit.get_device_spec() -> int
-
-    Retrieves the firmware version or i2c address of the AIN 4-20mA unit.
-
-    :return: Firmware version or I2C address.
-
-    :Note: This method will be removed in the next few versions, please use get_firmware_version() and get_i2c_address()
-
-    UIFLOW2:
-
-        |get_device_spec.png|
 
 .. method:: AIN4_20MAUnit.get_firmware_version() -> int
 
@@ -132,8 +104,3 @@ Methods
     UIFLOW2:
 
         |set_i2c_address.png|
-
-
-
-
-
