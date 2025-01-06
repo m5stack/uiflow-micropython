@@ -8,6 +8,7 @@ _attrs = {
     "ATOMEchoBase": "echo",
     "Motion": "motion",
     "MotionBase": "motion",
+    "SpeakerBase": "speaker",
 }
 
 

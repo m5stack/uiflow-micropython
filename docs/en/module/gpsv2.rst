@@ -27,7 +27,7 @@ UIFLOW2 Example:
     |gpsv2_core2_example.m5f2|
 
 class GPSV2Module
-----------------
+-----------------
 
 Constructors
 ------------

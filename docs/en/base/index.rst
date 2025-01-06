@@ -8,3 +8,4 @@ Base
     atom_socket.rst
     echo.rst
     motion.rst
+    speaker.rst

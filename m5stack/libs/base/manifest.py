@@ -9,6 +9,7 @@ package(
         "atom_socket.py",
         "echo.py",
         "motion.py",
+        "speaker.py",
     ),
     base_path="..",
     opt=3,
