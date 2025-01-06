@@ -21,6 +21,8 @@ _attrs = {
     "RS485Hat": "rs485",
     "ServoHat": "servo",
     "Servos8Hat": "servo8",
+    "SpeakerHat": "speaker",
+    "Speaker2Hat": "speaker2",
     "ThermalHat": "thermal",
     "ToFHat": "tof",
     "VibratorHat": "vibrator",

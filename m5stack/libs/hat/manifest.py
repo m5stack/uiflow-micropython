@@ -24,6 +24,8 @@ package(
         "rs485.py",
         "servo.py",
         "servo8.py",
+        "speaker.py",
+        "speaker2.py",
         "thermal.py",
         "tof.py",
         "vibrator.py",
