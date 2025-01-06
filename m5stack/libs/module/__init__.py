@@ -27,6 +27,8 @@ _attrs = {
     "PM25Module": "pm25",
     "PPSModule": "pps",
     "RCAModule": "rca",
+    "PwrCANModule": "pwrcan",
+    "PwrCANModuleRS485": "pwrcan",
     "Relay2Module": "relay_2",
     "Relay4Module": "relay_4",
     "RS232Module": "rs232",

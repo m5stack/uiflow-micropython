@@ -22,6 +22,7 @@ Module
     plus.rst
     pm25.rst
     pps.rst
+    pwrcan.rst
     rca.rst
     relay_2.rst
     rs232.rst

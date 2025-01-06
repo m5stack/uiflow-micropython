@@ -29,6 +29,7 @@ package(
         "plus.py",
         "pm25.py",
         "pps.py",
+        "pwrcan.py",
         "rca.py",
         "relay_2.py",
         "relay_4.py",
