@@ -17,5 +17,4 @@ Hardware
     sen55.rst
     speaker.rst
     wdt.rst
-    camera.rst
     display.rst

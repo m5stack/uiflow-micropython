@@ -1,7 +1,7 @@
-:mod:`dl` --- deep learning 
+dl --- deep learning 
 =====================================
 
-.. include:: ../refs/software.dl.ref
+.. include:: ../refs/advanced.dl.ref
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
@@ -14,7 +14,7 @@ Micropython Example
 human face detect
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/dl/cores3_example_human_face_detect.py
+    .. literalinclude:: ../../../examples/advanced/dl/cores3_example_human_face_detect.py
         :language: python
         :linenos:
         
@@ -22,14 +22,14 @@ human face detect
 pedestrain detect
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/dl/cores3_example_pedestrian_detect.py
+    .. literalinclude:: ../../../examples/advanced/dl/cores3_example_pedestrian_detect.py
         :language: python
         :linenos:
  
 human face recognition  
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/dl/cores3_example_human_face_recognition.py
+    .. literalinclude:: ../../../examples/advanced/dl/cores3_example_human_face_recognition.py
         :language: python
         :linenos:
  

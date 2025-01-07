@@ -1,7 +1,7 @@
-:mod:`image`  
+image
 ===============================
 
-.. include:: ../refs/software.image.ref
+.. include:: ../refs/advanced.image.ref
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
@@ -14,7 +14,7 @@ Micropython Example
 draw test
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/image/cores3_example_draw_test.py
+    .. literalinclude:: ../../../examples/advanced/image/cores3_example_draw_test.py
         :language: python
         :linenos:
 

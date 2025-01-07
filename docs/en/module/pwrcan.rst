@@ -51,7 +51,7 @@ Constructors
 
     UIFLOW2:
 
-        |init1.png|
+        |init.png|
 
 Methods
 -------
@@ -60,7 +60,7 @@ PwrCANModule class inherits CAN class, See :ref:`hardware.CAN <hardware.CAN>` fo
 
 
 class PwrCANModuleRS485
-------------------
+-----------------------
 
 Constructors
 ------------
@@ -73,7 +73,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.png|
+        |init_rs485.png|
 
 
 Methods
@@ -175,8 +175,6 @@ Methods
 
         |read_bytes.png|
 
-        |read_raw_data.png|
-
 
 .. method:: PwrCANModuleRS485.readinto(buf[, nbytes])
 
@@ -214,15 +212,9 @@ Methods
 
         |write.png|
 
-        |write1.png|
-
         |write_line.png|
 
         |write_list.png|
-
-        |write_raw_data.png|
-
-        |write_raw_data_list.png|
 
 
 .. method:: PwrCANModuleRS485.sendbreak()

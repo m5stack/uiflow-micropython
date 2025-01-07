@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 17:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/image.rst:2 ee4bf22e05eb47b786085e7077ef7f7d
+msgid "image"
+msgstr ""
+
+#: ../../en/advanced/image.rst:6 ac9cc9cbcd654cfd97c4dfff79a3d6ec
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr "当前模块只适用于 CoreS3 主机"
+
+#: ../../en/advanced/image.rst:12 e3dab7ec026f4655bfa578e4e8ef7144
+msgid "Micropython Example"
+msgstr "Micropython 案例"
+
+#: ../../en/advanced/image.rst:15 ../../en/advanced/image.rst:25
+#: 393726024e9043cfa0ae22c9f086f3b2 885040fac4cc4b43b544250aef319906
+msgid "draw test"
+msgstr "绘图测试"
+
+#: ../../en/advanced/image.rst:22 2de7e679b9f947868c69ee79cf030c9f
+msgid "UIFlow2.0 Example"
+msgstr ""
+
+#: ../../en/advanced/image.rst:27 16c38ffcb50644508a39eae531a32942
+msgid "|image_draw_example.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:7 70a3fb541c8a4f979fce702018f0e617
+msgid "image_draw_example.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:31 6f7448cdece94e16a4f4cd64d8d8ad18
+msgid "|cores3_example_draw_test.m5f2|"
+msgstr ""
+
+#: ../../en/advanced/image.rst:34 2b540bcb5bbf43efa57f2ae993419a22
+msgid "class image.Image"
+msgstr ""
+
+#: ../../en/advanced/image.rst:35 2fe3ddfd25d64a6093f304f63d852d28
+msgid "The line object is returned by `camera.snapshot()`."
+msgstr "``image.Image`` 对象由 `camera.snapshot()` 返回."
+
+#: ../../en/advanced/image.rst:38 d265f707bb8d4be4928f48c7608180f8
+msgid "Basic Methods"
+msgstr ""
+
+#: ../../en/advanced/image.rst:42 f8bbfb9f358f495ba4a5ded17b2dde06
+msgid "Returns the image width in pixels."
+msgstr "返回图像的宽度（以像素为单位）。"
+
+#: ../../en/advanced/image.rst:44 ../../en/advanced/image.rst:52
+#: ../../en/advanced/image.rst:60 ../../en/advanced/image.rst:68
+#: ../../en/advanced/image.rst:76 ../../en/advanced/image.rst:97
+#: ../../en/advanced/image.rst:116 ../../en/advanced/image.rst:135
+#: ../../en/advanced/image.rst:158 ../../en/advanced/image.rst:189
+#: 1ba2b755d2984b4fbe7b70469a4957d4 33013c866cd94672a9e92de291019465
+#: 3bd044c0d20749408235cba0081ab5d5 3d9fedfde9a94e819ab6c4fcb9de6271
+#: 5907d01216aa4276b2e6b4ebad37f82c 66480c95cea04b3fb914650f032ede38
+#: 7868b23b76e44da58a82afc78aab7f16 7be962d6a8e2460a81716adbec2d2381
+#: c0c9b2445f744e9f844b98cf8d98844b c43764dca7614bfba7ec67ec0a881764
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/advanced/image.rst:46 a0a2778d4acf463780ad6332a970e37d
+msgid "|width.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:1 fbc07c7112de4bb2b1038e494c3aa60d
+msgid "width.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:50 25304f03dc8147e8b5134e822b26d9ab
+msgid "Returns the image height in pixels."
+msgstr "返回图像的高度（以像素为单位）。"
+
+#: ../../en/advanced/image.rst:54 c7899c7acd7f4e86930369e30529fb19
+msgid "|height.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:2 ada8c480d57344188a420417694284b8
+msgid "height.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:58 f712ef47acea4ab68e3818d062d95de0
+msgid "Returns the image format"
+msgstr "返回图像的格式"
+
+#: ../../en/advanced/image.rst:62 4d28d37ac42248c295f24e8cb26da936
+msgid "|format.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:3 23c15a3da6ec40619b4e7d40077bd8b0
+msgid "format.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:66 a71cb5a4f0c047cc9f662d1882def710
+msgid "Returns the image size in bytes."
+msgstr "返回图像的大小（以字节为单位）。"
+
+#: ../../en/advanced/image.rst:70 67fceb72b26742518a7300bb76439e93
+msgid "|size.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:5 12d6f83317e541dd9d601ebfc32a4b23
+msgid "size.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:74 c5b734979560409da5ba55074e29f67b
+msgid ""
+"Returns a bytearray object that points to the image data for byte-level "
+"read/write access."
+msgstr "返回一个 bytearray 对象，该对象指向图像数据，允许进行字节级别的读写访问。"
+
+#: ../../en/advanced/image.rst:78 5fb0d6cf079e42e98a1ecac81fc736b6
+msgid "|bytearray.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:6 f87985c4bb9e4fa48a273e3aeb8aa7c9
+msgid "bytearray.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:82 5fda9afdf9c94752bbceabb5b8c234ee
+msgid "Drawing Methods"
+msgstr ""
+
+#: ../../en/advanced/image.rst:86 c551e18cbb044d2388a65589670550df
+msgid ""
+"Draws a line from (x0, y0) to (x1, y1) on the image. You may either pass "
+"x0, y0, x1, y1 separately or as a tuple (x0, y0, x1, y1)."
+msgstr "在图像上绘制一条从 (x0, y0) 到 (x1, y1) 的线段。你可以分别传递 x0, y0, x1, y1，或者将它们作为元组 (x0, y0, x1, y1) 一起传递。"
+
+#: ../../en/advanced/image.rst:89 ../../en/advanced/image.rst:106
+#: ../../en/advanced/image.rst:125 ../../en/advanced/image.rst:148
+#: 7597fe3727d74e6686fc38912af2ef2a 8e7fff87b4dd4ddea7c6236685ccc6e2
+#: b32fdbcfbaf74f44abc256e3a63fdb0b cf5b7b6cbba24caaa8913c1dc49bea68
+msgid ""
+"``color`` is an RGB888 tuple for Grayscale or RGB565 images. Defaults to "
+"white. However, you may also pass the underlying pixel value (0-255) for "
+"grayscale images or a RGB565 value for RGB565 images."
+msgstr "``color`` 颜色值 RGB888 格式，可以是 (r, g, b) 元组或整数。"
+
+#: ../../en/advanced/image.rst:93 5afde101ae0c480a9e25ac2b4f75337f
+msgid "``thickness`` controls how thick the line is in pixels."
+msgstr "``thickness`` 控制线条的粗细（以像素为单位）。"
+
+#: ../../en/advanced/image.rst:95 ../../en/advanced/image.rst:114
+#: ../../en/advanced/image.rst:133 ../../en/advanced/image.rst:155
+#: 2e0b49bfb9d74b39875bd80621bcc006 3d049b022f2d48d596d1fddf547861db
+#: 91a904127e1846a994fd349fac389c78 f7c67126a0c14d3c870d85a0adcb8bb0
+msgid ""
+"Returns the image object so you can call another method using ``.`` "
+"notation."
+msgstr "返回 ``image.Image`` 对象，以便你可以使用 . 表示法调用其他方法。"
+
+#: ../../en/advanced/image.rst:99 1a45057613904a83acc52f57a4be9fa9
+msgid "|draw_line.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:10 d237c67d052541cf977e0f8ead03dc67
+msgid "draw_line.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:103 128ab18b172449db868c24c4270ff803
+msgid ""
+"Draws a rectangle on the image. You may either pass x, y, w, h separately"
+" or as a tuple (x, y, w, h)."
+msgstr "在图像上绘制一个矩形。你可以分别传递 x, y, w, h，或者将它们作为元组 (x, y, w, h) 一起传递。"
+
+#: ../../en/advanced/image.rst:110 c06db4eebf6c4e7f980a49639d8f1171
+msgid "``thickness`` controls how thick the lines are in pixels."
+msgstr "``thickness`` 控制线条的粗细（以像素为单位）。"
+
+#: ../../en/advanced/image.rst:112 56b2897d03a6491fa7a29da28574d58b
+msgid "``fill`` set to True to fill the rectangle."
+msgstr "``fill`` 是否填充。"
+
+#: ../../en/advanced/image.rst:118 a6aa19b86bef482894c887e6f6b4d137
+msgid "|draw_rectangle.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:9 ac018a76bd5541c9915e7387c80c89a4
+msgid "draw_rectangle.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:122 ecb49d9d4c1043c2996f5e49189b00bd
+msgid ""
+"Draws a circle on the image. You may either pass x, y, radius separately "
+"or as a tuple (x, y, radius)."
+msgstr "在图像上绘制一个圆形。你可以分别传递 x, y, radius，或者将它们作为元组 (x, y, radius) 一起传递。"
+
+#: ../../en/advanced/image.rst:129 2f6a30e3deeb46c4a6da3b4797255d53
+msgid "``thickness`` controls how thick the edges are in pixels."
+msgstr "``thickness`` 厚度”控制边缘的像素厚度。 "
+
+#: ../../en/advanced/image.rst:131 105a1cec0c9a490e8432b4d5fc5510d5
+msgid "``fill`` set to True to fill the circle."
+msgstr "- ``fill`` 是否填充。"
+
+#: ../../en/advanced/image.rst:137 37076ba5b66a4cdb9e4528e33c781611
+msgid "|draw_circle.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:11 d0459a44daa346929aff6b338453fafb
+msgid "draw_circle.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:142 4b7bf3c7bb6e480bb9dffb0587ce95fa
+msgid ""
+"Draws 8x16 text starting at location (x, y) in the image. You may either "
+"pass x, y separately or as a tuple (x, y)."
+msgstr "在图像上绘制从位置 (x, y) 开始的 8x16 文本。你可以分别传递 x, y，或者将它们作为元组 (x, y) 一起传递。"
+
+#: ../../en/advanced/image.rst:145 2a937d934552420aa366eb29661ce3de
+msgid ""
+"``text`` is a string to write to the image. ``\\n``, ``\\r``, and "
+"``\\r\\n`` line endings move the cursor to the next line."
+msgstr "``text`` 是要写入图像的字符串。``\n``、``\r`` 和 ``\r\n`` 换行符将光标移动到下一行。"
+
+#: ../../en/advanced/image.rst:152 462401bf084740a2a2fef098e148359c
+msgid ""
+"``scale`` may be increased to increase/decrease the size of the text on "
+"the image. You can pass greater than 0 integer or floating point values."
+msgstr "``scale`` 可增加或减少图像中文本的大小。你可以传递大于 0 的整数或浮动值。"
+
+#: ../../en/advanced/image.rst:160 1f2443a1311d40ef8def4c7f791c3a03
+msgid "|draw_string.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:8 c1eda54bd4c242de968f12a94e3ab041
+msgid "draw_string.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:163 3ec51ba93f5641cfaf8e5c3f3cd286c8
+msgid "Constants"
+msgstr ""
+
+#: ../../en/advanced/image.rst:168 5d1a7434ab314023aea591bfa1704ce1
+msgid ""
+"RGB565 pixel format. Each pixel is 16-bits, 2-bytes. 5-bits are used for "
+"red, 6-bits are used for green, and 5-bits are used for blue."
+msgstr "RGB565 像素格式。每个像素为 16 位，2 字节。5 位用于红色，6 位用于绿色，5 位用于蓝色。"
+
+#: ../../en/advanced/image.rst:174 77b2a84e2364448c9d1e4ac21b122a92
+msgid "GRAYSCALE pixel format. Each pixel is 8-bits, 1-byte."
+msgstr "灰度图像像素格式。每个像素为 8 位，1 字节。"
+
+#: ../../en/advanced/image.rst:179 18ce7865508d4540ba3f899ebba03219
+msgid "A JPEG image."
+msgstr ""
+
+#: ../../en/advanced/image.rst:184 6213c2259ac2432ea2e506da09e3c439
+msgid ""
+"A pixel format that is very easy to jpeg compress. Each pixel is stored "
+"as a grayscale 8-bit Y value followed by alternating 8-bit U/V color "
+"values that are shared between two Y values (8-bits Y1, 8-bits U, 8-bits "
+"Y2, 8-bits V, etc.). Only some image processing methods work with YUV422."
+msgstr "一种非常适合 JPEG 压缩的像素格式。每个像素存储为一个灰度 8 位 Y 值，后跟交替的 8 位 U/V 色彩值，这些值在两个 Y 值之间共享（8 位 Y1，8 位 U，8 位 Y2，8 位 V，依此类推）。只有一些图像处理方法可以与 YUV422 格式兼容。"
+
+#: ../../en/advanced/image.rst:191 597faf9e0ff440f290a3e053855bf9f2
+msgid "|format_option.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:4 fdbf90a128bc487abee7636677122783
+msgid "format_option.png"
+msgstr ""
+

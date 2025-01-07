@@ -1,29 +1,29 @@
-camera  
+camera
 =============
 
-.. include:: ../refs/hardware.camera.ref
+.. include:: ../refs/advanced.camera.ref
 
 The camera module is used for taking pictures.
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
 .. module:: camera
-    :synopsis: camera sensor   
+    :synopsis: camera sensor
 
-Micropython Example 
+Micropython Example
 --------------------------------
 
-capture display 
+capture display
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/hardware/camera/cores3_example_camera_display.py
+    .. literalinclude:: ../../../examples/advanced/camera/cores3_example_camera_display.py
         :language: python
         :linenos:
 
-UIFlow2.0 Example 
+UIFlow2.0 Example
 ------------------------------
 
-capture display 
+capture display
 ++++++++++++++++++++++++++++
 
     |camera_display_example.png|
@@ -32,8 +32,8 @@ capture display
 
     |cores3_example_camera_display.m5f2|
 
- 
-    
+
+
 Functions
 ------------------------------
 
@@ -42,7 +42,7 @@ Functions
     Initializes the camera sensor.
 
     The ``pixformat`` supports:
-        
+
     - ``camera.RGB565``
 
     The ``framesize`` supports:
@@ -64,7 +64,7 @@ Functions
     Returns An ``image.Image`` object.
 
     UIFlow2.0
-    
+
         |snapshot.png|
 
 .. function:: camera.set_hmirror(enable)
@@ -72,7 +72,7 @@ Functions
     Turns horizontal mirror mode on (True) or off (False). Defaults to on.
 
     UIFlow2.0
-    
+
         |set_hmirror.png|
 
 .. function:: camera.set_vflip(enable)
@@ -80,7 +80,7 @@ Functions
     Turns vertical flip mode on (True) or off (False). Defaults to off.
 
     UIFlow2.0
-    
+
         |set_vflip.png|
 
 .. function:: camera.get_hmirror()
@@ -88,7 +88,7 @@ Functions
     Returns if horizontal mirror mode is enabled.
 
     UIFlow2.0
-    
+
         |get_hmirror.png|
 
 .. function:: camera.get_vflip()
@@ -96,7 +96,7 @@ Functions
     Returns if vertical flip mode is enabled.
 
     UIFlow2.0
-    
+
         |get_vflip.png|
 
- 
+

@@ -7,3 +7,9 @@ Advanced
     :maxdepth: 1
 
     usb/index.rst
+    camera.rst
+    code_scanner.rst
+    dl.rst
+    image.rst
+    jpg.rst
+

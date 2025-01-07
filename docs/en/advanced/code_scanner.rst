@@ -1,7 +1,7 @@
-:mod:`code_scanner`  
+code_scanner 
 ===============================
 
-.. include:: ../refs/software.code_scanner.ref
+.. include:: ../refs/advanced.code_scanner.ref
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
@@ -16,7 +16,7 @@ Micropython Example
 qrcode detect 
 ++++++++++++++++++++++++++++
 
-    .. literalinclude:: ../../../examples/softwave/code_scanner/qrcode_detect_example.py
+    .. literalinclude:: ../../../examples/advanced/code_scanner/qrcode_detect_example.py
         :language: python
         :linenos:
  

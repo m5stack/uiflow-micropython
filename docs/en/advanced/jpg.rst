@@ -1,7 +1,7 @@
-:mod:`jpg`  
+jpg  
 ===============================
 
-.. include:: ../refs/software.jpg.ref
+.. include:: ../refs/advanced.jpg.ref
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
@@ -18,7 +18,7 @@ take photo
 
 Click the screen to start the countdown and take a photo
 
-    .. literalinclude:: ../../../examples/softwave/jpg/take_photo_example.py
+    .. literalinclude:: ../../../examples/advanced/jpg/take_photo_example.py
         :language: python
         :linenos:
  
