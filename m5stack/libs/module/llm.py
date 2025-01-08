@@ -24,12 +24,14 @@ class ModuleComm:
         while time.ticks_diff(time.ticks_ms(), start_time) < timeout:
             if self._serial.any():
                 try:
-                    response += self._serial.read().decode("utf-8")  # Decode bytes to string
-                    start_time = time.ticks_ms()  # Reset timeout after receiving data
+                    data = self._serial.read()
+                    if data:
+                        response += data.decode("utf-8")
+                        if "\n" in response:
+                            break
+                        start_time = time.ticks_ms()
                 except Exception:
                     pass
-
-            time.sleep_ms(5)  # Small delay to prevent busy-waiting
 
         if not response:
             return {"time_out": True, "msg": ""}
