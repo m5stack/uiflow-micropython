@@ -64,6 +64,7 @@ Unit
     limit.rst
     lora_e220.rst
     lora_e220_433.rst
+    lorawan_rui3.rst
     midi.rst
     minioled.rst
     miniscale.rst

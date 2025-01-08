@@ -71,6 +71,7 @@ package(
         "limit.py",
         "lora_e220_433.py",
         "lora_e220_jp.py",
+        "lorawan_rui3.py",
         "lorawan.py",
         "midi.py",
         "minioled.py",

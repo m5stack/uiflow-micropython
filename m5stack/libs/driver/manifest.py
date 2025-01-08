@@ -53,6 +53,7 @@ package(
         "pca9554.py",
         "pcf8563.py",
         "qmp6988.py",
+        "rui3.py",
         "sam2695.py",
         "scd40_async.py",
         "scd40.py",
