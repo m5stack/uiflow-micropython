@@ -28,7 +28,7 @@ class ModuleComm:
                     if data:
                         response += data.decode("utf-8")
                         if "\n" in response:
-                            break
+                            return {"time_out": False, "msg": response}
                         start_time = time.ticks_ms()
                 except Exception:
                     pass
