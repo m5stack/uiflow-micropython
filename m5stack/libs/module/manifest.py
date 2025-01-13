@@ -13,6 +13,7 @@ package(
         "encoder4_motor.py",
         "gnss.py",
         "gps.py",
+        "gpsv2.py",
         "grbl.py",
         "goplus2.py",
         "hmi.py",

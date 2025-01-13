@@ -12,6 +12,7 @@ _attrs = {
     "Encoder4MotorModule": "encoder4_motor",
     "GNSSModule": "gnss",
     "GPSModule": "gps",
+    "GPSV2Module": "gpsv2",
     "GRBLModule": "grbl",
     "GoPlus2Module": "goplus2",
     "HMIModule": "hmi",

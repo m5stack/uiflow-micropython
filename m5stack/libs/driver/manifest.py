@@ -36,6 +36,7 @@ package(
         "ads1110.py",
         "ads1100.py",
         "adxl34x.py",
+        "atgm336h.py",
         "asr650x.py",
         "bh1750.py",
         "bh1750fvi.py",

@@ -11,6 +11,7 @@ Module
     dualkmeter.rst
     gnss.rst
     gps.rst
+    gpsv2.rst
     grbl.rst
     goplus2.rst
     hmi.rst

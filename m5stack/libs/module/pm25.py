@@ -8,7 +8,6 @@ from driver.sht30 import SHT30
 from driver.sht20 import SHT20
 from collections import namedtuple
 from .mbus import i2c1
-import time
 import struct
 import sys
 
