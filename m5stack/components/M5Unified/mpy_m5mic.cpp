@@ -10,6 +10,12 @@ extern "C"
 {
 #include "mpy_m5mic.h"
 #include "mic_config_t.h"
+#include "format_wav.h"
+#include "extmod/vfs_fat.h"
+#include "py/builtin.h"
+#include "py/runtime.h"
+#include "py/stream.h"
+#include "py/mphal.h"
 
 namespace m5
 {
@@ -284,5 +290,77 @@ namespace m5
         return mp_obj_new_bool(ret);
     }
 
+    mp_obj_t mic_recordWavFile(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+        enum {ARG_path, ARG_rate, ARG_time, ARG_stereo};
+        const mp_arg_t allowed_args[] = {
+            /* *FORMAT-OFF* */
+            { MP_QSTR_path,   MP_ARG_OBJ | MP_ARG_REQUIRED, { .u_obj = MP_OBJ_NULL } },
+            { MP_QSTR_rate,   MP_ARG_INT,                   { .u_int = 16000 }       },
+            { MP_QSTR_time,   MP_ARG_INT,                   { .u_int = 5 }           },
+            { MP_QSTR_stereo, MP_ARG_BOOL,                  { .u_bool = false }      },
+            /* *FORMAT-ON* */
+        };
+        mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+        // The first parameter is the Power object, parse from second parameter.
+        mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+        const char *file_path = mp_obj_str_get_str(args[ARG_path].u_obj);
+        uint32_t rate = args[ARG_rate].u_int;
+        uint32_t rec_time = args[ARG_time].u_int;
+        bool stereo = args[ARG_stereo].u_bool;
+        uint16_t channels = stereo ? 2 : 1;
+
+        char ftype[5] = {0};
+        for (size_t i = 0; i < 4; i++) {
+            ftype[i] = tolower((char)file_path[i + strlen(file_path) - 4]);
+        }
+        ftype[4] = '\0';
+
+        mp_obj_t file_args[2];
+        file_args[0] = args[ARG_path].u_obj;
+        file_args[1] = mp_obj_new_str("wb+", strlen("wb+"));
+        mp_obj_t wav_file = mp_vfs_open(2, file_args, (mp_map_t *)&mp_const_empty_map);
+        if (wav_file == mp_const_none) {
+            mp_raise_OSError(MP_ENOENT);
+            // mp_raise_ValueError(MP_ERROR_TEXT("open file failed"));
+        }
+
+        int flash_wr_size = 0;
+        uint32_t byte_rate = rate * 2 * channels; // bit sample size = 16bit, byte rate = sample rate * (bit sample size / 8) * channel
+        uint32_t flash_rec_time = byte_rate * rec_time;
+
+        wav_header_t wav_header = WAV_HEADER_PCM_DEFAULT(flash_rec_time, 16, rate, channels);
+
+        int rlen = mp_stream_posix_write(wav_file, &wav_header, sizeof(wav_header_t));
+        if (rlen != sizeof(wav_header_t)) {
+            mp_stream_close(wav_file);
+            mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
+        }
+
+        Mic_Class *Mic = getMic(&pos_args[0]);
+
+        constexpr const size_t buf_size = 1024;
+        int16_t rec_data[512];
+
+        // mp_printf(&mp_plat_print, "flash_rec_time: %d\n", flash_rec_time);
+
+        while (flash_wr_size < flash_rec_time) {
+            bool ret = Mic->record(rec_data, buf_size >> 1, rate, stereo);
+
+            while (Mic->isRecording() != 0) {
+                mp_hal_delay_ms(1);
+            }
+            size_t remain = flash_rec_time - flash_wr_size;
+            size_t len = remain > buf_size ? buf_size : remain;
+            int wlen = mp_stream_posix_write(wav_file, rec_data, len);
+            if (wlen != len) {
+                mp_stream_close(wav_file);
+                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
+            }
+            flash_wr_size += wlen;
+        }
+        mp_stream_close(wav_file);
+        return mp_obj_new_bool(true);
+    }
 }
 }
