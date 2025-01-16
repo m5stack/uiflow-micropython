@@ -9,5 +9,7 @@
 // #define MICROPY_HW_I2C0_SCL                 (9)
 // #define MICROPY_HW_I2C0_SDA                 (8)
 
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "Espressif ESP32-S3-BOX-3(UiFlow2)"
+
 #define AUDIO_RECORDER_DOWN_CH (1)
 #define MICROPY_PY_MACHINE_I2S (0)

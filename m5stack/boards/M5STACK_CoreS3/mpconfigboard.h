@@ -17,6 +17,8 @@
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
 
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "M5Stack CoreS3(UiFlow2)"
+
 #ifndef MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
 #define MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE (1) // Support machine.USBDevice
 #endif
