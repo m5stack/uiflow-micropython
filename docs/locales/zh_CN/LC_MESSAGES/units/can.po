@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.can.ref ../../en/units/can.rst:4
+#: 01b8dd59a1cc4d41bd2b5b669e3043f6 8034c8696d374e30af0ff5ad8fcfef2d
+msgid "CAN Unit"
+msgstr ""
+
+#: ../../en/units/can.rst:8 761511acbb9b4bb28fc6aac160304353
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/can.rst:11 53291336a537471598eb174c86955c6d
+msgid "|CAN Unit|"
+msgstr ""
+
+#: ../../en/units/can.rst:11 21fdd647546f44c8b2608d7704e1b10c
+msgid "|MiniCAN Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.can.ref ac55164e6d1e4e228076c0ff4939eb4a
+msgid "MiniCAN Unit"
+msgstr ""
+
+#: ../../en/units/can.rst:15 bf41b63582c047f1953ed3c91c28845a
+msgid "Micropython TX Example:"
+msgstr ""
+
+#: ../../en/units/can.rst:22 348ef4ef6eab482ca44da9ed87764ecf
+msgid "Micropython RX Example:"
+msgstr ""
+
+#: ../../en/units/can.rst:29 6f5019116d87401485a5d67be8bf9be6
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/units/can.rst:31 6072234d7d384b4d982c8228928d1a87
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.can.ref:16 6d92bd86b3304b65add51a972837c68b
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/units/can.rst:34 6652ee713dc64718a85990eb7b3e5ec1
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/units/can.rst:36 6b40719ac9344e8d93c36470ccdefb83
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.can.ref:27 b3e1f19cabe149ae8a8d29a908150a16
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/units/can.rst:41 6f4b3c9ccf9c46f6990ab0bdf45a8bfc
+msgid "|stickc_plus2_can_tx_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/can.rst:43 df96372ccac54445b86de4fceb3f89b8
+msgid "|dial_can_rx_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/can.rst:47 8e440b77e0b44214978f1fdb788fa871
+msgid "class CANUnit"
+msgstr ""
+
+#: ../../en/units/can.rst:50 2a6989ad12e147d1b587d0bd98e05f22
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/can.rst:54 f9d3f52a1e2943239bf845d764ac6cc9
+msgid "Create an CANUnit object."
+msgstr ""
+
+#: ../../en/units/can.rst:56 c24f1cdbb0e5421cbe8209d2bda89f45
+msgid "parameter is:"
+msgstr ""
+
+#: ../../en/units/can.rst:58 8e55cf70efc94c0f8bf8129d85ce1c4f
+msgid "``port`` is the pins number of the port"
+msgstr ""
+
+#: ../../en/units/can.rst:59 ../../en/units/can.rst:73
+#: 824116b5f3514a3da6b8624c936ab5a3 8b7bbd89300d45e7abeb44310e88a732
+msgid "``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY"
+msgstr ""
+
+#: ../../en/units/can.rst:60 ec62be71fa794167bb12a76d7e125c1b
+msgid "``baudrate`` is the baudrate of CANUnit."
+msgstr ""
+
+#: ../../en/units/can.rst:62 ../../en/units/can.rst:85
+#: 4187f395161246ed8a3c8312fddb31b0 5a85aa663c6c449fbe133c1f4371a1df
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/can.rst:64 815d5b918802411a8927561f267468da
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.can.ref:11 ce73e81fe87f4ba5b59b3f946305c8b4
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/can.rst:69 b10afeb688ad4ed2a827700774eba522
+msgid "Initialise the CAN bus with the given parameters:"
+msgstr ""
+
+#: ../../en/units/can.rst:71 ac650fa07c1d4cbb99f3ebfbf60b0eac
+msgid "``tx`` is the pin to use for transmitting data"
+msgstr ""
+
+#: ../../en/units/can.rst:72 6f2e84bbff5f4665971e3a0d25f207aa
+msgid "``rx`` is the pin to use for receiving data"
+msgstr ""
+
+#: ../../en/units/can.rst:74 c4c53798355e4e919b24444eb4db98ac
+msgid ""
+"``prescaler`` is the value by which the CAN input clock is divided to "
+"generate the nominal bit time quanta. The prescaler can be a value "
+"between 1 and 1024 inclusive for classic CAN."
+msgstr ""
+
+#: ../../en/units/can.rst:77 7ae97a9552104f4892abfdbc589ea3d9
+msgid ""
+"``sjw`` is the resynchronisation jump width in units of time quanta for "
+"nominal bits; it can be a value between 1 and 4 inclusive for classic "
+"CAN."
+msgstr ""
+
+#: ../../en/units/can.rst:79 a189fce6c7054e82a05759c8922a251a
+msgid ""
+"``bs1`` defines the location of the sample point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 16 inclusive for"
+" classic CAN."
+msgstr ""
+
+#: ../../en/units/can.rst:81 f3107c7fafa446c29e1099baa5f17484
+msgid ""
+"``bs2`` defines the location of the transmit point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 8 inclusive for "
+"classic CAN."
+msgstr ""
+
+#: ../../en/units/can.rst:83 a6895351c85248de8f7925c950bfd3e2
+msgid ""
+"``triple_sampling`` is Enables triple sampling when the TWAI controller "
+"samples a bit"
+msgstr ""
+
+#: ../../en/units/can.rst:87 119ab66bc9b646258d702b52e9f6364e
+msgid "|init1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.can.ref:13 be8bfb23d02b49bea6089f9d087cc74c
+msgid "init1.png"
+msgstr ""
+
+#: ../../en/units/can.rst:89 6dd2d8ef60154277896b6990fc6eeda9
+msgid ""
+"CANUnit class inherits CAN class, See :ref:`hardware.CAN <hardware.CAN>` "
+"for more details."
+msgstr ""
+

@@ -1,0 +1,197 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/widgets/label.rst:4 9ad254c9da7e41ba90096d6b3d031fab
+msgid "class Label -- display text"
+msgstr ""
+
+#: ../../en/widgets/label.rst:8 d0d6f3f14761431885b2b4d01578aad7
+msgid "Label is the basic object type used to display text."
+msgstr ""
+
+#: ../../en/widgets/label.rst:11 9f69c6fd47c0441b9d80c4f4d396deb6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:18 0ef0d60e4bd44316870552a6adef24ef
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:20 388bcf410b96410aaa262efe7b8adbad
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:1 5fc6fff098794a1caf9c6bb21df70972
+msgid "example.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:25 3909d38ee9c54768a8f9e5f30ac1bfbe
+msgid "|cores3_label_example.m5f2|"
+msgstr ""
+
+#: ../../en/widgets/label.rst:29 cadd97f3903f46c6aec351de590b03dd
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/widgets/label.rst:33 aac138b106b249bab8ba569355647def
+msgid "Create a Label object. It accepts the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:35 8bfef7a3b40546c9bc07110ca46ffb58
+msgid "``text`` is the text to be displayed."
+msgstr ""
+
+#: ../../en/widgets/label.rst:36 ../../en/widgets/label.rst:63
+#: 145a7a5549784e319c7939ecd64db085 cfb5d8e81b314c7883974c759cc6ea0b
+msgid "``x`` is the starting X-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/label.rst:37 ../../en/widgets/label.rst:64
+#: 325e1097b3764b32b6b498ee28aadeff c414f27e66e045d19c0e3ea17ae91adc
+msgid "``y`` is the starting Y-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/label.rst:38 37b36ebc7b284d85a5ad0acb93477bcb
+msgid "``text_sz`` is the font size for displaying text, usually 1.0."
+msgstr ""
+
+#: ../../en/widgets/label.rst:39 65210fcbef274f5085c99877507bbbfa
+msgid "``text_c`` is the font color for displaying text. The default is white."
+msgstr ""
+
+#: ../../en/widgets/label.rst:40 ../../en/widgets/label.rst:52
+#: 09a35eb22e744416999f1e9b8e7d350d 2e0f9fe2a498459eb1d5b63198883b29
+msgid "bg_c is the background color of the displayed text, the default is black."
+msgstr ""
+
+#: ../../en/widgets/label.rst:41 8983b1bceb8f47ff9df421ae0ee5f538
+msgid ""
+"``font`` is the set of fonts used to display text. For the built-in "
+"fonts, see ``Widgets.FONTS``."
+msgstr ""
+
+#: ../../en/widgets/label.rst:42 a6911536666f416987353a362f094f33
+msgid ""
+"parent is the output target of the Label object, the default output is to"
+" the LCD, can also be output to the Canvas."
+msgstr ""
+
+#: ../../en/widgets/label.rst:45 193fd322ffdb4512a9e48a390fd37793
+msgid "Methods"
+msgstr ""
+
+#: ../../en/widgets/label.rst:49 285592b3c09e479a84f8c70ee7524f7c
+msgid ""
+"Sets the text font color of the Label object. Accept the following "
+"parameters:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:51 596e5f838f9d4f66b111223dc9535941
+msgid "``text_c`` is the font color for displaying text."
+msgstr ""
+
+#: ../../en/widgets/label.rst:54 ../../en/widgets/label.rst:66
+#: ../../en/widgets/label.rst:74 ../../en/widgets/label.rst:82
+#: ../../en/widgets/label.rst:90 ../../en/widgets/label.rst:98
+#: 572887a75c664233925ac33647cc4a9f 69fc3485ff7544098d11d858053c108c
+#: 83b86197e0ab4ee2be336b14a00dd2ce 9d2262a994f24ee798d0344dba039737
+#: c38efa0af1ec4385a626787e80f5daba d6c3ecd7be73405787471451a6c61300
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:56 5e4198a5299649b2bd9eeed543733d3e
+msgid "|setColor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:3 ee4d42b0eee74312ba7a5aa231f0257b
+msgid "setColor.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:61 07029052ca1f4816ab0ced120917a399
+msgid ""
+"Sets the starting coordinates of the Label object. Accept the following "
+"parameters:"
+msgstr ""
+
+#: ../../en/widgets/label.rst:68 b2dc75d84a8647b5a4e0140915519df9
+msgid "|setCursor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:5 5331c2960f0a4816b9ec55067247c722
+msgid "setCursor.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:72 5efdf832ae2f469f8a0d93b93c6aee4f
+msgid ""
+"Sets the font set of the Label object. font is the set of fonts used to "
+"display text, the built-in font, see ``Widgets.FONTS``."
+msgstr ""
+
+#: ../../en/widgets/label.rst:76 eb3d53bae27744d7b82f73e1df3f76f7
+msgid "|setFont.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:7 1446142295e14270b784b867f9ea4d5a
+msgid "setFont.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:80 37f4210fa8ec4035b46ec61267e9dc1a
+msgid ""
+"Set the text font size of the Label object, text_sz is the font size of "
+"the displayed text."
+msgstr ""
+
+#: ../../en/widgets/label.rst:84 782b8b1e2fb943a2801e0d993b25a091
+msgid "|setSize.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:9 7bd7e3cd6ff94238bd4ab03e8d8d8523
+msgid "setSize.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:88 9fa7c1bd318c40e4b7c4e22bdab44ce0
+msgid "Sets the text content of the Label object."
+msgstr ""
+
+#: ../../en/widgets/label.rst:92 2317d0c87b1f495189a4d0d9f4093b42
+msgid "|setText.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:11 4543af8782f8413f841e1f0ed9a61d57
+msgid "setText.png"
+msgstr ""
+
+#: ../../en/widgets/label.rst:96 30fed01eb2a64f178078c9fa2a6c626d
+msgid ""
+"Set the visible property of the Label object, when ``visible`` is True, "
+"the Label object content will be visible, otherwise it will not be "
+"visible."
+msgstr ""
+
+#: ../../en/widgets/label.rst:100 b62274d284a64dc7b91930afa26f8ad5
+msgid "|setVisible.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label.ref:13 22a9cfc8da7647eeb1bfc17d2eed21c7
+msgid "setVisible.png"
+msgstr ""
+

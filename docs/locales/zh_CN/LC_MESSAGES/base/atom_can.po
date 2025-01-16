@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/atom_can.rst:2 8f4a89cae73240c7bab6fb13269c3f8a
+msgid "ATOM CAN Base"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:6 fccbc2111dac487381ecf1a76a9bb462
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:9 aaa20f3cecc64da4805bfa83b7906a16
+msgid "|Atom CAN|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref 004805b4ffac40bba30aa699cfb6be72
+msgid "Atom CAN"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:9 600ab112c2eb4438b185fdb5c9f1849b
+msgid "|Atomic CAN Base|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref dbb776a88cca4d6683fba8c77321a65d
+msgid "Atomic CAN Base"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:13 612e9cd2ad194f1a8ddf26d8b63b5002
+msgid "Micropython TX Example:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:20 8fc1658abd4b4e248dcf2ce891f2767b
+msgid "Micropython RX Example:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:27 5961d99655814d5b8c765d75ccc88bb8
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:29 a76dc0d70c8248a890e856453d9cd20f
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref:16 27b9295feb374010b85cdea45188b4d3
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:32 f47702f823264de4a7ac3c0cf083249d
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:34 5cd93c07af484e0e954831c0f992fc5e
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref:27 9e359cc074a24e8c9d89f412e18d6ecd
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:39 46035fba3ad5449d91d2f7e1b318f90c
+msgid "|stickc_plus2_can_tx_example.m5f2|"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:41 1843c35bceb445acaecf7e30f5015346
+msgid "|dial_can_rx_example.m5f2|"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:44 3dea2e0b9e3d455297b715e0851d610e
+msgid "class ATOMCANBase"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:47 82cb56db438e4c39b84bfd564f1d276f
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:51 ee76969285504f5bb0cdd0e22eb215bf
+msgid "Create an ATOMCANBase object."
+msgstr ""
+
+#: ../../en/base/atom_can.rst:53 57427169a60b46b79755bae3ae309480
+msgid "parameter is:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:55 ../../en/base/atom_can.rst:70
+#: 2996b4031a014d95ab91866585ac93b5 8a42ba5ab0ad447390d3b4dba0fe9776
+msgid "``id`` is the ID of the CAN bus"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:56 ../../en/base/atom_can.rst:71
+#: 1a9d0e0e415440e2b6cedf7f20ffb2a8 68de2445607c48dabaaa193c4342ab39
+msgid "``tx`` is the pin to use for transmitting data"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:57 ../../en/base/atom_can.rst:72
+#: 073e63164e2749d8b87f960c812d12b1 22bccf1d4a524c509031b769bd25e7c9
+msgid "``rx`` is the pin to use for receiving data"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:58 ../../en/base/atom_can.rst:73
+#: bbff82a238b647c28c0fe2a57cddce54 fd4a211b745848c2aa44ddd2b87207a3
+msgid "``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:59 404cfacf4b6c42519091337adba5883f
+msgid "``baudrate`` is the baudrate of ATOMCANBase"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:61 ../../en/base/atom_can.rst:85
+#: 6ed61da91e234d31b308cc55093c35eb c2181e88bf964b0aaf22ab59c70b52a7
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:63 364e9092aca1481497a605ccbbbeb6d2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref:11 ff5cee4b87334dec9fb746c65937a997
+msgid "init.png"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:68 f9d7b34b26d44603bb016238cc0474fe
+msgid "Initialise the CAN bus with the given parameters:"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:74 f38cd9743fa549888a31aaf578d139b7
+msgid ""
+"``prescaler`` is the value by which the CAN input clock is divided to "
+"generate the nominal bit time quanta. The prescaler can be a value "
+"between 1 and 1024 inclusive for classic CAN."
+msgstr ""
+
+#: ../../en/base/atom_can.rst:77 2a30add7765343a68dabf23189198f57
+msgid ""
+"``sjw`` is the resynchronisation jump width in units of time quanta for "
+"nominal bits; it can be a value between 1 and 4 inclusive for classic "
+"CAN."
+msgstr ""
+
+#: ../../en/base/atom_can.rst:79 64a82dc042c842c396165585ed4af5dc
+msgid ""
+"``bs1`` defines the location of the sample point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 16 inclusive for"
+" classic CAN."
+msgstr ""
+
+#: ../../en/base/atom_can.rst:81 dd1120bb2f974962ad0cf54f91d63d5c
+msgid ""
+"``bs2`` defines the location of the transmit point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 8 inclusive for "
+"classic CAN."
+msgstr ""
+
+#: ../../en/base/atom_can.rst:83 fc65c52917b7458ea13c1c6497316b8e
+msgid ""
+"``triple_sampling`` is Enables triple sampling when the TWAI controller "
+"samples a bit"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:87 c29e5f22b85041bc8660fd68d968852a
+msgid "|init_advanced.png|"
+msgstr ""
+
+#: ../../en/refs/base.can.ref:13 1c69b9c04d8b4da584e63c7b3f026bbe
+msgid "init_advanced.png"
+msgstr ""
+
+#: ../../en/base/atom_can.rst:89 2a1e3a7fa6c84025a4a8b8c656bb9057
+msgid ""
+"ATOMCANBase class inherits CAN class, See :ref:`hardware.CAN "
+"<hardware.CAN>` for more details."
+msgstr ""
+

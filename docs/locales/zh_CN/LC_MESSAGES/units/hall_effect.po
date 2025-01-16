@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/hall_effect.rst:2 a33c9c4eed4146399ecaa94b302d97d9
+msgid "Hall Effect Unit"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:6 a34d900ff281433e80f32f71a3a0875b
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:8 63ed18f2be41421d9db95957a41741a2
+msgid "|HallEffect|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref 7aab74860ae64f0e950a03411cf45eaa
+msgid "HallEffect"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:11 51a8e9b0224c4698b01506ad4685dc72
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:18 af098e06980a4d01848072d9876e5bc8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:20 838e2eddfa9146e69e0800d19e9a0c82
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:16 5c2b0dfc8ba845f29c4917a886f0f123
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:25 d7684a31ccf64833b764da0107f2400e
+msgid "|cores3_hall_effect_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:29 afb0a325407d40418741217379fced94
+msgid "class HallEffectUnit"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:32 284545a86de749d2b5b812e0a9ff65a0
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:36 acfdf764395f4e74bdce59a4cf25d267
+msgid "Create a HallEffectUnit object."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst ce3dbdb41cc548c7a1513cc9b859f774
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:38 ea9f1b5bbecb40578b8b8b58987e7614
+msgid "Specify the port number according to the label on the unit."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:40 ../../en/units/hall_effect.rst:52
+#: ../../en/units/hall_effect.rst:61 ../../en/units/hall_effect.rst:70
+#: ../../en/units/hall_effect.rst:79 50d5de51529f431aac515e025b4814f2
+#: 9199b22d5fd84f7aaa001b9d84e2ebb7 a974e6741b1b41a784111e65c7d84440
+#: bb5137ce19d84221be3e0af800e911aa f0b51784060d48489759d0ffdb6d947f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:42 e0dd485d7bf64f479b46107dcc0d5bf4
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:6 2470b7fd9586491b90e014a6a1447614
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:46 70a3e94157144a94951f441a18b3fd22
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:50 5b25a0b8efa74315b43618d511ca06e0
+msgid "Get the status of the Hall Effect sensor."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:54 1c05e48fbf9c4effa2fa0be668c32d3e
+msgid "|get_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:8 40287a6ad90d45fa96336bcdb47d583a
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:59 93565aaeee454211bcd6f30d5fced4c3
+msgid "Enable HAll Effect sensor interrupt."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:63 228c24af32d84f4f8675539cbcbf4365
+msgid "|enable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:10 12afed6872c94e0e93b33720439b752c
+msgid "enable_irq.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:68 f79579a4cb3743b39550f1c303875b82
+msgid "Disable Hall Effect sensor interrupt."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:72 fe072a0a55fd45fb9b5b60f80027b847
+msgid "|disable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:12 4ec0e7d4c1c84d3e813cf49c6195bee8
+msgid "disable_irq.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:77 a0383a5db0d64be79aebeb5b9f0c992a
+msgid "Set the callback function."
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:81 3cdb0bd50a054f329172037b02792c09
+msgid "|set_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.hall_effect.ref:14 e5438c4f1aed44ac839cd6aafec03313
+msgid "set_callback.png"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:84 2fd0b716b88e4b8a8d2e3b6232b37aa3
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/hall_effect.rst:89 a2843c0ca61645dc8224dbbcdb7ca258
+msgid "used to set the trigger mode of the interrupt."
+msgstr ""
+

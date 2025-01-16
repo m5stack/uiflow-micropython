@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/widgets/image+.rst:4 f3e259c4d3124ca7a81fb1b1e575a582
+msgid "class ImagePlus -- display remote image"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:6 86f32f984fed4565bc782d335f2b3ec9
+msgid ""
+"The `ImagePlus` class extends the `Widgets.Image` class to provide "
+"additional functionalities for handling images with dynamic updates."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:10 d58fc55ef45e42ff84359766aa5e71c7
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:16 d8771f34424048f89ef02bf63cac2461
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:18 4e410653d5e344d3bbc134a2621dd0a2
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:13 07270ab4466b462b83a8f70eddfb4770
+msgid "example.png"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:22 3410409b7dd142a9930fbcf089ed7b82
+msgid "|imageplus_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:25 3b7f17a702ec4a7bb3594b34f17687c7
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:29 41be2c5fcd8649b19e75ff539d0a7a5b
+msgid "Create an `ImagePlus` object. It accepts the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:31 5fde28368b1444fd85af0de6570b9692
+msgid "``url`` is the URL of the image to be fetched and displayed."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:32 2709251b24d84113a7ae2eaf45f2545e
+msgid "``x`` is the starting X-axis coordinate where the image will be displayed."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:33 85cf43aa8aed4ea59265188ad2d1a08d
+msgid "``y`` is the starting Y-axis coordinate where the image will be displayed."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:34 5da068326af64402acbb6b47e59391a0
+msgid ""
+"``enable`` is a boolean indicating whether periodic updates of the image "
+"are enabled."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:35 63a101a3b3d24ba3bf0598774cedd691
+msgid "``period`` is the update period in milliseconds when `enable` is `True`."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:36 e8103988061a4d81831e4ae3aac06870
+msgid ""
+"``default_img`` is the path to the default image file to be displayed if "
+"the URL fetch fails. Supported formats are BMP, JPG, and PNG. Default is "
+"`\"res/img/default.jpg\"`."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:37 976dfb86ac1842708def6298b5f3dc96
+msgid ""
+"``parent`` is the graphical object on which the image will be drawn. If "
+"not provided, the default display will be used."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:40 900e7a85ab8340a4bcf54b43c77f65a7
+msgid "Methods"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:44 d91cb1663e5b4efbb548240846b72456
+msgid ""
+"Enable or disable periodic updates of the image. Accept the following "
+"parameters:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:46 ebc31c9e4ece491c89a568e472f3101b
+msgid "``enable`` is a boolean indicating whether updates should be enabled."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:48 ../../en/widgets/image+.rst:58
+#: ../../en/widgets/image+.rst:69 ../../en/widgets/image+.rst:79
+#: ../../en/widgets/image+.rst:88 48abf2a863dd49c3b036a96e8fae72d5
+#: 4bddde65b5ea46b4bb3d69401af0f78f c697838baf0c4f898d7aa3b02455794f
+#: d3075455db954b2b851bc4406815900d e6340cab674346bba6632ac9252dd548
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:50 41623dd65e194c32b5f7e2f99ec2cdd8
+msgid "|set_update_enable.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:2 2ef34f250fc34f72bedf5372bce6c9f7
+msgid "set_update_enable.png"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:54 21a2286406414aa89e4764037d6d81fc
+msgid ""
+"Set the update period for fetching and displaying the image. Accept the "
+"following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:56 a69bb64f2f664d0cb0d877753249441e
+msgid "``period`` is the update period in milliseconds."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:60 89d253da798b414ebd73d57f311fdb98
+msgid "|set_update_period.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:8 3620832f57494bce840eb30a865626a7
+msgid "set_update_period.png"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:64 842d51b02c0c4429bc9b01e96ef44e71
+msgid "Set the position of the ImagePlus object. Accept the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:66 b167f825b1284e6c86864facd9e5b191
+msgid "``x`` is the starting X-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:67 4540bdf070c74ec99b9fd5074d8108ca
+msgid "``y`` is the starting Y-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:71 ab91890a8090415a885b645bdca4603b
+msgid "|setCursor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:4 daa65e7190de4f07b026a3f7d38c7157
+msgid "setCursor.png"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:75 7d5e1d9beaa64678b1327ab71e97a518
+msgid ""
+"Set the visibility of the ImagePlus object. Accept the following "
+"parameters:"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:77 09343ff591bb4329ab8d05d69bde08b0
+msgid "``visible`` is the visibility of the displayed iamge."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:81 544c22eb2b3542f0a153d19ecf4eba75
+msgid "|setVisible.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:6 53e47b3f747d4977a73ec3afde06d4ac
+msgid "setVisible.png"
+msgstr ""
+
+#: ../../en/widgets/image+.rst:86 ac62b9709ff14695a5e2a77e2ba0d479
+msgid ""
+"Check if the fetched image is valid. Returns `True` if the image is "
+"valid, otherwise `False`."
+msgstr ""
+
+#: ../../en/widgets/image+.rst:90 400d9bd23f8d409ea49a91dfdcc08859
+msgid "|is_valid_image.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image+.ref:10 55efd807a1a24c4c91d4c83218a020d4
+msgid "is_valid_image.png"
+msgstr ""
+

@@ -1,0 +1,621 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/display.rst:2 f9f901c90ea5462999aa9971aa7109ee
+msgid "Display"
+msgstr ""
+
+#: ../../en/hardware/display.rst:4 c930a24fb88a40e18e16b5f714df0cc1
+msgid "A lcd display library"
+msgstr ""
+
+#: ../../en/hardware/display.rst:11 58688d274c224f7c9579da6bddaa8d38
+msgid "Micropython Example"
+msgstr ""
+
+#: ../../en/hardware/display.rst:14 a171c1a975b1431ebd6e9a0d88981dda
+msgid "draw test"
+msgstr ""
+
+#: ../../en/hardware/display.rst:66 620faa4bd9a945e9a3d21b0329686bbc
+msgid "Functions"
+msgstr ""
+
+#: ../../en/hardware/display.rst:70 012abc1d943f4c3aae431fc5a70707d1
+msgid "Get the horizontal resolution of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:72 3d4f1b563d6c4fa48150ccb13b767ac2
+msgid ""
+"Returns An integer representing the horizontal resolution (width) in "
+"pixels."
+msgstr ""
+
+#: ../../en/hardware/display.rst:76 fdbf318ae2ef4d9a96a4dfcae7916991
+msgid "Get the vertical resolution of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:78 32959bcdaae44a858565002a03b17e2f
+msgid ""
+"Returns An integer representing the vertical resolution (height) in "
+"pixels."
+msgstr ""
+
+#: ../../en/hardware/display.rst:82 c979bc054db545668724d6172da044a7
+msgid "Get the current rotation of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:84 3ad5be8e84494274a0f3c47ab18cf715
+msgid "Returns An integer representing the display's rotation:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:86 ../../en/hardware/display.rst:113
+#: 3be1ec2b2f634b679e857b3b53958af1 8cb0fb2116b04e3a81c48004acf01a78
+msgid "``1``: 0° rotation"
+msgstr ""
+
+#: ../../en/hardware/display.rst:87 ../../en/hardware/display.rst:114
+#: 7cb6b315a7fc4450bef41d758c3f34c9 cff78c2f228c4fdd8348fd639245a2c6
+msgid "``2``: 90° rotation"
+msgstr ""
+
+#: ../../en/hardware/display.rst:88 ../../en/hardware/display.rst:115
+#: 1868463439a84cc8b4548178457c5949 9624c0a81cfc41478483b4eb2015e55d
+msgid "``3``: 180° rotation"
+msgstr ""
+
+#: ../../en/hardware/display.rst:89 ../../en/hardware/display.rst:116
+#: 37a32424d485433c9259cf539bfa393c 808bca6f44c0451e89e89490873b70bb
+msgid "``4``: 270° rotation"
+msgstr ""
+
+#: ../../en/hardware/display.rst:93 8516dee8fb044f7f9fe7b275a5c40594
+msgid "Get the color depth of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:95 c166f8f151cf481aa5e02a8560fb4a53
+msgid "Returns An integer representing the display's color depth in bits."
+msgstr ""
+
+#: ../../en/hardware/display.rst:109 a33b0210f5d1457da1c2e697392b6212
+msgid "Set the rotation of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:111 c4e8c4b6d4e04e1e98c57726dfab55f2
+msgid "The ``r`` parameter only accepts the following values:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:120 a19a66e146204f4fb2967120fbaed653
+msgid "Set the color depth of the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:122 56fd041c2414440ba61adc8bf0b7c0f4
+msgid "``bpp`` The desired color depth in bits per pixel."
+msgstr ""
+
+#: ../../en/hardware/display.rst:124 aadbc70e9bd04f4e9a762c127221f6fa
+msgid ""
+"Notes: For CoreS3 devices, the color depth is fixed at 16 bits, and this "
+"method has no effect."
+msgstr ""
+
+#: ../../en/hardware/display.rst:128 a32f71c2b7fc4df9968211532f87ccf0
+msgid "Set the font for the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:130 0e86de1616bf49da8503bbbea4e5032a
+msgid "The ``font`` parameter only accepts the following values:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:132 ffea5a6028d5434d96d8defc973a241a
+msgid "K5.Lcd.FONTS.ASCII7"
+msgstr ""
+
+#: ../../en/hardware/display.rst:133 a356841f300246afb5bd2747cf137395
+msgid "K5.Lcd.FONTS.DejaVu9"
+msgstr ""
+
+#: ../../en/hardware/display.rst:134 d6350c6a25694c4ba6e960a81c42f518
+msgid "K5.Lcd.FONTS.DejaVu12"
+msgstr ""
+
+#: ../../en/hardware/display.rst:135 2130a84a3ce44c4a83dbfef8bc4055ad
+msgid "K5.Lcd.FONTS.DejaVu18"
+msgstr ""
+
+#: ../../en/hardware/display.rst:136 ba4cff34c9fc4b5f8d3c1f3681c2496e
+msgid "K5.Lcd.FONTS.DejaVu24"
+msgstr ""
+
+#: ../../en/hardware/display.rst:137 583a05640e664f1694ed379a9d5ba38c
+msgid "K5.Lcd.FONTS.DejaVu40"
+msgstr ""
+
+#: ../../en/hardware/display.rst:138 20f6358328674a1db727a653112f0372
+msgid "K5.Lcd.FONTS.DejaVu56"
+msgstr ""
+
+#: ../../en/hardware/display.rst:139 9c98acbb1ac6457b86ed4c1d0c74288c
+msgid "K5.Lcd.FONTS.DejaVu72"
+msgstr ""
+
+#: ../../en/hardware/display.rst:140 74ca2d5a0b9c4630a2ffea467181a06c
+msgid "K5.Lcd.FONTS.EFontCN24"
+msgstr ""
+
+#: ../../en/hardware/display.rst:141 f7f0746f708e4c8dbb804d6c0876511b
+msgid "K5.Lcd.FONTS.EFontJA24"
+msgstr ""
+
+#: ../../en/hardware/display.rst:142 00131ea29fa84425a3e38fd76461abca
+msgid "K5.Lcd.FONTS.EFontKR24"
+msgstr ""
+
+#: ../../en/hardware/display.rst:146 b58374e706d4428bb49f139c5d120549
+msgid "Set the text color and background color."
+msgstr ""
+
+#: ../../en/hardware/display.rst:148 64713ba66e4f4c08a116539148a7e852
+msgid "``fgcolor`` The text color in RGB888 format. Default is 0 (black)."
+msgstr ""
+
+#: ../../en/hardware/display.rst:149 ca6d51b5bede4018845c0dbe874c6af1
+msgid "``bgcolor`` The background color in RGB888 format. Default is 0 (black)."
+msgstr ""
+
+#: ../../en/hardware/display.rst:153 bae20a2cec9148848c6daf2a81da33dc
+msgid "Enable or disable text scrolling."
+msgstr ""
+
+#: ../../en/hardware/display.rst:155 6530527c17fe4a0685224e647860e428
+msgid ""
+"``scroll`` Set to True to enable text scrolling, or False to disable it. "
+"Default is False.\\"
+msgstr ""
+
+#: ../../en/hardware/display.rst:159 48b60a4136e74610ac24f593f07fdbaf
+msgid "Set the size of the text."
+msgstr ""
+
+#: ../../en/hardware/display.rst:161 b9009761678641dfaf098378ccc3fc7d
+msgid "``size`` The desired text size."
+msgstr ""
+
+#: ../../en/hardware/display.rst:165 6226403d3e484c9a99a18b4e2300d412
+msgid "Set the cursor position."
+msgstr ""
+
+#: ../../en/hardware/display.rst:167 b4658cb1834d4fe9b6860397fe632ab5
+msgid "``x`` The horizontal position of the cursor. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:168 e09444650e8e458899a9865a6b09b2cc
+msgid "``y`` The vertical position of the cursor. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:172 ae27a3822d954bc7bc0b062dbe291b54
+msgid "Clear the display with a specific color."
+msgstr ""
+
+#: ../../en/hardware/display.rst:174 ../../en/hardware/display.rst:180
+#: ../../en/hardware/display.rst:207 ../../en/hardware/display.rst:227
+#: 3b87eafe85ac4476b723c32ebf8151bb 5b0ec0e87339409da3eea2ea9f88ab00
+#: 864e80fde96f4f698d8fd3d9c3c03974 c8fdce7202da481ca1b7c3f4007543aa
+msgid "``color`` The fill color in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:178 2b97fa9d010f41c1aac89c33fa084376
+msgid "Fill the entire screen with a specified color."
+msgstr ""
+
+#: ../../en/hardware/display.rst:185 ba7f58b73c6a43688d461cb763ddd252
+msgid "Draw a single pixel on the screen."
+msgstr ""
+
+#: ../../en/hardware/display.rst:187 02f82db01cf944e7a30e73668e2d4e5f
+msgid "``x`` The horizontal coordinate of the pixel. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:188 485baf23a72a4cac9c8b9ff2af0a44f6
+msgid "``y`` The vertical coordinate of the pixel. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:189 f2863d6beb5343d3873a85650ceeb86f
+msgid "``color`` The color of the pixel in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:193 961c83f04c7147c2b122d137a45c3785
+msgid "Draw an outline of a circle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:195 ../../en/hardware/display.rst:204
+#: 5f59d333e824497d85fc544fbdc2ae17 fbd66493b0a442ec8894d98b044120d2
+msgid "``x`` The x-coordinate of the circle center. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:196 8e0b83dff1274ad9bbdaa591fd7520dc
+msgid "``y`` The y-coordinate of the circle center. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:197 ../../en/hardware/display.rst:206
+#: 0f75fb187c8944b9838a04c1d27967a3 f7df79140e1646d6b942d064ee76f130
+msgid "``r`` The radius of the circle. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:198 46a581b7b2444e6aaffc35f18b5a6b5c
+msgid "``color`` The color of the circle in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:202 445e16c41846444b89a091aeae7edd7e
+msgid "Draw a filled circle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:205 2e985145c3e441d69d0a2662c168c465
+msgid "`` y`` The y-coordinate of the circle center. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:211 b2c251e568e34ef995fb97f1b10c3f25
+msgid "Draw an outline of an ellipse."
+msgstr ""
+
+#: ../../en/hardware/display.rst:213 ../../en/hardware/display.rst:223
+#: 099d0f7f848f4c1fb3242137f7013f8f b0f42db31527476ea9913bba895c61cc
+msgid "``x`` The x-coordinate of the ellipse center. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:214 ../../en/hardware/display.rst:224
+#: 71e5ff852e75410da09790a4d2368483 8ae5f9939de646158e1357aa3d82d83b
+msgid "``y`` The y-coordinate of the ellipse center. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:215 ../../en/hardware/display.rst:225
+#: 0ee551b677344fc88dafc68afad3e81c 8a4ccb9c47ed4069aca26640b90510e4
+msgid "``rx`` The horizontal radius of the ellipse. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:216 ../../en/hardware/display.rst:226
+#: 3813e994b9c54a859d142b4af04e6ec6 b5064858d80b41bd95b5f0814cf35e29
+msgid "``ry`` The vertical radius of the ellipse. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:217 ac7f5367ec444098bf0be6185ccf62c2
+msgid "``color`` The color of the ellipse in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:221 0fd01014536c47938e16622ae2e99a78
+msgid "Draw a filled ellipse."
+msgstr ""
+
+#: ../../en/hardware/display.rst:231 978d8b823cbd48b1a41216014fa82093
+msgid "Draw a line."
+msgstr ""
+
+#: ../../en/hardware/display.rst:233 2fb4586249124c42b93f72feeff4ba8f
+msgid "``x0, y0`` Starting point coordinates of the line. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:234 972cff91c6174322a11f186d4e95d54a
+msgid "``x1, y1`` Ending point coordinates of the line. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:235 ../../en/hardware/display.rst:243
+#: ../../en/hardware/display.rst:251 ../../en/hardware/display.rst:260
+#: ../../en/hardware/display.rst:269 ../../en/hardware/display.rst:279
+#: ../../en/hardware/display.rst:299 ../../en/hardware/display.rst:310
+#: ../../en/hardware/display.rst:321 ../../en/hardware/display.rst:430
+#: 24e6b2640b6642ba85aa48fbf86e6791 2ac74ed7a5584911aecc59e2422f06d2
+#: 2d1cd7024e464544a3e548133099e9f0 30335df6f1b64f019b33e11797e2b0a5
+#: 8ed8e21669784e86a82c080ab0080d18 9dca7eda189c46cfa62c9bd2ca4dd293
+#: b1db08c2bfa141aba3e16435abeeed3b e51e16f2c50542df8cb4c91ae12f011e
+#: ebc636aa03d84caea0b30e0d2ccbfd48 ecd61ac9aba0483d87d4585398112f2e
+msgid "``color`` Color in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:239 f2ed1a7ca2c44308b6924515aaf01395
+msgid "Draw a rectangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:241 ../../en/hardware/display.rst:249
+#: ../../en/hardware/display.rst:257 ../../en/hardware/display.rst:266
+#: 346c8ff6180042ae8072ce95d953a042 b095b585e87b4d37bc5095b0a26a0fa0
+#: d65d698f5d50489e8a8e81fc547b2ff7 fcfaf06fd24a4a33a46a046320e7aabf
+msgid "``x, y`` Top-left corner coordinates of the rectangle. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:242 ../../en/hardware/display.rst:250
+#: ../../en/hardware/display.rst:258 ../../en/hardware/display.rst:267
+#: 173b589195384b60b84cbc153a245174 484cc115ea3340d093afe9ca63c61ecb
+#: 93e8cef7563f457ca216826f0d368ac2 bc7edbb1d1de411185645235428b57bd
+msgid "``w, h`` Width and height of the rectangle. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:247 2409f041b97c4f9ca0f704f1a973a5ff
+msgid "Draw a filled rectangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:255 3df0e35afc6d4d06945917cc3d4f2561
+msgid "Draw a rounded rectangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:259 ../../en/hardware/display.rst:268
+#: 647a1eb795c94ae6885856a4ff01f9cf fb958e123c21402b9736bb08174c5a2f
+msgid "``r`` Radius of the corners. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:264 3b7a3b07f813446dacddb08a8772ad2f
+msgid "Draw a filled rounded rectangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:274 17800087dd3c4f8380535abd117a05e0
+msgid "Draw a triangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:276 ../../en/hardware/display.rst:285
+#: 57cc2616780c4d87ad723e54cd196a96 d800577307004bf7b5b3e52346d4d68b
+msgid "``x0, y0`` Coordinates of the first vertex. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:277 ../../en/hardware/display.rst:286
+#: 5288312935bf4d5c9591d9e891bd7dcb 9cb9d1e0cc774444890f19dc399b4a1f
+msgid "``x1, y1`` Coordinates of the second vertex. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:278 ../../en/hardware/display.rst:287
+#: 39a53e654675402895a3364b8ae5d0f1 af0f804370f044768f5fc03f8487ac3b
+msgid "``x2, y2`` Coordinates of the third vertex. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:283 aec20e7b18564950b3e475ba3e831561
+msgid "Draw a filled triangle."
+msgstr ""
+
+#: ../../en/hardware/display.rst:288 ../../en/hardware/display.rst:332
+#: 834b5804da3c415cb74aa235ba645240 cc272b105423456ba6076088213cada3
+msgid "``color:`` Color in RGB888 format. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:292 cf2cf5012e5e4f9d9ebcd7165f28f615
+msgid "Draw an arc."
+msgstr ""
+
+#: ../../en/hardware/display.rst:294 ../../en/hardware/display.rst:305
+#: 564b09ab6b084aa081ec7da61cb061f1 a3073bf6e373402688b08b0f1af16be4
+msgid "``x, y`` Center coordinates of the arc. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:295 ../../en/hardware/display.rst:306
+#: e354d314aaa14192bbc3a0cb8307cec6 e68a0ac3502049afbe2bcb90f3613739
+msgid "``r0`` Inner radius of the arc. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:296 ../../en/hardware/display.rst:307
+#: e9ed15e7649a4fd29c9c73862f6423eb f162a73a6d2d494aa892ad8218150b70
+msgid "``r1`` Outer radius of the arc. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:297 ../../en/hardware/display.rst:308
+#: ../../en/hardware/display.rst:319 ../../en/hardware/display.rst:330
+#: 752bc2a57f8d43d5b6420e0fadf0a2d7 86be313730f543cf9267adbe79c5176e
+#: b8c20f5bbc3e41139d8e873a9f626dc0 fad3b206e2f240db9d4872e80a8d9c78
+msgid "``angle0`` Starting angle of the arc (in degrees). Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:298 ../../en/hardware/display.rst:309
+#: ../../en/hardware/display.rst:331 2c11dbc6f6324adc90ef579bf849746e
+#: 674eddeece54408195f9eec27c9ad8cb ddedbade206a4656a816531176209e74
+msgid "``angle1`` Ending angle of the arc (in degrees). Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:303 245a92ba2c3c4c8d8047a6b32505f84d
+msgid "Draw a filled arc."
+msgstr ""
+
+#: ../../en/hardware/display.rst:314 ffccbc0d0bd646b8a7afecc7fa3850a4
+msgid "Draw an elliptical arc."
+msgstr ""
+
+#: ../../en/hardware/display.rst:316 ../../en/hardware/display.rst:327
+#: 3ad4609b524643099e40a7d88485a5fc 419059ad902246bebeb0d701229423e0
+msgid "``x, y`` Center coordinates of the elliptical arc. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:317 ../../en/hardware/display.rst:328
+#: 7e63953c140e4a20a38d1ea22af4705f f64f3f4cd6f54c4c9da423078c2f3039
+msgid ""
+"``r0x, r0y`` Radii of the inner ellipse (horizontal and vertical). "
+"Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:318 ../../en/hardware/display.rst:329
+#: 472aee98a1fb4253ba73af5a30db85c2 5a8f131c488b4cada8e0b7ec05c8e4c9
+msgid ""
+"``r1x, r1y`` Radii of the outer ellipse (horizontal and vertical). "
+"Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:320 b4b136e741a5434595e563216c3b0250
+msgid "``angle1`` Ending angle of the arc (in degrees). Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:325 8dcbe0c5bd344192bb0448e46c6eaa57
+msgid "Draw a filled elliptical arc."
+msgstr ""
+
+#: ../../en/hardware/display.rst:336 ae89aece24394acabc875a735a177d6e
+msgid "Draw a QR code."
+msgstr ""
+
+#: ../../en/hardware/display.rst:338 428ee98ba8464b79b31e91f6df403282
+msgid "``text`` QR code content."
+msgstr ""
+
+#: ../../en/hardware/display.rst:339 9d34918a2a7d4680913f84856c797686
+msgid "``x, y`` Starting coordinates for displaying the QR code."
+msgstr ""
+
+#: ../../en/hardware/display.rst:340 789741eca98349dd8169e1e0ea3b876b
+msgid "``w:`` Width of the QR code. Default is 0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:341 90e230612dfe4a829af7c1908efc0b1e
+msgid "``version`` QR code version. Default is 1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:343 ../../en/hardware/display.rst:405
+#: ../../en/hardware/display.rst:448 876e1933dd364e328d7fe75969ff5221
+#: a5824627bf1a4b2aae20e83487e0293c ea5dccd69ea74d76be5bb04c33406819
+msgid "**Example**:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:345 8b805fc8f6ce461790d495c734bb1bb5
+msgid "Generate and display a QR code with the content \"hello\":"
+msgstr ""
+
+#: ../../en/hardware/display.rst:353 90d26f3944f9423ea58c6d3e35d33855
+msgid "Draw a PNG image."
+msgstr ""
+
+#: ../../en/hardware/display.rst:355 ../../en/hardware/display.rst:382
+#: ../../en/hardware/display.rst:391 ../../en/hardware/display.rst:400
+#: 74f4cb62ef3844f1b9fb036bf6a18bed 982b6ee09a634e60aee6cf7da7209014
+#: c21ab57d58344acba4eec3472fcc8bcc d6bc03d105b14d85b4d17a384c445cd3
+msgid "``img`` Image file path or opened image data."
+msgstr ""
+
+#: ../../en/hardware/display.rst:356 ../../en/hardware/display.rst:383
+#: ../../en/hardware/display.rst:392 ../../en/hardware/display.rst:401
+#: ../../en/hardware/display.rst:420 2abf8a225aa1418b8d007f9d2acb05e5
+#: 377aa17d2da74e3b9dbb44c44c9fa731 6c3c79c3ece64ba4853e226dc862c309
+#: 90c460cc64314c2fb0e2a1cd08463b4c fbd790f19c884c77a3cdc04149b363a4
+msgid "``x, y`` Starting coordinates on the display screen."
+msgstr ""
+
+#: ../../en/hardware/display.rst:357 ../../en/hardware/display.rst:384
+#: ../../en/hardware/display.rst:393 ../../en/hardware/display.rst:402
+#: 111eedfba39e474e8002db32fd573747 207eb8d5dcbf4b4ba126e8142031de9d
+#: 77735ad1f42a4dc6ac570d3f3f3e726e 8f4012bfa8ed47968d1438bc3fbf2871
+msgid "``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0."
+msgstr ""
+
+#: ../../en/hardware/display.rst:358 ../../en/hardware/display.rst:385
+#: ../../en/hardware/display.rst:394 ../../en/hardware/display.rst:403
+#: 51ba5b77e2d7445e81effbf0cacc086e 770a6b2c48124c6ea7af3d2ff91c6b3b
+#: 9f72e9e229754ad18271ccfead12afa0 d52671ad7adf4e9ab75d8930478b8372
+msgid "``offX, offY`` Offset in the image to start from."
+msgstr ""
+
+#: ../../en/hardware/display.rst:359 693f90196ccc41b7bc94b46674f092d2
+msgid "``scaleX, scaleY`` Whether to scale the image horizontally or vertically."
+msgstr ""
+
+#: ../../en/hardware/display.rst:361 d2104f0e3f2b4b7c879ece398efe8a3e
+msgid "**Examples**:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:363 d768b8239a564e6a88e4e1f99db376d9
+msgid "Display a PNG image from a specified path:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:369 58a4c033f52b47f096d80f688752b0b3
+msgid "Display a PNG image from read data:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:380 9d9400a9d627422dabd0e6dcc891fea7
+msgid "Draw a JPG image."
+msgstr ""
+
+#: ../../en/hardware/display.rst:389 9a6660e82b754a258e4e0eb47010ddd5
+msgid "Draw a BMP image."
+msgstr ""
+
+#: ../../en/hardware/display.rst:398 df3a9ef2337d4322baed6b38735efa75
+msgid "Draw an image."
+msgstr ""
+
+#: ../../en/hardware/display.rst:407 d692001e7e154f77b5ce508151e22f3a
+msgid "Draw an image from the buffer:"
+msgstr ""
+
+#: ../../en/hardware/display.rst:417 721cf69f2ab245cb8cec3dc85fc07590
+msgid "Draw an image from raw buffer data."
+msgstr ""
+
+#: ../../en/hardware/display.rst:419 cba5e6ec5a9a4c30aa7662bcc2006781
+msgid "``buf`` Image buffer."
+msgstr ""
+
+#: ../../en/hardware/display.rst:421 dd45331760f14137983b6d5c1e949c1e
+msgid "``w, h`` Width and height of the image."
+msgstr ""
+
+#: ../../en/hardware/display.rst:422 7321e5460fb84ab68057912fac52478b
+msgid "``len`` Length of the image data."
+msgstr ""
+
+#: ../../en/hardware/display.rst:423 ff44abd0886d4028adddbae67fcfbd0e
+msgid "``swap`` Whether to enable inverted display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:427 e9240d1572e148ad934dc64ccf0027dc
+msgid "Display a string (no formatting support)."
+msgstr ""
+
+#: ../../en/hardware/display.rst:429 6a4e33f86fe24c829208cd2666fc6e7e
+msgid "``text`` Text to display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:434 92d8e16fd5b64b8690acdaad0876b942
+msgid "Display a formatted string."
+msgstr ""
+
+#: ../../en/hardware/display.rst:436 bc36fb72181a412eb788261ed0711631
+msgid "``text`` Text to display with formatting."
+msgstr ""
+
+#: ../../en/hardware/display.rst:440 b64832c210ff481086b2d3bd78ca1482
+msgid "Create a canvas."
+msgstr ""
+
+#: ../../en/hardware/display.rst:442 74a44c3bb05e4d849a28fe6d41c10a60
+msgid "``w, h`` Width and height of the canvas."
+msgstr ""
+
+#: ../../en/hardware/display.rst:443 c235bc66cd314bdaa886b84b4c1429d8
+msgid "``bpp`` Color depth. Default is -1."
+msgstr ""
+
+#: ../../en/hardware/display.rst:444 8e30d24dec2c4791b7088f6e4eed3971
+msgid "``psram`` Whether to use PSRAM. Default is False."
+msgstr ""
+
+#: ../../en/hardware/display.rst:446 ac18469821274f0f8f25f4229f23260a
+msgid "Returns Created canvas object."
+msgstr ""
+
+#: ../../en/hardware/display.rst:458 ce8f0f094e1c41b98640d3381db0015f
+msgid "Start writing to the display."
+msgstr ""
+
+#: ../../en/hardware/display.rst:462 dd91fdef9f234665b2f2d117ff8cccf5
+msgid "End writing to the display."
+msgstr ""
+

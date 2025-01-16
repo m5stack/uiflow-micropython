@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-12 14:59+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,577 +18,720 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hardware/speaker.rst:2 3d00b0f5bfd44f6ebec39ad091f8aef4
+#: ../../en/hardware/speaker.rst:2 e13c7649dd6444d4a2f94a530d571879
 msgid "Speaker"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:8 876e98caeb254c62bbf783dc44d6a9ce
+#: ../../en/hardware/speaker.rst:8 ea08cb022ac94184bc795abb7a2eb551
 msgid ""
 "The Speaker is used to control the built-in speaker inside the host "
 "device. Below is the detailed support for Speaker on the host:"
 msgstr "Speaker 用于控制主机内部集成的按键。以下是主机的 Speaker 支持详细："
 
-#: ../../en/hardware/speaker.rst:16 91427ed03f224067aca07af1c7ba869c
+#: ../../en/hardware/speaker.rst:16 57bfbc9034c5462ba22caae168b26ec9
 msgid "Controller"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:16 2cc3d4d485fd4515844ca955e59425ca
+#: ../../en/hardware/speaker.rst:16 e2eb0f4a3a6c4c43831332d4183d9f58
 msgid "NS4168"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:16 4f910e0125d64723a997b5282105ca26
+#: ../../en/hardware/speaker.rst:16 9604d1cf753e46198dad1d85d48e78aa
 msgid "AW88298"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:18 924712caf0124f378e9f37b036737e99
-msgid "AtomS3"
+#: ../../en/hardware/speaker.rst:16 43b6623516784951b92079960eaa7451
+msgid "Buzzer"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:20 86e5c16eb70547f59f1cb3b2d2ad8e92
-msgid "AtomS3 Lite"
+#: ../../en/hardware/speaker.rst:18 e1401c13c4114e658a53e7b675aabdea
+msgid "AirQ"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:22 8635e182e9c842a0ae96ebe2701c4b68
-msgid "AtomS3U"
-msgstr ""
-
-#: ../../en/hardware/speaker.rst:24 f69ab8ab765b4a7896adc20a7694449b
-msgid "StampS3"
-msgstr ""
-
-#: ../../en/hardware/speaker.rst:26 97ff9eaea61841458ecd2346f135e2ed
-msgid "CoreS3"
-msgstr ""
-
-#: ../../en/hardware/speaker.rst:26 ../../en/hardware/speaker.rst:28
-#: ../../en/hardware/speaker.rst:30 618bca9e9fd44e6086a9586f9a9f06c2
-#: 630682f14a6b4bfb802bd08e9a628135 d6bbd6b1f08b43a19fbbe547e2169e24
+#: ../../en/hardware/speaker.rst:18 ../../en/hardware/speaker.rst:20
+#: ../../en/hardware/speaker.rst:36 ../../en/hardware/speaker.rst:38
+#: ../../en/hardware/speaker.rst:40 ../../en/hardware/speaker.rst:42
+#: ../../en/hardware/speaker.rst:44 ../../en/hardware/speaker.rst:46
+#: ../../en/hardware/speaker.rst:48 ../../en/hardware/speaker.rst:60
+#: ../../en/hardware/speaker.rst:62 ../../en/hardware/speaker.rst:64
+#: ../../en/hardware/speaker.rst:66 168e0875ed754f12bdb790cb5e8103dc
+#: 18091e844f684d7588ad1384992892cc 1bf7138de3944fdf9e1c18e405bfa737
+#: 1cd7e7de163149229f6381778a5b2743 335732a4203949c1b673e1de24f4a6a0
+#: 5fe58931f7d848f7b223ac231233b059 7d41126aa685476f825b5e9d71f3e994
+#: 80892cbca31747d2bfdab4254558b170 8fe35d519a3342f1949e8209bd4e772f
+#: c30c51a9dd7e4e8cb3598c40571e3cc8 c329e0e6cdfc496995dd2f36bd78c992
+#: c4956d078ff84dd683a3e05fc4ffbb56 efb675de9dd347339fde7a161ea7337e
 msgid "|S|"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:28 bb30660be72640b0a54c83023be092ce
+#: ../../en/hardware/speaker.rst:20 576dba53fdcd4f3a9c36a500e6abde90
+msgid "Atom Echo"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:22 180fa40b603b4940beefbddd4e620989
+msgid "Atom Lite"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:24 53bfc5dda87c4e649e7347e60e31856c
+msgid "Atom Martrix"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:26 264e5d8b629a49778e432b8dc38e4222
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:28 62b5ed44b4ce4361a03a1ba9a108b45e
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:30 915e55992c014c88944fc8a630af20eb
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:32 42e3a29f29d84a579ad7f1aa34c7353a
+msgid "AtomU"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:34 02aa6ff982c241b8b252a0b99fa74d52
+msgid "Basic"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:36 1d701154678840e39f2715e6291f5fa0
+msgid "Capsule"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:38 8e75709c28554419a298a038b950fde5
+msgid "Cardputer"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:40 48eb8d06291d4abda7804f8d85b509a2
 msgid "Core2"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:30 4aa158dba1b84a6c8a72e78e2ac4cc80
+#: ../../en/hardware/speaker.rst:42 e369cc9e5127479a8cea3c8e49336277
+msgid "CoreInk"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:44 912260cb1b2e430295a9b1fc6b07bc8a
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:46 9e68fe86217b4d4d9463f5be20ae59c6
+msgid "Dial"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:48 44605b5535d04cc3a628457aedb08b57
+msgid "DinMeter"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:50 eb1b3f00954745c1bd65dbfe413bd8b7
+msgid "Fire"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:52 0898eb6bbea44edda3f89fb81582c20c
+msgid "Paper"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:54 9ed1b7253dc94e07a1062841a7a946a8
+msgid "Stamp PICO"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:56 9ef56cdeeddb4061a8e5eb15ee1c3237
+msgid "StampS3"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:58 a84fb167cf6e4950ac9830c50520a92a
+msgid "Station"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:60 fdadc5c585c0445d9dd027da9ebe0913
+msgid "StickC"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:62 cf13fe040d824305a067a71fe8e5dea3
+msgid "StickC PLUS"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:64 49f08fe0cb0a4bdca442ef1905064f91
+msgid "StickC PLUS2"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:66 977d3c456f064fbe85ccfd5dcdc0e04f
 msgid "TOUGH"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:36 d3e6acaecf01454385df791bd1a545db
-msgid "Micropython Example::"
+#: ../../en/hardware/speaker.rst:72 91512c2dea4a48d69877d19a65159953
+msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:41 42df22a785d84429935c91bbc0e94646
-msgid "UIFLOW2 Example::"
+#: ../../en/hardware/speaker.rst:79 c6c430313a584ab98ee1fc5870a433a2
+msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:47 5a9c6e56c49a4a788881a55348ad7d50
+#: ../../en/hardware/speaker.rst:81 5635ff8b2f9740e5ba96cdceac8c1fb5
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.speaker.ref:45 c26fbf23831b4070baaeaed891f84324
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:86 ef7d38cb9bfb4457aab71fbf5f483856
+msgid "|cores3_speaker_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:88 9c01980a98ae43b49e197d44231080d5
+msgid ""
+":download:`poweron_2_5s.wav "
+"<../../../examples/hardware/speaker/poweron_2_5s.wav>`"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:91 ebdf64f32dca42ec8cc26436bb866cfd
 msgid "class Speaker"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:51 e0d8c5ad70e34c2ba5add994f6333106
+#: ../../en/hardware/speaker.rst:95 cdd1f1fab6034794807f9634d61f06c5
+#, fuzzy
 msgid ""
 "Methods of the Speaker Class heavily rely on ``M5.begin()`` "
-"|M5.begin.svg| and ``M5.update()`` |M5.update.svg|."
+"|M5.begin.png| and ``M5.update()`` |M5.update.png|."
 msgstr ""
 "Speaker Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` "
 "|M5.update.svg|。"
 
-#: ../../en/refs/system.ref:1 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "M5.begin.svg"
+#: ../../en/refs/system.ref:2 5ac2521fd183434cb8a999b1ec1fa780
+#: 713357fed32d4ff892da62e99f554503
+msgid "M5.begin.png"
 msgstr ""
 
-#: ../../en/refs/system.ref:3 3d1e341e7848459aaeccb9248e48d342
-msgid "M5.update.svg"
+#: ../../en/refs/system.ref:5 58eb71bf980b439a9b0b91515fba86d5
+#: 85587eceb1c145b2ad27a7d22d54b6bb
+msgid "M5.update.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:53 2960a16f8c0842eba2713168a479fe5c
+#: ../../en/hardware/speaker.rst:97 cb296970547b4f1e9147113e08be9dcf
+#, fuzzy
 msgid ""
 "All calls to methods of Speaker objects should be placed after "
-"``M5.begin()`` |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should"
+"``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should"
 " be called in the main loop."
 msgstr ""
 "调用 Speaker 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在 主循环中调用 "
 "``M5.update()`` |M5.update.svg|。"
 
-#: ../../en/hardware/speaker.rst:57 44ec83fdf9964923b366b11da721e8b5
+#: ../../en/hardware/speaker.rst:101 66d8e67415ee4345ae71e1168edd9646
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:63 3a8bc001564d49ccaaaa9dd8c10c538f
+#: ../../en/hardware/speaker.rst:107 28a8f7056f2b4f08b20e77342cdef21c
 msgid "Get or set the parameters of the Speaker object."
 msgstr "获取或者设置 Speaker 对象的参数。"
 
-#: ../../en/hardware/speaker.rst:65 ../../en/hardware/speaker.rst:109
-#: ../../en/hardware/speaker.rst:118 ../../en/hardware/speaker.rst:127
-#: ../../en/hardware/speaker.rst:136 ../../en/hardware/speaker.rst:148
-#: ../../en/hardware/speaker.rst:157 ../../en/hardware/speaker.rst:166
-#: ../../en/hardware/speaker.rst:175 ../../en/hardware/speaker.rst:184
-#: ../../en/hardware/speaker.rst:193 ../../en/hardware/speaker.rst:202
-#: ../../en/hardware/speaker.rst:216 ../../en/hardware/speaker.rst:225
-#: ../../en/hardware/speaker.rst:235 ../../en/hardware/speaker.rst:251
-#: ../../en/hardware/speaker.rst:269 ../../en/hardware/speaker.rst:285
-#: 4ae6053326af4894a25fbaff576ddd15 779bb3150ce5436ea0437573ef3f66ec
-#: e33d5c10c89c439f9c5b3a60deb00814 f01f47ca44c64455955f606b3f5c764c
+#: ../../en/hardware/speaker.rst:109 ../../en/hardware/speaker.rst:153
+#: ../../en/hardware/speaker.rst:162 ../../en/hardware/speaker.rst:171
+#: ../../en/hardware/speaker.rst:180 ../../en/hardware/speaker.rst:192
+#: ../../en/hardware/speaker.rst:201 ../../en/hardware/speaker.rst:210
+#: ../../en/hardware/speaker.rst:219 ../../en/hardware/speaker.rst:228
+#: ../../en/hardware/speaker.rst:237 ../../en/hardware/speaker.rst:246
+#: ../../en/hardware/speaker.rst:260 ../../en/hardware/speaker.rst:269
+#: ../../en/hardware/speaker.rst:279 ../../en/hardware/speaker.rst:295
+#: ../../en/hardware/speaker.rst:313 ../../en/hardware/speaker.rst:329
+#: ../../en/hardware/speaker.rst:344 197e43e3a311427fb258a9d55fbe5cf1
+#: 1c3ac13c28a74656a7887fe85c5fca8b 2aafa1ea9fbd4205943ed8618450ca90
+#: 39d6d9d14b28459daac9c4719c1b507f 45a3cb0eccdc4cda8071d453fad4e27c
+#: 482571ac1a6e460a89e10b95446f0aee 58398affcb3b4b40bcc1d8cf5da269fb
+#: 5db1eb05eb1d406a86c96ca9aa697cba 708a89a3ccbd413f9c47686d439b87d3
+#: 8472598713aa4b36ad269631371cb82e 9b1a1d0b45d24dc48bd43fb7cd8e38d3
+#: 9b4ee8bb5a504d60be8c66e7536b2a97 9d256474c8134b3f95f9d87bed7939d1
+#: a5e2b59bc02e449a8dd7018c6e3cd3c8 a731a49de0a34a9d8047abf17f3a5ede
+#: cb2cd9aae6224dfb938ccf807b5bfd01 ec677b29271e4423aa0cf71e413ee194
+#: f6471566b80a4c929094c0519cdb9232 f6c41153309d427db8188f5715f53637
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:67 91144e239da649d283b0cb34b61ac95a
+#: ../../en/hardware/speaker.rst:111 c2e65f1c31e14dd5ad59a59de13dd5b3
 msgid "Read property:"
 msgstr "读取属性："
 
-#: ../../en/hardware/speaker.rst:70 f85f7578892f47a7be4338eeb72ad2f3
+#: ../../en/hardware/speaker.rst:114 3e8d4cacd388484ca1de2febc88ea7b2
 msgid "Parameter"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:70 2251272b919544649f0bff580b70d733
+#: ../../en/hardware/speaker.rst:114 db049253f25f4a23a3bcbb5ef5ccf90a
 msgid "Type"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:70 cba5e74602c643a095a1aaacff5c3943
+#: ../../en/hardware/speaker.rst:114 49e78d99831243f39ebe8c229b3a396b
 msgid "Description"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:72 c22f9350d1fd49ffafc5c0c3171523fe
+#: ../../en/hardware/speaker.rst:116 ea9da7ed88de461e81989b6b0c871e94
 msgid "pin_data_out"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:72 ../../en/hardware/speaker.rst:73
-#: ../../en/hardware/speaker.rst:74 ../../en/hardware/speaker.rst:75
-#: ../../en/hardware/speaker.rst:79 ../../en/hardware/speaker.rst:80
-#: ../../en/hardware/speaker.rst:81 ../../en/hardware/speaker.rst:82
-#: ../../en/hardware/speaker.rst:83 ../../en/hardware/speaker.rst:84
-#: ../../en/hardware/speaker.rst:85 a6a77d8543ab48fbbba77baf2564c629
+#: ../../en/hardware/speaker.rst:116 ../../en/hardware/speaker.rst:117
+#: ../../en/hardware/speaker.rst:118 ../../en/hardware/speaker.rst:119
+#: ../../en/hardware/speaker.rst:123 ../../en/hardware/speaker.rst:124
+#: ../../en/hardware/speaker.rst:125 ../../en/hardware/speaker.rst:126
+#: ../../en/hardware/speaker.rst:127 ../../en/hardware/speaker.rst:128
+#: ../../en/hardware/speaker.rst:129 0dc929e597554738869380518fae6aed
+#: 5923efa1889f43e38e5954505f4dac9c 5a0fd9ad0c4c449bbade26605e0636eb
+#: 8480d3ba43024ed396ab99ed637414ea 9134841deddd4e5ab86e1701ee7b37e7
+#: a9d661c242774971880dbaded973bcae b20c6b6356fc44b58438ae0e6f6901a3
+#: c15dce00f8944b1ba72933dd8dae952b df6f3fb4356b479bb75daa1241111481
+#: ff008ee0d40045b3a3d9a8478764d3fb ff5e6ded34f8493b8eb41fc1b0816059
 msgid "(integer)"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:72 e14c7c24335d4c4591729f4177669723
+#: ../../en/hardware/speaker.rst:116 509cfb3136f44d07a6f38a258b2fcb72
 msgid "Serial data line of I2S, representing audio data in binary complement."
 msgstr "I2S 的串行数据线，用二进制补码表示的音频数据。"
 
-#: ../../en/hardware/speaker.rst:73 39bd742a327f434abdd04a3a106dcd9c
+#: ../../en/hardware/speaker.rst:117 8982e1964994425ca10ee86c3284fa79
 msgid "pin_bck"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:73 70fb5c6048cf4c24bd13bcf9b60be996
+#: ../../en/hardware/speaker.rst:117 b9e8f16971884675a120616d4496291f
 msgid "Serial clock line of I2S, corresponding to each bit of digital audio data."
 msgstr "I2S 的串行时钟线，对应数字音频的每一位数据。"
 
-#: ../../en/hardware/speaker.rst:74 6032bb5583e14d0e99b88bb425bc2e24
+#: ../../en/hardware/speaker.rst:118 be4675b471ed41f588ec9c821976bd25
 msgid "pin_ws"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:74 2c9d359c9ca9454a87174905a87a7def
+#: ../../en/hardware/speaker.rst:118 88fce2f701914c88a2f07bd7d15a7158
 msgid "Frame clock of I2S, used to switch left and right channel data."
 msgstr "I2S 的帧时钟，用于切换左右声道的数据。"
 
-#: ../../en/hardware/speaker.rst:75 af1e4a28c47048b19d469aa805735c43
+#: ../../en/hardware/speaker.rst:119 a7e9a7a162534fa7bdd66cce1bf15ca8
 msgid "sample_rate"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:75 69832642f66a4244a8e2d80eae0d8aca
+#: ../../en/hardware/speaker.rst:119 922e6444c29b469dac4ab736bb8541e2
 msgid "Target sampling rate of output audio."
 msgstr "音频输出的采样率。"
 
-#: ../../en/hardware/speaker.rst:76 3a2206688b58492595ed5ddfa18a865a
+#: ../../en/hardware/speaker.rst:120 d5a396660d7d4401ae212ece829aee29
 msgid "stereo"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:76 ../../en/hardware/speaker.rst:77
-#: ../../en/hardware/speaker.rst:78 3cdc181f202c49a0ae0c63c6af09e26d
+#: ../../en/hardware/speaker.rst:120 ../../en/hardware/speaker.rst:121
+#: ../../en/hardware/speaker.rst:122 5cf07b68e4d64f5bac78348fab877806
+#: 9e1820e29b374b8e925d29b39e4132b2 d8fb91ef9cd442edaf75bcf543240878
 msgid "(boolean)"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:76 4bf740e8245640778d07f90c86be8fe4
+#: ../../en/hardware/speaker.rst:120 8fb8939feb5a4363847e2e085a410480
 msgid "Use stereo output."
 msgstr "使用双声道输出。"
 
-#: ../../en/hardware/speaker.rst:77 f0ba18273ac64378adc80556f4f5642a
+#: ../../en/hardware/speaker.rst:121 3424c4ba889941109f189799b151fcde
 msgid "buzzer"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:77 00101a13c327427483ba6b8900c44a28
+#: ../../en/hardware/speaker.rst:121 46e1005a515d42409eecfa52f3778807
 msgid "Use single GPIO buzzer."
 msgstr "使用单GPIO蜂鸣器。"
 
-#: ../../en/hardware/speaker.rst:78 74e027654d204f4abeaa9c044d739666
+#: ../../en/hardware/speaker.rst:122 2202b40f745f4243a8c1c18d00ec20a5
 msgid "use_dac"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:78 f03016c346414f7abafa9205bbbb155a
+#: ../../en/hardware/speaker.rst:122 3b7864d0bd8f4eea90fe7c6a521458a6
 msgid "Use DAC speaker."
 msgstr "使用DAC音箱。"
 
-#: ../../en/hardware/speaker.rst:79 baff5d0888664c41942979221d1635b2
+#: ../../en/hardware/speaker.rst:123 949ad2d1d6ed4027814bd72facda405a
 msgid "dac_zero_level"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:79 e7018de5a0f94d2694aaef0bba99d761
+#: ../../en/hardware/speaker.rst:123 cd37060c400d4e668bbef440c1202b14
 msgid "Zero level reference value when using DAC."
 msgstr "使用DAC时的零电平参考值。"
 
-#: ../../en/hardware/speaker.rst:80 f9eedebc053c4e59a3d51f008754932b
+#: ../../en/hardware/speaker.rst:124 85fce347ade5427689d5693fa298f6ae
 msgid "magnification"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:80 440355dd2c0f410883527bfbb0066a8a
+#: ../../en/hardware/speaker.rst:124 58e9a3ef793841afa1b13db74af47a79
 msgid "Multiplier of the input value."
 msgstr "输入值的乘数。"
 
-#: ../../en/hardware/speaker.rst:81 45bbad4a3a2a49e4ba6ea3eff59d7f9b
+#: ../../en/hardware/speaker.rst:125 1a85103b0f534d46887074fffe469b57
 msgid "dma_buf_len"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:81 3482d06bab354cf79748d730be3fb81e
+#: ../../en/hardware/speaker.rst:125 0937e398a660431e9715cec751df22d3
 msgid "DMA buffer length of I2S."
 msgstr "I2S 的DMA缓冲区长度。"
 
-#: ../../en/hardware/speaker.rst:82 bd0526f19e7942fa991095a7bb5c9b5e
+#: ../../en/hardware/speaker.rst:126 33c4ab01bb3849bcb812318d6eebe780
 msgid "dma_buf_count"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:82 a14d26f91915428583502848c7fac451
+#: ../../en/hardware/speaker.rst:126 a7393d82a3c146ad98c3940ca090de80
 msgid "Number of DMA buffers of I2S."
 msgstr "I2S 的DMA缓冲区数量。"
 
-#: ../../en/hardware/speaker.rst:83 71a2f5e018894ecfb59f1c7f8e856001
+#: ../../en/hardware/speaker.rst:127 5009df39ef27451daa23291e441de254
 msgid "task_priority"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:83 67d194b7e31f481ca6e8a56fcc4606ef
+#: ../../en/hardware/speaker.rst:127 004e9afe5dca46fab54eb88cfc368cc9
 msgid "Priority of background tasks."
 msgstr "后台任务优先级。"
 
-#: ../../en/hardware/speaker.rst:84 033cb01c04b24eeeaa218201e42dfb35
+#: ../../en/hardware/speaker.rst:128 27fc5cefc94740e4833428fa5a040fac
 msgid "task_pinned_core"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:84 bf501a365c22428e908d18a358519876
+#: ../../en/hardware/speaker.rst:128 dafcd8aba6e04e56ae625f5193878071
 msgid "CPU used by background tasks."
 msgstr "后台任务使用的CPU。"
 
-#: ../../en/hardware/speaker.rst:85 8a7d37833a0d4af7a7e8085f559840bb
+#: ../../en/hardware/speaker.rst:129 49c2e8a823064e6ebb99bd20986f8347
 msgid "i2s_port"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:85 128b472e8cd345d4b42009c732f5062c
+#: ../../en/hardware/speaker.rst:129 a725a3f8ff7648649571492cf05488ad
 msgid "I2S port."
 msgstr "I2S端口。"
 
-#: ../../en/hardware/speaker.rst:88 ../../en/hardware/speaker.rst:97
-#: fb35ea7ecf784e9c8bd389ae542535ca
+#: ../../en/hardware/speaker.rst:132 ../../en/hardware/speaker.rst:141
+#: 68425c0a8aa6452980b5e102f5bd14e4 ead8a028a9164300a833c4bc555a675d
 msgid "Python::"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:92 6654a48f86324aa7bf9d96e2b1a5679d
-msgid "|get_config.svg| |get_config1.svg|"
+#: ../../en/hardware/speaker.rst:136 844323466d0d4a4fb92d3983837bdcef
+msgid "|get_config.png| |get_config1.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:3 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "get_config.svg"
+#: ../../en/refs/hardware.speaker.ref:1 452c2c467e104546846ba6c9d1d03a22
+msgid "get_config.png"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:5 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "get_config1.svg"
+#: ../../en/refs/hardware.speaker.ref:3 3fb37e4a38ac44ffa1572f9da99449df
+msgid "get_config1.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:95 429d97526b8f457c9d6b8e5c99098ad6
+#: ../../en/hardware/speaker.rst:139 02d18bb2d7544e5cb7ceecbb561588ff
 msgid "Set property:"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:101 b728689ad4f9476188e66d4eeb44a453
-msgid "|set_config.svg| |set_config1.svg|"
+#: ../../en/hardware/speaker.rst:145 67040f51f2734be18d0b53f1dc9f19cd
+msgid "|set_config.png| |set_config1.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:7 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "set_config.svg"
+#: ../../en/refs/hardware.speaker.ref:5 66052f5edeb24487a7f5be88a5e848db
+msgid "set_config.png"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:9 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "set_config1.svg"
+#: ../../en/refs/hardware.speaker.ref:7 8a63087359e6455492b1f917248b061f
+msgid "set_config1.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:107 7284d4a67e0f4dc9b64ed4400463b295
+#: ../../en/hardware/speaker.rst:151 9a390c796099412c9605b2554ed54ca6
 msgid "Start the Speaker function. Returns True if successful."
 msgstr "启动 Speaker 功能。执行成功返回 True 。"
 
-#: ../../en/hardware/speaker.rst:111 691ec250bdeb4aceb90555a09e85d9cb
-msgid "|begin.svg|"
+#: ../../en/hardware/speaker.rst:155 3c48e6ae3573447d8f5281825fef10c0
+msgid "|begin.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:11 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "begin.svg"
+#: ../../en/refs/hardware.speaker.ref:9 c52927e0768f4e41a8e6f29188bbc22e
+msgid "begin.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:116 df727ba858534de2b62574b3bb59c653
+#: ../../en/hardware/speaker.rst:160 9f7ef4d99327414f905fdcd032393fb9
 msgid "Disable the Speaker."
 msgstr "禁用 Speaker 。"
 
-#: ../../en/hardware/speaker.rst:120 2f174873d6994830a5731019cc7fc8ce
-msgid "|end.svg|"
+#: ../../en/hardware/speaker.rst:164 768013e5bbe541548b9e7ac17d42644c
+msgid "|end.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:13 3d1e341e7848459aaeccb9248e48d342
-msgid "end.svg"
+#: ../../en/refs/hardware.speaker.ref:11 563de77155a445c19de6c4be3042b2c9
+msgid "end.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:125 cc7948568eea42c98b23462290cc9227
+#: ../../en/hardware/speaker.rst:169 0209ffc90fb440a9b5d199192654e4ef
 msgid "Check if the Speaker is running. Returns a boolean value."
 msgstr "获取 Speaker 是否处于运行状态， 返回bool类型。"
 
-#: ../../en/hardware/speaker.rst:129 d005ed7690d2451aa0b2ad8b53749b70
-msgid "|isRunning.svg|"
+#: ../../en/hardware/speaker.rst:173 119adc396f9244a283e5bde66cedc44b
+msgid "|isRunning.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:15 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "isRunning.svg"
+#: ../../en/refs/hardware.speaker.ref:13 6598b91303ae4f419b313fa8482ac980
+msgid "isRunning.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:134 305c3e03165743498a9684b705a81923
+#: ../../en/hardware/speaker.rst:178 815fe0d1c7b7418b9040c0d3ea990aab
 msgid "Check if the Speaker is enabled. Returns a boolean value."
 msgstr "获取 Speaker 是否处于使能状态， 返回bool类型。"
 
-#: ../../en/hardware/speaker.rst:138 c681b9402cb5400f95b1af04b1a904a6
-msgid "|isEnabled.svg|"
+#: ../../en/hardware/speaker.rst:182 44a8ba7f6e7843419ac359ee44bfb966
+msgid "|isEnabled.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:17 3d1e341e7848459aaeccb9248e48d342
-msgid "isEnabled.svg"
+#: ../../en/refs/hardware.speaker.ref:15 d8618398cd30444fa765cedc274b52c0
+msgid "isEnabled.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:143 1347d6b4cc744289b8733b60be0ac516
+#: ../../en/hardware/speaker.rst:187 5215b54ad8034ddda48ebfc70fcb2ea3
 msgid "Check if the Speaker is playing sound. Returns a boolean value."
 msgstr "获取 Speaker 是否处于声音输出状态， 返回bool类型。"
 
-#: ../../en/hardware/speaker.rst:145 dba3a6235a9b43bdbd1077fb63d83e3c
+#: ../../en/hardware/speaker.rst:189 de8cdc930906420f9ca1f606d80bec1d
 msgid ""
 "If the parameter ``channel`` is provided, it checks the playback status "
 "of the specified channel. ``channel`` accepts values from 0 to 7."
 msgstr "传入参数 ``channel`` 时，获取指定通道的播放状态。``channel`` 接受的值是 0 ~ 7 。"
 
-#: ../../en/hardware/speaker.rst:150 ede3afb98bb44c2b9ccfc835d36584db
-msgid "|isPlaying.svg|"
+#: ../../en/hardware/speaker.rst:194 5b2682c6f58d47668861338f8a1c61e5
+msgid "|isPlaying.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:19 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "isPlaying.svg"
+#: ../../en/refs/hardware.speaker.ref:17 9767e917bc6e41beac93feaf1c988cd9
+msgid "isPlaying.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:155 2078f125d4c545f6948b6f0881261b44
+#: ../../en/hardware/speaker.rst:199 2fcc2f19dd5c44a8a845285e617c3d07
 msgid "Get the number of channels currently playing."
 msgstr "获取正在播放的频道数。"
 
-#: ../../en/hardware/speaker.rst:159 a331ae8004774b73b19f7135e9d71e9e
-msgid "|getPlayingChannels.svg|"
+#: ../../en/hardware/speaker.rst:203 979a709b0f394f82abfaf7acaf65ecd4
+msgid "|getPlayingChannels.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:21 6bfa4ac30a064b10a19a70ec04255ef6
-msgid "getPlayingChannels.svg"
+#: ../../en/refs/hardware.speaker.ref:19 584af7c16e464f6982554aae3813faa0
+msgid "getPlayingChannels.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:164 680eff1d35c1418fa604e76cb62c6396
+#: ../../en/hardware/speaker.rst:208 8acd02d150094cb0b9317def75ccac00
 msgid ""
 "Set the master volume level for audio output. ``volume`` accepts volume "
 "levels from 0 to 255."
 msgstr "设置声音的输出主音量。``volume`` 接受 0 ~ 255 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:168 0f5cd4dcba404315955b2ee06996c58e
-msgid "|setVolume.svg|"
+#: ../../en/hardware/speaker.rst:212 f0a584dc4d3a45c6be8dde19bfaa8bc3
+msgid "|setVolume.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:23 3d1e341e7848459aaeccb9248e48d342
-msgid "setVolume.svg"
+#: ../../en/refs/hardware.speaker.ref:21 c5991082051249179b75bf783081cf96
+msgid "setVolume.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:173 6c66cf553bc442e9bb23f0458b342ab4
+#: ../../en/hardware/speaker.rst:217 26f16ae4fe1640ea9fc7ec55812ec26b
 msgid ""
 "Get the master volume level for audio output. Returns volume levels from "
 "0 to 255."
 msgstr "获取声音的输出主音量。返回 0 ~ 255 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:177 93b9af49fd8c4b1393a54de3f47f8fed
-msgid "|getVolume.svg|"
+#: ../../en/hardware/speaker.rst:221 ecbe250633ab4324a3f4646af40a5fcb
+msgid "|getVolume.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:25 3d1e341e7848459aaeccb9248e48d342
-msgid "getVolume.svg"
+#: ../../en/refs/hardware.speaker.ref:23 a41a4db463da4161979f2b9e95441808
+msgid "getVolume.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:182 4e6634d66443433daedfcf46bcb9230a
+#: ../../en/hardware/speaker.rst:226 2fbf009e88c2457d9256c5995c8d965c
 msgid ""
 "Set the master volume level for audio output as a percentage. "
 "``percentage`` ranges from 0% to 100%."
 msgstr "设置声音的输出主音量百分比。``percentage`` 是 0% ~ 100% 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:186 9bf01b89d5184d659ff9543c5085ef99
-msgid "|setVolumePercentage.svg|"
+#: ../../en/hardware/speaker.rst:230 487945a4ffb441fba1275e4e766ed879
+msgid "|setVolumePercentage.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:27 3d1e341e7848459aaeccb9248e48d342
-msgid "setVolumePercentage.svg"
+#: ../../en/refs/hardware.speaker.ref:25 bb8d099c5d904d4bbee4f1c968dcfc2b
+msgid "setVolumePercentage.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:191 21bbea888cad4d7bb47ce73eaa500dd6
+#: ../../en/hardware/speaker.rst:235 fc26e453380e45d8b7a46100396b5dfa
 msgid ""
 "Get the master volume level for audio output as a percentage. Returns "
 "volume levels from 0% to 100%."
 msgstr "获取声音的输出主音量百分比。返回 0% ~ 100% 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:195 91914a4b461b45a4961dcb9056c5596a
-msgid "|getVolumePercentage.svg|"
+#: ../../en/hardware/speaker.rst:239 6b52750a21f3435ab5fb8ec41809c334
+msgid "|getVolumePercentage.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:29 3d1e341e7848459aaeccb9248e48d342
-msgid "getVolumePercentage.svg"
+#: ../../en/refs/hardware.speaker.ref:27 f6dcb23849ec45158b0c52d3e835e9a6
+msgid "getVolumePercentage.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:200 3bb16aa80b09421fb92413c8ea3294c9
+#: ../../en/hardware/speaker.rst:244 221892eeedc2448ab197fbb56dfee988
 msgid ""
 "Set the volume level for all virtual channels. ``volume`` accepts volume "
 "levels from 0 to 255."
 msgstr "设置所有虚拟通道的声音输出音量。``volume`` 接受 0 ~ 255 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:204 2e77afcdf02248cdb85ce3475c81cb11
-msgid "|setAllChannelVolume.svg|"
+#: ../../en/hardware/speaker.rst:248 d70c23a40cba44b9ae7ef13ec79d11ea
+msgid "|setAllChannelVolume.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:31 3d1e341e7848459aaeccb9248e48d342
-msgid "setAllChannelVolume.svg"
+#: ../../en/refs/hardware.speaker.ref:29 3cd7bf20d5b04fe293553db99ed36c30
+msgid "setAllChannelVolume.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:209 3144d75050c946d0bece01ed993641a3
+#: ../../en/hardware/speaker.rst:253 24d1065f8067479c872b684ed831f0fa
 msgid "Set the volume level for a specific virtual channel."
 msgstr "设置指定虚拟通道的声音输出音量。"
 
-#: ../../en/hardware/speaker.rst:211 ../../en/hardware/speaker.rst:244
-#: ../../en/hardware/speaker.rst:260 ../../en/hardware/speaker.rst:278
-#: 88529b89061a4ff495b8885d761c22d7
+#: ../../en/hardware/speaker.rst:255 ../../en/hardware/speaker.rst:288
+#: ../../en/hardware/speaker.rst:304 ../../en/hardware/speaker.rst:322
+#: ../../en/hardware/speaker.rst:337 5afd349687ab4a5abe4a74a863ce2264
+#: c4b1e72656e04015bd6076cbf59e1de1 cbdf1c23c3564c31b252de84c47f8fee
+#: db9901b7e3a646db9dcc7eed68a344cc eee64b5fb3f64282b1a5a523cc99f76c
 msgid "Parameters:"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:213 a409b35f019e4d49aa308f264b0a373a
+#: ../../en/hardware/speaker.rst:257 f714ac9038f34076bf448743a1ccf84b
 msgid "``volume`` accepts volume levels from 0 to 255."
 msgstr "``volume`` 接受 0 ~ 255 的音量等级。"
 
-#: ../../en/hardware/speaker.rst:214 e2ce1fb015e74b31b1b26785bcafa605
+#: ../../en/hardware/speaker.rst:258 4d6dd3608093470b8980a59b5bddabb8
 msgid "``channel`` is the channel to play, ranging from 0 to 7."
 msgstr "``channel`` 是播放的通道，范围是 0 ~ 7 。"
 
-#: ../../en/hardware/speaker.rst:218 d05772f52d3d424a8ad63e1f1e38012d
-msgid "|setChannelVolume.svg|"
+#: ../../en/hardware/speaker.rst:262 a4eede033e204820bbf2c7c6376c6e1e
+msgid "|setChannelVolume.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:33 3d1e341e7848459aaeccb9248e48d342
-msgid "setChannelVolume.svg"
+#: ../../en/refs/hardware.speaker.ref:31 2ed55834f5574ac9818d88472b1c63c1
+msgid "setChannelVolume.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:223 e28e380cb1454da1afdbff795a45a5dc
+#: ../../en/hardware/speaker.rst:267 3b789ed21b2c4ae2a1b21f75176d37d6
 msgid ""
 "Get the volume level for a specific virtual channel. ``channel`` ranges "
 "from 0 to 7."
 msgstr "获取指定虚拟通道的声音输出音量。``channel`` 是虚拟通道，范围是 0 ~ 7 。"
 
-#: ../../en/hardware/speaker.rst:227 57576247c70e432cabfa1b2814c5d1cf
-msgid "|getChannelVolume.svg|"
+#: ../../en/hardware/speaker.rst:271 4b6cad51e4a24d138b384aa20fa3831b
+msgid "|getChannelVolume.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:35 3d1e341e7848459aaeccb9248e48d342
-msgid "getChannelVolume.svg"
+#: ../../en/refs/hardware.speaker.ref:33 6d5b4ca6c3a14c0ba17299489fa7ee7e
+msgid "getChannelVolume.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:232 f19d9b54b49a48e182baf106fbba3cc3
+#: ../../en/hardware/speaker.rst:276 edaac62095d142b4b3d72949b35dac37
 msgid ""
 "Stop sound output. If ``channel`` is not specified, stop sound output for"
 " all channels. ``channel`` accepts values from 0 to 7."
 msgstr "停止声音输出。当不使用 ``channel`` 时，停止所有通道的声音输出。``channel`` 接受的值是 0 ~ 7 。"
 
-#: ../../en/hardware/speaker.rst:237 d8d81c4aec594b4384ec4dc6399c9739
-msgid "|stop.svg|"
+#: ../../en/hardware/speaker.rst:281 8ae9600f57c14133a14f989e2bc40d4b
+msgid "|stop.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:37 3d1e341e7848459aaeccb9248e48d342
-msgid "stop.svg"
+#: ../../en/refs/hardware.speaker.ref:35 f7bcee1895cc4fa297b44ced19c0fb54
+msgid "stop.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:242 fe3d3beaafbe494bb866a5d242b31ba7
+#: ../../en/hardware/speaker.rst:286 f54e719eac4745daa693347e822080aa
 msgid "Play a simple tone."
 msgstr "播放简单的音调声音。"
 
-#: ../../en/hardware/speaker.rst:246 acfb622693eb42248f5f939f673a7c18
+#: ../../en/hardware/speaker.rst:290 3c9bb5b3b182481193e7e9e78d57462d
 msgid "``frequency`` is the frequency of the tone in Hz."
 msgstr "``frequency`` 是音调的频率，单位是 Hz。"
 
-#: ../../en/hardware/speaker.rst:247 3e06a6753d304bb6ba3efe012ab7e4cf
+#: ../../en/hardware/speaker.rst:291 838a8c91f70245e6b6232a8ede239e21
 msgid "``duration`` is the duration of the tone in milliseconds."
 msgstr "``duration`` 是音调的持续时间，单位是毫秒。"
 
-#: ../../en/hardware/speaker.rst:248 ../../en/hardware/speaker.rst:266
-#: ../../en/hardware/speaker.rst:282 263a7dcaf7214d4f9db5e2e8fc7215e9
+#: ../../en/hardware/speaker.rst:292 ../../en/hardware/speaker.rst:310
+#: ../../en/hardware/speaker.rst:326 ../../en/hardware/speaker.rst:341
+#: 3c6fab151d924755bcb7cead526bd86c 47114779b3584322818db1c3b28e538d
+#: badb2a0680fa4820827e9e7b66fd3561 eda7794c49f14b3c81b8b8db6878e944
 msgid ""
 "``channel`` is the channel to play, ranging from 0 to 7. By default, it "
 "is -1, which means using an available channel."
 msgstr "``channel`` 是播放的通道，范围是 0 ~ 7 ，默认填 -1 ，使用可用的通道播放。"
 
-#: ../../en/hardware/speaker.rst:249 ../../en/hardware/speaker.rst:267
-#: ../../en/hardware/speaker.rst:283 1549c701ec9e43f88f52d1b53d2661cb
+#: ../../en/hardware/speaker.rst:293 ../../en/hardware/speaker.rst:311
+#: ../../en/hardware/speaker.rst:327 ../../en/hardware/speaker.rst:342
+#: 8d4bf5f41650438588d36d847dd2fa33 d5fb924e837a41808131415073ba6655
+#: e9c45b67a7ba4889a681dd1a475e4ec5 ecba7ed862984f5bba3b371c6787eaf0
 msgid ""
 "``stop_current_sound`` controls whether to wait for the previous audio "
 "playback to finish. If True, start the new output without waiting for the"
 " current output to finish."
 msgstr "``stop_current_sound`` 用于控制是否等待之前的音频播放完成，为 True 时，无需等待当前输出完成即可开始新的输出。"
 
-#: ../../en/hardware/speaker.rst:253 5086be8a64b64ff08c620c89f0714227
-msgid "|tone.svg|"
+#: ../../en/hardware/speaker.rst:297 a85ba75c39094ae2b279dfc075df2855
+msgid "|tone.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:39 3d1e341e7848459aaeccb9248e48d342
-msgid "tone.svg"
+#: ../../en/refs/hardware.speaker.ref:37 f2a15a04fc854af1bbda899aa4c175fa
+msgid "tone.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:258 badcf19bfcf74cf0906d15ab5bba3a42
+#: ../../en/hardware/speaker.rst:302 2c431b76d2c34e44b8032c3b0dc9be74
 msgid "Play PCM data."
 msgstr "播放 PCM 的数据。"
 
-#: ../../en/hardware/speaker.rst:262 ../../en/hardware/speaker.rst:280
-#: 12dcd86efaa447efa963334a9f6c0adc
+#: ../../en/hardware/speaker.rst:306 ../../en/hardware/speaker.rst:324
+#: 0301a10b81894f04b0a2fd74a9bed37f 2f1f3c17ff55480aa40227a8cffa983a
 msgid "``wav_data`` is the buffer of audio data."
 msgstr "``wav_data`` 是音频数据的 buffer。"
 
-#: ../../en/hardware/speaker.rst:263 bdfeb0150f3b4be8bab3fdb4205f9b55
+#: ../../en/hardware/speaker.rst:307 14ce3a40c3a84611981ee1556d3dce9c
 msgid "``sample_rate`` is the sample rate of the audio data."
 msgstr "``sample_rate`` 是设置音频数据的采样率。"
 
-#: ../../en/hardware/speaker.rst:264 a5cd87c81d414b08b27c43e4f73ac55a
+#: ../../en/hardware/speaker.rst:308 7692c3d92ca6494983fd253bd6b8a0b9
 msgid "``stereo`` specifies if the audio is stereo."
 msgstr "``stereo`` 是设置音频为双声道。"
 
-#: ../../en/hardware/speaker.rst:265 ../../en/hardware/speaker.rst:281
-#: 019c3fe8dd334498b8069ba5a1c80d85
+#: ../../en/hardware/speaker.rst:309 ../../en/hardware/speaker.rst:325
+#: ../../en/hardware/speaker.rst:340 5552ee4a7adb4c658cb08a102777d165
+#: 802ec445106d4a04a2aaa2d5d534c2bb 8954e864860c460689c3d805266da634
 msgid "``repeat`` is the number of times to repeat the audio. Default is 1."
 msgstr "``repeat`` 是音频播放的次数，默认是 1 。"
 
-#: ../../en/hardware/speaker.rst:271 e2456509202346b38912315b031d1fc8
-msgid "|playRaw.svg|"
+#: ../../en/hardware/speaker.rst:315 e34cd33d0dc947339dd0ceab196cbf98
+msgid "|playRaw.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:41 3d1e341e7848459aaeccb9248e48d342
-msgid "playRaw.svg"
+#: ../../en/refs/hardware.speaker.ref:39 86b1b016e45d4011a0cb718b29563de1
+msgid "playRaw.png"
 msgstr ""
 
-#: ../../en/hardware/speaker.rst:276 f1357164b1f2461fb225e87e2d31d147
+#: ../../en/hardware/speaker.rst:320 ../../en/hardware/speaker.rst:335
+#: 065006db05b0429aa9a5083b3c27000c e04ac53c96ba455ea6ecee2019273236
 msgid ""
 "Play audio data in WAV format. Requires passing the raw data of the "
 "entire audio file."
 msgstr "播放 wave 格式的音频数据。要求传入整个音频文件的原始数据。"
 
-#: ../../en/hardware/speaker.rst:287 deb594ef51924468965188549cd3f36d
-msgid "|playWav.svg|"
+#: ../../en/hardware/speaker.rst:331 d4e553b8434346caaca30006eb4adf4e
+msgid "|playWav.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.speaker.ref:43 3d1e341e7848459aaeccb9248e48d342
-msgid "playWav.svg"
+#: ../../en/refs/hardware.speaker.ref:41 98010447d65a4a36b49ab428a74ac5b1
+msgid "playWav.png"
+msgstr ""
+
+#: ../../en/hardware/speaker.rst:339 80823cf90e764a69a58baf64390be7d4
+#, fuzzy
+msgid "``path`` is the path to the audio file."
+msgstr "``sample_rate`` 是设置音频数据的采样率。"
+
+#: ../../en/hardware/speaker.rst:346 8dac623b3b57438dbb92f92cbca430cf
+msgid "|playWavFile.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.speaker.ref:43 eeda75fc85c042678d3ad764053c55cd
+msgid "playWavFile.png"
 msgstr ""
 
 #~ msgid "|config.svg|"
@@ -601,5 +744,137 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "config1.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example::"
+#~ msgstr ""
+
+#~ msgid "M5.begin.svg"
+#~ msgstr ""
+
+#~ msgid "M5.update.svg"
+#~ msgstr ""
+
+#~ msgid "|get_config.svg| |get_config1.svg|"
+#~ msgstr ""
+
+#~ msgid "get_config.svg"
+#~ msgstr ""
+
+#~ msgid "get_config1.svg"
+#~ msgstr ""
+
+#~ msgid "|set_config.svg| |set_config1.svg|"
+#~ msgstr ""
+
+#~ msgid "set_config.svg"
+#~ msgstr ""
+
+#~ msgid "set_config1.svg"
+#~ msgstr ""
+
+#~ msgid "|begin.svg|"
+#~ msgstr ""
+
+#~ msgid "begin.svg"
+#~ msgstr ""
+
+#~ msgid "|end.svg|"
+#~ msgstr ""
+
+#~ msgid "end.svg"
+#~ msgstr ""
+
+#~ msgid "|isRunning.svg|"
+#~ msgstr ""
+
+#~ msgid "isRunning.svg"
+#~ msgstr ""
+
+#~ msgid "|isEnabled.svg|"
+#~ msgstr ""
+
+#~ msgid "isEnabled.svg"
+#~ msgstr ""
+
+#~ msgid "|isPlaying.svg|"
+#~ msgstr ""
+
+#~ msgid "isPlaying.svg"
+#~ msgstr ""
+
+#~ msgid "|getPlayingChannels.svg|"
+#~ msgstr ""
+
+#~ msgid "getPlayingChannels.svg"
+#~ msgstr ""
+
+#~ msgid "|setVolume.svg|"
+#~ msgstr ""
+
+#~ msgid "setVolume.svg"
+#~ msgstr ""
+
+#~ msgid "|getVolume.svg|"
+#~ msgstr ""
+
+#~ msgid "getVolume.svg"
+#~ msgstr ""
+
+#~ msgid "|setVolumePercentage.svg|"
+#~ msgstr ""
+
+#~ msgid "setVolumePercentage.svg"
+#~ msgstr ""
+
+#~ msgid "|getVolumePercentage.svg|"
+#~ msgstr ""
+
+#~ msgid "getVolumePercentage.svg"
+#~ msgstr ""
+
+#~ msgid "|setAllChannelVolume.svg|"
+#~ msgstr ""
+
+#~ msgid "setAllChannelVolume.svg"
+#~ msgstr ""
+
+#~ msgid "|setChannelVolume.svg|"
+#~ msgstr ""
+
+#~ msgid "setChannelVolume.svg"
+#~ msgstr ""
+
+#~ msgid "|getChannelVolume.svg|"
+#~ msgstr ""
+
+#~ msgid "getChannelVolume.svg"
+#~ msgstr ""
+
+#~ msgid "|stop.svg|"
+#~ msgstr ""
+
+#~ msgid "stop.svg"
+#~ msgstr ""
+
+#~ msgid "|tone.svg|"
+#~ msgstr ""
+
+#~ msgid "tone.svg"
+#~ msgstr ""
+
+#~ msgid "|playRaw.svg|"
+#~ msgstr ""
+
+#~ msgid "playRaw.svg"
+#~ msgstr ""
+
+#~ msgid "|playWav.svg|"
+#~ msgstr ""
+
+#~ msgid "playWav.svg"
 #~ msgstr ""
 

@@ -1,0 +1,594 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/llm.rst:3 21d219c840374968a10684eb7a1ccea2
+msgid "LLM Module"
+msgstr ""
+
+#: ../../en/module/llm.rst:7 5cd4c6f8cd8d4845843cb12b8ec75904
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/module/llm.rst:30 0ca0ab90ad914e7780042aa4bded530f
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/llm.rst:32 95c79a7bf8ed464fb0419f466e3b258d
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:28 dc349b595e0242c18990873470e252fb
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:36 ba0dfa5a73eb44f99af50308c33ebf47
+msgid "|llm_voice_assistant.m5f2|"
+msgstr ""
+
+#: ../../en/module/llm.rst:40 dd2b97032235414b83acc1bff4887047
+msgid "class LlmModule"
+msgstr ""
+
+#: ../../en/module/llm.rst:43 4b521afcfe64463eb9e13280ea05e287
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/llm.rst:47 7a31cf6b79c14649b1799e1d82f034a3
+msgid "Initialize LlmModule and set up UART communication based on board type."
+msgstr ""
+
+#: ../../en/module/llm.rst:49 ../../en/module/llm.rst:60
+#: ../../en/module/llm.rst:71 ../../en/module/llm.rst:82
+#: ../../en/module/llm.rst:90 ../../en/module/llm.rst:98
+#: ../../en/module/llm.rst:110 ../../en/module/llm.rst:121
+#: ../../en/module/llm.rst:140 ../../en/module/llm.rst:154
+#: ../../en/module/llm.rst:172 ../../en/module/llm.rst:189
+#: ../../en/module/llm.rst:206 ../../en/module/llm.rst:226
+#: ../../en/module/llm.rst:237 ../../en/module/llm.rst:248
+#: ../../en/module/llm.rst:259 ../../en/module/llm.rst:270
+#: ../../en/module/llm.rst:281 ../../en/module/llm.rst:292
+#: ../../en/module/llm.rst:305 ../../en/module/llm.rst:315
+#: ../../en/module/llm.rst:325 ../../en/module/llm.rst:335
+#: 05832239274f4129ad2eba19776fce38 0d5881e9d6694a0abf19fbfa029e4025
+#: 1fc692199ead477ca1f30e360f43af65 352f12616da74f9b846af81dfd3952e2
+#: 41bf7e1e81e54eceb903c97ae2aba1a8 56c7d6c11b1b4a91b0e015a49c4bd7f0
+#: 579e754601fe4e98aa3f7998695d0614 5d600fac9e934bdb87b9854363fc839c
+#: 61201b1507d246aa98998dd8d4db9eed 6177289f51834474982a7e49aae42634
+#: 6e4ad72ac6894fd095caaa7206ea37da 70ca378bd45b4500ad8427d1d5431f02
+#: 85893d7ae8a848068d697252097c2c7f 882da3eedff84fbda48442b4259f318e
+#: ab76727d87374d41abf1fbd7bed0c710 ae2a7816eccb416db4123e9d06eeddc0
+#: b11508f64fc9461389b856406241517b b8fe2d42717c4d74a1f2a807b9dcf172
+#: bd9367f086c940edaa2154d016ca3d82 beef823ea3774e27813c9477985b0c51
+#: c35dc7aa5b6e4090b6d6d8ba6d753d43 e12a0055826f4abd957d0ac8315e4d29
+#: e268491348234de6b259391097112c7c f9a617b46ec5487695c12ae13210c3a8
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/llm.rst:51 bd704685d36f4a11832a247e4da646f9
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:2 ff2c2ac7d03d4b2c978ab86a715977e9
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:54 8d25794541ac49f394b6a0a57d933c58
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/llm.rst:58 818b9ca300494fcfadb4c5ebf02fabb1
+msgid "Update ModuleLLM, receive response message."
+msgstr ""
+
+#: ../../en/module/llm.rst:62 073c633dc71c47509714d55630352995
+msgid "|update.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:3 4d81202baa7e4242b2ad1a57ee655435
+msgid "update.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:66 ee0c7cd8bb8d433282ff4f705cd103ec
+msgid "Check if the module connection is working properly."
+msgstr ""
+
+#: ../../en/module/llm.rst 0e705325846c476a9711522eeaf1a944
+#: 15fd3666a3d0448e9b245b2fc5277e6a 16a56ed94da947039d789a12b7e46d9e
+#: 25117a72c94547e39ceaea603f587486 31facf0bb3524b2888c85c855e0593fa
+#: 4aec55d878704f2fa91e19134e234f3b 5ede3fe7f2e34ce88449cad0b0e9d2aa
+#: 70c3daefd329491abf0c01763b111302 9ae22a40194944eeac6fdc373eecbb1f
+#: b0a1d2bef03048f89bd6b067acfa19b6 b1c08563d599441a9de27b35550a5044
+#: c5bbcddfa8ea48cb87994db8acb2dcf7 d33927ac11684f508d310121acfeb82c
+#: d6e3239158d0402d9186e8fd28b59ca2 d909edd055c2442db68578e7554b9896
+#: e5cd3005dd3040018c276936bf81a68a f6d585333d6e410eb7b6972d3ce748eb
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/llm.rst:68 db869371228047d29970f14681184a17
+msgid "True if module connection is OK, False otherwise."
+msgstr ""
+
+#: ../../en/module/llm.rst 0ef64e56c4104411a4599c8cbcd4fbb1
+#: 0f4d03765fb24c7db3d27f40c544f4e6 32df8837d69a4ca3a97fb0491b0bee9b
+#: 39b690d2841b4cd3bd992582f512acde 753c3e451d0540e587c615ef75bab0f6
+#: 9f5d577e7a4243239c55e8ec7e68c9e9 9fb92188b4d04ad08de190e3fe7fcbe5
+#: b166b3cebf944fd7b2d099ae67a7cab8 b6c203b08401495c9a4be1d4e5c6df7b
+#: ba82cecdbb684d0aa0136aeef8a770bd bcb85e98f7834dc887cc9d6543ee0a85
+#: c48a766607fe47c5b5243dbe4e54b6e6 c86067faba9a4d7190dbc88ee6c754f2
+#: ecd0c9c620f345dbb36fcbca167df687 f61740bebe5348b792e95cebdf175e6f
+#: f726a54751b9460588e2457b4a7715c2 fac84b723f804d049b67bc8de346d09f
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/llm.rst:73 7a9879313d924c959b7c837a64031db6
+msgid "|check_connection.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:4 299457f544fc4c58b34eb095aabea924
+msgid "check_connection.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:77 1d6bb8abc5964c7dbc41958fc18e3987
+msgid "Get the list of module's response messages."
+msgstr ""
+
+#: ../../en/module/llm.rst:79 74b0fc6425aa407688f59b13bfa3defe
+msgid "List of response messages as dictionaries."
+msgstr ""
+
+#: ../../en/module/llm.rst:84 62ec44dea8a148a4b810695d9bd15666
+msgid "|get_response_msg_list.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:5 3031083d76454173a5a5a3964ae99112
+msgid "get_response_msg_list.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:88 c68c4f867a2346acbdcd5209702a3005
+msgid "Clear the module's response message list."
+msgstr ""
+
+#: ../../en/module/llm.rst:92 748b37229e534327b3265afdf3ce865c
+msgid "|clear_response_msg_list.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:6 ec2f2f8e5b804da1a7a3856e8ef5d9dd
+msgid "clear_response_msg_list.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:96 1d2a123bf15a43c493505cac437c7bb3
+msgid "Send a ping to the system and get the response code."
+msgstr ""
+
+#: ../../en/module/llm.rst:100 3ef3af2ea4e546c1ab663c0fddb5ce32
+msgid "|sys_ping.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:7 3fd464e9148f4252a11a5fff1ef43a69
+msgid "sys_ping.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:104 9d265c87edeb474d8e2400c4e7ca2adc
+msgid "Reset the system."
+msgstr ""
+
+#: ../../en/module/llm.rst 03d372267cb443c68096a1c753606af3
+#: 2e136e90c3e74e59b9dbbf8abed8afc9 316aa45400d74edbb1cafc83fb15f527
+#: 48d6ba704a334c638dd47d76be872fe3 579f43b4610a47d3bf7f7f93d5528226
+#: 64a49e1779944f75abbb862f5a4e9083 8828c4c961474e808ef5a121299c57b4
+#: a2bd07d989884f65a501696ce0e1d947 b53a5bfd4d5f4774b1b9053071905daa
+#: be62762687aa416fa559b5e82e8d28bb ecc12323d40941ab8e05a3251e55b75b
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/llm.rst:106 c2c7866171e64dd0a7bf2e1cd36bbb11
+msgid "Whether to wait for reset completion."
+msgstr ""
+
+#: ../../en/module/llm.rst:107 75175a59ef6d4e19832f029bed6311f0
+msgid "Result of the reset command."
+msgstr ""
+
+#: ../../en/module/llm.rst:112 173c2c5fae2d4238841aee5eb68a82ed
+msgid "|sys_reset.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:8 a6f792626ebc4c4bb88c1fe0f486ee10
+msgid "sys_reset.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:116 593c4f3a84e44910991806a914a91877
+msgid "Reboot the system."
+msgstr ""
+
+#: ../../en/module/llm.rst:118 4e66102a75ca41fcb0d3e6b834f68ee2
+msgid "Result of the reboot command."
+msgstr ""
+
+#: ../../en/module/llm.rst:123 847489d4ec4d423592f61447718de9b5
+msgid "|sys_reboot.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:9 5bfd66fb37ae4e62aacfb88fec619f74
+msgid "sys_reboot.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:127 5ca9a2b6882b4b908f778b2434fac6a2
+msgid "Set up the LLM module."
+msgstr ""
+
+#: ../../en/module/llm.rst:129 9598becb6e8b420b8a60f2a1c5173824
+msgid "The prompt text."
+msgstr ""
+
+#: ../../en/module/llm.rst:130 0aff065681124a5ca2ae9bbb4dc56aa1
+msgid "The model name."
+msgstr ""
+
+#: ../../en/module/llm.rst:131 ../../en/module/llm.rst:181
+#: ../../en/module/llm.rst:199 ../../en/module/llm.rst:215
+#: 5b9d696543bb48fda14e2e3318af328b 9351c7b9ffea46948c20277acb1ccc67
+#: 9ff9bd5f878f483c8861e16a0a7ed0cb fc1396f7e7514c84a40f6883410a6366
+msgid "The response format."
+msgstr ""
+
+#: ../../en/module/llm.rst:132 ../../en/module/llm.rst:182
+#: ../../en/module/llm.rst:200 ../../en/module/llm.rst:216
+#: 41de09b16ea64009b34e99c5257db3d9 678dce34687d4920889a544f437032a3
+#: c707462f769540168e5f06eab919a0e3 f605f8c7632a4cfc8630629d8952230d
+msgid "The input format."
+msgstr ""
+
+#: ../../en/module/llm.rst:133 ../../en/module/llm.rst:183
+#: ../../en/module/llm.rst:201 ../../en/module/llm.rst:217
+#: 88299723b96b4d6296c048cb0057ce19 97f82f03df5c4df08d0361d7ec173491
+#: e3b2362e26684e35913e338d668a86b7 f271d6a505c04b54aa2d910b0ec16f3c
+msgid "Enable output."
+msgstr ""
+
+#: ../../en/module/llm.rst:134 ../../en/module/llm.rst:184
+#: ../../en/module/llm.rst:218 07acc39f9bad4c4d990afd745c3c3761
+#: 45c2ebede2b54efbbba3dcf865837c61 8c2723b3f3d14cf88d20a49a72709ee9
+msgid "Enable keyword spotting."
+msgstr ""
+
+#: ../../en/module/llm.rst:135 48bccc5a5aaa4e2da27ee0031417335a
+msgid "Maximum token length."
+msgstr ""
+
+#: ../../en/module/llm.rst:136 ../../en/module/llm.rst:150
+#: ../../en/module/llm.rst:168 ../../en/module/llm.rst:185
+#: ../../en/module/llm.rst:202 ../../en/module/llm.rst:222
+#: 7007b8ea63204cb096dcbc7f4b69f790 b33b959f90f844548edea87d93dc6c81
+#: bd61f94d39a0488a8273e887d9e03631 da9f90ef2df74de980dcb34efa169d01
+#: f11dd79424ac49959653c7804f3c45b7 f91a1eaf66a94309a999ef0f71dbdda7
+msgid "Request ID."
+msgstr ""
+
+#: ../../en/module/llm.rst:137 ../../en/module/llm.rst:169
+#: ../../en/module/llm.rst:186 ../../en/module/llm.rst:203
+#: ../../en/module/llm.rst:223 260d407b58b44cf2b5339098be4fd36b
+#: 4c2557b7339649a1a867d2d4b59956e0 6410c075db284c829b2eb9297fd38e1e
+#: 7959b7f264754f1db4e39cf26fdfce14 fe9299667f68430497aa5dad77328b77
+msgid "Result of the setup command."
+msgstr ""
+
+#: ../../en/module/llm.rst:142 5eb8b36db3ab476cb62f75f81d9dbd88
+msgid "|llm_setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:10 a810a0b9aff14d7a834fb7aeeee6511f
+msgid "llm_setup.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:146 50da5295c7b34e009aa8e7d370597ba3
+msgid "Perform inference with the LLM module."
+msgstr ""
+
+#: ../../en/module/llm.rst:148 72d1ceeace824664ba3367ed43150361
+msgid "The work ID."
+msgstr ""
+
+#: ../../en/module/llm.rst:149 15913edf4d234be3be3719691fdc48ff
+msgid "The input data."
+msgstr ""
+
+#: ../../en/module/llm.rst:151 7232291abcb747e394ad32b8160429f7
+msgid "Result of the inference command."
+msgstr ""
+
+#: ../../en/module/llm.rst:156 d361fa6e13894dc4b36ffba0666bff36
+msgid "|llm_inference.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:11 496a860ca4a74f9c97be7e0b1beff7b3
+msgid "llm_inference.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:160 cc46c0b4ad0f4e8b976208b1f65135aa
+msgid "Set up the audio module."
+msgstr ""
+
+#: ../../en/module/llm.rst:162 6bd3e896797440d99232121720bde845
+msgid "Capture card index."
+msgstr ""
+
+#: ../../en/module/llm.rst:163 7cdc6a82262a494eb7613ac6bcdf9dc0
+msgid "Capture device index."
+msgstr ""
+
+#: ../../en/module/llm.rst:164 9f57a9a290404c5dba24f42de063ea79
+msgid "Capture volume."
+msgstr ""
+
+#: ../../en/module/llm.rst:165 36b752b83d224152a20ef93f1e01dde9
+msgid "Playback card index."
+msgstr ""
+
+#: ../../en/module/llm.rst:166 006c5fed50c84775b209b9cd9e599c4b
+msgid "Playback device index."
+msgstr ""
+
+#: ../../en/module/llm.rst:167 c972b9a046e84b0f9b4d5f41c5fcf3a1
+msgid "Playback volume."
+msgstr ""
+
+#: ../../en/module/llm.rst:174 9e5647b50f0743b2898ca3015af9a37c
+msgid "|audio_setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:12 42c12409bcb74a68881c70459994aecb
+msgid "audio_setup.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:178 b1de41ea096b418f9674eddd94f5941d
+msgid "Set up the TTS module."
+msgstr ""
+
+#: ../../en/module/llm.rst:180 354bb3047160477eae0f774c27d4bd18
+msgid "TTS model name."
+msgstr ""
+
+#: ../../en/module/llm.rst:191 e79b1bb0086e415abb67023c03978bd5
+msgid "|tts_setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:13 5d926b8e0a2340ceb4d57e020bb6d790
+msgid "tts_setup.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:195 b1e2d65fd3e84e31a55305e385bfcbdc
+msgid "Set up the KWS module."
+msgstr ""
+
+#: ../../en/module/llm.rst:197 cc29255ab4b8411eb41312c825962009
+msgid "Keyword to detect."
+msgstr ""
+
+#: ../../en/module/llm.rst:198 b7e87af3ad974d6f9d06bc38e74fbb90
+msgid "KWS model name."
+msgstr ""
+
+#: ../../en/module/llm.rst:208 4c1bac9e64ff425a8baa20c22be7a159
+msgid "|kws_setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:14 e254e2e8abc94f9ebde583598ed677e1
+msgid "kws_setup.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:212 55902c551f404aa0852f804ac5cf0733
+msgid "Set up the ASR module."
+msgstr ""
+
+#: ../../en/module/llm.rst:214 606ab7cd99364896aeda63516fd76345
+msgid "ASR model name."
+msgstr ""
+
+#: ../../en/module/llm.rst:219 271128c66e3d4221986754897304af7f
+msgid "Rule 1 value."
+msgstr ""
+
+#: ../../en/module/llm.rst:220 352323cbac5b4001b41b4fa8f553116d
+msgid "Rule 2 value."
+msgstr ""
+
+#: ../../en/module/llm.rst:221 d219ef245f2843c79ad81e35ff0227bd
+msgid "Rule 3 value."
+msgstr ""
+
+#: ../../en/module/llm.rst:228 aee3b06c127e48c2841d24fe2859d7ec
+msgid "|asr_setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:15 8f0cb2d275b244e79247919f50d29bbc
+msgid "asr_setup.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:232 127840abec054aad8be8e2e524f29672
+msgid "Get latest LLM module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:234 caf2fa90fe134bf9a3724edb5c00b536
+msgid "Latest LLM module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:239 a8ffbb6f92784183a31130b4809ca31e
+msgid "|get_latest_llm_work_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:16 5dfcdcb74b3d4731a98ee70d765a4f19
+msgid "get_latest_llm_work_id.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:243 ce369e8a82704a0aa26ed33999b31ccb
+msgid "Get latest Audio module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:245 4270abd4e7b84eed88506d55dd749791
+msgid "Latest Audio module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:250 fa30e2e49f214086908398a3b5e0252e
+msgid "|get_latest_audio_work_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:17 b74469c77c0b41aebeb178fc552346a6
+msgid "get_latest_audio_work_id.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:254 c3f717e9f57c45e1b1efe5d1d61cd665
+msgid "Get latest TTS module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:256 89af3c8e33ce4fc0be31e87da51f4cce
+msgid "Latest TTS module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:261 f4555cbfeed54801918481382c87826c
+msgid "|get_latest_tts_work_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:18 a545efbc62664f91be557ca303940b89
+msgid "get_latest_tts_work_id.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:265 7509abe1715145d0969bd57dfe19c5c2
+msgid "Get latest KWS module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:267 74d3df16a0d5445598e61c5053185e06
+msgid "Latest KWS module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:272 98604683c51b4db6869df34c1fe3256e
+msgid "|get_latest_kws_work_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:19 3b8ee31a245d469aa12219ee046b442d
+msgid "get_latest_kws_work_id.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:276 0643bcdc279e46beacecaa5f7669aa93
+msgid "Get latest ASR module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:278 c007a376da3041a1b1f8dc6ccba2e4d9
+msgid "Latest ASR module work id."
+msgstr ""
+
+#: ../../en/module/llm.rst:283 39e9803795cc4512be46fe08c38d9b86
+msgid "|get_latest_asr_work_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:20 0ec5c0be8ce44e75a1aa54df530498e5
+msgid "get_latest_asr_work_id.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:287 3b9ad8a92932476ea69384a501be543c
+msgid "Get latest ModuleLLM response error code."
+msgstr ""
+
+#: ../../en/module/llm.rst:289 6dc140dbdc224bd196e4f8f12cd98717
+msgid "Latest ModuleLLM response error code."
+msgstr ""
+
+#: ../../en/module/llm.rst:294 d93ed98127244d2ea68122842a1949ff
+msgid "|get_latest_error_code.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:21 0bce31a226c740c5baaf93ccee6f351b
+msgid "get_latest_error_code.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:298 63e427a9f4034ae9b592b96806447d7e
+msgid "Begin the voice assistant."
+msgstr ""
+
+#: ../../en/module/llm.rst:300 0121986f7e0a4e278ae6a1a11b6b3d0c
+msgid "The wake-up keyword."
+msgstr ""
+
+#: ../../en/module/llm.rst:301 bcc9c36eb62043ca8e6204613896659b
+msgid "The assistant prompt."
+msgstr ""
+
+#: ../../en/module/llm.rst:302 332abf0f65754ed7b97465a7e81160ab
+msgid "True if the voice assistant began successfully, False otherwise."
+msgstr ""
+
+#: ../../en/module/llm.rst:307 fe9c52116364480aa4fa2058214dd3ad
+msgid "|begin_voice_assistant.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:22 53dc811bf61e40219ca0c49a7aed0a52
+msgid "begin_voice_assistant.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:311 451d4f1f5e37437290d8363895ff481e
+msgid "Set the callback for when the wake-up keyword is detected."
+msgstr ""
+
+#: ../../en/module/llm.rst:313 af0ffd736df947038ff0892b22771cfa
+msgid "Callback function to be executed on keyword detection."
+msgstr ""
+
+#: ../../en/module/llm.rst:317 3fad993486b1414d95b907bde1c2df4d
+msgid "|set_voice_assistant_on_keyword_detected_callback.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:23 ea3263e0c01b45bebebc69eb123e5455
+msgid "set_voice_assistant_on_keyword_detected_callback.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:321 388747d5885244e0b5a08a479b53036a
+msgid "Set the callback for when ASR data is input."
+msgstr ""
+
+#: ../../en/module/llm.rst:323 9039878dc9604f4f805e00e00c33cbd3
+msgid "Callback function to handle ASR data input."
+msgstr ""
+
+#: ../../en/module/llm.rst:327 0e97f058246e4605a3387eb76a8a2fab
+msgid "|set_voice_assistant_on_asr_data_input_callback.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:24 14655c0d0d00408880bf76e6ff43ae61
+msgid "set_voice_assistant_on_asr_data_input_callback.png"
+msgstr ""
+
+#: ../../en/module/llm.rst:331 9d2f4c456d1a4f81a5fc0152588a5956
+msgid "Set the callback for when LLM data is input."
+msgstr ""
+
+#: ../../en/module/llm.rst:333 1e95beec5a6444fc8a6ee5882be79f2b
+msgid "Callback function to handle LLM data input."
+msgstr ""
+
+#: ../../en/module/llm.rst:337 51c40dfc02dd43c3a1b0e0dd1f09eeb5
+msgid "|set_voice_assistant_on_llm_data_input_callback.png|"
+msgstr ""
+
+#: ../../en/refs/module.llm.ref:25 9537b2822fa34a8ea3eeec723bb909aa
+msgid "set_voice_assistant_on_llm_data_input_callback.png"
+msgstr ""
+

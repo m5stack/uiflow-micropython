@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/display.rst:3 56f60f350eee482b98a47be2f63fa73a
+msgid "Display Module"
+msgstr ""
+
+#: ../../en/module/display.rst:7 818238a833f44119a10c4f52d8c4da83
+msgid ""
+"Display Module 13.2 is an expansion module for HD audio and video, using "
+"GAOYUN GW1NR series FPGA chip to output display signals, and employing "
+"the LT8618S chip for signal output conditioning."
+msgstr ""
+
+#: ../../en/module/display.rst:9 d4b65e71bfad493a845bd5adaff20464
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/display.rst:11 711f56f7479d49bf93afc60870e0d90c
+msgid "|DisplayModule|"
+msgstr ""
+
+#: ../../en/refs/module.display.ref 0b06939893504724b333e502e425759d
+msgid "DisplayModule"
+msgstr ""
+
+#: ../../en/module/display.rst:13 b6f912def9f6473ba0bdabcda699fed6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/display.rst:20 07477a8c40c94de2a7ab20f05c1158aa
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/display.rst:22 437c19abd0614f3987bf063fcb15ad88
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.display.ref:9 32d8cc86e90f424bad60901037c946a6
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/display.rst:26 d73f2650d16d440fa0c0636d77d33e98
+msgid "|cores3_display_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/display.rst:30 0a478a5f9b184115a31951e385b97b6b
+msgid "class DisplayModule"
+msgstr ""
+
+#: ../../en/module/display.rst:33 957e53469b8b47fd87af7604b961c9f5
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/display.rst:37 fdaba48c5706413b97fc1b1f8d72b7bd
+msgid "Initialize the Module Display"
+msgstr ""
+
+#: ../../en/module/display.rst b1daecd9236a42e5aeee4cd794ee17d4
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/display.rst:39 f9ea8e6b1ec24a53bb03e6a7ed01cc00
+msgid ""
+"The port to which the Module Display is connected. port[0]: not used, "
+"port[1]: dac pin."
+msgstr ""
+
+#: ../../en/module/display.rst:40 1b472c178e3649aaa9c7a5d9ef181e5c
+msgid "The width of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:41 70e1539e6da747c88ba59912ae958871
+msgid "The height of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:42 176939f9dac24e429375fdf94d060d40
+msgid "The refresh rate of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:43 2ed3ea6a16d04af59a698af3279a763a
+msgid "The output width of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:44 bf663d0b788a47ffb8b86a8a59e2cf14
+msgid "The output height of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:45 f3e43e6723b94227b64a6c874d5356cc
+msgid "The scale width of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:46 3217cb8c48eb4a339ee7ad356bfb1783
+msgid "The scale height of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:47 50081f2e784746fe83b5b69e753718f1
+msgid "The pixel clock of the Module Display."
+msgstr ""
+
+#: ../../en/module/display.rst:49 395ce63a976f4cab98ac6a271123a4b0
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/display.rst:51 8eb140721c674538a904450fb3a11d00
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.display.ref:7 63e695cc646145f489fa7d9ffac3e0ce
+msgid "init.png"
+msgstr ""
+

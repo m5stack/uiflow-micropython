@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/scroll.rst:2 7827872c817b4d498ff2e67982a5e35e
+msgid "Scroll Unit"
+msgstr ""
+
+#: ../../en/units/scroll.rst:6 a9f7fece786747be9ae69cc67f491385
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/scroll.rst:8 3354d7237175406aa50f14b72e2295b5
+msgid "|Scroll|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref 54fc5208f5664643810158e2eaba29d0
+msgid "Scroll"
+msgstr ""
+
+#: ../../en/units/scroll.rst:11 58b6c7b1d3dd4149a22341e8d2e2788f
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/scroll.rst:18 bfe572eb936046efb8521e2cc6b17d40
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/scroll.rst:20 e9207d8a74e0431da68b7f63f8f860ee
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:7 15685b3b1b524a3cb22a41dd1084c6ca
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:25 3dbd926a0faf49038e854f8b94967d67
+msgid "|cores3_scroll_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/scroll.rst:29 521f163cea914e66b19b87ddc34100f9
+msgid "class ScrollUnit"
+msgstr ""
+
+#: ../../en/units/scroll.rst:32 be31aa0ebd1444de9937004e6c247ef5
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/scroll.rst:36 a91d23b6572840359230cae918ec6eaa
+msgid "Creates a Rotary object."
+msgstr ""
+
+#: ../../en/units/scroll.rst 2888ea7486fc41e6908b8d9ffcf07c59
+#: 3746ab5bcb2a4b20bff658e64d5e9700 98eb07a2e3984552aace32a2601f58e2
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/scroll.rst:38 d97f8610c3c84183b4dacc6bc912259e
+msgid "I2C object."
+msgstr ""
+
+#: ../../en/units/scroll.rst:39 cb0d1d7f4f1d4bbf803c828c782acf8d
+msgid "I2C address, Default is 0x40."
+msgstr ""
+
+#: ../../en/units/scroll.rst:41 ../../en/units/scroll.rst:53
+#: ../../en/units/scroll.rst:62 ../../en/units/scroll.rst:72
+#: ../../en/units/scroll.rst:81 ../../en/units/scroll.rst:92
+#: ../../en/units/scroll.rst:101 ../../en/units/scroll.rst:112
+#: ../../en/units/scroll.rst:123 ../../en/units/scroll.rst:134
+#: 254148645c934f6ca86d48e15ade8273 27f0dc3e40654159ac5f8876b4a5570e
+#: 2a0f1ca8b2964477bad82792f57d3067 42241478434b427fbb3eb487a5004979
+#: 71cf03960cf9485292b59e4c71f1bd0a 943e857302da4e18a87886fd0a0c97ec
+#: 95920231e90645f8bcfe22c951641fdb 9c763fa05c0844f1bbfcc1bf3a1d41d3
+#: af826d7435694747abe91027d6e4a625 e0b4a6957ded44e79a9df1178e656b7e
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/scroll.rst:43 439179f05d2d4a4a9c0bb0e1cac5c7f2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:9 bd8580e9d5e84b0197028696264d1183
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:47 88a57de3d21544db8a56c5ccb1581de2
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/scroll.rst:51 69a0b91b234a411bbce229ae108eaec5
+msgid "Gets the rotation status of the Rotary object."
+msgstr ""
+
+#: ../../en/units/scroll.rst:55 ccd2d32886024d66bfc435cb6e04834a
+msgid "|get_rotary_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:11 e61b6a5ecccf47ca832a31781128b301
+msgid "get_rotary_status.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:60 8fe4a6dbf76941c08d540c91382a4837
+msgid "Gets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/scroll.rst:64 270289335bef4791a162535d12632736
+msgid "|get_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:13 a811d8435ef24697bc8fe4f2099434a2
+msgid "get_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:69 ea7f3a43262144c690dc9cf15f85ca0d
+msgid ""
+"Gets the rotation increment of the Rotary object. Can be used to "
+"determine the direction of rotation."
+msgstr ""
+
+#: ../../en/units/scroll.rst:74 680c33342dde4d32bfaa4770ad1c462c
+msgid "|get_rotary_increments.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:17 27e7fa9c7b654b598d34f4fbced925bc
+msgid "get_rotary_increments.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:79 70e52fde37e44471aabe785a578d776b
+msgid "Resets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/scroll.rst:83 ba3c22c0adf646128406cb635424a7b9
+msgid "|reset_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:19 47eb3f6739774b5480ff0830e1a591e1
+msgid "reset_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:88 136dc5297fe042b289e9152d9d770874
+msgid "Sets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/scroll.rst:90 abb7941d12cd41529501cbade6efd4cc
+msgid "adjust the current value."
+msgstr ""
+
+#: ../../en/units/scroll.rst:94 51e5e46d2850481c96e220e42c112839
+msgid "|set_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:21 767590fe2129416292a9bcd63ee2b149
+msgid "set_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:99 3e1b0ace585347289fd112f730259299
+msgid "Get the current status of the rotary encoder keys."
+msgstr ""
+
+#: ../../en/units/scroll.rst:103 2407375f0ea64fcc8b46a6c7d62a2a40
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:15 49acb7091e8849f38068ff0837a73b1b
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:108 313b40a2549d4437977ccdfa2f4791d6
+msgid "Set the color of the LED"
+msgstr ""
+
+#: ../../en/units/scroll.rst:110 6b9672b2734543b9ad8a854c3b7ac094
+msgid "the color of the LED, 0x000000 - 0xFFFFFF."
+msgstr ""
+
+#: ../../en/units/scroll.rst:114 b0a4d158dfff490db0c5eaacd9cff846
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:25 27702350d56140b6a136b96277e0d7b9
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:119 eb672ad0cfee45eba486184917684bec
+msgid "Get the bootloader version."
+msgstr ""
+
+#: ../../en/units/scroll.rst 49264fb5dd79429d8af892e1bcd3f91e
+#: d65263c71b754265afabfd3047611a06
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/scroll.rst:121 fda3799e7a194bc19530b542470fd853
+msgid "bootloader version"
+msgstr ""
+
+#: ../../en/units/scroll.rst:125 1321f6cada8e4896b18c49b56fec71f8
+msgid "|get_bootloader_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:27 15357f24440e4649a5dc28a6b4c635d2
+msgid "get_bootloader_version.png"
+msgstr ""
+
+#: ../../en/units/scroll.rst:130 39977d6c7a5d4b779f9e95db3709ef7f
+msgid "Get the firmware version."
+msgstr ""
+
+#: ../../en/units/scroll.rst:132 60dc33f10f29453bbfaa930455595ee0
+msgid "firmware version"
+msgstr ""
+
+#: ../../en/units/scroll.rst:136 f80fe2cbdfd64416874c476d00e5cf65
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scroll.ref:29 78577aaa357d4a49987b02f62fdd177b
+msgid "get_firmware_version.png"
+msgstr ""
+

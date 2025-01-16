@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/rca.rst:3 e540d1702a0b42aabd6a6639aaf872f7
+msgid "RCA Module"
+msgstr ""
+
+#: ../../en/module/rca.rst:7 68752295fd3541628cc2a9b14ec9745e
+msgid ""
+"Module RCA is a female jack terminal block for transmitting composite "
+"video (audio or video), one of the most common A/V connectors, which "
+"transmits  video or audio signals from a component device to an output  "
+"device (i.e., a display or speaker)."
+msgstr ""
+
+#: ../../en/module/rca.rst:9 8963b4e53c3f46eab43855dc7296b69c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/rca.rst:11 be50b24c46ab4df08468517d22c5026d
+msgid "|RCAModule|"
+msgstr ""
+
+#: ../../en/refs/module.rca.ref 07b75df3754f47ebbe61ea6669cf1067
+msgid "RCAModule"
+msgstr ""
+
+#: ../../en/module/rca.rst:13 132b6b50214b4e2696da3bedeb939142
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/rca.rst:20 67272d63a79941769308e19a7606f38f
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/rca.rst:22 c1000430f8c0439a967199aab65ecda7
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.rca.ref:9 067b07dd8e8c4a58b01e2147d69008fb
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/rca.rst:26 8fc87d2ea12c471fb6f03f1c71f19693
+msgid "|core2_rca_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/rca.rst:30 578953f881954f5b81c6271ec3608be3
+msgid "class RCAModule"
+msgstr ""
+
+#: ../../en/module/rca.rst:33 6ece5206ca5546c7adfedf65fefe9e4b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/rca.rst:37 d4e5336e54fa4e26b41e307671744fd5
+msgid "Initialize the Module RCA"
+msgstr ""
+
+#: ../../en/module/rca.rst d78a92f85d724ad490e8f31fb2154a1c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/rca.rst:39 92b0cb92a1db401cabca769fa7574edd
+msgid ""
+"The port to which the Module RCA is connected. port[0]: not used, "
+"port[1]: dac pin."
+msgstr ""
+
+#: ../../en/module/rca.rst:40 4b2bdaae716c43f3b7bb4429fb9d3c94
+msgid "The width of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:41 1b7b051ac1344d0ea5d4d0fff66509a8
+msgid "The height of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:42 2988c6902fee475d95b1ca87f1de6aab
+msgid "The width of the output of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:43 c4ea65eebf4146fab52650f725db0280
+msgid "The height of the output of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:44 7e7825ae834c4b12b5e0daefb27da0eb
+msgid ""
+"The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, "
+"PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4."
+msgstr ""
+
+#: ../../en/module/rca.rst:45 e3f4ddb213f34519a312f44924e8c4ee
+msgid "The use of psram of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:46 df3c90aafa1341a7ba1dce62d9609697
+msgid "The output level of the RCA display."
+msgstr ""
+
+#: ../../en/module/rca.rst:48 95aae9fd0b6844a38ef88794aa7ba9e0
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/rca.rst:50 513188061ecc454282ee406f14c53f4a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.rca.ref:7 2dcd7de70bcf430ab27b5c6ea3c729d0
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/rca.rst:54 15c1fddfdb144587b1d817dfa77b844e
+msgid "Methods"
+msgstr ""
+

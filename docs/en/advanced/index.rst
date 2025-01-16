@@ -6,4 +6,4 @@ Advanced
 .. toctree::
     :maxdepth: 1
 
-    usb/usbd.rst
+    usb/index.rst

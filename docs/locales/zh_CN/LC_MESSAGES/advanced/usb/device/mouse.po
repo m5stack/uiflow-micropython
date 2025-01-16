@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/usb/device/mouse.rst:2 cc8ac58000fa45feb724dd672c8230d4
+#, fuzzy
+msgid "mouse"
+msgstr "usb 鼠标"
+
+#: ../../en/advanced/usb/device/mouse.rst:6 f39d0d91e9ff409484c115c4fc098453
+msgid "usb device mouse"
+msgstr "usb 设备鼠标"
+
+#: ../../en/advanced/usb/device/mouse.rst:10 bbfe16c9db034d3d9b40a028840fb45f
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr "当前模块只适用于 CoreS3 主机"
+
+#: ../../en/advanced/usb/device/mouse.rst:18 dfedbcc891304c98914763ebd12e49df
+msgid "Micropython Example"
+msgstr "Micropython 案例"
+
+#: ../../en/advanced/usb/device/mouse.rst:21
+#: ../../en/advanced/usb/device/mouse.rst:31 0e8664c9c2724047b3ac88b2b41fe743
+#: 1228d976a5884e16928996f94df28036
+msgid "USB Mouse"
+msgstr "usb 鼠标"
+
+#: ../../en/advanced/usb/device/mouse.rst:28 e8c7ac54c8784adea1238aefa6cd1599
+msgid "UIFlow2.0 Example"
+msgstr "UIFlow2.0 案例"
+
+#: ../../en/advanced/usb/device/mouse.rst:33 31a730f714ad46469e49cd5c9ea34899
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:14
+#: 27716d7ba6624971bd739eee2069988c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:37 0dd2294cf04c45699bd996001d5d3c38
+msgid "|m5cores3_usbd_mouse_example.m5f2|"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:41 ba35186d60934e4ab310db20826f467f
+msgid "class Mouse"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:45 d63fdef6fa1c400ba1b96617d9de81d8
+msgid "Create Mouse object"
+msgstr "创建 Mouse 对象"
+
+#: ../../en/advanced/usb/device/mouse.rst:47
+#: ../../en/advanced/usb/device/mouse.rst:61
+#: ../../en/advanced/usb/device/mouse.rst:73
+#: ../../en/advanced/usb/device/mouse.rst:96
+#: ../../en/advanced/usb/device/mouse.rst:104
+#: ../../en/advanced/usb/device/mouse.rst:115
+#: ../../en/advanced/usb/device/mouse.rst:125
+#: ../../en/advanced/usb/device/mouse.rst:135
+#: ../../en/advanced/usb/device/mouse.rst:145
+#: ../../en/advanced/usb/device/mouse.rst:155
+#: ../../en/advanced/usb/device/mouse.rst:165
+#: ../../en/advanced/usb/device/mouse.rst:175 015e481d49e4431ba2e4521a6447bea5
+#: 0a5a3cd95e014ac4ae62f0492fdde866 5ab0009ddee7479896d0fca02b2ae8f3
+#: 7a8ce64ce76c4c54a56aff553310a1e1 85fb2f7518a04d4da7886e955b7c5ede
+#: 9b1e3ee19cd24da0a750d8fae14c99ac c9c42fcff3bb4bf59cc7ec7bd71a62c8
+#: d595915f0a034e48b59b34810f088e0c dfc02f782e9d407fb2c9d71d49329df9
+#: eab3bca8cbce4eeabb8df4cdf890cdf1 ef0f9089445d4352a47b68fa777c01bb
+#: ffa934c57be3446889725f3cc362b131
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:49 53a109c0cf2d41c29b9ff4edaf0729be
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:1
+#: 4bb61fb67d664c488502f4527ee39c67
+msgid "init.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:54 612690b8e770418980986cec1745cad5
+msgid "Set Cursor Position"
+msgstr "设置光标位置"
+
+#: ../../en/advanced/usb/device/mouse.rst:56
+#: ../../en/advanced/usb/device/mouse.rst:112 2757dc7849464932bf0f0d19215fe305
+#: ead6ae7ff5bf428096de8e57e2214a0e
+msgid ""
+"``x`` Horizontal movement, range: -127 to 127. A value less than 0 moves "
+"the cursor to the left, and a value greater than 0 moves it to the right."
+msgstr "``x`` 水平移动，范围：-127~127，小于0为向左移动，大于0为向右移动。"
+
+#: ../../en/advanced/usb/device/mouse.rst:57 f3333678f4d14129a87dd0d0248a1dea
+msgid ""
+"``y`` Vertical movement, range: -127 to 127. A value less than 0 scrolls "
+"the cursor up, and a value greater than 0 scrolls it down."
+msgstr "``y`` 纵向移动，范围：-127~127，小于0为向上滚动，大于0为向下滚动。"
+
+#: ../../en/advanced/usb/device/mouse.rst 0ecb17730b624ffd83ab7de2c4cd42f3
+#: a118345d64874c53b5b0ad22f35d14e5 aa689d607aab49e2ba036330ee7024de
+msgid "note"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:59
+#: ../../en/advanced/usb/device/mouse.rst:71
+#: ../../en/advanced/usb/device/mouse.rst:85 d1e46f36eae144d89f84f4da327e062c
+#: f841062bb199424ba1d0a196083103a4 fb0e4922e0d84d1ca6057fe9a89beb93
+msgid "Changes will take effect after calling Mouse.send_report()."
+msgstr "需要调用 Mouse.send_report() 后生效"
+
+#: ../../en/advanced/usb/device/mouse.rst:63 352589391f114d2caf4e6ab7ff3091c0
+msgid "|set_axes.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:11
+#: 6dbacbd6446b45eb97b1924430e569dc
+msgid "set_axes.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:67 750ba92f777d4e7296744c885fb7dac5
+msgid "Set mouse wheel value"
+msgstr "设置鼠标滚轮值"
+
+#: ../../en/advanced/usb/device/mouse.rst:69 39444bb0c5b04b3ea7d85f531bab20f4
+msgid ""
+"``w`` Wheel value, range: -127 to 127. A value less than 0 scrolls the "
+"wheel down, and a value greater than 0 scrolls the wheel up."
+msgstr "``w`` 滚轮值，范围:-127~127，小于0为向下滚动，大于0为向上滚动。"
+
+#: ../../en/advanced/usb/device/mouse.rst:75 ccca0361c0504c6d815d6622cc3cb098
+msgid "|set_wheel.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:12
+#: 05c24991c7b6490a88cbdc3e0b077e44
+msgid "set_wheel.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:79 6dec1b2bc2e14906b29b6f6638686578
+msgid "Set mouse button status"
+msgstr "设置鼠标按钮状态"
+
+#: ../../en/advanced/usb/device/mouse.rst:81 70d3b0c158c84c2a9fbb0d30bea42752
+msgid "``left`` True indicates the left button is pressed."
+msgstr "``left`` True 为按下左键"
+
+#: ../../en/advanced/usb/device/mouse.rst:82 ce490e27569b4004821e320b6bfc1cb7
+msgid "``right`` True indicates the right button is pressed."
+msgstr "``right`` True 为按下右键"
+
+#: ../../en/advanced/usb/device/mouse.rst:83 935184faa0704140aaea076d17b29de0
+msgid "``middle`` True indicates the middle (wheel) button is pressed."
+msgstr "``middle`` True 为按下滚轮"
+
+#: ../../en/advanced/usb/device/mouse.rst:87 561ffeffab6d481b85f8f12a18b8f2df
+msgid "example: Mouse click left button"
+msgstr "需要调用 Mouse.send_report() 后生效"
+
+#: ../../en/advanced/usb/device/mouse.rst:98 685a354b1070493b83ef0c4cb53e7ce5
+msgid "|set_buttons.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:13
+#: 3fc3542a26724c38964953cc74374e74
+msgid "set_buttons.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:102 38ac531e0c0145c793aa189559617354
+#, fuzzy
+msgid "Send the mouse status report."
+msgstr "设置鼠标按钮状态"
+
+#: ../../en/advanced/usb/device/mouse.rst:106 a35b3fbafa2542228d1213e110f1b7f6
+msgid "|send_report.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:10
+#: ba770e60373346c6a451e813912d23aa
+msgid "send_report.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:110 d363fa751b9a4811b03a9d12f8c37250
+msgid "Move cursor"
+msgstr "移动光标"
+
+#: ../../en/advanced/usb/device/mouse.rst:113 f744a4f0044f4fdaa8352fcf56693f03
+msgid ""
+"``y`` Vertical movement, range: -127 to 127. A value less than 0 moves "
+"the cursor up, and a value greater than 0 moves it down."
+msgstr "``y`` 纵向移动，范围：-127~127，小于0为向上滚动，大于0为向下滚动。"
+
+#: ../../en/advanced/usb/device/mouse.rst:117 6ff7ae719c4247909dfdbd4d39e560c7
+msgid "|move.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:3
+#: 4fa0aef26ebb4db28ae4aa2d730ad7b1
+msgid "move.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:121 4786c83486574d00a5d1f7ad92570cce
+msgid "Click left button"
+msgstr "单击左键"
+
+#: ../../en/advanced/usb/device/mouse.rst:123 bf5ed956a8924d00acda3d828c89775c
+msgid ""
+"``release``  Set to True to release the left mouse button after pressing,"
+" or False to not release."
+msgstr "`release`` 设为 True 为按下鼠标左键后释放， False 为不释放"
+
+#: ../../en/advanced/usb/device/mouse.rst:127 c44a738984f84aa392ec7e6a6fbe5852
+msgid "|click_left.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:4
+#: 88a6602861b94331916778b6dac355a3
+msgid "click_left.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:131 cde543683c4b426980108d02bcee633c
+msgid "Click right button"
+msgstr "单击右键"
+
+#: ../../en/advanced/usb/device/mouse.rst:133 5a1e3f8f65eb45aa843bdeeda747881c
+msgid ""
+"``release``  Set to True to release the right mouse button after "
+"pressing, or False to not release."
+msgstr "``release`` 设为 True 为按下鼠标右键后释放， False 为不释放"
+
+#: ../../en/advanced/usb/device/mouse.rst:137 4256bd6bda4b4e41a70b0781b24f709f
+msgid "|click_right.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:5
+#: 964b75fa2aca4122a9df13f3d63fb891
+msgid "click_right.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:141 57ee7e91c60b49ed8e713a4ebc9c9607
+msgid "Click middle button"
+msgstr "单击滚轮"
+
+#: ../../en/advanced/usb/device/mouse.rst:143 9f2aac9b84674e54b5227725545ed7dc
+msgid ""
+"``release``  Set to True to release the left middle button after "
+"pressing, or False to not release."
+msgstr "``release`` 设为 True 为按下鼠标滚轮后释放， False 为不释放"
+
+#: ../../en/advanced/usb/device/mouse.rst:147 2262da0c6d2f416b891bcc16bedb8038
+msgid "|click_middle.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:6
+#: a4fa26cf1d5046f7ae618ed5c56a6cf7
+msgid "click_middle.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:151 ab52c6337a7445deb3aaf9db0cd9d434
+msgid "Click forward button"
+msgstr "单击前进按键"
+
+#: ../../en/advanced/usb/device/mouse.rst:153 377cceafc50a4c758a96f1cb0ee73d56
+msgid ""
+"``release``  Set to True to release the left forward button after "
+"pressing, or False to not release."
+msgstr "``release`` 设为 True 为按下鼠标前进键后释放， False 为不释放"
+
+#: ../../en/advanced/usb/device/mouse.rst:157 9b6fa4219e334875a5d1251c70c3630e
+msgid "|click_forward.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:7
+#: 11a133d8535b43bf9670aa7f77d65e96
+msgid "click_forward.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:161 19b34ad4674544ac90fac734c4075b85
+msgid "Click backward button"
+msgstr "单击后退按键"
+
+#: ../../en/advanced/usb/device/mouse.rst:163 5668eb4757a341e497e7ef06b4b51cff
+msgid ""
+"``release``  Set to True to release the left backward button after "
+"pressing, or False to not release."
+msgstr "``release`` 设为 True 为按下鼠标前后退后释放， False 为不释放"
+
+#: ../../en/advanced/usb/device/mouse.rst:167 ab2363aca6cd487e909b8d1fd79ae4b8
+msgid "|click_backward.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:8
+#: de0bd68b2d0c42a5a4e0d367687f0348
+msgid "click_backward.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/mouse.rst:171 ff574daaf93b4294a86bdc11fe431542
+msgid "Scroll wheel"
+msgstr "滚动滚轮"
+
+#: ../../en/advanced/usb/device/mouse.rst:173 c447d39e57f44d179259c2a7eb915505
+msgid ""
+"``w`` range: -127 to 127, values less than 0 scroll up, and values "
+"greater than 0 scroll down."
+msgstr "``w`` 范围：-127~127，小于0向上滚动，大于0向下滚动。"
+
+#: ../../en/advanced/usb/device/mouse.rst:177 a531ec9122d8446b9dbf5adb8a33731c
+msgid "|scroll.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.mouse.ref:9
+#: 079dd81b4e264e4ca452e131ad7ee6be
+msgid "scroll.png"
+msgstr ""
+
+#~ msgid ":mod:`mouse`"
+#~ msgstr ""
+

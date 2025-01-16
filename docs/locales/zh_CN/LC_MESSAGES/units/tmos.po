@@ -1,0 +1,1034 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/tmos.rst:2 ac36c8ea71b24356ae33b5d04adfe968
+msgid "TMOS Unit"
+msgstr ""
+
+#: ../../en/units/tmos.rst:6 9adccbd43de94edca224afdd619025f0
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:8 c683e1e6df5b4bde9ff23531b9bd8f70
+msgid "|TMOS|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref 864d8dd088d145dea8b6d89740e67484
+msgid "TMOS"
+msgstr ""
+
+#: ../../en/units/tmos.rst:11 3db0cfaf87584f0eb5c25ed405016c79
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/tmos.rst:105 df4e45206c5f4b8497f46f4f2e2163c8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:107 51f4a1bd2e7e4bc395fd1df4d1f626b2
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:6 0020aafe920e4e60b3dc7cc4fc1fda87
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:112 75d37f862219439589cce52a7ee1bf73
+msgid "|tmos_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/tmos.rst:116 04df0473333e46389762c9bb82e875da
+msgid "class TMOSUnit"
+msgstr ""
+
+#: ../../en/units/tmos.rst:119 1ef1ae0814e94b73a35745baed66dfce
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/tmos.rst:123 8521a94d3b1047518c631d7bd495dddb
+msgid "Create a TMOSUnit object."
+msgstr ""
+
+#: ../../en/units/tmos.rst 05ba92397a24402d846d65077cfd0342
+#: 0a6b51331efd4c8daedcd744b2362b81 0dc2b3a7e3154f828fa6bf045caaf080
+#: 1393c692294b4068a5d17cfca3ab20f7 159b384c5d794758871ad737132b4d5a
+#: 2189d04af6fe458d891ae0dd04aa2e22 4a22e5a8c63a4e189b15899665037814
+#: 80bf96c112944904ad33a1a0bfe921e6 86a2943d9be54960b9258f582668d617
+#: 9f7df519e9974f34b0233ddd4e4ec234 c02a6465145c4905af6ebf0a93c30da8
+#: c5e992544a1646ab868d16e38a819b82 c6c9e12855f84f98bd37ad2efcda7121
+#: c853fc8790ef4cb3a9800a941b441ea3 ced9bc7e243b4d909ec7a2e8c8c9f824
+#: d188f16dbe7f4db39e4f7d9e7ecca10b d193fac397cf4adbb34884dc5ef497e6
+#: f8725d388b4a4c27a8c55d1cf08c7340 fa09f3483e22460b842ca9f8a1dd4136
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/tmos.rst:125 6a1b86fdd8694c54b8594e59812951cf
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/units/tmos.rst:127 613de9513b604a92ad52fa6614221ebf
+msgid "I2C address, 0x5A by default"
+msgstr ""
+
+#: ../../en/units/tmos.rst:129 ../../en/units/tmos.rst:143
+#: ../../en/units/tmos.rst:153 ../../en/units/tmos.rst:163
+#: ../../en/units/tmos.rst:173 ../../en/units/tmos.rst:183
+#: ../../en/units/tmos.rst:193 ../../en/units/tmos.rst:203
+#: ../../en/units/tmos.rst:213 ../../en/units/tmos.rst:232
+#: ../../en/units/tmos.rst:253 ../../en/units/tmos.rst:264
+#: ../../en/units/tmos.rst:274 ../../en/units/tmos.rst:284
+#: ../../en/units/tmos.rst:294 ../../en/units/tmos.rst:304
+#: ../../en/units/tmos.rst:314 ../../en/units/tmos.rst:324
+#: ../../en/units/tmos.rst:334 ../../en/units/tmos.rst:348
+#: ../../en/units/tmos.rst:358 ../../en/units/tmos.rst:371
+#: ../../en/units/tmos.rst:381 ../../en/units/tmos.rst:394
+#: ../../en/units/tmos.rst:404 ../../en/units/tmos.rst:416
+#: ../../en/units/tmos.rst:426 06fc626aac4846c8b3a557a00a703d6c
+#: 080949f662784336a5b36fdc8430892e 0cd2ffd68f5b4beb9a49811508269abb
+#: 153185a2cdac42908ce8adbbc918f2e2 20fe2cc3bee34960bc7d8b04960568bd
+#: 2c20b1c4aeb5400eade6e9035c877da6 3d28f43abe1c41f3869a353ae593e843
+#: 44ba4096fa084db1a75a67a0d0db176d 4534769c798c48e99e9ed30a1afaa45b
+#: 57a3f950fe314b4d952712c3462d7e4e 60760d0c9b194e40a640b0271f2ca953
+#: 69084bf5e991484da9f827cea906cdf8 7a947c87c02f4d5ebadb0f40c85de566
+#: 815a2bfe6c5d4c708b4088a2de2784be 842c449e292447c5bf1c5077cb8a9ba0
+#: 84f858e5a368407e9b858e038ab8131b 95f9fe5319b0436f9a571cbdc1f496a6
+#: 9a0eae31af2449d5a0ce8fb5c0c1e945 abd0ee5cfe244d0da1e88201dc4ac75e
+#: b97655514f194fe2848846c21f06e435 c4bb280f6ec4471d9d2d484c6cde8e80
+#: c68c9f28d6424460b9b51e2367549a53 cd839ba487c64a488e6107943e944065
+#: d55f672f2130445bb630a06837d7bb10 ee8a40764f334af399997b56ddb4eebc
+#: f0e5c12020454fdb9bf8ea9a49981d74 ff2052b1d798451294e69bf4ee7b9fea
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:131 a7d1c7249b954a8a8dbb1d11ce1ccc93
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:7 be65925eb28648cf93220cb919154a2f
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:135 b6bee230d8274985b6aeab5558d598b7
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/tmos.rst:139 e334ed2232bb458b8420dbc9bfcf4354
+msgid ""
+"Get data update status of TMOSUnit(TAMBIENT, TOBJECT, TAMB_SHOCK, "
+"TPRESENCE, TMOTION)."
+msgstr ""
+
+#: ../../en/units/tmos.rst 1d3fb0e1650a4f2b8ae6f8eb7d340f45
+#: 2c7c23f3a162483a8f543e2ca2b7a7ce 2d501ca3c9754cce962b9d609283a542
+#: 30e877d1ff964922a1cf36a5d25a27bb 3bc81b5f3b2e4a2097e37545f8cce384
+#: 4fa61583f26447fd92a4c135f9abed0a 508a03a52dc34dbe8217a0ae533aa64b
+#: 569c7079604e45d48371876efbc80d6a 60c6903cf14b4281a4ee77a426c46f6c
+#: 6f6a4974743f4dbea0bfd53ff07e2353 74b18cbbaada464883372e1b66548a6b
+#: 8e552436ab2b4fc7b1c8e1cba612e4a2 936c5443c7ee40f88b35e19d89dd0548
+#: 9754d551994744ba9524bb5b638d4c82 9b900397e7d54a62b7712f2ab0dc73b0
+#: ac3364aa9777430a852dd535d6ba96bc b03bf2a3ddfa41afb7a1dd803c408160
+#: b060fa44d9094ccbaa40d803ccc73c66 b2573e0fb9024fef8d2efdb20699dbbb
+#: b8e5a045de27415aaffd848e2ffdb836 bbccecc7a189489fb4da4e791f563ad4
+#: f7537e46626a4b968edc1c4c3264ba06 fe676fb582d44fd68716260563a748f8
+#: ff10faea0d074fa789152512fe1030c8
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/tmos.rst:141 5c67d9eae1c843bc9e103fbdb91176cf
+msgid "The data update status of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:145 c1f0a69185fa448d931bb05d2b1b0924
+msgid "|get_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:8 833264d462c9447c8f8efa3dd668f46c
+msgid "get_data_ready.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:149 f3ec592ec8e94c5590988138d9ee7cab
+msgid "Get the motion status detected by TMOSUnit"
+msgstr ""
+
+#: ../../en/units/tmos.rst:151 8fa05378df024c89a63a9ffc6cc8dfb7
+msgid "The motion status."
+msgstr ""
+
+#: ../../en/units/tmos.rst:155 e9c31781bafc4fcdbfe62012d905b769
+msgid "|get_motion_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:11 299b881dbe2b4e2b99144b7fa3dd7a1b
+msgid "get_motion_state.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:159 386b7a9a9b3e4819ae03b708002293a2
+msgid "Get motion value(unit:cm^-1)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:161 69e5758a3f964c44a939c4a6b3379b71
+msgid "The motion value of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:165 9e5154eb1fe446e590948c31420e4c22
+msgid "|get_motion_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:13 bec4f680b3c74c80802003e128af8c33
+msgid "get_motion_value.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:169 adab686e00654c02b75bff0f9f66c953
+msgid "Get the presence status detected by TMOSUnit"
+msgstr ""
+
+#: ../../en/units/tmos.rst:171 423a4085300142b8a57a6731eab01558
+msgid "The presence status."
+msgstr ""
+
+#: ../../en/units/tmos.rst:175 120eaaca411e4d21909fdf85983666ef
+msgid "|get_presence_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:12 2d73652d0e234c38ac13a8241b0f9b0f
+msgid "get_presence_state.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:179 38a4523f3aeb420c9700028de9af4f48
+msgid "Get presence value(unit:cm^-1)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:181 c99e69c5dd33408c9c8b9b2acb6be29b
+msgid "The presence value of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:185 6b83d6f41eb3409a9376127ea82dd040
+msgid "|get_presence_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:14 8d6e608ae5124d30910c78e2decff465
+msgid "get_presence_value.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:189 453d5ce1f4f4456d9b90a1575692bfe9
+msgid "Get the ambient temperature shock status detected by TMOSUnit"
+msgstr ""
+
+#: ../../en/units/tmos.rst:191 02ad36e4194942cab8eeed6b9bf370e0
+msgid "The ambient temperature shock detection status."
+msgstr ""
+
+#: ../../en/units/tmos.rst:195 cec20cfc56fa4cfba5f82c5a770185e8
+msgid "|get_tamb_shock_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:15 2d5ca27997fe400ab24e2f226da4ce2f
+msgid "get_tamb_shock_state.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:199 5897b98a58754a7aa74e4b8c99f3d060
+msgid ""
+"Get ambient temperature, represents the temperature of the environment in"
+" thermal coupling with the sensor."
+msgstr ""
+
+#: ../../en/units/tmos.rst:201 a51a475735af4f028d94add009f63d0d
+msgid "The ambient temperature of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:205 01aac1d35c6443839067064f2a8adaf3
+msgid "|get_tambient_raw_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:17 8a91d824f541405092eed966abdd0611
+msgid "get_tambient_raw_value.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:209 d8a981e0808a4b3db0dcc7b89f9e5f37
+msgid ""
+"Get object temperature, represents the amount of infrared radiation "
+"emitted from the objects inside the field of view."
+msgstr ""
+
+#: ../../en/units/tmos.rst:211 a1814c80d297445d9ec633492dc74f8e
+msgid "The object temperature of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:215 4373a722afdb484f89f2a0dffe04e36e
+msgid "|get_temperature_data.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:16 734303ee3b754f43bad55e8c2bcba75f
+msgid "get_temperature_data.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:219 3b923f7d0c8a4e98aa7776de37950735
+msgid "Set callback function for different triggers."
+msgstr ""
+
+#: ../../en/units/tmos.rst:221 dce8b284ef494ae5946300d12c1ba3d2
+msgid "The callback function to be set."
+msgstr ""
+
+#: ../../en/units/tmos.rst:222 0889d79a51c84d5394c0cf32ad0e7a76
+msgid ""
+"The event trigger to set the handler for:   - ``ambient temperature``: 0 "
+"- ``motion``: 1 - ``presence``: 2 - ``ambient temperature not``: 3 - "
+"``motion not``: 4 - ``presence not``: 5"
+msgstr ""
+
+#: ../../en/units/tmos.rst:222 eb36e80c22c242d2a6c70f13e30ecffc
+msgid "The event trigger to set the handler for:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:225 069e93cc66bb4edc8b1749c971498bb0
+msgid "``ambient temperature``: 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:226 1857d9a6952f4941adf48af17705e1b1
+msgid "``motion``: 1"
+msgstr ""
+
+#: ../../en/units/tmos.rst:227 1ed64f34a993438c8f71d5ac9a49c822
+msgid "``presence``: 2"
+msgstr ""
+
+#: ../../en/units/tmos.rst:228 d72f1a9c48fd42d2b43dcfc6250fa96d
+msgid "``ambient temperature not``: 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:229 e087458e2c9d4ffd88f457d2eb413d01
+msgid "``motion not``: 4"
+msgstr ""
+
+#: ../../en/units/tmos.rst:230 637ebcc04bd24b12b1770eff74de1870
+msgid "``presence not``: 5"
+msgstr ""
+
+#: ../../en/units/tmos.rst:234 0efa6b111b4b4a51be7afa380e87dd78
+msgid "|set_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:9 7757257e400f4eeeb1fef77a6e8add49
+msgid "set_callback.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:238 03d28a5a576e4cd6b8bd610c8c1c47a4
+msgid ""
+"Check the status of the TMOSUnit and execute the corresponding callback "
+"functions based on the event flags."
+msgstr ""
+
+#: ../../en/units/tmos.rst:240 534325c80ca146a0958faa32544044f8
+msgid ""
+"This method should be called periodically to poll the sensor status and "
+"handle any detected events."
+msgstr ""
+
+#: ../../en/units/tmos.rst:242 55188e3a9269405cab19ce30544c303d
+msgid ""
+"It checks the following flags and triggers the associated callbacks if "
+"the flags are set:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:244 c4d479340a3b423cb4027cc7cc681fb2
+msgid "``ambient temperature`` (0): Indicates an ambient temperature shock event."
+msgstr ""
+
+#: ../../en/units/tmos.rst:245 490ffef08fb04c59865a190f57f38cb7
+msgid "``motion`` (1): Indicates a motion detection event."
+msgstr ""
+
+#: ../../en/units/tmos.rst:246 8ce25842172746dfb05947d4394985cc
+msgid "``presence`` (2): Indicates a presence detection event."
+msgstr ""
+
+#: ../../en/units/tmos.rst:247 b4195872a36d4c11a716fa5c12fa7582
+msgid ""
+"``ambient temperature not`` (3): Indicates an ambient temperature shock "
+"event has not occurred."
+msgstr ""
+
+#: ../../en/units/tmos.rst:248 459b7123c2144a45818441a8122be4b3
+msgid "``motion not`` (4): Indicates a motion detection event has not occurred."
+msgstr ""
+
+#: ../../en/units/tmos.rst:249 f176e2e8e85d4362bc9ff11640716283
+msgid ""
+"``presence not`` (5): Indicates a presence detection event has not "
+"occurred."
+msgstr ""
+
+#: ../../en/units/tmos.rst:251 375eb8f034cf488985721e69da41a863
+msgid ""
+"The callback functions associated with these events are set using the "
+":meth:`set_callback` method."
+msgstr ""
+
+#: ../../en/units/tmos.rst:255 db034ac4493d4195826366277d4d5a2a
+msgid "|tick_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:10 a4999930da3748409160f39cd6a967a8
+msgid "tick_callback.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:260 057fde385dce4a2ab5a03ddf71e30b00
+msgid "Get the gain mode configuration of TMOS."
+msgstr ""
+
+#: ../../en/units/tmos.rst:262 ../../en/units/tmos.rst:342
+#: 7a44b8fdf569438fa6e8fa96f700ecc0 bdafd60bbc9144989726cf4aa4edeb86
+msgid "Gain mode"
+msgstr ""
+
+#: ../../en/units/tmos.rst:266 fa5c3b6e0d8a47ab91eebdbd07ddfe4f
+msgid "|get_gain_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:30 8fc3ea65991e49e6a8b9ce861d9eba4e
+msgid "get_gain_mode.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:270 dc066e2bd5374a2ebc188882c4233595
+msgid "Get the sensitivity configuration of TMOS."
+msgstr ""
+
+#: ../../en/units/tmos.rst:272 407dc43eb9084d81a72ff5f273b24836
+msgid "TMOS sensitivity"
+msgstr ""
+
+#: ../../en/units/tmos.rst:276 de77f9abf79e4c2d970eb6b664a7789a
+msgid "|get_tmos_sensitivity.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:32 008c79bffa554b808d7e7b5ae512078f
+msgid "get_tmos_sensitivity.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:280 1ed8c2f76f0843eda4b30a44fc2042ec
+msgid "Get the motion threshold for motion detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst 4c1995aeb82146e9a69c5c18014a7a71
+#: 8cd650425e2d49ff80123b7373ffa198 a4c81cb0c0fa4fc6a7b68016671a262a
+#: d53bdd1c9c3b44fcade0a2326fcc8eb3 fb2cea9649764493a89c0e3be57a1ec1
+msgid "return"
+msgstr ""
+
+#: ../../en/units/tmos.rst:282 4a8fc8723ad443dba1b4962532bb35f4
+msgid "The motion threshold of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:286 bcb39fddb1d84107a878ff0bdd29ce76
+msgid "|get_motion_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:19 26be61d586d1472dbd0a5988d59db587
+msgid "get_motion_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:290 7f8641d596da40149a651d9f7e28ff59
+msgid "Get hysteresis value for motion detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:292 fb2f4926732141eabd200ed0f4ca718c
+msgid "The motion hysteresis of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:296 95aed7971ac140a4880f10349b085635
+msgid "|get_motion_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:22 dd59970c69b444bd9a9b69e70ab7eaf9
+msgid "get_motion_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:300 c0e4c98229124bffb78e7b04987ac4f8
+msgid "Get the presence threshold for presence detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:302 d88cd2027de74a5ca3859338e64b9b67
+msgid "The presence threshold of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:306 bcd89b17e84e4916a8b1f7f393b82de3
+msgid "|get_presence_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:18 a3ae20683b0f40b2ba20e8ad21aa3e72
+msgid "get_presence_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:310 ba14e1f7604f480a8710f972e4789b66
+msgid "Get hysteresis value for presence detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:312 60d1567933a846c09cdff52a4971156a
+msgid "The presence hysteresis of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:316 e366d4d8127d4e79b03ca32e7ca02e1d
+msgid "|get_presence_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:21 d2c8be3a84dc4cc6a570edf30b1d75f0
+msgid "get_presence_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:320 25f81ec5e2544eb4a0178fbdfcaf170b
+msgid ""
+"Get the ambient temperature shock threshold for Tambient shock detection "
+"algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:322 64811d5445a243c5aa8d481ec355538f
+msgid "The ambient temperature shock threshold of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:326 3bfdadd2d3ca457094d74852d98861a7
+msgid "|get_tambient_shock_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:20 19831f2a584d41f09d00117fc770ad24
+msgid "get_tambient_shock_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:330 094948e2415a4c26bf887de167e426bc
+msgid "Get hysteresis value for ambient temperature shock detection algor."
+msgstr ""
+
+#: ../../en/units/tmos.rst:332 6c3ca49827d44f9bb004054611a3fbe5
+msgid "The ambient temperature shock hysteresis of TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:336 1fd2596ec5dd42db87c9bd85e9dfe45e
+msgid "|get_tambient_shock_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:33 476d72f5b8dc4247b13f0298863b61ec
+msgid "get_tambient_shock_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:340 13196a4568f444d4a3903e247b3e1848
+msgid ""
+"Set the gain mode of TMOS (Note: DEFAULT mode has high sensitivity but "
+"easily leads to sensor oversaturation; WIDE mode has short detection "
+"distance but can avoid sensor saturation)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:342 312aab6fee6d4d6e86db3c8df378d4d9
+msgid ""
+"Gain mode  Options:     - ``GAIN_WIDE_MODE``: 0     - "
+"``GAIN_DEFAULT_MODE``: 7"
+msgstr ""
+
+#: ../../en/units/tmos.rst:346 ../../en/units/tmos.rst:458
+#: ../../en/units/tmos.rst:479 ../../en/units/tmos.rst:500
+#: ../../en/units/tmos.rst:521 ../../en/units/tmos.rst:543
+#: ../../en/units/tmos.rst:561 ../../en/units/tmos.rst:585
+#: 058ea76c9b234e259bfe9bdb3fafe6c1 35a0fd41878b4bc38d7657e459ff090b
+#: 4a378fe308e54d109371a9ada6475a75 6565f96cde324769947063760adc4156
+#: 87be48a1b091487e97ee69117d5e05d4 9fdad1f81ea44210995038e1e3c20b77
+#: baf8029671f94d5492f43175ab81daec ef4d5b984abc44deb6e2b0d1c9daec7e
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/tmos.rst:345 404f66b203d742c9b1c5ba98bdd21911
+msgid "``GAIN_WIDE_MODE``: 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:346 1a47dc3c34874d4f9bec709e6ac3fd8c
+msgid "``GAIN_DEFAULT_MODE``: 7"
+msgstr ""
+
+#: ../../en/units/tmos.rst:350 1d37dd978b2d4139b87f66c7a168bf4d
+msgid "|set_gain_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:29 579cf5776d864f37b91061807ecd139e
+msgid "set_gain_mode.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:354 26f437ead29946a190dafa50d283cf04
+msgid "Set the sensitivity of TMOS"
+msgstr ""
+
+#: ../../en/units/tmos.rst:356 e9941698a1e54b8581d1e62cf54e5c64
+msgid "Sensitivity(0x00 ~ 0xFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:360 1258779d4db146bcba022c1f509bf46c
+msgid "|set_tmos_sensitivity.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:31 68fb795ce7de4c9588adbb00f3ee0bbf
+msgid "set_tmos_sensitivity.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:365 ffdb39d02dc74f69800a39b490c689c9
+msgid "Set the the motion threshold for motion detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:367 32b7711b6e62490099537944594d7b0d
+msgid "motion threshold(0x0~0x7FFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:369 ../../en/units/tmos.rst:392
+#: ../../en/units/tmos.rst:414 2e540bc97f53467dbec640c9e2591cfe
+#: 790df73c26db46e781f5e481fb9be539 de8f76ade8a949de9478fe7dbc25c833
+msgid "Is the setting successful?"
+msgstr ""
+
+#: ../../en/units/tmos.rst:373 0a9c335eaf35459381e116472319ebef
+msgid "|set_motion_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:24 4f7fa7fc93be44b68b221d1c8d466c0f
+msgid "set_motion_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:377 a746ea5caa7244208cbda2a62ead3420
+msgid "Set hysteresis value for motion detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:379 a565a21d268d4f0890f0aac3232880e6
+msgid "motion hysteresis(0x0~0xFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:383 f9d5f5a6592243c08fc1086a46364700
+msgid "|set_motion_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:27 a5d2cb9218864ea680600a9a05d0e7eb
+msgid "set_motion_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:388 10a30080a72b410ea19aa914eb54820d
+msgid "Set the presence threshold for presence detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:390 0456d6705cdc4e41806a11a4087103f4
+msgid "presence threshold(0x0~0x7FFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:396 b565c7fcba1c413e995bd95b0e2a61a5
+msgid "|set_presence_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:23 da698bfb33794b97b657b4f7fe79872f
+msgid "set_presence_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:400 b373a60480514104bac083a921982e8f
+msgid "Set hysteresis value for presence detection algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:402 6a740ca13a8f45c19eb8f5a047c05f70
+msgid "presence hysteresis(0x0~0xFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:406 d3d6903ded6248e7890cdbf27412d129
+msgid "|set_presence_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:26 08f6454cb889468485b29741325a3c8a
+msgid "set_presence_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:410 094d995c79854214975321e4c95b23d1
+msgid ""
+"Set ambient temperature shock threshold for Tambient shock detection "
+"algorithm."
+msgstr ""
+
+#: ../../en/units/tmos.rst:412 dc13256fe56346a291fe1e4bd58c5cbb
+msgid "ambient temperature shock threshold(0x0~0x7FFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:418 c59e50dc103e4b539675fc1152fc9178
+msgid "|set_tambient_shock_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:25 73198fae9cc3460bb97301f7700d182a
+msgid "set_tambient_shock_threshold.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:422 a524152f89ac4971a56baf0e4c4aca36
+msgid "Set hysteresis value for ambient temperature shock detection algor."
+msgstr ""
+
+#: ../../en/units/tmos.rst:424 4657e44761004a19806cf2ce0e64a6f6
+msgid "ambient temperature shock hysteresis(0x0~0xFF)"
+msgstr ""
+
+#: ../../en/units/tmos.rst:428 ea2801df6c3a42b9be5eb0a822ade3a5
+msgid "|set_tambient_shock_hysteresis.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tmos.ref:28 dd31f2116d6d4a75a25461a691db8002
+msgid "set_tambient_shock_hysteresis.png"
+msgstr ""
+
+#: ../../en/units/tmos.rst:432 1f9aaf36db8344b8a5bee87ed2a9e995
+msgid "Check whether the TMOSUnit is connected to the device."
+msgstr ""
+
+#: ../../en/units/tmos.rst:436 dbe28239cb574636bc7594ec1c1ce617
+msgid "Initialize TMOSUnit."
+msgstr ""
+
+#: ../../en/units/tmos.rst:440 5476e7b7d2114a91823943baa9aeedbc
+msgid ""
+"Reset TMOSUnit (includes restarting OTP memory content, resetting "
+"algorithms)."
+msgstr ""
+
+#: ../../en/units/tmos.rst:444 5265fc8f4ed1419d8b093a00486b284c
+msgid ""
+"Reset the algorithm (this function must be executed when modifying the "
+"threshold, hysteresis, absolute value in the selection of the presence "
+"detection algorithm, low-pass filter configuration)."
+msgstr ""
+
+#: ../../en/units/tmos.rst:448 f17f03fdda424b12ae1e3d7f44672795
+msgid "Sets the low pass filter configuration for presence detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:450 ../../en/units/tmos.rst:471
+#: ../../en/units/tmos.rst:492 ../../en/units/tmos.rst:513
+#: 38e1e2ffea96414f9737ec6ea8f21942 99a36cc1311642869762da01846c60b1
+#: a703378e48864bbf8ffc56c99c2a938e ffaa058b8bf84629a97e6e298c90f05a
+msgid ""
+"Configuration values ​​for the low pass filter.  Options:     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_9``: ODR/9 , 0     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_20``: ODR/20, 1     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_50``: ODR/50, 2     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_100``: ODR/100, 3     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_200``: ODR/200, 4     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_400``: ODR/400, 5     - "
+"``TMOSUnit.STHS34PF80_LPF_ODR_DIV_800``: ODR/800, 6"
+msgstr ""
+
+#: ../../en/units/tmos.rst:450 ../../en/units/tmos.rst:471
+#: ../../en/units/tmos.rst:492 ../../en/units/tmos.rst:513
+#: 2c274fb756584e5abd21db75e50ea2ff 50eb919169274a159282aced6c71b194
+#: 924672d9540d4fe680437256f1554078 9d6c39127cae40c481a98f5c8e85c769
+msgid "Configuration values ​​for the low pass filter."
+msgstr ""
+
+#: ../../en/units/tmos.rst:453 ../../en/units/tmos.rst:474
+#: ../../en/units/tmos.rst:495 ../../en/units/tmos.rst:516
+#: 149ef07bc6c3415fa7eabd63e0714038 9a3459c154ab4545850379416eabb300
+#: a26b654b35724ab0a85fe5cdcc1e93d3 aaa912bf77c641aeb2ee25a0d1ba13f4
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_9``: ODR/9 , 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:454 ../../en/units/tmos.rst:475
+#: ../../en/units/tmos.rst:496 ../../en/units/tmos.rst:517
+#: 1a971e03ae184f80b2749fd9ebea0685 204ea368684944cc9dac8346be424a12
+#: 444814180e5b409cab5cbc0403c05808 f6e895da4b304535a1980f227d6a8568
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_20``: ODR/20, 1"
+msgstr ""
+
+#: ../../en/units/tmos.rst:455 ../../en/units/tmos.rst:476
+#: ../../en/units/tmos.rst:497 ../../en/units/tmos.rst:518
+#: 1b6d27e8a11841058077bd1c2d343ab4 1d57f0205f01455a807b9ba8ab8cf0c4
+#: 86a25dcfb649440a8cb8ea2a6b04944f 9988f5f3568f485e84d58bbc85655dbb
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_50``: ODR/50, 2"
+msgstr ""
+
+#: ../../en/units/tmos.rst:456 ../../en/units/tmos.rst:477
+#: ../../en/units/tmos.rst:498 ../../en/units/tmos.rst:519
+#: 388e11a4c6924a90b0a6a64c466c621a 6c89429a36d244dbbd4797767fde61e7
+#: 7ce0630e69084a7497015b7ed1e5a5f0 e36d0b94869c40cc8035c0a02cfd3234
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_100``: ODR/100, 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:457 ../../en/units/tmos.rst:478
+#: ../../en/units/tmos.rst:499 ../../en/units/tmos.rst:520
+#: 61a52e69a08e446682a6e4908fbc70c3 7d34e7655d9d490f81bd4785db935869
+#: e3e263b51c7d467a815c4eca467aad51 ec43247661a84b0cae32abf0bc7e3325
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_200``: ODR/200, 4"
+msgstr ""
+
+#: ../../en/units/tmos.rst:458 ../../en/units/tmos.rst:479
+#: ../../en/units/tmos.rst:500 ../../en/units/tmos.rst:521
+#: 26d6fe3888cf4debb0577a22852a0b2b 2c9dd09d91294f11993bdfc47f651783
+#: 7f818540fcc94303a07a51eeed38e2bd c361c2ac02d3411bb686d7636314b417
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_400``: ODR/400, 5"
+msgstr ""
+
+#: ../../en/units/tmos.rst:459 ../../en/units/tmos.rst:480
+#: ../../en/units/tmos.rst:501 ../../en/units/tmos.rst:522
+#: 606d6d64cf2d4e7786fd706a6006da93 b4e7b4573511440a9c323f1b8d9cce15
+#: b70ff3afeaad4c078493d3b17c38f645 bc76693f466143038499297ad392ba38
+msgid "``TMOSUnit.STHS34PF80_LPF_ODR_DIV_800``: ODR/800, 6"
+msgstr ""
+
+#: ../../en/units/tmos.rst:463 2e8629b9351846c09a661f96535c6290
+msgid "Gets the low pass filter configuration used for presence detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:465 ../../en/units/tmos.rst:486
+#: ../../en/units/tmos.rst:507 ../../en/units/tmos.rst:528
+#: 1081cf56c69841bcb1cc2be2f70fc016 2e33f19212044672bb8da7e92d76c12e
+#: 3b53e6842dda4a7c971cc7f2932524cf b8072914478949f8ac281dc1c37a3257
+msgid "Low pass filter bandwidth"
+msgstr ""
+
+#: ../../en/units/tmos.rst:469 7feecdc376b14bb49826ee07003a86f6
+msgid ""
+"Sets the low-pass filter configuration for ambient temperature shock "
+"detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:484 d778f3314e524a10bc7a0235e7e5fb98
+msgid ""
+"Gets the low pass filter configuration for ambient temperature shock "
+"detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:490 dda97085245045848753d108af9cfb19
+msgid "Sets the low-pass filter configuration for presence and motion detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:505 e50e8d302e0d467db8488f51fc9edfd2
+msgid "Gets the low-pass filter configuration for presence and motion detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:511 3469e1ef772d42c9a0f72fb40020de52
+msgid "Sets the low-pass filter configuration for motion detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:526 710ce6445ebc48278c5e7608afb669d3
+msgid "Gets the low-pass filter configuration for motion detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:532 1d9aa9b0d50c4a59b3ba3e8803d68b3f
+msgid "Sets the number of samples to average the object's temperature."
+msgstr ""
+
+#: ../../en/units/tmos.rst:534 fd43e27c0804492cadc1c4d80abf561d
+msgid ""
+"Configuration value for the number of samples to average.  Options:     -"
+" ``TMOSUnit.STHS34PF80_AVG_TMOS_2``: RMS noise:90 , 0     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_8``: RMS noise:50, 1     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_32``: RMS noise:25, 2     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_128``: RMS noise:20, 3     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_256``: RMS noise:15, 4     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_512``: RMS noise:12, 5     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_1024``: RMS noise:11, 6     - "
+"``TMOSUnit.STHS34PF80_AVG_TMOS_2048``: RMS noise:10, 7"
+msgstr ""
+
+#: ../../en/units/tmos.rst:534 ../../en/units/tmos.rst:556
+#: 34ca74e8b1614bc0a896f6f77df5f78e 89a9c2145daf44afa7480f652f703f1d
+msgid "Configuration value for the number of samples to average."
+msgstr ""
+
+#: ../../en/units/tmos.rst:537 b76f34c62ad7403bbead9337b6ac9296
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_2``: RMS noise:90 , 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:538 453997d058424b7ab37046f81974549b
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_8``: RMS noise:50, 1"
+msgstr ""
+
+#: ../../en/units/tmos.rst:539 64581b1b3b0f4200b6fc49a50dbf66c5
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_32``: RMS noise:25, 2"
+msgstr ""
+
+#: ../../en/units/tmos.rst:540 1deded7b287b4ee1ada4afab94431070
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_128``: RMS noise:20, 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:541 f71f47a4a549414f95685e5ac019e3d9
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_256``: RMS noise:15, 4"
+msgstr ""
+
+#: ../../en/units/tmos.rst:542 723d3124da4f4b6397e515cd3a68bb73
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_512``: RMS noise:12, 5"
+msgstr ""
+
+#: ../../en/units/tmos.rst:543 c2b0725dca034c72bc1ea787141c049f
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_1024``: RMS noise:11, 6"
+msgstr ""
+
+#: ../../en/units/tmos.rst:544 a93abec54ee149708dd141b225ab4e38
+msgid "``TMOSUnit.STHS34PF80_AVG_TMOS_2048``: RMS noise:10, 7"
+msgstr ""
+
+#: ../../en/units/tmos.rst:548 d5788492acfc4da695ecb881f5f47be9
+msgid "Gets the number of samples to average the ambient temperature."
+msgstr ""
+
+#: ../../en/units/tmos.rst:550 f9e4bcba45074331be6570844033dc35
+msgid "Average number of samples of object temperature"
+msgstr ""
+
+#: ../../en/units/tmos.rst:554 9cee0d1cc90c4524a58275d5f0d3e8c7
+msgid "Sets the number of samples to average the ambient temperature."
+msgstr ""
+
+#: ../../en/units/tmos.rst:556 16e72b26e2f740ce86fe028d74eed8fb
+msgid ""
+"Configuration value for the number of samples to average.  Options:     -"
+" ``TMOSUnit.STHS34PF80_AVG_T_8``: 0     - "
+"``TMOSUnit.STHS34PF80_AVG_T_4``: 1     - ``TMOSUnit.STHS34PF80_AVG_T_2``:"
+" 2     - ``TMOSUnit.STHS34PF80_AVG_T_1``: 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:559 80801a82c69b45f49338930799358e15
+msgid "``TMOSUnit.STHS34PF80_AVG_T_8``: 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:560 d2a517570c4749ccafa51b6a8f22f9b4
+msgid "``TMOSUnit.STHS34PF80_AVG_T_4``: 1"
+msgstr ""
+
+#: ../../en/units/tmos.rst:561 51facd052fb5421fb4dba000e2ddbe43
+msgid "``TMOSUnit.STHS34PF80_AVG_T_2``: 2"
+msgstr ""
+
+#: ../../en/units/tmos.rst:562 a36986dabd614c4691bdf37adad96341
+msgid "``TMOSUnit.STHS34PF80_AVG_T_1``: 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:567 da130fa11f384c5caf155293b2237b19
+msgid "Get the average number of samples of ambient temperature."
+msgstr ""
+
+#: ../../en/units/tmos.rst:569 603ce7dc1ec3409bb55d03967e7d445f
+msgid "The number of samples for the average ambient temperature."
+msgstr ""
+
+#: ../../en/units/tmos.rst:573 e38af7afcf3e48cdbc0aa56191303e67
+msgid "Set the output data rate of TMOS"
+msgstr ""
+
+#: ../../en/units/tmos.rst:575 f40508c90e7648e28697a8e49e74c510
+msgid ""
+"TMOS output data rate  Options:     - "
+"``TMOSUnit.STHS34PF80_TMOS_ODR_OFF``: ODR frequency(Hz):Power-down mode, "
+"0     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_0Hz25``: ODR "
+"frequency(Hz):0.25, 1     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_0Hz50``: "
+"ODR frequency(Hz):0.5, 2     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_1Hz``: "
+"ODR frequency(Hz):1, 3     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_2Hz``: ODR"
+" frequency(Hz):2, 4     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_4Hz``: ODR "
+"frequency(Hz):4, 5     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_8Hz``: ODR "
+"frequency(Hz):8, 6     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_15Hz``: ODR "
+"frequency(Hz):15, 7     - ``TMOSUnit.STHS34PF80_TMOS_ODR_AT_30Hz``: ODR "
+"frequency(Hz):30, 8"
+msgstr ""
+
+#: ../../en/units/tmos.rst:575 a32c00e034894856a8a4a886ec70e9f7
+msgid "TMOS output data rate"
+msgstr ""
+
+#: ../../en/units/tmos.rst:578 af985dac698a4bffb6edbc6d71dc3368
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_OFF``: ODR frequency(Hz):Power-down mode, 0"
+msgstr ""
+
+#: ../../en/units/tmos.rst:579 71e4920e7c3349a98e3ac0f8fe630947
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_0Hz25``: ODR frequency(Hz):0.25, 1"
+msgstr ""
+
+#: ../../en/units/tmos.rst:580 1213e55b500744a7bb1de5e9a7bf7351
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_0Hz50``: ODR frequency(Hz):0.5, 2"
+msgstr ""
+
+#: ../../en/units/tmos.rst:581 9217f4b601984d0d9d96f202ad348dfb
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_1Hz``: ODR frequency(Hz):1, 3"
+msgstr ""
+
+#: ../../en/units/tmos.rst:582 959992c452eb4b33948fcc834217e176
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_2Hz``: ODR frequency(Hz):2, 4"
+msgstr ""
+
+#: ../../en/units/tmos.rst:583 28418c8f12b74dcbb87e47f094c51bb2
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_4Hz``: ODR frequency(Hz):4, 5"
+msgstr ""
+
+#: ../../en/units/tmos.rst:584 e313e1b5bf7a43f49abd996ff53e67af
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_8Hz``: ODR frequency(Hz):8, 6"
+msgstr ""
+
+#: ../../en/units/tmos.rst:585 bc3627f1f4e64452990a66f6672dd6cf
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_15Hz``: ODR frequency(Hz):15, 7"
+msgstr ""
+
+#: ../../en/units/tmos.rst:586 e955ba1992e14614835e80d1e1d521d5
+msgid "``TMOSUnit.STHS34PF80_TMOS_ODR_AT_30Hz``: ODR frequency(Hz):30, 8"
+msgstr ""
+
+#: ../../en/units/tmos.rst:590 416ab122f06843ba96e32f3197965dc4
+msgid "Get the output data rate of TMOS"
+msgstr ""
+
+#: ../../en/units/tmos.rst:592 862703168fbd47fd8e2728f394f02acc
+msgid "Output data rate"
+msgstr ""
+
+#: ../../en/units/tmos.rst:596 0e675b750ece40b580a366fc5b114f7b
+msgid ""
+"Enable/disable object temperature and ambient temperature register data "
+"update"
+msgstr ""
+
+#: ../../en/units/tmos.rst:598 3635aaa8ee1d45b68f381a5fa23d4a3e
+msgid "Enable or disable register data update"
+msgstr ""
+
+#: ../../en/units/tmos.rst:602 c7ee4fbc2e85465685513181949aa8b3
+msgid ""
+"Get the object temperature and ambient temperature storage data update "
+"enable status"
+msgstr ""
+
+#: ../../en/units/tmos.rst:604 495b2905b4b64b71b128e8e11aa6cae4
+msgid "Data register update enable status"
+msgstr ""
+
+#: ../../en/units/tmos.rst:608 c0bc32b8e96745f3a584f23c1bd975df
+msgid "Set the state of one-time data collection"
+msgstr ""
+
+#: ../../en/units/tmos.rst:610 f2f040d7ff6f4f3f86f1789c968809fa
+msgid "One-time collection status"
+msgstr ""
+
+#: ../../en/units/tmos.rst:614 ../../en/units/tmos.rst:616
+#: 3449705aab7b45c79ddc758ee5250ca3 5c6498ff7d104304a469db894fa35c25
+msgid "Get the status of triggering a one-time collection"
+msgstr ""
+
+#: ../../en/units/tmos.rst:620 fd92acee506642d282aee9a059fc40a7
+msgid ""
+"Retrieve the current status of the TMOSUnit, including presence "
+"detection, motion detection, and ambient temperature shock detection."
+msgstr ""
+
+#: ../../en/units/tmos.rst:622 db60a771ccee40178bf413926cb5d7e7
+msgid "An instance of the TMOSUnit with updated status flags."
+msgstr ""
+

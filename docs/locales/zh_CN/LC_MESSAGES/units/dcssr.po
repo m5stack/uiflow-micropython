@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.dcssr.ref ../../en/units/dcssr.rst:2
+#: 41a9ff7380f34493ae677b74dfe6dcf6 da908cb34d4c4146a054ddd8965b2bd2
+msgid "DCSSR Unit"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:6 ea9ebcef0f13494a97cfcad3ff898b1e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:8 ab53a1259d0b46a9a91021ad897db389
+msgid "|DCSSR Unit|"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:12 0a60fe7b71dc4cb9b355dfa0ead75e02
+msgid "class DCSSRUnit"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:15 f5cc025d88be4524bfedbe443c748145
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:19 d5ece631df92431dbee88449ba6d23a8
+msgid "Create an DCSSRUnit object."
+msgstr ""
+
+#: ../../en/units/dcssr.rst 6bb9f2a40b2d4844bb6856c568fb5dc0
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:21 056af0de863b4b21b87441825a5bef06
+msgid "I2C bus or Modbus."
+msgstr ""
+
+#: ../../en/units/dcssr.rst:22 4f16e1157d9e429d8d325c9c930119cf
+msgid ""
+"Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus "
+"mode."
+msgstr ""
+
+#: ../../en/units/dcssr.rst:24 c27f945585ce4f2cb7d00896b56a221a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:26 85c5cea41b9b43f9a618148dbe465ad0
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dcssr.ref:6 5b82cfc1891e410ab473089654479d8a
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/dcssr.rst:29 f18a403822cb40808f20fb29d43e144c
+msgid ""
+"DCSSRUnit class inherits ACSSRUnit class, See "
+":ref:`unit.ACSSRUnit.Methods <unit.ACSSRUnit.Methods>` for more details."
+msgstr ""
+

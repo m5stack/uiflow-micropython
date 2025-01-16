@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.kmeter.ref ../../en/units/kmeter.rst:2
+#: aa0e140fd0da499e98d49c7c3ed40001 af20cce3c4d64095a1956db757ff7cad
+msgid "Kmeter Unit"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:6 0eb7e01e357d46d5b005bbb04817445a
+msgid ""
+"The ``Kmeter Unit`` is a K-type thermocouple sensor with I2C "
+"communication interface. The hardware adopts ESP32-C3 main control + "
+"MAX31855KASA+T 14bit thermocouple digital conversion chip. The conversion"
+" chip supports thermocouple probes with a measuring range of -200°C to "
+"1350°C."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:8 43e2585c16d743b6ae405464e75b325b
+msgid "Supported Products:"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:10 bf6baba1abe0468eaa6365e6cfca84d9
+msgid "|Kmeter Unit|"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:12 3370834609294cdea4147f051c0b9da4
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:31 a3a2ec626070461e9c3553ab741f5a7e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:33 e692915204b647beb37b1d5aaf33227a
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:6 cd441e5aa5584ec38627273a3f54ca2f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:38 13aab217b1a54066b3216216b82c2c9f
+msgid "|cores3_kmeter_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:42 710f9525de26481b911d2246f08037ce
+msgid "class KmeterUnit"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:45 41b3af515add40329ba2dab6748a30ab
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/kmeter.rst 119b7ba4183d49fd85586e15c06d2306
+#: 30b37767eb304c5c8b58697ca15a3bca 6182d06b62704e76b61b5d86dc48245d
+#: a3311297487345f2be8ba72b332df84a c4dc20a738714aff80c7ff88972cd12a
+#: f4a5bab3ba4c4e69a2d4c83cf6cf61b4
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:49 3b00288c2f9d43ba9b721d3c723c0d18
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:50 bce8de5ec3bb4350894f2652c3e0f252
+msgid "0x08 ~ 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:52 ../../en/units/kmeter.rst:66
+#: ../../en/units/kmeter.rst:77 ../../en/units/kmeter.rst:88
+#: ../../en/units/kmeter.rst:99 ../../en/units/kmeter.rst:110
+#: ../../en/units/kmeter.rst:121 ../../en/units/kmeter.rst:132
+#: ../../en/units/kmeter.rst:143 0bce68859d0748058fb38b48f9c4da95
+#: 12a5284fa4554e36995f03442117edbc 2905daaae2804360b90d83d34b235edc
+#: 30b0fc936e814e8f920e7cb0819ff2c7 46d99648b6054127833bcfd1f4d67b4a
+#: 4d9284db94a546e0ae0d1fa1aed66d3c 6c7249306ef244d984f46785ce6981e2
+#: 918d7870f6664b8eab772c7c142dce87 de01ad5db05c4551ad3bf149fb9b0652
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:54 c7e7496efe8d45a0bf9104b236c8c370
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:8 25008183438345b480a939bf173c84cb
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:58 661ee2d92fec43f68f3f5b8697e68653
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:62 70bad407a1ad4402ae896a85dfa02ad7
+msgid ""
+"Get the temperature of the thermocouple in the Kmeter Unit. Returns a "
+"float value."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:64 ../../en/units/kmeter.rst:75
+#: 70057e5157704438999d29e83f5993e4 fc5208505ed34165b23c5760fedc102c
+msgid ""
+"accepts values of :py:data:`KmeterUnit.CELSIUS` or "
+":py:data:`KmeterUnit.FAHRENHEIT`."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:68 cc1e042ab0ab4f38bc48273485fc05d7
+msgid "|get_thermocouple_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:10 5cd35e8198504d0f9109a82c7f4f8ffe
+msgid "get_thermocouple_temperature.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:73 f4e1371920bf45529476877fab794445
+msgid "Get the internal temperature of the Kmeter Unit. Returns a float value."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:79 347cd593147c4d1fb558cf32420a10d8
+msgid "|get_internal_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:12 3975333a51c5410aa05ede412b6469e7
+msgid "get_internal_temperature.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:84 2be8972961b94b1481710063c80e6e00
+msgid "Get the sleep time in seconds. Returns a int value."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:86 ec5fa223217d482798688e78c5c76ce0
+msgid "Return: ``int``: 0 ~ 65535."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:90 925f19867f1e47a78c2dc91580646b71
+msgid "|get_sleep_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:14 dfbe2c88af494fd8bf3c8a4ca84a3a7f
+msgid "get_sleep_time.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:95 c9c7fd3acba6444f9a86404bca4824cd
+msgid ""
+"Get the firmware version of the Kmeter Unit. Returns an integer version "
+"number."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:97 97b675b23e654d46b3de4642266fb369
+msgid "Return: ``float``"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:101 d3790d70fcef47deb6fe5e6c3410219d
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:16 f4043074c51b41bcbc3345985b33b255
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:106 59163b5cc4a848708547b58dcc7e7820
+msgid "Get the i2c address of this device should be between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:108 d3dfb05b8e8440b8b24e9f41c6406219
+msgid "Return: ``int``: 0x08 ~ 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:112 ab837be75c0e4b01b52c8e53aa953465
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:18 74acaf8dc4bc420688b49c5d23bd928c
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:117 9e530bceefaa4da382af24aaa963428c
+msgid "Set the sleep time in seconds."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:119 6572353ae5fb4d03a1459e23fb7db462
+msgid "0 ~ 65535"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:123 5a6c611a0d1843d8a8866a1bdba5383f
+msgid "|set_sleep_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:20 9af515b120ba4c97a55f74ff457ef46c
+msgid "set_sleep_time.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:128 b6a6fca3d0544f81a543ef1d536a0cd7
+msgid "set wakeup trigger mode in timer or i2c scl low level."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:130 489916a48ca74e69968c94b2368f5af2
+msgid "timer(True) or i2c scl low(False)"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:134 733c738aa3d34c94b460f01ae0a66928
+msgid "|set_wakeup_trigger.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:22 80e4668dd27744d388caa99f8dab01ef
+msgid "set_wakeup_trigger.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:139 d28756c4f24c4f86a308fb04a583a610
+msgid ""
+"Set the i2c address can be changed by the user and this address should be"
+" between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:141 4bcf30e8d71945bbba12bdfae8f8d987
+msgid "0x08 ~ 0x77"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:145 6b8100ca3bf941faa5f78cd8776331d5
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter.ref:24 42ddc265af0d45b0b57ca0af9ea94f1d
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:149 fdc897f1c42d4aa2961879a71ab6de1b
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/kmeter.rst:154 29da077a544947d19b67c17bb63656ac
+msgid "Celsius scale."
+msgstr ""
+
+#: ../../en/units/kmeter.rst:160 6bca5b07347043e7bd7ce1e040cdeaff
+msgid "Fahrenheit scale."
+msgstr ""
+

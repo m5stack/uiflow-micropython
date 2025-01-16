@@ -1,0 +1,594 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/gnss.rst:3 eefa95ca11904919b6fbfbdff3eb8e86
+msgid "GNSS Module"
+msgstr ""
+
+#: ../../en/module/gnss.rst:7 36f70ab434574308a2060a1a962dd736
+msgid ""
+"GNSS Module is a global positioning wireless communication module "
+"featuring the NEO-M9N-00B GPS module. It incorporates BMI270, BMM150 and "
+"a barometric pressure sensor."
+msgstr ""
+
+#: ../../en/module/gnss.rst:9 fca8ff9b80a94036af877a28974695c4
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/gnss.rst:11 5cc219d321c04b578db575f62a964126
+msgid "|GNSSModule|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref 2c7808f2dc4f45c28d46478ec26a6118
+msgid "GNSSModule"
+msgstr ""
+
+#: ../../en/module/gnss.rst:13 d3639d501f154e1e9f6ee0898b1fc2e3
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/gnss.rst:20 e529a4118b1f4fef895c5f80267dfade
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/gnss.rst:22 8977d84c0e6347809691e79e05658bb0
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:40 585f84f1c0b147a4a1a318932caabb04
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:26 81a519d800ee4c6084cf63314ec90188
+msgid "|gnss_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/gnss.rst:29 3225af5284a349918f7d80253e892c65
+msgid "class GNSSModule"
+msgstr ""
+
+#: ../../en/module/gnss.rst:32 75fb107bc40b42b7b64d2a4ff3b0d48c
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/gnss.rst:36 5845c9c3cfea472aa175b8192b2460dd
+msgid "initialize Function."
+msgstr ""
+
+#: ../../en/module/gnss.rst 38352f2a1c1f4e439e344623aae106dd
+#: 5669ab3f4516440bae1c2053b9a861a1 5f42ba26851a47df85f5b9e2f2b09c7c
+#: 7a1c69e426054636bfb804d36279fdf7 94def1d14d63413c9a49f7ccc9e5d1fc
+#: aa9c0dd4ea554b8bb3535004ca81136a c8e4f923a12a4151997d1483b780595e
+#: f94c2410a9be44c4887e3934234d4320
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/gnss.rst:38 fd035a41afed44efbe050cce95170c43
+msgid "UART controllers id, the range is 0 to 2."
+msgstr ""
+
+#: ../../en/module/gnss.rst:39 79e2443dca90441583785849bf436899
+msgid "UART rx pin."
+msgstr ""
+
+#: ../../en/module/gnss.rst:40 51cc486055ba40e2b322ecfe02c3be66
+msgid "UART tx pin."
+msgstr ""
+
+#: ../../en/module/gnss.rst:43 ../../en/module/gnss.rst:80
+#: ../../en/module/gnss.rst:95 ../../en/module/gnss.rst:111
+#: ../../en/module/gnss.rst:129 ../../en/module/gnss.rst:141
+#: ../../en/module/gnss.rst:151 ../../en/module/gnss.rst:161
+#: ../../en/module/gnss.rst:171 ../../en/module/gnss.rst:181
+#: ../../en/module/gnss.rst:191 ../../en/module/gnss.rst:201
+#: ../../en/module/gnss.rst:211 ../../en/module/gnss.rst:221
+#: ../../en/module/gnss.rst:231 ../../en/module/gnss.rst:241
+#: ../../en/module/gnss.rst:251 ../../en/module/gnss.rst:261
+#: ../../en/module/gnss.rst:271 ../../en/module/gnss.rst:281
+#: ../../en/module/gnss.rst:291 ../../en/module/gnss.rst:301
+#: ../../en/module/gnss.rst:311 ../../en/module/gnss.rst:325
+#: ../../en/module/gnss.rst:335 ../../en/module/gnss.rst:345
+#: 07b1245e25e74c89b46258fafd90b062 0a1671f8fad443ebbb50f8515c909a90
+#: 0b11514acb734e498cee03a42e0c96a6 1087a63a42724b0da2c980267e38bc9d
+#: 2ea173d84db041fa8327a2d230f9a4c2 31a93d785f4341faa9f7bf018c5c8759
+#: 32b260cd2b5b406d969044721366cc9a 3b90404c094c46eaaf2aaf40f673bb70
+#: 3cd5b23fde384efa847ac505c58dd2b9 5429900af05e4840b673a3b36b6d1053
+#: 5ff2c1bb3e5b4222bf1cfde1e92e139c 60282beb37de4241a8e7a04db9ce3b41
+#: 71aaa0db49e4412ab794637b7cf46e88 78cc98d1c07e4b4b946fe87f634a1e57
+#: 79779e9b082b4f988413c1e64eb652a9 94897b281c7d4a41be96d4e382078357
+#: 969235b787bb4fbd8319dc9088cd71f4 99305f43734f47c79bbbec2cd13a9214
+#: a3c22eb59ee249f5a178a0c1e73dadd4 a7f8834941644adf87d4fc43628ee363
+#: b7630a541fdf46209265a3dcf7d0a188 bb7d19e31d104f0783de711a8812e139
+#: c70f253ad21448dabbc7f9dcc2ad0142 d5c372c434ca46758d46cb94e3f3638e
+#: e696f13bd4ef469c83632226af722577 f6ee8462a0a9493ea1fc276c960ca818
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/gnss.rst:45 c8a8bf00d09c45049e49e6a76f1f363c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:7 a2863678b99e40509b7ce2ae4af30505
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:49 8b0065990ba441ceb6bfe9d1a8536cff
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/gnss.rst:53 5c52ae2185e44cb9877ee4941d19fa56
+msgid "Set the accelerometer and gyroscope output data rate."
+msgstr ""
+
+#: ../../en/module/gnss.rst:55 c244cdb220da4b96bee5d535221895d5
+msgid ""
+"range of 0.78 Hz … 1.6 kHz. Options: - ``25``: 25 - ``50``: 50 - ``100``:"
+" 100 - ``200``: 200 - ``400``: 400 - ``800``: 800 - ``1600``: 1600 - "
+"``0.78``: 0.78 - ``1.5``: 1.5 - ``3.1``: 3.1 - ``6.25``: 6.25 - ``12.5``:"
+" 12.5"
+msgstr ""
+
+#: ../../en/module/gnss.rst:69 424504ca80874490a68dc53965794991
+msgid ""
+"range of 25 Hz … 6.4 kHz. Options: - ``25``: 25 - ``50``: 50 - ``100``: "
+"100 - ``200``: 200 - ``400``: 400 - ``800``: 800 - ``1600``: 1600 - "
+"``3200``: 3200"
+msgstr ""
+
+#: ../../en/module/gnss.rst:82 360e599854fd45e691134880cc843846
+msgid "|set_accel_gyro_odr.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:9 aa51b72bf62748e4ad916ae036e74236
+msgid "set_accel_gyro_odr.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:86 f5ba7c5353c54e4b93dc2a582c228923
+msgid "Set the accelerometer scale range."
+msgstr ""
+
+#: ../../en/module/gnss.rst:88 094b860da11d43b688d5a4f3fcd3dfce
+msgid ""
+"scale range of ±2g, ±4g, ±8g and ±16g. Options: - ``2``: 2 - ``4``: 4 - "
+"``8``: 8 - ``16``: 16"
+msgstr ""
+
+#: ../../en/module/gnss.rst:97 1cc3b71956e34e699f014da287b58d30
+msgid "|set_accel_range.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:10 66c410faf9254da1b190184dcd4881d9
+msgid "set_accel_range.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:101 cd37385ddfd9498ab5813bc52cc7e0bb
+msgid "Set the gyroscope scale range."
+msgstr ""
+
+#: ../../en/module/gnss.rst:103 7ab0853775c8482eb97970d1c2f0788a
+msgid ""
+"Options: - ``125``: 125 - ``250``: 250 - ``500``: 500 - ``1000``: 1000 - "
+"``2000``: 2000"
+msgstr ""
+
+#: ../../en/module/gnss.rst:113 48083c5b6dc7469d901d32e32e557345
+msgid "|set_gyro_range.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:11 eb60afa2c82e41baa40a0e800d2356b5
+msgid "set_gyro_range.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:118 38dcbbfc4ff54a41b8c29bc2f1487fa6
+msgid ""
+"Options: - ``2``: 2 - ``6``: 6 - ``8``: 8 - ``10``: 10 - ``15``: 15 - "
+"``20``: 20 - ``25``: 25 - ``30``: 30"
+msgstr ""
+
+#: ../../en/module/gnss.rst:131 815bb034d2804101a0c39883d2108edb
+msgid "|set_magnet_odr.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:12 d41369d57e88446088f7a8e7127c8f6a
+msgid "set_magnet_odr.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:135 95d5994b3f1b43fbb4ae10f9e4c00708
+msgid "Set the manual gyro calibrations offsets value."
+msgstr ""
+
+#: ../../en/module/gnss.rst:137 c85173453dcf454d90671c2e21c4e362
+msgid "gyro calibrations offsets value of X-axis"
+msgstr ""
+
+#: ../../en/module/gnss.rst:138 0f27c721a77d4571abfa6cdbaf18e144
+msgid "gyro calibrations offsets value of Y-axis"
+msgstr ""
+
+#: ../../en/module/gnss.rst:139 9cf6b3a6cc104121aeb6abf79673ca75
+msgid "gyro calibrations offsets value of Z-axis"
+msgstr ""
+
+#: ../../en/module/gnss.rst:143 6421c2b7b2574fef9b32b4221d36aa04
+msgid "|set_gyro_offsets.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:13 79a1909be6db48168398f46f049fc114
+msgid "set_gyro_offsets.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:147 11dccf6eec7b456a838fcf7380eec26c
+msgid ""
+"Get the tuple of x, y, and z values of the gyroscope and gyroscope vector"
+" in rad/sec."
+msgstr ""
+
+#: ../../en/module/gnss.rst 6ea018f2a68d4f7d9844b0c03827aaa7
+#: bf916c6bf3d748b7ae645ad20c02966e e576cba587fb4859a04aa44aec9faedd
+#: fc18c3fe23614d6e97d90cbbbcbd1c31
+msgid "return (tuple)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:149 8cbb5ec8052d41cd92089ce5f7751420
+msgid "gyroscope tuple (float, float, float)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:153 0cd89e863bbe4b5580fc09534f4d10e7
+msgid "|get_gyroscope.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:14 a4885d6bfdb943b29a12242183880952
+msgid "get_gyroscope.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:157 570f0ece354644bfb97417575854984a
+msgid ""
+"Get the tuple of x, y, and z values of the accelerometer and acceleration"
+" vector in gravity units (9.81m/s^2)."
+msgstr ""
+
+#: ../../en/module/gnss.rst:159 88d3f75fa3fa4f85a6654342a940df4b
+msgid "accelerometer tuple (float, float, float)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:163 83c64bbdb57546fc9cf22c9ce4424e33
+msgid "|get_accelerometer.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:15 62171920bdaf4279af41b94775a25735
+msgid "get_accelerometer.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:167 132e7b584c0c49419c8ed560eaa020ea
+msgid ""
+"Get the tuple of x, y, and z values of the magnetometer and magnetometer "
+"vector in uT."
+msgstr ""
+
+#: ../../en/module/gnss.rst:169 19440bd3c39143899e639bf8243f6de8
+msgid "magnetometer tuple (float, float, float)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:173 cca595bca7304639b6e68ee6a3b6e10d
+msgid "|get_magnetometer.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:16 8e64474e2bca4aa6a7c45fb40da5a6ed
+msgid "get_magnetometer.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:177 883ccaaa87b240adb2c6ac2f0b4c857e
+msgid "Get the compass heading value is in range of 0º ~ 360º."
+msgstr ""
+
+#: ../../en/module/gnss.rst 0a4ce44681ee463fae6ec0af1e1b833c
+#: 1c0d6bc925914f7198f28b0a2b733e40 beda121d9f18409683e5d38f12435b8e
+#: dd3d4834887d49479d16051ca165b091 f211e132223e4f2c8474e1dfefb4ad56
+msgid "return (float)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:179 96c590abec694a75a212f9d5e53e244c
+msgid "range is 0 to 360 degree"
+msgstr ""
+
+#: ../../en/module/gnss.rst:183 3a653b74bfd44f74abcce4ebcda1f5a1
+msgid "|get_compass.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:17 9f5e13508fee4823a6e96237fcfc2056
+msgid "get_compass.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:187 4469846776504279a9e7d48eb971b39a
+msgid "Get the attitude angles as yaw, pitch, and roll in degrees."
+msgstr ""
+
+#: ../../en/module/gnss.rst:189 509aad421931469f8b1e70ec8352a22a
+msgid "tuple of yaw, pitch, and roll (float, float, float)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:193 afc61ef897bb45749d337eccda2fb2f9
+msgid "|get_attitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:18 85a05586820d474ba03e3fbe953104df
+msgid "get_attitude.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:197 b78aaf6cd1b549cc8d4991987baf47ed
+msgid "Get the temperature value in degrees celsius from the BMP280 sensor."
+msgstr ""
+
+#: ../../en/module/gnss.rst:199 e081b1577279440a96b7dbba354275b1
+msgid "range is -40 ~ +85 °C."
+msgstr ""
+
+#: ../../en/module/gnss.rst:203 ff0d3d36c47d453794d9ed41afb546ea
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:19 ddbc2cf58cbc425488914b474d2511fe
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:207 f6075ab4ac6d4ccea9acd63ed4252478
+msgid "Get the pressure value in pascals from the BMP280 sensor."
+msgstr ""
+
+#: ../../en/module/gnss.rst:209 c07b54b13e0840bd8042df30a55b227d
+msgid "range is 300 ~ 1100 hPa."
+msgstr ""
+
+#: ../../en/module/gnss.rst:213 f857ed7f53664bd695f1be2ba25fcc05
+msgid "|get_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:20 111c309a82924913b34bbd2bdfe87ef9
+msgid "get_pressure.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:217 5475389c96124a67ad5983946e693a27
+msgid "set timezone function."
+msgstr ""
+
+#: ../../en/module/gnss.rst:219 ../../en/module/gnss.rst:229
+#: 6375b3caa48a4e74bb85cc044c7db7e9 8a6179eaf5f34f778ecb537f0c6d4db8
+msgid "timezone value"
+msgstr ""
+
+#: ../../en/module/gnss.rst:223 1985b7ecb6cc40c5a1560d9fc147626c
+msgid "|set_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:21 0cf945184fc5431f8b09bfd071035923
+msgid "set_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:227 f5e416479b4e452eaac81b99dbb36c8e
+msgid "get timezone function."
+msgstr ""
+
+#: ../../en/module/gnss.rst a48a06947fd44e84a5c5af345688c1c1
+msgid "return (int)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:233 646702a6e902428aa47cc61a311e78f0
+msgid "|get_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:22 24aa729d1ac64680bf4a36fdd0838da1
+msgid "get_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:237 df21e926c1f74df0a92fb05f9a79165a
+msgid "get satellite numbers."
+msgstr ""
+
+#: ../../en/module/gnss.rst 28fa61794ac844dba788125ddbbef94f
+#: 2e64a190704b425a9d358d4cd52a2af7 52e88b3400de40ebb4e74a6efaf803f0
+#: 6df7af8884e3428a845dd612e7b6a8a9 84e9c9c51403425cad1ca3c1c2e9da01
+#: 964f1e2274604255b1b6d0c2572a20f0 ac6324d5810241a49b48daf958a0c517
+#: fad0e199877f4a1f84f09dbfad77d06b
+msgid "return (str)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:239 0f0527426d8a4572be58f5ed3f08152c
+msgid "satellite numbers value."
+msgstr ""
+
+#: ../../en/module/gnss.rst:243 776cf7c351e44c7fbb77ce4a3998f155
+msgid "|get_satellite_num.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:23 a5c492ed04f845a99d3a8653ec0dc2b3
+msgid "get_satellite_num.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:247 2cdeb4cf0f5c4da29dde5d51bc46c626
+msgid "get altitude."
+msgstr ""
+
+#: ../../en/module/gnss.rst:249 a2e4a1ccbc84477aafce65ff28a463a1
+msgid "altitude unit is meter."
+msgstr ""
+
+#: ../../en/module/gnss.rst:253 53549923b4004d289f86ced4c2d89549
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:24 3371fabcdc814b749b6adb2e704ee49d
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:257 933e9d49a17043f6953cc9d666400ca7
+msgid "get time."
+msgstr ""
+
+#: ../../en/module/gnss.rst:259 cea80cc2a1df410ebeb7c0e76bdfc799
+msgid "time(hh:mm:ss)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:263 a4a0220fc80c48d19e9e28b8dcaff740
+msgid "|get_time.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:25 4bede19310e94512ae2fcd79f29c05e7
+msgid "get_time.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:267 00b868a9d27e496886e849b8213ac801
+msgid "get date."
+msgstr ""
+
+#: ../../en/module/gnss.rst:269 8ff3d8a82c3e404dbcf09f830700deae
+msgid "date(dd/mm/yy)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:273 62a29990e5bf4e8d94c6003477c78417
+msgid "|get_date.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:26 c3a93d252af34cffb780ee149b729f9c
+msgid "get_date.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:277 058596d1b2b14719b563b14495c87593
+msgid "get latitude."
+msgstr ""
+
+#: ../../en/module/gnss.rst:279 a62ff0c483ab4eb989309a599f69b11c
+msgid "latitude, using degrees minutes format (ddmm.mmmmmN/S)."
+msgstr ""
+
+#: ../../en/module/gnss.rst:283 12b9076a343c4790af10c345569753e6
+msgid "|get_latitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:27 bc64e07bf3c8438b84161994b8c9144a
+msgid "get_latitude.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:287 5a8759e33a524da4b3e737b5dc42a759
+msgid "get longitude."
+msgstr ""
+
+#: ../../en/module/gnss.rst:289 d39b86dfc7e54783bdcc5d56cb60069a
+msgid "longitude, using degrees minutes format (ddmm.mmmmmE/W)."
+msgstr ""
+
+#: ../../en/module/gnss.rst:293 eb46a5269f5f4bc9adc66c221e9e8bd4
+msgid "|get_longitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:28 36a1f01bf03c49d9906ca85372c8644a
+msgid "get_longitude.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:297 455d098359d0457d9d0a4f25c2cbbc4e
+msgid "get latitude decimal."
+msgstr ""
+
+#: ../../en/module/gnss.rst:299 bb52bea4ac9b4d3694ec6d2a16fb9975
+msgid "latitude decimal(dd.dddd)."
+msgstr ""
+
+#: ../../en/module/gnss.rst:303 e51af53bade7457e96bcb97ada08aa28
+msgid "|get_latitude_decimal.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:29 dabd1cd42f4e424b8b5db3ed9bfe4ff7
+msgid "get_latitude_decimal.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:307 12c0785d11db48b5b2c86ecc956c3015
+msgid "get longitude decimal."
+msgstr ""
+
+#: ../../en/module/gnss.rst:309 16665aa48226478db5a427db0e2eea7c
+msgid "longitude decimal(dd.dddd)."
+msgstr ""
+
+#: ../../en/module/gnss.rst:313 72a56d07062145c3ad056e67804a4c1c
+msgid "|get_longitude_decimal.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:30 598a992b11994749ac58896cfca3d50d
+msgid "get_longitude_decimal.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:317 02ab9c55d16844f5b6623d81e8b760b2
+msgid "get speed."
+msgstr ""
+
+#: ../../en/module/gnss.rst:319 bf67fcb557b04175b3cb6a7d6fb4408b
+msgid "speed."
+msgstr ""
+
+#: ../../en/module/gnss.rst:320 aa105ce294e64c5ead9b0cbd49a7832b
+msgid "speed type, 0 km/h, 1 knot/h Options: - ``km/h``: 0 - ``knot/h``: 1"
+msgstr ""
+
+#: ../../en/module/gnss.rst:327 90c4b4e5097a407cb4864099f4fb3a36
+msgid "|get_speed.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:31 52d266f98b8d4900b35af340437e37ae
+msgid "get_speed.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:331 ef8a38fa4a43466f98d244e03907d72a
+msgid "get course."
+msgstr ""
+
+#: ../../en/module/gnss.rst:333 bb61cd78ecc14afa82dc613a1cc9727e
+msgid "course unit is °."
+msgstr ""
+
+#: ../../en/module/gnss.rst:337 7d463cd2c7214728899101a2f72fed20
+msgid "|get_course.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:32 b3988840c7c54ad89c4994bd733760bd
+msgid "get_course.png"
+msgstr ""
+
+#: ../../en/module/gnss.rst:341 a7a61265f00a46b5b2af59c41e59b301
+msgid "get locate status."
+msgstr ""
+
+#: ../../en/module/gnss.rst f28220d260af4947ae4f3ffcd000b341
+msgid "return (bool)"
+msgstr ""
+
+#: ../../en/module/gnss.rst:343 82e0ce4af56342f2a648db44fa27ec1e
+msgid "locate status, true is locate, false is not locate."
+msgstr ""
+
+#: ../../en/module/gnss.rst:347 1dbbfb5cca8e49a097bc8955fc630488
+msgid "|is_locate_valid.png|"
+msgstr ""
+
+#: ../../en/refs/module.gnss.ref:33 1eddb69ae6f5457ca1c4c88e1134b3dd
+msgid "is_locate_valid.png"
+msgstr ""
+

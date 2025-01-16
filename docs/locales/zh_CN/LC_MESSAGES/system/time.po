@@ -1,0 +1,517 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/time.rst:2 7acb8ec201504a47a79f3de46bd017bd
+msgid ":mod:`time` -- time related functions"
+msgstr ""
+
+#: ../../en/system/time.rst:9 4f2d6385161a4e9cbc87c7f0c1c495b4
+msgid ""
+"The ``time`` module provides functions for getting the current time and "
+"date, measuring time intervals, and for delays."
+msgstr ""
+
+#: ../../en/system/time.rst:12 ed05fb06c62c44289e707eb0cc1b898e
+msgid ""
+"**Time Epoch**: It is January 1, 1970, 00:00:00 (UTC) on all platforms. "
+"Epoch year may be determined with ``gmtime(0)[0]``."
+msgstr ""
+
+#: ../../en/system/time.rst:15 a08d52c24dd943bd9a0e40ee96eefee2
+msgid ""
+"**Maintaining actual calendar date/time**: This requires a Real Time "
+"Clock (RTC). On systems with underlying OS (including some RTOS), an RTC "
+"may be implicit. Setting and maintaining actual calendar time is "
+"responsibility of OS/RTOS and is done outside of MicroPython, it just "
+"uses OS API to query date/time. On baremetal ports however system time "
+"depends on ``machine.RTC()`` object. The current calendar time may be set"
+" using ``machine.RTC().datetime(tuple)`` function, and maintained by "
+"following means:"
+msgstr ""
+
+#: ../../en/system/time.rst:24 a10ff306e1ae4eacac1f632d670e0c7e
+msgid ""
+"By a backup battery (which may be an additional, optional component for a"
+" particular board)."
+msgstr ""
+
+#: ../../en/system/time.rst:26 4997e002f49c408fa9c0e5af32d491a6
+msgid "Using networked time protocol (requires setup by a port/user)."
+msgstr ""
+
+#: ../../en/system/time.rst:27 cd55ca10372e4aa1a941aebd0937c94a
+msgid ""
+"Set manually by a user on each power-up (many boards then maintain RTC "
+"time across hard resets, though some may require setting it again in such"
+" case)."
+msgstr ""
+
+#: ../../en/system/time.rst:31 62ab43a045d74154a2c04e60d8b40996
+msgid ""
+"If actual calendar time is not maintained with a system/MicroPython RTC, "
+"functions below which require reference to current absolute time may "
+"behave not as expected."
+msgstr ""
+
+#: ../../en/system/time.rst:35 6fcf2e1fb886466ab559df6b8b05c2d1
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/system/time.rst:41 40eb5c48032346fa8c56b3f30271608a
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/system/time.rst:43 d0dbcb0cc0e04de3a50c4502721badf1
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:35 28f48610f08d4b5fa9959e0f9000659e
+msgid "example.png"
+msgstr ""
+
+#: ../../en/system/time.rst:47 c42f73837b9e42c28e248558915a8232
+msgid "|cores3_time_example.m5f2|"
+msgstr ""
+
+#: ../../en/system/time.rst:50 bca4e777f8aa485cbdd41392a2b8f26b
+msgid "Functions"
+msgstr ""
+
+#: ../../en/system/time.rst:54 c00adae64cdc45699535e183c02b85c5
+msgid ""
+"When no parameters are passed in, get the current time zone and return "
+"the string of the time zone."
+msgstr ""
+
+#: ../../en/system/time.rst:57 ../../en/system/time.rst:64
+#: ../../en/system/time.rst:93 ../../en/system/time.rst:105
+#: ../../en/system/time.rst:118 ../../en/system/time.rst:132
+#: ../../en/system/time.rst:144 ../../en/system/time.rst:170
+#: ../../en/system/time.rst:178 ../../en/system/time.rst:196
+#: ../../en/system/time.rst:226 ../../en/system/time.rst:299
+#: ../../en/system/time.rst:330 ../../en/system/time.rst:339
+#: 015bea67a30e49559eeafb23785178f0 089a80b647184bb99490c35fa0a7228a
+#: 0defaa0943514c65beb6397ced06a9a0 1dc40357c0f743019774937c66f4b9ff
+#: 3c9cb7e06c3e42b8bfacf214e6acefdc 423dee2fd8fb4de4a0d8a3ed97161660
+#: 60ef3ee3a29644489fe226fe8038341d 62e7a9a80aa24a278743c18edcaf5c95
+#: 86a6054a98a647a1b9b54dafea931543 8c19e4b3c38d4251a79a806e4b89543d
+#: 94b396c5d50a4aa7b804d86fe7382544 c06a6264d6f3483699a3656bf4f1315d
+#: cfd6a0a6375844ac93c4e25cf32fc116 d256dea69a7341789441a7a15ba6908d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/system/time.rst:59 1235df7b433d46738f37a36a4fc08d81
+msgid "|timezone.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:1 07444ee6ebe748c69c24201bca624da0
+msgid "timezone.png"
+msgstr ""
+
+#: ../../en/system/time.rst:61 3f2cbf31a0b64454837032b687ba4f1d
+msgid ""
+"Pass in a time zone string to set the time zone. The value of ``tz`` can "
+"be found at this `link <tz_database_>`_."
+msgstr ""
+
+#: ../../en/system/time.rst:66 6f058c3619064c2e9a73db14ee2bd93c
+msgid "|timezone1.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:3 1e68a055282b4ea9ba144c32e7114fed
+msgid "timezone1.png"
+msgstr ""
+
+#: ../../en/system/time.rst:68 7ce20167071c4ab6a5821ed2645e9c16
+msgid "|timezone2.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:5 7984c64673064fdfa7e146c36e2d691e
+msgid "timezone2.png"
+msgstr ""
+
+#: ../../en/system/time.rst:73 de3730fb45694241a625f36d9b282ac0
+msgid ""
+"Convert the time *secs* expressed in seconds since the Epoch (see above) "
+"into an 8-tuple which contains: ``(year, month, mday, hour, minute, "
+"second, weekday, yearday)`` If *secs* is not provided or None, then the "
+"current time from the RTC is used."
+msgstr ""
+
+#: ../../en/system/time.rst:79 e9c451c71f074287b7ae4fcfb220e56b
+msgid ""
+"The `gmtime()` function returns a date-time tuple in UTC, and "
+"`localtime()` returns a date-time tuple in local time."
+msgstr ""
+
+#: ../../en/system/time.rst:82 861034e451594c379cb17f6eba0cc35d
+msgid "The format of the entries in the 8-tuple are:"
+msgstr ""
+
+#: ../../en/system/time.rst:84 5a0e99bf35024bfe9997ca6703536210
+msgid "year includes the century (for example 2014)."
+msgstr ""
+
+#: ../../en/system/time.rst:85 c89f244df7a44814aa2b028b704c3e1c
+msgid "month   is 1-12"
+msgstr ""
+
+#: ../../en/system/time.rst:86 aedfa21bbd7a4142957a02a07333df17
+msgid "mday    is 1-31"
+msgstr ""
+
+#: ../../en/system/time.rst:87 2e604b6079f64240b40fd0c8b5acaaa8
+msgid "hour    is 0-23"
+msgstr ""
+
+#: ../../en/system/time.rst:88 3174485356ab4006acfbc3a12ca0dfe7
+msgid "minute  is 0-59"
+msgstr ""
+
+#: ../../en/system/time.rst:89 d891aca227f44b4db5dff3d28c07b064
+msgid "second  is 0-59"
+msgstr ""
+
+#: ../../en/system/time.rst:90 5193c8d4f93a4368bc948123a4b00c55
+msgid "weekday is 0-6 for Mon-Sun"
+msgstr ""
+
+#: ../../en/system/time.rst:91 ad3ea1bd462e4daab80bce8631cb4712
+msgid "yearday is 1-366"
+msgstr ""
+
+#: ../../en/system/time.rst:95 490192b1420346baaf320267744aaa31
+msgid "|gmtime.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:7 33072b7a1ea5476d810621659ae4fd3c
+msgid "gmtime.png"
+msgstr ""
+
+#: ../../en/system/time.rst:97 8655ea32a421484cbb38136056c897ab
+msgid "|localtime.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:9 6d38d3fe26314001a5b7f12ef438650e
+msgid "localtime.png"
+msgstr ""
+
+#: ../../en/system/time.rst:101 1b0d65ed7efb40698310504b5d439d40
+msgid ""
+"This is inverse function of localtime. It's argument is a full 8-tuple "
+"which expresses a time as per localtime. It returns an integer which is "
+"the number of seconds since Jan 1, 2000."
+msgstr ""
+
+#: ../../en/system/time.rst:107 584324a396254c43b706010e7f02bfd1
+msgid "|mktime.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:11 029ec0b233ec44c1889fa035382b3efd
+msgid "mktime.png"
+msgstr ""
+
+#: ../../en/system/time.rst:109 97cd31574492404e86adec35bf7b3a74
+msgid "|mktime1.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:13 372b5bd7a6d04a22ac65f3c5cca72cb4
+msgid "mktime1.png"
+msgstr ""
+
+#: ../../en/system/time.rst:113 1a21b0a320f0403aa48f1c875fbeed21
+msgid ""
+"Sleep for the given number of seconds. Some boards may accept *seconds* "
+"as a floating-point number to sleep for a fractional number of seconds. "
+"Note that other boards may not accept a floating-point argument, for "
+"compatibility with them use `sleep_ms()` and `sleep_us()` functions."
+msgstr ""
+
+#: ../../en/system/time.rst:120 1c7c9989988045c8988800627e1e5042
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:19 2fc7a4c2077d4fb98454578649e9d054
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/system/time.rst:124 0068f2d822eb43af8ea26466b4f9505f
+msgid "Delay for given number of milliseconds, should be positive or 0."
+msgstr ""
+
+#: ../../en/system/time.rst:126 d2cd268d0d2e4860ba201935ddb924ad
+msgid ""
+"This function will delay for at least the given number of milliseconds, "
+"but may take longer than that if other processing must take place, for "
+"example interrupt handlers or other threads. Passing in 0 for *ms* will "
+"still allow this other processing to occur. Use `sleep_us()` for more "
+"precise delays."
+msgstr ""
+
+#: ../../en/system/time.rst:134 c833a47dd68947b588361b22fffdc28e
+msgid "|sleep_ms.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:15 e74d302ca3da4be3a1fa9f400d650cb0
+msgid "sleep_ms.png"
+msgstr ""
+
+#: ../../en/system/time.rst:138 8bc054986fea451d8654266dcfaba7d3
+msgid "Delay for given number of microseconds, should be positive or 0."
+msgstr ""
+
+#: ../../en/system/time.rst:140 696196ef8dd74afe93d72480f8867833
+msgid ""
+"This function attempts to provide an accurate delay of at least *us* "
+"microseconds, but it may take longer if the system has other higher "
+"priority processing to perform."
+msgstr ""
+
+#: ../../en/system/time.rst:146 8485facf127f464b80bc60e12b0b4288
+msgid "|sleep_us.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:17 50d076e18eec45b889fc0f108c613a72
+msgid "sleep_us.png"
+msgstr ""
+
+#: ../../en/system/time.rst:150 f3282c94ed3447c082e007484e1b18c5
+msgid ""
+"Returns an increasing millisecond counter with an arbitrary reference "
+"point, that wraps around after some value."
+msgstr ""
+
+#: ../../en/system/time.rst:153 91473db840c8466d8f426aee2b86f923
+msgid ""
+"The wrap-around value is not explicitly exposed, but we will refer to it "
+"as *TICKS_MAX* to simplify discussion. Period of the values is "
+"*TICKS_PERIOD = TICKS_MAX + 1*. *TICKS_PERIOD* is guaranteed to be a "
+"power of two, but otherwise may differ from port to port. The same period"
+" value is used for all of `ticks_ms()`, `ticks_us()`, `ticks_cpu()` "
+"functions (for simplicity). Thus, these functions will return a value in "
+"range [*0* .. *TICKS_MAX*], inclusive, total *TICKS_PERIOD* values. Note "
+"that only non-negative values are used. For the most part, you should "
+"treat values returned by these functions as opaque. The only operations "
+"available for them are `ticks_diff()` and `ticks_add()` functions "
+"described below."
+msgstr ""
+
+#: ../../en/system/time.rst:164 c83d2ab4b23c4419834db266334d4de8
+msgid ""
+"Note: Performing standard mathematical operations (+, -) or relational "
+"operators (<, <=, >, >=) directly on these value will lead to invalid "
+"result. Performing mathematical operations and then passing their results"
+" as arguments to `ticks_diff()` or `ticks_add()` will also lead to "
+"invalid results from the latter functions."
+msgstr ""
+
+#: ../../en/system/time.rst:172 ../../en/system/time.rst:180
+#: 7357ceb5675d4fe39fb8f5ea6b4d5ff7 e428ac9a8d5c481fa82a9dffd2de72a6
+msgid "|ticks_ms.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:27 56b28308d70648c6b1365160f627ec28
+#: 8120d95e82684a6e9d2445431dea07e5
+msgid "ticks_ms.png"
+msgstr ""
+
+#: ../../en/system/time.rst:176 4a5a67ec92464b68adc10937e789c617
+msgid "Just like `ticks_ms()` above, but in microseconds."
+msgstr ""
+
+#: ../../en/system/time.rst:184 baa004dd81c7405286d343b1a47fda98
+msgid ""
+"Similar to `ticks_ms()` and `ticks_us()`, but with the highest possible "
+"resolution in the system. This is usually CPU clocks, and that's why the "
+"function is named that way. But it doesn't have to be a CPU clock, some "
+"other timing source available in a system (e.g. high-resolution timer) "
+"can be used instead. The exact timing unit (resolution) of this function "
+"is not specified on ``time`` module level, but documentation for a "
+"specific port may provide more specific information. This function is "
+"intended for very \\ fine benchmarking or very tight real-time loops. "
+"Avoid using it in portable code."
+msgstr ""
+
+#: ../../en/system/time.rst:194 81c1add17ee942bc896092c87670bcde
+msgid "Availability: Not every port implements this function."
+msgstr ""
+
+#: ../../en/system/time.rst:198 3c83ae2e40554ebcb59c812ff6414be0
+msgid "|ticks_cpu.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:23 07b98a1c418d4b69a1a81fe5c92815ef
+msgid "ticks_cpu.png"
+msgstr ""
+
+#: ../../en/system/time.rst:202 a2f0939717794fe18c779896662483c0
+msgid ""
+"Offset ticks value by a given number, which can be either positive or "
+"negative. Given a *ticks* value, this function allows to calculate ticks "
+"value *delta* ticks before or after it, following modular-arithmetic "
+"definition of tick values (see `ticks_ms()` above). *ticks* parameter "
+"must be a direct result of call to `ticks_ms()`, `ticks_us()`, or "
+"`ticks_cpu()` functions (or from previous call to `ticks_add()`). "
+"However, *delta* can be an arbitrary integer number or numeric "
+"expression. `ticks_add()` is useful for calculating deadlines for "
+"events/tasks. (Note: you must use `ticks_diff()` function to work with "
+"deadlines.)"
+msgstr ""
+
+#: ../../en/system/time.rst:212 7302c11cdde84ee7a0c1dadc3fa181ad
+msgid "Examples::"
+msgstr ""
+
+#: ../../en/system/time.rst:228 c1f6a47f0d624dd693f3aec61fc87071
+msgid "|ticks_add.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:21 cabd20a4fbe64c18a3ff4b8821691853
+msgid "ticks_add.png"
+msgstr ""
+
+#: ../../en/system/time.rst:232 97272245256347269cbe581460d3e7c5
+msgid ""
+"Measure ticks difference between values returned from `ticks_ms()`, "
+"`ticks_us()`, or `ticks_cpu()` functions, as a signed value which may "
+"wrap around."
+msgstr ""
+
+#: ../../en/system/time.rst:236 d39f539fd4d14f5da0a99b9dae5c97b6
+msgid ""
+"The argument order is the same as for subtraction operator, "
+"``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - "
+"ticks2``. However, values returned by `ticks_ms()`, etc. functions may "
+"wrap around, so directly using subtraction on them will produce incorrect"
+" result. That is why `ticks_diff()` is needed, it implements modular (or "
+"more specifically, ring) arithmetics to produce correct result even for "
+"wrap-around values (as long as they not too distant inbetween, see "
+"below). The function returns **signed** value in the range "
+"[*-TICKS_PERIOD/2* .. *TICKS_PERIOD/2-1*] (that's a typical range "
+"definition for two's-complement signed binary integers). If the result is"
+" negative, it means that *ticks1* occurred earlier in time than *ticks2*."
+" Otherwise, it means that *ticks1* occurred after *ticks2*. This holds "
+"**only** if *ticks1* and *ticks2* are apart from each other for no more "
+"than *TICKS_PERIOD/2-1* ticks. If that does not hold, incorrect result "
+"will be returned. Specifically, if two tick values are apart for "
+"*TICKS_PERIOD/2-1* ticks, that value will be returned by the function. "
+"However, if *TICKS_PERIOD/2* of real-time ticks has passed between them, "
+"the function will return *-TICKS_PERIOD/2* instead, i.e. result value "
+"will wrap around to the negative range of possible values."
+msgstr ""
+
+#: ../../en/system/time.rst:256 7f70a81a41ed403ca95735553569b2eb
+msgid ""
+"Informal rationale of the constraints above: Suppose you are locked in a "
+"room with no means to monitor passing of time except a standard 12-notch "
+"clock. Then if you look at dial-plate now, and don't look again for "
+"another 13 hours (e.g., if you fall for a long sleep), then once you "
+"finally look again, it may seem to you that only 1 hour has passed. To "
+"avoid this mistake, just look at the clock regularly. Your application "
+"should do the same. \"Too long sleep\" metaphor also maps directly to "
+"application behaviour: don't let your application run any single task for"
+" too long. Run tasks in steps, and do time-keeping inbetween."
+msgstr ""
+
+#: ../../en/system/time.rst:266 2e985eac49cd4c728b56cfd33de7e924
+msgid ""
+"`ticks_diff()` is designed to accommodate various usage patterns, among "
+"them:"
+msgstr ""
+
+#: ../../en/system/time.rst:269 7275d0056aee41bbb7e95b19055e0f05
+msgid ""
+"Polling with timeout. In this case, the order of events is known, and you"
+" will deal only with positive results of `ticks_diff()`::"
+msgstr ""
+
+#: ../../en/system/time.rst:278 85a0b8d998d24ed79a00c1f25352c74f
+msgid ""
+"Scheduling events. In this case, `ticks_diff()` result may be negative if"
+" an event is overdue::"
+msgstr ""
+
+#: ../../en/system/time.rst:295 cf55136babb14376a8f734cf84f38e3b
+msgid ""
+"Note: Do not pass `time()` values to `ticks_diff()`, you should use "
+"normal mathematical operations on them. But note that `time()` may (and "
+"will) also overflow. This is known as "
+"https://en.wikipedia.org/wiki/Year_2038_problem ."
+msgstr ""
+
+#: ../../en/system/time.rst:301 e152e55461e040d694a1f2bed896db1b
+msgid "|ticks_diff.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:25 e0e0c3fff3aa4b4aa86c7e24244bcd89
+msgid "ticks_diff.png"
+msgstr ""
+
+#: ../../en/system/time.rst:305 60baccc6de7a4dd7ba3c6f635f8cd143
+msgid ""
+"Returns the number of seconds, as an integer, since the Epoch, assuming "
+"that underlying RTC is set and maintained as described above. If an RTC "
+"is not set, this function returns number of seconds since a port-specific"
+" reference point in time (for embedded boards without a battery-backed "
+"RTC, usually since power up or reset). If you want to develop portable "
+"MicroPython application, you should not rely on this function to provide "
+"higher than second precision.  If you need higher precision, absolute "
+"timestamps, use `time_ns()`.  If relative times are acceptable then use "
+"the `ticks_ms()` and `ticks_us()` functions.  If you need calendar time, "
+"`gmtime()` or `localtime()` without an argument is a better choice."
+msgstr ""
+
+#: ../../en/system/time.rst:316 647dac0aedae44849f2a8015330e23fd
+msgid "Difference to CPython"
+msgstr ""
+
+#: ../../en/system/time.rst:319 7daae6bc2ffe4a39b5d18321394100b8
+msgid ""
+"In CPython, this function returns number of seconds since Unix epoch, "
+"1970-01-01 00:00 UTC, as a floating-point, usually having microsecond "
+"precision. With MicroPython, only Unix port uses the same Epoch, and if "
+"floating-point precision allows, returns sub-second precision. Embedded "
+"hardware usually doesn't have floating-point precision to represent both "
+"long time ranges and subsecond precision, so they use integer value with "
+"second precision. Some embedded hardware also lacks battery-powered RTC, "
+"so returns number of seconds since last power-up or from other relative, "
+"hardware-specific point(e.g. reset)."
+msgstr ""
+
+#: ../../en/system/time.rst:332 d3e56edd74114466ba4c7328432d2dfe
+msgid "|time.png|"
+msgstr ""
+
+#: ../../en/refs/system.time.ref:31 5fca5c2a61fe4983b22e7da4bfade26d
+msgid "time.png"
+msgstr ""
+
+#: ../../en/system/time.rst:336 e3c1cabdb87c4e108d2e5ddbf64478f7
+msgid ""
+"Similar to `time()` but returns nanoseconds since the Epoch, as an "
+"integer (usually a big integer, so will allocate on the heap)."
+msgstr ""
+
+#: ../../en/system/time.rst:341 82ff6726e4814dfcbf238b1762e66b74
+msgid "None"
+msgstr ""
+

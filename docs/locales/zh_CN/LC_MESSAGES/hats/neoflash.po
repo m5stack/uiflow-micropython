@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/neoflash.rst:2 6c8daef23e64437da86dae4ed11d115c
+msgid "NeoFlash Hat"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:7 7e2d125385cf4b39a2649b3b868133f1
+msgid ""
+"NeoFlash HAT is specifically designed for M5StickC, it is an RGB LED "
+"matrix. Space on PCB board is 58x23.5mm and total include 126 RGB LEDs. "
+"Every single RGB LED is programmable, which allows you setting the colors"
+" and brightness, plus on the 7*18 matrix layout, you will have a nice "
+"experience on either display digital numbers or colorful light effect."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:14 e37dae8df5fa4c2890c2cb1d7cec6644
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:16 bbea99fef8c746968a78284ec6f67a13
+msgid "|NeoFlashHat|"
+msgstr ""
+
+#: ../../en/refs/hat.neoflash.ref 8664d35bc7a64ec294641d0925b23b87
+msgid "NeoFlashHat"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:19 99393031ab75455f825bdb35ed814286
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:31 53ca38deece34f6881e75018080ba487
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:33 e6be0a8773304782aa7b796ee025ddb2
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.neoflash.ref:11 e9fdacb7b1b5465bbf53585d6f8bf3f9
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:40 6992ec742c934c1f987858954c410484
+msgid "class NeoFlashHat"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:43 340effaadbc4446c9457d12b6e775f05
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:47 22150cbb9c3948c0b6e00ea97bff7a92
+msgid "Initialize the NeoFlashHat."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst 3cd24ac711c74334aa2d48688e51a10a
+#: 41ac64cbb9d14c10a77b9090f5db6568 8a2dad61d3b54844a5e4ee2863c1530d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:49 ef48bcfd077c41c7956d5f71581e3fb9
+msgid "The port to which the NeoFlashHat is connected. port[0]: LEDs pin."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:51 ../../en/hats/neoflash.rst:67
+#: ../../en/hats/neoflash.rst:78 31d47110604c4f978b52cbaba28744f5
+#: 70721f75828f4615a16a50210f20127e aebad07385f045aa82dfc638fa64a3a5
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:53 f41318eccf6f48d0990d505ffd154ac9
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.neoflash.ref:7 a52aed2fd5844a6fb6f88877d578d7e1
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:57 4daf5a56789148a0a311de1261d3e6ef
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:61 a9aeb6be965e43eda6f5d46e6a3b58e4
+msgid "Set the color of the pixel."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:63 aba3ae7df05d4a40b47383f352229407
+msgid "The x coordinate of the pixel."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:64 b768081006f94177a1637d9534f10cb7
+msgid "The y coordinate of the pixel."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:65 9b13cf9179f547b1b5ae3796ff764f95
+msgid "The color of the pixel."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:69 b81d2647f2e54084adde8312a69d5b33
+msgid "|set_pixel.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.neoflash.ref:8 ba3d8e7464e74b75b9c57fce0b07196d
+msgid "set_pixel.svg"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:74 e30460a0336c44278dcb61ba73915dc6
+msgid "Set the color of the pixels."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:76 982c752b92d24d40b1ba08a87d1f4847
+msgid "The list of the pixel position and color, [x, y, color]."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:80 715307f1567b4c81849a474e145ba155
+msgid "|set_pixels.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.neoflash.ref:9 8890bb8f968146fba19e95605e33f6b6
+msgid "set_pixels.svg"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:84 c0057653c68746ffac2a9e6a5694712b
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:88 f05ecd133b2c4d909954f1b1d3fe3657
+msgid "The width of the NeoFlashHat."
+msgstr ""
+
+#: ../../en/hats/neoflash.rst:92 0b0e752053cf4d1e95830053a78370df
+msgid "The height of the NeoFlashHat."
+msgstr ""
+

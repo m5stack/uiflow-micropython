@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/dl.rst:2 300e9813d0494afcb9b6d79b9feb4871
+msgid ":mod:`dl` --- deep learning"
+msgstr ""
+
+#: ../../en/software/dl.rst:6 60a533ee55b84a42abefaed1b16a14b3
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr ""
+
+#: ../../en/software/dl.rst:12 4244b8d43d31441f8681ba85a21e6c09
+msgid "Micropython Example"
+msgstr ""
+
+#: ../../en/software/dl.rst:15 ../../en/software/dl.rst:41
+#: 2edfb020ce324353a6c1823cc272c430 e4fc8a3221a44371a35105952dd620fd
+msgid "human face detect"
+msgstr ""
+
+#: ../../en/software/dl.rst:23 ../../en/software/dl.rst:50
+#: 422eb3af97c54b6dac201741d955bb5c f2edb87072d0461e8b169e629ab8f4d5
+msgid "pedestrain detect"
+msgstr ""
+
+#: ../../en/software/dl.rst:30 ../../en/software/dl.rst:59
+#: 2af3f04c1b9746fa81c20678d0af2cdb eb4ba6da73274bf8bbbe48ab9d4c273d
+msgid "human face recognition"
+msgstr ""
+
+#: ../../en/software/dl.rst:38 bd319e3896944f0eadd7fe3addec612d
+msgid "UIFlow2.0 Example"
+msgstr ""
+
+#: ../../en/software/dl.rst:43 b9a3d29c62a844ce80101bfc38df0e9b
+msgid "|human_face_detect_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:1 a95318af0ef2432382f968624b1c38f6
+msgid "human_face_detect_example.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:47 0a47d61de9bf42e49e0e431c9c183588
+msgid "|cores3_example_human_face_detect.m5f2|"
+msgstr ""
+
+#: ../../en/software/dl.rst:52 b823dc2ffe364a478508a5c9eb1bbebd
+msgid "|pedestrian_detect_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:3 9e8c6700a86249d6b99155fe59b37715
+msgid "pedestrian_detect_example.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:56 3fa7b712e021498081cfb31595e66882
+msgid "|cores3_example_pedestrian_detect.m5f2|"
+msgstr ""
+
+#: ../../en/software/dl.rst:61 26193ef5dc81448ca30bffb244ac102f
+msgid "|human_face_recognition_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:2 ba05d9e8cd6444e0b2b78a90fafc145e
+msgid "human_face_recognition_example.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:65 c287ca6378f44c67bca4666c04b86dd4
+msgid "|cores3_example_human_face_recognition.m5f2|"
+msgstr ""
+
+#: ../../en/software/dl.rst:68 43e65b0f290e45b6bfe3c63d3475b534
+msgid "Funtions"
+msgstr ""
+
+#: ../../en/software/dl.rst:72 44ff361fe24348ae9d63839929a9565d
+msgid "Create an object detector instance."
+msgstr ""
+
+#: ../../en/software/dl.rst a2ba29cdcff846fb8e26c2b7f6da8fa3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/dl.rst:74 d15be550a10e4912821fb8417df7a3c1
+msgid "Load a detection model. Supported values:"
+msgstr ""
+
+#: ../../en/software/dl.rst:76 7bd712693b9044d8b3e25f77c28df918
+msgid "``dl.model.HUMAN_FACE_DETECT``: Human face detection."
+msgstr ""
+
+#: ../../en/software/dl.rst:77 99be7ee253f940d8b0e735c9a32a2a83
+msgid "``dl.model.PEDESTRIAN_DETECT``: Pedestrian detection."
+msgstr ""
+
+#: ../../en/software/dl.rst:79 4f54d7b6a80c4eda936b67bedeeb67df
+msgid "Returns An ``ObjectDetector`` instance."
+msgstr ""
+
+#: ../../en/software/dl.rst:81 ../../en/software/dl.rst:96
+#: ../../en/software/dl.rst:108 ../../en/software/dl.rst:125
+#: ../../en/software/dl.rst:133 ../../en/software/dl.rst:145
+#: ../../en/software/dl.rst:155 ../../en/software/dl.rst:165
+#: ../../en/software/dl.rst:178 ../../en/software/dl.rst:186
+#: ../../en/software/dl.rst:194 ../../en/software/dl.rst:202
+#: ../../en/software/dl.rst:210 ../../en/software/dl.rst:218
+#: ../../en/software/dl.rst:232 ../../en/software/dl.rst:245
+#: ../../en/software/dl.rst:253 047636d494e9466abafc169a1e6dd995
+#: 2cdf34d0bc6248af88fd21103a01e06b 31a7cd59e0b74882af4f6113ecfac7fd
+#: 3c13bba0ab9d4f6e9b445d2fe1eaf53a 3f16985b6ac446118ec5bc3224cd31e0
+#: 40b8a91d892b41ef8886258ae824e6a7 5654a1eac5a14b408b38f3d9455c44cf
+#: 6c399d249f304fd0bf76a62e69b8b762 77ab6a439636459b83159f859a6a9fb1
+#: 8db66eb1f79144e2a729a397b93e7530 a2c575479c764eafabdb937500b3c18b
+#: abf06ba8d2134b5796744d26837e00c7 ad8432b9a8014aba90f5dd1cf506cf34
+#: b03a0f4ae8c84a84b92eb527a3ada459 b89a6e16b9dc4c0fa97fd81f251e6b2a
+#: b8e773894ed44b748d7516ad9e3b9f3b e4d528939eee469684e704002371b8a9
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/software/dl.rst:83 54488417adef4dd1866570df178ea6da
+msgid "|ObjectDetector.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:4 19b83380296d42eea0395e9d8cddc99c
+msgid "ObjectDetector.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:85 e4a52d62bfa94b978e43807dd34ab222
+msgid "**Example**::"
+msgstr ""
+
+#: ../../en/software/dl.rst:92 15bf9abb6e0f45a48b6dbc5df88b049d
+msgid "Create a human face recognizer instance."
+msgstr ""
+
+#: ../../en/software/dl.rst:94 756afdc73bb544a4834d24b021be7294
+msgid "Returns: A ``HumanFaceRecognizer`` instance."
+msgstr ""
+
+#: ../../en/software/dl.rst:98 39c6eea1f1814b9e9348f3afa0430dbf
+msgid "|HumanFaceRecognizer.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:15 fc02527093cc4c13820d27d4dfe09234
+msgid "HumanFaceRecognizer.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:101 0d82c328824b4416a5d579220a5430d1
+msgid "class ObjectDetector"
+msgstr ""
+
+#: ../../en/software/dl.rst:102 36acc93e62464f7ba4382ec1ac352978
+msgid "The ObjectDetector object is returned by `dl.ObjectDetector(model)`."
+msgstr ""
+
+#: ../../en/software/dl.rst:106 21e0b4504da84116a16417b1f154a3da
+msgid "Returns: A ``DetectionResult`` instance."
+msgstr ""
+
+#: ../../en/software/dl.rst:110 aeaf0a279c6a406e85c1762cd4a694f0
+msgid "|infer.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:5 4a01d7c7d0c54982bae3f133c85f9822
+msgid "infer.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:113 5149c0257e6d457ba57cc95086db9847
+msgid "class HumanFaceRecognizer"
+msgstr ""
+
+#: ../../en/software/dl.rst:114 79b233066f4d49b593824dc97e394717
+msgid "The HumanFaceRecognizer object is returned by `dl.HumanFaceRecognizer()`."
+msgstr ""
+
+#: ../../en/software/dl.rst:118 1318657b704d46ce83b85eac6b317746
+msgid "Face recognize"
+msgstr ""
+
+#: ../../en/software/dl.rst:120 ../../en/software/dl.rst:142
+#: 8b07721702b64812834655fc08781208 ecc61c7824834aef89dfc22213dcb992
+msgid "``img`` imput image"
+msgstr ""
+
+#: ../../en/software/dl.rst:121 ../../en/software/dl.rst:143
+#: 67378bf0ebcf49b6aec12857edff49be 9abdd79f6da346799c65335e6753aae0
+msgid "``keypoint`` face keypoint, ref: DetectionResult.keypoint()"
+msgstr ""
+
+#: ../../en/software/dl.rst:123 50bd264ef7944a63888f27732faabe6d
+msgid "Returns an ``RecognitionResult`` object"
+msgstr ""
+
+#: ../../en/software/dl.rst:127 0993a62280f245b68f14c4930dc8f2b3
+msgid "|recognize.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:21 1c71aed78307402ca8bd19ad2f54f334
+msgid "recognize.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:131 a5af1ced3a1d4aee866c9fc7ce3452d8
+msgid "clear id"
+msgstr ""
+
+#: ../../en/software/dl.rst:135 87687bbf9a104b258d8b2a7bf5b26697
+msgid "|clear_id.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:20 01652e8f71de4a02b63bf8e578ac1bff
+msgid "clear_id.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:140 769cd8813edd45a4869553575148438d
+msgid "enroll id"
+msgstr ""
+
+#: ../../en/software/dl.rst:147 904d345a620e4aa5a04f7991a700cd53
+msgid "|enroll_id.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:19 4061b6e769c74b7ebaf8a61a2e76ab15
+msgid "enroll_id.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:151 7643e6fa9a84421389371dd104e6dd82
+msgid "delete id"
+msgstr ""
+
+#: ../../en/software/dl.rst:153 3ab18151a6024e5092cc0780847e90fe
+msgid ""
+"id is an optional parameter. If provided, it deletes the specified face "
+"information. By default, it deletes the most recently recorded id."
+msgstr ""
+
+#: ../../en/software/dl.rst:157 dccbfb4d664345ed8dbf5be19169cf80
+msgid "|delete_id.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:18 69de9afed7814c19a3dc55c1c25ea4d9
+msgid "delete_id.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:159 e642c772c85a44738e6f13ecd4c3c60a
+msgid "|delete_last_id.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:17 5f6b1b57c85544ddbb5a5c438bbf35c8
+msgid "delete_last_id.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:163 c773e6d16d264baeabd28e13ee567e02
+msgid "get enrolled id num"
+msgstr ""
+
+#: ../../en/software/dl.rst:167 319ec7fe644b4d06a3d1b53c948ca5c7
+msgid "|enrolled_id_num.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:16 60a0420a56894a86ae532c05ce882b9a
+msgid "enrolled_id_num.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:170 0ceb43f6dbe146efb72ce583af565db1
+msgid "class DetectionResult -- DetectionResult object"
+msgstr ""
+
+#: ../../en/software/dl.rst:172 c0cc8d10969b43b9962296b8927b64c5
+msgid "The line object is returned by `ObjectDetector.infer()`."
+msgstr ""
+
+#: ../../en/software/dl.rst:176 6895fb9b70874e19b62a14d1a2a8183b
+msgid "Get the bounding box of the object detection."
+msgstr ""
+
+#: ../../en/software/dl.rst:180 00b7023763b6412f988a5ae8e5c2cce2
+msgid "|get_bbox.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:7 a7a404e30a1342618d63507b20760a5d
+msgid "get_bbox.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:184 2909cfb0c0a24478940b467f97acd58b
+msgid "The x-coordinate of the top-left corner of the bounding box."
+msgstr ""
+
+#: ../../en/software/dl.rst:188 73db64b62a834f9cb41f88602a79d974
+msgid "|get_x.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:8 bd06db95e3344a93963e6ad6330f75ba
+msgid "get_x.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:192 219f3d77327a4467a0272e27ee215c6d
+msgid "The y-coordinate of the top-left corner of the bounding box."
+msgstr ""
+
+#: ../../en/software/dl.rst:196 8ae977eac8b748c8a5f8da852114c363
+msgid "|get_y.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:9 bcd5228c50b6412495a63f162dfa2e6c
+msgid "get_y.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:200 4a3e4251634e471d8172592af22c332c
+msgid "The width of the bounding box."
+msgstr ""
+
+#: ../../en/software/dl.rst:204 588ffd2235264a6494e56feaaaad63de
+msgid "|get_w.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:10 48a9d7c85f714e34a413d8753ee413ce
+msgid "get_w.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:208 8ab5dd71b58549559225cb0bc92c8585
+msgid "The height of the bounding box."
+msgstr ""
+
+#: ../../en/software/dl.rst:212 bb78f0c5b39848cebe1415795eb0b6f0
+msgid "|get_h.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:11 b3d2f47209184c009e45669d375081bf
+msgid "get_h.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:216 dd230302e2f34d16b29b72484ff0414e
+msgid "The detected object's category."
+msgstr ""
+
+#: ../../en/software/dl.rst:220 99ccc32d83464b8496dd150ead542113
+msgid "|get_category.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:12 d2133fa9a54042eaa400ed51347a3985
+msgid "get_category.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:224 6d0d395043634f7c91e48e0c323be492
+msgid ""
+"Keypoint information (currently, only the face detection model outputs "
+"this data):"
+msgstr ""
+
+#: ../../en/software/dl.rst:226 a0e5af57f27e4620aa5b36f2e9d7de6e
+msgid "``keypoint()[0], keypoint()[1]`` are the coordinates of the left eye."
+msgstr ""
+
+#: ../../en/software/dl.rst:227 145a6f82fc65485f9f6058087480b33f
+msgid ""
+"``keypoint()[2], keypoint()[3]`` are the coordinates of the left corner "
+"of the mouth."
+msgstr ""
+
+#: ../../en/software/dl.rst:228 091a7e91a7d04516a6d3bd95e0ca6fa4
+msgid "``keypoint()[4], keypoint()[5]`` are the coordinates of the nose."
+msgstr ""
+
+#: ../../en/software/dl.rst:229 5e6c1934eae340a4977a32b03eea2e3d
+msgid "``keypoint()[6], keypoint()[7]`` are the coordinates of the right eye."
+msgstr ""
+
+#: ../../en/software/dl.rst:230 33ffc9a387374010bea49b3a9166b439
+msgid ""
+"``keypoint()[8], keypoint()[9]`` are the coordinates of the right corner "
+"of the mouth."
+msgstr ""
+
+#: ../../en/software/dl.rst:234 8801220e8a8543ad8b421824e1208e8c
+msgid "|get_keypoint.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:13 8ffe11c49f634ae68c8e5cd1a0840ef9
+msgid "get_keypoint.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:237 dc2acfdeebab4b49a0b14ade42105c3b
+msgid "class RecognitionResult -- RecognitionResult object"
+msgstr ""
+
+#: ../../en/software/dl.rst:239 419c8a9c08fc4df7b9b10d68d881fc19
+msgid ""
+"The ``RecognitionResult`` is returned by "
+"`HumanFaceRecognizer.recognize(img, keypoint)`."
+msgstr ""
+
+#: ../../en/software/dl.rst:243 ee53969a03084522adf99c4ad6e66da8
+msgid ""
+"Gets the face similarity, with a value closer to 1 indicating higher "
+"similarity."
+msgstr ""
+
+#: ../../en/software/dl.rst:247 57bbfca028fb4f77992ba989e047a29f
+msgid "|similarity.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:22 af9309583b60450691f5cdce55fac4fc
+msgid "similarity.png"
+msgstr ""
+
+#: ../../en/software/dl.rst:251 0f9fbdec8a024d5cad48327d63076b19
+msgid ""
+"Gets the face ID. A value greater than 0 indicates that the face "
+"recognition was successful."
+msgstr ""
+
+#: ../../en/software/dl.rst:255 d222d84e0d474581b5ff94c443387035
+msgid "|id.png|"
+msgstr ""
+
+#: ../../en/refs/software.dl.ref:23 edcd1d10788c43ec8ec3e07586088222
+msgid "id.png"
+msgstr ""
+

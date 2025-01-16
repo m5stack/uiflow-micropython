@@ -1,0 +1,49 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/bleuart.rst:2 8b133d7b3d8a4008866f8a67861813de
+msgid ":mod:`bleuart` --- UART/Serial Port Emulation over BLE"
+msgstr ""
+
+#: ../../en/system/bleuart.rst:4 1dca0811119c48dcba480abbe3190e09
+msgid ""
+"The Nordic UART Service (NUS) Application is an example that emulates a "
+"serial port over BLE."
+msgstr ""
+
+#: ../../en/system/bleuart.rst:6 d99a1f224587443fbe1a0b35a1928c98
+msgid ""
+"The application includes one service: the Nordic UART Service. The "
+"128-bit vendor-specific UUID of the Nordic UART Service is "
+"6E400001-B5A3-F393-E0A9-E50E24DCCA9E (16-bit offset: 0x0001)."
+msgstr ""
+
+#: ../../en/system/bleuart.rst:8 383c642fd000445b86cd5d1ba4e5bbc6
+msgid ""
+"This service exposes two characteristics: one for transmitting and one "
+"for receiving (as seen from the peer)."
+msgstr ""
+
+#: ../../en/system/bleuart.rst:12 9651a90aa366443c8dff4bbcb9854146
+msgid "Classes"
+msgstr ""
+

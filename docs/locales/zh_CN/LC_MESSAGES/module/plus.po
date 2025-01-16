@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/plus.rst:3 ../../en/refs/module.plus.ref
+#: 7118912655f44b04af253aba416c44b4 e6ffcc7bbf474be896fed7eeebc002d8
+msgid "PLUS Module"
+msgstr ""
+
+#: ../../en/module/plus.rst:7 d4b6b689452342e18d895f9d69f18c37
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/plus.rst:9 ffe2858472954716b41c5457f476fbed
+msgid "|PLUS Module|"
+msgstr ""
+
+#: ../../en/module/plus.rst:11 481da8a8cc4f4007bf7d10cffa42a190
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/module/plus.rst:68 dbe9c0b509bd4f3fa14b06af1178b610
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/plus.rst:70 a5b6f860050746559119ef9e321b2f79
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:12 7a53f0447273489791107767fa1c2aa4
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:74 0487c2aab2ee4bf0820569dc2461f48a
+msgid "|plus_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/plus.rst:77 fbbdbd149727409e894687fedac9296f
+msgid "class PLUSModule"
+msgstr ""
+
+#: ../../en/module/plus.rst:80 72e183cbea7d46818264d07b19d65e2b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/plus.rst:84 cc4125d80e9f494a9dce84fff050dbde
+msgid "Init I2C Module PLUS I2C Address."
+msgstr ""
+
+#: ../../en/module/plus.rst 4e35eec56cef4a20b047443372faac4a
+#: 53dd53805216487eb2d514e9b05acdc3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/plus.rst:86 77abe57a65804519905afea2c7c0df33
+msgid "I2C address of the PLUSModule."
+msgstr ""
+
+#: ../../en/module/plus.rst:88 ../../en/module/plus.rst:101
+#: ../../en/module/plus.rst:111 ../../en/module/plus.rst:119
+#: ../../en/module/plus.rst:129 ../../en/module/plus.rst:137
+#: 031e3d68ad834d7187048077b988612d 05c24e03f6d64e8ea75c031dd3a577f4
+#: 3ede7f5ab9404e6f8b5255c75607f338 84e39be6391d4cb1bdfffe94dc8a12a7
+#: c70ad6175bb647f9baee2ea8e904cecf ceb355fad63042749944db93b1449bea
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/plus.rst:90 49e058607c684ed482ba01f2c88901ea
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:6 ddeb28d9f88941b698ad400c6461f9f5
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:93 22c6c11d5de44a49ae8cfef980454a39
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/plus.rst:97 ce300209c61047bf91872d464f300384
+msgid "Get the current value of the rotary."
+msgstr ""
+
+#: ../../en/module/plus.rst 8794fb80595142ef99158e594e387fc6
+#: d11775f6b97e4a1d99c1993335d93c97
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/plus.rst:99 278a72786993408aa4339e69c4b127b3
+msgid "The value of the rotary relative to the zero point."
+msgstr ""
+
+#: ../../en/module/plus.rst:103 e5b2394353e7427a83cb1901d18deb66
+msgid "|get_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:7 ed98cb831e414b1e89238f76d43cc858
+msgid "get_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:107 6ac0970d9934414f9c79b513e9d61509
+msgid "Set the rotary value."
+msgstr ""
+
+#: ../../en/module/plus.rst:109 5cc6a5cbdfca4b46a289b45545833f1a
+msgid "rotary value."
+msgstr ""
+
+#: ../../en/module/plus.rst:113 0d2dcf68646b48719d9120ab77fb28a1
+msgid "|set_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:8 b4e37795b82144baa38146054b08fe23
+msgid "set_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:117 2cd4fe06c76d4d1d9b6ef777d02c96db
+msgid "Reset the rotary value."
+msgstr ""
+
+#: ../../en/module/plus.rst:121 bd40fcf9690046c78e7039f2ba740491
+msgid "|reset_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:9 217a8231e6aa41f493a2605594cf8022
+msgid "reset_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:125 8534eb843b814bc79354c511d67ed8b5
+msgid ""
+"Get the increments of the rotary value since the last call of this "
+"function."
+msgstr ""
+
+#: ../../en/module/plus.rst:127 8872179de6bb4e259659d4f67b6bfd9b
+msgid "The increment value of the rotary."
+msgstr ""
+
+#: ../../en/module/plus.rst:131 f996a9976de54e97a5bfc45a86a713b9
+msgid "|get_rotary_increments.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:11 0280fed6b9ab4425801a25d5387776df
+msgid "get_rotary_increments.png"
+msgstr ""
+
+#: ../../en/module/plus.rst:135 07e2948b3fb944b79c4cf42bcaf43591
+msgid "Get the state of a specific button."
+msgstr ""
+
+#: ../../en/module/plus.rst:139 1392eb3138be40eeb9aa6bcf556f6149
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/module.plus.ref:10 ee4692a902884da9bf9785ca3d30b6e0
+msgid "get_button_status.png"
+msgstr ""
+

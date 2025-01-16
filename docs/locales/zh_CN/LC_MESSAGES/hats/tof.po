@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/tof.rst:2 c5d3fc1f733b4578b2c47c3fa6f8afcc
+msgid "ToF Hat"
+msgstr ""
+
+#: ../../en/hats/tof.rst:6 cd9e5d7669364b32bc9e6d9afd773d1f
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/tof.rst:8 24772a0eae5e42fda2f6a01b9cfd753c
+msgid "|ToFHat|"
+msgstr ""
+
+#: ../../en/refs/hat.tof.ref dea45e7ea1ce474eba515d5a2bd72901
+msgid "ToFHat"
+msgstr ""
+
+#: ../../en/hats/tof.rst:11 9408f544581f41d4bb547e62d3fd5620
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/tof.rst:18 fa04bd5b3e744d0ea6ee20fb61cd1811
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/tof.rst:20 a71af838fc4a4ab0908dd64f7ea4645a
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.tof.ref:8 e9862e7ceeb44fe39a67c4064882a658
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/tof.rst:25 1dbebd7cf660436c99e27f8974f5641f
+msgid "|stickc_plus2_tof_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/tof.rst:29 6fedc67526f048b0b72a7e3b09c3eec0
+msgid "class ToFHat"
+msgstr ""
+
+#: ../../en/hats/tof.rst:32 61400134d21d428f843d2963ceee9ff5
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/tof.rst:36 51a9875f165c4ad08c6cdb482fc4640b
+msgid "Creates an instance of the ToFHat class."
+msgstr ""
+
+#: ../../en/hats/tof.rst b80495b3300242d9b1ea4de70c1e0ed0
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/tof.rst:38 7f00de8c0e3b49d280cf54b9f10ed6d4
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/hats/tof.rst:39 0fb8e757e0c2425997c93c82e7c4156e
+msgid "the I2C address of the device. Default is 0x23."
+msgstr ""
+
+#: ../../en/hats/tof.rst:40 3b1bad2a9f1942508e51e12dd139a4db
+msgid "the timeout of I2C communication. Default is 0ms."
+msgstr ""
+
+#: ../../en/hats/tof.rst:42 9922275e61c54da98286c0c70718a0d6
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/tof.rst:44 8323d15d9ed049f4be4fcb7693575aa7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.tof.ref:6 0ccaaa54f8184ba087350fdb57be165f
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/tof.rst:47 585b3302bff74d04a889d2e44d0dd50e
+msgid ""
+"ToFHat class inherits ToFUnit class, See :ref:`unit.ToFUnit.Methods "
+"<unit.ToFUnit.Methods>` for more details."
+msgstr ""
+

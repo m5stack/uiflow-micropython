@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/ultrasonic_io.rst:3 41e89e4a09ff4893b930a7f49e2c7e2b
+msgid "UltrasoundIO Unit"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:7 dc7f5b79a8b9464c87e31aa268cd2982
+msgid ""
+"UNIT SONIC IO is a GPIO interface ultrasonic range sensor. This module "
+"features an RCWL-9620 ultrasonic distance measurement chip with a 16mm "
+"probe, which the ranging accuracy can reach 2cm-450cm (accuracy up to "
+"±2%). This sensor determines the distance to a target by measuring time "
+"lapses between the transmitting and receiving of the pulse signal, users "
+"can directly obtain the distance value through IO control mode. It is "
+"ideal to apply in robotics obstacle avoidance, fluid level detection, and"
+" other applications that require you to perform measurements."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:9 20a662873b5c401faeb61dca3d91a26f
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:11 ab86f6288af54120b81d470df0809009
+msgid "|UltrasoundIOUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic_io.ref e8688e88148c4b0899f0e953e7d3624e
+msgid "UltrasoundIOUnit"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:13 9022deb26d1344828530828654bc7d5e
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:20 cf9eb90c4158479e862e6da9d65d6026
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:22 e38498ccb4304e88a5a3a0796cd8d6a8
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic_io.ref:10 5c4a40ffbeef420c944585777d13fbc4
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:26 2152eb51177c4106baaaea9399f639f8
+msgid "|ultrasonicio_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:29 cfc1e76c8a744c47b151379f1f5ebaa9
+msgid "class UltrasoundIOUnit"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:32 205a164dbbe74a6ca5d1f8c03d7d00b9
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:36 b32d5505327f4744b7e2ac0986caa7fc
+msgid "Initialize the ultrasonic unit with the specified port and echo timeout."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst d0cb78e5a5524b06919aeaf7bcbf4761
+#: e336d3e3119c40e3ac1584f0da6842fa
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:38 96db648e71c845a48d8eddd0fd18f9dc
+msgid "A tuple representing the port pins for trigger (output) and echo (input)."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:39 13e515f326f1448886c30af4e21797af
+msgid "Timeout for the echo signal in microseconds, default is 1,000,000."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:41 ../../en/units/ultrasonic_io.rst:61
+#: 1d26f0c548aa42caaae42a0796488fe6 f3b524a8389f4f7ebf6273f294f4f14f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:43 1def76677965456cad702629f5808de7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic_io.ref:7 d8b49474e2744a2494827ed8a8a46dda
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:47 29a549f1ebd74b419cf1f9bc0e60fed3
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:51 6d12cf81f49d4359b512070eb6b4fdc3
+msgid "Send a trigger pulse and wait to receive the echo response."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:55 033152248dde40d4ae777ec995a64ee1
+msgid "Calculate the distance to the target based on echo response time."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:57 ae4e45d0052b4580a143fc23c77b5cb0
+msgid ""
+"The unit of measurement for the distance. Use 1 for millimeters, 2 for "
+"centimeters."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst e0d784dea4ab4b5a997733f02ed0b5f1
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:59 1199bbf0743340ad9bb5319209b85504
+msgid "The distance to the target in the specified unit."
+msgstr ""
+
+#: ../../en/units/ultrasonic_io.rst:63 57c076cba4a94631b7e4582b2c9e79b2
+msgid "|get_target_distance.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ultrasonic_io.ref:8 0e3aeab1a8b147dbb95c56e015ad25ba
+msgid "get_target_distance.png"
+msgstr ""
+

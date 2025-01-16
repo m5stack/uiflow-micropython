@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/rfid.rst:3 19724f2f28734d289866c0aeb0861827
+msgid "RFID Unit"
+msgstr ""
+
+#: ../../en/units/rfid.rst:7 83cbaef9e86941d8937a3222365988bc
+msgid ""
+"RFIDUnit is a hardware module designed for RFID card reading and writing "
+"operations. It extends the MFRC522 driver, supporting card detection, "
+"reading, writing, and advanced features like selecting and waking up RFID"
+" cards."
+msgstr ""
+
+#: ../../en/units/rfid.rst:9 b8b48abb5d9347079460875288f69f07
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/rfid.rst:11 8a14297a279a41d08e5c4e9b16b77fb4
+msgid "|RFIDUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref 85a5e1a09a434d3f97d325aba2ea90c0
+msgid "RFIDUnit"
+msgstr ""
+
+#: ../../en/units/rfid.rst:13 e46afaf99a964aa2b63473bb13b1c26b
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/rfid.rst:20 01f23fd89113450f8d5b14f2728241f4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rfid.rst:22 edf6a1f1cc904321ab24e133f1983e5f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:14 244644782ffb4cda8f678da4013c2882
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:26 a8764721afa149ae8339b2147a9b07b9
+msgid "|rfid_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rfid.rst:29 d7760f7840e14a17b4566ed71097fd17
+msgid "class RFIDUnit"
+msgstr ""
+
+#: ../../en/units/rfid.rst:32 23cf53294eaf46719b5655a2506ff616
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/rfid.rst:36 65e0958e638341d5ac3053bfaa20fc2f
+msgid "Initialize the RFIDUnit with I2C communication and an optional address."
+msgstr ""
+
+#: ../../en/units/rfid.rst 02938f6ede664c429a002912573b0504
+#: a2bf5e59d69e49bcad4e551d9c0f3eb3 bef15888d3e146d5a7ae7ba38455da61
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/rfid.rst:38 bce9c46b1f244e298597528c9209e8c5
+msgid "The I2C interface instance."
+msgstr ""
+
+#: ../../en/units/rfid.rst:39 dbc7d82b61164750a5ed0b288c532251
+msgid "The I2C address of the RFIDUnit. Default is 0x28."
+msgstr ""
+
+#: ../../en/units/rfid.rst:41 ../../en/units/rfid.rst:54
+#: ../../en/units/rfid.rst:63 ../../en/units/rfid.rst:73
+#: ../../en/units/rfid.rst:84 ../../en/units/rfid.rst:93
+#: 2cebae2dfb9c4321a9498d88d6a7fec6 33a0a84822884f41b62d4da54e050a1a
+#: 4556af66cd954150ae32ff9e41b64638 86f01906c3514dbfbafa3915bf17dd37
+#: 8fb7b2ad833c48f3851ada9308535578 b3319d5b4271491d8917d46c04a42a24
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/rfid.rst:43 774531f8e31749e0b8f17b32d85a3c59
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:7 8f75d71262ff401f93bad2c02311ca9c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:47 23e6c5ed912c4c3abe2eb77beeafeecd
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/rfid.rst:51 f1519b67e5e94731b4a05e514e1b56a9
+msgid "Check if a new RFID card is present."
+msgstr ""
+
+#: ../../en/units/rfid.rst:56 59677a0e2e5140888c6cfae3d03d1c8a
+msgid "|is_new_card_present.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:8 6d4a6979a89b48abb5de928cb83c6960
+msgid "is_new_card_present.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:60 503548f006c44573a6f8abfe2d59576e
+msgid "Read the UID of the RFID card if available."
+msgstr ""
+
+#: ../../en/units/rfid.rst:65 4c480cac5d9b4a24a218e97c38360c82
+msgid "|read_card_uid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:9 57095287b3274e088034744d71178b92
+msgid "read_card_uid.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:69 c064bb48169245b794d5274fce2a6030
+msgid "Read a specific block from the RFID card."
+msgstr ""
+
+#: ../../en/units/rfid.rst:71 92f886a8218641bfb1ebd965b772394b
+msgid "The block address to read data from."
+msgstr ""
+
+#: ../../en/units/rfid.rst:75 3d8c7599dfb5418eb514ead6ae177a2f
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:10 40d403a25bcb47e19cd49f4839ba813b
+msgid "read.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:79 430c56df155b46c2ab27ff9015cf56ce
+msgid "Write data to a specific block on the RFID card."
+msgstr ""
+
+#: ../../en/units/rfid.rst:81 9277142a92c94b72888ac6ee2046ad97
+msgid "The block address to write data to."
+msgstr ""
+
+#: ../../en/units/rfid.rst:82 71c80f36f71344959f56d36d73aa5f55
+msgid "The data buffer to write to the block."
+msgstr ""
+
+#: ../../en/units/rfid.rst:86 34612d5a293e49d8b168d749e7169589
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:11 883f4b4116fc47fd9d173964d5ed5289
+msgid "write.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:90 722e21c1a59443ddb583c038aec3c6c8
+msgid "Halt the PICC and stop the encrypted communication session."
+msgstr ""
+
+#: ../../en/units/rfid.rst:95 4ccc8bc6eca443b69380b05a97c7ad2a
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rfid.ref:12 98ae9a6e75cb4afeb4962b5afffeaad2
+msgid "close.png"
+msgstr ""
+
+#: ../../en/units/rfid.rst:99 d883348eed364059b417398b852ac024
+msgid "Wake up all RFID cards within range."
+msgstr ""
+
+#: ../../en/units/rfid.rst:103 5785dd9e837c4ce0a5770f37949111e6
+msgid "Select the currently active RFID card."
+msgstr ""
+

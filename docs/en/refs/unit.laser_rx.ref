@@ -10,7 +10,8 @@
 .. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/laser_rx/any.png
 .. |value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/laser_rx/value.png
 
-.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/laser_rx/example.png
+.. |example_tx.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/laser_tx/example.png
+.. |example_rx.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/laser_rx/example.png
 
 .. |laserrx_core2_example.m5f2| raw:: html
 

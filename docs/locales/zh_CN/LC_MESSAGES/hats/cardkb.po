@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/cardkb.rst:2 ../../en/refs/hat.cardkb.ref
+#: 504fe05e453241bd8ff17b62e15704e3 b82d8160b035427aaf9221bdd7191dc5
+msgid "CardKB Hat"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:6 5218eef6c758401088c0b596302d901f
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:8 de77716253c44986948c39655feea5ca
+msgid "|CardKB Hat|"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:11 4805a0e85b794329a30c3d2efcec4f6d
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:18 5f4fdda170f24f45a7ae6bff2daba363
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:20 bb9d242b42934cbdae9973834824fa58
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.cardkb.ref:6 bccad13a273b492192fff90ddab9fb7e
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:25 228d99754d37442cb5bb02afde17e76a
+msgid "|stickc_plus2_cardkb_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:29 546f74b735f64d7fa20d673b19dff996
+msgid "class CardKBHat"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:32 b9fcce3b3c52402a81d603fc3d99f7e5
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:36 63b8eb5c0ad0433dbf4ae6d051993e38
+msgid "Create a CardKBHat object."
+msgstr ""
+
+#: ../../en/hats/cardkb.rst 64ceac3bedcc406791ea1a5fdb886755
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:38 7010a655dacc409fa0c65df28904b4fd
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:39 5dd0cae813bb419aa2ca58ae46fd1ead
+msgid "the I2C address of the device. Default is 0x5F."
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:41 739f7c70aea746bd93a9e35b4864b8fb
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:43 0a7bc1693b264957bf51e0a16d9f71a1
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.cardkb.ref:10 7ecf95ed42094297a46b05c81a4b2ea6
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/cardkb.rst:46 d751fd626c3644069ce2932eef69c2c6
+msgid ""
+"CardKBHat class inherits CardKBUnit class, See "
+":ref:`unit.CardKBUnit.Methods <unit.CardKBUnit.Methods>` for more "
+"details."
+msgstr ""
+

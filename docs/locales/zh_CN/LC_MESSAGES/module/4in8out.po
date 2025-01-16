@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/4in8out.rst:3 cb1e883e88654e91a2fb93583f7a07eb
+msgid "4In8Out Module"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:7 ca8195752d2045d0904f015aa774571c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:9 e5751287674542db8f71e695cc87856a
+msgid "|Module4In8Out|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref 5dbcbd5d6ba94fa587526b8f0c20547d
+msgid "Module4In8Out"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:11 2212f6954122446b8776ff566315a30d
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:17 29716c7cd5e5466989d33763b3172e2a
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:19 3e72f59b4e5a428699bb61a6d2d9db60
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:15 9945fb881ba04ac78b140fc0eff3423e
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:23 a14196f0a03c4dbe962ccf01666161df
+msgid "|module4in8out_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:26 3bc25a896bff4a1f863f3039f78c63ba
+msgid "class Module4In8Out"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:29 ff412505d36449d28431cac902e7cfd6
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:33 a15054ae0ed54714a2665b9f59ae0e25
+msgid "Init I2C Module 4In8Out I2C Address."
+msgstr ""
+
+#: ../../en/module/4in8out.rst 32016b29eddf44e9937b9c96507b7b2d
+#: 6cf18358c9f64713b9927e8932dac1fc bb06caf80261483f87818bf48cefb83a
+#: cefe14578e4342ba9a6af88e4a23a661 ff0e4c3d62b64f25b932777b6db32be6
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:35 44f6aec30fa24022a677c2d0e390bf22
+msgid "I2C address of the 4In8OutModule."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:37 ../../en/module/4in8out.rst:51
+#: ../../en/module/4in8out.rst:61 ../../en/module/4in8out.rst:72
+#: ../../en/module/4in8out.rst:81 ../../en/module/4in8out.rst:90
+#: ../../en/module/4in8out.rst:100 1a53a59a1b044e2ba3e09a0603178537
+#: 2627a502a4924cb1af83ae74faa978b1 406575398c94462d8392611e5b673600
+#: 5df962412532490d9366fd1a956effe7 6cd08ef35b124acba06b512bd956854f
+#: e1c852707a644f3d99e6d99f7ae3c033 e30a8d7bf8024f699981b415d054b224
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:39 954384e21ebd4063987eef7a5f19619e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:7 dc813e3e6d7340ea96a2f4f8f51cd43e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:43 d396fc62c5ab4486bdd5ca3879d794b6
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:47 9b9958ac8fb84dc7929e490e63df3984
+msgid "Get the current value of the rotary."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:49 585d4f3a98534b09a96651307b7fb1b4
+msgid "Switch number (1 to 4)."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:53 f720ab79186947aca5fe81169eda9e20
+msgid "|get_switch_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:8 9b18f9dbffea4c17be0e99fb13691b11
+msgid "get_switch_value.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:57 b4c7713b366f4215912d6e212557af2a
+msgid "Get the state of a specific LED."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:59 ../../en/module/4in8out.rst:69
+#: 05a3a5e8571f416da06014e448f3300f ef5c9da7613b496ab281279bc40b2a5f
+msgid "Load number (1 to 8)."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:63 827fa3e206b44321a95de8fd4d596bf4
+msgid "|get_load_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:9 146e90dcb3394c5c94d19b80c68797e0
+msgid "get_load_state.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:67 b61a1ce76b80440aa9c162588a4a6cff
+msgid "Set the state of a specific Load."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:70 39ce1d18f01442c19e7226ce1dbcede5
+msgid "The state to set for the Load."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:74 5dd5978b2ff645b9be83016345ab299f
+msgid "|set_load_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:10 12da7f4a0c2c4f51be107680a94ee290
+msgid "set_load_state.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:78 fdb3e4332a5341aba65df8a0c03d651d
+msgid "Get the firmware version of the 4In8Out module."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:83 dc58e30a1a6c439c85b64cf91bb738ba
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:11 c53ac7a8932c4ebd894495e962f8abb9
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:87 c3dd05ed933d4f28aac9a12933f2f6f4
+msgid "Get the current I2C address of the 4In8Out module."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:92 e8cdba70611c4648a6bf413ec05543c9
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:12 a85d93d9361d4ead898cd506a09814da
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/module/4in8out.rst:96 afc0ed652470418cb964c13f2d8a6a8f
+msgid "Set a new I2C address for the 4In8Out module."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:98 3daefaf119d549dfb723e86397fa511f
+msgid "The new I2C address to set."
+msgstr ""
+
+#: ../../en/module/4in8out.rst:102 d8b9fd3b6f2d44dda686260d1ae02780
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.module_4in8out.ref:13 f2e77eac185049949f171222e4dcb9f9
+msgid "set_i2c_address.png"
+msgstr ""
+

@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/adc.rst:2 25388e0e41f849d895804e2023cc0ed7
+msgid "ADC Hat"
+msgstr ""
+
+#: ../../en/hats/adc.rst:6 dc6f410d4a454750938117d3583915ae
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/adc.rst:8 053709440d9a4f79a5bc2cc84159d69c
+msgid "|ADC|"
+msgstr ""
+
+#: ../../en/refs/hat.adc.ref 9830f04be1414f24a356d30b1bde9663
+msgid "ADC"
+msgstr ""
+
+#: ../../en/hats/adc.rst:11 e7db43e41acb485c8d3b48bb75df4be8
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/adc.rst:18 2ff125d16f8b4e89ac941d080cb08f5f
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/adc.rst:20 e7633a93597a493d990a202baa7304dc
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.adc.ref:8 c35fac03cedb44c3b70484d578b7f595
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/adc.rst:25 9d72275d702c4980ba6cd995abbb6801
+msgid "|stickc_plus2_adc_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/adc.rst:29 13a99e53ce274de09428f9eb0ee3c5f6
+msgid "class CANUnit"
+msgstr ""
+
+#: ../../en/hats/adc.rst:32 c987ac70f08d484c8295861e8894caf0
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/adc.rst:36 2210302b6be04aff94e634b5d98a565e
+msgid "Create an instance of the ADC Hat."
+msgstr ""
+
+#: ../../en/hats/adc.rst 008324ac8c014dfbbdc50f4d349fe875
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/adc.rst:38 921f706b36ce439f8d0a557e2c8fb428
+msgid "I2C bus"
+msgstr ""
+
+#: ../../en/hats/adc.rst:39 888d91d50c714720b87bbdc1ddb89fe8
+msgid "I2C address of the ADC Hat"
+msgstr ""
+
+#: ../../en/hats/adc.rst:41 741b1aefcd6e4cf3947522822f6a9480
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/adc.rst:43 345f44f8fa97441b82233ef23dd7d123
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.adc.ref:6 6acb906be32441499fd96f0c9cdc9a11
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/adc.rst:46 85831a3f647e4015bda5e028d4c8710a
+msgid ""
+"ADCHat class inherits ADCUnit class, See :ref:`unit.ADCUnit.Methods "
+"<unit.ADCUnit.Methods>` for more details."
+msgstr ""
+

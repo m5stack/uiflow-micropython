@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/widgets/index.rst:2 4186b000a4f44b309bd23218f94b7ef4
+msgid ":mod:`Widgets` --- A basic UI library"
+msgstr ""
+
+#: ../../en/widgets/index.rst:9 021edf90ab7a4781bac939e2e4fc840f
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/widgets/index.rst:16 ec9dcaa263904387b15600f0e96a58d8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/widgets/index.rst:18 492cd82d4940403b9b008ac88eb7246f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.ref:1 0fbe71cc6dfb454fa9d25a0c28c260b4
+msgid "example.png"
+msgstr ""
+
+#: ../../en/widgets/index.rst:22 6fe55f1fec8f45b690962e91c3c858a2
+msgid "|cores3_widgets_example.m5f2|"
+msgstr ""
+
+#: ../../en/widgets/index.rst:25 210dbcbad77b48bb825e69b35b411c7d
+msgid "Screen functions"
+msgstr ""
+
+#: ../../en/widgets/index.rst:29 a8d55305f85a4dddb88db3a9b3721685
+msgid "Set the backlight of the monitor。``brightness`` ranges from 0 to 255."
+msgstr ""
+
+#: ../../en/widgets/index.rst:31 ../../en/widgets/index.rst:39
+#: ../../en/widgets/index.rst:54 3eb16b5d7aef458d91130492d9be395f
+#: 6b45ec589c3040b4bcb8d42801dd0936 b40f6b449b464ce9a9a710fe7b8d23d8
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/widgets/index.rst:33 6ff62e7c40854516813d99d8e4f3ad53
+msgid "|setBrightness.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.ref:3 02e52c35c9944b65bfbd13dc79dc996b
+msgid "setBrightness.png"
+msgstr ""
+
+#: ../../en/widgets/index.rst:37 adc355e448234646ae8d715fb5b0c6dc
+msgid ""
+"Set the background color of the monitor. ``color`` accepts the color code"
+" of RGB888."
+msgstr ""
+
+#: ../../en/widgets/index.rst:41 f7b65a43b979464780a572494ffdd62e
+msgid "|fillScreen.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.ref:5 e221699e1d344aa29c6e7a5b5726188b
+msgid "fillScreen.png"
+msgstr ""
+
+#: ../../en/widgets/index.rst:45 81d74f3ccd304672b4e31d8cdd16fb79
+msgid "Set the rotation Angle of the display."
+msgstr ""
+
+#: ../../en/widgets/index.rst:47 a42a6c26a42b4cb282f786606794159d
+msgid "The ``rotation`` parameter only accepts the following values:"
+msgstr ""
+
+#: ../../en/widgets/index.rst:49 40feb84e30b94e1194fd5921002c3658
+msgid "``0``: Portrait (0°C)"
+msgstr ""
+
+#: ../../en/widgets/index.rst:50 a74a64296a804d28b319be0b9347a4af
+msgid "``1``: Landscape (90°C)"
+msgstr ""
+
+#: ../../en/widgets/index.rst:51 fe910c0dbada43038353e54bc3694837
+msgid "``2``: Inverse Portrait (180°C)"
+msgstr ""
+
+#: ../../en/widgets/index.rst:52 217d7b8beb244bb3a50b3f56b53c9b6a
+msgid "``3``: Inverse Landscape (270°C)"
+msgstr ""
+
+#: ../../en/widgets/index.rst:56 18b36fe2be0e4e8aa05a9c89a217f2ae
+msgid "|setRotation.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.ref:7 7023b5bb83d6422cb0f73acc8352d685
+msgid "setRotation.png"
+msgstr ""
+
+#: ../../en/widgets/index.rst:59 2c5b56d6bf644eb8915db483d76cdca6
+msgid "Classes"
+msgstr ""
+

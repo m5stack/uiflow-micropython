@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/motion.rst:3 99cee7a4fe72422cb5c5bd0f1d25b646
+msgid "Motion Base"
+msgstr ""
+
+#: ../../en/base/motion.rst:7 16450c9c71054c459329b612fd9cc0ef
+msgid ""
+"Atomic Motion Base is a servo and DC motor driver designed specifically "
+"for the ATOM series controllers. It integrates an STM32 control chip "
+"internally and uses I2C communication for control. Atomic Motion Base "
+"provides 4 servo channels and 2 DC motor interfaces, offering convenience"
+" for scenarios that require control of multiple servos or motor drivers, "
+"such as multi-axis servo robotic arms or small car motor control."
+msgstr ""
+
+#: ../../en/base/motion.rst:9 6e4021e367bf47b9a95d69c11baed779
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/base/motion.rst:11 a365904e2d2c4fdab345ff058cbb63c2
+msgid "|Motion|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref 453ceb7d034848a2a00cfc4868d192a3
+msgid "Motion"
+msgstr ""
+
+#: ../../en/base/motion.rst:14 16cb58ce4258442d9a1ab1a8fa064928
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/base/motion.rst:21 d1506d3b902c47d8a5383c6b3ef69096
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/base/motion.rst:23 837bd68b054545c3a7d1c694d593377b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:15 6e103a98272e4ff195c41945d3b9d982
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:28 0b64fb057c9f4609a95cca1ae9ff0d4a
+msgid "|atoms3_lite_motion_base_example.m5f2|"
+msgstr ""
+
+#: ../../en/base/motion.rst:32 d8b9fbe77c2f48239bc7b1c10c3931a6
+msgid "class Motion"
+msgstr ""
+
+#: ../../en/base/motion.rst:35 3e0839ecb0a046349876b386ed66c162
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/base/motion.rst:39 12b1c54f4596470f825413448457bc86
+msgid "Initialize the Servo8."
+msgstr ""
+
+#: ../../en/base/motion.rst:41 e489a177ec04490e8c933f93487efdba
+msgid "``i2c``: I2C port to use."
+msgstr ""
+
+#: ../../en/base/motion.rst:42 87ad3b5f71d04802a2f1d9637888e2c9
+msgid "``address``: I2C address of the servo8."
+msgstr ""
+
+#: ../../en/base/motion.rst:44 ../../en/base/motion.rst:58
+#: ../../en/base/motion.rst:69 ../../en/base/motion.rst:79
+#: ../../en/base/motion.rst:90 ../../en/base/motion.rst:100
+#: ../../en/base/motion.rst:111 1627ec87d9cd48a59cced9b61bba961b
+#: 929e66a63f0b4c83af09cc07a3be15d2 ab6779ed2d574ae0b7fdefff456ad30e
+#: d63f6f0adf4d4d018511dbfb73749c18 de7019edae39474ba239350657cbbaac
+#: e0af6ed73cc94dc8940c9678225f93aa e339813190a844e886f7882ddd88678d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/base/motion.rst:46 801503cedebe46e78d2c6e5e367b8dea
+msgid "|__init__.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:7 5f08ae8596e041489acdb63f5617b779
+msgid "__init__.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:50 1cbf8d2065c74463ac4a6241b684cd6d
+msgid "Methods"
+msgstr ""
+
+#: ../../en/base/motion.rst:54 646e83ab03e54b9880639ca5792b9693
+msgid "Get the angle of the servo."
+msgstr ""
+
+#: ../../en/base/motion.rst:56 ../../en/base/motion.rst:66
+#: ../../en/base/motion.rst:77 ../../en/base/motion.rst:87
+#: 13b36386adbb43ff8395af4a251363a0 1d53f08d2db74abcabc46238b13643ad
+#: c7f1a01af7324734ac7cbee5b7feb3ce d1831c314d6c489ab9535b825f258347
+msgid "``ch``: Servo channel (1 to 4)."
+msgstr ""
+
+#: ../../en/base/motion.rst:60 1215af9ad1c44a33b7524372e4c5ff68
+msgid "|get_servo_angle.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:8 58fc9d768f5240938b104d53508250e8
+msgid "get_servo_angle.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:64 8b0307f08691465d97641824d0b281bb
+msgid "Set the angle of the servo."
+msgstr ""
+
+#: ../../en/base/motion.rst:67 9c7f47bac3b948e89350ef43591a7aea
+msgid "``angle``: Angle of the servo (0 to 180)."
+msgstr ""
+
+#: ../../en/base/motion.rst:71 cfd548c23e6841fb81dc8f462f6904e2
+msgid "|set_servo_angle.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:9 265f2d7aa83c4c809f2edf48444f9c25
+msgid "set_servo_angle.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:75 022e6eabb36c46a9b8e770f4337df846
+msgid "Get the pulse width of the servo."
+msgstr ""
+
+#: ../../en/base/motion.rst:81 c91e87b2cbd8481d9e9601569cf779f2
+msgid "|get_servo_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:10 8bf66d2b56f44463994626e3964b7739
+msgid "get_servo_pulse.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:85 3cc1063e8ea84d86b6ed1a60eaef1d53
+msgid "Set the pulse width of the servo."
+msgstr ""
+
+#: ../../en/base/motion.rst:88 8827d01c7b3e4ff084708e13a6fb88a2
+msgid "``pulse``: Pulse width of the servo (500 to 2500)."
+msgstr ""
+
+#: ../../en/base/motion.rst:92 d85730d4d55e4393b81e11f2f9ba23e1
+msgid "|write_servo_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:11 d073edf820e94f6486b9db3a24240895
+msgid "write_servo_pulse.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:96 d0f805611d034756adadae33b3e9c13f
+msgid "Get the speed of the motor."
+msgstr ""
+
+#: ../../en/base/motion.rst:98 ../../en/base/motion.rst:108
+#: ce785abb969342f1a1e72fd2dd23af50 fcca70d1c3b84f01bb9bf27f3d737499
+msgid "``ch``: Motor channel (1 or 2)."
+msgstr ""
+
+#: ../../en/base/motion.rst:102 c22e5e84fb9e4186962316b476fa95e9
+msgid "|get_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:12 c29ab5a9ad2141b3a7fb16726828e6bc
+msgid "get_motor_speed.png"
+msgstr ""
+
+#: ../../en/base/motion.rst:106 16a34108576d460bb4be7cc9082d2307
+msgid "Set the speed of the motor."
+msgstr ""
+
+#: ../../en/base/motion.rst:109 40b3fe9089fc4975ae6a2ac22120775a
+msgid "``speed``: Speed of the motor (-127 to 127)."
+msgstr ""
+
+#: ../../en/base/motion.rst:113 f635bc5ae3504120b3e9457d8cc5d365
+msgid "|set_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/base.motion.ref:13 9bb27e3466114cb2acb306f62e017b86
+msgid "set_motor_speed.png"
+msgstr ""
+

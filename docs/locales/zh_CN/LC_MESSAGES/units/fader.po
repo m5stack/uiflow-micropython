@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/fader.rst:3 3bab55d291fc43e6995f455f9228a6a6
+msgid "Fader Unit"
+msgstr ""
+
+#: ../../en/units/fader.rst:7 5010bc96cfa14cc5a1224da1065868bf
+msgid ""
+"UNIT FADER is a Slide Potentiometer with color indicator, employ a 35mm "
+"slide potentiometer + 14x SK6812 programmable RGB lights. The fader has "
+"its own center point positioning, and excellent slide appliances for "
+"stable, reliable performance and precise control. The integrated beads "
+"support digital addressing, which means you can adjust the brightness and"
+" color of each LED light. The product is suitable for lighting, music "
+"control, and other applications."
+msgstr ""
+
+#: ../../en/units/fader.rst:9 cbe6b4fac0c7465a83c8a5e22a0ae84c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/fader.rst:11 b8c696b19cc24b87ae8cb1017c46eb19
+msgid "|FaderUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref e1dd122d2d8144b9adc87b2464ceb894
+msgid "FaderUnit"
+msgstr ""
+
+#: ../../en/units/fader.rst:13 5cf71691026e419db3ac1ff289c144db
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/fader.rst:20 82e8bf31abf441138beb79a7595ba136
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/fader.rst:22 877e098044ab459597b093cbb2a2fa73
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:16 4e64a7a8a5f94326b5cc1d89d99f63fd
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:26 2cd93befa8474efc9c9bc89134869814
+msgid "|cores3_fader_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/fader.rst:29 eb02c5c90c994397a6a534273664a67e
+msgid "class FaderUnit"
+msgstr ""
+
+#: ../../en/units/fader.rst:32 862c4749beb44b279c1f8328a5200693
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/fader.rst:36 eeb95e24127c47bdb1cfcec21d29e89c
+msgid "Initialize the Fader."
+msgstr ""
+
+#: ../../en/units/fader.rst fb0729b8a7444353bc2f980a8c8fd94c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/fader.rst:38 00f1b1e6aa4849f2baf3bc3837d913e6
+msgid ""
+"The port to which the Fader is connected. port[0]: adc pin, port[1]: LEDs"
+" pin."
+msgstr ""
+
+#: ../../en/units/fader.rst:40 ../../en/units/fader.rst:54
+#: ../../en/units/fader.rst:65 ../../en/units/fader.rst:73
+#: ../../en/units/fader.rst:82 ../../en/units/fader.rst:90
+#: ../../en/units/fader.rst:99 ../../en/units/fader.rst:108
+#: 2943f2d1bdb44741b868ac5994c85176 54f9bd30f3b546f49bb29796a226c303
+#: 80143536086d4214acbd1977ce9494a2 90d7d7e3b74045478a189e60ec8a3bfa
+#: 9fdc0b6463c04c08ae09d0080937acf6 bab3d284de1e4d56b4f692a2f74b2d04
+#: bf4e0ee91a0844908966c6130c783502 e802851134064cd595e29cd38e890388
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/fader.rst:42 6ff3e9768b9b45ccae1712e49d1a1134
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:7 d09087a11484408fa7172dd3c1be3c0d
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:46 558b29238c0a4b6a8ac167b5b5fd8a78
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/fader.rst:50 e8a26f1f7d1f46e99df59b7370f30126
+msgid "Get the voltage of the Fader."
+msgstr ""
+
+#: ../../en/units/fader.rst a9cbbb0ae6984df198dfe5a5ac5ad536
+#: b1b47f7a1e3b4adeb456409a34b01ec2
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/fader.rst:52 7b928f58b2a6494090b98186e9293b9e
+msgid "The voltage of the Fader."
+msgstr ""
+
+#: ../../en/units/fader.rst:56 6fd2ed1dc969439190cc033bcf1dd92e
+msgid "|get_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:8 f0b5349b7a1940b9b8a63ca672239614
+msgid "get_voltage.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:61 03145e7bfa184ec1a4e7f0234b5026d6
+msgid "Read the raw value of the ADC."
+msgstr ""
+
+#: ../../en/units/fader.rst:63 50b807ffc83148c38f5dae26b90c284f
+msgid "int from 0 to 65535."
+msgstr ""
+
+#: ../../en/units/fader.rst:67 a4faff9346734bbaae3864039ac3e2a9
+msgid "|get_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:9 b8a657feda71475995024b7fc6b5ab02
+msgid "get_raw.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:71 6ff895914b64430f87812699dcb20af9
+msgid "Update the color based on adc value."
+msgstr ""
+
+#: ../../en/units/fader.rst:75 6655289660554e5e80a4e208ac7e5347
+msgid "|update_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:10 91a51738febe4216b0a943d8a1921225
+msgid "update_color.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:80 3f61a451efd141e8a81d014b795ce024
+msgid "Update the brightness based on adc value."
+msgstr ""
+
+#: ../../en/units/fader.rst:84 e19b5617eace4f118e229a9d25f848fb
+msgid "|update_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:11 ab9028ed166548f0bea4c56d4e3911b7
+msgid "update_brightness.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:88 e4cf982565e74b928b639922b2bad406
+msgid ""
+"This method is used to set the brightness of RGB lamp beads, and the "
+"setting range is 0-100."
+msgstr ""
+
+#: ../../en/units/fader.rst:92 a20198d48e3941fc8728bdc66181bfba
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:12 27c2f699f80546fa83d48a792bec52e1
+msgid "set_brightness.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:97 11165b716c404da2b8603194ecc888d6
+msgid ""
+"This method is used to set the color of all RGB lamp beads, and the input"
+" value is 3-byte RGB888."
+msgstr ""
+
+#: ../../en/units/fader.rst:101 abe4906079d2426aa42e54063c367421
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:13 f66dcd2824ea4c1fa279fae0423f506a
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/fader.rst:106 c443ebabdbc04a36a74d2ad813b39cb6
+msgid ""
+"This method is used to set the specified RGB lamp bead color. The input "
+"value is the lamp bead index and 3-byte RGB888."
+msgstr ""
+
+#: ../../en/units/fader.rst:110 717bd06fbb304b62815ffaac4cf14850
+msgid "|set_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fader.ref:14 e65dec349402448185721f61bcd5cfaf
+msgid "set_color.png"
+msgstr ""
+

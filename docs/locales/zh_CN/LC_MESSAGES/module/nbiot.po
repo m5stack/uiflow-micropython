@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/nbiot.rst:2 ../../en/refs/module.nbiot.ref
+#: 246e7d7caa4e48d2b41e5fb27a5cb288 f5b536bc0add4dcda7551d2f7c110885
+msgid "NB-IoT Module"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:6 c5cbcb846a7e4c0f844057405dfe23fe
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:8 6dae58d2df824951a7950b99d0c16cde
+msgid "|NB-IoT Module|"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:12 cce9f59bfdaf46b1bd2414137b810042
+msgid "class NBIOTModule"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:15 4518bbdd920a47c48040c7e6ecd90a8f
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:19 892ed5aeb66a45c3bf792b74ed6682a2
+msgid "Create a NBIOTModule object"
+msgstr ""
+
+#: ../../en/module/nbiot.rst d186b217eb014e1bbd5a6e864a160dcb
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:21 1b7cede31e2e4f38942752ba0d8b2ea6
+msgid "UART ID."
+msgstr ""
+
+#: ../../en/module/nbiot.rst:22 5324f7142db342f48e55d3186c44c7d9
+msgid "the UART TX pin."
+msgstr ""
+
+#: ../../en/module/nbiot.rst:23 ed2ae13b1f894491971b4d9bd7c38ec5
+msgid "the UART RX pin."
+msgstr ""
+
+#: ../../en/module/nbiot.rst:25 e577c831cc534bd38d8865f3cfda147f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:27 9824a3f04b964262ac6af58d20343217
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.nbiot.ref:7 b85a2f04d6b946ab911ac61291774341
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:30 18c61ccdd4884b0c857304bdfd7d0723
+msgid ""
+"See :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>` for more "
+"details."
+msgstr ""
+

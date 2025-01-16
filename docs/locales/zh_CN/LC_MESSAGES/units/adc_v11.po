@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/adc_v11.rst:3 8b34526357684e99a7a7d849cbfdecf3
+msgid "ADC V1.1 Unit"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:7 b6c1c0cfd62c4a31bdf101de62da9806
+msgid ""
+"ADC V1.1 Unit is an A/D conversion module that utilizes the ADS1110 chip,"
+" a 16-bit self-calibrating analog-to-digital converter. It is designed "
+"with an I2C interface, offering convenient connectivity. The module "
+"offers conversion speeds of 8, 16, 32, and 128 samples per second (SPS), "
+"providing varying levels of accuracy at 16, 15, 14, and 12 bits of "
+"resolution respectively."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:9 79f9e8585fe048168baeac5d2388b3fb
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:11 3bbb28b687064a59a948aab7027d71f3
+msgid "|ADCV11Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref c23c2f10f5a04ae68b9ae8f5eb57fc65
+msgid "ADCV11Unit"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:13 9368704020364e0c847be9096802f8cb
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:20 6182dc693f8d4b3296fe693eb28ffda5
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:22 eece767c4e1a4d34899cb20b14790124
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:14 9b24322a625845cba18b6cf1f3cd21ef
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:26 6344b682cc6e4808acad70d21b14b6df
+msgid "|adcv11_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:29 bb324d75fe8d47eea19cb7130b4a0221
+msgid "class ADCV11Unit"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:32 d7e328a0fcdd441b94591fcef630cade
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:36 4ccb1aefe3d34391b45ab689830c8734
+msgid "Initialize the ADCV11Unit with an I2C or PAHUBUnit interface."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst 18e0e019e6394fe0be1f443a32648474
+#: 339068b365194681a83fd72340f4d1b0 7b8e1c42418645e7be393ed7ebb5b8a7
+#: a8f98abc64b54be8baa70d0958ddd1e3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:38 33938921d30e460da2b492d911fac80d
+msgid "The I2C or PAHUBUnit instance used for communication."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:40 ../../en/units/adc_v11.rst:54
+#: ../../en/units/adc_v11.rst:64 ../../en/units/adc_v11.rst:75
+#: ../../en/units/adc_v11.rst:85 ../../en/units/adc_v11.rst:97
+#: 057c8e1d8f3e48488ef20c7c3a07ea8a 07cbe3262d9e4577aee5abcd432de7ed
+#: 4a5a9759aea3468f898020e3ca64e57a 76a3701926854fb28b41cf8a942f0902
+#: aced4055310748e59ba15fad1f52f220 c41b95374360471d81840289f01e877e
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:42 65b37877df5243a5aa32c5b194d24931
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:7 3e3f41a0fa594a268b274bf4900fc9d0
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:46 970468bff9204dd1bc41ea672e521a0a
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:50 53d78e832fdd4049ba6257ede7e671ab
+msgid "Get the measured voltage from the ADC V1.1 Unit."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst b3d980bea0c040a89777254c47d02b08
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:52 cc17c5bdcde14eb596b82903abf396d8
+msgid "The measured voltage value, rounded to two decimal places."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:56 741f0a7e5bc2418eb61e4238dce7285d
+msgid "|get_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:8 94e2f0616689465cbc375605a972be43
+msgid "get_voltage.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:60 49591b7ab2614c318aeb0496f84ddd3a
+msgid "Set the gain configuration for the ADC."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:62 f0ad91d052b44b1ebff0bc37be500675
+msgid "The gain value to configure."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:66 b7d49afb26404ad795e9368b3d2711fd
+msgid "|set_gain.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:9 d2fda2b8996840379358d2a646201c99
+msgid "set_gain.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:70 3f5683737d984592a7cf15002d078222
+msgid "Configure the ADC's sampling rate."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:73 711e15cf3272448da8918db71c6670ec
+msgid "The sample rate to set."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:77 d977800a1f684c80839e4b5213903c8c
+msgid "|set_sample_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:10 6f231881a4734061829b94751b7ebe47
+msgid "set_sample_rate.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:81 17fd225d6cd3425884e0f049bb121ac2
+msgid "Set the ADC's operating mode."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:83 5274fac0ebf64ab8a5f707f99c530dc4
+msgid "The mode to configure, e.g., continuous or single conversion."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:87 0dd766d177ae4cc79a84687396a5921f
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:11 acc16ba530fe4e14859c6302e3174b70
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:91 ecd78683704c4f41821458b83d46d603
+msgid "Update the ADC configuration register with the current settings."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:95 855608e8ae95452ba8debe5b07da1def
+msgid "Read the raw ADC value."
+msgstr ""
+
+#: ../../en/units/adc_v11.rst:99 fde8fe309c3c473b95cf2bc239b08c2b
+msgid "|get_adc_raw_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.adc_v11.ref:12 49f4699ae3c84aa7b4a838508b5dee56
+msgid "get_adc_raw_value.png"
+msgstr ""
+

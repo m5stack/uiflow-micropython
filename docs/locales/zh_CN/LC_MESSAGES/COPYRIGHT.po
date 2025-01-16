@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,126 +18,130 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/COPYRIGHT.rst:3 6d7573e9b29c4745aa2833ebfc8eaf93
+#: ../../en/COPYRIGHT.rst:3 e1912cbf54ae4f099aeb6e6d4103aeeb
 msgid "Copyrights and Licenses"
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:9 391d91c8b0c9429faefcabf374320c2d
+#: ../../en/COPYRIGHT.rst:9 142fa00cabab48679fa801a2e3eaada0
 msgid "Software Copyrights"
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:11 37fd5de65cb7471b91d3e9c89f4819e9
+#: ../../en/COPYRIGHT.rst:11 8c7138cda2954707bfb92e100de2ca2e
 msgid ""
 "All original source code in this repository is Copyright (C) 2023 "
 "M5Stack. This source code is licensed under the MIT license as described "
 "in the file LICENSE."
 msgstr "这个存储库中的所有原始源代码版权归(c)2023 M5Stack 所有。此源代码在MIT许可下许可，如文件license中所述。"
 
-#: ../../en/COPYRIGHT.rst:16 7b121a5dbf8642eb8b3b88d9b3d22032
+#: ../../en/COPYRIGHT.rst:16 8c5e2002de7b4561b8a38dd5df51fd9e
 msgid "Third Party"
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:18 0334189158c84b028f46b6b10c65add8
+#: ../../en/COPYRIGHT.rst:18 06970ba119c24e698d987df9c74123a0
 msgid ""
 "`micropython`_ Copyright (c) 2013-2023 Damien P. George and licensed "
 "under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:19 dd50fe2c2b6844fc88adc22cee64dbfe
+#: ../../en/COPYRIGHT.rst:19 f3fa3e97d6b149f4b5920ed025f4492e
 msgid ""
 "`umqtt`_ Copyright (c) 2013-2014 micropython-lib contributors and "
 "licensed under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:20 7595c3ca1b6d44b3b101bbb01eebe644
+#: ../../en/COPYRIGHT.rst:20 f9c504e75e494e818d1a58a29fe404e3
 msgid ""
 "`urequests`_ Copyright (c) 2013-2014 micropython-lib contributors and "
 "licensed under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:21 babe680b6e7b45469a07b8a1f42ea01e
+#: ../../en/COPYRIGHT.rst:21 0e6e7e1cc0fe41379b15f2926bf46790
 msgid "`ir`_ Copyright (c) 2020 Peter Hinch and licensed under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:22 e435e597139a4e408af533f73f845224
+#: ../../en/COPYRIGHT.rst:22 fa6d372460194bcd803582f5753bed5f
 msgid ""
 "`neopixel`_ Copyright (c) 2013-2014 micropython-lib contributors and "
 "licensed under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:23 22dd8afd09c34cd3abdb4f02e10549c0
+#: ../../en/COPYRIGHT.rst:23 4e5a9215753e4787a0ffe1dab4967670
 msgid ""
 "`bh1750fvi`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:24 d867d6aa2abd46fdb6ed48f1fb018318
+#: ../../en/COPYRIGHT.rst:24 d0062fbab63b45a6b06dfc9a06bc2dec
 msgid ""
 "`bmp280`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:25 7491595f9ede4e8dae93e19ed59ea7d4
+#: ../../en/COPYRIGHT.rst:25 50fcc44075764b678208485249b34079
 msgid ""
 "`checksum`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:26 7690f350d283413a8752878e9ca860a3
+#: ../../en/COPYRIGHT.rst:26 f96c86be567f4b6eaa87c384ded97883
 msgid ""
 "`dht12`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:27 adb77a24029045fbb2d4cab8b092729f
+#: ../../en/COPYRIGHT.rst:27 bbb0a30ed3a54586b0d4d8b62695f50a
 msgid ""
 "`pcf8563`_ Copyright (c) 2020 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:28 d0bc8f2ba61c40af9ae83f77b9df14a8
+#: ../../en/COPYRIGHT.rst:28 357b7f729e7346d38d463cdc64e6dab4
 msgid ""
 "`qmp6988`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:29 5b91e28390c34f938055282dd175d422
+#: ../../en/COPYRIGHT.rst:29 296ceae682b94fe4a50d50120fc9343c
 msgid ""
 "`scd40`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:30 b6f1017eca3d49e39276800140ea6f38
+#: ../../en/COPYRIGHT.rst:30 730eb8a0998e494287dc739628f84b34
 msgid ""
 "`sgp30`_ Copyright (c) 2022 Sebastian Wicki and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:31 beabce156d084fd69823fdab88d0e363
+#: ../../en/COPYRIGHT.rst:31 ab70ada197244a78a2e5c988729a0099
 msgid ""
 "`sht4x`_ Copyright (c) 2021 ladyada for Adafruit and licensed under MIT "
 "License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:32 db5ae16d92684b8c8b6806d08ea3d986
+#: ../../en/COPYRIGHT.rst:32 57ed77ac00f341f0a4ad980c25dd6bd4
 msgid ""
 "`vl53l0x`_ Copyright (c) 2017 Tony DiCola for Adafruit Industries and "
 "licensed under MIT License."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:33 541c57e817214bdc877ffe0418bec614
+#: ../../en/COPYRIGHT.rst:33 5a10aa335a554591b9b494e5b95d60f4
 msgid ""
 "`camera`_ Copyright (c) 2021 Mauro Riva and licensed under Apache License"
 " Version 2.0."
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:37 6ce4720c9bae48468505af90ea4005f6
+#: ../../en/COPYRIGHT.rst:34 628bfa333f544b8b815ef426a14f41dc
+msgid "`haptic`_ Copyright (c) 2022 lbuque and licensed under MIT License."
+msgstr ""
+
+#: ../../en/COPYRIGHT.rst:37 da12ab05a3e844e4b05ff8881040ba61
 msgid "Documentation"
 msgstr ""
 
-#: ../../en/COPYRIGHT.rst:39 c890992faf9e466ea0200b996dd79bf2
+#: ../../en/COPYRIGHT.rst:39 8892f832267a4f9097725d130c371dd6
 msgid ""
 "HTML version of API documentation uses the Sphinx theme sphinx_idf_theme,"
 " which is Copyright (c) 2013-2020 Dave Snider, Read the Docs. It is "

@@ -1,17 +1,19 @@
-:mod:`mouse`  
+mouse
 =====================================
-usb device mouse 
 
-.. include:: ../../../refs/advanced.usb.device.mouse.ref
- 
-.. note:: This module is only applicable to the CoreS3 Controller
+.. currentmodule:: usb.device.keyboard
 
 .. module:: mouse
-    :synopsis: usb mouse    
+    :synopsis: usb mouse
+
+usb device mouse
+
+.. include:: ../../../refs/advanced.usb.device.mouse.ref
+
+.. note:: This module is only applicable to the CoreS3 Controller
 
 
-
-Micropython Example 
+Micropython Example
 --------------------------------
 
 USB Mouse
@@ -21,7 +23,7 @@ USB Mouse
         :language: python
         :linenos:
 
-UIFlow2.0 Example 
+UIFlow2.0 Example
 ------------------------------
 
 USB Mouse
@@ -34,19 +36,19 @@ USB Mouse
     |m5cores3_usbd_mouse_example.m5f2|
 
 
-class Mouse  
+class Mouse
 ------------------------------
 
-.. function:: usb.device.mouse.Mouse()
+.. class:: usb.device.mouse.Mouse()
 
-    Create Mouse object 
+    Create Mouse object
 
     UIFlow2.0
-    
-        |init.png| 
+
+        |init.png|
 
 
-.. method:: set_axes(x: int = 0, y: int = 0) 
+.. method:: Mouse.set_axes(x: int = 0, y: int = 0)
 
     Set Cursor Position
 
@@ -56,10 +58,10 @@ class Mouse
     :note: Changes will take effect after calling Mouse.send_report().
 
     UIFlow2.0
-    
+
         |set_axes.png|
 
-.. method:: set_wheel(w: int = 0)
+.. method:: Mouse.set_wheel(w: int = 0)
 
     Set mouse wheel value
 
@@ -68,20 +70,20 @@ class Mouse
     :note: Changes will take effect after calling Mouse.send_report().
 
     UIFlow2.0
-    
+
         |set_wheel.png|
 
-.. method:: set_buttons(left: bool = False, right: bool = False, middle: bool = False) 
+.. method:: Mouse.set_buttons(left: bool = False, right: bool = False, middle: bool = False)
 
     Set mouse button status
 
     - ``left`` True indicates the left button is pressed.
     - ``right`` True indicates the right button is pressed.
-    - ``middle`` True indicates the middle (wheel) button is pressed. 
+    - ``middle`` True indicates the middle (wheel) button is pressed.
 
     :note: Changes will take effect after calling Mouse.send_report().
 
-    example: Mouse click left button 
+    example: Mouse click left button
 
     ::
 
@@ -91,18 +93,18 @@ class Mouse
         send_report()
 
     UIFlow2.0
-    
+
         |set_buttons.png|
 
-.. method::send_report() 
+.. method:: Mouse.send_report()
 
     Send the mouse status report.
 
     UIFlow2.0
-    
+
         |send_report.png|
 
-.. method:: move(x: int = 0, y: int = 0)  
+.. method:: Mouse.move(x: int = 0, y: int = 0)
 
     Move cursor
 
@@ -110,68 +112,65 @@ class Mouse
     - ``y`` Vertical movement, range: -127 to 127. A value less than 0 moves the cursor up, and a value greater than 0 moves it down.
 
     UIFlow2.0
-    
+
         |move.png|
 
-.. method:: click_left(release: bool = True) 
+.. method:: Mouse.click_left(release: bool = True)
 
     Click left button
 
     - ``release``  Set to True to release the left mouse button after pressing, or False to not release.
 
     UIFlow2.0
-    
+
         |click_left.png|
 
-.. method:: click_right(release: bool = True)  
+.. method:: Mouse.click_right(release: bool = True)
 
     Click right button
 
     - ``release``  Set to True to release the right mouse button after pressing, or False to not release.
 
     UIFlow2.0
-    
+
         |click_right.png|
 
-.. method:: click_middle(release: bool = True) 
+.. method:: Mouse.click_middle(release: bool = True)
 
     Click middle button
 
     - ``release``  Set to True to release the left middle button after pressing, or False to not release.
 
     UIFlow2.0
-    
+
         |click_middle.png|
-         
-.. method:: click_forawrd()  
+
+.. method:: Mouse.click_forawrd()
 
     Click forward button
 
     - ``release``  Set to True to release the left forward button after pressing, or False to not release.
 
     UIFlow2.0
-    
+
         |click_forward.png|
 
-.. method:: click_backward()  
+.. method:: Mouse.click_backward()
 
     Click backward button
 
     - ``release``  Set to True to release the left backward button after pressing, or False to not release.
 
     UIFlow2.0
-    
+
         |click_backward.png|
 
-.. method:: scroll(w: int)  
+.. method:: Mouse.scroll(w: int)
 
     Scroll wheel
 
     - ``w`` range: -127 to 127, values less than 0 scroll up, and values greater than 0 scroll down.
 
     UIFlow2.0
-    
-        |scroll.png|
-         
 
- 
+        |scroll.png|

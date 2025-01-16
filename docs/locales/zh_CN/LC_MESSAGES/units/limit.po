@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/limit.rst:3 438769b6d10d49e18f078e763b357e12
+msgid "Limit Unit"
+msgstr ""
+
+#: ../../en/units/limit.rst:7 abba342d8c8b4d3595201a1244f6203f
+msgid ""
+"The Unit Limit is a travel switch unit that provides a limit trigger "
+"signal to the MCU or other master peripherals by pulling the digital "
+"signal interface from 3.3V high to 0V low when the switch handle is "
+"closed by an external force. It is suitable for all kinds of moving "
+"machinery and equipment to control its stroke and carry out terminal "
+"limit protection."
+msgstr ""
+
+#: ../../en/units/limit.rst:9 0e6fc088cc6948709cb71484f8ffcdfa
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/limit.rst:11 5f6732c9db6647f694ba9ac2ba04d027
+msgid "|LimitUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref a532b68e505c48dbae5f32a99c901938
+msgid "LimitUnit"
+msgstr ""
+
+#: ../../en/units/limit.rst:13 326233bdc9d042c5b5c682a00d1de4e1
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/limit.rst:20 b12f961b8a274c648c9081295bd21f36
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/limit.rst:22 84d5a204f47d4d6cbde34763766485c1
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:13 a44b42406f0e42b4b72b907f5d20ec70
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/limit.rst:26 eea85913f56746f89f54bcf8e8d9d203
+msgid "|limit_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/limit.rst:29 738dee906a0545ecabafebcf693d1733
+msgid "class LimitUnit"
+msgstr ""
+
+#: ../../en/units/limit.rst:32 b9caea8833d045719bc28b3ba3ea64db
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/limit.rst:36 0ee49512934f41b9bb7aff20977d6d9d
+msgid ""
+"Initialize a Limit instance with the specified pin, active-low "
+"configuration, and pull-up resistor state."
+msgstr ""
+
+#: ../../en/units/limit.rst 1c99a192427f401f8365d215ef75ca4a
+#: f6b27f2193b647a3a6cc754f29df434a
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/limit.rst:38 a98e7a0aad8443b58a3f57396d631d05
+msgid "The GPIO pin number connected to the limit."
+msgstr ""
+
+#: ../../en/units/limit.rst:39 8d20a32ba5b244d59eba34f9219fe1ea
+msgid "Determines whether the limit signal is active-low. Default is True."
+msgstr ""
+
+#: ../../en/units/limit.rst:40 8a07cba61b4e424db681a90b9f1107e8
+msgid ""
+"Specifies whether the internal pull-up resistor is enabled. Default is "
+"True."
+msgstr ""
+
+#: ../../en/units/limit.rst:42 ../../en/units/limit.rst:54
+#: ../../en/units/limit.rst:64 ../../en/units/limit.rst:75
+#: ../../en/units/limit.rst:83 21bfe8de196f446ba86599e9aeeae514
+#: 43c6e651fe8b404883271a8a2206d425 49c8af667cb741a482000e3f61a91d3d
+#: 608356690d97411daf16110de09e465d d907efe77c1c40b7af0a3a5caaec27eb
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/limit.rst:44 89991fdd9e834d82878f2ee1efba48b4
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:7 55e83ec4b6c14e4bbb4449929595d962
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/limit.rst:47 99892bb233dd45c1aff0f14bc2903a2d
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/limit.rst:51 b12e3bcceea54188bfd6cd4cc6afaa5a
+msgid "Reset the count value to zero."
+msgstr ""
+
+#: ../../en/units/limit.rst:56 e40347f78d5c4a6eb79e8d8ce2c5238d
+msgid "|count_reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:10 b9203f30f6b949f8ae9a17d9d694f783
+msgid "count_reset.png"
+msgstr ""
+
+#: ../../en/units/limit.rst:61 429da9d243044e9eb8a122157c699fbf
+msgid "Check if the limit is currently being held."
+msgstr ""
+
+#: ../../en/units/limit.rst:66 c3e5c52daee049caa2d8985c405df760
+msgid "|isHolding.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:8 8a5d5120e05d4bc2af99b253a0ab30e7
+msgid "isHolding.png"
+msgstr ""
+
+#: ../../en/units/limit.rst:70 bdc6ee6f9c3b4aeb9884335930117a4e
+msgid "Set a callback function for a specified limit event type."
+msgstr ""
+
+#: ../../en/units/limit.rst:72 e549fb640d3d4028b95b63452c71f2a6
+msgid "The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED)."
+msgstr ""
+
+#: ../../en/units/limit.rst:73 d0031c41680c4ab5ad6336d2352d6aa0
+msgid "The callback function to be executed for the event."
+msgstr ""
+
+#: ../../en/units/limit.rst:77 ad9274d9586f4265bb1fd24679de6259
+msgid "|setCallback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:9 ec5ebdbf0ce548ffb607477715a7f852
+msgid "setCallback.png"
+msgstr ""
+
+#: ../../en/units/limit.rst:81 e120aa73e849492d90c52dee537e8502
+msgid ""
+"Monitor the state transitions of a limit based on its pin state and "
+"trigger appropriate handlers."
+msgstr ""
+
+#: ../../en/units/limit.rst:85 734e510bfd70490787c0f2de4f5da7d5
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../en/refs/unit.limit.ref:11 bcdcb49b218e46e6969668fb6d05a000
+msgid "tick.png"
+msgstr ""
+

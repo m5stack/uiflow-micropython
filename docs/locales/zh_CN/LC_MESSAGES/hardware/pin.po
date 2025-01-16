@@ -1,0 +1,230 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/pin.rst:2 987b87acea4a4156a6a2fdc1e275cb27
+msgid "Pin"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:6 367ac1b7c55f4b4094f040f6a00c4e66
+msgid ""
+"The Pin class is used to manage GPIO operations. Below is the detailed "
+"support for the Pin class:"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:8 81b10dd4d5e6441d8ca852166239dfac
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:14 d245238d72224902a6be955de7eea575
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:16 2508841b345444b89d069d9c3df9c5d6
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:1 02c62b9e9bf948fbb4ffbc7721020968
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:20 629ec4d82032482f98ac05e00f242fd7
+msgid "|pin_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:23 930256d3e6214062a1e8f186d6a1fcc9
+msgid "class Pin"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:26 1f62a94a65204affb2f740f30c937332
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:30 240210e48caa4d3e901b94815183d4fa
+msgid "Access the pin peripheral (GPIO pin) associated with the given ``id``."
+msgstr ""
+
+#: ../../en/hardware/pin.rst 6feddf0ea184456b910e5d3da44cd23a
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:32 7f3406bec4ae46998a92d377e933f57c
+msgid "is mandatory and can be an arbitrary object."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:33 8e1d60c8e9114e098ecfd116c63fe6d6
+msgid ""
+"specifies the pin mode.  - ``Pin.IN`` - Pin is configured for input.  If "
+"viewed as an output the pin is in high-impedance state.  - ``Pin.OUT`` - "
+"Pin is configured for (normal) output."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:33 5c08b6f8fdf14441858bf28dcd86af8b
+msgid "specifies the pin mode."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:35 585aed84cdf14199816805e0f1e13cfa
+msgid ""
+"``Pin.IN`` - Pin is configured for input.  If viewed as an output the pin"
+" is in high-impedance state."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:37 b8c8b79e04594372935e9b320881d71d
+msgid "``Pin.OUT`` - Pin is configured for (normal) output."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:39 147f1b775c7948319fa8bf354a1b7872
+msgid ""
+"specifies if the pin has a (weak) pull resistor attached.  - ``None`` - "
+"No pull up or down resistor. - ``Pin.PULL_UP`` - Pull up resistor "
+"enabled. - ``Pin.PULL_DOWN`` - Pull down resistor enabled."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:39 240f3e746cb64fd69f9d2670e736bbc9
+msgid "specifies if the pin has a (weak) pull resistor attached."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:41 a79157a1ef964938949193b48dc7ceff
+msgid "``None`` - No pull up or down resistor."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:42 fd6798f6abd749c79908b7dfb350cb3d
+msgid "``Pin.PULL_UP`` - Pull up resistor enabled."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:43 277ad88ca58a40c289b3f4ebaeb6fb24
+msgid "``Pin.PULL_DOWN`` - Pull down resistor enabled."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:45 ../../en/hardware/pin.rst:67
+#: ../../en/hardware/pin.rst:81 ../../en/hardware/pin.rst:89
+#: 227e1387a141455d9bd07452991fe2bd 700fff682f3247c9abec2eb411c50640
+#: a077beaf1aa24e58846ccf55b7583cc7 f726c640f9ae42f089019d0f51f3a602
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:47 0d0a0cd9e64b4292b52c23783c690bc5
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:3 cb233b58e775464ab3708292ad1cc50e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:50 66617f9bb0ef4c75af000309a77d16e9
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:53 ffd6a48216c143cfa07900b28436f459
+msgid "Set the value of the pin."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:55 00f4121af30f4dca8d16225c42a145d1
+msgid ""
+"The argument ``value`` can be anything that converts to a boolean. If it "
+"converts to ``True``, the pin is set to state '1', otherwise it is set to"
+" state '0'."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:59 ab5b464c267a4781a9f72acd75af8e42
+msgid "The behaviour of this method depends on the mode of the pin:"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:61 78f983cd12544e0898ffbf4c69a63c6c
+msgid ""
+"``Pin.IN`` - The value is stored in the output buffer for the pin.  The "
+"pin state does not change, it remains in the high-impedance state.  The "
+"stored value will become active on the pin as soon as it is changed to "
+"``Pin.OUT`` mode."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:65 769010cc6211479f97d6593710c6818b
+msgid "``Pin.OUT`` - The output buffer is set to the given value immediately."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:69 22dac7e78d1f409ebf3fd6013407c74d
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:7 314a004f427543258df6a54077d0cf20
+msgid "set_value.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:71 a9a3f6f4fa1044729aa4888674552139
+msgid "|set_value1.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:9 002b82af9a7d4e7b9ba4655508f5068c
+msgid "set_value1.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:73 249ca314d8034c5d919cb6e05adb2d95
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:5 e4a901577c6140b28153fe2551217282
+msgid "get_value.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:79 a9bfa0f5ca7d4eb7925c5317e514d6e9
+msgid "Sets the pin to low level."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:83 996f3a7b0d804c538d7cfa5530017576
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:11 a3e65aee9dd642f083e1a36648921af1
+msgid "off.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:87 4ccb32e45b874fcf894faa16d6073ca0
+msgid "Sets the pin to high level."
+msgstr ""
+
+#: ../../en/hardware/pin.rst:91 73caf274c67d41e49f51399b6685b657
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pin.ref:13 54b1e9fe633240428e87831e983fff85
+msgid "on.png"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:94 5c2ca77af0f8466694e18c9b8bc0d8fe
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:98 70119c04604140c3a69ced1897ad38b0
+msgid "Input mode"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:102 f24de495beae4be9a466d04293f57ad2
+msgid "Output mode"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:106 cefde14416634f7db6f606596f560406
+msgid "Pull-up resistor"
+msgstr ""
+
+#: ../../en/hardware/pin.rst:110 6b2c23c58e3a4c048519696128b51166
+msgid "Pull-down resistor"
+msgstr ""
+

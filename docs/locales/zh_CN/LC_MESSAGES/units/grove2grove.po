@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/grove2grove.rst:2 c649f5f8cfbd4993abd74ff18a42c40e
+msgid "Grove2Grove Unit"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:7 77bdb74bfaa24fd89d627bc3c73f31d6
+msgid ""
+"UNIT-GROVE2GROVE is a Grove expansion Unit with On/Off Control + Current "
+"Meter functions. On/Off control adopts switch value, Current meter is 0 -"
+" 3.3V analog signal."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:12 53f59105ad5746e090fcebee04e08246
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:14 abd1b35749824187b1e5a54d1bb72ff2
+msgid "|Grove2GroveUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref 96e29e0071d842668f16531c5d0d9c29
+msgid "Grove2GroveUnit"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:16 b4e9b7aed2b54723ba88591d9ce57335
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:23 57cd61e65a774d989818f72037f8738c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:25 af95fd74326e43ba8ff5630b6ba1e889
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:13 b47dee4a4b6a477f88f618c7242bbad0
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:29 464fd42b81d742da804ed308f8c3e40b
+msgid "|cores3_grove2_grove_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:33 e64ffb91a8954797b33d76f8066ffaae
+msgid "class Grove2GroveUnit"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:36 50a3bb532622449fb0e72e315e942a27
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:40 828c932b740f4e8dbfb9035d8217900d
+msgid "Initialize the Grove2GroveUnit."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst 388c6f52cc5f4d7ca26fd772e4b53980
+#: 9cd5358cbd814f3e9e9d90d685c14af7
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:42 9b0256f414224e098118f685686e0217
+msgid ""
+"The port to which the Grove2GroveUnit is connected. port[0]: adc pin, "
+"port[1]: grove pin."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:44 ../../en/units/grove2grove.rst:58
+#: ../../en/units/grove2grove.rst:67 ../../en/units/grove2grove.rst:76
+#: ../../en/units/grove2grove.rst:87 350d0ca5757d454abe1e02e2225fe5c1
+#: 39d877727c464f029b0d40d31717115b 44182d42f2e146129cf4be13b2c7a65d
+#: a1354242eff24bc6b179edbf722ae1eb efcbc46b84fd4ea39ea15500ed038c8d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:46 a445430db91c4bd699e2481a4f4713f6
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:7 eaa451ed513948e78194f1059948570b
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:50 e0fa6383ce894bd89c7175e30a05bb7e
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:54 db651fda2d5a48aebad4dfa6409adc8e
+msgid "Get the current of the sensor."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst 6737fd174ff544e58d3d2bacd82a9135
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:56 2bec99d1dbe44fa0806df52a690d1b74
+msgid "The current of the sensor."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:60 fcbf56bc258e45fab540a6eff848f972
+msgid "|get_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:8 1c2b1191683b48d19aedb19492fb81e7
+msgid "get_current.png"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:65 dfbb13b570894a8b89dce9cebc512cad
+msgid "Turn on the grove."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:69 a57fce01b36446c6b0d0f8064ada132e
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:9 496885672b6b4df2acda0e195322c006
+msgid "on.png"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:74 9b3fb772a35c48e089fddcb83e9a92c0
+msgid "Turn off the grove."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:78 6433672810e341b89348dba11efffb5c
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:10 efc0d26ce7ed46e1b466d55bdc4af2a1
+msgid "off.png"
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:83 f134e288be63461086d83b030e1098d8
+msgid "Set the state of the grove."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:85 60dddf240ea44ce392a5d626d2b54220
+msgid "The state of the grove."
+msgstr ""
+
+#: ../../en/units/grove2grove.rst:89 978d97d8606b41b7931c459ac84223cf
+msgid "|set_en.png|"
+msgstr ""
+
+#: ../../en/refs/unit.grove2grove.ref:11 90f644225c964c269d90645a6d98ef1c
+msgid "set_en.png"
+msgstr ""
+

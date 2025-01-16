@@ -1,0 +1,306 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/heart.rst:3 1b8605b199394cb49d6a40e8aca2de9f
+msgid "Heart Unit"
+msgstr ""
+
+#: ../../en/units/heart.rst:7 729ffe1b8edd4df183f3ea685367ea33
+msgid ""
+"MAX30100 is a complete pulse oximetry and heart-rate sensor system "
+"solution designed for the demanding requirements of wearable devices."
+msgstr ""
+
+#: ../../en/units/heart.rst:9 6f7d7194739f41b5a01a878a99ee2854
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/heart.rst:11 045c6857bb2e41649c0709ce460bdb7a
+msgid "|HeartUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref 12c639234c1b49c6b93c2fb4865be1cc
+msgid "HeartUnit"
+msgstr ""
+
+#: ../../en/units/heart.rst:13 8c8fa286f163458292626b88a63fd790
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/heart.rst:20 e8282c2c720049ceadc1728ef5d18709
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/heart.rst:22 568d75118a8c4e7280a35acbe2b5e188
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:20 902f2331f92f4a58ac46312e625e9d08
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:27 5969a9d3de5d45658e47a732209c4ff6
+msgid "|core_heart_unit_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/heart.rst:30 ba298d53e2a24d16b691751487853df0
+msgid "class HeartUnit"
+msgstr ""
+
+#: ../../en/units/heart.rst:33 df2ba63624b349f18ce08a31d58cd2d4
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/heart.rst:37 eef703a239d743349c2a36a4d7f3aaea
+msgid "Initialize the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:39 f28fe6cc61514fa5b186996794138315
+msgid "``i2c``: I2C port to use."
+msgstr ""
+
+#: ../../en/units/heart.rst:40 43c4fe0dec37452680f699074e011484
+msgid "``address``: I2C address of the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:42 ../../en/units/heart.rst:55
+#: ../../en/units/heart.rst:64 ../../en/units/heart.rst:73
+#: ../../en/units/heart.rst:82 ../../en/units/heart.rst:91
+#: ../../en/units/heart.rst:100 ../../en/units/heart.rst:109
+#: ../../en/units/heart.rst:122 ../../en/units/heart.rst:149
+#: ../../en/units/heart.rst:164 ../../en/units/heart.rst:183
+#: 00b77316cd7c4cfd9c104b0c2438e193 274929ce156b4f91bf9900a02d66be79
+#: 29722b1a8e4d4fbd9418d6ac1fcb9b61 3adcf1b6b3a847dd88c5cb149613804e
+#: 441336f760554fd0b38e0a67d9eb2d7c 7f4579adcd294ffd9fa9faedbaa9002c
+#: 858ad64cab7e4182a9307ca079133a90 903d0a3aa10041e3921909ab1b8f4308
+#: 970a31befb4b49578cdb234018b1a76f b4936705751341f3872cb05839c9452e
+#: d3c5b5bf420d483ab8754d92d111b1b0 d536da3c4d0645c3bafe622a00fe9004
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/heart.rst:44 ab27bc2b2ae041b084db571744d802d4
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:7 38d2047583924010abe5ab9f32cadebc
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:48 2b25eba366234490bcc6cceb377bdfb3
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/heart.rst:52 c81eeeb789734b7081086f0540ab81d4
+msgid "Stop the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:57 62b4d51ab578485db5f923a323eb91dd
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:8 7025673ce2694517b450e60708c62c4e
+msgid "stop.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:61 1c5d17dab0324b878f1e23428e70c563
+msgid "Start the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:66 4e950c9fc7184bb6b221bd19fd003088
+msgid "|start.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:9 13b05f93979748a6ab4c927f4ecafc29
+msgid "start.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:70 586ba746ab024c9c95249a9b349cda83
+msgid "Deinitialize the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:75 adf47b6dacd548769219aae1ac488b7e
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:10 54ea5f0bb305405ca79a6e4d813ff37b
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:79 53d85cb4edd74da7b91ea6a7fa8bb833
+msgid "Get the heart rate."
+msgstr ""
+
+#: ../../en/units/heart.rst:84 4995d96749f043129f2cd7546a19aab0
+msgid "|get_heart_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:11 803cb30418c247748b402f027c6fe721
+msgid "get_heart_rate.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:88 b8568a2f0f33426caf4780077806e21f
+msgid "Get the SpO2."
+msgstr ""
+
+#: ../../en/units/heart.rst:93 15d12dc954e64b2589709e054996a791
+msgid "|get_spo2.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:12 639f2a63647a4bfb8c1514a6bc8025ea
+msgid "get_spo2.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:97 121bfd6a7b15410ebab089de1be9b7fe
+msgid "Get the IR value."
+msgstr ""
+
+#: ../../en/units/heart.rst:102 3eb7d82c3f644609939020c6f60e4e79
+msgid "|get_ir.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:13 2a94ce091fff496fa6b8745195d6a974
+msgid "get_ir.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:106 d3119550015b49d39156788a848113e8
+msgid "Get the red value."
+msgstr ""
+
+#: ../../en/units/heart.rst:111 8893bf05d5c243ada0c49be1e891d8b1
+msgid "|get_red.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:14 0cbce03f152344d58237dcb4ce327bd8
+msgid "get_red.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:115 ddb395cc8fb34372a692bb14395eb9e8
+msgid "Set the mode of the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst 0839a22fa85f48409ecc6a281ed272bf
+#: 6c46b3935a3444dfb353a4e43f1dbc83 cd884df57aa6451e92e634cbee7ffacd
+#: e963759061d347b4a89c3f10af684340
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/heart.rst:117 3beb349be9eb40ba95268a1dfebb4690
+msgid ""
+"The detect mode of the HeartUnit. Options: - ``HeartUnit.MODE_HR_ONLY``: "
+"Only heart rate - ``HeartUnit.MODE_SPO2_HR``: Heart rate and SpO2"
+msgstr ""
+
+#: ../../en/units/heart.rst:124 6f9717731c44487c88dd448188c48330
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:15 d3ddfd9992564a07ab767b03b22f7033
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:128 b597062bed2e4035a845844a96d7d94a
+msgid "Set the LED current of the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:130 d0f653a14c9a46b796000a80099879bb
+msgid ""
+"The LED current of the HeartUnit. Options: - "
+"``HeartUnit.LED_CURRENT_0MA``: 0mA - ``HeartUnit.LED_CURRENT_4_4MA``: "
+"4.4mA - ``HeartUnit.LED_CURRENT_7_6MA``: 7.6mA - "
+"``HeartUnit.LED_CURRENT_11MA``: 11mA - ``HeartUnit.LED_CURRENT_14_2MA``: "
+"14.2mA - ``HeartUnit.LED_CURRENT_17_4MA``: 17.4mA - "
+"``HeartUnit.LED_CURRENT_20_8MA``: 20.8mA - "
+"``HeartUnit.LED_CURRENT_24MA``: 24mA - ``HeartUnit.LED_CURRENT_27_1MA``: "
+"27.1mA - ``HeartUnit.LED_CURRENT_30_6MA``: 30.6mA - "
+"``HeartUnit.LED_CURRENT_33_8MA``: 33.8mA - "
+"``HeartUnit.LED_CURRENT_37MA``: 37mA - ``HeartUnit.LED_CURRENT_40_2MA``: "
+"40.2mA - ``HeartUnit.LED_CURRENT_43_6MA``: 43.6mA - "
+"``HeartUnit.LED_CURRENT_46_8MA``: 46.8mA - "
+"``HeartUnit.LED_CURRENT_50MA``: 50mA"
+msgstr ""
+
+#: ../../en/units/heart.rst:151 2c3afbced3a14437bec69aa656889e8d
+msgid "|set_led_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:16 cd25ed2b92754264aa63d000ff40d264
+msgid "set_led_current.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:155 152bbb9d025f4ebeb47356107a417211
+msgid "Set the pulse width of the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:157 233e05f74e8b4d33b88609eb5f7b712b
+msgid ""
+"The pulse width of the HeartUnit. Options: - "
+"``HeartUnit.PULSE_WIDTH_200US_ADC_13``: 200us - "
+"``HeartUnit.PULSE_WIDTH_400US_ADC_14``: 400us - "
+"``HeartUnit.PULSE_WIDTH_800US_ADC_15``: 800us - "
+"``HeartUnit.PULSE_WIDTH_1600US_ADC_16``: 1600us"
+msgstr ""
+
+#: ../../en/units/heart.rst:166 5dd93553c29747abbd7ef3ef79a08e18
+msgid "|set_pulse_width.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:17 e73c74d745844918b38b6cdd1f260f42
+msgid "set_pulse_width.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:170 25e37607e1d142228a85833437f319a1
+msgid "Set the sampling rate of the HeartUnit."
+msgstr ""
+
+#: ../../en/units/heart.rst:172 f3371b97ce9e44aea27e6301bcf44f1a
+msgid ""
+"The sampling rate of the HeartUnit. Options: - "
+"``HeartUnit.SAMPLING_RATE_50HZ``: 50Hz - "
+"``HeartUnit.SAMPLING_RATE_100HZ``: 100Hz - "
+"``HeartUnit.SAMPLING_RATE_167HZ``: 167Hz - "
+"``HeartUnit.SAMPLING_RATE_200HZ``: 200Hz - "
+"``HeartUnit.SAMPLING_RATE_400HZ``: 400Hz - "
+"``HeartUnit.SAMPLING_RATE_600HZ``: 600Hz - "
+"``HeartUnit.SAMPLING_RATE_800HZ``: 800Hz - "
+"``HeartUnit.SAMPLING_RATE_1000HZ``: 1000Hz"
+msgstr ""
+
+#: ../../en/units/heart.rst:185 5eb3f8c2df4f4f038d53c28c009043d9
+msgid "|set_sampling_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.heart.ref:18 7ac10e0bb04c4c1da3293e8aa25f3dc9
+msgid "set_sampling_rate.png"
+msgstr ""
+
+#: ../../en/units/heart.rst:190 73b63a8117ee49b2ac58d1450335206e
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/heart.rst:194 daeac42f37b745959ce48fff87abbb04
+msgid "Detect heart rate only."
+msgstr ""
+
+#: ../../en/units/heart.rst:198 f352e4694a0441718c87fd74b3ad6356
+msgid "Detect heart rate and SpO2."
+msgstr ""
+

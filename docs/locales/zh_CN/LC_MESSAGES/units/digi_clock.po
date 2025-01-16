@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/digi_clock.rst:2 a4dd6c7bf4c144b8a385581514e71a4d
+msgid "DigiClock Unit"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:6 df46d5b63e4b4a1d80b05b1bdd698e1c
+msgid ""
+"UNIT-Digi-Clock is a 2.1 inch 4-digit 7-segment display module. There are"
+" decimal points on each digit and an extra wire for colon-dots in the "
+"center, which can display Decimals and Clock. This module adopts TM1637 "
+"as the driver IC, and STM32F030 as I2C communication. I2C address can be "
+"modified per 4-bit dip switch. The red LED supports 8 brightness. And we "
+"have reserved 4 fixing holes there."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:14 6e37cb0c914f4ee599632f309bdc0ba4
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:16 1113ec0f8f4846b08a6d2571559fab42
+msgid "|DigiClockUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref eecd3335717146f69eb4104fa4eee748
+msgid "DigiClockUnit"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:19 25d6eb8174a746c1b2a95011e54f093d
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:26 a8cb2685857f4c1385e3e0d9d9615da8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:28 a445436282ba47158662d2e0857dce04
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:15 08d67e93851f495aa8ea3c1399149325
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:33 0d86ae95d31f4bbda55d7e6d3816ea5f
+msgid "|cores3_digi_clock_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:37 7b293272585543d48640c57fca42c021
+msgid "class DigiClockUnit"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:40 b82efa3ef65e43d58bad16290334617b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:44 55c7a30ca17849499e7e7d4b68bffab5
+msgid "Initialize the DigiClockUnit."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst 24959b2abda847d4be6e5b3b10fa94c4
+#: 4dcd3dda5a7548ecbf8811810dee60ab afd44bb30653406a8ce7a1f657221f56
+#: db4f023fb0d447dcbc7683e2da7ef8e0 e0db329c77b6473fa4e308296acbd56a
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:46 00694ec707324a50816458a4f84e3fa2
+msgid "I2C port to use."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:47 b589e656468f406eb7d156d9020d4d89
+msgid "I2C address of the DigiClockUnit."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:49 ../../en/units/digi_clock.rst:61
+#: ../../en/units/digi_clock.rst:72 ../../en/units/digi_clock.rst:84
+#: ../../en/units/digi_clock.rst:96 ../../en/units/digi_clock.rst:107
+#: ../../en/units/digi_clock.rst:118 0e0fe7346e2c4e8392bd087fcd6f0835
+#: 6886c74972b34a31ab146da108fc15b4 702383b101d5426f9b3841d6fafbe9d0
+#: 85d5665d313540cc8dea8392410f511b 8ca6dde4f01b46528d0101dc0f0e87c0
+#: 9d89ed68cae64f308aaab5d5f0c59abf 9ec39f9c86b24c6c9c71cf9897c769db
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:51 29ee3bee688a4530a80cd0e69cb3eb6a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:7 75d363764b98411dae36294a19eace9e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:55 2852412b07a34799b83d830335c270e0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:59 959393d2f4634ddfbbb199ddc315a6c2
+msgid "Clear the display."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:63 acc6c75277ea480b94311934359de4a3
+msgid "|clear.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:8 5f56464968034c5b86c5198d599fe54a
+msgid "clear.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:68 924c198408f04575b016686887df62a0
+msgid "Set the brightness of the display."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:70 1193bbedd5c145f2bb3677a42ef53b44
+msgid "The brightness of the display, range from 0 to 8."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:74 4c186d1eb1804ab882a713f3072e7d60
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:9 69c4ec883dee4662965fed18246fd413
+msgid "set_brightness.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:79 987b8453718e44d8a33a7fcd77b02677
+msgid "Write raw data to the display."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:81 b9858ed5fefd464d83069da19f6e9dc6
+msgid "The data to write."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:82 b7130f9ad2c74151ba59f0fe738947ba
+msgid "The index of the data, range from 0 to 4."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:86 c40f553e9d304956a887bdd28884cb12
+msgid "|set_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:10 e790a67a82df4b89bf0db281ad9fd287
+msgid "set_raw.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:91 e328b7c7c64e416697a8b1c88ed3b293
+msgid "Write a character to the display."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:93 fc8099f51bc947778cdc23870348f88d
+msgid "The character to write."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:94 10745098bff44cda91601e9bb3bfa1b1
+msgid "The index of the character, range from 0 to 4."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:98 bdf7c406f727484f9f08e68b0c7034a7
+msgid "|set_char.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:11 8e6269f3496243c08b5eec88e7dfd852
+msgid "set_char.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:103 3c82396613a844188d7452b7f36accf8
+msgid "Write a string to the display."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:105 937ebf1096944332b8d2d78cfc3dbca4
+msgid "The string to write."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:109 1129528c84ab4af3924beada364c15f4
+msgid "|set_string.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:12 3597d0bc35144d85b0f60b0d66088b62
+msgid "set_string.png"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:114 10ffce18a1634c2c81005d18c02857fa
+msgid "Get the firmware version of the DigiClockUnit."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst ea4ebb28c3ce45b2887a758d5f90cb3f
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:116 48857a489cc946749c81d2e2d4919bf1
+msgid "The firmware version."
+msgstr ""
+
+#: ../../en/units/digi_clock.rst:120 d20e6dcf6c5843299d48cd6e97847385
+msgid "|get_fw_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.digi_clock.ref:13 b8fa5aa8364c42b6b18522effbfc4cec
+msgid "get_fw_version.png"
+msgstr ""
+

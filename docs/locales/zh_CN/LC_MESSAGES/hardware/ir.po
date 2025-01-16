@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/ir.rst:2 c4b207bd81b84f8790d794399198ac59
+msgid "IR"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:6 58fec6ecab7045438c2f62bb3f800d59
+msgid ""
+"IR is used to control the infrared receiving/transmitting tube built into"
+" the host device."
+msgstr ""
+
+#: ../../en/hardware/ir.rst:8 c844b8cba8e04a7ea6fc4742e5da043b
+msgid "The specific support of the host for IR is as follows:"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:15 3e665c05165e4299aef03d693b4471a8
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:15 6c5bea20fd864067848d3517af69c35e
+msgid "IR Transmitter"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:15 c1279e016ec34f1e8b64a11da1438e15
+msgid "IR Receiver"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:17 885b357355c6451f93d570bdd6121344
+msgid "Atom Lite"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:17 ../../en/hardware/ir.rst:19
+#: ../../en/hardware/ir.rst:21 ../../en/hardware/ir.rst:23
+#: ../../en/hardware/ir.rst:25 ../../en/hardware/ir.rst:27
+#: ../../en/hardware/ir.rst:29 ../../en/hardware/ir.rst:31
+#: ../../en/hardware/ir.rst:33 ../../en/hardware/ir.rst:35
+#: 1844459702a84f1680ad2c1b5b954390 69111850486b4b42a45d70e9790d15d8
+#: 703e521b421d41599cceffd5f46b5292 84e4dea18e0d4fb88a59c2cffda33385
+#: 88b66ca5e31840d1bf5cf0f1ee474007 91cff11f40234effbe93642721073811
+#: ad4fab7c2f5f4a37b146d2d9e80f3b54 bf85df8c6a5944feb6430921a567cfd7
+#: d81b9b2cd7da4e3b8ef6f477db465345 f25ef16e89274ab79e314162c453cc3b
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:19 f80077f6ad5e48a98f7b1a0115e0c230
+msgid "Atom Matrix"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:21 08516d55687b4cc4965eb8cef918d352
+msgid "Atom U"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:23 aef0639d43fb42b2a1b7a7b2109fb34a
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:25 4d7e216247c340fbb4635767fa3472e4
+msgid "AtomS3U"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:27 0fb77f3da6fe4c709802f5a7c5ad8bd9
+msgid "M5StickC"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:29 f5e09a66659340f699e2800e3ebfb0d3
+msgid "M5StickC PLUS"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:31 189bc1476a304e5b9c531cd734b99832
+msgid "M5StickC PLUS2"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:33 f476759de82e4ddfa60867cf38f50dba
+msgid "Cardputer"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:35 e609490e687a472b9721361b03bdca82
+msgid "M5Capsule"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:40 1c7f6aa53ac741069ea77f289be94752
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:46 2d1948f2fcd24599b94300a5188d08f6
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:48 5a5d391a021f487b9461b98b16b4a485
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.ir.ref:4 24585a8d8491439daa76f04b1e03b5e5
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:53 6c45142cedfb44b6ab4be573700c647c
+msgid "|ir_stickcplus2_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:58 e662e9a9fc49479ebf0ce89cf75c0ceb
+msgid "class IR"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:61 db99a9d9ab224b029e97e60b85b9bdf3
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:65 7627ccf00a7e478ba7ff15464f6208d3
+msgid ""
+"Initializes the IR unit with the appropriate pins based on the M5Stack "
+"board type."
+msgstr ""
+
+#: ../../en/hardware/ir.rst:68 ../../en/hardware/ir.rst:83
+#: 4eb9d3fcf12c47048f73c42aa7adb68b 574f159f67a24892952e8139f464c05b
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:70 a7307bfc73bb46008001d9dc3fabd87c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.ir.ref:1 d7fe104ca45a4f49a218c19d7b5c3df5
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:74 2dad05f881d648038924c82d8e0122cc
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:78 b70c79cd33d7484681a656eb16fcd6b8
+msgid ""
+"Transmits an IR signal with the specified command and data using the NEC "
+"protocol."
+msgstr ""
+
+#: ../../en/hardware/ir.rst f337c3e7904649769697f7c6fc5ef45f
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/ir.rst:80 fe4da876d4f84421b2a420bcc32837c1
+msgid "The command code to be transmitted."
+msgstr ""
+
+#: ../../en/hardware/ir.rst:81 b996ca91c20847808ca3b16b612793f9
+msgid "The data associated with the command."
+msgstr ""
+
+#: ../../en/hardware/ir.rst:85 e7e6a1ee3daa4146a20be68ab615fbb5
+msgid "|tx.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.ir.ref:2 077194e6e5584bf39f7e81383ac22d8c
+msgid "tx.png"
+msgstr ""
+

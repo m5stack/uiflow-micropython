@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/adc.rst:2 b09c8435bc044d0795504a19849d947e
+msgid "ADC (analog to digital conversion)"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:7 08620cab91304124b239bef677e82f30
+msgid ""
+"On the ESP32 chip, ADC functionality is available on pins 32-39 (ADC "
+"channel 1) and pins 0, 2, 4, 12-15 and 25-27 (ADC channel 2)."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:10 855ec64e41d6449bbfe8623e78564656
+msgid ""
+"On the ESP32S3 chip, ADC functionality is available on pins 1-10 (ADC "
+"channel 1) and pins 11-14 and 17-20 (ADC block 2)."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:13 1ea507908cb640cc807e98aedae7005f
+msgid ""
+"ADC channel 2 is also used by WiFi and so attempting to read analog "
+"values from channel 2 pins when WiFi is active will raise an exception."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:17 e41a002cb8db4d74bdde96eccf58a1d4
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:23 b7a3dd70805d46b3948766c4225e4a6e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:25 6c25595565f242b9afafaf666413ad4b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:14 42c9cb7f99264767b2fe8f55525cc14b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:29 eb7413041ea343448b551e4d9258ac83
+msgid "|adc_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:33 750a728b0c7342c28d88ab0cdba52f37
+msgid "class ADC"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:37 227c7d3757c44e8eb06db52dbd2654e3
+msgid ""
+"Return the ADC object for the specified pin. ESP32 does not support "
+"different timings for ADC sampling and so the ``sample_ns`` keyword "
+"argument is not supported."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:41 44b48ff2fe6f412aaaab81b4dd834abc
+msgid ""
+"To read voltages above the reference voltage, apply input attenuation "
+"with the ``atten`` keyword argument. Valid values (and approximate linear"
+" measurement ranges) are:"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:45 c68df92e6fb1483e8394c1af90483f17
+msgid "``ADC.ATTN_0DB``: No attenuation (100mV - 950mV)"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:46 a7cb5b8ea0d04d62a5c52ce8108c6432
+msgid "``ADC.ATTN_2_5DB``: 2.5dB attenuation (100mV - 1250mV)"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:47 1805bb44887949e9866cf41bc8c75fb0
+msgid "``ADC.ATTN_6DB``: 6dB attenuation (150mV - 1750mV)"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:48 6197cc61236d438d88f514f6f1ef6fef
+msgid "``ADC.ATTN_11DB``: 11dB attenuation (150mV - 2450mV)"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:50 ../../en/hardware/adc.rst:65
+#: ../../en/hardware/adc.rst:75 ../../en/hardware/adc.rst:91
+#: ../../en/hardware/adc.rst:99 ../../en/hardware/adc.rst:115
+#: 01153958c23a48d18c36fbb91ffff7b0 04559ad0c1dd4220ac4ed89f4fb8de9a
+#: 2ab4f219a8814acd938bf0343410cd4d ae39492ddc2f464280ca0a185900b6dc
+#: e90533f5dcc842ab99c17dcb7779b6b6 ec914fa93a034b6583a7583645da2006
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:52 5ef6b01805d7415a92cd29c2365dd081
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:2 da607718c4724485b0fd18221eb466a6
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:55 518c1693909a402daafd79f88cad0917
+msgid ""
+"Note that the absolute maximum voltage rating for input pins is 3.6V. "
+"Going near to this boundary risks damage to the IC!"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:59 b6ec8ea3a5ea4b43a490983fd8344465
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:62 b1c8e5ab0bdd4c93b4db59617f12bb3d
+msgid ""
+"This method returns the raw ADC value ranged according to the resolution "
+"of the block, e.g., 0-4095 for 12-bit resolution."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:67 1aeb05601da54450829086bcffa23871
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:4 84af39aa77db42f4be562750c2a91fe0
+msgid "read.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:71 7977e5da236b4b3584bec4f739199128
+msgid ""
+"Take an analog reading and return an integer in the range 0-65535. The "
+"return value represents the raw reading taken by the ADC, scaled such "
+"that the minimum value is 0 and the maximum value is 65535."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:77 03afbb4a796b4d3c943f3ce178d7ad20
+msgid "|read_u16.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:6 d649f2c2ee99452ebae668b038b69627
+msgid "read_u16.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:81 02267f9812ca4089a6b22e1006676726
+msgid ""
+"This method uses the known characteristics of the ADC and per-package "
+"eFuse values - set during manufacture - to return a calibrated input "
+"voltage (before attenuation) in microvolts. The returned value has only "
+"millivolt resolution (i.e., will always be a multiple of 1000 "
+"microvolts)."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:86 30cc9cede5fe4e01ab145aa20a486b03
+msgid ""
+"The calibration is only valid across the linear range of the ADC. In "
+"particular, an input tied to ground will read as a value above 0 "
+"microvolts. Within the linear range, however, more accurate and "
+"consistent results will be obtained than using `read_u16()` and scaling "
+"the result with a constant."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:93 c40ba7bc731d4fbf96c0dd7629a84adb
+msgid "|read_uv.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:8 0b17fdd390ba476ca044df5fbd381d85
+msgid "read_uv.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:97 877a0ffc61c642f180e723ae8deadd4c
+msgid "Equivalent to ``ADC.init(atten=atten)``."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:101 3f5c86caa23540a4b0734f1551cea149
+msgid "|atten.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:10 c23b7f5ce37e415280090461a4a94fd5
+msgid "atten.png"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:105 2ff0c6b22346439ba5d12ce17a72da5e
+msgid "Equivalent to ``ADC.block().init(bits=bits)``."
+msgstr ""
+
+#: ../../en/hardware/adc.rst:107 f8c05d217181466cbdb042125ee6ec4c
+msgid ""
+"For compatibility, the ``ADC`` object also provides constants matching "
+"the supported ADC resolutions:"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:110 8c8c770d76db41da8b8f93644520f932
+msgid "``ADC.WIDTH_9BIT`` = 9"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:111 1534b7ca699b4d889d358928a3b69d66
+msgid "``ADC.WIDTH_10BIT`` = 10"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:112 7b997dd6501b4551a14f6b3926d45abb
+msgid "``ADC.WIDTH_11BIT`` = 11"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:113 3c5ebcc1961d4d24a58c02df93a5a641
+msgid "``ADC.WIDTH_12BIT`` = 12"
+msgstr ""
+
+#: ../../en/hardware/adc.rst:117 c18be24ba65844738e1b9991e658ce41
+msgid "|width.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.adc.ref:12 d52a6a22adeb43c08d267df6c5213ec0
+msgid "width.png"
+msgstr ""
+

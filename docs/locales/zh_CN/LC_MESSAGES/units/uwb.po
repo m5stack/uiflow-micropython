@@ -1,0 +1,353 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/uwb.rst:3 af35489e44df4c6c8f9096e61f964d70
+msgid "UWB Unit"
+msgstr ""
+
+#: ../../en/units/uwb.rst:7 4f60093fb29049faa506626618e9845d
+msgid ""
+"UWB is a Unit which integrates the UWB(Ultra Wide Band) communication "
+"protocol which uses nanosecond pulses to locate objects and define "
+"position and orientation. The design uses the Ai-ThinkerBU01 Transceiver "
+"module which is based on Decawave's DW1000 design. The internal STM32 "
+"chip with its integrated ranging algorithm,is capable of 10cm positioning"
+" accuracy and also supports AT command control. Applications include: "
+"Indoor wireless tracking/range finding of assets,which works by "
+"triangulating the position of the base station/s and tag (the base "
+"station resolves the position information and outputs it to the tag). The"
+" firmware currently carried by this Unit only supports the transmission "
+"of ranging information, and does not currently support the transmission "
+"of custom information. When in use, it supports the configuration of 4 "
+"base station devices (using different IDs), and only a single tag device "
+"is allowed to operate at the same time."
+msgstr ""
+
+#: ../../en/units/uwb.rst:11 544069a6fd1e43e19dea8c7379464438
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:13 d6a8056da98545968a21333dd7162034
+msgid "|UWBUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref a7668a3fd23e4bc7ba1475b8525539c7
+msgid "UWBUnit"
+msgstr ""
+
+#: ../../en/units/uwb.rst:15 1acebb14ca194167b9f9333a0fd51219
+msgid "Micropython Anchor Example:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:21 1120701d3c0a4da7abc8af4396f6843e
+msgid "Micropython Tag Example:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:28 a02d1fdf0d7d4cf2b706707924a14c85
+msgid "UIFLOW2 Anchor Example:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:30 3d566ef2d0fa4a908ccba85e91440490
+msgid "|example_anchor.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:22 cee2a464116644768a040bcc16a2c563
+msgid "example_anchor.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:32 b87aa0002e654e40bb9ad2b11a8b85b7
+msgid "UIFLOW2 Tag Example:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:34 604aebf2000346dbb9cba20c1ca76fc8
+msgid "|example_tag.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:24 db720adbfea84f52a88e003d2eb453ae
+msgid "example_tag.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:38 67c24d3ff99f4a4282c21d3b0299995c
+msgid "|core2_uwb_anchor_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/uwb.rst:40 7f4044b0a996408cbd5fb5933297945c
+msgid "|stickc_plus2_uwb_tag_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/uwb.rst:43 3f438ebe5680409a9c5b6f87705a7a9e
+msgid "class UWBUnit"
+msgstr ""
+
+#: ../../en/units/uwb.rst:46 0e5d25e11c6b4294a4a12258b82eab0d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/uwb.rst:50 58a2f96e77fc475ab71b991dd8d98ffb
+msgid "Create a UWB unit object."
+msgstr ""
+
+#: ../../en/units/uwb.rst 300161e56639462e82efc28636a775b6
+#: 4589fcfc3e0f428883813993df6f6318 5d48b13617304d73ab17b2a2f6e5ceef
+#: 84be3004340a4b60958efcefc466e60e a5b3de49864b4ce1bf913d5681a278c7
+#: a635b0333a4c4de38cfd87fb51eb4d7c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/uwb.rst:52 b4af2dc765004c7e9cb88361125bec2e
+msgid "UART ID."
+msgstr ""
+
+#: ../../en/units/uwb.rst:53 d3d068309f074304b852eacb9336060e
+msgid "The port that the unit is connected to."
+msgstr ""
+
+#: ../../en/units/uwb.rst:54 ../../en/units/uwb.rst:91
+#: f22cc67adce1481c8f56facb2f108771 f36a0f73ae62447797e489710b240f0c
+msgid "device mode."
+msgstr ""
+
+#: ../../en/units/uwb.rst:55 ../../en/units/uwb.rst:81
+#: ../../en/units/uwb.rst:105 9fea4fb056e347039cb89147c804a0c8
+#: a3588819dc0d43ebb294410111a41a1b dc0add4008f7419e8a802b3fa66dd395
+msgid "device ID."
+msgstr ""
+
+#: ../../en/units/uwb.rst:56 53818acf16fa45be85e854fa94e47923
+msgid "verbose output."
+msgstr ""
+
+#: ../../en/units/uwb.rst:58 ../../en/units/uwb.rst:73
+#: ../../en/units/uwb.rst:83 ../../en/units/uwb.rst:93
+#: ../../en/units/uwb.rst:107 ../../en/units/uwb.rst:117
+#: ../../en/units/uwb.rst:127 ../../en/units/uwb.rst:141
+#: ../../en/units/uwb.rst:151 ../../en/units/uwb.rst:166
+#: ../../en/units/uwb.rst:174 028af7510e874632b6c0c7b668efa47e
+#: 114795de1dce431183125f3b93f53f54 19dd7d360f624739b9506d6f1d860242
+#: 613e3cf3732b4baa84ca8c3986d4a7bd 6f74ae78fe7d4941aa550f59a7026d08
+#: 7155cb2d4e93444090ff35191e2f7508 936d16c20b7c4995aa3f34a2991e6635
+#: ba5db19855ac4c97bf910bb095ac0932 ca08e565b0ae4c2c90bcdf6b9e5ea1e1
+#: dbdfa93f4a26443e9fe71c567febd571 e8b9b9ffa7cf44d187570164eb56ff55
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/uwb.rst:60 d293f8817b1c4f019c6f6121f84aff78
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:7 0257fc795f39425daedd682b4a465b8e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:64 881c2b42f7ed49d3b5099fea630c3f1f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/uwb.rst:68 55586ddee12b4d1c99ca2844fb100c37
+msgid "Get the distance to the anchor ID (0 ~ 3)."
+msgstr ""
+
+#: ../../en/units/uwb.rst 2d20f0f090994a0daa19bcb5a4be5718
+msgid "return (float)"
+msgstr ""
+
+#: ../../en/units/uwb.rst:70 670706c4ac4245978152fa1b0f1dd672
+msgid "distance in meters."
+msgstr ""
+
+#: ../../en/units/uwb.rst:71 ../../en/units/uwb.rst:159
+#: a0f0a3a2be104ac49abd82ade1528d7b e767e9cbc24642369ce8ff88211840ca
+msgid "anchor ID (0 ~ 3)."
+msgstr ""
+
+#: ../../en/units/uwb.rst:75 90dfc4e760e44e438222f2dacf8f7cc8
+msgid "|get_distance.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:8 f063e41f1bb44a5189fed7384925cd7a
+msgid "get_distance.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:79 9ab382770f864cc09b735c7cf495c331
+msgid "Get the device ID."
+msgstr ""
+
+#: ../../en/units/uwb.rst 7300b998b5774066b0317ef38faf4633
+#: dc45fc7d507e4d6fabca97adcddd97cd
+msgid "return (int)"
+msgstr ""
+
+#: ../../en/units/uwb.rst:85 47182fc6ff27477a8a21a483160f769d
+msgid "|get_device_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:9 e467a756fefd4868a87bd2673f3eb285
+msgid "get_device_id.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:89 70a1f3640af942e3ac6318823a4877df
+msgid "Get the device mode."
+msgstr ""
+
+#: ../../en/units/uwb.rst:95 24db623203e84930ae2b4a7104741cb6
+msgid "|get_device_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:10 530c13702f0043178a5f86516dfc9f23
+msgid "get_device_mode.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:99 b698bf148e304ee9ae653b8fee4fffb9
+msgid "Set the device mode and ID."
+msgstr ""
+
+#: ../../en/units/uwb.rst:101 68bc323d8ff544ab87175bb2e77d134e
+msgid "device mode. Options: - ``Anchor``: UWBUnit.ANCHOR - ``Tag``: UWBUnit.TAG"
+msgstr ""
+
+#: ../../en/units/uwb.rst:109 58a3abe5a700444491ae451f6fba9cad
+msgid "|set_device_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:11 07c03f86ee6b4003b63ca83478bb2c77
+msgid "set_device_mode.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:113 c379e67566574e57bdaea73b71e4ff0f
+msgid "Check if the UWB unit is connected."
+msgstr ""
+
+#: ../../en/units/uwb.rst 6b6e1dfb1f6d4f71a1a2a4499ebc1e54
+#: d7b213733e904663b67af3a856ac7f99
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/uwb.rst:115 e98b9a371d034e8eaa53eac1b76babcf
+msgid "True if connected, False otherwise."
+msgstr ""
+
+#: ../../en/units/uwb.rst:119 7411f2d067f14b53a807acd60cb17daf
+msgid "|isconnected.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:12 8e3b4e5e145d4e93a24e89fe7b4fa9ba
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:123 842044db7d3440df9d84867569bfcf3d
+msgid "Get the UWB unit firmware version."
+msgstr ""
+
+#: ../../en/units/uwb.rst:125 6af91ccc5bd84f688a981675db52ee17
+msgid "firmware version."
+msgstr ""
+
+#: ../../en/units/uwb.rst:129 1611736f48f3498ea202e9e559598892
+msgid "|get_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:13 525c8fe7a2ea47c8b737ff5a3fc34de4
+msgid "get_version.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:133 d7ad4f8b167d421ca498236f2c36f8b1
+msgid "Reset the UWB unit."
+msgstr ""
+
+#: ../../en/units/uwb.rst:137 6740387a73f8430cb2f57653fe5f9e1a
+msgid "Set the measurement interval."
+msgstr ""
+
+#: ../../en/units/uwb.rst:139 8cd014fc49a1400cb156cd296085d8c4
+msgid "measurement interval."
+msgstr ""
+
+#: ../../en/units/uwb.rst:143 4737a4c362ed4e6f9206fb391b986c6c
+msgid "|set_measurement_interval.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:16 239f40fc9a734ef29909d5d1a8845cb9
+msgid "set_measurement_interval.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:147 c325dbf00cf74104b6ce8153b2b6250d
+msgid "Set the measurement output."
+msgstr ""
+
+#: ../../en/units/uwb.rst:149 1d9c6a9da3004337abaf5599d3065580
+msgid "enable or disable measurement output."
+msgstr ""
+
+#: ../../en/units/uwb.rst:153 5a9a5be21c3848cab3561e3b55041abd
+msgid "|set_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:17 6c9d7d25d61d489592afbf98cc7d633c
+msgid "set_measurement.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:157 1b507052a94b4abc9596936bac4afa16
+msgid "Set the callback function for the anchor status."
+msgstr ""
+
+#: ../../en/units/uwb.rst:160 a38b551294904d53a4d9a01423285217
+msgid ""
+"anchor status. Options: - ``ONLINE``: UWBUnit.ONLINE - ``OFFLINE``: "
+"UWBUnit.OFFLINE"
+msgstr ""
+
+#: ../../en/units/uwb.rst:164 2309732875a84e11b3ca8c134ef60c8e
+msgid "callback function."
+msgstr ""
+
+#: ../../en/units/uwb.rst:168 bf8547c2ae784aaf98e7e342066b62c8
+msgid "|set_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:19 073de4a2601f4fbe9b0cf8bebc795c5f
+msgid "set_callback.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:172 b4d197047ee3441ca66c50afd4427120
+msgid "Update the distances and anchor status."
+msgstr ""
+
+#: ../../en/units/uwb.rst:176 2fa2e71201594237b5f344eb0be5f20d
+msgid "|update.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uwb.ref:20 f0a224d0f0014b3181d3f3217089aced
+msgid "update.png"
+msgstr ""
+
+#: ../../en/units/uwb.rst:181 4f32be818b0a46cbb986d89091710b55
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/uwb.rst:187 1b5089667d854793a1a14e4f2465cc21
+msgid "device role"
+msgstr ""
+
+#: ../../en/units/uwb.rst:194 22c1e8ad73904fa68f6cab5aed0d7ab7
+msgid "device status"
+msgstr ""
+

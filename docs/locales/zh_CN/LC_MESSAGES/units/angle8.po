@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/angle8.rst:3 af16c227cb5f47a2bcd061b2b7c4a2f8
+msgid "Angle8 Unit"
+msgstr ""
+
+#: ../../en/units/angle8.rst:7 5055c2a5717a4076a914be2898c82904
+msgid ""
+"UNIT 8Angle is an input unit integrating 8 adjustable potentiometers, "
+"internal STM32F030 microcomputer as acquisition and communication "
+"processor, and the host computer adopts I2C communication interface, each"
+" adjustable potentiometer corresponds to 1 RGB LED light, and there is "
+"also a physical toggle switch and its corresponding RGB LED light, "
+"containing 5V->3V3 DCDC circuit."
+msgstr ""
+
+#: ../../en/units/angle8.rst:9 2ef3a5fbf24148bd878c9ba19397709c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/angle8.rst:11 cf61cf5e55f14186a0b3496825bb998e
+msgid "|Angle8Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref d8cf9c1131c9469395f4228ff3d598b0
+msgid "Angle8Unit"
+msgstr ""
+
+#: ../../en/units/angle8.rst:13 92500a1d93ef4695b3bb343b311a03c6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/angle8.rst:20 a435ed199c124a7e920b90c3253bf702
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/angle8.rst:22 53ce53b8aa174fe2ae38cfda41284ff2
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:17 af7a7baa8a7a49e4aa3929c9ec23721b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:26 34040e4c97da4156a14bab524a2c9ad6
+msgid "|angle8unit_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/angle8.rst:29 e21204d168b84c9787ea50b4324549fb
+msgid "class Angle8Unit"
+msgstr ""
+
+#: ../../en/units/angle8.rst:32 d40703aec9024157a45836003508c55f
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/angle8.rst:36 8d84052add684683b28526ffad46d595
+msgid "Initialize the Angle8Unit with the specified I2C interface and address."
+msgstr ""
+
+#: ../../en/units/angle8.rst 01df3342f7e34a36af8d2b52b01ba9be
+#: 23abb88ab6c14deda7d4328667018d7c 362273c931bd47ad84e9e61c1ba95590
+#: 3ac01838ffd343e984981c2f895b51a0 7f306d77b53c493cbf835dc52a939e0b
+#: 8bcda6291b714353bf053e42f38cb887 ad6daba0710b4772ae79ed51f760c3fe
+#: cc0f365c8a6f45b28496f64f328660f6 fb252043ebbb489b946d31f3709fb35c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/angle8.rst:38 b895f98da5544da0876a0b6fe7c125c3
+msgid "The I2C or PAHUBUnit instance for communication."
+msgstr ""
+
+#: ../../en/units/angle8.rst:39 b42a5381cf90466b8e47735b274e6025
+msgid "The I2C address of the device (default is ANGLE8_ADDR)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:41 ../../en/units/angle8.rst:59
+#: ../../en/units/angle8.rst:69 ../../en/units/angle8.rst:78
+#: ../../en/units/angle8.rst:90 ../../en/units/angle8.rst:104
+#: ../../en/units/angle8.rst:115 ../../en/units/angle8.rst:125
+#: ../../en/units/angle8.rst:135 1f813b33dfe84204bdf6ebe50c41e1fa
+#: 4a7cae6307394406ae9fc6956a8d1b62 62f3d554b65a43d9978e7bbb71a39824
+#: 7bf71963fda9462f87b80ec4662a5080 7c71d0603a0f45218fdcc9424d7d8f43
+#: 92f718952be545a6a0551d4a8ea844de 98ef9904f92d446896b9b5a24c107b55
+#: bd976ecc649f4f2e8147164438c7f883 e553a8e324ee41b5b4396c8329a85ef1
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/angle8.rst:43 93269d145e29406b903dac554bf17327
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:7 72c6c562f5d74e27b99192db4e53a0eb
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:47 74932b0e95014a718899165e9eb48f04
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/angle8.rst:51 8898c5c154c24ff0bd214b53a03d9e7f
+msgid "Check if the device is available on the I2C bus."
+msgstr ""
+
+#: ../../en/units/angle8.rst:55 6629c541ac4648c8aec625bc571f73c5
+msgid "Get the raw 12-bit ADC value from the specified channel."
+msgstr ""
+
+#: ../../en/units/angle8.rst:57 ../../en/units/angle8.rst:67
+#: 6c2f60ac11fd4b49badd2a9e2a76ade4 e715b8dd748043159979f6738dace913
+msgid "The channel number (1 to 8)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:61 92f8a7870c2b45dbb7f7c48a284301a8
+msgid "|get_adc12_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:8 da49e915ef864da2adba0c4fb288eafd
+msgid "get_adc12_raw.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:65 a8ae28c287b143649926fd4c886aec71
+msgid "Get the raw 8-bit ADC value from the specified channel."
+msgstr ""
+
+#: ../../en/units/angle8.rst:71 d140aeb0bc8e4bb08b3e50d024495295
+msgid "|get_adc8_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:9 e773b5810ad64e16b507c308353ce68a
+msgid "get_adc8_raw.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:75 739230ddd70a416cbee21177d6dc30f1
+msgid "Get the status of the switch button."
+msgstr ""
+
+#: ../../en/units/angle8.rst:80 da9a0711dbc0476686fb57e1b58ed612
+msgid "|get_switch_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:10 3033f7bb00814033be0896d27b3bbedf
+msgid "get_switch_status.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:84 063c21d48e334428ab1c1419f12e3842
+msgid "Set the RGB color and brightness of the specified LED channel."
+msgstr ""
+
+#: ../../en/units/angle8.rst:86 ../../en/units/angle8.rst:112
+#: 2386afb3e9844b4caa5a9e238c9edd51 36b29eb0b94245bd9e396d9c78657b62
+msgid "The LED channel number (0 to 8)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:87 ../../en/units/angle8.rst:100
+#: ../../en/units/angle8.rst:113 0d5cdd9e1fb54c33a7ec6fd7da53b610
+#: 3051de0e2db64041a3fe01db0f9fecbb b4ec9dda21c74379b11b5c5e4722558f
+msgid "The RGB color value (0x00 to 0xFFFFFF)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:88 ../../en/units/angle8.rst:101
+#: 12126abd01b2493bb4dd7338d64ff6ab 3be5a433d5f045edb3df98df200ab8bd
+msgid "The brightness level (0 to 100, default is 50)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:92 b3797220358547f4985604050c5f38ce
+msgid "|set_led_rgb.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:11 18b7de2a98da4ef5a5fc738aa43a460c
+msgid "set_led_rgb.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:96 921ac07462ca4ffebb900279e56dfc3a
+msgid "Set the RGB color and brightness for a range of LED channels."
+msgstr ""
+
+#: ../../en/units/angle8.rst:98 ca59d798834e4ce19748be96d207192f
+msgid "The starting LED channel (0 to 8)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:99 a2a1cd44dc884436a5181be286b8e1cf
+msgid "The ending LED channel (0 to 8)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:102 811a293464fb4bf184ca50f36f3dd1f5
+msgid "The delay in milliseconds between setting each channel (default is 0)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:106 2be7515e8e6e4175a07f67b9ff3d56ad
+msgid "|set_led_rgb_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:12 b8356216354a4d59b4765d647ad1f03d
+msgid "set_led_rgb_from.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:110 0fde16fe40094e8a9db57a0aba5f4cc8
+msgid "Set the LED brightness synchronized with the angle value."
+msgstr ""
+
+#: ../../en/units/angle8.rst:117 d23fcc26aa2e46ea9e734277601b499d
+msgid "|set_angle_sync_bright.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:13 678f7170ca1548fb907cf2b5893de9bb
+msgid "set_angle_sync_bright.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:121 8ced03668cf44e509e60e3cae7bfcf66
+msgid "Get device specifications such as firmware version or I2C address."
+msgstr ""
+
+#: ../../en/units/angle8.rst:123 f8d1f6bdd44f4f879cea6cf09437fa6e
+msgid "The register to read (FW_VER_REG or I2C_ADDR_REG)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:127 bb11e44c53024db68864adc7fb0854bf
+msgid "|get_device_spec.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:14 7ee27629799c49f2b76a6a84d37cf93d
+msgid "get_device_spec.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:131 1e79f317a94a4b83923b4440bf14bbd2
+msgid "Set a new I2C address for the device."
+msgstr ""
+
+#: ../../en/units/angle8.rst:133 b6e71ebb05d24d7ba1ff1af77728f247
+msgid "The new I2C address (1 to 127)."
+msgstr ""
+
+#: ../../en/units/angle8.rst:137 22a0427af27d420e8e12a5a15b6f5864
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.angle8.ref:15 1f7e9d39de0d4272ac8484c15c3bb373
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/angle8.rst:141 0e20740dc1bc46d4822f830fdba11e04
+msgid "Read a specified number of bytes from a device register."
+msgstr ""
+
+#: ../../en/units/angle8.rst:143 4b8d69e8347748a6a9ae5846203c55ef
+msgid "The register address to read from."
+msgstr ""
+
+#: ../../en/units/angle8.rst:144 52e6e5e2556344e8ba0f2d5a9c723336
+msgid "The number of bytes to read."
+msgstr ""
+

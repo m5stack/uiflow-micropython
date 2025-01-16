@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/gps_v11.rst:3 5ffc9f85a991456cb33a4b4638896b9b
+msgid "GPS V1.1(SMA) Unit"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:7 ebc36d7de28041b8b0cb98ef35d61718
+msgid ""
+"GPS Unit v1.1 is a GNSS global positioning navigation unit, integrating "
+"the high-performance CASIC navigation chip AT6668 and signal amplifier "
+"chip MAX2659, with a built-in ceramic antenna, providing more precise and"
+" reliable satellite positioning services."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:9 f984cac82e114fcabc21cc24378359e1
+msgid ""
+"GPS SMA Unit is a GNSS global positioning navigation unit that integrates"
+" the high-performance CASIC navigation chip AT6668 and the signal "
+"amplifier chip MAX2659. It uses an external antenna to provide more "
+"accurate and reliable satellite positioning services."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:11 6a111d491caf4586a26d4a808ebff631
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:13 ea5a31f907fe485c89018b665601b62c
+msgid "|GPSV11Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref f7cf59e30f2d4d5cafdf4fd3088c151c
+msgid "GPSV11Unit"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:15 a9cd7d3cd8c54f2294034fdb66d9242c
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:22 c92b68d1d8534a1b92d5b2e793dc702a
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:24 bcc7db6d8d27408c8e650939259be2a3
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:8 29f76121f40f48749f5dfa555fe173d9
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:28 15235be9ca3742c09381252f072f479c
+msgid "|gpsv11_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:31 9e9e69ce82364a8faf10ef687531bc7f
+msgid "class GPSV11Unit"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:34 0f823b2afe154bf287a8e82eb1de3809
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:38 31593fcae9a8425ba26b277b7341b62a
+msgid ""
+"Initialize the GPSV11Unit with a specific UART id and port for "
+"communication."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst 236210bd657247fab0b1e7d1d1146bc8
+#: 35cb487d1d4444fb87ae8a03c107fa00 89626b178d8b471fb543f1efe2304ad1
+#: a5bf3106d1634184920ea3d691a96f45 bb5f43211ebc417b810e0af35ae19a6a
+#: cc13fa292ba040c5b63a796198245d77 dc3da2f887b446358c889046620a3794
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:40 4ecdb1549c824b2680a4b9b092611fc5
+msgid "The UART ID for communication with the GPS module. It can be 0, 1, or 2."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:41 bf998e7ebd4844aa9e33919056da5b21
+msgid "A list or tuple containing the TX and RX pins for UART communication."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:43 ../../en/units/gps_v11.rst:57
+#: ../../en/units/gps_v11.rst:67 ../../en/units/gps_v11.rst:77
+#: ../../en/units/gps_v11.rst:87 ../../en/units/gps_v11.rst:97
+#: ../../en/units/gps_v11.rst:107 ../../en/units/gps_v11.rst:117
+#: ../../en/units/gps_v11.rst:127 ../../en/units/gps_v11.rst:137
+#: ../../en/units/gps_v11.rst:147 ../../en/units/gps_v11.rst:157
+#: ../../en/units/gps_v11.rst:167 ../../en/units/gps_v11.rst:177
+#: ../../en/units/gps_v11.rst:187 ../../en/units/gps_v11.rst:197
+#: ../../en/units/gps_v11.rst:207 ../../en/units/gps_v11.rst:215
+#: 2ad1b9ab7ab04f74ab09d988f088a93d 2d9a697be81c4825ad0aa1ac078a0984
+#: 3ae74cafa8094950bc3bd2400d96cbaf 43f99f973bee4e6aa933e6aa6dcee0a2
+#: 462bf8ee39844f249ce6f202a64e163b 4d92605c620341c993e8276bc45097b1
+#: 4da5b5ad55bc4480841c280943b01b21 62378d9139f74f76afa764e033eca948
+#: 6260cc8681994892b17ecfc450ad90e4 6931427776274e6c982e2f9bc921319b
+#: 970755188ab14b0fa6c21f194a095557 9da794a0ad414580914543ba323c3f50
+#: 9fe0c67e548b45cfaae88d7afce57e34 a62cfb019fb945c0b10db97b82d09dee
+#: a9cc3b1296d2449597cd17148c67faa5 f48e5d1414aa48be953dca203fc62033
+#: f71f4c4b32574430b327ca769811ed75 fa9ef3b2898f438e8f86378112deb6ec
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:45 179f6c3afc77470da12b72547f2bb390
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:7 f1c31786edc14aecaba302daa82bd889
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:49 951f9a2e3992449ab05a19862e32b25c
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:53 51ea461299b745abb0d632dd4457e243
+msgid "Set the working mode of the GPS module."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:55 7b733ab75a7d4fc483961e734ee0768c
+msgid "The mode to set, defined by the GPS module."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:59 70b2f0961bed4e608f45bf4afaa7a215
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:9 37d276b9a72e4861940acc18d57e067c
+msgid "set_work_mode.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:63 dc28ab4a3f9a4c0b971a11b526006347
+msgid "Get the current working mode of the GPS module."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst 1977954b37b34a25a503f29a60ca6faf
+#: 33f3f9f0f8524442a5837b07011f8dbe 43aa7e31e44c431b9e0cdf7a4f5f216d
+#: 4c6e7801c1214353884455b3fc92c539 5138e606d5b648f6a8a40e8316f01af0
+#: 73435efa8612438ea9cce3d70b5ece4e 736c9833af0245b1ac65f5e36a5ba47d
+#: 91a42fae08574be98549ab19d7dcf02b 9ba60b7d86df4bedaed1d25043f1dcbc
+#: a2d099cda058410fb10fb6355b5d8f7a bc4147734a9e4ad5b5c1120310c9c0eb
+#: c5ce1f2448ea48a0abc92fcec64b4f6b c7710a8d276d4847a78fbf4c2b2ffaf7
+#: f15c93c7f5eb4e908bf66277a3aec32f f88e79b93d1b4235bc0a146ebf2191c5
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:65 0484899292d54a4396bc0174ce1dc7bb
+msgid "The current working mode of the GPS module."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:69 06af4a9931774c5b8328d5f881d27c02
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:10 0b3c531eaea24a0fbdcf69dfde131988
+msgid "get_work_mode.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:73 cec78b2c65c54262a9922e7b3d73951d
+msgid "Get the state of the antenna."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:75 486186ab76654e579626a87e6706f00a
+msgid "The antenna state."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:79 6f212ed154944db6867160ab40004e84
+msgid "|get_antenna_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:11 88e4ea3d5c9544879a9c1b95b27c7699
+msgid "get_antenna_state.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:83 609c1e74d6f545dfbe997f64c0462c73
+msgid "Get the current GPS time."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:85 ab159c61ad5e445cb547f2ebea08fe77
+msgid "The GPS time as a list of strings [hour, minute, second]."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:89 07ed5c1f78a540c7afe78d5d8c4eb632
+msgid "|get_gps_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:12 d2158220e6f849ba8e51e6925e02bd6e
+msgid "get_gps_time.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:93 de2630c58a514e658163ae81fdff8029
+msgid "Get the current GPS date."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:95 434fb13a18994affaafd4b5a7db05208
+msgid "The GPS date as a list of strings [day, month, year]."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:99 59da1157ccf74c968a8b70168a0bd053
+msgid "|get_gps_date.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:13 af41b026825b46e19ab239bb63530c94
+msgid "get_gps_date.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:103 9107a270592f4cf6b85dbf3ca1ad9629
+msgid "Get the current GPS date and time combined."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:105 ca0cc56ce2274ced88a011c723134908
+msgid ""
+"The GPS date and time as a list of strings [year, month, day, hour, "
+"minute, second]."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:109 d9839aed40b947e287db8f52e75f1934
+msgid "|get_gps_date_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:14 841214fedd9b4b0c9dabd1f2caba23fa
+msgid "get_gps_date_time.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:113 c3be9b7accd54325bacd54958129bdd1
+msgid "Get the timestamp of the current GPS time."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:115 c10d434952504a88a669c625af06688d
+msgid "The timestamp representing the current GPS time."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:119 017b8f6a2dd745d1b2e3febdb4bc3394
+msgid "|get_timestamp.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:15 31a7d5e98ac84643a0defda263ad6f31
+msgid "get_timestamp.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:123 c1116071c0cd4a068a7fdc7cb0841c12
+msgid "Get the current latitude."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:125 b4003f7bc91b46ac8eb21cbe0c06516c
+msgid "The current latitude in string format."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:129 c891e9a793df465ea20d733fb0c90cd0
+msgid "|get_latitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:16 9866e87e4c6143fd8ba97bec7415dd0a
+msgid "get_latitude.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:133 cb3cc5937e2340e781cd918a77e99b1b
+msgid "Get the current longitude."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:135 e2ab641a896540da8bb1cd4e5948956c
+msgid "The current longitude in string format."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:139 6c873c2c9976465cb9076b27f7b2682f
+msgid "|get_longitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:17 02ac68bd01b54dde8a859230d1ce9d74
+msgid "get_longitude.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:143 25e25b4156f24652ad33a5158a99856e
+msgid "Get the current altitude."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:145 06437bd7295b4583903e84d20c8bac51
+msgid "The current altitude in string format."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:149 13afe0ab083b4edc8d099cc6f8e23b9b
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:18 5f8d5159df704deab4b00f62ce3ef039
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:153 d4b07da721d54a7d82d4fe040830c2f7
+msgid "Get the number of satellites used for positioning."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:155 2f6a59cb63db40d5941152a3e73f6b95
+msgid "The number of satellites."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:159 0c321a8b80a94151b51282a23930a18c
+msgid "|get_satellite_num.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:19 e2ef3d7278eb4da29f448b2c419e6cc9
+msgid "get_satellite_num.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:163 f9f61426a4764bb4acffaa3f25662ed1
+msgid "Get the quality of the GPS position."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:165 ac800e0d88844076aae9e03d4f66777d
+msgid "The position quality indicator."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:169 e80bded7ac4344d2b788d322784694fe
+msgid "|get_pos_quality.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:20 61b13cae6cca4abcab6eb16a58329c02
+msgid "get_pos_quality.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:173 c283c723f8e8498ebdd6cdd49429a310
+msgid "Get the course over ground (COG)."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:175 0876f5db0de84b2886122bdb4cf42afd
+msgid "The course over ground in degrees."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:179 d71973dae6674707bb71647719007bd1
+msgid "|get_corse_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:21 b4d7989f6a094244ab113a95340dd262
+msgid "get_corse_over_ground.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:183 c5da9770018844539e94ac0dc132208a
+msgid "Get the speed over ground (SOG)."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:185 d45dab8168bb4cd6ad675ca3027e772a
+msgid "The speed over ground in knots."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:189 1301e4f356ae4eb3823b86bea202356d
+msgid "|get_speed_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:22 d721c77d31174bbda554949f7d1e8697
+msgid "get_speed_over_ground.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:193 444620ce11ad4a03b1e63e99815a938f
+msgid "Set the time zone offset for the GPS time."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:195 cd41e0d471664e56b68dec3da9d3df20
+msgid "The time zone offset value to set."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:199 3563d44741bf4d2a846e2b56cdb2374d
+msgid "|set_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:23 6f63cc5306fb432694f288fa4a5d2c55
+msgid "set_time_zone.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:203 01c98d7c57024c96856b717f48e691a7
+msgid "Get the current time zone offset."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:205 d29c2d94d36147bb8c9bfeef69d704f5
+msgid "The current time zone offset."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:209 6a7eaf2f88d644fa99c287804f4d350b
+msgid "|get_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:24 3c458000258e475cb2b03f09baa5dc6a
+msgid "get_time_zone.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:213 b2bc345578b74a04b5913985a1d6b3ea
+msgid ""
+"Deinitialize the GPS unit, stopping any running tasks and releasing "
+"resources."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:217 3539f92c4e5441669e12bbee393870de
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.gps_v11.ref:25 a66c15453b6c460d984601bf91a3d139
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:222 35ffce9a95a547f9b68ca67a0d0cc26a
+msgid "Add checksum to the message for communication with the GPS module."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:224 38b9dd261cfa4108a2a6282b1183fc43
+msgid "The message to which the checksum will be added."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:226 5b3997ecf9d34848b4ebb3df55573317
+msgid "The message with added checksum."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:231 d3c24bab1d584fc2b436546a69e9bd88
+msgid ""
+"Decode the GGA sentence to extract GPS quality, number of satellites, and"
+" altitude."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:233 c4403748dc424d439840456ec074547b
+msgid "The GGA sentence to decode."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:238 8ee5787d2ed446b7bb485c30ef502d5e
+msgid ""
+"Decode the RMC sentence to extract GPS time, latitude, longitude, speed, "
+"course, and date."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:240 b5ddf7223be44bb49d11d310225e5bd4
+msgid "The RMC sentence to decode."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:245 6047fceafc4c49a98ef8abc1ce339d95
+msgid "Decode the TXT sentence to extract antenna state."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:247 389f2096df4947fe8568d1d4013a68a1
+msgid "The TXT sentence to decode."
+msgstr ""
+
+#: ../../en/units/gps_v11.rst:252 2a9274e20131407b8c323aba36c0d9bf
+msgid "Monitor the GPS data and decode incoming sentences."
+msgstr ""
+

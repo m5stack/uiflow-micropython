@@ -1,0 +1,719 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/nbiot.rst:2 6a4a08d1b2eb44ee9785d4a761500755
+msgid "NB-IoT Unit"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:6 7f29967195854d83b4da37d8371648ba
+msgid ""
+"The ``NB-IOT Unit`` is a wireless communication module suitable for "
+"global wide Cat-NB frequency band . It has a built-in SIM7020G "
+"communication module, uses serial communication (AT instruction set "
+"control)."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:8 1b68f7baa1e94e63bb9e19dec8c074cc
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:10 2a38bce9d25949beb9ff61a93e4c0b74
+msgid "|NB-IOTUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref e4e66b499bb44318b13a39a856c321f1
+msgid "NB-IOTUnit"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:12 5defb5a968494f3fb5283c11532a1797
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:33 1be60e752d7c43218e6eb8592951e102
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:35 8021cb62eaf24891a750fedf19af5d01
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:7 5c41b023a3da4d3c8826681e7ee5464f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:39 d75f640c7d874ef9b54b009d5473a2e7
+msgid "|nbiot-mqtt-demo.m5f2|"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:43 3da401be9a6941a7abc0aae800ae129f
+msgid "class NBIOTUnit"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:46 1c6f0a0065ea45b59220056da9a3cdd3
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:50 90385c685e39435a855c3f1dd061e282
+msgid "Create a NBIOTUnit object"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:53 ../../en/units/nbiot.rst:138
+#: ../../en/units/nbiot.rst:166 ../../en/units/nbiot.rst:178
+#: ../../en/units/nbiot.rst:190 ../../en/units/nbiot.rst:202
+#: ../../en/units/nbiot.rst:214 ../../en/units/nbiot.rst:226
+#: ../../en/units/nbiot.rst:243 ../../en/units/nbiot.rst:284
+#: ../../en/units/nbiot.rst:307 ../../en/units/nbiot.rst:321
+#: ../../en/units/nbiot.rst:345 093535f31b744cc9ae33f4b6f7ded1e3
+#: 28061f693587494c9a4cf6c0fcb9d8b5 375ea1a042f8459ead96867375282f2f
+#: 3ca59142ab1e4ad0a7b97a3ba39c6eeb 42192cd65e134e7b897104b81f2d1c5a
+#: 5929cb7e62e044d8969d24ffc0ec9b9a 5f2de2511e3047f991395dca46a6bb54
+#: 63b76bb304ca4c0199cb5cff52d5539d 8e43b6abe92c40b68ff786753194ba60
+#: a3d77075fccc4f5ab135f630d9a17731 a746df506aa9408fb7b29a5a67bc4ba5
+#: b3aab2db915b41c59fd0742ac14b51cd ff9bca18f91e4b18b7f9d3462e1d146e
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:53 adda89a4cba949cc9401bc60b34efae0
+msgid "``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:55 ../../en/units/nbiot.rst:70
+#: ../../en/units/nbiot.rst:81 ../../en/units/nbiot.rst:101
+#: ../../en/units/nbiot.rst:112 ../../en/units/nbiot.rst:128
+#: ../../en/units/nbiot.rst:140 ../../en/units/nbiot.rst:156
+#: ../../en/units/nbiot.rst:168 ../../en/units/nbiot.rst:180
+#: ../../en/units/nbiot.rst:192 ../../en/units/nbiot.rst:204
+#: ../../en/units/nbiot.rst:216 ../../en/units/nbiot.rst:228
+#: ../../en/units/nbiot.rst:245 ../../en/units/nbiot.rst:256
+#: ../../en/units/nbiot.rst:272 ../../en/units/nbiot.rst:288
+#: ../../en/units/nbiot.rst:309 ../../en/units/nbiot.rst:323
+#: ../../en/units/nbiot.rst:332 ../../en/units/nbiot.rst:347
+#: ../../en/units/nbiot.rst:356 ../../en/units/nbiot.rst:367
+#: ../../en/units/nbiot.rst:383 ../../en/units/nbiot.rst:394
+#: ../../en/units/nbiot.rst:405 02e8b046f12d42d4bbb42ecc5adca760
+#: 1aad68af97f64ffaa66db69c06833bf8 1bf0ec4d96224bb7b721e6fb742db9bc
+#: 2b6e7dba241d4a2cab2b1e7402a152d2 3082eab159d2402e92b3daf1f3ded4a0
+#: 3739e7699b1e4311b8c75de0507c5ac7 397965ebad7140e299f75eb11cd83518
+#: 40a1c0be440c4829a7d9848e15af56fe 45651292ae6b4f2dab8a7a01a78c7491
+#: 4a848dbdbbe84431ad6ab66ca113b571 4c0c0d193b26466db5064f2b673d3ae0
+#: 565280a098674805ae60e523e4dd60cf 5e90a9f0d4d6418ab3c0084f7b50f583
+#: 6a6a3450b0514dad924e2ecfe9abdd20 6b335d80fe044710a039142f243c2158
+#: 6b457b6d259e426c929d817c37a34f30 708ee2721bc04300b1d0afc561ffcbcc
+#: 83b533106c6744bf9a60d4b53b74a4c3 901e9c1d22fa4098bb0b906d1a3c36b5
+#: abce75ef12674ebcb09d83fc1be9aaa7 bd68ac8a5a5f455287c29ff87c9fe194
+#: d2d614ad6bce47948922334d94a106d8 d581f32827ab4140a3831d640efbbbf6
+#: e93f468f37b546088cdca1c31df3b904 eac956a6d49a407e9cc1176a0e48a0f8
+#: f26f7bd795f44b79a7c280c82c596439 f53cf9fc01254b97b3f626d0ba0e3969
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:57 44250f7dd0ba4691965a34682ab75578
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:6 2d105958bf3644ab92550437ba1dfebe
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:62 821588aacfb8477fb98ca9daf859dac5
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:66 7159a8dc679642deb58753c9eb9a7866
+msgid ""
+"To check whether the communication with the NBIOT unit has been "
+"successful."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:68 0a22b2574e4c4c20b90fb76637257a5c
+msgid "Return: ``bool``:  True or False"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:72 61c06dc2eb304344ada787bd24b01171
+msgid "|check_modem_is_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:8 e1eec0a69baa49b59895713c970522fb
+msgid "check_modem_is_ready.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:77 9e3afc7ba1304bccb31f985d01dea65e
+msgid "Get the International Mobile station Equipment Identity(IMEI) number."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:79 feb493aa39fc475d9918281a0795b67d
+msgid "Return: ``string``"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:83 78cfa5040c344a4f84f5193612a5804f
+msgid "|get_imei_number.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:9 276de5f056c04819a6ec66d28285f89f
+msgid "get_imei_number.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:88 ca4afc7bbe154299a95e1b48b39ca486
+msgid "Get the received signal strength indication level."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:99 b233e9f292af4992838849147685a95e
+msgid "Return: ``int``:"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:92 ../../en/units/nbiot.rst:123
+#: ../../en/units/nbiot.rst:151 ../../en/units/nbiot.rst:267
+#: ../../en/units/nbiot.rst:378 5cf8b336af4644a7b36fc5fd5de150a0
+#: 8ab5bef276784954833cc99f84f3d988 b95ef3a0bb5b4fcfab803b61432cd2c4
+#: e8880ecbde04413897bc111e72f92a19 fc6f49ee03ea4fdd8142752bbde3b160
+msgid "Int"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:92 b2f34ff3085a4d3ca1b9172b837cf73b
+msgid "Rx signal strength level"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:93 ../../en/units/nbiot.rst:124
+#: ../../en/units/nbiot.rst:152 ../../en/units/nbiot.rst:268
+#: ../../en/units/nbiot.rst:379 1aa172b2e2bf4000b6720b5813c2a403
+#: 75703de375784ec2a42c784708afb2c7 931c6fb3bc8b49babf45c1c2d42ce104
+#: a5ce19fe27b74f01aada5e2e91bb4f57 e15496c2e30d4b01bd95937c63e55a21
+msgid "0"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:93 512124fac83a476f88face2c8483bce9
+msgid "-110 dBm or less"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:94 ../../en/units/nbiot.rst:125
+#: ../../en/units/nbiot.rst:153 ../../en/units/nbiot.rst:269
+#: ../../en/units/nbiot.rst:380 0b48e0f06e8b4976ad44203692473150
+#: 3d11a04c5c484138b31c206b3fdd5d50 5df8b8b633e84fb7b21683897a9e4677
+#: 9e0b05336c4c4e4ab4c3ead010897555 f289691ad672470283db5e140fe66c2c
+msgid "1"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:94 01e9da485ed145b0a24de161ce0da0b7
+msgid "-109 dBm <=rssi< -107 dBm"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:95 24a2e114f37a43e2a61d3ae84a1a0c4d
+msgid "2"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:95 15fc394b50bf4ac1a3cf57514b401947
+msgid "-107 dBm <=rssi< -105 dBm"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:96 ab3dbe2ef405458fbfa6d551ffa83314
+msgid "3…30"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:96 bc95134bc01a4dfbb51e5d314f50a70c
+msgid "-105 dBm <=rssi< -48 dBm"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:97 6fa52bb3d80e4061837a53faa68e2377
+msgid "31"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:97 5dc3e3ab1c904078ae6b9b5e401f60f0
+msgid "-48  dBm <=rssi"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:98 19823c90438c4b71a55f35b3e0af518c
+msgid "99"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:98 4d2b74550d5a4279af3d8719f2836265
+msgid "Not known or not detectable"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:103 878764339db841e882589f6274197591
+msgid "|get_signal_strength.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:10 0f0f9e2928c74158990411431fa5e081
+msgid "get_signal_strength.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:108 6b53538a1d6949588dc523ef98b2f5f8
+msgid "Get the product model identification."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:110 8a4fde21c0c54daead0e5a7101f1dc04
+msgid "Return: ``string``: SIMxxxx"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:114 77a1be9e43624ebe81012e177cda583a
+msgid "|get_model_identification.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:11 9cd2fa35ada04901be61e17db64321a1
+msgid "get_model_identification.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:119 58372ac4bec04f7a9006d0b41a3cafe3
+msgid "Get the Indicates the Status of GPRS/Packet Domain Attached or Detached."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:126 ../../en/units/nbiot.rst:154
+#: ../../en/units/nbiot.rst:270 ../../en/units/nbiot.rst:381
+#: 0e88b592d73042af9df0797a8bdf3ab7 50235c37654f4b2b90ad604afa222695
+#: d3647566742647efbdf3ba9fcccc2263 df38f7982f5b4988b9f106fad4db4f99
+msgid "Return: ``int``:  0 ~ 1"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:123 ../../en/units/nbiot.rst:151
+#: ../../en/units/nbiot.rst:267 ../../en/units/nbiot.rst:378
+#: 0ebafed11fd84336bd072f8b6d8458cd 42c90c7def29488099c276afecb39ecb
+#: cc2987203f3c4df1b75f1ae9d49931a1 d2fc47b4be534baeb5330e7cdf1b76ce
+msgid "Status"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:124 fbea0dac4d8e406d94615d039b21c94a
+msgid "Detached"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:125 7f539179979249dc9346b026eb3fa22f
+msgid "Attached"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:130 c942acbdd4304dd68260704ea66dcfe8
+msgid "|get_gprs_network_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:12 e0ba9a4b6aa44a96b38de037347a115e
+msgid "get_gprs_network_status.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:135 9add0747a1b54ad5a54fca45ce1bd95d
+msgid "Get the requests of PDP address for context identifier(1~2)"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:138 3940adb0ab9b4a5db3748015521d460e
+msgid "``cid``: 1 ~ 2"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:142 5bde3f54b7014b23a820e82138a660d9
+msgid "|get_show_pdp_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:13 d47fc909911f49cfb2b3a6f49b00ef34
+msgid "get_show_pdp_address.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:147 fa2598569f344eca9e907da5283e1c4b
+msgid "Get the Indicates the Status of PDP Context Activated or Deactivated."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:152 6051afe6fe2846c89dedf6bff3998c36
+msgid "Deactivated"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:153 72eba871799741418474438ec67313ba
+msgid "Activated"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:158 6def464ff2294d80a7bff011c8e0f7fa
+msgid "|get_pdp_context_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:14 db379304399541d59bb3b09b30650b0c
+msgid "get_pdp_context_status.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:163 46c0f4711ece437ebd448377d4b9922a
+msgid "Get the PDP Context Read Dynamic Network Parameters."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:166 f16bbb9ef7c948c0874e9ca974e629c3
+msgid "``param``: IP: 1, APN: 2."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:170 29a943bff1034829b9c569f731de00ea
+msgid "|get_pdp_context_dynamic_parameters.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:15 de2769b233024558a03033da87cad331
+msgid "get_pdp_context_dynamic_parameters.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:175 d8c548c367c74f3e8fcf939ad848638d
+msgid "Set the Command Echo Mode Off or On"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:178 bdb32ec2cb6448dba7a8f48d4641d0c0
+msgid "``state``: Off: 0, On: 1."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:182 4e6d6f2eb19c4f61aedaaee8c1e5a928
+msgid "|set_command_echo_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:16 5044a32aa8ed4fa89f9accfced213ad2
+msgid "set_command_echo_mode.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:187 9d7bc2fc34d14ce59de56f15a3265641
+msgid "Set the State of GPRS/Packet Domain Attached or Detached."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:190 d55bb02477234540a4622b8e11a35e41
+msgid "``enable``: Detached: 0, Attached: 1."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:194 6a991983bf6e475a9aa35b036e16ecdd
+msgid "|set_gprs_network_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:17 536224725e5341f58850884b72b5e97f
+msgid "set_gprs_network_state.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:199 74802efcc00541b0b69f4d90db33f10c
+msgid "Set the Default PSD Connection Settings."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:202 7e1a13eb2762458ea978cbc78afb58cf
+msgid "``apn``:  apn a string parameter and \"cmnbiot\" is default"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:206 226fd9fb8ad64ed18d55f9293c0009df
+msgid "|set_pdp_context_apn.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:18 bb29f96217334766a519c66e151e7d1e
+msgid "set_pdp_context_apn.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:211 17eadf82f405420e9d42915e691fbbbf
+msgid "Set the PDP Context Activate or Deactivate."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:214 b72dbd2ebe4f4c61b83c41dd8e9dbb6d
+msgid "``active``:  Deactivate: 0, Activate: 1."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:218 ef86f66ab0a44b8f9275dd069c9f501f
+msgid "|set_pdp_context.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:19 853298951b3b4ba5a74b5dbf6ee17642
+msgid "set_pdp_context.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:223 82241fb7943c4c5aa487a12b033d058f
+msgid "Set the AT Command debug print enable or disable."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:226 f41287c81ee94cf5ac0a276a0b9c2eb3
+msgid "``modem_debug``:  disable: False, enable: True."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:230 c689e7f8ae724a2b8bc2403d5e109874
+msgid "|modem_debug.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:20 adaad863cf854422a9e997ee636c239f
+msgid "modem_debug.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:235 12f2ce5dc66540fe8c65834b061c7bf4
+msgid ""
+"Set the MQTT Server address, port number, client id, username, password "
+"and keepalive time of the MQTT server."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:238 10606596fce6430a9be3f0e7bef6b52c
+msgid "``server``:  server address is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:239 aa4b4f89b0dc452cbb625a08f9e7df5c
+msgid "``port``:  port number is int format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:240 cef30653e2374d038c84c6ec2ea7b868
+msgid "``client_id``:  client id is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:241 29ccbb82409348b4a61d8d8c9adda757
+msgid "``username``:  username is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:242 8014779aa3c14b9ca74c3bb739bf322f
+msgid "``passwd``:  password is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:243 d6b9923252a34844a77be671242f0d62
+msgid "``keepalive``:  seconds is int format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:247 0f689eadd38d49c4858b3b6dea79c3c1
+msgid "|mqtt_server_connect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:21 673b642a5e5e475e89418a5db5de2600
+msgid "mqtt_server_connect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:252 3a984d25497f4ac4bb6a0442a0e1475d
+msgid "Disconnect the MQTT Server"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:254 f5da8c2a26dc4ad39e51295455479721
+msgid ""
+"\"mqtt server connect\" must be set before this block for it to work "
+"effectively."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:258 34a6ee46cd824bf0b7c0413e56a43f8b
+msgid "|mqtt_server_disconnect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:22 250df4cc2dbc4952832a3d8c7fa4e73f
+msgid "mqtt_server_disconnect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:263 93ed8a6bf1134f8d9a2d366715bbaa54
+msgid "Check the MQTT Server Connection Status"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:268 ../../en/units/nbiot.rst:379
+#: 836f8df8cf0644b38b6d6293f635cf93 ab65978f2f8c44a4ac7c26481d50db88
+msgid "Not connected"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:269 ../../en/units/nbiot.rst:380
+#: b79f55c72d024e598ba5b27803850985 f378fca126c346aeb59222c5bae8fdb8
+msgid "Connected"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:274 1fb632a91bc244f18f0c71b792f9b87c
+msgid "|mqtt_server_is_connect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:23 d466de90e4a64f2c8365973f6d719bc9
+msgid "mqtt_server_is_connect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:279 c55e00d57c6844a2acb033f3043a2706
+msgid "Specifies the subscription topic to subscribe."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:282 d50f9e7eb79a474caaad613dad3a1ee8
+msgid "``topic``: string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:283 804d0a52149841dc83392003e0a95b88
+msgid ""
+"``cb``: callback function is called when a message has been received on a"
+" topic"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:284 ad3a6318944a40a6a6af9849549c1fff
+msgid "``qos``: 0 ~ 2 (Default is 0)"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:286 e09ea3113d2045c6a4f1aa49e6473ef6
+msgid ""
+"When using this block, the \"mqtt_server_connect\" block must be set "
+"after this block"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:290 00cbf13aad1f457fa401237ff18928bf
+msgid "|mqtt_subscribe_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:24 75ff9af165d8487e93d6b584c706c156
+msgid "mqtt_subscribe_callback.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:292 46c9ee43a0d144b4853f8c1c83ac94fb
+msgid "An handler showing a message has been received::"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:298 29fe249d024244629b93ab3f7eacadd1
+msgid ""
+"On uiflow2, you can get the **topic** and **message** of the current "
+"handler through |get_topic.png| and |get_msg.png|."
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:25 4a1d224504814434945b57d317974f05
+msgid "get_topic.png"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:26 1098b6ae234945bc915b02ff094beb12
+msgid "get_msg.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:304 c6a427e6df6b4f0f948f46ebc007698c
+msgid "Unsubscribed topic to the MQTT server."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:307 ../../en/units/nbiot.rst:319
+#: 9ed44bfd7943413380d8df2043e95674 b151243875a2486ba88a6399b95bd49e
+msgid "``topic``:  topic is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:311 8b822bcd18a54f999bb8dd1eb12c365d
+msgid "|mqtt_unsubscribe_topic.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:27 7b0cdb1cdf1840eaa7fa1722d9f04498
+msgid "mqtt_unsubscribe_topic.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:316 4fabcec4158e46a48af1f0044f5ea082
+msgid "Set the published topic and message to the MQTT server."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:320 f37b828eca74411da92b8cc2b6654692
+msgid "``payload``:  payload is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:321 ca3287bd6c6d4406a83fecc510911521
+msgid "``quality``:  quality of service of 0, 1, 2"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:325 afa060323f314f73b3e388be549bb54d
+msgid "|mqtt_publish_topic.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:28 845b9c32367c49ccba13d69fedb6f7d1
+msgid "mqtt_publish_topic.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:330 6612669a57984cff9320615c04281171
+msgid "The mqtt polling loop block must be used inside a loop."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:334 b2355b4b5768437da5855d9e204720e8
+msgid "|mqtt_polling_loop.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:29 7d039d5401fc4ea3ba1abdad75cd14b5
+msgid "mqtt_polling_loop.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:339 d6ec223c645743278bd23a3145e6ca81
+msgid "Create an HTTP or HTTPS request and set the configuration."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:342 124132148bad4ca5a9b111c6eb43feec
+msgid "``method``:  GET: 0, POST: 1, PUT: 2, DELETE: 3"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:343 803952b959234a02a1003da76769b744
+msgid "``url``:  HTTP server host is string format"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:344 384f06d5db5a41889642591db13e5deb
+msgid "``headers``:  headers is Dictionaries type"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:345 56facf97ccfa4035ac14da4748cd39c6
+msgid "``data``:  data is Dictionaries type"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:349 196131f3c3224cdcbce5f7e329be4f90
+msgid "|http_request.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:30 cfa3441c65cb4180a992558e40aba235
+msgid "http_request.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:354 40fd871bca0240cb80c03f63653afdaf
+msgid "HTTP Connect to target server host"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:358 49250c8880d048ca8e4a91cf9a90f38b
+msgid "|http_server_connect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:31 d4f58e92e4ab4de88ae1ed88b99752ff
+msgid "http_server_connect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:363 2fd77903b1744b3a9d6b58b78b4dd50a
+msgid "HTTP Disconnect to target server host"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:365 cc0fb099686345aba865b2953643d4b4
+msgid ""
+"\"http server connect\" must be set before this block for it to work "
+"effectively."
+msgstr ""
+
+#: ../../en/units/nbiot.rst:369 e693e49282da48cd8247774ba8f4bef3
+msgid "|http_server_disconnect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:32 efc37eeaabd44d6d8c58c9db7715bbb3
+msgid "http_server_disconnect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:374 8e55841a03694f5b8120f6cfea08f42f
+msgid "Check the HTTP Server Connection Status"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:385 88532c82c8664430b844f2cf0e292afb
+msgid "|is_http_server_connect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:33 ae6f29cb2f8545cbbee96593cb816989
+msgid "is_http_server_connect.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:390 fcebef48f11c4ab38b36a547e1a030e8
+msgid "Get the HTTP content data of the response from the host"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:392 6f4739f9b9424ffebd3b3ff8e6f966ca
+msgid "Return: ``string``:  Content data is string"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:396 37e1f62fa2bb4a66878392b71ae5e9c5
+msgid "|data_content.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:34 5365d21757324b18a592578317d6179a
+msgid "data_content.png"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:401 211b6eec369d44c088682f754dd97018
+msgid "Get the HTTP response code"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:403 b88cb203ad5b4dcda63fdd95d20b3f26
+msgid "Return: ``int``: 100, 101, 200 ... 504, 505"
+msgstr ""
+
+#: ../../en/units/nbiot.rst:407 9ce0c5185ef9448d929adf739f8d744a
+msgid "|response_code.png|"
+msgstr ""
+
+#: ../../en/refs/unit.nbiot.ref:35 f3cb929da92f491d8e182832531fafca
+msgid "response_code.png"
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,110 +18,143 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/ir.rst:2 124ed5f174034355b1bdeeac3eb75f66
+#: ../../en/units/ir.rst:2 b125407e2e9843238afac2cb0df712fa
 msgid "IR Unit"
 msgstr ""
 
-#: ../../en/refs/unit.ir.ref 7f24f9fbe21f45d698f3f83555754cce
-#: 813af9edb0524d9caab0401a80566c65
-msgid "IR"
-msgstr ""
-
-#: ../../en/refs/unit.ir.ref:7 ecb85f2e4837450199861e1d5f32a594
-#: f7b9feee6d3046ee9195edf1bf460b1e
-msgid "example.svg"
-msgstr ""
-
-#: ../../en/refs/unit.ir.ref:9 4fc3d2ec813145a8af93955e657d8b0a
-#: a337f381801f4f9f816f4dcda73a5c14
-msgid "init.svg"
-msgstr ""
-
-#: ../../en/refs/unit.ir.ref:11 143b44c026de4a2fad41e7258a714fdf
-#: 2ac728c4b18c43b98292c80031b5cd18
-msgid "rx_event.svg"
-msgstr ""
-
-#: ../../en/refs/unit.ir.ref:13 4f507da3622f422d827110e9c1751f50
-#: 796b6fa4db2149859c08f93fddae24cf
-msgid "tx.svg"
-msgstr ""
-
-#: ../../en/units/ir.rst:6 3bc3fb602dd145f2b074daceea824e4f
+#: ../../en/units/ir.rst:6 55fdf3eb57ff4dfcaf3609964e70151a
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/ir.rst:8 478f9d00ecc9484ebab8521b518af6f3
+#: ../../en/units/ir.rst:8 47c7deaca7a74a77ada279f183c8f5b1
 msgid "|IR|"
 msgstr ""
 
-#: ../../en/units/ir.rst:11 76c9dc20165a44bc8ca8b1ea74a4ea37
-msgid "Micropython Example::"
+#: ../../en/refs/unit.ir.ref deabcc17d9b64463935d56aa9425a540
+msgid "IR"
 msgstr ""
 
-#: ../../en/units/ir.rst:29 29cebb3f608e4c39ac2bc9077ead4206
+#: ../../en/units/ir.rst:11 44e5a191e2f5406c96bb9d640acfd3d9
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/ir.rst:18 60d0d3f8ebdf4d7d9a0410ad1fff0417
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/ir.rst:31 054d362c99bf481295af87e24783cbdd
-msgid "|example.svg|"
+#: ../../en/units/ir.rst:20 94b683d0955345b1993907b0e83e34d5
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/units/ir.rst:36 ef18f6c41b214764b8f91f573c0d369e
+#: ../../en/refs/unit.ir.ref:7 954d35fce3ff48549d476fec3434dca2
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ir.rst:25 fd2d10791f364bd49401be1e2dc92188
 msgid "|ir_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/ir.rst:40 c35c72a5c51a4b48b7bd05dec7012174
-msgid "class IR"
+#: ../../en/units/ir.rst:29 61ddbdcd136b4b888901665ce2442996
+msgid "class IRUnit"
 msgstr ""
 
-#: ../../en/units/ir.rst:43 9cc75d927ae94254b2bed07268cbeccd
+#: ../../en/units/ir.rst:32 b1b399a77f6445e78879d983055c0191
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/ir.rst:47 52e59e28361548dc9a00a9bef2e0a38b
-msgid "Create an IR object."
+#: ../../en/units/ir.rst:36 1fa94dce34654a43af38bcf23b17cee9
+#, fuzzy
+msgid "Create an IRUnit object."
 msgstr "创建一个IR对象."
 
-#: ../../en/units/ir.rst:50 7005e46ea72e4719b9f85ae15562c415
-msgid "The parameters is:"
+#: ../../en/units/ir.rst 62541b7bd3134ba39f2a5e6562e42cff
+#, fuzzy
+msgid "Parameters"
 msgstr "参数是:"
 
-#: ../../en/units/ir.rst:50 2f27010ea79e4355b65621aa61346372
-msgid "``IO1,IO2`` Receive and transmit pin definitions."
-msgstr "``IO1,IO2`` 接收和发射引脚定义."
+#: ../../en/units/ir.rst:38 c1e3a6f265534c7ba3684ef350b2428b
+msgid ""
+"The port to which the IR unit is connected. the tuple is a pair of "
+"values, the first value is the receive pin, and the second value is the "
+"transmit pin."
+msgstr ""
 
-#: ../../en/units/ir.rst:52 ../../en/units/ir.rst:64 ../../en/units/ir.rst:73
-#: 5495a3eff59d4b7392274b3894d9071f de3e435e3b73447a9bfdd2def3973d1c
-#: e0f41c6e035640fcb441ab189fda35e3
+#: ../../en/units/ir.rst:40 ../../en/units/ir.rst:52 ../../en/units/ir.rst:61
+#: 23c6bb314e2340209511915fef8bbd74 6f12125287e7438eb87dd1626e54bc5a
+#: cea8973ddf234b10a964a72cb9daae8e
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/ir.rst:54 0342f3600d1d438eaea0b84902e19ce9
-msgid "|init.svg|"
+#: ../../en/units/ir.rst:42 0e1be66691044211828776cbc7145266
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/units/ir.rst:58 7a7a978a6cc64644bf447355c8c998cd
+#: ../../en/refs/unit.ir.ref:10 9973be9058af4ecd880adfd9d66c200f
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/ir.rst:46 2a053a4c0cec45a1a18423a176fb558c
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/ir.rst:62 edb3a5f08b6849918449d3db6f9f2a5a
+#: ../../en/units/ir.rst:50 7eade34d8050409da1a0e9f8389b6bdb
 msgid "Sends an ir signal value to an address."
 msgstr "向某个地址发送ir信号值。"
 
-#: ../../en/units/ir.rst:66 371e06493dac40d199ab1b3ee74e2e2b
-msgid "|tx.svg|"
+#: ../../en/units/ir.rst:54 e35a205b4be347658002e0b50e10d9d6
+msgid "|tx.png|"
 msgstr ""
 
-#: ../../en/units/ir.rst:71 65dc79e7fd8c4c548249d18392f3d32a
+#: ../../en/refs/unit.ir.ref:16 5fe65a46baaa496083948c1bcaee3a28
+msgid "tx.png"
+msgstr ""
+
+#: ../../en/units/ir.rst:59 757ce66c61a44ab087e5f6715fbb90fa
 msgid ""
 "Determine when the infrared signal is read and start to do some "
 "processing procedures."
 msgstr "判断读取到红外信号的时候，开始做某些处理程序。"
 
-#: ../../en/units/ir.rst:75 8bca230f852346e995a1514f30d2490c
-msgid "|rx_event.svg|"
+#: ../../en/units/ir.rst:63 f4e6de4b0aae49cbac21aaf2a9dade9c
+msgid "|rx_event.png|"
 msgstr ""
+
+#: ../../en/refs/unit.ir.ref:13 b0ade23e3cbf479eb505e23a609cbbbc
+msgid "rx_event.png"
+msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "rx_event.svg"
+#~ msgstr ""
+
+#~ msgid "tx.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "class IR"
+#~ msgstr ""
+
+#~ msgid "``IO1,IO2`` Receive and transmit pin definitions."
+#~ msgstr "``IO1,IO2`` 接收和发射引脚定义."
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "|tx.svg|"
+#~ msgstr ""
+
+#~ msgid "|rx_event.svg|"
+#~ msgstr ""
 

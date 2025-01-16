@@ -1,0 +1,463 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/wlan.ap.rst:5 f19ae67b657d41448367980fe482ec44
+msgid "WLAN AP -- control built-in WiFi interfaces"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:7 e6c17e04992d4ee7bcabcd812c7a9ef9
+msgid "This class provides a driver for WiFi AP network processors."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:11 d59cc7f207484009a1d078cd87a5dafa
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:17 7b0c460814074a5b990f0ade0d1eca80
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:19 00550cdcf78e4f348fb08812faf674ad
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:56 d5ec3eace599469d8f495b8da5a2fbcd
+msgid "example.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:23 c529a9361dba47e1be992c9656efc408
+msgid "|wlan_ap_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:26 74206ab4f48f4e4381dcb23ce7fd532b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:29 81f447ae28b3484894af4b40b5c011b3
+msgid ""
+"Create a WLAN network interface object. Supported interfaces are "
+"``network.AP_IF`` (access point, allows other WiFi clients to connect)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:32 ../../en/system/wlan.ap.rst:44
+#: 219ba99e261a41ad9529d12df3523a71 36d8f08900f64845b8cb407e6223ce47
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:34 5c43679cb5294845b28757dfa6ae5396
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:1 da5936222d284c2498e29a13bf0103be
+msgid "init.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:37 09f06f2f99c8409b816df9a43d849a9b
+msgid "Methods"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:40 d998003ca46d4e9bb11e1dc78a288bb3
+msgid "Return the current status of the wireless connection."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:42 76f9ea060c0a43149e67bb69ba4b0d7c
+msgid ""
+"When called with no argument the return value describes the network link "
+"status."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:46 f97554e588c2447da8e54b752fd56fc2
+msgid "|scan.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:52 9ddb25dba4ba417495ba0b092718dbe7
+msgid "scan.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:48 cd070a697ac04f43be10cb3aa9d6e5b4
+msgid "|scan_get_mac.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:54 60717e08de8b43a493a6ba826a2e989d
+msgid "scan_get_mac.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:52 105f3c87fa9c4dc1aa1a932f783bf2b1
+msgid ""
+"In AP mode returns ``True`` when a station is connected. Returns "
+"``False`` otherwise."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:55 751574bfe1d04bdeb1f78a7a823d14fe
+msgid "|isconnected.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:3 65617c9dc9894f31bbe22e590400aea7
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:59 c7761712bbbb459887b27847f4c8ca13
+msgid ""
+"Activate (\"up\") or deactivate (\"down\") network interface, if boolean "
+"argument is passed. Otherwise, query current state if no argument is "
+"provided. Most other methods require active interface."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:63 6844e8cd91aa4899b0129393f7f06520
+msgid "|active.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:9 a87e773c44ad43c28e329e440a6c67a3
+msgid "active.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:68 31957247b1ba4cc599d1a47a0a69b46e
+msgid ""
+"Get/set IP-level network interface parameters: IP address, subnet mask, "
+"gateway and DNS server. When called with no arguments, this method "
+"returns a 4-tuple with the above information. To set the above values, "
+"pass a 4-tuple with the required information."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:73 f2564355088440749c3de0f517461072
+msgid "|get_local_ip.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:17 5382314520d84bf098ffb912958524b7
+msgid "get_local_ip.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:75 bfeba4e6081b40b6bed408eae8059884
+msgid "|get_subnet.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:19 e5b8ac7408824102a3f601f3b1ed297c
+msgid "get_subnet.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:77 01039643b7a24c1689cf77407321bd9e
+msgid "|get_gateway.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:21 235453eae4d84ac286b8cc69fd9d30f7
+msgid "get_gateway.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:79 88b993a6fd12413fae59ec261dd9a2d2
+msgid "|get_dns.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:23 8992c1b68d0743d88f8d3283a0831f61
+msgid "get_dns.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:86 8c758712aaf2432686591b25bc6033ec
+msgid ""
+"Get or set general network interface parameters. These methods allow to "
+"work with additional parameters beyond standard IP configuration (as "
+"dealt with by `AbstractNIC.ipconfig()`). These include network-specific "
+"and hardware-specific parameters. For setting parameters, keyword "
+"argument syntax should be used, multiple parameters can be set at once. "
+"For querying, parameters name should be quoted as a string, and only one "
+"parameter can be queried at a time:"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:93 72971700aa4045a2884c60e3da2b4fcf
+msgid ""
+"Following are commonly supported parameters (availability of a specific "
+"parameter depends on network technology type, driver, and `MicroPython "
+"port`)."
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:97 147072d3f4d3418cb6989dec9f0b8187
+msgid "Parameter"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:97 0d71717da29f4b7387d8032f02148937
+msgid "Description"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:99 22de182c15354dd8ae0186bf5381486b
+msgid "mac"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:99 272fdcf33f26496486633a235029498b
+msgid "MAC address (bytes)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:100 8627cd3c613945c68bd1cf4db96f90f0
+msgid "ssid"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:100 5a7add32c8144119b928fede54971205
+msgid "WiFi access point name (string)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:101 06c04bccd1324619abac5bef207ae47a
+msgid "channel"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:101 7d7f96b477cf4e5aacc28cc5b3f3c37a
+msgid "WiFi channel (integer)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:102 401c02214bcf4702a712cc53129efde0
+msgid "hidden"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:102 a3c007becc7c4ec497ef28137337dfb5
+msgid "Whether SSID is hidden (boolean)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:103 4fe8e69d01314e9883ef35b252452790
+msgid "security"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:103 d9f9f504634043f9a3bee450545bb2af
+msgid "Security protocol supported (enumeration, see module constants)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:104 553d7ff05d644c5fa5a6b3e0de4b9059
+msgid "key"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:104 4ff3c588c0814929ace66d522eb06f20
+msgid "Access key (string)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:105 8d19b3c2446b415d8bf17fc0291e6cce
+msgid "hostname"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:105 09765d7402844b89a53c80d2f7092d82
+msgid ""
+"The hostname that will be sent to DHCP (STA interfaces) and mDNS (if "
+"supported, both STA and AP). (Deprecated, use :func:`network.hostname` "
+"instead)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:106 952e14a547624a4697e8193d26f76be0
+msgid "reconnects"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:106 6a579a10e6b7497989dd319ce3fe4bd4
+msgid "Number of reconnect attempts to make (integer, 0=none, -1=unlimited)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:107 5382b88a1e5e4feaa358c44dd26aeafe
+msgid "txpower"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:107 34045ad066344dc989f656f4847f34c8
+msgid "Maximum transmit power in dBm (integer or float)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:108 971da49ced1f4835a492ed99bb758416
+msgid "pm"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:108 23418b824ca2418d96bcc2b85340d5b3
+msgid "WiFi Power Management setting (see below for allowed values)"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:111 8d49ce71b61e4a29aa1ff0465bf1e683
+msgid "|set_ssid.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:11 d78a4d16f21d4c848533d634e3159c4d
+msgid "set_ssid.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:113 3779fec2299f4993a0d635918925a7ba
+msgid "|set_password.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:13 8c805276dc194c4facf9d6ea1ad301d0
+msgid "set_password.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:115 53868ba1e133401aac06ec7fa62b4cb3
+msgid "|set_hidden_status.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:39 1ebeb9eda9964335bcd8fa215623f771
+msgid "set_hidden_status.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:117 ef7182e001eb440cb9b8b785b3d45009
+msgid "|set_auth_mode.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:41 8a3731abc2fb4edebf558479c8a80417
+msgid "set_auth_mode.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:119 6bc58cab18b8444c9dff80a58afc4327
+msgid "|set_channel.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:43 8e813f46725c4b428d1af6346d182f80
+msgid "set_channel.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:121 ae0714e49cdd4c799f850978a9ac6c80
+msgid "|set_dhcp_hostname.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:45 f441ccf89a034490acde89c537c2ded8
+msgid "set_dhcp_hostname.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:123 5426bd89f21c4e7ea79d4827313412ee
+msgid "|set_max_clients.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:47 64f3f998f51146edb5f8c1c9bdbf8e0a
+msgid "set_max_clients.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:125 c1924ec687b34c6794a255de41bcd2c2
+msgid "|set_txpower.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:50 d47751d464ff40a0bb77081fb1dee99e
+msgid "set_txpower.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:127 b171cb5ffac8429fbf6131eed84df4fb
+msgid "|get_ssid.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:5 5017e50f89a7470e880fa27dcc68b6fa
+msgid "get_ssid.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:129 c1cc508be699493883d1b8dce7c230fe
+msgid "|get_password.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:7 b18ad0a28daf4c91a4d9203d441c7c53
+msgid "get_password.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:131 8cb3abd9a2f8416ba4bb2eec3b0032a4
+msgid "|get_mac.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:25 b28497f2847c42e1977295a8371a411f
+msgid "get_mac.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:133 6bf457c44e744d24bff883c034b39609
+msgid "|get_hidden_status.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:27 8569fe70952049b9b9b9094a9ac4f639
+msgid "get_hidden_status.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:135 d84cc1f87a524a81b6cfe6e59249da3e
+msgid "|get_auth_mode.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:29 293931abeb954fe486a7233b7ef6fbf8
+msgid "get_auth_mode.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:137 953eb41974e64da6b9dab603e77172c0
+msgid "|get_channel.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:31 0c2ce7570b3e4d628a3a282c3067eae8
+msgid "get_channel.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:139 de1b24329d2b4aa6899c2037a30104b3
+msgid "|get_dhcp_hostname.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:33 7c5d6814b1a04906a12c1ef32e19f1f6
+msgid "get_dhcp_hostname.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:141 3d0e09e020224f83bdc65fe4f40dcf5d
+msgid "|get_max_clients.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:35 aab21f28c6864b3ca4cd44f6b80819c6
+msgid "get_max_clients.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:143 d5c77cba17e949709f094b61adfefe65
+msgid "|get_txpower.png|"
+msgstr ""
+
+#: ../../en/refs/system.wlan.ap.ref:37 367c5e8cd3c340f9afab68c71c97cbc4
+msgid "get_txpower.png"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:148 715ec2eefa5e4afc9c7f0b6c247a9dcc
+msgid "Constants"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:160 9373b81cf93f40d0b8a794787ef5b140
+msgid ""
+"Allowed values for the ``WLAN.config(authmode=...)`` network interface "
+"parameter:"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:162 ba09038d97f84e3c9e97df5d309455e4
+msgid "``AUTH_OPEN``: 0 -- open"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:163 9a1eb0c90d5a49fcabadecf416b28e00
+msgid "``AUTH_WEP``: 1 -- WEP"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:164 b40f8751a1be4226bc826e4367b6ca49
+msgid "``AUTH_WPA_PSK``: 2 -- WPA-PSK"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:165 736c358e66e64e6fa13770d8962de2e7
+msgid "``AUTH_WPA2_PSK``: 3 -- WPA2-PSK"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:166 ebbd835037504f6d82a5b0ead6ce1290
+msgid "``AUTH_WPA_WPA2_PSK``: 4 -- WPA/WPA2-PSK"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:167 0d14d2abe7254009b7e60d5d4ad0a2ce
+msgid "``AUTH_WPA2_ENTERPRISE``: 5 -- WPA2-Enterprise"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:168 8665cbbbc7634753af7e0e495c883f70
+msgid "``AUTH_WPA3_PSK``: 6 -- WPA3-PSK"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:169 eaf278be694b4ff1b9998c13d9533ac3
+msgid "``AUTH_WPA2_WPA3_PSK``: 7 -- WPA2/WPA3-PSK"
+msgstr ""
+
+#: ../../en/system/wlan.ap.rst:170 f5a3fa0051284d4cb0f57e40c09b41a4
+msgid "``AUTH_WAPI_PSK``: 8 -- WAPI-PSK"
+msgstr ""
+

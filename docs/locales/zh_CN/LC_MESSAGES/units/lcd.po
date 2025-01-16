@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/lcd.rst:2 3e17635765cb469283d3a59f4d4e6f6a
+msgid "LCD Unit"
+msgstr ""
+
+#: ../../en/units/lcd.rst:7 5ac44751536a4cf38ec09a127b634ebe
+msgid ""
+"Unit LCD is a 1.14 inch color LCD expansion screen unit. It adopts "
+"ST7789V2 drive scheme, the resolution is 135*240, and it supports RGB666 "
+"display (262,144 colors). The internal integration of ESP32-PICO control "
+"core (built-in firmware, display development is more convenient), support"
+" through I2C (addr: 0x3E) communication interface for control and "
+"firmware upgrades. The back of the screen is integrated with a magnetic "
+"design, which can easily adsorb the metal surface for fixing. The LCD "
+"screen extension is suitable for embedding in various instruments or "
+"control devices that need to display simple content as a display panel."
+msgstr ""
+
+#: ../../en/units/lcd.rst:18 56d65490ae8a4c98a18fce6afb6e6aad
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/lcd.rst:20 68c26ed3e1214b539a82ee146cf4fa98
+msgid "|LCDUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.lcd.ref c5b81a08496d43bd84e94231ca57d1a6
+msgid "LCDUnit"
+msgstr ""
+
+#: ../../en/units/lcd.rst:23 a760cef984cf44e1bb36880fb3188993
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/lcd.rst:30 a58c4c19239943ca90e065f76fd2ee1c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/lcd.rst:32 18f725a7ddf144b69d9e1d9ee2cf55bf
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lcd.ref:9 92a23150006e4489a32da0d01fabb9ec
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/lcd.rst:37 a2ad2740360d46faad101ca05a265b40
+msgid "|cores3_lcd_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/lcd.rst:41 252c2d4aab1e4e8d9d3d30ec6ac0d477
+msgid "class LCDUnit"
+msgstr ""
+
+#: ../../en/units/lcd.rst:44 ad03476a4ca148e386272d29c82b9e66
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/lcd.rst:48 abf9fa88d4a9422a9970aee135b3d451
+msgid "Initialize the Unit LCD"
+msgstr ""
+
+#: ../../en/units/lcd.rst 85036a7cd47b482c84cb640b93ec9ed1
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/lcd.rst:50 5ebf59e9a37c475c994a129fec37a85e
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/lcd.rst:51 37f895bc63e04fec944140e7581560d6
+msgid "I2C address of the Unit LCDUnit, default is 0x3e."
+msgstr ""
+
+#: ../../en/units/lcd.rst:52 2b662e0ae15e456ea67be0df6e52a239
+msgid "I2C frequency of the Unit LCDUnit."
+msgstr ""
+
+#: ../../en/units/lcd.rst:54 0600cd1f6ce0442780fce18d6a44b164
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/lcd.rst:56 7ace95e9bfc84efc8d74ba7bd264da4c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lcd.ref:7 eb37208beafa4a278826f506efebefe2
+msgid "init.png"
+msgstr ""
+

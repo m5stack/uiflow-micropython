@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/hmi.rst:3 ../../en/refs/module.hmi.ref
+#: 3d0a0f8723fe40cd85c97474631748e6 7b834c0467eb49f4a511f20d0a4397b0
+msgid "HMI Module"
+msgstr ""
+
+#: ../../en/module/hmi.rst:7 993407e7e3554607883a3b8ec796766d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/hmi.rst:9 dc8f922e62674bd294e0b5beb785dddc
+msgid "|HMI Module|"
+msgstr ""
+
+#: ../../en/module/hmi.rst:11 061bd215b1cd42119a32e66e9046a317
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/module/hmi.rst:94 b5e949e45e594accbc0c7521fc3083e2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/hmi.rst:96 a32e5718668643839499c03c34fb39ec
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:19 caf3abd1356740dd9d02b4176fa2741c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:100 ff882dd3334d4084864944ae210d553d
+msgid "|hmi_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/hmi.rst:103 c73a1a89a1ff48c9828649157a7ded22
+msgid "class HMIModule"
+msgstr ""
+
+#: ../../en/module/hmi.rst:106 5519811e77294079a3cbd4440fd50896
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/hmi.rst:110 c7909f8bdbb44b138288080e0f3305dd
+msgid "Init I2C Module HMI I2C Address."
+msgstr ""
+
+#: ../../en/module/hmi.rst 2213656d749f488e8081a5dcf42677f0
+#: 297ffeb8380242e2ba703e8118189c9c 9208f298520f4154bc3444eb0dbdd140
+#: a64b8d62900945c58e491cc33f175649 b5f841e0bc774c739eb6255819e137c5
+#: c7ee4a53d422408a8477730e21d90461
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/hmi.rst:112 8400b7350b6248999a69456c75adb1a3
+msgid "I2C address of the HMIModule."
+msgstr ""
+
+#: ../../en/module/hmi.rst:114 ../../en/module/hmi.rst:127
+#: ../../en/module/hmi.rst:138 ../../en/module/hmi.rst:146
+#: ../../en/module/hmi.rst:154 ../../en/module/hmi.rst:164
+#: ../../en/module/hmi.rst:174 ../../en/module/hmi.rst:185
+#: ../../en/module/hmi.rst:194 ../../en/module/hmi.rst:202
+#: ../../en/module/hmi.rst:212 2c588af2dec24511b13e86ad2e4fec7a
+#: 3f9a5f8cfc1e417faa5c452544332486 505e3d064a224dd2b989bba30ae1af39
+#: 5146d74b23cb4ab48ab0d6a516db5660 5ea2824b5d794020aa7267f5b16441ef
+#: 7e79c10e357e4e409e7795e873e90545 aa4c487f4e114cedab2079673829b38e
+#: ae46ea84467041a9a3071614c64c19e5 bedebbe139cd44fc9400533c94ee0171
+#: d63e6e6029364a21a2b16ea220a04d08 efc295b935e74736ac5f5175f3eccf1a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/hmi.rst:116 b7c8ef63a1044cd28e44786c8c0310a0
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:7 95193c0f82d7466cac95d536e92b4a26
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:120 44d3e73f92e545eeb47c337215d3b66f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/hmi.rst:124 3fe9eab219b343e9b8bed137a4f37da3
+msgid "Get the current value of the rotary."
+msgstr ""
+
+#: ../../en/module/hmi.rst:129 659da3415a6e4284a83a7172dcd6f9f4
+msgid "|get_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:8 4be64619270f4d4db32e2d8a321b4fde
+msgid "get_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:133 0df9886dfbad4eb79ba82d789f825139
+msgid "Set the rotary value."
+msgstr ""
+
+#: ../../en/module/hmi.rst:135 5e3faf230cec46fa9ccf0471f692895b
+msgid "rotary value(-2147483648-2147483647)."
+msgstr ""
+
+#: ../../en/module/hmi.rst:140 afbbd752166447e4991e899b9f1e2130
+msgid "|set_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:9 3647754c8eea4758b10f27c2675a4829
+msgid "set_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:144 532ae1b13d264035b15a93d4ed6cd177
+msgid "Reset the rotary value."
+msgstr ""
+
+#: ../../en/module/hmi.rst:148 d352e4b70ebe48d192f2527eaefafcd4
+msgid "|reset_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:10 a8e44db5b29b4ffe8d5c7c0c1edc8ffd
+msgid "reset_rotary_value.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:152 426c82df9dcf4e619090e231bd2bd38f
+msgid "Get the increment value of the rotary."
+msgstr ""
+
+#: ../../en/module/hmi.rst:156 aa435b83fd814f1187dc422080a48e7f
+msgid "|get_rotary_increments.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:11 e101f34c038346548beb72e3421834ac
+msgid "get_rotary_increments.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:160 042228f3bdcf40fda9609ebf4c13855d
+msgid "Get the state of a specific button."
+msgstr ""
+
+#: ../../en/module/hmi.rst:162 739304d0438e426f9e4bbb90174e9cd4
+msgid ": Button number (1 to 3)."
+msgstr ""
+
+#: ../../en/module/hmi.rst:166 4f0a81ca69a549879c8844514c46167b
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:12 f186d46d3b164c6b96a2658f2310cdb1
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:170 8631b9918263498b842142d768678c1f
+msgid "Get the state of a specific LED."
+msgstr ""
+
+#: ../../en/module/hmi.rst:172 ../../en/module/hmi.rst:182
+#: 33088c1823b34e16a6399867e389d806 93b68508601a4ef39cfa67352f8883cf
+msgid ": LED number (1 to 2)."
+msgstr ""
+
+#: ../../en/module/hmi.rst:176 549e474da68c491a9d957af2e567efd8
+msgid "|get_led_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:13 07bd9c8ccd8b4129905900053a05ace5
+msgid "get_led_state.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:180 2ba5a8ac6c7e4163be9cc7d15de8c18c
+msgid "Set the state of a specific LED."
+msgstr ""
+
+#: ../../en/module/hmi.rst:183 3ed9378339684c0db472a86d610aef39
+msgid ": The state to set for the LED."
+msgstr ""
+
+#: ../../en/module/hmi.rst:187 154c8a2d202b4a15b24beba222673a43
+msgid "|set_led_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:14 d0d39e6c0a524dc096315ffed008a70e
+msgid "set_led_state.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:191 3e3636e1cf934ea7ae7215667595ea0f
+msgid "Get the firmware version of the HMI module."
+msgstr ""
+
+#: ../../en/module/hmi.rst:196 e2462b1f73624b1b82936535752dc245
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:15 6c911f8c46944887a227aa98cd70cf06
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:200 01ec505f9c754e529e75d63d2f501db6
+msgid "Get the current I2C address of the HMI module."
+msgstr ""
+
+#: ../../en/module/hmi.rst:204 eaa4e2f799f242209e77e1ca476e0f86
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:16 5ce63a93eb7f4ac89a622b92e22daee2
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/module/hmi.rst:208 0602ad95bd224b8bb72836ccf911d999
+msgid "Set a new I2C address for the HMI module."
+msgstr ""
+
+#: ../../en/module/hmi.rst:210 941abc98484340d9b4488ebbe4c948a2
+msgid ": The new I2C address to set."
+msgstr ""
+
+#: ../../en/module/hmi.rst:214 070d4590a5a242e48eac1348cf0646ac
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.hmi.ref:17 ceeb6e245b8c453596ded43046ba673f
+msgid "set_i2c_address.png"
+msgstr ""
+

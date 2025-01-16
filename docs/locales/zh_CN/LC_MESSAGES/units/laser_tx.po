@@ -1,0 +1,217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/laser_tx.rst:3 44118372e1b041b8869dd2ca577d2fcf
+msgid "LaserTX Unit"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:7 c819f912887046d496b7cf045634b950
+msgid ""
+"LASER.TX is one of the communication devices among the M5Units family - a"
+" Laser emitter with adjustable focal length.It is mainly built with a "
+"laser diode Laser communications devices are wireless connections through"
+" the atmosphere. They work similarly to fiber-optic links, except the "
+"beam is transmitted through free space. While the transmitter and "
+"receiver must require line-of-sight conditions, they have the benefit of "
+"eliminating the need for broadcast rights and buried cables."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:9 3d4ad07691174d4f8d7ca8a841835807
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:11 01a8118cc92144bfbcc59f4687c456d8
+msgid "|LaserTXUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref 73f156fd4b53467ca9995b53a0e7aa46
+msgid "LaserTXUnit"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:13 b00ed7e169e74d0ea5951bf4787ee494
+msgid "LaserTX Example:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:19 9a6a371500914df2af5f4697c1193726
+msgid "LaserRX Example:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:25 ad3a61635e8549afacb013a89cbb6e07
+msgid "LaserTX UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:27 c7c697a215b2401c8da898da4a78917b
+msgid "|example_tx.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:13 39800123dd864c268c3cb959becd70e9
+msgid "example_tx.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:29 1b7c39d9124f44e38d3bd561bfb4f6ab
+msgid "LaserRX UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:31 79d083dbbc464eaf97bec9c4987a4185
+msgid "|example_rx.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:14 967c166484854c94b5b6fb222b8a3c7a
+msgid "example_rx.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:35 88a43ca6c422461081468d2615549ad9
+msgid "|laserrx_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:37 9b71192fb0714611ba6d419d42c9ba12
+msgid "|lasertx_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:40 9597641d98124a6c8cc51f67550e3cd7
+msgid "class LaserTXUnit"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:43 719af1f02f814a97a5ce71ca36e84a55
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:47 bc9d8c52509e4b1caac3162cd2020c5b
+msgid ""
+"Initialize the LaserTXUnit with the specified port, communication mode, "
+"and UART ID."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst 65af9df78e414c46970a7326c96e3ac9
+#: 761c3641a2c24e878cfde2e35f3a63bd 7cc2ea9b16114fcd99c2f71905ff9f7e
+#: 83eaece300cf479e9c1354d467b0ae58
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:49 ce89c078cc2f45b69f389fdbbfeca627
+msgid "A tuple containing pin numbers for TX and RX."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:50 1d2fe7230b2d4d7387e1a0bd4bc085ad
+msgid "Communication mode; use PIN_MODE or UART_MODE."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:51 e36ed9992919426f9b034aa260471b44
+msgid "UART ID, either 1 or 2."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:53 ../../en/units/laser_tx.rst:70
+#: ../../en/units/laser_tx.rst:80 ../../en/units/laser_tx.rst:89
+#: ../../en/units/laser_tx.rst:98 3b7cf6188a8e4cbfb535d84c26a425f9
+#: 69601800875c430b86a1805372dad393 70a5964cd37b47a3b5915f9730d5f535
+#: a38c934284734e3a8ada5a0bfb17d161 a6e96fa6ef044b889bce842710894400
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:55 571ae25a1de44d3587e835620ebb61f6
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:7 a974152d8a6e4f2ba662317f283dffe2
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:59 9f42a5914abf477489518f9462830e42
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:63 4b474fdce03648c18d3ecedf2cdb2d3b
+msgid "Initialize UART communication with specified parameters."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:65 c4c7441839624b1ba8b05b196196dd07
+msgid "The baud rate for UART communication. Default is 115200."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:66 fd805379d9d641cf95c2db9729d67da8
+msgid "The number of data bits; 7, 8, or 9. Default is 8."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:67 3a239c52910f4865aedeb1714f5492bf
+msgid "Parity setting; None, 0, or 1. Default is 8."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:68 3de3c1f18d9e47c185b89bbe0c503982
+msgid "The number of stop bits; 1 or 2. Default is 1."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:72 bd948d6664c9458ca79f67f9201cffa6
+msgid "|init_uart.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:8 e3ee30e0080c488b82a55ddb0f7a2e50
+msgid "init_uart.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:76 202878923322426a971aad57c7e2184c
+msgid "Transmit data through UART."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:78 c6df919ef2ca4b4f8e0c305b2923ddf7
+msgid "The data to be transmitted via UART."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:82 b4f898a0e1a147bbbebdee03622b2f32
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:9 743e21a3e2cd4e44b90f22a0d107a90e
+msgid "write.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:86 8f9f31d9b48742659b06a36fe8dbe0ab
+msgid "Turn on the laser when using PIN_MODE."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:91 91350e5066d040bbae1b087603fecc06
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:10 8cd9ac2b46554f6284e02bf6d7f4ca0c
+msgid "on.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:95 a419ee35ed4c4f0c9eadfdcd67558eac
+msgid "Turn off the laser when using PIN_MODE."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:100 4edb25063937464e8bbc71e36b8087ee
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_tx.ref:11 3a2005cbc25f4a318d6e30bdc7a372d7
+msgid "off.png"
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:104 d5f7ee1b4a4b48909a89281fc301ec9b
+msgid "Set the laser state to either on or off using PIN_MODE."
+msgstr ""
+
+#: ../../en/units/laser_tx.rst:106 adbeab068294465e866062f021ca708b
+msgid "A boolean value; True turns the laser on, False turns it off."
+msgstr ""
+

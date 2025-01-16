@@ -1,0 +1,434 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/bytebutton.rst:3 56e1488e2bd94d4691bb95f63e8227c8
+msgid "ByteButton Unit"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:7 d9424c7b125645beb310c0e8138c41c4
+msgid ""
+"Unit ByteButton is an 8-button touch switch input unit equipped with 8 "
+"button inputs and 9 WS2812C RGB LEDs. It uses the STM32 microcontroller "
+"and supports I2C communication. The board includes two Port A interfaces "
+"and supports cascading multiple Unit ByteButton modules, making it "
+"suitable for complex systems. It can achieve button input detection and "
+"dynamic lighting feedback, ideal for smart home control, gaming devices, "
+"educational platforms, industrial status displays, and interactive "
+"exhibitions."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:9 4677f62031134e5b8cff806d32cb9092
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:11 6320c3881e2c4bcc8a8e385e3bd5f7d3
+msgid "|ByteButtonUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref c21875fb9217481fb7fe3aa48810bfe4
+msgid "ByteButtonUnit"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:13 10842054e5394e718a11f5cd9bbdcddb
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:20 5c5c79244ed341ef9631968fd44fe0f7
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:22 532c09a36c484ae4b1ff50d0e3fcc7e0
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:31 c3974300bfc6428bbd5378efc63ad1a5
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:26 e594144e0aea4150ab3aa60af91617c6
+msgid "|bytebutton_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:29 2cc41e804f56429193680c93700faa8c
+msgid "class ByteButtonUnit"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:32 b82c48313b6c45dc83d929c4f5f7f559
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:36 61584fb662ce4fd19e47764a8ff98b16
+msgid "Initialize the ByteButtonUnit with a specified I2C address."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst 141241205deb4cfab7770dafa69e4f06
+#: 1741b4c340394d5a9ac6b6b38271e51a 243b51cad34b44b98daa71a74d3b3872
+#: 3e6426f7a2504a82acda2b5648fe1d67 45abc051e774486d844606f2362aebe5
+#: 6ea9b58d41a040a6a750462129aba035 77a483ea1ec941ed8fb5352cbe563a6d
+#: 7ad030161114461d94a78b878a2cebdd 85dae81a3e9d40499b7bd34dc4a1b5da
+#: 954efef80d754a1bab8ad85e275d08e9 ad028011c89c4842a3046df7e69eac14
+#: d4b79121ecd54128b9f26f5b6a939a0e eef13452b08b48f79ec1d5534e8a786d
+#: fc43959e451e45af85e702cf2645413f
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:38 c7bebe5429294753aeede29f152dffd5
+msgid "The I2C interface instance for communication."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:39 63e3f12800a64146bcec2ce6faf25c4b
+msgid "The I2C address of the ByteButtonUnit, default is 0x47."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:41 ../../en/units/bytebutton.rst:54
+#: ../../en/units/bytebutton.rst:64 ../../en/units/bytebutton.rst:72
+#: ../../en/units/bytebutton.rst:86 ../../en/units/bytebutton.rst:97
+#: ../../en/units/bytebutton.rst:107 ../../en/units/bytebutton.rst:120
+#: ../../en/units/bytebutton.rst:134 ../../en/units/bytebutton.rst:146
+#: ../../en/units/bytebutton.rst:155 ../../en/units/bytebutton.rst:165
+#: ../../en/units/bytebutton.rst:174 ../../en/units/bytebutton.rst:212
+#: ../../en/units/bytebutton.rst:221 ../../en/units/bytebutton.rst:231
+#: ../../en/units/bytebutton.rst:240 03595c1a3ee546219bea34a73e483fb2
+#: 0cdb0d3216f64d089bc74e83c09dc2a5 1207081764e94ffd9f6dcb2fe49e66af
+#: 2569d30253174a6da9bb7eab8eb8d396 35ee7f757a03402a829ac484ac5db38c
+#: 38780f02f1344b48bf9e01019342cc92 3cab6a8d2daf4ee698cd7c23c8cbb112
+#: 3f396c809c074186b677455458182ffa 45ce0a8aeb6e4a32b51662dfe27a5663
+#: 707c789f9bce44f893a235a8ee81bcd8 724104f485a441b49e5934bc4e72abed
+#: 824b1a861f5245c4ad39378276f0cef6 a92af08fd4df46efa00f9d71be3de9f1
+#: b44c42376c6e48e6856bafd598ac8cba b7ca269ccb754aa78ecb8bd7c2b91f1a
+#: dc6d2363d3ec40e18c54d19a58f65067 eb772f1dba154d2183ade0aadb452aac
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:43 02043c973cba4a3d994b1c835460ea7d
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:6 335256c3b8b84f26a1b67099d408a5ca
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:47 7de6dc3764734904977e018b866e4ee0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:51 4a4af46df8b64d6d90cf6e8b3026ef2c
+msgid ""
+"Get the status of all buttons as an integer, where each bit represents "
+"the state of each button."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:56 9def02decb894ed2bb6b799488c379e6
+msgid "|get_byte_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:7 f7127e2612aa4aef8a3e2ce5a2eca413
+msgid "get_byte_button_status.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:60 0113ecb816b44950ae4c980b75dece1d
+msgid "Get the state of a specific button."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:62 fa4774061c2c43cdb502315703532e82
+msgid "The index of the button (0-7)."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:66 9e02810a869b4737993261767163550b
+msgid "|get_button_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:8 0585e96d1e554cc7bf2d67b69c46e510
+msgid "get_button_state.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:70 72a9abc60e0d4128b0e9a375afed9b72
+msgid "Get the current LED show mode."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:74 f81b0fc6c8b84c57a181eaac9a547a94
+msgid "|get_led_show_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:9 ab1d825829014ee59295317fd650849a
+msgid "get_led_show_mode.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:78 9c8a54ddc58e48ba9d35798c5c112248
+msgid "Set the LED show mode."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:80 b66a9edfedf14c1e9e17dca622111982
+msgid ""
+"The LED show mode to set.  Options:     - ``BYTEBUTTON_LED_USER_MODE``: 0"
+"     - ``BYTEBUTTON_LED_SYS_MODE``: 1"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:80 730c54cdcf6d49559b526fb7d18539c7
+msgid "The LED show mode to set."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:84 7faac104d19e4909af68d3f434bca996
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:83 f9d95199db59459cabc4e4294a2f7566
+msgid "``BYTEBUTTON_LED_USER_MODE``: 0"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:84 2b70c428e05f47f0b92719418c7a1651
+msgid "``BYTEBUTTON_LED_SYS_MODE``: 1"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:88 9cc402819b0d4663b49372fbf2609856
+msgid "|set_led_show_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:10 4a62184540854b3582a5e65c4941bcc9
+msgid "set_led_show_mode.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:92 ab9d1b08638240528b3f6047dce15c49
+msgid "Set the brightness of a specific LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:94 ../../en/units/bytebutton.rst:105
+#: ../../en/units/bytebutton.rst:115 ../../en/units/bytebutton.rst:130
+#: ../../en/units/bytebutton.rst:188 ../../en/units/bytebutton.rst:195
+#: 1983dc97099748bfb7dcf14ee6c61841 26c5c384dfb44510b281d50dcda2ba2a
+#: 2a7d13fa52f140c68aba2785521d9498 556411fe6bd441c1a312c92eef4f68e7
+#: 7d37e90ea7204dde83ee0db35638abb5 dee2f1e866894358a702baf030a1ccc0
+msgid "The index of the LED (0-7)."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:95 ../../en/units/bytebutton.rst:144
+#: a9780dbfdd824cb1a8118366abf4d650 c57c0416305f4429a2806b6cfa98c628
+msgid "The brightness level (0-255)."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:99 d639a1ce4e4f4b5a9caf374778f2a0a5
+msgid "|set_led_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:11 af5a1dcdcabb40ccaf18c83434b323c9
+msgid "set_led_brightness.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:103 d2506c50468c4724b63521e4eead700a
+msgid "Get the brightness of a specific LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:109 63a5d0da570f49f2a452f906987b3411
+msgid "|get_led_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:12 7452033eb6314eea92dd4b49a1ae9361
+msgid "get_led_brightness.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:113 90adbad0ac4b4853ad16b3efd7488052
+msgid "Set the color of a specific LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:116 ../../en/units/bytebutton.rst:163
+#: 51447468b89f4596876020f3da133405 6378d84b03f24893ad52637ce2fea961
+msgid "The RGB888 color value to set."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:117 ../../en/units/bytebutton.rst:131
+#: 0dca72cf35e548c2bdcf3ba378bbb811 186d1a4f8e634130b04fd8241d68db8b
+msgid "The LED show mode, default is BYTEBUTTON_LED_SYS_MODE."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:118 ../../en/units/bytebutton.rst:132
+#: 2470910eaf5745248e65fdc909abe83b abac32bcd5e94755905d7c445103ee94
+msgid "Whether the button is pressed (affects color in SYS mode)."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:122 4b5863d2bdb24fc9a36e5293badb77e3
+msgid "|set_sys_mode_led_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:13 59fa090e5a784aa0aaf19599af05bfb6
+msgid "set_sys_mode_led_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:124 b6b42dd277e14b87aafa4122e0aea36a
+msgid "|set_user_mode_led_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:14 744a2196bee94110bd179ef825c0a1f0
+msgid "set_user_mode_led_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:128 8fa2079c153c4fd18eb9d0c09dd121c0
+msgid "Get the color of a specific LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:136 8ad8998703844b088c10797899614402
+msgid "|get_sys_mode_led_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:15 d8213fb0f2e448eeaafe96f69ef46c3b
+msgid "get_sys_mode_led_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:138 0127c26b58e3418a9b6f78fe9a81c2a1
+msgid "|get_user_mode_led_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:16 f324d3d99ada4fdcb6ccbfbb0b850bd4
+msgid "get_user_mode_led_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:142 67023ea6603e49acae9d18964ba94ae5
+msgid "Set the brightness of the indicator LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:148 1ced4ed80ff14277bdcfce3a5dc2d53d
+msgid "|set_indicator_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:17 7dfd8861fb4646578db886d3238ae654
+msgid "set_indicator_brightness.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:152 df4ab52f25274783859ce8677000ce9f
+msgid "Get the brightness of the indicator LED."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:157 a2c1679c56b042ad84111ecde85b1cd2
+msgid "|get_indicator_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:18 6defb9c84fd54cb392749c8bc9493ec2
+msgid "get_indicator_brightness.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:161 0addea696cf64286b4b892358e9a0eaf
+msgid "Set the color of the indicator LED in RGB888 format."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:167 a0daf33d8b0445c7875b5b064cec2e18
+msgid "|set_indicator_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:19 052ed3acdd754d85b45fd252e9288b98
+msgid "set_indicator_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:171 0ba61903101c4f8cbe947261c837e248
+msgid "Get the color of the indicator LED in RGB888 format."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:176 be90e7b0f97d4379840a3d8fdeaca515
+msgid "|get_indicator_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:20 9bddaa9d50c54e56a070290dc9da773d
+msgid "get_indicator_color.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:180 d84671b50f4b442ea04f21b117805aa1
+msgid "Convert an RGB888 color value to RGB233 format."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:182 c58dfff3d7544e41ad740d4e38373d1d
+msgid "The RGB888 color value as a 32-bit integer."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:186 68bb89056dc34b94968d48a31b86ad75
+msgid "Set the color of a specific LED in RGB233 format."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:189 6cd7dc031e8c43b2be7f4d373cf2cabf
+msgid "The RGB233 color value to set."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:193 e295027f826e4953b8190519a14bd16d
+msgid "Get the color of a specific LED in RGB233 format."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:199 1aca96f8fca04941bfdca668b0d09a23
+msgid "Enable or disable IRQ functionality."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:201 cc28ca22c54d4ccd8d5a7e805e1d0ed6
+msgid "Whether to enable (True) or disable (False) IRQ."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:205 f0d503d785dd4d549ccfa444d1d750b0
+msgid "Get the current IRQ enable status."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:209 51701206d3b8455f8f70855557599f14
+msgid "Save the current user settings to flash."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:214 6c5c76b609674a5eaf86323704b95701
+msgid "|save_to_flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:26 dba81b9ca37b4394893381481769c9a0
+msgid "save_to_flash.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:218 ca7fe3bb109d494b8578a11000a46b79
+msgid "Get the firmware version of the ByteButtonUnit."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:223 0599b53cb7454d308ca5ca6d28d2d829
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:27 6dde66ec0e2c47df9bcaa2e8934f470a
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:227 80f827622b4749f69529197c29520236
+msgid "Set a new I2C address for the ByteButtonUnit."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:229 4988315ce7fc4d03b33873008a25ea8b
+msgid "The new I2C address to set. Must be in the range 0x08 to 0x78."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:233 070f9c0e15d94f5988307542c69f15f9
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:28 e0956931b5204cd1954a190501fd9cce
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:237 617f53f0989b4a488d4ecf322b1c7518
+msgid "Get the current I2C address of the ByteButtonUnit."
+msgstr ""
+
+#: ../../en/units/bytebutton.rst:242 88f7c006c72c400eab9bc384f2ed1561
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bytebutton.ref:29 83adef5023614e67a6995960bd7762ab
+msgid "get_i2c_address.png"
+msgstr ""
+

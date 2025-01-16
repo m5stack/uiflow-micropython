@@ -1,0 +1,704 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/timerpwr.rst:3 31cc553e077e40c1bca3b3f77aa6ece9
+msgid "TimerPWR Unit"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:7 552fce38f7674a9494ac9f2e19995650
+msgid ""
+"The TimerPWR Unit is a timed power supply unit whose main functions are "
+"\"charging & discharging + timed switching + screen display + boost "
+"output.\" It features an internal STM32 microcontroller that implements "
+"RTC and overall control, allowing users to set automatic power on/off "
+"times as needed. It is powered via the Type-C interface and can be "
+"connected to an external rechargeable battery via a 1.25-2P interface. "
+"The unit includes a built-in battery charging circuit supporting a "
+"charging current of 330mA. It also features an integrated DCDC boost "
+"circuit that provides a 5V/800mA (1400mA @ 1C battery power) power output"
+" to external devices via the Grove port. Additionally, the INA3221 sensor"
+" is built-in, allowing real-time monitoring of power input and output "
+"current and voltage. The unit is equipped with a 0.66-inch OLED display "
+"and two side buttons for user interaction, making it easy to view real-"
+"time system status and modify settings. Users can set parameters such as "
+"power on/off using the side buttons or via the I2C bus through the Grove "
+"interface with I2C commands. This product is suitable for smart homes, "
+"industrial automation, and timed control devices."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:9 56a1ae3586a344698ba172631c240f2d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:11 dc2680ac39f94443aea31f2842aaf8df
+msgid "|TimerPWRUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref 2b023618d743460a9d62709b61e87a61
+msgid "TimerPWRUnit"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:13 df41c01974bd45478507a2e3c984c760
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:20 1bf5a54260414d19ab6e62e341c4eb92
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:22 5f1d11fae0d741fa8c101c751ebad5ee
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:35 09a7fbd900ba42e1a4dd7b5fa71a9442
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:26 26294e9aa0024293825469fd1467f4bf
+msgid "|atoms3_timerpwr_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:29 a4eee584e7594667aa277150952e83b5
+msgid "class TimerPWRUnit"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:32 619bc11ad7e346e297a89b9497b62384
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:36 9fc108f2dd04492490df3a911be483ef
+msgid "Create a TimerPWR object."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst 1da9426c66d54223892cc71658c0565a
+#: 24447a5b34414f708753b912304031dd 2b8ba9279b4240a7865e4fca99375efa
+#: 3c3cf996cec94748bc8fd88f0ebdf4c5 54bb3c0052ef4048abc8ee3b79b84824
+#: 811c37ef25814ebf935ba456ca56ec20 8df36d9b78714bfea62880a715b815aa
+#: 8e3c8ff00ff7428eb9b3bc4e7445d4ee ae9b5cdb6f1e490284bb7c859b52cf93
+#: d0b22a31c6ff4706b4771c3fcd110d79 db4726d96d89437e89210748f6ecc7b5
+#: e35d962778134c6aa29b8e0c703714f8
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:38 ee72130d47744a1da3f71791505a5008
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:39 8cfe21f48b0a49759a6332c5c824829f
+msgid "I2C address, 0x56 by default"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:41 ../../en/units/timerpwr.rst:55
+#: ../../en/units/timerpwr.rst:65 ../../en/units/timerpwr.rst:75
+#: ../../en/units/timerpwr.rst:85 ../../en/units/timerpwr.rst:95
+#: ../../en/units/timerpwr.rst:105 ../../en/units/timerpwr.rst:115
+#: ../../en/units/timerpwr.rst:125 ../../en/units/timerpwr.rst:141
+#: ../../en/units/timerpwr.rst:150 ../../en/units/timerpwr.rst:160
+#: ../../en/units/timerpwr.rst:174 ../../en/units/timerpwr.rst:184
+#: ../../en/units/timerpwr.rst:198 ../../en/units/timerpwr.rst:213
+#: ../../en/units/timerpwr.rst:244 ../../en/units/timerpwr.rst:270
+#: ../../en/units/timerpwr.rst:287 ../../en/units/timerpwr.rst:309
+#: ../../en/units/timerpwr.rst:322 02cf34c977354e82ab8dca4fd5c73850
+#: 0aa7ca244b27407c82f81f4e8a79acf6 0f8c07e8157f4dbba7a133d9e9d7c327
+#: 15f150ef664f49adab095e0ea98dc55f 2ae6c9b481764e5ab0e5fcd888edc1d7
+#: 452afc4295694b009869b4fecfee530d 55dee580e81f4afea6b41588d8bec362
+#: 5a3924d8e0ae439e9845b74643a7ddb4 6464aa7884354e1986a9d1795f7bae7b
+#: 848b8969358a485786eeccfa5e32d90e 92501bbb2d5b48feab815450ce6ad43f
+#: 98a153dae26b42e9834e2e9f77171d5c b04a876e78894007810c33bebf6d6a9d
+#: b591bdc393694727b54e8cbc2b4bf0a8 be2b8eaf565e43e0abea3e74e0372df6
+#: c6460440c6c44b71b05200a6d06213d3 e1692f58baca48d69fdf9fadbd86736a
+#: ed8859bb45ac49f7b2f434374df63709 ef45088ba0a34b0c925a99e2883ad3d6
+#: f22e9f529fa2454b9ace1935b6be10dd f8853dbad40a4392be9b3241e3c085e0
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:43 8cc982b0cf5641509987ed1ee0427b5e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:7 c8df192b88dc4845be1adaaf9ae14709
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:47 04d498018ae940a081ad4f56f53c9621
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:51 9e9f7b2c9886425ca8d9a57c983c0d82
+msgid "Get firmware version."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst 166e81a250d24de9977a5086ff084d26
+#: 2630ba2df92048f0af560e1614a1e7c8 267afa037f254386b95dcfee9caaa85f
+#: 2888e10d403d4f52872d08c458bae1e2 b08493dd9a844651b0dfd01c3c735656
+#: bc4509dd1ca7444b9814e5104cd254a5 cd214f548d174527993a9d678e6e07e7
+msgid "return (int)"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:53 f1df73dd24ef40f39f2f0cde79d55c94
+msgid "Firmware version."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:57 bca00c238ac44465804ff1f841e1a508
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:8 3ee12c83aef64f26a1a6672be9404180
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:61 40ae8c3676984905a401b022dd9c5384
+msgid "Get battery voltage."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:63 4eda014236a440ac859aaaf2cdbaa789
+msgid "Battery voltage, in millivolt."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:67 6c1476fa425c4dafacf216781b62a22e
+msgid "|get_battery_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:9 6cd0b0602d3a468cbc3a1697e72b25c5
+msgid "get_battery_voltage.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:71 5effc07bd48e4c6cac9fb1fb7cd065c3
+msgid "Get battery current."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:73 a1394f07f5ed42ceb6d1647489f95d1c
+msgid "Battery current, in milliamperes."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:77 d4313e76516447ed8dbecb252be179b6
+msgid "|get_battery_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:10 9c0a28f5acc94c10a782ace5ff7f26c6
+msgid "get_battery_current.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:81 c781c7673fd54a70a15ea2e0d1299a08
+msgid "Get USB voltage."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:83 a1eadca9b6004211a979250b1b356882
+msgid "USB voltage, in millivolt."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:87 6e5b254c09014d84b8f3a48c16b5357b
+msgid "|get_usb_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:11 9c213c8aeaef4b599d34750e5782ed9e
+msgid "get_usb_voltage.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:91 6839f020319a4d6d892a1ea2e2a269cb
+msgid "Get USB current."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:93 3e1177596a864054a3174755ac314ed2
+msgid "USB current, in milliamperes."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:97 aecda2e1838a40698c283a77b1c95b53
+msgid "|get_usb_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:12 d65d84656ab04b7e98c24d49bc10bcdc
+msgid "get_usb_current.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:101 0cc4c2ea0a9346a6b5d9a24f549b140b
+msgid "Get Grove voltage."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:103 32a964b54c4340c1baab109eb716ec99
+msgid "Grove voltage, in millivolt."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:107 bebb20d9526a4d209a93d5d5403f73ba
+msgid "|get_grove_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:13 f511e0ef98184428ac22fdfe146989c8
+msgid "get_grove_voltage.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:111 296bb4483ce14e84be9012e40e4b57d9
+msgid "Get Grove current."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:113 271b2e2fdb444f4a8a51f580f8664444
+msgid "Grove current, in milliamperes."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:117 f022f9f1c10f42039374daad628f7687
+msgid "|get_grove_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:14 8fcaec013c3f4d41ac3054e771303a45
+msgid "get_grove_current.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:121 a929085d77a04dc18bbcc715fc13f17b
+msgid "Check if the battery is charging."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst 43c67ca0dd0e415b84875745c29bebf5
+#: 4fc56918dfe04667aec43498e8a83659 8bd23adaff1046f6be152def77c2a256
+#: b0f54982eadb4cd6b8a1e63e8f889040
+msgid "return (bool)"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:123 d0f80fa7a4d34a38851567033ac051b2
+msgid "True if charging, False if not."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:127 957634f67a9e4f81949e4c075774ff80
+msgid "|is_charging.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:15 023d29bf61ba4d81a77749d319bf11af
+msgid "is_charging.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:131 8099ea7a10e64b54bd2e934233bc4275
+msgid "Get button status."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:133 e78f62036ac3440f975d70dde647aa62
+msgid "button index.  Options:     - ``A``: 0     - ``B``: 1"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:133 5d6cb64bb4ff4b55b890c5b786253981
+msgid "button index."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:137 ../../en/units/timerpwr.rst:172
+#: ../../en/units/timerpwr.rst:196 ../../en/units/timerpwr.rst:255
+#: ../../en/units/timerpwr.rst:268 ../../en/units/timerpwr.rst:285
+#: ../../en/units/timerpwr.rst:305 25a969df94c5443d99ed5bfa792ba0b9
+#: 53524e4bc9cd41549044ef844c0c0996 71c153ec03d4467ba02411009f02ad30
+#: 7bd9263eaafd4c61afb2c3f6467b53f9 a2e8f0e6827f495996d58c369bd33a43
+#: f4051c11735845b598686383b6a02e0a f42a2a79cbc64a858d1b9472ea0423f2
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:136 c3040d28e125407595b040e16d018e8c
+msgid "``A``: 0"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:137 a8a948d5dc5949c0bcb5f5a0bfee9382
+msgid "``B``: 1"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:139 220381843d204e228ebc54c523a74bec
+msgid "True if pressed, False if not."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:143 e360b8043a9243888fe69fa71a3945e4
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:16 f99569094f524f04a4ee971bb42c4b4e
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:147 24adc77038964de19ab2cc3ce48d3910
+msgid "Save data to flash."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:152 c1a861fb690a4ecba6e21e70c00a9a89
+msgid "|save_data_to_flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:17 90cedf29633f4020a5521999bf91fc27
+msgid "save_data_to_flash.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:156 05c36d2bc0bc40099321a39065ef5b59
+msgid "Get Grove output status"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:158 ../../en/units/timerpwr.rst:182
+#: 1d29df6bc98a414ba7543c374651f014 ae1a5d3dae2f455284ccdfda332125ce
+msgid "True if enabled, False if disabled."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:162 199b50749be144cab9b574d4ac159061
+msgid "|get_grove_output_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:18 c388bc32b560401e99c0ce301b6dd15d
+msgid "get_grove_output_status.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:166 d680573cf5ee4588b8e48ffa4421be3b
+msgid "Set Grove output status."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:168 50388050b1494750b911f1942da49e94
+msgid ""
+"Enable or disable Grove output.  Options:     - ``Enable``: True     - "
+"``Disable``: False"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:168 85c94f00d6b64f7eae58897226002d61
+msgid "Enable or disable Grove output."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:171 ../../en/units/timerpwr.rst:195
+#: ../../en/units/timerpwr.rst:255 bbcc16b474d84994892ce4e52da18ce8
+#: f899034116994af7a471590d02ca09e6 fe852165d51942d4b3d795c683d2e1bc
+msgid "``Enable``: True"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:172 ../../en/units/timerpwr.rst:196
+#: ../../en/units/timerpwr.rst:256 07584cd55dce4e7ba58b15899cd810e4
+#: e46555675a1f4beb824fbaa39af35c05 ed0d26d217514d62b19d5e24d0465a06
+msgid "``Disable``: False"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:176 aeab0e5e3d9541afbb82a366d1e4b8b5
+msgid "|set_grove_output_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:19 a44a70f2ab7e4d7387d5a2c4cbdec61e
+msgid "set_grove_output_status.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:180 e087fa86cc684fdba4da6f223bf0ac0a
+msgid "Get OLED backlight status."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:186 9063d553aaa4467184c1e243d0d54238
+msgid "|get_oled_backlight_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:20 bef3a220126245b889c9e967ac10505a
+msgid "get_oled_backlight_status.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:190 6a522aa79f5f46429dd662b24b44d735
+msgid "Set OLED backlight status."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:192 d176adf4fd4a4c36a579489dc28c7102
+msgid ""
+"Enable or disable OLED backlight.  Options:     - ``Enable``: True     - "
+"``Disable``: False"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:192 319edbf2b5774fe9ae3010eb154d0c09
+msgid "Enable or disable OLED backlight."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:200 523c1dcfe4124d008f5e0c68bd1f3b16
+msgid "|set_oled_backlight_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:21 63f46a54c5a1480287a507c06f51617e
+msgid "set_oled_backlight_status.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:204 c9a538ca2dc541acbd38526bbdeaf9a1
+msgid ""
+"Set sleep once after hours, mintues, seconds and wake up in hours, "
+"mintues, seconds."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:206 ../../en/units/timerpwr.rst:237
+#: 2f9df98e3d04408fa2f3768be6cf1479 9844bed8d5ed46099638db7684224cb0
+msgid "Hours to wait before sleep."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:207 ../../en/units/timerpwr.rst:238
+#: 479eda60d2014b429cd829615d6463ac ecf2573b46984645b03be37b24a2daf8
+msgid "Mintues to wait before sleep."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:208 ../../en/units/timerpwr.rst:239
+#: 1d06855f85fe4a279ec9d503685e2811 6bec130fb7564c459e59618b0bea4fd2
+msgid "Seconds to wait before sleep."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:209 ../../en/units/timerpwr.rst:240
+#: 120d75834ced45e1a3dc2abfb3129334 f9053568214c4c59949f495fdd22ac4b
+msgid "Hours to wait before wake up."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:210 ../../en/units/timerpwr.rst:241
+#: 0e82b2ba12974cdc8a6fe78d8bdec873 28aec715ebbb4ccb908984624188adf1
+msgid "Mintues to wait before wake up."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:211 ../../en/units/timerpwr.rst:242
+#: 36e355dd1d834cf0b8f5628f9606b709 9c0c89ccb8af466495d0d0581e919625
+msgid "Seconds to wait before wake up."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:215 3c5502ed6eaa4c7f81996278eaf46496
+msgid "|sleep_once.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:22 1e1543f7058c4eb0a5ed79fe729b58b4
+msgid "sleep_once.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:219 a2d9ccff3f4b47a68476a9b2965ae94f
+msgid "Set power on time."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:221 cbd06d20f982403cb4636e4e7526e3bf
+msgid "Hours to power on."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:222 5a3afb5091f9490bb4c1d3597ebe2bf6
+msgid "Mintues to power on."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:223 243a60acc6fb442c8ec298d854eda9dc
+msgid "Seconds to power on."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:227 8ca0184171614316b97f769a375db495
+msgid "Set power off time."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:229 4910712d00044c0086bd97a268f69840
+msgid "Hours to power off."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:230 f4304eb4f383447bb08ab8e9c836c453
+msgid "Mintues to power off."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:231 f18a6b7c4e774abaa353afedf734fc41
+msgid "Seconds to power off."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:235 bb9c571286b5441393f8c9a9149a63f3
+msgid ""
+"Set sleep cycle after hours, mintues, seconds and wake up in hours, "
+"mintues, seconds."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:246 5a5f608eb916487eb5c17a37119acd93
+msgid "|sleep_cycle.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:25 3c83d69fda7f46f1b89945db78571fb6
+msgid "sleep_cycle.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:250 5fc98ad407c8432690ac3789f21bc239
+msgid "Set cycle sleep."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:252 3d321bf14c1c4226be83fc79a191132b
+msgid ""
+"Enable or disable cycle sleep.  Options:     - ``Enable``: True     - "
+"``Disable``: False"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:252 8edd167f57a340219e9fef243b2f307a
+msgid "Enable or disable cycle sleep."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:260 ../../en/units/timerpwr.rst:262
+#: 9db032483a2a458bbe000ca364e50d53 b63fafc9dc8a438d9f3c5705eb2542c4
+msgid "Set wake-up trigger."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:262 126b2f29b6da48849ec57dc8d73bed98
+msgid ""
+"Set wake-up trigger.  Options:     - ``ALL``: timerpwrunit_0.TRIG_ALL"
+"     - ``TIMER``: timerpwrunit_0.TRIG_TIMER     - ``BUTTON``: "
+"timerpwrunit_0.TRIG_BUTTON     - ``NONE``: timerpwrunit_0.TRIG_NONE"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:265 ../../en/units/timerpwr.rst:281
+#: 69918840b4314a3f9904bb86b4c6fc94 ebfe91505dec460b998361543be87e34
+msgid "``ALL``: timerpwrunit_0.TRIG_ALL"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:266 ../../en/units/timerpwr.rst:282
+#: 4dc578ff2cea419f8742db30763440df 63b6d0fdbbfb41d9ade8245da1b1c64c
+msgid "``TIMER``: timerpwrunit_0.TRIG_TIMER"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:267 ../../en/units/timerpwr.rst:283
+#: cc6413ce0fcd461d848b62e814997700 cf6c459dd050439f96ed2e3bbda60cdb
+msgid "``BUTTON``: timerpwrunit_0.TRIG_BUTTON"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:268 ../../en/units/timerpwr.rst:285
+#: 84ea0eed7dda4f919c7f28dcaedadbab dfd8528b3c9743f8be28ba8a6cc681f1
+msgid "``NONE``: timerpwrunit_0.TRIG_NONE"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:272 6e847457adc34665af49bfa8b5d7a041
+msgid "|set_wakeup_trigger.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:27 8d8edb898e1c413aa8860b38c939cfda
+msgid "set_wakeup_trigger.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:276 ../../en/units/timerpwr.rst:278
+#: 9fb816e733364001b2f56c41a8df4e87 e7a12f30dd434bb1b05d0e01f2787933
+msgid "Set sleep trigger."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:278 1660b56c8a8944319fa1b6f5fe68aa91
+msgid ""
+"Set sleep trigger.  Options:     - ``ALL``: timerpwrunit_0.TRIG_ALL     -"
+" ``TIMER``: timerpwrunit_0.TRIG_TIMER     - ``BUTTON``: "
+"timerpwrunit_0.TRIG_BUTTON     - ``I2C``: timerpwrunit_0.TRIG_I2C     - "
+"``NONE``: timerpwrunit_0.TRIG_NONE"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:284 9d087cc3082b46149802ffd543eaac5b
+msgid "``I2C``: timerpwrunit_0.TRIG_I2C"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:289 3f296998f9354a3f87efff3dd5f610a7
+msgid "|set_sleep_trigger.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:28 5a3e0c4934f646c5a4ec804fe847eef8
+msgid "set_sleep_trigger.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:293 20ae415ceb554c4380b6b9b0ae53bd81
+msgid "Set callback function."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:295 c56ea42a36744f6dbf28111645403d9c
+msgid ""
+"event type.  Options:     - ``USB inserted``: "
+"timerpwrunit_0.EVENT_USB_INSERTED     - ``USB removed``: "
+"timerpwrunit_0.EVENT_USB_REMOVED     - ``Button A pressed``: "
+"timerpwrunit_0.EVENT_BUTTONA_PRESSED     - ``Button A released``: "
+"timerpwrunit_0.EVENT_BUTTONA_RELEASED     - ``Button B pressed``: "
+"timerpwrunit_0.EVENT_BUTTONB_PRESSED     - ``Button B released``: "
+"timerpwrunit_0.EVENT_BUTTONB_RELEASED     - ``Not charging``: "
+"timerpwrunit_0.EVENT_NOT_CHARGING     - ``Charging``: "
+"timerpwrunit_0.EVENT_CHARGING"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:295 ../../en/units/timerpwr.rst:372
+#: cd449565ac4546a39c227cd84ff37225 daaa71b88abc46e9aedfc0ddfa2b7a0f
+msgid "event type."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:298 ec1f4bd17988431885ae4700a2f2e6df
+msgid "``USB inserted``: timerpwrunit_0.EVENT_USB_INSERTED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:299 28b1a05299e749ac8a44633a0d1a45c1
+msgid "``USB removed``: timerpwrunit_0.EVENT_USB_REMOVED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:300 a04beba1f4c64bc4ba85af54e8eb4d51
+msgid "``Button A pressed``: timerpwrunit_0.EVENT_BUTTONA_PRESSED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:301 1b29a33ca05647e7ada17a6ad0382b5a
+msgid "``Button A released``: timerpwrunit_0.EVENT_BUTTONA_RELEASED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:302 43c4a0800d3b4eb1b3f20089fb39efcb
+msgid "``Button B pressed``: timerpwrunit_0.EVENT_BUTTONB_PRESSED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:303 567f4176cccc4042bb7e7486aae1888e
+msgid "``Button B released``: timerpwrunit_0.EVENT_BUTTONB_RELEASED"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:304 f42830d68f5b42138b9129552aa50da6
+msgid "``Not charging``: timerpwrunit_0.EVENT_NOT_CHARGING"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:305 dba7f047a1a341ec989d410132a42798
+msgid "``Charging``: timerpwrunit_0.EVENT_CHARGING"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:307 070c077dbeed46e5821229eebc9b1f34
+msgid "callback function."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:311 c94f78f13cef43e2b10486c91aa663b1
+msgid "|usb_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:30 b31b1b67d69d4f329d0a4f7a5f77ce74
+msgid "usb_callback.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:313 b6dc979f45c1418092ea83d881bc08e7
+msgid "|charging_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:31 2e0b8f3efdf64731863f3285f4d50205
+msgid "charging_callback.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:315 f342b165b1a1411a910507b8e2f7d054
+msgid "|button_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:32 3cef535654bf4c6d86f88edb30fc5834
+msgid "button_callback.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:319 1724ead4360a4398ae550039d8d6ffcb
+msgid "Update status in loop."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:324 1ce5620d8fe748d3ac470d973a0bf2b7
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../en/refs/unit.timerpwr.ref:33 9e4158c05d4446d48661994bf3dbf54d
+msgid "tick.png"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:329 e0ae4cb44be441048949219bfb752b59
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:351 77c13c950e24466ab3d89d68d3a01023
+msgid "register address."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:360 46106015e4fa40f88407457dd14667b6
+msgid "trigger type."
+msgstr ""
+
+#: ../../en/units/timerpwr.rst:380 58eef2399ebb4057ba70c57235c19f81
+msgid "index."
+msgstr ""
+

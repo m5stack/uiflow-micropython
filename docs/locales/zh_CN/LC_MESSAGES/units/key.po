@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/key.rst:2 be8a8800d60b415c93d729dfc881dfa3
+msgid "Key Unit"
+msgstr ""
+
+#: ../../en/units/key.rst:7 c48d5cd05487448a998c9429fc533f27
+msgid ""
+"Unit Key is a single mechanical key input unit with built-in RGB LED. The"
+" key shaft adopts Blue switch with tactile bump and audible click "
+"features. Embedded with one programable RGB LED - SK6812, supports 256 "
+"level brightness. Two digital IOs are available for key status and LED "
+"control key status and lighting control. Suitable for multiple HMI "
+"applications."
+msgstr ""
+
+#: ../../en/units/key.rst:14 5e62cf053e434263be56477ed6c33d34
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/key.rst:16 e8620a2e4ae045e18d10c3b05fc0e6b1
+msgid "|KeyUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref a04c4135f5f747fcbe90690c935aa146
+msgid "KeyUnit"
+msgstr ""
+
+#: ../../en/units/key.rst:19 55ffb8523d3c44c1b3e500b14ac5b8a8
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/key.rst:26 b2011c2dd2a54e599f3c222c240803c9
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/key.rst:28 2a6ab0d02fba4821a75f92b7e88ef530
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:32 622676d7fec949a99592754a40314bef
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/key.rst:33 3d98a465721a4d23a150c837b876cb33
+msgid "|cores3_key_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/key.rst:37 4a973bdb62dd4855a33c9860c527c849
+msgid "class KeyUnit"
+msgstr ""
+
+#: ../../en/units/key.rst:40 7f0a47e05f71449997c61ab524398de8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/key.rst:44 3b25228c47b04b60945538b28416a6cb
+msgid "Initialize the KeyUnit."
+msgstr ""
+
+#: ../../en/units/key.rst 57f537246d794c0787d2cf36efcca870
+#: ba70807a580d46cdb87f9cd93c3982cb f955885f90bb4c5bb9e9085310e31399
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/key.rst:46 e0a7d7f673354f61a164c2ae106f4829
+msgid ""
+"The port to which the KeyUnit is connected. port[0]: key pin, port[1]: "
+"LEDs pin."
+msgstr ""
+
+#: ../../en/units/key.rst:48 ../../en/units/key.rst:62
+#: ../../en/units/key.rst:73 ../../en/units/key.rst:84
+#: ../../en/units/key.rst:93 ../../en/units/key.rst:102
+#: ../../en/units/key.rst:111 ../../en/units/key.rst:120
+#: ../../en/units/key.rst:129 ../../en/units/key.rst:138
+#: ../../en/units/key.rst:147 ../../en/units/key.rst:156
+#: ../../en/units/key.rst:165 ../../en/units/key.rst:177
+#: 063355cb77a640de83c5cdbec20916b0 0cd472d15fad405fbc0f9e01f379e505
+#: 12c8e0d183ce4af9943a7cb1f36d7492 16512f6f155b4b438d21a2ed672b73cb
+#: 4bfcdc96d5934a33b37e29103d20c43b 545cc5fa02da4e07a8e01e00e1f37af7
+#: 58647c51980c415d9365df41262f49b7 67a2f895fae24e23971d7714c5503f1b
+#: 67e66b46fda14e8cae11389c58ad0b08 7cac3ed632a84f01aafa5fbf05c76257
+#: 9762443fbefc452cae33e0fc5bbea9e7 ae38210a5f1e494aa95a12fc760eee9a
+#: d13d097169924449ab87bccb6cbc6c8b d187a7c2b5d24db9b90fc4107b3ed037
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/key.rst:50 85f44fce262b42d5a7f9688679956966
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:7 110d12d403f74fa6a7fffb3d1d9b279c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/key.rst:54 36b25c98c2804c67be0a95c1f470fe6a
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/key.rst:58 b46c987022e0443bac200b0b757fb7c6
+msgid "Get the state of the key."
+msgstr ""
+
+#: ../../en/units/key.rst 435932ad0b8a42389a5e1834e8ce43a1
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/key.rst:60 975e4d1b2a224d699f20c68bf2e3eede
+msgid "0: released, 1: pressed, 2: long pressed."
+msgstr ""
+
+#: ../../en/units/key.rst:64 bee055ff30504355976cae5f1b01e8ea
+msgid "|get_key_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:8 5a2056661cc64c19978684019a899281
+msgid "get_key_state.png"
+msgstr ""
+
+#: ../../en/units/key.rst:69 be045eb0e169473fbbbdb03e34cc6373
+msgid "Set the color of the LED."
+msgstr ""
+
+#: ../../en/units/key.rst:71 864ab5736cef43ad81a60e4e8483cfd8
+msgid "The color of the LED."
+msgstr ""
+
+#: ../../en/units/key.rst:75 0d8b9cb4a7b94a3c8d0333ff8e55b957
+msgid "|set_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:9 4bf6187ef34542ab9907b230f985d58a
+msgid "set_color.png"
+msgstr ""
+
+#: ../../en/units/key.rst:80 0532ba1847344f41aa6a7e6f80f6dbfe
+msgid "Set the brightness of the LED."
+msgstr ""
+
+#: ../../en/units/key.rst:82 d580e18b28d94ebb8c4672b28a560583
+msgid "The brightness of the LED, range from 0 to 100."
+msgstr ""
+
+#: ../../en/units/key.rst:86 b1f8608a27eb4b8e91a48ff997fc0c18
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:10 f57afb7e53904f528766be2e5d175732
+msgid "set_brightness.png"
+msgstr ""
+
+#: ../../en/units/key.rst:91 4a3decaecc6f424781050d76f2e50143
+msgid "Returns whether the Button object is in a long press state."
+msgstr ""
+
+#: ../../en/units/key.rst:95 3d3772ba80784771ba4adcac8344478b
+msgid "|isHolding.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:12 c4066dbaa1b14ed0a5c313aa96c53503
+msgid "isHolding.png"
+msgstr ""
+
+#: ../../en/units/key.rst:100 c24d73c842094195a4cd9a0393a844d8
+msgid "Returns whether the Button object is in a pressed state."
+msgstr ""
+
+#: ../../en/units/key.rst:104 6c9fb84969cf45af9f74a5d97da375ea
+msgid "|isPressed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:14 01cabb075f204beab72756a8d4adebcd
+msgid "isPressed.png"
+msgstr ""
+
+#: ../../en/units/key.rst:109 b136e75905864dce90562b47ca021823
+msgid "Returns whether the Button object is in a released state."
+msgstr ""
+
+#: ../../en/units/key.rst:113 9e056ee1a4d54e9a83088853f563de30
+msgid "|isReleased.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:16 e0c4e9b280ea40588f9688380f0ace38
+msgid "isReleased.png"
+msgstr ""
+
+#: ../../en/units/key.rst:118 1df0d9b273b64628b34ecb913b166671
+msgid "Returns True when the Button object is briefly pressed and released."
+msgstr ""
+
+#: ../../en/units/key.rst:122 30f781e1177141899ffb45d6946e8905
+msgid "|wasClicked.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:18 99648353395e49aabfc6ccdfee467314
+msgid "wasClicked.png"
+msgstr ""
+
+#: ../../en/units/key.rst:127 840e51f821b64373945df716c687fc2f
+msgid ""
+"Returns True when the Button object is double-clicked after a certain "
+"amount of time."
+msgstr ""
+
+#: ../../en/units/key.rst:131 62d9b02562c547ccafc2cf755802ca8e
+msgid "|wasDoubleClicked.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:20 669cb8bb24764c9b8e524c283bcdbccc
+msgid "wasDoubleClicked.png"
+msgstr ""
+
+#: ../../en/units/key.rst:136 75573be3574148aaa1d5c870298971ad
+msgid ""
+"Returns True when the Button object is held down for a certain amount of "
+"time."
+msgstr ""
+
+#: ../../en/units/key.rst:140 6328c49de1994c0f8e192be460fb7027
+msgid "|wasHold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:22 76eea93196764581ac3dc68e0816764f
+msgid "wasHold.png"
+msgstr ""
+
+#: ../../en/units/key.rst:145 f51a8bf4488c48b1b3d8374e74ae99e7
+msgid "Returns True when the Button object is pressed."
+msgstr ""
+
+#: ../../en/units/key.rst:149 d552a608175548308e2d3a5249e38fd0
+msgid "|wasPressed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:24 e6525e2157c148dc9374de94bd697a25
+msgid "wasPressed.png"
+msgstr ""
+
+#: ../../en/units/key.rst:154 be94e7a99f1a456cb5e76ea630a4af4e
+msgid "Returns True when the Button object is released."
+msgstr ""
+
+#: ../../en/units/key.rst:158 35d0afc502e6403fa3d9a6c8ce9d1dc8
+msgid "|wasReleased.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:26 f3f03b0c2ddc4e67a595cfb738c4c98a
+msgid "wasReleased.png"
+msgstr ""
+
+#: ../../en/units/key.rst:163 b69250d1a688442d90179392e0bdcf02
+msgid ""
+"Returns True when the Button object is single-clicked after a certain "
+"amount of time."
+msgstr ""
+
+#: ../../en/units/key.rst:167 6107a4177d0a4a8195d1d168b376f682
+msgid "|wasSingleClicked.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:28 7eb4ca1a50254fa19d759e0c52d808b8
+msgid "wasSingleClicked.png"
+msgstr ""
+
+#: ../../en/units/key.rst:171 18e605683cbf42af95bd1f5318737d9d
+msgid "Event Handling"
+msgstr ""
+
+#: ../../en/units/key.rst:175 59eb1cb9cb6c4f498a405cfca81f45fd
+msgid "Sets the event callback function."
+msgstr ""
+
+#: ../../en/units/key.rst:179 31e30d7e555c4ca7b72a31d3546fbdea
+msgid "|setCallback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.key.ref:30 f24b985c5643469a8b242477f26b5a05
+msgid "setCallback.png"
+msgstr ""
+
+#: ../../en/units/key.rst:183 ../../en/units/key.rst:194
+#: 71528669ba314f70810cd44f2d247979 c1f79fcad2f242328cdb83e5ba5912ae
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/key.rst:187 05deaafa13c34d1ab05b1d03f5538062
+msgid "A CB_TYPE object."
+msgstr ""
+
+#: ../../en/units/key.rst:191 98f44ac87b9548fb845e7498bc59a615
+msgid "class CB_TYPE"
+msgstr ""
+
+#: ../../en/units/key.rst:198 602b9168c1364ed2a4ed8a7bb93f25fc
+msgid "Single click event type."
+msgstr ""
+
+#: ../../en/units/key.rst:203 e6b472a3b8694806b48b19a984dd7c24
+msgid "Double click event type."
+msgstr ""
+
+#: ../../en/units/key.rst:208 f8ffa3ffca7b4b50b4fe5969ff1ffa8a
+msgid "Long press event type."
+msgstr ""
+
+#: ../../en/units/key.rst:212 f744df12be1643e497576060760642d8
+msgid "Press event type"
+msgstr ""
+
+#: ../../en/units/key.rst:216 824cad539a22402a8e8a5e3a7539a64c
+msgid "Release event type"
+msgstr ""
+

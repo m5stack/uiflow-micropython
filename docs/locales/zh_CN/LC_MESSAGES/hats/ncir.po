@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/ncir.rst:2 7013f9a6681743e88e552fd9b678c6a2
+msgid "NCIR Hat"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:6 eb3bb7f719ed4d159076f8c9de0e2ff0
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:8 d4d24836be444089836ad9dba71ac424
+msgid "|NCIRHAT|"
+msgstr ""
+
+#: ../../en/refs/hat.ncir.ref 9453fe698f6a4adfa9178764181ee0ed
+msgid "NCIRHAT"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:11 87b4accd50404dc3b351f80c3b3566e8
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:18 8c68197b7afc4ca3a21176ddc9f44796
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:20 963c6cf0b71f481c96ca28f40a8fc4ac
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.ncir.ref:8 ed49efac35cd4f318b5788330aba7e87
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:25 459a28a6cbdf4e13aee34b457f7815f2
+msgid "|stickc_plus2_ncir_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:29 dce99edffbe641b39a22ec0beb504fb0
+msgid "class NCIRHat"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:32 1c9989a2b260427cba70196f2226b2cb
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:36 44f60e80cf5942e79234efa6b599a481
+msgid "Create a NCIRHat object."
+msgstr ""
+
+#: ../../en/hats/ncir.rst f90628559e104b289d7737bb83db1954
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:38 2a7c08ed56994a3398c85b2c368c0768
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:39 181e06471c224a23a6feee018b0d563c
+msgid "the I2C address of the device. Default is 0x5A."
+msgstr ""
+
+#: ../../en/hats/ncir.rst:41 36d18a818a7c4b49b5f2d5ad71699c40
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:43 a43fcfed5ee445cda89a292176746278
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.ncir.ref:6 5f07e1fcde83438abed14e128bc9e8ee
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/ncir.rst:46 1ef8eceaeaf5488aa1dd4b4fca0b221e
+msgid ""
+"NCIRHat class inherits NCIRUnit class, See :ref:`unit.NCIRUnit.Methods "
+"<unit.NCIRUnit.Methods>` for more details."
+msgstr ""
+

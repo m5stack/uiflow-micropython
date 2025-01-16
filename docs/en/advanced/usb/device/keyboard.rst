@@ -1,17 +1,19 @@
-:mod:`keyboard`  
+keyboard
 =====================================
+
+.. currentmodule:: usb.device.keyboard
+
+.. module:: keyboard
+    :synopsis: bluetooth keyboard
+
 usb device keyboard
 
 .. include:: ../../../refs/advanced.usb.device.keyboard.ref
 
 .. note:: This module is only applicable to the CoreS3 Controller
 
-.. module:: keyboard
-    :synopsis: bluetooth keyboard    
 
-
-
-Micropython Example 
+Micropython Example
 --------------------------------
 
 USB keyboard
@@ -21,7 +23,8 @@ USB keyboard
         :language: python
         :linenos:
 
-UIFlow2.0 Example 
+
+UIFlow2.0 Example
 ------------------------------
 
 USB keyboard
@@ -34,17 +37,18 @@ USB keyboard
     |m5cores3_usbd_keyboard_example.m5f2|
 
 
-class Keyboard  
+class Keyboard
 ------------------------------
-.. function:: usb.device.keyboard.Keyboard()
 
-    Create Keyboard object 
+.. class:: usb.device.keyboard.Keyboard()
+
+    Create Keyboard object
 
     UIFlow2.0
-    
-        |init.png| 
 
-.. method:: set_modifiers(right_gui: bool = False, right_alt: bool = False, right_shift: bool = False, right_ctrl: bool = False, \
+        |init.png|
+
+.. method:: Keyboard.set_modifiers(right_gui: bool = False, right_alt: bool = False, right_shift: bool = False, right_ctrl: bool = False, \
                        left_gui: bool = False, left_alt: bool = False, left_shift: bool = False, left_ctrl: bool = False)
 
     Set modifier keys
@@ -61,11 +65,11 @@ class Keyboard
     :note: Changes will take effect after calling Keyboard.send_report().
 
     UIFlow2.0
-    
-        |set_modifiers.png|
-         
 
-.. method:: set_keys(k0: int = 0, k1: int = 0, k2: int = 0, k3: int = 0, k4: int = 0, k5: int = 0)
+        |set_modifiers.png|
+
+
+.. method:: Keyboard.set_keys(k0: int = 0, k1: int = 0, k2: int = 0, k3: int = 0, k4: int = 0, k5: int = 0)
 
     Press specified keys (up to 6 key values at a time)
 
@@ -94,31 +98,29 @@ class Keyboard
         Keyboard.send_report()
 
     UIFlow2.0
-    
+
         |set_keys.png|
 
-.. method:: send_report()
+.. method:: Keyboard.send_report()
 
     Send keyboard status report
 
     UIFlow2.0
-    
+
         |send_report.png|
-        
-.. method:: input(key)
+
+.. method:: Keyboard.input(key)
 
     input key
 
     - ``key`` The input can be a string within the ASCII range or a value from KeyCode.
 
-    example:
-    
-    ::
-    
+    example::
+
         Keyboard.input("Hello M5")
         Keyboard.input(KeyCode.A)
 
     UIFlow2.0
-    
+
         |input.png|
- 
+

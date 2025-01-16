@@ -1,0 +1,36 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/usb/index.rst:2 b5cc9048e9014eb0b9a623564b6a0723
+msgid "USB Drivers"
+msgstr ""
+
+#: ../../en/advanced/usb/index.rst:6 5a135f974c9148c0bdd7ec315975f9f6
+msgid ""
+"These packages allow implementing USB functionality on a MicroPython "
+"system using pure Python code."
+msgstr ""
+
+#: ../../en/advanced/usb/index.rst:9 2f350ea2f27e48ee931319e469da3486
+msgid "Modules"
+msgstr ""
+

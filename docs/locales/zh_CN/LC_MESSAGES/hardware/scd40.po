@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/scd40.rst:3 ../../en/hardware/scd40.rst:16
+#: c2b62875b3204c70976ccfeebf2f6223 ef92ba7815d1493094177c2ffa7b36dd
+msgid "SCD40"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:7 d5134498103a4255a6cc3bd790cd705e
+msgid ""
+"The SCD4x is Sensirion’s next generation miniature CO2 sensor. On-chip "
+"signal compensation is realized with the build-in SHT4x humidity and "
+"temperature sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:9 e983e3bc1139475faf666e735ddddcdf
+msgid "The specific support of the host for SCD40 is as follows:"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:16 fab094ffb02c4091812dcbf5bdf9829f
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:18 e4d8771d73714b98a5021eb8363afd2b
+msgid "AirQ"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:18 b78358d93dce467c966cf48203eb487d
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:24 d51b1326ade844f483ab624b2581e23c
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:30 67797537e80b4c9f9bd8a66f201ae77b
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:32 6a1ebbbdec914d9cae7a9af36a16e227
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:20 36c75a388748433fb2651585e5da4ea7
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:36 9e18bb12c9d940b098a1a52cd7f90554
+msgid "|airq_scd40_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:40 f5a48ab8b43d42fba96d86e7d5417e14
+msgid "class SCD40"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:43 e76b90d2509643c8bcc2f55fa6f15ec2
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:47 3995e807a5c5498d9123ccfd05098ddd
+msgid "Initialize the SCD40 with the I2C interface and address."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:49 ../../en/hardware/scd40.rst:67
+#: ../../en/hardware/scd40.rst:76 ../../en/hardware/scd40.rst:89
+#: ../../en/hardware/scd40.rst:98 ../../en/hardware/scd40.rst:108
+#: ../../en/hardware/scd40.rst:117 ../../en/hardware/scd40.rst:127
+#: ../../en/hardware/scd40.rst:137 ../../en/hardware/scd40.rst:147
+#: ../../en/hardware/scd40.rst:156 ../../en/hardware/scd40.rst:166
+#: ../../en/hardware/scd40.rst:175 ../../en/hardware/scd40.rst:188
+#: ../../en/hardware/scd40.rst:197 ../../en/hardware/scd40.rst:206
+#: ../../en/hardware/scd40.rst:215 ../../en/hardware/scd40.rst:224
+#: 0aa212a6d46244fbbd19fe29780ade3e 2409adec92dc4f83aa9b55c224c25bdd
+#: 26fe3978736245388df179292c7d01a7 3c2dec9435064ccaae703eb924b90e35
+#: 440a707f279249cebd35df92ef042565 44840385737e4a959b0cbe90c31eeabf
+#: 489774dcce58471597050e2ccab4698a 4f7a56e97f544c538ea32caf239e3b6b
+#: 66ed79a6cfdc4b1586ba51307a7c035c 6d15d43361704686b5691831f17b0885
+#: 74bc273e442f479e8feecc90a353f034 75c5a7bbfeec42f08a2b3307a816389a
+#: 76c8fb37e9b64808a3dc5589efc01a8d 8f1e5fd2e7e4436894fee8ec87ef5ca9
+#: aac29c8b70354472861abfcae54d9e66 bf3e674bc7b64c37a8b9723628693e2a
+#: c4dd8cb66f1d4a3f824e04b8d47503b4 db8a2f52cefa49baab4077c324cf9ab6
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:51 43e275476e5c4ae5861b707fde839d97
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:1 98cdab37d94a45dba9b9babdbb1074a3
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:55 6eeb766fb99d4ba3b33ca9afdfdc1e04
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:59 d8e028bebcf6489a91d35f9227517fbb
+msgid "Check if the SCD40 sensor is available on the I2C bus."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:64 4af0cd20b58645fda7cf421c589e96a2
+msgid ""
+"Set the sensor into working mode, which takes about 5 seconds per "
+"measurement."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:69 047bb505c49943e8b2645c8e873094a1
+msgid "|set_start_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:2 f0f5a1940d5a484081a5a72306ba4255
+msgid "set_start_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:73 d523caec59f449a9b507aad2c0444d90
+msgid "Stop the measurement mode for the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:78 bbc4ced8e33c45a69440c46fd3d931ff
+msgid "|set_stop_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:3 ca41463257fd456d9c2a64fdf9137d54
+msgid "set_stop_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:82 fc2372aae10d4a63842c6eb14938b868
+msgid "Get temperature, humidity, and CO2 concentration from the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:87 a1dc19156a8242db805cbdabcf2e310c
+msgid "Check if the data (temperature, humidity, CO2) is ready from the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:91 0318dfc023024cee9b86519f2e4dad88
+msgid "|is_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:4 716d190067564ba089597d1f3654b510
+msgid "is_data_ready.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:95 7916c8b9f78b4e48b5bb71737cbf1d69
+msgid "Get the temperature offset to be added to the reported measurements."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:100 14f2172bd2454277b1e0d38d528cb064
+msgid "|get_temperature_offset.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:5 d0fb3c40f05e4ae9a568e6e9a9654d75
+msgid "get_temperature_offset.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:104 9bb2f8482d2a4efab4470653e03dc07b
+msgid "Set the maximum value of 374°C temperature offset."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst 3fc2ccadd83444868becc40461cc4cae
+#: 464cc8b2dcc54b1993c5719dcf45784e a263bfc426144989b6dc21ae612f79e5
+#: a48b3de05bf84d208170b1985b271aa6 ba15b63ea76447c7b8ccde02c9cff40c
+#: cb5648c460024d13987ede4cb81b3dc2 d8354f427d154cf1b8cfb84828bd6502
+#: e0c7604370b64cbba0cf6da717d6640b f2eaf0ccc22d46ea9c8cb2d8d0f88fd7
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:106 7796fc37df8e432d80491bec004d4c7d
+msgid "The temperature offset to set, default is 0."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:110 2bae1a86323e4c78bfe334814acde667
+msgid "|set_temperature_offset.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:6 4abca53e78064f2f908b9c5fd6fa870f
+msgid "set_temperature_offset.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:114 40fd633cc2fc44fd80452b4d8ba10fe0
+msgid ""
+"Get the altitude value of the measurement location in meters above sea "
+"level."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:119 0920fdcbf2da45e89aedcc1cbff1eacd
+msgid "|get_sensor_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:7 4c69d20b72634feb965e21d9361e2fed
+msgid "get_sensor_altitude.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:123 926ccc7c72a147f4863e775bbf3ba3a4
+msgid ""
+"Set the altitude value of the measurement location in meters above sea "
+"level."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:125 0f207a06456347d09ee3c767227bb49c
+msgid "The altitude in meters to set. Must be between 0 and 65535 meters."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:129 ca2156e9eea549a59fb44832e831b29b
+msgid "|set_sensor_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:8 c2ede58f259e46e2acf4e7d2f2b8762a
+msgid "set_sensor_altitude.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:133 2df648185ced417a9baa4f812048c79b
+msgid "Set the ambient pressure in hPa at any time to adjust CO2 calculations."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:135 4514b3688d994a49ab16db655050a0ac
+msgid "The ambient pressure in hPa, constrained to the range [0, 65535]."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:139 94e18b0561074f01824b86cfe50ccaa0
+msgid "|set_ambient_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:9 4506fc706c8741d2945f5ffce76bbee4
+msgid "set_ambient_pressure.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:143 4c8cd2e464a34708b7504a3a1752878b
+msgid "Force the sensor to recalibrate with a given current CO2 level."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:145 739dc6445c344915820b33826f5a9f2d
+msgid "The current CO2 concentration to be used for recalibration."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:149 b4889fde718747febfe981c18ec9c61b
+msgid "|set_force_calibration.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:10 e7e20b3e3f024a40bb992f43fe91130b
+msgid "set_force_calibration.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:153 ffd069e8081249528514fda1de94845c
+msgid "Get whether automatic self-calibration (ASC) is enabled or disabled."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:158 4273a1c0593e4775ac44d8be7970c29f
+msgid "|get_calibration_enabled.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:11 9d7354d2d9924dcf870f5248deae633b
+msgid "get_calibration_enabled.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:162 ab67bfa478614dee96786a8d42a10bc1
+msgid "Enable or disable automatic self-calibration (ASC)."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:164 16c82ecca88f4185a4634559c4bd08fd
+msgid "Set to True to enable ASC, or False to disable it."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:168 e3dbf6258bbe4c18851f1363e40f9aab
+msgid "|set_calibration_enabled.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:12 0581e77436f94cdbbc1ef212351bc054
+msgid "set_calibration_enabled.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:172 df4e1cffa2d340e893d9c97782ee2c39
+msgid ""
+"Set the sensor into low power working mode, with about 30 seconds per "
+"measurement."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:177 e52c6130492a48608b27b1a96fcf1c58
+msgid "|set_start_low_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:13 c56b3ed5803e4c33b69f8d44aa295bcc
+msgid "set_start_low_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:181 4a5f64bddc2b4a6b95628ae1d1e4afed
+msgid "Check if new data is available from the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:185 58cb9ea0e2684bc480e4ee4a271311b0
+msgid ""
+"Save temperature offset, altitude offset, and self-calibration enable "
+"settings to EEPROM."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:190 3ae1eff4de1d4bceb69b7b91d2c78fe9
+msgid "|save_to_eeprom.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:14 9632797796ae4549830840640d4515cb
+msgid "save_to_eeprom.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:194 0579e5b0ca4b404fb457cc650d8e6c0e
+msgid "Get a unique serial number for this sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:199 731521e6797842e9bd62a0f6fe2a88f6
+msgid "|get_serial_number.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:15 f07a5093caf347edb8aa0eb9abe4b03d
+msgid "get_serial_number.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:203 c7eb2e3a7fd54c1bb4cb293fa3305764
+msgid "Perform a self-test, which can take up to 10 seconds."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:208 bbe525383eed49de9e8fbb925ceba718
+msgid "|set_self_test.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:16 d5f7c5b7782d43ee875af88c1097f608
+msgid "set_self_test.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:212 6e640d4149624f738c20abcab99e8e33
+msgid ""
+"Reset all configuration settings stored in the EEPROM and erase the FRC "
+"and ASC algorithm history."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:217 0a041d7adf8c4b3f9b0d6d4a8a587a45
+msgid "|set_factory_reset.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:17 5c502ae553374e9e9a2c3896c196e74d
+msgid "set_factory_reset.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:221 886ba01b89ad45f1b22f0817cc1026fd
+msgid "Reinitialize the sensor by reloading user settings from EEPROM."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:226 102d0ea7a4fd4e86a7354b59f4dd8aec
+msgid "|reinit.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.scd40.ref:18 29f1348fc80d46ba8fc9b56c6ea27117
+msgid "reinit.png"
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:230 3f80a135d7e9475cab5ca2f48fc616e5
+msgid ""
+"Set the sensor to perform a single-shot measurement for CO2, humidity, "
+"and temperature."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:234 19692598e1e946139c4f9c19a420bfbf
+msgid ""
+"Set the sensor to perform a single-shot measurement for humidity and "
+"temperature."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:238 546ac11251b9498ea41495b38c5c4b7c
+msgid "Put the sensor into sleep mode to reduce current consumption."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:242 987e288a47464cc4a4b2f87f7e90f702
+msgid "Wake up the sensor from sleep mode into idle mode."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:246 85877a177b24422a9d66f8578e4b9bce
+msgid "Write a command to the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:248 8335b88ce1574a25a14c217d8eb4315c
+msgid "The command to write to the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:249 22bd1ef022c0418ca8ae5fc2b7e09ca0
+msgid "The value to send with the command, if any."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:253 5fa3e81d2b56410d8477ad7fcec0deef
+msgid "Read the sensor's response."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:255 f353fc9df1474a43801d1d58cd854e91
+msgid "The number of bytes to read from the sensor."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:259 6589e4a1ae2b418e966c738bc0ef2467
+msgid "Check the CRC of the received data to ensure it is correct."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:261 d59a70d2f8d143d2acc117a1a7dcfbcf
+msgid "The buffer of bytes to check the CRC."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:265 0673144d6226407785b0ffd22e84cbc5
+msgid "Calculate the CRC-8 checksum for a given buffer."
+msgstr ""
+
+#: ../../en/hardware/scd40.rst:267 922a762c58644077b5fe4e5f98da24e3
+msgid "The buffer of bytes to calculate the CRC for."
+msgstr ""
+

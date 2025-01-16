@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/bleuart.client.rst:4 30ebb7ddab6844aeb8080adf19eb19a6
+msgid "class BLEUARTClient"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:8 84f2903fa24341cb8c8d6a08eef60eff
+msgid ""
+"BLEUARTClient class is a BLE UART client, which can connect to a BLE UART"
+" server and communicate with it."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:11 c41be09697b24eb2bbad493cb554b576
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:18 704b74e7e38a4c51a10e0622dd433974
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:20 43d9314dc7634370a28da98b5d4adcb9
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:33 271cf8d2c6734f3bb7ce641478d93540
+msgid "example.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:25 f5639dbdceba4491bee5824254dcf2c4
+msgid "|atoms3_bleuart_client_example.m5f2|"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:29 ce57694b485442688479c2317f79753b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:33 6bca0a2172a74b648767df70d078a167
+msgid "Create a BLE UART client."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst 22414d27acd5439cb89551acebd0fa46
+#: 2d943917dd0b495cb7f0e9f9bdb9fa21 af118f44bb274a028ffc6a219cd909c2
+#: f0a6646efdbd4f9e831221a7fb680d59
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:35 ../../en/system/bleuart.client.rst:65
+#: 2db1496bbb724985b5fb06bc096b61fd 9c11421dfb794b649ef615be9c887b75
+msgid "The name of the ble device."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:36 b665076c262441e1895004e75a47666b
+msgid "The size of the receive buffer."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:37 6c77258e835b41c8a81068b3118527e4
+msgid "Enable verbose output."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:39 ../../en/system/bleuart.client.rst:56
+#: ../../en/system/bleuart.client.rst:68 ../../en/system/bleuart.client.rst:79
+#: ../../en/system/bleuart.client.rst:92 ../../en/system/bleuart.client.rst:109
+#: ../../en/system/bleuart.client.rst:128
+#: ../../en/system/bleuart.client.rst:136 114d3c2591114e13bf2a28fc398d8c6a
+#: 141d3807ed2e432d86dfead27eeed233 2ba9cff3af7243abaf482b840e354a93
+#: 4ccde925f4864ab6bd2a915ea796ce5d 6234c917405647168b98c5bc7959c2fd
+#: 991733e441994d01bac77eb5c0921c9d b846ec001391458b99f61087de7446d0
+#: e823ad9057a340ac9dfcb71896ca76ab
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:41 e064f50330b54e619f42b3995b52ea7c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:1 d41de1a8ee764254991d3be55729a660
+msgid "init.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:45 5688946ef1304e6789fd375089ceaf1b
+msgid "Methods"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:49 79981b7773e74939860d4d0c75336a81
+msgid "The irq of the ble uart client."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:54 654e8a8f9c7e4ed5bd701f5a0b2ac418
+msgid "Check if the ble uart server is connected."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:58 79b30f61a8074556b0061c3cbaf43803
+msgid "|is_connected.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:3 4d724f9ca465479aaf45c13354f2468e
+msgid "is_connected.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:63 c886487ec5a54ea2b036226778ebf681
+msgid "Connect to the ble uart server."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:66 f6a037bce8fe46ff85761afb9a963d20
+msgid "The timeout of the connection."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:70 039c895475aa472198ec58671e138d1c
+msgid "|connect.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:5 2d497cdca1d14167aa319d93f806115d
+msgid "connect.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:75 798d6f2044214dc7aa8f858773f1cfe6
+msgid "Check if there is any data in the receive buffer."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst 2425ccd2fdc84e99963c2cda481a0e8d
+#: 9d9f87d6697b463f8190dea334349e83
+msgid "Returns"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:77 a32ab310fea04dbda878a61c4c0fb222
+msgid "The number of bytes in the receive buffer."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:81 c1e88414767341878ad76c10a7fdc48e
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:7 a4aa22ee249540cabbc4a7f4048089b5
+msgid "any.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:86 b733147d4535450c95448caec214c6c7
+msgid "Read data from the receive buffer."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:88 2836ebae480a45be98599eb656a25956
+msgid "The number of bytes to read. If not specified, read all data."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:90 5f68a071431f4e98a08e59a9139e28e1
+msgid "The data read from the receive buffer."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:94 ec83a5f3aef44839a7e6ff838b7059ea
+msgid "|read_all.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:9 0810318c5324440f9726c6750fbe78a3
+msgid "read_all.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:96 02426fcd20be4001a2c4ec8ff55ea362
+msgid "|read_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:11 bfe5f2d3b5d54108bd2f68f387228862
+msgid "read_bytes.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:98 fa772d2456bc4d31a3808e6157b060a2
+msgid "|read_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:13 320f1562fb2041d18a9a142b7d531828
+msgid "read_raw_data.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:100 b8c8f0aea95d46668a80ea01e0943e5c
+msgid "|readline.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:15 75fa43168fbc4a4582f213fd5393e48a
+msgid "readline.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:105 ef4813984bb3431fb7fc71dfa0dbc5db
+msgid "Write data to the ble uart server."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:107 e8ad3b7db7684052925551a54826c9d7
+msgid "The data to write."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:111 7ca5b70cdb424406b85b0524beade0c8
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:17 207695d194f74665ae9b16efbf19e34c
+msgid "write.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:113 af51711f85634abfbdd6c608403baa19
+msgid "|write1.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:19 87edd8b24323444683766e1186281479
+msgid "write1.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:115 ef4be533218c429e8c374eac7dd40aa3
+msgid "|write_line.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:21 90cea5ce135344e7a1ada45844c369f7
+msgid "write_line.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:117 8769a8d18b9e4794b5a72e0610e7508e
+msgid "|write_list.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:23 7e3e19166d7649e48f4eaf5633286240
+msgid "write_list.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:119 299079f2e72742bb8d2953fbfce16a0c
+msgid "|write_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:25 b80b897ce5b5475ead6a1b27d42faf81
+msgid "write_raw_data.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:121 3cccbc2743604d8288ddc71a22ac7116
+msgid "|write_raw_data1.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:27 7ddeb80d7d2d471ba06f44a780a12692
+msgid "write_raw_data1.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:126 ce0ed2984032473b8685136a25c8e0ae
+msgid "Close the ble uart server."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:130 743c99dbefd842cc9dcb656fc2d4622f
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:29 f2b8c813182c4d579443d2e3cc46a75a
+msgid "close.png"
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:134 eb6ec718582149349d0e0610f551232b
+msgid "Deinitialize the ble uart server."
+msgstr ""
+
+#: ../../en/system/bleuart.client.rst:138 9df0326f930a421d911f398fb0481b49
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/system.bleuart.client.ref:31 d44958e7758a477288e7b3365d7b88a8
+msgid "deinit.png"
+msgstr ""
+

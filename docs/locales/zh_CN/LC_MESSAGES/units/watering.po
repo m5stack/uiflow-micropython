@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/watering.rst:2 8b95dddd971b445cb54a90f8dcb241d2
+msgid "Watering Unit"
+msgstr ""
+
+#: ../../en/units/watering.rst:6 4e02385a11ff4e5a834b606ffe4d6f64
+msgid ""
+"Watering is a capacitive soil moisture detection and adjustment unit. The"
+" product integrates water pump and measuring plates for soil moisture "
+"detection and pump water control. It can be used for intelligent plant "
+"breeding scenarios and can easily achieve humidity detection and "
+"Irrigation control. The measurement electrode plate uses the capacitive "
+"design, which can effectively avoid the corrosion problem of the "
+"electrode plate in actual use compared with the resistive electrode "
+"plate."
+msgstr ""
+
+#: ../../en/units/watering.rst:15 9929b96443594341ae46976e4eab6fba
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/watering.rst:17 df84bc3909e1490db4fa21981f4ee165
+msgid "|WateringUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref 8f27cc97915344af92b05b7b475028db
+msgid "WateringUnit"
+msgstr ""
+
+#: ../../en/units/watering.rst:19 6d43d92b5eeb46ae989b3a7ca5de1e30
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/watering.rst:26 448e509f9ba74681954353a03bcebe65
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/watering.rst:28 0c9c2043551948f18c1006e960387987
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:14 b467179e0d5c461ca22bee4dba1f14c5
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:33 cd6f6af0cc5d431ca7ec9b5131bfe2f8
+msgid "|cores3_watering_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/watering.rst:36 fdb939221b264043873eba37d745aaea
+msgid "class WateringUnit"
+msgstr ""
+
+#: ../../en/units/watering.rst:39 ca5dad2ad05947e3afe6a7bd2695e1d4
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/watering.rst:43 eb1dbc86ef9c4314a7e1c37be19e64c6
+msgid "Initialize the Fader."
+msgstr ""
+
+#: ../../en/units/watering.rst 0a4d1e553ac5480a957eec997abf22b7
+#: 9a2c7ba4a43e4928b14c55752d1762e5
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/watering.rst:45 a6c19c266a0b4aaa94ab31504d5b7808
+msgid ""
+"The port to which the Fader is connected. port[0]: adc pin, port[1]: pump"
+" pin."
+msgstr ""
+
+#: ../../en/units/watering.rst:47 ../../en/units/watering.rst:61
+#: ../../en/units/watering.rst:72 ../../en/units/watering.rst:81
+#: ../../en/units/watering.rst:90 ../../en/units/watering.rst:101
+#: 125fc64dfd2547f587a297774bedc4ad 7466a813f7b04461b1b2adc5875968d2
+#: 7d600cfe46a948548cbe55af10490be5 b360774b91e44aed877ba43aba355dc5
+#: c0925f34c08b425d953c8bd903e53a02 f4accea8b3df4c6ca6a9ca47e4f51ba3
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/watering.rst:49 a921f5d4da474a97aa4ae4ff3e32cccb
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:7 2517f8b9782346ddad7f7be9060d3807
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:53 1698249e2b63418d9aa2252a638c91ca
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/watering.rst:57 6ca9d51fcc37402c85b882a8a1ec9c01
+msgid "Get the voltage of the sensor."
+msgstr ""
+
+#: ../../en/units/watering.rst 5b283bfc082544d09660b55f92776378
+#: f2f9565a2de34217bf276e6e07eb1bae
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/watering.rst:59 bbc92aed8ed344708e86c2cb6c525895
+msgid "The voltage of the sensor."
+msgstr ""
+
+#: ../../en/units/watering.rst:63 d4a08858b23b4470afea342f0f7f9b1a
+msgid "|get_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:8 39a1b1a688f747418ef8a7e472964261
+msgid "get_voltage.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:68 c96ec17829464b5ebf0a50e2ec7b6171
+msgid "Read the raw value of the ADC."
+msgstr ""
+
+#: ../../en/units/watering.rst:70 cc7309a744fd468fae444f69b63b3989
+msgid "The raw value of the ADC."
+msgstr ""
+
+#: ../../en/units/watering.rst:74 2e5a174d46b9492bb22a5e8b01003856
+msgid "|get_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:9 05ce5c484beb40aabe3ca49d7ba31794
+msgid "get_raw.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:79 d1c4e2400256438fb92afacaff45aa33
+msgid "Turn on the pump."
+msgstr ""
+
+#: ../../en/units/watering.rst:83 05a353ec29314d59a4ab974a216ccfa0
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:10 f7ac668d36b8442db9cc4f6a216a189c
+msgid "on.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:88 58d527ceafe74b9e9fdd6a5592d074f3
+msgid "Turn off the pump."
+msgstr ""
+
+#: ../../en/units/watering.rst:92 fd4cdfa7192f45d0b5676d3f79463bdd
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:11 4daa8975303344368f6782f1e6270039
+msgid "off.png"
+msgstr ""
+
+#: ../../en/units/watering.rst:97 aa43e435fdb340f28b8631e1209892bd
+msgid "Set the state of the pump."
+msgstr ""
+
+#: ../../en/units/watering.rst:99 461bfbf5ba7b47919f2206b7cef9e791
+msgid "The state of the pump."
+msgstr ""
+
+#: ../../en/units/watering.rst:103 f6b34a736fb04ed3bdf33d2577de3a5b
+msgid "|set_pump.png|"
+msgstr ""
+
+#: ../../en/refs/unit.watering.ref:12 a81e43116beb4d6bbb98289b629f4405
+msgid "set_pump.png"
+msgstr ""
+

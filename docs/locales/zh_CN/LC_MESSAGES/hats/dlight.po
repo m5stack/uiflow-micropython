@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/dlight.rst:2 42087c95d561431e980bc10f7d30dc3a
+msgid "DLight Hat"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:6 cd929442395f4340aee0ddebd142dde4
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:8 8ecfa08db7224ef48bac49d37d5d6797
+msgid "|DLightHAT|"
+msgstr ""
+
+#: ../../en/refs/hat.dlight.ref 1df6011b11574968ae35bf6b077e18ba
+msgid "DLightHAT"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:11 e2e2b12d515544eba83b45dfe812e165
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:18 6ce37272ff304399a19195c339154da8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:20 d3d6b0d63ac24402a453bdea21962ad6
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dlight.ref:8 f7e52e7f343048178ffb9b5943f164fa
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:25 027119edf3794b9d92421796466ed77b
+msgid "|stickc_plus2_dlight_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:29 cba8a1a3bf0740ada10135cf72897843
+msgid "class DLightHat"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:32 dcbb77a326cc454c868013708814b126
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:36 6e3c290abae44dcc999a047878460c8b
+msgid "Create a DLightHat object."
+msgstr ""
+
+#: ../../en/hats/dlight.rst 5ab991b77bc2413e88242cca65b5723e
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:38 8e3558f6619b4469bfe00f1303bef0f9
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:39 3157580815be4db1af00f3e7365b3c5f
+msgid "the I2C address of the device. Default is 0x23."
+msgstr ""
+
+#: ../../en/hats/dlight.rst:41 5751bbbc0bb64e98ad5a7055d8c0df6a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:43 0f17afd80ad248a2a7e21a666d14c36f
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dlight.ref:6 8ebca39ee4c24e98b2fd77a503e01155
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/dlight.rst:46 322b887d45ac4e85840bf429b3b0bd10
+msgid ""
+"DLightHat class inherits DLightUnit class, See "
+":ref:`unit.DLightUnit.Methods <unit.DLightUnit.Methods>` for more "
+"details."
+msgstr ""
+

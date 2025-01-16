@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/widgets/image.rst:4 d6e8eec333cd47b886db8fff6f0731c0
+msgid "class Image -- display image"
+msgstr ""
+
+#: ../../en/widgets/image.rst:6 65e3a69ab61f4484b9939a666591fd8e
+msgid "Image is the basic object type used to display images."
+msgstr ""
+
+#: ../../en/widgets/image.rst:10 743c30d2b9494b2b885b4bdb1e5b346b
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:16 49975d077091450d8d6d0b070f66ead3
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:18 76fefe3384064cb0b2150b861fce2389
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image.ref:11 178c69e21fac422abe7c8b4b12a05c42
+msgid "example.png"
+msgstr ""
+
+#: ../../en/widgets/image.rst:22 fc7277a241944649b973268e0bbba4de
+msgid "|image_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/widgets/image.rst:25 22adfa3fbe8046d9861f9f9b22377596
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/widgets/image.rst:29 f8eaa8151f08496ba3201fbed4d58906
+msgid "Create an Image object. It accepts the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:31 b8fd7acfdefd448090e17822e1e80056
+msgid ""
+"``file`` is the path to the image file to be displayed. Supported formats"
+" are BMP, JPG, and PNG."
+msgstr ""
+
+#: ../../en/widgets/image.rst:32 d7b999fbf8df41c3a1d9571ccd1e2468
+msgid "``x`` is the starting X-axis coordinate where the image will be displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:33 ada79778f67c49daa2669bedcae25153
+msgid "``y`` is the starting Y-axis coordinate where the image will be displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:34 0f7a825511964067a529464f495b4a9c
+msgid ""
+"``parent`` is the graphical object on which the image will be drawn. If "
+"not provided, the default display will be used."
+msgstr ""
+
+#: ../../en/widgets/image.rst:37 57951f79b2894cbaaf7244c0d26dc7fe
+msgid "Methods"
+msgstr ""
+
+#: ../../en/widgets/image.rst:41 a173f52fb7e442d595e1b3f52cd8818d
+msgid "Set the position of the Imgae object. Accept the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:43 b64407bf44124341940dd2fdaa7b4ada
+msgid "``x`` is the starting X-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:44 f9d9e63b143a4baa995fd9ca13997071
+msgid "``y`` is the starting Y-axis coordinate displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:46 ../../en/widgets/image.rst:56
+#: ../../en/widgets/image.rst:69 7fc7858f868048918280ab3d236c5a17
+#: 9586de5a3f59406c8e8fd5f8bc75990a d0b9a2c11faa4454922aa8024928dd88
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:48 652ac842d3804f6bbcef27d1000995eb
+msgid "|setCursor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image.ref:6 8a83cdb7b4394ffd96520b58776665dd
+msgid "setCursor.png"
+msgstr ""
+
+#: ../../en/widgets/image.rst:52 04051bf1e5724d70a20fa5b250d4a7c9
+msgid "Set the image to be displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:54 c8a3f1391c3f4340a035b5866a0a8bdc
+msgid "``file`` is the path to the new image file to be displayed."
+msgstr ""
+
+#: ../../en/widgets/image.rst:58 080d8d2a128c49eaa4435142bc88cca2
+msgid "|setImage.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image.ref:2 4be26265a5fa4a5ca65603f03e7f25ac
+msgid "setImage.png"
+msgstr ""
+
+#: ../../en/widgets/image.rst:60 0ef9ee55ff5d4e4fb70931b641af7ada
+msgid "|setImage1.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image.ref:4 4a713355d8dd47e59592fe62b6c7a9f7
+msgid "setImage1.png"
+msgstr ""
+
+#: ../../en/widgets/image.rst:65 965e95965e2b44679bf55ae3db19da7e
+msgid "Set the visibility of the Imgae object. Accept the following parameters:"
+msgstr ""
+
+#: ../../en/widgets/image.rst:67 9e06cd9df79c4f0e9bf64ee929ae4d43
+msgid "``visible`` is the visibility of the displayed image."
+msgstr ""
+
+#: ../../en/widgets/image.rst:71 7f204a8a9e1e4ca38fa7652ac151991a
+msgid "|setVisible.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.image.ref:8 dbf44d1f7a5342f29b2df358695fd910
+msgid "setVisible.png"
+msgstr ""
+

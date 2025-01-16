@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/catch.rst:2 bbb16df489bf4c6581b7f551da1fd8e6
+msgid "Catch Unit"
+msgstr ""
+
+#: ../../en/units/catch.rst:7 5bc26302095c4cff90233aedce81ee17
+msgid ""
+"Catch is a gripper that uses a SG92R servo as a power source. The servo "
+"uses a PWM signal to drive the gripper gear to rotate and control the "
+"gripper for clamping and releasing operations. The structure adopts a "
+"design compatible with Lego 8mm round holes. You can combine it with "
+"other Lego components to build creative control structures, such as "
+"robotic arms, gripper carts, etc."
+msgstr ""
+
+#: ../../en/units/catch.rst:14 2d52d4bbffde4e40939beeab21f76795
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/catch.rst:16 98ccd3166c854f3f8b3871b5f842cc0d
+msgid "|CatchUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref eb0ff8aa29d847b3bfa437d10d2f5184
+msgid "CatchUnit"
+msgstr ""
+
+#: ../../en/units/catch.rst:19 dd892d14023f4ed297c874310cff2c82
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/catch.rst:26 c437854628be4f95b0b42ecbd1d27f7c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/catch.rst:28 6e8a24677b294611b6823e9040480823
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:14 5e85905bf3724c6b8509d2d094253eba
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:33 223c6d5a1fba46a5b704d7d7c4751b3f
+msgid "|cores3_catch_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/catch.rst:37 6a9cceee106a4554be861786986950b0
+msgid "class CatchUnit"
+msgstr ""
+
+#: ../../en/units/catch.rst:40 865f69c046e84a219129053cd147b67d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/catch.rst:44 ea50d9ddc80b45c6978fcd175d85b3ff
+msgid "Initialize the Servo."
+msgstr ""
+
+#: ../../en/units/catch.rst 18abf82ec7004ada8f188814b2fc038c
+#: 68dae298ae3a4a05a0b1ac5d3ddaa576 96a95b94deb94df3b6023d48be2e17b0
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/catch.rst:46 fc4759a24b8a4d06b0ca3bb64cb36d2c
+msgid "The port to which the Servo is connected."
+msgstr ""
+
+#: ../../en/units/catch.rst:48 ../../en/units/catch.rst:60
+#: ../../en/units/catch.rst:69 ../../en/units/catch.rst:80
+#: ../../en/units/catch.rst:91 ../../en/units/catch.rst:100
+#: 49beca773b414e8092595232b51b9e62 8d52b24551e0482dbaaab1ea38c26b53
+#: b331958aa277435cb9f4756cb47b936b c4300da3ccee4fbca21c25d4ec423b98
+#: e41c9612ee844e2e82be5b3434f5c6ea fec65502a12d412b8d26c6b2a6b9c1ec
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/catch.rst:50 b737f3f0540a4a96b0d1d017480ff0e6
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:7 b3e4d00a5bb3485abf422c857aa427e3
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:54 8901646a807845daa8607b70e9af7aa5
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/catch.rst:58 3e40efa1eb434b2ba7ec237863b5de71
+msgid "Clamp the gripper."
+msgstr ""
+
+#: ../../en/units/catch.rst:62 92ec05383ed048e8a85f40d45d52505a
+msgid "|clamp.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:8 bbfc9a2fca5943099f72479b3cbba764
+msgid "clamp.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:67 0be11ec87c394f20bd5bfb9b97e188e6
+msgid "Release the gripper."
+msgstr ""
+
+#: ../../en/units/catch.rst:71 7c2083c9ea6b4f61a820673c4049b01d
+msgid "|release.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:9 b9b588bf3637480d81e2234cb9a58df4
+msgid "release.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:76 ff85dd49311e4da3b82ee1a5b0f47731
+msgid "Set the duty cycle."
+msgstr ""
+
+#: ../../en/units/catch.rst:78 ea476346d20f4ba7ae2d0e65697cee2a
+msgid "The duty cycle. from 20 to 54."
+msgstr ""
+
+#: ../../en/units/catch.rst:82 d24216d6cef54943b488c4508ac42751
+msgid "|set_duty.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:10 944def11ecdc4ef49455ae1aee929af2
+msgid "set_duty.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:87 cf3ea0a8012a445898ccc80dff2f280e
+msgid "Set the clamping percentage."
+msgstr ""
+
+#: ../../en/units/catch.rst:89 a21c32b130834763bbdbf6b7768ad0f1
+msgid "The clamping percentage. from 0 to 100."
+msgstr ""
+
+#: ../../en/units/catch.rst:93 0d41db6869e74d54a0d0b59afbc8ddd4
+msgid "|set_clamp_percent.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:11 dead0bd51c0c40d68c26ca039d983646
+msgid "set_clamp_percent.png"
+msgstr ""
+
+#: ../../en/units/catch.rst:98 0dd4d7448d274577bc3c471798b8710f
+msgid "Deinitialize the Servo."
+msgstr ""
+
+#: ../../en/units/catch.rst:102 5d6397d5398a4a8a92a91f37157169d0
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.catch.ref:12 13aef203fd8740db8f136500bf2a39a9
+msgid "deinit.png"
+msgstr ""
+

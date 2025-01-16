@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/mqtt.rst:2 3ff1dae530b14b488c491fadc04b8506
+msgid "MQTT Unit"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:6 7e11dd4edfe84f64a4f4ec08a53e33f9
+msgid ""
+"The ``MQTT Unit`` is an Ethernet communication module specifically "
+"designed for MQTT communication. It features an embedded W5500 Ethernet "
+"chip, which enables seamless connectivity to Ethernet networks. The "
+"module also includes a UART communication interface, allowing for control"
+" via AT commands. In addition, it integrates an RJ45 adaptive 10/100M "
+"network port for easy network connectivity."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:8 ed5d4a0e2c13437396be62d83b0a98b1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:10 5f65de77d2a144ba91298ac8eb3ab471
+msgid "|MqttUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref 4d5f757dbaa34807b27712af508f3a6d
+msgid "MqttUnit"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:12 a96db6ba39d243378ee732c0788295c7
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:35 0d8bb2d5947c4b9b9cd22c1ef09fb4e9
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:37 6c2371b99164410da53cfa8339986ca3
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:7 ac605843a3ba48bf90018ea7b2a09243
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:41 3de4ad62c58c4d88adab76349a163fa5
+msgid "|mqtt_demo.m5f2|"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:45 756c6370f859444aa1778c1ccda9ab2d
+msgid "class MQTTUnit"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:48 03defa83599642f4a7eb0e943893d7ec
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:52 c91649900cae44cc8b632f7cc88f379b
+msgid "Create a MQTTUnit object"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:55 ../../en/units/mqtt.rst:215
+#: ../../en/units/mqtt.rst:238 ../../en/units/mqtt.rst:261
+#: ../../en/units/mqtt.rst:277 215512c1ec95443984271c4c576317ec
+#: a872681178d74a069c4652dd97121dc2 d60360a14cdb494d82026ad4bd0a290d
+#: f7b9b614c63942adbff546f9c3271e01 f922b4a3e04440258296de446cd69db3
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:55 9b804bc983bb4a428256b8c500af80cb
+msgid "``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:57 ../../en/units/mqtt.rst:80
+#: ../../en/units/mqtt.rst:89 ../../en/units/mqtt.rst:97
+#: ../../en/units/mqtt.rst:112 ../../en/units/mqtt.rst:132
+#: ../../en/units/mqtt.rst:161 ../../en/units/mqtt.rst:172
+#: ../../en/units/mqtt.rst:183 ../../en/units/mqtt.rst:194
+#: ../../en/units/mqtt.rst:205 ../../en/units/mqtt.rst:217
+#: ../../en/units/mqtt.rst:228 ../../en/units/mqtt.rst:240
+#: ../../en/units/mqtt.rst:251 ../../en/units/mqtt.rst:263
+#: ../../en/units/mqtt.rst:279 2b2a4abfc7834b2896eb00bc3149e4f6
+#: 376846c2408d4f65b127b0889a6bb6ad 3cc6e7194e6f4daeb22b2955a6b1d995
+#: 3df70a73b55d47deb3040a73f7a37cbd 3fbf68a48b0a46c299c2813666e253b9
+#: 42f80bdd302243eb87f58e047dc4a50d 4983e847dcac42f4871f60adac3c6d77
+#: 70432e9333574febb4d9f94827a57013 9165b2751b6745cc8d835b2edaa46bf7
+#: a96455f5c53b4cd1a3a197003f787c57 ad8028de156d406782e1a792da78f20b
+#: b5d038f71fab45008ef8c2d111cedc93 b8ac3f1516aa4860a56d45b490ee4497
+#: d124d33ecb6f4161a5d8b76bae20274c ded423563bc24c8087aec47a734df982
+#: e23b86c4bb964affb93b023d9ec4cb85 fcf2063f90114143929103d020dd0ec3
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:59 59ce964e69994f588eb1487df1f10698
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:6 927ef09ab2654580ae7eee69ccf6b623
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:63 ea40e337bd83454ba60af45cbf0deddf
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/mqtt.rst 0e93962472ba4e7f9d01fc86deaa176a
+#: 204452e79c29486f991b13787112b308 37cff35507e6481097a6fb1713f22043
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:67 5f15037a4f004d92994948ed89691faa
+msgid "the unique client id string used when connecting to the broker."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:69 3c8dbdaecad84ae18c879da8f93332ce
+msgid "the hostname or IP address of the remote broker."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:70 79a7a64d90ff4424a044932906f38832
+msgid "the network port of the server host to connect to."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:71 48aecc3035cd451aadd6966363e9f8ce
+msgid "a username for broker authentication."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:73 16013854cfad405ca04709c8ce27c0c5
+msgid "a password for broker authentication."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:75 8e66d5a435564473afad1ff67600972e
+msgid ""
+"maximum period in seconds allowed between communications with the broker."
+" If no other messages are being exchanged, this controls the rate at "
+"which the client will send ping messages to the broker."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:82 134f4724b8574486b395b2881f8ab85a
+msgid "|set_client.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:18 350ce53891a84be893a38ff78022fd52
+msgid "set_client.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:87 e95dafb868ac4583b9fba975bc0f9f90
+msgid "Connect to a server."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:91 a038fb998e0c41a3844560d931de9a5f
+msgid "|set_connect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:19 50295f17516c4313972ed58536655239
+msgid "set_connect.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:95 41385c1d04c44a8fbebe82c9a467b758
+msgid "Disconnect from a server, release resources."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:99 e40b4b1684374ee3b643df28df86b171
+msgid "|set_disconnect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:20 a20c07ab8c0d43a096c870ef480ce5b9
+msgid "set_disconnect.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:104 29d42ad34c0848bea76b81094d7f1b1e
+msgid "Publish a message."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:106 4b4e37cf46954700a7334a16977f679a
+msgid "the topic that the message should be published on."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:108 4ada9627120945129bcb657e492c369d
+msgid "the message to send as a will."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:110 d3472dcaef3b4602b59b5850a233c1a5
+msgid "the quality of service level to use"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:114 518fb3b01a05493b8ce1e7a07edc2997
+msgid "|set_publish.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:21 00d3b0ac07564418a437cc88b87fa6f3
+msgid "set_publish.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:119 8ed0e4a9a85346b28046263b05d7b37b
+msgid "Subscribe to a topic."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:121 bac9a1006eb14fb4831bb258967145d8
+msgid "a string specifying the subscription topic to subscribe to."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:123 5059eb7419d64d7195b907af47201df1
+msgid ""
+"called when a message has been received on a topic that the client "
+"subscribes to and the message does match an existing topic filter "
+"callback."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:126 b38af6d0a8554a4ea3f9b0a28445b7c1
+msgid "the desired quality of service level for the subscription. Defaults to 0."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:129 13b521064e334d0eb125e238d08bc8ad
+msgid ""
+"When using this block, the \"MQTT connect\" block must be set after this "
+"block"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:130 ef842a658eb442149bcfd988360f9af3
+msgid "The server can only subscribe to four topics at a time"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:134 92598460b968490680fe5653600fd84f
+msgid "|set_subscribe.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:22 0f278c8acb814884bdef8f1f2fe5f92c
+msgid "set_subscribe.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:136 e9dd2b8418c6466781a088b4b85c736f
+msgid "An handler showing a message has been received::"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:142 a94df1bff4a0426aa47bb91b9d9be020
+msgid ""
+"On uiflow2, you can get the **topic** and **message** of the current "
+"handler through |get_topic.png| and |get_msg.png|."
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:24 4a57ad1bc0c44d67b58b5930666e9b28
+msgid "get_topic.png"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:25 e00ee45dbfc64ec1b647af27484da21d
+msgid "get_msg.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:150 3777df11663f4e2c8287ef69857f92b5
+msgid ""
+":py:meth:`check_msg()` is \"main loop iteration\" methods, blocking and "
+"non-blocking version. They should be called periodically in a loop, "
+":py:meth:`check_msg()` if you don't have any other foreground tasks to "
+"perform (i.e. your app just reacts to subscribed MQTT messages)."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:156 eb5e419cb79945e6b87007b8f6c67326
+msgid ""
+"Note that you don't need to call :py:meth:`check_msg()` if you only "
+"publish messages."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:159 a01b016f567f4a378ff26354fc0aa3a4
+msgid "check for a server message."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:163 d9bb33f56dbc4441b0ba204ee6ac8c46
+msgid "|check_msg.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:23 5abd9ef6fb9a456b888f1511cb5ae46f
+msgid "check_msg.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:168 c0e64ddf49ca492cad8a512680b9023d
+msgid "To check whether the communication with the MQTT unit has been successful."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:170 85b161c2e3974329b2e4bce1f8bab6f6
+msgid "Return: ``bool``:  True or False"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:174 163c75c20fcf4f3996955d05f101fb0a
+msgid "|modem_is_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:8 513a4b6ceab046d9b969749965e921a1
+msgid "modem_is_ready.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:179 24ddfb90e76b4628869d8428d7c459f1
+msgid "Get the current firmware version number."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:181 00c666e4a2d74989bf7d23cc0b3fcf69
+msgid "Return: ``string``"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:185 68d053757965475881dffb25fed2cbb4
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:9 e1eff18f4f1a4e83b91cce74c173ab95
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:190 97ccfac8aff0495ea2e92ba90d3a8bc0
+msgid "Get the current baud rate of the module and the default baud rate is 9600."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:192 5dfa8c179eff47a69ee6068263287f3c
+msgid "Return: ``int``:  4800, 9600, 19200, 34800, 115200, 230400"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:196 8547a08d295042268e6fa10d87406f8b
+msgid "|get_baudrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:10 7a8f65984191474d8670f772f876526d
+msgid "get_baudrate.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:201 9047c92b9c5a4e3ea59d0f7685c54ec1
+msgid "To check whether the network status is connected or disconnected."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:203 4c63b3ef565541fe99cdeed7cf61a6ed
+msgid "Return: ``int``: 0 ~ 1"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:207 07d4d54fe98b40759156d680c0923980
+msgid "|get_network_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:11 47a11f73f2704ed9a72d6f720bd3fece
+msgid "get_network_status.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:212 2d1560c9348e4683be045f4bdbd4cebc
+msgid ""
+"Get the current actual IP address, subnet mask, gateway and DNS server of"
+" the module."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:215 ../../en/units/mqtt.rst:238
+#: 709dd823c35745859a721fa0df520abd 8bd84e06a8a240be8e0455c0609102e5
+msgid "``param``: IP address = 0, subnet mask = 1, gateway = 2, DNS server = 3."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:219 1e614dc792794e3b9cb401168b7c658d
+msgid "|get_network_parameters.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:12 d4be29ecf64042c8a8b2b60085f90ac2
+msgid "get_network_parameters.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:224 6562be685da144a9bd8a8ea1f715080e
+msgid ""
+"Get the current MAC address of the module and MAC address the format is: "
+"XX-XX-XX-XX-XX-XX."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:226 47b81aeca170487880e53574cf152238
+msgid "Return: ``string``: \"XX-XX-XX-XX-XX-XX\""
+msgstr ""
+
+#: ../../en/units/mqtt.rst:230 70a1ee606a104be691c05de29839ddf1
+msgid "|get_mac_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:13 cc3acfca7e4f44c599a51ec3cb3166ae
+msgid "get_mac_address.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:235 cd7e7b2767aa41abb9152f8f7c167d37
+msgid "Get the current actual IP address, subnet mask and gateway of the module."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:242 0f37bbb45cdd444ab582bd532f4df347
+msgid "|get_static_ip.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:14 5004965eff7646cf9b82d33ea15d1c97
+msgid "get_static_ip.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:247 e6c3506cb82049edbc4959d5630041ed
+msgid "Get the inquire about enable/disable DHCP status"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:249 b4f38385e90c48f2a385ea2a475f2549
+msgid "Return: ``int``: 1: Enable, 0: Disable"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:253 4b8c84c619c94ed7bc5aacf0526316af
+msgid "|get_dhcp_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:15 29488c6b934e484ea2837b7619828585
+msgid "get_dhcp_status.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:258 bef9ba03b59843e9b33bb02cfbe75712
+msgid "Set the enable/disable DHCP"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:261 5219d090d95b4fddbc6ec7e9708fbedf
+msgid "``state``: Disable = 0, Enable = 1."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:265 8e28ada832f54f6d93a5593ea978a8fb
+msgid "|set_dhcp_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:16 39c84c1fc72f4ccbba40696b3a82d6a6
+msgid "set_dhcp_state.png"
+msgstr ""
+
+#: ../../en/units/mqtt.rst:270 6d1da43c142c4d25b3bf98fe360dcc03
+msgid "Set the static IP address of the MQTT module."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:272 c361b2f6cac04ebc964930cdb7ea9a52
+msgid ""
+"When the DHCP function is enabled, the static IP setting will not be "
+"enabled."
+msgstr ""
+
+#: ../../en/units/mqtt.rst:275 37de9fcc2b4344a7b18598f687432158
+msgid "``ip``:  \"xxx.xxx.xxx.xxx\""
+msgstr ""
+
+#: ../../en/units/mqtt.rst:276 f557d868d79a438984a00cde06c44bc3
+msgid "``subnet``:  \"xxx.xxx.xxx.xxx\""
+msgstr ""
+
+#: ../../en/units/mqtt.rst:277 7d0ddb122f9e414680ffca119ddeab78
+msgid "``gateway``:  \"xxx.xxx.xxx.xxx\""
+msgstr ""
+
+#: ../../en/units/mqtt.rst:281 6ff5d9796b86460bab23833a69f32b3d
+msgid "|set_static_ip.png|"
+msgstr ""
+
+#: ../../en/refs/unit.mqtt.ref:17 e74bd828ce614c5c9833ee65a6b989d6
+msgid "set_static_ip.png"
+msgstr ""
+

@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/jpg.rst:2 5db9dbbf2f7f4832b1086e3282c4d97b
+msgid ":mod:`jpg`"
+msgstr ""
+
+#: ../../en/software/jpg.rst:6 17888f6a67ca4e65a61794404667e683
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr ""
+
+#: ../../en/software/jpg.rst:11 434b70f890c64f9d9d75bd59f6c6660a
+msgid "``jpg`` module for encoding and decoding operations of JPG format images"
+msgstr ""
+
+#: ../../en/software/jpg.rst:14 1b0044ddc0f144ffb1a45abb3c639bcc
+msgid "Micropython Example"
+msgstr ""
+
+#: ../../en/software/jpg.rst:17 ../../en/software/jpg.rst:30
+#: 041f20804fa140d99c3cf34056434b28 64aacf6b6e2c4cb59240821d5bf0131f
+msgid "take photo"
+msgstr ""
+
+#: ../../en/software/jpg.rst:19 ../../en/software/jpg.rst:32
+#: 336f04e6aa0c43658b7ddd968afe208c 982d08b30af2484ea82a838ee7759820
+msgid "Click the screen to start the countdown and take a photo"
+msgstr ""
+
+#: ../../en/software/jpg.rst:27 c3a62d343d2c43ad8f3c68385d0b71f2
+msgid "UIFlow2.0 Example"
+msgstr ""
+
+#: ../../en/software/jpg.rst:34 0ac1c7eac40d4379bd6d8ab7e9ea1c62
+msgid "|take_photo_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.jpg.ref:1 85a62f14bfcc493ab514225b78b0dd7b
+msgid "take_photo_example.png"
+msgstr ""
+
+#: ../../en/software/jpg.rst:38 64493e0383c347c5a10b4cc77a7c5ad2
+msgid "|take_photo_example.m5f2|"
+msgstr ""
+
+#: ../../en/software/jpg.rst:42 06e219b8f32d4d2dbf0b1b519f480111
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/jpg.rst:46 e19f86ab855245acb0f8d7b5c9b3c287
+msgid "encode to jog photo"
+msgstr ""
+
+#: ../../en/software/jpg.rst:48 c3457c7e3bd44cb6bf69175ccb154fee
+msgid "``img`` Image to be encoded, in the format of image.RGB565"
+msgstr ""
+
+#: ../../en/software/jpg.rst:50 0abf65a83cdb427badfc684edcb1ad6a
+msgid "Return ``image.Image`` instance, image format image.JPEG"
+msgstr ""
+
+#: ../../en/software/jpg.rst:52 ../../en/software/jpg.rst:64
+#: 23058bf2b0d74efcaae3adce8f70bbe2 71a400542168481c973cb182afb9e953
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/software/jpg.rst:54 df32907f280544fca57f4bd14ab1c7c2
+msgid "|encode.png|"
+msgstr ""
+
+#: ../../en/refs/software.jpg.ref:2 5c90b52a12ab4530bde583fe81d662c2
+msgid "encode.png"
+msgstr ""
+
+#: ../../en/software/jpg.rst:58 95499ac16b5f44e294a2d1e18c4ea2dc
+msgid "jpg photo decode"
+msgstr ""
+
+#: ../../en/software/jpg.rst:60 a0dc3064a69a410d82d7603b65799248
+msgid "``img`` Image to be decoded, in the format of image.JPEG"
+msgstr ""
+
+#: ../../en/software/jpg.rst:62 08c189b3345e44ed8e82dfd6e873bea4
+msgid "Return ``image.Image`` instance, image format image.RGB565"
+msgstr ""
+
+#: ../../en/software/jpg.rst:66 b552ea2bbed540d4b1263157ea37299e
+msgid "|decode.png|"
+msgstr ""
+
+#: ../../en/refs/software.jpg.ref:3 449b72a2a3a94b658d6d2e1a28571442
+msgid "decode.png"
+msgstr ""
+

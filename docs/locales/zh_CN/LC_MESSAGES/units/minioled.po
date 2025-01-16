@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/minioled.rst:3 da14fb9311164139b0ac103b18b62876
+msgid "MiniOLED Unit"
+msgstr ""
+
+#: ../../en/units/minioled.rst:7 dae2172db0e744ee8e7755335ef75113
+msgid ""
+"MiniOLED UNIT is a 0.42-inch I2C interface OLED screen unit, it's a "
+"72*40, monochrome white display."
+msgstr ""
+
+#: ../../en/units/minioled.rst:9 aaaf5eda1c0c423ba9feea66765d5074
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/minioled.rst:11 9b869a78924a4f8589b93016c21251a7
+msgid "|MiniOLEDUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.minioled.ref 349b75361aa9488ca3a3ae37a9666f20
+msgid "MiniOLEDUnit"
+msgstr ""
+
+#: ../../en/units/minioled.rst:13 f1c9c1996453472f836190f7af32b593
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/minioled.rst:20 9d43bc141d1342a19789d73be3ff13a4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/minioled.rst:22 ce0d8062d17f4e7a98cde2108283592e
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.minioled.ref:9 9d96e239c65e48aab811797838d34af6
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/minioled.rst:27 e95666c3074e436e9f1f7dc314ddb142
+msgid "|cores3_minioled_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/minioled.rst:31 1bac2416267f4f66864e406d6ee05ea2
+msgid "class MiniOLEDUnit"
+msgstr ""
+
+#: ../../en/units/minioled.rst:34 3ead3c72e3b24d1c8b595256308ff411
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/minioled.rst:38 cd9515952a694a6e8a9bcc73a5f45469
+msgid "Initialize the Unit MiniOLED"
+msgstr ""
+
+#: ../../en/units/minioled.rst 2c45f156553f4f9381b47fa6d4c727bb
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/minioled.rst:40 89532c2686224a7cb257fdb699c5ff91
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/minioled.rst:41 eb6cb87fc6a84bd9ab5795938a655f87
+msgid "I2C address of the Unit MiniOLED, default is 0x3c."
+msgstr ""
+
+#: ../../en/units/minioled.rst:42 4d0d445f025d4b1ba8e057f3f6a39327
+msgid "I2C frequency of the Unit MiniOLED."
+msgstr ""
+
+#: ../../en/units/minioled.rst:44 fec90b0f8f904363a9df7134db9b119b
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/minioled.rst:46 2ad61eac25e247f4a0b9d372f520d435
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.minioled.ref:7 5fec3e30178145adbf806cad1a66b476
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/minioled.rst:50 996626773cac47aea7bd0c743aba901c
+msgid "Methods"
+msgstr ""
+

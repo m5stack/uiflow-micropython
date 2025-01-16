@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/dmx.rst:2 16d357381ca54bd9aa082f5f4aa2bc21
+msgid "DMX512 Module"
+msgstr ""
+
+#: ../../en/module/dmx.rst:6 826487ee151f49818e2ffebfaab1757f
+msgid ""
+"DMX-Base is a functional base specially designed for DMX-512 data "
+"transmission scenarios, communicating and enabling control with M5 host "
+"through serial port, equipped with XLR-5 and XLR-3 male and female "
+"interfaces, convenient for users to connect DMX devices with different "
+"interfaces, in addition, the module has HT3.96 pitch 485 interface to "
+"facilitate connection to Expansion 485 devices."
+msgstr ""
+
+#: ../../en/module/dmx.rst:8 fb16e40d472843fbb9802ac861fe7667
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:10 0e27f4497864431091de832c0ee57e8a
+msgid "|dmx|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref 1639b471701f4186b0ecdfe5f127ec4b
+msgid "dmx"
+msgstr ""
+
+#: ../../en/module/dmx.rst:12 0813ff1d44de411290d9fd1f4f3b7941
+msgid "Micropython Example Send Data:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:19 667b7a21a57d4c76933ba2cd66672fe6
+msgid "Micropython Example Receive Data:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:27 91895d28d4c741a585cd13c2de717926
+msgid "UIFLOW2 Master Example:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:29 02a162677a4443df8ca67877ca4d5261
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:18 dc28720f869d48139693b2f309177b0b
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:31 07771f6e03fa49b9be94e127f2ed0b4f
+msgid "UIFLOW2 Slave Example:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:33 df33858349c44d958e72a4d96742bd0e
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:19 dba2cec4a856487ea31fef20ff313494
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:37 676d40ed22074e958c45e532bfcb5535
+msgid "|dmx512_core2_send_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/dmx.rst:39 dee3759ca71147b5948950e6dab72831
+msgid "|dmx512_core2_receive_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/dmx.rst:43 043eb5ebe1a849068e80cee9dae368bb
+msgid "class DMX512Module"
+msgstr ""
+
+#: ../../en/module/dmx.rst:46 d0dfc0cfc26942138162cc42e9407d58
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/dmx.rst:50 3ef79bed01dc494c9720d883d87c9b6e
+msgid "Initializes the DMX512 module with a specified UART ID and port pins."
+msgstr ""
+
+#: ../../en/module/dmx.rst 1833cb33af744dd39bf3a48030541632
+#: 2a02ee266bbd4ee6925e7c15a781e11c 38668e82fcc845e48938394e265005b6
+#: 3f7c4c535a5e4bafa15542742180094d 99c79bf31f1243b7811dd790dfac1aeb
+#: dae98008e8c142ea8d0d12aa7781b084
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/dmx.rst:52 404ffc545d80424597bbb77fe85b9a17
+msgid "UART device ID(DMX port id)."
+msgstr ""
+
+#: ../../en/module/dmx.rst:53 ../../en/module/dmx.rst:66
+#: 6402868cf2ee45ad89c5e59d8769f13d bb25dbe8c0154db8bf42caacd4f4c250
+msgid "Operating mode (1 for Master, 2 for Slave)."
+msgstr ""
+
+#: ../../en/module/dmx.rst:55 ../../en/module/dmx.rst:68
+#: ../../en/module/dmx.rst:76 ../../en/module/dmx.rst:88
+#: ../../en/module/dmx.rst:97 ../../en/module/dmx.rst:107
+#: ../../en/module/dmx.rst:116 ../../en/module/dmx.rst:127
+#: ../../en/module/dmx.rst:136 00950f24cbee429c953536832bfd7f88
+#: 2448d00c6bd14c089b92e8a5dc5403bf 659f3c7c7eea4b7d8196d410f153e446
+#: 815b0edefbaf44cdbb581a7e8a8b9284 8f3154109788461cb203e750896051bf
+#: be62766af5e541fa8316f81e9ef24630 da74c67cdd134520b943338db5e99b7a
+#: e9a9012eed1e4639a73aa7e127f20fd3 ee3928b0335d4bed8b33155d7915bdb5
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/dmx.rst:57 204f01703510488695bb71f6733abc60
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:6 771295a5ca164bd3974a7a69d80ea6d1
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:60 189a692d133a413a82a22246a34aeeea
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/dmx.rst:64 c822731cb1df42e78e55986a36f39a5a
+msgid "Initializes the DMX512 communication with UART pins and mode."
+msgstr ""
+
+#: ../../en/module/dmx.rst:70 767d570702bd4aa68c0903499f9fbae2
+msgid "|dmx_init.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:7 fd4779f37c7145008e7ef5a19aec544b
+msgid "dmx_init.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:74 7a9e49bd52e94e54b6fa2ea200098508
+msgid "Deinitializes the DMX512 module and stops any ongoing operations."
+msgstr ""
+
+#: ../../en/module/dmx.rst:78 3677cec3b1a146a6bf5b5da44def482f
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:12 3d0a67b582c144a282261a3feae84307
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:82 41de4dffe09a475c9db869f5470b650c
+msgid ""
+"Updates the data for a specified DMX channel. Data is sent on the next "
+"update cycle."
+msgstr ""
+
+#: ../../en/module/dmx.rst:84 ../../en/module/dmx.rst:105
+#: 11d194738c8d4a7d944670df6b8acbc1 8a7a3eb4e8cc4044aa00336360eeb74f
+msgid "DMX channel number (1-512)."
+msgstr ""
+
+#: ../../en/module/dmx.rst:85 df730f08aaf84f86bfa85a9669ccc748
+msgid ""
+"Data value to be sent (0-255). @raises ValueError if the channel number "
+"is out of range."
+msgstr ""
+
+#: ../../en/module/dmx.rst:90 0c4a3e425e6b492abcc6e8ea073dbc24
+msgid "|write_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:8 99676807f18847329ef6e685237c1fe0
+msgid "write_data.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:95 14a47acec19543a2b0ce388c26fb8041
+msgid "Clears the DMX buffer and resets the data."
+msgstr ""
+
+#: ../../en/module/dmx.rst:99 4372d75522064595a6ee9c55c827ae50
+msgid "|clear_buffer.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:11 5b60fea17e634c50aec22f7b2c8dc6c7
+msgid "clear_buffer.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:103 9d5d2a861cd149cea34e257e2c4e9bfb
+msgid "Reads data from a specified DMX channel in Slave mode."
+msgstr ""
+
+#: ../../en/module/dmx.rst:109 bd1cb9a0b07f40c4866674d94cc9b07e
+msgid "|read_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:10 219b8af0de634a399e3470f6fe8df561
+msgid "read_data.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:114 2b4d6f3e9a094a46972e61460887b07c
+msgid ""
+"Starts non-blocking data reception for the specified channels with "
+"associated callbacks."
+msgstr ""
+
+#: ../../en/module/dmx.rst:118 5f1c4f65b0934816a7a24d11727d9aee
+msgid "|receive_none_block.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:13 94413c6f7e2247e68b8daf52e8fdb0c5
+msgid "receive_none_block.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:122 7505f3b5b90a43859f153a898b7e9262
+msgid "Attaches a callback function to a specified DMX channel."
+msgstr ""
+
+#: ../../en/module/dmx.rst:124 5a976c5bba794cb6b506f8c3f9206cde
+msgid "DMX channel number (1-512) to attach the callback to."
+msgstr ""
+
+#: ../../en/module/dmx.rst:125 75531270c9c647228748c269a086a1cf
+msgid "The function to be called when data changes on the specified channel."
+msgstr ""
+
+#: ../../en/module/dmx.rst:129 8a199d87749a42c7944b1e21b3fb40ce
+msgid "|receive_data_event.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:14 1ff3041f63314a96aef99c9a470e3047
+msgid "receive_data_event.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:134 307eaa7bbabf4543ae621a9d889322f9
+msgid "Stops the non-blocking data reception task."
+msgstr ""
+
+#: ../../en/module/dmx.rst:138 951187a075804eedb1acacae830fe9f2
+msgid "|stop_receive.png|"
+msgstr ""
+
+#: ../../en/refs/module.dmx.ref:15 9098cd9070f24198bc6434e98d6f6e50
+msgid "stop_receive.png"
+msgstr ""
+
+#: ../../en/module/dmx.rst:142 faa6195709e242c194aed3bbb917f56b
+msgid "Detaches the callback function from a specified DMX channel."
+msgstr ""
+
+#: ../../en/module/dmx.rst:144 fe6ac01fc5ab43ff9b4b4a023c63bff1
+msgid "DMX channel number (1-512) to detach the callback from."
+msgstr ""
+

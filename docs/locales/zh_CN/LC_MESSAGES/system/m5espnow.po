@@ -1,0 +1,458 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/m5espnow.rst:2 5b27ddadecbf41688f877bb101877ef3
+msgid "M5-ESPNOW"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:6 f252ae5381fc4170bbc5b85e3adb511f
+msgid "M5-ESPNOW is a connection-less wireless communication protocol supporting:"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:8 7878ed2ea44b4ae4889d379352234ff2
+msgid "Direct communication between up to 20 registered peers:"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:10 8e6c32d1bce64aa4bfa0459012cdb752
+msgid "Without the need for a wireless access point (AP),"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:12 e3c5fb28391e471592f744e5d554cbcc
+msgid "Encrypted and unencrypted communication (up to 6 encrypted peers),"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:14 d9763d54368641ba91acedde7a626ee2
+msgid "Message sizes up to 250 bytes,"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:16 85253a557bd046a6bcaa311f6ebd38f1
+msgid "Can operate alongside Wifi operation (network.WLAN) on ESP32 Series."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:18 59135d804ea94fb0905921065e615573
+msgid "It provides simpler and more user-friendly APIs."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:21 6eb79e3fcfa248b6ad382e8bf522b913
+msgid "ESPNOW example::"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:44 dec979b8aefb47f3b905fd33f69fb70c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:46 4033cd181ac447279d503e9a49b5db43
+msgid "|m5espnow-example.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:21 ea3fcd1dd62c480db23fba7fea533c2a
+msgid "m5espnow-example.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:50 740de92aa90e44a18eb04b4fa81a0af1
+msgid "|m5espnow-example.m5f2|"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:54 48aa7701d6f3431ba48a2adf52139d42
+msgid "class M5ESPNow"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:57 55707486b3804251af1221bbc90b4ada
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:61 c2db26b10c274ccab915d28cbff6e53a
+msgid "Create a M5ESPNow object"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:65 10ed8b410e06421d80aa6a44ac2d51dc
+msgid ""
+"``wifi_ch``: The wifi channel (2.4GHz) to communicate with this peer. "
+"Must be an integer from 0 to 14. If channel is set to 0 the current "
+"channel of the wifi device will be used. (default=0)"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:69 ../../en/system/m5espnow.rst:79
+#: ../../en/system/m5espnow.rst:94 ../../en/system/m5espnow.rst:109
+#: ../../en/system/m5espnow.rst:124 ../../en/system/m5espnow.rst:137
+#: ../../en/system/m5espnow.rst:172 ../../en/system/m5espnow.rst:186
+#: ../../en/system/m5espnow.rst:201 ../../en/system/m5espnow.rst:217
+#: ../../en/system/m5espnow.rst:235 ../../en/system/m5espnow.rst:261
+#: ../../en/system/m5espnow.rst:276 ../../en/system/m5espnow.rst:291
+#: ../../en/system/m5espnow.rst:308 ../../en/system/m5espnow.rst:323
+#: 102bedf4322848a29771552786fc03a0 1d9f5cb1dd7e4a18948118fda70ddb33
+#: 4ca469f8c4ee4a75b59fcc59181838e2 4d5538831bd04408b6cd2e20bde77d91
+#: 5147381e37a74d4b86340b27902439f1 5288661b097a4ecab81d8384f1020be3
+#: 6a1972a6f5a749c59a000879546c5055 766ac682bb0242d2b3151ea2c2cda5f1
+#: 83b1608887d844059ecf20e7c684eeb3 8c073ef5346d44e395ec273a06bdbf4a
+#: c0eba56af6da4e2e901a1787b258db94 c96e699d80d5409a83f689fee18b80bc
+#: ec36233016714305ace516b7f52c7259 efeefc6f489742aba12d8ece6d702148
+#: f6bbc5f3dea74d00a6fe78d9d8694923 fc1ee52229644a28ad3fdbccbe396588
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:71 5c402dc6763141b1a6d0a88d46309e25
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:1 263e493e6f324594ba4343841f0de5c8
+msgid "init.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:76 d7a6e26d5f9246e5acd2c0413edcbf3f
+msgid ""
+"De-initialise the ESP-NOW software stack, disable callbacks, deallocate "
+"the recv data buffer and deregister all peers."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:81 5c0dfae9c94a4008ac448aea4cd3b499
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:2 071611ae66df4200b19592b26721a21e
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:86 1b7452332a4f459b88aae60f25f5b046
+msgid "Get the device network MAC address."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:90 a7b83b1cc04c4b3bb83780b630614b14
+msgid "``mode``: 0: M5ESPNow.STA  1: M5ESPNow.AP"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:92 e65e2cfc878441a0a8fd07379b4bcf37
+msgid "Return: ``bytes``"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:96 c23a47aed9c54ced8086da07d8974e58
+msgid "|get_mac.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:3 96e77e4ced974b92bad127432afa79d5
+msgid "get_mac.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:101 e83f4cd8fe164af8b1acb779e96be370
+msgid "Return the parameters for all the registered peers (as a list)."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:105 18fae3ec628d4ffc8843c067ab782f1d
+msgid "``encrypt``: 0: normal peer MAC address 1: encrypt peer MAC address"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:107 ee3dbb45634e4ec9a2090c2969de0473
+msgid "Return: ``list``"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:111 f8b1e50476ca4b46878ea99bb8613032
+msgid "|get_peer_list.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:4 d6fd411f73c4406c889f229ee4d84d0b
+msgid "get_peer_list.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:116 167e20dee12944349fec38aadf14c45d
+msgid "To find remote mac by remote ssid."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:120 5d53d953dbf9411999b656ba5140dfd5
+msgid "``select``: 0: channel 1: MAC."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:122 ../../en/system/m5espnow.rst:135
+#: 09f576232ce742af8c64028210c95aa4 2919e2f53b7d455b826e2eaeaa40a023
+msgid "``ssid``: WiFi access point name in string."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:126 c096ce528fc748c897fdf2620ed9144e
+msgid "|get_remote_mac.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:5 4d227f83827e4f95b576411f81ef46f6
+msgid "get_remote_mac.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:131 9a54af1d3c524e779193014356040679
+msgid "Set the SSID configure in AP mode."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:139 918da82071524d47ad55e9dc78d4f83e
+msgid "|set_ap_ssid.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:6 0a829858bd9c47c5bcd9942c7c3b5343
+msgid "set_ap_ssid.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:143 42ea43f35ca54bf98fc31a55a3de1eac
+msgid "Methods"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:147 12e32f0dc97244188d191ae0cde223ae
+msgid "Add/register the provided mac address as a peer."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:151 b8907cf29e3b40eea9c00fca283b0258
+msgid "``peer_mac``: The MAC address of the peer (as a Hex-string)."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:153 ../../en/system/m5espnow.rst:183
+#: ../../en/system/m5espnow.rst:212 7721c6ec03a3462188b1441a48a8f541
+#: 780f88a50b4547d78703ce32b8182bab e6275aeb8ed64ea6b7d07ade633d6a0d
+msgid ""
+"``peer_id``: The MAC address is stored in the ID list. ID is must be an "
+"integer from 1 to 20"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:156 8f52d526df4242d29a8ed8fbb89bd5ca
+msgid ""
+"``ifidx``:  Index of the wifi interface which will be used to send data "
+"to this peer.Must be an integer set to ``network.STA_IF`` (=0) or "
+"``network.AP_IF`` (=1). (default=0/``network.STA_IF``)."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:161 011f27dca8cb4789810187a183d1f14d
+msgid ""
+"``encrypt``: If set to ``True`` data exchanged with this peer will be "
+"encrypted with the PMK and LMK. (default = ``False`` if ``lmk`` is set to"
+" a valid key, else ``False``)"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:165 a403a47846d54f65ba8efaa61ac68af4
+msgid ""
+"``lmk``: The Local Master Key (LMK) key used to encrypt data transfers "
+"with this peer (unless the ``encrypt`` parameter is set to ``False``). "
+"Must be:"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:169 d77c399101234edf8677fedeeb3b2ce4
+msgid "a byte-string or bytearray or string of length 16 bytes."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:174 f34142f4b9de4cf6a494601998ce7450
+msgid "|set_add_peer.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:7 d8fa974330a540259a235e7eeeddd5be
+msgid "set_add_peer.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:179 4e019697b8db47ec92292a93d30520b5
+msgid "Deregister the peer associated with the provided ``peer_mac`` address."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:188 ada62c17dd06453e90fd1c0cc97a0d20
+msgid "|set_delete_peer.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:8 940b696839964639a695e9d26cd9d867
+msgid "set_delete_peer.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:193 029e658528b343e08f49c6f515dab6d7
+msgid ""
+"Set the Primary Master Key (PMK) which is used to encrypt the Local "
+"Master Keys (LMK) for encrypting messages. If this is not set, a default "
+"PMK is used by the underlying Espressif ESP-NOW software stack."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:199 df7995d6d7454f728ea9907293d9754e
+msgid "``pmk``: Must be a byte string, bytearray or string of length(16 bytes)"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:203 2e5d4888bade4b0692158f284d55da08
+msgid "|set_pmk_encrypt.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:9 47c3a6787bf448618d36d51c9dadce5d
+msgid "set_pmk_encrypt.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:208 bd64f67c90c14df4a2329c21a85ebfe0
+msgid ""
+"Send the data in ``msg`` to the stored peer ID ``peer_id`` with the given"
+" network."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:215 ../../en/system/m5espnow.rst:233
+#: 5109ece1b1994a5585044766236740d7 7d16e0eace9e43278943fc1d41f91d16
+msgid "``msg``: int, float, list, string and byte-string up to 250 bytes"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:219 e9d8affa296a418c82acff99f6e0bea6
+msgid "|send_data.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:10 6130c99785d34a489a9adbb01e2aa21c
+msgid "send_data.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:221 11f5d5965b3844728330b6a16132ad72
+msgid "|send_data1.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:11 f4a183559bac45458764db2cd0f3b456
+msgid "send_data1.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:223 b8446fd4adea4f95bb27064effb61d46
+msgid "|send_data2.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:12 76b9a5b9ccc64deab0a6725993eec246
+msgid "send_data2.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:228 3296836ac20c497ca145ce439c5eece7
+msgid ""
+"All devices will also receive messages sent to the ``broadcast`` MAC "
+"address (``b'\\xff\\xff\\xff\\xff\\xff\\xff'``)"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:237 273491c5c59a4e49a1b61a5e4a6f7017
+msgid "|broadcast_data.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:13 ed33eef8f5c148f891b701245c3ef082
+msgid "broadcast_data.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:239 c6eec63feb314c16b3d97e742375396c
+msgid "|broadcast_data1.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:14 ffb2e0d62501421ba753d34c9b1b82bf
+msgid "broadcast_data1.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:241 5ee9c8819e1544b8adc83c7909a3194b
+msgid "|broadcast_data2.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:15 e71205409c21403aa61d53fa124c0329
+msgid "broadcast_data2.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:246 3f7a995be184465e9c8bdb46f39dcc63
+msgid ""
+"Set a callback function to be called as soon as possible after a message "
+"has been received from another ESPNow device. The callback function will "
+"be called with the ESPNow instance object as an argument. For more "
+"reliable operation, it is recommended to read out as many messages as are"
+" available when the callback is invoked. ::"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:258 d5107bbf0ed245b086e3d6be257599af
+msgid "Wait for an incoming message and return values: ``[mac, msg]``."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:263 e2b520257f7b4ddf991a87b1908083a6
+msgid "|set_irq_callback.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:16 4c8b0024c91f49358ad5fcc9e39b3eda
+msgid "set_irq_callback.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:268 6e001492bd944b518e30bfdc3c9dbb1b
+msgid "To get a hex string from a bytes string"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:272 a44fb27824a54c8c993e2302dddc83e1
+msgid "``bytes``: bytearray"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:274 17f057b55d8b4851bd84425897af5217
+msgid "Return: ``string``: Hex-string"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:278 d1290080a4c84eb19a6d00cfccca462a
+msgid "|_bytes_to_hex_str.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:17 787bceb1e76f4596aa2911082dfa8e5b
+msgid "_bytes_to_hex_str.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:283 6422522d183d44dfa2be6c604cc28d7f
+msgid "To get a bytes string from a hex string"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:287 26836b410c24419a96b6a3dbee5288a7
+msgid "``hexstr``: Hex-string"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:289 ../../en/system/m5espnow.rst:321
+#: 80bf7c0c756f482ca1dcb6e15532f5cd ac274705e1e840759653f696122ab078
+msgid "Return: ``bytes``: bytearray"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:293 96fb3597385448dda954001626f09fd6
+msgid "|_hex_str_to_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:18 4c84c92682c64a2d8712c2289e44449b
+msgid "_hex_str_to_bytes.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:298 597bd2949737460ea2d85eb593bb3657
+msgid "To get a int or float or list valuefrom a bytes string."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:302 345f93f4788943628de3088049298fc4
+msgid "``bytes``: bytearray."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:304 5af3f1a8f0df4d6b802025de98b57614
+msgid "``format``: 0: int, 1: float."
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:306 00a9e44b76a64c8fb9ae38ac82904afe
+msgid "Return: ``int or float``"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:310 7bffcc2bb5b140399beedbea0516b5ee
+msgid "|_bytes_to.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:19 c22a59c889114612b0609bea4e54e4da
+msgid "_bytes_to.png"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:315 c0f379eb8b3a4d29bbceaed8c4138770
+msgid "To get a bytes string from a int or float or list value"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:319 7cb22e76745d41739c8827516195b9c7
+msgid "``variable``: int or float or list"
+msgstr ""
+
+#: ../../en/system/m5espnow.rst:325 5e0d3a2a04404e0abfe516396ec64fd7
+msgid "|_to_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/system.m5espnow.ref:20 5a12cc3091344f86b1a3f0984b223e07
+msgid "_to_bytes.png"
+msgstr ""
+

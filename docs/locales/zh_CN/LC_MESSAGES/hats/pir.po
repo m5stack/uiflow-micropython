@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/pir.rst:2 7ef9995fe3f34e93bd555ef4fe574bf5
+msgid "PIR Hat"
+msgstr ""
+
+#: ../../en/hats/pir.rst:6 d84ea66163fb43fbb416196d3ac8285a
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/hats/pir.rst:8 5acd2b0950324f07bd5d87bad12f9c78
+msgid "|PIR|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref 56cdaa9429b349e5894ab4787c7589d4
+msgid "PIR"
+msgstr ""
+
+#: ../../en/hats/pir.rst:11 8ed516378a0a43d4aa3a3f3036a80465
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/pir.rst:18 b3de2474b87145368d9129517a2337dd
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/pir.rst:20 30e98c2549f6475890cd0a38899b7d64
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:8 d81f40b5c69e4e2d9b28ba1b5113fa83
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/pir.rst:25 4512dac309f04762b7167abb4774bdf0
+msgid "|stickc_plus2_pir_hat_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/pir.rst:29 fbe3f4943c3547338ee5d962c83132e3
+msgid "class PIRHat"
+msgstr ""
+
+#: ../../en/hats/pir.rst:32 78af8627cdc748fb9600c16233231af0
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/pir.rst:36 8eb111eaa3ae4f5fbd3bdb5c4c22f6dc
+msgid "Create a PIRHat object."
+msgstr ""
+
+#: ../../en/hats/pir.rst:39 44d325da1683406f81ae7196587edb33
+msgid "The parameters are:"
+msgstr ""
+
+#: ../../en/hats/pir.rst:39 c0be05175dfb47119cc8145241e0b205
+msgid "``port`` GPIO pin."
+msgstr ""
+
+#: ../../en/hats/pir.rst:41 ../../en/hats/pir.rst:53 ../../en/hats/pir.rst:62
+#: ../../en/hats/pir.rst:71 ../../en/hats/pir.rst:80
+#: 1d4dc586361d491fb51cbea03ab6f08c 3526ea896224482c87a169d3ac541560
+#: 45b12627f22a4ea08a498d8c7d56d631 53f12534721a456ea7ed7a4e9d52d9cb
+#: 639b46e328a94bdabe644a2bc9b91b42
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/pir.rst:43 7c537543d72146c28a5d034c39c555de
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:11 67555fb96b58427ca782931eb6118baa
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/pir.rst:47 cca4696d862643d796d5b348c56be4b9
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/pir.rst:51 f4775118771049d2925a19ea560628f1
+msgid "Get detection status."
+msgstr ""
+
+#: ../../en/hats/pir.rst:55 6bef67dc37fc4b1cb342d2c216760b41
+msgid "|get_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:14 85d5cca6f94e4343849e8b38d99329ab
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/hats/pir.rst:60 e7b6f27c61074157a95e3fe1a583321a
+msgid "Enable Human detection function."
+msgstr ""
+
+#: ../../en/hats/pir.rst:64 016d51292d7348d3b7c36c847bd72978
+msgid "|enable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:17 d0e7989d224542c3a77a63da5df310d2
+msgid "enable_irq.png"
+msgstr ""
+
+#: ../../en/hats/pir.rst:69 af4ad9c6e5364910bf5a4fe29dd03c09
+msgid "Disable Human detection function."
+msgstr ""
+
+#: ../../en/hats/pir.rst:73 fc1626e2ebff4dc9bd4572f4f369137b
+msgid "|disable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:20 56f1829f459c4a47883dda83c1a41792
+msgid "disable_irq.png"
+msgstr ""
+
+#: ../../en/hats/pir.rst:78 9a77403e88234da78fb9b07d89ff1bd6
+msgid "Polling method, placed in the loop function, constantly check."
+msgstr ""
+
+#: ../../en/hats/pir.rst:82 b36c70bfb2154cc08e782a57c0060643
+msgid "|set_callback.png|"
+msgstr ""
+
+#: ../../en/refs/hat.pir.ref:23 ddbfc8850cf142679cdcf17c2a72ab78
+msgid "set_callback.png"
+msgstr ""
+

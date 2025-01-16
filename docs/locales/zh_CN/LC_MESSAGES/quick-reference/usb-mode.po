@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/quick-reference/usb-mode.rst:2 e801dce0a866425085c2ee4ef6568e58
+msgid "USB Mode"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:8 571a98e317e24780bfa79830a47e4623
+msgid "Switch to USB Mode"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:10 3863125e43744cbe8b9ab282d0e753ba
+msgid "Select the device under ``USB Device`` to enter USB mode."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:12 a06d20baf1fd4d71b55d67c9874b2138
+msgid "|usb-mode-1.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:1 a903cc65c76943caa88224c89d101b4a
+msgid "usb-mode-1.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:16 2b401561e73f4f99980ae1e140cdb7fe
+msgid "Run the Program"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:18 32efea5c8bbb4d5eb8a649136523a031
+msgid "Click the run button to execute the current program."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:20 9df35469168e427f9097e40e91dcbc44
+msgid "|usb-mode-2.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:2 d8499257184548f0a6728fc85a21c307
+msgid "usb-mode-2.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:24 6ad58c1f0dd04bf39f97c5585d2e2d0b
+msgid "Terminate the Program Execution"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:26 cae1f4a43ada4b4590f9870163b0ef5a
+msgid "Use ``Ctrl + C`` to terminate the execution of the program."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:28 cabde50d5c7a47bb84d44aeb2046f083
+msgid "|usb-mode-3.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:3 f603c7bb01e543dfab0863bc341de390
+msgid "usb-mode-3.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:32 efca2bae170840eea59a46c09f89642d
+msgid "Save the Program to the Device and Run"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:34 ae61060d0a4e4034a4788f275a22f828
+msgid "Click the save button to save the program to the device and run it."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:36 6dc712d87b944b4280a12ecaa9d4bfc7
+msgid "|usb-mode-4.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:4 2949bbe4e9f84ab093756434ba0a41aa
+msgid "usb-mode-4.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:40 e655fd0f0f304a20891500a4a4cdd484
+msgid "File Operations"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:42 702b5e54b95949b593d16f8c56c3b6b7
+msgid ""
+"Click the ``Get File`` button to export the program from the device to "
+"the computer. Click the ``Delete File`` button to delete the program from"
+" the device."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:45 31706f417af04337bc350f0329a8dcad
+msgid "|usb-mode-5.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:5 f2b19f4f7e424c24b1d9cfbfe4740bfe
+msgid "usb-mode-5.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:49 7f6b8d717bf34b0d9d8b70a13a87370f
+msgid "Browse Directories"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:51 4b5278090db74b1cadbd60e3cf831aa8
+msgid ""
+"Double-click with the mouse to enter a directory; single-click on the "
+"path bar to return to the previous directory level."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:53 46f6897f4abc4ba094beff97c3b5683a
+msgid "|usb-mode-6.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:6 459cc79bcf2a491a83cc34ade8843cc0
+msgid "usb-mode-6.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:57 0c5b318e15414b4a93c436dd88bdb54e
+msgid "Upload an Image to the Device"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:59 9d14b1d95faa4fab906b3862cf83940c
+msgid ""
+"Navigate to a specific directory within the device, click the ``Send File"
+" to Here`` button, select an image from your computer, and then upload it"
+" to that directory."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:61 d2f1db524be147c9b6b0760a81cc0888
+msgid "Image resources need to be saved under the ``res/img`` directory."
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:63 242877b5e9714e8aa5058ba3ed99f624
+msgid "|usb-mode-7.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:7 63cd822ac20a4208981e1bc0d7ebc2cd
+msgid "usb-mode-7.gif"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:67 81b5a2ad2e4c46e1b04d46b0f5d62618
+msgid "Use Images from the Device"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:69 81bea873214e48eea602e1297e313186
+msgid ""
+"Use the |setImage.svg| block to set the filename of the image to be "
+"displayed, and show the image on the screen."
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:10 9ff04352e78a46de8d01280fbc9a5694
+msgid "setImage.svg"
+msgstr ""
+
+#: ../../en/quick-reference/usb-mode.rst:71 48c228e757f94512841c5d732a7244e8
+msgid "|usb-mode-8.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.usb-mode.ref:8 53d64b5797184942b942ed0f97127ada
+msgid "usb-mode-8.gif"
+msgstr ""
+

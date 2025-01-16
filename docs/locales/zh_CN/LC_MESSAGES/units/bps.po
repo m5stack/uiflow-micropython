@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/bps.rst:2 b8d65371ce054cf6b2c4ce257d5fa3c3
+msgid "BPS Unit"
+msgstr ""
+
+#: ../../en/units/bps.rst:6 3d7816a111f14d39a36626871358ba1b
+msgid ""
+"The Barometric Pressure Sensor(BPS) ``BPS Unit`` is a barometer unit that"
+" uses Bosch BMP280 pressure sensor(BPS) or QMP6988 barometric pressure "
+"sensor(BPS V1.1) to measure atmospheric pressure, temperature and "
+"altitude estimation."
+msgstr ""
+
+#: ../../en/units/bps.rst:8 52a2e8431c7d4f3c8308b762a131ba8d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/bps.rst:11 c54bea9840774f408eb75df4aa5e2b96
+msgid "|BPSUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref b2f22d77a7f0456f9d7fa2e999bef051
+msgid "BPSUnit"
+msgstr ""
+
+#: ../../en/units/bps.rst:11 e9430640d0734a68b120e5680276801f
+msgid "|BPSUnit_V11|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref 77cf5f651cb44752be1869f31f9e6018
+msgid "BPSUnit_V11"
+msgstr ""
+
+#: ../../en/units/bps.rst:14 3af37f27c88243de8ce34307ee89db5b
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/bps.rst:32 7b36d7f515224e558815c385f9661e2b
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/bps.rst:34 978fa16a7551435fa395eb8db5f837d5
+msgid "|unit-bps-demo.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref:12 8159e1e923f94d7ca283fda159fdbba8
+msgid "unit-bps-demo.png"
+msgstr ""
+
+#: ../../en/units/bps.rst:38 c1c90acdb40349bab02a5d5a954f0beb
+msgid "|unit-bps-demo.m5f2|"
+msgstr ""
+
+#: ../../en/units/bps.rst:42 34611756872e4150bf3b3def77924912
+msgid "class BPSUnit"
+msgstr ""
+
+#: ../../en/units/bps.rst:45 9bbfb43b96f24824bff1c90f28675059
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/bps.rst:49 fae0dfcbd0a5428ba4912255b91152a7
+msgid "Create a BPSUnit object"
+msgstr ""
+
+#: ../../en/units/bps.rst 98ed7dd1658c4db6b8bd761a749e7d60
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/bps.rst:51 3cfe863efc0246f590b5eb5ea5eaba44
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/bps.rst:53 ../../en/units/bps.rst:68
+#: ../../en/units/bps.rst:79 ../../en/units/bps.rst:92
+#: 93e0b1636ad84a6a8ad739eedc55f58f 9acbed28b9694da2abea7c80bf19dd59
+#: b34f9cf635224de7a14edba60765e642 e060749621044d42ba979cbf8a887c1c
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/bps.rst:55 9c76d7d18b2f4467a0c2efd6420da9b5
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref:11 f03f20be9fe1491b92bc1d6b8a9d16e2
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/bps.rst:59 563c504690bf43ffb1dd83ec141c60f0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/bps.rst:64 b54263d3270b4a9ab86548cc6da5de20
+msgid ""
+"Get the temperature value in degrees celsius from the BMP280 or QMP6988 "
+"sensor."
+msgstr ""
+
+#: ../../en/units/bps.rst:66 08e5e9c1ed57475986f3a88d0112e431
+msgid "Return: ``float``:  -40 ~ +85 °C"
+msgstr ""
+
+#: ../../en/units/bps.rst:70 0a5491f92ee040d4b12ab36d069a9cce
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref:13 ef42a2dab7a549e3a79901f3075fdd05
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../en/units/bps.rst:75 920e1d74dea44f8f8c6ac6d4df9fe94c
+msgid "Get the pressure value in pascals from the BMP280 or QMP6988 sensor."
+msgstr ""
+
+#: ../../en/units/bps.rst:77 7dfd28fdba154727927658fc0c79b0ba
+msgid "Return: ``float``:  300 ~ 1100 hPa"
+msgstr ""
+
+#: ../../en/units/bps.rst:81 ae672773fcdc4f64b5ba7c691544fbf2
+msgid "|get_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref:14 c4675fc95f7541fbb459abf2c76e3c00
+msgid "get_pressure.png"
+msgstr ""
+
+#: ../../en/units/bps.rst:86 a32b782ade9f4e01b1e1715e3afeb197
+msgid ""
+"Get the altitude can be estimated using the pressure. which approximates "
+"the altitude relative to the pressure difference. The standard sea-level "
+"pressure is 1013.25 hPa."
+msgstr ""
+
+#: ../../en/units/bps.rst:90 962b2edaa6f34e0d956bc5e7388818f0
+msgid "Return: ``float``:  altitude in meters"
+msgstr ""
+
+#: ../../en/units/bps.rst:94 dcc5df25f30f4e17a652c3a221069a51
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bps.ref:15 1b6b60e5369c463d9784437b17474412
+msgid "get_altitude.png"
+msgstr ""
+

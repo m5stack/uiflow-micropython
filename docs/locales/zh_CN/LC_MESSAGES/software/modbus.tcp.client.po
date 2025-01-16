@@ -1,0 +1,361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/modbus.tcp.client.rst:4 6eadca7827c54e679c4d40b4fa3d9a57
+msgid "class ModbusTCPClient -- Modbus TCP client"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:9 e41715f6a6c749fc91e8860f89289b13
+msgid ""
+"ModbusTCPClient implements the Modbus TCP client. ModbusTCPClient support"
+" function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding"
+" Registers), 4 (Read Input Registers), 5 (Write Single Coil), 6 (Write "
+"Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
+"Multiple Holding Registers)."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:12 d1f1fa5f18d04bd39b3a119a5f93ff7e
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:19 a8d2f3d2011b41eb936f715c170daeca
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:21 8ceea24c22574045a86d7f0a1f51b764
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:13
+#: 866e77d45074494ba88c6f0257720de0
+msgid "example.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:26 0733c27263f242bd913e954aceba5e1c
+msgid "|cores3_tcp_client_example.m5f2|"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:30 36ad587e63044277b62d0144a50464db
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:34 02d8986692a041f89b513ffff90f6dca
+msgid "Create a ModbusTCPClient object."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst 16ca13be037943a6b1f685e7b3dd27d6
+#: 25da431eaaab4f538517ac747feaf3a2 4b5d45be5d8341dba78611780fa9b1fa
+#: 61a2ce63787747e2a18d8ab7cf3e1551 62e91d792f294235aa485f8eac0e0a19
+#: 7b644dfcebf5472a907999a704fb81b0 811eb06ce52747beaed9f6036638c311
+#: a8a7241683bf44b09ad3954fc6990d98 f133faccf5914b8587947e8fe6ef85ea
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:36 08e94b0cacd244a0ac72fcac8c2b5c8b
+msgid "Hostname or IP address."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:37 6b1b140ffbc6484c8714f152e6fc01ff
+msgid "Port number."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:38 2c6b58b4a4194cbab372e77f8ff31e5f
+msgid "Verbose mode."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:40
+#: ../../en/software/modbus.tcp.client.rst:52
+#: ../../en/software/modbus.tcp.client.rst:61
+#: ../../en/software/modbus.tcp.client.rst:77
+#: ../../en/software/modbus.tcp.client.rst:93
+#: ../../en/software/modbus.tcp.client.rst:109
+#: ../../en/software/modbus.tcp.client.rst:125
+#: ../../en/software/modbus.tcp.client.rst:141
+#: ../../en/software/modbus.tcp.client.rst:157
+#: ../../en/software/modbus.tcp.client.rst:173
+#: ../../en/software/modbus.tcp.client.rst:189 1cded05a0d6448909433e6f3f5185360
+#: 3b7a2db700b54477b9a5048839f23a70 4cfdd77fa7fc4fd6b605a20aea7f4add
+#: 591c8b0d7815465a9d05c24ba8eace91 5edb8b3b11054b738ff900ff1deb78d7
+#: 5fadef8a597d467c8b90ee0f3082e05b 7780bf12fad543689697c9cbcb7c214c
+#: 88e9c995db24492f8198207ce5b94d9d c6dcf70c4f0b4819aad6eb33714e47ad
+#: d570b8a092b145cc9b47f4c796ad72d7 e7e674582d934b888616d098fa6b5a4f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:42 4d7f7da7990a4e02a3a998f58a9c2b8c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:3
+#: 19061c911ba349b49c13a9646151062c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:46 e4168cdc10944f4ca36c526f9422d150
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:50 135aa0da5c9f43b387778bc46de12fc4
+msgid "Connect to the Modbus server."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:54 9256dcf85e434574bb48d91815fd9513
+msgid "|connect.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:1
+#: 7d5fabad0eab4f5485e2febfd54ed077
+msgid "connect.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:59 ef99deef0ddf4085985a8a5fa875001c
+msgid "Disconnect from the Modbus server."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:63 314758be2ac34f469adacf17d9d1cd2f
+msgid "|disconnect.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:2
+#: 489a71b77a584a808aa4ba9647292b89
+msgid "disconnect.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:68 256502fb9a1843f49ce0452e96fee804
+msgid "Read coils."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:70
+#: ../../en/software/modbus.tcp.client.rst:86
+#: ../../en/software/modbus.tcp.client.rst:102
+#: ../../en/software/modbus.tcp.client.rst:118
+#: ../../en/software/modbus.tcp.client.rst:134
+#: ../../en/software/modbus.tcp.client.rst:150
+#: ../../en/software/modbus.tcp.client.rst:166
+#: ../../en/software/modbus.tcp.client.rst:182 1cf571b9e2be47e8af1dddbc4cd80cf9
+#: 2484b87e06d14f4a8eb97336403d657b 336923a95c714d0aa61f4f760da5c6b4
+#: 62228226cfb4478bb50d6186a7af2eb5 6954efd75f464544956754eeb03b527c
+#: b5f6553229b44761ad6c56dee4724d2e c16724cc12d5496a8bb6792fa87a1e4c
+#: ff0631227c1c4037b3acd5cfb2335145
+msgid "Slave address. The address is 0 to 247."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:71
+#: ../../en/software/modbus.tcp.client.rst:135
+#: ../../en/software/modbus.tcp.client.rst:167 2199bc9db9704ef7826dd33b9711d595
+#: 4dd120e64bbd4c25b96b74e488b27dfb 5c3b055c7a0345e1996cb02e1a3eaf5a
+msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:72
+#: ../../en/software/modbus.tcp.client.rst:88
+#: ../../en/software/modbus.tcp.client.rst:104
+#: ../../en/software/modbus.tcp.client.rst:120 3683b337381940f499f28ae0af0ab279
+#: 63258fad8a2d4b2a9280b6cf4fe6e503 b627786135ec4185861fe5298d539932
+#: c24422f43cdd421b80e0f08a349bdad7
+msgid "Quantity of registers to read."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:73
+#: ../../en/software/modbus.tcp.client.rst:89
+#: ../../en/software/modbus.tcp.client.rst:105
+#: ../../en/software/modbus.tcp.client.rst:121
+#: ../../en/software/modbus.tcp.client.rst:137
+#: ../../en/software/modbus.tcp.client.rst:153
+#: ../../en/software/modbus.tcp.client.rst:169
+#: ../../en/software/modbus.tcp.client.rst:185 1e7991b192144559864d7ad6748ab014
+#: 59bf366076a44fbca7b16cf09d8185fd 7d50aeb560424d269c36ec9e401d78ea
+#: a7ca8dc65ffe43ceb7fdaa21b3ed4b12 ca3418913f38484883748e17178d73cb
+#: d30444a2946740bba749b2ecbcaf5b17 fcdbadcc24f0435eb630a85ecd2537a8
+#: feae1609c039481482a0c722117a6bea
+msgid "Timeout in milliseconds."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst 04503b34dfeb4b878154917e9eccf600
+#: 0a5ddf79f98f4217a6caaa6be649af6f 318835e981ab4611a62c35c4907581c8
+#: 49bbbd25b1024ffc8fc3834ee3c35c15 a92545736eb04113bf80291408982bfd
+#: c92ca076587848c7b7c2c757cb613120 d743476bc56d4244b54c7eccd3ce9462
+#: e88d083c07164141b5ecfc6bfc32c7e9
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:75 7331aefd926541dfa6cfdd59efb86d26
+msgid "A list of coils. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:79 901290a33a784dcab969e45d81e0dee6
+msgid "|read_coils.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:4
+#: f2ea8e88383b42479d0570efd241bd09
+msgid "read_coils.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:84 d608facfa39f43cd8df437782a9e6d9f
+msgid "Read discrete inputs."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:87 3ffb119e8716454b8147c2f4f1a9e8de
+msgid "Start address of the discrete inputs. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:91 cbd35ce846c8491e9468f061de48e19f
+msgid "A list of discrete inputs. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:95 d2b2b5c2e0474f358be910ef130a930f
+msgid "|read_discrete_inputs.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:5
+#: b509c0bacc0e45b888a1f8776b001b95
+msgid "read_discrete_inputs.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:100 cb711659efec4235851d3258f0f64bc3
+msgid "Read holding registers."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:103
+#: ../../en/software/modbus.tcp.client.rst:151
+#: ../../en/software/modbus.tcp.client.rst:183 4faf8818ed884ab4adc92f7837dbfda3
+#: c6848ef27292446c900bddaafe135914 e159dc587ba949f0983d96a736c1c3a7
+msgid "Start address of the holding registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:107 2677e3a6e7a34058be9776ef402b064f
+msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:111 4647556f62aa4d1c91649fe3ec53642d
+msgid "|read_holding_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:6
+#: 0410a18219be430e97c546a5e9695798
+msgid "read_holding_registers.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:116 8b2358a1968741aa9113ec6848123484
+msgid "Read input registers."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:119 9b38c89d15e140ecafdb3641930f60f0
+msgid "Start address of the input registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:123 c17cbcc851aa4400ac2f9c76cf0bd1b6
+msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:127 bddb831c3ad5436fa2ef929d46f29b48
+msgid "|read_input_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:7
+#: 8470351fa624404ea0b0c60734649e50
+msgid "read_input_registers.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:132 da0d6edfc1bb4efea2060f5553c0e3e7
+msgid "Write a single coil."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:136 8060721979ca46d9a13e42b7aeb26c64
+msgid "Value to write. The value is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:139 9bd09b7078904c49aa06eb9f0753e4d9
+msgid "The value of the coil."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:143 a347536348ae41969e155a35e8d4a900
+msgid "|write_single_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:10
+#: 15f437b4be874a909ea1a54cdceb579a
+msgid "write_single_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:148 14eff4e8608e45a481de0b0889a4ca83
+msgid "Write a single register."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:152 581fcb593604437d93bca630acc97e9f
+msgid "Value to write. The value is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:155 3203d47e844042ad9ccd704a1db21016
+msgid "the written value"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:159 399c7620f139462ea5e1f108c0a9805a
+msgid "|write_single_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:11
+#: b223eefccab44ab8a4d4d856051bd8bc
+msgid "write_single_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:164 df9b24e7b1e84ab183484c5cf0967b93
+msgid "Write multiple coils."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:168 4e3d8ae135c94a33b71a0b5a690169fa
+msgid "Values to write. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:171
+#: ../../en/software/modbus.tcp.client.rst:187 61aa14c3ddf84530865f0d1b13aa3e86
+#: 71e7a8850e154a5484435666f1b3dbb8
+msgid "the written count."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:175 f4a93ee7b8b24e6aa904d68a6f03a01c
+msgid "|write_multiple_coils.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:8
+#: fca4f52b34194f63acb4cd90da0bf881
+msgid "write_multiple_coils.png"
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:180 40e7e8f6b9dc4e1eae74b09214147a05
+msgid "Write multiple registers."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:184 8c82e87d1ece4cb891d6b524faaaf920
+msgid "Values to write. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.tcp.client.rst:191 cf6db3659f6c467f84effbc3288d8326
+msgid "|write_multiple_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.tcp.client.ref:9
+#: adb5526ab9714f3b9f1cbe945dab448a
+msgid "write_multiple_registers.png"
+msgstr ""
+

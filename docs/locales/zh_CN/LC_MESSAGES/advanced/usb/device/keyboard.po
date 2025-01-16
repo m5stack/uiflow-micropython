@@ -1,0 +1,260 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 16:33+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/usb/device/keyboard.rst:2 320c4308d78941adb17bb0f4c976cb27
+#, fuzzy
+msgid "keyboard"
+msgstr "usb 键盘"
+
+#: ../../en/advanced/usb/device/keyboard.rst:6 849d3c4f3b0145f28a5a56fc1d066a8c
+msgid "usb device keyboard"
+msgstr "usb 设备键盘"
+
+#: ../../en/advanced/usb/device/keyboard.rst:10
+#: 71fb7a81abf34a1eb8319d0c43c8274b
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr "当前模块只适用于 CoreS3 主机"
+
+#: ../../en/advanced/usb/device/keyboard.rst:14
+#: 541fd2cb02cc4088bfcb4cb617672b60
+msgid "Micropython Example"
+msgstr "Micropython 案例"
+
+#: ../../en/advanced/usb/device/keyboard.rst:17
+#: ../../en/advanced/usb/device/keyboard.rst:27
+#: c8cf74461693455c813717eab2095ec0 d86ec18243464404861e6c5ee518ff35
+msgid "USB keyboard"
+msgstr "usb 键盘"
+
+#: ../../en/advanced/usb/device/keyboard.rst:24
+#: ac8605afc7ce45dc816a9ddfe772bdad
+msgid "UIFlow2.0 Example"
+msgstr "UIFlow2.0 案例"
+
+#: ../../en/advanced/usb/device/keyboard.rst:29
+#: 138dd19581594c2bba31fa9dd58d2b3e
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:10
+#: 9ed17ea0ac2f4ad8b198a1e228d32230
+msgid "example.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:33
+#: 97ec5ace6b3c425d88a63c64f48aa4f2
+msgid "|m5cores3_usbd_keyboard_example.m5f2|"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:37
+#: 1b7ce9a7f6254c2785a38b297cd92c28
+msgid "class Keyboard"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:41
+#: eb539f6ea691481e8d4a7775046da08a
+msgid "Create Keyboard object"
+msgstr "创建 Keyboard 对象"
+
+#: ../../en/advanced/usb/device/keyboard.rst:43
+#: ../../en/advanced/usb/device/keyboard.rst:63
+#: ../../en/advanced/usb/device/keyboard.rst:96
+#: ../../en/advanced/usb/device/keyboard.rst:104
+#: ../../en/advanced/usb/device/keyboard.rst:119
+#: 6734232fef9e45de92a0ef8a341a0581 720effa67d4d4b2aa5807d17ee0386b1
+#: 87bb2d8a870647109c499a7048c236e8 c95264c4c3e443fc845de883b4f0deec
+#: e2c145978c574d16a2c5d72a8657e519
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:45
+#: 137f6be3ee42445588c67d8c39841e47
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:1
+#: 6632d9e53e3745f5968886dd899eb210
+msgid "init.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:50
+#: a5310e9e296840a4989aa4082b272b99
+msgid "Set modifier keys"
+msgstr "设置修饰键"
+
+#: ../../en/advanced/usb/device/keyboard.rst:52
+#: b9b141ab10c04aa58504a2a6e9bb1912
+msgid ""
+"``right_gui`` The state of the right-side GUI key. True indicates that "
+"the key is pressed."
+msgstr "``right_gui`` 右侧 GUI 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:53
+#: a58746b617754f9ba542063bc8606b3b
+msgid ""
+"``right_alt`` The state of the right-side Alt key. True indicates that "
+"the key is pressed."
+msgstr "``right_alt`` 右侧 Alt 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:54
+#: e93b157c50c34b90a8d8005a0d8f85a3
+msgid ""
+"``right_shift`` The state of the right-side Shift key. True indicates "
+"that the key is pressed."
+msgstr "``right_shift`` 右侧 Shift 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:55
+#: dee4dd85f2d94726b399a8ec07209644
+msgid ""
+"``right_ctrl`` The state of the right-side Ctrl key. True indicates that "
+"the key is pressed."
+msgstr "``right_ctrl`` 右侧 Ctrl 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:56
+#: 63fe22ce302e49a49822009db997b631
+msgid ""
+"``left_gui`` The state of the left-side GUI key. True indicates that the "
+"key is pressed."
+msgstr "``left_gui`` 左侧 GUI 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:57
+#: 1505ac4169e74cd08b8045d6d5b09dbc
+msgid ""
+"``left_alt`` The state of the left-side Alt key. True indicates that the "
+"key is pressed."
+msgstr "``left_alt`` 左侧 Alt 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:58
+#: d5272b60d1bd45eba0b1952d8c547a53
+msgid ""
+"``left_shift`` The state of the left-side Shift key. True indicates that "
+"the key is pressed."
+msgstr "``left_shift`` 左侧 Shift 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst:59
+#: 7551e2a0b3ff49aba95dd9124d013536
+msgid ""
+"``left_ctrl``  The state of the left-side Ctrl key. True indicates that "
+"the key is pressed."
+msgstr "``left_ctrl`` 左侧 Ctrl 键状态，True 表示按下。"
+
+#: ../../en/advanced/usb/device/keyboard.rst 8e6040e65d314b5cbecbb0324d79d321
+#: 91bd0315ffb14044b9b64e41e9b5564a
+msgid "note"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:61
+#: ../../en/advanced/usb/device/keyboard.rst:74
+#: 22c3b17313474c22a471cfecbfe56478 71d1a531129245dba7a363efe2cb55cb
+msgid "Changes will take effect after calling Keyboard.send_report()."
+msgstr "需要调用 Keyboard.send_report() 后生效 "
+
+#: ../../en/advanced/usb/device/keyboard.rst:65
+#: 09cd7c4d013242dc9e7b65aaeae241f9
+msgid "|set_modifiers.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:8
+#: 89ebdfcf5c9f41479fbe1a9ecc360e10
+msgid "set_modifiers.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:70
+#: ba215828b5484bb8be7c27e86fd57b26
+msgid "Press specified keys (up to 6 key values at a time)"
+msgstr "按下指定按键(最多一次输入6个键值)"
+
+#: ../../en/advanced/usb/device/keyboard.rst:72
+#: ef9493d21ee6460789c6690c129f80fa
+msgid ""
+"``k0~k5`` The input is a standard HID key value. For details, refer to "
+"the KeyCode() class."
+msgstr "``k0~k5`` 输入为标准 HID 键值，详情参考 class KeyCode()"
+
+#: ../../en/advanced/usb/device/keyboard.rst:76
+#: 30b3a4c94239422f9da0847fe8918ac6
+msgid "example: Press the lowercase 'a'"
+msgstr "输入小写 'a'"
+
+#: ../../en/advanced/usb/device/keyboard.rst:85
+#: 305758b18bc748809905cc2e0b5f8520
+msgid "example: Press the uppercase 'A'"
+msgstr "输入大写 'A'"
+
+#: ../../en/advanced/usb/device/keyboard.rst:98
+#: 897594510a1f44f8a6d8e6b9c7e43f87
+msgid "|set_keys.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:9
+#: 86b245f71c1040a8879331086dd14c44
+msgid "set_keys.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:102
+#: 168c98d584c94c8a8c9c9ca0d90801c8
+msgid "Send keyboard status report"
+msgstr "发送键盘状态报告"
+
+#: ../../en/advanced/usb/device/keyboard.rst:106
+#: d1c480839b8a4c28a5b550a208bbb7a3
+msgid "|send_report.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:7
+#: c4d2f25207c744a291633649f47bdbfd
+msgid "send_report.png"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:110
+#: 983d9d9f8a844fceb37b75c66c52cde4
+msgid "input key"
+msgstr "输入键值"
+
+#: ../../en/advanced/usb/device/keyboard.rst:112
+#: caed0a9d0e1b42cc9e0f94a2dcc3ef1e
+msgid ""
+"``key`` The input can be a string within the ASCII range or a value from "
+"KeyCode."
+msgstr "``key`` 支持 ASCII 范围字符串，或者使用 KeyCode"
+
+#: ../../en/advanced/usb/device/keyboard.rst:114
+#: f5cd08ea3fe44ce1bc5596bad52cb326
+msgid "example::"
+msgstr ""
+
+#: ../../en/advanced/usb/device/keyboard.rst:121
+#: d51ec366a06d44e1a45349a3735bcc38
+msgid "|input.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.usb.device.keyboard.ref:5
+#: 751dab2997bf44b0a205490650738556
+msgid "input.png"
+msgstr ""
+
+#~ msgid ":mod:`keyboard`"
+#~ msgstr ""
+
+#~ msgid "example:"
+#~ msgstr ""
+
