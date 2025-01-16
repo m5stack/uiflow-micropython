@@ -4,8 +4,7 @@ from micropython import const
 import time
 import usb.device
 from usb.device.hid import HIDInterface
-import struct 
-
+import struct
 
 
 _INTERFACE_PROTOCOL_KEYBOARD = const(0x01)
@@ -14,77 +13,123 @@ _KEY_ARRAY_LEN = const(6)  # Size of HID key array, must match report descriptor
 _KEY_REPORT_LEN = const(_KEY_ARRAY_LEN + 2)  # Modifier Byte + Reserved Byte + Array entries
 
 
-
 # ASCII to Standard HID keycodes
 KEYMAP = {
     # 字母
-    'a': 0x04, 'b': 0x05, 'c': 0x06, 'd': 0x07, 'e': 0x08, 'f': 0x09, 'g': 0x0A,
-    'h': 0x0B, 'i': 0x0C, 'j': 0x0D, 'k': 0x0E, 'l': 0x0F, 'm': 0x10, 'n': 0x11,
-    'o': 0x12, 'p': 0x13, 'q': 0x14, 'r': 0x15, 's': 0x16, 't': 0x17, 'u': 0x18,
-    'v': 0x19, 'w': 0x1A, 'x': 0x1B, 'y': 0x1C, 'z': 0x1D,
-
-    'A': 0x04, 'B': 0x05, 'C': 0x06, 'D': 0x07, 'E': 0x08, 'F': 0x09, 'G': 0x0A,
-    'H': 0x0B, 'I': 0x0C, 'J': 0x0D, 'K': 0x0E, 'L': 0x0F, 'M': 0x10, 'N': 0x11,
-    'O': 0x12, 'P': 0x13, 'Q': 0x14, 'R': 0x15, 'S': 0x16, 'T': 0x17, 'U': 0x18,
-    'V': 0x19, 'W': 0x1A, 'X': 0x1B, 'Y': 0x1C, 'Z': 0x1D,
-
+    "a": 0x04,
+    "b": 0x05,
+    "c": 0x06,
+    "d": 0x07,
+    "e": 0x08,
+    "f": 0x09,
+    "g": 0x0A,
+    "h": 0x0B,
+    "i": 0x0C,
+    "j": 0x0D,
+    "k": 0x0E,
+    "l": 0x0F,
+    "m": 0x10,
+    "n": 0x11,
+    "o": 0x12,
+    "p": 0x13,
+    "q": 0x14,
+    "r": 0x15,
+    "s": 0x16,
+    "t": 0x17,
+    "u": 0x18,
+    "v": 0x19,
+    "w": 0x1A,
+    "x": 0x1B,
+    "y": 0x1C,
+    "z": 0x1D,
+    "A": 0x04,
+    "B": 0x05,
+    "C": 0x06,
+    "D": 0x07,
+    "E": 0x08,
+    "F": 0x09,
+    "G": 0x0A,
+    "H": 0x0B,
+    "I": 0x0C,
+    "J": 0x0D,
+    "K": 0x0E,
+    "L": 0x0F,
+    "M": 0x10,
+    "N": 0x11,
+    "O": 0x12,
+    "P": 0x13,
+    "Q": 0x14,
+    "R": 0x15,
+    "S": 0x16,
+    "T": 0x17,
+    "U": 0x18,
+    "V": 0x19,
+    "W": 0x1A,
+    "X": 0x1B,
+    "Y": 0x1C,
+    "Z": 0x1D,
     # 数字
-    '1': 0x1E, '2': 0x1F, '3': 0x20, '4': 0x21, '5': 0x22, '6': 0x23, '7': 0x24,
-    '8': 0x25, '9': 0x26, '0': 0x27,
-
+    "1": 0x1E,
+    "2": 0x1F,
+    "3": 0x20,
+    "4": 0x21,
+    "5": 0x22,
+    "6": 0x23,
+    "7": 0x24,
+    "8": 0x25,
+    "9": 0x26,
+    "0": 0x27,
     # 空格
-    ' ': 0x2C,  # 空格键
-
+    " ": 0x2C,  # 空格键
     # 特殊符号
-    '!': 0x1E,   # 感叹号（Shift + 1）
-    '@': 0x1F,   # @ 符号（Shift + 2）
-    '#': 0x20,   # # 符号（Shift + 3）
-    '$': 0x21,   # $ 符号（Shift + 4）
-    '%': 0x22,   # % 符号（Shift + 5）
-    '^': 0x23,   # ^ 符号（Shift + 6）
-    '&': 0x24,   # & 符号（Shift + 7）
-    '*': 0x25,   # * 符号（Shift + 8）
-    '(': 0x26,   # ( 符号（Shift + 9）
-    ')': 0x27,   # ) 符号（Shift + 0）
-    '{': 0x2F, 
-    '}': 0x30,
-    '<': 0x36, 
-    '>': 0x37,
-    '?': 0x38,
-
+    "!": 0x1E,  # 感叹号（Shift + 1）
+    "@": 0x1F,  # @ 符号（Shift + 2）
+    "#": 0x20,  # # 符号（Shift + 3）
+    "$": 0x21,  # $ 符号（Shift + 4）
+    "%": 0x22,  # % 符号（Shift + 5）
+    "^": 0x23,  # ^ 符号（Shift + 6）
+    "&": 0x24,  # & 符号（Shift + 7）
+    "*": 0x25,  # * 符号（Shift + 8）
+    "(": 0x26,  # ( 符号（Shift + 9）
+    ")": 0x27,  # ) 符号（Shift + 0）
+    "{": 0x2F,
+    "}": 0x30,
+    "<": 0x36,
+    ">": 0x37,
+    "?": 0x38,
     # 其他符号
-    '[': 0x2F, 
-    ']': 0x30,
-    '-': 0x56,   # 减号
-    '+': 0x57,   # 加号
-    '=': 0x2E,   # 等号
-    ',': 0x36,   # 逗号
-    '.': 0x37,   # 句号
-    '/': 0x38,   # 斜杠
-    ';': 0x27,   # 分号
-    ':': 0x33,   # 冒号
-    "'": 0x34,   # 单引号
-    '`': 0x35,   # 反引号
-
+    "[": 0x2F,
+    "]": 0x30,
+    "-": 0x56,  # 减号
+    "+": 0x57,  # 加号
+    "=": 0x2E,  # 等号
+    ",": 0x36,  # 逗号
+    ".": 0x37,  # 句号
+    "/": 0x38,  # 斜杠
+    ";": 0x27,  # 分号
+    ":": 0x33,  # 冒号
+    "'": 0x34,  # 单引号
+    "`": 0x35,  # 反引号
     # 特殊控制键
-    '\n': 0x28,  # 回车（Enter）
-    '\t': 0x2B,  # Tab
-    '\b': 0x2A,  # Backspace
+    "\n": 0x28,  # 回车（Enter）
+    "\t": 0x2B,  # Tab
+    "\b": 0x2A,  # Backspace
 }
 
-SPECIAL_CHARACTERS = ('!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', '<', '>', '?')
+SPECIAL_CHARACTERS = ("!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "{", "}", "<", ">", "?")
+
 
 def char_to_hid_key(char):
     if char in KEYMAP:
         keycode = KEYMAP[char]
         # 如果是大写字母或特殊符号，则需要按下 Shift 键
         if char.isupper() or char in SPECIAL_CHARACTERS:
-            use_shift = True  
+            use_shift = True
         else:
-            use_shift = False   
+            use_shift = False
         return use_shift, keycode
-    else: 
-        return False, 0x00  
+    else:
+        return False, 0x00
 
 
 class Keyboard(HIDInterface):
@@ -104,15 +149,15 @@ class Keyboard(HIDInterface):
         self.numlock = False
 
         # Define the initial keyboard state.
-        self._modifiers = 0           # 8 bits signifying Right GUI(Win/Command), Right ALT/Option, Right Shift, Right Control, Left GUI, Left ALT, Left Shift, Left Control.
-        self._keypresses = [0x00] * 6 # 6 keys to hold.
+        self._modifiers = 0  # 8 bits signifying Right GUI(Win/Command), Right ALT/Option, Right Shift, Right Control, Left GUI, Left ALT, Left Shift, Left Control.
+        self._keypresses = [0x00] * 6  # 6 keys to hold.
         self._buf = bytearray(8)
 
         # 自动初始化 USB 设备
         self.builtin_driver = builtin_driver
         self._usb_device = usb.device.get()
         self._init_usb()
-        
+
     def _init_usb(self):
         self._usb_device.init(self, builtin_driver=self.builtin_driver)
 
@@ -159,17 +204,46 @@ class Keyboard(HIDInterface):
             return True
         return False
 
-    def _send_report(self, timeout_ms = 100):
-        struct.pack_into("8B", self._buf, 0, self._modifiers, 0, self._keypresses[0], self._keypresses[1], self._keypresses[2], \
-                                                                 self._keypresses[3], self._keypresses[4], self._keypresses[5])
+    def _send_report(self, timeout_ms=100):
+        struct.pack_into(
+            "8B",
+            self._buf,
+            0,
+            self._modifiers,
+            0,
+            self._keypresses[0],
+            self._keypresses[1],
+            self._keypresses[2],
+            self._keypresses[3],
+            self._keypresses[4],
+            self._keypresses[5],
+        )
         if self.send_report(self._buf, timeout_ms):
             return True
-        return False            
-            
-    def set_modifiers(self, right_gui=0, right_alt=0, right_shift=0, right_control=0, left_gui=0, left_alt=0, left_shift=0, left_control=0):
-        self._modifiers = (right_gui << 7) + (right_alt << 6) + (right_shift << 5) + (right_control << 4) + \
-                          (left_gui << 3) + (left_alt << 2) + (left_shift << 1) + left_control
- 
+        return False
+
+    def set_modifiers(
+        self,
+        right_gui=0,
+        right_alt=0,
+        right_shift=0,
+        right_control=0,
+        left_gui=0,
+        left_alt=0,
+        left_shift=0,
+        left_control=0,
+    ):
+        self._modifiers = (
+            (right_gui << 7)
+            + (right_alt << 6)
+            + (right_shift << 5)
+            + (right_control << 4)
+            + (left_gui << 3)
+            + (left_alt << 2)
+            + (left_shift << 1)
+            + left_control
+        )
+
     def set_keys(self, k0=0x00, k1=0x00, k2=0x00, k3=0x00, k4=0x00, k5=0x00):
         self._keypresses = [k0, k1, k2, k3, k4, k5]
 
@@ -181,20 +255,20 @@ class Keyboard(HIDInterface):
 
     def input(self, key):
         if isinstance(key, str):
-            key_cache = []  
+            key_cache = []
             for k in key:
                 use_shift, hid_key = char_to_hid_key(k)
                 if use_shift:
-                    if key_cache:  
+                    if key_cache:
                         self.send_keypresses(key_cache)
                         key_cache.clear()
                     self.set_modifiers(left_shift=True)
                     self.set_keys(k0=hid_key)
                     self._send_report()
                     self.set_modifiers()
-                    self.set_keys()  
+                    self.set_keys()
                     self._send_report()
-                else: 
+                else:
                     key_cache.append(hid_key)
                     if len(key_cache) == 6:
                         self.send_keypresses(key_cache)
@@ -212,11 +286,11 @@ class Keyboard(HIDInterface):
         cnt = 0
         for i, k in enumerate(key):
             if k == last_k:
-                self._keypresses[cnt - 1] = 0x00 
-                self._send_report()  
-            self._keypresses[cnt] = k 
+                self._keypresses[cnt - 1] = 0x00
+                self._send_report()
+            self._keypresses[cnt] = k
             cnt += 1
-            last_k = k  
+            last_k = k
             self._send_report()
         self.set_keys()
         self._send_report()
@@ -263,8 +337,8 @@ _KEYBOARD_REPORT_DESC = (
     b'\xC0'     # End Collection
 )
 # fmt: on
- 
- 
+
+
 # HID LED values
 class LEDCode:
     NUM_LOCK = 0x01
@@ -272,5 +346,3 @@ class LEDCode:
     SCROLL_LOCK = 0x04
     COMPOSE = 0x08
     KANA = 0x10
-
-

@@ -35,6 +35,7 @@ _attrs = {
     "RS232Module": "rs232",
     "Servo2Module": "servo2",
     "StepMotorDriverModule": "step_motor_driver",
+    "USBModule": "usb",
     "ZigbeeModule": "zigbee",
 }
 

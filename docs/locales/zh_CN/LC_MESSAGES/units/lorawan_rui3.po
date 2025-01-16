@@ -1,0 +1,2152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/lorawan_rui3.rst:3 0add85957957454e93751c3283a98c4e
+msgid "LoRaWAN-X Unit"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:7 ebd84df7653c43ba8f66163f64f9c41e
+msgid ""
+"Unit LoRaWAN-X is a LoRaWAN communication module based on LoRa "
+"technology, specifically designed for those frequency band. The module "
+"adopts the STM32WLE5 solution, supporting long-range communication with "
+"low power consumption and high sensitivity characteristics. The module "
+"integrates the LoRaWAN protocol stack and supports three operating modes:"
+" Class A, Class B, and Class C. It also supports point-to-point (P2P) "
+"communication mode and uses a UART communication interface (controlled by"
+" the AT command set) for flexible configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:9 40d671bdc7f747258dcc1f63b082c979
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:12 f3afbc7dacb3493d8065587eff5380c3
+msgid "|LoRaWAN-CN470|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref a086f716cf0245668bc2012c3cea9745
+msgid "LoRaWAN-CN470"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:12 a9096faea8244ffdaef4994df7886cab
+msgid "|LoRaWAN-AS923|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref 4ee3c57e58224791a61e6af3460fc3af
+msgid "LoRaWAN-AS923"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:16 796d3b0957264aaf9cf939bc93ce7c4d
+msgid "|LoRaWAN-EU868|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref 828174ddf7db4544a49cdbd4886e55fc
+msgid "LoRaWAN-EU868"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:16 110bd8c0579e451eaae7c84199f457b4
+msgid "|LoRaWAN-US915|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref 247331dfc53343d7af82a8e6d664aa1a
+msgid "LoRaWAN-US915"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:19 7a9e4bca119f42919b48c13c87d5a148
+msgid "Micropython LoRaWAN-CN470 LoRaWAN OTAA Mode Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:25 2a9fef4cb336430db94be75687b75d15
+msgid "Micropython LoRaWAN-CN470 P2P Mode TX Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:31 e65268e9e9b240f688753e26bfdd824c
+msgid "Micropython LoRaWAN-CN470 P2P Mode RX Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:37 ee0dd540739f4408b348d5a83a1ab310
+msgid "UIFLOW2 LoRaWAN-CN470 LoRaWAN OTAA Mode Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:39 d0615ad18a0c4e579359840a87d63354
+msgid "|lorawan_otaa_cores3_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:59 d32bd10ff0c44ee4b9fa5990d7c8f6a9
+msgid "lorawan_otaa_cores3_example.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:41 42fc384e7c704671be5803dd6db4ea33
+msgid "|lorawan_otaa_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:43 c7a4735da39d434dadc6cbe5f73e9459
+msgid "UIFLOW2 LoRaWAN-CN470 P2P Mode TX Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:45 b452f46798e04d34bd09ffbdc075dfe3
+msgid "|lorawan_p2p_cores3_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:60 e7e51dfd5b704e368bdb954b8ac54c88
+msgid "lorawan_p2p_cores3_example.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:47 83ee3f14396f45ed9a06fad67804a4ff
+msgid "|lorawan_p2p_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:49 f1ac0b084e2b44399b20efe9f5d48214
+msgid "UIFLOW2 LoRaWAN-CN470 P2P Mode RX Example:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:51 9da23913e97245b9af79044a0f4d427a
+msgid "|lorawan_p2p_rec_cores3_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:61 da88b8f1c45c45a7abfb60b9fdff2f0a
+msgid "lorawan_p2p_rec_cores3_example.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:53 94a7fb570f6d41fcbd0420a66fd9cd9e
+msgid "|lorawan_p2p_rec_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:56 5521d59e060240c2b03f53192a15b654
+msgid "class LoRaWAN_X"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:59 0d82a34bd5e640b7be1f2f8220bd9e31
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:63 4c3fe2f410a04a2999688ad4aa4aab26
+msgid ""
+"Initialize the LoRaWAN_X module by setting up UART communication with the"
+" specified parameters."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst 01cf7ba3eeb44ad19808b36b2ebd2931
+#: 05b4aa9c9f354496b1a92aaef26802ea 069446e181384944a2d02d6924ac861c
+#: 07e3c4d2b7bf4e5ea260c261952a3fcd 09c679c434b945d5a12216d0225c9e85
+#: 1115177fbf8847c7b50f5ab043dcd1fd 112b8bca058043699b710d8ce3ec9007
+#: 15acbca8991f4604ba068b503700d659 1b5a91b2915942669cd649c7bf71b793
+#: 1f148aecf94847a3be70059f48fd15e7 27239c8764904d708b2ad292740d525c
+#: 29125751184643f08487c32ed7c86287 2f0c8f383c5e415c83ee67b6a6e9105e
+#: 300d8cbb5c434a2b83d4cd75e66f72bb 321643e4501f44b3ab33a04464d80484
+#: 33329f7e479e4067b1e3ec5a773e723f 3e9b881f58d44f1b86adfe3edc61e96b
+#: 41e1427ce4414e1fb0902dc37c8435f2 459f9bdfde0045a2bf58f478321d3216
+#: 4730cbcabd0648858616f968a21331b1 4b3f4c5d7c3d4f22ad319a96e65841fe
+#: 4e30cda3bf1741a7ac046273ff2bfeef 5226ca0ab3c849abac7d1ae07ac26c4c
+#: 5b24572b073644ef87b50d23a3374964 5fea317b98e04d50b08bb55591585187
+#: 62d2c039eaf04f4497cd22e7908869b9 651e233d98f14dbbae13d9342b6ef255
+#: 6c07b77af0de4698bd2d34dfc0491bd7 6e6c8412cd0f4130b60db871f7f146d7
+#: 756ebfacea89468b89c3673edd5654d1 7574018b8baf4489a9cd721d6bc92252
+#: 78bba6271b35438db0ef565a0564d844 7a6c7065af614b71b0013177af40b2e1
+#: 7a99f139ecb14c2a8d0cf4dbd9a7cd3c 7c4b075068d046a8b07c3510cb6ae331
+#: 7e18c0f193c64daab700577b2f191a27 84c7f40605a44acc90f5e81ec08216dc
+#: 8594097dac1a43888e0de3fa8bf379cd 8a527a1aea684c10b5032bf6168d4713
+#: 8e74bc97f14743a1b2984741339b2aa1 8f7bceb02fbf4b0db21db90a40db38cc
+#: 90e24017d154491289fba430a3d09d31 96ffd7162bae4a80ad0a35640bebfed3
+#: 9abf7a8e217a4fb0ac019ca901883fd2 9e06a196a85944feadadb36baaf398da
+#: a9fa5538fa3e49a3a880ebac1a37724e ada213b9ea1748799b5ccb7d9149d8cb
+#: ae1256ffb9944597ab1bb8cf54aa6b81 b650b61f4d6e4a0ea6072ff56b7974ef
+#: b7dfb62bb2684b6da8f2e9688d5b114a b913ff2d05ad4fd48d080975ab85c109
+#: bae5ae4152ad47279a517da69b6b61bf c3f3710a75b641d78154b6a1ac441152
+#: c4e498dbf81b47eba08f429566d3600f c89d512060914772ac8d09525c91d779
+#: d027d8e61d90471a8bd3b67769b318de d362251d013c41dca3cbd15c82333bb6
+#: d98996c3a1a94d80a92ec73a8fa476b1 e9d4ad40752547ccacd71e12eec837f5
+#: f00709ab17164ddfb3aaeec2fbb88430 f13b10c75d334eb08ec279cc87dbb6c5
+#: f147f8e1ed2e4ec3a1ae1834f42794a4 f527f0cd09fd4a78b672700297e3479d
+#: f7b5a1d5dc8e4a1dbbc3671a0df88f83 f9eafc753c484aba8fbd8f925f4374c0
+#: fce8d5573d5940448bd60c7340540011
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:65 ad0da41626f74935b77c12a84dedc28f
+msgid "The UART ID used for communication."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:66 3ceaa47c69854952910bc5d83118ba70
+msgid "The UART TX pin."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:67 34e6747ca3624c6288a0c656c6467167
+msgid "The UART RX pin."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:68 1781b43929ee4efda058da341ef002e1
+msgid "Enables debug mode to log additional details, default is False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:70 ../../en/units/lorawan_rui3.rst:86
+#: ../../en/units/lorawan_rui3.rst:96 ../../en/units/lorawan_rui3.rst:108
+#: ../../en/units/lorawan_rui3.rst:118 ../../en/units/lorawan_rui3.rst:165
+#: ../../en/units/lorawan_rui3.rst:383 ../../en/units/lorawan_rui3.rst:395
+#: ../../en/units/lorawan_rui3.rst:415 ../../en/units/lorawan_rui3.rst:425
+#: ../../en/units/lorawan_rui3.rst:435 ../../en/units/lorawan_rui3.rst:449
+#: ../../en/units/lorawan_rui3.rst:883 ../../en/units/lorawan_rui3.rst:893
+#: ../../en/units/lorawan_rui3.rst:908 ../../en/units/lorawan_rui3.rst:918
+#: ../../en/units/lorawan_rui3.rst:930 ../../en/units/lorawan_rui3.rst:941
+#: ../../en/units/lorawan_rui3.rst:952 ../../en/units/lorawan_rui3.rst:965
+#: ../../en/units/lorawan_rui3.rst:977 ../../en/units/lorawan_rui3.rst:988
+#: ../../en/units/lorawan_rui3.rst:1000 ../../en/units/lorawan_rui3.rst:1011
+#: ../../en/units/lorawan_rui3.rst:1023 ../../en/units/lorawan_rui3.rst:1034
+#: ../../en/units/lorawan_rui3.rst:1046 ../../en/units/lorawan_rui3.rst:1074
+#: ../../en/units/lorawan_rui3.rst:1102 ../../en/units/lorawan_rui3.rst:1216
+#: ../../en/units/lorawan_rui3.rst:1228 01a94c63714a472d9d25beb0656a1236
+#: 01dc580566dd4bcd8881659b97bd684a 0bccfdaf3d17453aaa862f5cea9c0f42
+#: 0ed2d4833ba640629c7d5d19b2ecba7f 2097f68cfc8745969d4dd1aae97f29cb
+#: 2a0673b8ad7a4893889355dbf04c98cb 3538bf8d746d49cb84af70a7ebf2ad2a
+#: 42d8991de75c48a4bb7aee9e7c92d9f4 5647fb99774049be9c0e6b6c440dd3f6
+#: 5afc24040d504f47b8437c8ada4776b0 68465062127c46059c5aaf16a2be68c6
+#: 68531eeb7bec4b7e9c19fd4a9ec1de33 6fbabc4d54e4470d9aa15cf48c379b63
+#: 717154a0d665410d98c3a108823f7b98 7cbacc5756dd4e44bed4ed059f39d13f
+#: 853cb490db0d471abd13d256edf2129c 8da9768f5b28432ca6f8ec2ba199c8c3
+#: 9aa7940dc6c446cabc29e274a970c50f a142632617c741d2b870e584d0a3ff7c
+#: a1e12df443454b54a1c31979fbd306a4 a37b498441ad48e6a0cf95f8881e43a4
+#: a4538eb1d4be4d23baa28976ce811fa6 ad64a4e76eca4ac4a0bcf71cdd9dc3ad
+#: af4979584d94476d81369b1e68fabe10 af5127c3166d4dacaec28ed3dc4d9a4c
+#: b3a6481cfe8c45b693fc5ef557942640 ca64edfbf03e4f1eb983c4c89662c148
+#: cfa76dad5a4b40a8ab78146c4ae9d19c e1107c20526a4c29a23c94342e787cad
+#: e9bf69b73e254dcebdc7b68052149e0a f1de8d7579e849bc9397d4df3856e2a9
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:72 25bce1d91841482d997c864e1aa7291b
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:21 d3501efa5e9b42daa22add60a5c1941b
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:76 4951bb43131544cbbaf2cbc7f74947bc
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:80 34a35b5855e34c0cbd749a9e002ab2ef
+msgid ""
+"Configure the device for ABP (Activation By Personalization) mode using "
+"the provided device address, application session key, and network session"
+" key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:82 6671f7555b4b4b088cbe84c53421b387
+msgid "The device address for ABP configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:83 eceb1fc138834fd78e13b9cfb227c439
+msgid "The application session key for encryption."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:84 3d51b0003e7d429085d4d9ad9a427a88
+msgid "The network session key for communication."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:88 4de5ec2ca8524e7aadcc4d2b50c4d09d
+msgid "|set_abp_config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:53 6ad4181071d44eb4b3affe63756a88aa
+msgid "set_abp_config.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:92 d6c24b6e35cd48c286854c963c3d6878
+msgid ""
+"Retrieve the current ABP configuration, including the device address, "
+"application session key, and network session key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst 02c53dfab4b3423d9d82115d0dfda014
+#: 043985f9b59e48c38094fd51b4b1e6aa 0502af79c48647719df5f26dfa2cb876
+#: 057ead38c41243009683f8d3089a6c39 07e473f6659141bdbf3ae237c3bc5055
+#: 0918d0d7af194e099968f84b44999dff 0b90a70b9eb94ba89acaf5030a60d8bd
+#: 0f855526480743b085d4c72024ff7cea 0fdcc24eb06943a5800f701558cab90f
+#: 11a0a329c08646b392aa5dcd3211da84 149493bfffa64ad8a3f71a856461912f
+#: 15c8f9cacdd14298a8155335065b85e5 17d83f3a648d40a19dd9d316c8758764
+#: 18a9aef275f543d7b7cc5970b4480e4c 18dc987d8cbb4c5bba8f36b8439be257
+#: 1a90a33e74da4ddcb8ff57a55e913b8c 1ae9811f73374328854007c5fe8cc1a0
+#: 213eaa6c51324233bb5f2ec3c5f78bd4 21cf489050a444a9b83d0459a9e1cae2
+#: 246fc604541844dca33d0eb594046fbe 24b37ee5e9b34c99b129d4aa72f7e1d3
+#: 24b395e23aec41328c5c66aa92d9e116 2692c93b07b944429963f6df566e3a16
+#: 26adce5e35304180ae3f8162c04eb1e0 2d216127b52d4098832cbb87934c6634
+#: 2f004411204c487d81a241a1caf28f1a 3622da886af44e45b872b63db5d497a0
+#: 37c336c8a7dd450bbf60c90a7cd86ba6 383a533d5ddb4e0ba1515a506f1b1ccc
+#: 3c69904225054c46a6ec46f3e08b07e4 3cee60db8e154932a46bc6bf252f45bf
+#: 444627f721fd4e67be3df54a888ac205 466e6de353cc4ae895535bbc7c16787d
+#: 4841cc9a097b4ea394555772552b2946 49487b3a18984217bfb814ed8084b7e1
+#: 49ccdc60cda8454293582f477b2a79f9 4be4e8578c1c4c769ae41207576dfe58
+#: 4dfcfbeade8c4262af8dfc76396b75af 4e6feeb8e8124ca6a9a076221afa2811
+#: 4f7d339a3d8644dc99e98bf2dd1c35fa 570b88d65c46484791a917ed84f18384
+#: 577b6eed68fb496e8b8cc0a232a058d6 57effe531ff942d1bc4f8da7bc8ebc32
+#: 5cdaf92988ef4cd0a8730eafb118446e 5cdf571d24a54231b0548afbca73fa55
+#: 5df021a7660443159e67c1dd1354e896 5eb710e993f14c2cbb9b654b9c8cc54b
+#: 5f346f8415d24bffb79f0b5ab592e560 603934fd153a4b1e93a690579674b5d4
+#: 622af8b15c954b3dacf2aa287034890b 62bd3aa7bf1a4b65961c18cf481ecab2
+#: 62cdd601ac064712941931b5404b8c85 636e5eefc02e461a9898a23ea90ee4fc
+#: 647cef77c368460897af11a2c8e3b1fd 69fa7b552b944e50a09c9d2da373f14b
+#: 6a8214e3026e40e08c458fd7b0f07303 6ada2dd9ee0547c7a14f28440214745b
+#: 6c02babdd9a2480d8bb2d23a708de9a6 6ca0f6534b6b466e9ff82af6e24a7fe9
+#: 6d795ff46bca48dab1b2e11319f6feea 702ab4c9ed694da5a11941f9ccb77aa0
+#: 7074fcf6add349229543c58aeedd51b7 74b26d20c6b5498b8c3d0c924253f3a8
+#: 7a982ef7488645939b6a1d500539cb12 7e539817d67b4b879a7f8d8338be0194
+#: 7ed7bb13f9634fb5b10aaad274e0c3d8 80e9925b9c014a0f8f804a301c9deac5
+#: 81734c5bda8f4e79949e38d8c3914060 8230eb64c02346d89670074239c152db
+#: 8430cc6fa54c446b9eb565b6728d14b6 863514d48368470f83b19b06b4a5c504
+#: 8642c75c0d4143b191b0ab2f2ffcc192 86a5e6dd2c3c42308d012ba72aec8f5c
+#: 8712254ab37c406cac6299390de9c979 8a62015d812e4b2f8d9b84f4b98f0599
+#: 8e29b678ec46443d9bb7bab0aef4242b 90aa58ddb5144510bd2420ce706fdead
+#: 928b055f3e4642eb9ccc3f96b0505240 93150e76970c409691aa680256fcf61e
+#: 936dce9ec85744bd9325136b9af2bf05 93bcdf44696f4f07b0aaf1cb5588802c
+#: 97a245cafaa4420ba2b7202bd4448e60 97e8c7fcc6f94d50bcf6f407f5d5515b
+#: 9ab67adb03a141e4a76a384d9d5f9aec 9ce3d1d47ea6486795816642a4895fa5
+#: 9ed4facc845a4127800824b3cc584a82 9fb1c6bc7452447fadd8f8967d4a15ff
+#: a14be521790f409881b81992fc8cee5f a1c031c28cd94a8b8d5e8cbb03074647
+#: a52b93a920b0462fbd1af92fedde47ef a54963da626f45ff90286b30213a462c
+#: a94888c306c5455ebe48226320bf2b3a aa929e4ea6f04cf2b992ec8204dfab9e
+#: abbbe47a52f64d9ba41575345e524f94 b19d2bad06b04e76bb6164ba0646e229
+#: b316ff43bd99427fbce7bcef700359bb b61948d7a2a74a66ae32663d7678eb6a
+#: b6d7082372dd4801904bb1b5744a48d7 b70aafd96d33456381724ece5a3fd4c4
+#: b883bcaf0cba4bca93bae8d136999754 b89b7a71bf4a4f78bd83e1b4fa2614af
+#: baaa616b75064046b25a74cd5e0ef927 bc8130e612c74e6da1631a33d7b804c9
+#: be5432ff78744b65b67b6182a8835c3f c305b1a173b24538993776b4f4cb2c1f
+#: c3907d5bfee34f75bc39d8709e78616c c5213e437b434ee68478c54c56629ccc
+#: c537ae57b0ff4d4b97c511b7b5c668f7 c6133a1c5cc64b449185b426d91e7043
+#: c8beffa1954043f5a5c939f920b19e11 c9ce4408a2354d60b383941c4a8326bd
+#: cac477f84d494fc08bcdbd9fc645dab2 ce364e440f9c45a29270e932d8d26745
+#: d001c0d7ae9b49e89bd8e63379360bb2 d14610d7189c49e687e67495a14cf26b
+#: d149c345b88643079652b017b077fc32 d18d89b259324f8b932b9913c3853c8e
+#: d1b649c9d8234ac08f1e3c97869d4ca3 d33d5606f739427bb95c2ca29154aa13
+#: d6f37a7499da4762a8aab6fd34bd39bb d728b5a1d0114e1a911aaa34fcf19531
+#: d745518aadf04b658fd415dbec847123 d84618c248a4470ea8053a03b4852289
+#: d8e8c7de335b4cc387fd0b02cd9cd327 df9cf7f671f14abf931206b1a1b78fb2
+#: e031b00d0b7e4e029987875acee70ab8 e0a1c4f6c3a44d11a403e3e65a4fb8c3
+#: e0efe26e850d46c3a72cbceaf01ab78d e215cd75edcb4180a5d150dee0448ede
+#: e2dac8426aac4bc9bb6cc0a88dd3475f e481ecc75e9b4ab28ccbe86dc58c4a57
+#: f3d44bd5f3c54fcfbe5bcb7055427bb8 f69dfb72a22f43298d15ac2c695fad7a
+#: f80a1e9e072c4436a03800c8c11c5dba fa88126e8ec54746be37b7fe6f35aafa
+#: fb9dfe7fe62844b197149b2141df9871 fd101c65489e477180f8e6457b3b77ed
+#: fd8c031b145e4a149fec17f9a9572e74 fd931a240bcd4bf487defe3db01f6436
+#: fdd063e2c073455d8f9fb3bf75822aea ff0d872f3ae74c73b8221ddff8e76b49
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:94 9cd26f723421486d937275f579a86e08
+msgid ""
+"A tuple containing the device address, application session key, and "
+"network session key. Returns None or False for missing or invalid "
+"configurations."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:98 dc99401410844afab419245d24182ca4
+msgid "|get_abp_config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:54 a093e5bca25a4197b0672e0bb0a1d109
+msgid "get_abp_config.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:102 03c17673d1764cd6a0827b39561d30f2
+msgid ""
+"Configure the device for OTAA (Over-The-Air Activation) mode using the "
+"provided device EUI, application EUI, and application key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:104 9228a6ed634f47c09f367330b46e6580
+msgid "The device EUI for OTAA configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:105 7814ab1e3e984d2eac208480c1920be0
+msgid "The application EUI for OTAA configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:106 839a9ea461144154b4b259a964860152
+msgid "The application key for encryption."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:110 6f189b4b0460482e86c28de2bfa23031
+msgid "|set_otaa_config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:55 09fe70eca4cf44db8986a2684f8ca9de
+msgid "set_otaa_config.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:114 7278bfc48bc04a7cb2b98bb77adb4615
+msgid ""
+"Retrieve the current OTAA configuration, including the device EUI, "
+"application key, and application EUI."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:116 2ac32b9830a34c62be727b754bf7a2b2
+msgid "A tuple containing the device EUI, application key, and application EUI."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:120 fe5c6ef7daa44570a5eb3d499d2d2103
+msgid "|get_otaa_config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:56 adc32e55a6854217ace588fc3f5a417d
+msgid "get_otaa_config.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:124 6c6db02698fc4da4b8dd65e3e438d2e7
+msgid "Sends an AT command to the module and optionally reads the response."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:126 12e09cfdd41d44fcaf9f106f5428c557
+msgid "The AT command string to send."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:127 15d2b886589a42d88bcc9fb8afc00d11
+msgid "Specifies whether to read a response from the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:128 7fa72d322ee447f7aeab991653a29428
+msgid "Indicates if the command expects a single-line response."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:129 ../../en/units/lorawan_rui3.rst:140
+#: 021f2bff1aa345038683c6180cf5ef6d 111fb126366542b0a35211784ccaa619
+msgid "Specifies whether to handle asynchronous events."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:130 a0be74a7cd9c4dab900afd05bf53263d
+msgid ""
+"The timeout duration in milliseconds for receiving a response, default is"
+" 100ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:132 fa6fa503146946c9b0f99b7d6c771d68
+msgid "The processed response from the module or None if no response is expected."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:136 c20d4f02b2f149e7ac298697c7d3f86a
+msgid "Reads and processes the module response to an AT command."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:138 1dca275c8a5347389d6cda6afd73a440
+msgid "The AT command sent to the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:139 f94b3a1e3022450384750d642b5516d1
+msgid "Indicates if a single-line response is expected."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:141 17c408e8a1544472ada52b08181fc6a4
+msgid "The timeout duration in milliseconds for receiving a response."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:143 197c5a2afe5041ea99efdb7118c68189
+msgid ""
+"- True if the response is valid and matches a single-line expectation. - "
+"A processed response string when CMD+RESPONSE is received. - An event "
+"response string if async_event is enabled and an event is detected. - "
+"False if no valid response is received or an error occurs."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:144 4509509d70bb4bed9df74785189c898c
+msgid "True if the response is valid and matches a single-line expectation."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:145 0634a062c3b149ea9900c1140940cd1d
+msgid "A processed response string when CMD+RESPONSE is received."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:146 1c53d3b6a2aa4ebf8b350bbd472ec2e4
+msgid ""
+"An event response string if async_event is enabled and an event is "
+"detected."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:147 74bb659699e849c38aef7089121f8b9f
+msgid "False if no valid response is received or an error occurs."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:151 d7a1ea45ecf44041816d23c669dd096d
+msgid ""
+"Checks the communication state by sending the AT command and expecting a "
+"response."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:154 95e951f38ebf442a95f4c4e8df7bee46
+msgid "The response from the module indicating the communication state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:158 65219ec57b8a4bef9e6f6852ff046a33
+msgid "Resets the module using the ATZ command."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:162 b295059ea60d4475a9442187a557a9ac
+msgid ""
+"Resets the module to its default settings using the ATR command. Waits "
+"for the reset process to complete."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:167 5c8b687737a642e994e39072a60d7aef
+msgid "|reset_module_to_default.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:22 4ebb8a4bbb4b4e6590cd2c556d71c76b
+msgid "reset_module_to_default.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:171 f072e0a2f1ff472b8d665d292bda537c
+msgid "Retrieves the serial number of the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:173 7ca2c80eb2c443dc9fb7851a6249e518
+msgid "The serial number as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:177 cc5f1ae8f0fc4f689c7dd076f39e2a4a
+msgid "Retrieves the firmware version of the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:179 706e4972cca0479ca6a5844f610c393e
+msgid "The firmware version as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:183 6b75822c45d04cb29599b16fa73c23c2
+msgid "Retrieves the AT command version supported by the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:185 88f98ff8c1dc47faadf412a3ce541e07
+msgid "The AT command version as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:189 0a8c7a83ab6c413e9fe2277092cebe1d
+msgid "Retrieves the hardware version of the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:191 cbb48cf92bcc4bd6989e66580ebeb2b6
+msgid "The hardware version as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:195 b085d35e4ee9440bad0357e78ea4716f
+msgid "Retrieves the hardware ID of the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:197 4dfeb006329f444c8d52026855c037bd
+msgid "The hardware ID as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:201 c1738fa96d5b4a02b7b416c380ef573c
+msgid "Retrieves the Bluetooth MAC address of the module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:203 ab140b25f6ac48d89979afd810a65421
+msgid "The BLE MAC address as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:207 e945948730024e6bb85d4c2ef5fa36f1
+msgid ""
+"Configures the sleep time for the module. If no time is provided, the "
+"module enters sleep mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:209 aac76b1fefaf4e9e8dbe449d339a33b0
+msgid ""
+"The sleep duration in seconds. If None, triggers sleep mode without "
+"specifying a duration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:211 ../../en/units/lorawan_rui3.rst:225
+#: ../../en/units/lorawan_rui3.rst:233 ../../en/units/lorawan_rui3.rst:253
+#: ../../en/units/lorawan_rui3.rst:267 ../../en/units/lorawan_rui3.rst:281
+#: 010ceb8f5ea04633a5db5e74e6ae77ac 2d9cee42d0944fbc99b5ca4edb4b7f62
+#: 5410ed17c12e4ad9ae079eee4277a7f9 60c8af3e40e9499cae4406adbaab7256
+#: a6cff4f2463a4660ab3031bb5fe14099 afc8228578a7494dbef83c654de9a3d4
+msgid "True if the command is successfully sent, else False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:215 dd2ae15d282144728f15fae46c15b692
+msgid "Checks if the module is in low-power mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:217 3857b174dfcf4629b7222715390a29e8
+msgid "True if low-power mode is enabled, otherwise False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:221 494a1ea21f124ab895769955cbb58567
+msgid "Sets the module low-power mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:223 c5773d20d8904318b7ae1c0fc3955e51
+msgid ""
+"A boolean value indicating whether to enable (True) or disable (False) "
+"low-power mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:229 d94ea90eba9c49c3880746e89d2b84ab
+msgid "Sets the baud rate for UART communication."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:231 77f1a864fcba45f99e0f813cd4bf690f
+msgid "The desired baud rate value."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:237 44e598b70c82418c8f53881611fc282b
+msgid "Retrieves the current UART baud rate setting."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:239 507c3a0850c843448e11ae6d7b1d20b6
+msgid "The baud rate as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:243 6a072ab084e1405cb01dd87b04c1130c
+msgid "Retrieves the Device EUI for OTAA (Over-The-Air Activation) mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:245 3b01cf38b61e4b28b789bf67bfd44f85
+msgid "The Device EUI as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:249 2e7dc194422f4032896f29ee92d57244
+msgid "Configures the Device EUI for OTAA mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:251 51e6f2db3bc348639e5aaff3d2bf6854
+msgid "The Device EUI to set, as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:257 80624cff67ad41359c7a0551ead3ad7f
+msgid "Retrieves the Application EUI for OTAA mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:259 c5dbb0cc721d487d8ac9a51c25f12d11
+msgid "The Application EUI as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:263 7bd51992dc2148cfa1c72842ea976803
+msgid "Configures the Application EUI for OTAA mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:265 f9d1f317e33b4aa785f2414a35cf2860
+msgid "The Application EUI to set, as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:271 2ff2d330b6e740d8b5e70f334605f6aa
+msgid "Retrieves the Application Key for OTAA mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:273 eeab19cd32da4989b6c7e5739005ad05
+msgid "The Application Key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:277 86f4913ac3c743569916d5a18a73654f
+msgid "Configures the Application Key for OTAA mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:279 445b064d5270454696d351bf12cc2f99
+msgid "The Application Key to set, as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:285 a1da2962b7e5455794dd324e28eaa0cd
+msgid "Retrieves the device address."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:287 310165da31b74f669130b75a73a8167a
+msgid "The device address as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:291 52484fe9994b4602ba4e558eed2a785c
+msgid "Sets the device address."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:293 b5329e6182b44964970cac10579123a4
+msgid "The device address to set, provided as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:295 9af153ccb6334115a70270800059e742
+msgid "The application session key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:299 14f730124cd5497080a5d80c740e1414
+msgid "Retrieves the application session key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:301 ../../en/units/lorawan_rui3.rst:314
+#: ../../en/units/lorawan_rui3.rst:322 ../../en/units/lorawan_rui3.rst:348
+#: 5561e60d22984da7b0dbfa73825dc112 57f1c60c1dd24ebeb3e8b69498ae2334
+#: ad71bca11d71432dbbc6f74b4068084c f6bb332a36da449f90e33bf0540c0357
+msgid "The result of the AT command execution"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:304 f33c2dbccc05445ca8cc0aef6bfcca3f
+msgid ""
+"Sets the application session key. This operation is applicable only in "
+"ABP mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:306 f696afdc67f941ab975c4995bd225817
+msgid "The application session key to set, provided as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:308 54548b4f7fd843819c55b62f6f5cc2cc
+msgid "The network session key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:312 73c60e59d4da44a3b027066528fd32f7
+msgid "Retrieves the network session key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:318 bc5532517c1f4d4da6436cc3c8deae2e
+msgid ""
+"Sets the network session key. This operation is applicable only in ABP "
+"mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:320 bebba640754a4d42ba510015983d75da
+msgid "The network session key to set, provided as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:326 b3f8760a704a4881b237dd036b35451b
+msgid "Sets the network ID."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:328 d2ed07f6bb0349c0822067b8c7adafc7
+msgid "The network ID to set, provided as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:330 d939d5709bff4836b5f01d676204fe5b
+msgid "The network ID as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:334 2e1e54a2c207439ca97f5c0dde6a030b
+msgid "Retrieves the network ID."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:336 0eb4c097ca3c4005b4640c1ad4f4e5d4
+msgid "The multicast root key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:340 192a18a3912f4011a87c06700ca3aadc
+msgid "Retrieves the multicast root key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:342 687632fcdfc64b77929c4774e1b7987f
+msgid "True if confirmation mode is enabled; otherwise, False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:346 396f8c8ad50044b18a842c669f4ebe40
+msgid "Retrieves the confirmation mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:352 298d2a9e753145f290cda694992d7f8c
+msgid "Sets the confirmation mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:354 eef3f1c736a54349b54a867c3f713542
+msgid ""
+"A boolean indicating whether to enable (True) or disable (False) "
+"confirmation mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:356 1212b123e2a7487bacc1837210440895
+msgid "True if the last confirmed uplink succeeded; otherwise, False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:360 2d6b218e26914f9a8930545763b9efdd
+msgid "Retrieves the status of the last confirmed uplink."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:362 6456ee4ccafa4b2d8752e6bbe9113d5a
+msgid ""
+"A tuple containing state, auto_join, retry_interval, and max_retry as "
+"integers, or False if retrieval failed."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:366 23eb5f8b561e4693ae021f71dfeb6607
+msgid "Retrieves the current join configuration for LoRa."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:368 d7a1cbcb203c4ca7b40ef8386506e4f2
+msgid "True if the module successfully joins the network, otherwise False"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:372 7dcf2d7fdf1b4edab25937504adaa2ff
+msgid ""
+"Configures the join parameters for LoRa. The configuration does not "
+"confirm network join success."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:374 ../../en/units/lorawan_rui3.rst:393
+#: ../../en/units/lorawan_rui3.rst:447 ../../en/units/lorawan_rui3.rst:472
+#: ../../en/units/lorawan_rui3.rst:492 ../../en/units/lorawan_rui3.rst:506
+#: 1fab1380376e4c799e09807138433500 2b0592ecdb8c4b9384821ac7282fb766
+#: 3a190c9bd80d4c7f82fe83a22b16e675 4831ba00d3184dfb9eb74c7b372c98fb
+#: 5717708d8370412a91415ced32830952 e14bf3f1c5904892998e34cd70c43478
+msgid "True if the command is successfully set, else False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:375 4fa841d1892a4f1f9d8ce08ac5ea6643
+msgid "The join state to configure, as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:376 8516cf7cef4343a4b6cd5204b89b11ed
+msgid "The auto-join flag, as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:377 2cd2ecc27ba2454f82f946889e3962c1
+msgid "The interval between join retries, default is 8 seconds."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:378 e52748ee5f2c47adad688e32219cc5ac
+msgid "The maximum number of retries, default is 0 (no limit)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:379 d81cc2c80df34e2989f23927968c7bd3
+msgid "The timeout duration in milliseconds for the command, default is 8000ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:381 bbea134bee9f4bcdb75bb9dbb538489c
+msgid "The join mode as an integer (0 for ABP, 1 for OTAA)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:385 2deee68ede4849b0b43a56772e033d89
+msgid "|set_join_config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:24 720aced4840848e1baea606d27193770
+msgid "set_join_config.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:389 b5d93b7bbcbf444e966113bffe20422f
+msgid "Joins the LoRa network using predefined join parameters."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:391 71e4f1ea6fa8465fb2590111fabe40b3
+msgid ""
+"The timeout duration in milliseconds for the join command, default is "
+"8000ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:397 204140ccfaa24d0e820f722459ffe1a0
+msgid "|join_network.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:25 7202cb0b295b4a54817ee6cc2b825c63
+msgid "join_network.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:399 11edb7a1f33a43ee86791f266e575c3d
+msgid "|join_network_return.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:26 bc4b43a91e544f158a1d5a5196930c66
+msgid "join_network_return.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:403 44f98092df60490cac0ad8a46cc05215
+msgid ""
+"Retrieves the current join mode. 0 indicates ABP mode, 1 indicates OTAA "
+"mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:405 973e04223ef44cc6a483c970b2d4156c
+msgid "True if joined, otherwise False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:409 7cf9eb334c64478a9555c87f67ea3c14
+msgid "Sets the join mode for the LoRa module."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:411 30d3ae6ecfcf480cabfc13af2130b7c3
+msgid "The join mode to set, 0 for ABP or 1 for OTAA."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:413 8e1b937f03ff4960a91d8587385e9eaf
+msgid "The received data as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:417 87385b4bff1142758f82c1445056e33b
+msgid "|set_join_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:27 8f8b8517a8f04f1caa66f1d076c8c2c3
+msgid "set_join_mode.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:421 5a3fa52e72724102ba371577d791cffa
+msgid ""
+"Checks whether the module has successfully joined the network. 1 "
+"indicates joined, 0 indicates not joined."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:423 ../../en/units/lorawan_rui3.rst:433
+#: 0b2088ae73694664b6528515acb22d08 a6b3d705b8ac4619a4ee5170935ff8ee
+msgid "True if the data was sent successfully, otherwise False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:427 3cc9188c58404607940ba681ee9ebe9c
+msgid "|get_join_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:28 b4a0055914f84a7bb533d767a3c78feb
+msgid "get_join_state.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:431 b6284db8c4634ad2a0f632686d984c04
+msgid "Retrieves the data from the last received message."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:437 aceca32efa064ec299052f13a6001bcb
+msgid "|get_last_receive.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:29 a390e74493d4478c8a700b30f3beca61
+msgid "get_last_receive.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:441 fe0d6eefa1a74385b0eb4a95dbc32186
+msgid "Sends data through a specific port."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:443 ../../en/units/lorawan_rui3.rst:459
+#: 32c1a99e0a26479e8781dfabf8ff8cd9 5e581bc42b6c4d0a86494e60860c80d9
+msgid "The port number to send data through."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:444 68eeb3031da1407886f350c2b8c4710c
+msgid "The data to send, provided as bytes."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:445 3c126da48b774be38b7d24bfa32c062a
+msgid ""
+"The timeout duration in milliseconds for the send command, default is "
+"600ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:451 f6b1eeeaf30c40d2a0f8f95e24d52109
+msgid "|send_data.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:30 734ca0039b2c4b93b7500847336a9f87
+msgid "send_data.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:453 6de48c83ff914627b710b313e9f23797
+msgid "|send_data_return.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:31 82dbf07dc02e4f14948dc18c859a5dfa
+msgid "send_data_return.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:457 5800e553953f4dba8e208d0de9b59304
+msgid "Sends long data through a specific port with optional acknowledgment."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:460 8f9ca14d91f7447ba40db321c6bbaedf
+msgid "Indicates whether acknowledgment is required (True or False)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:461 f2c9211cc1fc436cb5166cde01ba3ca6
+msgid "The long data to send, provided as bytes."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:462 eea4ff97000e478e892e1b37ded86b3d
+msgid ""
+"The timeout duration in milliseconds for the send command, default is "
+"500ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:464 ../../en/units/lorawan_rui3.rst:478
+#: b72d6cd01ac24652b561cd3839cea5b7 ef7ee1b89a774e8e979f24d0cc12719e
+msgid "The retry cycle value as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:468 99539dd72f3b46958c4107beb615b305
+msgid "Configures the retry cycle for transmissions."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:470 43fe94912e854a5ba9a770aa80044f39
+msgid "The retry cycle value, ranging from 0 to 7, default is 0."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:476 38d87a5df58941c086b823e25bc35799
+msgid "Retrieves the current retry cycle configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:482 ef39bd5f0b4a4d748816d4cf4b8f7dbb
+msgid ""
+"Checks whether adaptive data rate (ADR) is enabled. 1 indicates enabled, "
+"0 indicates disabled."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:484 9d5a6e903feb420cb1011c2bc17e1dde
+msgid "True if ADR is enabled, otherwise False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:488 0baa081a392349bc87ebc43e18400ee1
+msgid "Configures the adaptive data rate (ADR) state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:490 f9b00ace84fc4a52bb5a199fe13fd2d6
+msgid "A boolean indicating whether to enable (True) or disable (False) ADR."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:496 d8d9d919bae048d19739890cb37371f7
+msgid "Retrieves the current LoRaWAN node class."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:498 4a2d1a97af3c466e9ff76674cf1739f1
+msgid "The LoRaWAN node class as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:502 97a06fb1b243477cb35d10c6c38abc60
+msgid "Sets the LoRaWAN node class."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:504 cb07ba6cf0aa42c0b4ae036fa7de9858
+msgid "The node class to set, provided as a string"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:510 2f195307a7654d01b578bb66f03d087a
+msgid ""
+"Checks whether the ETSI duty cycle is enabled. 1 indicates enabled, 0 "
+"indicates disabled."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:512 c2faa237f93c45b58bd5082e19dc5950
+msgid "True if the duty cycle is enabled, otherwise False."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:516 99d091a158334a0fb0d94f3379660023
+msgid ""
+"Sets the ETSI duty cycle state, which can be enabled or disabled "
+"depending on the region."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:518 7f9d54bde3e24427beb990929b3343a7
+msgid ""
+"A boolean indicating whether to enable (True) or disable (False) the duty"
+" cycle."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:520 ../../en/units/lorawan_rui3.rst:534
+#: ../../en/units/lorawan_rui3.rst:548 ../../en/units/lorawan_rui3.rst:562
+#: ../../en/units/lorawan_rui3.rst:576 ../../en/units/lorawan_rui3.rst:590
+#: ../../en/units/lorawan_rui3.rst:604 ../../en/units/lorawan_rui3.rst:618
+#: ../../en/units/lorawan_rui3.rst:638 ../../en/units/lorawan_rui3.rst:653
+#: ../../en/units/lorawan_rui3.rst:667 ../../en/units/lorawan_rui3.rst:675
+#: ../../en/units/lorawan_rui3.rst:695 ../../en/units/lorawan_rui3.rst:709
+#: ../../en/units/lorawan_rui3.rst:729 ../../en/units/lorawan_rui3.rst:779
+#: ../../en/units/lorawan_rui3.rst:805 ../../en/units/lorawan_rui3.rst:817
+#: ../../en/units/lorawan_rui3.rst:845 ../../en/units/lorawan_rui3.rst:853
+#: ../../en/units/lorawan_rui3.rst:881 ../../en/units/lorawan_rui3.rst:906
+#: ../../en/units/lorawan_rui3.rst:928 ../../en/units/lorawan_rui3.rst:950
+#: ../../en/units/lorawan_rui3.rst:975 ../../en/units/lorawan_rui3.rst:998
+#: ../../en/units/lorawan_rui3.rst:1021 ../../en/units/lorawan_rui3.rst:1044
+#: ../../en/units/lorawan_rui3.rst:1063 0079ca9fadd94e208dc7e048c13fa339
+#: 09f04c1f35bf4c8c93938f2a7518a4df 250e8e75d3ac4d03b4a72eeafcdb210f
+#: 25de34033ba24d81a99bbd8a0983269c 273c5cf676b04d5897a1a870422d4591
+#: 29ee880a05fe479594bc5edf62422fd8 31174af6fb274fff874bd5888720895a
+#: 3e093a89bc68414d91c3f9e1195bf241 4825de029b4e4280984f359fd9c0d545
+#: 4ea4eee6d83a4c099b92440706c6f4fc 5c9e957407134b1d93af1e2ea51bca42
+#: 6300fb7027274476bf9cb74b8f646609 67f5acc4d99c418aa9e18b2bdd534d6a
+#: 740b3c20f2034b969c1f5cbb2d193dae 745146dd7f084a1daa21cfd3dbe91a9d
+#: 7a888d1d9ad24cdea62f45b0454b833f 7bf0b13b5e764ee6b920892a1bcc9fa5
+#: 7f3f2f1e22de41c595690775d4753f8e 848ae6a7b4474db8a9bec12eb4acdaf8
+#: 9f1753b9ae8b4d00b78334598e9ba950 a154f0c9db704935874b5941a218bd9a
+#: ba0d6a95b42649c9ac9a52a8bbccc9b4 d8a8d6bade2b4f3f832eeafbe9b1c29e
+#: e2f9bc4e01304f49a5f42985275a55e0 e3f49506a052411980f1c6bc1c902dca
+#: e7e84dff5b1843f3a6d263ef150d3974 f534bb31ee124a0b880972df3deefad7
+#: f7825f4e9cc548b081f8b37f0f4d813b fe6c30791a264802b326076eeb464b32
+msgid "The result of the AT command execution."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:524 a3492d255a1e49d1a0d3a05f60938c7d
+msgid "Retrieves the current data rate configuration."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:526 7ea09801defc4c1abbe21ac1b5ace815
+msgid "The data rate as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:530 5c93b25a107d4d669603c0769cc2aff2
+msgid "Sets the data rate for communication."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:532 e221104eaae94c90ac86a167d4ca22bc
+msgid "The data rate to set, provided as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:538 7a20a8f185074dc591e06f058ae2400c
+msgid "Retrieves the delay for the join procedure on window 1."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:540 a5816cc13fe44b6e80acdc59843fdff1
+msgid "The join delay for window 1 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:544 db7219a1784d4c06a14dc7c15fd41354
+msgid "Sets the join delay for window 1."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:546 1a62e167abc14bc2b54938781df9ccdb
+msgid "The join delay to set for window 1 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:552 f23ac9dbdd4a4eee8658d81cd5131868
+msgid "Retrieves the delay for the join procedure on window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:554 41d22a9cedea4b13ab19cad2f1d931c7
+msgid "The join delay for window 2 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:558 20126078e74f4bfcb9f5d769b4ab2617
+msgid "Sets the join delay for window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:560 d06743fb6a6a4af9b625477194d40b37
+msgid "The join delay to set for window 2 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:566 9ce5f37d953546f7bf6d3c93ace4b116
+msgid "Retrieves the public network mode (enabled or disabled)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:568 86293e9978dd47f9b50ef8fcd53efe58
+msgid "True if public network mode is enabled, False otherwise."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:572 2484dea46a304e11beec2f5f8d98fb6a
+msgid "Sets the public network mode to enabled or disabled."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:574 de7869faa5dd4513bb1b97cf52527916
+msgid ""
+"A boolean indicating whether to enable (True) or disable (False) the "
+"public network mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:580 12c2f29285d149ccaeb0233c501a4e92
+msgid "Retrieves the receive window 1 delay."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:582 8b9a5a156de448d98058a5e8abd62d28
+msgid "The receive window 1 delay as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:586 5ea789667dcc4fcf83a4b8a4d3978ee3
+msgid "Sets the receive delay for window 1."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:588 403c06191bca4bdca09d5aaa889842d3
+msgid "The delay to set for receive window 1 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:594 9c6fc70abdeb4e31baed8aafad8b6852
+msgid "Retrieves the receive window 2 delay."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:596 c3fb6ef62bba4ab4b74e6d57453a9e94
+msgid "The receive window 2 delay as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:600 ad4920aac6e34ad285cdec30b94639f5
+msgid "Sets the receive delay for window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:602 ecb1d2ac30e74ee6a6255cc8bb4dc5db
+msgid "The delay to set for receive window 2, with a range of 2 to 16."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:608 d67fd9d7460547309cdb2da2ccf7bb4c
+msgid "Retrieves the receive data rate for window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:610 ede2f23d2a0e4222b9c0eea05cb23c3f
+msgid "The receive data rate for window 2 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:614 be963a8e4b804d5b9f3114b0c216e35d
+msgid "Sets the receive data rate for window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:616 8f78500a3ade43f49b9f7a102ecdef81
+msgid "The data rate to set for window 2."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:622 4a7bb66c106043b2949086538ba32308
+msgid ""
+"Retrieves the receive frequency for window 2, based on regional frequency"
+" settings."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:624 c00c008eed284873bfa8df84721cdade
+msgid "The receive frequency for window 2 as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:628 fc5e8b215a1f49e6858e2eb6c15002dc
+msgid "Retrieves the current transmit power setting."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:630 5c478d2b953e4d699c88f9fa6762b487
+msgid "The transmit power setting as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:634 e48e70b6416e4ac3b0cee4fc909046fa
+msgid "Sets the transmit power."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:636 66ae97f234c64a0d8f604b2a64f342c1
+msgid "The transmit power to set."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:642 afe088cf84464b27a846d94b17585973
+msgid "Retrieves the network link state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:644 eb5a8bda73e849d5ba21f1e871ca1a51
+msgid "The network link state as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:648 14b10e571c3046a18f33ec4b1137f69d
+msgid ""
+"Sets the network link state for the device. 0 - Disable Link Check 1 - "
+"Execute Link Check once on the next payload uplink 2 - Automatically "
+"execute Link Check after every payload uplink"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:657 8f91d53da6c0422fb635b37f07dd2a44
+msgid "Retrieves the Listen Before Talk (LBT) state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:659 fcd78c9be8cc48d998102a0e942edc6c
+msgid "True if LBT is enabled, False if not."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:663 fce26bf754264479beb2021c0f06f4f5
+msgid "Sets the Listen Before Talk (LBT) state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:665 f5d1bf640ca6480a9dfe723b4a4a55af
+msgid "The state to set for LBT (True for enabled, False for disabled)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:671 39c76801526e44f7bc630adf70a812a6
+msgid "Sets the RSSI threshold for Listen Before Talk (LBT)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:673 177f3c712cde4e3b97303feca1dda33f
+msgid "The RSSI threshold to set for LBT."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:679 fc89921b27e545ba9b9573185be863fd
+msgid "Retrieves the RSSI threshold for Listen Before Talk (LBT)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:681 b162677d0e49400786008ba7d40dd33e
+msgid "The RSSI threshold as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:685 bdb2fab86d114e4fae47f5ec491a560e
+msgid "Retrieves the scan time for Listen Before Talk (LBT)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:687 3dda4817a12e457ea144e12a9f95d7b6
+msgid "The scan time for LBT as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:691 a7e3e9d1c5da4da2a1e34869603f1c17
+msgid "Sets the scan time for Listen Before Talk (LBT)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:693 a5732f2b1bb34544bc939940e1dfecdc
+msgid "The scan time to set for LBT."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:699 28d136cf3b3b4bf79c096d980dc9974e
+msgid "Retrieves the time request state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:701 9c04e98c387c41d0a5a1801e81bec3db
+msgid "The time request state as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:705 335f452c36684fd389428f8254a1e177
+msgid "Sets the time request state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:707 dd3dde364d174c2cae8f312755ecac3a
+msgid "The state to set for time request (True to enable, False to disable)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:713 eecc0b2cd8864e93b7967fbb4a180e57
+msgid "Retrieves the location time in UTC+0."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:715 973ce522f8c94b8c92d6a9d346376852
+msgid "The location time in UTC+0 as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:719 61eef2c807c84fba8d4e0c69c1f0059b
+msgid "Retrieves the unicast ping interval in Class B mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:721 c92e4fe7deca4638af863dec4fd81cec
+msgid "The unicast ping interval as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:725 d8b923bc26c042078b55f15b4a7db10c
+msgid "Sets the unicast ping interval for the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:727 3154ed85690848ef9724497baece42dd
+msgid ""
+"The interval to set for the unicast ping (0 to 7). 0 means approximately "
+"every second during the beacon window, and 7 means every 128 seconds "
+"(maximum ping period)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:733 05a08dfe11ee4961ba22c86cc0031346
+msgid "Retrieves the beacon frequency."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:735 e98005cc61ca46b38aa6b388bf06f75c
+msgid "The beacon frequency as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:739 53ded4c21a02440fa8bae375a5b2caae
+msgid "Retrieves the beacon time."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:741 d4f825e145024072acc68fbd3c4e1692
+msgid "The beacon time as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:745 f71ff353e5784fb5b7da6307d0a729a3
+msgid "Retrieves the beacon gateway GPS location."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:747 577e2f45087f46a683367993ae62a5aa
+msgid "The beacon gateway GPS information as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:751 3369d201fc0144d2aa09b4a35d3c34ee
+msgid "Retrieves the Received Signal Strength Indicator (RSSI)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:753 3f0874e111b243d5aeef298173e9bd22
+msgid "The RSSI value as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:757 baa6fe55dc9c49839199c8250150b574
+msgid "Retrieves the RSSI values from all channels."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:759 72adcfe48c5648acbcad393d6d9cfd6e
+msgid "The RSSI values for all channels as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:763 4d98cac398454a4dbb6e5bdcdddd784e
+msgid "Retrieves the Signal-to-Noise Ratio (SNR)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:765 8eb43d547e594cdb80e3410eb2544c5b
+msgid "The SNR value as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:769 b18a7487d3624234afec92ad9ab453af
+msgid "Retrieves the channel mask (only for US915, AU915, CN470)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:771 c75d8b0db16d44b4b9509a6fc5c8058d
+msgid "The channel mask as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:775 ba837ce6e1c242c6b03c81183d3c00e8
+msgid ""
+"Sets the channel mask to open or close specific channels (only for US915,"
+" AU915, CN470)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:777 d5390329d1f640c89046b5c9a17b2e9b
+msgid "The channel mask as a 4-length hexadecimal string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:783 f45c76bcbc0c4ca7a4d9bf62a320d9f7
+msgid "Retrieves the state of the eight-channel mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:785 dca6b33ded7d4043862b315dc6bcb892
+msgid "The state of the eight-channel mode as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:789 6c23eac4bdfc46e9b1df1d735ddd8859
+msgid ""
+"Sets the state of the eight-channel mode, with a group number between 1 "
+"and 12."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:791 3e68aadaa53a4c69b2d71ee282f512f0
+msgid "The maximum group number (1 to 12)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:793 e87a07a0a7df4b74b75de2f6a1cb6d52
+msgid "True if the AT command execution is successful, False otherwise."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:797 31c21895383b41c0be58984a8a0304d1
+msgid "Retrieves the single channel mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:799 c9a58cd75e204d0590e7eaa7158b7e24
+msgid "The single channel mode as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:803 b39c2ba8a5094c84b5251cd908c5c6ec
+msgid "Sets the single channel mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:809 70695d1c9485402d8b231a14584ebe0b
+msgid "Retrieves the active region for the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:811 0fcc66323d44405abf0b9e10af8b30a5
+msgid "The active region as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:815 5ad07322d38741cabc6c8bf23edb7fc3
+msgid "Sets the active region for the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:817 2f2c81f9fc3c47719feabcec619d84db
+msgid ""
+"The result of the AT command execution.  - ``EU433``: 0 - ``CN470``: 1 - "
+"``RU864``: 2 - ``IN865``: 3 - ``EU868``: 4 - ``US915``: 5 - ``AU915,``: 6"
+" - ``KR920,``: 7 - ``AS923-1``: 8 - ``AS923-2``: 9 - ``AS923-3``: 10 - "
+"``AS923-4``: 11 - ``LA915``: 12"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:819 fe00d3bcb4e346c4b8d7f40acc1b79dc
+msgid "``EU433``: 0"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:820 f66ee33fef79428cb672addad9c7cc31
+msgid "``CN470``: 1"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:821 2219810966774f428a2389117173cd87
+msgid "``RU864``: 2"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:822 78b1dc91f7ac45b1a703cfb27cacff84
+msgid "``IN865``: 3"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:823 bfe9e6e66c56486598997f1d3fadf43b
+msgid "``EU868``: 4"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:824 99cb5bd8f2224795a4d9a1247ccbd501
+msgid "``US915``: 5"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:825 8b77b5a954944d27b825cec6f6b4ee03
+msgid "``AU915,``: 6"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:826 326033f378a848cdb6bf9c29bdde5d4e
+msgid "``KR920,``: 7"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:827 ec1b4c2cb9c8413aae2a6c4df74d4804
+msgid "``AS923-1``: 8"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:828 958f3f3b48c34db3a4978633517354e5
+msgid "``AS923-2``: 9"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:829 549cabe9208f41ccb7bc283062e1e2bc
+msgid "``AS923-3``: 10"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:830 404eef38f16b48f1bcdeb4cad4fbdc95
+msgid "``AS923-4``: 11"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:831 d66331e0bf0a46ae9cb99a32326a94f6
+msgid "``LA915``: 12"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:835 e46c48360daa4c42b24580498b92626b
+msgid "Adds a multicast group to the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:837 cc5410293c104728b2d7331754278294
+msgid "The class of the multicast group."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:838 67c4001e06fb47cb88ff63859b6b13a8
+msgid "The device address."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:839 4fbfe395115f43f8b57f6723fcbef163
+msgid "The network session key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:840 f341f608cba2487e8c44953daecf1597
+msgid "The application session key."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:841 282bbbd445854d25a8a706eb5cca7980
+msgid "The frequency for the multicast group."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:842 f61aac00881f48f7ac0cb663930f27e9
+msgid "The datarate for the multicast group."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:843 f97843b014e54cdd9016d0615ab13f7b
+msgid "The periodicity for the multicast group."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:849 548fb506ccd74e9290987bf7f522f9f2
+msgid "Removes a multicast group by the given device address."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:851 cde999466ac04f6e88736103628946dc
+msgid "The device address of the multicast group to remove."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:857 c2f3ffd0080447238b7b8e3fe6296f39
+msgid "Retrieves the list of multicast groups."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:859 a7dd648aa6274f2cb1bcab40b0114575
+msgid "The list of multicast groups as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:863 c885d412fcd14d47ab34d8692f0cc1dd
+msgid "Retrieves the current network mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:865 e271cadc0bbf4986bf754b437da486b3
+msgid ""
+"The current network mode as an integer  - ``P2P_LORA``: 0 - ``LoRaWAN``: "
+"1 - ``P2P_FSK``: 2"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:865 647ece89be9f4d8e92f0f7eb9fe658fb
+msgid "The current network mode as an integer"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:867 ../../en/units/lorawan_rui3.rst:877
+#: 02b1284a74a84431ab2108ad0077ac51 37042a3536e8447d8d63abbea62b049a
+msgid "``P2P_LORA``: 0"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:868 ../../en/units/lorawan_rui3.rst:878
+#: ba8c6531c1374a06bca8dffeda7da2b2 e7defa7191d84b8e9944f964a235dfc6
+msgid "``LoRaWAN``: 1"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:869 ../../en/units/lorawan_rui3.rst:879
+#: 66e952cf189e45f58a7c0bdcce95804f dd38a74d8a964884a39c58fc5ca7c7d3
+msgid "``P2P_FSK``: 2"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:873 83ed86f09829407cbf9dcb874cd156e9
+msgid "Sets the network mode for the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:875 df4eec8e93c34f3dad25c4058520a938
+msgid ""
+"The mode to set for the get_network_id.  - ``P2P_LORA``: 0 - ``LoRaWAN``:"
+" 1 - ``P2P_FSK``: 2"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:875 de2f1d217a5340f294b9599a64adf350
+msgid "The mode to set for the get_network_id."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:885 7db8671a93ff47ee9f5bf69bb956cc62
+msgid "|set_network_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:32 37a6f8af90e8484b858468f031fbfc55
+msgid "set_network_mode.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:889 0a4bf8ad32bc49099651874b46c48509
+msgid "Retrieves the current P2P frequency."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:891 85c52adff6c94c2bb4a2ce0c3db7fc3a
+msgid "The current P2P frequency as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:895 6a353ebfff5548f8a1ab1422ba2c2857
+msgid "|get_p2p_frequency.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:33 a73771e4847e420fb4b12fbc0c252ef8
+msgid "get_p2p_frequency.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:899 2197e3b6fd15463bbb4b0c34d7c48314
+msgid "Sets the P2P frequency for the device."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:901 483022d1bea24833b7f9e01607d2abce
+msgid ""
+"The frequency to set for P2P communication.  - ``Low-frequency`` : "
+"150000000-525000000 - ``High-frequency`` : 525000000-960000000"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:901 e9eea823bda143f7bddfc8623ffb7686
+msgid "The frequency to set for P2P communication."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:903 7ac64cc6682d44ab914c0c86c6acd3c0
+msgid "``Low-frequency`` : 150000000-525000000"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:904 287919668ad049d1866496b4063c19ab
+msgid "``High-frequency`` : 525000000-960000000"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:910 d59c5b6d685a4c12a0d1a1039def34f5
+msgid "|set_p2p_frequency.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:34 de7bd44f597e43ecb9d2c5b29d8411fc
+msgid "set_p2p_frequency.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:914 9a40d0cd54ec4560b4cc21db8f218e99
+msgid "Retrieves the current P2P spreading factor."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:916 5b9c87389ddc4d37877ef7f34c58569e
+msgid "The current P2P spreading factor as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:920 1a088336b3d8401e83c6f245334eb420
+msgid "|get_p2p_spreading_factor.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:35 c911dd8a15e5476dbf5463289eb1517a
+msgid "get_p2p_spreading_factor.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:924 2dcc0e9a473047eda9d43428641787c4
+msgid "Sets the P2P spreading factor."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:926 7c5412ef011a4a4fabccfac55b7e3e44
+msgid ""
+"The spreading factor to set for P2P communication. The default value is "
+"7, and the range is 5 to 12."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:932 49391a24c44046ed80e603ac9ef03e4f
+msgid "|set_p2p_spreading_factor.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:36 476fe6a218a2405fa9b725e9502a6194
+msgid "set_p2p_spreading_factor.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:936 e5f3929edc664b6fa35ea929fbb84194
+msgid "Retrieves the current P2P bandwidth."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:939 802fe56d4fda4518b9fe15f7537d2803
+msgid "The current P2P bandwidth as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:943 08dbfd5a50634e3c862ba40b34c2dd4f
+msgid "|get_p2p_bandwidth.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:37 b4aec7c530084c9eb0db7d5cefd34047
+msgid "get_p2p_bandwidth.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:954 a947b7908ad8463fb7508b142d0e936d
+msgid "|set_p2p_fsk_bandwidth.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:38 079b8cd4fe07484899d75811cd75f375
+msgid "set_p2p_fsk_bandwidth.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:956 1df27130ec6340848af426ff89259c26
+msgid "|set_p2p_lora_bandwidth.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:39 aa7af08012df46528ecd4e89014e0b17
+msgid "set_p2p_lora_bandwidth.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:960 56e1d321af434610a6f19478ccec0bf6
+msgid "Retrieves the current P2P code rate."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:963 15c072e6f2bb412f91896ca7b3b97d33
+msgid "The current P2P code rate as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:967 83579cba6b53409bb5cdf5a736983369
+msgid "|get_p2p_code_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:40 75d25b363a914a3d86feb9bb7910b695
+msgid "get_p2p_code_rate.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:971 cd4faa76895d4abbbd759f47ccb813c8
+msgid "Sets the P2P code rate."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:973 f4e3291d1b904fe09c513f0473c43a40
+msgid ""
+"The code rate to set for P2P communication. Default is 0, range is 0 to "
+"3. 0 = 4/5, 1 = 4/6, 2 = 4/7, 3 = 4/8."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:979 67dbf92a0a57484d90a0aa9bdfea5304
+msgid "|set_p2p_code_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:41 613c54445cd748ee924860da95426c67
+msgid "set_p2p_code_rate.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:983 e025b120656047a4a36f359ef56da001
+msgid "Retrieves the current P2P preamble length."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:986 c2f830fe8e574834b6d95d9097e3d2bf
+msgid "The current P2P preamble length as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:990 780e656c48fb4a1f810e55b4967f92b6
+msgid "|get_p2p_preamble_length.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:42 7207814d952a4b298a8555fae0bb791a
+msgid "get_p2p_preamble_length.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:994 eb799800e2b14105ab3dc570b7c68f66
+msgid "Sets the P2P preamble length."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:996 91dff83b0054412e91ca4bb0907cd97c
+msgid ""
+"The preamble length to set for P2P communication. Default is 8, range is "
+"5 to 65535."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1002 0dfdd10f434d4d19a6d30fb90a440ab7
+msgid "|set_p2p_preamble_length.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:43 149eaac723284086affdff5ed89083c7
+msgid "set_p2p_preamble_length.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1006 2aec8502b749481f8a1227deb5a4794c
+msgid "Retrieves the current P2P transmission power."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1009 9ae32f7a2561416bb6390e78b4534be8
+msgid "The current P2P transmission power as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1013 85a6d72baf044a6889a4c46137afcd3f
+msgid "|get_p2p_tx_power.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:44 a0afa8cf7fb444a39cd244ad295eb621
+msgid "get_p2p_tx_power.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1017 11fcf6e8124745d4ae7e3f2cf69a5d4b
+msgid "Sets the P2P transmission power."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1019 04fc8df084d044ef85f350a681ce26b4
+msgid ""
+"The transmission power to set for P2P communication. Default is 14 dBm, "
+"range is 5 to 22 dBm."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1025 95ffee09f22e485c8fafd87b6ad57607
+msgid "|set_p2p_tx_power.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:45 1fcceff1b26b428a9b59f1a5c4adaaed
+msgid "set_p2p_tx_power.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1029 8f57b1c6f08945109677e08a2d3da160
+msgid "Retrieves the current P2P FSK bitrate."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1032 aec3a15514184eb98fd8d428183c11ae
+msgid "The current P2P FSK bitrate as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1036 76039acd616f4a0d99489d276fb2a631
+msgid "|get_p2p_fsk_bitrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:46 d1df64ad0de641ba925073eaf2e5ccd0
+msgid "get_p2p_fsk_bitrate.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1040 b1b49b9f2a68496e9da55fc58e07df5f
+msgid "Sets the P2P FSK bitrate."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1042 c576ddc407974c0c85e1a8ac0cf21085
+msgid ""
+"The bitrate to set for P2P FSK communication. The range is 600 to 300000 "
+"b/s."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1048 27d6a4400ee742249d9212d60edc803b
+msgid "|set_p2p_fsk_bitrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:47 fb2caa15d52348b7885d7af2c3adaacc
+msgid "set_p2p_fsk_bitrate.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1052 6d1fde86b3a94841b8d890aa0d5fa97c
+msgid "Retrieves the current P2P FSK frequency deviation."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1055 4b77ecaee6fa4f22b3f144e03b81954a
+msgid "The current P2P FSK frequency deviation as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1059 d1ef5d4673a34dca965a0125b80189e5
+msgid "Sets the P2P FSK frequency deviation."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1061 0bbcb12f757c4077936e04d176ec43b7
+msgid ""
+"The frequency deviation to set for P2P FSK communication. The range is "
+"600 to 200000 Hz."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1067 3c5fa3a89a6d48f282604d2e6920b40a
+msgid "Sends P2P data with a given payload."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1069 f638f5da2ee84ff3867cf36ec54ecb5b
+msgid ""
+"The payload to send, 2 to 500 characters in length, must be an even "
+"number of characters composed of 0-9, a-f, A-F, representing 1 to 256 "
+"hexadecimal values."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1070 baccab96faa347719e3cd2ce8367b40f
+msgid "The timeout for the data transmission, default is 1000 ms."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1072 75937f3039904b0381f2d3c550aeae90
+msgid ""
+"True if the data was sent successfully (\"TXFSK DONE\" or \"TXP2P "
+"DONE\"), False otherwise."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1076 671a81679772462381e0a07a2dd32e5f
+msgid "|send_p2p_data.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:48 a85ff2b0edab476d91d9d1d3fac6ac71
+msgid "send_p2p_data.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1078 6893fb4d2a7145ea91f95eef4d70b14e
+msgid "|send_p2p_data_return.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:49 cb748997f44b4edc951e2d1557437b8e
+msgid "send_p2p_data_return.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1082 4f2bd31087cc46bdade6b7e936d4163c
+msgid "Get the current channel activity status in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1084 1572aa4019de4ca39459609ab34ef65d
+msgid "The channel activity status as an integer (0 or 1)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1088 fceb46ae6a0641f0b546e33273eebcde
+msgid "Enable or disable channel activity in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1090 08f1db641e7b4cf197a7cd74e35b92ba
+msgid "0 to disable, 1 to enable channel activity."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1092 ../../en/units/lorawan_rui3.rst:1119
+#: ../../en/units/lorawan_rui3.rst:1133 ../../en/units/lorawan_rui3.rst:1147
+#: ../../en/units/lorawan_rui3.rst:1161 ../../en/units/lorawan_rui3.rst:1175
+#: ../../en/units/lorawan_rui3.rst:1194 ../../en/units/lorawan_rui3.rst:1208
+#: ../../en/units/lorawan_rui3.rst:1226 ../../en/units/lorawan_rui3.rst:1244
+#: ../../en/units/lorawan_rui3.rst:1258 10caea0531394f4da7c6551fea9c0b17
+#: 135c3e524c1f4e06a0f7c03a9022707a 46281d5ce6d747fa830e39192bc43bf8
+#: 48a1253b36e04cc4ac9b8541f1a06057 958dcf51c23d4617a70559bd362a39a4
+#: a90fb27e015740cda92ff2a844a4e7c1 a9c3687471b8474b9541d05cb71b61e6
+#: b00bffa699da401d804f6a14680d381f e3eac22633bf4acfaffee0cfaacd750b
+#: eb76fb13408543f8830e6b0ec1fe97b5 fef0ed011c4d4808a8990a741294c169
+msgid "The response from the command execution."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1097 996908560ffc4a12844ab680817ab79f
+msgid ""
+"Timeout for listening to P2P LoRa data packets. Valid values are 1~65535,"
+" with special cases for continuous listening and no timeout."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1100 037fc41b82db46debf0de69a13140b9e
+msgid ""
+"A tuple (RSSI, SNR, Payload) if data is received; False if no data is "
+"received."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1104 c87c74170ecb42c7b77e8616dd808976
+msgid "|get_p2p_receive_data.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:50 63e83a24146847739561f51a7bc4eba2
+msgid "get_p2p_receive_data.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1108 4c3c53454a30483888c68d9fa142ae3a
+msgid "Get the current encryption state in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1111 77fdac67270f48789e6165185380ddee
+msgid "The encryption state as an integer (0 or 1)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1115 3f49c5968f03424793f6b615dbd903b4
+msgid "Enable or disable encryption in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1117 aea92b46f92f45cebbb7034dc359e406
+msgid "0 to disable, 1 to enable encryption."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1123 0f3a41007c764e73a137123fdff6800d
+msgid "Get the current encryption key in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1125 0588749a906542f98352df3fa326e70e
+msgid "The encryption key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1129 d24028cc29e94693b21e743480df0510
+msgid "Set the encryption key in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1131 749728e7c8b34c67b6119411ff2f69d9
+msgid "The encryption key, represented as a 16-character hexadecimal string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1137 dbdf949912774ee991fbda8e641f8c64
+msgid ""
+"Get the current cryptographic state in P2P mode (not supported on "
+"RAK3172)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1139 9154294fc9004bf887d095a1c23c14b0
+msgid "The cryptographic state as an integer (0 or 1)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1143 8799631ab7f24800886c088dd74212d7
+msgid ""
+"Enable or disable cryptographic state in P2P mode (not supported on "
+"RAK3172)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1145 8b31e083ec1443f69f595feb77365642
+msgid "0 to disable, 1 to enable cryptographic state."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1151 bc09491ea62246fe9bb274522434d937
+msgid "Get the cryptographic key in P2P mode (not supported on RAK3172)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1153 1c058676ff114a428bca6a89935ca38e
+msgid "The cryptographic key as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1157 dfd7bec6c8b943d08f38692a52ee040f
+msgid "Set the cryptographic key in P2P mode (not supported on RAK3172)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1159 1ede2947c2ad4824bf4c54be743b12ed
+msgid "The cryptographic key, represented as an 8-character hexadecimal string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1165 42c7c78fd1a04cad9f3afb3bfb228092
+msgid "Get the encryption IV in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1167 78e981ef7ace489fa5e4d29f6e83e697
+msgid "The encryption IV as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1171 d831ac61e9024b81bfb488b7cc1b6baf
+msgid "Set the encryption IV in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1173 cb418740247e4dd0888f57c4fec36ef6
+msgid "The encryption IV, represented as an 8-character hexadecimal string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1179 f3d1136ac3804fe3a3d72f55ac41161c
+msgid "Get the current P2P parameters."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1181 481359cfe97442cfba934e813cb80caf
+msgid "The current P2P parameters as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1185 9b193eae2ccd4bfaa115555d6121ca4e
+msgid ""
+"Set P2P LoRa parameters, including frequency, spreading factor, "
+"bandwidth, code rate, preamble length, and transmit power."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1187 40a400fa3bc3479b8a3f6cff26dcb9ff
+msgid "The frequency to use for communication, range 150000000-960000000."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1188 345bd309c07842b2b7f4cc98d992e3d5
+msgid "The spreading factor, which can be {6, 7, 8, 9, 10, 11, 12}."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1189 529f2ffce134485f9b6c200b4a26e5a3
+msgid "The bandwidth, which can be {125, 250, 500}."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1190 f06e326b14034685933416330d7bfdc1
+msgid "The code rate, where possible values are {4/5=0, 4/6=1, 4/7=2, 4/8=3}."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1191 8cf2faac0d0e4cf69a7688bc59b38a7b
+msgid "The length of the preamble, which can be from 2 to 65535."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1192 0e3b75a2f6c142a797f437a66b3e8418
+msgid "The transmit power, which can be in the range {5-22}."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1198 740042e15b1f46a9aad53cf3474300c5
+msgid "Get the current IQ inversion state in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1200 4bd343627a5a4d75a1563ef876e5fab3
+msgid "The IQ inversion state as an integer (0 or 1)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1204 b8bb6e0c687a4b19a8e8651c6d9f1c18
+msgid "Enable or disable IQ inversion in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1206 b8c46b470b1d4f45ac8aab5d6049c6f0
+msgid "0 to disable, 1 to enable IQ inversion."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1212 cdf5d3d5056f415f860f75737a7ca18c
+msgid "Get the current sync word in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1214 53a6bb0a50324965afff1b786e7eb744
+msgid "The sync word as a string."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1218 394cb40009d944a2b1fb58e1520a94b9
+msgid "|get_p2p_sync_word.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:51 a3ce770700bf414d83d27634fb92b0aa
+msgid "get_p2p_sync_word.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1222 0b6a70e0fdaa4d5aa7353547004dccc3
+msgid "Set the sync word in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1224 9abe5173cfab4716a4656e32f0d038c0
+msgid "The sync word value, which should be in the range of 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1230 912604fe555544139ed6b11aa88a8f5d
+msgid "|set_p2p_sync_word.png|"
+msgstr ""
+
+#: ../../en/refs/unit.lorawan_rui3.ref:52 d60936b49b994e43bac6e8cfa9e0eff4
+msgid "set_p2p_sync_word.png"
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1234 19bdd616fa1d44e28bcf434b25e55926
+msgid "Get the current symbol timeout in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1236 2a410cd7de7c4d94a95de7a95ca491b9
+msgid "The symbol timeout as an integer."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1240 777c5c3bfa2a486eadd06f254f8374aa
+msgid "Set the symbol timeout in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1242 07418e75be5546bdaf179bd489b2c5a7
+msgid "The timeout value, which should be in the range of 0-248."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1248 bd4fca1e04e04ebf9364a5319adefd84
+msgid "Get the current fixed length payload state in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1250 324784b7eeaa42d2a65e5da4a20e8b03
+msgid "The fixed length payload state as an integer (0 or 1)."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1254 909d64d7b72d4dd6aab058a2fd9e897c
+msgid "Enable or disable fixed length payload in P2P mode."
+msgstr ""
+
+#: ../../en/units/lorawan_rui3.rst:1256 b1f01225b3e94a9ea2a93def66949120
+msgid "0 to disable, 1 to enable fixed length payload."
+msgstr ""
+

@@ -11,6 +11,7 @@ import usb.device
 
 _INTERFACE_PROTOCOL_MOUSE = const(0x02)
 
+
 class Mouse(HIDInterface):
     # A basic three button USB mouse HID interface
     def __init__(self, interface_str="M5Mouse", builtin_driver=True):
@@ -19,14 +20,14 @@ class Mouse(HIDInterface):
             protocol=_INTERFACE_PROTOCOL_MOUSE,
             interface_str=interface_str,
         )
-        self.x = 0   
-        self.y = 0  
+        self.x = 0
+        self.y = 0
         self.w = 0
-        self.b1 = 0 # left button 
-        self.b2 = 0 # right button  
-        self.b3 = 0 # middle button (wheel)
-        self.fw = 0 # 前进 
-        self.bw = 0 # 后退 
+        self.b1 = 0  # left button
+        self.b2 = 0  # right button
+        self.b3 = 0  # middle button (wheel)
+        self.fw = 0  # 前进
+        self.bw = 0  # 后退
         self.buf = bytearray(5)
         # 自动初始化 USB 设备
         self.builtin_driver = builtin_driver
@@ -40,16 +41,16 @@ class Mouse(HIDInterface):
     def set_axes(self, x=0, y=0):
         self.x = max(-127, min(127, x))
         self.y = max(-127, min(127, y))
- 
+
     # Set the mouse scroll wheel value.
     def set_wheel(self, w=0):
         self.w = max(-127, min(127, w))
 
     # Set the mouse button values.
     def set_buttons(self, b1=0, b2=0, b3=0, fw=0, bw=0):
-        self.b1 = b1 # left
-        self.b2 = b2 # right
-        self.b3 = b3 # middle
+        self.b1 = b1  # left
+        self.b2 = b2  # right
+        self.b3 = b3  # middle
         self.fw = fw
         self.bw = bw
 
@@ -76,7 +77,9 @@ class Mouse(HIDInterface):
         self.set_wheel(w=0)
         self.send_report()
 
-    def click(self, left=True, right=False, middle=False, forward=False, backward=False, release=True):
+    def click(
+        self, left=True, right=False, middle=False, forward=False, backward=False, release=True
+    ):
         self.set_axes(x=0, y=0)
         self.set_wheel(w=0)
         self.set_buttons(b1=left, b2=right, b3=middle, fw=forward, bw=backward)
@@ -84,19 +87,19 @@ class Mouse(HIDInterface):
         if release:
             self.set_buttons(b1=False, b2=False, b3=False, fw=False, bw=False)
             self.send_report()
-        
+
     def click_left(self, release=True):
         self.click(left=True, release=release)
-        
-    def click_right(self, release=True): 
+
+    def click_right(self, release=True):
         self.click(right=True, release=release)
-        
+
     def click_middle(self, release=True):
         self.click(middle=True, release=release)
 
-    def click_forward(self, release=True): 
+    def click_forward(self, release=True):
         self.click(forward=True, release=release)
-        
+
     def click_backward(self, release=True):
         self.click(backward=True, release=release)
 
@@ -104,6 +107,7 @@ class Mouse(HIDInterface):
         self.set_axes(x=0, y=0)
         self.set_wheel(w=w)
         self.send_report()
+
 
 # Basic 3-button mouse HID Report Descriptor.
 # This is based on Appendix E.10 of the HID v1.11 document.
@@ -142,7 +146,7 @@ _MOUSE_REPORT_DESC = bytes([ # Report Description: describes what we communicate
 
 # # Basic 3-button mouse HID Report Descriptor.
 # # This is based on Appendix E.10 of the HID v1.11 document.
-# # fmt: off 
+# # fmt: off
 # _MOUSE_REPORT_DESC = bytes([ # Report Description: describes what we communicate.
 #             0x05, 0x01, # Usage Page (Generic Desktop)
 #             0x09, 0x02, #     Usage (Mouse)
@@ -174,5 +178,3 @@ _MOUSE_REPORT_DESC = bytes([ # Report Description: describes what we communicate
 #             0xc0        # End Collection
 #         ])
 # # fmt: on
-
-

@@ -24,6 +24,7 @@ package(
         "mfrc522/cmd.py",
         "mfrc522/firmware.py",
         "mfrc522/reg.py",
+        "max3421e.py",
         "neopixel/__init__.py",
         "neopixel/sk6812.py",
         "neopixel/ws2812.py",

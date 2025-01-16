@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/speaker.rst:2 ../../en/refs/hat.speaker.ref
+#: 33f06417a1984a04be96fe8cf1ffb0e6 b4776d87ed594f1c8c7d7ec484779a01
+msgid "Speaker Hat"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:8 cc0b80fc60ee487fa604da15ad34a01f
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:10 9915737c9225466c82cc094a1b29c0ad
+msgid "|Speaker Hat|"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:12 0af9c838dab1434785384e3af1003097
+msgid "Below is the detailed support for Speaker on the host:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:19 fc8c4277d3954207a23a9c5da42d51d5
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:19 591dd911349c4a91a289af7fe9d7a982
+msgid "Atomic Echo Base"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:21 c693cb3526394af0b20039311b32db31
+msgid "CoreInk"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:21 ../../en/hats/speaker.rst:23
+#: ../../en/hats/speaker.rst:25 ../../en/hats/speaker.rst:27
+#: 1b2fcd27a3a344fa9e13cd4f7817e3cc 2a953feb6a5b4b4cb13f6bfe617c2536
+#: 4a8c7c9485f240de93c528a098816c0f 7b697dac0ce848359c5c165700f7d3cf
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:23 fb40b38843f9438fb07731b0a875452d
+msgid "StickC"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:25 a5a48c4eafa544e1be14baf81e67a086
+msgid "StickC PLUS"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:27 44b102593c6848969d6212673ba198c8
+msgid "StickC PLUS2"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:33 acab3527cc1e4f8a92f3f4d19087efa9
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:40 c125467acc504b94b0cada7f32a58276
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:42 725651a21a5549a4ac0ecbc460f52de7
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.speaker.ref:9 04faf518014f49bea9b27df1964145c8
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:47 11a938451dd84a27bfa22f62384141a4
+msgid "|stickc_plus2_speaker_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:49 db00eb6465814a20a24122311a38c149
+msgid ""
+":download:`poweron_2_5s.wav "
+"<../../../examples/hardware/speaker/poweron_2_5s.wav>`"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:52 d3758ddceb354df984b46dc39157af0b
+msgid "class SpeakerHat"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:55 10c18120f724484f9bdc66ce368a447e
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:59 2122e9e4bff54d69969794067db7678b
+msgid "Create an SpeakerHat object."
+msgstr ""
+
+#: ../../en/hats/speaker.rst:61 733e37c7b60b4b9e81f1fb41a69ccde4
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:63 e6296c40c7e34610ad290c6df7174897
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.speaker.ref:7 ae558db01e9a4da5bcd14021b5157750
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:65 1e1970a362e3424c96a0f97588b2f834
+msgid ""
+"SpeakerHat class inherits M5.Speaker class, See "
+":ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more "
+"details."
+msgstr ""
+

@@ -186,7 +186,7 @@ class HIDInterface(Interface):
 
     def on_interface_control_xfer(self, stage, request):
         # Handle standard and class-specific interface control transfers for HID devices.
-        bmRequestType, bRequest, wValue, _, wLength = struct.unpack("BBHHH", request)
+        bmRequestType, bRequest, wValue, _, wLength = struct.unpack("BBHHH", request)  # noqa: N806
 
         recipient, req_type, _ = split_bmRequestType(bmRequestType)
 
@@ -215,7 +215,7 @@ class HIDInterface(Interface):
             return False  # Unsupported request
 
         if stage == _STAGE_ACK:
-            if req_type == _REQ_TYPE_CLASS: 
+            if req_type == _REQ_TYPE_CLASS:
                 if bRequest == _REQ_CONTROL_SET_IDLE:
                     self.idle_rate = wValue >> 8
                 elif bRequest == _REQ_CONTROL_SET_PROTOCOL:

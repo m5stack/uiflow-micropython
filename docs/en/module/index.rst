@@ -29,4 +29,5 @@ Module
     rs232.rst
     servo2.rst
     step_motor_driver.rst
+    usb.rst
     zigbee.rst

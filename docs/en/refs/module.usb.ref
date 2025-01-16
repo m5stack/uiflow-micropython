@@ -1,0 +1,49 @@
+.. |USB Module| image:: https://static-cdn.m5stack.com/resource/docs/products/module/USB%20v1.2%20Module/img-2b9ca068-4799-46ee-a4f1-e7abc5314e7a.webp
+    :target: https://docs.m5stack.com/zh_CN/module/USB%20v1.2%20Module
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/init.png
+.. |read_gpin.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/read_gpin.png
+.. |poll_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/poll_data.png
+.. |write_gpout.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/write_gpout.png 
+.. |is_left_btn_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/is_left_btn_pressed.png
+.. |is_right_btn_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/is_right_btn_pressed.png
+.. |is_middle_btn_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/is_middle_btn_pressed.png
+.. |is_forward_btn_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/is_forward_btn_pressed.png 
+.. |is_back_btn_pressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/is_back_btn_pressed.png
+.. |read_mouse_move.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/read_mouse_move.png
+.. |read_wheel_move.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/read_wheel_move.png
+.. |read_kb_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/read_kb_input.png 
+.. |read_kb_modifier.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/read_kb_modifier.png
+.. |gpio_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/gpio_example.png
+.. |kb_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/kb_example.png
+.. |mouse_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/usb/mouse_example.png 
+
+.. |cores3_module_usb_gpio_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/usb/cores3_module_usb_gpio_example.m5f2"
+        target="_blank"
+    >
+        cores3_module_usb_gpio_example.m5f2
+    </a>    
+
+.. |cores3_module_usb_mouse_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/usb/cores3_module_usb_mouse_example.m5f2"
+        target="_blank"
+    >
+        cores3_module_usb_mouse_example.m5f2
+    </a>    
+
+.. |cores3_module_usb_kb_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/usb/cores3_module_usb_kb_example.m5f2"
+        target="_blank"
+    >
+        cores3_module_usb_kb_example.m5f2
+    </a>  
+ 
