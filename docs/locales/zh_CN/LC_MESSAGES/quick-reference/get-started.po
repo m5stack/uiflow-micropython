@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/quick-reference/get-started.rst:3 eb9c580940614275a8126bc2b5a4464e
+msgid "Get Started"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:9 b6afcb6996f84c9b87cc3d13ab0169bf
+msgid "Preparation"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:12 aa4c4bddeb6249a8afc97c14f649e65e
+msgid "Driver Installation"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:14 59793fb67fbc403e90038cf2b2f197aa
+msgid ""
+"Click the link below to download the driver that matches the operating "
+"system. There are currently two driver chip versions (CP210X/CH9102). "
+"Please download the corresponding driver compressed package according to "
+"the version you are using. After decompressing the compressed package, "
+"select the installation package corresponding to the number of operating "
+"systems to install."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:20 657b794a5cdf4e73a21afe3e3102fa6b
+msgid ""
+"If you are not sure of the USB chip used by your device, you can install "
+"both drivers at the same time."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:25 11cba6f1da0e47aebd0bd5f7667cb953
+msgid ""
+"During the installation process of CH9102_VCP_SER_MacOS v1.7, an error "
+"may occur, but the installation is actually completed, just ignore it."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:29 64aac2e96bf6418a9264f1670e7e68c9
+msgid "Driver name"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:29 d446847a187c4f0d9e9259de31374190
+msgid "Applicable driver chip"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:29 a2e66f892eb040f3a94e5b98afe2e263
+msgid "Download link"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:31 89a30ec7bd58491ca95130fa40db5959
+msgid "CP210x_VCP_Windows"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:31
+#: ../../en/quick-reference/get-started.rst:33
+#: ../../en/quick-reference/get-started.rst:35 193660fc8dd84b9e93aa4843537f2016
+#: 9cf324d9c8664258821f483bf4869227 a4d016a1c9a74cfb8e4543dd8adc90c9
+msgid "CP2104"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:31 7e17327d74b445efbd34f629a7bb7e01
+msgid "|CP210x_VCP_Windows|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:33 e7a8a69fb70549e4b12884811cac3d0a
+msgid "CP210x_VCP_MacOS"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:33 5c4885be2aaf45be9a23f0794c75dd43
+msgid "|CP210x_VCP_MacOS|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:35 cd9bdef0bb264c57a73a6272780d9181
+msgid "CP210x_VCP_Linux"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:35 d0ea85d16fc042368bfd648a86eb4d57
+msgid "|CP210x_VCP_Linux|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:37 e4e6f2df5c374b6ba45abbb798e1aa0f
+msgid "CH9102_VCP_SER_Windows"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:37
+#: ../../en/quick-reference/get-started.rst:39 0c692831798644c7ac61f4d7f69fab90
+#: c29ae5787a6c4cb38e39d2e6a905b66a
+msgid "CH9102"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:37 03f3bca251fb457d9005817902e20cd5
+msgid "|CH9102_VCP_SER_Windows|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:39 64a0f81acab94beabfbe406e3a90c2ea
+msgid "CH9102_VCP_SER_MacOS v1.7"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:39 28fd0722f2404771912e3f449cb8e8b9
+msgid "|CH9102_VCP_MacOS_v1.7|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:43 20f11cfcbdc94684a333116dadf5cc4d
+msgid "M5Burner"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:45 e81bf013853844e1a8e2e3b5f51cef5c
+msgid ""
+"Please click the button below to download the corresponding M5Burner "
+"firmware burning tool according to your operating system. Open the "
+"application after decompression."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:50 64c5817357f241a994221d673d77c9f8
+msgid "Software"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:50 82879a97b3774a808afbbfddab2a7b0b
+msgid "Link"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:52 0608ebf32f344c7f9929b5d7b94ec54a
+msgid "M5Burner_Windows"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:52 9729581f9fc442cb87bc7ce5449bb46d
+msgid "|M5Burner-v3-beta-win-x64|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:54 ef4881bea6b24559bd15c309b1f08e23
+msgid "M5Burner_MacOS"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:54 8d1bd3a3612d4c18b16ea2162b590df3
+msgid "|M5Burner-v3-beta-mac-x64|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:56 504cbb8f802448918678e78005986c3a
+msgid "M5Burner_Linux"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:56 cf062e3bad154dcf9203ee29f05207d4
+msgid "|M5Burner-v3-beta-linux-x64|_"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:61 4a5d168cc56e44ceba2dc322eb99ea3b
+msgid "Installation UIFLOW2"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:64 98b9e7a6cbcf403d9a6e8513dd27e74a
+msgid "Login M5Burner"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:66 75fe685f83e249379da4d2ac0521441b
+msgid ""
+"Before using UIFlow2, you need to log in to your M5Stack account first. "
+"If you don't have an account yet, please register an account first."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:69 371448382f8e4350ba06c7e0ba2a2ec1
+msgid "|login-m5burner.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.get-started.ref:27 ff63e0c66c684453af53a81b90026407
+msgid "login-m5burner.gif"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:72 d158076cb7b7442d9872df38cee70a98
+msgid "Firmware Burning"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:74 d3de7c4f09d84c4b826adb3dd7ed6dc4
+msgid ""
+"Before burning firmware, first put the host into download mode. Each "
+"device has different ways of entering download mode. For details, please "
+"refer to the corresponding host product documentation."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:78 efda8003e1b447589c18ebff988f653a
+msgid ""
+"Before burning, M5Burner will bind your host and M5Stack account. After "
+"binding, you can use your host in UIFlow2."
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:81 b2dcbc29c666427ab8c4da34124c68ba
+msgid "|burn-firmware.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.get-started.ref:26 cd39cfb6464742d2872b54c75364b47e
+msgid "burn-firmware.gif"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:85 c2192dfa762d4696ae86a8067f6d7614
+msgid "Start using UIFLOW2"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:88 9faa6498c72b4243b1f66bdce4de83d9
+msgid "Login UIFlow2"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:90 3abcf4fff6554e31a29eb6d24cfabc6a
+msgid "Log in to https://uiflow2.m5stack.com/"
+msgstr ""
+
+#: ../../en/quick-reference/get-started.rst:92 6800c4dd4fab4369a2ae3f632ef30f6e
+msgid "|login-uiflow2.gif|"
+msgstr ""
+
+#: ../../en/refs/qr.get-started.ref:28 d6e6e6c691ac435591d68a2c6bddb777
+msgid "login-uiflow2.gif"
+msgstr ""
+

@@ -1,0 +1,478 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/ac_measure.rst:3 77e8eff9cc6a493d969d24a75f5d404c
+msgid "ACMeasure Unit"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:7 802ceac365054c058cd1ee791e15ee3e
+msgid ""
+"C Measure Unit is a single-phase AC measurement module with isolation "
+"capabilities. It utilizes the STM32+HLW8032 scheme to monitor high-"
+"precision current, voltage, power, and other data in real time. The "
+"module features a built-in AC isolation chip, B0505ST16-W5, and "
+"communicates with the STM32 through the EL357 optocoupler isolation chip."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:9 973c116cd9bb4d79b8905cc0191b284e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:11 10d86c5aed3f47298c55bd1c9d3d2d2e
+msgid "|ACMeasureUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref fd91a8c53fa04b379df2da719fb70ff7
+msgid "ACMeasureUnit"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:13 9888d1c6714b48d0bb35b373df72969a
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:20 63bc3ec933d242ce9bc49c3cd474bc41
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:22 bd6555f85e1d436b9a0df6c5c4f28d24
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:29 3fbf9453af8a49f79a73674a7e31da59
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:26 b956257a12584e21a68b4200f243d6a6
+msgid "|acmeasure_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:29 ac20f1367fb2424d91618d33569f1126
+msgid "class ACMeasureUnit"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:32 4b0894eb51e54b8d9d15ee095a481c04
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:36 88382165d12442498993ad74bff6cb55
+msgid ""
+"Initialize the AC Measure unit by setting the I2C port and the AC Measure"
+" slave address."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst 6ef5bd280b6d4b22aab1e57800315594
+#: 80547ba1f0eb47999db216dabd51efbd a8a0f4a05a3848f6a51a08d23babcc00
+#: b70e3e6984164bd5bb06ca74d43bb2a7 da776f7909ab4669b3a4e449fc308aaf
+#: db0cf79f80e14930921861d0d7682b1b
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:38 3f32871dffdb475d9cf2f30ed48e4583
+msgid "The I2C interface object or PAHUBUnit used for communication."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:39 b30a852a048340b1ba12fa6848e729f5
+msgid "The I2C address of the AC Measure unit, default is 0x42."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:41 ../../en/units/ac_measure.rst:61
+#: ../../en/units/ac_measure.rst:72 ../../en/units/ac_measure.rst:83
+#: ../../en/units/ac_measure.rst:94 ../../en/units/ac_measure.rst:105
+#: ../../en/units/ac_measure.rst:116 ../../en/units/ac_measure.rst:127
+#: ../../en/units/ac_measure.rst:138 ../../en/units/ac_measure.rst:149
+#: ../../en/units/ac_measure.rst:160 ../../en/units/ac_measure.rst:170
+#: ../../en/units/ac_measure.rst:180 ../../en/units/ac_measure.rst:190
+#: ../../en/units/ac_measure.rst:200 ../../en/units/ac_measure.rst:211
+#: ../../en/units/ac_measure.rst:221 ../../en/units/ac_measure.rst:230
+#: ../../en/units/ac_measure.rst:241 ../../en/units/ac_measure.rst:257
+#: ../../en/units/ac_measure.rst:267 08e95da6292249c3bc527b483d30abc5
+#: 09f7b6da158f4c3882245751b0e5aad3 25767bfd683e43c9800a4dbe5617394a
+#: 435fe708f23a4865a5ef263d41c3daf3 69c73e55cf80415894c92dce9045cf5b
+#: 6a8f4a66481c45a48e14c5aa84b6e7f9 6b71d8f4be1940889434a5ec95f06251
+#: 801f5ef247b141f1a9c106be0fb3b891 81105243dfdc4d3e8fdb5f2aee0dbfb6
+#: 843e62ea8be14090929411f73ab7b910 8863b3b55a0a434883a312cfc6bd82db
+#: 8da54e70a1d5494db9e3b010f7dc8d94 924cd155070d4d178ce8fa6c48ad3adf
+#: 9adecb7cc8ef432fbf4f3fded368f724 a5909223edf84f018264eef4e80ffdeb
+#: c64fb848a6d849268858deaa170f91b6 c6c5e07958d0484dac76b4cf51033ed6
+#: da6eee1a7459483e83dda0abfb5b79e2 f49a681a03104286bfb74c6eb59d09b8
+#: fb60f86fbeac4458aaab4f50510ab95a fb83a11abb5e4628b755dbacba64f89e
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:43 e1d08e4b57a4484a9c605b35b173e91c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:7 f48783a20e2e4d4e868b5a07be97af80
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:47 abec0cb8c2474ca3ad54c4f5aaf81d5f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:51 7b684f3585e04c5aa5bd4eed15a3699d
+msgid "Initialize the I2C address for the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:53 392ae9825c6b45b682c082af6fec2452
+msgid "The I2C address of the AC Measure unit, should be between 1 and 127."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:57 31b2c3d271da4c4c8204af953d1a86f4
+msgid "Get the voltage string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst 08bdf32a46dd4665941821fd121a7ecb
+#: 136e30d4b96d416f90e91d2de5c338f4 197a0eaa74304721b6721a8d6746be89
+#: 4275842512f447fda3ef06bb02932ff0 7291d67068074ecc91ccda01ea256065
+#: 74c9a6a835c94c89b40fd0485b6ff02d 8c4e59e5aab84fc694e6f1d02136d5ce
+#: 97566bb4e8ee49bebc9ee8868bd75767 980c375eb7494f43a7a9db7c905982e2
+#: b4aee52a23b443e9b7a2fe577f9a47e8 b7d672f533ec4d32a5db94869d962ae9
+#: bc5a25b3ff8e4f8287d74d50c181c4e7 c06a144b74e9477389ca1532b12e30ea
+#: c7cad25378244d70978792ccc90b4e4e cbb48f9261094d9490cbbe63ce686eff
+#: e6d3c16bb41d40ccb4563280d9b3eb25
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:59 243838c5c9a64dd58f310cc35d4aa980
+msgid "The voltage value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:63 6ee7ea9662354c1094fe563f629d9764
+msgid "|get_voltage_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:8 dc1e154539734a59b5299af40b2141e1
+msgid "get_voltage_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:67 cf8f8b3de01948cd96710dd854b271d2
+msgid "Get the current string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:70 23aa1dfd1afb48849d5f70b2ebf99b51
+msgid "The current value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:74 7df846216f324600be66262257fd6841
+msgid "|get_current_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:9 03632c191f444c1d91ca692912bd247c
+msgid "get_current_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:78 283c45722c9549d48964587797da92e4
+msgid "Get the active power string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:81 445a33df8ba84a29836e464a271176e3
+msgid "The active power value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:85 c4d17b61dedb49e6b0a307593a51cc38
+msgid "|get_active_power_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:10 54f639fbfa4f4ed899686c87e1e1490f
+msgid "get_active_power_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:89 5e24c33a047b445a8623fe69813c686c
+msgid "Get the apparent power string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:92 e73eca7a49634491be46e25c38b2899b
+msgid "The apparent power value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:96 9865bfb4606148958b3cd55b8d8de1c8
+msgid "|get_apparent_power_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:11 d6768ba0002c4736bb48c5c152824a05
+msgid "get_apparent_power_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:100 3ded82c9397243f8b0f4ce6f80721556
+msgid "Get the power factor string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:103 cfcb9ad0649e406f944d7f4851406858
+msgid "The power factor value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:107 0b6068e59ed841fbb7143267371ded38
+msgid "|get_power_factor_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:12 d974f6eb2d26438b8d978bbdcd1b7bcb
+msgid "get_power_factor_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:111 656d728b8b964a6086138b7edf2890d6
+msgid "Get the kWh string value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:114 27d88ea145e046f59d1acdb8d403030f
+msgid "The kWh value as a string."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:118 4080c3de730d47a0bf4ec95b32a86a1e
+msgid "|get_kwh_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:13 9ea48f4a454a41b4b56ae128674a55fe
+msgid "get_kwh_str.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:122 3f93e300640e436da93cbecf9ab6da1e
+msgid "Get the raw voltage value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:125 2344e63388a64597ada333e1ee3f2e55
+msgid "The raw voltage value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:129 14822188421b4b2a98793c4ab5585334
+msgid "|get_voltage_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:14 0f7f02053feb440f83efa125880db9a6
+msgid "get_voltage_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:133 091b67489fe841028d6f375df2fd7f30
+msgid "Get the raw current value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:136 f70e14375dea479c8c704806f0be625d
+msgid "The raw current value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:140 2f4dd22c9fa64bc5b0b404e31c57a222
+msgid "|get_current_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:15 ea96ef4f3b2d4019a6cf37624126f3c9
+msgid "get_current_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:144 7c36dddf5827483580008cb0d8721d10
+msgid "Get the raw active power value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:147 a8e3a3b52b8440f0b83d949f7c8e5ca6
+msgid "The raw active power value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:151 c46c912086d14acaaf6658c4da6b4b99
+msgid "|get_active_power_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:16 1d2d08c77e9d4bcdbbb51006392f2e60
+msgid "get_active_power_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:155 8ac6aa18e145410c9092c795481fc849
+msgid "Get the raw apparent power value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:158 669c51c1fe714459b9a8e0d441494a12
+msgid "The raw apparent power value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:162 3029f0d188964448b2ad01513387c109
+msgid "|get_apparent_power_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:17 e8c07fc5e8bf4040bd856e1f6afab8c0
+msgid "get_apparent_power_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:166 1fa3f058d9d34d06812f001e45475ca6
+msgid "Get the raw power factor value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:168 26ac8ffe29b94c168527414ba193ca85
+msgid "The raw power factor value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:172 9c7fc28ad1fe4fedb43e63463127bae0
+msgid "|get_power_factor_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:18 22c89be5fece431b8babb64807cc2107
+msgid "get_power_factor_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:176 126b6edcb05548aeafd4b9a308d16afb
+msgid "Get the raw kWh value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:178 19c596ae3ce040a3b30a41d5bd2ce7fe
+msgid "The raw kWh value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:182 6c7a6d11d02c4b37a46bea84d841cca4
+msgid "|get_kwh_byte.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:19 b0556ffbd2114d489ed7a990b069cf4b
+msgid "get_kwh_byte.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:186 ce68f4a94b9b4a15b75ed9ecd75ec637
+msgid "Get the voltage coefficient value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:188 d2d484db612b4d32b1b276605aed400a
+msgid "The voltage coefficient value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:192 254dd85364bf4ff4bc253d5abd879ecd
+msgid "|get_voltage_coeff.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:20 17f722ff2b124678b660a12c32c745fd
+msgid "get_voltage_coeff.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:196 cd2ed4302dc742b28c90ffaf6fdf6e0d
+msgid "Set the voltage coefficient value for the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:198 55ceed800a924cdda7ebb7d52d651df4
+msgid "The voltage coefficient value to set, between 0 and 255."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:202 fc9c8eddc406406098fe19d90cc3ef80
+msgid "|set_voltage_coeff.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:21 80a475d4b31249a1b963241b68a58e91
+msgid "set_voltage_coeff.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:206 8e3466673c8f463a93c8591ccdfc3757
+msgid "Get the current coefficient value from the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:209 b50e74cd376a41e3abf8d31e2ad7a454
+msgid "The current coefficient value as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:213 e5a778b1f16e4ad4a57ddd904f8a2ab0
+msgid "|get_current_coeff.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:22 9345f62847c0434eb6963590a16270d2
+msgid "get_current_coeff.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:217 aa51a4d8aa8d48a99d000675083473c2
+msgid "Set the current coefficient value for the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:219 85ef7e63a4c04feb84d719cadadfb4ee
+msgid "The current coefficient value to set, between 0 and 255."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:223 1c2e597a097743009a0b46649c3759e6
+msgid "|set_current_coeff.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:23 e9bc09deed93486c9c736b6305751f67
+msgid "set_current_coeff.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:227 6b553ac58fd543dfaafb45fd592d82d2
+msgid "Save the voltage and current coefficient values to flash memory."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:232 0b46ab2d614044ce809eeab5da6321c1
+msgid "|set_save_coeff.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:24 9456ea61bfc042d4842383a45b021599
+msgid "set_save_coeff.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:236 6ebd50e88e8c43d7bd3f9ebf874a7d4c
+msgid "Check if the AC Measure unit data is ready."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:239 879c22a27bbc452c89deeb498d4a6414
+msgid "True if data is ready, False otherwise."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:243 fed81ec3309f49918cd3058029d35510
+msgid "|get_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:25 ae6b3a75951644699b15d67512709a40
+msgid "get_data_ready.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:247 fe63646c563d41468625b1ba31b6860c
+msgid "Set the AC Measure unit to jump to the bootloader."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:251 a2bb68a63ab848689c3b20f9041e58a2
+msgid "Get the firmware version or I2C address based on the specified mode."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:253 25f61ba735394240b466a46726f20006
+msgid ""
+"The mode to select the desired status (0xFE for firmware version, 0xFF "
+"for I2C address)."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:255 cc9d7c70958e4148a45f7b53345c3045
+msgid "The requested device status as an integer."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:259 59bc50f603274b958e0f52f5d2cb843b
+msgid "|get_device_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:26 8364c6480e4f4c20b9978165050af3e6
+msgid "get_device_status.png"
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:263 b6e5f2ef6a7341ce8f1d377ab636755c
+msgid "Set a new I2C address for the AC Measure unit."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:265 93b2d0ab7ff2484f8fdd6ec19674f358
+msgid "The new I2C address to set, between 0x01 and 0x7F."
+msgstr ""
+
+#: ../../en/units/ac_measure.rst:269 498788bca7fe4611993ab265691cb0c7
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ac_measure.ref:27 d3a4c9db79a843a899d0a67362965996
+msgid "set_i2c_address.png"
+msgstr ""
+

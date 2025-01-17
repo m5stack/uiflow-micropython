@@ -4,6 +4,7 @@ Unit
 .. toctree::
     :maxdepth: 1
 
+    ac_measure.rst
     accel.rst
     acssr.rst
     adc.rst
@@ -15,6 +16,7 @@ Unit
     button.rst
     buzzer.rst
     bytebutton.rst
+    byteswitch.rst
     can.rst
     cardkb.rst
     catch.rst
@@ -31,6 +33,7 @@ Unit
     dualbutton.rst
     earth.rst
     encoder.rst
+    encoder8.rst
     env.rst
     envpro.rst
     extencoder.rst
@@ -54,11 +57,14 @@ Unit
     key.rst
     kmeter_iso.rst
     kmeter.rst
+    laser_rx.rst
+    laser_tx.rst
     lcd.rst
     light.rst
     limit.rst
     lora_e220.rst
     lora_e220_433.rst
+    lorawan_rui3.rst
     midi.rst
     minioled.rst
     miniscale.rst
@@ -67,6 +73,7 @@ Unit
     nbiot.rst
     nbiot2.rst
     ncir.rst
+    neco.rst
     oled.rst
     op90.rst
     op180.rst
@@ -81,6 +88,7 @@ Unit
     rgb.rst
     roller485.rst
     rollercan.rst
+    scales.rst
     scroll.rst
     ssr.rst
     synth.rst
@@ -91,6 +99,7 @@ Unit
     tvoc.rst
     uhf_rfid.rst
     ultrasonic.rst
+    ultrasonic_io.rst
     uwb.rst
     vibrator.rst
     watering.rst

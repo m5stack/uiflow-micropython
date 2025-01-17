@@ -2,63 +2,58 @@
 #
 # SPDX-License-Identifier: MIT
 
-from driver.modbus.master.uSerial import uSerial
-from machine import Pin
+import machine
 
 
-class RS485Unit(uSerial):
-    def __init__(self, id=1, port=None, debug=False) -> None:
-        self._id = id
-        self._port = port
-        self._debug = debug
-        super().__init__(self._id, self._port[1], self._port[0], debug=self._debug)
+class RS485Unit:
+    def __new__(cls, id, **kwargs):
+        port = kwargs.pop("port", None)
+        if port is not None:
+            tx = port[1]
+            rx = port[0]
+            kwargs["tx"] = tx
+            kwargs["rx"] = rx
+        instance = super().__new__(cls)
+        instance.uart = machine.UART(id, **kwargs)
+        instance.tx = tx
+        instance.rx = rx
+        return instance
+
+    def __getattr__(self, name):
+        return getattr(self.uart, name)
+
+    def __setattr__(self, name, value):
+        if name in ["tx", "rx", "uart"]:
+            super().__setattr__(name, value)
+        else:
+            setattr(self.uart, name, value)
 
     def init(
         self,
-        tx_pin=17,
-        rx_pin=18,
+        tx_pin=None,
+        rx_pin=None,
         baudrate=9600,
-        data_bits=8,
-        stop_bits=1,
+        data_bits=None,
+        stop_bits=None,
         parity=None,
-        ctrl_pin=None,
-    ) -> None:
-        if tx_pin is not None and rx_pin is not None:
-            self._port = (rx_pin, tx_pin)
+        **kwargs,
+    ):
+        tx = tx_pin if tx_pin is not None else self.tx
+        rx = rx_pin if rx_pin is not None else self.rx
         if data_bits is None and stop_bits is None:
-            data_bits = 8
-            stop_bits = 1
-        self._mdbus_uart.init(
-            baudrate=baudrate,
-            bits=data_bits,
-            parity=parity,
-            stop=stop_bits,
-            tx=self._port[1],
-            rx=self._port[0],
-        )
-        if ctrl_pin is not None:
-            self._ctrlPin = Pin(ctrl_pin, mode=Pin.OUT)
+            data_bits, stop_bits = 8, 1
 
-    def write(self, payload) -> None:
-        self._mdbus_uart.write(payload)
+        kwargs.pop("ctrl_pin", None)
+        init_kwargs = {
+            "baudrate": baudrate,
+            "bits": data_bits,
+            "parity": parity,
+            "stop": stop_bits,
+            "tx": tx,
+            "rx": rx,
+        }
+        init_kwargs.update(kwargs)
+        self.uart.init(**init_kwargs)
 
-    def read(self, byte=None) -> bytes | None:
-        if byte is not None:
-            return self._mdbus_uart.read(byte)
-        else:
-            return self._mdbus_uart.read()
 
-    def readline(self) -> bytes | None:
-        return self._mdbus_uart.readline()
-
-    def any(self) -> int:
-        return self._mdbus_uart.any()
-
-    def sendbreak(self) -> None:
-        self._mdbus_uart.sendbreak()
-
-    def flush(self) -> None:
-        self._mdbus_uart.flush()
-
-    def txdone(self) -> bool:
-        return self._mdbus_uart.txdone()
+# uart1 = RS485(1, baudrate=115200, bits=8, parity=None, stop=1, tx=0, rx=35)

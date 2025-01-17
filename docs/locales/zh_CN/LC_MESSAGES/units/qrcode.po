@@ -1,0 +1,335 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/qrcode.rst:2 f82d23e8b5b040f8a7989891253338da
+msgid "QRCode Unit"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:6 bd0656d917b84512b1b1efa8e5c41eac
+msgid ""
+"The ``QRCode Unit`` is an integrated one-dimensional/two-dimensional code"
+" scanning unit that combines a CMOS QR code capture engine with a "
+"resolution of 640x480 and a bus conversion MCU (STM32F030). It features a"
+" device-side toggle switch that allows for switching between I2C and UART"
+" communication interfaces."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:8 8702dccc1d7649c1a5fecf2af905231a
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:10 b4f9b9990fdc47e28cbcf3d1a4ab5b82
+msgid "|QRCodeUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref 86bd998159f94e0eba83a593b7249478
+msgid "QRCodeUnit"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:12 e3ee9b0f882845a5a91937cb070c5f66
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:32 4f920c2296594335a1642dd30b360780
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:34 7c7bccb9de5c4f0a8b628e38e9cec616
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:19 2d5316be5532496e934b5c0845d5a56e
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:38 c193144a18724cf493c8795b1769ebc3
+msgid "|unit-qrcode-demo.m5f2|"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:42 3b2e857300d84b3fa3b3fb83822527c8
+msgid "class QRCodeUnit"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:45 9b0c8c54ecd3498a819bc667bf360e6a
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:49 f0dde3f99a284c5f97d6f2f56dd90a25
+msgid "Create a QRCodeUnit object"
+msgstr ""
+
+#: ../../en/units/qrcode.rst 715369835cab475bb48d54ee65b5b5b2
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:51 3999f7fbd7524bb688410a51b02774e8
+msgid "0: I2C, 1: UART mode."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:52 caf22ea2888049d2a16ceb3e545d4bcf
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:53 9ca2f65bc0c544509ad3ac9a9e50fa69
+msgid "the I2C address of the device. Default is 0x21."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:54 182cb1b5c2f24ea9be36101c7accfd43
+msgid "1: UART1, 2: UART2."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:55 af87bd3e326b4c6b83020f922fea3a80
+msgid "uart pin tuple, which contains: ``(tx_pin, rx_pin)``"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:57 ../../en/units/qrcode.rst:71
+#: ../../en/units/qrcode.rst:82 ../../en/units/qrcode.rst:94
+#: ../../en/units/qrcode.rst:108 ../../en/units/qrcode.rst:126
+#: ../../en/units/qrcode.rst:135 ../../en/units/qrcode.rst:146
+#: ../../en/units/qrcode.rst:157 ../../en/units/qrcode.rst:168
+#: ../../en/units/qrcode.rst:180 ../../en/units/qrcode.rst:189
+#: ../../en/units/qrcode.rst:200 10b0eab1c8d8413f901209272c7db61c
+#: 339258d9ea374526bdc6ab04d99a18c1 353f1852f2924dab88c494937e3b30c4
+#: 67de419b4bdc40fd99ddd11ef40efd7d 6e2633f3c29e4ec28bc1e3f8bb87523b
+#: 724555560e384bfd932360479f4237d1 7a52fa16d8794f61b712a0354a29adba
+#: 848cb6247de244859a72c7c9f13b21a7 8bc429ec61384a09b1a65e246de67f29
+#: a9533153c2d54743b62d1ba2596ad84d aea8ef1a47ad440a8f7a4b2b0be9f058
+#: cdc775d0cef74df784c5fd733a09d0f1 d2959408799e488684b8e33788b79482
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:59 1adcfb08ce294049b7dd623fd86b124a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:6 fcd4b3b038e047c3be0aa39a143e2d9d
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:63 afe4329c5ce64031a0538650ffcfaef8
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:67 70d8063c19774668bfce14f525455a03
+msgid "Scan the QR code and get the available data length."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:69 b8b0bb4414f94166a05cd7a9ec682473
+msgid "Return: ``int``:  available data length is int format"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:73 1e9ec238fa664e90b6d96b8ea801e64c
+msgid "|get_qrcode_data_length.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:7 bece5d5786704b42909a78e98945488f
+msgid "get_qrcode_data_length.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:78 fa361224b5b14a9a9f738d8f39b0ea21
+msgid "Scan the QR code and get the data in the string."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:80 3880f5fe43904406aa8d413b8268302a
+msgid "Return: ``string``:  scanned data output is string format"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:84 cadfaa8c6ba443b797647cc7fded185d
+msgid "|get_qrcode_data.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:8 d80031408ceb4194927833b72527be30
+msgid "get_qrcode_data.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:89 72f3b68f88a9481e882a62331e10dd25
+msgid "Set the trigger mode to Auto or Manual(Key)."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:92 ../../en/units/qrcode.rst:104
+#: ../../en/units/qrcode.rst:178 4aad1f79e9004eeaae5a6c4ad67bee47
+#: 90fb0d3d191943daadb588d4b176a4eb f8a0373e75654e70a01d58d134b0548d
+msgid "The parameters is:"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:92 b968f287e060460c8b475eccdf21d1e7
+msgid "``mode``:  auto: 0 or manual: 1"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:96 fc45a9db8e3041d58421c1a051de8d59
+msgid "|set_trigger_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:9 a0febf8fc05e4e5b99d484646ec88372
+msgid "set_trigger_mode.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:101 41f92455e80340a796205b22766e9eb8
+msgid "Set the manual(use the key button) scanning control ON or OFF."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:104 a828cf9f272d4a52aa411fa7169cfcd8
+msgid "``ctrl``:  off: 0 or on: 1"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:106 f9e99fe707e04055bd9b2cac60320be9
+msgid "This command is only effective in manual trigger mode"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:110 ef6a54c2948f45de8fb45cea1946c045
+msgid "|set_manual_scan.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:10 b408a43618bd458d87e6d108dafd82be
+msgid "set_manual_scan.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:115 329233950f3440709f74d2e0d58648ca
+msgid "Set the callback event and callback function."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:118 4ab59d892efb48b6abfa8ab425d137bd
+msgid "The callback function:"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:118 9a75738848474cbdbd9a679a840c140a
+msgid "``qrcode_0_event``"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:120 f6a43bd61ca34eff80a74e728dcc65dd
+msgid "An handler showing a message has been received::"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:128 7ce5ea051675479dbbaebd8399b31149
+msgid "|callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:11 ffd4baa92c8f4db58d7da1efd54ae30c
+msgid "callback.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:133 e387f7a72f994d2e8e271faf9e79419f
+msgid "The calling event poll block must be used inside a loop."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:137 5b178ba31ad14c81b523f6d29e77ce24
+msgid "|event_poll_loop.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:12 068f4af515c743b199383d0c3dbda1c2
+msgid "event_poll_loop.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:142 d53c5cbb7e264e1387b96316560b7a39
+msgid "Reading data scanned QR code after get the data status"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:144 6dd071d9d7174e27a9d338cdc46c9af4
+msgid "Return: ``int``:   0: not ready, 1: data available, 2: read again"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:148 87d65fc1a5e84606a8cd834d5db1edbe
+msgid "|get_qrcode_data_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:13 4e495f5b7fef4dc0bae3dd894e055774
+msgid "get_qrcode_data_status.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:153 507838463c804ea09a9377f2172af0d8
+msgid "Get the auto or manual trigger mode status."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:155 645ea75f1e8f42878434a00b7c7fde50
+msgid "Return: ``int``:   0: auto, 1: manual"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:159 add5ffa398c6409580b946264baccb2b
+msgid "|get_trigger_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:14 14ca88a788954a93b6c4bb69751b9f06
+msgid "get_trigger_mode.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:164 4096901d21ab48cba8f3c1ec54d50489
+msgid "Get the trigger button status"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:166 1f2e38db6a5d468a81423bf1e1d8875d
+msgid "Return: ``int``: 1: press, 0: not pressed"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:170 6c7c92186d294734bdd2c9066f9db5b7
+msgid "|get_trigger_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:15 7e08309094e24753bc81ed3c79c1bbbe
+msgid "get_trigger_button_status.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:175 028bd9d14cb54c91a6b7372cad5ce346
+msgid "Get the firmware version details and I2C address of this device."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:178 8f66c994932747bc9baf077573d62447
+msgid "``info``: 0xFE: firmware version, 0xFF: I2C address"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:182 58efb88bab1049b89c5ffdd0089de3e5
+msgid "|get_device_info.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:16 ede9f48c27dc4d46bcc4c54f4498279e
+msgid "get_device_info.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:187 d5a17fadf29b469abddfdec7fc44d0e5
+msgid "Clear the data status after reading the QR code scanned data."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:191 c05e32aa5e394953ba98b834e740cfba
+msgid "|clear_qrcode_data_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:17 b4c3f7d5f14e487f825eb5e070fae2fa
+msgid "clear_qrcode_data_status.png"
+msgstr ""
+
+#: ../../en/units/qrcode.rst:196 0e9bf6d0a6e6439887a249b9301903c5
+msgid ""
+"The i2c address can be changed by the user and this address should be "
+"between 0x01 and 0x7F."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:198 e07cee9d7d234ba8b27288cc708fc9f5
+msgid "``addr``: range of address(0x01 - 0x7F)."
+msgstr ""
+
+#: ../../en/units/qrcode.rst:202 078dd363975047d380764507b619d2a5
+msgid "|set_device_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.qrcode.ref:18 576292a9e6bd435caf1cceba2af2497c
+msgid "set_device_i2c_address.png"
+msgstr ""
+

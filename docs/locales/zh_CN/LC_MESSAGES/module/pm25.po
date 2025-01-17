@@ -1,0 +1,323 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/pm25.rst:3 fcf16a5a4c12423d99e54224d019f6ac
+msgid "PM2.5 Module"
+msgstr ""
+
+#: ../../en/module/pm25.rst:7 79e8e8e4752744aea416ab635cdbf4d7
+msgid ""
+"PM2.5 Air Quality Module is an ambient air quality testing Module. This "
+"product adopts PMSA003 digital universal particulate matter concentration"
+" sensor. It can quickly collect and calculate the number of suspended "
+"particles of different particle sizes in the air per unit volume."
+msgstr ""
+
+#: ../../en/module/pm25.rst:9 c406a02661724174a50ca07445e1ef24
+msgid ""
+"The other two versions come with the STH30 and SHT20, which can be used "
+"to measure ambient temperature and humidity."
+msgstr ""
+
+#: ../../en/module/pm25.rst:11 bb881b5c5c8d481d90fa2735b65202d1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/pm25.rst:15 c29a226e614b4d9bba6a1e1a9d8d504d
+msgid "|PM25Module|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:1 84d8662aee4d4d1a8c546e5f04a25b89
+msgid "PM25Module"
+msgstr ""
+
+#: ../../en/module/pm25.rst:15 365e43d0bc26439fa9ddc9124f984d13
+msgid "|PM25Module-SHT20|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:4 2845d9e13b9a444a9e4542dac5b89861
+msgid "PM25Module-SHT20"
+msgstr ""
+
+#: ../../en/module/pm25.rst:15 e62a992220264c1a91b541efc843e528
+msgid "|PM25Module-SHT30|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref a523032e25ae46ab93761c2544b05017
+msgid "PM25Module-SHT30"
+msgstr ""
+
+#: ../../en/module/pm25.rst:18 969faa6014734f089453ae9e218f181c
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/pm25.rst:25 1ae90440d7094afdaa537b909c782a77
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/pm25.rst:27 627e6ee413cd4214bd896d452d4c8727
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:23 66a2e71969c8406fbfadff60959f1123
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:31 d431d8dce28a4790b316ae2c752ca4f8
+msgid "|pm25_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/pm25.rst:34 ebfd5f9e02254405a3961a6e2a009727
+msgid "class PM25Module"
+msgstr ""
+
+#: ../../en/module/pm25.rst:37 7adbe60491bd445b831b74fb8328adca
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/pm25.rst:41 8af010e7a3ee4b5d8e81ef0ed060fc26
+msgid "Init Module PM2.5 with UART."
+msgstr ""
+
+#: ../../en/module/pm25.rst:43 ../../en/module/pm25.rst:57
+#: ../../en/module/pm25.rst:67 ../../en/module/pm25.rst:82
+#: ../../en/module/pm25.rst:97 ../../en/module/pm25.rst:105
+#: ../../en/module/pm25.rst:130 ../../en/module/pm25.rst:139
+#: ../../en/module/pm25.rst:147 0716bc3a8e614b479734c6a92d65ac82
+#: 185720c5571b4f7782d1b213541aff4c 2918fbfe90494dada77bd6b280c29c61
+#: 4e380dc9811f49c08c1e36b2917937ce 4f5128a1aa364a41b59b30cd3e55e874
+#: 52a139c05d8d461f8230ba94b0c98506 63a41e715f304bc18c22504bf8e40142
+#: 7efd09dbce8942eba1e9b9422429b78d c82aef62e7474d89a86f0e9ea05baa46
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/pm25.rst:45 0896bc7ab8a14c6186486a8677237bb3
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:13 2be0f4dd96054294a9bde860c3a18ca2
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:49 2a82a4b951f442308fb5fcd3ae354cb0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/pm25.rst:53 d2d9f0f203fd449a9f81c8200cab98a3
+msgid "Set the PM25Module power state."
+msgstr ""
+
+#: ../../en/module/pm25.rst 183ba5de7e2b443a8df04218e18bf626
+#: 385abe3a6de043fc894841fd82eeb401 452d3a2c3c5640e196e39db643d7ef33
+#: 4fa8804ef61242668882b610b2d00bc7 5a827970b38449499db30c36086caeb3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/pm25.rst:55 ec91995d1865429bb796d91dd32d6561
+msgid "Set to True to enable power, False to disable."
+msgstr ""
+
+#: ../../en/module/pm25.rst:59 745ff9249e5047628137b36752e724a8
+msgid "|set_module_power.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:14 2118d2246b274b349d5489da3895c584
+msgid "set_module_power.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:63 a74565fe49284053a2ba5811a239c94b
+msgid "Get the PM25Module power state."
+msgstr ""
+
+#: ../../en/module/pm25.rst:65 c0779000c786435596a91b7aa492272b
+msgid "Get the module power state."
+msgstr ""
+
+#: ../../en/module/pm25.rst:69 9be6ad3604464bf2908291e3c6626668
+msgid "|get_module_power.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:15 a3cb25cffa1140f8a24991fd5b273049
+msgid "get_module_power.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:73 800624fc71df4941b1ea04c2faca2825
+msgid "Set the PM25Module work mode."
+msgstr ""
+
+#: ../../en/module/pm25.rst:75 ../../en/module/pm25.rst:90
+#: 1bfceb37c3094d9da1b297976489dc52 d9572ec7694d40a9acc0e101d1b9dd8b
+msgid "Options:  - ``Active mode``: 1 - ``Passive mode``: 0"
+msgstr ""
+
+#: ../../en/module/pm25.rst:77 ../../en/module/pm25.rst:92
+#: ../../en/module/pm25.rst:115 2a889aee91264df3b03b595ff1c4384a
+#: 6e1b27d707e04471a57f505116cd5507 b48af284dd5d48789e4fd3b9f2bf6ea0
+msgid "Options:"
+msgstr ""
+
+#: ../../en/module/pm25.rst:79 ../../en/module/pm25.rst:94
+#: 98fa9b05b8284360b55c623d2e2abb98 f735f9cec75740489ffcaf8316cb0c1f
+msgid "``Active mode``: 1"
+msgstr ""
+
+#: ../../en/module/pm25.rst:80 ../../en/module/pm25.rst:95
+#: 4dc803813cba4f778b3e188639ab2507 5b949bc96357471b80c84cf821ea9b07
+msgid "``Passive mode``: 0"
+msgstr ""
+
+#: ../../en/module/pm25.rst:84 189b4fcdfbb14cc2b74d5158af6b592f
+msgid "|set_module_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:16 72b8569daa7d4158a17cd12e3fbcfa35
+msgid "set_module_mode.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:88 7b85cab27549443e8fea66cbde9062dd
+msgid "Refresh the PM25Module data."
+msgstr ""
+
+#: ../../en/module/pm25.rst:99 dfd7f76c3084439c8132cf8fa8368625
+msgid "|refresh_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:17 b367b681bdee4bb9ac5ae2f7ad4015da
+msgid "refresh_data.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:103 aca241b8a8874dad80f773c00c1902f4
+msgid "Request PM25Module air data."
+msgstr ""
+
+#: ../../en/module/pm25.rst:107 c3f1499adfcd4fb98ab32e319127fbe3
+msgid "|request_air_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:18 db36d32756f243b3b8524e9804d3cff3
+msgid "request_air_data.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:111 a8ae89fb6b104f0c9c0aa7e49d564c4b
+msgid "Select the type of particulate matter data to retrieve."
+msgstr ""
+
+#: ../../en/module/pm25.rst:113 bf7aa6a51b6549baa4a5b09637217a4e
+msgid ""
+"The options range from standard PM concentrations to counts of particles "
+"of specific sizes in 0.1 liters of air.  Options:  - ``PM1.0 "
+"Concentration(Std)``: 0 - ``PM2.5 Concentration(Std)``: 1 - ``PM10 "
+"Concentration(Std)``: 2 - ``PM1.0 Concentration(Env)``: 3 - ``PM2.5 "
+"Concentration(Env)``: 4 - ``PM10 Concentration(Env)``: 5 - ``Particels "
+"more than 0.3um in 0.1 liters of air``: 6 - ``Particels more than 0.5um "
+"in 0.1 liters of air``: 7 - ``Particels more than 1.0um in 0.1 liters of "
+"air``: 8 - ``Particels more than 2.5um in 0.1 liters of air``: 9 - "
+"``Particels more than 5.0um in 0.1 liters of air``: 10 - ``Particels more"
+" than 10um in 0.1 liters of air``: 11"
+msgstr ""
+
+#: ../../en/module/pm25.rst:113 f1f73ce6bfdc43289a1eaa4dae86cd2b
+msgid ""
+"The options range from standard PM concentrations to counts of particles "
+"of specific sizes in 0.1 liters of air."
+msgstr ""
+
+#: ../../en/module/pm25.rst:117 78db5335e0f1442181fcb714c1426f10
+msgid "``PM1.0 Concentration(Std)``: 0"
+msgstr ""
+
+#: ../../en/module/pm25.rst:118 3de514148a6e4a659f4d60ea60f53b09
+msgid "``PM2.5 Concentration(Std)``: 1"
+msgstr ""
+
+#: ../../en/module/pm25.rst:119 81755f7983d944a8844358eb2b73c680
+msgid "``PM10 Concentration(Std)``: 2"
+msgstr ""
+
+#: ../../en/module/pm25.rst:120 b293f6cb33e5477da8a88d3db0b252c4
+msgid "``PM1.0 Concentration(Env)``: 3"
+msgstr ""
+
+#: ../../en/module/pm25.rst:121 c559c41c240d4d53baf496fb16552f6d
+msgid "``PM2.5 Concentration(Env)``: 4"
+msgstr ""
+
+#: ../../en/module/pm25.rst:122 afbe9d33705644499dbe03ad316d8d33
+msgid "``PM10 Concentration(Env)``: 5"
+msgstr ""
+
+#: ../../en/module/pm25.rst:123 6d73f63066ad4202b73525159d865912
+msgid "``Particels more than 0.3um in 0.1 liters of air``: 6"
+msgstr ""
+
+#: ../../en/module/pm25.rst:124 39ba6108207f48ed8c269d7eb82063a6
+msgid "``Particels more than 0.5um in 0.1 liters of air``: 7"
+msgstr ""
+
+#: ../../en/module/pm25.rst:125 bfed3589f91b4c30931bd37ef2467c03
+msgid "``Particels more than 1.0um in 0.1 liters of air``: 8"
+msgstr ""
+
+#: ../../en/module/pm25.rst:126 565cea8429884cf0a6add1bcc12ee265
+msgid "``Particels more than 2.5um in 0.1 liters of air``: 9"
+msgstr ""
+
+#: ../../en/module/pm25.rst:127 c75541d0d9364fd28f98f16081b31c82
+msgid "``Particels more than 5.0um in 0.1 liters of air``: 10"
+msgstr ""
+
+#: ../../en/module/pm25.rst:128 dddf980a81754183885d5bf1ac2274cf
+msgid "``Particels more than 10um in 0.1 liters of air``: 11"
+msgstr ""
+
+#: ../../en/module/pm25.rst:132 8767c2e7cab04ec6a4f6a1213f32f9c4
+msgid "|get_pm_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:19 fe576b0e24fb48eba666e6fd0d9d2dd0
+msgid "get_pm_data.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:137 ac2e6c34265343e8a02c5997d482c74f
+msgid "Get PM25Module environmental temperature data."
+msgstr ""
+
+#: ../../en/module/pm25.rst:141 dc8f77da17804ba3a87d991f78dd86b9
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:20 b46cab9348fa41b28aef4f1628b37627
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../en/module/pm25.rst:145 f8ddb4c8f15945288706ccbc03a75b7c
+msgid "Get PM25Module environmental humidity data."
+msgstr ""
+
+#: ../../en/module/pm25.rst:149 91541485b96a4ef18d7b2f9ac3d740d8
+msgid "|get_humidity.png|"
+msgstr ""
+
+#: ../../en/refs/module.pm25.ref:21 65cfb25b3b274b86a65a92b01f5e32e8
+msgid "get_humidity.png"
+msgstr ""
+

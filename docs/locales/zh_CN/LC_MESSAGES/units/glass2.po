@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/glass2.rst:3 06b3a634a73d49c7a73168fdae4cb709
+msgid "Glass2 Unit"
+msgstr ""
+
+#: ../../en/units/glass2.rst:7 d8fa2fec303844e4b1a376dca23e6850
+msgid ""
+"Glass2 Unit is a 1.51-inch transparent OLED display unit that adopts the "
+"SSD1309 driver solution."
+msgstr ""
+
+#: ../../en/units/glass2.rst:9 fc827147fa3e474fba886920a189163f
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/glass2.rst:11 bfef52e136fb410e859675dfdef9d9fe
+msgid "|Glass2Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.glass2.ref 90cdb70010ac4211adae2e8a1f7f683e
+msgid "Glass2Unit"
+msgstr ""
+
+#: ../../en/units/glass2.rst:13 e642f1ac28224292925f5295cc560562
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/glass2.rst:20 c2b45d9b51594e0fa53859006a3a1b6a
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/glass2.rst:22 20aebbc0a5054446be80195e5f02b49b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.glass2.ref:9 349f2227ce424135afe921295061a10b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/glass2.rst:27 ccb946f53d154a6986bc56658b839bd8
+msgid "|cores3_glass2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/glass2.rst:30 37c9c7562fc2448f8a807bcb84ecf596
+msgid "class Glass2Unit"
+msgstr ""
+
+#: ../../en/units/glass2.rst:33 e640d0bfae9d4e87ad09fa6603c54476
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/glass2.rst:37 6f72ed509e684723b68ac19ce67a5aeb
+msgid "Initialize the Unit Glass2"
+msgstr ""
+
+#: ../../en/units/glass2.rst 1b8739be2c5746ad905ff9234d7c7c7f
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/glass2.rst:39 359ad93073b04718b03687a963e5b4d8
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/glass2.rst:40 0a432b226dec439b968c2292f3324ec4
+msgid "I2C address of the Unit Glass2, default is 0x3c."
+msgstr ""
+
+#: ../../en/units/glass2.rst:41 ee98e127660b44b8a65fd8f4b48e045f
+msgid "I2C frequency of the Unit Glass2."
+msgstr ""
+
+#: ../../en/units/glass2.rst:43 395e48f6fd2443cc914f85f93c2e2092
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/glass2.rst:45 16b5f8c5daa14ef18acb506e3be1a21a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.glass2.ref:7 69b5a4a39f5e4e57960c1bd336f94384
+msgid "init.png"
+msgstr ""
+

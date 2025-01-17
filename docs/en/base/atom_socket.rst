@@ -9,32 +9,25 @@ Supports the following products:
 
 |ATOMSocketBase|
 
-Micropython Example::
 
-    from machine import I2C
-    from base import ATOMSocketBase
+Micropython Example:
 
-    atomsocket = ATOMSocketBase(1, (22, 33), 23)  # For ATOM Lite
-    atomsocket = ATOMSocketBase(1, (5, 8), 7)  # For ATOM S3
-    # Retrieve data
-    print(atomsocket.get_data())  # Outputs (230.4192, 0.02074951, 0.8106091, 0.0)
-    atomsocket.set_relay(True)    # Turns on the relay
-    atomsocket.set_relay(False)   # Turns off the relay
-    # Read metrics
-    print("Voltage:", atomsocket.get_voltage(), "V")
-    print("Current:", atomsocket.get_current(), "A")
-    print("Power:", atomsocket.get_power(), "W")
-    print("Power Factor:", atomsocket.get_power_factor())
-    print("Accumulated Energy:", atomsocket.get_kwh(), "kWh")
-    # Receive data in non-blocking mode
-    def callback(voltage, current, power, kwh):
-        print(voltage, current, power, kwh)
-    atomsocket.receive_none_block(callback)
-    # Stop receiving data
-    atomsocket.stop_receive_data()
+    .. literalinclude:: ../../../examples/base/atom_socket/atomlite_socket_example.py
+        :language: python
+        :linenos:
 
 
-ATOMSocketBase Class
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |atomlite_socket_example.m5f2|
+
+
+class ATOMSocketBase
 --------------------
 
 Constructors
@@ -48,16 +41,26 @@ Constructors
     - ``port``: UART pin numbers.
     - ``relay``: The relay pin number.
 
+    UIFLOW2:
+
+        |init.png|
+
+
 Methods
 -------
 
-.. method:: set_relay(state: bool) -> None
+.. method:: ATOMSocketBase.set_relay(state: bool) -> None
 
     Sets the state of the ATOM Socket's relay.
 
     - ``state``: The desired state of the relay, True = ON, False = OFF.
 
-.. method:: get_data(timeout=3000) -> tuple
+    UIFLOW2:
+
+        |set_relay.png|
+
+
+.. method:: ATOMSocketBase.get_data(timeout=3000) -> tuple
 
     Retrieves data from the ATOM Socket.
 
@@ -65,40 +68,89 @@ Methods
 
     Returns the ATOM Socket data: Tuple (Voltage (V), Current (A), Power (W), Total Energy (KWh)), or None if timeout occurs.
 
-.. method:: get_voltage() -> float
+    UIFLOW2:
+
+        |get_data.png|
+
+
+.. method:: ATOMSocketBase.get_voltage() -> float
 
     Retrieves the voltage measurement from the ATOM Socket.
 
-.. method:: get_current() -> float
+    UIFLOW2:
+
+        |get_voltage.png|
+
+
+.. method:: ATOMSocketBase.get_current() -> float
 
     Retrieves the current measurement from the ATOM Socket.
 
-.. method:: get_power() -> float
+    UIFLOW2:
+
+        |get_current.png|
+
+
+.. method:: ATOMSocketBase.get_power() -> float
 
     Retrieves the power measurement from the ATOM Socket.
 
-.. method:: get_pf() -> int
+    UIFLOW2:
+
+        |get_power.png|
+
+
+.. method:: ATOMSocketBase.get_pf() -> int
 
     Retrieves the power factor from the ATOM Socket.
 
-.. method:: get_inspecting_power() -> float
+    UIFLOW2:
+
+        |get_pf.png|
+
+
+.. method:: ATOMSocketBase.get_inspecting_power() -> float
 
     Calculates the inspecting power of the ATOM Socket.
 
-.. method:: get_power_factor() -> float
+    UIFLOW2:
+
+        |get_inspecting_power.png|
+
+
+.. method:: ATOMSocketBase.get_power_factor() -> float
 
     Calculates the power factor of the ATOM Socket.
 
-.. method:: get_kwh() -> float
+    UIFLOW2:
+
+        |get_power_factor.png|
+
+
+.. method:: ATOMSocketBase.get_kwh() -> float
 
     Retrieves the accumulated energy measurement in KWh from the ATOM Socket.
 
-.. method:: stop_receive_data() -> None
+    UIFLOW2:
+
+        |get_kwh.png|
+
+
+.. method:: ATOMSocketBase.stop_receive_data() -> None
 
     Stops receiving data from the ATOM Socket.
 
-.. method:: receive_none_block(receive_callback) -> None
+    UIFLOW2:
+
+        |stop_receive_data.png|
+
+
+.. method:: ATOMSocketBase.receive_none_block(receive_callback) -> None
 
     Receives data from the ATOM Socket in non-blocking mode.
 
     - ``receive_callback``: Callback function to handle the received data.
+
+    UIFLOW2:
+
+        |receive_none_block.png|

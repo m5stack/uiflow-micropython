@@ -1,0 +1,25 @@
+
+.. |NECOUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Neco%20Unit/img-bb90b98e-1718-4a9d-8e36-afebfa1ee7d3.webp
+    :target: https://docs.m5stack.com/en/unit/Neco%20Unit
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/init.png
+.. |set_color_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/set_color_from.png
+.. |set_color_running_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/set_color_running_from.png
+.. |set_random_color_random_led_from.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/set_random_color_random_led_from.png
+.. |set_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/set_color.png
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/fill_color.png
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/set_brightness.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/neco/example.png
+
+.. |neco_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/neco/neco_cores3_example.m5f2"
+        target="_blank"
+    >
+        neco_cores3_example.m5f2
+    </a>
+

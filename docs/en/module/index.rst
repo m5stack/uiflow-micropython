@@ -11,7 +11,9 @@ Module
     dualkmeter.rst
     gnss.rst
     gps.rst
+    gpsv2.rst
     grbl.rst
+    goplus2.rst
     hmi.rst
     llm.rst
     lora.rst
@@ -21,9 +23,11 @@ Module
     plus.rst
     pm25.rst
     pps.rst
+    pwrcan.rst
     rca.rst
     relay_2.rst
     rs232.rst
     servo2.rst
     step_motor_driver.rst
+    usb.rst
     zigbee.rst

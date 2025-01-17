@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/servo2.rst:3 730d0d34346546b89fc33e4f6d092d6c
+msgid "Servo2 Module"
+msgstr ""
+
+#: ../../en/module/servo2.rst:7 1171ae71372946e3889f6a82caa3da63
+msgid ""
+"SERVO 2 is an updated servo driver module in the M5Stack stackable module"
+" series. It uses a PCA9685 16 channel PWM controller to control 16 "
+"channel servos at the same time. The power input is 6-12V DC and two "
+"SY8368AQQC chips are used for voltage reduction."
+msgstr ""
+
+#: ../../en/module/servo2.rst:9 c10ba83d1afe4cb29b378260f771853d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/servo2.rst:11 aa1473b78ce549ada902263709c260d7
+msgid "|Servo2Module|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref 6b750b87c88d45f3a328f7e92b0cd8f0
+msgid "Servo2Module"
+msgstr ""
+
+#: ../../en/module/servo2.rst:13 ceeac1f121944db19f980b74a918e48b
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/module/servo2.rst:24 4a8563d371ff4d44bc41e672b4123ca2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/servo2.rst:26 d705d10662c14b86a15eec5f35b94da3
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:15 461bfb0be9b640fc84ca59972be5192c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:31 ff7ef7d903f448d788d9ff315601c795
+msgid "class Servo2Module"
+msgstr ""
+
+#: ../../en/module/servo2.rst:34 0c9d4325f0d7456d84fdaf4ac7c9d4e1
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/servo2.rst:38 5cf018cc93c54fa48b9ccf8f96646e98
+msgid "Create a Servo instance."
+msgstr ""
+
+#: ../../en/module/servo2.rst 02fe065e15d54fae80480bc009aad394
+#: dc31518a2fb64a7c82339d23428a9542 ee828eca6d0f46c4bb87bb9a0eaefbf3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/servo2.rst:40 4dde8f2f22414882beb55aaec8db96d2
+msgid "The I2C address."
+msgstr ""
+
+#: ../../en/module/servo2.rst:41 5ae51cbfd35b4e31b0180fbde8bff7c9
+msgid "The PWM frequency in Hz."
+msgstr ""
+
+#: ../../en/module/servo2.rst:42 439858f0606f424489f6162e57aea033
+msgid "The minimum pulse width in microseconds."
+msgstr ""
+
+#: ../../en/module/servo2.rst:43 e9e76d8315ef49bd9d375ba2fe8ee87e
+msgid "The maximum pulse width in microseconds."
+msgstr ""
+
+#: ../../en/module/servo2.rst:44 5fb6070003774d3f99ceeb91825cba3b
+msgid "The maximum angle in degrees."
+msgstr ""
+
+#: ../../en/module/servo2.rst:46 ../../en/module/servo2.rst:64
+#: ../../en/module/servo2.rst:80 49c884a8bd1343ef81ded072fea5a71b
+#: 5969b5f5c55d4c6d814a30027a38a072 eac0a351c8fb406f8035aa798747a9f4
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/servo2.rst:48 de09d93ec48c4d688e3c907b2515cb0d
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:7 ea1b5ec1c6574a62aa488b06c7a3c7cb
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:52 cef01af27ae1471695918f558fecc807
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/servo2.rst:56 d972f10495564f93818dfcae31090c70
+msgid "Set the servo position."
+msgstr ""
+
+#: ../../en/module/servo2.rst:58 ../../en/module/servo2.rst:78
+#: ec081c8114394659931e0caac1237e85 f147a8a6544343259630931fb87aa335
+msgid "The channel index."
+msgstr ""
+
+#: ../../en/module/servo2.rst:59 7737aa27543548d3a29025505ac35887
+msgid "The angle in degrees."
+msgstr ""
+
+#: ../../en/module/servo2.rst:60 61077fa7d69b4d3c818cfb28338444b0
+msgid "The angle in radians."
+msgstr ""
+
+#: ../../en/module/servo2.rst:61 aaac2c8f0a6148e79cf1f5e567980ca4
+msgid "The pulse width in microseconds."
+msgstr ""
+
+#: ../../en/module/servo2.rst:62 70e509ea4dca4189890a5e123205a56c
+msgid "The duty cycle in percent."
+msgstr ""
+
+#: ../../en/module/servo2.rst:66 67e60ae2c68b4a0e8c936cb7f9abe449
+msgid "|set_degrees.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:9 123ac9e267874baba2376d4cf7dc0f9f
+msgid "set_degrees.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:68 674ca5b08ce748b5ac139600e3d15c4d
+msgid "|set_duty.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:10 4a1c348451be4308906065c3922f08c6
+msgid "set_duty.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:70 a97127c70f8d4d4b95271dbd2d813282
+msgid "|set_pulse_width.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:11 d131935702df46c4a6e14e07acf758a6
+msgid "set_pulse_width.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:72 95390c5ce6e14e259f5d474c7e10ef22
+msgid "|set_radians.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:12 a75ade734b4643e1b15cf5454fb8f477
+msgid "set_radians.png"
+msgstr ""
+
+#: ../../en/module/servo2.rst:76 39920a4db3b642ef91cf1086f33b419d
+msgid "Release the servo."
+msgstr ""
+
+#: ../../en/module/servo2.rst:82 11aa275d74764f7683f50360b24cd92d
+msgid "|release.png|"
+msgstr ""
+
+#: ../../en/refs/module.servo2.ref:13 eb2b1cf4be5b41278483d3f0215bdded
+msgid "release.png"
+msgstr ""
+

@@ -1,0 +1,431 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/co2.rst:3 07f7dd639e96407d86f6ff4363bde587
+msgid "CO2 Unit"
+msgstr ""
+
+#: ../../en/units/co2.rst:7 7ef28b1dcde94c789bd61137bc54d124
+msgid ""
+"CO2Unit is a hardware module designed for measuring CO2 concentration, "
+"temperature, and humidity. It communicates via I2C and provides functions"
+" for calibration, measurement, and configuration."
+msgstr ""
+
+#: ../../en/units/co2.rst:10 32939eb6c23d4ad2b08b0bde5749d844
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/co2.rst:12 4029ade809fd416ca89931e62c95c390
+msgid "|CO2Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref 4a25b1cbe6934be7abdf29d8ce94bda9
+msgid "CO2Unit"
+msgstr ""
+
+#: ../../en/units/co2.rst:14 da258227f28b41ad98443e0d513c5e74
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/co2.rst:20 841109d0eee14ac28506ab28e8343f30
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/co2.rst:22 457e122c7dce4d859cf9ef232623534c
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:26 8b81f8cfa2a34cb58c15b1dbceae375b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:26 ced5c2d2642f461b8dca8db5faed888c
+msgid "|co2_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/co2.rst:30 1b1466f9764a42caac5edb3908fb5437
+msgid "class CO2Unit"
+msgstr ""
+
+#: ../../en/units/co2.rst:33 6835df345b8946ff8e28abdfb4bc1db5
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/co2.rst:37 f7b8b0b361824f16995f019a9dc41feb
+msgid "Initialize the CO2Unit with the I2C interface and address."
+msgstr ""
+
+#: ../../en/units/co2.rst 04aaca7157684e8bb68734985609cbbc
+#: 0dec7b1f90f34be0b47e2a7b4e454b1a 0dfcdb76c26c456c84e567eee456561b
+#: 2017c20b78d8411482ef030b5d9f3aab 2ee41e1009994749bb6e2a87f42846f4
+#: 4bb287358eb64ce8bee477df8f35ba90 8a756565ef67442086f884af4899a1e6
+#: 96dffb7f47aa490fb1151f2a0f29f332 9c3f017a4d11470bba7b7f42582b44e1
+#: a8035cdc28c34cb78fbaa12788e0ffa1
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/co2.rst:39 a4b3f8ade0a94b3a89254c3a89d734b3
+msgid "I2C interface or PAHUBUnit instance for communication."
+msgstr ""
+
+#: ../../en/units/co2.rst:40 be938de89de64d0d9745512576fde1cb
+msgid "I2C address of the CO2 sensor, default is 0x62."
+msgstr ""
+
+#: ../../en/units/co2.rst:42 ../../en/units/co2.rst:60
+#: ../../en/units/co2.rst:69 ../../en/units/co2.rst:83
+#: ../../en/units/co2.rst:92 ../../en/units/co2.rst:102
+#: ../../en/units/co2.rst:111 ../../en/units/co2.rst:121
+#: ../../en/units/co2.rst:131 ../../en/units/co2.rst:141
+#: ../../en/units/co2.rst:150 ../../en/units/co2.rst:160
+#: ../../en/units/co2.rst:169 ../../en/units/co2.rst:182
+#: ../../en/units/co2.rst:191 ../../en/units/co2.rst:200
+#: ../../en/units/co2.rst:209 ../../en/units/co2.rst:218
+#: 23249e0db29449b5a6177e6e3e297daa 3f52aab710dd4f12b32e15f0e3ce2eba
+#: 51ff7f2681da4aab8f13599528b0d304 54243e70f6d446f187e6af37d0eef46e
+#: 702e3aaba90442f8b858f4d9ee200a87 709c707dbf324ba2874a65644e3d5090
+#: 8a05bb95d00b42baa9ee5cb639f15cd6 9264aed63ebd4aa9997e74d09c427e77
+#: 933e0a623fb94ead8f6fdfbf2da6ab54 aa754850cc8940059cadbf5a4b77c707
+#: ac66a363c9a545bfa499de438cafb999 ba353242040040f6a3950d7bb0beaba3
+#: baafff12503a4e988457c8c00eb0120a ca886a82aa5d4a569ea492d32353340a
+#: f3845dea5381433d867466fa1948b64d fdaadfcce544467594853556323d84c6
+#: fe5a843cc0534220ac5b752d535a340f ffe9b624d9e344cda7bd919ca15f209f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/co2.rst:44 5a92592586c949cf8c10f1f80408336e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:7 2b0140fb2b1f4051bfbf6ae94aa35b4c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:48 cd4cc1decc244e1288b95ff1d89dbdb8
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/co2.rst:52 4b9a47af4738402cab258efa00f7e8ce
+msgid "Check if the CO2 unit is available on the I2C bus."
+msgstr ""
+
+#: ../../en/units/co2.rst:57 880c9fd9570647dbb8099ef66a2e8acc
+msgid ""
+"Set the sensor into working mode, which takes about 5 seconds per "
+"measurement."
+msgstr ""
+
+#: ../../en/units/co2.rst:62 a6a4b672c14e4c47964f182befe1950f
+msgid "|set_start_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:8 07019f05b4284c7da207d18acecc7c5f
+msgid "set_start_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:66 3e0762fac3bc49c3a9e13abcf2cb2737
+msgid "Stop the measurement mode for the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:71 68e3be0ee1464e9ca5df1b6e51335bb5
+msgid "|set_stop_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:9 b092cbee5b9c4e3096c993f7575687c6
+msgid "set_stop_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:75 a64731fdfad04b82a05ff3a611aefa4d
+msgid "Get temperature, humidity, and CO2 concentration from the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:80 05f409daa3e246b7bc367adb504888e9
+msgid "Check if the data (temperature, humidity, CO2) is ready from the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:85 27e165c525654d9fbe4d5955599a1ee6
+msgid "|is_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:10 456f84e7162c4a80aeea7bd435cbfc27
+msgid "is_data_ready.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:89 26e32a4361174af395feef7b77f40580
+msgid "Get the temperature offset to be added to the reported measurements."
+msgstr ""
+
+#: ../../en/units/co2.rst:94 0241f579ff7c4df4b94d19fd0803e8a4
+msgid "|get_temperature_offset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:11 dc29caafda364be298ccd07037849e5c
+msgid "get_temperature_offset.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:98 29aab7a320684d6b804e3a64c2ed5e2f
+msgid "Set the maximum value of 374°C temperature offset."
+msgstr ""
+
+#: ../../en/units/co2.rst:100 f5ebf4b8d34b4250bb8c4462584dc2f9
+msgid "The temperature offset to set, default is 0."
+msgstr ""
+
+#: ../../en/units/co2.rst:104 28463f74b3984847a2dcaa07cac011b8
+msgid "|set_temperature_offset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:12 a8b96ab9ae934f06887f43c498e629e8
+msgid "set_temperature_offset.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:108 5503ad7ce0824664a8832b07a906e005
+msgid ""
+"Get the altitude value of the measurement location in meters above sea "
+"level."
+msgstr ""
+
+#: ../../en/units/co2.rst:113 a7495850a92141578cc13d402f18993a
+msgid "|get_sensor_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:13 ce7cfce332484ca786f4e593c0ca4a56
+msgid "get_sensor_altitude.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:117 c23e049bc0c54f558e5dac8df2672c97
+msgid ""
+"Set the altitude value of the measurement location in meters above sea "
+"level."
+msgstr ""
+
+#: ../../en/units/co2.rst:119 d9a58b6ad2104773844e14a941cd2518
+msgid "The altitude in meters to set. Must be between 0 and 65535 meters."
+msgstr ""
+
+#: ../../en/units/co2.rst:123 6a92dc33cabb450fa9cf5f540055228a
+msgid "|set_sensor_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:14 8c7e8efc091c464bb0e949a746f78f8d
+msgid "set_sensor_altitude.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:127 bbe8de1e017142bbb4104d0c84c06909
+msgid "Set the ambient pressure in hPa at any time to adjust CO2 calculations."
+msgstr ""
+
+#: ../../en/units/co2.rst:129 bb6c59d858dd4e159629b277415abdb6
+msgid "The ambient pressure in hPa, constrained to the range [0, 65535]."
+msgstr ""
+
+#: ../../en/units/co2.rst:133 084ae40376624616b18ba6abba1c7a66
+msgid "|set_ambient_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:15 d6399082bde74317b85830294713497a
+msgid "set_ambient_pressure.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:137 f7ad1fd7aa124ed39b8eee2ad0b8b099
+msgid "Force the sensor to recalibrate with a given current CO2 level."
+msgstr ""
+
+#: ../../en/units/co2.rst:139 808efb1bfd874183bfbeafdb87313c7f
+msgid "The current CO2 concentration to be used for recalibration."
+msgstr ""
+
+#: ../../en/units/co2.rst:143 22ea554835914d58a586b63347776d73
+msgid "|set_force_calibration.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:16 e61df556099a4ddc929ce8becd6369e9
+msgid "set_force_calibration.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:147 843f648390d84c229ee99731e0dcd5df
+msgid "Get whether automatic self-calibration (ASC) is enabled or disabled."
+msgstr ""
+
+#: ../../en/units/co2.rst:152 53fe4630fdbc4d8b8c2fc96a28a9902f
+msgid "|get_calibration_enabled.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:17 47b202e7f5524329abecfa8ee16849b3
+msgid "get_calibration_enabled.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:156 12d93ca6c06340039bb39aa64ea6bf96
+msgid "Enable or disable automatic self-calibration (ASC)."
+msgstr ""
+
+#: ../../en/units/co2.rst:158 849f4d397f7a40e6b1acf1f949746553
+msgid "Set to True to enable ASC, or False to disable it."
+msgstr ""
+
+#: ../../en/units/co2.rst:162 9c9ac56aa6874da1aee19065db995e44
+msgid "|set_calibration_enabled.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:18 d734011235794f7c86a870fae04d695e
+msgid "set_calibration_enabled.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:166 8501c72c7ebf434ea9976b439919da2b
+msgid ""
+"Set the sensor into low power working mode, with about 30 seconds per "
+"measurement."
+msgstr ""
+
+#: ../../en/units/co2.rst:171 ce70e4f26b9a41aaa484af566f425773
+msgid "|set_start_low_periodic_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:19 2be3662816a64a909dea1bfabc8f3bcd
+msgid "set_start_low_periodic_measurement.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:175 b5b240f12a7a4a38a5bdb1331c651672
+msgid "Check if new data is available from the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:179 9e9fe862be61417f8a980fc327ee8271
+msgid ""
+"Save temperature offset, altitude offset, and self-calibration enable "
+"settings to EEPROM."
+msgstr ""
+
+#: ../../en/units/co2.rst:184 0e7fc4f2d8e44871b1e133301343fddc
+msgid "|save_to_eeprom.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:20 7b1c9d1c1f1e466bb1dc5e9915ec3f78
+msgid "save_to_eeprom.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:188 1b966d6f221847d3b0d14fc7f9741adc
+msgid "Get a unique serial number for this sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:193 0e223ec64e5047a09b7e7d5e0552e59a
+msgid "|get_serial_number.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:21 9d3f0a97c1154bd2b40d9fe29ea7b600
+msgid "get_serial_number.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:197 188ca04808f64df4a52392bb275cb126
+msgid "Perform a self-test, which can take up to 10 seconds."
+msgstr ""
+
+#: ../../en/units/co2.rst:202 700220cfaf274b45b85d4e55168f2f9c
+msgid "|set_self_test.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:22 2bc3ed7b414f41598013f02c3184db27
+msgid "set_self_test.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:206 55d3e1eb2f874cbd8d186cc44ad1da5f
+msgid ""
+"Reset all configuration settings stored in the EEPROM and erase the FRC "
+"and ASC algorithm history."
+msgstr ""
+
+#: ../../en/units/co2.rst:211 8189842734224233ba2279202625530c
+msgid "|set_factory_reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:23 8cdae4957a8c406daa0fb5f267b43eea
+msgid "set_factory_reset.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:215 d3faa1e52cd3481e96ae3687af6d03b9
+msgid "Reinitialize the sensor by reloading user settings from EEPROM."
+msgstr ""
+
+#: ../../en/units/co2.rst:220 fb4b902fc7d24d82ae4efb97b10f90aa
+msgid "|reinit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.co2.ref:24 385c55a6ffc44930ade60eda26fe2850
+msgid "reinit.png"
+msgstr ""
+
+#: ../../en/units/co2.rst:224 c5a8dc1720c940ad86e2cd84df53596d
+msgid ""
+"Set the sensor to perform a single-shot measurement for CO2, humidity, "
+"and temperature."
+msgstr ""
+
+#: ../../en/units/co2.rst:228 12fb9095a53f4e85b399e270bb9c2b79
+msgid ""
+"Set the sensor to perform a single-shot measurement for humidity and "
+"temperature."
+msgstr ""
+
+#: ../../en/units/co2.rst:232 a615363004b74d3ab62dbdcd67d06141
+msgid "Put the sensor into sleep mode to reduce current consumption."
+msgstr ""
+
+#: ../../en/units/co2.rst:236 8b41057ff6454c028fa899dd35d48fde
+msgid "Wake up the sensor from sleep mode into idle mode."
+msgstr ""
+
+#: ../../en/units/co2.rst:240 fea4283f19724d7d8c9f2dc8dffcb800
+msgid "Write a command to the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:242 19db8260a46e4f6489076a3830aea078
+msgid "The command to write to the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:243 e5d0e0dbb3c74dabb28d24503a3b00a1
+msgid "The value to send with the command, if any."
+msgstr ""
+
+#: ../../en/units/co2.rst:247 348d5590630f4036b59f7f3987306b72
+msgid "Read the sensor's response."
+msgstr ""
+
+#: ../../en/units/co2.rst:249 020b59fbc465472a9daf869ff9c16c11
+msgid "The number of bytes to read from the sensor."
+msgstr ""
+
+#: ../../en/units/co2.rst:253 fcca5f23243947eaa76a86fd583aed42
+msgid "Check the CRC of the received data to ensure it is correct."
+msgstr ""
+
+#: ../../en/units/co2.rst:255 7825edfa610347ec9f188d39b351eef5
+msgid "The buffer of bytes to check the CRC."
+msgstr ""
+
+#: ../../en/units/co2.rst:259 1cc9893595aa4c83a00544e9d7065700
+msgid "Calculate the CRC-8 checksum for a given buffer."
+msgstr ""
+
+#: ../../en/units/co2.rst:261 d63badcfc9884878a2ca5995d1d75f9d
+msgid "The buffer of bytes to calculate the CRC for."
+msgstr ""
+

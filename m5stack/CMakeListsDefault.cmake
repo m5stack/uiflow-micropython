@@ -76,6 +76,7 @@ if(MICROPY_PY_TINYUSB)
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd.c
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd_cdc.c
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd_descriptor.c
+        ${MICROPY_DIR}/shared/tinyusb/mp_usbd_runtime.c
     )
 
     list(APPEND MICROPY_INC_TINYUSB

@@ -4,18 +4,26 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/init.svg
-.. |set_freq.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq.svg
-.. |set_phase.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_phase.svg
-.. |set_freq_phase.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq_phase.svg
-.. |set_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_mode.svg
-.. |set_ctrl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_ctrl.svg
-.. |select_freq_reg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_freq_reg.svg
-.. |select_phase_reg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_phase_reg.svg
-.. |quick_output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/quick_output.svg
-.. |output.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/output.svg
-.. |set_sleep_mode.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_sleep_mode.svg
-.. |reset.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/reset.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/init.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq.png
+.. |set_phase.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_phase.png
+.. |set_freq_phase.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_freq_phase.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_mode.png
+.. |set_ctrl.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_ctrl.png
+.. |select_freq_reg.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_freq_reg.png
+.. |select_phase_reg.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/select_phase_reg.png
+.. |quick_output.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/quick_output.png
+.. |output.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/output.png
+.. |set_sleep_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/set_sleep_mode.png
+.. |reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/reset.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dds/example.png
 
+.. |cores3_dds_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/dds/cores3_dds_example.m5f2"
+        target="_blank"
+    >
+        cores3_dds_example.m5f2
+    </a>

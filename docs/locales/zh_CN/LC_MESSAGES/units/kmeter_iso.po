@@ -1,0 +1,241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/kmeter_iso.rst:2 4be71b1fe28d4bb690749a075f2976b4
+msgid "Kmeter ISO Unit"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:7 4aad0ae01d974e5284f738389982acc2
+msgid "Supported Products:"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:10 89e7b993d0d74d6388dec1903ee35124
+msgid "|KmeterISOUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref 2ccf4b67fd6646008253c8815b41b365
+msgid "KmeterISOUnit"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:13 8e33b2c8afc645cea04001f423f0925b
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:33 a2151d864d6d411ebf044c42dc88cf67
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:35 7674fc54bc164ba6968d5c9b49cfc812
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:6 a738a57b785447bcaf3b31acc1e44faf
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:40 6d42f74d7aef402e8d9038fc6453c083
+msgid "|cores3_kmeteriso_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:44 adbaf6a6ae08494cad44b6ecfc92353c
+msgid "class KmeterISOUnit"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:47 0e5eb5c6d59842a1845aeca4245e175f
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst 06fc0a2db5794ea7928180e7e01d41e3
+#: 9f276ccd42ef4b6eac95b6d7886cf5ca
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:51 eb3aa01d547f4858be97ab592c2a0334
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:52 d7950b36761744559011822180ab2dd2
+msgid "0x08 ~ 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:54 ../../en/units/kmeter_iso.rst:68
+#: ../../en/units/kmeter_iso.rst:79 ../../en/units/kmeter_iso.rst:88
+#: ../../en/units/kmeter_iso.rst:99 ../../en/units/kmeter_iso.rst:110
+#: ../../en/units/kmeter_iso.rst:127 ../../en/units/kmeter_iso.rst:136
+#: 3622cf7601b14798b45758c63a37668d 4d91387d2a7a47b1a9634890f052ab98
+#: 9acbf8483630438a86e83e4a9d98158a dd0a318b56f54046a757f7156c9440cb
+#: e14e500d28df49df9558c7bb8eb4bc11 e5a4272327c640df82fed8f2f3513a7a
+#: f1a6b4036f1b484e8c53964646b011f6 ff095481d97e41d68069ec34fcfd7591
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:56 9a86149803c844c3b816095ecd936b61
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:8 7b28347c284f4d8591acb9d62861c5b7
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:60 7f1130543b2545aaa8ef282f7f9c7d0f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:64 e7e4cfdd4e814af4b0781e51e3589c0b
+msgid ""
+"Get the temperature of the thermocouple in the KmeterISO Unit. Returns a "
+"float value."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:66 ../../en/units/kmeter_iso.rst:77
+#: ../../en/units/kmeter_iso.rst:97 ../../en/units/kmeter_iso.rst:108
+#: 10a6620b51214ae29e491214188e9e02 c9eaf25099324ef6a26c5cc6911c2f01
+#: e4c3ca7328de403b93a68827b717c1b6 f3317d606726418dac679f2376f54bdc
+msgid ""
+"``scale`` accepts values of :py:data:`KmeterISO.CELSIUS` or "
+":py:data:`KmeterISO.FAHRENHEIT`."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:70 94c07ff28b8642feb8ba25d68308872a
+msgid "|get_thermocouple_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:10 8f59f5c290354bbfaa731209420789e8
+msgid "get_thermocouple_temperature.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:75 9a0c842043e24c6795eb36fd25b0d072
+msgid "Get the internal temperature of the KmeterISO Unit. Returns a float value."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:81 0c12dd952c9b454e8bdd743eece32bbe
+msgid "|get_internal_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:12 9defc00c899e45e0ab152e39c7f18159
+msgid "get_internal_temperature.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:86 afe82f4154fd4be2827c49055205c389
+msgid "Check if the measurement result is ready."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:90 359a8e076ad746eaa3d43fe5d8f9db9a
+msgid "|is_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:14 89fe0aaf28bd4ac1a2530f79f21385db
+msgid "is_ready.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:95 ddcfb5cb75e94547bbfc245ee49f3b94
+msgid ""
+"Get the temperature of the thermocouple in the KmeterISO Unit as a string"
+" with a sign."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:101 0d966d8e2a884746bc4f29fb7caff712
+msgid "|get_thermocouple_temperature_string.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:16 08bed7170ab84b16b5b633a79fb5a8f6
+msgid "get_thermocouple_temperature_string.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:106 b000fa0861b6416b9bccbb62561ee158
+msgid ""
+"Get the internal temperature of the KmeterISO Unit as a string with a "
+"sign."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:112 b82707ff49ce4e58b3eba031e82e7427
+msgid "|get_internal_temperature_string.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:18 c9b44aa479a34229aa6de6cea3510015
+msgid "get_internal_temperature_string.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:117 96c8d00902224d7592fd622eaa22efb6
+msgid ""
+"Get the firmware version of the KmeterISO Unit. Returns an integer "
+"version number."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:122 63acbd236f404eee8238a3451a5b36ca
+msgid "int"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:122 e2f2f4ba73514478907c115d25c7bec9
+msgid "mode"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:123 f627e56768da420a8f4858d01f8a709c
+msgid "0xFE"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:123 3ad4aa0c50204061994a03b8f386a889
+msgid "firmware version"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:124 f894131311a74b179d883c68170751af
+msgid "0xFF"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:124 1c9c8e50bf674fef8da90c1aacdb8170
+msgid "i2c address"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:129 d7b29a48dcab426fb15d079574359652
+msgid "|get_device_spec.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:20 5cbdee6e1eaf4b858ecf126d22dcd35b
+msgid "get_device_spec.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:134 eac3ae95cf5e4f8a9ccd5dbf834c2c6f
+msgid ""
+"Set the i2c address can be changed by the user and this address should be"
+" between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:138 9436a694f7f44e84bf231956b5e1a690
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.kmeter_iso.ref:22 4a42f9874ab1481289451ece144b6844
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:142 307d0e2cecd446ebb3aba6fef7fbf271
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:147 9ec893212ad34acab5a5f4ca68f77935
+msgid "Celsius scale."
+msgstr ""
+
+#: ../../en/units/kmeter_iso.rst:153 98ef57157a0d458fb909f9b4409cbb87
+msgid "Fahrenheit scale."
+msgstr ""
+

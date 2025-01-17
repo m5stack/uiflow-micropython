@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,136 +18,168 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/pir.rst:2 68237b16ed6e4111897e6b104b95169e
+#: ../../en/units/pir.rst:2 fcc6d49f3122494cb5cd04fb8d22c463
 msgid "PIR Unit"
 msgstr ""
 
-#: ../../en/refs/unit.pir.ref 56979aa7a0e04f1e97cb9b85cf3fd22b
-#: 7eebcbd187bd4ac28dc9ac597e69c365
-msgid "PIR"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:7 40cf3bf0ce644eafa4cca66e7fe725cb
-#: e265ad5c561247e38a4ff5eaff011adc
-msgid "example.svg"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:9 3f9c0c3d28a940c28359728c023fa435
-#: 8b3987f9b219410d8b89d705c519abee
-msgid "init.svg"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:11 2e883651b25b42dc9a1fdd699fffd516
-#: 85628692a85a465686179da50c735fcf
-msgid "get_status.svg"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:13 9452b8560a4a46f0b5d2bd7fd304d19b
-#: b4058855306d4c4ab7d197b81168457f
-msgid "enable_irq.svg"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:15 7fca6a70e27248339105bd28410797ef
-#: c51db106f04241cab0547c08373d2fa3
-msgid "disable_irq.svg"
-msgstr ""
-
-#: ../../en/refs/unit.pir.ref:17 29a121da55e446578970db6eb70d5c10
-#: 9da78bfebb0741189ca6900a16342f3f
-msgid "set_callback.svg"
-msgstr ""
-
-#: ../../en/units/pir.rst:6 b0a21caed9254c4aa7d21b925026fae3
+#: ../../en/units/pir.rst:6 6033bbbb7cf447db98a842b7e4ae1409
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/pir.rst:8 2eb3ddeca9e94ad79571f199f0e98bbf
+#: ../../en/units/pir.rst:8 86d721cf87d141e9b8dc800ef8f632e9
 msgid "|PIR|"
 msgstr ""
 
-#: ../../en/units/pir.rst:11 06f994c5027f446086251e2ce4104e06
-msgid "Micropython Example::"
+#: ../../en/refs/unit.pir.ref 30118f50eea74da8a586253c66a9e869
+msgid "PIR"
 msgstr ""
 
-#: ../../en/units/pir.rst:33 8073598f6783448b93adfb937b418b7d
+#: ../../en/units/pir.rst:11 6c8a116d0fae47b28a398a543ddb8546
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/pir.rst:18 74fd9e28957940a9bc7bef8865aba87c
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/pir.rst:35 c2e958db016f432a91e7b947fb6c7f3a
-msgid "|example.svg|"
+#: ../../en/units/pir.rst:20 e9a97964f9194282923c1d5e9f9febe7
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/units/pir.rst:40 46b3f442fdbc4c768a5bb9b16e52800a
+#: ../../en/refs/unit.pir.ref:8 41fbf3d468a043ed9e3f406f803bbbd3
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/pir.rst:25 29c448dd871748da83efb7fd57c28417
 msgid "|pir_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/pir.rst:44 d7c319d5e3954558b7e282286c162bc1
+#: ../../en/units/pir.rst:29 7994ee0e8e4e4b7aaf3cc930324ea5e5
 msgid "class PIR"
 msgstr ""
 
-#: ../../en/units/pir.rst:47 5908e11a7c2e4d4d8692fd8bf7bef847
+#: ../../en/units/pir.rst:32 9e73c3f3a9a94f7a825a230ba6e62047
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/pir.rst:51 c2d7198d8f73466f9a3080cf6a3e8c10
+#: ../../en/units/pir.rst:36 7c72b52a32ba4b12b39ece4cc16ab9ac
 msgid "Create a PIR object."
 msgstr "创建一个PIR对象."
 
-#: ../../en/units/pir.rst:54 86ae127b8a894485a29d3c2d97e94d56
+#: ../../en/units/pir.rst:39 5fa9ce5879934374b4b280f232898fcd
 msgid "The parameters are:"
 msgstr "参数是:"
 
-#: ../../en/units/pir.rst:54 a003b461e0e54841af1a8e66038a7d1e
+#: ../../en/units/pir.rst:39 7adc8e1b47b34c0190296bcffa12d4fa
 msgid "``IO1,IO2`` I2C pin."
 msgstr "``IO1,IO2`` I2C引脚。"
 
-#: ../../en/units/pir.rst:56 ../../en/units/pir.rst:68
-#: ../../en/units/pir.rst:77 ../../en/units/pir.rst:86
-#: ../../en/units/pir.rst:95 38d87121992046c2bb6588ee3af4d769
-#: 3f0a5180134f446fbce8044db5333ac6 3fe2fc5d36e640658cf1b0d0781dcb17
-#: 4626533aeb32422c87e85704ee65dfd9 8be8af1f1f6d477982e5868e72808af4
+#: ../../en/units/pir.rst:41 ../../en/units/pir.rst:53
+#: ../../en/units/pir.rst:62 ../../en/units/pir.rst:71
+#: ../../en/units/pir.rst:80 0b649d590a15421aa5fc755849816222
+#: 18d62cabab264b5bac6b44b0341a7d53 5312a85035be4c0db9701139f28b8fba
+#: e3885f2c28a647749cfcfcd378690ff8 fa26a0bba29448ed8578de3f250a73f8
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/pir.rst:58 70b37a0502ce458fa7f7420c0a70fc22
-msgid "|init.svg|"
+#: ../../en/units/pir.rst:43 e9e1a5843a9a4efa9bad0e3eb5f963e7
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/units/pir.rst:62 17e2fd1068d44247b7cb9081f6ee809a
+#: ../../en/refs/unit.pir.ref:11 f9d57ca8c0324ef29c60543ebb3ccca8
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/pir.rst:47 262d9ba2d2554388b23663069e18589b
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/pir.rst:66 538d8c735eed4fecb9dcb6a5e041f297
+#: ../../en/units/pir.rst:51 865822a241f3473285c90013235a9fe4
 msgid "Get detection status."
 msgstr "获取检测状态"
 
-#: ../../en/units/pir.rst:70 c3ab0a5d50434c44a6871a6e8176e930
-msgid "|get_status.svg|"
+#: ../../en/units/pir.rst:55 a1a2640e2fee47c5a99cc55ed98530ea
+msgid "|get_status.png|"
 msgstr ""
 
-#: ../../en/units/pir.rst:75 2d65cbdee5574554b758d8f7952a6356
+#: ../../en/refs/unit.pir.ref:14 b3d8ff2074c8486ebc4ed58c9ca08af3
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/units/pir.rst:60 3578059837594be186de0554f5d80db5
 msgid "Enable Human detection function."
 msgstr "使能人体检测功能。"
 
-#: ../../en/units/pir.rst:79 8643537d7e5941cb97d58503c3065996
-msgid "|enable_irq.svg|"
+#: ../../en/units/pir.rst:64 7cb720d2ac364b0aa2d36d048a6175c5
+msgid "|enable_irq.png|"
 msgstr ""
 
-#: ../../en/units/pir.rst:84 375782f8aec142e5a61b1d2cead4322e
+#: ../../en/refs/unit.pir.ref:17 b3e01ed428254f189da6cca713509330
+msgid "enable_irq.png"
+msgstr ""
+
+#: ../../en/units/pir.rst:69 6ea2c87b9cc846beb83c94406c442b23
 msgid "Disable Human detection function."
 msgstr "关闭人体检测功能。"
 
-#: ../../en/units/pir.rst:88 0d24d5481a374efc8b4307f69a7ed13f
-msgid "|disable_irq.svg|"
+#: ../../en/units/pir.rst:73 1822b5a797984356a64aa41794f9976b
+msgid "|disable_irq.png|"
 msgstr ""
 
-#: ../../en/units/pir.rst:93 a600ce7a48c74c4fb44c4c197339bac1
+#: ../../en/refs/unit.pir.ref:20 200225841bc945d4bab44ad3e727a3c5
+msgid "disable_irq.png"
+msgstr ""
+
+#: ../../en/units/pir.rst:78 8d03dce9e82f45f493ed6435f0913896
 msgid "Polling method, placed in the loop function, constantly check."
 msgstr "轮询方法,放在loop函数里面,不断检测。"
 
-#: ../../en/units/pir.rst:97 bbe928fb03264250a95c1dfd7fdf6500
-msgid "|set_callback.svg|"
+#: ../../en/units/pir.rst:82 a862743a60f84603a2a4e0f775c5c364
+msgid "|set_callback.png|"
 msgstr ""
+
+#: ../../en/refs/unit.pir.ref:23 d9cac03452b74800b3cc0dc40a4a9dac
+msgid "set_callback.png"
+msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "get_status.svg"
+#~ msgstr ""
+
+#~ msgid "enable_irq.svg"
+#~ msgstr ""
+
+#~ msgid "disable_irq.svg"
+#~ msgstr ""
+
+#~ msgid "set_callback.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "|get_status.svg|"
+#~ msgstr ""
+
+#~ msgid "|enable_irq.svg|"
+#~ msgstr ""
+
+#~ msgid "|disable_irq.svg|"
+#~ msgstr ""
+
+#~ msgid "|set_callback.svg|"
+#~ msgstr ""
 

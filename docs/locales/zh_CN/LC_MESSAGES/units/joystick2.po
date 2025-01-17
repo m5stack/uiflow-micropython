@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/joystick2.rst:3 df386bc7ae96407d9ba1def5fd5abcfd
+msgid "Joystick2 Unit"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:7 452f411b02d24586b860d9cc025627ae
+msgid ""
+"The joystick is an input unit for control, utilizing an I2C communication"
+" interface and supporting three-axis control signals (X/Y-axis analog "
+"input for displacement and Z-axis digital input for key presses). It is "
+"ideal for applications like gaming and robot control."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:9 e9e86e0340354d84b2038ab17e2d2b47
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:11 53bcc2045d2d40afa3396020ec323260
+msgid "|Joystick2Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref d73482f223ec48ccbadf82d71bea8848
+msgid "Joystick2Unit"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:13 0f27b91889f24030bfd978a2a23ef274
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:30 6f769908ba624ba7915eaae565384daa
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:32 94e94c39d4c14ff1b2559a74a5296653
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:28 7651be09d1564b7eb977357aa169886c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:36 e9732ce6d348493cab434d8b2bc63319
+msgid "|cores3_joystick_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:39 c17f7e226d354f0faf8a073686283850
+msgid "class Joystick2Unit"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:42 73122b1fa7544350a9cf1db6d1d1df22
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:46 4cc5d6eb5e554a4798fe29389d541a70
+msgid "Initialize the Joystick Unit."
+msgstr ""
+
+#: ../../en/units/joystick2.rst 0cb27bf4d27a4e518b2b3e621f283f5b
+#: 1d892d9b8b044989b33176c4d5b5669f 2ed0f29b82da4a02a1974db5ba606357
+#: 2f47241463cc4e58aad7dd9d3707e33f 32a2eb53e6724fa9ad96ac9b5da9ac91
+#: 5bc9dc3fd12e4333921e9535b714fd68 82ce323a9b0d4623b87aacb3815e0564
+#: a7ca222aa277424fa0a6995a19a84305 c1c4f4dbf5614574983585a6ce31fe40
+#: c8bb2e2e30054f92ae7bb515d7227cef e954da01672f4524914c5a8f09432e7d
+#: f98df36e08c442a09de4854d27b8d7d6
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:48 b15f9e66bd724e268ddbb45095a33f4b
+msgid "I2C port to use."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:49 f9842a5cff264fd9b3b21cc26c850c67
+msgid "I2C address of the Joystick Unit."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:51 ../../en/units/joystick2.rst:66
+#: ../../en/units/joystick2.rst:77 ../../en/units/joystick2.rst:88
+#: ../../en/units/joystick2.rst:99 ../../en/units/joystick2.rst:110
+#: ../../en/units/joystick2.rst:121 ../../en/units/joystick2.rst:132
+#: ../../en/units/joystick2.rst:165 ../../en/units/joystick2.rst:188
+#: ../../en/units/joystick2.rst:200 ../../en/units/joystick2.rst:212
+#: ../../en/units/joystick2.rst:223 ../../en/units/joystick2.rst:241
+#: ../../en/units/joystick2.rst:252 ../../en/units/joystick2.rst:263
+#: ../../en/units/joystick2.rst:274 ../../en/units/joystick2.rst:285
+#: 03b425392daa4c95832ace6dff315d48 0791c33b3f114007988d7d37b1dcb391
+#: 1e2ff5d70c624b9e92873c9a65430a8c 46c64cfce0464cd39a9d256b3b31fb9d
+#: 63964f0a496848c2bf9fc78088b8a781 65bbd93cf75f4175b63cb482eae9569c
+#: 6cc774668614489a8f0def4e88195a0e 7180941edcbe417ab7b7bdece9027bf3
+#: 9e37db984eb14e5c8a6e26a23f3c2715 a6709587d99b4d21b892bbbe714385b4
+#: ad6220c25c094d9f89bd26db5e870e8e c608d83c4a1e4190a1384a04d78e2eac
+#: c69f07a79fb0405097268cd6d20dad0d c8163b25504943bebee62a2fac663af4
+#: d1b25a3e03954dab98c6ea2b804f4c83 ded533715a6248eda184a27257c8babf
+#: df9fd0e59d594ebbbb9ea40388f6c55f e3e007423c5c48c1a070a3e6b57e9d29
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:53 ebd337ded258445b88f3c273ce917a07
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:7 2943ea621f2a4d3fb4f512dc8f244a16
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:57 63658268025b47c690f49299192f77c6
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:61 e3a9a574319e4c44a909e93fd77fbdf8
+msgid "Invert the X-axis of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:64 20668743b15d43f093069f129aa13dc6
+msgid "Whether to invert the X-axis."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:68 8aae8ea9db3b4f7ba6343afd6b836b3a
+msgid "|set_axis_x_invert.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:8 b5d2db3014f2472f8a8b22a0a9f04c88
+msgid "set_axis_x_invert.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:72 d28c75b27c794806994a1286fe108b82
+msgid "Invert the Y-axis of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:75 27e7613cf8944ee5bdd15a61ae4e6b7b
+msgid "Whether to invert the Y-axis."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:79 08fc03b7497446268e82f9ee96104361
+msgid "|set_axis_y_invert.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:9 52b3442874424af492ef02acca76c91e
+msgid "set_axis_y_invert.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:83 734ca167d21f416597b9c3bd387be303
+msgid "Swap the X-axis and Y-axis of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:86 8fa2ff03d2be47079065429cc414399a
+msgid "Whether to swap the X-axis and Y-axis."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:90 b569bb885bdb443b95939a5f397c1e32
+msgid "|set_axis_swap.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:10 d9002d674306467ba775ca81a01bf6d7
+msgid "set_axis_swap.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:94 abda04d365cc401695ce9342213cd805
+msgid "Read the ADC value of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst 7a6926810de9488b8e92b7b17165fe71
+#: 7f9d3e50d7a34c4aa3b9f4f66bd82cc7
+msgid "return (tuple)"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:96 b80040ed233d437e822fb7438d66e12c
+msgid "Returns a tuple of the X-axis and Y-axis ADC values, from 0 to 65535"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:101 8fba3cd3d9c9459ca76f64fd1921e80b
+msgid "|get_adc_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:11 bb1eef94aca2448d937a5736e5180aa3
+msgid "get_adc_value.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:105 0ee40a62db344a2780147b0613bf4cf5
+msgid "Read the button status of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst f7ca02a717b54299bd1015d09603513b
+msgid "return (bool)"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:107 d70b5fc5c5e74e09a9e57522a0b100b3
+msgid "Returns the button status. True if pressed, False if not pressed."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:112 73a185ebb59c436cb6887f150747ff1b
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:12 3f068db4f1094c77b5be0d12d8f76c01
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:116 ec76c4e85879491a8fe450f4f57892ff
+msgid "Set the brightness of the RGB LED."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:119 b401373463994a5a927764781ac0f013
+msgid "The brightness value (0-100)."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:123 dc44e71f94f64925bc65ebc3fd6ef194
+msgid "|set_led_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:13 b10df14b60f2404a80114f73ae99ce91
+msgid "set_led_brightness.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:127 ../../en/units/joystick2.rst:138
+#: 2a1b35c6d92141339eb611d3d5c325c9 3b7748c26457465dbd7951eb72dcd452
+msgid "Set the RGB LED color of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:130 6e82f84d6ee7499c9a93d4ec07495b8c
+msgid "The RGB value (0x000000-0xFFFFFF)."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:134 9e8606699cab4d7d980786d5bd0ab130
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:14 360af121fc5f4bbf9434d2dee94961a0
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:141 7584c22c1cf44d389f45d8339be4fba0
+msgid "The red value (0-255)."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:142 f605a99dbc5f4e0ea0041d2245aa7e7f
+msgid "The green value (0-255)."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:143 7ae304b7e4b3483a99b0bf0e5d8eb13b
+msgid "The blue value (0-255)."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:160 ../../en/units/joystick2.rst:183
+#: 0502574042024ff583a05753cc083470 52e852bc61ed4a979696d1090c475893
+msgid "The minimum ADC value of the negative range."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:161 ../../en/units/joystick2.rst:184
+#: 400a0700bf86408e8af8557b4bbd718f 896e032de32c46f5b1839615a6999184
+msgid "The maximum ADC value of the negative range."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:162 ../../en/units/joystick2.rst:185
+#: a9b90a306d8e4d949ce87cb5a2ac48ae c62959f3e00742ebb697f641d5169c95
+msgid "The minimum ADC value of the positive range."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:163 ../../en/units/joystick2.rst:186
+#: 131e77c998dd42ca8209c6764a1c40fa 67cefbf457f44f43a1995f3630ff1457
+msgid "The maximum ADC value of the positive range."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:167 117b73f112204d11b351413721581d67
+msgid "|set_axis_x_mapping.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:16 994d2f638add4765888ce5f7b9780546
+msgid "set_axis_x_mapping.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:190 6960f8a9ca854885811c06af0ed6e1d9
+msgid "|set_axis_y_mapping.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:17 8d66ced2c40a4d8d85e85a43be0079a7
+msgid "set_axis_y_mapping.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:194 ../../en/units/joystick2.rst:206
+#: 9eadca4bf3f941a78245341356d6a009 b2b4af13ad68429b9b807ab9ae5b4b2d
+msgid "Set the dead zone of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:197 9e103630b11745db847cd82f04577593
+msgid "The dead zone of the X-axis. Range is 0 to 32768."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:198 c2a07116f6c84063a119ca9f143340e0
+msgid "The dead zone of the Y-axis. Range is 0 to 32768."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:202 398cf2e48eba46daa30f290f304853b4
+msgid "|set_deadzone_adc.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:18 581a5652a02a422b973fea76dccc7362
+msgid "set_deadzone_adc.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:209 3fb76f00370146ad8830b1f628f40978
+msgid "The dead zone of the X-axis. Range is 0 to 4096."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:210 e2751e6b8d884c309d655b577797d49b
+msgid "The dead zone of the Y-axis. Range is 0 to 4096."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:214 d4962c177f83441184e10c94ba72206e
+msgid "|set_deadzone_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:19 2b768dd360a94fee8de1e22cced1e20c
+msgid "set_deadzone_position.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:218 ffe2febc27704967b7713b9c8d8d5398
+msgid "Read the position of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:220 f0423891f34645e182993456a236e8d8
+msgid ""
+"Returns a tuple of the X-axis and Y-axis positions. The range is -4096 to"
+" 4096."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:225 59d4c81cb4bf483da643f054e1e0a479
+msgid "|get_axis_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:20 c694b448301343529da6eed2360d6a40
+msgid "get_axis_position.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:229 a2e0872502d447919d0e113dc8273022
+msgid "Set the I2C address of the Joystick Unit."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:232 94c86f0367dd43de9d910e64b1fb10fb
+msgid "The I2C address to set."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:236 05f7fab18764416395516e243bb68253
+msgid "Read the firmware version of the Joystick Unit."
+msgstr ""
+
+#: ../../en/units/joystick2.rst 02c705e243c84130bf9737c5b8a9fd1f
+#: 453ad629431744c9a914d536de02ff05 6153dcfc5ef54fd5bb481e7c8dbbbd59
+#: 8e347a2b69e54645aa84b1d492a3918e d5497c337d5a4d41a35c07d4dd7960f2
+msgid "return (int)"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:238 e46385eb30fa41959a76093f68fe8c65
+msgid "Returns the firmware version."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:243 09af0849c0f046b587657a7d05b8ac9c
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:22 263a0d91103e416898f1f396c2937019
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:247 7efeaae5c5624a9382a1d61a78172dd8
+msgid "Read the raw X-axis value of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:249 616dd001c0ac47c8a40f66f2f6fc1676
+msgid "Returns the raw X-axis value."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:254 33ac85c7bd7541fea6b7d98e989eab24
+msgid "|get_x_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:23 d4b63863acd4419b8e2c057f6f0309ed
+msgid "get_x_raw.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:258 ed39ca73a77d470ba9968859f69c8203
+msgid "Read the raw Y-axis value of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:260 a7d0956d907944038c9e48e351a2c525
+msgid "Returns the raw Y-axis value."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:265 1451cdae55a84f2cbdedd1c6c5e911f7
+msgid "|get_y_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:24 3255e88b86a143c7bed2bb70668e135e
+msgid "get_y_raw.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:269 387d885ae2f84df3a5c39346f9f190fe
+msgid "Read the X-axis position of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:271 c901a55f8c2b4735bbf52cd828a514fb
+msgid "Returns the X-axis position."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:276 568f0ea0a89e41cc81363b567ca7a6f2
+msgid "|get_x_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:25 884ea3acd4044ae18eb2b385f65a1bf6
+msgid "get_x_position.png"
+msgstr ""
+
+#: ../../en/units/joystick2.rst:280 11d0cb75d9984571b2082c968e607ca9
+msgid "Read the Y-axis position of the joystick."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:282 17a3e626879b4e678199cd13b5dd02a8
+msgid "Returns the Y-axis position."
+msgstr ""
+
+#: ../../en/units/joystick2.rst:287 77930a97e20644e78221becdefd2ec18
+msgid "|get_y_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.joystick2.ref:26 d453c3c3d7ed4f4fa8d44d6df4edaa65
+msgid "get_y_position.png"
+msgstr ""
+

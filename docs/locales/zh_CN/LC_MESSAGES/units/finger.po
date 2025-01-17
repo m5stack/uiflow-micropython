@@ -1,0 +1,438 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/finger.rst:2 011cb65d9f8a4ccf86893d80f330e630
+msgid "Finger Unit"
+msgstr ""
+
+#: ../../en/units/finger.rst:6 2f112ef70203485b9beee0950566e49f
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/finger.rst:8 64fe7087aaf4464e8871eb3614a6b041
+msgid "|FingerUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref fd302cdd9ae047e6b68c76fa9f482cc8
+msgid "FingerUnit"
+msgstr ""
+
+#: ../../en/units/finger.rst:11 ed117e75d49f4a4fa552dc6445625e45
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/finger.rst:18 0e8b604899f449998d2e16de9ad07a03
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/finger.rst:20 8fb6ebe0e1064e41877ae33513d31b9f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:60 cff9444edd3d41888daf083f6b15334d
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:25 8cdd06a7b17e498fbce0574453e342b9
+msgid "|cores3_finger_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/finger.rst:29 c01c1596124b44bcb92c5e4fd44ed298
+msgid "class FingerUnit"
+msgstr ""
+
+#: ../../en/units/finger.rst:32 f7cfe80eaa6048dea43527175c26aa30
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/finger.rst:36 553ea0ac3e30498d898b1114df603107
+msgid "Create a FingerUnit object."
+msgstr ""
+
+#: ../../en/units/finger.rst 269f1c72d24048b98f0a0d55cc51e7e8
+#: 45b22af3d44742cdbafef5e9504950bc 49664f9f7b5b46768bc2c27737e3d110
+#: 57415651874e40adb69c29d1b6ead3b2 58c9b14f98bc4d2e9e9688235a886303
+#: 996e8e3a6fe54c0d959215f6e3ebf552 9e60740be4c040b18b373134913ea5ce
+#: aea5e63e59eb4cedac4a52808cd8635f c5830128b01249f3aa981208080a34a9
+#: d5c197ad3a6448969b1d671d7cf3276f f16bc7439fec4660bbe6e21182741e21
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/finger.rst:38 aaf4352174d843688b9ddb223e6b18c1
+msgid "The ID of the UART, 0 or 1 or 2."
+msgstr ""
+
+#: ../../en/units/finger.rst:39 4fab7bb737cf40f3ac8754d31d3e94b7
+msgid "UART pin numbers."
+msgstr ""
+
+#: ../../en/units/finger.rst:41 ../../en/units/finger.rst:57
+#: ../../en/units/finger.rst:70 ../../en/units/finger.rst:85
+#: ../../en/units/finger.rst:101 ../../en/units/finger.rst:114
+#: ../../en/units/finger.rst:125 ../../en/units/finger.rst:136
+#: ../../en/units/finger.rst:147 ../../en/units/finger.rst:160
+#: ../../en/units/finger.rst:171 ../../en/units/finger.rst:182
+#: ../../en/units/finger.rst:195 ../../en/units/finger.rst:208
+#: ../../en/units/finger.rst:221 ../../en/units/finger.rst:237
+#: ../../en/units/finger.rst:257 ../../en/units/finger.rst:270
+#: 076b8678f1024bc4aae3644c3670aa3f 12b8623fcb4c4406b6c365a08395289b
+#: 26204e7d1230470aa5128e81c2416f32 29871879f33f4520aff1a69b5bf094a2
+#: 2ad308e712834064ada486099747c862 4161bbae3bd543c5adfddd810fdddcdf
+#: 45207c2f9599405cbf739cd20303a56d 6e89635f1ca74c0889210a9ee8ef5fcc
+#: 72bec0845c604596a1db9784a070576d 9e26cc0c076d4ef19ac8d7e52e7e098d
+#: ab1f223a33f04bf9b020180ddac68100 b41ddd7057d6429f9c9e953fdd1de72e
+#: c09cb51ed06a44ce8992c70beef772b5 c9542101db2f453cbadb73d37026a2f2
+#: ce9aaaabbb9c43c89f127a9871f6d1e0 d4d40f9617c24fc7a708c8f52071cc8b
+#: e5569c89abbd49e9bdb3f42826d8c843 efd140952ff546e6bc8e7f73f9f770d3
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/finger.rst:43 0438c2410bed4489af8316157834daea
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:7 d7e56ea53b8b4ba7b26756d5a5cf28a1
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:49 8fcc393af2db4b4aba5f6f38c9e720cb
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/finger.rst:53 37d485cb45c949da8a90aafa718c1239
+msgid ""
+"After calling this method successfully, FPC1020A will not be able to "
+"respond to any messages."
+msgstr ""
+
+#: ../../en/units/finger.rst 030f8f22370f4a3299120868baf8519e
+#: 0efb06f4c5194b9497ffc6f82c475d68 2207af9efed34117a762b20d300c28ab
+#: 343e7597ed7847c08f18f04562d2c65e 376e63170bdd4a0eb262581525cdba19
+#: 43e5060dcb4d4887ae979a0bf2c0a517 4a3dc567a99c453d9f4d48e2ccb3b54b
+#: 4a9704bd01ca485ebd17ebff95d2abd9 4b559be32de04e92ad5fbf2005d31978
+#: 5e77d317f2554f9081f88e697d9b26ae 5fa0c93fb8444f2fae985cbd30c54a53
+#: 752665f4d1ec450d8677aa180627ff0c 897a6ae2312a40ad97aa74a5fe5b79df
+#: 9fd0ce9f3ac54ebdba2a341cf43a8f1e d68c2f16e0bb4716add9946befabaace
+#: d9cbb3cbaad542faa32e2ad9c495f0c0 dbcd835442514ec380f17509614427ae
+#: e87e7e250f9c4149b233f39a5fecbb64 fb0e1ab5c4394585a11ca48024983342
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/finger.rst:55 ../../en/units/finger.rst:123
+#: ../../en/units/finger.rst:235 2482d1f7ef0b4b00ad4e93f02b2d8292
+#: 6b01e2ff95104557ad91f2a574ccc98c 9974dc5f4d50411bb1fc19c37e3ba803
+msgid "True if the command was successful, False otherwise."
+msgstr ""
+
+#: ../../en/units/finger.rst:59 339ec2a679ca42df8ed74a893a124afc
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:10 c20cbc31a9184336b75689ea8d4fd024
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:64 ../../en/units/finger.rst:77
+#: b0ba8c63cd7b4289a31ce6986e3431a8 c541f21a2c0f4d2892020869523c2010
+msgid ""
+"In the no-repeat mode, only one user can be added with the same finger, "
+"and an error message will be returned if the second round of adding is "
+"forced."
+msgstr ""
+
+#: ../../en/units/finger.rst:68 ../../en/units/finger.rst:81
+#: ../../en/units/finger.rst:83 91056f0ff0c34f078a58a8e46a816bd3
+#: b62f07e6f176431abfdf4c3b415af714 bb9c4ec49f314ebb8f38d636ea8c4e35
+msgid "mode (0: no-repeat mode, 1: repeat mode)"
+msgstr ""
+
+#: ../../en/units/finger.rst:72 5fd98867c2614e74bd7094049d00825e
+msgid "|get_add_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:13 9316e00a816340dbb6d61fef1bd87b9f
+msgid "get_add_mode.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:87 5f1cef057b344badbb548d4ece86ad96
+msgid "|set_add_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:16 3ecccceebe254ee79e37362a939b783c
+msgid "set_add_mode.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:92 d8f0e5e2c98b4bac83ba986bbaad43ac
+msgid "add new user"
+msgstr ""
+
+#: ../../en/units/finger.rst:94 f798441bdf4e46df8f4018c1dd52618c
+msgid ""
+"After calling this method, you need to put your finger on the fingerprint"
+" module."
+msgstr ""
+
+#: ../../en/units/finger.rst:96 ../../en/units/finger.rst:110
+#: ../../en/units/finger.rst:156 ../../en/units/finger.rst:191
+#: ../../en/units/finger.rst:204 ../../en/units/finger.rst:217
+#: ../../en/units/finger.rst:230 20ee036807c94e3bab07f2a1aab683cc
+#: 35e8fdce372a42068133467dd77a2a03 473efec418ac43fa9ca10b16464dc347
+#: 53334f77f3ba413d9583ba0deb229ae5 7ea098b90e68448a8adbabfc35907564
+#: 975d685373d848989b91b406f2b5d5ee bddcc24c444849dd8be273d97e6921ad
+msgid "user id (0-149)"
+msgstr ""
+
+#: ../../en/units/finger.rst:97 ../../en/units/finger.rst:231
+#: 1fa2e6f43ffb48a0a4c6aeb1b619a65d edce0ec1bdd34e6ab51b7f92b4abfa4d
+msgid "user permission (1: normal, 2: admin, 3: super admin)"
+msgstr ""
+
+#: ../../en/units/finger.rst:99 ../../en/units/finger.rst:112
+#: ../../en/units/finger.rst:158 ../../en/units/finger.rst:169
+#: 040bad49fd6848edb0e5668797d77fbe 75ea22f2df6e450fbd27d06ac7593932
+#: a4fe08f61f7f44b9a607fcafe513cffe d182b161c63a4bd6b90e12016278442d
+msgid "-1 if the command was unsuccessful, otherwise the user id."
+msgstr ""
+
+#: ../../en/units/finger.rst:103 b4451196b99e402f9735879ebecee2d6
+msgid "|add_user.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:19 4e22803dd5f341548bf23f02f74776ea
+msgid "add_user.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:108 49b6f2fff9154399a0176d83e17af2fe
+msgid "Delete the user with the specified id."
+msgstr ""
+
+#: ../../en/units/finger.rst:116 82f150ef753447ecbbb0391142c93bca
+msgid "|delete_user.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:22 ce8b53b7bf6948f4ab19613bd33eb50e
+msgid "delete_user.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:121 54971960d6354f529cd7548f8a08c41d
+msgid "Delete all users."
+msgstr ""
+
+#: ../../en/units/finger.rst:127 71585f962af54fb0b5723ee654a0f803
+msgid "|delete_all_user.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:25 089d234280dd4efbb75877b3f38d7170
+msgid "delete_all_user.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:132 400e7caacf9a42f990322ba327331efe
+msgid "Get registered users count."
+msgstr ""
+
+#: ../../en/units/finger.rst:134 6ef7b32330fa419ba4eff2637659dc48
+msgid ""
+"-1 if the command was unsuccessful, otherwise the number of registered "
+"users."
+msgstr ""
+
+#: ../../en/units/finger.rst:138 4fa78021908e44d4a326718e64c05eb1
+msgid "|get_user_count.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:28 bec9d38848214faaa7ec82745fc7e2ac
+msgid "get_user_count.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:143 0e64a82d1681457ea93185c01cae3ef7
+msgid "Get the maximum number of users that can be registered."
+msgstr ""
+
+#: ../../en/units/finger.rst:145 91bb7a35c0a54e60b3075b565b7d5262
+msgid ""
+"-1 if the command was unsuccessful, otherwise the maximum number of users"
+" that can be registered."
+msgstr ""
+
+#: ../../en/units/finger.rst:149 587e915b957f4eefbb30a6a8e0975f8a
+msgid "|get_user_capacity.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:31 e3a47adf9198496892479fb22aaef64b
+msgid "get_user_capacity.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:154 fbff55b221f04007bfd1df7a1e642236
+msgid ""
+"Check whether the currently collected fingerprint matches the specified "
+"user id."
+msgstr ""
+
+#: ../../en/units/finger.rst:162 783e32eb34b84db99fdaba5f4d0bfe5e
+msgid "|compare_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:34 d304450bc1c04f1cb5b87d333afcecb2
+msgid "compare_id.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:167 d9634389fa0942a7905624248b0b9ccd
+msgid "Detect whether the currently collected fingerprint is a registered user."
+msgstr ""
+
+#: ../../en/units/finger.rst:173 1235b7d1a42c49448d53e91336f2dbd3
+msgid "|compare_finger.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:37 d14b567fbd264cf8a5a8a136f635cd20
+msgid "compare_finger.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:178 f1db7720f1e44f8e85d06104f1198b76
+msgid "Get the list of registered users."
+msgstr ""
+
+#: ../../en/units/finger.rst:180 2d3ed878fa3649eebb921b8fb1f24ac9
+msgid "list of registered users."
+msgstr ""
+
+#: ../../en/units/finger.rst:184 62d740e8d05546149489e55afb23fff0
+msgid "|get_user_list.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:40 eee4c8fe52704e19969084b752b0deca
+msgid "get_user_list.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:189 59580b03f7744746b15a69063dadbb75
+msgid "Get the information of the user with the specified id."
+msgstr ""
+
+#: ../../en/units/finger.rst:193 32d02660edb148999b33db150bdc0c40
+msgid "tuple of (id, permission) if the command was successful, None otherwise."
+msgstr ""
+
+#: ../../en/units/finger.rst:197 2df596fe796c423092c3d61aa44ad2fe
+msgid "|get_user_info.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:43 d6d9e291a0994879b3f19f319cacc92f
+msgid "get_user_info.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:202 53df5ac30bc64ed3b5d42cb6b7e2d57d
+msgid "Get the permission of the user with the specified id."
+msgstr ""
+
+#: ../../en/units/finger.rst:206 e9d38dffa32c408a90a0453d5031efe9
+msgid "-1 if the command was unsuccessful, otherwise the permission of the user."
+msgstr ""
+
+#: ../../en/units/finger.rst:210 f9d5d5f25bf345898b1533b5ffd926ac
+msgid "|get_user_permission.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:46 4f3b38f295604537b56e9c64efc387da
+msgid "get_user_permission.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:215 824985c3eb0a46b48474e28051981f0b
+msgid "Get the characteristics of the user with the specified id."
+msgstr ""
+
+#: ../../en/units/finger.rst:219 ../../en/units/finger.rst:248
+#: 446ddc7e734349368b4ea847a7578eb2 c2468e97fea24ce9b67c7a2d5b7357a2
+msgid ""
+"bytes of the characteristics if the command was successful, None "
+"otherwise."
+msgstr ""
+
+#: ../../en/units/finger.rst:223 6f628907218c4a1787318fb3058a47d2
+msgid "|get_user_characteristic.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:49 e20e3102914a45148e1268fb6a171d3c
+msgid "get_user_characteristic.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:228 92fe2d03b6c3470cb6156ad58dd8ad60
+msgid "Register a new user with FPC1020A."
+msgstr ""
+
+#: ../../en/units/finger.rst:232 7de409ed12ec43dc85bb35b2d6b838c8
+msgid "user characteristics"
+msgstr ""
+
+#: ../../en/units/finger.rst:233 ../../en/units/finger.rst:246
+#: 0cfbb9eeeb92456eb60f29517fd52ab3 377302c435134f9cb19b0dbd8c56acc0
+msgid "timeout in milliseconds"
+msgstr ""
+
+#: ../../en/units/finger.rst:239 1da2095b4940450b8d54b6182364bfb7
+msgid "|add_user_info.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:52 1e27fd7e6d134a65bf4204d1c6f6f129
+msgid "add_user_info.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:244 ae0e1b32dbbd4a9f98b65653e476b483
+msgid "Capture the characteristics of the fingerprint."
+msgstr ""
+
+#: ../../en/units/finger.rst:253 ../../en/units/finger.rst:264
+#: 23e87d43070c46ba8176c916cf6b5db5 d864c7d2bac24928b26bd040b68c7f18
+msgid ""
+"The comparison level ranges from 0 to 9, the larger the value, the "
+"stricter the comparison, and the default value is 5."
+msgstr ""
+
+#: ../../en/units/finger.rst:255 ../../en/units/finger.rst:266
+#: ../../en/units/finger.rst:268 0982c6adb570488fab33893585edff7c
+#: 1db4b825784e494bb3b5dc258bcacdce cf60d0dedb914cc8b12f5e12f9f4005a
+msgid "match level (0-9)"
+msgstr ""
+
+#: ../../en/units/finger.rst:259 42ee0c3ba4bd4b3186ad2be4cd4bea91
+msgid "|get_match_level.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:55 edadc8b1094e428bbd32600d31ed06ef
+msgid "get_match_level.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:272 09d335a80126457199f835a7abdf7d0e
+msgid "|set_match_level.png|"
+msgstr ""
+
+#: ../../en/refs/unit.finger.ref:58 218e99cbbde949d2a29e5331c18a17ac
+msgid "set_match_level.png"
+msgstr ""
+
+#: ../../en/units/finger.rst:277 4f7dec53b0bd40d198a49245a9d72dae
+msgid "Get the version information of FPC1020A."
+msgstr ""
+
+#: ../../en/units/finger.rst:279 3232a1c606bf485da55ec35715758e48
+msgid "version information."
+msgstr ""
+

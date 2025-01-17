@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/extencoder.rst:2 e4a3a5ba5967454999cdfda1b15c47a1
+msgid "ExtEncoder Unit"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:6 5c1563187c5447f1bc47b975216453d3
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:8 79bf15e553124dcab10aef8084ea5133
+msgid "|ExtEncoderUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref cf2f46beba89438383b4d6468732bc83
+msgid "ExtEncoderUnit"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:11 851035fd7912495aa03139e2d93867fe
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:18 27adbfa247f64fd0bf7b9c51304d85ce
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:20 24e4072570204844a7ce2c13df82bd10
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:41 b81983f318a54786bf81eea71ec09b5d
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:25 22ba7a5185144a599fc9d525d02cbae9
+msgid "|cores3_extencoder_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:29 32bd5da188484a76bdbadb3d36654c16
+msgid "class ExtEncoderUnit"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:32 3433bb8f3d2c483698dd228422a037ed
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:36 890e1a01ebe14b269aa5d5bd7e3d0b89
+msgid "Creates a ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:38 ../../en/units/extencoder.rst:50
+#: ../../en/units/extencoder.rst:59 ../../en/units/extencoder.rst:69
+#: ../../en/units/extencoder.rst:78 ../../en/units/extencoder.rst:89
+#: ../../en/units/extencoder.rst:98 ../../en/units/extencoder.rst:109
+#: ../../en/units/extencoder.rst:118 ../../en/units/extencoder.rst:129
+#: ../../en/units/extencoder.rst:138 ../../en/units/extencoder.rst:149
+#: ../../en/units/extencoder.rst:158 ../../en/units/extencoder.rst:167
+#: ../../en/units/extencoder.rst:178 ../../en/units/extencoder.rst:187
+#: ../../en/units/extencoder.rst:196 05c7f7f83cab4e2893c5680dd1ca2f89
+#: 3160785034e541ba98bbb4546ac80fc4 3e2961b507c148d48410d24d7271fca4
+#: 50330f8ea4b84d62b20bddc1d052c4ea 58b349eed29a4574abffc6b9374052f5
+#: 596a49f345784f6480e8a9dab20ad22f 5c5cc1010d074b449e39fe468bbc1128
+#: 73e0616828ef41ce8a1f34d0ac0ae143 7de50cede4634e4db5739a3637749967
+#: 9bd12b54cfb84b2aa059e123d80bb8d5 aabb08446742415f98a8aeccaf6d40a8
+#: ab0fd9be129740a188fe9d9ba91c4bf7 b3f64a3e9a7745ba8cf9a971c31284d9
+#: beb5695a2e8f488bab789901a69fc62b c04549c121984d4fb9807dcc798113a5
+#: efe0128cad0a45f38c0487f46a3ea5a1 faba2f57b21c4199ad4b5f9c4d1fddc6
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:40 a4ebb96efe924c7f9d66f8b5e458b9d2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:7 fb8fd6b08ecc4edb8aae17e2f36e8e9c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:44 d5d10eb8ca6f44969c27a1e291f595ee
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:48 cba2d0b12026469ca70b4d283fec9ea1
+msgid "Gets the rotation status of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:52 63968e1335e247a79e8822cc4c568cdd
+msgid "|get_rotary_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:9 63a4a42a578e459e9087bca804c6cf18
+msgid "get_rotary_status.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:57 203e00171c9e4b478539a28589da7cd8
+msgid "Gets the rotation value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:61 1ba8a4c3d80a4d378232564a659996bc
+msgid "|get_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:11 4e064fcf46654de2b4f6ede8caee8897
+msgid "get_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:66 a8fd8caca44444baa59728ca571df724
+msgid ""
+"Gets the rotation increment of the ExtEncoderUnit object. Can be used to "
+"determine the direction of rotation."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:71 2cd0507311ce4b2180784b6c9ff802fc
+msgid "|get_rotary_increments.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:13 cf174ebe3a884f3ca47c31ae9c00c6f3
+msgid "get_rotary_increments.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:76 0576f087e61f489781e8b3d6d21b5fb6
+msgid "Resets the rotation value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:80 d48f905dc82946259d661fa7a92ac66c
+msgid "|reset_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:15 9f013170ba1b45e8a7a9a24694296eba
+msgid "reset_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:85 347a06eec31a443eb5010fe6a32d15a0
+msgid "Sets the rotation value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst 31779ed9040943739278851f8096a967
+#: 5762734f15c840d2883acb41da734bc7 61031b9199f2474b9a83bc592ddca237
+#: bb03d9e88f3e47e3b14d276c949d93f2 f211a423352c4eafafd8e2732ea0a3f9
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:87 2900a8dde3544acf8f3bda31f1f4b1e7
+msgid "adjust the current value."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:91 515b26c735d84977a8125c7847200437
+msgid "|set_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:17 c760e3e6412d4678b03db559fa02d3fc
+msgid "set_rotary_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:96 c7f79616ddec4f58a16602794608d629
+msgid "Gets the perimeter of the ExtEncoderUnit object. The unit is millimeters."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:100 d9cb9c5224c5433fa90133f900e041b3
+msgid "|get_perimeter.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:19 f764c207d66f403e80101aa46fb23463
+msgid "get_perimeter.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:105 712e14d2ac3a47079a1af77c7447b24d
+msgid "Sets the perimeter of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:107 7b181febce1c4a689541b15924ba43d3
+msgid "the perimeter of the ExtEncoderUnit object. The unit is millimeters."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:111 d04ecd546d0b4508945ecb0eedbca993
+msgid "|set_perimeter.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:21 abcc5aca40a34f609bf6783d8ca8c61e
+msgid "set_perimeter.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:116 b4ab25271f6b46b78f912e0e5c163270
+msgid "pluse per round."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:120 3d670f6868b84f349f08cb0314a21912
+msgid "|get_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:23 c8f49f0a20f44943a5196069d7e22ee2
+msgid "get_pulse.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:125 83823013945d43ca90efa68de9d7adc3
+msgid "Sets the pulse per round."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:127 2f4ac6f4b4e6430ebcbe2223d924d58a
+msgid "the pulse per round."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:131 ce4633cc7346480a9c882153bfa26348
+msgid "|set_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:25 a48ad08f025d456195452c03de5f3003
+msgid "set_pulse.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:136 0f510a94ff37458887fbc5f9690d6e45
+msgid "Gets the zero mode of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:140 f476700a00b5448d86ceb1f59bef35d5
+msgid "|get_zero_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:27 fa1b783e3f4c4e3fb1347b7a1db4284c
+msgid "get_zero_mode.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:145 c32e5a282b9e4fef8632463ff1dfa109
+msgid "Sets the zero mode of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:147 36d66cad20434dc1b1896cfe55a23f35
+msgid "the zero mode of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:151 74dd268a18ac4647a928f5f5b41a53f7
+msgid "|set_zero_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:29 ff081ca1881947e49150fcb2ad62773c
+msgid "set_zero_mode.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:156 d613599b91774f2ca63a03ea35a38782
+msgid ""
+"Gets the meter value of the ExtEncoderUnit object. The unit is "
+"millimeters."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:160 e174fe7a28744d11be3ce9bb78dc1b9b
+msgid "|get_meter_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:31 8925afd2ca0d43aea934ac34a85af957
+msgid "get_meter_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:165 b0dc39ba7c0f43d49455ea36e2f24f6b
+msgid "Gets the zero pulse value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:169 f5a51699679640148a597c602bb39adf
+msgid "|get_zero_pulse_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:33 4ee4fde2a71e4dfa90b9ac802f7a142e
+msgid "get_zero_pulse_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:174 985807e9738d4e169bb38bf1a9cb6bfb
+msgid "Sets the zero pulse value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:176 bdf90e828e464f10ae0d4eefa56cb1e9
+msgid "the zero pulse value of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:180 157b470621294dc0beec30e8c4845cf4
+msgid "|set_zero_pulse_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:35 543ef835dff243cb99e935eae5d497f3
+msgid "set_zero_pulse_value.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:185 097848997479445d87025b98d15a08aa
+msgid "Gets the firmware version of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:189 db52e9fb205c4c128749b1157b686470
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:37 c4f507328f3e430b81fcd5c254b97312
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/extencoder.rst:194 e9cd5c16816441c68b4a990bb8552386
+msgid "Sets the I2C address of the ExtEncoderUnit object."
+msgstr ""
+
+#: ../../en/units/extencoder.rst:198 c4344654aec04cfe920bb56903ca0042
+msgid "|set_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.extencoder.ref:39 07dd087a3b9445d2bcbcce44db5bcb3c
+msgid "set_address.png"
+msgstr ""
+

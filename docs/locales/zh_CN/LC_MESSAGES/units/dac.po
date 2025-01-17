@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/dac.rst:2 810115cd34b440fdb37915f37646bd57
+msgid "DAC Unit"
+msgstr ""
+
+#: ../../en/units/dac.rst:6 b53de5991d104d2fa9e6448f59bd1ca0
+msgid ""
+"The `Dac2` class interfaces with a GP8413 15-bit Digital to Analog "
+"Converter (DAC), capable of converting digital signals into two channels "
+"of analog voltage output, ranging from 0-5V and 0-10V."
+msgstr ""
+
+#: ../../en/units/dac.rst:8 1789ad65b0444b1cad8e4e5865cf7968
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dac.rst:10 d965890e84f641f4a66f879b90effb1d
+msgid "|DACUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref 7b2b917fb07143858ca4c00f33b2bd93
+msgid "DACUnit"
+msgstr ""
+
+#: ../../en/units/dac.rst:13 c7af60493dbb48bca4958d8d0586a7f8
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/dac.rst:20 dcc920186a2146c4a14af0254bd7ad9f
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/dac.rst:22 871afd74832a45a3b4de5c6e94f99e02
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:7 c071cb02c5174c5390f8d24ec36d96b0
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/dac.rst:27 69418a70c89348e6899bcb755956c167
+msgid "|dac_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/dac.rst:31 a4c10d1da7764d42b28a61363f96cdf2
+msgid "class DACUnit"
+msgstr ""
+
+#: ../../en/units/dac.rst:34 cd684ae7a5d6493684b65026fb8a547a
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dac.rst:38 9fcebbf153574bae9301bfb4706f0afb
+msgid "Create an DACUnit object."
+msgstr ""
+
+#: ../../en/units/dac.rst 1c1b8c51430148cd813766babcb1e924
+#: 9b97b2ea1c4f4dadbcb269cfdfe24e41 a10577322831429c83f384126130dc90
+#: f5ca3fb78cb94a11bbe4fb085f1977cd f9bb64c4e39a46aca27c4c041d106811
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/dac.rst:40 9d2f8664b9f848a580aff720403057e4
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/units/dac.rst:41 ada77d631ed94daeae74827577a5f1b5
+msgid "I2C address"
+msgstr ""
+
+#: ../../en/units/dac.rst:42 a839d3c0dfba4e199b2796d1e30e3ca6
+msgid "Supply voltage"
+msgstr ""
+
+#: ../../en/units/dac.rst:43 14032c3cc4e7473b8fba33b82296d9dd
+msgid "Output voltage"
+msgstr ""
+
+#: ../../en/units/dac.rst:45 ../../en/units/dac.rst:61
+#: ../../en/units/dac.rst:72 ../../en/units/dac.rst:83
+#: ../../en/units/dac.rst:94 ../../en/units/dac.rst:105
+#: ../../en/units/dac.rst:116 ../../en/units/dac.rst:127
+#: ../../en/units/dac.rst:138 ../../en/units/dac.rst:146
+#: 021d66e906364026a56168f46f4b9cbe 54dc4e8197714b599556d8f283711707
+#: 6b7d0ae476384488a045899547e5553a 6f3934109947412485b3c29224d1d581
+#: 8c0915937d7244108591fd6193186663 b8decd17dd834fe1b07f9813fb54ff5e
+#: d001cedd9e364cc596276683247d9e5b d8f9fe4eda064a94afcd29b47262ce08
+#: e302293d514c43a28f5472c12933da53 f2d595f4b42645c280ed5d5e01168a1b
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dac.rst:47 0de30ec221df466691498096e62dfad0
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:9 f2806bee5017489e991843a7750b11bf
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:53 ef219cc5b740477284cf8243ba61496f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/dac.rst:57 705beb83ca4c46fcb3d92c1ab5ca310d
+msgid "Get the current value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst 5ecafa3faade40cab6766c0dc54366b7
+#: 848ff2e1ad1b4b0a88276c222766596b bdce3dee71d84edf8ab5a566c9cd393a
+#: be095f2beb944561999d364b17fb6a9a
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/dac.rst:59 ../../en/units/dac.rst:81
+#: 87dd5f508adf4b7da83f7578c72402e4 998b03ad6b624c92a0bb5f1614476a79
+msgid "The DAC value as a 16-bit unsigned value."
+msgstr ""
+
+#: ../../en/units/dac.rst:63 a4bcd88e86a64f1286fbe77108b79c39
+msgid "|get_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:12 3b8b40381a6347eb94e71f8841b9dced
+msgid "get_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:68 996e1b91f9d84453a2ff9ab8b4fa979d
+msgid "Get the current voltage of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:70 8733d110fb8242368e7af41c3ecedca7
+msgid "The DAC voltage as a float."
+msgstr ""
+
+#: ../../en/units/dac.rst:74 4c6a98c383c448299a8e439853f57816
+msgid "|get_voltage.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:15 329e25e8a6104783aaef2f704e43d3dd
+msgid "get_voltage.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:79 df23b07d0e43494986e3800bf6ea070d
+msgid "Set the value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:85 e5d01380988d4fa08e9d7454482c63d6
+msgid "|set_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:18 95fc8294f33942f5b4c9eb4c90b04024
+msgid "set_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:90 456282f613f1450d8adfc0849d0c6d0d
+msgid "Set the voltage of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:92 5af8fc487b2e4a4eb0680a91c8f39662
+msgid "The DAC voltage as a float. The voltage must be between 0 and 3.3V."
+msgstr ""
+
+#: ../../en/units/dac.rst:96 7b23268446834b109c703f4dc178714b
+msgid "|set_voltage.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:21 ee476a656b1242a2a73eafcce14b24a2
+msgid "set_voltage.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:101 7f287561372e4558949b74e48c5e25d7
+msgid "Get the raw value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:103 ../../en/units/dac.rst:114
+#: 84ef1ef064674e168b90ce0ba0e81d67 b64f5eda031645a1a7c09c5c22846af3
+msgid "The raw DAC value as a 12-bit unsigned value."
+msgstr ""
+
+#: ../../en/units/dac.rst:107 34c70d29f3c24c6a96e9bf0eacd073bc
+msgid "|get_raw_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:24 0c396c3bb2d242e285f157e9c0f4e71a
+msgid "get_raw_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:112 a0a00b37101d441e98982682e593a9da
+msgid "Set the raw value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:118 59152bc7fb4146e4afd66ca4c0344ffd
+msgid "|set_raw_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:27 5721083714b7467b85d19ab192bd8181
+msgid "set_raw_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:123 5d5e4d90b0da4aa09006aedd754fe6d3
+msgid "Get the normalized value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:125 ../../en/units/dac.rst:136
+#: 5db2520a66744bc5a0e84913d530790e ba00e13aa5fc4daf8a3bad225736eab2
+msgid "The normalized DAC value as a float."
+msgstr ""
+
+#: ../../en/units/dac.rst:129 ed279639bf6544a7bb84884201093ca0
+msgid "|get_normalized_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:30 d69a02c8060f4ddda1e5757d046102a2
+msgid "get_normalized_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:134 3b27846a5d324dbbabb1b21bdde8ca29
+msgid "Set the normalized value of the DAC."
+msgstr ""
+
+#: ../../en/units/dac.rst:140 acb2643288304263a3a6e4e10ec2063b
+msgid "|set_normalized_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:33 5c7d1cd44f8c41a3bc11f0ee7e1f0a91
+msgid "set_normalized_value.svg"
+msgstr ""
+
+#: ../../en/units/dac.rst:144 1d7bd49b2c0f4de8aa0c5ec8875afa8c
+msgid "Save the current DAC value to EEPROM."
+msgstr ""
+
+#: ../../en/units/dac.rst:148 9162483c9e4a452eae61ae290e5663c4
+msgid "|save_to_eeprom.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.dac.ref:36 f6eb3cc994e34b009fa5656bda30a3ab
+msgid "save_to_eeprom.svg"
+msgstr ""
+

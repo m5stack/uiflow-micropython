@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/vibrator.rst:2 b1b2ccd5e4e64017abb0f1c4ff46cef0
+msgid "Vibrator Unit"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:7 59c88a7b683448058872b5469987a0d1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:9 a7eda4e574d1430883e1ea01d155c673
+msgid "|Vibrator|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref b103efb5b7c34e4eade78bae8414aa08
+msgid "Vibrator"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:12 a470e307328a4b08929b978cb3a1f20b
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:19 3a1871069a484fa294f27125c508d2a2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:21 ff9afa5a206d4c6ca8947488d05c9cdf
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:6 46f710a4e3e247458f60d1591ce55a98
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:26 2681f5c398364eb59b3364fbe242dfeb
+msgid "|core_vibrator_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:30 aa2b1c164ea74f9fad7c9cf47663ece7
+msgid "class VibratorUnit"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:33 a5ac0dc9396e46918300837d29fc4e61
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:37 6dea0c7be17948ef914a715f81ef0228
+msgid "Create an VibratorUnit object."
+msgstr ""
+
+#: ../../en/units/vibrator.rst a1f3c77460a349aaac64c2ea37b33e88
+#: beeecd26cea14a2ea88236cffa7ef284 e014ce154f8a4f56b8a9532ddada7a4f
+#: fb6c83be273e43868fd8232516f81a2f
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:39 ed6ad468e99849958a99e96af606257e
+msgid "The port where the VibratorUnit is connected to."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:41 ../../en/units/vibrator.rst:57
+#: ../../en/units/vibrator.rst:68 ../../en/units/vibrator.rst:79
+#: ../../en/units/vibrator.rst:88 ../../en/units/vibrator.rst:97
+#: 726eca67c0474273b260ec95b6398cd9 7cd744302ab94a12a1c2e7083f1edf93
+#: 945547a0f545420286ae09b3cd849a48 c40ca8670db540688dfb13642c13c87b
+#: e71f557c2cb74f05977c2c407d1d6aac f55aa4c94fed45eb8ef590a7c15178a3
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:43 8b58eb525b6745fb84a6b6a4e9a7eff0
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:10 cf683b0f37934443862ec5a4d49fb514
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:47 ce4be9bdc12a4e2981e8d83340d35377
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:51 552a699b8e9b4eea89d4474fe72796de
+msgid "Play the haptic effect once on the motor."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:53 ../../en/units/vibrator.rst:66
+#: 4e7ca5c7f4db46f3a02c0c09d0228571 c089fd000bb648139f2ec5d482ce07f4
+msgid "The frequency of vibration ranges from 10-55Hz."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:54 ../../en/units/vibrator.rst:77
+#: a4fb06d958fa4f81a6dcbf24042751b1 c29f7ae8f3cf4442bb9b15a3a3b6876a
+msgid ""
+"The duty cycle of vibration ranges from 0-100, representing the "
+"corresponding percentage."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:55 aaf31b032b3046838ac077098fe01f81
+msgid "The duration of the vibration effect, in milliseconds."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:59 7b1def7005ef4be88e22c5559263864e
+msgid "|once.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:13 9ac195fdcc874a4090c56c632673a9ef
+msgid "once.png"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:64 81ea3cdbd80e4e868082b893f8d9c94f
+msgid "Set the vibration frequency."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:70 d968f90e26134c6c9d58f3623e600feb
+msgid "|set_freq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:16 4c80f55450864acca118d43f2936265a
+msgid "set_freq.png"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:75 14a44d50e2b04f6cb2af086402a7bf25
+msgid "Set the vibration duty cycle."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:81 f408674371b342b392336f422643c69b
+msgid "|set_duty.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:19 c2101a0a37d64413899171797547e865
+msgid "set_duty.png"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:86 d9c01237c34245e38692b3a085ef367b
+msgid "Turn off the motor."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:90 18a590165c754741bfa08f62592c3b94
+msgid "|turn_off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:22 d8ec27822d124be193cfc569a8c3b440
+msgid "turn_off.png"
+msgstr ""
+
+#: ../../en/units/vibrator.rst:95 726c822b81484516b2ee822dced38282
+msgid "Deinitialize the motor."
+msgstr ""
+
+#: ../../en/units/vibrator.rst:99 62a3f4bb9e0c46ad91e11678d7f4d3f0
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.vibrator.ref:25 f08ed8724a7b4fd8b60f2b7cd7873c96
+msgid "deinit.png"
+msgstr ""
+

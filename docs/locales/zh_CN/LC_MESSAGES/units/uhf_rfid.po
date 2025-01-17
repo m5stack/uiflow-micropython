@@ -1,0 +1,1248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/uhf_rfid.rst:2 26fd4444e0a748e6bb5c5f79bf03ce87
+msgid "UHF-RFID Unit"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:6 6ebf9c2491324683a05c698ecc28ecf1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:8 6ba363eef3694bd88c5a5fc15e0b06a8
+msgid "|UHFRFIDUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref e6ed2fda86884d6dae804aaef911d87f
+msgid "UHFRFIDUnit"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:11 b8fef52b77144fbca2f74d3252cb83f9
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:18 ed1056208c034be6bfd3a524ceb77cb4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:20 6210eb672d734947ac093297a64f68d0
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:6 f643fb9333f049bfa90aa8243c9dcf6b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:25 ff1ce19be81245edaae17d05d1f95d5f
+msgid "|cores3_uhf_rfid_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:29 be3c5f92e45546a8a38256869d38297f
+msgid "class UHFRFIDUnit"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:32 ee10fcd3b567493290d66345821c32af
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:36 ddd3a1d3f22048598b4f66b1294e59a8
+msgid "Create a UHF-RFID unit."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst 01dedf6943044df5b494eb5f8f6fb5b4
+#: 0681c9f91b164636877e8fda5cfb893d 0ed55077629d43c58a18a7ef522f7324
+#: 21b5e6c636094df8b2ecf592a9308db9 2378d507db4d4307bd4429cb9e008ade
+#: 26f68b1d89264e21a18c5227902049cf 2df2f89ab50644eea1a890e69bdd03d0
+#: 41d9a97de4da4ac38090d5267f8bebdd 486b8267d7f04ce8ac58c37a81d88513
+#: 5006a7cb9d1a4722ab8e39c6e40b6fca 50abdf15aac6456c885fc4a62d7464e3
+#: 50ad327342024f208a13efab216f0916 628dd2ceb87a40eb983cc79dad7b1ab0
+#: 6514c7039fe844c891647db1bca6d624 677f9a3e027848ada6fb6f7ff9560339
+#: 681f22556ba54f7e993bc8b9271fa42a 69ed8cc5da0a47a0bbb6fea193ad44c0
+#: 99fff19d67384d7a8d9a4f2d6a2750a3 9ec536e19a054f26934181b9fc025ad0
+#: a86b0ef6f5fd490e9398e29ebc9feb58 a9d778d38d1b460d9af7c716eec02f8b
+#: b69f7080168240188ded8aa7254490be bea3f194fc954b01a4c022b2963d201c
+#: c43ec3ca96364a1597ced5fc50ad0a5b cebff764d2004c07990efd14c1ce1877
+#: d04074baa6874cbaa950c1021490d0e3 d67df0212bda4cc19ca1d432cf175c3b
+#: e4593c688c79432c8e77a32471bab932 ee9c624d9fe04aed91407a6d820a9d48
+#: f5a7e05049894fc184a214f0da55b270
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:38 9ee4cd887ee54761b6228e3ffbb3121d
+msgid "The ID of the unit."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:39 a235d90fac944d05b416390fdaec3e8a
+msgid "The port that the unit is connected to."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:40 486171a7d74b4a42a1c17c93556c3473
+msgid "Print the log information. Default is True."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:42 ../../en/units/uhf_rfid.rst:68
+#: ../../en/units/uhf_rfid.rst:90 ../../en/units/uhf_rfid.rst:111
+#: ../../en/units/uhf_rfid.rst:134 ../../en/units/uhf_rfid.rst:145
+#: ../../en/units/uhf_rfid.rst:158 ../../en/units/uhf_rfid.rst:179
+#: ../../en/units/uhf_rfid.rst:199 ../../en/units/uhf_rfid.rst:210
+#: ../../en/units/uhf_rfid.rst:223 ../../en/units/uhf_rfid.rst:236
+#: ../../en/units/uhf_rfid.rst:247 ../../en/units/uhf_rfid.rst:260
+#: ../../en/units/uhf_rfid.rst:276 ../../en/units/uhf_rfid.rst:289
+#: ../../en/units/uhf_rfid.rst:300 ../../en/units/uhf_rfid.rst:313
+#: ../../en/units/uhf_rfid.rst:326 ../../en/units/uhf_rfid.rst:340
+#: ../../en/units/uhf_rfid.rst:351 ../../en/units/uhf_rfid.rst:362
+#: ../../en/units/uhf_rfid.rst:373 ../../en/units/uhf_rfid.rst:384
+#: ../../en/units/uhf_rfid.rst:397 ../../en/units/uhf_rfid.rst:408
+#: ../../en/units/uhf_rfid.rst:422 ../../en/units/uhf_rfid.rst:440
+#: ../../en/units/uhf_rfid.rst:458 ../../en/units/uhf_rfid.rst:470
+#: ../../en/units/uhf_rfid.rst:481 ../../en/units/uhf_rfid.rst:494
+#: ../../en/units/uhf_rfid.rst:512 ../../en/units/uhf_rfid.rst:563
+#: ../../en/units/uhf_rfid.rst:586 ../../en/units/uhf_rfid.rst:607
+#: ../../en/units/uhf_rfid.rst:624 ../../en/units/uhf_rfid.rst:639
+#: ../../en/units/uhf_rfid.rst:653 ../../en/units/uhf_rfid.rst:668
+#: ../../en/units/uhf_rfid.rst:682 ../../en/units/uhf_rfid.rst:695
+#: ../../en/units/uhf_rfid.rst:709 ../../en/units/uhf_rfid.rst:723
+#: ../../en/units/uhf_rfid.rst:739 025d07af8d54400b9d533fbded2ea794
+#: 147ab96af3ac44a5afba8ff403a78d71 18843b4c830448c6861f9cd9ab8c2064
+#: 1954a675f5964df4827ddc4546d8e357 227d72b4f21b430d9db28b6754171e7e
+#: 24d5d957e0b6406c92f297a13d1fde70 277ee79b19ac4d45b2f361f8199e54d5
+#: 2dc1b9671b624483be39b307be40dd19 33dd8d3eef574db2aee77ed7c0469ad6
+#: 408443b1a9984d64b808d7b108e7ffa4 45f433dee4994046a6ef7ba02a7f371b
+#: 5408c30979be402bb64f51b3f663cb2e 5d2d22e4f3334b269a88e0979f7fcb04
+#: 61e5cda0f7b94ebda174eb66fdb11823 68323feedc8945eeaf7454c885329587
+#: 6a0a5d9fbf1f4bb4803c424a418abec3 6b30901c44d846af93598e6cd51fde2c
+#: 6e917e9404bc45e6b6f1f8d53282e8bb 7349eb631a8041c3b07c1bb7c62e460e
+#: 7ff215f88106424fbbc424ad3694b9cc 894933c02e214983b59039de4ed9401f
+#: 8bb62c7de497477294cb2bfef9a33887 9139acd1473c42edab8a96105e01c5ce
+#: 968a3d6795fe497d8d91c600c3ab36be 9886c26d90074ff69af4533d66b3f88e
+#: 98d943a4803f49108dff0692e74167ae 99fb05d47b33482d995bac13acbd2e09
+#: 9bf2554858fa47c0b7a344d2f69d9889 9d2b49ff769a4b6f91022abd749d5ad5
+#: 9dff4da6964149a8aa9b7d39703d3d8e a0a1f014b0a84a5ab8bb42bec7d8ac1a
+#: a50428b17da546658b199762f8ef5815 a71baecd187b42609909870066c520bf
+#: af6167bc6072417aa1017f5197d17840 cf2369a846f14355af3dc66728652763
+#: d6669bde96e04b31a5f0d35002c8e91b df2b46ba10eb44a499488dfdcbd1d806
+#: e3896d5a3ada4dbe94f214b1031f39cf ebd688860d674ce9a584f062b1059386
+#: eee969468d684b15a32fce14d1a9c31b f091b1b385b2451899dbbbf011af426c
+#: f1e124edb3d545d4a12ed8f39a5f77c1 f3c9bbf5324942bb80db2c8ea9be056a
+#: f7be5f25e3b14b5ca8e550bd26cd2476 feba61aba9e14fd89e3f127916964bf1
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:44 36a21c1aaf4d44cf9cd160fb1372f7af
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:8 8fc2c3cc98a64a69b7bee758154471b2
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:48 e097c9cb89f84072851792164d6101c4
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:51 ac7e2ee12ee2413fadda12fc18b5d387
+msgid "Demodulator"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:55 df7c3f2cb7b041e68a600fa0c6b7e3eb
+msgid "Get demodulator mixer value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst 05f2c71d0e25484fa11c69a21a72b414
+#: 136c96d9c184492fad77657deb182024 3edfce4be6c6491e87cd37fe1af93e8e
+#: 66ff0027f1f6447ea4f18787070b56ba 879a7236300b4f8bb1e3ef8d06ef5dcd
+#: a1b7e0823f47487493e88e3a739408ac ce3dd3c3ddde4555b4d3169338b0bf97
+#: dc47a06eb123416894656b053fc53785 ebbffee7bb474542a5f0bc20e61aa0ba
+#: eebd43cbc50745aca75b61b4984baf78
+msgid "return int"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:57 ../../en/units/uhf_rfid.rst:77
+#: 40be5fa538454415a4176e0d11e4c7fb f8a082b7b0ec4fd68519db97fd87e4f5
+msgid "demodulator mixer value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:66 ../../en/units/uhf_rfid.rst:86
+#: ../../en/units/uhf_rfid.rst:109 ../../en/units/uhf_rfid.rst:130
+#: ../../en/units/uhf_rfid.rst:177 ../../en/units/uhf_rfid.rst:195
+#: ../../en/units/uhf_rfid.rst:436 ../../en/units/uhf_rfid.rst:527
+#: ../../en/units/uhf_rfid.rst:535 ../../en/units/uhf_rfid.rst:543
+#: ../../en/units/uhf_rfid.rst:551 ../../en/units/uhf_rfid.rst:559
+#: ../../en/units/uhf_rfid.rst:578 ../../en/units/uhf_rfid.rst:601
+#: 1507bdb12da34cf39f3171a46fb7024e 1d81d6fbcc2b486b9e8204ecc175c336
+#: 269ef2fa9c6c45449b173a949fa5d8f8 26d27cf64cb342d2ad2c899ecde8a89d
+#: 33aadcca0fdc4a7c87fc86143109fb24 58683779bc5f4451ba30e90272835b17
+#: 98a949944f7c4a2387a8a18123f47da2 9afe77db213c4215af430e228226780a
+#: af30759ef5b44100965bb7c791ca1352 b0c68a441c524a45a96da171e0a2b425
+#: b92529d0c3e54e6898dab949d15a7f4e cf1988aaa41a44ec873297b4683d945e
+#: df496799704745a0b9bcc819ae081757 e23517bf46a4482bac90874f1b1ebf30
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:60 ../../en/units/uhf_rfid.rst:80
+#: 196bb011cc9343d8967e1662ff66b785 53a02a43ddc9490a93055887b893503b
+msgid "0x00: 0dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:61 ../../en/units/uhf_rfid.rst:81
+#: 60e1bdbea8d9435097fd6746ec3e6d7b d9136d2e0bc94914829a796d1e3c05d9
+msgid "0x01: 3dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:62 ../../en/units/uhf_rfid.rst:82
+#: 6963d8a1f21d4915ab1fa9e877312d7c e25bffc9c9a24d41845f3379e67da4b4
+msgid "0x02: 6dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:63 ../../en/units/uhf_rfid.rst:83
+#: 30cf0c7516a24d4d86b1a42dbdcb7262 855b1faa1d414db289ab06bcc46e9e52
+msgid "0x03: 9dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:64 ../../en/units/uhf_rfid.rst:84
+#: 7770e9039a804a069b2cb21c02aa00d7 dc61f7f8fd884225ab34fe9a7c00786c
+msgid "0x04: 12dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:65 ../../en/units/uhf_rfid.rst:85
+#: 49fb2e486d1e4b6ca03fec0d415c9e4e c55ce75d5192451da59303adfd62cb3b
+msgid "0x05: 15dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:66 ../../en/units/uhf_rfid.rst:86
+#: 22007455746144a9bf5250d12471665a 53c99a5082604a69ab275746558b2243
+msgid "0x06: 16dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:70 1de529767bd9467e81039b02bc43d86c
+msgid "|get_demodulator_mixer.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:9 a1bd576075814dba89dbd96055f59a30
+msgid "get_demodulator_mixer.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:75 dc3fb88828dd49a0ada55f255bffbaa9
+msgid "Set demodulator mixer value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst 016e06a30238460ba9a960830ff88102
+#: 07c87e1d1b0447fca9b4288284dd866a 2e91c79aa93e435aaf0015302b40d7a8
+#: 2ed49ea4a40b428a89182fbe77316d88 39325854cd12431fa77e1859e1d45d0e
+#: 6360e4e7024144f5ab4d2535bf8426e5 6bfb132369a24a3b847fc022953279ff
+#: 74a49a4a57ee48608763bce302f39fcf 7df8a9a0b27b482c822b87f2124ed3ec
+#: 7ea618f92b164e9780918816e1fae4ce 84be4c5494b348e2bbedebcf6ab1d3da
+#: a4b8f38c11cb4c5288865dddbace5633 aeb3831580b44fa18ca86f6d5fa87250
+#: b869120074dd4a1ba58505d640caffd4 bd592a2fa7c743ec84429412d3a647e4
+#: bde6b847332249869fc3cc13196aae5e be12e0e8acfe4eb9822e182aadd84d0e
+#: c05b17bb06594aebb292b0c936938100 cb451de46b654980b44a73bdbb00be1d
+#: d01aa5f2b6bf491998278345d89409c8 df083f0bc60f4a308a6a6fa0ca4cace2
+#: e5810fd69b1b492b876ac808f0aceabd ef6d73e586e24849bafd4d185eee9c7c
+#: fb0805b7d02d4c29960d62daf8ee7082
+msgid "return bool"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:88 ../../en/units/uhf_rfid.rst:132
+#: ../../en/units/uhf_rfid.rst:156 ../../en/units/uhf_rfid.rst:197
+#: ../../en/units/uhf_rfid.rst:221 ../../en/units/uhf_rfid.rst:234
+#: ../../en/units/uhf_rfid.rst:245 ../../en/units/uhf_rfid.rst:258
+#: ../../en/units/uhf_rfid.rst:311 ../../en/units/uhf_rfid.rst:324
+#: ../../en/units/uhf_rfid.rst:371 ../../en/units/uhf_rfid.rst:382
+#: ../../en/units/uhf_rfid.rst:395 ../../en/units/uhf_rfid.rst:406
+#: ../../en/units/uhf_rfid.rst:438 ../../en/units/uhf_rfid.rst:456
+#: ../../en/units/uhf_rfid.rst:492 ../../en/units/uhf_rfid.rst:510
+#: ../../en/units/uhf_rfid.rst:637 ../../en/units/uhf_rfid.rst:666
+#: ../../en/units/uhf_rfid.rst:707 ../../en/units/uhf_rfid.rst:721
+#: ../../en/units/uhf_rfid.rst:737 16cf20371a7b457ab9df541f16116b08
+#: 2b2a7432b68346ec8f3694092a25db63 3759799af02047b9b7c87b25a7715c78
+#: 4a96d06568774bfea45c943d48b89661 4b6a888950c84687974d5846c19f298f
+#: 51a2dc85b96341588bd0eb055207d5a3 685fdd930ffd4b968dbba349c859b3ec
+#: 6b0635ed3806414494b06bc1b1ba2c8a 6e371fe4f7794d5db31dcd8129b512cd
+#: 7661691ddf9941ccb01fb42ff1a82bd0 7ba921acd0c944b58627ef79330d7be6
+#: 84b8bfd12b7f49aa8dae3c4628af5d2b 8730eafd8505431eb00b33bd43d676b2
+#: 8afb093c46534bb582ad0d923950701c 972807d793504aa0a4f80c8aa5434b8b
+#: 9b8827138af44e4cb63893295b3293ac add9f621724f40098a05b79fe1ed6cac
+#: aea4599fe2504338a20241666c8db8be d335971d88c24651b7e54014610221cc
+#: d467d5af3f0046578c575dcecf4d52a0 d6b9ccf642b346c6aa94decfd7c453bc
+#: e1bb569cacaf4d7fae69efaa80584c74 f9e8b5e4dcda42eb84ff88198e37ccd0
+msgid "True if success, False if failed."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:92 9e82a21f71264f50ab29f83a64c38773
+msgid "|set_demodulator_mixer.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:10 bdca71dbe00e41d6ad873ec87a384f7a
+msgid "set_demodulator_mixer.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:97 3bdb6b6348b74329879ce27f5445307a
+msgid "Get demodulator amplifier value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:99 ../../en/units/uhf_rfid.rst:120
+#: 0b4dd9549862472e86f9e6c76aa7e605 7c6b87e0742c487fbb3ef4965933e9dc
+msgid "demodulator amplifier value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:102 ../../en/units/uhf_rfid.rst:123
+#: 3dc1e489ecf442d9b73e0692c41f0eaf 9e4ad8cfcdf647f5a2776478f81ac8b0
+msgid "0x00: 12dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:103 ../../en/units/uhf_rfid.rst:124
+#: 5114f00e9e8140bb9cf1094f80a044ae 80505aa5e69148b88b1c7652464a294c
+msgid "0x01: 18dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:104 ../../en/units/uhf_rfid.rst:125
+#: 0e843d5e10464b198f2de791533d74ce ece906321539420eb7883ea44b6ea2b1
+msgid "0x02: 21dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:105 ../../en/units/uhf_rfid.rst:126
+#: c78169033d73477dab3bb2ac88e724a8 d7df3357dffb43e68aae6afc022f14bf
+msgid "0x03: 24dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:106 ../../en/units/uhf_rfid.rst:127
+#: abe72acfacf2479992cf550bc18e337b e6026eadd2234768abfc56501f964176
+msgid "0x04: 27dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:107 ../../en/units/uhf_rfid.rst:128
+#: 818d8ed145c4483189527a9caa3ceecd 8ad8fdafa4c842f7a0e78892d091ab1e
+msgid "0x05: 30dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:108 ../../en/units/uhf_rfid.rst:129
+#: 477ff0b6ef9d46a2bbeed8c868ff00a6 80b5a6387bb6450cbd7d681893603e12
+msgid "0x06: 36dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:109 ../../en/units/uhf_rfid.rst:130
+#: 2f6570fef1194d6c8dd5e2b0468cb297 9708f3949241433994191bdb8405fc73
+msgid "0x07: 40dB"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:113 418095c8f63b48d58c334c0b06be2bfa
+msgid "|get_demodulator_amplifier.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:11 f36485241f84483aa513b80b5d5cedca
+msgid "get_demodulator_amplifier.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:118 2dc621a18f50422885621e0a1a502847
+msgid "Set demodulator amplifier value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:136 f7db4937c611436492f45e6ab2d9c596
+msgid "|set_demodulator_amplifier.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:12 b0e4c7c3dd324c45b6a78f2c41226b1c
+msgid "set_demodulator_amplifier.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:141 3d1b1f85357241e9b0d7027c3b806eba
+msgid "Get demodulator threshold value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:143 ../../en/units/uhf_rfid.rst:154
+#: 6fc24fa9648c454da8fe9434099c77ab b2bb0aafcee3426ab10cd5ce8f5d4459
+msgid "demodulator threshold value. the range is from 0x01B0 to 0xFFFF."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:147 e1a5ef3b86c8479b9af0a7e71b2d7d5b
+msgid "|get_demodulator_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:13 10605c35bbf94198bb45043996b9c5c1
+msgid "get_demodulator_threshold.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:152 cf410a26bdf34e8195a29a62497498d2
+msgid "Set demodulator threshold value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:160 b0bbaeb0655948ee92357069302e3433
+msgid "|set_demodulator_threshold.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:14 a8ebb8d77bab40aeac91536c27067ec3
+msgid "set_demodulator_threshold.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:164 17c979058dbc47e1872aae2423e7e06d
+msgid "Working"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:168 417a7a2e9f2441d597cc23a9da706160
+msgid "Get work region."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:170 ../../en/units/uhf_rfid.rst:188
+#: 785cffe936234417ba74b8264954a916 96f8f89dfb7b45818603b35d5fe969a5
+msgid "work region."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:173 ../../en/units/uhf_rfid.rst:191
+#: 115544b602e743099155bbc75c23d9dd 465fffdc2acd4f708fcfacde3151f4ce
+msgid "UHFRFIDUnit.CN_900MHZ: China 900MHz"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:174 ../../en/units/uhf_rfid.rst:192
+#: 5a22f6bb08e24da3b21c411337d6a8fc ba1bbfe982204699a544c41c0c856586
+msgid "UHFRFIDUnit.CN_800MHZ: China 800MHz"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:175 ../../en/units/uhf_rfid.rst:193
+#: bb227258668c40d69b1016b9bbfd3368 e0bfa399b06b4d6d98daba468be16959
+msgid "UHFRFIDUnit.USA: USA"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:176 ../../en/units/uhf_rfid.rst:194
+#: 8a75a366dce84a18ade41f77d75bc227 e7ede2187fec4dc692bf33d435fb6c3e
+msgid "UHFRFIDUnit.EUR: EUR"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:177 ../../en/units/uhf_rfid.rst:195
+#: 04e391335a214270826695b49779b127 ae155a8c547942d1a7d14ec79f4b0ddf
+msgid "UHFRFIDUnit.KR: KR"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:181 9b1a584d0a4b4a358ab787ddaeb2a62d
+msgid "|get_working_region.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:15 9d429182337245598f6bbff2aba458ea
+msgid "get_working_region.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:186 823f79f400694c678462dcdaea7967a8
+msgid "Set work region."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:201 07c98b501bd54c34bfb4c3bf2a9e31ef
+msgid "|set_working_region.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:16 aa4d46c4c86a44c2849d5d22a49834bc
+msgid "set_working_region.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:206 35c478e7374647a483dd0991c8dd6e57
+msgid "Get work channel."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:208 ../../en/units/uhf_rfid.rst:219
+#: ../../en/units/uhf_rfid.rst:232 ../../en/units/uhf_rfid.rst:272
+#: ../../en/units/uhf_rfid.rst:285 4a2f1940c9ab4dbd95d7878dcc70a4b5
+#: 58d66be9ad8c4e02b1ea49e134f61f33 8a8ae6d036374e69a53f69b3819896e4
+#: a2b606436a6344438deebfbdcdcf5528 fd8d2eeedc9b43a58acadb3246bd5d6c
+msgid "work channel. the range is from 0 to 19."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:212 39d85b44035d4a90b83027241f3a93ab
+msgid "|get_working_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:17 6d6d871b32124077947b132c96c3cb78
+msgid "get_working_channel.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:217 7d65148c131e4ddeb77a770733d24973
+msgid "Set work channel."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:225 441c3f37967e4b8b960c5fcd1e6fa119
+msgid "|set_working_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:18 09e41fc23f5f4284ab078e824edb811c
+msgid "set_working_channel.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:230 c34577922eb540fbb9f64c3387ecf89a
+msgid "Insert work channel."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:238 213d19f0f0a442bb9886a7627ca8f287
+msgid "|insert_working_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:19 33525239d8a147f5ae29d2038175b431
+msgid "insert_working_channel.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:243 c1ca77927e2c4c94a5cc3a2be44f28fa
+msgid "Clear work channel."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:249 dbce31bb1f7e40e19f4d30a18cabc33d
+msgid "|clear_working_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:20 7227692149c04c32927be005a9dcc7d9
+msgid "clear_working_channel.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:254 073aabe6499340ef9ef14fdb838f76b6
+msgid "Set automatic hopping."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:256 3f90697451b9442281e67b59093c2e4b
+msgid "enable automatic hopping."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:262 94229d900f234e3d90df4d0572834e53
+msgid "|set_automatic_hopping.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:21 b22bd6fa8d2944aeaff5051f483486e3
+msgid "set_automatic_hopping.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:266 eff872684ff7457f85245ed2059db04c
+msgid "RF Power"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:270 8f83776d6d814bc2b3d3f16f1145cddb
+msgid "Get channel RSSI value."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:274 7dc081bc1791451fa04a0c6b155d6fb4
+msgid "channel RSSI value. the unit is dBm."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:278 e8a844b714d2421896ed2e4f4baa6966
+msgid "|get_channel_rssi.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:22 7ed1c80ac6cc49eda7899044ac7d69de
+msgid "get_channel_rssi.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:283 a6c4de0199094f13a6687ac5a374abf2
+msgid "Get blocking signal strength."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:287 be4201e82c024b84a55ca7e1120797ff
+msgid "blocking signal strength. the unit is dBm."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:291 1f0bd682e7bf498aa34bb145e62cfa85
+msgid "|get_blocking_signal_strength.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:23 fb4d97964d1c4be89663e64a3859959a
+msgid "get_blocking_signal_strength.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:296 9842b423203c41c2b762df31d1ea5193
+msgid "Get TX power."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:298 ce0ddb3a11c94d6092fab79e80ef32e5
+msgid "TX power. the unit is dBm. the range is from -7dBm to 30dBm."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:302 cf0f900dd65e4a2e9d76a8ecf00f8c6a
+msgid "|get_tx_power.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:24 debf79c4e6da4d068012b72cf1044945
+msgid "get_tx_power.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:307 a975dfd32f764c0485b8ca88aefce25a
+msgid "Set TX power."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:309 a917cc9b29ce4438816fe3a8ddfb497d
+msgid "TX power. the range is from -7dBm to 30dBm."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:315 2662433cd8d24f3686785968c95b0b41
+msgid "|set_tx_power.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:25 61ccada3f78047439942c2acd92d9997
+msgid "set_tx_power.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:320 10d76abe5ee24563a5e291dd1ad6b1a9
+msgid "Set continuous wave."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:322 d69afc95b31c4c7c831ea2868aea248d
+msgid "enable continuous wave."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:328 99efcc0ec45c49c4ab3948deaab75f00
+msgid "|set_continuous_wave.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:26 e110dd84b8664a4eaee89693e9143cbf
+msgid "set_continuous_wave.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:332 7d4b6c5c6229456daa23f903eaa25c53
+msgid "Module Information and Settings"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:336 bb5cdaf605274b8382700dda426ea93d
+msgid "Get manufacturer ID."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst 2194d6fc83db48d9ad35a83b6c80daee
+#: 2806ec061a554366bfadf0d130323f18 610d6395a9a54498acecde9268a731fb
+#: 8928d7d3871b4dd78aa65ad0e6794663 cd89a755e59a42ceba30e2c0f6c3520a
+msgid "return str"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:338 dbaf8b493930453aae7d1895459863cd
+msgid "manufacturer ID."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:342 660b7b46e5364757aaca8b4f126bb7a0
+msgid "|get_manufacturer_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:27 7f1cac16f01b489c910ca9b96e710558
+msgid "get_manufacturer_id.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:347 ced15c7678f84b93873a0bafe55bc41b
+msgid "Get hardware version."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:349 6582c588831c475196a79b7efa747e04
+msgid "hardware version."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:353 d288e42c197044aa824ca9b39d23ce2c
+msgid "|get_hardware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:28 57f1553c121948568b41b14f31979e2d
+msgid "get_hardware_version.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:358 c1f1a098e82247f98809f76f54fcd640
+msgid "Get firmware version."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:360 29b4f2269bd64c29b2436abcb0298ca2
+msgid "firmware version."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:364 eb6ec4b4b8654f9d828b047495994194
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:29 6b3c9c7d99874d60832b494ce95f02fc
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:369 5a897341375e4f0bb1b4a62461c849d7
+msgid "Set sleep."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:375 cd5279eb6c2e49c0af21b2ee0f3dab00
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:30 7726865ab3184a1a938fac6937d87741
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:380 0a55f380f80a403cb1933bbc8a12fb38
+msgid "Set wake up."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:386 23aa5ef1ad9740749f2aae2c0a32fd7e
+msgid "|wake.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:31 ec709d5642a343f6883275db4a9624a3
+msgid "wake.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:391 d4fc256a2fc5468c8c8f95ea0c39e5fd
+msgid "Set automatic sleep time."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:393 9c5b6ef62f40421f8c30747c14ffdc8c
+msgid "automatic sleep time in minutes. the range is from 1 to 30."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:399 e60d44b88d214924bfc3bdd9ffb22bb7
+msgid "|set_automatic_sleep_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:32 ef42fc016b8d406f9d21ab3ccf32a744
+msgid "set_automatic_sleep_time.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:404 e1e7fc2db7a74362acd86559ee37476e
+msgid "Disable automatic sleep."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:410 77028bb0e6b842b9899ee01507936594
+msgid "|disable_automatic_sleep.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:33 8106afed089d444997d0af3c7f1e8e86
+msgid "disable_automatic_sleep.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:414 160ba217144a44468d1690679371f0b9
+msgid "Read and Write Tag"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:418 acf9053ca48446dfae2eb254a6427971
+msgid "Get tag epc code. if no tag is found, return empty string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst 524b06788d33428a8b1dfb20e5f6230b
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:420 63ff18dabf104757b76c9570b6bc2a1f
+msgid "hexadecimal string of tag epc code."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:424 a7e1bf20500442f5ad228ac463b740de
+msgid "|inventory.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:34 f171032f811c4688b332cb41000f11cd
+msgid "inventory.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:429 14e55f2b0d4b4f8caae9def9e5cafb32
+msgid "Set select mode."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:431 6ff26ae965e04c84b05ae2d692066da7
+msgid "select mode."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:434 5ca006a7357d4d079b984724f1484e0c
+msgid "0x00: need select command"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:435 f036f2945e734471a5af806a4e2b8869
+msgid "0x01: no need select command"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:436 8d0b9353fb9c4950b1b4ff10b706a8c5
+msgid "0x02: part operation need select command"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:442 b189265fd898452ca26af4819101a957
+msgid "|set_select_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:35 d57dc062f9174e53890b7902e2eb3cac
+msgid "set_select_mode.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:447 15de87ee8ba44d169172a9ae59548211
+msgid "Set select tag."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:449 05db8d67df204450bb04c9289ddbec85
+msgid "target."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:450 716fa127b4cf4267b32479dc00b1d120
+msgid "action."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:451 ../../en/units/uhf_rfid.rst:572
+#: ../../en/units/uhf_rfid.rst:595 1b23ee4dbf414a5c9731fefdd9d1de24
+#: 69405b8c327b43f4928730c280f44852 da48506391d840edac9e16bb306c43f4
+msgid "memory bank."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:452 593393f3f1594d70b986bb54ce9ebbe8
+msgid "pointer."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:453 5e1c6659eb0946849e4d5c3cd690bd4f
+msgid "truncate."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:454 4c89b607e8334cd29f3a7b6da247dbfb
+msgid "EPC code. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:460 1259c172c3854c53aaa8d333ae7355ac
+msgid "|select.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:36 542a4865f1014ce1926786cc09d4d4f7
+msgid "select.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:465 97eb01abac66421b9c9c66a165e83a35
+msgid "Set access password."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:467 9fef409accf54d2bb1a52bbe4d3732f4
+msgid "old access password. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:468 a9cbdbcb2a53439cacb6aaba6331fe4a
+msgid "new access password. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:472 14e2ce4a13c844c491335f9946174a07
+msgid "|set_access_password.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:37 0fea14405c4149bd9a47d70c65119914
+msgid "set_access_password.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:477 66ba797b2b204df9b29dc912789aca40
+msgid "Set kill password."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:479 ../../en/units/uhf_rfid.rst:490
+#: 41fb11fe0b6e4d4aa7b83f842dc1af2a bc1e4b27e17a4715987b4ff9b37927af
+msgid "kill password. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:483 9e989e3d8b0c49849ec29af0d403fa1b
+msgid "|set_kill_password.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:38 d1c50b0609724d64918590af5f1d457c
+msgid "set_kill_password.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:488 5e9c853ce2bc4c68b3bf5cecb967b571
+msgid "Kill tag."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:496 2e369a88593b4bdebeb3b5fa2bd71dc5
+msgid "|kill.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:39 4ec28eec66294164816fd5c11516018c
+msgid "kill.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:500 38a928145a9847829799474e87b01948
+msgid "Set query parameter."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:502 01cc93afe49447b2a92430cfaf44d26e
+msgid "dr. fixed to 0."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:503 5eac42b1b0974ea6acc517d1c8f8f867
+msgid "m. fixed to 0."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:503 2297733cd3cc4affbf1941606d41baf0
+msgid "fixed to 0."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:504 7f932be5f209459c843172a3edc34339
+msgid "tr_ext. fixed to 1."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:505 20a5b707815847c18bdfad6fd206b2ce
+msgid "sel. the range is from 0 to 3."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:506 5f9b8563dce344d09b64fd7af7c806a4
+msgid "session. the range is from 0 to 3."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:507 42cb04d688034089a4c55092ff929870
+msgid "target. the range is from 0 to 1."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:508 448b6c8038e44ffda481ccdd31ab0723
+msgid "q. the range is from 0 to 8."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:508 6dcd73cc14ff4526aaed52dcdaf383d7
+msgid "the range is from 0 to 8."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:514 0e80328c28db4c8bb0181147a42df1fa
+msgid "|set_query_param.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:40 6711827bb79147aa9c9614a94a67eecf
+msgid "set_query_param.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:519 a556a039278a4d76a1d6ec768c77eaea
+msgid "Lock memory bank."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:521 708ff7b9c39f4544b51482117712f9a8
+msgid ""
+"kill lock.  Options:     - UHFRFIDUnit.OPEN: open     - UHFRFIDUnit.LOCK:"
+" lock     - UHFRFIDUnit.PERMA_OPEN: perma open     - "
+"UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:521 5520fa20bbc34c7fa933001775e60aaa
+msgid "kill lock."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:524 ../../en/units/uhf_rfid.rst:532
+#: ../../en/units/uhf_rfid.rst:540 ../../en/units/uhf_rfid.rst:548
+#: ../../en/units/uhf_rfid.rst:556 0371c4869e99439399266837aa337a9c
+#: 9be29ad8c47541458495999740c492ad b4bc9eaee54a46b4bb320e49812be675
+#: ba5114ad8b51432eb8c6aa5aa5d0f2cc da5260870eeb450f8530c5628d444e4a
+msgid "UHFRFIDUnit.OPEN: open"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:525 ../../en/units/uhf_rfid.rst:533
+#: ../../en/units/uhf_rfid.rst:541 ../../en/units/uhf_rfid.rst:549
+#: ../../en/units/uhf_rfid.rst:557 0d3d05a3b32f45b89ce97011ed8339d7
+#: 4250ded42daf4a36a3871ba6dfdf4dab 4ada684f63984c3598514fd410fce7a9
+#: 702d3e046efe4105a4d25568790e03d2 ed45542ce3b3440c9e23b462125618ff
+msgid "UHFRFIDUnit.LOCK: lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:526 ../../en/units/uhf_rfid.rst:534
+#: ../../en/units/uhf_rfid.rst:542 ../../en/units/uhf_rfid.rst:550
+#: ../../en/units/uhf_rfid.rst:558 4a7cf74874d84eeabfaa61c543b96695
+#: 5238f3d08d9749c1a7ba89ad0a6a24d7 821463beb66b42aaa8e8fcee8e1a6277
+#: a27c7d578be5476b84d2250dfa7e4605 a3a7232aff5344148ce46e874426a690
+msgid "UHFRFIDUnit.PERMA_OPEN: perma open"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:527 ../../en/units/uhf_rfid.rst:535
+#: ../../en/units/uhf_rfid.rst:543 ../../en/units/uhf_rfid.rst:551
+#: ../../en/units/uhf_rfid.rst:559 0aba2b6a4a0b4e1aa44f6d16fa4a0af6
+#: 38386f611b5d42d390d3d912591e2597 47e673fdaa11442fb835979a85e258fd
+#: 7a7d0cdff22245f2b031c75d7ef2a546 81c38fc8d1ac4f93bfb91665479626c0
+msgid "UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:529 62ee11cd3906409b8438baa6b26a36dd
+msgid ""
+"access lock.  Options:     - UHFRFIDUnit.OPEN: open     - "
+"UHFRFIDUnit.LOCK: lock     - UHFRFIDUnit.PERMA_OPEN: perma open     - "
+"UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:529 2acf0bd4a9524410aaf230906264e0ef
+msgid "access lock."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:537 040182d035f14e8f9d4a63a2a411dd04
+msgid ""
+"epc lock.  Options:     - UHFRFIDUnit.OPEN: open     - UHFRFIDUnit.LOCK: "
+"lock     - UHFRFIDUnit.PERMA_OPEN: perma open     - "
+"UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:537 93e6b94094234e8bb351d8ee58c1ae03
+msgid "epc lock."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:545 bb29873611304af2ba608fb5120bfbf5
+msgid ""
+"tid lock.  Options:     - UHFRFIDUnit.OPEN: open     - UHFRFIDUnit.LOCK: "
+"lock     - UHFRFIDUnit.PERMA_OPEN: perma open     - "
+"UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:545 34afc8ac5ecb4945a1b4bc322f5188cb
+msgid "tid lock."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:553 b452e33b55464f98b750009f24726092
+msgid ""
+"user lock.  Options:     - UHFRFIDUnit.OPEN: open     - UHFRFIDUnit.LOCK:"
+" lock     - UHFRFIDUnit.PERMA_OPEN: perma open     - "
+"UHFRFIDUnit.PERMA_LOCK: perma lock"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:553 6f03f880ef294192a3433aaa59de90f1
+msgid "user lock."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:561 ../../en/units/uhf_rfid.rst:582
+#: ../../en/units/uhf_rfid.rst:605 ../../en/units/uhf_rfid.rst:620
+#: ../../en/units/uhf_rfid.rst:635 ../../en/units/uhf_rfid.rst:649
+#: ../../en/units/uhf_rfid.rst:664 ../../en/units/uhf_rfid.rst:691
+#: ../../en/units/uhf_rfid.rst:705 ../../en/units/uhf_rfid.rst:719
+#: ../../en/units/uhf_rfid.rst:735 09874fdc553649c782a631a078199f1b
+#: 175d291159884950905716f8e9e4a107 1cdedd63378d4390b5ed5be080012e75
+#: 38d309e094954efb875354a964edbe29 65f227820b2b44dabf48b8a99b3a1d63
+#: 85bf2588505c49dd82f339520bf5340f d1cf9cc3b1614909af2656d1d7bde419
+#: da94e8d1fff9449cbaefdbdbd4caf637 db8cc8f772e64e36b67d83faffe05f00
+#: f171542132a24a06bfeef4fb694910e8 f36209edd8444ce09b362a083ab3069b
+msgid "access password. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:565 738a8e5cedca4214a23e17f7b6827bc3
+msgid "|lock_mem_bank.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:41 a4184c4d2f14477582921add69f1a5ce
+msgid "lock_mem_bank.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:570 8f951b55075e4662877b3b5dabaa0a4c
+msgid "Read memory bank."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:572 ../../en/units/uhf_rfid.rst:595
+#: 0cfeddda1b7b4e4791b78da7af1453bf 8f87ccf95c0042faa6bc799128bd0ca2
+msgid ""
+"memory bank.  Options:     - UHFRFIDUnit.RFU: reserved     - "
+"UHFRFIDUnit.EPC: epc     - UHFRFIDUnit.TID: tid     - UHFRFIDUnit.USER: "
+"user"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:575 ../../en/units/uhf_rfid.rst:598
+#: 26ddb60485f14418b392fa7396519d98 e9f85f369c3d40bb8b5fa4d56f28c94a
+msgid "UHFRFIDUnit.RFU: reserved"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:576 ../../en/units/uhf_rfid.rst:599
+#: 28df227e573d408c90823281956859c9 c8528389d25d4e2684e42e40aaa4ecdf
+msgid "UHFRFIDUnit.EPC: epc"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:577 ../../en/units/uhf_rfid.rst:600
+#: 1a0a1eec29104827820ef7d9642fb45c 500668c2a41e4210bdecdedb24b0bb22
+msgid "UHFRFIDUnit.TID: tid"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:578 ../../en/units/uhf_rfid.rst:601
+#: 817eda230cee490fa7d4df904e784197 a9f6c4093b74463aa5d52b822252fef3
+msgid "UHFRFIDUnit.USER: user"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:580 ../../en/units/uhf_rfid.rst:603
+#: 973c8f35d3ff4796ab93c147710c21e7 b393a5d84cd841a1acbc987d3e162303
+msgid "offset."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:581 629e0e63a0f8429481b0e665aa2537cb
+msgid "length."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:584 ../../en/units/uhf_rfid.rst:604
+#: 454f71425df543cb8ce03be448e0a6d8 cc99035107d04f3593acdb93fc031962
+msgid "data. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:588 21839c44531c41e5812d5c83ffea83a2
+msgid "|read_mem_bank.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:42 15929e9f224b4928bea817bee8a6f2c3
+msgid "read_mem_bank.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:593 97f13eb95622484086f6ec47e0ee67da
+msgid "Write memory bank."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:609 46a838ccc83341f2a0f750ba9abd8bfd
+msgid "|write_mem_bank.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:43 0ef069dbbf6c48eea417bbf8a9631b03
+msgid "write_mem_bank.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:613 e14dd37967fa450a9fb7acd793d4944a
+msgid "Impinj Monza"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:617 4a99bd1694ae44ca8d89c861836b4cb7
+msgid "Get Impinj Monza QT_SR."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:619 ../../en/units/uhf_rfid.rst:634
+#: ../../en/units/uhf_rfid.rst:648 ../../en/units/uhf_rfid.rst:663
+#: 01160c1c41ad4357b32e49c07e984b84 21d093a2ef044f4c9435775cdec4cd42
+#: 445a0b3c8eda42c4954f941b22d890d1 808f38d07263403a93199fbf3a2d36a3
+msgid "persistence. 0x00 is volatile memory, 0x01 is non-volatile memory."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:622 ../../en/units/uhf_rfid.rst:633
+#: 37a747dddda34a4baebe181024f7b1bd 7aef2031c39d47efab7f6433576c9fa7
+msgid "QT_SR status."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:626 512de47d46c84753be8568fab4493b9a
+msgid "|get_impinj_monza_qt_sr.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:44 9d1fc05925cb4481a58ea7ab64b6b6ad
+msgid "get_impinj_monza_qt_sr.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:631 4281ffad533945fe83739153268fc511
+msgid "Set Impinj Monza QT_SR."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:641 d5cb2ec4499f4862965ab1675770c11b
+msgid "|set_impinj_monza_qt_sr.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:45 979de5f1738841b48e5a0a4d90462a15
+msgid "set_impinj_monza_qt_sr.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:646 ../../en/units/uhf_rfid.rst:660
+#: abef6f4b61d64ad7ba643196901a77b8 bda0dc4addbe416d803ee9a8d27fb6b3
+msgid "Set Impinj Monza QT_MEM."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:651 ../../en/units/uhf_rfid.rst:662
+#: 37842c3cb332488bb13ee18024b0b073 b837000462294c7a8b73d80ee17c0d4d
+msgid "QT_MEM status."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:655 93f9ddc1787a46b1b67a7739cee40f35
+msgid "|get_impinj_monza_qt_mem.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:46 cef95b444ad24c2dbff9ebe3d2c9ad09
+msgid "get_impinj_monza_qt_mem.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:670 3bfb0e4896a04fc082ce80e3821ec175
+msgid "|set_impinj_monza_qt_mem.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:47 39767199555f454aaf5c81a4d11e44f7
+msgid "set_impinj_monza_qt_mem.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:674 b337b7b6ae6148caafcd12beca657f8f
+msgid "NXP"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:678 ce8f6e50cd5d4ff9b8e46bd1f2b1555d
+msgid "Get NXP EAS alarm code."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:680 c2bcbe74d7ab4c6f8642f58788c416e2
+msgid "NXP EAS alarm code. hexadecimal string."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:684 7cbde3bead234f62a065f0f6b8cc1cd2
+msgid "|nxp_eas_alarm.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:48 709486d475fd41398854630a46777103
+msgid "nxp_eas_alarm.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:689 03d0ca4ef98541c4975fcf51eb2c1b1a
+msgid "Get NXP config word."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:693 ../../en/units/uhf_rfid.rst:704
+#: 36710faab4854cb2b2aa50211cd2a310 888be916120e495ba8b4aed6dbc8b9b3
+msgid "NXP config word."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:697 53a52efb9a37499d8bbe3374283497af
+msgid "|get_nxp_config_word.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:49 1872b4a4668740b7b90861ae65f276d8
+msgid "get_nxp_config_word.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:702 37470cdcede84eb296e619deac222aa8
+msgid "Set NXP config word."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:711 1ece1390c5814cd28231ecc1d297a8a2
+msgid "|set_nxp_config_word.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:50 ee8a324c5e1d49a4ac5c0dba995b98a3
+msgid "set_nxp_config_word.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:716 d3f934b91e564bc8aa3aefe0d5965c89
+msgid "Set NXP read protect."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:718 5a11f9df8c114a30a2ff97e632889cf3
+msgid "set read protect. 0x00 is set read protect, 0x01 is reset read protect."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:725 f2c77c18a1184a0bb240097547e34f6f
+msgid "|nxp_read_protect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:51 87f120b6dff947a1992310e8c3c86d71
+msgid "nxp_read_protect.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:727 201c0e2107774975af2594ceec9d5e1c
+msgid "|nxp_read_protect1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:52 427031b8f619459f95200567e019801d
+msgid "nxp_read_protect1.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:732 e860d6fd72e341b4a943e33e9e65fa1c
+msgid "Change NXP EAS."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:734 5a227d09a15145e992f0d62cbffe7d23
+msgid "set EAS. 0x00 is set EAS, 0x01 is reset EAS."
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:741 08c846155fa14eaa9aefeafdff7b7655
+msgid "|nxp_change_eas.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:53 ab34b306a20f4201836a6683ac08a150
+msgid "nxp_change_eas.png"
+msgstr ""
+
+#: ../../en/units/uhf_rfid.rst:743 df3c7d5a1d3b4bfbae086c1cf90d55b2
+msgid "|nxp_change_eas1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.uhf_rfid.ref:54 3eeeeeed46ad46d3b5af6b6e86890685
+msgid "nxp_change_eas1.png"
+msgstr ""
+

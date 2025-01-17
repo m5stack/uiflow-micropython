@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/audio.rst:2 d2ea4d9f2db24e118efc744113cb8937
+msgid ":mod:`audio` --- player and recorder"
+msgstr ""
+
+#: ../../en/system/audio.rst:9 828b55247a374a129da8ede5e526aa58
+msgid "This module implements player and recorder"
+msgstr ""
+
+#: ../../en/system/audio.rst:11 c4899479abce41f0b22ef50460be934a
+msgid ""
+"player: encapsulates the ADF esp_audio, support local and online "
+"resources."
+msgstr ""
+
+#: ../../en/system/audio.rst:12 b184585650ec4115baecc59dd904427e
+msgid "recorder: record and encoding the voice into file."
+msgstr ""
+
+#: ../../en/system/audio.rst:14 db949a493e434f26aed8e39382705f2c
+msgid "Below is the detailed audio support for the host:"
+msgstr ""
+
+#: ../../en/system/audio.rst:21 cfdfcdb0dd7049a2be2f4dbc3e2c788b
+msgid "AW88298"
+msgstr ""
+
+#: ../../en/system/audio.rst:21 f3968c0bdf784fb783438b71d70c7b31
+msgid "ES7210"
+msgstr ""
+
+#: ../../en/system/audio.rst:21 e7bc5fd2f5fd41ee925c9d0c294a1d72
+msgid "ES8311"
+msgstr ""
+
+#: ../../en/system/audio.rst:21 fef72ada182a405c887d5faf76ffb796
+msgid "I2S Philips"
+msgstr ""
+
+#: ../../en/system/audio.rst:21 a52f402ad61d4875b6160e31831121fe
+msgid "I2S PDM"
+msgstr ""
+
+#: ../../en/system/audio.rst:23 ec3831f366d94483a9e4d98e38bbfc5c
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/system/audio.rst:23 ../../en/system/audio.rst:25
+#: 10a71da3a3cd4eb7a18a943dd5fc7868 1744953933c8454d816c608726c7075a
+#: d0c3fac22be742ed96f12f83b26f9e2f d341db7d9f0940f1886ed0b6f608dd6f
+msgid "|S|"
+msgstr ""
+
+#: ../../en/system/audio.rst:25 6a63c107822441cc91a3f40f9337224e
+msgid "BOX3"
+msgstr ""
+
+#: ../../en/system/audio.rst:31 c5bcaeaa75c44c28bbb8f9a8670c31ab
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/system/audio.rst:38 e69e0f8cebe74f1db0411ee6bd4db8d1
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/system/audio.rst:40 cbbcac10f7284d199bdc352cd8951ce2
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.ref:1 a45d6d12e88741a88eb3f243a21ac84c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/system/audio.rst:45 c54b711638894cd99207067118735dae
+msgid "|cores3_audio_example.m5f2|"
+msgstr ""
+
+#: ../../en/system/audio.rst:49 3483d1575a3846fd826f1afc1d1510e9
+msgid "Classes"
+msgstr ""
+

@@ -298,7 +298,7 @@ patch:
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
-	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/patche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
 
@@ -309,6 +309,6 @@ unpatch:
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
-	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2003-Support-LTR553.patch))
+	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/unpatche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))

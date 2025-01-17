@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/requests2.rst:2 8d4f0c0c62d04ec79418303e49525d32
+msgid ":mod:`requests2` --- Network Request Module"
+msgstr ""
+
+#: ../../en/software/requests2.rst:9 78e6c464fd254b9ea11949eef2715809
+msgid ""
+"requests2 is based on urequests and supports Streaming Uploads and x-www-"
+"form-urlencoded."
+msgstr ""
+
+#: ../../en/software/requests2.rst:11 54d2f6ac74754ee9bd0a3cb39e9b0588
+msgid "The main functionality and function of the ``requests2`` module."
+msgstr ""
+
+#: ../../en/software/requests2.rst:14 9c30d6f812db4c5eb36522c221eb00e0
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/software/requests2.rst:21 5ff4029bac0446d7a77b7810e371a7ce
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/software/requests2.rst:23 a69fb2d1f64647d58132661788e25437
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:14 02cfc55d76634807bd678a388b0c556b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:28 0404400ed95f4a7ab735f420088f0ed7
+msgid "|cores3_http_get_example.m5f2|"
+msgstr ""
+
+#: ../../en/software/requests2.rst:32 68193db145b241a085d8a84399df3c63
+msgid "Function"
+msgstr ""
+
+#: ../../en/software/requests2.rst:36 aa9f3c90b0a3414ea90a74370562be91
+msgid ""
+"Send a network request, it will block the response data returned to the "
+"network, parameters:"
+msgstr ""
+
+#: ../../en/software/requests2.rst 100849136c0446639e8830ca8a1d3990
+#: 594718ec8c694a6cb9a15cce60dccf36 646b6db6e4764f7ebc041e25900d65c3
+#: 8f54e3ad22734565a9cdd33e5162af56 b656699593474eb0bb364bdd7762c3f1
+#: de2f60ac321246c9bb05e74ff2cf7c85 f4d1201a7b8a4a9aba0038c151f669e0
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/requests2.rst:38 b923d2fa75b24197a99cd3f03359c7ad
+msgid ""
+"method of establishing a network request. e.g. "
+"``HEAD``,``GET``,``POST``,``PUT``,``PATCH``, ``DELETE``."
+msgstr ""
+
+#: ../../en/software/requests2.rst:39 ../../en/software/requests2.rst:49
+#: ../../en/software/requests2.rst:57 ../../en/software/requests2.rst:69
+#: ../../en/software/requests2.rst:80 ../../en/software/requests2.rst:91
+#: ../../en/software/requests2.rst:103 3f1b402f7b5b49e1bcc922c4c3e2075f
+#: 59196381dd624b04ba0c8d8d6f8481bc 8d36c450aa5f4abb92fd1b3f331d2dde
+#: 9382386c58ef4839a2b4a46a573ac037 a6001dbf886c4ada8e905f7417891ec0
+#: a9296eafa00044c8a4a2eead7853d3a0 b56954085a3644f2ae75c11ea5505fc7
+msgid "URL of the network request."
+msgstr ""
+
+#: ../../en/software/requests2.rst:40 cd972f222974436f9f29e40a8bc1f2dd
+msgid ""
+"(optional), a dictionary, tuple list [(key, value)] (will be form coded),"
+" byte or class file object sent in the request body."
+msgstr ""
+
+#: ../../en/software/requests2.rst:41 721ecb8e60414d9bb60d7d65d0e8ead2
+msgid "(optional), json data sent in the request body."
+msgstr ""
+
+#: ../../en/software/requests2.rst:42 4506f4a97f9e475abf2fc46aee7847a3
+msgid "(optional), HTTP header dictionary to be sent with the request."
+msgstr ""
+
+#: ../../en/software/requests2.rst:47 2376a95c829047a9b3df53aed8ae567c
+msgid ""
+"Send a ``HEAD`` request, the return type is the response of the request, "
+"parameters："
+msgstr ""
+
+#: ../../en/software/requests2.rst:50 ../../en/software/requests2.rst:58
+#: ../../en/software/requests2.rst:70 ../../en/software/requests2.rst:81
+#: ../../en/software/requests2.rst:92 ../../en/software/requests2.rst:104
+#: a02e643c5cf9422dbd5eb085b075abff bb94398af2e14049b919d5903c145d35
+#: c799d7bdcab146b780c40946651775d3 d4aa0cefab6b45e8b0111558a8c321d8
+#: f56af1f8d41e438c911e93d22fb8dd03 fa751e689695450191fa700e3cdfc004
+msgid "request optional parameters."
+msgstr ""
+
+#: ../../en/software/requests2.rst:55 6a096f1df69c4f4bac98935bc49acc04
+msgid ""
+"Send a ``GET`` request, the return type is the response of the request, "
+"parameters："
+msgstr ""
+
+#: ../../en/software/requests2.rst:60 ../../en/software/requests2.rst:72
+#: ../../en/software/requests2.rst:83 ../../en/software/requests2.rst:94
+#: ../../en/software/requests2.rst:106 ../../en/software/requests2.rst:123
+#: ../../en/software/requests2.rst:134 ../../en/software/requests2.rst:143
+#: ../../en/software/requests2.rst:154 ../../en/software/requests2.rst:165
+#: ../../en/software/requests2.rst:174 007216feb6934744912b00f6137e941e
+#: 045d016271a74f61947287999dbdcc1a 12c90facac564b5a95b2ca23951f80e4
+#: 1b9b1154998442ce94478031901a1737 26779fd21e334e19846b4800be05ef17
+#: 30e5628744a0413396d976bada19b1ce 427511e9f886403091e76d5b41b8572f
+#: 7ab0cd3934f44c6798598b3e04827d69 91417bfabb1846baac09c0f764a24fa7
+#: 9523d59e03e344bf8777480b6be56fec f3e5703ec2394f82971e30c6ba58c288
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/software/requests2.rst:62 8b353839db654ba29393f33765626566
+msgid "|get.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:1 558a8511289c494aad39c64939f18eae
+msgid "get.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:67 94a010bb85074f7e9f74ccf393865a41
+msgid ""
+"Send a ``POST`` request, the return type is the response of the request, "
+"parameters："
+msgstr ""
+
+#: ../../en/software/requests2.rst:74 f683785b07a245888b587b2d1001420f
+msgid "|post.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:2 962ab5f18922416f9ded03488778915e
+msgid "post.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:78 67cfe4ccdd2243b4a5dbc8ac94ca7a88
+msgid ""
+"Send a ``PUT`` request, the return type is the response of the request, "
+"parameters："
+msgstr ""
+
+#: ../../en/software/requests2.rst:85 870527ea87004f67b45aa662719b53a9
+msgid "|put.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:3 364a59d5aa7f414b8063884c229a7585
+msgid "put.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:89 a9da021faee3447189af4f160b9b94e5
+msgid ""
+"Send a ``PATCH`` request, the return type is the response of the request,"
+" parameters:"
+msgstr ""
+
+#: ../../en/software/requests2.rst:96 202cb78d79004d8d9b8fcd5bd0621292
+msgid "|patch.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:4 a2fbdc1e49ef4045abe8db1ca24b884c
+msgid "patch.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:101 63ad2afb9b664e2bb20aaabee4bd6dd8
+msgid ""
+"Send a ``DELETE`` request, the return type is the response of the "
+"request, parameters："
+msgstr ""
+
+#: ../../en/software/requests2.rst:108 85c7549064544106aac9175a3fb9de92
+msgid "|delete.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:5 09adc09d494b49e7a5559472410fd496
+msgid "delete.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:112 1b68b5ef761d4d71af069083b23d5e5c
+msgid "class Response"
+msgstr ""
+
+#: ../../en/software/requests2.rst:115 87909ff7c8464d54b66f78531c259ecf
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/requests2.rst 1f4275ad82aa48188f8a0f983921a441
+#: 2946e2ad2e3343bb8be09c39e6910cd8 4f90e01292324bd2be1ab1eb4b0f7a4a
+#: efcf6cc109164b5288d4f7656e2aa4e0
+msgid "type"
+msgstr ""
+
+#: ../../en/software/requests2.rst:119 ../../en/software/requests2.rst:150
+#: a21ab0b595bc4199b7678fcfff0b34ec c5e1f4ab6f8949f5820c644d719426aa
+msgid "dict"
+msgstr ""
+
+#: ../../en/software/requests2.rst:121 9dad594ca476463e9e2ca236f52e02de
+msgid "Return the response header."
+msgstr ""
+
+#: ../../en/software/requests2.rst:125 7ae84188dab24491a3bacbeb541c7d7c
+msgid "|headers.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:8 94cc61deef4c48d1ad1a637074c22be4
+msgid "headers.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:130 1030f36c722e464e91a5f8f4d7c8ee56
+msgid "int"
+msgstr ""
+
+#: ../../en/software/requests2.rst:132 4e957bb457f046cda2668f982d07fb91
+msgid "Return the status code of the response."
+msgstr ""
+
+#: ../../en/software/requests2.rst:136 f8246c5ef31d469db6428ad31f0b5d91
+msgid "|status_code.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:11 59e879ccbe2942c08057a762ca60b5fa
+msgid "status_code.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:141 f5cd14e5fe264a2caa2fdabaacdbfda7
+msgid "Close the connection and release resources."
+msgstr ""
+
+#: ../../en/software/requests2.rst:145 083694e18be74ad7b78ddbaa2cd6fd5a
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:6 fd7c6d0d73a14c2fac4113de1998ac99
+msgid "close.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:152 625e9413c8bf4665ad257ca176ed1c1a
+msgid "Return the content of the response, in bytes."
+msgstr ""
+
+#: ../../en/software/requests2.rst:156 689a6e0986ba4b289563e896eec64f05
+msgid "|content.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:7 690510e5674c4c398ebfa83be1d49640
+msgid "content.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:161 10e4dcd08a03436787042a0fef18e68a
+msgid "str"
+msgstr ""
+
+#: ../../en/software/requests2.rst:163 a35ed1bb88804c329dd14d18d4e47d9d
+msgid "Return the content of the response, in str."
+msgstr ""
+
+#: ../../en/software/requests2.rst:167 41355ed9da0646dfa657f940cba4dc8a
+msgid "|text.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:12 56859f4a59204b27ace82f2fb8918f7a
+msgid "text.png"
+msgstr ""
+
+#: ../../en/software/requests2.rst:172 f412240a592b45f29c40f959a190a6df
+msgid "Return the content of the response, in dict."
+msgstr ""
+
+#: ../../en/software/requests2.rst:176 838cb04f6b144821985eee2f0b0d3eb4
+msgid "|json.png|"
+msgstr ""
+
+#: ../../en/refs/software.requests2.ref:9 ccfa2748fc434b12b85aee42c68351e3
+msgid "json.png"
+msgstr ""
+

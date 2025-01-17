@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,121 +18,148 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/dualbutton.rst:2 3f72b40a61314567b50e9159e97d151b
+#: ../../en/units/dualbutton.rst:2 04bb6038776f4f47bdd3cd74986c1880
 msgid "Dual_Button Unit"
 msgstr ""
 
-#: ../../en/refs/unit.dual_button.ref ced95f0e5a19498889a03eaca09b7dea
-#: f51441cbbba440fdb16a33f8903cf0d1
-msgid "Dual_Button"
-msgstr ""
-
-#: ../../en/refs/unit.dual_button.ref:7 175aa32f3892488086dfab4fa770485b
-#: ed2f82bfc2214a6380339fa237bcfbd2
-msgid "example.svg"
-msgstr ""
-
-#: ../../en/refs/unit.dual_button.ref:9 3c0ea7dcac1a476faf1f2fc2473aa117
-#: 61573fc48749431aad302075884dfe11
-msgid "init.svg"
-msgstr ""
-
-#: ../../en/refs/unit.dual_button.ref:11 59f2fbe5504d4ef28fdeb7f5be83997e
-#: cb262ecae1e544868033853ff8d06fc9
-msgid "get_status.svg"
-msgstr ""
-
-#: ../../en/refs/unit.dual_button.ref:13 37284ef3c71e47b88d40cb08df008ee7
-#: e889e927f10c4ef28c6084a5c66a39e9
-msgid "setCallback.svg"
-msgstr ""
-
-#: ../../en/refs/unit.dual_button.ref:15 135da047d97644a68a4565d6dbd307d8
-#: faa31578864a4941a18263705b09a7c8
-msgid "tick.svg"
-msgstr ""
-
-#: ../../en/units/dualbutton.rst:6 25da538ad91f45e7afac8cf7e7151709
+#: ../../en/units/dualbutton.rst:6 e9b57b8c256b449a9e890bc5e513a34e
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/dualbutton.rst:8 363f136c5b7745ef890ce32931e51726
+#: ../../en/units/dualbutton.rst:8 12800b17cbb64736ae6a2002984a2ce6
 msgid "|Dual_Button|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:11 295f213b39004b1f97c97f503cc2047f
-msgid "Micropython Example::"
+#: ../../en/refs/unit.dual_button.ref 4e9a1896e3a64b209c19801fd9a6cb86
+msgid "Dual_Button"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:32 f3e9ceb23cf1421ba2cf013cf8f62e7b
+#: ../../en/units/dualbutton.rst:11 8a0d2994d0304fe3952cca682cf46594
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:18 8b15290654b247db89f8d05e3605fb2f
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:34 e337721f7e56489dbac19777471df9e8
-msgid "|example.svg|"
+#: ../../en/units/dualbutton.rst:20 4c57743560b34b269f4919be048c49a6
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:38 1ac294fe4cd241bfa8a424b40bb7cf01
+#: ../../en/refs/unit.dual_button.ref:7 8167e5a4f35d4523a27518d4c94ed37b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:25 f80d25408a7647119083d7ce00a87f6f
 msgid "|dual_button_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:42 e5e2b4bfe1574349a4afe6d5c6565064
+#: ../../en/units/dualbutton.rst:29 1b09ba38d8d942a9954bedbae2c61e21
 msgid "class DualButton"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:45 5599da475e8942d1b98b02380dba84a2
+#: ../../en/units/dualbutton.rst:32 fd1cae91eb2543f6a20515ebd1bb728a
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:49 18e3ddbddc83420893991d7332db5fc8
+#: ../../en/units/dualbutton.rst:36 a6febf3606434d539932ccc78b010aad
 msgid "Create a DualButton object."
 msgstr "创建一个DualButton对象."
 
-#: ../../en/units/dualbutton.rst:52 ../../en/units/dualbutton.rst:64
-#: 5d85501ef0a344c7a76f9750f5b9e243 6b94f483a2bc41f99d1f9187e35d276b
+#: ../../en/units/dualbutton.rst:39 ../../en/units/dualbutton.rst:51
+#: 196085ab10b8416ab0880892462bb9f6 a3350c4297b64b50b494353213454daa
 msgid "The parameters are:"
 msgstr "参数是:"
 
-#: ../../en/units/dualbutton.rst:52 d10ef8e6d8f141ce8d6028f65428d328
+#: ../../en/units/dualbutton.rst:39 ae3320e0051a4ba1809838f4023f5c77
 msgid "``IO1,IO2`` Define two key pins."
 msgstr "``IO1,IO2`` 定义两个按键引脚。"
 
-#: ../../en/units/dualbutton.rst:54 ../../en/units/dualbutton.rst:66
-#: ../../en/units/dualbutton.rst:75 ../../en/units/dualbutton.rst:84
-#: 6c86de5f54ac4399a4195c1a9c80076e 83fd7076d5e2431bb9583f4faf1aeaa5
-#: c1e32531dc6241958f41ffb55ee21e17 fb5fd5ae0a3247daa283b8aa39cfa076
+#: ../../en/units/dualbutton.rst:41 ../../en/units/dualbutton.rst:53
+#: ../../en/units/dualbutton.rst:62 ../../en/units/dualbutton.rst:71
+#: 558675ec3f4a48248d5f396095735b4a ba4359bf2d5342af87b6774b1375f024
+#: c9a27447d1e847c8850a76117bd68031 d181c2589df544c6872222d487e7ccf5
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:56 e3c842e4a9ec4a8087fe4fbdb67dea76
-msgid "|init.svg|"
+#: ../../en/units/dualbutton.rst:43 28a06586ca5c460e9cc52d02cef79d9c
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:60 1588ec3dd3b848ad868c17d1822d63ce
+#: ../../en/refs/unit.dual_button.ref:10 09504de1442847038187deb583b08378
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:47 9eab507b86fc4c75869895f4d4cdbe3f
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:68 4897b906d0234e69b0dac2a59be3a0c0
-msgid "|get_status.svg|"
+#: ../../en/units/dualbutton.rst:55 9ee9ff8405e947a49110954993de75a4
+msgid "|get_status.png|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:73 246c2cfba0e24c589ec7ec48b557cd80
+#: ../../en/refs/unit.dual_button.ref:13 26a0c255b0ec43abbc18ae0e323b1ebf
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:60 3f1d2f3cc3bc4455acbbc8d7e8231a8b
 msgid "Execute the program when the key is pressed."
 msgstr "当按下键时执行程序。"
 
-#: ../../en/units/dualbutton.rst:77 f84674a5c2b34aac93046fd34fdb2db9
-msgid "|setCallback.svg|"
+#: ../../en/units/dualbutton.rst:64 09d2c17e23eb4c0f93bd1f10318172c3
+msgid "|setCallback.png|"
 msgstr ""
 
-#: ../../en/units/dualbutton.rst:82 b8aafd83105c4d698f5cc58f7c7f8cf8
+#: ../../en/refs/unit.dual_button.ref:16 da594167ee8840318cc6837f0c240559
+msgid "setCallback.png"
+msgstr ""
+
+#: ../../en/units/dualbutton.rst:69 8f52b0a7859946e3a0165749f7a4ca4e
 msgid ""
 "The polling method, placed in the loop function, constantly detects the "
 "state of the key."
 msgstr "轮询方法,放在loop函数里面,不断检测按键的状态。"
 
-#: ../../en/units/dualbutton.rst:86 8a012dd170a0471bbf90c615d0558a0e
-msgid "|tick.svg|"
+#: ../../en/units/dualbutton.rst:73 5bfce3780d544fb5984ae090042037ab
+msgid "|tick.png|"
 msgstr ""
+
+#: ../../en/refs/unit.dual_button.ref:19 617e2e7ba32f47b99492a51acdf37241
+msgid "tick.png"
+msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "get_status.svg"
+#~ msgstr ""
+
+#~ msgid "setCallback.svg"
+#~ msgstr ""
+
+#~ msgid "tick.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "|get_status.svg|"
+#~ msgstr ""
+
+#~ msgid "|setCallback.svg|"
+#~ msgstr ""
+
+#~ msgid "|tick.svg|"
+#~ msgstr ""
 

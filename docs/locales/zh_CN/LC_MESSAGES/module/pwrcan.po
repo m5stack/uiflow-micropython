@@ -1,0 +1,551 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/pwrcan.rst:2 65a61f608118438fb8c1dce0361b4fe4
+msgid "PwrCAN Module"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:6 e5c93e7876f4454e9586aadb4a0b42cd
+msgid ""
+"PwrCAN Module 13.2 is a multifunctional module designed for the PwrCAN "
+"bus, integrating isolated CAN communication and DC 9-24V power bus. The "
+"module also includes Pwr485 (with isolation) bus functionality and can "
+"provide isolated 5V power supply to the M5 host. The CAN communication "
+"part uses the CA-IS3050G isolated transceiver, and the RS485 part uses "
+"the CA-IS3082W isolated transceiver. The GPIOs related to CAN and RS485 "
+"communication can be selected through dip switches, and the 120-ohm "
+"terminal resistance at the CAN and RS485 outputs can also be selected "
+"through dip switches. The module's power bus supports DC 9-24V wide "
+"voltage input, with the DC socket directly connected to the HT3.96 and "
+"XT30 power parts. The built-in isolated power module F0505S-2WR3 provides"
+" power to the M5 host. This module is suitable for fields such as robot "
+"control, protocol conversion, industrial automation, automotive "
+"communication systems, intelligent transportation, and building "
+"automation."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:8 c52c6f14b71e4a158ee808cc1297afe7
+msgid "Supported Products:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:10 3f5079d4251241b0a47dba94c42003f4
+msgid "|PwrCANModule|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref 61a7c1fed4c64f7aa3a87828be006b2a
+msgid "PwrCANModule"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:13 2602f1c6f4154c979d3b7b92e97e9c54
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:19 b7ab362a6ec147b3a73035c6776d3b1e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:21 090250e29ea144fb82335c98eabfcb1f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:22 380473416900421daeee7089eba13111
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:25 6d12e639d07b452b8b61b18ceb3587a3
+msgid "|pwrcan_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:28 afa29e6d222b43fa8ac2c12030edb673
+msgid "class PwrCANModule"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:31 ../../en/module/pwrcan.rst:66
+#: 8db47d10cb4b47a19aed803985efb07c f63c2b882fdb4115a70cb5726b031f80
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:35 9ed09e51e0b741deb8aa497390e22951
+msgid "Initialise the CAN bus with the given parameters:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:37 973a03c4649541faa44e6488bfaff089
+msgid "``id`` is the can bus id"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:38 8db6337a9f964bcc83fb11cc4d8ad184
+msgid "``tx`` is the pin to use for transmitting data"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:39 d00131cc72454d268216d7e10967ed44
+msgid "``rx`` is the pin to use for receiving data"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:40 6bd84ab6d59147f390cbd7b85d49e43a
+msgid "``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:41 02390554dafe4c84a1848a4df35e1a49
+msgid ""
+"``prescaler`` is the value by which the CAN input clock is divided to "
+"generate the nominal bit time quanta. The prescaler can be a value "
+"between 1 and 1024 inclusive for classic CAN."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:44 18e2ed3ef3784a6bb72a188605a9a937
+msgid ""
+"``sjw`` is the resynchronisation jump width in units of time quanta for "
+"nominal bits; it can be a value between 1 and 4 inclusive for classic "
+"CAN."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:46 bf4982545305402c9c5db13ac243053f
+msgid ""
+"``bs1`` defines the location of the sample point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 16 inclusive for"
+" classic CAN."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:48 7fd373f4e4f5481f9eb26b79cd3b8870
+msgid ""
+"``bs2`` defines the location of the transmit point in units of the time "
+"quanta for nominal bits; it can be a value between 1 and 8 inclusive for "
+"classic CAN."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:50 68ab5bb4afac4e3e9901cb833ad11f35
+msgid ""
+"``triple_sampling`` is Enables triple sampling when the TWAI controller "
+"samples a bit"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:52 ../../en/module/pwrcan.rst:74
+#: ../../en/module/pwrcan.rst:127 ../../en/module/pwrcan.rst:140
+#: ../../en/module/pwrcan.rst:158 ../../en/module/pwrcan.rst:172
+#: ../../en/module/pwrcan.rst:188 ../../en/module/pwrcan.rst:200
+#: ../../en/module/pwrcan.rst:211 ../../en/module/pwrcan.rst:225
+#: ../../en/module/pwrcan.rst:241 ../../en/module/pwrcan.rst:257
+#: 046e2437677e459ab9877b73ab4798ff 1b508500953e49e3b57e96005cb4828b
+#: 28ce1d536c4749068b8f16a2ef7bf0fe 335b61236fc34b9288c46103200ad59f
+#: 370ada552dd1434b90e0a8bb031856fc 48a141eb4a3e4558917e2ab387081070
+#: 5105c949aae7407daacc1d45ced803fc 8d285461b39342028a6590548ebf25c1
+#: ae72b9db338b476f8e57b4ebf0e4af1d bd40e44cb21e421ea116414a57310700
+#: d43796cfa3854c5989a4420ffb2c931f e834e5e1ed194e8cb83e715a79e2ea39
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:54 2d95d7451f8a41b4ac9f4c6dcace1963
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:6 ef8ef53cecbc4a2a87beffb1f33213b4
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:57 ../../en/module/pwrcan.rst:80
+#: 8192b8387750493290855b9393d2ec36 8f95984dc6ef41539dfd654da1b8cf47
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:59 1d76496377a94c6c8ed9f9228243808e
+msgid ""
+"PwrCANModule class inherits CAN class, See :ref:`hardware.CAN "
+"<hardware.CAN>` for more details."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:63 175843721d0945dda8fdf1fd172ff98f
+msgid "class PwrCANModuleRS485"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:70 f89f730c36ba4b2bacd314049f2a694c
+msgid "Construct a UART object of the given id."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:72 18c2c67060e74cf39135c33a56385cf9
+msgid "For more parameters, please refer to init."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:76 adf8de1216be471582e09b24310810b2
+msgid "|init_rs485.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:7 2dcfb390fe81448390cceaa66e6042b9
+msgid "init_rs485.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:84 c71f66c9769d4568904f3e9f4b468614
+msgid "Initialise the UART bus with the given parameters:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:86 9602ca282f144755ad9333b4440cf2b4
+msgid "*baudrate* is the clock rate."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:87 f35e692afe9d4f90b2e50af370c936a8
+msgid "*bits* is the number of bits per character, 7, 8 or 9."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:88 a1e6d225604241f792d750896945f6e0
+msgid "*parity* is the parity, ``None``, 0 (even) or 1 (odd)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:89 d426833a9002490d8ae13a012fab9e25
+msgid "*stop* is the number of stop bits, 1 or 2."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:91 505a8cf1bd6b449bb0634d6daf5ac2be
+msgid "Additional keyword-only parameters that may be supported by a port are:"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:93 52b211caa89744a8badeebbc8bb95e6d
+msgid "*tx* specifies the TX pin to use."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:94 f5cbbdff97474432be2305a241f41fab
+msgid "*rx* specifies the RX pin to use."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:95 c380a1dee0a04b7fb01d10cf67cf3660
+msgid ""
+"*rts* specifies the RTS (output) pin to use for hardware receive flow "
+"control."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:96 7537e2176c9648b39fa95ee0629f06dc
+msgid ""
+"*cts* specifies the CTS (input) pin to use for hardware transmit flow "
+"control."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:97 355462122e5543da87c6bcd374c7d0e0
+msgid "*txbuf* specifies the length in characters of the TX buffer."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:98 7f7640c8288a44c09af91867b8045024
+msgid "*rxbuf* specifies the length in characters of the RX buffer."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:99 c520408ab69540228d8e20f757a6aa31
+msgid "*timeout* specifies the time to wait for the first character (in ms)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:100 c652c0c3fede4262b59c9a4b0da5d4dd
+msgid "*timeout_char* specifies the time to wait between characters (in ms)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:101 240b555e468b41cc9994ea891e7b7c74
+msgid "*invert* specifies which lines to invert."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:103 bd2248790bed46589be1f70b978aa3f8
+msgid "``0`` will not invert lines (idle state of both lines is logic high)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:104 208cd8dff51a451287d224f0d37f591b
+msgid ""
+"``PwrCANModuleRS485.INV_TX`` will invert TX line (idle state of TX line "
+"now logic low)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:105 4b8e4bbc23ed4570922498bb4705bd20
+msgid ""
+"``PwrCANModuleRS485.INV_RX`` will invert RX line (idle state of RX line "
+"now logic low)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:106 d3105610a1de4cd2861b70d71eaf99ab
+msgid ""
+"``PwrCANModuleRS485.INV_TX | PwrCANModuleRS485.INV_RX`` will invert both "
+"lines (idle state at logic low)."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:108 8bc922b3c749497ca40964629ef8401d
+msgid ""
+"*flow* specifies which hardware flow control signals to use. The value is"
+" a bitmask."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:111 a34b7e235f1d4a7c9551bf3d9b19be96
+msgid "``0`` will ignore hardware flow control signals."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:112 da3af082d9c3456a94c4f713272be8a1
+msgid ""
+"``PwrCANModuleRS485.RTS`` will enable receive flow control by using the "
+"RTS output pin to signal if the receive FIFO has sufficient space to "
+"accept more data."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:114 c0902dd906fd4bc998b36315a46f16a2
+msgid ""
+"``PwrCANModuleRS485.CTS`` will enable transmit flow control by pausing "
+"transmission when the CTS input pin signals that the receiver is running "
+"low on buffer space."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:116 7c7991acc1cf465496c5a9a6057de67d
+msgid ""
+"``PwrCANModuleRS485.RTS | PwrCANModuleRS485.CTS`` will enable both, for "
+"full hardware flow control."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:120 c5a341e37a58401e82ea747059c3ed67
+msgid ""
+"It is possible to call ``init()`` multiple times on the same object in "
+"order to reconfigure  UART on the fly. That allows using single UART "
+"peripheral to serve different devices attached to different GPIO pins. "
+"Only one device can be served at a time in that case. Also do not call "
+"``deinit()`` as it will prevent calling ``init()`` again."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:129 41a553c2b33649c2b6e10b6a568c4ef6
+msgid "|setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:10 058701faf676480d857a0177fcf93769
+msgid "setup.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:134 7894205c6c7b46e881529d7474c8f0d1
+msgid "Turn off the UART bus."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:137 16624f63cecf46a183352b67e6ba059e
+msgid ""
+"You will not be able to call ``init()`` on the object after ``deinit()``."
+" A new instance needs to be created in that case."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:142 c9362d93c1144268bd51964a589106cb
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:9 e8754d34bb04425281435692d299486b
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:147 59a87fcc1a3b4fa7ae3d617ee2b83c1f
+msgid ""
+"Returns an integer counting the number of characters that can be read "
+"without blocking.  It will return 0 if there are no characters available "
+"and a positive number if there are characters.  The method may return 1 "
+"even if there is more than one character available for reading."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:152 79b7b7343f16433093f0cecd952d7d4f
+msgid "For more sophisticated querying of available characters use select.poll::"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:160 9650ea9739614acdb14a578de396ed87
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:8 3a2b5ed837ca499fadeb7486be8de705
+msgid "any.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:165 2e6b3b261e96467e8492aba744586e41
+msgid ""
+"Read characters.  If ``nbytes`` is specified then read at most that many "
+"bytes, otherwise read as much data as possible. It may return sooner if a"
+" timeout is reached. The timeout is configurable in the constructor."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:169 8b78a2ea6f3b49e0bace4f53f05fa8ae
+msgid ""
+"Return value: a bytes object containing the bytes read in.  Returns "
+"``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:174 3b6d049e3216411e86d04fcb571b89ca
+msgid "|read_all.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:11 43d497eb717b4a1b88b7583ecb6cdfe6
+msgid "read_all.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:176 0ebae4a0346c4897a9faf421dc210e8f
+msgid "|read_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:12 c0d64378805a45ee8def1371738f8611
+msgid "read_bytes.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:181 581abd58677d4b79b018e6b85506de8b
+msgid ""
+"Read bytes into the ``buf``.  If ``nbytes`` is specified then read at "
+"most that many bytes.  Otherwise, read at most ``len(buf)`` bytes. It may"
+" return sooner if a timeout is reached. The timeout is configurable in "
+"the constructor."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:185 6fd0fb2d5155485bada946f58f3496fe
+msgid ""
+"Return value: number of bytes read and stored into ``buf`` or ``None`` on"
+" timeout."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:190 447322da91564f53a2e92103b1d2ba86
+msgid "|readinto.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:14 fa5fcf7c96bf4d02829c8be56f49ba40
+msgid "readinto.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:195 8eb795ef2c014f69afae5e2719f12c87
+msgid ""
+"Read a line, ending in a newline character. It may return sooner if a "
+"timeout is reached. The timeout is configurable in the constructor."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:198 ca6e0b0b72ec4bb8b394797bb003f015
+msgid "Return value: the line read or ``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:202 06cdf06654d940c7ae739376c7e4e712
+msgid "|readline.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:13 6a2aefcf6bbd4fc8927f29758848b08d
+msgid "readline.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:207 b055ddbb99b24dd4ac4f31ba31a9549a
+msgid "Write the buffer of bytes to the bus."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:209 6e04fc66a8534aa8a9f9c29b279ebc06
+msgid "Return value: number of bytes written or ``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:213 b2bd556ebac74ac188f7d80d061e12a5
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:15 315d568fcfca4255ab29d50074005a34
+msgid "write.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:215 7da48b33d2324c2996496121ae613253
+msgid "|write_line.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:16 9e999dd3494345cea1799abd5ffefd9b
+msgid "write_line.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:217 0b43f3f22ef7428d9d72dbcd1d3cb913
+msgid "|write_list.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:17 5120b9820a9348ff91078851e518e461
+msgid "write_list.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:222 a4c9627b07b5444d98f225db6094a6c3
+msgid ""
+"Send a break condition on the bus. This drives the bus low for a duration"
+" longer than required for a normal transmission of a character."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:227 ed61c72dfc4545d5b3856d29de5a2772
+msgid "|sendbreak.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:20 83032518f9454ea7a3b4bbad25cd5476
+msgid "sendbreak.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:232 62d740aba42e4e8e91cb5466eb143d36
+msgid ""
+"Waits until all data has been sent. In case of a timeout, an exception is"
+" raised. The timeout duration depends on the tx buffer size and the baud "
+"rate. Unless flow control is enabled, a timeout should not occur."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:238 e7f370d502904e409fef13b07a3d0f21
+msgid ""
+"For the rp2, esp8266 and nrf ports the call returns while the last byte "
+"is sent. If required, a one character wait time has to be added in the "
+"calling script."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:243 8ea1ef7076174195a6ef6bb32893808b
+msgid "|flush.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:19 3ec109ab3382443594f883f248df0df5
+msgid "flush.png"
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:248 f7d67525f32344d09e00f93d6b9de5ae
+msgid ""
+"Tells whether all data has been sent or no data transfer is happening. In"
+" this case, it returns ``True``. If a data transmission is ongoing it "
+"returns ``False``."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:253 a288783a988941d2a1dd13eb0b5a2cee
+msgid ""
+"For the rp2, esp8266 and nrf ports the call may return ``True`` even if "
+"the last byte of a transfer is still being sent. If required, a one "
+"character wait time has to be added in the calling script."
+msgstr ""
+
+#: ../../en/module/pwrcan.rst:259 51e82552d5ac439d82ca3a261c8f4660
+msgid "|txdone.png|"
+msgstr ""
+
+#: ../../en/refs/module.pwrcan.ref:18 2860fbd394184c9aa45aab9b4c0e8999
+msgid "txdone.png"
+msgstr ""
+
+#~ msgid "|init1.png|"
+#~ msgstr ""
+
+#~ msgid "|read_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "read_raw_data.png"
+#~ msgstr ""
+
+#~ msgid "|write1.png|"
+#~ msgstr ""
+
+#~ msgid "write1.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data_list.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data_list.png"
+#~ msgstr ""
+

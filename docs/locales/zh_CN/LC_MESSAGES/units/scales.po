@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/scales.rst:3 93dc5260d2e949058c6bcc9a35cc081b
+msgid "Scales Unit"
+msgstr ""
+
+#: ../../en/units/scales.rst:7 05ed302ca1f544d7b89ad6d04f4a6f66
+msgid ""
+"UNIT Scales is a high precision low-cost I2C port weighing sensor, with a"
+" total weighing range of 20kgs. Adopt STM32F030 as the controller, HX711 "
+"as sampling chip and 20 kgs weighing sensor. With tare button and "
+"programable RGB LED. This Unit offers the customer with a highly "
+"integrated weighing solution, suitable for the applications of weighing, "
+"item counting, item movement Checking and so on."
+msgstr ""
+
+#: ../../en/units/scales.rst:9 4061d0a32eea440a9e1b73765af3216c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/scales.rst:11 4397365a74de4778a3ce2e356a07278c
+msgid "|ScalesUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref f95f99c44eb54647859afeb64460ac05
+msgid "ScalesUnit"
+msgstr ""
+
+#: ../../en/units/scales.rst:13 c3f540ed2390478e9071b6a0222464e3
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/scales.rst:20 41fcfca99e954d06997427d8d329d9bc
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/scales.rst:22 31b8f6621bd247268f8620e99da0c29d
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:22 52fd9905d0b54968941888e0d0b75e4d
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:26 bd76cbafe39c4a00a2a9dd067b26e4be
+msgid "|scales_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/scales.rst:29 0c55a7bab8e0433f98e63b2300739679
+msgid "class ScalesUnit"
+msgstr ""
+
+#: ../../en/units/scales.rst:32 0b0228c4387e4760939cf42732ed4980
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/scales.rst:36 4dd612a84fbf47f48270583166cfc928
+msgid ""
+"Initialize the ScalesUnit with I2C communication and an optional I2C "
+"address."
+msgstr ""
+
+#: ../../en/units/scales.rst 045708f263af4063ae2e3f314005831b
+#: 254f1874d0ec40b4b2cff96f5e308f47 403153d339054cf5a257650877b0f227
+#: 6ba9d3d8f0474ad1aa660b577a811667 8912c34f341948878a1f3df0b0044eea
+#: a635354849fd46a1a520fc3831abd0f1 a8d66aaa2b6040d2a074f0884f154461
+#: ab664f7dfe1648898d57dc41e0cce654 bc59d0c92bc9435496c6b1ca06ea8322
+#: d6b3d62d3ea6466aa57d147d1b063764
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/scales.rst:38 79a6a7f24eb148b1abb0280f2555e9fd
+msgid "The I2C or PAHUBUnit instance for communication."
+msgstr ""
+
+#: ../../en/units/scales.rst:39 fd75ae8d4f9643d9b98247addd528a14
+msgid "The I2C address or a list/tuple of addresses for the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:41 ../../en/units/scales.rst:57
+#: ../../en/units/scales.rst:67 ../../en/units/scales.rst:77
+#: ../../en/units/scales.rst:93 ../../en/units/scales.rst:103
+#: ../../en/units/scales.rst:115 ../../en/units/scales.rst:125
+#: ../../en/units/scales.rst:134 ../../en/units/scales.rst:143
+#: ../../en/units/scales.rst:153 ../../en/units/scales.rst:165
+#: ../../en/units/scales.rst:175 1a2f0b6caae64045bbdaa751b24c1921
+#: 229fa5438c724fdfa1f3fe8b214ce8fb 22f656e381d4482881cd71ba9f2b814e
+#: 48650b7aee954d9eadcbaa8a389a2fe0 58e31afc7d2c47e8bcbdd0c1b9996703
+#: 7bdd8b2150ae4b67a64f966338b2cefc 875df7c599da4699aca007f62cb00e1f
+#: 9ea50ee398254c60850f2412be98025c a09a07ad5c3e4b49ac0598faf1914983
+#: a2feb3f2f055486c8748917b5fda5696 ab8f1e72490848e18d5a9281cebff2f5
+#: d48f0932916442819c6380499afaa40b f416616d38ce43e58826fac77a4ae0f0
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/scales.rst:43 527d6800bebd4a7cb595d56f413a37d2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:7 c6d3e01b55844a85a7d92c358befeb76
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:47 e20d14726c8b415fa88ae0a7b8418716
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/scales.rst:51 f1589410cef94cf9867a02ce60bc5e36
+msgid "Retrieve the status of a button on the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:53 2f6888ae27154a46b3fdf02f3d09f79b
+msgid "The button status identifier."
+msgstr ""
+
+#: ../../en/units/scales.rst 29591714bb144f139ca9ea27e91c3785
+#: 41564f01f0c6457f8e3f7ba90d8332c3 a1fdbb415065496ab52201c0d3bb12c8
+#: b025435b4caa413e9e9ec94476a69ec0 f44b0234b8df4726852ed46061be66bf
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/scales.rst:55 260e1c0cefa24d55b0d5d68190b433db
+msgid "The current status of the specified button."
+msgstr ""
+
+#: ../../en/units/scales.rst:59 29bfc5622d514b6ba96d67702da37a91
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:9 cf912204be9649a0a43c98bbd349007c
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:63 649e5022788949bab494a4d383711366
+msgid "Enable or disable the button offset for the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:65 2e52167f01f2434a99e69b1c1f816c5c
+msgid "The offset enable value (1 to enable, 0 to disable)."
+msgstr ""
+
+#: ../../en/units/scales.rst:69 eedb30880c4f4a17bbae60f6f11d7f40
+msgid "|set_button_offset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:10 fb473531dc3c4c1e8a88929d97531a7b
+msgid "set_button_offset.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:73 6a806feb863247028252efe73e947c13
+msgid "Set synchronization mode for the RGB LED."
+msgstr ""
+
+#: ../../en/units/scales.rst:75 570a92575a2f4762a9cc0c6b89ffb087
+msgid "The control value for synchronization."
+msgstr ""
+
+#: ../../en/units/scales.rst:79 363d22de15cb4dfdb6dbf01e752e0b88
+msgid "|set_rgbled_sync.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:11 a8cdf413cd2d4dfaa058b177bff8296a
+msgid "set_rgbled_sync.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:83 d824cbc4aa76440483e9255605a6adc0
+msgid "Retrieve the synchronization mode of the RGB LED."
+msgstr ""
+
+#: ../../en/units/scales.rst:85 34a5f1fcf2b447cfb36bfc3c297d5109
+msgid "The synchronization mode value."
+msgstr ""
+
+#: ../../en/units/scales.rst:89 85e0766d10054655bc37bcc7f7fd36a5
+msgid "Set the RGB values for the LED."
+msgstr ""
+
+#: ../../en/units/scales.rst:91 4bc3f277edf240798443b03e7c59226e
+msgid "The RGB value as a 24-bit integer."
+msgstr ""
+
+#: ../../en/units/scales.rst:95 321c9fa62d464dc88cbe5b02117e6136
+msgid "|set_rgb_led.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:12 80b2ab1a739746b59c07d809c825706d
+msgid "set_rgb_led.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:99 0e72f07b58624aa08c640680e34f43d5
+msgid "Retrieve the current RGB values of the LED."
+msgstr ""
+
+#: ../../en/units/scales.rst:101 b34bb62bde944dba906dda135a2bb3f6
+msgid "A list containing the RGB values."
+msgstr ""
+
+#: ../../en/units/scales.rst:105 93723bba2f444a5aa5e35a7210ad8c45
+msgid "|get_rgb_led.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:13 90a9b75dc778437cbc2895e21c7bf61f
+msgid "get_rgb_led.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:109 9ebb0f880817415187ce6cfa1c4fc938
+msgid "Get the scale value for the specified scale type."
+msgstr ""
+
+#: ../../en/units/scales.rst:111 a68c15b2f16148ac9369cd6d2b0cd753
+msgid "The scale type identifier."
+msgstr ""
+
+#: ../../en/units/scales.rst:113 3afc0f45cfbc490594a1c09870b48d7f
+msgid "The scale value as an integer."
+msgstr ""
+
+#: ../../en/units/scales.rst:117 3a4727913e0d4a80865c6054f0c64b88
+msgid "|get_scale_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:14 64d2a97b652c40429cd61b54c72f5ec0
+msgid "get_scale_value.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:121 031ccffa12bb4314b5cee0246d3e457d
+msgid "Set the raw offset for the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:123 a14103979a4e4e8388c26761345327e3
+msgid "The raw offset value as an integer."
+msgstr ""
+
+#: ../../en/units/scales.rst:127 c9584d6deaaa4f059784c222dbc917ea
+msgid "|set_raw_offset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:15 7928cc6aa40645379f5955cf4226d463
+msgid "set_raw_offset.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:131 a09a77ca446642cc982d7efe64a2d71e
+msgid "Set the current raw offset value for the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:136 d624013d1d32467fa9956b320e11a593
+msgid "|set_current_raw_offset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:16 eb4c52168d9e4882987f1c0bda0b108d
+msgid "set_current_raw_offset.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:140 e0f31d433235427eb51757197126e1bc
+msgid "Calibrate the scales unit for zero weight."
+msgstr ""
+
+#: ../../en/units/scales.rst:145 bcc9f751a08848eda047285a33d37c74
+msgid "|set_calibration_zero.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:17 11692f31d2d04428b8fb4aff7a069675
+msgid "set_calibration_zero.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:149 f86454030dca4b76aabdfccc129f93a5
+msgid "Calibrate the scales unit with a specified weight."
+msgstr ""
+
+#: ../../en/units/scales.rst:151 294a73a7ebaa428885628a1294a46e9a
+msgid "The weight value in grams for calibration."
+msgstr ""
+
+#: ../../en/units/scales.rst:155 bb0563e9aa904c51ae4e063c76319fe1
+msgid "|set_calibration_load.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:18 62717e99da464878b062d93423fbdce4
+msgid "set_calibration_load.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:159 e831498df2e045049226430131485520
+msgid "Get the device information for a specified mode."
+msgstr ""
+
+#: ../../en/units/scales.rst:161 94a0c7243a734f25b6ed3816099b9215
+msgid "The mode identifier for the requested information."
+msgstr ""
+
+#: ../../en/units/scales.rst:163 dea4564315e3438eac654711f240149c
+msgid "The device information value."
+msgstr ""
+
+#: ../../en/units/scales.rst:167 d9765b881a5844b29cb0096e9cf05a7c
+msgid "|get_device_inform.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:19 dec2a8db550d42afb0a6d4d04451fb47
+msgid "get_device_inform.png"
+msgstr ""
+
+#: ../../en/units/scales.rst:171 483804916be846059dac868d5c4b0eab
+msgid "Change the I2C address of the scales unit."
+msgstr ""
+
+#: ../../en/units/scales.rst:173 c9a1c9590a48426f9b0eca8b13710099
+msgid "The new I2C address value."
+msgstr ""
+
+#: ../../en/units/scales.rst:177 170cd4605ad842d3a6372a2dcad784d2
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.scales.ref:20 0f1c83f81a324b94a33a19aebe71bfb7
+msgid "set_i2c_address.png"
+msgstr ""
+

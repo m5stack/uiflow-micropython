@@ -17,14 +17,21 @@ Support the following products:
     |FlashLightUnit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import FlashLightUnit
-    flash = FlashLightUnit((33,32))
-    flash.flash(FlashLightUnit.BRIGHTNESS_100, FlashLightUnit.TIME_220MS, True)
+    .. literalinclude:: ../../../examples/unit/flashlight/cores3_flashlight_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_glass_example.m5f2|
 
 
 class FlashLightUnit
@@ -41,7 +48,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -75,4 +82,4 @@ Methods
 
     UIFLOW2:
 
-        |flash.svg|
+        |flash.png|

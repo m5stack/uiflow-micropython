@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/echo.rst:2 ../../en/base/echo.rst:19
+#: ../../en/refs/base.echo.ref 1672452b1a124d5c92dd43519fba9e86
+#: c307ebf52d5a48b39c14cb2afefe8fd9 ca6c03104f6047f8a418a11acc5c0b0c
+msgid "Atomic Echo Base"
+msgstr ""
+
+#: ../../en/base/echo.rst:8 1e77f1dbf760458f85347e8b6f005eae
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/base/echo.rst:10 8d0f7dd12e644a5b8881a2e770f2ebcc
+msgid "|Atomic Echo Base|"
+msgstr ""
+
+#: ../../en/base/echo.rst:12 f4bc9b1d9ed449c6aededa13b3a3e07b
+msgid "Below is the detailed support for Speaker on the host:"
+msgstr ""
+
+#: ../../en/base/echo.rst:19 b74b018952104a2b95b6301441541af8
+msgid "Controller"
+msgstr ""
+
+#: ../../en/base/echo.rst:21 6430edc486844513aacda944b4c1c026
+msgid "Atom Echo"
+msgstr ""
+
+#: ../../en/base/echo.rst:21 bfe41c41e0644374bba99b4cc7f1574a
+msgid "|O|"
+msgstr ""
+
+#: ../../en/base/echo.rst:23 b9e0777744ec4c359c36acdccbedb349
+msgid "Atom Lite"
+msgstr ""
+
+#: ../../en/base/echo.rst:23 ../../en/base/echo.rst:25
+#: ../../en/base/echo.rst:27 ../../en/base/echo.rst:29
+#: ../../en/base/echo.rst:31 ../../en/base/echo.rst:33
+#: ../../en/base/echo.rst:35 0d50258cc19540ca847fb7e6ffadd7f6
+#: 2f37fdbdcf9f4ae9b52bb50b2ca70728 3246582f50cf4583b1e151a927ba9480
+#: 63dde4b7f95f44f9b1037ebab10f3661 b654a6d5bff74ca0be2dcd0229048615
+#: decc54e00fc44ae68f5f274b55fc1b53 df829d5bc0584b90ba918e52dcf14dda
+msgid "|S|"
+msgstr ""
+
+#: ../../en/base/echo.rst:25 863d940c5c76468393e6c179bbc9e439
+msgid "Atom Matrix"
+msgstr ""
+
+#: ../../en/base/echo.rst:27 b86a9d2193c540eb847ad4621fb9f318
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/base/echo.rst:29 d3848673f84a494bb46f8a89a01b2a12
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/base/echo.rst:31 e13c4aab0950436180f56a1bf0845906
+msgid "AtomS3R"
+msgstr ""
+
+#: ../../en/base/echo.rst:33 bc837a904e1b4d2d9a44559542e7fbdf
+msgid "AtomS3R-CAM"
+msgstr ""
+
+#: ../../en/base/echo.rst:35 c4fe3b2b3f834cc7865811382e2983d5
+msgid "AtomS3R-Ext"
+msgstr ""
+
+#: ../../en/base/echo.rst:42 fed7ed4706684547851f3fb977483a20
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/base/echo.rst:49 22de2793120145f9bd4db15cee35e5ab
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/base/echo.rst:51 b94d66061365424d863766a89dee54c9
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:9 475f061a525042ff9b83c97d479bcde9
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/echo.rst:56 1e11ed954c0b4ad59497aebb9c3de286
+msgid "|atoms3_echo_example.m5f2|"
+msgstr ""
+
+#: ../../en/base/echo.rst:60 3ea0023021964f0f8b777fcc3239c9d9
+msgid "class ATOMEchoBase"
+msgstr ""
+
+#: ../../en/base/echo.rst:63 0ad0c0d3eaef4d51a200259453dd6e41
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/base/echo.rst:67 f2aad4e0be7246bd85977eb4e3937678
+msgid "Create an ATOMEchoBase object."
+msgstr ""
+
+#: ../../en/base/echo.rst 6aa28f915b7d4d6299293897cc51f509
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/base/echo.rst:69 21c74170d2e04ee2baf29ab3f647bb78
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/base/echo.rst:70 3b1018cd013c44ed87a877478fcebf33
+msgid "The I2C address of the ES8311. Default is 0x18."
+msgstr ""
+
+#: ../../en/base/echo.rst:71 b1919aee0ad14142a246ce614b6362b4
+msgid "The I2S port number. Default is 1."
+msgstr ""
+
+#: ../../en/base/echo.rst:72 654eff122e4f4d0faf7248cfef12d64d
+msgid "The sample rate of the audio. Default is 44100."
+msgstr ""
+
+#: ../../en/base/echo.rst:73 2268b224134940d4b2ccd3bdcfd853f7
+msgid "The I2S SCK pin. Default is -1."
+msgstr ""
+
+#: ../../en/base/echo.rst:74 897066ce2fac4f18a247d4fac5bdc676
+msgid "The I2S WS pin. Default is -1."
+msgstr ""
+
+#: ../../en/base/echo.rst:75 a37ef0bc0b744d4e9b9b05ce5fde6775
+msgid "The I2S DI pin. Default is -1."
+msgstr ""
+
+#: ../../en/base/echo.rst:76 1a5ba9a6cab74a25962c5b4c94962777
+msgid "The I2S DO pin. Default is -1."
+msgstr ""
+
+#: ../../en/base/echo.rst:78 8bc105ae2489499286bd09bc5ba8198b
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/base/echo.rst:80 d6b1109c83b3475cb8eef35a87ec9870
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:7 101a832b225a45c983541132d2d10070
+msgid "init.png"
+msgstr ""
+
+#: ../../en/base/echo.rst:82 820309d24a8948c0985f6076405cbffb
+msgid "Micropython::"
+msgstr ""
+
+#: ../../en/base/echo.rst:113 c3bf1a6107e947e08a93b0ba57fdfcc8
+msgid "Attributes"
+msgstr ""
+
+#: ../../en/base/echo.rst:117 acdab87e9884401bb220057eacb513eb
+msgid "Objects of the Speaker class."
+msgstr ""
+
+#: ../../en/base/echo.rst:119 10eb2e6f0f6b458cac83f4c53b5f6ab3
+msgid ""
+"See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more "
+"details on how to use the ATOMEchoBase.speaker properties."
+msgstr ""
+
+#: ../../en/base/echo.rst:123 f5efd98e3a3b4cf39a93f40cad838222
+msgid "Objects of the Microphone class."
+msgstr ""
+
+#: ../../en/base/echo.rst:125 d447c5a69bfb40198457e5f25782586a
+msgid ""
+"See :ref:`hardware.Mic.Methods <hardware.Mic.Methods>` for more details "
+"on how to use the ATOMEchoBase.microphone properties."
+msgstr ""
+
+#: ../../en/base/echo.rst:127 c3e4b64c403b4ce59d8657ce651b6428
+msgid "Microphone is not quite ready yet."
+msgstr ""
+

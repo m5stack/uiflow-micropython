@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/tvoc.rst:3 734d64d99071407d99f7f814b9035e22
+msgid "TVOC Unit"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:7 597c96d9bf8f4f5792b6823e0ec86562
+msgid ""
+"TVOCUnit is a hardware module for measuring Total Volatile Organic "
+"Compounds (TVOC) and equivalent CO2 (eCO2). It is based on the SGP30 "
+"sensor and communicates via the I2C interface. The class supports "
+"configuration and measurement operations."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:9 c16ac646e48849bbb7f6fdb7cc8a81a4
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:11 70b2c9632f1c46249cce751038d2a838
+msgid "|TVOCUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref 563fcbf7d122434b808eca6020c46e57
+msgid "TVOCUnit"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:13 8719a00484f94536a0cb5f59579e79d9
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:20 e990ac1d88f042ce8dcbd97be15f730d
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:22 385efe5304b44ea78d937d9826db37c9
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:17 8231691b89c24a8aa73958e29b5dfbbe
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:26 2d55ebd216d74b709c04397aa491b129
+msgid "|tvoc_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:29 71e07afba7254c1f90b21bf4cb79bb95
+msgid "class TVOCUnit"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:32 d801c2a5ecb143be9ff99602fe3f57f8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:36 d4d1457fab4848f0bbd0286eeb48e83d
+msgid "Initialize the TVOCUnit with the specified I2C interface and address."
+msgstr ""
+
+#: ../../en/units/tvoc.rst 23bb3e9d78384b0b960fe50abe1de76e
+#: 2919fd8238a2423ba6e80d89d3e2e60d 5f056fa4fb2541e68ed23c8fc3b16239
+#: 88c5209a79314f3f8bea5d9d11ba55e9 a61e90b090e7448c96224a691c9357dc
+#: b9bc6176c57f4dbbb64d456063b3cdcc
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:38 beb0d55ac3724a5ba78a7b23499b963e
+msgid "The I2C interface or PAHUBUnit object for communication with the sensor."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:39 28b0ef8b842a442f9578d819b272c702
+msgid "The I2C address of the TVOC unit. Defaults to 0x58."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:41 ../../en/units/tvoc.rst:60
+#: ../../en/units/tvoc.rst:71 ../../en/units/tvoc.rst:121
+#: ../../en/units/tvoc.rst:130 ../../en/units/tvoc.rst:139
+#: ../../en/units/tvoc.rst:148 ../../en/units/tvoc.rst:157
+#: ../../en/units/tvoc.rst:166 1c509dd94be949cda6ed7b934157faa1
+#: 2e87ddbde83e4fe993654d3a8b012065 3e33576192e94a78896d006ff98d5dd5
+#: 59bb493c4c364c999bd9fed3fbb5a9b3 59eea77c473f405da796494bcf8b46de
+#: 7f38c20431544b66b06a6dc52e5fa228 a5f9bd7986644a10952d49a4f8bfb3b4
+#: b88a0571eefa4bb8839d9ffdc296623c e617bb57fe474e56a9ab9012077f7c7a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:43 1c2ad23314f745b4b6ca47956dc3ede7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:7 47a2260ac28641b5b50689cc613d9a1a
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:47 492e0ddec0414ee89af2c71b1f69c536
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:51 8b40f207718442a6b6dd79b67defa4ca
+msgid "Check whether the TVOC/eCO2 unit is available."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:55 2601d58516c84ea9914b2aede53c569f
+msgid "Set the baseline values for CO2 and TVOC measurements."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:57 018c49e9118f4bc7b2d65e578df85fc7
+msgid "The CO2 equivalent baseline value to be set."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:58 e488358639e143e7966f9e7eb52ebd4f
+msgid "The TVOC baseline value to be set."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:62 40c853c621cf4bea8b17ab16f5025038
+msgid "|set_baseline_co2_tvoc.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:8 1868a287c4dc4037b74f0d4476a6c7c5
+msgid "set_baseline_co2_tvoc.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:66 a1dfbb2413354349babfccbc8b136513
+msgid ""
+"Set the relative humidity and temperature for accurate air quality "
+"measurement."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:68 ../../en/units/tvoc.rst:175
+#: 3e1f8e60021b42afb0760cb6de93b116 5f443ecb662b4013b7c3228d9d8873f7
+msgid "The relative humidity in percentage (%)."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:69 ../../en/units/tvoc.rst:174
+#: 03a0d30f48d04070be7c16696da75c29 571da32cad00434d9f59b8398102687c
+msgid "The ambient temperature in Celsius (°C)."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:73 6399fe7e525f4c4db27b3855a7254b4a
+msgid "|set_relative_humidity.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:9 b19ec15138f945e48ed547e0b98fae1e
+msgid "set_relative_humidity.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:77 efdde8e982d9477c9d517cdfd80f626a
+msgid "Initialize the IAQ (Indoor Air Quality) algorithm for the sensor."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:81 7836c38f12ff418db74612643a092b90
+msgid "Measure the CO2 equivalent (CO2eq) and TVOC values."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:85 5f292f2bfaa7448792962cc15a514458
+msgid "Retrieve the IAQ algorithm baseline values for CO2eq and TVOC."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:89 d7db25d7f323431da980fdb08bc405c7
+msgid ""
+"Set the previously recorded IAQ algorithm baseline values for CO2eq and "
+"TVOC."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:91 ecffc65f791945028af317bce702d862
+msgid "The CO2 equivalent baseline value."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:92 6746d879fefc4c73b99ea94427af3ffc
+msgid "The TVOC baseline value."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:96 1d31384a7efb4d46b9c935c8c97afa04
+msgid ""
+"Set the absolute humidity compensation for the sensor. To disable, set "
+"the value to 0."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:98 014946962cac460aabfea437ee342cbc
+msgid "The absolute humidity value to set."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:102 f69df903ea2f4db1a60a5613e1312fc5
+msgid "Run the on-chip self-test."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:106 e3b82d0f681b4a2ea412efcfc26e3cda
+msgid "Retrieve the feature set of the sensor."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:110 9ca999b1562d4806a91e25eaf20a6886
+msgid "Return raw H2 and Ethanol signals for part verification and testing."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:114 bc8e3b7def1a4b53ad89e532aff02f8b
+msgid "Retrieve the sensor serial ID."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:118 5d550de9381345a2859581a0f958b1ad
+msgid "Retrieve the Carbon Dioxide Equivalent (CO2eq) in parts per million (ppm)."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:123 93fcfec19a1e4763ae0c77ee772cce71
+msgid "|co2eq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:10 5c9026d0295a4d51a6638c4dfef5c2c0
+msgid "co2eq.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:127 5c3b701e9286496fa6e1d91ae186b802
+msgid "Retrieve the baseline value for CO2eq."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:132 e6ab223b5bac4c1387dc308060901bc0
+msgid "|baseline_co2eq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:11 278a4d3925b241b8aaeb318144ea5013
+msgid "baseline_co2eq.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:136 e0db3b83f4944c2887a64214d1807a0f
+msgid ""
+"Retrieve the Total Volatile Organic Compound (TVOC) in parts per billion "
+"(ppb)."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:141 5e002bafd6bf4be9b0f32c0417edd230
+msgid "|tvoc.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:12 27e2617ccd674ba3bbb827bace82d8cf
+msgid "tvoc.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:145 747b545e49f540b4b3138eb9572ce5b4
+msgid "Retrieve the baseline value for TVOC."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:150 30d101eac3bd4302a195f87ce0df19fa
+msgid "|baseline_tvoc.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:13 78215ded8401488382943d3640915e20
+msgid "baseline_tvoc.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:154 64c19ce861764d029ff58b31cbce84c2
+msgid "Retrieve the raw H2 signal value."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:159 61bd449b672445faaee8170c44681759
+msgid "|raw_h2.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:14 b247c0073a134ea79438226da825275d
+msgid "raw_h2.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:163 e5d5824b03d44316be78d80c6c19f9d6
+msgid "Retrieve the raw Ethanol signal value."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:168 e9ba6d92e15c44c9b2a88c1f3a569703
+msgid "|raw_ethanol.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tvoc.ref:15 ae952dcc85fd4d15aa2a3d4060d8829e
+msgid "raw_ethanol.png"
+msgstr ""
+
+#: ../../en/units/tvoc.rst:172 dcf857deacd14bd0837705d40c5c3864
+msgid ""
+"Convert relative humidity to absolute humidity based on the sensor&#x27;s"
+" equation."
+msgstr ""
+
+#: ../../en/units/tvoc.rst:176 3182cb09bdb7402399526c3967223e25
+msgid "Whether to return the value in 8.8 fixed-point format. Defaults to True."
+msgstr ""
+

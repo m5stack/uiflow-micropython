@@ -1,0 +1,630 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/midi.rst:3 55c25df2b35b4c5a9e2ce53e4f570558
+msgid "MIDI Unit"
+msgstr ""
+
+#: ../../en/units/midi.rst:7 8a8c9452aca0470daa8ae0a92f806e48
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/midi.rst:9 974711db00064578b62aeea336878948
+msgid "|MIDIUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref 40f55e99510a4a06b1382a228069ed9f
+msgid "MIDIUnit"
+msgstr ""
+
+#: ../../en/units/midi.rst:16 32bec8d54a314e23835d32b0e167427d
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/midi.rst:18 431612f79ce3438991d79e851ce03ed1
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:32 661fa49c7aee4fa882e61b8f95b71f45
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:22 8cdab1aa2ca34018a30704421a97d2d2
+msgid "|midi_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/midi.rst:25 9444ff34f06948cf8b7632e7b951c606
+msgid "class MIDIUnit"
+msgstr ""
+
+#: ../../en/units/midi.rst:28 c1d8af2c6ef14954bd7a65ec6bb94b87
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/midi.rst:33 437cd40a930a420c8d008a5e24e20707
+msgid "Initializes the MIDI unit with a specified UART ID and port pins."
+msgstr ""
+
+#: ../../en/units/midi.rst:33 2bbc2db2206c4e47ad6d25d5082d4959
+msgid "The UART interface is used to transmit MIDI messages."
+msgstr ""
+
+#: ../../en/units/midi.rst 02ba7817448d46858bb2b4f184ca271f
+#: 081123ce86054026b3b129a8c623ebb1 14cbc122758f4fe2889880a50887630d
+#: 174a770726864830a9bc1daaabfe4556 1893f4d5e35148a69fe6dd6e0a137905
+#: 22561322cbee494086e3a526b00bb0c4 414ade9bf2094e42b8847ad2a8d3f51f
+#: 47b75044116d43e399d8581186505d97 4b0f0218ba3a4630975a35a3478171c9
+#: 615f6bf2fa364460b56853defbd34ea0 658e17f4acb440508180c60a4ad5a36c
+#: 8e3b433077d74bad9ea9b35a6df1b14a 90254d5d8827439e8c1fa1df6aacb2f5
+#: 9760fbf980a24b298c836ef44d0c7e4f a9924358f36c4c649ac5e8fad7ed6cf0
+#: b21722cd4f2b4a8b8b87ca0676eb62a0 c6f3d27bff2441afb029840316f1a8a1
+#: d60a01ac33d34a5dac53866539680c8d e224d14b01304aeb902103fb94edc14d
+#: e3daa1daf3a947e881ac2986ea3994aa f5449f4beb8442c3b3e43c0f06d66b4d
+#: fb75fc9b49c64e338f849c87bcb08267
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/midi.rst:35 adfd93dbbae34e19886b3ea2737dd625
+msgid "UART device ID."
+msgstr ""
+
+#: ../../en/units/midi.rst:36 0116d3740de9458195027f45348e6f82
+msgid "UART TX and RX pins."
+msgstr ""
+
+#: ../../en/units/midi.rst:38 ../../en/units/midi.rst:54
+#: ../../en/units/midi.rst:65 ../../en/units/midi.rst:77
+#: ../../en/units/midi.rst:88 ../../en/units/midi.rst:99
+#: ../../en/units/midi.rst:110 ../../en/units/midi.rst:119
+#: ../../en/units/midi.rst:130 ../../en/units/midi.rst:140
+#: ../../en/units/midi.rst:150 ../../en/units/midi.rst:163
+#: ../../en/units/midi.rst:177 ../../en/units/midi.rst:188
+#: ../../en/units/midi.rst:206 ../../en/units/midi.rst:218
+#: ../../en/units/midi.rst:231 ../../en/units/midi.rst:243
+#: ../../en/units/midi.rst:256 ../../en/units/midi.rst:267
+#: ../../en/units/midi.rst:284 ../../en/units/midi.rst:293
+#: 0942bde79cb24536b3a9d98d5ffb04ed 0ef9dbcf9e8f4883aaa96932d888c351
+#: 10fa9af443a24cb29c4cb460efc3da8d 12043dbc10a24be291cca9e433b26a1f
+#: 22a8c3681a134dd7a6aa92f544a7cfca 23ee58798b1545a1bd6eededeff32ecd
+#: 2fc3e963749d4814b08eb57b8db976cb 39d83f2edfec458d839676dd9b9703d8
+#: 426108c4df00431ea937f257dbf7d7a8 57316b23b59a4ea8a3055df9cbc4c650
+#: 5881669d27a74355ba882cfca450178f 76ae1e2f809147449b4b344e2599ff61
+#: 7da29440b1f84abfb731f42e86368d87 8eb927401f854251ad451c1f3f8aed1f
+#: 9100a44d81e4460c9298d144d4cad0c5 973313b0d53f4ba99a8f67f5bdfc0eee
+#: b9ea3ca114074d02a2c7e930ea59520c cf39567775e44f28bf1c3077838dbbf1
+#: d67a3f85a34240efb549fa98b0f09f3a e2ab112a4de74930856f5e4fbdb37d07
+#: e3df48fd7b6c4875aabb49db6091dc6f f454c9fac38949bc8d093122e2c2fa37
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/midi.rst:40 6fc3f3c009504024b0cbe35218ba9918
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:6 d5c3c5a350e144d0916ff42ddd365741
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:44 2db67427d3774c25bd4a4d1f2dd4844f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/midi.rst:48 378bc9adae9f4db891160ce04d023d1b
+msgid "Sends a MIDI Note On message to the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:50 ../../en/units/midi.rst:62
+#: ../../en/units/midi.rst:74 ../../en/units/midi.rst:96
+#: ../../en/units/midi.rst:107 ../../en/units/midi.rst:127
+#: ../../en/units/midi.rst:138 ../../en/units/midi.rst:158
+#: ../../en/units/midi.rst:171 ../../en/units/midi.rst:185
+#: ../../en/units/midi.rst:196 ../../en/units/midi.rst:214
+#: 04d147b7b0bd48e48b3e2c19392864af 51e2ec9c90244296a80868f18fcb77c2
+#: 53d471d1315642f587016c88bc3a6e8f 5bdbd2d791a64855925907a7ea74dd57
+#: 70cc2a522bf340b1a02021bea8f3bd34 71afcdc19e1545dfad24636f20b7729c
+#: 7c4586b4ee9340748b68cf2e578f91bb 8c0885a89d214506add81f4fd1f06f86
+#: 9a16976645964022a59d697bdef421af c5938d9c66084c5c9f747682dc8c25b7
+#: ccc31a4bd739412b8683af25862fd7ac ce29a1bdae4e424bac2a35374a275f83
+msgid "MIDI channel (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:51 ../../en/units/midi.rst:63
+#: b30cf21246194e6dba415965bb90fb96 f045314c0eac40f3bb1084b80cc100c1
+msgid "Note pitch (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:52 ../../en/units/midi.rst:86
+#: 76a9025707b54a0bb3e1c25501489ab4 d91214a5b30343869be2171d14b55dd8
+msgid "Note velocity (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:56 d0a8623e62704bb28f47a722e0d5379c
+msgid "|set_note_on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:20 6f78e4a66e20492ebed07d36590103e1
+msgid "set_note_on.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:60 b269f148ba8e453586a930ef1b80e015
+msgid "Sends a MIDI Note Off message to the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:67 0244df5aac754e0b8c675fa428720405
+msgid "|set_note_off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:19 06d15e2b501f4886b57d45d498f11eaa
+msgid "set_note_off.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:71 a936ffaf0cde4a68b4fc7b57b48810d7
+msgid "Changes the program (instrument) on the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:73 1417033ec5b649aa86b4df4eda796539
+msgid "Bank selector (MSB) for the program change."
+msgstr ""
+
+#: ../../en/units/midi.rst:75 babd9d88cb2d4e0baaa315c21b83ac13
+msgid "Program number (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:79 46193569c3b244dcb34cc4d271551395
+msgid "|set_instrument.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:15 22e6f3c30df24fa3ba2749c189bf95dc
+msgid "set_instrument.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:83 5972e8ae903d4fc3b5f62260ab23e614
+msgid "Sets a drum instrument and plays a note on MIDI channel 10."
+msgstr ""
+
+#: ../../en/units/midi.rst:85 de63bf06f51b42baa301c5fbaf89f971
+msgid "Drum pitch number."
+msgstr ""
+
+#: ../../en/units/midi.rst:90 50ab4973b60c4823977312d72e82d395
+msgid "|set_drums_instrument.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:11 63f9a8aae8b543f3a855c7c280fa9f25
+msgid "set_drums_instrument.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:94 cb9f5fc6d2e54a479f959af065243758
+msgid "Sends a MIDI Pitch Bend message to the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:97 c4c26ebd07b640718937ed2dc74d2b69
+msgid "Pitch bend value (0-16383)."
+msgstr ""
+
+#: ../../en/units/midi.rst:101 3e65dd11825941ae83c0a3b4b3def605
+msgid "|set_pitch_bend.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:24 9ecf19d0334c4900b5da895e6bf03f8b
+msgid "set_pitch_bend.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:105 93c62eaf47de425eb66520992caaadf6
+msgid "Sets the pitch bend range on the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:108 d60a09f95cbb4f5abb1f88488718b21a
+msgid "Pitch bend range in semitones."
+msgstr ""
+
+#: ../../en/units/midi.rst:112 839ecd118b254b4f964c99a4819f2893
+msgid "|set_pitch_bend_range.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:23 a570de25614041ae8afdb122dc738058
+msgid "set_pitch_bend_range.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:116 04a4f52f6ea8406eaa435ddfc51dced3
+msgid "Sends a MIDI System Exclusive Reset command."
+msgstr ""
+
+#: ../../en/units/midi.rst:121 e238635dffad4f3a8bf1625a7ec28891
+msgid "|midi_reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:7 bc59327a9b724169b8be1a65932dd3c8
+msgid "midi_reset.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:125 af42e7a9624b498a9689044f0d479912
+msgid "Sets the channel volume for the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:128 ../../en/units/midi.rst:148
+#: 12320368a17247d695b22c2b5f62f52e 25884a7f655f4c07b0ac458bf4bf26a0
+msgid "Volume level (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:132 9bda739a71d44fb5a7c79cdcefe9fc2d
+msgid "|set_channel_volume.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:9 bf1e49ff59bc4357aa9514bebc43714f
+msgid "set_channel_volume.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:136 e667edb3700d452496f290b57c336901
+msgid ""
+"Sends a MIDI Control Change message to turn off all notes on the "
+"specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:142 100c428302ae4be0b7bad8ee8d57d77e
+msgid "|set_all_notes_off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:8 68820af17ba04fcb888ab51987c4a63c
+msgid "set_all_notes_off.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:146 c4ebf13fded44a20878381168d231f56
+msgid "Sets the master volume using a standard System Exclusive message."
+msgstr ""
+
+#: ../../en/units/midi.rst:152 e35e63575d7942d28c09b81323bd801e
+msgid "|set_master_volume.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:16 db983744fa56421facbb4f1f9452321f
+msgid "set_master_volume.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:156 a92a0b96afe64a95b29ec2772818d5af
+msgid "Configures reverb effect on the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:159 363e65d4c4a740d490672ca9e27cb4f8
+msgid "Reverb program number (0-7)."
+msgstr ""
+
+#: ../../en/units/midi.rst:160 63616bc71b424e3d83ce9c0436ced56f
+msgid "Reverb level (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:161 7cc315fed7b143e385b1d543cbce42d2
+msgid "Delay feedback amount (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:165 f3c43f1e145e453d8ed16a510f29e0ab
+msgid "|set_reverb.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:25 4cbb1e5f18904bb68c50ef67d5d9af2b
+msgid "set_reverb.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:169 82db735f7ff54ef095c0f0b15cc5343c
+msgid "Configures chorus effect on the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:172 22e3ca18fb9b4acda4b013bfd4f3b140
+msgid "Chorus program number (0-7)."
+msgstr ""
+
+#: ../../en/units/midi.rst:173 d3c1066c698143e0a36ce4f05bfab117
+msgid "Chorus level (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:174 ff7d7cf4f95d4ea3aa71e69ef0aaf62f
+msgid "Chorus feedback amount (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:175 0c0c91d30b74468fb21c9a4723a00e3e
+msgid "Chorus delay amount (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:179 0eb83c2032ea4eb0b9264ae1070fe276
+msgid "|set_chorus.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:10 823d4c8e37dd4ccab21bd593f47b3812
+msgid "set_chorus.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:183 eb130802bf1b44b4865d110b4a7fed49
+msgid "Sets the pan position for the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:186 49b78465956547dba54880eb43ed2028
+msgid "Pan position (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:190 b7082605289547049fd15000160fd0b2
+msgid "|set_pan.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:22 d2982189130a401491eedc5e42aaec28
+msgid "set_pan.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:194 be26eea8807941c3aade9e3de3b205e6
+msgid "Sets the equalizer levels and frequencies for the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:197 0a18bb5f270b4b42bedd7537148082af
+msgid "Low band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/midi.rst:198 50a9d9c2fdea461d9fef90c7523e5db1
+msgid "Mid-low band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/midi.rst:199 b95aee48cb3c4d5fab0af90b95439df5
+msgid "Mid-high band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/midi.rst:200 e0ab7c3989d54f11b25ccdbec2103085
+msgid "High band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/midi.rst:201 462487d5399c4dddb42464753f35286c
+msgid "Low band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/midi.rst:202 6e0a6502fd9c48e0a80e264154db1ebc
+msgid "Mid-low band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/midi.rst:203 083a42a3b0c74b42beb4f802b654acd3
+msgid "Mid-high band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/midi.rst:204 c82457c6f50b4bea93adb333c7c7f8e4
+msgid "High band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/midi.rst:208 a8e1420f3d5b4df18c78304f0371e394
+msgid "|set_equalizer.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:13 5bb0c2aa9b2642879c519ad04a0fd766
+msgid "set_equalizer.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:212 57b712e312774a91a0a91776da85b874
+msgid "Sets the tuning for the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:215 a398ba6d0b324d60af4de5e07d929032
+msgid "Fine tuning value (cents)."
+msgstr ""
+
+#: ../../en/units/midi.rst:216 944d0ed5e7704c6093092ec57621ea26
+msgid "Coarse tuning value (semitones)."
+msgstr ""
+
+#: ../../en/units/midi.rst:220 52df5bc71748442fbc51841087cb0765
+msgid "|set_tuning.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:27 3b300ccd8c6b4d13a6f1fc7711958d24
+msgid "set_tuning.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:224 3d34441c981c491b872bee3190ecb20d
+msgid "Sets the vibrato effect parameters on the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:226 aacbf4e03a1a43bb8c9d032d862194b7
+msgid "The MIDI channel to apply the vibrato effect to (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:227 225f519ac6bd4642bafc4c3c0d28fe93
+msgid "The vibrato rate (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:228 646a9ab514b34ef889dd0b2c4e624bb4
+msgid "The vibrato depth (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:229 583efd2c8bc6481f85cbbab575aeb8c1
+msgid "The vibrato delay (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:233 0f6b64dd39da40f093431e073149f26b
+msgid "|set_vibrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:29 c4754c4128514bfaabc93eac8af620fd
+msgid "set_vibrate.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:237 7f7b2df6beb04a4a8de4b34d12be8bfa
+msgid ""
+"Sets the parameters for a TVF (Tone-Voltage Filter) on the specified "
+"channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:239 5eedea95923a413fad5bc2acfa8e340b
+msgid "The MIDI channel to apply the filter to (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:240 905216027b2245ff8c10c3cfab2ae4ee
+msgid "The filter cutoff frequency (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:241 5d9c18c0cbba4cbaaa9c4b65e269ae9f
+msgid "The filter resonance (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:245 f3f84d6a6c8f49ad9f4548d00309dd62
+msgid "|set_tvf.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:28 d21821d59f6c4705881f5dd84bd579c2
+msgid "set_tvf.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:249 3b402d1c6b48445fa65152ef280cf80c
+msgid ""
+"Sets the ADSR (Attack, Decay, Sustain, Release) envelope parameters on "
+"the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:251 6eec95e92399447a8e43f3843bffc88d
+msgid "The MIDI channel to apply the envelope to (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:252 bd83ebca0df84096b471ad8a5a9263f5
+msgid "The attack time (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:253 d9e5837a64aa41b1b1fa749b41b705be
+msgid "The decay time (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:254 adcd8e32dec9413496448f263d2a8115
+msgid "The release time (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:258 32285db80c1945b9811b96d108858470
+msgid "|set_envelope.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:12 f0533576a39f449cb668c81aef5b8617
+msgid "set_envelope.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:262 0521baf818df42559f9926ff0c982aac
+msgid "Sets scale tuning for the specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:264 4865b1f4193c49c685d1b5834eab4f25
+msgid "The MIDI channel to apply the scale tuning to (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:265 4321a5c51d09426e81a99aba897b9c88
+msgid "Tuning values for each note in the scale (0-127)."
+msgstr ""
+
+#: ../../en/units/midi.rst:269 ad5f52132c5a4456b11e812d2eb78235
+msgid "|set_scale_tuning.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:26 8eef3da1060a4b65a4b2558a6e42d988
+msgid "set_scale_tuning.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:273 e94dab46ecbb454c865bcd1bff17f130
+msgid ""
+"Sets modulation wheel parameters that affect various effects on the "
+"specified channel."
+msgstr ""
+
+#: ../../en/units/midi.rst:275 42f6490107f342e0ac4104ab0195db78
+msgid "The MIDI channel to apply the modulation to (0-15)."
+msgstr ""
+
+#: ../../en/units/midi.rst:276 484cadeaff3e482ca40c2efa702eefb0
+msgid "Pitch modulation depth."
+msgstr ""
+
+#: ../../en/units/midi.rst:277 9c5201f69820486b96c2e9dc740dbda9
+msgid "Cutoff frequency modulation depth."
+msgstr ""
+
+#: ../../en/units/midi.rst:278 c2195514b26a425792017fddc9a6c2ee
+msgid "Amplitude modulation depth."
+msgstr ""
+
+#: ../../en/units/midi.rst:279 7088d7dfd76743bd94bf3eb240985f20
+msgid "Modulation rate."
+msgstr ""
+
+#: ../../en/units/midi.rst:280 248e73c46c3647b1822e101e2ae2c6b1
+msgid "Depth of pitch modulation."
+msgstr ""
+
+#: ../../en/units/midi.rst:281 a4baf2810caf4479980331b9509bcbbd
+msgid "Depth of TVF modulation."
+msgstr ""
+
+#: ../../en/units/midi.rst:282 c3f53c94bf804315880f8e8a1e30a8bb
+msgid "Depth of TVA (Tone-Voltage Amplifier) modulation."
+msgstr ""
+
+#: ../../en/units/midi.rst:286 263edc35b05249ae9f2557aa18d30c29
+msgid "|set_mod_wheel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:17 956304533b5f40e6afcf4703826f089d
+msgid "set_mod_wheel.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:290 3fcebec830284021a253fa31bb9cb3b4
+msgid ""
+"Sends a System Exclusive message to set all drums on channel 10 to "
+"default values."
+msgstr ""
+
+#: ../../en/units/midi.rst:295 79befdd5a80e4117871c2a3d39eaad16
+msgid "|set_all_drums.png|"
+msgstr ""
+
+#: ../../en/refs/unit.midi.ref:30 2e4c66e5c7334a29bf98ce1b3a2a2257
+msgid "set_all_drums.png"
+msgstr ""
+
+#: ../../en/units/midi.rst:299 dfe3fa1c7b344bc192a6cc7ad0930be2
+msgid "Writes a MIDI command to the UART interface."
+msgstr ""
+
+#: ../../en/units/midi.rst:301 3fef38c3d5374bca8f96a2ae22b51ea4
+msgid "List of MIDI command bytes."
+msgstr ""
+
+#: ../../en/units/midi.rst:305 bd2d98eb927d4d109a4b6cb00ff70321
+msgid "Maps a value from one range to another."
+msgstr ""
+
+#: ../../en/units/midi.rst:307 6ad41bfd31dc4ede9cc7718467c05823
+msgid "Value to map."
+msgstr ""
+
+#: ../../en/units/midi.rst:308 740ed6aaeaeb4a8eb1ed1944ea5349e1
+msgid "Minimum value of the input range."
+msgstr ""
+
+#: ../../en/units/midi.rst:309 efd160314f174f8db6a85f9a6818c601
+msgid "Maximum value of the input range."
+msgstr ""
+
+#: ../../en/units/midi.rst:310 1b08c24a2ce8477aaee1f839056a72b8
+msgid "Minimum value of the output range."
+msgstr ""
+
+#: ../../en/units/midi.rst:311 f862ffea85a0403793d5ba0b9575c817
+msgid "Maximum value of the output range."
+msgstr ""
+

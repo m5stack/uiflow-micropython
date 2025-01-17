@@ -1,0 +1,51 @@
+.. |human_face_detect_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/human_face_detect_example.png
+.. |human_face_recognition_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/human_face_recognition_example.png
+.. |pedestrian_detect_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/pedestrian_detect_example.png
+.. |ObjectDetector.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/ObjectDetector.png 
+.. |infer.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/infer.png 
+.. |get_method.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_method.png 
+.. |get_bbox.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_bbox.png 
+.. |get_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_x.png 
+.. |get_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_y.png 
+.. |get_w.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_w.png 
+.. |get_h.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_h.png 
+.. |get_category.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_category.png 
+.. |get_keypoint.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_keypoint.png 
+.. |get_score.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/get_score.png 
+.. |HumanFaceRecognizer.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/HumanFaceRecognizer.png 
+.. |enrolled_id_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/enrolled_id_num.png 
+.. |delete_last_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/delete_last_id.png 
+.. |delete_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/delete_id.png 
+.. |enroll_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/enroll_id.png 
+.. |clear_id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/clear_id.png 
+.. |recognize.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/recognize.png 
+.. |similarity.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/similarity.png 
+.. |id.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/esp_dl/id.png 
+
+
+.. |cores3_example_human_face_detect.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/advanced/dl/cores3_example_human_face_detect.m5f2"
+        target="_blank"
+    >
+        cores3_example_human_face_detect.m5f2
+    </a>    
+
+.. |cores3_example_pedestrian_detect.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/advanced/dl/cores3_example_pedestrian_detect.m5f2"
+        target="_blank"
+    >
+        cores3_example_pedestrian_detect.m5f2
+    </a>    
+
+.. |cores3_example_human_face_recognition.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/advanced/dl/cores3_example_human_face_recognition.m5f2"
+        target="_blank"
+    >
+        cores3_example_human_face_recognition.m5f2
+    </a>    

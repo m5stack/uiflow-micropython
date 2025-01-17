@@ -1,0 +1,351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/encoder8.rst:3 5f65da7cfb1146c880e823c17a87794b
+msgid "Encoder8 Unit"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:7 92db58b5f8e640e1a1855edca00b152c
+msgid ""
+"UNIT 8Encoder is a set of 8 rotary encoders as one of the input unit, the"
+" internal use of STM32 single-chip microcomputer as the acquisition and "
+"communication processor, and the host computer using I2C communication "
+"interface, each rotary encoder corresponds to 1 RGB LED light, encoder in"
+" addition to left and right rotation, but also radially pressed, in "
+"addition to a physical toggle switch and its corresponding RGB LED light,"
+" including 5V->3V3 DCDC circuit."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:9 a9b3f58b2f6841f38d4a937e4682d202
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:11 5fe90ff2366e4eb19c98c83e7be824dc
+msgid "|Encoder8Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref abb9da67806d4cb3bd095a196a558f0f
+msgid "Encoder8Unit"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:13 c1366adafee744928a0f08140b65d45b
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:20 47f1fb6ae9c042fbbf07b623522a1394
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:22 0ae3c0a5d1e3477d966c86bbe4d8a66b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:19 cbe8e8355691464fa2e09a52b0e87353
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:26 9b04f5d7549a493eb0ff751cb7e8943e
+msgid "|encoder8_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:29 19f67e374d044968a943aa38d40e6e8d
+msgid "class Encoder8Unit"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:32 e0ebec80469442e58396a353ecdf3402
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:36 080ba669a9644f1ebfb7856bf55baafd
+msgid "Initialize the Encoder8 Unit with the specified I2C interface and address."
+msgstr ""
+
+#: ../../en/units/encoder8.rst 2b46c9e4f6ce4b5dbac38fae06bd293e
+#: 2ecf0bf3663e4f1fbd979f1761cd19eb 5092ef60452a47c58550bd33d3d49c01
+#: 54f951a5d8bc456fb3e3ae7be2accfce 91aaa41fa61b4c318fd5f6643448bece
+#: 95bf545be1f44838880e00e4f6e46779 a188bfa50e5d440a9da1beb4184a1e52
+#: ab782284a68743649dc7f7eaeea8525e db10df9abe8b4c1ca8424bbd9cde944c
+#: e030cb76248742e0a107a7612a4e310f e0a113ee0c1c40aab22011eb83bbacd1
+#: e7b7cced19804048aa9a9369f196f154 ecd6b78e24bc4692ba5903bdccae1f6d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:38 d6ccbbe10f774180a95b651210083b15
+msgid "The I2C interface or PAHUBUnit instance for communication."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:39 6162dd8259d748fba95d2ea713e8693d
+msgid "Deprecated parameter, kept for backward compatibility."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:40 84448fdf5bf3490fb1371458b8f1041e
+msgid "The I2C address of the Encoder8 Unit. Default is 0x59."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:42 ../../en/units/encoder8.rst:68
+#: ../../en/units/encoder8.rst:79 ../../en/units/encoder8.rst:91
+#: ../../en/units/encoder8.rst:101 ../../en/units/encoder8.rst:113
+#: ../../en/units/encoder8.rst:123 ../../en/units/encoder8.rst:134
+#: ../../en/units/encoder8.rst:146 ../../en/units/encoder8.rst:158
+#: ../../en/units/encoder8.rst:168 0cb970714b8e4434bffe7f51f1d0ace5
+#: 14b96bdfe9984edda1ba029dfa3dd3e9 189bf80e78bf46e2bcd65d22244eb798
+#: 65c00f420e0c4adc9aa7d20cf442646f 74b14447c45c488d984ac4419c7be014
+#: 8fe1a3262b1c4016871169accf1f3f45 c32395b0cbde4984b451147c97eebeea
+#: ca5dff34561d4d81854197f22a4d8fce d14a69a7e5d949e8af86282e08cafbba
+#: d83fedd492ba4b579b61f09c022813cb f8c540741c774a5193ec99269abd4a16
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:44 df7b9247d07f42ceaa4ea5883287f4de
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:7 95a34763d8854c1ebb8b96129253a814
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:48 726d33fba8ae48b79dca03da5bb17147
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:52 d52d60610cd44a2f9ce2143aeff7489b
+msgid "Set or change the I2C address of the Encoder8 Unit."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:54 ff87f20eb33941a79e46a4e54cb9ea35
+msgid "The new I2C address to set."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:58 d426182b14ae45c89196c373ee8d73c1
+msgid "Check if the Encoder8 Unit is connected on the I2C bus."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:62 58ea71d7a2944bf7a6150aa262073108
+msgid "Get the current counter value of the specified channel."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:64 ../../en/units/encoder8.rst:76
+#: ../../en/units/encoder8.rst:87 ../../en/units/encoder8.rst:99
+#: ../../en/units/encoder8.rst:109 ../../en/units/encoder8.rst:131
+#: 0939b12d69274bc687f7e1f26a32755d 5ba6dd352ee848878477e8f8006eaea2
+#: 8bf7099749144352afb7732b60752747 e8f1731361d64a528167e31e269a5e16
+#: e946f851d9c54bfe8a828b76e8352adf ea10dc977ea0422185d3fcbf918792d0
+msgid "The encoder channel (1-8). Default is 1."
+msgstr ""
+
+#: ../../en/units/encoder8.rst 27bf8411adaf4ac0b57268fd04b652b3
+#: 3743ba08096348dabb95ff35e0723095 97857f53104e4fb5b6c2ed26cee9c9d8
+#: b4899b8daa714498b384e0bbd74827e1 f893189a78d740ac9d06500c9ebe8f25
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:66 f44e098d204e4a16bcdc2d154de595e1
+msgid "The current counter value as an integer."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:70 de55af0a171d474097cf02265f601ef3
+msgid "|get_counter_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:8 32b9db7b39ad4b4dba1df2af9b3325ca
+msgid "get_counter_value.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:74 d4eae250ea674573a1a404d80ba004e6
+msgid "Set the counter value for the specified channel."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:77 2e14a8aa139d44d2b056633b9a7c3bd7
+msgid "The counter value to set."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:81 b745134d8a6a4894bbfff987ce883d64
+msgid "|set_counter_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:9 5010561301b44ebba1fd3115ba107bb3
+msgid "set_counter_value.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:85 8169b8e3f44d42c39a897c05967c5b01
+msgid "Get the incremental value of the specified channel."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:89 2b24053a325e411ba14484d84d6d568b
+msgid "The incremental value as an integer."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:93 f5fb9b47f9164343aeb8d8ef5a9c0637
+msgid "|get_increment_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:10 b52d92cdd2b04315a74ff807a1ee1f97
+msgid "get_increment_value.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:97 2763ddbb01254eb18ac41c39270ae9a3
+msgid "Reset the counter value for the specified channel."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:103 09f37eb2b0d54dfb9d07c58ffdc5e5d6
+msgid "|reset_counter_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:11 6ceb5f8a79584e89b8a1753f730d956b
+msgid "reset_counter_value.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:107 30748d4158af48ce8b1d4a30b78b1f8b
+msgid "Get the button status for the specified channel."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:111 7ebf69cbb65544ddad79f29719ba4845
+msgid "True if the button is pressed, False otherwise."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:115 d95f4d61078c4a67961995bd33a10bbc
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:12 f475ffe380034dc8b11f62cb1c66bb72
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:119 4f7f566debc4432f901d7d2959ee6c81
+msgid "Get the status of the global switch."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:121 774cfe1d07674a5ca8bd4742799dfdc8
+msgid "True if the switch is on, False otherwise."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:125 fa4d58268c65469e86afd6ca9303260e
+msgid "|get_switch_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:13 f7d3903a4da448e19de67b6d12c54900
+msgid "get_switch_status.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:129 6147a5b410624848b7a5152eedd29bf4
+msgid "Set the RGB color of the specified channel&#x27;s LED."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:132 ../../en/units/encoder8.rst:144
+#: 2d3876ae8e9e4ce6848a1967055c70a4 66e83980e4fa46d3825553b8aa8488a2
+msgid "The RGB color value (0-0xFFFFFF). Default is 0."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:136 b7899bc82b4f41018dbcbfdc149651f0
+msgid "|set_led_rgb.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:14 6109302e2187433daa3f6e19e3d6984f
+msgid "set_led_rgb.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:140 0f6047b804774c5a828b814591b83a2b
+msgid "Set the RGB color for a range of channels&#x27; LEDs."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:142 3fc4ac8ef63a4d1497963c640603cc91
+msgid "The starting channel index. Default is 0."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:143 ced7721b0fae4bcf9a6797da5c767ad6
+msgid "The ending channel index. Default is 0."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:148 ac0826e10c9d40a58eed5c44a1dd5649
+msgid "|set_led_rgb_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:15 873df53513504a0d88d5a704a6b3f8ca
+msgid "set_led_rgb_from.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:152 0e4f2b8ea646478191a050d5303014e6
+msgid "Get the device firmware version or I2C address."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:154 590e268f87a74334a02cf09353762c88
+msgid ""
+"The mode to read. 0xFE for firmware version, 0xFF for I2C address. "
+"Default is 0xFE."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:156 f669dae2a11449ba807eaf85d68e326b
+msgid "The value read from the specified mode register."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:160 8f9500c3d28d42e2a3cb1896d4128758
+msgid "|get_device_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:16 fcaf62b3389a4d52903ec12b414bf239
+msgid "get_device_status.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:164 26dc0a6431604d798678fe7b2ee1e1bd
+msgid "Set a new I2C address for the device."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:166 8e0ca6b407b24fa6bbe8e11ea6b977d9
+msgid "The new I2C address. Default is 0x41."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:170 ec3c603dad0448809438b5a0f003314e
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder8.ref:17 46147690b03c4d2a8e955f6baa5748dc
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/encoder8.rst:174 cf983efe19394b91b37d272ddd9c98b3
+msgid "Read data from a specified register."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:176 6c8bc226575c4499943b231c3a082ed1
+msgid "The register address to read from."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:177 bb1afa7a04f745dabedd0c45e21c59bc
+msgid "The number of bytes to read."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:181 224fd7168174445680e2873b3c755e3b
+msgid "Write data to a specified register."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:183 64212e6c23574f248e2dfc0127db6d22
+msgid "The register address to write to."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:184 93dbb96ef7054098a5498315856d2152
+msgid "A list of bytes to write to the register."
+msgstr ""
+
+#: ../../en/units/encoder8.rst:188 0ff070d60ad94e4fa10e4caa4a73916e
+msgid "Deinitialize the Encoder8 Unit instance."
+msgstr ""
+

@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/modbus.rtu.master.rst:4 05a209104afb49828d54d5eebb16f0bb
+msgid "class ModbusRTUMaster -- Modbus RTU master"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:8 65d6f5191ada45d4a756d04ccd53c3b7
+msgid ""
+"ModbusRTUMaster implements the Modbus RTU master. ModbusRTUMaster support"
+" function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding"
+" Registers), 4 (Read Input Registers), 5 (Write Single Coil), 6 (Write "
+"Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
+"Multiple Holding Registers)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:11 4d45737363f744a9891af05a72a04bfd
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:18 93501843576649eb9faa9ea2c18dc5ac
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:20 77f5886043a74653a4651b83dc84feec
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:13
+#: 2c41ab0037844cbc92f2c0e516e48e29
+msgid "example.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:25 3cf67bae6bff44828b984bacf9575361
+msgid "|cores3_rtu_master_example.m5f2|"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:28 9b6d3a821bdd429aa53b99223c09fff3
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:32 b22d577a3da2478290cc3b59304eb528
+msgid "Create a ModbusRTUMaster object."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst 0fb97eea719d4ebbab9f68f837e00917
+#: 4fb18f5dff5843e0a4d2f926e31098ce 69fca03fa0534a74814dd318ea3277c4
+#: 6fec61dfbf314e368c96953eed96eb52 8a7edd6f1480477fbf62032e7383894e
+#: ac1078f931004d61a578265f87daa6f7 c703f31ddef84d589dd991d0010194c3
+#: db7bfdedad29430cb4fa456e6820a295 eb2eb0287dd246f4867dc55597c29636
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:34 b0d1a7f58d444481ad749e96cd92e93a
+msgid "UART object or RS485 object."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:35 4e810e7af0f543a2aea12e32163c2388
+msgid "Verbose mode."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:37
+#: ../../en/software/modbus.rtu.master.rst:56
+#: ../../en/software/modbus.rtu.master.rst:72
+#: ../../en/software/modbus.rtu.master.rst:88
+#: ../../en/software/modbus.rtu.master.rst:104
+#: ../../en/software/modbus.rtu.master.rst:120
+#: ../../en/software/modbus.rtu.master.rst:136
+#: ../../en/software/modbus.rtu.master.rst:152
+#: ../../en/software/modbus.rtu.master.rst:168 01771431e75044c0a4363f87e87a35ce
+#: 11bac0b84ca24ab1915e580784c054c4 42436e9c3d904da3ae8cb44c2dd40774
+#: 473fd98c03cc4ab9830cebcd3de845f7 8eece5c3f66d472ea8d418f04ac1e17b
+#: 9bbc6257943b44c7a2cc661f35153ff6 a890b422b33d4e2fb42231555a87d117
+#: b6d06be895b94574b4858f28fc41b462 dc9e2247ff474340bf076bbad68c8fec
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:39 5ca0dda4cff048e984745884f29eaaee
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:3
+#: 625a3bfa09dc4ec2baa704c4b5c3ccad
+msgid "init.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:43 ecce5735716c49c28cf2188be6f83ad6
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:47 ff7d8e7093df48fe887f2aa75e60fd08
+msgid "Read coils."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:49
+#: ../../en/software/modbus.rtu.master.rst:65
+#: ../../en/software/modbus.rtu.master.rst:81
+#: ../../en/software/modbus.rtu.master.rst:97
+#: ../../en/software/modbus.rtu.master.rst:113
+#: ../../en/software/modbus.rtu.master.rst:129
+#: ../../en/software/modbus.rtu.master.rst:145
+#: ../../en/software/modbus.rtu.master.rst:161 0b0420eb19c84a77a2a813992dde77b8
+#: 0bebd1851ca9472e885043df011e91c4 501fdda4abb54a8e95a655911b74e6ad
+#: 637a79e6858044789bdea72aa1c58016 89e73cfaea23479391bf0bcafa475bab
+#: 91e26c6b9da64402ad199f2f52eddded d31f5a11ed2148c599bd4d931d28c080
+#: fc8bdddff8cf4fdc9db40f2ad9ebf39f
+msgid "Slave address. The address is 0 to 247."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:50
+#: ../../en/software/modbus.rtu.master.rst:114
+#: ../../en/software/modbus.rtu.master.rst:146 6fd8233aa2cc49e7ae409ebb1c781861
+#: cf77146369e849d2b702b87ecb6d148e d2acaf2e23d044cd8889254c4ef89437
+msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:51
+#: ../../en/software/modbus.rtu.master.rst:67
+#: ../../en/software/modbus.rtu.master.rst:83
+#: ../../en/software/modbus.rtu.master.rst:99 8b46dfbea8684c2a8186584645d9fecc
+#: a74cb8f608334904a865090d17ad09ce b9af04545a4f47f6bacf38b46a0f6a9b
+#: c8f20843491e4e369ca7880e358fe243
+msgid "Quantity of registers to read."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:52
+#: ../../en/software/modbus.rtu.master.rst:68
+#: ../../en/software/modbus.rtu.master.rst:84
+#: ../../en/software/modbus.rtu.master.rst:100
+#: ../../en/software/modbus.rtu.master.rst:116
+#: ../../en/software/modbus.rtu.master.rst:132
+#: ../../en/software/modbus.rtu.master.rst:148
+#: ../../en/software/modbus.rtu.master.rst:164 3372ff5f9dd840738e6acb822ec5fa0b
+#: 3c1b5878511947df82b26fcb4d2df4e1 63c4d5387fb343e8bccddc732c5c331b
+#: 653f463dacf141f392a60381b73df50a 8baf237151bc475aa5ca416cc28d0409
+#: a4e41d1f85f54a508b57d3d6b5674943 e172e548ad8441cc83a08ce4df96a06d
+#: e742c0f5515145b88afc86de09904ae2
+msgid "Timeout in milliseconds."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst 046532dfba124fc08a6e003aa1eaacd2
+#: 11f9af380b3f45e79e763282626f679e 16928351ffeb48138ab8e916bff1ec64
+#: 2c1f73604e1c45ceb18aa43a329d051b 63fe1bf1fb7946ee87abe6221e6c13e9
+#: 9b1d045cd3a64f52b4a38fb32063df42 a2736ba6ecc1428a924230be3e23b73e
+#: d9cb5c6e4f27482390a4554e62150f65
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:54 28aaba06b7b54abe813ed34c1ad1f81f
+msgid "A list of coils. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:58 55f943f206134193bf4d977051b6a920
+msgid "|read_coils.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:4
+#: fd158fd8719e4b1c8545334184b80ce8
+msgid "read_coils.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:63 c00dc62898e64ec099fe9f5c8f845d26
+msgid "Read discrete inputs."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:66 416318080ec6437b8710376090655ae0
+msgid "Start address of the discrete inputs. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:70 af1172a28cc14a278147d5ab75244c2c
+msgid "A list of discrete inputs. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:74 5c31ac97fe054de18a3e83c2b400afd4
+msgid "|read_discrete_inputs.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:5
+#: dd6deb4f962840af94b16077afa6a3e4
+msgid "read_discrete_inputs.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:79 b754a224ca0f49bdbaf3bebd85e4a765
+msgid "Read holding registers."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:82
+#: ../../en/software/modbus.rtu.master.rst:130
+#: ../../en/software/modbus.rtu.master.rst:162 12291a70780448da89cc2a27627b9a98
+#: 38db17252d6e4e0ca69e21d0c8149e87 916e16f2654d4618a7cfc5f847b1ebae
+msgid "Start address of the holding registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:86 1c4993df08924d6c804721be5a640de0
+msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:90 8a806122d4ea4ef1ab0c922db3d09a45
+msgid "|read_holding_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:6
+#: a876fe34cfa741df987ec5cea977187a
+msgid "read_holding_registers.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:95 9f767c93e3e84c3baf2964a526839e62
+msgid "Read input registers."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:98 547e21cccd0b47e7b29f0755567329d3
+msgid "Start address of the input registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:102 ffff06ef8fdf4f86b6643cb4429bd687
+msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:106 8c82092098224e3a8be150260f40980f
+msgid "|read_input_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:7
+#: 260ca115ce2441f48fe1cc3593f15633
+msgid "read_input_registers.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:111 c66cd55282f146529df2b528be6e739b
+msgid "Write a single coil."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:115 5b6ab2a8c676459a8e1141e964f3fb8e
+msgid "Value to write. The value is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:118 a017af64530c4061896243e9376cf1e3
+msgid "The value of the coil."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:122 15933a3e81b742f0a8546845b31a3000
+msgid "|write_single_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:10
+#: c2593a7c931743aeb03710eea107bd33
+msgid "write_single_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:127 691ce912b71940128ddd09a243fe6d2a
+msgid "Write a single register."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:131 c320f49e9fa34aaf943e908d24b309c6
+msgid "Value to write. The value is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:134 f1f407b2c29340368d8f538a11e9d20f
+msgid "the written value"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:138 de25245d4adc411d808c8283462f537f
+msgid "|write_single_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:11
+#: 18893c3fee4c4c649c244db5bd93b5d8
+msgid "write_single_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:143 f020b6a0e07141088ae582fc2ab8433a
+msgid "Write multiple coils."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:147 637063387703498f8884fc6b15ce7a6c
+msgid "Values to write. The item of the list is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:150
+#: ../../en/software/modbus.rtu.master.rst:166 0767e10b59c04724b59db168bfc3cefe
+#: d7fd805bccd54f248e86bc8821ff52ec
+msgid "the written count."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:154 b544fc5177a348429a340598c9ab6fad
+msgid "|write_multiple_coils.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:8
+#: 369927752d8c4f52be201f44b42d2df5
+msgid "write_multiple_coils.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:159 c427268b3fbd4c719b31a4f689e46a79
+msgid "Write multiple registers."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:163 e65db90c902542d385a3f8c6d585ca7e
+msgid "Values to write. The item of the list is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.master.rst:170 10bc2578b9764937a6e7d0e6e16a0bcb
+msgid "|write_multiple_registers.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.master.ref:9
+#: a42123aa9ae14f038d04a5dc61b62dcd
+msgid "write_multiple_registers.png"
+msgstr ""
+

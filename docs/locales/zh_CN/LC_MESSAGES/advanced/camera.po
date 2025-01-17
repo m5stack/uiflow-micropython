@@ -1,0 +1,180 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 17:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/camera.rst:2 3984ce41f7f3470db8fa662e6ddd528c
+msgid "camera"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:6 d43a7635472741dba92913f203d3d090
+msgid "The camera module is used for taking pictures."
+msgstr "camera 模块用于拍照。"
+
+#: ../../en/advanced/camera.rst:8 592a91bd672d416eadb0000abc7663fa
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr "当前模块只适用于 CoreS3 主机"
+
+#: ../../en/advanced/camera.rst:14 2c54fd3a05904356925cce226acd22cd
+msgid "Micropython Example"
+msgstr "Micropython 案例"
+
+#: ../../en/advanced/camera.rst:17 ../../en/advanced/camera.rst:27
+#: 133658221cab45ce88d4e12e57dd5473 da5ca964ace84e0b849b09ca98898c49
+msgid "capture display"
+msgstr "拍摄显示"
+
+#: ../../en/advanced/camera.rst:24 9a83468d0afa4fa3a8764513e053e624
+msgid "UIFlow2.0 Example"
+msgstr "UIFlow2.0 案例"
+
+#: ../../en/advanced/camera.rst:29 d5088898ca6441639165139abcb9bb3a
+msgid "|camera_display_example.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:1 987fd079aefc4183af936a4653837ef5
+msgid "camera_display_example.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:33 838c5a12d5944b8682a2f5238597e8ae
+msgid "|cores3_example_camera_display.m5f2|"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:38 6d5c445b5c4146828a1b718ff0af9ae9
+msgid "Functions"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:42 9a7ba996c08d4adf8e7128a33cbc7efa
+msgid "Initializes the camera sensor."
+msgstr "初始化摄像头"
+
+#: ../../en/advanced/camera.rst:44 ce4a88149b224099a7d4cda83977938f
+msgid "The ``pixformat`` supports:"
+msgstr "参数 ``pixformat`` 仅接受以下值："
+
+#: ../../en/advanced/camera.rst:46 87322970341141789c6925438ee2ab1d
+msgid "``camera.RGB565``"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:48 14810423b00540ab96c4a5631287a48e
+msgid "The ``framesize`` supports:"
+msgstr "参数 ``framesize`` 仅接受以下值："
+
+#: ../../en/advanced/camera.rst:50 65e81d0cbe234b0bb6c9d2291641b9ec
+msgid "``camera.QQVGA``: 160x120"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:51 37a2de35f71c467a81fcbd179058b844
+msgid "``camera.QCIF``: 176x144"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:52 394e7e2848b345d2868ef6817fdb924d
+msgid "``camera.HQVGA``: 240x176"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:53 bc1309bf77a34cb3a0b26bfa4ad87c58
+msgid "``camera.FRAME_240X240``: 240x240"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:54 e6538d5801c84fee8f25181ab5c9706b
+msgid "``camera.QVGA``: 320x240"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:56 ../../en/advanced/camera.rst:66
+#: ../../en/advanced/camera.rst:74 ../../en/advanced/camera.rst:82
+#: ../../en/advanced/camera.rst:90 ../../en/advanced/camera.rst:98
+#: 0165cffa9288442c8f7251b20b0693cc 1459823f79a64d17802a4960d4d5f0be
+#: 1dc8c0d39bfe4f99b12f17f874cf6840 516ab77ed78c47379308ff6a15265763
+#: 91f31a216e8f40ba9976259d3cb5acb2 b924f97094b543558616c6eb858a0e54
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:58 522fc35766f54621bef8a19c2f3c9e7f
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:2 c946fc480b9747048ead109fb9a5ae31
+msgid "init.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:62 65d30df72c5f43b5b17a041ff7532ffb
+msgid "Capture a single frame."
+msgstr "获取一帧图像"
+
+#: ../../en/advanced/camera.rst:64 0b4ad89251fd4341b80d809be2aad902
+msgid "Returns An ``image.Image`` object."
+msgstr "返回一个 ``image.Image`` 对象。"
+
+#: ../../en/advanced/camera.rst:68 8dc1378b87c745ebae2e0fdb66a007d3
+msgid "|snapshot.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:5 7a15c1cec835482b881e1d1cbca2f720
+msgid "snapshot.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:72 274b4f5023214a6a94fedbb0c4bceaeb
+msgid "Turns horizontal mirror mode on (True) or off (False). Defaults to on."
+msgstr "开启或关闭水平镜像模式（True 表示开启，False 表示关闭）。默认为开启。"
+
+#: ../../en/advanced/camera.rst:76 68f65e6aeae94558b8b0f3d5eefd309d
+msgid "|set_hmirror.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:6 5644bc5d2f5242dc9156e3030f647205
+msgid "set_hmirror.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:80 8902b554043949468c7744165586a111
+msgid "Turns vertical flip mode on (True) or off (False). Defaults to off."
+msgstr "开启或关闭垂直翻转模式（True 表示开启，False 表示关闭）。默认为关闭。"
+
+#: ../../en/advanced/camera.rst:84 4e00af0c642244cb9f3ef39a54e9b6f7
+msgid "|set_vflip.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:7 8b9df031716e4c4b89ee929f19437095
+msgid "set_vflip.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:88 49c69e9cd11f4f08a4c8de39f220e66d
+msgid "Returns if horizontal mirror mode is enabled."
+msgstr "返回当前是否启用了水平镜像模式。"
+
+#: ../../en/advanced/camera.rst:92 dd87a19ae39e4c79a5354c11ba29f93a
+msgid "|get_hmirror.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:4 54d37af2ae10493b99058f81b7d57479
+msgid "get_hmirror.png"
+msgstr ""
+
+#: ../../en/advanced/camera.rst:96 b2b828db59304636aa25eefbf74f974a
+msgid "Returns if vertical flip mode is enabled."
+msgstr "返回当前是否启用了垂直翻转模式。"
+
+#: ../../en/advanced/camera.rst:100 1da064b12a5049b2995181e7817e08d4
+msgid "|get_vflip.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.camera.ref:3 a645daea4595464db2c8fad6f74065c1
+msgid "get_vflip.png"
+msgstr ""
+

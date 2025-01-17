@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/button.rst:3 b697aeb220e24bb9a7cdfcf48884401f
+msgid "Button Unit"
+msgstr ""
+
+#: ../../en/units/button.rst:7 f5297b2421a3432b87a0da122bba3db0
+msgid ""
+"BUTTON is a single button Unit. The button status can be detected by the "
+"input pin by simply capturing the high/low electrical level. If the "
+"button is pressed, the signal level will be *high* if the button is "
+"released, the signal level will be *low*."
+msgstr ""
+
+#: ../../en/units/button.rst:9 c16c9eaf39734a52afbfe45d4e0f5c30
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/button.rst:11 95df0473aec844dfb113bdf04f0c670c
+msgid "|ButtonUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref 03b1e5c109bc4e1ba023631450b85c92
+msgid "ButtonUnit"
+msgstr ""
+
+#: ../../en/units/button.rst:13 40f64e9c10094e608c3e2a6b04805880
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/button.rst:20 d273eb47a28c4bd3bcd2f89894c53c17
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/button.rst:22 bf7de6ff00c4436bb9b28d36d16abd8b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:13 59d965c4861048cea1040e7a906ffd2b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/button.rst:26 a822a5576aae4295b81c90efb2390dc7
+msgid "|button_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/button.rst:29 24f484bee7e342359aba77521beea6f1
+msgid "class ButtonUnit"
+msgstr ""
+
+#: ../../en/units/button.rst:32 bb8e367aefaa4a3fac90d136d0187da8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/button.rst:36 799eace024f5404b822dc9136970f7fa
+msgid ""
+"Initialize a Button instance with the specified pin, active-low "
+"configuration, and pull-up resistor state."
+msgstr ""
+
+#: ../../en/units/button.rst de6261a9806a411689bc6e744e40c62e
+#: e27bdc1ffc0e4d53a9c961e027fb55a5
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/button.rst:38 f732b526aa0240e99d69dcb6aa2ff70a
+msgid "The GPIO pin number connected to the button."
+msgstr ""
+
+#: ../../en/units/button.rst:39 b36b03784a5a47adb13d347a34ab4445
+msgid "Determines whether the button signal is active-low. Default is True."
+msgstr ""
+
+#: ../../en/units/button.rst:40 96e38d4220da45d7a183d91c822e546e
+msgid ""
+"Specifies whether the internal pull-up resistor is enabled. Default is "
+"True."
+msgstr ""
+
+#: ../../en/units/button.rst:42 ../../en/units/button.rst:54
+#: ../../en/units/button.rst:64 ../../en/units/button.rst:75
+#: ../../en/units/button.rst:83 027239a58f5349e2bd608856c66bd439
+#: 0b4b9c0cf93443d98d899db8f96d1178 9db6cc17efeb4bdb90a51a33f4d447d3
+#: af996d3ec3054d8aa0fa534ddbbca656 b41d8891f7a741a99a7518a739ad0605
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/button.rst:44 140416b4b39140ada5e8ec34b169e3ba
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:7 5f631eec851d48949656c16f4c12ad32
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/button.rst:47 0584a6f0313a44278234762bcb70b86f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/button.rst:51 4ddf144f093d47039b908a5341f0b70d
+msgid "Reset the count value to zero."
+msgstr ""
+
+#: ../../en/units/button.rst:56 ff45046f7a854905900c29470cb16415
+msgid "|count_reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:10 a04fa071bbd646288182185786f8c653
+msgid "count_reset.png"
+msgstr ""
+
+#: ../../en/units/button.rst:61 26d61eb800fd428baf5030511feede80
+msgid "Check if the button is currently being held."
+msgstr ""
+
+#: ../../en/units/button.rst:66 08a66f0cb55545639ff7636044be583a
+msgid "|isHolding.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:8 77450616b9324eac83cb78b53730a432
+msgid "isHolding.png"
+msgstr ""
+
+#: ../../en/units/button.rst:70 909b0c291df9441fa0bf4cc8bce58979
+msgid "Set a callback function for a specified button event type."
+msgstr ""
+
+#: ../../en/units/button.rst:72 b3b40477a3624694a933433ff5ca3b9d
+msgid "The event type (e.g., WAS_CLICKED, WAS_DOUBLECLICKED)."
+msgstr ""
+
+#: ../../en/units/button.rst:73 b35f18baa6f449eea48e4ff4f3f22948
+msgid "The callback function to be executed for the event."
+msgstr ""
+
+#: ../../en/units/button.rst:77 7e9b5973d1c945688b33d41e064a3b72
+msgid "|setCallback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:9 cad81e31d52f45fbb6444e8281b8f614
+msgid "setCallback.png"
+msgstr ""
+
+#: ../../en/units/button.rst:81 edaa38377e8b42c9811c441b41eb5180
+msgid ""
+"Monitor the state transitions of a button based on its pin state and "
+"trigger appropriate handlers."
+msgstr ""
+
+#: ../../en/units/button.rst:85 545e4a8a0465449e84fb679d5991608e
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../en/refs/unit.button.ref:11 73cee2c10ef141b9bc439e8193f6fcc3
+msgid "tick.png"
+msgstr ""
+

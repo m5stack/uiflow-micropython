@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/ain4.rst:3 8195f4b460414c20bbc56208e896ffa4
+msgid "AIN4-20mA Unit"
+msgstr ""
+
+#: ../../en/units/ain4.rst:7 52ded632a233417899ea1911a2ff1b6d
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/ain4.rst:9 c877df06a81d4ff0b234f09809af4383
+msgid "|AIN4_20MAUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref 6bab67428239470890e21ddc52a3dc7e
+msgid "AIN4_20MAUnit"
+msgstr ""
+
+#: ../../en/units/ain4.rst:11 673d35e97f5f42d6b617c6d6b70a80cb
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/ain4.rst:18 e5eef55e026f4d2fb9e3f6a4cea582e7
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ain4.rst:20 767304922b5b4f0cb5cbe63b97b97206
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:17 249e01b95c26403baa7e8686774875d4
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:24 364dcc24beff49a6a2699849bb243b9b
+msgid "|ain4_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ain4.rst:28 9255a253afb142b493f4f9845b35cee1
+msgid "class AIN4_20MAUnit"
+msgstr ""
+
+#: ../../en/units/ain4.rst:31 85a029a27f3649c3a9ee03e708613f05
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ain4.rst:35 1d254b46ac914dd8b327f5936c5025df
+msgid "Init I2C port & UNIT AIN 4-20mA I2C Address."
+msgstr ""
+
+#: ../../en/units/ain4.rst 03615ebd9fd24a749ebb97c4303b8c43
+#: 531a5041141b40af985e943b2ed6a10e f842deb807854e3c853fde676c04bbf3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/ain4.rst:37 abe7fc3040b1485aae509a32e79b3825
+msgid "I2C port to use."
+msgstr ""
+
+#: ../../en/units/ain4.rst:38 57d2988486094610b3f0c54222d9706b
+msgid "I2C address of the Unit AIN4-20mA."
+msgstr ""
+
+#: ../../en/units/ain4.rst:40 ../../en/units/ain4.rst:54
+#: ../../en/units/ain4.rst:64 ../../en/units/ain4.rst:74
+#: ../../en/units/ain4.rst:84 ../../en/units/ain4.rst:94
+#: ../../en/units/ain4.rst:104 08efbcf40efb4886980ed0309c00e649
+#: 14dc6e73b48044ca8df66c7210def84c 65ce7b5fc312440f96f452a25a231b11
+#: 89f3ef6ef0c94841ae349d58973906ea c51b835c94514c2e9f80caf209a7b279
+#: e08d095f787342f6a52d46a65b491a7b e3c966824f794c159d99027196e77a8a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ain4.rst:42 ec09624155a84520955e2262bbdc5029
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:6 dc61ffeb38aa4b58a2f4e77e84551f18
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:46 c5af29abdd3345dfae2384e985fa9f87
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ain4.rst:50 5fa6ac2af03f4e41829d07044a018f50
+msgid "Retrieves the raw ADC value from the channel."
+msgstr ""
+
+#: ../../en/units/ain4.rst 093d6900c44a49cbaaa49ad511a0eb2f
+#: 60fdba0a0e66402d91f016d3cb5aa9fb 7eecfd7b62004790a60c366df16ad2d7
+#: bd6ab6b44077414395f475da660fcc71
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/ain4.rst:52 6d4ca42acf984391a5e39933d5dd01c6
+msgid "Raw ADC value as a 12-bit integer."
+msgstr ""
+
+#: ../../en/units/ain4.rst:56 14731e6c238a4600bcbc7601fc6467bc
+msgid "|get_adc_raw16_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:7 7a82183bb21349e8aa058927bd01cc0b
+msgid "get_adc_raw16_value.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:60 06dad3b46ba84bd482b053197b5cea1d
+msgid "Retrieves the current value (in mA) from the channel."
+msgstr ""
+
+#: ../../en/units/ain4.rst:62 e97b4f78d95841d1a9537e834cf3d677
+msgid "Current value in milliamperes (mA)."
+msgstr ""
+
+#: ../../en/units/ain4.rst:66 c807f4eae0ed4c3d8422ab171e628ab6
+msgid "|get_4_20ma_current_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:8 3edfec1a5f264b6780cacc8f8475c17b
+msgid "get_4_20ma_current_value.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:70 61fd9ae65a784b0bb7d753bef1783c71
+msgid "Sets the calibration current for the specified channel."
+msgstr ""
+
+#: ../../en/units/ain4.rst:72 4b5ac6be216c4c98acf3d0278ad8ef6c
+msgid "The calibration current value, ranging from 4 to 20 mA."
+msgstr ""
+
+#: ../../en/units/ain4.rst:76 1b59ed0e3559411d8f9b2ad866979f92
+msgid "|set_cal_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:11 35417039f4634a2089a1a2d9c9f730e4
+msgid "set_cal_current.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:80 9f137f39a7df4904b547269dbaf4450e
+msgid "Retrieves the firmware version of the AIN 4-20mA unit."
+msgstr ""
+
+#: ../../en/units/ain4.rst:82 fd0c95de3b7943de9ab4717eedad2b21
+msgid "Firmware version."
+msgstr ""
+
+#: ../../en/units/ain4.rst:86 8454134cb681414fa328b1a95f473404
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:13 9de92b01adb04cc0a87e846512e44fe3
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:90 dcdffcff8ec142f19fef53a7cac14c06
+msgid "Retrieves the current I2C address of the AIN 4-20mA unit."
+msgstr ""
+
+#: ../../en/units/ain4.rst:92 7ac9f5b568f045aeaa4f21171e99ead4
+msgid "I2C address as a string in hexadecimal format."
+msgstr ""
+
+#: ../../en/units/ain4.rst:96 1fc86c7806044281b5fbaa0aac96d614
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:14 817cbc58bad44c5a95c3a8d9e5086a90
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/ain4.rst:100 b72fe694668f40309e11ce30379163a1
+msgid "Sets a new I2C address for the AIN 4-20mA unit."
+msgstr ""
+
+#: ../../en/units/ain4.rst:102 928e5809e9f7426caadc61dac2c430d6
+msgid "The new I2C address, must be between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/ain4.rst:106 9b9d06ee742242bdac1dea80db175dc4
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ain4.ref:15 db052e7753ca4182b620da36e4426613
+msgid "set_i2c_address.png"
+msgstr ""
+

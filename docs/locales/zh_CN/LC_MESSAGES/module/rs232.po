@@ -1,0 +1,490 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/rs232.rst:2 4fa75167182a4032a8d3dce668eb1455
+msgid "RS232F/M Module"
+msgstr ""
+
+#: ../../en/module/rs232.rst:7 56fc66e120094eb4a49b161753e28b4e
+msgid "Supported Products:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:10 d202d2ff56344c12af4f39718859e8aa
+msgid "|RS232F Module|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref 3229fc5f305b44ab8624ceedc1208a89
+msgid "RS232F Module"
+msgstr ""
+
+#: ../../en/module/rs232.rst:10 c729684eeae94083a04337f06dda4cab
+msgid "|RS232M Module|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref f8684d48b7d742708cf58fda2a76f441
+msgid "RS232M Module"
+msgstr ""
+
+#: ../../en/module/rs232.rst:14 109a9ee030e74533a2135945d0ae37cc
+msgid "Micropython TX Example:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:21 5dd20abc096943dd83d0c48a56f37036
+msgid "Micropython RX Example:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:28 ba0e6512ec494e93bcceceda2e392986
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:30 b06c63ab8e8e46519033fb80b78231f9
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:30 52b0eac0c5814566a7ab1e1924f72c79
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:33 c7045df89d004eb1a57bd3386bde5ade
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:35 9802cd3caa424397aa67cc18dcd8fafd
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:41 c903b753742a4f88a69e306091c28ee4
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:40 87f758605e224eb8bf2ebf091b8247a7
+msgid "|core_rs232_tx_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/rs232.rst:42 380a984b4c954f459420141e58e44355
+msgid "|cores3_rs232_rx_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/rs232.rst:46 75262f09525747ea86d85f8253cb9097
+msgid "class RS232Module"
+msgstr ""
+
+#: ../../en/module/rs232.rst:49 c773d690d9304f3e9f1275a818761782
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/rs232.rst:53 8419cb137d9245a0ab690cba5babe840
+msgid "Construct a UART object of the given id."
+msgstr ""
+
+#: ../../en/module/rs232.rst:55 c524f559600e4db6b1b2b0c415887f9e
+msgid "For more parameters, please refer to init."
+msgstr ""
+
+#: ../../en/module/rs232.rst:57 ../../en/module/rs232.rst:110
+#: ../../en/module/rs232.rst:123 ../../en/module/rs232.rst:141
+#: ../../en/module/rs232.rst:155 ../../en/module/rs232.rst:173
+#: ../../en/module/rs232.rst:185 ../../en/module/rs232.rst:196
+#: ../../en/module/rs232.rst:216 ../../en/module/rs232.rst:232
+#: ../../en/module/rs232.rst:248 22a815da73cf4963baefbba7d88e516b
+#: 27ab25396c2e4671ab6ad9fc04ea7e96 49f0c56803864552b395042bee6cb7ba
+#: 5e0eed71b595407e9e4513af4c34b80b 653954d3329249d98b9ce67ca3b9bf75
+#: 6d552227802744348902a98fbd6d4b82 70834ae204c3460aa7fdee0ced84927f
+#: ad98cc1bc6f94a2996ecbed0da449851 b1239472c32c4408923b6949e7a2a27f
+#: dd3cea175c024e1590ac769bda15cab9 fd23b3f957374e17be25ea174537a0d8
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:59 0678def875ec4550871a1894aebb2c94
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:11 e269a4fbbcc94f0992be829f0222c26e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:63 7a73b2814e354567954e841b28510528
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/rs232.rst:67 6c38dd5cd9fa4a25abba22081e8c9dc2
+msgid "Initialise the UART bus with the given parameters:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:69 3fc7e75fc5aa425780c27e9e18cb6b39
+msgid "*baudrate* is the clock rate."
+msgstr ""
+
+#: ../../en/module/rs232.rst:70 04581416a2c94bf187bf44fd19e6f48e
+msgid "*bits* is the number of bits per character, 7, 8 or 9."
+msgstr ""
+
+#: ../../en/module/rs232.rst:71 1ad5dcd866f64a4095b5ea013563aa1b
+msgid "*parity* is the parity, ``None``, 0 (even) or 1 (odd)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:72 2d7e382bcd8742179cb7ccb364b46632
+msgid "*stop* is the number of stop bits, 1 or 2."
+msgstr ""
+
+#: ../../en/module/rs232.rst:74 d8afa126d6af48079a49e5efcd22dde9
+msgid "Additional keyword-only parameters that may be supported by a port are:"
+msgstr ""
+
+#: ../../en/module/rs232.rst:76 9728b52f392c4f10b262445557fd883a
+msgid "*tx* specifies the TX pin to use."
+msgstr ""
+
+#: ../../en/module/rs232.rst:77 3b2b0542350848f49e491b7d459a0879
+msgid "*rx* specifies the RX pin to use."
+msgstr ""
+
+#: ../../en/module/rs232.rst:78 ad4fb9d977e6452ca0be4118d755cdb5
+msgid ""
+"*rts* specifies the RTS (output) pin to use for hardware receive flow "
+"control."
+msgstr ""
+
+#: ../../en/module/rs232.rst:79 2bc7cb3541cb459c87279e41669bd96e
+msgid ""
+"*cts* specifies the CTS (input) pin to use for hardware transmit flow "
+"control."
+msgstr ""
+
+#: ../../en/module/rs232.rst:80 b6df406e949f428c94d7945c06878e91
+msgid "*txbuf* specifies the length in characters of the TX buffer."
+msgstr ""
+
+#: ../../en/module/rs232.rst:81 11250f71dc14428c8eeb178f26785f64
+msgid "*rxbuf* specifies the length in characters of the RX buffer."
+msgstr ""
+
+#: ../../en/module/rs232.rst:82 614405c2b9e047f898defd164ecdc6c1
+msgid "*timeout* specifies the time to wait for the first character (in ms)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:83 5ff8e6ef5f834c23ab997884d642dc2d
+msgid "*timeout_char* specifies the time to wait between characters (in ms)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:84 b78e9bff14b8451293cab7744d6c43d9
+msgid "*invert* specifies which lines to invert."
+msgstr ""
+
+#: ../../en/module/rs232.rst:86 473c6712585648f1b0f049873c235279
+msgid "``0`` will not invert lines (idle state of both lines is logic high)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:87 de5dc68fb78f4accab86ad0da8145bd5
+msgid ""
+"``RS232Module.INV_TX`` will invert TX line (idle state of TX line now "
+"logic low)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:88 a1c35ce35c1f4fdda316e3fcde688055
+msgid ""
+"``RS232Module.INV_RX`` will invert RX line (idle state of RX line now "
+"logic low)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:89 b0ca0ace085c4a8ab1b8c3bcc8f70eb3
+msgid ""
+"``RS232Module.INV_TX | RS232Module.INV_RX`` will invert both lines (idle "
+"state at logic low)."
+msgstr ""
+
+#: ../../en/module/rs232.rst:91 8652ab4490ff470e8ad273031a70133a
+msgid ""
+"*flow* specifies which hardware flow control signals to use. The value is"
+" a bitmask."
+msgstr ""
+
+#: ../../en/module/rs232.rst:94 65acb111c5194df8b2b01fb2f7cec163
+msgid "``0`` will ignore hardware flow control signals."
+msgstr ""
+
+#: ../../en/module/rs232.rst:95 7e9ce20da7aa4a339f0db295f3680ad7
+msgid ""
+"``RS232Module.RTS`` will enable receive flow control by using the RTS "
+"output pin to signal if the receive FIFO has sufficient space to accept "
+"more data."
+msgstr ""
+
+#: ../../en/module/rs232.rst:97 306b5c1cfa4d4b3aab6ac399d84bc272
+msgid ""
+"``RS232Module.CTS`` will enable transmit flow control by pausing "
+"transmission when the CTS input pin signals that the receiver is running "
+"low on buffer space."
+msgstr ""
+
+#: ../../en/module/rs232.rst:99 b13b79b415ab4b1693ad6a31ca7a797d
+msgid ""
+"``RS232Module.RTS | RS232Module.CTS`` will enable both, for full hardware"
+" flow control."
+msgstr ""
+
+#: ../../en/module/rs232.rst:103 2ab2999b38bc45c8bdde0f2f2649c168
+msgid ""
+"It is possible to call ``init()`` multiple times on the same object in "
+"order to reconfigure  UART on the fly. That allows using single UART "
+"peripheral to serve different devices attached to different GPIO pins. "
+"Only one device can be served at a time in that case. Also do not call "
+"``deinit()`` as it will prevent calling ``init()`` again."
+msgstr ""
+
+#: ../../en/module/rs232.rst:112 43edf1cbeeb04c66a20893e72c75c53c
+msgid "|setup.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:14 1a1399cc60ae4527b381c0fe5cb47463
+msgid "setup.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:117 09e59d2911c14aa4997110ea29f1224e
+msgid "Turn off the UART bus."
+msgstr ""
+
+#: ../../en/module/rs232.rst:120 07abd88de07a442c910556c237a19438
+msgid ""
+"You will not be able to call ``init()`` on the object after ``deinit()``."
+" A new instance needs to be created in that case."
+msgstr ""
+
+#: ../../en/module/rs232.rst:125 6f67348eea4f411ab3b6734fc4fbd50c
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:13 611a88a4756044f7bd794ddb841d0020
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:130 7fc254f6c2d24e8dbbbd031fc4e326e1
+msgid ""
+"Returns an integer counting the number of characters that can be read "
+"without blocking.  It will return 0 if there are no characters available "
+"and a positive number if there are characters.  The method may return 1 "
+"even if there is more than one character available for reading."
+msgstr ""
+
+#: ../../en/module/rs232.rst:135 6d89d058d08c4d2eb1a12daa32d6f56c
+msgid "For more sophisticated querying of available characters use select.poll::"
+msgstr ""
+
+#: ../../en/module/rs232.rst:143 e498f9a7530248c8a6714d343715f88f
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:12 ff9458671cea470992d66fa194a37e65
+msgid "any.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:148 cfcbeb3b2b4845a8852463db9a571b25
+msgid ""
+"Read characters.  If ``nbytes`` is specified then read at most that many "
+"bytes, otherwise read as much data as possible. It may return sooner if a"
+" timeout is reached. The timeout is configurable in the constructor."
+msgstr ""
+
+#: ../../en/module/rs232.rst:152 fe43120ba4c44f5193ef3e86365a9508
+msgid ""
+"Return value: a bytes object containing the bytes read in.  Returns "
+"``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/rs232.rst:157 485dfb5b012c4e948a3ee88c14e79672
+msgid "|read_all.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:15 33aad14bdce24b63bcd3150a38409bc8
+msgid "read_all.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:159 91a128ca832b41429e62a1e1b5983120
+msgid "|read_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:16 3ddca3a87ab545d1a33bf75b659c8bcb
+msgid "read_bytes.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:161 05246f75167b4115899c1ac045f9ff0e
+msgid "|read_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:17 86cd0006d4f047179340090bd3fcb0a7
+msgid "read_raw_data.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:166 f5370e4f75bd423e8db5064843daf410
+msgid ""
+"Read bytes into the ``buf``.  If ``nbytes`` is specified then read at "
+"most that many bytes.  Otherwise, read at most ``len(buf)`` bytes. It may"
+" return sooner if a timeout is reached. The timeout is configurable in "
+"the constructor."
+msgstr ""
+
+#: ../../en/module/rs232.rst:170 b70c2ceee2074a0f80f9436a867cab74
+msgid ""
+"Return value: number of bytes read and stored into ``buf`` or ``None`` on"
+" timeout."
+msgstr ""
+
+#: ../../en/module/rs232.rst:175 550ff3b4b8db4a6f9d1767342f7461cc
+msgid "|readinto.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:19 ebbbca5485b443b990fb99dae7e77c6d
+msgid "readinto.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:180 ed29b56e0e5e4290ae4295995fb6d02b
+msgid ""
+"Read a line, ending in a newline character. It may return sooner if a "
+"timeout is reached. The timeout is configurable in the constructor."
+msgstr ""
+
+#: ../../en/module/rs232.rst:183 72f3f074c3434cb8baf7f6075d7f5125
+msgid "Return value: the line read or ``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/rs232.rst:187 c34bc027e8d8486590c91d22caf40c5e
+msgid "|readline.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:18 ea98324cb68141498c7e1e75e6cfd983
+msgid "readline.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:192 f91402e2f1e54a2c85708d5a8559300f
+msgid "Write the buffer of bytes to the bus."
+msgstr ""
+
+#: ../../en/module/rs232.rst:194 203769d6942c44f09bb28ae7eddba167
+msgid "Return value: number of bytes written or ``None`` on timeout."
+msgstr ""
+
+#: ../../en/module/rs232.rst:198 1bc01699af184399b4552d21899ea9d8
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:20 cfe10f3434ef4b4f9ec06bfa15bfff2e
+msgid "write.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:200 87df5f0168a94516b24ac187fed772e7
+msgid "|write1.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:21 59b7fb95158b46c6a12fbe94e89012be
+msgid "write1.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:202 0c82e100bf75473886eb0dbb24f6d622
+msgid "|write_line.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:22 696ad6ca236f4662837f31af44f1a4c5
+msgid "write_line.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:204 c5bc09ad1e29431cb5cadc1d8593e1a8
+msgid "|write_list.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:23 ec8b758d27ac4787a8d2635533a6bda4
+msgid "write_list.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:206 ee7242a53ab84236949d4c36e2a85b52
+msgid "|write_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:24 cd8e5ff22e524976a872e2f836b57057
+msgid "write_raw_data.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:208 48fc44bc42374094aecac95ca2b41d4e
+msgid "|write_raw_data_list.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:25 09ddfaba108e4c71878b07831d22060b
+msgid "write_raw_data_list.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:213 92dea69579d643b1b556c376e205b8f1
+msgid ""
+"Send a break condition on the bus. This drives the bus low for a duration"
+" longer than required for a normal transmission of a character."
+msgstr ""
+
+#: ../../en/module/rs232.rst:218 027fc341a2224302803896d3c085f2f1
+msgid "|sendbreak.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:28 0379b847d16946539bfed94277ec0d65
+msgid "sendbreak.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:223 c89be7270eb6495a96a7e386d413c3fb
+msgid ""
+"Waits until all data has been sent. In case of a timeout, an exception is"
+" raised. The timeout duration depends on the tx buffer size and the baud "
+"rate. Unless flow control is enabled, a timeout should not occur."
+msgstr ""
+
+#: ../../en/module/rs232.rst:229 aba26dd0356140678b7be1ffd750b1b7
+msgid ""
+"For the rp2, esp8266 and nrf ports the call returns while the last byte "
+"is sent. If required, a one character wait time has to be added in the "
+"calling script."
+msgstr ""
+
+#: ../../en/module/rs232.rst:234 768a2c2940914aee86cb50a2a898cbe0
+msgid "|flush.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:27 9b105687c29f49b18e8961c9d73923d9
+msgid "flush.png"
+msgstr ""
+
+#: ../../en/module/rs232.rst:239 e71560a92dcc472587a17410580b6667
+msgid ""
+"Tells whether all data has been sent or no data transfer is happening. In"
+" this case, it returns ``True``. If a data transmission is ongoing it "
+"returns ``False``."
+msgstr ""
+
+#: ../../en/module/rs232.rst:244 0dd7027e68c6456fbf2a828e977378ef
+msgid ""
+"For the rp2, esp8266 and nrf ports the call may return ``True`` even if "
+"the last byte of a transfer is still being sent. If required, a one "
+"character wait time has to be added in the calling script."
+msgstr ""
+
+#: ../../en/module/rs232.rst:250 5be3e0304b2642389ba3512373bba025
+msgid "|txdone.png|"
+msgstr ""
+
+#: ../../en/refs/module.rs232.ref:26 f88a997d77784f36b1ad6a755d7cee01
+msgid "txdone.png"
+msgstr ""
+

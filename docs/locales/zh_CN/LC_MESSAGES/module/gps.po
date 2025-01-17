@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/gps.rst:3 a68c68493a024f5d873033aba924595f
+msgid "GPS Module"
+msgstr ""
+
+#: ../../en/module/gps.rst:7 056957c62e9940bfa20902935bee7ae3
+msgid ""
+"COM.GPS is a satellite positioning module in the M5Stack stacking module "
+"series. It is developed based on the NEO-M8N module."
+msgstr ""
+
+#: ../../en/module/gps.rst:9 a599ab92453f4425a1f8d6e2a376d364
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/gps.rst:12 1b9142afe4414263ba1e0c2834118dd5
+msgid "|GPSModule|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref 2aefd3e4fb524cffb57e171d95f1490a
+msgid "GPSModule"
+msgstr ""
+
+#: ../../en/module/gps.rst:12 0bb485d41e1949c08f3baa0a682398f7
+msgid "|COM.GPSModule|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref c888c2c1fa0e4e97af1a061b2323b19b
+msgid "COM.GPSModule"
+msgstr ""
+
+#: ../../en/module/gps.rst:16 d2d54325e606410595be8ec2e859aa98
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/gps.rst:23 ef7eaa931fee4226a1e0a8382a9a2b81
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/gps.rst:25 20392976beac489dbce81affb0a8bbec
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:27 8b12cec169614c47b462e4be3e0f5689
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:29 e921fbb05447446386ed549165973fd2
+msgid "|gps_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/gps.rst:33 a51d5266fa654cb696d7eda3395fcdb5
+msgid "class GPSModule"
+msgstr ""
+
+#: ../../en/module/gps.rst:36 3e2df75885524ee797e227a31d6b24d1
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/gps.rst:40 e02ea580743842cda0a3cf7be6662ed1
+msgid "initialize Function."
+msgstr ""
+
+#: ../../en/module/gps.rst 2b330289f4ad4542b22bda3ecef9c7ef
+#: 46e76b5201cb4add9f701052f23b19c2 d223a84b9cea4ec187394a2d4c5f5b9c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/gps.rst:42 3704a0a9c9174ab3864cbb222b6d6627
+msgid "UART controllers id, the range is 0 to 2."
+msgstr ""
+
+#: ../../en/module/gps.rst:43 7c1b9fe17eee42759fc1a74e5c0b59a9
+msgid "UART rx pin."
+msgstr ""
+
+#: ../../en/module/gps.rst:44 a94d555d71d64f1a9cbe35624a60c29e
+msgid "UART tx pin."
+msgstr ""
+
+#: ../../en/module/gps.rst:46 ../../en/module/gps.rst:60
+#: ../../en/module/gps.rst:70 ../../en/module/gps.rst:80
+#: ../../en/module/gps.rst:90 ../../en/module/gps.rst:100
+#: ../../en/module/gps.rst:110 ../../en/module/gps.rst:120
+#: ../../en/module/gps.rst:130 ../../en/module/gps.rst:140
+#: ../../en/module/gps.rst:150 ../../en/module/gps.rst:164
+#: ../../en/module/gps.rst:174 ../../en/module/gps.rst:184
+#: 14f46bee6e6d440a8f04e7e9f58167b9 22ff9e87a11d4862a4bbb0f3afb84410
+#: 4695ed1c63504307aaf5feb155b7219c 4bdefa8d8dff4975b4b14cfb3e1d285d
+#: 4e7b6d1a84d541e5a9833d0aa8ec0dd8 7111df8907bc4130b71e44de595b5f02
+#: 76f08897467849778dc191561bbb8e38 822b7566062f413987a111a87f8ebecc
+#: 84083ef8da0f4afda8d2fae7037ca17f 9c0a462d772f40fd8dabb4f91b36343a
+#: c6d5e54f74e34fb696dc82027c39551f ccecf59c94734be29a94de1fc0aed9db
+#: e40b005d06984707b6e8887fdcdd9682 e7a9d4a3de9d4d26be3bcc01a8c1747d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/gps.rst:48 558281023e7e4bba81a8815ce2f63328
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:12 934c357d27b14ebcadc6073125ce0e69
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:52 7e8b112537fc4f10bdbd3434d720d078
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/gps.rst:56 67bf59a967924153a000c584a28530da
+msgid "set timezone function."
+msgstr ""
+
+#: ../../en/module/gps.rst:58 ../../en/module/gps.rst:68
+#: 2715fac3914147ecb62c6de3f101df72 2c9b866208ea48a885a26d3fb8b5d113
+msgid "timezone value"
+msgstr ""
+
+#: ../../en/module/gps.rst:62 3add106ffc8340c8a4a48967369a3d40
+msgid "|set_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:13 09aaaae75e374eb99eaeec29002a81b5
+msgid "set_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:66 535785b696ed4f5097274a5e29d7c3d2
+msgid "get timezone function."
+msgstr ""
+
+#: ../../en/module/gps.rst ed290c09375d4f1dac79ee283684ffb4
+msgid "return (int)"
+msgstr ""
+
+#: ../../en/module/gps.rst:72 8fef3545dfb648d491da40fa6ec842e2
+msgid "|get_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:14 988da4ea0e294b71b50512f8c1f8ff81
+msgid "get_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:76 76ea88296d4c49569e8585796e27f0d6
+msgid "get satellite numbers."
+msgstr ""
+
+#: ../../en/module/gps.rst 1539b3d0ce554db0a49443d3c1e6335f
+#: 1e490d9a0df94f559304218be35c4a9e 85cdb96df2604cff874f52ffff172723
+#: 8f381f434c64408e9c923e84b46b98ca acf0cd1a0c4e47d99b8b30ca6b884147
+#: af7afdbc0cab42d898a2dea8b3fbb531 bc420a4c0f444c0c99bd822638dedf44
+#: f8c2c1b163e649d0847fdcc842578bb4
+msgid "return (str)"
+msgstr ""
+
+#: ../../en/module/gps.rst:78 30e051e1ac724107b6f9eee30c5f68f6
+msgid "satellite numbers value."
+msgstr ""
+
+#: ../../en/module/gps.rst:82 cee33a440fdb4950a27ef5e02dd5e716
+msgid "|get_satellite_num.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:15 6f67e709736744ad9698cf1be3a7c71b
+msgid "get_satellite_num.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:86 dd4e5cbfc9814853afc99132e255958c
+msgid "get altitude."
+msgstr ""
+
+#: ../../en/module/gps.rst:88 5d48c5cc63c04cb8a5e46ba4fcc7c5a6
+msgid "altitude unit is meter."
+msgstr ""
+
+#: ../../en/module/gps.rst:92 baf2e7d33068461d810c0e30178a9d41
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:16 17d9da5eb5654056843305104b054cdf
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:96 59bac03e486e4863a801e20b7d2244e7
+msgid "get time."
+msgstr ""
+
+#: ../../en/module/gps.rst:98 e0756524639e42afb881c7f19ed8b1c0
+msgid "time(hh:mm:ss)"
+msgstr ""
+
+#: ../../en/module/gps.rst:102 8e24fba3817e4b6f85fb49eec4a3b8a4
+msgid "|get_time.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:17 53f3321d117f493ba881415df455b9a3
+msgid "get_time.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:106 7cc04c472c61454da587302bacf7992c
+msgid "get date."
+msgstr ""
+
+#: ../../en/module/gps.rst:108 a60d6adcbf514deb95367c9a07894530
+msgid "date(dd/mm/yy)"
+msgstr ""
+
+#: ../../en/module/gps.rst:112 685ae89355ab4159adfe7b7f252160c5
+msgid "|get_date.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:18 fa046280bd414787893a46ec5107f3db
+msgid "get_date.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:116 2748db63279742e1b57794d8abb8259d
+msgid "get latitude."
+msgstr ""
+
+#: ../../en/module/gps.rst:118 fead088b1a8441109af18b9517727ef9
+msgid "latitude, using degrees minutes format (ddmm.mmmmmN/S)."
+msgstr ""
+
+#: ../../en/module/gps.rst:122 8d77f6e09ff44fba9bf58dbbb848e11f
+msgid "|get_latitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:19 9c5fa55076c84557943c9e93e042e7f6
+msgid "get_latitude.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:126 1ee789a07b9d4345ab54484efa312275
+msgid "get longitude."
+msgstr ""
+
+#: ../../en/module/gps.rst:128 f2d53e822bf54d3187f3eebaec59f106
+msgid "longitude, using degrees minutes format (ddmm.mmmmmE/W)."
+msgstr ""
+
+#: ../../en/module/gps.rst:132 189dbc6f27414d8ea7974fd47f457fc4
+msgid "|get_longitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:20 a9e8a4e6cc774e03a76a514271233e2a
+msgid "get_longitude.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:136 7a1932a909024188903615d9561c4259
+msgid "get latitude decimal."
+msgstr ""
+
+#: ../../en/module/gps.rst a6eab71e883b4bb0bb20e4cfe7d15f3b
+#: df5aea248ef440a8967ac9314e9a5494
+msgid "return (float)"
+msgstr ""
+
+#: ../../en/module/gps.rst:138 ab43d20499214c0fb30ed52f6869b855
+msgid "latitude decimal(dd.dddd)."
+msgstr ""
+
+#: ../../en/module/gps.rst:142 d58d1417ca1c48e188b9f4d661359166
+msgid "|get_latitude_decimal.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:21 56596271736c460e870488b2955f42b0
+msgid "get_latitude_decimal.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:146 36bace70de9d4b2ea65172fbdff027bf
+msgid "get longitude decimal."
+msgstr ""
+
+#: ../../en/module/gps.rst:148 5445c264d0684cb0b272a732b178d66d
+msgid "longitude decimal(dd.dddd)."
+msgstr ""
+
+#: ../../en/module/gps.rst:152 01cec7f6973f416db368079e66846993
+msgid "|get_longitude_decimal.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:22 8fc26c00704449829a57053f14267bb2
+msgid "get_longitude_decimal.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:156 34ba6edf5f0b47ed998b3542819849dc
+msgid "get speed."
+msgstr ""
+
+#: ../../en/module/gps.rst:158 19db5c4db9be4923b978fb518f0907ac
+msgid "speed."
+msgstr ""
+
+#: ../../en/module/gps.rst:159 c22e491d27634a63b99511a5c14d7085
+msgid "speed type, 0 km/h, 1 knot/h Options: - ``km/h``: 0 - ``knot/h``: 1"
+msgstr ""
+
+#: ../../en/module/gps.rst:166 9c5e238a19ed4a52a8017a227a3fb404
+msgid "|get_speed.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:23 7fba3849ed9844bc9877178e1ff92ed9
+msgid "get_speed.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:170 f2f6f86710b74e83b8f1922ff505cd70
+msgid "get course."
+msgstr ""
+
+#: ../../en/module/gps.rst:172 10a540a5303943fb9968b1227f7938bc
+msgid "course unit is °."
+msgstr ""
+
+#: ../../en/module/gps.rst:176 23c2a94e6ba0489cb7a10746983e21d3
+msgid "|get_course.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:24 474dc9e0be3a44529171f80201edf569
+msgid "get_course.png"
+msgstr ""
+
+#: ../../en/module/gps.rst:180 750631b13dd3470bb1a402426dc13f32
+msgid "get locate status."
+msgstr ""
+
+#: ../../en/module/gps.rst 3534d9f99137470996c7a36ea00ce5c4
+msgid "return (bool)"
+msgstr ""
+
+#: ../../en/module/gps.rst:182 49dd82a3ed54465a923f877dcc1dfc55
+msgid "locate status, true is locate, false is not locate."
+msgstr ""
+
+#: ../../en/module/gps.rst:186 b2bef4ff0d654de3ab8b207ac650d338
+msgid "|is_locate_valid.png|"
+msgstr ""
+
+#: ../../en/refs/module.gps.ref:25 a3a756d9c93c4be387a6095a06849f38
+msgid "is_locate_valid.png"
+msgstr ""
+

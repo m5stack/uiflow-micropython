@@ -1,0 +1,32 @@
+
+.. |ScalesUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/UNIT%20Scales/img-94426368-7f2e-43ae-a514-9d38ee161b46.webp
+    :target: https://docs.m5stack.com/en/unit/UNIT%20Scales
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/init.png
+.. |_available.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/_available.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/get_button_status.png
+.. |set_button_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_button_offset.png
+.. |set_rgbled_sync.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_rgbled_sync.png
+.. |set_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_rgb_led.png
+.. |get_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/get_rgb_led.png
+.. |get_scale_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/get_scale_value.png
+.. |set_raw_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_raw_offset.png
+.. |set_current_raw_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_current_raw_offset.png
+.. |set_calibration_zero.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_calibration_zero.png
+.. |set_calibration_load.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_calibration_load.png
+.. |get_device_inform.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/get_device_inform.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/scales/example.png
+
+.. |scales_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/scales/scales_cores3_example.m5f2"
+        target="_blank"
+    >
+        scales_cores3_example.m5f2
+    </a>
+

@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/neco.rst:3 9f0ebb9aef144509adb9bb7525645e0d
+msgid "NECO Unit"
+msgstr ""
+
+#: ../../en/units/neco.rst:7 06ced3136a9a4e3d9768ee230a549448
+msgid ""
+"The Neco Unit is a unique RGB light board unit that features an adorable "
+"cat ear shape. It is designed with precision and comprises 35 "
+"WS2812C-2020 RGB lamp beads, providing vibrant and customizable lighting "
+"effects."
+msgstr ""
+
+#: ../../en/units/neco.rst:9 af4ca3dc50cb40d3baaa22b3435b63b1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/neco.rst:11 31e65028c94940209888b4f3dde67db0
+msgid "|NECOUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref 479d938c309e420cb8a9457560425bc7
+msgid "NECOUnit"
+msgstr ""
+
+#: ../../en/units/neco.rst:13 1b9183d3939845c3bbc8a0eabdc8b3c3
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/neco.rst:20 7965f9cce7cb46da84e5fca8cf4b57d2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/neco.rst:22 deb451202c1343bba511120942d8bf18
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:15 e78d2954bb844ac3b3a959e4bf0cce6c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:26 ad0d2a9bd2b54b25b7f1a9e0582e606f
+msgid "|neco_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/neco.rst:29 0924062a68864d3bb008a8e76e1d1097
+msgid "class NECOUnit"
+msgstr ""
+
+#: ../../en/units/neco.rst:32 b7fa9081eeac4089880acc87082a1288
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/neco.rst:36 99eab84056a6428fb39cb3a55ece54b7
+msgid ""
+"Initialize the NECOUnit with a specific port, LED count, and active low "
+"configuration for the button."
+msgstr ""
+
+#: ../../en/units/neco.rst 212a378b351345639317bc60f984e38a
+#: 36bc73f164d047c7b1bd61b24776cacc 432a384a3e59469784d7a8a60ba9b7fa
+#: 5b9b47c1953f45ab9fe2f983dab45a39 63c33be30eea403996220ec43cfe7dfd
+#: 9c420d2ca6cb482485eb742f95b06f73 a454da167801427c9df2dc1786fa7d25
+#: d7696ad1fa7343c29b11ca772da6555d e597bc48f6404fd2b25ecf6faf7437cf
+#: edd0223171f54754a83ba7d740677ef7
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/neco.rst:38 4a2c2fc7adba4d6d8336ab9c97f61d0f
+msgid ""
+"A tuple containing the port information, where the first element is for "
+"the button and the second is for the WS2812 LEDs."
+msgstr ""
+
+#: ../../en/units/neco.rst:39 6e61209cc05b4533a9d961c8593354a0
+msgid "The number of LEDs in the WS2812 strip. Default is 70."
+msgstr ""
+
+#: ../../en/units/neco.rst:40 fdb9e873f6a4490bbb290bddacc18f7a
+msgid "Boolean flag indicating whether the button is active low. Default is True."
+msgstr ""
+
+#: ../../en/units/neco.rst:42 ../../en/units/neco.rst:59
+#: ../../en/units/neco.rst:90 ../../en/units/neco.rst:101
+#: ../../en/units/neco.rst:118 ../../en/units/neco.rst:128
+#: ../../en/units/neco.rst:138 2127c14366bb44f2af44a2eac09a381f
+#: 2a7b453b5d92473c8a737a8dad57f70c 416e53d2b2cc4b9599a88b915b39bc45
+#: 5f35a340cede432c9fccb380f891c99b 7739819831734708ad66e55f1609c29b
+#: b4a40b7428f04eadae5106dd0198ebba b9f138208ed3422b98a74c250997df00
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/neco.rst:44 200107561fe1495ca076ce458b5e3b64
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:7 1a76902d6aff46d9923988fa3469d1a0
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:48 d5d9bce1309b43ce82073c9064c6bba6
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/neco.rst:52 3defcf7ad46440fd989c3117763d2f43
+msgid ""
+"Set the color for a range of LEDs from the begin index to the end index "
+"with a specified color."
+msgstr ""
+
+#: ../../en/units/neco.rst:54 ../../en/units/neco.rst:67
+#: ../../en/units/neco.rst:85 ../../en/units/neco.rst:98
+#: 0c781e69ad6b4f3c9a4fc1bb9be56cb0 133d0db125b943b8bcdd564f11675d07
+#: 40633eda63224b6c811b978a3f11c3b3 dae094a30ed14d39aac32f4ceff6cf30
+msgid "The starting LED index."
+msgstr ""
+
+#: ../../en/units/neco.rst:55 ../../en/units/neco.rst:68
+#: ../../en/units/neco.rst:86 ../../en/units/neco.rst:99
+#: 08bb789d27ee407696d3557a2dfe409e 109e85e4c0a443f680af920838b4a26b
+#: 98287d9c676f496fbf2731580c8b7829 a79d2fd1ea684397a613c6270ec3541d
+msgid "The ending LED index."
+msgstr ""
+
+#: ../../en/units/neco.rst:56 ../../en/units/neco.rst:87
+#: 6e4a9ce6769345b6a0c384f53e553232 ffe45a420991451aad9f5062cbac9a99
+msgid "The color to set, in RGB format."
+msgstr ""
+
+#: ../../en/units/neco.rst:57 ../../en/units/neco.rst:70
+#: 89c7b0f10b8d40e2beed67a8021c4af9 f72018ee4da443f489201673117f394b
+msgid ""
+"The delay between setting each LED's ;s color, in milliseconds. Default "
+"is 0."
+msgstr ""
+
+#: ../../en/units/neco.rst:61 d32c4618d5c24de28d03e428a8a451b5
+msgid "|set_color_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:8 9f9e9a0eefcc46b489325fb362819348
+msgid "set_color_from.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:65 5a261a862a934355bf36d0349fc79f74
+msgid ""
+"Set the color saturation for a range of LEDs from the begin index to the "
+"end index with a specified color and saturation."
+msgstr ""
+
+#: ../../en/units/neco.rst:69 ../../en/units/neco.rst:76
+#: 47e867da8e0f40acafbc4d408130139e 51b3be4d784e473782fbada3f40a382f
+msgid "The base color in RGB format."
+msgstr ""
+
+#: ../../en/units/neco.rst:74 e01280440d76407892534f387801fa72
+msgid "Adjust the color saturation of an RGB color."
+msgstr ""
+
+#: ../../en/units/neco.rst:77 d75ea3fe9b1a47339d0170d6828c52d1
+msgid "The desired saturation level (0 to 100)."
+msgstr ""
+
+#: ../../en/units/neco.rst 47a5e7becc224e299708ceafe0ade46c
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/neco.rst:79 66e5cfbadf254bdb93ce8c4d5e7d49e5
+msgid "The new color with adjusted saturation, in RGB format."
+msgstr ""
+
+#: ../../en/units/neco.rst:83 8a3f342526d444009701118a72d91ded
+msgid ""
+"Set the color for a range of LEDs from the begin index to the end index, "
+"then clear them one by one, creating a running effect."
+msgstr ""
+
+#: ../../en/units/neco.rst:88 95ac9a22d5064871b9cf66eecfc3dd92
+msgid ""
+"The delay between setting and clearing each LED's ;s color, in "
+"milliseconds. Default is 0."
+msgstr ""
+
+#: ../../en/units/neco.rst:92 4516c10a1c974213baa8ce400edee474
+msgid "|set_color_running_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:9 a816e3aae1264f20adda922c30a4c78d
+msgid "set_color_running_from.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:96 2d15503fb5bb44dea32f51eaf22f1b0c
+msgid ""
+"Set a random color to each LED in a random order within the specified "
+"range."
+msgstr ""
+
+#: ../../en/units/neco.rst:103 66c330dfa66141518f06f51c6e395cff
+msgid "|set_random_color_random_led_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:10 cfbb7b4a36834fd189269b69bb8adfea
+msgid "set_random_color_random_led_from.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:107 ../../en/units/neco.rst:124
+#: 29b9ac0eaa61496e9378235aa1a81a06 a418f691c2bc4067a04b9eb9920d202c
+msgid "Fill the entire NECOUnit strip with the specified color."
+msgstr ""
+
+#: ../../en/units/neco.rst:109 7782d5644dd54e4ba1d24c7ec1ffdaef
+msgid "A tuple containing the RGB (or RGBW) values to fill the strip with."
+msgstr ""
+
+#: ../../en/units/neco.rst:113 2c7cd18d4cc845a6b9246d03df602844
+msgid "Set the color of the LED at the specified index."
+msgstr ""
+
+#: ../../en/units/neco.rst:115 1adf772336174b78a4bc257df51c2cb4
+msgid "The index of the LED to set."
+msgstr ""
+
+#: ../../en/units/neco.rst:116 8204b005f21f41e3a815357d2ed0b521
+msgid "The color value to set the LED to (in RGB or RGBW format)."
+msgstr ""
+
+#: ../../en/units/neco.rst:120 5c1988ed537f4880b16c66a49a68f633
+msgid "|set_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:11 b9d014a695b74da4860da2e515f652fe
+msgid "set_color.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:126 b2158cf946ff44b68009a2aa180c1453
+msgid "The color value to fill the strip with (in RGB or RGBW format)."
+msgstr ""
+
+#: ../../en/units/neco.rst:130 50a45917387f44d59ba3d72be2003131
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:12 4158a0b0d2f542c6ad946dea1f7ac34c
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/neco.rst:134 4418e0693d9648ebaa5e23c342df1f40
+msgid "Set the brightness for the NECOUnit strip."
+msgstr ""
+
+#: ../../en/units/neco.rst:136 ed4b3ed4d4e34f5093963ec0ccd85732
+msgid "The brightness level as a percentage (0-100)."
+msgstr ""
+
+#: ../../en/units/neco.rst:140 1b7bffbc89c844159e6acd22fd1ab5ab
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.neco.ref:13 a1f0b37232344499990a5c825707b877
+msgid "set_brightness.png"
+msgstr ""
+

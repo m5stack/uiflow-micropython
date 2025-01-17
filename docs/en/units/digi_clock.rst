@@ -16,18 +16,21 @@ Support the following products:
     |DigiClockUnit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from hardware import *
-    from unit import DigiClockUnit
-    i2c = I2C(1, scl=33, sda=32)
-    digi_clock = DigiClockUnit(i2c)
-    digi_clock.set_string("00:00")
-    digi_clock.set_brightness(8)
+    .. literalinclude:: ../../../examples/unit/digi_clock/cores3_digi_clock_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |cores3_digi_clock_example.m5f2|
 
 
 class DigiClockUnit
@@ -45,7 +48,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -57,7 +60,7 @@ Methods
 
     UIFLOW2:
 
-        |clear.svg|
+        |clear.png|
 
 
 .. method:: DigiClockUnit.set_brightness(brightness: int) -> None
@@ -68,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |set_brightness.svg|
+        |set_brightness.png|
 
 
 .. method:: DigiClockUnit.set_raw(data: int, index: int) -> None
@@ -80,7 +83,7 @@ Methods
 
     UIFLOW2:
 
-        |set_raw.svg|
+        |set_raw.png|
 
 
 .. method:: DigiClockUnit.set_char(char: str, index: int) -> None
@@ -92,7 +95,7 @@ Methods
 
     UIFLOW2:
 
-        |set_char.svg|
+        |set_char.png|
 
 
 .. method:: DigiClockUnit.set_string(string: str) -> None
@@ -103,7 +106,7 @@ Methods
 
     UIFLOW2:
 
-        |set_string.svg|
+        |set_string.png|
 
 
 .. method:: DigiClockUnit.get_fw_version() -> int
@@ -114,4 +117,4 @@ Methods
 
     UIFLOW2:
 
-        |get_fw_version.svg|
+        |get_fw_version.png|

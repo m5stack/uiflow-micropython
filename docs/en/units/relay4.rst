@@ -15,23 +15,20 @@ Support the following products:
     |Relay4Unit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    import time
-    from hardware import *
-    from unit import Relay4Unit
-    i2c = I2C(1, scl=33, sda=32)
-    relay = Relay4Unit(i2c)
-    for i in range(1, 5):
-    relay.set_relay_state(i, 1)
-    relay.set_led_state(i, 1)
-    time.sleep(1)
-    relay.set_relay_state(i, 0)
-    relay.set_led_state(i, 0)
-    time.sleep(1)
+    .. literalinclude:: ../../../examples/unit/relay/relay_core_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+.. only:: builder_html
+
+    |cores3_relay4_example.m5f2|
 
 
 class Relay4Unit
@@ -49,7 +46,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -67,7 +64,7 @@ Methods
 
     UIFLOW2:
 
-        |set_mode.svg|
+        |set_mode.png|
 
 
 .. method:: Relay4Unit.get_mode() -> int
@@ -82,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        |get_mode.svg|
+        |get_mode.png|
 
 
 .. method:: Relay4Unit.get_led_state(n: int) -> int
@@ -93,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |get_led_state.svg|
+        |get_led_state.png|
 
 
 .. method:: Relay4Unit.set_led_state(n: int, state: int) -> None
@@ -105,7 +102,7 @@ Methods
 
     UIFLOW2:
 
-        |set_led_state.svg|
+        |set_led_state.png|
 
 
 .. method:: Relay4Unit.get_relay_state(n: int) -> int
@@ -118,7 +115,7 @@ Methods
 
     UIFLOW2:
 
-        |get_relay_state.svg|
+        |get_relay_state.png|
 
 
 .. method:: Relay4Unit.set_relay_state(n: int, state: int) -> None
@@ -130,7 +127,7 @@ Methods
 
     UIFLOW2:
 
-        |set_relay_state.svg|
+        |set_relay_state.png|
 
 
 .. method:: Relay4Unit.set_relay_all(state: int) -> None
@@ -141,4 +138,4 @@ Methods
 
     UIFLOW2:
 
-        |set_relay_all.svg|
+        |set_relay_all.png|

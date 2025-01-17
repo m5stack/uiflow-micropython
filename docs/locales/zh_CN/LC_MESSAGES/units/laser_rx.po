@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/laser_rx.rst:3 567b715f580d4b718823386a10132028
+msgid "LaserRX Unit"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:7 9be4b4ea07314b78826ef8d95e4617f1
+msgid ""
+"LASER.RX is one of the communication devices among M5Units, a Laser "
+"receiver. It is mainly built with a laser transistor. Laser "
+"communications devices are wireless connections through the atmosphere. "
+"They work similarly to fiber-optic links, except the beam is transmitted "
+"through free space. While the transmitter and receiver must require line-"
+"of-sight conditions, they have the benefit of eliminating the need for "
+"broadcast rights and buried cables. Laser communications systems can be "
+"easily deployed since they are inexpensive, small, low power and do not "
+"require any radio interference studies. Two parallel beams are needed, "
+"one for transmission and one for reception. Therefore we have a LASER.TX "
+"in parallel."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:9 09000f9ddb40437cbf0a352cc90b0876
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:11 0f353ec661bd40339ebb161960ec9771
+msgid "|LaserRXUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref b9c0cd0833e94a5c87e747902da4b730
+msgid "LaserRXUnit"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:13 cfe80aa537a14380befe05d14b794629
+msgid "LaserTX Example:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:19 e7a0cbbf91544a11b115ce4f864d8b14
+msgid "LaserRX Example:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:25 2ec113ea07934a668bfd27cf4aaa9580
+msgid "LaserTX UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:27 d6e4cfabc908475f9ad4bb9df03d7bfe
+msgid "|example_tx.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:13 b5fc2c148c2d4d1d83ceb2eba9b1bc26
+msgid "example_tx.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:29 07bfb84650774bffb2cbceb283feca99
+msgid "LaserRX UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:31 eeb53919454f47a58a77719cd1e29c5f
+msgid "|example_rx.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:14 29199da630484a4e9a50d214fa2615d7
+msgid "example_rx.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:35 199472c85290432e83fdf0d3efa62649
+msgid "|laserrx_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:37 bccb192b9382421b9edbf72c2b45a58d
+msgid "|lasertx_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:41 e7b91263118743529a6f4f074cf19109
+msgid "class LaserRXUnit"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:44 458c2df98362470aaa6d7e3c87f2021a
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:48 416c7226fa2648c9a4522925d4d3da50
+msgid ""
+"Initialize the LaserRXUnit with the specified port, communication mode, "
+"and UART ID."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst 1e53c847afbd4e79a22fca4ac3c3db58
+#: 5e59aa723c18427989fd11d6f78ea1c1 9a2e0a1b3c8e406a9401bc60ef9a6c03
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:50 da6b53bb14a04baa91044afe52cfac1a
+msgid "A tuple containing pin numbers for TX and RX."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:51 046148a75060417fbae4c194847b23c4
+msgid "Communication mode; use PIN_MODE or UART_MODE."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:52 d8be98c7dca340bfb1702deb3f270ab3
+msgid "UART ID, either 1 or 2."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:54 ../../en/units/laser_rx.rst:71
+#: ../../en/units/laser_rx.rst:83 ../../en/units/laser_rx.rst:100
+#: 47b60bfd325e476e965ad46997df9ef9 8861d546028c4b929016d92be17e542b
+#: 8ca00fc0f7ac4aa7b5ebc2c07e4e3ed5 e4a4e597c8a345599a2d81763a0a419c
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:56 e583be8627054669956d82bcfb54fffd
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:7 187f782fb4634e7594bbde311c149fa4
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:60 6a2c511754794ef68271360431ada6d5
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:64 ed10eeccc8ff4cd5b3258ed118cf5516
+msgid "Initialize UART communication with specified parameters."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:66 7a6430663198417eb0da9fb01348cd6e
+msgid "The baud rate for UART communication. Default is 115200."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:67 87c3b0f0daca4931a1af329ff3bb9f1e
+msgid "The number of data bits; 7, 8, or 9. Default is 8."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:68 1dd16f2630714082bfa344416886e258
+msgid "Parity setting; None, 0, or 1. Default is 8."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:69 5a83ceacf6e24fcfa2e49f7a11b3a1f5
+msgid "The number of stop bits; 1 or 2. Default is 1."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:73 e7a8a772211d4cbf889d2d21eb1ae488
+msgid "|init_uart.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:8 81f13ce1d7374d79aabd626b8bb53a61
+msgid "init_uart.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:77 22fbe723a1464bec8912f2f0c6fbd354
+msgid "Read data from UART. Optionally specify the number of bytes to read."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:79 67841d48abaf47808915fdf11acaa94a
+msgid "The number of bytes to read. If None, reads all available data."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst 2c6625fdc32f46a897fd04acdcf396d8
+#: 363375c77b404ec0b7e0c5c912ad984e aa3c227bf20d4b5c877ace56b22fb1de
+#: e79eb3136ea042c6a47fea8ba1f5e866
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:81 e8fdd6b2e879452ab89cb84a53f4772a
+msgid "The data read from UART or None if no data is available."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:85 861ca1224bbc40119dfd94b4f35fb2a8
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:9 38e1857d329f4767b272ac421f31a154
+msgid "read.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:89 d2afb01c059e49c39ca0af1320cd4752
+msgid "Read a single line of data from UART."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:91 25e394c1f5f54294870b96262d9c49cf
+msgid "The line read from UART or None if no data is available."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:96 69dc7ee8f1234aa291f0c668be9007b3
+msgid "Check if there is any data available in UART buffer."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:98 1f7c0237e397435dae15fdc6124a0356
+msgid "True if data is available; otherwise, False."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:102 744844d9193f447fa7f37d347003b641
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/unit.laser_rx.ref:10 b3262930248c4275bec86be760f8e223
+msgid "any.png"
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:106 aeb829de4b944195a3f60ce77005a8b8
+msgid "Get the current value of the input pin when using PIN_MODE."
+msgstr ""
+
+#: ../../en/units/laser_rx.rst:108 6caec5fa37a94fc6aaccdc556548d6fc
+msgid "The value of the pin (0 or 1)."
+msgstr ""
+

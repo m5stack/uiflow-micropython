@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 17:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/goplus2.rst:3 ../../en/refs/module.goplus2.ref
+#: bfd112f73c464a31bcf949ffa4569141 da02b4d6fedd454e97d3ac42ee877be9
+msgid "GoPlus2Module"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:7 e7e08011d12841fc8c21aebd845653d0
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:9 79013412919c4742b514cd8648c83d80
+msgid "|GoPlus2Module|"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:11 5d3938b8a5b14c7ab733912d45e3c348
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:17 ce48c61113a04805a66346c2071fd17e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:19 f84523d6c1314eb5815c91a636d01869
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:15 1095944d91e548659008eda168423b49
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:23 eb7341f2b7584ffba174fcd69af381b1
+msgid "|goplus2_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:26 4aaf8f1dda4443c3b78830db3bf38bcb
+msgid "class GoPlus2Module"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:29 d5e61e70aa4041dda7b7ad0f2e7d4696
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:33 01da43c6803a4186aebc9bea7bfe138c
+msgid "Initialize the GoPlus2Module."
+msgstr ""
+
+#: ../../en/module/goplus2.rst 14e96316212f4ba98c1af71b8c1be534
+#: 1890b59e15bc4c48aa5f5a1ee888ed0a 55d2cf0082dd49f18bf775a6de43a43a
+#: 6e95a4b68f1b42cd9be6efd7edea1a3b 9b36b004301a4fcb989321dde79e19a8
+#: 9d89c16b9d69449f80a72b010e4589a2 e9fff0e73a584895a66806d7f9a437c5
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:35 9d0132314d5f400195da8d6c671cd9dc
+msgid "The I2C address of the GoPlus2 module (default is 0x38)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:37 ../../en/module/goplus2.rst:52
+#: ../../en/module/goplus2.rst:63 ../../en/module/goplus2.rst:74
+#: ../../en/module/goplus2.rst:85 ../../en/module/goplus2.rst:95
+#: ../../en/module/goplus2.rst:105 00c909953bd148059f92dd3d4b27ec03
+#: 3fe03697d4d0447980136e8f180e1a64 8a1702f25a174a1fab03ae339de9e4fc
+#: b9e8dc94f3b9436293e3a8694362869d e3f98ac6464a44ea84149a5d48e02f27
+#: e6d6586addd941a093d7d960bda201a9 f8018bc5909a4f2e9c7dfd0458612693
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:39 b299b7af4a284108b721f51e1198079e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:7 09ff8701e4ae4e21b8e54908163b1397
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:43 bb259392883742de80d682d520967870
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:47 fa61ffda4be74793a105ec2a06224acb
+msgid "Set the angle of the specified servo."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:49 ../../en/module/goplus2.rst:60
+#: 4d592ce1db1e4a81a359b5128d0c0024 5362f656bf9c4ff68650a6cc2396fa7d
+msgid "The number of the servo (1 to 4)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:50 f36561636b7c4e219e2f34d844dadd55
+msgid "The angle to set the servo to (0 to 180 degrees)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:54 ec08730be2634f778a06315e5e638f45
+msgid "|set_servo_angle.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:8 1ffd82c1f1d345908065a34bb8d331bc
+msgid "set_servo_angle.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:58 504753786fc8473a8064a852638d6e4e
+msgid "Set the pulse width for the specified servo."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:61 6bc55857615c4b258dd0649cdef1460e
+msgid "The pulse width to set (in microseconds)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:65 86abcddf61ce49059b3aef05cb1309b6
+msgid "|set_servo_pulse_width.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:9 02588a54580c493592e9b94a04912dab
+msgid "set_servo_pulse_width.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:69 1f61cd5afe10445480f3577db0fb7786
+msgid "Set the speed of the specified motor."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:71 733d2765a0a043388579e7f8a8c789f0
+msgid "The number of the motor (1 or 2)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:72 ba0d33a604894097bc62b819a74d85bd
+msgid "The speed to set (negative for reverse)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:76 b810638d9e6b4491988ba05001a10a5c
+msgid "|set_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:10 c00c809065864bc38b47bed3b65123de
+msgid "set_motor_speed.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:80 15df7caffeb84e3c92d5c4daef2d835e
+msgid "Set the digital output for the specified pin."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:82 ../../en/module/goplus2.rst:93
+#: ../../en/module/goplus2.rst:103 a2d66b056af14ab29d02a98863f44653
+#: d5ce98311c984faa834e3109eb1233f3 ff5412407fda45b893cb93101326e2b8
+msgid "The number of the pin (1 to 3)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:83 119c46193130405f8005d52d1302c268
+msgid "The value to set (0 or 1)."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:87 0bc8e8e440634bc3b2f742110610cb1b
+msgid "|set_digital_output.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:11 b8903da88fac41599e4a4d66572a5f33
+msgid "set_digital_output.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:91 1d4ba5524f294244a41312743f1d7ae8
+msgid "Get the digital input value of the specified pin."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:97 13110a6974104e8a8421c8cf65f9e587
+msgid "|get_digital_input.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:12 e13413dd36a748adac417ff59a72eb2a
+msgid "get_digital_input.png"
+msgstr ""
+
+#: ../../en/module/goplus2.rst:101 fdeb7cffd002423783d00338a818d49d
+msgid "Get the analog input value of the specified pin."
+msgstr ""
+
+#: ../../en/module/goplus2.rst:107 3feb8d2177d24f9f994dda7ce95440b4
+msgid "|get_analog_input.png|"
+msgstr ""
+
+#: ../../en/refs/module.goplus2.ref:13 dc67337361824d21a96fd3059c29747c
+msgid "get_analog_input.png"
+msgstr ""
+

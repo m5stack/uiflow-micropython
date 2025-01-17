@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/servo.rst:2 871e77abea02431c94f317a92409c026
+msgid "Servo Hat"
+msgstr ""
+
+#: ../../en/hats/servo.rst:7 0ffae736448e4d51abc3b1e41b7e1178
+msgid ""
+"SERVO HAT as the name suggests, is a servo motor module with the new and "
+"upgraded \"ES9251II\" digital servo,This comes with 145°±10° range of "
+"motion and can be controlled by PWM signals. The signal pin of the hat is"
+" connected to G26 on M5StickC."
+msgstr ""
+
+#: ../../en/hats/servo.rst:13 ae6fd79ed5cb413eb45f451d3a4f2677
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/hats/servo.rst:15 22c1d601ce964284934fc1e57c3c8375
+msgid "|ServoHat|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref 46f4f699877b4ff3aa600fa0b394ff99
+msgid "ServoHat"
+msgstr ""
+
+#: ../../en/hats/servo.rst:18 a86c7f9e9db44d7d96cd34102083c9aa
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/hats/servo.rst:30 ede0eb17cc214f2c87a13f1ff0380be4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/servo.rst:32 4309c684633d46c88f218585158ff5a2
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref:12 e010087227e245f1b548a87f40806b87
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/hats/servo.rst:39 5c037531f8d14e268195ae0d98fe1309
+msgid "class ServoHat"
+msgstr ""
+
+#: ../../en/hats/servo.rst:42 e89b2ae6df9f4c06a08ac6ca58148c7d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/servo.rst:46 8e74dba99b7d4a079575f6d3999d75fd
+msgid "Initialize the Servo."
+msgstr ""
+
+#: ../../en/hats/servo.rst 370ffdb967614676af8b710431964b69
+#: 54d3dc6db656472ab43d504bde95d5aa bd864d0a0fbc40b393bbb0b695374286
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/servo.rst:48 eb85d76ca69048db90fcc60ad570aeef
+msgid "The port to which the Servo is connected. port[0]: servo pin"
+msgstr ""
+
+#: ../../en/hats/servo.rst:50 ../../en/hats/servo.rst:64
+#: ../../en/hats/servo.rst:75 ../../en/hats/servo.rst:84
+#: 7aa0c0c1644944e599abed02251dff18 7df0419e2a2d4c3e8f85f46a71cc4f36
+#: b94cafad77c143ac96fabe965a1b24c5 f2cf2bc7804b4f26acae710ec57adc9f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/servo.rst:52 84f9df724c1a4c598ceb5486549cbf13
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref:7 a42497cf89364705bdd4801594399142
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/hats/servo.rst:56 a125542da4004796806c94406b3fc942
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/servo.rst:60 338065e56e3440d1a66dfcde2d43410a
+msgid "Set the duty cycle."
+msgstr ""
+
+#: ../../en/hats/servo.rst:62 37d5e991142b49d08954ac8551804c39
+msgid "The duty cycle. from 26 to 127."
+msgstr ""
+
+#: ../../en/hats/servo.rst:66 1e77d59793314c1f863f72a8d6f02613
+msgid "|set_duty.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref:8 0462e1cfc80b49aa987174dd8d7b8a93
+msgid "set_duty.svg"
+msgstr ""
+
+#: ../../en/hats/servo.rst:71 68981e2851c74c9ab4ba05fa2325695b
+msgid "Set the clamping percentage."
+msgstr ""
+
+#: ../../en/hats/servo.rst:73 ebd2d766d27644fa9a13a05b1efc44fb
+msgid "The clamping percentage. from 0 to 100."
+msgstr ""
+
+#: ../../en/hats/servo.rst:77 e4e93e12e56d47d0a28d16accbcceda2
+msgid "|set_percent.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref:9 95ae522e475647a4aef5cb0e1a8626ca
+msgid "set_percent.svg"
+msgstr ""
+
+#: ../../en/hats/servo.rst:82 9a5b2509aeea4ff391b91e5e6d97daea
+msgid "Deinitialize the Servo."
+msgstr ""
+
+#: ../../en/hats/servo.rst:86 a7a3bc4cbe194cbfbebbbcf36faa3aca
+msgid "|deinit.svg|"
+msgstr ""
+
+#: ../../en/refs/hat.servo.ref:10 e2252bc70b474cec81d537c8497bba50
+msgid "deinit.svg"
+msgstr ""
+

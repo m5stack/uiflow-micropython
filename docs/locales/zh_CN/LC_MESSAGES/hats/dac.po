@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/dac.rst:2 ec715173ab204380909db5058e85dc7b
+msgid "DAC Hat"
+msgstr ""
+
+#: ../../en/hats/dac.rst:6 6a3d7e6ea11a48f6ad8b98a8cd290702
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/dac.rst:8 66b69c45e52641b79fafd024d76fc598
+msgid "|DAC|"
+msgstr ""
+
+#: ../../en/refs/hat.dac.ref f41b7d30c3ac46b9bd923c238ea7e4eb
+msgid "DAC"
+msgstr ""
+
+#: ../../en/hats/dac.rst:11 3bd3f791462744eda79cd63a2a599810
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/dac.rst:18 ae88d78c9d0d4945be014582c4c506f2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/dac.rst:20 d4f484b0ae5c4a7f98e3727d7919b904
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dac.ref:8 795e55e335b741d4a6d6b39259f34764
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/dac.rst:25 6845f3ed4788455e9e8f9823016db082
+msgid "|stickc_plus2_dac_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/dac.rst:29 306483a7680d472781f46a4395649f19
+msgid "class DACHat"
+msgstr ""
+
+#: ../../en/hats/dac.rst:32 4b1762aa858a41008f527ca181b22d01
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/dac.rst:36 d32f4768748d4868b111f54e7b4b8841
+msgid "Create a DAC Hat object."
+msgstr ""
+
+#: ../../en/hats/dac.rst 0ac4f1272cc44ad2afe3b9b4550f6d99
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/dac.rst:38 acc164075d634bc1a8f59271db6f5999
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/hats/dac.rst:39 4ed4803675c2453089ac3babbbf96328
+msgid "I2C address of the DAC Hat"
+msgstr ""
+
+#: ../../en/hats/dac.rst:40 08e27ada7d1249ddbd02195056f0d1c0
+msgid "VDD voltage of the DAC Hat"
+msgstr ""
+
+#: ../../en/hats/dac.rst:41 bb1a91fd926e4ddebd5044eb1e8941aa
+msgid "VOUT voltage of the DAC Hat"
+msgstr ""
+
+#: ../../en/hats/dac.rst:43 b017f54c63d24f6b82f89ef394f5cefb
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/dac.rst:45 eda07fb16e254284a2248ab22e0cf55b
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dac.ref:6 d8ea0d5e075447bb932a54516c941f38
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/dac.rst:48 5646eb9364e84594974115b84bf35628
+msgid ""
+"DACHat class inherits DACUnit class, See :ref:`unit.DACUnit.Methods "
+"<unit.DACUnit.Methods>` for more details."
+msgstr ""
+

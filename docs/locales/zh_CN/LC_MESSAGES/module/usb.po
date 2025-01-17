@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/usb.rst:2 ../../en/refs/module.usb.ref
+#: 6e8938922022436baaf6ac01d01175aa c80aebef1ac141969ff9d4b8ab15b643
+msgid "USB Module"
+msgstr ""
+
+#: ../../en/module/usb.rst:6 d2dfe058d8c44612aaa7fb46798212ea
+msgid ""
+"The USB Module is a module that uses the SPI interface to expand USB "
+"functionality, implemented with the MAX3421E."
+msgstr "Module USB 是使用 SPI 接口实现扩展 USB 功能的模块，使用 MAX3421E 实现。"
+
+#: ../../en/module/usb.rst:8 b265e48d0dc044afb5042d4e2dfe29bc
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/usb.rst:10 ca48a9cb8dc643c6bf2e351db6c52e24
+msgid "|USB Module|"
+msgstr ""
+
+#: ../../en/module/usb.rst:14 9e6691dee6ff4a2b8adc6dffbd0a2005
+msgid "Micropython Example"
+msgstr ""
+
+#: ../../en/module/usb.rst:16 1edb9abf6b31431a818810396229dc5c
+msgid ""
+"Before using the following examples, please check the DIP switches on the"
+" module to ensure that the pins used in the example match the DIP switch "
+"positions. For specific configurations, please refer to the product "
+"manual page. The SPI configuration has been implemented internally, so "
+"users do not need to worry about it."
+msgstr "使用下列案例前请检查模块拨码开关，确保案例使用相关引脚与模块拨码开关位置一致，具体配置请查看产品说明手册页面。SPI 配置已在内部实现，用户无需关心。"
+
+#: ../../en/module/usb.rst:19 ../../en/module/usb.rst:47
+#: 23d82c3ffed44deeb4555650eecabf2e 749f58c4636d4240b238d5ac82db0425
+msgid "Input/Output Pin Control"
+msgstr "输入/输出引脚控制"
+
+#: ../../en/module/usb.rst:20 ee1d40aaa3c74ec2956f4097f570046b
+msgid ""
+"The module exposes 5 IN (input) pins and 5 OUT (output) pins through "
+"headers. This example demonstrates controlling the high and low level "
+"switching of the output pins, as well as reading and printing the level "
+"status of the input pins."
+msgstr "模块通过排针引出 5 个 IN（输入）引脚和 5 个 OUT （输出引脚），本案例控制输出引脚高低电平切换，读取并打印输入引脚电平状态。"
+
+#: ../../en/module/usb.rst:27 ../../en/module/usb.rst:58
+#: 630302db68504052a01baa81ce174cbe c06ab7365d23469d8f2047e24f3c0aba
+msgid "Mouse"
+msgstr "鼠标"
+
+#: ../../en/module/usb.rst:28 8446d75c20a64d40a75e1f665a029dd8
+msgid "Implementing USB host to capture mouse input"
+msgstr "案例实现 USB 主机，获取鼠标输入"
+
+#: ../../en/module/usb.rst:35 ../../en/module/usb.rst:67
+#: 55e46aa2bd0042aaa96b8ce8673888be 8c10a392b10945f785893a2702af618e
+msgid "Keyboard"
+msgstr "键盘"
+
+#: ../../en/module/usb.rst:36 669c21e507424a658865975b21ed55da
+msgid "Implementing USB host to capture keyboard input"
+msgstr "案例实现 USB 主机，获取键盘输入"
+
+#: ../../en/module/usb.rst:44 a2bb652901d14126b1a8582a65c9ffd1
+msgid "UIFlow2.0 Example"
+msgstr ""
+
+#: ../../en/module/usb.rst:50 9b22f25017a1415f8a6c2a55e4bf030d
+msgid "|gpio_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:19 77ec4d6272cf42578f0fd480af25b2fc
+msgid "gpio_example.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:54 0d482ba2f9084e788619af6e6d65d294
+msgid "|cores3_module_usb_gpio_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/usb.rst:60 939e0cb3140b42b4acf2df1f2dfbabf6
+msgid "|mouse_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:21 69bb9f39186446ee947335860cbe546b
+msgid "mouse_example.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:64 3a3e0f24d05c46f9b6e0f2156434b789
+msgid "|cores3_module_usb_mouse_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/usb.rst:69 6794c93f7331468098676d4bf91d3a1f
+msgid "|kb_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:20 97ec6896495242ee8276e38e25c745d0
+msgid "kb_example.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:73 d1d868cd637140a4867445f2a3aa4a8d
+msgid "|cores3_module_usb_kb_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/usb.rst:79 6c8fbb845bb042b492a7368b78c584a0
+msgid "class USBModule"
+msgstr ""
+
+#: ../../en/module/usb.rst:82 00c0a5ed9ef64abaa95b4c1a612c8823
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/usb.rst f987e013f6294cbfae03637e2faa2261
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/usb.rst:86 44546b4add254822b18a5b74f39cd20d
+msgid "(RST) 复位引脚"
+msgstr ""
+
+#: ../../en/module/usb.rst:87 4f8bb15ce9854c56a402c3e61a8448e1
+msgid "(INT) 中断引脚"
+msgstr ""
+
+#: ../../en/module/usb.rst:89 14b3b86dbe92484a9202d4d5a6812a91
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/usb.rst:91 500b93b097a349e484e794d84ed178ef
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:6 228a53c943af47cdb31803e5521b2739
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:95 801d1484293f4034afcaf4a54765f72d
+msgid "poll data"
+msgstr ""
+
+#: ../../en/module/usb.rst:97 9e9b684562e04b138d6e6462f5ef22e4
+msgid "**Note**: It needs to be called in the main loop"
+msgstr ""
+
+#: ../../en/module/usb.rst:99 ../../en/module/usb.rst:108
+#: ../../en/module/usb.rst:116 ../../en/module/usb.rst:124
+#: ../../en/module/usb.rst:132 ../../en/module/usb.rst:140
+#: ../../en/module/usb.rst:162 ../../en/module/usb.rst:172
+#: ../../en/module/usb.rst:195 ../../en/module/usb.rst:221
+#: ../../en/module/usb.rst:232 ../../en/module/usb.rst:243
+#: 0ed04f730e5a4b10a8f48073f4f3470e 19df2825fc1d43b08f6ccbe96a0b8cee
+#: 2d75ef272a694734bb14245c0365b1fd 496bb7fab5244c468a4fe1fde4f7079d
+#: 856d6764c66c43a88fbbc83e9850b5d4 85dc50a0d80a4409a5d603fadff4de10
+#: 88e909af02864057a86c0364f1775e5a ad213069f91d496f83e9b47e2fbab908
+#: b438a01178d2476ab8a592312ea8c333 ba8e1f4cd04f414f941713618812ce09
+#: bb059b1638b54840a21181e22ef33f4e c971f516393e4344856b3ba5a198805c
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/module/usb.rst:101 26696b3e23d447fc84dc6368f5cdaac6
+msgid "|poll_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:8 11fd5aca4e2040b28743e79469cf8063
+msgid "poll_data.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:106 87fdf06aad044e77aadbc488034c4ac5
+msgid "Check if the left mouse button is pressed."
+msgstr "查询鼠标左键是否按下"
+
+#: ../../en/module/usb.rst:110 ecdcc0a7b59b41099ae160103deb1d76
+msgid "|is_left_btn_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:10 416d283fbfd143f7a9dead7144ffad75
+msgid "is_left_btn_pressed.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:114 a3de2320ec5142159b20e52abb5d9daa
+msgid "Check if the right mouse button is pressed."
+msgstr "查询鼠标右键是否按下"
+
+#: ../../en/module/usb.rst:118 9718e0d501cb40cdb71e61633df8e28d
+msgid "|is_right_btn_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:11 1bac6437363d4154aa9c6f289dc39c9a
+msgid "is_right_btn_pressed.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:122 4323c004cf014b84b07a63894ee29e24
+msgid "Check if the middle mouse button is pressed."
+msgstr "查询鼠标中键（滚轮）是否按下"
+
+#: ../../en/module/usb.rst:126 aaaffe2f553146219bde52f80575815f
+msgid "|is_middle_btn_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:12 c054d0f0721441c2a6081aa8903a8248
+msgid "is_middle_btn_pressed.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:130 28dd77e8c5ac403297598ccb82b329de
+msgid "Check if the forward mouse button is pressed."
+msgstr "查询鼠标前进键是否按下"
+
+#: ../../en/module/usb.rst:134 39470a32bc2b4f0a86db3c7503ba1d43
+msgid "|is_forward_btn_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:13 a96bb31bae6142bb8ee54816bdc005b5
+msgid "is_forward_btn_pressed.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:138 84266559d9e84fea99c9d608356604a4
+msgid "Check if the back mouse button is pressed."
+msgstr "查询鼠标后退键是否按下"
+
+#: ../../en/module/usb.rst:142 95779dae522f4f3ead190402bce72424
+msgid "|is_back_btn_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:14 30a4adaa7e864139ae442f4fdb293956
+msgid "is_back_btn_pressed.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:147 76c673d1fa3d42a2beab210ec88b10a6
+msgid "Read Mouse Cursor Movement"
+msgstr "读取鼠标光标移动"
+
+#: ../../en/module/usb.rst:149 65b66e48f752494e9eba5d60a9b624ad
+msgid ""
+"Returns a tuple (x, y) containing the horizontal displacement x and "
+"vertical displacement y of the mouse; x range: -127 to 127; 0 indicates "
+"no movement, negative values indicate movement to the left, and positive "
+"values indicate movement to the right; y range: -127 to 127; 0 indicates "
+"no movement, negative values indicate movement upward, and positive "
+"values indicate movement downward."
+msgstr "返回包含鼠标水平位移 x 和垂直位移 y 的元组 (x, y)；x 范围: -127~127，静止为0，负值为向左移动，正值为向右移动；y 范围: -127~127，静止为0，负值为向上移动，正值为向下移动。"
+
+#: ../../en/module/usb.rst:153 ../../en/module/usb.rst:185
+#: ../../en/module/usb.rst:213 065392af86034ed7837c94e09884b099
+#: 3e2186aa6157401b9493d5520c27f7b5 cb825961e4484edcb62bf7b2cbd01ee6
+msgid "**Example:**"
+msgstr ""
+
+#: ../../en/module/usb.rst:164 818239f40a634aad935c01673378ccc3
+msgid "|read_mouse_move.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:15 0536442703134333b8b730e9ac376f02
+msgid "read_mouse_move.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:168 bf85e508cab848dab01368da4ae37132
+msgid "Read Mouse Wheel Movement"
+msgstr "读取鼠标滚轮移动"
+
+#: ../../en/module/usb.rst:170 31ac60f455b44e49972cfcbbe2ac05d6
+msgid ""
+"Returns a value in the range of -127 to 127, 0 indicates no movement, "
+"Positive values indicate forward scrolling, Negative values indicate "
+"backward scrolling."
+msgstr "返回 -127~127，静止为0，正值为向前滚动，负值为向后滚动"
+
+#: ../../en/module/usb.rst:174 4196d2fc0b0b4e05832c99aba283b0e0
+msgid "|read_wheel_move.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:16 e45bcc84bff94d74954aad8d9fd4cd34
+msgid "read_wheel_move.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:179 00cb34f819304adcb363215473519219
+msgid "Read keyboard input"
+msgstr "读取键盘输入"
+
+#: ../../en/module/usb.rst:181 fe2a607f16cd4de688d9b5ddc5f547a4
+msgid "``convert`` Whether to convert HID Keycode to the corresponding string."
+msgstr "``convert`` 是否转为 HID Keycode 为对应的字符串。"
+
+#: ../../en/module/usb.rst:183 b6f74b7e3a9045748e94d4465bfc209b
+msgid ""
+"Returns a list containing keyboard inputs (up to 6 elements, meaning a "
+"maximum of 6 key values can be input at once)."
+msgstr "返回一个包含键盘输入的列表(元素个数最大为6，即一次最多输入6个按键值)"
+
+#: ../../en/module/usb.rst:197 19ad3c8de7d943feb730fe13740e7932
+msgid "|read_kb_input.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:17 49da48dc8c5f48019793d0c4c1e2ee6c
+msgid "read_kb_input.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:201 fcfc8816fdb549b1ada90f072bbf7916
+msgid ""
+"Read the keyboard modifier keys, namely \"Ctrl\", \"Shift\", \"Alt\", and"
+" \"Win\" keys."
+msgstr "读取键盘修饰键，即 “Ctrl”，“Shift”，“Alt”，“Win” 按键。"
+
+#: ../../en/module/usb.rst:211 196eeb1ee46c4244aefe383c75062fba
+msgid ""
+"``Return``: The status of the keyboard modifier keys, usually represented"
+" by a bit mask to indicate the status of different modifier keys."
+msgstr "``返回`` 键盘修饰键的状态，通常是通过位掩码来表示不同修饰键的状态。"
+
+#: ../../en/module/usb.rst:204 40b0db6b44fb48d698410c85a060f40b
+msgid "0x01: Left Control key"
+msgstr "0x01: 左侧控制键（Left Control）"
+
+#: ../../en/module/usb.rst:205 298f83614ea0402ebc87a953575a95a8
+msgid "0x02: Left Shift key"
+msgstr "0x02: 左侧 Shift 键（Left Shift）"
+
+#: ../../en/module/usb.rst:206 b8e6e2ae0dc34307be65ce155b78c1a7
+msgid "0x04: Left Alt key"
+msgstr "0x04: 左侧 Alt 键（Left Alt）"
+
+#: ../../en/module/usb.rst:207 b8474cc2449a4be99942f410a9d6c0b6
+msgid "0x08: Left Windows key (Left GUI)"
+msgstr "0x08: 左侧 Windows 键（Left GUI）"
+
+#: ../../en/module/usb.rst:208 d74384ee222049178f89d5ca927707ef
+msgid "0x10: Right Control key"
+msgstr "0x10: 右侧控制键（Right Control）"
+
+#: ../../en/module/usb.rst:209 d6737e3f4bf04e66b616f6a180d88f71
+msgid "0x20: Right Shift key"
+msgstr "0x20: 右侧 Shift 键（Right Shift）"
+
+#: ../../en/module/usb.rst:210 4ed2e53a38dc46b286a481f1e0845be1
+msgid "0x40: Right Alt key"
+msgstr "0x40: 右侧 Alt 键（Right Alt）"
+
+#: ../../en/module/usb.rst:211 182ccc87c41a4fbebecfbea17025dd57
+msgid "0x80: Right Windows key (Right GUI)"
+msgstr "0x80: 右侧 Windows 键（Right GUI）"
+
+#: ../../en/module/usb.rst:223 eef3034cf4934ef2a0222a90fffa2a5d
+msgid "|read_kb_modifier.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:18 05f448077a6e4baea3e7b2fbcef99a81
+msgid "read_kb_modifier.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:227 fa2f1c03512d428e9a59f99d3a04794a
+msgid "Read input pin value"
+msgstr "读取输入引脚电平"
+
+#: ../../en/module/usb.rst:229 ../../en/module/usb.rst:240
+#: 9e079cf7303f4daab01c19b38811bd04 b8e975d4b79040cfbcdd31de6e175523
+msgid "``pin`` pin number"
+msgstr "``pin`` 引脚号"
+
+#: ../../en/module/usb.rst:230 ../../en/module/usb.rst:241
+#: 01d4adda5c224d3ebf8102170cbd6ccd 3ad1e6fee8554eceb49cfbc5919541b1
+msgid "``Return`` 1 represents high level, and 0 represents low level."
+msgstr "``返回`` 1 为高电平，0 为低电平"
+
+#: ../../en/module/usb.rst:234 47deea83fbc041d8a140c3d7593bb897
+msgid "|read_gpin.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:7 5dc01910d387480f97820eeace7e5f99
+msgid "read_gpin.png"
+msgstr ""
+
+#: ../../en/module/usb.rst:238 de372a223c1240dfb7209199899be9a2
+msgid "Write output pin value"
+msgstr "设置输出引脚电平"
+
+#: ../../en/module/usb.rst:245 1bf80debcab74e509c7ce64a23c8c06b
+msgid "|write_gpout.png|"
+msgstr ""
+
+#: ../../en/refs/module.usb.ref:9 8a0b911b892c4041b0051580f755a3d2
+msgid "write_gpout.png"
+msgstr ""
+

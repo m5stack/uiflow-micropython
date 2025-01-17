@@ -14,29 +14,20 @@ Support the following products:
     |PPSModule|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from module import PPSModule
-
-    pps = PPSModule(addr=0x35)
-    pps.set_output_voltage(5.5)
-    pps.set_output_current(1)
-    pps.enable_output()
-
-    # Read values and status
-    print("Voltage:", pps.read_output_voltage(), "V")
-    print("Current:", pps.read_output_current(), "A")
-    print("Mode:", pps.read_psu_running_mode())
+    .. literalinclude:: ../../../examples/module/pps/cores3_pps_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 .. only:: builder_html
+
+    |cores3_pps_example.m5f2|
 
 
 class PPSModule
@@ -63,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |set_output.svg|
+        |set_output.png|
 
 
 .. method:: PPSModule.enable_output()
@@ -72,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |enable_output.svg|
+        |enable_output.png|
 
 
 .. method:: PPSModule.disable_output()
@@ -81,7 +72,7 @@ Methods
 
     UIFLOW2:
 
-        |disable_output.svg|
+        |disable_output.png|
 
 
 .. method:: PPSModule.set_output_voltage(voltage: float)
@@ -92,7 +83,7 @@ Methods
 
     UIFLOW2:
 
-        |set_output_voltage.svg|
+        |set_output_voltage.png|
 
 
 .. method:: PPSModule.set_output_current(current: float)
@@ -103,7 +94,7 @@ Methods
 
     UIFLOW2:
 
-        |set_output_current.svg|
+        |set_output_current.png|
 
 
 .. method:: PPSModule.read_psu_running_mode() -> int
@@ -112,7 +103,7 @@ Methods
 
     UIFLOW2:
 
-        |read_psu_running_mode.svg|
+        |read_psu_running_mode.png|
 
 
 .. method:: PPSModule.read_output_current() -> float
@@ -121,7 +112,7 @@ Methods
 
     UIFLOW2:
 
-        |read_output_current.svg|
+        |read_output_current.png|
 
 
 .. method:: PPSModule.read_output_voltage() -> float
@@ -130,7 +121,7 @@ Methods
 
     UIFLOW2:
 
-        |read_output_voltage.svg|
+        |read_output_voltage.png|
 
 
 .. method:: PPSModule.read_input_voltage() -> float
@@ -139,7 +130,7 @@ Methods
 
     UIFLOW2:
 
-        |read_input_voltage.svg|
+        |read_input_voltage.png|
 
 
 .. method:: PPSModule.read_data_update_flag() -> int
@@ -148,7 +139,7 @@ Methods
 
     UIFLOW2:
 
-        |read_data_update_flag.svg|
+        |read_data_update_flag.png|
 
 
 .. method:: PPSModule.read_mcu_temperature() -> float
@@ -157,7 +148,7 @@ Methods
 
     UIFLOW2:
 
-        |read_mcu_temperature.svg|
+        |read_mcu_temperature.png|
 
 
 .. method:: PPSModule.read_module_id() -> int
@@ -166,7 +157,7 @@ Methods
 
     UIFLOW2:
 
-        |read_module_id.svg|
+        |read_module_id.png|
 
 
 .. method:: PPSModule.read_uid() -> bytearray
@@ -175,7 +166,7 @@ Methods
 
     UIFLOW2:
 
-        |read_uid.svg|
+        |read_uid.png|
 
 
 .. method:: PPSModule.get_i2c_address() -> int
@@ -184,7 +175,7 @@ Methods
 
     UIFLOW2:
 
-        |get_i2c_address.svg|
+        |get_i2c_address.png|
 
 
 .. method:: PPSModule.set_i2c_address(new_address: int)
@@ -195,4 +186,4 @@ Methods
 
     UIFLOW2:
 
-        |set_i2c_address.svg|
+        |set_i2c_address.png|

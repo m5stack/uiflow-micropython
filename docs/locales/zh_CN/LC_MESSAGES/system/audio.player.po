@@ -1,0 +1,278 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/system/audio.player.rst:4 f805938d348f4fd1a2ca8464a397f8b2
+msgid "class Player"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:8 b175b95691164da8887194184dfcbb04
+msgid ""
+"Audio player now can support mp3,amr and wav, if more types are needed, "
+"please add the decoder in function audio_player_create."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:12 f43e714d5f9549019c303a586b34bd9a
+msgid "class audio.Player"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:15 5b47f48081e54214aa82c9f57b85a271
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:19 b98a922c834544e2b76de8be7cb3a65d
+msgid ""
+"Create a Player, state_callback is a monitor of player state, when state "
+"changed, this callback will be invoked."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:21 ../../en/system/audio.player.rst:39
+#: ../../en/system/audio.player.rst:62 ../../en/system/audio.player.rst:76
+#: ../../en/system/audio.player.rst:85 ../../en/system/audio.player.rst:94
+#: ../../en/system/audio.player.rst:103 ../../en/system/audio.player.rst:114
+#: ../../en/system/audio.player.rst:125 ../../en/system/audio.player.rst:136
+#: 2b9031754c194f2f86bec5aeb6a358c6 3afd52033fe746a4822b875eaf332f07
+#: 41d79bce39214dcfbccccd94647ee82e 43dfc3dedcd74bdd83535d88dffc1981
+#: 5b9dc2a2fc704174906a01def157e040 876c23ba906f4857951eb0f199f489d1
+#: a099405928214b2aa6a5f860e1d74d27 b34d3b7a00c6490b8b89fcee8268d033
+#: d3974a884cba4c8a9c614601244a023f f9bd2984ca2d4b76ab0fb17b75540cca
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:23 7ae61f722e1343d39b8f7d4e798115c3
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:2 34bfc542e5c542b1aeda979238357f45
+msgid "init.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:27 658d22578af747db8cdb98be2d4c8d30
+msgid "Methods"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:31 ddb536a7af694bebb48358f5ce957a03
+msgid "Play the audio file."
+msgstr ""
+
+#: ../../en/system/audio.player.rst 089d6042584d413683048a066783d18e
+#: 82fc491145d24258b64351f2e7ad2175 e0f05e5328e542ed9e3658598a4b3437
+#: e180dbfd8d7d4bfe95e6450d0057351e
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:33 0de244264e76478dadbe52b89f346b52
+msgid ""
+"The uri of the audio file. e.g. \"file:///flash/test.mp3\", "
+"\"file:///sd/test.mp3\", \"https://dl.espressif.com/dl/audio/ff-16b-2c-"
+"44100hz.mp3\""
+msgstr ""
+
+#: ../../en/system/audio.player.rst:34 ../../en/system/audio.player.rst:58
+#: 689641dc07a841a7bfcb7b3a92b5ca46 f9a8e1a6029e4b0a985bb00db61e6c66
+msgid "The position to start playing, in byte."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:35 ../../en/system/audio.player.rst:59
+#: ../../en/system/audio.player.rst:73 430d3a337a114a2f83799655f7686dbd
+#: 7310e29e110b4138a1ff3f7c7546e5d2 c364991763b64aea923b948b911fa802
+msgid "The volume of the player, 0-100. -1 means the default volume."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:36 ../../en/system/audio.player.rst:60
+#: ../../en/system/audio.player.rst:74 3b97492829ee47beaa84c16bb91e8747
+#: 621d076dda2b42f3adda87a03829cfc4 dc9d4468f1694d66afc338a70dce0e5e
+msgid "Whether to play synchronously."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:37 94216c76708c4811bae2a7d83ba55387
+msgid "ssl verify, default is None."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:41 98ce2bda54eb4127894e605173c41505
+msgid "|play_local_file.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:4 72d2d99962514b8ca12d96c7f49ad40b
+msgid "play_local_file.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:43 055403b2b7b44c239a2d25832dead68e
+msgid "|play_local_file1.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:6 4b65337e861a46b2a473243ad9c3d455
+msgid "play_local_file1.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:45 8deaecd679884e8fb8e4dece33ba189c
+msgid "|play_sdcard_file.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:8 48af4c21016b4988b6a7df0300720942
+msgid "play_sdcard_file.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:47 c2303c061b274a47b875e689a180365e
+msgid "|play_cloud_file.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:10 dbf3d6d81d0b4fdd9a40828a3ae2ca15
+msgid "play_cloud_file.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:52 8b610760444444818c836d21de42599f
+msgid "Play the raw audio data."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:54 c76d005332524e0ba21bc15ca4639c63
+msgid "The raw audio data."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:55 8ea013c9dde747859453f72a7e4aef9f
+msgid "The sample rate of the audio data."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:56 f33326a4e78b40ee8573abddd1adcb1a
+msgid "Whether the audio data is stereo."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:57 cf75faaa3ce7427c8b54a3b2f8d7ae63
+msgid "The bits of the audio data."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:64 78d7b37dc9d846dbabd33dfc3ab2a3d6
+msgid "|play_raw.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:12 a698c20b5072427da039e18dd6b2dcbb
+msgid "play_raw.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:69 06a1cc1c14af4053bef6eded29ed9da3
+msgid "Play a tone."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:71 9e67ff593ba2415585d973acc219008e
+msgid "The frequency of the tone."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:72 691a4817a45341b796b5b646cb93837a
+msgid "The duration of the tone."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:78 5e66acd69056490796d809bd2529f35a
+msgid "|play_tone.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:14 da8936f8c82e48949264816080a3f4ca
+msgid "play_tone.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:83 e16fd6db81fd4ab8bcdc23f0295fca29
+msgid "Pause the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:87 42eb697bafcc433e983e3920283317b8
+msgid "|pause.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:16 4e3d82873a81446f8754ea8e708178af
+msgid "pause.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:92 c7ce239e0fd24a119898dd9a709c3f88
+msgid "Resume the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:96 7b91de5aaca3436d9d1b908a750b37ac
+msgid "|resume.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:18 4c92c08fe01f4183bc7cc9f1b25f3c1d
+msgid "resume.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:101 0cc9aaac16fb4d7faa28c668ca5b4c26
+msgid "Stop the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:105 913cd739ab0b46ed9bf7212fe5382cfe
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:20 a032f42553c84069ad834c9482c0360a
+msgid "stop.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:110 42ca755c85b243fca53afe1bae5c1c4f
+msgid "Get the position of the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst 241d6b3dfaf94004bf21eb90f518d3a4
+#: 80fcccb56bf04e219a611216fc995803
+msgid "Returns"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:112 ef8b737522b543079e8752a862a1e940
+msgid "The position of the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:116 89703191c77a4010881cd54b9e54dca3
+msgid "|pos.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:22 b97a832111f0428c8c031a6cb7ec5356
+msgid "pos.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:121 99fae544ad1341d8ae1d426b32dbd907
+msgid "Set the volume of the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:123 230dd349b8014da2b996b8bd3b744f5f
+msgid "The volume of the player, 0-100."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:127 d58c18eb1da344f38d937670835b1b14
+msgid "|set_vol.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:24 ddc0d09c4af94fc1a42e4e698ee2abaf
+msgid "set_vol.png"
+msgstr ""
+
+#: ../../en/system/audio.player.rst:132 45f8230773e74252bed1c8694d356676
+msgid "Get the volume of the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:134 80097bac88884d88a86dc6b5eb6d3bc6
+msgid "The volume of the player."
+msgstr ""
+
+#: ../../en/system/audio.player.rst:138 30a09d0cfcc043c68aee4197f276aea6
+msgid "|get_vol.png|"
+msgstr ""
+
+#: ../../en/refs/system.audio.player.ref:26 9971347311c24cd78479473b2934ef4b
+msgid "get_vol.png"
+msgstr ""
+

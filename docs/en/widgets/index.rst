@@ -6,23 +6,20 @@
 
 .. include:: ../refs/widgets.ref
 
-Micropython Example::
+Micropython Example:
 
-    import M5
-    from M5 import Widgets
+    .. literalinclude:: ../../../examples/widgets/screen/cores3_widgets_example.py
+        :language: python
+        :linenos:
 
-    M5.begin()
-    Widgets.setBrightness(100)
-    Widgets.fillScreen(0x6600cc)
-    Widgets.setRotation(0)
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 .. only:: builder_html
 
-    :download:`example.m5f2 <../../_static/widgets/example.m5f2>`
+    |cores3_widgets_example.m5f2|
 
 Screen functions
 ----------------
@@ -33,7 +30,7 @@ Screen functions
 
     UIFLOW2:
 
-        |setBrightness.svg|
+        |setBrightness.png|
 
 .. function:: Widgets.fillScreen(color: int)
 
@@ -41,7 +38,7 @@ Screen functions
 
     UIFLOW2:
 
-        |fillScreen.svg|
+        |fillScreen.png|
 
 .. function:: Widgets.setRotation(rotation: int)
 
@@ -56,7 +53,7 @@ Screen functions
 
     UIFLOW2:
 
-        |setRotation.svg|
+        |setRotation.png|
 
 Classes
 -------

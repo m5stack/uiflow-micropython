@@ -1,0 +1,31 @@
+.. |PwrCANModule| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/module/Module13.2-PwrCAN/4.webp
+    :target: https://docs.m5stack.com/en/module/Module13.2-PwrCAN
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/init.png
+.. |init_rs485.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/init_rs485.png
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/any.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/deinit.png
+.. |setup.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/setup.png
+.. |read_all.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/read_all.png
+.. |read_bytes.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/read_bytes.png
+.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/readline.png
+.. |readinto.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/readinto.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/write.png
+.. |write_line.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/write_line.png
+.. |write_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/write_list.png
+.. |txdone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/txdone.png
+.. |flush.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/flush.png
+.. |sendbreak.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/sendbreak.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/pwrcan/example.png
+
+.. |pwrcan_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/pwrcan/pwrcan_cores3_example.m5f2"
+        target="_blank"
+    >
+        pwrcan_cores3_example.m5f2
+    </a>

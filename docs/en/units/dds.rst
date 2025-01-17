@@ -15,25 +15,21 @@ Support the following products:
 |DDSUnit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-    from unit import DDSUnit
-    i2c = I2C(1, scl=33, sda=32)
-    dds = DDSUnit(i2c)
-    dds.quick_output(DDSUnit.WAVE_SINE, 1000, 0)
-
-    for x in i2c.readfrom_mem(0x31, 0x30, 6): print('%02X' %x);
+    .. literalinclude:: ../../../examples/unit/dds/cores3_dds_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
+
 
 .. only:: builder_html
+
+    |cores3_dds_example.m5f2|
 
 
 class DDSUnit
@@ -51,7 +47,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -66,7 +62,7 @@ Methods
 
     UIFLOW2:
 
-        |set_freq.svg|
+        |set_freq.png|
 
 
 .. method:: DDSUnit.set_phase(index: int = 0, phase: int = 0) -> None
@@ -78,7 +74,7 @@ Methods
 
     UIFLOW2:
 
-        |set_phase.svg|
+        |set_phase.png|
 
 
 .. method:: DDSUnit.set_freq_phase(f_index: int = 0, freq: int = 1000, p_index: int = 0, phase: int = 0) -> None
@@ -92,7 +88,7 @@ Methods
 
     UIFLOW2:
 
-        |set_freq_phase.svg|
+        |set_freq_phase.png|
 
 
 .. method:: DDSUnit.set_mode(mode) -> None
@@ -110,7 +106,7 @@ Methods
 
     UIFLOW2:
 
-        |set_mode.svg|
+        |set_mode.png|
 
 
 .. method:: DDSUnit.set_ctrl(f_index_sel: int = 0, p_index_sel: int = 0, disable_mclk=False, disable_dac=False, reset=False) -> None
@@ -125,7 +121,7 @@ Methods
 
     UIFLOW2:
 
-        |set_ctrl.svg|
+        |set_ctrl.png|
 
 
 .. method:: DDSUnit.select_freq_reg(index: int = 0) -> None
@@ -136,7 +132,7 @@ Methods
 
     UIFLOW2:
 
-        |select_freq_reg.svg|
+        |select_freq_reg.png|
 
 
 .. method:: DDSUnit.select_phase_reg(index: int = 0) -> None
@@ -147,7 +143,7 @@ Methods
 
     UIFLOW2:
 
-        |select_phase_reg.svg|
+        |select_phase_reg.png|
 
 
 .. method:: DDSUnit.quick_output(mode: int = WAVE_SINE, freq: int = 1000, phase: int = 0) -> None
@@ -168,7 +164,7 @@ Methods
 
     UIFLOW2:
 
-        |quick_output.svg|
+        |quick_output.png|
 
 
 .. method:: DDSUnit.output(f_index: int = 0, p_index: int = 0) -> None
@@ -180,7 +176,7 @@ Methods
 
     UIFLOW2:
 
-        |output.svg|
+        |output.png|
 
 .. method:: DDSUnit.set_sleep_mode(mode: int = SLEEP_MODE_1) -> None
 
@@ -195,7 +191,7 @@ Methods
 
     UIFLOW2:
 
-        |set_sleep_mode.svg|
+        |set_sleep_mode.png|
 
 
 .. method:: DDSUnit.reset() -> None
@@ -204,7 +200,7 @@ Methods
 
     UIFLOW2:
 
-        |reset.svg|
+        |reset.png|
 
 
 Constants

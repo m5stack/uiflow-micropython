@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/finger.rst:2 15662c443fc7427ea57278f664140f0f
+msgid "Finger Hat"
+msgstr ""
+
+#: ../../en/hats/finger.rst:6 bf38f552176d4e9b95e07ac2cf536e0b
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/finger.rst:8 91f0b05c4aaf4bc3b3b208f820fc76e0
+msgid "|FingerHat|"
+msgstr ""
+
+#: ../../en/refs/hat.finger.ref bc55207cfe2448eab03dbe81fdb0d81f
+msgid "FingerHat"
+msgstr ""
+
+#: ../../en/hats/finger.rst:11 7161846f03a54b2f91e7ac7b273028a6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/finger.rst:18 40a873dda70e48948bd4da78642ec335
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/finger.rst:20 daa6b4e0d29943dd86ee40ab1d7a4d78
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.finger.ref:8 f5d2ecd53f9742abafda42934da765a7
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/finger.rst:25 3f491950465c4280b698459d742e1fdf
+msgid "|stickc_plus2_finger_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/finger.rst:29 fca57775aa4047ccbadff5b3feabf621
+msgid "class FingerHat"
+msgstr ""
+
+#: ../../en/hats/finger.rst:32 4732e89fc0634bddb494ea8f90f06ea4
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/finger.rst:36 832436f8980b400fbbed9591eb6cff11
+msgid "Create a FingerHat object."
+msgstr ""
+
+#: ../../en/hats/finger.rst 35023376097c4c98b50a2e70490c251c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/finger.rst:38 77d78fcc86074c2b861b11f1e01b7565
+msgid "The ID of the UART, 0 or 1 or 2."
+msgstr ""
+
+#: ../../en/hats/finger.rst:39 4b2e5e8f59e14df299e7946cfe73afd3
+msgid "UART pin numbers."
+msgstr ""
+
+#: ../../en/hats/finger.rst:41 7a4ec91fba944a5b816794fdeea28edd
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/finger.rst:43 2d337130cef24fdd9960577fb74217fb
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.finger.ref:6 a777a0e779754a989b50e345d7abf4fe
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/finger.rst:46 931c40f9be0342c7b7b722e2d07d401d
+msgid ""
+"FingerUnit class inherits FingerUnit class, See "
+":ref:`unit.FingerUnit.Methods <unit.FingerUnit.Methods>` for more "
+"details."
+msgstr ""
+

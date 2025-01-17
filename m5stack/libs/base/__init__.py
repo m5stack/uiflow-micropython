@@ -5,7 +5,10 @@
 _attrs = {
     "ATOMCANBase": "atom_can",
     "ATOMSocketBase": "atom_socket",
+    "ATOMEchoBase": "echo",
     "Motion": "motion",
+    "MotionBase": "motion",
+    "SpeakerBase": "speaker",
 }
 
 

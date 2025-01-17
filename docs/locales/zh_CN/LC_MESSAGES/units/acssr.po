@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.acssr.ref ../../en/units/acssr.rst:2
+#: 4d942bff075143f7b03fd84b6e87809d aa59432cd5e0425a812e83c876c0e38e
+msgid "ACSSR Unit"
+msgstr ""
+
+#: ../../en/units/acssr.rst:6 98e15b013e3a4d4988bbaef974076613
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:8 29e4c9896dd94296a753d05d2a2ba4d9
+msgid "|ACSSR Unit|"
+msgstr ""
+
+#: ../../en/units/acssr.rst:11 ba1b5a96346a4188b6785bc86564494b
+msgid "Micropython I2C Example:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:18 0a27a5c80d88453f859023cc7f5730bc
+msgid "Micropython Modbus Example:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:25 bfa5b1d3f34d4f49a0615ff27fe4788c
+msgid "UIFLOW2 I2C Example:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:27 055014fa9e1a4e6e88bff645c20edc5b
+msgid "|i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:15 1fed1d3cd0c8448a8e11a62d76c34447
+msgid "i2c_example.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:30 367b7277f83a4559829c098ee65a1e3a
+msgid "UIFLOW2 Modbus Example:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:32 9614297d881c4320b3a646476b939c1b
+msgid "|modbus_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:16 2d71bb410b854aaa9844b143553c58e0
+msgid "modbus_example.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:37 627ef38137a8476fb992e8925ae4c378
+msgid "|cores3_acssr_i2c_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/acssr.rst:39 36c3542af3be49beb3bd13861470d048
+msgid "|cores3_acssr_modbus_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/acssr.rst:43 6ea4ef1727b34882b5241d3915418b98
+msgid "class ACSSRUnit"
+msgstr ""
+
+#: ../../en/units/acssr.rst:46 9c08574e11af418999c555050b8aaacd
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/acssr.rst:50 6dfc011125cc436d87d3e0dcfda5d4e6
+msgid "Create an ACSSRUnit object."
+msgstr ""
+
+#: ../../en/units/acssr.rst 0659140b8487414ab1c76e2cb0d9f941
+#: 172183eebb4b4f98b3e2273e63363cb7 336307896577438ab986b774899cefee
+#: 6a3df83123b34694a859712c917d38df 94555b50555b469089f70997425f2047
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/acssr.rst:52 fddadf05aaa14191be36b9cda8fd2cf2
+msgid "I2C bus or Modbus."
+msgstr ""
+
+#: ../../en/units/acssr.rst:53 c507bef4bb4548189350814359d462dc
+msgid ""
+"Slave address. Default is 0x50 in I2C mode. Default is 0x04 in Modbus "
+"mode."
+msgstr ""
+
+#: ../../en/units/acssr.rst:55 ../../en/units/acssr.rst:69
+#: ../../en/units/acssr.rst:78 ../../en/units/acssr.rst:89
+#: ../../en/units/acssr.rst:100 ../../en/units/acssr.rst:111
+#: ../../en/units/acssr.rst:122 ../../en/units/acssr.rst:133
+#: 4ab88c85d1004950910f5f3cc388cd00 4adce902c95e407e85f366f11e1b61e5
+#: 5d288e10252e47598152d487f164722f 83a4167972f643cf854105bf3e07b4a1
+#: 8baa45a31dfa428faa76ea3f02b65f12 b2c03f72690e4014a6d8312ee018723d
+#: caf48d7937d648669c874cae27673e29 d8c3bf1a00364c03a85c76525c9062d7
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/acssr.rst:57 ebc72f9c852c4dd9864c0b6357bd64d4
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:6 c61d5d09bb5c42d6bb5521d85f625f6e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:63 31be6dba0b8546bc8075ac29d9e995c4
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/acssr.rst:67 b384af019eaa4adea1be398da4750592
+msgid "Turn on the relay."
+msgstr ""
+
+#: ../../en/units/acssr.rst:71 080cdeb089f44ca4890400939c030e37
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:7 b8bffaf76dc942a5bb8aebd3bb9b79f5
+msgid "on.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:76 357aa6387ebc4c50a2837486f64e6442
+msgid "Turn off the relay."
+msgstr ""
+
+#: ../../en/units/acssr.rst:80 15a757b907704159871d091a8a4c02bc
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:10 886d7a8e76264a3a94ed147c00c06201
+msgid "off.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:85 ../../en/units/acssr.rst:96
+#: 309d6f0bed1742e2b7a961c7200f52d8 31564cae296f48d4a967f04d6a046d6f
+msgid "Turn on the relay if x is True, otherwise turn off the relay."
+msgstr ""
+
+#: ../../en/units/acssr.rst:87 ../../en/units/acssr.rst:98
+#: 41ef897ce76f4fd9907b9c1ae9d1736c 56248020ba4a4c358880df79dc54dc63
+msgid "True or False."
+msgstr ""
+
+#: ../../en/units/acssr.rst:91 2e5e43a24d27421cb827904d8b1de0e8
+msgid "|call.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:8 0746325917e54a34a200be52b94d1c11
+msgid "call.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:102 4a4f449f541f489096ee1346ec1d5a39
+msgid "|value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:9 efab0410d5364ea9aa35cfd0d77136d6
+msgid "value.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:107 8ca2bad9808e4a56a51aca04b78d1d1c
+msgid "Set the color of the LED."
+msgstr ""
+
+#: ../../en/units/acssr.rst:109 fdeb81644f814d95b3f70ab0738948bb
+msgid "RGB color value. Default is 0."
+msgstr ""
+
+#: ../../en/units/acssr.rst:113 0720bb189723488f882bcc06a47c1169
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:11 6e0ffe874a3d44a59de9bf4f5ca670bd
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:118 27405f60e3764640bc4e270d6ee4ca45
+msgid "Get the firmware version of the unit."
+msgstr ""
+
+#: ../../en/units/acssr.rst cd21d1ebc4f74b7b821830c89e7cd7e5
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/acssr.rst:120 e0e9dda0500343d7bdf0766733a67281
+msgid "Firmware version."
+msgstr ""
+
+#: ../../en/units/acssr.rst:124 fd5c37ebcfb64c429e9f237450c595ea
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:12 f5ccc534e32641719767f777faf7063c
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:129 1cf577a2e5184d0f85e57ca441aa1381
+msgid "Set the I2C address of the unit."
+msgstr ""
+
+#: ../../en/units/acssr.rst:131 5b283c2415b84117a517b015b29f8be2
+msgid "New I2C address. The range is 0x01-0x7f."
+msgstr ""
+
+#: ../../en/units/acssr.rst:135 69b75ea1a2e5466db41ff1cc4181487b
+msgid "|set_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:13 acdf62387dd24616b00c58dcc58cee55
+msgid "set_address.png"
+msgstr ""
+
+#: ../../en/units/acssr.rst:137 0229bc1c38e543d98430eef815174758
+msgid "|set_address1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.acssr.ref:14 8d7c41c83d3e4e1c9da6beb84dda604d
+msgid "set_address1.png"
+msgstr ""
+

@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/relay_2.rst:3 30d2245ca785482b9ba8303489b826f2
+msgid "Relay2 Module"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:7 7ca1a63907874faaa82c54002eece7a0
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:9 103840e283d04c728ff0053642258ef2
+msgid "|Relay2Module|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref 44da5d168fe641f98843dfcc94c0f089
+msgid "Relay2Module"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:11 68fc3e7f49804993ab5d65115cec6488
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:18 72f76040a2a2488697da82cee3463b3e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:20 fee5f288c9dc4d798c6c8e5024881035
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:15 6705623622d14c4da135c85ed286b2bc
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:25 66c28c604e6a4c308f0e301adac15dc2
+msgid "class Relay2Module"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:28 510c0601dfe3450e822e6c45e11fba1d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:32 534b56cc062d4cf1956130bec254a4a1
+msgid "Initialize the 2Relay Module with the specified I2C address."
+msgstr ""
+
+#: ../../en/module/relay_2.rst 1dc6b319f8874627877298f9ec011bf8
+#: 68e708d332f34c8b9b164a5a58029c1a 7c161578ae6f4f64820d9d2f57b8b58e
+#: b83cea9286b149b6b456606be8981927 c40933763d934189b5148a361da99f6e
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:34 4f0cd3c1fdf14657aa711d3940497666
+msgid "I2C address of the Relay2Module."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:36 ../../en/module/relay_2.rst:51
+#: ../../en/module/relay_2.rst:61 ../../en/module/relay_2.rst:71
+#: ../../en/module/relay_2.rst:80 ../../en/module/relay_2.rst:90
+#: ../../en/module/relay_2.rst:99 0c4fb2aad2ea43ba8ba6c88178b95503
+#: 1bb12eaa1019409d8d49b9019b73f683 2415f4089b84428b8302da185289f3b4
+#: 6e22ccf62dfc41ff981c16b4ad70234c 8cbfe3aff94840d2bec42516536bf1fc
+#: 9a3d3f6a1432400a94f74e8a40eca37b de3533aa38974a7f93ccb07cf8f5c8d2
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:38 f1bc4fff3edd442a9b122aab74f7bcd5
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:7 1dce4b77aa6240f59260ee28ae54a587
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:42 8efa8c777fa241b38c12fce82e76f37c
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:46 eef5e752c31a4a24b0d7859fc5c09da4
+msgid "Set the state of a specific relay."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:48 ../../en/module/relay_2.rst:59
+#: 27b9f50988fd464291fa5c245874afdc aabac0070f2447b2af487dee2458cb32
+msgid "The relay number (1 or 2)."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:49 1204670e377c40d1bdad00f2f5d888b9
+msgid "True to turn on, False to turn off."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:53 9d84710e2cb54ca39549629594a4a14f
+msgid "|set_relay_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:8 96f3fa59d015493386bba9115509b404
+msgid "set_relay_state.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:57 87d196fd7c3d4be38c4db84635dc899f
+msgid "Get the status of a specific relay."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:63 8ad315c1270f4438a307f39a670f8bcb
+msgid "|get_relay_status.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:9 cf28dd957caa404d9ddfcd2e0f416acf
+msgid "get_relay_status.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:67 6fcbf5c3520449d0a4f3468b28b39852
+msgid "Set the state of both relays simultaneously."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:69 afc4bac409734a559b4ab51efbe2c312
+msgid "True to turn on both relays, False to turn off both relays."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:73 c09899b6585942cbad40637f3a1a18b1
+msgid "|set_all_relay_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:10 00b2226c76be43839b54abebe3d6701a
+msgid "set_all_relay_state.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:77 d8fcc62753074a449db189488241bb58
+msgid "Get the firmware version of the Relay2 Module."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:82 273882a6ca07421d959fe71afc143fc5
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:11 d40abe4227a545d0bbae9ac33c558cdd
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:86 0d5b94390fc1432ba7bc7da31ab0891f
+msgid "Set a new I2C address(0x08~0x77) for the Relay2 Module."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:88 e9ed4adbdc1f4d3e85ec11292e43e85f
+msgid "The new I2C address to set."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:92 e43901cc66ac47cd9fad178200c38bac
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:12 54842e8cd3524bf3954ebf67cc02d286
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/module/relay_2.rst:96 b898c63e452441a1a173f78e2ac23eea
+msgid "Get the current I2C address of the Relay2 Module."
+msgstr ""
+
+#: ../../en/module/relay_2.rst:101 8483b69dab5b444cb6a113bb78a1edcb
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.relay_2.ref:13 f8a9980d097f4f6b8bc213dd785ca439
+msgid "get_i2c_address.png"
+msgstr ""
+

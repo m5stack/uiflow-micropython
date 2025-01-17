@@ -96,6 +96,7 @@ class Speaker
 
     All calls to methods of Speaker objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
+.. _hardware.Speaker.Methods:
 
 Methods
 -------

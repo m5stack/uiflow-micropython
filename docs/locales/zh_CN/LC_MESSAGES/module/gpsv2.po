@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/gpsv2.rst:3 21de77f79dd7488ab182b8a5956d8f0a
+msgid "GPS V2.0 Module"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:7 02e54706da414846aaeedbf64caeb473
+msgid ""
+"Module GPS v2.0 is a high-performance GNSS global positioning module, "
+"integrated with the high-performance AT6668 chip to provide precise and "
+"reliable satellite positioning services. This module supports multi-"
+"frequency, multi-mode GNSS signal reception and is compatible with "
+"various satellite navigation systems, including GPS, BD2, BD3, GLONASS, "
+"GALILEO, and QZSS, enabling high-precision, multi-system joint "
+"positioning or single-system independent positioning, and offering "
+"excellent anti-jamming capabilities. In weak signal areas, it can quickly"
+" acquire higher precision positioning information. The module comes "
+"equipped with an external SMA antenna, and also features a dip switch to "
+"allow users to flexibly switch TX/RX communication pins, with PPS signal "
+"output for precise timing adjustments. It supports multi-stack usage, "
+"offering more customization and flexibility, making it suitable for high-"
+"precision positioning applications such as in-vehicle navigation, IoT "
+"positioning devices, remote monitoring, smart cities, and home and "
+"industrial automation."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:10 63a4d5242a5c4d95a13977af0bc10b4d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:12 e0f1c48094c94520aa98be6cbf740d71
+msgid "|GPSV2Module|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref 055bde5a824f44258ab59ff412a293cb
+msgid "GPSV2Module"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:14 5f708e53f494488fb5cd4df390b59f4c
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:21 77901c8d4cbb45dcb6af8bd519be47c2
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:23 bb19eaa4f98b40829d92624c21374dac
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:8 2ffa5beae07a469ba31934e2e2e9a78f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:27 4e81c3b17541437eada57bb38e574544
+msgid "|gpsv2_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:30 65829eef4ba24f929b7486652066f294
+msgid "class GPSV2Module"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:33 baceb65e637147149524f196db1feb79
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:37 9278e2412cba48059192f3090e7c5bfd
+msgid ""
+"Initialize the GPSV2Module with a specific UART id and port for "
+"communication."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst 0c0c039927594218b32919cf264cf5e5
+#: 0ee24f202606461aa372557624b19654 554acd39b182449f831d632b84d2e9f1
+#: b9e437564ba34da8aa074c7f6d440bf7 ba70045d4a9e4da5b8e890308f4e3c86
+#: e435e2b0b4954e1686d7b8d084d3b0b2 f78881bda247424882144c637aedbd11
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:39 982c8e2db9084f25914e2de0986426bd
+msgid "The UART ID for communication with the GPS module. It can be 0, 1, or 2."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:40 c44ea421b25d43cb9fe3227f84720ab0
+msgid "The RX pin of the UART."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:41 60d4cd5980564a609059a939c8df03df
+msgid "The TX pin of the UART."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:43 ../../en/module/gpsv2.rst:57
+#: ../../en/module/gpsv2.rst:67 ../../en/module/gpsv2.rst:77
+#: ../../en/module/gpsv2.rst:87 ../../en/module/gpsv2.rst:97
+#: ../../en/module/gpsv2.rst:107 ../../en/module/gpsv2.rst:117
+#: ../../en/module/gpsv2.rst:127 ../../en/module/gpsv2.rst:137
+#: ../../en/module/gpsv2.rst:147 ../../en/module/gpsv2.rst:157
+#: ../../en/module/gpsv2.rst:167 ../../en/module/gpsv2.rst:177
+#: ../../en/module/gpsv2.rst:187 ../../en/module/gpsv2.rst:197
+#: ../../en/module/gpsv2.rst:207 ../../en/module/gpsv2.rst:215
+#: 14444d3d80a442508eb1bcfb6fb145fd 19482fa4c0cd4d84baee5a701ab44fc5
+#: 2167b2e2a4854941814b9c5c24a14cc4 2b39520b8042474abe0dc4fc9786353f
+#: 36953d1c9d824e8d99d9d7d1cb02b111 369da84d865c43e088faaba6fa4a1460
+#: 6b44af92df15467a9522d7a568989687 77019d7c10654884a08c52577ddc2913
+#: 7a9a631cbbac469e8bcb29ea1ed547ad 7f76da4e480f47c48e038203dffdf964
+#: 8e2f00c2ea6e46dbb1fce6a4db8a5d8f 984e7e269e654ec5bca42262ebf1d701
+#: ac8658092c16406ca1b7977547065e72 c951b18a4de143b0b9e96f7c578e93b0
+#: e49094bb951d4e3185693d611731a8ab eca20f10151a4fe88fcd5741a313d354
+#: f4d29553ef174be9be9141bce812bb10 ff1c9107f8614af2bf9fcde9f8b55bba
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:45 6731056ed25c428c825f6ecbad01ea13
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:7 b57dd6661ebd4db89f0d2b7285a23e78
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:49 4aced622863a4f2ca345ce9fdc9534d0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:53 dc2264db72444ac9842390650ad64fcc
+msgid "Set the working mode of the GPS module."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:55 ac3ceb3342664710ae9fb6ecb5c9e664
+msgid "The mode to set, defined by the GPS module."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:59 6d7a3732a3654818907c1a620e566cfc
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:9 9111574f80c84333a3b684eac86aca69
+msgid "set_work_mode.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:63 156ae96c3e2e46a5a1903d0f55b48b2e
+msgid "Get the current working mode of the GPS module."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst 04a3035e30564012b0b472d1ce6a678f
+#: 0d917aa8254d4f378fb7914aae554bb5 152a23bfaa504edd9a7fb3f0b832144f
+#: 2784afb24dba446c9dbb1579cf161e2b 4247b9f99fab4eb4b47421a141f81afc
+#: 4faa0d485633456a9b15d474d433218d 74b7f060d7a848229f4ae1c5d1eadfd1
+#: 7e0289efbea54e2db7ddb862f0a817f4 9034760777954e339973d569195ba389
+#: 9f7559a5a2f74fd480dd55cdd3d8cc59 bc406608c57242b595b8399b57cbd2c6
+#: c11abaac749c4ba1ac50835a0f27a8eb c761fc01664247dda654e2efa55cf957
+#: d867ef179fbe44d5be4762ddd2813461 e0b8d5272c904413b662c3d645e609d7
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:65 40609afa976b40cda9746fd4fa94e4b3
+msgid "The current working mode of the GPS module."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:69 2448a148280c49af876ff9cd1f33344c
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:10 661253f5dd4b4a18be0d3edb583567a9
+msgid "get_work_mode.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:73 b25955704fd14473bd77512e73f2ff2d
+msgid "Get the state of the antenna."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:75 172d101ce43f46fd86a8d8ca0c4587ea
+msgid "The antenna state."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:79 3e34bf27270e4bca80ddb4af77687a7c
+msgid "|get_antenna_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:11 8fbb9b0b47554bfa9b06ef6a37b8f343
+msgid "get_antenna_state.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:83 3ede215c31c540f7b033722a1e934efe
+msgid "Get the current GPS time."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:85 9db72bbbcdc944e1a6a35e19d121b86a
+msgid "The GPS time as a list of strings [hour, minute, second]."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:89 c27043c978a1462f8bdaa27dc6ebc63e
+msgid "|get_gps_time.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:12 1fad888f51704b0b9d41bde873085c6b
+msgid "get_gps_time.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:93 b1e6bf029fff4c0da36af346ac9719c8
+msgid "Get the current GPS date."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:95 d3ae2addce8a4753befe88a767e7d184
+msgid "The GPS date as a list of strings [day, month, year]."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:99 93a3e3f240e34859bd89915b8af699ef
+msgid "|get_gps_date.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:13 fd7bd6cbe8604cf5bba59d7a832e0e54
+msgid "get_gps_date.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:103 ecbbca736f1a41508a9c3b72013cfffd
+msgid "Get the current GPS date and time combined."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:105 a24016b7797d45fbae4db1e1814d2b49
+msgid ""
+"The GPS date and time as a list of strings [year, month, day, hour, "
+"minute, second]."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:109 bc43cbb925304b4b93ff3959777fb962
+msgid "|get_gps_date_time.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:14 f7b045e5bff24e358ff3063a020c5483
+msgid "get_gps_date_time.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:113 0fe4e43e796b4d6d8916334e7a12e208
+msgid "Get the timestamp of the current GPS time."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:115 edb7efa0fab04841b765a9a9c4fe070c
+msgid "The timestamp representing the current GPS time."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:119 ba147e7109b143b1962e1d2b27a0b259
+msgid "|get_timestamp.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:15 3412397e0e87472d988e3b10957c59c5
+msgid "get_timestamp.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:123 20a307c61d84416fb5d8731f7fb1e766
+msgid "Get the current latitude."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:125 4f8cf9a91d414d3f849fb5f4405e5d83
+msgid "The current latitude in string format."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:129 725a71aa8d52484184a5aafd636cc6a6
+msgid "|get_latitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:16 09536ffc8008401394614dced828c428
+msgid "get_latitude.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:133 8a53b7290b7b458cb9fcf118aa2196ad
+msgid "Get the current longitude."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:135 6da18b7b813e418eac118e650f60a72c
+msgid "The current longitude in string format."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:139 fde79b47e1a241b8b36ab4f5507b3f26
+msgid "|get_longitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:17 1af97a95a6ac4ecfbf4024b0904c1143
+msgid "get_longitude.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:143 9297a4d418db44b0b60a0c8b9ce57f0e
+msgid "Get the current altitude."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:145 fe4385aa44ac44c381277cbe449bf124
+msgid "The current altitude in string format."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:149 b8ab150b75c64a539c178eb7b09eb3b5
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:18 842d686f09c24ff291856076cc7db69a
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:153 86ad9606193e4de6a8cd35c082f7328e
+msgid "Get the number of satellites used for positioning."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:155 4c916e29a30846d196bad9cc4791e3ad
+msgid "The number of satellites."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:159 880e994a114442678a7e6bcb006c101b
+msgid "|get_satellite_num.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:19 fd5d483054fb404b9b4a01d02ecf7837
+msgid "get_satellite_num.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:163 93930c2593674580a6faf7f063b87edc
+msgid "Get the quality of the GPS position."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:165 4fd2d7bfd3ae4903a1f69d276288bd81
+msgid "The position quality indicator."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:169 92313e1e5fe9488b81662e76ced5e9a9
+msgid "|get_pos_quality.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:20 b0364188b99540b2a6c7faad9976e0c1
+msgid "get_pos_quality.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:173 72c5307b8f134f0faeafc0c742cccca6
+msgid "Get the course over ground (COG)."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:175 ebbb6e1a522b4522a3e552abc358d47b
+msgid "The course over ground in degrees."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:179 42edf62a03de40f79cb9ab179bb823cc
+msgid "|get_corse_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:21 9ca30ebd34914e1884fd687ee5f10204
+msgid "get_corse_over_ground.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:183 a917e2f02fc94e3187c25d7b40ac42ea
+msgid "Get the speed over ground (SOG)."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:185 ce8d4f9ece404bd3b64ba6c1261eb20e
+msgid "The speed over ground in knots."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:189 5e62e46a628a426ca2993871dc5b9c5c
+msgid "|get_speed_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:22 35ad2c6221fc480fbb3f80295dd6ae41
+msgid "get_speed_over_ground.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:193 892228a3f7af444b8bcf4ec7b1eee417
+msgid "Set the time zone offset for the GPS time."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:195 05cb89b9df434553a56072127f2b49c0
+msgid "The time zone offset value to set."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:199 e15ce0dd4cd74db98a7d8188fdf35399
+msgid "|set_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:23 48c719531c6541fd8160925787b086db
+msgid "set_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:203 9f2c4da0db504090b7e273485db0eddd
+msgid "Get the current time zone offset."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:205 90f40111d1b04a84b3864bd7a454af2e
+msgid "The current time zone offset."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:209 c42654e669704320bd0f06deaa83c2e1
+msgid "|get_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:24 19d5da679de14c7ab7437bc4a67b39c0
+msgid "get_time_zone.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:213 90c03328903c47988074a04df1b3af75
+msgid ""
+"Deinitialize the GPS unit, stopping any running tasks and releasing "
+"resources."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:217 08d9654ab5d14646bfa794f8bb609836
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.gpsv2.ref:25 fcdf73be886e47b78f3723ea93643b9e
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:222 b9b4110ff5964270934a4ed5b759294b
+msgid "Add checksum to the message for communication with the GPS module."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:224 58a0a9cf427248f58319f088e1048a02
+msgid "The message to which the checksum will be added."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:226 c82f4143e0204cb99ffa5ba0c71e2dbb
+msgid "The message with added checksum."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:231 a41d6e45c6f845d49a3e467fcd19a50a
+msgid ""
+"Decode the GGA sentence to extract GPS quality, number of satellites, and"
+" altitude."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:233 e48e72867257466ab69be601a2929be9
+msgid "The GGA sentence to decode."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:238 6dfd5e3eaab842d1b7fd8ac2a441ce07
+msgid ""
+"Decode the RMC sentence to extract GPS time, latitude, longitude, speed, "
+"course, and date."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:240 2d462dc18f2444259ce107c1e420e0ee
+msgid "The RMC sentence to decode."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:245 6637ee7de7be483bb6e3805ade92875e
+msgid "Decode the TXT sentence to extract antenna state."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:247 a5348872d0e44740927ed1937b622bef
+msgid "The TXT sentence to decode."
+msgstr ""
+
+#: ../../en/module/gpsv2.rst:252 1a7f905541ef4bde94c2bfcaa94ea70c
+msgid "Monitor the GPS data and decode incoming sentences."
+msgstr ""
+

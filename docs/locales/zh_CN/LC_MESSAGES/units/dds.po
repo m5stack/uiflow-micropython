@@ -1,0 +1,415 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/dds.rst:2 c8e590ab403843d58e855e6d44275267
+msgid "DDS Unit"
+msgstr ""
+
+#: ../../en/units/dds.rst:6 f5352a7d450e4b88a5d2c7224e264d23
+msgid ""
+"DDS is a signal source Unit. It uses the AD9833 programmable waveform "
+"generator + STM32F0 micro controller. Based on I2C communication "
+"interface (addr:0x31) It can easily control the signal source to output "
+"multiple waveforms (sine wave, triangle wave, square wave output, "
+"sawtooth wave, signal output amplitude 0-0.6V) and adjust the frequency "
+"and phase."
+msgstr ""
+
+#: ../../en/units/dds.rst:13 755da939410c443c8f56441d4414111e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/dds.rst:15 4014fba3db72474ab3f206ed8be43f0e
+msgid "|DDSUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref 40bbcfaf92234f1ea45fb435ab2ec591
+msgid "DDSUnit"
+msgstr ""
+
+#: ../../en/units/dds.rst:18 02945aec52cb4348937ada49ee14cc37
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/dds.rst:25 e25524af92354b8db3d7d2b4fb46c157
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/dds.rst:27 f4e2e29912aa4d97a36989da49c8fd03
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:20 5e7331b2c9824fa096c0768b3e4b5e6f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:32 1e24bc6d82214d76b1da1a603d4c0a5d
+msgid "|cores3_dds_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/dds.rst:36 a2330b38bb9d43a692609e0c3841e10e
+msgid "class DDSUnit"
+msgstr ""
+
+#: ../../en/units/dds.rst:39 d43d643b04a34b448efcb736691460c3
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/dds.rst:43 8b1b80ee8cdb45038c9d13c43d27199b
+msgid "Initialize the DDSUnit."
+msgstr ""
+
+#: ../../en/units/dds.rst 13a5fbd1db534b96a754c2398aa632b4
+#: 162ee890151140828969c4b559455fed 33b94d73438d4650bee1d2f901059530
+#: 52175209b4294802ab0e2e7c98926936 5a4b736337d74e23a6433618185aba8b
+#: 754e0919a8ae4957a6e5c7104a11077a a7e03965bf1644728f0546182396e134
+#: ba30c484e8f94892a4bd7d6c4dfaa5da c80bf770786042be96de73534cfedf40
+#: e68aa4ff61174d4b826aeabaacbeedaf f27406f055584b07acb64be11e3501d8
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/dds.rst:45 200ec86ce906428784cbf32c4df2dbad
+msgid "The i2c bus the unit is connected to."
+msgstr ""
+
+#: ../../en/units/dds.rst:46 65c1b69ab2df489aae098ff4f972633f
+msgid "The I2C address of the DDSUnit. Default is 0x31."
+msgstr ""
+
+#: ../../en/units/dds.rst:48 ../../en/units/dds.rst:63
+#: ../../en/units/dds.rst:75 ../../en/units/dds.rst:89
+#: ../../en/units/dds.rst:107 ../../en/units/dds.rst:122
+#: ../../en/units/dds.rst:133 ../../en/units/dds.rst:144
+#: ../../en/units/dds.rst:165 ../../en/units/dds.rst:177
+#: ../../en/units/dds.rst:192 ../../en/units/dds.rst:201
+#: 1055abc867ad4e03a2bb3de51546ad36 1230646bdbae45a28aea8fe097d0e309
+#: 1f0175f21027433cb48f8c1ed9a213b9 3b24d9579dcf460c919546885b0694c8
+#: 4d1bb777ccf04e59b8235ace6dde672b 806d72f5d5234075a65dd6d99aa76da3
+#: 84f00a75d76e463eb14509e64ee2bdf9 866da957cb28460197fbdd21be38ab15
+#: a48ab3dd22c0453f883d983b7e3ec053 d00950124d7c4e3d8eb834a80dc69fa5
+#: d4905c6347374b32b3bc8920375cd771 f096e363acd5419187da8c5fef345c59
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/dds.rst:50 744aae6884a142a7a08d1a82e75c09fa
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:7 d7b5ff91019b416f86752a3e1700aa07
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:54 9dd02ea3d3804b66baf23201329295b0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/dds.rst:58 bbdee307165e4b3f84ea692ab432456d
+msgid "Set the frequency of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:60 ../../en/units/dds.rst:72
+#: 3b6feaca086749e09336a528654e1187 ed51f98eb67642e58dcbd12ce3968452
+msgid "The register number of the DDS, range from 0 to 1."
+msgstr ""
+
+#: ../../en/units/dds.rst:61 ../../en/units/dds.rst:85
+#: ../../en/units/dds.rst:162 341b9a5e71e142d49c14166e16876c88
+#: 904dec88a04d4bb6ae437431474abe4e bc4c6111ad0a428187962fe216088800
+msgid "The frequency of the DDS in Hz."
+msgstr ""
+
+#: ../../en/units/dds.rst:65 bee54538adde4072b5b434e91a05041a
+msgid "|set_freq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:8 15ebb7b3e34b4d06bb6d9e1a2cd9e4ad
+msgid "set_freq.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:70 fa5414972f1048ea88ee01fc640f7387
+msgid "Set the phase of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:73 ../../en/units/dds.rst:87
+#: ../../en/units/dds.rst:163 44e9d0ec6e7c412191a425cc87b7828a
+#: 55be5834189e4c96aa401aba3fca2180 d68ab6ed695e4c2baf353574b99c697e
+msgid "The phase of the DDS in degrees."
+msgstr ""
+
+#: ../../en/units/dds.rst:77 6135f17da8ab4eca8330e5af2a16b3b3
+msgid "|set_phase.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:9 709a38af03a74bddba340d98798756a3
+msgid "set_phase.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:82 b5e867e437504f93b2ffef7409bf84b0
+msgid "Set the frequency and phase of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:84 1ec606fc65834feabf33264b02ea6519
+msgid "The register number of the frequency, range from 0 to 1."
+msgstr ""
+
+#: ../../en/units/dds.rst:86 fd43b347d8da4dc98232c8e342c2aadb
+msgid "The register number of the phase, range from 0 to 1."
+msgstr ""
+
+#: ../../en/units/dds.rst:91 8fa02fd189cc4950bb07405c074010ee
+msgid "|set_freq_phase.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:10 64c8c35ceba84f289c29bdcd17a833af
+msgid "set_freq_phase.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:96 a046b3a633d24c0482ebdcda3df8eb5b
+msgid "Set the output mode of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:98 ../../en/units/dds.rst:153
+#: 0ac04fa572764c879105c5082c0393fe de0471f5a50d43a7bc98b32865cb5bf2
+msgid ""
+"The output mode of the DDS.  Options:     - ``DDSUnit.WAVE_SINE``: Sine"
+"     - ``DDSUnit.WAVE_TRIANGLE``: Triangle     - ``DDSUnit.WAVE_SQUARE``:"
+" Square     - ``DDSUnit.WAVE_SAWTOOTH``: Sawtooth     - "
+"``DDSUnit.WAVE_DC``: DC"
+msgstr ""
+
+#: ../../en/units/dds.rst:98 ../../en/units/dds.rst:153
+#: ada3f0bed7b84e8d922f69bd5161208a d43ac5180fc0417b8bd22d5e8d5dfbea
+msgid "The output mode of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:105 ../../en/units/dds.rst:160
+#: ../../en/units/dds.rst:190 15752962fad64fa2a37fa1fe98b51eea
+#: 9445759082484baabe4be1409ec37b92 a38590dcf1f04666bed7f1ef5958d196
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/dds.rst:101 ../../en/units/dds.rst:156
+#: 4eaf9765955d4fc4873c7bc107d87620 5eebfcbbfb4f4e758fa2505bb3e2c7b7
+msgid "``DDSUnit.WAVE_SINE``: Sine"
+msgstr ""
+
+#: ../../en/units/dds.rst:102 ../../en/units/dds.rst:157
+#: 2b82f728cbd24a0084ccfc1de5829843 c64b1c9cd7184c88b639b55eb8cc8fb8
+msgid "``DDSUnit.WAVE_TRIANGLE``: Triangle"
+msgstr ""
+
+#: ../../en/units/dds.rst:103 ../../en/units/dds.rst:158
+#: 41ae551d859349428165451880928065 6fc9f3c1c6ea421fbcbbf58096c4647c
+msgid "``DDSUnit.WAVE_SQUARE``: Square"
+msgstr ""
+
+#: ../../en/units/dds.rst:104 ../../en/units/dds.rst:159
+#: d3be5ea25b89442a8d7cd38b5fdd7918 d895500704004f36a4547405bbfc1e80
+msgid "``DDSUnit.WAVE_SAWTOOTH``: Sawtooth"
+msgstr ""
+
+#: ../../en/units/dds.rst:105 ../../en/units/dds.rst:160
+#: b5c014fb0f2942d9b1892d39ff89d54d d97aea66f67f441a89ac81a782841ada
+msgid "``DDSUnit.WAVE_DC``: DC"
+msgstr ""
+
+#: ../../en/units/dds.rst:109 196c86f5efd149a6bdb65b6698c7146a
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:11 f97df481c0ec4d36bb85cd17146cd373
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:114 4e397a8f46334e2b99f1be4341d23cc4
+msgid "Set the control bytes of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:116 dd5630efd56448e3897750de9689ce77
+msgid "The frequency register select. range from 0 to 1."
+msgstr ""
+
+#: ../../en/units/dds.rst:117 d3d6a4481fa1432aa1db7335d1e30af6
+msgid "The phase register select. range from 0 to 1."
+msgstr ""
+
+#: ../../en/units/dds.rst:118 cd23c7b2cf36497ebd1d85fbc0aa636c
+msgid "disable the MCLK."
+msgstr ""
+
+#: ../../en/units/dds.rst:119 beef3938ec40484183c60e2f890fb651
+msgid "disable the DAC."
+msgstr ""
+
+#: ../../en/units/dds.rst:120 118b9a60bf6043219ebe592243c05fbe
+msgid "reset the DDS. If is true, other parameters will be ignored."
+msgstr ""
+
+#: ../../en/units/dds.rst:124 e6f4330a1152488aa7aa7c0e2805a649
+msgid "|set_ctrl.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:12 1846f80a6972401b9f75c4ef6e115f98
+msgid "set_ctrl.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:129 d907c21dfca84d7aaf096f770e9d4667
+msgid "Select the frequency register of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:131 ../../en/units/dds.rst:174
+#: ef9bdd8c48fa491eb9e503b586847799 f9ab606044ea4ef1b629f7f00ed9a0bb
+msgid "The index of the frequency register. range from 0 to 1"
+msgstr ""
+
+#: ../../en/units/dds.rst:135 2001c7d9bac74f239c63c752961467f4
+msgid "|select_freq_reg.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:13 c2e10b647d6f4c86bb5ffac3dde63d87
+msgid "select_freq_reg.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:140 c04c2768580b478299a5b4716a57caca
+msgid "Select the phase register of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:142 ../../en/units/dds.rst:175
+#: 08d62343d6584a6eb5a203c67c27180a 7d34128c412b445293c0d621cd6f0c74
+msgid "The index of the phase register. range from 0 to 1"
+msgstr ""
+
+#: ../../en/units/dds.rst:146 5690675b23754f12b7e83e1a2952581f
+msgid "|select_phase_reg.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:14 bb1912a29aa84d62ab2e260e861854eb
+msgid "select_phase_reg.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:151 a9dde7846300470fb0b4dae0adb014ad
+msgid "Quickly set the output mode, frequency and phase of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:167 511fdf04f60049d9b8bac6bd648e98ca
+msgid "|quick_output.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:15 fe56c55d26db4c90bbc15d461ffcd7f5
+msgid "quick_output.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:172 e1bcc52e64e44a5097f51d05242ec0d6
+msgid "Output the DDS signal."
+msgstr ""
+
+#: ../../en/units/dds.rst:179 06c33228089547969a9b90598c067e43
+msgid "|output.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:16 e3962e387b3d49c783676381adea91d5
+msgid "output.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:183 8d7a7266c6684a78984bcdca199376dd
+msgid "Set the sleep mode of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:185 820de71bc7c840e59f1efe797fe1a64d
+msgid ""
+"The sleep mode of the DDS.  Options:     - ``DDSUnit.SLEEP_MODE_NONE``: "
+"None     - ``DDSUnit.SLEEP_MODE_1``: Disable MCLK     - "
+"``DDSUnit.SLEEP_MODE_2``: Disable MCLK and DAC"
+msgstr ""
+
+#: ../../en/units/dds.rst:185 b3d13c4acb4b4e3a9bbddd88b2f8b307
+msgid "The sleep mode of the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:188 6607f4249c394f29aeffe1e28dfbf3ea
+msgid "``DDSUnit.SLEEP_MODE_NONE``: None"
+msgstr ""
+
+#: ../../en/units/dds.rst:189 7744762337614bf9b4cc850c12a4ec45
+msgid "``DDSUnit.SLEEP_MODE_1``: Disable MCLK"
+msgstr ""
+
+#: ../../en/units/dds.rst:190 541ad8e0ad63498b8225ea19dfc0b052
+msgid "``DDSUnit.SLEEP_MODE_2``: Disable MCLK and DAC"
+msgstr ""
+
+#: ../../en/units/dds.rst:194 6b48440d3d9b4eaa91555a778c1869ce
+msgid "|set_sleep_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:17 51bf6f5cf6ef40daae8bc4da338e6fe0
+msgid "set_sleep_mode.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:199 f31aee344ed342b2b7d5f2b7f605faf0
+msgid "Reset the DDS."
+msgstr ""
+
+#: ../../en/units/dds.rst:203 e00fce8d00ce4c05a67c61c997079c7f
+msgid "|reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.dds.ref:18 de22a7d9de0944c5950a70269b5768c0
+msgid "reset.png"
+msgstr ""
+
+#: ../../en/units/dds.rst:207 bc4f7cc9444e41e3bb8384ae5e35ab88
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/dds.rst:211 e7dd94a215d4408bbcc1f241589961d7
+msgid "Sine wave output."
+msgstr ""
+
+#: ../../en/units/dds.rst:215 2f33ecc5b0464a26b969bda65ab517eb
+msgid "Triangle wave output."
+msgstr ""
+
+#: ../../en/units/dds.rst:219 31e12ea9b42e47e6b0ccc434d1c73aa4
+msgid "Square wave output."
+msgstr ""
+
+#: ../../en/units/dds.rst:223 2d5df660c40749e3b73e010cb2370888
+msgid "Sawtooth wave output."
+msgstr ""
+
+#: ../../en/units/dds.rst:227 cc1aea3255f4460db117f6af35f1ebd2
+msgid "DC wave output."
+msgstr ""
+
+#: ../../en/units/dds.rst:231 18459c6d5bc44ab9a0636ad00d5e2bbe
+msgid "No sleep mode."
+msgstr ""
+
+#: ../../en/units/dds.rst:235 1103b19b70bc402c989c973406de9f57
+msgid "Disable mclk but keep dac."
+msgstr ""
+
+#: ../../en/units/dds.rst:239 0c3b4302934b4b96806f7ac2b7c45537
+msgid "Disable mclk and dac."
+msgstr ""
+

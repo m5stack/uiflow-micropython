@@ -1,0 +1,20 @@
+
+.. |UltrasoundIOUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/UNIT%20SONIC%20IO/img-4ba90df3-6a11-4870-b605-c55983992d76.webp
+    :target: https://docs.m5stack.com/en/unit/UNIT%20SONIC%20IO
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/sonic_io/init.png
+.. |get_target_distance.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/sonic_io/get_target_distance.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/sonic_io/example.png
+
+.. |ultrasonicio_cores3_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/ultrasonic/ultrasonicio_cores3_example.m5f2"
+        target="_blank"
+    >
+        ultrasonicio_cores3_example.m5f2
+    </a>
+

@@ -1,0 +1,130 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/rca.rst:3 f44d7cf068a54087b9b5949949271d45
+msgid "RCA Unit"
+msgstr ""
+
+#: ../../en/units/rca.rst:7 d07b2adfd5c44f79a7681a63a5eecc16
+msgid ""
+"Unit RCA is a female jack terminal block for transmitting composite video"
+" (audio or video), one of the most common A/V connectors, which transmits"
+"  video or audio signals from a component device to an output  device "
+"(i.e., a display or speaker)."
+msgstr ""
+
+#: ../../en/units/rca.rst:9 a0d4952112b84997ad18b9b24dd65a37
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/rca.rst:11 9d481c4915eb48f68cfe57e5a6d3dc0f
+msgid "|RCAUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.rca.ref 6359a92c67d541c7abd2e98e04f56a7c
+msgid "RCAUnit"
+msgstr ""
+
+#: ../../en/units/rca.rst:14 c6218f3c81444735bbd1694e43b177e9
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/rca.rst:21 0182df815e9a407e90f9fde0f6692bd4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rca.rst:23 bffaab75359f442a9cb742c009f90324
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rca.ref:9 14fbcae1c1c848cf883f4202d0cafd0b
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/rca.rst:28 327eff05b9074ccd83b1bfb14558b8f7
+msgid "|core2_rca_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rca.rst:32 b442d5298c5147b985d236d5ce9eabc7
+msgid "class RCAUnit"
+msgstr ""
+
+#: ../../en/units/rca.rst:35 4eab15085eb047ad9761b61ccd66928e
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/rca.rst:39 f73d5f563ae6460d94b4d80e8ef0c2e5
+msgid "Initialize the Unit RCA"
+msgstr ""
+
+#: ../../en/units/rca.rst 434acda94f9d4a618069ec2cdcb30eef
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/rca.rst:41 c182f45f9f2247b3971b464ba5f3ea28
+msgid ""
+"The port to which the Unit RCA is connected. port[0]: not used, port[1]: "
+"dac pin."
+msgstr ""
+
+#: ../../en/units/rca.rst:42 2bf63c3924104c5aae22839b57f4c2fa
+msgid "The width of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:43 5ac6ca1492fe4341be476bfd7e40ed92
+msgid "The height of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:44 068997e564ef42c68ff5e912e36c8945
+msgid "The width of the output of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:45 c479b4fae7b64eb393e8a505c35442f6
+msgid "The height of the output of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:46 a2b43d6dd2954fce9268cf51f6da198f
+msgid ""
+"The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, "
+"PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4."
+msgstr ""
+
+#: ../../en/units/rca.rst:47 eca2eb790c0a42ca9e86eb8ffdd6bc8a
+msgid "The use of psram of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:48 e77b7f95a1c64edd9e4f0440211fea79
+msgid "The output level of the RCA display."
+msgstr ""
+
+#: ../../en/units/rca.rst:50 602c428eb66641e998d9dfdf6fc1e2a8
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/rca.rst:52 3512b5084589477382c4b193880dde20
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rca.ref:7 d0cc428660314f3c8dbdcf8e4e5d972a
+msgid "init.png"
+msgstr ""
+

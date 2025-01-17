@@ -7,6 +7,22 @@ The following products are supported:
 
     |DAC2Hat|
 
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/hat/dac2/stickc_plus2_dac2_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
+
+.. only:: builder_html
+
+    |stickc_plus2_dac2_example.m5f2|
+
 
 class DAC2Hat
 -------------
@@ -23,7 +39,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 DAC2Hat class inherits DAC2Unit class, See :ref:`unit.DAC2Unit.Methods <unit.DAC2Unit.Methods>` for more details.

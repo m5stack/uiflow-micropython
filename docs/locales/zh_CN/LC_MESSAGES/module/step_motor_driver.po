@@ -1,0 +1,360 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/step_motor_driver.rst:3 71257c3783334ab2ad7496adf3c30b29
+msgid "StepMotorDriver Module"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:7 c8b395fba1f34e3b94974719ec777fae
+msgid ""
+"StepMotor Driver Module 13.2 V1.1 is a stepper motor driver adapted to M5"
+" main control, using STM32+HR8825 stepper motor drive scheme, providing "
+"3-way bipolar stepper motor control interface."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:9 5ff9d1e4803748158bad1902168d1fbb
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:11 796cd1d1fe7449dabc06055a081d709a
+msgid "|StepMotorDriverModule|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref e991be155ff546e0a4ab8a18ed870427
+msgid "StepMotorDriverModule"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:13 a3e3590aa54741a2b6db4968caad166d
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:20 8278acbf1ad447f4ae60f638a36582ea
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:22 d33e5173e8aa40d780cbd46981d086f7
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:20
+#: 6e3e7ec7086c4a0881089b5b6f858bbc
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:26 877fa1b03b984653be5b20c7af5e58eb
+msgid "|step_motor_driver.m5f2|"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:29 e7cba03d6efe41e19800fc5459bdddf9
+msgid "class StepMotorDriverModule"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:32 189ac127328f48e8a3e59ec895b57a3b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:36 000f66d533ed4cc383dec70f14a13690
+msgid "Initialize the StepMotorDriverModule."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst 0c2bbe03a8544bd58abed8dbcbedbd51
+#: 13cff8af7465486292fce5f72c52b724 1506d4cc8665443c830746bd8bedb736
+#: 2ef429f6f77a4f35aca0170580ad4e10 469ffc05c5734a7eb1793b933b8e9644
+#: 5840cada6632412f81025b1015401056 b537961c66014ac9aad92f72396d67a0
+#: b7fea6b021b3466c9e96154e20228f8e e6c196c1607e4320bec9c96b74ffa247
+#: ee611ac3063048b69ae289b91fa13a76
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:38 263215b022b043a68ffcd41ff2d91e5e
+msgid "The I2C address of the device."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:39 6a4abcafb5fa4e559e9454dabe29932a
+msgid "The step pin (X, Y, Z) of the motor."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:40 1575b3ab0a0d414a939021c1bba641b7
+msgid "The dir pin (X, Y, Z) of the motor."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:42
+#: ../../en/module/step_motor_driver.rst:61
+#: ../../en/module/step_motor_driver.rst:71
+#: ../../en/module/step_motor_driver.rst:88
+#: ../../en/module/step_motor_driver.rst:103
+#: ../../en/module/step_motor_driver.rst:121
+#: ../../en/module/step_motor_driver.rst:130
+#: ../../en/module/step_motor_driver.rst:140
+#: ../../en/module/step_motor_driver.rst:154
+#: ../../en/module/step_motor_driver.rst:172
+#: ../../en/module/step_motor_driver.rst:181
+#: ../../en/module/step_motor_driver.rst:191 0b5c7c919b1147f6a89402ee59afe719
+#: 1d5e8a02175e4113942c4cc91b0ae89b 1e259d3f36a04b388723c11df766afba
+#: 364038f19b284e1b971e3b8e3b555d96 74148fdce7f647afbf8d29405187a136
+#: 972a0a1fa10e48309c51300a4734e3c6 aec37be226514b42ab891860d3b06a1a
+#: b48f304cc2014582b11fe9eb0cd4f178 b9337f108c6242d9985e94829cff26d0
+#: d099a120b20446168f8c9a7f1286fc39 d9237ab5b40e428da0a7ce6deac7cd49
+#: ec31f963d6f640839d1e719f63ab459d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:44 d116f3a492db49c7a5a7cba149d83554
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:7
+#: ee3a783b423e4184a5f5fe538bba6ecf
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:48 329663e5e5914466806fe70154c27cfb
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:52 1b6cefd00a6b4e5f95832822ec550c0e
+msgid "Reset the motor."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:54 ce1d1c157aed469897d7753bb0399cdb
+msgid ""
+"The motor to reset. Options: - ``X``: StepMotorDriverModule.MOTOR_X - "
+"``Y``: StepMotorDriverModule.MOTOR_Y - ``Z``: "
+"StepMotorDriverModule.MOTOR_Z"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:59
+#: ../../en/module/step_motor_driver.rst:69 c57e4eb299744b96907d4453682c0100
+#: f190cac86f7d4ea09ced1003ac4fdaa2
+msgid "The state of the motor."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:63 579e3f13fb914a808387ba6e9a47d1ca
+msgid "|reset_motor.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:8
+#: edb20b95d1ff43399c1cf752ba0feddf
+msgid "reset_motor.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:67 e01d1c3df21c4f529dae0e150b163fdd
+msgid "Enable or disable the motor."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:73 ffb0331cd3b9447ba6f028c8c487f9e2
+msgid "|set_motor_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:9
+#: e215896a13514c008d694fa1818c38b1
+msgid "set_motor_state.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:77 6198e22ae2dd443ca3a44b418e4f9fa1
+msgid "Set the microstep."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:79 b2cf1cb26d8849d1b95f9c50debb9be4
+msgid ""
+"The microstep value. Options: - ``FULL``: StepMotorDriverModule.STEP_FULL"
+" - ``1/2``: StepMotorDriverModule.STEP1_2 - ``1/4``: "
+"StepMotorDriverModule.STEP1_4 - ``1/8``: StepMotorDriverModule.STEP1_8 - "
+"``1/16``: StepMotorDriverModule.STEP1_16 - ``1/32``: "
+"StepMotorDriverModule.STEP1_32"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:90 1edfb69e2f7e47f78c315d3de3b701a1
+msgid "|set_microstep.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:10
+#: 811243ded43745a9b3312016169284fb
+msgid "set_microstep.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:94 82b6b62c491b4e929b06b9bcc8b38152
+msgid "Set the motor pwm freq."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:96 c33d03b855a64531b493fc9aceb02f2b
+msgid ""
+"The motor to set the freq. Options: - ``X``: "
+"StepMotorDriverModule.MOTOR_X - ``Y``: StepMotorDriverModule.MOTOR_Y - "
+"``Z``: StepMotorDriverModule.MOTOR_Z"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:101 4d6f89c370cb430cba5a0de3ecee4ee9
+msgid "The freq value."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:105 79b53c45cd9141818f3d6d53167360d5
+msgid "|set_motor_pwm_freq.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:11
+#: 1dda02fdae2d4aebb0d8a7a55fc696cc
+msgid "set_motor_pwm_freq.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:109 ee117f7e83e64e5e992e37053390ae37
+msgid "Set the motor direction."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:111 cb238abdbcfa4e4182082f55324bf7fe
+msgid ""
+"The motor to set the direction. Options: - ``X``: "
+"StepMotorDriverModule.MOTOR_X - ``Y``: StepMotorDriverModule.MOTOR_Y - "
+"``Z``: StepMotorDriverModule.MOTOR_Z"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:116 e932b464542640e58b0fe95211dfda76
+msgid "The direction value. Options: - ``Positive``: 1 - ``Negative``: 0"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:123 7b9cd3c33bf4417ea7c955b07aeff265
+msgid "|set_motor_direction.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:12
+#: eb8865a743b042b092faf8f150496cf1
+msgid "set_motor_direction.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:127 5e6ad13be71245a789b9198aca6ca072
+msgid "Get all io state."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:132 1bbcf93b34e7428996fc85020f1f4641
+msgid "|get_all_limit_switch_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:13
+#: b24dbb7193ce43cca1d40337787f0e14
+msgid "get_all_limit_switch_state.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:136 5b8397e919ca4854b69e9cf10c592723
+msgid "Get the io state."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:138 3f30d7f50cc14d218e9a572c1a4e785d
+msgid "The io id."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:142 28b6e74fccef47e88403e0cae88d51bc
+msgid "|get_limit_switch_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:14
+#: 39b69d0d725549f5832398ef45e59c1e
+msgid "get_limit_switch_state.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:146 c652a068b7cf49ef8ef1926afa3caa11
+msgid "Get the fault io state."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:148
+#: ../../en/module/step_motor_driver.rst:162 6fdea1ec767447279e1eeb464416c14d
+#: e6032901fa7b4877a489dac1dffad082
+msgid ""
+"The motor id. Options: - ``X``: StepMotorDriverModule.MOTOR_X - ``Y``: "
+"StepMotorDriverModule.MOTOR_Y - ``Z``: StepMotorDriverModule.MOTOR_Z"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:156 7b32b848d7e34e868d864288d7c5b37a
+msgid "|get_fault_io_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:15
+#: 41bb1eb9c7af40e2b5f43afe2d8829b0
+msgid "get_fault_io_state.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:160 8c17ccbe59e1456a86e6a995392b3293
+msgid "Control the motor to rotate/stop."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:167 e251b86dd90b4fb99eb5c05d58024a1a
+msgid "The state value. Options: - ``Rotate``: 1 - ``Stop``: 0"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:174 0860cbc96ea54abab6421cc34eccacc3
+msgid "|motor_control.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:16
+#: 7fca5792607f4fdca1b271fa1c82c644
+msgid "motor_control.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:178 e873bd08643e47f39794dd84da2d6e08
+msgid "Get the firmware version."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:183 8bb1b70d18944d269c39e388038e88d3
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:17
+#: 4fe9b372ea5543b293e94c3a2164cf44
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:187 3b9afa0d6fcb4bc2a881b1ce8fea9b05
+msgid "Set the i2c address."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:189 0a1aca69a5ad48119590066069f64a73
+msgid "The new address."
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:193 cf955f5d80564a33b1d318aaeec928e4
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.step_motor_driver.ref:18
+#: 437fb62eedda428396950ccf08f49096
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:198 9bfad3bbe2f1493fa0a4d39b42acb467
+msgid "Constants"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:204 5718fb0783434262a2671cda6476b79a
+msgid "Motor IDs"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:209 d7ce4086293f48849d3f4bc07dc6c505
+msgid "Motor states"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:220 40195143fc014b63b114a7fa6113eb53
+msgid "Register addresses"
+msgstr ""
+
+#: ../../en/module/step_motor_driver.rst:229 a0d9f7b0e61e42c6810613f8bbce6bb7
+msgid "Microstep values"
+msgstr ""
+

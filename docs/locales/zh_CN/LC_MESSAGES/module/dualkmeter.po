@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-12 14:59+0800\n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,210 +18,215 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/dualkmeter.rst:2 fc5c5643c9224d02b638791a1c063fde
+#: ../../en/module/dualkmeter.rst:2 94683b9c0e814389820f2e14f57bc8ac
 msgid "DualKmeter Module"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:7 a6f77ca9496843c4b9a39563dc01d1ea
+#: ../../en/module/dualkmeter.rst:7 d372702f9c4d4dd1849ee012b24668a7
 msgid "Supported Products:"
 msgstr "支持以下产品："
 
-#: ../../en/module/dualkmeter.rst:10 30ecf345e7284f468b938c89602fdee2
+#: ../../en/module/dualkmeter.rst:10 f534a691bf704e42beb56d31eb8746fd
 msgid "|DualKmeter Module13.2|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref 674888beba774a42aac5f49f87fcf0b5
+#: ../../en/refs/module.dualkmeter.ref ad26a2eb8a274c9e8dccbfef5a5ccb2b
 msgid "DualKmeter Module13.2"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:14 94adcded078243c4a1dd3b6edb73d10e
+#: ../../en/module/dualkmeter.rst:14 bf6ef171c18848519e81408ea39d45e8
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:28 e06622bfe0ac4340ba0ad6b4bcc7c134
+#: ../../en/module/dualkmeter.rst:28 af9e5e78ff6f497f8af1749426d41a3a
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:30 8824dc59034a46d4a9a695d2bf049d0f
+#: ../../en/module/dualkmeter.rst:30 0a19f8d72eec48819ac7f4cb23666593
 msgid "|example.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:4 5297d308203e431fbc9f8e3963389748
+#: ../../en/refs/module.dualkmeter.ref:6 badaabf12ffb4e27a6d9acdaab472890
 msgid "example.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:34 1f812c1807b94723bbac60e9ce0515b4
-msgid ":download:`example.m5f2 <../../_static/module/dualkmeter/example.m5f2>`"
+#: ../../en/module/dualkmeter.rst:35 b888bb2c1af7472ebdb30e9374e4a5e0
+msgid "|dualkmeter_cores3_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:38 2f9e0a8ac216449eb44666753febd13d
+#: ../../en/module/dualkmeter.rst:39 6fee06062011496ebdb81ab14fc2d239
 msgid "class DualKmeterModule"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:41 7750273468d24385ab22ed46ef17fdf8
+#: ../../en/module/dualkmeter.rst:42 840c965d01ef45f5b45c4bcd4e2317dc
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:45 3778bf331e6948509ebfe5c68cd86ce4
+#: ../../en/module/dualkmeter.rst:46 ab3c17f5732f4b7689afac14a32e2f3f
 msgid ""
 "Create a DualKmeterModule object. ``address`` accepts values from 0x11 to"
 " 0x20."
 msgstr "创建 DualKmeterModule 对象，``address`` 接受 0x11 ~ 0x20 的值。"
 
-#: ../../en/module/dualkmeter.rst:47 ../../en/module/dualkmeter.rst:61
-#: ../../en/module/dualkmeter.rst:72 ../../en/module/dualkmeter.rst:81
-#: ../../en/module/dualkmeter.rst:90 ../../en/module/dualkmeter.rst:99
-#: ../../en/module/dualkmeter.rst:110 ../../en/module/dualkmeter.rst:121
-#: ../../en/module/dualkmeter.rst:130 0a0a8f3db32b4ded984084914dc14177
-#: 10c27bb507ac40fe92ff9e9f337c8e03 1a1daeaefdee4b87a06de959d17de837
-#: 20fa633b1d404e3490e238bf43b7636e 3889bd41c86e4873bcc72047b2d5a261
-#: 67972ee9f4b94fe1ad63bf96a1484785 6d73dd4cfd5d4e31a075b6c01a673d57
-#: 6f4c1101eca146368981b9770a5378f5 d50f3b89883c4509aa2a9ffa4e658e79
+#: ../../en/module/dualkmeter.rst:48 ../../en/module/dualkmeter.rst:62
+#: ../../en/module/dualkmeter.rst:73 ../../en/module/dualkmeter.rst:82
+#: ../../en/module/dualkmeter.rst:91 ../../en/module/dualkmeter.rst:100
+#: ../../en/module/dualkmeter.rst:111 ../../en/module/dualkmeter.rst:122
+#: ../../en/module/dualkmeter.rst:131 4519306efc1a4184942bc4ecd342a638
+#: 81a016e5ffa64da9acc41302d337a67d 91058b7224054e9684ae37943c139ddf
+#: 943030444f7d4068b5df028328e5bb7f a41b3e914db74355b7bdd1b9b62aa53f
+#: c7349a61c3064efe9317ae81f0b6c9fc e115e6655d2d41f19d7bbf32b2a50e53
+#: ffa8401fd3ef44909c67270c7fe2bab3 ffd98f2b3da448b5ac24108b65dcfa73
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:49 372f37a2600a4be9a1901fc984cf1050
+#: ../../en/module/dualkmeter.rst:50 d1cebfbae71947c5aa3f22bea3b11d8e
 msgid "|init.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:6 23a2d3cbc5064ec2aecf100ce753a81e
+#: ../../en/refs/module.dualkmeter.ref:8 8a1d72a1b80845509c42371ef4de1b1a
 msgid "init.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:53 b43a6f5a921a4e32ab2beb85d3ec3324
+#: ../../en/module/dualkmeter.rst:54 8c6638679fd64361bd7576500d127af6
 msgid "Methods"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:57 203582af557b41a8aac0b951071670d5
+#: ../../en/module/dualkmeter.rst:58 5e3938ab8d714051b515fd092e67db3c
 msgid ""
 "Get the temperature of the thermocouple in the DualKmeter Module. Returns"
 " a float value."
 msgstr "获取 DualKmeter Module 热电偶的温度，返回 float 类型的值。"
 
-#: ../../en/module/dualkmeter.rst:59 ../../en/module/dualkmeter.rst:70
-#: ../../en/module/dualkmeter.rst:108 ../../en/module/dualkmeter.rst:119
-#: 8fc4199c4cca46879e34adfe62f077d5 b58536fb66144868b7efc7622b681cfa
-#: cfdef4e698ee492f821be76c9aeb128d fda3b3233743400088a9bbd8754f7183
+#: ../../en/module/dualkmeter.rst:60 ../../en/module/dualkmeter.rst:71
+#: ../../en/module/dualkmeter.rst:109 ../../en/module/dualkmeter.rst:120
+#: 201ef6e07b4f46bab7f2c36cc0cf3332 468c836dd8d444f2a8f1ad7861c3569f
+#: 66b7a4367ee4484b89b5c7972847449f b331eb134d6945debb541c37fac66629
 msgid ""
 "``scale`` accepts values of :py:data:`DualKmeter.CELSIUS` or "
 ":py:data:`DualKmeter.FAHRENHEIT`."
-msgstr "``scale`` 允许接受的值是 :py:data:`DualKmeter.CELSIUS` 或者 :py:data:`DualKmeter.FAHRENHEIT` 。"
+msgstr ""
+"``scale`` 允许接受的值是 :py:data:`DualKmeter.CELSIUS` 或者 "
+":py:data:`DualKmeter.FAHRENHEIT` 。"
 
-#: ../../en/module/dualkmeter.rst:63 026d428f62e148539843b995b53113a2
+#: ../../en/module/dualkmeter.rst:64 9d7eb601351c4e03becfefa21c7ae75c
 msgid "|get_thermocouple_temperature.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:8 96e81856a27e4fdcb500fb3ce9556d31
+#: ../../en/refs/module.dualkmeter.ref:10 8f9d5bef5355490badca31d048fe80de
 msgid "get_thermocouple_temperature.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:68 e0001ca4e9d54a5bacecf6e7bfa9d61f
+#: ../../en/module/dualkmeter.rst:69 089866c5d7864b5e87164849e7400bfb
 msgid ""
 "Get the internal temperature of the DualKmeter Module. Returns a float "
 "value."
 msgstr "获取 DualKmeter Module 内部的温度，返回 float 类型的值。"
 
-#: ../../en/module/dualkmeter.rst:74 528fbeb16cdb42ec8fbd169ebd1c8531
+#: ../../en/module/dualkmeter.rst:75 0e5dcead964945a29ad64492d72a9815
 msgid "|get_kmeter_temperature.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:10 8f02660628e94a4a9409e5bfaf70c06a
+#: ../../en/refs/module.dualkmeter.ref:12 ec647c2ee9464461be3e7cadbb320e38
 msgid "get_kmeter_temperature.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:79 72338d16192b439daa979e6fab5f524d
+#: ../../en/module/dualkmeter.rst:80 e78db24f3e7c4fc9a4ecdbb59e1b1dfe
 msgid ""
 "Get the current thermocouple channel being used in the DualKmeter Module."
 " ``0`` represents channel 1, and ``1`` represents channel 2."
 msgstr "获取 DualKmeter Module 当前使用的热电偶通道。``0`` 是通道1, ``1`` 是通道2。"
 
-#: ../../en/module/dualkmeter.rst:83 5ab98760a87f4d3098ea81c2d56ed0c6
+#: ../../en/module/dualkmeter.rst:84 fb72b9d25f504f1ea6a4ed2ba6e60c5a
 msgid "|get_kmeter_channel.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:12 fce85954ffed48bd9a36bef84f4d9eda
+#: ../../en/refs/module.dualkmeter.ref:14 9a8c22d39c2e45878e1c0827fcd53fe0
 msgid "get_kmeter_channel.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:88 855eebc4e07340f78e4fa6694b03f612
+#: ../../en/module/dualkmeter.rst:89 f86f9b547c5a4f52b5dd7ddf0e809cbe
 msgid ""
 "Set the thermocouple channel to be used in the DualKmeter Module. ``0`` "
 "represents channel 1, and ``1`` represents channel 2."
 msgstr "设置 DualKmeter Module 使用的热电偶通道。``0`` 是通道1, ``1`` 是通道2。"
 
-#: ../../en/module/dualkmeter.rst:92 8170520f2b714bd39b6d007360792bd8
+#: ../../en/module/dualkmeter.rst:93 caa6bc814d314c04855967d06bb50d8e
 msgid "|set_kmeter_channel.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:14 c7450ad7bf474ead87fae06c7479ea39
+#: ../../en/refs/module.dualkmeter.ref:16 bd99277a12e740a89b6ab97ac8ddd40f
 msgid "set_kmeter_channel.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:97 d3870e20b1c34864a6de0d4935231b8f
+#: ../../en/module/dualkmeter.rst:98 b384ab6ac81c4f59a0110a67e4ddd0c8
 msgid "Check if the measurement result is ready."
 msgstr "获取测量结果是否存于就绪状态。"
 
-#: ../../en/module/dualkmeter.rst:101 e824309c3c724155a496becbee9e3571
+#: ../../en/module/dualkmeter.rst:102 7ba3b75c96b94a8c9cd701f2c5859c0a
 msgid "|is_ready.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:16 4b2c3e5f03b0405e8dd7fd8825dbb3ae
+#: ../../en/refs/module.dualkmeter.ref:18 93d722c1dd164a14bba87798d9db25ad
 msgid "is_ready.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:106 e6e4db7bcaef4c3b8bf8ce7ef0e976ee
+#: ../../en/module/dualkmeter.rst:107 1b743fe5947b48a981eb371d53c0fba2
 msgid ""
 "Get the temperature of the thermocouple in the DualKmeter Module as a "
 "string with a sign."
 msgstr "获取 DualKmeter Module 热电偶的温度，返回带正负符号的温度字符串。"
 
-#: ../../en/module/dualkmeter.rst:112 5f521848a27243e6bfb9777211e38482
+#: ../../en/module/dualkmeter.rst:113 4198b99ce00b4abd98b14ba22b96c29e
 msgid "|get_thermocouple_temperature_string.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:18 3df4bd14a7c248fe93780d1097cff63a
+#: ../../en/refs/module.dualkmeter.ref:20 0d53855a8e7b4e7d961bb7186f443601
 msgid "get_thermocouple_temperature_string.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:117 0a9a308c67b8460980069500c7b1d1e4
+#: ../../en/module/dualkmeter.rst:118 78d384666adb489186a647277b2adfe8
 msgid ""
 "Get the internal temperature of the DualKmeter Module as a string with a "
 "sign."
 msgstr "获取 DualKmeter Module 内部的温度，返回带正负符号的温度字符串。"
 
-#: ../../en/module/dualkmeter.rst:123 3db220c07878474f867c3a52fe75804c
+#: ../../en/module/dualkmeter.rst:124 b2d169c7dde6424488f1cf7ea1a5809a
 msgid "|get_kmeter_temperature_string.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:20 a85ee56a660640ddb308ce858cc97dca
+#: ../../en/refs/module.dualkmeter.ref:22 4f3995ac01d540788dd63057f2841bd8
 msgid "get_kmeter_temperature_string.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:128 0a12bc0812064dc88044349c907fb659
+#: ../../en/module/dualkmeter.rst:129 8a01933f114a4649b94412d1a7fb38a6
 msgid ""
 "Get the firmware version of the DualKmeter Module. Returns an integer "
 "version number."
 msgstr "获取 DualKmeter Module 的固件版本。返回 int 类型的版本号。"
 
-#: ../../en/module/dualkmeter.rst:132 a9a679a684914e34b5736b0b7631e363
+#: ../../en/module/dualkmeter.rst:133 7a3cd81eabdc4a5d8a097e11ed5bdccb
 msgid "|get_fw_ver.svg|"
 msgstr ""
 
-#: ../../en/refs/module.dualkmeter.ref:22 adb4ad5210ca4cc3bf194091f6453e03
+#: ../../en/refs/module.dualkmeter.ref:24 a7f56651f1ec4a79b3c4ee17d13cf98e
 msgid "get_fw_ver.svg"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:136 4833d35ebaaa4f359b23769206fbb8b3
+#: ../../en/module/dualkmeter.rst:137 a4248243cd32426bad0e1ac4f3a2ad62
 msgid "Constants"
 msgstr ""
 
-#: ../../en/module/dualkmeter.rst:141 bed8e995d0e8412b95b3e2494952dc99
+#: ../../en/module/dualkmeter.rst:142 9d7bb3e837dc46559e1b958c684c3a6b
 msgid "Celsius scale."
 msgstr "摄氏温标。"
 
-#: ../../en/module/dualkmeter.rst:147 bfd5ea1683d04b3c891c88b64db4c961
+#: ../../en/module/dualkmeter.rst:148 6ed69c5a601b43ca892b44c36e8d45b9
 msgid "Fahrenheit scale."
 msgstr "华氏温标。"
+
+#~ msgid ":download:`example.m5f2 <../../_static/module/dualkmeter/example.m5f2>`"
+#~ msgstr ""
 

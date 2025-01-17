@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/joystick.rst:2 d8fe8299f9414832a0464172b7c77c2d
+msgid "Joystick Hat"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:6 1285af2633da46f9936a354426fed8f8
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:8 aeedace1cd6f46f79b456c4892e00d3f
+msgid "|JoystickHat|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref 47c319ccb7f248828f4ce131b4976059
+msgid "JoystickHat"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:11 745700ad8c66469e8e4d0faa35ae3448
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:18 3dce46671dc54e038a89f57058e7889e
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:20 2eba82f46870403d86a83bb55f772367
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:22 17951798ea784b54bd00f2d306d26651
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:25 35c4c81ad2fe44e6b25a2d76c6c71e6e
+msgid "|stickc_plus2_joystick_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:29 d32eeb9208df476e89abdc130d235372
+msgid "class JoystickHat"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:32 272ff1154f444bf09e4c078ce4dc0057
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:36 73ea81caace443d6812af9e766c740c1
+msgid "Create a new instance of the JoystickHat class."
+msgstr ""
+
+#: ../../en/hats/joystick.rst 451b241b4fe24bcb97b2a7868a8d8665
+#: 5683b025704544208afb65b7b8785e43 e1e584243d504fe8adc0d23307f6d059
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:38 6151235cbe4d47c0bc4298398638b83a
+msgid "I2C bus"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:39 18ef3f69ec814cbfb3a0c52dfd40c2d3
+msgid "I2C address"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:41 ../../en/hats/joystick.rst:55
+#: ../../en/hats/joystick.rst:66 ../../en/hats/joystick.rst:77
+#: ../../en/hats/joystick.rst:88 ../../en/hats/joystick.rst:99
+#: ../../en/hats/joystick.rst:110 ../../en/hats/joystick.rst:120
+#: 119e09eafc564e8e8ddbbeb8b803f299 2a6c309c8a6b4a8492988c12c5445adf
+#: 3a27e88dd81a47b3b092280f9d20a6bd 86edfcb4ba1c4225b68aa8d904c7b9d0
+#: 8754469996084e4d8b61a5465a750abe 8833fd8c26634f7598085302ffda23e3
+#: 9cd71f7884754a1fa0ba0c19a29cbf73 a0e3672e32804a14830bc38173e21589
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:43 e0298a7f5e164b06a3eebddad49dbd41
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:6 19dee14e8ab545ebbffd35eff1d03c38
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:47 8de724db21df44ce985320c87f0df4c2
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:51 9ca4faf6b09640438e220e8c7d765568
+msgid "Get the raw x-axis value."
+msgstr ""
+
+#: ../../en/hats/joystick.rst 1c183ffedea44a39bd447cc73282450b
+#: 52cad931b41146a2ac95db5cdfab45c0 6ebb89be74674318990ac677e7f3a112
+#: 7b144a7715004acba1baf754825e5ee8 a37bdcdc8f5a4765a0a591d8069c8cd2
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:53 ../../en/hats/joystick.rst:75
+#: 526d01752c8f471aacb0723b2b9276c0 8e21bb166db9477490378d350ced0506
+msgid "x-axis value"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:57 7e17fe593f92402fa0497a5817b959ab
+msgid "|get_x_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:8 63659ef020d34e6ea203448c5a58744f
+msgid "get_x_raw.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:62 067d1173f6c84e47b22d8098626fbf86
+msgid "Get the raw y-axis value."
+msgstr ""
+
+#: ../../en/hats/joystick.rst:64 ../../en/hats/joystick.rst:86
+#: 0f53b23bf43b4da7add9dd943421f48a 4c5fc748b18e481f897173353edf42cf
+msgid "y-axis value"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:68 2e9663b060ba4e81af3ca3cb5f833693
+msgid "|get_y_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:10 6720652e450d4d31a96c3b621ac06b03
+msgid "get_y_raw.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:73 798ee25973454733bf049c51156d536d
+msgid "Get the x-axis value."
+msgstr ""
+
+#: ../../en/hats/joystick.rst:79 95934f531c0144ac858badd75c96bd74
+msgid "|get_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:12 3e6478d503c746398bcff610eee02cc4
+msgid "get_x.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:84 f57afb7512e44d1c9faab48239405f19
+msgid "Get the y-axis value."
+msgstr ""
+
+#: ../../en/hats/joystick.rst:90 996065318bd949649f3faa075e0815ff
+msgid "|get_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:14 69a1b89cd57547fa8963de8d98de4b37
+msgid "get_y.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:95 1a0533b46e204f07a3ee3d25f9114eb2
+msgid "Swap x-axis direction"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:97 ../../en/hats/joystick.rst:108
+#: ../../en/hats/joystick.rst:118 03994e64a9834b188eb75030b1febe05
+#: 1f634239b6224b8c97da331b2e4b505b 3d98f7fd8c904029b4678499bd4ced3e
+msgid "True or False"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:101 78335cea59904aa1b1d4eee6a64c0f80
+msgid "|swap_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:16 e314cffea7764cd1b4b54b2972b19d3c
+msgid "swap_x.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:106 223a71e0e8504987bbfa0d9e1f84f96d
+msgid "Swap y-axis direction"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:112 81d34edbfc0040ebbfe9380631933ae6
+msgid "|swap_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:18 4d68f96ed8ee43309b2a63513e3ade58
+msgid "swap_y.png"
+msgstr ""
+
+#: ../../en/hats/joystick.rst:116 5bbac78628ba45089840198636f7d8cf
+msgid "Get the button status."
+msgstr ""
+
+#: ../../en/hats/joystick.rst:122 ef3a8cf5007845c7b93a67629d97c962
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joystick.ref:20 91be1b364d5e4dd7b4a84f51a7f0a3cb
+msgid "get_button_status.png"
+msgstr ""
+

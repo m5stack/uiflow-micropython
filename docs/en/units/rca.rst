@@ -10,16 +10,23 @@ Support the following products:
 
 |RCAUnit|
 
-Micropython Example::
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import RCAUnit
-    rca = RCAUnit()
-    rca.display.fill(0)
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/rca/core2_rca_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
 
 .. only:: builder_html
+
+    |core2_rca_example.m5f2|
+
 
 class RCAUnit
 -------------
@@ -27,26 +34,20 @@ class RCAUnit
 Constructors
 ------------
 
-.. class:: RCAUnit(port, width, height, signal_type, output_level, use_psram)
+.. class:: RCAUnit(port: tuple =(36, 26), width: int = 216, height: = int 144, output_width: int = 216, output_height: = int 144, signal_type: int = 0, use_psram: int = 0, output_level: int = 0)
 
     Initialize the Unit RCA
 
     :param tuple port: The port to which the Unit RCA is connected. port[0]: not used, port[1]: dac pin.
     :param int width: The width of the RCA display.
     :param int height: The height of the RCA display.
+    :param int output_width: The width of the output of the RCA display.
+    :param int output_height: The height of the output of the RCA display.
     :param int signal_type: The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4.
-    :param int output_level: The output level of the RCA display.
     :param int use_psram: The use of psram of the RCA display.
+    :param int output_level: The output level of the RCA display.
 
     UIFLOW2:
 
-        |init.svg|
-
-
-Methods
--------
-
-
-
-
+        |init.png|
 

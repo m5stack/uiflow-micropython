@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/puzzle.rst:3 611ffbe1e5804542a33bdc48b150593e
+msgid "Puzzle Unit"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:7 f78d8fb3474e4b02bf875769425ee445
+msgid ""
+"Unit-Puzzle is a colorful lighting control unit, consisting of an 8x8 RGB"
+" array of 64 colorful WS2812E RGB lamp beads."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:9 9368505462034ee9ac3c66175ace9791
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:11 c324e9b989b542e883ed890935d8fe7c
+msgid "|PuzzleUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref dd78cf9d33b14b0999672322c3fd5c89
+msgid "PuzzleUnit"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:13 4b81756fa2d14222a2fa3c2b1467f5a7
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:20 024bafcb933a4d54b8aa9b2202d90fc3
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:22 ad5184c269364ecda5dd31656299bf84
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:17 77bc6b5dcf0d4e11b7b9ac979404e518
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:26 0a29c36c34164985bbe0113c5f3e5c47
+msgid "|puzzle_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:29 c5332e0b792441d3b797c6133768f9f5
+msgid "class PuzzleUnit"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:32 38e0d66c744440948a300990bb7bf569
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:36 2fc1d7db53234225a6e2923301787ee2
+msgid "Initialize the PuzzleUnit."
+msgstr ""
+
+#: ../../en/units/puzzle.rst 0a01eab32d4a4172a20d49493149bb58
+#: 246696f9ba6145439f70a956d3f5b0a5 3bbb93ccd7c3499fa9d73ebb21d53e13
+#: 7fffc9717ff04170b2aff8edbc3b2c57 95d485f0166841a3bcd1fb9ed4c04db3
+#: ac4b2edf04f24c6782ee60117dcf9cb3 cfae5c29c0c6496f9403b338dc236db6
+#: d5c7a24a6ce74c68b4bbdd8b82b42bdf f0d644b798d54657b71ab8f7be213a5e
+#: f9e29405f55e4b76a02a6073e508e194
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:38 b15d75ca1b6b44cfa9d0b847b7a0e9ca
+msgid "The port to connect the WS2812 LED strip."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:39 73d506b616364993a2f08475a46a30f8
+msgid "Number of connected PuzzleUnit boards."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:41 ../../en/units/puzzle.rst:55
+#: ../../en/units/puzzle.rst:66 ../../en/units/puzzle.rst:76
+#: ../../en/units/puzzle.rst:90 ../../en/units/puzzle.rst:103
+#: ../../en/units/puzzle.rst:117 ../../en/units/puzzle.rst:131
+#: ../../en/units/puzzle.rst:143 ../../en/units/puzzle.rst:154
+#: 223ac76f8d6f45b7920589e0dabd3b0d 26ece579ea8a495c89d3d3d3fac1c1b8
+#: 3d596cbde9fa4bb1b38e1eab5bf8b705 44a33281f6cd4c67a910fee6ec32de80
+#: 728d5fd2379146f0a1931b32d5f7e656 8019fd294b1b4c6babb12da45b668d4f
+#: ed1e2b95fea64352908640888a60cada f33ac504b91f40fe85a67f6940faa233
+#: f33bf6f568a14eb7b9ceed2d94f75cc4 f3b319df84094ab3add9b556a2cfc36a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:43 7f6ad613d4014078bd9d975b88492c1d
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:7 12dcffe43ba641c2b26c45e762252202
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:47 7dfe62f960d34220bc25896df6878b76
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:51 a408e72a0e7046a09ddd5b9fbebdad52
+msgid "Set the entire screen or area to a specific RGB color."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:53 d69bdc69845442a7a69fd0d3fd3d5579
+msgid "The RGB color to fill the area with."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:57 c97a6a7a85184df0a96dc4eb59690b9f
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:8 03556f29551041f5a83b93a966e6b28c
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:61 474bf32e21884ca894da4d3f0ce2a02b
+msgid "Set the color of a specific pixel or LED."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:63 c71b5d2a25f941b48c8d74696ceb2795
+msgid "The index of the pixel or LED to set the color on."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:64 ../../en/units/puzzle.rst:87
+#: ../../en/units/puzzle.rst:101 ../../en/units/puzzle.rst:128
+#: 005f6de3b1804efe9248a9f2809a58f9 51dd557dd0f74db283cbed7dbca9c64a
+#: 9d6a952d927b476a84a15e43e6628656 c106d36bfd7c42c6a540ff95948065df
+msgid "The color to set, specified in RGB format."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:68 ../../en/units/puzzle.rst:105
+#: 414a24eceea44837a01f5d0065e243cf 737b268007d74ac08413e058f10a9975
+msgid "|set_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:9 3ed500dd7a9341d79ea855023f9ffbdc
+#: 50eacc7400c14a579cec3be2b3791916
+msgid "set_color.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:72 c2b48c52b63545b5bee8d04a70100126
+msgid "Adjust the brightness of the LEDs based on the given percentage."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:74 14ebec08d3c7403fa851b85237914b35
+msgid "The brightness percentage (0-100)."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:78 8e3639d990c04223aad2333863bc2c19
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:10 d21c6641b91b462fb8e96a4b84a097e8
+msgid "set_brightness.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:82 998c7a23182e4f07aaa66db780bc681c
+msgid "Set color on a range of LEDs starting from a specified board and range."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:84 ../../en/units/puzzle.rst:111
+#: ../../en/units/puzzle.rst:125 ../../en/units/puzzle.rst:139
+#: 011736a38ea947889d086feb21e564b4 063660f6cf504fb685c82c8730e1d830
+#: 5ca5db3de2a847b7954f0a00c7ece0d9 5e73892aff064396bd494aa9ed22386d
+msgid "The board number (starting from 1) where the LEDs are located."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:85 ../../en/units/puzzle.rst:112
+#: ../../en/units/puzzle.rst:126 ../../en/units/puzzle.rst:140
+#: 23336a30c39f42829d845265d713f464 4a23ec4d2df74f5398d34bc2ded1c061
+#: 7cfcbb66e0ca4fc1878366075fa71da8 eb0e2b72a2704143abc493b0558059fc
+msgid "The starting LED index on the board."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:86 ../../en/units/puzzle.rst:113
+#: ../../en/units/puzzle.rst:127 ../../en/units/puzzle.rst:141
+#: 1a52f0779e4041399d5ebc4dde441908 3c4c3290a3aa4e4da25133a3c3596c2e
+#: abc8186fc08e4f038acc0e2e5bde42d4 b7bf5d48c65f4c9f994db6b2a3eafabf
+msgid "The ending LED index on the board."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:88 ../../en/units/puzzle.rst:129
+#: 2afc4af388d849a2a54ce66e43ef8521 5fb8dd8934cc4280846b9cf2c5f01d78
+msgid "Delay in milliseconds between setting each LED color."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:92 21d65b6a6049425cb2127ee58a78528d
+msgid "|set_color_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:11 d5b3d4c0eb864effb4830a31e0ad4b31
+msgid "set_color_from.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:97 6afe8e82aea14ba78223cee02593924e
+msgid "Set the color of a single LED."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:99 7d72c9f56e404a929427ca83189a822a
+msgid "The board number (starting from 1) where the LED is located."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:100 5cb3d03381df4d5eb9b5a9a420560ca5
+msgid "The LED index to set the color on (1-based index)."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:109 d8efbf943ad54fc18a154b9c649e725c
+msgid ""
+"Gradually change the color saturation from begin to end on a range of "
+"LEDs."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:114 5cd9a1f6bd604c1aad52204ce429a121
+msgid "The base RGB color to apply saturation to."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:115 2a819302aa3f4e93a6775ca9c96d3bad
+msgid "Delay in milliseconds between each LED color change."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:119 9262fdf5ef5a4238a0c3fb519b518cf8
+msgid "|set_color_saturation_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:12 9b6dee28b083439a8fcaac6763878666
+msgid "set_color_saturation_from.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:123 2aad02d0a2754482b1133efe68ad91b9
+msgid "Create a running color effect on a range of LEDs from begin to end."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:133 a0c2b98deaba46e0835ebc4b508cfef8
+msgid "|set_color_running_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:13 14407b502acb42eaa46010bb97c084c8
+msgid "set_color_running_from.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:137 476ac6fadbcf4ca5b24ee89e6509d456
+msgid "Set a random color to each LED within the specified range."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:145 8fc9d31cb01642209a8eb1fed2e47db4
+msgid "|set_random_color_random_led_from.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:14 1f7c2678d0da43f3a2b42d8c34140fe9
+msgid "set_random_color_random_led_from.png"
+msgstr ""
+
+#: ../../en/units/puzzle.rst:149 0ede38f010ff4f458a543bf566a80f22
+msgid "Set the screen of a specific board with a list of colors."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:151 906646a539be42608e1fb257c0b1981c
+msgid "The board number to which the colors should be applied."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:152 5b3d81c4b2ba400989b74e886f9a4f17
+msgid "A list of colors to apply to the screen."
+msgstr ""
+
+#: ../../en/units/puzzle.rst:156 9069d5ec2c194c89980f853e1acbeca8
+msgid "|set_screen.png|"
+msgstr ""
+
+#: ../../en/refs/unit.puzzle.ref:15 3d3de343915945e5a01ca3c207001a47
+msgid "set_screen.png"
+msgstr ""
+

@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/heart.rst:3 ba3537f0e20c4d92aa73547380250690
+msgid "Heart Hat"
+msgstr ""
+
+#: ../../en/hats/heart.rst:7 867176c9fe3840bf9f16eb45689b47c2
+msgid ""
+"MAX30102 is a complete pulse oximetry and heart-rate sensor system "
+"solution designed for the demanding requirements of wearable devices."
+msgstr ""
+
+#: ../../en/hats/heart.rst:9 47454b09353540f5b84724f1c1c6b7e8
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/hats/heart.rst:11 a9ddb446bc5a40db8741415dabc0107e
+msgid "|HeartHat|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref 23405f5a05fc43939ec952f87a29f2bd
+msgid "HeartHat"
+msgstr ""
+
+#: ../../en/hats/heart.rst:13 b0d76902988243a4a2f369f8c82602a7
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/heart.rst:20 77482df1d26f4980a62627a2572b7aa1
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/heart.rst:22 aac905cfbfba4654ac25e96a29e42c80
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:20 46c102aab3394b1ca3e9107d5ed9b101
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:27 3f6524175e7d4b2191e197d4d443a2bc
+msgid "|stickc_heart_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/heart.rst:31 eac2ef0c16db47dc8b79cf30747527b2
+msgid "class HeartHat"
+msgstr ""
+
+#: ../../en/hats/heart.rst:34 86cfc23649234f27bb93619492f41689
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/heart.rst:38 f5884468e2564573bb1210a046d97eb5
+msgid "Initialize the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:40 eac28bc6d7904c1d863f114fa2efd4b2
+msgid "``i2c``: I2C port to use."
+msgstr ""
+
+#: ../../en/hats/heart.rst:41 d2a0260d931d4aa59878922b69748dc4
+msgid "``address``: I2C address of the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:43 ../../en/hats/heart.rst:56
+#: ../../en/hats/heart.rst:65 ../../en/hats/heart.rst:74
+#: ../../en/hats/heart.rst:83 ../../en/hats/heart.rst:92
+#: ../../en/hats/heart.rst:101 ../../en/hats/heart.rst:110
+#: ../../en/hats/heart.rst:123 ../../en/hats/heart.rst:150
+#: ../../en/hats/heart.rst:165 ../../en/hats/heart.rst:184
+#: 0eae1210fba9458286c79c72c901a83b 2276bb09a23a4d25b0ffabdc73667fd1
+#: 2b0f053cac0c45daae7ea8b2339aef48 31ab4a257b6d4308b7d8618fb3f3c3de
+#: 57c48d61203a4c548aff0782db459161 81ef43a376d54e9fb625bf626eee4ed2
+#: 859a00de87a94cd7bce6df3912d7c034 8d10117b8fd24d24975d4016ea93e44d
+#: bba8f0545b894d78bcf3b6396a6b14f9 c531424623cb420fb694d2ec8693abf9
+#: eecb09c5dd9149ae9b6d3f9da399ae9e f08d6e29743f4bfdb210b5e78b32e6eb
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/heart.rst:45 3c12824324594386b024f881d4810b71
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:7 87ba8d9c00e440ec8a27694413129661
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:49 75086bb57b9446d7991a54e671450308
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/heart.rst:53 36e6599520a44e499df850f4625f5537
+msgid "Stop the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:58 7a10ff6211164052bdfe744ea594b20d
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:8 f5a11347aced46a483f0dabb608e2a02
+msgid "stop.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:62 974fea50116f42d7b71ea6825f55eb29
+msgid "Start the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:67 dcc6bdd0c347429e82290ef478510e65
+msgid "|start.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:9 40003ae641a345bda24d3241ff22f343
+msgid "start.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:71 029565348e044dbca5e627fdadaffcd6
+msgid "Deinitialize the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:76 602e239f3af643d099e38a53ed06c936
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:10 52b07252d748457d90a509009ace70f7
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:80 cf74790cbb414d9fb448e17bb91fa1fc
+msgid "Get the heart rate."
+msgstr ""
+
+#: ../../en/hats/heart.rst:85 3e3bcd99666246989492aa71b155e0b3
+msgid "|get_heart_rate.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:11 f4d313e6443548a2806db45b4a28f54a
+msgid "get_heart_rate.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:89 4b5ea12d59da4465a3862ac57bda6ee0
+msgid "Get the SpO2."
+msgstr ""
+
+#: ../../en/hats/heart.rst:94 2f1ff508c8bb4d169e74e1b9dc3fcb7f
+msgid "|get_spo2.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:12 b0e2339699204ebc882d6d1846ce0563
+msgid "get_spo2.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:98 9f25e1e5f0c94c3b9a400f30791aa58c
+msgid "Get the IR value."
+msgstr ""
+
+#: ../../en/hats/heart.rst:103 ca8282f9704a428bb2e2bcc66dcb75ed
+msgid "|get_ir.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:13 854530864e584c90903007b0dba940c7
+msgid "get_ir.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:107 ede8eaaa11fa4c7784e9629064f3c259
+msgid "Get the red value."
+msgstr ""
+
+#: ../../en/hats/heart.rst:112 eff418a436b44df5b99f42c1382dd831
+msgid "|get_red.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:14 69bf2f99bbe14782a7ad74d9a2e736df
+msgid "get_red.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:116 3e3956b99ad34d5d95d446add81a41cd
+msgid "Set the mode of the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst 3ad5c401d4e34482a510fdbfbf848158
+#: b9a7151a1b8d4989a98ee985a770cdb9 c532da4e81e24fbe90d616d4bef23345
+#: ef8c8b6227a34f7990e0da3599a8f109
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/heart.rst:118 2671e09b09f24bd3bf882ae1006544da
+msgid ""
+"The detect mode of the HeartHat. Options: - ``HeartHat.MODE_HR_ONLY``: "
+"Only heart rate - ``HeartHat.MODE_SPO2_HR``: Heart rate and SpO2"
+msgstr ""
+
+#: ../../en/hats/heart.rst:125 0e51064c3f9f4144ba2a2f3ae2dacad7
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:15 3a4928c6a523402aa05b73f7ccab58f7
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:129 7c088e70163044f4a78d0540a431e7e4
+msgid "Set the LED current of the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:131 bdff3afbed164afc89b2ad5dc6979d12
+msgid ""
+"The LED current of the HeartHat. Options: - ``HeartHat.LED_CURRENT_0MA``:"
+" 0mA - ``HeartHat.LED_CURRENT_4_4MA``: 4.4mA - "
+"``HeartHat.LED_CURRENT_7_6MA``: 7.6mA - ``HeartHat.LED_CURRENT_11MA``: "
+"11mA - ``HeartHat.LED_CURRENT_14_2MA``: 14.2mA - "
+"``HeartHat.LED_CURRENT_17_4MA``: 17.4mA - "
+"``HeartHat.LED_CURRENT_20_8MA``: 20.8mA - ``HeartHat.LED_CURRENT_24MA``: "
+"24mA - ``HeartHat.LED_CURRENT_27_1MA``: 27.1mA - "
+"``HeartHat.LED_CURRENT_30_6MA``: 30.6mA - "
+"``HeartHat.LED_CURRENT_33_8MA``: 33.8mA - ``HeartHat.LED_CURRENT_37MA``: "
+"37mA - ``HeartHat.LED_CURRENT_40_2MA``: 40.2mA - "
+"``HeartHat.LED_CURRENT_43_6MA``: 43.6mA - "
+"``HeartHat.LED_CURRENT_46_8MA``: 46.8mA - ``HeartHat.LED_CURRENT_50MA``: "
+"50mA"
+msgstr ""
+
+#: ../../en/hats/heart.rst:152 59784b5297ba4488a4082bc0a80524bb
+msgid "|set_led_current.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:16 176450e306b34346903565c701f71ae6
+msgid "set_led_current.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:156 b6d4e4a715d54c82a30d79715d2a60d0
+msgid "Set the pulse width of the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:158 7f129961f70949d99ca153847e869898
+msgid ""
+"The pulse width of the HeartHat. Options: - "
+"``HeartHat.PULSE_WIDTH_200US_ADC_13``: 200us - "
+"``HeartHat.PULSE_WIDTH_400US_ADC_14``: 400us - "
+"``HeartHat.PULSE_WIDTH_800US_ADC_15``: 800us - "
+"``HeartHat.PULSE_WIDTH_1600US_ADC_16``: 1600us"
+msgstr ""
+
+#: ../../en/hats/heart.rst:167 4274809fa9d248b7b6e74a5e90bc3a4a
+msgid "|set_pulse_width.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:17 3ac58ca35fed4ab89c46bbfbbad2451a
+msgid "set_pulse_width.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:171 98e89ff0f9074005948f166b8df02866
+msgid "Set the sampling rate of the HeartHat."
+msgstr ""
+
+#: ../../en/hats/heart.rst:173 e0b514cdee7940a69a53767b41b08267
+msgid ""
+"The sampling rate of the HeartHat. Options: - "
+"``HeartHat.SAMPLING_RATE_50HZ``: 50Hz - ``HeartHat.SAMPLING_RATE_100HZ``:"
+" 100Hz - ``HeartHat.SAMPLING_RATE_167HZ``: 167Hz - "
+"``HeartHat.SAMPLING_RATE_200HZ``: 200Hz - "
+"``HeartHat.SAMPLING_RATE_400HZ``: 400Hz - "
+"``HeartHat.SAMPLING_RATE_600HZ``: 600Hz - "
+"``HeartHat.SAMPLING_RATE_800HZ``: 800Hz - "
+"``HeartHat.SAMPLING_RATE_1000HZ``: 1000Hz"
+msgstr ""
+
+#: ../../en/hats/heart.rst:186 645657f38bc84cd9b4e09577f1625d62
+msgid "|set_sampling_rate.png|"
+msgstr ""
+
+#: ../../en/refs/hat.heart.ref:18 c92fbe9df61347f99a22e44d940161f6
+msgid "set_sampling_rate.png"
+msgstr ""
+
+#: ../../en/hats/heart.rst:191 c6ef8dadf0994d789fbe042e0a9dd73c
+msgid "Constants"
+msgstr ""
+
+#: ../../en/hats/heart.rst:195 73f109c874df4eb0957d92b76ed5f868
+msgid "Detect heart rate only."
+msgstr ""
+
+#: ../../en/hats/heart.rst:199 92c8debdb11d4bc8893a91b962b73326
+msgid "Detect heart rate and SpO2."
+msgstr ""
+

@@ -14,6 +14,8 @@
 
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
-#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "M5Stack PaperS3(UiFlow2)"
+
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "M5Stack AtomS3(UiFlow2)"
+
 // If not enable LVGL, ignore this...
 #include "./../mpconfiglvgl.h"

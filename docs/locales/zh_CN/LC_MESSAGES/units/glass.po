@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/glass.rst:3 460a75d7557a4d30b6f82b4f4771316a
+msgid "Glass Unit"
+msgstr ""
+
+#: ../../en/units/glass.rst:7 f57b72cda2fc41c6a296c8a1c34a578c
+msgid ""
+"Unit Glass is a 1.51-inch transparent OLED expansion screen unit. It "
+"adopts STM32+SSD1309 driver scheme,resolution is 128*64, monochrome "
+"display, transparent area is 128*56."
+msgstr ""
+
+#: ../../en/units/glass.rst:9 5932c479c8f24e82aad18b062c1a770e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/glass.rst:11 d99191de275448cdafa8d5b66fcb7658
+msgid "|GlassUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.glass.ref 89f1c76271e449f486ab189089154e9b
+msgid "GlassUnit"
+msgstr ""
+
+#: ../../en/units/glass.rst:13 c249f527d2ee4b37a5e03ab387f74dce
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/glass.rst:20 193542c05cce4d859614c09dc627bf9c
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/glass.rst:22 5f300e30370d4f87bfac901844719ca7
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.glass.ref:9 f60fef80be004979af17e3658ab4b791
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/glass.rst:27 9cc2d313649849c3aa2f3cb4ddf82f30
+msgid "|cores3_glass_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/glass.rst:31 dc70cf872b784e46ac9937e2b74c4f7c
+msgid "class GlassUnit"
+msgstr ""
+
+#: ../../en/units/glass.rst:34 f331ca890305447ba4f3e3f3b53ab4ef
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/glass.rst:38 f9d62955ef774483a7d21f6bd8b667b5
+msgid "Initialize the Unit Glass"
+msgstr ""
+
+#: ../../en/units/glass.rst f5a82523c2364e588de06137aa621251
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/glass.rst:40 2f7b2235a2084698952c50e295f00e29
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/glass.rst:41 dc721f20fbd445fa84aed841990cd7b3
+msgid "I2C address of the Unit Glass, default is 0x3D."
+msgstr ""
+
+#: ../../en/units/glass.rst:42 f4e539e5ece34781b3ac041d07015934
+msgid "I2C frequency of the Unit Glass."
+msgstr ""
+
+#: ../../en/units/glass.rst:44 ab5cd65499cb441cbdcc36e09537f6ed
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/glass.rst:46 8a1c893b309847a98dee1265e4d5971f
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.glass.ref:7 6fcd4398f1194ad2b66ce66fe36451d9
+msgid "init.png"
+msgstr ""
+

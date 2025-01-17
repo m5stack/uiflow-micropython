@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 17:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/advanced/jpg.rst:2 42084d68bd714519a48b25c700213e83
+msgid "jpg"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:6 f0709c9ea4664ba7aa5f81702c724b2d
+msgid "This module is only applicable to the CoreS3 Controller"
+msgstr "当前模块只适用于 CoreS3 主机"
+
+#: ../../en/advanced/jpg.rst:11 952c4b73cd4c4e79966af080b35345aa
+msgid "``jpg`` module for encoding and decoding operations of JPG format images"
+msgstr "``jpg`` 模块用于处理 JPG 格式图像的编码和解码操作"
+
+#: ../../en/advanced/jpg.rst:14 a3a79084ae1b43e5b3752476668f9a37
+msgid "Micropython Example"
+msgstr "Micropython 案例"
+
+#: ../../en/advanced/jpg.rst:17 ../../en/advanced/jpg.rst:30
+#: 57ead3542e0747cb8f3905cc2d688ed8 ae3944aa02c44deca96de7be59bf79dc
+msgid "take photo"
+msgstr "拍照"
+
+#: ../../en/advanced/jpg.rst:19 ../../en/advanced/jpg.rst:32
+#: 14e58a5f05e14d99a5e9cf42f4d7493c ff8bbd725ab34048aaae3c5c3e4f538c
+msgid "Click the screen to start the countdown and take a photo"
+msgstr "点击屏幕开始倒计时拍照"
+
+#: ../../en/advanced/jpg.rst:27 f1e20ecd914e4b8784432c242e03f2ee
+msgid "UIFlow2.0 Example"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:34 5879b09f8b644c8a95d3e22c55e043e2
+msgid "|take_photo_example.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.jpg.ref:1 31111a18e9b542a6b5720f14036c8ccb
+msgid "take_photo_example.png"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:38 b80f7e4b79034884aa7c618a86f10280
+msgid "|take_photo_example.m5f2|"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:42 cc4230a76e4048ce949806600f3bfd06
+msgid "Methods"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:46 80fdddd1a0b049559ca5c49e7179fa3b
+msgid "encode to jog photo"
+msgstr "编码为 jpg 图像"
+
+#: ../../en/advanced/jpg.rst:48 5eb68db142da430f970552c76046be7c
+msgid "``img`` Image to be encoded, in the format of image.RGB565"
+msgstr "``img`` 需要编码的图像，格式为 image.RGB565"
+
+#: ../../en/advanced/jpg.rst:50 3f55bd66c4714b71b74540bbcc63d900
+msgid "Return ``image.Image`` instance, image format image.JPEG"
+msgstr "返回 ``image.Image`` 对象，图像格式为 image.JPEG"
+
+#: ../../en/advanced/jpg.rst:52 ../../en/advanced/jpg.rst:64
+#: 3e74e610827a4c9781c294e868dc6e74 62f6de668bec481ba777b8a92a06eb6c
+msgid "UIFlow2.0"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:54 26283cec883d4403aba19116d2acd634
+msgid "|encode.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.jpg.ref:2 b9bb478c5b384b83b8f69738292e1e7e
+msgid "encode.png"
+msgstr ""
+
+#: ../../en/advanced/jpg.rst:58 03d017d1da9c45c4a039aa1a7bf9d896
+msgid "jpg photo decode"
+msgstr "jpg 图像解码"
+
+#: ../../en/advanced/jpg.rst:60 7152e51d98594685b6de8463a4fa8ce6
+msgid "``img`` Image to be decoded, in the format of image.JPEG"
+msgstr "``img`` 需要解码的图像，格式为 image.JPEG"
+
+#: ../../en/advanced/jpg.rst:62 6389e1fa31454a75ab8d1a37243f0afd
+msgid "Return ``image.Image`` instance, image format image.RGB565"
+msgstr "返回 ``image.Image`` 对象，图像格式为 image.RGB565"
+
+#: ../../en/advanced/jpg.rst:66 deb3518676ce43f8823f3528e12cd1f5
+msgid "|decode.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.jpg.ref:3 f0de259973c647e4ab01703611de7aae
+msgid "decode.png"
+msgstr ""
+

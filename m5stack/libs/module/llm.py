@@ -24,12 +24,14 @@ class ModuleComm:
         while time.ticks_diff(time.ticks_ms(), start_time) < timeout:
             if self._serial.any():
                 try:
-                    response += self._serial.read().decode("utf-8")  # Decode bytes to string
-                    start_time = time.ticks_ms()  # Reset timeout after receiving data
+                    data = self._serial.read()
+                    if data:
+                        response += data.decode("utf-8")
+                        if "\n" in response:
+                            return {"time_out": False, "msg": response}
+                        start_time = time.ticks_ms()
                 except Exception:
                     pass
-
-            time.sleep_ms(5)  # Small delay to prevent busy-waiting
 
         if not response:
             return {"time_out": True, "msg": ""}
@@ -247,7 +249,7 @@ class ApiLlm:
             },
         }
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
-            ujson.dumps(cmd), request_id, self._set_llm_work_id, 20000
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
 
         ret_work_id = self._llm_work_id if success else ""

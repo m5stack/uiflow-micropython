@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/speaker.rst:2 ../../en/refs/base.speaker.ref
+#: 0774dd7c9be64cdfbd2db6327a0ccb4d 2d9feb76a4dc44699b914ffe25d102b0
+msgid "Atomic Speaker Base"
+msgstr ""
+
+#: ../../en/base/speaker.rst:8 72589ffbc9ca4329bfb1d31f085d20c2
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/base/speaker.rst:10 ed9124e29aa5407b848a6770f840c205
+msgid "|Atomic Speaker Base|"
+msgstr ""
+
+#: ../../en/base/speaker.rst:12 41ad9440bed24cf8a5361a219c0786dc
+msgid "Below is the detailed support for Speaker on the host:"
+msgstr ""
+
+#: ../../en/base/speaker.rst:19 4498850b6b3448c1a71a39eca315d7e1
+msgid "Controller"
+msgstr ""
+
+#: ../../en/base/speaker.rst:19 6c89d1a94fbd49c58b9ad04b37e42e17
+msgid "NS4168"
+msgstr ""
+
+#: ../../en/base/speaker.rst:19 90d894932e9c4b528e9393ba057c7ed6
+msgid "SDCard"
+msgstr ""
+
+#: ../../en/base/speaker.rst:21 c070158016454a2e862bb6ca0dbfd955
+msgid "Atom Echo"
+msgstr ""
+
+#: ../../en/base/speaker.rst:21 ../../en/base/speaker.rst:25
+#: ../../en/base/speaker.rst:27 14aa1a2efb034b6f81f85a696ed0b525
+#: 18242f475eee4b0f9c31c812827c3638 295e19ae234148b6bcc8167774957fb2
+#: c1431edfc01c4e099114dc61bf4421ff
+msgid "|O|"
+msgstr ""
+
+#: ../../en/base/speaker.rst:23 a1b0068497b24512b3e8b0bcd9cf0ca0
+msgid "Atom Lite"
+msgstr ""
+
+#: ../../en/base/speaker.rst:23 ../../en/base/speaker.rst:25
+#: ../../en/base/speaker.rst:27 ../../en/base/speaker.rst:29
+#: ../../en/base/speaker.rst:31 ../../en/base/speaker.rst:33
+#: ../../en/base/speaker.rst:35 25731979fc0145ee8d5e0c8b7fba9900
+#: 2ef4496c4b814b47b1e0f1167e59f979 34c938ebc986427383823ba840263825
+#: 4d26790a2ae44bb38abf5543a6b7abde 50a7966c9fd7499097f6e97836168065
+#: 55e8a7f49751497c96c8864e85fc0bdc 70131b6ceddc47deb068212626a7cbc2
+#: 79b596c618c94763bff14861a4a33fff b06b075782dd439da7a5672f71a4e921
+#: b6d34a3a288e4463864a86d8bbd91f7f c29aaaf2b53740ffae07c007b9b04338
+#: d818310e9ea5433998c8afbbc5c94b53
+msgid "|S|"
+msgstr ""
+
+#: ../../en/base/speaker.rst:25 aa3c5442e2d141b8bc19efaba7e78455
+msgid "Atom Matrix"
+msgstr ""
+
+#: ../../en/base/speaker.rst:27 314301f4e37f4dec86ecac6e11fc7a1c
+msgid "AtomS3"
+msgstr ""
+
+#: ../../en/base/speaker.rst:29 febbbe14e6e6471b8bc4fdaaea78ec1f
+msgid "AtomS3 Lite"
+msgstr ""
+
+#: ../../en/base/speaker.rst:31 5ed5334d0f3141df995adb610b6e9351
+msgid "AtomS3R"
+msgstr ""
+
+#: ../../en/base/speaker.rst:33 32a6e58c351f48b48864520de714e0e2
+msgid "AtomS3R-CAM"
+msgstr ""
+
+#: ../../en/base/speaker.rst:35 0c323c36517f48b2b452cb429b36cd4a
+msgid "AtomS3R-Ext"
+msgstr ""
+
+#: ../../en/base/speaker.rst:41 5056c0cbf182482b9380132daf2efed4
+msgid "|S|: Supported."
+msgstr ""
+
+#: ../../en/base/speaker.rst:43 f9cf4f82e6c04be5ac5d06782c335655
+msgid "|O|: Optional, It conflicts with some internal resource of the host."
+msgstr ""
+
+#: ../../en/base/speaker.rst:46 61783e6bc8dd4720aaebf80ac094c77f
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/base/speaker.rst:53 406c2b7174c84f82bb0fb006ec8c1518
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/base/speaker.rst:55 fef5a6f653244fffa048ce8c89c93c56
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.speaker.ref:9 02a941918d7f451cb6434213ff6e0b54
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/speaker.rst:60 e30e4dca493e470d8d241137ea44e728
+msgid "|atoms3_speaker_example.m5f2|"
+msgstr ""
+
+#: ../../en/base/speaker.rst:64 8cefb4b3806c4aa18b556eb053356c8c
+msgid "class ATOMEchoBase"
+msgstr ""
+
+#: ../../en/base/speaker.rst:67 ../../en/base/speaker.rst:99
+#: 1f7af86f06d644f895b5ebb35f5676ea c1bb5ac768794a0fa52beccd89e551d7
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/base/speaker.rst:71 1f44b4d1f3f345d8b83bd9ee2d6a875d
+msgid "Create an SpeakerBase object."
+msgstr ""
+
+#: ../../en/base/speaker.rst 41266395555d4130acb0882e7b54b90b
+#: b38c67b3797e43d09fe126a568e4be64
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/base/speaker.rst:73 3ca8f6b919284807bed25afaccf4a5bf
+msgid "The I2S port number."
+msgstr ""
+
+#: ../../en/base/speaker.rst:74 2610f6db64914df28cfc0e4e4d2e8022
+msgid "The I2S SCK pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:75 56b7bc64738b4285811ddc595f15b45a
+msgid "The I2S WS pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:76 89928edf67034853ab8a1e28bc7ea6a0
+msgid "The I2S DI pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:78 ../../en/base/speaker.rst:113
+#: 0a6297c470354a8e87de3876eb4d9283 3afd26273e1f47f99f08e4f1d8def8c8
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/base/speaker.rst:80 44ad00ceeace4ef7abab1b39f0e1bcc1
+msgid "|SpeakerBase.png|"
+msgstr ""
+
+#: ../../en/refs/base.speaker.ref:7 9f8e057ec4564d63a0ed64cc4e718e4b
+msgid "SpeakerBase.png"
+msgstr ""
+
+#: ../../en/base/speaker.rst:82 ../../en/base/speaker.rst:117
+#: 1f7a237754a0466c9eeece966eb0780f 8a847053a97648eba2a87a6a66511c70
+msgid "Micropython::"
+msgstr ""
+
+#: ../../en/base/speaker.rst:92 5d3fc10a212e4f9a873647ecc099e663
+msgid ""
+"SpeakerBase class inherits M5.Speaker class, See "
+":ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more "
+"details."
+msgstr ""
+
+#: ../../en/base/speaker.rst:96 f812234778164fbe88b3bef8ef50cdc3
+msgid "class SDCard"
+msgstr ""
+
+#: ../../en/base/speaker.rst:103 b8f96547ef584d78a635d763b015ae6c
+msgid "Create an SDCard object."
+msgstr ""
+
+#: ../../en/base/speaker.rst:105 688294bfe4ae4dbd989a962be878f03b
+msgid "The slot number of the SD card. Default is 2."
+msgstr ""
+
+#: ../../en/base/speaker.rst:106 776b55ea2a8641c8b11cfc112b823c53
+msgid "width selects the bus width for the SD/MMC interface."
+msgstr ""
+
+#: ../../en/base/speaker.rst:107 283695f26709447fa981d9b6fb7cd0b3
+msgid "sck can be used to specify an SPI clock pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:108 fa2534d83ad94ca48d7719f0f5629155
+msgid "miso can be used to specify an SPI miso pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:109 f673ec8ba00247769ed1bfb160bc5ae0
+msgid "mosi can be used to specify an SPI mosi pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:110 b1143a544dc44a1f948432b35a466dc7
+msgid "cs can be used to specify an SPI chip select pin."
+msgstr ""
+
+#: ../../en/base/speaker.rst:111 2ff18b6040de4fb28da3d402f1493799
+msgid "freq selects the SD/MMC interface frequency in Hz."
+msgstr ""
+
+#: ../../en/base/speaker.rst:115 6eaea4f1d3294d12839c06afec366fdf
+msgid "|SDCard.png|"
+msgstr ""
+
+#: ../../en/refs/base.speaker.ref:11 0c4c838c95af4377add3458dcbc3ffb7
+msgid "SDCard.png"
+msgstr ""
+

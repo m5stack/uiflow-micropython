@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/mini_joy.rst:2 2d03218b2d8044dd81b2003deba267f3
+msgid "MiniJoyC Hat"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:6 13946698cce34fae80ed51cdbe704b8c
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:8 e4ebaa14ee184cbda35a2ec114b94bf5
+msgid "|MiniJoyCHat|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref f89a5ad01d114d6782816bdaa884558f
+msgid "MiniJoyCHat"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:11 df2db2525db74ab4aef9fe871962c2d0
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:18 e7acd3c475084eb681715d14b1bde5b8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:20 76877ad6fad44d1ab61e149030d2b8d4
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:26 9b9d919100a046bcaeb71dc67bbcb95c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:25 d47d2fb37337463982d1c8005a1d960c
+msgid "|stickc_plus2_mini_joy_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:29 acdf5a69173b4d4cb33bf0679de9066e
+msgid "class MiniJoyHat"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:32 584f2de65dce4704bbc698b19ba4e172
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:36 dab1753f42964822af5dcb198e44150f
+msgid "Create a new instance of the MiniJoyHat class."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst 2264d687d3d54b18ad589e73d8ed42d1
+#: 2b3f3e7c38d84d75b0a5e9d8adf6afa9 56aafdb4dd744d6ea0b0e18b95e26e54
+#: eda7b2cb26ad46cb8ab806352b44b843
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:38 796347b41138429582039d45da0031a4
+msgid "I2C bus"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:39 5fdf25be99574404a1bf193c277da812
+msgid "I2C address"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:41 ../../en/hats/mini_joy.rst:55
+#: ../../en/hats/mini_joy.rst:66 ../../en/hats/mini_joy.rst:77
+#: ../../en/hats/mini_joy.rst:88 ../../en/hats/mini_joy.rst:99
+#: ../../en/hats/mini_joy.rst:110 ../../en/hats/mini_joy.rst:120
+#: ../../en/hats/mini_joy.rst:131 ../../en/hats/mini_joy.rst:142
+#: 1ef9ec8c60ff4cbdb5bf8be7e37a3419 25c2653730084e80a923b4ec9656ca6d
+#: 2ef3a4ca06ce41cca4b70fc04a852f66 3094a6dc44ce423281a87c3ce649549b
+#: 60ed2faf22ff4434941034d95b95064d 8ddfcb529a3c417899b3eff1e4d981ae
+#: 946d2a8faf7a44bf84d780f396585ebb bfcc714589ec40a3b1d52ff187f9119f
+#: d9d69037dbe947c7aed4cd501bcfa1ab dfacb56bcf6c4fbcb3a5aa35adfda35f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:43 48f5483c00fa4475996dc726e48fe5de
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:6 b3105b59db75446083c2029a4b6b9a1a
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:47 391cb2d23881480e9320d45ef497e17f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:51 7071e4c05e4a4fb7a2b1691516090aa5
+msgid "Get the raw x-axis value."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst 003557e50d5744dd9ad3cd3bbdc28df5
+#: 1a1fbdb8712f47e8b6ce05de221a169f 6624de5b5f694ad3ad6e460b8c21e23b
+#: c0a0c96e5c774b27861e6a34e93fc983 c0ae7ea867364c0db18a8855e69111aa
+#: f3f2d1fdb905408d9745e5a0e1fae5e1
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:53 ../../en/hats/mini_joy.rst:75
+#: 7fbacefb4a57423b8e5dae38661c0ae8 d03631f2490d4c8695b2b91d8c903c0d
+msgid "x-axis value"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:57 90b3f6ae489a46f8975a711936885b91
+msgid "|get_x_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:8 6ad5f7a2b2c048989cc0f291aa20f3a9
+msgid "get_x_raw.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:62 f7e4dba0a892424f95a79856f2733d72
+msgid "Get the raw y-axis value."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:64 ../../en/hats/mini_joy.rst:86
+#: 581cb1cd8bdd43acb3d600fc25967e4b cbc73024d2a14c54969ae691d384916a
+msgid "y-axis value"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:68 05f44e700e0748cc9625201b066932f7
+msgid "|get_y_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:10 9cc7ae914bfa4d61b04b190323bb7602
+msgid "get_y_raw.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:73 77f3a1cd61904ae09e0fb7e846a0f580
+msgid "Get the x-axis value."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:79 125cfe359c3d4e9aa76633b2e59afdc6
+msgid "|get_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:12 0499f8eb7a1244e7bd41eccee7c35409
+msgid "get_x.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:84 768bcb3bfd124eb2a69e022695e7c45a
+msgid "Get the y-axis value."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:90 29441120e0ad408cb8b4a848f8bcc337
+msgid "|get_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:14 1557055a8eb742e0b20fb16639b83de4
+msgid "get_y.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:95 e9dbdd9dec994583b53a63e6005c2052
+msgid "Swap x-axis direction"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:97 ../../en/hats/mini_joy.rst:108
+#: ../../en/hats/mini_joy.rst:118 8d3bd82eb9f7444ba1fcc5aeb589a93b
+#: bb1cee980e8b45d1b06717a4f6c1493e ec20540bb2a34135946a39da317f1fc8
+msgid "True or False"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:101 8cf0203b581d468f8bacc88c3c8348f1
+msgid "|swap_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:16 08fc46a347bb40b5a359312c2ae9cc4f
+msgid "swap_x.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:106 75c88f7920754a798ce03c449d51c030
+msgid "Swap y-axis direction"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:112 3f89fdf75f57438cbcc7ed1462f2b9dd
+msgid "|swap_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:18 3689808ba3104c7993fb6043458528bc
+msgid "swap_y.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:116 fd16c12fac8d4c6a8459d541a7614389
+msgid "Get the button status."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:122 617d6c62090840979191fd91c005f9b7
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:20 e557c3a67d514a22b7ff0aae09b778fa
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:127 585faa5a968a4e5da456a2f18fe1cca8
+msgid "Get the firmware version."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:129 52db843b20eb473c90b5ba24f772b867
+msgid "firmware version"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:133 d7522fd2d5cf48f4b814c64613ea10e7
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:22 9a5702b2042c41de8eb118baa96ae668
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:138 b657aec5810c4709917caa78ce1a3be1
+msgid "Set the I2C address."
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:140 74f87c65fe00477c89bd134cbcb01c11
+msgid "0x01 ~ 0x7F"
+msgstr ""
+
+#: ../../en/hats/mini_joy.rst:144 09206c845302425eae7b0ffa07c416fe
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_joy.ref:24 a84ffd3d57324be2896fbef25f5243aa
+msgid "set_i2c_address.png"
+msgstr ""
+

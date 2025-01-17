@@ -4,5 +4,16 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/oled/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/oled/init.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/oled/example.png
+
+.. |cores3_oled_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/oled/cores3_oled_example.m5f2"
+        target="_blank"
+    >
+        cores3_oled_example.m5f2
+    </a>
 

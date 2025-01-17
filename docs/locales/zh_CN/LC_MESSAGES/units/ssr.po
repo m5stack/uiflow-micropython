@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/ssr.rst:3 e5fdf4dd9c5f46c69647fdf562ef1106
+msgid "SSR Unit"
+msgstr ""
+
+#: ../../en/units/ssr.rst:7 8ed2ed64b98747ecb76b6aee6878c0fb
+msgid ""
+"UNIT SSR Solid-state relays are different from traditional "
+"electromagnetic relays in that their switching life are much longer than "
+"that of electromagnetic relays. With integrated MOC3043M optocoupler "
+"isolation and zero-crossing detection,It supports input 3.3-5V DC control"
+" signal, and control output single-phase 220-250V AC power."
+msgstr ""
+
+#: ../../en/units/ssr.rst:9 7f5eb8ff877e4557840b8a8ab34c7591
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/ssr.rst:11 6c9ba7eaabe84b9783a7cbab0387bab3
+msgid "|SSRUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref b64e12d200de4081971580056e29a372
+msgid "SSRUnit"
+msgstr ""
+
+#: ../../en/units/ssr.rst:13 be93996ac0704693adcda8ba57089679
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/ssr.rst:20 bfbb152a3eb44e4f88b0f7247c3abcda
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/ssr.rst:22 b3e8955f5ab1400ca5b916394a6a530d
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref:12 2d72cd4169194820b11ee9055e43433c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ssr.rst:27 b3651bfb124b4351a940f78636e52023
+msgid "|cores3_ssr_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/ssr.rst:31 665a9b79ff134c088440477f167551f8
+msgid "class SSRUnit"
+msgstr ""
+
+#: ../../en/units/ssr.rst:34 8c3219e8141543ad82fb4b46648810ca
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/ssr.rst:38 ca44fa5a542d41fda58de3cde5da2ec4
+msgid "Initialize the SSR."
+msgstr ""
+
+#: ../../en/units/ssr.rst:40 9fa1d16c179540fc99a300600b5a1cbe
+msgid "``port``: The port to which the Fader is connected. port[1]: control pin"
+msgstr ""
+
+#: ../../en/units/ssr.rst:42 ../../en/units/ssr.rst:55
+#: ../../en/units/ssr.rst:64 ../../en/units/ssr.rst:74
+#: 0a585c92bb614b46af39cf2fbb956413 204bbae604f4465db2a03fe162e8a0e8
+#: a90085f3e00140f2bd360db18b8f5722 e228332199f34b2eb37874bdcb89b727
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/ssr.rst:44 75afde3a6668439e852e481b63f524c4
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref:7 6155f8e2476944a1bc2270f8f2f03260
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/ssr.rst:48 55303ed793974a58b6a0ea62c786452a
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/ssr.rst:52 c236ba825c364e9583b950a772642009
+msgid "Turn on the SSR."
+msgstr ""
+
+#: ../../en/units/ssr.rst:57 c857a14fb40643c3a6fe8c9d377cb705
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref:8 df8e847560d44b81ae3b1ec83c43349f
+msgid "on.png"
+msgstr ""
+
+#: ../../en/units/ssr.rst:61 95053547cc364134930d1fbe78fc7cab
+msgid "Turn off the SSR."
+msgstr ""
+
+#: ../../en/units/ssr.rst:66 a819322c446a4dcf9f73a5109fc9a217
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref:9 84c5742f5fca44a7a5b32cda27b852ba
+msgid "off.png"
+msgstr ""
+
+#: ../../en/units/ssr.rst:70 15822aade717481d8217b01170ad04ad
+msgid "Set the state of the SSR."
+msgstr ""
+
+#: ../../en/units/ssr.rst:72 3f4f9e534f594e68b4f42baed9154fbd
+msgid "``state``: The state of the SSR."
+msgstr ""
+
+#: ../../en/units/ssr.rst:76 572750f33bf34220a7e0c255e0d2bdc3
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ssr.ref:10 b5f02cf11a0c448da32f654dd4fbe21e
+msgid "set_state.png"
+msgstr ""
+

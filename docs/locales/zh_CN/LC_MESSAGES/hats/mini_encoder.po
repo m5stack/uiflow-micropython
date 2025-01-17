@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/mini_encoder.rst:2 399a118605514857ac9b3f08f91bf8b5
+msgid "MiniEncoderC Hat"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:6 ac931786be8a492f8cbd121356ca3a8d
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:8 96555d44ca7c457c9f59755241c3e632
+msgid "|Encoder|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref 2989d07f436a4fa18566baf1ae813415
+msgid "Encoder"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:11 3e1df32aea574b6d83a03fbf4a1dd6b7
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:18 1bd9662fb5fd4191ae234b16038a1fc4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:20 2c8ae1410b40484d911ff73f6c4844a9
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:7 3db7a2111e434a16b785253ac13fddb1
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:25 e2e7c2bff55f4c6ebacf76442da70298
+msgid "|stickc_plus2_mini_encoder_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:29 d3583137da974686b1c4ecaaae1413c4
+msgid "class MiniEncoderCHat"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:32 7866e9abfad9433e93a73b863818f093
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:36 84f45d6c07484a40a26c53272b6ab89a
+msgid "Creates a Rotary object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst 55845556849e4306baea00a4e7c08eb8
+#: ab2eefbc334b43789cd49b65f948cb62 b7af62462aa14237bca3e340c2bdc85d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:38 ae059d75fc6944efb0357d4b9116d5d6
+msgid "I2C object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:39 42132be0b722464599ada73905f46efa
+msgid "I2C address, Default is 0x40."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:41 ../../en/hats/mini_encoder.rst:53
+#: ../../en/hats/mini_encoder.rst:62 ../../en/hats/mini_encoder.rst:72
+#: ../../en/hats/mini_encoder.rst:80 ../../en/hats/mini_encoder.rst:88
+#: ../../en/hats/mini_encoder.rst:99 ../../en/hats/mini_encoder.rst:109
+#: ../../en/hats/mini_encoder.rst:118 ../../en/hats/mini_encoder.rst:127
+#: 128eaa3721f84de596471e1dc7ba2340 3a7dd0fc050d41a1bd1651eeda52d7e2
+#: 86699de496e4425daf336c9f978c43a4 a8988bb679ec4d9381b9fd0555cb00e3
+#: b2470accd1814bf79f6cf741892eb22e c07559ed230c4506bc6927af4b2a50ec
+#: d377a68092734ce3adc58d3633627c3e eb7c0b3cc9fe405facd516e7b4f18794
+#: f3e4c6377bb54722a0e20abf3dfea501 f7f3d3a2143a4c88b771ba8380d74f89
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:43 34d68b86b96745e7a29560fc3444ed0e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:9 4dc975f9c7dd45f6aa3bf702127ec007
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:47 cfaece84d3c14601826a53ad545dbce3
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:51 ba2bc961a0e84647810f153a196c8fbf
+msgid "Gets the rotation status of the Rotary object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:55 4bb78227d7e241e89dfaefafc21bde54
+msgid "|get_rotary_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:11 c1b32f637bda46e7bf72ba590c98275b
+msgid "get_rotary_status.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:60 d2f88b3167b54beebd98d9b309cf2984
+msgid "Gets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:64 acd8c3b388fa43d2ba0636d487b58f20
+msgid "|get_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:13 9669555d56da4fdaa4c8aebb3da0d290
+msgid "get_rotary_value.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:69 a0fc4a07680d4fd9bdb8d9856480e2c3
+msgid ""
+"Gets the rotation increment of the Rotary object. Can be used to "
+"determine the direction of rotation."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:74 2d4872dba6ef45edb737ecaac800e5b9
+msgid "|get_rotary_increments.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:19 fe42490fc798444286b9de73f76ad5f6
+msgid "get_rotary_increments.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:78 00412aaceed14b6ba115b8ce773c695f
+msgid "Resets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:82 af2a50f2ac8c4b8191a526974538f02f
+msgid "|reset_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:21 b8d689d469414dee9321d5d198fb214e
+msgid "reset_rotary_value.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:86 f3f3edfc8ae04ddaaafd2d34527d65ef
+msgid "Get the current status of the rotary encoder keys."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:90 662606b84f99421488313d7c7a80e8ea
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:15 555e0097d88246d39fc997188cf4c8a3
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:95 10e42a26de1f4c0fb57763839e89e8ef
+msgid "Sets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:97 2f421c9784c24a2d9b983b1765071a28
+msgid "adjust the current value."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:101 714493ddc65c44de96cd6e4588952923
+msgid "|set_rotary_value.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:23 3dea374213204df3b9cb2655d492489e
+msgid "set_rotary_value.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:105 fe8edb0f2f1e4ab6b81626958be3c839
+msgid "Set the color of the LED"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:107 60523343c89f49649aed982a74cba32f
+msgid "the color of the LED, 0x000000 - 0xFFFFFF."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:111 ac79c8ad87864493886e54fc5356c363
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:17 783b6a10029848a2987409ce17826933
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:116 e424bc95d9344f7ea03d053ce5a3493d
+msgid "Get the firmware version of the device."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:120 c9d41269543a49f8a881bccaa4bb7bb3
+msgid "|read_fw_version.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:25 e1b36973c68a4b418e1d4a3d82f9c63a
+msgid "read_fw_version.png"
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:125 090e1f0c39364f8ba1783e4d4015954e
+msgid "Set the I2C address of the device."
+msgstr ""
+
+#: ../../en/hats/mini_encoder.rst:129 6ae03d0cd26b42bcb3d9ea83c801d370
+msgid "|set_address.png|"
+msgstr ""
+
+#: ../../en/refs/hat.mini_encoder.ref:27 772ceb54745a4ae5942ac34d1c2b751d
+msgid "set_address.png"
+msgstr ""
+

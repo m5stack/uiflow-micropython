@@ -1,0 +1,613 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/color.rst:3 2831b6348ae54e3895ebb556014526f3
+msgid "Color Unit"
+msgstr ""
+
+#: ../../en/units/color.rst:7 c010872e600c4fe3b3f5ea5f7f532d61
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/color.rst:9 dae3dc3fd0b54e759c9280480cd93a53
+msgid "|ColorUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref 29e701b0223949809cc495601c5b71f8
+msgid "ColorUnit"
+msgstr ""
+
+#: ../../en/units/color.rst:11 e7465bb6688848b0bdb6b76ae2c59aa0
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/color.rst:17 67c04b9ab859477a97760bb3a3152c00
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/color.rst:19 a7cd0dda69c94401ac5b53baaca0e121
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:37 23a597514a7c41288c996b80a3c29a62
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/color.rst:23 cc29083bd1354b578e7f331067a3198e
+msgid "|color_core2_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/color.rst:26 d4c4bd3aee3041bbad4c5ad383e9d7e8
+msgid "class ColorUnit"
+msgstr ""
+
+#: ../../en/units/color.rst:29 742ca0ccbb1d4e299757dbbe47fabb21
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/color.rst:33 35d90f6884c24f8cb998dd6293548ae1
+msgid "Initialize ColorUnit sensor with the given I2C interface and address."
+msgstr ""
+
+#: ../../en/units/color.rst 010c0236291641edb37d9639bd5d7d09
+#: 015a7b057dba429d88f02698d2c47d66 2610bba1c2cb4382a8f186c36fde59e5
+#: 2c340b172cf448e38b680d02476b5595 38514b78d12e45dc8e3b00c92d221333
+#: 6b73dfd5bce24a97b652d032be37cc96 9e4e3bdf62ca412ead434814d3d72fdf
+#: d9d176c41875405c9d81cfb3360abffe
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/color.rst:35 842b7c68754a4564839f7f54e8f16eb0
+msgid "The I2C bus instance for communication."
+msgstr ""
+
+#: ../../en/units/color.rst:36 1dabc3d286424e528a06be6152196afa
+msgid "The I2C address of the sensor, default is _TCS3472_DEFAULT_ADDR(0x29)."
+msgstr ""
+
+#: ../../en/units/color.rst:38 ../../en/units/color.rst:51
+#: ../../en/units/color.rst:61 ../../en/units/color.rst:71
+#: ../../en/units/color.rst:81 ../../en/units/color.rst:91
+#: ../../en/units/color.rst:101 ../../en/units/color.rst:111
+#: ../../en/units/color.rst:121 ../../en/units/color.rst:131
+#: ../../en/units/color.rst:141 ../../en/units/color.rst:150
+#: ../../en/units/color.rst:160 ../../en/units/color.rst:170
+#: ../../en/units/color.rst:180 ../../en/units/color.rst:191
+#: ../../en/units/color.rst:201 ../../en/units/color.rst:212
+#: ../../en/units/color.rst:222 ../../en/units/color.rst:230
+#: ../../en/units/color.rst:240 ../../en/units/color.rst:250
+#: ../../en/units/color.rst:261 ../../en/units/color.rst:271
+#: ../../en/units/color.rst:281 ../../en/units/color.rst:291
+#: ../../en/units/color.rst:301 ../../en/units/color.rst:311
+#: ../../en/units/color.rst:322 0543512e1eaa4e3babd7f6a19cd33c92
+#: 0ad7466a01d848049bb658a61ae5b183 1115f357911d418a8bc167fbf645d8f4
+#: 1416266f821449fabdeacf732bfcdaf4 17cd5b29b27444d7b4be1a5ef1118c76
+#: 22c60a1d701745808f1b98c8da0373c1 2cd42d90a01a4f4ab7d03f6741aa7676
+#: 428a0c3d6e9640e8b0ce28ed8b3c1da0 443a0bd72ce649428fdafd10025ec27b
+#: 454d8a81654648499b467fcf8707906a 4ccfe85d578f48b98ac5d7f71f664409
+#: 50302ca5b908422b89cca8a49d1fd99f 5ba220211c2f4df283bf69106f02d318
+#: 60ec86eaabf3422aa99eaccb2d14d876 6a016afef18247d0910bfff377405966
+#: 8784aeb78e6e4245a5b7a93d48701f05 87e31b38b3d642b9a5def8dbcd8b0be3
+#: 8db76975498848e3a35d02ff301e52a9 8e97ccdfc4fd4dcb8177dee6791c15a7
+#: 9b8c02fe0ea84fbd972a4f3077fdf69f 9f1c56d8bbfb4b9c9d86428fce8f24e2
+#: cf5e00ebf9c84d799fa45abd31a3c08f d7b22cb1321a4ee8ad6f72f8b4625221
+#: da4afd1c7c164ce082674a11ea409e3f db11a58933a4400bb25333bb5b40ea49
+#: dd703bf36e124adb9dee30252427db5f fc4a37f8aa0a453da1924668124b89e0
+#: fe11da0d96614e69948420ee8396d066 fe5f6c55be904bc3b5bbb0ed8bb34446
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/color.rst:40 4bed0f1c3398455e85aa988562a796c0
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:7 8d01fa9ba39642b2a5997c89241c9731
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/color.rst:43 8982d6ab92fd4fcaa95ea05f482eb7bd
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/color.rst:47 f450545148bc43c297d0345dbc393553
+msgid "Get the lux value computed from the color channels."
+msgstr ""
+
+#: ../../en/units/color.rst 06c0a2083236479ea5d32910fd4b9783
+#: 153d0a44a86448ebba3149c76f25b320 40c538b503024302a7a623ab37f5121f
+#: 4147ba2043304e8fa3f972849bb614ae 5bd47330168b4a60b4ee84e486ebc82e
+#: 5dbf6014230b40c28dd9a23baef81797 5f420a9e48f242d5aa83a78e0a1b78ea
+#: 5fc70c915489452c84d9aa82d7ae4517 6285ac1667aa4c17b5269ef922beee24
+#: 6fd4a17334be444a9cae51a46e97d20d 778bb3c817aa42e885e38c9faa4a6287
+#: 8c9d067096c24e81bd9bcfce7f7344c3 8cca54c2f59c4ce98925b6fe9cced3c5
+#: 906791ef88b447fcaf810b1e577ab637 a2fece1d8cbd431a91252f93a8666365
+#: b4472ccb750541ecaac8fb18146d7388 c9f4f471241d498ea0f526ec2ce7efb1
+#: e814de2b42a842b0bfc428d04f47687f e9f9434b919f48c0ace3503d608e7eec
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/color.rst:49 4a9f5417134d4506a4496a084104c1fa
+msgid "The computed lux value as a float."
+msgstr ""
+
+#: ../../en/units/color.rst:53 013c40aad0a840c7b7cb0b09028cae13
+msgid "|get_lux.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:8 c98400b4110e407ca2aa46e5d79bff09
+msgid "get_lux.png"
+msgstr ""
+
+#: ../../en/units/color.rst:57 51c2eec9dd784eebbfbb12179e362273
+msgid "Get the color temperature in degrees Kelvin."
+msgstr ""
+
+#: ../../en/units/color.rst:59 320e20b023d24a569dad65ed3d44e9f1
+msgid "The color temperature as a float in Kelvin."
+msgstr ""
+
+#: ../../en/units/color.rst:63 5cc32c898416496c949f7436db65d362
+msgid "|get_color_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:9 bd1ba1e160b042919ffd85fbfdca2ef1
+msgid "get_color_temperature.png"
+msgstr ""
+
+#: ../../en/units/color.rst:67 0b1efbab2ee6414daa7645757fd9a6c9
+msgid "Get the RGB color detected by the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:69 6364d5d960c6422193cbc5b3f5930e07
+msgid "A tuple of red, green, and blue component values as bytes (0-255)."
+msgstr ""
+
+#: ../../en/units/color.rst:73 12bf153fe5cb4545b0d23ad2f18b3c0c
+msgid "|get_color_rgb_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:10 54d5ab54ec9f4103a0f1fa12eaac6477
+msgid "get_color_rgb_bytes.png"
+msgstr ""
+
+#: ../../en/units/color.rst:77 2a3e7881f6ce408a80e636bc7f645834
+msgid "Get the red component of the RGB color."
+msgstr ""
+
+#: ../../en/units/color.rst:79 fd359777a0ba42ef8d1fc639521ae820
+msgid "The red component value (0-255)."
+msgstr ""
+
+#: ../../en/units/color.rst:83 7bc564ea9f7b447088e1778c74ab1224
+msgid "|get_color_r.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:11 eed1b96b69de4ac6a313b4a866012b8b
+msgid "get_color_r.png"
+msgstr ""
+
+#: ../../en/units/color.rst:87 1bf076a6b6ab49029ff5a180efb34801
+msgid "Get the green component of the RGB color."
+msgstr ""
+
+#: ../../en/units/color.rst:89 be408f643f4c42ef92ed41f39e8dbe67
+msgid "The green component value (0-255)."
+msgstr ""
+
+#: ../../en/units/color.rst:93 4582f59a74e1476b9d3034894ee00226
+msgid "|get_color_g.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:12 b23e8428994545de97b12182e7f6c9dd
+msgid "get_color_g.png"
+msgstr ""
+
+#: ../../en/units/color.rst:97 465f09d3e03e43f7bb7df32905d11e37
+msgid "Get the blue component of the RGB color."
+msgstr ""
+
+#: ../../en/units/color.rst:99 b11ae6c7b16743588423e182f940e4ca
+msgid "The blue component value (0-255)."
+msgstr ""
+
+#: ../../en/units/color.rst:103 a2318547e21a40bdb54814221b00cc3d
+msgid "|get_color_b.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:13 931b8e77cd754fc7a736d69476f1e01b
+msgid "get_color_b.png"
+msgstr ""
+
+#: ../../en/units/color.rst:107 de45f7ae99a44041828809427ebbcc60
+msgid "Get the hue (H) value of the color in degrees."
+msgstr ""
+
+#: ../../en/units/color.rst:109 205fb9633d204acbb0220d12884df41d
+msgid "The hue value as an integer in the range [0, 360]."
+msgstr ""
+
+#: ../../en/units/color.rst:113 cc806dc701404ec695f2b19fc3dd3d4e
+msgid "|get_color_h.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:14 a53a6288dc3e4572bd384e2d05f440bf
+msgid "get_color_h.png"
+msgstr ""
+
+#: ../../en/units/color.rst:117 9b3e7c657c024488ac6618109ec5ac67
+msgid "Get the saturation (S) value of the color."
+msgstr ""
+
+#: ../../en/units/color.rst:119 701ce99abe824067a2500c4da55321d4
+msgid "The saturation value as a float in the range [0, 1]."
+msgstr ""
+
+#: ../../en/units/color.rst:123 78dbb4fc0b1c42a88313f42854188e4a
+msgid "|get_color_s.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:15 21119c83f70f4d959010bd9b4a558550
+msgid "get_color_s.png"
+msgstr ""
+
+#: ../../en/units/color.rst:127 f9f99a2903fe4537b19a5b84ce27e85d
+msgid "Get the value (V) of the color (brightness)."
+msgstr ""
+
+#: ../../en/units/color.rst:129 257c2ccf36184ee0a6767cd125ac6543
+msgid "The value as a float in the range [0, 1]."
+msgstr ""
+
+#: ../../en/units/color.rst:133 1a3e4d24ad524e518ece821f61712df5
+msgid "|get_color_v.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:16 c82763c5e2b5410d87c8a7e8b8f05386
+msgid "get_color_v.png"
+msgstr ""
+
+#: ../../en/units/color.rst:137 4638ae978f9f423699c9362a3d976b7e
+msgid "Get the RGB color as an integer value."
+msgstr ""
+
+#: ../../en/units/color.rst:139 0402693097694ca09efeaaa8e9dcd61f
+msgid "An integer representing the RGB color, with 8 bits per channel."
+msgstr ""
+
+#: ../../en/units/color.rst:143 d8a7d628c2c140b9b4e183c667a2818f
+msgid "|get_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:17 5b502e9dade34c478830ad7d3f02e1e7
+msgid "get_color.png"
+msgstr ""
+
+#: ../../en/units/color.rst:147 81af7cc0581f4a0c8118ff34cd162c4b
+msgid ""
+"Get the RGB color in 5-6-5 format as an integer. :return: An integer "
+"representing the RGB color in 5-6-5 format."
+msgstr ""
+
+#: ../../en/units/color.rst:152 f747d1a552134d9fa0dc7e27a88c5147
+msgid "|get_color565.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:18 02affe0311814f2e956b035dea4a7e9c
+msgid "get_color565.png"
+msgstr ""
+
+#: ../../en/units/color.rst:156 4c622b89f562436395983589f0ed60d7
+msgid "Get the active state of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:158 f637e66cd7b6409682cfa1a2ddd798c7
+msgid "True if the sensor is active, False if it is inactive."
+msgstr ""
+
+#: ../../en/units/color.rst:162 effcda1884054f43b1e55db247659462
+msgid "|get_active.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:19 86034d54654f4a47a21ef9769ee6dd0b
+msgid "get_active.png"
+msgstr ""
+
+#: ../../en/units/color.rst:166 c38bd4a330be4d6d9e0926b9ea98917e
+msgid "Set the active state of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:168 b45f1720680f4dcfa0adbbcb95a160eb
+msgid ": True to activate the sensor, False to deactivate it."
+msgstr ""
+
+#: ../../en/units/color.rst:172 4be2d37ea7c14be5a8f180d4113eff45
+msgid "|set_active.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:20 781d6090ad584cdcb056e3de20873055
+msgid "set_active.png"
+msgstr ""
+
+#: ../../en/units/color.rst:176 11cf3ba0bc6f42a8a3c57fced9d14469
+msgid "Get the integration time of the sensor in milliseconds."
+msgstr ""
+
+#: ../../en/units/color.rst:178 21f8f185f5ae4a34aa6e7bf6dfe638c5
+msgid "The integration time as a float."
+msgstr ""
+
+#: ../../en/units/color.rst:182 786897f96913454d9d2cd9df2cd5368c
+msgid "|get_integration_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:21 2a51703a26e941a69d9c20356e95bd3c
+msgid "get_integration_time.png"
+msgstr ""
+
+#: ../../en/units/color.rst:186 da67135469c74eafbba609186a822a13
+msgid "Set the integration time of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:188 1361e1a1dbf340e488628ea2050d2c32
+msgid ": The desired integration time in milliseconds."
+msgstr ""
+
+#: ../../en/units/color.rst 3de59d66365c47cc8bf3dc305ee998e2
+#: 76218b0481eb47ebaeb22de015d73892 7cd4a5fe0bdd40878bbdbc7bcce112ac
+#: f20df8518a3342a899cd8a1aa3d406fe
+msgid "Raises"
+msgstr ""
+
+#: ../../en/units/color.rst:189 94428f4a27974e50a044ffae3119f87e
+msgid "If the integration time is out of the allowed range."
+msgstr ""
+
+#: ../../en/units/color.rst:193 5a32d3e10f7041a09ccd9cf708e633fd
+msgid "|set_integration_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:22 865f2d3301ca4609ab4c07b67ba9a5e2
+msgid "set_integration_time.png"
+msgstr ""
+
+#: ../../en/units/color.rst:197 d6984cf298104595a63dc5985363b5d1
+msgid "Get the gain of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:199 e972dc0d601840c783ee1ea08e8c4671
+msgid "The gain value, which should be one of 1, 4, 16, or 60."
+msgstr ""
+
+#: ../../en/units/color.rst:203 d486e1ad94884286817cbc17156349de
+msgid "|get_gain.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:23 f290f81b5b924988ab61ca449018a20d
+msgid "get_gain.png"
+msgstr ""
+
+#: ../../en/units/color.rst:207 a952ffc842ca4610bd1860727582f0f2
+msgid "Set the gain of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:209 910dd05c348d4521961b0d4088d8fb39
+msgid ": The desired gain value (1, 4, 16, or 60)."
+msgstr ""
+
+#: ../../en/units/color.rst:210 68822d4317eb4c4680fc93ce6582876c
+msgid "If the gain is not one of the allowed values."
+msgstr ""
+
+#: ../../en/units/color.rst:214 92a58cf2167a493f878ceaf097ded9fc
+msgid "|set_gain.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:24 a42bed7b5a4e42db85334baa9ab1196f
+msgid "set_gain.png"
+msgstr ""
+
+#: ../../en/units/color.rst:218 acb6bdd73eaa4febab2dd9d35b0e1d87
+msgid "Read the interrupt status."
+msgstr ""
+
+#: ../../en/units/color.rst:220 07d9fb823da5445ba819fe97b28bd555
+msgid "True if the interrupt is set, False otherwise."
+msgstr ""
+
+#: ../../en/units/color.rst:224 97bdc2685cc446268105fd03bca09379
+msgid "|read_interrupt.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:25 2c1ac06e3afc4875943f4e05ea3ac61c
+msgid "read_interrupt.png"
+msgstr ""
+
+#: ../../en/units/color.rst:228 74abce6ec46a4bdb9cc0fe409fb621db
+msgid ""
+"Clear the interrupt status of the sensor by writing to the interrupt "
+"register."
+msgstr ""
+
+#: ../../en/units/color.rst:232 e46a3a79f8454fe684f7c0942a2cffa5
+msgid "|clear_interrupt.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:26 70b756b182f342f492b0346653b8004f
+msgid "clear_interrupt.png"
+msgstr ""
+
+#: ../../en/units/color.rst:236 a6444160c54341aa9ee7c2c3c51abfcd
+msgid "Read the raw RGBC color detected by the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:238 41167045265e4a82814b5e08f2bd7980
+msgid "A tuple containing raw red, green, blue, and clear color data."
+msgstr ""
+
+#: ../../en/units/color.rst:242 252a3226f18d467eac6dd803c9c22a6c
+msgid "|get_color_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:27 82c01b5e4f1142f6bc847f6f93aed7bd
+msgid "get_color_raw.png"
+msgstr ""
+
+#: ../../en/units/color.rst:246 8631cbe75b754091af0acc05990a6bd4
+msgid "Get the persistence cycles of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:248 23c643ef9ae04a3686863501fbc45224
+msgid "The persistence cycles or -1 if interrupts are disabled."
+msgstr ""
+
+#: ../../en/units/color.rst:252 2816b50097854239b5deba97176da3fe
+msgid "|get_cycles.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:28 fe9c99a92c304373987d7603044b958e
+msgid "get_cycles.png"
+msgstr ""
+
+#: ../../en/units/color.rst:256 31ac7a35e5604d388cf6705797f83540
+msgid "Set the persistence cycles for the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:258 85fea6a6ab1d4a86a33ad3f2f71bb10c
+msgid ": The number of persistence cycles, or -1 to disable interrupts."
+msgstr ""
+
+#: ../../en/units/color.rst:259 1a45d74858c946cc9744f7025ad39ee8
+msgid "If the value is not one of the permitted cycle values."
+msgstr ""
+
+#: ../../en/units/color.rst:263 5c73092fe3bd41f29f7aa3229a3ea919
+msgid "|set_cycles.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:29 d402123595da4ad68105f725eb72d952
+msgid "set_cycles.png"
+msgstr ""
+
+#: ../../en/units/color.rst:267 e34c17d60d844083b8563f80bc2628ac
+msgid "Get the minimum threshold value (AILT register) of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:269 3c78f42bcbea4658aba01b1b3511cbe2
+msgid "The minimum threshold value."
+msgstr ""
+
+#: ../../en/units/color.rst:273 0e96ae5522714b2abd99f046dfe816a9
+msgid "|get_min_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:30 d5256ddac6ee40fd9da5a44159563766
+msgid "get_min_value.png"
+msgstr ""
+
+#: ../../en/units/color.rst:277 368f9133f19c4235961bbaae36dd92de
+msgid "Set the minimum threshold value (AILT register) of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:279 f3cc8485f67c48f49ac2febc08df6ae5
+msgid ": The minimum threshold value to set."
+msgstr ""
+
+#: ../../en/units/color.rst:283 46678077108b42fd81e2f1d310ec9cff
+msgid "|set_min_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:31 97fcb269e0764f0f9cc0165fac7b8375
+msgid "set_min_value.png"
+msgstr ""
+
+#: ../../en/units/color.rst:287 269c6cc8991349b58e5f827e04891a37
+msgid "Get the maximum threshold value (AIHT register) of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:289 0780f1fe4e1e42fba902a5092fceba7b
+msgid "The maximum threshold value."
+msgstr ""
+
+#: ../../en/units/color.rst:293 5825fd506aa741ef88141291b48e848f
+msgid "|get_max_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:32 715164c2cb704f10a85422342a8c4a98
+msgid "get_max_value.png"
+msgstr ""
+
+#: ../../en/units/color.rst:297 49f3b3693dae42b2bc8c41abb73f7bf7
+msgid "Set the maximum threshold value (AIHT register) of the sensor."
+msgstr ""
+
+#: ../../en/units/color.rst:299 c73b8c007e56473f8a7e6f173390e1c4
+msgid ": The maximum threshold value to set."
+msgstr ""
+
+#: ../../en/units/color.rst:303 e6ec66947fa44920986ba6e4d2df8254
+msgid "|set_max_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:33 e0050ae9c00943bd81bec1a088e74798
+msgid "set_max_value.png"
+msgstr ""
+
+#: ../../en/units/color.rst:307 58cdaae90d6a493f8adeb9d49a3a2609
+msgid ""
+"Get the Glass Attenuation factor used to compensate for lower light "
+"levels due to glass presence."
+msgstr ""
+
+#: ../../en/units/color.rst:309 46cd8821df32468cb0230f42d400af76
+msgid "The glass attenuation factor (ga)."
+msgstr ""
+
+#: ../../en/units/color.rst:313 06cf00ed99b941c2b22a4746c59bdc98
+msgid "|get_glass_attenuation.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:34 6d5ea6778d804a8690d0ba621aae8ce1
+msgid "get_glass_attenuation.png"
+msgstr ""
+
+#: ../../en/units/color.rst:317 764f5da2009145dfba34584875bde9bf
+msgid ""
+"Set the Glass Attenuation factor used to compensate for lower light "
+"levels due to glass presence."
+msgstr ""
+
+#: ../../en/units/color.rst:319 f33aaa04b5144da484db08afab586c34
+msgid ": The glass attenuation factor to set. Must be greater than or equal to 1."
+msgstr ""
+
+#: ../../en/units/color.rst:320 470121061dac4936bda2b4e8fd25e6eb
+msgid "If the value is less than 1."
+msgstr ""
+
+#: ../../en/units/color.rst:324 c092e656699b42bf9a544c383f681c67
+msgid "|set_glass_attenuation.png|"
+msgstr ""
+
+#: ../../en/refs/unit.color.ref:35 76457b0885414f05b41bf8e45b04a2c9
+msgid "set_glass_attenuation.png"
+msgstr ""
+

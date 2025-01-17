@@ -1,0 +1,642 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/synth.rst:2 353bf4c2ea73490f82097e64cccd3b38
+msgid "Synth Unit"
+msgstr ""
+
+#: ../../en/units/synth.rst:6 7848c690dd0f46a0817c97997dae1dff
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/synth.rst:8 fc52e7fa3aa04998998d5b905229ef2b
+msgid "|SynthUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref dca2efa7b0d743eb991b96ede70ea95b
+msgid "SynthUnit"
+msgstr ""
+
+#: ../../en/units/synth.rst:11 4986b1b7796a405f99a7e42d141beca6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/synth.rst:18 022d393e737745a09c6b8527f4309b4f
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/synth.rst:20 8e05e05221e6412dbced1b63d405ff5d
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:32 9bc61a1dbacb4e73b9e0b6b3c104a328
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:25 7c791dc0e41440279ad186c2b20c5337
+msgid "|synth_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/synth.rst:29 b90cc365096d496ab76ef9b258c0a23a
+msgid "class SynthUnit"
+msgstr ""
+
+#: ../../en/units/synth.rst:32 afe67f63661a4b50b2cce35e41bebae8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/synth.rst:37 484edf3c2ed944da980afde9d64246b5
+msgid "Initializes the MIDI unit with a specified UART ID and port pins."
+msgstr ""
+
+#: ../../en/units/synth.rst:37 9c7171a7a7c049c59efdcd6c620271c3
+msgid "The UART interface is used to transmit MIDI messages."
+msgstr ""
+
+#: ../../en/units/synth.rst 0344f5a7952f4eb28338e2c0da6c55b5
+#: 344059840a1e4466ac9d10ee86ec95af 3974a68cb61349d7b9c1bc6a033f6bfe
+#: 3a6eccfcc1ea47cc927c2e4028d2eb71 40da786c276c47c682a5a3e328ac5b93
+#: 422be19c24da4c0d99855221b744e8d8 49800d9e1ee7453183b6b07c569c1010
+#: 4aa47bc73cb846d2be64f5c4e75399d3 4ef0e3b8af2d4f16ba130f96f164dfe0
+#: 69d4585e9d604de288ef80e684289e38 84ba35c055eb42e5b4f76092464218ef
+#: 8667a7ed62be4b06b7f73ed907727cfa 91919bdf9ea04ec2bf6cae0e4358e7cb
+#: 9527f07be91d4414a5b05431312f59db af5db7a948e24e78ae15ef8b93c0c7f8
+#: b026ffe518b14944bf2be367339092c0 b2bfb844f9b543539b56144d46d3463b
+#: bb9f7041da6341eea99f870a7009ed5b c2fb6c21982f4471ba3913db931c58f0
+#: c7eb7b301f414032877d51bc3c6bcb0b df5abe7a1b8d43439c4729d2cda1c254
+#: fe7cbb3819774998a232eda0df86b9a1
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/synth.rst:39 6fed6a3071674b9483e3088dda0a1770
+msgid "UART device ID."
+msgstr ""
+
+#: ../../en/units/synth.rst:40 3630f57041fb48c4b189adbd9e509ec2
+msgid "UART TX and RX pins."
+msgstr ""
+
+#: ../../en/units/synth.rst:42 ../../en/units/synth.rst:58
+#: ../../en/units/synth.rst:72 ../../en/units/synth.rst:84
+#: ../../en/units/synth.rst:95 ../../en/units/synth.rst:106
+#: ../../en/units/synth.rst:117 ../../en/units/synth.rst:126
+#: ../../en/units/synth.rst:137 ../../en/units/synth.rst:147
+#: ../../en/units/synth.rst:157 ../../en/units/synth.rst:170
+#: ../../en/units/synth.rst:184 ../../en/units/synth.rst:195
+#: ../../en/units/synth.rst:213 ../../en/units/synth.rst:225
+#: ../../en/units/synth.rst:238 ../../en/units/synth.rst:250
+#: ../../en/units/synth.rst:263 ../../en/units/synth.rst:274
+#: ../../en/units/synth.rst:291 ../../en/units/synth.rst:300
+#: 10ab5de45c9c4c76aa0b64cd93cd5939 1951bd61e7f743099d787bc14e624180
+#: 1d98714d8efc4816afc6451b86a4aeaf 2a72b4b56a094ac7a84774300b394d80
+#: 2f75637202024e52968f3f9dd579f0a5 34df0e9acab346c8b40ba6f0c9934b04
+#: 365c84d3e617467dad5afa5e28dda856 3dcfc4b878084882b9d03e6a18784660
+#: 42652726044041078f95b248210477ad 4678e52ee5e94cd9ae972ac4c49e770e
+#: 4e53f9215e5a4eb790299981053c5319 560ee68be79d4544874ca23acf8302da
+#: 5f9d686acc6447d39af61cdd6053c34b 752411502b0a4ababdcc5f5c548153ac
+#: 849d065030e841bc9ee2d9ee7c33db7b abb5dbd555284a28bb6fd4ea8c7046f1
+#: b04a9a4eefd2404697b7c8cb98e36b82 b795febd21864e798c086e46f1978edc
+#: cad4ee1315074d058676a3789bb7597e cf3aa5e37c6d4d909123336e8f136d13
+#: eca3ab64e7c24924acea5065ce05543d fdf7b24731ca4c64bfa7d10cb8a9cfc2
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/synth.rst:44 c286250d03074922933001e2ef166bca
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:6 fe3a037f07c14e1b8839f46c187f8dd0
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:48 0346b1eb28504925ad34ec53232e6d0e
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/synth.rst:52 97f00d1789a54dd792df634acb3c224c
+msgid "Sends a MIDI Note On message to the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:54 ../../en/units/synth.rst:69
+#: ../../en/units/synth.rst:81 ../../en/units/synth.rst:103
+#: ../../en/units/synth.rst:114 ../../en/units/synth.rst:134
+#: ../../en/units/synth.rst:145 ../../en/units/synth.rst:165
+#: ../../en/units/synth.rst:178 ../../en/units/synth.rst:192
+#: ../../en/units/synth.rst:203 ../../en/units/synth.rst:221
+#: 064c38ae15e8492486db76a85d41b5d9 1cfcab39ada140dea5c8637ca9cba200
+#: 206ea496b3e449b2ac0d593574c8c97e 2cdc10435c034d76983c0295b01e10dc
+#: 6937adb3e3194a0487bb7b94e91a52d3 a73e7150468c4d1a98d69dc6399e1578
+#: a82604c61bdd4d4dae227d0ca164f091 ba3e480bd28f488f8609b88d8f528b11
+#: dbdd221e5cc548e2a914c2946981bc95 de51820515604e699709deed54c94a42
+#: f923fd3e87f148ab8974917a6e1b14b8 fa1eb9d6d4e041c2bf64d3baaa292db0
+msgid "MIDI channel (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:55 ../../en/units/synth.rst:70
+#: 29137403daa34d8e9f2c2951077f3a09 a52debf00d4c4938b31989ca5a3232e4
+msgid "Note pitch (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:56 ../../en/units/synth.rst:93
+#: 3243f1de6a984f5889fd99035f1ad85d 7873bcfdc1ac46c8b6997b106cc4382f
+msgid "Note velocity (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:60 9aacfd56b85e43158143f08f1cbb772f
+msgid "|set_note_on2.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:21 850de29598924c65b614b6607e1133e0
+msgid "set_note_on2.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:62 ea434c4bf07246aebfec318d2fda579b
+msgid "|set_note_on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:20 e1a125c251f246aaa79c45de5f7302e9
+msgid "set_note_on.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:67 de9797af6afc4ad6ae4833c4a7d2c135
+msgid "Sends a MIDI Note Off message to the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:74 c9e6b9aa44584a729d161b75f11c82f5
+msgid "|set_note_off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:19 232dfa1b61fd47ebb1e5cca14b01bdc1
+msgid "set_note_off.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:78 87512f649f634726bc231a7039414520
+msgid "Changes the program (instrument) on the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:80 4b82b5da4a6d4ebbabddfd7fa4c4b1ff
+msgid "Bank selector (MSB) for the program change."
+msgstr ""
+
+#: ../../en/units/synth.rst:82 3463c6f161e74a82b9f52e2ef70aa10f
+msgid "Program number (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:86 ba9bd41b69c44feb86572a125e9b4cf2
+msgid "|set_instrument.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:15 5d568f0f0a9444319fb49a07ce028b7f
+msgid "set_instrument.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:90 51dc761d8f454bffb643a39e0b23512c
+msgid "Sets a drum instrument and plays a note on MIDI channel 10."
+msgstr ""
+
+#: ../../en/units/synth.rst:92 ae9b73fc751140c197c70d25f4277e7f
+msgid "Drum pitch number."
+msgstr ""
+
+#: ../../en/units/synth.rst:97 1caf13ca9b404184a30e306cb42a3ceb
+msgid "|set_drums_instrument.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:11 fd298adca97c4b4f86ae55fe5171d690
+msgid "set_drums_instrument.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:101 dfd694119c144945bdfcae441359a69e
+msgid "Sends a MIDI Pitch Bend message to the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:104 9a9695a85933478eb9f207130181be70
+msgid "Pitch bend value (0-16383)."
+msgstr ""
+
+#: ../../en/units/synth.rst:108 5cec55f3a7f0460eb4b0a060c2f39fdf
+msgid "|set_pitch_bend.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:24 ad109c5add5b4a0b957ffb7e0ac9c435
+msgid "set_pitch_bend.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:112 1b5796a04cdf467fb76ed46f5b133e29
+msgid "Sets the pitch bend range on the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:115 9363b97c610342d790a19c41629c61c4
+msgid "Pitch bend range in semitones."
+msgstr ""
+
+#: ../../en/units/synth.rst:119 cb1b297f058b445eb1ee8fbc76774418
+msgid "|set_pitch_bend_range.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:23 60dbac036d8e4c4e99e547f64ab27a75
+msgid "set_pitch_bend_range.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:123 785fad76e920468495c911ad6d83fd2e
+msgid "Sends a MIDI System Exclusive Reset command."
+msgstr ""
+
+#: ../../en/units/synth.rst:128 7861c1b9a29c4fafaa12593964a05cff
+msgid "|midi_reset.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:7 f0ccace2c7f14e6d95ccefa592b65eb0
+msgid "midi_reset.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:132 e92c6fe2288f4141ade0e4203971784d
+msgid "Sets the channel volume for the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:135 ../../en/units/synth.rst:155
+#: 3332d135c18046898105df585caa430d c061f4c2077342d484e84c689e6e6068
+msgid "Volume level (0-100)."
+msgstr ""
+
+#: ../../en/units/synth.rst:139 621c3b945c3345ca87922b919992b9b4
+msgid "|set_channel_volume.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:9 13aeda93db2f413fad2180408d9de7ae
+msgid "set_channel_volume.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:143 35e92386ccd940ff90dd6e868582e076
+msgid ""
+"Sends a MIDI Control Change message to turn off all notes on the "
+"specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:149 48b05e48f65048e79eab9e6d3ecac446
+msgid "|set_all_notes_off.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:8 5120092e8b124f8393603bcfdce5ea3a
+msgid "set_all_notes_off.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:153 3ace6c1c4ed74f319d897dd5846f6550
+msgid "Sets the master volume using a standard System Exclusive message."
+msgstr ""
+
+#: ../../en/units/synth.rst:159 ac9322e223674f4da8fa21048af382c1
+msgid "|set_master_volume.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:16 9508fa0fce2b4879b0decd2f3aa5b0f3
+msgid "set_master_volume.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:163 fbc9636c3ddf4970bc41402642e84bf4
+msgid "Configures reverb effect on the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:166 2c652dc740304bd793bce80cf7503cd9
+msgid "Reverb program number (0-7)."
+msgstr ""
+
+#: ../../en/units/synth.rst:167 aa89f217c226486a897905eb54550cc3
+msgid "Reverb level (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:168 d779b209cb0f4ff4abd4741c46c1c7ce
+msgid "Delay feedback amount (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:172 94f4922c76ef4304b50704c2af8086c9
+msgid "|set_reverb.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:25 32627e9704d847e0b90ed18c61b66bef
+msgid "set_reverb.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:176 77d7150ee69346c0b6b7996d4ae603f0
+msgid "Configures chorus effect on the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:179 3845e3ef329845f7ad36d51f0b8a1883
+msgid "Chorus program number (0-7)."
+msgstr ""
+
+#: ../../en/units/synth.rst:180 6c8a0135f40440b8bc8da1cc792d645b
+msgid "Chorus level (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:181 bc7a675e58b047f99ca6c9ba6fc74122
+msgid "Chorus feedback amount (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:182 b6d68cb8613e43b79d3382d0b93c57c3
+msgid "Chorus delay amount (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:186 eb28b04675c54145afce0669b1222cff
+msgid "|set_chorus.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:10 5772a1c6a5024fdf8835892eaa2c0567
+msgid "set_chorus.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:190 c3f82687fcf54aa4beb066a52708031f
+msgid "Sets the pan position for the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:193 5489b71b2f664749b27e604cdd02adb5
+msgid "Pan position (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:197 7017ad76992947c5a9bd75cc5afa0797
+msgid "|set_pan.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:22 22198ce8df6042298b1958fef40317f2
+msgid "set_pan.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:201 e0ce9dd0d3214c28a00936038ffa250c
+msgid "Sets the equalizer levels and frequencies for the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:204 c6e9fd38be4042f9a94a246320ccedaa
+msgid "Low band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/synth.rst:205 499fe1c581cb4e6d9f8f1ce076178f39
+msgid "Mid-low band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/synth.rst:206 5528ad12f6d048cf9b373e8a10c2b2d1
+msgid "Mid-high band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/synth.rst:207 61affb798fa446b3bdf6461af68b340c
+msgid "High band level (-12dB to +12dB)."
+msgstr ""
+
+#: ../../en/units/synth.rst:208 52178150b37443159c31a7771a3852a8
+msgid "Low band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/synth.rst:209 b5e1fa0d4e9d4830b3198608b29e8369
+msgid "Mid-low band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/synth.rst:210 31c1de31486b4b8bb03b3ecd80292df9
+msgid "Mid-high band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/synth.rst:211 f6d28ac62c124f00ab4a7a218dbe12a3
+msgid "High band frequency (Hz)."
+msgstr ""
+
+#: ../../en/units/synth.rst:215 fd2e43e97e414a4b9ca33db3c5e91f5c
+msgid "|set_equalizer.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:13 054721a012424880a81eac9c2646afc5
+msgid "set_equalizer.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:219 bf6f472674514e9381878ce2183c17e5
+msgid "Sets the tuning for the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:222 da4b9a801ef04f3d9cbc2c2c84d81372
+msgid "Fine tuning value (cents)."
+msgstr ""
+
+#: ../../en/units/synth.rst:223 50f7fa735a3c44368de5c396d4c7ffa9
+msgid "Coarse tuning value (semitones)."
+msgstr ""
+
+#: ../../en/units/synth.rst:227 fa0a2434351a409eb8d82b06de3c0f46
+msgid "|set_tuning.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:27 a800c62c1b3742408695502d4beb6bbc
+msgid "set_tuning.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:231 66a7de5ba12d499b8f6c4d8cdfc39741
+msgid "Sets the vibrato effect parameters on the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:233 52f8a303bd5b4f9abf6537b00a66094b
+msgid "The MIDI channel to apply the vibrato effect to (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:234 f2898e66da0c42bcba31e572c5aa93df
+msgid "The vibrato rate (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:235 ca5e755eb9a64a3e9486d252ba1ef4ef
+msgid "The vibrato depth (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:236 6bef7bdee2084a62ac99fa15980ce6f6
+msgid "The vibrato delay (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:240 f4115f8f32a540bea9c62281a859736d
+msgid "|set_vibrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:29 2ba8c42767ae46cd99612f9891463ce3
+msgid "set_vibrate.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:244 0c8f747765764c63a6e348474f66aae0
+msgid ""
+"Sets the parameters for a TVF (Tone-Voltage Filter) on the specified "
+"channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:246 907084995f264de4a12e11a304f64c5b
+msgid "The MIDI channel to apply the filter to (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:247 2db015d4a2194f7784b49c680dbf4f3e
+msgid "The filter cutoff frequency (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:248 fd9e66acafd54a2db606246ddd1faac3
+msgid "The filter resonance (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:252 7a8d68fc768d4468bb493484baa7da4e
+msgid "|set_tvf.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:28 a371eca7af634aeda48e523068910103
+msgid "set_tvf.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:256 5002137615cf4738b7593e30e6d16956
+msgid ""
+"Sets the ADSR (Attack, Decay, Sustain, Release) envelope parameters on "
+"the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:258 b7b28315b82c4338b5d272dc20417b24
+msgid "The MIDI channel to apply the envelope to (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:259 d6a70d87e3594a4ab9e2abb05b8d37a7
+msgid "The attack time (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:260 82100d8f41554d96a2b8a2ff8d8c248e
+msgid "The decay time (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:261 d0d87b4a3b504f008e1db174c7af3c70
+msgid "The release time (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:265 af1bcd90042f4135a26ecfcfe88c7e38
+msgid "|set_envelope.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:12 8e22c74ec1604e3a82ab8821572db756
+msgid "set_envelope.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:269 0e44471a7331463ab00edad6fb530a0a
+msgid "Sets scale tuning for the specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:271 8016eac4e1164e2d8d7490b91220f0fa
+msgid "The MIDI channel to apply the scale tuning to (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:272 d7b4753ea4bb49e187e51a87e4f9b548
+msgid "Tuning values for each note in the scale (0-127)."
+msgstr ""
+
+#: ../../en/units/synth.rst:276 cbd8ac11ad824f8ea081a5fb764323f8
+msgid "|set_scale_tuning.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:26 51c367f241ba40368bc544f9f0a21448
+msgid "set_scale_tuning.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:280 9345919995b040e993cb93d9e8abae18
+msgid ""
+"Sets modulation wheel parameters that affect various effects on the "
+"specified channel."
+msgstr ""
+
+#: ../../en/units/synth.rst:282 d9ccfe5d417641d3a05134e522876d2c
+msgid "The MIDI channel to apply the modulation to (0-15)."
+msgstr ""
+
+#: ../../en/units/synth.rst:283 eb9ca2bb71fa4ddaae54cb276bac1b11
+msgid "Pitch modulation depth."
+msgstr ""
+
+#: ../../en/units/synth.rst:284 b5c87fd6b09a42debeb7f887282c2554
+msgid "Cutoff frequency modulation depth."
+msgstr ""
+
+#: ../../en/units/synth.rst:285 1446c62f50734415a683c6d1dc8e63c9
+msgid "Amplitude modulation depth."
+msgstr ""
+
+#: ../../en/units/synth.rst:286 90741c3052bc4cea9492a409a47bedb2
+msgid "Modulation rate."
+msgstr ""
+
+#: ../../en/units/synth.rst:287 23c3831dcdd04077b026ee0442b0bda2
+msgid "Depth of pitch modulation."
+msgstr ""
+
+#: ../../en/units/synth.rst:288 f7d3ef2ba0a34e3a8476be406f24b558
+msgid "Depth of TVF modulation."
+msgstr ""
+
+#: ../../en/units/synth.rst:289 649d2e64cd7748f39e600eb2dd975375
+msgid "Depth of TVA (Tone-Voltage Amplifier) modulation."
+msgstr ""
+
+#: ../../en/units/synth.rst:293 5f1e33009174449a9ca5fdff582f2102
+msgid "|set_mod_wheel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:17 76c038aaa3c2455cb64f4e45933df137
+msgid "set_mod_wheel.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:297 63c3c6d74f2440178c1535b45c3e97d4
+msgid ""
+"Sends a System Exclusive message to set all drums on channel 10 to "
+"default values."
+msgstr ""
+
+#: ../../en/units/synth.rst:302 b011a2ded3424de599319e821578f29f
+msgid "|set_all_drums.png|"
+msgstr ""
+
+#: ../../en/refs/unit.synth.ref:30 bb3a860266084cbaace76391cb279b95
+msgid "set_all_drums.png"
+msgstr ""
+
+#: ../../en/units/synth.rst:306 abbfb0e29ef34de28353db06fc4e96db
+msgid "Writes a MIDI command to the UART interface."
+msgstr ""
+
+#: ../../en/units/synth.rst:308 7fe43bae212f45b299160c21f83377f7
+msgid "List of MIDI command bytes."
+msgstr ""
+
+#: ../../en/units/synth.rst:312 68c097406039467baef591cd9c910921
+msgid "Maps a value from one range to another."
+msgstr ""
+
+#: ../../en/units/synth.rst:314 c35b007f56b34e33bc4072530ce48508
+msgid "Value to map."
+msgstr ""
+
+#: ../../en/units/synth.rst:315 4610c6cf822c402e9370a59a38c7068a
+msgid "Minimum value of the input range."
+msgstr ""
+
+#: ../../en/units/synth.rst:316 a576ddd9258146d894fe62c0fa2d8be0
+msgid "Maximum value of the input range."
+msgstr ""
+
+#: ../../en/units/synth.rst:317 b70200c2295b4843a9a2f34da43005a7
+msgid "Minimum value of the output range."
+msgstr ""
+
+#: ../../en/units/synth.rst:318 340762298a174f7ea3e31bf2265f2fb5
+msgid "Maximum value of the output range."
+msgstr ""
+

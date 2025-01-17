@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.reflective_ir.ref ../../en/units/reflective_ir.rst:2
+#: 55d7a656208049d1a29b516794882646 f92753c3252746ba9813a9c5166c32a6
+msgid "Reflective IR Unit"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:6 498db98a8e8e45dc9eae7a7d5c4e5c6b
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:8 540c88d504814800869d42310bad4e4b
+msgid "|Reflective IR Unit|"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:11 6de4e8c9b39c4053bb65b793c388933f
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:18 a61fea2ef93b4ab48ad089aa44d7bcdc
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:20 f4a003fa81bb4b2dbf07fe2d8c535e26
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:19 72007a05c1d54f0595e8c262d796159a
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:25 f8c3c5c81cb8424db88cb4acf272e308
+msgid "|stickc_plus_reflectiverir_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:29 93fa6ba44499460caff18a60ce852998
+msgid "class ReflectiveIRUnit"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:32 a6de4c3cbd1e4492be721e72a3d7c511
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:36 aa55555257d541a6b86a87ef69b4de83
+msgid "Create a ReflectiveIRUnit object."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst 410db125e12f4f19b9313bb9236d4264
+#: da13e9a7984f49f49e52e2ef7991db08
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:38 0aa7aa8981694e0f96031e0ccd1a4009
+msgid "Specify the port to which the Reflective IR Unit is connected."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:40 ../../en/units/reflective_ir.rst:52
+#: ../../en/units/reflective_ir.rst:61 ../../en/units/reflective_ir.rst:70
+#: ../../en/units/reflective_ir.rst:79 ../../en/units/reflective_ir.rst:91
+#: 0295ccd8eb7147afb93f4b08e0bea612 2e69756368d8491da0b6022299800dfd
+#: 530b41e141114bec8229cfbc395a7393 672b4a77588642a0a2a8039fbed044b9
+#: 9aa4b099b2844d73b35ceae75382929a af12632ea691439f8e815c4b634cc670
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:42 049e08f56cee402b82fc68e1f0999292
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:7 0b1690f072db489290af9bb147522e98
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:46 ec1e209c33ae4888babee063361a5b1c
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:50 63017cb2b6024ab6abf9de39f4b3d63c
+msgid ""
+"This method allows read the ADC value of the Reflective IR Unit and "
+"return an integer value. The value ranges from 0 to 65535."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:54 e99ffd252ec043f3ae59ae35bea6da8a
+msgid "|get_analog_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:15 878dd1492027436386e73f83925725b4
+msgid "get_analog_value.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:59 6ad696e7e7a8404d98ffded75314e143
+msgid ""
+"This method allows read the digital value of the Reflective IR Unit and "
+"return an integer value. The value ranges from 0 to 1."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:63 69e112c1f55645dc83fec51da35d0315
+msgid "|get_digital_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:17 4ac2a683d11440b2a2ea2d0b66a5055b
+msgid "get_digital_value.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:68 28d1782cf4314af1a4053b256a33cf8b
+msgid "Enable Obstacle detection event"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:72 81f8cb8cea48476081ef75a587782e30
+msgid "|enable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:9 b62b9f62e855408e915862007adbb3f3
+msgid "enable_irq.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:77 d472c651355f47cbbb01c435d65e430c
+msgid "Disable Obstacle detection event"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:81 a8df1d87f8ab440989df5018b95f1fc8
+msgid "|disable_irq.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:11 ce46be761f894b72877a8ecfe510dff4
+msgid "disable_irq.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:86 22099638c144438d823b21afdc2c8fc9
+msgid "Set the callback function for the Reflective IR Unit."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:88 3f045665ddf3492c962c298f4c79e90f
+msgid "The callback function to be set."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:89 3e6c045e0d544ec09eaf02c71be6f289
+msgid "The trigger condition for the callback function."
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:93 6f09b4986d17429bb282abc55b04491a
+msgid "|set_callback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.reflective_ir.ref:13 e716ef861e014332bcb6738575bb5a24
+msgid "set_callback.png"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:96 7a9afc5e81f6426b9eebb9554d53fc70
+msgid "Constants"
+msgstr ""
+
+#: ../../en/units/reflective_ir.rst:101 314ba607c0af4aa590f6953f636f755c
+msgid "select the EVENT type of the Reflective IR Unit."
+msgstr ""
+

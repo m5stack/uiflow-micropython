@@ -1,0 +1,554 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/sen55.rst:3 ../../en/hardware/sen55.rst:16
+#: 9c35c5ccbdd141fa9c005149c7483be9 ed1d3e13e0e847ca95676bf89859cdf6
+msgid "SEN55"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:7 48ab3afb666f47ae985e6ab8eb75bc5b
+msgid ""
+"The SEN5x is a unique sensor module family combining the measurement of "
+"critical air quality parameters – particulate matter, VOC, NOx, humidity,"
+" and temperature in a single package."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:9 e7dc935743fd450186f4d704233d13ca
+msgid "The specific support of the host for SEN55 is as follows:"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:16 fe3d3e7d71ea409ebccf5182ec693636
+msgid "Controller"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:18 a7e012685d6c4a3586aab95ebb935e8f
+msgid "AirQ"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:18 365adbe555454b888a06eec503b2236c
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:23 51b2ddc603284ac1834040a0c958de43
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:30 c1e9d0a7801b451cadf9dd89703ed20d
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:32 efe82bd5362240dc8785c4153bf9b412
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:40 9dccbe7da09e4c7ca84a7b797b8d887c
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:36 4c3e0751de4f4d8882ea2d270e9fe4ea
+msgid "|airq_sen55_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:39 b0e2e955428b436894cfd9ac397bf2a5
+msgid "class SEN55"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:42 22c5ff44989449989c324f1a93b2e295
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:46 74714d7e22154a188e9a3ee3b6112f3d
+msgid ""
+"Initialize the SEN55 sensor with I2C communication, setting the power "
+"control and ensuring the sensor is connected."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:48 ../../en/hardware/sen55.rst:61
+#: ../../en/hardware/sen55.rst:70 ../../en/hardware/sen55.rst:85
+#: ../../en/hardware/sen55.rst:99 ../../en/hardware/sen55.rst:242
+#: ../../en/hardware/sen55.rst:252 ../../en/hardware/sen55.rst:262
+#: ../../en/hardware/sen55.rst:272 ../../en/hardware/sen55.rst:282
+#: ../../en/hardware/sen55.rst:292 ../../en/hardware/sen55.rst:302
+#: ../../en/hardware/sen55.rst:312 15aea4cf3bc8497d8c9ca0ede32a14f1
+#: 246cea5f9d2e45cfaa6afbce69b7f3ad 263669390d6c4a0b95fd400b381449cd
+#: 3c9881fa189947e7ab1a7b31f85d8a04 585ee426d7ba4f37909578144452050d
+#: 6d3d8c394c294fb697c43267703b5ba2 771ea5f6f7a342709d222f27e97a1ad3
+#: 7beea603a03343099db61fd773e0e847 b0999d6f7fc6434f9d4560a337d00c1f
+#: c72b41b4909642088c77fcd2f450fbf6 ca2cd7fff0d8464e990ce1e7abf06c1d
+#: dab846fe60f344f082eafacad8c1bfea ed41a7a9597c45e69d58963e53a173b4
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:50 bb8c4dfa43614d03840fb3735e68085f
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:1 3b6a915acdb344349dbb9097b00feee7
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:53 a500a3ba36ad4d98902ac82bd64e422d
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:57 7ad012082b984c4398b2dd86d6ac6438
+msgid "Set the power state of the SEN55 sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst 13e8fbf0f6d947bf9d49ae92c8637ab0
+#: 27959a1ccf2940b7801be1ef59b4d248 3ee5c7f1e7964ab18924d82c973dc97c
+#: 59eabe0319d044ca8cb4e47e675f5dee 74e1b2e433194a6886147bde1024c901
+#: a8326e8651974f75a8a456a92d9521ea c50823c5eade445ab2ccd2d4a45a2ce6
+#: cc356f3f1423420fb32149e179423901 cde1de8cbec54385ab84cf4a220303ab
+#: d1fb42ec9c324282bc35f44ffaf8b4bf df5ca391a9ef412aa7edec11cd1a0090
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:59 e295f98bd9a940079cb9dc59c9713106
+msgid "The desired power state, True to power on, False to power off."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:63 7f7af6de4bd54b8c9166bc5115a443ae
+msgid "|set_power_state.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:2 505c6edce9b9472dacf6d71bfba120a3
+msgid "set_power_state.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:67 eb20424993f14ffdbd6227798780f116
+msgid "Get the current power state of the SEN55 sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:72 63cb5d61327d4238b053ffd4cc3bf115
+msgid "|get_power_state.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:3 29d7987f3d6a42d3869c04f990beb882
+msgid "get_power_state.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:76 340877c082944076a36a2e2fec28bb81
+msgid "Check if the SEN55 sensor is connected via I2C."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:81 1c648076e8f7482db92ccdd2316733d4
+msgid "Set the measurement mode of the SEN55 sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:83 47f9ceba430e4c23adf31f65a8da1fbb
+msgid "1 to start measurement, 0 to stop measurement."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:87 883e1b1c9c244962b335b126ad56c704
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:5 60e09a8e6e4c4fadb31c6d2ffa9ee81a
+msgid "set_work_mode.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:91 61ab0c21915246b2aab4875901540592
+msgid ""
+"Get the sensor data including PM1.0, PM2.5, PM4.0, PM10.0, CO2, "
+"temperature, humidity, VOC, and NOx."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:96 d35fbbb4891d4e92a988d6a53b6beb2a
+msgid "Check if the sensor data is ready to be read."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:101 11b6c7fcf0b04b9cbe9214c747f39eb8
+msgid "|get_data_ready_flag.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:7 d6d4b2c4b5fa4469836acd6ebe94e444
+msgid "get_data_ready_flag.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:105 74b089056bba4a3cbc365a3bd3e9cf9c
+msgid "Set the temperature compensation parameters for the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:107 d8b1c9780fd24ca2870848449d7f0953
+msgid "The temperature offset in the sensor&#x27;s compensation algorithm."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:108 aa209cfb79ed43cd9f2365d650530b59
+msgid "The temperature offset slope in the sensor&#x27;s compensation algorithm."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:109 4f9d4d102b6d43b4b18f0f51a5acfbfb
+msgid "The time constant for the temperature compensation."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:113 8c53fa8bd1214871b32a2d41e520da08
+msgid "Get the current temperature compensation parameters."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:117 b9cdc6b615714ebbbd4c3158440b6193
+msgid "Set the warm start parameter for the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:119 5861edda9ca64480a1f89f8b5993ab59
+msgid "True to enable warm start, False to disable it."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:123 fdbd7abcd0424d1fa9cbe8da70d2a0c2
+msgid "Get the current warm start parameter."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:127 176d232ae222456d9ce2616c3841f593
+msgid ""
+"Set the VOC algorithm tuning parameters, including index offset, time "
+"offsets, and gain factors."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:129 9fbac5b599a44931aa7dc527b4f606d4
+msgid "The VOC index offset, default is 100."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:130 20ba2a1f0dd74618a1627b25f5e5b067
+msgid "The VOC offset in hours, default is 12 hours."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:131 52023d1fa9754ea4b662dc37a090d2bb
+msgid "The VOC gain in hours, default is 12 hours."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:132 3a3bfe93ab344e27bcec6a8db89bee07
+msgid "Maximum gate duration in minutes, default is 180 minutes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:133 a3c765471fd640ab9edaf9f654592be3
+msgid "The initial standard deviation, default is 50."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:134 3866bae2c6574fa8acae49283dea44ba
+msgid "The gain factor for VOC, default is 230."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:138 5745b5b0475c4535bfd12c645ab57db9
+msgid "Get the current VOC algorithm tuning parameters."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst 1db6d9d4c34047ecb391a5a8879879fb
+#: 243670381e814862b4e76ddcfb8ce2a2 2d17061e426e44c0a74988266d0a60cc
+#: 440f00b234a649af809d71618737ff98 4d2cae3328b64652b023166f285d9360
+#: 5b531b4768824db2866c24372ddd1c05 5dc5fec3605846708b73345b61e119aa
+#: 60c0aec28a9447009225db9fb18cf1f6 64ad929345fb4b07a3d0fe05d88190e1
+#: 8184d88e0f924b6681f7ac49c946525d 84b3918da2a1438c83ca648f01de9cdf
+#: 869057715eb7430eb5d3f9a5ccc267d7 86ce482472ed457c9306d9dbf54dc6d9
+#: 889f0f5a1acb40f1bf34c228d7433020 8e85268ada894f7d936d751fcf4e01f8
+#: c183dd8bc466457bb701499e3add7c6b ffd051dc999b4fdc8faa7ea0bce270a9
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:140 33b21d69d356404bb1e12d3f99866433
+msgid ""
+"A tuple of VOC tuning parameters: index offset, offset hours, gain hours,"
+" max gate duration, initial standard deviation, and gain factor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:144 c2bfa985e0714acc9e44f09bb711d06f
+msgid ""
+"Set the NOx algorithm tuning parameters, including index offset, time "
+"offsets, and gain factors. The standard deviation estimate is fixed at 50"
+" for NOx."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:146 57f345ac992d442da5fe78b7d06415ea
+msgid "The offset value for the NOx index."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:147 ef4e2b8f8e2548aa8378a14d1c83a5e2
+msgid "The time offset in hours for the NOx algorithm."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:148 1e38a784d9974317ae3b5105aee62706
+msgid "The gain factor in hours for the NOx algorithm."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:149 57a17cf409a24c51ae9f6f23c65436ba
+msgid "The maximum gate duration in minutes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:150 93c6798794bc4a6a9e6059d5e8053d7c
+msgid "The gain factor for the NOx algorithm."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:154 f883a65ce67d4a768d3d4bb79d821523
+msgid "Get the current NOx algorithm tuning parameters."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:156 a48a72fd00cc42e0a72b120c0e85aa1c
+msgid ""
+"A tuple of NOx tuning parameters: index offset, offset hours, gain hours,"
+" max gate duration, and gain factor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:160 11d1edbf65814f898d4cffed14bb0799
+msgid ""
+"Set the RHT acceleration mode, which affects how quickly the   device "
+"accelerates during measurement."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:162 87841121fd9b4f86b2ad0d651eb434e2
+msgid "The acceleration mode to set: 0 for low, 1 for high, or 2 for medium."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:166 9ab57392e2314d6392fa6dfb594234fb
+msgid ""
+"Get the current RHT acceleration mode. This parameter can be changed in "
+"any state of the device, but it is applied only the next time starting a "
+"measurement. The parameter needs to be set before a new measurement is "
+"started."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:168 53b82abd53d844e5896cf845b87e4729
+msgid "The current acceleration mode: 0 for low, 1 for high, or 2 for medium."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:172 8d7c40b90ea4446c85b2153d929a5a57
+msgid "Get the current VOC algorithm state."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:174 36e17dfd7c5143f9a8f940e6013e298a
+msgid "The VOC algorithm state in bytes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:178 d9236674ef8e452e9d5949a225c58582
+msgid "Set the VOC algorithm state."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:180 68b62330d76540efbbc5c6f0b98a33b3
+msgid "The VOC algorithm state to set, represented as bytes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:185 3a86e1d0f11c4a8299d256ff6ece06b9
+msgid "Start the fan cleaning process to remove contaminants from the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:189 97d5d8a941134012807aa1f6b9ab1f24
+msgid "Get the current auto cleaning interval."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:191 e8451fe507c0479c862492d3b7c5d966
+msgid "A tuple of the cleaning interval parameters."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:195 1339cefaa05842e4861dc74f2046cdfa
+msgid "Set the auto cleaning interval."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:197 1b2e492fdaa94f71947e4a4ddf954446
+msgid "A tuple representing the new auto cleaning interval."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:201 24b3487dd40b425a83a0e8acf099d864
+msgid "Get the current device status."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:203 37e9dd3459ea4cd8a0bbc9b88fca4fae
+msgid "The device status in bytes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:207 d3461bc3c24a480faf8f3d97956afeee
+msgid "Clear the device status, resetting any error flags or states."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:211 5042e13557f5487c83f7ea770b6ba932
+msgid "Get the unique serial number of the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:213 664b213ae4c24a29967bf518c1c7883a
+msgid "The serial number of the sensor as a string."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:217 26c89bdff9b5420ea506c8b263d6665a
+msgid "Get the product name of the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:219 8ac1e398232c4ff59155bde18551abf5
+msgid "The product name of the sensor as a string."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:223 2ba7c289c2684477b09d6ac66bd979bc
+msgid "Send a command to the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:225 ae958f3415f34647bc5cd6c1d11f6420
+msgid "The command to send, represented as a 2-byte value."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:226 5ff243ee6d674542af0eabdd04ecd778
+msgid "Optional value to include with the command."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:227 050b086eb56a47cd86f6eef1e337ccb5
+msgid "A flag to indicate if the value is in bytes format."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:231 d572a8c2eab2477cb60cb71189fa61a9
+msgid "Read the response from the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:233 49a5bbdb68f646a3a117a065a32b7a5e
+msgid "The response data as bytes."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:234 d9484a73f4ee4041bdd7acf181a7703d
+msgid "The number of bytes to read from the sensor."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:238 2f8deca378cd46c6b56be7b0d4f7d491
+msgid "Get the PM1.0 concentration value in micrograms per cubic meter (µg/m³)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:240 1edbe7bd501e417ab2cd059329fcd1bb
+msgid "PM1.0 concentration in µg/m³."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:244 8c279fc782ec411f84ea887ced89b8f0
+msgid "|get_pm1_0.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:31 a61398d5ef02479db2a71cbd2a32837c
+msgid "get_pm1_0.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:248 ca0f4f3989bd4fabbb35670878718324
+msgid "Get the PM2.5 concentration value in micrograms per cubic meter (µg/m³)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:250 94156ba4697341f99010690ba4ed8a25
+msgid "PM2.5 concentration in µg/m³."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:254 532a38c91c0940a7a719c60ac65eeb8b
+msgid "|get_pm2_5.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:32 ad35be02a0f8423f997a77b28d450ee7
+msgid "get_pm2_5.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:258 a1a2e2d0cf774a0a8ef88c113424cdc6
+msgid "Get the PM4.0 concentration value in micrograms per cubic meter (µg/m³)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:260 b449f01241cd4dabb20a49d6628af884
+msgid "PM4.0 concentration in µg/m³."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:264 86f5d6d6c30648dcbb72ba207e96b8a8
+msgid "|get_pm4_0.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:33 7c33c1a2966744fea72b16cadf042cc7
+msgid "get_pm4_0.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:268 e9c4762a2dba46e5940a6a07e5261b7f
+msgid "Get the PM10.0 concentration value in micrograms per cubic meter (µg/m³)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:270 6f707e0eff184cf8a84df9313c555499
+msgid "PM10.0 concentration in µg/m³."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:274 a34d2ccdbbc24c0f95a7a87e04709849
+msgid "|get_pm10_0.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:34 13bf8aa8cbdf4201924efd97d757d963
+msgid "get_pm10_0.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:278 e0e0a7a45ee74924a2d55bf02033d538
+msgid "Get the humidity value in percentage (%)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:280 1d14af92147e4294971631a495720757
+msgid "Humidity in percentage."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:284 9f3942967fcc482d9342399a10efe76e
+msgid "|get_humidity.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:35 9e53e942f95b49acb7d86e898c41850b
+msgid "get_humidity.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:288 b0e3c0d38bd64288a7b5ed78a6d35119
+msgid "Get the temperature value in degrees Celsius (°C)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:290 872bca3ea1d74516b9bc1d7c86250ec3
+msgid "Temperature in °C."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:294 ac75fa8a874d4819bd349fb1f92b5437
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:36 9af08c34983e44d1914653015a793d1a
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:298 f8ca1716914a4e61af086a0bd239b9c4
+msgid ""
+"Get the Volatile Organic Compound (VOC) concentration value in parts per "
+"billion (ppb)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:300 d3e54b8025544fddb344b688064bd457
+msgid "VOC concentration in ppb."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:304 1a1dc158ffda4a47b7a1586264febdc1
+msgid "|get_voc.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:37 1b02559f6cab45caac458c5dfb77924c
+msgid "get_voc.png"
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:308 583b1e095bf942839dee56005cd6e761
+msgid ""
+"Get the Nitrogen Oxide (NOx) concentration value in parts per billion "
+"(ppb)."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:310 04894451f3504c43b36767f4ad3b8fb2
+msgid "NOx concentration in ppb."
+msgstr ""
+
+#: ../../en/hardware/sen55.rst:314 e8c9439fb4f640faadf2c7d832454338
+msgid "|get_nox.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sen55.ref:38 7c12fb9b25b24b9fba5f66636151bd7b
+msgid "get_nox.png"
+msgstr ""
+

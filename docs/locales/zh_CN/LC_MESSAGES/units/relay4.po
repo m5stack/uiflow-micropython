@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/relay4.rst:2 dbf6c58cbed04a928b560892c7597f80
+msgid "Relay4 Unit"
+msgstr ""
+
+#: ../../en/units/relay4.rst:6 ec77ef20288447a2964c9f8af72c26f5
+msgid ""
+"4-Relay unit is an integrated 4-way relay module which can be controlled "
+"by I2C protocol. The maximum control voltage of each relay is AC-250V/DC-"
+"28V, the rated current is 10A and the instantaneous current can hold up "
+"to 16A. Each relay can be controlled independently, each on it's own. "
+"Each relay has status (LED) indictor as well to show the state of the "
+"relay at any given time."
+msgstr ""
+
+#: ../../en/units/relay4.rst:13 f4ad543799c8487f945eb9881351e97a
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/relay4.rst:15 62f545f90d5f4ecfade7d94175542ad4
+msgid "|Relay4Unit|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref ab0c535ad7b8448ebd7081ffbd3a706f
+msgid "Relay4Unit"
+msgstr ""
+
+#: ../../en/units/relay4.rst:18 8f809f77f5f14f0db58129756dabc019
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/relay4.rst:25 737b8316c02c4c7287f9c5e9a6adf00d
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/relay4.rst:27 c5bf20c2c2574c148c88a4d3a3f6ac45
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:16 739c6db119854b57a25d8763011ca1b0
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:31 375f593095f7403eb0c77a352bb3d5f8
+msgid "|cores3_relay4_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/relay4.rst:35 6ef8a9044a5c447abbc7f85c456eabb1
+msgid "class Relay4Unit"
+msgstr ""
+
+#: ../../en/units/relay4.rst:38 38636211e59b449583323b09ea9765a6
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/relay4.rst:42 7134ade777d04c7a8400ebec8a0f36b0
+msgid "Initialize the Relay4Unit object."
+msgstr ""
+
+#: ../../en/units/relay4.rst 36a12cf4c3784cd08b7a973597b5e490
+#: 42b1b1016d13418cae633daf80bba5bc 6af34ac69a4a47a3ac4ab9a80c265199
+#: 6b2427286aeb4ec3b275b3715ec5e2f3 9364fff9d09341ed965be31907c91c9c
+#: a8d275b7dc4241a98a5630e93e81c9d7 eca45d1930384aceafedeef9c536b963
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/relay4.rst:44 44f00c87d77d43378a29523271e421a1
+msgid "I2C port to use."
+msgstr ""
+
+#: ../../en/units/relay4.rst:45 bc873892ab8f426f90de35d8efe3b190
+msgid "I2C address of the Relay4Unit."
+msgstr ""
+
+#: ../../en/units/relay4.rst:47 ../../en/units/relay4.rst:65
+#: ../../en/units/relay4.rst:80 ../../en/units/relay4.rst:91
+#: ../../en/units/relay4.rst:103 ../../en/units/relay4.rst:116
+#: ../../en/units/relay4.rst:128 ../../en/units/relay4.rst:139
+#: 1cb35fc8962c4e67baf17ee21ed7baf8 5d4a137993a44a5f8cd4d0d5d7e6d55e
+#: 649ee1153f8448a3b2368ab6e4d4f045 64d641fef62b4775a3e128900b7d5be0
+#: 64fa55d8a19f4f24a830c430e69d6e61 7aaee47137cb4efb84d767a9ff225235
+#: 9c12b24ff8e2445ea8b7537e37ee4926 b862225a11b94f71b264ff7c3221d0ef
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/relay4.rst:49 22d8d55bc90e4a63b29db0cf48a4ce43
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:7 dd153df507c049029f945a30bde34672
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:53 b7fe58924e4842b0a33fa552d470928b
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/relay4.rst:57 4318d526984e4b9ca15fef9c772c960f
+msgid "Set the mode of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:59 ../../en/units/relay4.rst:74
+#: 477937ba39b9465aa99de6645672855a 844556e435ae45bea01c76ef3e919203
+msgid ""
+"The mode of the relay  Options: - ``Relay4Unit.ASYNC_MODE``: async - "
+"``Relay4Unit.SYNC_MODE``: sync"
+msgstr ""
+
+#: ../../en/units/relay4.rst:59 ../../en/units/relay4.rst:74
+#: bca4f146e09c4adbb308749114486bd1 cdc43b2e2d6945f69ec667d76e33e9f5
+msgid "The mode of the relay"
+msgstr ""
+
+#: ../../en/units/relay4.rst:61 ../../en/units/relay4.rst:76
+#: cc95ff8cccf0413886440d4ebc1c186d ea283e19565b4d0f8f7d44994114cc61
+msgid ""
+"Options: - ``Relay4Unit.ASYNC_MODE``: async - ``Relay4Unit.SYNC_MODE``: "
+"sync"
+msgstr ""
+
+#: ../../en/units/relay4.rst:67 12e3c587812341009e8acadc1c4dd2c3
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:8 5c399b9fa5b34a209d5a4c9d639f6c34
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:72 2e567da424634f5eaec0f066476bf12c
+msgid "Get the mode of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst b2c38f80643b4b6284f0585c966940a5
+#: fa6326ebf526484f8a4f0eb7a5ce3144
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/relay4.rst:82 15db592adb564809b26b0a1a8486d201
+msgid "|get_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:9 010ce43588fe40bb930377a2555bf448
+msgid "get_mode.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:87 a01d8888a5c24e95afa8ffeca12b989b
+msgid "Get the state of the LED."
+msgstr ""
+
+#: ../../en/units/relay4.rst:89 ../../en/units/relay4.rst:100
+#: 50ff2b61c0274245921abf550de60a69 9ac50f857b194ba6870a6c42493471c8
+msgid "The number of the LED."
+msgstr ""
+
+#: ../../en/units/relay4.rst:93 7311d6a35a054df78a6accbac0c3706a
+msgid "|get_led_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:10 53691d299e3246a0a197e5b4b92f526a
+msgid "get_led_state.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:98 6b239e297d364444bcdd1ab8ac2fc008
+msgid "Set the state of the LED."
+msgstr ""
+
+#: ../../en/units/relay4.rst:101 68a8a3e87ef84f549f5eeb7557ef3597
+msgid "The state of the LED."
+msgstr ""
+
+#: ../../en/units/relay4.rst:105 46f6829d667a4132949422a603957757
+msgid "|set_led_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:11 11519ad90d344b8d823f945db46a6fc5
+msgid "set_led_state.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:110 89af0d594fae4d89af442e78f3f1ee6f
+msgid "Get the state of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:112 ../../en/units/relay4.rst:125
+#: 47dbe8f268024f4bab37c0e87142e9d1 c0fccc2ebd5245ce8c7ec0d0e1ddeb89
+msgid "The number of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:114 ../../en/units/relay4.rst:126
+#: ../../en/units/relay4.rst:137 0dc79d9883c545bc9d5c060bb8cee484
+#: 2106a0e2743c463492e84d15cfe13e50 4d114986064844229e9773b8a1241948
+msgid "The state of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:118 244b9bd77d7048238b5cdf16189ca279
+msgid "|get_relay_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:12 07bda822e74643279893a52eb6fbe4f7
+msgid "get_relay_state.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:123 8f640eb596ce4b9d9ba9660e2ab0aba2
+msgid "Set the state of the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:130 3093e474922b496794e6de3fe3784ddc
+msgid "|set_relay_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:13 f66350d2f6284dcc814fd85054036961
+msgid "set_relay_state.png"
+msgstr ""
+
+#: ../../en/units/relay4.rst:135 d2aafb244c5b40e296c4cb9509b1dde1
+msgid "Set the state of all the relay."
+msgstr ""
+
+#: ../../en/units/relay4.rst:141 7238c76d5c2341c49e5b1eb63f2ea060
+msgid "|set_relay_all.png|"
+msgstr ""
+
+#: ../../en/refs/unit.relay4.ref:14 05d585b76e1b408d813549dd12360f20
+msgid "set_relay_all.png"
+msgstr ""
+

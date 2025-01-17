@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/encoder.rst:2 b11da7f4566c4ef28273f261091dd97b
+msgid "Encoder Unit"
+msgstr ""
+
+#: ../../en/units/encoder.rst:6 225cd0ec0c2849ea90e743ae7f898733
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/units/encoder.rst:8 97d46f1df2734e929feb38136f2b4d9d
+msgid "|Encoder|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref c54a50d6611a42638f32b6d37c96faea
+msgid "Encoder"
+msgstr ""
+
+#: ../../en/units/encoder.rst:11 6083e3a547014a28bdbb1170d26c23b6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/encoder.rst:18 c9fe8fd09325432a965802b095e401a1
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/encoder.rst:20 27bf55e180b24b4a8d98e2736f9ba338
+msgid "|example.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:7 ff06ed59ef3443c383d4f8898b2627f9
+msgid "example.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:25 1b9d631c16c74360bfc46e828aaceda5
+msgid "|stickc_plus2_encoder_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/encoder.rst:29 aff6123b27ce40fbad4ee930bace26c2
+msgid "class EncoderUnit"
+msgstr ""
+
+#: ../../en/units/encoder.rst:32 1f7f7e7dee8447359c2741f721d1a317
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/encoder.rst:36 1695b66d5fe44182b965e25e79484b97
+msgid "Creates a Rotary object."
+msgstr ""
+
+#: ../../en/units/encoder.rst 1d22c00f394c4c18ade467454df8a777
+#: ab5817d3af6444c1b4adbce230f7350c d0d9a4f1781a43dd8ecaff519443832b
+#: e2b1e9f173e8415fb39cdde93e8f340c
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/encoder.rst:38 4a9ca5a1743b45c4ba51a80cecb4fe82
+msgid "I2C object."
+msgstr ""
+
+#: ../../en/units/encoder.rst:39 d77ec2e000264ff9af8a24b10f94eaa6
+msgid "I2C address, Default is 0x40."
+msgstr ""
+
+#: ../../en/units/encoder.rst:41 ../../en/units/encoder.rst:53
+#: ../../en/units/encoder.rst:62 ../../en/units/encoder.rst:72
+#: ../../en/units/encoder.rst:81 ../../en/units/encoder.rst:92
+#: ../../en/units/encoder.rst:101 ../../en/units/encoder.rst:113
+#: ../../en/units/encoder.rst:124 3a454cd6b14b44af96cc592fcaffadcf
+#: 8eba2ae9d06c420a9a641e119fb3162e a4ddc6a486d847e08f500da954c3e269
+#: a8144994717d4b6aaeb2b1de010b0ea3 b3b54f9c17ba4ecd9cb70e6839581bf5
+#: cf83466a5ef74fd3979e725e2aafb071 f8a8716578af4868b01137df68d96ad5
+#: f9d3d622859f484f8a6616b0ed03ad9a fffc680a55c54b178e3ee975313eb929
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/encoder.rst:43 7e7ff7a028cd4a95bf3d7c9633181cfc
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:9 648b7ac4e1954b35b19c59bf58c8fb78
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:47 063d158e6cd249dcbdff62edc0242031
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/encoder.rst:51 17827889a16e4b2ea5df70bff83a1a29
+msgid "Gets the rotation status of the Rotary object."
+msgstr ""
+
+#: ../../en/units/encoder.rst:55 a8c0ea26a9214b81a050007b0a5e0976
+msgid "|get_rotary_status.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:11 bae61fc333a54336b79e5bffaf362faa
+msgid "get_rotary_status.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:60 1e57a3194f19485bbadcd1bbf44c0bea
+msgid "Gets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/encoder.rst:64 bf6edd85c37c4be9898d63236613e076
+msgid "|get_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:13 1f0e6e309db348de924bf0b9ee4b82a2
+msgid "get_rotary_value.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:69 8258d9da2e7f4531ac4bde82216b29a8
+msgid ""
+"Gets the rotation increment of the Rotary object. Can be used to "
+"determine the direction of rotation."
+msgstr ""
+
+#: ../../en/units/encoder.rst:74 eba9c7c650a64f409b23b285f720285a
+msgid "|get_rotary_increments.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:17 235d0e6b09e043d981be96ec89e2571c
+msgid "get_rotary_increments.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:79 a5370ec6a9e34f29bf5ee884c05383e3
+msgid "Resets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/encoder.rst:83 f1cb6a9f3af8465b9a3d6f3d39c32328
+msgid "|reset_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:19 81053da12b2742448698508be177e2a7
+msgid "reset_rotary_value.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:88 20d0dc5f4b4044ceb4268a85020248de
+msgid "Sets the rotation value of the Rotary object."
+msgstr ""
+
+#: ../../en/units/encoder.rst:90 b02276ce1d854ea58a2aa31ac6ec3304
+msgid "adjust the current value."
+msgstr ""
+
+#: ../../en/units/encoder.rst:94 1f5c95f1d2404f72bdaabcafec899884
+msgid "|set_rotary_value.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:21 06d9c5a54f2d4309818bd011dd74bbb6
+msgid "set_rotary_value.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:99 848191dc111d40a585120f890b269c6b
+msgid "Get the current status of the rotary encoder keys."
+msgstr ""
+
+#: ../../en/units/encoder.rst:103 bba98fd4dbcb422e99eab2f1263b589e
+msgid "|get_button_status.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:15 9b8f7ac033024789b35b5b1ea85111ef
+msgid "get_button_status.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:108 ../../en/units/encoder.rst:120
+#: 5d2ac0d2a11c4af887566f5b2df79838 ab9d320336394df79068971b833665de
+msgid "Set the color of the LED"
+msgstr ""
+
+#: ../../en/units/encoder.rst:110 6216872b52524d4cba91893ac254f9bc
+msgid "the index of the LED, 1 or 2."
+msgstr ""
+
+#: ../../en/units/encoder.rst:111 ../../en/units/encoder.rst:122
+#: 4a08536b60764ffb9ac964162fd10541 ee5d4cbb28294a4d9b3c786f38245bf5
+msgid "the color of the LED, 0x000000 - 0xFFFFFF."
+msgstr ""
+
+#: ../../en/units/encoder.rst:115 98953d947aa44432be1c504650ba21be
+msgid "|set_color.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:23 7453a2c7b6c148e4b02d8bb44c404538
+msgid "set_color.svg"
+msgstr ""
+
+#: ../../en/units/encoder.rst:126 123938467aff494eb75eea081f820478
+msgid "|fill_color.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.encoder.ref:25 228cf0542ee241c89ac90aa37d1690fd
+msgid "fill_color.svg"
+msgstr ""
+

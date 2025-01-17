@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/buzzer.rst:2 90131fafec824063bab591b9027fbfd2
+msgid "Buzzer Unit"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:6 874417f3ccf643f58dee6629869f45c1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:8 8b528a6dae8143459f59c1871f76a35a
+msgid "|Buzzer|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref 4650642919354948a82db63da32a1888
+msgid "Buzzer"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:11 0c3e439dc4244cb182772a6c950701f6
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:18 b427d4ae8efe4ebcbe28f6a2358db390
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:20 02fd3b657a674d308a51c9205b9a97b8
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:18 ae846cabe153420886c795e688b49401
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:25 95f29917380f4f328fa519bfc6a769da
+msgid "|cores3_buzzer_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:29 69c3219a2bfa4673837cb442663ad6bc
+msgid "class BuzzerUnit"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:32 a73fdc3883304cc0b5e5026dabc2e685
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:36 6853fc8596774cc986c81b075b1803fb
+msgid "Create an BuzzerUnit object."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:39 2771e0a90fb34324a4315cec18e8027e
+msgid "The parameters are:"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:39 d559da589262492e81590cb7c45b974c
+msgid "``port`` Is the pin number of the port"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:41 ../../en/units/buzzer.rst:57
+#: ../../en/units/buzzer.rst:68 ../../en/units/buzzer.rst:79
+#: ../../en/units/buzzer.rst:88 ../../en/units/buzzer.rst:97
+#: 26bded08c4594707b84fdcf9ae2f189a 6eea00bb208149628c64a4ef4550e867
+#: 7d0938895dcc4f85a091062f4cae692c b309202ef8174035964f9086f35f10b1
+#: c194fc217d1341118621c5f1a74f4ffa e9cd49fb04f74499a186636673b48451
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:43 cefd99991dae45d8a28baf7b14eb2ece
+msgid "|init.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:6 fa85e4f91cd149358eb812c3fec2415b
+msgid "init.svg"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:47 dafeb5b836294cb19156f7274df7d542
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:51 7e26ece0d907435384637c7da8704e83
+msgid "Play buzzer once."
+msgstr ""
+
+#: ../../en/units/buzzer.rst 105b0909d50148b488377288b7be7c1b
+#: c67f609cf3cb4afd80c85cbe900a7ae9 d6bbbcd4ecf04490b1ef9ac831dc0bcf
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:53 ../../en/units/buzzer.rst:66
+#: 0a518d4cc9b446ecaf68fec5f6fd5648 47372ef62206407d87951919a577ecf8
+msgid "The frequency of the vibration, range is 100 - 10000Hz."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:54 ../../en/units/buzzer.rst:77
+#: 87fec023516d4e748d91ed45c78d3db3 d448198e02ab4c73afa69df493fffa8f
+msgid "The duty cycle of the vibration, range is 0 - 100."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:55 67e5911db96446529af96a861850d456
+msgid "The duration of the vibration, range is 0 - 10000ms."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:59 b1277ec314744f16946b4fef3e714083
+msgid "|once.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:8 5438b26ad4e3423a9513c9b3dadf281a
+msgid "once.svg"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:64 9b6a713083c84cfa9e917ad655b7d992
+msgid "Set the frequency of the buzzer."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:70 bb6da0ff1fcc43ccac44f261593b11da
+msgid "|set_freq.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:10 21867ad14db447babf5cd0292c1ab68a
+msgid "set_freq.svg"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:75 9e0a557f6a574665a5b2104fb0aed303
+msgid "Set the duty cycle of the buzzer."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:81 6c76809672f84121ae4b3bad5d6d9657
+msgid "|set_duty.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:12 d369e8cbfd9a42e9821d25e100dd4770
+msgid "set_duty.svg"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:86 07b6687cd99c450397baf248b0268134
+msgid "Turn off the buzzer."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:90 f3d3441e1bed4454a306c510d9b6a3c6
+msgid "|turn_off.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:14 1fa857f3ee7f4397a4a23073d4624d68
+msgid "turn_off.svg"
+msgstr ""
+
+#: ../../en/units/buzzer.rst:95 673cfde8b8274ccb9d398503da76d274
+msgid "Deinitialize the buzzer."
+msgstr ""
+
+#: ../../en/units/buzzer.rst:99 c75cc3b0fbbd4c9087cc635637ef70f2
+msgid "|deinit.svg|"
+msgstr ""
+
+#: ../../en/refs/unit.buzzer.ref:16 762378146e4743d6b5d9acf258573964
+msgid "deinit.svg"
+msgstr ""
+

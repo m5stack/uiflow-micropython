@@ -10,15 +10,20 @@ Support the following products:
 
     |FaderUnit|
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import FaderUnit
-    fader = FaderUnit((33,32)) # for core2
-    fader.update_color()
+    .. literalinclude:: ../../../examples/unit/fader/cores3_fader_example.py
+        :language: python
+        :linenos:
 
+
+UIFLOW2 Example:
+
+    |example.png|
+
+.. only:: builder_html
+
+    |cores3_fader_example.m5f2|
 
 class FaderUnit
 ---------------
@@ -34,7 +39,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -48,7 +53,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|
 
 
 .. method:: FaderUnit.get_raw() -> int
@@ -59,7 +64,7 @@ Methods
 
     UIFLOW2:
 
-        |get_raw.svg|
+        |get_raw.png|
 
 .. method:: FaderUnit.update_color() -> None
 
@@ -67,7 +72,7 @@ Methods
 
     UIFLOW2:
 
-        |update_color.svg|
+        |update_color.png|
 
 
 .. method:: FaderUnit.update_brightness() -> None
@@ -76,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |update_brightness.svg|
+        |update_brightness.png|
 
 .. method:: FaderUnit.set_brightness(br: int)
 
@@ -84,7 +89,7 @@ Methods
 
     UIFLOW2:
 
-        |set_brightness.svg|
+        |set_brightness.png|
 
 
 .. method:: FaderUnit.fill_color(c: int)
@@ -93,7 +98,7 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color.png|
 
 
 .. method:: FaderUnit.set_color(i, c: int)
@@ -102,4 +107,4 @@ Methods
 
     UIFLOW2:
 
-        |set_color.svg|
+        |set_color.png|

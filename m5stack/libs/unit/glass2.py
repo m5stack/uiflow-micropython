@@ -28,8 +28,8 @@ class Glass2Unit:
 
     """
 
-    def __init__(
-        self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3C, freq: int = 400000
+    def __new__(
+        cls, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x3C, freq: int = 400000
     ) -> None:
         """! Initialize the Unit Glass2
 
@@ -37,5 +37,4 @@ class Glass2Unit:
         @param address I2C address of the Unit Glass2, default is 0x3C.
         @param freq I2C frequency of the Unit Glass2.
         """
-
-        self.display = M5.addDisplay(i2c, address, {"unit_glass2": True})  # Add Glass2 unit
+        return M5.addDisplay(i2c, address, {"unit_glass2": True})  # Add Glass2 unit

@@ -50,7 +50,7 @@ Methods
 
 .. method:: ADCUnit.get_value()
 
-    Gets the original value read by the adc.
+    Gets the original value read by the adc(16 bit).
 
     UIFLOW2:
 
@@ -64,15 +64,6 @@ Methods
     UIFLOW2:
 
         |get_voltage.png|
-
-
-.. method:: ADCUnit.get_raw_value()
-
-    Read the raw value.
-
-    UIFLOW2:
-
-        |get_raw_value.png|
 
 
 .. method:: ADCUnit.get_operating_mode()

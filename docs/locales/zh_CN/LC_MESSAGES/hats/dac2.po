@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/dac2.rst:2 e0f0f9a246b54f15a07214286913c542
+msgid "DAC2 Hat"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:6 069c6579cd194371a03e960c6c989f3e
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:8 67783b9c1ba54c6a896273818cc9d38c
+msgid "|DAC2Hat|"
+msgstr ""
+
+#: ../../en/refs/hat.dac2.ref 8f966cf295594f7db10ece08b020ae82
+msgid "DAC2Hat"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:10 44f433e0f97148f589445c91ac6de91f
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:17 7f264e6456b6432bb8e8efa5018996b4
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:19 49b1f239e21145ad937171b2b4e4786c
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dac2.ref:8 146fd750fa684ba3a0a83f4cff342cb7
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:24 a1326ed502fd46d8867cb283a85970f4
+msgid "|stickc_plus2_dac2_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:28 9df54c23507d4eb3af442815606f17c2
+msgid "class DAC2Hat"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:31 b48c782bbc3b49c38628c1e28809c67e
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:35 386f421a270d4c9383714cfaf6078687
+msgid "Create a DAC2 Hat object."
+msgstr ""
+
+#: ../../en/hats/dac2.rst 42c6f99be60742dca8d44a4f02e2e73a
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:37 a8363b80c155438b8a4cd64d32f88dac
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:38 c96438e9c51b4fcd82cff637ebc7cb3f
+msgid "I2C address of the DAC2 Hat"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:40 aa01e957ea964e77a8b8fb88e7bb1aa6
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:42 bba0db3ae978418391c7f717fdab3a27
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.dac2.ref:6 e4788327126f4f4f82b2e2d8ca3ba30d
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/dac2.rst:45 c90f9a74bf8d4af2b5d49ac139606508
+msgid ""
+"DAC2Hat class inherits DAC2Unit class, See :ref:`unit.DAC2Unit.Methods "
+"<unit.DAC2Unit.Methods>` for more details."
+msgstr ""
+

@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/wdt.rst:2 f23f935242df4c4fa6d11c1ad8169c72
+msgid "WDT"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:5 cdef0a11b88f40989698214fae39be24
+msgid ""
+"The WDT is used to restart the system when the application crashes and "
+"ends up into a non recoverable state. Once started it cannot be stopped "
+"or reconfigured in any way. After enabling, the application must \"feed\""
+" the watchdog periodically to prevent it from expiring and resetting the "
+"system."
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:10 dd0734a6cc3c4af8959a1c3b26cefd98
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:16 9671e2a851934505bf56be009a2c88a5
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:18 deff3df85beb430699d786d2b131a56f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.wdt.ref:6 63922300b8ca4f909803753eccb5706e
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:22 9dbb01828c3c4bfb95371dfd743f7263
+msgid "|wdt_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:26 c646f984df114032b4517807dd755c3d
+msgid "class WDT -- watchdog timer"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:28 0b0cc4dcec98458eb3334473d18c77ff
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:32 9fc093ff61d34ec19224a25408403449
+msgid ""
+"Create a WDT object and start it. The timeout must be given in "
+"milliseconds. Once it is running the timeout cannot be changed and the "
+"WDT cannot be stopped either."
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:35 0832a8fbcc214d17a7d6be8a1aa96dac
+msgid ""
+"Notes: On the esp8266 a timeout cannot be specified, it is determined by "
+"the underlying system. On rp2040 devices, the maximum timeout is 8388 ms."
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:38 ../../en/hardware/wdt.rst:51
+#: 5ad75f8a5a33410a915b1e5d03044f57 b829008538694d9b9447f3aace0d4d55
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:40 39c41ba24a29454c867e0b52675af321
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.wdt.ref:2 713e868e01144d82bda8c60f7c91fe81
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:43 44d90c9fd65a4f32b58a87ea75e0f449
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:47 f8d353a7379840159b3a900adc1f7fd9
+msgid ""
+"Feed the WDT to prevent it from resetting the system. The application "
+"should place this call in a sensible place ensuring that the WDT is only "
+"fed after verifying that everything is functioning correctly."
+msgstr ""
+
+#: ../../en/hardware/wdt.rst:53 46847ccc32f04dee9622398467c38d9e
+msgid "|feed.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.wdt.ref:4 24a3db61de1447ae9d16a7435a8f3458
+msgid "feed.png"
+msgstr ""
+

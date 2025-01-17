@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/joyc.rst:2 d6daa06a547b4ae598765e1ea115da37
+msgid "JoyC Hat"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:6 0671352cf8ef4a6facb03561ceb3c1ca
+msgid "The following products are supported:"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:8 4543c15bb7104c7ea660ee277f96ab11
+msgid "|JoyCHat|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref bf6487597ac84f998526338e41455dc4
+msgid "JoyCHat"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:11 db9a2be48d7c4953aad8eb9909afda4a
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:18 fc113ce0a4aa4cd0b6b0b8ccc7047d43
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:20 85d3309188b94a40aa6c7eabd5e6d4c0
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:24 1840d6bb9d7b432487b068212d405ace
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:25 141fde92b01d4569808fcf9bf64f1a87
+msgid "|stickc_plus2_joyc_example.m5f2|"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:29 90b7ccc6d0a546eab6207bf921b8e9eb
+msgid "class JoyCHat"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:32 a8167f7362664b769cd58c923ec4fbaf
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:36 2090a8ba8dc2412ab0b2341da54231d7
+msgid "Create a new instance of the JoyCHat class."
+msgstr ""
+
+#: ../../en/hats/joyc.rst 17314ef8fdc146cda4a47ca9272d4c22
+#: 69d1950c61de462fa6deb02e994a8697 6cf2fe54f95c4a57ac0f3fccef572a68
+#: 8aa94753a04244ccac56780dd8d85e43 a35d889c193e475bb5fafbf3f05975e6
+#: bd0e516a2cc046e2ba46278eea801ed9 ee70ff02e9d64cf88643e7be094d3f54
+#: efc0ce855a584e5686f8291c3dde5eff
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:38 e49c465b4e2c442fbf9049fb20f32956
+msgid "I2C bus"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:39 d690bb1884ec4fa3bdc581ec9d9ad2dd
+msgid "I2C address"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:41 ../../en/hats/joyc.rst:57
+#: ../../en/hats/joyc.rst:70 ../../en/hats/joyc.rst:83
+#: ../../en/hats/joyc.rst:96 ../../en/hats/joyc.rst:107
+#: ../../en/hats/joyc.rst:118 ../../en/hats/joyc.rst:129
+#: ../../en/hats/joyc.rst:138 43395bfb5b7a47ca925686e07354b054
+#: 53ac7672f1b64636bcb5bcadee3935ee 86e5dff6005a4eecaba0be618b37225a
+#: 9b7644b2122f493e91a059b018b4df79 ab0e16228d6045bba37d6dcb82a7fbf6
+#: b6222b4b90fe4f9981625b88c24d17b9 d84b478a1e4647bd9c30ff7d348107a3
+#: e1e83461392648d4801881df25e15bc8 ea8619606d21451b8d83f194327b6b2d
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:43 914b7a2cfaf34b769ea855346cbb1cb3
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:6 c9137f286c91494281aea0ae90369235
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:47 a3f410706b3d4a5abe3e26c6862694c7
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:51 b5f70afcf877415b8f72ced9b91829f3
+msgid "Get the raw x-axis value."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:53 ../../en/hats/joyc.rst:66
+#: ../../en/hats/joyc.rst:79 ../../en/hats/joyc.rst:92
+#: ../../en/hats/joyc.rst:126 1be7b4cda2f04a9ca2dcae0798452fee
+#: 3ae4cb19cdc44976b6b274d830fbb1c7 3bf086d6b0a54845b99d0cd371a2981f
+#: a9d26aa4e9b44eb3aaf26965a5b5e0dc e461c4a6d04b4703a9a7620b456707ac
+msgid "0 or 1"
+msgstr ""
+
+#: ../../en/hats/joyc.rst 2ef0fb81240d4adaa4f4d3b74e937ec2
+#: 438c9d7aee5f41b8bf6fb886eb87d826 aba7bf6171824c05a3ee224f47e4e933
+#: b29e197027b44259b0ce2d3ba04f61b7 e40a771ba7124077ab458c265492fb59
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:55 ../../en/hats/joyc.rst:81
+#: 3e8e050614dd43d58f756c0f9d3be4fe b3d0b43e977a472f8bebdf2b47c988b1
+msgid "x-axis value"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:59 ed896e10687648ff96dbfc266c01f18f
+msgid "|get_x_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:8 d883e3c529af4f878bd057e857cbbc9b
+msgid "get_x_raw.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:64 ecad499d6f444ef6a78f883065ce924b
+msgid "Get the raw y-axis value."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:68 ../../en/hats/joyc.rst:94
+#: e6ea258692f94755af410b4c181fa29d fead12c4e86d4c69993eb370c9ba171b
+msgid "y-axis value"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:72 ea8eb14d7b374045b215767a138cbe33
+msgid "|get_y_raw.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:10 f28bce91cfae4335bfa2213159e29d0c
+msgid "get_y_raw.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:77 8447d94b4f7f4a1f8d8c267b7c755210
+msgid "Get the x-axis value."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:85 f7b6de19679c426da56788d1d44f734e
+msgid "|get_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:12 44f5a0025c3c436a881fff1f77842d59
+msgid "get_x.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:90 8fd658af77fe42a9b02242cfab6cac51
+msgid "Get the y-axis value."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:98 5ecf542a5e55491cb242f6fd1707c1cc
+msgid "|get_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:14 11e9f785263d4873ae0dcba6c4cbd4fa
+msgid "get_y.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:103 122281a5e5254bcc96cdd7a7ff0be0b2
+msgid "Swap x-axis direction"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:105 ../../en/hats/joyc.rst:116
+#: ../../en/hats/joyc.rst:127 4c42300ccf254f1b87270723e6c60749
+#: 84e293cad7f144b0a8a142d72d3333f6 a1fd1cb5ac0a435aaf2dbb7ddf6b244f
+msgid "True or False"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:109 03d8ce33c1a14acb90f1e17b2e151a33
+msgid "|swap_x.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:16 9d759145bd1140b38aa5c3374b42a117
+msgid "swap_x.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:114 c914ee9d66c443688c837575a2ea921e
+msgid "Swap y-axis direction"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:120 4767c4871bc640bd937a90411a3ac4c2
+msgid "|swap_y.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:18 6d99d1c128e541e1b823187355d9199b
+msgid "swap_y.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:124 53ef6859419d415ba0a2e15fad8f1d92
+msgid "Get the button status."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:131 b55cceb0efec460da5cde942f24696cb
+msgid "|get_button_status.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:20 18efefe195a3465ca75093a36d47431f
+msgid "get_button_status.png"
+msgstr ""
+
+#: ../../en/hats/joyc.rst:136 de16d7109fb746e98a5ba5fe1f8d3659
+msgid "Fill the screen with a color."
+msgstr ""
+
+#: ../../en/hats/joyc.rst:140 e2f25fd6996a46ac99dd4532f71879f7
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/hat.joyc.ref:22 4c8e3650b6ef4df9bf6e01a216f7295b
+msgid "fill_color.png"
+msgstr ""
+

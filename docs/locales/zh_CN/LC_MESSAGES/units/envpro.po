@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/envpro.rst:3 1c277cdcf6814f56ba9ce5b1bbf5fd98
+msgid "ENVPRO Unit"
+msgstr ""
+
+#: ../../en/units/envpro.rst:7 56a617702d114eb79f8dbf582d4171c4
+msgid ""
+"ENV Pro Unit is an environmental sensor that utilizes the BME688 sensor "
+"solution, supporting the measurement of various environmental parameters "
+"such as volatile organic compounds (VOCs), indoor air quality (IAQ), "
+"temperature, humidity, and atmospheric pressure. It features a compact "
+"size, wide operating range, simple communication interface (I2C), "
+"excellent performance, and low power consumption, making it suitable for "
+"weather stations, indoor environmental monitoring, and air quality "
+"detection applications."
+msgstr ""
+
+#: ../../en/units/envpro.rst:9 7c8f1b9c5825493abc1ccc5dcc18247c
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/envpro.rst:11 0e9e56c425c34e5c9ef09402bec86962
+msgid "|ENVPROUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref 4cf6433548a741c9ad81dccd48a43f9f
+msgid "ENVPROUnit"
+msgstr ""
+
+#: ../../en/units/envpro.rst:13 40430bd930f1427aad8d0813d6852d16
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/envpro.rst:20 b34711d9053648dea692dcb4c8819b50
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/envpro.rst:22 6144e04be8c449388fabf3e449955c97
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:18 bf89e409b5914d6a9151b0de84655648
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:26 c2521c97df534ad08f91afa80a56f2b6
+msgid "|envpro_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/envpro.rst:29 66d11eaac862419c80d3225f610e50df
+msgid "class ENVPROUnit"
+msgstr ""
+
+#: ../../en/units/envpro.rst:32 ba1323c051c74af392dd1e3ecc402be6
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/envpro.rst:36 dad1a77a740c4609892ff4d4450f445b
+msgid "Initialize the ENVPROUnit with an I2C object and an optional address."
+msgstr ""
+
+#: ../../en/units/envpro.rst 47ba95d4e5a242a0858eabb26ce67c59
+#: 7d30dd693db14d889332edda474c06b8 d373943fc2da49e9aaf45674aa499fa0
+#: d80338bc06ba432b8192e645c711c358
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/envpro.rst:38 bbcb225190c74236bb815f3cba47f879
+msgid ""
+"The I2C interface or PAHUBUnit instance to communicate with the ENV PRO "
+"sensor."
+msgstr ""
+
+#: ../../en/units/envpro.rst:39 6b4da17c2a8841c4928188848c902735
+msgid "The I2C address of the ENV PRO sensor. Defaults to 0x77."
+msgstr ""
+
+#: ../../en/units/envpro.rst:41 ../../en/units/envpro.rst:55
+#: ../../en/units/envpro.rst:66 ../../en/units/envpro.rst:75
+#: ../../en/units/envpro.rst:85 ../../en/units/envpro.rst:94
+#: ../../en/units/envpro.rst:103 ../../en/units/envpro.rst:112
+#: ../../en/units/envpro.rst:121 ../../en/units/envpro.rst:132
+#: 0329595efaa44500a590c89c0c7c59e5 0eea3b684b974a6988df233421b3f600
+#: 1bffb445b84840b38298f52b5a68cc9c 1e412890a45b429da905e8a59b50f083
+#: 45ad5b98fe0d4694a4638a0ce6e666cf 6de93c01ec904165850c30e83610df86
+#: 6e7321ca11d34a469d7e52a1138a5771 7f2f512714e94ccc8b0eb536ce8c54c2
+#: 8825f7ec9edc4cc69e56184a1fd340eb 972e6e98a9d64f5dbf534f4ca3bce8a6
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/envpro.rst:43 54064992eb2f48d69cad7a2d1ea50fa7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:7 4e0d9c6f328d49259ad36ce4d4b92bb7
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:47 80fefd9ff86945f1a353806c230b2664
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/envpro.rst:51 a39a4a9b9c8d439fa0345c0e67ab6053
+msgid "Retrieve the oversampling rate for the specified environment parameter."
+msgstr ""
+
+#: ../../en/units/envpro.rst:53 ../../en/units/envpro.rst:63
+#: 616a9923d3c6457baf1547b0b02ed0b6 86e45a9dec644851ac810d269db1b441
+msgid "The environment parameter (TEMPERATURE, PRESSURE, HUMIDITY)."
+msgstr ""
+
+#: ../../en/units/envpro.rst:57 265c6a81068548069ecdfb8e9cf89475
+msgid "|get_over_sampling_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:8 e64ad8ab4309434e80953179e7fc97d6
+msgid "get_over_sampling_rate.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:61 c789846df08a44539bd50817754d339b
+msgid "Set the oversampling rate for the specified environment parameter."
+msgstr ""
+
+#: ../../en/units/envpro.rst:64 5ad6fa65b43c4eba878ac62e53cdb8c2
+msgid "The oversampling rate to be set."
+msgstr ""
+
+#: ../../en/units/envpro.rst:68 a8e3add179e64a34b6ad0dc9c968706c
+msgid "|set_over_sampling_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:9 7349d62df3e04aec8230b294c8fde5b2
+msgid "set_over_sampling_rate.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:72 fb9e21c063ab41228bd123544de0184c
+msgid "Retrieve the IIR filter coefficient."
+msgstr ""
+
+#: ../../en/units/envpro.rst:77 30b14d831c7f41228d049c78e28a3d34
+msgid "|get_iir_filter_coefficient.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:10 4030c5b772ef4ef18212b60cf9b40427
+msgid "get_iir_filter_coefficient.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:81 961f09596241497bb7de2a257478b75e
+msgid "Set the IIR filter coefficient."
+msgstr ""
+
+#: ../../en/units/envpro.rst:83 bea88d2d34174725a4d26a0eea2fe69f
+msgid "The IIR filter coefficient to be set."
+msgstr ""
+
+#: ../../en/units/envpro.rst:87 b3387da894e64e24b385842c0d6b9062
+msgid "|set_iir_filter_coefficient.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:11 7399edd21731467480dd38085c98fc68
+msgid "set_iir_filter_coefficient.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:91 c42de13c721a465db9d329d92c8dabcb
+msgid "Retrieve the measured temperature."
+msgstr ""
+
+#: ../../en/units/envpro.rst:96 a1b6e82ff71c4b248642e3ffdab1f603
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:12 d738df56fd084e14896352edf8a5c026
+msgid "get_temperature.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:100 1e7f225dd5244e5698a4a37e69a57e65
+msgid "Retrieve the measured humidity."
+msgstr ""
+
+#: ../../en/units/envpro.rst:105 2a4a3395a77d4018be19d3d1119e826e
+msgid "|get_humidity.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:13 3c879a396c5948e5a47faa8bf2a7441d
+msgid "get_humidity.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:109 d1c6eb8d05664debaee7fbba82ed2edf
+msgid "Retrieve the measured pressure."
+msgstr ""
+
+#: ../../en/units/envpro.rst:114 e8f86a4d700b4b98b7bf974efd757448
+msgid "|get_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:14 1e56d6fc5b614b77a11e5eb2b9c20b9f
+msgid "get_pressure.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:118 57aa19b284b24d57b7ea8a9e5435d45e
+msgid "Retrieve the measured gas resistance."
+msgstr ""
+
+#: ../../en/units/envpro.rst:123 ee8b4c5353964548b6d05d00de3501bc
+msgid "|get_gas_resistance.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:15 5275e0341b7c40f7a2e51dca1668bf94
+msgid "get_gas_resistance.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:127 a9158f82c9b64f0f9df6191dc476dc54
+msgid "Retrieve the calculated altitude based on pressure readings."
+msgstr ""
+
+#: ../../en/units/envpro.rst:129 28f3b9d07d2f475581078154dcfea9a6
+msgid ""
+"``Note``: Altitude is calculated based on the difference between "
+"barometric pressure and sea level pressure"
+msgstr ""
+
+#: ../../en/units/envpro.rst:134 662a334f77824ccbae8dd9810cfc0d0e
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/unit.envpro.ref:16 16a5b8265418403c809c65f30fdedae0
+msgid "get_altitude.png"
+msgstr ""
+
+#: ../../en/units/envpro.rst:139 73c9cd8e16a84321be0eb3a3efeb15ad
+msgid "Constants"
+msgstr ""
+

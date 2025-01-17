@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/tof.rst:2 d8aed40452f746d1be074b64d44b838f
+msgid "ToF Unit"
+msgstr ""
+
+#: ../../en/units/tof.rst:6 9c68f9100d32424cb6726f7c7d69df6e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/tof.rst:8 bba903631c47453f815ac8e954e5baf1
+msgid "|ToFUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref 9f1596a6593840e89565d72fbcef0230
+msgid "ToFUnit"
+msgstr ""
+
+#: ../../en/units/tof.rst:11 e6f733c2bcfa454e9efa3705eec76d1b
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/tof.rst:18 9a3cb5218e124cefa9465de81c4ef6e7
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/tof.rst:20 dc2cb21244da4531bf0f74f0e81965fd
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:7 aca7e26918cc43438c951697399486cd
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:25 af26b463191d4938b1a98d07380b831e
+msgid "|tof_core_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/tof.rst:29 9f5882f866434c62a54ea5fa53d09fcf
+msgid "class ToFUnit"
+msgstr ""
+
+#: ../../en/units/tof.rst:32 620f04a32f2944e6a4305a645abd7312
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/tof.rst:36 b11bb05b903f40e1b5442015abe83240
+msgid "Create a DLight object."
+msgstr ""
+
+#: ../../en/units/tof.rst 0b63c55836d045e1bd2d0622b1f1c9c9
+#: 2b0e671397a54658a6dc8ed70b01b4e5 a67203049e3446a4abbb41c47a1f4ef7
+#: b4eb6625b1a949c49aeb50b87f6625d3
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/tof.rst:38 d24e0787998740abad2324521e8e70b6
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/tof.rst:39 472a6d1bd36f41e484cb9844df2f257c
+msgid "the I2C address of the device. Default is 0x23."
+msgstr ""
+
+#: ../../en/units/tof.rst:40 8abf5ee21ea5456ba2ae4e0215dcabd9
+msgid "the timeout of I2C communication. Default is 0ms."
+msgstr ""
+
+#: ../../en/units/tof.rst:42 ../../en/units/tof.rst:58
+#: ../../en/units/tof.rst:69 ../../en/units/tof.rst:80
+#: ../../en/units/tof.rst:90 ../../en/units/tof.rst:101
+#: ../../en/units/tof.rst:112 ../../en/units/tof.rst:123
+#: ../../en/units/tof.rst:134 ../../en/units/tof.rst:143
+#: ../../en/units/tof.rst:152 ../../en/units/tof.rst:163
+#: 0469517e806546b598742e1db4823f1c 4075ed9401af42c583a72f91b981ffad
+#: 5721738592a7403b88a158b526906d5f 640d02b9d0fc4d3796918ce00aee3e2a
+#: 68bcc94db5d647a2a7a0ee7e96ec920f 73fa01ffa72a440187e512b6c2492578
+#: 7a54fb0d39b249f9850939d595a8cd9a 802ab7aefa124afb92babb7cba6d7725
+#: 99612023371347cf92472d3d8e1a40da a115ad2a0d184209b90ebd66e54c6980
+#: d446b3e676474ab19b2e87c114db9915 f850faeb13e84eb0b6ebf8bc7175799e
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/tof.rst:44 e04e53ac92794907b1abe0da1565b07a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:10 c51d37bfcca24acd9875611e5792d55c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:50 dc15712d1f724a4f9c550ca6c4a735de
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/tof.rst:54 b06a8723a49c4cc0880c8a446278d38c
+msgid "Get distance in centimeters."
+msgstr ""
+
+#: ../../en/units/tof.rst 258fd5dedb514bf8ab270c29f45b8cdb
+#: 2f66896b63f64ab5b0abbd02e95ca487 4c052ed90b6b49928dc2294448dd5f27
+#: 771da4260f6749289da7c5efed6db4d8 7b8044326dbe44c6a5dfd2f1691cd3ea
+#: 863b96561fe343e9be0dac6e3369a53e
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/tof.rst:56 ../../en/units/tof.rst:78
+#: 1f38f5cc5b554de2bfad7662118e1c02 80ef2acbde2841919edfbeb91f0e522f
+msgid "distance in millimeters."
+msgstr ""
+
+#: ../../en/units/tof.rst:60 52bb6ee510314b549b6457e9484ef41d
+msgid "|get_distance.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:13 e66b38b6056b47c99b0ea1a3b9133636
+msgid "get_distance.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:65 7c7651dc5f114f60864c7fc5e02b7776
+msgid "Get data ready status."
+msgstr ""
+
+#: ../../en/units/tof.rst:67 356a895a6e154f358d09a86ffa5d66fa
+msgid "data ready status."
+msgstr ""
+
+#: ../../en/units/tof.rst:71 948860f4d6d449d4a9141e1788709732
+msgid "|get_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:16 81f3e9c7c5224e25afc9c03817859a19
+msgid "get_data_ready.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:76 66850cafb8c942b38f45350da923ef1b
+msgid "Get distance in millimeters."
+msgstr ""
+
+#: ../../en/units/tof.rst:82 c530aa8625424f9c94432af1be5b9855
+msgid "|get_range.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:19 524f277ac63143efa7b5f2cd0c88566f
+msgid "get_range.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:86 09b9bc7626bb4c98ac289f103067ce9f
+msgid "Get continuous mode status."
+msgstr ""
+
+#: ../../en/units/tof.rst:88 09ba171896cd4a898acb18001f9e4804
+msgid "continuous mode status."
+msgstr ""
+
+#: ../../en/units/tof.rst:92 22a6d2f1e00c46c1b522151ebf8e09d4
+msgid "|is_continuous_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:22 1d6d32445e7d43ceb7af5370df89d32f
+msgid "is_continuous_mode.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:97 ce215e92732a41cfb4651b98ec05479f
+msgid "Get measurement timing budget. The budget is in microseconds."
+msgstr ""
+
+#: ../../en/units/tof.rst:99 6760322d30f140c9bdc7621bcaa2d815
+msgid "measurement timing budget. The budget is in microseconds."
+msgstr ""
+
+#: ../../en/units/tof.rst:103 435e86b973e44224b362180ff163cdf1
+msgid "|get_measurement_timing_budget.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:25 5b1880e52ab1430b99119be9f2a4687a
+msgid "get_measurement_timing_budget.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:108 1ffa786bc2cf49578e8ce9eebf06908e
+msgid "Set measurement timing budget. The budget_us is in microseconds."
+msgstr ""
+
+#: ../../en/units/tof.rst:110 c0bafba0f10e43f68c10a1b22fb3c5ea
+msgid "measurement timing budget in microseconds."
+msgstr ""
+
+#: ../../en/units/tof.rst:114 82351f3f086848dca3bab62a34d0ec5b
+msgid "|set_measurement_timing_budget.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:31 6b7e34af74d14269b514fb46d99d6a1b
+msgid "set_measurement_timing_budget.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:119 475d7020b21f4dfe937d73c3701b1e91
+msgid "Get signal rate limit."
+msgstr ""
+
+#: ../../en/units/tof.rst:121 ../../en/units/tof.rst:132
+#: 0a96dba1c83f4657b6b8be123740fa86 4c3f2f45bf87465a93fc62c9eb7f0219
+msgid "signal rate limit."
+msgstr ""
+
+#: ../../en/units/tof.rst:125 dfbab3abc9ee4acfb7acb6861b623de6
+msgid "|get_signal_rate_limit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:28 3dd9e3638f0a44c38675f85232d4f27f
+msgid "get_signal_rate_limit.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:130 5a045348177a47e3b8e23db8ccc1a937
+msgid "Set signal rate limit."
+msgstr ""
+
+#: ../../en/units/tof.rst:136 2646622e0ded48bc93704144f7e402a4
+msgid "|set_signal_rate_limit.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:37 7f41de5028b34e238fdd8cf3c92741d2
+msgid "set_signal_rate_limit.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:141 7334a896958345b585225c7c01389fc7
+msgid "Start continuous mode."
+msgstr ""
+
+#: ../../en/units/tof.rst:145 c36b337e38b74c8daf6c0d9f9caad5ec
+msgid "|start_continuous.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:40 ee17eafa7b064bb69d6ea6bed010a838
+msgid "start_continuous.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:150 58ef097a1abf475e894bc0569194551e
+msgid "Stop continuous mode."
+msgstr ""
+
+#: ../../en/units/tof.rst:154 dc5963ac425e49b8a7668855022f4894
+msgid "|stop_continuous.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:43 8d303aee37344e38975290bf45ca5c15
+msgid "stop_continuous.png"
+msgstr ""
+
+#: ../../en/units/tof.rst:159 2cdcc90bc9364335b3a042490cfaa125
+msgid "Set I2C address."
+msgstr ""
+
+#: ../../en/units/tof.rst:161 3d657b382995462cbd0179a7b7175ed3
+msgid "new I2C address."
+msgstr ""
+
+#: ../../en/units/tof.rst:165 dcd3ae1b698a42eeb7e1e517cf89dea2
+msgid "|set_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof.ref:34 1967a7d1369e43e8b4af54077efef230
+msgid "set_address.png"
+msgstr ""
+

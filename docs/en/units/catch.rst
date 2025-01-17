@@ -16,26 +16,21 @@ Support the following products:
     |CatchUnit|
 
 
-Micropython Example::
+Micropython Example:
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from hardware import *
-    from unit import CatchUnit
-    catch = CatchUnit((33, 32))
-    catch.clamp()
-    catch.release()
-    catch.set_duty(30)
-    catch.set_clamp_percent(50)
+    .. literalinclude:: ../../../examples/unit/catch/cores3_catch_example.py
+        :language: python
+        :linenos:
 
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
+
+    |cores3_catch_example.m5f2|
 
 
 class CatchUnit
@@ -52,7 +47,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -64,7 +59,7 @@ Methods
 
     UIFLOW2:
 
-        |clamp.svg|
+        |clamp.png|
 
 
 .. method:: CatchUnit.release() -> None
@@ -73,7 +68,7 @@ Methods
 
     UIFLOW2:
 
-        |release.svg|
+        |release.png|
 
 
 .. method:: CatchUnit.set_duty(duty: int) -> None
@@ -84,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        |set_duty.svg|
+        |set_duty.png|
 
 
 .. method:: CatchUnit.set_clamp_percent(percent: int) -> None
@@ -95,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |set_clamp_percent.svg|
+        |set_clamp_percent.png|
 
 
 .. method:: CatchUnit.deinit() -> None
@@ -104,4 +99,4 @@ Methods
 
     UIFLOW2:
 
-        |deinit.svg|
+        |deinit.png|

@@ -1,0 +1,397 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/id.rst:2 d077ead40dc94aa8a4d62fbd1644845b
+msgid "ID Unit"
+msgstr ""
+
+#: ../../en/units/id.rst:6 ae3430ce184640c08ac61600daa5c479
+msgid ""
+"The ``ID Unit`` is a crypto coprocessor with hardware-based secure key "
+"storage, integrated with ATECC608B hardware cryptographic chip, using I2C"
+" communication interface. The chip has a built-in 10Kb EEPROM for storing"
+" keys, certificates, data, consumption records and security "
+"configurations."
+msgstr ""
+
+#: ../../en/units/id.rst:8 ce0a0718994a4338aa23a989fa6b3e1d
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/id.rst:10 84d2704d00584a5b879ffe649bc14c22
+msgid "|IDUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref 4d4531f3f6d04fe9ba3a037019bf015f
+msgid "IDUnit"
+msgstr ""
+
+#: ../../en/units/id.rst:12 0e3401db4a6648289de9cc9bffcbacaf
+msgid "Micropython Example::"
+msgstr ""
+
+#: ../../en/units/id.rst:27 3740483043d84676a33d3e440cf84418
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/id.rst:29 04173b8b9de54a2c85f69869d3e30095
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:6 044cbdc2d25542ae8bd86ad9330d4a86
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/id.rst:33 dc8a054c51404acaa1f733e1a3cf460e
+msgid "|cores3_id_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/id.rst:37 f26e92f767f44c9897730e46deb6a9e8
+msgid "class IDUnit"
+msgstr ""
+
+#: ../../en/units/id.rst:40 fc0fdd6cc05f449babb015c6722191fb
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/id.rst:44 77c9a52dd9f24819b9c41c19c75ff079
+msgid "Create a IDUnit object"
+msgstr ""
+
+#: ../../en/units/id.rst 108ed92cd78d4110863bb8e49c267c78
+#: 1172aaff5dfc4ea9a1ca08fcaf314a8f 1be72708db23441196dda50eadd9a5ca
+#: 3650289eff9d4e9380a11046301757e2 a3a7698c2e5f483b88c1058abebf5470
+#: ba48492e37bc485b9d5b87c5bb71418c bf1a56302a814f9a96f7580cff294a45
+#: d4becc93b0294309a45804196644550c d93eac31f11a4ced9925fa1a3b1a6589
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/id.rst:46 49cba8d514014e4299cf9a02db1ecd37
+msgid "the I2C object."
+msgstr ""
+
+#: ../../en/units/id.rst:48 ../../en/units/id.rst:63 ../../en/units/id.rst:80
+#: ../../en/units/id.rst:95 ../../en/units/id.rst:106 ../../en/units/id.rst:123
+#: ../../en/units/id.rst:138 ../../en/units/id.rst:154
+#: ../../en/units/id.rst:169 ../../en/units/id.rst:186
+#: ../../en/units/id.rst:201 ../../en/units/id.rst:221
+#: 0a361a59c5a94235a3c365cc5478c523 338ac3d9253b4ed0b2a072e1b4956033
+#: 377d1ae07b7d44bb9bdf3d02773bda81 3b2fd3cd4708449cbe1a0e23f31891d0
+#: 432c088c59ed4826aa1d04a50af5fd1c 6187c3cf9fe94c40aca2925901054b05
+#: a16e692ffcc641469e1b4bc028bac3b8 ad16a72236a34f1bb734115887601324
+#: b79ddee854d448799d14a533657f4074 bf6e09026643429a842fb2a78dc8a2ee
+#: d24e16dd9bfb49b4a7f1fd83d49c5613 ed5b6b3cdbf34db8b0ff2db001e79d1a
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/id.rst:50 5d87ad5475c94ee3b66104f107d6101a
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:7 966501a50b03413b93a22d4fe2460592
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/id.rst:54 33527061096e4f1bba31b859087783e4
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/id.rst:58 759b22caab194b1890840868360eb744
+msgid ""
+"Returns the ATECC608B revision number. A revision number refers to a "
+"version identifier that indicates a specific iteration or update of the "
+"hardware design. The revision number helps distinguish between different "
+"versions of the same chip model."
+msgstr ""
+
+#: ../../en/units/id.rst:61 bfc6fcf57ce548e0a196b664be565457
+msgid "Return: ``int``:  hexdecimal"
+msgstr ""
+
+#: ../../en/units/id.rst:65 5803c541dd134544b9a1bba5e0bc1f61
+msgid "|get_revision_number.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:8 be69ee08acf9451fb44e3df3cc2ad26b
+msgid "get_revision_number.png"
+msgstr ""
+
+#: ../../en/units/id.rst:70 5661a59ad6b44b8fa200fe0e44b43cbe
+msgid "Returns the ATECC serial number."
+msgstr ""
+
+#: ../../en/units/id.rst:72 ad61a9926f8a4c008a81820c06c2fe5c
+msgid "9-byte serial number is structured as follows:"
+msgstr ""
+
+#: ../../en/units/id.rst:74 b6c94bc6754242c7b6341052e95965a9
+msgid ""
+"First 4 Bytes: These bytes are the first part of the serial number, which"
+" includes a fixed pattern and a portion that is unique to the device. "
+"Next 2 Bytes: These bytes are reserved and typically set to 0x00 or other"
+" reserved values. Last 3 Bytes: These bytes are the final part of the "
+"serial number and are unique to the device."
+msgstr ""
+
+#: ../../en/units/id.rst:78 5bfa74bcc4194381b4da9c2c0f6b7f62
+msgid "Return: ``string``"
+msgstr ""
+
+#: ../../en/units/id.rst:82 82f3182ec0434fe594e341f989bc2e34
+msgid "|get_serial_number.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:9 8b853bccc37648d9b0a3773aca1c1eb4
+msgid "get_serial_number.png"
+msgstr ""
+
+#: ../../en/units/id.rst:87 e45d2e6dbca04c9daf38fcf126c44952
+msgid ""
+"Returns the random number(4 byte). generate true random numbers using its"
+" hardware-based random number generator(RNG). This RNG is often used in "
+"secure applications where high-quality randomness is needed, such as in "
+"key generation."
+msgstr ""
+
+#: ../../en/units/id.rst:90 ../../en/units/id.rst:91 ../../en/units/id.rst:117
+#: ../../en/units/id.rst:118 ../../en/units/id.rst:119
+#: 33b93bad2b5e456d9af997bec4be2ddd 877b1a01dfd94896a59ba71bc0331ce4
+#: aebba5019af64653b99e2f3615c35c3d edc1c53060d04641beafe233964777ac
+#: ef3d5d90b5f1436b91f507a80aba9b07
+msgid "0 ~ 4294967295."
+msgstr ""
+
+#: ../../en/units/id.rst:93 3ab0da6103184156a52e4f7f104e3056
+msgid "Return: ``int``:  0 ~ 4294967295"
+msgstr ""
+
+#: ../../en/units/id.rst:97 368a8895de544b96a61f12a802a7eb4c
+msgid "|randint.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:10 17139d93539d44a28a040dfc35f7e219
+msgid "randint.png"
+msgstr ""
+
+#: ../../en/units/id.rst:102 556418ef7a164c63be972c3d23429ef1
+msgid "Returns a random floating point number in the range [0.0 ~ 1.0]."
+msgstr ""
+
+#: ../../en/units/id.rst:104 168166cef9f043de8d37d7c6cd964135
+msgid "Return: ``float``:  0.0 ~ 1.0"
+msgstr ""
+
+#: ../../en/units/id.rst:108 7bf7f0cdeac3455eb2eb344b4c793b1a
+msgid "|random.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:11 6ab66aaf46374a6297cfc235b5d93ab4
+msgid "random.png"
+msgstr ""
+
+#: ../../en/units/id.rst:113 9a7703101f5c467a80777ffb9055e1e8
+msgid ""
+"The first form returns a random integer from the range(0, max). The "
+"second form returns a random integer from the range (min, max, step) in "
+"steps of step. For instance, calling randrange(1, 10, 2) will return odd "
+"numbers between 1 and 9 inclusive."
+msgstr ""
+
+#: ../../en/units/id.rst:121 74b1486ed0cc4d94b7e7e1f7016a40ec
+msgid "Return: ``int``:   0 ~ 4294967295"
+msgstr ""
+
+#: ../../en/units/id.rst:125 c3d5c0bd80d54e3f8c3f54ca65f4e615
+msgid "|randrange_max.png| |randrange.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:12 552ad74a46024b238340a159584aaf12
+msgid "randrange_max.png"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:13 8a0eaf8c185e447881153a7449e8f01a
+msgid "randrange.png"
+msgstr ""
+
+#: ../../en/units/id.rst:131 03dca684f5a44f85832fc82e4fa7b7cc
+msgid ""
+"Return a random floating point number N such that min <= N <= max for min"
+" <= max, and max <= N <= min for max < min."
+msgstr ""
+
+#: ../../en/units/id.rst:136 d23fb562b7f842888dba32e93836235e
+msgid "Return: ``float``:"
+msgstr ""
+
+#: ../../en/units/id.rst:140 712bc747587b4cdc9062651f75063caa
+msgid "|uniform.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:14 ad689f88058d4e94a9e01a86149b6705
+msgid "uniform.png"
+msgstr ""
+
+#: ../../en/units/id.rst:145 2c9fcefe04be4620b32501fb1fc9f75c
+msgid ""
+"Returns the generates a private or public key. A private key is a "
+"confidential piece of data that is used in cryptography to perform "
+"various functions. A public key is a cryptographic key that is paired "
+"with a private key in public-key cryptography."
+msgstr ""
+
+#: ../../en/units/id.rst:149 ../../en/units/id.rst:164
+#: ../../en/units/id.rst:212 18110fc82612449cb08f2cfd559dc27b
+#: 1d633cb110134478909aea71c928c3fb e452d72a66aa4f83a6a7fd8ee51e8292
+msgid "0 ~ 4"
+msgstr ""
+
+#: ../../en/units/id.rst:150 ../../en/units/id.rst:213
+#: 1216b1d3212f4dd0b26ef6ccf74a4f71 d7579479e7f84cdd911af09c68de8054
+msgid "True or False"
+msgstr ""
+
+#: ../../en/units/id.rst:152 ../../en/units/id.rst:167
+#: 707102e05a37406dac6ee217c1c3c0cb b73f46df2b3042af977ab3852cde704b
+msgid "Return: ``bytearray``:"
+msgstr ""
+
+#: ../../en/units/id.rst:156 4a0b80f788a740c4888e4b9ea1e41304
+msgid "|get_generate_key.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:15 75e1bc44ee3e4353bf32d2353dbb8e3a
+msgid "get_generate_key.png"
+msgstr ""
+
+#: ../../en/units/id.rst:161 519b0a3fbff4422d9334eb817103b8ba
+msgid ""
+"Returns the ECDSA signatures. ECDSA is widely used in digital signatures "
+"for ensuring the authenticity and integrity of messages and documents."
+msgstr ""
+
+#: ../../en/units/id.rst:165 ../../en/units/id.rst:180
+#: 05916190bf364e259f15416953460817 dac1c15c9b4f4316921de34836f388c3
+msgid "``string`` or ``list`` or ``bytearray``"
+msgstr ""
+
+#: ../../en/units/id.rst:171 bf28bc6b53ae43f0ad2d19fbebea8504
+msgid "|get_ecdsa_sign.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:17 ec6897b0b2db423ea205e79cc5bccf5e
+msgid "get_ecdsa_sign.png"
+msgstr ""
+
+#: ../../en/units/id.rst:176 9b824a8fe4044b3b88743cdead5ccbf6
+msgid ""
+"Returns the verify ecsda signature status. A signature verification in "
+"the Elliptic Curve Digital Signature Algorithm (ECDSA) is the process of "
+"checking whether a given digital signature is valid and was indeed "
+"generated by the holder of the corresponding private key or public key. "
+"This process ensures that the message or data."
+msgstr ""
+
+#: ../../en/units/id.rst:181 ../../en/units/id.rst:182
+#: 3592973d721f41b99e527ff821fb80fd f80870e0f1a4423c82a8d88ab01f239c
+msgid "``bytearray``"
+msgstr ""
+
+#: ../../en/units/id.rst:184 684642817c744f6780e32b658e5f69af
+msgid "Return: ``bool``: True or False"
+msgstr ""
+
+#: ../../en/units/id.rst:188 7ba4ebfb76974e8fb862e7538e36a5e1
+msgid "|get_verify_ecdsa_sign.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:18 5a763bf48bf448a5a4cd42289e143a20
+msgid "get_verify_ecdsa_sign.png"
+msgstr ""
+
+#: ../../en/units/id.rst:193 c098508032e240f4bf7907cbe7b99c4b
+msgid ""
+"Get the generate the SHA-256 hash value. SHA-256 (Secure Hash Algorithm "
+"256-bit) is a cryptographic hash function that produces a fixed-size, "
+"256-bit (32-byte) hash value, regardless of the size of the input data."
+msgstr ""
+
+#: ../../en/units/id.rst:196 19222edc2b324bfd958a2334d9a5c755
+msgid "``string``"
+msgstr ""
+
+#: ../../en/units/id.rst:197 e759ac2bc8b9424cb89fd630a3ade4c7
+msgid "0: hexdecimal, 1: base64"
+msgstr ""
+
+#: ../../en/units/id.rst:199 24a5e31b1ade4fb6954287b7dc44d584
+msgid "Return: ``string``:"
+msgstr ""
+
+#: ../../en/units/id.rst:203 609a5b359bbc4bdfb68ad3c367645094
+msgid "|get_sha256_hash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:16 3e3025f1461048b08e27bdcafb68db10
+msgid "get_sha256_hash.png"
+msgstr ""
+
+#: ../../en/units/id.rst:208 3f736b731a2a4dada8ba3f8a8122f1d8
+msgid ""
+"A Certificate Signing Request (CSR) is a block of encoded text that is "
+"sent to a Certificate Authority (CA) when you apply for an SSL/TLS "
+"certificate. It contains information that the CA uses to create your "
+"certificate, including your public key and some information about your "
+"organization."
+msgstr ""
+
+#: ../../en/units/id.rst:214 5f08dd1fe9ea486da905a247bb664541
+msgid "country name example: China"
+msgstr ""
+
+#: ../../en/units/id.rst:215 2e98013e7a7c4db3a394183643160bb8
+msgid "states or province name"
+msgstr ""
+
+#: ../../en/units/id.rst:216 f9e409a2301e450db95428d771fe122b
+msgid "city name"
+msgstr ""
+
+#: ../../en/units/id.rst:217 b9f2dda1c63f49a9bca1e48a36d0c119
+msgid "organization or company name"
+msgstr ""
+
+#: ../../en/units/id.rst:218 0be29d718f314d4b80e874309d2a0fa0
+msgid "organization or company unit name"
+msgstr ""
+
+#: ../../en/units/id.rst:219 47976cfc40174263827da214ddbfdff1
+msgid "Store the file to flash or SD"
+msgstr ""
+
+#: ../../en/units/id.rst:223 ead371a340ad411f9dd7550050c6f518
+msgid "|set_certificate_signing_request.png|"
+msgstr ""
+
+#: ../../en/refs/unit.id.ref:19 2ff129a0f3ae4bc6904c7fd0affff095
+msgid "set_certificate_signing_request.png"
+msgstr ""
+

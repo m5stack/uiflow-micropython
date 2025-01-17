@@ -1,0 +1,195 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/flash_light.rst:3 ed2bf565f8484eb0b0bab3fd28a20d6b
+msgid "FlashLight Unit"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:8 6069efeba92a49ea89888b4b75ab9297
+msgid ""
+"FlashLight UNIT is an I/O Unit with built-in flash, including AW3641 "
+"driver and a white LED, with a color temperature of 5000-5700K. There is "
+"a mode selection switch on the board, which can set the flash mode and "
+"the constant lighting mode. The communication interface is GPIO. This "
+"Unit can be used as a flash or lighting applications."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:15 63d03742e5064f6b8926a67c2a464f6b
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:17 81dae3f2a0914398b75a02ee0b267dbd
+msgid "|FlashLightUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.flash_light.ref 72c015055d9d4da084c21d3a8f16ba9f
+msgid "FlashLightUnit"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:20 af3e95a6812d4797ae31deaee3121f6e
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:27 d642943492eb40baafc9f969396dc19b
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:29 8eb120c4c4ef47de8154f5c920f66b01
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.flash_light.ref:10 33824a3097a44a009f11b2f5db75f45f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:34 e4b1a3342fce471aad63707a34d1a4f4
+msgid "|cores3_glass_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:38 438e83f2475545f0af21fca291c88ba6
+msgid "class FlashLightUnit"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:41 ea01c027bd86458cbd781bf10924b6f8
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:45 49b3afd78bc14970887a0d4242713bf7
+msgid "Initialize the FlashLightUnit."
+msgstr ""
+
+#: ../../en/units/flash_light.rst 0830d2c30f0d488fb5375b1e9a691b3a
+#: 9f4901c87dff48d69b4dd12734f72755
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:47 49e002685fad49bea4b0ec5204943dfe
+msgid ""
+"The port to which the FlashLightUnit is connected. port[0]: adc pin, "
+"port[1]: pump pin."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:49 ../../en/units/flash_light.rst:83
+#: 033eaeb724434011bb3719008be93aa7 705870f9273c49b796a14cf4e931fac1
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:51 931e15d7ccad4f08a9c00af0c59f3b36
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.flash_light.ref:7 5b139adb57ee415ebf3b8628bb1e78f5
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:55 1d3e110a1f234e6f87f6deb4b89dba68
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:59 259154f23f254f22a972521b5158b5aa
+msgid "Flash the light."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:61 55029b8defd1480a87cc7c2952f311af
+msgid ""
+"The brightness of the light.  Options:      - "
+"``FlashLightUnit.BRIGHTNESS_100``: 100%     - "
+"``FlashLightUnit.BRIGHTNESS_90``: 90%     - "
+"``FlashLightUnit.BRIGHTNESS_80``: 80%     - "
+"``FlashLightUnit.BRIGHTNESS_70``: 70%     - "
+"``FlashLightUnit.BRIGHTNESS_60``: 60%     - "
+"``FlashLightUnit.BRIGHTNESS_50``: 50%     - "
+"``FlashLightUnit.BRIGHTNESS_40``: 40%     - "
+"``FlashLightUnit.BRIGHTNESS_30``: 30%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:61 2091a68322af473d9b2627f09ac848db
+msgid "The brightness of the light."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:63 ../../en/units/flash_light.rst:76
+#: 050c8126bf0943d6b7ec3dfb5229c800 8012ecfe7d3e4a3c9eb030ca03d45c89
+msgid "Options:"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:65 0195637b732a4f88966240e8ba842404
+msgid "``FlashLightUnit.BRIGHTNESS_100``: 100%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:66 165ce2d4a17d4926a22eee8708243e0a
+msgid "``FlashLightUnit.BRIGHTNESS_90``: 90%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:67 7ebf496daf6349b781c654fba336cf76
+msgid "``FlashLightUnit.BRIGHTNESS_80``: 80%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:68 14511533de0c4629a3e8d3168aba12da
+msgid "``FlashLightUnit.BRIGHTNESS_70``: 70%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:69 c793c00883c94e09aa2740d741a3c046
+msgid "``FlashLightUnit.BRIGHTNESS_60``: 60%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:70 2fe06d0f80484ef2944210d02d23d96a
+msgid "``FlashLightUnit.BRIGHTNESS_50``: 50%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:71 59756cd9177a4179b97c69fb0b1a540c
+msgid "``FlashLightUnit.BRIGHTNESS_40``: 40%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:72 5f7c221fd9f04a68bcc9a88e474e684a
+msgid "``FlashLightUnit.BRIGHTNESS_30``: 30%"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:74 15f35127564c4c4e9e10c89ac0ec345f
+msgid ""
+"The time of the light.  Options:      - ``FlashLightUnit.TIME_220MS``: "
+"220ms     - ``FlashLightUnit.TIME_1300MS``: 1300ms"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:74 910226df52f843bb98da4af43f1dfff1
+msgid "The time of the light."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:78 d36f16c6de9a4832bf15e25a1874ce6e
+msgid "``FlashLightUnit.TIME_220MS``: 220ms"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:79 ee4a731834584cbdb74ca35a8b65d9fb
+msgid "``FlashLightUnit.TIME_1300MS``: 1300ms"
+msgstr ""
+
+#: ../../en/units/flash_light.rst:81 a4bddeb880494660bc9238322132e090
+msgid "Turn off the light after flash."
+msgstr ""
+
+#: ../../en/units/flash_light.rst:85 90e56f5f1fed41d5aecb5351043676dc
+msgid "|flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.flash_light.ref:8 654d0372416c4f3eb40cbf5d309766a5
+msgid "flash.png"
+msgstr ""
+

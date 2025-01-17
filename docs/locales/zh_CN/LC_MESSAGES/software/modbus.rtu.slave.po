@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/software/modbus.rtu.slave.rst:4 fbfa451512a148b7823c57420050ff5f
+msgid "class ModbusRTUSlave -- Modbus RTU slave"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:8 39c89b69bbd24828a4131dadcdb37e67
+msgid ""
+"ModbusRTUSlave implements the Modbus RTU slave. ModbusRTUSlave support "
+"function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding "
+"Registers), 4 (Read Input Registers), 5 (Write Single Coil), 6 (Write "
+"Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
+"Multiple Holding Registers)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:11 0f8c8589ba654c86a474e15369106fce
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:18 4311a8cfb53c4e7bb364fc8030559cd8
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:20 bb02ed2e89e449d889a7d5e09bdb44c8
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:34
+#: e6aa563a367d4b96922a0a3e8d81a648
+msgid "example.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:25 91d1a10466a548f78eb6aec25143c505
+msgid "|cores3_rtu_slave_example.m5f2|"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:28 b39febf7a50d4e178245a6ae6f9ea20b
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:32 fedb4a5da3fe4fdb85d0e8c9ff519569
+msgid "Create a ModbusRTUSlave object."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst 042611d21ca0496e9ebc7e036b6f1799
+#: 0c0dcd54335d41d1bd9064fb8768cea7 0dfb95b14f4b4a158fa8aa28deee5e50
+#: 213f79f978c64f26aa4e722669a6f25f 21d6d73ba77441d9a2db13ac6f336891
+#: 351eb9159dd941ba95b89f6e73ed466c 56f5ffb5d88e42fabf0246f18e7b991a
+#: 5ff8954e9e85475b85c0822ee688b82f 6041dde2d3a14cfc9dd77b03f74cabe3
+#: 79682266161a4ec7aa025526a3808535 8033aa708e274bb79a3ce26ab52adc42
+#: 8393abcaaa7c4e0dad574ae8c5a7145b 898c36d91899484999a72ce0264b0fba
+#: 8b30ed4ce98d4b53a992236a96bdc0ee 98f9d881cf2343418456e3386a5fb643
+#: bb34a620a4d143ec9d19b683a5537e0f c7ed8d06361a40edb19c6b396f7adf4e
+#: cfcd8e07fb804d79a6b13037bae275ae d4f9a53c6d0f4275b4a77f7e909506c5
+#: d7589cedcf574d049d6601268a7db8ad f72bb50417b548f19aa692e9e29d96d9
+#: fce2bd85476a4568bd203399419adc27
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:34 a6b5a59fbdc143838014eae3dd61da42
+msgid "UART object or RS485 object."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:35 2d491c5df11f485a87e5f3bf82c0c01a
+msgid "Device address. The address is 0 to 247."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:36 0eb079d45675401b8ced02d2effcc4d5
+msgid "Modbus server context."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:37 8c7caab05a7540bb8550233c2c62e66b
+msgid "Ignore unit ID(or Device address)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:38 94f81decbf184306addbe3ed89c804de
+msgid "Verbose mode."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:40 57f168b83c104e2592200e7dd6451ffa
+msgid ""
+"``context`` is a dictionary that contains the Modbus server context. the "
+"format is as follows::"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:69
+#: ../../en/software/modbus.rtu.slave.rst:81
+#: ../../en/software/modbus.rtu.slave.rst:90
+#: ../../en/software/modbus.rtu.slave.rst:102
+#: ../../en/software/modbus.rtu.slave.rst:114
+#: ../../en/software/modbus.rtu.slave.rst:126
+#: ../../en/software/modbus.rtu.slave.rst:138
+#: ../../en/software/modbus.rtu.slave.rst:149
+#: ../../en/software/modbus.rtu.slave.rst:160
+#: ../../en/software/modbus.rtu.slave.rst:171
+#: ../../en/software/modbus.rtu.slave.rst:182
+#: ../../en/software/modbus.rtu.slave.rst:195
+#: ../../en/software/modbus.rtu.slave.rst:208
+#: ../../en/software/modbus.rtu.slave.rst:221
+#: ../../en/software/modbus.rtu.slave.rst:234
+#: ../../en/software/modbus.rtu.slave.rst:246
+#: ../../en/software/modbus.rtu.slave.rst:258
+#: ../../en/software/modbus.rtu.slave.rst:270
+#: ../../en/software/modbus.rtu.slave.rst:282
+#: ../../en/software/modbus.rtu.slave.rst:294
+#: ../../en/software/modbus.rtu.slave.rst:306
+#: ../../en/software/modbus.rtu.slave.rst:318
+#: ../../en/software/modbus.rtu.slave.rst:330
+#: ../../en/software/modbus.rtu.slave.rst:339
+#: ../../en/software/modbus.rtu.slave.rst:351 03f6910a0eaf487e91a8afd9d8cc29aa
+#: 049c34e16ea7472ab32f5c8a5a93a758 13d52e2cd5814923a439294660a7eae8
+#: 1aeb41fe3de74ce18c28ba6565b22ae1 2a520150f8b34ddf85114c716b46fc0b
+#: 44a2bb864b534cb99503af7e782715a6 6922f8b656f4439db927be991169e73c
+#: 6aec89ea551e44ffa88ddce25c2b0b5b 78e0aa0ae4454b96a6ea8b8ea8dd0962
+#: 7a35289cc3244e8ba8b78bf57ea0572c 8d4f49eb39b84a2ea1cb9afc0849db30
+#: 9793545315134102b1bab8cac04a48cc a006dc8195634f4085a6f26d3df9c5e7
+#: af5bcbc69b7a44f784f7831c100c75d3 b46b9720ced24f499d9f89256ac15b39
+#: b806fcd33a61447c84f4d49515fc2b6b b92ec3730151455183b00ff794018128
+#: c1480e3297054e88ac0875d93b9323f2 c32360291d7c4759956d168174110edd
+#: cebe085264ce42d6911a1033fbd313af d1efdb313aed4235a82742ab8125a090
+#: d4daa7a61d4646fca890384e1772a14a e7f5cbd782004052a5b1fa2890239b83
+#: f70f8e9c7abe446188c21149cb6646aa fa64c66e072243149972eb036ac197c2
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:71 86bc9ccd621c4b86b95a94e9ee7ac4f5
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:9
+#: b5edb9eb9f4248b7abc874a05b693cea
+msgid "init.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:75 7f92ed6756ee4ddc99711f76b76b6688
+msgid "Methods"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:79 bc75ba560e0545d29cc363482a860b0a
+msgid "Start the Modbus RTU slave."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:83 8cf2429b0966464cb65a7a06ce40ba85
+msgid "|start.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:26
+#: 079885184b804f909d746c5e1dc2b58e
+msgid "start.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:88 e8220a22d9864d0094048bde9b04deee
+msgid "Stop the Modbus RTU slave."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:92 41376a9e18ac4bf2a6862f509297e3a8
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:27
+#: 6a4fa358461d48b98c28bf1f16ee99fa
+msgid "stop.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:97 212ca018be6a4880a9466a9bd2214b57
+msgid "Add a coil to the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:99
+#: ../../en/software/modbus.rtu.slave.rst:147
+#: ../../en/software/modbus.rtu.slave.rst:191
+#: ../../en/software/modbus.rtu.slave.rst:243
+#: ../../en/software/modbus.rtu.slave.rst:255 8eaec2f075274bc69d9660511d7fdc0a
+#: a1380dcb9317415eae5a245529ea4e4e ce39bbcfee4c4f6e9b22d233fe8db80e
+#: d214586ac44b49af9321071f79be93b3 e9ed44eb7a6347fb8548145ab83cd492
+msgid "address of the coils. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:100
+#: ../../en/software/modbus.rtu.slave.rst:112 92270ef147674d269156e8ad0822448a
+#: e57a768b54474680ade1c1809192b24f
+msgid "Value to add. The value is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:104 d99232f6131644bc8b2dba3fab59cc97
+msgid "|add_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:1
+#: 101bd2c02a8a45a6824d4729975d8a7e
+msgid "add_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:109 2534c356cf6d41ad85e00cc8a2db55e8
+msgid "Add a discrete input to the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:111
+#: ../../en/software/modbus.rtu.slave.rst:158
+#: ../../en/software/modbus.rtu.slave.rst:204
+#: ../../en/software/modbus.rtu.slave.rst:267
+#: ../../en/software/modbus.rtu.slave.rst:279 1ec6bc4db9d0467987bfc35f0cc33f1b
+#: 888ec2a776c04357a8bbab25276f87d4 9e24616b46ed4af2a3006959bac2440f
+#: b9316101101e41ed8e28094ed7e89ff0 feb96d75094f499eab8678b64b07f818
+msgid "address of the discrete inputs. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:116 8bc1e0582dfb41e7a7e431c555013803
+msgid "|add_discrete_input.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:2
+#: 5f69b3d52e7c4dbc9bb156c3883d5821
+msgid "add_discrete_input.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:121 c2e4bedbc1054a06956acacedbbafc62
+msgid "Add a holding register to the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:123
+#: ../../en/software/modbus.rtu.slave.rst:169
+#: ../../en/software/modbus.rtu.slave.rst:217
+#: ../../en/software/modbus.rtu.slave.rst:291
+#: ../../en/software/modbus.rtu.slave.rst:303 19e91d2678794485ace5c16119aaa6b4
+#: 32b343b2d7964fee9ec3c7dfd1271c71 48fe29b1996e4794a2328c24fffb09cf
+#: 74cc514959e247ffa43e0940f87335fe b96252be73154603a9effc208c0f115c
+msgid "address of the holding registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:124
+#: ../../en/software/modbus.rtu.slave.rst:136 7a9bd480313442f28aa1fd174cdfd0bd
+#: c110a8c945494d9f91dbd9cea2171b53
+msgid "Value to add. The value is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:128 4bdd460091d24cadacefd1107f90c26d
+msgid "|add_holding_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:3
+#: d42f71a19e244bf2a7a48cd1648d1c42
+msgid "add_holding_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:133 a0c9f60ec4c24c048b1aa853db45a072
+msgid "Add an input register to the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:135
+#: ../../en/software/modbus.rtu.slave.rst:180
+#: ../../en/software/modbus.rtu.slave.rst:230
+#: ../../en/software/modbus.rtu.slave.rst:315
+#: ../../en/software/modbus.rtu.slave.rst:327 9cd336621f7f4937bd7f628996518081
+#: c997a1fccc084179a52c4b75152d3d54 d05ccf8a2eb34350a09612d1c3daf9ab
+#: dfee7589efb14c32be500d92226ef3e2 f5205326e6bd498c980a137757922f4d
+msgid "address of the input registers. The address is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:140 fae7ffee46bb47ec9689a226f2e701b1
+msgid "|add_input_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:4
+#: 63691f478ae343fdbdb557efc5b88d55
+msgid "add_input_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:145 e2ddd09ac18f48dc890789c089389c63
+msgid "Remove a coil from the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:151 22e6b7396e7848ef89b70cb7d59a578d
+msgid "|remove_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:14
+#: 497db445696d4a7d80d17610e9e7f80b
+msgid "remove_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:156 5f60acafe2204180b1224e7bd9aebd2f
+msgid "Remove a discrete input from the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:162 42eede4e14ef4e22a4cc1f646cc08d5a
+msgid "|remove_discrete_input.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:15
+#: edbf52c3e3de4543887c440bf363d886
+msgid "remove_discrete_input.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:167 59c0a747d93449afb617560c4cb40425
+msgid "Remove a holding register from the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:173 c7a287d93a334be69e9fc408504d2c95
+msgid "|remove_holding_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:16
+#: 36a82f8bc0664e5799fb137e264b5d2f
+msgid "remove_holding_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:178 774fd05419b4408ab47565b7c67f7ccd
+msgid "Remove an input register from the modbus register dictionary."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:184 16c253c2f05f45a38b1f974ec934fdce
+msgid "|remove_input_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:17
+#: dfdf7c4b503341618e90bc1133bf805c
+msgid "remove_input_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:189 5dd2c209f78548949b4fdf134d728f7f
+msgid "Get the coil value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst 0d07be3f81584cfab26acf1a844f2dce
+#: 899386aa7c0e40c4acea733bb5d18338 9df7ccd550d84567bb6d64373e544223
+#: 9e6b252698424ed7ad4558bf322cb9c5
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:193 0484b400bc66448f87589296394e414e
+msgid "The value of the coil."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:197 659b55f85c004d41b472738f0f307af3
+msgid "|get_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:5
+#: a09e0e316aef4ec29e4cb34eb280c98f
+msgid "get_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:202 ed0b4c122e4444e18eabaf4236d34f79
+msgid "Get the discrete input value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:206 b09ef62097cc402aaa2d2ed0ca073eeb
+msgid "The value of the discrete input."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:210 23636b557fd1403fbb1ad705e9883bc2
+msgid "|get_discrete_input.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:6
+#: 354a042039174497bfac7dbaa80cb8bf
+msgid "get_discrete_input.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:215 4421ecf2aadd46ba8ad44b8841a59cce
+msgid "Get the holding register value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:219 27f84b59d63d4e27b678b4c5f116a4c3
+msgid "The value of the holding register."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:223 04069677bf3e4679a8280b132603a027
+msgid "|get_holding_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:7
+#: a6a3d2ff83454c5ab359c812bb8324c3
+msgid "get_holding_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:228 9a86adbed0eb451e90fd2d80b905adce
+msgid "Get the input register value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:232 96138eb962154afe8ec355f9d7183cae
+msgid "The value of the input register."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:236 78bbc7010da14eca82e46d0a9fca9d52
+msgid "|get_input_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:8
+#: db65486c0c7241a78f36b4a4aa8d6bd9
+msgid "get_input_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:241 49755ee3f5af4958a4438cdfb8d49568
+msgid "Set the coil value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:244
+#: ../../en/software/modbus.rtu.slave.rst:268 1012898cc8f4490d9c601f08ed12273f
+#: a2ed0617f6194f2aa0519eb59d6a7008
+msgid "Value to set. The value is True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:248 8eb252167a614913a6a01b8a38a06172
+msgid "|set_coil.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:18
+#: 0fbf28b33edb41c5b25967f605bed6fe
+msgid "set_coil.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:253 cd2414f6d7114e38a7eac821186d6c0a
+msgid "Set the multi coils value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:256
+#: ../../en/software/modbus.rtu.slave.rst:280 820261769aa8467395c0a909470ceb8f
+#: 8725324097ed4c0080ba07f301f65159
+msgid "Values to set. The value is a list of True or False."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:260 e3e238d8e34f4707a6d43f472eece3a1
+msgid "|set_multi_coils.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:22
+#: 70588fe60c874a56b2c62ef327153a63
+msgid "set_multi_coils.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:265 a3c1764de598453385643a8e2d24fa35
+msgid "Set the discrete input value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:272 1d949faed8e34d33a791a77a6f75e3af
+msgid "|set_discrete_input.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:19
+#: 2b51e2add451453c84040813dec58394
+msgid "set_discrete_input.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:277 b6ea76b069934bdeaf117c3c49d765c4
+msgid "Set the multi discrete inputs value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:284 df6ab7c84bc240698cb8efefa4a284d5
+msgid "|set_multi_discrete_input.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:23
+#: 3adb5068a6124755b55ac5505d8c6112
+msgid "set_multi_discrete_input.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:289 0cdfe59cf44e4d2982b670be2efbca11
+msgid "Set the holding register value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:292
+#: ../../en/software/modbus.rtu.slave.rst:316 285b5af36da9457a8f65cef057730372
+#: 525db7f278bf41c1943f2b1d4d9b5f23
+msgid "Value to set. The value is 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:296 6bf7cf14c7d8479b9210b7d839526849
+msgid "|set_holding_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:20
+#: f656168917ff43fe932978fbbaba5227
+msgid "set_holding_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:301 ef4383c03d6e4f68b92ad72aa461706d
+msgid "Set the multi holding registers value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:304
+#: ../../en/software/modbus.rtu.slave.rst:328 5a090c7c50f04cf5a02ba3f076c7c2e9
+#: 5f7df4af91b045e7bc151cd7ac01e608
+msgid "Values to set. The value is a list of 0x0000 to 0xFFFF."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:308 54868adeb65d40f1b68bdf92d32cae10
+msgid "|set_multi_holding_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:24
+#: 95e54b695ff64dbca0145664a397129d
+msgid "set_multi_holding_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:313 2907cabbf0b144ed8007978888d5820b
+msgid "Set the input register value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:320 269f5d4af7d64fac876b3a50690ae2df
+msgid "|set_input_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:21
+#: 3ec461cf30074a55a937be1cf473ace4
+msgid "set_input_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:325 5f054b280fc64123a28b5d63cc80780a
+msgid "Set the multi input registers value."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:332 80db306bff6042958c61a90fe1b4a56e
+msgid "|set_multi_input_register.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:25
+#: fb4ee67e79164607b5a54e7ba5335725
+msgid "set_multi_input_register.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:337 9e05dafb0e30421c91afcd3c4029956b
+msgid ""
+"Modbus RTU slave tick function. This function should be called in the "
+"main loop."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:341 ec514580972f4e028d7ff9f3901cc43c
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:28
+#: d2bc512652314f44971cf309b1545088
+msgid "tick.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:346 d1176cdf115943d7a56f89517ed76fb4
+msgid "Set the callback function for the function code."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:348 8d2802058ff34aa2931950d88fe416bd
+msgid ""
+"Function code. The function code is 1 to 6, 15, 16. the symbol is defined"
+" in the modbus.ModbusRTUSlave (\\*_EVENT etc.)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:349 266be9077735496d9f754d4e042dd750
+msgid "Callback function."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:353 4f35df83e4104adea76f949314c4a314
+msgid "|read_coils_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:10
+#: 8f4d8a066bb94009b3d612a2b1efbbbc
+msgid "read_coils_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:355 b1e75a4a57f04c0db98ad9879a0dc06e
+msgid "|read_discrete_inputs_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:11
+#: 1d08348fb12743288c586062ef1b281c
+msgid "read_discrete_inputs_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:357 ca0c92d44c144ff5a2390851d725b4cd
+msgid "|read_holding_registers_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:12
+#: 8624892821204e13965d37f862f96ddb
+msgid "read_holding_registers_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:359 1ff4ce5086934e31a51e3ab2c2e956d2
+msgid "|read_input_registers_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:13
+#: fb955b247e5646a0b7c3060a9d3e595a
+msgid "read_input_registers_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:361 8ff30527f9f54f0cabc1963544977793
+msgid "|write_multiple_coils_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:29
+#: 32a4b1dc31214e19bc820c31c4978520
+msgid "write_multiple_coils_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:363 c6454ed6d0c94379847ce7d93140a0cd
+msgid "|write_multiple_registers_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:30
+#: 602aae11b3dd4a36824f6a7766d47a68
+msgid "write_multiple_registers_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:365 40745c29a6e54effb970437a26087dbd
+msgid "|write_single_coil_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:31
+#: 20c7b9cfa9744119a915c9a6abb3ea47
+msgid "write_single_coil_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:367 4da5eca42cba448b81976ba5960a62bb
+msgid "|write_single_register_callback.png|"
+msgstr ""
+
+#: ../../en/refs/software.modbus.rtu.slave.ref:32
+#: 5bc311c2a8364fbfad96cb737e26e1a1
+msgid "write_single_register_callback.png"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:371 31aed2d86fd742cdbae3ddc76def2f63
+msgid "Constants"
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:375 7405041dc2f64b60a907ad382c222dd0
+msgid "Function code 1 (Read Coils)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:380 1142943482d9417184f6e11b066ae65c
+msgid "Function code 2 (Read Discrete Inputs)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:385 897572eaa635403da8ec30b2b9dce055
+msgid "Function code 3 (Read Holding Registers)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:390 e245c018bc6f41ea8063c8f88b260d7d
+msgid "Function code 4 (Read Input Registers)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:395 b4dcdb045626407d91461782493fd7fc
+msgid "Function code 5 (Write Single Coil)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:400 7be43b13c17c49388e26527b17c38f98
+msgid "Function code 6 (Write Single Holding Register)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:405 9314bfd7e31b4be7a54493824dcf66c4
+msgid "Function code 15 (Write Multiple Coils)."
+msgstr ""
+
+#: ../../en/software/modbus.rtu.slave.rst:410 51b11d5ef18e44479a5f54313cd3687c
+msgid "Function code 16 (Write Multiple Holding Registers)."
+msgstr ""
+

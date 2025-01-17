@@ -1,0 +1,1190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/rollercan.rst:3 a298eb1b37294253b136af8b01874ebe
+msgid "RollerCAN Unit"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:7 61db8e0bd2e94df986bf76cdb53cfb75
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:9 fe49b449f5db4c21b4ae727896fa30ec
+msgid "|RollerCAN|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref 316822caf04447bda4992e02d914bf96
+msgid "RollerCAN"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:11 79403009d4e843cc8ae6cef4a21525ab
+msgid "RollerCAN I2C Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:17 20bc4e031a264de1a7852ae7d9f8354f
+msgid "RollerCAN I2C UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:19 d7088e98f99543caa33e4e131cd544ae
+msgid "|i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:57 a68e39878e1948ffbd5fa5160bb8ee09
+msgid "i2c_example.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:23 2cf95701fc084c1cb8b53a4befab0d66
+msgid "|rollercan_i2c_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:25 7d4294ae55a54744aeabe77e61b4861a
+msgid "RollerCAN CAN Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:31 ac3a5310d53a4254a219b2b4eb9dd72d
+msgid "RollerCAN CAN UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:33 e173f986b6c04308a3ec57986da56f57
+msgid "|can_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:58 82590f6fe63b4ee09614937196cfc0e5
+msgid "can_example.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:37 192bc9e958b54bbaa43f7e5ece070826
+msgid "|rollercan_can_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:39 c168604118974e559226095ef12dd2a1
+msgid "RollerCAN CANToI2C Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:45 7fee67d00ce24e74a603e5c63b5ec61d
+msgid "RollerCAN CANToI2C UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:47 88bff978b13a408cbcde8b9c7d0c57c5
+msgid "|can_i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:59 1e6486f0411748998403d0ea259cc257
+msgid "can_i2c_example.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:51 a69ba2bcbd6e40bf8be763ed89e170d9
+msgid "|rollercan_cantoi2c_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:55 1aac53b31b1d4101a987d5a0c75e69de
+msgid "class RollerCANUnit"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:58 ../../en/units/rollercan.rst:76
+#: ../../en/units/rollercan.rst:617 ../../en/units/rollercan.rst:652
+#: ../../en/units/rollercan.rst:712 0f6a8e499a274da2b6bb56ade63095b6
+#: 470ccc2f44e3496ba82e8a3bc83ec3fe 87a1634fe2324b8d81b45eb7939b2476
+#: b9489ca29c324342a6ca96778d9b21db d90fbe38f9104f41b6d3721337747eb6
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:62 c5827e4736c14eb599c2e0ec9fc22103
+msgid "Initialize the RollerCANUnit object based on communication mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst 01377a7a0b0242fc84b85c404b80a02c
+#: 11e85151d7534ef6959cdbd6e78ab193 2fe8ba40dec045bca56caa9fda1d4d0e
+#: 36876009921d402a92c96199ebea785a 38779029a16f4625adcd5afe98119c46
+#: 3c2ca28ac582409a98f97270516a80a1 497491028f40479d9843406194a2203d
+#: 4d26b1cef80b4454917ddeeedc512268 536798c7504448379a6808e1aabfb1ff
+#: 5b13bca056d84a479296270289de2ae5 5d21695d938647cd8a6ede119880f6f4
+#: 61ffaea626c144cf8479e989aebba1bb 6899a2ce0e0d4f53b6d71fd685e79230
+#: 758d7c8b890b4928938f118cd4afa82d 83dbfa7614df4694931a555902234dab
+#: 85512bbcfffd47b9b42c6f3c2434dba6 8b83a24d7aec4de4b57923268ecba90a
+#: 8ce81e60b12d49b7b572eb32b648b4a1 8d0d5569add74dbfbe635a1b06dbcfdd
+#: 8e00e51366c5405ca6d013224ebc2ef6 a2639e270e654187b93954a0a3af3ef2
+#: a4f78f4015454f79ae665eb0d9f583ab a7eb9d977ec74cdbb25306657703f450
+#: afd2123dd7b144e49cc7989f70c7a260 b018ae34581c47c78fdd1497a9cad6c6
+#: b14a0589c43e4d338ab87e0ba6e72f22 b32eb568d146426491f6887db7ac73b5
+#: b5e7ed4c4da644f3b42d8296bf1c1561 c466fb1f59c74b82b09ee9b788d7ab19
+#: c6045d3ea9134977aa3b18f2d0177f26 ca743e280eed4432a9efc6dbca77f99e
+#: ea31487fb2e1417883f6f0f5d606326f eaab0a3c53404810bbc2fcff4f7d3140
+#: eb11572e918244eda4194abaf4878453 ebdb3a7468c44aaea9cc132be0581832
+#: f29aefc1101140c9bb7c4d52fb612978
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:64 f9c78b21eb1740948813fafdfe8b2980
+msgid "The I2C/CAN bus instance."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:65 ../../en/units/rollercan.rst:659
+#: aded2724d049483294793c838137a541 b5d5c051de8b42888caddc19032480f2
+msgid "The motor's CAN address. Defaults to _ROLLERCAN_CAN_ADDR."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:66 4cd361b9160940609abc6038a542eff5
+msgid "The RollerCAN communication mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:68 ../../en/units/rollercan.rst:92
+#: ../../en/units/rollercan.rst:103 ../../en/units/rollercan.rst:114
+#: ../../en/units/rollercan.rst:125 ../../en/units/rollercan.rst:136
+#: ../../en/units/rollercan.rst:147 ../../en/units/rollercan.rst:156
+#: ../../en/units/rollercan.rst:167 ../../en/units/rollercan.rst:178
+#: ../../en/units/rollercan.rst:189 ../../en/units/rollercan.rst:200
+#: ../../en/units/rollercan.rst:211 ../../en/units/rollercan.rst:222
+#: ../../en/units/rollercan.rst:233 ../../en/units/rollercan.rst:244
+#: ../../en/units/rollercan.rst:254 ../../en/units/rollercan.rst:264
+#: ../../en/units/rollercan.rst:275 ../../en/units/rollercan.rst:286
+#: ../../en/units/rollercan.rst:297 ../../en/units/rollercan.rst:308
+#: ../../en/units/rollercan.rst:319 ../../en/units/rollercan.rst:330
+#: ../../en/units/rollercan.rst:341 ../../en/units/rollercan.rst:354
+#: ../../en/units/rollercan.rst:365 ../../en/units/rollercan.rst:376
+#: ../../en/units/rollercan.rst:387 ../../en/units/rollercan.rst:398
+#: ../../en/units/rollercan.rst:409 ../../en/units/rollercan.rst:420
+#: ../../en/units/rollercan.rst:431 ../../en/units/rollercan.rst:444
+#: ../../en/units/rollercan.rst:455 ../../en/units/rollercan.rst:466
+#: ../../en/units/rollercan.rst:477 ../../en/units/rollercan.rst:488
+#: ../../en/units/rollercan.rst:499 ../../en/units/rollercan.rst:510
+#: ../../en/units/rollercan.rst:521 ../../en/units/rollercan.rst:532
+#: ../../en/units/rollercan.rst:543 ../../en/units/rollercan.rst:554
+#: ../../en/units/rollercan.rst:565 ../../en/units/rollercan.rst:575
+#: ../../en/units/rollercan.rst:586 ../../en/units/rollercan.rst:597
+#: ../../en/units/rollercan.rst:608 013bf9319ed7435bb4f9abcc3c9873c1
+#: 02190fdaeb4440de8896cae4c230c754 0aa87df3c4c04c0a8ae9a82f5d4e5610
+#: 13dd0d6322f94503862a979282b29787 1556902bf00549dbac4ecc0e6f96bf7c
+#: 163e67ec0ad442c1a97912198386f38f 214dce4268d14ddfb4accdb1bb7fa86d
+#: 236d70573dc746a2b544a82faf9ee984 24718dba54c746b9a86baf774d9da04a
+#: 2b2da9bc501740d39abf03af011ed415 2e4f650b8ae04033a8efaad591ed719a
+#: 31f6ed04e0944330bf600404af421961 41ae26fad2064b8c8bff2058a0711bd7
+#: 4c43161fc27b40a6a387f0986f656270 5202961bd0ab4a6f81f483ca62ec9077
+#: 537eb5de70ec4225b3be1394eabb3ff3 557caf26de9c4690b5e3438d2285f902
+#: 56e46b8c409c4c458047c365bc249934 5848971bcdb44fe3a502926e40821504
+#: 59e12e15c8a640889c53a4bee8a497e9 61f746782b7e49d98add169cba6fb5b7
+#: 64997b3a27e340d9a23933a8efbcbb2e 68cecaf8f0f24659a6acc9aa5f87a50b
+#: 7093ee77f1e14531b659dd56d9aa39a4 710740c3b5cf47a4839b9b5e058d4f1c
+#: 73eec7d35f504edc92f9a56fbe846f07 75556f665fcb466e9e7d2b8e40897004
+#: 809fc79dfd5e41cf8e5808bf6e645054 84387bca9e044ce5b4533a7f0fc61c70
+#: 90bd24a9fda743e1bcd4ab1b9e199927 90f682c09632442881a25d564026c4d3
+#: 92d6456b16a44b57b135921861d64600 9f3d77fb2fa94382843337a334a20fb2
+#: a1b56e1e4815455180ed13a1a6569db1 a52000c8d53c4efe989856680e63fca0
+#: a586c618bdd44a1599090d1663139482 a7d7b58cd0cf41c0a38ef196d22b19b5
+#: ae3071a12f71451e8431955181632592 b5c66ecf4ef645b18678aec65ee1c96f
+#: bb0af26117f040ab9e6f5079ff0530c9 bb9b30d7f0fc4a4f907d4d7a664bfc64
+#: c30fd9a5826649ddb980e3ab52e61c10 c9b7091b31f845f89843d806a8b2ec4d
+#: d6126dad449b4667bf58517977ea8112 dfae736ee9f9439994ecbd59942828cb
+#: ed93ff3c531d4ccd82d9a69640198224 eea12888d2f54ca2a0870cdfd3710246
+#: f40bb9a8ee8a4a28b56062e69797ceef ffae446c143b435d8acf8eb5b120fd81
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:70 7e1ed5507039485eb9b814986fed52c7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:7 312babbd3ccf43e4a34ed4b34dcc2501
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:73 8136bea1f4a04db090008e0ec914a813
+msgid "class RollerBase"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:83 ../../en/units/rollercan.rst:628
+#: ../../en/units/rollercan.rst:663 ../../en/units/rollercan.rst:723
+#: 237055e06e124a2ea975e8e68bbdabe6 596cfd832c7c4f0eb055f17e4385bcc2
+#: 7d5d6afe134b43b8b58aeb58b6e08a28 a93b9edc95304b238572928dc27da790
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:88 3a1620679d6941bebb8d12dcb5a4b180
+msgid "Set the motor output state."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:90 a6d051d16d354547aba42ca7c5175697
+msgid "Control value for the motor output."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:94 28cd4c7a455f467a84bdad84483f4781
+msgid "|set_motor_output_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:8 94c532916e894d678af3cc2ebd2a4cff
+msgid "set_motor_output_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:99 bdaeb2faab85475094d9d342842dc095
+msgid "Get the motor output status."
+msgstr ""
+
+#: ../../en/units/rollercan.rst 042e7a5253d9418794e69fa4fcb3ba46
+#: 0d4206d7d8f94ff1ad8801bfc6aaf6e2 1f5a758cf8204d22b1dfebd615322f36
+#: 26c3396e90fe40f9af1c81a0709ba598 2cac91c771614e9ab988db2a242b2baa
+#: 2e677abdc235482ea99bac1814b5726f 38f778efc916460c89e93402f56515b8
+#: 4011062d5bfe407f9dfd61405327fd4c 4af4e4d29f9547bc95250ffcb70fe867
+#: 4ddeac066a484660b851e153edf8d174 4e06206a1a8c4716910cae94c23b71e2
+#: 54c3325674914103abb0db4a1e55b509 58b59854e0d74c43b71b574e2c30e191
+#: 6cea7803c08f4fa399bee4769ba23afe 6e2d8466009148eea800432ad40cf7a6
+#: 73f44dc657c94fce97b0e55e2a77e28d 76da95276735463da7f121308057963a
+#: 798de056c1454d09a9b92e4279698582 88ad2a7b3bb340b9ac277ac5246e19db
+#: ab914dec05c6406c8633686a4f4b755e b303af4bb09d4451ba1f6d585bde9371
+#: b3cf526b45174676ae59b6557a7a39ff c61d55ffabe943609b16b7e538487757
+#: d41a9c31c79745739f8a2c8770861b5b f039cc78cb234116adf4fe9a3809ceb2
+#: f5a5c58cb5824b81bedeaa47e2d1a371 ff128da7605f4a6b9bfe5f8c7e457da9
+#: ff3592ab949243cea75c6f891d76076a
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:101 2c0f0af011ca48d6bfef84143bc352e5
+msgid "True if the motor output is active, False otherwise."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:105 07b87bdf7f044c89a458989dab001a96
+msgid "|get_motor_output_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:9 276d55eccb704c518b04714d50799f8a
+msgid "get_motor_output_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:110 0abedb19ae7e4064863a151bccd07bea
+msgid "Set the motor mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:112 5db3924995754fa3b4f971d08ebf8cca
+msgid "The mode to set for the motor."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:116 d04cbec9b30042a9aaed2baab253518c
+msgid "|set_motor_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:10 64cdb28a80b64a109ca709105622ed26
+msgid "set_motor_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:121 bb7d203dfbba4ac0a5ed2d61db74cce9
+msgid "Get the motor mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:123 d21aec0b0e84432f849fe886cb0c8be9
+msgid "The current motor mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:127 4fe1418fd6c14280bb8327f0755db463
+msgid "|get_motor_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:11 c17c13a648d2474d9953b90e059055c6
+msgid "get_motor_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:132 80292bdf9eb04a3cbcb93805b67331ad
+msgid "Set the motor over range protection state."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:134 ../../en/units/rollercan.rst:209
+#: 4babccecae784469865bb715d75b154e 96e38e68416044249df4bce01c8c5a76
+msgid "Protection state value (1 to enable, 0 to disable)."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:138 86350d728436474cb7bf4ad4a3b236bc
+msgid "|set_motor_over_range_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:12 dd330413e6554d8ebba092c60b139688
+msgid "set_motor_over_range_protect_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:143 eeee80e6bdc246f984f3b7463b9880a2
+msgid "Get the motor over range protection status."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:145 fa0976c4efac4226bcb8b6a958455d0b
+msgid "True if protection is enabled, False otherwise."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:149 a98f12f469cc4acb97c38fd59578658f
+msgid "|get_motor_over_range_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:13 86da92390ebe4c838de90d14789a4100
+msgid "get_motor_over_range_protect_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:154 8ebf71d85cf241fea568021da6b9d050
+msgid "Set the motor jam release protection."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:158 ea775d54e24e416e8ecdfcad415fe22e
+msgid "|remove_motor_jam_protect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:14 6705b5649e32419bbbcb1b3441c0b307
+msgid "remove_motor_jam_protect.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:163 bea64ccf4f7d4fdd855e427b2e00c33f
+msgid "Get the motor status."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:165 e678c1eb01724b448da216849c513934
+msgid "The current status of the motor."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:169 12811c4595e84683885a757683fe4e4b
+msgid "|get_motor_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:15 5fd55d2ec28048578cdab6127e797576
+msgid "get_motor_status.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:174 45c3b896e5034cafa97ade2518d26d68
+msgid "Get the motor error code."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:176 11317f5ea0624169a15d528d7ea16087
+msgid "The current error code of the motor."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:180 98cc883d67504dd2be6f8b9dd0fee673
+msgid "|get_motor_error_code.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:16 cc0c650b7a4647a3a09448e580f3c9ad
+msgid "get_motor_error_code.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:185 2e33eedb4da44bc7ba1c374acd974a03
+msgid "Set the button change mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:187 f4b1426911f04bfc8750644c278f483c
+msgid "Change mode state value (1 to enable, 0 to disable)."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:191 0ebc4ece178d4d8eb51b4c4d4a87354b
+msgid "|set_button_change_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:17 2033bee8d0c042e2bb214da1a21bfca1
+msgid "set_button_change_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:196 36f67f614e454164a164e3fe4070bb5e
+msgid "Get the button change mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:198 a7c9c1718a1449a39d55ce6b2b770adb
+msgid "The current button change mode value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:202 b5ef3de8a0014fa9a39cd0447bf541cc
+msgid "|get_button_change_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:39 cfcd06fac29d47c09f5e60b6f26eba4e
+msgid "get_button_change_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:207 9be745221e2646bcba30c78161103eab
+msgid "Set the motor jam protection enable/disable."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:213 e92e7c5aa7844f8f804fc7ec65c9ab5a
+msgid "|set_motor_jam_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:18 d7e8c0f8c8da43c6bf7e9cb946982975
+msgid "set_motor_jam_protect_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:218 383bb03373024c889e77d213d7fe39bf
+msgid "Get the motor jam protection status."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:220 b35f7c7b12824418ac5a5360ea71fe40
+msgid "True if jam protection is enabled, False otherwise."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:224 68db73e038974ee9ae8cd8cc8b26bdbe
+msgid "|get_motor_jam_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:19 daed4141d52241a690c3da2d0b74dbf4
+msgid "get_motor_jam_protect_state.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:229 27c2aac3808549afa8fe91399541e22c
+msgid "Set the motor ID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:231 8e21a7921e7146c49ccf8326e08ff09b
+msgid "The ID to assign to the motor."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:235 02180b1482654cb0bb8d4677a38d5328
+msgid "|set_motor_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:20 cafc134191834df9a3c7554e2e479806
+msgid "set_motor_id.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:240 bbe7228469154cf59fbcf28f0407813d
+msgid "Get the motor ID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:242 669e77cd478e40389baade1bb4b3279f
+msgid "The current motor ID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:246 fa6461f357594d10b9ab7b1576c99c1e
+msgid "|get_motor_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:21 39fad3ac49684f2aa69bc9e49f077d4c
+msgid "get_motor_id.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:250 1af2ac485bff475b9f0297203add6fea
+msgid "Set the can baudrate."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:252 b5191ba3e0484a05b9fc2fa5c97fcbab
+msgid "Baud rate value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:256 cdf4daf307dc4734b53b8c4030dd3923
+msgid "|set_can_baudrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:22 f072e1dc11c442dd93cf0286f9f3b65b
+msgid "set_can_baudrate.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:260 a45b7312b45e40279acf0506e0bfb011
+msgid "Get the can baudrate."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:262 2f3d6cf2b54943f2ac14aabf8c64b777
+msgid "The current can baudrate."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:266 976591fa4f7c43b18fb9b01667a98318
+msgid "|get_can_baudrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:23 2958a7091d2c4532ad376c5ba62d731f
+msgid "get_can_baudrate.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:271 e614d92fd0bc4d65b27b08b3cba948a1
+msgid "Set RGB brightness."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:273 4aec6ba9d01a421fb8a3a2ce1464a914
+msgid "Brightness value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:277 f46b88b9835f4ed58b6a191fe860d757
+msgid "|set_rgb_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:24 5d1aac1ee49e4d7ab964b01ce5e674b7
+msgid "set_rgb_brightness.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:282 2d09f85baea5453baeaca2ad6d362fcc
+msgid "Get RGB brightness."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:284 d53a1d60637744f088119a82741aff02
+msgid "The current RGB brightness value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:288 3ea759cdd8604c068857636134bc41d0
+msgid "|get_rgb_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:25 8560a56a3c39428cb6b00f8f8c980af5
+msgid "get_rgb_brightness.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:293 ../../en/units/rollercan.rst:315
+#: 095761f457744e62a40e5d750157598a 4e566b4366ca46d49ceae1f1f3476581
+msgid "Set the motor speed and max current setting."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:295 02604109ed8344f1b1b6aec369312d24
+msgid "The speed value to set."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:299 0282b14df89644f7b5715b579305d17c
+msgid "|set_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:26 b8bcb7b31750485a893f22d7dda4977a
+msgid "set_motor_speed.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:304 ../../en/units/rollercan.rst:326
+#: 27374d4d78b84341b760e8eeebce6c66 e9204aeb3f8648d3bd0f08a3b83c0c12
+msgid "Get the motor speed and max current setting."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:306 607ab54b338649d78cce394a3f2fdd27
+msgid "The current motor speed."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:310 56e5cf36135349118df1d4035f5d857e
+msgid "|get_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:27 34f0133aae3c474182e94f1ae8aab6fb
+msgid "get_motor_speed.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:317 ../../en/units/rollercan.rst:396
+#: 303ba75780e84b6aacfa9fa5d9b6405c 6b50e565eaf8476aa98e9db765d7194f
+msgid "The max current value to set."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:321 0f85cceefeab44f2b12987ded90ca006
+msgid "|set_speed_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:28 622165e6206745e9b3d37dd62cc43ed5
+msgid "set_speed_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:328 ../../en/units/rollercan.rst:407
+#: 1931a3919851488f9db3d678b6e89c3a 81c8699d911b4265a77a212457976980
+msgid "The current max current setting."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:332 0eda2962fcfc4dbf9859d520a1a84d32
+msgid "|get_speed_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:29 37579e09ca8845ab91e0367702a2212d
+msgid "get_speed_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:337 d174246f172c40bcb25cac46431141cc
+msgid "Get the motor speed readback."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:339 f126f112913e4224a96b628901a2aa16
+msgid "The readback value of the motor speed."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:343 858e03a9090d4b5ca624f4dd8aa73b27
+msgid "|get_motor_speed_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:30 8bf4a40338954681936cb68f08770f11
+msgid "get_motor_speed_readback.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:348 cf11ab1e9454421cbf5074eeb0cbecb2
+msgid "Set the motor speed PID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:350 ../../en/units/rollercan.rst:440
+#: 98af14ecc8d648dcbc641d293d0c5f23 d14d3f243bb94d5db63900731af3dc77
+msgid "Proportional gain."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:351 ../../en/units/rollercan.rst:441
+#: 4563f9be461d4ca78abde7070b3e558d 73afeae5f75a405e96981b6c31a10778
+msgid "Integral gain."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:352 ../../en/units/rollercan.rst:442
+#: 596cb82ef3d84748991fb90d61bff435 93e84cfec4224321911fafae78f5e6fe
+msgid "Derivative gain."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:356 b95c4dbed2db48e4ba5bae5d3f3b6877
+msgid "|set_motor_speed_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:31 e024b3ef5faa488eb825b99db7695591
+msgid "set_motor_speed_pid.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:361 61aaaaba522f4c68bd7fd3873aabbdf5
+msgid "Get the motor speed PID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:363 7ca672cffa914d72b1959267e6fb26d4
+msgid "A tuple containing the PID values."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:367 015ae34a1c59496ba7cd92b55d3679f7
+msgid "|get_motor_speed_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:32 d438a1a34a9f422bb8e1fc2317ef4e67
+msgid "get_motor_speed_pid.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:372 ../../en/units/rollercan.rst:394
+#: b093891e1d72408f8572206540a26595 c6a573d56c3949cca8c2d458e40ba5b8
+msgid "Set the motor position and max current setting."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:374 4064a3b7cebc4879a3cdf6b7c3530172
+msgid "The position value to set."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:378 2d4bcb9b62a947b8b518204fa62b4936
+msgid "|set_motor_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:33 dde22910cea348b892e280ccc0dca5ec
+msgid "set_motor_position.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:383 ../../en/units/rollercan.rst:405
+#: 681da346851c4a35bd3475da7b4e9361 a797acad4f1444569349b3e033e53403
+msgid "Get the motor position and max current setting."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:385 d4efb8b31acc4d60ab3ab8a8c5ec5d45
+msgid "The current motor position."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:389 b53dce22a85147afa04d0de370db4f2d
+msgid "|get_motor_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:34 f167fea643374080b985634348a8c76b
+msgid "get_motor_position.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:400 0e047bc7d6854080845d8f5190702fa4
+msgid "|set_position_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:35 9584fa42ce9a40ba8eb5cc9292edadad
+msgid "set_position_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:411 de87c1220b334ee79ee4b569061bb820
+msgid "|get_position_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:36 11514077326b424f9a605f8fd752dc2c
+msgid "get_position_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:416 1af4dac21c294edd8ef2a956a59450bc
+msgid "Get the motor position readback."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:418 449c9d5a9a6b41d18e61f6fa8b6df3f0
+msgid "The readback value of the motor position."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:422 f3e6daab889744a8bf58ea00257b3142
+msgid "|get_motor_position_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:37 a9f88e6422844d9bb6fb995056d8c302
+msgid "get_motor_position_readback.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:427 742df92acec8483f811af1a91f752b41
+msgid "Get the motor position PID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:429 ba27f88cd7b64dea8207c8a4ddce524e
+msgid "A tuple containing the PID values for position."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:433 2c9d118e44d44fb4bd3c82e7200b8e66
+msgid "|get_motor_position_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:38 bb5b5d2ed4ce47f18e720ac873e00388
+msgid "get_motor_position_pid.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:438 2974741e4c504cb8b52a61fd7a7216dc
+msgid "Set the motor position PID."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:446 82c4982096c74882a4337144c456132e
+msgid "|set_motor_position_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:40 0bfe5c7864a847b097ed987a6cd45d8a
+msgid "set_motor_position_pid.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:451 3b4d84e4b3774cf392a1f9b0228c8ced
+msgid "Set the motor max current."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:453 73dba025c5284fbbabe4abc0d98c5ea3
+msgid "The maximum current for the motor, multiplied by 100 before sending."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:457 3a2e6032ee2f4606b4dfed9ba7cef00e
+msgid "|set_motor_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:41 72e04c6f7a864b8c827f67d792a8804e
+msgid "set_motor_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:462 7cfbbe14d4bb41e086f1ea5d78e1c079
+msgid "Get the motor max current."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:464 df59a0c379ac4a2c86d54f69081dbbb2
+msgid "The motor max current, divided by 100 after reading."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:468 18af05240c2b4becbcfbca9c65670705
+msgid "|get_motor_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:42 49183f46706340979ba3c7ec108c55ef
+msgid "get_motor_max_current.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:473 ab27f9a0ce424300be792e9b0700eb3c
+msgid "Get the motor current readback."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:475 16fb2a0c568346be9b3bc10bc18028f1
+msgid "The motor current readback value, divided by 100 after reading."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:479 df1fbc24ab124732a5fe2e8da3119c37
+msgid "|get_motor_current_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:43 c301ac4ac2fc4794ad08d1026b845398
+msgid "get_motor_current_readback.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:484 ce34826d942f4388b217797811e99318
+msgid "Set the system RGB color."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:486 bf5cc2b209b04a1fbe9752861d266f30
+msgid "The RGB color value, where the format is 0xRRGGBB."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:490 0d9d320a14b747f98c0a3c842f431c54
+msgid "|set_rgb_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:44 95f4df4f994445d68af982cab981d520
+msgid "set_rgb_color.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:495 e0eb52aa88f34f08af4670d291d72d40
+msgid "Get the system RGB color."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:497 88d2e789772f40b5b371832356219e58
+msgid "The RGB color as a tuple (R, G, B)."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:501 0ca2d1c0e5d843aba89bcc5d8596945f
+msgid "|get_rgb_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:45 3377284b62f445d4acc57e80f6552872
+msgid "get_rgb_color.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:506 a9671ae180e344f3bd6b26b0ba6f2dec
+msgid "Set the system RGB mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:508 69ce821248d54b59893fb48b9323ffed
+msgid "The RGB mode value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:512 0eab312b0f8046459de9304c23e069c2
+msgid "|set_rgb_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:46 4c5e64b3b0414065b15f5286062dd311
+msgid "set_rgb_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:517 3e323410edf94a61a452338fecc5e8e2
+msgid "Get the system RGB mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:519 7fe019caf50e49efab1099b328055ce4
+msgid "The current RGB mode value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:523 272f758ad67d4c38838654a6498a69e3
+msgid "|get_rgb_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:47 3c641e37cdad415a95106ba316a86750
+msgid "get_rgb_mode.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:528 6c24700a4fc64ab09d0a781f46b6e9f2
+msgid "Get the system VIN voltage."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:530 8c2d24ff1048490cb4c181c1cf670f58
+msgid "The system VIN voltage value, multiplied by 10 after reading."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:534 1f5e924b50a74c90a82b282a4d197908
+msgid "|get_vin_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:48 b68b1acf4ea94750acdbad629dcd29fe
+msgid "get_vin_voltage.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:539 b82a8e275aad40458123ea518af3dcdf
+msgid "Get the system temperature."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:541 22ed0747ecee4dfbb0073d58d70423e3
+msgid "The current system temperature value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:545 519068606b5b4f61807f500aec5d1531
+msgid "|get_temperature_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:49 f85589778c3c4d16b8bf161a00a50bcf
+msgid "get_temperature_value.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:550 8c9516396a074ea8aede40ff69727372
+msgid "Set the system encoder value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:552 9c450d15378146ddbd4195e9fcdb0525
+msgid "The encoder count value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:556 6b2f9488e25e46c1bda569a707f262e7
+msgid "|set_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:50 354e19a3d0354aaba698a9609b2e145f
+msgid "set_encoder_value.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:561 d1c37b2011f74a2c9b68ff4d1aff32cc
+msgid "Get the system encoder value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:563 57f0c81e82ad41a79b4d941e18011c0c
+msgid "The current encoder value."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:567 1cef587b153e46f4b745c6b0902d270c
+msgid "|get_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:51 eb8681736fa24d2b87f456773649434b
+msgid "get_encoder_value.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:572 7b7199c51b3a4eff9059d29fd68dc975
+msgid "Save the motor data to flash."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:577 d94f5d60030a4ef690d97613d8345b52
+msgid "|save_param_to_flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:52 5ba5f68048d64c8d816590595697f0f9
+msgid "save_param_to_flash.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:582 6065d148f7564e3f8bf13fe51513fb57
+msgid "Get the device firmware version."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:584 9370bb6bc9834daea0691daa728875c3
+msgid "The current firmware version."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:588 487084676d174fb29fdf96f6133801dd
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:53 ae64602f6fe940f080b2ecb972d404c8
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:593 45ca7504132c469e822b2e0ed3c91e47
+msgid "Set the I2C address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:595 0293fa8905fb47debe3f9eda4f7e35e2
+msgid "The new I2C address. Must be between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:599 8de40739d5014a7b9ae01b9b0e9cc9c2
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:54 b24485afbfe04e128249971f92b31e62
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:604 b64da8c8544142a7b788b89cdc780890
+msgid "Get the current I2C address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:606 1d046dbaacae42ba8250cbc4ffe15346
+msgid "The current I2C address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:610 275c8bba11c64545b7bd4e238b217dff
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rollercan.ref:55 162c752194c240da87f10d0eb7fdf78b
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:614 9457bf0d33704d56b3f7fc028e5b1ac3
+msgid "class RollerI2C(RollerBase)"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:622 8ea7a316727b43a8af1b16ebdca82f6f
+msgid "Initialize the RollerI2C object."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:624 f896443b2b6a447d846b5a4eb52176ff
+msgid "I2C bus instance or PAHUBUnit instance."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:625 2f6560b418b44ab3ae64ae2a5680f5cc
+msgid "I2C address of the device. Defaults to _ROLLER485_I2C_ADDR."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:633 4ba6287ba0cb4fd8891d8d460a4b4fa5
+msgid "Read data from a specified register on the I2C device."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:635 f851402b8d274979ae6b74230191c75c
+msgid "The name of the register to read from."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:636 3373f9b7dfa640d1ae60483e01875516
+msgid "The number of bytes to read."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:637 791e14d2a7c943ac9b5b8aa15830fa68
+msgid "The data read from the device as a bytes object."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:642 3aadb11e82044b969dde19d60f16b40f
+msgid "Write data to a specified register on the I2C device."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:644 b3d3e40b3b8b417daae1a05f90ca529e
+msgid "The name of the register to write to."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:645 73c9def69e284e8ca90556b5ff2f73d7
+msgid "The data to write to the register as a bytes object."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:649 d872750168a54181b076fbd5b8357ff3
+msgid "class RollerCAN(RollerBase)"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:656 743e05bc743b4861bf26a30cba0712a9
+msgid "Initialize the RollerCAN object."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:658 ../../en/units/rollercan.rst:718
+#: 5b4a9c1c1b1d4ec08beeab9ba90ea9b4 e44f00f03b3f4bc0b3ba9e4d179773aa
+msgid "The CAN bus instance."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:660 ../../en/units/rollercan.rst:720
+#: 5a2dcbf1c18f4fc1a0787964c3567f9b 92c540f9d78f44c5abc79314bd40ff72
+msgid "Optional mode for setting specific operational mode."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:667 a896067360934973896d3f927cc0fa3d
+msgid "Create a CAN frame for sending commands."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:669 03fd0d05b5cd41ffb3da7348f9434eb2
+msgid "The register for command identification."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:670 7a71f8f46b47480d8bce04cf3751c0ee
+msgid "Command option to specify the data."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:671 8649ce42179d4b8aa32690400f0ae28a
+msgid "Data payload for the frame."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:672 7de3ca938e3a4afd9abee19095b4d36b
+msgid "Whether this frame is for a read command."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:676 6428dcfdd6544a15a11de0e3d258da80
+msgid "Send a read command to a specific register."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:678 caec63f2f0284d3aaa04494da840bec3
+msgid "The register address to read from."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:679 a3f72e4b8ef04968955610267d11be86
+msgid "Length of data to read."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:683 5b97117ac8fd4915a53cf225d5ac1d83
+msgid "Read data from an I2C slave via CAN."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:685 0832e46192954d45b9ff10a29a4558f4
+msgid "The I2C register address to read from."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:686 ../../en/units/rollercan.rst:731
+#: ../../en/units/rollercan.rst:754 279d4fd8a3c948398ed4e6fc9a7bd9fb
+#: 3b5d250d87914537888ff3e63f7b352e 423c25837dd44a60a2fe600c634b759e
+msgid "Number of bytes to read."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:690 a699b1c9aafd453980ec5a90cf59f816
+msgid "Write data to an I2C slave via CAN."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:692 9f3349d1746e4577a8621c9d10887b67
+msgid "The I2C register address to write to."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:693 9e807026559b403d9c2ce03080e08d50
+msgid "The data to write."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:694 ../../en/units/rollercan.rst:769
+#: 7aa47db161c140f8a548e3cbeea7c84e 9ed33cbb96bb4243a9efb0624920bb24
+msgid "Whether to end the transaction with a stop condition."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:698 05c9a5ca0e7e47b8bc10eeca7a7ad042
+msgid "Write data to a specific register."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:700 b0abe585d5f74e3e9093a30d8d221224
+msgid "The register address to write to."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:701 422df929189b486681db933913b7c4f5
+msgid "Data payload to send to the register."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:705 e60b21b1ec7542f4986fedf50c1b0aef
+msgid "Read the response data from the CAN bus."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:709 1ef3f91a361341f19a2d6fd35ab9a535
+msgid "class RollerCANToI2CBus(RollerBase)"
+msgstr ""
+
+#: ../../en/units/rollercan.rst:716 4ddba7ba2ba44ad9b776f9771a820106
+msgid "Initialize RollerCANToI2CBus object with CAN bus and address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:719 21401fbefb724d6a848dac4d05ed4361
+msgid "The I2C device address, default is _ROLLERCAN_I2C_ADDR."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:727 14d2b5d4ed0b44b79e17e3a6433cbcc1
+msgid "Read data from an I2C memory register."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:729 ../../en/units/rollercan.rst:737
+#: ../../en/units/rollercan.rst:745 ../../en/units/rollercan.rst:753
+#: ../../en/units/rollercan.rst:760 ../../en/units/rollercan.rst:767
+#: 01a554535897401bb2eeaf9379b2471f 2163e696a3fe4f9097e0c48662fd6f7d
+#: 5f6c1f330f6d4922ad3492324fc7e266 63cf1bff2a7c4586a2511905935beade
+#: 8aa815dbf2464862a812902451ebdcb1 c4107fc5bd0047a0a2db5b1899d3bc4c
+msgid "I2C device address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:730 ../../en/units/rollercan.rst:738
+#: ../../en/units/rollercan.rst:746 3ffdb1b3473a48deaf0080a25687de3b
+#: 400e7acfec2f4cf9978659c14c66ee1e a4eb49a9a53040df94ea10a95e3fba79
+msgid "Memory register address."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:735 017cfe9f3603415a907f2cd7780b91c5
+msgid "Read data from an I2C memory register and store it in the provided buffer."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:739 ../../en/units/rollercan.rst:761
+#: 2295da4503e14400bbdf50d0a402a33d fdda743c6c90424db0ee3a301b430aaf
+msgid "Buffer to store the data."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:743 77794bcbafac418db59068329bcb27c5
+msgid "Write data to an I2C memory register."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:747 ../../en/units/rollercan.rst:768
+#: 7f0dee9c645f4bdf860dded8c763a1ec f8b306c4713542f79c9549d96e5b51ca
+msgid "Data to write."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:751 eac19dedfc5d4e01ae183c09e90d850e
+msgid "Read data from an I2C device."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:758 f87f01a6ce464c31b9d231e5b4be9571
+msgid "Read data from an I2C device and store it in the provided buffer."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:765 855271cacd6243998112f458eb54be5d
+msgid "Write data to an I2C device in chunks."
+msgstr ""
+
+#: ../../en/units/rollercan.rst:773 f0eb7de7eafe441bb338878c036e487e
+msgid "Scan for I2C devices on the bus."
+msgstr ""
+

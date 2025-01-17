@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/zigbee.rst:2 bf02f17598f64bd589a61497929f0d73
+msgid "Zigbee Unit"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:6 f44ea767999e4c458daafd41ffcacf9c
+msgid ""
+"Zigbee is a self-organizing network communication module launched by "
+"M5Stack. The module adopts the CC2630F128 solution, integrates the Zigbee"
+" protocol stack internally, and provides an open serial communication "
+"interface. It features an external antenna, with a stable single-node "
+"communication distance of up to 1 km and supports up to 200 levels of "
+"router depth. Through MESH networking, it can significantly extend the "
+"range of your IoT applications, offering both ultra-low power consumption"
+" and high sensitivity. The Zigbee network can support hundreds of nodes "
+"and has enhanced security features, providing a complete and "
+"interoperable IoT solution for home and building automation."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:17 1aa95c53256743ceaea7e07287582f54
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:19 128679ebd515475fb76e45446fbc4364
+msgid "|ZigbeeUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref 39f301913dd246dfafab802397a6ca30
+msgid "ZigbeeUnit"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:22 47dd784b34774573a8078df901020723
+msgid "Micropython TX Example:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:29 2bca523f1ac645b885d8dbd352252ce4
+msgid "Micropython RX Example:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:36 4af48b2828c34d779b2f03b098252d7c
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:38 464a7175f5db4ba6ab1f3c4897f3ef6c
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:28 866d98d10b6a4fd48b11842bae8722ba
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:41 c16cf33d5c0e4c9b8024efeb5615cf20
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:43 ee0bac4b9a8a49e9922e962d8ebfc462
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:39 770ef562e7ca479faa16891f0b9a4321
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:48 b4536967d4954bc28f55c034fdedc559
+msgid "|cores3_zigbee_tx_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:50 5299f48a53a64b13bd272744bcfd013e
+msgid "|stickc_plus2_zigbee_rx_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:54 dbdbf6677fee490a9f143af25b74732d
+msgid "class ZigbeeUnit"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:57 eaba183561fe4f36a2b8ad4cc0fc1a8d
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:61 87baa4d2290a4bc0b67b80917475567d
+msgid "Create a Zigbee unit."
+msgstr ""
+
+#: ../../en/units/zigbee.rst 1255d07e462b45eeb6ad99403c910e6e
+#: 19782c0dfbb94ba880b5998a915c5a94 31a04a6838be4fcab13c82f95a520292
+#: 394444f9fd74470c93dca659cf5d9ccb 89a9b307c3434dc9a93c8cb03a03706e
+#: 983a12c1f429452eb14203d3ca82b008 acb7f809b30a4dc9b3a295971c051a3a
+#: c3f9e4e427ad4293aba5c37ed49e5945 ec8a35eb2be441a996a19981611b6645
+#: effaee92399e421bb13c9d807312304a f73b99f810f440588228ba8129af164d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:63 4665432e125b4da095e13ea2ece461fe
+msgid "The ID of the unit."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:64 0e494bba024541f2a6ce4b6603e0e9b6
+msgid "The port that the unit is connected to."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:65 a638f69136474d2c880028dc9846604b
+msgid "Print the log information. Default is True."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:67 ../../en/units/zigbee.rst:92
+#: ../../en/units/zigbee.rst:107 ../../en/units/zigbee.rst:118
+#: ../../en/units/zigbee.rst:129 ../../en/units/zigbee.rst:140
+#: ../../en/units/zigbee.rst:151 ../../en/units/zigbee.rst:162
+#: ../../en/units/zigbee.rst:173 ../../en/units/zigbee.rst:184
+#: ../../en/units/zigbee.rst:195 ../../en/units/zigbee.rst:206
+#: ../../en/units/zigbee.rst:219 ../../en/units/zigbee.rst:231
+#: ../../en/units/zigbee.rst:241 1fd12233956346f08c94ab1fed08bd90
+#: 2ec913e09ba1478fb7d64aa4d1446c89 3a6e6661e25a41e9a710ec1536261313
+#: 3e5f8e93e1fd4af1b77ed62c2f9b650a 58d188f1de7a4ced89323e659bd87c51
+#: 6b98337d09cf46adbe5dc266c36d290e 75bc8a1093d14b36a37faf2da2f0a953
+#: 800ce5f48cab4517ab2f2a9ae0d3df1f 81fdce95eb3b40828b0e517cafe1c84a
+#: 8d2a531adcb44f33833a917cd04fa2a1 98cbab4d6fc341feba1b66bb9f28a93d
+#: 99e949d9c0e943f8a642395c3eb1fb7f a800f91b03214f5a8b18bd98353dca2b
+#: b119ce51ec314c10baa5c61392bf993c b8ba16120b6f49e19378130e3a39be8f
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:69 39a5d32168f04685b600195d25888700
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:9 20eecc7b8da04bd7b394ca36a2152970
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:73 14e6aba8a2cc4e26a169682c265f73c7
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:77 ../../en/units/zigbee.rst:103
+#: 1ecf5d730fdb44acae241bdb7dec76fc 34b5e01e994c427e83add9d50ba523de
+msgid "The device type of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:78 c8524e1deb6c4865803580e21666923d
+msgid ""
+"The PAN ID of the Zigbee module. The PAN ID is a 16-bit value that is "
+"used to identify the network."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:79 7f74f7d72534414897e4bf5887d4a17c
+msgid "The channel of the Zigbee module. The channel range is from 11 to 26"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:80 ../../en/units/zigbee.rst:136
+#: 78d65e5b8e5b48e9b7535c8d58b0a93c f98c824d67ad4943995d4e26d15dd762
+msgid "The transfer mode of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:81 ../../en/units/zigbee.rst:149
+#: ../../en/units/zigbee.rst:158 51b90e1b2c6d4d57bf0dcaec3f86bfcf
+#: 8925a9ec2956444f842dd9666f7f8a82 ad43969c4dc44dbb831d4b5613e33821
+msgid "The custom address of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:82 ../../en/units/zigbee.rst:169
+#: 0eed750c878b4fc39c2b20894233570b 2edd587627e24af9b202afa2e60f7fb2
+msgid "The antenna type of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:83 128a3037b0ce463ba8f2e7e2123d9350
+msgid "The encryption status of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:84 02b71cad728e4f879a168ff61201f047
+msgid "The encryption key of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:85 dc66ad7c62e5481ca39b478921af216e
+msgid "The node type of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:86 db7162615a6c486bbab8568af7a6415e
+msgid "The antenna type of the Zigbee node."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:87 ea03f4062656439e83863e2434b4c1ad
+msgid "The transfer mode of the Zigbee node."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:88 7076abdc63ea40a7903564afd6aaf6d2
+msgid "The custom address of the Zigbee node."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:90 ebea3202da4e490fb9d1b886d253a319
+msgid "Set the parameters of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:94 f24170eb97a74d8e90b4f59a43a1cf43
+msgid "|set_module_param.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:24 c6d8dd3a38cd421faa8ff98740fce178
+msgid "set_module_param.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:96 e5fdd15ed2b54bdcbfa2d110150a7e08
+msgid "|set_module_param1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:25 fb09e44d97044682a46825eb5325fe79
+msgid "set_module_param1.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:98 7ba12632bd4c49488ca8646f70a9814f
+msgid "|set_module_param2.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:26 67f7cbbc8c334cb39ffebd80a646c25c
+msgid "set_module_param2.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:105 c461a3e290b946748b71c4abfdd546e0
+msgid "Set the device type of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:109 13a2175e5d3446869449c085a320d21b
+msgid "|set_device_type.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:19 7fc65dfc59d748e0b24d728609e4eb8c
+msgid "set_device_type.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:114 45a0770797c54a489b15bbb677c72183
+msgid "The PAN ID of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:116 5f2c135f52964426b19adf77afb16327
+msgid "Set the PAN ID of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:120 d79bd3051a6545088906b8fec94c87a7
+msgid "|set_pan_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:21 009c96ee5ab64ab0965945f7c7c935bf
+msgid "set_pan_id.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:125 98f47312bb8b497bbf122e9d57c7c25c
+msgid "The channel of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:127 a2b3f11c8ec148618bf062d5c3cabea9
+msgid "Set the channel of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:131 fed0b05626474f569a2b752913b073b1
+msgid "|set_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:18 a75dacb8d6814a56aef6c268d1b4854f
+msgid "set_channel.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:138 89221282c86e4447b2d11970cb448d1b
+msgid "Set the transfer mode of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:142 edb0553526184eb4b814118654369013
+msgid "|set_transfer_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:22 a8aa2dbcb579446283d55efd10533b0f
+msgid "set_transfer_mode.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:147 864c7768673b462ebf775faaada74e5d
+msgid "Get the custom address of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst 1351a89033474a9a885ad0b082f3f94d
+#: 72535cdbae2c457eb9c40c8a43c71f31 86d8707db6844d809d4495819092b791
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:153 aa190ff87a04424190fe2de584c1b231
+msgid "|get_custom_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:8 07452bea8a224b2da6e57e3d591e9b4b
+msgid "get_custom_address.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:160 f4d1ea739eee4c4f9c2f3eedb9d5f47a
+msgid "Set the custom address of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:164 1f4ac3d22c6245628d168c360b1e4f26
+msgid "|set_custom_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:20 73e56032792c4ae2a79ed9a383a98cbd
+msgid "set_custom_address.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:171 e87d1103708243e29949875634e96e91
+msgid "Set the antenna type of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:175 d40326afda13432d997a9d7168264ec2
+msgid "|set_ant_type.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:17 d4227d650fa242cabc9821297f7439ed
+msgid "set_ant_type.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:180 e97da5969ec44575896f1e63fa187859
+msgid "Get the short address of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:182 db9edcf887dc442fab8cee16df40c66b
+msgid "The short address of the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:186 3a1ef9359ba6490095c78f347e481ef0
+msgid "|get_short_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:7 b817f51dc59d4c16bad251a28d67de39
+msgid "get_short_address.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:191 a0f2f42993f04736a1c833214494f5c9
+msgid "Check whether the Zigbee module is connected to the Zigbee network."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:193 6be59a4083be404fad1ee2c01ea0c12e
+msgid ""
+"True if the Zigbee module is connected to the Zigbee network, False "
+"otherwise."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:197 7ebc503d4c7c4eb791a2df9af43d5871
+msgid "|isconnected.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:10 18d40b700bfd46f08ee758bafdf55ec7
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:202 fea0d8a256254341a05510dc4b47d92a
+msgid "The callback function that is called when the Zigbee module receives data."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:204 7c41dd6838d14301ae4e563a2735c2de
+msgid "Receive data from the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:208 e5ee995e42f64e6b8ff0073bf672ef2b
+msgid "|receive_none_block.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:13 fe8a83f5d272486f965a67826f5bbca2
+msgid "receive_none_block.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:210 0d6b95bb7aa14f9f97ba7f3f0aaf7c50
+msgid "|receive_data_str_event.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:14 b9290ebb1f3442a482ba7cca9b9dbc21
+msgid "receive_data_str_event.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:212 febca52973c642b29ad18360218e2c2e
+msgid "|receive_data_event.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:15 b53b4106fc4c4068b0c17f6e21aeee91
+msgid "receive_data_event.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:217 7c471fedd0cd412cb3e6965f705851ea
+msgid "Stop receiving data from the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:221 231fef62d68545e4a6ec70fd723be1d0
+msgid "|stop_receive.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:23 f57468b7e984448899cea8bcc8ddfbf5
+msgid "stop_receive.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:226 8e393e1e1ecc48b59631712fb1ffabc7
+msgid "The custom address of the Zigbee module that the data is sent to."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:227 ../../en/units/zigbee.rst:237
+#: 91e084703cae41ee82a99e369741ffa6 afb9e05419cc4d52b53f184e20ee712b
+msgid "The data that is sent to the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:229 7278be61dbb84918a42a9bb8858d51aa
+msgid "Send data to the Zigbee module."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:233 40847e2077274e2aa7b0ce5712e6c6ce
+msgid "|p2p_transmission.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:12 a8594d5cd3e64caf8814ae4837045c0c
+msgid "p2p_transmission.png"
+msgstr ""
+
+#: ../../en/units/zigbee.rst:239 47a21270025347f2bd4af17e246dda7e
+msgid "Broadcast data to all Zigbee modules."
+msgstr ""
+
+#: ../../en/units/zigbee.rst:243 bf2fbb2fb175481496c6d450311a453d
+msgid "|broadcast.png|"
+msgstr ""
+
+#: ../../en/refs/unit.zigbee.ref:6 42861b01f7e641ada9aff1a3af360a2b
+msgid "broadcast.png"
+msgstr ""
+

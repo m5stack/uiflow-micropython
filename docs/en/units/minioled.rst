@@ -10,15 +10,22 @@ Support the following products:
 
 |MiniOLEDUnit|
 
-Micropython Example::
-    from unit import MiniOLEDUnit
-    from hardware import *
-    i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
-    display = MiniOLEDUnit(i2c).display
-    
-    display.clear(0xffffff) # Clear screen
+Micropython Example:
+
+    .. literalinclude:: ../../../examples/unit/minioled/cores3_minioled_example.py
+        :language: python
+        :linenos:
+
+
+UIFLOW2 Example:
+
+    |example.png|
+
 
 .. only:: builder_html
+
+    |cores3_minioled_example.m5f2|
+
 
 class MiniOLEDUnit
 ------------------
@@ -26,17 +33,17 @@ class MiniOLEDUnit
 Constructors
 ------------
 
-.. class:: MiniOLEDUnit(port, address, freq)
+.. class:: MiniOLEDUnit(i2c, address: int = 0x3c, freq: int = 400000)
 
     Initialize the Unit MiniOLED
 
-    :param tuple port: The port to which the Unit MiniOLED is connected. port[0]: scl pin, port[1]: sda pin.
-    :param int|list|tuple address: I2C address of the Unit MiniOLED, default is 0x3D.
+    :param I2C i2c: the I2C object.
+    :param int|list|tuple address: I2C address of the Unit MiniOLED, default is 0x3c.
     :param int freq: I2C frequency of the Unit MiniOLED.
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods

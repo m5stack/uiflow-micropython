@@ -111,6 +111,9 @@ void mp_task(void *pvParameter) {
     #elif MICROPY_HW_ENABLE_USBDEV
     usb_init();
     #endif
+    #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
+    mp_usbd_init();
+    #endif
     #if MICROPY_HW_ENABLE_UART_REPL
     uart_stdout_init();
     #endif
@@ -142,6 +145,9 @@ soft_reset:
     machine_pins_init();
     #if MICROPY_PY_MACHINE_I2S
     machine_i2s_init0();
+    #endif
+    #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
+    mp_usbd_deinit();
     #endif
 
     // run boot-up scripts

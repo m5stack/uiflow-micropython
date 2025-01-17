@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/weight.rst:3 76d67a249c0a43009fa823092918f077
+msgid "Weight Unit"
+msgstr ""
+
+#: ../../en/units/weight.rst:7 6a6a295bc30f4e05a79e0608cb91bbf1
+msgid ""
+"Weight unit integrates a HX711 24 bits A/D chip that is specifically "
+"designed for electronic weighing device."
+msgstr ""
+
+#: ../../en/units/weight.rst:9 111a68adfd7941c0b1a7ac6c2b783924
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/weight.rst:11 19837b8c263c4a939da0b3382f16e95e
+msgid "|WEIGHTUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref 4ee0c1f0df604dad926e667de7b5e1ee
+msgid "WEIGHTUnit"
+msgstr ""
+
+#: ../../en/units/weight.rst:13 c3923e2e152144b88c2250b1b128617c
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/weight.rst:20 930ddf67c3bc41d68b7cd99baabd3141
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/weight.rst:22 1cb70d6aa75c4ed8b5f01786b7c675fe
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:15 3a94aed4c9644c2fbb3c4b78d18d47f6
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:26 146525aceeba4a1c8a9ae2a06a56ee7b
+msgid "|weight_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/weight.rst:29 2dba35d2ee7549eabb3a560b0d4ee567
+msgid "class WEIGHTUnit"
+msgstr ""
+
+#: ../../en/units/weight.rst:32 54ee3165568b4f899035b4aa7140e974
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/weight.rst:36 c2edd34787854de7a0280d8bbed5b4d6
+msgid "Initialize the WEIGHTUnit with specified port pins."
+msgstr ""
+
+#: ../../en/units/weight.rst 1cb44063a365487aa0c2f20353bf40c9
+#: 6b31e5f1275942fdb04a769b16921971 a86e6684710a4d2c939c06335a4fafe1
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/weight.rst:38 9608c72f2eaf4def892fd290a9bebd93
+msgid "A tuple containing data and clock pin numbers."
+msgstr ""
+
+#: ../../en/units/weight.rst:40 ../../en/units/weight.rst:53
+#: ../../en/units/weight.rst:62 ../../en/units/weight.rst:71
+#: ../../en/units/weight.rst:81 ../../en/units/weight.rst:90
+#: ../../en/units/weight.rst:100 01cad88a7c724fc7b6343de8ab1920d8
+#: 0d61cd3e1a5441e5b75f0bba734f6a08 5f6855f0062d430eadf1f20a2116babe
+#: 675ccb1f0840427f9fbd7673f52700b9 6965eabc11d9442d8d3b2458fa513881
+#: dff01f7ee6d4422e8f6bee9c9a3852ee e7f68e4cbe06497e877e8f4bca202f4e
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/weight.rst:42 c9c940e4f0cf47468d723d68bb2b3b0e
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:7 4f19b659e961425c85ce76456e6187c4
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:46 9f1f46bbdf594d30bbe35a879c98d112
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/weight.rst:50 4205d01d1724456189424c7d08c2ae45
+msgid "Read the raw weight value from the HX711."
+msgstr ""
+
+#: ../../en/units/weight.rst:55 bc83d7faf2574d018c067c158b452dd9
+msgid "|get_raw_weight.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:8 58c61195c30d47e9895afbd629ca04fe
+msgid "get_raw_weight.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:59 27833f28c0aa4cc4a08cbdae4a9d4232
+msgid "Get the scaled weight value based on calibration."
+msgstr ""
+
+#: ../../en/units/weight.rst:64 81201572c73c44c4873085e3f414395f
+msgid "|get_scale_weight.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:9 eadcd00d758a4c1fb6ace7fc385709c4
+msgid "get_scale_weight.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:68 58517612b0e34e429416b2ed20f47cbf
+msgid "Set the tare weight to zero out the scale."
+msgstr ""
+
+#: ../../en/units/weight.rst:73 1ff93b48510d4bb49e390315315ba505
+msgid "|set_tare.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:10 a222b30c03fe44d887d70ed14537e15c
+msgid "set_tare.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:77 65a992e00d7448eb9bc0c77b9fbd401b
+msgid "Calibrate the scale with a known weight."
+msgstr ""
+
+#: ../../en/units/weight.rst:79 235f3857439d41fab320c6ff9b0c5681
+msgid "The known weight used for calibration."
+msgstr ""
+
+#: ../../en/units/weight.rst:83 6df45e19da9f4fd38b926fc3eeda7d71
+msgid "|set_calibrate_scale.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:11 a7303969484e4c5aafb07372f4a365bf
+msgid "set_calibrate_scale.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:87 a1d10fd0b5474df7a94aaa367c50531b
+msgid "Check if the HX711 is ready to provide data."
+msgstr ""
+
+#: ../../en/units/weight.rst:92 734cec43e6ac4ac3889068b025dbfca8
+msgid "|is_ready_wait.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:12 f963b300e324435cbc97cd697e293dfc
+msgid "is_ready_wait.png"
+msgstr ""
+
+#: ../../en/units/weight.rst:96 2afed9cd3a9e4f86b0ab22148e22d7c0
+msgid "Set the channel for the HX711."
+msgstr ""
+
+#: ../../en/units/weight.rst:98 f83d532794ac462084ad813533906133
+msgid "The channel to set (1, 2, or 3)."
+msgstr ""
+
+#: ../../en/units/weight.rst:102 937f5b82afbf45799c3997b40c4a4eef
+msgid "|set_channel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.weight.ref:13 7fea26ad954b425fae6034461f2fc12f
+msgid "set_channel.png"
+msgstr ""
+

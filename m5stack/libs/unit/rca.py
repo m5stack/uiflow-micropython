@@ -24,37 +24,46 @@ class RCAUnit:
 
     """
 
-    def __init__(
-        self,
+    NTSC = 0
+    NTSC_J = 1
+    PAL = 2
+    PAL_M = 3
+    PAL_N = 4
+
+    def __new__(
+        cls,
         port: tuple = (36, 26),
         width: int = 216,
         height: int = 144,
+        output_width: int = 0,
+        output_height: int = 0,
         signal_type: int = 0,
-        output_level: int = 0,
         use_psram: int = 0,
+        output_level: int = 0,
     ) -> None:
         """! Initialize the Unit RCA
 
         @param port The port to which the Unit RCA is connected. port[0]: not used, port[1]: dac pin.
         @param width The width of the RCA display.
         @param height The height of the RCA display.
+        @param output_width The width of the output of the RCA display.
+        @param output_height The height of the output of the RCA display.
         @param signal_type The signal type of the RCA display. NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4.
-        @param output_level The output level of the RCA display.
         @param use_psram The use of psram of the RCA display.
-
+        @param output_level The output level of the RCA display.
         """
-
-        self.display = M5.addDisplay(
+        return M5.addDisplay(
             None,
             0,
             {
                 "unit_rca": {
                     "enabled": True,
+                    # see to M5UnitRCA::config_t
                     "width": width,
                     "height": height,
-                    "output_width": 0,
-                    "output_height": 0,
-                    "signal_type": signal_type,  # NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4
+                    "output_width": output_width,
+                    "output_height": output_height,
+                    "signal_type": signal_type,
                     "use_psram": use_psram,
                     "pin_dac": port[1],
                     "output_level": output_level,

@@ -1,0 +1,1219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/roller485.rst:3 33ee9e745ad3482788c8db3e88fc8ffe
+msgid "Roller485 Unit"
+msgstr ""
+
+#: ../../en/units/roller485.rst:7 1fe62726926247fd818a7c76a8f7af83
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:9 3b3207626be04815a17ad5d9e12dce03
+msgid "|Roller485|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref f0f8a1a583f94eedb4593392958bf5ab
+msgid "Roller485"
+msgstr ""
+
+#: ../../en/units/roller485.rst:11 5f6346e0facf4f338a608c0523f7d266
+msgid "Roller485 I2C Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:17 5fe1e820b826472096be81117c336c11
+msgid "Roller485 I2C UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:19 95b02a6fa98d436f8e90375f0b686f50
+msgid "|i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:57 011a696018b444f8898c9a6de6611185
+msgid "i2c_example.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:23 2c823e2d74e74159ace3dda146f50cd7
+msgid "|roller485_i2c_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/roller485.rst:25 384f6fd1276841f3a8b65aa14e0e6d5e
+msgid "Roller485 RS485 Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:31 fbb92b36a9ed467f8f031642a2b08396
+msgid "Roller485 RS485 UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:33 3f9139798b23458da5cfec313e771ebe
+msgid "|rs485_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:58 78bfc466e1344a118b56f4adf3ec794d
+msgid "rs485_example.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:37 5fea08ded45948e8946587c6e21dbbeb
+msgid "|roller485_485_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/roller485.rst:39 3a17bf05a9fd4f7ca4a040b18d74acbd
+msgid "Roller485 RS485ToI2C Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:45 e5cc76961db642eb82f7d7dc2264d74d
+msgid "Roller485 RS485ToI2C UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:47 2aa3a9794d73449ebcff52208a7a10c0
+msgid "|rs485_i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:59 72d95d0d08d44aa19191ceaec8eec407
+msgid "rs485_i2c_example.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:51 1ce94d65ba7d49899cc19ec6baceff25
+msgid "|roller485_485toi2c_fire_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/roller485.rst:55 649f76d0a447456c826031be550dc52b
+msgid "class Roller485Unit"
+msgstr ""
+
+#: ../../en/units/roller485.rst:58 ../../en/units/roller485.rst:76
+#: ../../en/units/roller485.rst:571 ../../en/units/roller485.rst:608
+#: ../../en/units/roller485.rst:674 47475e6ab9894f5c84744893436f93d5
+#: 97f6e2c5bb1e477581783fbcd1fc5774 a03c0ff904d44ccc88ea69463beee082
+#: afa50c85bae240d59b9f8f2481d41781 c25f9a8acd7d4acb813aab50a7f8dcb1
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/roller485.rst:62 6e3e3594a41b40a18ffa7d97d02cfb3f
+msgid "Initialize the Roller485Unit object based on communication mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst 04c43aeb282d4ee58412f6b22dc227af
+#: 14990a37636f46a4967a27053a64cd99 24691a257e1045b59ed66d3974bc4182
+#: 2d3dc32af68d403aa1074679beaa09ab 31cd08a5329c4d5ea6af1351ab9c9ca9
+#: 492d4486e0004d5bb3ee95ffc417f5cb 49dabc38ad01444186d049a5ab7bcf48
+#: 5c0b1b62cf6541fdab3ec931387e79c4 69b7889c238646239f6b082abaf9f521
+#: 6c2a6bb073ab4d60ba1c727167025f81 738bab1cf9f248d5be2c5f01e98ed31c
+#: 789e4e9f285148bb86bda934f4e52028 7bae2ec3a7474d4faad0a7d1800a6c87
+#: 7c005fd329684140a84b96e72b9127a1 7d57bb774ba1422dbbc8da02a6fb825d
+#: 80e61c3f1ea64f448efd70ed8ca7cad9 833ab885c0704ffaa062bf7991e79459
+#: 8a6e98d4469948edb87732a3f9521848 97f2f08bb9f741738be67d32f442018e
+#: 99e1f9cc1f464d13a516b2e86df3bed9 9fe966e9706b4f22bcf307de658cafbe
+#: ab20240ac0d945288ac82b345e67045c abc171925d56496cbd9375cbb04a6454
+#: adf369ce7d06479695829790e31b5fc6 af825aff2be546e29240ef702c1103c8
+#: b4e7277a2baf4a08a0cb3e2895aff9ae b51cfabecf664cfb925cd71986f75454
+#: bf036014314d4479970ea414985de2fa c325259fc5c6475488973f33cef93663
+#: c9de9ac382f14c53b2786c039634334f cb064d5ce11c405391bb4d51c9c7c604
+#: d7b1034fd0554552bfbcef70bf4ab89e dad3b3990ce5478698455f7cf7e471b7
+#: dc5b2ced7f924daba268433235b43a02 f85e5529adb34831b3939713a8b20bc2
+#: f8e8fe7c7a8e4317af343c3653b645c6 fd6151209ff148dc87732d064589f457
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/roller485.rst:64 2c097d596c1c4d108e8143c355d09631
+msgid "The I2C/RS485 bus instance."
+msgstr ""
+
+#: ../../en/units/roller485.rst:65 ../../en/units/roller485.rst:615
+#: ../../en/units/roller485.rst:681 5a90cdd1c12444a0ad484bbe9de8d797
+#: 9d77c71a975c4948a9f45af9bea0d5d6 db9f9ceaba3e4df8a0f61da8b8fd9242
+msgid "The motor's RS485 address. Defaults to _ROLLER485_RS485_ADDR."
+msgstr ""
+
+#: ../../en/units/roller485.rst:66 edbec3dc0d674c5a9363579c0aaae00e
+msgid "The Roller485 communication mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:68 ../../en/units/roller485.rst:90
+#: ../../en/units/roller485.rst:100 ../../en/units/roller485.rst:110
+#: ../../en/units/roller485.rst:120 ../../en/units/roller485.rst:130
+#: ../../en/units/roller485.rst:140 ../../en/units/roller485.rst:149
+#: ../../en/units/roller485.rst:159 ../../en/units/roller485.rst:169
+#: ../../en/units/roller485.rst:179 ../../en/units/roller485.rst:189
+#: ../../en/units/roller485.rst:199 ../../en/units/roller485.rst:209
+#: ../../en/units/roller485.rst:219 ../../en/units/roller485.rst:229
+#: ../../en/units/roller485.rst:239 ../../en/units/roller485.rst:249
+#: ../../en/units/roller485.rst:259 ../../en/units/roller485.rst:269
+#: ../../en/units/roller485.rst:279 ../../en/units/roller485.rst:289
+#: ../../en/units/roller485.rst:299 ../../en/units/roller485.rst:309
+#: ../../en/units/roller485.rst:319 ../../en/units/roller485.rst:331
+#: ../../en/units/roller485.rst:341 ../../en/units/roller485.rst:351
+#: ../../en/units/roller485.rst:361 ../../en/units/roller485.rst:371
+#: ../../en/units/roller485.rst:381 ../../en/units/roller485.rst:391
+#: ../../en/units/roller485.rst:401 ../../en/units/roller485.rst:413
+#: ../../en/units/roller485.rst:423 ../../en/units/roller485.rst:433
+#: ../../en/units/roller485.rst:443 ../../en/units/roller485.rst:453
+#: ../../en/units/roller485.rst:463 ../../en/units/roller485.rst:473
+#: ../../en/units/roller485.rst:483 ../../en/units/roller485.rst:493
+#: ../../en/units/roller485.rst:503 ../../en/units/roller485.rst:513
+#: ../../en/units/roller485.rst:523 ../../en/units/roller485.rst:532
+#: ../../en/units/roller485.rst:542 ../../en/units/roller485.rst:552
+#: ../../en/units/roller485.rst:562 ../../en/units/roller485.rst:580
+#: 04de76078a484c059f8f5cbc75e6f891 0858ceb88a8a4542ae4bc843e78ca632
+#: 11b75c727c7843ac874410e039ffd82e 123dbcdf45cb4e0b98f4b887e71f0365
+#: 1443a0d381b14d28b8915bda7e3a5921 169d164eb3cb41f6af09194067a4f0c5
+#: 1ed3f8aa7c5b4da3a2c0ba51a2b956f9 201f63d135cb4e8abd66f150f6e1a4f7
+#: 2a89e679b53b4efeaffcaeac3ac44956 30627eb6d0c346e8ae3498bcd85012a6
+#: 316715288e574a5d82b0d5d85b8042bb 3c480f89847d4c668a2bbb295a0c9f56
+#: 3ddf8ebb3e54459387b51ab476516bd6 3df31f3fe2e146d580dbc1db6ec3d8fb
+#: 43bf851229a044f98ff19cd23ac2c26f 5893bfd0ec9c4944ad2062abbfb24333
+#: 5b45542e79cc4cc19e08f6e942834893 5d5adccced0c4a959c630358c7b45f02
+#: 61dac18dfb98475b9af982132cf18b65 67de3f457d9548fea51f9aebca7e0089
+#: 6cfbadbd234649beb80e5f101bd2e8df 6f2d7dc6e56b45a7a801aa2ba8a67254
+#: 7157b02ec44d45d2af916eecd569361e 778bddd3ead643e9ba6067f68c475157
+#: 80619dad24564ffc8ca8be217fc5a707 8581d96806ab4f38b43585c0a1d6ad36
+#: 89e76e3a1b01419bb9c68e4f93df75b2 8a6f9d6ab82e43d386c641600d6440b5
+#: 8d5adee72be744768c7e3a085ef5e499 8ee293b8496e4adb9fa384cd8a36f76c
+#: 96ff2b88e90f413ba0f320282ed0af00 9b760052c92b46e08902629f69a0c7e1
+#: a6fc4553b8d24cfb85f24271da5959fa ac2d2388af7a41958517a5b22292c657
+#: ada8a34bac9a42a5883a38073ebb032c af970d40b2554eaa9be2385187acb228
+#: b41b471a9128460e8a53930259724c03 c1a010c20c324130baca29c2fefe15e3
+#: c7746e6ebab842e89b2ae79c991abd77 ca791c9fda9d447c979fc97d1c6d1681
+#: ccd0592dfd6c426cbaf19b256cd60519 cdb1b814f3c24adf982e6974ecf46a4a
+#: dccc8f0a6bd941df865001daf084ebf2 dfa266072bec4b58ae0fc5e4b84f8148
+#: e7536d388ad6416faa05fe56e20fcb74 f3b55962cd5f440b87675a8bf1ea218f
+#: f613cd90c20e49099bcac0c54541b436 f7972a7359894fcda14c33f809771755
+#: fbbc5a44ca2c46b5bea8929fbfeae947 ff2367560b4e46eebda02ebb7cbaea01
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/roller485.rst:70 ../../en/units/roller485.rst:582
+#: 3d17eb006c4e4941af233023fb4c29d7 6ee47f8862324fa785dca73d3d478946
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:7 4068c48a8dc14a9f89958120b72702a6
+#: 5798df6985294ddc81c32b0790a81815
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:73 b14ac38dae0c4325bfd685296480f8ab
+msgid "class RollerBase"
+msgstr ""
+
+#: ../../en/units/roller485.rst:82 ../../en/units/roller485.rst:586
+#: ../../en/units/roller485.rst:618 ../../en/units/roller485.rst:684
+#: 3e0f6acb05e3480db68cdb3c130cbc39 418127d880934e9a84302399dcddff62
+#: 7f4ae3d295374521a69eff471e23e028 b9be58a8ab794cb5ba0635057040aa1f
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/roller485.rst:86 2240fe4fc2ca41d4abba99d9e620d6b5
+msgid "Set the motor output state."
+msgstr ""
+
+#: ../../en/units/roller485.rst:88 979e9589b6234724b3ff0c90aa01f6dc
+msgid "Control value for the motor output."
+msgstr ""
+
+#: ../../en/units/roller485.rst:92 bf9d8336fce54b8b8ea7881b61604b8d
+msgid "|set_motor_output_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:8 1ca0e4c0881c416192544207b2d7082f
+msgid "set_motor_output_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:96 1c5ac1daa54141d99e663eddad9306a8
+msgid "Get the motor output status."
+msgstr ""
+
+#: ../../en/units/roller485.rst 0867d963f9014410b4542d821d98339c
+#: 09354866ce654adfbdb26d3e1000c71e 0e75cfd1ac6e43e5a59c7a18de655dca
+#: 11641dda6ff648ff94ab0c2a2c1d0a00 22e2de4bf7cc4cb09acf25e52fe10b9f
+#: 2b23fe55cdbc4886b9939c2ffefd8d81 353f0372f3e5452f90fc3faf2b3c3120
+#: 35b12c0d59a746b3be9d5a0d1a638091 3767c6e29e4749a69935c66b09e5ec14
+#: 45c1bf4bdf6245f3b82a44982a364396 45d4b3a8e5414c4d981e454aade11d35
+#: 4c63bf7b7c92484e912ffbba3282f2dc 571260f8b5c84fc89f61782681d18262
+#: 60546bc0c2764c5ab8ddafcba9b9d2d1 66d96fb9bc4f42279b545e051aa931d3
+#: 6df42cc635b642e5b1ee4b40874c29a9 6e7f16e834824a71b6ce8ea470bc228a
+#: 76b0862a37864953b2428c5dddb43932 7a5a31a1452c47e4a1e954264111ca8d
+#: 9647ce8581fe45fd84bf5e2a4aca64f2 a154d4e1467248dab936eea63e17ba82
+#: a45ff87895624ad6acf7356bd8ba58ce a5ad24ed7d4a4880ab2ff57897570f3d
+#: afbc73fa667f48e0a6d91ba412a2b74f b064bce0188c44bf93070723e0b2ee4d
+#: b33537106f04423684986343c560e65a b455759ef88f42d9aeac6704bda2199f
+#: bb92a951b0614ee4b09926dc1a1e25b0 bc08f555ce9f49dca46d2d91bcfafd9f
+#: bcb29c656c7e42a49596d2f12601e403 c52f953790064d59a9cb7ad7433290e8
+#: d3794a49663a489f9fe614fc52af8d0a d519df0fac284250ae75ae6e7064ce1d
+#: e613088b5cad42bf8cc2ced9f8305c9a ee76c57ac4e540ddbcf3b1e4e7372d01
+#: fd42f5e97a61466e83e8a1842dc63f40
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/roller485.rst:98 8ecee0b3f2d840f5ac0e6f3d561ddd50
+msgid "True if the motor output is active, False otherwise."
+msgstr ""
+
+#: ../../en/units/roller485.rst:102 082f958dd1e44171b6af6b4cb9871869
+msgid "|get_motor_output_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:9 5300f5a64aec4e2594dca9e5c8023e98
+msgid "get_motor_output_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:106 ca30ac892a8540cfacb81c2dc7085e04
+msgid "Set the motor mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:108 6a0c32021c5747329ff0c0c497e0fe05
+msgid "The mode to set for the motor."
+msgstr ""
+
+#: ../../en/units/roller485.rst:112 584fe15a21c14697bf535605ba53686a
+msgid "|set_motor_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:10 b26fdb8eb8d24c7ea33cc258a7c5183e
+msgid "set_motor_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:116 dd20efc00aa749f983bb286aaa156a64
+msgid "Get the motor mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:118 38a34e5241c74c3ab7f031bd7b6dd4b4
+msgid "The current motor mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:122 34855608f95e469d92342949292c244b
+msgid "|get_motor_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:11 c1d18342306940858783283ff8b86d12
+msgid "get_motor_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:126 a4275e1b426a4de08a5a962dcaeb620d
+msgid "Set the motor over range protection state."
+msgstr ""
+
+#: ../../en/units/roller485.rst:128 ../../en/units/roller485.rst:197
+#: 28c8c8ffddb44696a73e3d1750ba34f5 53e78eeba83c457fa5de0421bef8a45f
+msgid "Protection state value (1 to enable, 0 to disable)."
+msgstr ""
+
+#: ../../en/units/roller485.rst:132 e8781abfccbe41b7b1994d0c8eb1117e
+msgid "|set_motor_over_range_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:12 166270aa4d7e4f51ac09d484dd5bb233
+msgid "set_motor_over_range_protect_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:136 66f009222c6a4b209c5b38a30f31b086
+msgid "Get the motor over range protection status."
+msgstr ""
+
+#: ../../en/units/roller485.rst:138 b345cc99e7b94052866f41f95062e92a
+msgid "True if protection is enabled, False otherwise."
+msgstr ""
+
+#: ../../en/units/roller485.rst:142 6987541edd2446a29e08c6a697b18105
+msgid "|get_motor_over_range_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:13 9404a6188fdc41dbae3392a3610a181d
+msgid "get_motor_over_range_protect_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:146 e2c55f9dba664a8f93251b7b5f9455ca
+msgid "Set the motor jam release protection."
+msgstr ""
+
+#: ../../en/units/roller485.rst:151 ca8dd8dfe253401c8ac059d7bef662d2
+msgid "|remove_motor_jam_protect.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:14 a82b94e58d0c461d959d71a79cfec729
+msgid "remove_motor_jam_protect.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:155 a1890b1b4fdc4e918c13cb9c80855b09
+msgid "Get the motor status."
+msgstr ""
+
+#: ../../en/units/roller485.rst:157 18024e1561e54dc1825478ccf0f4b811
+msgid "The current status of the motor."
+msgstr ""
+
+#: ../../en/units/roller485.rst:161 37fa1ffe777347d389241f4dd938ec88
+msgid "|get_motor_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:15 c5491621b2df43f8b4e2db630251738f
+msgid "get_motor_status.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:165 88def9d6a75f427ab14b04674ff4d6d1
+msgid "Get the motor error code."
+msgstr ""
+
+#: ../../en/units/roller485.rst:167 4bbfcf4477274117aa634f5c041a26d6
+msgid "The current error code of the motor."
+msgstr ""
+
+#: ../../en/units/roller485.rst:171 f604728832dd403cbff1287bf5b10385
+msgid "|get_motor_error_code.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:16 76f3ef6d7f4948b5b296476e6dcada0a
+msgid "get_motor_error_code.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:175 2a6836ec97a84f5da5dd19df0b9414fb
+msgid "Set the button change mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:177 3dcb9d793a71413c849686ea13070077
+msgid "Change mode state value (1 to enable, 0 to disable)."
+msgstr ""
+
+#: ../../en/units/roller485.rst:181 73f4c4eafefc4b668206c63e5ae60e53
+msgid "|set_button_change_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:17 a16bf8767f3e47e5854aaac816082731
+msgid "set_button_change_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:185 8a6535a3bd6645ffb4fd14d01b870c34
+msgid "Get the button change mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:187 835d536690b34b36b87065ccde26806b
+msgid "The current button change mode value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:191 123d534c271f448194e7bb1dbb83b7b9
+msgid "|get_button_change_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:18 a98ca48bc3294daf897ed402d1755427
+msgid "get_button_change_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:195 ac327ebd884b438384a06453d471ebbb
+msgid "Set the motor jam protection enable/disable."
+msgstr ""
+
+#: ../../en/units/roller485.rst:201 719c59fa60244298880b8c4b106c3ce1
+msgid "|set_motor_jam_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:19 d6ca8255168b49ce8f16fb733bb3fae8
+msgid "set_motor_jam_protect_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:205 10ee8a36fc9d422c884f5aac003781c0
+msgid "Get the motor jam protection status."
+msgstr ""
+
+#: ../../en/units/roller485.rst:207 ccedd8cfbe554c5abb22910333bf46ba
+msgid "True if jam protection is enabled, False otherwise."
+msgstr ""
+
+#: ../../en/units/roller485.rst:211 b1cf66ca18d9433b8fb70cd4642b24ec
+msgid "|get_motor_jam_protect_state.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:20 e5809ec5606c4c67994818c5ffd91d03
+msgid "get_motor_jam_protect_state.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:215 23419b54b54f4204978d146fe8693f88
+msgid "Set the motor ID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:217 ac5b92d084e9497f8b272ecf4161ad34
+msgid "The ID to assign to the motor."
+msgstr ""
+
+#: ../../en/units/roller485.rst:221 992575056dc04368ac3b5b6e1370464f
+msgid "|set_motor_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:21 469062f91ddb45549bdd95c608c35833
+msgid "set_motor_id.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:225 5889844264334eaca94e8b19bd186533
+msgid "Get the motor ID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:227 082c31be8ba545e1b8f37b039208537b
+msgid "The current motor ID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:231 27111aea79e14fa28f5b273fa7efa63a
+msgid "|get_motor_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:22 240fef724c81421db422d700a1a49c86
+msgid "get_motor_id.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:235 fc82836a44db434a96dc2e7eb01ae868
+msgid "Set the 485 baudrate."
+msgstr ""
+
+#: ../../en/units/roller485.rst:237 55e9949ee8e94c5f978ab9dedaa91c6b
+msgid "Baud rate value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:241 a45886364eaf4121a1b1a13dbde41190
+msgid "|set_485_baudrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:23 0a4247d120e74963b936c45b113bd4be
+msgid "set_485_baudrate.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:245 7cb5992975e64910a76189cbc110912a
+msgid "Get the 485 baudrate."
+msgstr ""
+
+#: ../../en/units/roller485.rst:247 078e61cd0a6c4dae9610fbd90529f551
+msgid "The current 485 baudrate."
+msgstr ""
+
+#: ../../en/units/roller485.rst:251 d31c4f49bc2042b8a00799870dedbb5b
+msgid "|get_485_baudrate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:24 5e5fcd9ddfe240479cb7a19b4b782bbf
+msgid "get_485_baudrate.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:255 769855fb01724f32b6e067f41ec62ce4
+msgid "Set RGB brightness."
+msgstr ""
+
+#: ../../en/units/roller485.rst:257 a77531e68c03474090258c7ac0f1b5fa
+msgid "Brightness value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:261 f7cd088566144cb1a2760f0c2ae3979c
+msgid "|set_rgb_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:25 5133a7aa16f94e7fa79503c5c61da64a
+msgid "set_rgb_brightness.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:265 8d81864664654059999a724df7bdb3e8
+msgid "Get RGB brightness."
+msgstr ""
+
+#: ../../en/units/roller485.rst:267 d528ed261d0b40c39995c4490df5e55f
+msgid "The current RGB brightness value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:271 ecf8ba683d7c41ff94755ef922f965d1
+msgid "|get_rgb_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:26 870c80f8c5c14e64bfc3ce9a4d04fc65
+msgid "get_rgb_brightness.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:275 ../../en/units/roller485.rst:295
+#: 1c72dd7b53fc434abc0812d614b11dfc 80ce942a227b436aafd0f3355695d371
+msgid "Set the motor speed and max current setting."
+msgstr ""
+
+#: ../../en/units/roller485.rst:277 ede8479d5fd04cc5b3e834227068df38
+msgid "The speed value to set."
+msgstr ""
+
+#: ../../en/units/roller485.rst:281 0b058d4f6f6b4eee84f8dabb74f33e91
+msgid "|set_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:27 b6305d881e2a45d28c25296242e11bd2
+msgid "set_motor_speed.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:285 ../../en/units/roller485.rst:305
+#: 134590373e27420dae9ac1e03d5e0c26 7c72973fcc8b4fd0b4c7eb6c697280cc
+msgid "Get the motor speed and max current setting."
+msgstr ""
+
+#: ../../en/units/roller485.rst:287 52d3da71ca7d4a0298cbae4e47b67a44
+msgid "The current motor speed."
+msgstr ""
+
+#: ../../en/units/roller485.rst:291 eb6d2ab6c02e4f0a865b739813e9a667
+msgid "|get_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:28 7f067ac68a734d3d81bbf5487dcb5958
+msgid "get_motor_speed.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:297 ../../en/units/roller485.rst:369
+#: 6b726b0e46ad44b792eeaf89a53f1f1d e008df3b2401437ba66b828aee3bb040
+msgid "The max current value to set."
+msgstr ""
+
+#: ../../en/units/roller485.rst:301 cdf7df6ead3e401cb9e42ff03e9aff62
+msgid "|set_speed_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:29 87f6a9850dcc45659d7f62f758677ba2
+msgid "set_speed_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:307 ../../en/units/roller485.rst:379
+#: 6ed57fca3fda4d8e82aacd85656d5ade 72296989c1f74fa1a9975786c06e257f
+msgid "The current max current setting."
+msgstr ""
+
+#: ../../en/units/roller485.rst:311 b4054f645e044a2cb8e16c67c11f471d
+msgid "|get_speed_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:30 a6eaa8aba56b422292048921883ffe3b
+msgid "get_speed_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:315 ec7ec3910f754d1ebe30e53f9f823849
+msgid "Get the motor speed readback."
+msgstr ""
+
+#: ../../en/units/roller485.rst:317 b0dfd18fb83547d08769a44ded339225
+msgid "The readback value of the motor speed."
+msgstr ""
+
+#: ../../en/units/roller485.rst:321 2b9865e28b1742cf889588bd23255d25
+msgid "|get_motor_speed_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:31 cf4df10af755470aaeaeff837d667d0c
+msgid "get_motor_speed_readback.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:325 7b505390d99245c6b41ee8e617e607de
+msgid "Set the motor speed PID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:327 ../../en/units/roller485.rst:409
+#: e98ac270f09e4ff7af946bd4f1d0c00d fb36b18509fb4c23a07f9f1b226e403d
+msgid "Proportional gain."
+msgstr ""
+
+#: ../../en/units/roller485.rst:328 ../../en/units/roller485.rst:410
+#: 1e008359a7b7410e8e432e743bd461a7 e50f202a42db459baff27fdd0bb9be3d
+msgid "Integral gain."
+msgstr ""
+
+#: ../../en/units/roller485.rst:329 ../../en/units/roller485.rst:411
+#: 1483a467561841a5b938470ca3408740 1b1a498fda2742b8bbeef9f39983737c
+msgid "Derivative gain."
+msgstr ""
+
+#: ../../en/units/roller485.rst:333 6196b81586a945e595df456aaf6de76b
+msgid "|set_motor_speed_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:32 76176b1f9ead4a23ae61af715f6dab02
+msgid "set_motor_speed_pid.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:337 4281049ca6e64be38771198b806296a3
+msgid "Get the motor speed PID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:339 52960d97817c4eeebc193398ca8f5ad4
+msgid "A tuple containing the PID values."
+msgstr ""
+
+#: ../../en/units/roller485.rst:343 c59c1306d8304a9db2cc811ed9a712ff
+msgid "|get_motor_speed_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:33 8b45fe1275624d04af9047411b689590
+msgid "get_motor_speed_pid.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:347 ../../en/units/roller485.rst:367
+#: 5787cfefdc5c46ae98ea82fbdbc1df98 c31daa3c033f4827abd7f8f9b030f12c
+msgid "Set the motor position and max current setting."
+msgstr ""
+
+#: ../../en/units/roller485.rst:349 2e22a1afca2d4b0b93b811a9d9e56521
+msgid "The position value to set."
+msgstr ""
+
+#: ../../en/units/roller485.rst:353 dc310087c1af4085ae0d36173b804bf8
+msgid "|set_motor_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:34 9518a68e524042b79d8f8206e285a6cb
+msgid "set_motor_position.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:357 ../../en/units/roller485.rst:377
+#: 04ff1427987c4c309a519d67c43e5d87 30b2355c73704802b90acc2c66f7ceec
+msgid "Get the motor position and max current setting."
+msgstr ""
+
+#: ../../en/units/roller485.rst:359 fcded20c9ab042a1ad70eabe8e660607
+msgid "The current motor position."
+msgstr ""
+
+#: ../../en/units/roller485.rst:363 0465b38b60424e6e9c95e085650ec7f7
+msgid "|get_motor_position.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:35 e0973f076e7c4e9d93ea1580d124e558
+msgid "get_motor_position.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:373 8b2d5b0a118242468023148ec9fa74ad
+msgid "|set_position_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:36 951b152f154d411983f473a95c9a1c40
+msgid "set_position_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:383 6c8b0923f092497dae418ad86f87a10b
+msgid "|get_position_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:37 d39f219a873041b79e0ebcc7f27fe097
+msgid "get_position_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:387 f92881c952374aa0befd885d94036ae3
+msgid "Get the motor position readback."
+msgstr ""
+
+#: ../../en/units/roller485.rst:389 ec61fdf84c104cb5a48369134fc10dbf
+msgid "The readback value of the motor position."
+msgstr ""
+
+#: ../../en/units/roller485.rst:393 8eaac9890a0a42a896d9a946ed816f6a
+msgid "|get_motor_position_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:38 cf4834384e614e2e86d69c93974e62fd
+msgid "get_motor_position_readback.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:397 9d01735ab1c340819f33912e099a9ea6
+msgid "Get the motor position PID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:399 88ef2b3fd88e4c78baeccfb718afe757
+msgid "A tuple containing the PID values for position."
+msgstr ""
+
+#: ../../en/units/roller485.rst:403 0948a71bdb5e4fa2840a406744e95021
+msgid "|get_motor_position_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:39 97556411ed1e4f61a761ddd091a489c6
+msgid "get_motor_position_pid.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:407 23b2a2dbf23c4663b6f13e50d52e3c5f
+msgid "Set the motor position PID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:415 6bef3ca8642c4694b51ac98ddcb91f2b
+msgid "|set_motor_position_pid.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:40 887f118f09bd437ea0b95208e33e6e8b
+msgid "set_motor_position_pid.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:419 ec966dffe04b4cc0a5f0a3a3458a7c8a
+msgid "Set the motor max current."
+msgstr ""
+
+#: ../../en/units/roller485.rst:421 eb3ff87a528d43949efe38bb8df640a6
+msgid "The maximum current for the motor, multiplied by 100 before sending."
+msgstr ""
+
+#: ../../en/units/roller485.rst:425 7335873d5ca34e0db91169192a3334f1
+msgid "|set_motor_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:41 1867569c52554bc89b0d6d0860136155
+msgid "set_motor_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:429 c39a239928ce407d88587d674eda40ba
+msgid "Get the motor max current."
+msgstr ""
+
+#: ../../en/units/roller485.rst:431 59be1a5b355347bd8d7f8de1dd91fe45
+msgid "The motor max current, divided by 100 after reading."
+msgstr ""
+
+#: ../../en/units/roller485.rst:435 d16ca13fe0e04fd9bea5c70a46f0d52a
+msgid "|get_motor_max_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:42 7973e90e655a41f18b890328f1869493
+msgid "get_motor_max_current.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:439 5e006effaa7a4118beb8397308a78099
+msgid "Get the motor current readback."
+msgstr ""
+
+#: ../../en/units/roller485.rst:441 0f3135e434c74f378c0b6d1dffdd7db6
+msgid "The motor current readback value, divided by 100 after reading."
+msgstr ""
+
+#: ../../en/units/roller485.rst:445 6d60e8069b7749ef9c6010866f5d5c84
+msgid "|get_motor_current_readback.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:43 ad20595c35c84ae2896c9e16eb5ad67c
+msgid "get_motor_current_readback.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:449 f90b96c41e0c47e9ba4418f71c539651
+msgid "Set the system RGB color."
+msgstr ""
+
+#: ../../en/units/roller485.rst:451 4d7ade74ddf54f1bab661542d1a48d7a
+msgid "The RGB color value, where the format is 0xRRGGBB."
+msgstr ""
+
+#: ../../en/units/roller485.rst:455 c8b0935ffefb427bb574a666a52269c7
+msgid "|set_rgb_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:44 20d185a4ec974598a91e66d58dc9338a
+msgid "set_rgb_color.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:459 ff04fc3a10424d898d8a6df6873efa3f
+msgid "Get the system RGB color."
+msgstr ""
+
+#: ../../en/units/roller485.rst:461 690cc01ab76e46589fd285483d960197
+msgid "The RGB color as a tuple (R, G, B)."
+msgstr ""
+
+#: ../../en/units/roller485.rst:465 afe1a8ffe614460d9d97b6a915072a35
+msgid "|get_rgb_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:45 d4c40d35012741bb839f9e9760b0723d
+msgid "get_rgb_color.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:469 bcdc6901fd9e4cca83b3482f98a8d661
+msgid "Set the system RGB mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:471 4a95dfa8cdd54ab28e8e288cf3ffeafb
+msgid "The RGB mode value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:475 4c25d175d9e3486a8c5941981cdc8ee1
+msgid "|set_rgb_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:46 f821eb70a7a140c6afb9b3a8f5bb7ce1
+msgid "set_rgb_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:479 bc9c7e61906242fd8de5cd29433e56de
+msgid "Get the system RGB mode."
+msgstr ""
+
+#: ../../en/units/roller485.rst:481 3878c500f2074b84b7fef84b4be0f6d8
+msgid "The current RGB mode value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:485 4b19d3d1dbf24219bac13473b4a6f614
+msgid "|get_rgb_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:47 0c267ca01c3d4d8687af8882aa5ae191
+msgid "get_rgb_mode.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:489 ad9021d98a0049559eafe63bff10f000
+msgid "Get the system VIN voltage."
+msgstr ""
+
+#: ../../en/units/roller485.rst:491 8fe6469897974c80b31ede63eb60d7a8
+msgid "The system VIN voltage value, multiplied by 10 after reading."
+msgstr ""
+
+#: ../../en/units/roller485.rst:495 dde5a429778d425b99c06e2987fa52ac
+msgid "|get_vin_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:48 72dcf9f51fd845ad8c3eb35953a9fb7d
+msgid "get_vin_voltage.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:499 09453cd5eb7e4a4d9f20a0a2944d5463
+msgid "Get the system temperature."
+msgstr ""
+
+#: ../../en/units/roller485.rst:501 197933ac819841cbb3af4d0ac6deac07
+msgid "The current system temperature value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:505 369bea1eb9154b5094c0e8a525ad5dae
+msgid "|get_temperature_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:49 4faa71d65b3b49ef9d0e1ccec456530a
+msgid "get_temperature_value.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:509 04c708bde27548e8925ce5b42a70da2a
+msgid "Set the system encoder value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:511 dc62e284bffb4831b51bda36e26e4b11
+msgid "The encoder count value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:515 4e0232d0fdaa47af9d4c44c36de6f4f3
+msgid "|set_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:50 826ec437e7af4055bd6ce1574eb21e54
+msgid "set_encoder_value.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:519 5b1820ded37f4a36beb6470ad5affb07
+msgid "Get the system encoder value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:521 630a0122d34646c2baaa8bd27e112135
+msgid "The current encoder value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:525 9c7d80d7ee454604b3a6242feeb0a28a
+msgid "|get_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:51 3df48f3dd3a740a09a7e70ebf871688f
+msgid "get_encoder_value.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:529 e3df2e4981d54438a01aa42ba732390b
+msgid "Save the motor data to flash."
+msgstr ""
+
+#: ../../en/units/roller485.rst:534 92a9e553ee4247ce8e1e2bc7c7ae93bc
+msgid "|save_param_to_flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:52 5c36fe58d156459994bde24387c1e1fa
+msgid "save_param_to_flash.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:538 9c3130bee4594f04809cf084a09b537a
+msgid "Get the device firmware version."
+msgstr ""
+
+#: ../../en/units/roller485.rst:540 a10719cdaa374fa7b8f8e3c532c8fec3
+msgid "The current firmware version."
+msgstr ""
+
+#: ../../en/units/roller485.rst:544 681df4132cc043c7a602578256bd7015
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:53 aca3503f17ee4c189d48205bc86cfbb4
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:548 80378fb03a2e4057a74e20cd5a58e02c
+msgid "Set the I2C address."
+msgstr ""
+
+#: ../../en/units/roller485.rst:550 9311e88df1d04c5391f7347bb21c22c5
+msgid "The new I2C address. Must be between 0x08 and 0x77."
+msgstr ""
+
+#: ../../en/units/roller485.rst:554 38ef2bcf92c04874b10dab046c038ea2
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:54 a567d41b78024d2a946f04de925e1f44
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:558 54462b8e1c804f3ea392e738e513b30f
+msgid "Get the current I2C address."
+msgstr ""
+
+#: ../../en/units/roller485.rst:560 c03e942203864b7ea90bd9137a5d9733
+msgid "The current I2C address."
+msgstr ""
+
+#: ../../en/units/roller485.rst:564 4b1d235b993543cebf2fd861186c5dbb
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.roller485.ref:55 4176f676ed424cbf99fbd87633e505e3
+msgid "get_i2c_address.png"
+msgstr ""
+
+#: ../../en/units/roller485.rst:568 15717213e5d247249a7e70594eb7a2f8
+msgid "class RollerI2C(RollerBase)"
+msgstr ""
+
+#: ../../en/units/roller485.rst:575 5f0808bf506148c287924279ebbefaa1
+msgid "Initialize the RollerI2C object."
+msgstr ""
+
+#: ../../en/units/roller485.rst:577 b5785f51db4d4496a60a1872d5fcfe06
+msgid "I2C bus instance or PAHUBUnit instance."
+msgstr ""
+
+#: ../../en/units/roller485.rst:578 819d24580b9841caaba3b486a700e402
+msgid "I2C address of the device. Defaults to _ROLLER485_I2C_ADDR."
+msgstr ""
+
+#: ../../en/units/roller485.rst:590 ddfab684cd86406e9db496d634ee5635
+msgid "Read data from a specified register on the I2C device."
+msgstr ""
+
+#: ../../en/units/roller485.rst:592 ../../en/units/roller485.rst:624
+#: 39027eb021fa4a53be144a9b2cf4d43f 64cd876b57854c93aa0d3471b80d66fa
+msgid "The name of the register to read from."
+msgstr ""
+
+#: ../../en/units/roller485.rst:593 ../../en/units/roller485.rst:625
+#: ../../en/units/roller485.rst:692 ../../en/units/roller485.rst:719
+#: 211020f5c1e74c5b8163ccc6b6e36246 2d6af838f86f4df48b6084fc5ac472ba
+#: 860c4a80b1dc4040af5ec0fe3acf52dc a7519bf25c57428cb080cde8f2d54f9e
+msgid "The number of bytes to read."
+msgstr ""
+
+#: ../../en/units/roller485.rst:594 33399a85c7d64206ab3e648c33d66b34
+msgid "The data read from the device as a bytes object."
+msgstr ""
+
+#: ../../en/units/roller485.rst:598 96b74432302d4032b357ebaf33c7be57
+msgid "Write data to a specified register on the I2C device."
+msgstr ""
+
+#: ../../en/units/roller485.rst:600 ../../en/units/roller485.rst:640
+#: 3f60d3a4d9214b468b7f9c11420375b7 e5b1292012d34b9cb496e4743372f905
+msgid "The name of the register to write to."
+msgstr ""
+
+#: ../../en/units/roller485.rst:601 ../../en/units/roller485.rst:641
+#: 36da006d849c40d997249f537393a837 7794f7e1a03c4878b1db8330c15b97e2
+msgid "The data to write to the register as a bytes object."
+msgstr ""
+
+#: ../../en/units/roller485.rst:605 28cc31adc3da4e6092f1a5bcf8afe5ec
+msgid "class Roller485(RollerBase)"
+msgstr ""
+
+#: ../../en/units/roller485.rst:612 0893f197bb3a49cd8a69675d7d1ab9a3
+msgid "Initialize the Roller485 object."
+msgstr ""
+
+#: ../../en/units/roller485.rst:614 ../../en/units/roller485.rst:680
+#: 9d6867499e1645e2bb1e7997c888f5e3 a96d12e02fa646dfbab9cb9da56d587d
+msgid "The RS485 bus instance."
+msgstr ""
+
+#: ../../en/units/roller485.rst:622 bae71a21442b486b91fd908e99663948
+msgid "Read data from a specified register via RS485."
+msgstr ""
+
+#: ../../en/units/roller485.rst:630 edbe5b438fb84e459c2af0c3f6e7537c
+msgid "Create a command frame with the given command and motor ID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:632 ../../en/units/roller485.rst:648
+#: ../../en/units/roller485.rst:658 041b66a84c6641ad9d1f5c1d8156e483
+#: ac36779422db45769abc410fc219fff5 f8335351730443c69433d7077a19e01b
+msgid "The command byte."
+msgstr ""
+
+#: ../../en/units/roller485.rst:633 0468b1c9bc80430c9d9063f8646a5d5d
+msgid "The ID of the motor."
+msgstr ""
+
+#: ../../en/units/roller485.rst:634 60bc90c730264c51a3fe15d6c4476f4c
+msgid "Additional data bytes to include in the frame."
+msgstr ""
+
+#: ../../en/units/roller485.rst:638 3870d6e2d43a44fa8700631682420a40
+msgid "Write data to a specified register via RS485."
+msgstr ""
+
+#: ../../en/units/roller485.rst:642 cd750a6ec867457ca120cd0520527e90
+msgid "The response after writing the data."
+msgstr ""
+
+#: ../../en/units/roller485.rst:646 ../../en/units/roller485.rst:656
+#: 0599977a3f1246fd99f3e3f957cecb77 5264c31feca547bf97dbd19f6336466b
+msgid "Send a command via RS485."
+msgstr ""
+
+#: ../../en/units/roller485.rst:649 ../../en/units/roller485.rst:659
+#: 81f69e1205c44a37ad6c5eb3d387ff05 902edb62760048cdb322e0e04b9328eb
+msgid "The motor ID."
+msgstr ""
+
+#: ../../en/units/roller485.rst:650 cba7ae3a8bd84656b10d8d4aad0b13a6
+msgid "The data to send along with the command."
+msgstr ""
+
+#: ../../en/units/roller485.rst:651 a7fecb57df354e7e92a667395a0b9388
+msgid "The length of the buffer."
+msgstr ""
+
+#: ../../en/units/roller485.rst:660 a7b089dd355344218dc6cd93b6546d6f
+msgid ""
+"A tuple (success, response). Success is True if the response is valid, "
+"and response is the data read."
+msgstr ""
+
+#: ../../en/units/roller485.rst:664 1ddf2879f67c45d9afcdf88ec13b7436
+msgid "Calculate CRC8 checksum."
+msgstr ""
+
+#: ../../en/units/roller485.rst:666 0267e13933854ac59f38a606f3cc9974
+msgid "The data buffer to compute the checksum for."
+msgstr ""
+
+#: ../../en/units/roller485.rst:667 fd36eaea423549688595c05cc3c6b5b1
+msgid "The computed CRC8 value."
+msgstr ""
+
+#: ../../en/units/roller485.rst:671 8d6727ac458e4c0195795308df1b7ce9
+msgid "class Roller485ToI2CBus(RollerBase)"
+msgstr ""
+
+#: ../../en/units/roller485.rst:678 d9a3ab6e4e3b45b381850515b9114bf1
+msgid "Initialize the Roller485ToI2CBus object."
+msgstr ""
+
+#: ../../en/units/roller485.rst:688 ../../en/units/roller485.rst:698
+#: 64edb139130341d6a803da8e727c467c b85668bfc2b9494697275df524c15289
+msgid "Read data from a specific register of the I2C slave device."
+msgstr ""
+
+#: ../../en/units/roller485.rst:690 ../../en/units/roller485.rst:700
+#: ../../en/units/roller485.rst:718 863b5d5bb999453cb6ab6d27762d424c
+#: 8ed39d115ccb48b89093eaf8946560ee b26ab79e520442d58f5722a97fcc648f
+msgid "The I2C slave address to read from."
+msgstr ""
+
+#: ../../en/units/roller485.rst:691 ../../en/units/roller485.rst:701
+#: ../../en/units/roller485.rst:709 18b195d270804b869eca0c0fb4a78544
+#: aba07a0824c94805a8f974b8717ef8eb b07fde869fd74a70ab49d14bb82508d7
+msgid "Memory register address."
+msgstr ""
+
+#: ../../en/units/roller485.rst:693 4895354e08504856bbbfb800567a0eed
+msgid "The data read from the register."
+msgstr ""
+
+#: ../../en/units/roller485.rst 429bd92600914345b3bf1fa3e4c93506
+#: 60e4ead4f433466c8c8866d51c097415 8e95d8bdbb4c437ca2461c7ee7e6ba08
+#: f546dad40af248a38cb2e01b9741a651
+msgid "throws Exception"
+msgstr ""
+
+#: ../../en/units/roller485.rst:694 ../../en/units/roller485.rst:721
+#: 06b87c25195f4f788b9ea39d8696ec1b f420acd4530c4b58b459206a6ed1e5e9
+msgid "If the read operation fails."
+msgstr ""
+
+#: ../../en/units/roller485.rst:702 ../../en/units/roller485.rst:728
+#: d7a7ee33163244938f2f60498c0faff9 e46d5f3945b14ae9b2cc14a6a4b9fb50
+msgid "Buffer to store the data."
+msgstr ""
+
+#: ../../en/units/roller485.rst:706 fca12a2606b34399b1eabf508f004353
+msgid "Write data to a specific register of the I2C slave device."
+msgstr ""
+
+#: ../../en/units/roller485.rst:708 ../../en/units/roller485.rst:734
+#: 072d2166439e4bb49e72be79883a80e6 9993e524ccdf4ad5bceb99acfe5dfa05
+msgid "The I2C slave address to write to."
+msgstr ""
+
+#: ../../en/units/roller485.rst:710 ../../en/units/roller485.rst:735
+#: 49d18569829b4373a77ee22b19744856 b81b296b3eee4c09ba8a61a7c307022a
+msgid "The data bytes to write."
+msgstr ""
+
+#: ../../en/units/roller485.rst:711 ../../en/units/roller485.rst:737
+#: a4535eb0094e4264bbe934063f067954 afa0cdee005d4998ba355a0ecb008c48
+msgid "True if the write operation is successful."
+msgstr ""
+
+#: ../../en/units/roller485.rst:712 ../../en/units/roller485.rst:738
+#: 3f80726b37b448e5b6dbee3f7d05bcb0 d506f8f5eae24f51a21081263fd480f0
+msgid "If the write operation fails."
+msgstr ""
+
+#: ../../en/units/roller485.rst:716 ../../en/units/roller485.rst:725
+#: 7d9afcfe3d0342b78a8f10c5a920ff1a d9ec06093bfc4115ac92b450382d983f
+msgid "Read data from the I2C slave device via RS485."
+msgstr ""
+
+#: ../../en/units/roller485.rst:720 dc6f0a26a40042868bdc5eab64b0506f
+msgid "The data read from the I2C slave."
+msgstr ""
+
+#: ../../en/units/roller485.rst:727 d1bc310eadfc4d34bd031c40a30aaf8a
+msgid "I2C device address."
+msgstr ""
+
+#: ../../en/units/roller485.rst:732 65d6853994a34551814a217737af5ccc
+msgid "Write data to the I2C slave device via RS485."
+msgstr ""
+
+#: ../../en/units/roller485.rst:736 d4bd5263e991472e88405496c2e6e401
+msgid "Whether to send a stop bit after writing."
+msgstr ""
+
+#: ../../en/units/roller485.rst:743 35e420bf19ca4964b249d8636618a853
+msgid "Scan for I2C devices on the bus."
+msgstr ""
+
+#: ../../en/units/roller485.rst:745 78fd483a0c684278a6fe836303aeacae
+msgid "A list of addresses of the found I2C devices."
+msgstr ""
+

@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.cardkb.ref ../../en/units/cardkb.rst:2
+#: 6dd5f611e95e4e7280c62ba507f052e0 a49b049ceb084c52b411c42359939094
+msgid "CardKB Unit"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:6 e2ed68eca44c4790b0eaa202dc68759e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:9 405de81e732e4ecb9161191fec0b1a53
+msgid "|CardKB Unit|"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:9 9478287a58b34e1485378f6ce3b2d12c
+msgid "|CardKB Unit v1.1|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref a59c5a6097da4e068787f3cf0ed516f1
+msgid "CardKB Unit v1.1"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:13 976a2edaf4844d49951633bd856de728
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:20 044111af973a4de3998ae5ed3d9074d1
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:22 94b6f50d6700488da53ad1c750e33b12
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:23 78dbd58c7c5a48b7a7e6e8dc81374ed6
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:27 af601d321ee84d2d8a5031dc6c12e410
+msgid "|cores3_cardkb_example.m5f2|"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:31 244e0a27578c44ed9222d74c6c72a2cb
+msgid "class CardKBUnit"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:34 030c455f49b44b7e96c79961c9cc9e4e
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:38 96ed45b8ffd84f31b0a7f106715689bf
+msgid "Create a CardKBUnit object."
+msgstr ""
+
+#: ../../en/units/cardkb.rst 085916170c6544b2852eda62f9200024
+#: e92c01fc5c1d4ff19f9a2fff50a99f24
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:40 b177c3e3d9844d8ebd817635b9b56c2c
+msgid "I2C object"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:41 360be5ab6beb488dae8ef748e5c24cf4
+msgid "I2C address, 0x5F by default"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:43 ../../en/units/cardkb.rst:59
+#: ../../en/units/cardkb.rst:70 ../../en/units/cardkb.rst:81
+#: ../../en/units/cardkb.rst:92 ../../en/units/cardkb.rst:115
+#: 0a7469f465c643e9bc3fe7066c14f66b 59fa7bf3d1c849bba08a09f3570e94fd
+#: 6ceec69c0f994a888009234c1b5c46b9 cd12f1641be1433e96b138299c9e4daf
+#: e726a5015992471ca6fe111a4281dbfc f6dbbaa85166443fac8ccb2739f7b7d1
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:45 433086d869c1452ba75426bbbf7388a8
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:11 10967e43fb194ebebcb1f4f17fb34cd7
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:51 5c10b052fc29431c9d50ba6e937d6de0
+msgid "Methods"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:55 8017a50270984c5faa4cdaeb67db217d
+msgid "Read the key value."
+msgstr ""
+
+#: ../../en/units/cardkb.rst 3cf48b8279c3493c9fc42d88f76184fc
+#: 60cad6d11b39434494817633e56a0cfc ba1d0367a63b4958ae6db30efbfe71a3
+msgid "Returns"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:57 da41994a5d2d4465bb0e27041517a1ee
+msgid "key value, int"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:61 0e0fe334b7dd4be0882908bd41eaadf6
+msgid "|get_key.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:13 044f55feafd745bd8b323d5103599ea6
+msgid "get_key.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:66 2a72fd2a7c3d43ff8292bc5ef2478534
+msgid "Read the key string."
+msgstr ""
+
+#: ../../en/units/cardkb.rst:68 6407ded2f47947f6b4557b23f5956233
+msgid "key string, str"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:72 c48f09a2f5324f58936337c58f3021c5
+msgid "|get_string.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:15 a276437a2a0a442aa392acfb0c61e2a5
+msgid "get_string.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:77 fed0cdef8374463c973be14f225eb9ef
+msgid "Check if the key is pressed."
+msgstr ""
+
+#: ../../en/units/cardkb.rst:79 2cadcd44beff466eb837a5568d3b5fec
+msgid "True if the key is pressed, False otherwise"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:83 d5651fd7aa1740649cff2b2810e61c26
+msgid "|is_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:17 57d379e9943649b38f30986ae98ce4fd
+msgid "is_pressed.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:88 fd13f216f06346b7ab08799f5d83aa7e
+msgid "Set the key press event callback."
+msgstr ""
+
+#: ../../en/units/cardkb.rst:90 73643a6354cb433bafe28784bb4dd475
+msgid "callback function"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:94 54786b1bba824748b1f6c77059d012e4
+msgid "|pressed_event.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:19 db50625fd02b42098e00543a8514aa0c
+msgid "pressed_event.png"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:96 ac7e781fc25e4c01ba1be15ee6c969af
+msgid "Example:"
+msgstr ""
+
+#: ../../en/units/cardkb.rst:113 edb8182856a84ccab191c4bc72dbed63
+msgid "Update the key status."
+msgstr ""
+
+#: ../../en/units/cardkb.rst:117 68049858be0e42acb337f3f737fa7c8d
+msgid "|tick.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cardkb.ref:21 2eb2f4cecf404828af365b4e513777b0
+msgid "tick.png"
+msgstr ""
+

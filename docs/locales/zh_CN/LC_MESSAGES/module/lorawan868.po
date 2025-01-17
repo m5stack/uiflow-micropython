@@ -1,0 +1,763 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/lorawan868.rst:3 894b09b348e74ee392ca99a8688079c6
+msgid "LoRaWAN868 Module"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:7 3f7738d8d62742f5a56d3b43bf43f51c
+msgid ""
+"COM.LoRaWAN is a LoRaWAN communication module in the M5Stack stackable "
+"module series, supporting node-to-node or LoRaWAN communication."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:9 cca96e69e95d43d0b7e6f5411f4f01e8
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:11 c88b0947bd374444bf39280a3f731f9e
+msgid "|LoRaWAN868Module|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref c579b80978254167996af886de549949
+msgid "LoRaWAN868Module"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:13 29dea465a8fa4b2980ffb6033f685d72
+msgid "Micropython TX Example:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:19 86b599e27d0045cdaaa08bcc822ec7a2
+msgid "Micropython RX Example:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:25 ce16d398ccbd4bb99e63889a8c19ca38
+msgid "UIFLOW2 TX Example:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:27 827c70012c9c4b17b92215415b640aa2
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:44 6930e33c8e494cd9a0ccef2b78d0da73
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:29 a9c3ea4629eb47aa989e12787b4cf49e
+msgid "UIFLOW2 RX Example:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:31 c953f65249c5419aa74c6bed9e883159
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:46 4f131029d8ba49f094bb36b394825ec3
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:35 b0d7999394f845df92abf8aec9b3f19e
+msgid "|lorawan868_example_tx.m5f2|"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:37 824d8198405f4e698ee48b773e54a237
+msgid "|lorawan868_example_rx.m5f2|"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:40 cf7f5e8a7a5f43b59a253a07a0fde569
+msgid "class LoRaWAN868Module"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:43 bd0a1c91403c4db685855fc1825c304a
+msgid "Constructors"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:47 bf59c62ffb344dbdb12e7224d20e8a0c
+msgid "Initialize the LoRaWANModule."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst 0a906397853d4980937f571086578c21
+#: 1c45d000914a4f22b05148ef749b0cf0 212d0263a33d490e99131c2ca30f9901
+#: 3857f05a802b465286756f5d1155b2e3 39740455e84c421bb81ef7f279c06a09
+#: 39db0d9423914a0ab8c62a78bcb132a2 3b3ef186414f422cb4a4264e47fef16a
+#: 7f5ce07b59d74232aa1a02fe49188abc 907d607ccedd426faa41d4e3efc93fea
+#: 90ca6be91b8c4973becaab34a9363c7f 93d376d7e67846f98c2420159e69742e
+#: a20f8f83066c4387a3c6021843fd18e7 abd0b008fb454e588f93752dee58bc49
+#: abf4cc1142c64c86a7f6494ffc88b7fc b3a3c6f99d81447f802c236c8a47597f
+#: b86bacd523fa4330989867aeccb26e99 ba130df6e9da4305a06cc45d97b1a6fd
+#: be5507200aa14a45a17f8ecc62a86cd2 c1f659a4d3924b42800e5408662caf5c
+#: c5cefef267db428c8f1c841dbdf333f4 c68496d170f349d1ab5d95e9d044a413
+#: e3ca4391380d4b1d989153b52c2918cb f265dacf984d4ed3b90e66a407f0ae93
+#: ff66b8cdfe6d47ee9d371b82bbfa6410
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:49 6cc25680668d4dc092c1d483e1316ded
+msgid "The UART ID to use for communication."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:50 7d7a9aa8a54c4df883221fa9d924bc75
+msgid ""
+"The UART port to use for communication, specified as a tuple of (rx, tx) "
+"pins."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:51 a5a133d8452e4bfd8096e8f00f157fe1
+msgid "The frequency to use for LoRa communication"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:53 ../../en/module/lorawan868.rst:67
+#: ../../en/module/lorawan868.rst:85 ../../en/module/lorawan868.rst:94
+#: ../../en/module/lorawan868.rst:103 ../../en/module/lorawan868.rst:112
+#: ../../en/module/lorawan868.rst:121 ../../en/module/lorawan868.rst:131
+#: ../../en/module/lorawan868.rst:141 ../../en/module/lorawan868.rst:150
+#: ../../en/module/lorawan868.rst:160 ../../en/module/lorawan868.rst:170
+#: ../../en/module/lorawan868.rst:180 ../../en/module/lorawan868.rst:190
+#: ../../en/module/lorawan868.rst:200 ../../en/module/lorawan868.rst:210
+#: ../../en/module/lorawan868.rst:220 ../../en/module/lorawan868.rst:230
+#: ../../en/module/lorawan868.rst:240 ../../en/module/lorawan868.rst:250
+#: ../../en/module/lorawan868.rst:259 ../../en/module/lorawan868.rst:269
+#: ../../en/module/lorawan868.rst:279 ../../en/module/lorawan868.rst:289
+#: ../../en/module/lorawan868.rst:299 ../../en/module/lorawan868.rst:309
+#: ../../en/module/lorawan868.rst:319 ../../en/module/lorawan868.rst:329
+#: ../../en/module/lorawan868.rst:338 ../../en/module/lorawan868.rst:347
+#: ../../en/module/lorawan868.rst:358 ../../en/module/lorawan868.rst:368
+#: ../../en/module/lorawan868.rst:377 ../../en/module/lorawan868.rst:386
+#: ../../en/module/lorawan868.rst:395 ../../en/module/lorawan868.rst:404
+#: 04031604edf24488b049383e2197f6ed 06c37b0b1329419e990cbfa3a5bff30b
+#: 0eaf78e9601843489eb5d9cb96765c5b 213c4e19e360440f8a92fb108da9e820
+#: 27f6de3c459b4fb2849a52d32aeb42dc 2c73a8cb9ce74bdda379a2a8384b1eeb
+#: 323ea513fa924f1b96c6cefe9c36e451 3b7117e12a974b5fb900f11fdd914639
+#: 3e2c01d8312146e1b0ca7b9da6bcd079 4348edc07fe0446d9113bbec2802354e
+#: 49819e6fc7f346e7bd8b5f540a961254 54efc0afbd7043d48aaa9a1516e90684
+#: 67d40840b1bb4c5691fac33fe79f6067 6d391aefd9264f1b9d05b14adb1a1875
+#: 74678123c37f463aa1d599e11a1589c9 7590f1b4bebb45cf9ee64150d8d16b99
+#: 7c1a71ea15c249cf8632d7571a9852c4 7d460996c0c44f9d8d6f510a382bd618
+#: 7e388c6edeb04350bdb41edaa56769d3 8d1eae2b06ed415c94dcbc15eb1ba557
+#: 926691df6adb4bed979ca42d9a022661 93e72d93e56747838656c89d8bb9f304
+#: 95a4ca7b85a141d581a6c94ded590214 97728ac1af2444d4961abdbbbdc665b9
+#: 9e79b07f3822400aba8e8dd75f971e6f ab3eb6f089434aa98457aacceb726ae0
+#: ace1eab47f084abcbf753994a09909a7 cf7691618b844d04ba4aa4aa36382b97
+#: d9c9e49c2e88435b9877be1dced5d68f ddab6f21e9c34391b9992d792a8ad00b
+#: e55231b698174519a4197c4f652c8883 e7d6432709124a5c977b46fb24dc6f65
+#: f4d7dad015df4fc890034bbfb3c4ade0 f559202d030a4949bc4895ce8c0c10a2
+#: f84589d5fbca4e51a143d901b5c4c5b9 fff9c18a0ce34caea8ca11f2ac2ee6bd
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:55 84c4176b3e694f0295ecff37efb06797
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:7 5169223b9a2b4fd486441321d750b411
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:59 61176e3f66a24f4c8002678772af745d
+msgid "Methods"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:63 4f5fc2959ade4d46baf984c2391b3762
+msgid "Set the mode of the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:65 8b737e6d3ade4bd192dad4160cd189a8
+msgid "The mode to set."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:69 5b2658bd01074e84b9d5a03eaaa44323
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:8 b59991c6ae9d490b938c20be9cf9afd9
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:73 fe7c5c5fc23a4ea89934e9c003b465e4
+msgid "Set the parameters of the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:75 987b6ce6cd4946faa57230f2a55f858d
+msgid "Set LoRa listening/sending frequency in Hz."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:76 bc360f74d9d24b1d82543002d274f060
+msgid "LoRa signal output power in dBm;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:77 434fb9f4cc53475e90ba038d85e65d05
+msgid "Spreading factor, from 5~12"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:78 20235ac487aa4758878baf2f0e9d2b6a
+msgid "Bandwidth 0 – 125K, 1 – 250K, 2 – 500K;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:79 9c63ce48ef80467cae86f0432a3a76b9
+msgid "1 – 4/5, 2 – 4/6, 3 – 4/7, 4 – 4/8;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:80 b26b1a9b587e4011928a55fe573ec2fd
+msgid "Preamble Length from 8~65535 bit;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:81 92619e889ce248748108456a2bfe2bcf
+msgid "0 – disable CRC check, 1 – enable CRC check;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:82 284de1f0640e435db82ca4072804a248
+msgid "0 -- not inverted, 1 – inverted;"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:83 2fe3be2b10c6476ea2c2e190b2d5d935
+msgid "Save parameters to FLASH, 0 – not save, 1 – save."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:87 b902d66b941e42b48fb83684d2d7752f
+msgid "|set_parameters.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:9 59790579eb3e435497115a9b548961dc
+msgid "set_parameters.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:91 33fddefefbbd4a8581afe54ca6a9ca37
+msgid ""
+"Wake up the device through a serial port interrupt. After resetting, the "
+"device is in sleep state. In theory, sending any data through the serial "
+"port can trigger the interrupt and wake up the device."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:96 42904f75d4c94d3fab667281111bc3d6
+msgid "|wake_up.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:10 b445ea92892d48fbb1110c86ae820228
+msgid "wake_up.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:100 d9e7b0124f914f599df055808b6ecf5f
+msgid "Put the device into low-power mode."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:105 35a0fa7614174d6abde0b5e577e15c15
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:11 e112af01f5a54423accbb9b5e5631335
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:109 336f9d28b729482c869e92c54e5a6574
+msgid "Reset the device."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:114 48a8810903ad4f2988dd5946d55b0145
+msgid "|reset.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:12 b6353a4a658e421db351090274f1b190
+msgid "reset.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:118 6e11721e81644ad9806fabb5c31b5ebf
+msgid ""
+"Restore the device to factory settings. The parameters will reset and the"
+" device will enter sleep mode after response ends."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:123 38e9f992b20544a0a068f152722f6fbd
+msgid "|restore_factory_settings.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:13 b028bb2a1a2d476584a7cd7314b76659
+msgid "restore_factory_settings.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:127 c9acdce8bc3e403d8a3e0d1164b939a8
+msgid ""
+"Enable or disable copyright information print when boot loader mode "
+"begins. Default is enable."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:129 ../../en/module/lorawan868.rst:139
+#: 81539e27b4fa40fdb0dceb0a25a1b733 f4f9efcdc5d545af916edf1470055573
+msgid "Set True to enable, False to disable."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:133 546297b8f25445f7b14e31901755dcbe
+msgid "|set_copyright.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:14 6e1ce0c31e004a1bb9603a1a55ab9b94
+msgid "set_copyright.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:137 899523eb1d0b45349c511f75950cf190
+msgid "Enable or disable automatic low-power mode. Default is enable."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:143 9bddcb761ad04ea1a2358243ca7fe0b0
+msgid "|set_auto_low_power.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:15 d734f807190342beaf02085eac3bbd1d
+msgid "set_auto_low_power.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:147 fdd936e3503744589e56507d1f78ce82
+msgid ""
+"Query the unique ID of the chip, which can be used to query the "
+"corresponding serial number."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:152 a0ad095c82fe4b5e9a0fafee32daee46
+msgid "|query_chip_id.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:16 fa440e51087a41d88e7dc5292c234504
+msgid "query_chip_id.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:156 bdf5d8a9eac6455fa1e06cb982139580
+msgid "Enable the LoRaWAN module to receive data."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:158 f4a0f4d06281451ab16538c12ad8bd12
+msgid "The timeout for the receive operation."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:162 5edf3b126bc946109a5986ce4c4b7f64
+msgid "|enable_rx.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:17 ae98e4a133664f8aa2d1709c1598a6e5
+msgid "enable_rx.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:166 f37d299683944fe68c4366b1feefb2cf
+msgid "Set or query the DevEui. DevEui must be 16 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:168 236d479fd97844a7b9b850da89f3128d
+msgid "The DevEui to set. If None, query the current DevEui."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:172 b116e827910748828e788f43de4b374a
+msgid "|set_deveui.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:18 b12d8e83774947c99d27025d9e5bd1ad
+msgid "set_deveui.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:176 7c36d9bfba054f72858a423427245c73
+msgid "Set or query the AppEui. AppEui must be 16 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:178 ed22bcc7b966448faf0f5e6cbfa49572
+msgid "The AppEui to set. If None, query the current AppEui."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:182 1e09573619c04e8fbfee1fbc0585fad4
+msgid "|set_appeui.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:19 04e8312477de4309b98390e3304bf0c6
+msgid "set_appeui.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:186 3c301adffae44a3a8602f1c62a50d511
+msgid "Set or query the AppKey. AppKey must be 32 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:188 90472f4fa8db4aaca0fa5faca07f32dc
+msgid "The AppKey to set. If None, query the current AppKey."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:192 2e6254532b954ed8a95387e72418022c
+msgid "|set_appkey.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:20 9f0d40dfce7a499497ad25bad2a2417d
+msgid "set_appkey.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:196 1ad931be1c1a4a928aa491f7679a2c42
+msgid "Set or query the NwkSKey. NwkSKey must be 32 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:198 d8074689143947c986444c209a0b46b7
+msgid "The NwkSKey to set. If None, query the current NwkSKey."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:202 414fa1af4fee4201966922f1cd67cc09
+msgid "|set_nwkskey.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:21 7dc624c9c617493ca0dbadb108de8306
+msgid "set_nwkskey.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:206 d7b634ae33284abc832d91accd0f219f
+msgid "Set or query the AppSKey. AppSKey must be 32 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:208 599af69e56ae402f85499593af39934c
+msgid "The AppSKey to set. If None, query the current AppSKey."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:212 4155b5df4dc845948cfa65c09ede7924
+msgid "|set_appskey.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:22 1154d6204e6346b889c8ce61440f2ad8
+msgid "set_appskey.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:216 750725c76ce647daaa444ddb08b3a48b
+msgid "Set or query the DevAddr. DevAddr must be 8 hex characters (0-9, A-F)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:218 ecd9ced394c943f29e4b9767d35d2784
+msgid "The DevAddr to set. If None, query the current DevAddr."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:222 41e7a53c2ff24808b2dceb29b7c7b573
+msgid "|set_devaddr.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:23 d730129971ef4a22a9deb0f076ea9b2e
+msgid "set_devaddr.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:226 20e2a977e4b14982ae947c67658bd70d
+msgid "Set or query the OTAA mode. 1 for OTAA mode, 0 for ABP mode."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:228 084319ce8e344a7aadb20fc76354fba5
+msgid "Set True for OTAA mode, False for ABP mode."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:232 1d70e23651904ab1ad1b468cb92f4de3
+msgid "|set_otaa_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:24 261a2b6430b9451d9af199d8cc100cc9
+msgid "set_otaa_mode.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:236 a44ccc22a71b424aacdb03ac4d505976
+msgid ""
+"Enable or disable the ADR (Adaptive Data Rate) function. Default is "
+"enabled."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:238 908bd41ac0b244e9a67264d9dc7e6066
+msgid "Set True to enable ADR, False to disable."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:242 a09e6256dde54797a40ff796f62eec75
+msgid "|set_adr.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:25 b6e8fd15152d49b29f9e3515c5d9bdab
+msgid "set_adr.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:246 b4ef0598489a45e0a8c9d0d462c40316
+msgid "Set or query the LoRaWAN working channel mask."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:248 62131f85939442139a60698020a338ec
+msgid ""
+"The channel mask in hexadecimal format, e.g., 0000000000000000000000FF "
+"for channels 0~7."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:252 d683b8e36806486eb0519e4826155d52
+msgid "|set_channel_mask.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:26 fbb04355fb544a748a4cc8faa5fbb189
+msgid "set_channel_mask.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:256 f52191dd999b4a339423b97b975e106a
+msgid ""
+"Join the network using OTAA (Over-The-Air Activation). This command "
+"triggers the join process."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:261 dfc2eb6c1843479f8356066d60873051
+msgid "|join_network.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:27 633629aee66f40d2b24ab7dbdb2a3100
+msgid "join_network.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:265 53eb451d8a504a6d86660caea7173b5e
+msgid ""
+"Set or query the communication cycle in milliseconds. For example, 60000 "
+"means communication every 60 seconds."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:267 e86152e2159941b489c38c5355afa58d
+msgid "The communication cycle in milliseconds."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:271 e2594373393d4de4b83d5b37d53d557d
+msgid "|set_duty_cycle.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:28 e09a83b514914e9ebccea4b6129b3432
+msgid "set_duty_cycle.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:275 a5f346d7e4184b489d13ebfc6b3d465a
+msgid ""
+"Set or query the device&#x27;s communication mode. Only Class A or Class "
+"C are valid."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:277 5159e79457454d8a86da9eba16edb909
+msgid "Set &quot;A&quot; for Class A or &quot;C&quot; for Class C."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:281 2cc478f317f941849d32bbf1fad94d8c
+msgid "|set_class_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:29 0f01cd1f269d46e8a43ae1fae8aa801e
+msgid "set_class_mode.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:285 2875ecba7df54c13b1d3824b8a3ce820
+msgid ""
+"Enable or disable the ACK receipt function. If enabled, the device waits "
+"for acknowledgment from the gateway."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:287 d81c7aabf2ea4082b46a12161fd5d233
+msgid "Set True to enable ACK, False to disable."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:291 b697f5f0476f43d790db88997321ce17
+msgid "|set_ack.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:30 56d838e8c4ac480caa0ea3276c075093
+msgid "set_ack.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:295 14ec4728498446e088cf37dde03bdc2a
+msgid ""
+"Set or query the application port (fport) for upstream data. Valid range "
+"is 0~255."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:297 44286b2e796f4266b574b9cdc2101e41
+msgid "The application port to set."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:301 5a762d65d8dd4132ae72802bdb4cf4e4
+msgid "|set_app_port.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:31 fcbbaabf22274f2395242ea796f34439
+msgid "set_app_port.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:305 42fe3630f3bf48b2ac23fd89eb9d95c1
+msgid ""
+"Set or query the number of retransmissions if communication fails. The "
+"valid range is 3~8."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:307 f3803fd7071c478eba00db026117fe16
+msgid "The number of retransmissions to set. If None, query the current setting."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:311 3c88a4b1cc5f4480a64306473987ec2d
+msgid "|set_retransmission_count.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:32 0e9a4b987b584cd29232d5e7643f2f63
+msgid "set_retransmission_count.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:315 d37a0282a40a4d91ba18e6fe40d5f0df
+msgid ""
+"Send hex data in LoRaWAN or LoRa mode. Hex characters must be in pairs "
+"(e.g., &quot;AABB&quot;)."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:317 8228a26062ad434c86dbc1fe78b0db50
+msgid "The hex data to send, up to 64 bytes."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:321 f22784d6bddb4788968e87ad9445c341
+msgid "|send_hex.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:33 f0488dcf7c5f48ebae970088bded01f7
+msgid "send_hex.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:325 896cc3624f3540e28998c0bec6c28828
+msgid ""
+"Send string data in LoRaWAN or LoRa mode. The string must consist of "
+"ASCII characters."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:327 f72df07b242d486d832ce397e0f4c490
+msgid "The string data to send, up to 64 bytes."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:331 40c17bf802004b47a4b52b4572695887
+msgid "|send_string.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:34 3aac0400c5b544d091af992828b476e3
+msgid "send_string.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:335 a11f98cfa7324e19ac73f3b763e17499
+msgid "Query if the device is in LoRaWAN or normal LoRa mode."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:340 6f5c8159d90c490e968c9b6bb9c8beee
+msgid "|query_lorawan_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:35 448c24b0da824355aa9864ecff952619
+msgid "query_lorawan_mode.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:344 1c4ca114a1ba40be83b2e6297261728b
+msgid "Save the current LoRa parameters to FLASH memory."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:349 38a5417a89cd46ea8a59d16293c3e5d9
+msgid "|save_parameters_to_flash.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:36 6a693d48480e4741a5b0fb928520146c
+msgid "save_parameters_to_flash.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:353 e13d7e8f1fa949cb8795f6af56f44a48
+msgid "Send an AT command to the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:355 d9d14742c88a4c409d8753bad26ef20a
+msgid "The AT command to send."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:356 0ab68bf0ef154f6f96d5c005c0723a15
+msgid "The data to send with the AT command."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:360 a3e8ca3f79214c5faa5bdb4726e3eb57
+msgid "|at_cmd.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:37 0a9aa35e55b34ce49c9844e188df974d
+msgid "at_cmd.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:364 cfbcc8980bee4e11a0c7834d20874509
+msgid "Query the current settings of the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:366 f2dc6dc8c72c4e7f8552aa6cc789dc8f
+msgid "The AT command to query."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:370 acf2fdc3624645809f57d3dab3797b61
+msgid "|at_query.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:38 89fc543b5c594cfa98a44b47d766714f
+msgid "at_query.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:374 b2075819dabe4ce0ba8258d04041c4ab
+msgid "Receive a response from the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:379 eaac7337b56f440387c01ef6d9e773a6
+msgid "|at_receive.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:39 2269de1ccf5947b48faf807cec5da007
+msgid "at_receive.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:383 b2e18eeb5be643d6bd25f130f2ece082
+msgid "Clear the UART buffer."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:388 d91630790206423a98f7843c8982ecda
+msgid "|flush.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:40 11ee5062e3f14d599f101b32d6a60492
+msgid "flush.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:392 84ac665e6d0c4e839d23de4e8aea32e5
+msgid "Check if there is any data in the UART buffer."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:397 19e11626db5a453fb4463e0a9d661fe4
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:41 f6b18040cab145a5863cf2c32bd1e14b
+msgid "any.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:401 028733e826b84d4d94c0feaf8136b98f
+msgid "Receive data from the LoRaWAN module."
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:406 30cae8dcd05c46bfb6a4eee3db98e081
+msgid "|receive_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.lorawan868.ref:42 bf0e4f5f65a84c00b4a7edd22f1b1b01
+msgid "receive_data.png"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:411 5c5889a112ef4ee3be2fa6120a619699
+msgid "Constants"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:417 d211c1d95c574d978a1cab78d128df17
+msgid "LoRa band frequency"
+msgstr ""
+
+#: ../../en/module/lorawan868.rst:422 2bf1f37325f444c4963dfebcd3b10f87
+msgid "LoRa Mode"
+msgstr ""
+

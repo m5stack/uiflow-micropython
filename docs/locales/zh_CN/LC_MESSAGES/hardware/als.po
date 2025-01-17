@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/als.rst:2 ../../en/hardware/als.rst:16
+#: a3c3ca81dfd543aeba9e0bfdd52f2890 b820e696eeb245c8ae4c41ba2e62c54a
+msgid "ALS"
+msgstr ""
+
+#: ../../en/hardware/als.rst:7 47607a447f984e978424e9beeb2c5d5f
+msgid ""
+"ALS is used to read the built-in ambient light sensor inside the host "
+"device."
+msgstr ""
+
+#: ../../en/hardware/als.rst:9 c157c6e74b4845f79bae2dae1f30cdd0
+msgid "The following are the details of the host's support for ALS:"
+msgstr ""
+
+#: ../../en/hardware/als.rst:18 fb7b33490df747899d84f432f6a5fd9f
+msgid "CoreS3"
+msgstr ""
+
+#: ../../en/hardware/als.rst:18 0b94145e7a13402bafd795acdcc6cec3
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/als.rst:20 873fea3751ea4e2c8fa1209b33900280
+msgid "CoreS3 SE"
+msgstr ""
+
+#: ../../en/hardware/als.rst:27 0983dc3e9f4c4ff79fc8f355c3dca131
+msgid "Micropython Example:"
+msgstr ""
+
+#: ../../en/hardware/als.rst:33 5ff419585c71435d92fe6ba9209f9e05
+msgid "UIFLOW2 Example:"
+msgstr ""
+
+#: ../../en/hardware/als.rst:35 f43eba528dcc4a9b8753396db897278f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.als.ref:4 0c5a05418a1f4897b7e0d37a6d315a29
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/als.rst:39 3dafb516d45c40a6b3a49d04facf6676
+msgid "|als_cores3_example.m5f2|"
+msgstr ""
+
+#: ../../en/hardware/als.rst:43 d83bd480f5494b08883b0e6331ddce32
+msgid "class ALS"
+msgstr ""
+
+#: ../../en/hardware/als.rst:47 f0533522039a47769281903f5c5dd233
+msgid ""
+"Methods of the ALS Class heavily rely on ``M5.begin()`` |M5.begin.svg| "
+"and ``M5.update()`` |M5.update.svg|."
+msgstr ""
+
+#: ../../en/refs/system.ref:1 6798c00a9e7d4dc5977bfd392c0e38a0
+#: eeb05e5a8d9d4da681a6eac225bd82cb
+msgid "M5.begin.svg"
+msgstr ""
+
+#: ../../en/refs/system.ref:4 1130dac2ae8e46098ead0da9c9be4b17
+#: 39cfb909ef914640b6768735d3fda177
+msgid "M5.update.svg"
+msgstr ""
+
+#: ../../en/hardware/als.rst:49 f3d5e32598c2402b9f668d1fc9c6dce6
+msgid ""
+"All calls to methods of ALS objects should be placed after ``M5.begin()``"
+" |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in "
+"the main loop."
+msgstr ""
+
+#: ../../en/hardware/als.rst:53 2404957574a44b6e8b21feb9c851ea33
+msgid "Methods"
+msgstr ""
+
+#: ../../en/hardware/als.rst:57 3efae75b03f745eea12cf320e4b3d4b4
+msgid "Read the ambient light sensor value built into the host device."
+msgstr ""
+
+#: ../../en/hardware/als.rst:59 b95baf0f44f843299ab2961b4b7dda75
+msgid "UIFLOW2:"
+msgstr ""
+
+#: ../../en/hardware/als.rst:61 52ea4478481d43e79cb5cf2a3dee2230
+msgid "|getLightSensorData.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.als.ref:2 fc23360e517444d19e3ce9f1bdb8b73b
+msgid "getLightSensorData.png"
+msgstr ""
+
