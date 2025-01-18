@@ -1062,12 +1062,13 @@ Methods
 
     :returns: The result of the AT command execution.
 
-.. method:: LoRaWAN_X.send_p2p_data(payload, timeout)
+.. method:: LoRaWAN_X.send_p2p_data(payload, timeout, to_hex=False)
 
     Sends P2P data with a given payload.
 
     :param str payload: The payload to send, 2 to 500 characters in length, must be an even number of characters composed of 0-9, a-f, A-F, representing 1 to 256 hexadecimal values.
     :param int timeout: The timeout for the data transmission, default is 1000 ms.
+    :param bool to_hex: A boolean indicating whether to convert the payload to hexadecimal format.
 
     :returns: True if the data was sent successfully ("TXFSK DONE" or "TXP2P DONE"), False otherwise.
 
@@ -1091,11 +1092,12 @@ Methods
 
     :returns: The response from the command execution.
 
-.. method:: LoRaWAN_X.get_p2p_receive_data(timeout)
+.. method:: LoRaWAN_X.get_p2p_receive_data(timeout=500, to_str=False)
 
 
     :param int timeout: Timeout for listening to P2P LoRa data packets.
                 Valid values are 1~65535, with special cases for continuous listening and no timeout.
+    :param bool to_str: A boolean indicating whether to convert the payload to a string.
 
     :returns: A tuple (RSSI, SNR, Payload) if data is received; False if no data is received.
 

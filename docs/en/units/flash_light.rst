@@ -31,7 +31,7 @@ UIFLOW2 Example:
 
 .. only:: builder_html
 
-    |cores3_glass_example.m5f2|
+    |cores3_flashlight_example.m5f2|
 
 
 class FlashLightUnit

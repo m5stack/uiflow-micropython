@@ -39,8 +39,10 @@ class RUI3:
                 note: Enables debug mode to log additional details, default is False.
         """
         self.uart = machine.UART(id, tx=tx, rx=rx, baudrate=115200, bits=8, parity=None, stop=1)
-        self.uart.read()
         self.debug = debug
+        self.uart.read()
+        if self.get_serial_number() is False:
+            raise ValueError("The LoRaWAN-X Unit is not responding. Please check the connection.")
 
     def send_cmd(self, cmd, have_return=False, is_single=False, async_event=False, timeout=100):
         """
@@ -1767,7 +1769,7 @@ class RUI3:
         """
         return self.send_cmd("AT+PFDEV=" + str(deviation), True, True)
 
-    def send_p2p_data(self, payload: str, timeout=1000):
+    def send_p2p_data(self, payload: str, timeout=1000, to_hex=False):
         """
         note:
             en: Sends P2P data with a given payload.
@@ -1777,10 +1779,14 @@ class RUI3:
                 note: The payload to send, 2 to 500 characters in length, must be an even number of characters composed of 0-9, a-f, A-F, representing 1 to 256 hexadecimal values.
             timeout:
                 note: The timeout for the data transmission, default is 1000 ms.
+            to_hex:
+                note: A boolean indicating whether to convert the payload to hexadecimal format.
 
         returns:
             note: True if the data was sent successfully ("TXFSK DONE" or "TXP2P DONE"), False otherwise.
         """
+        if to_hex:
+            payload = payload.encode("utf-8").hex()
         buf = self.send_cmd(f"AT+PSEND={payload}", True, False, True, timeout)
         if timeout != 0:
             return buf in [
@@ -1815,7 +1821,7 @@ class RUI3:
         """
         return self.send_cmd(f"AT+CAD={int(state)}", True, True)
 
-    def get_p2p_receive_data(self, timeout=500):
+    def get_p2p_receive_data(self, timeout=500, to_str=False):
         """
         note:
             en: Receive data in P2P mode, including RSSI, SNR, and payload.
@@ -1824,6 +1830,8 @@ class RUI3:
             timeout:
                 note: Timeout for listening to P2P LoRa data packets.
                 Valid values are 1~65535, with special cases for continuous listening and no timeout.
+            to_str:
+                note: A boolean indicating whether to convert the payload to a string.
 
         returns:
             note: A tuple (RSSI, SNR, Payload) if data is received; False if no data is received.
@@ -1833,7 +1841,11 @@ class RUI3:
         if isinstance(buf, str):
             if buf.find("RXP2P:") != -1:
                 buf = buf.split(":")
-                return (int(buf[1]), int(buf[2]), buf[3])
+                return (
+                    int(buf[1]),
+                    int(buf[2]),
+                    bytes.fromhex(buf[3]).decode() if to_str else buf[3],
+                )
         return False
 
     def get_p2p_encryption_state(self):
@@ -2133,3 +2145,80 @@ class RUI3:
             note: The response from the command execution.
         """
         return self.send_cmd(f"AT+FIXLENGTHPAYLOAD={int(state)}", True, True)
+
+
+# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+import sys
+
+if sys.platform != "esp32":
+    from typing import Literal
+
+
+class LoRaWANUnit_RUI3(RUI3):
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, debug=False):
+        super().__init__(id, port[1], port[0], debug)
+
+    def set_abp_config(self, dev_addr: str, apps_key: str, nwks_key: str):
+        """
+        note:
+            en: Configure the device for ABP (Activation By Personalization) mode using the provided device address, application session key, and network session key.
+
+        params:
+            dev_addr:
+                note: The device address for ABP configuration.
+            apps_key:
+                note: The application session key for encryption.
+            nwks_key:
+                note: The network session key for communication.
+        """
+        self.set_join_mode(0)
+        self.set_device_address(dev_addr)
+        self.set_apps_key(apps_key)
+        self.set_networks_key(nwks_key)
+
+    def get_abp_config(self) -> tuple[str | bool | None, str | bool | None, str | bool | None]:
+        """
+        note:
+            en: Retrieve the current ABP configuration, including the device address, application session key, and network session key.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple containing the device address, application session key, and network session key. Returns None or False for missing or invalid configurations.
+        """
+        return (self.get_device_address(), self.get_apps_key(), self.get_networks_key())
+
+    def set_otaa_config(self, device_eui, app_eui, app_key):
+        """
+        note:
+            en: Configure the device for OTAA (Over-The-Air Activation) mode using the provided device EUI, application EUI, and application key.
+
+        params:
+            device_eui:
+                note: The device EUI for OTAA configuration.
+            app_eui:
+                note: The application EUI for OTAA configuration.
+            app_key:
+                note: The application key for encryption.
+        """
+        self.set_join_mode(1)
+        self.set_device_eui(device_eui)
+        self.set_app_eui(app_eui)
+        self.set_app_key(app_key)
+
+    def get_otaa_config(self):
+        """
+        note:
+            en: Retrieve the current OTAA configuration, including the device EUI, application key, and application EUI.
+
+        params:
+            note:
+
+        returns:
+            note: A tuple containing the device EUI, application key, and application EUI.
+        """
+        return (self.get_device_eui(), self.get_app_key(), self.get_app_eui())

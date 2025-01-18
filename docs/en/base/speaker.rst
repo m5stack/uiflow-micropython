@@ -60,7 +60,7 @@ UIFLOW2 Example:
     |atoms3_speaker_example.m5f2|
 
 
-class ATOMEchoBase
+class SpeakerBase
 ------------------
 
 Constructors
