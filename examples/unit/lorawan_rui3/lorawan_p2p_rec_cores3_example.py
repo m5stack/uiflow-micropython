@@ -41,7 +41,7 @@ def loop():
     global title0, label0, lorawancn470_0
     M5.update()
     label0.setText(
-        str((str("P2P Message Rec:") + str((lorawancn470_0.get_p2p_receive_data(3000)))))
+        str((str("P2P Message Rec:") + str((lorawancn470_0.get_p2p_receive_data(3000, True)))))
     )
     time.sleep(3.5)
 

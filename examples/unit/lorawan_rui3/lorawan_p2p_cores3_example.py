@@ -44,7 +44,7 @@ def loop():
         str(
             (
                 str("P2P Message Send State:")
-                + str((lorawancn470_0.send_p2p_data("1122", timeout=3000)))
+                + str((lorawancn470_0.send_p2p_data("M5", timeout=1000, to_hex=True)))
             )
         )
     )
