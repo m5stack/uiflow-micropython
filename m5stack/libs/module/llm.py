@@ -24,7 +24,7 @@ class ModuleComm:
         while time.ticks_diff(time.ticks_ms(), start_time) < timeout:
             if self._serial.any():
                 try:
-                    data = self._serial.read()
+                    data = self._serial.read(1)
                     if data:
                         response += data.decode("utf-8")
                         if "\n" in response:
