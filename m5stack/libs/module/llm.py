@@ -643,6 +643,96 @@ class ApiAsr:
         self._llm_work_id = None
 
 
+class ApiVad:
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._llm_work_id = None
+
+    def setup(
+        self,
+        model="silero-vad",
+        response_format="vad.bool",
+        input="sys.pcm",
+        enoutput=True,
+        request_id="vad_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "vad",
+            "action": "setup",
+            "object": "vad.setup",
+            "data": {
+                "model": model,
+                "response_format": response_format,
+                "input": input,
+                "enoutput": enoutput,
+            },
+        }
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
+        )
+
+        ret_work_id = self._llm_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
+
+    def _set_llm_work_id(self, msg):
+        if "work_id" in msg:
+            self._llm_work_id = msg["work_id"]
+
+    def _free_temp(self):
+        self._llm_work_id = None
+
+
+class ApiWhisper:
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._llm_work_id = None
+
+    def setup(
+        self,
+        model="whisper-tiny",
+        response_format="asr.utf-8",
+        input="sys.pcm",
+        enoutput=True,
+        language="en",
+        request_id="whisper_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "whisper",
+            "action": "setup",
+            "object": "whisper.setup",
+            "data": {
+                "model": model,
+                "response_format": response_format,
+                "input": input,
+                "language": language,
+                "enoutput": enoutput,
+            },
+        }
+
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
+        )
+
+        ret_work_id = self._llm_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
+
+    def _set_llm_work_id(self, msg):
+        if "work_id" in msg:
+            self._llm_work_id = msg["work_id"]
+
+    def _free_temp(self):
+        self._llm_work_id = None
+
+
 class ApiYolo:
     _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
 
@@ -712,6 +802,8 @@ class LlmModule:
         self.asr = ApiAsr(self.msg)
         self.camera = ApiCamera(self.msg)
         self.yolo = ApiYolo(self.msg)
+        self.vad = ApiVad(self.msg)
+        self.whisper = ApiWhisper(self.msg)
 
         # Temp voice assistant callback setup
         self.on_keyword_detected = None
@@ -727,6 +819,8 @@ class LlmModule:
         self.latest_asr_work_id = "asr"
         self.latest_camera_work_id = "camera"
         self.latest_yolo_work_id = "yolo"
+        self.latest_vad_work_id = "vad"
+        self.latest_whisper_work_id = "whisper"
         self.latest_error_code = 0
         self.version = 0
 
@@ -971,6 +1065,46 @@ class LlmModule:
         )
         return self.latest_asr_work_id
 
+    def vad_setup(
+        self,
+        model="silero-vad",
+        response_format="kws.bool",
+        input=None,
+        enoutput=True,
+        enkws=None,
+        request_id="kws_setup",
+    ) -> str:
+        if input is None:
+            input = ["sys.pcm"]
+        if enkws:
+            input.append(enkws)
+        self.latest_vad_work_id = self.vad.setup(
+            model, response_format, input, enoutput, request_id
+        )
+        return self.latest_vad_work_id
+
+    def whisper_setup(
+        self,
+        language="en",
+        model="whisper-tiny",
+        response_format="asr.utf-8",
+        input=None,
+        enoutput=True,
+        enkws=None,
+        envad=None,
+        request_id="asr_setup",
+    ) -> str:
+        if input is None:
+            input = ["sys.pcm"]
+        if enkws:
+            input.append(enkws)
+        if envad:
+            input.append(envad)
+        self.latest_whisper_work_id = self.whisper.setup(
+            model, response_format, input, enoutput, language, request_id
+        )
+        return self.latest_whisper_work_id
+
     def get_latest_llm_work_id(self) -> str:
         return self.latest_llm_work_id
 
@@ -994,6 +1128,12 @@ class LlmModule:
 
     def get_latest_yolo_work_id(self) -> str:
         return self.latest_yolo_work_id
+
+    def get_latest_vad_work_id(self) -> str:
+        return self.latest_vad_work_id
+
+    def get_latest_whisper_work_id(self) -> str:
+        return self.latest_whisper_work_id
 
     def get_latest_error_code(self) -> int:
         return self.latest_error_code
