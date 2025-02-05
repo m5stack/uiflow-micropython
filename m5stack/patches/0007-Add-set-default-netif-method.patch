@@ -1,0 +1,30 @@
+Index: micropython/ports/esp32/modnetwork.h
+===================================================================
+--- micropython.orig/ports/esp32/modnetwork.h
++++ micropython/ports/esp32/modnetwork.h
+@@ -56,6 +56,7 @@ MP_DECLARE_CONST_FUN_OBJ_1(esp_network_p
+ MP_DECLARE_CONST_FUN_OBJ_VAR_BETWEEN(esp_network_ifconfig_obj);
+ MP_DECLARE_CONST_FUN_OBJ_KW(esp_network_ipconfig_obj);
+ MP_DECLARE_CONST_FUN_OBJ_KW(esp_nic_ipconfig_obj);
++MP_DECLARE_CONST_FUN_OBJ_1(esp_nic_set_default_obj);
+ MP_DECLARE_CONST_FUN_OBJ_KW(esp_network_config_obj);
+ MP_DECLARE_CONST_FUN_OBJ_VAR_BETWEEN(esp_network_phy_mode_obj);
+ 
+Index: micropython/ports/esp32/network_common.c
+===================================================================
+--- micropython.orig/ports/esp32/network_common.c
++++ micropython/ports/esp32/network_common.c
+@@ -324,6 +324,13 @@ static mp_obj_t esp_ipconfig(size_t n_ar
+ }
+ MP_DEFINE_CONST_FUN_OBJ_KW(esp_nic_ipconfig_obj, 1, esp_ipconfig);
+ 
++static mp_obj_t esp_nic_set_default(mp_obj_t self_in) {
++    base_if_obj_t *self = MP_OBJ_TO_PTR(self_in);
++    esp_err_t err = esp_netif_set_default_netif(self->netif);
++    return mp_obj_new_bool(err == ESP_OK);
++}
++MP_DEFINE_CONST_FUN_OBJ_1(esp_nic_set_default_obj, esp_nic_set_default);
++
+ mp_obj_t esp_ifname(esp_netif_t *netif) {
+     char ifname[NETIF_NAMESIZE + 1] = {0};
+     mp_obj_t ret = mp_const_none;
