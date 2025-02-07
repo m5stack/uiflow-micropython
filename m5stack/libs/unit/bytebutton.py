@@ -316,16 +316,16 @@ class ByteUnit:
 
         params:
             new_addr:
-                note: The new I2C address to set. Must be in the range 0x08 to 0x78.
+                note: The new I2C address to set. Must be in the range 0x08 to 0x77.
         """
-        if new_addr >= 0x08 and new_addr <= 0x78:
+        if new_addr >= 0x08 and new_addr <= 0x77:
             if new_addr != self.address:
                 self.i2c.writeto_mem(
                     self.address, self._BYTEUNIT_I2C_ADDRESS_REG, bytearray([new_addr])
                 )
                 self.address = new_addr
         else:
-            raise ValueError("I2C address error, range:0x08~0x78")
+            raise ValueError("I2C address error, range:0x08~0x77")
 
     def get_i2c_address(self):
         """

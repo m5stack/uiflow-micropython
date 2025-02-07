@@ -116,15 +116,15 @@ class AIN4Module:
 
         Sets a new I2C address for the AIN 4-20mA module.
 
-        @param addr: The new I2C address, must be between 0x08 and 0x78.
+        @param addr: The new I2C address, must be between 0x08 and 0x77.
 
-        @raise ValueError: If the address is not within the range 0x08 to 0x78.
+        @raise ValueError: If the address is not within the range 0x08 to 0x77.
         """
-        if addr >= 0x08 and addr <= 0x78:
+        if addr >= 0x08 and addr <= 0x77:
             if addr != self._i2c_addr:
                 time.sleep_ms(2)
                 self._i2c.writeto_mem(self._i2c_addr, self._AIN_I2C_ADDR_REG, bytearray([addr]))
                 self._i2c_addr = addr
                 time.sleep_ms(200)
         else:
-            raise ValueError("I2C address error, range:0x08~0x78")
+            raise ValueError("I2C address error, range:0x08~0x77")
