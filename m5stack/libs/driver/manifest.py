@@ -52,6 +52,7 @@ package(
         "dmx512.py",
         "drf1609h.py",
         "haptic.py",
+        "ina226.py",
         "mcp4725.py",
         "mlx90614.py",
         "pca9554.py",

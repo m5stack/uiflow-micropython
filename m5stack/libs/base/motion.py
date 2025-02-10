@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 """
@@ -12,6 +12,7 @@
 # Import necessary libraries
 from machine import I2C
 import struct
+from driver.ina226 import INA226
 
 
 class Motion:
@@ -43,6 +44,19 @@ class Motion:
         self.i2c = i2c
         self.addr = address
         self._available()
+        self.ina = None
+        self.addr_ina266 = 0x40
+        if self.addr_ina266 in self.i2c.scan():
+            self.ina = INA226(
+                self.i2c, addr=self.addr_ina266, shunt_resistor=0.02
+            )  # shunt resistor 20mΩ
+            self.ina.configure(
+                avg=self.ina.CFG_AVGMODE_16SAMPLES,
+                vbus_conv_time=self.ina.CFG_VBUSCT_1100us,
+                vshunt_conv_time=self.ina.CFG_VSHUNTCT_1100us,
+                mode=self.ina.CFG_MODE_SANDBVOLT_CONTINUOUS,
+            )
+            self.ina.calibrate(max_expected_current=3.6)  # max expected current 3.6A
 
     def _available(self) -> None:
         """! Check if sensor is available on the I2C bus.
@@ -146,5 +160,20 @@ class Motion:
         speed = int(max(-127, speed))
         self.i2c.writeto_mem(self.addr, ch + 0x20, struct.pack("b", speed))
 
+    def read_voltage(self):
+        """
+        read bus voltage (unit: V)
+        """
+        return self.ina.read_bus_voltage()
 
-MotionBase = Motion
+    def read_current(self):
+        """
+        read current (unit: A)
+        """
+        return self.ina.read_current()
+
+    def read_power(self):
+        """
+        read power (unit: W)
+        """
+        return self.ina.read_power()

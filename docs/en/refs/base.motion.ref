@@ -11,8 +11,12 @@
 .. |write_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/write_servo_pulse.png
 .. |get_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_motor_speed.png
 .. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_motor_speed.png
+.. |read_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_voltage.png
+.. |read_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_current.png
+.. |read_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_power.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/example.png
+.. |motion_base_v1.1_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/motion_base_v1.1_example.png
 
 .. |atoms3_lite_motion_base_example.m5f2| raw:: html
 
@@ -21,4 +25,13 @@
         target="_blank"
     >
         atoms3_lite_motion_base_example.m5f2
+    </a>
+
+.. |atoms3_motion_base_v1.1_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/motion/atoms3_motion_base_v1.1_example.m5f2"
+        target="_blank"
+    >
+        atoms3_motion_base_v1.1_example.m5f2
     </a>
