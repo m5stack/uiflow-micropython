@@ -21,6 +21,7 @@ package(
         "iot_base_catm.py",
         "llm.py",
         "lora.py",
+        "lora_sx1262.py",
         "lorawan.py",
         "lorawan868.py",
         "mbus.py",

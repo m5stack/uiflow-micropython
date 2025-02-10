@@ -18,6 +18,7 @@ Module
     hmi.rst
     llm.rst
     lora.rst
+    lora_sx1262.rst
     lorawan868.rst
     nbiot.rst
     odrive.rst
