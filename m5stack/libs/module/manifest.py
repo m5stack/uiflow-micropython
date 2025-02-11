@@ -25,6 +25,7 @@ package(
         "lora_sx1262.py",
         "lorawan.py",
         "lorawan868.py",
+        "lte.py",
         "mbus.py",
         "module_4in8out.py",
         "module_helper.py",

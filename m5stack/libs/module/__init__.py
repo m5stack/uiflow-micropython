@@ -24,6 +24,7 @@ _attrs = {
     "LoRaSx1262Module": "lora_sx1262",
     "LoRaWANModule": "lorawan",
     "LoRaWAN868Module": "lorawan868",
+    "LTEModule": "lte",
     "Module4In8Out": "module_4in8out",
     "NBIOTModule": "nbiot",
     "ODriveModule": "odrive",
