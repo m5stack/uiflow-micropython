@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 from machine import I2C
 from micropython import const
+import time
 
 try:
     from typing import overload, Sequence
@@ -87,6 +88,7 @@ class PAHUBUnit:
     def writeto(self, addr: int, buf: AnyReadableBuf, stop: bool = True) -> int:
         self.select_channel(self._chn)
         result = self._i2c.writeto(addr, buf, stop)
+        time.sleep_ms(100)
         self.release_channel(self._chn)
         return result
 
@@ -96,18 +98,20 @@ class PAHUBUnit:
         self.release_channel(self._chn)
         return result
 
-    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int) -> bytes:
+    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int, addrsize: int = 8) -> bytes:
         self.select_channel(self._chn)
-        result = self._i2c.readfrom_mem(addr, memaddr, nbytes)
+        result = self._i2c.readfrom_mem(addr, memaddr, nbytes, addrsize=addrsize)
         self.release_channel(self._chn)
         return result
 
-    def readfrom_mem_into(self, addr: int, memaddr: int, buf: AnyWritableBuf) -> None:
+    def readfrom_mem_into(
+        self, addr: int, memaddr: int, buf: AnyWritableBuf, addrsize: int = 8
+    ) -> None:
         self.select_channel(self._chn)
-        self._i2c.readfrom_mem_into(addr, memaddr, buf)
+        self._i2c.readfrom_mem_into(addr, memaddr, buf, addrsize=addrsize)
         self.release_channel(self._chn)
 
-    def writeto_mem(self, addr: int, memaddr: int, buf: AnyReadableBuf) -> None:
+    def writeto_mem(self, addr: int, memaddr: int, buf: AnyReadableBuf, addrsize: int = 8) -> None:
         self.select_channel(self._chn)
-        self._i2c.writeto_mem(addr, memaddr, buf)
+        self._i2c.writeto_mem(addr, memaddr, buf, addrsize=addrsize)
         self.release_channel(self._chn)
