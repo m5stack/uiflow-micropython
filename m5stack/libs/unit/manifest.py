@@ -14,6 +14,7 @@ package(
         "ameter.py",
         "angle.py",
         "angle8.py",
+        "asr.py",
         "bldc_driver.py",
         "bps.py",
         "button.py",

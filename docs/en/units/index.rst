@@ -12,6 +12,7 @@ Unit
     ain4.rst
     angle.rst
     angle8.rst
+    asr.rst
     bps.rst
     button.rst
     buzzer.rst
