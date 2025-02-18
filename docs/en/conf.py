@@ -11,10 +11,11 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 # import os
-# import sys
+import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import subprocess, os
 
+sys.path.insert(0, os.path.abspath("../../m5stack/libs/"))
 # -- Project information -----------------------------------------------------
 
 import datetime
@@ -40,7 +41,21 @@ extensions = [
     'nbsphinx',
     'sphinx_copybutton',
     "sphinx.ext.intersphinx",
+    'sphinx.ext.autodoc',
+    "sphinx.ext.napoleon",
 ]
+
+autodoc_mock_imports = [
+    "micropython"
+]
+
+autodoc_default_options = {
+    'members': "",
+    'show-inheritance': "",
+}
+
+autodoc_typehints = "description"
+autodoc_docstring_signature = True
 
 # API docs fix
 intersphinx_mapping = {

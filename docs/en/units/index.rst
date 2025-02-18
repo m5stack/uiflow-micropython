@@ -2,7 +2,7 @@ Unit
 ====
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 4
 
     ac_measure.rst
     accel.rst

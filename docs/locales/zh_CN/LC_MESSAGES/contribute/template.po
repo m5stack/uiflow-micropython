@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-19 18:03+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/contribute/template.rst:3 da44443ef0be4c1d966c2563369c0623
+msgid "API Documentation Template"
+msgstr ""
+
+#: ../../en/contribute/template.rst:7 23997d54e6aa44dbb27efc722a68a21c
+msgid "Please follow the template below to write your API documentation;"
+msgstr ""
+
+#: ../../en/contribute/template.rst:8 741973b0e4b84c5691997dd5f274b9e4
+msgid "Strict use of reStructuredText syntax;"
+msgstr ""
+
+#: ../../en/contribute/template.rst:9 5956dfca3dfb4aec93f838785a83cd79
+msgid "Write strictly according to the various tags of the template"
+msgstr ""
+
+#: ../../en/contribute/template.rst:10 f97e4a74bcd54ccf9d47cc9e5e1a84f4
+msgid ""
+"When you are finished, delete all instructions (similar to this one) and "
+"any extra header information."
+msgstr ""
+
+#: ../../en/contribute/template.rst:16 45e55d6d06444a3797be567dbcf4c6ba
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/contribute/template.rst:19 77d39f81534b4330a43c74f11ad87a12
+#: c0e26a1f635a4d69806a29dbf4671fdc
+msgid "xxx Unit"
+msgstr ""
+
+#: ../../en/contribute/template.rst:24 8a321c05ab7847459e16909845cbcb8c
+msgid "Below is the detailed support for Speaker on the host:"
+msgstr ""
+
+#: ../../en/contribute/template.rst:30 c48393686d504df69dbe8060f69c705d
+msgid "Controller"
+msgstr ""
+
+#: ../../en/contribute/template.rst:30 9422e61e7d804529b6670496edb9ce70
+msgid "Atomic Echo Base"
+msgstr ""
+
+#: ../../en/contribute/template.rst:32 28484ae14e7b40c992af9c8fb60c1aae
+msgid "Atom Echo"
+msgstr ""
+
+#: ../../en/contribute/template.rst:32 5cd069f994b14507a389ce6aac3966d9
+msgid "|O|"
+msgstr ""
+
+#: ../../en/contribute/template.rst:34 fb5b0295e7af44c7a6933a52317e2c97
+msgid "Atom Lite"
+msgstr ""
+
+#: ../../en/contribute/template.rst:34 3cd3d349cace4ee2b73a7204bd0857cb
+msgid "|S|"
+msgstr ""
+
+#: ../../en/contribute/template.rst:37 12958e4a177d42baa492ff9e98d596b8
+msgid "|S|: Supported."
+msgstr ""
+
+#: ../../en/contribute/template.rst:38 e79b9cd7beeb4db893d467d6940adad8
+msgid "|O|: Optional, It conflicts with some internal resource of the host."
+msgstr ""
+
+#: ../../en/contribute/template.rst:45 881dfed6643b420680ae46e970fbf410
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/contribute/template.rst:49 828f7ffa6eea4864aee9589ef1291370
+msgid ""
+"Prepare one or more examples that fully demonstrate the functionality of "
+"the API. Delete this part of the description when you are done."
+msgstr ""
+
+#: ../../en/contribute/template.rst:53 ../../en/contribute/template.rst:68
+#: 51e123fd465d4b9eac450650b3023299
+msgid "Example1"
+msgstr ""
+
+#: ../../en/contribute/template.rst:65 51f63c977db94b859bea736dd17bf151
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/contribute/template.rst:78 02bc0a23ddf547e1a366857fb2fc517d
+msgid "API"
+msgstr ""
+
+#: ../../en/contribute/template.rst:81 3d3b77431dae44d3991a37af16af1d1e
+msgid "Function"
+msgstr ""
+
+#: ../../en/contribute/template.rst:87 85566c0fee6c4a288710d8c3d67c1cdb
+msgid "Function 1, please write a detailed description of the function."
+msgstr ""
+
+#: ../../en/contribute/template.rst ee3e8840243a4309b654a6a5fb3c07aa
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/contribute/template.rst:89 ../../en/contribute/template.rst:118
+#: ../../en/contribute/template.rst:128 ../../en/contribute/template.rst:170
+#: ../../en/contribute/template.rst:192 53139202f4bc49cb8192f55c300ca14c
+msgid "Parameter 1."
+msgstr ""
+
+#: ../../en/contribute/template.rst:91 ../../en/contribute/template.rst:130
+#: ../../en/contribute/template.rst:172 ../../en/contribute/template.rst:194
+#: 4a70d0c27a7e4e63881de0982e21ae64
+msgid "Parameter 2."
+msgstr ""
+
+#: ../../en/contribute/template.rst 336de6971fdd44c6a459f8e50184d512
+msgid "Returns"
+msgstr ""
+
+#: ../../en/contribute/template.rst:93 ../../en/contribute/template.rst:132
+#: ../../en/contribute/template.rst:174 ../../en/contribute/template.rst:196
+#: e8484da110784d3c8033eb45d6deeda0
+msgid "Return value."
+msgstr ""
+
+#: ../../en/contribute/template.rst 245fbede3e054437826c1e33634d6aaf
+msgid "Return type"
+msgstr ""
+
+#: ../../en/contribute/template.rst:98 ../../en/contribute/template.rst:137
+#: ../../en/contribute/template.rst:155 ../../en/contribute/template.rst:177
+#: ../../en/contribute/template.rst:199 ../../en/contribute/template.rst:217
+#: ../../en/contribute/template.rst:233 2afd6f06f11c4262935de7169f77d55f
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../en/contribute/template.rst:102 ../../en/contribute/template.rst:141
+#: ../../en/contribute/template.rst:159 ../../en/contribute/template.rst:181
+#: ../../en/contribute/template.rst:203 ../../en/contribute/template.rst:221
+#: ../../en/contribute/template.rst:237 e90ab767b91e4a249a094d41dfcf9c7b
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../en/contribute/template.rst:110 c3278ef0f4f2497d8f5880fb311f7ec4
+msgid "Class1"
+msgstr ""
+
+#: ../../en/contribute/template.rst:116 ../../en/contribute/template.rst:248
+#: 1940e128cfc94155927bd9e525d3a562 85e9f7b7aa0347d8b487324e30fe2300
+msgid "Constructor."
+msgstr ""
+
+#: ../../en/contribute/template.rst:126 79d53d69dc1e4765adf66fb7a128b8f7
+msgid "Method 1, please write a detailed description of the method."
+msgstr ""
+
+#: ../../en/contribute/template.rst:151 1e97b9c364ac4dd4ac0ba9ba996ca64d
+msgid "Property 1, please write a detailed description of the property."
+msgstr ""
+
+#: ../../en/contribute/template.rst:168 ede0299f58e048b4b89898aff20c4ad6
+msgid "Static method 1, please write a detailed description of the static method."
+msgstr ""
+
+#: ../../en/contribute/template.rst:190 981187dc465b408bad9996f9b2e5942f
+msgid "Class method 1, please write a detailed description of the class method."
+msgstr ""
+
+#: ../../en/contribute/template.rst:213 1e58be099b8848598df54778fcc8e86a
+msgid "Attribute b, please write a detailed description of the attribute."
+msgstr ""
+
+#: ../../en/contribute/template.rst:231 0eaba5cc8ad54bcfa1039062b3aaf66c
+msgid ""
+"Constant 1, Please write a detailed description of the constant. "
+"Constants are named using uppercase letters."
+msgstr ""
+
+#: ../../en/contribute/template.rst:244 c3278ef0f4f2497d8f5880fb311f7ec4
+msgid "Class2"
+msgstr ""
+
+#~ msgid "UIFLOW2 Example"
+#~ msgstr ""
+
+#~ msgid "Example"
+#~ msgstr ""
+
+#~ msgid "Classes"
+#~ msgstr ""
+

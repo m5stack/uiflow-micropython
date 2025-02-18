@@ -1,8 +1,8 @@
-MicroPython documentation and references
-========================================
+UiFlow2 documentation and references
+====================================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
 
     get-started/index.rst
     library/index.rst
@@ -17,4 +17,5 @@ MicroPython documentation and references
     base/index.rst
     advanced/index.rst
     quick-reference/index.rst
+    contribute/index.rst
     COPYRIGHT.rst
