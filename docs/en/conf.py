@@ -46,12 +46,20 @@ extensions = [
 ]
 
 autodoc_mock_imports = [
-    "micropython"
+    "micropython",
+    "machine",
+    "M5",
+    "module.mbus",
+    "pid",
+    "driver",
+    "imu"
+
 ]
 
 autodoc_default_options = {
     'members': "",
     'show-inheritance': "",
+    'members-order': 'bysource',
 }
 
 autodoc_typehints = "description"

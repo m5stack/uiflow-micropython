@@ -10,6 +10,7 @@ _attrs = {
     "DMX512Module": "dmx",
     "DualKmeterModule": "dual_kmeter",
     "Encoder4MotorModule": "encoder4_motor",
+    "FanModule": "fan",
     "GNSSModule": "gnss",
     "GPSModule": "gps",
     "GPSV2Module": "gpsv2",

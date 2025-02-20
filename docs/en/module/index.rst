@@ -9,6 +9,7 @@ Module
     display.rst
     dmx.rst
     dualkmeter.rst
+    fan.rst
     gnss.rst
     gps.rst
     gpsv2.rst

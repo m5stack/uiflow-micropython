@@ -11,6 +11,7 @@ package(
         "dmx.py",
         "dual_kmeter.py",
         "encoder4_motor.py",
+        "fan.py",
         "gnss.py",
         "gps.py",
         "gpsv2.py",
