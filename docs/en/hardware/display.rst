@@ -129,17 +129,17 @@ Functions
 
     The ``font`` parameter only accepts the following values:
 
-    - K5.Lcd.FONTS.ASCII7
-    - K5.Lcd.FONTS.DejaVu9
-    - K5.Lcd.FONTS.DejaVu12
-    - K5.Lcd.FONTS.DejaVu18
-    - K5.Lcd.FONTS.DejaVu24
-    - K5.Lcd.FONTS.DejaVu40
-    - K5.Lcd.FONTS.DejaVu56
-    - K5.Lcd.FONTS.DejaVu72
-    - K5.Lcd.FONTS.EFontCN24
-    - K5.Lcd.FONTS.EFontJA24
-    - K5.Lcd.FONTS.EFontKR24
+    - M5.Lcd.FONTS.ASCII7
+    - M5.Lcd.FONTS.DejaVu9
+    - M5.Lcd.FONTS.DejaVu12
+    - M5.Lcd.FONTS.DejaVu18
+    - M5.Lcd.FONTS.DejaVu24
+    - M5.Lcd.FONTS.DejaVu40
+    - M5.Lcd.FONTS.DejaVu56
+    - M5.Lcd.FONTS.DejaVu72
+    - M5.Lcd.FONTS.EFontCN24
+    - M5.Lcd.FONTS.EFontJA24
+    - M5.Lcd.FONTS.EFontKR24
 
 .. function:: Display.setTextColor(fgcolor: int = 0, bgcolor: int = 0)
 
@@ -202,7 +202,7 @@ Functions
     Draw a filled circle.
 
     - ``x`` The x-coordinate of the circle center. Default is -1.
-    - `` y`` The y-coordinate of the circle center. Default is -1.
+    - ``y`` The y-coordinate of the circle center. Default is -1.
     - ``r`` The radius of the circle. Default is -1.
     - ``color`` The fill color in RGB888 format. Default is 0.
 
