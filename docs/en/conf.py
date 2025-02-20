@@ -50,6 +50,7 @@ autodoc_mock_imports = [
     "machine",
     "M5",
     "module.mbus",
+    "network",
 ]
 
 autodoc_default_options = {

@@ -14,6 +14,26 @@ if sys.platform != "esp32":
 
 
 class LTEModule:
+    """LTE module class.
+
+    :param int id: UART ID connected to the LTE module.
+    :param int tx: Connect to the UART TX pin of the LTE module.
+    :param int rx: Connect to the UART RX pin of the LTE module.
+    :param bool verbose: Whether to print verbose information.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from module import LTEModule
+
+            comlte_0 = LTEModule(2, 14, 13, verbose=True)
+    """
+
     ERR_NONE = 0
     ERR_GENERIC = 1
     ERR_TIMEOUT = 2
@@ -39,7 +59,7 @@ class LTEModule:
 
     def execute_at_command2(
         self, cmd: ATCommand, repeat=False, clean_output=True, line_end="\r\n"
-    ):
+    ) -> tuple[bytearray, int]:
         # clear the uart buffer
         self._uart.write(b"\r\n")
 
@@ -54,7 +74,7 @@ class LTEModule:
     # @utils.measure_time
     def response_at_command2(
         self, command: ATCommand, repeat=False, clean_output=True, line_end="\r\n"
-    ):
+    ) -> tuple[bytearray, int]:
         find_keyword = False
         output = bytearray()
         error = self.ERR_NONE
@@ -93,7 +113,24 @@ class LTEModule:
 
         return (output, error)
 
-    def chat(self, script: tuple):
+    def chat(self, script: tuple) -> None:
+        """Chat with the LTE module.
+
+        :param tuple script: A tuple of commands to chat with the LTE module.
+                             Each command is a tuple of two elements: the first
+                             element is the expect value, and the second element
+                             is the command. For example, (("OK", "AT").
+
+        UiFlow2 Code Block:
+
+            |chat.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                comlte_0.chat((("OK", "AT"), ("OK", "AT+CGDCONT=1,\"IP\",\"CMNET\""), ("OK", "ATD*99#")))
+        """
         output = bytearray()
 
         for command, value in script:
@@ -132,7 +169,23 @@ class LTEModule:
                     if rsp.find(command) != -1:
                         break
 
-    def chat2(self, pdp_type: str, apn: str):
+    def chat2(self, pdp_type: str, apn: str) -> None:
+        """Chat with the LTE module to establish a PPP connection.
+
+        :param str pdp_type: PDP type. For example, "IP", "PPP", "IPV4V6", "IPV6".
+        :param str apn: Access Point Name. For example, "CMNET".
+
+        UiFlow2 Code Block:
+
+            |chat2.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                comlte_0.chat2("IP", "CMNET")
+
+        """
         self.chat(
             (
                 ("ABORT", "BUSY"),
@@ -157,7 +210,19 @@ class LTEModule:
     def __getattr__(self, attr):
         return getattr(self._ppp, attr)
 
-    def deinit(self):
+    def deinit(self) -> None:
+        """Deinitialize the LTE module.
+
+        UiFlow2 Code Block:
+
+            |deinit.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                comlte_0.deinit()
+        """
         actived = self._ppp.active()
         self._ppp.active(False)
         self.chat(

@@ -21,6 +21,7 @@ Module
     lora.rst
     lora_sx1262.rst
     lorawan868.rst
+    lte.rst
     nbiot.rst
     odrive.rst
     plus.rst
