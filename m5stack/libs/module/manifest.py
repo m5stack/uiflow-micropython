@@ -7,6 +7,7 @@ package(
     (
         "__init__.py",
         "ain4.py",
+        "bala2.py",
         "display.py",
         "dmx.py",
         "dual_kmeter.py",

@@ -6,6 +6,7 @@ from . import mbus
 
 _attrs = {
     "AIN4Module": "ain4",
+    "Bala2Module": "bala2",
     "DisplayModule": "display",
     "DMX512Module": "dmx",
     "DualKmeterModule": "dual_kmeter",
