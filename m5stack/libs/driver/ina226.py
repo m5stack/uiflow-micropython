@@ -4,7 +4,7 @@
 
 from machine import I2C
 import struct
-from micropython import const 
+from micropython import const
 
 
 class INA226:

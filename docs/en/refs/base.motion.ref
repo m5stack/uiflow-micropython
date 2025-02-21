@@ -4,6 +4,11 @@
     :height: 200px
     :width: 200px
 
+.. |Motion Base v1.1| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic%20Motion%20Base/img-40a0d2ba-04b3-4aa3-8417-0624762b3cc3.webp
+    :target: https://docs.m5stack.com/en/atom/Atomic%20Motion%20Base
+    :height: 200px
+    :width: 200px
+    
 .. |__init__.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/init.png
 .. |get_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_servo_angle.png
 .. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_servo_angle.png
@@ -12,7 +17,7 @@
 .. |get_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/get_motor_speed.png
 .. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/set_motor_speed.png
 .. |read_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_voltage.png
-.. |read_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_current.png
+.. |read_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_current.png
 .. |read_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/read_power.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/motion/example.png
