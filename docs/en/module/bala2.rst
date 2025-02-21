@@ -9,6 +9,8 @@ The Bala2 Module is part of the M5Stack stackable module series. The module comm
 
 Support the following products:
 
+    |Bala2|
+
     |Bala2-Fire|
 
 
