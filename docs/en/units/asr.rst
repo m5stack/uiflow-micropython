@@ -10,161 +10,49 @@ Support the following products:
 
 |ASRUnit|
 
-Micropython Example:
+
+UiFlow2 Example
+---------------
+
+ASR Example
+^^^^^^^^^^^^^
+
+Open the |asr_cores3_example.m5f2| project in UiFlow2.
+
+This example shows how to use Unit ASR to get the current command word, command number, and trigger an event when you say hello to do something you want to do.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+ASR Example
+^^^^^^^^^^^^^
+
+This example shows how to use Unit ASR to get the current command word, command number, and trigger an event when you say hello to do something you want to do.
+
+MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/unit/asr/asr_cores3_example.py
         :language: python
         :linenos:
 
-UIFLOW2 Example:
+Example output:
 
-    |example.png|
+    None
 
-.. only:: builder_html
-
-    |asr_cores3_example.m5f2|
-
-class ASRUnit
--------------
-
-Constructors
-------------
-
-.. class:: ASRUnit(id, port)
-
-    Initialize the ASRUnit object with UART configuration and set up the command handler.
-
-    :param int id: The UART port ID for communication, default is 1.
-    :param  port: A list or tuple containing the TX and RX pins for UART communication.
-
-    UIFLOW2:
-
-        |init.png|
-
-
-Methods
+**API**
 -------
 
-.. method:: ASRUnit.get_received_status()
+ASRUnit
+^^^^^^^^^
 
-    Get the status of the received message.
-
-        :returns: True if a message is received, False otherwise.
-
-    UIFLOW2:
-
-        |get_received_status.png|
-
-.. method:: ASRUnit.send_message(command_num)
-
-    Send a message with a specified command number via UART.
-
-    :param int command_num: The command number to send in the message.
-
-    UIFLOW2:
-
-        |send_message.png|
-
-.. method:: ASRUnit.get_current_raw_message()
-
-    Get the raw message received in hexadecimal format.
-
-
-    :returns: The raw message as a string in hexadecimal format.
-
-    UIFLOW2:
-
-        |get_current_raw_message.png|
-
-.. method:: ASRUnit.get_current_command_word()
-
-    Get the command word corresponding to the current command number.
-
-
-    :returns: The command word as a string.
-
-    UIFLOW2:
-
-        |get_current_command_word.png|
-
-.. method:: ASRUnit.get_current_command_num()
-
-    Get the current command number.
-
-    :returns: The command number.
-
-    UIFLOW2:
-
-        |get_current_command_num.png|
-
-.. method:: ASRUnit.get_command_handler()
-
-    Check if the current command has an associated handler.
-
-    :returns: True if a handler exists for the current command, 
-
-    UIFLOW2:
-
-        |get_command_handler.png|
-
-.. method:: ASRUnit.add_command_word(command_num, command_word, event_handler)
-
-    Add a new command word and its handler to the command list.
-
-    :param int command_num: The command number (must be between 0 and 255).
-    :param str command_word: The command word to associate with the command number.
-    :param  event_handler: An optional event handler function to be called for the command.
-
-    UIFLOW2:
-
-        |add_command_word.png|
-        
-        |event.png|
-
-.. method:: ASRUnit.remove_command_word(command_word)
-
-    Remove a command word from the command list by its word.
-
-    :param str command_word: The command word to remove.
-
-    UIFLOW2:
-
-        |remove_command_word.png|
-
-.. method:: ASRUnit.search_command_num(command_word)
-
-    Search for the command number associated with a command word.
-
-    :param str command_word: The command word to search for.
-
-    :returns: The command number if found, otherwise -1.
-
-    UIFLOW2:
-
-        |search_command_num.png|
-
-.. method:: ASRUnit.search_command_word(command_num)
-
-    Search for the command word associated with a command number.
-
-    :param int command_num: The command number to search for.
-
-    :returns: The command word if found, otherwise "Unknown command 
-
-    UIFLOW2:
-
-        |search_command_word.png|
-
-.. method:: ASRUnit.get_command_list()
-
-    Get the list of all commands and their associated handlers.
-
-    :returns: A dictionary of command numbers and their corresponding command words and handlers.
-
-    UIFLOW2:
-
-        |get_command_list.png|
-
-.. method:: ASRUnit.check_tick_callback()
-
-    Check if a handler is defined for the current command and schedule its execution.
+.. autoclass:: unit.asr.ASRUnit
+    :members:
+    :member-order: bysource

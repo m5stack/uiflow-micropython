@@ -10,24 +10,31 @@ if sys.platform != "esp32":
 
 
 class ASRUnit:
-    """
-    note:
-        en: ASRUnit is a hardware module designed for voice command recognition. It communicates via UART and supports command parsing, handling, and custom command registration. The module provides functions for receiving, sending messages, and managing commands.
+    """Voice recognition hardware module.
 
-    details:
-        link: https://docs.m5stack.com/en/unit/asr
-        image: https://static-cdn.m5stack.com/resource/docs/products/unit/asr/asr_01.webp
-        category: Unit
+    :param int id: UART port ID for communication. Default is 1.
+    :param list|tuple port: Tuple containing TX and RX pin numbers.
 
-    example:
-        - ../../../examples/unit/asr/asr_cores3_example.py
+    UiFlow2 Code Block:
 
-    m5f2:
-        - unit/asr/asr_cores3_example.m5f2
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from unit import ASRUnit
+
+            # Initialize with UART1, TX on pin 2, RX on pin 1
+            asr = ASRUnit(id=1, port=(1, 2))
     """
 
     DEBUG = True
+
     myprint = print if DEBUG else lambda *_, **__: None
+    """
+    :meta private:
+    """
 
     _COMMAND_LIST = {
         0x01: ["up", None],
@@ -76,16 +83,6 @@ class ASRUnit:
     }
 
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None):
-        """
-        note:
-            en: Initialize the ASRUnit object with UART configuration and set up the command handler.
-
-        params:
-            id:
-                note: The UART port ID for communication, default is 1.
-            port:
-                note: A list or tuple containing the TX and RX pins for UART communication.
-        """
         self.uart = UART(id, tx=port[1], rx=port[0])
         self.uart.init(115200, bits=8, parity=None, stop=1)
         self.uart.irq(handler=self._handler, trigger=UART.IRQ_RXIDLE)
@@ -94,19 +91,10 @@ class ASRUnit:
         self.is_recieved = False
 
     def _handler(self, uart) -> None:
-        """
-        note:
-            en: UART interrupt handler to process incoming data and parse the command number.
-
-        params:
-            uart:
-                note: The UART object receiving the data.
-        """
         data = uart.readline()
-        if data is not None and len(data) >= 5:  # 至少包含帧头、命令、帧尾
+        if data is not None and len(data) >= 5:
             self.myprint(("Received data: ", data))
 
-            # 校验帧头和帧尾
             if data[0] == 0xAA and data[1] == 0x55 and data[-2] == 0x55 and data[-1] == 0xAA:
                 self.is_recieved = True
                 self.raw_message = " ".join(f"0x{byte:02X}" for byte in data)
@@ -119,15 +107,20 @@ class ASRUnit:
                 uart.read()
 
     def get_received_status(self) -> bool:
-        """
-        note:
-            en: Get the status of the received message.
+        """Get message reception status.
 
-        params:
-            note:
+        :returns: True if a message is received, False otherwise.
+        :rtype: bool
 
-        returns:
-            note: True if a message is received, False otherwise.
+        UiFlow2 Code Block:
+
+            |get_received_status.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_received_status()
         """
         status = self.is_recieved
         self.is_recieved = False
@@ -137,13 +130,19 @@ class ASRUnit:
         self,
         command_num: int,
     ) -> None:
-        """
-        note:
-            en: Send a message with a specified command number via UART.
+        """Send command via UART.
 
-        params:
-            command_num:
-                note: The command number to send in the message.
+        :param int command_num: Command number to send (0-255)
+
+        UiFlow2 Code Block:
+
+            |send_message.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.send_message(0x30)
         """
         message: list[int] = [0xAA, 0x55, command_num, 0x55, 0xAA]
         buf = bytes(message)
@@ -151,54 +150,74 @@ class ASRUnit:
         self.uart.write(buf)
 
     def get_current_raw_message(self) -> str:
-        """
-        note:
-            en: Get the raw message received in hexadecimal format.
+        """Get the raw message received in hexadecimal format.
 
-        params:
-            note:
+        :returns: The raw message as a string in hexadecimal format.
+        :rtype: str
 
-        returns:
-            note: The raw message as a string in hexadecimal format.
+        UiFlow2 Code Block:
+
+            |get_current_raw_message.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_current_raw_message()
         """
         return self.raw_message
 
     def get_current_command_word(self) -> str:
-        """
-        note:
-            en: Get the command word corresponding to the current command number.
+        """Get the command word corresponding to the current command number.
 
-        params:
-            note:
+        :returns: The command word as a string.
+        :rtype: str
 
-        returns:
-            note: The command word as a string.
+        UiFlow2 Code Block:
+
+            |get_current_command_word.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_current_command_word()
         """
         return self._COMMAND_LIST.get(self.command_num, ["Unknown command word", None])[0]
 
     def get_current_command_num(self) -> str:
-        """
-        note:
-            en: Get the current command number.
+        """Get the current command number.
 
-        params:
-            note:
+        :returns: The current command number as a string.
+        :rtype: str
 
-        returns:
-            note: The command number.
+        UiFlow2 Code Block:
+
+            |get_current_command_num.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_current_command_num()
         """
         return "0x{:X}".format(self.command_num)
 
     def get_command_handler(self) -> bool:
-        """
-        note:
-            en: Check if the current command has an associated handler.
+        """Check if the current command has an associated handler.
 
-        params:
-            note:
+        :returns: True if the command has an associated handler, False otherwise.
+        :rtype: bool
 
-        returns:
-            note: True if a handler exists for the current command, False otherwise.
+        UiFlow2 Code Block:
+
+            |get_command_handler.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_command_handler()
         """
         return self._COMMAND_LIST.get(self.command_num, ["", None])[1] is not None
 
@@ -208,30 +227,43 @@ class ASRUnit:
         command_word: str,
         event_handler=None,
     ) -> None:
-        """
-        note:
-            en: Add a new command word and its handler to the command list.
+        """Register custom command and handler.
 
-        params:
-            command_num:
-                note: The command number (must be between 0 and 255).
-            command_word:
-                note: The command word to associate with the command number.
-            event_handler:
-                note: An optional event handler function to be called for the command.
+        :param int command_num: Command number (0-255)
+        :param str command_word: Voice command text
+        :param callable event_handler: Handler function
+
+        UiFlow2 Code Block:
+
+            |add_command_word.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def custom_handler(unit):
+                    print("Custom command detected!")
+
+                asr.add_command_word(0x50, "custom command", custom_handler)
         """
         if not (0 <= command_num <= 255):
             raise ValueError("Command number must be between 0 and 255")
         self._COMMAND_LIST[command_num] = [command_word, event_handler]
 
     def remove_command_word(self, command_word: str) -> None:
-        """
-        note:
-            en: Remove a command word from the command list by its word.
+        """Remove a command word from the command list by its word.
 
-        params:
-            command_word:
-                note: The command word to remove.
+        :param str command_word: Command word to remove
+
+        UiFlow2 Code Block:
+
+            |remove_command_word.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.remove_command_word("custom command")
         """
         command_num = self.search_command_num(command_word)
         if command_num != -1:
@@ -240,56 +272,72 @@ class ASRUnit:
             raise ValueError("Command word not found")
 
     def search_command_num(self, command_word: str) -> int:
-        """
-        note:
-            en: Search for the command number associated with a command word.
+        """Search for the command number associated with a command word.
 
-        params:
-            command_word:
-                note: The command word to search for.
+        :param str command_word: Command word to search for
+        :returns: The command number if found, otherwise -1
+        :rtype: int
 
-        returns:
-            note: The command number if found, otherwise -1.
+        UiFlow2 Code Block:
+
+            |search_command_num.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.search_command_num("custom command")
         """
-        for key, value in self._COMMAND_LIST.items():
-            if value[0] == command_word:
-                return key
         return -1
 
     def search_command_word(self, command_num: int) -> str:
-        """
-        note:
-            en: Search for the command word associated with a command number.
+        """Search for the command word associated with a command number.
 
-        params:
-            command_num:
-                note: The command number to search for.
+        :param int command_num: Command number to search for
+        :returns: The command word if found, otherwise "Unknown command word"
+        :rtype: str
 
-        returns:
-            note: The command word if found, otherwise "Unknown command word".
+        UiFlow2 Code Block:
+
+            |search_command_word.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.search_command_word(0x50)
         """
         return self._COMMAND_LIST.get(command_num, ["Unknown command word", None])[0]
 
     def get_command_list(self) -> dict:
-        """
-        note:
-            en: Get the list of all commands and their associated handlers.
+        """Get the list of all commands and their associated handlers.
 
-        params:
-            note:
+        :returns: A dictionary of command numbers and their corresponding command words and handlers.
+        :rtype: dict
 
-        returns:
-            note: A dictionary of command numbers and their corresponding command words and handlers.
+        UiFlow2 Code Block:
+
+            |get_command_list.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.get_command_list()
         """
         return self._COMMAND_LIST
 
     def check_tick_callback(self):
-        """
-        note:
-            en: Check if a handler is defined for the current command and schedule its execution.
+        """Check if a handler is defined for the current command and schedule its execution.
 
-        params:
-            note:
+        :returns: The handler if defined, otherwise None
+        :rtype: None
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                asr.check_tick_callback()
         """
         handler = self._COMMAND_LIST.get(self.command_num, ["", None])[1]
         self.myprint(("handler: ", handler))
