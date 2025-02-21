@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 09:36+0800\n"
+"POT-Creation-Date: 2025-02-21 14:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,248 +20,221 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/rs232.rst:2 135c17c32ac843bf9dd6b06ce3895ea0
+#: ../../en/base/rs232.rst:2 d14d4450e5104e3ab4ed75ad6870ee7f
 msgid "Atomic RS232 Base"
 msgstr ""
 
-#: ../../en/base/rs232.rst:8 4233d78ca0e0433893efa33512bdc2b8
+#: ../../en/base/rs232.rst:8 c6857c8e582043bd85e9d87289eb355c
 msgid ""
 "AtomRS232 Class provides a set of methods to control the RS232 module. "
 "Through the UART interface, the module can transmit and receive data, "
 "supporting various baud rates and flow control configurations."
 msgstr "AtomRS232 类提供了一套控制 RS232 模块的方法。通过 UART 接口，模块可以发送和接收数据，支持各种波特率和流量控制配置。"
 
-#: ../../en/base/rs232.rst:12 87d53608bc7c4e46b1b625047efdab99
+#: ../../en/base/rs232.rst:12 0b7e2d57a7c1408c90b197552b6085f7
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/rs232.rst:15 0943dc507dd14a25827df2746daedba2
+#: ../../en/base/rs232.rst:15 39ae54438cb143cb864138ea065261ef
 msgid "|RS232 Base|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref 97b952ccf2294c6a92130b392b804816
+#: ../../en/refs/base.rs232.ref 2c27b578cf2143b2826973f4e6a62386
 msgid "rs232 base"
 msgstr ""
 
-#: ../../en/base/rs232.rst:15 a113bab64c4a4873b0c99f41df3e3a0a
+#: ../../en/base/rs232.rst:15 c583a26e9f1b4e828fea31f9105b5c4a
 msgid "|RS232|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref 9db684bdc8a145f9ba2f7aec2ff94752
+#: ../../en/refs/base.rs232.ref 01f6b7d7b6764187b5cf634f0d047e98
 msgid "rs232"
 msgstr ""
 
-#: ../../en/base/rs232.rst:19 cdc03eed24984089b671f4806dcc346c
+#: ../../en/base/rs232.rst:19 65123ac4a8124bfe8a97bc1ea20300a5
 #, fuzzy
 msgid "UiFlow2 Example"
-msgstr "UIFLOW2 发送应用示例："
+msgstr "UIFLOW2 发送/接收应用示例："
 
-#: ../../en/base/rs232.rst:22 ../../en/base/rs232.rst:55
-#: 967eb5c91d6f481a9225fd454dfba080
+#: ../../en/base/rs232.rst:22 ../../en/base/rs232.rst:40
+#: 3a3ed69043db421290dd729d6b56c05b
 #, fuzzy
-msgid "TX Example"
-msgstr "UIFLOW2 发送应用示例："
+msgid "RS232 Example"
+msgstr "UIFLOW2 发送/接收应用示例："
 
-#: ../../en/base/rs232.rst:24 0cf6b50ebf6340809cd2d965ded41147
-msgid "Open the |core_rs232_tx_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |core_rs232_tx_example.m5f2| 项目。"
+#: ../../en/base/rs232.rst:24 552ea66f39da448ba4e491395908efbd
+msgid "Open the |atoms3r_rs232_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3r_rs232_example.m5f2| 项目。"
 
-#: ../../en/base/rs232.rst:26 ../../en/base/rs232.rst:57
-#: 8af23849bdc840c1888fbe7952b4b368
+#: ../../en/base/rs232.rst:26 ../../en/base/rs232.rst:42
+#: 2744cbae30724bc9b7222e849ba7ef34
 msgid ""
-"This example demonstrates how to send data using the RS232 module via the"
-" UART interface."
-msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据。"
+"This example demonstrates how to send and receive data using the RS232 "
+"module via the UART interface."
+msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送/接收数据。"
 
-#: ../../en/base/rs232.rst:28 ../../en/base/rs232.rst:43
-#: ../../en/base/rs232.rst:102 ../../en/base/rs232.rst:116
-#: ../../en/base/rs232.rst:133 ../../en/base/rs232.rst:151
-#: ../../en/base/rs232.rst:175 ../../en/base/rs232.rst:194
-#: ../../en/base/rs232.rst:213 ../../en/base/rs232.rst:240
-#: ../../en/base/rs232.rst:256 ../../en/base/rs232.rst:273
-#: 72048a685bff4511b4c1b9fbd8a27bca
+#: ../../en/base/rs232.rst:28 ../../en/base/rs232.rst:72
+#: ../../en/base/rs232.rst:86 ../../en/base/rs232.rst:103
+#: ../../en/base/rs232.rst:121 ../../en/base/rs232.rst:145
+#: ../../en/base/rs232.rst:164 ../../en/base/rs232.rst:183
+#: ../../en/base/rs232.rst:210 ../../en/base/rs232.rst:226
+#: ../../en/base/rs232.rst:243 c32ee538ee0d4d2096f0af6b2ef46d4c
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/rs232.rst:30 8f6b7a9a7abf42cab340e558ffc1c7d9
-msgid "|tx_example.png|"
-msgstr ""
+#: ../../en/base/rs232.rst:30 12587e6c3eb6435db043e7b14ee4f135
+#, fuzzy
+msgid "|example.png|"
+msgstr "UIFLOW2 发送应用示例："
 
-#: ../../en/refs/base.rs232.ref:30 4908176535b54b87964d4af1512f5f03
-msgid "tx_example.png"
-msgstr ""
+#: ../../en/refs/base.rs232.ref:30 41340a2b1e0e4c199ad38222bb0824ba
+#, fuzzy
+msgid "example.png"
+msgstr "UIFLOW2 发送应用示例："
 
-#: ../../en/base/rs232.rst:32 ../../en/base/rs232.rst:47
-#: ../../en/base/rs232.rst:65 ../../en/base/rs232.rst:80
-#: aa5e725ec8f14ef4995961b0b9512a17
+#: ../../en/base/rs232.rst:32 ../../en/base/rs232.rst:50
+#: 136f42c640414beba3eccf531c369737
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/base/rs232.rst:34 ../../en/base/rs232.rst:49
-#: ../../en/base/rs232.rst:67 ../../en/base/rs232.rst:82
-#: ../../en/base/rs232.rst:238 ../../en/base/rs232.rst:254
-#: 22b013f3d801454ea777cf774588374d 29fcdbddba164919a62bde3f838b33b0
+#: ../../en/base/rs232.rst:34 ../../en/base/rs232.rst:52
+#: ../../en/base/rs232.rst:208 ../../en/base/rs232.rst:224
+#: 2b69f4b4200247cf8eb1c0741e907aef 8819ea98b3874eff94064fa2d26f8466
 msgid "None"
 msgstr ""
 
-#: ../../en/base/rs232.rst:37 ../../en/base/rs232.rst:70
-#: b0544e7b25d94d52afc7fab317d46118
-#, fuzzy
-msgid "RX Example"
-msgstr ""
-
-#: ../../en/base/rs232.rst:39 786c873493d84a31af9d9f6558d08c1b
-msgid "Open the |cores3_rs232_rx_example.m5f2| project in UiFlow2."
-msgstr ""
-
-#: ../../en/base/rs232.rst:41 ../../en/base/rs232.rst:72
-#: e5df7d1b29994863ae4cf4737a43f21e
-msgid ""
-"This example demonstrates how to receive data using the RS232 module via "
-"the UART interface."
-msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据。"
-
-#: ../../en/base/rs232.rst:45 0ea2597613a7457e932b028915551ee9
-msgid "|rx_example.png|"
-msgstr ""
-
-#: ../../en/refs/base.rs232.ref:41 87d35dbe78de470388dd3272c1143a6b
-msgid "rx_example.png"
-msgstr ""
-
-#: ../../en/base/rs232.rst:52 66ca640ce1c647b7b06e7e62cd2f531b
+#: ../../en/base/rs232.rst:37 33705eb1532d46278d54b7a1b1a45f85
 #, fuzzy
 msgid "MicroPython Example"
 msgstr "MicroPython 发送应用示例："
 
-#: ../../en/base/rs232.rst:59 ../../en/base/rs232.rst:74
-#: ../../en/base/rs232.rst:106 ../../en/base/rs232.rst:120
-#: ../../en/base/rs232.rst:137 ../../en/base/rs232.rst:159
-#: ../../en/base/rs232.rst:179 ../../en/base/rs232.rst:198
-#: ../../en/base/rs232.rst:228 ../../en/base/rs232.rst:244
-#: ../../en/base/rs232.rst:260 ../../en/base/rs232.rst:277
-#: 268d9cdb328a4ffabea46464c613c9e1
+#: ../../en/base/rs232.rst:44 ../../en/base/rs232.rst:76
+#: ../../en/base/rs232.rst:90 ../../en/base/rs232.rst:107
+#: ../../en/base/rs232.rst:129 ../../en/base/rs232.rst:149
+#: ../../en/base/rs232.rst:168 ../../en/base/rs232.rst:198
+#: ../../en/base/rs232.rst:214 ../../en/base/rs232.rst:230
+#: ../../en/base/rs232.rst:247 b941474ed8134887ab8b669ff2931b6d
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/rs232.rst:85 092bb9e3aa0543e9a7ea97547055ebba
+#: ../../en/base/rs232.rst:55 46add43bde4c42559accc22b5723d665
 #, fuzzy
 msgid "**API**"
 msgstr ""
 
-#: ../../en/base/rs232.rst:88 a113bab64c4a4873b0c99f41df3e3a0a
+#: ../../en/base/rs232.rst:58 1f01d5d3e1e143e78caa686bac5ac756
 msgid "AtomRS232"
 msgstr ""
 
-#: 993b135c71bb47a4a3932442a0b05476 base.rs232.AtomRS232:1 of
+#: 93ed676550904fe4a15abad1217ba261 base.rs232.AtomRS232:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/base/rs232.rst:95 840321e2bf1c40c49a6bbb1ed0b738dd
+#: ../../en/base/rs232.rst:65 1d706932de374e2192ff4008070584a6
 msgid "Initialize the UART bus with the given parameters."
 msgstr "使用给定参数初始化 UART 总线。"
 
-#: ../../en/base/rs232.rst aca514b2e8024b6f9ad4acaf84008d3b
+#: ../../en/base/rs232.rst 0c1ecaaf2a454705a12b5967da7e34b8
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/base/rs232.rst:97 ba0be74269d240538fd5e33f3ab5da35
+#: ../../en/base/rs232.rst:67 03474186b17d4d278c1a1e833ede541a
 msgid "The clock rate for the UART communication."
 msgstr "UART 通信的时钟频率。"
 
-#: ../../en/base/rs232.rst:98 b77d4db775f24f6a8dd50ca90ffca048
+#: ../../en/base/rs232.rst:68 a4e548a18f7a49cf870d33afb5e28db4
 msgid "Number of bits per character (7, 8, or 9)."
 msgstr "每个字符的位数（7、8 或 9）。"
 
-#: ../../en/base/rs232.rst:99 ae1fe6360ec8484e860204a83193f800
+#: ../../en/base/rs232.rst:69 f7d063d6e3a04c89af9e635233d3dbb0
 msgid "Parity setting, either None, 0 (even), or 1 (odd)."
 msgstr "奇偶校验设置，无、0（偶）或 1（奇）。"
 
-#: ../../en/base/rs232.rst:100 cdf4c37273264e25a9aa9b0a97b9cc27
+#: ../../en/base/rs232.rst:70 79034b685a6a4d55b846fdb1538d476e
 msgid "Number of stop bits (1 or 2)."
 msgstr "停止位数（1 或 2）。"
 
-#: ../../en/base/rs232.rst:104 7902e8a00e194fff8b4afd48356e6125
+#: ../../en/base/rs232.rst:74 31bb268ad333478cad88b76460be4acc
 msgid "|setup.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:14 87a7ee84dcc34298a2324f566418ad49
+#: ../../en/refs/base.rs232.ref:14 ca4d1e7c4c194b55b9683e557df29859
 msgid "setup.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:114 63dcd1a376a44cab92746655b63e480e
+#: ../../en/base/rs232.rst:84 859abad76a9443d18b408e44ea51bef5
 msgid "Turn off the UART bus."
 msgstr "关闭 UART 总线。"
 
-#: ../../en/base/rs232.rst:118 d68d9874150d4177955d9c5f5274388e
+#: ../../en/base/rs232.rst:88 225e42d98bed44fcbcc143ea3aa6055b
 msgid "|deinit.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:13 7342b96fe47b4219817288330b4bec13
+#: ../../en/refs/base.rs232.ref:13 3c832199a3a64bb39d15460563e127ba
 msgid "deinit.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:128 2f6b5faa28974509b6a6100eeee7a7c9
+#: ../../en/base/rs232.rst:98 198855ae2ac44b1196b751e82dffcad3
 msgid "Returns the number of characters that can be read without blocking."
 msgstr "返回无阻塞情况下可读取的字符数。"
 
-#: ../../en/base/rs232.rst 3539850b316b4e348daf3731c2a6a676
+#: ../../en/base/rs232.rst 35ec127a5e1c4fbfae24893bfea1824e
 msgid "Returns"
 msgstr ""
 
-#: ../../en/base/rs232.rst:130 16e9660a5103408a9255bb823af0bbc7
+#: ../../en/base/rs232.rst:100 c1ddb7132cac499e96d490497c49c3aa
 msgid "The number of available bytes."
 msgstr "可用字节数。"
 
-#: ../../en/base/rs232.rst 9b61f9411318471a8719fabc5ceb82e6
+#: ../../en/base/rs232.rst 53bdd82ee075460ca560a22091b8a84c
 msgid "Return type"
 msgstr "返回类型"
 
-#: ../../en/base/rs232.rst:135 387f18fc3f4d449e8047033ccf0daaa4
+#: ../../en/base/rs232.rst:105 7c744ea1a00d467895623cf87674172b
 msgid "|any.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:12 2aa4bcbe177f4211b83aadd122f33471
+#: ../../en/refs/base.rs232.ref:12 9245384f541c40798b2efca9ab561c54
 msgid "any.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:145 76692197f71b4a2c9bd372782a27e988
+#: ../../en/base/rs232.rst:115 d0411d4d8aef4d97b1a01ebdd44f99be
 msgid "Read characters from the UART buffer."
 msgstr "从 UART 缓冲器读取字符。"
 
-#: ../../en/base/rs232.rst:147 f0976cea078449ad93c2c6b87feb9b00
+#: ../../en/base/rs232.rst:117 7cf73a28939c4d27a09f66c548d7a39b
 msgid "The maximum number of bytes to read (optional)."
 msgstr "要读取的最大字节数（可选）。"
 
-#: ../../en/base/rs232.rst:148 042f024ec66747568cac78ae56277d91
+#: ../../en/base/rs232.rst:118 2d39dd3cfc5548ebb2ca74bfeeed31a6
 msgid "A bytes object containing the data read."
 msgstr "包含已读取数据的字节对象。"
 
-#: ../../en/base/rs232.rst:153 7070f0b3acee44a8942a7d5fd2c205e1
+#: ../../en/base/rs232.rst:123 a3e4eafdda4143279ecbf042c68ac637
 msgid "|read_all.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:15 9dbfa7f5628c48709d6076a8cf12cd5c
+#: ../../en/refs/base.rs232.ref:15 b89f009fe9c44d6e937d47dd95ac2fea
 msgid "read_all.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:155 e5b5b3d43aca473da57e1b377eca0e0c
+#: ../../en/base/rs232.rst:125 45eeac565b0543c3b34771099f832ba8
 msgid "|read_bytes.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:16 1b9dfa4eb74d4215b5e5c820458320f8
+#: ../../en/refs/base.rs232.ref:16 e39b63e7a3ee42279e3e38f6ce96ed02
 msgid "read_bytes.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:157 129cee011f4f4c109b21d42147b9106f
+#: ../../en/base/rs232.rst:127 e01d8b8b6148470782b3dd35ed3c8246
 msgid "|read_raw_data.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:17 1ad81acac9944ad5b0ad9cb09f152047
+#: ../../en/refs/base.rs232.ref:17 3e89f1ebe6fc40348b798462f17751c0
 msgid "read_raw_data.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:167 599b1ff9184047e080f5fbf910d2fc37
+#: ../../en/base/rs232.rst:137 571f74e165d44f9380107713edfa862f
 msgid ""
 "Read bytes into the ``buf``. If ``nbytes`` is specified, read at most "
 "that many bytes; otherwise, read at most ``len(buf)`` bytes. It may "
@@ -271,151 +244,151 @@ msgstr ""
 "向 ``buf`` 中读取字节。如果指定了 ``nbytes`` 字节，则最多读取这么多字节；否则，最多读取 ``len(buf)`` "
 "字节。如果超时，可能会提前返回。超时可在构造函数中配置。"
 
-#: ../../en/base/rs232.rst:169 c6b68349bf90496d9c9cba5148bafc9f
+#: ../../en/base/rs232.rst:139 194c82a69e944eb5898be708ecfb8190
 msgid "The buffer into which the bytes will be read."
 msgstr "读取字节的缓冲区。"
 
-#: ../../en/base/rs232.rst:170 eabcda3d89db4c71a68d62b467499cae
+#: ../../en/base/rs232.rst:140 6ef6580b634a44b7816244fc421932f2
 msgid "(Optional) The maximum number of bytes to read."
 msgstr "(可选）要读取的最大字节数。"
 
-#: ../../en/base/rs232.rst:172 d23e7b1361144fe4bad6841a6ee6086e
+#: ../../en/base/rs232.rst:142 c98baaeef5384153870d8ea8c0e75f5e
 msgid ""
 "The number of bytes read and stored into ``buf``, or ``None`` if a "
 "timeout occurs."
 msgstr "读取并存储到 ``buf`` 中的字节数，如果超时则为 ``None``。"
 
-#: ../../en/base/rs232.rst:177 c8c71cff9a52474ea2bbff03564a8887
+#: ../../en/base/rs232.rst:147 63c0af65bf7e47d586175639f578447a
 msgid "|readinto.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:19 4d0564d8805d4e53ae2f9150c10bfe76
+#: ../../en/refs/base.rs232.ref:19 c2c90a8397ae46f2936fd89218c5656d
 msgid "readinto.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:189 7abbffb04afc46558260b768ca2a4efd
+#: ../../en/base/rs232.rst:159 8d39861858764f10abc4241d9a2448aa
 msgid ""
 "Read a line ending in a newline character. It may return sooner if a "
 "timeout is reached. The timeout is configurable in the constructor."
 msgstr "读取以换行符结束的一行。如果超时，可能会提前返回。超时可在构造函数中配置。"
 
-#: ../../en/base/rs232.rst:191 5041453a0707443595deef19fb03e55e
+#: ../../en/base/rs232.rst:161 60e9cc3384f8405d987fba3d1e683a4a
 msgid "The line read as bytes, or ``None`` if a timeout occurs."
 msgstr "读取的行以字节为单位，如果超时则返回 ``无``。"
 
-#: ../../en/base/rs232.rst:196 f7dda01752b54aacbe99955a778c1b6c
+#: ../../en/base/rs232.rst:166 2b0f1e1d56ef47d79652e5f2305202ef
 msgid "|readline.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:18 841aea45d58348758902eadf6dcea611
+#: ../../en/refs/base.rs232.ref:18 f2bf71177a1b44c3a558b4aac4535abf
 msgid "readline.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:207 cb649176cf644a20bbce4c3104695913
+#: ../../en/base/rs232.rst:177 14895a63b2694dc1b22572518204142e
 msgid "Write data to the UART interface."
 msgstr "向 UART 接口写入数据。"
 
-#: ../../en/base/rs232.rst:209 1954d804f0394d7cab3b7358d0e1587b
+#: ../../en/base/rs232.rst:179 94e384da37314b92bebbed8b1d41720f
 msgid "The data to be written."
 msgstr "要写入的数据。"
 
-#: ../../en/base/rs232.rst:210 baaefb77e90046e4bdb593be8ce30fb7
+#: ../../en/base/rs232.rst:180 6a8c085ea5d14c1dac72fbafc069e6c4
 msgid "The number of bytes written."
 msgstr "写入的字节数。"
 
-#: ../../en/base/rs232.rst:215 96fb6ac9980042e7bc55bd00a3b48a36
+#: ../../en/base/rs232.rst:185 79eef58aeb3441b5b6bea67a3d0f6d42
 msgid "|write.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:20 a6ce6f24f7514d4385d11c684e5a2c6b
+#: ../../en/refs/base.rs232.ref:20 6a05dce6c67446be936411b689230ab6
 msgid "write.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:217 7020b2a6d2cb4abca305a21a23c0b857
+#: ../../en/base/rs232.rst:187 f7b3889f6aad462684d769279b816eb5
 msgid "|write1.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:21 cc62711b37b54771a429f7c557e9e8e8
+#: ../../en/refs/base.rs232.ref:21 dd677df19d3945d6bf16ede60e3d117b
 msgid "write1.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:219 f2150629c2554da4b5f79a50aabd246e
+#: ../../en/base/rs232.rst:189 2b07e691e4fc46da81f06ef4c6717a8f
 msgid "|write_line.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:22 09bb6b5bcd464a4587cf5aa4296783c3
+#: ../../en/refs/base.rs232.ref:22 46b214276a1d42a8b7bdddb28b2e2645
 msgid "write_line.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:221 90279961510d4b3a9c9dcbfcf43e8285
+#: ../../en/base/rs232.rst:191 f3c93ed9a57a4053ada04928cd788b70
 msgid "|write_list.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:23 a2fa2f90e1f54f22ac644977eb5a7eda
+#: ../../en/refs/base.rs232.ref:23 304263438c724960a80d0c83c14023ea
 msgid "write_list.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:223 5ab8c1b38d1a45a3880e8e257b0ebd53
+#: ../../en/base/rs232.rst:193 8ea2b68d54aa4132ac89669ab2273ece
 msgid "|write_raw_data.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:24 c22bdeedf60b4cac811e9475f3c9c68d
+#: ../../en/refs/base.rs232.ref:24 9527eeeb8a454d3599afe5c3d7a8d918
 msgid "write_raw_data.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:225 34b64a77c8fa4adeab4fd4f5951a5aa0
+#: ../../en/base/rs232.rst:195 0f7892de09f54f669c68fdb720662e7d
 msgid "|write_raw_data_list.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:25 e6e1685f4a704207a7538723d5d9be0d
+#: ../../en/refs/base.rs232.ref:25 8c0dc91eaa66475b8807d78b2c4ef65f
 msgid "write_raw_data_list.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:236 30fcfdbc5bdd4d35b5349bd5d506bbd3
+#: ../../en/base/rs232.rst:206 4e3c30cf3959418182fb9081299d8df7
 msgid ""
 "Send a break condition on the bus. This drives the bus low for a duration"
 " longer than required for a normal transmission of a character."
 msgstr "在总线上发送中断条件。这将使总线处于低电平，持续时间长于正常传输一个字符所需的时间。"
 
-#: ../../en/base/rs232.rst:242 5809c52f2924453983d4ab6c070cae4b
+#: ../../en/base/rs232.rst:212 f82351a8d9c0489b993f6a5ce28ddbc9
 msgid "|sendbreak.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:28 91af8acd14ca4636a2175e14445a235c
+#: ../../en/refs/base.rs232.ref:28 a330ad44ab304ebdb6e09e38a96a6448
 msgid "sendbreak.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:252 a6a0524295624c0bafcfb19299341da7
+#: ../../en/base/rs232.rst:222 3c8550ac755346b6886572f286178417
 msgid ""
 "Waits until all data has been sent. In case of a timeout, an exception is"
 " raised. The timeout duration depends on the TX buffer size and the baud "
 "rate. Unless flow control is enabled, a timeout should not occur."
 msgstr "等待所有数据发送完毕。如果超时，则会出现异常。超时持续时间取决于发送缓冲区大小和波特率。除非启用了流量控制，否则不应发生超时。"
 
-#: ../../en/base/rs232.rst:258 d37b5c9a9d1a43799c3b2d1958dda9b6
+#: ../../en/base/rs232.rst:228 cd74a20dd5a64415b9522a61c1ee805a
 msgid "|flush.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:27 7490f5f043574e1c8e96b2993a472f40
+#: ../../en/refs/base.rs232.ref:27 e07465477b38405b8aa984bd489e2496
 msgid "flush.png"
 msgstr ""
 
-#: ../../en/base/rs232.rst:268 ab53f7190b894f9a86abe5615030bd70
+#: ../../en/base/rs232.rst:238 a5fbd2bf410a44adab21677535af00c3
 msgid ""
 "Check whether all data has been sent or no data transfer is happening. "
 "Returns ``True`` if no transmission is ongoing, otherwise returns "
 "``False``."
 msgstr "检查是否所有数据都已发送或没有数据传输。如果没有传输正在进行，则返回 ``True`` ，否则返回 ``False`` 。"
 
-#: ../../en/base/rs232.rst:270 0b4e2d8693624b78b9f6265d92364b0f
+#: ../../en/base/rs232.rst:240 4e61f977396a4bf1a2910d3551e62edf
 msgid "``True`` if no data transfer is happening, otherwise ``False``."
 msgstr "如果没有数据传输，则返回 ``True``，否则返回 ``False``。"
 
-#: ../../en/base/rs232.rst:275 505990b65f0c4c73b60e7bdea942bcfc
+#: ../../en/base/rs232.rst:245 5ed9bd024b58489390e6dee72cb3e06e
 msgid "|txdone.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs232.ref:26 da7124ac73b84ea2aaa60b83f877402c
+#: ../../en/refs/base.rs232.ref:26 41340a2b1e0e4c199ad38222bb0824ba
 msgid "txdone.png"
 msgstr ""
 
@@ -808,5 +781,29 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "txdone.png"
+#~ msgstr ""
+
+#~ msgid "tx_example.png"
+#~ msgstr ""
+
+#~ msgid "rx_example.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to send"
+#~ " data using the RS232 module via "
+#~ "the UART interface."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据。"
+
+#~ msgid "|tx_example.png|"
+#~ msgstr ""
+
+#~ msgid "RX Example"
+#~ msgstr ""
+
+#~ msgid "Open the |cores3_rs232_rx_example.m5f2| project in UiFlow2."
+#~ msgstr ""
+
+#~ msgid "|rx_example.png|"
 #~ msgstr ""
 

@@ -18,31 +18,16 @@ Support the following products:
 UiFlow2 Example
 ---------------
 
-TX Example
-^^^^^^^^^^
+RS232 Example
+^^^^^^^^^^^^^
 
-Open the |core_rs232_tx_example.m5f2| project in UiFlow2.
+Open the |atoms3r_rs232_example.m5f2| project in UiFlow2.
 
-This example demonstrates how to send data using the RS232 module via the UART interface.
-
-UiFlow2 Code Block:
-
-    |tx_example.png|
-
-Example output:
-
-    None
-
-RX Example
-^^^^^^^^^^
-
-Open the |cores3_rs232_rx_example.m5f2| project in UiFlow2.
-
-This example demonstrates how to receive data using the RS232 module via the UART interface.
+This example demonstrates how to send and receive data using the RS232 module via the UART interface.
 
 UiFlow2 Code Block:
 
-    |rx_example.png|
+    |example.png|
 
 Example output:
 
@@ -51,29 +36,14 @@ Example output:
 MicroPython Example
 -------------------
 
-TX Example
-^^^^^^^^^^
+RS232 Example
+^^^^^^^^^^^^^
 
-This example demonstrates how to send data using the RS232 module via the UART interface.
-
-MicroPython Code Block:
-
-    .. literalinclude:: ../../../examples/module/rs232/core_rs232_tx_example.py
-        :language: python
-        :linenos:
-
-Example output:
-
-    None
-
-RX Example
-^^^^^^^^^^
-
-This example demonstrates how to receive data using the RS232 module via the UART interface.
+This example demonstrates how to send and receive data using the RS232 module via the UART interface.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/module/rs232/cores3_rs232_rx_example.py
+    .. literalinclude:: ../../../examples/base/rs232/atoms3r_rs232_example.py
         :language: python
         :linenos:
 

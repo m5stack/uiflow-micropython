@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 10:02+0800\n"
+"POT-Creation-Date: 2025-02-21 14:29+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,122 +20,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/rs485.rst:2 51126c4207b24bd8b37c419edf257cbc
+#: ../../en/base/rs485.rst:2 ee290ad7c5ab4d31a73ace6e4ed361f2
 msgid "Atomic RS485 Base"
 msgstr ""
 
-#: ../../en/base/rs485.rst:8 c156a0eadc10433880f9df9f45a4657c
+#: ../../en/base/rs485.rst:8 77e37f45632c482882a7fbc3321f406c
 msgid ""
 "AtomRS485 Class provides a set of methods to control the RS485 module. "
 "Through the UART interface, the module can transmit and receive data, "
 "supporting various baud rates and flow control configurations."
 msgstr "AtomRS232 类提供了一套控制 RS232 模块的方法。通过 UART 接口，模块可以发送和接收数据，支持各种波特率和流量控制配置。"
 
-#: ../../en/base/rs485.rst:12 baea62a6c28f4cbab5cc8a40e06db156
+#: ../../en/base/rs485.rst:12 b5707e8a1e814418977bfaa52ef65089
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/rs485.rst:15 964581eeb6a34c13b1eec695674f967c
+#: ../../en/base/rs485.rst:15 79203c030a2d4958bbeb54fe65fc1b69
 msgid "|RS485 Base|"
 msgstr ""
 
-#: ../../en/refs/base.rs485.ref f3fc08792f3e431c8606971737a32535
+#: ../../en/refs/base.rs485.ref 748e5e5f62444b809023de7ee2cd2352
 msgid "rs485 base"
 msgstr ""
 
-#: ../../en/base/rs485.rst:15 582cd7ca84c64eb2ba075305d37feaec
+#: ../../en/base/rs485.rst:15 dfbc626f3d174fd6bcb1eec1f94f8aba
 msgid "|RS485|"
 msgstr ""
 
-#: ../../en/refs/base.rs485.ref 813a04481b204bf98359cc232acb7ef8
+#: ../../en/refs/base.rs485.ref bd068a159f17448e88a0c6dd1111b70f
 msgid "rs485"
 msgstr ""
 
-#: ../../en/base/rs485.rst:19 e292dbd6d26647c5ae0075aa07bbe8ec
+#: ../../en/base/rs485.rst:19 16d7ef133227420eb6b13a3cc007361f
 msgid "UiFlow2 Example"
 msgstr ""
 
-#: ../../en/base/rs485.rst:22 ../../en/base/rs485.rst:55
-#: e292dbd6d26647c5ae0075aa07bbe8ec
-msgid "TX Example"
+#: ../../en/base/rs485.rst:22 ../../en/base/rs485.rst:40
+#: 65491f14bb3a46c391b0d604e13fb11e
+msgid "RS485 Example"
 msgstr ""
 
-#: ../../en/base/rs485.rst:24 9eae169c6bd6443f8554015db1f78add
-msgid "Open the |core_rs232_tx_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |core_rs232_tx_example.m5f2| 项目。"
+#: ../../en/base/rs485.rst:24 31378ab24c8e4e38a80ad94986c14796
+msgid "Open the |atoms3r_rs485_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3r_rs485_example.m5f2| 项目。"
 
-#: ../../en/base/rs485.rst:26 ../../en/base/rs485.rst:57
-#: 89bec78523fd487197e93321d34d2001 e22e12709c514d8ab8b97cc0f5f6a79c
+#: ../../en/base/rs485.rst:26 ../../en/base/rs485.rst:42
+#: ef9c7aad35324241b9b013532c973380
 msgid ""
-"This example demonstrates how to send data using the RS232 module via the"
-" UART interface(same as RS485)."
-msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据(与 RS485 相同）。"
+"This example demonstrates how to send and receive data using the RS485 "
+"module via the UART interface."
+msgstr "本示例演示如何使用 RS485 模块通过 UART 接口发送/接收数据。"
 
-#: ../../en/base/rs485.rst:28 ../../en/base/rs485.rst:43
-#: 40cb3e6e36cd432d838deb145d4cbe2b 6d2f461d4c6a4b2d8a16a8cd33c1a9d3
+#: ../../en/base/rs485.rst:28 825c5d300bc54219bb8065c78b5bee82
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/rs485.rst:30 6a49eef5dd5c4dd5932955ced3fce975
-msgid "|tx_example.png|"
+#: ../../en/base/rs485.rst:30 6c8f945daa184240a6abb6a89bdd3989
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/base.rs485.ref:30 8211ffc4e3db46e4991211fd55036e40
-msgid "tx_example.png"
-msgstr ""
+#: ../../en/refs/base.rs485.ref:31 034b1645bf5249108b1eb1bd3a7f16d7
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
 
-#: ../../en/base/rs485.rst:32 ../../en/base/rs485.rst:47
-#: ../../en/base/rs485.rst:65 ../../en/base/rs485.rst:80
-#: 8454cca551344645bf9300c3bc8802a5 84b15a0e1c7d4b57b7a02d8fb4320ec6
-#: c362e0fbbb8443e1a5f3047d9930ec47 fca4049edd4743cbaca687f7390db992
+#: ../../en/base/rs485.rst:32 ../../en/base/rs485.rst:50
+#: a6db2056c23e47a299f7cfca81abf8b4
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/base/rs485.rst:34 ../../en/base/rs485.rst:49
-#: ../../en/base/rs485.rst:67 ../../en/base/rs485.rst:82
-#: 4211fdfbb5494816b01881910f4ad42d 9986684bb6cc4f748226d7471e1d7283
-#: e56eda902fa847bd8af1e5222e79c30d fb4e53ebd3c244da89f2894080841693
+#: ../../en/base/rs485.rst:34 ../../en/base/rs485.rst:52
+#: 6c08847deb1b48da9bcc35cf9781a2f9
 msgid "None"
 msgstr ""
 
-#: ../../en/base/rs485.rst:37 ../../en/base/rs485.rst:70
-#: 59e116f2e1584f1c94862cc80bb2d435
-msgid "RX Example"
-msgstr ""
-
-#: ../../en/base/rs485.rst:39 52db5040d18c4a2883904cb865e35eec
-msgid "Open the |cores3_rs232_rx_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |cores3_rs232_rx_example.m5f2| 项目。"
-
-#: ../../en/base/rs485.rst:41 ../../en/base/rs485.rst:72
-#: 0eb00b559e6b4aab830d0678ca94e0ea 3d27a7da79554dc990f0c0de5aa4d4c7
-msgid ""
-"This example demonstrates how to receive data using the RS232 module via "
-"the UART interface(same as RS485)."
-msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据(与 RS485 相同）。"
-
-#: ../../en/base/rs485.rst:45 d0046f8fb77341e5a5f77a3bfa455311
-msgid "|rx_example.png|"
-msgstr ""
-
-#: ../../en/refs/base.rs485.ref:41 e1aa658e8298422b976adbb26b867265
-msgid "rx_example.png"
-msgstr ""
-
-#: ../../en/base/rs485.rst:52 d24e0b479534426e964ec2ae47f637d1
+#: ../../en/base/rs485.rst:37 a4180fcc09c84b61ba301fd14449f7d6
 msgid "MicroPython Example"
 msgstr "MicroPython 发送应用示例："
 
-#: ../../en/base/rs485.rst:59 ../../en/base/rs485.rst:74
-#: d24e0b479534426e964ec2ae47f637d1
+#: ../../en/base/rs485.rst:44 d7d3db5e87234a1eb5f448eb399f9f0f
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/rs485.rst:85 ca25f6c1ad354c9993ca1e14d1a09108
+#: ../../en/base/rs485.rst:55 da8db4ddeb0b4a61b30b2c17a19227b7
 msgid "**API**"
 msgstr ""
 
-#: ../../en/base/rs485.rst:88 026d6c42e0c541ac991391959535c24e
+#: ../../en/base/rs485.rst:58 f2106ddacf184824a32066e547ceb69e
 msgid "AtomRS485"
 msgstr ""
 
@@ -366,4 +337,37 @@ msgstr ""
 
 #~ msgid "read_raw_data.png"
 #~ msgstr ""
+
+#~ msgid "TX Example"
+#~ msgstr ""
+
+#~ msgid "Open the |core_rs232_tx_example.m5f2| project in UiFlow2."
+#~ msgstr "在 UiFlow2 中打开 |core_rs232_tx_example.m5f2| 项目。"
+
+#~ msgid "|tx_example.png|"
+#~ msgstr ""
+
+#~ msgid "tx_example.png"
+#~ msgstr ""
+
+#~ msgid "RX Example"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to receive"
+#~ " data using the RS232 module via "
+#~ "the UART interface(same as RS485)."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据(与 RS485 相同）。"
+
+#~ msgid "|rx_example.png|"
+#~ msgstr ""
+
+#~ msgid "rx_example.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to send"
+#~ " data using the RS232 module via "
+#~ "the UART interface."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据(与 RS485 相同）。"
 
