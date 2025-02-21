@@ -11,15 +11,15 @@ Atomic Motion Base v1.1 adds INA226 to implement current and voltage detection.
 
 Support the following products:
 
-    |Motion|
-
-    |Motion Base v1.1|
+    ================== ==================
+    |Motion|           |Motion Base v1.1|
+    ================== ==================
 
 
 UiFlow2 Example:
 --------------------------
 
-Motion Base  
+Motion Base
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Open the |atoms3_lite_motion_base_example.m5f2| project in UiFlow2.
@@ -67,7 +67,7 @@ Example output:
 
     None
 
-Motion Base v1.1  
+Motion Base v1.1
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The example program switches the motor's running speed when the screen button is pressed, and the screen displays the current, voltage, and power.
@@ -86,7 +86,7 @@ Example output:
 **API**
 --------------------------
 
-Motion 
+Motion
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. class:: base.motion.Motion(i2c, address=0x38)
@@ -112,11 +112,11 @@ Motion
 
     .. method:: get_servo_angle(ch)
 
-        Get the angle of the servo.  
+        Get the angle of the servo.
 
         :param int ch: The servo channel. Range: 1~4.
         :returns: Specify the servo angle for the specified channel. Range: 0~180.
-        :rtype: int 
+        :rtype: int
 
         UiFlow2 Code Block:
 
@@ -130,7 +130,7 @@ Motion
 
     .. method:: set_servo_angle(ch, angle)
 
-        Set the angle of the servo.  
+        Set the angle of the servo.
 
         :param int ch: The servo channel. Range: 1~4.
         :param int angle: The servo angle. Range: 0~180.
@@ -147,11 +147,11 @@ Motion
 
     .. method:: get_servo_pulse(ch)
 
-        Get the pulse of the servo.  
+        Get the pulse of the servo.
 
         :param int ch: The servo channel. Range: 1~4.
         :returns: Specify the servo pulse for the specified channel. Range: 500~2500.
-        :rtype: int 
+        :rtype: int
 
         UiFlow2 Code Block:
 
@@ -165,7 +165,7 @@ Motion
 
     .. method:: write_servo_pulse(ch, pulse)
 
-        Write the pulse of the servo.  
+        Write the pulse of the servo.
 
         :param int ch: The servo channel. Range: 1~4.
         :param int pulse: The servo pulse. Range: 500~2500.
@@ -182,11 +182,11 @@ Motion
 
     .. method:: get_motor_speed(ch)
 
-        Get the speed of the motor.  
+        Get the speed of the motor.
 
         :param int ch: The motor channel. Range: 1~2.
         :returns: Specify the speed for the specified channel. Range: -127~127.
-        :rtype: int 
+        :rtype: int
 
         UiFlow2 Code Block:
 
@@ -200,7 +200,7 @@ Motion
 
     .. method:: set_motor_speed(ch, speed)
 
-        Set motor speed.  
+        Set motor speed.
 
         :param int ch: The motor channel. Range: 1~2.
         :param int speed: The motor speed. Range: -127~127.
@@ -217,10 +217,10 @@ Motion
 
     .. method:: read_voltage()
 
-        Read voltage (unit: V).  
+        Read voltage (unit: V).
 
         :returns: The voltage value in volts.
-        :rtype: float 
+        :rtype: float
 
         .. note::
             This method is supported only on Motion Base v1.1 and later versions.
@@ -235,12 +235,12 @@ Motion
 
                 motion.read_voltage()
 
-    .. method:: read_current() 
+    .. method:: read_current()
 
-        Read current (unit: A).  
+        Read current (unit: A).
 
-        :returns: The current value in amperes. 
-        :rtype: float 
+        :returns: The current value in amperes.
+        :rtype: float
 
         .. note::
             This method is supported only on Motion Base v1.1 and later versions.
@@ -255,16 +255,16 @@ Motion
 
                 motion.read_current()
 
-    .. method:: read_power() 
+    .. method:: read_power()
 
-        Read power (unit: W).  
+        Read power (unit: W).
 
-        :returns: The power value in watts.  
-        :rtype: float 
+        :returns: The power value in watts.
+        :rtype: float
 
         .. note::
             This method is supported only on Motion Base v1.1 and later versions.
-            
+
         UiFlow2 Code Block:
 
             |read_power.png|
