@@ -1,0 +1,465 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-20 18:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/lora_sx1262.rst:2 8dad6a34e33c47d3993d3e85cf9ab10a
+msgid "LoRa868 v1.2 Module"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:8 f6d14ea49abb4de8ad79401d2378f895
+msgid ""
+"The LoRa868 v1.2 Module is part of the M5Stack stackable module series. "
+"It is a LoRa communication module that operates at a 900MHz frequency and"
+" utilizes the SX1262 chip solution."
+msgstr "LoRa868 v1.2 模块是 M5Stack 堆叠模块系列的一部分，属于 LoRa 通信模块，工作在 900MHz 频率，采用 SX1262 芯片解决方案。"
+
+#: ../../en/module/lora_sx1262.rst:10 042f6386c11a4dd7a4b4d9447774515f
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/lora_sx1262.rst:12 02086159dc8d4ef5ace24bcdc333975a
+msgid "|Module LoRa868 v1.2|"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:16 2bcf566bcac54633b14f2c732dfb85bc
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/module/lora_sx1262.rst:18 ../../en/module/lora_sx1262.rst:53
+#: b3550b6a30894b02b2afc37a08c926d1 cc1ca52064274f1bafcfa6102f11ef3a
+msgid ""
+"Before using the following examples, please check the DIP switches on the"
+" module to ensure that the pins used in the example match the DIP switch "
+"positions. For specific configurations, please refer to the product "
+"manual page. The SPI configuration has been implemented internally, so "
+"users do not need to worry about it."
+msgstr "在使用以下示例之前，请检查模块上的拨码开关，以确保示例中使用的引脚与拨码开关的位置相匹配。有关具体配置，请参考产品手册页面。SPI 配置已在内部实现。"
+
+#: ../../en/module/lora_sx1262.rst:21 ../../en/module/lora_sx1262.rst:56
+#: 59ead01191964f168e3d13f843cfb447 aed5d291553747239fa0322bf85c2dc4
+msgid "Sender"
+msgstr "发送端"
+
+#: ../../en/module/lora_sx1262.rst:23 d15161c1d7a54fc3955fe8b0fa32db35
+msgid "Open the |cores3_lora_sx1262_tx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_lora_sx1262_tx_example.m5f2| 项目。"
+
+#: ../../en/module/lora_sx1262.rst:25 ../../en/module/lora_sx1262.rst:58
+#: 730bf05c5ca941bbbe1edc1fc796bd04 d85ecb76da6448f796e141813abde91d
+msgid "This example sends data every second."
+msgstr "此示例每秒发送一次数据。"
+
+#: ../../en/module/lora_sx1262.rst:27 ../../en/module/lora_sx1262.rst:42
+#: ../../en/module/lora_sx1262.rst:130 ../../en/module/lora_sx1262.rst:151
+#: ../../en/module/lora_sx1262.rst:167 ../../en/module/lora_sx1262.rst:189
+#: ../../en/module/lora_sx1262.rst:210 ../../en/module/lora_sx1262.rst:226
+#: ../../en/module/lora_sx1262.rst:242 ../../en/module/lora_sx1262.rst:259
+#: 10bf3fe611c3480b809d082f19c65f7b 125463ab7d40480a98ffca42f10bb989
+#: 4e10e38e4fd44548a730ec01281bfead 63b817805eef4bd78e9d7dd3b41bd92b
+#: 72574a5df7614800a0ab263935038a81 8b02290e0b614f4bbbf8484eacd7d737
+#: ad830cbd2928467ea913d5ba0b9a41a1 c1ac09ee8f964359af15932691f45260
+#: d3691435ea214f46be48d8637bfa9559 fbe34aa75da94d149e36f7e0eb81194b
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/lora_sx1262.rst:29 a9dbb4c3be5d40108d15a9ca0d581091
+msgid "|cores3_lora_sx1262_tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:21 d08abf32fc6f4e429e5be4b03fb524b6
+msgid "cores3_lora_sx1262_tx_example.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:31 ../../en/module/lora_sx1262.rst:46
+#: ../../en/module/lora_sx1262.rst:66 ../../en/module/lora_sx1262.rst:81
+#: 770a823bd2a4489abea532a3e1e017a5 96ca514298664de0942401e667278932
+#: a49153590f584dca9cf57549a386410a fc0cf2b24fc44815ad0558f09c546bb4
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/lora_sx1262.rst:33 ../../en/module/lora_sx1262.rst:48
+#: ../../en/module/lora_sx1262.rst:68 ../../en/module/lora_sx1262.rst:83
+#: 3543a000af664dbd991b23f8e9bcba76 4fbb7dc2d01f443aa06aa846de5e2a03
+#: 6b79929a799e4d8a9bf91de0f9ce83c4 6ced150579854a66a0a100aa5c50b419
+msgid "None"
+msgstr "无"
+
+#: ../../en/module/lora_sx1262.rst:36 ../../en/module/lora_sx1262.rst:71
+#: 2cad1fc7de2f4934a59c080ff36c12d1 3241284329e14005a7ad546dadd7d78a
+msgid "Receiver"
+msgstr "接收端"
+
+#: ../../en/module/lora_sx1262.rst:38 c26cf3cd700648e0ac2fa2d4ac0f6f36
+msgid "Open the |cores3_lora_sx1262_rx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_lora_sx1262_rx_example.m5f2| 项目。"
+
+#: ../../en/module/lora_sx1262.rst:40 ../../en/module/lora_sx1262.rst:73
+#: 5c35c7589b1745d3bb8ace3457b88414 dafcb35990ee4b57a96b8be1c3bbf5cd
+msgid "This example receives and displays data."
+msgstr "此示例接收并显示数据。"
+
+#: ../../en/module/lora_sx1262.rst:44 1f4fc6bc43e74dfa8bf94d29e41a318e
+msgid "|cores3_lora_sx1262_rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:20 134673b4e75d49518ef8297457c4f91e
+msgid "cores3_lora_sx1262_rx_example.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:51 ddc377abb9434bf8bf831e70dba0a863
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/module/lora_sx1262.rst:60 ../../en/module/lora_sx1262.rst:75
+#: ../../en/module/lora_sx1262.rst:134 ../../en/module/lora_sx1262.rst:155
+#: ../../en/module/lora_sx1262.rst:171 ../../en/module/lora_sx1262.rst:193
+#: ../../en/module/lora_sx1262.rst:214 ../../en/module/lora_sx1262.rst:230
+#: ../../en/module/lora_sx1262.rst:246 ../../en/module/lora_sx1262.rst:263
+#: 016bc72d6c7d47f18ad77dedcdff15ce 099e73086aef41ceacc77e19b4db9230
+#: 165e5f0959214276b9cc63f0cfde84e0 17330ab8a84446b4b6f7a5d65da5bcbb
+#: 17b1bb3d07e84877963a02e61fd3260f 95bc2c4eef164e9d8c9c669dbe120aa9
+#: bdecb366bc574c8ba7ce59da3b1e9d01 c829a4b982e14749a6a3686be4da532b
+#: df96edebced54f39a91308c116526e04 e5783a87cc6d46108e77c391a8d23d25
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/lora_sx1262.rst:86 8750c93f980449fa875ffba6ca7d3060
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/lora_sx1262.rst:90 6a0b782506c44fc9a501a2f75725dc81
+msgid "class LoRaSx1262Module"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:104 95e830c8d4b44344b6b385d02d9812e4
+msgid "Create an LoRaSx1262Module object."
+msgstr "创建一个 LoRaSx1262Module 对象。"
+
+#: ../../en/module/lora_sx1262.rst 2da45f20631f4a6bb61dfa7bdcf272da
+#: a67a0dc2895f49c681a875a2bfa66a09 ba01b6eb22744513837f394200d3163c
+#: bab9a5c9b1954675bcf5b708aad79f6f
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:106 65be72cb18e04609a4cd74912d6de9e7
+msgid "The Timer ID. Range: 0~3. Default is 0."
+msgstr "定时器 ID，范围：0~3，默认为 0。"
+
+#: ../../en/module/lora_sx1262.rst:107 31f201ebc3044305814bda91748b7e83
+msgid "(RST) Reset pin number."
+msgstr "(RST) 复位引脚号。"
+
+#: ../../en/module/lora_sx1262.rst:108 22e161fe62f6419592a9d89af09f766c
+msgid "(NSS) Chip select pin number."
+msgstr "(NSS) 片选引脚号。"
+
+#: ../../en/module/lora_sx1262.rst:109 6cb06d4472c54c9c93b167b521eedbf3
+msgid "(IRQ) Interrupt pin number."
+msgstr "(IRQ) 中断引脚号。"
+
+#: ../../en/module/lora_sx1262.rst:110 7127eaf0b7a14fc69223956bd1a48dc5
+msgid "(BUSY) Busy pin number."
+msgstr "(BUSY) 忙检查引脚号。"
+
+#: ../../en/module/lora_sx1262.rst:111 055aa306ca6b42719d252542d03c22b9
+msgid "LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz."
+msgstr "LoRa 射频通信频率，单位 kHz，范围：850000 KHz ~ 930000 KHz。"
+
+#: ../../en/module/lora_sx1262.rst:112 86c6aefd2b84464fb756b9d4b0a0eb8f
+msgid ""
+"Bandwidth, options include:  - ``\"7.8\"``: 7.8 KHz - ``\"10.4\"``: 10.4 "
+"KHz - ``\"15.6\"``: 15.6 KHz - ``\"20.8\"``: 20.8 KHz - ``\"31.25\"``: "
+"31.25 KHz - ``\"41.7\"``: 41.7 KHz - ``\"62.5\"``: 62.5 KHz - "
+"``\"125\"``: 125 KHz - ``\"250\"``: 250 KHz - ``\"500\"``: 500 KHz"
+msgstr "带宽，包括如下：  - ``\"7.8\"``: 7.8 KHz - ``\"10.4\"``: 10.4 
+KHz - ``\"15.6\"``: 15.6 KHz - ``\"20.8\"``: 20.8 KHz - ``\"31.25\"``: 
+31.25 KHz - ``\"41.7\"``: 41.7 KHz - ``\"62.5\"``: 62.5 KHz - 
+``\"125\"``: 125 KHz - ``\"250\"``: 250 KHz - ``\"500\"``: 500 KHz"
+msgstr ""
+ 
+#: ../../en/module/lora_sx1262.rst:112 2d2ef9d218a44547849b526224c620ea
+msgid "Bandwidth, options include:"
+msgstr "带宽，包括如下："
+
+#: ../../en/module/lora_sx1262.rst:114 fb1c65d6536c462f948edcd85f345c4f
+msgid "``\"7.8\"``: 7.8 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:115 8900c77d30f84e82af60d71a912db424
+msgid "``\"10.4\"``: 10.4 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:116 60d87abbb87a43a7808577238e5acb58
+msgid "``\"15.6\"``: 15.6 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:117 21b39406745f4fbfb75d6b042cd6696d
+msgid "``\"20.8\"``: 20.8 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:118 67b4b69b5627410cbf6c340e2dd1103b
+msgid "``\"31.25\"``: 31.25 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:119 f6679b51266d4d75b54f0f7b10f62e59
+msgid "``\"41.7\"``: 41.7 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:120 5079b965409e4d7d851ed467259d2b34
+msgid "``\"62.5\"``: 62.5 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:121 57c03f54c1424c5785714b7cc565edab
+msgid "``\"125\"``: 125 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:122 ad34e683875e4f678f21e6498c9aaaaa
+msgid "``\"250\"``: 250 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:123 861b19a8756a45ddbc6e848187a4fc17
+msgid "``\"500\"``: 500 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:124 467e08b08d5a4f12b3905ad51fa391dc
+msgid ""
+"Spreading factor, range from 7 to 12. Higher spreading factors allow "
+"reception of weaker signals but with slower data rates."
+msgstr "扩频因子，范围从 7 到 12。较高的扩展因子可以接收较弱的信号，但数据传输速率较慢。"
+
+#: ../../en/module/lora_sx1262.rst:125 771e2c09256d4478b83a49904bcc99c0
+msgid ""
+"Forward Error Correction (FEC) coding rate expressed as 4/N, with a range"
+" from 5 to 8."
+msgstr "前向纠错（FEC）编码率以 4/N 的形式表示，范围从 5 到 8。"
+
+#: ../../en/module/lora_sx1262.rst:126 22fc81d59207413dbeed56e041e67dae
+msgid "Length of the preamble sequence in symbols, range from 0 to 255."
+msgstr "前导符长度，范围 0~255。"
+
+#: ../../en/module/lora_sx1262.rst:127 b008d1922d3f4bb4a6f437567938844d
+msgid "Sync word to mark the start of the data frame, default is 0x12."
+msgstr "同步字，用于标记数据帧的开始，默认值是 0x12。"
+
+#: ../../en/module/lora_sx1262.rst:128 8f9f44985c3142b696e57c6c7615aa97
+msgid "Output power in dBm, range from -9 to 22."
+msgstr "输出功率以 dBm 为单位，范围从 -9 到 22。"
+
+#: ../../en/module/lora_sx1262.rst:132 7608a351f59a404c85b43a0e6c2e3520
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:8 475321d9220e4fe3acb9dbecb17e94b9
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:144 57007da3f0d04a7f9a8331c6f67827f1
+msgid "Set the interrupt callback function to be executed on IRQ."
+msgstr "设置中断回调函数。"
+
+#: ../../en/module/lora_sx1262.rst:146 11240bc99c9c4df1803bc49aac093510
+msgid ""
+"The callback function to be invoked when the interrupt is triggered. The "
+"callback should not take any arguments and should return nothing."
+msgstr "当中断触发时调用的回调函数。回调函数不应接受任何参数，并且不应返回任何值。"
+
+#: ../../en/module/lora_sx1262.rst:149 dab20089f55c40cb9d23340f8bcd9b61
+msgid "Call `start_recv()` to begin receiving data."
+msgstr "调用 `start_recv()` 开始接收数据。"
+
+#: ../../en/module/lora_sx1262.rst:153 73e4ffda5a1e4765a5729fde30e9587a
+msgid "|set_irq_callback.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:12 868eed11304c4bbb85509e25a2f63e91
+msgid "set_irq_callback.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:163 985038d847364df8b2747c87b46b5542
+msgid "Start receive data."
+msgstr "开始接收数据。"
+
+#: ../../en/module/lora_sx1262.rst:165 6f7aa9b73b304787a76c263faace561a
+msgid "This method initiates the process to begin receiving data."
+msgstr "该方法启动接收数据。"
+
+#: ../../en/module/lora_sx1262.rst:169 e2e6ecef5a124b9a8882f3fdfe403d93
+msgid "|start_recv.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:9 e98a28dc84cf458a971eda17d35db41b
+msgid "start_recv.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:179 6354206e47234c1eb7c3102c69308115
+msgid "Receive data."
+msgstr "接收数据。"
+
+#: ../../en/module/lora_sx1262.rst:181 c8672b22d2784b42affab092bba87983
+msgid "Timeout in milliseconds (optional). Default is None."
+msgstr "超时时间（单位：ms，可选），默认为 None。"
+
+#: ../../en/module/lora_sx1262.rst:182 d71c5103a49249178c4b8542c38f8c8f
+msgid "Length of the data to be read. Default is 0xFF."
+msgstr "要读取的数据长度，默认为 0xFF。"
+
+#: ../../en/module/lora_sx1262.rst:183 876c3ed415004b06a1edc3eae81095b1
+msgid "An instance of `RxPacket` (optional) to reuse."
+msgstr "一个 RxPacket 实例（可选参数），用于重用。"
+
+#: ../../en/module/lora_sx1262.rst 5f2953ad4f024c84960997701e812987
+#: 78569a8a77aa452ba7a2f34337f60eef e50361a945a64a8dbe497d175b3b133b
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:184 23eb8378046a432b92e04193d1456f98
+msgid "Received packet instance"
+msgstr "接收数据实例。"
+
+#: ../../en/module/lora_sx1262.rst 2349de07f80c4665ab86d4ab99460b9f
+#: 796d64ec3b134b8f9321007abee60b74 c14e8e5f2c9d4d6ab946f916aac55875
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:187 ce4892b86e0e4f419e87f7a2962dfb36
+msgid ""
+"Attempt to receive a LoRa packet. Returns `None` if timeout occurs, or "
+"returns the received packet instance."
+msgstr "尝试接收一个 LoRa 数据包。如果发生超时，则返回 None，否则返回接收到的数据包实例。"
+
+#: ../../en/module/lora_sx1262.rst:191 42a9b9a3a0c54fdaa5a67d3892820cad
+msgid "|recv.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:10 96dea2290e264304a3c74304e77881d5
+msgid "recv.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:201 106970f6abd543d58912b789a3015409
+msgid "Send data."
+msgstr "发送数据。"
+
+#: ../../en/module/lora_sx1262.rst:203 30520a58463f42de95b7cdf6109aea73
+msgid "The data to be sent."
+msgstr "要发送的数据。"
+
+#: ../../en/module/lora_sx1262.rst:204 2fb8e9abff6c4f63a43b2ede4f9a09a4
+msgid ""
+"The timestamp in milliseconds when to send the data (optional). Default "
+"is None."
+msgstr "发送数据的时间戳（以 ms 为单位，可选参数）。默认为 None。"
+
+#: ../../en/module/lora_sx1262.rst:205 b327db9a285b45db96a3f2ea1948975e
+msgid ""
+"Returns a timestamp (result of `time.ticks_ms()`) indicating when the "
+"data packet was sent."
+msgstr "返回一个时间戳（time.ticks_ms() 的结果），表示数据包发送的时间。"
+
+#: ../../en/module/lora_sx1262.rst:208 e31fe749e19249d0bae3da89c3e577d7
+msgid "Send a data packet and return the timestamp after the packet is sent."
+msgstr "发送一个数据包并返回数据包发送后的时间戳。"
+
+#: ../../en/module/lora_sx1262.rst:212 1ed503f26cf14d988e511f33951f3b9a
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:15 dd89929d50c14c778f838de588090192
+msgid "send.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:222 b1f7311d10a44484bcf3ac683137f88f
+msgid "Set module to standby mode."
+msgstr "设置模块为待机模式。"
+
+#: ../../en/module/lora_sx1262.rst:224 f4e3ef0d967b435cba45da49e7de8f1a
+msgid "Puts the LoRa module into standby mode, consuming less power."
+msgstr "设置 LoRa 模块为待机模式，降低功耗。"
+
+#: ../../en/module/lora_sx1262.rst:228 e4e9ae541215494ebfbfc3cca0f3e5bc
+msgid "|standby.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:17 4c2ea99b10634bbbb38f21822ec1fe99
+msgid "standby.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:238 4621b0b078a245468275bfdd87774bfd
+msgid "Put the module to sleep mode."
+msgstr "设置模块为休眠模式。"
+
+#: ../../en/module/lora_sx1262.rst:240 e3786a770b2d47489a677c4cdd4ac6d8
+msgid "Reduces the power consumption by putting the module into deep sleep mode."
+msgstr "通过将模块置于休眠模式来降低功耗。"
+
+#: ../../en/module/lora_sx1262.rst:244 c30b01db79624a05bea0323064eca862
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:18 288322c8fb834297bbf6a859488ce218
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:254 24985a3df4974655a973c95340d3fe12
+msgid "Check IRQ trigger."
+msgstr "检查 IRQ 是否触发。"
+
+#: ../../en/module/lora_sx1262.rst:256 5ea75e34642b46efa263d91cadf0189d
+msgid ""
+"Returns `True` if an interrupt service routine (ISR) has been triggered "
+"since the last send or receive started."
+msgstr "如果自上次发送或接收开始以来中断服务例程（ISR）已被触发，则返回 True。"
+
+#: ../../en/module/lora_sx1262.rst:261 eb1dcc9d2f3b4290b27e031ebd845679
+msgid "|irq_triggered.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:16 43a2072622e543168b9dacd1bc2f5c30
+msgid "irq_triggered.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:270 45a4a6dcfcf2432ea550e14d6be19711
+msgid "class RxPacket"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:274 fc79985c43f34633af94f503e22fbb49
+msgid "Create an RxPacket object."
+msgstr "创建一个 RxPacket 对象。"
+
+#: ../../en/module/lora_sx1262.rst:278 02b4f7f407bc4b57a230c65201996fc3
+msgid "Decode the received data."
+msgstr "解码接收到的数据。"
+
+#: ../../en/module/lora_sx1262.rst:282 b3eda4b7bffa40fd8c3c9661573ac7e3
+msgid "Timestamp of when the data was received."
+msgstr "数据接收时的时间戳。"
+
+#: ../../en/module/lora_sx1262.rst:286 b0b06457467d442082f4a254c1f0d56d
+msgid "Received signal strength (units: dBm)."
+msgstr "接收信号强度（单位：dBm）。"
+
+#: ../../en/module/lora_sx1262.rst:290 558d1a6b13844156a9de5809f77d8a7e
+msgid "Signal-to-noise ratio (units: dB * 4)."
+msgstr "信噪比（单位：dB * 4）。"
+
+#: ../../en/module/lora_sx1262.rst:294 ee8ada3af1c84649a11ac8c56d171249
+msgid "CRC validity check."
+msgstr "CRC 校验。"
+

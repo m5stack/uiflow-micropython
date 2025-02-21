@@ -50,10 +50,6 @@ autodoc_mock_imports = [
     "machine",
     "M5",
     "module.mbus",
-    "pid",
-    "driver",
-    "imu"
-
 ]
 
 autodoc_default_options = {

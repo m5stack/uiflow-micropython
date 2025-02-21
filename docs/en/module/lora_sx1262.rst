@@ -9,7 +9,7 @@ The LoRa868 v1.2 Module is part of the M5Stack stackable module series. It is a 
 
 Support the following products:
 
-    |Module LoRa868 v1.2|
+    |LoRa868Module v1.2|
 
 
 UiFlow2 Example 
