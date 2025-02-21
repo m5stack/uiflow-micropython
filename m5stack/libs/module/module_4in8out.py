@@ -81,7 +81,7 @@ class Module4In8Out:
         """! Set a new I2C address for the 4In8Out module.
         @param addr: The new I2C address to set.
         """
-        if 0x08 <= addr <= 0x78:
+        if 0x08 <= addr <= 0x77:
             if addr != self._i2c_addr:
                 time.sleep_ms(2)
                 self._i2c.writeto_mem(
@@ -90,7 +90,7 @@ class Module4In8Out:
                 self._i2c_addr = addr
                 time.sleep_ms(200)
         else:
-            raise ValueError("I2C address error, range:0x08~0x78")
+            raise ValueError("I2C address error, range:0x08~0x77")
 
     def _read_reg_data(self, sub_reg: int, num: int) -> bytes:
         """! Helper function to read data from a specific register.

@@ -225,7 +225,7 @@ Methods
 
     Set a new I2C address for the ByteSwitchUnit.
 
-    :param int new_addr: The new I2C address to set. Must be in the range 0x08 to 0x78.
+    :param int new_addr: The new I2C address to set. Must be in the range 0x08 to 0x77.
 
     UIFLOW2:
 

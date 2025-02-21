@@ -1,0 +1,40 @@
+.. |rs485 base| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic%20RS485%20Base/img-482d74b8-0462-4139-943a-b8bf43da18c4.webp
+    :target: https://docs.m5stack.com/en/atom/Atomic%20RS485%20Base
+    :height: 200px
+    :width: 200px
+
+.. |rs485| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/atomic485/atomic485_01.webp
+    :target: https://docs.m5stack.com/en/atom/atomic485
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/init.png
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/any.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/deinit.png
+.. |setup.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/setup.png
+.. |read_all.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/read_all.png
+.. |read_bytes.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/read_bytes.png
+.. |read_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/read_raw_data.png
+.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/readline.png
+.. |readinto.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/readinto.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write.png
+.. |write1.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write1.png
+.. |write_line.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write_line.png
+.. |write_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write_list.png
+.. |write_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write_raw_data.png
+.. |write_raw_data_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/write_raw_data_list.png
+.. |txdone.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/txdone.png
+.. |flush.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/flush.png
+.. |sendbreak.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/sendbreak.png
+
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/rs485/example.png
+
+.. |atoms3r_rs485_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/rs485/atoms3r_rs485_example.m5f2"
+        target="_blank"
+    >
+        atoms3r_rs485_example.m5f2
+    </a>

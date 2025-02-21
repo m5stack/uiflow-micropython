@@ -1,0 +1,252 @@
+Atomic RS485 Base
+==================
+
+.. sku: K045/A131
+
+.. include:: ../refs/base.rs485.ref
+
+AtomRS485 Class provides a set of methods to control the RS485 module. Through the
+UART interface, the module can transmit and receive data, supporting various baud rates
+and flow control configurations.
+
+Support the following products:
+
+    ================== ==================
+    |RS485 Base|        |RS485|
+    ================== ==================
+
+UiFlow2 Example
+---------------
+
+RS485 Example
+^^^^^^^^^^^^^^
+
+Open the |atoms3r_rs485_example.m5f2| project in UiFlow2.
+
+This example demonstrates how to send and receive data using the RS485 module via the UART interface.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+RS485 Example
+^^^^^^^^^^^^^^
+
+This example demonstrates how to send and receive data using the RS485 module via the UART interface.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/base/rs485/atoms3r_rs485_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+**API**
+-------
+
+AtomRS485
+^^^^^^^^^
+
+.. autoclass:: base.rs232.AtomRS485
+    :members:
+
+    .. py:method:: init(baudrate=9600, bits=8, parity=None, stop=1, *, ...)
+
+        Initialize the UART bus with the given parameters.
+
+        :param int baudrate: The clock rate for the UART communication.
+        :param int bits: Number of bits per character (7, 8, or 9).
+        :param int parity: Parity setting, either None, 0 (even), or 1 (odd).
+        :param int stop: Number of stop bits (1 or 2).
+
+        UiFlow2 Code Block:
+
+            |setup.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rs485_0.init(baudrate=115200, bits=8, parity=None, stop=1)
+
+    .. py:method:: deinit()
+
+        Turn off the UART bus.
+
+        UiFlow2 Code Block:
+
+            |deinit.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rs485_0.deinit()
+
+    .. py:method:: any()
+
+        Returns the number of characters that can be read without blocking.
+
+        :return: The number of available bytes.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |any.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rs485_0.any()
+
+    .. py:method:: read([nbytes])
+
+        Read characters from the UART buffer.
+
+        :param int nbytes: The maximum number of bytes to read (optional).
+        :return: A bytes object containing the data read.
+        :rtype: bytes
+
+        UiFlow2 Code Block:
+
+            |read_all.png|
+
+            |read_bytes.png|
+
+            |read_raw_data.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data = rs485_0.read()
+
+    .. py:method:: AtomRS485.readinto(buf[, nbytes])
+
+        Read bytes into the ``buf``. If ``nbytes`` is specified, read at most that many bytes; otherwise, read at most ``len(buf)`` bytes. It may return sooner if a timeout is reached. The timeout is configurable in the constructor.
+
+        :param bytearray buf: The buffer into which the bytes will be read.
+        :param int nbytes: (Optional) The maximum number of bytes to read.
+
+        :return: The number of bytes read and stored into ``buf``, or ``None`` if a timeout occurs.
+        :rtype: int or None
+
+        UiFlow2 Code Block:
+
+            |readinto.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data = bytearray(10)
+                num_bytes = rs485_0.readinto(data)
+                num_bytes = rs485_0.readinto(data, 5)
+
+    .. py:method:: AtomRS485.readline()
+
+        Read a line ending in a newline character. It may return sooner if a timeout is reached. The timeout is configurable in the constructor.
+
+        :return: The line read as bytes, or ``None`` if a timeout occurs.
+        :rtype: bytes or None
+
+        UiFlow2 Code Block:
+
+            |readline.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                line = rs485_0.readline()
+
+
+        .. py:method:: write(buf)
+
+            Write data to the UART interface.
+
+            :param bytes buf: The data to be written.
+            :return: The number of bytes written.
+            :rtype: int
+
+            UiFlow2 Code Block:
+
+                |write.png|
+
+                |write1.png|
+
+                |write_line.png|
+
+                |write_list.png|
+
+                |write_raw_data.png|
+
+                |write_raw_data_list.png|
+
+
+            MicroPython Code Block:
+
+                .. code-block:: python
+
+                    rs485_0.write(b'Hello')
+
+    .. py:method:: AtomRS485.sendbreak()
+
+        Send a break condition on the bus. This drives the bus low for a duration longer than required for a normal transmission of a character.
+
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |sendbreak.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rs485_0.sendbreak()
+
+    .. py:method:: AtomRS485.flush()
+
+        Waits until all data has been sent. In case of a timeout, an exception is raised. The timeout duration depends on the TX buffer size and the baud rate. Unless flow control is enabled, a timeout should not occur.
+
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |flush.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rs485_0.flush()
+
+    .. py:method:: AtomRS485.txdone()
+
+        Check whether all data has been sent or no data transfer is happening. Returns ``True`` if no transmission is ongoing, otherwise returns ``False``.
+
+        :return: ``True`` if no data transfer is happening, otherwise ``False``.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |txdone.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                status = rs485_0.txdone()
+

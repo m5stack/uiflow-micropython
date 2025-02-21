@@ -1,0 +1,373 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 14:29+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/rs485.rst:2 ee290ad7c5ab4d31a73ace6e4ed361f2
+msgid "Atomic RS485 Base"
+msgstr ""
+
+#: ../../en/base/rs485.rst:8 77e37f45632c482882a7fbc3321f406c
+msgid ""
+"AtomRS485 Class provides a set of methods to control the RS485 module. "
+"Through the UART interface, the module can transmit and receive data, "
+"supporting various baud rates and flow control configurations."
+msgstr "AtomRS232 类提供了一套控制 RS232 模块的方法。通过 UART 接口，模块可以发送和接收数据，支持各种波特率和流量控制配置。"
+
+#: ../../en/base/rs485.rst:12 b5707e8a1e814418977bfaa52ef65089
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/rs485.rst:15 79203c030a2d4958bbeb54fe65fc1b69
+msgid "|RS485 Base|"
+msgstr ""
+
+#: ../../en/refs/base.rs485.ref 748e5e5f62444b809023de7ee2cd2352
+msgid "rs485 base"
+msgstr ""
+
+#: ../../en/base/rs485.rst:15 dfbc626f3d174fd6bcb1eec1f94f8aba
+msgid "|RS485|"
+msgstr ""
+
+#: ../../en/refs/base.rs485.ref bd068a159f17448e88a0c6dd1111b70f
+msgid "rs485"
+msgstr ""
+
+#: ../../en/base/rs485.rst:19 16d7ef133227420eb6b13a3cc007361f
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/base/rs485.rst:22 ../../en/base/rs485.rst:40
+#: 65491f14bb3a46c391b0d604e13fb11e
+msgid "RS485 Example"
+msgstr ""
+
+#: ../../en/base/rs485.rst:24 31378ab24c8e4e38a80ad94986c14796
+msgid "Open the |atoms3r_rs485_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3r_rs485_example.m5f2| 项目。"
+
+#: ../../en/base/rs485.rst:26 ../../en/base/rs485.rst:42
+#: ef9c7aad35324241b9b013532c973380
+msgid ""
+"This example demonstrates how to send and receive data using the RS485 "
+"module via the UART interface."
+msgstr "本示例演示如何使用 RS485 模块通过 UART 接口发送/接收数据。"
+
+#: ../../en/base/rs485.rst:28 825c5d300bc54219bb8065c78b5bee82
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/rs485.rst:30 6c8f945daa184240a6abb6a89bdd3989
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs485.ref:31 034b1645bf5249108b1eb1bd3a7f16d7
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
+
+#: ../../en/base/rs485.rst:32 ../../en/base/rs485.rst:50
+#: a6db2056c23e47a299f7cfca81abf8b4
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/rs485.rst:34 ../../en/base/rs485.rst:52
+#: 6c08847deb1b48da9bcc35cf9781a2f9
+msgid "None"
+msgstr ""
+
+#: ../../en/base/rs485.rst:37 a4180fcc09c84b61ba301fd14449f7d6
+msgid "MicroPython Example"
+msgstr "MicroPython 发送应用示例："
+
+#: ../../en/base/rs485.rst:44 d7d3db5e87234a1eb5f448eb399f9f0f
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/rs485.rst:55 da8db4ddeb0b4a61b30b2c17a19227b7
+msgid "**API**"
+msgstr ""
+
+#: ../../en/base/rs485.rst:58 f2106ddacf184824a32066e547ceb69e
+msgid "AtomRS485"
+msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to send"
+#~ " data using the RS485 module via "
+#~ "the UART interface."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据。"
+
+#~ msgid ""
+#~ "This example demonstrates how to receive"
+#~ " data using the RS485 module via "
+#~ "the UART interface."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据。"
+
+#~ msgid ""
+#~ "Read bytes into the ``buf``. If "
+#~ "``nbytes`` is specified, read at most"
+#~ " that many bytes; otherwise, read at"
+#~ " most ``len(buf)`` bytes. It may "
+#~ "return sooner if a timeout is "
+#~ "reached. The timeout is configurable in"
+#~ " the constructor."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "The buffer into which the bytes will be read."
+#~ msgstr ""
+
+#~ msgid "(Optional) The maximum number of bytes to read."
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The number of bytes read and "
+#~ "stored into ``buf``, or ``None`` if "
+#~ "a timeout occurs."
+#~ msgstr ""
+
+#~ msgid "Return type"
+#~ msgstr ""
+
+#~ msgid "|readinto.png|"
+#~ msgstr ""
+
+#~ msgid "readinto.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read a line ending in a newline"
+#~ " character. It may return sooner if"
+#~ " a timeout is reached. The timeout"
+#~ " is configurable in the constructor."
+#~ msgstr ""
+
+#~ msgid "The line read as bytes, or ``None`` if a timeout occurs."
+#~ msgstr ""
+
+#~ msgid "|readline.png|"
+#~ msgstr ""
+
+#~ msgid "readline.png"
+#~ msgstr ""
+
+#~ msgid "Write data to the UART interface."
+#~ msgstr ""
+
+#~ msgid "The data to be written."
+#~ msgstr ""
+
+#~ msgid "The number of bytes written."
+#~ msgstr ""
+
+#~ msgid "|write.png|"
+#~ msgstr ""
+
+#~ msgid "write.png"
+#~ msgstr ""
+
+#~ msgid "|write1.png|"
+#~ msgstr ""
+
+#~ msgid "write1.png"
+#~ msgstr ""
+
+#~ msgid "|write_line.png|"
+#~ msgstr ""
+
+#~ msgid "write_line.png"
+#~ msgstr ""
+
+#~ msgid "|write_list.png|"
+#~ msgstr ""
+
+#~ msgid "write_list.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data_list.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data_list.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Send a break condition on the bus."
+#~ " This drives the bus low for a"
+#~ " duration longer than required for a"
+#~ " normal transmission of a character."
+#~ msgstr ""
+
+#~ msgid "|sendbreak.png|"
+#~ msgstr ""
+
+#~ msgid "sendbreak.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Waits until all data has been "
+#~ "sent. In case of a timeout, an "
+#~ "exception is raised. The timeout "
+#~ "duration depends on the TX buffer "
+#~ "size and the baud rate. Unless "
+#~ "flow control is enabled, a timeout "
+#~ "should not occur."
+#~ msgstr ""
+
+#~ msgid "|flush.png|"
+#~ msgstr ""
+
+#~ msgid "flush.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Check whether all data has been "
+#~ "sent or no data transfer is "
+#~ "happening. Returns ``True`` if no "
+#~ "transmission is ongoing, otherwise returns "
+#~ "``False``."
+#~ msgstr ""
+
+#~ msgid "``True`` if no data transfer is happening, otherwise ``False``."
+#~ msgstr ""
+
+#~ msgid "|txdone.png|"
+#~ msgstr ""
+
+#~ msgid "txdone.png"
+#~ msgstr ""
+
+#~ msgid "jjjjjjj"
+#~ msgstr ""
+
+#~ msgid "Initialize the UART bus with the given parameters."
+#~ msgstr ""
+
+#~ msgid "The clock rate for the UART communication."
+#~ msgstr ""
+
+#~ msgid "Number of bits per character (7, 8, or 9)."
+#~ msgstr ""
+
+#~ msgid "Parity setting, either None, 0 (even), or 1 (odd)."
+#~ msgstr ""
+
+#~ msgid "Number of stop bits (1 or 2)."
+#~ msgstr ""
+
+#~ msgid "|setup.png|"
+#~ msgstr ""
+
+#~ msgid "setup.png"
+#~ msgstr ""
+
+#~ msgid "Turn off the UART bus."
+#~ msgstr ""
+
+#~ msgid "|deinit.png|"
+#~ msgstr ""
+
+#~ msgid "deinit.png"
+#~ msgstr ""
+
+#~ msgid "Returns the number of characters that can be read without blocking."
+#~ msgstr ""
+
+#~ msgid "The number of available bytes."
+#~ msgstr ""
+
+#~ msgid "|any.png|"
+#~ msgstr ""
+
+#~ msgid "any.png"
+#~ msgstr ""
+
+#~ msgid "Read characters from the UART buffer."
+#~ msgstr ""
+
+#~ msgid "The maximum number of bytes to read (optional)."
+#~ msgstr ""
+
+#~ msgid "A bytes object containing the data read."
+#~ msgstr ""
+
+#~ msgid "|read_all.png|"
+#~ msgstr ""
+
+#~ msgid "read_all.png"
+#~ msgstr ""
+
+#~ msgid "|read_bytes.png|"
+#~ msgstr ""
+
+#~ msgid "read_bytes.png"
+#~ msgstr ""
+
+#~ msgid "|read_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "read_raw_data.png"
+#~ msgstr ""
+
+#~ msgid "TX Example"
+#~ msgstr ""
+
+#~ msgid "Open the |core_rs232_tx_example.m5f2| project in UiFlow2."
+#~ msgstr "在 UiFlow2 中打开 |core_rs232_tx_example.m5f2| 项目。"
+
+#~ msgid "|tx_example.png|"
+#~ msgstr ""
+
+#~ msgid "tx_example.png"
+#~ msgstr ""
+
+#~ msgid "RX Example"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to receive"
+#~ " data using the RS232 module via "
+#~ "the UART interface(same as RS485)."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据(与 RS485 相同）。"
+
+#~ msgid "|rx_example.png|"
+#~ msgstr ""
+
+#~ msgid "rx_example.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This example demonstrates how to send"
+#~ " data using the RS232 module via "
+#~ "the UART interface."
+#~ msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据(与 RS485 相同）。"
+

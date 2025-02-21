@@ -1,0 +1,39 @@
+.. |COMX LTE| image:: https://static-cdn.m5stack.com/resource/docs/products/module/comx_lte/comx_lte_01.webp
+    :target: https://docs.m5stack.com/en/module/comx_lte
+    :height: 200px
+    :width: 200px
+
+.. |example_http.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/example_http.png
+.. |example_chat.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/example_chat.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/init.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/deinit.png
+.. |chat.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/chat.png
+.. |chat2.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/chat2.png
+.. |active.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/active.png
+.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/connect.png
+.. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/isconnected.png
+.. |get_localip.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/get_localip.png
+.. |get_subnet.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/get_subnet.png
+.. |get_gateway.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/get_gateway.png
+.. |get_dns.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_lte/get_dns.png
+
+
+.. |core2_lte_chat_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lte/core2_lte_chat_example.m5f2"
+        target="_blank"
+    >
+        core2_lte_chat_example.m5f2
+    </a>
+
+
+.. |core2_lte_http_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lte/core2_lte_http_example.m5f2"
+        target="_blank"
+    >
+        core2_lte_http_example.m5f2
+    </a>
+

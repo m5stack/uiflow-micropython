@@ -1,0 +1,69 @@
+.. |Bala2| image:: https://static-cdn.m5stack.com/resource/docs/products/app/bala2/bala2_01.webp
+    :target: https://docs.m5stack.com/en/app/bala2
+    :height: 200px
+    :width: 200px
+
+.. |Bala2-Fire| image:: https://static-cdn.m5stack.com/resource/docs/products/app/bala2fire/bala2_01.webp
+    :target: https://docs.m5stack.com/en/app/bala2fire
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/init.png
+.. |get_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_encoder_value.png
+.. |get_angle_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_angle_pid.png
+.. |get_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_angle.png
+.. |get_angle_pid_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_angle_pid_target.png
+.. |get_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_speed_pid.png",
+.. |get_speed_pid_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/get_speed_pid_target.png
+.. |start.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/start.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/stop.png
+.. |calibrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/calibrate.png
+.. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_motor_speed.png
+.. |set_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_encoder_value.png
+.. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_servo_angle.png
+.. |set_angle_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_angle_pid.png
+.. |set_angle_pid_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_angle_pid_target.png
+.. |set_speed_pid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_speed_pid.png
+.. |set_speed_pid_target.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_speed_pid_target.png
+.. |set_turn_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/set_turn_speed.png
+
+.. |motor_control_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/motor_control_example.png
+.. |read_encoder_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/read_encoder_example.png
+.. |servo_control_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/servo_control_example.png
+.. |car_control_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/bala2/car_control_example.png
+
+.. |motor_control_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/bala2/motor_control_example.m5f2"
+        target="_blank"
+    >
+        motor_control_example.m5f2
+    </a>
+
+.. |read_encoder_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/bala2/read_encoder_example.m5f2"
+        target="_blank"
+    >
+        read_encoder_example.m5f2
+    </a>
+
+.. |servo_control_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/bala2/servo_control_example.m5f2"
+        target="_blank"
+    >
+        servo_control_example.m5f2
+    </a>
+
+.. |car_control_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/bala2/car_control_example.m5f2"
+        target="_blank"
+    >
+        car_control_example.m5f2
+    </a>

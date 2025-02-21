@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-20 15:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/lte.rst:2 4aacb152b57443bbabb204081cc8644c
+msgid "COMX LTE Module"
+msgstr ""
+
+#: ../../en/module/lte.rst:8 6d8cf62df5774d8386ffaab2e4ac6e75
+msgid ""
+"LTEModule Class provides a set of methods to control the LTE module. "
+"Through the chat script of AT commands, the module is set to PPP mode and"
+" then the data is sent to the Internet through the serial port."
+msgstr "LTEModule Class 提供了一组方法来控制 LTE 模块。通过AT指令的聊天脚本，将模块设为PPP模式，然后通过串口将数据发送到互联网。"
+
+#: ../../en/module/lte.rst:12 a6bff129d4aa43c6821a7194c472f0c8
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/lte.rst:14 a2f8ea99fea148259ee384849b4751e3
+msgid "|COMX LTE|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref 18a43d2d99534ce4915aa9c5e6fcd4c8
+msgid "COMX LTE"
+msgstr ""
+
+#: ../../en/module/lte.rst:18 796dad9c14764edcad793eecdeb78acb
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/module/lte.rst:21 ../../en/module/lte.rst:56
+#: 7e95f928d1754601bc405d58572704f4
+msgid "HTTP GET over LTE"
+msgstr "通过 LTE 进行 HTTP GET"
+
+#: ../../en/module/lte.rst:23 7a049a9fcc9e4eb3880c31197e631360
+msgid "Open the |core2_lte_http_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core2_lte_http_example.m5f2| 项目。"
+
+#: ../../en/module/lte.rst:25 ../../en/module/lte.rst:58
+#: 04cb9eb5238f4121818cc5427e659186
+msgid ""
+"This example demonstrates how to use PPP dial-up on the LTE module and "
+"then use the `requests2` library to send an HTTP GET request."
+msgstr "这个示例演示如何将LTE模块进行PPP拨号，然后使用 `requests2` 库发送HTTP GET请求。"
+
+#: ../../en/module/lte.rst:28 ../../en/module/lte.rst:44
+#: ../../en/module/lte.rst:106 ../../en/module/lte.rst:129
+#: ../../en/module/lte.rst:148 ../../en/module/lte.rst:166
+#: d3447ebb483942e597171d727d2cb2a0 module.lte.LTEModule:8
+#: module.lte.LTEModule.chat:8 module.lte.LTEModule.chat2:6
+#: module.lte.LTEModule.deinit:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/lte.rst:30 20725f57e78a44b4bdfb46a915fe2948
+msgid "|example_http.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:6 b48a27e91dd241f6b6cd2aaee76ba8ca
+msgid "example_http.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:32 ../../en/module/lte.rst:48
+#: ../../en/module/lte.rst:67 ../../en/module/lte.rst:82
+#: c4bf46bbbd974f98926963065ecda0ee
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/lte.rst:34 ../../en/module/lte.rst:50
+#: ../../en/module/lte.rst:69 ../../en/module/lte.rst:84
+#: ../../en/module/lte.rst:127 2e806c8249eb4c5c85003a6349915916
+msgid "None"
+msgstr "无"
+
+#: ../../en/module/lte.rst:38 ../../en/module/lte.rst:72
+#: 7f1bf2f6252a4e4a8ab5b6b935c11f73
+msgid "Chat script"
+msgstr "聊天脚本"
+
+#: ../../en/module/lte.rst:40 7a049a9fcc9e4eb3880c31197e631360
+msgid "Open the |core2_lte_chat_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core2_lte_chat_example.m5f2| 项目。"
+
+#: ../../en/module/lte.rst:42 ../../en/module/lte.rst:74
+#: a7e01f7bee374b48919fe2b6e9c1494d
+msgid "Set the LTE module to PPP mode through a custom AT command chat script."
+msgstr "通过自定义的AT指令聊天脚本，将LTE模块设为PPP模式。"
+
+#: ../../en/module/lte.rst:46 20725f57e78a44b4bdfb46a915fe2948
+msgid "|example_chat.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:7 2bab16edd92c4df0bb0b0ce34683d162
+msgid "example_chat.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:53 101729fda7fb405fa2a00157cfc7fde2
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/lte.rst:61 ../../en/module/lte.rst:76
+#: ../../en/module/lte.rst:110 ../../en/module/lte.rst:133
+#: ../../en/module/lte.rst:152 ../../en/module/lte.rst:176
+#: b6286ff46e0e4c24880ff1feb3b43bf6 module.lte.LTEModule:12
+#: module.lte.LTEModule.chat:12 module.lte.LTEModule.chat2:10
+#: module.lte.LTEModule.deinit:7 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/lte.rst:87 3f8eb646f5ae42f3ad64ab15deed1a23
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/lte.rst:90 a0b18a50b39742b599f034c8cd96b48e
+msgid "LTEModule"
+msgstr ""
+
+#: 0577fc8cc331452296ec4baac7790a9c module.lte.LTEModule:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 05c10f776c1f457fbbe89b2e9e145da5 module.lte.LTEModule:1 of
+msgid "LTE module class."
+msgstr "LTE模块类。"
+
+#: ../../en/module/lte.rst 8dc73955a49b4e5da331892b7f3b0690
+#: module.lte.LTEModule.chat module.lte.LTEModule.chat2 of
+msgid "Parameters"
+msgstr ""
+
+#: c51c572a39f441e09259321c84d943d3 module.lte.LTEModule:3 of
+msgid "UART ID connected to the LTE module."
+msgstr "连接到 LTE 模块的 UART ID。"
+
+#: 9b0928782a324145a3eed55f3d0b79e2 module.lte.LTEModule:4 of
+msgid "Connect to the UART TX pin of the LTE module."
+msgstr "连接到LTE 模块的 UART TX 引脚。"
+
+#: a5fd5caf49f1450bb34b7f9456f78116 module.lte.LTEModule:5 of
+msgid "Connect to the UART RX pin of the LTE module."
+msgstr "连接到LTE 模块的 UART RX 引脚。"
+
+#: 5f48ddf1a37d41ee82838fb8d2743854 module.lte.LTEModule:6 of
+msgid "Whether to print verbose information."
+msgstr "是否打印详细信息。"
+
+#: 20725f57e78a44b4bdfb46a915fe2948 module.lte.LTEModule:10 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:8 e6aff1e1f1174f7fa9a7e3f09d323bd1
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:97 a80750cd662b4f2685a5edb2215b8eee
+msgid ""
+"Activate (“up”) or deactivate (“down”) the network interface, if a "
+"boolean argument is passed. Otherwise, query current state if no argument"
+" is provided."
+msgstr "如果传递了布尔参数，则激活（“up”）或停用（“down”）网络接口。否则，如果未提供参数，则查询当前状态。"
+
+#: ../../en/module/lte.rst:101 09a88c8f41af49a7925c1405677c9f57
+msgid "If True, the LTE module is enabled, if False, the LTE module is disabled."
+msgstr "如果为 True，则启用 LTE 模块，如果为 False，则禁用 LTE 模块。"
+
+#: ../../en/module/lte.rst 0807456aed124498a99481c452e82efa
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/lte.rst:103 e06c8cef8a3949d8a3bb4257570d216c
+msgid "Returns the activation status of the LTE module."
+msgstr "返回 LTE 模块的激活状态。"
+
+#: ../../en/module/lte.rst 4f34f74d223942df8915c881e7bba1ee
+#: module.lte.LTEModule.chat module.lte.LTEModule.chat2
+#: module.lte.LTEModule.deinit of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/lte.rst:108 20725f57e78a44b4bdfb46a915fe2948
+msgid "|active.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:12 bb41736ecf024f499237995da88019f2
+msgid "active.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:121 5ccd3208d2d143af856d6fd84c3c5d79
+msgid "Initiate a PPP connection with the given parameters."
+msgstr "使用给定的参数启动 PPP 连接。"
+
+#: ../../en/module/lte.rst:123 4f70b6d33eb2490b8d93be5555872683
+msgid ""
+"Authentication Mode, either LTEModule.AUTH_NONE, LTEModule.AUTH_PAP, or "
+"LTEModule.AUTH_CHAP."
+msgstr "身份验证模式，LTEModule.AUTH_NONE、LTEModule.AUTH_PAP 或“LTEModule.AUTH_CHAP”。"
+
+#: ../../en/module/lte.rst:124 e938223a13c94c0685383c33701509d9
+msgid "An optional user name to use with the authentication mode."
+msgstr "与身份验证模式一起使用的可选用户名。"
+
+#: ../../en/module/lte.rst:125 515383b418d44751b5e2e109d0d5f3ba
+msgid "An optional password to use with the authentication mode."
+msgstr "与身份验证模式一起使用的可选密码。"
+
+#: ../../en/module/lte.rst:131 20725f57e78a44b4bdfb46a915fe2948
+msgid "|connect.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:13 53aa88b83f9043d682a4586d83d91729
+msgid "connect.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:143 faabdeaa1bce481495bb1ab7b6a7f428
+msgid "Returns True if the PPP link is connected and up. Returns False otherwise."
+msgstr "如果 PPP 链路已连接且正常运行，则返回 True。否则，返回 False。"
+
+#: ../../en/module/lte.rst:145 51555b44e6834549af37c6c44f61054d
+msgid "True if the PPP link is connected and up, False otherwise."
+msgstr "如果 PPP 链路已连接且正常运行，则为 True，否则为 False。"
+
+#: ../../en/module/lte.rst:150 20725f57e78a44b4bdfb46a915fe2948
+msgid "|isconnected.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:14 53aa88b83f9043d682a4586d83d91729
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:160 12104ce706cc4e8d9bb3dcd418836336
+msgid ""
+"Get IP-level network interface parameters: IP address, subnet mask, "
+"gateway and DNS server. This method returns a 4-tuple with the above "
+"information."
+msgstr "获取 IP 级网络接口参数：IP 地址、子网掩码、网关和 DNS 服务器。此方法返回包含上述信息的四元组。"
+
+#: ../../en/module/lte.rst:164 50e7b691824441d3b4248d548c1714ca
+msgid "A 4-tuple with IP address, subnet mask, gateway and DNS server."
+msgstr "包含 IP 地址、子网掩码、网关和 DNS 服务器的四元组。"
+
+#: ../../en/module/lte.rst:168 efe24c67ceba4a669ad9921cfeaa1cff
+msgid "|get_localip.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:15 a6755f9b0e53417b9d23a6512a5f42bd
+msgid "get_localip.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:170 20725f57e78a44b4bdfb46a915fe2948
+msgid "|get_subnet.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:16 25962e434bff4b3e9e7f572f6594c14e
+msgid "get_subnet.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:172 2097551d3fac405589f9c1af5265ef35
+msgid "|get_gateway.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:17 467ff06badac4de4ac1bd9a1a103467f
+msgid "get_gateway.png"
+msgstr ""
+
+#: ../../en/module/lte.rst:174 20725f57e78a44b4bdfb46a915fe2948
+msgid "|get_dns.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:18 ddce203a52b44ccfa57bc2f61b0c4509
+msgid "get_dns.png"
+msgstr ""
+
+#: 1a9fbe51264247eabb21b29f6ad185ae module.lte.LTEModule.chat:1 of
+msgid "Chat with the LTE module."
+msgstr "与 LTE 模块聊天。"
+
+#: 253dc6d8df354066bf7ec517e8b074f3 module.lte.LTEModule.chat:3 of
+msgid ""
+"A tuple of commands to chat with the LTE module. Each command is a tuple "
+"of two elements: the first element is the expect value, and the second "
+"element is the command. For example, ((\"OK\", \"AT\")."
+msgstr "用于与 LTE 模块聊天的命令元组。每个命令都是两个元素的元组：第一个元素是期望值，第二个元素是命令。例如，((\"OK\", \"AT\")。"
+
+#: 20725f57e78a44b4bdfb46a915fe2948 module.lte.LTEModule.chat:10 of
+msgid "|chat.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:10 522f527a5e1a40bab14b4bfcdeec740f
+msgid "chat.png"
+msgstr ""
+
+#: 642588703ff74f6494b74e4e665d446e module.lte.LTEModule.chat2:1 of
+msgid "Chat with the LTE module to establish a PPP connection."
+msgstr "与LTE模块聊天，建立PPP连接。"
+
+#: 5068217482f848c089bd38753320b657 module.lte.LTEModule.chat2:3 of
+msgid "PDP type. For example, \"IP\", \"PPP\", \"IPV4V6\", \"IPV6\"."
+msgstr "PDP 类型。例如，“IP”、“PPP”、“IPV4V6”、“IPV6”。"
+
+#: 513643e841644cbf92cb8aa77eb263be module.lte.LTEModule.chat2:4 of
+msgid "Access Point Name. For example, \"CMNET\"."
+msgstr "接入点名称。例如，“CMNET”。"
+
+#: 20725f57e78a44b4bdfb46a915fe2948 module.lte.LTEModule.chat2:8 of
+msgid "|chat2.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:11 44d06f1cce8140d69bfb6469a1ab48a8
+msgid "chat2.png"
+msgstr ""
+
+#: 85927cb7650e427197b88979ed336ac6 module.lte.LTEModule.deinit:1 of
+msgid "Deinitialize the LTE module."
+msgstr "取消初始化 LTE 模块。"
+
+#: 20725f57e78a44b4bdfb46a915fe2948 module.lte.LTEModule.deinit:5 of
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.lte.ref:9 43df55b83cd847939e6bb719fc9080d0
+msgid "deinit.png"
+msgstr ""
+
+#~ msgid ""
+#~ "LTEModule Class 提供了一组方法来控制 LTE "
+#~ "模块。通过AT指令的聊天脚本，将模块设为PPP模式，然后通过串口将数据发送到互联网。"
+#~ msgstr ""
+
+#~ msgid "|ACCEL|"
+#~ msgstr ""
+
+#~ msgid "Open the |stickcplus2_unit_accel_example.m5f2| project in UiFlow2."
+#~ msgstr ""
+
+#~ msgid "这个示例演示如何将LTE模块进行PPP拨号，然后使用 requests2 库发送HTTP GET请求。"
+#~ msgstr ""
+
+#~ msgid "|example.png|"
+#~ msgstr ""
+
+#~ msgid "chat script"
+#~ msgstr ""
+
+#~ msgid "通过自定义的AT指令聊天脚本，将LTE模块设为PPP模式。"
+#~ msgstr ""
+
+#~ msgid "get accel value"
+#~ msgstr ""
+
+#~ msgid "The RX pin of the LTE module."
+#~ msgstr ""
+
+#~ msgid "Initiate a PPP connection with the given parameters:"
+#~ msgstr ""
+

@@ -127,17 +127,17 @@ Micropython 案例
 
     参数 ``font`` 仅接受以下值：  
 
-    - K5.Lcd.FONTS.ASCII7
-    - K5.Lcd.FONTS.DejaVu9
-    - K5.Lcd.FONTS.DejaVu12
-    - K5.Lcd.FONTS.DejaVu18
-    - K5.Lcd.FONTS.DejaVu24
-    - K5.Lcd.FONTS.DejaVu40
-    - K5.Lcd.FONTS.DejaVu56
-    - K5.Lcd.FONTS.DejaVu72
-    - K5.Lcd.FONTS.EFontCN24
-    - K5.Lcd.FONTS.EFontJA24
-    - K5.Lcd.FONTS.EFontKR24
+    - M5.Lcd.FONTS.ASCII7
+    - M5.Lcd.FONTS.DejaVu9
+    - M5.Lcd.FONTS.DejaVu12
+    - M5.Lcd.FONTS.DejaVu18
+    - M5.Lcd.FONTS.DejaVu24
+    - M5.Lcd.FONTS.DejaVu40
+    - M5.Lcd.FONTS.DejaVu56
+    - M5.Lcd.FONTS.DejaVu72
+    - M5.Lcd.FONTS.EFontCN24
+    - M5.Lcd.FONTS.EFontJA24
+    - M5.Lcd.FONTS.EFontKR24
 
 .. function:: Display.setTextColor(fgcolor: int = 0, bgcolor: int = 0)
 

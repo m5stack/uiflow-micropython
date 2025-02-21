@@ -6,10 +6,12 @@ from . import mbus
 
 _attrs = {
     "AIN4Module": "ain4",
+    "Bala2Module": "bala2",
     "DisplayModule": "display",
     "DMX512Module": "dmx",
     "DualKmeterModule": "dual_kmeter",
     "Encoder4MotorModule": "encoder4_motor",
+    "FanModule": "fan",
     "GNSSModule": "gnss",
     "GPSModule": "gps",
     "GPSV2Module": "gpsv2",
@@ -19,8 +21,10 @@ _attrs = {
     "IotBaseCatmModule": "iot_base_catm",
     "LlmModule": "llm",
     "LoraModule": "lora",
+    "LoRaSx1262Module": "lora_sx1262",
     "LoRaWANModule": "lorawan",
     "LoRaWAN868Module": "lorawan868",
+    "LTEModule": "lte",
     "Module4In8Out": "module_4in8out",
     "NBIOTModule": "nbiot",
     "ODriveModule": "odrive",

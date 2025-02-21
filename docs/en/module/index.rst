@@ -6,9 +6,11 @@ Module
 
     4in8out.rst
     ain4.rst
+    bala2.rst
     display.rst
     dmx.rst
     dualkmeter.rst
+    fan.rst
     gnss.rst
     gps.rst
     gpsv2.rst
@@ -17,7 +19,9 @@ Module
     hmi.rst
     llm.rst
     lora.rst
+    lora_sx1262.rst
     lorawan868.rst
+    lte.rst
     nbiot.rst
     odrive.rst
     plus.rst

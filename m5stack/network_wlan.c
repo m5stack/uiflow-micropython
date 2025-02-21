@@ -113,6 +113,20 @@ static void network_wlan_wifi_event_handler(void *event_handler_arg, esp_event_b
                     // AP may not exist, or it may have momentarily dropped out; try to reconnect.
                     message = "no AP found";
                     break;
+                #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 2, 0)
+                case WIFI_REASON_NO_AP_FOUND_IN_RSSI_THRESHOLD:
+                    // No AP with RSSI within given threshold exists, or it may have momentarily dropped out; try to reconnect.
+                    message = "no AP with RSSI within threshold found";
+                    break;
+                case WIFI_REASON_NO_AP_FOUND_IN_AUTHMODE_THRESHOLD:
+                    // No AP with authmode within given threshold exists, or it may have momentarily dropped out; try to reconnect.
+                    message = "no AP with authmode within threshold found";
+                    break;
+                case WIFI_REASON_NO_AP_FOUND_W_COMPATIBLE_SECURITY:
+                    // No AP with compatible security exists, or it may have momentarily dropped out; try to reconnect.
+                    message = "no AP with compatible security found";
+                    break;
+                #endif
                 case WIFI_REASON_AUTH_FAIL:
                     // Password may be wrong, or it just failed to connect; try to reconnect.
                     message = "authentication failed";
@@ -353,6 +367,14 @@ static mp_obj_t network_wlan_status(size_t n_args, const mp_obj_t *args) {
                 return MP_OBJ_NEW_SMALL_INT(STAT_GOT_IP);
             } else if (wifi_sta_disconn_reason == WIFI_REASON_NO_AP_FOUND) {
                 return MP_OBJ_NEW_SMALL_INT(WIFI_REASON_NO_AP_FOUND);
+            #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 2, 0)
+            } else if (wifi_sta_disconn_reason == WIFI_REASON_NO_AP_FOUND_IN_RSSI_THRESHOLD) {
+                return MP_OBJ_NEW_SMALL_INT(WIFI_REASON_NO_AP_FOUND_IN_RSSI_THRESHOLD);
+            } else if (wifi_sta_disconn_reason == WIFI_REASON_NO_AP_FOUND_IN_AUTHMODE_THRESHOLD) {
+                return MP_OBJ_NEW_SMALL_INT(WIFI_REASON_NO_AP_FOUND_IN_AUTHMODE_THRESHOLD);
+            } else if (wifi_sta_disconn_reason == WIFI_REASON_NO_AP_FOUND_W_COMPATIBLE_SECURITY) {
+                return MP_OBJ_NEW_SMALL_INT(WIFI_REASON_NO_AP_FOUND_W_COMPATIBLE_SECURITY);
+            #endif
             } else if ((wifi_sta_disconn_reason == WIFI_REASON_AUTH_FAIL) || (wifi_sta_disconn_reason == WIFI_REASON_CONNECTION_FAIL)) {
                 // wrong password
                 return MP_OBJ_NEW_SMALL_INT(WIFI_REASON_AUTH_FAIL);
@@ -618,7 +640,7 @@ static mp_obj_t network_wlan_config(size_t n_args, const mp_obj_t *args, mp_map_
         case MP_QSTR_essid:
             switch (self->if_id) {
                 case ESP_IF_WIFI_STA:
-                    val = mp_obj_new_str((char *)cfg.sta.ssid, strlen((char *)cfg.sta.ssid));
+                    val = mp_obj_new_str_from_cstr((char *)cfg.sta.ssid);
                     break;
                 case ESP_IF_WIFI_AP:
                     val = mp_obj_new_str((char *)cfg.ap.ssid, cfg.ap.ssid_len);
@@ -706,8 +728,23 @@ static const mp_rom_map_elem_t wlan_if_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_isconnected), MP_ROM_PTR(&network_wlan_isconnected_obj) },
     { MP_ROM_QSTR(MP_QSTR_config), MP_ROM_PTR(&network_wlan_config_obj) },
     { MP_ROM_QSTR(MP_QSTR_ifconfig), MP_ROM_PTR(&esp_network_ifconfig_obj) },
-
+    { MP_ROM_QSTR(MP_QSTR_ipconfig), MP_ROM_PTR(&esp_nic_ipconfig_obj) },
+    { MP_ROM_QSTR(MP_QSTR_set_default), MP_ROM_PTR(&esp_nic_set_default_obj) },
     // Constants
+    { MP_ROM_QSTR(MP_QSTR_IF_STA), MP_ROM_INT(WIFI_IF_STA)},
+    { MP_ROM_QSTR(MP_QSTR_IF_AP), MP_ROM_INT(WIFI_IF_AP)},
+
+    { MP_ROM_QSTR(MP_QSTR_SEC_OPEN), MP_ROM_INT(WIFI_AUTH_OPEN) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WEP), MP_ROM_INT(WIFI_AUTH_WEP) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA), MP_ROM_INT(WIFI_AUTH_WPA_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA2), MP_ROM_INT(WIFI_AUTH_WPA2_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA_WPA2), MP_ROM_INT(WIFI_AUTH_WPA_WPA2_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA2_ENT), MP_ROM_INT(WIFI_AUTH_WPA2_ENTERPRISE) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA3), MP_ROM_INT(WIFI_AUTH_WPA3_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WPA2_WPA3), MP_ROM_INT(WIFI_AUTH_WPA2_WPA3_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_WAPI), MP_ROM_INT(WIFI_AUTH_WAPI_PSK) },
+    { MP_ROM_QSTR(MP_QSTR_SEC_OWE), MP_ROM_INT(WIFI_AUTH_OWE) },
+
     { MP_ROM_QSTR(MP_QSTR_PM_NONE), MP_ROM_INT(WIFI_PS_NONE) },
     { MP_ROM_QSTR(MP_QSTR_PM_PERFORMANCE), MP_ROM_INT(WIFI_PS_MIN_MODEM) },
     { MP_ROM_QSTR(MP_QSTR_PM_POWERSAVE), MP_ROM_INT(WIFI_PS_MAX_MODEM) },

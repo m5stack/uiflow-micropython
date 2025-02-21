@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import os, sys, io
 import M5
 from M5 import *

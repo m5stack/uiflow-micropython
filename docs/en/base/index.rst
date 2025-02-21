@@ -8,4 +8,6 @@ Base
     atom_socket.rst
     echo.rst
     motion.rst
+    rs232.rst
+    rs485.rst
     speaker.rst

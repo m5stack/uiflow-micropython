@@ -148,7 +148,7 @@ Methods
 
     Sets a new I2C address for the AIN 4-20mA module.
 
-    :param int addr: The new I2C address, must be between 0x08 and 0x78.
+    :param int addr: The new I2C address, must be between 0x08 and 0x77.
 
     UIFLOW2:
 
