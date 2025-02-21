@@ -5,11 +5,10 @@
 import struct
 from micropython import const
 from module.mbus import i2c1
-from pid import PIDController
-from imu import AttitudeEstimator
-from driver.mpu6886 import MPU6886
+import pid
+import attitude_estimator
 from driver import mpu6886
-from machine import Timer
+import machine
 
 
 REG_MTR1_CTRL = const(0x00)  # motor 1 control register
@@ -44,13 +43,13 @@ class Bala2Module:
         # imu
         if 0x68 not in self.i2c.scan():
             raise RuntimeError("MPU6886 not found")
-        self.sensor = MPU6886(
+        self.sensor = mpu6886.MPU6886(
             self.i2c,
             accel_fs=mpu6886.ACCEL_FS_SEL_4G,
             gyro_fs=mpu6886.GYRO_FS_SEL_1000DPS,
             gyro_sf=mpu6886.SF_DEG_S,
         )
-        self.imu = AttitudeEstimator()
+        self.imu = attitude_estimator.AttitudeEstimator()
         # PID controller
         self.pid_angle_kp = 30
         self.pid_angle_ki = 0
@@ -60,7 +59,7 @@ class Bala2Module:
         self.pid_speed_ki = 0.18
         self.pid_speed_kd = 0
         self.pid_speed_target = 0
-        self.pid_angle = PIDController(
+        self.pid_angle = pid.PIDController(
             kp=self.pid_angle_kp,
             ki=self.pid_angle_ki,
             kd=self.pid_angle_kd,
@@ -68,7 +67,7 @@ class Bala2Module:
             direction=1,
         )
         self.pid_angle.set_output_limits(-1023, 1023)
-        self.pid_speed = PIDController(
+        self.pid_speed = pid.PIDController(
             kp=self.pid_speed_kp,
             ki=self.pid_speed_ki,
             kd=self.pid_speed_kd,
@@ -78,7 +77,7 @@ class Bala2Module:
         self.pid_speed.set_integral_limits(-80, 80)
         self.pid_speed.set_output_limits(-1023, 1023)
         # others
-        self.timer = Timer(timer_id)
+        self.timer = machine.Timer(timer_id)
         self.dt = 0.01
         self.motor_speed = 0
         self.prev_enc = 0
@@ -273,7 +272,7 @@ class Bala2Module:
                 module_bala2_0.start()
         """
         self.timer.init(
-            period=int(self.dt * 1000), mode=Timer.PERIODIC, callback=self._balance_task
+            period=int(self.dt * 1000), mode=machine.Timer.PERIODIC, callback=self._balance_task
         )
 
     def stop(self) -> None:
