@@ -8,6 +8,8 @@ _attrs = {
     "ATOMEchoBase": "echo",
     "Motion": "motion",
     "MotionBase": "motion",
+    "AtomRS232": "rs232",
+    "AtomRS485": "rs232",
     "SpeakerBase": "speaker",
 }
 

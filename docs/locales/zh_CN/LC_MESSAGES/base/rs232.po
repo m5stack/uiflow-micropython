@@ -1,0 +1,812 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-21 09:36+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/rs232.rst:2 135c17c32ac843bf9dd6b06ce3895ea0
+msgid "Atomic RS232 Base"
+msgstr ""
+
+#: ../../en/base/rs232.rst:8 4233d78ca0e0433893efa33512bdc2b8
+msgid ""
+"AtomRS232 Class provides a set of methods to control the RS232 module. "
+"Through the UART interface, the module can transmit and receive data, "
+"supporting various baud rates and flow control configurations."
+msgstr "AtomRS232 类提供了一套控制 RS232 模块的方法。通过 UART 接口，模块可以发送和接收数据，支持各种波特率和流量控制配置。"
+
+#: ../../en/base/rs232.rst:12 87d53608bc7c4e46b1b625047efdab99
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/rs232.rst:15 0943dc507dd14a25827df2746daedba2
+msgid "|RS232 Base|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref 97b952ccf2294c6a92130b392b804816
+msgid "rs232 base"
+msgstr ""
+
+#: ../../en/base/rs232.rst:15 a113bab64c4a4873b0c99f41df3e3a0a
+msgid "|RS232|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref 9db684bdc8a145f9ba2f7aec2ff94752
+msgid "rs232"
+msgstr ""
+
+#: ../../en/base/rs232.rst:19 cdc03eed24984089b671f4806dcc346c
+#, fuzzy
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 发送应用示例："
+
+#: ../../en/base/rs232.rst:22 ../../en/base/rs232.rst:55
+#: 967eb5c91d6f481a9225fd454dfba080
+#, fuzzy
+msgid "TX Example"
+msgstr "UIFLOW2 发送应用示例："
+
+#: ../../en/base/rs232.rst:24 0cf6b50ebf6340809cd2d965ded41147
+msgid "Open the |core_rs232_tx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core_rs232_tx_example.m5f2| 项目。"
+
+#: ../../en/base/rs232.rst:26 ../../en/base/rs232.rst:57
+#: 8af23849bdc840c1888fbe7952b4b368
+msgid ""
+"This example demonstrates how to send data using the RS232 module via the"
+" UART interface."
+msgstr "本示例演示如何使用 RS232 模块通过 UART 接口发送数据。"
+
+#: ../../en/base/rs232.rst:28 ../../en/base/rs232.rst:43
+#: ../../en/base/rs232.rst:102 ../../en/base/rs232.rst:116
+#: ../../en/base/rs232.rst:133 ../../en/base/rs232.rst:151
+#: ../../en/base/rs232.rst:175 ../../en/base/rs232.rst:194
+#: ../../en/base/rs232.rst:213 ../../en/base/rs232.rst:240
+#: ../../en/base/rs232.rst:256 ../../en/base/rs232.rst:273
+#: 72048a685bff4511b4c1b9fbd8a27bca
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/rs232.rst:30 8f6b7a9a7abf42cab340e558ffc1c7d9
+msgid "|tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:30 4908176535b54b87964d4af1512f5f03
+msgid "tx_example.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:32 ../../en/base/rs232.rst:47
+#: ../../en/base/rs232.rst:65 ../../en/base/rs232.rst:80
+#: aa5e725ec8f14ef4995961b0b9512a17
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/rs232.rst:34 ../../en/base/rs232.rst:49
+#: ../../en/base/rs232.rst:67 ../../en/base/rs232.rst:82
+#: ../../en/base/rs232.rst:238 ../../en/base/rs232.rst:254
+#: 22b013f3d801454ea777cf774588374d 29fcdbddba164919a62bde3f838b33b0
+msgid "None"
+msgstr ""
+
+#: ../../en/base/rs232.rst:37 ../../en/base/rs232.rst:70
+#: b0544e7b25d94d52afc7fab317d46118
+#, fuzzy
+msgid "RX Example"
+msgstr ""
+
+#: ../../en/base/rs232.rst:39 786c873493d84a31af9d9f6558d08c1b
+msgid "Open the |cores3_rs232_rx_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/base/rs232.rst:41 ../../en/base/rs232.rst:72
+#: e5df7d1b29994863ae4cf4737a43f21e
+msgid ""
+"This example demonstrates how to receive data using the RS232 module via "
+"the UART interface."
+msgstr "本示例演示如何使用 RS232 模块通过 UART 接口接收数据。"
+
+#: ../../en/base/rs232.rst:45 0ea2597613a7457e932b028915551ee9
+msgid "|rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:41 87d35dbe78de470388dd3272c1143a6b
+msgid "rx_example.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:52 66ca640ce1c647b7b06e7e62cd2f531b
+#, fuzzy
+msgid "MicroPython Example"
+msgstr "MicroPython 发送应用示例："
+
+#: ../../en/base/rs232.rst:59 ../../en/base/rs232.rst:74
+#: ../../en/base/rs232.rst:106 ../../en/base/rs232.rst:120
+#: ../../en/base/rs232.rst:137 ../../en/base/rs232.rst:159
+#: ../../en/base/rs232.rst:179 ../../en/base/rs232.rst:198
+#: ../../en/base/rs232.rst:228 ../../en/base/rs232.rst:244
+#: ../../en/base/rs232.rst:260 ../../en/base/rs232.rst:277
+#: 268d9cdb328a4ffabea46464c613c9e1
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/rs232.rst:85 092bb9e3aa0543e9a7ea97547055ebba
+#, fuzzy
+msgid "**API**"
+msgstr ""
+
+#: ../../en/base/rs232.rst:88 a113bab64c4a4873b0c99f41df3e3a0a
+msgid "AtomRS232"
+msgstr ""
+
+#: 993b135c71bb47a4a3932442a0b05476 base.rs232.AtomRS232:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../en/base/rs232.rst:95 840321e2bf1c40c49a6bbb1ed0b738dd
+msgid "Initialize the UART bus with the given parameters."
+msgstr "使用给定参数初始化 UART 总线。"
+
+#: ../../en/base/rs232.rst aca514b2e8024b6f9ad4acaf84008d3b
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/base/rs232.rst:97 ba0be74269d240538fd5e33f3ab5da35
+msgid "The clock rate for the UART communication."
+msgstr "UART 通信的时钟频率。"
+
+#: ../../en/base/rs232.rst:98 b77d4db775f24f6a8dd50ca90ffca048
+msgid "Number of bits per character (7, 8, or 9)."
+msgstr "每个字符的位数（7、8 或 9）。"
+
+#: ../../en/base/rs232.rst:99 ae1fe6360ec8484e860204a83193f800
+msgid "Parity setting, either None, 0 (even), or 1 (odd)."
+msgstr "奇偶校验设置，无、0（偶）或 1（奇）。"
+
+#: ../../en/base/rs232.rst:100 cdf4c37273264e25a9aa9b0a97b9cc27
+msgid "Number of stop bits (1 or 2)."
+msgstr "停止位数（1 或 2）。"
+
+#: ../../en/base/rs232.rst:104 7902e8a00e194fff8b4afd48356e6125
+msgid "|setup.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:14 87a7ee84dcc34298a2324f566418ad49
+msgid "setup.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:114 63dcd1a376a44cab92746655b63e480e
+msgid "Turn off the UART bus."
+msgstr "关闭 UART 总线。"
+
+#: ../../en/base/rs232.rst:118 d68d9874150d4177955d9c5f5274388e
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:13 7342b96fe47b4219817288330b4bec13
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:128 2f6b5faa28974509b6a6100eeee7a7c9
+msgid "Returns the number of characters that can be read without blocking."
+msgstr "返回无阻塞情况下可读取的字符数。"
+
+#: ../../en/base/rs232.rst 3539850b316b4e348daf3731c2a6a676
+msgid "Returns"
+msgstr ""
+
+#: ../../en/base/rs232.rst:130 16e9660a5103408a9255bb823af0bbc7
+msgid "The number of available bytes."
+msgstr "可用字节数。"
+
+#: ../../en/base/rs232.rst 9b61f9411318471a8719fabc5ceb82e6
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/base/rs232.rst:135 387f18fc3f4d449e8047033ccf0daaa4
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:12 2aa4bcbe177f4211b83aadd122f33471
+msgid "any.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:145 76692197f71b4a2c9bd372782a27e988
+msgid "Read characters from the UART buffer."
+msgstr "从 UART 缓冲器读取字符。"
+
+#: ../../en/base/rs232.rst:147 f0976cea078449ad93c2c6b87feb9b00
+msgid "The maximum number of bytes to read (optional)."
+msgstr "要读取的最大字节数（可选）。"
+
+#: ../../en/base/rs232.rst:148 042f024ec66747568cac78ae56277d91
+msgid "A bytes object containing the data read."
+msgstr "包含已读取数据的字节对象。"
+
+#: ../../en/base/rs232.rst:153 7070f0b3acee44a8942a7d5fd2c205e1
+msgid "|read_all.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:15 9dbfa7f5628c48709d6076a8cf12cd5c
+msgid "read_all.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:155 e5b5b3d43aca473da57e1b377eca0e0c
+msgid "|read_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:16 1b9dfa4eb74d4215b5e5c820458320f8
+msgid "read_bytes.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:157 129cee011f4f4c109b21d42147b9106f
+msgid "|read_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:17 1ad81acac9944ad5b0ad9cb09f152047
+msgid "read_raw_data.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:167 599b1ff9184047e080f5fbf910d2fc37
+msgid ""
+"Read bytes into the ``buf``. If ``nbytes`` is specified, read at most "
+"that many bytes; otherwise, read at most ``len(buf)`` bytes. It may "
+"return sooner if a timeout is reached. The timeout is configurable in the"
+" constructor."
+msgstr ""
+"向 ``buf`` 中读取字节。如果指定了 ``nbytes`` 字节，则最多读取这么多字节；否则，最多读取 ``len(buf)`` "
+"字节。如果超时，可能会提前返回。超时可在构造函数中配置。"
+
+#: ../../en/base/rs232.rst:169 c6b68349bf90496d9c9cba5148bafc9f
+msgid "The buffer into which the bytes will be read."
+msgstr "读取字节的缓冲区。"
+
+#: ../../en/base/rs232.rst:170 eabcda3d89db4c71a68d62b467499cae
+msgid "(Optional) The maximum number of bytes to read."
+msgstr "(可选）要读取的最大字节数。"
+
+#: ../../en/base/rs232.rst:172 d23e7b1361144fe4bad6841a6ee6086e
+msgid ""
+"The number of bytes read and stored into ``buf``, or ``None`` if a "
+"timeout occurs."
+msgstr "读取并存储到 ``buf`` 中的字节数，如果超时则为 ``None``。"
+
+#: ../../en/base/rs232.rst:177 c8c71cff9a52474ea2bbff03564a8887
+msgid "|readinto.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:19 4d0564d8805d4e53ae2f9150c10bfe76
+msgid "readinto.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:189 7abbffb04afc46558260b768ca2a4efd
+msgid ""
+"Read a line ending in a newline character. It may return sooner if a "
+"timeout is reached. The timeout is configurable in the constructor."
+msgstr "读取以换行符结束的一行。如果超时，可能会提前返回。超时可在构造函数中配置。"
+
+#: ../../en/base/rs232.rst:191 5041453a0707443595deef19fb03e55e
+msgid "The line read as bytes, or ``None`` if a timeout occurs."
+msgstr "读取的行以字节为单位，如果超时则返回 ``无``。"
+
+#: ../../en/base/rs232.rst:196 f7dda01752b54aacbe99955a778c1b6c
+msgid "|readline.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:18 841aea45d58348758902eadf6dcea611
+msgid "readline.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:207 cb649176cf644a20bbce4c3104695913
+msgid "Write data to the UART interface."
+msgstr "向 UART 接口写入数据。"
+
+#: ../../en/base/rs232.rst:209 1954d804f0394d7cab3b7358d0e1587b
+msgid "The data to be written."
+msgstr "要写入的数据。"
+
+#: ../../en/base/rs232.rst:210 baaefb77e90046e4bdb593be8ce30fb7
+msgid "The number of bytes written."
+msgstr "写入的字节数。"
+
+#: ../../en/base/rs232.rst:215 96fb6ac9980042e7bc55bd00a3b48a36
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:20 a6ce6f24f7514d4385d11c684e5a2c6b
+msgid "write.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:217 7020b2a6d2cb4abca305a21a23c0b857
+msgid "|write1.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:21 cc62711b37b54771a429f7c557e9e8e8
+msgid "write1.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:219 f2150629c2554da4b5f79a50aabd246e
+msgid "|write_line.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:22 09bb6b5bcd464a4587cf5aa4296783c3
+msgid "write_line.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:221 90279961510d4b3a9c9dcbfcf43e8285
+msgid "|write_list.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:23 a2fa2f90e1f54f22ac644977eb5a7eda
+msgid "write_list.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:223 5ab8c1b38d1a45a3880e8e257b0ebd53
+msgid "|write_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:24 c22bdeedf60b4cac811e9475f3c9c68d
+msgid "write_raw_data.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:225 34b64a77c8fa4adeab4fd4f5951a5aa0
+msgid "|write_raw_data_list.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:25 e6e1685f4a704207a7538723d5d9be0d
+msgid "write_raw_data_list.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:236 30fcfdbc5bdd4d35b5349bd5d506bbd3
+msgid ""
+"Send a break condition on the bus. This drives the bus low for a duration"
+" longer than required for a normal transmission of a character."
+msgstr "在总线上发送中断条件。这将使总线处于低电平，持续时间长于正常传输一个字符所需的时间。"
+
+#: ../../en/base/rs232.rst:242 5809c52f2924453983d4ab6c070cae4b
+msgid "|sendbreak.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:28 91af8acd14ca4636a2175e14445a235c
+msgid "sendbreak.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:252 a6a0524295624c0bafcfb19299341da7
+msgid ""
+"Waits until all data has been sent. In case of a timeout, an exception is"
+" raised. The timeout duration depends on the TX buffer size and the baud "
+"rate. Unless flow control is enabled, a timeout should not occur."
+msgstr "等待所有数据发送完毕。如果超时，则会出现异常。超时持续时间取决于发送缓冲区大小和波特率。除非启用了流量控制，否则不应发生超时。"
+
+#: ../../en/base/rs232.rst:258 d37b5c9a9d1a43799c3b2d1958dda9b6
+msgid "|flush.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:27 7490f5f043574e1c8e96b2993a472f40
+msgid "flush.png"
+msgstr ""
+
+#: ../../en/base/rs232.rst:268 ab53f7190b894f9a86abe5615030bd70
+msgid ""
+"Check whether all data has been sent or no data transfer is happening. "
+"Returns ``True`` if no transmission is ongoing, otherwise returns "
+"``False``."
+msgstr "检查是否所有数据都已发送或没有数据传输。如果没有传输正在进行，则返回 ``True`` ，否则返回 ``False`` 。"
+
+#: ../../en/base/rs232.rst:270 0b4e2d8693624b78b9f6265d92364b0f
+msgid "``True`` if no data transfer is happening, otherwise ``False``."
+msgstr "如果没有数据传输，则返回 ``True``，否则返回 ``False``。"
+
+#: ../../en/base/rs232.rst:275 505990b65f0c4c73b60e7bdea942bcfc
+msgid "|txdone.png|"
+msgstr ""
+
+#: ../../en/refs/base.rs232.ref:26 da7124ac73b84ea2aaa60b83f877402c
+msgid "txdone.png"
+msgstr ""
+
+#~ msgid ""
+#~ "poll = select.poll() poll.register(uart, "
+#~ "select.POLLIN) poll.poll(timeout)"
+#~ msgstr ""
+
+#~ msgid "返回值：写入的字节数或超时时的 “无”。"
+#~ msgstr ""
+
+#~ msgid "|rs232|"
+#~ msgstr ""
+
+#~ msgid "rs232"
+#~ msgstr ""
+
+#~ msgid "|rs232 base|"
+#~ msgstr ""
+
+#~ msgid "Micropython RX Example:"
+#~ msgstr "MicroPython 接收应用示例："
+
+#~ msgid "|core_rs232_tx_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "|cores3_rs232_rx_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "class AtomRS232"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "Construct a UART object of the given id."
+#~ msgstr "根据给定的 id 构建 UART 对象。"
+
+#~ msgid "For more parameters, please refer to init."
+#~ msgstr "有关更多参数，请参阅初始设置。"
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "|init.png|"
+#~ msgstr ""
+
+#~ msgid "init.png"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "Initialise the UART bus with the given parameters:"
+#~ msgstr "使用给定参数初始化 UART 总线："
+
+#~ msgid "*baudrate* is the clock rate."
+#~ msgstr "*baudrate* 是时钟频率"
+
+#~ msgid "*bits* is the number of bits per character, 7, 8 or 9."
+#~ msgstr "*bits* 是每个字符的位数，7、8 或 9。"
+
+#~ msgid "*parity* is the parity, ``None``, 0 (even) or 1 (odd)."
+#~ msgstr "*parity* 是奇偶校验，“无”、0（偶）或 1（奇）。"
+
+#~ msgid "*stop* is the number of stop bits, 1 or 2."
+#~ msgstr "*stop* 是停止位的位数，1 或 2。"
+
+#~ msgid "Additional keyword-only parameters that may be supported by a port are:"
+#~ msgstr "端口可能支持的其他关键字参数包括"
+
+#~ msgid "*tx* specifies the TX pin to use."
+#~ msgstr "*tx* 指定要使用的 TX 引脚。"
+
+#~ msgid "*rx* specifies the RX pin to use."
+#~ msgstr "*rx* 指定要使用的 RX 引脚。"
+
+#~ msgid ""
+#~ "*rts* specifies the RTS (output) pin "
+#~ "to use for hardware receive flow "
+#~ "control."
+#~ msgstr "*rts* 指定用于硬件接收流量控制的 RTS（输出）引脚。"
+
+#~ msgid ""
+#~ "*cts* specifies the CTS (input) pin "
+#~ "to use for hardware transmit flow "
+#~ "control."
+#~ msgstr "*cts* 指定用于硬件传输流控制的 CTS（输入）引脚。"
+
+#~ msgid "*txbuf* specifies the length in characters of the TX buffer."
+#~ msgstr "*txbuf* 指定 TX 缓冲区的长度（以字符为单位）。"
+
+#~ msgid "*rxbuf* specifies the length in characters of the RX buffer."
+#~ msgstr "*rxbuf* 指定 RX 缓冲区的长度（以字符为单位）。"
+
+#~ msgid "*timeout* specifies the time to wait for the first character (in ms)."
+#~ msgstr "*timeout* 指定等待第一个字符的时间（以毫秒为单位）"
+
+#~ msgid "*timeout_char* specifies the time to wait between characters (in ms)."
+#~ msgstr "*timeout_char* 指定字符之间的等待时间（以毫秒为单位）。"
+
+#~ msgid "*invert* specifies which lines to invert."
+#~ msgstr "*invert* 指定要反转的行。"
+
+#~ msgid "``0`` will not invert lines (idle state of both lines is logic high)."
+#~ msgstr "``0`` 不反转线路（两条线路的空闲状态均为逻辑高电平）。"
+
+#~ msgid ""
+#~ "``AtomRS232.INV_TX`` will invert TX line "
+#~ "(idle state of TX line now logic"
+#~ " low)."
+#~ msgstr "``AtomRS232.INV_TX`` 将反转 TX 线路（TX 线路的空闲状态现在为逻辑低电平）。"
+
+#~ msgid ""
+#~ "``AtomRS232.INV_RX`` will invert RX line "
+#~ "(idle state of RX line now logic"
+#~ " low)."
+#~ msgstr "``AtomRS232.INV_RX`` 将反转 RX 线路（RX 线路的空闲状态现在为逻辑低电平）。\""
+
+#~ msgid ""
+#~ "``AtomRS232.INV_TX | AtomRS232.INV_RX`` will "
+#~ "invert both lines (idle state at "
+#~ "logic low)."
+#~ msgstr "``AtomRS232.INV_TX | AtomRS232.INV_RX`` 将反转两条线路（空闲状态为逻辑低电平）。"
+
+#~ msgid ""
+#~ "*flow* specifies which hardware flow "
+#~ "control signals to use. The value "
+#~ "is a bitmask."
+#~ msgstr "*flow* 指定要使用的硬件流量控制信号。该值是一个位掩码。"
+
+#~ msgid "``0`` will ignore hardware flow control signals."
+#~ msgstr " ``0`` 将忽略硬件流量控制信号。"
+
+#~ msgid ""
+#~ "``AtomRS232.RTS`` will enable receive flow "
+#~ "control by using the RTS output "
+#~ "pin to signal if the receive FIFO"
+#~ " has sufficient space to accept more"
+#~ " data."
+#~ msgstr "``AtomRS232.RTS`` 将启用接收流控制，方法是使用 RTS 输出引脚来指示接收 FIFO 是否有足够的空间接收更多数据。"
+
+#~ msgid ""
+#~ "``AtomRS232.CTS`` will enable transmit flow"
+#~ " control by pausing transmission when "
+#~ "the CTS input pin signals that the"
+#~ " receiver is running low on buffer"
+#~ " space."
+#~ msgstr "``AtomRS232.CTS`` 将在 CTS 输入引脚发出接收器缓冲空间不足的信号时暂停传输，从而启用传输流控制。"
+
+#~ msgid ""
+#~ "``AtomRS232.RTS | AtomRS232.CTS`` will enable"
+#~ " both, for full hardware flow "
+#~ "control."
+#~ msgstr "``AtomRS232.RTS | AtomRS232.CTS`` 将同时启用这两个功能，实现完全的硬件流量控制。"
+
+#~ msgid ""
+#~ "It is possible to call ``init()`` "
+#~ "multiple times on the same object "
+#~ "in order to reconfigure  UART on "
+#~ "the fly. That allows using single "
+#~ "UART peripheral to serve different "
+#~ "devices attached to different GPIO pins."
+#~ " Only one device can be served "
+#~ "at a time in that case. Also "
+#~ "do not call ``deinit()`` as it "
+#~ "will prevent calling ``init()`` again."
+#~ msgstr ""
+#~ "可以在同一个对象上多次调用 ``init()``，以便在 UART 上重新配置。 "
+#~ "以即时重新配置 UART。这样就可以使用单个 UART  外设为连接到不同 GPIO "
+#~ "引脚的不同设备提供服务。 在这种情况下，一次只能为一个设备提供服务。也不要调用  "
+#~ "``deinit()``，因为它会阻止再次调用 ``init()``。"
+
+#~ msgid "|setup.png|"
+#~ msgstr ""
+
+#~ msgid "setup.png"
+#~ msgstr ""
+
+#~ msgid "Turn off the UART bus."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You will not be able to call "
+#~ "``init()`` on the object after "
+#~ "``deinit()``. A new instance needs to"
+#~ " be created in that case."
+#~ msgstr "在 ``deinit()`` 之后，将无法对对象调用 ``init()`` 。在这种情况下，需要创建一个新实例。"
+
+#~ msgid "|deinit.png|"
+#~ msgstr ""
+
+#~ msgid "deinit.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Returns an integer counting the number"
+#~ " of characters that can be read "
+#~ "without blocking.  It will return 0 "
+#~ "if there are no characters available "
+#~ "and a positive number if there are"
+#~ " characters.  The method may return 1"
+#~ " even if there is more than one"
+#~ " character available for reading."
+#~ msgstr ""
+#~ "返回一个整数，表示在不阻塞的情况下可读取的字符数。 如果没有可用字符，则返回 0；如果有可用字符，则返回正数。"
+#~ " 即使有多个字符可供读取，该方法也可能返回 1。"
+
+#~ msgid "|any.png|"
+#~ msgstr ""
+
+#~ msgid "any.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read characters.  If ``nbytes`` is "
+#~ "specified then read at most that "
+#~ "many bytes, otherwise read as much "
+#~ "data as possible. It may return "
+#~ "sooner if a timeout is reached. "
+#~ "The timeout is configurable in the "
+#~ "constructor."
+#~ msgstr ""
+#~ "读取字符。 如果指定了 ``nbytes`` "
+#~ "，则最多读取这么多字节，否则读取尽可能多的数据。如果超时，可能会提前返回。超时时间可在构造函数中配置。"
+
+#~ msgid ""
+#~ "Return value: a bytes object containing"
+#~ " the bytes read in.  Returns ``None``"
+#~ " on timeout."
+#~ msgstr "返回值：包含读入字节的字节对象。 超时时返回 ``无``。"
+
+#~ msgid "|read_all.png|"
+#~ msgstr ""
+
+#~ msgid "read_all.png"
+#~ msgstr ""
+
+#~ msgid "|read_bytes.png|"
+#~ msgstr ""
+
+#~ msgid "read_bytes.png"
+#~ msgstr ""
+
+#~ msgid "|read_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "read_raw_data.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read bytes into the ``buf``.  If "
+#~ "``nbytes`` is specified then read at "
+#~ "most that many bytes.  Otherwise, read"
+#~ " at most ``len(buf)`` bytes. It may"
+#~ " return sooner if a timeout is "
+#~ "reached. The timeout is configurable in"
+#~ " the constructor."
+#~ msgstr ""
+#~ "向 ``buf`` 中读入字节。如果指定了 ``nbytes``，则最多读取这么多字节。 "
+#~ "否则，最多读取 ``len(buf)`` 字节。如果超时，可能会提前返回。超时可在构造函数中配置。"
+
+#~ msgid ""
+#~ "Return value: number of bytes read "
+#~ "and stored into ``buf`` or ``None`` "
+#~ "on timeout."
+#~ msgstr "返回值：读取并存储到 ``buf`` 的字节数，超时则为 ``None`` 。"
+
+#~ msgid "|readinto.png|"
+#~ msgstr ""
+
+#~ msgid "readinto.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read a line, ending in a newline"
+#~ " character. It may return sooner if"
+#~ " a timeout is reached. The timeout"
+#~ " is configurable in the constructor."
+#~ msgstr "读取一行，以换行符结束。如果超时，可能会提前返回。超时时间可在构造函数中配置。"
+
+#~ msgid "Return value: the line read or ``None`` on timeout."
+#~ msgstr "返回值：读取的行或超时时的 “无”。"
+
+#~ msgid "|readline.png|"
+#~ msgstr ""
+
+#~ msgid "readline.png"
+#~ msgstr ""
+
+#~ msgid "Write the buffer of bytes to the bus."
+#~ msgstr "将字节缓冲区写入总线。"
+
+#~ msgid "Return value: number of bytes written or ``None`` on timeout."
+#~ msgstr "返回值：读取并存储到 ``buf`` 的字节数，超时则为 ``None`` 。"
+
+#~ msgid "|write.png|"
+#~ msgstr ""
+
+#~ msgid "write.png"
+#~ msgstr ""
+
+#~ msgid "|write1.png|"
+#~ msgstr ""
+
+#~ msgid "write1.png"
+#~ msgstr ""
+
+#~ msgid "|write_line.png|"
+#~ msgstr ""
+
+#~ msgid "write_line.png"
+#~ msgstr ""
+
+#~ msgid "|write_list.png|"
+#~ msgstr ""
+
+#~ msgid "write_list.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data.png"
+#~ msgstr ""
+
+#~ msgid "|write_raw_data_list.png|"
+#~ msgstr ""
+
+#~ msgid "write_raw_data_list.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Send a break condition on the bus."
+#~ " This drives the bus low for a"
+#~ " duration longer than required for a"
+#~ " normal transmission of a character."
+#~ msgstr "在总线上发送中断条件。这将使总线处于低电平，持续时间超过正常传输一个字符所需的时间。"
+
+#~ msgid "|sendbreak.png|"
+#~ msgstr ""
+
+#~ msgid "sendbreak.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Waits until all data has been "
+#~ "sent. In case of a timeout, an "
+#~ "exception is raised. The timeout "
+#~ "duration depends on the tx buffer "
+#~ "size and the baud rate. Unless "
+#~ "flow control is enabled, a timeout "
+#~ "should not occur."
+#~ msgstr "等待所有数据发送完毕。如果超时，则会出现异常。超时持续时间取决于发送缓冲区大小和波特率。除非启用了流量控制，否则不应发生超时。"
+
+#~ msgid ""
+#~ "For the rp2, esp8266 and nrf ports"
+#~ " the call returns while the last "
+#~ "byte is sent. If required, a one"
+#~ " character wait time has to be "
+#~ "added in the calling script."
+#~ msgstr "对于 rp2、esp8266 和 nrf 端口，调用在发送最后一个字节时返回。如果需要，必须在调用脚本中添加一个字符的等待时间。"
+
+#~ msgid "|flush.png|"
+#~ msgstr ""
+
+#~ msgid "flush.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tells whether all data has been "
+#~ "sent or no data transfer is "
+#~ "happening. In this case, it returns "
+#~ "``True``. If a data transmission is "
+#~ "ongoing it returns ``False``."
+#~ msgstr "说明是否所有数据都已发送或没有数据传输。在这种情况下，它返回 ``True``。如果数据传输正在进行，则返回 ``假``。"
+
+#~ msgid ""
+#~ "For the rp2, esp8266 and nrf ports"
+#~ " the call may return ``True`` even"
+#~ " if the last byte of a transfer"
+#~ " is still being sent. If required,"
+#~ " a one character wait time has "
+#~ "to be added in the calling script."
+#~ msgstr ""
+#~ "对于 rp2、esp8266 和 nrf "
+#~ "端口，即使传输的最后一个字节仍在发送，调用也可能返回 ``真``。如果需要，必须在调用脚本中添加一个字符的等待时间。"
+
+#~ msgid "|txdone.png|"
+#~ msgstr ""
+
+#~ msgid "txdone.png"
+#~ msgstr ""
+
