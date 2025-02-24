@@ -6,6 +6,7 @@ Base
 
     atom_can.rst
     atom_socket.rst
+    display.rst
     echo.rst
     motion.rst
     rs232.rst

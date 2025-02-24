@@ -6,6 +6,7 @@ _attrs = {
     "ATOMCANBase": "atom_can",
     "ATOMSocketBase": "atom_socket",
     "ATOMEchoBase": "echo",
+    "AtomicDisplayBase": "display",
     "Motion": "motion",
     "MotionBase": "motion",
     "AtomRS232": "rs232",
