@@ -1,89 +1,62 @@
 ATOM CAN Base
 ==============
 
+.. sku: A103/KO57
+
 .. include:: ../refs/base.can.ref
 
-The following products are supported:
+This is the driver library for the ATOM CAN Base to accept and send data from the CAN module.
+
+Support the following products:
 
     ================== ==================
     |Atom CAN|         |Atomic CAN Base|
     ================== ==================
 
 
-Micropython TX Example:
+UiFlow2 Example
+---------------
 
-    .. literalinclude:: ../../../examples/unit/can/stickc_plus2_can_tx_example.py
+CAN communication
+^^^^^^^^^^^^^^^^^
+
+Open the |atoms3_can_example.m5f2| project in UiFlow2.
+
+This example shows how to receive and send data using the Atom CAN Base.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    Output of received CAN message data via serial port.
+
+MicroPython Example
+-------------------
+
+CAN communication
+^^^^^^^^^^^^^^^^^^
+
+This example shows how to receive and send data using the Atom CAN Base.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/base/can/atoms3_can_example.py
         :language: python
         :linenos:
 
+Example output:
 
-Micropython RX Example:
+    Output of received CAN message data via serial port.
 
-    .. literalinclude:: ../../../examples/unit/can/dial_can_rx_example.py
-        :language: python
-        :linenos:
+**API**
+-------
 
+ATOMCANBase
+^^^^^^^^^^^
 
-UIFLOW2 TX Example:
-
-    |tx_example.png|
-
-
-UIFLOW2 RX Example:
-
-    |rx_example.png|
-
-
-.. only:: builder_html
-
-    |stickc_plus2_can_tx_example.m5f2|
-
-    |dial_can_rx_example.m5f2|
-
-class ATOMCANBase
------------------
-
-Constructors
-------------
-
-.. class:: ATOMCANBase(id, tx, rx, mode, baudrate)
-
-    Create an ATOMCANBase object.
-
-    parameter is:
-
-        - ``id`` is the ID of the CAN bus
-        - ``tx`` is the pin to use for transmitting data
-        - ``rx`` is the pin to use for receiving data
-        - ``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY
-        - ``baudrate`` is the baudrate of ATOMCANBase
-
-    UIFLOW2:
-
-        |init.png|
-
-.. class:: ATOMCANBase(id, tx, rx, mode, prescaler, sjw, bs1, bs2, triple_sampling=False)
-    :no-index:
-    
-    Initialise the CAN bus with the given parameters:
-
-        - ``id`` is the ID of the CAN bus
-        - ``tx`` is the pin to use for transmitting data
-        - ``rx`` is the pin to use for receiving data
-        - ``mode`` is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY
-        - ``prescaler`` is the value by which the CAN input clock is divided to generate the
-          nominal bit time quanta. The prescaler can be a value between 1 and 1024 inclusive
-          for classic CAN.
-        - ``sjw`` is the resynchronisation jump width in units of time quanta for nominal bits;
-          it can be a value between 1 and 4 inclusive for classic CAN.
-        - ``bs1`` defines the location of the sample point in units of the time quanta for nominal bits;
-          it can be a value between 1 and 16 inclusive for classic CAN.
-        - ``bs2`` defines the location of the transmit point in units of the time quanta for nominal bits;
-          it can be a value between 1 and 8 inclusive for classic CAN.
-        - ``triple_sampling`` is Enables triple sampling when the TWAI controller samples a bit
-
-    UIFLOW2:
-
-        |init_advanced.png|
+.. autoclass:: base.atom_can.ATOMCANBase
+    :members:
 
 ATOMCANBase class inherits CAN class, See :ref:`hardware.CAN <hardware.CAN>` for more details.

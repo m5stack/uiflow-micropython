@@ -12,6 +12,7 @@ import time
 
 
 title0 = None
+label3 = None
 label0 = None
 label1 = None
 label2 = None
@@ -21,20 +22,21 @@ rs485_0 = None
 
 
 def setup():
-    global title0, label0, label1, label2, pwrcan_0, pwrcan_1, rs485_0
+    global title0, label3, label0, label1, label2, pwrcan_0, pwrcan_1, rs485_0
 
     M5.begin()
     Widgets.fillScreen(0x222222)
     title0 = Widgets.Title(
         "PwrCANModule CoreS3 Example", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18
     )
+    label3 = Widgets.Label("CAN Rec:", 0, 95, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label0 = Widgets.Label(
-        "CAN Message State: ", 2, 65, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18
+        "CAN Message State: ", 0, 49, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18
     )
     label1 = Widgets.Label(
-        "RS485 Message State: ", 2, 118, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18
+        "RS485 Message State: ", 0, 138, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18
     )
-    label2 = Widgets.Label("RS485 Rec:", 2, 171, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
+    label2 = Widgets.Label("RS485 Rec:", 0, 179, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
     pwrcan_0 = PwrCANModule(0, 17, 18, PwrCANModule.NORMAL, baudrate=1000000)
     pwrcan_1 = PwrCANModuleRS485(1, baudrate=115200, bits=8, parity=None, stop=1, tx=13, rx=7)
@@ -55,7 +57,7 @@ def setup():
 
 
 def loop():
-    global title0, label0, label1, label2, pwrcan_0, pwrcan_1, rs485_0
+    global title0, label3, label0, label1, label2, pwrcan_0, pwrcan_1, rs485_0
     M5.update()
     if M5.Touch.getCount():
         pwrcan_0.send("uiflow2", 0, timeout=0, rtr=False, extframe=False)
@@ -66,6 +68,8 @@ def loop():
     else:
         label0.setText(str("CAN Message State: Not Send"))
         label1.setText(str("RS485 Message State: Not Send"))
+    if pwrcan_0.any(0):
+        label3.setText(str((str("CAN Rec:") + str((pwrcan_0.recv(0, timeout=5000))))))
     if rs485_0.any():
         label2.setText(str((str("RS485 Rec:") + str((rs485_0.read())))))
 

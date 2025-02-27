@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -7,10 +7,30 @@ import sys
 
 if sys.platform != "esp32":
     from typing import Literal
-from micropython import const
 
 
 class ATOMCANBase(m5can.CAN):
+    """Create an ATOMCANBase object
+
+    :param int id: The CAN ID to use, Default is 0.
+    :param port: A list or tuple containing the TX and RX pin numbers.
+    :type port: list | tuple
+    :param int mode: The CAN mode to use(NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY), Default is NORMAL.
+    :param int baudrate: The baudrate to use, Default is 1000000.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from base import ATOMCANBase
+
+            base_can = ATOMCANBase(0, (6, 5), ATOMCANBase.NORMAL, baudrate=1000000)
+    """
+
     _timing_table = {
         # prescaler, sjw, bs1, bs2, triple_sampling
         25000: (128, 3, 16, 8, False),
