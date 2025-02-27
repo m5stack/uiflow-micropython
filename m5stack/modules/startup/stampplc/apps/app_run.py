@@ -103,7 +103,8 @@ class RunApp(app_base.AppBase):
 
     def _handle_run_once(self, fw):
         execfile("main.py", {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        # raise KeyboardInterrupt
+        raise KeyboardInterrupt
 
     def _handle_run_always(self, fw):
         nvs = esp32.NVS("uiflow")

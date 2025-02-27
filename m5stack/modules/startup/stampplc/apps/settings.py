@@ -366,7 +366,7 @@ class BootScreenSetting(app_base.AppBase):
         self._menu_label = widgets.Label(
             "Boot Screen",
             14,
-            103,
+            27,
             w=155,
             h=22,
             font_align=widgets.Label.LEFT_ALIGNED,
@@ -376,17 +376,17 @@ class BootScreenSetting(app_base.AppBase):
         )
 
         self._option_img = widgets.Image(use_sprite=False)
-        self._option_img.set_pos(193, 106)
+        self._option_img.set_pos(193, 30)
         self._option_img.set_size(30, 14)
         self._option_img.set_src(self._boot_options.get(self._option))
 
     def on_ready(self):
-        M5.Lcd.drawImage(res.CARD_228x32_SELECT_IMG, 6, 98)
+        M5.Lcd.drawImage(res.CARD_228x32_SELECT_IMG, 6, 22)
         self._menu_label.set_text("Boot Screen")
         self._option_img.set_src(self._boot_options.get(self._option))
 
     def on_hide(self):
-        M5.Lcd.drawImage(res.CARD_228x32_UNSELECT_IMG, 6, 98)
+        M5.Lcd.drawImage(res.CARD_228x32_UNSELECT_IMG, 6, 22)
         self._menu_label.set_text("Boot Screen")
         self._option_img.set_src(self._boot_options.get(self._option))
 
@@ -502,8 +502,8 @@ class BrightnessSettingApp(app_base.AppBase):
 class GeneralSettingApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
         self._menus = (
-            BrightnessSettingApp(None),
-            BatteryChargeSetting(None),
+            # BrightnessSettingApp(None),
+            # BatteryChargeSetting(None),
             BootScreenSetting(None),
         )
         self._menu_selector = app_base.AppSelector(self._menus)

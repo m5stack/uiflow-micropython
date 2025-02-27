@@ -136,7 +136,7 @@ class RunApp(AppBase):
     def on_ready(self):
         M5.Lcd.clear()
         execfile("main.py", {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
 
 class ListApp(AppBase):
@@ -284,7 +284,7 @@ class ListApp(AppBase):
         # print("_keycode_enter_event_handler")
         M5.Lcd.clear()
         execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
     async def _keycode_back_event_handler(self, fw):
         # print("_keycode_back_event_handler")

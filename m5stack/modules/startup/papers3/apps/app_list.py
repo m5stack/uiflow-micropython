@@ -183,7 +183,7 @@ class ListApp(app_base.AppBase):
             return
         print("run %d, %s" % (self._file_pos, self._files[self._file_pos]))
         execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
     async def _click_event_handler(self, x, y, fw):
         # print("_click_event_handler")

@@ -75,7 +75,7 @@ class RunApp(app_base.AppBase):
     async def _btnb_event_handler(self, fw):
         # print("_btnb_event_handler")
         execfile("main.py", {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
     async def _btnc_event_handler(self, fw):
         # print("_btnc_event_handler")
