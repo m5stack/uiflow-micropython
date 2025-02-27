@@ -7,7 +7,7 @@ import M5
 import machine
 
 
-def _plc_closure():
+def _plc_closure() -> tuple:
     aw = None
 
     def _aw9523_init():
@@ -44,6 +44,11 @@ def _plc_closure():
             super().__init__(pid)
 
         def get_status(self) -> bool:
+            """Get the status of the digital input.
+
+            :returns: The status of the digital input.
+            :rtype: bool
+            """
             return bool(self.value())
 
     class Relay(aw9523.Pin):
@@ -65,7 +70,20 @@ def _plc_closure():
             super().__init__(pid, mode=aw9523.Pin.OUT)
 
         def get_status(self) -> bool:
+            """Get the status of the relay.
+
+            :returns: The status of the relay.
+            :rtype: bool
+            """
             return bool(self.value())
+
+        def set_status(self, status: bool) -> None:
+            """Set the status of the relay.
+
+            :param status: The status to set.
+            :type status: bool
+            """
+            self.value(int(status))
 
     return DigitalInput, Relay
 

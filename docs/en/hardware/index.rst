@@ -12,6 +12,7 @@ Hardware
     ir.rst
     mic.rst
     pin.rst
+    plcio.rst
     rotary.rst
     scd40.rst
     sen55.rst

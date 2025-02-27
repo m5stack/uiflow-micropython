@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-06 10:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/plcio.relay.rst:2 ../../en/hardware/plcio.relay.rst:49
+#: 017c98f3232343d0b3fae8a95899ff4e 99959cc0d6d646b69180e852844c99fc
+msgid "Relay"
+msgstr "继电器"
+
+#: ../../en/hardware/plcio.relay.rst:6 dc504ec739f14cb19f47df30ffed2523
+msgid "Relay is used to control the relay of host devices."
+msgstr "继电器用于控制主机设备的继电器。"
+
+#: ../../en/hardware/plcio.relay.rst:10 38714b866941483a9b12a86c364d2281
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/hardware/plcio.relay.rst:13 ../../en/hardware/plcio.relay.rst:32
+#: 49205aff822e4eea9a80b95265e8cda6 c86c5288a65f417aa6760eedc69bd3e8
+msgid "Relay control"
+msgstr "继电器控制"
+
+#: ../../en/hardware/plcio.relay.rst:15 d4be0fe8a7bb4c7fa28218baaba9255a
+msgid "Open the |stamplc_relay_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stamplc_relay_example.m5f2| 项目。"
+
+#: ../../en/hardware/plcio.relay.rst:17 ../../en/hardware/plcio.relay.rst:34
+#: c09536753f614b938b80d31ef31a70b3 c7ee37f9cf5b48278c1a60ecc61db49a
+msgid ""
+"This example demonstrates how to use a button to control the state of a "
+"relay and display the relay's state value on the screen."
+msgstr "此示例演示如何使用按钮控制继电器的状态并在屏幕上显示继电器的状态值。"
+
+#: ../../en/hardware/plcio.relay.rst:19 ../../en/hardware/plcio.relay.rst:57
+#: ../../en/hardware/plcio.relay.rst:74 ../../en/hardware/plcio.relay.rst:89
+#: ../../en/hardware/plcio.relay.rst:107 ../../en/hardware/plcio.relay.rst:128
+#: ../../en/hardware/plcio.relay.rst:144 24f25354d1a746e7bb9dea8fe2630a7b
+#: 313ecca88b514d7596655aeccb931148 4a7f9be5d3de48f28ab49ffe5c8037e2
+#: 96b9de97aae947f1ad9ae11ec8628a07 ac59ce327e364f198003146289392aa3
+#: d5bd8e192f594675b71a3041f3fa187e f0f939a787c44f6b840117c9e4ddd919
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/plcio.relay.rst:21 4e95f0910f04415dbf13c2dca06395e8
+msgid "|stamplc_relay_example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:9 9f914dc0d46a4aa0b4851f09b8d5b76f
+msgid "stamplc_relay_example.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:23 ../../en/hardware/plcio.relay.rst:40
+#: 37276d8b1eea48ff9671f1394a6d5515 dd529c4b0eb340ac92bfe154d1466717
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/plcio.relay.rst:25 ../../en/hardware/plcio.relay.rst:42
+#: 2c028c32691d424ca727dcbc35feebc8 e826ef2e029c4ca99090f2c3dedabd31
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:29 dccbee68ec924d9eb4f87413bc71806d
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/hardware/plcio.relay.rst:36 ../../en/hardware/plcio.relay.rst:61
+#: ../../en/hardware/plcio.relay.rst:78 ../../en/hardware/plcio.relay.rst:93
+#: ../../en/hardware/plcio.relay.rst:113 ../../en/hardware/plcio.relay.rst:132
+#: ../../en/hardware/plcio.relay.rst:148 07c3be7d0ae34cef8b5d8f91bcf048fe
+#: 22f1ebc5d2f7436486ff19ddec7e4607 6e9616c05e66432487474c92b059f6a1
+#: 7f13610992cb4f04bfbf1159fe9a1204 aa81383362944cfb8f2da67114bdd54e
+#: ab64b2b128fa485d822d3ee5221a3dda eac2f362ba4f45f8a2f290588e69cd33
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/plcio.relay.rst:46 56751e3c471c4112b16fe8458314f5ea
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/hardware/plcio.relay.rst:53 495846c580054ad28aae049105679336
+msgid "Initialize a relay object."
+msgstr "初始化继电器对象。"
+
+#: ../../en/hardware/plcio.relay.rst 01446ad343d74e8aa5408abdbd647fb1
+#: e44b312621174e1d88343a387841ed1d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:55 149eb84bad914f36a952f70cbfb1a351
+msgid "The ID of the relay. The range of ID is 1-4."
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:59 272fd6a488674f9c9617b3c8f35d3590
+msgid "|init.png|"
+msgstr "继电器的ID，范围是1-4。"
+
+#: ../../en/refs/hardware.plcio.relay.ref:1 0e895f1f3122436d98539ebbaa5515a9
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:72 141ba922734346b5ba4169a08f62536b
+msgid "Turn on the relay."
+msgstr "打开继电器"
+
+#: ../../en/hardware/plcio.relay.rst:76 c64c165987014bc79be991c0bb8eb475
+msgid "|on.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:5 fc8542786cd24edf866e2f02d465e7e4
+msgid "on.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:87 384a0c5c24874e0b93b32031a9aa9fd1
+msgid "Turn off the relay."
+msgstr "关闭继电器"
+
+#: ../../en/hardware/plcio.relay.rst:91 5d1e8e6a1d414ee99e52f06d6bb08de3
+msgid "|off.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:6 f55d80d8d5e14e82ab0e2720733ce1f3
+msgid "off.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:102 f4865a4b20c74713a7d6fe7672fd5cfb
+msgid "Get the value of the relay."
+msgstr "获取继电器的值。"
+
+#: ../../en/hardware/plcio.relay.rst 3cb2b200839d4e13bd00002ff05818fc
+#: bd238be89ac643839571f30716c76823
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:104 8eab1940bb58451f87f021ac04a93d68
+msgid "The value of the relay."
+msgstr "继电器的值。"
+
+#: ../../en/hardware/plcio.relay.rst f485a34f8a4845f3925b9ae708739b35
+#: fedd384e775949a5b9987962e2e4808c
+msgid "Return type"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:109 1b3f9f9f1a9849a8b758bcef29c7482c
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:3 3812f2c2a2584f2c90ea1e4d15f627ce
+msgid "set_value.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:111 0889e1ae5d5a4fa79758a62356b394eb
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:4 d973b1e12a834a9b9e182b32d4c992d7
+msgid "get_value.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:123 f0540bc59bad447586178bd2fc83112b
+msgid "Get the status of the relay."
+msgstr "获取继电器的状态。"
+
+#: ../../en/hardware/plcio.relay.rst:125 ../../en/hardware/plcio.relay.rst:142
+#: 30ef1f85da644442b61c5c641ebd334f f42aee7d36ca47c89d913c7ff5c08303
+msgid "The status of the relay."
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:130 abbf0c16f9b44299b984821c1a5a8697
+msgid "|get_status.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:2 5a0a6538e8534b99af01d62d0e4292a1
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.relay.rst:140 9cd99d5a9ece41a682e50b20d3cab431
+msgid "Set the status of the relay."
+msgstr "设置继电器的状态。"
+
+#: ../../en/hardware/plcio.relay.rst:146 7963bc94d1554d9bbbcb7eef8d7ddcf8
+msgid "|set_status.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.relay.ref:7 0e5cde2d26e748deb58ae5fc50acba83
+msgid "set_status.png"
+msgstr ""
+
