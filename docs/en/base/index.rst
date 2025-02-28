@@ -10,6 +10,7 @@ Base
     display.rst
     echo.rst
     motion.rst
+    pwm.rst
     rs232.rst
     rs485.rst
     speaker.rst

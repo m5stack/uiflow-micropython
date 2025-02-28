@@ -10,6 +10,7 @@ _attrs = {
     "AtomicDisplayBase": "display",
     "Motion": "motion",
     "MotionBase": "motion",
+    "AtomicPWMBase": "pwm",
     "AtomRS232": "rs232",
     "AtomRS485": "rs232",
     "SpeakerBase": "speaker",

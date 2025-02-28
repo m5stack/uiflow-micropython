@@ -11,6 +11,7 @@ package(
         "display.py",
         "echo.py",
         "motion.py",
+        "pwm.py",
         "rs232.py",
         "speaker.py",
     ),

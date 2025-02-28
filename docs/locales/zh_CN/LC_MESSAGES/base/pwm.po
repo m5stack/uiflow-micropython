@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-28 16:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/pwm.rst:2 ../../en/refs/base.pwm.ref
+#: 0876ab4fd3e940c7b82bd832d4ba3308 548a69ca56a540569155b9316264af97
+msgid "Atomic PWM Base"
+msgstr ""
+
+#: ../../en/base/pwm.rst:8 92bfaa40a9b04d36a769f44ba3c4bea7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/pwm.rst:10 a496fff97cef4c768c74ed600abbbabc
+msgid "|Atomic PWM Base|"
+msgstr ""
+
+#: ../../en/base/pwm.rst:13 46938817d9b84a71b96bc32e3bd7553d
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/base/pwm.rst:16 ../../en/base/pwm.rst:34
+#: 3e199a247af44f9faa041697a660911b 7888abfc326f460ab216e8968af33a5b
+msgid "PWM output control"
+msgstr "PWM 输出控制"
+
+#: ../../en/base/pwm.rst:18 9dd8a2f593b14d9089c36198cb5b5b88
+msgid "Open the |atoms3r_pwm_base_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3r_pwm_base_example.m5f2| 项目。"
+
+#: ../../en/base/pwm.rst:20 ../../en/base/pwm.rst:36
+#: 4417d327dae84d96a6468ede0d8154f1 87fc646aa72e4f5b9bc54649bcb83907
+msgid ""
+"The example demonstrates controlling the PWM signal's duty cycle to "
+"fluctuate between low to high and high to low."
+msgstr "案例演示控制 PWM 信号的占空比在低到高、高到低之间来回变化。"
+
+#: ../../en/base/pwm.rst:22 5307632988264414a34893165de87511
+#: a942fa30dd94448d9a09384d84f4617d base.pwm.AtomicPWMBase:6
+#: base.pwm.AtomicPWMBase.get_duty_u16:6 base.pwm.AtomicPWMBase.get_freq:6
+#: base.pwm.AtomicPWMBase.set_duty_u16:7 base.pwm.AtomicPWMBase.set_freq:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/pwm.rst:24 38d7a31959f146e5848b679a3df541ed
+msgid "|atoms3r_pwm_base_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:11 27d1a81d3b0446328b7744e4ef7cd3f5
+msgid "atoms3r_pwm_base_example.png"
+msgstr ""
+
+#: ../../en/base/pwm.rst:26 ../../en/base/pwm.rst:44
+#: 4c87c95931394de6b7b569cc8686efce
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/pwm.rst:28 ../../en/base/pwm.rst:46
+#: f685493c1eeb4c5990c1f710564f0bfa
+msgid "None"
+msgstr "无"
+
+#: ../../en/base/pwm.rst:31 fd82b33aece7497db669c84eb8fadf5d
+msgid "MicroPython Example:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/base/pwm.rst:38 base.pwm.AtomicPWMBase:10
+#: base.pwm.AtomicPWMBase.get_duty_u16:10 base.pwm.AtomicPWMBase.get_freq:10
+#: base.pwm.AtomicPWMBase.set_duty_u16:11 base.pwm.AtomicPWMBase.set_freq:9
+#: e9a19c5c3d2748179266f9bb573d51b8 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/pwm.rst:49 967e4e9affff4eca9c9d98145b16da77
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/base/pwm.rst:52 6ca490616e40434fa891d3be5a6c27c4
+msgid "PWM"
+msgstr ""
+
+#: 1fb73946edf74f7794d39bd556580dba base.pwm.AtomicPWMBase:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 6af683623f664437bde8c2a156f5a3c3 base.pwm.AtomicPWMBase:1 of
+#, fuzzy
+msgid "Create an AtomicPWMBase object."
+msgstr "创建一个 PWM 对象。"
+
+#: ../../en/base/pwm.rst 0a4fb099859949868a6ddab4e9e6d55b
+#: base.pwm.AtomicPWMBase.set_duty_u16 base.pwm.AtomicPWMBase.set_freq of
+msgid "Parameters"
+msgstr ""
+
+#: base.pwm.AtomicPWMBase:3 dbf8b30697e94fe4992d5b8e002dd567 of
+msgid "The PWM output pin. Default is 5."
+msgstr "PWM 输出引脚，默认为 5。"
+
+#: base.pwm.AtomicPWMBase:4 base.pwm.AtomicPWMBase.set_freq:3
+#: bcb660b0adcf4ade8ec1eabe346d4996 of
+msgid "The PWM frequency. Default is 1000."
+msgstr "PWM 频率，默认为 1000Hz。"
+
+#: base.pwm.AtomicPWMBase:8 ce498f1d593f41d8b9bd127ce56b9ea6 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:6 b28d99097448446e9f42d2a43cfe79f7
+msgid "init.png"
+msgstr ""
+
+#: 4d59bbe1c9b0422296ea436fc19e1ba4 base.pwm.AtomicPWMBase.get_duty_u16:1 of
+msgid "Get PWM duty cycle."
+msgstr "获取 PWM 占空比。"
+
+#: base.pwm.AtomicPWMBase.get_duty_u16 base.pwm.AtomicPWMBase.get_freq
+#: c09f6a9753994a3f9368322271d57900 of
+msgid "Returns"
+msgstr ""
+
+#: b5b85015c853491aae6625205a651322 base.pwm.AtomicPWMBase.get_duty_u16:3 of
+msgid "PWM duty cycle. Range: 0~65535."
+msgstr "PWM 占空比，范围：0~65535。"
+
+#: 15cbf308e80743619ff2606c17a8c2db base.pwm.AtomicPWMBase.get_duty_u16
+#: base.pwm.AtomicPWMBase.get_freq base.pwm.AtomicPWMBase.set_freq of
+msgid "Return type"
+msgstr ""
+
+#: 3f9877b5d96f41109e1d72dfc6019a52 base.pwm.AtomicPWMBase.get_duty_u16:8 of
+msgid "|get_duty_u16.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:10 9fc6724ff36b48338db1f1e0fa0d60e8
+msgid "get_duty_u16.png"
+msgstr ""
+
+#: 299803f28eed4662955275b1aa73637e base.pwm.AtomicPWMBase.get_freq:1 of
+msgid "Get PWM frequency."
+msgstr "获取 PWM 频率。"
+
+#: 4ff2ae14e9464faf8da446b4ffaffd53 base.pwm.AtomicPWMBase.get_freq:3 of
+msgid "PWM frequency."
+msgstr "PWM 频率。"
+
+#: base.pwm.AtomicPWMBase.get_freq:8 f1bac7901be0439ab122d972265b0b4b of
+msgid "|get_freq.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:8 46fb35ebcf9542fdb12fab102b5e45a1
+msgid "get_freq.png"
+msgstr ""
+
+#: base.pwm.AtomicPWMBase.set_duty_u16:1 cd1ef69fe46b4c3c94f6a5d73fccf421 of
+msgid "Set PWM duty cycle."
+msgstr "设置 PWM 占空比。"
+
+#: 8e0b3dc036b24f5fa48ef47550638007 base.pwm.AtomicPWMBase.set_duty_u16:3 of
+msgid ""
+"set the current duty cycle of the PWM output, as an unsigned 16-bit value"
+" in the range 0 to 65535 inclusive."
+msgstr "设置 PWM 输出的当前占空比，作为无符号 16 位值，范围为 0 到 65535（含 0 和 65535）。"
+
+#: 7de87b16ef034f9c9534bc0f18ac982a base.pwm.AtomicPWMBase.set_duty_u16:5 of
+msgid "The PWM duty cycle. Range: 0 ~ 65535. Default is 0."
+msgstr "PWM 占空比，范围：0~65535，默认为 0。"
+
+#: base.pwm.AtomicPWMBase.set_duty_u16:9 e809a20486cf45dbb654e786aa418fad of
+msgid "|set_duty_u16.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:9 27d1a81d3b0446328b7744e4ef7cd3f5
+msgid "set_duty_u16.png"
+msgstr ""
+
+#: base.pwm.AtomicPWMBase.set_freq:1 ead77d1e60eb4cadadbac54bd6b14dc0 of
+msgid "Set PWM frequency."
+msgstr "设置 PWM 频率。"
+
+#: 6604a58e2b49494abae91d4c3cca10c2 base.pwm.AtomicPWMBase.set_freq:7 of
+msgid "|set_freq.png|"
+msgstr ""
+
+#: ../../en/refs/base.pwm.ref:7 96a8add2c40a4a72ac25b083aea1a39d
+msgid "set_freq.png"
+msgstr ""
+
+#~ msgid "PWM Base"
+#~ msgstr ""
+
