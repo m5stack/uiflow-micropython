@@ -15,3 +15,4 @@ Base
     rs232.rst
     rs485.rst
     speaker.rst
+    stepmotor.rst

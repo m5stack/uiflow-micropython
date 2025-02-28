@@ -15,6 +15,7 @@ package(
         "pwm.py",
         "rs232.py",
         "speaker.py",
+        "stepmotor.py",
     ),
     base_path="..",
     opt=3,
