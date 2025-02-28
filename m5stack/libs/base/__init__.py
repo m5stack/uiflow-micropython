@@ -4,6 +4,7 @@
 
 _attrs = {
     "ATOMCANBase": "atom_can",
+    "ATOMGPSBase": "atom_gps",
     "ATOMSocketBase": "atom_socket",
     "ATOMEchoBase": "echo",
     "AtomicDisplayBase": "display",
