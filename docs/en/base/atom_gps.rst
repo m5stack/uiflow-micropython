@@ -1,5 +1,5 @@
-ATOM GPS Base
-==============
+Atomic GPS Base
+================
 
 .. sku: A134/K043
 

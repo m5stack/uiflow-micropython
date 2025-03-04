@@ -4,9 +4,10 @@ Base
 .. toctree::
     :maxdepth: 1
 
+    atom_socket.rst
+    dtu_lorawan.rst
     atom_can.rst
     atom_gps.rst
-    atom_socket.rst
     display.rst
     echo.rst
     hdriver.rst

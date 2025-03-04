@@ -1,5 +1,5 @@
-ATOM Socket Base
-================
+Atom Socket Base
+=================
 
 .. include:: ../refs/base.atom_socket.ref
 
