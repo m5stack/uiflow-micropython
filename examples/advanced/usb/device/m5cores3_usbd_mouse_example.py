@@ -9,7 +9,6 @@ import time
 import m5utils
 
 
-
 label0 = None
 mouse = None
 touch_active = None
@@ -25,10 +24,22 @@ prev_y = None
 
 
 def setup():
-    global label0, mouse, touch_active, sensitivity, x, last_touch_time, y, dx, click_active, dy, prev_x, prev_y
+    global \
+        label0, \
+        mouse, \
+        touch_active, \
+        sensitivity, \
+        x, \
+        last_touch_time, \
+        y, \
+        dx, \
+        click_active, \
+        dy, \
+        prev_x, \
+        prev_y
     M5.begin()
     Widgets.fillScreen(0x222222)
-    label0 = Widgets.Label("USB Mouse", 91, 6, 1.0, 0x158ee6, 0x222222, Widgets.FONTS.DejaVu24)
+    label0 = Widgets.Label("USB Mouse", 91, 6, 1.0, 0x158EE6, 0x222222, Widgets.FONTS.DejaVu24)
     mouse = Mouse()
     touch_active = False
     sensitivity = 2
@@ -37,7 +48,19 @@ def setup():
 
 
 def loop():
-    global label0, mouse, touch_active, sensitivity, x, last_touch_time, y, dx, click_active, dy, prev_x, prev_y
+    global \
+        label0, \
+        mouse, \
+        touch_active, \
+        sensitivity, \
+        x, \
+        last_touch_time, \
+        y, \
+        dx, \
+        click_active, \
+        dy, \
+        prev_x, \
+        prev_y
     M5.update()
     if mouse.is_open():
         if M5.Touch.getCount():
@@ -70,7 +93,7 @@ def loop():
         time.sleep_ms(100)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -78,7 +101,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-

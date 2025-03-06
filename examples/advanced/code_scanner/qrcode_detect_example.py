@@ -12,12 +12,14 @@ import image
 img = None
 qrcode = None
 
+
 def setup():
     global img, qrcode
     M5.begin()
     Widgets.fillScreen(0x222222)
     camera.init(pixformat=camera.RGB565, framesize=camera.QVGA)
     camera.set_hmirror(False)
+
 
 def loop():
     global img, qrcode
@@ -27,10 +29,11 @@ def loop():
     if qrcode:
         print(qrcode.payload())
         print(qrcode.type_name())
-        img.draw_string(10, 10, str(qrcode.payload()), color=0x3333ff, scale=2)
+        img.draw_string(10, 10, str(qrcode.payload()), color=0x3333FF, scale=2)
     M5.Lcd.show(img, 0, 0, 320, 240)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -38,7 +41,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-

@@ -48,44 +48,42 @@
         __typeof__ (type) _b = (type);                       \
         if (!MP_OBJ_IS_TYPE(_a, _b)) {                       \
             mp_raise_msg_varg(&mp_type_TypeError,            \
-                              MP_ERROR_TEXT(                 \
-                                  "Can't convert %s to %s"), \
-                              mp_obj_get_type_str(_a),       \
-                              mp_obj_get_type_str(_b));      \
+    MP_ERROR_TEXT(                 \
+    "Can't convert %s to %s"), \
+    mp_obj_get_type_str(_a),       \
+    mp_obj_get_type_str(_b));      \
         }                                                    \
     } while (0)
 
-size_t image_size(image_t *img)
-{
+size_t image_size(image_t *img) {
     return img->size;
 }
 
 
-//==================================================================================
-// class: image.Image                                      
-//==================================================================================
+// ==================================================================================
+// class: image.Image
+// ==================================================================================
 
 
-//==================================================================================
+// ==================================================================================
 // Basic Methods
-//==================================================================================
+// ==================================================================================
 const mp_obj_type_t py_image_type;
 
 
-void *py_image_cobj(mp_obj_t img_obj) 
-{
+void *py_image_cobj(mp_obj_t img_obj) {
     PY_ASSERT_TYPE(img_obj, &py_image_type);
-    return &((py_image_obj_t *) img_obj)->_cobj;
+    return &((py_image_obj_t *)img_obj)->_cobj;
 }
 
 
 static mp_obj_t py_image_width(mp_obj_t img_obj) {
-    return mp_obj_new_int(((image_t *) py_image_cobj(img_obj))->w);
+    return mp_obj_new_int(((image_t *)py_image_cobj(img_obj))->w);
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_width_obj, py_image_width);
 
 static mp_obj_t py_image_height(mp_obj_t img_obj) {
-    return mp_obj_new_int(((image_t *) py_image_cobj(img_obj))->h);
+    return mp_obj_new_int(((image_t *)py_image_cobj(img_obj))->h);
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_height_obj, py_image_height);
 
@@ -113,85 +111,81 @@ static mp_obj_t py_image_format(mp_obj_t img_obj) {
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_format_obj, py_image_format);
 
 static mp_obj_t py_image_size(mp_obj_t img_obj) {
-    return mp_obj_new_int(image_size((image_t *) py_image_cobj(img_obj)));
+    return mp_obj_new_int(image_size((image_t *)py_image_cobj(img_obj)));
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_size_obj, py_image_size);
 
 static mp_obj_t py_image_bytearray(mp_obj_t img_obj) {
-    image_t *arg_img = (image_t *) py_image_cobj(img_obj);
+    image_t *arg_img = (image_t *)py_image_cobj(img_obj);
     return mp_obj_new_bytearray_by_ref(image_size(arg_img), arg_img->data);
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_bytearray_obj, py_image_bytearray);
- 
- 
-//====================================================================================
+
+
+// ====================================================================================
 // Drawings Methods
-//====================================================================================
-static mp_obj_t py_image_clear(mp_obj_t img_obj) 
-{
-    image_t *arg_img = (image_t *) py_image_cobj(img_obj);
+// ====================================================================================
+static mp_obj_t py_image_clear(mp_obj_t img_obj) {
+    image_t *arg_img = (image_t *)py_image_cobj(img_obj);
     memset(arg_img->pixels, 0, image_size(arg_img));
     return img_obj;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_image_clear_obj, py_image_clear);
 
-static mp_obj_t py_image_draw_line(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args)
-{
+static mp_obj_t py_image_draw_line(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     const mp_obj_t *arg_vec;
     uint offset = py_helper_consume_array(n_args, args, 0, 4, &arg_vec);
 
-    image_t *arg_img = (image_t *) py_image_cobj(arg_vec[0]);
+    image_t *arg_img = (image_t *)py_image_cobj(arg_vec[0]);
     int arg_x0 = mp_obj_get_int(arg_vec[1]);
     int arg_y0 = mp_obj_get_int(arg_vec[2]);
     int arg_x1 = mp_obj_get_int(arg_vec[3]);
     int arg_y1 = mp_obj_get_int(arg_vec[4]);
-    //int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);  
+    // int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);
     int arg_c = py_helper_keyword_color(arg_img, n_args, args, offset + 0, kw_args, -1); // White.
     int arg_thickness = py_helper_keyword_int(n_args, args, offset + 1, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_thickness), 1);
 
     imlib_draw_line(arg_img, arg_x0, arg_y0, arg_x1, arg_y1, arg_c, arg_thickness);
-    
+
     return arg_vec[0];
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_line_obj, 3, py_image_draw_line);
 
-static mp_obj_t py_image_draw_rectangle(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args)
-{
+static mp_obj_t py_image_draw_rectangle(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     const mp_obj_t *arg_vec;
     uint offset = py_helper_consume_array(n_args, args, 0, 4, &arg_vec);
 
-    image_t *arg_img = (image_t *) py_image_cobj(arg_vec[0]);
+    image_t *arg_img = (image_t *)py_image_cobj(arg_vec[0]);
     int arg_rx = mp_obj_get_int(arg_vec[1]);
     int arg_ry = mp_obj_get_int(arg_vec[2]);
     int arg_rw = mp_obj_get_int(arg_vec[3]);
     int arg_rh = mp_obj_get_int(arg_vec[4]);
-    //int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);  
+    // int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);
     int arg_c = py_helper_keyword_color(arg_img, n_args, args, offset + 0, kw_args, -1); // White.
     int arg_thickness = py_helper_keyword_int(n_args, args, offset + 1, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_thickness), 1);
     int arg_fill = py_helper_keyword_int(n_args, args, offset + 2, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_fill), 1);
 
     imlib_draw_rectangle(arg_img, arg_rx, arg_ry, arg_rw, arg_rh, arg_c, arg_thickness, arg_fill);
-    
+
     return arg_vec[0];
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_rectangle_obj, 4, py_image_draw_rectangle);
 
-static mp_obj_t py_image_draw_circle(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args)
-{
+static mp_obj_t py_image_draw_circle(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     const mp_obj_t *arg_vec;
     uint offset = py_helper_consume_array(n_args, args, 0, 3, &arg_vec);
 
-    image_t *arg_img = (image_t *) py_image_cobj(arg_vec[0]);
+    image_t *arg_img = (image_t *)py_image_cobj(arg_vec[0]);
     int arg_cx = mp_obj_get_int(arg_vec[1]);
     int arg_cy = mp_obj_get_int(arg_vec[2]);
     int arg_radius = mp_obj_get_int(arg_vec[3]);
-    //int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);  
+    // int arg_c = py_helper_keyword_color(n_args, args, offset + 0, kw_args, -1);
     int arg_c = py_helper_keyword_color(arg_img, n_args, args, offset + 0, kw_args, -1); // White.
     int arg_thickness = py_helper_keyword_int(n_args, args, offset + 1, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_thickness), 1);
     int arg_fill = py_helper_keyword_int(n_args, args, offset + 2, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_fill), 1);
 
     imlib_draw_circle(arg_img, arg_cx, arg_cy, arg_radius, arg_c, arg_thickness, arg_fill);
-    
+
     return arg_vec[0];
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_circle_obj, 4, py_image_draw_circle);
@@ -253,9 +247,9 @@ static mp_obj_t py_image_draw_string(uint n_args, const mp_obj_t *args, mp_map_t
         py_helper_keyword_int(n_args, args, offset + 10, kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_string_vflip), false);
 
     imlib_draw_string(arg_img, arg_x_off, arg_y_off, arg_str,
-                      arg_c, arg_scale, arg_x_spacing, arg_y_spacing, arg_mono_space,
-                      arg_char_rotation, arg_char_hmirror, arg_char_vflip,
-                      arg_string_rotation, arg_string_hmirror, arg_string_vflip);
+        arg_c, arg_scale, arg_x_spacing, arg_y_spacing, arg_mono_space,
+        arg_char_rotation, arg_char_hmirror, arg_char_vflip,
+        arg_string_rotation, arg_string_hmirror, arg_string_vflip);
     return args[0];
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_string_obj, 2, py_image_draw_string);
@@ -367,8 +361,7 @@ static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_edges_obj, 2, py_image_draw_edge
 
 
 
-mp_obj_t py_image(int w, int h, omv_pixformat_t pixfmt, uint32_t size, void *pixels) 
-{
+mp_obj_t py_image(int w, int h, omv_pixformat_t pixfmt, uint32_t size, void *pixels) {
     py_image_obj_t *o = m_new_obj(py_image_obj_t);
     o->base.type = &py_image_type;
     o->_cobj.w = w;
@@ -379,11 +372,10 @@ mp_obj_t py_image(int w, int h, omv_pixformat_t pixfmt, uint32_t size, void *pix
     return o;
 }
 
-mp_obj_t py_image_from_struct(image_t *img) 
-{
+mp_obj_t py_image_from_struct(image_t *img) {
     py_image_obj_t *o = m_new_obj(py_image_obj_t);
     o->base.type = &py_image_type;
-    o->_cobj = *img;  
+    o->_cobj = *img;
     return o;
 }
 
@@ -414,13 +406,13 @@ MP_DEFINE_CONST_OBJ_TYPE(
     MP_QSTR_Image,
     MP_TYPE_FLAG_NONE,
     locals_dict, &py_image_locals_dict
-);
+    );
 
 
 
-//==================================================================================
-// module: image                                      
-//==================================================================================
+// ==================================================================================
+// module: image
+// ==================================================================================
 
 static const mp_rom_map_elem_t globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__),  MP_OBJ_NEW_QSTR(MP_QSTR_image)},
@@ -437,9 +429,7 @@ static MP_DEFINE_CONST_DICT(globals_dict, globals_dict_table);
 
 const mp_obj_module_t image_module = {
     .base = { &mp_type_module },
-    .globals = (mp_obj_t) &globals_dict
+    .globals = (mp_obj_t)&globals_dict
 };
 
 MP_REGISTER_MODULE(MP_QSTR_image, image_module);
-
-

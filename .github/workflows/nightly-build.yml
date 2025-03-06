@@ -132,6 +132,11 @@ jobs:
       with:
         name: M5STACK_Stamp_PICO_firmware
         path: ./m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
+    - name: Deliver StamPLC firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_StamPLC_firmware
+        path: ./m5stack/build-M5STACK_StamPLC/uiflow-*-*.bin
     - name: Deliver StampS3 firmware
       uses: actions/upload-artifact@v3
       with:

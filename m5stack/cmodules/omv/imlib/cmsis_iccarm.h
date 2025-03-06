@@ -5,7 +5,7 @@
  * @date     14. April 2021
  ******************************************************************************/
 
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //
 // Copyright (c) 2017-2021 IAR Systems
 // Copyright (c) 2017-2021 Arm Limited. All rights reserved.
@@ -23,27 +23,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-//------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 #include <stdint.h>
 
 #ifndef __CMSIS_ICCARM_H__
 #define __CMSIS_ICCARM_H__
 
-static inline uint32_t __USAT(int32_t val, uint32_t sat)
-{
-  if (sat <= 31U)
-  {
-    const uint32_t max = ((1U << sat) - 1U);
-    if (val > (int32_t)max)
-    {
-      return max;
+static inline uint32_t __USAT(int32_t val, uint32_t sat) {
+    if (sat <= 31U) {
+        const uint32_t max = ((1U << sat) - 1U);
+        if (val > (int32_t)max) {
+            return max;
+        } else if (val < 0) {
+            return 0U;
+        }
     }
-    else if (val < 0)
-    {
-      return 0U;
-    }
-  }
-  return (uint32_t)val;
+    return (uint32_t)val;
 }
 
 #endif /* __CMSIS_ICCARM_H__ */

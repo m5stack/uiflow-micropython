@@ -187,5 +187,3 @@ const mp_obj_module_t py_module_dl = {
 };
 
 MP_REGISTER_MODULE(MP_QSTR_dl, py_module_dl);
-
-

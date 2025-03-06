@@ -8,7 +8,6 @@ from module import USBModule
 import time
 
 
-
 module_usb_0 = None
 last_time = None
 i = None
@@ -53,7 +52,7 @@ def loop():
         toggle = not toggle
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -61,7 +60,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-

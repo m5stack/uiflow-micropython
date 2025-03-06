@@ -2,10 +2,10 @@
 #include <string.h>
 
 const float __atanf_lut[4] = {
-    -0.0443265554792128f,    //p7
-    -0.3258083974640975f,    //p3
-    +0.1555786518463281f,    //p5
-    +0.9997878412794807f     //p1
+    -0.0443265554792128f,    // p7
+    -0.3258083974640975f,    // p3
+    +0.1555786518463281f,    // p5
+    +0.9997878412794807f     // p1
 };
 
 typedef union {
@@ -39,7 +39,8 @@ float fast_expf(float x) {
  */
 float fast_cbrtf(float x) {
     union {
-        int ix; float x;
+        int ix;
+        float x;
     }
     v;
     v.x = x;               // x can be viewed as int.
@@ -80,15 +81,15 @@ inline float fast_atanf(float xx) {
     z = x * x;
     y +=
         (((8.05374449538e-2f * z
-           - 1.38776856032E-1f) * z
-          + 1.99777106478E-1f) * z
-         - 3.33329491539E-1f) * z * x + x;
+            - 1.38776856032E-1f) * z
+            + 1.99777106478E-1f) * z
+            - 3.33329491539E-1f) * z * x + x;
 
     if (sign < 0) {
         y = -y;
     }
 
-    return(y);
+    return y;
 }
 
 float fast_atan2f(float y, float x) {
@@ -113,11 +114,13 @@ float fast_atan2f(float y, float x) {
 
 float fast_log2(float x) {
     union {
-        float f; uint32_t i;
+        float f;
+        uint32_t i;
     }
     vx = { x };
     union {
-        uint32_t i; float f;
+        uint32_t i;
+        float f;
     }
     mx = { (vx.i & 0x007FFFFF) | 0x3f000000 };
     float y = vx.i;
@@ -133,10 +136,11 @@ float fast_log(float x) {
 
 float fast_powf(float a, float b) {
     union {
-        float d; int x;
+        float d;
+        int x;
     }
     u = { a };
-    u.x = (int) ((b * (u.x - 1064866805)) + 1064866805);
+    u.x = (int)((b * (u.x - 1064866805)) + 1064866805);
     return u.d;
 }
 
@@ -158,5 +162,3 @@ void fast_get_min_max(float *data, size_t data_len, float *p_min, float *p_max) 
     *p_min = min;
     *p_max = max;
 }
-
-

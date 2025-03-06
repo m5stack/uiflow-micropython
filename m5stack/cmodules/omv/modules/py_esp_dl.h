@@ -54,5 +54,3 @@ mp_obj_t py_human_face_recognizer_recognize(mp_obj_t self_in, mp_obj_t img, mp_o
 #ifdef __cplusplus
 }
 #endif
-
-

@@ -15,12 +15,14 @@ detection_result = None
 res = None
 kp = None
 
+
 def setup():
     global img, detector, detection_result, kp
     M5.begin()
     Widgets.fillScreen(0x222222)
     camera.init(pixformat=camera.RGB565, framesize=camera.QVGA)
     detector = dl.ObjectDetector(dl.model.PEDESTRIAN_DETECT)
+
 
 def loop():
     global img, detector, detection_result, kp
@@ -30,10 +32,13 @@ def loop():
     if detection_result:
         for res in detection_result:
             kp = res.keypoint()
-            img.draw_rectangle(res.x(), res.y(), res.w(), res.h(), color=0x3366ff, thickness=3, fill=False)
+            img.draw_rectangle(
+                res.x(), res.y(), res.w(), res.h(), color=0x3366FF, thickness=3, fill=False
+            )
     M5.Lcd.show(img, 0, 0, 320, 240)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -41,6 +46,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")

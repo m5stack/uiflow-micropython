@@ -13,15 +13,14 @@
 #include "py/stream.h"
 #include "extmod/vfs.h"
 #include "extmod/vfs_fat.h"
- 
+
 #include "esp_camera.h"
 #include "imlib.h"
 #include "py_image.h"
- 
 
 
-static mp_obj_t py_jpg_encode(size_t n_args, const mp_obj_t *args)
-{
+
+static mp_obj_t py_jpg_encode(size_t n_args, const mp_obj_t *args) {
     image_t *img = (image_t *)py_image_cobj(args[0]);
     uint8_t quality = 30;
 
@@ -34,7 +33,7 @@ static mp_obj_t py_jpg_encode(size_t n_args, const mp_obj_t *args)
         if (quality > 100) {
             quality = 100;
         }
-    }  
+    }
 
     static image_t img_jpg;
     img_jpg.w = img->w;
@@ -49,8 +48,7 @@ static mp_obj_t py_jpg_encode(size_t n_args, const mp_obj_t *args)
 }
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(py_jpg_encode_obj, 1, 2, py_jpg_encode);
 
-static mp_obj_t py_jpg_decode(mp_obj_t img_obj)
-{
+static mp_obj_t py_jpg_decode(mp_obj_t img_obj) {
     image_t *img_jpg = (image_t *)py_image_cobj(img_obj);
     static image_t img_rgb565;
 
@@ -59,11 +57,11 @@ static mp_obj_t py_jpg_decode(mp_obj_t img_obj)
         img_rgb565.w = img_jpg->w;
         img_rgb565.h = img_jpg->h;
         img_rgb565.size = img_rgb565.w * img_rgb565.h * sizeof(uint16_t); // RGB565
-        if (img_rgb565.data == NULL) { 
+        if (img_rgb565.data == NULL) {
             img_rgb565.data = (uint8_t *)heap_caps_malloc(img_rgb565.size, MALLOC_CAP_8BIT | MALLOC_CAP_SPIRAM);
         } else {
-            // TODO: 
-            //img_rgb565.data = (uint8_t *)heap_caps_realloc(img_rgb565.data, img_rgb565.size, MALLOC_CAP_8BIT | MALLOC_CAP_SPIRAM);
+            // TODO:
+            // img_rgb565.data = (uint8_t *)heap_caps_realloc(img_rgb565.data, img_rgb565.size, MALLOC_CAP_8BIT | MALLOC_CAP_SPIRAM);
         }
         if (img_rgb565.data == NULL) {
             mp_raise_msg(&mp_type_MemoryError, MP_ERROR_TEXT("Failed to allocate memory for image buffer"));
@@ -74,7 +72,7 @@ static mp_obj_t py_jpg_decode(mp_obj_t img_obj)
     return py_image_from_struct(&img_rgb565);
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_jpg_decode_obj, py_jpg_decode);
- 
+
 
 static const mp_rom_map_elem_t globals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_jpg)       },
@@ -84,12 +82,8 @@ static const mp_rom_map_elem_t globals_dict_table[] = {
 static MP_DEFINE_CONST_DICT(globals_dict, globals_dict_table);
 
 const mp_obj_module_t mp_module_jpg = {
-    .base = { &mp_type_module },                
-    .globals = (mp_obj_dict_t *)&globals_dict,  
+    .base = { &mp_type_module },
+    .globals = (mp_obj_dict_t *)&globals_dict,
 };
 
 MP_REGISTER_MODULE(MP_QSTR_jpg, mp_module_jpg);
-
- 
-
-
