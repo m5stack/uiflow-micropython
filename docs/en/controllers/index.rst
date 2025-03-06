@@ -14,4 +14,3 @@ Controllers
     airq.rst
     paper.rst
     dinmeter.rst
-    stampplc.rst

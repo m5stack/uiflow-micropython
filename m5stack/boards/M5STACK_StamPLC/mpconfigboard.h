@@ -4,7 +4,7 @@
 * SPDX-License-Identifier: MIT
 */
 
-#define MICROPY_HW_BOARD_NAME               "M5STACK StampPLC"
+#define MICROPY_HW_BOARD_NAME               "M5STACK StamPLC"
 #define MICROPY_HW_MCU_NAME                 "ESP32-S3-FN8"
 
 #define MICROPY_PY_MACHINE_DAC              (0)
@@ -15,7 +15,7 @@
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
 
-#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "M5Stack StampPLC(UiFlow2)"
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING  "M5Stack StamPLC(UiFlow2)"
 
 // If not enable LVGL, ignore this...
 #include "./../mpconfiglvgl.h"

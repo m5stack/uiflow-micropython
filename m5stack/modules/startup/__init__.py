@@ -231,8 +231,8 @@ def startup(boot_opt, timeout: int = 60) -> None:
             papers3 = PaperS3_Startup()
             papers3.startup(ssid, pswd, timeout)
 
-        elif board_id == M5.BOARD.M5StampPLC:
-            from .stampplc import StampPLC_Startup
+        elif board_id == M5.BOARD.M5StamPLC:
+            from .stamplc import StampPLC_Startup
 
             station = StampPLC_Startup()
             station.startup(ssid, pswd, timeout)

@@ -40,7 +40,7 @@ boards := \
 	M5STACK_AtomU:atomu              \
 	M5STACK_Atom_Echo:atomecho       \
 	M5STACK_AtomS3R:atoms3r          \
-	M5STACK_StampPLC:stampplc
+	M5STACK_StamPLC:stamplc
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -77,7 +77,7 @@ BOARD_TYPE_DEF := \
 	atomu       \
 	atomecho    \
 	atoms3r     \
-	stampplc
+	stamplc
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"

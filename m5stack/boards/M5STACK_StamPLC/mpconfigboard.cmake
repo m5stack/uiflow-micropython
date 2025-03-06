@@ -4,7 +4,7 @@
 
 set(IDF_TARGET esp32s3)
 
-# stampplc https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L29
+# stamplc https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L29
 set(BOARD_ID 21)
 
 set(SDKCONFIG_DEFAULTS
@@ -17,7 +17,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
     ./boards/sdkconfig.freertos
-    ./boards/M5STACK_StampPLC/sdkconfig.board
+    ./boards/M5STACK_StamPLC/sdkconfig.board
 )
 
 # If not enable LVGL, ignore this...

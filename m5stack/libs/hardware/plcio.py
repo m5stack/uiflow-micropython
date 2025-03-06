@@ -13,7 +13,7 @@ def _plc_closure() -> tuple:
     def _aw9523_init():
         _board_map = {
             # boardid: (i2c, scl, sda, irq_pin)
-            M5.BOARD.M5StampPLC: (1, 15, 13, 14),
+            M5.BOARD.M5StamPLC: (1, 15, 13, 14),
         }
         i2c, scl, sda, irq_pin = _board_map.get(M5.getBoard(), (None, None, None, None))
         if i2c is None:
