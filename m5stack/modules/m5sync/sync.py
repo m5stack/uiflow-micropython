@@ -165,6 +165,14 @@ class DownloadView:
             text_y=120,
             text_font=M5.Lcd.FONTS.DejaVu24,
         ),
+        M5.BOARD.M5StamPLC: ViewInfo(
+            title_x=120,
+            title_y=39,
+            title_font=M5.Lcd.FONTS.DejaVu24,
+            text_x=120,
+            text_y=68,
+            text_font=M5.Lcd.FONTS.DejaVu18,
+        ),
         M5.BOARD.M5Station: ViewInfo(
             title_x=120,
             title_y=39,

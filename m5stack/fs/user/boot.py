@@ -42,7 +42,11 @@ if __name__ == "__main__":
         boot_option = 1  # default
 
     startup(boot_option, NETWORK_TIMEOUT)
-    sync.run()
+    if boot_option != 0:  # Run main.py directly
+        sync.run()
+    else:
+        print("Skip sync")
+
     # copy OTA update file to main.py
     # main_ota_temp.py this file name is fixed
     try:
