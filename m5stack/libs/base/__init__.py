@@ -8,6 +8,7 @@ _attrs = {
     "ATOMSocketBase": "atom_socket",
     "ATOMEchoBase": "echo",
     "AtomicDisplayBase": "display",
+    "AtomicHDriverBase": "hdriver",
     "Motion": "motion",
     "MotionBase": "motion",
     "AtomicPWMBase": "pwm",

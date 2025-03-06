@@ -10,6 +10,7 @@ package(
         "atom_socket.py",
         "display.py",
         "echo.py",
+        "hdriver.py",
         "motion.py",
         "pwm.py",
         "rs232.py",
