@@ -50,20 +50,19 @@ image_t *py_helper_arg_to_image(const mp_obj_t arg, uint32_t flags) {
 }
 
 
-uint py_helper_consume_array(size_t n_args, const mp_obj_t *args, uint arg_index, size_t len, const mp_obj_t **items)
-{
+uint py_helper_consume_array(size_t n_args, const mp_obj_t *args, uint arg_index, size_t len, const mp_obj_t **items) {
     if (MP_OBJ_IS_TYPE(args[arg_index], &mp_type_tuple) || MP_OBJ_IS_TYPE(args[arg_index], &mp_type_list)) {
-        mp_obj_get_array_fixed_n(args[arg_index], len, (mp_obj_t **) items);
+        mp_obj_get_array_fixed_n(args[arg_index], len, (mp_obj_t **)items);
         return arg_index + 1;
     } else {
-        //PY_ASSERT_TRUE_MSG((n_args - arg_index) >= len, "Not enough positional arguments!");
+        // PY_ASSERT_TRUE_MSG((n_args - arg_index) >= len, "Not enough positional arguments!");
         *items = args + arg_index;
         return arg_index + len;
     }
 }
- 
+
 float py_helper_keyword_float(uint n_args, const mp_obj_t *args, uint arg_index,
-                              mp_map_t *kw_args, mp_obj_t kw, float default_val) {
+    mp_map_t *kw_args, mp_obj_t kw, float default_val) {
     mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, kw, MP_MAP_LOOKUP);
 
     if (kw_arg) {
@@ -76,24 +75,24 @@ float py_helper_keyword_float(uint n_args, const mp_obj_t *args, uint arg_index,
 }
 
 int py_helper_keyword_color(image_t *img, uint n_args, const mp_obj_t *args, uint arg_index,
-                            mp_map_t *kw_args, int default_val) {
+    mp_map_t *kw_args, int default_val) {
     mp_map_elem_t *kw_arg = kw_args ? mp_map_lookup(kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_color), MP_MAP_LOOKUP) : NULL;
 
     if (kw_arg) {
         if (mp_obj_is_integer(kw_arg->value)) {
-            //default_val = mp_obj_get_int(kw_arg->value);
+            // default_val = mp_obj_get_int(kw_arg->value);
             int tmp = mp_obj_get_int(kw_arg->value);
             int r, g, b;
-            r = tmp >> 8 & 0x00F800;  
-            g = tmp >> 5 & 0x0007E0;  
-            b = tmp >> 3 & 0x00001F;  
+            r = tmp >> 8 & 0x00F800;
+            g = tmp >> 5 & 0x0007E0;
+            b = tmp >> 3 & 0x00001F;
             default_val = (r | g | b);
         } else {
             mp_obj_t *arg_color;
             mp_obj_get_array_fixed_n(kw_arg->value, 3, &arg_color);
             default_val = COLOR_R8_G8_B8_TO_RGB565(__USAT(mp_obj_get_int(arg_color[0]), 8),
-                                                   __USAT(mp_obj_get_int(arg_color[1]), 8),
-                                                   __USAT(mp_obj_get_int(arg_color[2]), 8));
+                __USAT(mp_obj_get_int(arg_color[1]), 8),
+                __USAT(mp_obj_get_int(arg_color[2]), 8));
 
             switch (img->pixfmt) {
                 case OMV_PIXFORMAT_BINARY: {
@@ -116,8 +115,8 @@ int py_helper_keyword_color(image_t *img, uint n_args, const mp_obj_t *args, uin
             mp_obj_t *arg_color;
             mp_obj_get_array_fixed_n(args[arg_index], 3, &arg_color);
             default_val = COLOR_R8_G8_B8_TO_RGB565(__USAT(mp_obj_get_int(arg_color[0]), 8),
-                                                   __USAT(mp_obj_get_int(arg_color[1]), 8),
-                                                   __USAT(mp_obj_get_int(arg_color[2]), 8));
+                __USAT(mp_obj_get_int(arg_color[1]), 8),
+                __USAT(mp_obj_get_int(arg_color[2]), 8));
             switch (img->pixfmt) {
                 case OMV_PIXFORMAT_BINARY: {
                     default_val = COLOR_RGB565_TO_BINARY(default_val);
@@ -138,10 +137,9 @@ int py_helper_keyword_color(image_t *img, uint n_args, const mp_obj_t *args, uin
     return default_val;
 }
 
- 
+
 int py_helper_keyword_int(size_t n_args, const mp_obj_t *args, uint arg_index,
-                          mp_map_t *kw_args, mp_obj_t kw, int default_val)
-{
+    mp_map_t *kw_args, mp_obj_t kw, int default_val) {
     mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, kw, MP_MAP_LOOKUP);
 
     if (kw_arg) {
@@ -152,5 +150,3 @@ int py_helper_keyword_int(size_t n_args, const mp_obj_t *args, uint arg_index,
 
     return default_val;
 }
- 
-

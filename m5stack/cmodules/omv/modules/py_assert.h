@@ -29,8 +29,8 @@
     do {                                                  \
         if ((cond) == 0) {                                \
             mp_raise_msg(&mp_type_OSError,                \
-                         MP_ERROR_TEXT(                   \
-                             "Operation not supported")); \
+    MP_ERROR_TEXT(                   \
+    "Operation not supported")); \
         }                                                 \
     } while (0)
 
@@ -38,7 +38,7 @@
     do {                                      \
         if ((cond) == 0) {                    \
             mp_raise_msg(&mp_type_OSError,    \
-                         MP_ERROR_TEXT(msg)); \
+    MP_ERROR_TEXT(msg)); \
         }                                     \
     } while (0)
 
@@ -46,7 +46,7 @@
     do {                                      \
         if ((cond) == 1) {                    \
             mp_raise_msg(&mp_type_OSError,    \
-                         MP_ERROR_TEXT(msg)); \
+    MP_ERROR_TEXT(msg)); \
         }                                     \
     } while (0)
 
@@ -56,10 +56,10 @@
         __typeof__ (type) _b = (type);                       \
         if (!MP_OBJ_IS_TYPE(_a, _b)) {                       \
             mp_raise_msg_varg(&mp_type_TypeError,            \
-                              MP_ERROR_TEXT(                 \
-                                  "Can't convert %s to %s"), \
-                              mp_obj_get_type_str(_a),       \
-                              mp_obj_get_type_str(_b));      \
+    MP_ERROR_TEXT(                 \
+    "Can't convert %s to %s"), \
+    mp_obj_get_type_str(_a),       \
+    mp_obj_get_type_str(_b));      \
         }                                                    \
     } while (0)
 /* IS_TYPE doesn't work for str objs */
@@ -68,11 +68,11 @@
         __typeof__ (obj) _a = (obj);           \
         if (!MP_OBJ_IS_STR(_a)) {              \
             mp_raise_msg_varg(                 \
-                &mp_type_TypeError,            \
-                MP_ERROR_TEXT(                 \
-                    "Can't convert %s to %s"), \
-                mp_obj_get_type_str(_a),       \
-                str_type.name);                \
+    &mp_type_TypeError,            \
+    MP_ERROR_TEXT(                 \
+    "Can't convert %s to %s"), \
+    mp_obj_get_type_str(_a),       \
+    str_type.name);                \
         }                                      \
     } while (0)
 

@@ -389,16 +389,14 @@ static MP_DEFINE_CONST_FUN_OBJ_1(camera_colorbar_obj, camera_colorbar);
 
 static camera_fb_t *g_frame = NULL;
 
-void swap_rgb565(uint16_t* pixel)
-{
-	*pixel = (*pixel >> 8) | (*pixel << 8);
+void swap_rgb565(uint16_t *pixel) {
+    *pixel = (*pixel >> 8) | (*pixel << 8);
 }
 
-void image_endian_swap(image_t* img)
-{
-    uint16_t* pixel = (uint16_t*)img->data;
+void image_endian_swap(image_t *img) {
+    uint16_t *pixel = (uint16_t *)img->data;
     for (int i = 0; i < img->w * img->h; i++) {
-	swap_rgb565(&pixel[i]);
+        swap_rgb565(&pixel[i]);
     }
 }
 
@@ -419,7 +417,7 @@ static mp_obj_t py_camera_snapshot() {
         img.pixfmt = OMV_PIXFORMAT_GRAYSCALE;
     }
     img.data = g_frame->buf;
-    //image_endian_swap(&img);
+    // image_endian_swap(&img);
 
     return py_image_from_struct(&img);
 }

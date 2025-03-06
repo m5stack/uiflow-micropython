@@ -42,15 +42,15 @@ static inline int fast_ceilf(float x) {
 
 // 快速 round 函数
 static inline int fast_roundf(float x) {
-    //return (int)(x + (x >= 0 ? 0.5f : -0.5f));
+    // return (int)(x + (x >= 0 ? 0.5f : -0.5f));
     return roundf(x);
 }
 
 // 快速 fabs 函数
 static inline float fast_fabsf(float x) {
-    //return (x >= 0) ? x : -x;
+    // return (x >= 0) ? x : -x;
     return fabsf(x);
 }
 
- 
+
 #endif // __FMATH_H__

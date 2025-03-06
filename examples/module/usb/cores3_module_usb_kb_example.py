@@ -7,7 +7,6 @@ from M5 import *
 from module import USBModule
 
 
-
 module_usb_0 = None
 modifier = None
 indata = None
@@ -26,27 +25,27 @@ def loop():
     module_usb_0.poll_data()
     modifier = module_usb_0.read_kb_modifier()
     if modifier & 0x01:
-        print('Left Control pressed')
+        print("Left Control pressed")
     if modifier & 0x02:
-        print('Left Shift pressed')
+        print("Left Shift pressed")
     if modifier & 0x04:
-        print('Left Alt pressed')
+        print("Left Alt pressed")
     if modifier & 0x08:
-        print('Left GUI pressed')
+        print("Left GUI pressed")
     if modifier & 0x10:
-        print('Right Control pressed')
+        print("Right Control pressed")
     if modifier & 0x20:
-        print('Right Shift pressed')
+        print("Right Shift pressed")
     if modifier & 0x40:
-        print('Right Alt pressed')
+        print("Right Alt pressed")
     if modifier & 0x80:
-        print('Right GUI pressed')
+        print("Right GUI pressed")
     indata = module_usb_0.read_kb_input(True)
     if indata:
         print(indata)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -54,7 +53,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-

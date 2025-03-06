@@ -20,19 +20,19 @@ extern "C" {
 #define IM_LOG2(x)               (((x) & 0xFFFFFFFF00000000ULL) ? (32 + IM_LOG2_32((x) >> 32)) : IM_LOG2_32(x)) // NO ({ ... }) !
 
 #define IM_IS_SIGNED(a)          (__builtin_types_compatible_p(__typeof__(a), signed) || \
-                                  __builtin_types_compatible_p(__typeof__(a), signed long))
+    __builtin_types_compatible_p(__typeof__(a), signed long))
 #define IM_IS_UNSIGNED(a)        (__builtin_types_compatible_p(__typeof__(a), unsigned) || \
-                                  __builtin_types_compatible_p(__typeof__(a), unsigned long))
+    __builtin_types_compatible_p(__typeof__(a), unsigned long))
 #define IM_SIGN_COMPARE(a, b)    ((IM_IS_SIGNED(a) && IM_IS_UNSIGNED(b)) || \
-                                  (IM_IS_SIGNED(b) && IM_IS_UNSIGNED(a)))
+    (IM_IS_SIGNED(b) && IM_IS_UNSIGNED(a)))
 
 #define IM_MAX(a, b)                                    \
     ({__typeof__ (a) _a = (a); __typeof__ (b) _b = (b); \
-      __builtin_choose_expr(IM_SIGN_COMPARE(_a, _b), (void) 0, (_a > _b ? _a : _b)); })
+      __builtin_choose_expr(IM_SIGN_COMPARE(_a, _b), (void)0, (_a > _b ? _a : _b)); })
 
 #define IM_MIN(a, b)                                    \
     ({__typeof__ (a) _a = (a); __typeof__ (b) _b = (b); \
-      __builtin_choose_expr(IM_SIGN_COMPARE(_a, _b), (void) 0, (_a < _b ? _a : _b)); })
+      __builtin_choose_expr(IM_SIGN_COMPARE(_a, _b), (void)0, (_a < _b ? _a : _b)); })
 
 #define IM_CLAMP(x, min, max)    IM_MAX(IM_MIN((x), (max)), (min))
 
@@ -75,9 +75,9 @@ extern "C" {
 #define IM_RAD2DEG(x)            (((x) * 180) / M_PI)
 
 
-//=======================================================================================
-// Point  Stuff  
-//=======================================================================================
+// =======================================================================================
+// Point  Stuff
+// =======================================================================================
 typedef struct point {
     int16_t x;
     int16_t y;
@@ -91,9 +91,9 @@ void point_rotate(int x, int y, float r, int center_x, int center_y, int16_t *ne
 void point_min_area_rectangle(point_t *corners, point_t *new_corners, int corners_len);
 
 
-//=======================================================================================
-// Line Stuff  
-//=======================================================================================
+// =======================================================================================
+// Line Stuff
+// =======================================================================================
 typedef struct line {
     int16_t x1;
     int16_t y1;
@@ -104,9 +104,9 @@ typedef struct line {
 bool lb_clip_line(line_t *l, int x, int y, int w, int h);
 
 
-//=======================================================================================
-// Rectangle Stuff  
-//=======================================================================================
+// =======================================================================================
+// Rectangle Stuff
+// =======================================================================================
 typedef struct rectangle {
     int16_t x;
     int16_t y;
@@ -121,9 +121,9 @@ typedef struct bounding_box_lnk_data {
 } bounding_box_lnk_data_t;
 
 
-//=======================================================================================
-// Color Stuff 
-//=======================================================================================
+// =======================================================================================
+// Color Stuff
+// =======================================================================================
 typedef struct color_thresholds_list_lnk_data {
     uint8_t LMin, LMax; // or grayscale
     int8_t AMin, AMax;
@@ -156,8 +156,8 @@ color_thresholds_list_lnk_data_t;
         int8_t _a = COLOR_RGB565_TO_A(_pixel);                            \
         int8_t _b = COLOR_RGB565_TO_B(_pixel);                            \
         ((_threshold->LMin <= _l) && (_l <= _threshold->LMax) &&          \
-         (_threshold->AMin <= _a) && (_a <= _threshold->AMax) &&          \
-         (_threshold->BMin <= _b) && (_b <= _threshold->BMax)) ^ _invert; \
+    (_threshold->AMin <= _a) && (_a <= _threshold->AMax) &&          \
+    (_threshold->BMin <= _b) && (_b <= _threshold->BMax)) ^ _invert; \
     })
 
 #define COLOR_BOUND_BINARY(pixel0, pixel1, threshold)    \
@@ -225,9 +225,9 @@ color_thresholds_list_lnk_data_t;
 #define COLOR_V_MAX                             127
 
 
-//=======================================================================================
-// RGB565 Stuff  
-//=======================================================================================
+// =======================================================================================
+// RGB565 Stuff
+// =======================================================================================
 #define COLOR_RGB565_TO_R5(pixel)               (((pixel) >> 11) & 0x1F)
 #define COLOR_RGB565_TO_R8(pixel)             \
     ({                                        \
@@ -313,7 +313,7 @@ extern const int8_t lab_table[196608 / 2];
 #define COLOR_RGB565_TO_BINARY(pixel)           (COLOR_RGB565_TO_Y(pixel) > (((COLOR_Y_MAX - COLOR_Y_MIN) / 2) + COLOR_Y_MIN))
 #define COLOR_RGB565_TO_GRAYSCALE(pixel)        COLOR_RGB565_TO_Y(pixel)
 #define COLOR_GRAYSCALE_TO_BINARY(pixel)        ((pixel) > \
-                                                 (((COLOR_GRAYSCALE_MAX - COLOR_GRAYSCALE_MIN) / 2) + COLOR_GRAYSCALE_MIN))
+    (((COLOR_GRAYSCALE_MAX - COLOR_GRAYSCALE_MIN) / 2) + COLOR_GRAYSCALE_MIN))
 #define COLOR_GRAYSCALE_TO_RGB565(pixel)        COLOR_YUV_TO_RGB565(((pixel) - 128), 0, 0)
 
 typedef enum {
@@ -333,9 +333,9 @@ extern const uint16_t evt_light_table[256];
 
 
 
-//=======================================================================================
-// Image Stuff 
-//=======================================================================================
+// =======================================================================================
+// Image Stuff
+// =======================================================================================
 
 // Pixel format IDs.
 typedef enum {
@@ -393,28 +393,28 @@ typedef enum {
 // <RESERVED>  YF  MF  CF  JF  RF  <OMV_PIXFORMAT_ID>  <SUBFORMAT_ID>  <BYTES_PER_PIX>
 // NOTE: Bit 31-30 must Not be used for omv_pixformat_t to be used as mp_int_t.
 typedef enum {
-  OMV_PIXFORMAT_INVALID    = (0x00000000U),
-  OMV_PIXFORMAT_BINARY     = (OMV_PIXFORMAT_FLAGS_M  | (OMV_PIXFORMAT_ID_BINARY << 16) | (0                   << 8) | OMV_PIXFORMAT_BPP_BINARY ),
-  OMV_PIXFORMAT_GRAYSCALE  = (OMV_PIXFORMAT_FLAGS_M  | (OMV_PIXFORMAT_ID_GRAY   << 16) | (SUBFORMAT_ID_GRAY8  << 8) | OMV_PIXFORMAT_BPP_GRAY8  ),
-  OMV_PIXFORMAT_RGB565     = (OMV_PIXFORMAT_FLAGS_CM | (OMV_PIXFORMAT_ID_RGB565 << 16) | (0                   << 8) | OMV_PIXFORMAT_BPP_RGB565 ),
-  OMV_PIXFORMAT_ARGB8      = (OMV_PIXFORMAT_FLAGS_CM | (OMV_PIXFORMAT_ID_ARGB8  << 16) | (0                   << 8) | OMV_PIXFORMAT_BPP_ARGB8  ),
-  OMV_PIXFORMAT_BAYER      = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER  << 16) | (SUBFORMAT_ID_BGGR   << 8) | OMV_PIXFORMAT_BPP_BAYER  ),
-  OMV_PIXFORMAT_BAYER_BGGR = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER  << 16) | (SUBFORMAT_ID_BGGR   << 8) | OMV_PIXFORMAT_BPP_BAYER  ),
-  OMV_PIXFORMAT_BAYER_GBRG = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER  << 16) | (SUBFORMAT_ID_GBRG   << 8) | OMV_PIXFORMAT_BPP_BAYER  ),
-  OMV_PIXFORMAT_BAYER_GRBG = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER  << 16) | (SUBFORMAT_ID_GRBG   << 8) | OMV_PIXFORMAT_BPP_BAYER  ),
-  OMV_PIXFORMAT_BAYER_RGGB = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER  << 16) | (SUBFORMAT_ID_RGGB   << 8) | OMV_PIXFORMAT_BPP_BAYER  ),
-  OMV_PIXFORMAT_YUV        = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YUV422 << 8) | OMV_PIXFORMAT_BPP_YUV422 ),
-  OMV_PIXFORMAT_YUV422     = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YUV422 << 8) | OMV_PIXFORMAT_BPP_YUV422 ),
-  OMV_PIXFORMAT_YVU422     = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YVU422 << 8) | OMV_PIXFORMAT_BPP_YUV422 ),
-  OMV_PIXFORMAT_JPEG       = (OMV_PIXFORMAT_FLAGS_CJ | (OMV_PIXFORMAT_ID_JPEG   << 16) | (0                   << 8) | 0                    ),
-  OMV_PIXFORMAT_PNG        = (OMV_PIXFORMAT_FLAGS_CJ | (OMV_PIXFORMAT_ID_PNG    << 16) | (0                   << 8) | 0                    ),
-  OMV_PIXFORMAT_LAST       = (0xFFFFFFFFU),
+    OMV_PIXFORMAT_INVALID    = (0x00000000U),
+    OMV_PIXFORMAT_BINARY     = (OMV_PIXFORMAT_FLAGS_M | (OMV_PIXFORMAT_ID_BINARY << 16) | (0 << 8) | OMV_PIXFORMAT_BPP_BINARY),
+    OMV_PIXFORMAT_GRAYSCALE  = (OMV_PIXFORMAT_FLAGS_M | (OMV_PIXFORMAT_ID_GRAY << 16) | (SUBFORMAT_ID_GRAY8 << 8) | OMV_PIXFORMAT_BPP_GRAY8),
+    OMV_PIXFORMAT_RGB565     = (OMV_PIXFORMAT_FLAGS_CM | (OMV_PIXFORMAT_ID_RGB565 << 16) | (0 << 8) | OMV_PIXFORMAT_BPP_RGB565),
+    OMV_PIXFORMAT_ARGB8      = (OMV_PIXFORMAT_FLAGS_CM | (OMV_PIXFORMAT_ID_ARGB8 << 16) | (0 << 8) | OMV_PIXFORMAT_BPP_ARGB8),
+    OMV_PIXFORMAT_BAYER      = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER << 16) | (SUBFORMAT_ID_BGGR << 8) | OMV_PIXFORMAT_BPP_BAYER),
+    OMV_PIXFORMAT_BAYER_BGGR = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER << 16) | (SUBFORMAT_ID_BGGR << 8) | OMV_PIXFORMAT_BPP_BAYER),
+    OMV_PIXFORMAT_BAYER_GBRG = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER << 16) | (SUBFORMAT_ID_GBRG << 8) | OMV_PIXFORMAT_BPP_BAYER),
+    OMV_PIXFORMAT_BAYER_GRBG = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER << 16) | (SUBFORMAT_ID_GRBG << 8) | OMV_PIXFORMAT_BPP_BAYER),
+    OMV_PIXFORMAT_BAYER_RGGB = (OMV_PIXFORMAT_FLAGS_CR | (OMV_PIXFORMAT_ID_BAYER << 16) | (SUBFORMAT_ID_RGGB << 8) | OMV_PIXFORMAT_BPP_BAYER),
+    OMV_PIXFORMAT_YUV        = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YUV422 << 8) | OMV_PIXFORMAT_BPP_YUV422),
+    OMV_PIXFORMAT_YUV422     = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YUV422 << 8) | OMV_PIXFORMAT_BPP_YUV422),
+    OMV_PIXFORMAT_YVU422     = (OMV_PIXFORMAT_FLAGS_CY | (OMV_PIXFORMAT_ID_YUV422 << 16) | (SUBFORMAT_ID_YVU422 << 8) | OMV_PIXFORMAT_BPP_YUV422),
+    OMV_PIXFORMAT_JPEG       = (OMV_PIXFORMAT_FLAGS_CJ | (OMV_PIXFORMAT_ID_JPEG << 16) | (0 << 8) | 0),
+    OMV_PIXFORMAT_PNG        = (OMV_PIXFORMAT_FLAGS_CJ | (OMV_PIXFORMAT_ID_PNG << 16) | (0 << 8) | 0),
+    OMV_PIXFORMAT_LAST       = (0xFFFFFFFFU),
 } omv_pixformat_t;
 // *INDENT-ON*
 
 
 #define OMV_PIXFORMAT_MUTABLE_ANY \
-        OMV_PIXFORMAT_BINARY:     \
+OMV_PIXFORMAT_BINARY:     \
     case OMV_PIXFORMAT_GRAYSCALE: \
     case OMV_PIXFORMAT_RGB565:    \
     case OMV_PIXFORMAT_ARGB8      \
@@ -435,37 +435,38 @@ typedef enum {
 
 #define IMLIB_OMV_PIXFORMAT_IS_VALID(x) \
     ((x == OMV_PIXFORMAT_BINARY)        \
-     || (x == OMV_PIXFORMAT_GRAYSCALE)  \
-     || (x == OMV_PIXFORMAT_RGB565)     \
-     || (x == OMV_PIXFORMAT_ARGB8)      \
-     || (x == OMV_PIXFORMAT_BAYER_BGGR) \
-     || (x == OMV_PIXFORMAT_BAYER_GBRG) \
-     || (x == OMV_PIXFORMAT_BAYER_GRBG) \
-     || (x == OMV_PIXFORMAT_BAYER_RGGB) \
-     || (x == OMV_PIXFORMAT_YUV422)     \
-     || (x == OMV_PIXFORMAT_YVU422)     \
-     || (x == OMV_PIXFORMAT_JPEG)       \
-     || (x == OMV_PIXFORMAT_PNG))       \
+    || (x == OMV_PIXFORMAT_GRAYSCALE)  \
+    || (x == OMV_PIXFORMAT_RGB565)     \
+    || (x == OMV_PIXFORMAT_ARGB8)      \
+    || (x == OMV_PIXFORMAT_BAYER_BGGR) \
+    || (x == OMV_PIXFORMAT_BAYER_GBRG) \
+    || (x == OMV_PIXFORMAT_BAYER_GRBG) \
+    || (x == OMV_PIXFORMAT_BAYER_RGGB) \
+    || (x == OMV_PIXFORMAT_YUV422)     \
+    || (x == OMV_PIXFORMAT_YVU422)     \
+    || (x == OMV_PIXFORMAT_JPEG)       \
+    || (x == OMV_PIXFORMAT_PNG))       \
 
 
 #define OMV_PIXFORMAT_STRUCT            \
-struct {                            \
-  union {                           \
-    struct {                        \
-        uint32_t bpp            :8; \
-        uint32_t subfmt_id      :8; \
-        uint32_t pixfmt_id      :8; \
-        uint32_t is_bayer       :1; \
-        uint32_t is_compressed  :1; \
-        uint32_t is_color       :1; \
-        uint32_t is_mutable     :1; \
-        uint32_t is_yuv         :1; \
-        uint32_t /*reserved*/   :3; \
-    };                              \
-    uint32_t pixfmt;                \
-  };                                \
-  uint32_t size; /* for compressed images */ \
-}
+    struct {                            \
+        union {                           \
+            struct {                        \
+                uint32_t bpp: \
+                8; \
+                uint32_t subfmt_id      : 8; \
+                uint32_t pixfmt_id      : 8; \
+                uint32_t is_bayer       : 1; \
+                uint32_t is_compressed  : 1; \
+                uint32_t is_color       : 1; \
+                uint32_t is_mutable     : 1; \
+                uint32_t is_yuv         : 1; \
+                uint32_t /*reserved*/ : 3; \
+            };                              \
+            uint32_t pixfmt;                \
+        };                                \
+        uint32_t size; /* for compressed images */ \
+    }
 
 typedef struct image {
     int32_t w;
@@ -493,8 +494,8 @@ typedef struct image {
         __typeof__ (image) _image = (image);                                                                             \
         __typeof__ (x) _x = (x);                                                                                         \
         __typeof__ (y) _y = (y);                                                                                         \
-        (((uint32_t *) _image->data)[(((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] >> \
-         (_x & UINT32_T_MASK)) & 1;                                                                                      \
+        (((uint32_t *)_image->data)[(((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] >> \
+    (_x & UINT32_T_MASK)) & 1;                                                                                      \
     })
 
 #define IMAGE_PUT_BINARY_PIXEL(image, x, y, v)                                                                 \
@@ -505,7 +506,7 @@ typedef struct image {
         __typeof__ (v) _v = (v);                                                                               \
         size_t _i = (((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT);           \
         size_t _j = _x & UINT32_T_MASK;                                                                        \
-        ((uint32_t *) _image->data)[_i] = (((uint32_t *) _image->data)[_i] & (~(1 << _j))) | ((_v & 1) << _j); \
+        ((uint32_t *)_image->data)[_i] = (((uint32_t *)_image->data)[_i] & (~(1 << _j))) | ((_v & 1) << _j); \
     })
 
 #define IMAGE_CLEAR_BINARY_PIXEL(image, x, y)                                                                          \
@@ -513,8 +514,8 @@ typedef struct image {
         __typeof__ (image) _image = (image);                                                                           \
         __typeof__ (x) _x = (x);                                                                                       \
         __typeof__ (y) _y = (y);                                                                                       \
-        ((uint32_t *) _image->data)[(((_image->w + UINT32_T_MASK) >>                                                   \
-                                      UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] &= ~(1 << (_x & UINT32_T_MASK)); \
+        ((uint32_t *)_image->data)[(((_image->w + UINT32_T_MASK) >>                                                   \
+    UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] &= ~(1 << (_x & UINT32_T_MASK)); \
     })
 
 #define IMAGE_SET_BINARY_PIXEL(image, x, y)                                                                                              \
@@ -522,9 +523,9 @@ typedef struct image {
         __typeof__ (image) _image = (image);                                                                                             \
         __typeof__ (x) _x = (x);                                                                                                         \
         __typeof__ (y) _y = (y);                                                                                                         \
-        ((uint32_t *) _image->data)[(((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] |= 1 <<             \
-                                                                                                                        (_x &            \
-                                                                                                                         UINT32_T_MASK); \
+        ((uint32_t *)_image->data)[(((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y) + (_x >> UINT32_T_SHIFT)] |= 1 <<             \
+            (_x &            \
+    UINT32_T_MASK); \
     })
 
 #define IMAGE_GET_GRAYSCALE_PIXEL(image, x, y)             \
@@ -532,7 +533,7 @@ typedef struct image {
         __typeof__ (image) _image = (image);               \
         __typeof__ (x) _x = (x);                           \
         __typeof__ (y) _y = (y);                           \
-        ((uint8_t *) _image->data)[(_image->w * _y) + _x]; \
+        ((uint8_t *)_image->data)[(_image->w * _y) + _x]; \
     })
 
 #define IMAGE_PUT_GRAYSCALE_PIXEL(image, x, y, v)               \
@@ -541,7 +542,7 @@ typedef struct image {
         __typeof__ (x) _x = (x);                                \
         __typeof__ (y) _y = (y);                                \
         __typeof__ (v) _v = (v);                                \
-        ((uint8_t *) _image->data)[(_image->w * _y) + _x] = _v; \
+        ((uint8_t *)_image->data)[(_image->w * _y) + _x] = _v; \
     })
 
 #define IMAGE_GET_RGB565_PIXEL(image, x, y)                 \
@@ -549,7 +550,7 @@ typedef struct image {
         __typeof__ (image) _image = (image);                \
         __typeof__ (x) _x = (x);                            \
         __typeof__ (y) _y = (y);                            \
-        ((uint16_t *) _image->data)[(_image->w * _y) + _x]; \
+        ((uint16_t *)_image->data)[(_image->w * _y) + _x]; \
     })
 
 #define IMAGE_PUT_RGB565_PIXEL(image, x, y, v)                   \
@@ -558,7 +559,7 @@ typedef struct image {
         __typeof__ (x) _x = (x);                                 \
         __typeof__ (y) _y = (y);                                 \
         __typeof__ (v) _v = (v);                                 \
-        ((uint16_t *) _image->data)[(_image->w * _y) + _x] = _v; \
+        ((uint16_t *)_image->data)[(_image->w * _y) + _x] = _v; \
     })
 
 #define IMAGE_GET_YUV_PIXEL(image, x, y)                    \
@@ -566,7 +567,7 @@ typedef struct image {
         __typeof__ (image) _image = (image);                \
         __typeof__ (x) _x = (x);                            \
         __typeof__ (y) _y = (y);                            \
-        ((uint16_t *) _image->data)[(_image->w * _y) + _x]; \
+        ((uint16_t *)_image->data)[(_image->w * _y) + _x]; \
     })
 
 #define IMAGE_PUT_YUV_PIXEL(image, x, y, v)                      \
@@ -575,7 +576,7 @@ typedef struct image {
         __typeof__ (x) _x = (x);                                 \
         __typeof__ (y) _y = (y);                                 \
         __typeof__ (v) _v = (v);                                 \
-        ((uint16_t *) _image->data)[(_image->w * _y) + _x] = _v; \
+        ((uint16_t *)_image->data)[(_image->w * _y) + _x] = _v; \
     })
 
 #define IMAGE_GET_BAYER_PIXEL(image, x, y)                 \
@@ -583,7 +584,7 @@ typedef struct image {
         __typeof__ (image) _image = (image);               \
         __typeof__ (x) _x = (x);                           \
         __typeof__ (y) _y = (y);                           \
-        ((uint8_t *) _image->data)[(_image->w * _y) + _x]; \
+        ((uint8_t *)_image->data)[(_image->w * _y) + _x]; \
     })
 
 #define IMAGE_PUT_BAYER_PIXEL(image, x, y, v)                   \
@@ -592,7 +593,7 @@ typedef struct image {
         __typeof__ (x) _x = (x);                                \
         __typeof__ (y) _y = (y);                                \
         __typeof__ (v) _v = (v);                                \
-        ((uint8_t *) _image->data)[(_image->w * _y) + _x] = _v; \
+        ((uint8_t *)_image->data)[(_image->w * _y) + _x] = _v; \
     })
 
 // Fast Stuff //
@@ -601,7 +602,7 @@ typedef struct image {
     ({                                                                                        \
         __typeof__ (image) _image = (image);                                                  \
         __typeof__ (y) _y = (y);                                                              \
-        ((uint32_t *) _image->data) + (((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y); \
+        ((uint32_t *)_image->data) + (((_image->w + UINT32_T_MASK) >> UINT32_T_SHIFT) * _y); \
     })
 
 #define IMAGE_GET_BINARY_PIXEL_FAST(row_ptr, x)                       \
@@ -639,7 +640,7 @@ typedef struct image {
     ({                                                  \
         __typeof__ (image) _image = (image);            \
         __typeof__ (y) _y = (y);                        \
-        ((uint8_t *) _image->data) + (_image->w * _y);  \
+        ((uint8_t *)_image->data) + (_image->w * _y);  \
     })
 
 #define IMAGE_GET_GRAYSCALE_PIXEL_FAST(row_ptr, x) \
@@ -661,7 +662,7 @@ typedef struct image {
     ({                                                  \
         __typeof__ (image) _image = (image);            \
         __typeof__ (y) _y = (y);                        \
-        ((uint16_t *) _image->data) + (_image->w * _y); \
+        ((uint16_t *)_image->data) + (_image->w * _y); \
     })
 
 #define IMAGE_GET_RGB565_PIXEL_FAST(row_ptr, x)    \
@@ -683,14 +684,14 @@ typedef struct image {
     ({                                                 \
         __typeof__ (image) _image = (image);           \
         __typeof__ (y) _y = (y);                       \
-        ((uint8_t *) _image->data) + (_image->w * _y); \
+        ((uint8_t *)_image->data) + (_image->w * _y); \
     })
 
 #define IMAGE_COMPUTE_YUV_PIXEL_ROW_PTR(image, y)       \
     ({                                                  \
         __typeof__ (image) _image = (image);            \
         __typeof__ (y) _y = (y);                        \
-        ((uint16_t *) _image->data) + (_image->w * _y); \
+        ((uint16_t *)_image->data) + (_image->w * _y); \
     })
 
 
@@ -743,10 +744,10 @@ typedef enum {
 } omv_framesize_t;
 
 
- 
-//=======================================================================================
-// draw functions  
-//=======================================================================================
+
+// =======================================================================================
+// draw functions
+// =======================================================================================
 int imlib_get_pixel(image_t *img, int x, int y);
 int imlib_get_pixel_fast(image_t *img, const void *row_ptr, int x);
 void imlib_set_pixel(image_t *img, int x, int y, int p);
@@ -755,29 +756,22 @@ void imlib_draw_rectangle(image_t *img, int rx, int ry, int rw, int rh, int c, i
 void imlib_draw_circle(image_t *img, int cx, int cy, int r, int c, int thickness, bool fill);
 void imlib_draw_ellipse(image_t *img, int cx, int cy, int rx, int ry, int rotation, int c, int thickness, bool fill);
 void imlib_draw_string(image_t *img,
-                       int x_off,
-                       int y_off,
-                       const char *str,
-                       int c,
-                       float scale,
-                       int x_spacing,
-                       int y_spacing,
-                       bool mono_space,
-                       int char_rotation,
-                       bool char_hmirror,
-                       bool char_vflip,
-                       int string_rotation,
-                       bool string_hmirror,
-                       bool string_hflip);
+    int x_off,
+    int y_off,
+    const char *str,
+    int c,
+    float scale,
+    int x_spacing,
+    int y_spacing,
+    bool mono_space,
+    int char_rotation,
+    bool char_hmirror,
+    bool char_vflip,
+    int string_rotation,
+    bool string_hmirror,
+    bool string_hflip);
 
 
 #ifdef __cplusplus
 }
 #endif
-
-
-
-
-
-
-

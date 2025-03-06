@@ -31,8 +31,8 @@
 #include "utils.h"
 #include "font.h"
 #include "fmath.h"
- 
- 
+
+
 
 void *imlib_compute_row_ptr(const image_t *img, int y) {
     switch (img->pixfmt) {
@@ -55,13 +55,13 @@ void *imlib_compute_row_ptr(const image_t *img, int y) {
 inline int imlib_get_pixel_fast(image_t *img, const void *row_ptr, int x) {
     switch (img->pixfmt) {
         case OMV_PIXFORMAT_BINARY: {
-            return IMAGE_GET_BINARY_PIXEL_FAST((uint32_t *) row_ptr, x);
+            return IMAGE_GET_BINARY_PIXEL_FAST((uint32_t *)row_ptr, x);
         }
         case OMV_PIXFORMAT_GRAYSCALE: {
-            return IMAGE_GET_GRAYSCALE_PIXEL_FAST((uint8_t *) row_ptr, x);
+            return IMAGE_GET_GRAYSCALE_PIXEL_FAST((uint8_t *)row_ptr, x);
         }
         case OMV_PIXFORMAT_RGB565: {
-            return IMAGE_GET_RGB565_PIXEL_FAST((uint16_t *) row_ptr, x);
+            return IMAGE_GET_RGB565_PIXEL_FAST((uint16_t *)row_ptr, x);
         }
         default: {
             return -1;
@@ -187,7 +187,7 @@ static void imlib_draw_thin_line(image_t *img, int x0, int y0, int x1, int y1, i
 }
 
 // https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#C
-void imlib_draw_line(image_t* img, int x0, int y0, int x1, int y1, int color, int thickness) {
+void imlib_draw_line(image_t *img, int x0, int y0, int x1, int y1, int color, int thickness) {
     if (thickness > 0) {
         int thickness0 = (thickness - 0) / 2;
         int thickness1 = (thickness - 1) / 2;
@@ -197,12 +197,20 @@ void imlib_draw_line(image_t* img, int x0, int y0, int x1, int y1, int color, in
 
         for (;;) {
             point_fill(img, x0, y0, -thickness0, thickness1, color);
-            if ((x0 == x1) && (y0 == y1)) break;
+            if ((x0 == x1) && (y0 == y1)) {
+                break;
+            }
             int e2 = err;
-            if (e2 > -dx) { err -= dy; x0 += sx; }
-            if (e2 <  dy) { err += dx; y0 += sy; }
+            if (e2 > -dx) {
+                err -= dy;
+                x0 += sx;
+            }
+            if (e2 < dy) {
+                err += dx;
+                y0 += sy;
+            }
         }
-    }    
+    }
 }
 
 static void xLine(image_t *img, int x1, int x2, int y, int c) {
@@ -243,7 +251,7 @@ void imlib_draw_rectangle(image_t *img, int rx, int ry, int rw, int rh, int c, i
 }
 
 // https://stackoverflow.com/questions/27755514/circle-with-thickness-drawing-algorithm
-void imlib_draw_circle(image_t* img, int cx, int cy, int radius, int color, int thickness, bool fill) {
+void imlib_draw_circle(image_t *img, int cx, int cy, int radius, int color, int thickness, bool fill) {
     if (fill) {
         point_fill(img, cx, cy, -radius, radius, color);
     } else if (thickness > 0) {
@@ -287,20 +295,20 @@ void imlib_draw_circle(image_t* img, int cx, int cy, int radius, int color, int 
                 }
             }
         }
-    }   
+    }
 }
 
 // https://scratch.mit.edu/projects/50039326/
 static void scratch_draw_pixel(image_t *img,
-                               int x0,
-                               int y0,
-                               int dx,
-                               int dy,
-                               float shear_dx,
-                               float shear_dy,
-                               int r0,
-                               int r1,
-                               int c) {
+    int x0,
+    int y0,
+    int dx,
+    int dy,
+    float shear_dx,
+    float shear_dy,
+    int r0,
+    int r1,
+    int c) {
     point_fill(img, x0 + dx, y0 + dy + fast_floorf((dx * shear_dy) / shear_dx), r0, r1, c);
 }
 
@@ -312,15 +320,15 @@ static void scratch_draw_line(image_t *img, int x0, int y0, int dx, int dy0, int
 
 // https://scratch.mit.edu/projects/50039326/
 static void scratch_draw_sheared_ellipse(image_t *img,
-                                         int x0,
-                                         int y0,
-                                         int width,
-                                         int height,
-                                         bool filled,
-                                         float shear_dx,
-                                         float shear_dy,
-                                         int c,
-                                         int thickness) {
+    int x0,
+    int y0,
+    int width,
+    int height,
+    bool filled,
+    float shear_dx,
+    float shear_dy,
+    int c,
+    int thickness) {
     int thickness0 = (thickness - 0) / 2;
     int thickness1 = (thickness - 1) / 2;
     if (((thickness > 0) || filled) && (shear_dx != 0)) {
@@ -381,14 +389,14 @@ static void scratch_draw_sheared_ellipse(image_t *img,
 
 // https://scratch.mit.edu/projects/50039326/
 static void scratch_draw_rotated_ellipse(image_t *img,
-                                         int x,
-                                         int y,
-                                         int x_axis,
-                                         int y_axis,
-                                         int rotation,
-                                         bool filled,
-                                         int c,
-                                         int thickness) {
+    int x,
+    int y,
+    int x_axis,
+    int y_axis,
+    int rotation,
+    bool filled,
+    int c,
+    int thickness) {
     if ((x_axis > 0) && (y_axis > 0)) {
         if ((x_axis == y_axis) || (rotation == 0)) {
             scratch_draw_sheared_ellipse(img, x, y, x_axis / 2, y_axis / 2, filled, 1, 0, c, thickness);
@@ -414,21 +422,21 @@ static void scratch_draw_rotated_ellipse(image_t *img,
 
             float theta = fast_atanf(IM_DIV(y_axis, x_axis) * (-tanf(IM_DEG2RAD(rotation))));
             float shear_dx = (x_axis * cosf(theta) * cosf(IM_DEG2RAD(rotation))) -
-                             (y_axis * sinf(theta) * sinf(IM_DEG2RAD(rotation)));
+                (y_axis * sinf(theta) * sinf(IM_DEG2RAD(rotation)));
             float shear_dy = (x_axis * cosf(theta) * sinf(IM_DEG2RAD(rotation))) +
-                             (y_axis * sinf(theta) * cosf(IM_DEG2RAD(rotation)));
+                (y_axis * sinf(theta) * cosf(IM_DEG2RAD(rotation)));
             float shear_x_axis = fast_fabsf(shear_dx);
             float shear_y_axis = IM_DIV((y_axis * x_axis), shear_x_axis);
             scratch_draw_sheared_ellipse(img,
-                                         x,
-                                         y,
-                                         fast_floorf(shear_x_axis / 2),
-                                         fast_floorf(shear_y_axis / 2),
-                                         filled,
-                                         shear_dx,
-                                         shear_dy,
-                                         c,
-                                         thickness);
+                x,
+                y,
+                fast_floorf(shear_x_axis / 2),
+                fast_floorf(shear_y_axis / 2),
+                filled,
+                shear_dx,
+                shear_dy,
+                c,
+                thickness);
         }
     }
 }
@@ -445,20 +453,20 @@ void imlib_draw_ellipse(image_t *img, int cx, int cy, int rx, int ry, int rotati
 // char rotation == 0, 90, 180, 360, etc.
 // string rotation == 0, 90, 180, 360, etc.
 void imlib_draw_string(image_t *img,
-                       int x_off,
-                       int y_off,
-                       const char *str,
-                       int c,
-                       float scale,
-                       int x_spacing,
-                       int y_spacing,
-                       bool mono_space,
-                       int char_rotation,
-                       bool char_hmirror,
-                       bool char_vflip,
-                       int string_rotation,
-                       bool string_hmirror,
-                       bool string_vflip) {
+    int x_off,
+    int y_off,
+    const char *str,
+    int c,
+    float scale,
+    int x_spacing,
+    int y_spacing,
+    bool mono_space,
+    int char_rotation,
+    bool char_hmirror,
+    bool char_vflip,
+    int string_rotation,
+    bool string_hmirror,
+    bool string_vflip) {
     char_rotation %= 360;
     if (char_rotation < 0) {
         char_rotation += 360;
@@ -598,6 +606,3 @@ void imlib_draw_string(image_t *img,
         }
     }
 }
-
-
-

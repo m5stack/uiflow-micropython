@@ -9,11 +9,13 @@ import camera
 
 img = None
 
+
 def setup():
     global img
     M5.begin()
     Widgets.fillScreen(0x222222)
     camera.init(pixformat=camera.RGB565, framesize=camera.QVGA)
+
 
 def loop():
     global img
@@ -21,7 +23,8 @@ def loop():
     img = camera.snapshot()
     M5.Lcd.show(img, 0, 0, 320, 240)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     try:
         setup()
         while True:
@@ -29,8 +32,7 @@ if __name__ == '__main__':
     except (Exception, KeyboardInterrupt) as e:
         try:
             from utility import print_error_msg
+
             print_error_msg(e)
         except ImportError:
             print("please update to latest firmware")
-
- 

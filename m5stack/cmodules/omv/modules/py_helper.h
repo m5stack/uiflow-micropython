@@ -26,16 +26,15 @@ typedef enum py_helper_arg_image_flags {
 image_t *py_helper_arg_to_image(const mp_obj_t arg, uint32_t flags);
 
 uint py_helper_consume_array(size_t n_args, const mp_obj_t *args, uint arg_index, size_t len, const mp_obj_t **items);
- 
+
 int py_helper_keyword_int(size_t n_args, const mp_obj_t *args, uint arg_index,
-                          mp_map_t *kw_args, mp_obj_t kw, int default_val);
+    mp_map_t *kw_args, mp_obj_t kw, int default_val);
 
 float py_helper_keyword_float(uint n_args, const mp_obj_t *args, uint arg_index,
-                              mp_map_t *kw_args, mp_obj_t kw, float default_val);
+    mp_map_t *kw_args, mp_obj_t kw, float default_val);
 
 int py_helper_keyword_color(image_t *img, uint n_args, const mp_obj_t *args, uint arg_index,
-                            mp_map_t *kw_args, int default_val);
+    mp_map_t *kw_args, int default_val);
 
 
 #endif // __PY_HELPER__
-
