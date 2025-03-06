@@ -1,0 +1,37 @@
+..  |ATOM GPS| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/atomicgps/atomicgps_01.webp
+    :target: https://docs.m5stack.com/en/atom/atomicgps
+    :height: 200px
+    :width: 200px
+
+.. |ATOM GPS Base| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic%20GPS%20Base/img-3f6d1129-0dde-4b67-adc6-69535a8d1052.webp
+    :target: https://docs.m5stack.com/en/atom/Atomic%20GPS%20Base
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/init.png
+.. |get_antenna_state.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_antenna_state.png
+.. |get_gps_time.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_gps_time.png
+.. |get_gps_date.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_gps_date.png
+.. |get_gps_date_time.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_gps_date_time.png
+.. |get_timestamp.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_timestamp.png
+.. |get_latitude.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_latitude.png
+.. |get_longitude.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_longitude.png
+.. |get_altitude.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_altitude.png
+.. |get_satellite_num.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_satellite_num.png
+.. |get_pos_quality.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_pos_quality.png
+.. |get_corse_over_ground.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_corse_over_ground.png
+.. |get_speed_over_ground.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_speed_over_ground.png
+.. |set_time_zone.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/set_time_zone.png
+.. |get_time_zone.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/get_time_zone.png
+.. |deinit.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/gps/deinit.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps/example.png
+
+.. |atoms3_gps_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/gps/atoms3_gps_example.m5f2"
+        target="_blank"
+    >
+        atoms3_gps_example.m5f2
+    </a>

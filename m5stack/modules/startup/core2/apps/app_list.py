@@ -280,7 +280,7 @@ class ListApp(app_base.AppBase):
 
     def _btn_once_event_handler(self, event):
         execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
     def _btn_always_event_handler(self, event):
         nvs = esp32.NVS("uiflow")

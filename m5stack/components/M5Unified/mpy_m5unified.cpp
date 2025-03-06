@@ -108,6 +108,44 @@ static void m5_config_helper_module_display(mp_obj_t config_obj, m5::M5Unified::
     }
 }
 
+static void m5_config_helper_atom_display(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError("atom_display must be a dict");
+    }
+
+    cfg.atom_display = M5AtomDisplay::config_t();
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                cfg.external_display.atom_display = mp_obj_is_true(value);
+            } else if (strcmp(key_str, "width") == 0) {
+                cfg.atom_display.logical_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "height") == 0) {
+                cfg.atom_display.logical_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "refresh_rate") == 0) {
+                cfg.atom_display.refresh_rate = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_width") == 0) {
+                cfg.atom_display.output_width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "output_height") == 0) {
+                cfg.atom_display.output_height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "scale_w") == 0) {
+                cfg.atom_display.scale_w = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "scale_h") == 0) {
+                cfg.atom_display.scale_h = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "pixel_clock") == 0) {
+                cfg.atom_display.pixel_clock = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
 #if CONFIG_IDF_TARGET_ESP32
 static void m5_config_helper_module_rca(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
     if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
@@ -219,6 +257,8 @@ static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg, 
 
             if (strcmp(key_str, "module_display") == 0) {
                 m5_config_helper_module_display(value, cfg);
+            } else if (strcmp(key_str, "atom_display") == 0) {
+                m5_config_helper_atom_display(value, cfg);
             }
             #if CONFIG_IDF_TARGET_ESP32
             else if (strcmp(key_str, "module_rca") == 0) {
@@ -278,6 +318,14 @@ mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
             }
         } else {
             mp_raise_NotImplementedError("module_display is not supported on this board");
+        }
+    } else if (cfg.external_display.atom_display) {
+        M5AtomDisplay dsp(cfg.atom_display);
+        if (dsp.init_without_reset()) {
+            M5.addDisplay(dsp);
+            mp_printf(&mp_plat_print, "atom_display added\n");
+        } else {
+            mp_raise_msg_varg(&mp_type_OSError, MP_ERROR_TEXT("AtomDisplay init failed"));
         }
     }
     #if CONFIG_IDF_TARGET_ESP32

@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-06 10:54+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/plcio.rst:2 e273f15232bb409a89d9f9709e1c1c97
+msgid "PLC I/O"
+msgstr ""
+
+#: ../../en/hardware/plcio.rst:6 c80d4870d634452288da89b84120d09e
+msgid ""
+"PLC I/O is used to control the Input/Output (I/O) Capabilities of host "
+"devices."
+msgstr "PLC I/O 用于控制主机设备的输入/输出 (I/O) 功能。"
+
+#: ../../en/hardware/plcio.rst:8 d47973bb097b46f68f31a3244510de7b
+msgid "The following are the host's support for PLC I/O functions:"
+msgstr "以下是主机对PLC I/O功能的支持："
+
+#: ../../en/hardware/plcio.rst:15 cb04c36816ac4edb99e74df2f0c72e8c
+msgid "Controller"
+msgstr "主机"
+
+#: ../../en/hardware/plcio.rst:15 d89e0bccd51a4591b7fd0e1ff1bbeb44
+msgid "Digital Input"
+msgstr "数字输入器"
+
+#: ../../en/hardware/plcio.rst:15 50f01b8fe81d447a96cea2aacfc0d6ed
+msgid "Relay"
+msgstr "继电器"
+
+#: ../../en/hardware/plcio.rst:17 7fae604f835d4f7daddf9dea5660be20
+msgid "StampPLC"
+msgstr ""
+
+#: ../../en/hardware/plcio.rst:17 1f45ebe7665c459d972a0ad457fa285d
+#: 5a85b63a6554495ebd065bb15b938a21
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/plcio.rst:25 c1dce40ce9164e52ae7ced5486065742
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/hardware/plcio.rst:28 ../../en/hardware/plcio.rst:47
+#: c2bf90ffc7b7481b90c008e48e4d4303 d0ab084898784c988a66c8c12c175dd6
+msgid "Digital input control relay"
+msgstr "数字输入控制继电器"
+
+#: ../../en/hardware/plcio.rst:30 6931c0e0f391426ea6ee747ba8fa11fa
+msgid "Open the |stamplc_plcio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stamplc_plcio_example.m5f2| 项目。"
+
+#: ../../en/hardware/plcio.rst:32 ../../en/hardware/plcio.rst:49
+#: 6073024144fd4237bd6a40a6aa013e45 f186190cccfc458aadf5bf3c92c26f5f
+msgid "This example shows how to control a relay using a digital input."
+msgstr "此示例演示如何使用数字输入控制继电器。"
+
+#: ../../en/hardware/plcio.rst:34 478e44eda5fe45aabdd6d5fd1e708e16
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/plcio.rst:36 a99c625c600a461c84004039d257c912
+msgid "|stamplc_plcio_example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.ref:2 867081067b5e4418ad2351fe55fad1fe
+msgid "stamplc_plcio_example.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.rst:38 ../../en/hardware/plcio.rst:57
+#: dd15ac6b58174e178efcaff29abb582e f8561be5792b440086a5bf6d9f66ce79
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/plcio.rst:40 ../../en/hardware/plcio.rst:59
+#: a812db24330844c9b22ba67c9bc97d79 d0fe846796e145669168530a0e5ac5a9
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/plcio.rst:44 bb1bc9691f144fe7a6f328766cb00caa
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/hardware/plcio.rst:51 44b24587effc4ad4ac55180f5d7f9ea8
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/plcio.rst:63 07d432729e4e4aaab799038f53847e7b
+msgid "API"
+msgstr "API参考"
+

@@ -1,0 +1,21 @@
+.. |Atomic HDriver Base| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/Atomic%20H-Driver%20Base/img-ee0353ff-f8a5-40c0-929e-455844999d21.webp
+    :target: https://docs.m5stack.com/zh_CN/atom/Atomic%20H-Driver%20Base
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/init.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/set_freq.png
+.. |get_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/get_freq.png
+.. |set_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/set_speed.png
+.. |get_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/get_status.png
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/get_voltage.png
+.. |atoms3r_hdriver_base_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/hdriver/example.png
+
+.. |atoms3r_hdriver_base_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/hdriver/atoms3r_hdriver_base_example.m5f2"
+        target="_blank"
+    >
+        atoms3r_hdriver_base_example.m5f2
+    </a>

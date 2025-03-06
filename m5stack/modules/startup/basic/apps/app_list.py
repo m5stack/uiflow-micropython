@@ -243,7 +243,7 @@ class ListApp(app_base.AppBase):
 
     async def _btnc_event_handler(self, fw):
         execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-        sys.exit(0)
+        raise KeyboardInterrupt
 
     async def _btnc_hold_event_handler(self, fw):
         boot_option.set_boot_option(2)

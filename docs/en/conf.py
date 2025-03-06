@@ -51,6 +51,7 @@ autodoc_mock_imports = [
     "M5",
     "module.mbus",
     "network",
+    "m5can"
 ]
 
 autodoc_default_options = {

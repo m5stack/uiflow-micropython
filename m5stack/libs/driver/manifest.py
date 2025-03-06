@@ -40,6 +40,7 @@ package(
         "ads1100.py",
         "adxl34x.py",
         "atgm336h.py",
+        "aw9523.py",
         "asr650x.py",
         "bh1750.py",
         "bh1750fvi.py",

@@ -1,0 +1,18 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/init.png
+.. |get_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/get_status.png
+.. |set_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/set_value.png
+.. |get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/get_value.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/on.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/off.png
+.. |set_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/set_status.png
+
+.. |stamplc_relay_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/plcio/relay/stamplc_relay_example.png
+
+.. |stamplc_relay_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/plcio/relay/stamplc_relay_example.m5f2"
+        target="_blank"
+    >
+        stamplc_relay_example.m5f2
+    </a>

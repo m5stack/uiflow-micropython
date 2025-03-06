@@ -11,6 +11,7 @@ package(
         "button.py",
         "ir.py",
         "matrix_keyboard.py",
+        "plcio.py",
         "rfid.py",
         "rgb.py",
         "rotary.py",
@@ -19,5 +20,5 @@ package(
         "sen55.py",
     ),
     base_path="..",
-    opt=0,
+    # opt=0,
 )

@@ -10,27 +10,13 @@
 
 .. |init.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/can/init.png
 
-.. |init_advanced.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/base/can/init_advanced.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/can/example.png
 
-
-.. |tx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/can/tx_example.png
-
-.. |stickc_plus2_can_tx_example.m5f2| raw:: html
+.. |atoms3_can_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/can/stickc_plus2_can_tx_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/can/atoms3_can_example.m5f2"
         target="_blank"
     >
-        stickc_plus2_can_tx_example.m5f2
-    </a>
-
-.. |rx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/can/rx_example.png
-
-.. |dial_can_rx_example.m5f2| raw:: html
-
-    <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/can/dial_can_rx_example.m5f2"
-        target="_blank"
-    >
-        dial_can_rx_example.m5f2
+        atoms3_can_example.m5f2
     </a>

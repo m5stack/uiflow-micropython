@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-06 11:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/plcio.digitalinput.rst:2 88ac5ff0c15e41699d60ee811370157c
+msgid "Digital Input"
+msgstr "数字输入器"
+
+#: ../../en/hardware/plcio.digitalinput.rst:6 4ea7389bf78b48ef8f00a47080828719
+msgid "Digital Input is used to read the digital input of host devices."
+msgstr "数字输入器用于读取主机设备的数字输入。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:10 34167f2c6bef4558b4a24a90535effed
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/hardware/plcio.digitalinput.rst:13
+#: ../../en/hardware/plcio.digitalinput.rst:32 164ba3c1f3cd43f8873b016e9bdc54c4
+#: 465ae606ad0c4d63a8f201b7e183c2b3
+msgid "Get the digital input status"
+msgstr "获取数字输入状态"
+
+#: ../../en/hardware/plcio.digitalinput.rst:15 d75dd557a180404398c01b5600bb0197
+msgid "Open the |stamplc_digital_input_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stamplc_digital_input_example.m5f2| 项目。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:17
+#: ../../en/hardware/plcio.digitalinput.rst:34 253517e9117d4c71ba5d34a7e53a4e20
+#: 6ca384baa1ca43659c58f0b32ca5eeb6
+msgid ""
+"This example demonstrates how to get the status of a digital input and "
+"display the status on the screen."
+msgstr "此示例演示如何获取数字输入的状态并在屏幕上显示该状态。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:19
+#: ../../en/hardware/plcio.digitalinput.rst:57
+#: ../../en/hardware/plcio.digitalinput.rst:77
+#: ../../en/hardware/plcio.digitalinput.rst:95
+#: ../../en/hardware/plcio.digitalinput.rst:112
+#: 0e0b95072346460a8fd1f9b906553801 13aa79b50a5e4cedae326cedf29dc708
+#: 266a30cbd2ef498890c2fadd7c05e279 43f498c09e604e8d926d533620cf3699
+#: 5ae6196ead234863aafacd280b291387
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/plcio.digitalinput.rst:21 89691cc5a39e443da40515a0ed85e1a6
+msgid "|stamplc_digital_input_example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.digitalinput.ref:6
+#: 39d524ab927949368517614287268acc
+msgid "stamplc_digital_input_example.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:23
+#: ../../en/hardware/plcio.digitalinput.rst:40 bc7ff7e4e3444e279e4b27215946c80f
+#: bf562185fcdf41fb859496708e0c3fa1
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/plcio.digitalinput.rst:25
+#: ../../en/hardware/plcio.digitalinput.rst:42 7725e1d918924c80a98ca6160062a0b5
+#: cfd6ce6712b54260a0a18392f171bd59
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:29 c2da9ee57c864adc8e8201cd53eb176c
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/hardware/plcio.digitalinput.rst:36
+#: ../../en/hardware/plcio.digitalinput.rst:61
+#: ../../en/hardware/plcio.digitalinput.rst:81
+#: ../../en/hardware/plcio.digitalinput.rst:99
+#: ../../en/hardware/plcio.digitalinput.rst:116
+#: 62102e58b5604c40827862aa6aa2a502 64b53daffdac4555bef18cfafd77b78a
+#: 6b1f14b7d2d04149b0e4c5e2907e20e7 9a2a7d471d8740b09039b4d5208c4461
+#: c7c5549ddd9547ad9d024e450232950c
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/plcio.digitalinput.rst:46 4905f6afe28548348eaeeeabdf62d0e6
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/hardware/plcio.digitalinput.rst:49 4bef4f6efac04da5a8bc54356726ddb2
+msgid "DigitalInput"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:53 7282b756d2ee4f8da186af006a963291
+msgid "Initialize a digital input object."
+msgstr "初始化数字输入器对象。"
+
+#: ../../en/hardware/plcio.digitalinput.rst 10aaa514a678404caa8890991add6a68
+#: 3ca65b87d966419cabb3cf1311ec96f0
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:55 0d9d837f553f4c2a99c9570f83783e6e
+msgid "The ID of the digital input. The range of ID is 1-8."
+msgstr "数字输入的ID。ID范围是1-8。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:59 cdb4706fcc3f42958bf6a719cb1a8ae3
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.digitalinput.ref:1
+#: 39e5b00805134f44ac0b4b0521c6edc9
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:72 da60d199da514d26ad28a86f310f1ac6
+msgid "Get the status of the digital input."
+msgstr "获取数字输入器的状态。"
+
+#: ../../en/hardware/plcio.digitalinput.rst 6ae136ac45784d07917ba98c5311cdb7
+#: f7f143f11e8f4fe78689e45907a1c389
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:74 d7d49c6b7a354ad1b33bbf9f00adf0b1
+msgid "The status of the digital input."
+msgstr "数字输入器的状态。"
+
+#: ../../en/hardware/plcio.digitalinput.rst fbe9c6a280e64c01b4564feb84d2fc2f
+#: fc91c6657bc949d58188bfbe923e0383
+msgid "Return type"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:79 c00a8b8f9beb4147b4d323fe92f42c6b
+msgid "|get_status.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.digitalinput.ref:2
+#: 052827b0f28745638858859a746a4a71
+msgid "get_status.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:90 480a104fa9274b8b99a88c2a66d4246d
+msgid "Get the value of the digital input."
+msgstr "获取数字输入器的值。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:92 2c62f5c5ef3b4bc5bd6f7d5a27b72bc2
+msgid "The value of the digital input."
+msgstr "数字输入的值。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:97 a31830a2e37c435a907285b4db983830
+msgid "|value.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.digitalinput.ref:3
+#: 4bcc2dd73a9944ffad16b9a282c23d09
+msgid "value.png"
+msgstr ""
+
+#: ../../en/hardware/plcio.digitalinput.rst:107
+#: e18329c4719846d6b190440ff99d6226
+msgid "Enable interrupt for the pin."
+msgstr "启用中断。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:109
+#: 2f5a6d8e9fb648fc9f7d1ffe7434a963
+msgid "The interrupt handler function."
+msgstr "中断处理函数。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:110
+#: 8af8517c4cfb4414a3fa48bd3be16985
+msgid ""
+"The interrupt trigger mode, DigitalInput.IRQ_FALLING or "
+"DigitalInput.IRQ_RISING."
+msgstr "中断触发模式，DigitalInput.IRQ_FALLING 或 DigitalInput.IRQ_RISING。"
+
+#: ../../en/hardware/plcio.digitalinput.rst:114
+#: 7ac0d594f07b483bbd98d10040e58032
+msgid "|irq.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.plcio.digitalinput.ref:4
+#: 0713ce43e82942219dd7636d67269b54
+msgid "irq.png"
+msgstr ""
+
