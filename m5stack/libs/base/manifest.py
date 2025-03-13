@@ -17,6 +17,7 @@ package(
         "rs232.py",
         "speaker.py",
         "stepmotor.py",
+        "tfcard.py",
     ),
     base_path="..",
     opt=3,

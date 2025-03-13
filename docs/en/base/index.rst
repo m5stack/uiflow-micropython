@@ -17,3 +17,4 @@ Base
     rs485.rst
     speaker.rst
     stepmotor.rst
+    tfcard.rst

@@ -17,6 +17,7 @@ _attrs = {
     "AtomRS485": "rs232",
     "SpeakerBase": "speaker",
     "AtomicStepmotorBase": "stepmotor",
+    "AtomicTFCardBase": "tfcard",
 }
 
 

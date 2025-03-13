@@ -2,7 +2,8 @@
 #
 # SPDX-License-Identifier: MIT
 
-import machine, os
+import machine
+import os
 
 
 def create_sdcard_closure():

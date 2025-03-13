@@ -13,6 +13,7 @@ _attrs = {
     "RGB": "rgb",
     "Rotary": "rotary",
     "SCD40": "scd40",
+    "SDCard": "sdcard",
     "SEN55": "sen55",
 }
 
