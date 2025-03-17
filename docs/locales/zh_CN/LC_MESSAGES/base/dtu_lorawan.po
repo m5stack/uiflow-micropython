@@ -1,0 +1,564 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-17 15:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/dtu_lorawan.rst:2 a9d6721cebaf48b18af1a13cfc3ee68f
+msgid "Atom DTU LoRaWAN-Series Base"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:8 d2fc2c808a424bf38f4757b9198a837c
+msgid ""
+"This is the driver library for the Atom DTU LoRaWAN-Series Base to accept"
+" and send data from the LoRaWAN module."
+msgstr "这是 Atom DTU LoRaWAN 系列底座的驱动程序库，用于接收和发送来自 LoRaWAN 模块的数据。"
+
+#: ../../en/base/dtu_lorawan.rst:10 68036b2bd9c94ec1aade8ee0a159af9c
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/dtu_lorawan.rst:13 71f970403ea64e5cbc399b81223ef702
+msgid "|Atom DTU LoRaWAN470|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref c456771d00b94a359f75f4083c49a2db
+msgid "Atom DTU LoRaWAN470"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:13 b1f10446da74426fb610641074d2a07f
+msgid "|Atom DTU LoRaWAN868|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref e41298704f6f44339eb8b9a7686f3a1b
+msgid "Atom DTU LoRaWAN868"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:13 beac1e93f8e34f979995384b241148f0
+msgid "|Atom DTU LoRaWAN915|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref e1ecf4fa4cde4c5a8a144e696738f745
+msgid "Atom DTU LoRaWAN915"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:17 bfdf89bbb9b64102b590718ff191e24d
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例："
+
+#: ../../en/base/dtu_lorawan.rst:20 ../../en/base/dtu_lorawan.rst:38
+#: 344fa992253e4e2ab1605eb211d97141
+msgid "LoRaWAN communication"
+msgstr "LoRaWAN 通讯"
+
+#: ../../en/base/dtu_lorawan.rst:22 b2ce57ccc3574f6789ca412a44fedde9
+msgid "Open the |atoms3r_dtu_lorawan_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2 中打开 |atoms3r_dtu_lorawan_example.m5f2| 项目。"
+
+#: ../../en/base/dtu_lorawan.rst:24 ../../en/base/dtu_lorawan.rst:40
+#: 2e208a3e87eb4755bf11552abeebb3f9
+msgid ""
+"This example shows how to receive and send data using the Atom DTU "
+"LoRaWAN Base."
+msgstr "本示例演示如何使用 Atom DTU LoRaWAN Base 接收和发送数据。"
+
+#: ../../en/base/dtu_lorawan.rst:26 1baa6583abee427bae4b15c28602ebf8
+#: 77acbebafa4c429285b180f3f20472e0 b2f24dd6d8334f958878af430c2eff3f
+#: base.dtu_lorawan.AtomDTULoRaWANBase:7
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:7
+#: driver.asr650x.LoRaWAN_470.check_join_status:6
+#: driver.asr650x.LoRaWAN_470.check_uplink_status:6
+#: driver.asr650x.LoRaWAN_470.config_abp:7
+#: driver.asr650x.LoRaWAN_470.config_otaa:7
+#: driver.asr650x.LoRaWAN_470.get_abp_config:6
+#: driver.asr650x.LoRaWAN_470.get_otaa_config:6
+#: driver.asr650x.LoRaWAN_Asr650x.join:8
+#: driver.asr650x.LoRaWAN_Asr650x.send_data:7
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode:5
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/dtu_lorawan.rst:28 b5570951cab6459bb4a675479b828c9f
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:37 6c7c4861892b4ad0a04782366b582756
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:30 ../../en/base/dtu_lorawan.rst:48
+#: 3e45c52e560547d491214bc9f0aabf84
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/dtu_lorawan.rst:32 ../../en/base/dtu_lorawan.rst:50
+#: d68de0b2fee6437292726d4ae9619027
+msgid "None"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:35 e823616d435f4c94ab6a714c3f5ea434
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/base/dtu_lorawan.rst:42 0e55c9b086464811902132e5db88f8fb
+#: a505d5dba3ec4809b00e0d54ba13b60b base.dtu_lorawan.AtomDTULoRaWANBase:11
+#: driver.asr650x.LoRaWAN_470:7
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:11
+#: driver.asr650x.LoRaWAN_470.check_join_status:10
+#: driver.asr650x.LoRaWAN_470.check_uplink_status:10
+#: driver.asr650x.LoRaWAN_470.config_abp:11
+#: driver.asr650x.LoRaWAN_470.config_otaa:11
+#: driver.asr650x.LoRaWAN_470.get_abp_config:10
+#: driver.asr650x.LoRaWAN_470.get_otaa_config:10
+#: driver.asr650x.LoRaWAN_Asr650x:6 driver.asr650x.LoRaWAN_Asr650x.join:14
+#: driver.asr650x.LoRaWAN_Asr650x.send_data:11
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:10
+#: driver.asr650x.LoRaWAN_Asr650x.set_frequency_band_mask:5
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode:9
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param:7
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port:9
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_downlink_mode:5
+#: e73e5abcd0d341c1a4d300dc434d592e of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/dtu_lorawan.rst:53 3bbbc1bb771b434baf662d6ce997e279
+msgid "**API**"
+msgstr ""
+
+#: ../../en/base/dtu_lorawan.rst:56 5fa8395d2d924490a1d790e1e1ba49ee
+msgid "AtomDTULoRaWANBase"
+msgstr ""
+
+#: base.dtu_lorawan.AtomDTULoRaWANBase:1 e6f29a1127274972bf070ca7d845a300 of
+msgid "Bases: :py:class:`~driver.asr650x.LoRaWAN_470`"
+msgstr ""
+
+#: base.dtu_lorawan.AtomDTULoRaWANBase:1 dcead66aab1147f890a9e9c165fbc286 of
+msgid "Create an AtomDTULoRaWANBase object"
+msgstr "创建 AtomDTULoRaWANBase 对象。"
+
+#: ../../en/base/dtu_lorawan.rst 3637970253a0457ba8b8530f3d2434c7
+#: ba50db3199134a7ba499968ed348490b base.dtu_lorawan.AtomDTULoRaWANBase
+#: ccb7115e40fb4743a24748b96638888b
+#: driver.asr650x.LoRaWAN_470.check_downlink_data
+#: driver.asr650x.LoRaWAN_470.config_abp driver.asr650x.LoRaWAN_470.config_otaa
+#: driver.asr650x.LoRaWAN_Asr650x.join driver.asr650x.LoRaWAN_Asr650x.send_data
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode
+#: driver.asr650x.LoRaWAN_Asr650x.set_frequency_band_mask
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_downlink_mode of
+msgid "Parameters"
+msgstr "参数"
+
+#: 1dd3c0a943514d1a9fb687a61d57f7eb base.dtu_lorawan.AtomDTULoRaWANBase:3 of
+msgid "The UART ID to use (0, 1, or 2). Default is 2."
+msgstr "UART ID 号可使用 0, 1, 2, 默认使用2。"
+
+#: b82f559fc4f44c978f2b0b17eead81dd base.dtu_lorawan.AtomDTULoRaWANBase:4 of
+msgid "A list or tuple containing the TX and RX pin numbers."
+msgstr "包含 TX 和 RX 引脚编号的列表或元组。"
+
+#: base.dtu_lorawan.AtomDTULoRaWANBase:9 f69bea33d8624feeb2a8b38f7ad18325 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:17 6c7c4861892b4ad0a04782366b582756
+msgid "init.png"
+msgstr ""
+
+#: 2da51ecd7e544d9abe14cfe095181f10 driver.asr650x.LoRaWAN_470:1 of
+msgid "Bases: :py:class:`~driver.asr650x.LoRaWAN_Asr650x`"
+msgstr ""
+
+#: a5417dbdc0d84bcea32ad6030c2214ca driver.asr650x.LoRaWAN_470:1
+#: driver.asr650x.LoRaWAN_Asr650x:1 of
+msgid "Create an LoRaWAN object."
+msgstr "创建 LoRaWAN 对象。"
+
+#: 8b919b170d0745ca954d6f5b822d8bca driver.asr650x.LoRaWAN_470:3 of
+msgid "The UART TX pin number."
+msgstr "UART TX 引脚编号。"
+
+#: b1c960be89b34aeb8836eef6468d47d3 driver.asr650x.LoRaWAN_470:4 of
+msgid "The UART RX pin number."
+msgstr "UART RX 引脚编号。"
+
+#: 7ce02d55f97a45758a5c465c2b7d8c1e driver.asr650x.LoRaWAN_470:5
+#: driver.asr650x.LoRaWAN_Asr650x:4 of
+msgid "Whether to enable debug mode."
+msgstr "是否开启调试模式"
+
+#: 76cc2d7fe6a745d895e31dbd00afcb85
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:1 of
+msgid "Check downlink data, if have downlink data, return the message."
+msgstr "检查下行链路数据，如果有下行链路数据，则返回信息。"
+
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:3
+#: f752cc40daca4df2942bd56df0cb83c5 of
+msgid "The timeout time."
+msgstr "超时时间。"
+
+#: 9cef9bbbcc604ecda1d6e26b4af0d4fc
+#: driver.asr650x.LoRaWAN_470.check_downlink_data
+#: driver.asr650x.LoRaWAN_470.check_join_status
+#: driver.asr650x.LoRaWAN_470.check_uplink_status
+#: driver.asr650x.LoRaWAN_470.get_abp_config
+#: driver.asr650x.LoRaWAN_470.get_otaa_config of
+msgid "Returns"
+msgstr "返回值"
+
+#: 76cc2d7fe6a745d895e31dbd00afcb85
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:4 of
+msgid "False if no downlink data, otherwise return the downlink data."
+msgstr "如果没有下行链路数据则为 False，否则返回下行链路数据。"
+
+#: 52bab6fb4f464b4b95df625165a1b95b
+#: driver.asr650x.LoRaWAN_470.check_downlink_data
+#: driver.asr650x.LoRaWAN_470.check_join_status
+#: driver.asr650x.LoRaWAN_470.check_uplink_status
+#: driver.asr650x.LoRaWAN_470.get_abp_config
+#: driver.asr650x.LoRaWAN_470.get_otaa_config of
+msgid "Return type"
+msgstr "返回类型"
+
+#: a6d28373675649c99e94aa8dab0f87e6
+#: driver.asr650x.LoRaWAN_470.check_downlink_data:9 of
+msgid "|check_downlink_data.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:23 3c2a20a530bd4de0836654bd4893b185
+msgid "check_downlink_data.png"
+msgstr ""
+
+#: 7055eee76a234616816b5feb88702e0d
+#: driver.asr650x.LoRaWAN_470.check_join_status:1 of
+msgid "Check the LoRaWAN network join status."
+msgstr "检查 LoRaWAN 网络加入状态。"
+
+#: dda4b8dfcf7946f4bda3742352675c91
+#: driver.asr650x.LoRaWAN_470.check_join_status:3 of
+msgid "The LoRaWAN network join status."
+msgstr "LoRaWAN 网络加入状态。"
+
+#: 245c37aaa005497294dbaa1bac4174fb
+#: driver.asr650x.LoRaWAN_470.check_join_status:8 of
+msgid "|check_join_status.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:21 6c7c4861892b4ad0a04782366b582756
+msgid "check_join_status.png"
+msgstr ""
+
+#: 77958755c83046a7b73da09fd1135f2a
+#: driver.asr650x.LoRaWAN_470.check_uplink_status:1 of
+msgid "Check the data uplink status."
+msgstr "检查数据上行链路状态。"
+
+#: 7e79c2d89d814d99a2425eec0ebb8dce
+#: driver.asr650x.LoRaWAN_470.check_uplink_status:3 of
+msgid "The data uplink status."
+msgstr "数据上行链路状态。"
+
+#: ddafdc6fa62b440f8a3ed05d595a582d
+#: driver.asr650x.LoRaWAN_470.check_uplink_status:8 of
+msgid "|check_uplink_status.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:22 6c7c4861892b4ad0a04782366b582756
+msgid "check_uplink_status.png"
+msgstr "检查数据上行链路状态。"
+
+#: 9343acadf0104616867adc75faff56bd driver.asr650x.LoRaWAN_470.config_abp:1 of
+msgid "Config the ABP join mode information."
+msgstr "配置 ABP 连接模式信息。"
+
+#: b71c70ae5562466fa7a33e0ea448929f driver.asr650x.LoRaWAN_470.config_abp:3 of
+msgid "The device address."
+msgstr "设备地址。"
+
+#: driver.asr650x.LoRaWAN_470.config_abp:4 ebbc98abae7f4c1e92c27f529f7d374f of
+msgid "The application session key."
+msgstr "应用程序会话密钥。"
+
+#: driver.asr650x.LoRaWAN_470.config_abp:5 e214e0e19f2048cc9abc47384cc038c3 of
+msgid "The network session key."
+msgstr "网络会话密钥。"
+
+#: 4ac84004c3c84bef9d5f330f8c307f74 driver.asr650x.LoRaWAN_470.config_abp:9 of
+msgid "|config_abp.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:26 6c7c4861892b4ad0a04782366b582756
+msgid "config_abp.png"
+msgstr ""
+
+#: 50a63e1ead9c46dcac7cabb80c83f98d driver.asr650x.LoRaWAN_470.config_otaa:1 of
+msgid "Config the OTAA join mode information."
+msgstr "配置 OTAA 连接模式信息。"
+
+#: 29ba0db402b148738c4a89f34a280095 driver.asr650x.LoRaWAN_470.config_otaa:3 of
+msgid "The device EUI."
+msgstr "设备 EUI。"
+
+#: b4ff68069aff44d489afe8e5988c30fc driver.asr650x.LoRaWAN_470.config_otaa:4 of
+msgid "The application EUI."
+msgstr "应用程序 EUI。"
+
+#: 2868b6dff1614685b41b263def3a4669 driver.asr650x.LoRaWAN_470.config_otaa:5 of
+msgid "The application key."
+msgstr "应用程序密钥。"
+
+#: a7fd52d2e9ee4ab4b89c4b29b3715517 driver.asr650x.LoRaWAN_470.config_otaa:9 of
+msgid "|config_otaa.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:25 6c7c4861892b4ad0a04782366b582756
+msgid "config_otaa.png"
+msgstr ""
+
+#: be72627f5720464a90cc077af41518e5 driver.asr650x.LoRaWAN_470.get_abp_config:1
+#: of
+msgid "Get the ABP join mode information."
+msgstr "获取 ABP 连接模式信息。"
+
+#: 893ce916ea464c8f822b1e1b92e6caed driver.asr650x.LoRaWAN_470.get_abp_config:3
+#: of
+msgid "The ABP join mode information(devaddr, appskey, newskey)."
+msgstr "ABP 连接模式信息（devaddr、appskey、newskey）。"
+
+#: 319705f8c69c49d38150361139b44c96 driver.asr650x.LoRaWAN_470.get_abp_config:8
+#: of
+msgid "|get_abp_config.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:19 6c7c4861892b4ad0a04782366b582756
+msgid "get_abp_config.png"
+msgstr ""
+
+#: a73bef66585f47dbae4da55992d1a97c
+#: driver.asr650x.LoRaWAN_470.get_otaa_config:1 of
+msgid "Get the OTAA join mode information."
+msgstr "获取 OTAA 连接模式信息。"
+
+#: 885180d79d664c628294e4590b648d38
+#: driver.asr650x.LoRaWAN_470.get_otaa_config:3 of
+msgid "The OTAA join mode information(deveui, appeui, appkey)."
+msgstr "OTAA 连接模式信息（deveui、appskey、newskey）。"
+
+#: driver.asr650x.LoRaWAN_470.get_otaa_config:8
+#: f7f0bb2bdd5744d886964242aa91c0c0 of
+msgid "|get_otaa_config.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:20 6c7c4861892b4ad0a04782366b582756
+msgid "get_otaa_config.png"
+msgstr ""
+
+#: c88482d320d64266b899e1e7e0786059 driver.asr650x.LoRaWAN_Asr650x:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 947e007eb7364ce5b7c3a407bd1fb41d driver.asr650x.LoRaWAN_Asr650x:3 of
+msgid "The UART object."
+msgstr "UART 对象。"
+
+#: 6e666fd90fe441d1b5e021ef51e15a32
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode:1 of
+msgid "Set the LoRaWAN join mode."
+msgstr "设置 LoRaWAN 连接模式。"
+
+#: 4acf57d75f264e9ab1be3a40494bfdbc
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode:3 of
+msgid "The LoRaWAN join mode."
+msgstr "LoRaWAN 连接模式。"
+
+#: d7095628441a4a0e99d59434c047c01f
+#: driver.asr650x.LoRaWAN_Asr650x.set_join_mode:7 of
+msgid "|set_join_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:31 6c7c4861892b4ad0a04782366b582756
+msgid "set_join_mode.png"
+msgstr ""
+
+#: 1a17cf160769422283cb0a759dd969f0
+#: driver.asr650x.LoRaWAN_Asr650x.set_frequency_band_mask:1 of
+msgid "Set the frequency band mask."
+msgstr "设置频段掩码。"
+
+#: 6bf0e1ed79fe41c18f2136af4db1561c
+#: driver.asr650x.LoRaWAN_Asr650x.set_frequency_band_mask:3 of
+msgid "The frequency band mask."
+msgstr "频段掩码。"
+
+#: 24cd213f431547acb55f6a4b1a93e4ef
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_downlink_mode:1 of
+msgid "Set the uplink and downlink frequency."
+msgstr "设置上行和下行链路的频率。"
+
+#: 5316e6818ff541668966ebf63cbc4ad4
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_downlink_mode:3 of
+msgid "The uplink and downlink frequency."
+msgstr "上行和下行链路的频率。"
+
+#: b542e1a1e08e44e4b4bbe9b08bd39fca
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:1 of
+msgid ""
+"Set the class mode, if the class mode is 0, the branch, para1, para2, "
+"para3, para4 will be ignored."
+msgstr "设置class 模式，如果class模式为 0，则忽略branch、para1、para2、para3 和para4。"
+
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:3
+#: fd24239fed0c45acba5a89aca798fae1 of
+msgid "The class mode."
+msgstr "class模式。"
+
+#: 22fe123bbf6a4293a9610324c5fbe993
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:4 of
+msgid "The branch selection."
+msgstr "branch选择。"
+
+#: a05244c86dd74a0b9f47f8a78ea83ede
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:5 of
+msgid "Set the beacon frequency, unit is Hz."
+msgstr "设置beacon 频率，单位为 Hz。"
+
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:6
+#: e99e43d809844d07baa9105fa25bb105 of
+msgid "Set the beacon data rate."
+msgstr "设置beacon 数据速率。"
+
+#: 136c34e4e78d439ea1fcedd7fe24ad84
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:7 of
+msgid "Set ping frequency, unit is Hz."
+msgstr "设置 ping 频率，单位为 Hz。"
+
+#: c99d9ee1c8ad475484038197be699f32
+#: driver.asr650x.LoRaWAN_Asr650x.set_class_mode:8 of
+msgid "Set ping data rate."
+msgstr "设置 ping 数据速率。"
+
+#: 5abd0baf05e346ffb2f8a700e81d08d0 driver.asr650x.LoRaWAN_Asr650x.join:1 of
+msgid "Join the LoRaWAN network."
+msgstr "加入 LoRaWAN 网络。"
+
+#: 087322b56e2a4261b07ee00093c1fb53 driver.asr650x.LoRaWAN_Asr650x.join:3 of
+msgid "0 stop join, 1 start join."
+msgstr "0 停止加入，1 开始加入。"
+
+#: driver.asr650x.LoRaWAN_Asr650x.join:4 e53575ba92ec4a469b2a3244e91645fc of
+msgid "0 close auto join, 1 open auto join."
+msgstr "0 关闭自动加入，1 打开自动加入。"
+
+#: 0efd28816fd842ebaf5b6df0aa180ae4 driver.asr650x.LoRaWAN_Asr650x.join:5 of
+msgid "join interval, unit is second(7~255)."
+msgstr "加入间隔，单位为秒（7~255）。"
+
+#: 7e7d425d4a6c4a158a3c7828f891964f driver.asr650x.LoRaWAN_Asr650x.join:6 of
+msgid "join retry times(1~256)."
+msgstr "加入重试次数（1~256）。"
+
+#: 5f065385572848d596c48d2a78ddaf7b driver.asr650x.LoRaWAN_Asr650x.join:10 of
+msgid "|join.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:32 6c7c4861892b4ad0a04782366b582756
+msgid "join.png"
+msgstr ""
+
+#: 82afce4d3d244535af386fce51bdf25d driver.asr650x.LoRaWAN_Asr650x.join:12 of
+msgid "|join_stop.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:33 6c7c4861892b4ad0a04782366b582756
+msgid "join_stop.png"
+msgstr ""
+
+#: 82316a10914f400ab69ce8198f62255f driver.asr650x.LoRaWAN_Asr650x.send_data:1
+#: of
+msgid "Send data payload to LoRaWAN gateway."
+msgstr "向 LoRaWAN 网关发送数据有效载荷。"
+
+#: dcf767f2993b499385e30e35327e92d2 driver.asr650x.LoRaWAN_Asr650x.send_data:3
+#: of
+msgid "The data to send."
+msgstr "要发送的数据。"
+
+#: 67c1933a892d43b5a61b554256e74443 driver.asr650x.LoRaWAN_Asr650x.send_data:4
+#: of
+msgid "The confirm mode."
+msgstr "确认模式。"
+
+#: driver.asr650x.LoRaWAN_Asr650x.send_data:5 e39f4554920f4830a6262af32afdbd81
+#: of
+msgid "The number of trials."
+msgstr "尝试重连的次数。"
+
+#: 347f5d37aa804ab19c3c36c6892352b6 driver.asr650x.LoRaWAN_Asr650x.send_data:9
+#: of
+msgid "|send_data.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:35 6c7c4861892b4ad0a04782366b582756
+msgid "send_data.png"
+msgstr ""
+
+#: 0fe5169238484f7cb87f2428461bd5f0
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port:1 of
+msgid "Set the uplink app port."
+msgstr "设置上行链路app端口。"
+
+#: 2b55b7e90a87482da486ef72b387c09e
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port:3 of
+msgid "The uplink app port."
+msgstr "上行链路app端口。"
+
+#: a5862d7087114b25bee5f63255ca7ab3
+#: driver.asr650x.LoRaWAN_Asr650x.set_uplink_app_port:7 of
+msgid "|set_uplink_app_port.png|"
+msgstr ""
+
+#: ../../en/refs/base.dtu_lorawan.ref:34 6c7c4861892b4ad0a04782366b582756
+msgid "set_uplink_app_port.png"
+msgstr ""
+
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param:1
+#: e88ff972cf904359b26d0c8a89bf7219 of
+msgid "Set the receive window parameter."
+msgstr "设置接收窗口参数。"
+
+#: 1e827171d64e4656a118176771377ecd
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param:3 of
+msgid "The RX1 offset."
+msgstr "RX1 偏移量。"
+
+#: ddc8912755d34b5ba3eef99f36f4f9de
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param:4 of
+msgid "The RX2 data rate."
+msgstr "RX2 数据速率"
+
+#: deb328a1edc444d7834c9c1283528d15
+#: driver.asr650x.LoRaWAN_Asr650x.set_rx_window_param:5 of
+msgid "The RX2 frequency."
+msgstr "RX2 频率。"
+

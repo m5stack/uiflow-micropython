@@ -9,6 +9,7 @@ package(
         "atom_gps.py",
         "atom_socket.py",
         "display.py",
+        "dtu_lorawan.py",
         "echo.py",
         "hdriver.py",
         "motion.py",

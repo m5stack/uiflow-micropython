@@ -31,7 +31,7 @@ class ATOMGPSBase:
             from machine import UART
             from base import ATOMGPSBase
 
-            gps = ATOMGPSBase(id=1, port=(16, 17), debug=True)
+            gps = ATOMGPSBase(id=1, port=(16, 17))
     """
 
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, debug=False):
