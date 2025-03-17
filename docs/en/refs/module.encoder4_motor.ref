@@ -1,0 +1,50 @@
+.. |4EncoderMotor| image:: https://static-cdn.m5stack.com/resource/docs/products/module/Module-4EncoderMotor/img-b0ee8659-161f-4ffd-ac50-3702aa06a60b.webp
+    :target: https://docs.m5stack.com/en/module/Module-4EncoderMotor
+    :height: 200px
+    :width: 200px
+
+.. |4EncoderMotor-V11| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/module/Module_4EncoderMotor_V1.1/4.webp
+    :target: https://docs.m5stack.com/en/module/Module_4EncoderMotor_V1.1
+    :height: 200px
+    :width: 200px
+
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/init.png
+.. |set_motor_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_motor_mode.png
+.. |set_all_motors_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_all_motors_mode.png
+.. |set_motor_pwm_dutycycle.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_motor_pwm_dutycycle.png
+.. |get_motor_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_motor_encoder_value.png
+.. |set_motor_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_motor_encoder_value.png
+.. |get_encoder_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_encoder_mode.png
+.. |set_encoder_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_encoder_mode.png
+.. |get_motor_speed_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_motor_speed_value.png
+.. |set_position_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_encoder_value.png
+.. |set_position_max_speed_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_max_speed_value.png
+.. |get_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_position_pid_value.png
+.. |get_position_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_position_PID_value.png
+.. |set_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_pid_value.png
+.. |set_position_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_PID_value.png
+.. |get_speed_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_speed_PID_value.png
+.. |set_speed_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_speed_PID_value.png
+.. |set_speed_point_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_speed_point_value.png
+.. |get_vin_current_float_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_vin_current_float_value.png
+.. |get_vin_current_int_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_vin_current_int_value.png
+.. |get_vin_adc_raw8_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_vin_adc_raw8_value.png
+.. |get_vin_adc_raw12_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_vin_adc_raw12_value.png
+.. |get_vin_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_vin_voltage.png
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_device_spec.png
+.. |get_soft_start_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_soft_start_state.png
+.. |set_soft_start_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_soft_start_state.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/example.png
+
+
+.. |encoder4motor_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/encoder4_motor/encoder4motor_core2_example.m5f2"
+        target="_blank"
+    >
+        encoder4motor_core2_example.m5f2
+    </a>

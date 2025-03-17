@@ -1,0 +1,888 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-20 10:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/encoder4_motor.rst:2 bd4315956432455f8c68419ed0fe67e1
+msgid "4EncoderMotor Module"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:8 a6adabd726c54814b1a1476fb534581c
+msgid ""
+"4EncoderMotor Module is a 4-channel encoder motor driver module that "
+"utilizes the STM32+BL5617 solution. It is suitable for various "
+"applications such as robot motion control, automation equipment, smart "
+"vehicles, laboratory equipment, and industrial automation systems."
+msgstr ""
+"4EncoderMotor 模块是一款采用 STM32+BL5617 解决方案的 4 "
+"通道编码器电机驱动器模块。它适用于机器人运动控制、自动化设备、智能车辆、实验室设备和工业自动化系统等各种应用。"
+
+#: ../../en/module/encoder4_motor.rst:10 27e581165f1d4de2aa8329ab05e86cc6
+msgid ""
+"This is the driver library for the 4EncoderMotor Module, use to control "
+"motor and read encoder value."
+msgstr "这是 4EncoderMotor 模块的驱动库，用于控制电机并读取编码器值。"
+
+#: ../../en/module/encoder4_motor.rst:12 8ec606acc663487ba117698c4c05eedc
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/encoder4_motor.rst:15 2f65c234b72745668d31426f365f4525
+msgid "|4EncoderMotor|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref 4cd976e5fdc54648b4ca1af2c36ad926
+msgid "4EncoderMotor"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:15 e689aebb775b4a9cbfe1da42c1d6f349
+msgid "|4EncoderMotor-V11|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref 41c5e6116bcb41d99ff2a789ba993022
+msgid "4EncoderMotor-V11"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:20 ef6668b8a2244c5c8d312fec50b0df39
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/module/encoder4_motor.rst:23 ../../en/module/encoder4_motor.rst:41
+#: 1e353129db1948568e25f051b083740a 9856afbadb494bc996e6a2011f281919
+msgid "Motor control"
+msgstr "电机控制"
+
+#: ../../en/module/encoder4_motor.rst:25 d9aedf7b94c749a4800bd70c44b5a60e
+#, fuzzy
+msgid "Open the |encoder4motor_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |motor_control_example.m5f2| 项目。"
+
+#: ../../en/module/encoder4_motor.rst:27 ../../en/module/encoder4_motor.rst:43
+#: 60f2be2716644d958735c592e2a617ed c7c724f078cf44e9a9b915f75996b428
+msgid "This example shows how to control the motor and read the encoder value."
+msgstr "这个示例展示了如何控制电机并读取编码器值。"
+
+#: ../../en/module/encoder4_motor.rst:29 05da97441c2441bcb372a8e23d430c0e
+#: 068ed62d80e3493980ba100539e3ad45 08ed466ff7004f9490b0645b115fe1df
+#: 0cfb3ca5fcae4cb8b45cff2c8fb3c49f 2f27c223f3f546e19a1756e3e74f1467
+#: 306d4ddf56f84d038d073d9b703a8354 323ffe5c74ab45df8ae8f9f977a57aa0
+#: 5691227ba1194153ae092c66685996a3 628dd2b174a9474d9d5b2876ea958484
+#: 648c6a14e3de48389e347e4a01b4f1b3 6db81d14a4ab466e8374feaa0bd7275f
+#: 6f3f60a2a4e44815b128e8d9314ae0fa 73d6713be77345b4a58b176df9bf3c21
+#: ab7ba6250b01464cb4fbceff5f2be7de ace2efab7cfd4cf693ae8f5109d3c63f
+#: ae70bef066074185b6e9ecae5c60ff2e b11dd426f7024e15a8d9e20a763c9768
+#: becd3696276e4c799e384f8ea3944a42 c02004426dd846bcbe821faa029ea68a
+#: d3ca0d492b554227aa7fef6752915e5a d54679c54e514f10b6e6a742c43b6715
+#: daa4c4cda92149f4b1a3f7f746314367 f19529e0dd81466aa26fbbeaace4011f
+#: f32b152af7e34cd0bbf5a8c080413091 f4f0e2a130b240c5b1e41399cdf930c5
+#: fdb72600268541d58e791f85e2bdb298 module.encoder4_motor.Encoder4MotorModule:5
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:8
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode:6
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:8
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:8
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:8
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:8
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:8
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value:6
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value:6
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value:6
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value:6
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage:6
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:10
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:9
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address:5
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:6
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:11
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:6
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:6
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:6
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:8
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:10
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:8
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:6 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/encoder4_motor.rst:31 dd03c36401fe4c87b074631f947a3f49
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:40 07659a113de54fb6a42ee0296c6de221
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:33 ../../en/module/encoder4_motor.rst:51
+#: 380ad5c94d0e4205a16017be9fb0c0ea 5e417b028e0f41c68fe0fdc37c09846e
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/encoder4_motor.rst:35 ../../en/module/encoder4_motor.rst:53
+#: 024000bb08a14a00a9fb0d9534cdd043 667a0c23aa084d7ba342bb6baf0517f1
+msgid "None"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:38 7e2a3217e8894514928fb25b76bc1d4d
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/encoder4_motor.rst:45 01ad54e54d4d4e9f9f72ad10ada742fb
+#: 265f745232ab4cdebe9afd391f7bedf8 4ba149d229844cdc9e4a105c8df557fe
+#: 5f5acb0cd91c4653b210dc89db1bd015 66431ec9e7b34f28a4e744866f867f89
+#: 683cbba2a4d140ad88981303ce3cd340 6be4cebda9d14286b92207beef3e76a4
+#: 71618a48a121445eb98ff27cb83dec92 782c4a4035644af5bdb60443bf26584d
+#: 7eab511cbc5b486f824701d0266ca2bc 8af7853b0f394281935352d399637819
+#: 8e2580ace3bc4ef6a01c964ee0c9ab3e 91e99f3212864c8a96a3be86d59a2f6c
+#: a1e2c1144162469e91522abe95fe3a27 a70189088a5b436dbec3383ea7ff362a
+#: b7274ed9ffec4b3bb892d6bdbfd5fbf9 b8b5e10391394790a8e0af3c4d3f7ba8
+#: b9159810254244e687c5123b2c3bfc2c bb2b5badfdff4343bd98930b27e080bf
+#: be1e4305652b4e91b14e5e943615d29f c5406b4c4cbd4527bea615e4b4778d49
+#: d1e9b229c9674ad5a8510b3923663564 d5229a7af33249da9ada2930dd432792
+#: e180ac2aa779497d9666b509a860cd54 ecf85a066537435bbe03a9196af05d23
+#: ffce00ccfa8e43ad964fb6dd24e373c5 module.encoder4_motor.Encoder4MotorModule:9
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:12
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode:10
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:12
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:12
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:12
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:12
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:12
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value:10
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value:10
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value:10
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value:10
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage:10
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:14
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:13
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address:9
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:10
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:15
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:10
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:10
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:10
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:12
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:14
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:12
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/encoder4_motor.rst:56 f2a46e21ccb5464c93e3e58cfd7c7315
+msgid "**API**"
+msgstr ""
+
+#: ../../en/module/encoder4_motor.rst:59 8499e98abdf1490d9fb986a4ef997691
+msgid "Encoder4MotorModule"
+msgstr ""
+
+#: f02efad4c4ec4c27a06d802f6efd2597 module.encoder4_motor.Encoder4MotorModule:1
+#: of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: b9f79515aa50481a84a3877541e6024d module.encoder4_motor.Encoder4MotorModule:1
+#: of
+msgid "Create an Encoder4MotorModule object"
+msgstr "创建一个 Encoder4MotorModule 对象"
+
+#: ../../en/module/encoder4_motor.rst 1c6d7b5feba0483b95fff2297d5b70a2
+#: 1eb05a7c3ae94c1cbb9ee2e1bce03936 2af11c1c3de34f509796dc8a43a5c870
+#: 2e76eb5bf06f44ceaad27170bef19263 2fe6f60c1dd0434dad20792c20f76741
+#: 3fdf7f0ce1974df1a0a60eecbb9cca3d 50811a995ff2420d81e58365af010147
+#: 517b0d704f7c4dd586f525ef5813a1ba 544d457860c242d284df33ed91048de4
+#: 6c6b4f0b15b94f09a00fedb1e36fb08c 719ebe8621f248df9b555f80e683557c
+#: 8b534811c1f041419d66e086071978dd 955b58313f0d42ae8a8bd87c6633042b
+#: a04308841a1c494baaa5b68b2d43368c a9ea621beb634e939f96079731bb5a6c
+#: bcfade9de1234b8fb008e6be9586a5df e09668a25a854c8ea3f6019f553f6bdd
+#: e90c36c38fcb47b7a47ba9593db8cbfb ed53ea59fbd94942999cdee45e561a55
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value of
+msgid "Parameters"
+msgstr ""
+
+#: 56f9dce568a941d78c2c457e37e34d72 module.encoder4_motor.Encoder4MotorModule:3
+#: of
+msgid "The I2C address of the device. Default is 0x24."
+msgstr "设备的 I2C 地址。默认是 0x24。"
+
+#: 25fa8b1197884c789b6d88b4c985d560 module.encoder4_motor.Encoder4MotorModule:7
+#: of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:12 ed606987ec884eafbf5ce2e85effd678
+msgid "init.png"
+msgstr ""
+
+#: 0401a6847c984f9280c8b3f780858d17
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:1 of
+msgid "Set the motor mode."
+msgstr "设置电机的工作模式。"
+
+#: f869c52737ff44f9ab8b6ad87b510f87
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:3 of
+msgid "The motor to set the mode."
+msgstr "要设置工作模式的电机。"
+
+#: c42a0350222747179f02b2498b4b0d4f
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:4 of
+msgid ""
+"The mode of the motor.  Options:     - ``NORMAL_MODE``: 0     - "
+"``POSITION_MODE``: 1     - ``SPEED_MODE``: 2"
+msgstr ""
+"电机的工作模式。选项：     - ``NORMAL_MODE``: 0     - ``POSITION_MODE``: 1     - "
+"``SPEED_MODE``: 2"
+
+#: 72d0729a1ff44ba184f476cef80fa659
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:4 of
+msgid "The mode of the motor."
+msgstr "电机模式。"
+
+#: 5a48b07eb29542b8aacc2ecbf1581b33 9258033020e04b268600cbfb15df4f8c
+#: ac4fd85a237a4d0d9e881c36965d8703 b346bd1507f6426398744ab70af72b28
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:8
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:7
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:9
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:8 of
+msgid "Options:"
+msgstr ""
+
+#: 38907abed7c94c41b4cd949d88241beb 746b96ff2238481b84a760d85bc2ff6d
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:6
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:7 of
+msgid "``NORMAL_MODE``: 0"
+msgstr ""
+
+#: 25765c43b0ea48fa8afdf65a19631258 f82f8b0509ad48109608bc0e5d5d9c68
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:7
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:8 of
+msgid "``POSITION_MODE``: 1"
+msgstr ""
+
+#: 67e1fcadafa9456fb55fbe513e36d789 a6c3b75d813f4d4b8534a6e06bb7c4b7
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:8
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:9 of
+msgid "``SPEED_MODE``: 2"
+msgstr ""
+
+#: c29209888afd4829890ab5266ce458ca
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_mode:13 of
+msgid "|set_motor_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:13 0471a1b495f644eeae621e26680ffe7d
+msgid "set_motor_mode.png"
+msgstr ""
+
+#: ff2049b3bd394b3f9e290ceb7b9999db
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:1 of
+msgid "Set the mode of all motors."
+msgstr "设置所有电机的模式。"
+
+#: 38aeaa4b52df4ad88d5403f17635d70e
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:3 of
+msgid ""
+"The mode of the motors.  Options:     - ``NORMAL_MODE``: 0     - "
+"``POSITION_MODE``: 1     - ``SPEED_MODE``: 2"
+msgstr ""
+"电机的工作模式。选项：     - ``NORMAL_MODE``: 0     - ``POSITION_MODE``: 1     - "
+"``SPEED_MODE``: 2"
+
+#: c83c179b92984fe0ad39590c068f4028
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:3 of
+msgid "The mode of the motors."
+msgstr "所有电机的模式。"
+
+#: 5e0627465bf24eaa87b1b0f8b03b87f1
+#: module.encoder4_motor.Encoder4MotorModule.set_all_motors_mode:12 of
+msgid "|set_all_motors_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:14 57fb2f624c12446787006548147b6456
+msgid "set_all_motors_mode.png"
+msgstr ""
+
+#: 358076530bb6412caceb433243266e3d
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:1 of
+msgid "Set the PWM duty cycle of a motor."
+msgstr "设置电机的 PWM 占空比。"
+
+#: 006b725d42de49578b2236d29c17c464
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:3 of
+msgid "The motor to set the PWM duty cycle."
+msgstr "要设置 PWM 占空比的电机。"
+
+#: 4eacfe9dc5c94c6592f7aef7d3413bf1
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:4 of
+msgid "The PWM duty cycle."
+msgstr "PWM 占空比。"
+
+#: cd46b0de0815464599a0c4d41a457d72
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_pwm_dutycycle:8 of
+msgid "|set_motor_pwm_dutycycle.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:15 83fac57467574bd9b650f4f5e7e4b0c3
+msgid "set_motor_pwm_dutycycle.png"
+msgstr ""
+
+#: 520fec6b90944d55af22c85344f09223
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:1 of
+msgid "Get the encoder value of a motor."
+msgstr "获取电机的编码器值。"
+
+#: e9dd4c1aeccf4ee1ad88105798936db9
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:3 of
+msgid "The motor to get the encoder value."
+msgstr "要获取编码器值的电机。"
+
+#: 1fc93d9fb6934c7a9ad563328986b172 22b1e704726d49f9b5e56c341db7707b
+#: 3aa67be1444040f8a8779ea4a79f2fe8 7731b7ec46b64fecaa66b260d6039a1f
+#: 9a7bd228f57447fa8ae514df0b5a932f a120dee27d7745b888f2e90b664156eb
+#: b0d51978df72431993d6c1c1952163e5 b2a3b967d59c43f18a5a7637a8836cf3
+#: b83fff6092af44ce8be0eb903e496d0f e1112111218e4f91a011b2fe15447162
+#: ec0f1efb4efb40f8a1692121e5d57749 f8f02690fc9549da9117e6248ed303fc
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage of
+msgid "Returns"
+msgstr "返回值"
+
+#: 1d2f19acc7594cf7830026b1b03fa5f2 6f19a7618b2b46dbbf38cab2d2f5965b
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:5
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:4 of
+msgid "The encoder value."
+msgstr "编码器值。"
+
+#: 0ca4324049c34adaa94daaa61cc4584d 1c74c177615b49709ba2a5f179ab9002
+#: 29c6c565d7a9408ca718ed919ce04f59 3d0c0755e5864b91ad942037b9e77f2c
+#: 3fb15c8890c840f890c023111ebf66b0 5d262d16c21c482a81cfff00f1cdeefc
+#: 7c593023c964452f816fe3249d3e53af 885a2c4bb4d64e04b71b88d1597e1303
+#: 8ef4a0a7d1a64524b59c6e68c2a71782 90ef6261c11640ec83d6d2caeaf978d9
+#: cea853002e1d463f90be1d503f7af7bc f2b9a8bf803746c1a2ff70221becfec3
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 994f731637d9493187387945f39d454c
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_encoder_value:10 of
+msgid "|get_motor_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:16 c3cda8b3c720428ba15fa51822b20028
+msgid "get_motor_encoder_value.png"
+msgstr ""
+
+#: 2e3593e8ac7e45d08f1e1a253a447085
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:1 of
+msgid "Set the encoder value of a motor."
+msgstr "设置电机的编码器值。"
+
+#: 043d122c76e84b9ab3d499f6a68f57ac
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:3 of
+msgid "The motor to set the encoder value."
+msgstr "要设置编码器值的电机。"
+
+#: e128e832f7b14317901d678a67be176c
+#: module.encoder4_motor.Encoder4MotorModule.set_motor_encoder_value:8 of
+msgid "|set_motor_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:17 9f50e22755334be0836cf192faab9f90
+msgid "set_motor_encoder_value.png"
+msgstr ""
+
+#: 7988d3682fb74d3ebef07728b0955fdd
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode:1 of
+msgid "Get the encoder mode."
+msgstr "获取编码器模式。"
+
+#: cefcf3abd68b49b78cb93c19b432e046
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode:3 of
+msgid "The encoder mode."
+msgstr "编码器模式。"
+
+#: 2bc9d491e6064b88b02e81861b194828
+#: module.encoder4_motor.Encoder4MotorModule.get_encoder_mode:8 of
+msgid "|get_encoder_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:18 b0a8575978744fa0b161fcd9800a7cd4
+msgid "get_encoder_mode.png"
+msgstr ""
+
+#: 294918c9e6844f7abb286a3ec14ca0d7
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:1 of
+msgid "Set the encoder mode."
+msgstr "设置编码器模式。"
+
+#: 7cc220519a494867b44247fc8614c85f
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:3 of
+msgid "The mode of the encoder.  Options:     - ``AB``: 0     - ``BA``: 1"
+msgstr "编码器模式。选项：     - ``AB``: 0     - ``BA``: 1"
+
+#: cb79f78dfbc54988b7aa911c1b6cae9f
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:3 of
+msgid "The mode of the encoder."
+msgstr "编码器模式。"
+
+#: 073c34bfa19b414b8b21c28cd3391074
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:6 of
+msgid "``AB``: 0"
+msgstr ""
+
+#: b6c9f72f5aae49d5ae2cd9714f2071e5
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:7 of
+msgid "``BA``: 1"
+msgstr ""
+
+#: a42e6c571ad643faa0c8727a0d488d38
+#: module.encoder4_motor.Encoder4MotorModule.set_encoder_mode:11 of
+msgid "|set_encoder_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:19 fe75922023e14c5381c42792871a3003
+msgid "set_encoder_mode.png"
+msgstr ""
+
+#: 0d9b1151c2c14e1d94a8a743f12abc3a
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:1 of
+msgid "Get the speed value of a motor."
+msgstr "获取电机的速度值。"
+
+#: ae04bb0399ad42319304db253c0a2d9a
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:3 of
+msgid "The motor to get the speed value."
+msgstr "要获取速度值的电机。"
+
+#: 1592459f574b4a58a7647c0b4726f20f
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:5 of
+msgid "The speed value."
+msgstr "速度值。"
+
+#: 04c9be85d5454a77aaa2012e0c027c7b
+#: module.encoder4_motor.Encoder4MotorModule.get_motor_speed_value:10 of
+msgid "|get_motor_speed_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:20 c940e18d92bf435cb254806470e93cd1
+msgid "get_motor_speed_value.png"
+msgstr ""
+
+#: d99d8e057b2a4017913e64bdd143f039
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:1 of
+msgid "Set the position encoder value of a motor."
+msgstr "设置电机的位置编码器值。"
+
+#: 44f0d996b0a14b6aa2a51ed56c7d3573
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:3 of
+msgid "The motor to set the position encoder value."
+msgstr "要设置位置编码器值的电机。"
+
+#: 6055b0f78a91428c9a9904c8b470e6d7
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:4 of
+msgid "The position encoder value."
+msgstr "位置编码器值。"
+
+#: 9b0130be3b87413fac5f827dbaefa44a
+#: module.encoder4_motor.Encoder4MotorModule.set_position_encoder_value:8 of
+msgid "|set_position_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:21 9ab7b73cf7384425bf28220b4892f5cd
+msgid "set_position_encoder_value.png"
+msgstr ""
+
+#: 0b936d1e9fc74888bc2f8f7ca5249f69
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:1 of
+msgid "Set the maximum speed value of a motor."
+msgstr "设置电机的最大速度值。"
+
+#: a241c9a07d274d0f92fc09d55f4ded4d
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:3 of
+msgid "The motor to set the maximum speed value."
+msgstr "电机设置的最高转速值。"
+
+#: a962b8a662234614830040e18f7b7056
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:4 of
+msgid "The maximum speed value."
+msgstr "最大速度值。"
+
+#: 2b07208aefe24afc9ed1fa5b3195b99c
+#: module.encoder4_motor.Encoder4MotorModule.set_position_max_speed_value:8 of
+msgid "|set_position_max_speed_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:22 a47b2c4764704f52aa6d891a0adb4c57
+msgid "set_position_max_speed_value.png"
+msgstr ""
+
+#: f269f7daffae46f892cfd2172f4c6055
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:1 of
+msgid "Get the position PID value of a motor."
+msgstr "获取电机的位置 PID 值。"
+
+#: 5546789bc1fc4711842f5a4007b1c747
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:3 of
+msgid "The motor to get the position P,I,D value."
+msgstr "获取位置 P,I,D 值的电机。"
+
+#: 1ad2f239cc014b2c83db3c8797d5aa8b
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:5 of
+msgid "The position PID value."
+msgstr "位置 PID 值。"
+
+#: b50050b024754fa9851f7cf1025e3bf2
+#: module.encoder4_motor.Encoder4MotorModule.get_position_pid_value:10 of
+msgid "|get_position_PID_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:24 b06bc46735fc49bc868475485c33dc14
+msgid "get_position_PID_value.png"
+msgstr ""
+
+#: e08727063a0f42be86b45368705a10c4
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:1 of
+msgid "Set the position P,I,D value of a motor."
+msgstr "设置电机的位置 P,I,D 值。"
+
+#: b7268095e82844b79f695593dbfad2bc
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:3 of
+msgid "The motor to set the position P,I,D value."
+msgstr "设置位置 P,I,D 值的电机。"
+
+#: 56bdb2d964f140149310c6fa2a9283b6 e440d4181bce4797af57136c67da7f40
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:4
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:4 of
+msgid "The P value."
+msgstr "比例值。"
+
+#: 86eb8bbc4796438193b436d2b847bd51 912f632876454f20a9fce5aa29b17f16
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:5
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:5 of
+msgid "The I value."
+msgstr "积分值。"
+
+#: 8a4aee72f744400a8798c461c237d710 f560755032cb4d9dbdc3947891feed63
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:6
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:6 of
+msgid "The D value."
+msgstr "微分值。"
+
+#: d591f36dbc6242e9a87cf8a09bd4565f
+#: module.encoder4_motor.Encoder4MotorModule.set_position_pid_value:10 of
+msgid "|set_position_PID_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:26 0baafeffe1fa4b8e9e6da45a870c92be
+msgid "set_position_PID_value.png"
+msgstr ""
+
+#: 19d1bc0108fd475d829ec439d97d82bc
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:1 of
+msgid "Get the speed PID value of a motor."
+msgstr "获取电机的速度 PID 值。"
+
+#: 977be871f45346d4900c00b1ee67ab7b
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:3 of
+msgid "The motor to get the speed P,I,D value."
+msgstr "获取速度 P,I,D 值的电机。"
+
+#: ca1857413fb64c4687041c4b126d63dd
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:5 of
+msgid "The speed P,I,D value."
+msgstr "速度 P,I,D 值。"
+
+#: 774b12d881a2470893ad76675a360112
+#: module.encoder4_motor.Encoder4MotorModule.get_speed_pid_value:10 of
+msgid "|get_speed_PID_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:27 2c070049d7444f5db860ebd0b49e9456
+msgid "get_speed_PID_value.png"
+msgstr ""
+
+#: 90259da053f241589ba91573b47e1abf
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:1 of
+msgid "Set the speed PID value of a motor."
+msgstr "设置电机的速度 PID 值。"
+
+#: 9cc63a4fd736481889642c781be9d189
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:3 of
+msgid "The motor to set the speed PID value."
+msgstr "设置速度 PID 值的电机。"
+
+#: 362fb1a41ed94820a21c022b9078f4ec
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_pid_value:10 of
+msgid "|set_speed_PID_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:28 d59779fcbad8419185255bcceec4617b
+msgid "set_speed_PID_value.png"
+msgstr ""
+
+#: 6a3cc6a46f5b42389d279fe8fbe3e899
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:1 of
+msgid "Set the speed point value of a motor."
+msgstr "设置电机的速度目标值。"
+
+#: 81a56abe96e7439b9de6363baeecffd4
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:3 of
+msgid "The motor to set the speed point value."
+msgstr "设置速度目标值的电机。"
+
+#: a516527a10e442e79d2060043b746388
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:4 of
+msgid "The speed point value."
+msgstr "速度目标值。"
+
+#: 99362aad64974f16a7bb5aca27a3dd60
+#: module.encoder4_motor.Encoder4MotorModule.set_speed_point_value:8 of
+msgid "|set_speed_point_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:29 3e7463c4cd644119b7e6d15e307512b9
+msgid "set_speed_point_value.png"
+msgstr ""
+
+#: af2be4d11da14ff0958b5a64f2a41155
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value:1 of
+msgid "Get the input current value in float."
+msgstr "获取输入电流值（浮点数）。"
+
+#: 6162563e38924d5a82d590f166858e00 d56e0874726845f38a4a3b768deadcf1
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value:3
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value:3 of
+msgid "The input current value."
+msgstr "输入电流值。"
+
+#: cbf5bc3ebf89481f9583268daceb3187
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_float_value:8 of
+msgid "|get_vin_current_float_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:30 1c7a9a951d0d4a1d998bff3d7f33c500
+msgid "get_vin_current_float_value.png"
+msgstr ""
+
+#: 1de5f8c52c074e579bd16580d86b45e5
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value:1 of
+msgid "Get the input current value in int."
+msgstr "获取输入电流值（整数）。"
+
+#: c35513fef9d24b42a08b03a4f6f7a6fc
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_current_int_value:8 of
+msgid "|get_vin_current_int_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:31 546395a3ca314db485e62617d59c6f99
+msgid "get_vin_current_int_value.png"
+msgstr ""
+
+#: a9ff65f6700d49129fc40b9b153e7b12
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value:1 of
+msgid "Get the input voltage ADC raw value in 8-bit."
+msgstr "获取输入电压的 ADC 原始值（8 位）。"
+
+#: 329950b02f6f497dbea57636b45a26e4 88646aad13fc41239dfe09bdff5fbf53
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value:3
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value:3 of
+msgid "The input voltage ADC raw value."
+msgstr "输入电压的 ADC 原始值。"
+
+#: 7e64ba83fe584af48cc3a2d251fb6746
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw8_value:8 of
+msgid "|get_vin_adc_raw8_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:32 d080fe308cb64d5dbd64807e9d3b22ef
+msgid "get_vin_adc_raw8_value.png"
+msgstr ""
+
+#: f60cf76a4f474ecaa8b170813767bb7b
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value:1 of
+msgid "Get the input voltage ADC raw value in 12-bit."
+msgstr "获取输入电压的 ADC 原始值（12 位）。"
+
+#: e039ff9b10804f0fbd84782a1b2118b5
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_adc_raw12_value:8 of
+msgid "|get_vin_adc_raw12_value.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:33 9e73af266f094c6eb6a400478dc0c06a
+msgid "get_vin_adc_raw12_value.png"
+msgstr ""
+
+#: 9d518c6d9e6647b4b4cb379eda6a85a6
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage:1 of
+msgid "Get the input voltage value."
+msgstr "获取输入电压值。"
+
+#: 6283a93cf74e49ac8e6d1b0679eb2bf1
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage:3 of
+msgid "The input voltage value."
+msgstr "输入电压值。"
+
+#: 6021e6c3f7eb441fb53095637427321f
+#: module.encoder4_motor.Encoder4MotorModule.get_vin_voltage:8 of
+msgid "|get_vin_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:34 ae8847747ed24364a4b90a8c151dc1bf
+msgid "get_vin_voltage.png"
+msgstr ""
+
+#: 6322d647b9ac4f0b926d5036d6b70bbf
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:1 of
+msgid "Get the device specification."
+msgstr "获取设备规格。"
+
+#: d9e7092a3160410997db7cabef21c643
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:3 of
+msgid "The information to get."
+msgstr "要获取的信息。"
+
+#: 149efccfbecc4cfc9be87ac112a455dc
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:5 of
+msgid "The device specification(firmware version/I2C address)."
+msgstr "设备规格（固件版本/I2C 地址）。"
+
+#: d5fb2c8181dc4528a5168f44248eb75b
+#: module.encoder4_motor.Encoder4MotorModule.get_device_spec:10 of
+msgid "|get_device_spec.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:35 e67534b7d678437797c6b132f0caa444
+msgid "get_device_spec.png"
+msgstr ""
+
+#: 7fb66dbdad8b47e483a7c14c8f78f03a
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:1 of
+msgid "Get the soft start state of a motor."
+msgstr "获取电机的软启动状态。"
+
+#: b7c29102c0eb494997fdb02a366f8e35
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:3 of
+msgid "The motor to get the soft start state."
+msgstr "电机的软启动状态。"
+
+#: 68bd802de72b4ff4ac6ed44173e632fc c554c6866de74c17b2cb2d61ed20ceeb
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:5
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:4 of
+msgid "The soft start state."
+msgstr "软启动状态。"
+
+#: 5566ae2251184c01aeeec3973928cbde
+#: module.encoder4_motor.Encoder4MotorModule.get_soft_start_state:10 of
+msgid "|get_soft_start_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:36 53810e8c4090417590d4315643ff4a6d
+msgid "get_soft_start_state.png"
+msgstr ""
+
+#: d1f9b3ddfe9e4da8998dd082acd4dd0d
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:1 of
+msgid "Set the soft start state of a motor."
+msgstr "设置电机的软启动状态。"
+
+#: 875c39ac68df4cdcace92f042506a889
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:3 of
+msgid "The motor to set the soft start state."
+msgstr "要设置软启动状态的电机。"
+
+#: 4a464f84439442ae89ce1c12f58c9337
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:4 of
+msgid "The soft start state.  Options:     - ``True``: 1     - ``False``: 0"
+msgstr "软启动状态。选项：     - ``True``: 1     - ``False``: 0"
+
+#: 6a3787ac647c46089853db6cfb71164c
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:7 of
+msgid "``True``: 1"
+msgstr ""
+
+#: 44d84d643d7e4918ae3a246de44d530f
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:8 of
+msgid "``False``: 0"
+msgstr ""
+
+#: a9b78cca968948688164e3a195ce500c
+#: module.encoder4_motor.Encoder4MotorModule.set_soft_start_state:12 of
+msgid "|set_soft_start_state.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:37 a3d49afef6ef42e082c5b6ea72785206
+msgid "set_soft_start_state.png"
+msgstr ""
+
+#: 90ae61f698914093a88f36a1bbbcaf65
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address:1 of
+msgid "Set the I2C address of the device."
+msgstr "设置设备的 I2C 地址。"
+
+#: f341c5f9f4c9479bb5c165ae1bc3f25d
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address:3 of
+msgid "The I2C address to set."
+msgstr "设置的 I2C 地址。"
+
+#: cc00dddd73a344fb8146a76633fb748b
+#: module.encoder4_motor.Encoder4MotorModule.set_i2c_address:7 of
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/module.encoder4_motor.ref:38 c63faa3c42a942d396d7149eb5a5b9a3
+msgid "set_i2c_address.png"
+msgstr ""
+
