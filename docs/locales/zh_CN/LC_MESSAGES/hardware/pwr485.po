@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-20 09:24+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/pwr485.rst:2 e723eb5673fc4269b7e4a8fe6e1896cd
+msgid "PWR485"
+msgstr ""
+
+#: ../../en/hardware/pwr485.rst:6 9e9bfb04ab414fb6a6d8d6fcb6da2fdb
+msgid ""
+"The PWR485 is a RS485 interface that can be used to communicate with "
+"other devices."
+msgstr "PWR485是RS485接口，可用于与其他设备通信。"
+
+#: ../../en/hardware/pwr485.rst:8 3563629b23f04c86a739668b0c6bcbcf
+msgid "The following are the host's support for PWR485:"
+msgstr "以下是主机对PWR485的支持："
+
+#: ../../en/hardware/pwr485.rst:15 f54bdf5e7deb43e99a8795aebfee23f1
+msgid "Controller"
+msgstr "主机"
+
+#: ../../en/hardware/pwr485.rst:15 43a54a8dc3f74990a502af3b8103edae
+msgid "Status"
+msgstr "状态"
+
+#: ../../en/hardware/pwr485.rst:17 f1d4ddc6b2964fce96d4b22774cea493
+msgid "StampPLC"
+msgstr ""
+
+#: ../../en/hardware/pwr485.rst:17 9def5763653f41c88a6ed1f537f527ca
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hardware/pwr485.rst:24 99c72985bf5346eca906856366cef7aa
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/hardware/pwr485.rst:27 ../../en/hardware/pwr485.rst:50
+#: f4e12bcf47e741d0a344895041fa5788
+msgid "Echo"
+msgstr "回声"
+
+#: ../../en/hardware/pwr485.rst:29 20265e715eb048baaa1c394d0abc4608
+msgid "Open the |stamplc_ehco_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stamplc_ehco_example.m5f2| 项目。"
+
+#: ../../en/hardware/pwr485.rst:31 ../../en/hardware/pwr485.rst:52
+#: a23f5ca3242d4cdda8a71f1791abf4f9
+msgid ""
+"This example demonstrates how to utilize PWR485 interfaces by echoing "
+"back to the sender any data received on configured PWR485."
+msgstr "此示例演示了如何利用 PWR485 接口，向发送方回显在配置的 PWR485 上收到的任何数据。"
+
+#: ../../en/hardware/pwr485.rst:34 ../../en/hardware/pwr485.rst:55
+#: 859c5e575a9c43208f8f62874ae3ad0d
+msgid "By pressing different keys, different characters are sent."
+msgstr "通过按下不同的键，可以发送不同的字符。"
+
+#: ../../en/hardware/pwr485.rst:36 2089d0a61f934a33b80f8892b5f5f1c5
+#: hardware.pwr485.PWR485:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/pwr485.rst:38 944bdda494d6450c86480d37f9408668
+msgid "|stamplc_ehco_example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pwr485.ref:3 266c850017794b1bb910605d73f0496d
+msgid "stamplc_ehco_example.png"
+msgstr ""
+
+#: ../../en/hardware/pwr485.rst:40 ../../en/hardware/pwr485.rst:63
+#: dcd7421891af4594b714a3218e4b514f
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/pwr485.rst:42 ../../en/hardware/pwr485.rst:65
+#: a984955b2f8e4daca12f1d5759793240
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/pwr485.rst:47 ../../en/hardware/pwr485.rst:69
+#: 3599003a9c5e4094833c450325b5e47b
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/hardware/pwr485.rst:57 3599003a9c5e4094833c450325b5e47b
+#: hardware.pwr485.PWR485:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/pwr485.rst:73 9daa553c3dd54fca9bdd4a0e9e103e80
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/hardware/pwr485.rst:76 854f22f110fd4378ab2a73d05ee690cf
+msgid "class PWR485"
+msgstr ""
+
+#: 0d03b5990aa2447bb4daefb5092e9fcf hardware.pwr485.PWR485:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: abe30a8b7d1b4848b89d504f38001cb2 hardware.pwr485.PWR485:1 of
+msgid "Construct a PWR485 object of the given id."
+msgstr "构造给定 id 的 PWR485 对象。"
+
+#: 93b720b4a63e41259d45e4a226e55b8b hardware.pwr485.PWR485:3 of
+msgid ""
+"PWR485 class inherits UART class, See :ref:`hardware.UART "
+"<hardware.UART>` for more details."
+msgstr "PWR485 类继承了 UART 类，更多详细信息请参阅 :ref:`hardware.UART <hardware.UART>` 。"
+
+#: 20ae3f89e8df46ab962ee45c26c6779b hardware.pwr485.PWR485:7 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.pwr485.ref:1 efaefb662e524bf68f3bf96984df3e6d
+msgid "init.png"
+msgstr ""
+

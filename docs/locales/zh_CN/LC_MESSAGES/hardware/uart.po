@@ -1,0 +1,763 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-19 16:56+0800\n"
+"PO-Revision-Date: 2025-03-19 17:35+0800\n"
+"Last-Translator: \n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../../en/hardware/uart.rst:2 c9e6fa0b479b40d5a17d03cd54bf4bd6
+msgid "UART"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:6 058f9f563c0d40fba9a8741bf8894152
+msgid ""
+"UART implements the standard UART/USART duplex serial communications protocol. "
+"At the physical level it consists of 2 lines: RX and TX. The unit of "
+"communication is a character (not to be confused with a string character) which "
+"can be 8 or 9 bits wide."
+msgstr ""
+"UART 实现标准 UART/USART 双工串行通信协议。在物理层面上，它由 2 条线路组成：RX "
+"和 TX。通信单位是一个字符（不要与字符串字符混淆），可以是 8 位或 9 位宽。"
+
+#: ../../en/hardware/uart.rst:9 1e0a61c84b8a417a973abbc26c04d8eb
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/hardware/uart.rst:12 ../../en/hardware/uart.rst:33
+#: 2c74db7904234f789ebeba89040d766b 69328d153f534ac49f130af1f5476876
+msgid "Echo"
+msgstr "回声"
+
+#: ../../en/hardware/uart.rst:14 aabcb4827d12466e9994414244ccb8dc
+msgid "Open the |cores3_echo_exmaple.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_echo_exmaple.m5f2| 项目。"
+
+#: ../../en/hardware/uart.rst:16 ../../en/hardware/uart.rst:35
+#: 09558c3828a1440684d391611c200ef7 3c788fd9713641c981222ee9ea73ec63
+msgid ""
+"This example demonstrates how to utilize UART interfaces by echoing back to the "
+"sender any data received on configured UART."
+msgstr ""
+"此示例演示了如何利用 UART 接口，通过将配置的 UART 上接收到的任何数据回传给发送"
+"方。"
+
+#: ../../en/hardware/uart.rst:19 ../../en/hardware/uart.rst:61
+#: ../../en/hardware/uart.rst:135 ../../en/hardware/uart.rst:154
+#: ../../en/hardware/uart.rst:181 ../../en/hardware/uart.rst:201
+#: ../../en/hardware/uart.rst:225 ../../en/hardware/uart.rst:245
+#: ../../en/hardware/uart.rst:266 ../../en/hardware/uart.rst:292
+#: ../../en/hardware/uart.rst:314 ../../en/hardware/uart.rst:336
+#: 1a8478ee7e0e45cc96c621b8ee964c4a 1b49efb3754e43b5b51e6c7d48ddf812
+#: 22fbb19a3b1b413f97da27b653e906b5
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/uart.rst:21 9359e70602da4d51acb3e96240c9e484
+msgid "|cores3_echo_exmaple.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:20 dfc9652fea594f8b9164f84b0bf04d58
+msgid "cores3_echo_exmaple.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:23 ../../en/hardware/uart.rst:44
+#: 80938af2d29a478c9445e32a02e98199 f8aa583af1834a76bfb01250d9acb73f
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/uart.rst:25 ../../en/hardware/uart.rst:46
+#: 70d9f18b13b548b4bc9380c02f21b8d8 afd166f3f16d4604a705d212dde7bf7e
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:30 e76a3954646b47f2ab1e1ff7ce7f643c
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/hardware/uart.rst:38 ../../en/hardware/uart.rst:65
+#: ../../en/hardware/uart.rst:139 ../../en/hardware/uart.rst:158
+#: ../../en/hardware/uart.rst:185 ../../en/hardware/uart.rst:209
+#: ../../en/hardware/uart.rst:229 ../../en/hardware/uart.rst:249
+#: ../../en/hardware/uart.rst:280 ../../en/hardware/uart.rst:296
+#: ../../en/hardware/uart.rst:318 ../../en/hardware/uart.rst:340
+#: 0b501a67b2d14e43b43a193fb7a66beb 5b7a589813cd486a93264fbd68353d17
+#: 94e4a13a17c74a7f94e9c839c23128d4 9e506085ae84466f96d314ea4f0d5294
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/uart.rst:50 dcd3898f23234236b65a1f8f4ff12bba
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/hardware/uart.rst:53 58008f35ce9046ecb45291f78a246044
+msgid "class UART"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:57 9cbb2a823b1d4336add2a222de95639a
+msgid "Construct a UART object of the given id."
+msgstr "构造给定 id 的 UART 对象。"
+
+#: ../../en/hardware/uart.rst:59 fc3b3f0b2f8643fd94f873c4abcb1e33
+msgid "For more parameters, please refer to init."
+msgstr "更多参数请参考 init 。"
+
+#: ../../en/hardware/uart.rst:63 865c7d86ce17452ba71b148b7dd0e4f2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:1 322f48f8569b4a1bb7733f955876e62e
+msgid "init.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:76 ca5ad9f8539f438e85b2d896bdcaea89
+msgid "Initialise the UART bus with the given parameters."
+msgstr "使用给定的参数初始化 UART 总线。"
+
+#: ../../en/hardware/uart.rst 4ba37cbdf91e47ab899e555e8218e9ec
+#: 7dd8e08af7654fe1b0ef7bf11b76bc30
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:78 bc5b8fd12b89427e8d0e39c056a5e299
+msgid "the clock rate."
+msgstr "时钟频率。"
+
+#: ../../en/hardware/uart.rst:79 93eb316ccafd41e2b11bf06249f60634
+msgid "the number of bits per character, 7, 8 or 9."
+msgstr "每个字符的位数，7、8 或 9。"
+
+#: ../../en/hardware/uart.rst:80 e19f54a5f0e14ed5a1cd03e2e9d32280
+msgid "the parity, ``None``, 0 (even) or 1 (odd)."
+msgstr "奇偶校验，“无”，0（偶数）或 1（奇数）。"
+
+#: ../../en/hardware/uart.rst:82 ef2b43e3d7c34afb842798a10352a2d1
+msgid "the number of stop bits, 1 or 2."
+msgstr "停止位数，1 或 2。"
+
+#: ../../en/hardware/uart.rst 6f28e9e7ddd0427ca459085aaddd7d94
+msgid "Keyword Arguments"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:83 8e7afb4e5bd24d9fb272077352e39a69
+msgid "the TX pin to use."
+msgstr "要使用的 TX 引脚。"
+
+#: ../../en/hardware/uart.rst:85 2ee3f38368fe48ad8be0abbe1936b29c
+msgid "the RX pin to use."
+msgstr "要使用的 RX 引脚。"
+
+#: ../../en/hardware/uart.rst:87 19888ce59649405f8ef5361f13ce4952
+msgid "the RTS (output) pin to use for hardware receive flow control."
+msgstr "用于硬件接收流控制的 RTS（输出）引脚。"
+
+#: ../../en/hardware/uart.rst:89 ed34481d2eeb4c94a0eaeada7355c141
+msgid "the CTS (input) pin to use for hardware transmit flow control."
+msgstr "用于硬件传输流控制的 CTS（输入）引脚。"
+
+#: ../../en/hardware/uart.rst:91 2eafecf1f9fd4fffa5866c702876d543
+msgid "the length in characters of the TX buffer."
+msgstr "TX 缓冲区的长度（以字符为单位）。"
+
+#: ../../en/hardware/uart.rst:92 8dee487145f84312bf259b3c9fa90bb0
+msgid "the length in characters of the RX buffer."
+msgstr "RX 缓冲区的长度（以字符为单位）。"
+
+#: ../../en/hardware/uart.rst:93 2198a824bc1d41238c3d3fcf10f26a01
+msgid "the time to wait for the first character (in ms)."
+msgstr "等待第一个字符的时间（以毫秒为单位）。"
+
+#: ../../en/hardware/uart.rst:94 9c7752c6fb21436d9b35b3afeba17f91
+msgid "the time to wait between characters (in ms)."
+msgstr "字符之间等待的时间（以毫秒为单位）。"
+
+#: ../../en/hardware/uart.rst:95 3a8573dc954b41d3802ebb99b49be0d3
+msgid ""
+"which lines to invert.  - ``0`` will not invert lines (idle state of both lines "
+"is logic high).  - ``UART.INV_TX`` will invert TX line (idle state of TX line "
+"now logic low).  - ``UART.INV_RX`` will invert RX line (idle state of RX line "
+"now logic low).  - ``UART.INV_TX | UART.INV_RX`` will invert both lines (idle "
+"state at logic low)."
+msgstr ""
+
+#: ../../en/hardware/uart.rst:95 d36ae0d1bfd441ec870f2510e88c488f
+msgid "which lines to invert."
+msgstr "要反转哪些线。"
+
+#: ../../en/hardware/uart.rst:97 79ac7a44eb734c9bbf678661cd7adb07
+msgid "``0`` will not invert lines (idle state of both lines is logic high)."
+msgstr "``0`` 不会反转线路（两条线路的空闲状态都为逻辑高电平）。"
+
+#: ../../en/hardware/uart.rst:99 243a2363667b488582f1dc2161bf907f
+msgid "``UART.INV_TX`` will invert TX line (idle state of TX line now logic low)."
+msgstr "``UART.INV_TX`` 将反转 TX 线（TX 线的空闲状态现在为逻辑低）。"
+
+#: ../../en/hardware/uart.rst:101 cb7699f638764209aff6afb3105b170c
+msgid "``UART.INV_RX`` will invert RX line (idle state of RX line now logic low)."
+msgstr "``UART.INV_RX`` 将反转 RX 线（RX 线的空闲状态现在为逻辑低）。"
+
+#: ../../en/hardware/uart.rst:103 a528fea1d7094c3e95e050fa448b1e7a
+msgid ""
+"``UART.INV_TX | UART.INV_RX`` will invert both lines (idle state at logic low)."
+msgstr "``UART.INV_TX | UART.INV_RX`` 将反转两条线（逻辑低时的空闲状态）。"
+
+#: ../../en/hardware/uart.rst:105 42cd902cdf8a470bba73c0e27e04f8f4
+msgid ""
+"which hardware flow control signals to use. The value is a bitmask.  - ``0`` "
+"will ignore hardware flow control signals.  - ``UART.RTS`` will enable receive "
+"flow control by using the RTS output pin to signal if the receive FIFO has "
+"sufficient space to accept more data.  - ``UART.CTS`` will enable transmit flow "
+"control by pausing transmission when the CTS input pin signals that the "
+"receiver is running low on buffer space.  - ``UART.RTS | UART.CTS`` will enable "
+"both, for full hardware flow control."
+msgstr ""
+
+#: ../../en/hardware/uart.rst:105 7e5f162f54734f40bdf4d605b63e3a63
+msgid "which hardware flow control signals to use. The value is a bitmask."
+msgstr "使用哪些硬件流控制信号。该值是一个位掩码。"
+
+#: ../../en/hardware/uart.rst:107 b583ef965e944140a37e3a545966f0cf
+msgid "``0`` will ignore hardware flow control signals."
+msgstr "``0`` 将忽略硬件流控制信号。"
+
+#: ../../en/hardware/uart.rst:109 a1713dfe88c14407876baf255142b964
+msgid ""
+"``UART.RTS`` will enable receive flow control by using the RTS output pin to "
+"signal if the receive FIFO has sufficient space to accept more data."
+msgstr ""
+"``UART.RTS`` 将通过使用 RTS 输出引脚来发出信号以表明接收 FIFO 是否有足够的空间来"
+"接受更多数据，从而实现接收流控制。"
+
+#: ../../en/hardware/uart.rst:111 e046b3b71cbd4306b531728360c56bfa
+msgid ""
+"``UART.CTS`` will enable transmit flow control by pausing transmission when the "
+"CTS input pin signals that the receiver is running low on buffer space."
+msgstr ""
+"``UART.CTS`` 会通过在 CTS 输入引脚信号表明接收器缓冲区空间不足时暂停传输，来启用"
+"传输流量控制。"
+
+#: ../../en/hardware/uart.rst:113 a528fea1d7094c3e95e050fa448b1e7a
+msgid "``UART.RTS | UART.CTS`` will enable both, for full hardware flow control."
+msgstr "``UART.RTS | UART.CTS`` 将启用两者，实现完整的硬件流控制。"
+
+#: ../../en/hardware/uart.rst:115 adc065f942394300bcc5295461637710
+msgid ""
+"the mode of the UART. The value is a bitmask.  - ``UART.MODE_UART`` specifies "
+"regular UART mode.  - ``UART.MODE_RS485_HALF_DUPLEX`` specifies half duplex "
+"RS485 UART mode control by RTS pin.  - ``UART.MODE_IRDA`` specifies IRDA UART "
+"mode.  - ``UART.MODE_RS485_COLLISION_DETECT`` specifies RS485 collision "
+"detection UART mode (used for test purposes).  - ``UART.MODE_RS485_APP_CTRL`` "
+"specifies application control RS485 UART mode (used for test purposes)."
+msgstr ""
+
+#: ../../en/hardware/uart.rst:115 6c3cadbdec5548e0a4b462fde3ca07ba
+msgid "the mode of the UART. The value is a bitmask."
+msgstr "UART 的模式。该值是一个位掩码。"
+
+#: ../../en/hardware/uart.rst:117 1c2abeac4d9c434fba0bb0a3446a26a4
+msgid "``UART.MODE_UART`` specifies regular UART mode."
+msgstr "``UART.MODE_UART`` 指定常规 UART 模式。"
+
+#: ../../en/hardware/uart.rst:119 983f1fcf8d934ba980ab1763106b89a6
+msgid ""
+"``UART.MODE_RS485_HALF_DUPLEX`` specifies half duplex RS485 UART mode control "
+"by RTS pin."
+msgstr ""
+"``UART.MODE_RS485_HALF_DUPLEX`` 指定通过 RTS 引脚控制半双工 RS485 UART 模式。"
+
+#: ../../en/hardware/uart.rst:121 8cfeb5cab21e4efbbb02a62c9b8dcd9d
+msgid "``UART.MODE_IRDA`` specifies IRDA UART mode."
+msgstr "``UART.MODE_IRDA`` 指定IRDA UART模式。"
+
+#: ../../en/hardware/uart.rst:123 8e6046a526bb4be5b928f6d99bde4cf0
+msgid ""
+"``UART.MODE_RS485_COLLISION_DETECT`` specifies RS485 collision detection UART "
+"mode (used for test purposes)."
+msgstr ""
+"``UART.MODE_RS485_COLLISION_DETECT`` 指定 RS485 碰撞检测 UART 模式（用于测试目"
+"的）。"
+
+#: ../../en/hardware/uart.rst:125 34177ae18b404d6a8954823f1e7f2322
+msgid ""
+"``UART.MODE_RS485_APP_CTRL`` specifies application control RS485 UART mode "
+"(used for test purposes)."
+msgstr ""
+"``UART.MODE_RS485_APP_CTRL`` 指定应用程序控制RS485 UART模式（用于测试目的）。"
+
+#: ../../en/hardware/uart.rst:128 94c32826c9d94347b1f95b44a916926f
+msgid ""
+"It is possible to call ``init()`` multiple times on the same object in order to "
+"reconfigure  UART on the fly. That allows using single UART peripheral to serve "
+"different devices attached to different GPIO pins. Only one device can be "
+"served at a time in that case. Also do not call ``deinit()`` as it will prevent "
+"calling ``init()`` again."
+msgstr ""
+"可以对同一对象多次调用 ``init()`` ，以便动态重新配置 UART。这样可以使用单个 "
+"UART 外设来为连接到不同 GPIO 引脚的不同设备提供服务。在这种情况下，一次只能为一"
+"个设备提供服务。另外，不要调用 ``deinit()`` ，因为它会阻止再次调用 ``init()`` 。"
+
+#: ../../en/hardware/uart.rst:137 29d6f5faf9e7465f88f31dc9a1aba8f9
+msgid "|setup.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:4 a032f8b224794fc1bd957eddb6ac7e44
+msgid "setup.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:148 a6b3966e947c4feea6e0bd818db7bbc0
+msgid "Turn off the UART bus."
+msgstr "关闭 UART 总线。"
+
+#: ../../en/hardware/uart.rst:151 f2e9c64097c340f78e56ab75bfedb7c2
+msgid ""
+"You will not be able to call ``init()`` on the object after ``deinit()``. A new "
+"instance needs to be created in that case."
+msgstr ""
+"在 ``deinit()`` 之后，您将无法在对象上调用 ``init()`` 。在这种情况下，需要创建一"
+"个新实例。"
+
+#: ../../en/hardware/uart.rst:156 0e60d48de3484204aea2a1e3138cc423
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:3 4431de9efabc4bfa89bc685782ac301d
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:167 3b4b17b4d99d4d0d9af9e60ea14652c8
+msgid ""
+"Returns an integer counting the number of characters that can be read without "
+"blocking.  It will return 0 if there are no characters available and a positive "
+"number if there are characters.  The method may return 1 even if there is more "
+"than one character available for reading."
+msgstr ""
+"返回一个整数，表示可以无阻塞读取的字符数。如果没有可用字符，则返回 0；如果有字"
+"符，则返回一个正数。即使有多个字符可供读取，该方法也可能返回 1。"
+
+#: ../../en/hardware/uart.rst 308149309cb54c5fa3fdb3463dfea327
+msgid "Returns"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:172 1dfc48cb46c947358c886f6268ddce54
+msgid "the number of characters available for reading."
+msgstr "可读取的字符数。"
+
+#: ../../en/hardware/uart.rst 7c5a85310eb74248ad2efe723356532d
+msgid "Return type"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:175 c6fd00ab266d4b5da9c463925ca3e6a6
+msgid "For more sophisticated querying of available characters use select.poll::"
+msgstr "对于更复杂的可用字符查询，请使用 select.poll::"
+
+#: ../../en/hardware/uart.rst:183 7d81178c5c7544f8b497ef1e05ca2be1
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:2 4c539490ca97429aa642c46edd2190a3
+msgid "any.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:194 79c17ede995d4b759cc21c34dd9b306a
+msgid ""
+"Read characters.  If ``nbytes`` is specified then read at most that many bytes, "
+"otherwise read as much data as possible. It may return sooner if a timeout is "
+"reached. The timeout is configurable in the constructor."
+msgstr ""
+"读取字符。如果指定了 ``nbytes``，则最多读取那么多字节，否则读取尽可能多的数据。"
+"如果达到超时，它可能会更早返回。超时可以在构造函数中配置。"
+
+#: ../../en/hardware/uart.rst:198 563d788c834d4763aea3c772b2342a12
+msgid "a bytes object containing the bytes read in.  Returns ``None`` on timeout."
+msgstr "包含读入字节的字节对象。超时时返回 ``None`` 。"
+
+#: ../../en/hardware/uart.rst:203 f61aa243eecf49f9a5c64cb3b72dd7af
+msgid "|read_all.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:5 7e03382437a64148a8a60a1fed2b5757
+msgid "read_all.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:205 e305d72c10a94f2cb06c10b4cc43f25e
+msgid "|read_bytes.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:6 4236071b6dfd42df817da4f98912cb78
+msgid "read_bytes.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:207 89dca9bd6e904d908ceb7042e4059143
+msgid "|read_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:7 7577647b24754a5ca33efff203233c2e
+msgid "read_raw_data.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:218 c19d3bf2048842c9ae97ee427a3ef064
+msgid ""
+"Read bytes into the ``buf``.  If ``nbytes`` is specified then read at most that "
+"many bytes.  Otherwise, read at most ``len(buf)`` bytes. It may return sooner "
+"if a timeout is reached. The timeout is configurable in the constructor."
+msgstr ""
+"将字节读入 ``buf`` 。如果指定了 ``nbytes`` ，则最多读取那么多字节。否则，最多读"
+"取 ``len(buf)`` 个字节。如果达到超时，它可能会更早返回。超时可以在构造函数中配"
+"置。"
+
+#: ../../en/hardware/uart.rst:222 53e38326e59f4535bce6824028c927ce
+msgid "number of bytes read and stored into ``buf`` or ``None`` on timeout."
+msgstr "超时时读取并存储到 ``buf`` 或 ``None`` 中的字节数。"
+
+#: ../../en/hardware/uart.rst:227 f5ddab64cd144a33b97bed3defc42be2
+msgid "|readinto.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:9 b3bbfd0012c1431888e5c0fb931d5d48
+msgid "readinto.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:239 cba434e48b084033a65c0d9b4822ca49
+msgid ""
+"Read a line, ending in a newline character. It may return sooner if a timeout "
+"is reached. The timeout is configurable in the constructor."
+msgstr ""
+"读取一行，以换行符结尾。如果达到超时，它可能会更快返回。超时可在构造函数中配置。"
+
+#: ../../en/hardware/uart.rst:242 0031cd6260874421b205fb82332f31f5
+msgid "the line read or ``None`` on timeout."
+msgstr "超时时读取的行或 ``None`` 。"
+
+#: ../../en/hardware/uart.rst:247 f4202e63a05c4103bbf79e191a523778
+msgid "|readline.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:8 0ab0114f781a45b4ba5cf26b6564ef0e
+msgid "readline.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:258 db13224d23dd452ba51b150337fcb0be
+msgid "Write the buffer of bytes to the bus."
+msgstr "将字节缓冲区写入总线。"
+
+#: ../../en/hardware/uart.rst:260 7c696fb90ff4407893f7a43c7520c35f
+msgid "the buffer of bytes to write."
+msgstr "要写入的字节缓冲区。"
+
+#: ../../en/hardware/uart.rst:263 64f9075fa8af4ba9904d0d24560940c2
+msgid "number of bytes written or ``None`` on timeout."
+msgstr "超时时写入的字节数或 ``None`` 。"
+
+#: ../../en/hardware/uart.rst:268 4e35524f762c4bc99c27476af5687f3c
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:10 4dcba7f057ad4198b83cdcb79cd82e06
+msgid "write.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:270 366a9461fcf9425c9cd1cf332f5626f4
+msgid "|write1.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:11 2e94a2f28aa4457e9fde09e6866b8bf9
+msgid "write1.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:272 26464862aaaa449ca42c7eb74dc11d5a
+msgid "|write_line.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:12 f074ec8c18814715999ef129a5736391
+msgid "write_line.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:274 e857dfe372214d8fbcba0c6d85942eb4
+msgid "|write_list.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:13 169ab24191c54278813a4f662be1e042
+msgid "write_list.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:276 2b8d053f53414a76b8bf160e0b12b24c
+msgid "|write_raw_data.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:14 62ff8d2b589c45129ce7c9c553ea807c
+msgid "write_raw_data.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:278 cfed3851eeff4935bbb9b76a9a9cac95
+msgid "|write_raw_data_list.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:15 8f44425b440c4919a5a6fca5930d6a42
+msgid "write_raw_data_list.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:289 d81eb47671224363976342d823d274c2
+msgid ""
+"Send a break condition on the bus. This drives the bus low for a duration "
+"longer than required for a normal transmission of a character."
+msgstr ""
+"在总线上发送中断条件。这会将总线驱动为低电平，持续时间比正常传输字符所需的时间更"
+"长。"
+
+#: ../../en/hardware/uart.rst:294 e46573604e494ad6839adec65f026edb
+msgid "|sendbreak.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:18 d0e4ca4e64a84002991d4696f1f45616
+msgid "sendbreak.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:305 98b226ec878d49d283ee710254032e61
+msgid ""
+"Waits until all data has been sent. In case of a timeout, an exception is "
+"raised. The timeout duration depends on the tx buffer size and the baud rate. "
+"Unless flow control is enabled, a timeout should not occur."
+msgstr ""
+"等待所有数据发送完毕。如果发生超时，则会引发异常。超时持续时间取决于 tx 缓冲区大"
+"小和波特率。除非启用了流量控制，否则不应发生超时。"
+
+#: ../../en/hardware/uart.rst:311 b7df0e9f59234f01abb7dae7a8f4d857
+msgid ""
+"For the rp2, esp8266 and nrf ports the call returns while the last byte is "
+"sent. If required, a one character wait time has to be added in the calling "
+"script."
+msgstr ""
+"对于 rp2、esp8266 和 nrf 端口，调用将在发送最后一个字节时返回。如果需要，必须在"
+"调用脚本中添加一个字符的等待时间。"
+
+#: ../../en/hardware/uart.rst:316 1f6eee01fbd04139b223016b07bc1cd0
+msgid "|flush.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:17 ac647656e6a94f448d12c85196959367
+msgid "flush.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:327 435cb9b3c6b641f4b36a947fc1a45e3d
+msgid ""
+"Tells whether all data has been sent or no data transfer is happening. In this "
+"case, it returns ``True``. If a data transmission is ongoing it returns "
+"``False``."
+msgstr ""
+"告知是否已发送所有数据或未发生任何数据传输。在这种情况下，它返回 ``True`` 。如果"
+"正在进行数据传输，则返回 ``False`` 。"
+
+#: ../../en/hardware/uart.rst:332 c55285188c11419b9b86dbcc8c5b5094
+msgid ""
+"For the rp2, esp8266 and nrf ports the call may return ``True`` even if the "
+"last byte of a transfer is still being sent. If required, a one character wait "
+"time has to be added in the calling script."
+msgstr ""
+"对于 rp2、esp8266 和 nrf 端口，即使传输的最后一个字节仍在发送，调用也可能返回  "
+"``True`` 。如果需要，必须在调用脚本中添加一个字符的等待时间。"
+
+#: ../../en/hardware/uart.rst:338 8cb3368a190c41d1bc0272843b0b2ed0
+msgid "|txdone.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.uart.ref:16 d3c281a545c641d1b785b0eb29427680
+msgid "txdone.png"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:349 220381fbc94548e7ae7c796d8c02efd3
+msgid "Configure an interrupt handler to be called when a UART event occurs."
+msgstr "配置一个中断处理程序，在发生 UART 事件时调用。"
+
+#: ../../en/hardware/uart.rst:351 d588d5a34a804b21ac81a92d9dcdec44
+msgid ""
+"an optional function to be called when the interrupt event triggers.  The "
+"handler must take exactly one argument which is the ``UART`` instance."
+msgstr ""
+"中断事件触发时调用的可选函数。处理程序必须只接受一个参数，即 ``UART`` 实例。"
+
+#: ../../en/hardware/uart.rst:353 bd38829bec744ae582018e4e1733138d
+msgid ""
+"configures the event(s) which can generate an interrupt. Possible values are a "
+"mask of one or more of the following:  - ``UART.IRQ_RXIDLE`` interrupt after "
+"receiving at least one character and then the RX line goes idle.  - ``UART."
+"IRQ_RX`` interrupt after each received character.  - ``UART.IRQ_TXIDLE`` "
+"interrupt after or while the last character(s) of a message are or have been "
+"sent.  - ``UART.IRQ_BREAK`` interrupt when a break state is detected at RX"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:353 222f77931a994e7d8b2c19940a9a5a75
+msgid ""
+"configures the event(s) which can generate an interrupt. Possible values are a "
+"mask of one or more of the following:"
+msgstr "配置可生成中断的事件。可能的值是以下一个或多个掩码："
+
+#: ../../en/hardware/uart.rst:355 0bd1d1c31f6d4298b30a76eb00c79e10
+msgid ""
+"``UART.IRQ_RXIDLE`` interrupt after receiving at least one character and then "
+"the RX line goes idle."
+msgstr ""
+"``UART.IRQ_RXIDLE`` 中断在接收到至少一个字符后，并且 RX 线路进入空闲状态时触发。"
+
+#: ../../en/hardware/uart.rst:357 b29b087b7d554243919011fb537dc7b1
+msgid "``UART.IRQ_RX`` interrupt after each received character."
+msgstr "``UART.IRQ_RX`` 中断在每接收一个字符后触发。"
+
+#: ../../en/hardware/uart.rst:359 017f546d481f4e18a7d3c217b8bf6138
+msgid ""
+"``UART.IRQ_TXIDLE`` interrupt after or while the last character(s) of a message "
+"are or have been sent."
+msgstr ""
+"``UART.IRQ_TXIDLE`` 中断在消息的最后一个或多个字符发送完成后或发送过程中触发。"
+
+#: ../../en/hardware/uart.rst:361 92caf52f7207435f8b947b446de0b750
+msgid "``UART.IRQ_BREAK`` interrupt when a break state is detected at RX"
+msgstr "``UART.IRQ_BREAK`` 中断在 RX 端检测到断开状态时触发。"
+
+#: ../../en/hardware/uart.rst:363 585576bcf9ba435796ab7967fe66d17e
+msgid ""
+"if true a hardware interrupt is used.  This reduces the delay between the pin "
+"change and the handler being called. Hard interrupt handlers may not allocate "
+"memory; see :ref:`isr_rules`."
+msgstr ""
+"如果为真，则使用硬件中断。这减少了引脚变化和调用处理程序之间的延迟。硬中断处理程"
+"序可能不会分配内存；请参阅 :ref:`isr_rules` 。"
+
+#: ../../en/hardware/uart.rst:365 0b9be4a1206a44d0a0446b400207e7ae
+msgid "Returns an irq object."
+msgstr "返回一个 irq 对象。"
+
+#: ../../en/hardware/uart.rst:367 768599bb0fa8434d92c4d9ab9924278b
+msgid ""
+"Due to limitations of the hardware not all trigger events are available on all "
+"ports."
+msgstr "由于硬件的限制，并非所有触发事件都可在所有端口上使用。"
+
+#: ../../en/hardware/uart.rst:369 af059429b9184a26a417d179f882796d
+msgid "Availability of triggers"
+msgstr "触发器的可用性"
+
+#: ../../en/hardware/uart.rst:373 5f507b6c72144f8f9ed751ebabd12d45
+msgid "Port / Trigger"
+msgstr "端口 / 触发器"
+
+#: ../../en/hardware/uart.rst:373 e4297960108f4cfbbb131091323fe00b
+msgid "IRQ_RXIDLE"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:373 40cb6a9a94d3430b8623eab4a43081f5
+msgid "IRQ_RX"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:373 0640ff146db4443cb74eccc06a9191cc
+msgid "IRQ_TXIDLE"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:373 aa9ba8bc63334ab1a73144073836974f
+msgid "IRQ_BREAK"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:375 7359fa18eaa94bcb80d047fe8cd00d29
+msgid "CC3200"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:375 ../../en/hardware/uart.rst:376
+#: ../../en/hardware/uart.rst:377 ../../en/hardware/uart.rst:378
+#: ../../en/hardware/uart.rst:379 ../../en/hardware/uart.rst:380
+#: ../../en/hardware/uart.rst:381 ../../en/hardware/uart.rst:382
+#: 5263ea413f8348f894e378c1cf3ec3a8 5a0650625271427f9b1d6fb568273b6b
+#: 6a4ff38e6c484d93b725408a77c7c472 7656726a12a64ca9b8f094bbbd72b2ab
+#: a36a8c3a79a84e64839e4e9a02ba1eae a83cccb77925437da295a4d47b3b55ec
+msgid "yes"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:376 52897fde48d44c628ef13c0de2288ee1
+msgid "ESP32"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:377 b26614c24900456eb040ef634b38bbc2
+msgid "MIMXRT"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:378 627829eac3c7465ca8378e7f3a1db46e
+msgid "NRF"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:379 4163dfc2777d49d8ac86797d97a866ce
+msgid "RENESAS-RA"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:380 828c822769c14216a9627ed77d41b98b
+msgid "RP2"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:381 e59e6ae678da4f6d99bd8552116c3bf7
+msgid "SAMD"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:382 65b36f41fd854acfb90e4068465e21f2
+msgid "STM32"
+msgstr ""
+
+#: ../../en/hardware/uart.rst:386 f6a018ad1f62442dba51cffc32095630
+msgid "The ESP32 port does not support the option hard=True."
+msgstr "ESP32 端口不支持选项 hard=True。"
+
+#: ../../en/hardware/uart.rst:388 fb9d6f11c1d14b949b9572491b65d48c
+msgid ""
+"The rp2 port's UART.IRQ_TXIDLE is only triggered when the message is longer "
+"than 5 characters and the trigger happens when still 5 characters are to be "
+"sent."
+msgstr ""
+"仅当消息长度超过5个字符时，rp2端口的UART.IRQ_TXIDLE才会触发，并且当仍有5个字符需"
+"要发送时才会触发。"
+
+#: ../../en/hardware/uart.rst:392 dc9edc6c005a40f0a4b2572906cbc3cc
+msgid ""
+"The rp2 port's UART.IRQ_BREAK needs receiving valid characters for triggering "
+"again."
+msgstr "rp2端口的UART.IRQ_BREAK需要接收有效字符才能再次触发。"
+
+#: ../../en/hardware/uart.rst:395 a7bfc3e606e94a459fb41cbd99acc107
+msgid ""
+"The SAMD port's UART.IRQ_TXIDLE is triggered while the last character is sent."
+msgstr "发送最后一个字符时，触发SAND端口UART.IRQ IDLE。"
+
+#: ../../en/hardware/uart.rst:397 5fd2115e4be04b58bd65286d304a33cd
+msgid ""
+"On STM32F4xx MCU's, using the trigger UART.IRQ_RXIDLE the handler will be "
+"called once after the first character and then after the end of the message, "
+"when the line is idle."
+msgstr ""
+"在 STM32F4xx MCU 上，使用触发器 UART.IRQ_RXIDLE，当线路空闲时，处理程序将在第一"
+"个字符之后调用一次，然后在消息结束后调用一次。"
+
+#: ../../en/hardware/uart.rst:402 6e8b260d703346639d29b12efc952246
+msgid "Availability: cc3200, esp32, mimxrt, nrf, renesas-ra, rp2, samd, stm32."
+msgstr "有效性：cc3200、esp32、mimxrt、nrf、renesas-ra、rp2、samd、stm32。"
+
+#: ../../en/hardware/uart.rst:408 2a871de78ac640748cb8611fa2ac4736
+msgid "Flow control options."
+msgstr "流量控制选项。"
+
+#: ../../en/hardware/uart.rst:417 2364adf071584878a7221beb11ef1e84
+msgid "UART mode options."
+msgstr "UART 模式选项。"
+
+#: ../../en/hardware/uart.rst:425 92ca5ee3fe414a8ab41b508e998a925e
+msgid "IRQ trigger sources."
+msgstr "IRQ 触发源。"

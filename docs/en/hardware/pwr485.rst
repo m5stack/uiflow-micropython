@@ -1,0 +1,79 @@
+PWR485
+======
+
+.. include:: ../refs/hardware.pwr485.ref
+
+The PWR485 is a RS485 interface that can be used to communicate with other devices.
+
+The following are the host's support for PWR485:
+
+.. table::
+    :widths: auto
+    :align: center
+
+    +-----------------+----------------+
+    |Controller       | Status         |
+    +=================+================+
+    | StampPLC        | |S|            |
+    +-----------------+----------------+
+
+.. |S| unicode:: U+2714
+
+
+UiFlow2 Example
+---------------
+
+Echo
+^^^^
+
+Open the |stamplc_ehco_example.m5f2| project in UiFlow2.
+
+This example demonstrates how to utilize PWR485 interfaces by echoing back to the
+sender any data received on configured PWR485.
+
+By pressing different keys, different characters are sent.
+
+UiFlow2 Code Block:
+
+    |stamplc_ehco_example.png|
+
+Example output:
+
+    None
+
+
+
+MicroPython Example
+-------------------
+
+Echo
+^^^^
+
+This example demonstrates how to utilize PWR485 interfaces by echoing back to the
+sender any data received on configured PWR485.
+
+By pressing different keys, different characters are sent.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/hardware/pwr485/stamplc_ehco_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+
+**API**
+-------
+
+class PWR485
+^^^^^^^^^^^^
+
+.. autoclass:: hardware.pwr485.PWR485
+    :members:
