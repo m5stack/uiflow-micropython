@@ -2071,7 +2071,7 @@ static esp_err_t mqtt_app_start(void) {
     char *password = NULL;
     size_t topic_len;
 
-    esp_efuse_mac_get_default(sta_mac);
+    esp_read_mac(sta_mac, ESP_MAC_WIFI_STA);
 
     for (size_t i = 0; i < 3; i++) {
         topic_len = sprintf(up_topic_list[i], M5THINGS_OTA_TOPIC_TEMPLATE, "up",
