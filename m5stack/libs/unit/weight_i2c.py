@@ -69,7 +69,7 @@ class WeightI2CUnit:
         weight2_adc: Weight2 in ADC.
         """
 
-        gap = abs(weight2_adc - weight1_adc) / abs(weight2_g - weight1_g)
+        gap = (weight2_adc - weight1_adc) / (weight2_g - weight1_g)
         self.i2c.writeto_mem(self.unit_addr, GAP_REG, struct.pack("<f", gap))
         time.sleep_ms(200)
 
@@ -81,7 +81,7 @@ class WeightI2CUnit:
     def get_weight_int(self) -> int:
         """! Get the weight in grams(int)."""
         data = self.i2c.readfrom_mem(self.unit_addr, WEIGHT_X100_REG, 4)
-        return struct.unpack("<i", data)[0]
+        return int(struct.unpack("<f", data)[0] / 100)
 
     @property
     def get_weight_str(self) -> str:

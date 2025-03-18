@@ -12,6 +12,7 @@ import time
 hub_addr = [0x40, 0x50, 0x60, 0x70, 0x80, 0xA0]
 
 PBHUB_ADDR = 0x61
+LED_CTRL_REG = 0xFA
 FW_VER_REG = 0xFE
 I2C_ADDR_REG = 0xFF
 
@@ -105,7 +106,10 @@ class PBHUBUnit:
         color_in : 0 to 0xfffff
         """
         num = max(min(num, 5), 0)
-        out_buf = led.to_bytes(2, "little") + color_in.to_bytes(3, "big")
+        color_grb = (
+            ((color_in & 0x00FF00) << 8) | ((color_in & 0xFF0000) >> 8) | (color_in & 0x0000FF)
+        )
+        out_buf = led.to_bytes(2, "little") + color_grb.to_bytes(3, "big")
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x09, out_buf)
 
     def set_rgb_color(self, num, begin, count, color_in):
@@ -117,8 +121,15 @@ class PBHUBUnit:
         color_in : 0 to 0xfffff
         """
         num = max(min(num, 5), 0)
+
+        color_grb = (
+            ((color_in & 0x00FF00) << 8) | ((color_in & 0xFF0000) >> 8) | (color_in & 0x0000FF)
+        )
+
         out_buf = (
-            begin.to_bytes(2, "little") + count.to_bytes(2, "little") + color_in.to_bytes(3, "big")
+            begin.to_bytes(2, "little")
+            + count.to_bytes(2, "little")
+            + color_grb.to_bytes(3, "big")
         )
         self.pbhub_i2c.writeto_mem(self.i2c_addr, hub_addr[num] | 0x0A, out_buf)
 
@@ -130,6 +141,20 @@ class PBHUBUnit:
         """
         num = max(min(num, 5), 0)
         self.write_mem_list(hub_addr[num] | 0x0B, [value])
+
+    def set_rgb_mode(self, mode):
+        """
+        set RGB led mode.
+        mode : 0 to 1
+        """
+        self.pbhub_i2c.writeto_mem(self.i2c_addr, LED_CTRL_REG, bytes([mode]))
+
+    def get_rgb_mode(self):
+        """
+        get RGB led mode.
+        return : 0 or 1
+        """
+        return self.pbhub_i2c.readfrom_mem(self.i2c_addr, LED_CTRL_REG, 1)[0]
 
     def set_servo_angle(self, num, pos, value):
         """
