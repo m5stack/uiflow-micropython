@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 10:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,112 +20,140 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/display.rst:3 56f60f350eee482b98a47be2f63fa73a
+#: ../../en/module/display.rst:3 0e7ad055e4c64b77b61c51951b615786
 msgid "Display Module"
 msgstr ""
 
-#: ../../en/module/display.rst:7 818238a833f44119a10c4f52d8c4da83
+#: ../../en/module/display.rst:9 97b47c837deb46d1a384cf5a0631fdcc
 msgid ""
 "Display Module 13.2 is an expansion module for HD audio and video, using "
 "GAOYUN GW1NR series FPGA chip to output display signals, and employing "
 "the LT8618S chip for signal output conditioning."
-msgstr ""
+msgstr "Display Module 13.2 为高清音视频的扩展模块，采用GAOYUN GW1NR系列FPGA芯片输出显示信号，采用LT8618S芯片进行信号输出调理。"
 
-#: ../../en/module/display.rst:9 d4b65e71bfad493a845bd5adaff20464
+#: ../../en/module/display.rst:11 655d2ad845904108abf63dc626dad8ed
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/module/display.rst:11 711f56f7479d49bf93afc60870e0d90c
+#: ../../en/module/display.rst:13 9ad55ee56f854fd8ad726678e366f554
 msgid "|DisplayModule|"
 msgstr ""
 
-#: ../../en/refs/module.display.ref 0b06939893504724b333e502e425759d
+#: ../../en/refs/module.display.ref 59f7de96d8de4c0ba386952cc538d984
 msgid "DisplayModule"
 msgstr ""
 
-#: ../../en/module/display.rst:13 b6f912def9f6473ba0bdabcda699fed6
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/module/display.rst:17 283deafa52394941a166297e02685cba
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/module/display.rst:20 07477a8c40c94de2a7ab20f05c1158aa
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/module/display.rst:20 5a7e3ed3085a4c9080d43483cc242ebf
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/module/display.rst:22 437c19abd0614f3987bf063fcb15ad88
+#: ../../en/module/display.rst:22 a773a6882ea9477fafb66b18adffd625
+msgid "Open the |cores3_display_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_display_example.m5f2| 项目。"
+
+#: ../../en/module/display.rst:24 ../../en/module/display.rst:38
+#: 4bbe9744ac6d472cae5886be35f41639 7ce959a72b344bab9c5874cc5042a392
+msgid "This example displays the text \"Display\" on the screen."
+msgstr "此示例在屏幕上显示文本“Display”。"
+
+#: ../../en/module/display.rst:26 ac25fad5f6754d6cb52bf26c6e54430c
+#: c4280f62b81845f5a1bcd885ce213fa6 module.display.DisplayModule:12 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/display.rst:28 a21838eae5554170883aba1905af4e6e
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/module.display.ref:9 32d8cc86e90f424bad60901037c946a6
+#: ../../en/refs/module.display.ref:9 c20454d879f8455fbbbcd778a8867a60
 msgid "example.png"
 msgstr ""
 
-#: ../../en/module/display.rst:26 d73f2650d16d440fa0c0636d77d33e98
-msgid "|cores3_display_example.m5f2|"
+#: ../../en/module/display.rst:30 ../../en/module/display.rst:46
+#: 4a29d09f1c364de69e25674d22789b59 db489b84f7684d9fad3d722033ff36a4
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/display.rst:32 ../../en/module/display.rst:48
+#: 0686c947a12a45fcb88d6d4da209d015 be88846665c54df096f4c0528df1680e
+msgid "None"
 msgstr ""
 
-#: ../../en/module/display.rst:30 0a478a5f9b184115a31951e385b97b6b
-msgid "class DisplayModule"
+#: ../../en/module/display.rst:36 8032908527d748829ec230ffe4c89fe6
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/display.rst:40 9c55a73cd0aa41068dd4d8ee2088b1dc
+#: 9ff4a13bfa3a4beaa95b89c66fd4ed7f module.display.DisplayModule:16 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/display.rst:52 c968632041154e82bca4b4ac87a56bcd
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/display.rst:55 48493f6894ed4d1d90c9fe74f6b02d4b
+msgid "Class DisplayModule"
 msgstr ""
 
-#: ../../en/module/display.rst:33 957e53469b8b47fd87af7604b961c9f5
-msgid "Constructors"
+#: c3efbbb859a14be281e0877cf11f5941 module.display.DisplayModule:1 of
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/module/display.rst:37 fdaba48c5706413b97fc1b1f8d72b7bd
-msgid "Initialize the Module Display"
-msgstr ""
+#: 84a73d5dc605435a87fdd1604052450a module.display.DisplayModule:1 of
+msgid "Initialize the Display Module."
+msgstr "初始化 Display Module。"
 
-#: ../../en/module/display.rst b1daecd9236a42e5aeee4cd794ee17d4
+#: ../../en/module/display.rst 368444dc176e4e16b8f01fb631f92b28
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/display.rst:39 f9ea8e6b1ec24a53bb03e6a7ed01cc00
-msgid ""
-"The port to which the Module Display is connected. port[0]: not used, "
-"port[1]: dac pin."
-msgstr ""
+#: 9b076e56caed4f4eb8011833e8df490b module.display.DisplayModule:3 of
+msgid "The logical width of the Display Module. Default is 1280px."
+msgstr "Display Module 的逻辑宽度。默认值为 1280px。"
 
-#: ../../en/module/display.rst:40 1b472c178e3649aaa9c7a5d9ef181e5c
-msgid "The width of the Module Display."
-msgstr ""
+#: 855fb1e3a29a4dcca481a7f2afc8604d module.display.DisplayModule:4 of
+msgid "The logical height of the Display Module. Default is 720px."
+msgstr "Display Module 的逻辑高度。默认值为 720px。"
 
-#: ../../en/module/display.rst:41 70e1539e6da747c88ba59912ae958871
-msgid "The height of the Module Display."
-msgstr ""
+#: af99f68dd0ba4e1386f935133cec70eb module.display.DisplayModule:5 of
+msgid "The refresh rate of the Display Module. Default is 60Hz."
+msgstr "Display Module 的刷新率。默认为 60Hz。"
 
-#: ../../en/module/display.rst:42 176939f9dac24e429375fdf94d060d40
-msgid "The refresh rate of the Module Display."
-msgstr ""
+#: ce847b487a944b6687c84dc2174dbaba module.display.DisplayModule:6 of
+msgid "The width of the output of the Display Module. Default is 1280px."
+msgstr "Display Module 输出的宽度。默认为 1280px。"
 
-#: ../../en/module/display.rst:43 2ed3ea6a16d04af59a698af3279a763a
-msgid "The output width of the Module Display."
-msgstr ""
+#: ae5f54d2f1504642997e965c49b60158 module.display.DisplayModule:7 of
+msgid "The height of the output of the Display Module. Default is 720px."
+msgstr "Display Module 输出的高度。默认为 720px。"
 
-#: ../../en/module/display.rst:44 bf663d0b788a47ffb8b86a8a59e2cf14
-msgid "The output height of the Module Display."
-msgstr ""
+#: 7e7ae0fab3274eb19759eabf323d70f9 module.display.DisplayModule:8 of
+msgid "The scale width of the Display Module. Default is 1."
+msgstr "Display Module 的宽度缩放比例因子。默认值为 1。"
 
-#: ../../en/module/display.rst:45 f3e43e6723b94227b64a6c874d5356cc
-msgid "The scale width of the Module Display."
-msgstr ""
+#: 6900945d01fd447baba6d8068edf4e50 module.display.DisplayModule:9 of
+msgid "The scale height of the Display Module. Default is 1."
+msgstr "Display Module 的高度缩放比例因子。默认值为 1。"
 
-#: ../../en/module/display.rst:46 3217cb8c48eb4a339ee7ad356bfb1783
-msgid "The scale height of the Module Display."
-msgstr ""
+#: ff4cf3dc593e40d7a7c14124eae9ce10 module.display.DisplayModule:10 of
+msgid "The pixel clock of the Display Module. Default is 74250000."
+msgstr "Display Module 的像素时钟。默认值为 74250000。"
 
-#: ../../en/module/display.rst:47 50081f2e784746fe83b5b69e753718f1
-msgid "The pixel clock of the Module Display."
-msgstr ""
-
-#: ../../en/module/display.rst:49 395ce63a976f4cab98ac6a271123a4b0
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/module/display.rst:51 8eb140721c674538a904450fb3a11d00
+#: 125845e87dd649388ccaeb853de509ba module.display.DisplayModule:14 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.display.ref:7 63e695cc646145f489fa7d9ffac3e0ce
+#: ../../en/refs/module.display.ref:7 21774f46c0ec45238acc716d34af591f
 msgid "init.png"
 msgstr ""
 
+#: ../../en/module/display.rst:60 567ca5a589c34a398d49e5fd574bfd7c
+msgid ""
+"DisplayModule class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
+msgstr "DisplayModule 类继承了 Display 类，更多详细信息请参阅 :ref:`hardware.Display <hardware.Display>` 。"

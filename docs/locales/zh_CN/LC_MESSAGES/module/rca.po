@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 17:25+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,115 +20,175 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/rca.rst:3 e540d1702a0b42aabd6a6639aaf872f7
+#: ../../en/module/rca.rst:2 16fe8d445f574fd2a97d8ac3256478d2
 msgid "RCA Module"
 msgstr ""
 
-#: ../../en/module/rca.rst:7 68752295fd3541628cc2a9b14ec9745e
+#: ../../en/module/rca.rst:8 4c15c36e3181459288ff10c2de9d199a
 msgid ""
 "Module RCA is a female jack terminal block for transmitting composite "
 "video (audio or video), one of the most common A/V connectors, which "
 "transmits  video or audio signals from a component device to an output  "
 "device (i.e., a display or speaker)."
 msgstr ""
+"RCA 模块是用于传输复合视频（音频或视频）的母插孔接线端子，是最常见的 A/V "
+"连接器之一，它将视频或音频信号从组件设备传输到输出设备（即显示器或扬声器）。"
 
-#: ../../en/module/rca.rst:9 8963b4e53c3f46eab43855dc7296b69c
+#: ../../en/module/rca.rst:10 d370429015d542e9a654b603476e9778
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/module/rca.rst:11 be50b24c46ab4df08468517d22c5026d
+#: ../../en/module/rca.rst:12 c28f2ddb3cac40cab7b4ede59a06292a
 msgid "|RCAModule|"
 msgstr ""
 
-#: ../../en/refs/module.rca.ref 07b75df3754f47ebbe61ea6669cf1067
+#: ../../en/refs/module.rca.ref 1935b3cd8fc04dc0b0f2a4ad3cf25057
 msgid "RCAModule"
 msgstr ""
 
-#: ../../en/module/rca.rst:13 132b6b50214b4e2696da3bedeb939142
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/module/rca.rst:16 801f45d9c2c64fe6bae0706a23eb1280
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/module/rca.rst:20 67272d63a79941769308e19a7606f38f
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/module/rca.rst:19 ../../en/module/rca.rst:38
+#: 23a8359609734d21a8412e5451dc35dd d8270a6008ca4835ac23c08532ba0f18
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/module/rca.rst:22 c1000430f8c0439a967199aab65ecda7
+#: ../../en/module/rca.rst:21 ecd318f4ecf441f78115d1a913a2419f
+msgid "Open the |core2_rca_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core2_rca_example.m5f2| 项目。"
+
+#: ../../en/module/rca.rst:23 ../../en/module/rca.rst:40
+#: 2c95d4d0a98a4e42b014750ded085387 732e649f57d64993ba7129afa7ae22bb
+msgid "This example displays the text \"RCA\" on the screen."
+msgstr "此示例在屏幕上显示文本“RCA”。"
+
+#: ../../en/module/rca.rst:25 4d991f53a5ac48ea818135e89988bb4b
+#: 4f4ca1de58f64568b1d0b91ed21da7e8 module.rca.RCAModule:12 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/rca.rst:27 f77b802fb826440d9c0834376108dd57
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/module.rca.ref:9 067b07dd8e8c4a58b01e2147d69008fb
+#: ../../en/refs/module.rca.ref:9 3887e0c753474fd78bd03a8d7ec401a5
 msgid "example.png"
 msgstr ""
 
-#: ../../en/module/rca.rst:26 8fc87d2ea12c471fb6f03f1c71f19693
-msgid "|core2_rca_example.m5f2|"
+#: ../../en/module/rca.rst:29 ../../en/module/rca.rst:48
+#: 20fe8aa954ae464883a2f6881733c7d0 b1f1915dc0cf4eee9f695886eb59c07f
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/rca.rst:31 ../../en/module/rca.rst:50
+#: 88ecdc7628a44633a57e4a20ebe7195e af5c687e69b94affa7c4d2d8d3ecbcbf
+msgid "None"
 msgstr ""
 
-#: ../../en/module/rca.rst:30 578953f881954f5b81c6271ec3608be3
-msgid "class RCAModule"
+#: ../../en/module/rca.rst:35 499c594c242949349ca020009ecf5ee5
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/rca.rst:42 499c594c242949349ca020009ecf5ee5
+#: module.rca.RCAModule:16 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/rca.rst:54 82ac218f32e64f229207fe639bda3e3e
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/rca.rst:57 0015aa5d40484430a2dd9ec21cc34079
+msgid "Class RCAModule"
 msgstr ""
 
-#: ../../en/module/rca.rst:33 6ece5206ca5546c7adfedf65fefe9e4b
-msgid "Constructors"
+#: d6bbc6c747bb48869a2f50d88f0ebfcb module.rca.RCAModule:1 of
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/module/rca.rst:37 d4e5336e54fa4e26b41e307671744fd5
-msgid "Initialize the Module RCA"
-msgstr ""
+#: 56a13f7e15e14a94a578a11551f46cfb module.rca.RCAModule:1 of
+#, fuzzy
+msgid "Initialize the RCA Module."
+msgstr "初始化 RCA Module。"
 
-#: ../../en/module/rca.rst d78a92f85d724ad490e8f31fb2154a1c
+#: ../../en/module/rca.rst 788378cc6e2b49579c59c37e3e3b4d98
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/rca.rst:39 92b0cb92a1db401cabca769fa7574edd
-msgid ""
-"The port to which the Module RCA is connected. port[0]: not used, "
-"port[1]: dac pin."
-msgstr ""
+#: 3c9c20f80d384406a3fcceba92b3d97e module.rca.RCAModule:3 of
+msgid "The dac pin to which the RCA Module is connected."
+msgstr "RCA 模块连接到的 DAC 引脚。"
 
-#: ../../en/module/rca.rst:40 4b2bdaae716c43f3b7bb4429fb9d3c94
+#: b92da428b78d457785cac259c876504b module.rca.RCAModule:4 of
 msgid "The width of the RCA display."
-msgstr ""
+msgstr "RCA 显示器的宽度。"
 
-#: ../../en/module/rca.rst:41 1b7b051ac1344d0ea5d4d0fff66509a8
+#: fe5c347e693642929d0ea898e7ac859f module.rca.RCAModule:5 of
 msgid "The height of the RCA display."
-msgstr ""
+msgstr "RCA 显示器的高度。"
 
-#: ../../en/module/rca.rst:42 2988c6902fee475d95b1ca87f1de6aab
+#: 9896bc0f7be94be09e2794cdeab36824 module.rca.RCAModule:6 of
 msgid "The width of the output of the RCA display."
-msgstr ""
+msgstr "RCA 显示器输出的宽度。"
 
-#: ../../en/module/rca.rst:43 c4ea65eebf4146fab52650f725db0280
+#: 8cd9a771eb6f41ccac9e103a20c21e50 module.rca.RCAModule:7 of
 msgid "The height of the output of the RCA display."
-msgstr ""
+msgstr "RCA 显示器输出的高度。"
 
-#: ../../en/module/rca.rst:44 7e7825ae834c4b12b5e0daefb27da0eb
+#: a1dc2424344341cb8b76c2d62d3ccbb5 module.rca.RCAModule:8 of
 msgid ""
-"The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, "
-"PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4."
-msgstr ""
+"The signal type of the RCA display. NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, "
+"PAL_N=4."
+msgstr "RCA显示的信号类型。"
 
-#: ../../en/module/rca.rst:45 e3f4ddb213f34519a312f44924e8c4ee
+#: c97195dee719432c89f1d6941bd9e143 module.rca.RCAModule:9 of
 msgid "The use of psram of the RCA display."
-msgstr ""
+msgstr "RCA显示器的psram的使用。"
 
-#: ../../en/module/rca.rst:46 df3c90aafa1341a7ba1dce62d9609697
+#: 3686b63331984dd9ada1e7980d7f2c1e module.rca.RCAModule:10 of
 msgid "The output level of the RCA display."
-msgstr ""
+msgstr "RCA 显示的输出电平。"
 
-#: ../../en/module/rca.rst:48 95aae9fd0b6844a38ef88794aa7ba9e0
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/module/rca.rst:50 513188061ecc454282ee406f14c53f4a
+#: fceef27cac49455b8669d79340697a0a module.rca.RCAModule:14 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.rca.ref:7 2dcd7de70bcf430ab27b5c6ea3c729d0
+#: ../../en/refs/module.rca.ref:7 1cfee8c5551e4672b7afe34873a31f53
 msgid "init.png"
 msgstr ""
 
-#: ../../en/module/rca.rst:54 15c1fddfdb144587b1d817dfa77b844e
-msgid "Methods"
+#: ../../en/module/rca.rst:62 ebfe26e5800a4bafa1bfbc432ad63120
+msgid ""
+"RCAModule class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
 msgstr ""
+"RCAModule 类继承了 Display 类，更多详细信息请参阅 :ref:`hardware.Display "
+"<hardware.Display>` 。"
+
+#: ../../docstring d5e06dace4614b5c9610ef631ebfca6e module.rca.RCAModule.NTSC:1
+#: of
+msgid "signal type. National Television System Committee."
+msgstr "信号类型。国家电视系统委员会制定的制式。"
+
+#: ../../docstring fbf53603aaab473b8014bde21622b52c
+#: module.rca.RCAModule.NTSC_J:1 of
+msgid "signal type. National Television System Committee Japan."
+msgstr "信号类型。国家电视系统委员会制式的日本标准。"
+
+#: ../../docstring 11639b06ecf741ac9ac05595df170e29 module.rca.RCAModule.PAL:1
+#: of
+msgid "signal type. Phase Alternating Line."
+msgstr "信号类型。逐行扫描制式。"
+
+#: ../../docstring 11639b06ecf741ac9ac05595df170e29
+#: module.rca.RCAModule.PAL_M:1 of
+msgid "signal type. Phase Alternating Line M."
+msgstr "信号类型。逐行扫描制式 M格式。"
+
+#: ../../docstring d3882a48c4ff442b945c3c0d736bb747
+#: module.rca.RCAModule.PAL_N:1 of
+msgid "signal type. Phase Alternating Line N."
+msgstr "信号类型。逐行扫描制式 N格式。"
 

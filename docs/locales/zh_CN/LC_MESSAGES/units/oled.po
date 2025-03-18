@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 17:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,85 +20,119 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/oled.rst:3 31926aea8a254638902f7f3d696a0149
+#: ../../en/units/oled.rst:3 55fe5aaf29094d169f3838c8637c2b10
 msgid "OLED Unit"
 msgstr ""
 
-#: ../../en/units/oled.rst:7 92e636e4ffbb43b8be558c95e220c5fe
+#: ../../en/units/oled.rst:9 563fd28410094c8084da8cefa3f150b1
 msgid ""
 "Unit OLED is a 1.3-inch OLED expansion screen unit. Driveing by SH1107, "
 "and the resolution is 128*64, monochrome display."
-msgstr ""
+msgstr "OLED单元为1.3寸OLED扩展屏单元，采用SH1107驱动，分辨率为128*64，单色显示。"
 
-#: ../../en/units/oled.rst:9 fcc4d69d965b424eaa8a3d7f639bf098
+#: ../../en/units/oled.rst:11 288435d2a8424d3998ad992d76909550
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/units/oled.rst:11 32e808b56c4e4db89fa2d975a9fd3060
+#: ../../en/units/oled.rst:13 24f0906e87374631843eb498be3bb43d
 msgid "|OLEDUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.oled.ref 8cbdbc212c51412192252b99a6d7089a
+#: ../../en/refs/unit.oled.ref f16eea86c3f64328b34523a717c5800b
 msgid "OLEDUnit"
 msgstr ""
 
-#: ../../en/units/oled.rst:13 646f0693fb65442f85c6ec944bf13a18
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/units/oled.rst:17 903b2984777746ff9bda1bcbe397f515
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/oled.rst:20 04044090564f4dfda44fbcb58381cbf9
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/units/oled.rst:20 ../../en/units/oled.rst:39
+#: 89bb40731f704961b3e177cdc7ca6fa1 af59a76943f14f1ca3ec55248fad837d
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/units/oled.rst:22 30a069c2719047c0b3ebf82acdb3da85
+#: ../../en/units/oled.rst:22 8d4913bf11b34a089e60777134261ed2
+msgid "Open the |cores3_oled_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_oled_example.m5f2| 项目。"
+
+#: ../../en/units/oled.rst:24 ../../en/units/oled.rst:41
+#: 95f62a1ea89941229d950978720b7874 aaca82f5e2d64101a2f3e3877965173e
+msgid "This example displays the text \"OLED\" on the screen."
+msgstr "此示例在屏幕上显示文本“OLED”。"
+
+#: ../../en/units/oled.rst:26 47832ce9fc9741a1b30a24d0ec26915d
+#: fd368cc332e947e8947c46e6394418d8 of unit.oled.OLEDUnit:7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/oled.rst:28 e2c15de26d9a42c18840562ad786acea
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.oled.ref:9 5525a88878d14c3dbba1e5869a3f2248
+#: ../../en/refs/unit.oled.ref:9 26a426adae124c5e934d97f10fcaad63
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/oled.rst:26 e9f40ca74c9d46198458854933c8c41f
-msgid "|cores3_oled_example.m5f2|"
+#: ../../en/units/oled.rst:30 ../../en/units/oled.rst:49
+#: 02abf01904a641bea2cb3b3bcfd6da70 20e2b35ea09e45929e7f05f5f062d4bc
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/oled.rst:32 ../../en/units/oled.rst:51
+#: 4d4a663bb85046bfaed9b1837c517e77 b3be7c0f59cc4b80a66234805f144d0f
+msgid "None"
 msgstr ""
 
-#: ../../en/units/oled.rst:29 3f82a6b6a9ee4be099e43b088c6b5145
+#: ../../en/units/oled.rst:36 4acc7cb34e864ca6b6a5d6016fe54551
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/oled.rst:43 4acc7cb34e864ca6b6a5d6016fe54551 of
+#: unit.oled.OLEDUnit:11
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/oled.rst:55 f518797bc3704d8aa2ba0ddee8447d01
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/oled.rst:58 3a111f94d57248f0b2739f5f90244563
 msgid "class OLEDUnit"
 msgstr ""
 
-#: ../../en/units/oled.rst:32 3e200feb4ef64aa4b59230854c3ed3ad
-msgid "Constructors"
+#: cd6a974fcf03435ba09f64750ee071da of unit.oled.OLEDUnit:1
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/units/oled.rst:36 c367231d0cb74d9daf00a111d1e52751
-msgid "Initialize the Unit OLED"
-msgstr ""
+#: 15711339fb38406d8d9943d2ec9bab96 of unit.oled.OLEDUnit:1
+msgid "Initialize the OLED Unit."
+msgstr "初始化 OLED Unit。"
 
-#: ../../en/units/oled.rst 0f7838c6a7bd4ab984d2a75c216d26f8
+#: ../../en/units/oled.rst 63db4e1858814553a62c9572d747af4f
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/oled.rst:38 75f14b3560db408b943f6754c9e69122
-msgid "the I2C object."
-msgstr ""
+#: be3e459948fd4d328eafce3ae88322be of unit.oled.OLEDUnit:3
+msgid "The I2C bus the OLED Unit is connected to."
+msgstr "OLED Unit 所连接的 I2C 总线。"
 
-#: ../../en/units/oled.rst:39 a4ff8babb71e4c848bf050942d4911ae
-msgid "I2C address of the Unit OLED, default is 0x3c."
-msgstr ""
+#: 9550bd9cb7d849ceba884b72fea6d47e of unit.oled.OLEDUnit:5
+msgid "The I2C address of the OLED Unit, default is 0x3C."
+msgstr "OLED Unit 的 I2C 地址，默认为 0x3C。"
 
-#: ../../en/units/oled.rst:40 2bcc7ae3035b4824b9f0ada455db8ce1
-msgid "I2C frequency of the Unit OLED."
-msgstr ""
-
-#: ../../en/units/oled.rst:42 5537abfc8efe42a195f760e22d3c675e
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/units/oled.rst:44 206fdb5f469f4951bf7eebb35675e501
+#: 725f54f09303403eb353cc2114f64d8b of unit.oled.OLEDUnit:9
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.oled.ref:7 8245882c3d36483fa21d8341a5ba807d
+#: ../../en/refs/unit.oled.ref:7 70d1d238867f4bbca303167c5d85427a
 msgid "init.png"
 msgstr ""
+
+#: ../../en/units/oled.rst:63 9664e9714756471e8ceefb92a102f8b1
+msgid ""
+"OLEDUnit class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
+msgstr ""
+"OLEDUnit 类继承了 Display 类，有关更多详细信息，请参阅 :ref:`hardware.Display "
+"<hardware.Display>` 。"
 

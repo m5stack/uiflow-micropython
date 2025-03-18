@@ -2,43 +2,62 @@
 OLED Unit
 ==========
 
+.. sku: u119
+
 .. include:: ../refs/unit.oled.ref
 
 Unit OLED is a 1.3-inch OLED expansion screen unit. Driveing by SH1107, and the resolution is 128*64, monochrome display.
 
 Support the following products:
 
-|OLEDUnit|
+    |OLEDUnit|
 
-Micropython Example:
+
+UiFlow2 Example
+---------------
+
+Draw Text
+^^^^^^^^^
+
+Open the |cores3_oled_example.m5f2| project in UiFlow2.
+
+This example displays the text "OLED" on the screen.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+Draw Text
+^^^^^^^^^
+
+This example displays the text "OLED" on the screen.
+
+MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/unit/oled/cores3_oled_example.py
         :language: python
         :linenos:
 
+Example output:
 
-UIFLOW2 Example:
+    None
 
-    |example.png|
 
-.. only:: builder_html
-
-    |cores3_oled_example.m5f2|
+**API**
+-------
 
 class OLEDUnit
---------------
+^^^^^^^^^^^^^^
 
-Constructors
-------------
+.. autoclass:: unit.oled.OLEDUnit
+    :members:
 
-.. class:: OLEDUnit(i2c, address: int = 0x3c, freq: int = 400000)
-
-    Initialize the Unit OLED
-
-    :param I2C i2c: the I2C object.
-    :param int address: I2C address of the Unit OLED, default is 0x3c.
-    :param int freq: I2C frequency of the Unit OLED.
-
-    UIFLOW2:
-
-        |init.png|
+    OLEDUnit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.

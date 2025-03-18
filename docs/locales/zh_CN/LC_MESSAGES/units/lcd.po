@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 17:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/lcd.rst:2 3e17635765cb469283d3a59f4d4e6f6a
+#: ../../en/units/lcd.rst:2 5594214ce6eb40f58ecfcf1244630525
 msgid "LCD Unit"
 msgstr ""
 
-#: ../../en/units/lcd.rst:7 5ac44751536a4cf38ec09a127b634ebe
+#: ../../en/units/lcd.rst:8 fc6a8958835d4ad0a548d432cee88c5a
 msgid ""
 "Unit LCD is a 1.14 inch color LCD expansion screen unit. It adopts "
 "ST7789V2 drive scheme, the resolution is 135*240, and it supports RGB666 "
@@ -36,76 +36,114 @@ msgid ""
 "screen extension is suitable for embedding in various instruments or "
 "control devices that need to display simple content as a display panel."
 msgstr ""
+"Unit LCD 为 1.14 英寸彩色 LCD 扩展屏单元。采用 ST7789V2 驱动方案，分辨率为 135*240，支持 RGB666 "
+"显示（262144 种颜色）。内部集成 ESP32-PICO 控制核心（内置固件，显示开发更便捷），支持通过 "
+"I2C（addr:0x3E）通信接口进行控制和固件升级。屏幕背面采用一体化磁吸设计，可轻松吸附在金属表面进行固定。该 LCD "
+"屏扩展适合嵌入到各类需要作为显示面板显示简单内容的仪器或控制设备中。"
 
-#: ../../en/units/lcd.rst:18 56d65490ae8a4c98a18fce6afb6e6aad
+#: ../../en/units/lcd.rst:18 bc93ef2bda13497cb9f0f24ddcfb443d
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/units/lcd.rst:20 68c26ed3e1214b539a82ee146cf4fa98
+#: ../../en/units/lcd.rst:20 c4b88defc7fb4ad28e6548332aaf2a59
 msgid "|LCDUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.lcd.ref c5b81a08496d43bd84e94231ca57d1a6
+#: ../../en/refs/unit.lcd.ref b8b0516e7239405bb4d56f4bc339ceb8
 msgid "LCDUnit"
 msgstr ""
 
-#: ../../en/units/lcd.rst:23 a760cef984cf44e1bb36880fb3188993
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/units/lcd.rst:24 5e832522088c4684b490b266c34bb1ac
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/lcd.rst:30 a58c4c19239943ca90e065f76fd2ee1c
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/units/lcd.rst:27 ../../en/units/lcd.rst:46
+#: 0440caa7996e4d9f96718602b6719cb7 858d8e05b5b64770ab12957eb65a9c6a
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/units/lcd.rst:32 18f725a7ddf144b69d9e1d9ee2cf55bf
+#: ../../en/units/lcd.rst:29 5b1cffcc8f0d4867b1281615e5a73810
+msgid "Open the |cores3_lcd_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_lcd_example.m5f2| 项目。"
+
+#: ../../en/units/lcd.rst:31 ../../en/units/lcd.rst:48
+#: c4751f7d70234f5c99b3048e011fa702 ef24fd949d15467d957abe6e499b2d50
+msgid "This example displays the text \"LCD\" on the screen."
+msgstr "此示例在屏幕上显示文本“LCD”。"
+
+#: ../../en/units/lcd.rst:33 a70978c4c9a94962a3adfe4f245137f6
+#: b54605391f4e4a08977b31b23de0cf7d of unit.lcd.LCDUnit:7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/lcd.rst:35 da4d4b3dc5a6483ba7b515a9e7f630d0
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.lcd.ref:9 92a23150006e4489a32da0d01fabb9ec
+#: ../../en/refs/unit.lcd.ref:9 7857b745903a4f62b3a1c6cc5940fee7
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/lcd.rst:37 a2ad2740360d46faad101ca05a265b40
-msgid "|cores3_lcd_example.m5f2|"
+#: ../../en/units/lcd.rst:37 ../../en/units/lcd.rst:56
+#: 4a16fe1148dc4c3691d159d73c655b19 b7e378ca11a64cffa82c4fef2a650f96
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/lcd.rst:39 ../../en/units/lcd.rst:58
+#: 8640bdf82c804821b1270c0e570801ef cb7bd3d911aa468580665a4ce867d4ef
+msgid "None"
 msgstr ""
 
-#: ../../en/units/lcd.rst:41 252c2d4aab1e4e8d9d3d30ec6ac0d477
+#: ../../en/units/lcd.rst:43 f75fcd38a6c54369910d6cd992d6dd30
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/lcd.rst:50 f75fcd38a6c54369910d6cd992d6dd30 of
+#: unit.lcd.LCDUnit:11
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/lcd.rst:62 1ba300444b544353a67759b8e4e8feeb
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/lcd.rst:65 08c546e535884f73bc859d30d9a1b974
 msgid "class LCDUnit"
 msgstr ""
 
-#: ../../en/units/lcd.rst:44 ad03476a4ca148e386272d29c82b9e66
-msgid "Constructors"
+#: ff3d764b7ee242bfbff406d05297c591 of unit.lcd.LCDUnit:1
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/units/lcd.rst:48 abf9fa88d4a9422a9970aee135b3d451
-msgid "Initialize the Unit LCD"
-msgstr ""
+#: 0bf66ad365cb413e876d5684fe2247d9 of unit.lcd.LCDUnit:1
+msgid "Initialize the LCD Unit."
+msgstr "初始化 LCD Unit。"
 
-#: ../../en/units/lcd.rst 85036a7cd47b482c84cb640b93ec9ed1
+#: ../../en/units/lcd.rst 188924d834474a40accc18e784e59db3
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/lcd.rst:50 5ebf59e9a37c475c994a129fec37a85e
-msgid "the I2C object."
-msgstr ""
+#: dd26e83c28724aa3afb317256ba48a1f of unit.lcd.LCDUnit:3
+msgid "The I2C bus the LCD Unit is connected to."
+msgstr "LCD Unit 所连接的 I2C 总线。"
 
-#: ../../en/units/lcd.rst:51 37f895bc63e04fec944140e7581560d6
-msgid "I2C address of the Unit LCDUnit, default is 0x3e."
-msgstr ""
+#: 56cc4dda622345c59f37f5679dd51f32 of unit.lcd.LCDUnit:5
+msgid "The I2C address of the LCD Unit, default is 0x3E."
+msgstr "LCD Unit 的 I2C 地址，默认为 0x3E。"
 
-#: ../../en/units/lcd.rst:52 2b662e0ae15e456ea67be0df6e52a239
-msgid "I2C frequency of the Unit LCDUnit."
-msgstr ""
-
-#: ../../en/units/lcd.rst:54 0600cd1f6ce0442780fce18d6a44b164
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/units/lcd.rst:56 7ace95e9bfc84efc8d74ba7bd264da4c
+#: 20fd7bad9cd8433d8e1bb57124a1ad7a of unit.lcd.LCDUnit:9
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.lcd.ref:7 eb37208beafa4a278826f506efebefe2
+#: ../../en/refs/unit.lcd.ref:7 2d437ff109b84d97930dc67e774cd980
 msgid "init.png"
+msgstr ""
+"LCDUnit 类继承了 Display 类，有关更多详细信息，请参阅 :ref:`hardware.Display "
+"<hardware.Display>` 。"
+
+#: ../../en/units/lcd.rst:70 69267cb704474b1ea43e9d5b2166e9ad
+msgid ""
+"LCDUnit class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
 msgstr ""
 

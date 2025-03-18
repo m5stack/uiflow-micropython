@@ -182,12 +182,12 @@ msgstr ""
 
 #: ../../en/base/display.rst:86 f47a46f53a55496e883829adab13074d
 msgid "MicroPython Example"
-msgstr ""
+msgstr "MicroPython 应用示例"
 
 #: ../../en/base/display.rst:93 ../../en/base/display.rst:109
 #: af3327c84e5b46f9a7032c33ab7f0563 base.display.AtomicDisplayBase:16 of
 msgid "MicroPython Code Block:"
-msgstr "MicroPython 应用示例"
+msgstr "MicroPython 代码块："
 
 #: ../../en/base/display.rst:119 3150ae65a3d04e1cadbcb5d431636095
 msgid "**API**"

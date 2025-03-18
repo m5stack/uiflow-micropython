@@ -7,6 +7,7 @@ import M5
 from M5 import *
 from hardware import I2C
 from hardware import Pin
+from unit import MiniOLEDUnit
 
 
 label0 = None
@@ -23,7 +24,7 @@ def setup():
     label0 = Widgets.Label("CoreS3", 127, 109, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
-    minioled_0 = M5.addDisplay(i2c0, 0x3C, {"unit_mini_oled": True})
+    minioled_0 = MiniOLEDUnit(i2c0, 0x3C)
     label1 = Widgets.Label(
         "Mini", 15, 9, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18, minioled_0
     )

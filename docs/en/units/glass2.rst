@@ -1,4 +1,3 @@
-
 Glass2 Unit
 ===========
 
@@ -8,38 +7,54 @@ Glass2 Unit is a 1.51-inch transparent OLED display unit that adopts the SSD1309
 
 Support the following products:
 
-|Glass2Unit|
+    |Glass2Unit|
 
-Micropython Example:
+
+UiFlow2 Example
+---------------
+
+Draw Text
+^^^^^^^^^
+
+Open the |cores3_glass2_example.m5f2| project in UiFlow2.
+
+This example displays the text "GLASS2" on the screen.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+Draw Text
+^^^^^^^^^
+
+This example displays the text "GLASS2" on the screen.
+
+MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/unit/glass2/cores3_glass2_example.py
         :language: python
         :linenos:
 
+Example output:
 
-UIFLOW2 Example:
-
-    |example.png|
+    None
 
 
-.. only:: builder_html
-
-    |cores3_glass2_example.m5f2|
+**API**
+-------
 
 class Glass2Unit
 ----------------
 
-Constructors
-------------
+.. autoclass:: unit.glass2.Glass2Unit
+    :members:
 
-.. class:: Glass2Unit(i2c, address: int = 0x3c, freq: int = 400000)
-
-    Initialize the Unit Glass2
-
-    :param I2C i2c: the I2C object.
-    :param int address: I2C address of the Unit Glass2, default is 0x3c.
-    :param int freq: I2C frequency of the Unit Glass2.
-
-    UIFLOW2:
-
-        |init.png|
+    Glass2Unit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.

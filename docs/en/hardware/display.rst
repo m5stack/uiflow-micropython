@@ -1,3 +1,5 @@
+.. _hardware.Display:
+
 Display  
 =======
 

@@ -1,4 +1,3 @@
-
 Glass Unit
 ===========
 
@@ -8,40 +7,54 @@ Unit Glass is a 1.51-inch transparent OLED expansion screen unit. It adopts STM3
 
 Support the following products:
 
-|GlassUnit|
+    |GlassUnit|
 
-Micropython Example:
+
+UiFlow2 Example
+---------------
+
+Draw Text
+^^^^^^^^^
+
+Open the |cores3_glass_example.m5f2| project in UiFlow2.
+
+This example displays the text "GLASS" on the screen.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+Draw Text
+^^^^^^^^^
+
+This example displays the text "GLASS" on the screen.
+
+MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/unit/glass/cores3_glass_example.py
         :language: python
         :linenos:
 
+Example output:
 
-UIFLOW2 Example:
-
-    |example.png|
+    None
 
 
-.. only:: builder_html
-
-    |cores3_glass_example.m5f2|
-
+**API**
+-------
 
 class GlassUnit
----------------
+^^^^^^^^^^^^^^^
 
-Constructors
-------------
+.. autoclass:: unit.glass.GlassUnit
+    :members:
 
-.. class:: GlassUnit(i2c, address: int = 0x3d, freq: int = 400000)
-
-    Initialize the Unit Glass
-
-    :param I2C i2c: the I2C object.
-    :param int address: I2C address of the Unit Glass, default is 0x3D.
-    :param int freq: I2C frequency of the Unit Glass.
-
-    UIFLOW2:
-
-        |init.png|
-
+    GlassUnit class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.

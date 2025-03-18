@@ -7,28 +7,43 @@ import M5
 
 
 class RCAUnit:
-    """! Unit RCA is a female jack terminal block for transmitting composite video.
+    """Initialize the RCA Unit.
 
-    @en Unit RCA is a female jack terminal block for transmitting composite video (audio or video), one of the most common A/V connectors, which transmits  video or audio signals from a component device to an output  device (i.e., a display or speaker).
-    @cn Unit RCA是一个1.3英寸RCA扩展屏单元。采用SH1107驱动，分辨率为128*64，单色显示。
+    :param tuple port: The port to which the RCA Unit is connected. port[0]: not used, port[1]: dac pin.
+    :param int width: The width of the RCA display.
+    :param int height: The height of the RCA display.
+    :param int output_width: The width of the output of the RCA display.
+    :param int output_height: The height of the output of the RCA display.
+    :param int signal_type: The signal type of the RCA display. NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4.
+    :param int use_psram: The use of psram of the RCA display.
+    :param int output_level: The output level of the RCA display.
 
-    @color #0FE6D7
-    @link https://docs.m5stack.com/en/unit/RCA
-    @image https://static-cdn.m5stack.com/resource/docs/products/unit/RCA/img-9420bb3d-22b8-4f80-b7fe-e708088f1e51.webp
-    @category unit
+    UiFlow2 Code Block:
 
-    @example
-                from unit import RCAUnit
-                rca = RCAUnit()
-                rca.display.fill(0)
+        |init.png|
 
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from module import RCAModule
+            module_rca = RCAModule(26, width=216, height=144, output_width=0, output_height=0, signal_type=RCAModule.NTSC, use_psram=0, output_level=0)
     """
 
     NTSC = 0
+    """signal type. National Television System Committee."""
+
     NTSC_J = 1
+    """signal type. National Television System Committee Japan."""
+
     PAL = 2
+    """signal type. Phase Alternating Line."""
+
     PAL_M = 3
+    """signal type. Phase Alternating Line M."""
+
     PAL_N = 4
+    """signal type. Phase Alternating Line N."""
 
     def __new__(
         cls,
@@ -41,17 +56,6 @@ class RCAUnit:
         use_psram: int = 0,
         output_level: int = 0,
     ) -> None:
-        """! Initialize the Unit RCA
-
-        @param port The port to which the Unit RCA is connected. port[0]: not used, port[1]: dac pin.
-        @param width The width of the RCA display.
-        @param height The height of the RCA display.
-        @param output_width The width of the output of the RCA display.
-        @param output_height The height of the output of the RCA display.
-        @param signal_type The signal type of the RCA display. NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, PAL_N=4.
-        @param use_psram The use of psram of the RCA display.
-        @param output_level The output level of the RCA display.
-        """
         return M5.addDisplay(
             None,
             0,
