@@ -88,6 +88,7 @@ package(
         "op.py",
         "pahub.py",
         "pbhub.py",
+        "pdm.py",
         "pir.py",
         "puzzle.py",
         "qrcode.py",
