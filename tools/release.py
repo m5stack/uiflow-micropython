@@ -49,6 +49,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Paper", "a003515b05be5c2aba5282630ecb3a51", ""),
     FirewareInfo("M5STACK_PaperS3", "16418e884ea09168d53dc7cc91b03039", ""),
     FirewareInfo("M5STACK_Stamp_PICO", "d3b966b3ff9b1f1bd29225cc307a0d78", ""),
+    FirewareInfo("M5STACK_StamPLC", "5c0e44d85d32147a05e2847d8caebd0b", ""),
     FirewareInfo("M5STACK_StampS3", "017e0eef047afb70eb8b9fc1fbccefe0", ""),
     FirewareInfo("M5STACK_Station", "6f1b78c29bfdfc5fbabfcf5614ab2042", ""),
     FirewareInfo("M5STACK_StickC", "a44718de7ac2c0879b75cd56db8c667e", ""),
