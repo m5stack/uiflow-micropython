@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-20 17:06+0800\n"
+"PO-Revision-Date: 2025-03-20 16:05+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/commu.rst:2 937adf6dd137423e8ee1f461e4c01229
+msgid "Commu Module"
+msgstr ""
+
+#: ../../en/module/commu.rst:8 2bad3100a227459fb6403c283c49241e
+msgid ""
+"This is the driver library for the module Commu for receiving and sending"
+" CAN / RS485 / I2C data."
+msgstr "这是模块 Commu 的驱动程序库，用于接收和发送 CAN / RS485 / I2C 数据。"
+
+#: ../../en/module/commu.rst:10 2b8185a516c54e09a157fd1e67e7169b
+msgid "Support the following products:"
+msgstr "支持以下产品: "
+
+#: ../../en/module/commu.rst:12 8df991a1ee3848f28e5f134678a83e28
+msgid "|commu|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref 0e8e1a1eef6d49ad99b4fa365710f39b
+msgid "commu"
+msgstr ""
+
+#: ../../en/module/commu.rst:16 97cad8f65d18400f9e7182d5831ea6d4
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/module/commu.rst:19 ../../en/module/commu.rst:37
+#: 97e500187721423094b5612878280f0c a3979ec8fa624d74b9241837ef96f61d
+msgid "CAN, RS485, I2C communication"
+msgstr "CAN, RS485, I2C 通信"
+
+#: ../../en/module/commu.rst:21 0bc5e8227b8443609992facae5d0f2f9
+msgid "Open the |commu_core2_example.m5f2| project in UiFlow2."
+msgstr "打开 |commu_core2_example.m5f2| 项目在 UiFlow2 中。"
+
+#: ../../en/module/commu.rst:23 ../../en/module/commu.rst:39
+#: 54b570dd61c145fba7f1e3b451b588d4 849a577721a94bab8796c932f667769b
+msgid "This example shows how to receive and send data using the Commu Module."
+msgstr "这个示例展示了如何使用 Commu 模块接收和发送数据。"
+
+#: ../../en/module/commu.rst:25 012c46dd96214b0eb2095d10b32c73a1
+#: a313879e8ed241349cb7d42202e2a13e b3b31b90c82d4efabdd28c83cdd16ab0
+#: bc0784f5a1614f9f949136e9d5334633 e33f5357aeaf4e5589f4787bf91be0f1
+#: f8731eb1bd4c4f7b995ab3a0338f85d2 module.commu.CommuModuleCAN:39
+#: module.commu.CommuModuleCAN.any:6 module.commu.CommuModuleCAN.info:6
+#: module.commu.CommuModuleCAN.recv:15 module.commu.CommuModuleCAN.send:9 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块:"
+
+#: ../../en/module/commu.rst:27 988b11b51d154a578bff159719e9f150
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:14 88463f4ba5624f77b21ec4e66eed6ed1
+msgid "example.png"
+msgstr ""
+
+#: ../../en/module/commu.rst:29 ../../en/module/commu.rst:47
+#: 5916f5eb30664677b89c1c0f6335856f 8d911ea6b1394e968e4e424441d504f5
+msgid "Example output:"
+msgstr "示例输出: "
+
+#: ../../en/module/commu.rst:31 ../../en/module/commu.rst:49
+#: 0cc4040faae84934856cdd2dddec8553 d0a87c64c9aa4f549e079a6fe2302813
+msgid "None"
+msgstr ""
+
+#: ../../en/module/commu.rst:34 f0be773bf16e4501a4e3b586ebb5f131
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/module/commu.rst:41 044dc9912c4b4eb6a6ef20066559c63e
+#: 4bf2c847cc3e4f78ac77df0c2d61bdf1 868289c0479848e79aa1cd5d9d6d5292
+#: 9181701ebe6d40cf995c598dfbf5681a 96467597b0f9465caf51e4b5b4edc53a
+#: 9be19e9df10948d79f232e043c7ca608 module.commu.CommuModuleCAN:43
+#: module.commu.CommuModuleCAN.any:10 module.commu.CommuModuleCAN.info:10
+#: module.commu.CommuModuleCAN.recv:21 module.commu.CommuModuleCAN.send:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块:"
+
+#: ../../en/module/commu.rst:52 a7b59cb00c5c4a6d9893e6abec82ab80
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/commu.rst:55 97d77eee397a4e61b5feeafa343763f8
+msgid "CommuModule"
+msgstr ""
+
+#: 3ea8751fdc804e169a1e5c1c2f5c9c03 module.commu.CommuModuleCAN:1 of
+msgid "Bases: :py:class:`~driver.mcp2515.mcp2515_spi.MCP2515_CAN`"
+msgstr ""
+
+#: a56d2f22829d42048b5b352549c56f3d module.commu.CommuModuleCAN:1 of
+msgid "Create an CommuModuleCAN object"
+msgstr "创建一个 CommuModuleCAN 对象"
+
+#: ../../en/module/commu.rst 48487a939d434fa98e827293e39d3e0a
+#: bcce32c472834835a3044994e9bf3592 e0c2e15fdc9e46f9b640c720c403a566
+#: module.commu.CommuModuleCAN.recv module.commu.CommuModuleCAN.send of
+msgid "Parameters"
+msgstr ""
+
+#: de4b0024b4e4485ab163b871d5b6bdf0 module.commu.CommuModuleCAN:3 of
+msgid ""
+"The CAN mode to use(NORMAL, LISTEN_ONLY), Default is NORMAL.  Options:"
+"     - ``NORMAL``: Normal mode     - ``LISTEN_ONLY``: Listen only mode"
+msgstr ""
+"使用的 CAN 模式 (NORMAL, LISTEN_ONLY)，默认是 NORMAL。选项:\n"
+"      - ``NORMAL``: 正常模式\n"
+"      - ``LISTEN_ONLY``: 监听模式"
+
+#: fb083d2bc6164b6dae40900eb143ed76 module.commu.CommuModuleCAN:3 of
+msgid "The CAN mode to use(NORMAL, LISTEN_ONLY), Default is NORMAL."
+msgstr "使用的 CAN 模式 (NORMAL, LISTEN_ONLY)，默认是 NORMAL。"
+
+#: 8daa918f89eb4b3394877848322483cc 9ba0278541274a4fa63c199c8760d10b
+#: f45d02a214b84423bf3610b6a98230ae module.commu.CommuModuleCAN:7
+#: module.commu.CommuModuleCAN:28 module.commu.CommuModuleCAN:35 of
+msgid "Options:"
+msgstr "选项: "
+
+#: 49dfabeac6a847c69693346e6488f878 module.commu.CommuModuleCAN:6 of
+msgid "``NORMAL``: Normal mode"
+msgstr "``NORMAL``: 正常模式"
+
+#: ed97262e1e064fa8ab3a5bded3f3e038 module.commu.CommuModuleCAN:7 of
+msgid "``LISTEN_ONLY``: Listen only mode"
+msgstr "``LISTEN_ONLY``: 监听模式"
+
+#: f254bac6c5cf4c39a4d39ec7e4280826 module.commu.CommuModuleCAN:9 of
+#, fuzzy
+msgid ""
+"The baudrate to use, Default is CAN_1000KBPS.  Options:     - "
+"``CAN_5KBPS``: 5Kbps     - ``CAN_10KBPS``: 10Kbps     - ``CAN_20KBPS``: "
+"20Kbps     - ``CAN_31K25BPS``: 31.25Kbps     - ``CAN_33KBPS``: 33Kbps"
+"     - ``CAN_40KBPS``: 40Kbps     - ``CAN_50KBPS``: 50Kbps     - "
+"``CAN_80KBPS``: 80Kbps     - ``CAN_83K3BPS``: 83.33Kbps     - "
+"``CAN_95KBPS``: 95Kbps     - ``CAN_100KBPS``: 100Kbps     - "
+"``CAN_125KBPS``: 125Kbps     - ``CAN_200KBPS``: 200Kbps     - "
+"``CAN_250KBPS``: 250Kbps     - ``CAN_500KBPS``: 500Kbps     - "
+"``CAN_1000KBPS``: 1Mbps"
+msgstr ""
+"选项:     - ``CAN_5KBPS``: 5Kbps     - ``CAN_10KBPS``: 10Kbps     - "
+"``CAN_20KBPS``: 20Kbps     - ``CAN_31K25BPS``: 31.25Kbps     - "
+"``CAN_33KBPS``: 33Kbps     - ``CAN_40KBPS``: 40Kbps     - ``CAN_50KBPS``:"
+" 50Kbps     - ``CAN_80KBPS``: 80Kbps     - ``CAN_83K3BPS``: 83.33Kbps"
+"     - ``CAN_95KBPS``: 95Kbps     - ``CAN_100KBPS``: 100Kbps     - "
+"``CAN_125KBPS``: 125Kbps     - ``CAN_200KBPS``: 200Kbps     - "
+"``CAN_250KBPS``: 250Kbps     - ``CAN_500KBPS``: 500Kbps     - "
+"``CAN_1000KBPS``: 1Mbps"
+
+#: b41784ee435547e992201a768fa0296d module.commu.CommuModuleCAN:9 of
+msgid "The baudrate to use, Default is CAN_1000KBPS."
+msgstr "使用的波特率，默认是 CAN_1000KBPS。"
+
+#: b4c1c73e726a4750bc9096eb060998ac module.commu.CommuModuleCAN:12 of
+msgid "``CAN_5KBPS``: 5Kbps"
+msgstr ""
+
+#: 76204e91c60b461fa141c26f8bb226da module.commu.CommuModuleCAN:13 of
+msgid "``CAN_10KBPS``: 10Kbps"
+msgstr ""
+
+#: cc5aa639e36448c7b81f0c0d65265f51 module.commu.CommuModuleCAN:14 of
+msgid "``CAN_20KBPS``: 20Kbps"
+msgstr ""
+
+#: 0d8b107921074508a9685047402ada0b module.commu.CommuModuleCAN:15 of
+msgid "``CAN_31K25BPS``: 31.25Kbps"
+msgstr ""
+
+#: 340d803cfea84277b091f89dd502f5e1 module.commu.CommuModuleCAN:16 of
+msgid "``CAN_33KBPS``: 33Kbps"
+msgstr ""
+
+#: dd6aac86c35b40efb9930ce2fbabc3c5 module.commu.CommuModuleCAN:17 of
+msgid "``CAN_40KBPS``: 40Kbps"
+msgstr ""
+
+#: ff1123fe7bbc437db04c5053081e85e0 module.commu.CommuModuleCAN:18 of
+msgid "``CAN_50KBPS``: 50Kbps"
+msgstr ""
+
+#: 16805acf8cb54ac3bfa28a20cab29465 module.commu.CommuModuleCAN:19 of
+msgid "``CAN_80KBPS``: 80Kbps"
+msgstr ""
+
+#: f797059633964eb08c9f1a9a1804aaaa module.commu.CommuModuleCAN:20 of
+msgid "``CAN_83K3BPS``: 83.33Kbps"
+msgstr ""
+
+#: 71e96db883464bc9b24cc937a78393ee module.commu.CommuModuleCAN:21 of
+msgid "``CAN_95KBPS``: 95Kbps"
+msgstr ""
+
+#: 7b7ee203fd5a499ab19c2c01a18cab80 module.commu.CommuModuleCAN:22 of
+msgid "``CAN_100KBPS``: 100Kbps"
+msgstr ""
+
+#: ffc6db2f6d294a918576f2a5f0d2e2d0 module.commu.CommuModuleCAN:23 of
+msgid "``CAN_125KBPS``: 125Kbps"
+msgstr ""
+
+#: 15dd3d6f30014f7e9b21d5eb1e3917c1 module.commu.CommuModuleCAN:24 of
+msgid "``CAN_200KBPS``: 200Kbps"
+msgstr ""
+
+#: a472169b23a34cbea7bd83e673d92a27 module.commu.CommuModuleCAN:25 of
+msgid "``CAN_250KBPS``: 250Kbps"
+msgstr ""
+
+#: 3af227a7493c4d8a965288828fc36df1 module.commu.CommuModuleCAN:26 of
+msgid "``CAN_500KBPS``: 500Kbps"
+msgstr ""
+
+#: 1a60f80791534197a787c0d5f40ef07e module.commu.CommuModuleCAN:27 of
+msgid "``CAN_1000KBPS``: 1Mbps"
+msgstr ""
+
+#: e4f6b62a97584aa2abbb2606a1282439 module.commu.CommuModuleCAN:30 of
+msgid "The SPI baudrate to use, Default is 8000000."
+msgstr "使用的 SPI 波特率，默认是 8000000。"
+
+#: bef71905f66f404e822a64815b621728 module.commu.CommuModuleCAN:31 of
+msgid ""
+"The CAN ID mode to use(MCP_STDEXT, MCP_EXTDONLY), Default is MCP_STDEXT."
+"  Options:     - ``MCP_STDEXT``: Standard and Extended     - "
+"``MCP_EXTDONLY``: Extended only"
+msgstr ""
+"使用的 CAN ID 模式 (MCP_STDEXT, MCP_EXTDONLY)，默认是 MCP_STDEXT。选项:   \n"
+"  - ``MCP_STDEXT``: 标准+扩展模式     - ``MCP_EXTDONLY``: 拓展模式"
+
+#: bf8b72a899524a23a5f92ba49184c732 module.commu.CommuModuleCAN:31 of
+msgid "The CAN ID mode to use(MCP_STDEXT, MCP_EXTDONLY), Default is MCP_STDEXT."
+msgstr "使用的 CAN ID 模式 (MCP_STDEXT, MCP_EXTDONLY)，默认是 MCP_STDEXT。"
+
+#: 61342e83241741268a3f52a391604a3b module.commu.CommuModuleCAN:34 of
+msgid "``MCP_STDEXT``: Standard and Extended"
+msgstr "``MCP_STDEXT``: 标准+扩展模式"
+
+#: 45772d660b664e7d9167c4ee180eafe4 module.commu.CommuModuleCAN:35 of
+msgid "``MCP_EXTDONLY``: Extended only"
+msgstr "``MCP_EXTDONLY``: 拓展模式"
+
+#: aa00d80a7235483e9d3f4d22617635c1 module.commu.CommuModuleCAN:37 of
+msgid "Whether to enable debug mode, Default is False."
+msgstr "是否启用调试模式，默认为 “False”。"
+
+#: f6fc2396ae784ddab0fa59e565345af3 module.commu.CommuModuleCAN:41 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:6 4acbcfbd33d64c6c8f3010cd97a77dbd
+msgid "init.png"
+msgstr ""
+
+#: 280f822312264511acd49886ab12b058 module.commu.CommuModuleCAN.any:1 of
+msgid "Check if any message is available."
+msgstr ""
+
+#: 0289ed9b04a14c00ac3b4cd8b5513f64 97f5fa29d9df417caebc41d7c33e66c5
+#: c68e694b411349d88c15d2131def6b75 d8d8225eeea348799ab031f87856b087
+#: module.commu.CommuModuleCAN.any module.commu.CommuModuleCAN.info
+#: module.commu.CommuModuleCAN.recv module.commu.CommuModuleCAN.send of
+msgid "Returns"
+msgstr ""
+
+#: 718065d6c3ce45f0bb3b65ee6b367007 module.commu.CommuModuleCAN.any:3 of
+msgid "The current message availability."
+msgstr "检查是否有消息可用。"
+
+#: c6bf7505612749b89b80f1a9adc616f4 d359b1172aa24592a8eebfaf716f5097
+#: dd719c06e84b4ac3b59769257a6659a3 fa08b6dad89e4cdd84bd23db678b5df8
+#: module.commu.CommuModuleCAN.any module.commu.CommuModuleCAN.info
+#: module.commu.CommuModuleCAN.recv module.commu.CommuModuleCAN.send of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 496b28eaba644df99f220cb02daf5303 module.commu.CommuModuleCAN.any:8 of
+msgid "|any.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:9 f35fcc65fd1f41a18cfc595ac62530f3
+msgid "any.png"
+msgstr ""
+
+#: 00e6e64719b74a5cb77ac3503368ad2f module.commu.CommuModuleCAN.info:1 of
+msgid "Get the state of error information."
+msgstr "获取错误信息。"
+
+#: 96f5eace42d642b5862c7e817fe4a1ab module.commu.CommuModuleCAN.info:3 of
+msgid "The current error information."
+msgstr "当前的错误信息。"
+
+#: f11f679a0c154b25aab1a1f79b3ef1c8 module.commu.CommuModuleCAN.info:8 of
+msgid "|info.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:7 71a2a66283c743f79dd2d7bbcd14f8cf
+msgid "info.png"
+msgstr ""
+
+#: 746033cfe8df4e75bcaf4d59834058c9 module.commu.CommuModuleCAN.recv:1 of
+msgid "Read a message from the CAN bus."
+msgstr "从 CAN 总线读取消息。"
+
+#: fb9a38255a8741f1b56339198d8ec601 module.commu.CommuModuleCAN.recv:3 of
+msgid "The fifo is an integer, it can be any number and compatible with Pyb.CAN"
+msgstr "fifo 是一个整数，可以是任何数字，并与 Pyb.CAN 兼容。"
+
+#: 0aa266944aa340e6895c0d64e309d17d module.commu.CommuModuleCAN.recv:4 of
+msgid "list is an optional list object to be used as the return value."
+msgstr "list 是一个可选的列表对象，将用作返回值。"
+
+#: c22e903061e44881916c2fbf8dce4382 module.commu.CommuModuleCAN.recv:5 of
+msgid "timeout is the timeout in milliseconds to wait for the receive."
+msgstr "timeout 是等待接收的超时时间（毫秒）。"
+
+#: b8847250c2b840baa6d3c9ac837dc97e module.commu.CommuModuleCAN.recv:6 of
+msgid "Tuple containing (can_id, is_extended, is_rtr, fmi, data)"
+msgstr "包含（can_id、is_extended、is_rtr、fmi、data）的元组"
+
+#: 261b7f1b6d9e4da3940cb3ba95957557 module.commu.CommuModuleCAN.recv:7 of
+msgid ""
+"tuple  - The id of the message. - A boolean that indicates if the message"
+" ID is standard or extended. - A boolean that indicates if the message is"
+" an RTR message. - The FMI (Filter Match Index) value. - An array "
+"containing the data."
+msgstr ""
+"tuple \n"
+" - 信息的 ID。 - 表示报文 ID 是标准还是扩展的布尔值。 - 表示报文是否为 RTR 报文的布尔值。 - 过滤匹配索引（FMI）值。 -"
+" 包含数据的数组。"
+
+#: ae9082a8892c49a4919ffa77e2195759 module.commu.CommuModuleCAN.recv:7 of
+msgid "tuple"
+msgstr ""
+
+#: 74a72abea34f47e392d58004a25e1041 module.commu.CommuModuleCAN.recv:9 of
+msgid "The id of the message."
+msgstr "消息数据。"
+
+#: 06b3f2d47a684fc78fdeb0d779f5c8b4 module.commu.CommuModuleCAN.recv:10 of
+msgid "A boolean that indicates if the message ID is standard or extended."
+msgstr "布尔值，表示信息 ID 是标准的还是扩展的。"
+
+#: 9ec3900c3cea4621bb7b783de08a0837 module.commu.CommuModuleCAN.recv:11 of
+msgid "A boolean that indicates if the message is an RTR message."
+msgstr "布尔值，用于指示报文是否为 RTR 报文。"
+
+#: 5e82c9e12b7549758d01a189df91cf90 module.commu.CommuModuleCAN.recv:12 of
+msgid "The FMI (Filter Match Index) value."
+msgstr "FMI（筛选匹配指数）值。"
+
+#: 30a2821a5ea44194a42df608ed724d58 module.commu.CommuModuleCAN.recv:13 of
+msgid "An array containing the data."
+msgstr "包含数据的数组。"
+
+#: 670d0b83692c4cf9815baf5480b54326 module.commu.CommuModuleCAN.recv:17 of
+msgid "|recv_message.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:10 13e6fecc989e4b95afa502172abee049
+msgid "recv_message.png"
+msgstr ""
+
+#: 86f2d655b42e4dd9ba5a53ffc6618df1 module.commu.CommuModuleCAN.recv:19 of
+msgid "|recv_message_into.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:11 5ddabf7fe6dd4d26b0193c4d1be28138
+msgid "recv_message_into.png"
+msgstr ""
+
+#: c44784472ac64754855d2d20d3af6975 module.commu.CommuModuleCAN.send:1 of
+msgid "Send a message to the CAN bus."
+msgstr "发送消息到 CAN 总线。"
+
+#: 97f7c421f7b2450aa16349ff2d3e8e86 c1d5f630c5ee4bbeacc7ffa7046f1989
+#: module.commu.CommuModuleCAN.send:3 module.commu.CommuModuleCAN.send:6 of
+msgid "The message data."
+msgstr "消息数据。"
+
+#: b1fb69484dc6427f8e3a5dd979b75a0f module.commu.CommuModuleCAN.send:4 of
+msgid "The CAN ID."
+msgstr ""
+
+#: 9a1649c6027546d1b4486df4521e2d38 module.commu.CommuModuleCAN.send:5 of
+msgid "Whether to use extended frame format."
+msgstr "是否使用扩展帧格式。"
+
+#: ca9d5edeb2834b89920eb67639a6c81f module.commu.CommuModuleCAN.send:11 of
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/module.commu.ref:12 950143b2e6e3486d944891456951e38c
+msgid "send.png"
+msgstr ""
+
+#: 35972e31cc824791b6c764bcc1ce6273 b22774a70d9c4b0ba554a0f12279ff38
+#: module.commu.CommuModuleI2C:1 module.commu.CommuModuleRS485:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../en/module/commu.rst:63 46dca2360a6a4acca1e25e4c9b0e1c1e
+msgid "The `CommuModuleRS485` class wraps an instance of the `UART` class."
+msgstr "`CommuModuleRS485` 类包装了一个 `UART` 类的实例。"
+
+#: ../../en/module/commu.rst:65 a32afb7d3fca49d7aa3cdf2b894012ba
+msgid "For more details, see :ref:`hardware.UART <hardware.UART>`."
+msgstr "更多详情，请参阅 :ref:`hardware.UART <hardware.UART>`。"
+
+#: ../../en/module/commu.rst:70 17074b48be164416b2859b27ade1ae31
+msgid "The `CommuModuleI2C` class wraps an instance of the `I2C` class."
+msgstr "`CommuModuleI2C` 类包装了一个 `I2C` 类的实例。"
+
+#: ../../en/module/commu.rst:72 563a7c1c944a4cadb75626ba07361f9b
+msgid ""
+"For more details, see :ref:`machine.I2C <machine.I2C>`. -- a two-wire "
+"serial protocol."
+msgstr "更多详情，请参阅 :ref:`machine.I2C <machine.I2C>`. -- 两线串行协议。"
