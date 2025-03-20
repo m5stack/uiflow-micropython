@@ -7,9 +7,11 @@ Module
     4in8out.rst
     ain4.rst
     bala2.rst
+    commu.rst
     display.rst
     dmx.rst
     dualkmeter.rst
+    encoder4_motor.rst
     fan.rst
     gnss.rst
     gps.rst

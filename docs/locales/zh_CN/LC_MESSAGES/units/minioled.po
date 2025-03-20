@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 17:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,89 +20,119 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/minioled.rst:3 da14fb9311164139b0ac103b18b62876
+#: ../../en/units/minioled.rst:3 c978f6eac7b84e5697c5c7757807d79e
 msgid "MiniOLED Unit"
 msgstr ""
 
-#: ../../en/units/minioled.rst:7 dae2172db0e744ee8e7755335ef75113
+#: ../../en/units/minioled.rst:7 3c761a809ab64c54b8c488b9a37a49c4
 msgid ""
 "MiniOLED UNIT is a 0.42-inch I2C interface OLED screen unit, it's a "
 "72*40, monochrome white display."
-msgstr ""
+msgstr "MiniOLED UNIT 是一颗0.42英寸I2C接口OLED屏幕单元，尺寸为72*40，单色白色显示屏。"
 
-#: ../../en/units/minioled.rst:9 aaaf5eda1c0c423ba9feea66765d5074
+#: ../../en/units/minioled.rst:9 8c8100a8b1db46e29d2d06dd6c8c9132
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/units/minioled.rst:11 9b869a78924a4f8589b93016c21251a7
+#: ../../en/units/minioled.rst:11 45887e6ecd844e05ba502b35e247112e
 msgid "|MiniOLEDUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.minioled.ref 349b75361aa9488ca3a3ae37a9666f20
+#: ../../en/refs/unit.minioled.ref e279a9a1c79a4cf58d63d2cec4836c5b
 msgid "MiniOLEDUnit"
 msgstr ""
 
-#: ../../en/units/minioled.rst:13 f1c9c1996453472f836190f7af32b593
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/units/minioled.rst:15 15e091cf4e734f0fbd07232488a39333
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/minioled.rst:20 9d43bc141d1342a19789d73be3ff13a4
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/units/minioled.rst:18 ../../en/units/minioled.rst:37
+#: 7c816e36b8f7406098c9f8c039841da1 c4177e45cca0462b91c4703eadea21c0
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/units/minioled.rst:22 ce0d8062d17f4e7a98cde2108283592e
+#: ../../en/units/minioled.rst:20 d5aacb5486e94be3bc2f5141a51cfac3
+msgid "Open the |cores3_minioled_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_minioled_example.m5f2| 项目。"
+
+#: ../../en/units/minioled.rst:22 ../../en/units/minioled.rst:39
+#: 3422c46b75da4c0581c156723054b391 8949432b1ac945c1ae5c55d7b12012e2
+msgid "This example displays the text \"Mini\" on the screen."
+msgstr "此示例在屏幕上显示文本“Mini”。"
+
+#: ../../en/units/minioled.rst:24 1f61350a281b4792a1d2587e3e514046
+#: c1f71ed5be674a20b07e387c32f281b9 of unit.minioled.MiniOLEDUnit:7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/minioled.rst:26 c56c5eea5c334fa588bf2e45ca4c6436
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.minioled.ref:9 9d96e239c65e48aab811797838d34af6
+#: ../../en/refs/unit.minioled.ref:9 9687518782cb4de1acdb6fa810d01b3e
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/minioled.rst:27 e95666c3074e436e9f1f7dc314ddb142
-msgid "|cores3_minioled_example.m5f2|"
+#: ../../en/units/minioled.rst:28 ../../en/units/minioled.rst:47
+#: 4e3459be9a844da3b8c2df7ca78cae96 e92d30822be940cda16be819bd4aa172
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/minioled.rst:30 ../../en/units/minioled.rst:49
+#: 0dffa0b591b9427abf6566e3b50bfc8f 362a9f04d686443a9979f558eafea6b2
+msgid "None"
 msgstr ""
 
-#: ../../en/units/minioled.rst:31 1bac2416267f4f66864e406d6ee05ea2
+#: ../../en/units/minioled.rst:34 c910431d1b6c4aa18e25713c209a58e6
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/minioled.rst:41 c910431d1b6c4aa18e25713c209a58e6 of
+#: unit.minioled.MiniOLEDUnit:11
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/minioled.rst:53 05149c009c2241de9a8316790deb9dcc
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/minioled.rst:56 f918935de0974e52a8b53dd198dc07e0
 msgid "class MiniOLEDUnit"
 msgstr ""
 
-#: ../../en/units/minioled.rst:34 3ead3c72e3b24d1c8b595256308ff411
-msgid "Constructors"
+#: bd86875cf9c04daa9f3a96256f01ffc4 of unit.minioled.MiniOLEDUnit:1
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/units/minioled.rst:38 cd9515952a694a6e8a9bcc73a5f45469
-msgid "Initialize the Unit MiniOLED"
-msgstr ""
+#: 97bf0f5d1be64a75b48340147f782fa8 of unit.minioled.MiniOLEDUnit:1
+msgid "Initialize the Mini OLED Unit."
+msgstr "初始化 Mini OLED Unit。"
 
-#: ../../en/units/minioled.rst 2c45f156553f4f9381b47fa6d4c727bb
+#: ../../en/units/minioled.rst 2ad5ba51984445e38858225e7b292942
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/minioled.rst:40 89532c2686224a7cb257fdb699c5ff91
-msgid "the I2C object."
-msgstr ""
+#: 0da06983ddfd4bb1bff210fa44435beb of unit.minioled.MiniOLEDUnit:3
+msgid "The I2C bus the Mini OLED Unit is connected to."
+msgstr "Mini OLED Unit 所连接的 I2C 总线。"
 
-#: ../../en/units/minioled.rst:41 eb6cb87fc6a84bd9ab5795938a655f87
-msgid "I2C address of the Unit MiniOLED, default is 0x3c."
-msgstr ""
+#: 045ce4ba32ca4ea6b9d84d69ae8e218f of unit.minioled.MiniOLEDUnit:5
+msgid "The I2C address of the Mini OLED Unit, default is 0x3C."
+msgstr "Mini OLED Unit 的 I2C 地址，默认为 0x3C。"
 
-#: ../../en/units/minioled.rst:42 4d0d445f025d4b1ba8e057f3f6a39327
-msgid "I2C frequency of the Unit MiniOLED."
-msgstr ""
-
-#: ../../en/units/minioled.rst:44 fec90b0f8f904363a9df7134db9b119b
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/units/minioled.rst:46 2ad61eac25e247f4a0b9d372f520d435
+#: a548688e2bf4475f8b3b4441358f18be of unit.minioled.MiniOLEDUnit:9
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.minioled.ref:7 5fec3e30178145adbf806cad1a66b476
+#: ../../en/refs/unit.minioled.ref:7 52c134110d6246349555038d8162d298
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/minioled.rst:50 996626773cac47aea7bd0c743aba901c
-msgid "Methods"
+#: ../../en/units/minioled.rst:61 da522888519f44de84b7f73930e20968
+msgid ""
+"MiniOLEDUnit class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
 msgstr ""
+"MiniOLEDUnit 类继承了 Display 类，有关更多详细信息，请参阅 :ref:`hardware.Display "
+"<hardware.Display>` 。"
 

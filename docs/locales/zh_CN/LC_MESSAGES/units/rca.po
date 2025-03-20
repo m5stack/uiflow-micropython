@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-03-18 17:30+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,111 +20,170 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/rca.rst:3 f44d7cf068a54087b9b5949949271d45
+#: ../../en/units/rca.rst:3 eae5729b6f084736805d6062b67c47c4
 msgid "RCA Unit"
 msgstr ""
 
-#: ../../en/units/rca.rst:7 d07b2adfd5c44f79a7681a63a5eecc16
+#: ../../en/units/rca.rst:9 ec68743841fd481d9d5a4ce126d37d1c
 msgid ""
 "Unit RCA is a female jack terminal block for transmitting composite video"
 " (audio or video), one of the most common A/V connectors, which transmits"
 "  video or audio signals from a component device to an output  device "
 "(i.e., a display or speaker)."
-msgstr ""
+msgstr "RCA 单元是用于传输复合视频（音频或视频）的母插孔接线端子，是最常见的 A/V 连接器之一，它将视频或音频信号从组件设备传输到输出设备（即显示器或扬声器）。"
 
-#: ../../en/units/rca.rst:9 a0d4952112b84997ad18b9b24dd65a37
+#: ../../en/units/rca.rst:11 c3ab48cf38e3409ab501221a20169de1
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/units/rca.rst:11 9d481c4915eb48f68cfe57e5a6d3dc0f
+#: ../../en/units/rca.rst:13 adbc9bc8ff8846d68f908b9f8036f40e
 msgid "|RCAUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.rca.ref 6359a92c67d541c7abd2e98e04f56a7c
+#: ../../en/refs/unit.rca.ref 559571be61204331b7555d976e1c0299
 msgid "RCAUnit"
 msgstr ""
 
-#: ../../en/units/rca.rst:14 c6218f3c81444735bbd1694e43b177e9
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/units/rca.rst:17 ba3da3f5fa574d0082330f6f0daef900
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/rca.rst:21 0182df815e9a407e90f9fde0f6692bd4
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/units/rca.rst:20 ../../en/units/rca.rst:39
+#: 2332fc522f63487b8c91f4924a023b14 72693357a14b49d59c5fd22e6857c02c
+msgid "Draw Text"
+msgstr "绘制文本"
 
-#: ../../en/units/rca.rst:23 bffaab75359f442a9cb742c009f90324
+#: ../../en/units/rca.rst:22 27f235d4439047fca03b4a034daa418d
+msgid "Open the |core2_rca_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core2_rca_example.m5f2| 项目。"
+
+#: ../../en/units/rca.rst:24 ../../en/units/rca.rst:41
+#: 3bde4f5b43244406a6a50c2101a91c2c f8027375a1c84d3b8fe867cee14b32f7
+msgid "This example displays the text \"RCA\" on the screen."
+msgstr "此示例在屏幕上显示文本“RCA”。"
+
+#: ../../en/units/rca.rst:26 916b4498d9f64ee196645ba3b3bd551f
+#: 974f4047a00f42f4ba51c200502925ac of unit.rca.RCAUnit:12
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/rca.rst:28 227832dd895a46178d5a32e94e95a3b5
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.rca.ref:9 14fbcae1c1c848cf883f4202d0cafd0b
+#: ../../en/refs/unit.rca.ref:9 1af233d64ccc4c56b9b117c867754ca9
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/rca.rst:28 327eff05b9074ccd83b1bfb14558b8f7
-msgid "|core2_rca_example.m5f2|"
+#: ../../en/units/rca.rst:30 ../../en/units/rca.rst:49
+#: 76182495f5464b76859594d363f1dd25 a5b7b95504be4224a571690c45813c31
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/rca.rst:32 ../../en/units/rca.rst:51
+#: 3e0f4f458b93404d9b7ec4933425d5cb 6ba9aefaf5d941839c158f1ea67e4a5f
+msgid "None"
 msgstr ""
 
-#: ../../en/units/rca.rst:32 b442d5298c5147b985d236d5ce9eabc7
-msgid "class RCAUnit"
+#: ../../en/units/rca.rst:36 816956ed6ecc4510a2d0321b0f30b071
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/rca.rst:43 816956ed6ecc4510a2d0321b0f30b071 of
+#: unit.rca.RCAUnit:16
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/rca.rst:55 459a92810d754c2bae089af9a41f336a
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/rca.rst:58 e01b54a165754342afc89fabe90110cf
+msgid "Class RCAUnit"
 msgstr ""
 
-#: ../../en/units/rca.rst:35 4eab15085eb047ad9761b61ccd66928e
-msgid "Constructors"
+#: c35f90407ae441b283bb714a5cfeba0c of unit.rca.RCAUnit:1
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/units/rca.rst:39 f73d5f563ae6460d94b4d80e8ef0c2e5
-msgid "Initialize the Unit RCA"
-msgstr ""
+#: cdfb4dc740ab4e7692b9310d6b661a74 of unit.rca.RCAUnit:1
+msgid "Initialize the RCA Unit."
+msgstr "初始化 RCA Unit。"
 
-#: ../../en/units/rca.rst 434acda94f9d4a618069ec2cdcb30eef
+#: ../../en/units/rca.rst 97d797685dc64eba94bfad4430a7091a
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/rca.rst:41 c182f45f9f2247b3971b464ba5f3ea28
+#: b308e123f1fb46599dcf6582387cbc19 of unit.rca.RCAUnit:3
 msgid ""
-"The port to which the Unit RCA is connected. port[0]: not used, port[1]: "
+"The port to which the RCA Unit is connected. port[0]: not used, port[1]: "
 "dac pin."
-msgstr ""
+msgstr "RCA Unit 连接到的端口。 port[0]：未使用，port[1]：dac 引脚。"
 
-#: ../../en/units/rca.rst:42 2bf63c3924104c5aae22839b57f4c2fa
+#: 7abcfcc7ba5940d190d6c52db2923168 of unit.rca.RCAUnit:4
 msgid "The width of the RCA display."
-msgstr ""
+msgstr "RCA 显示器的宽度。"
 
-#: ../../en/units/rca.rst:43 5ac6ca1492fe4341be476bfd7e40ed92
+#: 9136bda1f35f4502afc649e36a79f26f of unit.rca.RCAUnit:5
 msgid "The height of the RCA display."
-msgstr ""
+msgstr "RCA 显示器的高度。"
 
-#: ../../en/units/rca.rst:44 068997e564ef42c68ff5e912e36c8945
+#: 4d79dce178ac4dd99d60ff6ac4a9957d of unit.rca.RCAUnit:6
 msgid "The width of the output of the RCA display."
-msgstr ""
+msgstr "RCA 显示器输出的宽度。"
 
-#: ../../en/units/rca.rst:45 c479b4fae7b64eb393e8a505c35442f6
+#: 8df4edd9c8df4468b83548e084ed941b of unit.rca.RCAUnit:7
 msgid "The height of the output of the RCA display."
-msgstr ""
+msgstr "RCA 显示器输出的高度。"
 
-#: ../../en/units/rca.rst:46 a2b43d6dd2954fce9268cf51f6da198f
+#: 3dd632e7ad814feeb646fc452b314bb4 of unit.rca.RCAUnit:8
 msgid ""
-"The signal type of the RCA display. NTSC&#x3D;0, NTSC_J&#x3D;1, "
-"PAL&#x3D;2, PAL_M&#x3D;3, PAL_N&#x3D;4."
-msgstr ""
+"The signal type of the RCA display. NTSC=0, NTSC_J=1, PAL=2, PAL_M=3, "
+"PAL_N=4."
+msgstr "RCA显示的信号类型。"
 
-#: ../../en/units/rca.rst:47 eca2eb790c0a42ca9e86eb8ffdd6bc8a
+#: dfe9301a633d42a9bedb72fda2c1dfcc of unit.rca.RCAUnit:9
 msgid "The use of psram of the RCA display."
-msgstr ""
+msgstr "RCA显示器的psram的使用。"
 
-#: ../../en/units/rca.rst:48 e77b7f95a1c64edd9e4f0440211fea79
+#: 472f2b11976e47ba87673824c9b2f7df of unit.rca.RCAUnit:10
 msgid "The output level of the RCA display."
-msgstr ""
+msgstr "RCA 显示的输出电平。"
 
-#: ../../en/units/rca.rst:50 602c428eb66641e998d9dfdf6fc1e2a8
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/units/rca.rst:52 3512b5084589477382c4b193880dde20
+#: 011ed5f7f09347d7b5430c8c688c2a55 of unit.rca.RCAUnit:14
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.rca.ref:7 d0cc428660314f3c8dbdcf8e4e5d972a
+#: ../../en/refs/unit.rca.ref:7 eaaa20712ff84f52b1ed4608b8ce478f
 msgid "init.png"
 msgstr ""
+
+#: ../../en/units/rca.rst:63 0bd580ea31ca4dbda833ba8412020fe8
+msgid ""
+"RCAUnit class inherits Display class, See :ref:`hardware.Display "
+"<hardware.Display>` for more details."
+msgstr ""
+"RCAUnit 类继承了 Display 类，更多详细信息请参阅 :ref:`hardware.Display "
+"<hardware.Display>` 。"
+
+#: ../../docstring f05fddc1715747b89fffce69a14a76e5 of unit.rca.RCAUnit.NTSC:1
+msgid "signal type. National Television System Committee."
+msgstr "信号类型。国家电视系统委员会制定的制式。"
+
+#: ../../docstring 0ae638ad00c84e349ff7ba9c84552b18 of
+#: unit.rca.RCAUnit.NTSC_J:1
+msgid "signal type. National Television System Committee Japan."
+msgstr "信号类型。国家电视系统委员会制式的日本标准。"
+
+#: ../../docstring d8a4090627d049ef8277091d7306dc05 of unit.rca.RCAUnit.PAL:1
+msgid "signal type. Phase Alternating Line."
+msgstr "信号类型。逐行扫描制式。"
+
+#: ../../docstring 9a5d8433617b4d628a18ecee2a6f1594 of unit.rca.RCAUnit.PAL_M:1
+msgid "signal type. Phase Alternating Line M."
+msgstr "信号类型。逐行扫描制式 M格式。"
+
+#: ../../docstring a462157038f84aeab64f981efe964261 of unit.rca.RCAUnit.PAL_N:1
+msgid "signal type. Phase Alternating Line N."
+msgstr "信号类型。逐行扫描制式 N格式。"
 

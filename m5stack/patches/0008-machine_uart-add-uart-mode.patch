@@ -1,0 +1,43 @@
+Index: micropython/ports/esp32/machine_uart.c
+===================================================================
+--- micropython.orig/ports/esp32/machine_uart.c
++++ micropython/ports/esp32/machine_uart.c
+@@ -108,6 +108,11 @@ static const char *_parity_name[] = {"No
+     { MP_ROM_QSTR(MP_QSTR_IRQ_RX), MP_ROM_INT(UART_IRQ_RX) }, \
+     { MP_ROM_QSTR(MP_QSTR_IRQ_RXIDLE), MP_ROM_INT(UART_IRQ_RXIDLE) }, \
+     { MP_ROM_QSTR(MP_QSTR_IRQ_BREAK), MP_ROM_INT(UART_IRQ_BREAK) }, \
++    { MP_ROM_QSTR(MP_QSTR_MODE_UART), MP_ROM_INT(UART_MODE_UART) }, \
++    { MP_ROM_QSTR(MP_QSTR_MODE_RS485_HALF_DUPLEX), MP_ROM_INT(UART_MODE_RS485_HALF_DUPLEX) }, \
++    { MP_ROM_QSTR(MP_QSTR_MODE_IRDA), MP_ROM_INT(UART_MODE_IRDA) }, \
++    { MP_ROM_QSTR(MP_QSTR_MODE_RS485_COLLISION_DETECT), MP_ROM_INT(UART_MODE_RS485_COLLISION_DETECT) }, \
++    { MP_ROM_QSTR(MP_QSTR_MODE_RS485_APP_CTRL), MP_ROM_INT(UART_MODE_RS485_APP_CTRL) }, \
+ 
+ static void uart_timer_callback(void *self_in) {
+     machine_timer_obj_t *self = self_in;
+@@ -227,7 +232,7 @@ static void mp_machine_uart_print(const
+ }
+ 
+ static void mp_machine_uart_init_helper(machine_uart_obj_t *self, size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+-    enum { ARG_baudrate, ARG_bits, ARG_parity, ARG_stop, ARG_tx, ARG_rx, ARG_rts, ARG_cts, ARG_txbuf, ARG_rxbuf, ARG_timeout, ARG_timeout_char, ARG_invert, ARG_flow };
++    enum { ARG_baudrate, ARG_bits, ARG_parity, ARG_stop, ARG_tx, ARG_rx, ARG_rts, ARG_cts, ARG_txbuf, ARG_rxbuf, ARG_timeout, ARG_timeout_char, ARG_invert, ARG_flow, ARG_mode };
+     static const mp_arg_t allowed_args[] = {
+         { MP_QSTR_baudrate, MP_ARG_INT, {.u_int = 0} },
+         { MP_QSTR_bits, MP_ARG_INT, {.u_int = 0} },
+@@ -243,6 +248,7 @@ static void mp_machine_uart_init_helper(
+         { MP_QSTR_timeout_char, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
+         { MP_QSTR_invert, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
+         { MP_QSTR_flow, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = -1} },
++        { MP_QSTR_mode, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = UART_MODE_UART} },
+     };
+     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+     mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+@@ -405,6 +411,9 @@ static void mp_machine_uart_init_helper(
+     uint8_t uart_fifo_len = UART_FIFO_LEN;
+     #endif
+     check_esp_err(uart_set_hw_flow_ctrl(self->uart_num, self->flowcontrol, uart_fifo_len - uart_fifo_len / 4));
++
++    // Set mode
++    check_esp_err(uart_set_mode(self->uart_num, args[ARG_mode].u_int));
+ }
+ 
+ static mp_obj_t mp_machine_uart_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {

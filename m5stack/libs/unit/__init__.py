@@ -89,6 +89,7 @@ _attrs = {
     "OPUnit": "op",
     "PAHUBUnit": "pahub",
     "PBHUBUnit": "pbhub",
+    "PDMUnit": "pdm",
     "PIRUnit": "pir",
     "PuzzleUnit": "puzzle",
     "QRCodeUnit": "qrcode",

@@ -2,50 +2,59 @@
 Display Module
 ==============
 
+.. sku: M126
+
 .. include:: ../refs/module.display.ref
 
 Display Module 13.2 is an expansion module for HD audio and video, using GAOYUN GW1NR series FPGA chip to output display signals, and employing the LT8618S chip for signal output conditioning.
 
 Support the following products:
 
-|DisplayModule|
+    |DisplayModule|
 
-Micropython Example:
+
+UiFlow2 Example
+---------------
+
+Draw Text
+^^^^^^^^^
+
+Open the |cores3_display_example.m5f2| project in UiFlow2.
+
+This example displays the text "Display" on the screen.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+This example displays the text "Display" on the screen.
+
+MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/module/display/cores3_display_example.py
         :language: python
         :linenos:
 
+Example output:
 
-UIFLOW2 Example:
-
-    |example.png|
-
-.. only:: builder_html
-
-    |cores3_display_example.m5f2|
+    None
 
 
-class DisplayModule
--------------------
+**API**
+-------
 
-Constructors
-------------
+Class DisplayModule
+^^^^^^^^^^^^^^^^^^^
 
-.. class:: DisplayModule(port: None, width: int = 1280, height: int = 720, refresh_rate: float = 60.0, output_width: int = 1280, output_height: int = 720, scale_w: int = 1, scale_h: int = 1, pixel_clock = 74250000)
+.. autoclass:: module.display.DisplayModule
+    :members:
 
-    Initialize the Module Display
-
-    :param tuple port: The port to which the Module Display is connected. port[0]: not used, port[1]: dac pin.
-    :param int width: The width of the Module Display.
-    :param int height: The height of the Module Display.
-    :param int refresh_rate: The refresh rate of the Module Display.
-    :param int output_width: The output width of the Module Display.
-    :param int output_height: The output height of the Module Display.
-    :param int scale_w: The scale width of the Module Display.
-    :param int scale_h: The scale height of the Module Display.
-    :param int pixel_clock: The pixel clock of the Module Display.
-
-    UIFLOW2:
-
-        |init.png|
+    DisplayModule class inherits Display class, See :ref:`hardware.Display <hardware.Display>` for more details.

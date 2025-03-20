@@ -1,0 +1,29 @@
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/init.png
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/any.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/deinit.png
+.. |setup.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/init_setup.png
+.. |read_all.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/read_all.png
+.. |read_bytes.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/read_bytes.png
+.. |read_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/read_raw_data.png
+.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/readline.png
+.. |readinto.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/readinto.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write.png
+.. |write1.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write1.png
+.. |write_line.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write_line.png
+.. |write_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write_list.png
+.. |write_raw_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write_raw_data.png
+.. |write_raw_data_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/write_raw_data1.png
+.. |txdone.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/txdone.png
+.. |flush.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/flush.png
+.. |sendbreak.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/sendbreak.png
+
+.. |cores3_echo_exmaple.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/uart/example_echo.png
+
+.. |cores3_echo_exmaple.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/uart/cores3_echo_exmaple.m5f2"
+        target="_blank"
+    >
+        cores3_echo_exmaple.m5f2
+    </a>

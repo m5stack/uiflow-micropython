@@ -12,9 +12,22 @@ AT_RECV_OK = "OK+RECV:"
 
 
 class LoRaWAN_Asr650x(object):
-    def __init__(self, tx, rx, debug=False):
-        self.__uart = machine.UART(1, tx=tx, rx=rx)
-        self.__uart.init(115200, bits=0, parity=None, stop=1)
+    """Create an LoRaWAN object.
+
+    :param machine.UART uart: The UART object.
+    :param bool debug: Whether to enable debug mode.
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from driver.asr650x import LoRaWAN_Asr650x
+
+            lora = LoRaWAN_Asr650x(uart)
+    """
+
+    def __init__(self, uart, debug=False):
+        self.__uart = uart
         self.debug = debug
         self.set_work_mode(2)
         self._downlink_buffer = []
@@ -293,14 +306,19 @@ class LoRaWAN_Asr650x(object):
             return "OTAA"
 
     def set_join_mode(self, mode):
-        """
-        Set LoRaWAN Mode.
-        Parameter:
-            OTAA 0
-            ABP  1
-        Return:
-            True
-            False
+        """Set the LoRaWAN join mode.
+
+        :param int mode: The LoRaWAN join mode.
+
+        UiFlow2 Code Block:
+
+            |set_join_mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_join_mode(0)
         """
         cmd = "AT+CJOINMODE=" + str(mode)
         result, error = self.__at_cmd(cmd)
@@ -322,13 +340,15 @@ class LoRaWAN_Asr650x(object):
         return result[1][15:]
 
     def set_frequency_band_mask(self, mask):
-        """
-        Get frequency band mask.
-        Parameter:
-            mask
-        Return:
-            True
-            False
+        """Set the frequency band mask.
+
+        :param str mask: The frequency band mask.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_frequency_band_mask("0001")
         """
         cmd = "AT+CFREQBANDMASK=" + str(mask)
         result, error = self.__at_cmd(cmd)
@@ -352,15 +372,15 @@ class LoRaWAN_Asr650x(object):
         return result[1][11:]
 
     def set_uplink_downlink_mode(self, mode):
-        """
-        Get uplink and downlink mode.
-        Parameter:
-            mode:
-                1 Same frequency mode
-                2 Inter-frequency mode
-        Return:
-            True
-            False
+        """Set the uplink and downlink frequency.
+
+        :param int mode: The uplink and downlink frequency.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_uplink_downlink_mode(1)
         """
         cmd = "AT+CULDLMODE=" + str(mode)
         result, error = self.__at_cmd(cmd)
@@ -418,21 +438,20 @@ class LoRaWAN_Asr650x(object):
     def set_class_mode(
         self, class_mode, branch=None, para1=None, para2=None, para3=None, para4=None
     ):
-        """
-        Set class mode with params.
-        Parameter:
-            class_mode:
-                0 classA
-                1 classB
-                2 classC
-            branch:
-            para1:
-            para2:
-            para3:
-            para4:
-        Return:
-            True
-            False
+        """Set the class mode, if the class mode is 0, the branch, para1, para2, para3, para4 will be ignored.
+
+        :param int class_mode: The class mode.
+        :param int branch: The branch selection.
+        :param int para1: Set the beacon frequency, unit is Hz.
+        :param int para2: Set the beacon data rate.
+        :param int para3: Set ping frequency, unit is Hz.
+        :param int para4: Set ping data rate.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_class_mode(0, 0, 0, 0, 0, 0)
         """
         cmd = "AT+CCLASS=" + str(class_mode)
         if (
@@ -467,22 +486,27 @@ class LoRaWAN_Asr650x(object):
         pass
 
     def join(self, para1, para2=None, para3=None, para4=None):
-        """
-        Join LoRaWAN network.
-        Parameter:
-            para1:
-                0 stop join
-                1 start join
-            para2:
-                0 close auto join
-                1 open auto join
-            para3:
-                7 ~ 255
-            para4:
-                1 ~ 256
-        Return:
-            True
-            False
+        """Join the LoRaWAN network.
+
+        :param int para1: 0 stop join, 1 start join.
+        :param int para2: 0 close auto join, 1 open auto join.
+        :param int para3: join interval, unit is second(7~255).
+        :param int para4: join retry times(1~256).
+
+        UiFlow2 Code Block:
+
+            |join.png|
+
+            |join_stop.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.join(1, 1, 8, 1)
+
+                lora.join(0)
+
         """
         cmd = "AT+CJOIN=" + str(para1)
         if para2 is not None and para3 is not None and para4 is not None:
@@ -491,19 +515,21 @@ class LoRaWAN_Asr650x(object):
         return not error
 
     def send_data(self, payload, confirm=None, nbtrials=None):
-        """
-        Send data.
-        Parameter:
-            confirm:
-                0
-                1
-            nbtrials:
-                1 ~ 15
-            payload:
-                xxxxxx  HEX format string
-        Return:
-            True
-            False
+        """Send data payload to LoRaWAN gateway.
+
+        :param str payload: The data to send.
+        :param int confirm: The confirm mode.
+        :param int nbtrials: The number of trials.
+
+        UiFlow2 Code Block:
+
+            |send_data.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.send_data("Hello, World!", 1, 1)
         """
         data = self._bytes_to_hex_str(payload.encode())
         if confirm is not None and nbtrials is not None:
@@ -553,13 +579,19 @@ class LoRaWAN_Asr650x(object):
         return not error
 
     def set_uplink_app_port(self, port):
-        """
-        Set uplink app port, setting before send data.
-        Parameter:
-            port 1 ~ 233
-        Return:
-            True
-            False
+        """Set the uplink app port.
+
+        :param int port: The uplink app port.
+
+        UiFlow2 Code Block:
+
+            |set_uplink_app_port.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_uplink_app_port(1)
         """
         cmd = "AT+CAPPPORT=" + str(port)
         result, error = self.__at_cmd(cmd)
@@ -636,22 +668,19 @@ class LoRaWAN_Asr650x(object):
         return not error
 
     def set_rx_window_param(self, rx1_offset, rx2_dr, rx2_freq):
+        """Set the receive window parameter.
+
+        :param int rx1_offset: The RX1 offset.
+        :param int rx2_dr: The RX2 data rate.
+        :param int rx2_freq: The RX2 frequency.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.set_rx_window_param(0, 0, 868100000)
         """
-        Set receive window param.
-        Parameter:
-            rx1_offset:
-            rx2_dr:
-                0 SF12 BW125
-                1 SF11 BW125
-                2 SF10 BW125
-                3 SF9  BW125
-                4 SF8  BW125
-                5 SF7  BW125
-            rx2_freq:  int hz
-        Return:
-            True
-            False
-        """
+
         cmd = "AT+CRXP={},{},{}".format(rx1_offset, rx2_dr, rx2_freq)
         result, error = self.__at_cmd(cmd)
         return not error
@@ -742,18 +771,41 @@ class LoRaWAN_Asr650x(object):
 
 
 class LoRaWAN_470(LoRaWAN_Asr650x):
-    def __init__(self, tx, rx, debug=False):
-        """
-        Parameter:
+    """Create an LoRaWAN object.
 
-        Return:
-            True
-            False
-        """
-        super(LoRaWAN_470, self).__init__(tx, rx, debug)
+    :param int tx: The UART TX pin number.
+    :param int rx: The UART RX pin number.
+    :param bool debug: Whether to enable debug mode.
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from driver.asr650x import LoRaWAN_470
+
+            lora = LoRaWAN_470(tx=17, rx=16)
+    """
+
+    def __init__(self, uart, debug=False):
+        super(LoRaWAN_470, self).__init__(uart, debug)
 
     def config_abp(self, devaddr, appskey, nwkskey):
-        # 2.0.3添加
+        """Config the ABP join mode information.
+
+        :param str devaddr: The device address.
+        :param str appskey: The application session key.
+        :param str nwkskey: The network session key.
+
+        UiFlow2 Code Block:
+
+            |config_abp.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.config_abp("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+        """
         self.config_ABP(devaddr, appskey, nwkskey)
 
     def config_ABP(self, devaddr, appskey, nwkskey):  # noqa: N802
@@ -770,7 +822,21 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         self.set_join_mode(1)
 
     def get_abp_config(self):
-        # 2.0.3添加
+        """Get the ABP join mode information.
+
+        :returns: The ABP join mode information(devaddr, appskey, newskey).
+        :rtype: tuple
+
+        UiFlow2 Code Block:
+
+            |get_abp_config.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.get_abp_config()
+        """
         return self.get_ABP_config()
 
     def get_ABP_config(self):  # noqa: N802
@@ -785,7 +851,23 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         return (self.get_DevAddr(), self.get_APPSKEY(), self.get_NWKSKEY())
 
     def config_otaa(self, deveui, appeui, appkey):
-        # 2.0.3添加
+        """Config the OTAA join mode information.
+
+        :param str deveui: The device EUI.
+        :param str appeui: The application EUI.
+        :param str appkey: The application key.
+
+        UiFlow2 Code Block:
+
+            |config_otaa.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.config_otaa("0037CAE1FC3542B9", "70B3D57ED003B699", "67FA4ED1075A20573BCDD7594C458698")
+        """
+
         self.config_OTAA(deveui, appeui, appkey)
 
     def config_OTAA(self, deveui, appeui, appkey):  # noqa: N802
@@ -804,7 +886,21 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         self.set_join_mode(0)
 
     def get_otaa_config(self):
-        # 2.0.3添加
+        """Get the OTAA join mode information.
+
+        :returns: The OTAA join mode information(deveui, appeui, appkey).
+        :rtype: tuple
+
+        UiFlow2 Code Block:
+
+            |get_otaa_config.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.get_otaa_config()
+        """
         return self.get_OTAA_config()
 
     def get_OTAA_config(self):  # noqa: N802
@@ -818,12 +914,20 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
         return (self.get_DevEui(), self.get_AppEui(), self.get_AppKey())
 
     def check_join_status(self):
-        """
-        Check the LoRaWAN network join status.
-        Parameter:
-        Return:
-            True   join OK
-            False  join fail
+        """Check the LoRaWAN network join status.
+
+        :returns: The LoRaWAN network join status.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |check_join_status.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.check_join_status()
         """
         if self._join_status:
             return self._join_status
@@ -850,12 +954,20 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
                     pass
 
     def check_uplink_status(self):
-        """
-        Check data uplink status.
-        Parameter:
-        Return:
-            True   success
-            False  failed
+        """Check the data uplink status.
+
+        :returns: The data uplink status.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |check_uplink_status.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.check_uplink_status()
         """
         cmd = "AT+CSTATUS?"
         result, error = self.__at_cmd(cmd)
@@ -879,12 +991,21 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
                 pass
 
     def check_downlink_data(self, timeout=10):
-        """
-        Check downlink data, dta will receive after uplink data.
-        Parameter:
-        Return:
-            false
-            data
+        """Check downlink data, if have downlink data, return the message.
+
+        :param int timeout: The timeout time.
+        :returns: False if no downlink data, otherwise return the downlink data.
+        :rtype: bool | str
+
+        UiFlow2 Code Block:
+
+            |check_downlink_data.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lora.check_downlink_data()
         """
         msgs = []
         now_time = time.time()
@@ -904,7 +1025,7 @@ class LoRaWAN_470(LoRaWAN_Asr650x):
 
 
 class LoRaWAN_915(LoRaWAN_470):
-    def __init__(self, tx, rx, debug=False):
+    def __init__(self, uart, debug=False):
         """
         Parameter:
 
@@ -912,11 +1033,11 @@ class LoRaWAN_915(LoRaWAN_470):
             True
             False
         """
-        super(LoRaWAN_915, self).__init__(tx, rx, debug)
+        super(LoRaWAN_915, self).__init__(uart, debug)
 
 
 class LoRaWAN_868(LoRaWAN_470):
-    def __init__(self, tx, rx, debug=False):
+    def __init__(self, uart, debug=False):
         """
         Parameter:
 
@@ -924,7 +1045,7 @@ class LoRaWAN_868(LoRaWAN_470):
             True
             False
         """
-        super(LoRaWAN_868, self).__init__(tx, rx, debug)
+        super(LoRaWAN_868, self).__init__(uart, debug)
 
 
 """

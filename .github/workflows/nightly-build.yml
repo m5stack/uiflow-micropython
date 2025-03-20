@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, X64]
     steps:
     - uses: actions/checkout@v3.3.0
     - name: Install packages

@@ -169,7 +169,7 @@ class PPSModule:
         Returns:
             float: The current input voltage in Volts.
         """
-        voltage = self.i2c.readfrom_mem(self.addr, 0x10, 4)
+        voltage = self.i2c.readfrom_mem(self.addr, 0x14, 4)
         return struct.unpack("<f", voltage)[0]
 
     def read_data_update_flag(self) -> int:
@@ -193,7 +193,7 @@ class PPSModule:
         Returns:
             float: The current MCU temperature in degrees Celsius.
         """
-        temperature = self.i2c.readfrom_mem(self.addr, 0x14, 4)
+        temperature = self.i2c.readfrom_mem(self.addr, 0x10, 4)
         return struct.unpack("<f", temperature)[0]
 
     def read_module_id(self) -> int:

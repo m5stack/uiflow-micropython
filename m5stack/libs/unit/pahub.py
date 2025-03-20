@@ -4,13 +4,11 @@
 from machine import I2C
 from micropython import const
 import time
+import sys
 
-try:
-    from typing import overload, Sequence
-    from typing_extensions import Literal
-    from uio import AnyReadableBuf, AnyWritableBuf
-except ImportError:
-    pass
+if sys.platform != "esp32":
+    from typing import Literal
+
 
 PAHUB_CHN0 = const(0)
 PAHUB_CHN1 = const(1)
@@ -63,12 +61,12 @@ class PAHUBUnit:
         self._i2c.stop()
         self.release_channel(self._chn)
 
-    def readinto(self, buf: AnyWritableBuf, nack: bool = True) -> None:
+    def readinto(self, buf, nack: bool = True) -> None:
         self.select_channel(self._chn)
         self._i2c.readinto(buf, nack)
         self.release_channel(self._chn)
 
-    def write(self, buf: AnyReadableBuf) -> int:
+    def write(self, buf) -> int:
         self.select_channel(self._chn)
         result = self._i2c.write(buf)
         self.release_channel(self._chn)
@@ -80,19 +78,19 @@ class PAHUBUnit:
         self.release_channel(self._chn)
         return result
 
-    def readfrom_into(self, addr: int, buf: AnyWritableBuf, stop: bool = True) -> None:
+    def readfrom_into(self, addr: int, buf, stop: bool = True) -> None:
         self.select_channel(self._chn)
         self._i2c.readfrom_into(addr, buf, stop)
         self.release_channel(self._chn)
 
-    def writeto(self, addr: int, buf: AnyReadableBuf, stop: bool = True) -> int:
+    def writeto(self, addr: int, buf, stop: bool = True) -> int:
         self.select_channel(self._chn)
         result = self._i2c.writeto(addr, buf, stop)
         time.sleep_ms(100)
         self.release_channel(self._chn)
         return result
 
-    def writevto(self, addr: int, vector: Sequence[AnyReadableBuf], stop: bool = True) -> int:
+    def writevto(self, addr: int, vector, stop: bool = True) -> int:
         self.select_channel(self._chn)
         result = self._i2c.writevto(addr, vector, stop)
         self.release_channel(self._chn)
@@ -104,14 +102,12 @@ class PAHUBUnit:
         self.release_channel(self._chn)
         return result
 
-    def readfrom_mem_into(
-        self, addr: int, memaddr: int, buf: AnyWritableBuf, addrsize: int = 8
-    ) -> None:
+    def readfrom_mem_into(self, addr: int, memaddr: int, buf, addrsize: int = 8) -> None:
         self.select_channel(self._chn)
         self._i2c.readfrom_mem_into(addr, memaddr, buf, addrsize=addrsize)
         self.release_channel(self._chn)
 
-    def writeto_mem(self, addr: int, memaddr: int, buf: AnyReadableBuf, addrsize: int = 8) -> None:
+    def writeto_mem(self, addr: int, memaddr: int, buf, addrsize: int = 8) -> None:
         self.select_channel(self._chn)
         self._i2c.writeto_mem(addr, memaddr, buf, addrsize=addrsize)
         self.release_channel(self._chn)

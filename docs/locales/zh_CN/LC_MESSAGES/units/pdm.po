@@ -1,0 +1,352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-19 10:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/pdm.rst:2 ec7809f167c244ff8542254af5ab7e4b
+msgid "PDM Unit"
+msgstr ""
+
+#: ../../en/units/pdm.rst:8 cd5ca23d0994446889d66256671e6b9f
+msgid ""
+"This is the driver library of PDM Unit, which is provides a set of "
+"methods to control the PDM microphone. Through the I2S interface, the "
+"module can record audio data and save it as WAV files."
+msgstr "这是 PDM 单元的驱动程序库，提供了一套控制 PDM 麦克风的方法。通过 I2S 接口，该模块可记录音频数据并保存为 WAV 文件。"
+
+#: ../../en/units/pdm.rst:11 c97375295f634bbfb0e5b0def74c900b
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/pdm.rst:13 275ea1761cb84f3096c46b7287787693
+msgid "|PDM|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref 7edd6c4d1aa34778801f5ee7036fd1f1
+msgid "pdm"
+msgstr ""
+
+#: ../../en/units/pdm.rst:17 860ace05097c43b380857001caaf52f2
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/units/pdm.rst:20 ../../en/units/pdm.rst:38
+#: a1a1324cb29f41179c5f4d86cfee0b72
+msgid "record voice and play voice"
+msgstr "录音音频并播放"
+
+#: ../../en/units/pdm.rst:22 ee23d1fb844a4a269c2ecef3aac1bc66
+msgid "Open the |pdm_cores3_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |pdm_cores3_example.m5f2| 项目。"
+
+#: ../../en/units/pdm.rst:24 ../../en/units/pdm.rst:40
+#: e42d9fe55a2e4ed89aa1a5c93dc98327
+msgid "This example records voice and plays voice."
+msgstr "这个示例展示了录音音频并播放。"
+
+#: ../../en/units/pdm.rst:26 ../../en/units/pdm.rst:69
+#: ../../en/units/pdm.rst:83 ../../en/units/pdm.rst:103
+#: ../../en/units/pdm.rst:126 ../../en/units/pdm.rst:147
+#: ../../en/units/pdm.rst:176 a0dbd900f3254a5c9b8fd5f900aea01b of
+#: unit.pdm.PDMUnit:7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/pdm.rst:28 ca8b74fa9d8e40878f0f2f9b7a2d8a7e
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:15 3a064799f41a457891fdfe9e0783dc63
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:30 ../../en/units/pdm.rst:48
+#: 3a639cad0cf04d8792361e905c49431b
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/pdm.rst:32 ../../en/units/pdm.rst:50
+#: 8e6bc9ab1d564917bd241a947cfa5ec1
+msgid "None"
+msgstr ""
+
+#: ../../en/units/pdm.rst:35 5242d09884e3424f8bb0caeffc80b4b8
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/pdm.rst:42 ../../en/units/pdm.rst:73
+#: ../../en/units/pdm.rst:87 ../../en/units/pdm.rst:107
+#: ../../en/units/pdm.rst:130 ../../en/units/pdm.rst:151
+#: ../../en/units/pdm.rst:180 9d1a7656efc94701b801ccbf5d904724 of
+#: unit.pdm.PDMUnit:11
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/pdm.rst:54 3255b806cb1346d78648583f2265e357
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/pdm.rst:57 8ea8240b03e34db58662a25a28582f58
+msgid "PDMUnit"
+msgstr ""
+
+#: 55d0965f11c2414b903b94130a219e38 of unit.pdm.PDMUnit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 2823d7b5ba934b1cba408cd6b2074d64 of unit.pdm.PDMUnit:1
+msgid "PDM Unit class."
+msgstr ""
+
+#: ../../en/units/pdm.rst 16d93ddb27344765a047a3bc468aeb53
+msgid "Parameters"
+msgstr ""
+
+#: c2baf299bf5c41f0b2cc81673bafc85a of unit.pdm.PDMUnit:3
+msgid "Connect to the PDM Unit."
+msgstr "连接到 PDM Unit"
+
+#: 07c9e6caa24547e1a72eff9bf6b16209 of unit.pdm.PDMUnit:4
+msgid "I2S port number."
+msgstr "I2S 端口号。"
+
+#: e4ed361fbde446e588145f61367dc4dc of unit.pdm.PDMUnit:5
+msgid "Sample rate."
+msgstr "采样率。"
+
+#: 66066b99ce3a413c8ead457e4d503c69 of unit.pdm.PDMUnit:9
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:7 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:64 b603501567d54481a465ae3172e27fb2
+msgid "Initialize the PDM microphone."
+msgstr "初始化 PDM 麦克风。"
+
+#: ../../en/units/pdm.rst 2da41e375a5a457fac1cfde853dd1347
+msgid "Returns"
+msgstr "返回"
+
+#: ../../en/units/pdm.rst:66 7df738cc5995493fae7db7fa697a8226
+msgid "Returns True if initialization was successful, False otherwise."
+msgstr "如果初始化成功，返回 True，否则返回 False。"
+
+#: ../../en/units/pdm.rst fcbcb0de3a4a4cd5b18283a6086eaa56
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/units/pdm.rst:71 5991615e30734cd09c7397f1e29c62f2
+msgid "|begin.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:8 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "begin.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:81 0d6cd0feb1814e029767ddb07f1aee50
+msgid "Stop the PDM microphone."
+msgstr "停止 PDM 麦克风。"
+
+#: ../../en/units/pdm.rst:85 6dc4d555a33a4b569a642eb1166e2876
+msgid "|end.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:9 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "end.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:95 b6b8b652ccb040f59fee024f457e1536
+msgid "Record audio data into the provided buffer."
+msgstr "将音频数据记录到提供的缓冲区中。"
+
+#: ../../en/units/pdm.rst:97 9d3e5864698c45dd95d8e65b67613392
+msgid "Buffer to store the recorded audio data"
+msgstr "存储记录的音频数据的缓冲区。"
+
+#: ../../en/units/pdm.rst:98 ../../en/units/pdm.rst:141
+#: 15de1842fe804aa5bdb64448f86722ae
+msgid "Sample rate in Hz (default: 16000)"
+msgstr "采样率（默认：16000）"
+
+#: ../../en/units/pdm.rst:99 ../../en/units/pdm.rst:143
+#: 604ead0f70d84ae78dd08a7eb45bb80c
+msgid "True for stereo recording, False for mono (default: False)"
+msgstr "True 表示立体声录音，False 表示单声道录音（默认：False）"
+
+#: ../../en/units/pdm.rst:100 87d998cf34fd49ba92092c89b2cf5d85
+msgid "True if recording started successfully"
+msgstr "如果录音成功开始，返回 True，否则返回 False。"
+
+#: ../../en/units/pdm.rst:105 409168f0d4914994a482388837b69ee4
+msgid "|record.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:10 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "record.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:116 b4b5af3faa374e43ae132ee4e40a49cd
+msgid "Check if recording is in progress."
+msgstr "检查录音是否正在进行。"
+
+#: ../../en/units/pdm.rst:118 4a022066205048c0aecaf1c0f1896201
+msgid ""
+"Returns the number of bytes recorded.  * ``0`` - Not recording * ``1`` - "
+"Recording (Queue has available space) * ``2`` - Recording (Queue is full)"
+msgstr "返回记录的字节数。 * ``0`` - 未录音\n"
+" * ``1`` - 录音（队列有可用空间）\n"
+" * ``2`` - 录音（队列已满）"
+
+#: ../../en/units/pdm.rst:118 f880b76185f34539865fac8e7c8d9ed6
+msgid "Returns the number of bytes recorded."
+msgstr "返回记录的字节数。"
+
+#: ../../en/units/pdm.rst:120 ffab5efcf44e401d9f1bd60ddff4616e
+msgid "``0`` - Not recording"
+msgstr "``0`` - 未录音"
+
+#: ../../en/units/pdm.rst:121 07bb85b362f840b895c0fc551d71972e
+msgid "``1`` - Recording (Queue has available space)"
+msgstr "``1`` - 录音（队列有可用空间）"
+
+#: ../../en/units/pdm.rst:122 7ca2061ec4434abdb680a993b715c2b8
+msgid "``2`` - Recording (Queue is full)"
+msgstr "``2`` - 录音（队列已满）"
+
+#: ../../en/units/pdm.rst:128 883a02585cf9408cbf39e7bbc48af21d
+msgid "|isRecording.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:11 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "isRecording.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:138 ade6877086474114917dcb02ce274d1a
+msgid "Record audio directly to a WAV file."
+msgstr "直接将音频记录到 WAV 文件中。"
+
+#: ../../en/units/pdm.rst:140 57ad4dd1a9744309bd148f55cf77c4b5
+msgid "Path to save the WAV file"
+msgstr "保存 WAV 文件的路径"
+
+#: ../../en/units/pdm.rst:142 fe6d3a66ec4f417087601e5dc67f9b1a
+msgid "Recording duration in seconds (default: 5)"
+msgstr "录音时长（默认：5秒）"
+
+#: ../../en/units/pdm.rst:144 6a01de3bcfec430d8dd5301fd7c534e5
+msgid "True if recording was successful"
+msgstr "如果录音成功，返回 True，否则返回 False。"
+
+#: ../../en/units/pdm.rst:149 4430bceb0717437295a46f5862f11c17
+msgid "|recordWavFile.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:12 3a064799f41a457891fdfe9e0783dc63
+msgid "recordWavFile.png"
+msgstr ""
+
+#: ../../en/units/pdm.rst:159 b8b2df30b16946a5af129a3c1ac85857
+msgid "Configure the PDM microphone parameters."
+msgstr "配置 PDM 麦克风参数。"
+
+msgid ""
+"Configuration parameters  - pin_data_in: Data input pin - pin_ws: Word "
+"select pin - sample_rate: Sample rate in Hz - stereo: Stereo mode - "
+"over_sampling: Over sampling rate - noise_filter_level: Noise filter "
+"level - magnification: Audio magnification - dma_buf_len: DMA buffer "
+"length - dma_buf_count: DMA buffer count - task_priority: Task priority -"
+" task_pinned_core: Task core pinning - i2s_port: I2S port number"
+msgstr ""
+"配置参数  - pin_data_in: 数据输入引脚\n"
+" - pin_ws: 字选引脚\n"
+" - sample_rate: 采样率\n"
+" - stereo: 立体声模式\n"
+" - over_sampling: 过采样率\n"
+" - noise_filter_level: 噪声过滤级别\n"
+" - magnification: 音频放大倍数\n"
+" - dma_buf_len: DMA 缓冲区长度\n"
+" - dma_buf_count: DMA 缓冲区计数\n"
+" - task_priority: 任务优先级\n"
+" - task_pinned_core: 指定任务运行的核心\n"
+" - i2s_port: I2S 端口号"
+
+#: ../../en/units/pdm.rst:161 ea459b72faba4867b1c41d17491722ab
+msgid "Configuration parameters"
+msgstr "配置参数"
+
+#: ../../en/units/pdm.rst:163 af0a2149114041d9b3fb98cd2eee72c7
+msgid "pin_data_in: Data input pin"
+msgstr "pin_data_in: 数据输入引脚"
+
+#: ../../en/units/pdm.rst:164 798f6c2640df4f38bcd306e21d207546
+msgid "pin_ws: Word select pin"
+msgstr "pin_ws: 字选引脚"
+
+#: ../../en/units/pdm.rst:165 0b8619fe6f0d4e3c81dc36722471bfa8
+msgid "sample_rate: Sample rate in Hz"
+msgstr "sample_rate: 采样率"
+
+#: ../../en/units/pdm.rst:166 7894b475c48a4514b4a2f19fbd59f5f2
+msgid "stereo: Stereo mode"
+msgstr "stereo: 立体声模式"
+
+#: ../../en/units/pdm.rst:167 bf7e18bc48a84514bf903cc6d50090ec
+msgid "over_sampling: Over sampling rate"
+msgstr "over_sampling: 过采样率"
+
+#: ../../en/units/pdm.rst:168 baf64af13f6c4a6f8673d358c2919a23
+msgid "noise_filter_level: Noise filter level"
+msgstr "noise_filter_level: 噪声过滤级别"
+
+#: ../../en/units/pdm.rst:169 10e25adbf1d546b6a7a1ca05259df615
+msgid "magnification: Audio magnification"
+msgstr "magnification: 音频放大倍数"
+
+#: ../../en/units/pdm.rst:170 e970c26a35854ce78f8e8d49bc4b9756
+msgid "dma_buf_len: DMA buffer length"
+msgstr "dma_buf_len: DMA 缓冲区长度"
+
+#: ../../en/units/pdm.rst:171 479516133b424d99b847f7493adcea1a
+msgid "dma_buf_count: DMA buffer count"
+msgstr "dma_buf_count: DMA 缓冲区计数"
+
+#: ../../en/units/pdm.rst:172 25a5f4d381014d27b950da1ab859c194
+msgid "task_priority: Task priority"
+msgstr "task_priority: 任务优先级"
+
+#: ../../en/units/pdm.rst:173 a180450c66ec4c48ae881d3dad2be322
+msgid "task_pinned_core: Task core pinning"
+msgstr "task_pinned_core: 指定任务运行的核心"
+
+#: ../../en/units/pdm.rst:174 3c8898aaac654c92b9ba216f7f529272
+msgid "i2s_port: I2S port number"
+msgstr "i2s_port: I2S 端口号"
+
+#: ../../en/units/pdm.rst:178 43395ae638a04638a8a96c3ca9dfdce4
+msgid "|config.png|"
+msgstr ""
+
+#: ../../en/refs/unit.pdm.ref:13 6e9c8156cb58435db2dfcdf61db59bd8
+msgid "config.png"
+msgstr ""
+

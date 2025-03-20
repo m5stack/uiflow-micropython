@@ -5,6 +5,7 @@
 import os, sys, io
 import M5
 from M5 import *
+from module import DisplayModule
 
 
 label0 = None
@@ -19,22 +20,15 @@ def setup():
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("CoreS3", 127, 109, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
-    module_display = M5.addDisplay(
-        None,
-        0,
-        {
-            "module_display": {
-                "enabled": True,
-                "width": 1280,
-                "height": 720,
-                "output_width": 1280,
-                "output_height": 720,
-                "refresh_rate": 60,
-                "scale_w": 1,
-                "scale_h": 1,
-                "pixel_clock": 74250000,
-            }
-        },
+    module_display = DisplayModule(
+        width=1280,
+        height=720,
+        output_width=1280,
+        output_height=720,
+        refresh_rate=60,
+        pixel_clock=74250000,
+        scale_w=1,
+        scale_h=1,
     )
     label1 = Widgets.Label(
         "Display", 506, 318, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu72, module_display

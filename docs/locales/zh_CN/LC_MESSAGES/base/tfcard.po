@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-20 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/tfcard.rst:2 ../../en/refs/base.tfcard.ref
+#: 53e706bccbfb4d3e8bf4f932d7826b2b eae765a617a845cc85f7120d60949b75
+msgid "Atomic TFCard Base"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:8 315ca7c8bc4840be8a14d40b6523756f
+msgid ""
+"This is the driver library for the Atomic TFCard Base, which is used to "
+"mount TFCard."
+msgstr "这是 Atomic TFCard Base 的驱动程序库，用于挂载TF卡。"
+
+#: ../../en/base/tfcard.rst:10 3df6cc370d0c4564a4a21c7b051d104e
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/tfcard.rst:13 bf49c52891e44f75bd5beb91e2a1cae8
+msgid "|Atom TFCard|"
+msgstr ""
+
+#: ../../en/refs/base.tfcard.ref 12e9de2f9c204f16bdc3d28b168e9c04
+msgid "Atom TFCard"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:13 6fcf0d24183c4d3992e538f8ac2b172a
+msgid "|Atomic TFCard Base|"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:18 26ac04b8ab8a4d8dbcd1b892ef921e0f
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例："
+
+#: ../../en/base/tfcard.rst:21 ../../en/base/tfcard.rst:40
+#: 86974b2090f94483b498583be026e8e6 eaa59298d6e742a9a2ce85642c740694
+msgid "TFCard mount"
+msgstr "TFCard 挂载"
+
+#: ../../en/base/tfcard.rst:23 d173dc7fcd6242caab91a8bf42fa3f8b
+msgid "Open the |atoms3r_tfcard_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2 中打开 |atoms3r_tfcard_example.m5f2| 项目。"
+
+#: ../../en/base/tfcard.rst:25 ../../en/base/tfcard.rst:42
+#: 528bddcb47ec4b349968a512418f5a0c 587d76e1f74d4fb7a4c5ee2f06c061cc
+msgid ""
+"This example demonstrates how to read/create a directory using Atomic "
+"TFCard Base."
+msgstr "本示例演示如何使用 Atomic TFCard Base 读取/创建目录。"
+
+#: ../../en/base/tfcard.rst:27 ../../en/base/tfcard.rst:80
+#: 8cf893b763a44469990a875ab73c43a4 ea6b80daa04d4ddeb5e2a2084627262c
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/tfcard.rst:29 e8d262155bbf4cfb9e9474117d2581ad
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.tfcard.ref:13 ccb3e3eaffc1457ba421d3a8ea46cded
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:31 ../../en/base/tfcard.rst:50
+#: 17d34608e4a1415093ac666622731de4 e2efdd7dc8ee48f7a7bd53ef44c77b09
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/tfcard.rst:33 ../../en/base/tfcard.rst:52
+#: 1fe50c13ec1d49a5bae98e060894cd84 a8fd600917a74531bd099fcb115d2b30
+msgid "Files in the /sd directory."
+msgstr "/sd 目录下的文件。"
+
+#: ../../en/base/tfcard.rst:37 a89b210eee09404587e5704576c69488
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/base/tfcard.rst:44 ../../en/base/tfcard.rst:84
+#: 53214d60887f4e51859466470d9c7b5d 9320435d91b54526a7d527c80b94fb2f
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/tfcard.rst:56 748bddc7df6c444ea0f4370328481104
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/base/tfcard.rst:59 c6b1a4d3e78a4f4c9f9b182a8976423e
+msgid "function AtomicTFCardBase"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:63 1c23c31b6e52411493f66f44d0a0ce93
+msgid ""
+"This function is only used to initialize and mount the SD card to the /sd"
+" directory, and to try to unmount the existing SD card before mounting "
+"it. Other file operations (such as reading/writing files, creating "
+"directories, etc.) need to be performed by the os module."
+msgstr ""
+"该函数仅用于初始化并挂载 SD 卡到 /sd 目录下，同时在挂载前尝试卸载已有的 SD 卡。其他文件操作（如读写文件、创建目录等）需要通过 os "
+"模块来实现。"
+
+#: ../../en/base/tfcard.rst 07af9d0299c94d5e800e2d173dde5651
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:68 e57365d0e7c648dd9ebf5e4114c09329
+msgid "Which of the available interfaces to use. The default value is 1."
+msgstr "使用哪个可用接口。默认值为 1。"
+
+#: ../../en/base/tfcard.rst:69 7f8671f0edb14e3d86ac162ddd21e978
+msgid "The bus width for the SD/MMC interface. The default value is 1."
+msgstr "SD/MMC 接口的总线宽度。默认值为 1。"
+
+#: ../../en/base/tfcard.rst:70 ad7df43ca75b431aa8c8c950d2f2f44c
+msgid "The card-detect pin to use. The default value is None."
+msgstr "要使用的卡检测引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:71 7cf9949d365849e794393c4c6af121e3
+msgid "The write-protect pin to use. The default value is None."
+msgstr "要使用的写保护引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:72 783b69aa004c432aa2ebf85878e00a26
+msgid "The SPI clock pin to use. The default value is None."
+msgstr "要使用的 SPI 时钟引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:73 ca16fa63befd41fb9f0fbe313c0e4314
+msgid "The SPI miso pin to use. The default value is None."
+msgstr "要使用的 SPI miso 引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:74 99ab603b78024aceba13430a0a17b817
+msgid "The SPI mosi pin to use. The default value is None."
+msgstr "要使用的 SPI mosi 引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:75 8f3d00b4996e4edcba93d3b706c0009d
+msgid "The SPI chip select pin to use. The default value is None."
+msgstr "要使用的 SPI 芯片选择引脚。默认值为 None。"
+
+#: ../../en/base/tfcard.rst:76 36ed3823e19f421486ef2d4d750b360a
+msgid "The SD/MMC interface frequency in Hz. The default value is 20000000."
+msgstr "SD/MMC 接口频率（单位：Hz）。默认值为 20000000。"
+
+#: ../../en/base/tfcard.rst 13476fb53d0245c7bdf5f22b6a05c4ac
+msgid "Returns"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:78 aa69052037b74e4cbda196f027dc101b
+msgid "None"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:82 7620886067e841e1bdbf20db45f8ae6c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.tfcard.ref:11 82ff98f445ae4215836eae9704e458f6
+msgid "init.png"
+msgstr ""
+
+#: ../../en/base/tfcard.rst:91 d8bcb83b58cb489c9b98d3e082ecbca6
+msgid "See :mod:`micropython:os` -- basic \"operating system\" for more details."
+msgstr "详情请参见 :mod:`micropython:os` -- 基本操作系统服务。"
+

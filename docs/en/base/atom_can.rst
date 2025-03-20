@@ -1,5 +1,5 @@
-ATOM CAN Base
-==============
+Atomic CAN Base
+================
 
 .. sku: A103/KO57
 

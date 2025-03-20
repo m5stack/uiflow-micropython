@@ -36,6 +36,8 @@ This example demonstrates how to get the status of a digital input and display t
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/hardware/plcio/digital_input/stamplc_digital_input_example.py
+        :language: python
+        :linenos:
 
 Example output:
 

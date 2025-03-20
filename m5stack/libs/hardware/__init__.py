@@ -9,10 +9,12 @@ _attrs = {
     "MatrixKeyboard": "matrix_keyboard",
     "DigitalInput": "plcio",
     "Relay": "plcio",
+    "PWR485": "pwr485",
     "RFID": "rfid",
     "RGB": "rgb",
     "Rotary": "rotary",
     "SCD40": "scd40",
+    "SDCard": "sdcard",
     "SEN55": "sen55",
 }
 

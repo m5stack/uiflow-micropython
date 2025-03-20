@@ -430,7 +430,7 @@ static void in_i2c_init(void) {
     }
     #endif
 
-    if (in_scl != 255 || in_sda != 255) {
+    if (in_scl != GPIO_NUM_NC || in_sda != GPIO_NUM_NC) {
         ESP_LOGI("BOARD", "Internal I2C(%d) init", in_port);
         // if (in_port == I2C_NUM_0) {
         //     periph_module_enable(PERIPH_I2C0_MODULE);

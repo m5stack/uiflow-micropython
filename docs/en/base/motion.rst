@@ -1,4 +1,4 @@
-Motion Base
+Atomic Motion Base
 ============================
 
 .. sku: A090

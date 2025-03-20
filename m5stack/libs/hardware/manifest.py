@@ -12,6 +12,7 @@ package(
         "ir.py",
         "matrix_keyboard.py",
         "plcio.py",
+        "pwr485.py",
         "rfid.py",
         "rgb.py",
         "rotary.py",

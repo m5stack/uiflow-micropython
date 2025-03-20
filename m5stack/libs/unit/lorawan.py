@@ -12,18 +12,10 @@ if sys.platform != "esp32":
 
 class LoRaWANUnit(LoRaWAN_470):
     def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None):
-        self._id = id
-        super(LoRaWAN_470, self).__init__(tx=port[1], rx=port[0])
-        self.tx = port[1]
-        self.rx = port[0]
-
-    def uart_port_id(self, id_num):
-        """
-        set core device uart id
-        id_num: 1-2
-        """
-        self.__uart = machine.UART(id_num, tx=self.tx, rx=self.rx)
-        self.__uart.init(115200, bits=0, parity=None, stop=1)
+        self._uart = machine.UART(
+            id, tx=port[0], rx=port[1], baudrate=115200, bits=8, parity=None, stop=1
+        )
+        super(LoRaWAN_470, self).__init__(self._uart)
 
     def deinit(self):
         pass

@@ -27,7 +27,7 @@ extern "C" {
         }
 #endif
 
-        if (in_scl != 255 || in_sda != 255) {
+        if (in_scl != GPIO_NUM_NC || in_sda != GPIO_NUM_NC) {
             ESP_LOGI("BOARD", "Internal I2C(%d) init", in_port);
             i2c_config_t conf;
             memset(&conf, 0, sizeof(i2c_config_t));

@@ -4,6 +4,7 @@
 
 _attrs = {
     "ATOMCANBase": "atom_can",
+    "AtomDTULoRaWANBase": "dtu_lorawan",
     "ATOMGPSBase": "atom_gps",
     "ATOMSocketBase": "atom_socket",
     "ATOMEchoBase": "echo",
@@ -16,6 +17,7 @@ _attrs = {
     "AtomRS485": "rs232",
     "SpeakerBase": "speaker",
     "AtomicStepmotorBase": "stepmotor",
+    "AtomicTFCardBase": "tfcard",
 }
 
 

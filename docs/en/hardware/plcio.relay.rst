@@ -36,6 +36,8 @@ This example demonstrates how to use a button to control the state of a relay an
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/hardware/plcio/relay/stamplc_relay_example.py
+        :language: python
+        :linenos:
 
 Example output:
 

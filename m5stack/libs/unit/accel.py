@@ -9,7 +9,7 @@ from driver.adxl34x import ADXL345
 class AccelUnit(ADXL345):
     """Create an AccelUnit object.
 
-    :param I2C i2c: The I2C bus the AccelUnit is connected to.
+    :param I2C i2c: The I2C bus the Accel Unit is connected to.
     :param int address: The I2C address of the device. Default is 0x53.
 
     UiFlow2 Code Block:
