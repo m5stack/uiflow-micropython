@@ -11,6 +11,7 @@ Module
     display.rst
     dmx.rst
     dualkmeter.rst
+    ecg.rst
     encoder4_motor.rst
     fan.rst
     gnss.rst

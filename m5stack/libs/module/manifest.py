@@ -12,6 +12,7 @@ package(
         "display.py",
         "dmx.py",
         "dual_kmeter.py",
+        "ecg.py",
         "encoder4_motor.py",
         "fan.py",
         "gnss.py",

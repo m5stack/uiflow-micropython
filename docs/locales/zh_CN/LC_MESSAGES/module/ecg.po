@@ -1,0 +1,272 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-28 14:50+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/ecg.rst:2 296c8a1a944045afaf634ba5bf2b4f18
+msgid "ECG Module"
+msgstr ""
+
+#: ../../en/module/ecg.rst:8 b3728f298ac74a4298376126f34bf86f
+msgid ""
+"This library is the driver for Module13.2 ECG, and the module "
+"communicates via UART."
+msgstr "这个库是 Module13.2 ECG 的驱动程序，模块通过 UART 进行通信。"
+
+#: ../../en/module/ecg.rst:10 a0d9579012894eb28c1542a34bc78667
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/ecg.rst:12 192529d5256c4a1faa755a023fb77955
+msgid "|Module13.2 ECG|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref c86edb01e34e462e9b7d086ebfbce5b3
+msgid "Module13.2 ECG"
+msgstr ""
+
+#: ../../en/module/ecg.rst:15 f869fd485807484e92956a8e478633e0
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/module/ecg.rst:18 ../../en/module/ecg.rst:51
+#: b746d29ec1a8480088c4076970726641
+msgid "Heart Rate Monitoring Display"
+msgstr "心率检测显示"
+
+#: ../../en/module/ecg.rst:20 e89d5f85a85d45da97760971f8459ce0
+msgid "Open the |cores3_ecg_module_base_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_ecg_module_base_example.m5f2| 项目。"
+
+#: ../../en/module/ecg.rst:22 ../../en/module/ecg.rst:53
+#: 46871a845db34c698d3508b2ff8a7d9c bc7fb61af0a5471d9f4098d4a031e0c6
+msgid ""
+"This example program is used for real-time heart rate monitoring and ECG "
+"waveform display. During measurement, the device continuously plots the "
+"ECG (Electrocardiogram) waveform and automatically calculates and "
+"displays the heart rate data once the signal stabilizes."
+msgstr "本示例程序用于实时读取心率并显示心电波形。测量过程中，设备将连续绘制 ECG（心电图）波形，并在信号稳定后自动计算并显示心率数据。"
+
+#: ../../en/module/ecg.rst:24 ../../en/module/ecg.rst:55
+#: 2762f640d0c143d88fefe6f903c6bd7c c192e4a7ed504f3088bfd7b559cdd1e2
+msgid ""
+"**Electrode Placement Instructions**: Please follow the guidelines below "
+"to correctly connect the ECG electrodes:"
+msgstr "**心电电极连接**：请按照以下方法正确连接心电电极："
+
+#: ../../en/module/ecg.rst:27 ../../en/module/ecg.rst:58
+#: b6803ffddf4f4994a91c86055164ce28 ccfbaeeee3804219ac97e8bce0d2b35a
+msgid ""
+"``Right Arm (RA)``: Place the right arm electrode on the right edge of "
+"the sternum, at the 2nd intercostal space along the midclavicular line, "
+"near the right shoulder."
+msgstr "右上(RA)：右上导联线放在胸骨右缘，锁骨中线第2肋间靠近右肩的位置。"
+
+#: ../../en/module/ecg.rst:28 ../../en/module/ecg.rst:59
+#: b3b29c73649f4d61b2cb95677bf3a36d c3ab0c09b847420b91758d808e38591c
+msgid ""
+"``Left Arm (LA)``: Place the left arm electrode on the left edge of the "
+"sternum, at the 2nd intercostal space along the midclavicular line, near "
+"the left shoulder."
+msgstr "左上(LA)：左上导联线位于胸骨左缘，锁骨中线第2肋间靠近左肩的位置。"
+
+#: ../../en/module/ecg.rst:29 ../../en/module/ecg.rst:60
+#: 2f9082f8c9a740cd9357bce5a07e4a86 b64f8b71b4dc4449a490e45e0b04d6cd
+msgid ""
+"``Left Leg (LL)``: Place the left leg electrode above the iliac crest "
+"(hip bone) on the left lower abdomen, or on the lower left side of the "
+"abdomen."
+msgstr "左下(LL)：左下导联线放在左侧下腹部，髂嵴（hip bone）上方，或腹部左下侧。"
+
+#: ../../en/module/ecg.rst:32 ../../en/module/ecg.rst:63
+#: 9522377584a9455c98d50fcac77c78fa baee1ad2617f404284d2861270a02eb5
+msgid ""
+"**Measurement Precautions**: To ensure stable and accurate ECG signals, "
+"please follow these precautions:"
+msgstr "**测量注意事项**：为了获得稳定、准确的心电信号，请遵循以下注意事项："
+
+#: ../../en/module/ecg.rst:35 ../../en/module/ecg.rst:66
+#: 82bad8137e3e49509ffeb9f7b263630b db0c923e7cab49cdaa93c4fc2251fdcf
+msgid "``Stay relaxed``: Avoid muscle tension to reduce signal interference."
+msgstr "身体放松： 避免肌肉紧张，以减少干扰信号。"
+
+#: ../../en/module/ecg.rst:36 ../../en/module/ecg.rst:67
+#: 892e029f9b664be3bd8f05984eadfd34 bc50e457d7f84f1abcf9f4aa0d02fb93
+msgid ""
+"``Remain still``: Minimize movement during measurement to obtain a stable"
+" ECG signal."
+msgstr "静止不动： 测量过程中尽量避免移动，以获得稳定的心电信号。"
+
+#: ../../en/module/ecg.rst:39 58debac2237d49219615190a01f908ff
+#: fe8588cdefd94427807e83a2460b1494 module.ecg.ECGModule:7
+#: module.ecg.ECGModule.poll_data:7 module.ecg.ECGModule.read_heartrate:8
+#: module.ecg.ECGModule.read_raw_ecg_data:6 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/ecg.rst:41 36dfe936b007462181f6af13d722efe3
+msgid "|cores3_ecg_module_base_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref:12 7725cde7caac41bcbcf14ce1dccaf86e
+msgid "cores3_ecg_module_base_example.png"
+msgstr ""
+
+#: ../../en/module/ecg.rst:43 ../../en/module/ecg.rst:76
+#: 17a8d108e44746fe82660f0e21ac41ac
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/ecg.rst:45 ../../en/module/ecg.rst:78
+#: b83ee817b8214b3ca84e7c8a48be1c0d
+msgid "None"
+msgstr ""
+
+#: ../../en/module/ecg.rst:48 b17d6400b694478fbf7d5731d642b5b0
+msgid "MicroPython Example:"
+msgstr ""
+
+#: ../../en/module/ecg.rst:70 36bbd733f3904335bec2de16b7a4d4d5
+#: module.ecg.ECGModule:11 module.ecg.ECGModule.poll_data:11
+#: module.ecg.ECGModule.read_heartrate:12
+#: module.ecg.ECGModule.read_raw_ecg_data:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/module/ecg.rst:81 2d3d700af1174c2f98325e8c1720b278
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/module/ecg.rst:84 296c8a1a944045afaf634ba5bf2b4f18
+msgid "ECGModule"
+msgstr ""
+
+#: c638bab91bc84dc1a0437cdcdf972975 module.ecg.ECGModule:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 1dc3f95ab0c14772982099d369ffc5c5 module.ecg.ECGModule:1 of
+msgid "Create an ECGModule object."
+msgstr "创建一个 ECGModule 对象。"
+
+#: ../../en/module/ecg.rst f4469e1b2d0743adb40bd4d3827093ef
+msgid "Parameters"
+msgstr ""
+
+#: 895602a91de94bb1b1bc479d3da0419c module.ecg.ECGModule:3 of
+msgid "UART id."
+msgstr "UART 端口号。"
+
+#: a55628f0a1f24e6ea8caf27106820bdf module.ecg.ECGModule:4 of
+msgid "the UART TX pin."
+msgstr "UART 发送引脚。"
+
+#: 90cc16af767c4c4896dbbbf1876ccafa module.ecg.ECGModule:5 of
+msgid "the UART RX pin."
+msgstr "UART 接收引脚。"
+
+#: 272b6ea6551c4903ad54769efb2ce962 module.ecg.ECGModule:9 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref:7 7725cde7caac41bcbcf14ce1dccaf86e
+msgid "init.png"
+msgstr ""
+
+#: 59ba7c77a0434b29ad225856d8e83fc9 module.ecg.ECGModule.poll_data:1 of
+msgid "Poll data."
+msgstr "轮询数据。"
+
+#: ec5609dc2ee24cb291f72bcf0f8b6772 module.ecg.ECGModule.poll_data:3 of
+msgid ""
+"This function checks for new data from the module and should be called "
+"repeatedly in a loop to ensure continuous data retrieval."
+msgstr "此函数用于检查模块是否有新数据，应在循环中重复调用，以确保持续获取数据。"
+
+#: dd4e137791324db6ba150882bed26df8 module.ecg.ECGModule.poll_data:9 of
+msgid "|poll_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref:8 f3d9757acb83460d98bc74f157590952
+msgid "poll_data.png"
+msgstr ""
+
+#: e00cac6fc5b543d89ac5fb7b31c7a273 module.ecg.ECGModule.poll_data
+#: module.ecg.ECGModule.read_heartrate module.ecg.ECGModule.read_raw_ecg_data
+#: of
+msgid "Return type"
+msgstr ""
+
+#: 1c95e89f478c498f9d58996aa092c321 module.ecg.ECGModule.read_heartrate:1 of
+msgid "Read heartrate."
+msgstr ""
+
+#: c42748944c1941b3a2103758ded9d824 module.ecg.ECGModule.read_heartrate
+#: module.ecg.ECGModule.read_raw_ecg_data of
+msgid "Returns"
+msgstr ""
+
+#: d6aef574a83a4f8ab66e4612ec9231df module.ecg.ECGModule.read_heartrate:3 of
+msgid "heart rate"
+msgstr ""
+
+#: 5d8d4d19c1e345f6b9b1813c3ae03eb3 module.ecg.ECGModule.read_heartrate:6 of
+msgid "If heart rate is no valid, return -1."
+msgstr "如果心率数据无效，则返回 -1。"
+
+#: ab6e00b7e8bf45c79443744e51b89e85 module.ecg.ECGModule.read_heartrate:10 of
+msgid "|read_heartrate.png|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref:9 6ee193a310824baf9e63c851ed8a45f5
+msgid "read_heartrate.png"
+msgstr ""
+
+#: 5f1d9087a84545eb835f210eaebfdc90 module.ecg.ECGModule.read_raw_ecg_data:1 of
+msgid "Read raw ECG data."
+msgstr "读取原始 ECG 数据。"
+
+#: 3cba6c0aaa6e4bebb3e6618af1f3c9fb module.ecg.ECGModule.read_raw_ecg_data:3 of
+msgid "ECG data"
+msgstr ""
+
+#: 4b95e2fee3a940d18d9b3abd0b0c9f34 module.ecg.ECGModule.read_raw_ecg_data:8 of
+msgid "|read_raw_ecg_data.png|"
+msgstr ""
+
+#: ../../en/refs/module.ecg.ref:10 b8ebee6b59f84e4eb19a704f0e1bee5a
+msgid "read_raw_ecg_data.png"
+msgstr ""
+
+#~ msgid "Open the |cores3_ecg_module_example.m5f2| project in UiFlow2."
+#~ msgstr ""
+
+#~ msgid "The example demonstrates"
+#~ msgstr ""
+
+#~ msgid "|cores3_ecg_module_example.png|"
+#~ msgstr ""
+
+#~ msgid "@note: 必须放在循环中"
+#~ msgstr ""
+
+#~ msgid "|read_ecg_data.png|"
+#~ msgstr ""
+
