@@ -25,8 +25,8 @@ extern "C"
 
 #if MICROPY_PY_LVGL
 #include "lvgl/lvgl.h"
-#include "lvgl/src/hal/lv_hal_disp.h"
-#include "./../../components/lv_bindings/driver/include/common.h"
+// #include "lvgl/src/hal/lv_hal_disp.h"
+// #include "./../../components/lv_bindings/driver/include/common.h"
 #endif
 
 #include "mpy_m5lfs2.txt"

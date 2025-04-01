@@ -5,6 +5,7 @@
 set(IDF_TARGET esp32s3)
 set(BOARD_ID 19)
 set(M5_EPDIY_ENABLE TRUE)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

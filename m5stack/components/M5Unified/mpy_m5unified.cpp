@@ -550,13 +550,16 @@ mp_obj_t m5_getDisplayCount(void) {
 }
 
 mp_obj_t m5_Displays(mp_obj_t index) {
-    m5_display.gfx = (void *)&(M5.Displays(mp_obj_get_int(index)));
-    return MP_OBJ_FROM_PTR(&m5_display);
+    gfx_obj_t *o = mp_obj_malloc_with_finaliser(gfx_obj_t, &mp_gfxdevice_type);
+    o->gfx = (void *)&(M5.Displays(mp_obj_get_int(index)));
+    return MP_OBJ_FROM_PTR(o);
 }
 
 mp_obj_t m5_getDisplay(mp_obj_t index) {
-    m5_display.gfx = (void *)&(M5.getDisplay(mp_obj_get_int(index)));
-    return MP_OBJ_FROM_PTR(&m5_display);
+    mp_printf(&mp_plat_print, "display index: %d\n", mp_obj_get_int(index));
+    gfx_obj_t *o = mp_obj_malloc_with_finaliser(gfx_obj_t, &mp_gfxdevice_type);
+    o->gfx = (void *)&(M5.getDisplay(mp_obj_get_int(index)));
+    return MP_OBJ_FROM_PTR(o);
 }
 
 mp_obj_t m5_getDisplayIndex(mp_obj_t board) {

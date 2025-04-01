@@ -7,9 +7,9 @@
 #include <mpy_m5unified.h>
 
 #if MICROPY_PY_LVGL
-#include "lvgl/lvgl.h"
-#include "lvgl/src/hal/lv_hal_disp.h"
-#include "./../../components/lv_bindings/driver/include/common.h"
+#include "./../../cmodules/lv_binding_micropython/lvgl/lvgl.h"
+// #include "./../../cmodules/lv_binding_micropython/lvgl/src/hal/lv_hal_disp.h"
+#include "./../../cmodules/lv_binding_micropython/driver/include/common.h"
 #endif
 
 /* *FORMAT-OFF* */

@@ -41,3 +41,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/esp_zigbee_host/micropython.cmake)
 if(ADF_MODULE_ENABLE)
     include(${CMAKE_CURRENT_LIST_DIR}/adf_module/micropython.cmake)
 endif()
+
+if(MICROPY_PY_LVGL)
+include(${CMAKE_CURRENT_LIST_DIR}/lv_binding_micropython/micropython.cmake)
+endif()

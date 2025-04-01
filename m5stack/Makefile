@@ -283,7 +283,8 @@ submodules:
 	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
-	git submodule update --init --recursive ./components/lv_bindings
+	#git submodule update --init --recursive ./components/lv_bindings
+	git submodule update --init --recursive ./cmodules/lv_binding_micropython
 	git submodule update --init ../micropython
 	git submodule update --init ../esp-adf
 	cd ../esp-adf && \
@@ -298,7 +299,7 @@ submodules:
 
 # Apply patches
 patch:
-	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/patche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
@@ -312,7 +313,7 @@ patch:
 
 # Unapply patches
 unpatch:
-	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/unpatche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0008-machine_uart-add-uart-mode.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0007-Add-set-default-netif-method.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))

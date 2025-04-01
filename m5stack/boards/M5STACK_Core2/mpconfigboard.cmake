@@ -4,6 +4,7 @@
 
 # core2 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L4
 set(BOARD_ID 2)
+set(MICROPY_PY_LVGL 1)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

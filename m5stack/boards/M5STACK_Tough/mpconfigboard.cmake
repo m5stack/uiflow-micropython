@@ -4,6 +4,7 @@
 
 # tough https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L10
 set(BOARD_ID 8)
+set(MICROPY_PY_LVGL 1)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

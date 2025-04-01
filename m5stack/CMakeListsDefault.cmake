@@ -308,6 +308,7 @@ target_compile_definitions(${MICROPY_TARGET} PUBLIC
     LFS1_NO_MALLOC LFS1_NO_DEBUG LFS1_NO_WARN LFS1_NO_ERROR LFS1_NO_ASSERT
     LFS2_NO_MALLOC LFS2_NO_DEBUG LFS2_NO_WARN LFS2_NO_ERROR LFS2_NO_ASSERT
     BOARD_ID=${BOARD_ID}
+    MICROPY_PY_LVGL=${MICROPY_PY_LVGL}
 )
 
 # Disable some warnings to keep the build output clean.
@@ -318,7 +319,7 @@ target_compile_options(${MICROPY_TARGET} PUBLIC
 )
 
 target_link_options(${MICROPY_TARGET} PUBLIC
-     ${MICROPY_LINK_TINYUSB}
+    ${MICROPY_LINK_TINYUSB}
 )
 
 # Additional include directories needed for private NimBLE headers.

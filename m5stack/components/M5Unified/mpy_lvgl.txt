@@ -1,12 +1,14 @@
 #if MICROPY_PY_LVGL
 #include "lvgl/lvgl.h"
-#include "lvgl/src/hal/lv_hal_disp.h"
+// #include "lvgl/src/hal/lv_hal_disp.h"
+#include "mpy_m5gfx.h"
+#include "esp_log.h"
 
-void gfx_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p) {
-    lv_disp_drv_t *disp_drv = (lv_disp_drv_t*)_disp_drv;
-
-    int idx = mp_obj_get_int(mp_obj_dict_get(disp_drv->user_data, MP_OBJ_NEW_QSTR(MP_QSTR_display_index)));
-    LovyanGFX *lvgl_gfx = (LovyanGFX *)&(M5.getDisplay(idx));
+void gfx_lvgl_flush(lv_display_t *disp_drv, const lv_area_t * area, uint8_t * px_map)
+{
+    mp_obj_t gfx_obj = mp_obj_dict_get(disp_drv->user_data, MP_OBJ_NEW_QSTR(MP_QSTR_display));
+    M5GFX *lvgl_gfx = (M5GFX *)((((gfx_obj_t *)MP_OBJ_TO_PTR(gfx_obj))->gfx));
+    // ESP_LOGE("lvgl", "gfx: %p", lvgl_gfx);
     if (lvgl_gfx == nullptr) {
         return;
     }
@@ -16,12 +18,13 @@ void gfx_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p)
 
     lvgl_gfx->startWrite();
     lvgl_gfx->setAddrWindow(area->x1, area->y1, w, h);
-    lvgl_gfx->writePixels((lgfx::rgb565_t *)&color_p->full, w * h);
+    lvgl_gfx->writePixels((lgfx::rgb565_t *)px_map, w * h);
     lvgl_gfx->endWrite();
-    lv_disp_flush_ready(disp_drv);
+    lv_display_flush_ready(disp_drv);
 }
 
-bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data) {
+bool gfx_lvgl_touch_read(lv_disp_t *indev_drv, lv_indev_data_t *data)
+{
     M5.update();
 
     if (!M5.Touch.getCount()) {
@@ -37,16 +40,16 @@ bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data) {
 }
 
 
-void user_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p) {
-    lv_disp_drv_t *disp_drv = (lv_disp_drv_t*)_disp_drv;
+void user_lvgl_flush(lv_disp_t *disp_drv, const lv_area_t *area, uint8_t *px_map)
+{
 
     int w = (area->x2 - area->x1 + 1);
     int h = (area->y2 - area->y1 + 1);
 
     user_panel.startWrite();
     user_panel.setAddrWindow(area->x1, area->y1, w, h);
-    user_panel.writePixels((lgfx::rgb565_t *)&color_p->full, w * h);
+    user_panel.writePixels((lgfx::rgb565_t *)px_map, w * h);
     user_panel.endWrite();
-    lv_disp_flush_ready((lv_disp_drv_t *)disp_drv);
+    lv_display_flush_ready(disp_drv);
 }
 #endif

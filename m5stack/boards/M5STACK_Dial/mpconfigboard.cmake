@@ -6,6 +6,7 @@ set(IDF_TARGET esp32s3)
 
 # dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L14
 set(BOARD_ID 12)
+set(MICROPY_PY_LVGL 1)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
