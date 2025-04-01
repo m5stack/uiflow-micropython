@@ -35,6 +35,10 @@ static inline M5GFX *getGfx(const mp_obj_t *args) {
     return (M5GFX *)((((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->gfx));
 }
 
+static inline LFS2Wrapper *getFontWrapper(const mp_obj_t *args) {
+    return (LFS2Wrapper *)((((gfx_obj_t *)MP_OBJ_TO_PTR(args[0]))->font_wrapper));
+}
+
 // -------- GFX common wrapper
 mp_obj_t gfx_width(mp_obj_t self) {
     auto gfx = getGfx(&self);
@@ -96,7 +100,6 @@ mp_obj_t gfx_setColorDepth(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
 }
 
 
-LFS2Wrapper fontWrapper;
 mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_font};
     /* *FORMAT-OFF* */
@@ -112,8 +115,13 @@ mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args
     auto gfx = getGfx(&pos_args[0]);
     if (mp_obj_is_str(args[ARG_font].u_obj) && ((size_t)mp_obj_len(args[ARG_font].u_obj) < 128)) { // file
         gfx->unloadFont();
-        fontWrapper.open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
-        ret = gfx->loadFont((lgfx::DataWrapper *)&fontWrapper);
+        LFS2Wrapper *fontWrapper = getFontWrapper(&pos_args[0]);
+        if (fontWrapper == NULL) {
+            fontWrapper = new LFS2Wrapper();
+            ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
+        }
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        ret = gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_font].u_obj, &bufinfo, MP_BUFFER_READ);
@@ -143,7 +151,18 @@ mp_obj_t gfx_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     auto gfx = getGfx(&pos_args[0]);
-    gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);
+    if (mp_obj_is_str(args[ARG_font].u_obj) && ((size_t)mp_obj_len(args[ARG_font].u_obj) < 128)) { // file
+        gfx->unloadFont();
+        LFS2Wrapper *fontWrapper = getFontWrapper(&pos_args[0]);
+        if (fontWrapper == NULL) {
+            fontWrapper = new LFS2Wrapper();
+            ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
+        }
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
+    } else {
+        gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);
+    }
     return mp_const_none;
 }
 
@@ -1143,6 +1162,51 @@ mp_obj_t gfx_newCanvas(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
     res->base.type = &mp_gfxcanvas_type;
     res->gfx = canvas;
     return MP_OBJ_FROM_PTR(res);
+}
+
+mp_obj_t gfx_writeCommand(mp_obj_t self, mp_obj_t cmd) {
+    auto gfx = getGfx(&self);
+    gfx->writeCommand((uint8_t)mp_obj_get_int(cmd));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeCommand16(mp_obj_t self, mp_obj_t cmd) {
+    auto gfx = getGfx(&self);
+    gfx->writeCommand16((uint16_t)mp_obj_get_int(cmd));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData((uint8_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData16(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData16((uint16_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_writeData32(mp_obj_t self, mp_obj_t data) {
+    auto gfx = getGfx(&self);
+    gfx->writeData32((uint32_t)mp_obj_get_int(data));
+    return mp_const_none;
+}
+
+mp_obj_t gfx_readData(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData8((uint8_t)mp_obj_get_int(index)));
+}
+
+mp_obj_t gfx_readData16(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData16((uint8_t)mp_obj_get_int(index)));
+}
+
+mp_obj_t gfx_readData32(mp_obj_t self, mp_obj_t index) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int(gfx->readData32((uint8_t)mp_obj_get_int(index)));
 }
 
 // -------- GFX device wrapper

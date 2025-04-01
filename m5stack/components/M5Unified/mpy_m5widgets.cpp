@@ -6,6 +6,7 @@
 
 #include <M5Unified.h>
 #include "lgfx/utility/lgfx_tjpgd.h"
+#include "lgfx/v1/LGFXBase.hpp"
 
 extern "C"
 {
@@ -122,6 +123,8 @@ typedef struct _widgets_label_obj_t {
     LGFX_Device *gfx;
     const char *text;
     const m5gfx::IFont *font;
+    LFS2Wrapper *fontWrapper;
+    m5gfx::RunTimeFont *rtfont;
     widgets_color_t color;
     widgets_pos_t text_pos;
     widgets_size_t size;
@@ -137,7 +140,30 @@ static void m5widgets_label_erase_helper(const widgets_label_obj_t *self) {
 static void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
     self->gfx->setTextColor((uint32_t)self->color.fg_color, (uint32_t)self->color.bg_color);
     self->gfx->setTextSize(self->size.text_size);
+    lgfx::v1::FontMetrics metrics;
+    self->font->getDefaultMetric(&metrics);
+    if (self->font->getType() == lgfx::v1::IFont::font_type_t::ft_vlw) {
+        self->gfx->fillRect(self->text_pos.x0, self->text_pos.y0, self->gfx->textWidth(self->text, self->font), metrics.height * 2, (uint32_t)self->color.bg_color);
+    }
     self->gfx->drawString(self->text, self->text_pos.x0, self->text_pos.y0, self->font);
+}
+
+static void m5widgets_label_font_init_helper(widgets_label_obj_t *self, mp_obj_t font) {
+    if (font != mp_const_none) {
+        if (mp_obj_is_str(font)) {
+            // FIXME: check if the font is already
+            self->fontWrapper->open(mp_obj_str_get_str(font), LFS2_O_RDONLY);
+            if (self->rtfont->loadFont((lgfx::DataWrapper *)self->fontWrapper)) {
+                self->font = self->rtfont;
+            } else {
+                self->font = self->gfx->getFont();
+            }
+        } else {
+            self->font = (const m5gfx::IFont *)((font_obj_t *)font)->font;
+        }
+    } else {
+        self->font = &m5gfx::fonts::DejaVu9;
+    }
 }
 
 mp_obj_t m5widgets_label_setText(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
@@ -244,7 +270,7 @@ mp_obj_t m5widgets_label_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map
     widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
     m5widgets_label_erase_helper(self);
-    self->font = (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font;
+    m5widgets_label_font_init_helper(self, args[ARG_font].u_obj);
     m5widgets_label_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
     return mp_const_none;
@@ -271,6 +297,7 @@ mp_obj_t m5widgets_label_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     return mp_const_none;
 }
 
+extern gfx_obj_t m5_display;
 mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
     enum {ARG_text, ARG_x, ARG_y, ARG_text_sz, ARG_text_c, ARG_bg_c, ARG_font, ARG_parent};
     /* *FORMAT-OFF* */
@@ -304,11 +331,9 @@ mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size
     self->color.fg_color = (uint32_t)args[ARG_text_c].u_int;
     self->color.bg_color = (uint32_t)args[ARG_bg_c].u_int;
 
-    if (args[ARG_font].u_obj != mp_const_none) {
-        self->font = (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font;
-    } else {
-        self->font = &m5gfx::fonts::DejaVu9;
-    }
+    self->rtfont = new m5gfx::VLWfont();
+    self->fontWrapper = new LFS2Wrapper();
+    m5widgets_label_font_init_helper(self, args[ARG_font].u_obj);
 
     if (args[ARG_text].u_obj == mp_const_none) {
         self->text = "Label";
@@ -328,6 +353,8 @@ typedef struct _widgets_title_obj_t {
     LGFX_Device *gfx;
     const char *text;
     const m5gfx::IFont *font;
+    LFS2Wrapper *fontWrapper;
+    m5gfx::RunTimeFont *rtfont;
     widgets_pos_t text_pos;
     widgets_color_t color;
     widgets_size_t size;
@@ -344,7 +371,30 @@ static void m5widgets_title_draw_helper(widgets_title_obj_t *self) {
     // text
     self->gfx->setTextColor((uint32_t)self->color.fg_color, (uint32_t)self->color.bg_color);
     self->gfx->setTextSize(self->size.text_size);
+    lgfx::v1::FontMetrics metrics;
+    self->font->getDefaultMetric(&metrics);
+    if (self->font->getType() == lgfx::v1::IFont::font_type_t::ft_vlw) {
+        self->gfx->fillRect(self->text_pos.x0, self->text_pos.y0, self->gfx->textWidth(self->text, self->font), metrics.height * 2, (uint32_t)self->color.bg_color);
+    }
     self->gfx->drawString(self->text, self->text_pos.x0, self->text_pos.y0, self->font);
+}
+
+static void m5widgets_title_font_init_helper(widgets_title_obj_t *self, mp_obj_t font) {
+    if (font != mp_const_none) {
+        if (mp_obj_is_str(font)) {
+            // FIXME: check if the font is already
+            self->fontWrapper->open(mp_obj_str_get_str(font), LFS2_O_RDONLY);
+            if (self->rtfont->loadFont((lgfx::DataWrapper *)self->fontWrapper)) {
+                self->font = self->rtfont;
+            } else {
+                self->font = self->gfx->getFont();
+            }
+        } else {
+            self->font = (const m5gfx::IFont *)((font_obj_t *)font)->font;
+        }
+    } else {
+        self->font = &m5gfx::fonts::DejaVu9;
+    }
 }
 
 mp_obj_t m5widgets_title_setText(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
@@ -488,14 +538,18 @@ mp_obj_t m5widgets_title_make_new(const mp_obj_type_t *type, size_t n_args, size
         self->text = mp_obj_str_get_str(args[ARG_text].u_obj);
     }
 
-    if (args[ARG_font].u_obj != mp_const_none) {
-        self->font = (const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font;
-    } else {
-        self->font = &m5gfx::fonts::DejaVu9;
-    }
+    self->rtfont = new m5gfx::VLWfont();
+    self->fontWrapper = new LFS2Wrapper();
+    m5widgets_title_font_init_helper(self, args[ARG_font].u_obj);
 
     self->size.w = self->gfx->width();
-    self->size.h = self->gfx->fontHeight(self->font);
+    if (self->font->getType() == lgfx::v1::IFont::font_type_t::ft_vlw) {
+        lgfx::v1::FontMetrics metrics;
+        self->font->getDefaultMetric(&metrics);
+        self->size.h = metrics.height * 2;
+    } else {
+        self->size.h = self->gfx->fontHeight(self->font);
+    }
     self->text_pos.x0 = args[ARG_text_x].u_int;
     self->text_pos.y0 = 0;
     self->color.fg_color = args[ARG_text_c].u_int;

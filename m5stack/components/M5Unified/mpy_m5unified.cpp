@@ -63,7 +63,7 @@ const pwr_obj_t m5_imu     = {&mp_imu_type,       &(M5.Imu)    };
       btn_obj_t m5_btnC    = {&mp_btn_type,       &(M5.BtnC),   {0}};
       btn_obj_t m5_btnPWR  = {&mp_btn_type,       &(M5.BtnPWR), {0}};
       btn_obj_t m5_btnEXT  = {&mp_btn_type,       &(M5.BtnEXT), {0}};
-      gfx_obj_t m5_display = {&mp_gfxdevice_type, &(M5.Display)};
+      gfx_obj_t m5_display = {&mp_gfxdevice_type, &(M5.Display), NULL};
       touch_obj_t m5_touch = {&mp_touch_type,     &(M5.Touch)  };
 const mic_obj_t m5_mic     = {&mp_mic_type,       &(M5.Mic)    };
 

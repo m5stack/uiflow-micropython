@@ -40,6 +40,7 @@ enum user_tp_t {
 typedef struct _gfx_obj_t {
     mp_obj_base_t base;
     void *gfx;
+    void *font_wrapper;
 } gfx_obj_t;
 
 typedef struct _font_obj_t {
