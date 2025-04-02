@@ -31,6 +31,7 @@ Module
     pm25.rst
     pps.rst
     pwrcan.rst
+    qrcode.rst
     rca.rst
     relay_2.rst
     rs232.rst

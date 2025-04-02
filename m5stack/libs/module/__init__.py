@@ -38,6 +38,7 @@ _attrs = {
     "RCAModule": "rca",
     "PwrCANModule": "pwrcan",
     "PwrCANModuleRS485": "pwrcan",
+    "QRCodeModule": "qrcode",
     "Relay2Module": "relay_2",
     "Relay4Module": "relay_4",
     "RS232Module": "rs232",

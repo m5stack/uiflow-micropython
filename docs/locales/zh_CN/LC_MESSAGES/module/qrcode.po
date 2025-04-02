@@ -1,0 +1,785 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-02 17:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/qrcode.rst:2 0937a2e31ff44d3b8d8ada7421c1c45a
+msgid "QRCode Module"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:8 c5bea96a5efd41c8a885af3d79051838
+msgid ""
+"This library is the driver for Module13.2 QRCode, and the module "
+"communicates via UART."
+msgstr "这个库是 Module13.2 QRCode 的驱动，该模块使用 UART 通信。"
+
+#: ../../en/module/qrcode.rst:10 5ab92b7d84a646908dfb3df45b547086
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/qrcode.rst:12 9af8ebdfac85465286d23d7be7d8e16b
+msgid "|Module13.2 QRCode|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref d48c4ba037a44d138b0792d092640c2f
+msgid "Module13.2 QRCode"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:15 f4855820de604a3d9e71e4331f81b21e
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/module/qrcode.rst:18 ../../en/module/qrcode.rst:81
+#: 3446a012fca347c881f11b136ed124e3 a1775f4475564dd4a5494e775b215754
+msgid "QRCode Scan in Continuous Mode"
+msgstr "连续模式二维码识别"
+
+#: ../../en/module/qrcode.rst:20 6e48d8df20e94b258a218e336d612dab
+msgid "Open the |cores3_qrcode_continuous_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_qrcode_continuous_mode_example.m5f2| 项目。"
+
+#: ../../en/module/qrcode.rst:22 ../../en/module/qrcode.rst:83
+#: 231502ae7fb2405faffd507848de4d02 65a98e7610954a6e9f5eac62a92fd352
+msgid ""
+"In **Continuous Mode**, pressing the button once starts decoding, and "
+"pressing the button again stops decoding."
+msgstr "在连续模式下，按下一次按键模块开始解码，再次按下按键模块停止解码。"
+
+#: ../../en/module/qrcode.rst:24 ../../en/module/qrcode.rst:39
+#: ../../en/module/qrcode.rst:54 ../../en/module/qrcode.rst:69
+#: ../../en/module/qrcode.rst:154 ../../en/module/qrcode.rst:175
+#: ../../en/module/qrcode.rst:194 ../../en/module/qrcode.rst:208
+#: ../../en/module/qrcode.rst:222 ../../en/module/qrcode.rst:241
+#: ../../en/module/qrcode.rst:263 ../../en/module/qrcode.rst:279
+#: ../../en/module/qrcode.rst:295 ../../en/module/qrcode.rst:311
+#: ../../en/module/qrcode.rst:327 ../../en/module/qrcode.rst:345
+#: ../../en/module/qrcode.rst:361 ../../en/module/qrcode.rst:377
+#: ../../en/module/qrcode.rst:393 ../../en/module/qrcode.rst:413
+#: ../../en/module/qrcode.rst:429 ../../en/module/qrcode.rst:449
+#: ../../en/module/qrcode.rst:469 ../../en/module/qrcode.rst:489
+#: ../../en/module/qrcode.rst:509 ../../en/module/qrcode.rst:546
+#: 053e40d9b9664047b79f3e04e58bff27 0a61b214632c4904bceccf6964eeebd8
+#: 1fb6222742474a999c7de421f3edddfe 4730bda370b6462ebb738799d12109a7
+#: a143dc1248894b6594c9162c0d7c818c b262ec6b33994c30bd06821696ade411
+#: dd0034e4dc8e4be1ae165c6f3db78647 e01bd6bc7dc1448d85725757e9d0ec49
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/qrcode.rst:26 ea557fa8b86a4601af5e2629d357799d
+msgid "|cores3_qrcode_continuous_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:29 a822ef06d6d143d9aaccba46dff23e15
+msgid "cores3_qrcode_continuous_mode_example.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:28 ../../en/module/qrcode.rst:43
+#: ../../en/module/qrcode.rst:58 ../../en/module/qrcode.rst:73
+#: ../../en/module/qrcode.rst:91 ../../en/module/qrcode.rst:106
+#: ../../en/module/qrcode.rst:121 ../../en/module/qrcode.rst:136
+#: 0528be4602a14c4c92226c358d50759e 5e3bcbb5d2744f47b1a5ee18399b7b00
+#: 6ef3ce8536774272bfd0b9a00a83ea19 89d3039b068f4e0cb9b3bab1e4b9be05
+#: 8ca1e6c83096431cadf4b073f85029b9 9853435774c04cc191ab2d91ad1224dd
+#: aecf2e6aa48f4adfb9ec7b7f0168af7e bbcf2ef8a01245548d58b8c7ca645561
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/qrcode.rst:30 ../../en/module/qrcode.rst:45
+#: ../../en/module/qrcode.rst:60 ../../en/module/qrcode.rst:75
+#: ../../en/module/qrcode.rst:93 ../../en/module/qrcode.rst:108
+#: ../../en/module/qrcode.rst:123 ../../en/module/qrcode.rst:138
+#: 085a5fd5780c4b8fb3cbf1f7fe080702 088b0d18b100486ab740a0cc6b10fb18
+#: 284253a5bbac49a29164f047d2cabd77 5dfb7fb55f814acfb20238a98d1f7f95
+#: 62adb8137a9642118d118cb1b17bd3f0 637aec3200e7420abc4def63b3ad5f5a
+#: aea1d971b8704aab9651607abb18c457 c72c062293ee46b5af17ef9dbaa1f6c3
+msgid "None"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:33 ../../en/module/qrcode.rst:96
+#: 4b0255b4dcec43a78a86ef2a99927420 8e810f9281194784b4b13a201329e296
+msgid "QRCode Scan in Auto Mode"
+msgstr "自动模式二维码识别"
+
+#: ../../en/module/qrcode.rst:35 981d54317f824e4e95dd89ea66e2cb3b
+msgid "Open the |cores3_qrcode_auto_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_qrcode_auto_mode_example.m5f2| 项目。"
+
+#: ../../en/module/qrcode.rst:37 ../../en/module/qrcode.rst:98
+#: 0538b5de5b764b8ea787e4e94aae0284 3359d8d394604064b70f0acb96539d0b
+msgid ""
+"In **Auto Mode**, the module starts decoding when powered on and cannot "
+"be stopped."
+msgstr "在自动模式下，模块上电开始识别解码，不可停止。"
+
+#: ../../en/module/qrcode.rst:41 0abe1be6bffe45ca99c25dba83849e11
+msgid "|cores3_qrcode_auto_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:30 511ba54f56b7409d80133067128c83a7
+msgid "cores3_qrcode_auto_mode_example.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:48 ../../en/module/qrcode.rst:111
+#: 5093adf617fe4a6a93a7d73841c87df7 7cd8c0cfe1ca43ababb6a50eb226eaee
+msgid "QRCode Scan in Pulse Mode"
+msgstr "脉冲模式二维码识别"
+
+#: ../../en/module/qrcode.rst:50 6b297be299404dfd8a569be25b063630
+msgid "Open the |cores3_qrcode_pulse_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_qrcode_pulse_mode_example.m5f2| 项目。"
+
+#: ../../en/module/qrcode.rst:52 ../../en/module/qrcode.rst:113
+#: 0e7b17041f8749018f8c34feb3c0633e 27719011bb6e45dcb6820a3c312ad500
+msgid ""
+"In **Pulse Mode**, set the TRIG pin to hold a low level for more than "
+"20ms to trigger decoding once."
+msgstr "在脉冲模式下，设置触发引脚超过 20ms 的低电平触发解码一次。"
+
+#: ../../en/module/qrcode.rst:56 2812d6692f14461eaccea136a4b3ea55
+msgid "|cores3_qrcode_pulse_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:31 632c5b8e09324f8aacfb824f98f442dd
+msgid "cores3_qrcode_pulse_mode_example.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:63 ../../en/module/qrcode.rst:126
+#: 40320e2a3cdc4f0aa440f9e70be03856 5074c652db4c4765a671a2a88e4b8b75
+msgid "QRCode Scan in Motion Sensing Mode"
+msgstr "移动感应模式二维码识别"
+
+#: ../../en/module/qrcode.rst:65 6a9eb4ae60aa42f982db43a6a3118a3b
+msgid ""
+"Open the |cores3_qrcode_motion_sensing_mode_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_qrcode_motion_sensing_mode_example.m5f2| 项目。"
+
+#: ../../en/module/qrcode.rst:67 ../../en/module/qrcode.rst:128
+#: 46681f68d5a348ad81f07d76e60592a0 50e21e6e58944b498efcd5e2685b00d9
+msgid ""
+"In **Motion Sensing Mode**, the module automatically triggers decoding "
+"when it detects a change in the scene based on visual recognition "
+"information."
+msgstr "在感应模式下，模块基于视觉识别信息检测到场景变化时，会自动触发解码。"
+
+#: ../../en/module/qrcode.rst:71 5eee8043fbd541fa9e928069d3a9844a
+msgid "|cores3_qrcode_motion_sensing_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:32 bdaa1499c2d74edc88876f64e4cae77d
+msgid "cores3_qrcode_motion_sensing_mode_example.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:78 c98b4fa42d6f4522a43ddd7d073f3e40
+msgid "MicroPython Example:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/module/qrcode.rst:85 ../../en/module/qrcode.rst:100
+#: ../../en/module/qrcode.rst:115 ../../en/module/qrcode.rst:130
+#: ../../en/module/qrcode.rst:158 ../../en/module/qrcode.rst:179
+#: ../../en/module/qrcode.rst:198 ../../en/module/qrcode.rst:212
+#: ../../en/module/qrcode.rst:226 ../../en/module/qrcode.rst:245
+#: ../../en/module/qrcode.rst:267 ../../en/module/qrcode.rst:283
+#: ../../en/module/qrcode.rst:299 ../../en/module/qrcode.rst:315
+#: ../../en/module/qrcode.rst:331 ../../en/module/qrcode.rst:349
+#: ../../en/module/qrcode.rst:365 ../../en/module/qrcode.rst:381
+#: ../../en/module/qrcode.rst:397 ../../en/module/qrcode.rst:417
+#: ../../en/module/qrcode.rst:433 ../../en/module/qrcode.rst:453
+#: ../../en/module/qrcode.rst:473 ../../en/module/qrcode.rst:493
+#: ../../en/module/qrcode.rst:513 ../../en/module/qrcode.rst:550
+#: 248f2123565646ddac1f20c66fb4d49f 4c7ea1b5002e451581cb3020e7340cbc
+#: 6afa7f2bbed345bdb8d132b7c11cc959 a6bb514d7a544abc9c42029836b850a9
+#: bb77fb17700743e38d5858a1457b7cb8 dbd768af743e4c82902062da6865b0ff
+#: e7af55bd323e4df287a63626c7b48760 e82be7d4c04c4e60af2cba7ee1097367
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/qrcode.rst:141 b02c0821b6984e36916efeb7488964cc
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/module/qrcode.rst:144 1c779da748bc4c4fa8c9046944211e72
+msgid "QRCodeModule"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:148 475e9a2769ca451998b31c5b8cdddb35
+msgid "Create an QRCodeModule object."
+msgstr "创建一个 QRCodeModule 对象。"
+
+#: ../../en/module/qrcode.rst 1c61101e57154670815038d9cfa8bf4b
+#: 2ddc6350ab034e9a894e4632ba7d9d54 62ac26e3b61944c6b172d107934ee4d8
+#: 9e122025a8284de0ba85d448c94b23b4
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:150 de800311af384a1c8dd2affc56e847fc
+msgid "UART id."
+msgstr "UART 端口号。"
+
+#: ../../en/module/qrcode.rst:151 e4941959e2ee40b18b3577cefd56911a
+msgid "the UART TX pin."
+msgstr "UART 发送引脚。"
+
+#: ../../en/module/qrcode.rst:152 b76ac621fd42435e830347b746500ff6
+msgid "the UART RX pin."
+msgstr "UART 接收引脚。"
+
+#: ../../en/module/qrcode.rst:156 dd1220e70e9e42319a11d23d2b2e436c
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:6 9567497098104269b8f4c6f6911b2bdf
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:168 832cf7f083e54a6686f3ce07c0ffb1ba
+msgid "Set power."
+msgstr "设置二维码识别模块电源。"
+
+#: ../../en/module/qrcode.rst:170 7551de9ba2bb466cbbaac1b42ac04b00
+msgid "- ``True`` : power on. - ``False`` : power off."
+msgstr "- ``True`` : 打开。 - ``False`` : 关闭。"
+
+#: ../../en/module/qrcode.rst:172 31407ea00534457f8cb8fbc4cecf1c25
+msgid "``True`` : power on."
+msgstr "``True`` : 打开。"
+
+#: ../../en/module/qrcode.rst:173 57471e2904f244838dd7c048297aa775
+msgid "``False`` : power off."
+msgstr "``False`` : 关闭。"
+
+#: ../../en/module/qrcode.rst:177 2ee889e62a15484ba7adb47bf644d796
+msgid "|set_power.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:7 2efbe269b2184740a07bb92130a5b2f7
+msgid "set_power.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:187 06f437ef654841418080450a809e37ce
+msgid "Set trigger pin value."
+msgstr "设置触发引脚电平。"
+
+#: ../../en/module/qrcode.rst:189 14e66996e002473483e9f5cc64aeb8c9
+msgid "- ``0`` : low level. - ``1`` : high level."
+msgstr "- ``0``：低电平。 - ``1``：高电平。"
+
+#: ../../en/module/qrcode.rst:191 588387f286b54b80ad3e02f7d2d52576
+msgid "``0`` : low level."
+msgstr "``0``：低电平。"
+
+#: ../../en/module/qrcode.rst:192 588387f286b54b80ad3e02f7d2d52576
+msgid "``1`` : high level."
+msgstr "``1``：高电平。"
+
+#: ../../en/module/qrcode.rst:196 82d12abc81f74a25b6ec9d70b07f16f3
+msgid "|set_trig.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:8 6375a025bed14ec89aa4044286870744
+msgid "set_trig.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:206 2ad6c00cb9304852b179d24b22ff4067
+msgid "Start decode."
+msgstr "开始解码。"
+
+#: ../../en/module/qrcode.rst:210 1545c0dd414e481b8b110978cbd71f6e
+msgid "|start_decode.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:9 816c6309e3b14e6987ed8921e4803bdd
+msgid "start_decode.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:220 ef1b7d0f0b5d441792677cd22c47472b
+msgid "Stop decode."
+msgstr "停止解码。"
+
+#: ../../en/module/qrcode.rst:224 7b3c072f1fee46f883d34078da5401df
+msgid "|stop_decode.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:10 44b98ae897504a8f8831e001b204ac02
+msgid "stop_decode.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:234 5254f39db77e48e6a36ebb4d0a1d7d82
+msgid "Read decode data."
+msgstr "读取二维码数据。"
+
+#: ../../en/module/qrcode.rst 6c93d3bf963b4527b48ebc0dce7c7f96
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:236 323d2b4432094c2b9c5a0400e13fec89
+msgid "qrcode data."
+msgstr "二维码数据。"
+
+#: ../../en/module/qrcode.rst a5d48cb2285f4dec905ff500c27d5877
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:239 958ec43dda1344078e7bcb04de2799b1
+msgid "If no data is received, return None."
+msgstr "如果未识别到，则返回 None。"
+
+#: ../../en/module/qrcode.rst:243 a96fa88d9e2e49e0bd59008304ad1171
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:11 24f53f5ddc514695ba121c25f1fc898a
+msgid "read.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:253 f4a78c7476784fdabfa313d6115d8046
+msgid "Set trigger mode."
+msgstr "设置触发模式。"
+
+#: ../../en/module/qrcode.rst:255 53a2a9e97c994a14bdf5a0d4256ea165
+msgid ""
+"The trigger mode. Available options:  - ``TRIGGER_MODE_KEY``: Key Mode, "
+"Triggers a single decode; decoding stops after a successful read. - "
+"``TRIGGER_MODE_CONTINUOUS``: Continuous Mode, Triggers continuous "
+"decoding; decoding continues even after a successful read and stops only "
+"when triggered again. - ``TRIGGER_MODE_AUTO``: Auto Mode, Performs "
+"continuous decoding upon power-up and cannot be stopped. - "
+"``TRIGGER_MODE_PULSE``: Pulse Mode, The Trig pin's low-level signal "
+"triggers decoding, which stops after a successful read or when the single"
+" read time limit is reached. - ``TRIGGER_MODE_MOTION_SENSING``: Motion "
+"Sensing Mode, Uses image recognition; decoding starts when a scene change"
+" is detected."
+msgstr "触发模式，可选项： - ``TRIGGER_MODE_KEY``: 按键模式，触发引脚低电平开始解码，高电平停止解码。"
+" - ``TRIGGER_MODE_CONTINUOUS``: 连续模式: 调用 start_decode() 开始解码，调用 stop_decode() 停止解码。"
+" - ``TRIGGER_MODE_AUTO``: 自动模式: 上电开始解码，不可停止。"
+" - ``TRIGGER_MODE_PULSE``: 脉冲模式，触发引脚 20ms 以上低电平触发一次解码。"
+" - ``TRIGGER_MODE_MOTION_SENSING``: 移动感应模式，使用图像检测，当检测到场景发生变化时触发解码。"
+
+#: ../../en/module/qrcode.rst:255 6a58b9fd7069460e83cebe10c6cc8a10
+msgid "The trigger mode. Available options:"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:257 7240a63db2e845d28053c4c02415265d
+msgid ""
+"``TRIGGER_MODE_KEY``: Key Mode, Triggers a single decode; decoding stops "
+"after a successful read."
+msgstr "``TRIGGER_MODE_KEY``: 按键模式，触发引脚低电平开始解码，高电平停止解码。""
+
+#: ../../en/module/qrcode.rst:258 f9aa5a8ce6ff4c9292d4a4e36029720f
+msgid ""
+"``TRIGGER_MODE_CONTINUOUS``: Continuous Mode, Triggers continuous "
+"decoding; decoding continues even after a successful read and stops only "
+"when triggered again."
+msgstr "``TRIGGER_MODE_CONTINUOUS``: 连续模式: 调用 start_decode() 开始解码，调用 stop_decode() 停止解码。"
+
+#: ../../en/module/qrcode.rst:259 3b4aee48c2d94e4aa3b8e2dcc581e541
+msgid ""
+"``TRIGGER_MODE_AUTO``: Auto Mode, Performs continuous decoding upon "
+"power-up and cannot be stopped."
+msgstr "``TRIGGER_MODE_AUTO``: 自动模式: 上电开始解码，不可停止。"
+
+#: ../../en/module/qrcode.rst:260 5bb2013b36db47888e946c51571ac276
+msgid ""
+"``TRIGGER_MODE_PULSE``: Pulse Mode, The Trig pin's low-level signal "
+"triggers decoding, which stops after a successful read or when the single"
+" read time limit is reached."
+msgstr "``TRIGGER_MODE_PULSE``: 脉冲模式，触发引脚 20ms 以上低电平触发一次解码。"
+
+#: ../../en/module/qrcode.rst:261 481d20d870a748ee821d404c867d64ec
+msgid ""
+"``TRIGGER_MODE_MOTION_SENSING``: Motion Sensing Mode, Uses image "
+"recognition; decoding starts when a scene change is detected."
+msgstr "``TRIGGER_MODE_MOTION_SENSING``: 移动感应模式，使用图像检测，当检测到场景发生变化时触发解码。"
+
+#: ../../en/module/qrcode.rst:265 82d12abc81f74a25b6ec9d70b07f16f3
+msgid "|set_trigger_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:12 6375a025bed14ec89aa4044286870744
+msgid "set_trigger_mode.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:275 f808269cfba243059913f1cfdd204d1a
+msgid "Set decode delay."
+msgstr "设置命令解码延迟 (按键模式下)。"
+
+#: ../../en/module/qrcode.rst:277 15f85f004aed4f42b73a8b629741fd04
+msgid "decode delay time(ms), 0 means continuous decoding until success."
+msgstr "解码延迟时间（单位：毫秒），0 表示持续解码直到成功。"
+
+#: ../../en/module/qrcode.rst:281 88e3f963945f43868115ec4777975657
+msgid "|set_decode_delay.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:13 3a6c74bdeb0d4e39a0a7716e91e6b8b0
+msgid "set_decode_delay.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:291 06f437ef654841418080450a809e37ce
+msgid "Set trigger timeout."
+msgstr "设置触发超时。(脉冲模式下)。"
+
+#: ../../en/module/qrcode.rst:293 262f5669a5744213a383d88b66794983
+msgid ""
+"trigger timeout time(ms), Decoding will automatically stop when the "
+"duration exceeds this value."
+msgstr "触发超时时间（单位：毫秒），解码持续时间超过该值时自动停止解码。"
+
+#: ../../en/module/qrcode.rst:297 ac23d836c11a4dd39ecbce214d2b4d60
+msgid "|set_trigger_timeout.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:14 bf2124c13fac493b985c587097b16743
+msgid "set_trigger_timeout.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:307 240937adec014053922bd0ed504880cd
+msgid "Set motion detection sensitivity. (in Motion Sensing Mode)"
+msgstr "设置移动感应灵敏度。(感应模式下)"
+
+#: ../../en/module/qrcode.rst:309 12873cbf75a247d096dfd62ee0f4087f
+msgid ""
+"sensitivity level. Range: 1~5. The higher the level, the more sensitive "
+"it is to scene changes."
+msgstr "灵敏度等级，范围 1-5，等级越高对场景变化越敏感。默认等级为 3。"
+
+#: ../../en/module/qrcode.rst:313 59cc032fb3404d6d919a6421f3a04020
+msgid "|set_motion_sensitivity.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:15 1d6b8ba25a8b407ca0eb6167b903137b
+msgid "set_motion_sensitivity.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:323 38ec2ffd65fd4912b2c62341f67fe376
+msgid "Set continuous decode delay. (in Motion Sensing Mode)"
+msgstr "设置持续解码延迟时间。(感应模式下)"
+
+#: ../../en/module/qrcode.rst:325 e68f792ec91a4b0aa03a26f6a659be64
+msgid "delay time(unit: 100ms), 0 means continuous decoding until timeout."
+msgstr "延迟时间，单位为 100 毫秒。值为 0 表示持续解码直到超时。"
+
+#: ../../en/module/qrcode.rst:329 4dcee9d9e3a04c53ac763a4beca0932c
+msgid "|set_continuous_decode_delay.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:16 b38bfec7173c48fd954482350bdeb0f0
+msgid "set_continuous_decode_delay.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:339 b4768ba0bd204a029b6f355b7cb42598
+msgid "Set trigger decode delay. (in Motion Sensing Mode)"
+msgstr "设置触发解码延迟时间(感应模式下)"
+
+#: ../../en/module/qrcode.rst:341 96731c0de15b4bd58940cb1c1d540c07
+msgid ""
+"Sets the trigger decoding delay time. This is the delay between re-"
+"entering the scene change detection phase and starting recognition again "
+"after detecting a change."
+msgstr "触发解码延迟时间。当重新进入检测场景变化阶段，到检测到变化再次开始识读之间的延迟时长。"
+
+#: ../../en/module/qrcode.rst:343 6d2b5fb2328743e5a91d1b9a216ee4a5
+msgid "Trigger decode delay time(unit: ms)."
+msgstr "触发解码延迟时间，单位为毫秒。"
+
+#: ../../en/module/qrcode.rst:347 0feb040fa16b4deaac3d0b828aae3ea9
+msgid "|set_trigger_decode_delay.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:17 0a63bcb7fad646749df16d8ed927a71c
+msgid "set_trigger_decode_delay.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:357 7a4af6f5a6dd4b6a8ad31266e2eb8ed7
+msgid "Set same code interval."
+msgstr "设置同码间隔时间。"
+
+#: ../../en/module/qrcode.rst:359 230045275d534f219e91586ca991b91c
+msgid "The interval time for repeated recognition of the same code (unit: ms)."
+msgstr "相同条码的重复识读间隔时间，单位为毫秒。"
+
+#: ../../en/module/qrcode.rst:363 8f5612f2987446d583728402d1ea87ec
+msgid "|set_same_code_interval.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:18 891a4399954349429b680bfbd0f79af8
+msgid "set_same_code_interval.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:373 13d69b79095540aca5e1447f84fe9e41
+msgid "Set difference code interval."
+msgstr "设置异码间隔时间。"
+
+#: ../../en/module/qrcode.rst:375 a3f5314d284d4bf3905a7d5922f60e8b
+msgid ""
+"The interval time for repeated recognition of the difference code (unit: "
+"ms)."
+msgstr "不同码的识读间隔时间，单位为毫秒。"
+
+#: ../../en/module/qrcode.rst:379 59fbced5d3424e4cb489e688ac683cab
+msgid "|set_diff_code_interval.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:19 841dbbc64d584c4eb4b4a4f902f2c7eb
+msgid "set_diff_code_interval.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:389 70f0c00d25ff4604b7c8928e0e0b71b8
+msgid "Set same code no delay."
+msgstr "设置同码非延迟输出。"
+
+#: ../../en/module/qrcode.rst:391 feb603cccec6429cacada6e7d03311f4
+msgid ""
+"Whether to enable non-delay output for the same code. True means enabled,"
+" False means disabled."
+msgstr "是否开启同码非延迟输出，True 表示开启，False 表示关闭。"
+
+#: ../../en/module/qrcode.rst:395 92b808563ee443c08f1fee8446bde22f
+msgid "|set_same_code_no_delay.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:20 584f9f0522a14676858ac27b23037a6e
+msgid "set_same_code_no_delay.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:405 5039e18385cc4d308e7770a99173256b
+msgid "Set fill light mode."
+msgstr "设置补光灯模式。"
+
+#: ../../en/module/qrcode.rst:407 51e05556426744459a5b1d79e7480b47
+msgid ""
+"The fill light mode. Available options:  - ``FILL_LIGHT_OFF``: Light off."
+" - ``FILL_LIGHT_ON``: Light on. - ``FILL_LIGHT_ON_DECODE``: Light on "
+"during decoding."
+msgstr "补光灯模式，可选项：- ``FILL_LIGHT_OFF``: 常灭。"
+" - ``FILL_LIGHT_ON``: 常亮。 - ``FILL_LIGHT_ON_DECODE``: 解码时亮。"
+
+#: ../../en/module/qrcode.rst:407 3403058ab58a48fabef5521109be4ce9
+msgid "The fill light mode. Available options:"
+msgstr "补光灯模式，可选项："
+
+#: ../../en/module/qrcode.rst:409 7ae1c7ebd34845c58db1f7a64e684a35
+msgid "``FILL_LIGHT_OFF``: Light off."
+msgstr "``FILL_LIGHT_OFF``: 常灭。"
+
+#: ../../en/module/qrcode.rst:410 5360c9c83057423c8fb80b2881d3d76f
+msgid "``FILL_LIGHT_ON``: Light on."
+msgstr "``FILL_LIGHT_ON``: 常亮。"
+
+#: ../../en/module/qrcode.rst:411 4918186c32aa410690ab528fc1e7fcb8
+msgid "``FILL_LIGHT_ON_DECODE``: Light on during decoding."
+msgstr "``FILL_LIGHT_ON_DECODE``: 解码时亮。"
+
+#: ../../en/module/qrcode.rst:415 a0b2896f7a1b493b9dd9c923757b181a
+msgid "|set_fill_light_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:21 e6f15be9a2dc44e3bfaa6574af4979eb
+msgid "set_fill_light_mode.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:425 87d6d09a37e7482a94d00ce0bc186fe4
+msgid "Set fill light brightness."
+msgstr "设置补光灯亮度。"
+
+#: ../../en/module/qrcode.rst:427 57f773a0199e4c2ab76bfc5c138afe7b
+msgid "The fill light brightness. Range: 0~100."
+msgstr "补光灯亮度，范围：0~100。"
+
+#: ../../en/module/qrcode.rst:431 da056e3941744dd7ab00553606bc0a2d
+msgid "|set_fill_light_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:22 f787a0f262164452af63c0f85afb45b7
+msgid "set_fill_light_brightness.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:441 cb458c2dace84f22869425f26b9dd249
+msgid "Set positioning light mode."
+msgstr "设置定位灯模式"
+
+#: ../../en/module/qrcode.rst:443 a30565f21c9f49559def270d49e1fccb
+msgid ""
+"The positioning light mode. Available options:  - ``POS_LIGHT_OFF``: "
+"Light off. - ``POS_LIGHT_ON_DECODE``: Light on during decoding. - "
+"``POS_LIGHT_FLASH_ON_DECODE``: Light flash during decoding."
+msgstr "定位灯模式，可选项： - ``POS_LIGHT_OFF``: 常灭。"
+" - ``POS_LIGHT_ON_DECODE``: 解码时亮。 - ``POS_LIGHT_FLASH_ON_DECODE``: 解码时闪烁。"
+
+#: ../../en/module/qrcode.rst:443 e6f871a5b5294cf2b12fd4b6360f4d0e
+msgid "The positioning light mode. Available options:"
+msgstr "定位灯模式，可选项目："
+
+#: ../../en/module/qrcode.rst:445 9229f937f77f448abf6b31dd34f9dc60
+msgid "``POS_LIGHT_OFF``: Light off."
+msgstr "``POS_LIGHT_OFF``: 常灭。"
+
+#: ../../en/module/qrcode.rst:446 96195466961a4928a292592d892f4512
+msgid "``POS_LIGHT_ON_DECODE``: Light on during decoding."
+msgstr "``POS_LIGHT_ON_DECODE``: 解码时亮。"
+
+#: ../../en/module/qrcode.rst:447 e7b2495d105f437c9a53971c6263e810
+msgid "``POS_LIGHT_FLASH_ON_DECODE``: Light flash during decoding."
+msgstr "``POS_LIGHT_FLASH_ON_DECODE``: 解码时闪烁。"
+
+#: ../../en/module/qrcode.rst:451 e9ba2ef0e5b4463ca97d61944cd5a5ad
+msgid "|set_pos_light_mode.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:23 3fbc55962a7d4c549edc1c4ca57d13d2
+msgid "set_pos_light_mode.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:461 634e464ca4cf41c6ab33d00d6cba1ea5
+msgid "Set startup tone."
+msgstr "设置启动提示音。"
+
+#: ../../en/module/qrcode.rst:463 58f8d4ffe19f4a79aba9496d833fecca
+msgid ""
+"- ``0``: Disable startup tone. - ``1``: Play 4 beeps. - ``2``: Play 2 "
+"beeps."
+msgstr "- ``0``: 关闭启动提示音。 - ``1``: 4 声。 - ``2``: 2 声。"
+
+#: ../../en/module/qrcode.rst:465 6506c092b43b41f1b65e0d859ee00898
+msgid "``0``: Disable startup tone."
+msgstr "``0``: 关闭启动提示音。"
+
+#: ../../en/module/qrcode.rst:466 588387f286b54b80ad3e02f7d2d52576
+msgid "``1``: Play 4 beeps."
+msgstr "``1``: 4 声。"
+
+#: ../../en/module/qrcode.rst:467 0bd3d54391a94ea281702a9f909bbc6d
+msgid "``2``: Play 2 beeps."
+msgstr "``2``: 2 声。"
+
+#: ../../en/module/qrcode.rst:471 fe94387ad0be473999835309b14882d3
+msgid "|set_startup_tone.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:24 f345b80f309c4822b0b4747886d799f0
+msgid "set_startup_tone.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:481 09069075814f4930a4f3eb7bd20108b5
+msgid "Set decode success beep."
+msgstr "设置解码成功提示音。"
+
+#: ../../en/module/qrcode.rst:483 1b48242163734a3eb96c9f4ac02d07f2
+msgid ""
+"- ``0``: No prompt sound. - ``1``: Play prompt sound once. - ``2``: Play "
+"prompt sound twice."
+msgstr "- ``0``: 无提示音。 - ``1``: 播放1次。 - ``2``: 播放2次。"
+
+#: ../../en/module/qrcode.rst:485 3c7bc8459776451caaf76187f6ee7903
+msgid "``0``: No prompt sound."
+msgstr "``0``: 无提示音。"
+
+#: ../../en/module/qrcode.rst:486 6a68fa820cef44b0b66d6d2a25612c29
+msgid "``1``: Play prompt sound once."
+msgstr "``1``: 播放1次。"
+
+#: ../../en/module/qrcode.rst:487 b31b6f7a7c094c7b9af986efa04296ea
+msgid "``2``: Play prompt sound twice."
+msgstr "``2``: 播放2次。"
+
+#: ../../en/module/qrcode.rst:491 ac65c0dfd5fb4d919118046747710bda
+msgid "|set_decode_success_beep.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:25 b870c3b2a2694b7a8784f7cce85f2671
+msgid "set_decode_success_beep.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:501 b7c9dc8f64184cbe8d07a34b379caa6b
+msgid "Set case conversion."
+msgstr "设置大小写转换。"
+
+#: ../../en/module/qrcode.rst:503 50d7b7abd2ca4fdfadb0134f932bf889
+msgid ""
+"- ``0``: Off (Original data). - ``1``: Convert to uppercase. - ``2``: "
+"Convert to lowercase."
+msgstr "- ``0``: 不转换。 - ``1``: 转为大写。 - ``2``: 转为小写。"
+
+#: ../../en/module/qrcode.rst:505 6a952872d904475b94b6e72aab2e6f62
+msgid "``0``: Off (Original data)."
+msgstr "``0``: 不转换。"
+
+#: ../../en/module/qrcode.rst:506 b1c9da7007634449b7332fdec567f397
+msgid "``1``: Convert to uppercase."
+msgstr "``1``: 转为大写。"
+
+#: ../../en/module/qrcode.rst:507 6d6223e4e839426d9dcb9feed120e772
+msgid "``2``: Convert to lowercase."
+msgstr "``2``: 转为小写。"
+
+#: ../../en/module/qrcode.rst:511 664eac5cc92b452fb5948d538ba9beef
+msgid "|set_case_conversion.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:26 74ecd23578f54b28be0bcdbb5516f814
+msgid "set_case_conversion.png"
+msgstr ""
+
+#: ../../en/module/qrcode.rst:523 17937105812e47e58f999eedb0d711f7
+msgid ""
+"- ``0``: No protocol - ``1``: Format 1: [0x03] + Data Length (2 bytes) + "
+"Data - ``2``: Format 2: [0x03] + Data Length + Number of Barcodes + Code "
+"1 Data Length + Code 1 Data + ... + CRC - ``3``: Format 3: [0x03] + Data "
+"Length + Number of Barcodes + Code 1 ID + Code 1 Data Length + Code 1 "
+"Data + ... + CRC"
+msgstr ""
+"- ``0``: 无协议- ``1``: 格式 1：[0x03] + 数据长度(2bytes) + 数据- ``2``: 格式 2：[0x03] "
+"+ 数据长度 + 条码个数 + 条码 1 数据长度 + 条码 1 数据 +... + CRC- ``3``: 格式 3：[0x03] + 数据长度"
+" + 条码个数 + 条码 1ID 号 + 条码 1 数据长度 + 条码 1 数据 + ... + CR"
+
+#: ../../en/module/qrcode.rst:525 bc3a96b96dac45f6b08d22e5c54d6865
+msgid "``0``: No protocol"
+msgstr "`0``: 无协议 ""
+
+#: ../../en/module/qrcode.rst:526 e3bac21632a048b49697aa294f1c1d78
+msgid "``1``: Format 1: [0x03] + Data Length (2 bytes) + Data"
+msgstr "``1``: 格式 1：[0x03] + 数据长度(2bytes) + 数据"
+
+#: ../../en/module/qrcode.rst:527 b7052ffd7e1844d194230df57ee448ad
+msgid ""
+"``2``: Format 2: [0x03] + Data Length + Number of Barcodes + Code 1 Data "
+"Length + Code 1 Data + ... + CRC"
+msgstr "``2``: 格式 2：[0x03] + 数据长度 + 条码个数 + 条码 1 数据长度 + 条码 1 数据 +... + CRC"
+
+#: ../../en/module/qrcode.rst:528 63a6d0442d37475f85da5f445dbddd97
+msgid ""
+"``3``: Format 3: [0x03] + Data Length + Number of Barcodes + Code 1 ID + "
+"Code 1 Data Length + Code 1 Data + ... + CRC"
+msgstr ""
+"``3``: 格式 3：[0x03] + 数据长度 + 条码个数 + 条码 1ID 号 + 条码 1 数据长度 + 条码 1 数据 + ... +"
+" CRC"
+
+#: ../../en/module/qrcode.rst:530 eb03557febad49ab9e149460632febd1
+msgid "CRC generate reference program."
+msgstr "CRC 生成参考程序。"
+
+#: ../../en/module/qrcode.rst:548 4b7bcb829d9a49868d4dada4d84c521c
+msgid "|set_protocol_format.png|"
+msgstr ""
+
+#: ../../en/refs/module.qrcode.ref:27 0c6a69771ffb47e2b51710c95ffffef3
+msgid "set_protocol_format.png"
+msgstr ""
+ 

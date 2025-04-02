@@ -14,6 +14,8 @@ package(
         "hdriver.py",
         "motion.py",
         "pwm.py",
+        "qrcode.py",
+        "qrcode2.py",
         "rs232.py",
         "speaker.py",
         "stepmotor.py",

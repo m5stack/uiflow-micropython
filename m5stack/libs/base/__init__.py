@@ -13,6 +13,8 @@ _attrs = {
     "Motion": "motion",
     "MotionBase": "motion",
     "AtomicPWMBase": "pwm",
+    "AtomicQRCodeBase": "qrcode",
+    "AtomicQRCode2Base": "qrcode2",
     "AtomRS232": "rs232",
     "AtomRS485": "rs232",
     "SpeakerBase": "speaker",
