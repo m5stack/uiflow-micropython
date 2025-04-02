@@ -22,6 +22,7 @@ HAT
     servo.rst
     servo8.rst
     speaker.rst
+    speaker2.rst
     thermal.rst
     tof.rst
     vibrator.rst
