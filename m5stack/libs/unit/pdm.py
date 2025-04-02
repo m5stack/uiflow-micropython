@@ -9,7 +9,7 @@ class PDMUnit:
     """PDM Unit class.
 
     :param list | tuple port: Connect to the PDM Unit.
-    :param int i2s_port: I2S port number.
+    :param int i2s_port: I2S port number(0 or 1, 2 is automatic select of available ports).
     :param int sample_rate: Sample rate.
 
     UiFlow2 Code Block:
@@ -66,4 +66,4 @@ class PDMUnit:
         return getattr(self._mic, name)
 
     def deinit(self):
-        self._mic.deinit()
+        self._mic.end()
