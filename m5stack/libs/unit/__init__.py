@@ -98,6 +98,8 @@ _attrs = {
     "RelayUnit": "relay",
     "Relay4Unit": "relay4",
     "Relay2Unit": "relay2",
+    "RF433RUnit": "rf433r",
+    "RF433TUnit": "rf433t",
     "RFIDUnit": "rfid",
     "RGBUnit": "rgb",
     "Roller485Unit": "roller485",

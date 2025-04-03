@@ -1,0 +1,62 @@
+RF433R Unit 
+============================
+
+.. sku: U113
+
+.. include:: ../refs/unit.rf433r.ref
+
+This library is the driver for Unit RF433R.
+
+Support the following products:
+
+    |Unit RF433R|
+
+.. note:: ESP32-S3 related devices, such as CoreS2 and AtomS3, are not supported yet.
+
+UiFlow2 Example:
+--------------------------
+
+Receive data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open the |basic_rf433r_recv_example.m5f2| project in UiFlow2.
+
+The example program demonstrates communication using RF433TUnit and RF433RUnit.
+Please refer to the sending end. `RF433TUnit <https://uiflow-micropython.readthedocs.io/en/latest/unit/rf433t.html>`_
+
+UiFlow2 Code Block:
+
+    |basic_rf433r_recv_example.png|
+
+Example output:
+
+    None
+ 
+MicroPython Example:
+--------------------------
+
+Receive data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The example program demonstrates communication using RF433TUnit and RF433RUnit.
+Please refer to the sending end. `RF433TUnit <https://uiflow-micropython.readthedocs.io/en/latest/unit/rf433t.html>`_
+ 
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/rf433r/basic_rf433r_recv_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+**API**
+--------------------------
+
+RF433RUnit
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: unit.rf433r.RF433RUnit
+    :members:

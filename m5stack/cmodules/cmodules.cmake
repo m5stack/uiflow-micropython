@@ -22,6 +22,10 @@ include(${CMAKE_CURRENT_LIST_DIR}/m5can/m5can.cmake)
 # add m5unified module
 include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 
+# add rf433 module
+include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
+
+
 if(ADF_MODULE_ENABLE)
     include(${CMAKE_CURRENT_LIST_DIR}/adf_module/micropython.cmake)
 endif()

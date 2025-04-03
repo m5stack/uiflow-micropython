@@ -97,6 +97,8 @@ package(
         "relay.py",
         "relay2.py",
         "relay4.py",
+        "rf433r.py",
+        "rf433t.py",
         "rfid.py",
         "rgb.py",
         "roller485.py",
