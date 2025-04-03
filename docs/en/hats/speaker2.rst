@@ -56,7 +56,7 @@ Example output:
 Speaker2
 ^^^^^^^^^
 
-.. autoclass:: unit.speaker2.Speaker2
+.. autoclass:: hat.speaker2.Speaker2Hat
     :members:
 
     Speaker2 class inherits Speaker class, See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details.
