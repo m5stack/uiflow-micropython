@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
+"PO-Revision-Date: 2025-04-03 11:47+0800\n"
+"Last-Translator: \n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../../en/software/tcp.server.rst:2 1820d1291c3946aeba886b677559d53a
+msgid "TCP Server"
+msgstr "TCP 服务端"
+
+#: ../../en/software/tcp.server.rst:7 b998e3a5e2bc48aba1243e0aadff4abd
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例"
+
+#: ../../en/software/tcp.server.rst:10 ../../en/software/tcp.server.rst:28
+#: 73c473783aa2481aa63a8b5af7cd7943 84a1ceabd4434f7094e492a8cd8c267b
+msgid "echo server"
+msgstr "回显服务器"
+
+#: ../../en/software/tcp.server.rst:12 1002ffeb6b114852b19a96aaa70d8aeb
+msgid "Open the |cores3_tcp_server_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_tcp_server_example.m5f2| 项目。"
+
+#: ../../en/software/tcp.server.rst:14 ../../en/software/tcp.server.rst:30
+#: 02330608bc7a49b4af56f213b3c99246 b1b82fddb33846b7844c0a84b77102ad
+msgid "This example creates a TCP server that echoes the received data."
+msgstr "此示例创建一个回显接收数据的 TCP 服务器。"
+
+#: ../../en/software/tcp.server.rst:16 ../../en/software/tcp.server.rst:58
+#: ../../en/software/tcp.server.rst:78 ../../en/software/tcp.server.rst:103
+#: ../../en/software/tcp.server.rst:124 ../../en/software/tcp.server.rst:144
+#: ../../en/software/tcp.server.rst:166 ../../en/software/tcp.server.rst:191
+#: ../../en/software/tcp.server.rst:218 ../../en/software/tcp.server.rst:244
+#: ../../en/software/tcp.server.rst:267 133c4200323f46bf91ec8b5730bcc8f7
+#: 42cad91d915e470d887693a43e4e66b9 4a8e0802016a40dfb120168964a31cbf
+#: 4d58f3e99a8a49738ce4b89e658d446e 6606f468d20e464d8a6039becd5bb64f
+#: 7f9118e6c4b2499dbed222d01923a6aa 82a0452f69204155a597ba2c9017daf6
+#: aff861bd10db46f79f20637b07c307c1 c7a2fad5422a435abb0222ccb0051f06
+#: fc23315b9d1249aba30e9a997d9e0887 feeb123815bd41a8a0bff2dee199f14a
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/software/tcp.server.rst:18 e929d916ee26423a9f7b30c3d601b298
+msgid "|cores3_tcp_server_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:18 769e98d140c04a8bacea34cf01e052bf
+msgid "cores3_tcp_server_example.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:20 ../../en/software/tcp.server.rst:38
+#: 68881b12c2cf4ee0adcb773173fc98a6 f7031b50fae24e0ca6906784a6488ffd
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/software/tcp.server.rst:22 ../../en/software/tcp.server.rst:40
+#: ../../en/software/tcp.server.rst:215 ../../en/software/tcp.server.rst:216
+#: ../../en/software/tcp.server.rst:241 2850cfdb83344b19a31c081d11cc8fb9
+#: 4e89e1375af7457b9aabf039b05ed70c 65c99a73cbe4460a99ce8fc525f17373
+#: bd1e7591deb240e49bcecee10db8afed d7602ea1e45446239ce095880fdc29d2
+msgid "None"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:25 d27bcfa0f8b84957bbd1cbc37e0a619b
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/software/tcp.server.rst:32 ../../en/software/tcp.server.rst:62
+#: ../../en/software/tcp.server.rst:84 ../../en/software/tcp.server.rst:107
+#: ../../en/software/tcp.server.rst:128 ../../en/software/tcp.server.rst:148
+#: ../../en/software/tcp.server.rst:170 ../../en/software/tcp.server.rst:195
+#: ../../en/software/tcp.server.rst:222 ../../en/software/tcp.server.rst:248
+#: ../../en/software/tcp.server.rst:271 058673a329244dbebafd0e96f35eeb84
+#: 160dc1f30a054f7eb10056d021801869 232711df877243c1a742ccc982b16cbe
+#: 3e1b41468a8f4ab7b243eb90a40f8675 580e894cc7574b71a029251f86e47ab4
+#: 61fa1535432547eebfd150a501e9e102 6d219a908be446d382f370ae1d509efd
+#: 7447d8d5a3b546b786c12406d6f219c4 cc52d336609d4f86ae394eb814188614
+#: de88b0f6808a41c4b593f84e8c4007ba e7c5464cf1b746328cae44fead1ca930
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/software/tcp.server.rst:44 766a41c5280c415288d42a00540789d1
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/software/tcp.server.rst:51 bf855f7a03ba453ead9b547af7beca26
+msgid "Create a socket object and bind it to an address."
+msgstr "创建一个套接字对象并将其绑定到一个地址。"
+
+#: ../../en/software/tcp.server.rst 155cbf56871c49d798372b95ff4739b2
+#: 2f15c46e9a3e403ca1dbed3c9bae48e5 76b3b5c8497c406a8c2ab1ab901ce5dd
+#: 985c1c7ebbff4de6a99fc0378f858412 b9086b0e05f34a8fb2d79cac12b609ae
+#: cc4790e6404d41a692bc28af71b1880b
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:53 1e038a24153a4741a06d87084a6619ac
+msgid "A tuple containing the server IP address and port number."
+msgstr "包含服务器 IP 地址和端口号的元组。"
+
+#: ../../en/software/tcp.server.rst:54 97c62995bc694283a8c754066ec4a002
+msgid "The maximum number of queued connections. Default is 5."
+msgstr "排队连接的最大数量。默认值为 5。"
+
+#: ../../en/software/tcp.server.rst 1c5a0e8fd5754dd7a95c50b8809b0ce0
+#: 46c35b39b0bb41e7ab8d7e9bdb3910ca 74d158ab129244428971628aad13216d
+#: 8261eb42f9db49279d0feb3168501f0a bc2c5c66199748b781014c06bec59ab6
+#: c653dc06337f4d128cd9c95918d6365b f2d76f43b71a4560a0e758fbbd184403
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:55 4b8383b2806e4ababb679af0543e91b3
+msgid "A socket object."
+msgstr "一个套接字对象。"
+
+#: ../../en/software/tcp.server.rst 19dc63c8bb3b4772abd0d58834c099f9
+#: 47e6a2971e604a06a2f055c2885d2e9d 4c3c662b328b4bbbaa5406101d340ae9
+#: 5e77a7ed2577416fae4e211c369938ec a2d8d6274fbe4a22bf151155a767b370
+#: af0b591937e34daa8630428d8897b09b f4b678a773df459493415a28b0754922
+msgid "Return type"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:60 0ada19ad18674374a6ec50c95922acf2
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:5 525979b4984b44a1a9d4cbb8f7966528
+msgid "init.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:76 b130a72a7be545e9b05181c985a4cd7a
+msgid "Close the socket connection."
+msgstr "关闭套接字连接。"
+
+#: ../../en/software/tcp.server.rst:80 a68ebf411f6245058acf8344e144bfa3
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:2 cc822d7df7064f2d9c4494ca51a26a61
+msgid "close.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:82 4fbbbe3fc5da472781e826da0ad0d3aa
+msgid "|close_client.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:3 0e2dbcd4a26d446599b4b8664689e5c2
+msgid "close_client.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:94 701798a5f33549c39694bcfa2e2785c7
+msgid ""
+"Accept a connection. The socket must be bound to an address and listening for "
+"connections. The return value is a pair (conn, address) where conn is a new "
+"socket object usable to send and receive data on the connection, and address is "
+"the address bound to the socket on the other end of the connection."
+msgstr ""
+"接受连接。套接字必须绑定到地址并监听连接。返回值是一对 (conn, address)，其中 "
+"conn 是可用于在连接上发送和接收数据的新套接字对象，address 是绑定到连接另一端套"
+"接字的地址。"
+
+#: ../../en/software/tcp.server.rst:100 5d18f6dcd92842c6b9b7bb7a0dbae014
+msgid "A tuple containing the client socket and the address of the client."
+msgstr "包含客户端套接字和客户端地址的元组。"
+
+#: ../../en/software/tcp.server.rst:105 3abcf19293254f7aba6930d36105016d
+msgid "|accept.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:4 133a1b858f8c4d9d9fb756be7e6f5837
+msgid "accept.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:118 dc7b2d0de4ae4ca380196ef184061821
+msgid "Receive data from the socket."
+msgstr "从套接字接收数据。"
+
+#: ../../en/software/tcp.server.rst:120 cffec4f47b53428d9a9f464f9c303b66
+msgid "The maximum amount of data to be received at once."
+msgstr "一次可接收的最大数据量。"
+
+#: ../../en/software/tcp.server.rst:121 ../../en/software/tcp.server.rst:141
+#: 0dbf1436e61f49388a28471ababdb372 36fbd28a58b54579bef060213cce3027
+msgid "The received data."
+msgstr "接收到的数据。"
+
+#: ../../en/software/tcp.server.rst:126 a2a678fece474075be1a8900a9285c5b
+msgid "|recv.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:7 27d2d8b6609e41b5916742efc48dbdd0
+msgid "recv.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:139 f945e7bfd0224bfd90a30ed652b6d59d
+msgid "Read data from the socket."
+msgstr "从套接字读取数据。"
+
+#: ../../en/software/tcp.server.rst:146 30b616a5692341338cb33087e7aa070e
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:6 1b522d3a45a8481494689e007285e06a
+msgid "read.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:159 0b98bef3f43d4aa19555d132d37e9d49
+msgid "Send data to the socket. The socket must be connected to a remote socket."
+msgstr "向套接字发送数据。该套接字必须连接到远程套接字。"
+
+#: ../../en/software/tcp.server.rst:161 ../../en/software/tcp.server.rst:186
+#: 0bb765886b7f463890510ff92e55ea39 f878fa9c6842450d9f7db5c634f1640f
+msgid "The data to be sent."
+msgstr "要发送的数据。"
+
+#: ../../en/software/tcp.server.rst:163 ../../en/software/tcp.server.rst:188
+#: 8739cdc28ea0400d9baf807193ed9df5 a1f1cb37bf4c4f2981a231601ae3d176
+msgid "The number of bytes sent."
+msgstr "已发送的字节数。"
+
+#: ../../en/software/tcp.server.rst:168 216bf30f73334510a57c2ba5cb328fd8
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:9 a1acf3010c67447482f6b272cdd81bb8
+msgid "send.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:181 9f48d1cd185f484eaf5937abea608f5b
+msgid ""
+"Write the buffer of bytes to the socket. This function will try to write all "
+"data to a socket (no “short writes”). This may be not possible with a non-"
+"blocking socket though, and returned value will be less than the length of buf."
+msgstr ""
+"将字节缓冲区写入套接字。此函数将尝试将所有数据写入套接字（无“短写入”）。不过，对"
+"于非阻塞套接字，这可能无法实现，并且返回的值将小于 buf 的长度。"
+
+#: ../../en/software/tcp.server.rst:193 1af0f91faa314017b6dc3b8f84008791
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:12 418a5524e8c94314889862701e7cd715
+msgid "write.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:206 51060170cd0b459582d057e783b4d05e
+msgid ""
+"Set blocking or non-blocking mode of the socket: if flag is false, the socket "
+"is set to non-blocking, else to blocking mode."
+msgstr ""
+"设置套接字的阻塞或非阻塞模式：如果标志为假，则套接字设置为非阻塞，否则设置为阻塞"
+"模式。"
+
+#: ../../en/software/tcp.server.rst:209 8b39b75008d14a5880f3c18cfb63fa4b
+msgid "This method is a shorthand for certain `settimeout()` calls:"
+msgstr "此方法是某些 `settimeout()` 调用的简写："
+
+#: ../../en/software/tcp.server.rst:211 3a1d0ae4bae94d79aec4a8114ffbd970
+msgid "``sock.setblocking(True)`` is equivalent to ``sock.settimeout(None)``"
+msgstr "``sock.setblocking(True)`` 等同于 ``sock.settimeout(None)``"
+
+#: ../../en/software/tcp.server.rst:212 32a9d52f0c9f4debbcaffc648bccd86a
+msgid "``sock.setblocking(False)`` is equivalent to ``sock.settimeout(0)``"
+msgstr "``sock.setblocking(False)`` 等同于 ``sock.settimeout(0)``"
+
+#: ../../en/software/tcp.server.rst 169a50902b7e455082bdc2287ec66389
+msgid "param bool flag"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:214 b2650ddab9574503b1624ddde4006e5b
+msgid ""
+"If True, the socket will be in blocking mode. If False, the socket will be in "
+"non-blocking mode."
+msgstr "如果为 True，套接字将处于阻塞模式。如果为 False，套接字将处于非阻塞模式。"
+
+#: ../../en/software/tcp.server.rst 83c3572cc9294a8ea78ee78f75801e47
+msgid "return"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst 6e2f578685ca4924ac26a434e4900a07
+msgid "rtype"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:220 1feb68a35c2e46879e77927779e0ae88
+msgid "|setblocking.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:14 cde1d7c6ca66474f88207f9efd68cf0b
+msgid "setblocking.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:233 ec32ba92fdc44fd7ad59916c45e50c53
+msgid ""
+"Set a timeout on blocking socket operations. The value argument can be a "
+"nonnegative floating point number expressing seconds, or None. If a non-zero "
+"value is given, subsequent socket operations will raise an OSError exception if "
+"the timeout period value has elapsed before the operation has completed. If "
+"zero is given, the socket is put in non-blocking mode. If None is given, the "
+"socket is put in blocking mode."
+msgstr ""
+"设置阻塞套接字操作的超时时间。值参数可以是表示秒数的非负浮点数，也可以是 None。"
+"如果给出了非零值，则在操作完成之前如果超时时间值已过，则后续套接字操作将引发 "
+"OSError 异常。如果给出了零，则套接字将处于非阻塞模式。如果给出了 None，则套接字"
+"将处于阻塞模式。"
+
+#: ../../en/software/tcp.server.rst:240 3f0ab43aa4f647fbaf66eacf6e13c947
+msgid "The timeout value in seconds. If None, the socket is put in blocking mode."
+msgstr "超时值（以秒为单位）。如果为 None，则套接字将处于阻塞模式。"
+
+#: ../../en/software/tcp.server.rst:246 d0ac2f87c4f64baea24e5cfb6a337752
+msgid "|settimeout.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:15 eedd2e151c444a14a91a406bb2b79d15
+msgid "settimeout.png"
+msgstr ""
+
+#: ../../en/software/tcp.server.rst:259 3f2d56c522634741bd9c897a2cbe412d
+msgid ""
+"Set the value of the given socket option. The needed symbolic constants are "
+"defined in the socket module (SO_* etc.). The value can be an integer or a "
+"bytes-like object representing a buffer."
+msgstr ""
+"设置给定套接字选项的值。所需的符号常量在套接字模块中定义（SO_* 等）。该值可以是"
+"整数或表示缓冲区的字节类对象。"
+
+#: ../../en/software/tcp.server.rst:263 65fcc30c23094cd48270654b0c816b66
+msgid "The level at which the option is defined."
+msgstr "定义选项的级别。"
+
+#: ../../en/software/tcp.server.rst:264 fe10ba7df6e24a1981edee0755ed034c
+msgid "The name of the option to set."
+msgstr "要设置的选项的名称。"
+
+#: ../../en/software/tcp.server.rst:265 df492888271d457697ef45363b30bb3c
+msgid "The value to set for the option."
+msgstr "为选项设置的值。"
+
+#: ../../en/software/tcp.server.rst:269 4c30411f165a49f48522f0ca3a7ec4aa
+msgid "|setsockopt.png|"
+msgstr ""
+
+#: ../../en/refs/software.tcp.server.ref:11 2c79d99058ad4f67a814861012bbad68
+msgid "setsockopt.png"
+msgstr ""
