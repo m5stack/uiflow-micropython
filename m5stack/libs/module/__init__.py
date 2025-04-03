@@ -16,6 +16,7 @@ _attrs = {
     "ECGModule": "ecg",
     "Encoder4MotorModule": "encoder4_motor",
     "FanModule": "fan",
+    "GatewayH2Module": "gateway_h2",
     "GNSSModule": "gnss",
     "GPSModule": "gps",
     "GPSV2Module": "gpsv2",

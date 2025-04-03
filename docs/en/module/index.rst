@@ -14,6 +14,7 @@ Module
     ecg.rst
     encoder4_motor.rst
     fan.rst
+    gateway_h2.rst
     gnss.rst
     gps.rst
     gpsv2.rst

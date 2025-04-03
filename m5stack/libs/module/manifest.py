@@ -15,6 +15,7 @@ package(
         "ecg.py",
         "encoder4_motor.py",
         "fan.py",
+        "gateway_h2.py",
         "gnss.py",
         "gps.py",
         "gpsv2.py",

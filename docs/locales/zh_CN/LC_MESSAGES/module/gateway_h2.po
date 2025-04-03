@@ -1,0 +1,261 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:55+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/gateway_h2.rst:2 ../../en/module/gateway_h2.rst:58
+#: 6795b0c03a6349549cc0a19e2e231d82 6d2f389a0f11415ca559892bc73432b2
+msgid "GatewayH2Module"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:8 041bb1bed81b4d36a344534817a7399e
+msgid ""
+"This library is the driver for Module Gateway H2, and the module "
+"communicates via UART."
+msgstr "这个库是 Module Gateway H2 的驱动，该模块使用 UART 通信。"
+
+#: ../../en/module/gateway_h2.rst:10 0179fe0fad564981ad424b331e6d40ff
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/gateway_h2.rst:12 8303c52707f04ddbb85270d64609112a
+msgid "|Module Gateway H2|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref bca19ca6e4484df68ffca00b0e6f6ab3
+msgid "Module Gateway H2"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:14 db6fc6b6b861442eb78e8ec4c42304eb
+msgid ""
+"When using this module, you need to flash the NCP firmware to the module."
+" For details, refer to the `ESP Zigbee NCP "
+"<https://docs.m5stack.com/zh_CN/guide/zigbee/module_gateway_h2/zigbee_ncp>`_"
+" documentation."
+msgstr "当使用此模块时，需要先给模块烧录 NCP 固件，详情请查看 "
+"`ESP Zigbee NCP <https://docs.m5stack.com/zh_CN/guide/zigbee/module_gateway_h2/zigbee_ncp>`_"
+
+#: ../../en/module/gateway_h2.rst:17 498bac24265a4bbb8162789e858cb8a8
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/module/gateway_h2.rst:20 ../../en/module/gateway_h2.rst:40
+#: 0073ce626526478abb81a8b1afab8513 9a1f54b291c5497c9db57e47a93b98ee
+msgid "Switch Control"
+msgstr "开关控制"
+
+#: ../../en/module/gateway_h2.rst:22 a268f346c8f34b178d9ce374d069b58f
+msgid ""
+"To use this example, you need to flash this program onto an ESP32C6 or "
+"similar module as a light node device. For details, refer to "
+"`HA_on_off_light <https://github.com/espressif/esp-zigbee-"
+"sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_"
+msgstr "要使用此示例，您还需要 ESP32C6 或类似模块，作为灯节点设备。详情请查看 "
+"`HA_on_off_light <https://github.com/espressif/esp-zigbee-"
+"sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_"
+
+#: ../../en/module/gateway_h2.rst:24 b66191d527ae4cf5ac715b166e5925ae
+msgid "Open the |cores3_switch_endpoint_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_switch_endpoint_example.m5f2| 项目。"
+
+#: ../../en/module/gateway_h2.rst:26 ../../en/module/gateway_h2.rst:42
+#: 0c4a14dad07542b29cfc89b8cdd23906 7daff67e589a4c31b44b2633169779d3
+msgid ""
+"The example demonstrates group control and targeted device operation for "
+"light nodes through SwitchEndpoint of Gateway H2 module."
+msgstr "示例程序演示通过 Gateway H2 模块的 SwitchEndpoint 对灯节点进开关控制。"
+
+#: ../../en/module/gateway_h2.rst:28 ../../en/module/gateway_h2.rst:68
+#: ../../en/module/gateway_h2.rst:87 ../../en/module/gateway_h2.rst:110
+#: ../../en/module/gateway_h2.rst:131 ../../en/module/gateway_h2.rst:152
+#: 776959c331ea44eb90bccd6419f613ec ae3e88dab1ca42b0a8341dbb2137256c
+#: bc93b5556e3c409fb3b07030f29102ac ce25b5a427c44741956abd309e2369d8
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/gateway_h2.rst:30 f67afed0a2444bb2b9be1de0c48ec1d7
+msgid "|cores3_switch_endpoint_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:13 59e23416323b4b2281d3cba1af4ef9dc
+msgid "cores3_switch_endpoint_example.png"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:32 ../../en/module/gateway_h2.rst:50
+#: 838d61133cda48c98871899eb59671f9 9ede75f1d5324ed5a5697de10996472d
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/gateway_h2.rst:34 ../../en/module/gateway_h2.rst:52
+#: 2670111baae24bb780efb1a0215ae66e ace5f81630d4466087540fd9d39c88ee
+msgid "None"
+msgstr "无"
+
+#: ../../en/module/gateway_h2.rst:37 8792ab6af90b4d169c189e36210d9c55
+msgid "MicroPython Example:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/module/gateway_h2.rst:44 ../../en/module/gateway_h2.rst:72
+#: ../../en/module/gateway_h2.rst:91 ../../en/module/gateway_h2.rst:115
+#: ../../en/module/gateway_h2.rst:136 ../../en/module/gateway_h2.rst:157
+#: d0132ccd22034544b1b5b4801e818b12 e882ca30fdde4d03bbab151e35a58636
+#: f4fff747dcdb41739b03189f6bd7c40c
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/gateway_h2.rst:55 4eb772729e244915a9dabedb60fef637
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/module/gateway_h2.rst:62 b1116c2d676544ad9b40ef96af9cf344
+msgid "Create an GatewayH2Module object."
+msgstr "创建一个 GatewayH2Module 对象。"
+
+#: ../../en/module/gateway_h2.rst 6c767589cbab411daadd8a480fdf7340
+#: 748336fbd6d24c1bb024644f855b627d
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:64 f83792df85cc4a839d53fc1bf8a549e8
+msgid "UART id."
+msgstr "UART 端口号。"
+
+#: ../../en/module/gateway_h2.rst:65 fdcf149d52e84dd591e55d5e1671af93
+msgid "the UART TX pin."
+msgstr "UART 发送引脚。"
+
+#: ../../en/module/gateway_h2.rst:66 022e1da314aa4e649a4267ba622aa5b3
+msgid "the UART RX pin."
+msgstr "UART 接收引脚。"
+
+#: ../../en/module/gateway_h2.rst:70 ../../en/module/gateway_h2.rst:89
+#: b807c412ab84489888985f0b59061eb0 d131f0ceaa2f419ab9e6d1814e234049
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:6 3eb18a4d3a4c49648aa61b9efc66faa1
+#: fa246b563473471680fa53b5daf8ca90
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:82 9f9d616ef9ac48b68e6c93c3ea9f2208
+msgid "Create Switch Endpoint."
+msgstr "创建 Switch Endpoint。"
+
+#: ../../en/module/gateway_h2.rst 302656c90385422abd5be78e3c486386
+msgid "returns SwitchEndpoint"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:84 89d0f116cb344f838933212a9a727d49
+msgid "zigbee switch endpoint object."
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst 81c36522dc754c1888081f9fa3a751ad
+msgid "return type"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:85 7528a12373be4cb0a2d1df2aaebe07ee
+msgid "SwitchEndpoint"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:99 61668f3ff2a04c039cfbb71d16a0c1ea
+msgid "Return by GatewayH2Module.create_switch_endpoint()"
+msgstr "由 GatewayH2Module.create_switch_endpoint() 返回"
+
+#: ../../en/module/gateway_h2.rst:103 a07638d724264303b28870ad9da86189
+msgid "Turn on the light."
+msgstr "开灯"
+
+#: ../../en/module/gateway_h2.rst:105 ../../en/module/gateway_h2.rst:126
+#: ../../en/module/gateway_h2.rst:147 b753ac510c2b4a0497801a450d87692f
+msgid "The device address (optional)."
+msgstr "设备地址（可选）"
+
+#: ../../en/module/gateway_h2.rst:107 3abe4963d9f140519f6af06d781b9b71
+msgid "If called as ``on()``, turn on all devices."
+msgstr "调用 ``on()`` 打开所有设备。"
+
+#: ../../en/module/gateway_h2.rst:108 e65586ae0dfe41cc9667583b87a6bdfb
+msgid "If called as ``on(addr)``, turn on special address devices."
+msgstr "调用 ``on(addr)`` 打开地址为 addr 的设备。"
+
+#: ../../en/module/gateway_h2.rst:112 60e593971dd54420bc0724fea016e73f
+msgid "|on.png| |all_on.png|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:7 fa246b563473471680fa53b5daf8ca90
+msgid "on.png"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:8 1c528b2c6fa74b61bbcba4d68aef2968
+msgid "all_on.png"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:124 b40f46a37cd54040a14c355c20e09ccf
+msgid "Turn off the light."
+msgstr "关灯"
+
+#: ../../en/module/gateway_h2.rst:128 723eac96f2044545a1b5f237642e8d1f
+msgid "If called as ``off()``, turn off all devices."
+msgstr "调用 ``off()`` 关闭所有设备。"
+
+#: ../../en/module/gateway_h2.rst:129 49fbbc6856774e88b6e560ca05cebfde
+msgid "If called as ``off(addr)``, turn off special address devices."
+msgstr "调用 ``off(addr)`` 关闭地址为 addr 的设备。"
+
+#: ../../en/module/gateway_h2.rst:133 da56af9bdcbc4364ab079a0968a66343
+msgid "|off.png| |all_off.png|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:9 f03c0d5c0c644e83970bb598f8a9613e
+msgid "off.png"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:10 68fa471c6d6348978131e0bce193fc5e
+msgid "all_off.png"
+msgstr ""
+
+#: ../../en/module/gateway_h2.rst:145 fe9674650c6d4fb5b8b3e5c76dc1fb57
+msgid "Toggle the light state."
+msgstr "翻转灯状态"
+
+#: ../../en/module/gateway_h2.rst:149 1a10e2918246434b96abb8f7fadb0951
+msgid "If called as ``toggle()``, toggle all devices."
+msgstr "调用 ``toggle()`` 翻转所有设备的状态。"
+
+#: ../../en/module/gateway_h2.rst:150 9d323f8ee3ec40eb97a958bcfc8a9779
+msgid "If called as ``toggle(addr)``, toggle special address devices."
+msgstr "调用 ``toggle(addr)`` 翻转地址为 addr 的设备的状态。"
+
+#: ../../en/module/gateway_h2.rst:154 e0e017a948d74af1b2790a0a0e452ba8
+msgid "|toggle.png| |all_toggle.png|"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:11 4d1a3f5113894862a205ab05e2949fb3
+msgid "toggle.png"
+msgstr ""
+
+#: ../../en/refs/module.gateway_h2.ref:12 d47c6caf80b34dee97e256d3f56bd022
+msgid "all_toggle.png"
+msgstr ""
+
+#~ msgid "|create_switch_endpoint.png|"
+#~ msgstr ""
+
