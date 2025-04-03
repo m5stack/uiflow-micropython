@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
+"PO-Revision-Date: 2025-04-03 11:04+0800\n"
+"Last-Translator: \n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../../en/software/tcp.rst:2 9a65f6b67ede4e34bbd4050df309c519
+msgid "TCP"
+msgstr ""
+
+#: ../../en/software/tcp.rst:4 f8ff03bdb2aa473fa2013249fae3e551
+msgid ""
+"TCP is a connection-oriented protocol, meaning that a connection must be "
+"established before data can be sent. It uses a three-way handshake to "
+"establish a connection, which involves the exchange of SYN (synchronize) "
+"and ACK (acknowledge) packets between the client and server. Once the "
+"connection is established, data can be sent in both directions until "
+"either party decides to close the connection."
+msgstr ""
+"TCP 是一种面向连接的协议，这意味着必须先建立连接，然后才能发送数据。它使"
+"用三方握手建立连接，包括客户端和服务器之间交换 SYN（同步）和 ACK（确认）"
+"数据包。连接一旦建立，数据就可以双向发送，直到任何一方决定关闭连接。"
+
+#: ../../en/software/tcp.rst:13 33ba51246eda46e8b6a649c490917be7
+msgid "API"
+msgstr ""

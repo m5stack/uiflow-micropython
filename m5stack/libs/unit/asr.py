@@ -29,13 +29,6 @@ class ASRUnit:
             asr = ASRUnit(id=1, port=(1, 2))
     """
 
-    DEBUG = True
-
-    myprint = print if DEBUG else lambda *_, **__: None
-    """
-    :meta private:
-    """
-
     _COMMAND_LIST = {
         0x01: ["up", None],
         0x02: ["down", None],
@@ -82,28 +75,34 @@ class ASRUnit:
         0xFF: ["Hi,M Five", None],
     }
 
-    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None):
+    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, verbose: bool = False):
         self.uart = UART(id, tx=port[1], rx=port[0])
         self.uart.init(115200, bits=8, parity=None, stop=1)
         self.uart.irq(handler=self._handler, trigger=UART.IRQ_RXIDLE)
         self.raw_message = ""
         self.command_num = 0
         self.is_recieved = False
+        self.verbose = verbose
+
+    def _debug_print(self, *args, **kwargs):
+        """Print debug information if verbose mode is enabled."""
+        if self.verbose:
+            print(*args, **kwargs)
 
     def _handler(self, uart) -> None:
         data = uart.readline()
         if data is not None and len(data) >= 5:
-            self.myprint(("Received data: ", data))
+            self._debug_print(("Received data: ", data))
 
             if data[0] == 0xAA and data[1] == 0x55 and data[-2] == 0x55 and data[-1] == 0xAA:
                 self.is_recieved = True
                 self.raw_message = " ".join(f"0x{byte:02X}" for byte in data)
-                self.myprint(("Parsed message:", self.raw_message.split()))
+                self._debug_print(("Parsed message:", self.raw_message.split()))
 
                 self.command_num = data[2]
                 self.check_tick_callback()
             else:
-                self.myprint("Invalid frame received: header/footer mismatch")
+                self._debug_print("Invalid frame received: header/footer mismatch")
                 uart.read()
 
     def get_received_status(self) -> bool:
@@ -146,7 +145,7 @@ class ASRUnit:
         """
         message: list[int] = [0xAA, 0x55, command_num, 0x55, 0xAA]
         buf = bytes(message)
-        self.myprint(buf)
+        self._debug_print(buf)
         self.uart.write(buf)
 
     def get_current_raw_message(self) -> str:
@@ -340,6 +339,6 @@ class ASRUnit:
                 asr.check_tick_callback()
         """
         handler = self._COMMAND_LIST.get(self.command_num, ["", None])[1]
-        self.myprint(("handler: ", handler))
+        self._debug_print(("handler: ", handler))
         if handler is not None:
             schedule(handler, self)

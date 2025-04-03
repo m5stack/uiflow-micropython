@@ -1,0 +1,290 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
+"PO-Revision-Date: 2025-04-03 11:46+0800\n"
+"Last-Translator: \n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../../en/software/udp.server.rst:2 d8278a3649524449b1afe77c149b3821
+msgid "UDP Server"
+msgstr "UDP 服务端"
+
+#: ../../en/software/udp.server.rst:7 678b4f40b18c4beb9acdb97a577c062b
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例"
+
+#: ../../en/software/udp.server.rst:10 ../../en/software/udp.server.rst:28
+#: 77e87e5090a440eba357ca0784f12f01 a360624077bb48ee8e4d3093a79a98f3
+msgid "echo server"
+msgstr "回显服务器"
+
+#: ../../en/software/udp.server.rst:12 0a52892ebf844e51b03be158b5cf113d
+msgid "Open the |cores3_udp_server_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_udp_server_example.m5f2| 项目。"
+
+#: ../../en/software/udp.server.rst:14 ../../en/software/udp.server.rst:30
+#: 35b7c5e4c8b54779836c53c32fb812c9 c8404cad65a847fdaad85e54e32698d8
+msgid "This example creates a UDP server that echoes the received data."
+msgstr "此示例创建一个回显接收数据的 UDP 服务器。"
+
+#: ../../en/software/udp.server.rst:16 ../../en/software/udp.server.rst:56
+#: ../../en/software/udp.server.rst:75 ../../en/software/udp.server.rst:95
+#: ../../en/software/udp.server.rst:118 ../../en/software/udp.server.rst:138
+#: ../../en/software/udp.server.rst:160 ../../en/software/udp.server.rst:183
+#: ../../en/software/udp.server.rst:207 ../../en/software/udp.server.rst:230
+#: 0f45d1f4a15d46dd8183672881a3080d 23f9ecc4f19e4314abee3f2e931f547f
+#: 243506d6337e4f24a631b0ff41d53474 2f873e916ed94d7b943479106704823e
+#: 568a690482c14047b34ff60b161ca878 8d9f66bd768040b88c891b9dededab71
+#: ce4c1d5055fd4f7dab53f03f42a90d16 efcf1f3224d84d259f17a4e6111c6938
+#: f4a2182df6054ee3b35ca6373a43d912 f843faa5c551484dbc4611d3c085bd28
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/software/udp.server.rst:18 0d7516e45945441ab3bf5577c7e156f3
+msgid "|cores3_udp_server_example.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:12 6a1830ce6b7147e38c33c22b9bfa2d33
+msgid "cores3_udp_server_example.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:20 ../../en/software/udp.server.rst:38
+#: 74430ad2282d421d937c121737481f61 d596d36ee86945a6a83cfde6f354cc32
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/software/udp.server.rst:22 ../../en/software/udp.server.rst:40
+#: 22df65fb83b94b429ac942a483c0c9fa 36fa50ae0ce24ccea5dcdeb075b7e4e0
+msgid "None"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:25 bff1fd419fa247b987dd32d02e2253d7
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/software/udp.server.rst:32 ../../en/software/udp.server.rst:60
+#: ../../en/software/udp.server.rst:79 ../../en/software/udp.server.rst:99
+#: ../../en/software/udp.server.rst:122 ../../en/software/udp.server.rst:142
+#: ../../en/software/udp.server.rst:164 ../../en/software/udp.server.rst:187
+#: ../../en/software/udp.server.rst:211 ../../en/software/udp.server.rst:234
+#: 3d019d0fbaf542f39c20b5823e536474 3e8fbab2b07a444682d897d75978a692
+#: 5f35f5532afa4b8aa192658154523e45 7d4bec7751fa4a98814aeb347c459cfe
+#: 8fabbec91c9341488b13da6ff29399ff 914eff3d3e3c4b108dec36ff8cae4d54
+#: 985fed4eae0f41869ddd0d34cd54f51b b54be1111c3f4e39918cb1d78640c6f7
+#: b97c474cb9b4430480e520983ac425d8 ef2d11f5480540a4b33e8b6799ecadf4
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/software/udp.server.rst:44 deaf999efa4b41e0af49b4d35950135e
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/software/udp.server.rst:50 2d7c5f7a2af64a98946567e9b68475fa
+msgid "Create a socket object and bind it to an address."
+msgstr "创建一个套接字对象并将其绑定到一个地址。"
+
+#: ../../en/software/udp.server.rst 039a3243e0ba4094b31e4840a973e7df
+#: 0e22121ea2aa4366a043b17473dc2a6e 541cf0e79e444be3b82de6b1dc0375df
+#: 7755013a9a474788b402356cdcedf9a7 818fb16a3d9d48948028ab6bab3a8871
+#: 90731081ef0f47faa6dad2b5a5a21d3f dce167b36160484f869f6e602d77b562
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:52 03a20acd85f146dcaa190107ac24e7b5
+msgid "A tuple containing the server IP address and port number."
+msgstr "包含服务器 IP 地址和端口号的元组。"
+
+#: ../../en/software/udp.server.rst 0a6a6317f55a4709b47f5b355928701e
+#: 2b91d1ff67424c09b3abb9e5520336a9 53aeffaa8c3f4fe8ad959fb6c3ecaafb
+#: 571e6a0295eb483b9da68be10aeb92a2 619a26358c3b462f9b6c11caa1c04c19
+#: 6d5b970aff874441bb833b23e38b62cd fd1db73d3d5e43f78a83951fff66cdeb
+msgid "Returns"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:53 cd665cafc1e54da3b776ce6bcaf534b0
+msgid "A socket object."
+msgstr "一个套接字对象。"
+
+#: ../../en/software/udp.server.rst 2623960717aa4cc69d4d5e0e6f43bc61
+#: 5181a390d1f941c38e1fc6b207947a8b 5d57309a2b994a2083d9395b7cd036a5
+#: 8ce80c3de85b480aa8340c55b911d8da b9eb29b03a6942018b7104342350f1e8
+#: f495bef1896c426e917ad4805177ebb4 fc490a31e82148ba830abe40ed8e2549
+msgid "Return type"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:58 5b8910d543ca4678910836c5031f79ff
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:3 1a7d3ff0489a45d892f9aba9c04ceb7c
+msgid "init.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:73 17863b9f41b3435b9bfa631ee7bbe49b
+msgid "Close the socket connection."
+msgstr "关闭套接字连接。"
+
+#: ../../en/software/udp.server.rst:77 11be5e7b8da3409480c6e9470b1a1fa3
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:2 0d8e1061cb8841ffa9e8a2763de94db9
+msgid "close.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:89 954efece7233495eb138163ed5d527f7
+msgid "Receive data from the socket."
+msgstr "从套接字接收数据。"
+
+#: ../../en/software/udp.server.rst:91 ../../en/software/udp.server.rst:114
+#: bf706e7f26404df1b1d8eda21c6cd047 dc17f7b773374bcf9ab2d76a1a9292ab
+msgid "The maximum amount of data to be received at once."
+msgstr "一次可接收的最大数据量。"
+
+#: ../../en/software/udp.server.rst:92 ../../en/software/udp.server.rst:115
+#: ../../en/software/udp.server.rst:135 4405ab323aee4b568be741ff8504ffcf
+#: 9be6abe5f6494cccb01dd50b342db849 b55eafc357214bfd9c67a19a821d89f1
+msgid "The received data."
+msgstr "接收到的数据。"
+
+#: ../../en/software/udp.server.rst:97 a73b614ca3e241a1af762f970b606298
+msgid "|recv.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:5 a6e14e094a6c4212bc3c78b1c4157258
+msgid "recv.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:110 da8600409723470bbe4852184f0702c9
+msgid ""
+"Receive data from the socket. The return value is a pair (bytes, address) "
+"where bytes is a bytes object representing the data received and address is "
+"the address of the socket sending the data."
+msgstr ""
+"从套接字接收数据。返回值是一对 (bytes, address)，其中 bytes 是表示接收数据的字"
+"节对象，address 是发送数据的套接字的地址。"
+
+#: ../../en/software/udp.server.rst:120 e6ec55e9d6ed4ee19cd0f92da84cf09e
+msgid "|recvfrom.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:6 d3ed6071981642ac8932686f2477098b
+msgid "recvfrom.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:133 df963c32cd014709821ba86bfb6beb43
+msgid "Read data from the socket."
+msgstr "从套接字读取数据。"
+
+#: ../../en/software/udp.server.rst:140 66d24f6b126947f1b5e6870da7f13f9b
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:4 02c01566d85d4c85843a19e00769637a
+msgid "read.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:153 69ce596f9628428096fc2400f7653fb0
+msgid "Send data to the socket. The socket must be connected to a remote socket."
+msgstr "向套接字发送数据。该套接字必须连接到远程套接字。"
+
+#: ../../en/software/udp.server.rst:155 ../../en/software/udp.server.rst:177
+#: ../../en/software/udp.server.rst:202 0f2ee727d45146029b90e19ead4e8c10
+#: 2a40f52341474e549d71ba913224763d 7736742137dc4109ac7ae300c11eff78
+msgid "The data to be sent."
+msgstr "要发送的数据。"
+
+#: ../../en/software/udp.server.rst:157 ../../en/software/udp.server.rst:180
+#: ../../en/software/udp.server.rst:204 00c8d6d1cad8417ab478c4a965985334
+#: 35946b7d3f204f3baed4921da9792908 ef708cb33ee240c29c72e291054d8e93
+msgid "The number of bytes sent."
+msgstr "已发送的字节数。"
+
+#: ../../en/software/udp.server.rst:162 f04d829ffc254afbb5dc6b5bae7b2e52
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:7 56ac5a0f3b7a4d2da79b724a9cb150a3
+msgid "send.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:175 ddeb18e6288644b5ae134c3bce22f786
+msgid ""
+"Send data to the socket. The socket should not be connected to a remote "
+"socket, since the destination socket is specified by address."
+msgstr ""
+"将数据发送到套接字。套接字不应连接到远程套接字，因为目标套接字由地址指定。"
+
+#: ../../en/software/udp.server.rst:179 d3f262bae5fc4243880f0312f1e4c295
+msgid "A tuple containing the destination IP address and port number."
+msgstr "包含目标 IP 地址和端口号的元组。"
+
+#: ../../en/software/udp.server.rst:185 05a267a5a9324348bebfac38457321d8
+msgid "|sendto.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:8 99bdc9c0e03a477fbd0fb857e0d49076
+msgid "sendto.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:197 fa465c1ddbe948c4b3a2f498ff9d58d5
+msgid ""
+"Write the buffer of bytes to the socket. This function will try to write all "
+"data to a socket (no “short writes”). This may be not possible with a non-"
+"blocking socket though, and returned value will be less than the length of buf."
+msgstr ""
+"将字节缓冲区写入套接字。此函数将尝试将所有数据写入套接字（无“短写入”）。不过，"
+"对于非阻塞套接字，这可能无法实现，并且返回的值将小于 buf 的长度。"
+
+#: ../../en/software/udp.server.rst:209 d96dbcb4249049c29699bcd4b9bf2a77
+msgid "|write.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:10 49d03c97021a4ede923a60cff229ec5d
+msgid "write.png"
+msgstr ""
+
+#: ../../en/software/udp.server.rst:222 ee461e7031964994b04464aeaa9b0289
+msgid ""
+"Set the value of the given socket option. The needed symbolic constants are "
+"defined in the socket module (SO_* etc.). The value can be an integer or a "
+"bytes-like object representing a buffer."
+msgstr ""
+"设置给定套接字选项的值。所需的符号常量在套接字模块中定义（SO_* 等）。该值可以是"
+"整数或表示缓冲区的字节类对象。"
+
+#: ../../en/software/udp.server.rst:226 b755a9915142458da18627238f06da89
+msgid "The level at which the option is defined."
+msgstr "定义选项的级别。"
+
+#: ../../en/software/udp.server.rst:227 c1537d0619ac478891e153eec1390a65
+msgid "The name of the option to set."
+msgstr "要设置的选项的名称。"
+
+#: ../../en/software/udp.server.rst:228 980be093b553474b8bf3e6d885743f2c
+msgid "The value to set for the option."
+msgstr "为选项设置的值。"
+
+#: ../../en/software/udp.server.rst:232 1b7a6c1cc72f4ad48b99aa8f0528d8b3
+msgid "|setsockopt.png|"
+msgstr ""
+
+#: ../../en/refs/software.udp.server.ref:9 ba854416ac344093b0c0b897d642f9fe
+msgid "setsockopt.png"
+msgstr ""

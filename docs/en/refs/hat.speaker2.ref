@@ -1,0 +1,18 @@
+
+.. |Speaker2| image:: https://static-cdn.m5stack.com/resource/docs/products/hat/Hat-SPK2/img-20b44754-2357-4fcd-be78-77f1107f89ec.webp
+    :target: https://docs.m5stack.com/en/hat/Hat-SPK2
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/speaker2/init.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/speaker2/example.png
+
+.. |speaker2_stickcplus2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hat/speaker2/speaker2_stickcplus2_example.m5f2"
+        target="_blank"
+    >
+        speaker2_stickcplus2_example.m5f2
+    </a>

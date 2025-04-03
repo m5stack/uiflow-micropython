@@ -13,6 +13,8 @@ Base
     hdriver.rst
     motion.rst
     pwm.rst
+    qrcode.rst
+    qrcode2.rst
     rs232.rst
     rs485.rst
     speaker.rst

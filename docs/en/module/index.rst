@@ -11,8 +11,10 @@ Module
     display.rst
     dmx.rst
     dualkmeter.rst
+    ecg.rst
     encoder4_motor.rst
     fan.rst
+    gateway_h2.rst
     gnss.rst
     gps.rst
     gpsv2.rst
@@ -30,6 +32,7 @@ Module
     pm25.rst
     pps.rst
     pwrcan.rst
+    qrcode.rst
     rca.rst
     relay_2.rst
     rs232.rst

@@ -16,7 +16,7 @@ Below is the detailed support for Speaker on the host:
     :align: center
 
     +-----------------+-------------------+
-    |Controller       | Atomic Echo Base  |
+    |Controller       | Speaker Hat       |
     +=================+===================+
     | CoreInk         | |S|               |
     +-----------------+-------------------+

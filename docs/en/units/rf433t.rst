@@ -1,0 +1,61 @@
+RF433T Unit 
+============================
+
+.. sku: U114
+
+.. include:: ../refs/unit.rf433t.ref
+
+This library is the driver for Unit RF433T.
+
+Support the following products:
+
+    |Unit RF433T|
+
+UiFlow2 Example:
+--------------------------
+
+Send data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The example program demonstrates communication using RF433TUnit and RF433RUnit.
+Please refer to the receiving end. `RF433RUnit <https://uiflow-micropython.readthedocs.io/en/latest/unit/rf433r.html>`_
+
+Open the |cores3_rf433t_send_example.m5f2| project in UiFlow2.
+
+ 
+UiFlow2 Code Block:
+
+    |cores3_rf433t_send_example.png|
+
+Example output:
+
+    None
+ 
+MicroPython Example:
+--------------------------
+
+Send data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The example program demonstrates communication using RF433TUnit and RF433RUnit.
+Please refer to the receiving end. `RF433RUnit <https://uiflow-micropython.readthedocs.io/en/latest/unit/rf433r.html>`_
+ 
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/rf433t/cores3_rf433t_send_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+**API**
+--------------------------
+
+RF433T
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: unit.rf433t.RF433TUnit
+    :members:

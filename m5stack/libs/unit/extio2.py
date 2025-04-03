@@ -18,6 +18,8 @@ _REG_ANALOG_INPUT_12B_REG_CH_1 = const(0x40)
 _REG_SERVO_ANGLE_8B_REG_CH_1 = const(0x50)
 _REG_SERVO_PULSE_16B_REG_CH_1 = const(0x60)
 _REG_RGB_24B_REG_CH_1 = const(0x70)
+_REG_PWM_DUTY_CYCLE_REG = const(0x90)
+_REG_PWM_FREQ_REG = const(0xA0)
 _REG_FW_VERSION = const(0xFE)
 _REG_ADDR_CONFIG = const(0xFF)
 
@@ -145,7 +147,7 @@ class EXTIO2Unit:
         self._addr = address
         self._BUFFER = memoryview(bytearray(3))
 
-    def set_config_mode(self, id: int, mode: Literal[0, 1, 2, 3, 4]) -> None:
+    def set_config_mode(self, id: int, mode: Literal[0, 1, 2, 3, 4, 5]) -> None:
         """
         note:
             en: Set the configuration mode for a specific channel.
@@ -308,6 +310,78 @@ class EXTIO2Unit:
             note: The current pulse width of the servo, in microseconds.
         """
         return self._read_u16(_REG_SERVO_PULSE_16B_REG_CH_1 + (id * 2))
+
+    def set_pwm_frequency(self, freq: int = 1) -> None:
+        """Set the PWM frequency of the pin.
+
+        :param int freq: The PWM frequency of the pin.
+
+        UiFlow2 Code Block:
+
+            |set_pwm_frequency.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                extio2.set_pwm_frequency(1)
+        """
+        self._write_u8(_REG_PWM_FREQ_REG, freq)
+
+    def get_pwm_frequency(self) -> int:
+        """Get current PWM frequency of the pin.
+
+        :returns: The current PWM frequency of the pin.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_pwm_frequency.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                extio2.get_pwm_frequency()
+        """
+        return self._read_u8(_REG_PWM_FREQ_REG)
+
+    def set_pwm_duty_cycle(self, id: int, duty_cycle: int) -> None:
+        """Set the PWM duty cycle of the pin.
+
+        :param int duty_cycle: The PWM duty cycle of the pin.
+
+        UiFlow2 Code Block:
+
+            |set_pwm_duty_cycle.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                extio2.set_pwm_duty_cycle(0, 50)
+        """
+        if not (0 <= duty_cycle <= 100):
+            raise ValueError("Duty cycle error, range is 0~100")
+        self._write_u8(_REG_PWM_DUTY_CYCLE_REG + id, duty_cycle)
+
+    def get_pwm_duty_cycle(self, id: int) -> int:
+        """Get current PWM duty cycle of the pin.
+
+        :returns: The current PWM duty cycle of the pin.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_pwm_duty_cycle.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                extio2.get_pwm_duty_cycle(0)
+        """
+        return self._read_u8(_REG_PWM_DUTY_CYCLE_REG + id)
 
     def read_rgb_led(self, id: int) -> int:
         """

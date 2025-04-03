@@ -86,6 +86,8 @@ Unit
     reflective_ir.rst
     relay.rst
     relay4.rst
+    rf433r.rst
+    rf433t.rst
     rfid.rst
     rgb.rst
     roller485.rst

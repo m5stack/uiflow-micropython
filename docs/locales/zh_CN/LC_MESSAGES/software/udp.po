@@ -1,0 +1,40 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
+"PO-Revision-Date: 2025-04-03 11:35+0800\n"
+"Last-Translator: \n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: ../../en/software/udp.rst:2 1fc1e669f73a43ad8f33a2088b868405
+msgid "UDP"
+msgstr ""
+
+#: ../../en/software/udp.rst:4 631a8df268e044029c36bc7466bca9f3
+msgid ""
+"The UDP module provides a simple way to send and receive data over the "
+"network using the User Datagram Protocol (UDP). It is designed for low-"
+"latency communication and is suitable for applications where speed is "
+"more critical than reliability."
+msgstr ""
+"UDP 模块提供了一种使用用户数据报协议 (UDP) 通过网络发送和接收数据的简单"
+"方法。它专为低延迟通信而设计，适合速度比可靠性更重要的应用程序。"
+
+#: ../../en/software/udp.rst:11 9fc3e18c53d246b4847e9e6eab86eab9
+msgid "API"
+msgstr "API参考"

@@ -1,0 +1,19 @@
+.. |Unit RF433T| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/rf433_t/rf433_t_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/rf433_t
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rf433t/init.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rf433t/send.png
+ 
+.. |cores3_rf433t_send_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rf433t/send_example.png
+
+.. |cores3_rf433t_send_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rf433t/cores3_rf433t_send_example.m5f2"
+        target="_blank"
+    >
+        cores3_rf433t_send_example.m5f2
+    </a>
+    

@@ -277,6 +277,7 @@ submodules:
 	git submodule update --init ./components/esp32-camera
 	git submodule update --init ./components/esp_dl
 	git submodule update --init ./components/esp-code-scanner
+	git submodule update --init ./components/esp_zigbee_host
 	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified

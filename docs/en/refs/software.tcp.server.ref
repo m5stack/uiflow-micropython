@@ -1,0 +1,27 @@
+
+.. |close.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/close.png
+.. |close_client.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/close_client.png
+.. |accept.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/accept.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/init.png
+.. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/read.png
+.. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/recv.png
+.. |recvfrom.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/recvfrom.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/send.png
+.. |sendto.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/sendto.png
+.. |setsockopt.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/setsockopt.png
+.. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/write.png
+.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/readline.png
+.. |setblocking.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/setblocking.png
+.. |settimeout.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/settimeout.png
+
+
+.. |cores3_tcp_server_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/cores3_tcp_server_example.png
+
+.. |cores3_tcp_server_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/tcp/cores3_tcp_server_example.m5f2"
+        target="_blank"
+    >
+        cores3_tcp_server_example.m5f2
+    </a>

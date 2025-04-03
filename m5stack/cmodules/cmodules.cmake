@@ -25,6 +25,12 @@ include(${CMAKE_CURRENT_LIST_DIR}/m5things/m5things.cmake)
 # add m5unified module
 include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 
+# add rf433 module
+include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
+
+# add esp_zigbee_host module
+include(${CMAKE_CURRENT_LIST_DIR}/esp_zigbee_host/micropython.cmake)
+
 if(ADF_MODULE_ENABLE)
     include(${CMAKE_CURRENT_LIST_DIR}/adf_module/micropython.cmake)
 endif()

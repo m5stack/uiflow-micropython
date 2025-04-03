@@ -10,10 +10,7 @@
 .. |record.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/record.png
 .. |isRecording.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/isRecording.png
 .. |recordWavFile.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdrecordWavFilem/.png
-.. |get_config_boolean.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/get_config_boolean.png
-.. |get_config_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/get_config_int.png
-.. |set_config_boolean.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/set_config_boolean.png
-.. |set_config_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/set_config_int.png
+.. |config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/config.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/pdm/example.png
 

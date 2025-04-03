@@ -1,0 +1,80 @@
+.. |Atomic QRCode2 Base| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/atom/Atomic%20QRCode2%20Base/4.webp
+    :target: https://docs.m5stack.com/zh_CN/atom/Atomic%20QRCode2%20Base
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/init.png
+.. |set_trig.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_trig.png
+.. |start_decode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/start_decode.png
+.. |stop_decode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/stop_decode.png
+.. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/read.png
+.. |set_trigger_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_trigger_mode.png
+.. |set_decode_delay.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_decode_delay.png
+.. |set_trigger_timeout.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_trigger_timeout.png
+.. |set_motion_sensitivity.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_motion_sensitivity.png
+.. |set_continuous_decode_delay.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_continuous_decode_delay.png
+.. |set_trigger_decode_delay.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_trigger_decode_delay.png
+.. |set_same_code_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_same_code_interval.png
+.. |set_diff_code_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_diff_code_interval.png
+.. |set_same_code_no_delay.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_same_code_no_delay.png
+.. |set_fill_light_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_fill_light_mode.png
+.. |set_fill_light_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_fill_light_brightness.png
+.. |set_pos_light_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_pos_light_mode.png
+.. |set_startup_tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_startup_tone.png
+.. |set_decode_success_beep.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_decode_success_beep.png
+.. |set_case_conversion.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_case_conversion.png
+.. |set_protocol_format.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/set_protocol_format.png
+ 
+.. |atoms3_qrcode2_key_mode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/key_mode_example.png
+.. |atoms3_qrcode2_continuous_mode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/continuous_mode_example.png
+.. |atoms3_qrcode2_auto_mode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/auto_mode_example.png
+.. |atoms3_qrcode2_pulse_mode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/pulse_mode_example.png
+.. |atoms3_qrcode2_motion_sensing_mode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/qrcode2/motion_sensing_mode_example.png
+
+.. |atoms3_qrcode2_key_mode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/qrcode2/atoms3_qrcode2_key_mode_example.m5f2"
+        target="_blank"
+    >
+        atoms3_qrcode2_key_mode_example.m5f2
+    </a>
+    
+.. |atoms3_qrcode2_continuous_mode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/qrcode2/atoms3_qrcode2_continuous_mode_example.m5f2"
+        target="_blank"
+    >
+        atoms3_qrcode2_continuous_mode_example.m5f2
+    </a>
+    
+.. |atoms3_qrcode2_auto_mode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/qrcode2/atoms3_qrcode2_auto_mode_example.m5f2"
+        target="_blank"
+    >
+        atoms3_qrcode2_auto_mode_example.m5f2
+    </a>
+    
+.. |atoms3_qrcode2_pulse_mode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/qrcode2/atoms3_qrcode2_pulse_mode_example.m5f2"
+        target="_blank"
+    >
+        atoms3_qrcode2_pulse_mode_example.m5f2
+    </a>
+    
+
+.. |atoms3_qrcode2_motion_sensing_mode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/qrcode2/atoms3_qrcode2_motion_sensing_mode_example.m5f2"
+        target="_blank"
+    >
+        atoms3_qrcode2_motion_sensing_mode_example.m5f2
+    </a>
+    
+ 

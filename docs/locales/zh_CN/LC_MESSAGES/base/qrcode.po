@@ -1,0 +1,616 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-02 14:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/qrcode.rst:2 ../../en/refs/base.qrcode.ref
+#: 7b40537339fc4494b4ca5f3ed1b13d01 c52f827db1c94c628cb0bc315f66a057
+msgid "Atomic QRCode Base"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:8 7db66204ddc64b35a585d37838f1d95a
+msgid ""
+"This library is the driver for Atomic QRCode Base, and the module "
+"communicates via UART."
+msgstr "这个库是 Atomic QRCode Base 的驱动，该模块使用 UART 通信。"
+
+#: ../../en/base/qrcode.rst:10 bdf57674d78c4967b71483a315b6db8a
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/qrcode.rst:12 eaa49b0bad684aef86dc7f9d53ec4303
+msgid "|Atomic QRCode Base|"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:15 5b33f52fe9ee4f81b0be2ac3f8078223
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/base/qrcode.rst:18 ../../en/base/qrcode.rst:97
+#: 906100b3bac44610ac32eb4783a1e982
+msgid "QRCode Scan in Key Mode"
+msgstr "按键模式二维码识别"
+
+#: ../../en/base/qrcode.rst:20 1131d3397dbb457d9267babec00e2683
+msgid "Open the |atoms3_qrcode_key_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3_qrcode_key_mode_example.m5f2| 项目。"
+
+#: ../../en/base/qrcode.rst:22 ../../en/base/qrcode.rst:99
+#: 73da58b25bcf4efba69ec551342b4067
+msgid ""
+"In **Key Mode**, the module starts decoding when the button is pressed "
+"and stops decoding when the button is released. After a successful "
+"decoding, it stops decoding. To continue decoding, the button must be "
+"released and pressed again."
+msgstr "在按键模式下，模块在按下按键时开始解码，并在释放按键时停止解码"
+
+#: ../../en/base/qrcode.rst:24 ../../en/base/qrcode.rst:39
+#: ../../en/base/qrcode.rst:54 ../../en/base/qrcode.rst:69
+#: ../../en/base/qrcode.rst:84 604c7a4dad4f4032aa71c8a2376d3bad
+#: base.qrcode.AtomicQRCodeBase:9 base.qrcode.AtomicQRCodeBase.read:6
+#: base.qrcode.AtomicQRCodeBase.set_config_tone:5
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous:5
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval:5
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone:5
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode:8
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode:8
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval:5
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone:5
+#: base.qrcode.AtomicQRCodeBase.set_trig:5
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:11
+#: base.qrcode.AtomicQRCodeBase.start_decode:3
+#: base.qrcode.AtomicQRCodeBase.stop_decode:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/qrcode.rst:26 5bfed0b94f5342ad9dd66e1fc6ac0504
+msgid "|atoms3_qrcode_key_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:21 bed01f7b08ba47e685a2f853a22fdd87
+msgid "atoms3_qrcode_key_mode_example.png"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:28 ../../en/base/qrcode.rst:43
+#: ../../en/base/qrcode.rst:58 ../../en/base/qrcode.rst:73
+#: ../../en/base/qrcode.rst:88 ../../en/base/qrcode.rst:107
+#: ../../en/base/qrcode.rst:122 ../../en/base/qrcode.rst:137
+#: ../../en/base/qrcode.rst:152 ../../en/base/qrcode.rst:167
+#: 2afdcac45a684e2a90bb16379edbf8cb
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/qrcode.rst:30 ../../en/base/qrcode.rst:45
+#: ../../en/base/qrcode.rst:60 ../../en/base/qrcode.rst:75
+#: ../../en/base/qrcode.rst:90 ../../en/base/qrcode.rst:109
+#: ../../en/base/qrcode.rst:124 ../../en/base/qrcode.rst:139
+#: ../../en/base/qrcode.rst:154 ../../en/base/qrcode.rst:169
+#: 4e693db17eb346239283aeb539da887e
+msgid "None"
+msgstr "无"
+
+#: ../../en/base/qrcode.rst:33 ../../en/base/qrcode.rst:112
+#: 88aa5d9d1fb24e9bb4c926e05d388589
+msgid "QRCode Scan in Host Mode"
+msgstr "主机模式二维码识别"
+
+#: ../../en/base/qrcode.rst:35 c779342f79b74b1f935e81b339d2964f
+msgid "Open the |atoms3_qrcode_host_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3_qrcode_host_mode_example.m5f2| 项目。"
+
+#: ../../en/base/qrcode.rst:37 ../../en/base/qrcode.rst:114
+#: c7d55e435c3c4d2697ad0ef7e0777ef5
+msgid ""
+"In **Host Mode**, pressing the button once starts decoding, and pressing "
+"the button again stops decoding."
+msgstr "在主机模式下，按下一次按键开始解码，再次按下停止解码。"
+
+#: ../../en/base/qrcode.rst:41 0f0c32df7be846b6a114955efc407958
+msgid "|atoms3_qrcode_host_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:23 1875db2daf104a0fa23fe5e77db6814a
+msgid "atoms3_qrcode_host_mode_example.png"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:48 ../../en/base/qrcode.rst:127
+#: 46a08382da834a258b73961598a762e8
+msgid "QRCode Scan in Auto Mode"
+msgstr "自动模式二维码识别"
+
+#: ../../en/base/qrcode.rst:50 d64c3fc29d7d4ff0965cbc29e07a453a
+msgid "Open the |atoms3_qrcode_auto_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3_qrcode_auto_mode_example.m5f2| 项目。"
+
+#: ../../en/base/qrcode.rst:52 ../../en/base/qrcode.rst:129
+#: 9c969a916e68495e9e9ee8b4077c932c
+msgid ""
+"In **Auto Mode**, the module starts decoding when powered on and cannot "
+"be stopped."
+msgstr "在自动模式下，模块上电开始扫码解码，不可停止。"
+
+#: ../../en/base/qrcode.rst:56 a7c65d0ae49a4d8e9b5c92ec3e6a0dc9
+msgid "|atoms3_qrcode_auto_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:22 1875db2daf104a0fa23fe5e77db6814a
+msgid "atoms3_qrcode_auto_mode_example.png"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:63 ../../en/base/qrcode.rst:142
+#: 56fe99e0922f4bc9874dcd4dbda1369e
+msgid "QRCode Scan in Pulse Mode"
+msgstr "脉冲模式二维码识别"
+
+#: ../../en/base/qrcode.rst:65 5ec76b4fa52b46c3b15ede4ba2597d0d
+msgid "Open the |atoms3_qrcode_pulse_mode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3_qrcode_pulse_mode_example.m5f2| 项目。"
+
+#: ../../en/base/qrcode.rst:67 ../../en/base/qrcode.rst:144
+#: b9a8c91888284f48bfa73b51cb9717c7
+msgid ""
+"In **Pulse Mode**, set the TRIG pin to hold a low level for more than "
+"20ms to trigger decoding once."
+msgstr "在脉冲模式下，设置触发引脚超过 20ms 的低电平触发解码一次。"
+
+#: ../../en/base/qrcode.rst:71 0f0c32df7be846b6a114955efc407958
+msgid "|atoms3_qrcode_pulse_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:25 8de7e3a64b3f497aa2d5600421cd4c03
+msgid "atoms3_qrcode_pulse_mode_example.png"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:78 ../../en/base/qrcode.rst:157
+#: 2a06595f469c4a41b5d2776ce1bc391e
+msgid "QRCode Scan in Motion Sensing Mode"
+msgstr "移动感应模式二维码识别"
+
+#: ../../en/base/qrcode.rst:80 8dab69b931c247f1b9b8aa2326e4a4d1
+msgid ""
+"Open the |atoms3_qrcode_motion_sensing_mode_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 上打开 |atoms3_qrcode_motion_sensing_mode_example.m5f2| 项目。"
+
+#: ../../en/base/qrcode.rst:82 ../../en/base/qrcode.rst:159
+#: ce5efe2cddaa42ebab8e222c2fb90632
+msgid ""
+"In **Motion Sensing Mode**, the module automatically triggers decoding "
+"when it detects a change in the scene based on visual recognition "
+"information."
+msgstr "在感应模式下，模块基于视觉识别信息检测到场景变化时，会自动触发解码。"
+
+#: ../../en/base/qrcode.rst:86 87967366948847668ce131d9ba7ae6de
+msgid "|atoms3_qrcode_motion_sensing_mode_example.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:24 2d87ce54a5ab41e79889ceca804ef923
+msgid "atoms3_qrcode_motion_sensing_mode_example.png"
+msgstr ""
+
+#: ../../en/base/qrcode.rst:94 3874c893c1974c058ee6fa50806c9104
+msgid "MicroPython Example:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/base/qrcode.rst:101 ../../en/base/qrcode.rst:116
+#: ../../en/base/qrcode.rst:131 ../../en/base/qrcode.rst:146
+#: ../../en/base/qrcode.rst:161 base.qrcode.AtomicQRCodeBase:13
+#: base.qrcode.AtomicQRCodeBase.read:10
+#: base.qrcode.AtomicQRCodeBase.set_config_tone:9
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous:9
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval:9
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone:9
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode:12
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode:12
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval:9
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone:9
+#: base.qrcode.AtomicQRCodeBase.set_trig:9
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:15
+#: base.qrcode.AtomicQRCodeBase.start_decode:7
+#: base.qrcode.AtomicQRCodeBase.stop_decode:7 e87394b516494acd971be7f5a9d23da8
+#: of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/qrcode.rst:172 fe3cb49c8b75429492f41479fb95b78f
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/base/qrcode.rst:175 7e8e886fbf584015bc357e9b6af6d3cc
+msgid "AtomicQRCodeBase"
+msgstr ""
+
+#: 7303ed7c70b444efab08d2b83915dce8 base.qrcode.AtomicQRCodeBase:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 6cea6bc11787420c9d1efe7b22ae7a9c base.qrcode.AtomicQRCodeBase:1 of
+msgid "Create an AtomicQRCodeBase object."
+msgstr "创建一个 AtomicQRCodeBase 对象。"
+
+#: ../../en/base/qrcode.rst b4a183a49e454c1cb6701b6246e267bc
+#: base.qrcode.AtomicQRCodeBase.set_config_tone
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone
+#: base.qrcode.AtomicQRCodeBase.set_trig
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode of
+msgid "Parameters"
+msgstr ""
+
+#: 0145bf5a02234ef6b02c7341bc98b1e9 base.qrcode.AtomicQRCodeBase:3 of
+msgid "UART id."
+msgstr "UART 端口号。"
+
+#: 52ae2020c2ec4cfabefafb3604ae32df base.qrcode.AtomicQRCodeBase:4 of
+msgid "the UART TX pin."
+msgstr "UART 发送引脚。"
+
+#: 3ba38cad19a04d0da508b91f3556a9bc base.qrcode.AtomicQRCodeBase:5 of
+msgid "the UART RX pin."
+msgstr "UART 接收引脚。"
+
+#: base.qrcode.AtomicQRCodeBase:6 e36af146bc684c4092d2d09115c709d7 of
+msgid "the trigger pin."
+msgstr "触发引脚。"
+
+#: base.qrcode.AtomicQRCodeBase:7 bc8ce60ca46e40ae92ae16d769c48bc5 of
+msgid "the receive done pin."
+msgstr "接收完成引脚。"
+
+#: base.qrcode.AtomicQRCodeBase:11 daa82a8690ff4ada98094591652d2b30 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:6 029d663ac83c499bbea8eb453093f776
+msgid "init.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.read:1 fc0ef57268a64d8b90d4066446b7f740 of
+msgid "Read decode data."
+msgstr "读取解码数据。"
+
+#: base.qrcode.AtomicQRCodeBase.read eb24ef4de2704da3993b504b260771cb of
+msgid "Returns"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.read:3 fda839b0c2f6407a8fc2513579592b4f of
+msgid "qrcode data."
+msgstr "二维码数据。"
+
+#: b1ac1669b30341c5a6b3f772812968f3 base.qrcode.AtomicQRCodeBase.read
+#: base.qrcode.AtomicQRCodeBase.set_config_tone
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone
+#: base.qrcode.AtomicQRCodeBase.set_trig
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode
+#: base.qrcode.AtomicQRCodeBase.start_decode
+#: base.qrcode.AtomicQRCodeBase.stop_decode of
+msgid "Return type"
+msgstr ""
+
+#: a4a2c67bbd2c4c3b846ee956a56feabf base.qrcode.AtomicQRCodeBase.read:8 of
+msgid "|read.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:7 a5c357b7caf24fe58c9505be600aa96b
+msgid "read.png"
+msgstr ""
+
+#: 83d79a9e7f4c4c3f87b5d67055128e7e
+#: base.qrcode.AtomicQRCodeBase.set_config_tone:1 of
+msgid "Set config tone."
+msgstr "设置配置参数提示音。"
+
+#: 1fec5a0a1b02487aab6b378859261f6a
+#: base.qrcode.AtomicQRCodeBase.set_config_tone:3 of
+msgid "True - Enable set config tone, False - Disable set config tone."
+msgstr "True - 打开配置参数提示音，False - 关闭配置参数提示音。"
+
+#: base.qrcode.AtomicQRCodeBase.set_config_tone:7
+#: bc1ecdfb4a08446892c461a2034beaa8 of
+msgid "|set_config_tone.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:19 d64271e66b2e41cc90d930c901696962
+msgid "set_config_tone.png"
+msgstr ""
+
+#: 426404f989214850b5580923c709ba23
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous:1 of
+msgid "Set continuous decode time."
+msgstr "设置解码持续时间。"
+
+#: 79e4d7b4584440599d3cf9249aa54756
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous:3 of
+msgid ""
+"Continuous scanning time(unit: 100ms). Range: 099, i.e., 025,500 ms (0 "
+"means unlimited)."
+msgstr "解码持续时间(单位: 100ms)，范围：0~99，对应 0~9900 ms(0表示无限时)。"
+
+#: 1b3634bf9aed449893f64ba7ee67d61f
+#: base.qrcode.AtomicQRCodeBase.set_decode_continuous:7 of
+msgid "|set_decode_continuous.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:12 14800e4518114afbbdc561a3137522c1
+msgid "set_decode_continuous.png"
+msgstr ""
+
+#: 1c8fb4570f8a46ea963c27dbfbcc659a
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval:1 of
+msgid "Set decode interval."
+msgstr "设置解码间隔时间"
+
+#: 03cc56dbaf7e4961a36da6929779d03b
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval:3 of
+msgid "Decode interval time(unit: 100ms). Range: 0~99, i.e., 0~9,900 ms."
+msgstr "解码间隔时间(单位:100ms)，范围：0~99，对应 0~9900 ms。"
+
+#: 1299eae93f7e4179aad642ca5d501333
+#: base.qrcode.AtomicQRCodeBase.set_decode_interval:7 of
+msgid "|set_decode_interval.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:13 c58269e8c9374e5fb62e14647b75a6d7
+msgid "set_decode_interval.png"
+msgstr ""
+
+#: 5107c807678e44e39dd5242e1a4d9443
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone:1 of
+msgid "Set decode success tone."
+msgstr "设置解码成功提示音。"
+
+#: 5cb06ae15a234aaf8b39b1eb2fc5182a
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone:3 of
+msgid "True - Enable decode success tone, False - Disable decode success tone."
+msgstr "True - 打开解码成功提示音，False - 关闭解码成功提示音。"
+
+#: 47e0f948d8114130ab48d373b193f5f2
+#: base.qrcode.AtomicQRCodeBase.set_decode_success_tone:7 of
+msgid "|set_decode_success_tone.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:18 b1f9819c23104d3193b0c16c7deaeecf
+msgid "set_decode_success_tone.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode:1
+#: e14595fce3cc4e7183a84e239e1a3ae4 of
+msgid "Set fill light mode."
+msgstr "设置补光灯模式。"
+
+#: 788b03ae48b54cf3beea30ed77f4f6f1
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode:3 of
+msgid ""
+"The fill light mode. Available options: - ``FILL_LIGHT_OFF``: Light off. "
+"- ``FILL_LIGHT_ON``: Light on. - ``FILL_LIGHT_ON_DECODE``: Light on "
+"during decoding."
+msgstr ""
+"补光灯模式，可选项: - ``FILL_LIGHT_OFF``: 常灭。- ``FILL_LIGHT_ON``: 常亮。 - "
+"``FILL_LIGHT_ON_DECODE``: 解码时亮。"
+
+#: 4f7f19980aa648709955b11cb0447e00
+#: base.qrcode.AtomicQRCodeBase.set_fill_light_mode:10 of
+msgid "|set_fill_light_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:16 06ffe2206f14448c9e2c7204012a8aeb
+msgid "set_fill_light_mode.png"
+msgstr ""
+
+#: 1c80b13792b3461bbac2b02c239d5f44
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode:1 of
+msgid "Set positioning light mode."
+msgstr "设置定位灯模式。"
+
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode:3
+#: fa17ef2d916f435bb183aa7c15aa5dfe of
+msgid ""
+"The positioning light mode. Available options: - ``POS_LIGHT_OFF``: Light"
+" off. - ``POS_LIGHT_ON``: Light on. - ``POS_LIGHT_ON_DECODE``: Light "
+"flash during decoding."
+msgstr ""
+"定位灯模式，可选项: - ``POS_LIGHT_OFF``: 常灭。 - ``POS_LIGHT_ON``: 常亮。 - "
+"``POS_LIGHT_ON_DECODE``: 解码时亮。"
+
+#: b47787ad7bb649cea8b03651f678a9a7
+#: base.qrcode.AtomicQRCodeBase.set_pos_light_mode:10 of
+msgid "|set_pos_light_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:15 9e07ed1254fc4da1a0e85004774d9a9c
+msgid "set_pos_light_mode.png"
+msgstr ""
+
+#: 34eacedcb326497489cce9452e7c7bcd
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval:1 of
+msgid "Set same code interval."
+msgstr "设置同码间隔。"
+
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval:3
+#: ebdde3f7becf496c882460a3174b755d of
+msgid ""
+"Decode interval for the same code(unit: 100ms). Range: 0~99, i.e., "
+"0~9,900 ms."
+msgstr "同码间隔(单位:100ms), 范围: 0~99, 对应 0~9900ms 。"
+
+#: 91f2f840b6444d49b5403323e67c0a1e
+#: base.qrcode.AtomicQRCodeBase.set_same_code_interval:7 of
+msgid "|set_same_code_interval.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:14 e6e1d70e60234a2ba0996a22b035e29a
+msgid "set_same_code_interval.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone:1
+#: e83b9b5c5b274123816c814ddfb19c52 of
+msgid "Set startup tone."
+msgstr "设置启动提示音。"
+
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone:3
+#: e4b9a94e6f0c42378a5344c332f9fd50 of
+msgid "True - Enable startup tone, False - Disable startup tone."
+msgstr "True - 开启启动提示音, False - 关闭启动提示音。"
+
+#: 0d91bc8778494ecfbb48954459531dbd
+#: base.qrcode.AtomicQRCodeBase.set_startup_tone:7 of
+msgid "|set_startup_tone.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:17 d8c3921e4bef45579bef6aa272bdf8ed
+msgid "set_startup_tone.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.set_trig:1 d5320318612144c2b989eb91a9908007 of
+msgid "Set trigger value."
+msgstr "设置触发引脚电平。"
+
+#: 4647fcccbb814468b57fa21233cf1afb base.qrcode.AtomicQRCodeBase.set_trig:3 of
+msgid "``0`` - Low level, ``1`` - High level."
+msgstr "``0`` - 低电平, ``1`` - 高电平。"
+
+#: base.qrcode.AtomicQRCodeBase.set_trig:7 f5fc1ef0e5d5435d90b5c869329144a7 of
+msgid "|set_trig.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:10 1fbce50db19b4dc6bdbfed820fda01e0
+msgid "set_trig.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:1
+#: ead26d2c52fa470aaff1993e466166ef of
+#, fuzzy
+msgid "Set trigger mode."
+msgstr "设置触发引脚电平。"
+
+#: 967dcdd6bde0455781b7a46010251f55
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:3 of
+msgid ""
+"The trigger mode. Available options:  - ``TRIGGER_MODE_KEY``: Key Mode, "
+"Triggers a single decode; decoding stops after a successful read. - "
+"``TRIGGER_MODE_HOST``: Host Mode, The command controls the start/stop of "
+"decoding. Once triggered, decoding will stop either upon successful "
+"decoding or after a timeout of 5 seconds. - ``TRIGGER_MODE_AUTO``: Auto "
+"Mode, Performs continuous decoding upon power-up and cannot be stopped. -"
+" ``TRIGGER_MODE_PULSE``: Pulse Mode, The Trig pin's low-level signal "
+"triggers decoding, which stops after a successful read or when the single"
+" read time limit is reached. - ``TRIGGER_MODE_MOTION_SENSING``: Motion "
+"Sensing Mode, Uses image recognition; decoding starts when a scene change"
+" is detected."
+msgstr ""
+"触发解码模式，可选项:  - ``TRIGGER_MODE_KEY``: 按键模式, "
+"触发引脚低电平触发解码，高电平停止解码，解码成功后停止解码。- ``TRIGGER_MODE_HOST``: 主机模式, "
+"命令控制解码，解码成功或者超时停止解码- ``TRIGGER_MODE_AUTO``: 自动模式, 上电自动开始解码。- "
+"``TRIGGER_MODE_PULSE``: 脉冲模式, 触发引脚 20ms 以上低电平触发一次解码。- "
+"``TRIGGER_MODE_MOTION_SENSING``: 移动感应模式，使用图像识别感应，当检测到场景发生变化时，触发解码。"
+
+#: 75471af763f44c3f8a61359b2a5b01d4
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:3 of
+msgid "The trigger mode. Available options:"
+msgstr "触发解码模式，可选项:"
+
+#: 146c1bddb138493d802c1340284f6b5c
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:5 of
+msgid ""
+"``TRIGGER_MODE_KEY``: Key Mode, Triggers a single decode; decoding stops "
+"after a successful read."
+msgstr "``TRIGGER_MODE_KEY``: 按键模式, 触发引脚低电平触发解码，高电平停止解码，解码成功后停止解码。"
+
+#: b6a60fafd98549a4b387491832517656
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:6 of
+msgid ""
+"``TRIGGER_MODE_HOST``: Host Mode, The command controls the start/stop of "
+"decoding. Once triggered, decoding will stop either upon successful "
+"decoding or after a timeout of 5 seconds."
+msgstr "``TRIGGER_MODE_HOST``: 主机模式, 命令控制解码，解码成功或者超时停止解码"
+
+#: 87dabc703f8348a1b65c0a7392ef9666
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:7 of
+msgid ""
+"``TRIGGER_MODE_AUTO``: Auto Mode, Performs continuous decoding upon "
+"power-up and cannot be stopped."
+msgstr "`TRIGGER_MODE_AUTO``: 自动模式, 上电自动开始解码。"
+
+#: 660c021fd8004e519b4aeeb5f9f3ed9d
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:8 of
+msgid ""
+"``TRIGGER_MODE_PULSE``: Pulse Mode, The Trig pin's low-level signal "
+"triggers decoding, which stops after a successful read or when the single"
+" read time limit is reached."
+msgstr "`TRIGGER_MODE_PULSE``: 脉冲模式, 触发引脚 20ms 以上低电平触发一次解码。"
+
+#: 51400f11929e4b7bac36e36611d0a2be
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:9 of
+msgid ""
+"``TRIGGER_MODE_MOTION_SENSING``: Motion Sensing Mode, Uses image "
+"recognition; decoding starts when a scene change is detected."
+msgstr "``TRIGGER_MODE_MOTION_SENSING``: 移动感应模式，使用图像识别感应，当检测到场景发生变化时，触发解码。"
+
+#: 6a9bd15ea9c3461ea740d01bc432051c
+#: base.qrcode.AtomicQRCodeBase.set_trigger_mode:13 of
+msgid "|set_trigger_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:11 6127f4e92a2a4a3184108eaa72ef774a
+msgid "set_trigger_mode.png"
+msgstr ""
+
+#: base.qrcode.AtomicQRCodeBase.start_decode:1 f476d125d2e041b0bdd49f34ca328301
+#: of
+msgid "Start decode."
+msgstr "开始解码。"
+
+#: 23dee6b6c4064c1ba452745c99da3118 base.qrcode.AtomicQRCodeBase.start_decode:5
+#: of
+msgid "|start_decode.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:8 f44bd38ccd0c4b69ae49e5210f819ac8
+msgid "start_decode.png"
+msgstr ""
+
+#: 23b22346674845e7abd3255f9301c46b base.qrcode.AtomicQRCodeBase.stop_decode:1
+#: of
+msgid "Stop decode."
+msgstr "停止解码。"
+
+#: 89e6f5edc2e34d9ca9ad97a7461a50f0 base.qrcode.AtomicQRCodeBase.stop_decode:5
+#: of
+msgid "|stop_decode.png|"
+msgstr ""
+
+#: ../../en/refs/base.qrcode.ref:9 9cad9e9a9bd04cd5ab82bd9b49a0e7b7
+msgid "stop_decode.png"
+msgstr ""
+
+#~ msgid "Set trigger mode. 设置触发解码模式。"
+#~ msgstr "设置触发解码模式。"
+

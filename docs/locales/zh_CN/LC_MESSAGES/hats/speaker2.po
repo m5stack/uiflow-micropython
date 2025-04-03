@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-28 10:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hats/speaker2.rst:4 45b622ba3ee34ab285f09be2bd010114
+msgid "Speaker2 Hat"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:10 6abec3ed2e7143b5a8aec7dd35b0e191
+msgid ""
+"This is the driver library of Speaker2 Hat, which is provides a set of "
+"methods to control the speaker."
+msgstr "这是 Speaker2 Hat 的驱动库，提供了控制扬声器的功能。"
+
+#: ../../en/hats/speaker2.rst:12 b05b8530731042bfa41df41fd6478d64
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/hats/speaker2.rst:14 6b83ba641fe8435b9781655d89dda0c0
+msgid "|Speaker2|"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:18 96f600cea6fb4d5287288e214fd92d7a
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/hats/speaker2.rst:20 ../../en/hats/speaker2.rst:38
+#: 1cd5924d4f424f78b819dd9feb880ed1 30dfca6bf7314b5e9184df71a8c39aba
+msgid "play audio"
+msgstr "播放音频"
+
+#: ../../en/hats/speaker2.rst:22 8d4619e62df54eb0a14ecc61a6714a4f
+msgid "Open the |speaker2_stickcplus2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |speaker2_stickcplus2_example.m5f2| 项目。"
+
+#: ../../en/hats/speaker2.rst:24 ../../en/hats/speaker2.rst:40
+#: 52c1d4bfdacf438cbd0447787deaa902 5a601875a81649e78b1980163c360a51
+msgid "This example demonstrates how to play audio."
+msgstr "这个示例演示了如何播放音频。"
+
+#: ../../en/hats/speaker2.rst:26 cc2bf49c6d7247af8123a1928a8697b2
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hats/speaker2.rst:28 7ae223dccfae46e18b062f59767929b1
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:30 ../../en/hats/speaker2.rst:48
+#: 08ff9b60ad434e5f8686485ec956d547 57a31e0bd37f4a6292c59428ebd38f89
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hats/speaker2.rst:32 ../../en/hats/speaker2.rst:50
+#: 0ef4f74f90e54aa09980dcb757822bd1 d3ef95454f0749569d137996d556d919
+msgid "None"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:35 7924eb04b76243a6a1b9d543a02f857e
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/hats/speaker2.rst:42 75c333870b5f414984bb902a3c561310
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hats/speaker2.rst:54 8771d5c5fc6e4a218b931c3022ceb81d
+msgid "**API**"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:57 5591946668d945e19a55281fd61bc1fc
+msgid "Speaker2"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:62 de42c8fe346245c696806a6139542f66
+msgid ""
+"Speaker2 class inherits Speaker class, See :ref:`hardware.Speaker.Methods"
+" <hardware.Speaker.Methods>` for more details."
+msgstr "Speaker2 类继承 Speaker 类，请参阅 :ref:`hardware.Speaker.Methods"
+" <hardware.Speaker.Methods>` 了解更多详细信息。"
