@@ -14,6 +14,7 @@ import time
 import _thread
 
 running = False
+port = 10000
 
 
 def slave_loop(args):
@@ -26,9 +27,10 @@ def slave_loop(args):
 class Test(unittest.TestCase):
     def setUp(self):
         self.slave_address = 0x01
+        global port
         self.srv = ModbusTCPServer(
             "127.0.0.1",
-            505,
+            port,
             context={
                 "coils": [
                     {
@@ -64,26 +66,30 @@ class Test(unittest.TestCase):
         # return super().setUp()
 
     def tearDown(self):
-        global running
+        global running, port
         running = False
         self.srv.stop()
         time.sleep(1)
+        port += 1
         # return super().tearDown()
 
     def test_read_coils(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port, verbose=True)
         cl.connect()
         self.assertEqual(cl.read_coils(self.slave_address, 1000, 1), [True])
         self.assertEqual(cl.read_coils(self.slave_address, 1001, 1), [False])
         self.assertEqual(cl.read_coils(self.slave_address, 1000, 2), [True, False])
         self.assertEqual(cl.read_coils(self.slave_address, 1001, 2), [False, True])
         self.assertEqual(cl.read_coils(self.slave_address, 1000, 3), [True, False, True])
+        time.sleep(1)
         cl.disconnect()
         self.srv.stop()
         time.sleep(1)
 
     def test_read_digital_inputs(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(cl.read_discrete_inputs(self.slave_address, 1000, 1), [True])
         self.assertEqual(cl.read_discrete_inputs(self.slave_address, 1000, 2), [True, False])
@@ -102,7 +108,8 @@ class Test(unittest.TestCase):
         time.sleep(1)
 
     def test_read_holding_registers(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(cl.read_holding_registers(self.slave_address, 1000, 1), [0x0001])
         self.assertEqual(
@@ -122,7 +129,8 @@ class Test(unittest.TestCase):
         time.sleep(1)
 
     def test_read_input_registers(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(
             cl.read_input_registers(self.slave_address, 1000, 1),
@@ -145,7 +153,8 @@ class Test(unittest.TestCase):
         time.sleep(1)
 
     def test_read_write_coils(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(cl.write_single_coil(self.slave_address, 1001, 1), True)
         self.assertEqual(cl.read_coils(self.slave_address, 1000, 3), [True, True, True])
@@ -166,7 +175,8 @@ class Test(unittest.TestCase):
         time.sleep(1)
 
     def test_read_write_holding_register(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(cl.write_single_register(self.slave_address, 1000, 0xFFEE), 0xFFEE)
         self.assertEqual(cl.read_holding_registers(self.slave_address, 1000, 1), [0xFFEE])
@@ -180,7 +190,8 @@ class Test(unittest.TestCase):
         time.sleep(1)
 
     def test_write_multiple_registers(self):
-        cl = ModbusTCPClient("127.0.0.1", 505)
+        global port
+        cl = ModbusTCPClient("127.0.0.1", port)
         cl.connect()
         self.assertEqual(cl.write_multiple_registers(self.slave_address, 1000, [0xFFEE]), 1)
         self.assertEqual(cl.read_holding_registers(self.slave_address, 1000, 1), [0xFFEE])

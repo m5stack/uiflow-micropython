@@ -250,7 +250,7 @@ class ModbusMaster:
             state, resp = self._send(f.get_frame(), timeout=timeout)
             if state is False:
                 return None
-            resp_frame = ModbusTCPFrame.parse_frame(resp)
+            resp_frame = ModbusTCPFrame.parse_frame(resp, verbose=self._verbose)
             self.ti += 1
         elif self.ms_type == "rtu":
             f = ModbusRTUFrame(
@@ -263,7 +263,9 @@ class ModbusMaster:
             state, resp = self._send(f.get_frame(), timeout=timeout)
             if state is False:
                 return None
-            resp_frame = ModbusRTUFrame.parse_frame(resp, fr_type="response")
+            resp_frame = ModbusRTUFrame.parse_frame(
+                resp, fr_type="response", verbose=self._verbose
+            )
 
         return resp_frame.data
 
@@ -292,7 +294,7 @@ class ModbusMaster:
             state, resp = await self._send_async(f.get_frame(), timeout=timeout)
             if state is False:
                 return None
-            resp_frame = ModbusTCPFrame.parse_frame(resp)
+            resp_frame = ModbusTCPFrame.parse_frame(resp, verbose=self._verbose)
             self.ti += 1
         elif self.ms_type == "rtu":
             f = ModbusRTUFrame(
@@ -305,7 +307,9 @@ class ModbusMaster:
             state, resp = await self._send_async(f.get_frame(), timeout=timeout)
             if state is False:
                 return None
-            resp_frame = ModbusRTUFrame.parse_frame(resp, fr_type="response")
+            resp_frame = ModbusRTUFrame.parse_frame(
+                resp, fr_type="response", verbose=self._verbose
+            )
 
         return resp_frame.data
 
@@ -574,9 +578,9 @@ class ModbusMaster:
             return None
 
         if self.ms_type == "tcp":
-            resp_frame = ModbusTCPFrame.parse_frame(resp)
+            resp_frame = ModbusTCPFrame.parse_frame(resp, verbose=self._verbose)
         elif self.ms_type == "rtu":
-            resp_frame = ModbusRTUFrame.parse_frame(resp)
+            resp_frame = ModbusRTUFrame.parse_frame(resp, verbose=self._verbose)
 
         if resp_frame is None:
             return None
@@ -677,9 +681,9 @@ class ModbusMaster:
             return None
 
         if self.ms_type == "tcp":
-            resp_frame = ModbusTCPFrame.parse_frame(resp)
+            resp_frame = ModbusTCPFrame.parse_frame(resp, verbose=self._verbose)
         elif self.ms_type == "rtu":
-            resp_frame = ModbusRTUFrame.parse_frame(resp)
+            resp_frame = ModbusRTUFrame.parse_frame(resp, verbose=self._verbose)
 
         if resp_frame.func_code in [0x05, 0x06]:
             return resp_frame.data
