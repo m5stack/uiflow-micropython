@@ -66,6 +66,6 @@ Image resources need to be saved under the ``res/img`` directory.
 Use Images from the Device
 --------------------------
 
-Use the |setImage.svg| block to set the filename of the image to be displayed, and show the image on the screen.
+Use the |setImage.png| block to set the filename of the image to be displayed, and show the image on the screen.
 
 |usb-mode-8.gif|

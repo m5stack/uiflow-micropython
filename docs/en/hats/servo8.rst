@@ -50,7 +50,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -65,7 +65,7 @@ Methods
 
     UIFLOW2:
 
-        |write_servo_angle.svg|
+        |write_servo_angle.png|
 
 
 .. method:: Servos8Hat.read_servo_angle(ch)
@@ -76,7 +76,7 @@ Methods
 
     UIFLOW2:
 
-        |read_servo_angle.svg|
+        |read_servo_angle.png|
 
 
 .. method:: Servos8Hat.write_servo_pulse(ch, pulse)
@@ -88,7 +88,7 @@ Methods
 
     UIFLOW2:
 
-        |write_servo_pulse.svg|
+        |write_servo_pulse.png|
 
 
 .. method:: Servos8Hat.read_servo_pulse(ch)
@@ -99,7 +99,7 @@ Methods
 
     UIFLOW2:
 
-        |read_servo_pulse.svg|
+        |read_servo_pulse.png|
 
 
 .. method:: Servos8Hat.power_ctrl(state)
@@ -110,7 +110,7 @@ Methods
 
     UIFLOW2:
 
-        |power_ctrl.svg|
+        |power_ctrl.png|
 
 
 .. method:: Servos8Hat.power_on()
@@ -119,7 +119,7 @@ Methods
 
     UIFLOW2:
 
-        |power_on.svg|
+        |power_on.png|
 
 
 .. method:: Servos8Hat.power_off()
@@ -128,7 +128,7 @@ Methods
 
     UIFLOW2:
 
-        |power_off.svg|
+        |power_off.png|
 
 
 .. method:: Servos8Hat.get_power_state()
@@ -137,4 +137,4 @@ Methods
 
     UIFLOW2:
 
-        |get_power_state.svg|
+        |get_power_state.png|

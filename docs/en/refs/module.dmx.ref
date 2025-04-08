@@ -6,14 +6,14 @@
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/init.png
 .. |dmx_init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/dmx_init.png
 .. |write_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/write_data.png
-.. |update_dmx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/update_dmx.png
+.. .. |update_dmx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/update_dmx.png
 .. |read_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/read_data.png
 .. |clear_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/clear_buffer.png
 .. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/deinit.png
 .. |receive_none_block.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/receive_none_block.png
 .. |receive_data_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/receive_event.png
 .. |stop_receive.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/stop_receive.png
-.. |detach_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/detach_channel.png
+.. .. |detach_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/detach_channel.png
 
 .. |tx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/send_example.png
 .. |rx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dmx/receive_example.png

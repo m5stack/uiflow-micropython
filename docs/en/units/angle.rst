@@ -24,7 +24,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -47,7 +47,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -59,7 +59,7 @@ Methods
 
     UIFLOW2:
 
-        |get_value.svg|
+        |get_value.png|
 
 
 .. method:: Angle.get_voltage()
@@ -68,4 +68,4 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|

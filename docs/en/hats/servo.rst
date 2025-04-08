@@ -29,7 +29,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -49,7 +49,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -63,7 +63,7 @@ Methods
 
     UIFLOW2:
 
-        |set_duty.svg|
+        |set_duty.png|
 
 
 .. method:: ServoHat.set_percent(percent: int) -> None
@@ -74,7 +74,7 @@ Methods
 
     UIFLOW2:
 
-        |set_percent.svg|
+        |set_percent.png|
 
 
 .. method:: ServoHat.deinit()
@@ -83,4 +83,4 @@ Methods
 
     UIFLOW2:
 
-        |deinit.svg|
+        |deinit.png|

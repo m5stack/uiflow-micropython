@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -52,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_analog_value.svg|
+        |get_analog_value.png|
 
 
 .. method:: EARTH.get_digital_value()
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_digital_value.svg|
+        |get_digital_value.png|
 
 
 .. method:: EARTH.get_voltage_mv()
@@ -70,7 +70,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage_mv.svg|
+        |get_voltage_mv.png|
 
 
 .. method:: EARTH.humidity()
@@ -79,7 +79,7 @@ Methods
 
     UIFLOW2:
 
-        |humidity.svg|
+        |humidity.png|
 
 
 .. method:: EARTH.set_calibrate()
@@ -88,4 +88,4 @@ Methods
 
     UIFLOW2:
 
-        |set_calibrate.svg|
+        |set_calibrate.png|

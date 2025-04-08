@@ -23,7 +23,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.ThermaltUnit.Methods:
@@ -39,7 +39,7 @@ Methods
 
     UIFLOW2:
 
-        |get_max_temperature.svg|
+        |get_max_temperature.png|
 
 
 .. property:: ThermalUnit.get_min_temperature
@@ -50,7 +50,7 @@ Methods
 
     UIFLOW2:
 
-        |get_min_temperature.svg|
+        |get_min_temperature.png|
 
 
 .. property:: ThermalUnit.get_midpoint_temperature
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_midpoint_temperature.svg|
+        |get_midpoint_temperature.png|
 
 
 .. method:: ThermalUnit.get_pixel_temperature(x: int, y: int) -> float
@@ -75,7 +75,7 @@ Methods
 
     UIFLOW2:
 
-        |get_pixel_temperature.svg|
+        |get_pixel_temperature.png|
 
 
 .. property:: ThermalUnit.get_refresh_rate
@@ -86,7 +86,7 @@ Methods
 
     UIFLOW2:
 
-        |get_refresh_rate.svg|
+        |get_refresh_rate.png|
 
 
 .. method:: ThermalUnit.get_temperature_buffer() -> list
@@ -97,7 +97,7 @@ Methods
 
     UIFLOW2:
 
-        |get_temperature_buffer.svg|
+        |get_temperature_buffer.png|
 
 
 .. method:: ThermalUnit.set_refresh_rate(rate: int) -> None
@@ -108,7 +108,7 @@ Methods
 
     UIFLOW2:
 
-        |set_refresh_rate.svg|
+        |set_refresh_rate.png|
 
 
 .. method:: ThermalUnit.update_temperature_buffer() -> bytes
@@ -119,4 +119,4 @@ Methods
 
     UIFLOW2:
 
-        |update_temperature_buffer.svg|
+        |update_temperature_buffer.png|

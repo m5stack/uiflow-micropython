@@ -3,17 +3,17 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/init.png
 
-.. |once.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/play_once.svg
+.. |once.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/play_once.png
 
-.. |set_freq.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/set_freq.svg
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/set_freq.png
 
-.. |set_duty.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/set_duty.svg
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/set_duty.png
 
-.. |turn_off.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/turn_off.svg
+.. |turn_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/turn_off.png
 
-.. |deinit.svg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/unit/buzzer/deinit.svg
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/deinit.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/buzzer/example.png
 

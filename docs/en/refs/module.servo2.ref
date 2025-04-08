@@ -5,7 +5,7 @@
     :width: 200px
 
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/init.png
-.. |_us2duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/_us2duty.png
+.. .. |_us2duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/_us2duty.png
 .. |set_degrees.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_degrees.png
 .. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_duty.png
 .. |set_pulse_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/servo2/set_pulse_width.png

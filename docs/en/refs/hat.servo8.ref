@@ -3,13 +3,13 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/init.svg
-.. |write_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_angle.svg
-.. |read_servo_angle.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_angle.svg
-.. |write_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_pulse.svg
-.. |read_servo_pulse.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_pulse.svg
-.. |power_ctrl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_ctrl.svg
-.. |power_on.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_on.svg
-.. |power_off.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_off.svg
-.. |get_power_state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/get_power_state.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/init.png
+.. |write_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_angle.png
+.. |read_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_angle.png
+.. |write_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/write_servo_pulse.png
+.. |read_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/read_servo_pulse.png
+.. |power_ctrl.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_ctrl.png
+.. |power_on.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_on.png
+.. |power_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/power_off.png
+.. |get_power_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/8servos_v11/get_power_state.png
 

@@ -30,7 +30,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -50,7 +50,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -66,7 +66,7 @@ Methods
 
     UIFLOW2:
 
-        |set_pixel.svg|
+        |set_pixel.png|
 
 
 .. method:: NeoFlashHat.set_pixels(data: list) -> None
@@ -77,7 +77,7 @@ Methods
 
     UIFLOW2:
 
-        |set_pixels.svg|
+        |set_pixels.png|
 
 
 Constants

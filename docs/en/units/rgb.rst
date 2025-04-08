@@ -25,7 +25,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -49,7 +49,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |set_brightness.svg|
+        |set_brightness.png|
 
 
 .. method:: RGB.fill_color(c: int)
@@ -70,7 +70,7 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color.png|
 
 
 .. method:: RGB.set_color(i, c: int)
@@ -79,4 +79,4 @@ Methods
 
     UIFLOW2:
 
-        |set_color.svg|
+        |set_color.png|

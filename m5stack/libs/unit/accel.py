@@ -14,7 +14,7 @@ class AccelUnit(ADXL345):
 
     UiFlow2 Code Block:
 
-        |init.svg|
+        |init.png|
 
     MicroPython Code Block:
 
@@ -38,7 +38,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |get_accel.svg|
+            |get_accel.png|
 
         MicroPython Code Block:
 
@@ -96,7 +96,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |get_data_rate.svg|
+            |get_data_rate.png|
 
         MicroPython Code Block:
 
@@ -113,7 +113,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |set_data_rate.svg|
+            |set_data_rate.png|
 
         MicroPython Code Block:
 
@@ -131,7 +131,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |get_range.svg|
+            |get_range.png|
 
         MicroPython Code Block:
 
@@ -148,7 +148,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |set_range.svg|
+            |set_range.png|
 
         MicroPython Code Block:
 
@@ -166,7 +166,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |is_tap.svg|
+            |is_tap.png|
 
         MicroPython Code Block:
 
@@ -184,7 +184,7 @@ class AccelUnit(ADXL345):
         :rtype: bool
 
         UiFlow2 Code Block:
-            |is_motion.svg|
+            |is_motion.png|
 
         MicroPython Code Block:
 
@@ -203,7 +203,7 @@ class AccelUnit(ADXL345):
 
         UiFlow2 Code Block:
 
-            |is_freefall.svg|
+            |is_freefall.png|
 
         MicroPython Code Block:
 

@@ -4,10 +4,10 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/init.svg
-.. |set_duty.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_duty.svg
-.. |set_percent.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_percent.svg
-.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/deinit.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/init.png
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_duty.png
+.. |set_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/set_percent.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/deinit.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/servo/example.png
 

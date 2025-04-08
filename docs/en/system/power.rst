@@ -9,9 +9,9 @@ class Power
 
 .. important::
 
-    Methods of the Power Class depend on ``M5.begin()`` |M5.begin.svg|.
+    Methods of the Power Class depend on ``M5.begin()`` |M5.begin.png|.
 
-    All methods calling the Power object need to be placed after ``M5.begin()`` |M5.begin.svg|.
+    All methods calling the Power object need to be placed after ``M5.begin()`` |M5.begin.png|.
 
 
 Methods
@@ -30,8 +30,8 @@ Methods
 
     UIFLOW2:
 
-        |setExtOutput1.svg|
-        |setExtOutput2.svg|
+        |setExtOutput1.png|
+        |setExtOutput2.png|
 
 
 .. method:: Power.getExtOutput() -> bool
@@ -44,7 +44,7 @@ Methods
 
     UIFLOW2:
 
-        |getExtOutput.svg|
+        |getExtOutput.png|
 
 
 .. method:: Power.setUsbOutput(enable: bool) -> None
@@ -57,7 +57,7 @@ Methods
 
     UIFLOW2:
 
-        |setUsbOutput.svg|
+        |setUsbOutput.png|
 
 
 .. method:: Power.getUsbOutput() -> bool
@@ -69,7 +69,7 @@ Methods
 
     UIFLOW2:
 
-        |getUsbOutput.svg|
+        |getUsbOutput.png|
 
 
 .. method:: Power.setLed(brightness=255) -> None
@@ -81,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |setLed.svg|
+        |setLed.png|
 
 
 .. method:: Power.powerOff()
@@ -90,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |powerOff.svg|
+        |powerOff.png|
 
 
 .. method:: Power.timerSleep(seconds) -> None
@@ -111,9 +111,9 @@ Methods
 
     UIFLOW2:
 
-        |timerSleep1.svg|
-        |timerSleep2.svg|
-        |timerSleep3.svg|
+        |timerSleep1.png|
+        |timerSleep2.png|
+        |timerSleep3.png|
 
 
 .. method:: Power.deepSleep(micro_seconds: int=0, wakeup: bool=True)
@@ -126,7 +126,7 @@ Methods
 
     UIFLOW2:
 
-        |deepSleep.svg|
+        |deepSleep.png|
 
 
 .. method:: Power.lightSleep(micro_seconds: int=0, wakeup: bool=True)
@@ -139,7 +139,7 @@ Methods
 
     UIFLOW2:
 
-        |lightSleep.svg|
+        |lightSleep.png|
 
 
 .. method:: Power.getBatteryLevel() -> int
@@ -148,7 +148,7 @@ Methods
 
     UIFLOW2:
 
-        |getBatteryLevel.svg|
+        |getBatteryLevel.png|
 
 
 .. method:: Power.setBatteryCharge(enable: bool) -> None
@@ -157,7 +157,7 @@ Methods
 
     UIFLOW2:
 
-        |setBatteryCharge.svg|
+        |setBatteryCharge.png|
 
 
 .. method:: Power.setChargeCurrent(max_mA: int) -> None
@@ -168,7 +168,7 @@ Methods
 
     UIFLOW2:
 
-        |setChargeCurrent.svg|
+        |setChargeCurrent.png|
 
 
 .. method:: Power.setChargeVoltage(max_mV: int) -> None
@@ -179,7 +179,7 @@ Methods
 
     UIFLOW2:
 
-        |setChargeVoltage.svg|
+        |setChargeVoltage.png|
 
 
 .. method:: Power.isCharging() -> bool
@@ -188,7 +188,7 @@ Methods
 
     UIFLOW2:
 
-        |isCharging.svg|
+        |isCharging.png|
 
 
 .. method:: Power.getBatteryVoltage() -> int
@@ -197,7 +197,7 @@ Methods
 
     UIFLOW2:
 
-        |getBatteryVoltage.svg|
+        |getBatteryVoltage.png|
 
 
 .. method:: Power.getBatteryCurrent() -> int
@@ -206,7 +206,7 @@ Methods
 
     UIFLOW2:
 
-        |getBatteryCurrent.svg|
+        |getBatteryCurrent.png|
 
 
 .. method:: Power.getKeyState() -> int
@@ -215,7 +215,7 @@ Methods
 
     UIFLOW2:
 
-        |getKeyState.svg|
+        |getKeyState.png|
 
 .. method:: Power.setVibration(level: int) -> None
 
@@ -225,7 +225,7 @@ Methods
 
     UIFLOW2:
 
-        |setVibration.svg|
+        |setVibration.png|
 
 
 .. _class PORT:

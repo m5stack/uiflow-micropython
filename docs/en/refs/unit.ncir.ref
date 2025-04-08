@@ -3,16 +3,12 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/example.svg
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/init.svg
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/init.png
 
-.. |get_ambient_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/get_ambient_temperature.svg
 .. |get_ambient_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/get_ambient_temperature.png
 
-.. |get_object_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/get_object_temperature.svg
 .. |get_object_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir/get_object_temperature.png
 
 .. |ncir_core_example.m5f2| raw:: html

@@ -30,7 +30,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -53,7 +53,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -65,4 +65,4 @@ Methods
 
     UIFLOW2:
 
-        |get_target_distance.svg|
+        |get_target_distance.png|

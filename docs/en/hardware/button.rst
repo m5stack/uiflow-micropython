@@ -60,7 +60,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -73,9 +73,9 @@ class Button
 
 .. important::
 
-    Methods of Button Class heavily rely on ``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg|.
+    Methods of Button Class heavily rely on ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png|.
 
-    All calls to methods of Button objects should be placed after ``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg| should be called in the main loop.
+    All calls to methods of Button objects should be placed after ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
 
 Methods
@@ -87,7 +87,7 @@ Methods
 
     UIFLOW2:
 
-        |isHolding.svg|
+        |isHolding.png|
 
 
 .. method:: Button.isPressed()
@@ -96,7 +96,7 @@ Methods
 
     UIFLOW2:
 
-        |isPressed.svg|
+        |isPressed.png|
 
 
 .. method:: Button.isReleased()
@@ -105,7 +105,7 @@ Methods
 
     UIFLOW2:
 
-        |isReleased.svg|
+        |isReleased.png|
 
 
 .. method:: Button.wasClicked()
@@ -114,7 +114,7 @@ Methods
 
     UIFLOW2:
 
-        |wasClicked.svg|
+        |wasClicked.png|
 
 
 .. method:: Button.wasDoubleClicked()
@@ -123,7 +123,7 @@ Methods
 
     UIFLOW2:
 
-        |wasDoubleClicked.svg|
+        |wasDoubleClicked.png|
 
 
 .. method:: Button.wasHold()
@@ -132,7 +132,7 @@ Methods
 
     UIFLOW2:
 
-        |wasHold.svg|
+        |wasHold.png|
 
 
 .. method:: Button.wasPressed()
@@ -141,7 +141,7 @@ Methods
 
     UIFLOW2:
 
-        |wasPressed.svg|
+        |wasPressed.png|
 
 
 .. method:: Button.wasReleased()
@@ -150,7 +150,7 @@ Methods
 
     UIFLOW2:
 
-        |wasReleased.svg|
+        |wasReleased.png|
 
 
 .. method:: Button.wasSingleClicked()
@@ -159,7 +159,7 @@ Methods
 
     UIFLOW2:
 
-        |wasSingleClicked.svg|
+        |wasSingleClicked.png|
 
 
 Event Handling
@@ -171,7 +171,7 @@ Event Handling
 
     UIFLOW2:
 
-        |setCallback.svg|
+        |setCallback.png|
 
 
 Constants

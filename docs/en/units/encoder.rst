@@ -17,7 +17,7 @@ Micropython Example:
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -52,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_status.svg|
+        |get_rotary_status.png|
 
 
 .. method:: EncoderUnit.get_rotary_value() -> int
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_value.svg|
+        |get_rotary_value.png|
 
 
 .. method:: EncoderUnit.get_rotary_increments() -> int
@@ -71,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |get_rotary_increments.svg|
+        |get_rotary_increments.png|
 
 
 .. method:: EncoderUnit.reset_rotary_value() -> None
@@ -80,7 +80,7 @@ Methods
 
     UIFLOW2:
 
-        |reset_rotary_value.svg|
+        |reset_rotary_value.png|
 
 
 .. method:: EncoderUnit.set_rotary_value(new_value: int) -> None
@@ -91,7 +91,7 @@ Methods
 
     UIFLOW2:
 
-        |set_rotary_value.svg|
+        |set_rotary_value.png|
 
 
 .. method:: EncoderUnit.get_button_status() -> bool
@@ -100,7 +100,7 @@ Methods
 
     UIFLOW2:
 
-        |get_button_status.svg|
+        |get_button_status.png|
 
 
 .. method:: EncoderUnit.set_color(index, rgb: int) -> None
@@ -112,7 +112,7 @@ Methods
 
     UIFLOW2:
 
-        |set_color.svg|
+        |set_color.png|
 
 
 .. method:: EncoderUnit.fill_color(rgb: int) -> None
@@ -123,5 +123,5 @@ Methods
 
     UIFLOW2:
 
-        |fill_color.svg|
+        |fill_color.png|
 

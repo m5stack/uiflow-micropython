@@ -3,25 +3,18 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/example.svg
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/init.svg
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/init.png
 
-.. |get_analog_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_analog_value.svg
 .. |get_analog_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_analog_value.png
 
-.. |get_digital_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_digital_value.svg
 .. |get_digital_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_digital_value.png
 
-.. |get_voltage_mv.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_voltage_mv.svg
 .. |get_voltage_mv.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/get_voltage_mv.png
 
-.. |humidity.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/humidity.svg
 .. |humidity.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/humidity.png
 
-.. |set_calibrate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/set_calibrate.svg
 .. |set_calibrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/earth/set_calibrate.png
 
 .. |earth_core_example.m5f2| raw:: html

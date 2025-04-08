@@ -5,12 +5,12 @@
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/init.png
 .. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/read.png
 .. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/recv.png
-.. |recvfrom.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/recvfrom.png
+.. .. |recvfrom.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/recvfrom.png
 .. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/send.png
-.. |sendto.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/sendto.png
+.. .. |sendto.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/sendto.png
 .. |setsockopt.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/setsockopt.png
 .. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/write.png
-.. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/readline.png
+.. .. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/readline.png
 .. |setblocking.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/setblocking.png
 .. |settimeout.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/server/settimeout.png
 

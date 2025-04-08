@@ -4,9 +4,9 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/init.svg
-.. |set_pixel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixel.svg
-.. |set_pixels.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixels.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/init.png
+.. |set_pixel.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixel.png
+.. |set_pixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/set_pixels.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/neoflash/example.png
 

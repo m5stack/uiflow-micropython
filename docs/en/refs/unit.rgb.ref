@@ -3,15 +3,15 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/init.png
 
-.. |set_brightness.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_brightness.svg
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_brightness.png
 
-.. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/fill_color.svg
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/fill_color.png
 
-.. |set_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_color.svg
+.. |set_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rgb/set_color.png
 
 .. |rgb_core_example.m5f2| raw:: html
 

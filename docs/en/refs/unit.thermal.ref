@@ -4,20 +4,20 @@
     :width: 200px
 
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/init.png
 
-.. |get_max_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_max_temperature.svg
+.. |get_max_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_max_temperature.png
 
-.. |get_midpoint_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_midpoint_temperature.svg
+.. |get_midpoint_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_midpoint_temperature.png
 
-.. |get_min_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_min_temperature.svg
+.. |get_min_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_min_temperature.png
 
-.. |get_pixel_temperature.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_pixel_temperature.svg
+.. |get_pixel_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_pixel_temperature.png
 
-.. |get_refresh_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_refresh_rate.svg
+.. |get_refresh_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_refresh_rate.png
 
-.. |get_temperature_buffer.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_temperature_buffer.svg
+.. |get_temperature_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/get_temperature_buffer.png
 
-.. |set_refresh_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/set_refresh_rate.svg
+.. |set_refresh_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/set_refresh_rate.png
 
-.. |update_temperature_buffer.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/update_temperature_buffer.svg
+.. |update_temperature_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/thermal/update_temperature_buffer.png

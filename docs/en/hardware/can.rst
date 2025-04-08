@@ -34,7 +34,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -80,7 +80,7 @@ Methods
 
     UIFLOW2:
 
-        |deinit.svg|
+        |deinit.png|
 
 
 .. method:: CAN.restart()
@@ -96,7 +96,7 @@ Methods
 
     UIFLOW2:
 
-        |restart.svg|
+        |restart.png|
 
 .. method:: CAN.state()
 
@@ -110,7 +110,7 @@ Methods
 
     UIFLOW2:
 
-        |state.svg|
+        |state.png|
 
 
 .. method:: CAN.info([list])
@@ -134,7 +134,7 @@ Methods
 
     UIFLOW2:
 
-        |info.svg|
+        |info.png|
 
 
 .. method:: CAN.any(fifo)
@@ -143,7 +143,7 @@ Methods
 
     UIFLOW2:
 
-        |any.svg|
+        |any.png|
 
 
 .. method:: CAN.recv(fifo, list=None, *, timeout=5000)
@@ -182,9 +182,9 @@ Methods
 
     UIFLOW2:
 
-        |recv1.svg|
+        |recv1.png|
 
-        |recv2.svg|
+        |recv2.png|
 
 
 .. method:: CAN.send(data, id, *, timeout=0, rtr=False, extframe=False)
@@ -211,7 +211,7 @@ Methods
 
     UIFLOW2:
 
-        |send.svg|
+        |send.png|
 
 
 Constants

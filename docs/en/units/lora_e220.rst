@@ -37,12 +37,12 @@ Micropython RX Example::
 
 UIFLOW2 TX Example:
 
-    |tx_example.svg|
+    |tx_example.png|
 
 
 UIFLOW2 RX Example:
 
-    |rx_example.svg|
+    |rx_example.png|
 
 
 .. only:: builder_html
@@ -104,7 +104,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -131,7 +131,7 @@ Methods
 
     UIFLOW2:
 
-        |setup.svg|
+        |setup.png|
 
 
 .. method:: LoRaE220JPUnit.receiveNoneBlock(receive_callback: function) -> None
@@ -150,7 +150,7 @@ Methods
 
     UIFLOW2:
 
-        |receiveNoneBlock.svg|
+        |receiveNoneBlock.png|
 
 
 .. method:: LoRaE220JPUnit.receive_none_block(receive_callback: function) -> None
@@ -169,9 +169,9 @@ Methods
 
     UIFLOW2:
 
-        |receiveNoneBlock.svg|
-        |receive_callback1.svg|
-        |receive_callback2.svg|
+        |receiveNoneBlock.png|
+        |receive_callback1.png|
+        |receive_callback2.png|
 
 .. method:: LoRaE220JPUnit.stopReceive() -> None
 
@@ -185,7 +185,7 @@ Methods
 
     UIFLOW2:
 
-        |stopReceive.svg|
+        |stopReceive.png|
 
 
 .. method:: LoRaE220JPUnit.stop_receive() -> None
@@ -200,7 +200,7 @@ Methods
 
     UIFLOW2:
 
-        |stopReceive.svg|
+        |stopReceive.png|
 
 
 .. method:: LoRaE220JPUnit.receive(timeout=1000) -> tuple[bytes, int]
@@ -211,7 +211,7 @@ Methods
 
     UIFLOW2:
 
-        |receive.svg|
+        |receive.png|
 
 
 .. method:: LoRaE220JPUnit.send(target_address: int, target_channel: int, send_data: bytes | str) -> bool
@@ -228,9 +228,9 @@ Methods
 
     UIFLOW2:
 
-        |send1.svg|
-        |send2.svg|
-        |send3.svg|
+        |send1.png|
+        |send2.png|
+        |send3.png|
 
 
 Constants

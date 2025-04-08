@@ -15,6 +15,10 @@ sphinx-build -b gettext ./en build/gettext
 sphinx-intl update -p ./build/gettext -l zh_CN
 sphinx-build -b html -D language=zh_CN ./en/ build/html/zh_CN # 简体中文
 sphinx-build -b html -D language=en ./en/ build/html/en # English
+# pdf
+sphinx-build -b latex ./en/ ./build/latex
+cd ./build/latex
+make
 ```
 
 ## 预览

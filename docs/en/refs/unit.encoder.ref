@@ -4,25 +4,25 @@
     :width: 200px
 
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/init.png
 
-.. |get_rotary_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_status.svg
+.. |get_rotary_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_status.png
 
-.. |get_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_value.svg
+.. |get_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_value.png
 
-.. |get_button_status.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_button_status.svg
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_button_status.png
 
-.. |get_rotary_increments.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_increments.svg
+.. |get_rotary_increments.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/get_rotary_increments.png
 
-.. |reset_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/reset_rotary_value.svg
+.. |reset_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/reset_rotary_value.png
 
-.. |set_rotary_value.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/set_rotary_value.svg
+.. |set_rotary_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/set_rotary_value.png
 
-.. |set_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/set_color.svg
+.. |set_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/set_color.png
 
-.. |fill_color.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/fill_color.svg
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/encoder/fill_color.png
 
 .. |stickc_plus2_encoder_example.m5f2| raw:: html
 

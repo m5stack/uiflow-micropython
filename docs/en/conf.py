@@ -70,6 +70,21 @@ intersphinx_mapping = {
     "micropython": ("https://docs.micropython.org/en/v1.22.0/", None),
 }
 
+latex_engine = 'pdflatex'
+
+latex_elements = {
+    # 这里保留了简单的代码块字体设置，移除了中文排版相关的配置
+    'preamble': r'''
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+}
+''',
+    'fncychap': '\\usepackage[Bjornstrup]{fncychap}',  # 可选章节样式
+    'printindex': r'\footnotesize\raggedright\printindex',
+}
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

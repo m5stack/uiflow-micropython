@@ -3,13 +3,13 @@
     :height: 200px
     :width: 200px
 
-.. |init.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/init.png
-.. |info.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/info.png
-.. |get_irq_state.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/get_irq_state.png
-.. |any.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/any.png
-.. |recv_message.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/recv_message.png
-.. |recv_message_into.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/recv_message_into.png
-.. |send.png| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/mpy_docs/module/commu/send.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/init.png
+.. |info.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/info.png
+.. .. |get_irq_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/get_irq_state.png
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/any.png
+.. |recv_message.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/recv_message.png
+.. |recv_message_into.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/recv_message_into.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/send.png
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/commu/example.png
 

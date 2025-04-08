@@ -1,4 +1,4 @@
-.. |LoRaE220-433| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/UNIT_LoraE220(433MHz)/4.webp
+.. |LoRaE220-433| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/UNIT_LoraE220(433MHz)/4.webp
     :target: https://docs.m5stack.com/en/unit/Unit%20LoRaE220-433
     :height: 200px
     :width: 200px
@@ -9,7 +9,7 @@
 
 .. |lora_e220_core_example.m5f2| image:: https://static-cdn.m5stack.com/mpy_docs/unit/env/init.png
 
-.. |working mode.jpg| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/unit/UNIT_LoraE220(433MHz)/5.jpg
+.. |working mode.jpg| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/UNIT_LoraE220(433MHz)/5.jpg
 
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorae220433/init.png
 
