@@ -68,6 +68,7 @@ autodoc_docstring_signature = True
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3", None),
     "micropython": ("https://docs.micropython.org/en/v1.22.0/", None),
+    "uiflow2": ("https://uiflow-micropython.readthedocs.io/en/latest/", None),
 }
 
 latex_engine = 'pdflatex'

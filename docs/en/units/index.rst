@@ -94,6 +94,7 @@ Unit
     rollercan.rst
     scales.rst
     scroll.rst
+    servos8.rst
     ssr.rst
     synth.rst
     thermal.rst
