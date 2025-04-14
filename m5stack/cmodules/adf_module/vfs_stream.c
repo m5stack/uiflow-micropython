@@ -59,6 +59,7 @@ typedef enum {
     STREAM_TYPE_AMRWB,
 } wr_stream_type_t;
 
+// micropython/extmod/vfs_lfs.c line: 115
 typedef struct _mp_obj_vfs_lfs2_t {
     mp_obj_base_t base;
     mp_vfs_blockdev_t blockdev;

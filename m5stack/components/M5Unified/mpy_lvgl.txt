@@ -8,7 +8,6 @@ void gfx_lvgl_flush(lv_display_t *disp_drv, const lv_area_t * area, uint8_t * px
 {
     mp_obj_t gfx_obj = mp_obj_dict_get(disp_drv->user_data, MP_OBJ_NEW_QSTR(MP_QSTR_display));
     M5GFX *lvgl_gfx = (M5GFX *)((((gfx_obj_t *)MP_OBJ_TO_PTR(gfx_obj))->gfx));
-    // ESP_LOGE("lvgl", "gfx: %p", lvgl_gfx);
     if (lvgl_gfx == nullptr) {
         return;
     }

@@ -9,6 +9,8 @@
 #include <extmod/vfs_lfs.h>
 #include <lib/littlefs/lfs2.h>
 
+
+// micropython/extmod/vfs_lfs.c line: 115
 typedef struct _mp_obj_vfs_lfs2_t {
     mp_obj_base_t base;
     mp_vfs_blockdev_t blockdev;

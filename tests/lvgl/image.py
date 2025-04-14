@@ -5,7 +5,7 @@
 import sys
 import M5
 import lvgl as lv
-import fs_driver
+import lv_utils
 
 M5.begin()
 
@@ -33,7 +33,7 @@ indev_drv.set_read_cb(M5.Lcd.lvgl_read)
 
 # fs driver init
 fs_drv = lv.fs_drv_t()
-fs_driver.fs_register(fs_drv, "S")
+lv_utils.fs_register(fs_drv, "S", 500)
 
 
 scr = lv.obj()

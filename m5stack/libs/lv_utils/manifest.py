@@ -2,5 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-module("lv_utils.py")
-module("fs_driver.py")
+package(
+    "lv_utils",
+    ("__init__.py",),
+    base_path="..",
+    opt=0,
+)
