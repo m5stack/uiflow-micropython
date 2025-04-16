@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 09:35+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,13 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/motion.rst:2 ../../en/base/motion.rst:23
-#: ../../en/base/motion.rst:56 8cb57a42f73947b7a36e1b9e4d93cf92
-#: e9c1f8c58b224634b19d4436d4ee86b1
-msgid "Motion Base"
+#: ../../en/base/motion.rst:2 fd8dedb467204d8aad20c0b3bd456f89
+msgid "Atomic Motion Base"
 msgstr ""
 
-#: ../../en/base/motion.rst:8 b7e1bc4ef6b3491c89517f0a5693584c
+#: ../../en/base/motion.rst:8 eeecc50c868f40d78926304c8570b684
 msgid ""
 "Atomic Motion Base is a servo and DC motor driver designed specifically "
 "for the ATOM series controllers. It integrates an STM32 control chip "
@@ -34,307 +32,340 @@ msgid ""
 "provides 4 servo channels and 2 DC motor interfaces, offering convenience"
 " for scenarios that require control of multiple servos or motor drivers, "
 "such as multi-axis servo robotic arms or small car motor control."
-msgstr "Atomic Motion Base 是一款专为 ATOM 系列控制器设计的舵机和直流电机驱动器。它内部集成了 STM32 控制芯片，并使用 I2C 通信进行控制。Atomic Motion Base 提供 4 路舵机通道和 2 路直流电机接口，方便用于需要控制多个舵机或电机的场景，如多舵机械臂或小车电机控制。"
+msgstr ""
+"Atomic Motion Base 是一款专为 ATOM 系列控制器设计的舵机和直流电机驱动器。它内部集成了 STM32 控制芯片，并使用 "
+"I2C 通信进行控制。Atomic Motion Base 提供 4 路舵机通道和 2 "
+"路直流电机接口，方便用于需要控制多个舵机或电机的场景，如多舵机械臂或小车电机控制。"
 
-#: ../../en/base/motion.rst:10 a620d816918a4699b4aa4787e6269a82
+#: ../../en/base/motion.rst:10 8cda377fab69497784593fd17fead334
 msgid ""
 "Atomic Motion Base v1.1 adds INA226 to implement current and voltage "
 "detection."
 msgstr "Atomic Motion Base v1.1 增加 INA266 实现电流，电压和功率检测。"
 
-#: ../../en/base/motion.rst:12 fd9e44a03f3c405990e2684ca8ac543d
+#: ../../en/base/motion.rst:12 65798094902f4f13b3c0d4d0f3ec4131
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/motion.rst:14 c4005630731248a1b549339be4d39106
+#: ../../en/base/motion.rst:15 b51339bff83b4cc3976265167681d96d
 msgid "|Motion|"
 msgstr ""
 
-#: ../../en/base/motion.rst:86 ../../en/refs/base.motion.ref
-#: a1b296d155ef4243821f10b19064ca16 c4005630731248a1b549339be4d39106
+#: ../../en/base/motion.rst:90 ../../en/refs/base.motion.ref
+#: 1eec9cb863df4dc3a3889dcc98ab4e9d b9e14124cdc246e0997167470b93ff16
 msgid "Motion"
 msgstr ""
 
-#: ../../en/base/motion.rst:16 a678135f54a94123b4a7e607a3d004b1
+#: ../../en/base/motion.rst:15 a2ff1e45f0ec46aea14ca22f07539960
 msgid "|Motion Base v1.1|"
 msgstr ""
 
-#: ../../en/base/motion.rst:38 ../../en/base/motion.rst:69
-#: ../../en/refs/base.motion.ref 0bd6cda2abfa496ca2ed75ebf9ac3c7d
-#: 4f255df1b72e4c848c325593002eaa2b
+#: ../../en/base/motion.rst:38 ../../en/base/motion.rst:71
+#: ../../en/refs/base.motion.ref 2054097f13b242f092b0f7bf5f81f7b9
+#: 377d48bb9a7e4f558c37ec720138ceb3 416e7b09aae44a2d98fcccf1c1595623
 msgid "Motion Base v1.1"
 msgstr ""
 
-#: ../../en/base/motion.rst:20 3ce7d7c5a2024f878f93bccfa8cb3e40
+#: ../../en/base/motion.rst:20 c805b4cd38d84ef8aa6b06a663c7ec94
 msgid "UiFlow2 Example:"
 msgstr "UiFlow2 应用示例："
 
-#: ../../en/base/motion.rst:25 425c48018c84461d9e98ce52b66de48b
+#: ../../en/base/motion.rst:23 ../../en/base/motion.rst:56
+#: 05b2997d19d246669cb52a9798e35fe0 6540d2c198d844d2b76d6930a9eafd3f
+msgid "Motion Base"
+msgstr ""
+
+#: ../../en/base/motion.rst:25 223f49310c50438cbfccaa8115c973ac
 msgid "Open the |atoms3_lite_motion_base_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |atoms3_lite_motion_base_example.m5f2| 项目。"
 
-#: ../../en/base/motion.rst:27 7072f5404bd54727b72b8da35ab7bfaf
+#: ../../en/base/motion.rst:27 ../../en/base/motion.rst:58
+#: 2bd86d3b09814640bff045cb510f9af8 b1f58426a58e413493ad2cde27310191
 msgid ""
 "This example controls the servo to rotate to a specified angle and sets "
 "the motor to rotate."
 msgstr "此示例控制舵机旋转到指定角度，设置电机旋转。"
 
 #: ../../en/base/motion.rst:29 ../../en/base/motion.rst:44
-#: ../../en/base/motion.rst:95 ../../en/base/motion.rst:117
-#: ../../en/base/motion.rst:134 ../../en/base/motion.rst:152
-#: ../../en/base/motion.rst:169 ../../en/base/motion.rst:187
-#: ../../en/base/motion.rst:204 ../../en/base/motion.rst:224
-#: ../../en/base/motion.rst:244 ../../en/base/motion.rst:264
-#: 64dae5e39b2745da8830752accea607b
+#: ../../en/base/motion.rst:99 ../../en/base/motion.rst:121
+#: ../../en/base/motion.rst:138 ../../en/base/motion.rst:156
+#: ../../en/base/motion.rst:173 ../../en/base/motion.rst:191
+#: ../../en/base/motion.rst:208 ../../en/base/motion.rst:228
+#: ../../en/base/motion.rst:248 ../../en/base/motion.rst:268
+#: 296c7753e1044cdaacf0f0d668e17dd0 35ca39b308694a9c9bc88c29ff314f59
+#: 37cf5bc1cb224fc9bd336629b7d50930 5246209a2d0c4120b8031c3d627a8c4a
+#: 74fccd8aa92043dbbb94ee0968c2756b 76f722ca6fbc4df1ad3e7dba9c8e9bcf
+#: a50125799c1e4e7c9cda34143f01a035 a7e688d67c0742fa848858ffca01846c
+#: a8ee1721f43947498b1e8ec75353843b ae16a5ef51cf47fc86266cf44552e0e1
+#: af2f7ea5eeee4c4f9a859743251f450e efc66258eab948dfbf5dca5bcc7285e9
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/motion.rst:31 c7f7b368e651428e8c66e00490b63c96
+#: ../../en/base/motion.rst:31 22fe30a33db44c89918fdd327cee95a7
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:23 2a91616f621f492c977ec8ec9195c510
+#: ../../en/refs/base.motion.ref:23 3315298d45904940bb64a264c78e9c2e
 msgid "example.png"
 msgstr ""
 
 #: ../../en/base/motion.rst:33 ../../en/base/motion.rst:48
-#: ../../en/base/motion.rst:64 ../../en/base/motion.rst:77
-#: 2cd46fe3f7f9421f8ecaa6043b47e720
+#: ../../en/base/motion.rst:66 ../../en/base/motion.rst:81
+#: 27ad1a508d4847a3ae2c60a68fcb6d84 3daa9faae3fe4daa9cf733821acacd36
+#: 6a434288eac849b09d1714b0149020af 8b5ac48cc5a34dd28bea2061c3cf84b7
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/base/motion.rst:35 ../../en/base/motion.rst:50
-#: ../../en/base/motion.rst:66 ../../en/base/motion.rst:79
-#: 14671b5447ca48a6abbc2902c234bac0
+#: ../../en/base/motion.rst:68 ../../en/base/motion.rst:83
+#: 0e5d45e7d4a04a449e6527abe02efd45 27deaff71d72471880edda9c5a076de3
+#: 99522afe7ff546768748f39741a5a194 d8922ccc5bf742fabf9716071d950844
 msgid "None"
 msgstr "无"
 
-#: ../../en/base/motion.rst:40 d47264573dbf456080fbb0d4b4dd973c
+#: ../../en/base/motion.rst:40 a5efb829fc13496884b57110339a367c
 msgid "Open the |atoms3_motion_base_v1.1_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |atoms3_motion_base_v1.1_example.m5f2| 项目。"
 
-#: ../../en/base/motion.rst:42 4c055eed634f445499b8b7721f1f6038
+#: ../../en/base/motion.rst:42 ../../en/base/motion.rst:73
+#: 2fa64c93cad542e199db55bfcd4ab0f4 e33ea222b99b4442b7fdbb4544e0a731
 msgid ""
 "The example program switches the motor's running speed when the screen "
 "button is pressed, and the screen displays the current, voltage, and "
 "power."
 msgstr "示例程序在按下屏幕按钮时切换电机的运行速度，屏幕显示当前的电流、电压和功率。"
 
-#: ../../en/base/motion.rst:46 631386a3f8394b449ca0b0f256d950ec
+#: ../../en/base/motion.rst:46 7954008fc2784a7a95ea25e51ddb52f3
 msgid "|motion_base_v1.1_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:24 c3a9b7b750e84d43958422e3e2fc7f0f
+#: ../../en/refs/base.motion.ref:24 ecf28ad94bb64936ad4c5e73ffaadcfd
 msgid "motion_base_v1.1_example.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:53 e9c1f8c58b224634b19d4436d4ee86b1
+#: ../../en/base/motion.rst:53 a556fb60f0ee40ba977473c034c914bb
 msgid "MicroPython Example:"
 msgstr "MicroPython 应用示例："
 
-#: ../../en/base/motion.rst:58 ../../en/base/motion.rst:71
-#: ../../en/base/motion.rst:99 ../../en/base/motion.rst:121
-#: ../../en/base/motion.rst:138 ../../en/base/motion.rst:156
-#: ../../en/base/motion.rst:173 ../../en/base/motion.rst:191
-#: ../../en/base/motion.rst:208 ../../en/base/motion.rst:228
-#: ../../en/base/motion.rst:248 ../../en/base/motion.rst:268
-#: e9c1f8c58b224634b19d4436d4ee86b1
+#: ../../en/base/motion.rst:60 ../../en/base/motion.rst:75
+#: ../../en/base/motion.rst:103 ../../en/base/motion.rst:125
+#: ../../en/base/motion.rst:142 ../../en/base/motion.rst:160
+#: ../../en/base/motion.rst:177 ../../en/base/motion.rst:195
+#: ../../en/base/motion.rst:212 ../../en/base/motion.rst:232
+#: ../../en/base/motion.rst:252 ../../en/base/motion.rst:272
+#: 24c34cc3f68a4b56bdd8eed92f2edf12 339523b1dfed47fc9ca6416fc8d946b1
+#: 364f135a0e9e4cf487231647bfacd31a 7edc2ee52b784dcd9ebff198200d4638
+#: 8077e999840748cf8f9031137ef866ee 8c7c25594abc4e7b9ba85dfb0fbad758
+#: 9fdab1fd399b4bf3914b300cd84480a7 c4a18d7a9853447b9d41c91b2258c1ff
+#: d4af98053ac944618e8ade4716b162fd d80ad3178cec48f4a60c312ea46caeb0
+#: e8fb2db00912456687355b323b9ef1fc ec4afba379a94e4a9d8f372fb771d25b
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/motion.rst:83 2192b4879a334f4ca059e9b8cade2b77
+#: ../../en/base/motion.rst:87 1ba4f32cd42e47918b73882050fa7999
 msgid "**API**"
 msgstr "API应用"
 
-#: ../../en/base/motion.rst:90 e87abaa0973e48f5b13ec3a970b24b66
+#: ../../en/base/motion.rst:94 b290c15ab97248c7b04eadcb03905baf
 msgid "Create an Motion object."
 msgstr "创建一个 Motion 对象。"
 
-#: ../../en/base/motion.rst df7d8c074c6347919e449475db16d885
+#: ../../en/base/motion.rst 0fb2928193bc4397b1c15799b7994c3b
+#: 5963cc7f3fb145b1a496a02fd93bd11a 85ad327594684ce894a45767615cd947
+#: 89f4e10cf68146fca05858955fa55597 921bf5d06931461b9bd17e42cadd9089
+#: b713c5c7980b43ff9bee879c51b0ade4 b8ddb736052249ab90ff4648d5a85254
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/base/motion.rst:92 a4ccebf129e444e595464420f5ef1acb
+#: ../../en/base/motion.rst:96 0985a4677a544a81a8da3e6826ad1bfc
 msgid "The I2C port to use."
 msgstr "要使用的 I2C 端口。"
 
-#: ../../en/base/motion.rst:93 6f2db8b6d2f84d46a2d089e2883ef8e8
+#: ../../en/base/motion.rst:97 8407f649ff0c474bb5479ea841f1770e
 msgid "The device address. Default is 0x38."
 msgstr "设备地址，默认为 0x38。"
 
-#: ../../en/base/motion.rst:97 2ad023eac8444a84a245da89b39219d6
+#: ../../en/base/motion.rst:101 3c3818488a0a41fea35101fec2a47b75
 msgid "|__init__.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:12 437578a402844251bfe7d3bf89ca1f63
+#: ../../en/refs/base.motion.ref:12 f534954476b849449c7da1f65a1cadf7
 msgid "__init__.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:111 653412b3f2f54c12a9a3a5de14490094
+#: ../../en/base/motion.rst:115 cda65b46ce2740408838e279e3cab3d0
 msgid "Get the angle of the servo."
 msgstr "获取舵机角度。"
 
-#: ../../en/base/motion.rst:113 ../../en/base/motion.rst:131
-#: ../../en/base/motion.rst:148 ../../en/base/motion.rst:166
-#: 6643efad13084915a1aee5e2fc341196
+#: ../../en/base/motion.rst:117 ../../en/base/motion.rst:135
+#: ../../en/base/motion.rst:152 ../../en/base/motion.rst:170
+#: 30377ebdcd334bb486f4b29b1a92c169 7ade860815254212942c5bebefd8019e
+#: e4ab1ca0364549ac8886b514bdcd9f91 f021e0f185cb46f98e35ff6d573c15a4
 msgid "The servo channel. Range: 1~4."
 msgstr "舵机通道，范围：1~4。"
 
-#: ../../en/base/motion.rst b91f3b29ea904fbc927c0298304c622e
+#: ../../en/base/motion.rst 4188de5e107a44d7b0bd0fc84d08ac9b
+#: 95082bd09ca84ad69734eecb1902a18c 9e0db1857aa7480f87cc83557029d9e1
+#: a8962a678fbd4072a35437a73f31d98e afbdccfbc47947d783f57de4cb0f3c91
+#: c1a36a49e9134630a13478efecee1e78
 msgid "Returns"
 msgstr ""
 
-#: ../../en/base/motion.rst:114 efdca5ed2aab4d8b8574f189f41803a8
+#: ../../en/base/motion.rst:118 2d415f3a5cb6477e8041fe1c484f8de4
 msgid "Specify the servo angle for the specified channel. Range: 0~180."
 msgstr "指定通道舵机的角度，范围：0~180。"
 
-#: ../../en/base/motion.rst c1f1306d0e36407dad3ec400243f6678
+#: ../../en/base/motion.rst 22a6b5f7c6ec411482b26a31d9dbcf1c
+#: 2d6da2a5ac954297842c3ddc8024e3ab 523ba534a7964da2bfe60c3aeb2c2ea7
+#: 956972f113f744a3a2b789286e7d22e1 cbbe6e7132bc4dbaa82513051ab6cfa4
+#: f6092826179a4b2dbc6c3da7b64c949a
 msgid "Return type"
 msgstr ""
 
-#: ../../en/base/motion.rst:119 42606b3d54f842a3936b7b8b8598c27d
+#: ../../en/base/motion.rst:123 cfe89051a45b4fe1b9499180050ef1e8
 msgid "|get_servo_angle.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:13 c3a9b7b750e84d43958422e3e2fc7f0f
+#: ../../en/refs/base.motion.ref:13 a42815d853c14da686eb99abe6904f35
 msgid "get_servo_angle.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:129 eef6b80699764e89807c21c09833bb7e
+#: ../../en/base/motion.rst:133 915d5b9f448f4162a8d0530bdcdcd949
 msgid "Set the angle of the servo."
 msgstr "设置舵机角度。"
 
-#: ../../en/base/motion.rst:132 41a488f691074ec6a96d8562befa419b
+#: ../../en/base/motion.rst:136 8aa64c176c3e4ac0bc0f6e9520081914
 msgid "The servo angle. Range: 0~180."
 msgstr "舵机角度，范围：0~180。"
 
-#: ../../en/base/motion.rst:136 91d895a6605549658df70a5604d772d3
+#: ../../en/base/motion.rst:140 c39b850a5e4042b1bf4db3cf9b502a28
 msgid "|set_servo_angle.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:14 c90fcc9f4b6049eaba9bf70377ea7adb
+#: ../../en/refs/base.motion.ref:14 bbd76cdddf094f1d807d378b99d562b3
 msgid "set_servo_angle.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:146 653412b3f2f54c12a9a3a5de14490094
+#: ../../en/base/motion.rst:150 a0c0c00f1aeb4560951f54e2e433d7f2
 msgid "Get the pulse of the servo."
 msgstr "获取舵机控制信号的脉冲宽度。"
 
-#: ../../en/base/motion.rst:149 33c48653bf7d4a75aca9dabcbd36aeee
+#: ../../en/base/motion.rst:153 27094dc9745f455b8dcb4fc6f4c65ea5
 msgid "Specify the servo pulse for the specified channel. Range: 500~2500."
 msgstr "指定通道舵机控制信号的脉冲宽度，范围：500~2500 (us)。"
 
-#: ../../en/base/motion.rst:154 0931097552384d1e9d8eebcd0b5ce2fa
+#: ../../en/base/motion.rst:158 c7536c9815984b4c9bf027d9189599c5
 msgid "|get_servo_pulse.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:15 7ca7698177c446379cae9f23afa05af4
+#: ../../en/refs/base.motion.ref:15 dfbfc96f6d4f4c3ba457d84860cf0afb
 msgid "get_servo_pulse.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:164 653412b3f2f54c12a9a3a5de14490094
+#: ../../en/base/motion.rst:168 349ba397a7c9496bb9bc451fd7100d42
 msgid "Write the pulse of the servo."
 msgstr "写舵机控制信号脉冲宽度。"
 
-#: ../../en/base/motion.rst:167 4a411f060bae4b2386c728d9d72fce25
+#: ../../en/base/motion.rst:171 0a2843ef344e4f86b12d3d428883d03b
 msgid "The servo pulse. Range: 500~2500."
 msgstr "舵机控制信号脉冲宽度，范围：500~2500 (us)。"
 
-#: ../../en/base/motion.rst:171 f17a8dd802bf463a80f076e1c2d06ce1
+#: ../../en/base/motion.rst:175 e05c46b46747421192cd91933b6cae12
 msgid "|write_servo_pulse.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:16 cdcaf0d8754b4d68b1c524e032e34c48
+#: ../../en/refs/base.motion.ref:16 506a11c22bbf45a182cb6934086a0d25
 msgid "write_servo_pulse.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:181 f775642288fe429c9b9df7bc09447c67
+#: ../../en/base/motion.rst:185 1c4afb3c31ad451183e0ba36a274c667
 msgid "Get the speed of the motor."
 msgstr "获取电机转速。"
 
-#: ../../en/base/motion.rst:183 ../../en/base/motion.rst:201
-#: bf0b17d1c760429dbd2367ac4bd0b7b2
+#: ../../en/base/motion.rst:187 ../../en/base/motion.rst:205
+#: 25737862b7764dd8bedb04fb64ed56e0 c3362c73858e47c388fdb5d59a24fe4a
 msgid "The motor channel. Range: 1~2."
 msgstr "电机通道，范围：1~2。"
 
-#: ../../en/base/motion.rst:184 f4ffb0922aed499caa93dbd268dc1bca
+#: ../../en/base/motion.rst:188 4f9fe509ece34462b1821adec846e81e
 msgid "Specify the speed for the specified channel. Range: -127~127."
 msgstr "指定通道电机的转速，范围：-127~127。"
 
-#: ../../en/base/motion.rst:189 2a664000eda346a89aba7a760b0b3d14
+#: ../../en/base/motion.rst:193 4c3884c178aa4bb98cd25c73dac985d4
 msgid "|get_motor_speed.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:17 6c09491d5dd6409c81909a6d0e78eec2
+#: ../../en/refs/base.motion.ref:17 1c55ddafb3ac43a88f2ef0910b556ef2
 msgid "get_motor_speed.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:199 2a664000eda346a89aba7a760b0b3d14
+#: ../../en/base/motion.rst:203 00c0627589d944bc98c6bb5c16d450e6
 msgid "Set motor speed."
 msgstr "设置电机转速。"
 
-#: ../../en/base/motion.rst:202 d7c3ebb5f84d41ed956566d9d840dcdf
+#: ../../en/base/motion.rst:206 e60d8837d0ab46a18946e42f25ad4060
 msgid "The motor speed. Range: -127~127."
 msgstr "电机转速，范围：-127~127。"
 
-#: ../../en/base/motion.rst:206 2b53dbab3157413e85c1d9bc6217e2ce
+#: ../../en/base/motion.rst:210 298daaa44a2243c48b87171c481327a9
 msgid "|set_motor_speed.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:18 bb7e088a998a441e8603c88c36276f71
+#: ../../en/refs/base.motion.ref:18 346d056737894be6990a8cb50f0d808f
 msgid "set_motor_speed.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:216 b5fc23d0895546a3af6121f532d21804
+#: ../../en/base/motion.rst:220 f9af5b02304a4ac0aef0e22798476bff
 msgid "Read voltage (unit: V)."
 msgstr "读取电压（单位：V）。"
 
-#: ../../en/base/motion.rst:218 4ea4b485d09640af802a7f956d8ba84f
+#: ../../en/base/motion.rst:222 0d92a7683b854fa6a46076a6cb8fbccb
 msgid "The voltage value in volts."
 msgstr "电压值（以伏特为单位）。"
 
-#: ../../en/base/motion.rst:222 ../../en/base/motion.rst:242
-#: ../../en/base/motion.rst:262 63f1a0aa47064b7480b1880025f95303
+#: ../../en/base/motion.rst:226 ../../en/base/motion.rst:246
+#: ../../en/base/motion.rst:266 444476c30654423b858d45ceafdbb069
+#: 8197559809b64eef8df4102d530842e5 b059b3e358124532becb7d8cf5bc9c52
 msgid "This method is supported only on Motion Base v1.1 and later versions."
 msgstr "此方法仅在 Motion Base v1.1 及更高版本中支持。"
 
-#: ../../en/base/motion.rst:226 42606b3d54f842a3936b7b8b8598c27d
+#: ../../en/base/motion.rst:230 c6ca7476a43b40de9eeed7ca72886019
 msgid "|read_voltage.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:19 c3a9b7b750e84d43958422e3e2fc7f0f
+#: ../../en/refs/base.motion.ref:19 737051362cb64a11919ca06ba9a6ea72
 msgid "read_voltage.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:236 bc81b18966b244d3ba9c9044071b9dff
+#: ../../en/base/motion.rst:240 c04933238fbb40f1808167f851408a3e
 msgid "Read current (unit: A)."
 msgstr "读取电流（单位：A）。"
 
-#: ../../en/base/motion.rst:238 10a1c716fd714fc38efed7d1b383ff99
+#: ../../en/base/motion.rst:242 a5e53a62f93c4188ae72a216cb92b6b7
 msgid "The current value in amperes."
 msgstr "电流值（以安培为单位）。"
 
-#: ../../en/base/motion.rst:246 42606b3d54f842a3936b7b8b8598c27d
+#: ../../en/base/motion.rst:250 fd585d350a194b54bb726bdb0105e6f8
 msgid "|read_current.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:20 2a91616f621f492c977ec8ec9195c510
+#: ../../en/refs/base.motion.ref:20 840de5bb3b27490ca793d9bf244f4381
 msgid "read_current.png"
 msgstr ""
 
-#: ../../en/base/motion.rst:256 03a010f191c84356909e1c544f48cc72
+#: ../../en/base/motion.rst:260 26c02c1709644d9e81f1b7e5efa47114
 msgid "Read power (unit: W)."
 msgstr "读取功率（单位：W）。"
 
-#: ../../en/base/motion.rst:258 c572bd63ae8e4c8ebd002917bbd0312d
+#: ../../en/base/motion.rst:262 d98514e8700349688967c86c62885020
 msgid "The power value in watts."
 msgstr "功率值（以瓦特为单位）。"
 
-#: ../../en/base/motion.rst:266 c7f7b368e651428e8c66e00490b63c96
+#: ../../en/base/motion.rst:270 d8b3e22805064cd4ab3f966792c852c9
 msgid "|read_power.png|"
 msgstr ""
 
-#: ../../en/refs/base.motion.ref:21 2a91616f621f492c977ec8ec9195c510
+#: ../../en/refs/base.motion.ref:21 9f2a9ba65bdc4b12bede3826c2d5cdfd
 msgid "read_power.png"
 msgstr ""
 

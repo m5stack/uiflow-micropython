@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,44 +20,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/thermal.rst:2 f38bd80f859e47579eee6c5698ca2bea
+#: ../../en/units/thermal.rst:2 bc7fe46db86547e6ae6654e33f0c1d4c
 msgid "Thermal Unit"
 msgstr ""
 
-#: ../../en/units/thermal.rst:6 f3a1a4d7df6c4c22b6277e2400792333
+#: ../../en/units/thermal.rst:6 5d4e5b9379bd496c9d248d0a6e13f88f
 msgid "Support the following products:"
 msgstr ""
 
-#: ../../en/units/thermal.rst:8 7c82070da5ec4e558d65e759dfe42792
+#: ../../en/units/thermal.rst:8 a0cf7af44a714ea3b7e7e90e22dc6318
 msgid "|ThermalUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref 75a37a204fd64488903fd3c32d492ef2
+#: ../../en/refs/unit.thermal.ref c145d72f83484c24aeb93b20912c9f70
 msgid "ThermalUnit"
 msgstr ""
 
-#: ../../en/units/thermal.rst:12 8edc3e2c09d84563b684a1ef1a6248bf
+#: ../../en/units/thermal.rst:12 9d2ed7ec80424eaf9aa29cfffa9568f0
 msgid "class ThermalUnit"
 msgstr ""
 
-#: ../../en/units/thermal.rst:15 f87a584a07f74bbc96b65d781cd29b06
+#: ../../en/units/thermal.rst:15 38d16677c6ca4d879630ff1857ca3fb0
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/thermal.rst:19 9264523b14a24607afeba8b75e6fa4d4
+#: ../../en/units/thermal.rst:19 aaa3ad4cad2c43a9a1d4ccebff4a364a
 msgid "Create a ThermalUnit object."
 msgstr ""
 
-#: ../../en/units/thermal.rst 02b5a7a126034f6bb269a9ce6b88d52a
-#: 3d5bdd0381304df4beae24c61cab25d8 cba7506b8b204c7c8fd5acbc239e6f6d
+#: ../../en/units/thermal.rst 398b68e2642e4710b70a01b79d15ffaf
+#: 862fa595c3224c4d8dc29f33c0aaca05 ca8064cf5fbd4e86981033a13e9418a2
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/thermal.rst:21 e4172667a33e479babcdcdd818b2aba8
+#: ../../en/units/thermal.rst:21 7dfac2416a5c421e84b57388319b64be
 msgid "the I2C object."
 msgstr ""
 
-#: ../../en/units/thermal.rst:22 fd1f2d478e26449ab29677dfc4091646
+#: ../../en/units/thermal.rst:22 6b5b423451bb4c6a86e913e28a218934
 msgid "the I2C address of the device. Default is 0x33."
 msgstr ""
 
@@ -65,158 +65,212 @@ msgstr ""
 #: ../../en/units/thermal.rst:51 ../../en/units/thermal.rst:62
 #: ../../en/units/thermal.rst:76 ../../en/units/thermal.rst:87
 #: ../../en/units/thermal.rst:98 ../../en/units/thermal.rst:109
-#: ../../en/units/thermal.rst:120 1cbc4caeabf94f41aa25d88f491bb689
-#: 4344d717e5f64b25aa8b4bc51a1c3ae2 472ef45a21754f97ac9e0d9ecdfe2fb4
-#: 9796f9a6647d401e882e662afe9d4acf af12ce43717e4a75992251ff53502b88
-#: c29895c695594dc1980ca3fd203467e9 c856405444f74d93a4f4a2b534b17b69
-#: dfa5c7bab4124b7682964ca524ed9740 fa1d336e8c784cc79360732fb8e9c5d8
+#: ../../en/units/thermal.rst:120 01352358cf014d5a9e271dde9aab553f
+#: 0a248af7341240b1affc7e4f1c899bae 0c23ca2b76e540a9839052a5e54c3264
+#: 5e5e0d5230f24f2294ced7ad7ea6f126 a1fe0b7c2d7a481584c8073be8a82780
+#: a5415b8a2e7f43cc90410114b23b185a e474c3e63978440f95dabdb6b69c26f7
+#: ec7519505bb148519f21b0973c6c461d ffeb8b3c7d7644a588a26bab5cb685b6
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/thermal.rst:26 e333f8a20cf6465abc6829a5860bf354
-msgid "|init.svg|"
+#: ../../en/units/thermal.rst:26 42f39f2a388242678d2a8149a41ea39d
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:7 1725ed3e4dbf4973b35d292a59e6d27b
-msgid "init.svg"
+#: ../../en/refs/unit.thermal.ref:7 d9f19383c02f4618a4fd92275c0bf4ca
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:32 42ba189100f541d0a9615f4d82a556ce
+#: ../../en/units/thermal.rst:32 525de889e6574bb697320f12330119ea
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/thermal.rst 05cbeff5193f418ab77f7c8d80499565
-#: 28d4c884efdf434187bbfeac047a5833 b7d877b6b9f849909c75999688a67a17
-#: c28e2f9fd75140a0ae815c38e5e79cb5
+#: ../../en/units/thermal.rst 049e1fd3ca1a4f2196e2a9e3fe555758
+#: 4d7bce23d2d4454aa84097cad815dad8 58f98a83c7094f2f81b3f1c97268f599
+#: dd54baf661714529afbf100e747cb51d
 msgid "type"
 msgstr ""
 
 #: ../../en/units/thermal.rst:36 ../../en/units/thermal.rst:47
 #: ../../en/units/thermal.rst:58 ../../en/units/thermal.rst:83
-#: 00f30c344c344fcf9fd3f90b63d6b961 8085275606844b92a1925c6d64a42911
-#: 84038045729646319380eb53b31bff62 8f166760c5fc4bc6a5ef3598c39103cc
+#: 3ee935b3080f416bb3a1e0a39bf92b91 62ecffaf3cba42eeba9af279cb73736c
+#: 6b9b9bf8892d41e1a0d36e71a40f6c48 82effad1898b42d9a7bc3d7c27c239b1
 msgid "float"
 msgstr ""
 
-#: ../../en/units/thermal.rst:38 a94ee0c575dc437abc00bc4a26f533e0
+#: ../../en/units/thermal.rst:38 2099433d9cb24bc5ba7f5adf0a2931eb
 msgid "get the max temperature."
 msgstr ""
 
-#: ../../en/units/thermal.rst:42 77f739c4cb834778bef75b59d3a713b1
-msgid "|get_max_temperature.svg|"
+#: ../../en/units/thermal.rst:42 7a3f0752ccca4584bf6fa3d8028e1605
+msgid "|get_max_temperature.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:9 a07ca3c656f24ebdb1fb6088d8db864e
-msgid "get_max_temperature.svg"
+#: ../../en/refs/unit.thermal.ref:9 e05ad7e263f24cfcb07cc9070416f22e
+msgid "get_max_temperature.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:49 a6a9ca00a60646cbb8ce5dc3b1b77502
+#: ../../en/units/thermal.rst:49 a677f604f6e3446392df408290ac5a57
 msgid "get the min temperature."
 msgstr ""
 
-#: ../../en/units/thermal.rst:53 5c591d12696a4311a4c4c9b3ffba291d
-msgid "|get_min_temperature.svg|"
+#: ../../en/units/thermal.rst:53 ef776a1c464e40af9dcf16d25aa9b456
+msgid "|get_min_temperature.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:13 d388594bc57a443096f8cb48c7755372
-msgid "get_min_temperature.svg"
+#: ../../en/refs/unit.thermal.ref:13 a16e7969c36b424598588200d3841315
+msgid "get_min_temperature.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:60 2cc5169c2e454371ac7873ebfd10ad67
+#: ../../en/units/thermal.rst:60 570ff3eeb4fc4b66ba9cb54f6a927d11
 msgid "get the midpoint temperature."
 msgstr ""
 
-#: ../../en/units/thermal.rst:64 d3ceb2f14f60471c900b917efb20267a
-msgid "|get_midpoint_temperature.svg|"
+#: ../../en/units/thermal.rst:64 f14e82d4c59b479cb4b00d3dd689a8ed
+msgid "|get_midpoint_temperature.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:11 a09a6b22fe624eed905973fd2526278d
-msgid "get_midpoint_temperature.svg"
+#: ../../en/refs/unit.thermal.ref:11 9334a8f0aa264c8dbfbc1105b6d3125e
+msgid "get_midpoint_temperature.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:69 247296e3effd44deb44c65a1911007d0
+#: ../../en/units/thermal.rst:69 3dade066921a4f0793e747aef5ebbe3b
 msgid "get the temperature of the pixel at the specified coordinates."
 msgstr ""
 
-#: ../../en/units/thermal.rst:71 37fafb2f648e4a589781688bf580de8a
+#: ../../en/units/thermal.rst:71 0e7e2fc443034680a973f4ae86ededab
 msgid "The x coordinate of the pixel."
 msgstr ""
 
-#: ../../en/units/thermal.rst:72 257eab6bdcfb4057a7514225b27b6ca5
+#: ../../en/units/thermal.rst:72 4f66dbb70ac74d67965779304533ecec
 msgid "The y coordinate of the pixel."
 msgstr ""
 
-#: ../../en/units/thermal.rst a24bdea95868491288f33414c5a1c81c
-#: a38ad883f2aa44ffbaa2ed70dc162f62 dbf4817cd9964ef7af08e18d93e8ceb4
+#: ../../en/units/thermal.rst 006550580f004698ad1c71454631821f
+#: a0bb1aec79674ce18c8ee3b2aeb59b84 fee9d1ebffba40c0a2e6e78c81055299
 msgid "Returns"
 msgstr ""
 
-#: ../../en/units/thermal.rst:74 83cfa732e00a4eb480de31eb2f4af3bf
+#: ../../en/units/thermal.rst:74 ea0890d152a64b22b1068d0feb01d8fb
 msgid "The temperature of the pixel."
 msgstr ""
 
-#: ../../en/units/thermal.rst:78 e03871fab8854a609ea916bca8a6c227
-msgid "|get_pixel_temperature.svg|"
+#: ../../en/units/thermal.rst:78 99fa11ec585f4f148b18f7a08b045504
+msgid "|get_pixel_temperature.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:15 efcea9b4d3ca4e1ea00995e96a3f4f5b
-msgid "get_pixel_temperature.svg"
+#: ../../en/refs/unit.thermal.ref:15 2fd6e0e9f96c476988b85db0488333ae
+msgid "get_pixel_temperature.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:85 c83bef7a29c440389e2de816491ae7bb
+#: ../../en/units/thermal.rst:85 77de2c6393d740058f3301fea6fbbb57
 msgid "get the refresh rate."
 msgstr ""
 
-#: ../../en/units/thermal.rst:89 46a10669ba4f45638f339c9db5fdef42
-msgid "|get_refresh_rate.svg|"
+#: ../../en/units/thermal.rst:89 95e3b3512d654b5ead1e80da50ded998
+msgid "|get_refresh_rate.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:17 441f586fa641470d8c0b347a284610bf
-msgid "get_refresh_rate.svg"
+#: ../../en/refs/unit.thermal.ref:17 14e4617834a24eab957158065237530c
+msgid "get_refresh_rate.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:94 d4dd5e5b0db64c5d8c0a9eed63424502
+#: ../../en/units/thermal.rst:94 aaf3d261367944f9b59b4bf0e2f5699f
 msgid "get the temperature buffer."
 msgstr ""
 
 #: ../../en/units/thermal.rst:96 ../../en/units/thermal.rst:118
-#: 81ac6a7e026345aab9142c5c49508867 8ff832908cf943e883f2b23e71c9dd57
+#: be4f331a8801478e83155f604f3adcd5 eb9b33e2888740b583d86e72f9a4c2dc
 msgid "The temperature buffer."
 msgstr ""
 
-#: ../../en/units/thermal.rst:100 c4c9b7141f3140cab4fe3ca2d3407161
-msgid "|get_temperature_buffer.svg|"
+#: ../../en/units/thermal.rst:100 46b14f1531de4a0f9192adb9b4b693c5
+msgid "|get_temperature_buffer.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:19 f6a35d448ffe4c30af4c5ce5be13b272
-msgid "get_temperature_buffer.svg"
+#: ../../en/refs/unit.thermal.ref:19 c95ada778d6d47a6994f3a2dde6d5280
+msgid "get_temperature_buffer.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:105 52b82b1535ff48d59b087b643051598b
+#: ../../en/units/thermal.rst:105 34247d27c1db4ab59f0f43ab8538cd4e
 msgid "Set the refresh rate."
 msgstr ""
 
-#: ../../en/units/thermal.rst:107 2d91818c19e146de9617778f81044942
+#: ../../en/units/thermal.rst:107 55e2c91dac6140a493e20a4bfca84994
 msgid "The refresh rate in Hz."
 msgstr ""
 
-#: ../../en/units/thermal.rst:111 b944bd84105743d886ae944b002c331e
-msgid "|set_refresh_rate.svg|"
+#: ../../en/units/thermal.rst:111 03be5d9e4a13442ea8ebcd93cd348c62
+msgid "|set_refresh_rate.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:21 453e4d4248044218a2a17195aa2550c6
-msgid "set_refresh_rate.svg"
+#: ../../en/refs/unit.thermal.ref:21 07985e6e0fcc4e74ae3c89462339510b
+msgid "set_refresh_rate.png"
 msgstr ""
 
-#: ../../en/units/thermal.rst:116 6f2b8906eaaa4cf9905535ea05d468ce
+#: ../../en/units/thermal.rst:116 9419c062d24b40419bfe274d0bc7d7ff
 msgid "Update the temperature buffer."
 msgstr ""
 
-#: ../../en/units/thermal.rst:122 b762e23155a1420bbe186165507d9b5e
-msgid "|update_temperature_buffer.svg|"
+#: ../../en/units/thermal.rst:122 99e425a7735245399f5190776fc69ab4
+msgid "|update_temperature_buffer.png|"
 msgstr ""
 
-#: ../../en/refs/unit.thermal.ref:23 95f9207ff85d46e78e928297ee134903
-msgid "update_temperature_buffer.svg"
+#: ../../en/refs/unit.thermal.ref:23 42b4062cf981411ab6abdf1a3374e173
+msgid "update_temperature_buffer.png"
 msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_max_temperature.svg|"
+#~ msgstr ""
+
+#~ msgid "get_max_temperature.svg"
+#~ msgstr ""
+
+#~ msgid "|get_min_temperature.svg|"
+#~ msgstr ""
+
+#~ msgid "get_min_temperature.svg"
+#~ msgstr ""
+
+#~ msgid "|get_midpoint_temperature.svg|"
+#~ msgstr ""
+
+#~ msgid "get_midpoint_temperature.svg"
+#~ msgstr ""
+
+#~ msgid "|get_pixel_temperature.svg|"
+#~ msgstr ""
+
+#~ msgid "get_pixel_temperature.svg"
+#~ msgstr ""
+
+#~ msgid "|get_refresh_rate.svg|"
+#~ msgstr ""
+
+#~ msgid "get_refresh_rate.svg"
+#~ msgstr ""
+
+#~ msgid "|get_temperature_buffer.svg|"
+#~ msgstr ""
+
+#~ msgid "get_temperature_buffer.svg"
+#~ msgstr ""
+
+#~ msgid "|set_refresh_rate.svg|"
+#~ msgstr ""
+
+#~ msgid "set_refresh_rate.svg"
+#~ msgstr ""
+
+#~ msgid "|update_temperature_buffer.svg|"
+#~ msgstr ""
+
+#~ msgid "update_temperature_buffer.svg"
+#~ msgstr ""
 

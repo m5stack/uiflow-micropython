@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-27 10:42+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,134 +20,135 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/atom_can.rst:2 3497f684611a4999913631a952d2884a
-msgid "ATOM CAN Base"
+#: ../../en/base/atom_can.rst:2 ../../en/refs/base.can.ref
+#: 93fcb5e57ad246b98dcbc5c2d59dd794 d53f875effe54b10bb158978537be511
+msgid "Atomic CAN Base"
 msgstr ""
 
-#: ../../en/base/atom_can.rst:8 c02f250c268e4453b639a8218138a8da
+#: ../../en/base/atom_can.rst:8 5e10243753214e0eb93622a5b795b9de
 msgid ""
 "This is the driver library for the ATOM CAN Base to accept and send data "
 "from the CAN module."
 msgstr "这是 ATOM CAN Base 的驱动程序库，用于从 CAN 模块接受和发送数据。"
 
-#: ../../en/base/atom_can.rst:10 ea89d5c61f5246cf97315f53b588b80d
+#: ../../en/base/atom_can.rst:10 234569d792254d8eb94090923e531d6b
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/atom_can.rst:13 086e5e12ea6f4a5bac81f44a203124cb
+#: ../../en/base/atom_can.rst:13 24c7c0eb485a4c9ca5918eace30cc0e8
 msgid "|Atom CAN|"
 msgstr ""
 
-#: ../../en/refs/base.can.ref b65458c8b6fa4cc88ff761875f435731
+#: ../../en/refs/base.can.ref 14268761d2e24a6792a44eda5b300bde
 msgid "Atom CAN"
 msgstr ""
 
-#: ../../en/base/atom_can.rst:13 3cd238e49d914e55981968c19ae028b8
+#: ../../en/base/atom_can.rst:13 78b234cda51f44699fb227ea90d9ba0a
 msgid "|Atomic CAN Base|"
 msgstr ""
 
-#: ../../en/refs/base.can.ref 74dc394dfcac47b1a3eae00394413c69
-msgid "Atomic CAN Base"
-msgstr ""
-
-#: ../../en/base/atom_can.rst:18 502ae5c47de645ceb1e42d24ccdf0eaa
+#: ../../en/base/atom_can.rst:18 b1bebd8f40c44b308b2a9a2815c1f2a2
 msgid "UiFlow2 Example"
 msgstr "UIFLOW2 应用示例："
 
 #: ../../en/base/atom_can.rst:21 ../../en/base/atom_can.rst:39
-#: 2e83a695c8bc4505a81ed870dcc9d469
+#: 776c522275d744038c9f1340157a7c5b da14563d675f49f6b6e6ad9dc74c07de
 msgid "CAN communication"
 msgstr "CAN 通讯"
 
-#: ../../en/base/atom_can.rst:23 1c26c8c40e4c4b1c9bd9213d0d795018
+#: ../../en/base/atom_can.rst:23 d1bb8c5d507d4429987e81a6d0e6e148
 msgid "Open the |atoms3_can_example.m5f2| project in UiFlow2."
 msgstr "在UiFlow2 中打开 |atoms3_can_example.m5f2| 项目。"
 
 #: ../../en/base/atom_can.rst:25 ../../en/base/atom_can.rst:41
-#: 77ee4b221bde42809a6fb2d59d6b9661
+#: e3ecc32e387344bb9d9677c03e5a9080 ef26141b675042d682e99bfccf3fb5cc
 msgid "This example shows how to receive and send data using the Atom CAN Base."
 msgstr "本示例演示如何使用 Atom CAN Base 接收和发送数据。"
 
-#: ../../en/base/atom_can.rst:27 0468680d4f4640399d5292156a6f0fba
-#: base.atom_can.ATOMCANBase:9 of
+#: ../../en/base/atom_can.rst:27 b4e5234094d5412c8cf8b2ea0dde3dd8
+#: base.atom_can.ATOMCANBase:9 cc1d3bab7e5340b7a1a8b4348ca95e41 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/atom_can.rst:29 af7198e3c7b846ad9f45a6a1a0804786
+#: ../../en/base/atom_can.rst:29 89aeb7324e2444609015457c7576a8c1
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/base.can.ref:13 60ce6c7198e44e37acce71bd652c659d
+#: ../../en/refs/base.can.ref:13 ddcac6363695450aa24544e5c4b8eabc
 msgid "example.png"
 msgstr ""
 
 #: ../../en/base/atom_can.rst:31 ../../en/base/atom_can.rst:49
-#: 1ba9c05d25674a73812f3c8490e4addd
+#: 0b13ea5c888b4226898185295d3d18dc 7623729ddc2e470c91550b79731c2f02
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/base/atom_can.rst:33 ../../en/base/atom_can.rst:51
-#: 1fc543f451b44786bbf3677d6ab05fae e858f1882d0c41ebb04341d3cff6fc40
+#: 245d99db30ae4e80863191653635127a 2a025b31861b4dad8fbcbd2aa7d2eb05
 msgid "Output of received CAN message data via serial port."
 msgstr "通过串行端口输出接收到的 CAN 通讯数据。"
 
-#: ../../en/base/atom_can.rst:36 5dedb1e55d3b4c0f98cb4df2dbfa4903
+#: ../../en/base/atom_can.rst:36 bf1546f071a5493cbee31905e4a83653
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例："
 
-#: ../../en/base/atom_can.rst:43 5dedb1e55d3b4c0f98cb4df2dbfa4903
-#: base.atom_can.ATOMCANBase:13 of
+#: ../../en/base/atom_can.rst:43 373f89b7191e4aff89c64a33eb63a69d
+#: 4a6fe67dea96421fbf09d4202b73dfa5 base.atom_can.ATOMCANBase:13 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/atom_can.rst:54 d255e6250d644684a26fc7bafe559ad2
+#: ../../en/base/atom_can.rst:54 08cdad95f1fb4f5482c88b232b6a1b7b
 msgid "**API**"
 msgstr ""
 
-#: ../../en/base/atom_can.rst:57 045ffa87322a48288254b73ef0e12464
+#: ../../en/base/atom_can.rst:57 0788595b09e44dce80eacd9aee12a3c2
 msgid "ATOMCANBase"
 msgstr ""
 
-#: base.atom_can.ATOMCANBase:1 bc2a7cf8bea3452e923dc2754f730592 of
+#: base.atom_can.ATOMCANBase:1 c7b44c329eb1470faf6d88495f5fff14 of
 msgid "Bases: :py:class:`~m5can.CAN`"
 msgstr ""
 
-#: ac6ee4c7a7ad415a8182770911bba837 base.atom_can.ATOMCANBase:1 of
+#: 8d4ec482e8834d2eaf0a9fc9901852ef base.atom_can.ATOMCANBase:1 of
 msgid "Create an ATOMCANBase object"
 msgstr "创建 ATOMCANBase 对象。"
 
-#: base.atom_can.ATOMCANBase bbf4ea362fa442baaf051e7d0279875d of
+#: base.atom_can.ATOMCANBase d1542cc40d1d4893b40639aa68156459 of
 msgid "Parameters"
 msgstr "参数"
 
-#: 56daed2b74a042aeb5fed675194b8768 base.atom_can.ATOMCANBase:3 of
+#: 5ca80b6c1a5f49ae9e89f5b391255dd3 base.atom_can.ATOMCANBase:3 of
 msgid "The CAN ID to use, Default is 0."
 msgstr "CAN 通讯使用的 ID 号, 默认为0"
 
-#: 4dc96c0227964a008126b7b398781711 base.atom_can.ATOMCANBase:4 of
+#: base.atom_can.ATOMCANBase:4 bc1be12ec5f742c9b6d5437ee3239e52 of
 msgid "A list or tuple containing the TX and RX pin numbers."
 msgstr "包含 TX 和 RX 引脚编号的列表或元组。"
 
-#: 095a0ab0ef754842999c491628844929 base.atom_can.ATOMCANBase:6 of
+#: 05bdc1f4afc34bdab3d2f0256eeb1a19 base.atom_can.ATOMCANBase:6 of
 msgid ""
 "The CAN mode to use(NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY), Default is "
 "NORMAL."
 msgstr "使用的 CAN 模式（NORMAL、NO_ACKNOWLEDGE、LISTEN_ONLY），默认为 NORMAL。"
 
-#: 705fa9fd527045b296731bb06ff2f312 base.atom_can.ATOMCANBase:7 of
+#: 82dd11c2dfea4d429b3b24d68f71024f base.atom_can.ATOMCANBase:7 of
 msgid "The baudrate to use, Default is 1000000."
 msgstr "使用的波特率，默认为 1000000。"
 
-#: af7198e3c7b846ad9f45a6a1a0804786 base.atom_can.ATOMCANBase:11 of
+#: 2ba1be4c47894eb8ae693cd9ac52d066 base.atom_can.ATOMCANBase:11 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/base.can.ref:11 1e7e9392cfb24494b38ebdd14473654c
+#: ../../en/refs/base.can.ref:11 ba3fc17c04024fa5a8afa763f56efac2
 msgid "init.png"
 msgstr ""
 
-#: ../../en/base/atom_can.rst:62 50f3d420d34241b596cb539ca7b905f0
+#: ../../en/base/atom_can.rst:62 78840d7c2d164b1ca73c224041a66496
 msgid ""
 "ATOMCANBase class inherits CAN class, See :ref:`hardware.CAN "
 "<hardware.CAN>` for more details."
 msgstr "ATOMCANBase 类继承了 CAN 类，详情请参见 :ref:`hardware.CAN <hardware.CAN>`。"
+
+#~ msgid "ATOM CAN Base"
+#~ msgstr ""
+

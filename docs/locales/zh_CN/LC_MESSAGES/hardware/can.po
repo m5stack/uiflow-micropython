@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hardware/can.rst:4 e59f53c2f741489cbecf23d943cff652
+#: ../../en/hardware/can.rst:4 bf007143a9d84c6c81b6ef0bb336ef50
 msgid "CAN"
 msgstr ""
 
-#: ../../en/hardware/can.rst:8 6687cbe59a6e43dd9a26c9b54c819f40
+#: ../../en/hardware/can.rst:8 27681edb31d347bca18400c0fc3ff475
 msgid ""
 "CAN implements support for classic CAN (available on F4, F7 MCUs) and CAN"
 " FD (H7 series) controllers. At the physical level CAN bus consists of 2 "
@@ -33,21 +33,21 @@ msgid ""
 "to the correct voltage levels on the bus."
 msgstr ""
 
-#: ../../en/hardware/can.rst:13 65c441f4c4414e3090f494864d1fa87f
+#: ../../en/hardware/can.rst:13 8adfba911cfd49de88053090c60d79bb
 msgid ""
 "Example usage for classic CAN controller in Loopback (transceiver-less) "
 "mode::"
 msgstr ""
 
-#: ../../en/hardware/can.rst:21 d7fe8b4fdf1c4681a04e2b5e55800c2b
+#: ../../en/hardware/can.rst:21 6c1ae436a166428a8472f14620789080
 msgid "For detailed examples, please refer to: :ref:`unit.CANUnit <unit.CANUnit>`"
 msgstr ""
 
-#: ../../en/hardware/can.rst:25 5d395d14069d46a8aef22a3d1d8aaa32
+#: ../../en/hardware/can.rst:25 e6d38ffd96164146bf46086de182efff
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/hardware/can.rst:29 0ae7c738db2d4bdb903174febf18f168
+#: ../../en/hardware/can.rst:29 94d75f2a91564806bc85d05665864b85
 msgid ""
 "Construct a CAN object on the given bus.  *bus* must be 0. With no "
 "additional parameters, the CAN object is created but not initialised (it "
@@ -60,82 +60,82 @@ msgstr ""
 #: ../../en/hardware/can.rst:97 ../../en/hardware/can.rst:111
 #: ../../en/hardware/can.rst:135 ../../en/hardware/can.rst:144
 #: ../../en/hardware/can.rst:183 ../../en/hardware/can.rst:212
-#: 0ee13c11a8f648cf99f4457eda9b5f22 6982ecdcdd97432e88353665590766fb
-#: 6f3e9426f6cc4bc984b14a6024c01498 773ba0eca22242268c20351890788d17
-#: 80146832eca14131801fe3f8b307cff1 969082de81f14a98a39da9f2a92c2e48
-#: d2d6c412f69c43558e7616047843ad42 d2f9ec58175f46e1916a8835cedbbaa0
+#: 297ef924db8f4b0eaaf61b3e5e5b836a 5ab95dd922db42e4adaa01e8b9aa0fcb
+#: 5c0196ada7fc42fb9cbcd440d245441f 60742619dc6f4398bf1f1b37fb87d2e4
+#: 71b734d30590454a8e665c7eead0d8fe 82b7ea485a8c43e09e56592fbf6eb6a8
+#: bae22cb2084342be9037cd5e1c8c8e06 c770affa2b8f43ca847fac3428f84b2f
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:37 83d7649e40ac4510a618b864eb1db6d2
-msgid "|init.svg|"
+#: ../../en/hardware/can.rst:37 a556321b20ad40b0b614801152dbf502
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:1 08f88f5d4c654d4fbc11316a380a3a59
-msgid "init.svg"
+#: ../../en/refs/hardware.can.ref:1 c597ed8374894d3c952c692977896b5d
+msgid "init.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:41 4cc4958d749348f5a953083b40d26214
+#: ../../en/hardware/can.rst:41 66fa2bbedc7a4347a8835f282a59fa4d
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hardware/can.rst:45 997ed42770ab49989ce451340bce7cae
+#: ../../en/hardware/can.rst:45 8a30991eaf1f438984ec375eef0c1139
 msgid "Initialise the CAN bus with the given parameters:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:47 8ed1e741de4f4a2ea5603c9e46a5d71a
+#: ../../en/hardware/can.rst:47 286a3cce887f44c7a761bc82ba310efc
 msgid "*mode* is one of:  NORMAL, NO_ACKNOWLEDGE, LISTEN_ONLY"
 msgstr ""
 
-#: ../../en/hardware/can.rst:48 2bd1f9a4212944b8ad456ad606bec24a
+#: ../../en/hardware/can.rst:48 cf394c6c75ce457b88d2f5771ec2f0bd
 msgid "*tx* is the pin to use for transmitting data"
 msgstr ""
 
-#: ../../en/hardware/can.rst:49 a55c3e13d5f94c86b8c8206fb8c07cb2
+#: ../../en/hardware/can.rst:49 87e723c624d2494bb2d6c94a90ebcace
 msgid "*rx* is the pin to use for receiving data"
 msgstr ""
 
-#: ../../en/hardware/can.rst:50 abe37c842342420498b1f3a262d14c02
+#: ../../en/hardware/can.rst:50 c48eb3c28c654dce8e6b2cc7cec315b7
 msgid ""
 "*prescaler* is the value by which the CAN input clock is divided to "
 "generate the nominal bit time quanta. The prescaler can be a value "
 "between 1 and 1024 inclusive for classic CAN."
 msgstr ""
 
-#: ../../en/hardware/can.rst:53 39835b60e7684298aa6392fe987d6f95
+#: ../../en/hardware/can.rst:53 c4a9bbaf79754c50af279a801e0087a4
 msgid ""
 "*sjw* is the resynchronisation jump width in units of time quanta for "
 "nominal bits; it can be a value between 1 and 4 inclusive for classic "
 "CAN."
 msgstr ""
 
-#: ../../en/hardware/can.rst:55 7939c0149db9464e9cf7d021cce0435f
+#: ../../en/hardware/can.rst:55 d266253dbf8d432197c5631a6723c115
 msgid ""
 "*bs1* defines the location of the sample point in units of the time "
 "quanta for nominal bits; it can be a value between 1 and 16 inclusive for"
 " classic CAN."
 msgstr ""
 
-#: ../../en/hardware/can.rst:57 9bb203ab1c7a4edc8effc09c32c4a3ac
+#: ../../en/hardware/can.rst:57 72fa587c0ce94da3bee406a1ad78f0de
 msgid ""
 "*bs2* defines the location of the transmit point in units of the time "
 "quanta for nominal bits; it can be a value between 1 and 8 inclusive for "
 "classic CAN."
 msgstr ""
 
-#: ../../en/hardware/can.rst:59 9c102a8011034efe9b2ce6ac7c3be600
+#: ../../en/hardware/can.rst:59 79b21ae9a3784c859dcac228b656b7ca
 msgid ""
 "*triple_sampling* is Enables triple sampling when the TWAI controller "
 "samples a bit"
 msgstr ""
 
-#: ../../en/hardware/can.rst:62 035fabb97ac54e60a0470e5f8653023c
+#: ../../en/hardware/can.rst:62 2a27169f6c394c7d8a535e2dd89e76b1
 msgid ""
 "The time quanta tq is the basic unit of time for the CAN bus.  tq is the "
 "CAN prescaler value divided by APB_CLK clock source (typically 80 MHz);"
 msgstr ""
 
-#: ../../en/hardware/can.rst:65 d27f29077e8c40f596581518c7c5befc
+#: ../../en/hardware/can.rst:65 2d57cc9ca3084a0baa702364af74b9f3
 msgid ""
 "A single bit is made up of the synchronisation segment, which is always 1"
 " tq. Then follows bit segment 1, then bit segment 2.  The sample point is"
@@ -144,36 +144,36 @@ msgid ""
 "+ BS2 multiplied by the time quanta tq."
 msgstr ""
 
-#: ../../en/hardware/can.rst:71 b4982058e3634ee6a5b2ff96ff3135b5
+#: ../../en/hardware/can.rst:71 ef9593b76320404eb25f181e7493a92f
 msgid ""
 "For example, with APB_CLK=80MHz, prescaler=32, sjw=3, bs1=15, bs2=4, the "
 "value of tq is 0.4 microseconds.  The bittime is 8 microseconds, and the "
 "baudrate is 125kHz."
 msgstr ""
 
-#: ../../en/hardware/can.rst:75 926933526d53474f94be5d6347bcf5ba
+#: ../../en/hardware/can.rst:75 bd284e5722aa4b0f94c108d17d9d8bdf
 msgid "See esp32 technical reference manual for more details."
 msgstr ""
 
-#: ../../en/hardware/can.rst:79 61788bd560f34e6787176e769c18c5f9
+#: ../../en/hardware/can.rst:79 632db63a4e1a4e8fbb9595837d4297c0
 msgid "Turn off the CAN bus."
 msgstr ""
 
-#: ../../en/hardware/can.rst:83 c6e17c7d3c694765810a0b36f487aa16
-msgid "|deinit.svg|"
+#: ../../en/hardware/can.rst:83 379d78b2fb744e5db526c7a45c6f1517
+msgid "|deinit.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:3 892509bab86a4eedbeaee7c3386c2af6
-msgid "deinit.svg"
+#: ../../en/refs/hardware.can.ref:3 0d4093a6dfd145cdb8f8d15db29cdcbe
+msgid "deinit.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:88 ad40c54cb0e04863bc056fdc9e9d97ed
+#: ../../en/hardware/can.rst:88 6dd16ef5cc5c4d1f9df4860b8280260c
 msgid ""
 "Force a software restart of the CAN controller without resetting its "
 "configuration."
 msgstr ""
 
-#: ../../en/hardware/can.rst:91 9199e47eb4db4f068ae40a6eb2c8b576
+#: ../../en/hardware/can.rst:91 3385795e4b8f407b87fe112312b34713
 msgid ""
 "If the controller enters the bus-off state then it will no longer "
 "participate in bus activity.  If the controller is not configured to "
@@ -182,45 +182,45 @@ msgid ""
 "protocol to leave the bus-off state and go into the error active state."
 msgstr ""
 
-#: ../../en/hardware/can.rst:99 d89b8855bab9474ab7380f9bf423a46c
-msgid "|restart.svg|"
+#: ../../en/hardware/can.rst:99 54dec484c78e4486b17397dbb8db8140
+msgid "|restart.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:5 9b9503a656184a7b9edfc10f6db5ec4c
-msgid "restart.svg"
+#: ../../en/refs/hardware.can.ref:5 082b319f4cb74f449d7a9b47623ef804
+msgid "restart.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:103 fd119898d27d4a1e9e9e11560d46f9cc
+#: ../../en/hardware/can.rst:103 0a192e64013b455a8e42da84a1e4e7fb
 msgid "Return the state of the controller.  The return value can be one of:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:105 6b08f0e07e8a4777a0479101ea70b379
+#: ../../en/hardware/can.rst:105 beb0f08a943b403198d0a85c75eeda19
 msgid "``CAN.STOPPED`` -- the controller is completely off and reset;"
 msgstr ""
 
-#: ../../en/hardware/can.rst:106 745d875a5a0b4f44913a916068163490
+#: ../../en/hardware/can.rst:106 751c7afbf76f4792a42f616b44b5016f
 msgid "``CAN.RUNNING`` -- The controller can transmit and receive messages;"
 msgstr ""
 
-#: ../../en/hardware/can.rst:107 47d254e43a4c4555876f4e506e6e3909
+#: ../../en/hardware/can.rst:107 39a10d334cb149a581e0d0aa5b7fb4c7
 msgid ""
 "``CAN.BUS_OFF`` -- the controller is on but not participating in bus "
 "activity (TEC overflowed beyond 255);"
 msgstr ""
 
-#: ../../en/hardware/can.rst:109 8c347f2379024dbb896ffefd1795622f
+#: ../../en/hardware/can.rst:109 501a958252ac463ca795710cacc191f3
 msgid "``RECOVERING`` -- The controller is undergoing bus recovery."
 msgstr ""
 
-#: ../../en/hardware/can.rst:113 9526977166c143299abfdbf7ecfd36f0
-msgid "|state.svg|"
+#: ../../en/hardware/can.rst:113 ffce2bb0357544e899ea21e2e2d85c50
+msgid "|state.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:7 53e85617bc8b443b907287620328b1ed
-msgid "state.svg"
+#: ../../en/refs/hardware.can.ref:7 44d3bbe075a44cd18dd12f944eb76f5e
+msgid "state.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:118 7993c15595354eedb39d208e51b47171
+#: ../../en/hardware/can.rst:118 0c785b4eaf92480fb21f03a9a246672a
 msgid ""
 "Get information about the controller's error states and TX and RX "
 "buffers. If *list* is provided then it should be a list object with at "
@@ -229,117 +229,117 @@ msgid ""
 "value of the method is the populated list."
 msgstr ""
 
-#: ../../en/hardware/can.rst:124 ee2c0f399a9743b895959b527f167c63
+#: ../../en/hardware/can.rst:124 0191ddb873f741e2857475b8cf2ad1cd
 msgid "The values in the list are:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:126 b52263b9d6ef489f9dc1d1c6ef1489ac
+#: ../../en/hardware/can.rst:126 37a4e9d210494b01ac328f9ff2b7ca5b
 msgid "TEC value"
 msgstr ""
 
-#: ../../en/hardware/can.rst:127 f0489c4273544600a1a3bc462b0764c3
+#: ../../en/hardware/can.rst:127 d3fad10949434ec19642e23ace2895db
 msgid "REC value"
 msgstr ""
 
-#: ../../en/hardware/can.rst:128 06f0166fd1b24b368be389b5f770ed3a
+#: ../../en/hardware/can.rst:128 7325599351a74905805b71b0cf4fbbdb
 msgid ""
 "number of times the controller enterted the Error Warning state(ignored "
 "for now, compatible with pyb.CAN)"
 msgstr ""
 
-#: ../../en/hardware/can.rst:129 c81ec217a2414283b6438f55582f1f32
+#: ../../en/hardware/can.rst:129 227ffe888c334cc7a55d8e1aeb2cd3ca
 msgid ""
 "number of times the controller enterted the Error Passive state(ignored "
 "for now, compatible with pyb.CAN)"
 msgstr ""
 
-#: ../../en/hardware/can.rst:130 4c8bb292dde847059acd96d2b063da15
+#: ../../en/hardware/can.rst:130 469268cbfefa46ea84656ce7bf735867
 msgid ""
 "number of times the controller enterted the Bus Off state(ignored for "
 "now, compatible with pyb.CAN)"
 msgstr ""
 
-#: ../../en/hardware/can.rst:131 b1f6fb4a8b0647f89d71fd4b674a3f5c
+#: ../../en/hardware/can.rst:131 d55354bb43ac40f3af585330a8b7bfb8
 msgid "number of pending TX messages"
 msgstr ""
 
-#: ../../en/hardware/can.rst:132 93ff88ce2b264c4a99e887d7b4842c77
+#: ../../en/hardware/can.rst:132 46e91ee147a84ae8999b7c9aeb66575b
 msgid "number of pending RX messages"
 msgstr ""
 
-#: ../../en/hardware/can.rst:133 ce6319bf457f4b878cd86fae491bdf4e
+#: ../../en/hardware/can.rst:133 59bce7a654f347ee94e4370daa0c2a83
 msgid ""
 "number of pending RX messages on fifo 1(ignored for now, compatible with "
 "pyb.CAN)"
 msgstr ""
 
-#: ../../en/hardware/can.rst:137 bb3cdc5c451541408f6cfa9ed63993e1
-msgid "|info.svg|"
+#: ../../en/hardware/can.rst:137 d45c6a8daebc4343b4869580d1d38804
+msgid "|info.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:9 6938a4471199457a8f2fcd91fe4ed6d4
-msgid "info.svg"
+#: ../../en/refs/hardware.can.ref:9 66776b69a597431e930042ca8ad27a6a
+msgid "info.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:142 640e5e03754f433d828b317b0d981745
+#: ../../en/hardware/can.rst:142 2284c2d77f5b41cd9d5a6ab790a2a3cb
 msgid "Return ``True`` if any message waiting on the FIFO, else ``False``."
 msgstr ""
 
-#: ../../en/hardware/can.rst:146 64e0b6882d714cd594efb2cbcb09e2f8
-msgid "|any.svg|"
+#: ../../en/hardware/can.rst:146 a1fe20d87ce64fa19d15c001ac2daa32
+msgid "|any.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:11 0b0b65a6447d46c683880a33003a99a9
-msgid "any.svg"
+#: ../../en/refs/hardware.can.ref:11 86ae9e1746194b609616a19821019d3d
+msgid "any.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:151 63d65ef178054887b25eefe5be07e4fa
+#: ../../en/hardware/can.rst:151 fe37a67d810e474fad4c00db935e0785
 msgid "Receive data on the bus:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:153 37eb98fd4c93424d864ac493938f6c65
+#: ../../en/hardware/can.rst:153 246e3f39a9ea4457a497521962e6e9ec
 msgid "*fifo* is an integer, it can be any number and compatible with pyb.CAN"
 msgstr ""
 
-#: ../../en/hardware/can.rst:154 1a02cedab5624cf4afc26106d6fba7ae
+#: ../../en/hardware/can.rst:154 62eaf06634a3435c9ef78d834a300cdc
 msgid "*list* is an optional list object to be used as the return value"
 msgstr ""
 
-#: ../../en/hardware/can.rst:155 22acc374629e4ba6a331e4338101ea7e
+#: ../../en/hardware/can.rst:155 85cd36ea98e9445295afabd65fb75a22
 msgid "*timeout* is the timeout in milliseconds to wait for the receive."
 msgstr ""
 
-#: ../../en/hardware/can.rst:157 b02f4a2e8f72412c861563f955b219e2
+#: ../../en/hardware/can.rst:157 b9451f2fd00f42808a3e2ed274435a69
 msgid "Return value: A tuple containing five values."
 msgstr ""
 
-#: ../../en/hardware/can.rst:159 21e8220046b04b2691de6296131dc9e3
+#: ../../en/hardware/can.rst:159 acff02e795094555b12edc5528c261a3
 msgid "The id of the message."
 msgstr ""
 
-#: ../../en/hardware/can.rst:160 dfd5ac9fb7fa42068304ec96c738f54b
+#: ../../en/hardware/can.rst:160 f46485c0e29444828401bba90d9f35a5
 msgid "A boolean that indicates if the message ID is standard or extended."
 msgstr ""
 
-#: ../../en/hardware/can.rst:161 d88fef32b1744c928d661fa408188144
+#: ../../en/hardware/can.rst:161 9067d8e269414edd859b6febbee7cee4
 msgid "A boolean that indicates if the message is an RTR message."
 msgstr ""
 
-#: ../../en/hardware/can.rst:162 e00c927829c144cfb299461fbb138e73
+#: ../../en/hardware/can.rst:162 781765c949424ef590bb63209805d4e4
 msgid "The FMI (Filter Match Index) value."
 msgstr ""
 
-#: ../../en/hardware/can.rst:163 98461f9ac7714aeab5ae8867acd15257
+#: ../../en/hardware/can.rst:163 77423320519e446c81d45b6a746fc01e
 msgid "An array containing the data."
 msgstr ""
 
-#: ../../en/hardware/can.rst:165 2fd6bca9a26d44d28361eb61685f945c
+#: ../../en/hardware/can.rst:165 136baf89c1634f4ca03931aada23b67a
 msgid ""
 "If *list* is ``None`` then a new tuple will be allocated, as well as a "
 "new bytes object to contain the data (as the fifth element in the tuple)."
 msgstr ""
 
-#: ../../en/hardware/can.rst:168 bcb97a81dd264b88af312ac6f1be257b
+#: ../../en/hardware/can.rst:168 162e413e51824189acdc6edcbad14cec
 msgid ""
 "If *list* is not ``None`` then it should be a list object with a least "
 "five elements.  The fifth element should be a memoryview object which is "
@@ -352,39 +352,39 @@ msgid ""
 "data without using the heap. For example::"
 msgstr ""
 
-#: ../../en/hardware/can.rst:185 fe817d36cb314c7ea5c5de7fdb5cafa9
-msgid "|recv1.svg|"
+#: ../../en/hardware/can.rst:185 7549b0a9bfaf444b9736ca8064fd5c04
+msgid "|recv1.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:13 1aff592bc62e41d4ac787d136569319f
-msgid "recv1.svg"
+#: ../../en/refs/hardware.can.ref:13 4467ff291cc448e295672a56f40b9507
+msgid "recv1.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:187 197bee05e9db4187b33921d72c25c214
-msgid "|recv2.svg|"
+#: ../../en/hardware/can.rst:187 c4177bbe678e45a28b675935f89910a5
+msgid "|recv2.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:15 daf479a7a40c4e1cbf0f2d10aed9d8a0
-msgid "recv2.svg"
+#: ../../en/refs/hardware.can.ref:15 11e0e62db17d4869a824cdb7e9107a54
+msgid "recv2.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:192 03a6a1752a7145c08d99870351d63331
+#: ../../en/hardware/can.rst:192 8a138825e5444eba831b9d72699e3747
 msgid "Send a message on the bus:"
 msgstr ""
 
-#: ../../en/hardware/can.rst:194 c7b460e07b884249b37933b563a4f265
+#: ../../en/hardware/can.rst:194 b335c81e37314a3190ed064247ca39dc
 msgid "*data* is the data to send (an integer to send, or a buffer object)."
 msgstr ""
 
-#: ../../en/hardware/can.rst:195 abd50fe542d64df290c5a3fc96a22ce9
+#: ../../en/hardware/can.rst:195 341c4a2fb1af49058d957d05077aac87
 msgid "*id* is the id of the message to be sent."
 msgstr ""
 
-#: ../../en/hardware/can.rst:196 5773623f39a4457382227b698722cbe0
+#: ../../en/hardware/can.rst:196 cc4eda959aec42ab8729530ed4ffdfe9
 msgid "*timeout* is the timeout in milliseconds to wait for the send."
 msgstr ""
 
-#: ../../en/hardware/can.rst:197 283999c572aa4258a8c2bf2fa76b8b26
+#: ../../en/hardware/can.rst:197 370e58e51a0e4ef18dc67dd0811606f9
 msgid ""
 "*rtr* is a boolean that specifies if the message shall be sent as a "
 "remote transmission request.  If *rtr* is True then only the length of "
@@ -392,13 +392,13 @@ msgid ""
 "*data* are unused."
 msgstr ""
 
-#: ../../en/hardware/can.rst:201 6261427d28fb4cecba1be78c002678c7
+#: ../../en/hardware/can.rst:201 8bb4db20810840deb31257d25b90eb6f
 msgid ""
 "*extframe* if True the frame will have an extended identifier (29 bits), "
 "otherwise a standard identifier (11 bits) is used."
 msgstr ""
 
-#: ../../en/hardware/can.rst:204 7be585f2b42843a0842c38645e0ff3b0
+#: ../../en/hardware/can.rst:204 2a9a8b7bd66e4ba4bc46e4e61786e53a
 msgid ""
 "If timeout is 0 the message is placed in a buffer in one of three "
 "hardware buffers and the method returns immediately. If all three buffers"
@@ -407,27 +407,81 @@ msgid ""
 "within the specified time an exception is thrown."
 msgstr ""
 
-#: ../../en/hardware/can.rst:210 114036b9f9b04d2ea1b0b7a2dda5245c
+#: ../../en/hardware/can.rst:210 3f38362a61ab47548404a59924459f9f
 msgid "Return value: ``None``."
 msgstr ""
 
-#: ../../en/hardware/can.rst:214 28684fc15ceb4eb5bf9f83db93d95b10
-msgid "|send.svg|"
+#: ../../en/hardware/can.rst:214 a1e97dad94824f15b11855723d89a2ca
+msgid "|send.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.can.ref:17 a78b3a4c44f840ec8722ba8572696ac0
-msgid "send.svg"
+#: ../../en/refs/hardware.can.ref:17 069ee0a50ef74078af99d4bc68e12bdb
+msgid "send.png"
 msgstr ""
 
-#: ../../en/hardware/can.rst:218 1a3fb34611944eddb097f65035f0acdf
+#: ../../en/hardware/can.rst:218 026225c94025468c868bc2c68bfb04e0
 msgid "Constants"
 msgstr ""
 
-#: ../../en/hardware/can.rst:224 3a59c432963a46f087a31ee6eec042fd
+#: ../../en/hardware/can.rst:224 bca16eaecc9c433483563dd87f0328f3
 msgid "The mode of the CAN bus used in :meth:`~CAN.init()`."
 msgstr ""
 
-#: ../../en/hardware/can.rst:232 eeeeb93c1070415fa30acc849d49b1ce
+#: ../../en/hardware/can.rst:232 509155617aae47d0ac366faf15628c58
 msgid "Possible states of the CAN controller returned from :meth:`~CAN.state()`."
 msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|deinit.svg|"
+#~ msgstr ""
+
+#~ msgid "deinit.svg"
+#~ msgstr ""
+
+#~ msgid "|restart.svg|"
+#~ msgstr ""
+
+#~ msgid "restart.svg"
+#~ msgstr ""
+
+#~ msgid "|state.svg|"
+#~ msgstr ""
+
+#~ msgid "state.svg"
+#~ msgstr ""
+
+#~ msgid "|info.svg|"
+#~ msgstr ""
+
+#~ msgid "info.svg"
+#~ msgstr ""
+
+#~ msgid "|any.svg|"
+#~ msgstr ""
+
+#~ msgid "any.svg"
+#~ msgstr ""
+
+#~ msgid "|recv1.svg|"
+#~ msgstr ""
+
+#~ msgid "recv1.svg"
+#~ msgstr ""
+
+#~ msgid "|recv2.svg|"
+#~ msgstr ""
+
+#~ msgid "recv2.svg"
+#~ msgstr ""
+
+#~ msgid "|send.svg|"
+#~ msgstr ""
+
+#~ msgid "send.svg"
+#~ msgstr ""
 

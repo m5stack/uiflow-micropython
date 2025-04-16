@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"PO-Revision-Date: 2025-04-09 17:37+0800\n"
+"Last-Translator: \n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/tof4m.rst:2 b87f40539f374c6d86032a0916e4ff2a
+msgid "ToF4M Unit"
+msgstr ""
+
+#: ../../en/units/tof4m.rst:8 0235477273f84a4caa65b11e69b20fcf
+msgid ""
+"This is the driver library of ToF4M Unit, which is used to obtain "
+"distance data from the VL53L1CXV0FY sensor."
+msgstr "这是 ToF4M 单元的驱动程序库，用于从 VL53L1CXV0FY 传感器获取距离数据。"
+
+#: ../../en/units/tof4m.rst:11 12d9e3b79a8946f08ea79beb0adbadea
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/tof4m.rst:13 08b28110e15043f78a56f39858d21db8
+msgid "|ToF4M|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref ccb25c2931ad4e9aae940e2746458e6e
+msgid "ToF4M"
+msgstr ""
+
+#: ../../en/units/tof4m.rst:17 67c58c87fb614c23b02cf5f7bc9e238f
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/units/tof4m.rst:20 ../../en/units/tof4m.rst:38
+#: 25e2e72819c7471cb0725ff9d741017f 715bec408e46460ca9fa1e1d86c0ec57
+msgid "get distance value"
+msgstr "获取距离值"
+
+#: ../../en/units/tof4m.rst:22 33de2e2e0a954ed4b6ae08d196262279
+msgid "Open the |tof4m_core_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tof4m_core_example.m5f2| 项目。"
+
+#: ../../en/units/tof4m.rst:24 ../../en/units/tof4m.rst:40
+#: d054362e9a934e978378f05f291a101c d083d4f99b144d85b5959925715597b3
+msgid ""
+"This example gets the distance value of the ToF4M Unit and displays it on"
+" the screen."
+msgstr "此示例获取 ToF4M 单元的距离值并将其显示在屏幕上。"
+
+#: ../../en/units/tof4m.rst:26 0b5ab52455d342b98c3450b08f774a0d
+#: 0fa8cf13fbd541e4a1161612910cac92 1319a9d37963479597541abf9677e16c
+#: 14f49be8a17145f0a996a0cf6775a7a6 278bb8da4c914597ab427ebdbecd8bef
+#: 2c63778b26944f95ab17ad6afe1f8318 47f407d58013433cb4b2fd23ac4dcfbe
+#: 5429b3231d8e459fa1a0f3e2b79d769b 5812b29cdec74c8cb3dbba29c4de23ca
+#: 777bad6ea16b46ec85fb437fb3aede11 7ef0b74254d246eba8c6d8e46be9e027
+#: driver.vl53l1x.VL53L1X:6 driver.vl53l1x.VL53L1X.get_data_ready:6
+#: driver.vl53l1x.VL53L1X.get_distance:6
+#: driver.vl53l1x.VL53L1X.get_distance_mode:6
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget:6
+#: driver.vl53l1x.VL53L1X.set_continuous_start_measurement:3
+#: driver.vl53l1x.VL53L1X.set_continuous_stop_measurement:3
+#: driver.vl53l1x.VL53L1X.set_distance_mode:5
+#: driver.vl53l1x.VL53L1X.set_i2c_address:5
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/tof4m.rst:28 fd6943710860490b963a4766e3a8113c
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:19 fb00b390f29e47eda49fa224c90409f6
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/tof4m.rst:30 ../../en/units/tof4m.rst:48
+#: 9b0c85a85eeb4d139041f2917b5c22aa ac7ae06e19ee4fa7a1b3314aa9d4c3f0
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/tof4m.rst:32 ../../en/units/tof4m.rst:50
+#: d8d520712a2344aea4d3459f241a40fc e207a3b7d2964cc099f603bb4ea6496f
+msgid "None"
+msgstr ""
+
+#: ../../en/units/tof4m.rst:35 3621509eb6c24f96b8fff5762d96cae5
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/tof4m.rst:42 1f7bba2743b644b0b3b520b0e5663547
+#: 21d04860068643dbbb31dfc29e0b4246 2f27fbce0d1a4119b14df807a8c9e9df
+#: 38657f7e032e4250a5009b354296372c 5e7f99a0a609405fb2ed2943ae264ae6
+#: 7f188bde7c6a4cb6bb213ceee9f02c85 89cfe995130849c080c46e4fcb6a29db
+#: bc67e2d379464e4fb020aac65099c24c bfc290702a6c4df082f7cad3bcaa4650
+#: driver.vl53l1x.VL53L1X:10 driver.vl53l1x.VL53L1X.get_data_ready:10
+#: driver.vl53l1x.VL53L1X.get_distance:10
+#: driver.vl53l1x.VL53L1X.get_distance_mode:10
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget:10
+#: driver.vl53l1x.VL53L1X.set_continuous_start_measurement:7
+#: driver.vl53l1x.VL53L1X.set_continuous_stop_measurement:7
+#: driver.vl53l1x.VL53L1X.set_distance_mode:9
+#: driver.vl53l1x.VL53L1X.set_i2c_address:9
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget:9
+#: e79da18ce15b44a68967e6d8e70e829b f7c3e0fa303645f38f98f4f7ce15a46c of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/tof4m.rst:54 8db67c48f2fb4b9daafc5a084ef8df01
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/tof4m.rst:57 5d1fcf5da03c43b69e8f86a9fe5edb7e
+msgid "TOF4MUnit"
+msgstr ""
+
+#: ../../en/units/tof4m.rst:63 6531b733fdee45abbfb58e79e3661d2f
+msgid "VL53L1CXV0FY"
+msgstr ""
+
+#: 0b2965a024674ec98bb0c33b17799adb driver.vl53l1x.VL53L1X:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 527a3c0f739b45e4b2b5471d400758d8 driver.vl53l1x.VL53L1X:1 of
+msgid "Create a VL53L1X object."
+msgstr "创建一个 VL53L1X 对象。"
+
+#: ../../en/units/tof4m.rst 5fb388fcff4e4925bbebb2822445eeea
+#: af378dd9be794d6ebc8f07cf3558005d de58fdd1153748e89b0541b862315ea9
+#: driver.vl53l1x.VL53L1X.set_distance_mode
+#: driver.vl53l1x.VL53L1X.set_i2c_address
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget
+#: fc6468fe9666486c9932a087d2c575b0 of
+msgid "Parameters"
+msgstr "参数"
+
+#: driver.vl53l1x.VL53L1X:3 f5dd9148ec504732bb0258acffe39c4f of
+msgid "The I2C bus the ToF4M Unit is connected to."
+msgstr "ToF4M Unit 所连接的 I2C 总线。"
+
+#: 0d2ff5217f6d45899a231f29d48d746f driver.vl53l1x.VL53L1X:4 of
+msgid "The I2C address of the device. Default is 0x29."
+msgstr "设备的 I2C 地址。默认为 0x29。"
+
+#: 021461010d5247249d1657b617f7ce02 driver.vl53l1x.VL53L1X:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:7 ecc0bf1f17ce47b9b57dcba7ab7d9d1d
+msgid "init.png"
+msgstr ""
+
+#: bc7c8f473902451e85781aa712c46758 driver.vl53l1x.VL53L1X.get_data_ready:1 of
+msgid "Returns true if new data is ready, otherwise false."
+msgstr "如果新数据已准备就绪，则返回 true，否则返回 false。"
+
+#: 3d17268287e04875b5efafdb3bbb8656 446a13eb7d504e64ac9db35057a00cb3
+#: d61090ed13cd4f8d8a298c7f337b2df1 driver.vl53l1x.VL53L1X.get_data_ready
+#: driver.vl53l1x.VL53L1X.get_distance driver.vl53l1x.VL53L1X.get_distance_mode
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget
+#: f6b89522cd374da5a36d7d492f66e9fc of
+msgid "Returns"
+msgstr "返回"
+
+#: driver.vl53l1x.VL53L1X.get_data_ready:3 f4571fa5347f40fd93d67648d658aac7 of
+msgid "True if new data is ready."
+msgstr "如果新数据已准备就绪，则返回 true。"
+
+#: 01cafcf47f534d0eae9238f0281d14e3 91ce102ad25f452187eec00102ba177d
+#: dc06910000ff4c05869cc68cdbcf816f driver.vl53l1x.VL53L1X.get_data_ready
+#: driver.vl53l1x.VL53L1X.get_distance driver.vl53l1x.VL53L1X.get_distance_mode
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget
+#: e02bd7d6064a40ef92f791273cc00c8f of
+msgid "Return type"
+msgstr "返回类型"
+
+#: d217c15b10cf400a92c3beb1a18d72b4 driver.vl53l1x.VL53L1X.get_data_ready:8 of
+msgid "|get_data_ready.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:12 9c23b91c550041fe9256e46488752d9c
+msgid "get_data_ready.png"
+msgstr ""
+
+#: 57d117688cd5491db1bc3841036bdf59 driver.vl53l1x.VL53L1X.get_distance:1 of
+msgid "The distance in units of millimeters."
+msgstr "以毫米为单位的距离。"
+
+#: cff0b6799b7b49318825957940c829de driver.vl53l1x.VL53L1X.get_distance:3 of
+msgid "Distance in millimeters or None if measurement is invalid."
+msgstr "以毫米为单位的距离；如果测距无效，则为 \"无\"。"
+
+#: b90cc793b0a9487a92423cdb4d1002a1 driver.vl53l1x.VL53L1X.get_distance:8 of
+msgid "|get_distance.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:9 8a48fe859c1f46f597d43a6128aa2cab
+msgid "get_distance.png"
+msgstr ""
+
+#: driver.vl53l1x.VL53L1X.get_distance_mode:1 ff2cd5304c5d40f6b8cba7a6498a5238
+#: of
+msgid "Get the distance mode."
+msgstr "获取距离模式。"
+
+#: 0ee823e7ad5e435cb314270fb8dc6256 driver.vl53l1x.VL53L1X.get_distance_mode:3
+#: of
+msgid "distance mode(1=short, 2=long)."
+msgstr "距离模式(1=短距模式, 2=长距模式)."
+
+#: 0de2c5e12a294486a4f91549ca5fa566 driver.vl53l1x.VL53L1X.get_distance_mode:8
+#: of
+msgid "|get_distance_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:15 35ae1ddc9d944d60a27c6413964e4f5b
+msgid "get_distance_mode.png"
+msgstr ""
+
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget:1
+#: f73328f6b3eb4290bae6b78c4fe9d6ee of
+msgid "Get measurement duration in milliseconds."
+msgstr "获取测距持续时间（以毫秒为单位）。"
+
+#: ceea9559221a4c039d07f88679f14a73
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget:3 of
+msgid "The timing budget in milliseconds."
+msgstr "以毫秒为单位的测距定时预算。"
+
+#: 0165006827734cbda1637435bbead8b8
+#: driver.vl53l1x.VL53L1X.get_measurement_timing_budget:8 of
+msgid "|get_measurement_timing_budget.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:13 71b7898356bc4894846e31af96f2df3d
+msgid "get_measurement_timing_budget.png"
+msgstr ""
+
+#: 17ac6328e1f940189d77be2d5a4d27f0
+#: driver.vl53l1x.VL53L1X.set_continuous_start_measurement:1 of
+msgid "Starts continuous measure operation."
+msgstr "开始连续测距操作。"
+
+#: 1eca89015ac54598b10729e44cf59df4
+#: driver.vl53l1x.VL53L1X.set_continuous_start_measurement:5 of
+msgid "|set_continuous_start_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:10 2365bb5c45974e5cafb66dc3448904be
+msgid "set_continuous_start_measurement.png"
+msgstr ""
+
+#: 96a4d4f9dbb843b98b492b5b5e9f2538
+#: driver.vl53l1x.VL53L1X.set_continuous_stop_measurement:1 of
+msgid "Stops measure operation."
+msgstr "停止测距操作。"
+
+#: 23a4919f57f04aa6beb1c2a7370d8caa
+#: driver.vl53l1x.VL53L1X.set_continuous_stop_measurement:5 of
+msgid "|set_continuous_stop_measurement.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:11 edd229e5488d418dac240e05f847b0a0
+msgid "set_continuous_stop_measurement.png"
+msgstr ""
+
+#: driver.vl53l1x.VL53L1X.set_distance_mode:1 f7f90d99a4d44afb90d084c123be53ba
+#: of
+msgid "Set the distance mode."
+msgstr ""
+
+#: 07ed46eacbba43c696e39bab26ba3ac8 driver.vl53l1x.VL53L1X.set_distance_mode:3
+#: of
+msgid "1=short, 2=long."
+msgstr ""
+
+#: bd4148ac11b2422daa3d8d67ec27e7e2 driver.vl53l1x.VL53L1X.set_distance_mode:7
+#: of
+msgid "|set_distance_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:16 323df9915b854f19b56c9964dbc82b2a
+msgid "set_distance_mode.png"
+msgstr ""
+
+#: 8550ec3767264bd88b7e58ae1b7e58bc driver.vl53l1x.VL53L1X.set_i2c_address:1 of
+msgid "Set a new I2C address to the instantiated object."
+msgstr ""
+
+#: 4015d4e1ca9b4c4680aff40c8c00a9ad driver.vl53l1x.VL53L1X.set_i2c_address:3 of
+msgid "The new I2C address."
+msgstr ""
+
+#: 19c54e1f01df4612a44748ac1aa157eb driver.vl53l1x.VL53L1X.set_i2c_address:7 of
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:17 3b3b21cea1e541f29fc4c7fb5d9e0169
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: d18e02b4e5e74fcd9457398bd02e15b2
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget:1 of
+msgid "Set the measurement timing budget in milliseconds."
+msgstr "以毫秒为单位设置测距定时预算。"
+
+#: b49380ce1a65449eb4d46692316f30f4
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget:3 of
+msgid "Timing budget in milliseconds."
+msgstr "以毫秒为单位的测距定时预算。"
+
+#: 819a6d526b5a470ab5e73912a35d649b
+#: driver.vl53l1x.VL53L1X.set_measurement_timing_budget:7 of
+msgid "|set_measurement_timing_budget.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tof4m.ref:14 2f10d0ec4abe407f8f915a3f816cb9f5
+msgid "set_measurement_timing_budget.png"
+msgstr ""

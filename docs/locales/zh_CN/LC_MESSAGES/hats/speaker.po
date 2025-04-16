@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 10:32+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,74 +20,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hats/speaker.rst:2 ../../en/refs/hat.speaker.ref
-#: 653a1bec8f9e43319fdacc407c32605c 9e385a87d36645bfab19869ecff4161c
+#: ../../en/hats/speaker.rst:2 ../../en/hats/speaker.rst:19
+#: ../../en/refs/hat.speaker.ref 0a14cb07f6fc46e29b85399aeebb89a8
+#: a83261413d6a4e818e0d2f68166d47aa ac3ba597ca444174ac900dd78346390e
 msgid "Speaker Hat"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:8 f28e0f98ee62463c933c8a22a990f10e
+#: ../../en/hats/speaker.rst:8 5cc0f9a0d9384453bc584aebb92d7d1a
 msgid "The following products are supported:"
 msgstr "支持以下产品："
 
-#: ../../en/hats/speaker.rst:10 fa72906a5bdb4004b0eb255f39cbe05b
+#: ../../en/hats/speaker.rst:10 2806ccd851ee48fe927097cf7ecf8e3b
 msgid "|Speaker Hat|"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:12 3d9573ea16fd4e30927df330c304ca07
+#: ../../en/hats/speaker.rst:12 56880f9f6717459fb9ac2b388bfa905f
+msgid "Below is the detailed support for Speaker on the host:"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:19 940f3f4585d8499aad5106ce9a08b604
+#, fuzzy
+msgid "Controller"
+msgstr "构造函数"
+
+#: ../../en/hats/speaker.rst:21 d5f04fea72e2491fb1a43aa684f2c70d
+msgid "CoreInk"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:21 ../../en/hats/speaker.rst:23
+#: ../../en/hats/speaker.rst:25 ../../en/hats/speaker.rst:27
+#: 04ec3f8ec3d74d1e9a6b49feb3818e07 29bd1cbf749c4134be0fb9c469308ce3
+#: 7655acb712d540b6a6c32dbc8d8eed4e a50dffc41d694694811793ca5e0b3e76
+msgid "|S|"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:23 ed1623ccb9ca499abac6cac1265ebef0
+msgid "StickC"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:25 db19356a2e6547f0914e166007e97bbc
+msgid "StickC PLUS"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:27 9f3d3f47d70447f5a8f7a567fbc7577b
+msgid "StickC PLUS2"
+msgstr ""
+
+#: ../../en/hats/speaker.rst:33 e59b01519653400487705b5d0c5c72ea
 msgid "Micropython Example:"
 msgstr "Micropython 示例："
 
-#: ../../en/hats/speaker.rst:19 61bf4e6994ae43c99571f817d8e9d303
+#: ../../en/hats/speaker.rst:40 c69c1d2516c149fe82df0335c046d417
 msgid "UIFLOW2 Example:"
 msgstr "UiFlow2 示例："
 
-#: ../../en/hats/speaker.rst:21 efb84fe8bbf84115a467be882609a77a
+#: ../../en/hats/speaker.rst:42 1111d696bb354c20a4b14b1240eabbb0
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/hat.speaker.ref:9 e88583419e814475ad6504846d31b546
+#: ../../en/refs/hat.speaker.ref:9 1c2dee4f8d014403a2a0003b2ce1bf3a
 msgid "example.png"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:26 e9b02cf6407e491987fe2472ac3dddf0
+#: ../../en/hats/speaker.rst:47 8b4a7c7ec9564a7e978985a73f1239c2
 msgid "|stickc_plus2_speaker_example.m5f2|"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:28 8010119784c64af28987c6c808795471
+#: ../../en/hats/speaker.rst:49 da9ab3c97cbb4998acd32b5429eabada
 msgid ""
 ":download:`poweron_2_5s.wav "
 "<../../../examples/hardware/speaker/poweron_2_5s.wav>`"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:31 120c375a5b5b4114a7dee67ed66b3627
+#: ../../en/hats/speaker.rst:52 15e35e8b039b4fa9845ff6b6a2f0d67c
 msgid "class SpeakerHat"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:34 9bc980b978e64ef08fb1976b4e3785d9
+#: ../../en/hats/speaker.rst:55 9d07ddc8050b4ed69a5ae2f5b2ab07d2
 msgid "Constructors"
 msgstr "构造函数"
 
-#: ../../en/hats/speaker.rst:38 80e5e252fd3945448eb21b9c888a58d4
+#: ../../en/hats/speaker.rst:59 83f8f47e75c146a08a0cc173ec8161e6
 msgid "Create an SpeakerHat object."
 msgstr "创建一个 SpeakerHat 对象。"
 
-#: ../../en/hats/speaker.rst:40 e6a1c84d1a974bbc9d20b0a17d93a0e8
+#: ../../en/hats/speaker.rst:61 69715042e6a6436dab99db7a81f361e9
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:42 274363c3c8f2453cabeae325687ed841
+#: ../../en/hats/speaker.rst:63 f55ef37251b346abb06ea5bfb07fe541
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/hat.speaker.ref:7 36b2712286fe49e09cfb300e2cb8682f
+#: ../../en/refs/hat.speaker.ref:7 2e14558648504cbf82920eaee8828d24
 msgid "init.png"
 msgstr ""
 
-#: ../../en/hats/speaker.rst:44 b801228738794be5bf660ee513f06999
+#: ../../en/hats/speaker.rst:65 26cebf9bf0604ef5a680f33766485c43
 msgid ""
 "SpeakerHat class inherits M5.Speaker class, See "
 ":ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more "
 "details."
-msgstr "SpeakerHat 类继承 M5.Speaker 类，请参阅 "
-":ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` 了解更多"
-"详细信息。"
+msgstr ""
+"SpeakerHat 类继承 M5.Speaker 类，请参阅 :ref:`hardware.Speaker.Methods "
+"<hardware.Speaker.Methods>` 了解更多详细信息。"
+

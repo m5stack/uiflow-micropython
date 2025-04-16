@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 12:27+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,63 +20,63 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/atom_gps.rst:2 ../../en/refs/base.gps.ref
-#: ae26b16a24d94c84a7293460de125856 d2896f4066de4fa1b6486476595e8006
-msgid "ATOM GPS Base"
+#: ../../en/base/atom_gps.rst:2 87147a81887c4699a875ef0ee5855b10
+msgid "Atomic GPS Base"
 msgstr ""
 
-#: ../../en/base/atom_gps.rst:8 087fbc2ff5934fc890dbd4d2dd076a4f
+#: ../../en/base/atom_gps.rst:8 098d58489b7a46329ca5e95d16ad6a88
 msgid ""
 "This is the driver library of ATOM GPS Base, which is used to obtain data"
 " from the GPS module."
 msgstr "这是 ATOM GPS Base 的驱动程序库，用于从 GPS 模块获取数据。"
 
-#: ../../en/base/atom_gps.rst:11 66133002dbfd41e98ff614ebd7636d15
+#: ../../en/base/atom_gps.rst:11 29ee9523336a4a20aff027a7280e79be
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/atom_gps.rst:14 97bb503b70da4ae49645896711697de3
+#: ../../en/base/atom_gps.rst:14 15a21b456ab843e6984fc1a7ddc8033a
 msgid "|ATOM GPS|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref 2959460dd10e4ece826cff7106249c7f
+#: ../../en/refs/base.gps.ref d57c5d2698cd4aaab4337f54fe6b01d0
 msgid "ATOM GPS"
 msgstr ""
 
-#: ../../en/base/atom_gps.rst:14 d255f92c81104fc6b30ee0c14a80f210
+#: ../../en/base/atom_gps.rst:14 e85a315fb90e4ffe9fed071288ab5365
 msgid "|ATOM GPS Base|"
 msgstr ""
 
-#: ../../en/base/atom_gps.rst:19 cb1416a182c946ae9891d6067b0a75ea
+#: ../../en/refs/base.gps.ref beeba9115094455f865933f589e6313f
+msgid "ATOM GPS Base"
+msgstr ""
+
+#: ../../en/base/atom_gps.rst:19 f096c038c0ee460c89dfba30b46d8279
 msgid "UiFlow2 Example"
 msgstr "UIFLOW2 应用示例："
 
 #: ../../en/base/atom_gps.rst:22 ../../en/base/atom_gps.rst:40
-#: 3a88477a43b94993a3ecbc2cd1f305f2 96ea060cd8524c749384a711ce3625af
+#: 2ff8f09447f54c16a0f5ec4cd8f8b3fe bf95534494b34a6486817a9e57243f04
 msgid "get gps data"
 msgstr "获取 GPS 数据"
 
-#: ../../en/base/atom_gps.rst:24 38a0f91a46b24113b9596df9a1032522
+#: ../../en/base/atom_gps.rst:24 46743341f77c49e3b4ea207e3b03ffed
 msgid "Open the |atoms3_gps_example.m5f2| project in UiFlow2."
 msgstr "在UiFlow2 中打开 |atoms3_gps_example.m5f2| 项目。"
 
 #: ../../en/base/atom_gps.rst:26 ../../en/base/atom_gps.rst:42
-#: 82ff92fb68ef4d04b74764e6863bedc6 9711921da3d947d5b859fd23d9a0d78f
+#: bf07a6d1843e4c9a89d3348b2ab6100a e23c84ed1f9744faa96b6c247cb0025a
 msgid ""
 "This example gets the GPS data of the ATOM GPS Base and displays it on "
 "the serial monitor."
 msgstr "本示例获取 ATOM GPS Base 的 GPS 数据并将其显示在串口监视器中。"
 
-#: ../../en/base/atom_gps.rst:28 13e81fc2700544e0948427687a159410
-#: 3104be6b4999403f87a51b1a757e3042 3a60008e98204b40956d53fa7e20c3a7
-#: 51c8c12b95444fc4b16d147a1654e23d 53e259eae67f4814a9c176e2330e9c21
-#: 7aea5244f8974d7782e078c9b75d9f34 84c0c780c0bd4d7b926b298249cdcce4
-#: 9358d310d064464da1b343fe63b99591 9ef19b5dfa164e6987fc48d25c748b56
-#: 9f668bb8b540409ca5397fe5692ab2c3 a033d09a54134a458025cf03f1ace335
-#: a2d1f668f8ea4e7f998b31d7f7a321fc a6460e00e2d34f80b68a1901006bd6eb
-#: abb84ff5971847128fd96bbc6bf187dc b5e88f318900446ab7a0da5e845741c6
-#: base.atom_gps.ATOMGPSBase:8 base.atom_gps.ATOMGPSBase.deinit:3
-#: base.atom_gps.ATOMGPSBase.get_altitude:6
+#: ../../en/base/atom_gps.rst:28 114b7fe821ac461eac8a5ca0d21d6905
+#: 17d30f8aa45d4fb5b0b6f3007e0118a7 2326844163014db899d24b006df97443
+#: 27d6c568f7e848d1902b2ab381c190f8 31a39484dbce46f2a24fa4e620d0af32
+#: 35588ad6c61a4314aae2e06ec6cfc156 631cf3c365214461baf0fe3795302af8
+#: 9429733e77484ae9810e182a9300dfde abf1c6709412421aa94846f77407a7d3
+#: b6e8402871924bab96e34e260b28fe9d base.atom_gps.ATOMGPSBase:8
+#: base.atom_gps.ATOMGPSBase.deinit:3 base.atom_gps.ATOMGPSBase.get_altitude:6
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:6
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground:6
 #: base.atom_gps.ATOMGPSBase.get_gps_date:6
@@ -89,41 +89,41 @@ msgstr "本示例获取 ATOM GPS Base 的 GPS 数据并将其显示在串口监�
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground:6
 #: base.atom_gps.ATOMGPSBase.get_time_zone:6
 #: base.atom_gps.ATOMGPSBase.get_timestamp:6
-#: base.atom_gps.ATOMGPSBase.set_time_zone:5 d39b92fd99854b47a3400f4255cae1d2
-#: d7dc4fb641cf4bfb929c42b06b42d3e6 of
+#: base.atom_gps.ATOMGPSBase.set_time_zone:5 c2813af37a2248a0be404bb2e68929b5
+#: c75db696c3dc47c78a6f0ea2b69ecb9c c904db163bf24db18c0a238899880781
+#: e0b72576875c46d89de8a95e90e72519 e158927ffbcd48f2be782c51d4baf2c5
+#: e3ee841109da458c9cba1ee92a3de2b7 fd1ad6e840094cf59ee048e10913be59 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/atom_gps.rst:30 367cd78e8da64f5782cb8a2ae3058ea5
+#: ../../en/base/atom_gps.rst:30 b808bd4aa0944631830dc9ad1672c0ea
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:28 40d27002d4d74bd3924fb94dcfe02646
+#: ../../en/refs/base.gps.ref:28 1e40bf1040e24f2ea0c1630bd3e12094
 msgid "example.png"
 msgstr ""
 
 #: ../../en/base/atom_gps.rst:32 ../../en/base/atom_gps.rst:50
-#: 77823a9eeac14d88980d28f6aabbe4c5 7e72e0c966804a95b784529eef402546
+#: 7ee1893e8c124c93ac26a051f6d20356 b03805d3c4da43a38e0f2ac6c08a0836
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/base/atom_gps.rst:34 ../../en/base/atom_gps.rst:52
-#: 6b4dbb4b640c496690f55ac20b660cd5 765afd85fd0f4411a9abde657402221b
+#: 187530b228cb4c6ba06f93d00e381a95 8d4982a10c594752aa0e98ef53b73952
 msgid "None"
 msgstr ""
 
-#: ../../en/base/atom_gps.rst:37 41cd0a3aa72e4957a7b039cd13bc6584
+#: ../../en/base/atom_gps.rst:37 da52a295136b47ecb4a70d6f77a04ef2
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例："
 
-#: ../../en/base/atom_gps.rst:44 048885f83d8f4f65ae3d5abe4485fe6e
-#: 050b6c9716034e43b1bb190f9d28c3a2 1a30f417d3274c82b78819c2aa834200
-#: 1ef770333d3d47e1acee616b194db5a7 2a999dfb54144b55a23b1df6bff84b25
-#: 357012164ff041e4b64438720aea6c68 4f6eafd292894d4b9a61ad904c906a65
-#: 5a3dda96331e417c96a353a23714ac1a 8a4c2c65864d4b61a4b24d841051160a
-#: 8b6620a63bde41289d1ea4ef2c8954d1 98bb71b1a82647949ef8febee74099b7
-#: 9f5101c120c54c1b87fbea33fe1c981a b27211e92a324e0b976b528fedb4da02
-#: b98dd29c84d148d7b888b53f1daab7e3 base.atom_gps.ATOMGPSBase:12
+#: ../../en/base/atom_gps.rst:44 1f580c3a690e42368bb0d7bec4967770
+#: 41937545a9d742d2bc56b4fde4f543ae 4cd7a9d4955946dab9b17a5cec3f846b
+#: 50a3466817724338b3b4ad14b7ea8503 6464d1bec39c45618e91e9f3587b6655
+#: 6d3b97ed29cf4f9299c690077074fdca 75a838e623d7497d9370226907dd6381
+#: 7f444b1e7fd84dd1a9c8ba9aaaa8cc50 89cfc9baefce4ec980a67220586a2899
+#: 8f5c92c600764e289166ecf9f5d66c63 base.atom_gps.ATOMGPSBase:12
 #: base.atom_gps.ATOMGPSBase.deinit:7 base.atom_gps.ATOMGPSBase.get_altitude:10
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:10
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground:10
@@ -137,72 +137,75 @@ msgstr "MicroPython 应用示例："
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground:10
 #: base.atom_gps.ATOMGPSBase.get_time_zone:10
 #: base.atom_gps.ATOMGPSBase.get_timestamp:10
-#: base.atom_gps.ATOMGPSBase.set_time_zone:9 c1388af8a05f40cfa540817b963f8711
-#: c5c36bb92ba949d29275cc65e0bd7624 ff33ea1d25924de7a05be5304638b3e7 of
+#: base.atom_gps.ATOMGPSBase.set_time_zone:9 bf28fdeacba040fcaebfcafc1705f373
+#: c15e351925984e9689114cb3864a7bb3 e7aa92dff6d54d4da4fbc74867be2ede
+#: ef27c1c01a9f4427b31f65d137d451cc ef43067407fe45c8a469700f5062235c
+#: fb326fce20d8448890a9ee4259273f77 fbd858eeb5ae4c80b6ab5aa934d440a2 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/atom_gps.rst:56 6bd51aefdbbf497b9b1ab99fd22af814
+#: ../../en/base/atom_gps.rst:56 66d5f13b637c445f86978f61c1f3ab99
 msgid "**API**"
 msgstr ""
 
-#: ../../en/base/atom_gps.rst:59 6d35355e9dbd4788b2acf836145b447a
+#: ../../en/base/atom_gps.rst:59 88796625bd7248a7a36b939ae80044dc
 msgid "ATOMGPSBase"
 msgstr ""
 
-#: base.atom_gps.ATOMGPSBase:1 d10eb819084046b18d43b3d64c5669f6 of
+#: 1b1877f02f5949139ad2b12ffe76c109 base.atom_gps.ATOMGPSBase:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: 331e93929781462ead9f1277fdb44868 base.atom_gps.ATOMGPSBase:1 of
+#: base.atom_gps.ATOMGPSBase:1 eee9c7bb6e314191a55891d50ae236b3 of
 msgid "Create an ATOMGPSBase object."
 msgstr "创建 ATOMGPSBase 对象。"
 
-#: ../../en/base/atom_gps.rst 03585621341949d596c274f310acdbd3
-#: 26a3ec31c255447a98c2b48d383906f5 base.atom_gps.ATOMGPSBase.set_time_zone of
+#: ../../en/base/atom_gps.rst 7cd5f614596643cfaad69f2be8554d44
+#: adcc30720f5d4239a39e526e2ebdb377 base.atom_gps.ATOMGPSBase.set_time_zone of
 msgid "Parameters"
 msgstr "参数"
 
-#: 15f8f669a30b4080a187b6d2d3fafa95 base.atom_gps.ATOMGPSBase:3 of
+#: 41b7151408234e6eb9a133a583271d4e base.atom_gps.ATOMGPSBase:3 of
 msgid "The UART ID to use (0, 1, or 2). Default is 2."
 msgstr "UART ID 号可使用 0, 1, 2, 默认使用2。"
 
-#: 4269dbb2279b48c08cc15a916311f700 base.atom_gps.ATOMGPSBase:4 of
+#: 9bbdd6a739504025b06dd4010bcb9427 base.atom_gps.ATOMGPSBase:4 of
 msgid "A list or tuple containing the TX and RX pin numbers."
 msgstr "包含 TX 和 RX 引脚编号的列表或元组。"
 
-#: base.atom_gps.ATOMGPSBase:6 d747e7f33e0440928288dc9398ec8fef of
+#: base.atom_gps.ATOMGPSBase:6 dd1937e3696641fb8933e73d343041f8 of
 msgid "Whether to enable debug mode. Default is False."
 msgstr "是否启用调试模式, 默认为不开启。"
 
-#: 5a1a3ec0029a43879fb7bbf8e8ea7a8c base.atom_gps.ATOMGPSBase:10 of
+#: 8a7ee7d95510424db512de4cc2b3512f base.atom_gps.ATOMGPSBase:10 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:11 e5fd76a4b9f3458cafff9d97fe618ae6
+#: ../../en/refs/base.gps.ref:11 804d85194d254ca4967d55a718408475
 msgid "init.png"
 msgstr ""
 
-#: base.atom_gps.ATOMGPSBase.deinit:1 ee9a5b1e3e44470bab287ba831670c7a of
+#: a73edf41bd93428f9980182c7740777e base.atom_gps.ATOMGPSBase.deinit:1 of
 msgid ""
 "Deinitialize the GPS unit, stopping any running tasks and releasing "
 "resources."
 msgstr "取消 GPS 设备的初始化，停止正在运行的任务并释放资源。"
 
-#: 6ea970e318614e4ca4418133e3ff15c8 base.atom_gps.ATOMGPSBase.deinit:5 of
+#: 954685b30a4c471d841ad3d840c9c49f base.atom_gps.ATOMGPSBase.deinit:5 of
 msgid "|deinit.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:26 076fa6176488403996331203dcb589d9
+#: ../../en/refs/base.gps.ref:26 ed91dee8002b43148b6dc166d647d3b0
 msgid "deinit.png"
 msgstr ""
 
-#: 09898585002b44218a54ba582e8e0493 108c2887936f4f0f9428f0d6332aeba5
-#: 115a2941b6c3463b88a40541c010ffba 29b6a3672d614d328addab9cbf893a2c
-#: 31cfc2a7f67d4199b1c028e9f29e51ef 4607ee80996f450bbcc98d90b7b45b13
-#: 4d6520c6f9a44b55a4fbc9ce2918e4a7 8ffe8626046b4fb19cc698195605c1c7
-#: 9afc97a1ac2145af863101339a494fb1 base.atom_gps.ATOMGPSBase.deinit
-#: base.atom_gps.ATOMGPSBase.get_altitude
+#: 0c1e17732b7645388f7ab724dd789888 0c81a84577c04a518023d8b919e21a9e
+#: 0d87e273125245bd952cff04211665ba 0dd3356a614143edab8436279526531e
+#: 1a0e8e23702f4c429c72c17786f52587 6986ef91ca7e4fc89a016a7d5722ad1d
+#: 6a039f3d91c344b4a686637cbcde0220 7b6bc88c5507484c8033191c867ed61f
+#: 8af175e7d84a4454a0aa38325118a226 9a0f9d24c9444d6280e7b3d65b949bfb
+#: 9ed2ff25a8604d98a63a6d22d382ada7 a350fa9fe10c416380b651928de04a26
+#: base.atom_gps.ATOMGPSBase.deinit base.atom_gps.ATOMGPSBase.get_altitude
 #: base.atom_gps.ATOMGPSBase.get_antenna_state
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground
 #: base.atom_gps.ATOMGPSBase.get_gps_date
@@ -215,23 +218,19 @@ msgstr ""
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground
 #: base.atom_gps.ATOMGPSBase.get_time_zone
 #: base.atom_gps.ATOMGPSBase.get_timestamp
-#: base.atom_gps.ATOMGPSBase.set_time_zone c056553bce8a41138d6826c3f23d3d33
-#: c896b37b76644b3eab005c6db1307342 d2b550c0b2d24c0090426719c6c6778b
-#: e547ee63abc542bc951eafe605eb39af fb75237af2e14016ba60cf1e6eefeccf
-#: fcdc848aac204c148179e1803d008993 of
+#: base.atom_gps.ATOMGPSBase.set_time_zone bec5d48a107d4d9cb9262c11ed6d2ead
+#: c6b258ad2eca4d2b90e2325fdb300188 f19efcb45b27409ab37a06881eea407b of
 msgid "Return type"
 msgstr "返回类型"
 
-#: 720e251c6eea431baca3ec03eae17694 base.atom_gps.ATOMGPSBase.get_altitude:1 of
+#: 17a92fb5bf6c448a97b89e7b375d77fe base.atom_gps.ATOMGPSBase.get_altitude:1 of
 msgid "Get the current altitude."
 msgstr "获取当前的海拔高度。"
 
-#: 17b0b660aba9469295ee82f0bd75b6aa 330f865411a046368498c037e62f6969
-#: 4730e0a4ffb44931a37a298eacffff0b 51dd39b34a69404d9dee89105d4a5b0a
-#: 5a049269aacc41a184503e9d88354171 5d938d428a41460a965d3861ca3c24ee
-#: 5db58bf9517b43f08e45c35a0af1b4f2 71723bc0f42e4ec0af3c7ee400cdc593
-#: 7f464998851d4cf4ad34cfe1c5d1c449 98e963e37126405ca9a996478a8fc8d2
-#: 9fc92b42bbb0428ca1230fa20e129314 a42a4d1869444688a7c9ab6849985bfe
+#: 029a1691fbe34f1d96509489a5e9a6f3 03caeae8412b46aba354d3651409f146
+#: 45b4f8e972cb4b68a30e9c87b6169769 502160b9a5a14eec8dc35f9eb0a7d487
+#: 7200135e57954148869cf25d3144545b 73d7a69d62c84325b42b947ce2964aec
+#: 7c612f3de7cf487397079e746d8a4337 871259028f24488d8bbc3184325ae1a8
 #: base.atom_gps.ATOMGPSBase.get_altitude
 #: base.atom_gps.ATOMGPSBase.get_antenna_state
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground
@@ -244,258 +243,261 @@ msgstr "获取当前的海拔高度。"
 #: base.atom_gps.ATOMGPSBase.get_satellite_num
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground
 #: base.atom_gps.ATOMGPSBase.get_time_zone
-#: base.atom_gps.ATOMGPSBase.get_timestamp da6fa238bd274caea42a8f29506ad347 of
+#: base.atom_gps.ATOMGPSBase.get_timestamp c2b3ee8a91234768a488c6f0ac71b90b
+#: cdbba7f177f143009eaf5f0cc8ec8b97 d4787276e9c34774865bce4c76d5cc9d
+#: e587e40e935e413c9155267bd467d2d6 ee01293ec8fb4211b5e0f34cff918aff of
 msgid "Returns"
 msgstr "返回值"
 
-#: 726b6100c1c04a539e50a254cc4a0cd5 base.atom_gps.ATOMGPSBase.get_altitude:3 of
+#: 17ddc83b4ba542c9b7ff3f5bd8cee7be base.atom_gps.ATOMGPSBase.get_altitude:3 of
 msgid "The current altitude."
 msgstr "获取当前的海拔高度。"
 
-#: 959889e786c6491eae2c3a7df40e4d76 base.atom_gps.ATOMGPSBase.get_altitude:8 of
+#: 2cf562d680f148c6ab5febb740c79927 base.atom_gps.ATOMGPSBase.get_altitude:8 of
 msgid "|get_altitude.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:19 914abf1f34bc4ad9a5baa21523a36cf8
+#: ../../en/refs/base.gps.ref:19 03b3a5b8a55246b9a3a88bc5479daa93
 msgid "get_altitude.png"
 msgstr ""
 
-#: 2ce191cfedc649dfac2df0d3e668d757
-#: base.atom_gps.ATOMGPSBase.get_antenna_state:1 of
+#: base.atom_gps.ATOMGPSBase.get_antenna_state:1
+#: ef2151cbfc5c4c008a8d80ec8ff1360b of
 msgid "Get the state of the antenna."
 msgstr "获取当前的天线状态。"
 
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:3
-#: e732a9dfd8444086b018028471396a48 of
+#: de9ef76869df450c8ed8e1ca38b6ca71 of
 msgid "The current antenna state."
 msgstr "当前的天线状态。"
 
 #: base.atom_gps.ATOMGPSBase.get_antenna_state:8
-#: d897114b5d704acea37463569b2c5fe9 of
+#: ddaa6c12329b468a8d8c8662b7be8f63 of
 msgid "|get_antenna_state.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:12 25aa6fc782b34154afb86feec28d1793
+#: ../../en/refs/base.gps.ref:12 2ad2a8711d6346a7a4ef3e18ce12b297
 msgid "get_antenna_state.png"
 msgstr ""
 
-#: 3ec328e0fbb847c782747c249cbd630f
+#: 479a722257384e41935ebc5f063ab370
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground:1 of
 msgid "Get the course over ground (COG)."
 msgstr "获取当前相对地面真航向。"
 
-#: 4b914f47474240e8ab7742b84a12711f
+#: 1e0794ddd91244999275cd8146b84b89
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground:3 of
 msgid "The course over ground in degrees."
 msgstr "相对地面真航向。"
 
 #: base.atom_gps.ATOMGPSBase.get_corse_over_ground:8
-#: ce964f8e68e14cd0acdde5237f9a9104 of
+#: d70b8f6732df4f4db84d2369808be94a of
 msgid "|get_corse_over_ground.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:22 b0c9740d7c1340039e364560cf3e7773
+#: ../../en/refs/base.gps.ref:22 e92764dba90c4d029d06ff8c796aa4ba
 msgid "get_corse_over_ground.png"
 msgstr ""
 
-#: 557cc3391f5d4d1f85f59d7dfd15ed88 base.atom_gps.ATOMGPSBase.get_gps_date:1 of
+#: 6cddfe2dc6824b8ea21cb8fdda166b57 base.atom_gps.ATOMGPSBase.get_gps_date:1 of
 msgid "Get the current GPS date."
 msgstr "获取当前的 GPS 日期。"
 
-#: base.atom_gps.ATOMGPSBase.get_gps_date:3 dead6936ee464f4480cab19f79afb459 of
+#: 66c619671fbf4044bcfe4e5f93b05a28 base.atom_gps.ATOMGPSBase.get_gps_date:3 of
 msgid "The GPS date as a list of strings [day, month, year]."
 msgstr "以字符串 [日、月、年] 列表形式显示的 GPS 日期。"
 
-#: 228fa69c32ce41a8a1b481aa09d8d92a base.atom_gps.ATOMGPSBase.get_gps_date:8 of
+#: b5bbf0e94b1f4f908cf64d14a03508e3 base.atom_gps.ATOMGPSBase.get_gps_date:8 of
 msgid "|get_gps_date.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:14 eb257b84232d41e8a3869341464b1972
+#: ../../en/refs/base.gps.ref:14 b5ac964fe5514e98a31971358e1b3203
 msgid "get_gps_date.png"
 msgstr ""
 
-#: 29a6456fe7bb4a9e9ffc7945275b25a1
+#: 3ca695fb7c7244ec87c75bd28b3cdf6c
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time:1 of
 msgid "Get the current GPS date and time combined."
 msgstr "获取当前 GPS 日期和时间。"
 
-#: 47ecc9363f784d5496e5d68ac70601ac
+#: 844298eb14454dc3bcc548390b9244b4
 #: base.atom_gps.ATOMGPSBase.get_gps_date_time:3 of
 msgid ""
 "The GPS date and time as a list of strings [year, month, day, hour, "
 "minute, second]."
 msgstr "GPS 日期和时间的字符串列表 [年、月、日、时、分、秒]。"
 
-#: a34ef74ff0ca45abb309e03c7ed01da2
-#: base.atom_gps.ATOMGPSBase.get_gps_date_time:8 of
+#: base.atom_gps.ATOMGPSBase.get_gps_date_time:8
+#: c6ca972addc54e39afea559cbc387977 of
 msgid "|get_gps_date_time.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:15 19a270d194dc4af395d3488f94dbc432
+#: ../../en/refs/base.gps.ref:15 7bed6383a3ee4fc786509c965f3078be
 msgid "get_gps_date_time.png"
 msgstr ""
 
-#: base.atom_gps.ATOMGPSBase.get_gps_time:1 f531990d1bfc48e3b2081177abc192c9 of
+#: 87cf4f225e3442148e8724fe19b0c881 base.atom_gps.ATOMGPSBase.get_gps_time:1 of
 msgid "Get the current GPS time."
 msgstr "获取当前 GPS 时间。"
 
-#: 84493e6ecc9743cda453658a2e8e6722 base.atom_gps.ATOMGPSBase.get_gps_time:3 of
+#: 2df9ad658e624648b78d146dfe6fb91c base.atom_gps.ATOMGPSBase.get_gps_time:3 of
 msgid "The GPS time as a list of strings [hour, minute, second]."
 msgstr "以 [时、分、秒] 字符串列表形式显示的 GPS 时间。"
 
-#: 57d068ea736d43dd9d3f5c560db160dd base.atom_gps.ATOMGPSBase.get_gps_time:8 of
+#: 8206a7bc72a44bd4887aaba981c55031 base.atom_gps.ATOMGPSBase.get_gps_time:8 of
 msgid "|get_gps_time.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:13 a9878dcea77e4690b1336305e1f60e19
+#: ../../en/refs/base.gps.ref:13 f55eb81ff98f4e14984f98ff40d32020
 msgid "get_gps_time.png"
 msgstr ""
 
-#: 446012fd8993421299eb4c71b2b593d1 base.atom_gps.ATOMGPSBase.get_latitude:1 of
+#: 6d3d9c6ff29a470aac763090b44f6a13 base.atom_gps.ATOMGPSBase.get_latitude:1 of
 msgid "Get the current latitude."
-msgstr 获取当前的海拔高度""
+msgstr "取当前的海拔高度\""
 
-#: a29a1497806443e884fd7129b2820434 base.atom_gps.ATOMGPSBase.get_latitude:3 of
+#: 6890b09d25ff4767a54ec10082882e99 base.atom_gps.ATOMGPSBase.get_latitude:3 of
 msgid "The current latitude."
 msgstr "当前的海拔高度。"
 
-#: 486e0d9de051479fbd2a2cbb9cb8d512 base.atom_gps.ATOMGPSBase.get_latitude:8 of
+#: a868327f815e4d8e85a553d62f07ba68 base.atom_gps.ATOMGPSBase.get_latitude:8 of
 msgid "|get_latitude.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:17 8e201015417248f2b2f466bba2930286
+#: ../../en/refs/base.gps.ref:17 f0d740c898854518b7edc4c73b363e4f
 msgid "get_latitude.png"
 msgstr ""
 
-#: 434ee14c762e48febe6f0aaa98032876 base.atom_gps.ATOMGPSBase.get_longitude:1
+#: base.atom_gps.ATOMGPSBase.get_longitude:1 ef12b011817242ac9d2810e6624b0d27
 #: of
 msgid "Get the current longitude."
 msgstr "获取当前纬度。"
 
-#: 468b23c4bf694152a2675e208b97ef15 base.atom_gps.ATOMGPSBase.get_longitude:3
+#: 53e96feee6de4090ab5b5e30085b9ef4 base.atom_gps.ATOMGPSBase.get_longitude:3
 #: of
 msgid "The current longitude."
 msgstr "获取当前纬度。"
 
-#: 783dfce7b87f438c8cd35542e76eb493 base.atom_gps.ATOMGPSBase.get_longitude:8
+#: 7f69a30af4284c4f8491aec1da1bbc55 base.atom_gps.ATOMGPSBase.get_longitude:8
 #: of
 msgid "|get_longitude.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:18 3ba59dcb7bc841439cb28dca77c05efa
+#: ../../en/refs/base.gps.ref:18 bb4532169fd9449db097bf9ff67ff654
 msgid "get_longitude.png"
 msgstr ""
 
-#: base.atom_gps.ATOMGPSBase.get_pos_quality:1 eedaf69284d64bcf93dec4712d85473a
+#: 4c74be81dbf54e298add3c525053f688 base.atom_gps.ATOMGPSBase.get_pos_quality:1
 #: of
 msgid "Get the quality of the GPS position."
 msgstr "获取 GPS 定位质量。"
 
-#: 61f402d5d85e4f9eae22c78898b0ba80 base.atom_gps.ATOMGPSBase.get_pos_quality:3
+#: 2d3bef7cdc974c569d74e6a5f3680f55 base.atom_gps.ATOMGPSBase.get_pos_quality:3
 #: of
 msgid "The position quality indicator."
 msgstr "位置质量指标。"
 
-#: 57afbd466c444eff8a34707470bb07c1 base.atom_gps.ATOMGPSBase.get_pos_quality:8
+#: 1e11850a75d848aa9252e72ed4fa45c6 base.atom_gps.ATOMGPSBase.get_pos_quality:8
 #: of
 msgid "|get_pos_quality.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:21 9dc11224817842f5bb23ec03a3d48bb4
+#: ../../en/refs/base.gps.ref:21 4fc2a7ad987946b78f708ebd0f6945b7
 msgid "get_pos_quality.png"
 msgstr ""
 
-#: 42c972240dcb418dbb8ba65cb8f0ff40
+#: 31dca0891c7e4b0d91db6e1dd4807578
 #: base.atom_gps.ATOMGPSBase.get_satellite_num:1 of
 msgid "Get the number of satellites used for positioning."
 msgstr "获取用于定位的卫星数量。"
 
-#: base.atom_gps.ATOMGPSBase.get_satellite_num:3
-#: c7b31f9793964c748ed4d65bd0e6e859 of
+#: 92b18b0c700d4f78ac845309f4bcaefb
+#: base.atom_gps.ATOMGPSBase.get_satellite_num:3 of
 msgid "The number of satellites."
 msgstr "卫星数量。"
 
-#: 4ba321178c5b45378fb57d23fc4af27c
+#: b7069433eb3348a285f31b6e1f36edaa
 #: base.atom_gps.ATOMGPSBase.get_satellite_num:8 of
 msgid "|get_satellite_num.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:20 6b1e43bdb5ca4743945821119a83fc5b
+#: ../../en/refs/base.gps.ref:20 becfb2be19224484890d9043746cbc87
 msgid "get_satellite_num.png"
 msgstr ""
 
-#: 44ede812e16748fc89491efcdfe0c54b
+#: 4a7295a99dda4b099e348eb885e1b4f7
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground:1 of
 msgid "Get the speed over ground (SOG)."
 msgstr "获取获取地面速度。"
 
-#: 15a64a344b6a4b96a0156218538847a7
+#: 644a4b6a8b9e4131b46c20109b554cd8
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground:3 of
 msgid "The speed over ground in knots."
 msgstr "对地面速度，单位为节。"
 
-#: 2659e1f8497b4fc0abe086e8d41eb5e1
+#: 477aa7d7d6f440a7bad6a13269f986a3
 #: base.atom_gps.ATOMGPSBase.get_speed_over_ground:8 of
 msgid "|get_speed_over_ground.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:23 86a1795ff90e435da82e0f7aae5cb6bb
+#: ../../en/refs/base.gps.ref:23 203c30e981a74652aeaefaf0401ec5d5
 msgid "get_speed_over_ground.png"
 msgstr ""
 
-#: b4ceebc8cb6241a39fb1079a45796d4a base.atom_gps.ATOMGPSBase.get_time_zone:1
+#: 5655545561a247d99b9f9d96ef948024 base.atom_gps.ATOMGPSBase.get_time_zone:1
 #: of
 msgid "Get the current time zone offset."
 msgstr "获取当前时区偏移。"
 
-#: 0e8d89e27feb42689ebea5f7879cd039 base.atom_gps.ATOMGPSBase.get_time_zone:3
+#: 70194a5ad0d44fc0868023b05d5a0705 base.atom_gps.ATOMGPSBase.get_time_zone:3
 #: of
 msgid "The current time zone offset."
 msgstr "当前时区偏移。"
 
-#: 5dcc2dd2904c4f5d951050eeb8ea9907 base.atom_gps.ATOMGPSBase.get_time_zone:8
+#: 81857072787f4134a8b43b23c58bc2ed base.atom_gps.ATOMGPSBase.get_time_zone:8
 #: of
 msgid "|get_time_zone.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:25 fc4913211ce04b3c93fe459ac7ab3eee
+#: ../../en/refs/base.gps.ref:25 8530dbed25484ea88e7c34390850bcad
 msgid "get_time_zone.png"
 msgstr ""
 
-#: 5f11758ac891478681795f0182948484 base.atom_gps.ATOMGPSBase.get_timestamp:1
+#: base.atom_gps.ATOMGPSBase.get_timestamp:1 d6aaefe7af2f4526b00b877184c2f4b3
 #: of
 msgid "Get the timestamp of the current GPS time."
 msgstr "获取当前 GPS 时间的时间戳。"
 
-#: 68c6632aa41944ce883ec9b691e736ee base.atom_gps.ATOMGPSBase.get_timestamp:3
+#: base.atom_gps.ATOMGPSBase.get_timestamp:3 d2e094025ec44548bd3fe651185dcab8
 #: of
 msgid "The timestamp representing the current GPS time."
 msgstr "代表当前 GPS 时间的时间戳。"
 
-#: base.atom_gps.ATOMGPSBase.get_timestamp:8 d62421f2eef146a297a8d25c1c41240d
+#: 93b323da85ef44c2a9356da5f0bef1c7 base.atom_gps.ATOMGPSBase.get_timestamp:8
 #: of
 msgid "|get_timestamp.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:16 274ccc6eb5334b75aeec2a3127200eb1
+#: ../../en/refs/base.gps.ref:16 c3ad188011c44ed89e83222cebf6155b
 msgid "get_timestamp.png"
 msgstr ""
 
-#: base.atom_gps.ATOMGPSBase.set_time_zone:1 fd41f168af0f453883694b1014e66c53
+#: base.atom_gps.ATOMGPSBase.set_time_zone:1 f938b9b384694f9581a6816480d917a9
 #: of
 msgid "Set the time zone offset for the GPS time."
 msgstr "设置 GPS 时间的时区偏移。"
 
-#: 18a4984a456d45439d8d1e40ae086eb2 base.atom_gps.ATOMGPSBase.set_time_zone:3
+#: 4c984b660eff401c97d11ee8d329fca1 base.atom_gps.ATOMGPSBase.set_time_zone:3
 #: of
 msgid "The time zone offset value to set."
 msgstr "要设置的时区偏移值。"
 
-#: 7f6b8b74fbb0466d8479f20ed822d91a base.atom_gps.ATOMGPSBase.set_time_zone:7
+#: 4b9e0baffc0e4b7cbfae90c4378e5e64 base.atom_gps.ATOMGPSBase.set_time_zone:7
 #: of
 msgid "|set_time_zone.png|"
 msgstr ""
 
-#: ../../en/refs/base.gps.ref:24 f88edec2b13d47efb69c360740baadd9
+#: ../../en/refs/base.gps.ref:24 1e957ffc30d14893af6c8d8e4564227b
 msgid "set_time_zone.png"
 msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,45 +20,44 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/system/power.rst:2 cbdfbd4bc8024940af50987f9e84c8a4
+#: ../../en/system/power.rst:2 86ca4e10441243408cd23f327c9e735c
 msgid "Power"
 msgstr ""
 
-#: ../../en/system/power.rst:8 47cd4253073840288f586fa548ebf9f8
+#: ../../en/system/power.rst:8 59f39dc644324750a1369a632045fbee
 msgid "class Power"
 msgstr ""
 
-#: ../../en/system/power.rst:12 4ba23ea170744310b7a74ae251f62eeb
-msgid "Methods of the Power Class depend on ``M5.begin()`` |M5.begin.svg|."
+#: ../../en/system/power.rst:12 86251ec7013f460ca2876d7e6e959a3d
+msgid "Methods of the Power Class depend on ``M5.begin()`` |M5.begin.png|."
 msgstr ""
 
-#: ../../en/refs/system.ref:1 c8770a17b9f640c2861407c2d6c2916d
-#: cf68bdc5a0c041d89a160150ff8fda4b
-msgid "M5.begin.svg"
+#: ../../en/refs/system.ref:1 752299d28f3441da93d3ee3d47967a00
+msgid "M5.begin.png"
 msgstr ""
 
-#: ../../en/system/power.rst:14 9e5deb8096c64dc6ba018b1e5f13daf8
+#: ../../en/system/power.rst:14 f896310c37174aa4b46c778e720f8123
 msgid ""
 "All methods calling the Power object need to be placed after "
-"``M5.begin()`` |M5.begin.svg|."
+"``M5.begin()`` |M5.begin.png|."
 msgstr ""
 
-#: ../../en/system/power.rst:18 1996fb16fb874fb994f8cc9534417e72
+#: ../../en/system/power.rst:18 68d18c1ceedf4771b468729212f2d861
 msgid "Methods"
 msgstr ""
 
-#: ../../en/system/power.rst:22 d5baf98c96124769b8ff1e18e1524129
+#: ../../en/system/power.rst:22 fdbcdcece25b423e8c0e2e6cb062045e
 msgid "Set power output of the external ports."
 msgstr ""
 
-#: ../../en/system/power.rst:24 e94cc77573b94712bd560c0ab3ad13d2
+#: ../../en/system/power.rst:24 8e14f30016ea4fc39bbca36d620ac4b9
 msgid ""
 "When ``enable`` is True, the power output of the external ports is in "
 "output mode. When ``enable`` is False, the power output of the external "
 "ports is in input mode."
 msgstr ""
 
-#: ../../en/system/power.rst:28 22d3a86c61c5471aa0430d66f2941d6a
+#: ../../en/system/power.rst:28 bacc63b1aee845129296e3b9a8c0c9f0
 msgid ""
 "``port`` is the port number, optional values are available in :ref:`class"
 " PORT`, only valid for M5Stack Station."
@@ -73,348 +72,469 @@ msgstr ""
 #: ../../en/system/power.rst:180 ../../en/system/power.rst:189
 #: ../../en/system/power.rst:198 ../../en/system/power.rst:207
 #: ../../en/system/power.rst:216 ../../en/system/power.rst:226
-#: 0d25154ffc464b03b3acd16d8f7a843f 23e230de7fb04e3e9bf4715cb035d2d4
-#: 2932c310159246c7872297be76b0f0ac 4145cff1f8f24a50b1c275206fff2a71
-#: 5090864c7805419098ed01a516680db9 50b9fb9b2234400a954081fc84c48365
-#: 5fe01144a96f418e957a08ad7bc304c5 7dfd0d8293024feba33b008b9bd32577
-#: 84a120ed77874addbdbd50251dff8f98 8cef0287f5cf4c66a5491ed7ecbcd5d6
-#: b7c099d302364534932d363b90eaea93 c0981750114449498a64e6ee0b849eb1
-#: c61e4c7ca2ba46099bd559c72c1ecfd9 e53a4ad2d48b45b1ab9b963932f4aa4b
-#: f2028f0d862f4b9a83c17c32150d9bba f211e2fdd2614ef98d56f294914f2bcc
-#: f826ae217dfd49a5ad18c46476190b08 fcf706d9b1c340169041c8375f1c6862
+#: bbbedf7e920a46f6baa8f5d9e22659c4
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/system/power.rst:33 cdbbfced4ca84b1881eabed176449f9b
-msgid "|setExtOutput1.svg| |setExtOutput2.svg|"
+#: ../../en/system/power.rst:33 076007f8c9d44559ba21f1d0c477df44
+msgid "|setExtOutput1.png| |setExtOutput2.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:1 8b80ec2931f349248d6b022bac356c0b
-msgid "setExtOutput1.svg"
+#: ../../en/refs/system.power.ref:1 118bead411a144c0b32bedbfdabe9688
+msgid "setExtOutput1.png"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:2 a6f584a85e7e4d0a859dad63acdffd73
-msgid "setExtOutput2.svg"
+#: ../../en/refs/system.power.ref:2 8fbeeff820cc473d9eba8c8eeffe7580
+msgid "setExtOutput2.png"
 msgstr ""
 
-#: ../../en/system/power.rst:39 dd60bc2117aa455c83500b454e4bb92f
+#: ../../en/system/power.rst:39 83c753dbb09d4c348eed7c53fe94ea8c
 msgid "Get power output of the external ports."
 msgstr ""
 
-#: ../../en/system/power.rst:41 f434abe75bd040d991ed9dddd9ee108e
+#: ../../en/system/power.rst:41 d931855ca7a44a8287c4f32a9732cb3a
 msgid ""
 "Returns ``True`` if the power output of the external ports is in output "
 "mode. Returns ``False`` if the power output of the external ports is in "
 "input mode."
 msgstr ""
 
-#: ../../en/system/power.rst:47 4e948f0735fb451498d4647627ebf45d
-msgid "|getExtOutput.svg|"
+#: ../../en/system/power.rst:47 a1fecfaa732d4a858b67ff6812341372
+msgid "|getExtOutput.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:4 11b9be0c3bde494099dd62bef8bdd10a
-msgid "getExtOutput.svg"
+#: ../../en/refs/system.power.ref:4 4f1e3da551f54e47a60464a4c5e846f0
+msgid "getExtOutput.png"
 msgstr ""
 
-#: ../../en/system/power.rst:52 3735334bfdba4531846417bc4e5bcd2c
+#: ../../en/system/power.rst:52 af5920e35eb2495591e4004e8baaf0db
 msgid "Set power output of the main USB port."
 msgstr ""
 
-#: ../../en/system/power.rst:54 b481644a4aa94fdc8b70a2872bed9f60
+#: ../../en/system/power.rst:54 9984551995b3480cb1b011802f5cd0c2
 msgid ""
 "When ``enable`` is True, the power output of the main USB port is in "
 "output mode. When ``enable`` is False, the power output of the main USB "
 "port is in input mode."
 msgstr ""
 
-#: ../../en/system/power.rst:60 ebd9d5353797402c90a5522868059ec2
-msgid "|setUsbOutput.svg|"
+#: ../../en/system/power.rst:60 71dc0e4e4bba426f9138a2a1a4054c42
+msgid "|setUsbOutput.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:6 8eef1d6ae0d84b9e85b1dc3fb56a6f43
-msgid "setUsbOutput.svg"
+#: ../../en/refs/system.power.ref:6 8dafd9f25b5b4b45a92d614aff43c632
+msgid "setUsbOutput.png"
 msgstr ""
 
-#: ../../en/system/power.rst:65 4801861cdfd04ac3a3901b213d382e01
+#: ../../en/system/power.rst:65 ca492f3d596544a8865ae7e40fc1cbcc
 msgid "Get power output of the main USB port."
 msgstr ""
 
-#: ../../en/system/power.rst:67 52e63099d9c44b9cb6ec222f1d4f2629
+#: ../../en/system/power.rst:67 c5f96f20af18484a84fd6885baa2b805
 msgid ""
 "Returns ``True`` if the power output of the main USB port is in output "
 "mode. Returns ``False`` if the power output of the main USB port is in "
 "input mode."
 msgstr ""
 
-#: ../../en/system/power.rst:72 465b8fdb129f4b8f9de67c9ab190532b
-msgid "|getUsbOutput.svg|"
+#: ../../en/system/power.rst:72 4e5011434a2648ebaa9c857ac9537c4e
+msgid "|getUsbOutput.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:8 b4d2cbefbd39421fb295ff616f9c09a2
-msgid "getUsbOutput.svg"
+#: ../../en/refs/system.power.ref:8 6c258a31bd724cb78cad9e5e02c4819d
+msgid "getUsbOutput.png"
 msgstr ""
 
-#: ../../en/system/power.rst:77 ca7f2a78f4bd49039a894da76dae1b76
+#: ../../en/system/power.rst:77 db65a363c2db4c64b0c504baba922391
 msgid "Turn on/off the power LED."
 msgstr ""
 
-#: ../../en/system/power.rst:79 e44c88eb849142ce88344bd5045b8b0d
+#: ../../en/system/power.rst:79 7a33f44121ac43c8a877d2f86730a0f7
 msgid ""
 "``brightness`` is the brightness value, ranging from 0 to 255. 0 is off, "
 "255 is the maximum brightness."
 msgstr ""
 
-#: ../../en/system/power.rst:84 991f2024aa774826946ec75d2907b376
-msgid "|setLed.svg|"
+#: ../../en/system/power.rst:84 0408130bdfdc4fc9bd58da42f70789bc
+msgid "|setLed.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:10 4c68e1017cab44b4a1193e3c58d28392
-msgid "setLed.svg"
+#: ../../en/refs/system.power.ref:10 bb3ae8453ab94d738e289b6eaf0db32a
+msgid "setLed.png"
 msgstr ""
 
-#: ../../en/system/power.rst:89 95743bb243ee4e9193aff66377c5059a
+#: ../../en/system/power.rst:89 c81ee3e941274a2793c125a369745970
 msgid "Turn off all power."
 msgstr ""
 
-#: ../../en/system/power.rst:93 efbeb5791c5c4aadbbfd5cd8280d3380
-msgid "|powerOff.svg|"
+#: ../../en/system/power.rst:93 d71ac019fd84483cb3cbb4014d41c72f
+msgid "|powerOff.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:12 ed3240d5671540c58c08d15b97fb3948
-msgid "powerOff.svg"
+#: ../../en/refs/system.power.ref:12 e51da17ef3884167a8dc9227e5e1341f
+msgid "powerOff.png"
 msgstr ""
 
-#: ../../en/system/power.rst:100 423c3d6367214a44a8259be5f59bf2c7
+#: ../../en/system/power.rst:100 25d34622558747d38b78d6c4be654bcb
 msgid "sleep and timer boot. The boot condition can be specified by the argument."
 msgstr ""
 
-#: ../../en/system/power.rst:102 53135e5dd09e429ab163272df36af1c0
+#: ../../en/system/power.rst:102 e6063bd363f346b58ec5b0e83574d16c
 msgid "``seconds``: Range is 1 - 15300, in seconds."
 msgstr ""
 
-#: ../../en/system/power.rst:104 3dcdf616168c49768965e20c8ed36149
+#: ../../en/system/power.rst:104 68a213e2235445fd868282eee6d7903b
 msgid "``minutes``: Range is 0 - 59, in minutes."
 msgstr ""
 
-#: ../../en/system/power.rst:106 0d2ee343f2684d2285bfcc2039e35ad3
+#: ../../en/system/power.rst:106 135f42cd925146039e5d5a93f95f96a3
 msgid "``hours``: Range is 0 - 23, in hours."
 msgstr ""
 
-#: ../../en/system/power.rst:108 b8e077d9aa74482ca0fea06e40ea5a54
+#: ../../en/system/power.rst:108 2bff7a190faf4b7dae35bfe38fc4cf33
 msgid "``date``: Range is 1 - 31, in days."
 msgstr ""
 
-#: ../../en/system/power.rst:110 b766a36c4c5d475083e95baa465d4a36
+#: ../../en/system/power.rst:110 0300f3c421184461b6b37d5ba99b21aa
 msgid "``weekDay``: Range is 0 - 6."
 msgstr ""
 
-#: ../../en/system/power.rst:114 f3150432b2a140e6a2ab776d128c7242
-msgid "|timerSleep1.svg| |timerSleep2.svg| |timerSleep3.svg|"
+#: ../../en/system/power.rst:114 47f4cd08c499476e8e6df0436156dad1
+msgid "|timerSleep1.png| |timerSleep2.png| |timerSleep3.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:14 17e5f1f0db754e55aa7d2e9fa8662cc6
-msgid "timerSleep1.svg"
+#: ../../en/refs/system.power.ref:14 1e813fef8d784122ba87c6070b132a16
+msgid "timerSleep1.png"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:15 3125155c0e5347de8231955e971c8a23
-msgid "timerSleep2.svg"
+#: ../../en/refs/system.power.ref:15 9c98047b5c144c19b886521a89f24ace
+msgid "timerSleep2.png"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:16 4b4d9db79e2a43fdbd33dfb00b8759f2
-msgid "timerSleep3.svg"
+#: ../../en/refs/system.power.ref:16 289b682def3e44b190e0de5d049810b5
+msgid "timerSleep3.png"
 msgstr ""
 
-#: ../../en/system/power.rst:121 5b48bd749d5849ce95aa66d4fa3a9ce4
+#: ../../en/system/power.rst:121 7193fb84cdf641e4bcb39d76f934670b
 msgid "ESP32 deepsleep."
 msgstr ""
 
 #: ../../en/system/power.rst:123 ../../en/system/power.rst:136
-#: 1a384a1734654c26af16e631c4f191af bf242a62fccd43568cf2d3d9d1862e5d
+#: a00f6a2ff5da47aaa705d1c6b9416f47
 msgid "``micro_seconds``: Number of micro seconds to wakeup."
 msgstr ""
 
 #: ../../en/system/power.rst:125 ../../en/system/power.rst:138
-#: ca74f05a4ea04196af9c2271989fd7e0 daed40208e694b0899f22f62544789b4
+#: d5b8ae85f1ed4fd19c90e78c86972cc2
 msgid "``wakeup``: Whether to wake up."
 msgstr ""
 
-#: ../../en/system/power.rst:129 b7ca28a2bcc5469f8e17ec632c6638c2
-msgid "|deepSleep.svg|"
+#: ../../en/system/power.rst:129 b5f14c0fc6384d24a1656e4f84a399f9
+msgid "|deepSleep.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:19 c3ba75c8a8a2463ebceff263822da166
-msgid "deepSleep.svg"
+#: ../../en/refs/system.power.ref:19 31a5714081a54f54a2993e5baa9ace5f
+msgid "deepSleep.png"
 msgstr ""
 
-#: ../../en/system/power.rst:134 6083cad0649e482480b26e9dc8e311ba
+#: ../../en/system/power.rst:134 d7c15f3d799b43b1b7aec1ceb3720268
 msgid "ESP32 lightsleep."
 msgstr ""
 
-#: ../../en/system/power.rst:142 8f41e7817be243c2a228ed641a76db8a
-msgid "|lightSleep.svg|"
+#: ../../en/system/power.rst:142 d10051e646ee4cd7bd9b89f53817183f
+msgid "|lightSleep.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:21 00cad023a8864285a133eb0787620f4d
-msgid "lightSleep.svg"
+#: ../../en/refs/system.power.ref:21 36d36b42bcea4e62bbbd3f794671a427
+msgid "lightSleep.png"
 msgstr ""
 
-#: ../../en/system/power.rst:147 b0c7e31af6cb499db31d6293f94209b9
+#: ../../en/system/power.rst:147 2842f8402ac34ee1987eaf2f1d786176
 msgid "Get the remaining battery power percentage. Returns a value between 0-100."
 msgstr ""
 
-#: ../../en/system/power.rst:151 7e20530f4e0c400d98294b52978ee4a2
-msgid "|getBatteryLevel.svg|"
+#: ../../en/system/power.rst:151 31c4d188bf3a473797a0bdaf83e634d2
+msgid "|getBatteryLevel.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:23 c4c6c6d0f5c2404195dc12adf8203d5d
-msgid "getBatteryLevel.svg"
+#: ../../en/refs/system.power.ref:23 3e2d9a188c2a48998acf6d727b84a8cb
+msgid "getBatteryLevel.png"
 msgstr ""
 
-#: ../../en/system/power.rst:156 3a8e45d4135141bbb22afe45c3d6d719
+#: ../../en/system/power.rst:156 c220897ab4f04cad8478882287c61b2e
 msgid "Set battery charging enable."
 msgstr ""
 
-#: ../../en/system/power.rst:160 6d2115a8322843488aa13ad627fa8507
-msgid "|setBatteryCharge.svg|"
+#: ../../en/system/power.rst:160 76c44bd8ddb84536bba0ef85b3625a89
+msgid "|setBatteryCharge.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:25 5b66a2caae464f6aad6e6d75918f60b0
-msgid "setBatteryCharge.svg"
+#: ../../en/refs/system.power.ref:25 9efe9e3c0e9e48c58461543967090d72
+msgid "setBatteryCharge.png"
 msgstr ""
 
-#: ../../en/system/power.rst:165 2e7a71218b5b472b8dac24144f3f7881
+#: ../../en/system/power.rst:165 f163b4c4d3df4b73b5637d696188e7e3
 msgid "Set battery charge current."
 msgstr ""
 
-#: ../../en/system/power.rst:167 3584f4e065c24f4ba36521f325e7bb3c
+#: ../../en/system/power.rst:167 d12967e9ec714840a49a5f50053c224e
 msgid "``max_mA``: Range is 0-2000, in milliamps."
 msgstr ""
 
-#: ../../en/system/power.rst:171 f9e97a302f124cca902f702635590081
-msgid "|setChargeCurrent.svg|"
+#: ../../en/system/power.rst:171 f94b8cff9d1e41798bc03641aceff4d1
+msgid "|setChargeCurrent.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:27 43736de91e434a2eacdf7911e8254c96
-msgid "setChargeCurrent.svg"
+#: ../../en/refs/system.power.ref:27 92a0f5bc14eb43fb9d18aa7d1b42fea0
+msgid "setChargeCurrent.png"
 msgstr ""
 
-#: ../../en/system/power.rst:176 af76d1f3976047faae9680a70ad30fc2
+#: ../../en/system/power.rst:176 8aa803863b8142cc802ab43e23eab7ea
 msgid "Set battery charge voltage."
 msgstr ""
 
-#: ../../en/system/power.rst:178 13f8b21733e447a2afeb9b63bf3b6df2
+#: ../../en/system/power.rst:178 7dfbabdc7e9b4329b1d41eeb3b355896
 msgid "``max_mV``: Range is 4100-4600, in millivolts."
 msgstr ""
 
-#: ../../en/system/power.rst:182 a21428ad420e47aaa3e06d4434b58c4e
-msgid "|setChargeVoltage.svg|"
+#: ../../en/system/power.rst:182 89ad4b34dd484ed3acb6a2934f28578b
+msgid "|setChargeVoltage.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:29 b2a3cfb409f545a6a03ab163e307bbac
-msgid "setChargeVoltage.svg"
+#: ../../en/refs/system.power.ref:29 670b668b9dd249cdab60bcc8b2e1fc0e
+msgid "setChargeVoltage.png"
 msgstr ""
 
-#: ../../en/system/power.rst:187 fdc91cec8c704607985759bd78562142
+#: ../../en/system/power.rst:187 52994ca550d84c60938527fa56789bfb
 msgid "Get whether the battery is currently charging or not."
 msgstr ""
 
-#: ../../en/system/power.rst:191 2e7d573c886a43a59cbec2d79aada4ce
-msgid "|isCharging.svg|"
+#: ../../en/system/power.rst:191 a270f0949dbb4ab98eae8aacb93fb798
+msgid "|isCharging.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:31 4576eccda62643f9805bc9e4bd94cb77
-msgid "isCharging.svg"
+#: ../../en/refs/system.power.ref:31 df57f9a708cd4eae8354b2adb63a68b9
+msgid "isCharging.png"
 msgstr ""
 
-#: ../../en/system/power.rst:196 0e542fa83c604b94bc35f15d743dd512
+#: ../../en/system/power.rst:196 67689e10260d47dfa5f02e9c19615720
 msgid "Get battery voltage. Unit is millivolts."
 msgstr ""
 
-#: ../../en/system/power.rst:200 a3a28980f388427386fd5bb14162758c
-msgid "|getBatteryVoltage.svg|"
+#: ../../en/system/power.rst:200 0cabd5fcdb51448da3f8bc2c472cb8c4
+msgid "|getBatteryVoltage.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:33 d3ab1e03cc23482ab7b311cf74dc77f3
-msgid "getBatteryVoltage.svg"
+#: ../../en/refs/system.power.ref:33 ebca79ba6158455cb9debbaec7ae20eb
+msgid "getBatteryVoltage.png"
 msgstr ""
 
-#: ../../en/system/power.rst:205 201e2113499d4bfc8690a7c2bc380bcc
+#: ../../en/system/power.rst:205 a9e8f009f61f4f30b19d37ea2105c658
 msgid "Get battery current. Unit is milliamps."
 msgstr ""
 
-#: ../../en/system/power.rst:209 8659e8ffe3a5411482093ba8fe92abc6
-msgid "|getBatteryCurrent.svg|"
+#: ../../en/system/power.rst:209 d96ea7c9558243b9bf5e6eebcfeeddfc
+msgid "|getBatteryCurrent.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:35 9c6bd7c7ef5642df8120a26fba7408c1
-msgid "getBatteryCurrent.svg"
+#: ../../en/refs/system.power.ref:35 74e8afb9d5e64bbdb2339a0434a474f7
+msgid "getBatteryCurrent.png"
 msgstr ""
 
-#: ../../en/system/power.rst:214 3bfaedc84daa4b6c90ae480c72d3a96f
+#: ../../en/system/power.rst:214 9c35e1179ca445c0938ec9809ce21e89
 msgid "Get Power Key Press condition."
 msgstr ""
 
-#: ../../en/system/power.rst:218 875f5e85a9ba46729b09af97a97f4e3b
-msgid "|getKeyState.svg|"
+#: ../../en/system/power.rst:218 fc35d424640a467dbf31fc2347feb60c
+msgid "|getKeyState.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:37 1b88519aefb147fb877fbf4a23200300
-msgid "getKeyState.svg"
+#: ../../en/refs/system.power.ref:37 87426412ec8c43d8a5f48a28cbd4efe1
+msgid "getKeyState.png"
 msgstr ""
 
-#: ../../en/system/power.rst:222 d98d1b1f710e4fc28eae67a88de18493
+#: ../../en/system/power.rst:222 426f5072ff8d42fa9052e3d31cb2be52
 msgid "Operate the vibration motor."
 msgstr ""
 
-#: ../../en/system/power.rst:224 2de57d69aff44e51b5f7bbf909013b95
+#: ../../en/system/power.rst:224 21f6117173f24ca5b6b7fef7476edeb3
 msgid "``level``: Vibration intensity, ranging from 0-255."
 msgstr ""
 
-#: ../../en/system/power.rst:228 ea53f926b12249ad9d7700e965ce6958
-msgid "|setVibration.svg|"
+#: ../../en/system/power.rst:228 7132cf052c3a496db9e9ffd50408ffc9
+msgid "|setVibration.png|"
 msgstr ""
 
-#: ../../en/refs/system.power.ref:39 124d305b99ea42a2b8511b335ffca2aa
-msgid "setVibration.svg"
+#: ../../en/refs/system.power.ref:39 5bde08f32be74e1699c5ab2646e472dd
+msgid "setVibration.png"
 msgstr ""
 
-#: ../../en/system/power.rst:234 357d199629e44ceea640fa981afa4803
+#: ../../en/system/power.rst:234 c3bc53e5dfa4494dba280a421fe2f131
 msgid "class PORT"
 msgstr ""
 
-#: ../../en/system/power.rst:237 98d997d3726542a6ad28b5ce37466c9d
+#: ../../en/system/power.rst:237 4430c03c2a8047f4b8a8b137d309a48e
 msgid "Constants"
 msgstr ""
 
-#: ../../en/system/power.rst:241 abf29bf13fbd48dc8ec766c6ac2121f9
+#: ../../en/system/power.rst:241 212501dd591942d381812a1bbf001a20
 msgid "Port A."
 msgstr ""
 
-#: ../../en/system/power.rst:246 62a6fa8098c64982b03f30b0c89dc1f5
+#: ../../en/system/power.rst:246 08e7c2e5c95c474086576e7c721f3768
 msgid "Port B1."
 msgstr ""
 
-#: ../../en/system/power.rst:251 962a335756304cba889fc0e936b179f5
+#: ../../en/system/power.rst:251 649d1bdcb9a4409b87f553490fdf96ab
 msgid "Port B2."
 msgstr ""
 
-#: ../../en/system/power.rst:256 8588c355c54946bd94019e37d6d4083f
+#: ../../en/system/power.rst:256 1e2bc080e5cb4fb3b33b4ede0fb23a6e
 msgid "Port C1."
 msgstr ""
 
-#: ../../en/system/power.rst:261 5c727ae4e92e45b18b2f2ec9ddd2540e
+#: ../../en/system/power.rst:261 67cfd84f77104a00a41759eebe75e635
 msgid "Port C2."
 msgstr ""
 
-#: ../../en/system/power.rst:266 f2b684fd30a64417b80c17a4ca445032
+#: ../../en/system/power.rst:266 e351eeaba787454aaaaacfbb0323e5b3
 msgid "USB Port."
 msgstr ""
 
-#: ../../en/system/power.rst:271 f5a0025f6f664a988885936111d9c362
+#: ../../en/system/power.rst:271 5b105d734fd5439c98396c941eebb18e
 msgid "HAT Port."
 msgstr ""
 
-#: ../../en/system/power.rst:276 6eaf7447232640aeafb269fb2d759640
+#: ../../en/system/power.rst:276 0f989c81fb684ccda05ceabc59f75d16
 msgid "All Ports."
 msgstr ""
+
+#~ msgid "Methods of the Power Class depend on ``M5.begin()`` |M5.begin.svg|."
+#~ msgstr ""
+
+#~ msgid "M5.begin.svg"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All methods calling the Power object "
+#~ "need to be placed after ``M5.begin()``"
+#~ " |M5.begin.svg|."
+#~ msgstr ""
+
+#~ msgid "|setExtOutput1.svg| |setExtOutput2.svg|"
+#~ msgstr ""
+
+#~ msgid "setExtOutput1.svg"
+#~ msgstr ""
+
+#~ msgid "setExtOutput2.svg"
+#~ msgstr ""
+
+#~ msgid "|getExtOutput.svg|"
+#~ msgstr ""
+
+#~ msgid "getExtOutput.svg"
+#~ msgstr ""
+
+#~ msgid "|setUsbOutput.svg|"
+#~ msgstr ""
+
+#~ msgid "setUsbOutput.svg"
+#~ msgstr ""
+
+#~ msgid "|getUsbOutput.svg|"
+#~ msgstr ""
+
+#~ msgid "getUsbOutput.svg"
+#~ msgstr ""
+
+#~ msgid "|setLed.svg|"
+#~ msgstr ""
+
+#~ msgid "setLed.svg"
+#~ msgstr ""
+
+#~ msgid "|powerOff.svg|"
+#~ msgstr ""
+
+#~ msgid "powerOff.svg"
+#~ msgstr ""
+
+#~ msgid "|timerSleep1.svg| |timerSleep2.svg| |timerSleep3.svg|"
+#~ msgstr ""
+
+#~ msgid "timerSleep1.svg"
+#~ msgstr ""
+
+#~ msgid "timerSleep2.svg"
+#~ msgstr ""
+
+#~ msgid "timerSleep3.svg"
+#~ msgstr ""
+
+#~ msgid "|deepSleep.svg|"
+#~ msgstr ""
+
+#~ msgid "deepSleep.svg"
+#~ msgstr ""
+
+#~ msgid "|lightSleep.svg|"
+#~ msgstr ""
+
+#~ msgid "lightSleep.svg"
+#~ msgstr ""
+
+#~ msgid "|getBatteryLevel.svg|"
+#~ msgstr ""
+
+#~ msgid "getBatteryLevel.svg"
+#~ msgstr ""
+
+#~ msgid "|setBatteryCharge.svg|"
+#~ msgstr ""
+
+#~ msgid "setBatteryCharge.svg"
+#~ msgstr ""
+
+#~ msgid "|setChargeCurrent.svg|"
+#~ msgstr ""
+
+#~ msgid "setChargeCurrent.svg"
+#~ msgstr ""
+
+#~ msgid "|setChargeVoltage.svg|"
+#~ msgstr ""
+
+#~ msgid "setChargeVoltage.svg"
+#~ msgstr ""
+
+#~ msgid "|isCharging.svg|"
+#~ msgstr ""
+
+#~ msgid "isCharging.svg"
+#~ msgstr ""
+
+#~ msgid "|getBatteryVoltage.svg|"
+#~ msgstr ""
+
+#~ msgid "getBatteryVoltage.svg"
+#~ msgstr ""
+
+#~ msgid "|getBatteryCurrent.svg|"
+#~ msgstr ""
+
+#~ msgid "getBatteryCurrent.svg"
+#~ msgstr ""
+
+#~ msgid "|getKeyState.svg|"
+#~ msgstr ""
+
+#~ msgid "getKeyState.svg"
+#~ msgstr ""
+
+#~ msgid "|setVibration.svg|"
+#~ msgstr ""
+
+#~ msgid "setVibration.svg"
+#~ msgstr ""
 

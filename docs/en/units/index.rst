@@ -101,6 +101,7 @@ Unit
     timerpwr.rst
     tmos.rst
     tof.rst
+    tof4m.rst
     tvoc.rst
     uhf_rfid.rst
     ultrasonic.rst

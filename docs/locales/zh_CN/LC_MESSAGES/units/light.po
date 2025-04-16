@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,115 +20,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/light.rst:2 774a3236ad8e48c180f6b0154dd5de06
+#: ../../en/units/light.rst:2 270e545afbe44a8f900b7b34ad594973
 msgid "Light Unit"
 msgstr ""
 
-#: ../../en/units/light.rst:6 f583d6d852dc4d60b9815df6020b47f9
+#: ../../en/units/light.rst:6 27ce67c639f74bf99b186d091652e1cb
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/light.rst:8 5b414cf9151742ee86db362f9d248bf1
+#: ../../en/units/light.rst:8 607e5cceeecd4ac4b84312abdfbde25c
 msgid "|Light|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref a5dc387a94724de6867c9b6c891c4ba7
+#: ../../en/refs/unit.light.ref f5ab442f5c8c4c5885e8c3a27b512cfa
 msgid "Light"
 msgstr ""
 
-#: ../../en/units/light.rst:11 8fd0f3dd55514417864a3560387ab08c
+#: ../../en/units/light.rst:11 8f681a609b35408199a3ecc7cb43fc1e
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/units/light.rst:18 1784ef09e8ee4205bd4224df18cf235d
+#: ../../en/units/light.rst:18 8e8f6834cbd24321a6a7d801a56bc4f0
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/light.rst:20 a41915b80d444b57bf4fb9f9e427e0db
+#: ../../en/units/light.rst:20 0a3b040797e44bf6a0f900aa6d70a143
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref:7 675abee47859479d8ae7ac72a4b97763
+#: ../../en/refs/unit.light.ref:6 4f18ccfc5a4d40ca986b1548e9187fc2
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/light.rst:25 f2e238bca52f48babc4ede8bbbfcc4be
+#: ../../en/units/light.rst:25 c4677d4928e24ae5b1bed9f2f13849da
 msgid "|light_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/light.rst:29 5fd7bc5b620b4c7fa3aa76533452fb7f
+#: ../../en/units/light.rst:29 4dcc406c5e894400a5c54cd245cfe736
 msgid "class Light"
 msgstr ""
 
-#: ../../en/units/light.rst:32 7b2513bc657b479aa01303d95e0bb861
+#: ../../en/units/light.rst:32 febbb31290de45fe8f1230bbc6b999b8
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/light.rst:36 5d87da9794454bbbab01a51857a2d418
+#: ../../en/units/light.rst:36 a39545fbfd574b7297eea4d115d9c8c2
 msgid "Create a Light object."
 msgstr "创建一个Light对象."
 
-#: ../../en/units/light.rst:39 144f50bccdaa4f7493139019c2177baa
+#: ../../en/units/light.rst:39 00a8a604f1f54c7cafa3228102a37a65
 msgid "The parameters are:"
 msgstr "参数是:"
 
-#: ../../en/units/light.rst:39 e82438c5544244f38c7af2094e010cc7
+#: ../../en/units/light.rst:39 5cf66ebd4ce640d18649875798de4cbd
 msgid "``IO1,IO2`` Define digital and analog output pins."
 msgstr "``IO1,IO2`` 定义数字和模拟输出引脚。"
 
 #: ../../en/units/light.rst:41 ../../en/units/light.rst:53
 #: ../../en/units/light.rst:62 ../../en/units/light.rst:71
-#: 38457e9273fb46619c1ef8adc2ff030a 7b6451fd8ae2469e902e4633eeabaa64
-#: 7f7fecc239ad463bb327c45a53aa2d94 bbb6cc1f40bf4d8fade3f51253b7373f
+#: 12e82c7c07594d1ca3d119c2a011ff02 28effdb8c7e94b0c9aef2c4df94132a6
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/light.rst:43 482e3b8e2c8047b799146d94e78486da
-msgid "|init.svg|"
+#: ../../en/units/light.rst:43 821b7b08c91f402cbf1c52f6772b2ad0
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref:9 a4f04c3c92e04dd3a49e64fbd6b5e5f8
-msgid "init.svg"
+#: ../../en/refs/unit.light.ref:8 67412b9c336c42afa6e5c4c320668e83
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/light.rst:47 a4bec84b78e04f9eac320a1bdd510397
+#: ../../en/units/light.rst:47 88b8e9477c2645e9be5999a8780047f2
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/light.rst:51 608ac85523434113bb2f7065529c8d45
+#: ../../en/units/light.rst:51 3f1d5a0fa93945d4965b650084338490
 msgid "Define digital and analog output pins."
 msgstr "获取数字量(0或者1)。"
 
-#: ../../en/units/light.rst:55 55f8cd08650644de80f6bc0d65b58643
-msgid "|get_digital_value.svg|"
+#: ../../en/units/light.rst:55 dfd5c258422b4a2b94629553370c37ce
+msgid "|get_digital_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref:12 7d744ff5dc364fc3b5c3cdfa945add94
-msgid "get_digital_value.svg"
+#: ../../en/refs/unit.light.ref:10 c1d4b4af4dec4003afb5d858d4eda5b5
+msgid "get_digital_value.png"
 msgstr ""
 
-#: ../../en/units/light.rst:60 e1b32cfd283947988ae08feaca49999b
+#: ../../en/units/light.rst:60 2c0ab373b9f24920876749dd053bbae8
 msgid "Gets the analog (returns 0-65535)."
 msgstr "获取模拟量(返回0-65535)."
 
-#: ../../en/units/light.rst:64 e67336cd12f9411dbbb70e93d905fad9
-msgid "|get_analog_value.svg|"
+#: ../../en/units/light.rst:64 efb70dafe9f14089aede50b40c994d5e
+msgid "|get_analog_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref:15 182ee82ed3574151ac1b84fdc189c346
-msgid "get_analog_value.svg"
+#: ../../en/refs/unit.light.ref:12 c9c2fab4f5eb45f99e45b358207b14d0
+msgid "get_analog_value.png"
 msgstr ""
 
-#: ../../en/units/light.rst:69 b4830d67aaa54480917d6b4cefb2b8d5
+#: ../../en/units/light.rst:69 0bb84576be0c4bffa9d242756c1de204
 msgid "Gets the resistance value (returns an integer)."
 msgstr "获取阻值(返回整数)。"
 
-#: ../../en/units/light.rst:73 92d5a42f3d3f4c4ca3a23c82e413a0f7
-msgid "|get_ohm.svg|"
+#: ../../en/units/light.rst:73 495a6cd2cdce41a3b5236aad6b4e72d1
+msgid "|get_ohm.png|"
 msgstr ""
 
-#: ../../en/refs/unit.light.ref:18 c92052a00b7d42759c8ae963ff4f9d63
-msgid "get_ohm.svg"
+#: ../../en/refs/unit.light.ref:14 82206d1d0f3d416a9d2d11388eca3cfd
+msgid "get_ohm.png"
 msgstr ""
 
 #~ msgid "example.svg"
@@ -138,5 +137,29 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_digital_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_digital_value.svg"
+#~ msgstr ""
+
+#~ msgid "|get_analog_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_analog_value.svg"
+#~ msgstr ""
+
+#~ msgid "|get_ohm.svg|"
+#~ msgstr ""
+
+#~ msgid "get_ohm.svg"
 #~ msgstr ""
 

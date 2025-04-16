@@ -1,0 +1,616 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/refs/unit.servos8.ref ../../en/units/servos8.rst:2
+#: 7de5752f3dc4476aaccdd886bfcd06cb 89039c0aefe14f859721e57e76a70683
+msgid "8Servos Unit"
+msgstr ""
+
+#: ../../en/units/servos8.rst:8 3e63815f60ba46d4b0bdecd765d675bf
+msgid ""
+"This is the driver library for the 8Servos Unit. It is a 8-channel servo "
+"controller that can control up to 8 servos. It can be used to control the"
+" angles of the servos, set the pulse width, and set the mode of the "
+"servos."
+msgstr ""
+
+#: ../../en/units/servos8.rst:12 adc2ab5b640d441da38898024fe826be
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/units/servos8.rst:14 f74e3601ee5246c7884b28300bb8c2b0
+msgid "|8Servos Unit|"
+msgstr ""
+
+#: ../../en/units/servos8.rst:18 abd6b6dc430a41c087edf8f30a013253
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/units/servos8.rst:21 ../../en/units/servos8.rst:56
+#: b3e2228f521843be822575a1e9e9ceaa d0947d44a3474cd69b8dac70f3b18b8c
+msgid "servo control"
+msgstr ""
+
+#: ../../en/units/servos8.rst:23 249d88e0d7b74682901e294317cd6944
+msgid "Open the |cores3_servo_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/units/servos8.rst:25 ../../en/units/servos8.rst:58
+#: 2d27eb3c2c8c41eea74cbd0689c3d08e b04b7b7ce22849848d451f0ebd77ffdd
+msgid "This example controls the servo angle of the 8Servos Unit."
+msgstr ""
+
+#: ../../en/units/servos8.rst:27 ../../en/units/servos8.rst:43
+#: 02a1f3845d8749bf9af4d581cfd74261 064be1b7bbff4221ab55d05e74e3c6ba
+#: 125b2b0cf3144a1ca7d58c1dff682fb7 2b3731ee91dc4556abffed11865ff1c3
+#: 32f6d8871b0f477097274cbc85a24ccb 57a74b9c553a472b944d4715e9315f1b
+#: 5ff004c8803a44e994ebd3c4d7b43d33 7e8c6bb4dc47494d8bd7205c4369a638
+#: 87b4a97be6fb441996cc0ee13fa22a8b 961c210ebd2f415485a7aff8efdf3e9d
+#: b6b661ca9fc44afcb33ed3aeba7db045 bc7396835343413a9dd4461a75a781b9
+#: bfcab2417a514e96872c653e2e31544b c102d1cc8cd5415d99326555d877b0cf
+#: c46e8b3c933842e6bfa4a6aa0db1e63f c801fc46071c471f9e4e75b807e3dcaa
+#: ce4d7433bbe242ffac03b724627163e2 e40eb914d580464abd8cc779556c1802
+#: fb8d3c40b25c4cd394c468a90f33034a of unit.servos8.Servos8Unit:10
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:7
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:7
+#: unit.servos8.Servos8Unit.get_device_spec:6
+#: unit.servos8.Servos8Unit.get_digital_input:7
+#: unit.servos8.Servos8Unit.get_input_current:6
+#: unit.servos8.Servos8Unit.get_mode:7 unit.servos8.Servos8Unit.get_rgb_led:7
+#: unit.servos8.Servos8Unit.get_servo_angle:7
+#: unit.servos8.Servos8Unit.get_servo_pulse:7
+#: unit.servos8.Servos8Unit.set_i2c_address:5
+#: unit.servos8.Servos8Unit.set_mode:6
+#: unit.servos8.Servos8Unit.set_output_value:6
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:6
+#: unit.servos8.Servos8Unit.set_rgb_led:6
+#: unit.servos8.Servos8Unit.set_servo_angle:6
+#: unit.servos8.Servos8Unit.set_servo_pulse:6
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../en/units/servos8.rst:29 d6202a00719d459db06adb77367ca08f
+msgid "|example_servo.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:6 fabff971e7c84f339c67830a0c79d2eb
+msgid "example_servo.png"
+msgstr ""
+
+#: ../../en/units/servos8.rst:31 ../../en/units/servos8.rst:47
+#: ../../en/units/servos8.rst:66 ../../en/units/servos8.rst:82
+#: 1fc3c2c6c7c54472ac5a8c7de11e564b 320a6785b6e14ec988e147bfc16e6769
+#: 573e95e9a30749e8829d91aae5c6586e fe3fd60b11b94662acb4ada67a3eb52a
+msgid "Example output:"
+msgstr ""
+
+#: ../../en/units/servos8.rst:33 ../../en/units/servos8.rst:49
+#: ../../en/units/servos8.rst:68 ../../en/units/servos8.rst:84
+#: 08d20fe961aa411e84b9103f18a1d971 1fe3ff29045d4f288e7d10b3e95a6720
+#: 349639a5bfdd4b33aa6c9aaf405359a6 91a1aaf9f144420d9d0aed470d5a0261
+msgid "None"
+msgstr ""
+
+#: ../../en/units/servos8.rst:37 ../../en/units/servos8.rst:72
+#: 0402cf277e0a480e8c715d38ccf55cbb 1d1072672c2d49ada27cf983eb71cfec
+msgid "rgb control"
+msgstr ""
+
+#: ../../en/units/servos8.rst:39 448e0fe14c9e47d8863a2a20f8e0c7dd
+msgid "Open the |cores3_rgb_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/units/servos8.rst:41 ../../en/units/servos8.rst:74
+#: adabe85255544759b32e58efe7069ce9 b4fdac3c8b564520ba81a4da22fc46ba
+msgid "This example controls the RGB LED of the 8Servos Unit."
+msgstr ""
+
+#: ../../en/units/servos8.rst:45 30a3d83edaae4aae88ae7a208c85b71e
+msgid "|example_rgb.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:7 34ebbe4c0ba04f428234370bdea76810
+msgid "example_rgb.png"
+msgstr ""
+
+#: ../../en/units/servos8.rst:53 27271b11b492474c9a3f389e1bbf07e3
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/units/servos8.rst:60 ../../en/units/servos8.rst:76
+#: 0439e000c3fd412b93aeb1c6d38f206b 091f833c070a490d89b53e117692b553
+#: 15f4f3513e05438d92e72292e5e90f77 2546bdcc8e8844568b8ce58313a75d34
+#: 2b9739bcaece4a51841fb15fa62e0dd8 2f6d56750931442a837f952cd4c193b0
+#: 50eda940eaef4d218be8f6bf26a1afe5 51e2c3b07e514f8d80e4f703ce515d68
+#: 5f6d77713af94bc0a504fdaf027a688d 66ba2b224819475e92150f3a0253c495
+#: 6921f25ab7d8459ba5abbefebc879d51 696d944c19e5454596456dc8f161bd6c
+#: 7b5289f6394a4d2d864201c000e45a86 97e225fcfa0a4013a2fbfe4b3492734d
+#: ada502337d1b40cc87d229d8ddd60c10 b63aeb4b025c4a5db570e14ede864e30
+#: d2e24aad3df348ebb2c03f91e675fb7e d5725f246ec446bc804a7c1b4d2523b7
+#: f9f5c125dc834928a1ff7f290bef0c8d of unit.servos8.Servos8Unit:12
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:11
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:11
+#: unit.servos8.Servos8Unit.get_device_spec:10
+#: unit.servos8.Servos8Unit.get_digital_input:11
+#: unit.servos8.Servos8Unit.get_input_current:10
+#: unit.servos8.Servos8Unit.get_mode:11 unit.servos8.Servos8Unit.get_rgb_led:11
+#: unit.servos8.Servos8Unit.get_servo_angle:11
+#: unit.servos8.Servos8Unit.get_servo_pulse:11
+#: unit.servos8.Servos8Unit.set_i2c_address:9
+#: unit.servos8.Servos8Unit.set_mode:10
+#: unit.servos8.Servos8Unit.set_output_value:10
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:10
+#: unit.servos8.Servos8Unit.set_rgb_led:10
+#: unit.servos8.Servos8Unit.set_servo_angle:10
+#: unit.servos8.Servos8Unit.set_servo_pulse:10
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../en/units/servos8.rst:89 9e75f7dc5e2e43d380de19082e395294
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/servos8.rst:92 5aed4cdafd77437d9d3eb494fc63c140
+msgid "Servos8Unit"
+msgstr ""
+
+#: e8451a1e68404f59b51d1bcf65e00c98 of unit.servos8.Servos8Unit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: f849962c9ef749cfba7eb8117c0b2451 of unit.servos8.Servos8Unit:1
+msgid "Create a servos 8 unit object."
+msgstr ""
+
+#: ../../en/units/servos8.rst 02f1bdf4334d48da8b0fe845c4d969c3
+#: 0b3b969737ef430dab415f2d68514ca6 14876db6cd604ddb99444c504d713fc3
+#: 15bdcd3ca59f4c0a8632aa32f8f5c377 1922062b26204cfa964911cd3a6c9ce5
+#: 31940762e9154c049749e817af8f54b8 40ac3fe7a2b84bbfb1b78096baf875a2
+#: 437d5ad852684962b93ee33f5e6420a1 76bdb01acce3422d9b171d6d03b34191
+#: 94bcec4ea8204c89b6e967a93544132f a3a164be7b334081b091d847844f18b9
+#: a3b3092af04a42af82ee501513a9a5d8 c800780eb5f74c1e9d876c3aba18fe03
+#: ead6b5378e1a4cac852880567a2b157f f757cf8a52ac490fa220fccf1e38d761 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw
+#: unit.servos8.Servos8Unit.get_digital_input unit.servos8.Servos8Unit.get_mode
+#: unit.servos8.Servos8Unit.get_rgb_led
+#: unit.servos8.Servos8Unit.get_servo_angle
+#: unit.servos8.Servos8Unit.get_servo_pulse
+#: unit.servos8.Servos8Unit.set_i2c_address unit.servos8.Servos8Unit.set_mode
+#: unit.servos8.Servos8Unit.set_output_value
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle
+#: unit.servos8.Servos8Unit.set_rgb_led
+#: unit.servos8.Servos8Unit.set_servo_angle
+#: unit.servos8.Servos8Unit.set_servo_pulse
+msgid "Parameters"
+msgstr ""
+
+#: 331dc2ce492740a0a59d38095484c7df of unit.servos8.Servos8Unit:3
+msgid "The I2C bus the servos 8 unit is connected to."
+msgstr ""
+
+#: 03f17623797f433385e9394b4ea28aa2 of unit.servos8.Servos8Unit:5
+msgid "The I2C address of the device. Default is 0x25."
+msgstr ""
+
+#: ../../en/units/servos8.rst 86686814e61e4d10ae2ceba1d175a70c
+msgid "Raises"
+msgstr ""
+
+#: 2ba1bba373f44547b08dd9a2c63a2190 of unit.servos8.Servos8Unit:7
+msgid "If the servos 8 unit is not connected."
+msgstr ""
+
+#: abd0bd2fd7994b56a027fba6c2c41570 of unit.servos8.Servos8Unit:10
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:19 174a7067a6764c64b54adfa696556daa
+msgid "init.png"
+msgstr ""
+
+#: 4e635d7941654780b3a70013b7f32a61 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:1
+msgid "Get the 12-bit ADC value of a specific channel."
+msgstr ""
+
+#: ff2a046173074277bbfbdf641a183501 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:3
+msgid "The channel number (0 to 7) to get the 12-bit ADC value for."
+msgstr ""
+
+#: 38b52c46db68452980e24800f7d27fce 70d2ae7e092f41509fa55f40280179b1
+#: 757d894795514f4aa937c66a728cfb8d 913416191a87410e9d9edf068039a816
+#: b76dcd5898f54487980bca5d5fa61adf c772c78034ce4b9b8213c09fef3543ad
+#: d478f4162183423bb4d01025e0aa3366 fb0091d492c546d6a49d29e679adf815 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw
+#: unit.servos8.Servos8Unit.get_digital_input
+#: unit.servos8.Servos8Unit.get_input_current unit.servos8.Servos8Unit.get_mode
+#: unit.servos8.Servos8Unit.get_rgb_led
+#: unit.servos8.Servos8Unit.get_servo_angle
+#: unit.servos8.Servos8Unit.get_servo_pulse
+msgid "Returns"
+msgstr ""
+
+#: bb40ddfc97ee42d984b9a5618e7c25b9 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:4
+msgid "The 12-bit ADC value (0 to 4095) of the specified channel."
+msgstr ""
+
+#: 191646407a4446d891e802e14d1f06a0 32db6b2d18a647ba9f4e7940ea9d3384
+#: 3fa42b9e249040cda29f313567c04364 54c8ed4a9a7042ca9b8cc3ee4226b543
+#: 57ee078ff5e34e7bb07b7611426e3575 5b20f9ee56ac45a09e272b9af87fc256
+#: 5f595c23bcbb4551bac8650e93e6d0a3 6adb815cf60648cdaf7cb957fa66ff7f
+#: 8b3d8531c6544d9aaf2028f87a334541 95d755f77f774a4da5de44fee7ce3a2f
+#: b0ee01f240aa4b8ba040f2c9f34fd38a b13e1d7a82f24e26a1ab3820776185fd
+#: c66ab526e5bb44a29b0e9141374803fd d5141a8c012f4fcebd4d32029f55bad1 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw
+#: unit.servos8.Servos8Unit.get_digital_input
+#: unit.servos8.Servos8Unit.get_input_current unit.servos8.Servos8Unit.get_mode
+#: unit.servos8.Servos8Unit.get_rgb_led
+#: unit.servos8.Servos8Unit.get_servo_angle
+#: unit.servos8.Servos8Unit.get_servo_pulse unit.servos8.Servos8Unit.set_mode
+#: unit.servos8.Servos8Unit.set_output_value
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle
+#: unit.servos8.Servos8Unit.set_rgb_led
+#: unit.servos8.Servos8Unit.set_servo_angle
+#: unit.servos8.Servos8Unit.set_servo_pulse
+msgid "Return type"
+msgstr ""
+
+#: e8d684bd39a94f62a3fa64bb47757706 of
+#: unit.servos8.Servos8Unit.get_12bit_adc_raw:9
+msgid "|get_12bit_adc_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:10 ad50907194ef4736947dd2f64333a087
+msgid "get_12bit_adc_raw.png"
+msgstr ""
+
+#: 608a85d7c75a46fb9a14af140fd9cf79 of
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:1
+msgid "Get the 8-bit ADC value of a specific channel."
+msgstr ""
+
+#: 70988dc048d747098f4c85fc512d12ad of
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:3
+msgid "The channel number (0 to 7) to get the 8-bit ADC value for."
+msgstr ""
+
+#: 10ea97eb805a4418be5ef822b0cd1c10 of
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:4
+msgid "The 8-bit ADC value (0 to 255) of the specified channel."
+msgstr ""
+
+#: 013b694f5b8e4de0bc02785e7c0b7f0e of
+#: unit.servos8.Servos8Unit.get_8bit_adc_raw:9
+msgid "|get_8bit_adc_raw.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:11 dda98f76dd9640d7a5116cd7aff1d290
+msgid "get_8bit_adc_raw.png"
+msgstr ""
+
+#: e26b48765bf344e08daaf69abc29a1d4 of
+#: unit.servos8.Servos8Unit.get_device_spec:1
+msgid ""
+"Get the device specification. :param int mode: The mode to get the "
+"specification for. :return: The device specification value. :rtype: int"
+msgstr ""
+
+#: a8d1f3f346ad4139bfc43e2f09c2cb98 of
+#: unit.servos8.Servos8Unit.get_device_spec:8
+msgid "|get_device_spec.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:12 e2bd1ad7c91e4443bb581ae3605927d4
+msgid "get_device_spec.png"
+msgstr ""
+
+#: a73a758c5df64afca22cff6e2aa04e07 of
+#: unit.servos8.Servos8Unit.get_digital_input:1
+msgid "Get the digital input value of a specific channel."
+msgstr ""
+
+#: 2561bb502dab41dab755604624ee5d68 of
+#: unit.servos8.Servos8Unit.get_digital_input:3
+msgid "The channel number (0 to 7) to get the digital input for."
+msgstr ""
+
+#: 23d0fdd48a8042e69b728a2017ad6f57 of
+#: unit.servos8.Servos8Unit.get_digital_input:4
+msgid "The digital input value (True or False) of the specified channel."
+msgstr ""
+
+#: 4cd23020ff46460b932f0a77731ee5b9 of
+#: unit.servos8.Servos8Unit.get_digital_input:9
+msgid "|get_digital_input.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:13 9e55ef8ba60944018a3b896f226daaff
+msgid "get_digital_input.png"
+msgstr ""
+
+#: 8fbe16bf9996498294571a028899a984 of
+#: unit.servos8.Servos8Unit.get_input_current:1
+msgid "Get the input current of the servos 8 unit."
+msgstr ""
+
+#: f29938ba84c0493aa51942c1094a75bf of
+#: unit.servos8.Servos8Unit.get_input_current:3
+msgid "The input current in Amperes."
+msgstr ""
+
+#: 7782baa6172e4780b67a409813b82fa8 of
+#: unit.servos8.Servos8Unit.get_input_current:8
+msgid "|get_input_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:14 a5416dfd777948cb9ac2151c0567e6a8
+msgid "get_input_current.png"
+msgstr ""
+
+#: 040d77a708a844fb9cac681228024cf1 of unit.servos8.Servos8Unit.get_mode:1
+msgid "Get the current mode of a specific channel."
+msgstr ""
+
+#: ad4078d2c95f495f8f8562323ce05a6d of unit.servos8.Servos8Unit.get_mode:3
+msgid "The channel number (0 to 7) to get the mode for."
+msgstr ""
+
+#: 3c33b0e8a6fe42e2b116b4e78a07a27a of unit.servos8.Servos8Unit.get_mode:4
+msgid "The mode of the specified channel."
+msgstr ""
+
+#: 035564b93bb54307903f992235cc68fb of unit.servos8.Servos8Unit.get_mode:9
+msgid "|get_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:15 1fe2215a35d7409a8641ebd1bd907b29
+msgid "get_mode.png"
+msgstr ""
+
+#: c6d371902b37433ba035435e73fd1bf9 of unit.servos8.Servos8Unit.get_rgb_led:1
+msgid "Get the RGB LED color of a specific channel."
+msgstr ""
+
+#: e151d22dce6348dca5e0e805c0e898a6 of unit.servos8.Servos8Unit.get_rgb_led:3
+msgid "The channel number (0 to 7) to get the RGB LED color for."
+msgstr ""
+
+#: 7d919c8c3063427ca345f5a2750e889d of unit.servos8.Servos8Unit.get_rgb_led:4
+msgid "The RGB color value (0x000000 to 0xffffff) of the specified channel."
+msgstr ""
+
+#: 215d8425b6684e14831b2c3cb88cc794 of unit.servos8.Servos8Unit.get_rgb_led:9
+msgid "|get_rgb_led.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:16 f09713dd7b5d4888a449fcbd5419475d
+msgid "get_rgb_led.png"
+msgstr ""
+
+#: 8b8e3642062c4248af2197ffdf01c154 of
+#: unit.servos8.Servos8Unit.get_servo_angle:1
+msgid "Get the servo angle of a specific channel."
+msgstr ""
+
+#: 8daa270251db448689c4686031c33a9c of
+#: unit.servos8.Servos8Unit.get_servo_angle:3
+msgid "The channel number (0 to 7) to get the servo angle for."
+msgstr ""
+
+#: 1efcfac8b6aa42d08a6488128de86552 of
+#: unit.servos8.Servos8Unit.get_servo_angle:4
+msgid "The servo angle (0 to 180) of the specified channel."
+msgstr ""
+
+#: ee8c6af97ff2492c91256f071f60d586 of
+#: unit.servos8.Servos8Unit.get_servo_angle:9
+msgid "|get_servo_angle.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:17 c0b0a10a3cd44a63a84788beb8b69a40
+msgid "get_servo_angle.png"
+msgstr ""
+
+#: 8dd723e17c6543dd9386354e92a15c06 of
+#: unit.servos8.Servos8Unit.get_servo_pulse:1
+msgid "Get the servo pulse of a specific channel."
+msgstr ""
+
+#: 609cee31dd78429899fb7f972affda08 of
+#: unit.servos8.Servos8Unit.get_servo_pulse:3
+msgid "The channel number (0 to 7) to get the servo pulse for."
+msgstr ""
+
+#: 7a75b4302f914450834683c67c10c993 of
+#: unit.servos8.Servos8Unit.get_servo_pulse:4
+msgid "The servo pulse (500 to 2500) of the specified channel."
+msgstr ""
+
+#: cfc7ba4c6b584f2396e2a5490ead984f of
+#: unit.servos8.Servos8Unit.get_servo_pulse:9
+msgid "|get_servo_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:18 3d120f96f2ef472fba1032913b09cc2d
+msgid "get_servo_pulse.png"
+msgstr ""
+
+#: 01d4243a9a43479ca1645eedcb4ed945 of
+#: unit.servos8.Servos8Unit.set_i2c_address:1
+msgid "Set the I2C address of the servos 8 unit."
+msgstr ""
+
+#: f6f6480cce354642aa8f4ab8c53d8f64 of
+#: unit.servos8.Servos8Unit.set_i2c_address:3
+msgid "The new I2C address (1 to 127) to set for the servos 8 unit."
+msgstr ""
+
+#: a34b30c0f5e14f29b93e0059bb601d03 of
+#: unit.servos8.Servos8Unit.set_i2c_address:7
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:20 6f9618b682864c30a3fefaae1961d7b2
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: c4f23c06f4c948729d02a1214c93b7d6 of unit.servos8.Servos8Unit.set_mode:1
+msgid "Set the mode of a specific channel."
+msgstr ""
+
+#: dc9c327e57b94fc7abd48cea1000009b of unit.servos8.Servos8Unit.set_mode:3
+msgid "The mode to set for the channel."
+msgstr ""
+
+#: 22378d8bdf81469d91297239a6594cf5 of unit.servos8.Servos8Unit.set_mode:4
+msgid "The channel number (0 to 7) to set the mode for."
+msgstr ""
+
+#: 0b044a4223e443bfbc2cf2c995a23fa1 of unit.servos8.Servos8Unit.set_mode:8
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:21 f067400041d346759e76ea19e4dc2559
+msgid "set_mode.png"
+msgstr ""
+
+#: 1fc8e682600e4f8a96bfabae7c6368dd of
+#: unit.servos8.Servos8Unit.set_output_value:1
+msgid "Set the digital output value of a specific channel."
+msgstr ""
+
+#: f96b4ad949c144cca3a052e5148b142a of
+#: unit.servos8.Servos8Unit.set_output_value:3
+msgid "The digital output value (0 or 1) to set for the channel."
+msgstr ""
+
+#: 0a2c40a03b16466395f8331767e72c15 of
+#: unit.servos8.Servos8Unit.set_output_value:4
+msgid "The channel number (0 to 7) to set the digital output for."
+msgstr ""
+
+#: 599e41111c174eb997e8ebfdae1a81b1 of
+#: unit.servos8.Servos8Unit.set_output_value:8
+msgid "|set_output_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:22 858268aca1b14229a898b8655f0788d8
+msgid "set_output_value.png"
+msgstr ""
+
+#: ca69599560b34046ba47966b1cb1b97d of
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:1
+msgid "Set the PWM duty cycle of a specific channel."
+msgstr ""
+
+#: 7d3d444ebe4d4c3a8a45f2c0c136bd84 of
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:3
+msgid "The PWM duty cycle (0 to 100) to set for the channel."
+msgstr ""
+
+#: 6f48f0251ac24c3fb8c94a8662656c6a of
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:4
+msgid "The channel number (0 to 7) to set the PWM duty cycle for."
+msgstr ""
+
+#: 621f87bd875a4938ac07f730ad5ec963 of
+#: unit.servos8.Servos8Unit.set_pwm_dutycycle:8
+msgid "|set_pwm_dutycycle.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:23 b6072d014ffa4a13b8cc21ffcfd93b4e
+msgid "set_pwm_dutycycle.png"
+msgstr ""
+
+#: 9e421b6b168145cda1a6b7aad6a6c118 of unit.servos8.Servos8Unit.set_rgb_led:1
+msgid "Set the RGB LED color of a specific channel."
+msgstr ""
+
+#: 0a4fb88d1c0f4355b4f832abd79c2ce4 of unit.servos8.Servos8Unit.set_rgb_led:3
+msgid "The RGB color value (0x000000 to 0xffffff) to set for the channel."
+msgstr ""
+
+#: 334be7d7f7454765b254b3b00df04841 of unit.servos8.Servos8Unit.set_rgb_led:4
+msgid "The channel number (0 to 7) to set the RGB LED color for."
+msgstr ""
+
+#: b17de669f5fd45f99a73081a79c24277 of unit.servos8.Servos8Unit.set_rgb_led:8
+msgid "|set_rgb_led.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:24 e95fc022ca024ec18c0342e31822ee37
+msgid "set_rgb_led.png"
+msgstr ""
+
+#: 7aa9638d6e87468e8d031e03d3687ac8 of
+#: unit.servos8.Servos8Unit.set_servo_angle:1
+msgid "Set the servo angle of a specific channel."
+msgstr ""
+
+#: 83c2163176bb4554aeb8cf3b7d3a111c of
+#: unit.servos8.Servos8Unit.set_servo_angle:3
+msgid "The servo angle (0 to 180) to set for the channel."
+msgstr ""
+
+#: 7fb6665160914303960f32f80545e5c3 of
+#: unit.servos8.Servos8Unit.set_servo_angle:4
+msgid "The channel number (0 to 7) to set the servo angle for."
+msgstr ""
+
+#: 50c74a3848d84d86ad37751d087681a1 of
+#: unit.servos8.Servos8Unit.set_servo_angle:8
+msgid "|set_servo_angle.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:25 46cd652053844baa8b1f3ddd0042ad22
+msgid "set_servo_angle.png"
+msgstr ""
+
+#: 370c9a5b7beb4190a8a18ea1f44ef968 of
+#: unit.servos8.Servos8Unit.set_servo_pulse:1
+msgid "Set the servo pulse of a specific channel."
+msgstr ""
+
+#: cfb587759f7149969d447b53f5f3b03d of
+#: unit.servos8.Servos8Unit.set_servo_pulse:3
+msgid "The servo pulse (500 to 2500) to set for the channel."
+msgstr ""
+
+#: cbcd4d1952704e61882432cf24e96aa5 of
+#: unit.servos8.Servos8Unit.set_servo_pulse:4
+msgid "The channel number (0 to 7) to set the servo pulse for."
+msgstr ""
+
+#: 9e61f4f1490c46379b496df526043b03 of
+#: unit.servos8.Servos8Unit.set_servo_pulse:8
+msgid "|set_servo_pulse.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servos8.ref:26 4d1f49cfd0994c1e924b7763b4cb12d0
+msgid "set_servo_pulse.png"
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,159 +20,195 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/buzzer.rst:2 90131fafec824063bab591b9027fbfd2
+#: ../../en/units/buzzer.rst:2 2c1f8b3771c2471f8e4303e720c29175
 msgid "Buzzer Unit"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:6 874417f3ccf643f58dee6629869f45c1
+#: ../../en/units/buzzer.rst:6 de1225c93a5a4c208ea768be14f0d28c
 msgid "Support the following products:"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:8 8b528a6dae8143459f59c1871f76a35a
+#: ../../en/units/buzzer.rst:8 0aef0d83ec424a61bba0d2ce0c5106e7
 msgid "|Buzzer|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref 4650642919354948a82db63da32a1888
+#: ../../en/refs/unit.buzzer.ref 17abf892c84f4380b44072429241375f
 msgid "Buzzer"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:11 0c3e439dc4244cb182772a6c950701f6
+#: ../../en/units/buzzer.rst:11 143aa3bae63047ce907303902020990d
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:18 b427d4ae8efe4ebcbe28f6a2358db390
+#: ../../en/units/buzzer.rst:18 962ff4854bc94946b91a163bf4fa9d0f
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:20 02fd3b657a674d308a51c9205b9a97b8
+#: ../../en/units/buzzer.rst:20 8a2c18fdef1e44f5a56bf36fcb145d76
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:18 ae846cabe153420886c795e688b49401
+#: ../../en/refs/unit.buzzer.ref:18 8433b06fc1ef4425b9ab073c23828ed8
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:25 95f29917380f4f328fa519bfc6a769da
+#: ../../en/units/buzzer.rst:25 0e616883fa4740b5be81b805785bffd3
 msgid "|cores3_buzzer_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:29 69c3219a2bfa4673837cb442663ad6bc
+#: ../../en/units/buzzer.rst:29 3bb26db8b166494395f52ed14e746ba2
 msgid "class BuzzerUnit"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:32 a73fdc3883304cc0b5e5026dabc2e685
+#: ../../en/units/buzzer.rst:32 6851e233f65a4cb484018d01392050f2
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:36 6853fc8596774cc986c81b075b1803fb
+#: ../../en/units/buzzer.rst:36 6a58118ad9824ed4a29966a6f7def358
 msgid "Create an BuzzerUnit object."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:39 2771e0a90fb34324a4315cec18e8027e
+#: ../../en/units/buzzer.rst:39 6ca342211ea74867a13093bd80110a72
 msgid "The parameters are:"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:39 d559da589262492e81590cb7c45b974c
+#: ../../en/units/buzzer.rst:39 291e80d4374c45e09114cfade17e7f0a
 msgid "``port`` Is the pin number of the port"
 msgstr ""
 
 #: ../../en/units/buzzer.rst:41 ../../en/units/buzzer.rst:57
 #: ../../en/units/buzzer.rst:68 ../../en/units/buzzer.rst:79
 #: ../../en/units/buzzer.rst:88 ../../en/units/buzzer.rst:97
-#: 26bded08c4594707b84fdcf9ae2f189a 6eea00bb208149628c64a4ef4550e867
-#: 7d0938895dcc4f85a091062f4cae692c b309202ef8174035964f9086f35f10b1
-#: c194fc217d1341118621c5f1a74f4ffa e9cd49fb04f74499a186636673b48451
+#: 249e6bb81f3448bb82fbc0d6e58559f1 781ef5276e974285ab0529e0034f8d5e
+#: 7bb16caf57784080b1707b01c68c045b b95a59bb54674e86a19c44dd22490087
+#: cd7005e59e204dfeaea32a92b6deacc4 d7df8a06282e4f8ea39a9c6afa515307
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:43 cefd99991dae45d8a28baf7b14eb2ece
-msgid "|init.svg|"
+#: ../../en/units/buzzer.rst:43 3440758ee5f74d4c9fbbef7350e72178
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:6 fa85e4f91cd149358eb812c3fec2415b
-msgid "init.svg"
+#: ../../en/refs/unit.buzzer.ref:6 acf4a25db227447eae8dca5e26aa4df6
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:47 dafeb5b836294cb19156f7274df7d542
+#: ../../en/units/buzzer.rst:47 a6340b41c7574a479292231e911f9809
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:51 7e26ece0d907435384637c7da8704e83
+#: ../../en/units/buzzer.rst:51 b016cad124ba44218857cbeb8f26cb67
 msgid "Play buzzer once."
 msgstr ""
 
-#: ../../en/units/buzzer.rst 105b0909d50148b488377288b7be7c1b
-#: c67f609cf3cb4afd80c85cbe900a7ae9 d6bbbcd4ecf04490b1ef9ac831dc0bcf
+#: ../../en/units/buzzer.rst 220d1212e8ed48c8b41dccd74525290b
+#: 83a9d42e3f7d4bf8bfa3a92befdd7cae c4ede305eb764f7c8460b2ca697bf51f
 msgid "Parameters"
 msgstr ""
 
 #: ../../en/units/buzzer.rst:53 ../../en/units/buzzer.rst:66
-#: 0a518d4cc9b446ecaf68fec5f6fd5648 47372ef62206407d87951919a577ecf8
+#: cf9d229287564d18b253f0b0e79ef9e0 fabdb004dc8748cfa69672b417d6fca2
 msgid "The frequency of the vibration, range is 100 - 10000Hz."
 msgstr ""
 
 #: ../../en/units/buzzer.rst:54 ../../en/units/buzzer.rst:77
-#: 87fec023516d4e748d91ed45c78d3db3 d448198e02ab4c73afa69df493fffa8f
+#: 86cc5777329c4b8ba7d4d2d07dc16368 959c0c1a0e8d41bd9b29b78fdc6ed771
 msgid "The duty cycle of the vibration, range is 0 - 100."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:55 67e5911db96446529af96a861850d456
+#: ../../en/units/buzzer.rst:55 79ce179b16d74846bfa0222623fa306d
 msgid "The duration of the vibration, range is 0 - 10000ms."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:59 b1277ec314744f16946b4fef3e714083
-msgid "|once.svg|"
+#: ../../en/units/buzzer.rst:59 16a66fe421524288a42c393ab9e30057
+msgid "|once.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:8 5438b26ad4e3423a9513c9b3dadf281a
-msgid "once.svg"
+#: ../../en/refs/unit.buzzer.ref:8 0bdbcb5e821f4cca9ace571c265660ae
+msgid "once.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:64 9b6a713083c84cfa9e917ad655b7d992
+#: ../../en/units/buzzer.rst:64 5c82b07b8e944378be89ddf2e2abae9c
 msgid "Set the frequency of the buzzer."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:70 bb6da0ff1fcc43ccac44f261593b11da
-msgid "|set_freq.svg|"
+#: ../../en/units/buzzer.rst:70 092a8749e6b74be083f4eb3b232aa3f9
+msgid "|set_freq.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:10 21867ad14db447babf5cd0292c1ab68a
-msgid "set_freq.svg"
+#: ../../en/refs/unit.buzzer.ref:10 abf34f268cad434ab5466ab99abb5180
+msgid "set_freq.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:75 9e0a557f6a574665a5b2104fb0aed303
+#: ../../en/units/buzzer.rst:75 54bebc85eea04ea6a5e9260beca55d03
 msgid "Set the duty cycle of the buzzer."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:81 6c76809672f84121ae4b3bad5d6d9657
-msgid "|set_duty.svg|"
+#: ../../en/units/buzzer.rst:81 9f2179d17aa64fdcab5101736ec323f5
+msgid "|set_duty.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:12 d369e8cbfd9a42e9821d25e100dd4770
-msgid "set_duty.svg"
+#: ../../en/refs/unit.buzzer.ref:12 0ae00a9ff5b44cd7af7d486aa00b73fd
+msgid "set_duty.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:86 07b6687cd99c450397baf248b0268134
+#: ../../en/units/buzzer.rst:86 1c021657055a451db3626fbb0258590a
 msgid "Turn off the buzzer."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:90 f3d3441e1bed4454a306c510d9b6a3c6
-msgid "|turn_off.svg|"
+#: ../../en/units/buzzer.rst:90 ff52e34aed6f49b4995a8f92a27d4712
+msgid "|turn_off.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:14 1fa857f3ee7f4397a4a23073d4624d68
-msgid "turn_off.svg"
+#: ../../en/refs/unit.buzzer.ref:14 87e95a0a965e4559a11a045f2c3671b9
+msgid "turn_off.png"
 msgstr ""
 
-#: ../../en/units/buzzer.rst:95 673cfde8b8274ccb9d398503da76d274
+#: ../../en/units/buzzer.rst:95 73eac0f345064bff8a14104a81b7e69d
 msgid "Deinitialize the buzzer."
 msgstr ""
 
-#: ../../en/units/buzzer.rst:99 c75cc3b0fbbd4c9087cc635637ef70f2
-msgid "|deinit.svg|"
+#: ../../en/units/buzzer.rst:99 d960d0b3fb5448dda223d72ccedf3541
+msgid "|deinit.png|"
 msgstr ""
 
-#: ../../en/refs/unit.buzzer.ref:16 762378146e4743d6b5d9acf258573964
-msgid "deinit.svg"
+#: ../../en/refs/unit.buzzer.ref:16 ca1ea37ed3ea4e5f85aeb7958f9d9ea8
+msgid "deinit.png"
 msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|once.svg|"
+#~ msgstr ""
+
+#~ msgid "once.svg"
+#~ msgstr ""
+
+#~ msgid "|set_freq.svg|"
+#~ msgstr ""
+
+#~ msgid "set_freq.svg"
+#~ msgstr ""
+
+#~ msgid "|set_duty.svg|"
+#~ msgstr ""
+
+#~ msgid "set_duty.svg"
+#~ msgstr ""
+
+#~ msgid "|turn_off.svg|"
+#~ msgstr ""
+
+#~ msgid "turn_off.svg"
+#~ msgstr ""
+
+#~ msgid "|deinit.svg|"
+#~ msgstr ""
+
+#~ msgid "deinit.svg"
+#~ msgstr ""
 

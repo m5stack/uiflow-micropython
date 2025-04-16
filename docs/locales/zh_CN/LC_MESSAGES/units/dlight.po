@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,110 +20,110 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/dlight.rst:2 33148228d23c482fa12d414cc10c8fe8
+#: ../../en/units/dlight.rst:2 c66002a62067494886eff0073a394502
 msgid "DLight Unit"
 msgstr ""
 
-#: ../../en/units/dlight.rst:6 5d824bcd39ac464c9788de54b9ef0a53
+#: ../../en/units/dlight.rst:6 b7fade91875f423886736f5d8e66a2db
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/dlight.rst:8 b18ce837b65a4dc1a167d51db5ea7c3a
+#: ../../en/units/dlight.rst:8 1fccafb71c49458da7d13cb71a2e41e9
 msgid "|Dlight|"
 msgstr ""
 
-#: ../../en/refs/unit.dlight.ref 5fea689f65c941f7b6fb6456d60ce9ef
+#: ../../en/refs/unit.dlight.ref 0024e20d73e0412aa8c1d17a9e6dbac4
 msgid "Dlight"
 msgstr ""
 
-#: ../../en/units/dlight.rst:11 d3e3eac27e914939b364a1f28e946f28
+#: ../../en/units/dlight.rst:11 d732b2d777544658ab61117b306dcc0c
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/units/dlight.rst:18 6633b47b604b4a7b9d9b765c4e0ce1b9
+#: ../../en/units/dlight.rst:18 12e6f836de704dbbba7fcc014fb6991a
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/dlight.rst:20 7bab8f2ff2b146f5ac2fbedde6359be4
+#: ../../en/units/dlight.rst:20 d3cc913c184547a9ad248d0b0e091b8f
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.dlight.ref:7 e7b8632fe137409ba4cf96b571607a54
+#: ../../en/refs/unit.dlight.ref:7 30770058f06b4c1c89cca6c46da13257
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/dlight.rst:25 996542f9ecff4d8d9c3f3ebefc19d957
+#: ../../en/units/dlight.rst:25 e9ea9316ef8445ce8e4d8fd8fd9d6643
 msgid "|dlight_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/dlight.rst:29 bcd62dcd938b4e99ab6718ff87dec0c5
+#: ../../en/units/dlight.rst:29 3d980333b65446bd9e401c6b0438ac93
 msgid "class DLight"
 msgstr ""
 
-#: ../../en/units/dlight.rst:32 aeb69efe7ed743d6b376b4a5757dcf44
+#: ../../en/units/dlight.rst:32 4514f3e23eea445d999cfa08ddbfdcc8
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/dlight.rst:36 29204b771f5b441abdc5fb016143238c
+#: ../../en/units/dlight.rst:36 79b2b5c0effe4fac9175a671250261e3
 msgid "Create a DLight object."
 msgstr "创建一个DLight对象."
 
-#: ../../en/units/dlight.rst c204add87d014bf491f361eee353a17f
+#: ../../en/units/dlight.rst 8569557a93084fe695f8021b36bc630c
 #, fuzzy
 msgid "Parameters"
 msgstr "参数是:"
 
-#: ../../en/units/dlight.rst:38 3443de9a753f406fbd93a32621c259d2
+#: ../../en/units/dlight.rst:38 45e68a7dcfdf440b922fd594b1c9efc6
 #, fuzzy
 msgid "the I2C object."
 msgstr "创建一个DLight对象."
 
-#: ../../en/units/dlight.rst:39 798a5e9664eb4144abf0cdc92a11e947
+#: ../../en/units/dlight.rst:39 e3218ce82912479a8196b2bf45e77661
 msgid "the I2C address of the device. Default is 0x23."
 msgstr ""
 
 #: ../../en/units/dlight.rst:41 ../../en/units/dlight.rst:55
-#: ../../en/units/dlight.rst:64 6f35b29ec9174343a352e73c13c4734d
-#: 903d03f1a1124d5e8a973905b7213ab1 e24ce3a1ed574119bfa1867cd95a0682
+#: ../../en/units/dlight.rst:64 226a0b2eb06347b7b637a65b91b23fc6
+#: 28d8820809234ade81c6ca507bb6ea45 e29920960aa34541a180b688f9748d18
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/dlight.rst:43 35fe5d8a6f1b45dfb17d73dc078adf8d
-msgid "|init.svg|"
+#: ../../en/units/dlight.rst:43 cdd25f4874c644e7b263d49b6d3bdf6e
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.dlight.ref:9 a8c31611d38b4ddd8da6e56a61dd3040
-msgid "init.svg"
+#: ../../en/refs/unit.dlight.ref:9 1109e0af78a54b67a7e61af9bcc20255
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/dlight.rst:49 7e97fc67bf6b42f892e5afa85c5f6138
+#: ../../en/units/dlight.rst:49 394d26a854144466a186320b1b231350
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/dlight.rst:53 39bf627b913b4bc8a6c18e2a68b93fe6
+#: ../../en/units/dlight.rst:53 7bb9f0284b844ee5ac157eb3d3e1a0f3
 msgid "Get light lux."
 msgstr "获取光照强度。"
 
-#: ../../en/units/dlight.rst:57 f2328cc2226c41c2a694ef3224598748
-msgid "|get_lux.svg|"
+#: ../../en/units/dlight.rst:57 0904e82043bc4962af92d979b366b2b8
+msgid "|get_lux.png|"
 msgstr ""
 
-#: ../../en/refs/unit.dlight.ref:11 f828cd3caa6e4c279c3e4ad08a5ef3da
-msgid "get_lux.svg"
+#: ../../en/refs/unit.dlight.ref:11 2a4fef7e210440abb0c52e25767e9a20
+msgid "get_lux.png"
 msgstr ""
 
-#: ../../en/units/dlight.rst:62 1f76728a49cd45d8952537377d0c2946
+#: ../../en/units/dlight.rst:62 93d522e45dc24ca9b122946f9a933ff3
 msgid ""
 "Configure the measurement mode (continuous measurement/single "
 "measurement) and resolution."
 msgstr "配置测量模式（持续测量/单次测量）和分辨率。"
 
-#: ../../en/units/dlight.rst:66 137f74bc1e0946e6a81add12b1b84cde
-msgid "|configure.svg|"
+#: ../../en/units/dlight.rst:66 c0f9c7f483d84a94b369f4e2e1b14436
+msgid "|configure.png|"
 msgstr ""
 
-#: ../../en/refs/unit.dlight.ref:13 4a07ac495528453ab0937003367d7c24
-msgid "configure.svg"
+#: ../../en/refs/unit.dlight.ref:13 38615256448e43eeac7eeb3b6c0205e9
+msgid "configure.png"
 msgstr ""
 
 #~ msgid "example.svg"
@@ -137,4 +137,22 @@ msgstr ""
 
 #~ msgid "``PORT`` Define an i2c port."
 #~ msgstr "``PORT`` 定义i2c端口。"
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_lux.svg|"
+#~ msgstr ""
+
+#~ msgid "get_lux.svg"
+#~ msgstr ""
+
+#~ msgid "|configure.svg|"
+#~ msgstr ""
+
+#~ msgid "configure.svg"
+#~ msgstr ""
 
