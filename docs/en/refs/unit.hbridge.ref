@@ -1,0 +1,30 @@
+.. |Unit HBridge| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Hbridge%20Unit/img-3f610a3a-12be-4bd9-83b7-32f24b16b982.webp
+   :target: https://docs.m5stack.com/zh_CN/unit/Hbridge%20Unit
+   :height: 200px
+   :width: 200px
+
+.. |Unit HBridge v1.1| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/HBridge%20v1.1%20Unit/img-8b503691-1b66-49d7-b05d-5838eb4a6c36.webp
+   :target: https://docs.m5stack.com/zh_CN/unit/HBridge%20v1.1%20Unit
+   :height: 200px
+   :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/init.png
+.. |get_driver_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/get_driver_config.png
+.. |get_adc_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/get_adc_value.png
+.. |get_device_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/get_device_status.png
+.. |set_direction.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/set_direction.png
+.. |set_8bit_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/set_8bit_pwm.png
+.. |set_16bit_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/set_16bit_pwm.png
+.. |set_percentage_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/set_percentage_pwm.png
+.. |set_pwm_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/set_pwm_freq.png
+.. |get_vin_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/get_vin_current.png
+.. |cores3_hbridge_motor_control.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/hbridge/example.png
+
+.. |cores3_hbridge_motor_control.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/hbridge/cores3_hbridge_motor_control.m5f2"
+        target="_blank"
+    >
+        cores3_hbridge_motor_control.m5f2
+    </a>

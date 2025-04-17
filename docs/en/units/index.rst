@@ -48,6 +48,7 @@ Unit
     gps_v11.rst
     grove2grove.rst
     hall_effect.rst
+    hbridge.rst
     heart.rst
     id.rst
     imu.rst
