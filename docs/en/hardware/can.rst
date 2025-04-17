@@ -12,8 +12,8 @@ voltage levels on the bus.
 
 Example usage for classic CAN controller in Loopback (transceiver-less) mode::
 
-    from m5can import CAN
-    can = CAN(1, CAN.LOOPBACK, 1, 2)
+    from hardware import CAN
+    can = CAN(0, CAN.NORMAL, 0, 0, 25000)
     can.send('message!', 123)   # send a message with id 123
     can.recv(0)                 # receive message
 
