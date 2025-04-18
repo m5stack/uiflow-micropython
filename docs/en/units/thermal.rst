@@ -8,11 +8,49 @@ Support the following products:
     |ThermalUnit|
 
 
+UiFlow2 Example
+---------------
+
+Thermal Imaging
+^^^^^^^^^^^^^^^
+
+Open the |cores3_thermal_imaging.m5f2| project in UiFlow2.
+
+This demo uses the M5Stack UnitThermal module to implement a basic thermal imaging function.
+
+UiFlow2 Code Block:
+
+    |cores3_thermal_imaging.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+Thermal Imaging
+^^^^^^^^^^^^^^^
+
+This demo uses the M5Stack UnitThermal module to implement a basic thermal imaging function.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/thermal/cores3_thermal_imaging.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
 class ThermalUnit
------------------
+------------------
 
 Constructors
-------------
+-------------
 
 .. class:: ThermalUnit(i2c, address: int = 0x33)
 
@@ -21,7 +59,7 @@ Constructors
     :param i2c: the I2C object.
     :param address: the I2C address of the device. Default is 0x33.
 
-    UIFLOW2:
+    UiFlow2:
 
         |init.png|
 
@@ -37,7 +75,7 @@ Methods
 
     get the max temperature.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_max_temperature.png|
 
@@ -48,7 +86,7 @@ Methods
 
     get the min temperature.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_min_temperature.png|
 
@@ -59,7 +97,7 @@ Methods
 
     get the midpoint temperature.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_midpoint_temperature.png|
 
@@ -73,7 +111,7 @@ Methods
 
     :return: The temperature of the pixel.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_pixel_temperature.png|
 
@@ -84,7 +122,7 @@ Methods
 
     get the refresh rate.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_refresh_rate.png|
 
@@ -95,7 +133,7 @@ Methods
 
     :return: The temperature buffer.
 
-    UIFLOW2:
+    UiFlow2:
 
         |get_temperature_buffer.png|
 
@@ -106,7 +144,7 @@ Methods
 
     :param int rate: The refresh rate in Hz.
 
-    UIFLOW2:
+    UiFlow2:
 
         |set_refresh_rate.png|
 
@@ -117,6 +155,6 @@ Methods
 
     :return: The temperature buffer.
 
-    UIFLOW2:
+    UiFlow2:
 
         |update_temperature_buffer.png|
