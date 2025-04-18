@@ -16,6 +16,10 @@ if (M5_CAMERA_MODULE_ENABLE)
     endif()
 endif()
 
+if (BOARD_TYPE STREQUAL "atoms3r_cam")
+    include(${CMAKE_CURRENT_LIST_DIR}/omv/omv_atoms3r_cam.cmake)
+endif()
+
 # add m5can module
 include(${CMAKE_CURRENT_LIST_DIR}/m5can/m5can.cmake)
 

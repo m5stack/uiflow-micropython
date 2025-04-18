@@ -40,6 +40,7 @@ boards := \
 	M5STACK_AtomU:atomu              \
 	M5STACK_Atom_Echo:atomecho       \
 	M5STACK_AtomS3R:atoms3r          \
+	M5STACK_AtomS3R_CAM:atoms3r_cam  \
 	M5STACK_StamPLC:stamplc
 
 define find_board
@@ -77,6 +78,7 @@ BOARD_TYPE_DEF := \
 	atomu       \
 	atomecho    \
 	atoms3r     \
+	atoms3r_cam \
 	stamplc
 
 # Select the board type to build, default is None
@@ -306,6 +308,7 @@ patch:
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/patche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
+	$(call Package/patche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))
 
 # Unapply patches
 unpatch:
@@ -319,3 +322,4 @@ unpatch:
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/unpatche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
+	$(call Package/unpatche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))

@@ -235,6 +235,12 @@ list(APPEND IDF_COMPONENTS
 )
 endif()
 
+if (M5_CAMERA_MODULE_ENABLE AND BOARD_TYPE STREQUAL "atoms3r_cam")
+list(APPEND IDF_COMPONENTS
+    esp-code-scanner
+)
+endif()
+
 if (M5_EPDIY_ENABLE AND BOARD_TYPE STREQUAL "papers3")
 message(STATUS "Enable EPDiy component")
 list(APPEND IDF_COMPONENTS

@@ -52,6 +52,11 @@ jobs:
       with:
         name: M5STACK_AtomS3R_firmware
         path: ./m5stack/build-M5STACK_AtomS3R/uiflow-*-*.bin
+    - name: Deliver AtomS3R-CAM firmware
+      uses: actions/upload-artifact@v3
+      with:
+        name: M5STACK_AtomS3R_CAM_firmware
+        path: ./m5stack/build-M5STACK_AtomS3R_CAM/uiflow-*-*.bin
     - name: Deliver AtomS3U firmware
       uses: actions/upload-artifact@v3
       with:
