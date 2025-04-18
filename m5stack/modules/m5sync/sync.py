@@ -382,6 +382,9 @@ class M5Sync:
         # 检查record文件中的记录在不在sync中，不在就下载
         for file in sync:
             # update_info(f"{i+1}/{file_num}")
+            file_extension = file["devicePath"].split(".")[-1]
+            if file_extension.lower() == "ttf" or file_extension.lower() == "otf":
+                continue
             if file_exists(file["devicePath"]):
                 # 如果文件存在，检查md5
                 if calculate_md5(file["devicePath"]) == file["md5"]:
