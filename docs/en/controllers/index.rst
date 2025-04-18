@@ -7,6 +7,7 @@ Controllers
     cores3.rst
     atoms3.rst
     atoms3-lite.rst
+    atoms3r_cam.rst
     atoms3u.rst
     stamps3.rst
     cardputer.rst
