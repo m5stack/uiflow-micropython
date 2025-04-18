@@ -9,10 +9,6 @@ from lora import RxPacket
 from micropython import const, schedule
 
 
-# Valid bandwidth
-BANDWIDTHS = ("7.8", "10.4", "15.6", "20.8", "31.25", "41.7", "62.5", "125", "250", "500")
-
-
 class LoRaSx1262Module:
     """Create an LoRaSx1262Module object.
 
@@ -66,6 +62,19 @@ class LoRaSx1262Module:
         syncword: int = 0x12,
         output_power: int = 10,
     ):
+        # Valid bandwidth
+        self.BANDWIDTHS = (
+            "7.8",
+            "10.4",
+            "15.6",
+            "20.8",
+            "31.25",
+            "41.7",
+            "62.5",
+            "125",
+            "250",
+            "500",
+        )
         self._validate_range(sf, 6, 12)
         self._validate_range(coding_rate, 5, 8)
 
