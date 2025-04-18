@@ -6,6 +6,7 @@ Base
 
     atom_socket.rst
     dtu_lorawan.rst
+    dtu_nbiot.rst
     atom_can.rst
     atom_gps.rst
     display.rst

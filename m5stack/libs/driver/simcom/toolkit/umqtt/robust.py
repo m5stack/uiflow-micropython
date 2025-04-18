@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 import utime
-from . import simple
+from driver.simcom.toolkit.umqtt import simple
 
 
 class MQTTClient(simple.MQTTClient):

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -143,7 +143,7 @@ def _request(
                     s.write(data)
 
         l = s.readline()
-        # print(l)
+        print(f"request2 l: {repr(l)}")
         l = l.split(None, 2)
         if len(l) < 2:
             # Invalid response
@@ -168,9 +168,12 @@ def _request(
             if parse_headers is False:
                 pass
             elif parse_headers is True:
-                l = str(l, "utf-8")
-                k, v = l.split(":", 1)
-                resp_d[k] = v.strip()
+                l = str(l, "utf-8").strip()
+                if ":" in l:
+                    k, v = l.split(":", 1)
+                    resp_d[k.strip()] = v.strip()
+                else:
+                    pass
             else:
                 parse_headers(l, resp_d)
     except OSError:

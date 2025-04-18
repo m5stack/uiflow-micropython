@@ -1,8 +1,8 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
-from . import robust
+from driver.simcom.toolkit.umqtt import robust
 from micropython import schedule
 
 
@@ -21,7 +21,7 @@ class MQTTClient(robust.MQTTClient):
     ):
         ssl_params1 = ssl_params
         if ssl:
-            pass
+            # pass
             key_path = ssl_params1.get("key", None)
             key_value = self._load_file(key_path)
             if key_value:
@@ -29,6 +29,7 @@ class MQTTClient(robust.MQTTClient):
 
             cert_path = ssl_params1.get("cert", None)
             cert_value = self._load_file(cert_path)
+            print(f"cert_value: {cert_value}")
             if cert_value:
                 ssl_params1["cert"] = cert_value
 

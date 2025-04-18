@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -10,21 +10,21 @@ def converter(data, type):
         return data
 
     if isinstance(data, str):
-        if type == bytes:
+        if type is bytes:
             return data.encode("utf-8")
-        if type == bytearray:
+        if type is bytearray:
             return bytearray(data, "utf-8")
 
     if isinstance(data, bytes):
-        if type == str:
+        if type is str:
             return data.decode("utf-8")
-        if type == bytearray:
+        if type is bytearray:
             return bytearray(data)
 
     if isinstance(data, bytearray):
-        if type == str:
+        if type is str:
             return str(data, "utf-8")
-        if type == bytes:
+        if type is bytes:
             return bytes(data)
 
 
@@ -58,8 +58,8 @@ def measure_time(func):
         start_time = time.ticks_ms()
         result = func(*args, **kwargs)
         end_time = time.ticks_ms()
-        execution_time = end_time - start_time
-        print(f"total time consumed to execute {func}: {execution_time}ms")
+        execution_time = end_time - start_time  # noqa: F841
+        # print(f"total time consumed to execute {func}: {execution_time}ms")
         return result
 
     return wrapper

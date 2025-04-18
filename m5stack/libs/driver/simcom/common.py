@@ -87,7 +87,11 @@ class Modem(object):
         # Get the signal strength
         csq = AT_CMD("AT+CSQ", "+CSQ:", 3)
         output, error = self.execute_at_command(csq)
-        return False if error else int(output.split(",")[0][-1])
+        return (
+            False
+            if error
+            else int(utils.extract_text(output + "\n", "+CSQ: ", "\n").split(",")[0])
+        )
 
     def get_gprs_registration_status(self):
         # Get the registration status with the gprs network
@@ -105,7 +109,7 @@ class Modem(object):
         # Get attach or detach from the GPRS network
         cgatt = AT_CMD("AT+CGATT?", "+CGATT:", 3)
         output, error = self.execute_at_command(cgatt)
-        return False if error else int(output[-1])
+        return False if error else int(output[-1]) == 1
 
     def set_gprs_network_state(self, enable=1):
         # Set attach or detach from the GPRS network

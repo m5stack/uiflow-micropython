@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -77,6 +77,7 @@ class SIMComError(Exception):
             super().__init__(msg.format(repr(cmd)))
 
 
+# TCP/UDP socket
 class _socket:
     AF_INET = socket.AF_INET
     AF_INET6 = socket.AF_INET6
@@ -415,6 +416,7 @@ class _socket:
         return self.send(data[off : off + max_len])
 
 
+# SSL/TLS socket
 class _sockets(_socket):
     AF_INET = socket.AF_INET
     AF_INET6 = socket.AF_INET6

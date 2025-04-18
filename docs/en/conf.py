@@ -53,6 +53,7 @@ autodoc_mock_imports = [
     "network",
     "m5can",
     "rf433",
+    "utime",
 ]
 
 autodoc_default_options = {

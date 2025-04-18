@@ -1,8 +1,9 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
 import time
+from machine import UART
 
 
 def _measure_time(func):
@@ -10,8 +11,8 @@ def _measure_time(func):
         start_time = time.ticks_ms()
         result = func(*args, **kwargs)
         end_time = time.ticks_ms()
-        execution_time = end_time - start_time
-        print(f"total time consumed to execute {func}: {execution_time}ms")
+        execution_time = end_time - start_time  # noqa: F841
+        # print(f"total time consumed to execute {func}: {execution_time}ms")
         return result
 
     return wrapper
@@ -40,7 +41,7 @@ class Command:
         for arg in args:
             if isinstance(arg, str):
                 self.args.append(f'"{arg}"')
-            if isinstance(arg, int):
+            elif isinstance(arg, int):
                 self.args.append(str(arg))
 
         self.rsp1 = rsp1
@@ -59,7 +60,7 @@ class Command:
 
 
 class UModem:
-    def __init__(self, uart, verbose=False):
+    def __init__(self, uart: UART, verbose=False):
         self.uart = uart
         self._verbose = verbose
 
@@ -127,4 +128,4 @@ class UModem:
         #         output = output[:-1]
 
         # Return
-        return Response(error, output.decode())
+        return Response(error, output)
