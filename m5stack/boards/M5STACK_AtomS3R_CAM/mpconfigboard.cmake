@@ -6,6 +6,7 @@ set(IDF_TARGET esp32s3)
 
 # atoms3r https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L20
 set(BOARD_ID 144)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
