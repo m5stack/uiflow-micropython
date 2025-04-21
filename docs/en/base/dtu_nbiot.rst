@@ -26,7 +26,7 @@ This example shows how to send HTTP request using the Atom DTU NBIoT Base.
 
 UiFlow2 Code Block:
 
-    |example.png|
+    |http_example.png|
 
 Example output:
 
@@ -59,7 +59,7 @@ This example shows how to send MQTT message using the Atom DTU NBIoT Base.
 
 UiFlow2 Code Block:
 
-    |example.png|
+    |mqtt_example.png|
 
 Example output:
 

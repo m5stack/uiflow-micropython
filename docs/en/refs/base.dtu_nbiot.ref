@@ -29,7 +29,9 @@
 .. |set_uplink_app_port.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/lorawan470/set_uplink_app_port.png
 .. |send_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/lorawan470/send_data.png
 
-.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/lorawan470/example.png
+.. |http_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/lorawan470/example2.png
+.. |mqtt_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/lorawan470/example3.png
+
 
 .. |base_nbiot_atoms3_mqtt_example.m5f2| raw:: html
 
