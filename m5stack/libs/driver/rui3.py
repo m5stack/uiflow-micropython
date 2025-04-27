@@ -3,94 +3,137 @@
 # SPDX-License-Identifier: MIT
 
 import machine
+import _thread
 import time
 
 
 class RUI3:
-    """
-    note:
-        en: RUI3 class provides methods to interact with RAK Wireless modules using AT commands. It supports module initialization, configuration, and retrieval of various module parameters.
-
-    details:
-        link: https://docs.rakwireless.com/
-        image: https://docs.rakwireless.com/assets/images/logo.png
-        category:
-
-    example:
-        - ../../../examples/module/rui3/rui3_example.py
-
-    m5f2:
-        - module/rui3/rui3_example.m5f2
-    """
+    _instance = None
+    _recv_thread_running = False
 
     def __init__(self, id, tx, rx, debug=False):
-        """
-        note:
-            en: Initialize the RUI3 module by setting up UART communication with the specified parameters.
+        if RUI3._instance is not None:
+            try:
+                RUI3._instance.close()
+            except Exception as e:
+                print("clean rui3 instance error:", e)
 
-        params:
-            id:
-                note: The UART ID used for communication.
-            tx:
-                note: The UART TX pin.
-            rx:
-                note: The UART RX pin.
-            debug:
-                note: Enables debug mode to log additional details, default is False.
-        """
         self.uart = machine.UART(id, tx=tx, rx=rx, baudrate=115200, bits=8, parity=None, stop=1)
         self.debug = debug
+        self.lock = _thread.allocate_lock()
+        self.buffer = []
+        self.running = True
         self.uart.read()
+
+        RUI3._instance = self
+        RUI3._recv_thread_running = True
+
+        _thread.start_new_thread(self._recv_loop, ())
+
         if self.get_serial_number() is False:
+            self.close()
             raise ValueError("The LoRaWAN-X Unit is not responding. Please check the connection.")
 
-    def send_cmd(self, cmd, have_return=False, is_single=False, async_event=False, timeout=100):
-        """
-        note:
-            en: Sends an AT command to the module and optionally reads the response.
+    def close(self):
+        self.running = False
+        RUI3._recv_thread_running = False
+        time.sleep_ms(100)
+        try:
+            self.uart.deinit()
+        except:
+            pass
+        RUI3._instance = None
+        if self.debug:
+            print("RUI3 已关闭。")
 
-        params:
-            cmd:
-                note: The AT command string to send.
-            have_return:
-                note: Specifies whether to read a response from the module.
-            is_single:
-                note: Indicates if the command expects a single-line response.
-            async_event:
-                note: Specifies whether to handle asynchronous events.
-            timeout:
-                note: The timeout duration in milliseconds for receiving a response, default is 100ms.
+    def _recv_loop(self):
+        while self.running:
+            if not self.lock.locked():
+                self.lock.acquire()
+                try:
+                    line = self.uart.readline()
+                    if line:
+                        if self.debug:
+                            print(f"DEBUG: RAW DATA: {line}")
+                        if line.startswith(b"+EVT:RX_"):
+                            parts = line.decode("utf-8").strip().split(":")
+                            decoded = (int(parts[-2]), parts[-1])
+                            self.buffer.append(decoded)
+                finally:
+                    self.lock.release()
+            time.sleep_ms(100)
 
-        returns:
-            note: The processed response from the module or None if no response is expected.
+    def get_received_data(self):
+        """Retrieve the data from the last received message.
+
+        :returns: A tuple containing the port number (int) and the received data (bytes), or False if no data was received.
+        :rtype: tuple[int, bytes] | bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data = lorawan_rui3.get_received_data()
+                if data:
+                    print(f"Received data: {data}")
+                else:
+                    print("No data received.")
         """
-        self.uart.read()
-        self.uart.write(cmd + "\r\n")
-        if have_return:
-            return self.read_response(cmd.rstrip("?"), is_single, async_event, timeout)
+        data = self.buffer[:]
+        self.buffer.clear()
+        return data
+
+    def get_received_data_string(self) -> str:
+        """Retrieve the received data as a string.
+
+        :returns: The received data as a string, or an empty string if no data was received.
+        :rtype: str
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data = lorawan_rui3.get_received_data_string()
+                if data:
+                    print(f"Received data: {data}")
+                else:
+                    print("No data received.")
+        """
+        return ",".join([str(item[1]) for item in self.get_received_data()])
+
+    def get_received_data_count(self):
+        """Retrieve the number of received data.
+
+        :returns: The number of received data.
+        :rtype: int
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                count = lorawan_rui3.get_received_data_count()
+                print(f"Received data count: {count}")
+        """
+        return len(self.buffer)
+
+    def send_cmd(
+        self,
+        cmd: str,
+        have_return: bool = False,
+        is_single: bool = False,
+        async_event: bool = False,
+        timeout: int = 100,
+    ) -> str | bool:
+        self.lock.acquire()
+        try:
+            self.uart.read()
+            self.uart.write(cmd + "\r\n")
+            if have_return:
+                return self.read_response(cmd.rstrip("?"), is_single, async_event, timeout)
+        finally:
+            self.lock.release()
 
     def read_response(self, cmd, is_single=False, async_event=False, timeout=100):
-        """
-        note:
-            en: Reads and processes the module response to an AT command.
-
-        params:
-            cmd:
-                note: The AT command sent to the module.
-            is_single:
-                note: Indicates if a single-line response is expected.
-            async_event:
-                note: Specifies whether to handle asynchronous events.
-            timeout:
-                note: The timeout duration in milliseconds for receiving a response.
-
-        returns:
-            note:
-                - True if the response is valid and matches a single-line expectation.
-                - A processed response string when CMD+RESPONSE is received.
-                - An event response string if async_event is enabled and an event is detected.
-                - False if no valid response is received or an error occurs.
-        """
         start_time = time.ticks_ms()
         response = ""
         event_response = None
@@ -163,129 +206,42 @@ class RUI3:
         return False
 
     def get_commuinication_state(self):
-        """
-        note:
-            en: Checks the communication state by sending the AT command and expecting a response.
-
-        params:
-            note:
-
-        returns:
-            note: The response from the module indicating the communication state.
-        """
         return self.send_cmd("AT", True, True)
 
     def reset_module(self):
-        """
-        note:
-            en: Resets the module using the ATZ command.
-
-        params:
-            note:
-        """
         self.send_cmd("ATZ")
 
     def reset_module_to_default(self):
-        """
-        note:
-            en: Resets the module to its default settings using the ATR command. Waits for the reset process to complete.
+        """Reset the module to its factory default settings.
 
-        params:
-            note:
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rui3.reset_module_to_default()
         """
         self.send_cmd("ATR")
         time.sleep(1.5)
 
-    def get_serial_number(self):
-        """
-        note:
-            en: Retrieves the serial number of the module.
-
-        params:
-            note:
-
-        returns:
-            note: The serial number as a string.
-        """
+    def get_serial_number(self) -> str | bool:
         return self.send_cmd("AT+SN=?", True)
 
     def get_fireware_version(self):
-        """
-        note:
-            en: Retrieves the firmware version of the module.
-
-        params:
-            note:
-
-        returns:
-            note: The firmware version as a string.
-        """
         return self.send_cmd("AT+VER=?", True)
 
     def get_at_version(self):
-        """
-        note:
-            en: Retrieves the AT command version supported by the module.
-
-        params:
-            note:
-
-        returns:
-            note: The AT command version as a string.
-        """
         return self.send_cmd("AT+CLIVER=?", True)
 
     def get_hardware_version(self):
-        """
-        note:
-            en: Retrieves the hardware version of the module.
-
-        params:
-            note:
-
-        returns:
-            note: The hardware version as a string.
-        """
         return self.send_cmd("AT+HWMODEL=?", True)
 
     def get_hardware_id(self):
-        """
-        note:
-            en: Retrieves the hardware ID of the module.
-
-        params:
-            note:
-
-        returns:
-            note: The hardware ID as a string.
-        """
         return self.send_cmd("AT+HWID=?", True)
 
     def get_ble_mac(self):
-        """
-        note:
-            en: Retrieves the Bluetooth MAC address of the module.
-
-        params:
-            note:
-
-        returns:
-            note: The BLE MAC address as a string.
-        """
         return self.send_cmd("AT+BLEMAC=?", True)
 
     def set_sleep_time(self, time):
-        """
-        note:
-            en: Configures the sleep time for the module. If no time is provided, the module enters sleep mode.
-
-        params:
-            time:
-                note: The sleep duration in seconds. If None, triggers sleep mode without specifying a duration.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         if time:
             return self.send_cmd("AT+SLEEP=" + str(time), True, True, False, 200)
         else:
@@ -293,311 +249,86 @@ class RUI3:
             return True
 
     def get_low_power_mode(self):
-        """
-        note:
-            en: Checks if the module is in low-power mode.
-
-        params:
-            note:
-
-        returns:
-            note: True if low-power mode is enabled, otherwise False.
-        """
         return self.send_cmd("AT+LPM=?", True) == "1"
 
     def set_low_power_mode(self, mode: bool):
-        """
-        note:
-            en: Sets the module low-power mode.
-
-        params:
-            mode:
-                note: A boolean value indicating whether to enable (True) or disable (False) low-power mode.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         return self.send_cmd("AT+LPM=" + str(int(mode)), True, True)
 
     def set_baud_rate(self, rate):
-        """
-        note:
-            en: Sets the baud rate for UART communication.
-
-        params:
-            rate:
-                note: The desired baud rate value.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         return self.send_cmd("AT+BAUD=" + str(rate), True, True)
 
     def get_baud_rate(self):
-        """
-        note:
-            en: Retrieves the current UART baud rate setting.
-
-        params:
-            note:
-
-        returns:
-            note: The baud rate as an integer.
-        """
         return int(self.send_cmd("AT+BAUD=?", True))
 
     # OTAA Mode
     def get_device_eui(self):
-        """
-        note:
-            en: Retrieves the Device EUI for OTAA (Over-The-Air Activation) mode.
+        """Get the device EUI.
 
-        params:
-            note:
+        :returns: The device EUI.
+        :rtype: str
 
-        returns:
-            note: The Device EUI as a string.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lorawan_rui3.get_device_eui()
+
         """
         return self.send_cmd("AT+DEVEUI=?", True)
 
     def set_device_eui(self, eui: str):
-        """
-        note:
-            en: Configures the Device EUI for OTAA mode.
-
-        params:
-            eui:
-                note: The Device EUI to set, as a string.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         return self.send_cmd("AT+DEVEUI=" + eui, True, True)
 
     def get_app_eui(self):
-        """
-        note:
-            en: Retrieves the Application EUI for OTAA mode.
-
-        params:
-            note:
-
-        returns:
-            note: The Application EUI as a string.
-        """
         return self.send_cmd("AT+APPEUI=?", True)
 
     def set_app_eui(self, eui: str):
-        """
-        note:
-            en: Configures the Application EUI for OTAA mode.
-
-        params:
-            eui:
-                note: The Application EUI to set, as a string.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         return self.send_cmd("AT+APPEUI=" + eui, True, True)
 
     def get_app_key(self):
-        """
-        note:
-            en: Retrieves the Application Key for OTAA mode.
-
-        params:
-            note:
-
-        returns:
-            note: The Application Key as a string.
-        """
         return self.send_cmd("AT+APPKEY=?", True)
 
     def set_app_key(self, key: str):
-        """
-        note:
-            en: Configures the Application Key for OTAA mode.
-
-        params:
-            key:
-                note: The Application Key to set, as a string.
-
-        returns:
-            note: True if the command is successfully sent, else False.
-        """
         return self.send_cmd("AT+APPKEY=" + key, True, True)
 
     # ABP Mode
     def get_device_address(self):
-        """
-        note:
-            en: Retrieves the device address.
-
-        params:
-            note:
-
-        returns:
-            note: The device address as a string.
-        """
         return self.send_cmd("AT+DEVADDR=?", True)
 
     def set_device_address(self, address: str):
-        """
-        note:
-            en: Sets the device address.
-
-        params:
-            address:
-                note: The device address to set, provided as a string.
-        """
         return self.send_cmd("AT+DEVADDR=" + address, True, True)
 
     def get_apps_key(self):
-        """
-        note:
-            en: Retrieves the application session key.
-
-        params:
-            note:
-
-        returns:
-            note: The application session key as a string.
-        """
         return self.send_cmd("AT+APPSKEY=?", True)
 
     def set_apps_key(self, key: str):
-        """
-        note:
-            en: Sets the application session key. This operation is applicable only in ABP mode.
-
-        params:
-            key:
-                note: The application session key to set, provided as a string.
-
-        returns:
-            note: The result of the AT command execution
-        """
         return self.send_cmd("AT+APPSKEY=" + key, True, True)
 
     def get_networks_key(self):
-        """
-        note:
-            en: Retrieves the network session key.
-
-        params:
-            note:
-
-        returns:
-            note: The network session key as a string.
-        """
         return self.send_cmd("AT+NWKSKEY=?", True)
 
     def set_networks_key(self, key: str):
-        """
-        note:
-            en: Sets the network session key. This operation is applicable only in ABP mode.
-
-        params:
-            key:
-                note: The network session key to set, provided as a string.
-
-        returns:
-            note: The result of the AT command execution
-        """
         return self.send_cmd("AT+NWKSKEY=" + key, True, True)
 
     def set_network_id(self, id: str):
-        """
-        note:
-            en: Sets the network ID.
-
-        params:
-            id:
-                note: The network ID to set, provided as a string.
-
-        returns:
-            note: The result of the AT command execution
-        """
         return self.send_cmd("AT+NETID=" + id, True, True)
 
     def get_network_id(self):
-        """
-        note:
-            en: Retrieves the network ID.
-
-        params:
-            note:
-
-        returns:
-            note: The network ID as a string.
-        """
         return self.send_cmd("AT+NETID=?", True)
 
     def get_mc_root_key(self):
-        """
-        note:
-            en: Retrieves the multicast root key.
-
-        params:
-            note:
-
-        returns:
-            note: The multicast root key as a string.
-        """
         return self.send_cmd("AT+MCROOTKEY=?", True)
 
     def get_confirm_mode(self):
-        """
-        note:
-            en: Retrieves the confirmation mode.
-
-        params:
-            note:
-
-        returns:
-            note: True if confirmation mode is enabled; otherwise, False.
-        """
         return self.send_cmd("AT+CFM=?", True) == "1"
 
     def set_confirm_mode(self, mode: bool):
-        """
-        note:
-            en: Sets the confirmation mode.
-
-        params:
-            mode:
-                note: A boolean indicating whether to enable (True) or disable (False) confirmation mode.
-
-        returns:
-            note: The result of the AT command execution
-        """
         return self.send_cmd("AT+CFM=" + str(int(mode)), True, True)
 
     def get_confirm_state(self):
-        """
-        note:
-            en: Retrieves the status of the last confirmed uplink.
-
-        params:
-            note:
-
-        returns:
-            note: True if the last confirmed uplink succeeded; otherwise, False.
-        """
         return self.send_cmd("AT+CFS=?", True) == "1"
 
     def get_join_config(self):
-        """
-        note:
-            en: Retrieves the current join configuration for LoRa.
-
-        params:
-            note:
-
-        returns:
-            note: A tuple containing state, auto_join, retry_interval, and max_retry as integers, or False if retrieval failed.
-        """
         lora_config = self.send_cmd("AT+JOIN=?", True)
         if lora_config:
             return tuple(map(int, lora_config.split(":")[:4]))
@@ -607,31 +338,37 @@ class RUI3:
         self,
         state: int,
         auto_join: int,
-        retry_interval: int = 8,
-        max_retry: int = 0,
+        reattempt_interval: int = 8,
+        max_attempts: int = 0,
         timeout: int = 8000,
     ):
-        """
-        note:
-            en: Configures the join parameters for LoRa. The configuration does not confirm network join success.
+        """Configure the join parameters for LoRaWAN.
 
-        params:
-            state:
-                note: The join state to configure, as an integer.
-            auto_join:
-                note: The auto-join flag, as an integer.
-            retry_interval:
-                note: The interval between join retries, default is 8 seconds.
-            max_retry:
-                note: The maximum number of retries, default is 0 (no limit).
-            timeout:
-                note: The timeout duration in milliseconds for the command, default is 8000ms.
+        The configuration does not confirm network join success.
 
-        return:
-            note: True if the command is successfully set, else False.
+        :param int state: The join state to configure, as an integer.
+        :param int auto_join: The auto-join flag, as an integer.
+        :param int reattempt_interval: The interval between join retries, in seconds. Default is 8.
+        :param int max_attempts: The maximum number of retries. Default is 0 (no limit).
+        :param int timeout: The timeout duration in milliseconds for the command. Default is 8000ms.
+
+        :returns: True if the command is successfully set, else False.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lorawan_rui3.set_join_config(
+                    state=1,
+                    auto_join=1,
+                    reattempt_interval=10,
+                    max_attempts=5,
+                    timeout=10000
+                )
         """
         return self.send_cmd(
-            f"AT+JOIN={state}:{auto_join}:{retry_interval}:{max_retry}",
+            f"AT+JOIN={state}:{auto_join}:{reattempt_interval}:{max_attempts}",
             True,
             False,
             True,
@@ -639,95 +376,121 @@ class RUI3:
         )
 
     def join_network(self, timeout: int = 8000):
-        """
-        note:
-            en: Joins the LoRa network using predefined join parameters.
+        """Join the LoRa network using predefined join parameters.
 
-        params:
-            timeout:
-                note: The timeout duration in milliseconds for the join command, default is 8000ms.
+        :param int timeout: The timeout duration in milliseconds for the join command. Default is 8000ms.
 
-        returns:
-            note: True if the module successfully joins the network, otherwise False
+        :returns: True if the command is successfully set, else False.
+        :rtype: bool
+
+            |join_network_return.png|
+
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                if lorawan_rui3.join_network(timeout=10000):
+                    print("Network joined successfully!")
+                else:
+                    print("Failed to join network.")
         """
         buf = self.send_cmd("AT+JOIN=1:0:8:0", True, False, True, timeout)
         if timeout != 0:
             return buf == "JOINED"
 
     def get_join_mode(self):
-        """
-        note:
-            en: Retrieves the current join mode. 0 indicates ABP mode, 1 indicates OTAA mode.
-
-        params:
-            note:
-
-        returns:
-            note: The join mode as an integer (0 for ABP, 1 for OTAA).
-        """
         return int(self.send_cmd("AT+NJM=?", True))
 
     def set_join_mode(self, mode: int):
-        """
-        note:
-            en: Sets the join mode for the LoRa module.
+        """Set the join mode for the LoRa module.
 
-        params:
-            mode:
-                note: The join mode to set, 0 for ABP or 1 for OTAA.
+        :param int mode: The join mode to set, 0 for ABP or 1 for OTAA.
 
-        returns:
-            note: True if the command is successfully set, else False.
+        :returns: True if the command is successfully set, else False.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lorawan_rui3.set_join_mode(1)  # Set to OTAA mode
+
         """
         return self.send_cmd("AT+NJM=" + str(mode), True, True)
 
     def get_join_state(self):
-        """
-        note:
-            en: Checks whether the module has successfully joined the network. 1 indicates joined, 0 indicates not joined.
+        """Check whether the module has successfully joined the network.
 
-        params:
-            note:
+        :returns: True if joined, otherwise False.
+        :rtype: bool
 
-        returns:
-            note: True if joined, otherwise False.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                if lorawan_rui3.get_join_state():
+                    print("Module is joined to the network.")
+                else:
+                    print("Module is not joined to the network.")
         """
         return self.send_cmd("AT+NJS=?", True) == "1"
 
     def get_last_receive(self):
-        """
-        note:
-            en: Retrieves the data from the last received message.
+        """Retrieve the data from the last received message.
 
-        params:
-            note:
+        :returns: A tuple containing the port number (int) and the received data (bytes), or False if no data was received.
+        :rtype: tuple[int, bytes] | bool
 
-        returns:
-            note: The received data as a string.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                last_data = lorawan_rui3.get_last_receive()
+                if last_data:
+                    port, data = last_data
+                    print(f"Received data on port {port}: {data}")
+                else:
+                    print("No data received.")
         """
         buf = self.send_cmd("AT+RECV=?", True)
         if isinstance(buf, str):
             if buf.find(":") != -1:
                 buf = buf.split(":")
-                return (int(buf[0]), bytes.fromhex(buf[1]))
+                return (int(buf[0]), buf[1])
         return False
 
-    def send_data(self, port: int, data: bytes, timeout=600):
-        """
-        note:
-            en: Sends data through a specific port.
+    def send_data(self, port: int, data: bytes | str, timeout: int = 600):
+        """Send data through a specific port.
 
-        params:
-            port:
-                note: The port number to send data through.
-            data:
-                note: The data to send, provided as bytes.
-            timeout:
-                note: The timeout duration in milliseconds for the send command, default is 600ms.
+        :param int port: The port number to send data through.
+        :param data: The data to send, provided as bytes or string(if data is bytes, it will be converted to string).
+        :type data: bytes | str
+        :param int timeout: The timeout duration in milliseconds for the send command. Default is 600ms.
 
-        returns:
-            note: True if the data was sent successfully, otherwise False.
+        :returns: True if the data was sent successfully, otherwise False.
+        :rtype: bool
+
+            |send_data_return.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.send_data(port=1, data=b"HelloLoRa", timeout=800)
+                if success:
+                    print("Data sent successfully!")
+                else:
+                    print("Failed to send data.")
+
         """
+        if isinstance(data, str):
+            pass
+        elif isinstance(data, bytes):
+            data = data.decode()
+        else:
+            raise ValueError("Invalid data type.")
+        print(f"AT+SEND={port}:{data}")
         buf = self.send_cmd(f"AT+SEND={port}:{data}", True, False, True, timeout)
         if timeout != 0:
             return buf in [
@@ -735,674 +498,154 @@ class RUI3:
                 "SEND_CONFIRMED_OK",
             ]
 
-    def send_long_data(self, port: int, ack: bool, data: bytes, timeout=500):
-        """
-        note:
-            en: Sends long data through a specific port with optional acknowledgment.
-
-        params:
-            port:
-                note: The port number to send data through.
-            ack:
-                note: Indicates whether acknowledgment is required (True or False).
-            data:
-                note: The long data to send, provided as bytes.
-            timeout:
-                note: The timeout duration in milliseconds for the send command, default is 500ms.
-
-        returns:
-            note: True if the data was sent successfully, otherwise False.
-        """
+    def send_long_data(self, port: int, ack: bool, data: bytes, timeout: int = 500):
         return self.send_cmd(f"AT+SEND={port}:{int(ack)}:{data}", True, False, True, timeout) in [
             "TX_DONE",
             "SEND_CONFIRMED_OK",
         ]
 
     def set_retry(self, retry: int):
-        """
-        note:
-            en: Configures the retry cycle for transmissions.
-
-        params:
-            retry:
-                note: The retry cycle value, ranging from 0 to 7, default is 0.
-
-        returns:
-            note: True if the command is successfully set, else False.
-        """
         return self.send_cmd(f"AT+RETY={retry}", True, True)
 
     def get_retry(self):
-        """
-        note:
-            en: Retrieves the current retry cycle configuration.
-
-        params:
-            note:
-
-        returns:
-            note: The retry cycle value as an integer.
-        """
         return int(self.send_cmd("AT+RETY=?", True))
 
     def get_adaptive_rate_state(self):
-        """
-        note:
-            en: Checks whether adaptive data rate (ADR) is enabled. 1 indicates enabled, 0 indicates disabled.
-
-        params:
-            note:
-
-        returns:
-            note: True if ADR is enabled, otherwise False.
-        """
         return self.send_cmd("AT+ADR=?", True) == "1"
 
     def set_adaptive_rate_state(self, state: bool):
-        """
-        note:
-            en: Configures the adaptive data rate (ADR) state.
-
-        params:
-            state:
-                note: A boolean indicating whether to enable (True) or disable (False) ADR.
-
-        returns:
-            note: True if the command is successfully set, else False.
-        """
         return self.send_cmd("AT+ADR=" + str(int(state)), True, True)
 
     def get_lorawan_node_class(self):
-        """
-        note:
-            en: Retrieves the current LoRaWAN node class.
-
-        params:
-            note:
-
-        returns:
-            note: The LoRaWAN node class as a string.
-        """
         return self.send_cmd("AT+CLASS=?", True)
 
     def set_lorawan_node_class(self, node_class: str):
-        """
-        note:
-            en: Sets the LoRaWAN node class.
-
-        params:
-            node_class:
-                note: The node class to set, provided as a string (e.g., "A", "B", or "C").
-
-        returns:
-            note: True if the command is successfully set, else False.
-        """
         return self.send_cmd("AT+CLASS=" + node_class, True, True)
 
     def get_duty_cycle_state(self):
-        """
-        note:
-            en: Checks whether the ETSI duty cycle is enabled. 1 indicates enabled, 0 indicates disabled.
-
-        params:
-            note:
-
-        returns:
-            note: True if the duty cycle is enabled, otherwise False.
-        """
         return self.send_cmd("AT+DCS=?", True) == "1"
 
     def set_duty_cycle_state(self, state: bool):
-        """
-        note:
-            en: Sets the ETSI duty cycle state, which can be enabled or disabled depending on the region.
-
-        params:
-            state:
-                note: A boolean indicating whether to enable (True) or disable (False) the duty cycle.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+DCS=" + str(int(state)), True, True)
 
     def get_data_rate(self):
-        """
-        note:
-            en: Retrieves the current data rate configuration.
-
-        params:
-            note:
-
-        returns:
-            note: The data rate as an integer.
-        """
         return int(self.send_cmd("AT+DR=?", True))
 
     def set_data_rate(self, rate: int):
-        """
-        note:
-            en: Sets the data rate for communication.
-
-        params:
-            rate:
-                note: The data rate to set, provided as an integer.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+DR=" + str(rate), True, True)
 
     def get_join_delay_on_window1(self):
-        """
-        note:
-            en: Retrieves the delay for the join procedure on window 1.
-
-        params:
-            note:
-
-        returns:
-            note: The join delay for window 1 as an integer.
-        """
         return int(self.send_cmd("AT+JN1DL=?", True))
 
     def set_join_delay_on_window1(self, delay: int):
-        """
-        note:
-            en: Sets the join delay for window 1.
-
-        params:
-            delay:
-                note: The join delay to set for window 1 as an integer.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+JN1DL=" + str(delay), True, True)
 
     def get_join_delay_on_window2(self):
-        """
-        note:
-            en: Retrieves the delay for the join procedure on window 2.
-
-        params:
-            note:
-
-        returns:
-            note: The join delay for window 2 as an integer.
-        """
         return int(self.send_cmd("AT+JN2DL=?", True))
 
     def set_join_delay_on_window2(self, delay: int):
-        """
-        note:
-            en: Sets the join delay for window 2.
-
-        params:
-            delay:
-                note: The join delay to set for window 2 as an integer.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+JN2DL=" + str(delay), True, True)
 
     def get_public_network_mode(self):
-        """
-        note:
-            en: Retrieves the public network mode (enabled or disabled).
-
-        params:
-            note:
-
-        returns:
-            note: True if public network mode is enabled, False otherwise.
-        """
         return self.send_cmd("AT+PNM=?", True) == "1"
 
     def set_public_network_mode(self, mode: bool):
-        """
-        note:
-            en: Sets the public network mode to enabled or disabled.
-
-        params:
-            mode:
-                note: A boolean indicating whether to enable (True) or disable (False) the public network mode.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(f"AT+PNM={int(mode)}", True, True)
 
     def get_rx_delay_on_window1(self):
-        """
-        note:
-            en: Retrieves the receive window 1 delay.
-
-        params:
-            note:
-
-        returns:
-            note: The receive window 1 delay as an integer.
-        """
         return int(self.send_cmd("AT+RX1DL=?", True))
 
     def set_rx_delay_on_window1(self, delay: int):
-        """
-        note:
-            en: Sets the receive delay for window 1.
-
-        params:
-            delay:
-                note: The delay to set for receive window 1 as an integer.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+RX1DL=" + str(delay), True, True)
 
     def get_rx_delay_on_window2(self):
-        """
-        note:
-            en: Retrieves the receive window 2 delay.
-
-        params:
-            note:
-
-        returns:
-            note: The receive window 2 delay as an integer.
-        """
         return int(self.send_cmd("AT+RX2DL=?", True))
 
     def set_rx_delay_on_window2(self, delay: int):
-        """
-        note:
-            en: Sets the receive delay for window 2.
-
-        params:
-            delay:
-                note: The delay to set for receive window 2, with a range of 2 to 16.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+RX2DL=" + str(delay), True, True)
 
     def get_rx_data_rate_on_windows2(self):
-        """
-        note:
-            en: Retrieves the receive data rate for window 2.
-
-        params:
-            note:
-
-        returns:
-            note: The receive data rate for window 2 as an integer.
-        """
         return int(self.send_cmd("AT+RX2DR=?", True))
 
     def set_rx_data_rate_on_windows2(self, rate: int):
-        """
-        note:
-            en: Sets the receive data rate for window 2.
-
-        params:
-            rate:
-                note: The data rate to set for window 2.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(f"AT+RX2DR={rate}", True, True)
 
     def get_rx_frequency_on_windows2(self):
-        """
-        note:
-            en: Retrieves the receive frequency for window 2, based on regional frequency settings.
-
-        params:
-            note:
-
-        returns:
-            note: The receive frequency for window 2 as an integer.
-        """
         return int(self.send_cmd("AT+RX2FQ=?", True))
 
     def get_tx_power(self):
-        """
-        note:
-            en: Retrieves the current transmit power setting.
-
-        params:
-            note:
-
-        returns:
-            note: The transmit power setting as an integer.
-        """
         return int(self.send_cmd("AT+TXP=?", True))
 
     def set_tx_power(self, power: int):
-        """
-        note:
-            en: Sets the transmit power.
-
-        params:
-            power:
-                note: The transmit power to set.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+TXP=" + str(power), True, True)
 
     def get_network_link_state(self):
-        """
-        note:
-            en: Retrieves the network link state.
-
-        params:
-            note:
-
-        returns:
-            note: The network link state as a string.
-        """
         return self.send_cmd("AT+LINKCHECK=?", True)
 
     def set_network_link_state(self, state: int):
-        """
-        note:
-            en: Sets the network link state for the device.
-
-        params:
-            state:
-                note: The state to set for network link:
-                    0 - Disable Link Check
-                    1 - Execute Link Check once on the next payload uplink
-                    2 - Automatically execute Link Check after every payload uplink
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+LINKCHECK=" + str(state), True, True)
 
     def get_listen_before_talk(self):
-        """
-        note:
-            en: Retrieves the Listen Before Talk (LBT) state.
-
-        params:
-            note:
-
-        returns:
-            note: True if LBT is enabled, False if not.
-        """
         return self.send_cmd("AT+LBT=?", True) == "1"
 
     def set_listen_before_talk(self, state: bool):
-        """
-        note:
-            en: Sets the Listen Before Talk (LBT) state.
-
-        params:
-            state:
-                note: The state to set for LBT (True for enabled, False for disabled).
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(f"AT+LBT={int(state)}", True, True)
 
     def set_listen_before_talk_rssi(self, rssi: int):
-        """
-        note:
-            en: Sets the RSSI threshold for Listen Before Talk (LBT).
-
-        params:
-            rssi:
-                note: The RSSI threshold to set for LBT.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+LBTRSSI=" + str(rssi), True, True)
 
     def get_listen_before_talk_rssi(self):
-        """
-        note:
-            en: Retrieves the RSSI threshold for Listen Before Talk (LBT).
-
-        params:
-            note:
-
-        returns:
-            note: The RSSI threshold as an integer.
-        """
         return int(self.send_cmd("AT+LBTRSSI=?", True))
 
     def get_listen_before_talk_scan_time(self):
-        """
-        note:
-            en: Retrieves the scan time for Listen Before Talk (LBT).
-
-        params:
-            note:
-
-        returns:
-            note: The scan time for LBT as an integer.
-        """
         return int(self.send_cmd("AT+LBTSCANTIME=?", True))
 
     def set_listen_before_talk_scan_time(self, time: int):
-        """
-        note:
-            en: Sets the scan time for Listen Before Talk (LBT).
-
-        params:
-            time:
-                note: The scan time to set for LBT.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+LBTSCANTIME=" + str(time), True, True)
 
     def get_time_request(self):
-        """
-        note:
-            en: Retrieves the time request state.
-
-        params:
-            note:
-
-        returns:
-            note: The time request state as an integer.
-        """
         return int(self.send_cmd("AT+TIMEREQ=?", True))
 
     def set_time_request(self, state: bool):
-        """
-        note:
-            en: Sets the time request state.
-
-        params:
-            state:
-                note: The state to set for time request (True to enable, False to disable).
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(f"AT+TIMEREQ={int(state)}", True, True)
 
     def get_location_time(self):
-        """
-        note:
-            en: Retrieves the location time in UTC+0.
-
-        params:
-            note:
-
-        returns:
-            note: The location time in UTC+0 as a string.
-        """
         return self.send_cmd("AT+LTIME=?", True)
 
     def get_unicast_ping_interval(self):
-        """
-        note:
-            en: Retrieves the unicast ping interval in Class B mode.
-
-        params:
-            note:
-
-        returns:
-            note: The unicast ping interval as an integer.
-        """
         return int(self.send_cmd("AT+PGSLOT=?", True))
 
     def set_unicast_ping_interval(self, interval: int):
-        """
-        note:
-            en: Sets the unicast ping interval for the device.
-
-        params:
-            interval:
-                note: The interval to set for the unicast ping (0 to 7). 0 means approximately every second during the beacon window, and 7 means every 128 seconds (maximum ping period).
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+PGSLOT=" + str(interval), True, True)
 
     def get_beacon_frequency(self):
-        """
-        note:
-            en: Retrieves the beacon frequency.
-
-        params:
-            note:
-
-        returns:
-            note: The beacon frequency as an integer.
-        """
         return int(self.send_cmd("AT+BFREQ=?", True))
 
     def get_beacon_time(self):
-        """
-        note:
-            en: Retrieves the beacon time.
-
-        params:
-            note:
-
-        returns:
-            note: The beacon time as an integer.
-        """
         return int(self.send_cmd("AT+BTIME=?", True))
 
     def get_beacon_gateway_gps(self):
-        """
-        note:
-            en: Retrieves the beacon gateway GPS location.
-
-        params:
-            note:
-
-        returns:
-            note: The beacon gateway GPS information as a string.
-        """
         return self.send_cmd("AT+BGW=?", True)
 
     def get_rssi(self):
-        """
-        note:
-            en: Retrieves the Received Signal Strength Indicator (RSSI).
-
-        params:
-            note:
-
-        returns:
-            note: The RSSI value as a string.
-        """
         return self.send_cmd("AT+RSSI=?", True)
 
     def get_all_rssi(self):
-        """
-        note:
-            en: Retrieves the RSSI values from all channels.
-
-        params:
-            note:
-
-        returns:
-            note: The RSSI values for all channels as a string.
-        """
         return self.send_cmd("AT+ARSSI=?", True)
 
     def get_signal_noise_ratio(self):
-        """
-        note:
-            en: Retrieves the Signal-to-Noise Ratio (SNR).
-
-        params:
-            note:
-
-        returns:
-            note: The SNR value as a string.
-        """
         return self.send_cmd("AT+SNR=?", True)
 
     def get_channel_mask(self):
-        """
-        note:
-            en: Retrieves the channel mask (only for US915, AU915, CN470).
-
-        params:
-            note:
-
-        returns:
-            note: The channel mask as a string.
-        """
         return self.send_cmd("AT+MASK=?", True)
 
     def set_channel_mask(self, mask: str):
-        """
-        note:
-            en: Sets the channel mask to open or close specific channels (only for US915, AU915, CN470).
-
-        params:
-            mask:
-                note: The channel mask as a 4-length hexadecimal string.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+MASK=" + mask, True, True)
 
     def get_eight_channel_mode_state(self):
-        """
-        note:
-            en: Retrieves the state of the eight-channel mode.
-
-        params:
-            note:
-
-        returns:
-            note: The state of the eight-channel mode as a string.
-        """
         return self.send_cmd("AT+CHE=?", True)
 
     def set_eight_channel_mode_state(self, max_group: int) -> bool:
-        """
-        note:
-            en: Sets the state of the eight-channel mode, with a group number between 1 and 12.
-
-        params:
-            max_group:
-                note: The maximum group number (1 to 12).
-
-        returns:
-            note: True if the AT command execution is successful, False otherwise.
-        """
         if not (1 <= max_group <= 12):
             raise ValueError("Channel group must be between 1 and 12.")
 
@@ -1410,87 +653,20 @@ class RUI3:
         return self.send_cmd(f"AT+CHE={state_str}", True, True)
 
     def get_single_channel_mode(self):
-        """
-        note:
-            en: Retrieves the single channel mode.
-
-        params:
-            note:
-
-        returns:
-            note: The single channel mode as a string.
-        """
         return self.send_cmd("AT+CHS=?", True)
 
-    def set_single_channel_mode(self):
-        """
-        note:
-            en: Sets the single channel mode.
-
-        params:
-            note:
-
-        returns:
-            note: The result of the AT command execution.
-        """
-        return self.send_cmd("AT+CHS", True, True)
+    def set_single_channel_mode(self, freq: int):
+        return self.send_cmd("AT+CHS=" + str(freq), True, True)
 
     def get_active_region(self):
-        """
-        note:
-            en: Retrieves the active region for the device.
-
-        params:
-            note:
-
-        returns:
-            note: The active region as a string.
-        """
         return self.send_cmd("AT+BAND=?", True)
 
     def set_active_region(self, region: int):
-        """
-        note:
-            en: Sets the active region for the device.
-
-        params:
-            region:
-                note: The region to set for the device (0-12):
-                    0 = EU433, 1 = CN470, 2 = RU864, 3 = IN865, 4 = EU868, 5 = US915,
-                    6 = AU915, 7 = KR920, 8 = AS923-1, 9 = AS923-2, 10 = AS923-3,
-                    11 = AS923-4, 12 = LA915.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+BAND=" + str(region), True, True)
 
     def add_multicast_group(
         self, Class: str, DevAddr, NwkSKey, AppSKey, Frequency, Datarate, Periodicit
     ):
-        """
-        note:
-            en: Adds a multicast group to the device.
-
-        params:
-            Class:
-                note: The class of the multicast group.
-            DevAddr:
-                note: The device address.
-            NwkSKey:
-                note: The network session key.
-            AppSKey:
-                note: The application session key.
-            Frequency:
-                note: The frequency for the multicast group.
-            Datarate:
-                note: The datarate for the multicast group.
-            Periodicit:
-                note: The periodicity for the multicast group.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(
             f"AT+ADDMULC={Class}:{DevAddr}:{NwkSKey}:{AppSKey}:{Frequency}:{Datarate}:{Periodicit}",
             True,
@@ -1498,292 +674,346 @@ class RUI3:
         )
 
     def remove_multicast_group(self, DevAddr):
-        """
-        note:
-            en: Removes a multicast group by the given device address.
-
-        params:
-            DevAddr:
-                note: The device address of the multicast group to remove.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd(f"AT+RMVMULC={DevAddr}", True, True)
 
     def get_multicast_list(self):
-        """
-        note:
-            en: Retrieves the list of multicast groups.
-
-        params:
-            note:
-
-        returns:
-            note: The list of multicast groups as a string.
-        """
         return self.send_cmd("AT+LSTMULC=?", True)
 
     def get_network_mode(self):
-        """
-        note:
-            en: Retrieves the current network mode.
-
-        params:
-            note:
-
-        returns:
-            note: The current network mode as an integer: 0 = P2P_LORA, 1 = LoRaWAN, 2 = P2P_FSK.
-        """
         return self.send_cmd("AT+NWM=?", True)
 
     def set_network_mode(self, mode: int):
-        """
-        note:
-            en: Sets the network mode for the device.
+        """Set the network mode for the device.
 
-        params:
-            mode:
-                note: The mode to set for the network: 0 = P2P_LORA, 1 = LoRaWAN, 2 = P2P_FSK.
+        :returns: The result of the AT command execution.
+        :rtype: bool
 
-        returns:
-            note: The result of the AT command execution.
+        :param int mode: The mode to set for the network:
+
+            - 0 = P2P_LORA
+            - 1 = LoRaWAN
+            - 2 = P2P_FSK
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                lorawan_rui3.set_network_mode(0)  # Set to P2P_LORA mode
         """
         return self.send_cmd("AT+NWM=" + str(mode), True, False, True, 500)
 
     def get_p2p_frequency(self):
-        """
-        note:
-            en: Retrieves the current P2P frequency.
+        """Retrieve the current P2P frequency.
 
-        params:
-            note:
+        :returns: The current P2P frequency as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P frequency as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                frequency = lorawan_rui3.get_p2p_frequency()
+                print(f"Current P2P frequency: {frequency} Hz")
         """
         return int(self.send_cmd("AT+PFREQ=?", True))
 
     def set_p2p_frequency(self, frequency: int):
-        """
-        note:
-            en: Sets the P2P frequency for the device.
+        """Set the P2P frequency for the device.
 
-        params:
-            frequency:
-                note: The frequency to set for P2P communication. Low-frequency range: 150000000-525000000, High-frequency range: 525000000-960000000.
+        :returns: The result of the AT command execution.
+        :rtype: bool
 
-        returns:
-            note: The result of the AT command execution.
+        :param int frequency: The frequency to set for P2P communication.
+
+            - Low-frequency range: 150000000-600000000
+            - High-frequency range: 600000000-960000000
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_frequency(433000000)
+                if success:
+                    print("P2P frequency set successfully!")
+                else:
+                    print("Failed to set P2P frequency.")
         """
         return self.send_cmd("AT+PFREQ=" + str(frequency), True, True)
 
     def get_p2p_spreading_factor(self):
-        """
-        note:
-            en: Retrieves the current P2P spreading factor.
+        """Retrieve the current P2P spreading factor.
 
-        params:
-            note:
+        :returns: The current P2P spreading factor as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P spreading factor as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sf = lorawan_rui3.get_p2p_spreading_factor()
+                print(f"Current P2P spreading factor: {sf}")
         """
         return int(self.send_cmd("AT+PSF=?", True))
 
     def set_p2p_spreading_factor(self, spreading_factor: int):
-        """
-        note:
-            en: Sets the P2P spreading factor.
+        """Set the P2P spreading factor.
 
-        params:
-            spreading_factor:
-                note: The spreading factor to set for P2P communication. The default value is 7, and the range is 5 to 12.
+        :param int spreading_factor: The spreading factor to set for P2P communication.
 
-        returns:
-            note: The result of the AT command execution.
+            - Range is 5 to 12.
+
+        :returns: The result of the AT command execution.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_spreading_factor(10)
+                if success:
+                    print("P2P spreading factor set successfully!")
+                else:
+                    print("Failed to set P2P spreading factor.")
         """
         return self.send_cmd("AT+PSF=" + str(spreading_factor), True, True)
 
     def get_p2p_bandwidth(self):
-        """
-        note:
-            en: Retrieves the current P2P bandwidth.
+        """Retrieve the current P2P bandwidth.
 
-        params:
-            note:
+        :returns: The current P2P bandwidth as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P bandwidth as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                bw = lorawan_rui3.get_p2p_bandwidth()
+                print(f"Current P2P bandwidth: {bw}")
+
         """
         return int(self.send_cmd("AT+PBW=?", True))
 
     def set_p2p_bandwidth(self, bandwidth: int):
-        """
-        note:
-            en: Sets the P2P bandwidth.
+        """Set the P2P bandwidth.
 
-        params:
-            bandwidth:
-                note: The bandwidth to set for P2P communication. Default is 0.
-                    For LoRa: 0 = 125, 1 = 250, 2 = 500, 3 = 7.8, 4 = 10.4, 5 = 15.63, 6 = 20.83, 7 = 31.25, 8 = 41.67, 9 = 62.5.
-                    For FSK: 4800-467000.
+        :param int bandwidth: The bandwidth to set for P2P communication.
 
-        returns:
-            note: The result of the AT command execution.
+            - For LoRa:
+                - 0 = 125 kHz
+                - 1 = 250 kHz
+                - 2 = 500 kHz
+                - 3 = 7.8 kHz
+                - 4 = 10.4 kHz
+                - 5 = 15.63 kHz
+                - 6 = 20.83 kHz
+                - 7 = 31.25 kHz
+                - 8 = 41.67 kHz
+                - 9 = 62.5 kHz
+
+            - For FSK:
+                Range: 4800-467000 Hz
+
+        :returns: The result of the AT command execution.
+        :rtype: bool
+            |set_p2p_fsk_bandwidth.png|
+
+            |set_p2p_lora_bandwidth.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_bandwidth(1)  # Set to 250 kHz
+                if success:
+                    print("P2P bandwidth set successfully!")
+                else:
+                    print("Failed to set P2P bandwidth.")
         """
         return self.send_cmd("AT+PBW=" + str(bandwidth), True, True)
 
     def get_p2p_code_rate(self):
-        """
-        note:
-            en: Retrieves the current P2P code rate.
+        """Retrieve the current P2P code rate.
 
-        params:
-            note:
+        :returns: The current P2P code rate as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P code rate as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                code_rate = lorawan_rui3.get_p2p_code_rate()
+                print(f"Current P2P code rate: {code_rate}")
         """
         return int(self.send_cmd("AT+PCR=?", True))
 
     def set_p2p_code_rate(self, code_rate: int):
-        """
-        note:
-            en: Sets the P2P code rate.
+        """Set the P2P code rate.
 
-        params:
-            code_rate:
-                note: The code rate to set for P2P communication. Default is 0, range is 0 to 3, 0 = 4/5, 1 = 4/6, 2 = 4/7, 3 = 4/8.
+        :param int code_rate: The code rate to set for P2P communication.
 
-        returns:
-            note: The result of the AT command execution.
+                - 0 = 4/5
+                - 1 = 4/6
+                - 2 = 4/7
+                - 3 = 4/8
+
+        :returns: The result of the AT command execution.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_code_rate(1)  # Set to 4/6
+                if success:
+                    print("P2P code rate set successfully!")
+                else:
+                    print("Failed to set P2P code rate.")
         """
         return self.send_cmd("AT+PCR=" + str(code_rate), True, True)
 
     def get_p2p_preamble_length(self):
-        """
-        note:
-            en: Retrieves the current P2P preamble length.
+        """Retrieve the current P2P preamble length.
 
-        params:
-            note:
+        :returns: The current P2P preamble length as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P preamble length as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                preamble_length = lorawan_rui3.get_p2p_preamble_length()
+                print(f"Current P2P preamble length: {preamble_length}")
         """
         return int(self.send_cmd("AT+PPL=?", True))
 
     def set_p2p_preamble_length(self, length: int):
-        """
-        note:
-            en: Sets the P2P preamble length.
+        """Set the P2P preamble length.
 
-        params:
-            length:
-                note: The preamble length to set for P2P communication. Default is 8, range is 5 to 65535.
+        :returns: The result of the AT command execution.
+        :rtype: bool
 
-        returns:
-            note: The result of the AT command execution.
+        :param int length: The preamble length to set for P2P communication.
+
+            - Range is 5 to 65535.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_preamble_length(16)
+                if success:
+                    print("P2P preamble length set successfully!")
+                else:
+                    print("Failed to set P2P preamble length.")
         """
         return self.send_cmd("AT+PPL=" + str(length), True, True)
 
     def get_p2p_tx_power(self):
-        """
-        note:
-            en: Retrieves the current P2P transmission power.
+        """Retrieve the current P2P transmission power.
 
-        params:
-            note:
+        :returns: The current P2P transmission power as an integer.
+        :rtype: int
 
-        returns:
-            note: The current P2P transmission power as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tx_power = lorawan_rui3.get_p2p_tx_power()
+                print(f"Current P2P transmission power: {tx_power} dBm")
         """
         return int(self.send_cmd("AT+PTP=?", True))
 
     def set_p2p_tx_power(self, power: int):
-        """
-        note:
-            en: Sets the P2P transmission power.
+        """Set the P2P transmission power.
 
-        params:
-            power:
-                note: The transmission power to set for P2P communication. Default is 14 dBm, range is 5 to 22 dBm.
+        :param int power: The transmission power to set for P2P communication.
 
-        returns:
-            note: The result of the AT command execution.
+            - Range is 5 to 22 dBm.
+
+        :returns: The result of the AT command execution.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_tx_power(20)  # Set to 20 dBm
+                if success:
+                    print("P2P transmission power set successfully!")
+                else:
+                    print("Failed to set P2P transmission power.")
         """
         return self.send_cmd("AT+PTP=" + str(power), True, True)
 
     def get_p2p_fsk_bitrate(self):
-        """
-        note:
-            en: Retrieves the current P2P FSK bitrate.
+        """Retrieve the current P2P FSK bitrate.
 
-        params:
-            note:
+        :returns: The result of the AT command execution.
+        :rtype: bool
 
-        returns:
-            note: The current P2P FSK bitrate as an integer.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                fsk_bitrate = lorawan_rui3.get_p2p_fsk_bitrate()
+                print(f"Current P2P FSK bitrate: {fsk_bitrate} b/s")
         """
         return int(self.send_cmd("AT+PBR=?", True))
 
     def set_p2p_fsk_bitrate(self, bitrate: int):
-        """
-        note:
-            en: Sets the P2P FSK bitrate.
+        """Set the P2P FSK bitrate.
 
-        params:
-            bitrate:
-                note: The bitrate to set for P2P FSK communication. The range is 600 to 300000 b/s.
+        :param int bitrate: The bitrate to set for P2P FSK communication.
 
-        returns:
-            note: The result of the AT command execution.
+            - Range is 600 to 300000 b/s.
+
+        :returns: The result of the AT command execution.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_fsk_bitrate(9600)  # Set to 9600 b/s
+                if success:
+                    print("P2P FSK bitrate set successfully!")
+                else:
+                    print("Failed to set P2P FSK bitrate.")
+
         """
         return self.send_cmd("AT+PBR=" + str(bitrate), True, True)
 
     def get_p2p_fsk_frequency_deviation(self):
-        """
-        note:
-            en: Retrieves the current P2P FSK frequency deviation.
-
-        params:
-            note:
-
-        returns:
-            note: The current P2P FSK frequency deviation as an integer.
-        """
         return int(self.send_cmd("AT+PFDEV=?", True))
 
     def set_p2p_fsk_frequency_deviation(self, deviation: int):
-        """
-        note:
-            en: Sets the P2P FSK frequency deviation.
-
-        params:
-            deviation:
-                note: The frequency deviation to set for P2P FSK communication. The range is 600 to 200000 Hz.
-
-        returns:
-            note: The result of the AT command execution.
-        """
         return self.send_cmd("AT+PFDEV=" + str(deviation), True, True)
 
-    def send_p2p_data(self, payload: str, timeout=1000, to_hex=False):
-        """
-        note:
-            en: Sends P2P data with a given payload.
+    def send_p2p_data(self, payload: str, timeout: int = 1000, to_hex: bool = False):
+        """Send P2P data with a given payload.
 
-        params:
-            payload:
-                note: The payload to send, 2 to 500 characters in length, must be an even number of characters composed of 0-9, a-f, A-F, representing 1 to 256 hexadecimal values.
-            timeout:
-                note: The timeout for the data transmission, default is 1000 ms.
-            to_hex:
-                note: A boolean indicating whether to convert the payload to hexadecimal format.
+        :param str payload: The payload to send.
 
-        returns:
-            note: True if the data was sent successfully ("TXFSK DONE" or "TXP2P DONE"), False otherwise.
+            - Length must be between 2 and 500 characters.
+            - Must consist of an even number of characters composed of 0-9, a-f, A-F, representing 1 to 256 hexadecimal values.
+        :param int timeout: The timeout for the data transmission, in milliseconds. Default is 1000 ms.
+        :param bool to_hex: Indicates whether to convert the payload to hexadecimal format. Default is False.
+
+        :returns: True if the data was sent successfully ("TXFSK DONE" or "TXP2P DONE"), False otherwise.
+        :rtype: bool
+
+            |send_p2p_data_return.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.send_p2p_data("abcdef", timeout=2000, to_hex=True)
+                if success:
+                    print("P2P data sent successfully!")
+                else:
+                    print("Failed to send P2P data.")
+
         """
         if to_hex:
             payload = payload.encode("utf-8").hex()
@@ -1795,46 +1025,35 @@ class RUI3:
             ]
 
     def get_p2p_channel_activity(self):
-        """
-        note:
-            en: Get the current channel activity status in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The channel activity status as an integer (0 or 1).
-        """
         return int(self.send_cmd("AT+CAD=?", True))
 
     def set_p2p_channel_activity(self, state: bool):
-        """
-        note:
-            en: Enable or disable channel activity in P2P mode.
-
-        params:
-            state:
-                note: 0 to disable, 1 to enable channel activity.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+CAD={int(state)}", True, True)
 
-    def get_p2p_receive_data(self, timeout=500, to_str=False):
-        """
-        note:
-            en: Receive data in P2P mode, including RSSI, SNR, and payload.
+    def get_p2p_receive_data(self, timeout: int = 500, to_str: bool = False):
+        """Receive data in P2P mode, including RSSI, SNR, and payload.
 
-        params:
-            timeout:
-                note: Timeout for listening to P2P LoRa data packets.
-                Valid values are 1~65535, with special cases for continuous listening and no timeout.
-            to_str:
-                note: A boolean indicating whether to convert the payload to a string.
+        :param int timeout: Timeout for listening to P2P LoRa data packets, in milliseconds.
 
-        returns:
-            note: A tuple (RSSI, SNR, Payload) if data is received; False if no data is received.
+                - Valid values are 1 to 65535.
+                    - 0: Continuous listening.
+                    - 65535: No timeout.
+
+        :param bool to_str: Indicates whether to convert the payload to a string. Default is False.
+        :returns: A tuple (RSSI, SNR, Payload) if data is received; False if no data is received.
+        :rtype: tuple[int, int, str] | bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                result = lorawan_rui3.get_p2p_receive_data(timeout=1000, to_str=True)
+                if result:
+                    rssi, snr, payload = result
+                    print(f"Received data - RSSI: {rssi}, SNR: {snr}, Payload: {payload}")
+                else:
+                    print("No data received.")
+
         """
         self.send_cmd("AT+PRECV=0", True, False, True, 0)
         buf = self.send_cmd(f"AT+PRECV={timeout}", True, False, True, timeout)
@@ -1849,156 +1068,41 @@ class RUI3:
         return False
 
     def get_p2p_encryption_state(self):
-        """
-        note:
-            en: Get the current encryption state in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The encryption state as an integer (0 or 1).
-        """
         return int(self.send_cmd("AT+ENCRY=?", True))
 
     def set_p2p_encryption_state(self, state: bool):
-        """
-        note:
-            en: Enable or disable encryption in P2P mode.
-
-        params:
-            state:
-                note: 0 to disable, 1 to enable encryption.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+ENCRY={int(state)}", True, True)
 
     def get_p2p_encryption_key(self):
-        """
-        note:
-            en: Get the current encryption key in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The encryption key as a string.
-        """
         return self.send_cmd("AT+ENCKEY=?", True)
 
     def set_p2p_encryption_key(self, key: str):
-        """
-        note:
-            en: Set the encryption key in P2P mode.
-
-        params:
-            key:
-                note: The encryption key, represented as a 16-character hexadecimal string.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+ENCKEY={key}", True, True)
 
     def get_p2p_crypt_state(self):
-        """
-        note:
-            en: Get the current cryptographic state in P2P mode (not supported on RAK3172).
-
-        params:
-            note:
-
-        returns:
-            note: The cryptographic state as an integer (0 or 1).
-        """
         # RAK3172 not support
         return int(self.send_cmd("AT+PCRYPT=?", True))
 
     def set_p2p_crypt_state(self, state: bool):
-        """
-        note:
-            en: Enable or disable cryptographic state in P2P mode (not supported on RAK3172).
-
-        params:
-            state:
-                note: 0 to disable, 1 to enable cryptographic state.
-
-        returns:
-            note: The response from the command execution.
-        """
         # RAK3172 not support
         return self.send_cmd(f"AT+PCRYPT={int(state)}", True, True)
 
     def get_p2p_crypt_key(self):
-        """
-        note:
-            en: Get the cryptographic key in P2P mode (not supported on RAK3172).
-
-        params:
-            note:
-
-        returns:
-            note: The cryptographic key as a string.
-        """
         # RAK3172 not support
         return self.send_cmd("AT+PKEY=?", True)
 
     def set_p2p_crypt_key(self, key):
-        """
-        note:
-            en: Set the cryptographic key in P2P mode (not supported on RAK3172).
-
-        params:
-            key:
-                note: The cryptographic key, represented as an 8-character hexadecimal string.
-
-        returns:
-            note: The response from the command execution.
-        """
         # RAK3172 not support
         # key:8 hex string
         return self.send_cmd(f"AT+PKEY={key}", True, True)
 
     def get_p2p_encryption_iv(self):
-        """
-        note:
-            en: Get the encryption IV in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The encryption IV as a string.
-        """
         return self.send_cmd("AT+CRYPIV=?", True)
 
     def set_p2p_encryption_iv(self, iv: str):
-        """
-        note:
-            en: Set the encryption IV in P2P mode.
-
-        params:
-            iv:
-                note: The encryption IV, represented as an 8-character hexadecimal string.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+CRYPIV={iv}", True, True)
 
     def get_p2p_parameters(self):
-        """
-        note:
-            en: Get the current P2P parameters.
-
-        params:
-            note:
-
-        returns:
-            note: The current P2P parameters as a string.
-        """
         return self.send_cmd("AT+P2P=?", True)
 
     def set_p2p_parameters(
@@ -2010,27 +1114,6 @@ class RUI3:
         preamble_length: int = 8,
         tx_power: int = 14,
     ):
-        """
-        note:
-            en: Set P2P LoRa parameters, including frequency, spreading factor, bandwidth, code rate, preamble length, and transmit power.
-
-        params:
-            frequency:
-                note: The frequency to use for communication, range 150000000-960000000.
-            spreading_factor:
-                note: The spreading factor, which can be {6, 7, 8, 9, 10, 11, 12}.
-            bandwidth:
-                note: The bandwidth, which can be {125, 250, 500}.
-            code_rate:
-                note: The code rate, where possible values are {4/5=0, 4/6=1, 4/7=2, 4/8=3}.
-            preamble_length:
-                note: The length of the preamble, which can be from 2 to 65535.
-            tx_power:
-                note: The transmit power, which can be in the range {5-22}.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(
             f"AT+P2P={frequency}:{spreading_factor}:{bandwidth}:{code_rate}:{preamble_length}:{tx_power}",
             True,
@@ -2038,187 +1121,59 @@ class RUI3:
         )
 
     def get_p2p_iq_inversion(self):
-        """
-        note:
-            en: Get the current IQ inversion state in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The IQ inversion state as an integer (0 or 1).
-        """
         return int(self.send_cmd("AT+IQINVER=?", True))
 
     def set_p2p_iq_inversion(self, state: bool):
-        """
-        note:
-            en: Enable or disable IQ inversion in P2P mode.
-
-        params:
-            state:
-                note: 0 to disable, 1 to enable IQ inversion.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+IQINVER={int(state)}", True, True)
 
     def get_p2p_sync_word(self):
-        """
-        note:
-            en: Get the current sync word in P2P mode.
+        """Get the current sync word in P2P mode.
 
-        params:
-            note:
+        :returns: The sync word as a string.
+        :rtype: str
 
-        returns:
-            note: The sync word as a string.
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sync_word = lorawan_rui3.get_p2p_sync_word()
+                print(f"Current P2P sync word: {sync_word}")
+
         """
         return self.send_cmd("AT+SYNCWORD=?", True)
 
     def set_p2p_sync_word(self, sync_word: int):
-        """
-        note:
-            en: Set the sync word in P2P mode.
+        """Set the sync word in P2P mode.
 
-        params:
-            sync_word:
-                note: The sync word value, which should be in the range of 0x0000 to 0xFFFF.
+        :param int sync_word: The sync word value.
 
-        returns:
-            note: The response from the command execution.
+            - Must be in the range of 0x0000 to 0xFFFF.
+
+        :returns: The response from the command execution.
+        :rtype: bool
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                success = lorawan_rui3.set_p2p_sync_word(0x1234)
+                if success:
+                    print("P2P sync word set successfully!")
+                else:
+                    print("Failed to set P2P sync word.")
+
         """
         sync_word_str = f"{sync_word:04X}"
         return self.send_cmd(f"AT+SYNCWORD={sync_word_str}", True, True)
 
     def get_p2p_symbol_timeout(self):
-        """
-        note:
-            en: Get the current symbol timeout in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The symbol timeout as an integer.
-        """
         return int(self.send_cmd("AT+SYMBOLTIMEOUT=?", True))
 
     def set_p2p_symbol_timeout(self, timeout):
-        """
-        note:
-            en: Set the symbol timeout in P2P mode.
-
-        params:
-            timeout:
-                note: The timeout value, which should be in the range of 0-248.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+SYMBOLTIMEOUT={int(timeout)}", True, True)
 
     def get_p2p_fix_length_payload_state(self):
-        """
-        note:
-            en: Get the current fixed length payload state in P2P mode.
-
-        params:
-            note:
-
-        returns:
-            note: The fixed length payload state as an integer (0 or 1).
-        """
         return int(self.send_cmd("AT+FIXLENGTHPAYLOAD=?", True))
 
     def set_p2p_fix_length_payload_state(self, state: bool):
-        """
-        note:
-            en: Enable or disable fixed length payload in P2P mode.
-
-        params:
-            state:
-                note: 0 to disable, 1 to enable fixed length payload.
-
-        returns:
-            note: The response from the command execution.
-        """
         return self.send_cmd(f"AT+FIXLENGTHPAYLOAD={int(state)}", True, True)
-
-
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
-#
-# SPDX-License-Identifier: MIT
-
-import sys
-
-if sys.platform != "esp32":
-    from typing import Literal
-
-
-class LoRaWANUnit_RUI3(RUI3):
-    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, debug=False):
-        super().__init__(id, port[1], port[0], debug)
-
-    def set_abp_config(self, dev_addr: str, apps_key: str, nwks_key: str):
-        """
-        note:
-            en: Configure the device for ABP (Activation By Personalization) mode using the provided device address, application session key, and network session key.
-
-        params:
-            dev_addr:
-                note: The device address for ABP configuration.
-            apps_key:
-                note: The application session key for encryption.
-            nwks_key:
-                note: The network session key for communication.
-        """
-        self.set_join_mode(0)
-        self.set_device_address(dev_addr)
-        self.set_apps_key(apps_key)
-        self.set_networks_key(nwks_key)
-
-    def get_abp_config(self) -> tuple[str | bool | None, str | bool | None, str | bool | None]:
-        """
-        note:
-            en: Retrieve the current ABP configuration, including the device address, application session key, and network session key.
-
-        params:
-            note:
-
-        returns:
-            note: A tuple containing the device address, application session key, and network session key. Returns None or False for missing or invalid configurations.
-        """
-        return (self.get_device_address(), self.get_apps_key(), self.get_networks_key())
-
-    def set_otaa_config(self, device_eui, app_eui, app_key):
-        """
-        note:
-            en: Configure the device for OTAA (Over-The-Air Activation) mode using the provided device EUI, application EUI, and application key.
-
-        params:
-            device_eui:
-                note: The device EUI for OTAA configuration.
-            app_eui:
-                note: The application EUI for OTAA configuration.
-            app_key:
-                note: The application key for encryption.
-        """
-        self.set_join_mode(1)
-        self.set_device_eui(device_eui)
-        self.set_app_eui(app_eui)
-        self.set_app_key(app_key)
-
-    def get_otaa_config(self):
-        """
-        note:
-            en: Retrieve the current OTAA configuration, including the device EUI, application key, and application EUI.
-
-        params:
-            note:
-
-        returns:
-            note: A tuple containing the device EUI, application key, and application EUI.
-        """
-        return (self.get_device_eui(), self.get_app_key(), self.get_app_eui())

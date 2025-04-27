@@ -12,6 +12,7 @@
 #
 # import os
 import sys
+
 # sys.path.insert(0, os.path.abspath('.'))
 import subprocess, os
 
@@ -19,14 +20,15 @@ sys.path.insert(0, os.path.abspath("../../m5stack/libs/"))
 # -- Project information -----------------------------------------------------
 
 import datetime
+
 current_year = datetime.datetime.now().year
 
-project = 'UIFlow2 Programming Guide'
-copyright = '2016 - {} M5Stack Technology Co., Ltd'.format(current_year)
-author = 'pandian'
+project = "UIFlow2 Programming Guide"
+copyright = "2016 - {} M5Stack Technology Co., Ltd".format(current_year)
+author = "pandian"
 
 # The full version, including alpha/beta/rc tags
-release = 'master'
+release = "master"
 
 
 # -- General configuration ---------------------------------------------------
@@ -35,14 +37,15 @@ release = 'master'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'breathe',
-    'recommonmark',
-    'sphinx_markdown_tables',
-    'nbsphinx',
-    'sphinx_copybutton',
+    "breathe",
+    "recommonmark",
+    "sphinx_markdown_tables",
+    "nbsphinx",
+    "sphinx_copybutton",
     "sphinx.ext.intersphinx",
-    'sphinx.ext.autodoc',
+    "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinxcontrib.plantuml",
 ]
 
 autodoc_mock_imports = [
@@ -54,12 +57,13 @@ autodoc_mock_imports = [
     "m5can",
     "rf433",
     "utime",
+    "rui3",
 ]
 
 autodoc_default_options = {
-    'members': "",
-    'show-inheritance': "",
-    'members-order': 'bysource',
+    "members": "",
+    "show-inheritance": "",
+    "members-order": "bysource",
 }
 
 autodoc_typehints = "description"
@@ -88,7 +92,7 @@ latex_elements = {
 }
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -96,8 +100,8 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 # multi-language docs
-language = 'en'
-locale_dirs = ['../locales/']
+language = "en"
+locale_dirs = ["../locales/"]
 gettext_compact = False  # optional.
 gettext_uuid = True  # optional.
 
@@ -106,25 +110,24 @@ gettext_uuid = True  # optional.
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['../_static']
+html_static_path = ["../_static"]
 
-breathe_projects = { "zbhci": "../build/xml/" }
+breathe_projects = {"zbhci": "../build/xml/"}
 
 breathe_default_project = "zbhci"
 
 breathe_domain_by_extension = {
-    "h" : "c",
-    "c" : "c",
+    "h": "c",
+    "c": "c",
 }
 
-read_the_docs_build = os.environ.get('READTHEDOCS', None) == 'True'
+read_the_docs_build = os.environ.get("READTHEDOCS", None) == "True"
 
 
 if read_the_docs_build:
-
-    subprocess.call('cd ../; doxygen', shell=True)
+    subprocess.call("cd ../; doxygen", shell=True)

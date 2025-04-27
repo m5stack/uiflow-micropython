@@ -5,7 +5,7 @@
 _attrs = {
     "ATOMCANBase": "atom_can",
     "AtomDTULoRaWANBase": "dtu_lorawan",
-    "AtomDTUNBIoT": "dtu_nbiot",
+    "AtomDTULoRaWANRUI3Base": "dtu_lorawan_rui3",
     "ATOMGPSBase": "atom_gps",
     "ATOMSocketBase": "atom_socket",
     "ATOMEchoBase": "echo",

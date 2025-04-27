@@ -19,6 +19,7 @@
     :width: 200px
 
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorawancn470/init.png
+.. |config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorawancn470/config.png
 .. |reset_module_to_default.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorawancn470/reset_module_to_default.png
 .. |set_low_power_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorawancn470/set_low_power_mode.png
 .. |set_join_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/lorawancn470/set_join_config.png
