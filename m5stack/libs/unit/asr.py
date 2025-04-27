@@ -90,7 +90,7 @@ class ASRUnit:
             print(*args, **kwargs)
 
     def _handler(self, uart) -> None:
-        data = uart.readline()
+        data = uart.read()
         if data is not None and len(data) >= 5:
             self._debug_print(("Received data: ", data))
 
