@@ -147,7 +147,7 @@ const char *boards[] = {
     "nanoc6",         // 140
     "atom-matrix",    // 141
     "atom-echo",      // 142
-    "unknown",        // 143
+    "atoms3r-cam",    // 143
     "unknown",        // 144
     "unknown",        // 145
     "unknown",        // 146

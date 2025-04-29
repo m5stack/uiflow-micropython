@@ -273,7 +273,11 @@ class DownloadView:
             self.progress_label.set_text("0%")
         else:
             self.rgb = RGB()
-            self.rgb.set_color(0, self.COLOR_YELLOW)
+            if self.rgb:
+                self.rgb.set_color(0, self.COLOR_YELLOW)
+            else:
+                print("Sync...")
+                print("0%")
 
     def set_total_size(self, size):
         self.total_size = size
@@ -285,23 +289,32 @@ class DownloadView:
         if self.view_info:
             self.progress_label.set_text(f"{percent}%")
         else:
-            self.rgb.set_color(0, self.COLOR_BLACK)
-            time.sleep(0.02)
-            self.rgb.set_color(0, self.COLOR_BLUE)
-            time.sleep(0.02)
+            if self.rgb:
+                self.rgb.set_color(0, self.COLOR_BLACK)
+                time.sleep(0.02)
+                self.rgb.set_color(0, self.COLOR_BLUE)
+                time.sleep(0.02)
+            else:
+                print(f"{percent}%")
 
     def on_success(self):
         if self.view_info:
             self.title_label.set_text("Success")
         else:
-            self.rgb.set_color(0, self.COLOR_GREEN)
+            if self.rgb:
+                self.rgb.set_color(0, self.COLOR_GREEN)
+            else:
+                print("Success")
         time.sleep(1)
 
     def on_failed(self):
         if self.view_info:
             self.title_label.set_text("Failed")
         else:
-            self.rgb.set_color(0, self.COLOR_RED)
+            if self.rgb:
+                self.rgb.set_color(0, self.COLOR_RED)
+            else:
+                print("Failed")
 
     def on_exit(self):
         if self.view_info:
