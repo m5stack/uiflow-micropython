@@ -107,13 +107,49 @@ class _Expander:
 
 
 class AudioModule:
+    """Initialize the audio module.
+
+    :param i2s_port: I2S port number.
+    :param sample_rate: Sample rate (default is 16000).
+    :param i2s_sck: I2S clock pin.
+    :param i2s_ws: I2S word select pin.
+    :param i2s_di: I2S data input pin.
+    :param i2s_do: I2S data output pin.
+    :param i2s_mclk: I2S master clock pin.
+    :param work_mode: Work mode (0: headphone, 1: line in).
+    :param offset: Generally speaking, when using line in, offset is False; if the input is connected to an ADC microphone, offset is True. (Only valid in line in mode).
+    :param mux: Select the TRRS plug to be used. (default is MUX_NATIONAL).
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from module import AudioModule
+
+            audio_0 = AudioModule(0, 16000, i2s_sck=7, i2s_ws=6, i2s_di=14, i2s_do=13, i2s_mclk=0, work_mode=AudioModule.MODE_HEADPHONE, offset=False, mux=AudioModule.MUX_NATIONAL)
+    """
+
     MUX_NATIONAL = _Expander.AUDIO_HPMODE_NATIONAL
+    """National Standard audio mode (OMTP)"""
+
     MUX_AMERICAN = _Expander.AUDIO_HPMODE_AMERICAN
+    """American Standard audio mode (CTIA)"""
+
     MODE_LINE = 0
+    """Line in mode"""
+
     MODE_HEADPHONE = 1
+    """Headphone mode"""
 
     MONO = 1
+    """Mono"""
+
     STEREO = 2
+    """Stereo"""
 
     def __init__(
         self,
@@ -172,60 +208,296 @@ class AudioModule:
             channel=2,
         )
 
-    def play_wav_file(self, file):
+    def play_wav_file(self, file: str) -> None:
+        """Play a WAV file.
+
+        :param str file: The path of the WAV file to play.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |play_wav_file.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.play_wav_file("/flash/res/audio/test.wav")
+        """
         if self.mic.is_running():
             self.mic.deinit()
         self.spk.play_wav_file(file)
 
-    def tone(self, freq, duration):
+    def tone(self, freq: int, duration: int) -> None:
+        """Play simple tone sound.
+
+        :param int freq: Frequency of the tone in Hz.
+        :param int duration: Duration of the tone in milliseconds.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |tone.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.tone(2000, 50)
+        """
         if self.mic.is_running():
             self.mic.deinit()
         self.spk.tone(freq, duration)
 
-    def play_wav(self, buf, duration=-1):
+    def play_wav(self, buf: bytes, duration: int = -1) -> None:
+        """Play a WAV buffer.
+
+        :param bytes buf: The WAV buffer to play.
+        :param int duration: Duration of the WAV buffer in milliseconds. when duration is -1, it will play until stopped. (default is -1).
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |play_wav.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.play_wav(wav_buffer, duration=1000)
+        """
         if self.mic.is_running():
             self.mic.deinit()
         self.spk.play_wav(buf, duration=duration)
 
-    def play_raw(self, buf, rate=16000, bits=16, channel=2, duration=-1):
+    def play_raw(
+        self, buf: bytes, rate: int = 16000, bits: int = 16, channel: int = 2, duration: int = -1
+    ) -> None:
+        """Play a pcm buffer.
+
+        :param bytes buf: The PCM buffer to play.
+        :param int rate: Sample rate (default is 16000).
+        :param int bits: Bit depth (default is 16).
+        :param int channel: Number of channels (default is 2).
+        :param int duration: Duration of the PCM buffer in milliseconds. when duration is -1, it will play until stopped. (default is -1).
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |play_raw.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.play_raw(pcm_buffer, rate=16000, bits=16, channel=2, duration=1000)
+        """
         if self.mic.is_running():
             self.mic.deinit()
         self.spk.play_raw(buf, rate=rate, bits=bits, channel=channel, duration=duration)
 
-    def pause(self):
+    def pause(self) -> None:
+        """Pause the playback.
+
+        UiFlow2 Code Block:
+
+            |pause.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio.tone(2000, 100)
+                time.sleep(0.05)
+                audio_0.pause()
+                time.sleep(0.05)
+                audio_0.resume()
+        """
         self.spk.pause()
 
     def resume(self):
+        """Resume the playback.
+
+        UiFlow2 Code Block:
+
+            |resume.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio.tone(2000, 100)
+                time.sleep(0.05)
+                audio_0.pause()
+                time.sleep(0.05)
+                audio_0.resume()
+        """
         self.spk.resume()
 
     def stop(self):
+        """Stop the playback.
+
+        UiFlow2 Code Block:
+
+            |stop.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio.tone(2000, 100)
+                time.sleep(0.05)
+                audio_0.stop()
+        """
         self.spk.stop()
 
-    def get_volume(self):
+    def get_volume(self) -> int:
+        """Get the speaker volume level.
+
+        :return: The volume level (0-100).
+
+        UiFlow2 Code Block:
+
+            |get_volume.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.get_volume()
+        """
         return self.es.get_dac_volume()
 
     def set_volume(self, volume):
+        """Set the speaker volume level.
+
+        :param int volume: The volume level (0-100).
+
+        UiFlow2 Code Block:
+
+            |set_volume.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.set_volume(50)
+        """
         self.spk.es.set_dac_volume(volume)
 
-    def record_wav_file(self, path, rate=16000, bits=16, channel=2, duration=3000):
+    def record_wav_file(
+        self, path: str, rate: int = 16000, bits: int = 16, channel: int = 2, duration: int = 3000
+    ):
+        """Record audio to a WAV file.
+
+        :param str path: The path to save the WAV file.
+        :param int rate: Sample rate (default is 16000).
+        :param int bits: Bit depth (default is 16).
+        :param int channel: Number of channels (default is 2).
+        :param int duration: Duration of the recording in milliseconds (default is 3000).
+
+        UiFlow2 Code Block:
+
+            |record_wav_file.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.record_wav_file("/flash/res/audio/test.wav", rate=16000, bits=16, channel=2, duration=3000)
+        """
         self.spk.deinit()
         self.mic.record_wav_file(path, rate=rate, bits=bits, channel=channel, duration=duration)
 
     def record(self, rate=16000, bits=16, channel=2, duration=3000):
+        """Record audio to a PCM buffer.
+
+        :param int rate: Sample rate (default is 16000).
+        :param int bits: Bit depth (default is 16).
+        :param int channel: Number of channels (default is 2).
+        :param int duration: Duration of the recording in milliseconds (default is 3000).
+
+        UiFlow2 Code Block:
+
+            |record.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.record(rate=16000, bits=16, channel=2, duration=3000)
+        """
         self.spk.deinit()
         return self.mic.record(rate=rate, bits=bits, channel=channel, duration=duration)
 
     @property
-    def pcm_buffer(self):
+    def pcm_buffer(self) -> bytes:
+        """Get the PCM buffer.
+
+        :return: The PCM buffer.
+
+        UiFlow2 Code Block:
+
+            |pcm_buffer.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.pcm_buffer
+        """
         return self.mic.pcm_buffer
 
     def set_color(self, num: int, color: int):
+        """Set the RGB LED color.
+
+        :param int num: The LED number (0-2).
+        :param int color: The color value (0xRRGGBB).
+
+        UiFlow2 Code Block:
+
+            |set_color.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.set_color(0, 0xFF0000)
+        """
         self.exp.set_color(num, color)
 
     def fill_color(self, color: int):
+        """Fill all RGB LEDs with the same color.
+
+        :param int color: The color value (0xRRGGBB).
+
+        UiFlow2 Code Block:
+
+            |fill_color.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.fill_color(0xFF0000)
+        """
         self.exp.fill_color(color)
 
     def set_brightness(self, br: int):
+        """Set the RGB LED brightness.
+
+        :param int br: The brightness level (0-100).
+
+        UiFlow2 Code Block:
+
+            |set_brightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                audio_0.set_brightness(50)
+        """
         self.exp.set_brightness(br)
 
     def deinit(self):

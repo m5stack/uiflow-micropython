@@ -1,0 +1,53 @@
+.. |Audio Module| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1141/M144_01.webp
+    :target: https://docs.m5stack.com/en/module/Module-Audio
+    :height: 200px
+    :width: 200px
+
+.. |fill_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/fill_color.png
+.. |get_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/get_volume.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/init.png
+.. |init2.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/init2.png
+.. |pause.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/pause.png
+.. |pcm_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/pcm_buffer.png
+.. |play_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/play_raw.png
+.. |play_wav.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/play_wav.png
+.. |play_wav_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/play_wav_file.png
+.. |record.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/record.png
+.. |record_wav_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/record_wav_file.png
+.. |resume.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/resume.png
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/set_brightness.png
+.. |set_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/set_color.png
+.. |set_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/set_volume.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/stop.png
+.. |tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/tone.png
+
+.. |cores3_play_wav_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/cores3_play_wav_example.png
+.. |cores3_playback_controls_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/cores3_playback_controls_example.png
+.. |cores3_record_audio_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/audio/cores3_record_audio_example.png
+
+.. |cores3_play_wav_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_play_wav_example.m5f2"
+        target="_blank"
+    >
+        ain4_core2_example.m5f2
+    </a>
+
+.. |cores3_playback_controls_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_playback_controls_example.m5f2"
+        target="_blank"
+    >
+        ain4_core2_example.m5f2
+    </a>
+
+.. |cores3_record_audio_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_record_audio_example.m5f2"
+        target="_blank"
+    >
+        ain4_core2_example.m5f2
+    </a>

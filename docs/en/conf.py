@@ -58,6 +58,7 @@ autodoc_mock_imports = [
     "rf433",
     "utime",
     "rui3",
+    "m5audio2",
 ]
 
 autodoc_default_options = {
