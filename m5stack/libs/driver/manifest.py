@@ -12,6 +12,8 @@ package(
         "atecc608b_tngtls/atecc.py",
         "es8311/__init__.py",
         "es8311/reg.py",
+        "es8388/__init__.py",
+        "es8388/reg.py",
         "fpc1020a/fpc1020a/__init__.py",
         "fpc1020a/fpc1020a/api.py",
         "fpc1020a/fpc1020a/types.py",

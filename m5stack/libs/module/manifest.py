@@ -7,6 +7,7 @@ package(
     (
         "__init__.py",
         "ain4.py",
+        "audio.py",
         "bala2.py",
         "commu.py",
         "display.py",
