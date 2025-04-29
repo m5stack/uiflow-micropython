@@ -31,7 +31,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 .. only:: builder_html
 
@@ -59,7 +59,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -71,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |read_temperature.svg|
+        |read_temperature.png|
 
 
 .. method:: ENVUnit.read_humidity()
@@ -80,7 +80,7 @@ Methods
 
     UIFLOW2:
 
-        |read_humidity.svg|
+        |read_humidity.png|
 
 
 .. method:: ENVUnit.read_pressure()
@@ -89,4 +89,4 @@ Methods
 
     UIFLOW2:
 
-        |read_pressure.svg|
+        |read_pressure.png|

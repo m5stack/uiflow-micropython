@@ -701,7 +701,7 @@ class ModbusSlave:
 
 
 class _CModbusRTUSlave(ModbusSlave):
-    def __init__(self, uart, verbose=True, *args, **kwargs):
+    def __init__(self, uart, verbose=False, *args, **kwargs):
         self._verbose = verbose
         self.uart = uart
         super(_CModbusRTUSlave, self).__init__(sl_type="rtu", *args, **kwargs)
@@ -720,7 +720,7 @@ class _CModbusRTUSlave(ModbusSlave):
     def tick(self):
         if not self.stopped and self.uart.inWaiting():
             rsp = self.uart.read_all()
-            frame = ModbusRTUFrame.parse_frame(rsp)
+            frame = ModbusRTUFrame.parse_frame(rsp, verbose=self._verbose)
             if frame is None or (
                 self.ignore_unit_id is not True and frame.device_addr != self._device_address
             ):
@@ -738,7 +738,7 @@ class _CModbusRTUSlave(ModbusSlave):
 
 
 class _MModbusRTUSlave(ModbusSlave):
-    def __init__(self, uart, verbose=True, *args, **kwargs):
+    def __init__(self, uart, verbose=False, *args, **kwargs):
         self._verbose = verbose
         self.uart = uart
         super(_MModbusRTUSlave, self).__init__(
@@ -768,7 +768,7 @@ class _MModbusRTUSlave(ModbusSlave):
     def tick(self):
         if not self.stopped and self.uart.any():
             rsp = self.uart.read()
-            frame = ModbusRTUFrame.parse_frame(rsp)
+            frame = ModbusRTUFrame.parse_frame(rsp, verbose=self._verbose)
             if frame is None or (
                 self.ignore_unit_id is not True and frame.device_addr != self._device_address
             ):
@@ -795,7 +795,7 @@ class ModbusRTUSlave:
 
 
 class _CModbusTCPServer(ModbusSlave):
-    def __init__(self, host, port, verbose=True, *args, **kwargs):
+    def __init__(self, host, port, verbose=False, *args, **kwargs):
         self.host = host
         self.port = port
         self._verbose = verbose
@@ -822,7 +822,7 @@ class _CModbusTCPServer(ModbusSlave):
                 frame = conn.recv(256)
                 if len(frame) > 0:
                     try:
-                        frame = ModbusTCPFrame.parse_frame(frame)
+                        frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                         if frame is None or (
                             self.ignore_unit_id is not True
                             and frame.device_addr != self._device_address
@@ -855,7 +855,7 @@ class _CModbusTCPServer(ModbusSlave):
                         client = self.clients[fd]
                         frame = client.recv(256)
                         if len(frame) > 0:
-                            frame = ModbusTCPFrame.parse_frame(frame)
+                            frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                             if frame is None or (
                                 self.ignore_unit_id is not True
                                 and frame.unit_id != self._device_address
@@ -890,7 +890,7 @@ class _CModbusTCPServer(ModbusSlave):
             while True:
                 frame = await loop.sock_recv(conn, 256)
                 if len(frame) > 0:
-                    req = ModbusTCPFrame.parse_frame(frame)
+                    req = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                     if req is None or (req.device_addr != self._device_address):
                         continue
                     self._verbose and print("received Frame        {}".format(req))
@@ -914,7 +914,7 @@ class _CModbusTCPServer(ModbusSlave):
 
 
 class _MModbusTCPServer(ModbusSlave):
-    def __init__(self, host, port, verbose=True, *args, **kwargs):
+    def __init__(self, host, port, verbose=False, *args, **kwargs):
         self.host = host
         self.port = port
         self._verbose = verbose
@@ -942,7 +942,7 @@ class _MModbusTCPServer(ModbusSlave):
                 frame = conn.recv(256)
                 if len(frame) > 0:
                     try:
-                        frame = ModbusTCPFrame.parse_frame(frame)
+                        frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                         if frame is None or (
                             self.ignore_unit_id is not True
                             and frame.unit_id != self._device_address
@@ -972,7 +972,7 @@ class _MModbusTCPServer(ModbusSlave):
                 else:
                     frame = fd.recv(256)
                     if len(frame) > 0:
-                        frame = ModbusTCPFrame.parse_frame(frame)
+                        frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                         if frame is None or (
                             self.ignore_unit_id is not True
                             and frame.unit_id != self._device_address
@@ -1006,7 +1006,7 @@ class _MModbusTCPServer(ModbusSlave):
             while True:
                 frame = await loop.sock_recv(conn, 256)
                 if len(frame) > 0:
-                    req = ModbusTCPFrame.parse_frame(frame)
+                    req = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                     if req is None or req.device_addr != self._device_address:
                         continue
                     self._verbose and print("received Frame        {}".format(req))

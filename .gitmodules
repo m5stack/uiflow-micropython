@@ -28,7 +28,9 @@
 [submodule "m5stack/components/epdiy"]
 	path = m5stack/components/epdiy
 	url = https://github.com/vroland/epdiy.git
- 
 [submodule "m5stack/components/esp_zigbee_host"]
 	path = m5stack/components/esp_zigbee_host
 	url = https://github.com/hlym123/esp_zigbee_host.git
+[submodule "m5stack/cmodules/lv_binding_micropython"]
+	path = m5stack/cmodules/lv_binding_micropython
+	url = https://github.com/lvgl/lv_binding_micropython.git

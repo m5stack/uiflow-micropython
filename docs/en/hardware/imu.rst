@@ -56,9 +56,9 @@ class IMU
 
 .. important::
 
-    Methods of the IMU Class heavily rely on ``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg|.
+    Methods of the IMU Class heavily rely on ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png|.
 
-    All calls to methods of IMU objects should be placed after ``M5.begin()`` |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in the main loop.
+    All calls to methods of IMU objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
 
 Methods

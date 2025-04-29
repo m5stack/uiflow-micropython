@@ -6,6 +6,7 @@ set(IDF_TARGET esp32c6)
 
 # nanoc6 https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L33
 set(BOARD_ID 140)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.base

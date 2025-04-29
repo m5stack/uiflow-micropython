@@ -1,0 +1,44 @@
+.. |8Servos Unit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/8Servos%20Unit/img-353a21be-5d6e-4323-912c-5b9df887b513.webp
+    :target: https://docs.m5stack.com/en/unit/8Servos%20Unit
+    :height: 200px
+    :width: 200px
+
+.. |example_servo.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/example_servo.png
+.. |example_rgb.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/example_rgb.png
+
+
+.. |get_12bit_adc_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_12bit_adc_raw.png
+.. |get_8bit_adc_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_8bit_adc_raw.png
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_device_spec.png
+.. |get_digital_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_digital_input.png
+.. |get_input_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_input_current.png
+.. |get_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_mode.png
+.. |get_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_rgb_led.png
+.. |get_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_servo_angle.png
+.. |get_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/get_servo_pulse.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/init.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_i2c_address.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_mode.png
+.. |set_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_output_value.png
+.. |set_pwm_dutycycle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_pwm_dutycycle.png
+.. |set_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_rgb_led.png
+.. |set_servo_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_servo_angle.png
+.. |set_servo_pulse.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/8servos/set_servo_pulse.png
+
+.. |cores3_servo_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/8servos/cores3_servo_example.m5f2"
+        target="_blank"
+    >
+        cores3_servo_example.m5f2
+    </a>
+
+.. |cores3_rgb_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/8servos/cores3_rgb_example.m5f2"
+        target="_blank"
+    >
+        cores3_rgb_example.m5f2
+    </a>

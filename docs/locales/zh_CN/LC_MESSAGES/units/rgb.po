@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-11 15:31+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,132 +18,156 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/rgb.rst:2 ba00c602b2ab4d73bf2790c52fbbb02d
+#: ../../en/units/rgb.rst:2 c2eb204b666c4b559e738a5947f5a739
 msgid "RGB Unit"
 msgstr ""
 
-#: ../../en/refs/unit.rgb.ref 10490323322446809f67dfff8960d3c5
-#: c8170e90bb784b23b8bb697ebc3af749
-msgid "RGB"
-msgstr ""
-
-#: ../../en/refs/unit.rgb.ref:6 2dbec74834a943cb8b2a44031c17ca68
-#: d406582ca72a41c0a86dd302e19a760b
-msgid "example.svg"
-msgstr ""
-
-#: ../../en/refs/unit.rgb.ref:8 47bfe18bb5c64086bce417088fd05d86
-#: 6d603fe9109049e0b972cf2c3469f7a8
-msgid "init.svg"
-msgstr ""
-
-#: ../../en/refs/unit.rgb.ref:10 692eb1871f9843cda79e37887f50ef73
-#: e596e7a6403348f19ccba862fd9fef69
-msgid "set_brightness.svg"
-msgstr ""
-
-#: ../../en/refs/unit.rgb.ref:12 2bec3a51ebb24b6b92281bc057a72a0b
-#: 7a4b1c821cec4ea7887a7171f9c7c384
-msgid "fill_color.svg"
-msgstr ""
-
-#: ../../en/refs/unit.rgb.ref:14 ac3da54544a34922818c9b6ed479eb37
-#: fb2816a31617492fbc66c7cee6d297a3
-msgid "set_color.svg"
-msgstr ""
-
-#: ../../en/units/rgb.rst:6 9d362cf8490949f9aaa63a61707d919b
+#: ../../en/units/rgb.rst:6 0d2b0869c44c45338c321ad8f608f675
 msgid "The following products are supported:"
 msgstr "支持以下产品："
 
-#: ../../en/units/rgb.rst:8 4ea378848d6f47aca3b33c1443b4e3c0
+#: ../../en/units/rgb.rst:8 9fc8c89d44204fb6a226fe3036906b92
 msgid "|RGB|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:11 47d6d120ae074a81a9f736c7fc170e03
+#: ../../en/refs/unit.rgb.ref b81ea351bfbf436b9fc2b7f19ad25678
+msgid "RGB"
+msgstr ""
+
+#: ../../en/units/rgb.rst:11 4bd1b778afb543c3a2e0b77cdf01f4d5
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/units/rgb.rst:26 99eca9618d8743b189c712b4f5adc216
+#: ../../en/units/rgb.rst:26 3ef22899ea7a4c1a98119f993576faf9
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/rgb.rst:28 ca9e3cd7f2ef41c487ca213967490081
-msgid "|example.svg|"
+#: ../../en/units/rgb.rst:28 c44b855e7ea74ddea7f4f4609e8ddd43
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:33 9f0bc713212e4802b09b218e724e9a27
+#: ../../en/refs/unit.rgb.ref:6 5de2f9c35a6f431fbf5688983bb0520f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/rgb.rst:33 cdd8f22a9d7045f0bba23e7acd39e02f
 msgid "|rgb_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:37 55b3fbdaf1a64ed28acb49570f778f54
+#: ../../en/units/rgb.rst:37 4561cb0e420d45f180e824e8b8f4a6cb
 msgid "class RGB"
 msgstr ""
 
-#: ../../en/units/rgb.rst:40 54aaab02747f4eeea2f1a268b3fb640d
+#: ../../en/units/rgb.rst:40 743fc309dda7478e8265c49a5c11d784
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/rgb.rst:44 7733e65440be4e34adf6bfe02524d5b4
+#: ../../en/units/rgb.rst:44 095c789fd97e4ecf89e0fb64d0aa3a75
 msgid "Create an RGB object."
 msgstr "创建一个RGB对象。"
 
-#: ../../en/units/rgb.rst:48 c59938454f0b44eb894f3b8358f4ff29
+#: ../../en/units/rgb.rst:48 f6367784603040a1bb1255d91e8db4c4
 msgid "parameter is:"
 msgstr "参数是："
 
-#: ../../en/units/rgb.rst:47 6d1922796e804324aa3f365b11ea19a1
+#: ../../en/units/rgb.rst:47 36c5e0484b8c416a9b33d46553ffef43
 msgid "``port`` is the pins number of the port"
 msgstr "``port`` 是端口的引脚号"
 
-#: ../../en/units/rgb.rst:48 4002a7e67b934cfcb2bfd402a41c8f9c
+#: ../../en/units/rgb.rst:48 5c6de12f53a14eab911d05ee830e7b58
 msgid "``number`` is the number of RGB lamp beads"
 msgstr "``number`` 是灯珠数量"
 
 #: ../../en/units/rgb.rst:50 ../../en/units/rgb.rst:62
 #: ../../en/units/rgb.rst:71 ../../en/units/rgb.rst:80
-#: 07cb9859e4b94769b637a3c615c0d0bd dba569c06d8b48e48d0ef5af476f78b4
-#: e1f13b3b50dc404c9e9caaccf0ddcc78 f6e61df9dfa3456ba435a97088086f3f
+#: 79ad51f6336a4fbd91635e6d8ba80015 875307679f1842d184926fcc27c2edf4
+#: d0388cc2741b4ecc898db57f276cafe4 d7c7a121de694620bca6d33600bf7b64
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/rgb.rst:52 ba84770f2717480cbfca52462eac655e
-msgid "|init.svg|"
+#: ../../en/units/rgb.rst:52 b1d14b82d314473382a267bc239d578f
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:56 559de38dc610451f9ad8048bd4bee7f0
+#: ../../en/refs/unit.rgb.ref:8 d32c9fd5052044cf9bf128ff12221ebd
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/rgb.rst:56 19009a60c5de4b76ab082ec3fd8744b0
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/rgb.rst:60 b5917c338d844683b90161bf0d73fa92
+#: ../../en/units/rgb.rst:60 84fc25f40b254674a8d0923f5bdd98ea
 msgid ""
 "This method is used to set the brightness of RGB lamp beads, and the "
 "setting range is 0-100."
 msgstr "此方法用于设置RGB灯珠亮度, 设置范围为0-100。"
 
-#: ../../en/units/rgb.rst:64 2a1003adecbd46479703458e06fe8cce
-msgid "|set_brightness.svg|"
+#: ../../en/units/rgb.rst:64 1a1ba04d148149d8b25e2adb3f77e484
+msgid "|set_brightness.png|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:69 d4436e5148c64ece821de8ba258f6fec
+#: ../../en/refs/unit.rgb.ref:10 ea14c4dea06749f7aa06f365ae480252
+msgid "set_brightness.png"
+msgstr ""
+
+#: ../../en/units/rgb.rst:69 95bca7b672634a38861c6b4762f8233f
 msgid ""
 "This method is used to set the color of all RGB lamp beads, and the input"
 " value is 3-byte RGB888."
 msgstr "此方法用于设置全部RGB灯珠颜色, 传入值为3字节的RGB888。"
 
-#: ../../en/units/rgb.rst:73 27cf2498f92a4b3ab419b66a631452b3
-msgid "|fill_color.svg|"
+#: ../../en/units/rgb.rst:73 c5584bc1dac54357b2f151de19a789e4
+msgid "|fill_color.png|"
 msgstr ""
 
-#: ../../en/units/rgb.rst:78 8abc5cea66cc4dab99e6572bd7265898
+#: ../../en/refs/unit.rgb.ref:12 4bf7ae197fdc4bd2ae2460fd49d3bca9
+msgid "fill_color.png"
+msgstr ""
+
+#: ../../en/units/rgb.rst:78 4c4749a7dc99412395f519991db9d9ab
 msgid ""
 "This method is used to set the specified RGB lamp bead color. The input "
 "value is the lamp bead index and 3-byte RGB888."
 msgstr "此方法用于设置指定RGB灯珠颜色, 传入值为灯珠索引和3字节的RGB888。"
 
-#: ../../en/units/rgb.rst:82 638d24049b3742fe8f713737a7381a42
-msgid "|set_color.svg|"
+#: ../../en/units/rgb.rst:82 e2ccf98fc72f4ea3a3dabb5759cfc38a
+msgid "|set_color.png|"
 msgstr ""
+
+#: ../../en/refs/unit.rgb.ref:14 75962d214e5f4a3091669a289f23f103
+msgid "set_color.png"
+msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "set_brightness.svg"
+#~ msgstr ""
+
+#~ msgid "fill_color.svg"
+#~ msgstr ""
+
+#~ msgid "set_color.svg"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "|set_brightness.svg|"
+#~ msgstr ""
+
+#~ msgid "|fill_color.svg|"
+#~ msgstr ""
+
+#~ msgid "|set_color.svg|"
+#~ msgstr ""
 

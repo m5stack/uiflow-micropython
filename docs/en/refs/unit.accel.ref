@@ -3,62 +3,42 @@
     :height: 200px
     :width: 200px
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/example.svg
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/init.svg
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/init.png
 
-.. |get_accel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_accel.svg
 .. |get_accel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_accel.png
 
-
-.. |enable_motion_detection1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_motion_detection.svg
 .. |enable_motion_detection1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_motion_detection.png
 
-.. |enable_motion_detection2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_motion_detection1.svg
 .. |enable_motion_detection2.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_motion_detection1.png
 
-.. |disable_motion_detection.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_motion_detection.svg
 .. |disable_motion_detection.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_motion_detection.png
 
-.. |is_tap.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_tap.svg
 .. |is_tap.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_tap.png
 
-.. |is_motion.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_motion.svg
 .. |is_motion.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_motion.png
 
-.. |is_freefall.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_freefall.svg
 .. |is_freefall.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/is_freefall.png
 
-.. |enable_freefall_detection1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_freefall_detection.svg
 .. |enable_freefall_detection1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_freefall_detection.png
 
-.. |enable_freefall_detection2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_freefall_detection2.svg
 .. |enable_freefall_detection2.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_freefall_detection2.png
 
-.. |disable_freefall_detection.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_freefall_detection.svg
 .. |disable_freefall_detection.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_freefall_detection.png
 
-.. |enable_tap_detection1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_tap_detection.svg
 .. |enable_tap_detection1.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_tap_detection.png
 
-.. |enable_tap_detection2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_tap_detection2.svg
 .. |enable_tap_detection2.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/enable_tap_detection2.png
 
-.. |disable_tap_detection.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_tap_detection.svg
 .. |disable_tap_detection.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/disable_tap_detection.png
 
-.. |get_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_data_rate.svg
 .. |get_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_data_rate.png
 
-.. |set_data_rate.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/set_data_rate.svg
 .. |set_data_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/set_data_rate.png
 
-.. |get_range.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_range.svg
 .. |get_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/get_range.png
 
-.. |set_range.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/set_range.svg
 .. |set_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/accel/set_range.png
 
 

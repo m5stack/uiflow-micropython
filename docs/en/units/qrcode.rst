@@ -175,7 +175,7 @@ Methods
     Get the firmware version details and I2C address of this device.
 
     The parameters is:
-	    - ``info``: 0xFE: firmware version, 0xFF: I2C address
+        - ``info``: 0xFE: firmware version, 0xFF: I2C address
 
     UIFLOW2:
 
@@ -195,7 +195,7 @@ Methods
 
     The i2c address can be changed by the user and this address should be between 0x01 and 0x7F.
 
-	- ``addr``: range of address(0x01 - 0x7F). 
+    - ``addr``: range of address(0x01 - 0x7F). 
 
     UIFLOW2:
 

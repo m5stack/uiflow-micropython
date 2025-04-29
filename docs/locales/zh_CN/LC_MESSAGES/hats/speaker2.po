@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-28 10:45+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,79 +20,91 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hats/speaker2.rst:4 45b622ba3ee34ab285f09be2bd010114
+#: ../../en/hats/speaker2.rst:4 c717761d3bb44e0482b534f376ed4f5a
 msgid "Speaker2 Hat"
 msgstr ""
 
-#: ../../en/hats/speaker2.rst:10 6abec3ed2e7143b5a8aec7dd35b0e191
+#: ../../en/hats/speaker2.rst:10 6a03e0e30f944ab5af09b309b0fa92d4
 msgid ""
 "This is the driver library of Speaker2 Hat, which is provides a set of "
 "methods to control the speaker."
 msgstr "这是 Speaker2 Hat 的驱动库，提供了控制扬声器的功能。"
 
-#: ../../en/hats/speaker2.rst:12 b05b8530731042bfa41df41fd6478d64
+#: ../../en/hats/speaker2.rst:12 06dced4614354cdc9a7b9019dda277f8
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/hats/speaker2.rst:14 6b83ba641fe8435b9781655d89dda0c0
+#: ../../en/hats/speaker2.rst:14 bee8639e0b4942e887c05823de966c06
 msgid "|Speaker2|"
 msgstr ""
 
-#: ../../en/hats/speaker2.rst:18 96f600cea6fb4d5287288e214fd92d7a
+#: ../../en/hats/speaker2.rst:57 ../../en/refs/hat.speaker2.ref
+#: 1b6edc02f85e458392cfbbeddbdff6ca 6b79eb6bce4a4857acda3d9dc684a8c1
+msgid "Speaker2"
+msgstr ""
+
+#: ../../en/hats/speaker2.rst:18 7946350b53a34cb0892d82f4a99cf14a
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
 #: ../../en/hats/speaker2.rst:20 ../../en/hats/speaker2.rst:38
-#: 1cd5924d4f424f78b819dd9feb880ed1 30dfca6bf7314b5e9184df71a8c39aba
+#: 1edfbcadc68e425887c44b37c33d336e fa1c07eb883a40c186b6cd307f872b89
 msgid "play audio"
 msgstr "播放音频"
 
-#: ../../en/hats/speaker2.rst:22 8d4619e62df54eb0a14ecc61a6714a4f
+#: ../../en/hats/speaker2.rst:22 e7242a2d7ede4a4e9119444f1ffe0c0d
 msgid "Open the |speaker2_stickcplus2_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |speaker2_stickcplus2_example.m5f2| 项目。"
 
 #: ../../en/hats/speaker2.rst:24 ../../en/hats/speaker2.rst:40
-#: 52c1d4bfdacf438cbd0447787deaa902 5a601875a81649e78b1980163c360a51
+#: 72d04bfba755427ab46ddce27b537bf2 e7e668c5df85425397d4549acd4fafc7
 msgid "This example demonstrates how to play audio."
 msgstr "这个示例演示了如何播放音频。"
 
-#: ../../en/hats/speaker2.rst:26 cc2bf49c6d7247af8123a1928a8697b2
+#: ../../en/hats/speaker2.rst:26 d40725cb02f949bb838ddaa347ad2782
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/hats/speaker2.rst:28 7ae223dccfae46e18b062f59767929b1
+#: ../../en/hats/speaker2.rst:28 daffbc2b7a754e2690716c2dba49069d
 msgid "|example.png|"
 msgstr ""
 
+#: ../../en/refs/hat.speaker2.ref:9 a14be26cf8ef4049802d352ea61af842
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
+
 #: ../../en/hats/speaker2.rst:30 ../../en/hats/speaker2.rst:48
-#: 08ff9b60ad434e5f8686485ec956d547 57a31e0bd37f4a6292c59428ebd38f89
+#: 6a74a8f9b5d14b97a23e5984b90a1b43 79afc37339c2436f82967136f918611d
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/hats/speaker2.rst:32 ../../en/hats/speaker2.rst:50
-#: 0ef4f74f90e54aa09980dcb757822bd1 d3ef95454f0749569d137996d556d919
+#: 1eeed9e12562450b865ea762c6d3c832 7387d4e30d594fa08490e0c4af1fd0ab
 msgid "None"
 msgstr ""
 
-#: ../../en/hats/speaker2.rst:35 7924eb04b76243a6a1b9d543a02f857e
+#: ../../en/hats/speaker2.rst:35 796bb4d3dd0c42c1bf768d5bc6ef434c
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../en/hats/speaker2.rst:42 75c333870b5f414984bb902a3c561310
+#: ../../en/hats/speaker2.rst:42 8ddc08c421ea43099b69f0f6e2f0b4bb
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/hats/speaker2.rst:54 8771d5c5fc6e4a218b931c3022ceb81d
+#: ../../en/hats/speaker2.rst:54 4bd99667f444491d9560e7d54c873fde
 msgid "**API**"
 msgstr ""
 
-#: ../../en/hats/speaker2.rst:57 5591946668d945e19a55281fd61bc1fc
-msgid "Speaker2"
+#: 1bb3e274083841818e82a39846dc0eae hat.speaker2.Speaker2Hat:1 of
+msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/hats/speaker2.rst:62 de42c8fe346245c696806a6139542f66
+#: ../../en/hats/speaker2.rst:62 0e9b3c2292af4f659fdc0f38aaf09994
 msgid ""
 "Speaker2 class inherits Speaker class, See :ref:`hardware.Speaker.Methods"
 " <hardware.Speaker.Methods>` for more details."
-msgstr "Speaker2 类继承 Speaker 类，请参阅 :ref:`hardware.Speaker.Methods"
-" <hardware.Speaker.Methods>` 了解更多详细信息。"
+msgstr ""
+"Speaker2 类继承 Speaker 类，请参阅 :ref:`hardware.Speaker.Methods "
+"<hardware.Speaker.Methods>` 了解更多详细信息。"
+

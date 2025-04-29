@@ -6,11 +6,11 @@
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/init.png
 
-.. |get_lux.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/get_lux.svg
+.. |get_lux.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/get_lux.png
 
-.. |configure.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/configure.svg
+.. |configure.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/dlight/configure.png
 
 
 .. |dlight_core_example.m5f2| raw:: html

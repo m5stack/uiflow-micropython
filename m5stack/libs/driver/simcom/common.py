@@ -3,12 +3,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-
+import sys
 import time
-import json
+from . import utils
 from collections import namedtuple
 
 AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
+ATCommand = namedtuple("ATCommand", ["cmd", "rsp1", "rsp2", "timeout"])
 
 
 class Response(object):
@@ -18,113 +19,120 @@ class Response(object):
 
 
 class Modem(object):
+    ERR_NONE = 0
+    ERR_GENERIC = 1
+    ERR_TIMEOUT = 2
+
     def __init__(
         self,
         uart=None,
-        MODEM_PWKEY_PIN=None,
-        MODEM_RST_PIN=None,
-        MODEM_POWER_ON_PIN=None,
-        MODEM_TX_PIN=None,
-        MODEM_RX_PIN=None,
+        pwrkey_pin=None,
+        reset_pin=None,
+        power_pin=None,
+        tx_pin=None,
+        rx_pin=None,
+        verbose=False,
     ):
         # Uart
         self.uart = uart
-        self.modem_debug = False
+        self._verbose = verbose
         self.downlink_callback = {}
         self.downlink_keyword = []
         self.callback_keyword = []
 
         if not self.uart:
-            from machine import UART, Pin
+            import machine
 
             # Pin initialization
-            MODEM_PWKEY_PIN_OBJ = Pin(MODEM_PWKEY_PIN, Pin.OUT) if MODEM_PWKEY_PIN else None  # noqa: N806
-            MODEM_RST_PIN_OBJ = Pin(MODEM_RST_PIN, Pin.OUT) if MODEM_RST_PIN else None  # noqa: N806
-            MODEM_POWER_ON_PIN_OBJ = (  # noqa: N806
-                Pin(MODEM_POWER_ON_PIN, Pin.OUT) if MODEM_POWER_ON_PIN else None
-            )
+            pwrkey_obj = machine.Pin(pwrkey_pin, machine.Pin.OUT) if pwrkey_pin else None
+            reset_obj = machine.Pin(reset_pin, machine.Pin.OUT) if reset_pin else None
+            power_obj = machine.Pin(power_pin, machine.Pin.OUT) if power_pin else None
 
             # Status setup
-            if MODEM_PWKEY_PIN_OBJ:
-                MODEM_PWKEY_PIN_OBJ.value(0)
-            if MODEM_RST_PIN_OBJ:
-                MODEM_RST_PIN_OBJ.value(1)
-            if MODEM_POWER_ON_PIN_OBJ:
-                MODEM_POWER_ON_PIN_OBJ.value(1)
+            if pwrkey_obj:
+                pwrkey_obj(0)
+            if reset_obj:
+                reset_obj(1)
+            if power_obj:
+                power_obj(1)
 
             # Setup UART
-            self.uart = UART(1, 115200, timeout=1000, rx=MODEM_TX_PIN, tx=MODEM_RX_PIN, rxbuf=1024)
+            self.uart = machine.UART(1, 115200, timeout=1000, rx=tx_pin, tx=rx_pin, rxbuf=1024)
 
     def check_modem_is_ready(self):
         # Check if modem is ready for AT command
-        AT = AT_CMD("AT", "OK", 10)  # noqa: N806
-        output, error = self.execute_at_command(AT, True)
+        at = AT_CMD("AT", "OK", 10)
+        output, error = self.execute_at_command(at, True)
         return not error
 
     def set_command_echo_mode(self, state=1):
         # Set echo mode off or on
-        ATE = AT_CMD("ATE{}".format(state), "OK", 3)  # noqa: N806
-        output, error = self.execute_at_command(ATE)
+        ate = AT_CMD("ATE{}".format(state), "OK", 3)
+        output, error = self.execute_at_command(ate)
         return not error
 
     def check_sim_is_connected(self):
         # Check the SIM card is connected or not?
-        CPIN = AT_CMD("AT+CPIN?", "+CPIN: READY", 10)  # noqa: N806
-        output, error = self.execute_at_command(CPIN)
+        cpin = AT_CMD("AT+CPIN?", "+CPIN: READY", 10)
+        output, error = self.execute_at_command(cpin)
         return not error
 
     def get_network_registration_status(self):
         # Get the registration status with the network
-        CREG = AT_CMD("AT+CREG?", "+CREG:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CREG)
+        creg = AT_CMD("AT+CREG?", "+CREG:", 3)
+        output, error = self.execute_at_command(creg)
         return False if error else int(output[-1])
 
     def get_signal_strength(self):
         # Get the signal strength
-        CSQ = AT_CMD("AT+CSQ", "+CSQ:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CSQ)
-        return False if error else int(output.split(",")[0][-1])
+        csq = AT_CMD("AT+CSQ", "+CSQ:", 3)
+        output, error = self.execute_at_command(csq)
+        return (
+            False
+            if error
+            else int(utils.extract_text(output + "\n", "+CSQ: ", "\n").split(",")[0])
+        )
 
     def get_gprs_registration_status(self):
         # Get the registration status with the gprs network
-        CGREG = AT_CMD("AT+CGREG?", "+CGREG:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CGREG)
+        cgreg = AT_CMD("AT+CGREG?", "+CGREG:", 3)
+        output, error = self.execute_at_command(cgreg)
         return False if error else int(output[-1])
 
     def get_model_identification(self):
         # Query the model identification information
-        CGMM = AT_CMD("AT+CGMM", "SIM", 3)  # noqa: N806
-        output, error = self.execute_at_command(CGMM)
+        cgmm = AT_CMD("AT+CGMM", "SIM", 3)
+        output, error = self.execute_at_command(cgmm)
         return False if error else output
 
     def get_gprs_network_status(self):
         # Get attach or detach from the GPRS network
-        CGATT = AT_CMD("AT+CGATT?", "+CGATT:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CGATT)
-        return False if error else int(output[-1])
+        cgatt = AT_CMD("AT+CGATT?", "+CGATT:", 3)
+        output, error = self.execute_at_command(cgatt)
+        return False if error else int(output[-1]) == 1
 
     def set_gprs_network_state(self, enable=1):
         # Set attach or detach from the GPRS network
-        CGATT = AT_CMD("AT+CGATT={0}".format(enable), "OK", 75)  # noqa: N806
-        output, error = self.execute_at_command(CGATT)
+        cgatt = AT_CMD("AT+CGATT={0}".format(enable), "OK", 75)
+        output, error = self.execute_at_command(cgatt)
         return not error
 
     def set_pdp_context(self, apn="CMNET"):
         # Set Define PDP Context
-        CGDCONT = AT_CMD('AT+CGDCONT=1,"IP","{}"'.format(apn), "OK", 12)  # noqa: N806
-        output, error = self.execute_at_command(CGDCONT)
+        cgdcont = AT_CMD('AT+CGDCONT=1,"IP","{}"'.format(apn), "OK", 12)
+        output, error = self.execute_at_command(cgdcont)
         return not error
 
     def get_show_pdp_address(self, cid):
         # Get Show PDP address.
-        CGPADDR = AT_CMD("AT+CGPADDR={}".format(cid), "+CGPADDR:", 12)  # noqa: N806
-        output, error = self.execute_at_command(CGPADDR)
+        cgpaddr = AT_CMD("AT+CGPADDR={}".format(cid), "+CGPADDR:", 12)
+        output, error = self.execute_at_command(cgpaddr)
         return False if error else (output.split(",")[1]).replace('"', "")
 
     def get_selected_operator(self):
         # Get selected operator.
-        COPS = AT_CMD("AT+COPS?", "+COPS", 12)  # noqa: N806
-        output, error = self.execute_at_command(COPS)
+        cops = AT_CMD("AT+COPS?", "+COPS", 12)
+        output, error = self.execute_at_command(cops)
         if error:
             return False
         return output.split('"')[1] if output.find('"') != -1 else ""
@@ -142,14 +150,13 @@ class Modem(object):
     # ----------------------
     def execute_at_command(self, command: AT_CMD, repeat=False, clean_output=True):
         # Clear the uart buffer
-        DUMMY = AT_CMD("", "", 0)  # noqa: N806
-        self.response_at_command(DUMMY)
+        dummy = AT_CMD("", "", 0)
+        self.response_at_command(dummy)
 
         # Execute the AT command
-        command_string_for_at = "{}\r\n".format(command.command)
-        if self.modem_debug:
-            print('write AT command: "{}"'.format(command.command))
-        self.uart.write(command_string_for_at)
+        cmdstr = "{}\r\n".format(command.command)
+        self._verbose and print("write AT command: {}".format(repr(cmdstr)))
+        self.uart.write(cmdstr)
         return self.response_at_command(command, repeat, clean_output)
 
     def response_at_command(self, command: AT_CMD, repeat=False, clean_output=True):
@@ -183,8 +190,7 @@ class Modem(object):
                     error = True
                     break
             else:
-                if self.modem_debug:
-                    print('response AT command: "{}"'.format(line))
+                self._verbose and print('response AT command: "{}"'.format(line))
                 # Convert line to string
                 try:
                     line_str = line.decode("utf-8")
@@ -242,6 +248,74 @@ class Modem(object):
                 output = output[1:]
             if output.endswith("\n"):
                 output = output[:-1]
+
+        # Return
+        return (output, error)
+
+    def execute_at_command2(
+        self, cmd: ATCommand, repeat=False, clean_output=True, line_end="\r\n"
+    ):
+        # clear the uart buffer
+        self.uart.write(b"\r\n")
+
+        # execute the AT command
+        cmdstr = "{}\r\n".format(cmd.cmd)
+        self._verbose and print("TE -> TA:", repr(cmdstr))
+        self.uart.write(cmdstr.encode("utf-8"))
+
+        # wait for response
+        return self.response_at_command2(cmd, repeat, clean_output, line_end)
+
+    # @utils.measure_time
+    def response_at_command2(
+        self, command: ATCommand, repeat=False, clean_output=True, line_end="\r\n"
+    ):
+        # Support vars
+        find_keyword = False
+        output = bytearray()
+        error = self.ERR_NONE
+        rsp1 = command.rsp1.encode("utf-8")
+        rsp2 = command.rsp2.encode("utf-8")
+        line_end = line_end.encode("utf-8")
+
+        ticks = time.ticks_ms()
+        while time.ticks_diff(time.ticks_ms(), ticks) < command.timeout:
+            if self.uart.any() == 0:
+                time.sleep_ms(10)
+                continue
+
+            line = self.uart.read(self.uart.any())
+            self._verbose and print("TE <- TA:", repr(line))
+            output.extend(line)
+
+            # Do we have an error?
+            if output.rfind(rsp2) != -1:
+                if output.endswith(line_end):
+                    print("Get AT command error response:", repr(output))
+                    error = self.ERR_GENERIC
+                    find_keyword = True
+
+            # If we had a pre-end, do we have the expected end?
+            if output.rfind(rsp1) != -1:
+                if output.endswith(line_end):
+                    find_keyword = True
+
+            if find_keyword:
+                break
+
+        if time.ticks_diff(time.ticks_ms(), ticks) > command.timeout:
+            print("Timeout for command:", repr(command.cmd))
+            error = self.ERR_TIMEOUT
+
+        # Also, clean output if needed
+        # if clean_output:
+        #     output = output.replace("OK", "")
+        #     output = output.replace("\r\n", "")
+        #     output = output.replace("\r", "")
+        #     if output.startswith("\n"):
+        #         output = output[1:]
+        #     if output.endswith("\n"):
+        #         output = output[:-1]
 
         # Return
         return (output, error)

@@ -52,7 +52,25 @@ TB_LONG_DIST = {
 
 
 class VL53L1X:
-    """Driver for the VL53L1X distance sensor."""
+    """Create a VL53L1X object.
+
+    :param I2C i2c: The I2C bus the ToF4M Unit is connected to.
+    :param int address: The I2C address of the device. Default is 0x29.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from hardware import I2C
+            from unit import TOFUnit
+
+            i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+            tof_0 = TOFUnit(i2c0)
+    """
 
     def __init__(self, i2c: I2C, address: int = 41):
         self._i2c = i2c
@@ -172,47 +190,120 @@ class VL53L1X:
 
     @property
     def get_model_info(self):
-        """A 3 tuple of Model ID, Module Type, and Mask Revision."""
         info = self._read_register(_VL53L1X_IDENTIFICATION__MODEL_ID, 3)
         return (info[0], info[1], info[2])  # Model ID, Module Type, Mask Rev
 
     @property
     def get_distance(self):
-        """The distance in units of millimeters."""
+        """The distance in units of millimeters.
+
+        :returns: Distance in millimeters or None if measurement is invalid.
+        :rtype: int or None
+
+        UiFlow2 Code Block:
+
+            |get_distance.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                distance = tof_0.get_distance
+        """
         if self._read_register(_VL53L1X_RESULT__RANGE_STATUS)[0] != 0x09:
             return None
         dist = self._read_register(_VL53L1X_RESULT__FINAL_CROSSTALK_CORRECTED_RANGE_MM_SD0, 2)
         return struct.unpack(">H", dist)[0]
 
     def set_continuous_start_measurement(self):
-        """Starts ranging operation."""
+        """Starts continuous measure operation.
+
+        UiFlow2 Code Block:
+
+            |set_continuous_start_measurement.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tof_0.set_continuous_start_measurement()
+        """
         self._write_register(_SYSTEM__MODE_START, b"\x40")
 
     def set_continuous_stop_measurement(self):
-        """Stops ranging operation."""
+        """Stops measure operation.
+
+        UiFlow2 Code Block:
+
+            |set_continuous_stop_measurement.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tof_0.set_continuous_stop_measurement()
+        """
         self._write_register(_SYSTEM__MODE_START, b"\x00")
 
     def clear_interrupt(self):
-        """Clears new data interrupt."""
         self._write_register(_SYSTEM__INTERRUPT_CLEAR, b"\x01")
 
     @property
     def get_data_ready(self):
-        """Returns true if new data is ready, otherwise false."""
+        """Returns true if new data is ready, otherwise false.
+
+        :returns: True if new data is ready.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |get_data_ready.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                if tof_0.get_data_ready:
+                    distance = tof_0.get_distance
+        """
         if self._read_register(_GPIO__TIO_HV_STATUS)[0] & 0x01 == self._interrupt_polarity:
             return True
         return False
 
     @property
     def get_measurement_timing_budget(self):
-        """Ranging duration in milliseconds. Increasing the timing budget
-        increases the maximum distance the device can range and improves
-        the repeatability error. However, average power consumption augments
-        accordingly. ms = 15 (short mode only), 20, 33, 50, 100, 200, 500.
-        Defaults to 50."""
+        """Get measurement duration in milliseconds.
+
+        :returns: The timing budget in milliseconds.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_measurement_timing_budget.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                budget = tof_0.get_measurement_timing_budget
+        """
         return self._timing_budget
 
     def set_measurement_timing_budget(self, val):
+        """Set the measurement timing budget in milliseconds.
+
+        :param int val: Timing budget in milliseconds.
+
+        UiFlow2 Code Block:
+
+            |set_measurement_timing_budget.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tof_0.set_measurement_timing_budget(100)
+        """
         reg_vals = None
         mode = self.get_distance_mode
         if mode == 1:
@@ -235,7 +326,21 @@ class VL53L1X:
 
     @property
     def get_distance_mode(self):
-        """The distance mode. 1=short (up to 136cm) , 2=long (up to 360cm)."""
+        """Get the distance mode.
+
+        :returns: distance mode(1=short, 2=long).
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_distance_mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                mode = tof_0.get_distance_mode
+        """
         mode = self._read_register(_PHASECAL_CONFIG__TIMEOUT_MACROP)[0]
         if mode == 0x14:
             return 1  # short distance
@@ -244,6 +349,20 @@ class VL53L1X:
         return None  # unknown
 
     def set_distance_mode(self, mode):
+        """Set the distance mode.
+
+        :param int mode: 1=short, 2=long.
+
+        UiFlow2 Code Block:
+
+            |set_distance_mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tof_0.set_distance_mode(2)  # Long distance mode
+        """
         if mode == 1:
             # short distance
             self._write_register(_PHASECAL_CONFIG__TIMEOUT_MACROP, b"\x14")
@@ -273,9 +392,18 @@ class VL53L1X:
         return self._i2c.readfrom_mem(self._addr, address, length, addrsize=16)
 
     def set_i2c_address(self, new_address):
-        """
-        Set a new I2C address to the instantaited object. This is only called when using
-        multiple VL53L0X sensors on the same I2C bus (SDA & SCL pins). See also the
-        `example <examples.html#multiple-vl53l1x-on-same-i2c-bus>`_ for proper usage.
+        """Set a new I2C address to the instantiated object.
+
+        :param int new_address: The new I2C address.
+
+        UiFlow2 Code Block:
+
+            |set_i2c_address.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tof_0.set_i2c_address(42)
         """
         self._write_register(_VL53L1X_I2C_SLAVE_DEVICE_ADDRESS, struct.pack(">B", new_address))

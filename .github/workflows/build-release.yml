@@ -32,6 +32,7 @@ jobs:
           ./m5stack/build-M5STACK_AtomS3/uiflow-*-*.bin
           ./m5stack/build-M5STACK_AtomS3_Lite/uiflow-*-*.bin
           ./m5stack/build-M5STACK_AtomS3R/uiflow-*-*.bin
+          ./m5stack/build-M5STACK_AtomS3R_CAM/uiflow-*-*.bin
           ./m5stack/build-M5STACK_AtomS3U/uiflow-*-*.bin
           ./m5stack/build-M5STACK_AtomU/uiflow-*-*.bin
           ./m5stack/build-M5STACK_Basic/uiflow-*-*.bin

@@ -4,6 +4,7 @@
 
 # stamppico https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L26
 set(BOARD_ID 133)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

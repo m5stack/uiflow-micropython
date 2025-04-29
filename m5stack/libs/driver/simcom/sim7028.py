@@ -1,29 +1,24 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
 
-from driver.simcom.common import Modem
-from collections import namedtuple
+from .common import Modem
+from .common import AT_CMD
 import re
-
-
-AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
 
 
 class SIM7028(Modem):
     def __init__(
         self,
         uart=None,
-        modem_pwkey_pin=None,
-        modem_rst_pin=None,
-        modem_power_on_pin=None,
-        modem_tx_pin=None,
-        modem_rx_pin=None,
+        pwrkey_pin=None,
+        reset_pin=None,
+        power_pin=None,
+        tx_pin=None,
+        rx_pin=None,
     ) -> None:
-        super().__init__(
-            uart, modem_pwkey_pin, modem_rst_pin, modem_power_on_pin, modem_tx_pin, modem_rx_pin
-        )
+        super().__init__(uart, pwrkey_pin, reset_pin, power_pin, tx_pin, rx_pin)
 
     def get_imei_number(self) -> str | bool:
         # Request TA Serial Number Identification(IMEI)

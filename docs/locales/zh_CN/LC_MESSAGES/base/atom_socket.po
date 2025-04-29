@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/atom_socket.rst:2 c7d167983edd43509eaf44220dd73567
-msgid "ATOM Socket Base"
+#: ../../en/base/atom_socket.rst:2 5ab7293f377c48ac84b97a55d1f37a88
+msgid "Atom Socket Base"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:6 25964e0f33084c0a8a07ec6ecc6651d6
+#: ../../en/base/atom_socket.rst:6 34d817fa6406442680a58af2a55e8eae
 msgid ""
 "The `ATOMSocketBase` class is a smart power socket integrated with the M5"
 " ATOM controller. It features a built-in HLW8032 high-precision power "
@@ -34,59 +34,59 @@ msgid ""
 "in smart homes, industrial control, and energy management."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:8 18d35ce0d9554025a2f67eeaecf8fe16
+#: ../../en/base/atom_socket.rst:8 5186ead62819472e8feb240f95df2131
 msgid "Supports the following products:"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:10 94c2d25d98244e099a049650c6ff9a9d
+#: ../../en/base/atom_socket.rst:10 62acfe71b1c44436a003f74915487339
 msgid "|ATOMSocketBase|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref dfe86b9a614e41e183e24c610bbe4c23
+#: ../../en/refs/base.atom_socket.ref a22ea9289d1c4f0493e8db918e4b36f7
 msgid "ATOMSocketBase"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:13 3afc5578b2c343e69a29fa9e12bf1a31
+#: ../../en/base/atom_socket.rst:13 4d4094c3b7634e9aafc08fc4ca4860ff
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:20 f04e67a3dcf0474ab3aa491b237cb630
+#: ../../en/base/atom_socket.rst:20 8c36750ea4684fe4a2b0c40d50e0f1ff
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:22 983307c73edb45d78cc99d1103dc2aaf
+#: ../../en/base/atom_socket.rst:22 dc4947d1c3324e0ba357adc27732df38
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:30 091c62639cb141229d7b388f5ebdb484
+#: ../../en/refs/base.atom_socket.ref:30 255c4da6253f410c8213b5e9b0cad159
 msgid "example.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:27 9cb367aa018b4fe5bc8e0c63aca9984c
+#: ../../en/base/atom_socket.rst:27 2a3c68a97e9c4c57ba9b90dcff8bca20
 msgid "|atomlite_socket_example.m5f2|"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:31 fb762b5c0a8e42618bfaa8f9476db167
+#: ../../en/base/atom_socket.rst:31 d91b478e2c524c19a25a03e92a0ed2fc
 msgid "class ATOMSocketBase"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:34 062aca913618422a89cde23784f6f211
+#: ../../en/base/atom_socket.rst:34 352b38ad3738407b913c8936c1d2ffbc
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:38 f78e207aba8e42788cb951e01c3a1d32
+#: ../../en/base/atom_socket.rst:38 cfcc6d750c434e31a4ec82b8acce4330
 msgid "Initializes the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:40 af7de4311cd4446383868c274eb15c60
+#: ../../en/base/atom_socket.rst:40 6b96706785354c11aa4c7012eb5e0452
 msgid "``_id``: Serial ID, not actually used by this base."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:41 f991d85be5d64e8fa28dcb6aae5a144c
+#: ../../en/base/atom_socket.rst:41 0ac2dcc4351249e2b71cdb3099652fd8
 msgid "``port``: UART pin numbers."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:42 f922c8867ce843d9b6d08a15646aed20
+#: ../../en/base/atom_socket.rst:42 79a39661bf6841018c0c6fb206b2745a
 msgid "``relay``: The relay pin number."
 msgstr ""
 
@@ -96,174 +96,177 @@ msgstr ""
 #: ../../en/base/atom_socket.rst:107 ../../en/base/atom_socket.rst:116
 #: ../../en/base/atom_socket.rst:125 ../../en/base/atom_socket.rst:134
 #: ../../en/base/atom_socket.rst:143 ../../en/base/atom_socket.rst:154
-#: 27318a0130e74077976c5d45b38f5dc5 3201a6333fd746eba16768d7fd82112e
-#: 5e7217e875f144108f940b0c5979d309 7cf2d4cc8f0b4f149c7fd9aadc9426b9
-#: 8cd2326d113847399dac41ac9c35dc71 9acd1cd04cb240289c145b0ba1a84b32
-#: 9b4902423a8a4c03ad4d844ba8a45264 b6a8bc9248b147eb9904267ee489f1f7
-#: b8c505aaaeba491da2de7651fa816048 c452b42e09c0408a88eb132bc0e26fb4
-#: d2ba24b0e11e483abb2b11b994a76f46 fba83f6d308c466fb6a12daed3aa5460
+#: 017801fba76448e5a5f249d9a54fc382 20c3509f08e64f17bce4e269ab811736
+#: 3b541e1a30ab4ef986f79a3e3f00ada7 41033b6e1b124859959ff496f2008bb2
+#: 4d8b587890584bd8aa5a563e7ef05d3d 8df5118a6b644b8fb9c4a1e04a61a81a
+#: a170a7433a1748b6a554da7c10204230 dab5823c609a4347bc616e53a7534b05
+#: e8c773150dca4edea3630fbf92e80ad8 eaad96545f9f4acb8c01fa72a5062666
+#: f015e78ed2e347258042d5c33aa0d9fb f58d81b223594c81964cd87aac7b9ff1
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:46 d2eb0698be8e46f7aa6632a59aedc41d
+#: ../../en/base/atom_socket.rst:46 847380e3d3fa4a1fb4ee76ab1543d9bf
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:6 78509771496548ff853ea9365cb053c0
+#: ../../en/refs/base.atom_socket.ref:6 118f78f8747c45c894ce70653038a0c8
 msgid "init.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:50 448a726f08a14c1e989b25f463ae0fae
+#: ../../en/base/atom_socket.rst:50 74da69d4c6a8413f8424047f69c5b516
 msgid "Methods"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:54 073ac8c331a54885a63977356a4b1231
+#: ../../en/base/atom_socket.rst:54 07e505c4360348478108d38397f1b2c0
 msgid "Sets the state of the ATOM Socket's relay."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:56 78847fbadec748efb71e8e7c05241dbf
+#: ../../en/base/atom_socket.rst:56 742ac5118cb740619dbe36f3d4474367
 msgid "``state``: The desired state of the relay, True = ON, False = OFF."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:60 b8b3cc7b54924d65b94c4a6e10381562
+#: ../../en/base/atom_socket.rst:60 2595b79622a349dcb247da1d617299dd
 msgid "|set_relay.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:8 18cb6d2ebe0141a58f9e7cc22a3f9f84
+#: ../../en/refs/base.atom_socket.ref:8 310b9e535ac641bc96b434e018a38b4a
 msgid "set_relay.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:65 38e6a4b7956f494eae199475b434cecb
+#: ../../en/base/atom_socket.rst:65 97193fcc25f34bd0bc2e367c9c486357
 msgid "Retrieves data from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:67 da84a233ca0045aaa4b62557eeb77c43
+#: ../../en/base/atom_socket.rst:67 954d90f95bec4827b5f7e1ca2cc98a52
 msgid "``timeout``: Function timeout period."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:69 ff1371dbdea14b4fb92503082752ab8d
+#: ../../en/base/atom_socket.rst:69 4cf8c867efb04bf881d8d7fbc973aaca
 msgid ""
 "Returns the ATOM Socket data: Tuple (Voltage (V), Current (A), Power (W),"
 " Total Energy (KWh)), or None if timeout occurs."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:73 31c2ccc8fbeb4d5eb4392b7f78679258
+#: ../../en/base/atom_socket.rst:73 c792f91578f3488a92936f2d49ff0622
 msgid "|get_data.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:10 02050596ed8c4c519af378d4ee1e7b93
+#: ../../en/refs/base.atom_socket.ref:10 0d2dc6b6b0f0496b8523e621963b3d66
 msgid "get_data.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:78 070e8fcf0b134b4398220a5d834134d7
+#: ../../en/base/atom_socket.rst:78 facc45d4fddc4909a2830571ebb5acbc
 msgid "Retrieves the voltage measurement from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:82 7f0823e405e94ce6a1a43fbd3aeaafba
+#: ../../en/base/atom_socket.rst:82 328c4d3e19724836b8e19b038a799933
 msgid "|get_voltage.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:12 18131f5c027e4d9ab3560b5f7d80ff36
+#: ../../en/refs/base.atom_socket.ref:12 6becd482736d4fddb54213318748b019
 msgid "get_voltage.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:87 df9d4a50444548ad8a2dbc5de6a70b6b
+#: ../../en/base/atom_socket.rst:87 3f80948ef395432299b3c517a62e8244
 msgid "Retrieves the current measurement from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:91 10ee6799135b448b94e2acb517fa3346
+#: ../../en/base/atom_socket.rst:91 1dfc4d30d5194955a577a6977b4bb775
 msgid "|get_current.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:14 586d4cf4e6bb43af8c28ff419a9ab707
+#: ../../en/refs/base.atom_socket.ref:14 309a99a8f07b4e229793cb218d89814d
 msgid "get_current.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:96 7a5aab990af14a8982a1cc2678d96a33
+#: ../../en/base/atom_socket.rst:96 13e08cfc138343b4bd78d7d16ecfdf41
 msgid "Retrieves the power measurement from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:100 e6ad80f21db743838a1a72170c2d66b6
+#: ../../en/base/atom_socket.rst:100 0f1b54f025f746b08a931ab3db460833
 msgid "|get_power.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:16 85f315927b5345efb8ec6434212b9040
+#: ../../en/refs/base.atom_socket.ref:16 5f9618ff976c4e54876c65b855fdd806
 msgid "get_power.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:105 cb5b1fced2b04d41bd091168f876e76f
+#: ../../en/base/atom_socket.rst:105 135ebf3c9e72447f867a6753a5892c49
 msgid "Retrieves the power factor from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:109 f72e55a119e14c67ae9007ba82f1f5f1
+#: ../../en/base/atom_socket.rst:109 4d1e89653bbd4361873ded26545286b7
 msgid "|get_pf.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:18 70190abd4463440a8a4d311497f5d723
+#: ../../en/refs/base.atom_socket.ref:18 713ce64262354549bc258ba206cf09e3
 msgid "get_pf.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:114 3b559c244f9447b194d2a622c0cb7aae
+#: ../../en/base/atom_socket.rst:114 96396a9a09f941dd85a7b87cb063ecfb
 msgid "Calculates the inspecting power of the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:118 70b618206a1248549c92c39328985541
+#: ../../en/base/atom_socket.rst:118 d3b2b71464f043f2a6d62747eaeeb449
 msgid "|get_inspecting_power.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:20 8ca7d0d87fca4917ab0512b313957208
+#: ../../en/refs/base.atom_socket.ref:20 27c5e001b118430b984820d548bdf740
 msgid "get_inspecting_power.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:123 d0b33994191d4c61af9e6a28fe4b9d4a
+#: ../../en/base/atom_socket.rst:123 27cc8663236e4dc29fd0b921027d2f0b
 msgid "Calculates the power factor of the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:127 2f99b7e6acd64198b7fbba5d98e8decd
+#: ../../en/base/atom_socket.rst:127 4523eb6320d649e2897e392bc4d63b3d
 msgid "|get_power_factor.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:22 74dd514a50cb4a9e834c86973370db04
+#: ../../en/refs/base.atom_socket.ref:22 fbe7dcba8daa44fe8aa2d03cf1fd8730
 msgid "get_power_factor.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:132 858285cef7294e948e8a0b9540769acc
+#: ../../en/base/atom_socket.rst:132 59286f16bb8743b6a27383aeccd1b177
 msgid "Retrieves the accumulated energy measurement in KWh from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:136 17a474969bf04caab172d0a5979668cd
+#: ../../en/base/atom_socket.rst:136 5cbd0f7fce0b4e42b47f1c3fa2523731
 msgid "|get_kwh.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:24 9ddb9048cf8f4823bac0e1cca341bf11
+#: ../../en/refs/base.atom_socket.ref:24 aa1d493a22ac4b9eaaff105d8a4f88aa
 msgid "get_kwh.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:141 ec7a8bc660aa457b9248040d62447903
+#: ../../en/base/atom_socket.rst:141 64bcaa2ee9744902b624ffdd77456f74
 msgid "Stops receiving data from the ATOM Socket."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:145 57ec55311283472fb51ddb579c392f2c
+#: ../../en/base/atom_socket.rst:145 9d7a37d013694467816460dc99532903
 msgid "|stop_receive_data.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:28 8def185d72664c89bea0fac167080a0d
+#: ../../en/refs/base.atom_socket.ref:28 66bdb933671848e18dd3f11cbe911aee
 msgid "stop_receive_data.png"
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:150 2b57110688cd454290f0c9ab1ab1f6fe
+#: ../../en/base/atom_socket.rst:150 501f28f01053416b8451683184bc0877
 msgid "Receives data from the ATOM Socket in non-blocking mode."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:152 f83a6645b0f443b1913dd3f2f47f6ff2
+#: ../../en/base/atom_socket.rst:152 f67cb074e50c4ea2a8aafb8e5ac2de87
 msgid "``receive_callback``: Callback function to handle the received data."
 msgstr ""
 
-#: ../../en/base/atom_socket.rst:156 53ed2a212adb436a8549a42836fa487b
+#: ../../en/base/atom_socket.rst:156 55604ff0b1054da08759fd75d44da73e
 msgid "|receive_none_block.png|"
 msgstr ""
 
-#: ../../en/refs/base.atom_socket.ref:26 53f596e4c04b43fe9abf2d8b8130497b
+#: ../../en/refs/base.atom_socket.ref:26 4192c5f61e4c4475b7625be9e16b84df
 msgid "receive_none_block.png"
 msgstr ""
+
+#~ msgid "ATOM Socket Base"
+#~ msgstr ""
 

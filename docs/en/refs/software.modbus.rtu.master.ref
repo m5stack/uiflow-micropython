@@ -1,5 +1,3 @@
-.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_master/connect.png
-.. |disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_master/disconnect.png
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_master/init.png
 .. |read_coils.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_master/read_coils.png
 .. |read_discrete_inputs.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/modbus/modbus_rtu_master/read_discrete_inputs.png

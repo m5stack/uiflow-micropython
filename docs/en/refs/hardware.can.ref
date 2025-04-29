@@ -1,17 +1,17 @@
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/init.png
 
-.. |deinit.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/deinit.svg
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/deinit.png
 
-.. |restart.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/restart.svg
+.. |restart.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/restart.png
 
-.. |state.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/get_state.svg
+.. |state.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/get_state.png
 
-.. |info.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/get_info.svg
+.. |info.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/get_info.png
 
-.. |any.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/any.svg
+.. |any.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/any.png
 
-.. |recv1.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/recv_message.svg
+.. |recv1.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/recv_message.png
 
-.. |recv2.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/recv_message_into.svg
+.. |recv2.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/recv_message_into.png
 
-.. |send.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/send.svg
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/can/send.png

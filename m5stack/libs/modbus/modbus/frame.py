@@ -3,13 +3,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-# ToDo:
-# - remove debug output
-# - error messages + test cases
-# - documentation
-
-debug = True
-
 
 class ModbusFrame:
     def __init__(
@@ -198,7 +191,7 @@ class ModbusRTUFrame(ModbusFrame):
         return crc
 
     @classmethod
-    def parse_frame(cls, frame, fr_type=None):
+    def parse_frame(cls, frame, fr_type=None, verbose=False):
         """Factory Method: Create a ModbusRTUFrame from bytearray.
 
         Args:
@@ -209,8 +202,7 @@ class ModbusRTUFrame(ModbusFrame):
             ModbusRTUFrame: parsed frame
         """
 
-        if debug:
-            print("Parsing RTU frame: " + " ".join(["{:02x}".format(x) for x in frame]))
+        verbose and print("Parsing RTU frame: " + " ".join(["{:02x}".format(x) for x in frame]))
 
         if len(frame) < 2:
             return
@@ -219,8 +211,7 @@ class ModbusRTUFrame(ModbusFrame):
         func_code = frame[1]
 
         if cls._check_both(frame):
-            if debug:
-                print("frame is request or response")
+            verbose and print("frame is request or response")
             register = (frame[2] << 8) + frame[3]
             data = frame[4:6]
             f = ModbusRTUFrame(
@@ -230,13 +221,11 @@ class ModbusRTUFrame(ModbusFrame):
                 fr_type="request",
                 data=data,
             )
-            if debug:
-                print(f)
+            verbose and print(f)
             return f
 
         if cls._check_request(frame) and ((fr_type is None) or (fr_type == "request")):
-            if debug:
-                print("frame is request")
+            verbose and print("frame is request")
             register = (frame[2] << 8) + frame[3]
             length = (frame[4] << 8) + frame[5]
             data = None
@@ -251,13 +240,11 @@ class ModbusRTUFrame(ModbusFrame):
                 length=length,
                 data=data,
             )
-            if debug:
-                print(f)
+            verbose and print(f)
             return f
 
         if cls._check_response(frame) and ((fr_type is None) or (fr_type == "response")):
-            if debug:
-                print("frame is response")
+            verbose and print("frame is response")
             f = None
             if func_code in [0x01, 0x02, 0x03, 0x04]:
                 bc = frame[2]
@@ -410,7 +397,7 @@ class ModbusTCPFrame(ModbusFrame):
         )
 
     @classmethod
-    def parse_frame(cls, frame):
+    def parse_frame(cls, frame, verbose=False):
         """Factory Method: Create a ModbusTCPFrame from bytearray.
 
         Args:
@@ -420,8 +407,7 @@ class ModbusTCPFrame(ModbusFrame):
             ModbusTCPFrame: parsed frame
         """
 
-        if debug:
-            print("Parsing TCP frame: " + " ".join(["{:02x}".format(x) for x in frame]))
+        verbose and print("Parsing TCP frame: " + " ".join(["{:02x}".format(x) for x in frame]))
 
         if len(frame) < 8:
             return
@@ -432,8 +418,7 @@ class ModbusTCPFrame(ModbusFrame):
         func_code = frame[7]
 
         if cls._check_both(frame, length):
-            if debug:
-                print("frame is request or response")
+            verbose and print("frame is request or response")
             register = (frame[8] << 8) + frame[9]
             data = frame[10:12]
             f = ModbusTCPFrame(
@@ -444,13 +429,11 @@ class ModbusTCPFrame(ModbusFrame):
                 fr_type="request",
                 data=data,
             )
-            if debug:
-                print(f)
+            verbose and print(f)
             return f
 
         if cls._check_request(frame, length):
-            if debug:
-                print("frame is request")
+            verbose and print("frame is request")
             register = (frame[8] << 8) + frame[9]
             d_length = (frame[10] << 8) + frame[11]
             data = None
@@ -466,14 +449,12 @@ class ModbusTCPFrame(ModbusFrame):
                 data=data,
                 length=d_length,
             )
-            if debug:
-                print(f)
+            verbose and print(f)
             return f
 
         f = None
         if cls._check_response(frame, length):
-            if debug:
-                print("frame is request")
+            verbose and print("frame is request")
             if func_code in [0x01, 0x02, 0x03, 0x04]:
                 bc = frame[8]
                 data = frame[9 : 9 + bc]
@@ -505,8 +486,7 @@ class ModbusTCPFrame(ModbusFrame):
                     error_code=error_code,
                 )
             if f is not None:
-                if debug:
-                    print(f)
+                verbose and print(f)
                 return f
 
         # raise ValueError("Could not parse Frame " + " ".join(["{:02x}".format(x) for x in frame]))

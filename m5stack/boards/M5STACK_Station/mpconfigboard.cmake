@@ -4,6 +4,7 @@
 
 # station https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L11
 set(BOARD_ID 9)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

@@ -27,7 +27,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -47,7 +47,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_thermocouple_temperature.svg|
+        |get_thermocouple_temperature.png|
 
 
 .. method:: DualKmeterModule.get_kmeter_temperature(scale=0) -> float
@@ -72,7 +72,7 @@ Methods
 
     UIFLOW2:
 
-        |get_kmeter_temperature.svg|
+        |get_kmeter_temperature.png|
 
 
 .. method:: DualKmeterModule.get_kmeter_channel() -> int
@@ -81,7 +81,7 @@ Methods
 
     UIFLOW2:
 
-        |get_kmeter_channel.svg|
+        |get_kmeter_channel.png|
 
 
 .. method:: DualKmeterModule.set_kmeter_channel(channel) -> None
@@ -90,7 +90,7 @@ Methods
 
     UIFLOW2:
 
-        |set_kmeter_channel.svg|
+        |set_kmeter_channel.png|
 
 
 .. method:: DualKmeterModule.is_ready() -> bool
@@ -99,7 +99,7 @@ Methods
 
     UIFLOW2:
 
-        |is_ready.svg|
+        |is_ready.png|
 
 
 .. method:: DualKmeterModule.get_thermocouple_temperature_string(scale=0) -> str
@@ -110,7 +110,7 @@ Methods
 
     UIFLOW2:
 
-        |get_thermocouple_temperature_string.svg|
+        |get_thermocouple_temperature_string.png|
 
 
 .. method:: DualKmeterModule.get_kmeter_temperature_string(scale=0) -> str
@@ -121,7 +121,7 @@ Methods
 
     UIFLOW2:
 
-        |get_kmeter_temperature_string.svg|
+        |get_kmeter_temperature_string.png|
 
 
 .. method:: DualKmeterModule.get_fw_ver() -> int
@@ -130,7 +130,7 @@ Methods
 
     UIFLOW2:
 
-        |get_fw_ver.svg|
+        |get_fw_ver.png|
 
 
 Constants

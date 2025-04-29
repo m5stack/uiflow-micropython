@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -52,7 +52,7 @@ Methods
 
     UIFLOW2:
 
-        |get_digital_value.svg|
+        |get_digital_value.png|
 
 
 .. method:: Light.get_analog_value()
@@ -61,7 +61,7 @@ Methods
 
     UIFLOW2:
 
-        |get_analog_value.svg|
+        |get_analog_value.png|
 
 
 .. method:: Light.get_ohm()
@@ -70,4 +70,4 @@ Methods
 
     UIFLOW2:
 
-        |get_ohm.svg|
+        |get_ohm.png|

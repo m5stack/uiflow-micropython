@@ -16,9 +16,9 @@ extern mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, si
 
 // -------- lvgl port funciton
 #if MICROPY_PY_LVGL
-extern void gfx_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p);
-extern void user_lvgl_flush(void *_disp_drv, const lv_area_t *area, lv_color_t *color_p);
-extern bool gfx_lvgl_touch_read(lv_indev_drv_t *indev_drv, lv_indev_data_t *data);
+extern void gfx_lvgl_flush(lv_display_t *disp_drv, const lv_area_t *area, uint8_t *px_map);
+extern void user_lvgl_flush(lv_disp_t *disp_drv, const lv_area_t *area, uint8_t *px_map);
+extern bool gfx_lvgl_touch_read(lv_disp_t *indev_drv, lv_indev_data_t *data);
 DEFINE_PTR_OBJ(gfx_lvgl_flush);
 DEFINE_PTR_OBJ(user_lvgl_flush);
 DEFINE_PTR_OBJ(gfx_lvgl_touch_read);

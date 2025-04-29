@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,103 +20,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/op180.rst:2 b0a61e6fe3814a77a69798e6d35a97da
+#: ../../en/units/op180.rst:2 ecfe27b83e3842ca93f5e18838930d88
 msgid "OP180 Unit"
 msgstr ""
 
-#: ../../en/units/op180.rst:6 f707464649a84d8fadbb16dccd68a1ae
+#: ../../en/units/op180.rst:6 00fbf6f2cc8b45a4bc7cba720525761e
 msgid "The following products are supported:"
 msgstr "支持以下产品:"
 
-#: ../../en/units/op180.rst:8 4dc7b670b4714a51b55ef8ddf7761fd4
+#: ../../en/units/op180.rst:8 fb32e03ba8c143c6a72f53a1a52fabc3
 msgid "|OP180|"
 msgstr ""
 
-#: ../../en/refs/unit.op180.ref 3044d033b08b4bc58c265ee3d8fa62f0
+#: ../../en/refs/unit.op180.ref 068f61a553ef4fd2922b55f522e056e0
 msgid "OP180"
 msgstr ""
 
-#: ../../en/units/op180.rst:11 affe5a2ea665457786b4b4475661af9a
+#: ../../en/units/op180.rst:11 97101d2c365d4a8dbd4829862fac760d
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/units/op180.rst:36 3c0d727f381c4ad8a2cd241d15acc8ff
+#: ../../en/units/op180.rst:36 b479af5fc5a14530a6eb88c753e787b6
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/op180.rst:38 faf1338a89d945e8a7d8a77c95238acc
-msgid "|example.svg|"
+#: ../../en/units/op180.rst:38 fdaa91243c464c70a89e112cb498dbc1
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.op180.ref:6 f9389614d06849929f7875b3422289b7
-msgid "example.svg"
+#: ../../en/refs/unit.op180.ref:6 792f19ae750a439e92904c44f06a2e46
+msgid "example.png"
 msgstr ""
 
-#: ../../en/units/op180.rst:43 466f01fe429741f187d241a2767b0120
+#: ../../en/units/op180.rst:43 393040fb7cfd4028a9cd3997cf8c26fb
 msgid "|op180_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/op180.rst:47 9dc7558b7478436eb86be4a0f6f8ef7e
+#: ../../en/units/op180.rst:47 ab1fa8b54feb409187841bb3701ad699
 msgid "class OPUnit"
 msgstr ""
 
-#: ../../en/units/op180.rst:50 f077fe831ead4d0e8ba42af0003f62d3
+#: ../../en/units/op180.rst:50 07a292bec7ec47dda2fbde43d8fb6f12
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/op180.rst:54 ffd166907f0b42beb2b782ed48ccc021
+#: ../../en/units/op180.rst:54 da179d7f1d8645b4be5fa18b4454132b
 msgid "Create an OP180 object."
 msgstr "创建一个OP180对象."
 
-#: ../../en/units/op180.rst:57 3f25797d61b744fd8910d308c5e7c5cf
+#: ../../en/units/op180.rst:57 f4a35c8b457949898e10f522564864d9
 msgid "The parameters is:"
 msgstr "参数如下："
 
-#: ../../en/units/op180.rst:57 ac25b56136e143009bf2a1085c526e02
+#: ../../en/units/op180.rst:57 a5587eebd6b04026b5b254bb756a1c84
 msgid "``io`` is the detection pin."
 msgstr "``io`` 为检测引脚。"
 
 #: ../../en/units/op180.rst:59 ../../en/units/op180.rst:71
-#: ../../en/units/op180.rst:79 0a9e54e833684b058782924e84fab7c1
-#: a330f56039b146838668172457520b91 c124ad2615ca47d283ec7dd15b9b3561
+#: ../../en/units/op180.rst:79 8000a0c500d74d6cbcab6816e77c10c6
+#: a156d3a992ff408da4e017fba2549a10 dfa6eb35f1294996a4489b02f327c266
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/op180.rst:61 5f644b8af1e84c6f8eca69af32bc6273
-msgid "|init.svg|"
+#: ../../en/units/op180.rst:61 9d3d77bd0de44fc880b0656e2302f011
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.op180.ref:8 0fe36e7d795c4abd8a10bd1254259662
-msgid "init.svg"
+#: ../../en/refs/unit.op180.ref:8 2604a4a9d55f4656a263e67c78a87cb0
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/op180.rst:65 36afcfe038ca448a809d694c0b4e236c
+#: ../../en/units/op180.rst:65 fb816aa554eb446888a883701560b15d
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/op180.rst:69 d99fbccb7f92436284953b8338c027c6
+#: ../../en/units/op180.rst:69 6b95764540d74cf795a449f611194b23
 msgid "Get the count value."
 msgstr "获取计数值。"
 
-#: ../../en/units/op180.rst:73 062c2f0c6ebd4ae886b91618d1fdeda2
-msgid "|get_count_value.svg|"
-msgstr ""
+#: ../../en/units/op180.rst:73 02a47b78bfd54576bafd107ae3b466f1
+#, fuzzy
+msgid "|get_count_value.png|"
+msgstr "获取计数值。"
 
-#: ../../en/refs/unit.op180.ref:10 638bc15f891a46a69cc4db1a407b9ef0
-msgid "get_count_value.svg"
-msgstr ""
+#: ../../en/refs/unit.op180.ref:10 f7f5f944c2fd4269ae44fc049fe53097
+#, fuzzy
+msgid "get_count_value.png"
+msgstr "获取计数值。"
 
-#: ../../en/units/op180.rst:77 6e5d07c5ce7a4529bfe7ce1b01f9021c
+#: ../../en/units/op180.rst:77 910fd705918642c9bc2f8eaf5f8e9a8a
 msgid "Reset the meter value."
 msgstr "重置计数值。"
 
-#: ../../en/units/op180.rst:81 064c748bd1d943b4a165899b7e4db13e
-msgid "|reset_count_value.svg|"
-msgstr ""
+#: ../../en/units/op180.rst:81 995d6540a21e4a6c8f3e2431b6a95478
+#, fuzzy
+msgid "|reset_count_value.png|"
+msgstr "获取计数值。"
 
-#: ../../en/refs/unit.op180.ref:12 a1ba047d7e064cae8b9adfb6cbb25860
-msgid "reset_count_value.svg"
-msgstr ""
+#: ../../en/refs/unit.op180.ref:12 ee36a10d30414c1da986237c8f394a69
+#, fuzzy
+msgid "reset_count_value.png"
+msgstr "获取计数值。"
 
 #~ msgid "get_switch_value.svg"
 #~ msgstr ""
@@ -125,5 +129,29 @@ msgstr ""
 #~ msgstr "获取开关状态。"
 
 #~ msgid "|get_switch_value.svg|"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_count_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_count_value.svg"
+#~ msgstr ""
+
+#~ msgid "|reset_count_value.svg|"
+#~ msgstr ""
+
+#~ msgid "reset_count_value.svg"
 #~ msgstr ""
 

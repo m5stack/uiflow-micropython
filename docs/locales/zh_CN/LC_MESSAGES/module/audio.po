@@ -1,0 +1,561 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 15:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/audio.rst:2 ../../en/refs/module.audio.ref
+#: 4e24e2fce4424c5fac0f0d1663d207d9 f53b1250cc5b423f95764f128a2e9789
+msgid "Audio Module"
+msgstr ""
+
+#: ../../en/module/audio.rst:8 8ae6cd09c74b40998324ff34f2a7a7b6
+msgid ""
+"The AudioModule class implements playback and recording functions and "
+"supports resampling."
+msgstr "AudioModule 类实现播放、录音功能，并支持重采样。"
+
+#: ../../en/module/audio.rst:10 833debb93d87470c838d5fed4a16d795
+msgid ""
+"It is used to play audio files and streams, record audio from the "
+"microphone, and convert between different sample rates."
+msgstr "它用于播放音频文件和流、从麦克风录制音频以及在不同的采样率之间进行转换。"
+
+#: ../../en/module/audio.rst:12 6307fb4d008742cf8f8b952572e7c045
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/audio.rst:14 9515e39a41c84e7cae20cf6ce9515f8f
+msgid "|Audio Module|"
+msgstr ""
+
+#: ../../en/module/audio.rst:18 80c94a6fd72343f6bfbbbdf54c5f5382
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例"
+
+#: ../../en/module/audio.rst:21 ../../en/module/audio.rst:82
+#: 70979e4e932544ebb8e334cadec43d03 8ea77fcc52d341fd8724b8d486e321c6
+msgid "Play WAV file"
+msgstr "播放 WAV 文件"
+
+#: ../../en/module/audio.rst:23 cb0e98c30625467db10017827e2ff817
+msgid "Open the |cores3_play_wav_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_play_wav_example.m5f2| 项目。"
+
+#: ../../en/module/audio.rst:27 ../../en/module/audio.rst:47
+#: b699ac27037d4084b50c239a41908f42 bd7f70e67c6d404aa5f5804c4add678f
+msgid ":download:`66.wav <../../../examples/module/audio/66.wav>`"
+msgstr ""
+
+#: ../../en/module/audio.rst:29 ../../en/module/audio.rst:84
+#: 2235c0cae1f143aa9ed672b67105bcdc
+msgid "This example reads an audio file from the file system and plays it."
+msgstr "此示例从文件系统读取音频文件并播放。"
+
+#: ../../en/module/audio.rst:31 ../../en/module/audio.rst:53
+#: ../../en/module/audio.rst:69 95fc0b5cf2c84175843f3e46299a0d40
+#: module.audio.AudioModule:14 module.audio.AudioModule.fill_color:5
+#: module.audio.AudioModule.get_volume:5 module.audio.AudioModule.pause:3
+#: module.audio.AudioModule.pcm_buffer:5 module.audio.AudioModule.play_raw:10
+#: module.audio.AudioModule.play_wav:7 module.audio.AudioModule.play_wav_file:6
+#: module.audio.AudioModule.record:8 module.audio.AudioModule.record_wav_file:9
+#: module.audio.AudioModule.resume:3 module.audio.AudioModule.set_brightness:5
+#: module.audio.AudioModule.set_color:6 module.audio.AudioModule.set_volume:5
+#: module.audio.AudioModule.stop:3 module.audio.AudioModule.tone:7 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/audio.rst:33 561aaf7c9af7401d83c8f506edf53418
+msgid "|cores3_play_wav_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:24 c3c2fd9492f849e9b4818bf645f2c35d
+msgid "cores3_play_wav_example.png"
+msgstr ""
+
+#: ../../en/module/audio.rst:35 ../../en/module/audio.rst:57
+#: ../../en/module/audio.rst:73 ../../en/module/audio.rst:92
+#: ../../en/module/audio.rst:110 ../../en/module/audio.rst:126
+#: 436527d259ce429a9d29a8ac14c6d795
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/audio.rst:37 ../../en/module/audio.rst:59
+#: ../../en/module/audio.rst:75 ../../en/module/audio.rst:94
+#: ../../en/module/audio.rst:112 ../../en/module/audio.rst:128
+#: 062e82acc9fd410da4accc3c23a7554b ece8347f165b45c296b71e26da06d3b3
+#: module.audio.AudioModule.play_raw:8 module.audio.AudioModule.play_wav:5
+#: module.audio.AudioModule.play_wav_file:4 module.audio.AudioModule.tone:5 of
+msgid "None"
+msgstr ""
+
+#: ../../en/module/audio.rst:41 ../../en/module/audio.rst:98
+#: 6b0b0994080d4dadb853da6d31976c12
+msgid "Playback Controls"
+msgstr "播放控制"
+
+#: ../../en/module/audio.rst:43 5f91fd9466b44c368b3272f9069822f0
+msgid "Open the |cores3_playback_controls_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_playback_controls_example.m5f2| 项目。"
+
+#: ../../en/module/audio.rst:49 ../../en/module/audio.rst:100
+#: 4c8f646f9945444f8ccad249cad83c0f
+msgid ""
+"This example demonstrates how to control playback using the AudioModule "
+"class."
+msgstr "此示例演示如何使用 AudioModule 类控制播放。"
+
+#: ../../en/module/audio.rst:51 ../../en/module/audio.rst:102
+#: 072eadbe1c7a466fa0194296003b627c
+msgid "Play the audio for 1 second, pause for 1 second, and then resume playing."
+msgstr "播放音频 1 秒，暂停 1 秒，然后继续播放。"
+
+#: ../../en/module/audio.rst:55 8961fb600f0649f4a0a7405004eb2699
+msgid "|cores3_playback_controls_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:25 b72827117d2d4eca913fd0193ccc578c
+msgid "cores3_playback_controls_example.png"
+msgstr ""
+
+#: ../../en/module/audio.rst:63 ../../en/module/audio.rst:116
+#: 0c594dc08beb48aa975091f821777693
+msgid "Record Audio"
+msgstr "录制音频"
+
+#: ../../en/module/audio.rst:65 d627b556bba94938937fa0bd75cd6061
+msgid "Open the |cores3_record_audio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_record_audio_example.m5f2| 项目。"
+
+#: ../../en/module/audio.rst:67 ../../en/module/audio.rst:118
+#: 5e694f2e709146d5a4fdb787da2232dd
+msgid ""
+"This example records audio from the microphone and saves it to a PCM "
+"buffer, then plays it out through the speaker."
+msgstr "此示例从麦克风录制音频并将其保存到 PCM 缓冲区，然后通过扬声器播放。"
+
+#: ../../en/module/audio.rst:71 d523f22957404f16930dfb9a560052b3
+msgid "|cores3_record_audio_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:26 edc539ad6a9d418dafa70b7f9f3638c8
+msgid "cores3_record_audio_example.png"
+msgstr ""
+
+#: ../../en/module/audio.rst:79 17ba7e7a383d471ebaf03627fb2999a9
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/audio.rst:86 ../../en/module/audio.rst:104
+#: ../../en/module/audio.rst:120 48228ca22a3d4071a06e796b84f6de72
+#: module.audio.AudioModule:18 module.audio.AudioModule.fill_color:9
+#: module.audio.AudioModule.get_volume:9 module.audio.AudioModule.pause:7
+#: module.audio.AudioModule.pcm_buffer:9 module.audio.AudioModule.play_raw:14
+#: module.audio.AudioModule.play_wav:11
+#: module.audio.AudioModule.play_wav_file:10 module.audio.AudioModule.record:12
+#: module.audio.AudioModule.record_wav_file:13
+#: module.audio.AudioModule.resume:7 module.audio.AudioModule.set_brightness:9
+#: module.audio.AudioModule.set_color:10 module.audio.AudioModule.set_volume:9
+#: module.audio.AudioModule.stop:7 module.audio.AudioModule.tone:11 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/audio.rst:132 5087d221bfe34c4dbebdef3726f0491e
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/module/audio.rst:135 3e35c677ecb04759a426aa1f928d3bd0
+msgid "Class AudioModule"
+msgstr ""
+
+#: 221509b0d3494f24ac171ee0b62aad6a module.audio.AudioModule:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: b18fc38aa8fc4c7aa97f07b731f64f42 module.audio.AudioModule:1 of
+msgid "Initialize the audio module."
+msgstr "初始化 Audio Module。"
+
+#: ../../en/module/audio.rst 5a0aec4d4b3942b085c738f4ff8f7232
+#: module.audio.AudioModule.fill_color module.audio.AudioModule.play_raw
+#: module.audio.AudioModule.play_wav module.audio.AudioModule.play_wav_file
+#: module.audio.AudioModule.record module.audio.AudioModule.record_wav_file
+#: module.audio.AudioModule.set_brightness module.audio.AudioModule.set_color
+#: module.audio.AudioModule.set_volume module.audio.AudioModule.tone of
+msgid "Parameters"
+msgstr ""
+
+#: 64936fbd8c3247b793b8770d66e7a2ae module.audio.AudioModule:3 of
+msgid "I2S port number."
+msgstr "I2S 端口号。"
+
+#: 71e1a92fe25e484489603f7966832371 module.audio.AudioModule:4
+#: module.audio.AudioModule.play_raw:4 module.audio.AudioModule.record:3
+#: module.audio.AudioModule.record_wav_file:4 of
+msgid "Sample rate (default is 16000)."
+msgstr "采样率（默认为 16000）。"
+
+#: acd1a5f2f40f4031ad8dc84ffe524df3 module.audio.AudioModule:5 of
+msgid "I2S clock pin."
+msgstr "I2S时钟引脚。"
+
+#: 99308032ce754f2bbf2549e3003463bd module.audio.AudioModule:6 of
+msgid "I2S word select pin."
+msgstr "I2S 字选择引脚。"
+
+#: 3f674b89d5aa44178752a17e5edcd321 module.audio.AudioModule:7 of
+msgid "I2S data input pin."
+msgstr "I2S数据输入引脚。"
+
+#: ed51c86007ca440d98519c506cbb8580 module.audio.AudioModule:8 of
+msgid "I2S data output pin."
+msgstr "I2S数据输出引脚。"
+
+#: 83af10494d084878aff70b40ae91463b module.audio.AudioModule:9 of
+msgid "I2S master clock pin."
+msgstr "I2S 主时钟引脚。"
+
+#: 0bf41260d5c9471cab2a79e4764f96fc module.audio.AudioModule:10 of
+msgid "Work mode (0: headphone, 1: line in)."
+msgstr "工作模式（0：耳机，1：线路输入）。"
+
+#: b1064468e32c40c682531dea35db6a25 module.audio.AudioModule:11 of
+msgid ""
+"Generally speaking, when using line in, offset is False; if the input is "
+"connected to an ADC microphone, offset is True. (Only valid in line in "
+"mode)."
+msgstr "一般来说，使用 Line In 时，offset 为 False；如果输入连接了 ADC 麦克风，offset 为 True。（仅在 Line In 模式下有效）。"
+
+#: 6c6803ee60714c818dc725a003955a4e module.audio.AudioModule:12 of
+msgid "Select the TRRS plug to be used. (default is MUX_NATIONAL)."
+msgstr "选择要使用的 TRRS 插头。（默认为 MUX_NATIONAL）。"
+
+#: f68689f7bf3a48a98d1349c449e70f49 module.audio.AudioModule:16 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:8 a60663a793a346b980fad8e51c8b857f
+msgid "init.png"
+msgstr ""
+
+#: ../../docstring 19a3717b21d04ff38262b6943c2c067d
+#: module.audio.AudioModule.MUX_NATIONAL:1 of
+msgid "National Standard audio mode (OMTP)"
+msgstr "国家标准音频模式 (OMTP)"
+
+#: ../../docstring 1230d17239f04994aa62eb1b619c75c8
+#: module.audio.AudioModule.MUX_AMERICAN:1 of
+msgid "American Standard audio mode (CTIA)"
+msgstr "美国标准音频模式（CTIA）"
+
+#: ../../docstring c0e1fd96e20048d39b92a62a4513712f
+#: module.audio.AudioModule.MODE_LINE:1 of
+msgid "Line in mode"
+msgstr "线路输入模式"
+
+#: ../../docstring a16aefd62aa74993bb22764b698f31f6
+#: module.audio.AudioModule.MODE_HEADPHONE:1 of
+msgid "Headphone mode"
+msgstr "耳机模式"
+
+#: ../../docstring 7e4fc1d26a8b470f9ff87dc52e911734
+#: module.audio.AudioModule.MONO:1 of
+msgid "Mono"
+msgstr "单声道"
+
+#: ../../docstring 25deb1efa91d4fefa659ac5ebd7cdb2c
+#: module.audio.AudioModule.STEREO:1 of
+msgid "Stereo"
+msgstr "立体声"
+
+#: e5f2a95aacbf4f4c8b601b444fe2c7e4 module.audio.AudioModule.play_wav_file:1 of
+msgid "Play a WAV file."
+msgstr "播放 WAV 文件。"
+
+#: f7db07d2d1c344e8a9a4f64ba5c6595f module.audio.AudioModule.play_wav_file:3 of
+msgid "The path of the WAV file to play."
+msgstr "要播放的 WAV 文件的路径。"
+
+#: 31b2147426a74c209772d5f580c5a2cc module.audio.AudioModule.get_volume
+#: module.audio.AudioModule.pcm_buffer module.audio.AudioModule.play_raw
+#: module.audio.AudioModule.play_wav module.audio.AudioModule.play_wav_file
+#: module.audio.AudioModule.tone of
+msgid "Returns"
+msgstr ""
+
+#: cc17666a55aa4ea2befe2eb4c9ec157b module.audio.AudioModule.get_volume
+#: module.audio.AudioModule.pause module.audio.AudioModule.play_raw
+#: module.audio.AudioModule.play_wav module.audio.AudioModule.play_wav_file
+#: module.audio.AudioModule.tone of
+msgid "Return type"
+msgstr ""
+
+#: 7336fcbb67a649fab562047dae4b3238 module.audio.AudioModule.play_wav_file:8 of
+msgid "|play_wav_file.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:14 e8e0240f8b5f47a9b46adfc335148896
+msgid "play_wav_file.png"
+msgstr ""
+
+#: 0ea311f128874e709962bf8aeb5c2bcc module.audio.AudioModule.tone:1 of
+msgid "Play simple tone sound."
+msgstr "播放简单的音调声音。"
+
+#: 1ff200ba20df4bbdb2fa2c2629929f74 module.audio.AudioModule.tone:3 of
+msgid "Frequency of the tone in Hz."
+msgstr "音调的频率（以赫兹为单位）。"
+
+#: 7020dc923d834e9799144192160c0ca4 module.audio.AudioModule.tone:4 of
+msgid "Duration of the tone in milliseconds."
+msgstr "音调的持续时间（以毫秒为单位）。"
+
+#: 676198bd97ac4f0caf1642904188d1a7 module.audio.AudioModule.tone:9 of
+msgid "|tone.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:22 995bba2ed26f40dfa85ca65f7ba509ad
+msgid "tone.png"
+msgstr ""
+
+#: f5434c88e8774676a7ca0f5c5c702b48 module.audio.AudioModule.play_wav:1 of
+msgid "Play a WAV buffer."
+msgstr "播放 WAV 缓冲区。"
+
+#: 3dba802288c745a4a81d039ac8cac41d module.audio.AudioModule.play_wav:3 of
+msgid "The WAV buffer to play."
+msgstr "要播放的 WAV 缓冲区。"
+
+#: 6d9c9c67e26e4cb29b6150da8dc59416 module.audio.AudioModule.play_wav:4 of
+msgid ""
+"Duration of the WAV buffer in milliseconds. when duration is -1, it will "
+"play until stopped. (default is -1)."
+msgstr "WAV 缓冲区的持续时间（以毫秒为单位）。当持续时间为 -1 时，它将播放直到停止。（默认值为 -1）。"
+
+#: 7976470bd0e146c38ed0ea9918d1b3e0 module.audio.AudioModule.play_wav:9 of
+msgid "|play_wav.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:13 f97de84758ad4bfdb9494ce85c5e3b58
+msgid "play_wav.png"
+msgstr ""
+
+#: c228ad32b045496ba467fa6ad361c887 module.audio.AudioModule.play_raw:1 of
+msgid "Play a pcm buffer."
+msgstr "播放 pcm 缓冲区。"
+
+#: d8ee5a8e36074f46b28fdd0f8cd1d005 module.audio.AudioModule.play_raw:3 of
+msgid "The PCM buffer to play."
+msgstr "要播放的 PCM 缓冲区。"
+
+#: 2e9e26960d0440e5b87fe7c32e72da37 module.audio.AudioModule.play_raw:5
+#: module.audio.AudioModule.record:4 module.audio.AudioModule.record_wav_file:5
+#: of
+msgid "Bit depth (default is 16)."
+msgstr "位深度（默认为 16）。"
+
+#: 7f41a9a34a944d29813a299b94378e02 module.audio.AudioModule.play_raw:6
+#: module.audio.AudioModule.record:5 module.audio.AudioModule.record_wav_file:6
+#: of
+msgid "Number of channels (default is 2)."
+msgstr "通道数（默认为 2）。"
+
+#: 1e875fea02564e689f6de3d9ef8550fe module.audio.AudioModule.play_raw:7 of
+msgid ""
+"Duration of the PCM buffer in milliseconds. when duration is -1, it will "
+"play until stopped. (default is -1)."
+msgstr "PCM 缓冲区的持续时间（以毫秒为单位）。当持续时间为 -1 时，它将播放直到停止。（默认值为 -1）。"
+
+#: cfe793b23b4e4474b04262d43e6cdf38 module.audio.AudioModule.play_raw:12 of
+msgid "|play_raw.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:12 a182e500c9ae4680b00ef6ff7bde26d4
+msgid "play_raw.png"
+msgstr ""
+
+#: 68e41b47ea8f453498d900c30161abde module.audio.AudioModule.pause:1 of
+msgid "Pause the playback."
+msgstr "暂停播放。"
+
+#: cd4b97ba552d41aaa6d0d66d985dbb77 module.audio.AudioModule.pause:5 of
+msgid "|pause.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:10 a62a0b59d2d9483da22aab83eafb1587
+msgid "pause.png"
+msgstr ""
+
+#: dff380f9d9c049c59824584c04b1efc0 module.audio.AudioModule.resume:1 of
+msgid "Resume the playback."
+msgstr "继续播放。"
+
+#: 008f3dbeb6f049fda0e960fdc6795e1c module.audio.AudioModule.resume:5 of
+msgid "|resume.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:17 4ee0f16b9e9c40e3b1aa0a26f6e967b5
+msgid "resume.png"
+msgstr ""
+
+#: ffe9916436b74c018e435b36a21a0099 module.audio.AudioModule.stop:1 of
+msgid "Stop the playback."
+msgstr "停止播放。"
+
+#: c3045598455e4702be6911b54d901072 module.audio.AudioModule.stop:5 of
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:21 e922aba03c3f45678f67ee8fc0a135a9
+msgid "stop.png"
+msgstr ""
+
+#: a76a1d8c41f9465e8c5777dac6ea7217 module.audio.AudioModule.get_volume:1 of
+msgid "Get the speaker volume level."
+msgstr "获取扬声器音量级别。"
+
+#: 58a62234113d469db2512d59328879ba module.audio.AudioModule.get_volume:3
+#: module.audio.AudioModule.set_volume:3 of
+msgid "The volume level (0-100)."
+msgstr "音量级别（0-100）。"
+
+#: 08df27c675004f2a8b07c62b85a9f984 module.audio.AudioModule.get_volume:7 of
+msgid "|get_volume.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:7 7d0c7a9e0aae4eb68972c96b9b1a2090
+msgid "get_volume.png"
+msgstr ""
+
+#: 014d833ed2744bd7884312c217dcef55 module.audio.AudioModule.set_volume:1 of
+msgid "Set the speaker volume level."
+msgstr "设置扬声器音量。"
+
+#: b6cdff8c0a674bbb9f501c2a128bd0e9 module.audio.AudioModule.set_volume:7 of
+msgid "|set_volume.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:20 e8c2bb90ec0f4b3c92bc7b3ef0e4db35
+msgid "set_volume.png"
+msgstr ""
+
+#: 007c2f7f0624403fb40e3cf85cd88e97 module.audio.AudioModule.record_wav_file:1
+#: of
+msgid "Record audio to a WAV file."
+msgstr "将音频录制为 WAV 文件。"
+
+#: 085929bffe264c0aa1a6f511681f5e8a module.audio.AudioModule.record_wav_file:3
+#: of
+msgid "The path to save the WAV file."
+msgstr "保存 WAV 文件的路径。"
+
+#: 6b7e5ae50de146f0817f18217ce3b553 module.audio.AudioModule.record:6
+#: module.audio.AudioModule.record_wav_file:7 of
+msgid "Duration of the recording in milliseconds (default is 3000)."
+msgstr "录音时长（以毫秒为单位）（默认为 3000）。"
+
+#: 2626c428381a4455b8ad5398519ce9ed module.audio.AudioModule.record_wav_file:11
+#: of
+msgid "|record_wav_file.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:16 32de33a86d2e4d289d623ec0fb445fe0
+msgid "record_wav_file.png"
+msgstr ""
+
+#: e1d2eaae3bfb41cbb2e35fb81f1c1a4d module.audio.AudioModule.record:1 of
+msgid "Record audio to a PCM buffer."
+msgstr "将音频录制到 PCM 缓冲区。"
+
+#: 30fb73dc367749e8bf5e13e5f81d76bc module.audio.AudioModule.record:10 of
+msgid "|record.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:15 b4201763ff91480ead2fb80f6e3ad52c
+msgid "record.png"
+msgstr ""
+
+#: 3738b4bc51f74f0e891e03e8bda30e9f module.audio.AudioModule.pcm_buffer:1 of
+msgid "Get the PCM buffer."
+msgstr "获取 PCM 缓冲区。"
+
+#: 2069fafdd59842a1a2e1b2dfcc55f7c1 module.audio.AudioModule.pcm_buffer:3 of
+msgid "The PCM buffer."
+msgstr "PCM缓冲区。"
+
+#: 1b2377eb5c5e44fb9f7e4c4cf6564b50 module.audio.AudioModule.pcm_buffer:7 of
+msgid "|pcm_buffer.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:11 a49e2e0eff334055998dd514212dad75
+msgid "pcm_buffer.png"
+msgstr ""
+
+#: f9a99c492a42495a89ff303bb96fe692 module.audio.AudioModule.set_color:1 of
+msgid "Set the RGB LED color."
+msgstr "设置 RGB LED 颜色。"
+
+#: daa6c08564ad46fba66992193e9e56a2 module.audio.AudioModule.set_color:3 of
+msgid "The LED number (0-2)."
+msgstr "LED 编号 (0-2)。"
+
+#: 8c11aa67c62241fdb0132be5987afed9 module.audio.AudioModule.fill_color:3
+#: module.audio.AudioModule.set_color:4 of
+msgid "The color value (0xRRGGBB)."
+msgstr "颜色值（0xRRGGBB）。"
+
+#: 5b39f3335f6148a8893d303ef761e4b1 module.audio.AudioModule.set_color:8 of
+msgid "|set_color.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:19 fc01446256e04c92b68b75e4562b5fbb
+msgid "set_color.png"
+msgstr ""
+
+#: 255690fc3d1448b3bba88b37f48f8441 module.audio.AudioModule.fill_color:1 of
+msgid "Fill all RGB LEDs with the same color."
+msgstr "用相同的颜色填充所有 RGB LED。"
+
+#: a8bab0db46124d6eb5adaf85acd37b09 module.audio.AudioModule.fill_color:7 of
+msgid "|fill_color.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:6 fb69d35f01fa4aa4bf4cb18622d7b98b
+msgid "fill_color.png"
+msgstr ""
+
+#: b09bb9603fcb419ba132ca7c2a93fe12 module.audio.AudioModule.set_brightness:1
+#: of
+msgid "Set the RGB LED brightness."
+msgstr "设置 RGB LED 亮度。"
+
+#: ef425572ee554c8e84358c7a1025dde3 module.audio.AudioModule.set_brightness:3
+#: of
+msgid "The brightness level (0-100)."
+msgstr "亮度级别（0-100）。"
+
+#: 7486b71ecbf74486b5964f2503f47604 module.audio.AudioModule.set_brightness:7
+#: of
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/module.audio.ref:18 c6133d60a23b4a74af0b0df7e8affd04
+msgid "set_brightness.png"
+msgstr ""
+

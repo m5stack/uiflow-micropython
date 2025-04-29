@@ -6,6 +6,7 @@ set(IDF_TARGET esp32s3)
 
 # airq https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L17
 set(BOARD_ID 15)
+set(MICROPY_PY_LVGL 0)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base

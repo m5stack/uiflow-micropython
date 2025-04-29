@@ -77,12 +77,12 @@ set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 if(BUILD_WITH_LVGL)
     # Include LVGL component, ignore KCONFIG
-    idf_build_set_property(LV_MICROPYTHON 1)
-    idf_build_component(${CMAKE_SOURCE_DIR}/components/lv_bindings/lvgl)
-    idf_build_set_property(COMPILE_DEFINITIONS "-DLV_KCONFIG_IGNORE" APPEND)
-    separate_arguments(LV_CFLAGS_ENV UNIX_COMMAND $ENV{LV_CFLAGS})
-    list(APPEND LV_CFLAGS ${LV_CFLAGS_ENV})
-    idf_build_set_property(COMPILE_DEFINITIONS "${LV_CFLAGS}" APPEND)
+    # idf_build_set_property(LV_MICROPYTHON 1)
+    # idf_build_component(${CMAKE_SOURCE_DIR}/components/lv_bindings/lvgl)
+    # idf_build_set_property(COMPILE_DEFINITIONS "-DLV_KCONFIG_IGNORE" APPEND)
+    # separate_arguments(LV_CFLAGS_ENV UNIX_COMMAND $ENV{LV_CFLAGS})
+    # list(APPEND LV_CFLAGS ${LV_CFLAGS_ENV})
+    # idf_build_set_property(COMPILE_DEFINITIONS "${LV_CFLAGS}" APPEND)
 endif()
 
 # Include main IDF cmake file.

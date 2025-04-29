@@ -13,6 +13,7 @@ Unit
     angle.rst
     angle8.rst
     asr.rst
+    bldc_driver.rst
     bps.rst
     button.rst
     buzzer.rst
@@ -48,6 +49,7 @@ Unit
     gps_v11.rst
     grove2grove.rst
     hall_effect.rst
+    hbridge.rst
     heart.rst
     id.rst
     imu.rst
@@ -94,12 +96,14 @@ Unit
     rollercan.rst
     scales.rst
     scroll.rst
+    servos8.rst
     ssr.rst
     synth.rst
     thermal.rst
     timerpwr.rst
     tmos.rst
     tof.rst
+    tof4m.rst
     tvoc.rst
     uhf_rfid.rst
     ultrasonic.rst

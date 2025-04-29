@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-20 15:12+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,57 +20,59 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/fan.rst:2 8e3ee19c86404443a06da4fd5fe9dc5c
+#: ../../en/module/fan.rst:2 cf6ca6cfecfa46e3a94f1fdd19d848b1
 msgid "Fan v1.1 Module"
 msgstr ""
 
-#: ../../en/module/fan.rst:8 ea1c5eba810849a68e0fd924db65fe1e
+#: ../../en/module/fan.rst:8 ec9e48fd15834949ba0b263db8735eaa
 msgid ""
 "This is the driver library of Fan Module, which is used to control the "
 "fan."
 msgstr "这是Module FAN的驱动库, 用于控制Module FAN。"
 
-#: ../../en/module/fan.rst:10 02a5ca02e4c044d481c891a2ea96a4d6
+#: ../../en/module/fan.rst:10 317818a1e07848bab812fd7d057d0707
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/module/fan.rst:12 f859a2d896814ff4b32ad7dc35d92879
+#: ../../en/module/fan.rst:12 9dd8805dfb6e43fbb474a5af39fdf937
 msgid "|FAN|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref 729a07278ba44f349bf4fbeb376b3fc2
+#: ../../en/refs/module.fan.ref 86d56092d99942178ea55e44a555770c
 msgid "FAN"
 msgstr ""
 
-#: ../../en/module/fan.rst:16 9343ec4b19d4405597b87e1272464d3e
+#: ../../en/module/fan.rst:16 0fcad8dc693c4887a59d23699db0d3fe
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../en/module/fan.rst:19 ../../en/module/fan.rst:37
-#: 75d70ec5638a4a69bee0c1f0ab6cb0ea a303fdbaea884d49b0e51040c1e14593
+#: 171747dfdd2d47a7b1069eb24091f1dc ddd54382082c4d6a88b6117b5c8ef040
 msgid "control module fan v1.1"
 msgstr "控制 module fan v1.1"
 
-#: ../../en/module/fan.rst:21 53b433f63b6f48c19b6791a7e4b0faab
+#: ../../en/module/fan.rst:21 ffd9e40e5f86406e889e9f7aac57575b
 msgid "Open the |fan_cores3_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |fan_cores3_example.m5f2| 项目。"
 
 #: ../../en/module/fan.rst:23 ../../en/module/fan.rst:39
-#: 1297e4d487484d62b24b804a7c59ef24 9885be0d88444dbf89afc2ddfa07915f
+#: 68c97b1f394d4994b01e38a5738617ac ef7641717c364a27840a1dc7056242a7
 msgid ""
 "Initializes the fan module, sets the fan status, PWM frequency and duty "
 "cycle, and displays the fan status, speed, PWM frequency and duty cycle "
 "on the screen in real time. When the user touches the screen, the fan "
 "status toggles on/off."
-msgstr "初始化风扇模块，设置风扇状态、PWM 频率和占空比，并在屏幕上实时显示风扇状态、转速、PWM 频率和占空比。当用户触摸屏幕时，风扇状态会切换为开/关。"
+msgstr ""
+"初始化风扇模块，设置风扇状态、PWM 频率和占空比，并在屏幕上实时显示风扇状态、转速、PWM "
+"频率和占空比。当用户触摸屏幕时，风扇状态会切换为开/关。"
 
-#: ../../en/module/fan.rst:25 019f02f2b00b4ba8b89b850e5db0e748
-#: 04ab7c3d88f0483fabf05b37ffb34428 1def3cb718cd48f3817e90fb738c8bbf
-#: 213d0ab2ca96486f92a29c766f4ce695 4a69014f330b450598baaf1b332d89e4
-#: 57a05457a7364b97bbee4b8ac4d6ab2f 5dd59248dab248ba95c6453122039bde
-#: 76ab23850c774f688848b93359929dfe 7768e7c495fb4e0bb902dafe0221fd2e
-#: 94dad7a6ac5849afa5114983247c774a c6a0b8e26a9a4445b4ce2a7c8aeea9c7
-#: f314b104602d4d01863be5d92f8ad29b f8f366b09a5041229ca9ad14ca3f5c1a
+#: ../../en/module/fan.rst:25 0ee041ceafab4431975c9e101732602c
+#: 38bed7f2863e485fa6fd7cf7292de2b3 3dc55631f2764793939fb4d0697aa1e5
+#: 3de58450decd42879fe3083fbfe20cd8 4aa2d9e894914b2c874d343c1bb26b2e
+#: 5225a44a9e634b6394aa96c0f8db24ec 95150dbeca034b2b874421145c4a295a
+#: a9585316c17c4095bedb1ba914c4ca2c b7a9e07d565c4b6783f817a0be01d232
+#: d7a6efbeec8e49cb988f82399c5f05c4 e746614520b6497f9a02e79a3dd1cafa
+#: ef588b8558f0432388cc0e8ff76b0f6e f9af730dba5b465aadb86aedeb778f33
 #: module.fan.FanModule.get_fan_rpm:6 module.fan.FanModule.get_fan_state:6
 #: module.fan.FanModule.get_firmware_version:6
 #: module.fan.FanModule.get_i2c_address:6
@@ -84,35 +86,35 @@ msgstr "初始化风扇模块，设置风扇状态、PWM 频率和占空比，�
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/module/fan.rst:27 451d2524c58944f58e84b6b49c5e2a95
+#: ../../en/module/fan.rst:27 11fbd331603d49feac753e682954c99a
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:5 f9825155fe2b4cb781a7a5faca7981d2
+#: ../../en/refs/module.fan.ref:5 8944d2f8ceb2460a807ef9ed006972c7
 msgid "example.png"
 msgstr ""
 
 #: ../../en/module/fan.rst:29 ../../en/module/fan.rst:47
-#: 50fff7ca636c490ebc2393668313e9ce ec4dab0ff5204431a9aaf77842d103e5
+#: 66bfcaa18bbf430ab79c4e80d28d0829 750c70c5c6a94217b774471ae4b2b807
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/module/fan.rst:31 ../../en/module/fan.rst:49
-#: 08ab28b6f43e4317ad576e9a980d3a11 9ba75b029746436eb903c80e0be978d3
+#: 53d59702a4f44974bc403c0ab95b294b 7c45d688313b485d8350cbbe54ea2dfb
 msgid "None"
 msgstr "无"
 
-#: ../../en/module/fan.rst:34 3351491d4b93423586b88b7ef1a2bafc
+#: ../../en/module/fan.rst:34 78ea864d8b2c4708b1246cb7ee074494
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/module/fan.rst:41 0a0ae7171e954b7686bbf920ce80f6fb
-#: 139f67ff7f1745c4a15170c29010c4d9 1ea80bbe29164adaa8014a264ddc919b
-#: 548cb0634bfd49dab3bfd27765940d9f 7b5dd6bb2c0f4ab08c29b3a9b7a19237
-#: a318227aa0ab40538e6e4911df532c3f ad09ef0b35ee412c9190f921a0729cd0
-#: ba1a5284134b42c78765a645b8f07216 d9e12d3d4125422d95c2ccb14b57d722
-#: da1b7fc30fab4c4fb8f7e56148888b4a df816738705944aaaaf93b352c64702c
-#: ebb46f7c7def43139aa9a5b3b9f2275d f71759758f594f278dc993966f3e9578
+#: ../../en/module/fan.rst:41 0574c3bc06fb487da7d1be62fa439e5c
+#: 0dc2a5b231a34ff19cccd9410136d80e 236acbeb6efb46cc8191cd30651121a5
+#: 2db4c050ef7b437cb53d07d198e4fc88 39bf3cf2a68f414285d10d2f168207be
+#: 47b588559f854376b43d55079ba2b2d3 7839ac2bdbd7439ea77d090aabed225e
+#: 7ade6478bac24100b8e7029851fca3e9 8a39fed659f4471f8a7f5ca9a7f52363
+#: cb2b0794b4df46cbbcd14e88ab0036ef d3f782c14120418f863af74420ea0c00
+#: e9d5620136834aba8520668835e8081a f397e996ee7c4f8abf984a4e3ea51d56
 #: module.fan.FanModule.get_fan_rpm:10 module.fan.FanModule.get_fan_state:10
 #: module.fan.FanModule.get_firmware_version:10
 #: module.fan.FanModule.get_i2c_address:10
@@ -126,51 +128,51 @@ msgstr "MicroPython 应用示例"
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/module/fan.rst:53 9b200b91d07b4888b32ce6ab2115bb10
+#: ../../en/module/fan.rst:53 2a29f411271742498484bf5ce5d87d51
 msgid "**API**"
 msgstr ""
 
-#: ../../en/module/fan.rst:56 47c64461c9cb484a8e40c61e659e523c
+#: ../../en/module/fan.rst:56 029e555e8ace48b6979b45b911d0a778
 msgid "FanModule"
 msgstr ""
 
-#: d523c826d9ee43e6b220769c460e968a module.fan.FanModule:1 of
+#: ae1b5b726d4f42f09b7da648683c7efd module.fan.FanModule:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: ../../en/module/fan.rst 0fcad1cb939f4607b29863c5069c53e6
-#: 1362a73f188b4d089fee4f9f14b8b79c 4af71338031a4bb5a467fa91ab6e32b5
-#: 5cfdd37a6d6c4c3f849683c31b95539a 767b1601a50d470695ea7b9f036d6bf7
+#: ../../en/module/fan.rst 7462cabe54724cc79d56c1f926287197
+#: 896a5ccbeb7b4f3c8c55f0fce9bf90c9 b9099923b17d41bf85f052060ceb2228
+#: d8390eaf0149468d9438022f3761dbf5 fe275413f3dc41b9a28f5f4ca683f4db
 #: module.fan.FanModule.set_fan_state module.fan.FanModule.set_i2c_address
 #: module.fan.FanModule.set_pwm_duty_cycle
 #: module.fan.FanModule.set_pwm_frequency of
 msgid "Parameters"
 msgstr ""
 
-#: 1fedf2ff9fcb45a3b7cb47894a64c4ef module.fan.FanModule.set_fan_state:1 of
+#: 39ef5935a70b4332a64e3d8a92b3f86a module.fan.FanModule.set_fan_state:1 of
 msgid "Set the fan state to on or off."
 msgstr "设置风扇的状态为开/关。"
 
-#: e1e3e57761c54372ba9e413f26f88ccb module.fan.FanModule.set_fan_state:3 of
+#: 172a9e2a4b0b4ab6befb4b6c9d1443f6 module.fan.FanModule.set_fan_state:3 of
 msgid "The state of the fan."
 msgstr "风扇的状态。"
 
-#: 41f3e0937da04a91a63582f1ba54aea0 module.fan.FanModule.set_fan_state:7 of
+#: 9587d95a4add4eb8b1a0e4d3aef9bcd1 module.fan.FanModule.set_fan_state:7 of
 msgid "|set_fan_state.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:8 ac190eb13f6c4e7baa64008499175b8f
+#: ../../en/refs/module.fan.ref:8 f0bca698a81e4c53bb96803094ab6860
 msgid "set_fan_state.png"
 msgstr ""
 
-#: 79e69e4b952444e8b3a2302c4a154138 module.fan.FanModule.get_fan_state:1 of
+#: 7d3fd23d9d0d45c29497ef5bb9543bbe module.fan.FanModule.get_fan_state:1 of
 msgid "Get current fan state."
 msgstr "获取当前风扇的状态。"
 
-#: 0832ef1e1eb744c58df1afccdb35bcf7 20c9b2cb692a4ac39b104e62ca930658
-#: 3e8024b74857494683894f18aaf5a23d 800c21223d11441f96f57edaa69996e3
-#: 90238fd59ec84bd2b1b2496c3356464d c7e035e014a2439a8ee0cf005b058e42
-#: fe7704dad2f74b1c9284f97b6d01337f module.fan.FanModule.get_fan_rpm
+#: 12ed9576d1a3402e85145f14cd4c3af3 1cfa6c421b4a49d599244c2d078be075
+#: 81f49867258140b09813e0df5fbf8c06 8a998de0c3c841ca8f79aa54fad38559
+#: 8e3cde7adbc3406295d5c97ae5a723f0 a34354ac8ab64494ac764eec9d0677cb
+#: a6a72c021bfa4b439a0eb8b5450be0a1 module.fan.FanModule.get_fan_rpm
 #: module.fan.FanModule.get_fan_state module.fan.FanModule.get_firmware_version
 #: module.fan.FanModule.get_i2c_address module.fan.FanModule.get_pwm_duty_cycle
 #: module.fan.FanModule.get_pwm_frequency
@@ -178,16 +180,16 @@ msgstr "获取当前风扇的状态。"
 msgid "Returns"
 msgstr ""
 
-#: a43bd590bc1e4abf92e7fbd4d4bddc7f module.fan.FanModule.get_fan_state:3 of
+#: c19bb4874e1548b3b81e6009ee818d3d module.fan.FanModule.get_fan_state:3 of
 msgid "The current fan state."
 msgstr "当前风扇的状态。"
 
-#: 2c8f9c3f9f1e43cc9bb558add5b4943d 58c7820fae7c46a88b70a2fdcf9a8c7b
-#: 5e2272f81f09415f87952659336521fb 61052b3d1760418aac5cdb13cc9607d1
-#: 71913b759d33461da00354b766936973 759591725b2347ffacae7dba82d80b3d
-#: 7653214fd5854b289afd0a2822243d66 7dacae67fe7a4a9b9ab7a29925d7d53a
-#: 838bbd9908eb45acbc0d36dad1216696 b3234ccbe6704f6fa239d1054ef646c0
-#: d9e4384e37474654a15cc7b812c450ef module.fan.FanModule.get_fan_rpm
+#: 0ba9f4e142e24715ad660d2cdc3fd0e3 230c2de259394f519b3d87833bb71134
+#: 34c34d729a1047dcbfa8ab649519f6e1 351071db19f3440f821ed6e3a3f2750d
+#: 7a5df47f86034d069138a4f7956d6775 9827de8eba5b412bb25178c9d3c57d4d
+#: b6ef5345d9b44052a2c39187125afe21 b93d2fe07a0d40bfba4a467cf7dfbcad
+#: c9e50d86dc2243148b8daee8bbe88bfc eec8ef338772409e836e5de4cc37d86c
+#: fdd6679af69940cfa450071d3402398e module.fan.FanModule.get_fan_rpm
 #: module.fan.FanModule.get_fan_state module.fan.FanModule.get_firmware_version
 #: module.fan.FanModule.get_i2c_address module.fan.FanModule.get_pwm_duty_cycle
 #: module.fan.FanModule.get_pwm_frequency
@@ -197,177 +199,182 @@ msgstr "当前风扇的状态。"
 msgid "Return type"
 msgstr "返回值类型"
 
-#: c23b8e1e6538462bb672b77af2f7a083 module.fan.FanModule.get_fan_state:8 of
+#: 109cd13f0b404163a2432be3500b15a3 module.fan.FanModule.get_fan_state:8 of
 msgid "|get_fan_state.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:9 e538e95bb9fc4235a4a3ac00abaf3246
+#: ../../en/refs/module.fan.ref:9 072ba281622c4d88be11f43bd957d426
 msgid "get_fan_state.png"
 msgstr ""
 
-#: 99adcc2faec042d489b9ef8b68484dc4 module.fan.FanModule.set_pwm_frequency:1 of
+#: bf1b0dcecea047bd8009d43c4cbc76ad module.fan.FanModule.set_pwm_frequency:1 of
 msgid "Set the PWM frequency of the fan."
 msgstr "设置风扇的PWM频率。"
 
-#: 50db985498a5410eb77c69b6b5f01d52 module.fan.FanModule.set_pwm_frequency:3 of
+#: cabb21ef79c74affb2043c4b1ad35962 module.fan.FanModule.set_pwm_frequency:3 of
 msgid "The PWM frequency of the fan."
 msgstr "风扇的PWM频率。"
 
-#: b433c9a5ad44441bb74a937ce759b181 module.fan.FanModule.set_pwm_frequency:7 of
+#: bd6caf7989f14f38834ab7e8101d2579 module.fan.FanModule.set_pwm_frequency:7 of
 msgid "|set_pwm_frequency.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:10 fbae333f50c24ba6afbe2ff233aebff7
+#: ../../en/refs/module.fan.ref:10 163ef2a01a4b4504865d0d9e325331c3
 msgid "set_pwm_frequency.png"
 msgstr ""
 
-#: a256af6dacd34c4994047690310244fa module.fan.FanModule.get_pwm_frequency:1 of
+#: a74f29746cf44b3296344d39e3a3e801 module.fan.FanModule.get_pwm_frequency:1 of
 msgid "Get current PWM frequency."
 msgstr "获取当前PWM频率。"
 
-#: 30adb78f27bd495e9c111368128842e1 module.fan.FanModule.get_pwm_frequency:3 of
+#: a64a5042624645c6b8bbdeac949d5e3b module.fan.FanModule.get_pwm_frequency:3 of
 msgid "The current PWM frequency."
 msgstr "当前PWM频率。"
 
-#: ad8272ede4af4f138e17aa3d922aff06 module.fan.FanModule.get_pwm_frequency:8 of
+#: 02bb1b98f38e42e0a669bfa8dab1c692 module.fan.FanModule.get_pwm_frequency:8 of
 msgid "|get_pwm_frequency.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:11 17bc73f4fd7047a38fef14ca4096f17e
+#: ../../en/refs/module.fan.ref:11 650a62fa7e384a0b8dfe4c4ec8be5141
 msgid "get_pwm_frequency.png"
 msgstr ""
 
-#: a9124eea11394c9095a8f0a118882160 module.fan.FanModule.set_pwm_duty_cycle:1
+#: 677a92a93a9e48caa630706c8b549bdf module.fan.FanModule.set_pwm_duty_cycle:1
 #: of
 msgid "Set the PWM duty cycle of the fan."
 msgstr "设置风扇的PWM占空比。"
 
-#: b81215d6c72648de9beb857119a5969b module.fan.FanModule.set_pwm_duty_cycle:3
+#: a003dece29c443e49679d47b94fa5bc5 module.fan.FanModule.set_pwm_duty_cycle:3
 #: of
 msgid "The PWM duty cycle of the fan."
 msgstr "风扇的PWM占空比。"
 
-#: f009cfef212a4d3faaf0af8a1fd17534 module.fan.FanModule.set_pwm_duty_cycle:7
+#: 15452ec8592e40e9923eba1502c9e3c5 module.fan.FanModule.set_pwm_duty_cycle:7
 #: of
 msgid "|set_pwm_duty_cycle.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:12 a36964749d0e499f9be711caa338d83e
+#: ../../en/refs/module.fan.ref:12 e681b0b38c7b4b1080fa1fb226fe0687
 msgid "set_pwm_duty_cycle.png"
 msgstr ""
 
-#: cdf66531ab2744069ab21c0949d7fc4b module.fan.FanModule.get_pwm_duty_cycle:1
+#: d4fe3a5e32424820b3a68fae7541cd0b module.fan.FanModule.get_pwm_duty_cycle:1
 #: of
 msgid "Get current PWM duty cycle."
 msgstr "获取当前PWM占空比。"
 
-#: 6c483a26685c41b99a67dac3bfcb880b module.fan.FanModule.get_pwm_duty_cycle:3
+#: 9a671fb81b5a46c4a7181772b5841a33 module.fan.FanModule.get_pwm_duty_cycle:3
 #: of
 msgid "The current PWM duty cycle."
 msgstr "当前PWM占空比。"
 
-#: 9a244c5d6acd4304b468a6fa3a03d851 module.fan.FanModule.get_pwm_duty_cycle:8
+#: f055a3ec798e4486b57be3ec2cdb118c module.fan.FanModule.get_pwm_duty_cycle:8
 #: of
 msgid "|get_pwm_duty_cycle.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:13 cf38d1e93d534f1e9cff90dd446e04c3
+#: ../../en/refs/module.fan.ref:13 d710d88671b646239bfd27064e4c05df
 msgid "get_pwm_duty_cycle.png"
 msgstr ""
 
-#: 55b7dfaae7074061a49b9fc43767af65 module.fan.FanModule.get_fan_rpm:1 of
+#: d934225a5d4e42c3a3ea4d4fb1db2811 module.fan.FanModule.get_fan_rpm:1 of
 msgid "Get current fan RPM."
 msgstr "获取当前风扇的转速(每分钟转速)。"
 
-#: d590ac3e8b744432a3c657bfbb3a5869 module.fan.FanModule.get_fan_rpm:3 of
+#: 51068b562d34475ca3aacc5deb26aa29 module.fan.FanModule.get_fan_rpm:3 of
 msgid "The current fan RPM."
 msgstr "当前风扇的转速(每分钟转速)。"
 
-#: 578f0cff874a4c00983234d7dcaa7c23 module.fan.FanModule.get_fan_rpm:8 of
+#: 10960b061b564b3eb478cd7cfb8cc918 module.fan.FanModule.get_fan_rpm:8 of
 msgid "|get_fan_rpm.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:14 42c16f3dd17948549114571e998f914d
+#: ../../en/refs/module.fan.ref:14 5d15f7a519014a22aab57b760508d691
 msgid "get_fan_rpm.png"
 msgstr ""
 
-#: 769947e19ff249e5a285410baabf9cf6 module.fan.FanModule.get_single_frequency:1
+#: 427d830e102343409d65563514b2ea5a module.fan.FanModule.get_single_frequency:1
 #: of
 msgid "Get current single frequency."
 msgstr "获取当前信号频率。"
 
-#: 47633facec364a218cf1f99faee0f6fb module.fan.FanModule.get_single_frequency:3
+#: a9ae6bff6ac447e38f6d16fd8580e274 module.fan.FanModule.get_single_frequency:3
 #: of
 msgid "The current single frequency."
 msgstr "当前信号频率。"
 
-#: b8aea18cced3487687eacc3e2bd12902 module.fan.FanModule.get_single_frequency:8
+#: 0c3fc4fa8d2047eda4f3546f96bdc0d9 module.fan.FanModule.get_single_frequency:8
 #: of
 msgid "|get_single_frequency.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:15 340e80feb9e546af96da824d392e9159
+#: ../../en/refs/module.fan.ref:15 77b28ee0e36f46efa23c5fd8c340570f
 msgid "get_single_frequency.png"
 msgstr ""
 
-#: 5e35109428ee43ba93c5309d2012d9af module.fan.FanModule.write_flash:1 of
+#: 27b52acf99494c5090c9c82286b64c35 module.fan.FanModule.write_flash:1 of
 msgid ""
 "Save the current configuration(fan status, PWM frequency, and PWM duty "
 "cycle) to the flash."
 msgstr "将当前配置（风扇状态、PWM 频率和 PWM 占空比）保存到闪存中。"
 
-#: d37abe1024264de5888da285a43a921c module.fan.FanModule.write_flash:5 of
+#: 9d80ea49e2424de89d938497d3d9c6f2 module.fan.FanModule.write_flash:5 of
 msgid "|write_flash.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:16 eeea0282c5094626be51533572f26011
+#: ../../en/refs/module.fan.ref:16 123050944ae14d62bfa4fd7dd5be543a
 msgid "write_flash.png"
 msgstr ""
 
-#: 38dbd9f887f041b89593917f64bd17eb module.fan.FanModule.get_firmware_version:1
+#: 4318d3ebe198454ba8c7f977d5159e78 module.fan.FanModule.get_firmware_version:1
 #: of
 msgid "Get current firmware version."
 msgstr "获取当前固件版本。"
 
-#: 516638a5bea045b7bd27d9d7bca6ad49 module.fan.FanModule.get_firmware_version:3
+#: 5a458cab14674bf496c6d5d28749fdfa module.fan.FanModule.get_firmware_version:3
 #: of
 msgid "The current firmware version."
 msgstr "当前固件版本。"
 
-#: 5a0da8fdbf4940f79f2d0731870121a6 module.fan.FanModule.get_firmware_version:8
+#: bce354c504064925b49071e830c5643f module.fan.FanModule.get_firmware_version:8
 #: of
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:17 acb3fde569c64d9e839382c3f15dc04c
+#: ../../en/refs/module.fan.ref:17 01e72674f3084da0ac5d3f4a9be2a4cf
 msgid "get_firmware_version.png"
 msgstr ""
 
-#: 7577cb8ff3974ea7aaaa79a3a0d837f1 module.fan.FanModule.get_i2c_address:1 of
+#: 025af500d46449eab167d137fc8bd301 module.fan.FanModule.get_i2c_address:1 of
 msgid "Get current I2C address."
 msgstr "获取当前I2C地址。"
 
-#: 4ea32f7330734748a2f013621d921fff module.fan.FanModule.get_i2c_address:3 of
+#: d899ada3969146159402249e79c2c547 module.fan.FanModule.get_i2c_address:3 of
 msgid "The current I2C address."
 msgstr "当前I2C地址。"
 
-#: 0dc3d2d17add47dd956cf915ea110ed2 module.fan.FanModule.get_i2c_address:8 of
+#: ebcff0c5b96c415e90f1c1bf62ae8f57 module.fan.FanModule.get_i2c_address:8 of
 msgid "|get_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/module.fan.ref:18 5a8930515f1144c28ee728cb9151490f
+#: ../../en/refs/module.fan.ref:18 c5a1ef0531884dcd8bd6ac9baa7a1c7b
 msgid "get_i2c_address.png"
 msgstr ""
 
-#: 6be3aa0b67d74ab08a30204762744d63 module.fan.FanModule.set_i2c_address:1 of
+#: 0e34e03be95042228d1f49f63cc3bd9b module.fan.FanModule.set_i2c_address:1 of
 msgid "Set the I2C address of the fan."
 msgstr "设置Module Fan的I2C地址。"
 
-#: 48a9ded1077745a185259f6dcfd9a2c9 module.fan.FanModule.set_i2c_address:3 of
+#: 958068ea33f8485ea05791cf3e1b4aff module.fan.FanModule.set_i2c_address:3 of
 msgid "The I2C address of the fan."
 msgstr "Module Fan的I2C地址。"
 
-#: d64a893082824b5b854801fa97bcc7e4 module.fan.FanModule.set_i2c_address:7 of
+#: d76f9b3ec0fd41d0905ba7d24041b7be module.fan.FanModule.set_i2c_address:7 of
 msgid "|set_i2c_address.png|"
 msgstr ""
+
+#: ../../en/refs/module.fan.ref:19 37f8e3ba7b5f481c92d94c5f55541fea
+#, fuzzy
+msgid "set_i2c_address.png"
+msgstr "获取当前I2C地址。"
 

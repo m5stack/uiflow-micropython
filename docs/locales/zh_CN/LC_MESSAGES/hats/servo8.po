@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hats/servo8.rst:2 08a5a66bbd8a43928fada9c9c2e0a8c3
+#: ../../en/hats/servo8.rst:2 568fcc975dd34ca7bd6509991aa8d5c5
 msgid "Servos8 Hat"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:6 babc39d6685e4784bf704c35ef16d438
+#: ../../en/hats/servo8.rst:6 e934473ff1e54c08b71c3755d5d1fc62
 msgid ""
 "8Servos HAT v1.1 is an 8-channel servo driver module that works with the "
 "M5StickC/C Plus series. Adopt STM32F030F4 as main controller to drive "
@@ -35,39 +35,39 @@ msgid ""
 "support Maximum 1.3A load. Applied for robotic and DIY projects."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:15 c1da8af318304ffabafc38ac376a4ae6
+#: ../../en/hats/servo8.rst:15 49240e3193c94043a6f075ae3b6993b5
 msgid "Support the following products:"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:17 c652622f70f0417e937018ca1a04dbe9
+#: ../../en/hats/servo8.rst:17 4cd9f62500eb452eac8f2f5bcfb5eacd
 msgid "|Servo8|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref 0539feb747fc41a18652047a733ded41
+#: ../../en/refs/hat.servo8.ref f48469e4c8604c89a8f6f7abac410cbd
 msgid "Servo8"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:20 925de9703f634f55aaa112406d79613b
+#: ../../en/hats/servo8.rst:20 16617c17aac24fda9e11f95cca39e95a
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:39 7f819485a7de424c8c0fc5db526fcd5d
+#: ../../en/hats/servo8.rst:39 1e12ac42bb0142e39b62b51345b56ff7
 msgid "class Servos8Hat"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:42 e5e5d1a11bd7406c90f31e467d5021a0
+#: ../../en/hats/servo8.rst:42 75806cf86531454b93f8ec5decc601eb
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:46 7cc62c5029ea460db0fef7b38f3a2b20
+#: ../../en/hats/servo8.rst:46 83e55f3097a2423eb93b5bc86b40e3df
 msgid "Initialize the Servos8Hat."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:48 2b6b84958b7847cf8e808ec0f3d24f37
+#: ../../en/hats/servo8.rst:48 560c31dde04645008f10fd5729706520
 msgid "``i2c``: I2C port to use."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:49 9c941976673a4504873b125ff056c01a
+#: ../../en/hats/servo8.rst:49 8924e44af79a4b5eb56a4f0fc3e6c19f
 msgid "``address``: I2C address of the servo8."
 msgstr ""
 
@@ -75,138 +75,192 @@ msgstr ""
 #: ../../en/hats/servo8.rst:77 ../../en/hats/servo8.rst:89
 #: ../../en/hats/servo8.rst:100 ../../en/hats/servo8.rst:111
 #: ../../en/hats/servo8.rst:120 ../../en/hats/servo8.rst:129
-#: ../../en/hats/servo8.rst:138 497a85f4f0c34944bb68334dae60acc7
-#: 4e03bb7df39e437da2c03d2d6570ce43 72d6d06a92c0437495758b726fc048dc
-#: 73ac07c7ccae48dcaf77b39615a42155 ccddccac71324457ba0595988275d08c
-#: d0d3ae40d4cd479da5ec77b0e82c6bf6 d79db8909df2430185c620b4db3a2168
-#: efa542fd71e7432db0f6f5da9dc3f742 fb6c9737636b4ce39814cc46344bb3e3
+#: ../../en/hats/servo8.rst:138 00832246296041c7812a9e67ed750cf6
+#: 2cde7cc3df1c4bda82d246615f3845b5 5de22b3b8d9c43c4b708e13252a7b038
+#: 9bf76debdb5f4fb5b4b7b64f8410c457 9f4e9420dd65424ab3d57bab93b85f2a
+#: a0a9689f6bc74af196872dd8d1b0dd7f b45b902cd7ef44d883ef4a241aacdb4a
+#: f0b9a443271745c59b6fa904b77a6af3 f813233a621b4c39ac0f5734a5aff2e0
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:53 27a345cc784844efb749e88bb4f68da6
-msgid "|init.svg|"
+#: ../../en/hats/servo8.rst:53 3e8ecce769214f04b9a1af607ebead1b
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:6 5e991c3a252441dc9d40d24e5f42aeb7
-msgid "init.svg"
+#: ../../en/refs/hat.servo8.ref:6 fcf1766ce8e04ffab86d0cc8ecc7e660
+msgid "init.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:57 6d3c3e13e6f84b4eb3cd5104a6778871
+#: ../../en/hats/servo8.rst:57 a4c194e01f414611afe4177f91396937
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:61 d7ea961dc7774dffafb688e44aa1d656
+#: ../../en/hats/servo8.rst:61 6f176f22b8aa40328f09b9edcd7a88fa
 msgid "Set the angle of the servo."
 msgstr ""
 
 #: ../../en/hats/servo8.rst:63 ../../en/hats/servo8.rst:75
 #: ../../en/hats/servo8.rst:86 ../../en/hats/servo8.rst:98
-#: 4df86a7064144a39bf64bc9cad0762b3 7add0f89b78c4f1998d660535bd03ad0
-#: 9f6f2567960b4e4da7df0b552fd203f5 d7e18a0bd988466ba97aefcc44fc571a
+#: 43c1baaf34904e8b8c18bbce8af8871c 654af9a8283445e1bd37a14f340f035f
+#: a13ecd85039b41c8aeb2781827cc3172 d955b915cd2741cc8793b705d3704cf8
 msgid "``ch``: The channel (1 to 8) of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:64 b4ece07102604021a10d8847b5aeb802
+#: ../../en/hats/servo8.rst:64 036db378b06f4c0ea6b90264e4184eda
 msgid "``angle``: The angle (0 to 180) of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:68 32693d39cecf4485b9f23d2f88cdd52e
-msgid "|write_servo_angle.svg|"
+#: ../../en/hats/servo8.rst:68 f05066a9c8ce488d9d3eef1cc1c502cb
+msgid "|write_servo_angle.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:7 74091d1cc1244d67a34f923a0bf3a1fa
-msgid "write_servo_angle.svg"
+#: ../../en/refs/hat.servo8.ref:7 c2cd062afc144f5caec0ad67a443d065
+msgid "write_servo_angle.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:73 19c03f435ac7479db76df4b98b9e619b
+#: ../../en/hats/servo8.rst:73 705e34fcd74143c0a7037140d060a00b
 msgid "Read the angle of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:79 2ba83cbe8e394830a7d4dbaaf5895e6f
-msgid "|read_servo_angle.svg|"
+#: ../../en/hats/servo8.rst:79 eb702c8404934809ab0b9b009ff3dd47
+msgid "|read_servo_angle.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:8 9a0e6859c0dc413a90f5e12dd0715a8b
-msgid "read_servo_angle.svg"
+#: ../../en/refs/hat.servo8.ref:8 f97cac7c66c143bda00b262e59370550
+msgid "read_servo_angle.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:84 a7876ef5b7ab4a8f985b3734753c57fe
+#: ../../en/hats/servo8.rst:84 f8074170613a4b6eb562061e1ff1b822
 msgid "Set the pulse of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:87 c4f99be2da7b4afb8c8536c00aa72a32
+#: ../../en/hats/servo8.rst:87 5c8b5019be3d4cc8a9e39edc74872118
 msgid "``pulse``: The pulse (500 to 2500) of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:91 96c7244f539043b1986224f1b2007999
-msgid "|write_servo_pulse.svg|"
+#: ../../en/hats/servo8.rst:91 71046aafa92343da81870c295fa70770
+msgid "|write_servo_pulse.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:9 400ba95575204721ad904a2c27b7a687
-msgid "write_servo_pulse.svg"
+#: ../../en/refs/hat.servo8.ref:9 d58026b261cb4ee7b2524431bc4d5ca8
+msgid "write_servo_pulse.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:96 0e352feb2fa64bf9b4ce2e3464a250c1
+#: ../../en/hats/servo8.rst:96 62d8e2a3eeba48bdad6c846adc709fbc
 msgid "Read the pulse of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:102 0f32294b8b8c4afc9f2120f4d4e0b27b
-msgid "|read_servo_pulse.svg|"
+#: ../../en/hats/servo8.rst:102 da5f2a5486564c54b8f9855edbb18c4d
+msgid "|read_servo_pulse.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:10 0793bcba496a4971b08359348d39dac5
-msgid "read_servo_pulse.svg"
+#: ../../en/refs/hat.servo8.ref:10 eea3cb66568945a28830ccd775dab5b5
+msgid "read_servo_pulse.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:107 91c0ee058d074107856c87e74c841c24
+#: ../../en/hats/servo8.rst:107 6771cdfa141546b5a08bbb2c1ab09a67
 msgid "Control the power of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:109 d430c77f3d78439bbe01174273ad1e13
+#: ../../en/hats/servo8.rst:109 5a7f47894f7a4c9fa501dbdb2a567d8c
 msgid "``state``: The state of the power, 0 for OFF and 1 for ON."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:113 71f35bd398c64292842de5dd0b219edd
-msgid "|power_ctrl.svg|"
+#: ../../en/hats/servo8.rst:113 a31cee007d294bc8bf351cfb38604009
+msgid "|power_ctrl.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:11 8cb8736d8d3348598f3217bc5c86e3f0
-msgid "power_ctrl.svg"
+#: ../../en/refs/hat.servo8.ref:11 bd2c0f8e497e4fc1ba2875da88db2ae2
+msgid "power_ctrl.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:118 5f2c223122ca4f85b6a978f6ca97a9d6
+#: ../../en/hats/servo8.rst:118 d608395e1f4e4bd09e2ca1e894609e70
 msgid "Turn on the power of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:122 b3405a78baea4edab3c812d5649f9fdb
-msgid "|power_on.svg|"
+#: ../../en/hats/servo8.rst:122 fbdf591d53aa45eaaa2a5f3162779e6f
+msgid "|power_on.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:12 cbcfb5dc6bef490aa6b76addb6a06e3c
-msgid "power_on.svg"
+#: ../../en/refs/hat.servo8.ref:12 31c7ff86f8904e71b418750950adf96b
+msgid "power_on.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:127 e60aa472e3bc4a70b4c3533cd7b1d16d
+#: ../../en/hats/servo8.rst:127 9519bdcd7c0a4fb4b7c179721b8265a6
 msgid "Turn off the power of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:131 55d03f093f6b4c458a79ccc4cab7818a
-msgid "|power_off.svg|"
+#: ../../en/hats/servo8.rst:131 b384e3c42b944a62aac23501a3735cda
+msgid "|power_off.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:13 9ede8a48b2fe4e4bac7723599ef351f8
-msgid "power_off.svg"
+#: ../../en/refs/hat.servo8.ref:13 d9fde55f72a944a19febb28764b71d81
+msgid "power_off.png"
 msgstr ""
 
-#: ../../en/hats/servo8.rst:136 11cbe653e5fa48e59bb66f4fd895d41c
+#: ../../en/hats/servo8.rst:136 71760f345c23476ea8798f1627abbb97
 msgid "Get the state of the power of the servo."
 msgstr ""
 
-#: ../../en/hats/servo8.rst:140 dd5ea3c3ee0e4573a2279f8e7cb250ce
-msgid "|get_power_state.svg|"
+#: ../../en/hats/servo8.rst:140 7c53d7ae3140401293fc4efb44a08d34
+msgid "|get_power_state.png|"
 msgstr ""
 
-#: ../../en/refs/hat.servo8.ref:14 702bfaf0e48d401c9b73569375e25961
-msgid "get_power_state.svg"
+#: ../../en/refs/hat.servo8.ref:14 2ac637489c8d4c8ab4eb15b1611ad9a2
+msgid "get_power_state.png"
 msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|write_servo_angle.svg|"
+#~ msgstr ""
+
+#~ msgid "write_servo_angle.svg"
+#~ msgstr ""
+
+#~ msgid "|read_servo_angle.svg|"
+#~ msgstr ""
+
+#~ msgid "read_servo_angle.svg"
+#~ msgstr ""
+
+#~ msgid "|write_servo_pulse.svg|"
+#~ msgstr ""
+
+#~ msgid "write_servo_pulse.svg"
+#~ msgstr ""
+
+#~ msgid "|read_servo_pulse.svg|"
+#~ msgstr ""
+
+#~ msgid "read_servo_pulse.svg"
+#~ msgstr ""
+
+#~ msgid "|power_ctrl.svg|"
+#~ msgstr ""
+
+#~ msgid "power_ctrl.svg"
+#~ msgstr ""
+
+#~ msgid "|power_on.svg|"
+#~ msgstr ""
+
+#~ msgid "power_on.svg"
+#~ msgstr ""
+
+#~ msgid "|power_off.svg|"
+#~ msgstr ""
+
+#~ msgid "power_off.svg"
+#~ msgstr ""
+
+#~ msgid "|get_power_state.svg|"
+#~ msgstr ""
+
+#~ msgid "get_power_state.svg"
+#~ msgstr ""
 

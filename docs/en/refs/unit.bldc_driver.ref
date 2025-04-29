@@ -1,0 +1,42 @@
+.. |Unit BLDCDriver| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Unit-BLDC%20Driver/img-a97915ed-d14b-4dc2-a93d-e72f0d917e95.webp
+   :target: https://docs.m5stack.com/zh_CN/unit/Unit-BLDC%20Driver
+   :height: 200px
+   :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/init.png
+.. |get_current_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_current_mode.png
+.. |get_motor_current_direction.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_motor_current_direction.png
+.. |get_motor_current_model.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_motor_current_model.png
+.. |get_motor_pole_pairs.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_motor_pole_pairs.png
+.. |get_motor_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_motor_status.png
+.. |get_open_loop_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_open_loop_pwm.png
+.. |get_read_back_rpm_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_rpm_float.png
+.. |get_read_back_rpm_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_rpm_int.png
+.. |get_read_back_rpm_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_rpm_str.png
+.. |get_read_back_freq_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_freq_float.png
+.. |get_read_back_freq_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_freq_int.png
+.. |get_read_back_freq_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_read_back_freq_str.png
+.. |get_rpm_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_rpm_float.png
+.. |get_rpm_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_rpm_int.png
+.. |get_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_pid_value.png
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/get_device_spec.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_mode.png
+.. |set_direction.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_direction.png
+.. |set_motor_model.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_motor_model.png
+.. |set_pole_pairs.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_pole_pairs.png
+.. |set_open_loop_pwm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_open_loop_pwm.png
+.. |set_rpm_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_rpm_float.png
+.. |set_rpm_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_rpm_int.png
+.. |set_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_pid_value.png
+.. |save_data_in_flash.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/save_data_in_flash.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/set_i2c_address.png
+.. |cores3_bldc_driver_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/bldc_driver/example.png
+
+.. |cores3_bldc_driver_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/bldc_driver/cores3_bldc_driver_example.m5f2"
+        target="_blank"
+    >
+        cores3_bldc_driver_example.m5f2
+    </a>

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,197 +20,200 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/ain4.rst:3 147f6f506b994ea98f859b31aea3e047
+#: ../../en/module/ain4.rst:3 006356093f7548828ebed27e10f9eadb
 msgid "AIN4 Module"
 msgstr ""
 
-#: ../../en/module/ain4.rst:7 17977f78ee524db188de0520d7f25050
+#: ../../en/module/ain4.rst:7 dbd916ee474c4cc983cb7ffd8ec9ec2a
 msgid "The following products are supported:"
 msgstr ""
 
-#: ../../en/module/ain4.rst:9 f1caac50279a4a3482397f4ae15fee72
+#: ../../en/module/ain4.rst:9 a91a8a101eef464a94fd88adcb4873a8
 msgid "|AIN4Module|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref c580eda19b6f4caea8fa7f41035f562e
+#: ../../en/refs/module.ain4.ref b2981613dc234e808489d3d00889fd39
 msgid "AIN4Module"
 msgstr ""
 
-#: ../../en/module/ain4.rst:11 1e6619536f15482584e5224f11c6bfac
+#: ../../en/module/ain4.rst:11 7d83b76748914102b7c14286828c52d0
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/module/ain4.rst:63 c59e764a09614ecab8985bddfe38ee68
+#: ../../en/module/ain4.rst:63 1afe7e11045e499c8717b8e5c8ea12a7
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/module/ain4.rst:65 e56d0b408888405ba52439bf7b908521
+#: ../../en/module/ain4.rst:65 2d8b4a4d961f41328ca1a4299728ec6f
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:14 02b6fc3c863a4eed9748493a762dbd89
+#: ../../en/refs/module.ain4.ref:14 c6602bcd3300479890f797057f3f079b
 msgid "example.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:69 b6f665ed9ee049c6804cc227a90e13da
+#: ../../en/module/ain4.rst:69 9cc91d30b92f43c2888967e3c7554b09
 msgid "|ain4_core2_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/ain4.rst:72 e2e74ca1aa8344f59444c4d362de5508
+#: ../../en/module/ain4.rst:72 52a8857ca66b41cfb042883689a79bf8
 msgid "class AIN4Module"
 msgstr ""
 
-#: ../../en/module/ain4.rst:75 e312892350f8406ba97fb96fd00a76fc
+#: ../../en/module/ain4.rst:75 9d4fbcd9027a4ee79ed37d7c50d27b9a
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/module/ain4.rst:79 2db777e40f3d4a74b0f88a61fdd42b63
+#: ../../en/module/ain4.rst:79 59e874b144c94ec7bc212aca9b7a6f66
 msgid "Init I2C Module AIN 4-20mA I2C Address."
 msgstr ""
 
-#: ../../en/module/ain4.rst 4b839af2fad44aaeb93a177c4caad4f8
-#: ad5afe8d7e6742c69a8c90e4f545f13d cff27295cdf34fd2953280b00efda1cf
-#: f66372d14ee94df0b6849b62dc7aab60 f9c4493f72ea484ab47322a186f4e317
+#: ../../en/module/ain4.rst 38f4135e081a4ba3bb2ea8228646f467
+#: 434b9c5f377740c59bb54bfd4b9f029f 7df6c20d74bd47fd9f9f70ae17603cff
+#: e6a118d531a942d2b0cdb56553cfce39 ea2b8818634a4853b9648f19121c9f15
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/ain4.rst:81 f52d6101ed6c4944bbad23c61eb0e84b
+#: ../../en/module/ain4.rst:81 990ccd67e2b84685998f403e164cceb8
 msgid "I2C address of the AIN4Module."
 msgstr ""
 
 #: ../../en/module/ain4.rst:83 ../../en/module/ain4.rst:99
 #: ../../en/module/ain4.rst:112 ../../en/module/ain4.rst:123
 #: ../../en/module/ain4.rst:133 ../../en/module/ain4.rst:143
-#: ../../en/module/ain4.rst:153 12e4b7636a0d45ea93976cf2211985a0
-#: 1c109c6812ba4aeba7e44e0586e2ef04 254481f5ec4d4ac8a39053efc07fec3a
-#: 3bf97b24f839452585861a573e4f7b6e 97ea3eb5103c4f109cff721c3ef5754a
-#: de7ebc01026e4310bd05837024084117 f11c12ce54da49acb750c1e08d456af7
+#: ../../en/module/ain4.rst:153 07366973b38048979dcb3065f315c6ed
+#: 16c1008b04e54cfd9c4d350215e4101f 24755769d5584344a08b8bd3843f38bb
+#: 56414ba3f70a41538e97de17247d8091 b269240b7d084d87b64fa8cfa78f6a1d
+#: bae0a0e63f264c53b058188c06e64b95 d119ea768cbc4b2fb25c87c3bab02902
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/module/ain4.rst:85 de1e78ea76eb4bb6a4c1f569a4ef4077
+#: ../../en/module/ain4.rst:85 b61179eaf16243879814adcacd597b29
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:6 e78b5c12faf64679be03aea4f67b153e
+#: ../../en/refs/module.ain4.ref:6 cd94745030694eff9e6f4a45b63db12b
 msgid "init.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:89 b6ccfe31a3fd4a3d8c55c1b95d3e3a64
+#: ../../en/module/ain4.rst:89 841739c86b064d739b7886128da0dd6b
 msgid "Methods"
 msgstr ""
 
-#: ../../en/module/ain4.rst:93 6e61243b677e4750b40f1f61f4537cfa
+#: ../../en/module/ain4.rst:93 42d4023f0a4e4aa096172f7e4f48504d
 msgid "Retrieves the raw ADC value from the specified channel."
 msgstr ""
 
-#: ../../en/module/ain4.rst:95 3e577268b02b451fb48ece6b7eb00c92
+#: ../../en/module/ain4.rst:95 2d44d51a4e4a40e09a60b2ef817ab2bd
 msgid "The channel number (1 to 4) to read the ADC value from."
 msgstr ""
 
-#: ../../en/module/ain4.rst 145d6da29e7f4a9f8a488ef923dfac2a
-#: b505d4cefe374a0490d4cd72e0489d9e c90350e6889948e78a262d78b2491694
-#: d5bf63d3dcbc4dfc8af4c1a327051085
+#: ../../en/module/ain4.rst 0e3e3a85bea240a88961448da42a8130
+#: 2c3a912e0468471cbf15f94082855fd9 49208f5cc8934b2dbee1ddb663213950
+#: 4bf9644ee42e438c853f1317b91f70f6
 msgid "Returns"
 msgstr ""
 
-#: ../../en/module/ain4.rst:97 cd7a0c4867674c6196f32d7c2579f06c
+#: ../../en/module/ain4.rst:97 947fe66171cf409eabf10882c678f85e
 msgid "Raw ADC value as a 12-bit integer."
 msgstr ""
 
-#: ../../en/module/ain4.rst:101 3e895e5fce6241c181978ec1e3359162
+#: ../../en/module/ain4.rst:101 347e39bc778e4819b37dbe734389ed2e
 msgid "|get_adc_raw_value.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:7 ce28716ad2c0493ab2ab7c1717eb2755
+#: ../../en/refs/module.ain4.ref:7 5228b63449214cdda055a7bf232ea035
 msgid "get_adc_raw_value.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:105 50845bc359cf4b2aa05cef21be859044
+#: ../../en/module/ain4.rst:105 a117cbb5fdea4c1aa87696f36489c55b
 msgid "Retrieves the current value (in mA) from the specified channel."
 msgstr ""
 
-#: ../../en/module/ain4.rst:107 c7bb9a060c994d28ac2c5c46f2fe4ff9
+#: ../../en/module/ain4.rst:107 6fbea012dce2480a9087970d0a4307a2
 msgid "The channel number (1 to 4) to read the current value from."
 msgstr ""
 
-#: ../../en/module/ain4.rst:109 43696784cb4c4ef7ad456c4322d4969a
+#: ../../en/module/ain4.rst:109 6d471872d688445587c214994fcbd838
 msgid "Current value in milliamperes (mA)."
 msgstr ""
 
-#: ../../en/module/ain4.rst:114 f3bb3366b7d54b7cbb8832ef434f8111
+#: ../../en/module/ain4.rst:114 dfc18d8a4a3b4904b94b01f478d7c77d
 msgid "|get_current_value.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:8 64bc104d662f427389dc17e51bc10dd8
+#: ../../en/refs/module.ain4.ref:8 5e6dbef9bcda4595932d1a730af21a2e
 msgid "get_current_value.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:118 af57825cbe1d46bfadd56d0e2f0fe3cf
+#: ../../en/module/ain4.rst:118 c02a5cc3cb3a4a05a67e1d5acbbc25d2
 msgid "Sets the calibration current for the specified channel."
 msgstr ""
 
-#: ../../en/module/ain4.rst:120 73dd442e068c43fcadb7d7d71624344b
+#: ../../en/module/ain4.rst:120 45f3acaf56d2435ab3fd124e44cf9914
 msgid "The channel number (1 to 4) to set the calibration for."
 msgstr ""
 
-#: ../../en/module/ain4.rst:121 a0298e9ab11643318427b65c93025117
+#: ../../en/module/ain4.rst:121 63c95286d62e4aad8f4b671edfbc2506
 msgid "The calibration current value, ranging from 4 to 20 mA."
 msgstr ""
 
-#: ../../en/module/ain4.rst:125 fcd2d97e7cb74b14b599e8478c593086
+#: ../../en/module/ain4.rst:125 582ebfba340b43d98980b5a527b470bd
 msgid "|set_cal_current.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:9 b72333c5a6fc4af094b4adf58e9c94ec
+#: ../../en/refs/module.ain4.ref:9 3d6a7f2360da40239d5e586d867df906
 msgid "set_cal_current.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:129 701b1ea1556d4cd8a46181659951627b
+#: ../../en/module/ain4.rst:129 35ccf07aef5b4b32bf7213f687dcb6d5
 msgid "Retrieves the firmware version of the AIN 4-20mA module."
 msgstr ""
 
-#: ../../en/module/ain4.rst:131 7f5533b4c3c847ffbfb2f1b371d898cb
+#: ../../en/module/ain4.rst:131 e9fc9c6f88fa41129f0e689d289cf646
 msgid "Firmware version."
 msgstr ""
 
-#: ../../en/module/ain4.rst:135 34d91d55ea864c5cb906576787d6d6be
+#: ../../en/module/ain4.rst:135 8c2126e46b294985934ca0146b07ceea
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:10 c7619ae7d7814ed89b699d4d046cbb91
+#: ../../en/refs/module.ain4.ref:10 1eaff0c5d00b46c7844b2c111b6ad517
 msgid "get_firmware_version.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:139 69e242f36670417c94eafd7ef05b4fab
+#: ../../en/module/ain4.rst:139 904be0ae6d044fb9a852a3abaeb07aca
 msgid "Retrieves the current I2C address of the AIN 4-20mA module."
 msgstr ""
 
-#: ../../en/module/ain4.rst:141 78bda88c54c44bb985adf02f040c575a
+#: ../../en/module/ain4.rst:141 a714969fa0754b23a22f0b5fdb1943aa
 msgid "I2C address as a string in hexadecimal format."
 msgstr ""
 
-#: ../../en/module/ain4.rst:145 60e312dfe3f34ec29f4c4b3b1b0c09d3
+#: ../../en/module/ain4.rst:145 a7779d927ac04b2996ec84549ae91378
 msgid "|get_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:11 5d382057fd894cbca8a6555ce9c71552
+#: ../../en/refs/module.ain4.ref:11 4f45d8e8e36b489ebfc64b91c96177a4
 msgid "get_i2c_address.png"
 msgstr ""
 
-#: ../../en/module/ain4.rst:149 64b81542930344f89c62462dd1fb7389
+#: ../../en/module/ain4.rst:149 f881c1d94ef9440aaec4035387c747a1
 msgid "Sets a new I2C address for the AIN 4-20mA module."
 msgstr ""
 
-#: ../../en/module/ain4.rst:151 232bb0c9f7d84aea8f5806d98bbc2686
-msgid "The new I2C address, must be between 0x08 and 0x78."
+#: ../../en/module/ain4.rst:151 57ab2e0c61554b1fa6412b9353839649
+msgid "The new I2C address, must be between 0x08 and 0x77."
 msgstr ""
 
-#: ../../en/module/ain4.rst:155 108acb36cd7e433892aeec1d3423b64b
+#: ../../en/module/ain4.rst:155 d8772b4d01fc4490824a379325824910
 msgid "|set_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/module.ain4.ref:12 c968a26f5fdf493ca0f7137cba5883e4
+#: ../../en/refs/module.ain4.ref:12 03967a4356e54ce9a00c52e291bb0623
 msgid "set_i2c_address.png"
 msgstr ""
+
+#~ msgid "The new I2C address, must be between 0x08 and 0x78."
+#~ msgstr ""
 

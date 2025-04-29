@@ -44,9 +44,9 @@ class ALS
 
 .. important::
 
-    Methods of the ALS Class heavily rely on ``M5.begin()`` |M5.begin.svg| and ``M5.update()`` |M5.update.svg|.
+    Methods of the ALS Class heavily rely on ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png|.
 
-    All calls to methods of ALS objects should be placed after ``M5.begin()`` |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in the main loop.
+    All calls to methods of ALS objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
 
 Methods

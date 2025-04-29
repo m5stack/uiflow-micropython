@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,124 +20,124 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/lora.rst:3 7f2a708363e84efdbd39d58fd75628e1
+#: ../../en/module/lora.rst:3 762f8edd969e4bd6ba0849a2798f6fc8
 msgid "Lora Module"
 msgstr ""
 
-#: ../../en/module/lora.rst:7 d343b9be506a4e85b08f649a3f84d78f
+#: ../../en/module/lora.rst:7 b816cd15925d430c90e20cc919fd0abc
 msgid ""
 "The LoRa433_V1.1 Module is part of the M5Stack stackable module series. "
 "It is a LoRa communication module that operates at a 433MHz frequency and"
 " utilizes the Ra-02 module (SX1278 chip) solution."
 msgstr ""
 
-#: ../../en/module/lora.rst:9 c3fe750c95a44c41a53014119b419d56
+#: ../../en/module/lora.rst:9 3511b8bcbcef4bb39fb052cc782db340
 msgid "Support the following products:"
 msgstr ""
 
-#: ../../en/module/lora.rst:11 33453eabd7ae4c6e9d681263a0f2d9bf
+#: ../../en/module/lora.rst:11 6668bf79fba641939750b3959fa6dd73
 msgid "|LoraModule|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref 0ebc7adcb67c4284a93bae26d98236f6
+#: ../../en/refs/module.lora.ref 4b400c242e004e38884f92eaecaef57b
 msgid "LoraModule"
 msgstr ""
 
-#: ../../en/module/lora.rst:13 92a57955649d4ad39fd98b04c07ae252
+#: ../../en/module/lora.rst:13 dd729f197f934caa8d4c064735785855
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/module/lora.rst:34 42473482eefe476ca58a82db374ab2db
+#: ../../en/module/lora.rst:34 82b4b23ccf0641afbb1c6141be013351
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/module/lora.rst:36 7ba4c677348e4c1a80e529e5cd46be9a
-msgid "|example_tx.svg|"
+#: ../../en/module/lora.rst:36 d9361200a69b4d4e99b5414342cb4422
+msgid "|example_tx.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:16 c4d277a0188e4ad5b2355aec019d0f18
-msgid "example_tx.svg"
+#: ../../en/refs/module.lora.ref:16 bfd288d2be864f809a01a0e280604aa6
+msgid "example_tx.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:38 cf1647403f9d4026b6774a64d6d8641a
-msgid "|example_rx.svg|"
+#: ../../en/module/lora.rst:38 be012c97fe6e4b1380b3089387caa813
+msgid "|example_rx.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:17 fd6ee3e2279145469c0925c1b42bd1c2
-msgid "example_rx.svg"
+#: ../../en/refs/module.lora.ref:17 0edb00521a994a1ab62524d3ca2644ab
+msgid "example_rx.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:43 04a414fc995340bab41a9b30faf23b9b
+#: ../../en/module/lora.rst:43 fc2615f54b5145bba6b1f11aac2a0263
 msgid "|cores3_lora433_rx_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/lora.rst:45 465ee4fce705451aa69739f54deb0a88
+#: ../../en/module/lora.rst:45 5181ffb126484532b67a813e4c36de98
 msgid "|cores3_lora433_tx_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/lora.rst:47 b60e5d3f0fd14941ad2d626cb1b385c3
+#: ../../en/module/lora.rst:47 3034c606f8824f92845ba525db18c439
 msgid "|cores3_lora868_rx_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/lora.rst:49 4b2b57a8ef624c8fa2883d0aeeddd550
+#: ../../en/module/lora.rst:49 c5440c719acc49cdb9b49033001f7e48
 msgid "|cores3_lora868_tx_example.m5f2|"
 msgstr ""
 
-#: ../../en/module/lora.rst:53 12b2dbc317dc43e0a37237d274423768
+#: ../../en/module/lora.rst:53 0d41347cfadc416f8362aca720a75f90
 msgid "class LoraModule"
 msgstr ""
 
-#: ../../en/module/lora.rst:56 9f784778b952456dbdd6759b1303704a
+#: ../../en/module/lora.rst:56 f0ca0182e9284487ba03814464e2bd04
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/module/lora.rst:60 b0a0a974c25c4e468aa421ecdb414576
+#: ../../en/module/lora.rst:60 953b12b1c7d6475dbe16be318be828a3
 msgid "Initialize the LoRa module."
 msgstr ""
 
-#: ../../en/module/lora.rst 0dce39e8e6f64694895dd68420179d68
-#: 87bbcda49ab240c8a77689946c64fde2 be542e0537154322aecebf3910ed08cd
-#: c0b4dacb6afa4fb3bf749e656e5c4186
+#: ../../en/module/lora.rst 2ea8d727b15b4563ad36191c2bfe5704
+#: 30d9fdeafe574837a4f40a98daef9117 36a36c7a4f8845abb8ee5abb375e824f
+#: 7d0949a3b2734e81a7fb8bba9728ae45
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/lora.rst:62 89049e69ada846ff96bc95b699d138e8
+#: ../../en/module/lora.rst:62 eb53ebf03d73490ca69cb95cdd680445
 msgid "Chip select pin"
 msgstr ""
 
-#: ../../en/module/lora.rst:63 84d363cc4a794eeeaf642fade25baffd
+#: ../../en/module/lora.rst:63 29e6f817f14b49a9af5849cab2e91fa7
 msgid "Interrupt pin"
 msgstr ""
 
-#: ../../en/module/lora.rst:64 ca8d74d76bca40e9b9401de45233b930
+#: ../../en/module/lora.rst:64 0f6a27ff9efe46fdbf9f7deba6b196d9
 msgid "Reset pin"
 msgstr ""
 
-#: ../../en/module/lora.rst:65 39ad7b1b92554f0b9698438f6a5472c7
+#: ../../en/module/lora.rst:65 ab32f20eb1ae44ea94b4aade3198c172
 msgid "LoRa RF frequency in kHz."
 msgstr ""
 
-#: ../../en/module/lora.rst:66 b1f769cb288947918f9a8b71fb6f3dbd
+#: ../../en/module/lora.rst:66 9cf38496f98045d9bc09ae75edaf63a2
 msgid ""
 "Spreading factor, Higher spreading factors allow reception of weaker "
 "signals but have slower data rate."
 msgstr ""
 
-#: ../../en/module/lora.rst:67 1b9010f98c554c759c3bd00d5f571ff3
+#: ../../en/module/lora.rst:67 2994719651d845d39a76b75e921e78c9
 msgid "Bandwidth value in kHz. Must be exactly one of BANDWIDTHS"
 msgstr ""
 
-#: ../../en/module/lora.rst:68 7d279f6e30a647efa55b5e3f7103bc9b
+#: ../../en/module/lora.rst:68 8746e0c31d4a4fb19e56d6e2cb7c0f83
 msgid ""
 "Forward Error Correction (FEC) coding rate is expressed as a ratio, "
 "&#x60;4/N&#x60;."
 msgstr ""
 
-#: ../../en/module/lora.rst:69 bcbd0770ec4240d28d6bd9822f51a704
+#: ../../en/module/lora.rst:69 6855729b795748ce802d55f46f44b994
 msgid "Length of the preamble sequence, in units of symbols."
 msgstr ""
 
-#: ../../en/module/lora.rst:70 ae192a841b0c47068e02fdf5d7f4081f
+#: ../../en/module/lora.rst:70 48807b87bebe4d54abdb6525798c15df
 msgid "Output power in dBm."
 msgstr ""
 
@@ -145,45 +145,45 @@ msgstr ""
 #: ../../en/module/lora.rst:103 ../../en/module/lora.rst:113
 #: ../../en/module/lora.rst:124 ../../en/module/lora.rst:134
 #: ../../en/module/lora.rst:144 ../../en/module/lora.rst:154
-#: 0356ce1f82b247d3b2126a3431264561 15faab7e7c974ef09c73f43f71ecbf3e
-#: 29478d77942d4d8592530cd9037fc97b a894824cb5f647ffa1a35be9e934d4fb
-#: a9d2c798b13f477dbbf2e39dba200356 b2d355c128d3429d9bee643b8614d50e
-#: c785a35c9986459b998226931b83044c dae6ce30e7744a79b2e0551a8030c84b
+#: 004d02a1fd7248d5b2cd6cbcbb15af29 0195e014a264492ca04048f07399e490
+#: 3244fbb2f43846dfa25218eb390b584b 3593c1f5d06e480eade847d35217bcf7
+#: 577451347c3f41fd9fa0e1a87c82ed4b 6a2f365d3bad4c53b6ce0e6f37c3de68
+#: 801b0780df8f4f35b7f5816acd8e5b70 dad3939d0cdc4d0c9f95a763b835e80d
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/module/lora.rst:74 4d102572656a44a881e47ebb89acd3b3
+#: ../../en/module/lora.rst:74 402718b054b548a5b767e6659b57e807
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:7 db90251121b940f59001c237aa4335d5
+#: ../../en/refs/module.lora.ref:7 02352bec824746daa4d2545fdc0aafba
 msgid "init.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:78 cdfb7b0fe0164e61a13d4bdf3cb2cfac
+#: ../../en/module/lora.rst:78 b9767a5616cd4704a1d2646e59fe027a
 msgid "Methods"
 msgstr ""
 
-#: ../../en/module/lora.rst:82 6409d353e7ac45a087e596917abec298
+#: ../../en/module/lora.rst:82 93552eafee444ba2a93ec9bb25757006
 msgid "Send a data packet."
 msgstr ""
 
-#: ../../en/module/lora.rst 8f8dc377dc19458cb17517b4aae708f9
+#: ../../en/module/lora.rst 9361c9ecfd0847fb9305f0a892e686aa
 msgid "return (int)"
 msgstr ""
 
-#: ../../en/module/lora.rst:84 5474ae1c830c4f839af05918e815dd04
+#: ../../en/module/lora.rst:84 c411e216ec9d4041a0c0ce433c1f1e2f
 msgid ""
 "The return value is the timestamp when transmission completed, as "
 "a&#x60;time.ticks_ms()&#x60; result. It will be more accurate if the "
 "modem was initialized to use interrupts."
 msgstr ""
 
-#: ../../en/module/lora.rst:86 c279956d971442b7b333d5854696efd2
+#: ../../en/module/lora.rst:86 3d1b0561fe0a4b24952baa6a9f05d6f1
 msgid "The data packet to send."
 msgstr ""
 
-#: ../../en/module/lora.rst:87 c33e5a956f8447e884f1695ad7752c38
+#: ../../en/module/lora.rst:87 f982fbf562204f448a42571244c584ee
 msgid ""
 "Time to transmit the packet in milliseconds. For precise timing of sent "
 "packets, there is an optional &#x60;tx_at_ms&#x60; argument which is a "
@@ -192,36 +192,36 @@ msgid ""
 " block until that time arrives"
 msgstr ""
 
-#: ../../en/module/lora.rst:91 351af52403684e938e013bd48a1f8f09
+#: ../../en/module/lora.rst:91 6f83fd599f394afb98403afd2a965951
 msgid "|send.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:8 cc8e0d981d8e43429cd8301b555cf926
+#: ../../en/refs/module.lora.ref:8 5a5c159f2d2f44daa7dfdc0801235e64
 msgid "send.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:95 a6658c0b6d4245a3b57a9a97f13a77d7
+#: ../../en/module/lora.rst:95 78f43fe793de44db9caed467ebbd8cab
 msgid "Receive a data packet."
 msgstr ""
 
-#: ../../en/module/lora.rst c92fbc5388b64eb69fe8117c7e84140c
+#: ../../en/module/lora.rst e3c48c1581874d7483c95e36b23c0ba2
 msgid "return (RxPacket)"
 msgstr ""
 
-#: ../../en/module/lora.rst:97 14a9470f6fcc4f65ae47c32ac205f8b7
+#: ../../en/module/lora.rst:97 214231772f924676bff0b8cdcb06a3f9
 msgid ""
 "Returns None on timeout, or an &#x60;RxPacket&#x60; instance with the "
 "packet on success."
 msgstr ""
 
-#: ../../en/module/lora.rst:99 fdce09207b2f4137b0003e0b3cdfb26f
+#: ../../en/module/lora.rst:99 4341b57fd2fd49e3b8a72c06f22a401d
 msgid ""
 "Optional, sets a receive timeout in milliseconds. If None (default "
 "value), then the function will block indefinitely until a packet is "
 "received."
 msgstr ""
 
-#: ../../en/module/lora.rst:100 61adb0b2ade94b4f9af2381695ada9d9
+#: ../../en/module/lora.rst:100 2e4f7004b6ec4a8f9bcccc156412657a
 msgid ""
 "Necessary to set if &#x60;implicit_header&#x60; is set to "
 "&#x60;True&#x60; (see above). This is the length of the packet to "
@@ -229,7 +229,7 @@ msgid ""
 "received radio header includes the length."
 msgstr ""
 
-#: ../../en/module/lora.rst:101 0965c11054f140f5b0a94c9841d393dc
+#: ../../en/module/lora.rst:101 716ba87ebb6a4937b7c56802684e9b59
 msgid ""
 "Optional, this can be an &#x60;RxPacket&#x60; object previously received "
 "from the modem. If the newly received packet has the same length, this "
@@ -238,89 +238,101 @@ msgid ""
 " is allocated and returned instead."
 msgstr ""
 
-#: ../../en/module/lora.rst:105 5c96c6ce6a514ea4910491c72c30811f
+#: ../../en/module/lora.rst:105 611775034af6408784638a232d423097
 msgid "|recv.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:9 4a1337c4408743a9977fa73e77396260
+#: ../../en/refs/module.lora.ref:9 241aefd9d87b4388b94c8a250cb54241
 msgid "recv.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:109 50b09d5dfc76453f8f496b96d57310ed
+#: ../../en/module/lora.rst:109 80e27224512f4ceead0f3459ba39b850
 msgid "Start receiving data once, trigger an interrupt when data is received."
 msgstr ""
 
-#: ../../en/module/lora.rst:115 5b95d0629ab14006b6c2c0b62e2765db
+#: ../../en/module/lora.rst:115 7fed6574e5fd45fea90232d0de50910d
 msgid "|start_recv.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:10 2d9b5cc5d80f478288ad340423f8cdaa
+#: ../../en/refs/module.lora.ref:10 63cc6253a4034727a48098fce0c65b67
 msgid "start_recv.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:119 e064e90a12aa47cea4addb20ba2de472
+#: ../../en/module/lora.rst:119 d05c5adf40a34d6d8af123014c2cae8d
 msgid "Set the IRQ callback function."
 msgstr ""
 
-#: ../../en/module/lora.rst:122 0dec294711fb40fcae36a8a94d16579d
+#: ../../en/module/lora.rst:122 7fb839f5668e4a24a8ded2a71208d67c
 msgid ""
 "The callback function. The function should accept one argument, which is "
 "the received data."
 msgstr ""
 
-#: ../../en/module/lora.rst:126 c95104548d694d17a65193cd76f28548
+#: ../../en/module/lora.rst:126 ba38118c7ce7425f9ed2ed04b03fbe7e
 msgid "|set_irq_callback.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:11 8bd55b05fd584eab98dfc89a815c675a
+#: ../../en/refs/module.lora.ref:11 766bf99f95a646a199e3ed59f95e1ae9
 msgid "set_irq_callback.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:130 a49bd8d83e574cebb77415fabb852a9b
+#: ../../en/module/lora.rst:130 9f0330fead3f41dd8c27a863b88a2b8b
 msgid "Set the modem to standby mode."
 msgstr ""
 
-#: ../../en/module/lora.rst:136 b13e110bc23942c2a890874efc871ed5
+#: ../../en/module/lora.rst:136 577608766cc6476baddde09842aceb76
 msgid "|standby.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:12 078fe3096c5d4c3988ad9db9e3cbf6aa
+#: ../../en/refs/module.lora.ref:12 5255f0be3b634ddf8aa55e4bf2f513e5
 msgid "standby.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:140 220e218f9fde47cbaf07c2edbca1dcac
+#: ../../en/module/lora.rst:140 53fb9a1cbfb24ac7a441d1e7ceac9224
 msgid "Set the modem to sleep mode."
 msgstr ""
 
-#: ../../en/module/lora.rst:146 1cd81525c7694b72be0213b7c07b08b5
+#: ../../en/module/lora.rst:146 3cb52349270944a6b425132255ddcb82
 msgid "|sleep.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:13 8fe737cc4fbe4da0b342f4228a47de40
+#: ../../en/refs/module.lora.ref:13 2b125805c7bb4194852e9969facdf12c
 msgid "sleep.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:150 73943497e423472690fddc7596137725
+#: ../../en/module/lora.rst:150 8c2e362799cf403db1617ac69853ff0a
 msgid "Check if the IRQ has been triggered."
 msgstr ""
 
-#: ../../en/module/lora.rst:156 6772b6d19dad4a00a532145a16fecfe1
+#: ../../en/module/lora.rst:156 65ef958558de4f68a1032a9189731eb3
 msgid "|irq_triggered.png|"
 msgstr ""
 
-#: ../../en/refs/module.lora.ref:14 7522d5793a31412d86de4ff665742ec0
+#: ../../en/refs/module.lora.ref:14 7eda6abcab4842ada3cb9d44678540e7
 msgid "irq_triggered.png"
 msgstr ""
 
-#: ../../en/module/lora.rst:161 3066c2f713ad45be9c20fa43dfbbbc29
+#: ../../en/module/lora.rst:161 fcda3f2fa4c1493bb2091941c2cd06c3
 msgid "Constants"
 msgstr ""
 
-#: ../../en/module/lora.rst:166 f143b63c676f4727baa97f0ed350e7bd
+#: ../../en/module/lora.rst:166 431a4a2c31604a60b36b28159c680e7a
 msgid "Select the LoRa frequency band."
 msgstr ""
 
-#: ../../en/module/lora.rst:171 21bd3eb3ee35406088ae12d42bee390f
+#: ../../en/module/lora.rst:171 a96be03e1aa54cc2ac793a504a9ab085
 msgid "Valid bandwidth"
 msgstr ""
+
+#~ msgid "|example_tx.svg|"
+#~ msgstr ""
+
+#~ msgid "example_tx.svg"
+#~ msgstr ""
+
+#~ msgid "|example_rx.svg|"
+#~ msgstr ""
+
+#~ msgid "example_rx.svg"
+#~ msgstr ""
 

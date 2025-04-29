@@ -4,24 +4,24 @@
 * SPDX-License-Identifier: MIT
 */
 
-#if MICROPY_PY_LVGL
+#if 0
 #ifndef MICROPY_INCLUDED_PY_MPSTATE_H
 #define MICROPY_INCLUDED_PY_MPSTATE_H
-#include "./../../../m5stack/components/lv_bindings/lvgl/src/misc/lv_gc.h"
+#include "./../../../m5stack/cmodule/lv_binding_micropython/lvgl/src/misc/lv_gc.h"
 #undef MICROPY_INCLUDED_PY_MPSTATE_H
 #else
-#include "./../../../m5stack/components/lv_bindings/lvgl/src/misc/lv_gc.h"
+#include "./../../../m5stack/cmodule/lv_binding_micropython/lvgl/src/misc/lv_gc.h"
 #endif
 #else
 #define LV_ROOTS
 #endif
 
-#if MICROPY_PY_LVGL
+#if 0
 extern void lvgl_deinit();
 #define MICROPY_PORT_DEINIT_FUNC lvgl_deinit()
 #endif
 
-#if MICROPY_PY_LVGL
+#if 0
 #define MICROPY_PORT_ROOT_POINTERS \
     LV_ROOTS \
     void *mp_lv_user_data; \

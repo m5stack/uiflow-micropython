@@ -9,6 +9,7 @@ package(
         "keyboard/__init__.py",
         "keyboard/asciimap.py",
         "button.py",
+        "can.py",
         "ir.py",
         "matrix_keyboard.py",
         "plcio.py",

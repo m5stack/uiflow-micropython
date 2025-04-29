@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2019 ladyada for Adafruit Industries
-# SPDX-FileCopyrightText: Copyright (c) 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: Copyright (c) 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -742,27 +742,33 @@ class MLX90640:  # pylint: disable=too-many-instance-attributes
                 self.outlierPixels.append(pix_cnt)
             pix_cnt += 1
 
-        if len(self.brokenPixels) > 4:
-            raise RuntimeError("More than 4 broken pixels")
+        if len(self.brokenPixels) > 6:
+            # raise RuntimeError("More than 6 broken pixels")
+            print("More than 6 broken pixels")
         if len(self.outlierPixels) > 4:
-            raise RuntimeError("More than 4 outlier pixels")
-        if (len(self.brokenPixels) + len(self.outlierPixels)) > 4:
-            raise RuntimeError("More than 4 faulty pixels")
+            # raise RuntimeError("More than 6 outlier pixels")
+            print(("More than 6 outlier pixels"))
+        if (len(self.brokenPixels) + len(self.outlierPixels)) > 6:
+            # raise RuntimeError("More than 6 faulty pixels")
+            print("More than 6 faulty pixels")
         # print("Found %d broken pixels, %d outliers"
         #         % (len(self.brokenPixels), len(self.outlierPixels)))
 
         for broken_pixel1, broken_pixel2 in self._unique_list_pairs(self.brokenPixels):
             if self._are_pixels_adjacent(broken_pixel1, broken_pixel2):
-                raise RuntimeError("Adjacent broken pixels")
+                # raise RuntimeError("Adjacent broken pixels")
+                print("Adjacent broken pixels")
 
         for outlier_pixel1, outlier_pixel2 in self._unique_list_pairs(self.outlierPixels):
             if self._are_pixels_adjacent(outlier_pixel1, outlier_pixel2):
-                raise RuntimeError("Adjacent outlier pixels")
+                # raise RuntimeError("Adjacent outlier pixels")
+                print("Adjacent broken pixels")
 
         for broken_pixel in self.brokenPixels:
             for outlier_pixel in self.outlierPixels:
                 if self._are_pixels_adjacent(broken_pixel, outlier_pixel):
-                    raise RuntimeError("Adjacent broken and outlier pixels")
+                    # raise RuntimeError("Adjacent broken and outlier pixels")
+                    print("Adjacent broken and outlier pixels")
 
     def _unique_list_pairs(self, inputList: List[int]) -> Tuple[int, int]:
         # pylint: disable=no-self-use

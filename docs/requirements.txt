@@ -6,3 +6,4 @@ sphinx_markdown_tables==0.0.17
 nbsphinx==0.9.5
 sphinx-copybutton==0.5.2
 sphinx-intl==2.2.0
+sphinxcontrib-plantuml

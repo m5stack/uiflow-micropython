@@ -3,7 +3,7 @@
     :height: 200px
     :width: 200px
 
-.. |4EncoderMotor-V11| image:: https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/docs/products/module/Module_4EncoderMotor_V1.1/4.webp
+.. |4EncoderMotor-V11| image:: https://static-cdn.m5stack.com/resource/docs/products/module/Module_4EncoderMotor_V1.1/4.webp
     :target: https://docs.m5stack.com/en/module/Module_4EncoderMotor_V1.1
     :height: 200px
     :width: 200px
@@ -20,9 +20,9 @@
 .. |get_motor_speed_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_motor_speed_value.png
 .. |set_position_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_encoder_value.png
 .. |set_position_max_speed_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_max_speed_value.png
-.. |get_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_position_pid_value.png
+.. .. |get_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_position_pid_value.png
 .. |get_position_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_position_PID_value.png
-.. |set_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_pid_value.png
+.. .. |set_position_pid_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_pid_value.png
 .. |set_position_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_position_PID_value.png
 .. |get_speed_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/get_speed_PID_value.png
 .. |set_speed_PID_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/encoder4motor/set_speed_PID_value.png

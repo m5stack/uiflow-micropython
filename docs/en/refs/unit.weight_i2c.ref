@@ -3,37 +3,37 @@
     :height: 200px
     :width: 200px
 
-.. |init_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/init.svg
+.. |init_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/init.png
 
-.. |get_adc_raw.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_adc_raw.svg
+.. |get_adc_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_adc_raw.png
 
-.. |get_weight_float.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_float.svg
+.. |get_weight_float.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_float.png
 
-.. |get_weight_int.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_int.svg
+.. |get_weight_int.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_int.png
 
-.. |get_weight_str.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_str.svg
+.. |get_weight_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_weight_str.png
 
-.. |set_reset_offset.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_reset_offset.svg
+.. |set_reset_offset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_reset_offset.png
 
-.. |set_calibration.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_calibration.svg
+.. |set_calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_calibration.png
 
-.. |set_lowpass_filter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_lowpass_filter.svg
+.. |set_lowpass_filter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_lowpass_filter.png
 
-.. |get_lowpass_filter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_lowpass_filter.svg
+.. |get_lowpass_filter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_lowpass_filter.png
 
-.. |set_average_filter_level.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_average_filter_level.svg
+.. |set_average_filter_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_average_filter_level.png
 
-.. |get_average_filter_level.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_average_filter_level.svg
+.. |get_average_filter_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_average_filter_level.png
 
-.. |set_ema_filter_alpha.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_ema_filter_alpha.svg
+.. |set_ema_filter_alpha.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_ema_filter_alpha.png
 
-.. |get_ema_filter_alpha.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_ema_filter_alpha.svg
+.. |get_ema_filter_alpha.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_ema_filter_alpha.png
 
-.. |set_i2c_address.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_i2c_address.svg
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/set_i2c_address.png
 
-.. |get_device_spec.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_device_spec.svg
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/get_device_spec.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/weight_i2c/example.png
 
 .. |weight-i2c-demo.m5f2| raw:: html
 

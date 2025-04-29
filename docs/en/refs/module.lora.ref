@@ -13,13 +13,13 @@
 .. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/sleep.png
 .. |irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/irq_triggered.png
 
-.. |example_tx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_tx.svg
-.. |example_rx.svg| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_rx.svg
+.. |example_tx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_tx.png
+.. |example_rx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/lora433/example_rx.png
 
 .. |cores3_lora433_rx_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora433_rx_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora/cores3_lora433_rx_example.m5f2"
         target="_blank"
     >
         cores3_lora433_rx_example.m5f2
@@ -28,7 +28,7 @@
 .. |cores3_lora433_tx_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora433_tx_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora/cores3_lora433_tx_example.m5f2"
         target="_blank"
     >
         cores3_lora433_tx_example.m5f2
@@ -37,7 +37,7 @@
 .. |cores3_lora868_rx_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora868_rx_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora/cores3_lora868_rx_example.m5f2"
         target="_blank"
     >
         cores3_lora868_rx_example.m5f2
@@ -46,7 +46,7 @@
 .. |cores3_lora868_tx_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora433/cores3_lora868_tx_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/lora/cores3_lora868_tx_example.m5f2"
         target="_blank"
     >
         cores3_lora868_tx_example.m5f2

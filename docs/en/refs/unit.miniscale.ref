@@ -3,32 +3,32 @@
     :height: 200px
     :width: 200px
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/init.png
 
-.. |calibration.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/calibration.svg
+.. |calibration.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/calibration.png
 
-.. |tare.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/tare.svg
+.. |tare.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/tare.png
 
-.. |getAverageFilterLevel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getAverageFilterLevel.svg
+.. |getAverageFilterLevel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getAverageFilterLevel.png
 
-.. |getEMAFilterAlpha.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getEMAFilterAlpha.svg
+.. |getEMAFilterAlpha.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getEMAFilterAlpha.png
 
-.. |getLowPassFilter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getLowPassFilter.svg
+.. |getLowPassFilter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/getLowPassFilter.png
 
-.. |get_adc.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_adc.svg
+.. |get_adc.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_adc.png
 
-.. |get_button.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_button.svg
+.. |get_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_button.png
 
-.. |get_weight.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_weight.svg
+.. |get_weight.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/get_weight.png
 
-.. |reset.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/reset.svg
+.. |reset.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/reset.png
 
-.. |setAverageFilterLevel.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setAverageFilterLevel.svg
+.. |setAverageFilterLevel.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setAverageFilterLevel.png
 
-.. |setEMAFilterAlpha.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setEMAFilterAlpha.svg
+.. |setEMAFilterAlpha.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setEMAFilterAlpha.png
 
-.. |setLed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setLed.svg
+.. |setLed.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setLed.png
 
-.. |setLowPassFilter.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setLowPassFilter.svg
+.. |setLowPassFilter.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/setLowPassFilter.png
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/miniscales/example.png

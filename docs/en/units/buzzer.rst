@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -56,7 +56,7 @@ Methods
 
     UIFLOW2:
 
-        |once.svg|
+        |once.png|
 
 
 .. method:: BuzzerUnit.set_freq(freq: int)
@@ -67,7 +67,7 @@ Methods
 
     UIFLOW2:
 
-        |set_freq.svg|
+        |set_freq.png|
 
 
 .. method:: BuzzerUnit.set_duty(duty: int)
@@ -78,7 +78,7 @@ Methods
 
     UIFLOW2:
 
-        |set_duty.svg|
+        |set_duty.png|
 
 
 .. method:: BuzzerUnit.turn_off()
@@ -87,7 +87,7 @@ Methods
 
     UIFLOW2:
 
-        |turn_off.svg|
+        |turn_off.png|
 
 
 .. method:: BuzzerUnit.deint()
@@ -96,4 +96,4 @@ Methods
 
     UIFLOW2:
 
-        |deinit.svg|
+        |deinit.png|

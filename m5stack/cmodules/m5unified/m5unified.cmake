@@ -30,6 +30,8 @@ endif()
 
 target_link_libraries(usermod INTERFACE usermod_M5UNIFIED)
 
+target_compile_options(usermod_M5UNIFIED INTERFACE "-g")
+
 set_source_files_properties(
     ${CMAKE_CURRENT_LIST_DIR}/m5unified.c
     PROPERTIES COMPILE_FLAGS

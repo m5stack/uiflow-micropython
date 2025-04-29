@@ -211,11 +211,11 @@ Constants
 ---------
 
 .. data:: LoRaE220433Unit.AIRRATE_2_4K
-	      LoRaE220433Unit.AIRRATE_4_8K
-	      LoRaE220433Unit.AIRRATE_9_6K
-	      LoRaE220433Unit.AIRRATE_19_2K
-	      LoRaE220433Unit.AIRRATE_38_4K
-	      LoRaE220433Unit.AIRRATE_62_5K
+          LoRaE220433Unit.AIRRATE_4_8K
+          LoRaE220433Unit.AIRRATE_9_6K
+          LoRaE220433Unit.AIRRATE_19_2K
+          LoRaE220433Unit.AIRRATE_38_4K
+          LoRaE220433Unit.AIRRATE_62_5K
     :type: int
 
     rate.
@@ -261,7 +261,7 @@ Constants
           LoRaE220433Unit.WOR_2500MS
           LoRaE220433Unit.WOR_3000MS
           LoRaE220433Unit.WOR_3500MS
-	      LoRaE220433Unit.WOR_4000MS
+          LoRaE220433Unit.WOR_4000MS
     :type: int
 
     Wireless wake-up time.

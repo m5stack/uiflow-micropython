@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,228 +20,225 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hardware/imu.rst:2 7a1bc5bb00754af5a02b59c852dc6c37
+#: ../../en/hardware/imu.rst:2 05a6e6002c344762bedf186687c3f7a6
 msgid "IMU"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:7 f5faf41cae6243a8a15ac8025a10f2dd
+#: ../../en/hardware/imu.rst:7 7434f456710249ab9b3d6d5903d8168e
 msgid ""
 "IMU is used to control the built-in accelerometer and gyroscope inside "
 "the host device. Below is the detailed IMU support for the host:"
 msgstr "IMU 用于控制主机内部集成加速计与陀螺仪的按键。以下是主机的 IMU 支持详细："
 
-#: ../../en/hardware/imu.rst:15 6957c83da34549c7b1c7264e834a6e1f
+#: ../../en/hardware/imu.rst:15 a10c0cc1775b46f0a6492ef1f4fb3d43
 msgid "MPU6886"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:15 961d6b12e8684e509f3db5997f080c12
+#: ../../en/hardware/imu.rst:15 6fb92093594d4023b2b473dec5bc1b57
 msgid "BMI270"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:15 9ed405b877b04626b6ebcd7d40e12d32
+#: ../../en/hardware/imu.rst:15 f6c3785004364c588cf022762c0d1bb4
 msgid "BMM150"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:17 821af82b10ec4cb5a1d2e9d53f30131d
+#: ../../en/hardware/imu.rst:17 726cb84c3b594eb1ab44cad38849dc3d
 msgid "AtomS3"
 msgstr ""
 
 #: ../../en/hardware/imu.rst:17 ../../en/hardware/imu.rst:25
 #: ../../en/hardware/imu.rst:27 ../../en/hardware/imu.rst:31
-#: ../../en/hardware/imu.rst:33 4b41f15e6a7e477f9804b024db2567f0
-#: 66908bdb0ccb42ed88f2c298135f12e7 7bdf8c6904fb4f7fa64d2acd1d959493
-#: 95a30b9df98549689761c84401cd73a7 c878daad5ed943148f81f28a4343552f
-#: ce0c399f01e5408ea2aa3b5dac32a83f
+#: ../../en/hardware/imu.rst:33 77518937635c499e9846f2f79e452b92
+#: e6bb00d5d8ec460797a0470ae665cb18 eb09c61ff3774ba79592378bd57c2398
 msgid "|S|"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:19 0c3fc0cab97145d3b10d46b4f1fb5e08
+#: ../../en/hardware/imu.rst:19 af7d25a0e49e49869e2d737743b1af6a
 msgid "AtomS3 Lite"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:21 7e6cad99e2ec4e77ad528404dcf9b7aa
+#: ../../en/hardware/imu.rst:21 b06f1bec2d784023998d364044b70fe1
 msgid "AtomS3U"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:23 80938ab25965484cb886e03a5424b9fd
+#: ../../en/hardware/imu.rst:23 1f01250f751f415ea2a3ac6ff6d9be21
 msgid "StampS3"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:25 82e113c3ace146c5aa6c309fd7df4fcc
+#: ../../en/hardware/imu.rst:25 a3c91f6d575e4f048a7107aa5c4fef0a
 msgid "CoreS3"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:27 c6f37a50b8fb43c7bb4bf72e3661526a
+#: ../../en/hardware/imu.rst:27 e67964caa6ae451a95030cd6a430fe58
 msgid "Core2"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:29 94993dfac7054017bc6e40870068f8af
+#: ../../en/hardware/imu.rst:29 e722da7a08cd4694b57760791628b040
 msgid "TOUGH"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:31 8b3fec182fae483a824f905899c5ffaf
+#: ../../en/hardware/imu.rst:31 3467dfd913fd431db5cfc1b5917eebb5
 msgid "StickC Plus"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:33 0d4279d3e1764da09460bde8eb3a851c
+#: ../../en/hardware/imu.rst:33 7c4f6b9cda8d4312ba8e43e621a596c7
 msgid "StickC Plus2"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:39 c3dae3ca891d4ffa9c59faae97ff28da
+#: ../../en/hardware/imu.rst:39 764245c4153e4259bd70857c3f349f26
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:45 98f7d5e9231f488ea99586c0f2f86d98
+#: ../../en/hardware/imu.rst:45 314aa265cde6453d89598e9f40660427
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:47 9e714b68a3704947aee1ab76d2e64d3b
+#: ../../en/hardware/imu.rst:47 246326f3f530442aaa20913fde3602ab
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:20 bbb7ba464d7d4f58ac90398d510c7896
+#: ../../en/refs/hardware.imu.ref:20 f78e3aa3903b48e1b9ec7cd1a214d58c
 msgid "example.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:51 b9cbe66141524bfbb83bebf075ab5323
+#: ../../en/hardware/imu.rst:51 a240f49506bd4b1e838cc2e4f9c57cbd
 msgid "|imu_cores3_example.m5f2|"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:55 1efd6ab32d03416491d4727045832778
+#: ../../en/hardware/imu.rst:55 3b1662bc1ca54eacb95cc78a6b31bca4
 msgid "class IMU"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:59 37a8b6d4056d475b89430f5176aee84e
+#: ../../en/hardware/imu.rst:59 6dff35f9cb8143228c60ff2aeef5c319
+#, fuzzy
 msgid ""
-"Methods of the IMU Class heavily rely on ``M5.begin()`` |M5.begin.svg| "
-"and ``M5.update()`` |M5.update.svg|."
+"Methods of the IMU Class heavily rely on ``M5.begin()`` |M5.begin.png| "
+"and ``M5.update()`` |M5.update.png|."
 msgstr ""
 "IMU Class的方法重度依赖 ``M5.begin()`` |M5.begin.svg| 和 ``M5.update()`` "
 "|M5.update.svg|。"
 
-#: ../../en/refs/system.ref:1 6028fc9643b6450897b66ece1112898a
-#: 6d642d672e1e46e4b51ed6051ec37b6a
-msgid "M5.begin.svg"
+#: ../../en/refs/system.ref:1 d4092b1286b84ae1a159ac8b0dd11f20
+msgid "M5.begin.png"
 msgstr ""
 
-#: ../../en/refs/system.ref:4 19b3433cb49e43b380dbeeda3c9e24ba
-#: 71ae5329477e408f8179790246303582
-msgid "M5.update.svg"
+#: ../../en/refs/system.ref:3 0eafcaf2952a48c4b4c397c628e87c33
+msgid "M5.update.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:61 2416c878e153492aa82372cd38f4488c
+#: ../../en/hardware/imu.rst:61 8065a09e7d3a489bb546beffdf70d37e
+#, fuzzy
 msgid ""
 "All calls to methods of IMU objects should be placed after ``M5.begin()``"
-" |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in "
+" |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in "
 "the main loop."
 msgstr ""
 "调用 IMU 对象的所有方法，需要放在 ``M5.begin()`` |M5.begin.svg| 的后面，并在主循环中调用 "
 "``M5.update()`` |M5.update.svg|。"
 
-#: ../../en/hardware/imu.rst:65 e68285ec0a0146848855fc406917326f
+#: ../../en/hardware/imu.rst:65 79f1f4581d79469c92e045282e117053
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:69 01b6bba047b54112a93de0e258007184
+#: ../../en/hardware/imu.rst:69 36f8dda6a514427cbd2914778b371ea7
 msgid "Get the tuple of x, y, and z values of the accelerometer."
 msgstr "获取加速度计的 x、y 和 z 值的三元组。"
 
 #: ../../en/hardware/imu.rst:71 ../../en/hardware/imu.rst:85
-#: ../../en/hardware/imu.rst:97 26f56f47f927444ba529e8e5602091c1
-#: 7bcf60f0fad14ce2b21fb721afed4e99 b84da3768b47481d98a2e6e64704e8d3
+#: ../../en/hardware/imu.rst:97 39b5a589dc1d410383f758ca6be12cba
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:73 2cd4cd4c519b4cd98e6f693f8a7b0dc8
+#: ../../en/hardware/imu.rst:73 814f7072521448aa9c86d702b6f2341d
 msgid "|getAccel.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:2 cd7672036e254f3297ad24e7d8c67b6d
+#: ../../en/refs/hardware.imu.ref:2 971feb9ee7ef4daa9e5139f358d8aad3
 msgid "getAccel.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:75 6a007babc5cf4ca0bad00b2d641491c3
+#: ../../en/hardware/imu.rst:75 a69db91530904241a2c266712546b158
 msgid "|getAccel2.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:4 3032b85e9e224594a3e5c0cb3deeb446
+#: ../../en/refs/hardware.imu.ref:4 e214c5d055d54aeb852a68f9c0776dd7
 msgid "getAccel2.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:77 d6c6a9b3ea294e8facb893b84044a2c2
+#: ../../en/hardware/imu.rst:77 a4b6d42a01664068822e1b22574effd5
 msgid "|getAccel3.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:6 2c86141d6e6a4bce8023d84ef6d047e4
+#: ../../en/refs/hardware.imu.ref:6 6a0596f00d4a41548b21f64805af428e
 msgid "getAccel3.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:83 64b6d79543f849a8bee638be2fd4be9f
+#: ../../en/hardware/imu.rst:83 db17b9a98ca9470f8cd1244f9c9b5834
 msgid "Get the tuple of x, y, and z values of the gyroscope."
 msgstr "获取角速度传感器（陀螺仪）的 x、y 和 z 值的三元组。"
 
-#: ../../en/hardware/imu.rst:87 2166bf10f321497f8516a26ca830c091
+#: ../../en/hardware/imu.rst:87 c447fe25b21a4692853e6bed92c67594
 msgid "|getGyro.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:8 d1d5deacea1b4568aac56591fa9f94dd
+#: ../../en/refs/hardware.imu.ref:8 649dab3554a740079e589ad57717f2b4
 msgid "getGyro.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:89 81090fcb905e40179810e085973862f9
+#: ../../en/hardware/imu.rst:89 b69cdb13de5749c098c5c1b6e0b3dcc4
 msgid "|getGyro2.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:10 14dde3562b9c45e3b1c38e7975714608
+#: ../../en/refs/hardware.imu.ref:10 bd5981f1a01b40a9b1b26ff5762230d1
 msgid "getGyro2.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:91 457d7365082741d3b6369fb093d38da3
+#: ../../en/hardware/imu.rst:91 87810d18154d4ab7945c4862f75943c5
 msgid "|getGyro3.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:12 ae72d5181c0a4fd88807fa91ee1c11c2
+#: ../../en/refs/hardware.imu.ref:12 50af6ff990104b07b56fb85d187a7e24
 msgid "getGyro3.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:95 16063b52e5064ea180c9528030b6aa22
+#: ../../en/hardware/imu.rst:95 a774e35b969946cf94f08b5f9cc1a9a7
 #, fuzzy
 msgid "Get the tuple of x, y, and z values of the magnetometer."
 msgstr "获取加速度计的 x、y 和 z 值的三元组。"
 
-#: ../../en/hardware/imu.rst:99 d7654f1fbb8c468685426e9154c1286d
+#: ../../en/hardware/imu.rst:99 829e513edb4943bc82d6d1c36bb69d18
 msgid "|getMag.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:14 fb51e3853d2a452ab7491f726b31e6fa
+#: ../../en/refs/hardware.imu.ref:14 4ecbf452128143e787de412a749b0470
 msgid "getMag.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:101 25806ef352344bcab864e54a233ea423
+#: ../../en/hardware/imu.rst:101 865a9983985a44e9907b45abb85d8de1
 msgid "|getMag2.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:16 5eaecbe1a92e4b148891c8fd120a14a3
+#: ../../en/refs/hardware.imu.ref:16 31b029a67bc44431af83740d277413fd
 msgid "getMag2.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:103 496d6e826752472d9912bb89ec3f02fe
+#: ../../en/hardware/imu.rst:103 4407d4541d274bcfa1d1dda2235de0df
 msgid "|getMag3.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.imu.ref:18 a5762cc95c7a4a0a93b1213c2fa36032
+#: ../../en/refs/hardware.imu.ref:18 8e7222f6f8824aa69da949f80afd1476
 msgid "getMag3.png"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:107 8c0da126b0e94a9aa875e66089ebfd91
+#: ../../en/hardware/imu.rst:107 a136477668274c1e8e8dce7b0bac1782
 msgid "class IMU_TYPE"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:110 f7dd716dc0ea4d70a1d388b7d7b61ac0
+#: ../../en/hardware/imu.rst:110 7cf41bc485ee417eba78b3cef09810ac
 msgid "Constants"
 msgstr ""
 
-#: ../../en/hardware/imu.rst:121 4d9798e52549468ea6837d30fae79cfd
+#: ../../en/hardware/imu.rst:121 78abeca8dc8c41baade7cdf1dc98ea2a
 msgid "The model of the IMU."
 msgstr "IMU 的型号。"
 
@@ -300,4 +297,10 @@ msgstr "IMU 的型号。"
 
 #~ msgid "Get the chip model of the IMU."
 #~ msgstr "获取 IMU 的芯片型号。"
+
+#~ msgid "M5.begin.svg"
+#~ msgstr ""
+
+#~ msgid "M5.update.svg"
+#~ msgstr ""
 

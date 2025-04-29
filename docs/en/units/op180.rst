@@ -35,7 +35,7 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html
@@ -58,7 +58,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 Methods
@@ -70,7 +70,7 @@ Methods
 
     UIFLOW2:
 
-        |get_count_value.svg|
+        |get_count_value.png|
 
 .. method:: OP108.count_reset()
 
@@ -78,4 +78,4 @@ Methods
 
     UIFLOW2:
 
-        |reset_count_value.svg|
+        |reset_count_value.png|

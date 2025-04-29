@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,103 +20,107 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/op90.rst:2 3bf3aafecd9b4beea475132ab5155250
+#: ../../en/units/op90.rst:2 bdc559a7111a4b959e1a6cc3a7222090
 msgid "OP90 Unit"
 msgstr ""
 
-#: ../../en/units/op90.rst:6 e27a3ec9230a4c0580f4c1ae52dbd4cd
+#: ../../en/units/op90.rst:6 727612ade21541ca936f2a6ea3cae11b
 msgid "The following products are supported:"
 msgstr "支持以下产品"
 
-#: ../../en/units/op90.rst:8 45ab8cc43faf48c8a13aa081913ba849
+#: ../../en/units/op90.rst:8 69df8f9dc5ae47f69466a08c13609c2c
 msgid "|OP90|"
 msgstr ""
 
-#: ../../en/refs/unit.op90.ref 904e0fcfcb3d4104b814438d7012297b
+#: ../../en/refs/unit.op90.ref 5ccbbbda01ea4632ba61c4d63dd8d3c9
 msgid "OP90"
 msgstr ""
 
-#: ../../en/units/op90.rst:11 92b97ca5bed949b9896841e0e7be0d5d
+#: ../../en/units/op90.rst:11 3b571d9402844531890eac4506cf21b2
 msgid "Micropython Example::"
 msgstr ""
 
-#: ../../en/units/op90.rst:39 a9db8a96b8f641b8ba1fe2cb6fe970e9
+#: ../../en/units/op90.rst:39 921b898d96df4fcfa97d765fbf643b2f
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/op90.rst:41 6326593e77074daea9fa603a020d96ed
-msgid "|example.svg|"
+#: ../../en/units/op90.rst:41 43bde89eb8c64d91b5c8b46181433f0d
+msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.op90.ref:6 69a713489be845a4bae0bba01fdc0850
-msgid "example.svg"
+#: ../../en/refs/unit.op90.ref:6 e5c3a1aa4cb54462a56ebd6c07a2e4e9
+msgid "example.png"
 msgstr ""
 
-#: ../../en/units/op90.rst:46 dff3ef5de1d9483a8106f5513029558b
+#: ../../en/units/op90.rst:46 caa9bc434d184dbba769871c6c96101b
 msgid "|op90_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/op90.rst:50 ca33a08fd43d493a81611ed238f82a90
+#: ../../en/units/op90.rst:50 0d03167c8d35424ea9dd0d105f7dce7c
 msgid "class OPUnit"
 msgstr ""
 
-#: ../../en/units/op90.rst:53 3ade9dae69be44ed924230d94b14a4e6
+#: ../../en/units/op90.rst:53 b368327d22f740b099d67acb81739c31
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/op90.rst:57 fa37e2e5fa2d4f538734906b3bc84284
+#: ../../en/units/op90.rst:57 647e61cfea2c41a1ad8e308242f350f9
 msgid "Create an OPUnit object."
 msgstr "创建一个OPUnit对象"
 
-#: ../../en/units/op90.rst:60 ef684cb6d57c47468762588b1fd75cfe
+#: ../../en/units/op90.rst:60 6fb14d46763b43659687401e4b26bc93
 msgid "The parameters is:"
 msgstr "参数如下:"
 
-#: ../../en/units/op90.rst:60 b8dcac43aac3475b81069d8f217c3ecf
+#: ../../en/units/op90.rst:60 fd58931d38f247a2b00e579469ac9a53
 msgid "``io`` is the detection pin."
 msgstr "``io`` 为检测引脚。"
 
 #: ../../en/units/op90.rst:62 ../../en/units/op90.rst:74
-#: ../../en/units/op90.rst:83 37a20ab181aa4a87b7f6bec36d6c2486
-#: 6f5c2db0e1954cb18a30f10dbcb4dbaa c9eba650fe1b4376bf76b1d4de891476
+#: ../../en/units/op90.rst:83 26005537a8c84f4882e9d173c7d057b2
+#: 80c732535e8a4b1a8532773b1102ca85 aa94eefc00da43a8b0ad511ed7579010
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/op90.rst:64 f938299b862b43de9897deaf7ad49687
-msgid "|init.svg|"
+#: ../../en/units/op90.rst:64 49cdee4dfe0c4e00b56e0ea2a30ae98c
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.op90.ref:8 8ede87dbea6045b68281fb7c1f0beb16
-msgid "init.svg"
+#: ../../en/refs/unit.op90.ref:8 bfeaa291cf4e4bb7b31c1515b88f6a52
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/op90.rst:68 374c0e2fc74745b6a27f301b4b74ec86
+#: ../../en/units/op90.rst:68 a9e7ab99f26848589e252c91b698b370
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/op90.rst:72 7816385f5fd54653a23a779ba95a076e
+#: ../../en/units/op90.rst:72 5e5f7f516f6e4a5db6f2447252498a90
 msgid "Get the count value."
 msgstr "获取计数值。"
 
-#: ../../en/units/op90.rst:76 0dfeea04239e463bb35bf6cd42262c65
-msgid "|get_count_value.svg|"
-msgstr ""
+#: ../../en/units/op90.rst:76 660449b683574a71bc6be85b5a8009d7
+#, fuzzy
+msgid "|get_count_value.png|"
+msgstr "获取计数值。"
 
-#: ../../en/refs/unit.op90.ref:10 290714c8235340f18085b939e75b6749
-msgid "get_count_value.svg"
-msgstr ""
+#: ../../en/refs/unit.op90.ref:10 09edf154deca448e82e9fd3ba8d3f5d0
+#, fuzzy
+msgid "get_count_value.png"
+msgstr "获取计数值。"
 
-#: ../../en/units/op90.rst:81 dccab558580048f59d816efc4a3b120b
+#: ../../en/units/op90.rst:81 05ee6096934f44a092b691826df6df3f
 msgid "Reset the meter value."
 msgstr "重置计数值。"
 
-#: ../../en/units/op90.rst:85 90e9266b8ce74915ac133b24a63e54df
-msgid "|reset_count_value.svg|"
-msgstr ""
+#: ../../en/units/op90.rst:85 0501f220504348738aba6fd60fa311a8
+#, fuzzy
+msgid "|reset_count_value.png|"
+msgstr "获取计数值。"
 
-#: ../../en/refs/unit.op90.ref:12 50f59a6ffbca4e649d54ef838ea2dc2f
-msgid "reset_count_value.svg"
-msgstr ""
+#: ../../en/refs/unit.op90.ref:12 7b987131e4114d9e99c5637b2ba18d88
+#, fuzzy
+msgid "reset_count_value.png"
+msgstr "获取计数值。"
 
 #~ msgid "get_switch_value.svg"
 #~ msgstr ""
@@ -125,5 +129,29 @@ msgstr ""
 #~ msgstr "获取开关状态。"
 
 #~ msgid "|get_switch_value.svg|"
+#~ msgstr ""
+
+#~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_count_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_count_value.svg"
+#~ msgstr ""
+
+#~ msgid "|reset_count_value.svg|"
+#~ msgstr ""
+
+#~ msgid "reset_count_value.svg"
 #~ msgstr ""
 

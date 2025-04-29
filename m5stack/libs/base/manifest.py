@@ -10,6 +10,7 @@ package(
         "atom_socket.py",
         "display.py",
         "dtu_lorawan.py",
+        "dtu_lorawan_rui3.py",
         "echo.py",
         "hdriver.py",
         "motion.py",

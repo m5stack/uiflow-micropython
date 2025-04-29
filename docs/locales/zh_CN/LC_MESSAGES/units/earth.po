@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,151 +20,149 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/earth.rst:2 f5557e39ef1c43ef8b6bad54209990d4
+#: ../../en/units/earth.rst:2 c3ea704a177949c7bf8d0856d42a11eb
 msgid "EARTH Unit"
 msgstr ""
 
-#: ../../en/units/earth.rst:6 60fd17ce780a4fb1abc8bb7ab4eb0bae
+#: ../../en/units/earth.rst:6 31beaecd4c88452eb4163666ca0a61e3
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/earth.rst:8 171faaf6117f4f97a371dcf2ddb20878
+#: ../../en/units/earth.rst:8 80f194fd8e5e4bbeb577ceb71685e29f
 msgid "|EARTH|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref 9e37e8b65e084cc38a1649a0c52823cb
+#: ../../en/refs/unit.earth.ref b14d5b926b784783b46fa012a3ffd417
 msgid "EARTH"
 msgstr ""
 
-#: ../../en/units/earth.rst:11 078ab49290c542709f866f49f0e47e60
+#: ../../en/units/earth.rst:11 1d13b51b023a457484b2e63b6558d373
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/units/earth.rst:18 209dd649d03a4a4ebe6ffc217171f384
+#: ../../en/units/earth.rst:18 081e91d12f064b2f90da975159c35f9b
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/earth.rst:20 2977689a6281444fb807bba5c3476c2d
+#: ../../en/units/earth.rst:20 88d599e4a4c445e2bb1589dcdff9610b
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:7 d0d8b266bc504e8dbcf1e22bbba79cd4
+#: ../../en/refs/unit.earth.ref:6 a0a67d277a1b44bc897b81d04244c0ba
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:25 f4bf0d99f1084541b72ef79463576b16
+#: ../../en/units/earth.rst:25 f2559705db444ebc8d3c1398c507bfcb
 msgid "|earth_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/earth.rst:29 9be1aec7c29448b8ae4aacea0fb34edc
+#: ../../en/units/earth.rst:29 064cabc4569c49a89a979dd365528e10
 msgid "class Earth"
 msgstr ""
 
-#: ../../en/units/earth.rst:32 d5b2ad0ce3074be1ae8f7aa78f9d72f2
+#: ../../en/units/earth.rst:32 36c5af3959a74e5792325a056c320b79
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/earth.rst:36 ba741d8de7314c6f81f380d82ee3b14c
+#: ../../en/units/earth.rst:36 bac5e0ced9404d1a8d85a1d7ce1d17cd
 msgid "Create an Earth object."
 msgstr "创建一个Earth对象。"
 
-#: ../../en/units/earth.rst:39 ec7e83955fa5405e82456e7c3d44ee4f
+#: ../../en/units/earth.rst:39 6ecbe26322124576933483944348f1b6
 msgid "The parameters is:"
 msgstr "参数是："
 
-#: ../../en/units/earth.rst:39 41cc5fb1e30c4c6eaf43a4e901531c48
+#: ../../en/units/earth.rst:39 a08be0f7407348e39059904e6f6743f6
 msgid "``port`` Is the pin number of the port"
 msgstr "``port`` 是端口的引脚号"
 
 #: ../../en/units/earth.rst:41 ../../en/units/earth.rst:53
 #: ../../en/units/earth.rst:62 ../../en/units/earth.rst:71
 #: ../../en/units/earth.rst:80 ../../en/units/earth.rst:89
-#: 39f4cd45f33c4dd2a6d362d2a35c71c9 3b33685eebc34e9cb9e9a2cd9219ad26
-#: 4688d2cbf98b4fe190f0fdde6d46c360 993d2c3c69384366b673df1104fd6e25
-#: b5baad9f1ddd48a4aa0d2db10c310e13 bc03e7886cc546459924ebadbc7bc59b
+#: de591c64342e4bde90346ae01087fede
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/earth.rst:43 7ff9f0867db34c6190eaee7b5c33ee43
-msgid "|init.svg|"
+#: ../../en/units/earth.rst:43 ec7fd7cf4d4a40f78de249b514e5886d
+msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:9 c20d7996ad404bd4885ada869ce67aea
-msgid "init.svg"
+#: ../../en/refs/unit.earth.ref:8 99ca66dedb7440079f035c9db42718cd
+msgid "init.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:47 109a41848223493987901a78add7daf3
+#: ../../en/units/earth.rst:47 479fc8349fb04b41b4e99bc027eb3e47
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/earth.rst:51 4ab8fb11397846d98210129a196581bd
+#: ../../en/units/earth.rst:51 c0c78cc562b74ed78b6621126d554845
 msgid ""
 "This method allows you to read the analog captured by EARTH and return an"
 " integer value. The value ranges from 0 to 65535."
 msgstr "此方法允许读取EARTH采集的模拟量并返回一个整数型数值。范围为0-65535。"
 
-#: ../../en/units/earth.rst:55 bb11c37e26704ea892baaee719ffba89
-msgid "|get_analog_value.svg|"
+#: ../../en/units/earth.rst:55 23a918e34445455e809d1fbc6fbeadf9
+msgid "|get_analog_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:12 99bc69cf34254ae4a6f0cbd6c91af265
-msgid "get_analog_value.svg"
+#: ../../en/refs/unit.earth.ref:10 6de87c58c78649eca91e5fb92579b746
+msgid "get_analog_value.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:60 c119450bab8b4f6c97a1cddb52b6e819
+#: ../../en/units/earth.rst:60 43e30e827f354e8eb076e16d305967d1
 msgid ""
 "This method allows you to read the amount of numbers collected by EARTH "
 "and return an integer value. The value ranges from 0 to 1."
 msgstr "此方法允许读取EARTH采集的数字量并返回一个整数型数值。范围为0或者1。"
 
-#: ../../en/units/earth.rst:64 db5ad08da6b44cccbb87f5b36cfda5a8
-msgid "|get_digital_value.svg|"
+#: ../../en/units/earth.rst:64 db744d8a26bd4b21a10115f63b9d445d
+msgid "|get_digital_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:15 5497199bff2e4d68b4e75b957489c066
-msgid "get_digital_value.svg"
+#: ../../en/refs/unit.earth.ref:12 46658e623e9641e297c8c0440f186b25
+msgid "get_digital_value.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:69 b1e5859a08d0448ba6b45b8b32f6e0d0
+#: ../../en/units/earth.rst:69 c118123f47d0465fa3c47880b97323fa
 msgid ""
 "This method allows you to read the voltage value collected by EARTH and "
 "return an integer value. It ranges from 0 to 3300."
 msgstr "此方法允许读取EARTH采集的电压值并返回一个整数型数值。范围0-3300。"
 
-#: ../../en/units/earth.rst:73 cb3bdc60540e4ff7a79c20e1755cac5d
-msgid "|get_voltage_mv.svg|"
+#: ../../en/units/earth.rst:73 22fb9a40d2ab485997e734e1815062da
+msgid "|get_voltage_mv.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:18 f2d0e3d081b4460889645e1d4f9ca5ef
-msgid "get_voltage_mv.svg"
+#: ../../en/refs/unit.earth.ref:14 023cadd6df154a73ae41c18c3be5d7e6
+msgid "get_voltage_mv.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:78 6b15be3846404c659f6ace942a529c62
+#: ../../en/units/earth.rst:78 e5f7b75331e14f6ba4d0341643d16976
 msgid ""
 "This method allows you to read the voltage value collected by EARTH and "
 "return a floating-point value. Range 0.0 to 1.0."
 msgstr "此方法允许读取EARTH采集的电压值并返回一个浮点型数值。范围0.0-1.0。"
 
-#: ../../en/units/earth.rst:82 462c3b1f5dd649c4ad3b90ba71459760
-msgid "|humidity.svg|"
+#: ../../en/units/earth.rst:82 4c82cef957944f6eb7220cb536f05796
+msgid "|humidity.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:21 3fa91f5eba2d4856a1854c11a6b01c6a
-msgid "humidity.svg"
+#: ../../en/refs/unit.earth.ref:16 2f8006f6bfc1485cb60aafab92f6332f
+msgid "humidity.png"
 msgstr ""
 
-#: ../../en/units/earth.rst:87 f0ef391a7edd4acbbc1b4192495bfae0
+#: ../../en/units/earth.rst:87 e327fc425125479d8211f88c25eeb13b
 msgid ""
 "This method allows setting the maximum (0-3300) and minimum (0-3300) "
 "values for calibrating the EARTH sensor."
 msgstr "此方法允许设置校准EARTH传感器的最大（0-3300）和最小值（0-3300）。"
 
-#: ../../en/units/earth.rst:91 2c987d1a21264e24aed817b58c374655
-msgid "|set_calibrate.svg|"
+#: ../../en/units/earth.rst:91 99dc4a83526c40d9b770f2ea4f94a1ee
+msgid "|set_calibrate.png|"
 msgstr ""
 
-#: ../../en/refs/unit.earth.ref:24 c7f4b9a6c3a3407a86ebc071f5a31aba
-msgid "set_calibrate.svg"
+#: ../../en/refs/unit.earth.ref:18 b7d47fa4142345b89467640c5d606e16
+msgid "set_calibrate.png"
 msgstr ""
 
 #~ msgid "example.svg"
@@ -174,5 +172,41 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|example.svg|"
+#~ msgstr ""
+
+#~ msgid "|init.svg|"
+#~ msgstr ""
+
+#~ msgid "init.svg"
+#~ msgstr ""
+
+#~ msgid "|get_analog_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_analog_value.svg"
+#~ msgstr ""
+
+#~ msgid "|get_digital_value.svg|"
+#~ msgstr ""
+
+#~ msgid "get_digital_value.svg"
+#~ msgstr ""
+
+#~ msgid "|get_voltage_mv.svg|"
+#~ msgstr ""
+
+#~ msgid "get_voltage_mv.svg"
+#~ msgstr ""
+
+#~ msgid "|humidity.svg|"
+#~ msgstr ""
+
+#~ msgid "humidity.svg"
+#~ msgstr ""
+
+#~ msgid "|set_calibrate.svg|"
+#~ msgstr ""
+
+#~ msgid "set_calibrate.svg"
 #~ msgstr ""
 

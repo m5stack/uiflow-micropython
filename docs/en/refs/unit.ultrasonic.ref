@@ -4,11 +4,11 @@
     :width: 200px
 
 
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/example.png
 
-.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/init.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/init.png
 
-.. |get_target_distance.svg| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/get_target_distance.svg
+.. |get_target_distance.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ultrasonic/get_target_distance.png
 
 
 .. |ultrasonic_core_example.m5f2| raw:: html

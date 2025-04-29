@@ -1,27 +1,22 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
-from driver.simcom.common import Modem
-from collections import namedtuple
-
-
-AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
+from .common import Modem
+from .common import AT_CMD
 
 
 class SIM7080(Modem):
     def __init__(
         self,
         uart=None,
-        MODEM_PWKEY_PIN=None,
-        MODEM_RST_PIN=None,
-        MODEM_POWER_ON_PIN=None,
-        MODEM_TX_PIN=None,
-        MODEM_RX_PIN=None,
+        pwrkey_pin=None,
+        reset_pin=None,
+        power_pin=None,
+        tx_pin=None,
+        rx_pin=None,
     ) -> None:
-        super().__init__(
-            uart, MODEM_PWKEY_PIN, MODEM_RST_PIN, MODEM_POWER_ON_PIN, MODEM_TX_PIN, MODEM_RX_PIN
-        )
+        super().__init__(uart, pwrkey_pin, reset_pin, power_pin, tx_pin, rx_pin)
 
     def get_mode_selection(self):
         # get Preferred Selection between CAT-M and NB-IoT

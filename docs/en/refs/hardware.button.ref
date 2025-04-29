@@ -1,24 +1,24 @@
-.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/example.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/example.png
 
-.. |isHolding.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isHolding.svg
+.. |isHolding.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isHolding.png
 
-.. |isPressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isPressed.svg
+.. |isPressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isPressed.png
 
-.. |isReleased.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isReleased.svg
+.. |isReleased.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/isReleased.png
 
-.. |wasClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasClicked.svg
+.. |wasClicked.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasClicked.png
 
-.. |wasDoubleClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasDoubleClicked.svg
+.. |wasDoubleClicked.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasDoubleClicked.png
 
-.. |wasHold.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasHold.svg
+.. |wasHold.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasHold.png
 
-.. |wasPressed.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasPressed.svg
+.. |wasPressed.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasPressed.png
 
-.. |wasReleased.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasReleased.svg
+.. |wasReleased.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasReleased.png
 
-.. |wasSingleClicked.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasSingleClicked.svg
+.. |wasSingleClicked.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/wasSingleClicked.png
 
-.. |setCallback.svg| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/setCallback.svg
+.. |setCallback.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/button/setCallback.png
 
 .. |button_cores3_example.m5f2| raw:: html
 

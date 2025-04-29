@@ -5,6 +5,7 @@
 _attrs = {
     "Keyboard": "keyboard",
     "Button": "button",
+    "CAN": "can",
     "IR": "ir",
     "MatrixKeyboard": "matrix_keyboard",
     "DigitalInput": "plcio",

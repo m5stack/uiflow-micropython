@@ -19,7 +19,7 @@ extern "C"
 
 
 /* *FORMAT-OFF* */
-gfx_obj_t m5_display = {&mp_gfxdevice_type, &(box3GFX)};
+gfx_obj_t m5_display = {&mp_gfxdevice_type, &(box3GFX), NULL};
 touch_obj_t m5_touch = {&mp_touch_type,     &(box3GFX.Touch)};
 /* *FORMAT-ON* */
 

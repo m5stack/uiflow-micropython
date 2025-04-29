@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-18 15:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,96 +21,114 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../en/hardware/als.rst:2 ../../en/hardware/als.rst:16
-#: a3c3ca81dfd543aeba9e0bfdd52f2890 b820e696eeb245c8ae4c41ba2e62c54a
+#: 715dfd5bfb85440fa6fed1b8be63d826 cc80b6b60fc745d09c3a34770ab8811c
 msgid "ALS"
 msgstr ""
 
-#: ../../en/hardware/als.rst:7 47607a447f984e978424e9beeb2c5d5f
+#: ../../en/hardware/als.rst:7 23497f94ae0248f3b345b373f5e695bc
 msgid ""
 "ALS is used to read the built-in ambient light sensor inside the host "
 "device."
 msgstr ""
 
-#: ../../en/hardware/als.rst:9 c157c6e74b4845f79bae2dae1f30cdd0
+#: ../../en/hardware/als.rst:9 2392b9c4619942cdadbc233c8ca82d77
 msgid "The following are the details of the host's support for ALS:"
 msgstr ""
 
-#: ../../en/hardware/als.rst:18 fb7b33490df747899d84f432f6a5fd9f
+#: ../../en/hardware/als.rst:18 8de46dd675c740bfbff655484a9c82c9
 msgid "CoreS3"
 msgstr ""
 
-#: ../../en/hardware/als.rst:18 0b94145e7a13402bafd795acdcc6cec3
+#: ../../en/hardware/als.rst:18 9822bf0e225f4fda833b407bfc8dfc7d
 msgid "|S|"
 msgstr ""
 
-#: ../../en/hardware/als.rst:20 873fea3751ea4e2c8fa1209b33900280
+#: ../../en/hardware/als.rst:20 671ee2fa6f6748cb94f3b8b4bdf4a968
 msgid "CoreS3 SE"
 msgstr ""
 
-#: ../../en/hardware/als.rst:27 0983dc3e9f4c4ff79fc8f355c3dca131
+#: ../../en/hardware/als.rst:27 1a5efaf54aa943c1ada3ed4b46f0872d
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/hardware/als.rst:33 5ff419585c71435d92fe6ba9209f9e05
+#: ../../en/hardware/als.rst:33 9d71783848ec4681af5e19cda6f397d4
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/hardware/als.rst:35 f43eba528dcc4a9b8753396db897278f
+#: ../../en/hardware/als.rst:35 87aa146913f24181bfeb05fa46b683ba
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.als.ref:4 0c5a05418a1f4897b7e0d37a6d315a29
+#: ../../en/refs/hardware.als.ref:4 ef2b53a7f95448bfa6f2fd9736f2cf0e
 msgid "example.png"
 msgstr ""
 
-#: ../../en/hardware/als.rst:39 3dafb516d45c40a6b3a49d04facf6676
+#: ../../en/hardware/als.rst:39 aab6a4db4c354a4b80575221ac71f703
 msgid "|als_cores3_example.m5f2|"
 msgstr ""
 
-#: ../../en/hardware/als.rst:43 d83bd480f5494b08883b0e6331ddce32
+#: ../../en/hardware/als.rst:43 f2869aef778b44bfbbc36d50fd3f5b01
 msgid "class ALS"
 msgstr ""
 
-#: ../../en/hardware/als.rst:47 f0533522039a47769281903f5c5dd233
+#: ../../en/hardware/als.rst:47 d560c8cb5c5c4faba6ed5f05bebac32f
 msgid ""
-"Methods of the ALS Class heavily rely on ``M5.begin()`` |M5.begin.svg| "
-"and ``M5.update()`` |M5.update.svg|."
+"Methods of the ALS Class heavily rely on ``M5.begin()`` |M5.begin.png| "
+"and ``M5.update()`` |M5.update.png|."
 msgstr ""
 
-#: ../../en/refs/system.ref:1 6798c00a9e7d4dc5977bfd392c0e38a0
-#: eeb05e5a8d9d4da681a6eac225bd82cb
-msgid "M5.begin.svg"
+#: ../../en/refs/system.ref:1 48ec0fcaaf3940f8a4fae0f31838eeff
+msgid "M5.begin.png"
 msgstr ""
 
-#: ../../en/refs/system.ref:4 1130dac2ae8e46098ead0da9c9be4b17
-#: 39cfb909ef914640b6768735d3fda177
-msgid "M5.update.svg"
+#: ../../en/refs/system.ref:3 80695b8ed2eb44509c376d5b5aec4046
+msgid "M5.update.png"
 msgstr ""
 
-#: ../../en/hardware/als.rst:49 f3d5e32598c2402b9f668d1fc9c6dce6
+#: ../../en/hardware/als.rst:49 145e47bd2ea54cf9a7a1dd8e00aa5afd
 msgid ""
 "All calls to methods of ALS objects should be placed after ``M5.begin()``"
-" |M5.begin.svg|, and ``M5.update()`` |M5.update.svg| should be called in "
+" |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in "
 "the main loop."
 msgstr ""
 
-#: ../../en/hardware/als.rst:53 2404957574a44b6e8b21feb9c851ea33
+#: ../../en/hardware/als.rst:53 86c2fdde246b4455961bb3e8594eea54
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hardware/als.rst:57 3efae75b03f745eea12cf320e4b3d4b4
+#: ../../en/hardware/als.rst:57 3ea536206b7648cca2c694091c0bfa3f
 msgid "Read the ambient light sensor value built into the host device."
 msgstr ""
 
-#: ../../en/hardware/als.rst:59 b95baf0f44f843299ab2961b4b7dda75
+#: ../../en/hardware/als.rst:59 a8d4730336bd48ebbbe60659d82db36c
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/hardware/als.rst:61 52ea4478481d43e79cb5cf2a3dee2230
+#: ../../en/hardware/als.rst:61 837480772ee840adab4c6e60ae1fa2be
 msgid "|getLightSensorData.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.als.ref:2 fc23360e517444d19e3ce9f1bdb8b73b
+#: ../../en/refs/hardware.als.ref:2 ac06447943064a8db612bde5cae195c9
 msgid "getLightSensorData.png"
 msgstr ""
+
+#~ msgid ""
+#~ "Methods of the ALS Class heavily "
+#~ "rely on ``M5.begin()`` |M5.begin.svg| and "
+#~ "``M5.update()`` |M5.update.svg|."
+#~ msgstr ""
+
+#~ msgid "M5.begin.svg"
+#~ msgstr ""
+
+#~ msgid "M5.update.svg"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "All calls to methods of ALS "
+#~ "objects should be placed after "
+#~ "``M5.begin()`` |M5.begin.svg|, and ``M5.update()``"
+#~ " |M5.update.svg| should be called in "
+#~ "the main loop."
+#~ msgstr ""
 

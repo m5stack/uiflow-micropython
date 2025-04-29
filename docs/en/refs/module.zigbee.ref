@@ -8,12 +8,12 @@
 .. |get_custom_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/get_custom_address.png
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/init.png
 .. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/isconnected.png
-.. |join_network.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/join_network.png
+.. .. |join_network.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/join_network.png
 .. |p2p_transmission.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/p2p_transmission.png
 .. |receive_none_block.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/receive_none_block.png
 .. |receive_data_str_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/receive_data_str_event.png
 .. |receive_data_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/receive_data_event.png
-.. |restart_module.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/restart_module.png
+.. .. |restart_module.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/restart_module.png
 .. |set_ant_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/set_ant_type.png
 .. |set_channel.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/set_channel.png
 .. |set_device_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_zigbee/set_device_type.png

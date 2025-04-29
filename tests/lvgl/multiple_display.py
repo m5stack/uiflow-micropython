@@ -6,86 +6,68 @@
 import sys
 import M5
 import lvgl as lv
+import lv_utils
+from hardware import I2C
+from hardware import Pin
+from unit import LCDUnit
 
 M5.begin()
+
+i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
+lcd_0 = LCDUnit(i2c0, 0x3E)
 
 # lvgl init
 M5.Lcd.lvgl_init()
 
-# create a display 0 buffer
-disp_buf0 = lv.disp_draw_buf_t()
-buf1_0 = bytearray(M5.getDisplay(0).width() * 10)
-disp_buf0.init(buf1_0, None, len(buf1_0) // lv.color_t.__SIZE__)
+# built-in display
+disp_buf0 = lv.draw_buf_create(M5.Lcd.width(), 10, lv.COLOR_FORMAT.RGB565, 0)
+disp_buf1 = lv.draw_buf_create(M5.Lcd.width(), 10, lv.COLOR_FORMAT.RGB565, 0)
 
-# register display 0 driver
-disp_drv_0 = lv.disp_drv_t()
-disp_drv_0.init()
-disp_drv_0.draw_buf = disp_buf0
-disp_drv_0.flush_cb = M5.Lcd.lvgl_flush
-disp_drv_0.hor_res = M5.getDisplay(0).width()
-disp_drv_0.ver_res = M5.getDisplay(0).height()
-disp_drv_0.user_data = {"display_index": 0}
-disp0 = disp_drv_0.register()
+disp_drv = lv.display_create(M5.Lcd.width(), M5.Lcd.height())
+disp_drv.set_color_format(lv.COLOR_FORMAT.RGB565)
 
-# create a display 1 buffer
-disp_buf1 = lv.disp_draw_buf_t()
-buf1_1 = bytearray(M5.getDisplay(1).width() * 10)
-disp_buf1.init(buf1_1, None, len(buf1_1) // lv.color_t.__SIZE__)
+disp_drv.set_draw_buffers(disp_buf0, disp_buf1)
+disp_drv.set_flush_cb(M5.Lcd.lvgl_flush)
+disp_drv.set_user_data({"display": M5.Lcd})
+disp_drv.set_render_mode(lv.DISPLAY_RENDER_MODE.PARTIAL)
 
-# register display 1 driver
-disp_drv_1 = lv.disp_drv_t()
-disp_drv_1.init()
-disp_drv_1.draw_buf = disp_buf1
-disp_drv_1.flush_cb = M5.Lcd.lvgl_flush
-disp_drv_1.hor_res = M5.getDisplay(1).width()
-disp_drv_1.ver_res = M5.getDisplay(1).height()
-disp_drv_1.user_data = {"display_index": 1}
-disp1 = disp_drv_1.register()
+# create a display 1
+disp_buf0 = lv.draw_buf_create(lcd_0.width(), 10, lv.COLOR_FORMAT.RGB565, 0)
+disp_buf1 = lv.draw_buf_create(lcd_0.width(), 10, lv.COLOR_FORMAT.RGB565, 0)
 
-# set default display to screen 0
-lv.disp_t.set_default(disp0)
-scr0 = lv.obj()
-# create button widget on screen 0
-btn0 = lv.btn(scr0)
-btn0.align(lv.ALIGN.CENTER, 0, -50)
-label0 = lv.label(btn0)
-label0.set_text("LVGL Screen 0")
-lv.scr_load(scr0)
+disp_drv1 = lv.display_create(lcd_0.width(), lcd_0.height())
+disp_drv1.set_color_format(lv.COLOR_FORMAT.RGB565)
 
-# set default display to screen 1
-lv.disp_t.set_default(disp1)
-scr1 = lv.obj()
-# create button widget on screen 1
-btn1 = lv.btn(scr1)
-btn1.align(lv.ALIGN.CENTER, 0, -50)
-label1 = lv.label(btn1)
-label1.set_text("LVGL Screen 1")
-lv.scr_load(scr1)
+disp_drv1.set_draw_buffers(disp_buf0, disp_buf1)
+disp_drv1.set_flush_cb(M5.Lcd.lvgl_flush)
+disp_drv1.set_user_data({"display": lcd_0})
+disp_drv1.set_render_mode(lv.DISPLAY_RENDER_MODE.PARTIAL)
 
 # touch driver init
-indev_drv = lv.indev_drv_t()
-indev_drv.init()
-indev_drv.disp = disp0  # input device assigned to display 0
-indev_drv.type = lv.INDEV_TYPE.POINTER
-indev_drv.read_cb = M5.Lcd.lvgl_read
-indev = indev_drv.register()
+indev_drv = lv.indev_create()
+indev_drv.set_type(lv.INDEV_TYPE.POINTER)
+# indev_drv.set_display(lv.display_get_default())
+indev_drv.set_display(disp_drv)
+indev_drv.set_read_cb(M5.Lcd.lvgl_read)
 
-# Create an image from the jpg file
-try:
-    with open("res/img/uiflow.jpg", "rb") as f:
-        jpg_data = f.read()
-except:
-    print("Could not find uiflow.jpg")
-    sys.exit()
+# fs driver init
+fs_drv = lv.fs_drv_t()
+lv_utils.fs_register(fs_drv, "S")
 
-img_cogwheel_argb = lv.img_dsc_t({"data_size": len(jpg_data), "data": jpg_data})
+# display 0
+disp_drv.set_default()
+scr = lv.screen_active()
+scr.clean()
 
-# show image on screen 0
-img0 = lv.img(scr0)
-img0.set_src(img_cogwheel_argb)
-img0.align(lv.ALIGN.CENTER, 0, 0)
+img0 = lv.image(scr)
+img0.set_src("S:/flash/res/img/uiflow.jpg")
+img0.set_pos(0, 0)
 
-# show image on screen 1
-img1 = lv.img(scr1)
-img1.set_src(img_cogwheel_argb)
-img1.align(lv.ALIGN.CENTER, 0, 0)
+# display 1
+disp_drv1.set_default()
+scr = lv.screen_active()
+scr.clean()
+
+img0 = lv.image(scr)
+img0.set_src("S:/flash/res/img/uiflow.jpg")
+img0.set_pos(0, 0)

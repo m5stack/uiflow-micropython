@@ -40,7 +40,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.DLightUnit.Methods:
@@ -54,7 +54,7 @@ Methods
 
     UIFLOW2:
 
-        |get_lux.svg|
+        |get_lux.png|
 
 
 .. method:: DLightUnit.configure()
@@ -63,4 +63,4 @@ Methods
 
     UIFLOW2:
 
-        |configure.svg|
+        |configure.png|

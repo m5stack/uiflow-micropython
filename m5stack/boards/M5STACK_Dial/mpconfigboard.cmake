@@ -6,6 +6,7 @@ set(IDF_TARGET esp32s3)
 
 # dial https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L14
 set(BOARD_ID 12)
+set(MICROPY_PY_LVGL 1)
 
 set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.base
@@ -15,7 +16,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.usb_cdc
-    ./boards/sdkconfig.flash_8mb
+    # ./boards/sdkconfig.flash_8mb
     ./boards/sdkconfig.freertos
     ./boards/M5STACK_Dial/sdkconfig.board
 )

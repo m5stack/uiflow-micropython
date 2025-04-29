@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-21 15:07+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/module/bala2.rst:2 8b579796274240f482a1ea4b20da67ac
+#: ../../en/module/bala2.rst:2 1f100ba2d6a845f08751d3b0acafb3d7
 msgid "Bala2 Module"
 msgstr ""
 
-#: ../../en/module/bala2.rst:8 3dd5a7c7010645108a4e3602384b17ac
+#: ../../en/module/bala2.rst:8 70bc6d6d350549d2842601a75f0df888
 msgid ""
 "The Bala2 Module is part of the M5Stack stackable module series. The "
 "module communicates with the host via the I2C interface, and its built-in"
@@ -34,90 +34,110 @@ msgstr ""
 "Bala2 模块是 M5Stack 堆叠模块系列的一部分。该模块通过 I2C 接口与主机通信，内置的微控制器负责电机的 PWM "
 "控制、读取编码器计数，和输出舵机控制信号。"
 
-#: ../../en/module/bala2.rst:10 17d693df5dc348a6928e6d9c82a9eb22
+#: ../../en/module/bala2.rst:10 66e63302d6ff4e2a934a712916e171d7
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/module/bala2.rst:12 c0e82552374743a380a1f3e3cb50ffd3
-msgid "|Bala2| |Bala2-Fire|"
+#: ../../en/module/bala2.rst:12 f9f280349646466bac0964b53303aa6b
+msgid "|Bala2|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref 51606c4d0a944e98a73a1d515236ddf0
+#: ../../en/refs/module.bala2.ref 248a8c1303214b0886915be678bed03c
 msgid "Bala2"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref 51606c4d0a944e98a73a1d515236ddf0
+#: ../../en/module/bala2.rst:14 4e2b3007cb3a4038bc282102859db468
+msgid "|Bala2-Fire|"
+msgstr ""
+
+#: ../../en/refs/module.bala2.ref a0939d190b764e59ad000ffb6dbc45bb
 msgid "Bala2-Fire"
 msgstr ""
 
-#: ../../en/module/bala2.rst:17 a66e860276084bc5a41cc67a42caf4f1
+#: ../../en/module/bala2.rst:18 5a43c93011b64b9eb65f3954d07987ff
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例："
 
-#: ../../en/module/bala2.rst:20 ../../en/module/bala2.rst:83
-#: 2103cf90421542ef96c0a5d1a958c4cb
+#: ../../en/module/bala2.rst:21 ../../en/module/bala2.rst:84
+#: 44fba959d55043b69a6bc6d5c5430be3 9ec90b252d894f3c88ee0be681495d93
 msgid "Servo control"
 msgstr "舵机控制"
 
-#: ../../en/module/bala2.rst:22 c19ceb0f930c4f45964a01e7929a4ec7
+#: ../../en/module/bala2.rst:23 0ac4151a56804c2eb334ba7bc684faae
 msgid "Open the |servo_control_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |servo_control_example.m5f2| 项目。"
 
-#: ../../en/module/bala2.rst:24 ../../en/module/bala2.rst:85
-#: 67d82e61feb64d7db3eb69ca3519aecd
+#: ../../en/module/bala2.rst:25 ../../en/module/bala2.rst:86
+#: 1ede219a6d0f42ac95e018e507539a67 b3573751659d42c08d6d3e22e53aa765
 msgid "Control the servo to swing back and forth between 0° and 180°."
 msgstr "控制舵机 0°~180° 来回转动。"
 
-#: ../../en/module/bala2.rst:26 ../../en/module/bala2.rst:41
-#: ../../en/module/bala2.rst:56 ../../en/module/bala2.rst:71
-#: ../../en/module/bala2.rst:154 ../../en/module/bala2.rst:170
-#: ../../en/module/bala2.rst:187 ../../en/module/bala2.rst:204
-#: ../../en/module/bala2.rst:221 ../../en/module/bala2.rst:238
-#: ../../en/module/bala2.rst:252 ../../en/module/bala2.rst:266
-#: ../../en/module/bala2.rst:285 ../../en/module/bala2.rst:303
-#: ../../en/module/bala2.rst:320 ../../en/module/bala2.rst:336
-#: ../../en/module/bala2.rst:353 ../../en/module/bala2.rst:371
-#: ../../en/module/bala2.rst:388 ../../en/module/bala2.rst:404
-#: ../../en/module/bala2.rst:421 ../../en/module/bala2.rst:437
-#: bc5104713d3c47049acf52a68d6aba6f
+#: ../../en/module/bala2.rst:27 ../../en/module/bala2.rst:42
+#: ../../en/module/bala2.rst:57 ../../en/module/bala2.rst:72
+#: ../../en/module/bala2.rst:155 ../../en/module/bala2.rst:171
+#: ../../en/module/bala2.rst:188 ../../en/module/bala2.rst:205
+#: ../../en/module/bala2.rst:222 ../../en/module/bala2.rst:239
+#: ../../en/module/bala2.rst:253 ../../en/module/bala2.rst:267
+#: ../../en/module/bala2.rst:286 ../../en/module/bala2.rst:304
+#: ../../en/module/bala2.rst:321 ../../en/module/bala2.rst:337
+#: ../../en/module/bala2.rst:354 ../../en/module/bala2.rst:372
+#: ../../en/module/bala2.rst:389 ../../en/module/bala2.rst:405
+#: ../../en/module/bala2.rst:422 ../../en/module/bala2.rst:438
+#: 06480614a5224b27b7c4862bfe7632e8 0a022f3ff20d4d448fed9f73d54f3bdd
+#: 12b8f5308ab5433c9fde825d1866b41a 13644faa67474a268c57408e864b90d4
+#: 28deb3d7c9e44e8784b7fd5c9bf51175 2d3d4acab0d648a78f7c40722db20562
+#: 4cebf0eb373a403cace5f5375576496b 592cb53951944adeb7e69e6df39868e0
+#: 8bcc11d33656405daa7df3f60dc5cda6 8f53cef9efd64987959cf3cac6478eea
+#: 904a929be26141c88e8cecbd7c19a2b4 9c99d63f20ca4c6eb0d8d8a5796b1fdf
+#: 9e228b62bc474b51be8572427321bcb2 9e564db243e0485883380e6b231e6a98
+#: a584fd32de274dc3b53753c1c6828bf4 b44bc0f62b5047adb79e7774c2b8539d
+#: bcb40b7e766e4c97be18a624bcb4c8d5 c23c383fb09d4be4bc5498b21e5140d9
+#: cdf4921b0c54478a8ccfa26f40a10807 dfbe64529ad14af0b16326c92688b3bf
+#: e4998e76db5e446bbf693c623ee7ecbf f3ca08ccca9844c7bcd4087fd46f3836
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/module/bala2.rst:28 7adbeebff54e4bd1b2ecca78161508b1
+#: ../../en/module/bala2.rst:29 4ea6e48f0b034670a862d775e9c86636
 msgid "|servo_control_example.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:32 5b48957f7bc24e019321100fa0e505da
+#: ../../en/refs/module.bala2.ref:32 88a0d58711334032830d2f7a714e9389
 msgid "servo_control_example.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:30 ../../en/module/bala2.rst:45
-#: ../../en/module/bala2.rst:60 ../../en/module/bala2.rst:75
-#: ../../en/module/bala2.rst:93 ../../en/module/bala2.rst:108
-#: ../../en/module/bala2.rst:123 ../../en/module/bala2.rst:138
-#: eb787eb3c1d645e3a29d3bde1c5c7623
+#: ../../en/module/bala2.rst:31 ../../en/module/bala2.rst:46
+#: ../../en/module/bala2.rst:61 ../../en/module/bala2.rst:76
+#: ../../en/module/bala2.rst:94 ../../en/module/bala2.rst:109
+#: ../../en/module/bala2.rst:124 ../../en/module/bala2.rst:139
+#: 00c0440f1ad64c0aa6f253dd4bcadbaf 8608c692a78c495a883cc7a8fa37bed7
+#: 863cf951677f4c51ae204bfc3fc55353 c04669283e9d4ef9af17d711afe906ce
+#: c72e05732f374b4b8f185ff5dea298d7 d27f28c046324a6fa901b6f5d5658d92
+#: e3f6279d63fa44d39a035b450722c5c6 f9b0b11074cf4c36a4034fcc5326ceb4
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/module/bala2.rst:32 ../../en/module/bala2.rst:47
-#: ../../en/module/bala2.rst:62 ../../en/module/bala2.rst:77
-#: ../../en/module/bala2.rst:95 ../../en/module/bala2.rst:110
-#: ../../en/module/bala2.rst:125 ../../en/module/bala2.rst:140
-#: 94f91e4e097747d7ad6018e15675ad42
+#: ../../en/module/bala2.rst:33 ../../en/module/bala2.rst:48
+#: ../../en/module/bala2.rst:63 ../../en/module/bala2.rst:78
+#: ../../en/module/bala2.rst:96 ../../en/module/bala2.rst:111
+#: ../../en/module/bala2.rst:126 ../../en/module/bala2.rst:141
+#: 2d073e0b70a2480fb5668a46d5dbc638 3c45d9a2f8b742d0a8c1d323208f4a32
+#: 6535ae0cf5cf4aa98b21df5d41d9cd32 7e7b7a4e938546c094b6dae1298606c4
+#: 9adf1b3b60ef4266b0fe8ba6258d5dc0 aed1f096c7e34b28969144dd24161ae4
+#: b5288afeb0b6455b96a6e4163b3e98a8 faf09ec0554b439da97ec3ca2b2479dd
 msgid "None"
 msgstr "无"
 
-#: ../../en/module/bala2.rst:35 ../../en/module/bala2.rst:98
-#: 724ef0befedd4edfbb93c13cdcdedeeb
+#: ../../en/module/bala2.rst:36 ../../en/module/bala2.rst:99
+#: 1c439cf50a1b403b9d8c741899c2b6b9 a671da7986ad40d6b3e180e6105b1538
 msgid "Motor control"
 msgstr "电机控制"
 
-#: ../../en/module/bala2.rst:37 6ff5f833ac1e435da6a38977c211e4de
+#: ../../en/module/bala2.rst:38 6b3382d44be840edb2ace80501f2a855
 msgid "Open the |motor_control_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |motor_control_example.m5f2| 项目。"
 
-#: ../../en/module/bala2.rst:39 ../../en/module/bala2.rst:100
-#: b304814eb07e482fa285318812b24fa0
+#: ../../en/module/bala2.rst:40 ../../en/module/bala2.rst:101
+#: 68b8c371209046538fb7f6e4c8b44a2e a4d39ad57ac744c2a5d174901d84ca68
 msgid ""
 "Run the program, and the car's motors will first rotate forward, "
 "gradually accelerating to the maximum speed, then gradually decelerating "
@@ -126,49 +146,49 @@ msgid ""
 "will come to a complete stop, with the motor speed returning to zero."
 msgstr "运行程序，小车电机先正转，逐步加速至最大速度，然后逐步减速至停止。随后，电机反转，同样逐步加速到最大速度，再逐步减速至停止。最后，小车停止运动，电机速度归零。"
 
-#: ../../en/module/bala2.rst:43 bd6989cbc48b41b7a978652aab92cfb1
+#: ../../en/module/bala2.rst:44 231be6bb360e40abbb8cfa230d9512b7
 msgid "|motor_control_example.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:30 2dec4754f837493c98d7e2085eb23bb9
+#: ../../en/refs/module.bala2.ref:30 a8803780737a473b951c8d961dca36a3
 msgid "motor_control_example.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:50 ../../en/module/bala2.rst:113
-#: f582d402bd65440b8973556dffd326fa
+#: ../../en/module/bala2.rst:51 ../../en/module/bala2.rst:114
+#: 6880602142ed42149de8b1f57ca87a9e a2e965b2f85a44c88e220784b50939b4
 msgid "Read encoder"
 msgstr "读取编码器"
 
-#: ../../en/module/bala2.rst:52 fbb11056e88a42b3a1f5b119e4d3e865
+#: ../../en/module/bala2.rst:53 97a10324e7834dec9b42fc377d42e71e
 msgid "Open the |read_encoder_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |read_encoder_example.m5f2| 项目。"
 
-#: ../../en/module/bala2.rst:54 ../../en/module/bala2.rst:115
-#: a57fd91998e94250a3903c6707addffc
+#: ../../en/module/bala2.rst:55 ../../en/module/bala2.rst:116
+#: be544f914ced418fb494cbf58b6a3b6e f46aa966f9bf4914943ab4a1174e714f
 msgid ""
 "Run the program and manually rotate the wheels to observe the screen "
 "display."
 msgstr "运行程序，用手转动车轮观察屏幕显示。"
 
-#: ../../en/module/bala2.rst:58 fca97708dfc34fb2a95646514dbb3fa4
+#: ../../en/module/bala2.rst:59 0b590d467d5049ae80f39105909193b1
 msgid "|read_encoder_example.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:31 6960a45d75b847b5b3c2ed8d6f609490
+#: ../../en/refs/module.bala2.ref:31 e92c36f81414487c9ad3d36acadc40af
 msgid "read_encoder_example.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:65 ../../en/module/bala2.rst:128
-#: b4c294c011064dd2bb3978a11791ac1c
+#: ../../en/module/bala2.rst:66 ../../en/module/bala2.rst:129
+#: b7e303db89484501995b350e4ddb2f1d dd1f8dceb4854090afb82adc06338cd5
 msgid "Car control"
 msgstr "小车控制"
 
-#: ../../en/module/bala2.rst:67 93fc211986e94974a116e5baa9a6ac05
+#: ../../en/module/bala2.rst:68 e8872b9077f94e0db75609b7a89a3080
 msgid "Open the |car_control_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |car_control_example.m5f2| 项目。"
 
-#: ../../en/module/bala2.rst:69 ../../en/module/bala2.rst:130
-#: 50dc1938a5cb453c97c9b26e41c306a2
+#: ../../en/module/bala2.rst:70 ../../en/module/bala2.rst:131
+#: 03255c91ae7f47ab84c8e33fae2ec5a0 8b06e340103d424abc5dec9196acc33a
 msgid ""
 "Save the program to the controller, place the car on its side, and turn "
 "it on. After the gyroscope calibration is complete, the car will "
@@ -178,351 +198,374 @@ msgid ""
 "state."
 msgstr "保存程序到控制器中，侧放小车并开机，等待陀螺仪校准完成后，小车会自动直立保持平衡。随后，它会依次执行左转、右转、前进、后退等动作，最后停止，回到平衡状态。"
 
-#: ../../en/module/bala2.rst:73 d12f8cd9694a4ebabac050676223e097
+#: ../../en/module/bala2.rst:74 ca77d2b41930497095175e4cdb619c64
 msgid "|car_control_example.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:33 311a2013bcab4f2aaaf13a3da52d6ee5
+#: ../../en/refs/module.bala2.ref:33 c810df9820a045938e00c01a5fc9719d
 msgid "car_control_example.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:80 61952d2e51084986859879473c97b376
+#: ../../en/module/bala2.rst:81 793f678026fc46fcbb9a308037ffe018
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例："
 
-#: ../../en/module/bala2.rst:87 ../../en/module/bala2.rst:102
-#: ../../en/module/bala2.rst:117 ../../en/module/bala2.rst:132
-#: ../../en/module/bala2.rst:158 ../../en/module/bala2.rst:174
-#: ../../en/module/bala2.rst:191 ../../en/module/bala2.rst:208
-#: ../../en/module/bala2.rst:225 ../../en/module/bala2.rst:242
-#: ../../en/module/bala2.rst:256 ../../en/module/bala2.rst:270
-#: ../../en/module/bala2.rst:289 ../../en/module/bala2.rst:307
-#: ../../en/module/bala2.rst:324 ../../en/module/bala2.rst:340
-#: ../../en/module/bala2.rst:357 ../../en/module/bala2.rst:375
-#: ../../en/module/bala2.rst:392 ../../en/module/bala2.rst:408
-#: ../../en/module/bala2.rst:425 ../../en/module/bala2.rst:441
-#: 2058336b3bd147c6b522a036c6c56d7b
+#: ../../en/module/bala2.rst:88 ../../en/module/bala2.rst:103
+#: ../../en/module/bala2.rst:118 ../../en/module/bala2.rst:133
+#: ../../en/module/bala2.rst:159 ../../en/module/bala2.rst:175
+#: ../../en/module/bala2.rst:192 ../../en/module/bala2.rst:209
+#: ../../en/module/bala2.rst:226 ../../en/module/bala2.rst:243
+#: ../../en/module/bala2.rst:257 ../../en/module/bala2.rst:271
+#: ../../en/module/bala2.rst:290 ../../en/module/bala2.rst:308
+#: ../../en/module/bala2.rst:325 ../../en/module/bala2.rst:341
+#: ../../en/module/bala2.rst:358 ../../en/module/bala2.rst:376
+#: ../../en/module/bala2.rst:393 ../../en/module/bala2.rst:409
+#: ../../en/module/bala2.rst:426 ../../en/module/bala2.rst:442
+#: 057c8c336cd3405d9683fc0e00ef1c9a 0df8057bd5f04b0e90e780b05287be92
+#: 20359f0e5d4d479bba05c3c18f79c468 4636be1ae7914e41b36f2bdf2cc16a0a
+#: 5656c4e17053441f9dfc3160e53bd2b0 5f7ef2cdcfe04458a8990806d1e59cc9
+#: 5ff858be9ded4dcea73c2f9d55a15b4c 6f39f3338d7244de9152429016b8ee4d
+#: 77c554a6afcb4f23b9575b4481310a44 9beed22b1d7145c5ac960beb49006ca2
+#: b118ff58ca8c45c9a4bf5eee6d0df49e b4fef442f6aa43f2998723b70cdaf9a1
+#: c07d9f14be3641138aec0f6a4285f3d2 cfeb734cdbf042d0ba519caea49f43f0
+#: dec93ccd638441bfa0b40bde554ebf20 df7ece7250904bf7ae96d1eb949168d8
+#: e8224ce1ccf44135a79a8c948b615fec eaa9ed12b78d4f2eb040d2438c2e913c
+#: edbd2a77403b4a5d918697adc3403e96 ef3c16e5c21d4b618ed18ad234285470
+#: effdaa87f1a243f78bf554074a71271c ff69d12492f94c6b8d2ef05d33d781a9
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/module/bala2.rst:143 b8f0976072fb4e289935312fbff8d7fd
+#: ../../en/module/bala2.rst:144 41800db3713b4a36a9446a593ededdc7
 msgid "**API**"
 msgstr "API应用"
 
-#: ../../en/module/bala2.rst:146 7fb890e04d58455881922cdc2c1e2905
+#: ../../en/module/bala2.rst:147 e1f99ab2f5f14523997084105b3ad886
 msgid "Bala2Module"
 msgstr ""
 
-#: ../../en/module/bala2.rst:150 0b6f18d63f004e538ad40fded38e1ba5
+#: ../../en/module/bala2.rst:151 e842553ad5e449fdbbe8da860d7f079b
 msgid "Create an Bala2Module object."
 msgstr "创建一个 Bala2Module 对象"
 
-#: ../../en/module/bala2.rst 4eec50ef61af4c61a434816f5890c4a7
+#: ../../en/module/bala2.rst 0172e4504c214c4c840935c1ed280273
+#: 5e9d0d525c4c4cc0b6c6ce5d5df9233d 6be99cd05e314c03b818e16c716e781a
+#: 78c771b993714f7e8fa516bf80ff1326 87198377b6944e919b39b9d8aa6e39e8
+#: 8b41e8ba2f4f481eb5ddb444c9c1f7ae a397376160184970831770bd4dc26a34
+#: d2c2ecddf0604cb2b88f191b0f0a6998 dfca47d80a4948aab083682377bca4be
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/bala2.rst:152 08927f936ce2444097ec291153d4eb1b
+#: ../../en/module/bala2.rst:153 32d79c5d211a450ebf3d2192cacfcd13
 msgid ""
 "Timer ID from 0 to 3 (Use a timer to periodically call the balance "
 "control program.)"
 msgstr "定时器 ID 从 0 到 3（使用定时器周期性地调用平衡控制程序）。"
 
-#: ../../en/module/bala2.rst:156 728f0418f04c47c493caf115e05b7e4b
+#: ../../en/module/bala2.rst:157 2c7250ce80304da68c848781c3eedb47
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:11 555a813e314e4e80a2ec6db1ec401fb0
+#: ../../en/refs/module.bala2.ref:11 f1c6f7aa9ba147b0b8f0ce4754f3ee4c
 msgid "init.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:168 7ad499cfa9e74f03ac28e8c9388ff762
+#: ../../en/module/bala2.rst:169 f5f33e82b39e4c99ac58bee32dc29803
 msgid "Calibrate sensor"
 msgstr "校准传感器"
 
-#: ../../en/module/bala2.rst:172 e99c5f4be33847a983f8a967e470cfb5
+#: ../../en/module/bala2.rst:173 c579bfbd29644868874d6363b0a511f5
 msgid "|calibrate.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:20 ce510b294ec24a70ac094aefc6ce9e9b
+#: ../../en/refs/module.bala2.ref:20 0e9852708da84a84b4a5e6169c437eb9
 msgid "calibrate.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:182 38f73e9c6cfb4128975c96338a363d15
+#: ../../en/module/bala2.rst:183 f3c5a4a37b544337b8cb6cbf3b6e42f7
 msgid "Set motor speed"
 msgstr "设置电机转速"
 
-#: ../../en/module/bala2.rst:184 2bf9f10ac80d4008bdf027c6c8fbd051
+#: ../../en/module/bala2.rst:185 3e9d71de370546a799de76249271b56d
 msgid "The speed of the left motor. Range: -1023 ~ 1023."
 msgstr "左边电机转速，范围：-1023 ~ 1023。"
 
-#: ../../en/module/bala2.rst:185 1c53b735878a45779dd5ebc1aa3ffeb6
+#: ../../en/module/bala2.rst:186 c8fc0b9f2d224d99a4cf29b2e22f52c9
 msgid "The speed of the right motor. Range: -1023 ~ 1023."
 msgstr "右边电机转速，范围：-1023 ~ 1023。"
 
-#: ../../en/module/bala2.rst:189 023d09e7eb3942419d4534baf7a0cab7
+#: ../../en/module/bala2.rst:190 78f4e680220442248b7e7400fdac4d94
 msgid "|set_motor_speed.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:21 e9f59f73cb894e4492c5a929bdbe388a
+#: ../../en/refs/module.bala2.ref:21 64facb506e7b4a7395e9ec93c0a64c48
 msgid "set_motor_speed.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:199 dbe5fa44da6f45c8a05b0ad7f0a967b4
+#: ../../en/module/bala2.rst:200 30bc3532e8e74666b15591475d69a448
 msgid "Set encoder value"
 msgstr "设置编码器数值"
 
-#: ../../en/module/bala2.rst:201 43264dcadadc4f21bd90c841168b1e3c
+#: ../../en/module/bala2.rst:202 c5da8af75c604035bebd051ede6bc3f4
 msgid "The value of the left encoder. Range: -2^31 ~ 2^31."
 msgstr "左边电机编码器数值，范围：-2^31 ~ 2^31。"
 
-#: ../../en/module/bala2.rst:202 4066011d962e417a8898af5291a429eb
+#: ../../en/module/bala2.rst:203 e5ab48d38778453cbe4818e8d25ab37f
 msgid "The value of the right encoder. Range: -2^31 ~ 2^31."
 msgstr "右边电机编码器数值，范围：-2^31 ~ 2^31。"
 
-#: ../../en/module/bala2.rst:206 9287d9067e8540b2ae2dfb9e9c57a625
+#: ../../en/module/bala2.rst:207 48da48524d714bcf899f3c6bd17825f3
 msgid "|set_encoder_value.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:22 216a625a5d9d4a71a62189c49abe430a
+#: ../../en/refs/module.bala2.ref:22 57066376a2924fefa0f2802987beb59d
 msgid "set_encoder_value.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:216 6e62c52642c1494b9e756fdbaca18216
+#: ../../en/module/bala2.rst:217 10937ddb8446495f9bb8dc2679e40c3d
 msgid "The left, right encoder value returned in a 2-tuple"
 msgstr "左、右编码器值以二元组的形式返回。"
 
-#: ../../en/module/bala2.rst c9abe40f15784509a90837f0d7381ee4
+#: ../../en/module/bala2.rst 0e95cbe11d3143f18fad2787450322de
+#: 20ca332b2608421685e4abda48d8aa2c 2131aefbc0d54cfd8dcb95f33f46e5dd
+#: 85de64d2c9e0448da9150d41eadd2c04 b7bd5450cdb04e6db06cebabc2b4c37e
+#: f5d675de69cf4c4c9338589579a0fc16
 msgid "Returns"
 msgstr ""
 
-#: ../../en/module/bala2.rst:218 c3a58359fd644709b2961334a2a79d62
+#: ../../en/module/bala2.rst:219 dd703fee4714409585a42d75b8e14394
 msgid "left, right encoder value"
 msgstr "左，右编码器数值"
 
-#: ../../en/module/bala2.rst 4bf7852763f143e6ab0fc8d71be42014
+#: ../../en/module/bala2.rst 34997226ac8d46c2a940f93e4f7df60a
+#: 41115c4cb4d7429daf2d91ce8ec040ea 49a328ca2376430494a679993d093352
+#: 519fefb0136d43edbd4c1b92a2a69793 aa483eb52ac449b7a8f1b47fdf9eaf52
+#: dd08504ffaa1459b872edb32befdeb83
 msgid "Return type"
 msgstr ""
 
-#: ../../en/module/bala2.rst:223 fd4cb9a0dade4664a6e7ef87e9480058
+#: ../../en/module/bala2.rst:224 6c5abfa35b5c4d589f9fc0a0d653b058
 msgid "|get_encoder_value.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:12 807c5a0c8d3b4e36bab1c0de9b77556e
+#: ../../en/refs/module.bala2.ref:12 fb30693808bb42dc8a03766b1291e24f
 msgid "get_encoder_value.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:233 859d51b7db0148bfba90fa8f0fc1e84c
+#: ../../en/module/bala2.rst:234 6345b46265fa48dea0c9c5097b1dd9f8
 msgid "Set servo angle"
 msgstr "设置舵机角度"
 
-#: ../../en/module/bala2.rst:235 bc30962afa384625883b1f229925d80e
+#: ../../en/module/bala2.rst:236 ca429e1fcc0d469cb8b5f95feb3b030f
 msgid "The position of the output cahnnel. Range: 1 ~ 4."
 msgstr "输出通道，范围：1~4。"
 
-#: ../../en/module/bala2.rst:236 9cd489257f104a2387576ec77334d0dd
+#: ../../en/module/bala2.rst:237 0249d700d51d4523b7b931888e0904d1
 msgid "The value of the right encoder. Range: 0 ~ 180."
 msgstr "舵机角度，范围：0~180。"
 
-#: ../../en/module/bala2.rst:240 d36cede719e947aa883fbb4e6995fba2
+#: ../../en/module/bala2.rst:241 781ea8c77e904060b43785a848f99223
 msgid "|set_servo_angle.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:23 4a9550728cff4fb6b776f84a5fa7e684
+#: ../../en/refs/module.bala2.ref:23 0906ca3612ce408dbcbcef9736d95571
 msgid "set_servo_angle.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:250 83a3bdfe1b27456e8684bdd94b23da3f
+#: ../../en/module/bala2.rst:251 ae718bb89c1b43218c92ad3a7e9f5d3f
 msgid "Start the balance car (car upright balance)"
 msgstr "开始直立平衡控制"
 
-#: ../../en/module/bala2.rst:254 b966d6093d7440909bb3b35c3bf71820
+#: ../../en/module/bala2.rst:255 7de990d9547f4f24bdf29118cd4ddf45
 msgid "|start.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:18 45e175d263e94a51a836c9b58667f128
+#: ../../en/refs/module.bala2.ref:18 f607e0f44971452e9a92911f9da9e8e3
 msgid "start.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:264 e000880243074afc9db3b3f43ab2b327
+#: ../../en/module/bala2.rst:265 ea580f6dceca49b491b83b6c9df37f08
 msgid "Stop the balance car (stop the balance control of the car)"
 msgstr "停止平衡控制"
 
-#: ../../en/module/bala2.rst:268 57c55a0ec4e64780b28818cc20229631
+#: ../../en/module/bala2.rst:269 45ee08c2f9724077a00975c57e454de7
 msgid "|stop.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:19 30c0032e4c6146c085e0c4f26709865d
+#: ../../en/refs/module.bala2.ref:19 b6c8b7e922994478a642e9878e9ebb04
 msgid "stop.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:278 d593255c08834d88866f3be948815f19
+#: ../../en/module/bala2.rst:279 b9cfca0767ae4c5d890e56e7a6cdfbdd
 msgid "Get the tilt angle of the balance car"
 msgstr "获取小车倾角"
 
-#: ../../en/module/bala2.rst:280 00382933443240b9acb4883d1e8b401f
+#: ../../en/module/bala2.rst:281 9987c792b299496082aecfdc09bfc431
 msgid "The angle of the car"
 msgstr "小车倾角"
 
-#: ../../en/module/bala2.rst:283 c6e5f4456e26458b961286579f37760f
+#: ../../en/module/bala2.rst:284 2867b0d71d304802b501e1bd9572eca7
 msgid "Data is valid only when the car is running (start() is called)."
 msgstr "小车运行 start() 时数据才有效"
 
-#: ../../en/module/bala2.rst:287 56ab09afa5d243b49edba781f0d2faed
+#: ../../en/module/bala2.rst:288 f495449287804f95aee8fe9183b85c39
 msgid "|get_angle.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:14 3fbad204b31b4a7d871d4ff5c18da656
+#: ../../en/refs/module.bala2.ref:14 8545ebae1d6c44de885dea61f6d716ef
 msgid "get_angle.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:297 23767ebe8b9b4edb8e8fc66bb30564fd
+#: ../../en/module/bala2.rst:298 34dfaec8a5f748d495faf2a1612d4b1e
 msgid "Set angle PID parameters"
 msgstr "设置角度环 PID 参数"
 
-#: ../../en/module/bala2.rst:299 ../../en/module/bala2.rst:367
-#: 37aed2bb6b66496ab683f17188eb6bcc
+#: ../../en/module/bala2.rst:300 ../../en/module/bala2.rst:368
+#: b4b3526a244f498492bee5667e4c921d b8e70902b2f947f6ace4c5f92db8a8ed
 msgid "Proportional gain"
 msgstr "比例增"
 
-#: ../../en/module/bala2.rst:300 ../../en/module/bala2.rst:368
-#: e38f48b6361a4d8488e2df41f6d587a1
+#: ../../en/module/bala2.rst:301 ../../en/module/bala2.rst:369
+#: 98e1b57436a84febac49fcb64ab905e7 de40adc0241c427db34a72d070327090
 msgid "Integral gain"
 msgstr "积分增益"
 
-#: ../../en/module/bala2.rst:301 ../../en/module/bala2.rst:369
-#: a9e2ac06f932418ba1399db0c6f4745d
+#: ../../en/module/bala2.rst:302 ../../en/module/bala2.rst:370
+#: 1aaa2ad5730548c08bf20fcd61706a29 eb3481b28d574e9ca025cbc261a5044c
 msgid "Derivative gain"
 msgstr "微分增益"
 
-#: ../../en/module/bala2.rst:305 572904a053a04014a3fb0fb7be25067c
+#: ../../en/module/bala2.rst:306 21b1dabe5ac14eef9ce6bcee6493179d
 msgid "|set_angle_pid.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:24 120e7709967648d3961700308a684630
+#: ../../en/refs/module.bala2.ref:24 326eb849041d47b9b5627fad923a4614
 msgid "set_angle_pid.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:315 ea8137da1c4b465db6a1f5a86d494640
+#: ../../en/module/bala2.rst:316 cefec2bbd7884c4086fa775d2e34fa5e
 msgid "The angle loop PID parameters returned in a 3-tuple"
 msgstr "角度环 PID 参数以三元组的形式返回。"
 
-#: ../../en/module/bala2.rst:317 ../../en/module/bala2.rst:385
-#: 81f8b33b876d4872bb08af4cc9a9f9ca
+#: ../../en/module/bala2.rst:318 ../../en/module/bala2.rst:386
+#: 07ef38aa74904648927634bb1596a470 d8f49735dc844a92ba6201df82561a4b
 msgid "kp, ki, kd parameters"
 msgstr ""
 
-#: ../../en/module/bala2.rst:322 4b81aeb043a74ed39a179ee0bfef06c3
+#: ../../en/module/bala2.rst:323 da3d2a4e5ebb4b668b51687363fbf9a7
 msgid "|get_angle_pid.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:13 7fa34598f286438f92c96ff0e902cb73
+#: ../../en/refs/module.bala2.ref:13 b8848f4867de430396fee3a1a16aad97
 msgid "get_angle_pid.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:332 7d54b82b25c64cec999db23213d58f03
+#: ../../en/module/bala2.rst:333 cfb2ef41dffd499fbe6c8591b38a6755
 msgid "Set angle loop PID control target."
 msgstr "设置角度环 PID 控制目标"
 
-#: ../../en/module/bala2.rst:334 0a95bef6893c4c84a0b8ba94e1ee298c
+#: ../../en/module/bala2.rst:335 e0406ffd3d774ae7b4d15065e690cce9
 msgid "The angle of the angle loop PID control target. Default is 0."
 msgstr "角度环控制目标角度，默认为0。"
 
-#: ../../en/module/bala2.rst:338 8758357f2e3747cbaa25980ec64ef0bb
+#: ../../en/module/bala2.rst:339 f1861300fdab4437805b03773f5d3c9a
 msgid "|set_angle_pid_target.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:25 f16492a63a8948a383257a360a68b0a9
+#: ../../en/refs/module.bala2.ref:25 11414399f9fe4e37a04839d200acb6b3
 msgid "set_angle_pid_target.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:348 993ddc4ba5d64a0eb500bdee9391e305
+#: ../../en/module/bala2.rst:349 2f3fff444227441e9f8fa1becafe897d
 msgid "Get angle loop PID control target"
 msgstr "获取角度环 PID 控制目标。"
 
-#: ../../en/module/bala2.rst:350 b8248bdef4ba4754899549624b339d97
+#: ../../en/module/bala2.rst:351 7dc23c6e9c9a42bf8c00995769face87
 msgid "The angle loop PID control target"
 msgstr "角度环 PID 控制目标。"
 
-#: ../../en/module/bala2.rst:355 6fa8adc5c75f46d28c2336c58450f12b
+#: ../../en/module/bala2.rst:356 f03bc3052b834ab79d9d8debda053ecb
 msgid "|get_angle_pid_target.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:15 4eade647672d4d7e9beffd306e9fe806
+#: ../../en/refs/module.bala2.ref:15 ac00c7d0819047fca78e55960f7e8e2d
 msgid "get_angle_pid_target.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:365 41eddfc4b0af411581cc253d7f315bfe
+#: ../../en/module/bala2.rst:366 3d28f62497194bbb8a690d0fc679733e
 msgid "Set speed loop PID parameters."
 msgstr "设置速度环 PID 控制参数。"
 
-#: ../../en/module/bala2.rst:373 26f92314b8e34bd7adc68eb95c98b821
+#: ../../en/module/bala2.rst:374 eef7be1426064a4db3daa20c45dc02f8
 msgid "|set_speed_pid.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:26 4159ed1431a54f8f8d06f4ddeb2be90f
+#: ../../en/refs/module.bala2.ref:26 418dae6830aa41a88d73ed57c67c286c
 msgid "set_speed_pid.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:383 c13a3dfe3aca47c39716bb1f9098457d
+#: ../../en/module/bala2.rst:384 9d62b060d22e4f019c0d22f132ac331d
 msgid "The speed loop PID parameters returned in a 3-tuple"
 msgstr "速度环 PID 参数以三元组的形式返回。"
 
-#: ../../en/module/bala2.rst:390 f24797f470ab41c08c9fbbce89d54d25
+#: ../../en/module/bala2.rst:391 2bb05c1301434306a55aeb6bc4be7778
 msgid "|get_speed_pid.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:16 8dd3df04bbc5424f82196a17d147308f
+#: ../../en/refs/module.bala2.ref:16 9407d4dfeb5d4cd39fa98bbc95b13915
 msgid "get_speed_pid.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:400 d5f06e3b0014482da2b091b868cade01
+#: ../../en/module/bala2.rst:401 68bb0365510743cc9cb00b2f0a6ac022
 msgid "Set speed loop PID control target."
 msgstr "设置速度环 PID 控制目标。"
 
-#: ../../en/module/bala2.rst:402 d0bed22c9ecc490d8deba1bba9e77c4d
+#: ../../en/module/bala2.rst:403 f0f269c3e5114e778bad0fcd168b56e3
 msgid "The speed of the speed loop PID control target. Default is 0."
 msgstr "速度环 PID 控制目标，默认为0。"
 
-#: ../../en/module/bala2.rst:406 f3add6ca9e3b4a7791f9f4b9babd223c
+#: ../../en/module/bala2.rst:407 cf890ee1592a4a6095694ebf4d4e903c
 msgid "|set_speed_pid_target.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:27 96785310562d4ce6a453ba8655d3a8cc
+#: ../../en/refs/module.bala2.ref:27 2f712e819dee44cfb347d17a07fc6851
 msgid "set_speed_pid_target.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:416 4feeb8f8e74c42ceae0f6ad325ba4e5a
+#: ../../en/module/bala2.rst:417 5cb6f6c89eec4514a8700d4d985810d0
 msgid "Get speed loop PID control target"
 msgstr "获取速度环 PID 控制目标。"
 
-#: ../../en/module/bala2.rst:418 d2d50c9d518946f0bf9c6db82ab66e15
+#: ../../en/module/bala2.rst:419 297a4283df1a47379acbd83e9301c69b
 msgid "The speed loop PID control target"
 msgstr "速度环 PID 控制目标。"
 
-#: ../../en/module/bala2.rst:423 74bfa0fc58ba488d9697ea41700fc6c9
+#: ../../en/module/bala2.rst:424 05c93d7e68d8426c8d84b4244ce42cb2
 msgid "|get_speed_pid_target.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:17 b3f283b23a8547e38fed96e0a015dd54
+#: ../../en/refs/module.bala2.ref:17 a2f435501c8f4ac8a81664c4b41e5548
 msgid "get_speed_pid_target.png"
 msgstr ""
 
-#: ../../en/module/bala2.rst:433 397fe509ca614fd2a521bf9a3cf0f91e
+#: ../../en/module/bala2.rst:434 082ae64dd77f4e309219a49161847013
 msgid "Set turning speed"
 msgstr "设置转向速度。"
 
-#: ../../en/module/bala2.rst:435 2c92ba0d4d4f45cba53e6855c02d6e63
+#: ../../en/module/bala2.rst:436 cebca2bafb7743a099aabd5bd1f974e8
 msgid "The speed of the left and right motor offset"
 msgstr "左右电机速度偏差。"
 
-#: ../../en/module/bala2.rst:439 3d13eafdb5a44b4da2bada09ba31a457
+#: ../../en/module/bala2.rst:440 bdd1169b766b4152a274ed404750a608
 msgid "|set_turn_speed.png|"
 msgstr ""
 
-#: ../../en/refs/module.bala2.ref:28 ba01a95b4e374b89904f7df8014ac58e
+#: ../../en/refs/module.bala2.ref:28 1773a5a5a2e04345bd1762b7f6eb0a1b
 msgid "set_turn_speed.png"
 msgstr ""
 
 #~ msgid "|Bala2-Fire|"
+#~ msgstr ""
+
+#~ msgid "|Bala2| |Bala2-Fire|"
 #~ msgstr ""
 

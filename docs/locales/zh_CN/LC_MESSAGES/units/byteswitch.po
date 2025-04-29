@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/byteswitch.rst:3 297d7bb9df294f1f85a9075542c6442e
+#: ../../en/units/byteswitch.rst:3 a9790d6b53e24caa905eece726812424
 msgid "ByteSwitch Unit"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:7 d6b228b415614603b28026136b527908
+#: ../../en/units/byteswitch.rst:7 7f7849e2877c4a8da355ade18c810e4b
 msgid ""
 "Unit ByteSwitch is an 8-switch touch switch input unit equipped with 8 "
 "switch inputs and 9 WS2812C RGB LEDs. It uses the STM32 microcontroller "
@@ -36,66 +36,66 @@ msgid ""
 "exhibitions."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:9 0e53dd38423e4b3aac16151f7a859d80
+#: ../../en/units/byteswitch.rst:9 29276aeb34b8450eb57e17c2d51ca611
 msgid "Support the following products:"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:11 27509343303147f9a4c864b16c280d3b
+#: ../../en/units/byteswitch.rst:11 c465b6d283db4e7ca84fda163d4fea68
 msgid "|ByteSwitchUnit|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref c5ac055b20c94d27a0ccd0b1634c90bd
+#: ../../en/refs/unit.byteswitch.ref 16b893028cfe4d519382045ea9ba8b6f
 msgid "ByteSwitchUnit"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:13 63e42331df6d4c1ab326b26a4644e188
+#: ../../en/units/byteswitch.rst:13 b6c467f242554539bab3cc1e90efe3bf
 msgid "Micropython Example:"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:19 57618e6a6e3247589c3430ed3f40480e
+#: ../../en/units/byteswitch.rst:19 921fc99eb5eb4f2f95b070ec71be9139
 msgid "UIFLOW2 Example:"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:21 bed155e79eab4a35b57440ef89834919
+#: ../../en/units/byteswitch.rst:21 9cded9ee116942b392651aa832be2839
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:27 0c22da805e674897887636dadfc138d5
+#: ../../en/refs/unit.byteswitch.ref:27 64e7d1d83f9c47afb76c4755fdda451d
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:25 43e569068f5245d88d771be892ab9555
+#: ../../en/units/byteswitch.rst:25 f7dcd1bfb75c4bd7930468c623650a21
 msgid "|byteswitch_cores3_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:29 c2933437a37646818964f87e53c071ed
+#: ../../en/units/byteswitch.rst:29 84f43abbbe5d49158a4aaff2f130d270
 msgid "class ByteSwitchUnit"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:32 5b9d4b2acfb94844924d6d5228f3ebce
+#: ../../en/units/byteswitch.rst:32 85265077a192454f9ca742f7a52243e8
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:36 3a71607bd6f142028a6e17387edda98e
+#: ../../en/units/byteswitch.rst:36 fd6255b9e8e547ef99cd3c87ed3f9e6f
 msgid "Initialize the ByteSwitchUnit with a specified I2C address."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst 22d26431d4ee466b9041cf4bed32a924
-#: 241b80b6dcbf41d198dcb09083e0d323 38e3b0617d664f0fa53ccc8259c8cbe0
-#: 413a2d08549f42d5bb5a014301617186 4971c60bf04d4ce997335202a1ed35be
-#: 694f47ead05f4df2a312f5be7475e380 71740126f6194d5a8809a240497122c7
-#: 78e598739c734bd8bb3dbee115420440 82343d048a434ec8943f5be471893505
-#: ac8ed5df90f6483a9e413515544a4e3f d9ace0e1f6144a719f3b4fda1a2854fa
-#: e3090968ab8e4eec9114d74b38099b2a ee550979b8374d9abf202614fd26ae8a
-#: fecadbe5f64d41c8bb078043f02f3154
+#: ../../en/units/byteswitch.rst 118227532f6243d3bf23b2ab7a445684
+#: 17336f354437425e9d66c880e3a7c854 21e6bbca58144f59a626a929fa095c57
+#: 82e832d2f37742998a14e682baa2dbcc 8a0741371d38458983e9175153460227
+#: 92ef865a1ba641fba49d95080e50bb88 97098b3126c84a35a35fb083cb3e725c
+#: ab5845d47eb94610aae8689ace92ff4d c2820141e5324396a318605bf848e3f2
+#: eab0439138a741b1966defec4582cb27 ec92eda3f02241edbc3b52b83ea96639
+#: f24fe6df8ed9460eb3879826c12a5e9f f4b60628500241bf9819b3b5c3de641b
+#: fee5032ef5864f0bb453394166e61d6a
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:38 bec8fb365e3042359a624345e20890a4
+#: ../../en/units/byteswitch.rst:38 0450e00a14f745bf9c95d5986d78fb46
 msgid "The I2C interface instance for communication."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:39 ca5f2800bf3f4c629b4302bbe2ac2b6d
+#: ../../en/units/byteswitch.rst:39 0c206ddc8b6d49368b9cf926ee0a3282
 msgid "The I2C address of the ByteSwitchUnit, default is 0x46."
 msgstr ""
 
@@ -107,328 +107,331 @@ msgstr ""
 #: ../../en/units/byteswitch.rst:155 ../../en/units/byteswitch.rst:165
 #: ../../en/units/byteswitch.rst:174 ../../en/units/byteswitch.rst:211
 #: ../../en/units/byteswitch.rst:220 ../../en/units/byteswitch.rst:230
-#: ../../en/units/byteswitch.rst:239 130797f60082454083ac739342473cf7
-#: 2c6f63400e4046578f344a23603752c9 36ef22b2ddb3456ba9dfb54e40cb24e8
-#: 3e6511ce64ba486eb0776a9a2240f93d 4191ea119f1344cfaa54e9dbe6e33cf5
-#: 4325480cea1746b4add8fe939814bbb2 45910d960647432b8f405cca9bb37c00
-#: 47ea7de5a26244dd965aca41d2fb93cf 5b80476401764f1b8300cbe69618b1f6
-#: 658ead26c63544698253c3c4a0dc22b6 7ec708e6b5a84af0aa21cb1249d2623e
-#: 81e2897583294417b1edd5c00df1b1aa 913f24d8ae70424d8116fb26f5b0f154
-#: b440a62310a14e2d8ece57e47d1a3fa5 c6baa2b6a1b74951bff5b610afb1a433
-#: d211012aea0e44e7b647551a6774f221 dd5f55132c064566976d5e938c1279f1
+#: ../../en/units/byteswitch.rst:239 0badb793b1b04512820f9a165da2a494
+#: 0c74b2b3bd1c41c1840142b459eae518 19e722290a9d432b92da553b5797e0f6
+#: 1c225d3184a842d7a0546a9a7b69e2aa 2deaac0067d0481ca904cbeb9543eb48
+#: 497df380733c43f5b38ab75003dd554e 5353e1bcb2d44e3a930e3e9e7fffd6e0
+#: 5f7ea1a2c7ae406db179020c22870b93 7a0d29197f5b45aeb86247bd950ea9cd
+#: 916807d57ece42c181e88e6858ffe438 a163f39f70b54972931ab43775190718
+#: a2dea64bc39a409187fa67f45938907a c0834ebc6b0e43bd892bf7233ac1a75b
+#: d353cdcd30424e98814206b8f5194c6c d3f16cc8fde441968b5b3dfa5cfe5174
+#: d602a928bcc34f9cb1f3a507e8958106 f466f6dea9eb4aaa9ea059e9fcd9708c
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:43 4e00a2313cd3458ab0ad83258cdea184
+#: ../../en/units/byteswitch.rst:43 31b43b9406cd4466bbb6d993e578b575
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:7 8dac041df1424f5ea29fc6142dd230d4
+#: ../../en/refs/unit.byteswitch.ref:7 a7016e507338492b8d6dcf05ca1b746a
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:46 bc6f26c341d94f44bf5c599211422404
+#: ../../en/units/byteswitch.rst:46 21aa46e601aa47d1922ea46fb42cec7b
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:50 60210c4aae584b6590b6947925216ada
+#: ../../en/units/byteswitch.rst:50 dd0859fe5ea341c6bc302825a2ffda03
 msgid ""
 "Get the status of all switchs as an integer, where each bit represents "
 "the state of each switch."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:55 a644ad9352a349c6ba500110b098f338
+#: ../../en/units/byteswitch.rst:55 658d46df9a064aa3884dd0e9cef5b37a
 msgid "|get_byte_switch_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:8 5777d0d1dd3b43babd1018f81577f039
+#: ../../en/refs/unit.byteswitch.ref:8 6da25c2534214865b5f64db43edc8059
 msgid "get_byte_switch_status.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:59 e4a38528ba8d47ce8ea172e25ac3f01c
+#: ../../en/units/byteswitch.rst:59 bf51330afdc94f7b94107761958fae4b
 msgid "Get the state of a specific switch."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:61 7b1986b1fad34c8f83127611c927787a
+#: ../../en/units/byteswitch.rst:61 3e4f740075464c68ba6458c57d5b7de8
 msgid "The index of the switch (0-7)."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:65 db54957c10524de79673420f0fe0b9e9
+#: ../../en/units/byteswitch.rst:65 a0580cd98d114de1a93a5e4f8f97ef26
 msgid "|get_switch_state.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:9 61b758254c354c51b4b2215b412bd4cb
+#: ../../en/refs/unit.byteswitch.ref:9 bedbef00e4e949ad951ed0ea2d6995e9
 msgid "get_switch_state.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:69 1689cacb8f844d519e797d16d73afd2c
+#: ../../en/units/byteswitch.rst:69 d59e41562d9e4cd3a998b2d1e38811ab
 msgid "Get the current LED show mode."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:73 e9f0b8886e9949f3aa4fd8abd70e15a9
+#: ../../en/units/byteswitch.rst:73 ebc0212e47c04cfc8fc5f5e86c231516
 msgid "|get_led_show_mode.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:10 0528ca9a7f6a4638a0c6a1e0d468013f
+#: ../../en/refs/unit.byteswitch.ref:10 c9a823af073444a0a1fa29e17b0e6965
 msgid "get_led_show_mode.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:77 e75c4784a006441fbc957b2adadccd01
+#: ../../en/units/byteswitch.rst:77 71db8c72e65c4fbf90869378832da58a
 msgid "Set the LED show mode."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:79 04f77e787ea640dcacf5c9180ad679a0
+#: ../../en/units/byteswitch.rst:79 a0ff4049d1c2497092137b71ad8b7177
 msgid ""
 "The LED show mode to set.  Options:     - ``BYTESWITCH_LED_USER_MODE``: 0"
 "     - ``BYTESWITCH_LED_SYS_MODE``: 1"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:79 0a738a650ece418b9d671d80e707ce1a
+#: ../../en/units/byteswitch.rst:79 b49f1a1004ec4f38b0389b1600564ac6
 msgid "The LED show mode to set."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:83 06fd1646b3774a1c93bf4720f85246f8
+#: ../../en/units/byteswitch.rst:83 4bc019ec0c634ad1a5ff9905ef873312
 msgid "Options:"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:82 8d4dc0fe4ec049a58b155ef54e08128f
+#: ../../en/units/byteswitch.rst:82 7964f97c044a41c099659189b34d88f7
 msgid "``BYTESWITCH_LED_USER_MODE``: 0"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:83 ab5633d9787e46e983904070de0d0fa0
+#: ../../en/units/byteswitch.rst:83 7f887211a34949618c6174c9b03a6e62
 msgid "``BYTESWITCH_LED_SYS_MODE``: 1"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:87 cb8fd3fb212d4d2cb65b0b96758739c5
+#: ../../en/units/byteswitch.rst:87 fedd555df56c4ce58941722f7ff03c98
 msgid "|set_led_show_mode.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:11 cd8a0b33180c4c9ba85b6d7402411baf
+#: ../../en/refs/unit.byteswitch.ref:11 5b8b4accb1cb4cdc9e4b432ae6d2febb
 msgid "set_led_show_mode.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:91 3cdce184a030418291c8a38bb0a8a536
+#: ../../en/units/byteswitch.rst:91 e4e9d52685374baaa71914077b6a2054
 msgid "Set the brightness of a specific LED."
 msgstr ""
 
 #: ../../en/units/byteswitch.rst:93 ../../en/units/byteswitch.rst:104
 #: ../../en/units/byteswitch.rst:114 ../../en/units/byteswitch.rst:129
 #: ../../en/units/byteswitch.rst:188 ../../en/units/byteswitch.rst:195
-#: 59c1e517f9fa4bbdab58ddc0d21076b6 696dc61a7ecc48a690a44205359cac2d
-#: a1125bfbfd51464383b10e1534d91330 d13cfa2f8e4049ecb95d6ca0e18827aa
-#: e477962ed9444fdcb5e0fdfe597b01e2 eb0984dfbdb544dbb87a80ca34a4450d
+#: 081b6b8e7c74468da84a5869b025b7e5 29302867008848b98cee2f8192770a5d
+#: 74ee4a174c5a4cb0acb8941fb7512e56 83342b6bb0664cd0b6adb48e95f9e57c
+#: b6dcd3f01d9b4e8b8585351c006344c1 bdf2add596d84659bdf50a01ad4043f6
 msgid "The index of the LED (0-7)."
 msgstr ""
 
 #: ../../en/units/byteswitch.rst:94 ../../en/units/byteswitch.rst:144
-#: 4f577992b6b1443c9a64fd62537a0788 ce52c79674b341dc934ff02ddfc88be9
+#: 3d8674a5d1194037a617b254e1b4031c 9fd20c05168943d89c8b77c6c6911c45
 msgid "The brightness level (0-255)."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:98 5fea9abe8d6b45a7b2a20a7153ee6bf2
+#: ../../en/units/byteswitch.rst:98 fc41ff48d3544c6b8c81187e5c0c920d
 msgid "|set_led_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:12 ab30f0cd63cd4362a3f672bb3faad360
+#: ../../en/refs/unit.byteswitch.ref:12 bf7bb05589144137bb5ce6358294cc68
 msgid "set_led_brightness.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:102 b551404bbabc46aabc9f93bf2dd403f7
+#: ../../en/units/byteswitch.rst:102 cd6687fbba7e4157997d857f601867af
 msgid "Get the brightness of a specific LED."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:108 720f9664662a4ffa8270c765a934145d
+#: ../../en/units/byteswitch.rst:108 c08a7c08106b4f62baaf6e4e189890d5
 msgid "|get_led_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:13 4e7c1b1de4e24182b25717f1b3cee2a1
+#: ../../en/refs/unit.byteswitch.ref:13 49c8faf2c6e64ab39699aa5dcdae28e7
 msgid "get_led_brightness.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:112 6eda3831c8034557927ab2c619b5d9a5
+#: ../../en/units/byteswitch.rst:112 f05f4214099f40f9802460758043621f
 msgid "Set the color of a specific LED."
 msgstr ""
 
 #: ../../en/units/byteswitch.rst:115 ../../en/units/byteswitch.rst:163
-#: 690f64cfd3c94b22b0042ff569f67660 e20384ae1ebf485a83bd5fdca68ab0ed
+#: 1597d2908940464ba17854d0e0618c71 d438bd766d14412dba644836a8ae4ab5
 msgid "The RGB888 color value to set."
 msgstr ""
 
 #: ../../en/units/byteswitch.rst:116 ../../en/units/byteswitch.rst:130
-#: 5e705a5de06a478fbdcc5e1918e02c22 b05879428730412f8068e2302f830e84
+#: ed389d0e04a54586b475c1fa74a3b8e8 feb1fe9a9b4c4dc48c723549a85eb781
 msgid "The LED show mode, default is BYTESWITCH_LED_SYS_MODE."
 msgstr ""
 
 #: ../../en/units/byteswitch.rst:117 ../../en/units/byteswitch.rst:131
-#: 85a7eeec9b41475fa59681198407be03 d12dce5a798a417dbfe47056c6ffded5
+#: 55b584756f284915a3606bc3e46ba1cb bd115747b26e4a42bf75d8a9d5276944
 msgid "Whether the switch is pressed (affects color in SYS mode)."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:121 cb957760ef2842799a20411a76b06c73
+#: ../../en/units/byteswitch.rst:121 c67ce1288b414c6babdd1818f32a3e21
 msgid "|set_sys_mode_led_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:14 55a466726ee94b5abfd9b4c08eb8b3a2
+#: ../../en/refs/unit.byteswitch.ref:14 c553e63d946a483f99eed330dacd229d
 msgid "set_sys_mode_led_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:123 2fa4b50da3094d528bb6dc698da840c7
+#: ../../en/units/byteswitch.rst:123 238397b9cc06490e965b88aa0de85f3c
 msgid "|set_user_mode_led_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:15 369fd1e31faa4b4e9e51c062d52f2097
+#: ../../en/refs/unit.byteswitch.ref:15 5b336b0b80c045cf8dfcdaec56c112d6
 msgid "set_user_mode_led_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:127 5f639432129540ab80dc19c7924e1345
+#: ../../en/units/byteswitch.rst:127 6448b3ab85624772ad9effd6f202049d
 msgid "Get the color of a specific LED."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:135 e3054ecf4c614c5196b1426b538335d6
+#: ../../en/units/byteswitch.rst:135 19577333df36487a943e992eb9c167e4
 msgid "|get_sys_mode_led_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:16 37a4636ce9514fcdbf009795d8f39f2b
+#: ../../en/refs/unit.byteswitch.ref:16 32b2a62d5d01441194036513b824c97d
 msgid "get_sys_mode_led_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:137 1610b8f14ae8477e800df7e436d2b383
+#: ../../en/units/byteswitch.rst:137 63f0860df9334a63ae55141ebc4ea88e
 msgid "|get_user_mode_led_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:17 3c33365e56124a16a6c3c307cbb85b61
+#: ../../en/refs/unit.byteswitch.ref:17 2e9b1a6b6cd346c9803b5176798de492
 msgid "get_user_mode_led_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:142 8245d453b7ef49bc921f876ee3c3bc58
+#: ../../en/units/byteswitch.rst:142 c2fd27555e104e069846f45bd820b2b3
 msgid "Set the brightness of the indicator LED."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:148 af89d58ce3434b5f9c676325b392bcfa
+#: ../../en/units/byteswitch.rst:148 2e879137d7f04bb1a6d9d6fb5534727f
 msgid "|set_indicator_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:18 2178978b20f54358897f89ea45a3b839
+#: ../../en/refs/unit.byteswitch.ref:18 1a6a3989b7af440c9e45381a1c626d36
 msgid "set_indicator_brightness.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:152 16ab785e7b9b49018410a8ca48ff65e9
+#: ../../en/units/byteswitch.rst:152 30bdf09701c749bd93fa56fcf129231a
 msgid "Get the brightness of the indicator LED."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:157 13879baf3427486295333eb2a66d5180
+#: ../../en/units/byteswitch.rst:157 50938bba1223421a89d5282b5fca39b5
 msgid "|get_indicator_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:19 0454c1bb85a945dc80ca7a3c2ba05e06
+#: ../../en/refs/unit.byteswitch.ref:19 525d3efb3f464e35b02437a1bf084f1b
 msgid "get_indicator_brightness.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:161 6eafe3c4e75d4173b45ec0d654b91dfc
+#: ../../en/units/byteswitch.rst:161 ec8fccab98cf4c938d97c8a0fc19e588
 msgid "Set the color of the indicator LED in RGB888 format."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:167 b8c695e211894456a805cbe6846c9034
+#: ../../en/units/byteswitch.rst:167 9f7daa7d74d446aab9549c8cf83ada4a
 msgid "|set_indicator_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:20 f75bbcd5852747f1a21ef24a3b438b73
+#: ../../en/refs/unit.byteswitch.ref:20 a016168dbe6b49df9b8687339ed8e52b
 msgid "set_indicator_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:171 afa04c9908d642269bf850de09b9af0e
+#: ../../en/units/byteswitch.rst:171 4e198e8e472f49dfaf24bce076775699
 msgid "Get the color of the indicator LED in RGB888 format."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:176 9e00d303cd234a29befd99650bf545e0
+#: ../../en/units/byteswitch.rst:176 b00747340de648ad97e4feae29708177
 msgid "|get_indicator_color.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:21 c74064edaef94e17acfc84de816b8832
+#: ../../en/refs/unit.byteswitch.ref:21 c80809e23428432e893566a8cce5740c
 msgid "get_indicator_color.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:180 3f3151a4549c4ac6a8e032a45a9f454c
+#: ../../en/units/byteswitch.rst:180 cf244172758347beb6b6a0077e332777
 msgid "Convert an RGB888 color value to RGB233 format."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:182 40374997470841c092521e9ac30dfe91
+#: ../../en/units/byteswitch.rst:182 a1b988a29f054b1cbd6f556f5600e1c0
 msgid "The RGB888 color value as a 32-bit integer."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:186 47aafe65d3654f748476368b9df76111
+#: ../../en/units/byteswitch.rst:186 579b5887502547b3a735d923916f8e64
 msgid "Set the color of a specific LED in RGB233 format."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:189 a5123593e56345a5896479a25db7661a
+#: ../../en/units/byteswitch.rst:189 27afca9d7b134ac089a47aa78ef613c4
 msgid "The RGB233 color value to set."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:193 b8eefc05db68421b9c45e677bf69691c
+#: ../../en/units/byteswitch.rst:193 c9e52bdb206440da958b1f50e7be61e2
 msgid "Get the color of a specific LED in RGB233 format."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:199 ae4105afae094b7aaa5dc8c4fa9976e0
+#: ../../en/units/byteswitch.rst:199 fd6674e6fb9f4ce1a5d3f8309f7f125a
 msgid "Enable or disable IRQ functionality."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:201 b03ad2609f53443086933009ddcef399
+#: ../../en/units/byteswitch.rst:201 889a287145634b9780e1e69119a664b0
 msgid "Whether to enable (True) or disable (False) IRQ."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:205 3eaef0e9541941899a32566605f0a2d3
+#: ../../en/units/byteswitch.rst:205 89e5a23f6fb9411783bf662b365bb9a8
 msgid "Get the current IRQ enable status."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:209 4dfbc406a1334c9eb7f726cc42574c8f
+#: ../../en/units/byteswitch.rst:209 03faa4f3802949c597ecadf664b17d93
 msgid "Save the current user settings to flash."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:213 bc4782efb0004b329bff14c43a83368c
+#: ../../en/units/byteswitch.rst:213 f9365248500f4fe597302650c5723e9d
 msgid "|save_to_flash.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:22 9f0c8b7e69434d7f9f2a72d4d41967f7
+#: ../../en/refs/unit.byteswitch.ref:22 5a26011fe30342d5bf3f4f6bf84a7440
 msgid "save_to_flash.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:217 d39d734986d3448b8e9a59e8f723143e
+#: ../../en/units/byteswitch.rst:217 d66f636f813d4c0691362e4ccae41f6e
 msgid "Get the firmware version of the ByteSwitchUnit."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:222 40ff630bbc09436a88196536e70bb50d
+#: ../../en/units/byteswitch.rst:222 5397b8b804914c0099fc715b858d49fe
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:23 58119f4146a14021afd8194492ca54d9
+#: ../../en/refs/unit.byteswitch.ref:23 c7cd7f7843054fe88b7fde2191544691
 msgid "get_firmware_version.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:226 c9a248b39dc34722a5c4d605b22e1d03
+#: ../../en/units/byteswitch.rst:226 170c29cf3c664c56a094fbb7380dc627
 msgid "Set a new I2C address for the ByteSwitchUnit."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:228 2c6114013c824e2b81262a9e12f74ee8
-msgid "The new I2C address to set. Must be in the range 0x08 to 0x78."
+#: ../../en/units/byteswitch.rst:228 d760f3e58e2b4cf388e498228dc5f01b
+msgid "The new I2C address to set. Must be in the range 0x08 to 0x77."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:232 39c9d819b7f54a6d8d44425752f6eea5
+#: ../../en/units/byteswitch.rst:232 acc9357adfa84f50a9edaa0bde7edeab
 msgid "|set_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:24 8625a473081e435fb0766e9725667e71
+#: ../../en/refs/unit.byteswitch.ref:24 563cd39879d941839c679b2b66a4b1e3
 msgid "set_i2c_address.png"
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:236 086ecf3f3402413f8c7fc02c39b638f5
+#: ../../en/units/byteswitch.rst:236 92862d222607499a9967d1c92bb7bc8f
 msgid "Get the current I2C address of the ByteSwitchUnit."
 msgstr ""
 
-#: ../../en/units/byteswitch.rst:241 a83c698d84954522809ebcafaf5d1e3f
+#: ../../en/units/byteswitch.rst:241 201037b36c924047b9145a8a95a98b2c
 msgid "|get_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/unit.byteswitch.ref:25 24093a496ba1431b80f439c2390c925b
+#: ../../en/refs/unit.byteswitch.ref:25 bf6d055e76fd45d4b5f388266174ac5e
 msgid "get_i2c_address.png"
 msgstr ""
+
+#~ msgid "The new I2C address to set. Must be in the range 0x08 to 0x78."
+#~ msgstr ""
 

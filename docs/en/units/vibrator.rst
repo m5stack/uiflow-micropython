@@ -18,7 +18,7 @@ Micropython Example:
 
 UIFLOW2 Example:
 
-    |example.svg|
+    |example.png|
 
 
 .. only:: builder_html

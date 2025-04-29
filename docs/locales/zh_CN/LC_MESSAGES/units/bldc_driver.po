@@ -1,0 +1,817 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-18 17:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/bldc_driver.rst:2 93dd7957b0e74a59a1bd84a473476ea0
+msgid "BLDCDriver Unit"
+msgstr ""
+
+#: ../../en/units/bldc_driver.rst:8 62b4ad3c81db48f79a77fb9dc2da01ca
+msgid "This library is the driver for Unit BLDCDriver."
+msgstr "这个库是 Unit BLDCDrive 的驱动。"
+
+#: ../../en/units/bldc_driver.rst:10 0ad3ff0063c44eb0b0b7e2b330901d84
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/bldc_driver.rst:12 c33cf626bc9e44a58e727f3c8e60f13e
+msgid "|Unit BLDCDriver|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref d5619785b2074875a9e4924c28b811c9
+msgid "Unit BLDCDriver"
+msgstr ""
+
+#: ../../en/units/bldc_driver.rst:15 8576d699c5934d21865f809dcaec54c6
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/units/bldc_driver.rst:18 ../../en/units/bldc_driver.rst:36
+#: 951ea1513620462fbfc37b6d08955abd a36cfd7e8de542d8ad11d8d74295cb6a
+msgid "Motor speed control"
+msgstr "电机速度控制。"
+
+#: ../../en/units/bldc_driver.rst:20 5e8fac875fc14318ad91a3a19823c76f
+msgid "Open the |cores3_bldc_driver_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_bldc_driver_example.m5f2| 项目。"
+
+#: ../../en/units/bldc_driver.rst:22 ../../en/units/bldc_driver.rst:38
+#: 5e5f79af12354a5591b8300aa99f07fc db513e0c51c64c94b303fc8b50d4e1df
+msgid ""
+"The example program gradually increases the motor speed and then stops "
+"the motor."
+msgstr "示例程序逐渐增加电机转速，然后停止电机转动。"
+
+#: ../../en/units/bldc_driver.rst:24 0d206ff65c624bcda611b7fef1da9a3e
+#: 235001b97e4d468dbbaad7963e51df9d 267fba6f5cd04baa9daed21f2c2ea515
+#: 32672c27af17461cb298063e2da611de 3574bcde3d5d4cd3894f5c11ee0361c3
+#: 3dc1b16d1f7e450fbbc303f4445e7780 3f76faa209d748ada36ce77755d8eb2e
+#: 4dd43aca9675448489cabe697f8b85da 5a2a03dbaecb4df9a0e1f771a7956e96
+#: 6901115df0ba400696d7f1508c7b5469 71786a8b09054e49973b21fa8f4f308a
+#: 7476edcb722a4cbe914f4c518392c633 7bad81ca6d8244be9f2b1980f0f80757
+#: 7e6206e880d7408aa84c2acc58c863bb 86fd1134001d487f8464cf55483ee25b
+#: 8bc1450b12994c1a9dfa1c85d8d54f7c 9f9c2fd92ccf457982db56ae9e2cef5f
+#: a9dd6f19bd0147b3878b9db8896e1cf3 ab7cdfc955974b71a4090720a3f9bd94
+#: ab8d6612ee284e1bbd893c611a9d5b44 b05a54835d824fed982245780fa32f57
+#: b5f545eca14542e4a05144f7c2c59672 c95bb8b606694642b5a8774059d084d8
+#: d8185c1841ca48ab9949c2d4dfc141da e9c9af6bd108432083103e74ca99a291
+#: efe3fc1c0c57474aaf0203dc4f0ec060 f0c1082361044cb68fc663be585644ed
+#: ff0eea7434b24536b3dd88a09f5e6faf of unit.bldc_driver.BLDCDriverUnit:8
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode:6
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:9
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction:6
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model:6
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs:6
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status:6
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm:6
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:8
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float:6
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int:6
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str:6
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float:6
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int:6
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str:6
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float:6
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int:6
+#: unit.bldc_driver.BLDCDriverUnit.save_data_in_flash:3
+#: unit.bldc_driver.BLDCDriverUnit.set_direction:5
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address:5
+#: unit.bldc_driver.BLDCDriverUnit.set_mode:5
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model:5
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm:5
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:9
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs:5
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float:5
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int:5
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/bldc_driver.rst:26 eed6c8c04a5e476f81f82672cce07bab
+msgid "|cores3_bldc_driver_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:33 aa9181e86ad64dc88613f797ce19248b
+msgid "cores3_bldc_driver_example.png"
+msgstr ""
+
+#: ../../en/units/bldc_driver.rst:28 ../../en/units/bldc_driver.rst:46
+#: 5177a6266ce94ec9a5bc5e2c007892e0 865b3feb853d44799e77569e4fe998f3
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/bldc_driver.rst:30 ../../en/units/bldc_driver.rst:48
+#: 4042049118334009a7dc90126b1a2014 92056efc0857449b91b6888b698f0a48
+msgid "None"
+msgstr "无"
+
+#: ../../en/units/bldc_driver.rst:33 70a57387572b46debf57b2c2a6b1b4ec
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/bldc_driver.rst:40 2e9f78fe8c15485db8e28a0b6d44f7aa
+#: 30aa71690d2a4807b3109d9b9e59d4b0 31a9611f7d0c491cbb75caac42cd53c2
+#: 3a8c648b96424f44a14fa3330a889ad3 42004a84b99043998431f4fee7ff94e5
+#: 42295365c9904acbb5af06dd5961df7b 490338f471f04a4081d1a1ffac6bce61
+#: 4e37fc64ff5048c5aa355465f1b7c4d3 5b8a248a9820436ea5f328d68ad3559f
+#: 6ca1573558824a4b87c7bfa49da8ac63 6edd4290ca9a4f1eb5143a8cc442f96a
+#: 70787f7f7e0d400aa0bdba35c4cbc8ab 750caa0cd41d40d385dfb7bac32c95f9
+#: 7dbbb3756e964feaba8261cc85501266 8448489338e64b24bc7e117fd1a0e175
+#: 88c9d471217c462ca3cf55c79320d519 8f033437ca0540d1a0cb9dd5dcda12c3
+#: 920a0221f31c4da6b512bbc078567b1f 9288a374a4b34cf4aea37bc0afa99569
+#: 9ae58cdd2b464b638f67a4cd9e5751e9 a377c4d5a6b947c9af6928f75021fca8
+#: a667f891774941b09b1cf78e2396f9fb b34e479facc948bea1c25365c1002bbf
+#: b655980c12a64577b56881bb67dd4e24 bff5eea967794f89bf9d362d5288e748
+#: cb2872a74f29446bbb2b80108be6cc5b f7561ceb0d54430c8558e2d16a3d6509
+#: f789c3ca2541499ebccc16cd0c36976a of unit.bldc_driver.BLDCDriverUnit:12
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode:10
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:13
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction:10
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model:10
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs:10
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status:10
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm:10
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:12
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float:10
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int:10
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str:10
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float:10
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int:10
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str:10
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float:10
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int:10
+#: unit.bldc_driver.BLDCDriverUnit.save_data_in_flash:7
+#: unit.bldc_driver.BLDCDriverUnit.set_direction:9
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address:9
+#: unit.bldc_driver.BLDCDriverUnit.set_mode:9
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model:9
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm:9
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:13
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs:9
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float:9
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int:9
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/bldc_driver.rst:51 50e0939b9d4249ebac749777a7e69111
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/bldc_driver.rst:54 a19463c66a4e4e1cb96cd20a2423ef8c
+msgid "BLDCDriverUnit"
+msgstr ""
+
+#: 30278f7fb28943dc8061295a73986b92 of unit.bldc_driver.BLDCDriverUnit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 60ff480b61f041f0b9558596abcd2757 of unit.bldc_driver.BLDCDriverUnit:1
+msgid "Create an BLDCDriverUnit object."
+msgstr "创建一个 BLDCDriverUnit 对象。"
+
+#: ../../en/units/bldc_driver.rst 1beb5a735bd54864a9e803d34654b559
+#: 541cda1fc85f48ff9c82731a243fa38e 7a9284c767e14b82990238844138cd17
+#: 8d3789598d3547539635d2d23c5c4e1f 9720f84ea3a24ec2922a25b2cf89f296
+#: 990140e0fed14cb4a295f6eeb704f745 9d865931d71546d58e192cd11e846c12
+#: c54d94f4d9144b929eaac25fa4b1680d e57066a9442a417284a656d37d484bab
+#: efeadb09445e4c97adf95fe8bebf24eb fdb0f59a50ba44be9e78ff363ce8da52 of
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec
+#: unit.bldc_driver.BLDCDriverUnit.set_direction
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address
+#: unit.bldc_driver.BLDCDriverUnit.set_mode
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int
+msgid "Parameters"
+msgstr "参数"
+
+#: 8dee789d85d045b5b85b62e8b9a64ff6 of unit.bldc_driver.BLDCDriverUnit:3
+msgid "I2C port."
+msgstr "I2C 端口。"
+
+#: f11d88dc84c746f0b9793f0ef1c8564f of unit.bldc_driver.BLDCDriverUnit:5
+msgid "BLDCDriverUnit Slave Address."
+msgstr "BLDCDriverUnit 从机地址。"
+
+#: 8b50e56151de4ff89e221a469e42c766 of unit.bldc_driver.BLDCDriverUnit:10
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:6 19248e61b1d14735903d7a34f8ad9316
+msgid "init.png"
+msgstr ""
+
+#: 82ed379f21e243ffbb88ecb4b3f21ef8 of
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode:1
+msgid "Get the current mode setting."
+msgstr "获取电流模式设置。"
+
+#: 0804b8bec10642d3a084b6dbc3ce006d 12f48eb560ad456eb5e66f2b11da6175
+#: 1913af3ef91a4d6cbe56b3b05846c4fc 2303fce03ea14f8087a63e4e1394c8db
+#: 31532b7d08504918ba322f21350d956c 393dbb0b71fe491a82248aa9fb755034
+#: 4bb302deb8974180b161a47d9f527920 51703ad55a994df988e7cbb6c3ec7aa7
+#: 56c0bbe8b0c74b75bd164bf0eb756014 a0a9b415f4cf406e897c802925d9da1d
+#: a646b0e12e394ae59091766573456b7a e0b2a4be351c4248ae879dbecf0db0f8
+#: ea6205d520c9445399d8dfbf34a69f98 f8fd3b1b041f40208b6a6ccd2f502bed
+#: fbe4f05ca67a46eaad5fc5865be0634a of
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int
+msgid "Returns"
+msgstr ""
+
+#: efdf553099e74380b72d0dedbf1a1643 of
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode:3
+msgid "current mode."
+msgstr "电流模式。"
+
+#: 02da2a04230a4e00b0ebb356be2b63d4 1e9903d9be444c55a8b31c5b11daea02
+#: 2c3d9e5114414646846b17fe80c1d456 37fa789836ae454abc50531b5bfa9cf7
+#: 53ce67bb3fa04a62bfb42b00500a5860 55825069bdb349f280af715dbedf3cc8
+#: 5e96b51589ea474b89bac2cd69281c20 61163af0aa864d1990d351170b79fe64
+#: 867d21241e664505ad0689d94a2a0d13 8acbf8c6f7474b8b8b7290197570a190
+#: a31bb87e054e4cce9c8515102a85abaa a320e20ee96449a597001d40d5f69100
+#: a3b1855b683c4de7a77401775cb54b33 a44e5bf7d3714163a1c6b45646b4b337
+#: a63b2f7b9e9b454290c18723aa13f519 a714729790ea41f18a93eabcf4b6c6a8
+#: ad434c74f9bc40d6a9a12cdbd1876fb4 b2693b178dba48bb88b972006ab775b6
+#: c5243ae6b1d64549a04ed9f1f6f9890a d1a5b345dea54ea0846434328c4d8d5d
+#: da28066f60db4e16b4189c28312ff47e da2ca368e74646ea8feb64c9d36ab081
+#: da6d3194fac84f998aad5d94c7d96983 ec5a5b558c554758876de6e246845dae
+#: fa0a8e1b21304733b77d3182bf25cd4c fcf80c27b62143a4b0e841b24de8344a of
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int
+#: unit.bldc_driver.BLDCDriverUnit.save_data_in_flash
+#: unit.bldc_driver.BLDCDriverUnit.set_direction
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address
+#: unit.bldc_driver.BLDCDriverUnit.set_mode
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int
+msgid "Return type"
+msgstr ""
+
+#: 0901c3d958e3476ca175682c8f71aaac of
+#: unit.bldc_driver.BLDCDriverUnit.get_current_mode:8
+msgid "|get_current_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:7 87b932609f4f40ee8a5cf0938aadfab7
+msgid "get_current_mode.png"
+msgstr ""
+
+#: 139622d25b5c4aa5be4f225e840c5034 of
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:1
+msgid "Get device firmware version and I2C address."
+msgstr "获取设备固件和 I2C 地址。"
+
+#: f4c13b39f9c146a1ad5893584a2c9ec0 of
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:3
+msgid ""
+"This method retrieves either the firmware version or the I2C address of "
+"the device based on the provided mode."
+msgstr "该方法根据提供的模式获取设备的固件版本或 I2C 地址。"
+
+#: e9feeab900844e9d82d82d1f5dbb583b of
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:5
+msgid ""
+"The mode to determine what information to fetch. - `0xFE`: Retrieve "
+"firmware version. - `0xFF`: Retrieve I2C address."
+msgstr "mode 用于确定获取何种信息的模式。- 0xFE：获取固件版本；- 0xFF：获取 I2C 地址。"
+
+#: 6644c498a63f4dbf9e8ea72623721346 of
+#: unit.bldc_driver.BLDCDriverUnit.get_device_spec:11
+msgid "|get_device_spec.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:22 42dcffc47bb941f2a6166780c1ac60a8
+msgid "get_device_spec.png"
+msgstr ""
+
+#: c421338a11564bbc9934ebef59509373 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction:1
+msgid "Get the current direction setting."
+msgstr "获取电流方向设置。"
+
+#: 49350520b6e74877b26fd83058a9292c of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction:3
+msgid "current direction."
+msgstr "电流方向。"
+
+#: fa718d4db17146e7acb64c886b6bb5b8 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_direction:8
+msgid "|get_motor_current_direction.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:8 5b600ac105ba46719f61b60736ada9be
+msgid "get_motor_current_direction.png"
+msgstr ""
+
+#: 2097fe38e0f24c9a97b2b55ab8e982d7 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model:1
+msgid "Get the motor current model setting."
+msgstr "获取电机电流模型设置。"
+
+#: 9c93ffefd1ef445d88cef3c3ef5f5066 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model:3
+msgid "motor current model."
+msgstr "电机电流模。"
+
+#: 1dcc30ab86e245d58cd5875cf25192d9 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_current_model:8
+msgid "|get_motor_current_model.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:9 8aacfe750fa9457aa0009367b17af0ee
+msgid "get_motor_current_model.png"
+msgstr ""
+
+#: d67c992f96c84d50b010877f1194d7a5 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs:1
+msgid "Get the pole pairs setting."
+msgstr "获取磁极对设置。"
+
+#: a3872d0ccce7409685c56473a314535d of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs:3
+msgid "motor pole pairs."
+msgstr "电机磁极对。"
+
+#: c5a5ba400a6148be8e274368ce6336a7 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_pole_pairs:8
+msgid "|get_motor_pole_pairs.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:10 6cf9d7ae9d4c4fe59de919640a69c1ee
+msgid "get_motor_pole_pairs.png"
+msgstr ""
+
+#: 7e6d7e29e55c4e41b6fc35950e0f413b of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status:1
+msgid "Get motor status."
+msgstr "获取电机状态。"
+
+#: 054efe2d13ca41de90a61cf450639579 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status:3
+msgid "motor status."
+msgstr "电机状态。"
+
+#: b55aec872f504607801d4ef5434c5f34 of
+#: unit.bldc_driver.BLDCDriverUnit.get_motor_status:8
+msgid "|get_motor_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:11 90111120ab7a4dd68dbfadd65cd54efc
+msgid "get_motor_status.png"
+msgstr ""
+
+#: 4f8ed39597eb49eb9d43330aae8b8e0a of
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm:1
+msgid "Get the open loop pwm."
+msgstr "获取开环 PWM。"
+
+#: 9069629b64274d1b8be2a8dd14d83efb of
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm:3
+msgid "open loop pwm."
+msgstr "开环 PWM。"
+
+#: bab93082863642f0b08ff0b232ba7393 of
+#: unit.bldc_driver.BLDCDriverUnit.get_open_loop_pwm:8
+msgid "|get_open_loop_pwm.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:12 b32d715e07f542439d03f12d2667ba5f
+msgid "get_open_loop_pwm.png"
+msgstr ""
+
+#: 6a885068e9394b21982282baf7a93cf2 of
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:1
+msgid "Get the PID value."
+msgstr "获取 PID 值。"
+
+#: ab56c665e29d4f07884ccdb1b0e86ef8 of
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:3
+msgid ""
+"This method retrieves the PID values from the specified register and "
+"returns them as a tuple."
+msgstr "该方法从指定的寄存器中读取 PID 参数，并以元组形式返回。"
+
+#: 9458a43482904a7d9f958c0a596bf5b0 of
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:5
+msgid "A tuple containing the PID values (proportional, integral, derivative)."
+msgstr "一个包含 PID 参数（比例、积分、微分）的元组。"
+
+#: 22f85018741e4072a7aed4057772b2ce of
+#: unit.bldc_driver.BLDCDriverUnit.get_pid_value:10
+msgid "|get_pid_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:21 bc3ac6a43bca42d899c577c2debe2a12
+msgid "get_pid_value.png"
+msgstr ""
+
+#: 7b9a124e61324e7f9c0710e93cf09c87 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float:1
+msgid "Get the read back frequency in float."
+msgstr "读取返回的频率，返回值为浮点数。"
+
+#: 1a7aad5e91c54256bddc905dc66683d4 a1be88e30fc84126a3ed89e0a19c2a7a
+#: a682462ee58649e8bb71bec5b1548e41 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float:3
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int:3
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str:3
+msgid "read back frequency."
+msgstr "读取返回的频率"
+
+#: 9c813aced35c401789594e200afa8caa of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_float:8
+msgid "|get_read_back_freq_float.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:16 c90ae226fd43479e9f5ebb663e6cd4d4
+msgid "get_read_back_freq_float.png"
+msgstr ""
+
+#: 47d292e193744d0bac3b395f6922f2b8 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int:1
+msgid "Get the read back frequency in int."
+msgstr "读取返回的频率，返回值为整数。"
+
+#: 48bf1664d9544f4dbbc9f856aebb7cf8 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_int:8
+msgid "|get_read_back_freq_int.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:17 af756179821e40009d6fbc44bb26269b
+msgid "get_read_back_freq_int.png"
+msgstr ""
+
+#: 3f8d3fc3ab244a0bbe81773fa9718234 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str:1
+msgid "Get the read back frequency in str."
+msgstr "读取返回的频率，返回值为字符串。"
+
+#: 5725371535e444908ad1043d069cff1b of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_freq_str:8
+msgid "|get_read_back_freq_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:18 fe0ee42cd47943359cda47d895b3c7bf
+msgid "get_read_back_freq_str.png"
+msgstr ""
+
+#: 4d365dacfdad43f7ba89be90d999e50e of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float:1
+msgid "Get the read back rpm in float."
+msgstr "读取返回的电机转速（单位：RPM），返回值为浮点数。"
+
+#: 182e935fa80649f986374be0e663cbc0 1e63886acd9a44b89db1f3da800f37ae
+#: 30556b651ba74049ad531f954c0377d2 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float:3
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int:3
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str:3
+msgid "read back rpm."
+msgstr "读取电机转速（单位：RPM）"
+
+#: 865752f6de2c42049dc5444b4bda92ae of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_float:8
+msgid "|get_read_back_rpm_float.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:13 c2cf7bbc297140e4bdf3215bfaf76e67
+msgid "get_read_back_rpm_float.png"
+msgstr ""
+
+#: 19597779e7c7423685a264aa81372598 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int:1
+msgid "Get the read back rpm in int."
+msgstr "读取返回的电机转速（单位：RPM），返回值为整数。"
+
+#: 19fc2e81880f485b860468621c115490 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_int:8
+msgid "|get_read_back_rpm_int.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:14 3b3fb631ac47407a9355d2cd0a459906
+msgid "get_read_back_rpm_int.png"
+msgstr ""
+
+#: af80016256e24fcb883d9ba394e8c2a9 of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str:1
+msgid "Get the read back rpm in str."
+msgstr "读取返回的电机转速（单位：RPM），返回值为字符串。"
+
+#: ee0f580779394bdebc82de38c5d47c5c of
+#: unit.bldc_driver.BLDCDriverUnit.get_read_back_rpm_str:8
+msgid "|get_read_back_rpm_str.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:15 3f6d2f7de7684d8099c1921c85e58b5d
+msgid "get_read_back_rpm_str.png"
+msgstr ""
+
+#: c13655345ec546b18c2e26e99e4eb27b of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float:1
+msgid "Get the rpm in float."
+msgstr "获取转速，返回值为浮点数。"
+
+#: 76e7c6c9fda84c3e8fc1b06ab43a8d90 of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float:3
+msgid "rpm."
+msgstr ""
+
+#: 917c2bbfb1a84a5fbdebf7d3fed7617c of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_float:8
+msgid "|get_rpm_float.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:19 c82b0e4889554fb8bcbb0f55b234c02b
+msgid "get_rpm_float.png"
+msgstr ""
+
+#: 5be203d6e86d4312aa4b81e7c7bf3aa3 of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int:1
+msgid "Get the rpm in int."
+msgstr "获取转速，返回值为整数。"
+
+#: b2e2047056fc4c2c831a05b8f215390a c3ccc931678f436a8099277182298a2c
+#: e84461b196f941f5a29a318ef0f0ca9c of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int:3
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float:3
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int:3
+msgid "Revolutions per minute."
+msgstr "每分钟转数。"
+
+#: 2c2adbe85cd340028f78066111b9b177 of
+#: unit.bldc_driver.BLDCDriverUnit.get_rpm_int:8
+msgid "|get_rpm_int.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:20 e98afbc5948d47e8b4423bb8ca7cd444
+msgid "get_rpm_int.png"
+msgstr ""
+
+#: c6bf5150fbcb4e04b30ce2a4a26ac796 of
+#: unit.bldc_driver.BLDCDriverUnit.save_data_in_flash:1
+msgid "Save motor data to flash."
+msgstr "保存电机参数到 flash。"
+
+#: ecbb29f96848496587dcf8dc4e2d8ba7 of
+#: unit.bldc_driver.BLDCDriverUnit.save_data_in_flash:5
+msgid "|save_data_in_flash.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:31 2d209850e54a4a8eb40acf8f351a4140
+msgid "save_data_in_flash.png"
+msgstr ""
+
+#: fd8af8c154284644b957738690d9ff8a of
+#: unit.bldc_driver.BLDCDriverUnit.set_direction:1
+msgid "Set the direction."
+msgstr "设置方向。"
+
+#: 0c29d608e8e94b26ad4ca2b73dff314e of
+#: unit.bldc_driver.BLDCDriverUnit.set_direction:3
+msgid "0 forward, 1 backward."
+msgstr "0 正传，1 反转。"
+
+#: 9d9d677c90534386a2c5fb1c853d6529 of
+#: unit.bldc_driver.BLDCDriverUnit.set_direction:7
+msgid "|set_direction.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:24 aa7435e109334041b602cccda5193fd8
+msgid "set_direction.png"
+msgstr ""
+
+#: 631efce0cc604329af114094555bcd56 of
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address:1
+msgid "Set the I2C address."
+msgstr "设置 I2C 地址。"
+
+#: 58253391c6fc48799e9e75eef2b3f24b of
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address:3
+msgid "The new I2C address, range: 1~127."
+msgstr "新 I2C 地址，范围：1~127。"
+
+#: c271bd402a5e419ca8776a635ef8938b of
+#: unit.bldc_driver.BLDCDriverUnit.set_i2c_address:7
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:32 3479b41e4d0041998f360e63cff60add
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: d30f1e5af02346c88798c7d59c5b43c3 of
+#: unit.bldc_driver.BLDCDriverUnit.set_mode:1
+msgid "Set the mode setting."
+msgstr "设置模式。"
+
+#: ef962b8670d04e0ba3e8ecfe80f89998 of unit.bldc_driver.BLDCDriverUnit.set_mode
+msgid "param"
+msgstr ""
+
+#: 6adcf46a7bff4ea9bffc9cb4bbf87ab0 of
+#: unit.bldc_driver.BLDCDriverUnit.set_mode:3
+msgid "int mode: 0 mean open loop, 1 mean close loop."
+msgstr "0 为开环，1 为闭环。"
+
+#: c3389ec6e32e48db9b3a41c09a4984ff of
+#: unit.bldc_driver.BLDCDriverUnit.set_mode:7
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:23 92d09ced722a4950b429292a16f80346
+msgid "set_mode.png"
+msgstr ""
+
+#: 5574586dbc5e432b985a6073bdbd35d8 of
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model:1
+msgid "Set the motor model setting."
+msgstr "设置电机模型。"
+
+#: 7036a6e4101c4dae82ff73be4f9df638 of
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model:3
+msgid "0 mean low speed, 1 mean high speed."
+msgstr "0 低速，1 高速。"
+
+#: aa93fbc45aed4e9fa0436d3986f200d0 of
+#: unit.bldc_driver.BLDCDriverUnit.set_motor_model:7
+msgid "|set_motor_model.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:25 77275e8d842642ae91dcbbad63e2ac3f
+msgid "set_motor_model.png"
+msgstr ""
+
+#: 4a301487e17c43f4a5f223d8f5f63f8d of
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm:1
+msgid "Set the open loop pwm."
+msgstr "设置开环 PWM。"
+
+#: da2a0733319148ae8fcd4a9e5fd8323f of
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm:3
+msgid "open loop pwm., range: 0~2047."
+msgstr "开环 PWM，范围：0~2047。"
+
+#: 6a1f4f8d40234347ae5ce9059ec49324 of
+#: unit.bldc_driver.BLDCDriverUnit.set_open_loop_pwm:7
+msgid "|set_open_loop_pwm.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:27 26c4affea4094553af31680acc598368
+msgid "set_open_loop_pwm.png"
+msgstr ""
+
+#: a9d5c7fff4d04a8aa785ebb13ad8cadd of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:1
+msgid "! Set the PID values (Proportional, Integral, Derivative)."
+msgstr "设置 PID 参数 (比例，积分，微分)。"
+
+#: 393be65d54c14dee80e82cd537cb10c6 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:3
+msgid ""
+"This method sets the PID values to the specified register, which will "
+"control the motor's PID behavior."
+msgstr "该方法将 PID 参数设置到指定寄存器，用于控制电机的 PID 行为。"
+
+#: 99fc6d0387404462993df40a4f013768 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:5
+msgid "The proportional value."
+msgstr "比例"
+
+#: 64c1ed7aba3949dda6ed696ab48e71d3 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:6
+msgid "The integral value."
+msgstr "积分"
+
+#: b91a78257ae347719f59b8476553a495 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:7
+msgid "The derivative value."
+msgstr "微分"
+
+#: 1390022834c6496aac8bf88129607137 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pid_value:11
+msgid "|set_pid_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:30 dac367d427ea42a9a03cfe800038650f
+msgid "set_pid_value.png"
+msgstr ""
+
+#: 700924d9a691422f87225ccd5043cb1a of
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs:1
+msgid "Set pole pairs."
+msgstr "设置磁极对。"
+
+#: 407c57df814a4146887c82286b923e94 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs:3
+msgid "pole pairs, range: 0~255."
+msgstr "磁极对，范围：0~255。"
+
+#: 9134493755824d4bb05f878f7fe6c335 of
+#: unit.bldc_driver.BLDCDriverUnit.set_pole_pairs:7
+msgid "|set_pole_pairs.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:26 f1e4f542c003481885f8521b786d13d6
+msgid "set_pole_pairs.png"
+msgstr ""
+
+#: 28a461acdd7f4fd7bd6ef3480038a305 of
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float:1
+msgid "Set the rpm in float."
+msgstr "设置转速。"
+
+#: 7661b6e9f3ab4e51ab1efb48a24561c1 of
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_float:7
+msgid "|set_rpm_float.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:28 e5d4ddcbe0ad453abeb977896ec1d6ea
+msgid "set_rpm_float.png"
+msgstr ""
+
+#: fd72dbbef75b41b695453d70df0fb1e9 of
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int:1
+msgid "Set the rpm in int."
+msgstr "设置转速。"
+
+#: 277e554672874df38c8aba30a1a35183 of
+#: unit.bldc_driver.BLDCDriverUnit.set_rpm_int:7
+msgid "|set_rpm_int.png|"
+msgstr ""
+
+#: ../../en/refs/unit.bldc_driver.ref:29 e9e02d78242f4340b70ab84c511e2609
+msgid "set_rpm_int.png"
+msgstr ""
+
+#~ msgid "Receive data"
+#~ msgstr ""
+
+#~ msgid "Open the |basic_rf433r_recv_example.m5f2| project in UiFlow2."
+#~ msgstr ""
+
+#~ msgid "|basic_rf433r_recv_example.png|"
+#~ msgstr ""
+
+#~ msgid "BLDC Driver Unit"
+#~ msgstr ""
+
+#~ msgid "This library is the driver for Unit BLDC Driver."
+#~ msgstr ""
+
+#~ msgid "|Unit BLDC Driver|"
+#~ msgstr ""
+
+#~ msgid "Unit BLDC Driver"
+#~ msgstr ""
+

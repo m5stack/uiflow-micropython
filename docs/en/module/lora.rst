@@ -33,9 +33,9 @@ Micropython Example::
 
 UIFLOW2 Example:
 
-    |example_tx.svg|
+    |example_tx.png|
 
-    |example_rx.svg|
+    |example_rx.png|
 
 
 .. only:: builder_html

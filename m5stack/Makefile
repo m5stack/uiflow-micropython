@@ -40,6 +40,7 @@ boards := \
 	M5STACK_AtomU:atomu              \
 	M5STACK_Atom_Echo:atomecho       \
 	M5STACK_AtomS3R:atoms3r          \
+	M5STACK_AtomS3R_CAM:atoms3r_cam  \
 	M5STACK_StamPLC:stamplc
 
 define find_board
@@ -77,6 +78,7 @@ BOARD_TYPE_DEF := \
 	atomu       \
 	atomecho    \
 	atoms3r     \
+	atoms3r_cam \
 	stamplc
 
 # Select the board type to build, default is None
@@ -281,7 +283,8 @@ submodules:
 	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
-	git submodule update --init --recursive ./components/lv_bindings
+	#git submodule update --init --recursive ./components/lv_bindings
+	git submodule update --init --recursive ./cmodules/lv_binding_micropython
 	git submodule update --init ../micropython
 	git submodule update --init ../esp-adf
 	cd ../esp-adf && \
@@ -296,7 +299,7 @@ submodules:
 
 # Apply patches
 patch:
-	$(call Package/patche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/patche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0004-micropython-1.24-machine-adc-v5.x.diff))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0005-micropython-fix-SDCard-16223.patch))
 	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
@@ -306,10 +309,11 @@ patch:
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/patche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
+	$(call Package/patche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))
 
 # Unapply patches
 unpatch:
-	$(call Package/unpatche,$(abspath ./components/lv_bindings),$(abspath ./patches/0002_avoid_lv_bindings_compile_error.patch))
+	$(call Package/unpatche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0008-machine_uart-add-uart-mode.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0007-Add-set-default-netif-method.patch))
 	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
@@ -319,3 +323,4 @@ unpatch:
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
 	$(call Package/unpatche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
+	$(call Package/unpatche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))

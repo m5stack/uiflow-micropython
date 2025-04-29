@@ -11,10 +11,18 @@ MBusIO = namedtuple(
 )
 
 iomap = {
-    M5.BOARD.M5Stack: MBusIO(2, 5, 21, 22, 18, 23, 19),
-    M5.BOARD.M5StackCore2: MBusIO(32, 33, 21, 22, 18, 23, 38),
-    M5.BOARD.M5StackCoreS3: MBusIO(2, 1, 12, 11, 36, 37, 35),
-    M5.BOARD.M5Tough: MBusIO(32, 33, 21, 22, 18, 23, 38),
+    M5.BOARD.M5Stack: MBusIO(
+        sda0=21, scl0=22, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=19
+    ),
+    M5.BOARD.M5StackCore2: MBusIO(
+        sda0=32, scl0=33, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=38
+    ),
+    M5.BOARD.M5StackCoreS3: MBusIO(
+        sda0=2, scl0=1, sda1=12, scl1=11, spi2_sck=36, spi2_mosi=37, spi2_miso=35
+    ),
+    M5.BOARD.M5Tough: MBusIO(
+        sda0=32, scl0=33, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=38
+    ),
 }.get(M5.getBoard())
 
 
@@ -23,6 +31,8 @@ def _i2c0_init():
 
 
 def _i2c1_init():
+    if iomap.scl1 == iomap.scl0 and iomap.sda1 == iomap.sda0:
+        return _i2c0_init()
     return I2C(1, scl=Pin(iomap.scl1), sda=Pin(iomap.sda1), freq=100000)
 
 

@@ -26,8 +26,13 @@
 #include "esp_spi_flash.h"
 #include "esp_camera.h"
 #include "esp_log.h"
+#include "driver/gpio.h"
 
 #define TAG "camera"
+
+
+
+#if BOARD_ID == 10 // CoreS3
 
 #define CORES3_CAMERA_POWER_DOWN_PIN -1
 #define CORES3_CAMERA_RESET_PIN -1
@@ -50,7 +55,7 @@ static camera_config_t camera_config = {
     .pin_pwdn = CORES3_CAMERA_POWER_DOWN_PIN,
     .pin_reset = CORES3_CAMERA_RESET_PIN,
     .pin_xclk = CORES3_CAMERA_XCLK_PIN,
-    .pin_sscb_sda = -1,// CORES3_CAMERA_SDA_PIN, // 公用 I2C1 在其他地方初始化
+    .pin_sscb_sda = -1,// CORES3_CAMERA_SDA_PIN, // 共用 I2C1 在其他地方初始化
     .pin_sscb_scl = -1,// CORES3_CAMERA_SCL_PIN,
     .pin_d7 = CORES3_CAMERA_D7_PIN,
     .pin_d6 = CORES3_CAMERA_D6_PIN,
@@ -74,6 +79,58 @@ static camera_config_t camera_config = {
     .sccb_i2c_port = 1, // use I2C1
 };
 
+
+#elif BOARD_ID == 144 // AtomS3R_CAM
+
+#define ATOMS3R_CAM_PIN_PWDN  -1
+#define ATOMS3R_CAM_PIN_RESET -1
+#define ATOMS3R_CAM_PIN_HREF  14  // 水平
+#define ATOMS3R_CAM_PIN_VSYNC 10  // 垂直同步
+#define ATOMS3R_CAM_PIN_XCLK  21  // 像素时钟
+#define ATOMS3R_CAM_PIN_PCLK  40  // 时钟
+#define ATOMS3R_CAM_PIN_SIOC  9   // 串行时钟
+#define ATOMS3R_CAM_PIN_SIOD  12  // 串行数据
+#define ATOMS3R_CAM_PIN_D0    3   // 数据0
+#define ATOMS3R_CAM_PIN_D1    42  // 数据1
+#define ATOMS3R_CAM_PIN_D2    46  // 数据2
+#define ATOMS3R_CAM_PIN_D3    48  // 数据3
+#define ATOMS3R_CAM_PIN_D4    4   // 数据4
+#define ATOMS3R_CAM_PIN_D5    17  // 数据5
+#define ATOMS3R_CAM_PIN_D6    11  // 数据6
+#define ATOMS3R_CAM_PIN_D7    13  // 数据7
+#define ATOMS3R_CAM_PIN_EN    18  // 电源控制
+
+camera_config_t camera_config = {
+    .pin_pwdn = ATOMS3R_CAM_PIN_PWDN,
+    .pin_reset = ATOMS3R_CAM_PIN_RESET,
+    .pin_sccb_scl = ATOMS3R_CAM_PIN_SIOC,
+    .pin_sccb_sda = ATOMS3R_CAM_PIN_SIOD,
+    .pin_d0 = ATOMS3R_CAM_PIN_D0,
+    .pin_d1 = ATOMS3R_CAM_PIN_D1,
+    .pin_d2 = ATOMS3R_CAM_PIN_D2,
+    .pin_d3 = ATOMS3R_CAM_PIN_D3,
+    .pin_d4 = ATOMS3R_CAM_PIN_D4,
+    .pin_d5 = ATOMS3R_CAM_PIN_D5,
+    .pin_d6 = ATOMS3R_CAM_PIN_D6,
+    .pin_d7 = ATOMS3R_CAM_PIN_D7,
+    .pin_vsync = ATOMS3R_CAM_PIN_VSYNC,
+    .pin_href = ATOMS3R_CAM_PIN_HREF,
+    .pin_pclk = ATOMS3R_CAM_PIN_PCLK,
+    .pin_xclk = ATOMS3R_CAM_PIN_XCLK,
+    .xclk_freq_hz = 20000000,
+    .ledc_timer = LEDC_TIMER_0,
+    .ledc_channel = LEDC_CHANNEL_0,
+    .pixel_format = PIXFORMAT_RGB565,
+    .frame_size = FRAMESIZE_QVGA,
+    .jpeg_quality = 6,
+    .fb_count = 2,
+    .fb_location = CAMERA_FB_IN_PSRAM,
+    .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
+};
+
+#endif
+
+
 typedef struct {
     bool hmirror;
     bool vflip;
@@ -95,6 +152,14 @@ static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
         { MP_QSTR_fb_count,       MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = 2 } },
         { MP_QSTR_fb_location,    MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = CAMERA_FB_IN_PSRAM } },
     };
+
+#if BOARD_ID == 144
+    gpio_reset_pin(ATOMS3R_CAM_PIN_EN);
+    gpio_set_direction(ATOMS3R_CAM_PIN_EN, GPIO_MODE_OUTPUT);
+    gpio_set_level(ATOMS3R_CAM_PIN_EN, 0); // 拉低开启电源
+    vTaskDelay(pdMS_TO_TICKS(300));
+#endif
+
     /* *FORMAT-ON* */
     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
     mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);

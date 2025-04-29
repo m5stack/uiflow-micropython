@@ -44,7 +44,7 @@ Constructors
 
     UIFLOW2:
 
-        |init.svg|
+        |init.png|
 
 
 .. _unit.DACUnit.Methods:
@@ -60,7 +60,7 @@ Methods
 
     UIFLOW2:
 
-        |get_value.svg|
+        |get_value.png|
 
 
 .. method:: DACUnit.get_voltage() -> float
@@ -71,7 +71,7 @@ Methods
 
     UIFLOW2:
 
-        |get_voltage.svg|
+        |get_voltage.png|
 
 
 .. method:: DACUnit.set_value(value: int) -> None
@@ -82,7 +82,7 @@ Methods
 
     UIFLOW2:
 
-        |set_value.svg|
+        |set_value.png|
 
 
 .. method:: DACUnit.set_voltage(voltage: float) -> None
@@ -93,7 +93,7 @@ Methods
 
     UIFLOW2:
 
-        |set_voltage.svg|
+        |set_voltage.png|
 
 
 .. method:: DACUnit.get_raw_value() -> int
@@ -104,7 +104,7 @@ Methods
 
     UIFLOW2:
 
-        |get_raw_value.svg|
+        |get_raw_value.png|
 
 
 .. method:: DACUnit.set_raw_value(value: int) -> None
@@ -115,7 +115,7 @@ Methods
 
     UIFLOW2:
 
-        |set_raw_value.svg|
+        |set_raw_value.png|
 
 
 .. method:: DACUnit.get_normalized_value() -> float
@@ -126,7 +126,7 @@ Methods
 
     UIFLOW2:
 
-        |get_normalized_value.svg|
+        |get_normalized_value.png|
 
 
 .. method:: DACUnit.set_normalized_value(value: float) -> None
@@ -137,7 +137,7 @@ Methods
 
     UIFLOW2:
 
-        |set_normalized_value.svg|
+        |set_normalized_value.png|
 
 .. method:: DACUnit.save_to_eeprom() -> None
 
@@ -145,4 +145,4 @@ Methods
 
     UIFLOW2:
 
-        |save_to_eeprom.svg|
+        |save_to_eeprom.png|

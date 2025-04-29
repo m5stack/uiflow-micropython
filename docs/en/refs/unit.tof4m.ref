@@ -1,0 +1,28 @@
+.. |ToF4M| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/Unit-ToF4M/img-b393dca4-9143-4409-8753-0a776b8fe2a2.webp
+    :target: https://docs.m5stack.com/en/unit/Unit-ToF4M
+    :height: 200px
+    :width: 200px
+
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/init.png
+.. |get_model_info.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/get_model_info.png
+.. |get_distance.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/get_distance.png
+.. |set_continuous_start_measurement.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/set_continuous_start_measurement.png
+.. |set_continuous_stop_measurement.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/set_continuous_stop_measurement.png
+.. |get_data_ready.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/get_data_ready.png
+.. |get_measurement_timing_budget.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/get_measurement_timing_budget.png
+.. |set_measurement_timing_budget.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/set_measurement_timing_budget.png
+.. |get_distance_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/get_distance_mode.png
+.. |set_distance_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/set_distance_mode.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tof4m/example.png
+
+.. |tof4m_core_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/tof4m/tof4m_core_example.m5f2"
+        target="_blank"
+    >
+        tof4m_core_example.m5f2
+    </a>
