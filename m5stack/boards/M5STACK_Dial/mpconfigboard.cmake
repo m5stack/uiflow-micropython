@@ -16,7 +16,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.ble
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.usb_cdc
-    ./boards/sdkconfig.flash_8mb
+    # ./boards/sdkconfig.flash_8mb
     ./boards/sdkconfig.freertos
     ./boards/M5STACK_Dial/sdkconfig.board
 )
