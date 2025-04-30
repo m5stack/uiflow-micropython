@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from rui3 import RUI3
+from driver.rui3 import RUI3
 import sys
 
 if sys.platform != "esp32":
