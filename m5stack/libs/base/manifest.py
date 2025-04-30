@@ -11,6 +11,7 @@ package(
         "display.py",
         "dtu_lorawan.py",
         "dtu_lorawan_rui3.py",
+        "dtu_nbiot.py",
         "echo.py",
         "hdriver.py",
         "motion.py",
