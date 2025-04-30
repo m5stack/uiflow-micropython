@@ -33,6 +33,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_AtomS3", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3"),
     FirewareInfo("M5STACK_AtomS3_Lite", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3-LITE"),
     FirewareInfo("M5STACK_AtomS3R", "86d49c60241abbe8154afc32c66173dd", ""),
+    FirewareInfo("M5STACK_AtomS3R_CAM", "e5917c2cf236d3771aed17e97b3a4c4b", ""),
     FirewareInfo("M5STACK_AtomS3U", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3U"),
     FirewareInfo("M5STACK_AtomU", "be2520992ff600ec2b8cf1e79d0229d5", "ATOMU"),
     FirewareInfo("M5STACK_Basic", "3ca95a4ce9c2c94514a97573962e43c2", "16MB"),
