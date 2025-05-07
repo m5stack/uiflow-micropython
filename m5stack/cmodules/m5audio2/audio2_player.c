@@ -596,7 +596,7 @@ static void player_wav_task(void *arg) {
         if (data_offset + len > self->play_info.wav_buf.data_len) {
             mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
         }
-        memcpy(wav_data[idx], &self->play_info.wav_buf.data[data_offset], len);
+        memcpy(wav_data[idx], &((uint8_t *)self->play_info.wav_buf.data)[data_offset], len);
         data_offset += len;
 
         data_len -= len;
@@ -671,7 +671,8 @@ static mp_obj_t player_play_wav(size_t n_args, const mp_obj_t *pos_args, mp_map_
         mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
     }
     struct wav_header_t header;
-    memcpy(&header, (const char *)&bufinfo.buf[buf_offset], sizeof(struct wav_header_t));
+    const uint8_t *ptr = (const uint8_t *)bufinfo.buf;
+    memcpy(&header, ptr + buf_offset, sizeof(struct wav_header_t));
     buf_offset += sizeof(struct wav_header_t);
 
     ESP_LOGE(TAG, "wav bit_per_sample: %d, channel: %d, sample_rate: %ld", header.bit_per_sample, header.channel, header.sample_rate);
@@ -693,7 +694,7 @@ static mp_obj_t player_play_wav(size_t n_args, const mp_obj_t *pos_args, mp_map_
         if (buf_offset + sizeof(struct sub_chunk_t) > bufinfo.len) {
             mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
         }
-        memcpy(&sub_chunk, &bufinfo.buf[buf_offset], sizeof(struct sub_chunk_t));
+        memcpy(&sub_chunk, ptr + buf_offset, sizeof(struct sub_chunk_t));
         buf_offset += sizeof(struct sub_chunk_t);
 
         if (strncmp(sub_chunk.identifier, "data", 4) == 0) {
@@ -708,7 +709,7 @@ static mp_obj_t player_play_wav(size_t n_args, const mp_obj_t *pos_args, mp_map_
 
     ESP_LOGE(TAG, "buf_offset: %d", buf_offset);
 
-    self->play_info.wav_buf.data = &bufinfo.buf[buf_offset];
+    self->play_info.wav_buf.data = bufinfo.buf + buf_offset;
     self->play_info.wav_buf.sample_rate = header.sample_rate;
     self->play_info.wav_buf.channel = header.channel;
     self->play_info.wav_buf.bit_per_sample = header.bit_per_sample;
@@ -794,7 +795,7 @@ static mp_obj_t player_play_raw(size_t n_args, const mp_obj_t *pos_args, mp_map_
         return mp_const_none;
     }
 
-    self->play_info.wav_buf.data = &bufinfo.buf[0];
+    self->play_info.wav_buf.data = bufinfo.buf;
     self->play_info.wav_buf.sample_rate = sample_rate;
     self->play_info.wav_buf.channel = channel;
     self->play_info.wav_buf.bit_per_sample = bit_per_sample;

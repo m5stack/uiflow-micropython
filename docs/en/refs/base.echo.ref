@@ -8,11 +8,63 @@
 
 .. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/example.png
 
-.. |atoms3_echo_example.m5f2| raw:: html
+.. |atoms3_play_wav_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/atoms3_play_wav_example.png
+.. |atoms3_playback_controls_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/atoms3_playback_controls_example.png
+.. |atoms3_record_audio_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/atoms3_record_audio_example.png
+.. |begin.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/begin.png
+.. |begin_return.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/begin_return.png
+.. |end.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/end.png
+.. |getChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/getChannelVolume.png
+.. |getPlayingChannels.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/getPlayingChannels.png
+.. |getVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/getVolume.png
+.. |getVolumePercentage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/getVolumePercentage.png
+.. |get_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/get_volume.png
+.. |isEnabled.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/isEnabled.png
+.. |isPlaying.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/isPlaying.png
+.. |isRunning.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/isRunning.png
+.. |pause.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/pause.png
+.. |pcm_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/pcm_buffer.png
+.. |playRaw.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/playRaw.png
+.. |playRaw_return.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/playRaw_return.png
+.. |playWav.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/playWav.png
+.. |playWavFile.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/playWavFile.png
+.. |play_raw.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/play_raw.png
+.. |play_wav.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/play_wav.png
+.. |play_wav_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/play_wav_file.png
+.. |record.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/record.png
+.. |record_wav_file.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/record_wav_file.png
+.. |resume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/resume.png
+.. |setAllChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/setAllChannelVolume.png
+.. |setChannelVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/setChannelVolume.png
+.. |setVolume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/setVolume.png
+.. |setVolumePercentage.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/setVolumePercentage.png
+.. |set_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/set_volume.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/stop.png
+.. |tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/echo/tone.png
+
+.. |atoms3_play_wav_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/echo/atoms3_echo_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/echo/atoms3_play_wav_example.m5f2"
         target="_blank"
     >
-        atoms3_echo_example.m5f2
+        atoms3_play_wav_example.m5f2
+    </a>
+
+.. |atoms3_playback_controls_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/echo/atoms3_playback_controls_example.m5f2"
+        target="_blank"
+    >
+        atoms3_playback_controls_example.m5f2
+    </a>
+
+.. |atoms3_record_audio_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/echo/atoms3_record_audio_example.m5f2"
+        target="_blank"
+    >
+        atoms3_record_audio_example.m5f2
     </a>

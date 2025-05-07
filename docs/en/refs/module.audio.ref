@@ -31,7 +31,7 @@
         href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_play_wav_example.m5f2"
         target="_blank"
     >
-        ain4_core2_example.m5f2
+        cores3_play_wav_example.m5f2
     </a>
 
 .. |cores3_playback_controls_example.m5f2| raw:: html
@@ -40,7 +40,7 @@
         href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_playback_controls_example.m5f2"
         target="_blank"
     >
-        ain4_core2_example.m5f2
+        cores3_playback_controls_example.m5f2
     </a>
 
 .. |cores3_record_audio_example.m5f2| raw:: html
@@ -49,5 +49,5 @@
         href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/audio/cores3_record_audio_example.m5f2"
         target="_blank"
     >
-        ain4_core2_example.m5f2
+        cores3_record_audio_example.m5f2
     </a>

@@ -383,7 +383,7 @@ class AudioModule:
 
                 audio_0.set_volume(50)
         """
-        self.spk.es.set_dac_volume(volume)
+        self.es.set_dac_volume(volume)
 
     def record_wav_file(
         self, path: str, rate: int = 16000, bits: int = 16, channel: int = 2, duration: int = 3000

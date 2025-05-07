@@ -150,7 +150,7 @@ static void recorder_attr(mp_obj_t self_in, qstr attr, mp_obj_t *dest) {
     if (dest[0] == MP_OBJ_NULL) {
         // Load
         if (attr == MP_QSTR_pcm_buffer) {
-            dest[0] = mp_obj_new_bytes(self->pcm_buf.buf, self->pcm_buf.cur_len);
+            dest[0] = mp_obj_new_bytearray_by_ref(self->pcm_buf.cur_len, self->pcm_buf.buf);
         } else {
             // Continue lookup in locals_dict.
             dest[1] = MP_OBJ_SENTINEL;
@@ -281,11 +281,6 @@ static mp_obj_t recorder_record_wav_file(size_t n_args, const mp_obj_t *args_in,
     }
 
     size_t src_len = round((double)(args[ARG_duration].u_int / 1000.0) * self->sample_rate * self->channel * (self->bits >> 3));
-    if (src_len > self->pcm_buf.total) {
-        self->pcm_buf.buf = m_realloc(self->pcm_buf.buf, src_len);
-        self->pcm_buf.total = src_len;
-    }
-    self->pcm_buf.cur_len = src_len;
 
     wav_header_t wav_header = WAV_HEADER_PCM_DEFAULT(src_len, self->bits, self->sample_rate, self->channel);
     int rlen = mp_stream_posix_write(wav_file, &wav_header, sizeof(wav_header_t));
@@ -294,20 +289,44 @@ static mp_obj_t recorder_record_wav_file(size_t n_args, const mp_obj_t *args_in,
         mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("File is too short"));
     }
 
+    static const size_t I2S_CHUNK_SIZE = 512;
+    int16_t *chunk_buf = m_malloc(I2S_CHUNK_SIZE);
+    if (!chunk_buf) {
+        mp_stream_close(wav_file);
+        mp_raise_OSError(MP_ENOMEM);
+    }
     size_t read_len = 0;
+    if (self->channel == 1) {
+        src_len *= 2; // 实际读取立体声的大小（假设用户是期望录 N 秒的单声道）
+    }
 
     while (read_len < src_len) {
+        size_t to_read = I2S_CHUNK_SIZE;
+        if (src_len - read_len < I2S_CHUNK_SIZE) {
+            to_read = src_len - read_len;
+        }
+
         size_t bytes_read = 0;
         i2s_channel_read(
             self->i2s_chan_handle,
-            &self->pcm_buf.buf[read_len],
-            src_len - read_len,
+            chunk_buf,
+            to_read,
             &bytes_read,
             portMAX_DELAY
             );
-
-        int wlen = mp_stream_posix_write(wav_file, &self->pcm_buf.buf[read_len], bytes_read);
-        read_len += bytes_read;
+        if (bytes_read > 0) {
+            if (self->channel == 1) {
+                // 从立体声中提取左声道，每组 2 个 int16_t（4 字节）取一个
+                int sample_count = bytes_read / (self->bits >> 2);  // 每帧立体声 4 字节
+                for (int i = 0; i < sample_count; i++) {
+                    chunk_buf[i] = chunk_buf[i * 2]; // 取左声道
+                }
+                mp_stream_posix_write(wav_file, chunk_buf, bytes_read / 2);
+            } else {
+                mp_stream_posix_write(wav_file, chunk_buf, bytes_read);
+            }
+            read_len += bytes_read;
+        }
     }
 
     mp_stream_close(wav_file);

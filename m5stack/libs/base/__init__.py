@@ -9,7 +9,7 @@ _attrs = {
     "AtomDTUNBIoT": "dtu_nbiot",
     "ATOMGPSBase": "atom_gps",
     "ATOMSocketBase": "atom_socket",
-    "ATOMEchoBase": "echo",
+    "AtomicEchoBase": "echo",
     "AtomicDisplayBase": "display",
     "AtomicHDriverBase": "hdriver",
     "Motion": "motion",

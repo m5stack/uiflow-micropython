@@ -153,6 +153,7 @@ class ES8311:
     def __init__(self, i2c, address: int = 0x18):
         self._i2c = i2c
         self._address = address
+        self._dac_volume = 0
 
     def init(self, clk_cfg, res_in, res_out):
         self._i2c.writeto_mem(self._address, reg.ES8311_RESET_REG00, b"\x1f")
@@ -284,6 +285,8 @@ class ES8311:
         elif volume > 100:
             volume = 100
 
+        self._dac_volume = volume
+
         reg32 = 0
         if volume == 0:
             reg32 = 0
@@ -291,6 +294,9 @@ class ES8311:
             reg32 = int((volume) * 256 / 100) - 1
 
         self._i2c.writeto_mem(self._address, reg.ES8311_DAC_REG32, reg32.to_bytes(1, "big"))
+
+    def voice_volume_get(self) -> int:
+        return self._dac_volume
 
     def microphone_config(self, digital_mic: bool):
         reg14 = 0x1A  # enable analog MIC and max PGA gain
