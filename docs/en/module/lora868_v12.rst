@@ -1,16 +1,15 @@
 LoRa868 v1.2 Module 
 ============================
 
-.. sku: 
+.. sku: M029-V12
 
-.. include:: ../refs/module.lora_sx1262.ref
+.. include:: ../refs/module.lora868_v12.ref
 
-The LoRa868 v1.2 Module is part of the M5Stack stackable module series. It is a LoRa communication module that operates at a 900MHz frequency and utilizes the SX1262 chip solution.
+The LoRa868 v1.2 Module is part of the M5Stack stackable module series. It is a LoRa communication module that operates at a 900MHz frequency band and utilizes the SX1262 chip solution.
 
 Support the following products:
 
     |LoRa868Module v1.2|
-
 
 UiFlow2 Example 
 --------------------------
@@ -20,13 +19,13 @@ UiFlow2 Example
 Sender
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Open the |cores3_lora_sx1262_tx_example.m5f2| project in UiFlow2.
+Open the |cores3_lora868_v12_tx_example.m5f2| project in UiFlow2.
 
 This example sends data every second.
 
 UiFlow2 Code Block:
 
-    |cores3_lora_sx1262_tx_example.png|
+    |cores3_lora868_v12_tx_example.png|
 
 Example output:
 
@@ -35,13 +34,13 @@ Example output:
 Receiver
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Open the |cores3_lora_sx1262_rx_example.m5f2| project in UiFlow2.
+Open the |cores3_lora868_v12_rx_example.m5f2| project in UiFlow2.
 
 This example receives and displays data.
 
 UiFlow2 Code Block:
 
-    |cores3_lora_sx1262_rx_example.png|
+    |cores3_lora868_v12_rx_example.png|
 
 Example output:
 
@@ -59,7 +58,7 @@ This example sends data every second.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/module/lora_sx1262/cores3_lora_sx1262_tx_example.py
+    .. literalinclude:: ../../../examples/module/lora868_v12/cores3_lora868_v12_tx_example.py
         :language: python
         :linenos:
 
@@ -74,7 +73,7 @@ This example receives and displays data.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/module/lora_sx1262/cores3_lora_sx1262_rx_example.py
+    .. literalinclude:: ../../../examples/module/lora868_v12/cores3_lora868_v12_rx_example.py
         :language: python
         :linenos:
 
@@ -86,10 +85,10 @@ Example output:
 --------------------------
 
 
-class LoRaSx1262Module  
+class LoRa868V12Module  
 ^^^^^^^^^^^^^^^^^^^^^^^^
  
-.. class:: module.lora_sx1262.LoRaSx1262Module(pin_rst = 5, \
+.. class:: module.lora868_v12.LoRa868V12Module(pin_rst = 5, \
                             pin_cs = 1, \
                             pin_irq = 10, \  
                             pin_busy = 2, \
@@ -101,9 +100,8 @@ class LoRaSx1262Module
                             syncword = 0x12, \
                             output_power = 10)
 
-    Create an LoRaSx1262Module object.
+    Create an LoRa868V12Module object.
 
-    :param int timer_id: The Timer ID. Range: 0~3. Default is 0.
     :param int pin_rst: (RST) Reset pin number.
     :param int pin_cs: (NSS) Chip select pin number.
     :param int pin_irq: (IRQ) Interrupt pin number.
@@ -135,9 +133,123 @@ class LoRaSx1262Module
 
         .. code-block:: python
 
-            from module import LoRaSx1262Module
+            from module import LoRa868V12Module
 
-            lora868v12_0 = LoRaSx1262Module(5, 1, 10, 2, 868000, '250', 8, 8, 12, 0x12, 10)
+            module_lora868v12_0 = LoRa868V12Module(5, 1, 10, 2, 868000, '250', 8, 8, 12, 0x12, 10)
+
+    .. method:: set_freq(freq_khz)
+
+        Set frequency in kHz.
+
+        :param int freq_khz: Frequency in kHz (850000 ~ 930000), default is 868000.
+
+        UiFlow2 Code Block:
+
+            |set_freq.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_freq(freq_khz)
+
+    .. method:: set_sf(sf)
+
+        Set spreading factor (SF).
+
+        :param int sf: Spreading factor (7 ~ 12)
+
+        UiFlow2 Code Block:
+
+            |set_sf.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_sf(sf)
+
+    .. method:: set_bw(bw)
+
+        Set bandwidth.
+
+        :param str bw: Bandwidth in kHz as string. Must be one of:
+                       '7.8', '10.4', '15.6', '20.8', '31.25', '41.7',
+                       '62.5', '125', '250', '500'.
+
+        UiFlow2 Code Block:
+
+            |set_bw.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_bw(bw)
+
+    .. method:: set_coding_rate(coding_rate)
+
+        Set coding rate.
+
+        :param int coding_rate: Coding rate (5 ~ 8)
+
+        UiFlow2 Code Block:
+
+            |set_coding_rate.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_coding_rate(coding_rate)
+
+    .. method:: set_syncword(syncword)
+
+        Set syncword.
+
+        :param int syncword: Sync word (0 ~ 0xFF)
+
+        UiFlow2 Code Block:
+
+            |set_syncword.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_syncword(syncword)
+
+    .. method:: set_preamble_len(preamble_len)
+
+        Set preamble length.
+
+        :param int preamble_len: Preamble length, range: 0~255.
+
+        UiFlow2 Code Block:
+
+            |set_preamble_len.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_preamble_len(preamble_len)
+
+    .. method:: set_output_power(output_power) 
+
+        Set output power in dBm.
+
+        :param int output_power: Output power in dBm (-9 ~ 22)
+
+        UiFlow2 Code Block:
+
+            |set_output_power.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                module_lora868v12_0.set_output_power(output_power)
 
     .. method:: set_irq_callback(callback)
         
@@ -156,7 +268,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.set_irq_callback()
+                module_lora868v12_0.set_irq_callback()
 
     .. method:: start_recv()
         
@@ -172,7 +284,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.start_recv()
+                module_lora868v12_0.start_recv()
 
     .. method:: recv(self, timeout_ms, rx_length, rx_packet) 
         
@@ -194,7 +306,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                data = lora868v12_0.recv()
+                data = module_lora868v12_0.recv()
 
     .. method:: send(buf, tx_at_ms=None) 
 
@@ -215,7 +327,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.send()
+                module_lora868v12_0.send()
 
     .. method:: standby()
 
@@ -231,7 +343,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.standby()
+                module_lora868v12_0.standby()
 
     .. method:: sleep()
 
@@ -247,7 +359,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.sleep()
+                module_lora868v12_0.sleep()
 
     .. method:: irq_triggered()  
 
@@ -264,7 +376,7 @@ class LoRaSx1262Module
 
             .. code-block:: python
 
-                lora868v12_0.irq_triggered()
+                module_lora868v12_0.irq_triggered()
 
 class RxPacket   
 ^^^^^^^^^^^^^^^^^^^^^^^^

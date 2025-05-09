@@ -28,7 +28,7 @@ _attrs = {
     "IotBaseCatmModule": "iot_base_catm",
     "LlmModule": "llm",
     "LoraModule": "lora",
-    "LoRaSx1262Module": "lora_sx1262",
+    "LoRa868V12Module": "lora868_v12",
     "LoRaWANModule": "lorawan",
     "LoRaWAN868Module": "lorawan868",
     "LTEModule": "lte",
