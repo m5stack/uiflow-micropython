@@ -29,9 +29,12 @@ MAKE_METHOD_0(gfx, width);
 MAKE_METHOD_0(gfx, height);
 MAKE_METHOD_0(gfx, getRotation);
 MAKE_METHOD_0(gfx, getColorDepth);
+MAKE_METHOD_0(gfx, getEpdMode);
 MAKE_METHOD_0(gfx, getCursor);
 MAKE_METHOD_KW(gfx, setRotation, 1);
 MAKE_METHOD_KW(gfx, setColorDepth, 1);
+MAKE_METHOD_KW(gfx, setEpdMode, 1);
+MAKE_METHOD_0(gfx, isEPD);
 MAKE_METHOD_KW(gfx, loadFont, 1);
 MAKE_METHOD_0(gfx, unloadFont);
 MAKE_METHOD_KW(gfx, setFont, 1);
@@ -92,9 +95,12 @@ MAKE_METHOD_0(gfx, lvgl_deinit);
     MAKE_TABLE(gfx, width), \
     MAKE_TABLE(gfx, getRotation), \
     MAKE_TABLE(gfx, getColorDepth), \
+    MAKE_TABLE(gfx, getEpdMode), \
     MAKE_TABLE(gfx, getCursor), \
     MAKE_TABLE(gfx, setRotation), \
     MAKE_TABLE(gfx, setColorDepth), \
+    MAKE_TABLE(gfx, setEpdMode), \
+    MAKE_TABLE(gfx, isEPD), \
     MAKE_TABLE(gfx, setFont), \
     MAKE_TABLE(gfx, loadFont), \
     MAKE_TABLE(gfx, unloadFont), \
@@ -231,6 +237,30 @@ const mp_obj_type_t mp_color_type = {
 };
 #endif
 
+static const mp_rom_map_elem_t epd_mode_define_members_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_EPD_QUALITY), MP_ROM_INT(1) },
+    { MP_ROM_QSTR(MP_QSTR_EPD_TEXT),    MP_ROM_INT(2) },
+    { MP_ROM_QSTR(MP_QSTR_EPD_FAST),    MP_ROM_INT(3) },
+    { MP_ROM_QSTR(MP_QSTR_EPD_FASTEST), MP_ROM_INT(4) },
+    /* *FORMAT-ON* */
+};
+static MP_DEFINE_CONST_DICT(epd_mode_define_members, epd_mode_define_members_table);
+#ifdef MP_OBJ_TYPE_GET_SLOT
+MP_DEFINE_CONST_OBJ_TYPE(
+    mp_epd_mode_type,
+    MP_QSTR_EPDMode,
+    MP_TYPE_FLAG_NONE,
+    locals_dict, (mp_obj_dict_t *)&epd_mode_define_members
+    );
+#else
+const mp_obj_type_t mp_epd_mode_type = {
+    .base = { &mp_type_type },
+    .name = MP_QSTR_EPDMode,
+    .locals_dict = (mp_obj_dict_t *)&epd_mode_define_members,
+};
+#endif
+
 static const mp_rom_map_elem_t gfxdevice_member_table[] = {
     TABLE_PARTS_GFX_BASE,
     MAKE_TABLE(gfx, startWrite),
@@ -239,6 +269,8 @@ static const mp_rom_map_elem_t gfxdevice_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_FONTS),           MP_OBJ_FROM_PTR(&mp_fonts_type) },
     // colors
     { MP_ROM_QSTR(MP_QSTR_COLOR),           MP_OBJ_FROM_PTR(&mp_color_type) },
+    // epd mode
+    { MP_ROM_QSTR(MP_QSTR_EPDMode),         MP_OBJ_FROM_PTR(&mp_epd_mode_type) },
     // stream function
     { MP_ROM_QSTR(MP_QSTR_read),            MP_ROM_PTR(&mp_stream_read_obj) },
     { MP_ROM_QSTR(MP_QSTR_write),           MP_ROM_PTR(&mp_stream_write_obj) },
@@ -315,6 +347,8 @@ static const mp_rom_map_elem_t gfxuserdevice_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_FONTS),           MP_ROM_PTR(&mp_fonts_type) },
     // color
     { MP_ROM_QSTR(MP_QSTR_COLOR),           MP_ROM_PTR(&mp_color_type) },
+    // epd mode
+    { MP_ROM_QSTR(MP_QSTR_EPDMode),         MP_OBJ_FROM_PTR(&mp_epd_mode_type) },
     // Panel
     { MP_ROM_QSTR(MP_QSTR_PANEL),           MP_ROM_PTR(&mp_user_panel_type) },
     // Touch

@@ -60,6 +60,11 @@ mp_obj_t gfx_getColorDepth(mp_obj_t self) {
     return mp_obj_new_int(gfx->getColorDepth());
 }
 
+mp_obj_t gfx_getEpdMode(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int((int)gfx->getEpdMode());
+}
+
 mp_obj_t gfx_getCursor(mp_obj_t self) {
     auto gfx = getGfx(&self);
     mp_obj_t tuple[2] = { mp_obj_new_int(gfx->getCursorX())
@@ -97,6 +102,27 @@ mp_obj_t gfx_setColorDepth(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
     auto gfx = getGfx(&pos_args[0]);
     gfx->setColorDepth(args[ARG_bpp].u_int);
     return mp_const_none;
+}
+
+mp_obj_t gfx_setEpdMode(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_epd_mode};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_epd_mode, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 1 } }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+    gfx->setEpdMode((epd_mode_t)args[ARG_epd_mode].u_int);
+    return mp_const_none;
+}
+
+mp_obj_t gfx_isEPD(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_bool(gfx->isEPD());
 }
 
 
