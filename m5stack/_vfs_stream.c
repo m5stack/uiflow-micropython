@@ -13,11 +13,11 @@
 #include "extmod/vfs_fat.h"
 #include "lib/littlefs/lfs2.h"
 #include "lib/oofatfs/ff.h"
-
+#include "_vfs_stream.h"
 #include <string.h>
 #include <stdlib.h>
 
-static const char *TAG = "Audio2";
+static const char *TAG = "VFS";
 
 // micropython/extmod/vfs_lfs.c line: 115
 typedef struct _mp_obj_vfs_lfs2_t {
@@ -41,52 +41,31 @@ typedef struct vfs_stream_t {
 } vfs_stream_t;
 
 
-static int lfs2_get_mode(const char *mode_s) {
-    int flags = 0;
-    while (*mode_s) {
-        switch (*mode_s++) {
-            case 'r':
-                flags = LFS2_O_RDONLY;
-                break;
-            case 'w':
-                flags = LFS2_O_WRONLY;
-                break;
-            case 'a':
-                flags = LFS2_O_APPEND;
-                break;
-            case '+':
-                flags = LFS2_O_RDWR;
-                break;
-        }
-    }
+static int lfs2_get_mode(int flags) {
+    int ret = 0;
+    ret |= flags & VFS_READ ? LFS2_O_RDONLY : 0;
+    ret = flags & VFS_WRITE ? LFS2_O_WRONLY : 0;
+    ret |= flags & VFS_APPEND ? LFS2_O_APPEND : 0;
+    ret |= flags & VFS_CREATE ? LFS2_O_CREAT : 0;
+
+    return ret;
+}
+
+
+static int fatfs_get_mode(int flags) {
+    int ret = 0;
+
+    ret |= flags & VFS_READ ? FA_READ : 0;
+    ret |= flags & VFS_WRITE ? FA_WRITE : 0;
+    ret |= flags & VFS_APPEND ? FA_OPEN_APPEND : 0;
+    ret |= flags & VFS_CREATE ? FA_CREATE_ALWAYS : 0;
+
     return flags;
 }
 
 
-static int fatfs_get_mode(const char *mode_s) {
-    int flags = 0;
-    while (*mode_s) {
-        switch (*mode_s++) {
-            case 'r':
-                flags = FA_READ;
-                break;
-            case 'w':
-                flags = FA_WRITE;
-                break;
-            case 'a':
-                flags = FA_OPEN_APPEND;
-                break;
-            case '+':
-                flags = FA_OPEN_ALWAYS;
-                break;
-        }
-    }
-    return flags;
-}
-
-
-void *vfs_stream_open(const char *path, const char *mode_s) {
-    ESP_LOGI(TAG, "vfs_stream_open: path=%s, mode=%s\n", path, mode_s);
+void *vfs_stream_open(const char *path, int flags) {
+    ESP_LOGI(TAG, "vfs_stream_open: path=%s, mode=%d\n", path, flags);
 
     vfs_stream_t *vfs = calloc(1, sizeof(vfs_stream_t));
 
@@ -119,7 +98,7 @@ void *vfs_stream_open(const char *path, const char *mode_s) {
             ESP_LOGE(TAG, "failed to allocate lfs2_file");
             goto _vfs_init_exit;
         }
-        int flags = lfs2_get_mode(mode_s);
+        flags = lfs2_get_mode(flags);
         ESP_LOGD(TAG, "lfs2_get_mode: %d", flags);
         int res = lfs2_file_opencfg(vfs->lfs2, vfs->file.lfs2_file, path_out, flags, &vfs->lfs2_file_conf);
         if (res != LFS2_ERR_OK) {
@@ -127,7 +106,7 @@ void *vfs_stream_open(const char *path, const char *mode_s) {
             goto _vfs_init_exit;
         }
     } else if (vfs->fatfs) {
-        BYTE fmode = fatfs_get_mode(mode_s);
+        BYTE fmode = fatfs_get_mode(flags);
         FRESULT ret = f_open(vfs->fatfs, &vfs->file.fat_file, path_out, fmode);
         if (ret != FR_OK) {
             ESP_LOGE(TAG, "failed to open %s(%d)", path_out, ret);

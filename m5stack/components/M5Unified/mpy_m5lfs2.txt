@@ -5,20 +5,9 @@
 */
 
 #include <py/obj.h>
-#include <extmod/vfs.h>
-#include <extmod/vfs_lfs.h>
-#include <lib/littlefs/lfs2.h>
+#include "_vfs_stream.h"
 
 
-// micropython/extmod/vfs_lfs.c line: 115
-typedef struct _mp_obj_vfs_lfs2_t {
-    mp_obj_base_t base;
-    mp_vfs_blockdev_t blockdev;
-    bool enable_mtime;
-    vstr_t cur_dir;
-    struct lfs2_config config;
-    lfs2_t lfs;
-} mp_obj_vfs_lfs2_t;
 
 struct LFS2Wrapper : public m5gfx::DataWrapper
 {
@@ -28,64 +17,52 @@ struct LFS2Wrapper : public m5gfx::DataWrapper
     }
 
     bool open(const char *path) override {
-        return open(path, LFS2_O_RDWR | LFS2_O_CREAT);
+        _file = vfs_stream_open(path, VFS_READ | VFS_WRITE);
+        return _file != nullptr;
     }
 
     bool open(const char *path, int flag) {
-        const char *full_path;
-        struct lfs2_info _finfo;
-        mp_vfs_mount_t *_fm = mp_vfs_lookup_path(path, &full_path);
-        if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
-            if (_fm == MP_VFS_NONE) {
-                mp_printf(&mp_plat_print, "file <%s> was not found\r\n", path);
-            }
-            if (_fm == MP_VFS_ROOT) {
-                mp_printf(&mp_plat_print, "file path is invalid\r\n");
-            }
-            return false;
-        }
-        _fp = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(_fm->obj))->lfs;
-        enum lfs2_error res = (lfs2_error)lfs2_stat(_fp, full_path, &_finfo);
-        if (res != LFS2_ERR_OK) {
-            mp_printf(&mp_plat_print, "%s\r\n", strerror(res));
-            return false;
-        }
-        _file = (lfs2_file_t *)malloc(1 * sizeof(lfs2_file_t));
-        memset(&_fcfg, 0, sizeof(lfs2_file_config));
-        _fcfg.buffer = malloc(_fp->cfg->cache_size * sizeof(uint8_t));
-        return (lfs2_file_opencfg(_fp, _file, full_path, flag,
-                &_fcfg) == LFS2_ERR_OK) ? true: false;
+        _file = vfs_stream_open(path, flag);
+        return _file != nullptr;
     }
 
     int read(uint8_t *buf, uint32_t len) override {
-        return lfs2_file_read(_fp, _file, (char *)buf, len);
+        if (_file == nullptr) {
+            return -1;
+        }
+        return vfs_stream_read(_file, buf, len);
     }
     void skip(int32_t offset) override {
-        lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_CUR);
+        if (_file == nullptr) {
+            return;
+        }
+        vfs_stream_seek(_file, offset, SEEK_CUR);
     }
     bool seek(uint32_t offset) override {
-        return lfs2_file_seek(_fp, _file, offset, LFS2_SEEK_SET);
+        if (_file == nullptr) {
+            return false;
+        }
+        return vfs_stream_seek(_file, offset, SEEK_SET) >= 0;
     }
     bool seek(uint32_t offset, int origin) {
-        return lfs2_file_seek(_fp, _file, offset, origin);
+        if (_file == nullptr) {
+            return false;
+        }
+        return vfs_stream_seek(_file, offset, origin) >= 0;
     }
     void close() override {
-        if (_fp) {
-            lfs2_file_close(_fp, _file);
-        }
         if (_file) {
-            free(_file);
-        }
-        if (_fcfg.buffer) {
-            free(_fcfg.buffer);
+            vfs_stream_close(_file);
+            _file = nullptr;
         }
     }
     int32_t tell(void) override {
-        return lfs2_file_tell(_fp, _file);
+        if (_file == nullptr) {
+            return -1;
+        }
+        return vfs_stream_tell(_file);
     }
 
 protected:
-    lfs2_t *_fp = nullptr;
-    lfs2_file_t *_file = nullptr;
-    struct lfs2_file_config _fcfg;
+    void *_file = nullptr;
 };

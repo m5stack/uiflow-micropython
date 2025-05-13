@@ -152,7 +152,7 @@ static void m5widgets_label_font_init_helper(widgets_label_obj_t *self, mp_obj_t
     if (font != mp_const_none) {
         if (mp_obj_is_str(font)) {
             // FIXME: check if the font is already
-            self->fontWrapper->open(mp_obj_str_get_str(font), LFS2_O_RDONLY);
+            self->fontWrapper->open(mp_obj_str_get_str(font), VFS_READ);
             if (self->rtfont->loadFont((lgfx::DataWrapper *)self->fontWrapper)) {
                 self->font = self->rtfont;
             } else {
@@ -383,7 +383,7 @@ static void m5widgets_title_font_init_helper(widgets_title_obj_t *self, mp_obj_t
     if (font != mp_const_none) {
         if (mp_obj_is_str(font)) {
             // FIXME: check if the font is already
-            self->fontWrapper->open(mp_obj_str_get_str(font), LFS2_O_RDONLY);
+            self->fontWrapper->open(mp_obj_str_get_str(font), VFS_READ);
             if (self->rtfont->loadFont((lgfx::DataWrapper *)self->fontWrapper)) {
                 self->font = self->rtfont;
             } else {
@@ -580,7 +580,7 @@ static inline void m5widgets_image_erase_helper(widgets_image_obj_t *self) {
 }
 
 static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
-    if (!file->open(self->img, LFS2_O_RDONLY)) {
+    if (!file->open(self->img, VFS_READ)) {
         return false;
     }
 
@@ -591,7 +591,7 @@ static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *s
     if (buf[0] != 'B' && buf[1] != 'M') {
         return false;
     }
-    file->seek(16, LFS2_SEEK_CUR);
+    file->seek(16, SEEK_CUR);
     uint32_t w = file->read32();
     uint32_t h = file->read32();
     file->close();
@@ -607,7 +607,7 @@ static bool m5widgets_image_bmp_helper(LFS2Wrapper *file, widgets_image_obj_t *s
 }
 
 static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
-    if (!file->open(self->img, LFS2_O_RDONLY)) {
+    if (!file->open(self->img, VFS_READ)) {
         return false;
     }
     uint8_t idx, result = 0;
@@ -622,7 +622,7 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
 
         if (idx >= 0xE0 && idx <= 0xEF) {
             value = file->read16swap();
-            file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
+            file->seek((uint32_t)(value - 2), SEEK_CUR);
             continue;
         }
 
@@ -636,10 +636,10 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
             case 0xDC:
             case 0xDD:
                 value = file->read16swap();
-                file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR);
+                file->seek((uint32_t)(value - 2), SEEK_CUR);
                 break;
             case 0xC0:
-                file->seek(0x03, LFS2_SEEK_CUR);
+                file->seek(0x03, SEEK_CUR);
                 h = (uint32_t)file->read16swap();
                 w = (uint32_t)file->read16swap();
                 result = 1;
@@ -651,7 +651,7 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
                 break;
             default:
                 value = file->read16swap();
-                if (file->seek((uint32_t)(value - 2), LFS2_SEEK_CUR) != 0) {
+                if (file->seek((uint32_t)(value - 2), SEEK_CUR) != 0) {
                     result = 3;
                 }
                 break;
@@ -669,7 +669,7 @@ static bool m5widgets_image_jpg_helper(LFS2Wrapper *file, widgets_image_obj_t *s
 }
 
 static bool m5widgets_image_png_helper(LFS2Wrapper *file, widgets_image_obj_t *self) {
-    if (!file->open(self->img, LFS2_O_RDONLY)) {
+    if (!file->open(self->img, VFS_READ)) {
         return false;
     }
 

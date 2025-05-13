@@ -23,8 +23,8 @@
  *
  */
 
-#ifndef _VFS_STREAM_H_
-#define _VFS_STREAM_H_
+#ifndef VFS_STREAM_H_
+#define VFS_STREAM_H_
 
 #include "audio_element.h"
 

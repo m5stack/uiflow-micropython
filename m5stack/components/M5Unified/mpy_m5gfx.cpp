@@ -146,7 +146,7 @@ mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args
             fontWrapper = new LFS2Wrapper();
             ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
         }
-        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), VFS_READ);
         ret = gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
     } else { // buffer
         mp_buffer_info_t bufinfo;
@@ -184,7 +184,7 @@ mp_obj_t gfx_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
             fontWrapper = new LFS2Wrapper();
             ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
         }
-        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), VFS_READ);
         gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
     } else {
         gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);

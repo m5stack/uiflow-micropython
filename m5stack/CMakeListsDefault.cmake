@@ -126,6 +126,7 @@ list(APPEND MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/machine_rtc.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
+    ${PROJECT_DIR}/_vfs_stream.c
 )
 
 if (
@@ -275,6 +276,7 @@ idf_component_register(
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}
     LDFRAGMENTS
         linker.lf
     REQUIRES
