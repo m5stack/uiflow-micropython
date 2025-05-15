@@ -25,9 +25,6 @@
 [submodule "m5stack/components/esp-code-scanner"]
 	path = m5stack/components/esp-code-scanner
 	url = https://github.com/hlym123/esp-code-scanner.git
-[submodule "m5stack/components/epdiy"]
-	path = m5stack/components/epdiy
-	url = https://github.com/vroland/epdiy.git
 [submodule "m5stack/components/esp_zigbee_host"]
 	path = m5stack/components/esp_zigbee_host
 	url = https://github.com/hlym123/esp_zigbee_host.git

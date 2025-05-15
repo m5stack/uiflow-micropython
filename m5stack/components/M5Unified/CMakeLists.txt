@@ -27,7 +27,7 @@ file(GLOB SRCS
 
 set(COMPONENT_SRCS ${SRCS})
 if (IDF_VERSION_MAJOR GREATER_EQUAL 5)
-    set(COMPONENT_REQUIRES esp_adc nvs_flash efuse driver esp_timer epdiy main_${IDF_TARGET})
+    set(COMPONENT_REQUIRES esp_adc nvs_flash efuse driver esp_timer main_${IDF_TARGET})
 else()
     set(COMPONENT_REQUIRES esp_adc_cal nvs_flash efuse main)
 endif()

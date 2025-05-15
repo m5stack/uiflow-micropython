@@ -280,7 +280,6 @@ submodules:
 	git submodule update --init ./components/esp_dl
 	git submodule update --init ./components/esp-code-scanner
 	git submodule update --init ./components/esp_zigbee_host
-	git submodule update --init ./components/epdiy
 	git submodule update --init ./components/M5Unified/M5GFX
 	git submodule update --init ./components/M5Unified/M5Unified
 	#git submodule update --init --recursive ./components/lv_bindings
@@ -308,7 +307,6 @@ patch:
 	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
 	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
-	$(call Package/patche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
 	$(call Package/patche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))
 
 # Unapply patches
@@ -322,5 +320,4 @@ unpatch:
 	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1003-WIP-Compatible-with-esp-adf-v2.7.diff))
 	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
 	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
-	$(call Package/unpatche,$(abspath ./components/epdiy),$(abspath ./patches/4001-Avoid-epdiy-compilation-failure-on-esp32-c6.patch))
 	$(call Package/unpatche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))

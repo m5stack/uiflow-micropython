@@ -241,13 +241,6 @@ list(APPEND IDF_COMPONENTS
 )
 endif()
 
-if (M5_EPDIY_ENABLE AND BOARD_TYPE STREQUAL "papers3")
-message(STATUS "Enable EPDiy component")
-list(APPEND IDF_COMPONENTS
-    epdiy
-)
-endif()
-
 if(IDF_TARGET STREQUAL "esp32" OR IDF_TARGET STREQUAL "esp32s3")
     list(APPEND IDF_COMPONENTS boards)
     list(APPEND IDF_COMPONENTS audio_pipeline)
