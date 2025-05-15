@@ -7,11 +7,11 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-27 09:51+0800\n"
-"PO-Revision-Date: 2025-04-26 18:03+0800\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2025-05-15 15:04+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/base/dtu_lorawan_rui3.rst:3 7743a1b5d13144f1a942ca037e761fd3
+#: ../../en/base/dtu_lorawan_rui3.rst:2 88420f6b9aa44bef8ba8e1c014f13b7b
 msgid "Atom DTU LoRaWAN-Series(RAK3172) Base"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:7 b1feb5944ee44d3fba9355f2e4fee756
+#: ../../en/base/dtu_lorawan_rui3.rst:8 97c70f55bded4569b0e62a9987295ee9
 msgid "SKU: A152-CN470, A152-US915, A152-EU868"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:9 8661ccacabf94f7d98ec2dd6d87a73fa
+#: ../../en/base/dtu_lorawan_rui3.rst:10 dced6dd2b6414b1f8da2e444d92679ce
 msgid ""
 "The Atom DTU LoRaWAN-Series is a LoRaWAN programmable data transfer unit "
 "(DTU) based on the STM32WLE5 chip. The module supports long-range "
@@ -36,195 +36,199 @@ msgid ""
 " making it suitable for IoT communication needs in a variety of complex "
 "environments."
 msgstr ""
-"Atom DTU LoRaWAN-Series 是一款基于 STM32WLE5 芯片的 LoRaWAN "
-"可编程数据传输单元（DTU）。该模块支持远距离通信、低功耗运行，并具备高灵敏度特性，适用于多种复杂环境的物联网通信需求。"
 
-#: ../../en/base/dtu_lorawan_rui3.rst:11 176536663f524c008630fe4894b4bf88
+#: ../../en/base/dtu_lorawan_rui3.rst:12 a8963334c0b84fc0a3a3cbe383cf3071
 msgid "**Frequency band support**: CN470 (470MHz), EU868 (868MHz), US915 (915MHz)"
-msgstr "**频段支持**：CN470（470MHz）,EU868（868MHz）,US915（915MHz）"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:12 825ae53602e54a9fa86de11ce04e325c
+#: ../../en/base/dtu_lorawan_rui3.rst:13 274318a6c2e34acd80d618d5250fb5b8
 msgid "**Communication protocol**:"
-msgstr "**通信协议**："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:14 4a8f346871d54d05aaecbac9991aeaf2
+#: ../../en/base/dtu_lorawan_rui3.rst:15 35b649a8a1d747e39fd31456e82f6337
 msgid "Supports LoRaWAN Class A, Class B, Class C modes"
-msgstr "支持 LoRaWAN Class A、Class B、Class C 模式"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:15 b459d414995241c88807679f82f7150e
+#: ../../en/base/dtu_lorawan_rui3.rst:16 c6e31598d62a427c8b2431373b5e11ed
 msgid "Supports LoRa Point-to-Point (P2P) communication mode."
-msgstr "支持 LoRa 点对点（P2P）通信模式"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:17 9215f0cb920d4cd59d5c16e73e732bdf
+#: ../../en/base/dtu_lorawan_rui3.rst:18 730f337f6e64466caa765255f32e9415
 msgid "**Communication Interface**:"
-msgstr "**通信接口**："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:19 893fd621776f43419c1c600e89b7d03b
+#: ../../en/base/dtu_lorawan_rui3.rst:20 27eec14aa3114078840c99146b3483fc
 msgid ""
 "UART interface: Used to send AT commands to control LoRaWAN network "
 "access, data sending/receiving, P2P mode communication, etc."
-msgstr "UART 接口：用于发送 AT 指令，控制 LoRaWAN 入网、数据发送/接收、P2P 模式通信等"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:20 7aeff81323ad4558b9b6a3549b850252
+#: ../../en/base/dtu_lorawan_rui3.rst:21 3b342846ee1b45df823e3c33cef4fe60
 msgid ""
 "RS485 interface: supports wired communication of industrial equipment "
 "with high reliability."
-msgstr "RS485 接口：支持工业设备有线通信，可靠性高"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:22 0eee0282167b4a71a160d0157f8c4dab
+#: ../../en/base/dtu_lorawan_rui3.rst:23 e06c162f98a740678359d13e3840e3ef
 msgid "**Internet access method**:"
-msgstr "**入网方式**："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:24 47bd24c5457349b7bfcfa57775c14d6a
+#: ../../en/base/dtu_lorawan_rui3.rst:25 e51e2011e2fe41e1a98219f401ec33af
 msgid "OTAA (Over-The-Air Activation)"
-msgstr "OTAA（Over-The-Air Activation，空中激活）"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:25 b3d229cc4f5f4eb485ab96840ca09264
+#: ../../en/base/dtu_lorawan_rui3.rst:26 4c1c22648e1f4a24a975c30dcf07f285
 msgid "ABP (Activation By Personalization)"
-msgstr "ABP（Activation By Personalization，手动激活）"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:27 59eea72ceb0b444f983b95b7628e836a
+#: ../../en/base/dtu_lorawan_rui3.rst:28 78c682f0ee3c43658d753bac9e4cefbb
 msgid "Support the following products:"
-msgstr "支持以下产品:"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:30 d1472c7b9a9d4c09a8fe1ed6a7f9053c
+#: ../../en/base/dtu_lorawan_rui3.rst:31 c48fec0a5ec54e1796d0c5fefb0dad68
 msgid "|LoRaWAN-CN470|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref 46ac5f78cd3d4f818855faad18aa9f55
+#: ../../en/refs/base.lorawan_rui3.ref a13d648b38074beca4b56a0cc0401c18
 msgid "LoRaWAN-CN470"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:30 78b7237b55a34d79aa84ec93e124dab9
+#: ../../en/base/dtu_lorawan_rui3.rst:31 8435c0c7f3ce48a6a533395910454643
 msgid "|LoRaWAN-EU868|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref d190b6dc1a544a31a6f8c66c52d52c2f
+#: ../../en/refs/base.lorawan_rui3.ref a587937de9864f6dbe072bb8787db136
 msgid "LoRaWAN-EU868"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:30 1d44c2a4a78744a38efa3f8ba2ced35f
+#: ../../en/base/dtu_lorawan_rui3.rst:31 e05094eba64841f8b71a8b1adc294045
 msgid "|LoRaWAN-US915|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref 32a33872472b4a53a7ea824a9e0c8c18
+#: ../../en/refs/base.lorawan_rui3.ref 1126e89996eb48a098745fa72033eff3
 msgid "LoRaWAN-US915"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:34 28b4908fe7e040778e869f4640c16b21
+#: ../../en/base/dtu_lorawan_rui3.rst:35 436429c3dfdc4fbb9faaef60cca29e19
 msgid "Micropython LoRaWAN-EU868 LoRaWAN OTAA Mode Example:"
-msgstr "Micropython LoRaWAN-EU868 LoRaWAN OTAA 模式示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:40 1bde4096dca94410ae593907cb123d28
+#: ../../en/base/dtu_lorawan_rui3.rst:41 eb4af407e0d64c0c89b3283c8d5572a5
 msgid "Micropython LoRaWAN-EU868 P2P Mode TX Example:"
-msgstr "Micropython LoRaWAN-EU868 P2P 模式 TX 示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:46 734ea01e9b144beb9dde45c6971ffbac
+#: ../../en/base/dtu_lorawan_rui3.rst:47 72be77a23c974f35be0e542aee5cf18f
 msgid "Micropython LoRaWAN-EU868 P2P Mode RX Example:"
-msgstr "Micropython LoRaWAN-EU868 P2P 模式 RX 示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:52 624f1fa7c17c45ae89c92a09ea14a667
+#: ../../en/base/dtu_lorawan_rui3.rst:53 60fef8d4dd7644268fa7a29f4476e403
 msgid "UIFLOW2 LoRaWAN-EU868 LoRaWAN OTAA Mode Example:"
-msgstr "UIFLOW2 LoRaWAN-EU868 LoRaWAN OTAA 模式示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:54 42a232d64bda4fc3815b62487539ad02
+#: ../../en/base/dtu_lorawan_rui3.rst:55 df1a10d4e5694ce6bf79349bb5b6a517
 msgid "|lorawan_otaa_cores3_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:55 aa0e2b0c63084db48356bfa7738b5311
+#: ../../en/refs/base.lorawan_rui3.ref:55 3795392ecd0a441a9f11f773f3249fa2
 msgid "lorawan_otaa_cores3_example.png"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:56 b563f16c0c3147109f5c34f0395c5812
+#: ../../en/base/dtu_lorawan_rui3.rst:57 cd5d486dc6524090a4a847b7b0b71ba2
 msgid "|base_lorawan868_otaa_atom_lite_example.m5f2|"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:58 cc8bb6e6e2294625895a405ccf227620
+#: ../../en/base/dtu_lorawan_rui3.rst:59 837365cf847d4b56b70fd34cc33fe572
 msgid "UIFLOW2 LoRaWAN-EU868 P2P Mode TX Example:"
-msgstr "UIFLOW2 LoRaWAN-EU868 P2P 模式 TX 示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:60 01605a58213d417387156358470b7b7b
+#: ../../en/base/dtu_lorawan_rui3.rst:61 f2973246351648558333f728857cc75e
 msgid "|lorawan_p2p_cores3_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:56 d6e06211c287428f899d782fd11f9c6b
+#: ../../en/refs/base.lorawan_rui3.ref:56 daa4284a257e48eaa777e75e0868d75e
 msgid "lorawan_p2p_cores3_example.png"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:62 b6651f12039b4c22858da342c75b7678
+#: ../../en/base/dtu_lorawan_rui3.rst:63 ff3a182bf53e41c5b413fed0869b695d
 msgid "|base_lorawan868_p2p_tx_atom_lite_example.m5f2|"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:64 d9a97eeb1b9e4b0e8acf1be58cc7b2ee
+#: ../../en/base/dtu_lorawan_rui3.rst:65 00048f844b8c4c08ac052b8a35870374
 msgid "UIFLOW2 LoRaWAN-EU868 P2P Mode RX Example:"
-msgstr "UIFLOW2 LoRaWAN-EU868 P2P 模式 RX 示例程序："
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:66 94014852fff042e88941c1e8757d2cf9
+#: ../../en/base/dtu_lorawan_rui3.rst:67 c113f83ce70649cd8e289f9cf1dd6ebd
 msgid "|lorawan_p2p_rec_cores3_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:57 b25983232368433ca9c727f7de39a59c
+#: ../../en/refs/base.lorawan_rui3.ref:57 4f8c0642e1014691829184989683ca78
 msgid "lorawan_p2p_rec_cores3_example.png"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:68 496628df51204af391852b87b3a8d427
+#: ../../en/base/dtu_lorawan_rui3.rst:69 39029b9036ad4c95b99b1ce9b488adaa
 msgid "|base_lorawan868_p2p_rx_atom_lite_example.m5f2|"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:71 9ea022feee57408f93d3861d725ae416
+#: ../../en/base/dtu_lorawan_rui3.rst:72 ec146dbe7efd4798bd3bd6751322bc61
 msgid "**API**"
 msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst:74 130545b7251744fd87cde9298799f90b
+#: ../../en/base/dtu_lorawan_rui3.rst:75 c75338dd87bf4a9c959a581c8b5124e8
 msgid "AtomDTULoRaWANRUI3Base"
 msgstr ""
 
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:1
-#: bbdc142a85fe42d9afb54ac51d760c78 of
-msgid "Bases: :py:class:`~rui3.RUI3`"
+#: c9b5f9b1ef26400aad10a0962d94be04 of
+msgid "Bases: :py:class:`~driver.rui3.RUI3`"
 msgstr ""
 
-#: a01548b9a3ec4c8282accac93cd3f837
+#: 3aaae31c54ec493f9d019d70106aac96
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:1 of
 msgid "Create an AtomDTULoRaWANRUI3Base object."
-msgstr "创建 AtomDTULoRaWANRUI3Base 对象。"
+msgstr ""
 
-#: ../../en/base/dtu_lorawan_rui3.rst 6eacd9c4df224d9db4ad595f57868a8b
+#: ../../en/base/dtu_lorawan_rui3.rst 0f231107bc9c423bacd0f10eff05e00a
+#: 0f85c73c6c644894bd61dac4fa8471b0 29a6076936124aa5899cc71fcadf3526
+#: 2bc46f1d19654aff82cbf925d1502db5 aec4d07c52784701b2b74caf0366a4fd
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config
-#: driver.rui3.RUI3.get_p2p_receive_data driver.rui3.RUI3.join_network
-#: driver.rui3.RUI3.send_data driver.rui3.RUI3.send_p2p_data
-#: driver.rui3.RUI3.set_join_config driver.rui3.RUI3.set_join_mode
-#: driver.rui3.RUI3.set_network_mode driver.rui3.RUI3.set_p2p_bandwidth
-#: driver.rui3.RUI3.set_p2p_code_rate driver.rui3.RUI3.set_p2p_frequency
-#: driver.rui3.RUI3.set_p2p_fsk_bitrate
+#: c54486a366274c69b25c6f554a97373c driver.rui3.RUI3.get_p2p_receive_data
+#: driver.rui3.RUI3.join_network driver.rui3.RUI3.send_data
+#: driver.rui3.RUI3.send_p2p_data driver.rui3.RUI3.set_join_config
+#: driver.rui3.RUI3.set_join_mode driver.rui3.RUI3.set_network_mode
+#: driver.rui3.RUI3.set_p2p_bandwidth driver.rui3.RUI3.set_p2p_code_rate
+#: driver.rui3.RUI3.set_p2p_frequency driver.rui3.RUI3.set_p2p_fsk_bitrate
 #: driver.rui3.RUI3.set_p2p_preamble_length
 #: driver.rui3.RUI3.set_p2p_spreading_factor driver.rui3.RUI3.set_p2p_sync_word
-#: driver.rui3.RUI3.set_p2p_tx_power of
+#: driver.rui3.RUI3.set_p2p_tx_power e568800edbfc472d8ce8052c0228d7dd of
 msgid "Parameters"
-msgstr "参数"
+msgstr ""
 
-#: 17771d8479fc499392593ad4d50b41a1
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:3 of
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:3
+#: ff7d8c0db2cc408caf7652155ee93a3c of
 msgid "The UART ID to use (0, 1, or 2). Default is 2."
-msgstr "要使用的 UART ID（0、1 或 2）。默认是 2。"
+msgstr ""
 
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:4
-#: c3d062303e2443bfb00b16b67e03feab of
+#: 89446325236b455098b7e61f84d77b9c
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:4 of
 msgid "A list or tuple containing the TX and RX pin numbers."
-msgstr "包含 TX 和 RX 引脚编号的列表或元组。"
+msgstr ""
 
-#: 21cb11cf7f964200a5b2605b36280659
+#: 968f75a4d22844deb816bc365cbf711e
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:6 of
 msgid "Whether to enable debug mode. Default is False."
-msgstr "是否启用调试模式。默认是 False。"
+msgstr ""
 
-#: 902951a49a9e4c5baf4791db634ec7d0
+#: 0371911d831a473ca8ebea9bffcb7894 0ff8ec42152a476499c3e353c8bc4d30
+#: 38693d5ea27740df8f53b4abdc47a49e 428d64a8e66e4d3fb1d2296e8655f8a1
+#: 876a6b64d84b499b9fe9d298b9b60335 96d850e2f6be4695885c89d61f6ba765
+#: 979beca0c9774c5fa408b6a392e2f51c b6771ced5cde49fc8d32022fa3c57fe6
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base:8
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config:6
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config:6
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:7
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:7
+#: bdc94900a8214988a77a1221d2eaea93 d1e7df8e4c434fa68cd3ceb23e57df89
 #: driver.rui3.RUI3.get_device_eui:6 driver.rui3.RUI3.get_join_state:6
 #: driver.rui3.RUI3.get_last_receive:6 driver.rui3.RUI3.get_p2p_bandwidth:6
 #: driver.rui3.RUI3.get_p2p_code_rate:6 driver.rui3.RUI3.get_p2p_frequency:6
@@ -245,19 +249,22 @@ msgstr "是否启用调试模式。默认是 False。"
 #: driver.rui3.RUI3.set_p2p_preamble_length:10
 #: driver.rui3.RUI3.set_p2p_spreading_factor:10
 #: driver.rui3.RUI3.set_p2p_sync_word:10 driver.rui3.RUI3.set_p2p_tx_power:10
-#: of
+#: e4077dce7eae4bd9b6d5617998f49553 f683268d740544e392459125ed7f5db2
+#: f8e2745bb6d849d3bb7271d246b34df0 of
 msgid "MicroPython Code Block:"
-msgstr "MicroPython 代码块："
+msgstr ""
 
-#: 6562f39a98de4274bed1f70250740ad5
+#: b9212192568b4e3e933beff57599b0aa
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config:1 of
-#, fuzzy
 msgid "Retrieve the current ABP configuration."
-msgstr "检索当前 P2P 频率。"
+msgstr ""
 
-#: 5257fb90533449d99b3d539b7e39ed6c
+#: 22e987cb4d184d4eb7daef030f8a5320 3bc6d797640543039f15490174430a8d
+#: 6369410c715d4b4dae7707da3738f449 6a25a2aa609b41579c4e46762451aab7
+#: 9f659160324e4677a8408ac9e121013e a7d4343de55041d688d1d8f8502a1704
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config
+#: c3ef348607ce424f8bc9d03c8d2b0ccd c9124a0afaab49dea09ed7ee408ed66f
 #: driver.rui3.RUI3.get_device_eui driver.rui3.RUI3.get_join_state
 #: driver.rui3.RUI3.get_last_receive driver.rui3.RUI3.get_p2p_bandwidth
 #: driver.rui3.RUI3.get_p2p_code_rate driver.rui3.RUI3.get_p2p_frequency
@@ -275,23 +282,27 @@ msgstr "检索当前 P2P 频率。"
 #: driver.rui3.RUI3.set_p2p_fsk_bitrate
 #: driver.rui3.RUI3.set_p2p_preamble_length
 #: driver.rui3.RUI3.set_p2p_spreading_factor driver.rui3.RUI3.set_p2p_sync_word
-#: driver.rui3.RUI3.set_p2p_tx_power of
+#: driver.rui3.RUI3.set_p2p_tx_power ff1cdf1cb2fd40b0905e3f70a26abb4f of
 msgid "Returns"
-msgstr "返回值"
+msgstr ""
 
-#: 73e86df276824f689fd24e69e252f316
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config:3 of
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config:3
+#: f008313eca7147738bbfb7a01a3ddac4 of
 msgid "A tuple containing (device_address, apps_key, networks_key)."
-msgstr "包含（设备地址、应用程序密钥、网络密钥）的元组。"
+msgstr ""
 
+#: 2db6d06f5e134dc6bcb96ffc91704242 3043d07ff3ba48a78b5b69699230937a
+#: 3b3a310d328249fd8dacd944364735e1 505759319ff843e38bc80c5459e61732
+#: 739edfe99eaa4b24b374f475786c79f5 83c03cdc5c044ce89662f80b334769c0
+#: b3f1fc234d0d4daf87a463f359ed1364
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_abp_config
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config
-#: driver.rui3.RUI3.get_device_eui driver.rui3.RUI3.get_join_state
-#: driver.rui3.RUI3.get_last_receive driver.rui3.RUI3.get_p2p_bandwidth
-#: driver.rui3.RUI3.get_p2p_code_rate driver.rui3.RUI3.get_p2p_frequency
-#: driver.rui3.RUI3.get_p2p_fsk_bitrate
+#: cf1f83096081495f95d47b5e22783858 driver.rui3.RUI3.get_device_eui
+#: driver.rui3.RUI3.get_join_state driver.rui3.RUI3.get_last_receive
+#: driver.rui3.RUI3.get_p2p_bandwidth driver.rui3.RUI3.get_p2p_code_rate
+#: driver.rui3.RUI3.get_p2p_frequency driver.rui3.RUI3.get_p2p_fsk_bitrate
 #: driver.rui3.RUI3.get_p2p_preamble_length
 #: driver.rui3.RUI3.get_p2p_receive_data
 #: driver.rui3.RUI3.get_p2p_spreading_factor driver.rui3.RUI3.get_p2p_sync_word
@@ -305,228 +316,229 @@ msgstr "包含（设备地址、应用程序密钥、网络密钥）的元组。
 #: driver.rui3.RUI3.set_p2p_fsk_bitrate
 #: driver.rui3.RUI3.set_p2p_preamble_length
 #: driver.rui3.RUI3.set_p2p_spreading_factor driver.rui3.RUI3.set_p2p_sync_word
-#: driver.rui3.RUI3.set_p2p_tx_power f262b70685f949d79b49bdea048e0a25 of
+#: driver.rui3.RUI3.set_p2p_tx_power eaf48d953a6c4ca685b02c9344cdaf52
+#: f1f8493c9abf42eaae4c8742ce8ce7ff f2586d70e689486e88843e293fd56900 of
 msgid "Return type"
-msgstr "返回类型"
+msgstr ""
 
-#: 6562f39a98de4274bed1f70250740ad5
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config:1 of
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config:1
+#: fbd6775f55764ac88ae2b5fe52c03bfd of
 msgid "Retrieve the current OTAA configuration."
-msgstr "获取当前 OTAA 配置。"
+msgstr ""
 
-#: 0f95fa6022e545dab434e05430d56085
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config:3 of
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.get_otaa_config:3
+#: fc379ce02b18496a8fceb469e58ed6ae of
 msgid "A tuple containing (device_eui, app_key, app_eui)."
-msgstr "包含（设备 EUI、应用程序密钥、应用程序 EUI）的元组。"
+msgstr ""
 
-#: 8d2ff7b2cb6d4df6bcbb4b18d706763d
+#: 37df0a9c10a9458791e1ff9043881a33
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:1 of
-#, fuzzy
 msgid "Configure the device for ABP (Activation By Personalization) mode."
-msgstr "ABP（Activation By Personalization，手动激活）"
+msgstr ""
 
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:3
-#: fe996cb318ae4e6799f38db7e08127a0 of
+#: 4312db10df7f4b13abffaa3bd9c9428f
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:3 of
 msgid "The device address for ABP configuration."
-msgstr "用于 ABP 配置的设备地址。"
+msgstr ""
 
-#: 62fc244a5ed4486099fcfb3b033fc804
+#: 29352944ea1240b7acbd0828ed90925c
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:4 of
 msgid "The application session key for encryption."
-msgstr "用于加密的应用会话密钥。"
+msgstr ""
 
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:5
-#: fe996cb318ae4e6799f38db7e08127a0 of
+#: 591069d570364c33ab1d497b0e7df9e7
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_abp_config:5 of
 msgid "The network session key for communication."
-msgstr "用于通信的网络会话密钥。"
+msgstr ""
 
-#: 721170a760214d5496c7e3718bd1777b
+#: 885eeeb1170e453391279d409ec50f38
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:1 of
 msgid "Configure the device for OTAA (Over-The-Air Activation) mode."
-msgstr "配置设备为 OTAA（Over-The-Air Activation，空中激活）模式。"
+msgstr ""
 
-#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:3
-#: fe996cb318ae4e6799f38db7e08127a0 of
+#: a5973efd33f24c4c82758db256207ff6
+#: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:3 of
 msgid "The device EUI for OTAA configuration."
-msgstr "用于 OTAA 配置的设备 EUI。"
+msgstr ""
 
-#: 021870fea55042b591e8a70a12b26a85
+#: 8dd5e96ec6fc490292b3c13b03bfe3db
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:4 of
 msgid "The application key for encryption."
-msgstr "用于加密的应用密钥。"
+msgstr ""
 
-#: 021870fea55042b591e8a70a12b26a85
+#: 84ae6601a5234fa591981c106987d35c
 #: base.dtu_lorawan_rui3.AtomDTULoRaWANRUI3Base.set_otaa_config:5 of
 msgid "The application EUI for OTAA configuration."
-msgstr "用于 OTAA 配置的应用 EUI。"
+msgstr ""
 
-#: bbdc142a85fe42d9afb54ac51d760c78 driver.rui3.RUI3:1 of
+#: 4142d8073a3e4dfd8937b2f1094f6c53 driver.rui3.RUI3:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: aa776326beaf49c7bf4617468b4b3d4b driver.rui3.RUI3.get_last_receive:1
-#: driver.rui3.RUI3.get_received_data:1 of
+#: 06202e227c804a64b91089189741296c d0916fdf894846249e0e0bf2bb27f301
+#: driver.rui3.RUI3.get_last_receive:1 driver.rui3.RUI3.get_received_data:1 of
 msgid "Retrieve the data from the last received message."
-msgstr "检索最后一次接收到的消息数据。"
+msgstr ""
 
-#: 73e86df276824f689fd24e69e252f316 driver.rui3.RUI3.get_last_receive:3
-#: driver.rui3.RUI3.get_received_data:3 of
+#: 267d599a29954e07ab900cf122f2cf3b 50cb23c060284427b47080c54bec0376
+#: driver.rui3.RUI3.get_last_receive:3 driver.rui3.RUI3.get_received_data:3 of
 msgid ""
 "A tuple containing the port number (int) and the received data (bytes), "
 "or False if no data was received."
-msgstr "包含端口号（整数）和接收到的数据（字节）的元组，如果没有数据接收，返回 False。"
+msgstr ""
 
-#: 867ad5954bed449986797d37e04497f8 driver.rui3.RUI3.get_received_data_string:1
+#: 85caeb0245254dd79d9ce720036f8dfb driver.rui3.RUI3.get_received_data_string:1
 #: of
 msgid "Retrieve the received data as a string."
-msgstr "检索接收到的数据作为字符串。"
+msgstr ""
 
-#: 6901c0006ed24e1685bdc924c7231cd2 driver.rui3.RUI3.get_received_data_string:3
+#: 008c2e4518f9454aa95f3f6aaafa8bdf driver.rui3.RUI3.get_received_data_string:3
 #: of
 msgid "The received data as a string, or an empty string if no data was received."
-msgstr "接收到的数据作为字符串，如果没有数据接收，返回空字符串。"
+msgstr ""
 
-#: aa776326beaf49c7bf4617468b4b3d4b driver.rui3.RUI3.get_received_data_count:1
+#: cb7b081ace934aedbbc7c658faadd34e driver.rui3.RUI3.get_received_data_count:1
 #: of
 msgid "Retrieve the number of received data."
-msgstr "检索接收到的数据数量。"
+msgstr ""
 
-#: 04142f2491d6492984d9600e87372c82 driver.rui3.RUI3.get_received_data_count:3
+#: 191e4c364904444089a0315b88d6e8f8 driver.rui3.RUI3.get_received_data_count:3
 #: of
 msgid "The number of received data."
-msgstr "接收到的数据数量。"
+msgstr ""
 
-#: 844d3630535849ea8ea4ef4a3e38de84 driver.rui3.RUI3.reset_module_to_default:1
+#: b1c74c187cd346028896e677326ad113 driver.rui3.RUI3.reset_module_to_default:1
 #: of
 msgid "Reset the module to its factory default settings."
-msgstr "将模块重置为出厂默认设置。"
+msgstr ""
 
-#: driver.rui3.RUI3.get_device_eui:1 e2fddd30eea249a697d435c41375f132 of
+#: ae221c4704f547dc8fc1f19c4f563fdd driver.rui3.RUI3.get_device_eui:1 of
 msgid "Get the device EUI."
-msgstr "获取设备 EUI。"
+msgstr ""
 
-#: driver.rui3.RUI3.get_device_eui:3 f8c61272754c4ef49b6836610c6aa047 of
+#: 964a6c5fc15f46c1b61565d2e5fafb13 driver.rui3.RUI3.get_device_eui:3 of
 msgid "The device EUI."
-msgstr "设备 EUI"
+msgstr ""
 
-#: 557a4c78a80f497ea02beac27ae73374 driver.rui3.RUI3.set_join_config:1 of
+#: b9da2516db434721ad4ae8ee5c59e866 driver.rui3.RUI3.set_join_config:1 of
 msgid "Configure the join parameters for LoRaWAN."
-msgstr "为 LoRaWAN 配置连接参数。"
+msgstr ""
 
-#: bf97938c95924d119afecf070b57278f driver.rui3.RUI3.set_join_config:3 of
+#: c3365a36ff1949c79230c69d63c06c38 driver.rui3.RUI3.set_join_config:3 of
 msgid "The configuration does not confirm network join success."
-msgstr "配置不确认网络连接成功。"
+msgstr ""
 
-#: 4103493a99234b34924cb5021f83e3a8 driver.rui3.RUI3.set_join_config:5 of
+#: 2249b820e83941b88bf7087fe2701a0e driver.rui3.RUI3.set_join_config:5 of
 msgid "The join state to configure, as an integer."
-msgstr "要配置的连接状态，整数。"
+msgstr ""
 
-#: b64e9f6865c5426b859d7147d6effa07 driver.rui3.RUI3.set_join_config:6 of
+#: 398ea9105c7a4bdd9ed93e3dae0e2df4 driver.rui3.RUI3.set_join_config:6 of
 msgid "The auto-join flag, as an integer."
-msgstr "自动连接标志位，整数。"
+msgstr ""
 
-#: 17771d8479fc499392593ad4d50b41a1 driver.rui3.RUI3.set_join_config:7 of
+#: c778f30f64df49248ab7020da2f824cd driver.rui3.RUI3.set_join_config:7 of
 msgid "The interval between join retries, in seconds. Default is 8."
-msgstr "连接重试间隔，单位为秒。默认值为 8秒 。"
+msgstr ""
 
-#: 34db71de4433451891c1a2b9f7903e08 driver.rui3.RUI3.set_join_config:8 of
+#: driver.rui3.RUI3.set_join_config:8 f6393f1a024b4c4f876b155a24284fec of
 msgid "The maximum number of retries. Default is 0 (no limit)."
-msgstr "最大重试次数。默认值为 0（无限制）。"
+msgstr ""
 
-#: 6eebe2aa6f6242ef8f5e7eabff2da4c6 driver.rui3.RUI3.set_join_config:9 of
+#: 8d936ccdae154079a4923504b544deaa driver.rui3.RUI3.set_join_config:9 of
 msgid "The timeout duration in milliseconds for the command. Default is 8000ms."
-msgstr "命令超时时间，单位为毫秒。默认值为 8000ms。"
+msgstr ""
 
-#: 5623f4d6e5fa4693b88af23002518abd driver.rui3.RUI3.join_network:5
+#: 561cc7bbaae346f4b3e809c5967df0f1 576e997eee1a4f3181f3941c013eb8ce
+#: 6c3ac9cd4c524ba19c22efe0869ba2ce driver.rui3.RUI3.join_network:5
 #: driver.rui3.RUI3.set_join_config:11 driver.rui3.RUI3.set_join_mode:5 of
 msgid "True if the command is successfully set, else False."
-msgstr "如果命令设置成功，返回 True，否则返回 False。"
+msgstr ""
 
-#: 100f24aca1184bd8bd4f995861e68e49 driver.rui3.RUI3.join_network:1 of
+#: 8defe63ef3534a6a806ae8f64db64202 driver.rui3.RUI3.join_network:1 of
 msgid "Join the LoRa network using predefined join parameters."
-msgstr "使用预定义的连接参数加入 LoRa 网络。"
+msgstr ""
 
-#: aec229cfe96e4ea1984bebf3ed5d4421 driver.rui3.RUI3.join_network:3 of
+#: 55e4cfe1e9974546aa996379c0f55b74 driver.rui3.RUI3.join_network:3 of
 msgid ""
 "The timeout duration in milliseconds for the join command. Default is "
 "8000ms."
-msgstr "连接命令超时时间，单位为毫秒。默认值为 8000ms。"
+msgstr ""
 
-#: a2f3ec97468347fda94d0a16c715f25a driver.rui3.RUI3.join_network:6 of
+#: 3ccf5377e9294df7886cd5f60b987990 driver.rui3.RUI3.join_network:6 of
 msgid "bool  |join_network_return.png|"
 msgstr ""
 
-#: 2d2c091600134f8aa518a37bbb818cc4 caf3437aebbc4c43982ebeb856a7446b
-#: driver.rui3.RUI3.join_network:6 driver.rui3.RUI3.send_data:9
-#: driver.rui3.RUI3.send_p2p_data:11 e8de16726b63416783e477da671d2602 of
+#: 1d97e1939e914af18b7453ef5171a682 6711e53f26a24a6bbf979ed4088a39d1
+#: 83f7b76b348b4ad98b5ccde371151ae2 driver.rui3.RUI3.join_network:6
+#: driver.rui3.RUI3.send_data:9 driver.rui3.RUI3.send_p2p_data:11 of
 msgid "bool"
 msgstr ""
 
-#: a2f3ec97468347fda94d0a16c715f25a driver.rui3.RUI3.join_network:8 of
+#: 431199f02d69477cb255b9486177e815 driver.rui3.RUI3.join_network:8 of
 msgid "|join_network_return.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:22 1629c37aa2c147cb96d4a2e3d3842b7e
+#: ../../en/refs/base.lorawan_rui3.ref:22 ed0731838ab746709dd3abc797e5ffbe
 msgid "join_network_return.png"
 msgstr ""
 
-#: a042c1ac524a4f9587b4999da1d7cae6 driver.rui3.RUI3.set_join_mode:1 of
+#: driver.rui3.RUI3.set_join_mode:1 f2e43987734c40d788c971e61cdc082b of
 msgid "Set the join mode for the LoRa module."
-msgstr "设置 LoRa 模块的连接模式。"
+msgstr ""
 
-#: 81159c683b0b4e3294f735438ccc42c3 driver.rui3.RUI3.set_join_mode:3 of
+#: a9a3a91252234b0481f6c247331a7f27 driver.rui3.RUI3.set_join_mode:3 of
 msgid "The join mode to set, 0 for ABP or 1 for OTAA."
-msgstr "要设置的连接模式，0 表示 ABP，1 表示 OTAA。"
+msgstr ""
 
-#: a60d7ed97ab145eb893c4df4be612fab driver.rui3.RUI3.get_join_state:1 of
+#: driver.rui3.RUI3.get_join_state:1 e21fc70e1706436f8702d4ae76b98782 of
 msgid "Check whether the module has successfully joined the network."
-msgstr "检查模块是否成功加入网络。"
+msgstr ""
 
-#: b7430cc0814844aeba20a2640370d016 driver.rui3.RUI3.get_join_state:3 of
+#: driver.rui3.RUI3.get_join_state:3 f3707d22a67f4dcfa65cdaa4454df2fa of
 msgid "True if joined, otherwise False."
-msgstr "如果已加入网络，返回 True，否则返回 False。"
+msgstr ""
 
-#: 0904a20616f14be0be54a8653575095e driver.rui3.RUI3.send_data:1 of
+#: 031f3ae204a64a799b394d071e2130f0 driver.rui3.RUI3.send_data:1 of
 msgid "Send data through a specific port."
-msgstr "通过特定端口发送数据。"
+msgstr ""
 
-#: 04142f2491d6492984d9600e87372c82 driver.rui3.RUI3.send_data:3 of
+#: d8e8d65629874bbd8582a378e0078339 driver.rui3.RUI3.send_data:3 of
 msgid "The port number to send data through."
-msgstr "要发送数据的端口号。"
+msgstr ""
 
-#: b01aa61d57df4db8ad54abf6cec294e0 driver.rui3.RUI3.send_data:4 of
+#: 475386e62aaa40a3ba85b901dc660118 driver.rui3.RUI3.send_data:4 of
 msgid ""
 "The data to send, provided as bytes or string(if data is bytes, it will "
 "be converted to string)."
-msgstr "要发送的数据，提供字节或字符串（如果数据是字节，将转换为字符串）。"
+msgstr ""
 
-#: 19cffe38a4c846f5aedd98c9f47335ef driver.rui3.RUI3.send_data:6 of
+#: 6a69de073dd4414ba73c43f29684ab3e driver.rui3.RUI3.send_data:6 of
 msgid ""
 "The timeout duration in milliseconds for the send command. Default is "
 "600ms."
-msgstr "发送命令的超时时间，单位为毫秒。默认值为 600ms。"
+msgstr ""
 
-#: d2935087f7fa406c8b88ef83701efd3a driver.rui3.RUI3.send_data:8 of
+#: 04a5fd1230584e3d91ebd9b2af76298d driver.rui3.RUI3.send_data:8 of
 msgid "True if the data was sent successfully, otherwise False."
-msgstr "如果数据发送成功，返回 True，否则返回 False。"
+msgstr ""
 
-#: a12435b737cf40f4bbb9dd80af518582 driver.rui3.RUI3.send_data:9 of
+#: driver.rui3.RUI3.send_data:9 e0eae8bd18f749839ec6b5e33ea2a081 of
 msgid "bool  |send_data_return.png|"
 msgstr ""
 
-#: a12435b737cf40f4bbb9dd80af518582 driver.rui3.RUI3.send_data:11 of
+#: d7c17d382e1149e0b64872c3f9cde90f driver.rui3.RUI3.send_data:11 of
 msgid "|send_data_return.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:27 74dfdca1daa349a9bbadef6b33757f19
+#: ../../en/refs/base.lorawan_rui3.ref:27 019f0556b9e44ca28e9b9e99850777ba
 msgid "send_data_return.png"
 msgstr ""
 
-#: 2e3a7351f465410799090a8aea2c25ab driver.rui3.RUI3.set_network_mode:1 of
+#: 2ac9af6d06e940cebd4cfc3d7cbf0e4e driver.rui3.RUI3.set_network_mode:1 of
 msgid "Set the network mode for the device."
-msgstr "设置设备网络模式。"
+msgstr ""
 
-#: 3d366888a88443f8b446f379bb515037 driver.rui3.RUI3.get_p2p_fsk_bitrate:3
+#: 8e98a2c4afb84115a9f6b421d4cf8881 driver.rui3.RUI3.get_p2p_fsk_bitrate:3
 #: driver.rui3.RUI3.set_network_mode:3 driver.rui3.RUI3.set_p2p_bandwidth:20
 #: driver.rui3.RUI3.set_p2p_code_rate:10 driver.rui3.RUI3.set_p2p_frequency:3
 #: driver.rui3.RUI3.set_p2p_fsk_bitrate:7
@@ -534,659 +546,419 @@ msgstr "设置设备网络模式。"
 #: driver.rui3.RUI3.set_p2p_spreading_factor:7
 #: driver.rui3.RUI3.set_p2p_tx_power:7 of
 msgid "The result of the AT command execution."
-msgstr "AT 命令执行结果。"
+msgstr ""
 
-#: 796559359ec7443b87d8da15e1d1fcba driver.rui3.RUI3.set_network_mode:6 of
+#: 83dddfab4d7e4611ab8ec171cda18e41 driver.rui3.RUI3.set_network_mode:6 of
 msgid ""
 "The mode to set for the network:  - 0 = P2P_LORA - 1 = LoRaWAN - 2 = "
 "P2P_FSK"
 msgstr ""
-"要设置的网络模式： \n"
-" - 0 = P2P_LORA \n"
-" - 1 = LoRaWAN \n"
-" - 2 = P2P_FSK"
 
-#: 8fd4b897cf7d475d83e3c056b8eadc4f driver.rui3.RUI3.set_network_mode:6 of
+#: b02655725770435fba3ac5a04242488c driver.rui3.RUI3.set_network_mode:6 of
 msgid "The mode to set for the network:"
-msgstr "要设置的网络模式："
+msgstr ""
 
-#: b054c11ce8c04ab3835e28b5257e027f driver.rui3.RUI3.set_network_mode:8 of
+#: 3fce94292d2e48b19bb523a25a852c5a driver.rui3.RUI3.set_network_mode:8 of
 msgid "0 = P2P_LORA"
 msgstr ""
 
-#: 675e48587b164ea1b6226074eb3c7d56 driver.rui3.RUI3.set_network_mode:9 of
+#: d30a55ae64c549098902aac70c6c3fb6 driver.rui3.RUI3.set_network_mode:9 of
 msgid "1 = LoRaWAN"
 msgstr ""
 
-#: driver.rui3.RUI3.set_network_mode:10 fd46b3fc5cab4fb198ed13e1df2dda1a of
+#: 323a0005c5014da0b2ad1baae928534b driver.rui3.RUI3.set_network_mode:10 of
 msgid "2 = P2P_FSK"
 msgstr ""
 
-#: driver.rui3.RUI3.get_p2p_frequency:1 f46876dcd44148759d2bd9b86b220a98 of
+#: 9e91328e43b845ad92c9b337c96febd8 driver.rui3.RUI3.get_p2p_frequency:1 of
 msgid "Retrieve the current P2P frequency."
-msgstr "检索当前 P2P 频率。"
+msgstr ""
 
-#: 10e6243508284e90b23f4fd38537f809 driver.rui3.RUI3.get_p2p_frequency:3 of
+#: 41d813c2bff9432b9b59e07c47e91696 driver.rui3.RUI3.get_p2p_frequency:3 of
 msgid "The current P2P frequency as an integer."
-msgstr "当前 P2P 频率作为整数。"
+msgstr ""
 
-#: 4bbf9970a9184bc7ba53136433ba6000 driver.rui3.RUI3.set_p2p_frequency:1 of
+#: 0bca632025594ff099afe499dcc08a5b driver.rui3.RUI3.set_p2p_frequency:1 of
 msgid "Set the P2P frequency for the device."
-msgstr "设置设备 P2P 频率。"
+msgstr ""
 
-#: bd2c218f2d794188b30a8f1bfe379165 driver.rui3.RUI3.set_p2p_frequency:6 of
+#: driver.rui3.RUI3.set_p2p_frequency:6 e51916660ee847b68e253f7bea60f531 of
 msgid ""
 "The frequency to set for P2P communication.  - Low-frequency range: "
 "150000000-600000000 - High-frequency range: 600000000-960000000"
 msgstr ""
-"要设置的 P2P 通信频率。\n"
-" - 低频率范围：150000000-600000000 \n"
-" - 高频率范围：600000000-960000000"
 
-#: 17aac352e42642b5b473cba2b5c712d1 driver.rui3.RUI3.set_p2p_frequency:6 of
+#: b81376d51e3f4a909a8d0dc6312e7859 driver.rui3.RUI3.set_p2p_frequency:6 of
 msgid "The frequency to set for P2P communication."
-msgstr "要设置的 P2P 通信频率。"
+msgstr ""
 
-#: 1bc87601f25c49aebcc529b1c66622f3 driver.rui3.RUI3.set_p2p_frequency:8 of
+#: 9a533731b92c4c689677854e1fb979e3 driver.rui3.RUI3.set_p2p_frequency:8 of
 msgid "Low-frequency range: 150000000-600000000"
-msgstr "低频率范围：150000000-600000000"
+msgstr ""
 
-#: 757164e675f4494183d691a1914be0ea driver.rui3.RUI3.set_p2p_frequency:9 of
+#: 052e70c059f94bb885758311d8fa48f9 driver.rui3.RUI3.set_p2p_frequency:9 of
 msgid "High-frequency range: 600000000-960000000"
-msgstr "高频率范围：600000000-960000000"
+msgstr ""
 
-#: 268d9be7654e4d139c8e5c912780eb05 driver.rui3.RUI3.get_p2p_spreading_factor:1
+#: 44e7f0f919f14a5dba1e525889c25d38 driver.rui3.RUI3.get_p2p_spreading_factor:1
 #: of
 msgid "Retrieve the current P2P spreading factor."
-msgstr "获取当前 P2P 扩展因子。"
+msgstr ""
 
-#: 7895420eea224c74a8c3cf1a14b6c74f driver.rui3.RUI3.get_p2p_spreading_factor:3
+#: 6bc0986ef63c443b9cf3b517e5ce4188 driver.rui3.RUI3.get_p2p_spreading_factor:3
 #: of
 msgid "The current P2P spreading factor as an integer."
-msgstr "当前 P2P 扩展因子作为整数。"
+msgstr ""
 
-#: 0680dea68cbb41a48ea6c9c462d2b81a driver.rui3.RUI3.set_p2p_spreading_factor:1
+#: 93236fc05f6249e5ab1784e1b08b30b1 driver.rui3.RUI3.set_p2p_spreading_factor:1
 #: of
 msgid "Set the P2P spreading factor."
-msgstr "设置 P2P 扩展因子。"
+msgstr ""
 
-#: 9c4c3c9a34514ca8a454e4077d735bf4 driver.rui3.RUI3.set_p2p_spreading_factor:3
+#: c578780bb2a24ea19f02d7aa2289e140 driver.rui3.RUI3.set_p2p_spreading_factor:3
 #: of
 msgid "The spreading factor to set for P2P communication.  - Range is 5 to 12."
 msgstr ""
-"要设置的 P2P 通信扩展因子。 \n"
-" - 范围是 5 到 12。"
 
-#: ab80efd274204b46977f58766c71af70 driver.rui3.RUI3.set_p2p_spreading_factor:3
+#: dba7567a84a14f77a5107f76c9de4279 driver.rui3.RUI3.set_p2p_spreading_factor:3
 #: of
 msgid "The spreading factor to set for P2P communication."
-msgstr "用于 P2P 通信的扩展因子。"
+msgstr ""
 
-#: 5b74849620d7407d8e0a5e3a9cb3fa33 driver.rui3.RUI3.set_p2p_spreading_factor:5
+#: d2ae81b1bbed4c9e9eb1f5a4f6c37351 driver.rui3.RUI3.set_p2p_spreading_factor:5
 #: of
 msgid "Range is 5 to 12."
-msgstr "范围是 5 到 12。"
+msgstr ""
 
-#: 40d63b0206a44b1ab3299fc2053814b3 driver.rui3.RUI3.get_p2p_bandwidth:1 of
+#: daa1615f35aa426dbe3d65bb5c70bb79 driver.rui3.RUI3.get_p2p_bandwidth:1 of
 msgid "Retrieve the current P2P bandwidth."
-msgstr "获取当前 P2P 带宽。"
+msgstr ""
 
-#: c8e92947bf4943dd8118417baefdad82 driver.rui3.RUI3.get_p2p_bandwidth:3 of
+#: a6da8ccbf8d74644ad308473ba8635c8 driver.rui3.RUI3.get_p2p_bandwidth:3 of
 msgid "The current P2P bandwidth as an integer."
-msgstr "当前 P2P 带宽作为整数。"
+msgstr ""
 
-#: 6a9373310a644a91a2136e33d2743a90 driver.rui3.RUI3.set_p2p_bandwidth:1 of
+#: 13a0a126bfc9445ea338019a49da5a3c driver.rui3.RUI3.set_p2p_bandwidth:1 of
 msgid "Set the P2P bandwidth."
 msgstr ""
 
-#: 4b23a93b582d4bf5b227ea7ae23f50f6 driver.rui3.RUI3.set_p2p_bandwidth:3 of
+#: a90ff29fc41c47039a114c1901056c34 driver.rui3.RUI3.set_p2p_bandwidth:3 of
 msgid ""
 "The bandwidth to set for P2P communication.  - For LoRa:     - 0 = 125 "
 "kHz     - 1 = 250 kHz     - 2 = 500 kHz     - 3 = 7.8 kHz     - 4 = 10.4 "
 "kHz     - 5 = 15.63 kHz     - 6 = 20.83 kHz     - 7 = 31.25 kHz     - 8 ="
 " 41.67 kHz     - 9 = 62.5 kHz  - For FSK:     Range: 4800-467000 Hz"
 msgstr ""
-"为 P2P 通信设置的带宽 \n"
-" - 对于 LoRa：\n"
-"- 0 = 125 kHz \n"
-" - 1 = 250 kHz \n"
-" - 2 = 500 kHz \n"
-" - 3 = 7.8 kHz \n"
-" - 4 = 10.4 kHz \n"
-" - 5 = 15.63 kHz \n"
-" - 6 = 20.83 kHz \n"
-" - 7 = 31.25 kHz \n"
-" - 8 = 41.67 kHz \n"
-" - 9 = 62.5 kHz \n"
-" - 对于 FSK：范围：4800-467000 Hz"
 
-#: 021870fea55042b591e8a70a12b26a85 driver.rui3.RUI3.set_p2p_bandwidth:3 of
+#: c53f497025804218a62d52d833861ec4 driver.rui3.RUI3.set_p2p_bandwidth:3 of
 msgid "The bandwidth to set for P2P communication."
-msgstr "用于 P2P 通信的带宽。"
+msgstr ""
 
-#: driver.rui3.RUI3.set_p2p_bandwidth:15 fb1d34a81c7b4b539b1eb36fcf754774 of
+#: 52fbdcf0c33e4ad38eae4964955938ce driver.rui3.RUI3.set_p2p_bandwidth:15 of
 msgid "For LoRa:"
-msgstr "对于 LoRa："
+msgstr ""
 
-#: 7e8028ab765c4e458d04afabfc993506 driver.rui3.RUI3.set_p2p_bandwidth:6 of
+#: 622df72172544440b1278b8d71a69471 driver.rui3.RUI3.set_p2p_bandwidth:6 of
 msgid "0 = 125 kHz"
 msgstr ""
 
-#: 23a4fba35b8047e1acce90b13a0458cf driver.rui3.RUI3.set_p2p_bandwidth:7 of
+#: 85be6ee462de4f0ba3b4242bf15921bf driver.rui3.RUI3.set_p2p_bandwidth:7 of
 msgid "1 = 250 kHz"
 msgstr ""
 
-#: 1c66aa60364f4538b5b955c22dffc413 driver.rui3.RUI3.set_p2p_bandwidth:8 of
+#: 4fc23df25500451b84d90ae6d5db88ec driver.rui3.RUI3.set_p2p_bandwidth:8 of
 msgid "2 = 500 kHz"
 msgstr ""
 
-#: 925b9686ede345e18683ca2c4ae9d24e driver.rui3.RUI3.set_p2p_bandwidth:9 of
+#: 6bcdb907863b4cbdbf40e00e9b5e75bd driver.rui3.RUI3.set_p2p_bandwidth:9 of
 msgid "3 = 7.8 kHz"
 msgstr ""
 
-#: 4509ec90788a414586289112aa01b3b1 driver.rui3.RUI3.set_p2p_bandwidth:10 of
+#: b25bd1ae85c24586a734aa0e3308b9e3 driver.rui3.RUI3.set_p2p_bandwidth:10 of
 msgid "4 = 10.4 kHz"
 msgstr ""
 
-#: 4173514e23ae428fba64364afeb8dd10 driver.rui3.RUI3.set_p2p_bandwidth:11 of
+#: 538832795b3b47f3a5d74dd211adbf13 driver.rui3.RUI3.set_p2p_bandwidth:11 of
 msgid "5 = 15.63 kHz"
 msgstr ""
 
-#: 3d430cf91b7b4342b41d3e768e790137 driver.rui3.RUI3.set_p2p_bandwidth:12 of
+#: 12e514301e494779b44f19d8052ee284 driver.rui3.RUI3.set_p2p_bandwidth:12 of
 msgid "6 = 20.83 kHz"
 msgstr ""
 
-#: 8449149800ad4274b6d91686d911e959 driver.rui3.RUI3.set_p2p_bandwidth:13 of
+#: 0fa7832b51a3419a96107fcba2360117 driver.rui3.RUI3.set_p2p_bandwidth:13 of
 msgid "7 = 31.25 kHz"
 msgstr ""
 
-#: ac26e0f45b844b459c4645937802192a driver.rui3.RUI3.set_p2p_bandwidth:14 of
+#: 61ab079755b64ca490d3f2ee534e634f driver.rui3.RUI3.set_p2p_bandwidth:14 of
 msgid "8 = 41.67 kHz"
 msgstr ""
 
-#: dc1dad5c63494adaa57bf7fac5eb177d driver.rui3.RUI3.set_p2p_bandwidth:15 of
+#: 76090f24b8fa4a1c9e6714e08175198b driver.rui3.RUI3.set_p2p_bandwidth:15 of
 msgid "9 = 62.5 kHz"
 msgstr ""
 
-#: c6558b894df6452cbd9e7c970e128481 driver.rui3.RUI3.set_p2p_bandwidth:18 of
+#: ce4c89b91917413bbc32678a47b9e30a driver.rui3.RUI3.set_p2p_bandwidth:18 of
 msgid "For FSK:"
-msgstr "对于 FSK："
+msgstr ""
 
-#: 430a26a38ce340ca82f1bdfb798439f2 driver.rui3.RUI3.set_p2p_bandwidth:18 of
+#: 655be027473549848be5c5be9fe2e593 driver.rui3.RUI3.set_p2p_bandwidth:18 of
 msgid "Range: 4800-467000 Hz"
-msgstr "范围：4800-467000 Hz"
+msgstr ""
 
-#: 054eb5eb0076486b9b5d4bfe0afc7829 driver.rui3.RUI3.set_p2p_bandwidth:21 of
+#: 1c9d208bd5f543709c8c1ee3cc4ccac0 driver.rui3.RUI3.set_p2p_bandwidth:21 of
 msgid "bool |set_p2p_fsk_bandwidth.png|  |set_p2p_lora_bandwidth.png|"
 msgstr ""
 
-#: a3ded662c5444b62906a9b59ba2b1990 driver.rui3.RUI3.set_p2p_bandwidth:21 of
+#: 33e15bce21a04cbd96ac9290528fa7bc driver.rui3.RUI3.set_p2p_bandwidth:21 of
 msgid "bool |set_p2p_fsk_bandwidth.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:34 4bc9d0f8100b4567a6ae7d5183485212
+#: ../../en/refs/base.lorawan_rui3.ref:34 2069c438842c44fabf7c94feb5b523a3
 msgid "set_p2p_fsk_bandwidth.png"
 msgstr ""
 
-#: 5b237226aca54e549639d771a32d69af driver.rui3.RUI3.set_p2p_bandwidth:24 of
+#: 2b40d2e92a42439cb2fc5f3eca224e99 driver.rui3.RUI3.set_p2p_bandwidth:24 of
 msgid "|set_p2p_lora_bandwidth.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:35 0d8e42acb36b4603bf043cd584790bff
+#: ../../en/refs/base.lorawan_rui3.ref:35 9a084e75a020449bb642438fed7c5edc
 msgid "set_p2p_lora_bandwidth.png"
 msgstr ""
 
-#: 6562f39a98de4274bed1f70250740ad5 driver.rui3.RUI3.get_p2p_code_rate:1 of
+#: driver.rui3.RUI3.get_p2p_code_rate:1 f5a6c97c6b6f4aa88d624e096eddce32 of
 msgid "Retrieve the current P2P code rate."
-msgstr "获取当前 P2P 编码速率。"
+msgstr ""
 
-#: c27fcd1292d24c3e90b640e82ded8834 driver.rui3.RUI3.get_p2p_code_rate:3 of
+#: c0b886881cc54b0cad71e59d570cb175 driver.rui3.RUI3.get_p2p_code_rate:3 of
 msgid "The current P2P code rate as an integer."
-msgstr "当前 P2P 编码速率作为整数。"
+msgstr ""
 
-#: 3835a819f9e5435ea1013351b73d1ffe driver.rui3.RUI3.set_p2p_code_rate:1 of
+#: 4b566eee16444c26afb2485478a2107d driver.rui3.RUI3.set_p2p_code_rate:1 of
 msgid "Set the P2P code rate."
-msgstr "设置 P2P 编码速率。"
+msgstr ""
 
-#: 3f590f8ca6784307b94a73ffc1ce16b4 driver.rui3.RUI3.set_p2p_code_rate:3 of
+#: 67a7dac05dbb4d29bc39923f682e866d driver.rui3.RUI3.set_p2p_code_rate:3 of
 msgid ""
 "The code rate to set for P2P communication.  - 0 = 4/5 - 1 = 4/6 - 2 = "
 "4/7 - 3 = 4/8"
 msgstr ""
-"用于 P2P 通信的编码速率。 \n"
-" - 0 = 4/5 \n"
-" - 1 = 4/6 \n"
-" - 2 = 4/7 \n"
-" - 3 = 4/8"
 
-#: driver.rui3.RUI3.set_p2p_code_rate:3 fe996cb318ae4e6799f38db7e08127a0 of
+#: 9e42cc0aa0344377a60c9ef83f8827f5 driver.rui3.RUI3.set_p2p_code_rate:3 of
 msgid "The code rate to set for P2P communication."
-msgstr "用于 P2P 通信的编码速率。"
+msgstr ""
 
-#: deacde94e21a476a8cf5a704ac3c5dfb driver.rui3.RUI3.set_p2p_code_rate:5 of
+#: 9f04ff5a8443416c8ba4ad0144408fd7 driver.rui3.RUI3.set_p2p_code_rate:5 of
 msgid "0 = 4/5"
 msgstr ""
 
-#: 6033560f4dc742d1b53718964fad38f0 driver.rui3.RUI3.set_p2p_code_rate:6 of
+#: 44ea893685604429b83deb3c522d2282 driver.rui3.RUI3.set_p2p_code_rate:6 of
 msgid "1 = 4/6"
 msgstr ""
 
-#: 7710d652cde2435dad4099abcc453f5c driver.rui3.RUI3.set_p2p_code_rate:7 of
+#: 6d79063507074ce8ada2a2763d178b11 driver.rui3.RUI3.set_p2p_code_rate:7 of
 msgid "2 = 4/7"
 msgstr ""
 
-#: 3063f77577e1421eaf0d9df1329658f3 driver.rui3.RUI3.set_p2p_code_rate:8 of
+#: a85f6dee7094440cbcfff37e6c20887c driver.rui3.RUI3.set_p2p_code_rate:8 of
 msgid "3 = 4/8"
 msgstr ""
 
-#: d46e81e54d0549e89aa99d20150e648e driver.rui3.RUI3.get_p2p_preamble_length:1
+#: de8e20048ed6402cad489150c0bf90b6 driver.rui3.RUI3.get_p2p_preamble_length:1
 #: of
 msgid "Retrieve the current P2P preamble length."
-msgstr "获取当前 P2P 前导码长度。"
+msgstr ""
 
-#: 9b9e7741a4eb444bae16c589ad5e92d9 driver.rui3.RUI3.get_p2p_preamble_length:3
+#: b7e1969581e94fe58e604f7b1d1d35d6 driver.rui3.RUI3.get_p2p_preamble_length:3
 #: of
 msgid "The current P2P preamble length as an integer."
-msgstr "当前 P2P 前导码长度作为整数。"
+msgstr ""
 
-#: bc4eb0d4591742f3b2594ca60e3ac41a driver.rui3.RUI3.set_p2p_preamble_length:1
+#: 9cb42b8641574fa6b7bf18e418cdce00 driver.rui3.RUI3.set_p2p_preamble_length:1
 #: of
 msgid "Set the P2P preamble length."
-msgstr "设置 P2P 前导码长度。"
+msgstr ""
 
-#: 819d679dd6674b2e8b2772b174521aab driver.rui3.RUI3.set_p2p_preamble_length:6
+#: 42486c7e059e43cfb19ddec5a53b82d3 driver.rui3.RUI3.set_p2p_preamble_length:6
 #: of
 msgid "The preamble length to set for P2P communication.  - Range is 5 to 65535."
 msgstr ""
-"用于 P2P 通信的前导码长度。 \n"
-" - 范围是 5 到 65535。"
 
-#: 8e377ee7c74649d4a9d99104d2cc9213 driver.rui3.RUI3.set_p2p_preamble_length:6
+#: 2a162fa775294934a8122e43cf591c98 driver.rui3.RUI3.set_p2p_preamble_length:6
 #: of
 msgid "The preamble length to set for P2P communication."
-msgstr "用于 P2P 通信的前导码长度。"
+msgstr ""
 
-#: driver.rui3.RUI3.set_p2p_preamble_length:8 fba62a8b8d3e49d989c06dad0233d36c
+#: 37e41b65ea1b4ea38418e01fda7638fc driver.rui3.RUI3.set_p2p_preamble_length:8
 #: of
 msgid "Range is 5 to 65535."
-msgstr "范围是 5 到 65535。"
+msgstr ""
 
-#: driver.rui3.RUI3.get_p2p_tx_power:1 ec5a5913e31b4c50a37b3ff6f44aa32f of
+#: 7e318d5d0b214131bfbfc2c358812595 driver.rui3.RUI3.get_p2p_tx_power:1 of
 msgid "Retrieve the current P2P transmission power."
-msgstr "获取当前 P2P 发射功率。"
+msgstr ""
 
-#: ac069af04d0047f0b745e0ecc7aa5f4c driver.rui3.RUI3.get_p2p_tx_power:3 of
+#: bf87d0c946d84dd18c90abe58258210b driver.rui3.RUI3.get_p2p_tx_power:3 of
 msgid "The current P2P transmission power as an integer."
-msgstr "当前 P2P 发射功率作为整数。"
+msgstr ""
 
-#: 8ac15481ae6c4e8784a331abef649128 driver.rui3.RUI3.set_p2p_tx_power:1 of
+#: 5d08f6447ad449e894fc6f85add974cf driver.rui3.RUI3.set_p2p_tx_power:1 of
 msgid "Set the P2P transmission power."
-msgstr "设置 P2P 发射功率。"
+msgstr ""
 
-#: 1198d0f067054f169ce628b32c8e9004 driver.rui3.RUI3.set_p2p_tx_power:3 of
+#: driver.rui3.RUI3.set_p2p_tx_power:3 f1d764e305df4bb9ac34ababaee84dfb of
 msgid ""
 "The transmission power to set for P2P communication.  - Range is 5 to 22 "
 "dBm."
 msgstr ""
-"用于 P2P 通信的发射功率。 \n"
-" - 范围是 5 到 22 dBm。"
 
-#: 62fc244a5ed4486099fcfb3b033fc804 driver.rui3.RUI3.set_p2p_tx_power:3 of
+#: 16ef0fd9455f4a3fa2ed45f113174672 driver.rui3.RUI3.set_p2p_tx_power:3 of
 msgid "The transmission power to set for P2P communication."
-msgstr "用于 P2P 通信的发射功率。"
+msgstr ""
 
-#: 84e69392f756496eb4b33d9126c8f492 driver.rui3.RUI3.set_p2p_tx_power:5 of
+#: 1af1697e38e445bcb0c31006c341d8e3 driver.rui3.RUI3.set_p2p_tx_power:5 of
 msgid "Range is 5 to 22 dBm."
-msgstr "范围是 5 到 22 dBm。"
+msgstr ""
 
-#: 867ad5954bed449986797d37e04497f8 driver.rui3.RUI3.get_p2p_fsk_bitrate:1 of
+#: d0393790858a4d68832162f9cf34bd22 driver.rui3.RUI3.get_p2p_fsk_bitrate:1 of
 msgid "Retrieve the current P2P FSK bitrate."
-msgstr "获取当前 P2P FSK 比特率。"
+msgstr ""
 
-#: 46f4478ed595436c9ea9eac6304647e0 driver.rui3.RUI3.set_p2p_fsk_bitrate:1 of
+#: 22b42f9a40f848a296830392906cc5af driver.rui3.RUI3.set_p2p_fsk_bitrate:1 of
 msgid "Set the P2P FSK bitrate."
-msgstr "设置 P2P FSK 比特率。"
+msgstr ""
 
-#: 29c44650c00d4097a6eeefaee736d4a6 driver.rui3.RUI3.set_p2p_fsk_bitrate:3 of
+#: 5e7ae0eaacdc4c299342f3b6490b3b59 driver.rui3.RUI3.set_p2p_fsk_bitrate:3 of
 msgid ""
 "The bitrate to set for P2P FSK communication.  - Range is 600 to 300000 "
 "b/s."
 msgstr ""
-"用于 P2P FSK 通信的比特率。 \n"
-" - 范围是 600 到 300000 b/s。"
 
-#: 152b3fca8d634bfd864209deae6f3ccb driver.rui3.RUI3.set_p2p_fsk_bitrate:3 of
+#: c36b266b958d4de7b01517cd2d399896 driver.rui3.RUI3.set_p2p_fsk_bitrate:3 of
 msgid "The bitrate to set for P2P FSK communication."
-msgstr "用于 P2P FSK 通信的比特率。"
+msgstr ""
 
-#: bbb7ebaf6899497d9a13ca40df32af58 driver.rui3.RUI3.set_p2p_fsk_bitrate:5 of
+#: 83e3b88edfa8448fb4531394ea47f9b9 driver.rui3.RUI3.set_p2p_fsk_bitrate:5 of
 msgid "Range is 600 to 300000 b/s."
-msgstr "范围是 600 到 300000 b/s。"
+msgstr ""
 
-#: driver.rui3.RUI3.send_p2p_data:1 f62791378a374e84b03093bb4bf079a6 of
+#: 9115f65eb3e241f0bdd9e6b80d3d0984 driver.rui3.RUI3.send_p2p_data:1 of
 msgid "Send P2P data with a given payload."
-msgstr "发送带有给定负载的 P2P 数据。"
+msgstr ""
 
-#: 71a2103727c54a4388c4dce0626abe71 driver.rui3.RUI3.send_p2p_data:3 of
+#: ab006735201247a2b12d3c9dfc4f3961 driver.rui3.RUI3.send_p2p_data:3 of
 msgid ""
 "The payload to send.  - Length must be between 2 and 500 characters. - "
 "Must consist of an even number of characters composed of 0-9, a-f, A-F, "
 "representing 1 to 256 hexadecimal values."
 msgstr ""
-"要发送的负载。 \n"
-" - 长度必须在 2 到 500 个字符之间。 \n"
-" - 必须由偶数个字符组成，字符为 0-9、a-f、A-F，表示 1 到 256 的十六进制值。"
 
-#: 7ea318b680224736ac997c88b2cea7a3 driver.rui3.RUI3.send_p2p_data:3 of
+#: 6f8aa055e420425bbf93b6398af00a7d driver.rui3.RUI3.send_p2p_data:3 of
 msgid "The payload to send."
-msgstr "要发送的负载。"
+msgstr ""
 
-#: 8c875925d1fa473085a1ff75c9e08a3a driver.rui3.RUI3.send_p2p_data:5 of
+#: 61840d1cfddb4b9db4116e23d9d2376e driver.rui3.RUI3.send_p2p_data:5 of
 msgid "Length must be between 2 and 500 characters."
-msgstr "长度必须在 2 到 500 个字符之间。"
+msgstr ""
 
-#: driver.rui3.RUI3.send_p2p_data:6 eb94f62ea24743d384a842259d9c305b of
+#: abe569709d16407f96616668925200a6 driver.rui3.RUI3.send_p2p_data:6 of
 msgid ""
 "Must consist of an even number of characters composed of 0-9, a-f, A-F, "
 "representing 1 to 256 hexadecimal values."
-msgstr "必须由偶数个字符组成，字符为 0-9、a-f、A-F，表示 1 到 256 的十六进制值。"
+msgstr ""
 
-#: cd5d63d2f08a4606b7af7b90fb05015a driver.rui3.RUI3.send_p2p_data:7 of
+#: 9045358cc1af44608ce5c9160d48ec49 driver.rui3.RUI3.send_p2p_data:7 of
 msgid ""
 "The timeout for the data transmission, in milliseconds. Default is 1000 "
 "ms."
-msgstr "数据传输的超时时间，单位为毫秒。默认值为 1000 毫秒。"
+msgstr ""
 
-#: b8bfadb16fb6474ab8374c96d35ada22 driver.rui3.RUI3.send_p2p_data:8 of
+#: driver.rui3.RUI3.send_p2p_data:8 f11ba76a35fe4294bf35d6c5a667c2f7 of
 msgid ""
 "Indicates whether to convert the payload to hexadecimal format. Default "
 "is False."
-msgstr "是否将负载转换为十六进制格式。默认值为 False。"
+msgstr ""
 
-#: 70de31682ab44558b9f0abf375faa7fc driver.rui3.RUI3.send_p2p_data:10 of
+#: driver.rui3.RUI3.send_p2p_data:10 eb3bdf72bf7e417fa6ceea56345d407f of
 msgid ""
 "True if the data was sent successfully (\"TXFSK DONE\" or \"TXP2P "
 "DONE\"), False otherwise."
-msgstr "如果数据发送成功，则返回 True（\"TXFSK DONE\" 或 \"TXP2P DONE\"），否则返回 False。"
+msgstr ""
 
-#: 527c936609464580a0e1329a73da7fc2 driver.rui3.RUI3.send_p2p_data:11 of
+#: 550ae9a6093c48359f57b6a371c26975 driver.rui3.RUI3.send_p2p_data:11 of
 msgid "bool  |send_p2p_data_return.png|"
 msgstr ""
 
-#: 527c936609464580a0e1329a73da7fc2 driver.rui3.RUI3.send_p2p_data:13 of
+#: driver.rui3.RUI3.send_p2p_data:13 f51dce8afb8644acadb8a1e1778a2e6a of
 msgid "|send_p2p_data_return.png|"
 msgstr ""
 
-#: ../../en/refs/base.lorawan_rui3.ref:45 918f82cbe3d84354adf9bd167b21a7ac
+#: ../../en/refs/base.lorawan_rui3.ref:45 27b2d75799ad4beca809bf71f9be4bd1
 msgid "send_p2p_data_return.png"
 msgstr ""
 
-#: 2c1b4d2821184b2a918fcd8442b5f9c9 driver.rui3.RUI3.get_p2p_receive_data:1 of
+#: df7941bc051b487a872095b9dad450db driver.rui3.RUI3.get_p2p_receive_data:1 of
 msgid "Receive data in P2P mode, including RSSI, SNR, and payload."
-msgstr "在 P2P 模式下接收数据，包括 RSSI、SNR 和负载。"
+msgstr ""
 
-#: driver.rui3.RUI3.get_p2p_receive_data:3 f0bbac03238f47e6ba398e7e8061053a of
+#: driver.rui3.RUI3.get_p2p_receive_data:3 ef84e6d2d6d44dab93d4243dc04d6b40 of
 msgid ""
 "Timeout for listening to P2P LoRa data packets, in milliseconds.  - Valid"
 " values are 1 to 65535.     - 0: Continuous listening.     - 65535: No "
 "timeout."
 msgstr ""
-"在 P2P LoRa 数据包中监听的超时时间，单位为毫秒。 \n"
-" - 有效值为 1 到 65535。 \n"
-" - 0：连续监听。 \n"
-" - 65535：无超时。"
 
-#: ba4871c38f674e42a59d98002a6a22ea driver.rui3.RUI3.get_p2p_receive_data:3 of
+#: 2b9d8427aef0419fa64ecabf351a30f4 driver.rui3.RUI3.get_p2p_receive_data:3 of
 msgid "Timeout for listening to P2P LoRa data packets, in milliseconds."
-msgstr "在 P2P LoRa 数据包中监听的超时时间，单位为毫秒。"
+msgstr ""
 
-#: cb3dba63a3424843925a6973e41b5eb4 driver.rui3.RUI3.get_p2p_receive_data:7 of
+#: cb15861960bb42c1aca1525242426e2e driver.rui3.RUI3.get_p2p_receive_data:7 of
 msgid "Valid values are 1 to 65535."
-msgstr "有效值为 1 到 65535。"
+msgstr ""
 
-#: driver.rui3.RUI3.get_p2p_receive_data:6 eebb8abcb3ac4355b0c77231588c7b5b of
+#: driver.rui3.RUI3.get_p2p_receive_data:6 ed3b1ad55cca430dbb2edcdc75c414b1 of
 msgid "0: Continuous listening."
-msgstr "0：连续监听。"
+msgstr ""
 
-#: a661be946b744074868f3e20609a9d70 driver.rui3.RUI3.get_p2p_receive_data:7 of
+#: 5caac679d8144264a153c8456ac8423a driver.rui3.RUI3.get_p2p_receive_data:7 of
 msgid "65535: No timeout."
-msgstr "65535：无超时。"
+msgstr ""
 
-#: 21cb11cf7f964200a5b2605b36280659 driver.rui3.RUI3.get_p2p_receive_data:9 of
+#: 7e1227cbd84c4b519289bba7d8889f55 driver.rui3.RUI3.get_p2p_receive_data:9 of
 msgid "Indicates whether to convert the payload to a string. Default is False."
-msgstr "是否将负载转换为字符串。默认值为 False。"
+msgstr ""
 
-#: 6901c0006ed24e1685bdc924c7231cd2 driver.rui3.RUI3.get_p2p_receive_data:10 of
+#: 102da5e11ad545bf825ddb366f990eb5 driver.rui3.RUI3.get_p2p_receive_data:10 of
 msgid ""
 "A tuple (RSSI, SNR, Payload) if data is received; False if no data is "
 "received."
-msgstr "如果收到数据，则返回一个元组 (RSSI, SNR, Payload)；如果没有收到数据，则返回 False。"
+msgstr ""
 
-#: d99d0e4009614376b14b68057805145b driver.rui3.RUI3.get_p2p_sync_word:1 of
+#: 374cf7315f5c413ea4231cdc2b8efe41 driver.rui3.RUI3.get_p2p_sync_word:1 of
 msgid "Get the current sync word in P2P mode."
-msgstr "获取当前 P2P 同步字。"
+msgstr ""
 
-#: be4b379f4c424ac79741d1fc75d5c758 driver.rui3.RUI3.get_p2p_sync_word:3 of
+#: c324dea1e30a43f08f141eeea1099940 driver.rui3.RUI3.get_p2p_sync_word:3 of
 msgid "The sync word as a string."
-msgstr "当前 P2P 同步字作为字符串。"
+msgstr ""
 
-#: bf6897d86d584c89978358e7db2b84bd driver.rui3.RUI3.set_p2p_sync_word:1 of
+#: 1a8374babbde4a87804706e8f105566f driver.rui3.RUI3.set_p2p_sync_word:1 of
 msgid "Set the sync word in P2P mode."
-msgstr "设置 P2P 同步字。"
+msgstr ""
 
-#: driver.rui3.RUI3.set_p2p_sync_word:3 e664ccbe4973497899cd860e374be8af of
+#: 318821eb2da94b02b599457990eb5eb1 driver.rui3.RUI3.set_p2p_sync_word:3 of
 msgid "The sync word value.  - Must be in the range of 0x0000 to 0xFFFF."
 msgstr ""
-"P2P 同步字值。 \n"
-" - 必须在 0x0000 到 0xFFFF 之间。"
 
-#: ba9815b992894ec5a7c757a7c9e48329 driver.rui3.RUI3.set_p2p_sync_word:3 of
+#: 6207641a484245e797d76da1b10a05af driver.rui3.RUI3.set_p2p_sync_word:3 of
 msgid "The sync word value."
-msgstr "P2P 同步字值。"
+msgstr ""
 
-#: 94ffbd7e8b2241d1a8a47131f838052e driver.rui3.RUI3.set_p2p_sync_word:5 of
+#: 90416118db3647f4a361273b4ae03e19 driver.rui3.RUI3.set_p2p_sync_word:5 of
 msgid "Must be in the range of 0x0000 to 0xFFFF."
-msgstr "必须在 0x0000 到 0xFFFF 之间。"
+msgstr ""
 
-#: b6f0d68b99454db5b1cfbb50886fcb31 driver.rui3.RUI3.set_p2p_sync_word:7 of
+#: 868a50422ade4390a80863c1a1117eac driver.rui3.RUI3.set_p2p_sync_word:7 of
 msgid "The response from the command execution."
-msgstr "命令执行的响应。"
-
-#~ msgid "UiFlow2 Code Block:"
-#~ msgstr "UiFlow2 代码块："
-
-#~ msgid "|init.png|"
-#~ msgstr ""
-
-#~ msgid "init.png"
-#~ msgstr ""
-
-#~ msgid "|get_abp_config.png|"
-#~ msgstr ""
-
-#~ msgid "get_abp_config.png"
-#~ msgstr ""
-
-#~ msgid "|get_otaa_config.png|"
-#~ msgstr ""
-
-#~ msgid "get_otaa_config.png"
-#~ msgstr ""
-
-#~ msgid "|set_abp_config.png|"
-#~ msgstr ""
-
-#~ msgid "set_abp_config.png"
-#~ msgstr ""
-
-#~ msgid "|set_otaa_config.png|"
-#~ msgstr ""
-
-#~ msgid "set_otaa_config.png"
-#~ msgstr ""
-
-#~ msgid "|get_received_data.png|"
-#~ msgstr ""
-
-#~ msgid "|get_received_data_string.png|"
-#~ msgstr ""
-
-#~ msgid "|get_received_data_count.png|"
-#~ msgstr ""
-
-#~ msgid "|reset_module_to_default.png|"
-#~ msgstr ""
-
-#~ msgid "reset_module_to_default.png"
-#~ msgstr ""
-
-#~ msgid "|get_device_eui.png|"
-#~ msgstr ""
-
-#~ msgid "|set_join_config.png|"
-#~ msgstr ""
-
-#~ msgid "set_join_config.png"
-#~ msgstr ""
-
-#~ msgid "|join_network.png|"
-#~ msgstr ""
-
-#~ msgid "join_network.png"
-#~ msgstr ""
-
-#~ msgid "|set_join_mode.png|"
-#~ msgstr ""
-
-#~ msgid "set_join_mode.png"
-#~ msgstr ""
-
-#~ msgid "|get_join_state.png|"
-#~ msgstr ""
-
-#~ msgid "get_join_state.png"
-#~ msgstr ""
-
-#~ msgid "|get_last_receive.png|"
-#~ msgstr ""
-
-#~ msgid "get_last_receive.png"
-#~ msgstr ""
-
-#~ msgid "|send_data.png|"
-#~ msgstr ""
-
-#~ msgid "send_data.png"
-#~ msgstr ""
-
-#~ msgid "|set_network_mode.png|"
-#~ msgstr ""
-
-#~ msgid "set_network_mode.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_frequency.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_frequency.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_frequency.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_frequency.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_spreading_factor.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_spreading_factor.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_spreading_factor.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_spreading_factor.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_bandwidth.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_bandwidth.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_fsk_bandwidth.png|"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_code_rate.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_code_rate.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_code_rate.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_code_rate.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_preamble_length.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_preamble_length.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_preamble_length.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_preamble_length.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_tx_power.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_tx_power.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_tx_power.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_tx_power.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_fsk_bitrate.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_fsk_bitrate.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_fsk_bitrate.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_fsk_bitrate.png"
-#~ msgstr ""
-
-#~ msgid "|send_p2p_data.png|"
-#~ msgstr ""
-
-#~ msgid "send_p2p_data.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_receive_data.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_receive_data.png"
-#~ msgstr ""
-
-#~ msgid "|get_p2p_sync_word.png|"
-#~ msgstr ""
-
-#~ msgid "get_p2p_sync_word.png"
-#~ msgstr ""
-
-#~ msgid "|set_p2p_sync_word.png|"
-#~ msgstr ""
-
-#~ msgid "set_p2p_sync_word.png"
-#~ msgstr ""
+msgstr ""
 

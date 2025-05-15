@@ -1,0 +1,465 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-03 10:58+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/lora_sx1262.rst:2 909ab2a439064ba180605c1e7223de89
+msgid "LoRa868 v1.2 Module"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:8 65ebb5aae0ac424e887e01feac13320d
+msgid ""
+"The LoRa868 v1.2 Module is part of the M5Stack stackable module series. "
+"It is a LoRa communication module that operates at a 900MHz frequency and"
+" utilizes the SX1262 chip solution."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:10 8f2ff97b70384575b91b08b22a7a8e7e
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:12 102f08a9024e4e46a8d181b54984516f
+msgid "|LoRa868Module v1.2|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref e4d85310e30b4c85b75e1e73187fdb7f
+msgid "LoRa868Module v1.2"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:16 20c3089da354498e99b522894ed02349
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:18 ../../en/module/lora_sx1262.rst:53
+#: 49a15d310a9649d58bd842d195bc51e8 860982a5fe6f42348e9c18ae22ffb114
+msgid ""
+"Before using the following examples, please check the DIP switches on the"
+" module to ensure that the pins used in the example match the DIP switch "
+"positions. For specific configurations, please refer to the product "
+"manual page. The SPI configuration has been implemented internally, so "
+"users do not need to worry about it."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:21 ../../en/module/lora_sx1262.rst:56
+#: 25f4529af5f646db8109f7bf58c5e380 318eb348bc2f47fdab1e0a2e21b0c3d7
+msgid "Sender"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:23 0d4786701a5b4af59ba71caf6b7b343c
+msgid "Open the |cores3_lora_sx1262_tx_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:25 ../../en/module/lora_sx1262.rst:58
+#: 287d2c1f6b0c41e6a6f9d65a7dbeeecd d9a6f758da7e4b0b95de744c83b666be
+msgid "This example sends data every second."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:27 ../../en/module/lora_sx1262.rst:42
+#: ../../en/module/lora_sx1262.rst:130 ../../en/module/lora_sx1262.rst:151
+#: ../../en/module/lora_sx1262.rst:167 ../../en/module/lora_sx1262.rst:189
+#: ../../en/module/lora_sx1262.rst:210 ../../en/module/lora_sx1262.rst:226
+#: ../../en/module/lora_sx1262.rst:242 ../../en/module/lora_sx1262.rst:259
+#: 3d8f430e2718482d9766194b3d7eb5b7 3e3c5dea533a4b27b749a1c9ed5a72f0
+#: 449565b6e23347e08f75fe5fc2f7a536 544e42871cf14b6b810aacc0cd30aaee
+#: 6888fc0c73944feb89cc882c2974b814 8ac9d52c20b44c0693886e6d41a0f5e3
+#: c3b1eff99ae04d3f8b3af94b98ab95ed c786196438154e8a9a9428b167a36e15
+#: df0e05658bd04c6598ba316a0edf7acd eff05456e1cc421facb3b74a875595fc
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:29 f8076474c14a46a9bc135cc5cd180722
+msgid "|cores3_lora_sx1262_tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:21 4a0dcbd56d9c429790c8ab236c3fe362
+msgid "cores3_lora_sx1262_tx_example.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:31 ../../en/module/lora_sx1262.rst:46
+#: ../../en/module/lora_sx1262.rst:66 ../../en/module/lora_sx1262.rst:81
+#: 0948dcfcabbf436298ff39bc6087c31d 1a296bc3de08431f8c0fb5113fc671c6
+#: 5e34dfad13fd4174afb49dd6b18b83bc e94bd28de62e457bad9c76c076de72f4
+msgid "Example output:"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:33 ../../en/module/lora_sx1262.rst:48
+#: ../../en/module/lora_sx1262.rst:68 ../../en/module/lora_sx1262.rst:83
+#: 5a66fd453e654282b0d4f12ea9f1a649 9cd45426bec944708adf04da58fedabd
+#: abe69fedd95d4cd9bc74a9cc8ab3989f cbb4f56ea60c45e49c437c58aaf9c6ab
+msgid "None"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:36 ../../en/module/lora_sx1262.rst:71
+#: 80f73e368e3f45fb9c71d6a8815f5e80 88a688570291428cbf28157844ab3a3f
+msgid "Receiver"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:38 1e84d3cbe71a44069236ba1903bce9e1
+msgid "Open the |cores3_lora_sx1262_rx_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:40 ../../en/module/lora_sx1262.rst:73
+#: 4ec17c9b8b774af7a90c9b53e811d78d 790d2371894040d7b3bdc73025419f4b
+msgid "This example receives and displays data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:44 4cc9de12bf00404a980a7a113a681969
+msgid "|cores3_lora_sx1262_rx_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:20 16aefbc45bab4da2a0e168c240806a3f
+msgid "cores3_lora_sx1262_rx_example.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:51 3499850b3efc4a08b7035823681f4817
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:60 ../../en/module/lora_sx1262.rst:75
+#: ../../en/module/lora_sx1262.rst:134 ../../en/module/lora_sx1262.rst:155
+#: ../../en/module/lora_sx1262.rst:171 ../../en/module/lora_sx1262.rst:193
+#: ../../en/module/lora_sx1262.rst:214 ../../en/module/lora_sx1262.rst:230
+#: ../../en/module/lora_sx1262.rst:246 ../../en/module/lora_sx1262.rst:263
+#: 17883b171c8b4cb39202ae99a60f5c72 35186c67c2734f5d9bff41ecb5f3fbed
+#: 402822ec52264abd8c9d570c1acac4be 678ebde175b4436098db80798eb955e0
+#: a584c318918d4205a361a6464c3f1b5c b7c0567c96734d74a8dca609eede5016
+#: c3c221baaa0c4926a1d2268b8de182b6 c5770a2540bb4a7388f37c8731d318f0
+#: db27a69de1774fdcb4f667c964079e47 f7880fc4ea2d4107af4b1a1309ff62d9
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:86 9356f25aba9b41e49aca0078c5a691af
+msgid "**API**"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:90 46b51d3b82b94945ae6010e626f8fbab
+msgid "class LoRaSx1262Module"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:104 66bf6def07fe452a990eead3fd99db71
+msgid "Create an LoRaSx1262Module object."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst 2ef70a40ba6a4682949f4c8d4c2f9d63
+#: 7fee3bd18a2f48949b01b40f5d7389a9 895fe81d42924c57a584e3d38470d1f9
+#: fcfc2388373a48169dcead2b4f820fa2
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:106 ef9c70ede4444bffbefb59f69d173b7d
+msgid "The Timer ID. Range: 0~3. Default is 0."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:107 ddc74b06162d4cd093a50a8bcdb199ed
+msgid "(RST) Reset pin number."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:108 4d7dd9cbc6124caf888518656f5d8578
+msgid "(NSS) Chip select pin number."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:109 3f45bc3bc6d944bb91dccbc64132e044
+msgid "(IRQ) Interrupt pin number."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:110 8258663f9b75401a8fd702dc8c33249d
+msgid "(BUSY) Busy pin number."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:111 55528275a37b485da286e32f84a6b905
+msgid "LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:112 ec4539092b5a446cb0815303b99bfde7
+msgid ""
+"Bandwidth, options include:  - ``\"7.8\"``: 7.8 KHz - ``\"10.4\"``: 10.4 "
+"KHz - ``\"15.6\"``: 15.6 KHz - ``\"20.8\"``: 20.8 KHz - ``\"31.25\"``: "
+"31.25 KHz - ``\"41.7\"``: 41.7 KHz - ``\"62.5\"``: 62.5 KHz - "
+"``\"125\"``: 125 KHz - ``\"250\"``: 250 KHz - ``\"500\"``: 500 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:112 771ca968cc0a4194931b91aca3091317
+msgid "Bandwidth, options include:"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:114 951a1befa3d143d493396ccadc6bb298
+msgid "``\"7.8\"``: 7.8 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:115 f039dcbc86f4482fa721b9ee43215168
+msgid "``\"10.4\"``: 10.4 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:116 c665eb7fa415443fbd98a045aac6cf69
+msgid "``\"15.6\"``: 15.6 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:117 183ebeaeb203414c9aa4a511980d9a06
+msgid "``\"20.8\"``: 20.8 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:118 1bb30ade802845d6b6e8e146b6012034
+msgid "``\"31.25\"``: 31.25 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:119 e29969ee2ff44f27a7640fce4be7e184
+msgid "``\"41.7\"``: 41.7 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:120 0c25db03f62841ad978b20cc6cd67028
+msgid "``\"62.5\"``: 62.5 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:121 4ca6f0f82829404195a5ba115648f3ef
+msgid "``\"125\"``: 125 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:122 55f9a62d93c84f808876637565a48a9f
+msgid "``\"250\"``: 250 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:123 17299775c067496a99b66c8c6bc7367f
+msgid "``\"500\"``: 500 KHz"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:124 04e14cd97d104f1484750337dbc5fa81
+msgid ""
+"Spreading factor, range from 7 to 12. Higher spreading factors allow "
+"reception of weaker signals but with slower data rates."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:125 f02f612f3b47436f997f5c10f62ad629
+msgid ""
+"Forward Error Correction (FEC) coding rate expressed as 4/N, with a range"
+" from 5 to 8."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:126 5f9ee3f81f514890b067941c9c6c313c
+msgid "Length of the preamble sequence in symbols, range from 0 to 255."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:127 bda069dab7b445bc96372487e8718fbd
+msgid "Sync word to mark the start of the data frame, default is 0x12."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:128 d6dda6a7dc4b42368b6f4e307903fed5
+msgid "Output power in dBm, range from -9 to 22."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:132 4d95734b4ec6495f9576a8bc5e6ab86f
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:8 3f76cef93d7a430397693b1430a5f8ec
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:144 4a9d84909c7240b99e18815870e9cb63
+msgid "Set the interrupt callback function to be executed on IRQ."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:146 8cbb4953b1794a10982e770e72d8fb32
+msgid ""
+"The callback function to be invoked when the interrupt is triggered. The "
+"callback should not take any arguments and should return nothing."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:149 14c55fcc8b104975a6b1537573226fcd
+msgid "Call `start_recv()` to begin receiving data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:153 2510464b9ce844a1acf0ce914f3db6ca
+msgid "|set_irq_callback.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:12 bfd193b2c7424c3c93229f600068c574
+msgid "set_irq_callback.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:163 f8d70fce93084bd5982bcaf3f948e76f
+msgid "Start receive data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:165 2a8eb07d42e04b5ab07942c298374146
+msgid "This method initiates the process to begin receiving data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:169 746dcce8bd2f4ad3a07f555e95899214
+msgid "|start_recv.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:9 7236859b1d644950968fa84820744fe7
+msgid "start_recv.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:179 087cceefd5b54e92847d6d8f5227cb7e
+msgid "Receive data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:181 2e173c85673243cd9ca78943d59ee87a
+msgid "Timeout in milliseconds (optional). Default is None."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:182 108618e127ce4877abdc5eeaaee6e2ba
+msgid "Length of the data to be read. Default is 0xFF."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:183 5835db152cf940b8bdafef8ebd095866
+msgid "An instance of `RxPacket` (optional) to reuse."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst 2f082ea9d73342bf9d01bc649cced612
+#: 3671e37a4fb840abb930b3a0f575e680 fab78bfa39304c9089a1c96b35b1f26a
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:184 ffd83e5ad2314ba985f711d00c95466f
+msgid "Received packet instance"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst 996640002eb249c7849340c66a0897c0
+#: a60a39f6f62c4a2fb683de6b88932585 ccd2c0660f0a4f1e973c9f67c6682ac6
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:187 75445498032645bbbc2ae5acfe34617a
+msgid ""
+"Attempt to receive a LoRa packet. Returns `None` if timeout occurs, or "
+"returns the received packet instance."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:191 66e9953d9c4b49e7aba505495b2bd74b
+msgid "|recv.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:10 cdc5a492038c49f5aa65096d457a30bb
+msgid "recv.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:201 a87eb389cb8b415a850cb36d36d97124
+msgid "Send data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:203 611f0120876d48dfbf8663ce391f83ed
+msgid "The data to be sent."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:204 7625691270a6477589142282c1746209
+msgid ""
+"The timestamp in milliseconds when to send the data (optional). Default "
+"is None."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:205 6b1a15b2822c495ebf3f8663514213b8
+msgid ""
+"Returns a timestamp (result of `time.ticks_ms()`) indicating when the "
+"data packet was sent."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:208 880f2a8cc6a046a5ab758cd530f3d1c8
+msgid "Send a data packet and return the timestamp after the packet is sent."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:212 164bd9529d2d4376bfaaf4dbccfa5ea8
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:15 f5fd52c7cdbf43c48d993591419027ee
+msgid "send.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:222 320259e97c8e4af1b0e7be18366e0d79
+msgid "Set module to standby mode."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:224 ee61bdde37cb487d9760750402645704
+msgid "Puts the LoRa module into standby mode, consuming less power."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:228 658ba4b4c3864f008296504d952c023a
+msgid "|standby.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:17 24857b73396b45a493aa5625014eba33
+msgid "standby.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:238 9fccc302890e478c9382c94c920bead2
+msgid "Put the module to sleep mode."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:240 4cdeba7c430b45d08605ddf20cea8009
+msgid "Reduces the power consumption by putting the module into deep sleep mode."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:244 4c51d457314f41c09d16ff3a4050f23a
+msgid "|sleep.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:18 5b189b5a0aab4db487d193d7b83cba24
+msgid "sleep.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:254 b71c7198ef074f2da3b81c7446e756ed
+msgid "Check IRQ trigger."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:256 67e86b8b2c76433589535f189b48635c
+msgid ""
+"Returns `True` if an interrupt service routine (ISR) has been triggered "
+"since the last send or receive started."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:261 0a2d1720820049db963a1bcfbf751462
+msgid "|irq_triggered.png|"
+msgstr ""
+
+#: ../../en/refs/module.lora_sx1262.ref:16 5447b337e0e04df8bb03639b7dd9c1f6
+msgid "irq_triggered.png"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:270 e862112210f240629c3da7254ffc12de
+msgid "class RxPacket"
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:274 3da775ff990241f881dff2f4b136f85c
+msgid "Create an RxPacket object."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:278 da50f30d65f7412f84c832ecee629e4e
+msgid "Decode the received data."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:282 fa7755b2ee9e46bd9f5b13bf9d74f9bc
+msgid "Timestamp of when the data was received."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:286 6c084d10a6914703abf0072d0a11e57f
+msgid "Received signal strength (units: dBm)."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:290 70986fea0a744403a5cf1dea17948f49
+msgid "Signal-to-noise ratio (units: dB * 4)."
+msgstr ""
+
+#: ../../en/module/lora_sx1262.rst:294 51abcfa2a78c4d7f9f310d08f6af4c7f
+msgid "CRC validity check."
+msgstr ""
+
