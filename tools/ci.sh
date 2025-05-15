@@ -14,7 +14,8 @@ fi
 # code formatting
 
 function ci_code_formatting_setup {
-    sudo apt-add-repository --yes --update ppa:pybricks/ppa
+    sudo apt-add-repository --yes ppa:pybricks/ppa
+    sudo apt update
     sudo apt-get install uncrustify
     pip3 install black
     pip3 install micropython-typesheds
