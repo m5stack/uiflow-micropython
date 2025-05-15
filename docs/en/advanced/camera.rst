@@ -20,7 +20,7 @@ capture display
         :language: python
         :linenos:
 
-UIFlow2.0 Example
+UiFlow2 Example
 ------------------------------
 
 capture display
@@ -33,7 +33,6 @@ capture display
     |cores3_example_camera_display.m5f2|
 
 
-
 Functions
 ------------------------------
 
@@ -41,19 +40,28 @@ Functions
 
     Initializes the camera sensor.
 
-    The ``pixformat`` supports:
+    The ``pixformat`` supports (note: camera.JPEG is only for AtomS3R-M12):
 
     - ``camera.RGB565``
+    - ``camera.JPEG``
 
-    The ``framesize`` supports:
+    The ``framesize`` supports (note: Resolutions higher than camera.QVGA are only supported when pixformat is set to JPEG.):
 
     - ``camera.QQVGA``: 160x120
     - ``camera.QCIF``: 176x144
     - ``camera.HQVGA``: 240x176
     - ``camera.FRAME_240X240``: 240x240
     - ``camera.QVGA``: 320x240
+    - ``camera.VGA``: 640x480
+    - ``camera.SVGA``: 800x600
+    - ``camera.XGA``: 1024x768
+    - ``camera.HD``: 1280x720
+    - ``camera.SXGA``: 1280x1024
+    - ``camera.UXGA``: 1600x1200
+    - ``camera.FHD``: 1920x1080
+    - ``camera.QXGA``: 2048x1536
 
-    UIFlow2.0
+    UiFlow2
 
         |init.png|
 
@@ -63,7 +71,7 @@ Functions
 
     Returns An ``image.Image`` object.
 
-    UIFlow2.0
+    UiFlow2
 
         |snapshot.png|
 
@@ -71,7 +79,7 @@ Functions
 
     Turns horizontal mirror mode on (True) or off (False). Defaults to on.
 
-    UIFlow2.0
+    UiFlow2
 
         |set_hmirror.png|
 
@@ -79,7 +87,7 @@ Functions
 
     Turns vertical flip mode on (True) or off (False). Defaults to off.
 
-    UIFlow2.0
+    UiFlow2
 
         |set_vflip.png|
 
@@ -87,7 +95,7 @@ Functions
 
     Returns if horizontal mirror mode is enabled.
 
-    UIFlow2.0
+    UiFlow2
 
         |get_hmirror.png|
 
@@ -95,7 +103,7 @@ Functions
 
     Returns if vertical flip mode is enabled.
 
-    UIFlow2.0
+    UiFlow2
 
         |get_vflip.png|
 
