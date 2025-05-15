@@ -76,6 +76,7 @@ Unit
     nbiot.rst
     nbiot2.rst
     ncir.rst
+    ncir2.rst
     neco.rst
     oled.rst
     op90.rst

@@ -1,0 +1,45 @@
+.. |Unit NCIR2| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/NCIR2/img-2eb52d27-8e6d-4673-94fd-055628c26a53.webp
+   :target: https://docs.m5stack.com/zh_CN/unit/NCIR2
+   :height: 200px
+   :width: 200px
+
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/init.png
+.. |get_temperature_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temperature_value.png
+.. |get_emissivity_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_emissivity_value.png
+.. |get_temperature_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temperature_threshold.png
+.. |get_temp_alarm_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temp_alarm_led.png
+.. |get_temp_buzzer_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temp_buzzer_freq.png
+.. |get_temp_alarm_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temp_alarm_interval.png
+.. |get_temp_buzzer_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_temp_buzzer_duty.png
+.. |get_buzzer_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_buzzer_freq.png
+.. |get_buzzer_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_buzzer_duty.png
+.. |get_buzzer_control.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_buzzer_control.png
+.. |get_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_rgb_led.png
+.. |get_button_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_button_status.png
+.. |get_chip_temperature.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_chip_temperature.png
+.. |get_device_spec.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/get_device_spec.png
+.. |set_emissivity_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_emissivity_value.png
+.. |set_temperature_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_temperature_threshold.png
+.. |set_temp_alarm_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_temp_alarm_led.png
+.. |set_temp_buzzer_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_temp_buzzer_freq.png
+.. |set_temp_alarm_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_temp_alarm_interval.png
+.. |set_temp_buzzer_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_temp_buzzer_duty.png
+.. |set_buzzer_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_buzzer_freq.png
+.. |set_buzzer_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_buzzer_duty.png
+.. |set_buzzer_control.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_buzzer_control.png
+.. |set_rgb_led.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_rgb_led.png
+.. |save_config_setting.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/save_config_setting.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/set_i2c_address.png
+
+.. |m5cores3_ncir2_base_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/ncir2/example.png
+
+.. |m5cores3_ncir2_base_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/ncir2/m5cores3_ncir2_base_example.m5f2"
+        target="_blank"
+    >
+        m5cores3_ncir2_base_example.m5f2
+    </a>
+ 
