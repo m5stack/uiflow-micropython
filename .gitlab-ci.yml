@@ -9,10 +9,25 @@ cache:
     - $ESP_IDF_SRC_DIR
 
 stages:
+  - code_format
   - build
   - docs
   - release
 
+
+code-format:
+  stage: code_format
+  script:
+    - source tools/ci.sh && ci_code_formatting_setup
+    - source tools/ci.sh && ci_code_formatting_run
+  tags:
+    - uiflow-firmware
+  only:
+    changes:
+      - "m5stack/**"
+      - "examples/**"
+      - "tests/**"
+      - "third-party/**"
 
 build-job:
   stage: build
