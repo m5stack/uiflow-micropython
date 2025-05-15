@@ -10,6 +10,7 @@ package(
         "audio.py",
         "bala2.py",
         "commu.py",
+        "dc_motor.py",
         "display.py",
         "dmx.py",
         "dual_kmeter.py",

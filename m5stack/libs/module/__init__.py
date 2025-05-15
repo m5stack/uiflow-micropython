@@ -11,6 +11,7 @@ _attrs = {
     "CommuModuleCAN": "commu",
     "CommuModuleI2C": "commu",
     "CommuModuleRS485": "commu",
+    "DCMotorModule": "dc_motor",
     "DisplayModule": "display",
     "DMX512Module": "dmx",
     "DualKmeterModule": "dual_kmeter",

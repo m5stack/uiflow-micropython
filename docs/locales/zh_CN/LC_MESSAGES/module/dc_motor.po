@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-15 10:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/module/dc_motor.rst:2 1ca2119f25dd4309815b43ddc27bdcdd
+msgid "DCMotor Module"
+msgstr ""
+
+#: ../../en/module/dc_motor.rst:8 e81bd49d6f9845d7b85c8dbdf082d56e
+msgid ""
+"This library is the driver for Module DCMotor, and the module "
+"communicates via I2C."
+msgstr "这个库是 Module DCMotor 的驱动，该模块使用 I2C 通信。"
+
+#: ../../en/module/dc_motor.rst:10 c82a3f68ccab4e30bfd8630db272a7a9
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/dc_motor.rst:12 6285a2bf95ee48f6b9a66fbfd0f1eade
+msgid "|Module DCMotor|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref 11f13b042be9473b8422c409a1947ec0
+msgid "Module DCMotor"
+msgstr ""
+
+#: ../../en/module/dc_motor.rst:15 af14860f380643c6b8e984583bfaf036
+msgid "UiFlow2 Example:"
+msgstr "UiFlow2 应用示例："
+
+#: ../../en/module/dc_motor.rst:18 ../../en/module/dc_motor.rst:37
+#: 52d95ba311144700a040e89950d2a949 6f39ae0d45264f148395235efd256299
+msgid "Speed Control"
+msgstr "速度控制"
+
+#: ../../en/module/dc_motor.rst:20 1532b132c10842a4b0a938c799a3e093
+msgid "Open the |cores3_dc_motor_module_speed_control.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_dc_motor_module_speed_control.m5f2| 项目。"
+
+#: ../../en/module/dc_motor.rst:22 ../../en/module/dc_motor.rst:39
+#: 1f1774b78e474c9b83209d96299b802e 59d3aaae182146ee9962a64ab055d2a0
+msgid ""
+"This example demonstrates the use of the DCMotor Module to control the "
+"speed of a DC motor and display the motor's encoder value in real-time. "
+"The program automatically adjusts the motor speed, gradually increasing "
+"or decreasing the speed until it reaches the maximum or minimum value, "
+"then reverses the direction."
+msgstr "这个案例展示使用 DCMotor Module 控制直流电机的转速，并实时显示电机的编码器值。程序自动调整电机的转速，逐步增加或减少速度，直到达到最大或最小值后反转。"
+
+#: ../../en/module/dc_motor.rst:25 2943f702c7094a69b3d0373557c9b4f3
+#: 3cb845211c074b349ad639be579d6775 44321ac4fb574d598ac50e3b83095152
+#: 4a84b721a0464e008a87b5ab8bce1795 d0d18307a0954961a3e9f9ed1594861b
+#: e09c9a10f8104eec8d573684e9a456d1 module.dc_motor.DCMotorModule:3
+#: module.dc_motor.DCMotorModule.clear_encoder:3
+#: module.dc_motor.DCMotorModule.get_encoder:7
+#: module.dc_motor.DCMotorModule.set_motor_speed:6
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:6 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/dc_motor.rst:27 e1e5ad2450ff447981838e43b63d5bff
+msgid "|cores3_dc_motor_module_speed_control.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:15 55b4a3e2badd45189fd661f95c09ef2b
+msgid "cores3_dc_motor_module_speed_control.png"
+msgstr ""
+
+#: ../../en/module/dc_motor.rst:29 ../../en/module/dc_motor.rst:48
+#: 13de64d11d5d4cb9a650fc1fb1edf994 c7d65dd2c29c4452b06b0e86d2b6ce7b
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/dc_motor.rst:31 ../../en/module/dc_motor.rst:50
+#: 26f33ac87dda4450a492d4fddfb13c4b 3e371d7e22564de1a5e55fd98e871529
+msgid "None"
+msgstr "无"
+
+#: ../../en/module/dc_motor.rst:34 918155ed1f3c4a528781be32fcb91861
+msgid "MicroPython Example:"
+msgstr ""
+
+#: ../../en/module/dc_motor.rst:42 13686e7397434fe7a70dc77687b2b239
+#: 2b3c4bfb8d8f4fda8d0605b850361801 d6bafe43a6a640ea8016b1a9b5de4ef7
+#: dc6f9130d75d4fe59546a3a607742c6b e52fc9d178dc42058c52ec50cff59c51
+#: f3a54b53a84e45aaa66bad04b1d39a38 module.dc_motor.DCMotorModule:7
+#: module.dc_motor.DCMotorModule.clear_encoder:7
+#: module.dc_motor.DCMotorModule.get_encoder:11
+#: module.dc_motor.DCMotorModule.set_motor_speed:10
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 应用示例："
+
+#: ../../en/module/dc_motor.rst:53 f42b9c6ab3cc439c839ee292370df1f6
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/module/dc_motor.rst:56 5f25239d589a45aaad5349a823368b5e
+msgid "DCMotorModule"
+msgstr ""
+
+#: 21322b7d0e0543feac9551f79cf6d421 module.dc_motor.DCMotorModule:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 4214c0ee59cd41eca541591d6e4e1b56 module.dc_motor.DCMotorModule:1 of
+msgid "Create an DCMotorModule object."
+msgstr "创建一个 DCMotorModule 对象。"
+
+#: 52699e5ad1954e23bc5ea011eb713ef1 module.dc_motor.DCMotorModule:5 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:7 9add9e284bd94f58957c905f11d39147
+msgid "init.png"
+msgstr ""
+
+#: 264b5f9257544b4688a8aa54c952ef00
+#: module.dc_motor.DCMotorModule.clear_encoder:1 of
+msgid "Clear encoder value."
+msgstr "清空编码器计数值"
+
+#: 11e69f0922c642d7a02a47317444d696
+#: module.dc_motor.DCMotorModule.clear_encoder:5 of
+msgid "|clear_encoder.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:11 a39c5320a1c348698a59bf8103198645
+msgid "clear_encoder.png"
+msgstr ""
+
+#: 2c5543b5e3b84a2aa14b28c960e67035 73d20bae3fd74f60b0cf244cd17aef67
+#: 902bbffc94da43628e32346fe706c8ed ea1e79620ea54a87ae3160aa5989b940
+#: module.dc_motor.DCMotorModule.clear_encoder
+#: module.dc_motor.DCMotorModule.get_encoder
+#: module.dc_motor.DCMotorModule.set_motor_speed
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent of
+msgid "Parameters"
+msgstr ""
+
+#: 26fbec0de46f481e8943f387ae9f7308 84941e92e3c34bd99f4a8d9cd3b8cf67
+#: e83b8f75f040487a8c07e7a1a81d540f ff0f2a5c38914b1595dccc82f932a237
+#: module.dc_motor.DCMotorModule.clear_encoder
+#: module.dc_motor.DCMotorModule.get_encoder
+#: module.dc_motor.DCMotorModule.set_motor_speed
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent of
+msgid "Return type"
+msgstr ""
+
+#: 19e93569b76d47dab3187910c3ba2106 module.dc_motor.DCMotorModule.get_encoder:1
+#: of
+msgid "Get encoder count."
+msgstr "获取编码器计数值"
+
+#: 2b2b876814574b99b6d9770147611928 d91ddeb0ab984858b6440ca755e4e589
+#: module.dc_motor.DCMotorModule.get_encoder:3
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:3 of
+msgid "port num, range: 1~4."
+msgstr "端口号，范围：1~4。"
+
+#: a0f6b2913bf74eee9dd80ee11ff253e2 module.dc_motor.DCMotorModule.get_encoder
+#: of
+msgid "Returns"
+msgstr ""
+
+#: dda5a1d5d1cd43808d5fd1dfbfc49a19 module.dc_motor.DCMotorModule.get_encoder:4
+#: of
+msgid "encoder count."
+msgstr "编码器计数值。"
+
+#: b598b73d7f524abcb9940231083e75c1 module.dc_motor.DCMotorModule.get_encoder:9
+#: of
+msgid "|get_encoder.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:10 65ea074a7ddc43bab82cbf72bf6c4fd9
+msgid "get_encoder.png"
+msgstr ""
+
+#: 37be96c52c7241cd9675f578cd928d39
+#: module.dc_motor.DCMotorModule.set_motor_speed:1 of
+msgid "Set speed of motor."
+msgstr "设置电机转速。"
+
+#: e503d2d69518478898c80f76562dc54a
+#: module.dc_motor.DCMotorModule.set_motor_speed:3 of
+msgid "port num, range: 1~4"
+msgstr "端口号：范围：1~4。"
+
+#: 6a9f117824d24ad9820c23bfb0c828a5
+#: module.dc_motor.DCMotorModule.set_motor_speed:4 of
+msgid "motor speed, range: -255~255"
+msgstr "电机转速，范围：-255~255。"
+
+#: 5d9370aa842b4a428a4cbf3f96413502
+#: module.dc_motor.DCMotorModule.set_motor_speed:8 of
+msgid "|set_motor_speed.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:8 88f0cf7a882d4254b6e10acc5b741947
+msgid "set_motor_speed.png"
+msgstr ""
+
+#: b824e51187904e9592652cfc4847bd78
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:1 of
+msgid "Set motor speed as a percentage."
+msgstr "设置电机速度百分比。"
+
+#: beac87dce5cc45fdadac949c53e7ada4
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:4 of
+msgid "motor speed percent, range: -100.0% ~ +100.0%."
+msgstr "电机速度百分比，范围：-100.0% ~ +100.0%。
+
+#: 820767ad36e34292a92880e081db935f
+#: module.dc_motor.DCMotorModule.set_motor_speed_percent:8 of
+msgid "|set_motor_speed_percent.png|"
+msgstr ""
+
+#: ../../en/refs/module.dc_motor.ref:9 a2284276fc494c2b86cf93389a27e4be
+msgid "set_motor_speed_percent.png"
+msgstr ""
+
+#~ msgid "ECG Module"
+#~ msgstr ""
+
+#~ msgid "|set_speed.png|"
+#~ msgstr ""
+
+#~ msgid "set_speed.png"
+#~ msgstr ""
+
+#~ msgid "|set_speed_percent.png|"
+#~ msgstr ""
+
+#~ msgid "set_speed_percent.png"
+#~ msgstr ""
+
+#~ msgid "Stop all motors by setting speed to 0."
+#~ msgstr ""
+
+#~ msgid "|stop_all.png|"
+#~ msgstr ""
+
+#~ msgid "stop_all.png"
+#~ msgstr ""
+
+#~ msgid "The example demonstrates"
+#~ msgstr ""
+
