@@ -41,10 +41,9 @@ typedef struct light_bulb_device_params_s {
 
 mp_obj_t g_bind_cb;
 
-static void bdb_start_top_level_commissioning_cb(uint8_t mode_mask)
-{
+static void bdb_start_top_level_commissioning_cb(uint8_t mode_mask) {
     ESP_RETURN_ON_FALSE(esp_zb_bdb_start_top_level_commissioning(mode_mask) == ESP_OK, , TAG,
-                        "Failed to start Zigbee bdb commissioning");
+        "Failed to start Zigbee bdb commissioning");
 }
 
 // object: devinfo
@@ -54,14 +53,12 @@ typedef struct _py_devinfo_obj {
     mp_obj_t endpoint;
 } py_devinfo_obj_t;
 
-mp_obj_t mp_devinfo_addr(mp_obj_t self_in)
-{
+mp_obj_t mp_devinfo_addr(mp_obj_t self_in) {
     return ((py_devinfo_obj_t *)self_in)->addr;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(mp_devinfo_addr_obj, mp_devinfo_addr);
 
-mp_obj_t mp_devinfo_endpoint(mp_obj_t self_in)
-{
+mp_obj_t mp_devinfo_endpoint(mp_obj_t self_in) {
     return ((py_devinfo_obj_t *)self_in)->endpoint;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(mp_devinfo_endpoint_obj, mp_devinfo_endpoint);
@@ -75,53 +72,49 @@ static MP_DEFINE_CONST_DICT(mp_devinfo_locals_dict, mp_devinfo_locals_dict_table
 static mp_obj_t py_devinfo_make_new(mp_obj_t addr, mp_obj_t endpoint);
 
 MP_DEFINE_CONST_OBJ_TYPE(py_devinfo_type, MP_QSTR_devinfo, MP_TYPE_FLAG_NONE, make_new, py_devinfo_make_new,
-                         locals_dict, &mp_devinfo_locals_dict);
+    locals_dict, &mp_devinfo_locals_dict);
 
-static mp_obj_t py_devinfo_make_new(mp_obj_t addr, mp_obj_t endpoint)
-{
+static mp_obj_t py_devinfo_make_new(mp_obj_t addr, mp_obj_t endpoint) {
     py_devinfo_obj_t *self = m_new_obj(py_devinfo_obj_t);
-    self->base.type        = &py_devinfo_type;
-    self->addr             = addr;
-    self->endpoint         = endpoint;
+    self->base.type = &py_devinfo_type;
+    self->addr = addr;
+    self->endpoint = endpoint;
     return MP_OBJ_FROM_PTR(self);
 }
 
-static void bind_cb(esp_zb_zdp_status_t zdo_status, void *user_ctx)
-{
+static void bind_cb(esp_zb_zdp_status_t zdo_status, void *user_ctx) {
     if (zdo_status == ESP_ZB_ZDP_STATUS_SUCCESS) {
         if (user_ctx) {
             light_bulb_device_params_t *light = (light_bulb_device_params_t *)user_ctx;
-            uint16_t addr                     = light->short_addr;
+            uint16_t addr = light->short_addr;
             free(light);
             mp_sched_schedule(g_bind_cb, mp_obj_new_int(addr));
         }
     }
 }
 
-static void user_find_cb(esp_zb_zdp_status_t zdo_status, uint16_t addr, uint8_t endpoint, void *user_ctx)
-{
+static void user_find_cb(esp_zb_zdp_status_t zdo_status, uint16_t addr, uint8_t endpoint, void *user_ctx) {
     if (zdo_status == ESP_ZB_ZDP_STATUS_SUCCESS) {
         esp_zb_zdo_bind_req_param_t bind_req;
         light_bulb_device_params_t *light = (light_bulb_device_params_t *)malloc(sizeof(light_bulb_device_params_t));
-        light->endpoint                   = endpoint;
-        light->short_addr                 = addr;
+        light->endpoint = endpoint;
+        light->short_addr = addr;
         esp_zb_ieee_address_by_short(light->short_addr, light->ieee_addr);
         esp_zb_get_long_address(bind_req.src_address);
-        bind_req.src_endp      = HA_ONOFF_SWITCH_ENDPOINT;
-        bind_req.cluster_id    = ESP_ZB_ZCL_CLUSTER_ID_ON_OFF;
+        bind_req.src_endp = HA_ONOFF_SWITCH_ENDPOINT;
+        bind_req.cluster_id = ESP_ZB_ZCL_CLUSTER_ID_ON_OFF;
         bind_req.dst_addr_mode = ESP_ZB_ZDO_BIND_DST_ADDR_MODE_64_BIT_EXTENDED;
         memcpy(bind_req.dst_address_u.addr_long, light->ieee_addr, sizeof(esp_zb_ieee_addr_t));
-        bind_req.dst_endp     = endpoint;
+        bind_req.dst_endp = endpoint;
         bind_req.req_dst_addr = esp_zb_get_short_address(); /* TODO: Send bind request to self */
         esp_zb_zdo_device_bind_req(&bind_req, bind_cb, (void *)light);
     }
 }
 
-void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
-{
-    uint32_t *p_sg_p                                          = signal_struct->p_app_signal;
-    esp_err_t err_status                                      = signal_struct->esp_err_status;
-    esp_zb_app_signal_type_t sig_type                         = *p_sg_p;
+void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct) {
+    uint32_t *p_sg_p = signal_struct->p_app_signal;
+    esp_err_t err_status = signal_struct->esp_err_status;
+    esp_zb_app_signal_type_t sig_type = *p_sg_p;
     esp_zb_zdo_signal_device_annce_params_t *dev_annce_params = NULL;
     switch (sig_type) {
         case ESP_ZB_ZDO_SIGNAL_SKIP_STARTUP:
@@ -136,9 +129,9 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
                 esp_zb_bdb_start_top_level_commissioning(ESP_ZB_BDB_MODE_NETWORK_FORMATION);
             } else {
                 ESP_LOGW(TAG, "%s failed with status: %s, retrying", esp_zb_zdo_signal_to_string(sig_type),
-                         esp_err_to_name(err_status));
+                    esp_err_to_name(err_status));
                 esp_zb_scheduler_alarm((esp_zb_callback_t)bdb_start_top_level_commissioning_cb,
-                                       ESP_ZB_BDB_MODE_INITIALIZATION, 1000);
+                    ESP_ZB_BDB_MODE_INITIALIZATION, 1000);
             }
             break;
         case ESP_ZB_BDB_SIGNAL_FORMATION:  // 设备尝试创建 Zigbee 网络，并完成网络形成的过程后，协议栈发出的信号。
@@ -146,16 +139,16 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
                 esp_zb_ieee_addr_t extended_pan_id;
                 esp_zb_get_extended_pan_id(extended_pan_id);
                 ESP_LOGI(TAG,
-                         "Formed network successfully (Extended PAN ID: %02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x, PAN "
-                         "ID: 0x%04hx, Channel:%d, Short Address: 0x%04hx)",
-                         extended_pan_id[7], extended_pan_id[6], extended_pan_id[5], extended_pan_id[4],
-                         extended_pan_id[3], extended_pan_id[2], extended_pan_id[1], extended_pan_id[0],
-                         esp_zb_get_pan_id(), esp_zb_get_current_channel(), esp_zb_get_short_address());
+                    "Formed network successfully (Extended PAN ID: %02x:%02x:%02x:%02x:%02x:%02x:%02x:%02x, PAN "
+                    "ID: 0x%04hx, Channel:%d, Short Address: 0x%04hx)",
+                    extended_pan_id[7], extended_pan_id[6], extended_pan_id[5], extended_pan_id[4],
+                    extended_pan_id[3], extended_pan_id[2], extended_pan_id[1], extended_pan_id[0],
+                    esp_zb_get_pan_id(), esp_zb_get_current_channel(), esp_zb_get_short_address());
                 esp_zb_bdb_start_top_level_commissioning(ESP_ZB_BDB_MODE_NETWORK_STEERING);
             } else {
                 ESP_LOGI(TAG, "Restart network formation (status: %s)", esp_err_to_name(err_status));
                 esp_zb_scheduler_alarm((esp_zb_callback_t)bdb_start_top_level_commissioning_cb,
-                                       ESP_ZB_BDB_MODE_NETWORK_FORMATION, 1000);
+                    ESP_ZB_BDB_MODE_NETWORK_FORMATION, 1000);
             }
             break;
         case ESP_ZB_BDB_SIGNAL_STEERING:
@@ -167,7 +160,7 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
             dev_annce_params = (esp_zb_zdo_signal_device_annce_params_t *)esp_zb_app_signal_get_params(p_sg_p);
             ESP_LOGI(TAG, "New device commissioned or rejoined (short: 0x%04hx)", dev_annce_params->device_short_addr);
             esp_zb_zdo_match_desc_req_param_t cmd_req;
-            cmd_req.dst_nwk_addr     = dev_annce_params->device_short_addr;
+            cmd_req.dst_nwk_addr = dev_annce_params->device_short_addr;
             cmd_req.addr_of_interest = dev_annce_params->device_short_addr;
             esp_zb_zdo_find_on_off_light(&cmd_req, user_find_cb, NULL);
             break;
@@ -175,7 +168,7 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
             if (err_status == ESP_OK) {
                 if (*(uint8_t *)esp_zb_app_signal_get_params(p_sg_p)) {
                     ESP_LOGI(TAG, "Network(0x%04hx) is open for %d seconds", esp_zb_get_pan_id(),
-                             *(uint8_t *)esp_zb_app_signal_get_params(p_sg_p));
+                        *(uint8_t *)esp_zb_app_signal_get_params(p_sg_p));
                 } else {
                     ESP_LOGW(TAG, "Network(0x%04hx) closed, devices joining not allowed.", esp_zb_get_pan_id());
                 }
@@ -183,24 +176,23 @@ void esp_zb_app_signal_handler(esp_zb_app_signal_t *signal_struct)
             break;
         default:
             ESP_LOGI(TAG, "ZDO signal: %s (0x%x), status: %s", esp_zb_zdo_signal_to_string(sig_type), sig_type,
-                     esp_err_to_name(err_status));
+                esp_err_to_name(err_status));
             break;
     }
 }
 
-static void esp_zb_task(void *pvParameters)
-{
+static void esp_zb_task(void *pvParameters) {
     esp_zb_cfg_t zb_nwk_cfg = {
-        .esp_zb_role         = ESP_ZB_DEVICE_TYPE_COORDINATOR,
+        .esp_zb_role = ESP_ZB_DEVICE_TYPE_COORDINATOR,
         .install_code_policy = INSTALLCODE_POLICY_ENABLE,
         .nwk_cfg.zczr_cfg =
-            {
-                .max_children = MAX_CHILDREN,
-            },
+        {
+            .max_children = MAX_CHILDREN,
+        },
     };
     esp_zb_init(&zb_nwk_cfg);
 
-    esp_zb_on_off_switch_cfg_t switch_cfg     = ESP_ZB_DEFAULT_ON_OFF_SWITCH_CONFIG();
+    esp_zb_on_off_switch_cfg_t switch_cfg = ESP_ZB_DEFAULT_ON_OFF_SWITCH_CONFIG();
     esp_zb_ep_list_t *esp_zb_on_off_switch_ep = esp_zb_on_off_switch_ep_create(HA_ONOFF_SWITCH_ENDPOINT, &switch_cfg);
 
     esp_zb_device_register(esp_zb_on_off_switch_ep);
@@ -221,8 +213,7 @@ typedef struct _switch_endpoint_obj_t {
 extern const mp_obj_type_t mp_switch_endpoint_type;
 static bool is_initialized;
 
-static mp_obj_t switch_endpoint_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args)
-{
+static mp_obj_t switch_endpoint_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args) {
     switch_endpoint_obj_t *self = mp_obj_malloc_with_finaliser(switch_endpoint_obj_t, &mp_switch_endpoint_type);
 
     static const mp_arg_t allowed_args[] = {
@@ -249,13 +240,13 @@ static mp_obj_t switch_endpoint_make_new(const mp_obj_type_t *type, size_t n_arg
     if (!is_initialized) {
         esp_zb_platform_config_t config = {
             .radio_config =
-                {
-                    .radio_mode = RADIO_MODE_UART_NCP,
-                },
+            {
+                .radio_mode = RADIO_MODE_UART_NCP,
+            },
             .host_config =
-                {
-                    .host_mode = HOST_CONNECTION_MODE_UART,
-                },
+            {
+                .host_mode = HOST_CONNECTION_MODE_UART,
+            },
         };
         ESP_ERROR_CHECK(esp_zb_platform_config(&config));
         xTaskCreate(esp_zb_task, "zigbee_main", 4096, NULL, 5, NULL);
@@ -273,8 +264,7 @@ static mp_obj_t switch_endpoint_make_new(const mp_obj_type_t *type, size_t n_arg
     return MP_OBJ_FROM_PTR(self);
 }
 
-static mp_obj_t switch_endpoint_set_bind_cb(mp_obj_t self_in, mp_obj_t cb)
-{
+static mp_obj_t switch_endpoint_set_bind_cb(mp_obj_t self_in, mp_obj_t cb) {
     if (cb == mp_const_none || mp_obj_is_callable(cb)) {
         g_bind_cb = cb;
     } else {
@@ -284,17 +274,16 @@ static mp_obj_t switch_endpoint_set_bind_cb(mp_obj_t self_in, mp_obj_t cb)
 }
 static MP_DEFINE_CONST_FUN_OBJ_2(switch_endpoint_set_bind_cb_obj, switch_endpoint_set_bind_cb);
 
-static mp_obj_t switch_endpoint_on(size_t n_args, const mp_obj_t *args)
-{
+static mp_obj_t switch_endpoint_on(size_t n_args, const mp_obj_t *args) {
     switch_endpoint_obj_t *self = MP_OBJ_TO_PTR(args[0]);
     esp_zb_zcl_on_off_cmd_t cmd_req;
 
     cmd_req.zcl_basic_cmd.src_endpoint = HA_ONOFF_SWITCH_ENDPOINT;
-    cmd_req.on_off_cmd_id              = ESP_ZB_ZCL_CMD_ON_OFF_ON_ID;
+    cmd_req.on_off_cmd_id = ESP_ZB_ZCL_CMD_ON_OFF_ON_ID;
     if (n_args > 1) {
-        cmd_req.address_mode                        = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
+        cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
         cmd_req.zcl_basic_cmd.dst_addr_u.addr_short = mp_obj_get_int(args[1]);
-        cmd_req.zcl_basic_cmd.dst_endpoint          = 10;
+        cmd_req.zcl_basic_cmd.dst_endpoint = 10;
     } else {
         cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_DST_ADDR_ENDP_NOT_PRESENT;
     }
@@ -305,17 +294,16 @@ static mp_obj_t switch_endpoint_on(size_t n_args, const mp_obj_t *args)
 }
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(switch_endpoint_on_obj, 1, 2, switch_endpoint_on);
 
-static mp_obj_t switch_endpoint_off(size_t n_args, const mp_obj_t *args)
-{
+static mp_obj_t switch_endpoint_off(size_t n_args, const mp_obj_t *args) {
     switch_endpoint_obj_t *self = MP_OBJ_TO_PTR(args[0]);
     esp_zb_zcl_on_off_cmd_t cmd_req;
 
     cmd_req.zcl_basic_cmd.src_endpoint = HA_ONOFF_SWITCH_ENDPOINT;
-    cmd_req.on_off_cmd_id              = ESP_ZB_ZCL_CMD_ON_OFF_OFF_ID;
+    cmd_req.on_off_cmd_id = ESP_ZB_ZCL_CMD_ON_OFF_OFF_ID;
     if (n_args > 1) {
-        cmd_req.address_mode                        = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
+        cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
         cmd_req.zcl_basic_cmd.dst_addr_u.addr_short = mp_obj_get_int(args[1]);
-        cmd_req.zcl_basic_cmd.dst_endpoint          = 10;
+        cmd_req.zcl_basic_cmd.dst_endpoint = 10;
     } else {
         cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_DST_ADDR_ENDP_NOT_PRESENT;
     }
@@ -326,17 +314,16 @@ static mp_obj_t switch_endpoint_off(size_t n_args, const mp_obj_t *args)
 }
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(switch_endpoint_off_obj, 1, 2, switch_endpoint_off);
 
-static mp_obj_t switch_endpoint_toggle(size_t n_args, const mp_obj_t *args)
-{
+static mp_obj_t switch_endpoint_toggle(size_t n_args, const mp_obj_t *args) {
     switch_endpoint_obj_t *self = MP_OBJ_TO_PTR(args[0]);
     esp_zb_zcl_on_off_cmd_t cmd_req;
 
     cmd_req.zcl_basic_cmd.src_endpoint = HA_ONOFF_SWITCH_ENDPOINT;
-    cmd_req.on_off_cmd_id              = ESP_ZB_ZCL_CMD_ON_OFF_TOGGLE_ID;
+    cmd_req.on_off_cmd_id = ESP_ZB_ZCL_CMD_ON_OFF_TOGGLE_ID;
     if (n_args > 1) {
-        cmd_req.address_mode                        = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
+        cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_16_ENDP_PRESENT;
         cmd_req.zcl_basic_cmd.dst_addr_u.addr_short = mp_obj_get_int(args[1]);
-        cmd_req.zcl_basic_cmd.dst_endpoint          = 10;
+        cmd_req.zcl_basic_cmd.dst_endpoint = 10;
     } else {
         cmd_req.address_mode = ESP_ZB_APS_ADDR_MODE_DST_ADDR_ENDP_NOT_PRESENT;
     }
@@ -357,7 +344,7 @@ static const mp_rom_map_elem_t switch_endpoint_locals_dict_table[] = {
 MP_DEFINE_CONST_DICT(switch_endpoint_locals_dict, switch_endpoint_locals_dict_table);
 
 MP_DEFINE_CONST_OBJ_TYPE(mp_switch_endpoint_type, MP_QSTR_SwitchEndpoint, MP_TYPE_FLAG_NONE, make_new,
-                         switch_endpoint_make_new, locals_dict, &switch_endpoint_locals_dict);
+    switch_endpoint_make_new, locals_dict, &switch_endpoint_locals_dict);
 
 // =================================================================================================
 // module: esp_zigbee_host
@@ -368,7 +355,7 @@ static const mp_rom_map_elem_t esp_zigbee_host_globals_table[] = {
 static MP_DEFINE_CONST_DICT(esp_zigbee_host_globals, esp_zigbee_host_globals_table);
 
 const mp_obj_module_t module_esp_zigbee_host = {
-    .base    = {&mp_type_module},
+    .base = {&mp_type_module},
     .globals = (mp_obj_dict_t *)&esp_zigbee_host_globals,
 };
 

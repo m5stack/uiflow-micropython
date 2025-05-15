@@ -47,6 +47,9 @@ PATHS = [
 
 EXCLUSIONS = [
     # micropython upstream files that we don't want to format
+    "esp-adf/*",
+    "esp-idf/*",
+    "m5stack/cmodules/lv_binding_micropython/*",
     "micropython/*",
     "tools/*",
 ]

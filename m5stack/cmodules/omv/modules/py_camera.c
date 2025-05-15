@@ -50,30 +50,30 @@
 #define CORES3_CAMERA_PCLK_PIN       45
 
 static camera_config_t camera_config = {
-    .pin_pwdn      = CORES3_CAMERA_POWER_DOWN_PIN,
-    .pin_reset     = CORES3_CAMERA_RESET_PIN,
-    .pin_xclk      = CORES3_CAMERA_XCLK_PIN,
-    .pin_sscb_sda  = -1,  // CORES3_CAMERA_SDA_PIN, // 共用 I2C1 在其他地方初始化
-    .pin_sscb_scl  = -1,  // CORES3_CAMERA_SCL_PIN,
-    .pin_d7        = CORES3_CAMERA_D7_PIN,
-    .pin_d6        = CORES3_CAMERA_D6_PIN,
-    .pin_d5        = CORES3_CAMERA_D5_PIN,
-    .pin_d4        = CORES3_CAMERA_D4_PIN,
-    .pin_d3        = CORES3_CAMERA_D3_PIN,
-    .pin_d2        = CORES3_CAMERA_D2_PIN,
-    .pin_d1        = CORES3_CAMERA_D1_PIN,
-    .pin_d0        = CORES3_CAMERA_D0_PIN,
-    .pin_vsync     = CORES3_CAMERA_VSYNC_PIN,
-    .pin_href      = CORES3_CAMERA_HREF_PIN,
-    .pin_pclk      = CORES3_CAMERA_PCLK_PIN,
-    .xclk_freq_hz  = 20000000,
-    .ledc_timer    = LEDC_TIMER_0,
-    .ledc_channel  = LEDC_CHANNEL_0,
-    .pixel_format  = PIXFORMAT_RGB565,
-    .frame_size    = FRAMESIZE_QVGA,
-    .fb_count      = 2,
-    .fb_location   = CAMERA_FB_IN_PSRAM,
-    .grab_mode     = CAMERA_GRAB_LATEST,
+    .pin_pwdn = CORES3_CAMERA_POWER_DOWN_PIN,
+    .pin_reset = CORES3_CAMERA_RESET_PIN,
+    .pin_xclk = CORES3_CAMERA_XCLK_PIN,
+    .pin_sscb_sda = -1,   // CORES3_CAMERA_SDA_PIN, // 共用 I2C1 在其他地方初始化
+    .pin_sscb_scl = -1,   // CORES3_CAMERA_SCL_PIN,
+    .pin_d7 = CORES3_CAMERA_D7_PIN,
+    .pin_d6 = CORES3_CAMERA_D6_PIN,
+    .pin_d5 = CORES3_CAMERA_D5_PIN,
+    .pin_d4 = CORES3_CAMERA_D4_PIN,
+    .pin_d3 = CORES3_CAMERA_D3_PIN,
+    .pin_d2 = CORES3_CAMERA_D2_PIN,
+    .pin_d1 = CORES3_CAMERA_D1_PIN,
+    .pin_d0 = CORES3_CAMERA_D0_PIN,
+    .pin_vsync = CORES3_CAMERA_VSYNC_PIN,
+    .pin_href = CORES3_CAMERA_HREF_PIN,
+    .pin_pclk = CORES3_CAMERA_PCLK_PIN,
+    .xclk_freq_hz = 20000000,
+    .ledc_timer = LEDC_TIMER_0,
+    .ledc_channel = LEDC_CHANNEL_0,
+    .pixel_format = PIXFORMAT_RGB565,
+    .frame_size = FRAMESIZE_QVGA,
+    .fb_count = 2,
+    .fb_location = CAMERA_FB_IN_PSRAM,
+    .grab_mode = CAMERA_GRAB_LATEST,
     .sccb_i2c_port = 1,  // use I2C1
 };
 
@@ -98,31 +98,31 @@ static camera_config_t camera_config = {
 #define ATOMS3R_CAM_PIN_EN    18  // 电源控制
 
 camera_config_t camera_config = {
-    .pin_pwdn     = ATOMS3R_CAM_PIN_PWDN,
-    .pin_reset    = ATOMS3R_CAM_PIN_RESET,
+    .pin_pwdn = ATOMS3R_CAM_PIN_PWDN,
+    .pin_reset = ATOMS3R_CAM_PIN_RESET,
     .pin_sccb_scl = ATOMS3R_CAM_PIN_SIOC,
     .pin_sccb_sda = ATOMS3R_CAM_PIN_SIOD,
-    .pin_d0       = ATOMS3R_CAM_PIN_D0,
-    .pin_d1       = ATOMS3R_CAM_PIN_D1,
-    .pin_d2       = ATOMS3R_CAM_PIN_D2,
-    .pin_d3       = ATOMS3R_CAM_PIN_D3,
-    .pin_d4       = ATOMS3R_CAM_PIN_D4,
-    .pin_d5       = ATOMS3R_CAM_PIN_D5,
-    .pin_d6       = ATOMS3R_CAM_PIN_D6,
-    .pin_d7       = ATOMS3R_CAM_PIN_D7,
-    .pin_vsync    = ATOMS3R_CAM_PIN_VSYNC,
-    .pin_href     = ATOMS3R_CAM_PIN_HREF,
-    .pin_pclk     = ATOMS3R_CAM_PIN_PCLK,
-    .pin_xclk     = ATOMS3R_CAM_PIN_XCLK,
+    .pin_d0 = ATOMS3R_CAM_PIN_D0,
+    .pin_d1 = ATOMS3R_CAM_PIN_D1,
+    .pin_d2 = ATOMS3R_CAM_PIN_D2,
+    .pin_d3 = ATOMS3R_CAM_PIN_D3,
+    .pin_d4 = ATOMS3R_CAM_PIN_D4,
+    .pin_d5 = ATOMS3R_CAM_PIN_D5,
+    .pin_d6 = ATOMS3R_CAM_PIN_D6,
+    .pin_d7 = ATOMS3R_CAM_PIN_D7,
+    .pin_vsync = ATOMS3R_CAM_PIN_VSYNC,
+    .pin_href = ATOMS3R_CAM_PIN_HREF,
+    .pin_pclk = ATOMS3R_CAM_PIN_PCLK,
+    .pin_xclk = ATOMS3R_CAM_PIN_XCLK,
     .xclk_freq_hz = 20000000,
-    .ledc_timer   = LEDC_TIMER_0,
+    .ledc_timer = LEDC_TIMER_0,
     .ledc_channel = LEDC_CHANNEL_0,
     .pixel_format = PIXFORMAT_RGB565,
-    .frame_size   = FRAMESIZE_QVGA,
+    .frame_size = FRAMESIZE_QVGA,
     .jpeg_quality = 6,
-    .fb_count     = 2,
-    .fb_location  = CAMERA_FB_IN_PSRAM,
-    .grab_mode    = CAMERA_GRAB_WHEN_EMPTY,
+    .fb_count = 2,
+    .fb_location = CAMERA_FB_IN_PSRAM,
+    .grab_mode = CAMERA_GRAB_WHEN_EMPTY,
 };
 
 #endif
@@ -135,8 +135,7 @@ cam_config_t g_cam_config;
 
 static enum { E_CAMERA_INIT, E_CAMERA_DEINIT } status = E_CAMERA_DEINIT;
 
-static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
-{
+static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum { ARG_pixformat, ARG_framesize, ARG_fb_count, ARG_fb_location };
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
@@ -193,11 +192,10 @@ static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     return true;
 }
 
-static mp_obj_t camera_init(size_t n_pos_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
-{
-    bool init            = camera_init_helper(n_pos_args, pos_args, kw_args);
+static mp_obj_t camera_init(size_t n_pos_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    bool init = camera_init_helper(n_pos_args, pos_args, kw_args);
     g_cam_config.hmirror = true;
-    g_cam_config.vflip   = false;
+    g_cam_config.vflip = false;
     if (init) {
         return mp_const_true;
     } else {
@@ -207,8 +205,7 @@ static mp_obj_t camera_init(size_t n_pos_args, const mp_obj_t *pos_args, mp_map_
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(camera_init_obj, 0, camera_init);
 
-static mp_obj_t camera_deinit()
-{
+static mp_obj_t camera_deinit() {
     esp_err_t err = esp_camera_deinit();
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Camera deinit Failed");
@@ -219,10 +216,9 @@ static mp_obj_t camera_deinit()
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(camera_deinit_obj, camera_deinit);
 
-static mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args)
-{
+static mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_time), MP_MAP_LOOKUP);
-    mp_int_t time         = 300;  // OV Recommended.
+    mp_int_t time = 300;          // OV Recommended.
 
     if (kw_arg != NULL) {
         time = mp_obj_get_int(kw_arg->value);
@@ -256,8 +252,7 @@ static mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(camera_skip_frames_obj, 0, camera_skip_frames);
 
-static mp_obj_t camera_capture()
-{
+static mp_obj_t camera_capture() {
     // acquire a frame
     camera_fb_t *fb = esp_camera_fb_get();
     if (!fb) {
@@ -271,8 +266,7 @@ static mp_obj_t camera_capture()
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(camera_capture_obj, camera_capture);
 
-static mp_obj_t camera_capture_to_jpg(mp_obj_t quality_in)
-{
+static mp_obj_t camera_capture_to_jpg(mp_obj_t quality_in) {
     // acquire a frame
     camera_fb_t *fb = esp_camera_fb_get();
     if (!fb) {
@@ -285,8 +279,8 @@ static mp_obj_t camera_capture_to_jpg(mp_obj_t quality_in)
         image = mp_obj_new_bytes(fb->buf, fb->len);
     } else {
         uint8_t quality = mp_obj_get_int(quality_in);
-        uint8_t *out    = NULL;
-        size_t out_len  = 0;
+        uint8_t *out = NULL;
+        size_t out_len = 0;
         if (frame2jpg(fb, quality, &out, &out_len)) {
             image = mp_obj_new_bytes(out, out_len);
             free(out);
@@ -298,8 +292,7 @@ static mp_obj_t camera_capture_to_jpg(mp_obj_t quality_in)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_capture_to_jpg_obj, camera_capture_to_jpg);
 
-static mp_obj_t camera_capture_to_bmp()
-{
+static mp_obj_t camera_capture_to_bmp() {
     // acquire a frame
     camera_fb_t *fb = esp_camera_fb_get();
     if (!fb) {
@@ -308,7 +301,7 @@ static mp_obj_t camera_capture_to_bmp()
     }
 
     mp_obj_t image = mp_const_none;
-    uint8_t *out   = NULL;
+    uint8_t *out = NULL;
     size_t out_len = 0;
     if (frame2bmp(fb, &out, &out_len)) {
         image = mp_obj_new_bytes(out, out_len);
@@ -320,8 +313,7 @@ static mp_obj_t camera_capture_to_bmp()
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(camera_capture_to_bmp_obj, camera_capture_to_bmp);
 
-static mp_obj_t camera_pixformat(mp_obj_t pixformat)
-{
+static mp_obj_t camera_pixformat(mp_obj_t pixformat) {
     int format = mp_obj_get_int(pixformat);
     //  if ((format < 0) || (format > 1)) {
     //      mp_raise_ValueError(MP_ERROR_TEXT("Pixelformat is not valid"));
@@ -342,8 +334,7 @@ static mp_obj_t camera_pixformat(mp_obj_t pixformat)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_pixformat_obj, camera_pixformat);
 
-static mp_obj_t camera_framesize(mp_obj_t framesize)
-{
+static mp_obj_t camera_framesize(mp_obj_t framesize) {
     int size = mp_obj_get_int(framesize);
     if ((size < 0) || (size > 8)) {
         mp_raise_ValueError(MP_ERROR_TEXT("Image framesize is not valid"));
@@ -364,8 +355,7 @@ static mp_obj_t camera_framesize(mp_obj_t framesize)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_framesize_obj, camera_framesize);
 
-static mp_obj_t camera_contrast(mp_obj_t contrast)
-{
+static mp_obj_t camera_contrast(mp_obj_t contrast) {
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
         ESP_LOGE(TAG, "Contrast Failed");
@@ -382,8 +372,7 @@ static mp_obj_t camera_contrast(mp_obj_t contrast)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_contrast_obj, camera_contrast);
 
-static mp_obj_t camera_global_gain(mp_obj_t gain_level)
-{
+static mp_obj_t camera_global_gain(mp_obj_t gain_level) {
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
         ESP_LOGE(TAG, "Contrast Failed");
@@ -400,8 +389,7 @@ static mp_obj_t camera_global_gain(mp_obj_t gain_level)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_global_gain_obj, camera_global_gain);
 
-static mp_obj_t camera_hmirror(mp_obj_t direction)
-{
+static mp_obj_t camera_hmirror(mp_obj_t direction) {
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
         ESP_LOGE(TAG, "Mirroring Failed");
@@ -417,8 +405,7 @@ static mp_obj_t camera_hmirror(mp_obj_t direction)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_hmirror_obj, camera_hmirror);
 
-static mp_obj_t camera_vflip(mp_obj_t direction)
-{
+static mp_obj_t camera_vflip(mp_obj_t direction) {
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
         ESP_LOGE(TAG, "Flipping Failed");
@@ -434,8 +421,7 @@ static mp_obj_t camera_vflip(mp_obj_t direction)
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(camera_vflip_obj, camera_vflip);
 
-static mp_obj_t camera_colorbar(mp_obj_t enable)
-{
+static mp_obj_t camera_colorbar(mp_obj_t enable) {
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
         ESP_LOGE(TAG, "Colorbar Failed");
@@ -460,21 +446,18 @@ static MP_DEFINE_CONST_FUN_OBJ_1(camera_colorbar_obj, camera_colorbar);
 
 static camera_fb_t *g_frame = NULL;
 
-void swap_rgb565(uint16_t *pixel)
-{
+void swap_rgb565(uint16_t *pixel) {
     *pixel = (*pixel >> 8) | (*pixel << 8);
 }
 
-void image_endian_swap(image_t *img)
-{
+void image_endian_swap(image_t *img) {
     uint16_t *pixel = (uint16_t *)img->data;
     for (int i = 0; i < img->w * img->h; i++) {
         swap_rgb565(&pixel[i]);
     }
 }
 
-static mp_obj_t py_camera_snapshot()
-{
+static mp_obj_t py_camera_snapshot() {
     if (g_frame != NULL) {
         esp_camera_fb_return(g_frame);
         g_frame = NULL;
@@ -483,8 +466,8 @@ static mp_obj_t py_camera_snapshot()
 
     image_t img;
     img.size = g_frame->len;
-    img.w    = g_frame->width;
-    img.h    = g_frame->height;
+    img.w = g_frame->width;
+    img.h = g_frame->height;
     if (g_frame->format == PIXFORMAT_RGB565) {
         img.pixfmt = OMV_PIXFORMAT_RGB565;
     } else if (g_frame->format == PIXFORMAT_GRAYSCALE) {
@@ -499,32 +482,28 @@ static mp_obj_t py_camera_snapshot()
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(py_camera_snapshot_obj, py_camera_snapshot);
 
-static mp_obj_t py_camera_set_hmirror(mp_obj_t enable)
-{
-    sensor_t *s          = esp_camera_sensor_get();
+static mp_obj_t py_camera_set_hmirror(mp_obj_t enable) {
+    sensor_t *s = esp_camera_sensor_get();
     g_cam_config.hmirror = mp_obj_is_true(enable);
     s->set_hmirror(s, g_cam_config.hmirror);
     return mp_const_none;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_camera_set_hmirror_obj, py_camera_set_hmirror);
 
-static mp_obj_t py_camera_set_vflip(mp_obj_t enable)
-{
-    sensor_t *s        = esp_camera_sensor_get();
+static mp_obj_t py_camera_set_vflip(mp_obj_t enable) {
+    sensor_t *s = esp_camera_sensor_get();
     g_cam_config.vflip = mp_obj_is_true(enable);
     s->set_vflip(s, g_cam_config.vflip);
     return mp_const_none;
 }
 static MP_DEFINE_CONST_FUN_OBJ_1(py_camera_set_vflip_obj, py_camera_set_vflip);
 
-static mp_obj_t py_camera_get_hmirror(void)
-{
+static mp_obj_t py_camera_get_hmirror(void) {
     return mp_obj_new_bool(g_cam_config.hmirror);
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(py_camera_get_hmirror_obj, py_camera_get_hmirror);
 
-static mp_obj_t py_camera_get_vflip(void)
-{
+static mp_obj_t py_camera_get_vflip(void) {
     return mp_obj_new_bool(g_cam_config.vflip);
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(py_camera_get_vflip_obj, py_camera_get_vflip);
@@ -595,7 +574,7 @@ static MP_DEFINE_CONST_DICT(camera_globals_dict, camera_globals_dict_table);
 
 // Define module object.
 const mp_obj_module_t py_module_camera = {
-    .base    = {&mp_type_module},
+    .base = {&mp_type_module},
     .globals = (mp_obj_dict_t *)&camera_globals_dict,
 };
 

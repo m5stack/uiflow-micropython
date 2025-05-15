@@ -11,8 +11,8 @@ from . import Startup
 
 # AtomS3-CAM startup menu
 
-class AtomS3R_CAM_Startup(Startup):
 
+class AtomS3R_CAM_Startup(Startup):
     def __init__(self) -> None:
         super().__init__()
 
