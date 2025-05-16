@@ -8,19 +8,19 @@ import random
 from M5 import Lcd, BtnA, BtnB, BtnC
 
 
-def btnA_wasPressed_cb(state):
+def btnA_wasPressed_cb(state):  # noqa: N802
     Lcd.clear(random.randint(0, 0xFFFF))
     Lcd.setCursor(0, 0)
     Lcd.print("btnA_wasPressed_cb")
 
 
-def btnB_wasHold_cb(state):
+def btnB_wasHold_cb(state):  # noqa: N802
     Lcd.clear(random.randint(0, 0xFFFF))
     Lcd.setCursor(0, 0)
     Lcd.print("btnB_wasHold_cb")
 
 
-def btnC_wasDoubleClicked_cb(state):
+def btnC_wasDoubleClicked_cb(state):  # noqa: N802
     Lcd.clear(random.randint(0, 0xFFFF))
     Lcd.setCursor(0, 0)
     Lcd.print("btnC_wasDoubleClicked_cb")

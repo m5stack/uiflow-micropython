@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 16:50+0800\n"
+"POT-Creation-Date: 2025-05-15 15:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -76,7 +76,7 @@ msgstr "示例程序实现电机转速控制及正反转方向的切换功能。
 #: 9f7d8a8d9bee436eb95afaa176beb9c5 ad04c3763ee14119800bbeb3dce6337a
 #: b636dde0e465481b941909e647ed0ecb bd610dadc37644c3872af9b4fb93df08
 #: d02bc449d38748f7b87e851f85e3779a de5729e113f34c46a1592263db131725 of
-#: unit.hbridge.HbridgeUnit:7 unit.hbridge.HbridgeUnit.get_adc_value:15
+#: unit.hbridge.HbridgeUnit:8 unit.hbridge.HbridgeUnit.get_adc_value:15
 #: unit.hbridge.HbridgeUnit.get_device_status:7
 #: unit.hbridge.HbridgeUnit.get_driver_config:8
 #: unit.hbridge.HbridgeUnit.get_vin_current:6
@@ -116,7 +116,7 @@ msgstr "MicroPython 应用示例"
 #: 89a4e9844380457ab00a21a426a898fe 906798839f534fce9cab412f3e882420
 #: 98252dd94fc7410d8b8af34ca1d29a21 b48b032892264348874aa6dd566676d3
 #: e68fc6b8a5c64ed6a7d40a99764502d3 eb875fa259b746ffa0e96bdaa60219a7 of
-#: unit.hbridge.HbridgeUnit:11 unit.hbridge.HbridgeUnit.get_adc_value:19
+#: unit.hbridge.HbridgeUnit:12 unit.hbridge.HbridgeUnit.get_adc_value:19
 #: unit.hbridge.HbridgeUnit.get_device_status:11
 #: unit.hbridge.HbridgeUnit.get_driver_config:12
 #: unit.hbridge.HbridgeUnit.get_vin_current:10
@@ -133,7 +133,7 @@ msgid "**API**"
 msgstr "API应用"
 
 #: ../../en/units/hbridge.rst:61 1ef42aa95ae34cf796aacf244856359c
-msgid "HbridgeRUnit"
+msgid "HbridgeUnit"
 msgstr ""
 
 #: 58a190f6e7ae491b96edd7f1a225fb75 of unit.hbridge.HbridgeUnit:1
@@ -167,7 +167,7 @@ msgstr "I2C 端口。"
 msgid "HbridgeUnit Slave Address."
 msgstr "HbridgeUnit 从机地址。"
 
-#: a50c1be831df44b3a701bc35f1003162 of unit.hbridge.HbridgeUnit:9
+#: a50c1be831df44b3a701bc35f1003162 of unit.hbridge.HbridgeUnit:10
 msgid "|init.png|"
 msgstr ""
 
@@ -392,5 +392,8 @@ msgid "set_pwm_freq.png"
 msgstr ""
 
 #~ msgid "Receive data"
+#~ msgstr ""
+
+#~ msgid "HbridgeRUnit"
 #~ msgstr ""
 

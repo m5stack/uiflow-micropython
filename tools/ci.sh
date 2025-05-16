@@ -14,18 +14,24 @@ fi
 # code formatting
 
 function ci_code_formatting_setup {
-    sudo apt-add-repository --yes --update ppa:pybricks/ppa
+    sudo apt-add-repository --yes ppa:pybricks/ppa
+    sudo apt update
     sudo apt-get install uncrustify
-    pip3 install black
-    pip3 install micropython-typesheds
-    pip3 install ruff==0.3.0
-    pip3 install codespell==2.2.6 tomli==2.0.1
-    pip3 install pre-commit==3.6.2
+    sudo apt install pipx
+    pipx install uv
+    uv venv
+    source .venv/bin/activate
+    uv pip install black
+    uv pip install micropython-typesheds
+    uv pip install ruff==0.3.0
+    uv pip install codespell==2.2.6 tomli==2.0.1
+    uv pip install pre-commit==3.6.2
     uncrustify --version
     black --version
 }
 
 function ci_code_formatting_run {
+    source .venv/bin/activate
     tools/codeformat.py -v
 }
 
@@ -186,6 +192,28 @@ function ci_esp32_build {
         make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_8MB LVGL=1
         make ${MAKEOPTS} -C m5stack BOARD=M5STACK_S3_SPIRAM_8MB LVGL=1
     fi
+}
+
+function ci_esp32_quick_build {
+    source esp-idf/export.sh
+    pip install future
+    make ${MAKEOPTS} -C m5stack unpatch
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AirQ pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Lite pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Core2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreInk pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
+    make ${MAKEOPTS} -C third-party BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
 
 function ci_esp32_nightly_build {

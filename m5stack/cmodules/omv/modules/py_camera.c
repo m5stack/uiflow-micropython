@@ -30,33 +30,31 @@
 
 #define TAG "camera"
 
-
-
-#if BOARD_ID == 10 // CoreS3
+#if BOARD_ID == 10  // CoreS3
 
 #define CORES3_CAMERA_POWER_DOWN_PIN -1
-#define CORES3_CAMERA_RESET_PIN -1
-#define CORES3_CAMERA_XCLK_PIN 2
-#define CORES3_CAMERA_SDA_PIN 12
-#define CORES3_CAMERA_SCL_PIN 11
-#define CORES3_CAMERA_D7_PIN 47
-#define CORES3_CAMERA_D6_PIN 48
-#define CORES3_CAMERA_D5_PIN 16
-#define CORES3_CAMERA_D4_PIN 15
-#define CORES3_CAMERA_D3_PIN 42
-#define CORES3_CAMERA_D2_PIN 41
-#define CORES3_CAMERA_D1_PIN 40
-#define CORES3_CAMERA_D0_PIN 39
-#define CORES3_CAMERA_VSYNC_PIN 46
-#define CORES3_CAMERA_HREF_PIN 38
-#define CORES3_CAMERA_PCLK_PIN 45
+#define CORES3_CAMERA_RESET_PIN      -1
+#define CORES3_CAMERA_XCLK_PIN       2
+#define CORES3_CAMERA_SDA_PIN        12
+#define CORES3_CAMERA_SCL_PIN        11
+#define CORES3_CAMERA_D7_PIN         47
+#define CORES3_CAMERA_D6_PIN         48
+#define CORES3_CAMERA_D5_PIN         16
+#define CORES3_CAMERA_D4_PIN         15
+#define CORES3_CAMERA_D3_PIN         42
+#define CORES3_CAMERA_D2_PIN         41
+#define CORES3_CAMERA_D1_PIN         40
+#define CORES3_CAMERA_D0_PIN         39
+#define CORES3_CAMERA_VSYNC_PIN      46
+#define CORES3_CAMERA_HREF_PIN       38
+#define CORES3_CAMERA_PCLK_PIN       45
 
 static camera_config_t camera_config = {
     .pin_pwdn = CORES3_CAMERA_POWER_DOWN_PIN,
     .pin_reset = CORES3_CAMERA_RESET_PIN,
     .pin_xclk = CORES3_CAMERA_XCLK_PIN,
-    .pin_sscb_sda = -1,// CORES3_CAMERA_SDA_PIN, // 共用 I2C1 在其他地方初始化
-    .pin_sscb_scl = -1,// CORES3_CAMERA_SCL_PIN,
+    .pin_sscb_sda = -1,   // CORES3_CAMERA_SDA_PIN, // 共用 I2C1 在其他地方初始化
+    .pin_sscb_scl = -1,   // CORES3_CAMERA_SCL_PIN,
     .pin_d7 = CORES3_CAMERA_D7_PIN,
     .pin_d6 = CORES3_CAMERA_D6_PIN,
     .pin_d5 = CORES3_CAMERA_D5_PIN,
@@ -76,11 +74,10 @@ static camera_config_t camera_config = {
     .fb_count = 2,
     .fb_location = CAMERA_FB_IN_PSRAM,
     .grab_mode = CAMERA_GRAB_LATEST,
-    .sccb_i2c_port = 1, // use I2C1
+    .sccb_i2c_port = 1,  // use I2C1
 };
 
-
-#elif BOARD_ID == 144 // AtomS3R_CAM
+#elif BOARD_ID == 144  // AtomS3R_CAM
 
 #define ATOMS3R_CAM_PIN_PWDN  -1
 #define ATOMS3R_CAM_PIN_RESET -1
@@ -130,33 +127,28 @@ camera_config_t camera_config = {
 
 #endif
 
-
 typedef struct {
     bool hmirror;
     bool vflip;
 } cam_config_t;
 cam_config_t g_cam_config;
 
-static enum {
-    E_CAMERA_INIT,
-    E_CAMERA_DEINIT
-} status = E_CAMERA_DEINIT;
-
+static enum { E_CAMERA_INIT, E_CAMERA_DEINIT } status = E_CAMERA_DEINIT;
 
 static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-    enum {ARG_pixformat, ARG_framesize, ARG_fb_count, ARG_fb_location};
+    enum { ARG_pixformat, ARG_framesize, ARG_fb_count, ARG_fb_location };
     /* *FORMAT-OFF* */
     const mp_arg_t allowed_args[] = {
-        { MP_QSTR_pixformat,      MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = PIXFORMAT_RGB565 } },
-        { MP_QSTR_framesize,      MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = FRAMESIZE_QVGA } },
-        { MP_QSTR_fb_count,       MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = 2 } },
-        { MP_QSTR_fb_location,    MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = CAMERA_FB_IN_PSRAM } },
+        {MP_QSTR_pixformat, MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = PIXFORMAT_RGB565}},
+        {MP_QSTR_framesize, MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = FRAMESIZE_QVGA}},
+        {MP_QSTR_fb_count, MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = 2}},
+        {MP_QSTR_fb_location, MP_ARG_INT | MP_ARG_KW_ONLY, {.u_int = CAMERA_FB_IN_PSRAM}},
     };
 
 #if BOARD_ID == 144
     gpio_reset_pin(ATOMS3R_CAM_PIN_EN);
     gpio_set_direction(ATOMS3R_CAM_PIN_EN, GPIO_MODE_OUTPUT);
-    gpio_set_level(ATOMS3R_CAM_PIN_EN, 0); // 拉低开启电源
+    gpio_set_level(ATOMS3R_CAM_PIN_EN, 0);  // 拉低开启电源
     vTaskDelay(pdMS_TO_TICKS(300));
 #endif
 
@@ -165,13 +157,13 @@ static bool camera_init_helper(size_t n_args, const mp_obj_t *pos_args, mp_map_t
     mp_arg_parse_all(n_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
     int format = args[ARG_pixformat].u_int;
-    if ((format < 0) || (format > 1)) {
+    if ((format < 0) || (format > PIXFORMAT_RGB555)) {
         mp_raise_ValueError(MP_ERROR_TEXT("Pixelformat is not valid"));
     }
     camera_config.pixel_format = format;
 
     int size = args[ARG_framesize].u_int;
-    if ((size < 0) || (size > 8)) {
+    if ((size < 0) || (size > FRAMESIZE_QXGA)) {
         mp_raise_ValueError(MP_ERROR_TEXT("Image framesize is not valid"));
     }
     camera_config.frame_size = size;
@@ -226,7 +218,7 @@ static MP_DEFINE_CONST_FUN_OBJ_0(camera_deinit_obj, camera_deinit);
 
 static mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
     mp_map_elem_t *kw_arg = mp_map_lookup(kw_args, MP_OBJ_NEW_QSTR(MP_QSTR_time), MP_MAP_LOOKUP);
-    mp_int_t time = 300; // OV Recommended.
+    mp_int_t time = 300;          // OV Recommended.
 
     if (kw_arg != NULL) {
         time = mp_obj_get_int(kw_arg->value);
@@ -235,7 +227,7 @@ static mp_obj_t camera_skip_frames(size_t n_args, const mp_obj_t *args, mp_map_t
     uint32_t millis = mp_hal_ticks_us() / 1000;
 
     if (!n_args) {
-        while ((mp_hal_ticks_us() / 1000 - millis) < time) { // 32-bit math handles wrap around...
+        while ((mp_hal_ticks_us() / 1000 - millis) < time) {  // 32-bit math handles wrap around...
             camera_fb_t *fb = esp_camera_fb_get();
             if (fb == NULL) {
                 continue;
@@ -323,9 +315,9 @@ static MP_DEFINE_CONST_FUN_OBJ_0(camera_capture_to_bmp_obj, camera_capture_to_bm
 
 static mp_obj_t camera_pixformat(mp_obj_t pixformat) {
     int format = mp_obj_get_int(pixformat);
-    if ((format < 0) || (format > 1)) {
-        mp_raise_ValueError(MP_ERROR_TEXT("Pixelformat is not valid"));
-    }
+    //  if ((format < 0) || (format > 1)) {
+    //      mp_raise_ValueError(MP_ERROR_TEXT("Pixelformat is not valid"));
+    //  }
 
     sensor_t *s = esp_camera_sensor_get();
     if (!s) {
@@ -370,7 +362,7 @@ static mp_obj_t camera_contrast(mp_obj_t contrast) {
         return mp_const_false;
     }
 
-    int val = mp_obj_get_int(contrast); // -2,2 (default 0). 2 highcontrast
+    int val = mp_obj_get_int(contrast);  // -2,2 (default 0). 2 highcontrast
     int ret = s->set_contrast(s, val);
     if (ret == 0) {
         return mp_const_true;
@@ -387,7 +379,7 @@ static mp_obj_t camera_global_gain(mp_obj_t gain_level) {
         return mp_const_false;
     }
 
-    int val = mp_obj_get_int(gain_level); // -2,2 (default 0). 2 highcontrast
+    int val = mp_obj_get_int(gain_level);  // -2,2 (default 0). 2 highcontrast
     int ret = s->set_gain_ctrl(s, val);
     if (ret == 0) {
         return mp_const_true;
@@ -480,6 +472,8 @@ static mp_obj_t py_camera_snapshot() {
         img.pixfmt = OMV_PIXFORMAT_RGB565;
     } else if (g_frame->format == PIXFORMAT_GRAYSCALE) {
         img.pixfmt = OMV_PIXFORMAT_GRAYSCALE;
+    } else if (g_frame->format == PIXFORMAT_JPEG) {
+        img.pixfmt = OMV_PIXFORMAT_JPEG;
     }
     img.data = g_frame->buf;
     // image_endian_swap(&img);
@@ -514,59 +508,73 @@ static mp_obj_t py_camera_get_vflip(void) {
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(py_camera_get_vflip_obj, py_camera_get_vflip);
 
-
-
 static const mp_rom_map_elem_t camera_globals_dict_table[] = {
-    { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_camera) },
+    {MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_camera)},
     // functions
-    { MP_ROM_QSTR(MP_QSTR_init),           MP_ROM_PTR(&camera_init_obj)           },
-    { MP_ROM_QSTR(MP_QSTR_deinit),         MP_ROM_PTR(&camera_deinit_obj)         },
-    { MP_ROM_QSTR(MP_QSTR_skip_frames),    MP_ROM_PTR(&camera_skip_frames_obj)    },
-    { MP_ROM_QSTR(MP_QSTR_capture),        MP_ROM_PTR(&camera_capture_obj)        },
-    { MP_ROM_QSTR(MP_QSTR_capture_to_jpg), MP_ROM_PTR(&camera_capture_to_jpg_obj) },
-    { MP_ROM_QSTR(MP_QSTR_capture_to_bmp), MP_ROM_PTR(&camera_capture_to_bmp_obj) },
-    { MP_ROM_QSTR(MP_QSTR_pixformat),      MP_ROM_PTR(&camera_pixformat_obj)      },
-    { MP_ROM_QSTR(MP_QSTR_framesize),      MP_ROM_PTR(&camera_framesize_obj)      },
-    { MP_ROM_QSTR(MP_QSTR_contrast),       MP_ROM_PTR(&camera_contrast_obj)       },
-    { MP_ROM_QSTR(MP_QSTR_global_gain),    MP_ROM_PTR(&camera_global_gain_obj)    },
-    { MP_ROM_QSTR(MP_QSTR_hmirror),        MP_ROM_PTR(&camera_hmirror_obj)        },
-    { MP_ROM_QSTR(MP_QSTR_vflip),          MP_ROM_PTR(&camera_vflip_obj)          },
-    { MP_ROM_QSTR(MP_QSTR_colorbar),       MP_ROM_PTR(&camera_colorbar_obj)       },
+    {MP_ROM_QSTR(MP_QSTR_init), MP_ROM_PTR(&camera_init_obj)},
+    {MP_ROM_QSTR(MP_QSTR_deinit), MP_ROM_PTR(&camera_deinit_obj)},
+    {MP_ROM_QSTR(MP_QSTR_skip_frames), MP_ROM_PTR(&camera_skip_frames_obj)},
+    {MP_ROM_QSTR(MP_QSTR_capture), MP_ROM_PTR(&camera_capture_obj)},
+    {MP_ROM_QSTR(MP_QSTR_capture_to_jpg), MP_ROM_PTR(&camera_capture_to_jpg_obj)},
+    {MP_ROM_QSTR(MP_QSTR_capture_to_bmp), MP_ROM_PTR(&camera_capture_to_bmp_obj)},
+    {MP_ROM_QSTR(MP_QSTR_pixformat), MP_ROM_PTR(&camera_pixformat_obj)},
+    {MP_ROM_QSTR(MP_QSTR_framesize), MP_ROM_PTR(&camera_framesize_obj)},
+    {MP_ROM_QSTR(MP_QSTR_contrast), MP_ROM_PTR(&camera_contrast_obj)},
+    {MP_ROM_QSTR(MP_QSTR_global_gain), MP_ROM_PTR(&camera_global_gain_obj)},
+    {MP_ROM_QSTR(MP_QSTR_hmirror), MP_ROM_PTR(&camera_hmirror_obj)},
+    {MP_ROM_QSTR(MP_QSTR_vflip), MP_ROM_PTR(&camera_vflip_obj)},
+    {MP_ROM_QSTR(MP_QSTR_colorbar), MP_ROM_PTR(&camera_colorbar_obj)},
     // output format
-    { MP_ROM_QSTR(MP_QSTR_YUV422),    MP_ROM_INT(PIXFORMAT_YUV422)    },
-    { MP_ROM_QSTR(MP_QSTR_GRAYSCALE), MP_ROM_INT(PIXFORMAT_GRAYSCALE) },
-    { MP_ROM_QSTR(MP_QSTR_RGB565),    MP_ROM_INT(PIXFORMAT_RGB565)    },
+    {MP_ROM_QSTR(MP_QSTR_YUV422), MP_ROM_INT(PIXFORMAT_YUV422)},
+    {MP_ROM_QSTR(MP_QSTR_GRAYSCALE), MP_ROM_INT(PIXFORMAT_GRAYSCALE)},
+    {MP_ROM_QSTR(MP_QSTR_RGB565), MP_ROM_INT(PIXFORMAT_RGB565)},
+    {MP_ROM_QSTR(MP_QSTR_JPEG), MP_ROM_INT(PIXFORMAT_JPEG)},
     // resolution
-    { MP_ROM_QSTR(MP_QSTR_FRAME_96X96),   MP_ROM_INT(FRAMESIZE_96X96)   },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_QQVGA),   MP_ROM_INT(FRAMESIZE_QQVGA)   },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_QCIF),    MP_ROM_INT(FRAMESIZE_QCIF)    },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_HQVGA),   MP_ROM_INT(FRAMESIZE_HQVGA)   },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_240X240), MP_ROM_INT(FRAMESIZE_240X240) },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_QVGA),    MP_ROM_INT(FRAMESIZE_QVGA)    },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_CIF),     MP_ROM_INT(FRAMESIZE_CIF)     },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_HVGA),    MP_ROM_INT(FRAMESIZE_HVGA)    },
-    { MP_ROM_QSTR(MP_QSTR_FRAME_VGA),     MP_ROM_INT(FRAMESIZE_VGA)     },
+    {MP_ROM_QSTR(MP_QSTR_FRAME_96X96), MP_ROM_INT(FRAMESIZE_96X96)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QQVGA), MP_ROM_INT(FRAMESIZE_QQVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QCIF), MP_ROM_INT(FRAMESIZE_QCIF)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_HQVGA), MP_ROM_INT(FRAMESIZE_HQVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_240X240), MP_ROM_INT(FRAMESIZE_240X240)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_QVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_CIF)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_HVGA), MP_ROM_INT(FRAMESIZE_HVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_VGA), MP_ROM_INT(FRAMESIZE_VGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_SVGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_XGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_HVGA), MP_ROM_INT(FRAMESIZE_HD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_VGA), MP_ROM_INT(FRAMESIZE_SXGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QVGA), MP_ROM_INT(FRAMESIZE_UXGA)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_CIF), MP_ROM_INT(FRAMESIZE_FHD)},
+    {MP_ROM_QSTR(MP_QSTR_FRAME_QXGA), MP_ROM_INT(FRAMESIZE_QXGA)},
     //
-    { MP_ROM_QSTR(MP_QSTR_DRAM), MP_ROM_INT(CAMERA_FB_IN_DRAM)   },
-    { MP_ROM_QSTR(MP_QSTR_PSRAM), MP_ROM_INT(CAMERA_FB_IN_PSRAM) },
+    {MP_ROM_QSTR(MP_QSTR_DRAM), MP_ROM_INT(CAMERA_FB_IN_DRAM)},
+    {MP_ROM_QSTR(MP_QSTR_PSRAM), MP_ROM_INT(CAMERA_FB_IN_PSRAM)},
     // for omv
-    { MP_ROM_QSTR(MP_QSTR_snapshot),      MP_ROM_PTR(&py_camera_snapshot_obj)    },
-    { MP_ROM_QSTR(MP_QSTR_set_hmirror),   MP_ROM_PTR(&py_camera_set_hmirror_obj) },
-    { MP_ROM_QSTR(MP_QSTR_set_vflip),     MP_ROM_PTR(&py_camera_set_vflip_obj)   },
-    { MP_ROM_QSTR(MP_QSTR_get_hmirror),   MP_ROM_PTR(&py_camera_get_hmirror_obj) },
-    { MP_ROM_QSTR(MP_QSTR_get_vflip),     MP_ROM_PTR(&py_camera_get_vflip_obj)   },
-    { MP_ROM_QSTR(MP_QSTR_QQVGA),         MP_ROM_INT(FRAMESIZE_QQVGA)            },
-    { MP_ROM_QSTR(MP_QSTR_QCIF),          MP_ROM_INT(FRAMESIZE_QCIF)             },
-    { MP_ROM_QSTR(MP_QSTR_HQVGA),         MP_ROM_INT(FRAMESIZE_HQVGA)            },
-    { MP_ROM_QSTR(MP_QSTR_240X240),       MP_ROM_INT(FRAMESIZE_240X240)          },
-    { MP_ROM_QSTR(MP_QSTR_QVGA),          MP_ROM_INT(FRAMESIZE_QVGA)             },
+    {MP_ROM_QSTR(MP_QSTR_snapshot), MP_ROM_PTR(&py_camera_snapshot_obj)},
+    {MP_ROM_QSTR(MP_QSTR_set_hmirror), MP_ROM_PTR(&py_camera_set_hmirror_obj)},
+    {MP_ROM_QSTR(MP_QSTR_set_vflip), MP_ROM_PTR(&py_camera_set_vflip_obj)},
+    {MP_ROM_QSTR(MP_QSTR_get_hmirror), MP_ROM_PTR(&py_camera_get_hmirror_obj)},
+    {MP_ROM_QSTR(MP_QSTR_get_vflip), MP_ROM_PTR(&py_camera_get_vflip_obj)},
+    {MP_ROM_QSTR(MP_QSTR_QQVGA), MP_ROM_INT(FRAMESIZE_QQVGA)},      // 160x120
+    {MP_ROM_QSTR(MP_QSTR_QCIF), MP_ROM_INT(FRAMESIZE_QCIF)},        // 176x144
+    {MP_ROM_QSTR(MP_QSTR_HQVGA), MP_ROM_INT(FRAMESIZE_HQVGA)},      // 240x176
+    {MP_ROM_QSTR(MP_QSTR_240X240), MP_ROM_INT(FRAMESIZE_240X240)},  // 240x240
+    {MP_ROM_QSTR(MP_QSTR_QVGA), MP_ROM_INT(FRAMESIZE_QVGA)},        // 320x240
+    {MP_ROM_QSTR(MP_QSTR_VGA), MP_ROM_INT(FRAMESIZE_VGA)},          // 640x480
+    {MP_ROM_QSTR(MP_QSTR_SVGA), MP_ROM_INT(FRAMESIZE_SVGA)},        // 800x600
+    {MP_ROM_QSTR(MP_QSTR_XGA), MP_ROM_INT(FRAMESIZE_XGA)},          // 1024x768
+    {MP_ROM_QSTR(MP_QSTR_HD), MP_ROM_INT(FRAMESIZE_HD)},            // 1280x720
+    {MP_ROM_QSTR(MP_QSTR_SXGA), MP_ROM_INT(FRAMESIZE_SXGA)},        // 1280x1024
+    {MP_ROM_QSTR(MP_QSTR_UXGA), MP_ROM_INT(FRAMESIZE_UXGA)},        // 1600x1200
+    {MP_ROM_QSTR(MP_QSTR_FHD), MP_ROM_INT(FRAMESIZE_FHD)},          // 1920x1080
+    {MP_ROM_QSTR(MP_QSTR_QXGA), MP_ROM_INT(FRAMESIZE_QXGA)},        // 2048x1536
 };
 
 static MP_DEFINE_CONST_DICT(camera_globals_dict, camera_globals_dict_table);
 
 // Define module object.
 const mp_obj_module_t py_module_camera = {
-    .base = { &mp_type_module },
+    .base = {&mp_type_module},
     .globals = (mp_obj_dict_t *)&camera_globals_dict,
 };
 

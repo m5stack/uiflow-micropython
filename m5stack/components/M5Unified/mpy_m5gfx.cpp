@@ -60,6 +60,11 @@ mp_obj_t gfx_getColorDepth(mp_obj_t self) {
     return mp_obj_new_int(gfx->getColorDepth());
 }
 
+mp_obj_t gfx_getEpdMode(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_int((int)gfx->getEpdMode());
+}
+
 mp_obj_t gfx_getCursor(mp_obj_t self) {
     auto gfx = getGfx(&self);
     mp_obj_t tuple[2] = { mp_obj_new_int(gfx->getCursorX())
@@ -99,6 +104,27 @@ mp_obj_t gfx_setColorDepth(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw
     return mp_const_none;
 }
 
+mp_obj_t gfx_setEpdMode(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+    enum {ARG_epd_mode};
+    /* *FORMAT-OFF* */
+    const mp_arg_t allowed_args[] = {
+        { MP_QSTR_epd_mode, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 1 } }
+    };
+    /* *FORMAT-ON* */
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    // The first parameter is the GFX object, parse from second parameter.
+    mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+    auto gfx = getGfx(&pos_args[0]);
+    gfx->setEpdMode((epd_mode_t)args[ARG_epd_mode].u_int);
+    return mp_const_none;
+}
+
+mp_obj_t gfx_isEPD(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    return mp_obj_new_bool(gfx->isEPD());
+}
+
 
 mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
     enum {ARG_font};
@@ -120,7 +146,7 @@ mp_obj_t gfx_loadFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args
             fontWrapper = new LFS2Wrapper();
             ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
         }
-        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), VFS_READ);
         ret = gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
     } else { // buffer
         mp_buffer_info_t bufinfo;
@@ -158,7 +184,7 @@ mp_obj_t gfx_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
             fontWrapper = new LFS2Wrapper();
             ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
         }
-        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), LFS2_O_RDONLY);
+        fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), VFS_READ);
         gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
     } else {
         gfx->setFont((const m5gfx::IFont *)((font_obj_t *)args[ARG_font].u_obj)->font);

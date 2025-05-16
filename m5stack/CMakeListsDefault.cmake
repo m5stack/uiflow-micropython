@@ -126,6 +126,7 @@ list(APPEND MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/machine_rtc.c
     # ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
     ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
+    ${PROJECT_DIR}/_vfs_stream.c
 )
 
 if (
@@ -243,13 +244,6 @@ list(APPEND IDF_COMPONENTS
 )
 endif()
 
-if (M5_EPDIY_ENABLE AND BOARD_TYPE STREQUAL "papers3")
-message(STATUS "Enable EPDiy component")
-list(APPEND IDF_COMPONENTS
-    epdiy
-)
-endif()
-
 if(IDF_TARGET STREQUAL "esp32" OR IDF_TARGET STREQUAL "esp32s3")
     list(APPEND IDF_COMPONENTS boards)
     list(APPEND IDF_COMPONENTS audio_pipeline)
@@ -277,6 +271,7 @@ idf_component_register(
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}
     LDFRAGMENTS
         linker.lf
     REQUIRES

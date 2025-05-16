@@ -57,7 +57,7 @@ Example output:
 **API**
 -------
 
-HbridgeRUnit
+HbridgeUnit
 ^^^^^^^^^^^^
 
 .. autoclass:: unit.hbridge.HbridgeUnit

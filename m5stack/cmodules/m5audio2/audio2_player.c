@@ -9,7 +9,7 @@
 #include "py/mphal.h"
 #include "py/stream.h"
 #include "extmod/vfs_fat.h"
-#include "vfs_stream.h"
+#include "_vfs_stream.h"
 #include "i2s_helper.h"
 
 #include "freertos/FreeRTOS.h"
@@ -215,7 +215,7 @@ static void player_wav_file_task(void *arg) {
 
     ESP_LOGI(TAG, "open path %s", self->play_info.wav_file.path);
 
-    void *wav_file = vfs_stream_open(self->play_info.wav_file.path, "rb");
+    void *wav_file = vfs_stream_open(self->play_info.wav_file.path, VFS_READ);
 
     vfs_stream_seek(wav_file, self->play_info.wav_file.data_offset, SEEK_SET);
     ESP_LOGI(TAG, "file pos: %ld", vfs_stream_tell(wav_file));

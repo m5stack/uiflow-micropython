@@ -1,0 +1,24 @@
+.. |Unit Gateway H2| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1128/U195_01.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/Unit%20Gateway%20H2
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/init.png
+.. |on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/on.png
+.. |all_on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/all_on.png
+.. |off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/off.png
+.. |all_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/all_off.png
+.. |toggle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/toggle.png
+.. |all_toggle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/all_toggle.png
+.. |cores3_switch_endpoint_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/gateway_h2/example.png
+ 
+
+.. |cores3_switch_endpoint_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/gateway_h2/cores3_switch_endpoint_example.m5f2"
+        target="_blank"
+    >
+        cores3_switch_endpoint_example.m5f2
+    </a>
+    

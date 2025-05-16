@@ -9,6 +9,7 @@ Module
     audio.rst
     bala2.rst
     commu.rst
+    dc_motor.rst
     display.rst
     dmx.rst
     dualkmeter.rst
@@ -24,7 +25,7 @@ Module
     hmi.rst
     llm.rst
     lora.rst
-    lora_sx1262.rst
+    lora868_v12.rst
     lorawan868.rst
     lte.rst
     nbiot.rst

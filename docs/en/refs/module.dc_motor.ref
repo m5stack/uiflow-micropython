@@ -1,0 +1,25 @@
+
+.. |Module DCMotor| image:: https://static-cdn.m5stack.com/resource/docs/products/module/lego_plus/lego_plus_01.webp
+    :target: https://docs.m5stack.com/zh_CN/module/lego_plus
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/init.png
+.. |set_motor_speed.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/set_motor_speed.png
+.. |set_motor_speed_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/set_motor_speed_percent.png
+.. |get_encoder.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/get_encoder.png
+.. |clear_encoder.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/clear_encoder.png
+ 
+
+ 
+.. |cores3_dc_motor_module_speed_control.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/dcmotor/example.png
+ 
+.. |cores3_dc_motor_module_speed_control.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/dc_motor/cores3_dc_motor_module_speed_control.m5f2"
+        target="_blank"
+    >
+        cores3_dc_motor_module_speed_control.m5f2
+    </a>
+

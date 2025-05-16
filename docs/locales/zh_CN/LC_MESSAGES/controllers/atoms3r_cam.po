@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-29 15:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/controllers/atoms3r_cam.rst:2
+#: ../../en/refs/controllers.atoms3r_cam.ref 8eb2843da2ab445da4a8f26153ca3cc3
+#: de6ee942676846508fa0cfcf01e7cb3f
+msgid "AtomS3R-CAM"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:8 2623b3b683194821a82301ead5facba1
+msgid "Support the following products:"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:10 d8af0b88a3744b0a87d9cdc48da40bca
+msgid "|AtomS3R-CAM|"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:14 981a43b769b34dbd873875b1cecd050d
+msgid "MicroPython Example:"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:17 c344552ed48f4ff991a7c46114d7821c
+msgid "Video Streaming"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:19 4877248df4104da8a4df83d0fbd05931
+msgid ""
+"This example implements a real-time video streaming server, with "
+"integrated QR code recognition."
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:21 a91f99561fb34b529ea8dae55a249c04
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:27 222306a53a454cf08dc1a59627595a11
+msgid "Example output:"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:29 bb8fb513fab24e71810644b12aafb6c5
+msgid "None"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:32 ee4e08c6d90944bb81fae6a6e26a4f3a
+msgid "**How to Use**"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:34 d819c4b676e440288a9975a8dfd59727
+msgid "Configure Wi-Fi settings."
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:40 e66bb36038744b1f88cd6b81dd8441c2
+msgid "Copy the example code into the editor."
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:46 0cc32a52d2ae42c181f97a359ee4b8ae
+msgid ""
+"Run the program, After uploading, the console will print the local IP "
+"address assigned to the device."
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:56 234baef105454c1db278df4e10b13166
+msgid "Open the video stream in your browser"
+msgstr ""
+
+#: ../../en/controllers/atoms3r_cam.rst:58 624ea92618eb402582848878d035097e
+msgid ""
+"On any device connected to the same Wi-Fi network, open a browser and "
+"visit: http://<device-ip>:8080/, Replace `<device-ip>` with the actual IP"
+" address printed in the console."
+msgstr ""
+

@@ -5,7 +5,7 @@
 import os, sys, io
 import M5
 from M5 import *
-from module import LoRaSx1262Module
+from module import LoRa868V12Module
 import time
 
 
@@ -19,8 +19,6 @@ label_snr = None
 label_rssi_v = None
 label_snr_v = None
 lora868v12_0 = None
-
-
 lora868v12_data = None
 rssi = None
 snr = None
@@ -46,7 +44,7 @@ def lora868v12_0_receive_event(received_data):
     lora868v12_data = received_data
     label_rx.setText(str(lora868v12_data.decode()))
     rssi = lora868v12_data.rssi
-    snr = lora868v12_data.snr
+    snr = (lora868v12_data.snr) / 4
     label_rssi_v.setText(str(rssi))
     label_snr_v.setText(str(snr))
 
@@ -80,7 +78,19 @@ def setup():
     label_rssi_v = Widgets.Label(" ", 65, 80, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label_snr_v = Widgets.Label(" ", 65, 108, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
-    lora868v12_0 = LoRaSx1262Module(5, 1, 10, 2, 868000, "250", 8, 8, 12, 0x12, 10)
+    lora868v12_0 = LoRa868V12Module(
+        pin_rst=5,
+        pin_cs=1,
+        pin_irq=10,
+        pin_busy=2,
+        freq_khz=868000,
+        bw="250",
+        sf=8,
+        coding_rate=8,
+        preamble_len=12,
+        syncword=0x12,
+        output_power=10,
+    )
     lora868v12_0.set_irq_callback(lora868v12_0_receive_event)
     lora868v12_0.start_recv()
     last_time = time.ticks_ms()

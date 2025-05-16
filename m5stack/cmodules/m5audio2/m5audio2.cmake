@@ -11,7 +11,6 @@ target_sources(usermod_m5audio INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/audio2_player.c
     ${CMAKE_CURRENT_LIST_DIR}/audio2_recorder.c
     ${CMAKE_CURRENT_LIST_DIR}/i2s_helper.c
-    ${CMAKE_CURRENT_LIST_DIR}/vfs_stream.c
 )
 
 # Add the current directory as an include directory.

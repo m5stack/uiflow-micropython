@@ -1,6 +1,6 @@
 .. _hardware.Display:
 
-Display  
+Display
 =======
 
 A lcd display library
@@ -9,11 +9,11 @@ A lcd display library
     :synopsis: A lcd display library
 
 
-Micropython Example 
---------------------------------
+Micropython Example
+-------------------
 
 draw test
-++++++++++++++++++++++++++++
++++++++++
 
 ::
 
@@ -65,21 +65,21 @@ draw test
 
 
 Functions
---------------------------------
+---------
 
-.. function:: Display.width() -> int
+.. method:: Display.width() -> int
 
     Get the horizontal resolution of the display.
 
     Returns An integer representing the horizontal resolution (width) in pixels.
 
-.. function:: Display.height() -> int
-    
+.. method:: Display.height() -> int
+
     Get the vertical resolution of the display.
 
     Returns An integer representing the vertical resolution (height) in pixels.
 
-.. function:: Display.getRotation() -> int
+.. method:: Display.getRotation() -> int
 
     Get the current rotation of the display.
 
@@ -90,13 +90,13 @@ Functions
     - ``3``: 180° rotation
     - ``4``: 270° rotation
 
-.. function:: Display.getColorDepth() -> int
+.. method:: Display.getColorDepth() -> int
 
     Get the color depth of the display.
 
     Returns An integer representing the display's color depth in bits.
 
-.. function::Display.getCursor() -> Tuple[int, int]
+.. method::Display.getCursor() -> Tuple[int, int]
 
     Get the current cursor position on the display.
 
@@ -105,8 +105,7 @@ Functions
     - ``x`` is the horizontal position of the cursor.
     - ``y`` is the vertical position of the cursor.
 
-
-.. function:: Display.setRotation(r: int = -1)
+.. method:: Display.setRotation(r: int = -1)
 
     Set the rotation of the display.
 
@@ -117,15 +116,33 @@ Functions
     - ``3``: 180° rotation
     - ``4``: 270° rotation
 
-.. function:: Display.setColorDepth(bpp: int = 1)
+.. method:: Display.setColorDepth(bpp: int = 1)
 
     Set the color depth of the display.
 
     - ``bpp`` The desired color depth in bits per pixel.
-    
+
     Notes: For CoreS3 devices, the color depth is fixed at 16 bits, and this method has no effect.
 
-.. function:: Display.setFont(font)
+.. method:: Display.setEpdMode(epd_mode)
+
+    Set the EPD mode for the display.
+
+    - ``epd_mode`` The desired EPD mode.
+        - 0: M5.Lcd.EPDMode.EPD_QUALITY 
+        - 1: M5.Lcd.EPDMode.EPD_TEXT
+        - 2: M5.Lcd.EPDMode.EPD_FAST
+        - 3: M5.Lcd.EPDMode.EPD_FASTEST
+
+    Notes: This method is only applicable to devices with EPD (Electronic Paper Display) capabilities.
+
+.. method:: Display.isEPD() -> bool
+
+    Check if the display is an EPD (Electronic Paper Display).
+
+    Returns A boolean indicating whether the display is an EPD.
+
+.. method:: Display.setFont(font)
 
     Set the font for the display.
 
@@ -143,46 +160,46 @@ Functions
     - M5.Lcd.FONTS.EFontJA24
     - M5.Lcd.FONTS.EFontKR24
 
-.. function:: Display.setTextColor(fgcolor: int = 0, bgcolor: int = 0)
+.. method:: Display.setTextColor(fgcolor: int = 0, bgcolor: int = 0)
 
     Set the text color and background color.
 
     - ``fgcolor`` The text color in RGB888 format. Default is 0 (black).
     - ``bgcolor`` The background color in RGB888 format. Default is 0 (black).
 
-.. function:: Display.setTextScroll(scroll: bool = False)
+.. method:: Display.setTextScroll(scroll: bool = False)
 
     Enable or disable text scrolling.
 
     - ``scroll`` Set to True to enable text scrolling, or False to disable it. Default is False.\
 
-.. function:: Display.setTextSize(size)
+.. method:: Display.setTextSize(size)
 
     Set the size of the text.
 
     - ``size`` The desired text size.
 
-.. function:: Display.setCursor(x: int = 0, y: int = 0)
+.. method:: Display.setCursor(x: int = 0, y: int = 0)
 
     Set the cursor position.
 
     - ``x`` The horizontal position of the cursor. Default is 0.
     - ``y`` The vertical position of the cursor. Default is 0.
 
-.. function:: Display.clear(color: int = 0)
+.. method:: Display.clear(color: int = 0)
 
     Clear the display with a specific color.
 
     - ``color`` The fill color in RGB888 format. Default is 0.
 
-.. function:: Display.fillScreen(color: int = 0)
+.. method:: Display.fillScreen(color: int = 0)
 
     Fill the entire screen with a specified color.
-  
+
     - ``color`` The fill color in RGB888 format. Default is 0.
 
 
-.. function:: Display.drawPixel(x: int = -1, y: int = -1, color: int = 0)
+.. method:: Display.drawPixel(x: int = -1, y: int = -1, color: int = 0)
 
     Draw a single pixel on the screen.
 
@@ -190,7 +207,7 @@ Functions
     - ``y`` The vertical coordinate of the pixel. Default is -1.
     - ``color`` The color of the pixel in RGB888 format. Default is 0.
 
-.. function:: Display.drawCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
+.. method:: Display.drawCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
 
     Draw an outline of a circle.
 
@@ -199,7 +216,7 @@ Functions
     - ``r`` The radius of the circle. Default is -1.
     - ``color`` The color of the circle in RGB888 format. Default is 0.
 
-.. function:: Display.fillCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
+.. method:: Display.fillCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
 
     Draw a filled circle.
 
@@ -208,17 +225,17 @@ Functions
     - ``r`` The radius of the circle. Default is -1.
     - ``color`` The fill color in RGB888 format. Default is 0.
 
-.. function:: Display.drawEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
+.. method:: Display.drawEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
 
     Draw an outline of an ellipse.
- 
+
     - ``x`` The x-coordinate of the ellipse center. Default is -1.
     - ``y`` The y-coordinate of the ellipse center. Default is -1.
     - ``rx`` The horizontal radius of the ellipse. Default is -1.
     - ``ry`` The vertical radius of the ellipse. Default is -1.
     - ``color`` The color of the ellipse in RGB888 format. Default is 0.
 
-.. function:: Display.fillEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
+.. method:: Display.fillEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
 
     Draw a filled ellipse.
 
@@ -228,7 +245,7 @@ Functions
     - ``ry`` The vertical radius of the ellipse. Default is -1.
     - ``color`` The fill color in RGB888 format. Default is 0.
 
-.. function:: Display.drawLine(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, color: int = 0)
+.. method:: Display.drawLine(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, color: int = 0)
 
     Draw a line.
 
@@ -236,7 +253,7 @@ Functions
     - ``x1, y1`` Ending point coordinates of the line. Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.drawRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
+.. method:: Display.drawRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
 
     Draw a rectangle.
 
@@ -244,7 +261,7 @@ Functions
     - ``w, h`` Width and height of the rectangle. Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.fillRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
+.. method:: Display.fillRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
 
     Draw a filled rectangle.
 
@@ -252,7 +269,7 @@ Functions
     - ``w, h`` Width and height of the rectangle. Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.drawRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
+.. method:: Display.drawRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
 
     Draw a rounded rectangle.
 
@@ -261,7 +278,7 @@ Functions
     - ``r`` Radius of the corners. Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.fillRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
+.. method:: Display.fillRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
 
     Draw a filled rounded rectangle.
 
@@ -271,7 +288,7 @@ Functions
     - ``color`` Color in RGB888 format. Default is 0.
 
 
-.. function:: Display.drawTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
+.. method:: Display.drawTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
 
     Draw a triangle.
 
@@ -280,7 +297,7 @@ Functions
     - ``x2, y2`` Coordinates of the third vertex. Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.fillTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
+.. method:: Display.fillTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
 
     Draw a filled triangle.
 
@@ -289,7 +306,7 @@ Functions
     - ``x2, y2`` Coordinates of the third vertex. Default is -1.
     - ``color:`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.drawArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+.. method:: Display.drawArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
 
     Draw an arc.
 
@@ -300,7 +317,7 @@ Functions
     - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.fillArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+.. method:: Display.fillArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
 
     Draw a filled arc.
 
@@ -311,7 +328,7 @@ Functions
     - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.drawEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+.. method:: Display.drawEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
 
     Draw an elliptical arc.
 
@@ -322,7 +339,7 @@ Functions
     - ``angle1`` Ending angle of the arc (in degrees). Default is 0.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.fillEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+.. method:: Display.fillEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
 
     Draw a filled elliptical arc.
 
@@ -333,7 +350,7 @@ Functions
     - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
     - ``color:`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.drawQR(text: str = None, x: int = 0, y: int = 0, w: int = 0, version: int = 1)
+.. method:: Display.drawQR(text: str = None, x: int = 0, y: int = 0, w: int = 0, version: int = 1)
 
     Draw a QR code.
 
@@ -350,7 +367,7 @@ Functions
 
         Display.drawQR("Hello", 0, 0, 200)
 
-.. function:: Display.drawPng(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0, scaleX=True, scaleY=False)
+.. method:: Display.drawPng(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0, scaleX=True, scaleY=False)
 
     Draw a PNG image.
 
@@ -377,7 +394,7 @@ Functions
         Display.drawPng(img.read(), 0, 100)
         img.close()
 
-.. function:: Display.drawJpg(img, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+.. method:: Display.drawJpg(img, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
 
     Draw a JPG image.
 
@@ -386,7 +403,7 @@ Functions
     - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
     - ``offX, offY`` Offset in the image to start from.
 
-.. function:: Display.drawBmp(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+.. method:: Display.drawBmp(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
 
     Draw a BMP image.
 
@@ -395,7 +412,7 @@ Functions
     - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
     - ``offX, offY`` Offset in the image to start from.
 
-.. function:: Display.drawImage(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+.. method:: Display.drawImage(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
 
     Draw an image.
 
@@ -414,7 +431,7 @@ Functions
         img.seek(0)
         drawImage(img.read())
 
-.. function:: Display.drawRawBuf(buf, x: int = 0, y: int = 0, w: int = 0, h: int = 0, len: int = 0, swap: bool = False)
+.. method:: Display.drawRawBuf(buf, x: int = 0, y: int = 0, w: int = 0, h: int = 0, len: int = 0, swap: bool = False)
 
     Draw an image from raw buffer data.
 
@@ -424,20 +441,20 @@ Functions
     - ``len`` Length of the image data.
     - ``swap`` Whether to enable inverted display.
 
-.. function:: Display.print(text: str = None, color: int = 0)
+.. method:: Display.print(text: str = None, color: int = 0)
 
     Display a string (no formatting support).
 
     - ``text`` Text to display.
     - ``color`` Color in RGB888 format. Default is 0.
 
-.. function:: Display.printf(text: str = None)
+.. method:: Display.printf(text: str = None)
 
     Display a formatted string.
 
     - ``text`` Text to display with formatting.
 
-.. function:: Display.newCanvas(w: int = 0, h: int = 0, bpp: int = -1, psram: bool = False)
+.. method:: Display.newCanvas(w: int = 0, h: int = 0, bpp: int = -1, psram: bool = False)
 
     Create a canvas.
 
@@ -455,11 +472,10 @@ Functions
         w1.drawImage("res/img/uiflow.jpg", 80, 0)
         w1.push(30, 0)
 
-.. function:: Display.startWrite()
+.. method:: Display.startWrite()
 
     Start writing to the display.
 
-.. function:: Display.endWrite()
+.. method:: Display.endWrite()
 
     End writing to the display.
-
