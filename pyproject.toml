@@ -43,4 +43,4 @@ max-complexity = 40
 "m5stack/modules/tiny_gui/**.py" = ["F821"]
 
 [tool.ruff.format]
-exclude = ["docs/**/*.py", "micropython/**/*.py", "tools/**/*.py"]
+exclude = ["docs/**/*.py", "esp-adf/**/*.py", "esp-idf/**/*.py", "m5stack/cmodules/lv_binding_micropython/**/*.py", "m5stack/cmodules/lv_binding_micropython/**/*.pyi", "m5stack/components/**/*.py", "micropython/**/*.py", "tools/**/*.py"]

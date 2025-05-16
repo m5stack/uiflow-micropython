@@ -10,13 +10,16 @@ cache:
 
 stages:
   - code_format
-  - build
+  - build_quick
   - docs
+  - build
   - release
 
 
 code-format:
   stage: code_format
+  before_script:
+    - export PATH="$HOME/.local/bin:$PATH"
   script:
     - source tools/ci.sh && ci_code_formatting_setup
     - source tools/ci.sh && ci_code_formatting_run
@@ -28,6 +31,26 @@ code-format:
       - "examples/**"
       - "tests/**"
       - "third-party/**"
+
+build-quick-job:
+  stage: build_quick
+  script:
+    - sudo apt-get update -qy
+    - sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+    - source tools/ci.sh && ci_esp32_idf522_setup
+    - source tools/ci.sh && ci_esp32_quick_build
+  artifacts:
+    paths:
+      - m5stack/build-*/uiflow-*-*.bin
+      - third-party/build-*/uiflow-*-*.bin
+  tags:
+    - uiflow-firmware
+  only:
+    changes:
+      - "m5stack/**"
+      - "tools/**"
+      - "third-party/**"
+
 
 build-job:
   stage: build
@@ -43,10 +66,11 @@ build-job:
   tags:
     - uiflow-firmware
   only:
-    changes:
-      - "m5stack/**"
-      - "tools/**"
-      - "third-party/**"
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^release\/[0-9]+\.[0-9]+\.[0-9]+$/
+      - $CI_COMMIT_REF_SLUG == "develop_m5things"
 
 
 build-docs:
