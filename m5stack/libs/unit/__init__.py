@@ -49,6 +49,7 @@ _attrs = {
     "FanUnit": "fan",
     "FingerUnit": "finger",
     "FlashLightUnit": "flash_light",
+    "GatewayH2Unit": "gateway_h2",
     "GestureUnit": "gesture",
     "GlassUnit": "glass",
     "Glass2Unit": "glass2",

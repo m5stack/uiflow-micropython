@@ -47,6 +47,7 @@ package(
         "fan.py",
         "finger.py",
         "flash_light.py",
+        "gateway_h2.py",
         "gesture.py",
         "glass.py",
         "glass2.py",

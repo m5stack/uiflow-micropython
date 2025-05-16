@@ -1,5 +1,5 @@
 GatewayH2 Module
-============================
+================
 
 .. sku: M141
 
@@ -13,11 +13,11 @@ Support the following products:
 
 .. note:: When using this module, you need to flash the NCP firmware to the module. For details, refer to the `ESP Zigbee NCP <https://docs.m5stack.com/zh_CN/guide/zigbee/module_gateway_h2/zigbee_ncp>`_ documentation.
 
-UiFlow2 Example:
---------------------------
+UiFlow2 Example
+---------------
 
-Switch Control 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Switch Control
+^^^^^^^^^^^^^^
 
 .. note:: To use this example, you need to flash this program onto an ESP32C6 or similar module as a light node device. For details, refer to `HA_on_off_light <https://github.com/espressif/esp-zigbee-sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_
 
@@ -33,11 +33,11 @@ Example output:
 
     None
  
-MicroPython Example:
---------------------------
+MicroPython Example
+-------------------
 
-Switch Control 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Switch Control
+^^^^^^^^^^^^^^
 
 The example demonstrates group control and targeted device operation for light nodes through SwitchEndpoint of Gateway H2 module.
 
@@ -52,10 +52,10 @@ Example output:
     None
 
 **API**
---------------------------
+-------
 
 GatewayH2Module
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 .. class:: module.gateway_h2.GatewayH2Module
 
@@ -94,9 +94,14 @@ GatewayH2Module
 
                 h2_switch_endpoint = module_gateway_h2.create_switch_endpoint()
 
+.. _switchendpoint:
+
+SwitchEndpoint
+^^^^^^^^^^^^^^
+
 .. class:: SwitchEndpoint
 
-    Return by GatewayH2Module.create_switch_endpoint()
+    Return by GatewayH2Module.create_switch_endpoint() or GatewayH2Unit.create_switch_endpoint()
 
     .. method:: on([addr])
 
@@ -160,4 +165,3 @@ GatewayH2Module
                 
                 h2_switch_endpoint.toggle(addr)
                 h2_switch_endpoint.toggle()
-

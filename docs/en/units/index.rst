@@ -44,6 +44,7 @@ Unit
     fader.rst
     finger.rst
     flash_light.rst
+    gateway_h2.rst
     glass.rst
     glass2.rst
     gps_v11.rst
