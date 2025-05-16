@@ -3,10 +3,11 @@
 # SPDX-License-Identifier: MIT
 
 from machine import I2C
-from .pahub import PAHUBUnit
-from .unit_helper import UnitError
+from unit.pahub import PAHUBUnit
+from unit.unit_helper import UnitError
 import binascii
 import struct
+import time
 
 from driver.atecc608b_tngtls.atecc import ATECC
 from driver.atecc608b_tngtls.atecc_cert_util import CSR
@@ -24,7 +25,6 @@ class IDUnit:
         self._i2c_addr = address
         if address not in self._i2c.scan():
             raise UnitError("ID unit maybe not found in Grove")
-
         self.atecc = ATECC(self._i2c, self._i2c_addr)
 
     def get_revision_number(self) -> int:
@@ -55,13 +55,33 @@ class IDUnit:
         min, max = (max, min) if min > max else (min, max)
         return min + (max - min) * self.random()
 
-    def get_generate_key(self, slot_num: int, private_key: bool = False) -> bytearray:
+    def get_generate_key(self, slot_num: int, private_key: bool = False):
         #! Generates a private or public key.
         assert 0 <= slot_num <= 4, "Provided slot must be between 0 and 4."
         # Create a new key
         key = bytearray(64)
         self.atecc.gen_key(key, slot_num, private_key)
         return key
+
+    def ecdh_stored_key(self, slot_num: int, mode: int, external_public_key: bytearray = None):
+        if external_public_key is None:
+            external_public_key = bytearray(64)
+            self.atecc.gen_key(external_public_key, 0, private_key=False)
+
+        if len(external_public_key) != 64:
+            raise ValueError("External public key must be exactly 64 bytes.")
+
+        self.atecc._send_command(
+            opcode=0x43, param_1=mode, param_2=slot_num, data=external_public_key
+        )
+
+        if mode in (0x0C, 0x08):
+            time.sleep(1)
+            res = bytearray(32)
+            self.atecc._get_response(res)
+            return res
+        else:
+            return None
 
     def get_ecdsa_sign(self, slot: int, message: str | list | bytearray) -> bytearray | None:
         #! Generates and returns a signature using the ECDSA algorithm.
@@ -120,3 +140,66 @@ class IDUnit:
         )
         with open(file_path, "w+") as pem_file:
             pem_file.write(pem_content)
+
+    # ref: ATECC608A-TFLXTLS 4.4.1 Table 4-5
+    def read_data_zone(self, data_zone: int):
+        self.atecc._send_command(
+            opcode=0x02,
+            param_1=0x00,
+            param_2=data_zone,
+        )
+        time.sleep(0.1)
+        temp = bytearray(4)
+        self.atecc._get_response(temp)
+        return temp
+
+    def write_data_zone(self, data_zone: int, data: bytearray):
+        self.atecc._send_command(
+            opcode=0x12,
+            param_1=0x02,
+            param_2=data_zone,
+            data=data,
+        )
+
+    def aes_ecb_encrypt(self, position: int, data: bytearray):
+        if len(data) != 16:
+            raise ValueError("Data must be 16 bytes")
+        self.atecc._send_command(
+            opcode=0x51,
+            param_1=(position << 6),
+            param_2=0x09,  # ATECC608B AES Key only stored in slot 9
+            data=data,
+        )
+        time.sleep(1)
+        res = bytearray(16)
+        self.atecc._get_response(res)
+        return res
+
+    def aes_ecb_decrypt(self, position: int, data: bytearray):
+        if len(data) != 16:
+            raise ValueError("Data must be 16 bytes")
+        self.atecc._send_command(
+            opcode=0x51,
+            param_1=(position << 6) + 1,
+            param_2=0x09,  # ATECC608B AES Key only stored in slot 9
+            data=data,
+        )
+        time.sleep(1)
+        res = bytearray(16)
+        self.atecc._get_response(res)
+        return res
+
+    def get_h_field(self):
+        zero_block = bytearray([0x00] * 16)
+        return self.aes_ecb_encrypt(0x00, zero_block)
+
+    def aes_gfm_encrypt(self, data: bytearray):
+        if len(data) != 16:
+            raise ValueError("Data must be 16 bytes")
+        data = self.get_h_field() + data
+        time.sleep(1)
+        self.atecc._send_command(opcode=0x51, param_1=0x03, param_2=0x00, data=data)
+        time.sleep(1)
+        res = bytearray(16)
+        self.atecc._get_response(res)
+        return res

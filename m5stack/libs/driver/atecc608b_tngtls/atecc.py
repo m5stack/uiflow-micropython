@@ -13,12 +13,12 @@
 #
 # This library is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 # Lesser General Public License for more details.
 #
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library; if not, write to the Free Software
-# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 
 import time
@@ -409,7 +409,9 @@ class ATECC:
         time.sleep(0.001)
         self.idle()
 
-    def _send_command(self, opcode: int, param_1: int, param_2: int = 0x00, data="") -> None:
+    def _send_command(
+        self, opcode: int, param_1: int, param_2: int = 0x00, data: bytearray = bytearray(b"")
+    ) -> None:
         #! Sends a security command packet over i2c.
         #! assembling command packet
         command_packet = bytearray(8 + len(data))
@@ -451,7 +453,7 @@ class ATECC:
             raise RuntimeError("Failed to read data from chip")
         if self._debug:
             print("\tReceived: ", [hex(i) for i in response])
-        crc = response[-2] | (response[-1] << 8)
+        crc = (response[-1] << 8) | response[-2]
         crc2 = self._at_crc(response[0:-2])
         if crc != crc2:
             raise RuntimeError("CRC Mismatch")
