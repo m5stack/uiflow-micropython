@@ -222,4 +222,40 @@ Methods
 
         |set_certificate_signing_request.png|
 
+.. method:: IDUnit.aes_ecb_encrypt(position, data) -> bytearray
 
+    Performs AES-ECB mode encryption on data. The AES key is stored in slot 9 of the chip.
+
+    :param int position: Position for encryption operation (used after left shift by 6)
+    :param bytearray data: Data to be encrypted, must be 16 bytes
+
+    - Return: ``bytearray``: Returns 16 bytes of encrypted data
+
+
+.. method:: IDUnit.aes_ecb_decrypt(position, data) -> bytearray
+
+    Performs AES-ECB mode decryption on data. The AES key is stored in slot 9 of the chip.
+
+    :param int position: Position for decryption operation (used after left shift by 6)
+    :param bytearray data: Data to be decrypted, must be 16 bytes
+
+    - Return: ``bytearray``: Returns 16 bytes of decrypted data
+
+
+.. method:: IDUnit.aes_gfm_encrypt(data) -> bytearray
+
+    Performs Galois Field Multiplication (GFM) encryption operation in AES-GCM mode.
+
+    :param bytearray data: Data to be encrypted, must be 16 bytes
+
+    - Return: ``bytearray``: Returns 16 bytes of encrypted data
+
+.. method:: IDUnit.ecdh_stored_key(slot_num, mode, external_public_key=None) -> bytearray
+
+    Performs an ECDH key exchange operation using stored keys.
+
+    :param int slot_num: The key slot number
+    :param int mode: ECDH operation mode
+    :param bytearray external_public_key: External public key, must be 64 bytes. If not provided, a new public key will be generated
+
+    - Return: ``bytearray``: Returns 32 bytes shared secret when mode is 0x0C or 0x08;
