@@ -16,7 +16,7 @@
 #include "driver/i2s.h"
 #endif
 
-#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0)
+#if 0 //ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0)
 #include "driver/i2c_master.h"
 #define USE_IDF_I2C_MASTER
 #else

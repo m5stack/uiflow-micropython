@@ -1,0 +1,22 @@
+Index: m5stack/src/lgfx/v1/platforms/esp32/common.cpp
+===================================================================
+--- m5stack.orig/src/lgfx/v1/platforms/esp32/common.cpp
++++ m5stack/src/lgfx/v1/platforms/esp32/common.cpp
+@@ -27,7 +27,7 @@ Contributors:
+ #include <freertos/FreeRTOS.h>
+ #include <freertos/semphr.h>
+ 
+-#if __has_include(<driver/i2c_master.h>)
++#if 0 //__has_include(<driver/i2c_master.h>)
+  #include <driver/i2c_master.h>
+ #else
+  #include <driver/i2c.h>
+@@ -964,7 +964,7 @@ namespace lgfx
+ 
+     static void set_pin(i2c_port_t i2c_num, gpio_num_t pin_sda, gpio_num_t pin_scl)
+     {
+-#if __has_include(<driver/i2c_master.h>)
++#if 0 // __has_include(<driver/i2c_master.h>)
+       if ((int8_t)pin_sda >= 0) {
+         gpio_set_level(pin_sda, true);
+         gpio_iomux_out(pin_sda, PIN_FUNC_GPIO, false);

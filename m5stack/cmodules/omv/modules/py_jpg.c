@@ -42,7 +42,7 @@ static mp_obj_t py_jpg_encode(size_t n_args, const mp_obj_t *args) {
     if (img_jpg.data) {
         free(img_jpg.data);
     }
-    fmt2jpg(img->data, img->size, img->w, img->h, PIXFORMAT_RGB565, quality, &img_jpg.data, &img_jpg.size);
+    fmt2jpg(img->data, img->size, img->w, img->h, PIXFORMAT_RGB565, quality, &img_jpg.data, (size_t *)&img_jpg.size);
 
     return py_image_from_struct(&img_jpg);
 }

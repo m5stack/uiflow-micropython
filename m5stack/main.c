@@ -40,6 +40,7 @@
 #include "esp_task.h"
 #include "esp_event.h"
 #include "esp_log.h"
+#include "esp_memory_utils.h"
 #include "esp_psram.h"
 
 #include "py/cstack.h"
@@ -110,9 +111,11 @@ void mp_task(void *pvParameter) {
     #elif MICROPY_HW_ENABLE_USBDEV
     usb_init();
     #endif
+    // Start of modification section, by M5Stack
     #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
     mp_usbd_init();
     #endif
+    // End of modification section, by M5Stack
     #if MICROPY_HW_ENABLE_UART_REPL
     uart_stdout_init();
     #endif
@@ -145,9 +148,12 @@ soft_reset:
     #if MICROPY_PY_MACHINE_I2S
     machine_i2s_init0();
     #endif
+
+    // Start of modification section, by M5Stack
     #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
     mp_usbd_deinit();
     #endif
+    // End of modification section, by M5Stack
 
     // run boot-up scripts
     pyexec_frozen_module("_boot.py", false);
@@ -192,6 +198,12 @@ soft_reset_exit:
     #if MICROPY_PY_THREAD
     mp_thread_deinit();
     #endif
+
+    // Start of modification section, by M5Stack
+    #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
+    mp_usbd_deinit();
+    #endif
+    // End of modification section, by M5Stack
 
     gc_sweep_all();
 
@@ -256,6 +268,13 @@ void *esp_native_code_commit(void *buf, size_t len, void *reloc) {
     len = (len + 3) & ~3;
     size_t len_node = sizeof(native_code_node_t) + len;
     native_code_node_t *node = heap_caps_malloc(len_node, MALLOC_CAP_EXEC);
+    #if CONFIG_IDF_TARGET_ESP32S2
+    // Workaround for ESP-IDF bug https://github.com/espressif/esp-idf/issues/14835
+    if (node != NULL && !esp_ptr_executable(node)) {
+        free(node);
+        node = NULL;
+    }
+    #endif // CONFIG_IDF_TARGET_ESP32S2
     if (node == NULL) {
         m_malloc_fail(len_node);
     }

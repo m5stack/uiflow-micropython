@@ -19,7 +19,7 @@ endef
 ##
 ##
 define Package/patche
-	@echo "Push patch on $(1)" && \
+	@echo "Push $(2) on $(1)" && \
 	file_name=$(shell basename $(2)) && \
 	if [ ! -e $(1)/prereq_$$file_name ]; then \
 		cd $(1) ; \
@@ -35,7 +35,7 @@ endef
 ##
 ##
 define Package/unpatche
-	@echo "Pop on $(1)" && \
+	@echo "Pop $(2) on $(1)" && \
 	file_name=$(shell basename $(2)) && \
 	if [ -e $(1)/prereq_$$file_name ]; then \
 		cd $(1) ; \

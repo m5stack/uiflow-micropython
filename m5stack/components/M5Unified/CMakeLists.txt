@@ -18,6 +18,8 @@ file(GLOB SRCS
     M5GFX/src/lgfx/v1/panel/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32c3/*.cpp
+    # M5GFX/src/lgfx/v1/platforms/esp32s3/*.cpp
+    M5GFX/src/lgfx/v1/platforms/esp32p4/*.cpp
     M5GFX/src/lgfx/v1/touch/*.cpp
     M5Unified/src/*.cpp
     M5Unified/src/utility/*.cpp
@@ -27,9 +29,9 @@ file(GLOB SRCS
 
 set(COMPONENT_SRCS ${SRCS})
 if (IDF_VERSION_MAJOR GREATER_EQUAL 5)
-    set(COMPONENT_REQUIRES esp_adc nvs_flash efuse driver esp_timer main_${IDF_TARGET})
+    set(COMPONENT_REQUIRES esp_adc nvs_flash efuse driver esp_timer esp_lcd main)
 else()
-    set(COMPONENT_REQUIRES esp_adc_cal nvs_flash efuse main)
+    set(COMPONENT_REQUIRES esp_adc_cal nvs_flash efuse esp_lcd main)
 endif()
 
 register_component()

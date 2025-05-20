@@ -63,13 +63,23 @@ typedef struct _machine_rtc_obj_t {
 #define MICROPY_HW_RTC_USER_MEM_MAX     2048
 #endif
 
+// A board can enable MICROPY_HW_RTC_MEM_INIT_ALWAYS to always clear out RTC memory on boot.
+// Defaults to RTC_NOINIT_ATTR so the user memory survives WDT resets and the like.
+#if MICROPY_HW_RTC_MEM_INIT_ALWAYS
+#define _USER_MEM_ATTR RTC_DATA_ATTR
+#else
+#define _USER_MEM_ATTR RTC_NOINIT_ATTR
+#endif
+
 // Optionally compile user memory functionality if the size of memory is greater than 0
 #if MICROPY_HW_RTC_USER_MEM_MAX > 0
 #define MEM_MAGIC           0x75507921
-RTC_DATA_ATTR uint32_t rtc_user_mem_magic;
-RTC_DATA_ATTR uint16_t rtc_user_mem_len;
-RTC_DATA_ATTR uint8_t rtc_user_mem_data[MICROPY_HW_RTC_USER_MEM_MAX];
+_USER_MEM_ATTR uint32_t rtc_user_mem_magic;
+_USER_MEM_ATTR uint16_t rtc_user_mem_len;
+_USER_MEM_ATTR uint8_t rtc_user_mem_data[MICROPY_HW_RTC_USER_MEM_MAX];
 #endif
+
+#undef _USER_MEM_ATTR
 
 // singleton RTC object
 static const machine_rtc_obj_t machine_rtc_obj = {{&machine_rtc_type}};
@@ -83,22 +93,31 @@ static mp_obj_t machine_rtc_make_new(const mp_obj_type_t *type, size_t n_args, s
     // check arguments
     mp_arg_check_num(n_args, n_kw, 0, 0, false);
 
+    #if MICROPY_HW_RTC_USER_MEM_MAX > 0
+    if (rtc_user_mem_magic != MEM_MAGIC) {
+        rtc_user_mem_magic = MEM_MAGIC;
+        rtc_user_mem_len = 0;
+    }
+    #endif
+
     // return constant object
     return (mp_obj_t)&machine_rtc_obj;
 }
 
-static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *args) {
+static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *args, int hour_index) {
     if (n_args == 1) {
         // Get time
-        struct timeval tv;
-        gettimeofday(&tv, NULL);
 
-        struct tm tm;
-        gmtime_r(&tv.tv_sec, &tm);
+        struct timeval tv;
+
+        gettimeofday(&tv, NULL);
+        timeutils_struct_time_t tm;
+
+        timeutils_seconds_since_epoch_to_struct_time(tv.tv_sec, &tm);
 
         mp_obj_t tuple[8] = {
-            mp_obj_new_int(tm.tm_year + 1900),
-            mp_obj_new_int(tm.tm_mon + 1),
+            mp_obj_new_int(tm.tm_year),
+            mp_obj_new_int(tm.tm_mon),
             mp_obj_new_int(tm.tm_mday),
             mp_obj_new_int(tm.tm_wday),
             mp_obj_new_int(tm.tm_hour),
@@ -110,22 +129,19 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
         return mp_obj_new_tuple(8, tuple);
     } else {
         // Set time
+
         mp_obj_t *items;
         mp_obj_get_array_fixed_n(args[1], 8, &items);
 
         struct timeval tv = {0};
-
-        #if MICROPY_EPOCH_IS_1970
-        tv.tv_sec = timeutils_seconds_since_epoch(mp_obj_get_int(items[0]),
-            mp_obj_get_int(items[1]), mp_obj_get_int(items[2]),
-            mp_obj_get_int(items[4]), mp_obj_get_int(items[5]),
-            mp_obj_get_int(items[6]));
-        #else
-        tv.tv_sec = timeutils_seconds_since_epoch(mp_obj_get_int(items[0]),
-            mp_obj_get_int(items[1]), mp_obj_get_int(items[2]),
-            mp_obj_get_int(items[4]), mp_obj_get_int(items[5]),
-            mp_obj_get_int(items[6]) + TIMEUTILS_SECONDS_1970_TO_2000);
-        #endif
+        tv.tv_sec = timeutils_seconds_since_epoch(
+            mp_obj_get_int(items[0]),
+            mp_obj_get_int(items[1]),
+            mp_obj_get_int(items[2]),
+            mp_obj_get_int(items[hour_index]),
+            mp_obj_get_int(items[hour_index + 1]),
+            mp_obj_get_int(items[hour_index + 2])
+            );
         tv.tv_usec = mp_obj_get_int(items[7]);
         settimeofday(&tv, NULL);
 
@@ -133,7 +149,7 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
     }
 }
 static mp_obj_t machine_rtc_datetime(size_t n_args, const mp_obj_t *args) {
-    return machine_rtc_datetime_helper(n_args, args);
+    return machine_rtc_datetime_helper(n_args, args, 4);
 }
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_datetime_obj, 1, 2, machine_rtc_datetime);
 
@@ -208,14 +224,7 @@ static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_timezone_obj, 1, 2, machi
 
 static mp_obj_t machine_rtc_init(mp_obj_t self_in, mp_obj_t date) {
     mp_obj_t args[2] = {self_in, date};
-    machine_rtc_datetime_helper(2, args);
-
-    #if MICROPY_HW_RTC_USER_MEM_MAX > 0
-    if (rtc_user_mem_magic != MEM_MAGIC) {
-        rtc_user_mem_magic = MEM_MAGIC;
-        rtc_user_mem_len = 0;
-    }
-    #endif
+    machine_rtc_datetime_helper(2, args, 3);
 
     return mp_const_none;
 }

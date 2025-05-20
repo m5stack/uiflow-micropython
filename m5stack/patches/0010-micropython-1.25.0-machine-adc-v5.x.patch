@@ -1,0 +1,224 @@
+Index: micropython-origin/ports/esp32/adc.c
+===================================================================
+--- micropython-origin.orig/ports/esp32/adc.c
++++ micropython-origin/ports/esp32/adc.c
+@@ -27,8 +27,6 @@
+ 
+ #include "py/mphal.h"
+ #include "adc.h"
+-#include "driver/adc.h"
+-#include "esp_adc/adc_cali_scheme.h"
+ 
+ #define DEFAULT_VREF 1100
+ 
+@@ -57,51 +55,52 @@ void madcblock_bits_helper(machine_adc_b
+             mp_raise_ValueError(MP_ERROR_TEXT("invalid bits"));
+     }
+     self->bits = bits;
+-
+-    if (self->unit_id == ADC_UNIT_1) {
+-        adc1_config_width(self->width);
+-    }
+ }
+ 
+ mp_int_t madcblock_read_helper(machine_adc_block_obj_t *self, adc_channel_t channel_id) {
+     int raw = 0;
+-    if (self->unit_id == ADC_UNIT_1) {
+-        raw = adc1_get_raw(channel_id);
+-    } else {
+-        #if (SOC_ADC_PERIPH_NUM >= 2)
+-        check_esp_err(adc2_get_raw(channel_id, self->width, &raw));
+-        #endif
+-    }
++    check_esp_err(adc_oneshot_read(self->adc_handle, channel_id, &raw));
+     return raw;
+ }
+ 
+-static esp_err_t ensure_adc_calibration(machine_adc_block_obj_t *self, adc_atten_t atten) {
++static esp_err_t ensure_adc_calibration(machine_adc_block_obj_t *self, adc_channel_t channel, adc_atten_t atten) {
+     if (self->handle[atten] != NULL) {
+         return ESP_OK;
+     }
++    esp_err_t ret = ESP_FAIL;
+ 
+-    #if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
++#if ADC_CALI_SCHEME_CURVE_FITTING_SUPPORTED
++    // DEBUG_printf("calibration scheme version is %s", "Curve Fitting");
+     adc_cali_curve_fitting_config_t cali_config = {
+         .unit_id = self->unit_id,
++        .chan = channel,
+         .atten = atten,
+         .bitwidth = self->width,
+     };
+-    return adc_cali_create_scheme_curve_fitting(&cali_config, &self->handle[atten]);
+-    #else
++    ret = adc_cali_create_scheme_curve_fitting(&cali_config, &self->handle[atten]);
++    if (ret == ESP_OK) {
++        return ESP_OK;
++    }
++#endif
++
++#if ADC_CALI_SCHEME_LINE_FITTING_SUPPORTED
++    // DEBUG_printf("calibration scheme version is %s", "Line Fitting");
+     adc_cali_line_fitting_config_t cali_config = {
+         .unit_id = self->unit_id,
+         .atten = atten,
+         .bitwidth = self->width,
+     };
+-    return adc_cali_create_scheme_line_fitting(&cali_config, &self->handle[atten]);
+-    #endif
++    ret = adc_cali_create_scheme_line_fitting(&cali_config, &self->handle[atten]);
++#endif
++
++    return ret;
+ }
+ 
+ mp_int_t madcblock_read_uv_helper(machine_adc_block_obj_t *self, adc_channel_t channel_id, adc_atten_t atten) {
+     int raw = madcblock_read_helper(self, channel_id);
+     int uv;
+ 
+-    check_esp_err(ensure_adc_calibration(self, atten));
++    check_esp_err(ensure_adc_calibration(self, channel_id, atten));
+     check_esp_err(adc_cali_raw_to_voltage(self->handle[atten], raw, &uv));
+ 
+     return (mp_int_t)uv * 1000;
+Index: micropython-origin/ports/esp32/adc.h
+===================================================================
+--- micropython-origin.orig/ports/esp32/adc.h
++++ micropython-origin/ports/esp32/adc.h
+@@ -30,6 +30,7 @@
+ 
+ #include "py/runtime.h"
+ #include "esp_adc_cal.h"
++#include "esp_adc/adc_oneshot.h"
+ #include "esp_adc/adc_cali_scheme.h"
+ 
+ #define ADC_ATTEN_MAX SOC_ADC_ATTEN_NUM
+@@ -38,7 +39,8 @@ typedef struct _machine_adc_block_obj_t
+     mp_obj_base_t base;
+     adc_unit_t unit_id;
+     mp_int_t bits;
+-    adc_bits_width_t width;
++    adc_bitwidth_t width;
++    adc_oneshot_unit_handle_t adc_handle;
+     adc_cali_handle_t handle[ADC_ATTEN_MAX];
+ } machine_adc_block_obj_t;
+ 
+Index: micropython-origin/ports/esp32/machine_adc.c
+===================================================================
+--- micropython-origin.orig/ports/esp32/machine_adc.c
++++ micropython-origin/ports/esp32/machine_adc.c
+@@ -30,7 +30,6 @@
+ 
+ #include "py/mphal.h"
+ #include "adc.h"
+-#include "driver/adc.h"
+ 
+ #define ADCBLOCK1 (&madcblock_obj[0])
+ #define ADCBLOCK2 (&madcblock_obj[1])
+@@ -123,6 +122,21 @@ static const machine_adc_obj_t madc_obj[
+     {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_7, GPIO_NUM_18},
+     {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_8, GPIO_NUM_19},
+     {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_9, GPIO_NUM_20},
++    #elif CONFIG_IDF_TARGET_ESP32P4
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_0, GPIO_NUM_16},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_1, GPIO_NUM_17},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_2, GPIO_NUM_18},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_3, GPIO_NUM_19},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_4, GPIO_NUM_20},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_5, GPIO_NUM_21},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_6, GPIO_NUM_22},
++    {{&machine_adc_type}, ADCBLOCK1, ADC_CHANNEL_7, GPIO_NUM_23},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_0, GPIO_NUM_49},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_1, GPIO_NUM_50},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_2, GPIO_NUM_52},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_3, GPIO_NUM_52},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_4, GPIO_NUM_53},
++    {{&machine_adc_type}, ADCBLOCK2, ADC_CHANNEL_5, GPIO_NUM_54},
+     #endif
+ };
+ 
+@@ -155,21 +169,28 @@ static void mp_machine_adc_print(const m
+     mp_printf(print, "ADC(Pin(%u), atten=%u)", self->gpio_id, madc_atten_get(self));
+ }
+ 
++static esp_err_t madc_config_helper(const machine_adc_obj_t *self, adc_atten_t atten, adc_bitwidth_t bitwidth) {
++    adc_oneshot_chan_cfg_t config = {
++        .bitwidth = bitwidth,
++        .atten = atten,
++    };
++    return adc_oneshot_config_channel(self->block->adc_handle, self->channel_id, &config);
++}
++
+ static void madc_atten_helper(const machine_adc_obj_t *self, mp_int_t atten) {
+-    esp_err_t err = ESP_FAIL;
+-    if (self->block->unit_id == ADC_UNIT_1) {
+-        err = adc1_config_channel_atten(self->channel_id, atten);
+-    } else {
+-        #if SOC_ADC_PERIPH_NUM >= 2
+-        err = adc2_config_channel_atten(self->channel_id, atten);
+-        #endif
+-    }
+-    if (err != ESP_OK) {
++    if (madc_config_helper(self, atten, self->block->width) != ESP_OK) {
+         mp_raise_ValueError(MP_ERROR_TEXT("invalid atten"));
+     }
+     madc_atten_set(self, atten);
+ }
+ 
++static void madc_bits_helper(const machine_adc_obj_t *self, mp_int_t bitwidth) {
++    madcblock_bits_helper(self->block, bitwidth);
++    if (madc_config_helper(self, madc_atten_get(self), self->block->width) != ESP_OK) {
++        mp_raise_ValueError(MP_ERROR_TEXT("invalid bits"));
++    }
++}
++
+ void madc_init_helper(const machine_adc_obj_t *self, size_t n_pos_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+     enum {
+         ARG_atten,
+@@ -182,11 +203,18 @@ void madc_init_helper(const machine_adc_
+     mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+     mp_arg_parse_all(n_pos_args, pos_args, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+ 
++    if (self->block->adc_handle == NULL) {
++        adc_oneshot_unit_init_cfg_t init_config = {
++            .unit_id = self->block->unit_id,
++        };
++        check_esp_err(adc_oneshot_new_unit(&init_config, &self->block->adc_handle));
++    }
++
+     mp_int_t atten = args[ARG_atten].u_int;
+     if (atten != -1) {
+         madc_atten_helper(self, atten);
+     } else if (madc_atten_get(self) == ADC_ATTEN_MAX) {
+-        madc_atten_helper(self, ADC_ATTEN_DB_0);
++        madc_atten_helper(self, ADC_ATTEN_DB_12);
+     }
+ }
+ 
+@@ -240,5 +268,5 @@ static void mp_machine_adc_atten_set(mac
+ }
+ 
+ static void mp_machine_adc_width_set(machine_adc_obj_t *self, mp_int_t width) {
+-    madcblock_bits_helper(self->block, width);
++    madc_bits_helper(self, width);
+ }
+Index: micropython-origin/ports/esp32/machine_adc_block.c
+===================================================================
+--- micropython-origin.orig/ports/esp32/machine_adc_block.c
++++ micropython-origin/ports/esp32/machine_adc_block.c
+@@ -29,12 +29,11 @@
+ 
+ #include "py/mphal.h"
+ #include "adc.h"
+-#include "driver/adc.h"
+ 
+ machine_adc_block_obj_t madcblock_obj[] = {
+-    {{&machine_adc_block_type}, ADC_UNIT_1, SOC_ADC_RTC_MAX_BITWIDTH, -1, {0}},
++    {{&machine_adc_block_type}, ADC_UNIT_1, SOC_ADC_RTC_MAX_BITWIDTH, ADC_BITWIDTH_DEFAULT, NULL, {0}},
+     #if SOC_ADC_PERIPH_NUM > 1
+-    {{&machine_adc_block_type}, ADC_UNIT_2, SOC_ADC_RTC_MAX_BITWIDTH, -1, {0}},
++    {{&machine_adc_block_type}, ADC_UNIT_2, SOC_ADC_RTC_MAX_BITWIDTH, ADC_BITWIDTH_DEFAULT, NULL, {0}},
+     #endif
+ };
+ 

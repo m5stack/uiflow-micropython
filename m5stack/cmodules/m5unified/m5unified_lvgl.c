@@ -21,7 +21,7 @@ mp_obj_t mp_lv_task_handler(mp_obj_t self_in) {
 static MP_DEFINE_CONST_FUN_OBJ_1(mp_lv_task_handler_obj, mp_lv_task_handler);
 
 static void vTimerCallback(TimerHandle_t plvgl_timer) {
-    lv_tick_inc(portTICK_RATE_MS * 10);
+    lv_tick_inc(portTICK_PERIOD_MS * 10);
     mp_sched_schedule((mp_obj_t)&mp_lv_task_handler_obj, mp_const_none);
 }
 

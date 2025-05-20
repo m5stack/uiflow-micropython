@@ -18,6 +18,7 @@
 #include "driver/periph_ctrl.h"
 #include "driver/timer.h"
 #endif
+#include "esp_private/periph_ctrl.h"
 
 #define DMX_UART_FULL_DEFAULT  1
 #define DMX_UART_EMPTY_DEFAULT 8
@@ -320,18 +321,24 @@ static void DMX_ISR_ATTR dmx_uart_isr(void *arg) {
     }
 }
 
+#if SOC_PERIPH_CLK_CTRL_SHARED
+#define HP_UART_SRC_CLK_ATOMIC()       PERIPH_RCC_ATOMIC()
+#else
+#define HP_UART_SRC_CLK_ATOMIC()
+#endif
+
 bool dmx_uart_init(dmx_port_t dmx_num, void *isr_context, int isr_flags) {
     struct dmx_uart_t *uart = &dmx_uart_context[dmx_num];
 
-    periph_module_enable(uart_periph_signal[dmx_num].module);
+    periph_module_enable(PERIPH_UART0_MODULE + dmx_num);
     if (dmx_num != 0) {  // Default UART port for console
         #if SOC_UART_REQUIRE_CORE_RESET
         // ESP32C3 workaround to prevent UART outputting garbage data
         uart_ll_set_reset_core(uart->dev, true);
-        periph_module_reset(uart_periph_signal[dmx_num].module);
+        periph_module_reset(PERIPH_UART0_MODULE + dmx_num);
         uart_ll_set_reset_core(uart->dev, false);
         #else
-        periph_module_reset(uart_periph_signal[dmx_num].module);
+        periph_module_reset(PERIPH_UART0_MODULE + dmx_num);
         #endif
     }
     #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
@@ -345,10 +352,14 @@ bool dmx_uart_init(dmx_port_t dmx_num, void *isr_context, int isr_flags) {
     }
     uart_get_sclk_freq(UART_SCLK_DEFAULT, &sclk_freq);
     #else
-    uart_ll_set_sclk(uart->dev, UART_SCLK_DEFAULT);
+    HP_UART_SRC_CLK_ATOMIC() {
+        uart_ll_set_sclk(uart->dev, UART_SCLK_DEFAULT);
+    }
     uart_get_sclk_freq(UART_SCLK_DEFAULT, &sclk_freq);
     #endif
-    uart_ll_set_baudrate(uart->dev, DMX_BAUD_RATE, sclk_freq);
+    HP_UART_SRC_CLK_ATOMIC() {
+        uart_ll_set_baudrate(uart->dev, DMX_BAUD_RATE, sclk_freq);
+    }
     #else
     uart_ll_set_sclk(uart->dev, UART_SCLK_APB);
     uart_ll_set_baudrate(uart->dev, DMX_BAUD_RATE);
@@ -376,7 +387,7 @@ bool dmx_uart_init(dmx_port_t dmx_num, void *isr_context, int isr_flags) {
 void dmx_uart_deinit(dmx_port_t dmx_num) {
     struct dmx_uart_t *uart = &dmx_uart_context[dmx_num];
     if (uart->num != 0) {  // Default UART port for console
-        periph_module_disable(uart_periph_signal[uart->num].module);
+        periph_module_disable(PERIPH_UART0_MODULE + dmx_num);
     }
 }
 
@@ -402,7 +413,9 @@ void dmx_uart_set_baud_rate(dmx_port_t dmx_num, uint32_t baud_rate) {
     #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
     uint32_t sclk_freq;
     uart_get_sclk_freq(UART_SCLK_DEFAULT, &sclk_freq);
-    uart_ll_set_baudrate(uart->dev, baud_rate, sclk_freq);
+    HP_UART_SRC_CLK_ATOMIC() {
+        uart_ll_set_baudrate(uart->dev, baud_rate, sclk_freq);
+    }
     #else
     uart_ll_set_baudrate(uart->dev, baud_rate);
     #endif
@@ -410,7 +423,7 @@ void dmx_uart_set_baud_rate(dmx_port_t dmx_num, uint32_t baud_rate) {
 
 void DMX_ISR_ATTR dmx_uart_invert_tx(dmx_port_t dmx_num, int invert) {
     struct dmx_uart_t *uart = &dmx_uart_context[dmx_num];
-    #if CONFIG_IDF_TARGET_ESP32C6
+    #if CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32P4
     uart->dev->conf0_sync.txd_inv = invert;
     uart_ll_update(uart->dev);
     #else
@@ -420,7 +433,7 @@ void DMX_ISR_ATTR dmx_uart_invert_tx(dmx_port_t dmx_num, int invert) {
 
 int dmx_uart_get_rts(dmx_port_t dmx_num) {
     struct dmx_uart_t *uart = &dmx_uart_context[dmx_num];
-    #if CONFIG_IDF_TARGET_ESP32C6
+    #if CONFIG_IDF_TARGET_ESP32C6 || CONFIG_IDF_TARGET_ESP32P4
     return uart->dev->conf0_sync.sw_rts;
     #else
     return uart->dev->conf0.sw_rts;
