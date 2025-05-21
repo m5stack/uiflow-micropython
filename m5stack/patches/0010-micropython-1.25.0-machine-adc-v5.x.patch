@@ -1,7 +1,7 @@
-Index: micropython-origin/ports/esp32/adc.c
+Index: micropython/ports/esp32/adc.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/adc.c
-+++ micropython-origin/ports/esp32/adc.c
+--- micropython.orig/ports/esp32/adc.c
++++ micropython/ports/esp32/adc.c
 @@ -27,8 +27,6 @@
  
  #include "py/mphal.h"
@@ -82,10 +82,10 @@ Index: micropython-origin/ports/esp32/adc.c
      check_esp_err(adc_cali_raw_to_voltage(self->handle[atten], raw, &uv));
  
      return (mp_int_t)uv * 1000;
-Index: micropython-origin/ports/esp32/adc.h
+Index: micropython/ports/esp32/adc.h
 ===================================================================
---- micropython-origin.orig/ports/esp32/adc.h
-+++ micropython-origin/ports/esp32/adc.h
+--- micropython.orig/ports/esp32/adc.h
++++ micropython/ports/esp32/adc.h
 @@ -30,6 +30,7 @@
  
  #include "py/runtime.h"
@@ -104,10 +104,10 @@ Index: micropython-origin/ports/esp32/adc.h
      adc_cali_handle_t handle[ADC_ATTEN_MAX];
  } machine_adc_block_obj_t;
  
-Index: micropython-origin/ports/esp32/machine_adc.c
+Index: micropython/ports/esp32/machine_adc.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/machine_adc.c
-+++ micropython-origin/ports/esp32/machine_adc.c
+--- micropython.orig/ports/esp32/machine_adc.c
++++ micropython/ports/esp32/machine_adc.c
 @@ -30,7 +30,6 @@
  
  #include "py/mphal.h"
@@ -203,10 +203,10 @@ Index: micropython-origin/ports/esp32/machine_adc.c
 -    madcblock_bits_helper(self->block, width);
 +    madc_bits_helper(self, width);
  }
-Index: micropython-origin/ports/esp32/machine_adc_block.c
+Index: micropython/ports/esp32/machine_adc_block.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/machine_adc_block.c
-+++ micropython-origin/ports/esp32/machine_adc_block.c
+--- micropython.orig/ports/esp32/machine_adc_block.c
++++ micropython/ports/esp32/machine_adc_block.c
 @@ -29,12 +29,11 @@
  
  #include "py/mphal.h"

@@ -1,7 +1,7 @@
-Index: micropython-origin/ports/esp32/machine_pwm.c
+Index: micropython/ports/esp32/machine_pwm.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/machine_pwm.c
-+++ micropython-origin/ports/esp32/machine_pwm.c
+--- micropython.orig/ports/esp32/machine_pwm.c
++++ micropython/ports/esp32/machine_pwm.c
 @@ -177,7 +177,11 @@ static void pwm_deinit(int channel_idx)
              // Disable ledc signal for the pin
              // esp_rom_gpio_connect_out_signal(pin, SIG_GPIO_OUT_IDX, false, false);

@@ -1,7 +1,7 @@
-diff --git a/driver/include/common.h b/driver/include/common.h
-index 5cec282..c9f45d2 100644
---- a/driver/include/common.h
-+++ b/driver/include/common.h
+Index: lv_binding_micropython/driver/include/common.h
+===================================================================
+--- lv_binding_micropython.orig/driver/include/common.h
++++ lv_binding_micropython/driver/include/common.h
 @@ -16,7 +16,7 @@ typedef struct mp_ptr_t
      void *ptr;
  } mp_ptr_t;
@@ -11,7 +11,7 @@ index 5cec282..c9f45d2 100644
  {
      mp_ptr_t *self = MP_OBJ_TO_PTR(self_in);
  
-@@ -34,7 +34,7 @@ STATIC mp_int_t mp_ptr_get_buffer(mp_obj_t self_in, mp_buffer_info_t *bufinfo, m
+@@ -34,7 +34,7 @@ STATIC mp_int_t mp_ptr_get_buffer(mp_obj
  #define PTR_OBJ(ptr_global) ptr_global ## _obj
  
  #define DEFINE_PTR_OBJ_TYPE(ptr_obj_type, ptr_type_qstr)\
@@ -29,11 +29,11 @@ index 5cec282..c9f45d2 100644
      { &ptr_global ## _type },\
      &ptr_global\
  }
-diff --git a/lib/fs_driver.py b/lib/fs_driver.py
-index bac84b3..0e0a989 100644
---- a/lib/fs_driver.py
-+++ b/lib/fs_driver.py
-@@ -3,7 +3,7 @@ Original author: mhepp(https://forum.lvgl.io/u/mhepp/summary)
+Index: lv_binding_micropython/lib/fs_driver.py
+===================================================================
+--- lv_binding_micropython.orig/lib/fs_driver.py
++++ lv_binding_micropython/lib/fs_driver.py
+@@ -3,7 +3,7 @@ Original author: mhepp(https://forum.lvg
  '''
  
  import lvgl as lv
@@ -42,10 +42,10 @@ index bac84b3..0e0a989 100644
  
  def fs_open_cb(drv, path, mode):
  
-diff --git a/lv_conf.h b/lv_conf.h
-index 2e0d08d..246ec8c 100644
---- a/lv_conf.h
-+++ b/lv_conf.h
+Index: lv_binding_micropython/lv_conf.h
+===================================================================
+--- lv_binding_micropython.orig/lv_conf.h
++++ lv_binding_micropython/lv_conf.h
 @@ -704,7 +704,7 @@ extern void mp_lv_deinit_gc();
  #define LV_USE_LIBPNG 0
  

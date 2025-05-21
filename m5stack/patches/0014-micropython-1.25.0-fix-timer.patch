@@ -1,7 +1,7 @@
-Index: micropython-origin/ports/esp32/machine_timer.c
+Index: micropython/ports/esp32/machine_timer.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/machine_timer.c
-+++ micropython-origin/ports/esp32/machine_timer.c
+--- micropython.orig/ports/esp32/machine_timer.c
++++ micropython/ports/esp32/machine_timer.c
 @@ -38,6 +38,7 @@
  #include "hal/timer_hal.h"
  #include "hal/timer_ll.h"

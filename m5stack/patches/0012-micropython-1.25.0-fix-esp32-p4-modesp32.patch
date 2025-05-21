@@ -1,7 +1,7 @@
-Index: micropython-origin/ports/esp32/modesp32.c
+Index: micropython/ports/esp32/modesp32.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/modesp32.c
-+++ micropython-origin/ports/esp32/modesp32.c
+--- micropython.orig/ports/esp32/modesp32.c
++++ micropython/ports/esp32/modesp32.c
 @@ -136,7 +136,7 @@ static mp_obj_t esp32_wake_on_ulp(const
  }
  static MP_DEFINE_CONST_FUN_OBJ_1(esp32_wake_on_ulp_obj, esp32_wake_on_ulp);

@@ -1,7 +1,7 @@
-Index: m5stack/components/esp32-camera/Kconfig
+Index: esp32-camera/Kconfig
 ===================================================================
---- m5stack.orig/Kconfig
-+++ m5stack/Kconfig
+--- esp32-camera.orig/Kconfig
++++ esp32-camera/Kconfig
 @@ -128,6 +128,10 @@ menu "Camera configuration"
  
      endchoice
@@ -13,10 +13,10 @@ Index: m5stack/components/esp32-camera/Kconfig
      config SCCB_CLK_FREQ
      int "SCCB clk frequency"
      default 100000
-Index: m5stack/components/esp32-camera/driver/sccb.c
+Index: esp32-camera/driver/sccb.c
 ===================================================================
---- m5stack.orig/driver/sccb.c
-+++ m5stack/driver/sccb.c
+--- esp32-camera.orig/driver/sccb.c
++++ esp32-camera/driver/sccb.c
 @@ -46,8 +46,162 @@ const int SCCB_I2C_PORT_DEFAULT = 0;
  static int sccb_i2c_port;
  static bool sccb_owns_i2c_port;

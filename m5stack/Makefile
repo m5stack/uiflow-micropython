@@ -296,42 +296,107 @@ submodules:
 		git submodule update --init lib/micropython-lib && \
 		cd -
 
+LV_BINDING_PATH = $(abspath ./cmodules/lv_binding_micropython)
+MICROPYTHON_PATH = $(abspath ./../micropython)
+M5UNIFIED_PATH = $(abspath ./components/M5Unified/M5Unified)
+M5GFX_PATH = $(abspath ./components/M5Unified/M5GFX)
+ESP32_CAMERA_PATH = $(abspath ./components/esp32-camera)
+
+LV_BINDING_PATCH_SERIES = \
+	0003-avoid-lv_bindings-compile-error.patch
+
+MICROPYTHON_PATCH_SERIES = \
+	0006-modtime-add-timezone-method.patch              \
+	0007-Add-set-default-netif-method.patch             \
+	0009-micropython-1.25.0-add-esp32p4-pins.patch      \
+	0010-micropython-1.25.0-machine-adc-v5.x.patch      \
+	0011-micropython-1.25.0-fix-esp32-p4-pwm.patch      \
+	0012-micropython-1.25.0-fix-esp32-p4-modesp32.patch \
+	0013-micropython-1.25.0-fix-touchpad.patch          \
+	0014-micropython-1.25.0-fix-timer.patch             \
+	0015-micropython-1.25.0-fix-hostname.patch          \
+	0016-micropython-1.25.0-fix-mpnimbleport.patch      \
+	0017-micropython-1.25.0-add-uart-mode.patch
+
+IDF_PATH_PATCH_SERIES = \
+	1004-idf_v5.4_freertos.patch
+
+M5UNIFIED_PATCH_SERIES = \
+	2005-Support-LTR553.patch
+
+ADF_PATCH_SERIES = \
+	3002-Modify-i2s_stream_idf5.patch
+
+M5GFX_PATCH_SERIES = \
+	4002-M5GFX-use-i2c-driver.patch
+
+ESP32_CAMERA_PATCH_SERIES = \
+	5001-Add-software-i2c-support.patch
+
+PACKAGES = \
+	lv_binding_micropython \
+	micropython            \
+	esp-idf                \
+	M5Unified              \
+	esp-adf                \
+	M5GFX                  \
+	esp32-camera
+
+PACKAGES_PATH = \
+	lv_binding_micropython:$(LV_BINDING_PATH) \
+	micropython:$(MICROPYTHON_PATH)           \
+	esp-idf:$(IDF_PATH)                       \
+	M5Unified:$(M5UNIFIED_PATH)               \
+	esp-adf:$(ADF_PATH)                       \
+	M5GFX:$(M5GFX_PATH)                       \
+	esp32-camera:$(ESP32_CAMERA_PATH)
+
+define find_package
+$(if $(filter $(1):%,$(PACKAGES_PATH)),$(word 2,$(subst :, ,$(filter $(1):%,$(PACKAGES_PATH)))),none)
+endef
+
+.PHONY: $(PACKAGES) prepare
+PKG := $(firstword $(MAKECMDGOALS))
+
+PKG_PATH ?= $(call find_package,$(PKG))
+PKG_PATCH_SERIES := $(strip \
+	$(if $(filter lv_binding_micropython,$(PKG)),$(LV_BINDING_PATCH_SERIES)) \
+	$(if $(filter micropython,$(PKG)),$(MICROPYTHON_PATCH_SERIES))           \
+	$(if $(filter esp-idf,$(PKG)),$(IDF_PATH_PATCH_SERIES))                  \
+	$(if $(filter M5Unified,$(PKG)),$(M5UNIFIED_PATCH_SERIES))               \
+	$(if $(filter esp-adf,$(PKG)),$(ADF_PATCH_SERIES))                       \
+	$(if $(filter M5GFX,$(PKG)),$(M5GFX_PATCH_SERIES))                       \
+	$(if $(filter esp32-camera,$(PKG)),$(ESP32_CAMERA_PATCH_SERIES))         \
+)
+# $(info PKG_PATCH_SERIES for $(PKG) is [$(PKG_PATCH_SERIES)])
+
+prepare:
+	$(call Patch/prepare,$(abspath $(PKG_PATH)),$(PKG_PATCH_SERIES))
+
+.PHONY: $(PACKAGES) update
+update:
+	$(call Patch/update,$(abspath $(PKG_PATH)),$(abspath ./patches))
+
+.PHONY: $(PACKAGES) unprepare
+unprepare:
+	$(call Patch/clean,$(abspath $(PKG_PATH)),$(PKG_PATCH_SERIES))
+
 # Apply patches
-patch:
-	$(call Package/patche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0007-Add-set-default-netif-method.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0009-micropython-1.25.0-add-esp32p4-pins.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0010-micropython-1.25.0-machine-adc-v5.x.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0011-micropython-1.25.0-fix-esp32-p4-pwm.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0012-micropython-1.25.0-fix-esp32-p4-modesp32.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0013-micropython-1.25.0-fix-touchpad.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0014-micropython-1.25.0-fix-timer.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0015-micropython-1.25.0-fix-hostname.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0016-micropython-1.25.0-fix-mpnimbleport.patch))
-	$(call Package/patche,$(abspath ./../micropython),$(abspath ./patches/0017-micropython-1.25.0-add-uart-mode.patch))
-	$(call Package/patche,$(abspath $(IDF_PATH)),$(abspath ./patches/1004-idf_v5.4_freertos.patch))
-	$(call Package/patche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
-	$(call Package/patche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
-	$(call Package/patche,$(abspath ./components/M5Unified/M5GFX),$(abspath ./patches/4002-M5GFX-use-i2c-driver.patch))
-	$(call Package/patche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))
+patch: unpatch
+	$(call Patch/prepare,$(LV_BINDING_PATH),$(LV_BINDING_PATCH_SERIES))
+	$(call Patch/prepare,$(MICROPYTHON_PATH),$(MICROPYTHON_PATCH_SERIES))
+	$(call Patch/prepare,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
+	$(call Patch/prepare,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
+	$(call Patch/prepare,$(ADF_PATH),$(ADF_PATCH_SERIES))
+	$(call Patch/prepare,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+	$(call Patch/prepare,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))
 
 # Unapply patches
 unpatch:
-	$(call Package/unpatche,$(abspath ./cmodules/lv_binding_micropython),$(abspath ./patches/0003-avoid-lv_bindings-compile-error.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0017-micropython-1.25.0-add-uart-mode.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0016-micropython-1.25.0-fix-mpnimbleport.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0015-micropython-1.25.0-fix-hostname.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0014-micropython-1.25.0-fix-timer.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0013-micropython-1.25.0-fix-touchpad.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0012-micropython-1.25.0-fix-esp32-p4-modesp32.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0011-micropython-1.25.0-fix-esp32-p4-pwm.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0010-micropython-1.25.0-machine-adc-v5.x.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0009-micropython-1.25.0-add-esp32p4-pins.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0007-Add-set-default-netif-method.patch))
-	$(call Package/unpatche,$(abspath ./../micropython),$(abspath ./patches/0006-modtime-add-timezone-method.patch))
-	$(call Package/unpatche,$(abspath $(IDF_PATH)),$(abspath ./patches/1004-idf_v5.4_freertos.patch))
-	$(call Package/unpatche,$(abspath ./components/M5Unified/M5Unified),$(abspath ./patches/2005-Support-LTR553.patch))
-	$(call Package/unpatche,$(abspath $(ADF_PATH)),$(abspath ./patches/3002-Modify-i2s_stream_idf5.patch))
-	$(call Package/unpatche,$(abspath ./components/M5Unified/M5GFX),$(abspath ./patches/4002-M5GFX-use-i2c-driver.patch))
-	$(call Package/unpatche,$(abspath ./components/esp32-camera),$(abspath ./patches/5001-Add-software-i2c-support.patch))
+	$(call Patch/clean,$(LV_BINDING_PATH),$(LV_BINDING_PATCH_SERIES))
+	$(call Patch/clean,$(MICROPYTHON_PATH),$(MICROPYTHON_PATCH_SERIES))
+	$(call Patch/clean,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
+	$(call Patch/clean,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
+	$(call Patch/clean,$(ADF_PATH),$(ADF_PATCH_SERIES))
+	$(call Patch/clean,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+	$(call Patch/clean,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))

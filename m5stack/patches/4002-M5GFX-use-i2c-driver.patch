@@ -1,7 +1,7 @@
-Index: m5stack/src/lgfx/v1/platforms/esp32/common.cpp
+Index: M5GFX/src/lgfx/v1/platforms/esp32/common.cpp
 ===================================================================
---- m5stack.orig/src/lgfx/v1/platforms/esp32/common.cpp
-+++ m5stack/src/lgfx/v1/platforms/esp32/common.cpp
+--- M5GFX.orig/src/lgfx/v1/platforms/esp32/common.cpp
++++ M5GFX/src/lgfx/v1/platforms/esp32/common.cpp
 @@ -27,7 +27,7 @@ Contributors:
  #include <freertos/FreeRTOS.h>
  #include <freertos/semphr.h>

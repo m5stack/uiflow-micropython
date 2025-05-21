@@ -1,7 +1,7 @@
-Index: micropython-origin/ports/esp32/mpnimbleport.c
+Index: micropython/ports/esp32/mpnimbleport.c
 ===================================================================
---- micropython-origin.orig/ports/esp32/mpnimbleport.c
-+++ micropython-origin/ports/esp32/mpnimbleport.c
+--- micropython.orig/ports/esp32/mpnimbleport.c
++++ micropython/ports/esp32/mpnimbleport.c
 @@ -71,7 +71,9 @@ void mp_bluetooth_nimble_port_shutdown(v
      nimble_port_stop();
  

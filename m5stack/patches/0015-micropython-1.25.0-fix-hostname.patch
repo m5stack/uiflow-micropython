@@ -1,8 +1,8 @@
-Index: micropython-origin/ports/esp32/mpconfigport.h
+Index: micropython/ports/esp32/mpconfigport.h
 ===================================================================
---- micropython-origin.orig/ports/esp32/mpconfigport.h
-+++ micropython-origin/ports/esp32/mpconfigport.h
-@@ -167,6 +167,8 @@
+--- micropython.orig/ports/esp32/mpconfigport.h
++++ micropython/ports/esp32/mpconfigport.h
+@@ -168,6 +168,8 @@
  #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32c3"
  #elif CONFIG_IDF_TARGET_ESP32C6
  #define MICROPY_PY_NETWORK_HOSTNAME_DEFAULT "mpy-esp32c6"
