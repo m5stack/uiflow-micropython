@@ -2,11 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import UART
+import machine
 import time
 import ujson
-from M5 import getBoard, BOARD
-from collections import namedtuple
 
 
 class ModuleComm:
@@ -781,7 +779,7 @@ class ApiYolo:
 
 class LlmModule:
     def __init__(self, uart_id=1, tx=17, rx=16) -> None:
-        self._uart = UART(
+        self._uart = machine.UART(
             uart_id,
             tx=tx,
             rx=rx,

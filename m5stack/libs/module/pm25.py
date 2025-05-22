@@ -7,7 +7,7 @@ import M5
 from driver.sht30 import SHT30
 from driver.sht20 import SHT20
 from collections import namedtuple
-from .mbus import i2c1
+from . import mbus
 import struct
 import sys
 
@@ -20,6 +20,8 @@ iomap = {
     M5.BOARD.M5Stack: MBusIO(17, 16, 13),
     M5.BOARD.M5StackCore2: MBusIO(14, 13, 19),
     M5.BOARD.M5StackCoreS3: MBusIO(17, 16, 7),
+    M5.BOARD.M5Tough: MBusIO(14, 13, 19),
+    M5.BOARD.M5Tab5: MBusIO(6, 7, 48),
 }.get(M5.getBoard())
 
 
@@ -32,7 +34,7 @@ class PM25Module:
         self.uart = machine.UART(
             id, baudrate=9600, tx=machine.Pin(iomap.bus_tx), rx=machine.Pin(iomap.bus_rx)
         )
-        self.i2c = i2c1
+        self.i2c = mbus.i2c1
         self.sht30 = self.sht20 = None
         if 0x44 in self.i2c.scan():
             self.sht30 = SHT30(self.i2c)

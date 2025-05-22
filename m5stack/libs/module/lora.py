@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import spi2
+from . import mbus
 
-from machine import Pin, SPI
+import machine
+import micropython
 from lora import SX1278
 from lora import SX1276
 from lora import RxPacket
-from micropython import const, schedule
 
 
 class LoraModule:
@@ -44,8 +44,8 @@ class LoraModule:
     """
     constant: Select the LoRa frequency band.
     """
-    LORA_433 = const(1)
-    LORA_868 = const(2)
+    LORA_433 = micropython.const(1)
+    LORA_868 = micropython.const(2)
 
     """
     constant: Valid bandwidth
@@ -109,11 +109,11 @@ class LoraModule:
         }
 
         self.modem = sx_instance(
-            spi=spi2,
-            cs=Pin(pin_cs),
-            dio0=Pin(pin_irq),
-            # dio1=Pin(35),
-            reset=Pin(pin_rst),
+            spi=mbus.spi2,
+            cs=machine.Pin(pin_cs),
+            dio0=machine.Pin(pin_irq),
+            # dio1=machine.Pin(35),
+            reset=machine.Pin(pin_rst),
             lora_cfg=lora_cfg,
         )
 
@@ -188,7 +188,7 @@ class LoraModule:
 
         def _irq_callback():
             if self.irq_callback:
-                schedule(self.irq_callback, self.modem.poll_recv())
+                micropython.schedule(self.irq_callback, self.modem.poll_recv())
 
         self.irq_callback = callback
         self.modem.set_irq_callback(_irq_callback)

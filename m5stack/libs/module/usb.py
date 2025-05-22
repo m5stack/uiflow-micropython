@@ -1,17 +1,17 @@
 # SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
-import time
-from micropython import const
-from .mbus import spi2
+
+import micropython
+from . import mbus
 from .usb_hid import *
 from driver.max3421e import Max3421e
-from machine import Pin
+import machine
 
 
-HID_PROTOCOL_NONE = const(0x00)
-HID_PROTOCOL_KEYBOARD = const(0x01)
-HID_PROTOCOL_MOUSE = const(0x02)
+HID_PROTOCOL_NONE = micropython.const(0x00)
+HID_PROTOCOL_KEYBOARD = micropython.const(0x01)
+HID_PROTOCOL_MOUSE = micropython.const(0x02)
 
 
 DEVADDR = 1
@@ -90,7 +90,9 @@ def keycode_to_ascii(keycode, shift=False):
 
 class USBModule(UsbHID):
     def __init__(self, pin_cs=0, pin_int=14):
-        super().__init__(spi=spi2, cs=Pin(pin_cs, Pin.OUT), irq=Pin(pin_int))
+        super().__init__(
+            spi=mbus.spi2, cs=machine.Pin(pin_cs, machine.Pin.OUT), irq=machine.Pin(pin_int)
+        )
         self.event = 0
         self.event_callback = None
         # mouse
@@ -99,18 +101,18 @@ class USBModule(UsbHID):
         self.cursor_y = 0
         self.wheel = 0
         # mouse event
-        self.EVENT_NONE = const(0)
-        self.EVENT_MOVE = const(1)
-        self.EVENT_LB_DOWN = const(2)
-        self.EVENT_RB_DOWN = const(3)
-        self.EVENT_MB_DOWN = const(4)
-        self.EVENT_LB_UP = const(5)
-        self.EVENT_RB_UP = const(6)
-        self.EVENT_MB_UP = const(7)
-        self.EVENT_LB_DBCLICK = const(8)
-        self.EVENT_RB_DBCLICK = const(9)
-        self.EVENT_MB_DBCLICK = const(10)
-        self.EVENT_SCROLL = const(11)
+        self.EVENT_NONE = micropython.const(0)
+        self.EVENT_MOVE = micropython.const(1)
+        self.EVENT_LB_DOWN = micropython.const(2)
+        self.EVENT_RB_DOWN = micropython.const(3)
+        self.EVENT_MB_DOWN = micropython.const(4)
+        self.EVENT_LB_UP = micropython.const(5)
+        self.EVENT_RB_UP = micropython.const(6)
+        self.EVENT_MB_UP = micropython.const(7)
+        self.EVENT_LB_DBCLICK = micropython.const(8)
+        self.EVENT_RB_DBCLICK = micropython.const(9)
+        self.EVENT_MB_DBCLICK = micropython.const(10)
+        self.EVENT_SCROLL = micropython.const(11)
         # keyboard event
         self.modifier = 0
         self.input = []

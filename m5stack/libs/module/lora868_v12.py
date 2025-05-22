@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import spi2
-from machine import Pin, SPI
+from . import mbus
+import machine
+import micropython
 from lora import SX1262
 from lora import RxPacket
-from micropython import const, schedule
 
 
 class LoRa868V12Module:
@@ -91,11 +91,11 @@ class LoRa868V12Module:
         }
 
         self.modem = SX1262(
-            spi=spi2,
-            reset=Pin(pin_rst),
-            cs=Pin(pin_cs),
-            busy=Pin(pin_busy),
-            dio1=Pin(pin_irq),
+            spi=mbus.spi2,
+            reset=machine.Pin(pin_rst),
+            cs=machine.Pin(pin_cs),
+            busy=machine.Pin(pin_busy),
+            dio1=machine.Pin(pin_irq),
             dio3_tcxo_millivolts=3300,  # 3300mV
             lora_cfg=lora_cfg,
         )
@@ -332,7 +332,7 @@ class LoRa868V12Module:
 
         def _irq_callback():
             if self.irq_callback:
-                schedule(self.irq_callback, self.modem.poll_recv())
+                micropython.schedule(self.irq_callback, self.modem.poll_recv())
 
         self.modem.set_irq_callback(_irq_callback)
 

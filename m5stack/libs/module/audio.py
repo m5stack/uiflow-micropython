@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 from driver import es8388
-from .mbus import i2c1
+from . import mbus
 import m5audio2
 import machine
 import M5
@@ -164,7 +164,7 @@ class AudioModule:
         offset=1,
         mux=MUX_NATIONAL,
     ):
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self.exp = _Expander(self._i2c)
         self.es = es8388.ES8388(self._i2c)
         self.exp.fill_color(0x000000)

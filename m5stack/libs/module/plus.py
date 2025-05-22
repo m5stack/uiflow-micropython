@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 
 
 class PLUSModule:
@@ -24,7 +24,7 @@ class PLUSModule:
 
         @param address I2C address of the PLUSModule.
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("PLUS Module not found in Base")

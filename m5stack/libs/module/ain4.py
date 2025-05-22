@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 import struct
 import time
 
@@ -36,7 +36,7 @@ class AIN4Module:
         @param i2c I2C port to use.
         @param address I2C address of the AIN4Module.
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("AIN 4-20mA Module not found in Base")

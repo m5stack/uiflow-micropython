@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 import struct
 import time
@@ -99,5 +99,5 @@ class Relay_Stack:
 
 class Relay4Module(Relay_Stack):
     def __init__(self, address: int = DEV_I2C_ADDR):
-        super().__init__(i2c1, address)
+        super().__init__(mbus.i2c1, address)
         self._available()
