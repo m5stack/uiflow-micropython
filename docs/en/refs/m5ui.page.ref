@@ -1,0 +1,18 @@
+.. |cores3_page_event_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/cores3_page_event_example.png
+
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/event.png
+.. |screen_load.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/screen_load.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/set_bg_color.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/set_flag.png
+.. |set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/set_state.png
+.. |toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/toggle_flag.png
+.. |toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/page/toggle_state.png
+
+.. |cores3_page_event_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/page/cores3_page_event_example.m5f2"
+        target="_blank"
+    >
+        cores3_page_event_example.m5f2
+    </a>

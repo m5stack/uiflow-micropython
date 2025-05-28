@@ -8,6 +8,7 @@ UiFlow2 documentation and references
     library/index.rst
     controllers/index.rst
     system/index.rst
+    m5ui/index.rst
     widgets/index.rst
     software/index.rst
     hardware/index.rst

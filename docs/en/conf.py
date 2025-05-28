@@ -59,6 +59,7 @@ autodoc_mock_imports = [
     "utime",
     "rui3",
     "m5audio2",
+    "lvgl",
 ]
 
 autodoc_default_options = {
