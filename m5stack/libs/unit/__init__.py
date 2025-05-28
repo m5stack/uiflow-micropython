@@ -118,6 +118,8 @@ _attrs = {
     "TimerPWRUnit": "timerpwr",
     "TMOSUnit": "tmos",
     "ToFUnit": "tof",
+    "ToF90Unit": "tof",
+    "ToF4MUnit": "tof4m",
     "TOF4MUnit": "tof4m",
     "TubePressureUnit": "tube_pressure",
     "TVOCUnit": "tvoc",

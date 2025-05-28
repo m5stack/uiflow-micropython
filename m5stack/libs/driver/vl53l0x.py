@@ -110,7 +110,21 @@ def _timeout_microseconds_to_mclks(timeout_period_us: int, vcsel_period_pclks: i
 
 
 class VL53L0X:
-    """Driver for the VL53L0X distance sensor."""
+    """Create an VL53L0X object.
+
+    :param I2C i2c: The I2C bus the VL53L0X is connected to.
+    :param int address: The I2C address of VL53L0X. Default is 0x29.
+    :param int io_timeout_ms: The timeout for the I/O operations. Default is 0.
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from driver import VL53L0X
+
+            i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+            vl53l0x_0 = VL53L0X(i2c0)
+    """
 
     # Class-level buffer for reading and writing data with the sensor.
     # This reduces memory allocations but means the code is not re-entrant or
@@ -126,6 +140,8 @@ class VL53L0X:
         self._addr = address
         self.io_timeout_ms = io_timeout_ms
         self._data_ready = False
+        if self._i2c not in self._i2c.scan():
+            raise Exception("VL53L0X maybe not connect.")
 
         self._reset()
         # Check identification registers for expected values.
@@ -427,7 +443,7 @@ class VL53L0X:
         )
 
     def get_signal_rate_limit(self) -> float:
-        """The signal rate limit in mega counts per second."""
+        # The signal rate limit in mega counts per second.
         val = self._read_u16(_FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT)
         # Return value converted from 16-bit 9.7 fixed point to float.
         return val / (1 << 7)
@@ -439,7 +455,21 @@ class VL53L0X:
         self._write_u16(_FINAL_RANGE_CONFIG_MIN_COUNT_RATE_RTN_LIMIT, val)
 
     def get_measurement_timing_budget(self) -> int:
-        """The measurement timing budget in microseconds."""
+        """Get the measurement timing budget in microseconds.
+
+        :returns: The measurement timing budget in microseconds.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_measurement_timing_budget.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                budget_ms = vl53l0x_0.get_measurement_timing_budget()
+        """
         budget_us = 1910 + 960  # Start overhead + end overhead.
         tcc, dss, msrc, pre_range, final_range = self._get_sequence_step_enables()
         step_timeouts = self._get_sequence_step_timeouts(pre_range)
@@ -458,6 +488,20 @@ class VL53L0X:
         return budget_us
 
     def set_measurement_timing_budget(self, budget_us: int) -> None:
+        """Set the measurement timing budget in microseconds.
+
+        :param int budget_us: The measurement timing budget in microseconds(range 20000 - 200000).
+
+        UiFlow2 Code Block:
+
+            |get_measurement_timing_budget.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                budget_ms = vl53l0x_0.get_measurement_timing_budget()
+        """
         # pylint: disable=too-many-locals
         assert budget_us >= 20000
         used_budget_us = 1320 + 960  # Start (diff from get) + end overhead
@@ -495,15 +539,34 @@ class VL53L0X:
             self._measurement_timing_budget_us = budget_us
 
     def get_distance(self) -> float:
-        """Perform a single reading of the range for an object in front of
-        the sensor and return the distance in centimeters.
+        """Perform a single reading of the range for an object in front of the sensor and return the distance in centimeters.
+
+        :returns: The distance in centimeters.
+        :rtype: float
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                distance = vl53l0x_0.get_distance()
         """
         return self.get_range() / 10
 
     def get_range(self) -> int:
-        """Perform a single (or continuous if `start_continuous` called)
-        reading of the range for an object in front of the sensor and
-        return the distance in millimeters.
+        """Perform a single reading of the range for an object in front of the sensor and return the distance in millimeters.
+
+        :returns: The distance in millimeters.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |get_range.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                distance = vl53l0x_0.get_range()
         """
         # Adapted from readRangeSingleMillimeters in pololu code at:
         #   https://github.com/pololu/vl53l0x-arduino/blob/master/VL53L0X.cpp
@@ -512,9 +575,21 @@ class VL53L0X:
         return self.read_range()
 
     def get_data_ready(self) -> bool:
-        """Check if data is available from the sensor. If true a call to .range
-        will return quickly. If false, calls to .range will wait for the sensor's
-        next reading to be available."""
+        """Get the data ready status of the sensor.
+
+        :returns: The data ready status of the sensor.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |get_data_ready.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data_ready = vl53l0x_0.get_data_ready()
+        """
         if not self._data_ready:
             self._data_ready = self._read_u8(_RESULT_INTERRUPT_STATUS) & 0x07 != 0
         return self._data_ready
@@ -558,7 +633,22 @@ class VL53L0X:
         return range_mm
 
     def is_continuous_mode(self) -> bool:
-        """Is the sensor currently in continuous mode?"""
+        """
+        Get the continuous mode status of the sensor.
+
+        :returns: The continuous mode status of the sensor.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |is_continuous_mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                continuous_mode = vl53l0x_0.is_continuous_mode()
+        """
         return self._continuous_mode
 
     def continuous_mode(self) -> "VL53L0X":
@@ -580,8 +670,18 @@ class VL53L0X:
         self.stop_continuous()
 
     def start_continuous(self) -> None:
-        """Perform a continuous reading of the range for an object in front of
-        the sensor.
+        """
+        Set the sensor to continuous mode.
+
+        UiFlow2 Code Block:
+
+            |start_continuous.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                vl53l0x_0.start_continuous()
         """
         # Adapted from startContinuous in pololu code at:
         #   https://github.com/pololu/vl53l0x-arduino/blob/master/VL53L0X.cpp
@@ -600,7 +700,19 @@ class VL53L0X:
         self._continuous_mode = True
 
     def stop_continuous(self) -> None:
-        """Stop continuous readings."""
+        """
+        Set the sensor to single ranging mode.
+
+        UiFlow2 Code Block:
+
+            |stop_continuous.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                vl53l0x_0.stop_continuous()
+        """
         # Adapted from stopContinuous in pololu code at:
         #   https://github.com/pololu/vl53l0x-arduino/blob/master/VL53L0X.cpp
         self._write_u8(_SYSRANGE_START, 0x01)
@@ -614,19 +726,21 @@ class VL53L0X:
         # restore the sensor to single ranging mode
         self.do_range_measurement()
 
-    def set_address(self, new_address: int) -> None:
-        """Set a new I2C address to the instantaited object. This is only called when using
-        multiple VL53L0X sensors on the same I2C bus (SDA & SCL pins). See also the
-        `example <examples.html#multiple-vl53l0x-on-same-i2c-bus>`_ for proper usage.
+    def set_address(self, new_address: int = 0x29) -> None:
+        """
+        Set a new I2C address to the sensor.
 
-        :param int new_address: The 7-bit `int` that is to be assigned to the VL53L0X sensor.
-            The address that is assigned should NOT be already in use by another device on the
-            I2C bus.
+        :param int new_address: The 7-bit int that is to be assigned to the VL53L0X sensor.
 
-        .. important:: To properly set the address to an individual VL53L0X sensor, you must
-            first ensure that all other VL53L0X sensors (using the default address of ``0x29``)
-            on the same I2C bus are in their off state by pulling the "SHDN" pins LOW. When the
-            "SHDN" pin is pulled HIGH again the default I2C address is ``0x29``.
+        UiFlow2 Code Block:
+
+            |set_address.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                vl53l0x_0.set_address(0x2A)
         """
         self._write_u8(_I2C_SLAVE_DEVICE_ADDRESS, new_address & 0x7F)
         self._addr = new_address
