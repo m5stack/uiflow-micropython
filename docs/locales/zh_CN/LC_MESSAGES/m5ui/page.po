@@ -1,0 +1,285 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 16:30+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/page.rst:4 a43df9774723465ebf5cf5c8bbe35dd3
+msgid "M5Page"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:8 f11f3c11fc2b4101b96b0a42e812a0de
+msgid ""
+"M5Page is a widget that can be used to create pages in the user "
+"interface. It can be used to organize other widgets and provide "
+"navigation between different pages."
+msgstr "M5Page 是一个可用于在用户界面中创建页面的小部件。它可以用来组织其他小部件，并在不同页面之间提供导航。"
+
+#: ../../en/m5ui/page.rst:11 915e8575ff7f4cd9be5f24c9f5e47cb4
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/page.rst:14 ../../en/m5ui/page.rst:33
+#: 893510e276064828b4bf9882e418aa50 99011b5459a64248b7ba4ab340a58d80
+msgid "page event"
+msgstr "页面事件"
+
+#: ../../en/m5ui/page.rst:16 2015febd3fc04e59b4bd2c979fa48ae4
+msgid "Open the |cores3_page_event_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_page_event_example.m5f2| 项目。"
+
+#: ../../en/m5ui/page.rst:18 ../../en/m5ui/page.rst:35
+#: 22ee82421a794628bff4242f69510b60 66c871c9ec8a4e1680adb3262ecf4e00
+msgid ""
+"When you press and hold the screen, the screen background color turns "
+"black. When you release the screen, the background color returns to "
+"white."
+msgstr "按住屏幕时，屏幕背景色变为黑色。松开屏幕时，背景色恢复为白色。"
+
+#: ../../en/m5ui/page.rst:20 ../../en/m5ui/page.rst:65
+#: ../../en/m5ui/page.rst:83 ../../en/m5ui/page.rst:102
+#: ../../en/m5ui/page.rst:120 ../../en/m5ui/page.rst:140
+#: ../../en/m5ui/page.rst:160 1ab795bfc2e54e50888e8d942d052963
+#: 1e9bf44e6d794e96901aa246493633f0 40851e08bc954dd684ef07e1a8786140
+#: 5ec1de80da6249b6a9f0e55553ad76b1 ac7d9cc66a6145f89ba30d7b6c3e8de4
+#: b6677ea43a1e4d0d896dbb2c40242f27 d8fb9f61bc9d475ea70cb6f4dcc63f72
+#: e3d1ec62fff04e0da4fd64409e45be20 f596636a5c454f9c8c468abbaaa57230
+#: m5ui.page.M5Page:5 m5ui.page.M5Page.screen_load:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/page.rst:22 38b668605a494e29a3cfe1d5159b53e5
+msgid "|cores3_page_event_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:1 88201c5bb8294eb8ac8495c41067ae23
+msgid "cores3_page_event_example.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:24 ../../en/m5ui/page.rst:43
+#: 237fbe67dc0542b685e7219263f39528 77f0f8222ed24e02b9f629827813bce6
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/page.rst:26 ../../en/m5ui/page.rst:45
+#: ../../en/m5ui/page.rst:63 ../../en/m5ui/page.rst:81
+#: ../../en/m5ui/page.rst:100 ../../en/m5ui/page.rst:118
+#: ../../en/m5ui/page.rst:138 ../../en/m5ui/page.rst:158
+#: 0ba86a6175b1428bb095328dce5133fb 0f2b4825a5354b278dac10be3a6819d7
+#: 4bf7253e371a4654aec00d5741c6ad63 676284cce49b4bd2ad91b8ae74d6b975
+#: 6ed664eb6f8b49ffaa51d677dee4f0a8 6fce59b1a2a44b99ba00972358326ac4
+#: d0f70785df63491192bc9d818b361ae8 ec617e9c5b914e8e99c21e36d3ce24c2
+#: f044aaeb50c84f2cbd73e358a2e234f1 m5ui.page.M5Page:7 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:30 fec5ac6035ce4f2faaa49f226d06220b
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/page.rst:37 ../../en/m5ui/page.rst:69
+#: ../../en/m5ui/page.rst:87 ../../en/m5ui/page.rst:106
+#: ../../en/m5ui/page.rst:124 ../../en/m5ui/page.rst:144
+#: ../../en/m5ui/page.rst:164 16fc095b26174629a7863351d227ec25
+#: 28dba4feccac405f90c48cfaf7a97e06 61c10c35bade41b5991ff332a098a13c
+#: 830e2a31b4634d71a1da4cffbb4fdd30 8503c2a2d47240908bdabece4234dd35
+#: 9c9d5f7c15bf4fc582d5ebc60eea2b3c b455b4ff8bcc46b1b66c5fed71613621
+#: db7c8f2b94834d1a875e7f930ab51dcf e51e98e0daa44f21add660017d1c0c7f
+#: m5ui.page.M5Page:9 m5ui.page.M5Page.screen_load:7 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/page.rst:49 cfb87ddf279244778639a0b9f0d7b899
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/m5ui/page.rst:52 549b7efff10842da9cfaa058edac5de3
+msgid "M5Button"
+msgstr ""
+
+#: d17cee2225ff40d7b182b612c5373931 m5ui.page.M5Page:1 of
+msgid "Bases: :py:class:`~lvgl.obj`"
+msgstr ""
+
+#: b8542b14abf34b368fc6040f1b1ab109 m5ui.page.M5Page:1 of
+msgid "Create a page object."
+msgstr "创建一个页面对象。"
+
+#: ../../en/m5ui/page.rst 14e81398e2234101bd6f83499d6e1722
+#: 1c33b0421b8b42f39bf59f2975da2df7 6dbec6b6c0684554bbfce2701a184067
+#: 9dd50981c19f49f280b8d1c9ead1ad00 bc3be99669f64178a8abbc3a14dfe988
+#: e03a9806f9d64ff99350e0c0922da54c f5ebb5edc97a40f2b0df248be2f858de
+msgid "Parameters"
+msgstr ""
+
+#: e809ce6a8d20405f836996f176123b27 m5ui.page.M5Page:3 of
+msgid ""
+"The background color of the page in hexadecimal format. Default is "
+"0xFFFFFF (white)."
+msgstr "页面背景颜色（十六进制格式）。默认值为 0xFFFFFF（白色）。"
+
+#: ../../en/m5ui/page.rst:59 ddd4ed68ae9546e581961519f667bb3c
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置一个标志。如果 ``value`` 为 True，则添加该标志；如果 ``value`` 为 False，则移除该标志。"
+
+#: ../../en/m5ui/page.rst:61 42a7ab37ec244c9d9d4a0b2881d6c63d
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/page.rst:62 fc8395093ad04f29923948a4be8ae610
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
+
+#: ../../en/m5ui/page.rst 24cc9ce92cd14683988ee2a9831465ac
+#: 272d21f216e74d0a93b07a005f166d9b 97e3f472fe50400c944562393d91acf4
+#: ae27834b79c248bb9b448d483dc71e70 d579c5c6e7bd4024910c105001277345
+#: f6fe9889c5f94529a15350b83d289552
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:67 8de3364aad99457db4139a5e31925a8e
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:6 03b87e63079f44f6ba1dc26ed75dd8d9
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:78 5bcf9c5381b14441a98582c06724ed9c
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果设置了标志，则移除该标志；如果未设置，则添加该标志。"
+
+#: ../../en/m5ui/page.rst:80 00ac02a8ee474ce1ba9ff734aafa82e7
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/page.rst:85 4e30b68981a64d1d872ee45fd86d1213
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:8 079180eabfe1471f8b0dc72423947a04
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:96 20f383ac25d2476fbbcc07e7aecbbba3
+msgid ""
+"Set the state of the page. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置页面状态。如果 ``value`` 为 True，则设置状态；如果为 False，则取消设置状态。"
+
+#: ../../en/m5ui/page.rst:98 e18f033b8fce43998790d7352006905e
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/page.rst:99 65cd12bf47a9435d9592a316d50804cd
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为 True，则状态已设置；如果为 False，则状态未设置。"
+
+#: ../../en/m5ui/page.rst:104 18f3fa3d69dd4a05ba32a6cc52be333c
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:7 3b9df6acd926459e804b036f501bb8ea
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:115 b74bde986dac45c8b0f3ec6d93d50941
+msgid ""
+"Toggle the state of the page. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换页面状态。如果状态已设置，则取消设置；如果未设置，则设置状态。"
+
+#: ../../en/m5ui/page.rst:117 329df1be14eb499fbb10d2b0be90dbd4
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/page.rst:122 1946327743c54b77bfe7cf853e8816c3
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:9 a70917ce85f84853baf2180262c949e3
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:133 f17e07978ca04391ab74d6b2f68c1d94
+msgid "Set the background color of the page."
+msgstr "设置页面的背景颜色。"
+
+#: ../../en/m5ui/page.rst:135 4f18a8949bec47fa8d18b834f6c5c294
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/page.rst:136 bbd69b367a084000a8907455121f81a9
+msgid "The opacity of the color."
+msgstr "颜色的不透明度。"
+
+#: ../../en/m5ui/page.rst:137 43d30fabe6c34de2b3d72fa7d0e3dcaa
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "应用样式的对象部分（例如，lv.PART.MAIN）。"
+
+#: ../../en/m5ui/page.rst:142 939495b630fc43539241ab30152d8abc
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:5 e0dac9d6c3244d0987a45e01a8f8596f
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/page.rst:153 942c6f31f2ad4d9cabe9c771a93116c0
+msgid ""
+"Add an event callback to the page. The callback will be called when the "
+"specified event occurs."
+msgstr "向页面添加事件回调。当指定事件发生时，将调用该回调。"
+
+#: ../../en/m5ui/page.rst:155 a68f58f33056416899f9090305acb1bf
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/page.rst:156 53239a14ea394213b1deb2e0b761e76c
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/page.rst:157 fa4ea20ea380440a8726323ad31b9935
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调的可选用户数据。"
+
+#: ../../en/m5ui/page.rst:162 4a6f21db99814974b3efce50953d4fe9
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:3 e64b33e45ca04e8f8eb1b925c1fa86b6
+msgid "event.png"
+msgstr ""
+
+#: dddbda12a6fc487db3d5c74d7ceb782e m5ui.page.M5Page.screen_load:1 of
+msgid "Load the page as the active screen."
+msgstr "加载该页面作为活动屏幕。"
+
+#: 5e00c50b875f438da1e08fdb984f5f01 m5ui.page.M5Page.screen_load:5 of
+msgid "|screen_load.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.page.ref:4 11bbc9f255b94239836e199fdb87449c
+msgid "screen_load.png"
+msgstr ""
+

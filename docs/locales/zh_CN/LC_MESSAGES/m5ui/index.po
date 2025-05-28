@@ -1,0 +1,68 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 15:06+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/index.rst:2 7cf56d7cd22e4f0d9fc5892bc9653652
+msgid "M5UI"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:7 1f54d93f6547485685ad7c4ee3f758e9
+msgid ""
+"M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and"
+" functions to create user interfaces for M5Stack devices."
+msgstr "M5UI 是一个基于 LVGL v9.3 的 UI 库。它提供了一组用于创建 M5Stack 设备用户界面的小部件和函数。"
+
+#: ../../en/m5ui/index.rst:9 f0ff465507ef443dbcc943023f445901
+msgid ""
+"It has been adapted for M5Stack devices and you only need to call "
+"``m5ui.init()`` to start using it."
+msgstr "它已适用于 M5Stack 设备，您只需调用 ``m5ui.init()`` 即可开始使用它。"
+
+#: ../../en/m5ui/index.rst:13 9f83572a079f4c05bb00b4f02644e266
+msgid "Functions"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:17 c4264d75fb94489e9097c8ffba561275
+msgid ""
+"Initialize the M5UI library. This function must be called before using "
+"any other M5UI functions."
+msgstr "初始化 M5UI 库。使用任何其他 M5UI 函数之前必须调用此函数"
+
+#: ../../en/m5ui/index.rst 1d8bffeebb3847e3890345a8514b8880
+#: 5997afce9da645fbb58bd18819ff4269
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:19 ../../en/m5ui/index.rst:26
+#: 3efafbfbb7e04b799b65b12c8861fb5a 422bba168c324167b20ff975239d9c1a
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:24 9fca89b6e5bf47c1966b794858aa4abd
+msgid ""
+"Deinitialize the M5UI library. This function should be called when you no"
+" longer need to use M5UI."
+msgstr "取消初始化 M5UI 库。当您不再需要使用 M5UI 时，应调用此函数。"
+
+#: ../../en/m5ui/index.rst:30 2101ab814a3146218b046b976e577481
+msgid "Classes"
+msgstr ""
+

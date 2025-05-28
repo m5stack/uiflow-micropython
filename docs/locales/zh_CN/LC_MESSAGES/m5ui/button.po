@@ -1,0 +1,569 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 16:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/button.rst:4 ../../en/m5ui/button.rst:52
+#: a1a70aefa3aa4548bdb0f5616050fb18 c5e9821cd18547a38177f96c0645d4ba
+msgid "M5Button"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:8 82e97f75b3bb4b1db3ed7a6de9e61ab7
+msgid ""
+"M5Button is a widget that can be used to create buttons in the user "
+"interface. It can be used to trigger actions when clicked."
+msgstr "M5Button 是一个可用于在用户界面中创建按钮的小部件。点击按钮时，按钮会触发相应的操作。"
+
+#: ../../en/m5ui/button.rst:11 ffb9e2ee33f749cbac6b2b348ee935ce
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/button.rst:14 ../../en/m5ui/button.rst:33
+#: 23976169f7e64d0faad5501e9da689c7 8464b5f4e387418f92ea22d3c0ca7b40
+msgid "event button"
+msgstr "事件按钮"
+
+#: ../../en/m5ui/button.rst:16 717ca8dfee5f4d8fb871c4e7aa954628
+msgid "Open the |cores3_button_event_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_button_event_example.m5f2| 项目。"
+
+#: ../../en/m5ui/button.rst:18 ../../en/m5ui/button.rst:35
+#: 8bcd10aa56874f2d98e1081ea44563ae a2cf7cebe0da46608a7dafc4211af79d
+msgid "This example creates a button that triggers an event when clicked."
+msgstr "此示例创建一个按钮，单击时会触发一个事件。"
+
+#: ../../en/m5ui/button.rst:20 ../../en/m5ui/button.rst:65
+#: ../../en/m5ui/button.rst:83 ../../en/m5ui/button.rst:102
+#: ../../en/m5ui/button.rst:120 ../../en/m5ui/button.rst:138
+#: ../../en/m5ui/button.rst:158 ../../en/m5ui/button.rst:180
+#: ../../en/m5ui/button.rst:201 ../../en/m5ui/button.rst:218
+#: ../../en/m5ui/button.rst:235 ../../en/m5ui/button.rst:253
+#: ../../en/m5ui/button.rst:270 ../../en/m5ui/button.rst:304
+#: ../../en/m5ui/button.rst:341 ../../en/m5ui/button.rst:359
+#: ../../en/m5ui/button.rst:379 0dc440ec59f14beb891aa579c9505c5d
+#: 197935c2dc444898bfcefa93e1d8d5f2 1df927cd4d444b318262a31993650e86
+#: 313d109908884e3c835bdcec82228b0a 349d5e22f3344d24a924e007867f8a4b
+#: 56ed4363e4d74cffb8d3fb3f579e367a 67c97c03e8fb40669cc097a464aa3418
+#: 703776c23d124ddbb85d813273d98ae0 72c9a18c993b40c78aba320b5bcdbd4b
+#: 747b523933434309b68edd7ddc41bd4d 87f3daf6235546929075b990a2f0ba46
+#: 9ab916eb98384c9ea2e0ba642c10cb5c b938750a63bc4855be5d7b060c1490ee
+#: bbaa412065ef4987bdcaf690f713c3a5 d611fd71b0b048cb83617e569131fc61
+#: d6f16d65a0674f18be7bc31cc737c52a d99901a0e091447cb14f9c32453c86bb
+#: dca9950b352f47469ba02ee266990417 f52754e5e5a048ac97de807934cd1627
+#: m5ui.button.M5Button:13 m5ui.button.M5Button.get_btn_text:6
+#: m5ui.button.M5Button.set_btn_text:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/button.rst:22 639475443b5142c5b28e25f954602709
+msgid "|cores3_button_event_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:1 e5b9df1d2486488fb95dcacd2a3e8c50
+msgid "cores3_button_event_example.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:24 ../../en/m5ui/button.rst:43
+#: 2313c1e553c8469795534d09490c5fb1 9be948fef26e4dfca222f81daf81e627
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/button.rst:26 ../../en/m5ui/button.rst:45
+#: ../../en/m5ui/button.rst:63 ../../en/m5ui/button.rst:81
+#: ../../en/m5ui/button.rst:100 ../../en/m5ui/button.rst:118
+#: ../../en/m5ui/button.rst:136 ../../en/m5ui/button.rst:156
+#: ../../en/m5ui/button.rst:178 ../../en/m5ui/button.rst:199
+#: ../../en/m5ui/button.rst:216 ../../en/m5ui/button.rst:233
+#: ../../en/m5ui/button.rst:251 ../../en/m5ui/button.rst:268
+#: ../../en/m5ui/button.rst:302 ../../en/m5ui/button.rst:339
+#: ../../en/m5ui/button.rst:357 ../../en/m5ui/button.rst:377
+#: 00e4561109fc4ea7937e57566beb0311 30a338c776904db78dd3d717e4795f0d
+#: 359e514942004dad88e9543204ecf0eb 465d07fc0045466f91156570c0f1510c
+#: 4cfb3964c6424e62bd4b16bb9a3f8936 5753f3f832074a31a6a4fa614785516e
+#: 625da44470344fedb8e782b73f9eadfb 78d7de006fa5484aa820b5c4cfa5d344
+#: a1c9bd61d34643f1a145b7031001207f a9cde579092d482db5bf703c00ea6d1b
+#: b609aead1a2444d4b8a34da5b3a613af b94eac021202476ea5553eafb454f384
+#: bc859a7f7e774cfdace1cb57f85ff29e db9871df146a41948cbf0cd2cfbe3050
+#: dfd6df46a54d4ae4bb9d2d8cb73fb2e0 e5470428099245e9bf1493a7202fbceb
+#: ecb138449e4d40db92c93467a66adcbe f573e57589b14df9b3e2ef9729306b5b
+#: fd718ca10db348a49132ae732aedc3fa m5ui.button.M5Button:15 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:30 74336c63f45941d79bbbfd8d2da4b349
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/button.rst:37 ../../en/m5ui/button.rst:69
+#: ../../en/m5ui/button.rst:87 ../../en/m5ui/button.rst:106
+#: ../../en/m5ui/button.rst:124 ../../en/m5ui/button.rst:142
+#: ../../en/m5ui/button.rst:164 ../../en/m5ui/button.rst:186
+#: ../../en/m5ui/button.rst:205 ../../en/m5ui/button.rst:222
+#: ../../en/m5ui/button.rst:239 ../../en/m5ui/button.rst:257
+#: ../../en/m5ui/button.rst:274 ../../en/m5ui/button.rst:308
+#: ../../en/m5ui/button.rst:345 ../../en/m5ui/button.rst:363
+#: ../../en/m5ui/button.rst:383 0670910428b446c9bd5a283265b2be3c
+#: 11bf950dbd3b4258a39eb8912cdd5a91 175067d4d5754768ae4958a8c546455e
+#: 1a02244ba0d34a439ebf04273aeb6d8e 2666425e87d84fada9729ca6256d56b0
+#: 276a6e3826bb49d9aa377de6a7904974 2945232885f74034a2ed1f7babbd0189
+#: 463eee67714049ac99c7b4c9d1d70e9d 479e1965844f4b928c0fc097dd672f76
+#: 4f3d84dbe9e4420d8123b7bd6d24ee28 595fb815aead4451a196c799020d6930
+#: 599c725eba1140d6a16aedb16d66f5b2 62f036f1030b43a7baa2f7d690eaf6ba
+#: 83af701806834d1eae2e57737ddd2f27 8d3ebec8662a4bed9ffab48a56b79baa
+#: 995e0b2215594eedb04e68daf08868c2 a29828924ad14a8ca87e4b873b69e1b1
+#: ad945cbb1e324e3697140c526d47b6d2 fbf8ad19e399439d937c212226ed13f3
+#: m5ui.button.M5Button:17 m5ui.button.M5Button.get_btn_text:12
+#: m5ui.button.M5Button.set_btn_text:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/button.rst:49 3bf910125da547409d0b15f7dce1e895
+msgid "**API**"
+msgstr "API参考"
+
+#: 7b886feab5714d109c2f2eca6f30a796 m5ui.button.M5Button:1 of
+msgid "Bases: :py:class:`~lvgl.button`"
+msgstr ""
+
+#: b8b7af14941444b38ceadbe0ec4096d1 m5ui.button.M5Button:1 of
+msgid "Create a button object."
+msgstr "创建一个按钮对象。"
+
+#: ../../en/m5ui/button.rst 012ee65c6c724b228691f95787e9d9d2
+#: 156a17e69c9d484ea1cf7b3019a796b0 15e999769c6347fc901b9a138f971bab
+#: 1786a82d855448c2a52a8ae49145f7a4 26f12a3f65fe4f82abe0e3f189a5d431
+#: 39af93c4cd4645b9ae2a48cbd2a3d319 44085ea9739b48e69e6f670ef82d9dad
+#: 58cde2cea94541d2bf6093fefc083c2c 6ba385b79a9c4ac2bfcb6717ecc41879
+#: 74b1dcf957ac4bb1a7e563a5bff9ea2d a065cb85294e43d9bb0ff542ec9669c3
+#: a9e7971164274fcca9fe53c3c0dc6522 b41ebb1f9b4441e3a4305b454f164407
+#: bd5c2cb703b249a9a01a57ba2aed6dd0 dfaaa47a4c79433089506f6c8ea16abc
+#: e8bbee70b17f4d17b942ffbff0fdb596 fae9bdea63a64021a487e57d65d0f5f7
+#: fd10aca938854bd39003fe78d480d13f m5ui.button.M5Button.set_btn_text of
+msgid "Parameters"
+msgstr ""
+
+#: 81666252c52f4fee887f7c0b5e4529d3 m5ui.button.M5Button:3 of
+msgid "The text to display on the button."
+msgstr "按钮上显示的文本。"
+
+#: 5cad1c9eece649969612d1b2ee78d695 m5ui.button.M5Button:4 of
+msgid "The x position of the button."
+msgstr "The x position of the button."
+
+#: fc551b92b7954cef9db6a1979496d3b9 m5ui.button.M5Button:5 of
+msgid "The y position of the button."
+msgstr "按钮的 y 位置。"
+
+#: b0e55d3de04d43e3bd782d2f25110c70 m5ui.button.M5Button:6 of
+msgid ""
+"The width of the button. when set to 0, the button will automatically "
+"size to fit the text."
+msgstr "按钮的宽度。设置为 0 时，按钮将自动调整大小以适合文本。"
+
+#: 0b26c44db1c94cba98e1c7fb5d9072ef m5ui.button.M5Button:7 of
+msgid ""
+"The height of the button. when set to 0, the button will automatically "
+"size to fit the text."
+msgstr "按钮的高度。设置为 0 时，按钮将自动调整大小以适应文本。"
+
+#: c2d792e368be4d839d85b93965988072 m5ui.button.M5Button:8 of
+msgid "The background color of the button in hexadecimal format."
+msgstr "按钮的背景颜色（十六进制格式）。"
+
+#: 7b8e4c3f127b48a8928d5e628a585f54 m5ui.button.M5Button:9 of
+msgid "The text color of the button in hexadecimal format."
+msgstr "按钮的文本颜色（十六进制格式）。"
+
+#: 547b0d43a95d4d27bac74cf65e774636 m5ui.button.M5Button:10 of
+msgid "The font to use for the button text."
+msgstr "按钮文本使用的字体。"
+
+#: 87b46bc04d6e458d9d23873e2303d0d3 m5ui.button.M5Button:11 of
+msgid ""
+"The parent object to attach the button to. If not specified, the button "
+"will be attached to the default screen."
+msgstr "按钮所附加到的父对象。如果未指定，则按钮将附加到默认屏幕。"
+
+#: ../../en/m5ui/button.rst:59 d7c96aeb26f74622a6052e478c7216fd
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置一个标志。如果 `value` 为 True，则添加该标志；如果 `value` 为 False，则移除该标志。"
+
+#: ../../en/m5ui/button.rst:61 0660f085382746c1903584bc2d187bcb
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/button.rst:62 7acae1b001a8488294889dd1852b418d
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
+
+#: ../../en/m5ui/button.rst 051f384e5cda4303a48d0ee7b372751e
+#: 3904659e573b4225a7706a27d2bd5577 3a75ce63c58144d8920d70950fa7d155
+#: 456086960b9a4216b9af5b2cd8949bc0 5f8c91cd32ad45bcb2dc55db15c8792c
+#: 6270af545a524f2bb76c4ce282b068c7 6cc76afb12e54035a57cdc65c43d259c
+#: 75b1cf87b3e241abbd780a07eeb79b78 84ec2eb454544a619e72c2e4da4775ff
+#: 87cdb40744504777816d5c4718a179be aef24970dfbb419a81e68b94eafcca09
+#: b9fce0eecbe94d22aa4749ba4e33364e cc90462e99cc44be8269c09a6c04fb1a
+#: e3de31d7176c440581bd199e00c9b471 f26c15b9c4584f14a4b4cc5f279a153e
+#: fa9e5e93b99d495293be2e637538c8a8 fb7d273e64014d668b5436dc4cc1051f
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:67 c0726966c37545f7bd45e5e5ae24130d
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:11 d17a9547b9494c2cb665c7e08de69e35
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:78 81194da1e9ef4cd39a95d874c09475f5
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果设置了标志，则移除该标志；如果未设置，则添加该标志。"
+
+#: ../../en/m5ui/button.rst:80 b43c27e01e1d44688caa9010cfc967e3
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/button.rst:85 e8ef28d6f2324158a6f4d63b287d4306
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:23 c469e757ef7d48a08e3b2c7521f2da67
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:96 02143614da6f41cdb9dc00ce6256c9b1
+msgid ""
+"Set the state of the button. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置按钮的状态。如果 ``value`` 为 True，则设置状态；如果为 False，则取消设置状态。"
+
+#: ../../en/m5ui/button.rst:98 3326bbee72894fc4a557cce717bc8fa2
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/button.rst:99 244b2165f45c4961af4c1ae06cb20f15
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为 True，则状态已设置；如果为 False，则状态未设置。"
+
+#: ../../en/m5ui/button.rst:104 8a058ed79e6049b8b969300a768ed8f8
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:15 8a99b86e96174b59a6dd41b4bade8ed2
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:115 39229c1a528e4a6cbcd143c07be98b6a
+msgid ""
+"Toggle the state of the button. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换按钮的状态。如果按钮状态已设置，则表示未设置；如果按钮状态未设置，则表示已设置。"
+
+#: ../../en/m5ui/button.rst:117 c63c2aaabfaf4ec19fd7652ddd334413
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/button.rst:122 4e2124e902504f9ba7d53dd280144dd6
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:24 ee794217482f477da481690a5bb68979
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:132 60ac633511c54fd995fd09b8fd6d8e47
+msgid "Set the font of the button text."
+msgstr "设置按钮文本的字体。"
+
+#: ../../en/m5ui/button.rst:134 1acf306ba9894ba79f3a9af889fe7008
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/button.rst:135 ../../en/m5ui/button.rst:155
+#: ../../en/m5ui/button.rst:177 ../../en/m5ui/button.rst:356
+#: 2bd36f1f054f480c9073ef53fc4ce87e 2e6861f5dc5a4d3c8ba311937d7db531
+#: a6e90522c59e46c0b146e60aee863a80 f2425375db5f480488568ceacb639a7c
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "应用样式的对象部分（例如，lv.PART.MAIN）。"
+
+#: ../../en/m5ui/button.rst:140 f8448d78fc944457938d2d45ee43d349
+msgid "|set_style_text_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:17 2200ed1264044fb6868852631d8e67c0
+msgid "set_style_text_font.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:151 b7195d411319496c9940ed5ed04c8e52
+msgid "Set the color of the button text."
+msgstr "设置按钮文本的颜色。"
+
+#: ../../en/m5ui/button.rst:153 ../../en/m5ui/button.rst:175
+#: 0e1e1f8b143e411697f82d53cf9325c0 586497afb2294cde95fc3fa14084e7c3
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/button.rst:154 ../../en/m5ui/button.rst:176
+#: ba641cc694c744f99da1730c0368d697 c83c2cd7cf9f4f7dbd840be39e3a4d2d
+msgid ""
+"The opacity of the color. The value should be between 0 (transparent) and"
+" 255 (opaque)."
+msgstr "颜色的不透明度。该值应介于 0（透明）和 255（不透明）之间。"
+
+#: ../../en/m5ui/button.rst:160 c417e9d9642743868839603552831021
+msgid "|set_text_color_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:18 4d12ecd2c5464571a00a032b300729dc
+msgid "set_text_color_pressed.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:162 cb67d04c82a8457a91dbf47a17b932a0
+msgid "|set_text_color_released.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:19 deb145d5db714d3583ea6f05f54f8849
+msgid "set_text_color_released.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:173 30c1c2a1bbc44a49aaf3b828d6d7a97d
+msgid "Set the background color of the button."
+msgstr "设置按钮的背景颜色。"
+
+#: ../../en/m5ui/button.rst:182 c089c7446e0741e89d051c0a30763ad7
+msgid "|set_bg_color_pressed.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:8 fcfbf67092df4b80832b3131625eb75d
+msgid "set_bg_color_pressed.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:184 22078a55970c4715873fe072adc3efde
+msgid "|set_bg_color_released.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:9 d94388fb81434a80bdc05fe20dbd5ddc
+msgid "set_bg_color_released.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:195 44682d499e254d88bd2c756604d4a627
+msgid "Set the position of the button."
+msgstr "设置按钮的位置。"
+
+#: ../../en/m5ui/button.rst:197 ../../en/m5ui/button.rst:215
+#: 2768436ac58c4cc59c4136338e30e1d5 f8a25699f6e64bb0892b089b6418d6e0
+msgid "The x-coordinate of the button."
+msgstr "按钮的 x 坐标。"
+
+#: ../../en/m5ui/button.rst:198 ../../en/m5ui/button.rst:232
+#: 7cf802297da14990883533d9c3228482 9737a8f44c9847af8141eb81206ebb1b
+msgid "The y-coordinate of the button."
+msgstr "按钮的 y 坐标。"
+
+#: ../../en/m5ui/button.rst:203 e9fb0f2db76f400c9cfbf8b976e84791
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:13 6d9b967e8aaa46f9ab61266abf05a065
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:213 50e2881128984d53bc2d8b9506b48fbc
+msgid "Set the x-coordinate of the button."
+msgstr "设置按钮的 x 坐标。"
+
+#: ../../en/m5ui/button.rst:220 6f17adb3165a450ea2e8641f63e18d4f
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:21 8f7be6e9d0934522a6c82f6df2638bda
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:230 3f7bb75f90424a7380b8877aede6792d
+msgid "Set the y-coordinate of the button."
+msgstr "设置按钮的 y 坐标。”"
+
+#: ../../en/m5ui/button.rst:237 469d929a1a6d417c9f9c39a90c7dd22c
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:22 329cb206ce32435ba7ef2482dcb1025a
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:247 86dcdc2a97ed43e9a46106efbd1fc831
+msgid "Set the size of the button."
+msgstr "设置按钮的大小。"
+
+#: ../../en/m5ui/button.rst:249 ../../en/m5ui/button.rst:267
+#: 58e2f0aa8e5649e7a36838e003e0438a a4507ccccb284c84b3fe60dd269588dd
+msgid "The width of the button."
+msgstr "按钮的宽度。"
+
+#: ../../en/m5ui/button.rst:250 ../../en/m5ui/button.rst:301
+#: 5d562607827241bda5805a43ada3650e d5a1c1174c65470698c2726033875337
+msgid "The height of the button."
+msgstr "按钮的高度。"
+
+#: ../../en/m5ui/button.rst:255 41581ca8d2f7445fa194847b6d67acf5
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:14 9b8510023ab64842896fb22e8ebabb48
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:265 49ca5fbdb9dd44e6bc2fa67220a73bb9
+msgid "Set the width of the button."
+msgstr "设置按钮的宽度。"
+
+#: ../../en/m5ui/button.rst:272 842abfa55f334801a93c747994c03d1a
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:20 0ada190cec3f4e1b9444aec75e08333a
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:299 393c7465a4f946dabe590f46ae0e5c5d
+msgid "Set the height of the button."
+msgstr "设置按钮的高度。"
+
+#: ../../en/m5ui/button.rst:306 3f97f7e554ea428b8889a6bea75cd583
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:12 0fc9d1e12768450291611cb7d21c4f8d
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:333 7fb47f222c494949a4b3cf30aa64a200
+msgid "Align the button to another object."
+msgstr "将按钮与另一个对象对齐。"
+
+#: ../../en/m5ui/button.rst:335 46fb6b3be0bf48ca866900591a8cfb1a
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/button.rst:336 78ccfbe7b56a4cd9818eb3cd53acf926
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/button.rst:337 03567407cd654e6baa62ead1812a2d5a
+msgid "The x-offset from the aligned object."
+msgstr "与对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/button.rst:338 56fe4996bc9a46a7942a17d30a99e6df
+msgid "The y-offset from the aligned object."
+msgstr "与对齐对象的 y 偏移。"
+
+#: ../../en/m5ui/button.rst:343 d3e7e5ae70874571bdc82d5d84d30047
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:3 1c5ab6c302bc4bdd87323b503e7e5e85
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:353 3ae12d54daca4f23a2bc1d5a4fe8fce5
+msgid "Set the corner radius of the button."
+msgstr "设置按钮的角半径。"
+
+#: ../../en/m5ui/button.rst:355 60889a8d5e944fceb6192fc2d2face24
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/button.rst:361 36c93735cdf54a28881e4feca6b5337f
+msgid "|set_style_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:16 27d8a1f3c91c457ca73a2046919daba9
+msgid "set_style_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/button.rst:372 77ad3810ede349e5bbb2251a07b12ca5
+msgid ""
+"Add an event callback to the button. The callback will be called when the"
+" specified event occurs."
+msgstr "为按钮添加事件回调。当指定事件发生时，将调用该回调。"
+
+#: ../../en/m5ui/button.rst:374 271f6e94cb234120bcc3118f66c77dec
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/button.rst:375 0d8cb9b64a754e32b6866a01652649e9
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/button.rst:376 962cf79bb8104da593ca2dee98ecdee5
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调的可选用户数据。"
+
+#: ../../en/m5ui/button.rst:381 8a6a140be76a4cab9045d02e459eb541
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:4 597b9d102a344e048223563a980e7eb6
+msgid "event.png"
+msgstr ""
+
+#: b9ad3060048942169511989af6d36798 m5ui.button.M5Button.get_btn_text:1 of
+msgid "Get the text of the button."
+msgstr "获取按钮的文本。"
+
+#: 9ef5eaad217c4a5891645d417e4ff650 m5ui.button.M5Button.get_btn_text:3 of
+msgid "The text of the button."
+msgstr "按钮的文本。"
+
+#: ../../en/m5ui/button.rst aef24970dfbb419a81e68b94eafcca09
+#: m5ui.button.M5Button.set_btn_text of
+msgid "Return type"
+msgstr ""
+
+#: 0b813624c377489e98ae5d9a2fc050fa m5ui.button.M5Button.get_btn_text:8 of
+msgid "|get_btn_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:5 83f745316ba74d4391291b5850ffaae2
+msgid "get_btn_text.png"
+msgstr ""
+
+#: 9ef5eaad217c4a5891645d417e4ff650 m5ui.button.M5Button.set_btn_text:1 of
+msgid "Set the text of the button."
+msgstr "设置按钮的文本。"
+
+#: 93db7e740d96458c875e6c40e9859304 m5ui.button.M5Button.set_btn_text:3 of
+msgid "The text to set on the button."
+msgstr "要在按钮上设置的文本。"
+
+#: fdf448472bb748e69a1a2ee87e61843a m5ui.button.M5Button.set_btn_text:7 of
+msgid "|set_btn_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.button.ref:10 3c847044033c4fc797ac84f6f1197955
+msgid "set_btn_text.png"
+msgstr ""
+
