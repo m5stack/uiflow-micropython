@@ -90,6 +90,7 @@ Unit
     rca.rst
     reflective_ir.rst
     relay.rst
+    relay2.rst
     relay4.rst
     rf433r.rst
     rf433t.rst
@@ -107,6 +108,7 @@ Unit
     tmos.rst
     tof.rst
     tof4m.rst
+    tube_pressure.rst
     tvoc.rst
     uhf_rfid.rst
     ultrasonic.rst

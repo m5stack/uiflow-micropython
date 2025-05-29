@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-27 17:57+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/tube_pressure.rst:2 74293ed1c48c4df18d46487cdda83e8b
+msgid "Tube Pressure Unit"
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst:8 ccb7bd82664040c0995a3189ac403f7a
+msgid ""
+"This is the driver library of Tube Pressure Unit, which is used to "
+"control the pressure sensor."
+msgstr "Tube Pressure Unit 驱动库，用于控制压力传感器。"
+
+#: ../../en/units/tube_pressure.rst:10 dadc5ac8070e4def8717523cc04491be
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/tube_pressure.rst:12 23e6a8e5036142e98e06905e6551b12c
+msgid "|Tube Pressure|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref 78a5c75de99b41078d7d907aea5b18e4
+msgid "Tube Pressure"
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst:16 de5244f87ea345ddb001808f2400d87c
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/units/tube_pressure.rst:19 ../../en/units/tube_pressure.rst:37
+#: 11b7c067a6394aa4845a0b512fa0cf4e a8ba3b4b4775409f897792cfd06e7ad9
+msgid "get pressure value"
+msgstr "获取压力值"
+
+#: ../../en/units/tube_pressure.rst:21 e12dcd9606484cdfb2584eefbff65a1a
+msgid "Open the |tube_pressure_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tube_pressure_core2_example.m5f2| 项目。"
+
+#: ../../en/units/tube_pressure.rst:23 ../../en/units/tube_pressure.rst:39
+#: e2fdb48019c945f695091c15e7062c03 e3453d3f43994fd39febbd0406e470a4
+msgid "The example shows the pressure value of the tube pressure unit."
+msgstr "该示例显示 Tube Pressure Unit 的压力值。"
+
+#: ../../en/units/tube_pressure.rst:25 32bb3326deee41a0b8dcbf3e56a7b382
+#: 6963c0e846ab4a0ebfc7709de45c7a36 6bf097877f7b4e6899dafc2d6a744e0d
+#: c6465fc483a6403d9a4be175a8e25506 f8855aef1f7b44a89ea5a08cfcf96e78 of
+#: unit.tube_pressure.TubePressureUnit:5
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:7
+#: unit.tube_pressure.TubePressureUnit.get_pressure:6
+#: unit.tube_pressure.TubePressureUnit.get_voltage:6
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/tube_pressure.rst:27 942a8073542a483091bd5387ebd413be
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref:6 a4488e7ae8324aa4b6c86a65f9125f89
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst:29 ../../en/units/tube_pressure.rst:47
+#: b1165c85940746079cec83595b4c9e58 daf7f7e827be460b82c46079d08e6a22
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/tube_pressure.rst:31 ../../en/units/tube_pressure.rst:49
+#: 744e1aa0352546f1ae4f2154d5d14278 b0c0076ce5374d928b50abfde1247f37
+msgid "None"
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst:34 565b12c3ddf049c4a153c8338ba0132a
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/tube_pressure.rst:41 1cbf937c5edf440d812b5062bec7860b
+#: 8bfca9c92ab44f7aa3ac773457dfc235 9caf6301cff44c058d088f39ace5bb12
+#: a1a0a604ed094b948fae13a54c918aea c9f816807f6c4d169477fa764ba6e560 of
+#: unit.tube_pressure.TubePressureUnit:9
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:11
+#: unit.tube_pressure.TubePressureUnit.get_pressure:10
+#: unit.tube_pressure.TubePressureUnit.get_voltage:10
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/tube_pressure.rst:53 6a932cd9430e409897f8ea3d418c1677
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst:56 038c8ba109a7402ea6997e006da6ceb8
+msgid "TubePressureUnit"
+msgstr ""
+
+#: dd9ad6c60e3f494aabf4d4eef5f50b70 of unit.tube_pressure.TubePressureUnit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 7396f23cf3b24515afba9e74b31b663b of unit.tube_pressure.TubePressureUnit:1
+msgid "Create an TubePressureUnit object."
+msgstr ""
+
+#: ../../en/units/tube_pressure.rst 372ad79b4cce4927a123c24c0e5388c9
+#: 8076fda6343f4784b4cb8b85f37f5816 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value
+msgid "Parameters"
+msgstr "参数"
+
+#: aa41907a68ec4dfbb7c24add0668ce81 of unit.tube_pressure.TubePressureUnit:3
+msgid "The port of the tube pressure."
+msgstr "Tube Pressure Unit 使用到的端口。"
+
+#: cca2428eb79c4750b2baf51341c0ba50 of unit.tube_pressure.TubePressureUnit:7
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref:8 9b5b5c32ed6f4a9cab201f11ceeb45cd
+msgid "init.png"
+msgstr ""
+
+#: 15fc09f860de43b0a644d9d7e4832555 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:1
+msgid "Getting the analog value of the tube pressure."
+msgstr "获取 Tube Pressure Unit 的模拟值。"
+
+#: 285391cee93d49b6a05405dece73ff44 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:3
+msgid "The bits of the analog value."
+msgstr "模拟值的位数。"
+
+#: 3a17e10e0f8f4e4095101d79c5829e2a 4b3dd585259d4cec9b265c415d37e74f
+#: a586c02da1184eb4b46a2126b53f0992 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value
+#: unit.tube_pressure.TubePressureUnit.get_pressure
+#: unit.tube_pressure.TubePressureUnit.get_voltage
+msgid "Returns"
+msgstr "返回"
+
+#: f60f100604f24074acaca5f75519d048 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:4
+msgid "analog value."
+msgstr "模拟值。"
+
+#: 8acb7370a8c641daa302a406d77c1d0a d157a7e7cdfb4222b2f86be8f5341ea3
+#: d1f54d17f67341d6a68fb64eae9e8060 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value
+#: unit.tube_pressure.TubePressureUnit.get_pressure
+#: unit.tube_pressure.TubePressureUnit.get_voltage
+msgid "Return type"
+msgstr "返回类型"
+
+#: 7442ca16c8314124a71266f759cfae39 of
+#: unit.tube_pressure.TubePressureUnit.get_analog_value:9
+msgid "|get_analog_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref:14 abfcf7b29921438bb14b5b46742405d6
+msgid "get_analog_value.png"
+msgstr ""
+
+#: eac0c384c35347d886a1276660fbd1f0 of
+#: unit.tube_pressure.TubePressureUnit.get_pressure:1
+msgid "Getting the pressure value of the tube pressure."
+msgstr "获取 Tube Pressure Unit 的压力值。"
+
+#: 47ee1d628605438bb139761eb06c57e6 of
+#: unit.tube_pressure.TubePressureUnit.get_pressure:3
+msgid "pressure value."
+msgstr "压力值。"
+
+#: 45b28a8de6c2472fb596455031b20c19 of
+#: unit.tube_pressure.TubePressureUnit.get_pressure:8
+msgid "|get_pressure.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref:10 b529dbae7d4a4da49251148cd93ef0b5
+msgid "get_pressure.png"
+msgstr ""
+
+#: 3f399e2a7a7a4d7e9f88c5b7b7e93f65 of
+#: unit.tube_pressure.TubePressureUnit.get_voltage:1
+msgid "Getting the voltage value of the tube pressure."
+msgstr "获取 Tube Pressure Unit 的电压值。"
+
+#: bff780cba3604f86879da87c8e8b5ebb of
+#: unit.tube_pressure.TubePressureUnit.get_voltage:3
+msgid "voltage value."
+msgstr "电压值。"
+
+#: 66023d90c8f447f1bf6d83deb32c5750 of
+#: unit.tube_pressure.TubePressureUnit.get_voltage:8
+msgid "|get_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.tube_pressure.ref:12 0d962a1a48ca4cb6bec2d7af2c7eaaa4
+msgid "get_voltage.png"
+msgstr ""
+

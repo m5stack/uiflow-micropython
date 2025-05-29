@@ -1,4 +1,4 @@
-RELAY Unit
+Relay Unit
 ==================
 
 .. include:: ../refs/unit.relay.ref
