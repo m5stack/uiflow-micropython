@@ -17,7 +17,7 @@ Support the following products:
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/unit/relay/relay_core_example.py
+    .. literalinclude:: ../../../examples/unit/relay4/cores3_relay4_example.py
         :language: python
         :linenos:
 

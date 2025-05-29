@@ -5,7 +5,8 @@
 import os, sys, io
 import M5
 from M5 import *
-from hardware import *
+from hardware import I2C
+from hardware import Pin
 from unit import UltrasoundI2CUnit
 
 
