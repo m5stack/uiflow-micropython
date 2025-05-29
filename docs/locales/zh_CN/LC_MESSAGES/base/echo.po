@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-17 14:57+0800\n"
+"POT-Creation-Date: 2025-05-28 17:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,182 +21,520 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../en/base/echo.rst:2 ../../en/base/echo.rst:19
-#: ../../en/refs/base.echo.ref 1672452b1a124d5c92dd43519fba9e86
-#: c307ebf52d5a48b39c14cb2afefe8fd9 ca6c03104f6047f8a418a11acc5c0b0c
+#: ../../en/refs/base.echo.ref 5f049f83a46a4b5f8e8240050b257f13
+#: c9a35e466d4642d1b5dc0c2f24ab5e15 ec8081641c774487b4794a4d9207ada2
 msgid "Atomic Echo Base"
 msgstr ""
 
-#: ../../en/base/echo.rst:8 1e77f1dbf760458f85347e8b6f005eae
+#: ../../en/base/echo.rst:8 edcd69f7db224417885be92a1bc76f96
 msgid "The following products are supported:"
-msgstr ""
+msgstr "支持以下产品："
 
-#: ../../en/base/echo.rst:10 8d0f7dd12e644a5b8881a2e770f2ebcc
+#: ../../en/base/echo.rst:10 3c75f10fceb648fa938c60a839f62565
 msgid "|Atomic Echo Base|"
 msgstr ""
 
-#: ../../en/base/echo.rst:12 f4bc9b1d9ed449c6aededa13b3a3e07b
-msgid "Below is the detailed support for Speaker on the host:"
-msgstr ""
+#: ../../en/base/echo.rst:12 22d2a6a6af54411190217eef1282cd19
+msgid "Below is the detailed support for Atomic Echo Base on the host:"
+msgstr "以下是主机对 Atomic Echo Base 的详细支持："
 
-#: ../../en/base/echo.rst:19 b74b018952104a2b95b6301441541af8
+#: ../../en/base/echo.rst:19 fc1cc5d593f742d59aca2d01820b6c2d
 msgid "Controller"
 msgstr ""
 
-#: ../../en/base/echo.rst:21 6430edc486844513aacda944b4c1c026
+#: ../../en/base/echo.rst:21 43581d4138e644fab1e7f01ae80d872a
 msgid "Atom Echo"
 msgstr ""
 
-#: ../../en/base/echo.rst:21 bfe41c41e0644374bba99b4cc7f1574a
+#: ../../en/base/echo.rst:21 f30114af282c402d94658e4e92b090ab
 msgid "|O|"
 msgstr ""
 
-#: ../../en/base/echo.rst:23 b9e0777744ec4c359c36acdccbedb349
+#: ../../en/base/echo.rst:23 028c3647ca2c4f34a0716840c5bd60a5
 msgid "Atom Lite"
 msgstr ""
 
 #: ../../en/base/echo.rst:23 ../../en/base/echo.rst:25
 #: ../../en/base/echo.rst:27 ../../en/base/echo.rst:29
 #: ../../en/base/echo.rst:31 ../../en/base/echo.rst:33
-#: ../../en/base/echo.rst:35 0d50258cc19540ca847fb7e6ffadd7f6
-#: 2f37fdbdcf9f4ae9b52bb50b2ca70728 3246582f50cf4583b1e151a927ba9480
-#: 63dde4b7f95f44f9b1037ebab10f3661 b654a6d5bff74ca0be2dcd0229048615
-#: decc54e00fc44ae68f5f274b55fc1b53 df829d5bc0584b90ba918e52dcf14dda
+#: ../../en/base/echo.rst:35 50188ef8ab184003a37ea52b52f13672
 msgid "|S|"
 msgstr ""
 
-#: ../../en/base/echo.rst:25 863d940c5c76468393e6c179bbc9e439
+#: ../../en/base/echo.rst:25 95fdae71ffd34aeebc4ac573f752664c
 msgid "Atom Matrix"
 msgstr ""
 
-#: ../../en/base/echo.rst:27 b86a9d2193c540eb847ad4621fb9f318
+#: ../../en/base/echo.rst:27 d4689bfef8334ffaac2abfa5afba9e1f
 msgid "AtomS3"
 msgstr ""
 
-#: ../../en/base/echo.rst:29 d3848673f84a494bb46f8a89a01b2a12
+#: ../../en/base/echo.rst:29 fee8fa2f30e741d797e68f6d18d523f3
 msgid "AtomS3 Lite"
 msgstr ""
 
-#: ../../en/base/echo.rst:31 e13c4aab0950436180f56a1bf0845906
+#: ../../en/base/echo.rst:31 5073dae9dec748289bb56307217bf002
 msgid "AtomS3R"
 msgstr ""
 
-#: ../../en/base/echo.rst:33 bc837a904e1b4d2d9a44559542e7fbdf
+#: ../../en/base/echo.rst:33 30c6384d664d4877a73ff47d5783bdbf
 msgid "AtomS3R-CAM"
 msgstr ""
 
-#: ../../en/base/echo.rst:35 c4fe3b2b3f834cc7865811382e2983d5
+#: ../../en/base/echo.rst:35 350f587ba22b4d78a4737a51db6c6c6b
 msgid "AtomS3R-Ext"
 msgstr ""
 
-#: ../../en/base/echo.rst:42 fed7ed4706684547851f3fb977483a20
-msgid "Micropython Example:"
+#: ../../en/base/echo.rst:43 22a3ceaf3bf7471f891599c815be1863
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/base/echo.rst:46 ../../en/base/echo.rst:107
+#: 54c8237d02984371be4bcd7d5d4bb0ec f0179591cee64276919c7b3ab051075c
+msgid "Play WAV file"
+msgstr "播放 WAV 文件"
+
+#: ../../en/base/echo.rst:48 81de4bc66134413e9312d8a450443ce7
+msgid "Open the |atoms3_play_wav_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3_play_wav_example.m5f2| 项目。"
+
+#: ../../en/base/echo.rst:52 ../../en/base/echo.rst:72
+#: 24c49eedadda43479f1ca9b6837e7c13 d739d86b65de40d6aac623a559540130
+msgid ":download:`66.wav <../../../examples/module/audio/66.wav>`"
 msgstr ""
 
-#: ../../en/base/echo.rst:49 22de2793120145f9bd4db15cee35e5ab
-msgid "UIFLOW2 Example:"
+#: ../../en/base/echo.rst:54 ../../en/base/echo.rst:109
+#: 46ac747d23af49c18cf8c508ab39ff00 563329cfe24e44ec86831fbef7fa3e66
+msgid "This example reads an audio file from the file system and plays it."
+msgstr "此示例从文件系统读取音频文件并播放。"
+
+#: ../../en/base/echo.rst:56 ../../en/base/echo.rst:78
+#: ../../en/base/echo.rst:94 14d051d10b5742b091a958be8fd9024a
+#: 1be8dea2b25d4e8a91c0a3384d4de3b2 413193a9b9d34ef087f37a48a9050909
+#: 54a78be711244f3d9273f4041393d5f0 7732f63485d941f2939e654880394885
+#: 81067491d3c0415292b2aa3531d68085 88c875fd42474def9e3be3366f258aee
+#: 934d38b178274121b1f29b51d88a89da a6964b5b51764990a4b0666c65d1b34f
+#: a75b910ab6fc4ea997fb722a04b2a76d b86e36d162dc4b5f9d216f7fc38a58f1
+#: b86e9a8f9e6c465280bcc335a05123b7 base.echo.AtomicEchoBase.get_volume:5
+#: base.echo.AtomicEchoBase.pause:3 base.echo.AtomicEchoBase.pcm_buffer:5
+#: base.echo.AtomicEchoBase.play_raw:10 base.echo.AtomicEchoBase.play_wav:7
+#: base.echo.AtomicEchoBase.play_wav_file:6 base.echo.AtomicEchoBase.record:8
+#: base.echo.AtomicEchoBase.record_wav_file:9 base.echo.AtomicEchoBase.resume:3
+#: base.echo.AtomicEchoBase.set_volume:5 base.echo.AtomicEchoBase.stop:3
+#: base.echo.AtomicEchoBase.tone:7 c03f45728f5844d0b39ba6b88119dbc7
+#: cefa0b234cad461c975f17edd7ea8f97 eb7b8cd49e0c482dabd765e686c22eb5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/echo.rst:58 dcd2e50a203d40c1ac50da9c7c4a55fc
+msgid "|atoms3_play_wav_example.png|"
 msgstr ""
 
-#: ../../en/base/echo.rst:51 b94d66061365424d863766a89dee54c9
-msgid "|example.png|"
+#: ../../en/refs/base.echo.ref:11 92f6a4ffadf049769a2169a16d51d693
+msgid "atoms3_play_wav_example.png"
 msgstr ""
 
-#: ../../en/refs/base.echo.ref:9 475f061a525042ff9b83c97d479bcde9
-msgid "example.png"
+#: ../../en/base/echo.rst:60 ../../en/base/echo.rst:82
+#: ../../en/base/echo.rst:98 ../../en/base/echo.rst:117
+#: ../../en/base/echo.rst:135 ../../en/base/echo.rst:151
+#: 34d2e4ee563244db95761d03ad26b3a0 598e46e5189b4c8a9b84d0de0aadaaa3
+#: 87cc6e078b074394984b15b034c4eec0 a01625ac65c9431aac73b95161c442f2
+#: a05170aab8934f22baf5c659a685192f fd83dd12dc444b62b18496c16d53d833
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/echo.rst:62 ../../en/base/echo.rst:84
+#: ../../en/base/echo.rst:100 ../../en/base/echo.rst:119
+#: ../../en/base/echo.rst:137 ../../en/base/echo.rst:153
+#: 1b9e2cc8a6124fdaaeb8726a9a7ea638 31b7e7134b59496dace42e85aef9b40e
+#: 3ef5d48f1fbd42cb90a5515d327e4628 421d134f4d2446f6b14ceb6e91ba021e
+#: 4e4fd8a02f0d419dafdd4c374c481fde 5af1524ca2424d729befec81b59bcbca
+#: 60360328f3a54462ab76ceaa33e222dd 9783d926f8d9441491352793b5fd740c
+#: base.echo.AtomicEchoBase.play_raw:8 base.echo.AtomicEchoBase.play_wav:5
+#: base.echo.AtomicEchoBase.play_wav_file:4 base.echo.AtomicEchoBase.tone:5
+#: d7a696a1f95e49cb85d7ae83b3481db4 f1e13a859add484aae02cbbb111ba1d2 of
+msgid "None"
 msgstr ""
 
-#: ../../en/base/echo.rst:56 1e11ed954c0b4ad59497aebb9c3de286
-msgid "|atoms3_echo_example.m5f2|"
+#: ../../en/base/echo.rst:66 ../../en/base/echo.rst:123
+#: 7f1130cdc46f4c7e89bc25cdc75586be d632f72886134d86b7589baeba6274a4
+msgid "Playback Controls"
+msgstr "播放控制"
+
+#: ../../en/base/echo.rst:68 99d9427403fa4834ab32b514be75253a
+msgid "Open the |atoms3_playback_controls_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3_playback_controls_example.m5f2| 项目。"
+
+#: ../../en/base/echo.rst:74 ../../en/base/echo.rst:125
+#: 38298f145b214d50864291716d313a0e 41a493e1c5684c979ba8b609ed6d6e66
+msgid ""
+"This example demonstrates how to control playback using the "
+"AtomicEchoBase class."
+msgstr "此示例演示如何使用 AtomicEchoBase 类控制播放。"
+
+#: ../../en/base/echo.rst:76 ../../en/base/echo.rst:127
+#: 6e58ee8a9c384dbd8093e88ffb132177 b9d09c5d6a22491a823d8959c652ef8f
+msgid "Play the audio for 1 second, pause for 1 second, and then resume playing."
+msgstr "播放音频 1 秒，暂停 1 秒，然后继续播放。"
+
+#: ../../en/base/echo.rst:80 957d89a93bf2431884060b5592736cce
+msgid "|atoms3_playback_controls_example.png|"
 msgstr ""
 
-#: ../../en/base/echo.rst:60 3ea0023021964f0f8b777fcc3239c9d9
-msgid "class ATOMEchoBase"
+#: ../../en/refs/base.echo.ref:12 92f6a4ffadf049769a2169a16d51d693
+msgid "atoms3_playback_controls_example.png"
 msgstr ""
 
-#: ../../en/base/echo.rst:63 0ad0c0d3eaef4d51a200259453dd6e41
-msgid "Constructors"
+#: ../../en/base/echo.rst:88 ../../en/base/echo.rst:141
+#: 25363cb8c3804e618a47d81077953797 da6f6131439e41428604ce5f5c0a28b1
+msgid "Record Audio"
+msgstr "录制音频"
+
+#: ../../en/base/echo.rst:90 7e48d4acd98f44d7b36093341fbf7c6f
+msgid "Open the |atoms3_record_audio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3_record_audio_example.m5f2| 项目。"
+
+#: ../../en/base/echo.rst:92 ../../en/base/echo.rst:143
+#: 13fcc48373af41229ceb4ea84ee6ca81 d77541d8a49c4ad089adcbf5cd1745f4
+msgid ""
+"This example records audio from the microphone and saves it to a PCM "
+"buffer, then plays it out through the speaker."
+msgstr "此示例从麦克风录制音频并将其保存到 PCM 缓冲区，然后通过扬声器播放。"
+
+#: ../../en/base/echo.rst:96 dcd2e50a203d40c1ac50da9c7c4a55fc
+msgid "|atoms3_record_audio_example.png|"
 msgstr ""
 
-#: ../../en/base/echo.rst:67 f2aad4e0be7246bd85977eb4e3937678
-msgid "Create an ATOMEchoBase object."
+#: ../../en/refs/base.echo.ref:13 92f6a4ffadf049769a2169a16d51d693
+msgid "atoms3_record_audio_example.png"
 msgstr ""
 
-#: ../../en/base/echo.rst 6aa28f915b7d4d6299293897cc51f509
+#: ../../en/base/echo.rst:104 569c69c572b247a59559b1ad3c7c5439
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/base/echo.rst:111 ../../en/base/echo.rst:129
+#: ../../en/base/echo.rst:145 569c69c572b247a59559b1ad3c7c5439
+#: base.echo.AtomicEchoBase.get_volume:9 base.echo.AtomicEchoBase.pause:7
+#: base.echo.AtomicEchoBase.pcm_buffer:9 base.echo.AtomicEchoBase.play_raw:14
+#: base.echo.AtomicEchoBase.play_wav:11
+#: base.echo.AtomicEchoBase.play_wav_file:10 base.echo.AtomicEchoBase.record:12
+#: base.echo.AtomicEchoBase.record_wav_file:13
+#: base.echo.AtomicEchoBase.resume:7 base.echo.AtomicEchoBase.set_volume:9
+#: base.echo.AtomicEchoBase.stop:7 base.echo.AtomicEchoBase.tone:11 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/base/echo.rst:157 a8c372a35dea4b269ee7d70a9b167657
+msgid "AtomicEchoBase"
+msgstr ""
+
+#: 73fe6a9dcb50490bbdd88f90090f2f48 base.echo.AtomicEchoBase:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 73fe6a9dcb50490bbdd88f90090f2f48 base.echo.AtomicEchoBase:1 of
+msgid "Create an AtomicEchoBase object."
+msgstr "创建一个 AtomicEchoBase 对象。"
+
+#: ../../en/base/echo.rst 64e9d105fa2e45ae86fda8a9425076d4
+#: base.echo.AtomicEchoBase.play_raw base.echo.AtomicEchoBase.play_wav
+#: base.echo.AtomicEchoBase.play_wav_file base.echo.AtomicEchoBase.record
+#: base.echo.AtomicEchoBase.record_wav_file base.echo.AtomicEchoBase.set_volume
+#: base.echo.AtomicEchoBase.tone of
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/base/echo.rst:69 21c74170d2e04ee2baf29ab3f647bb78
+#: base.echo.AtomicEchoBase:3 d1f6a0a0a4bd47bea72a8019a488c609 of
 msgid "I2C object"
 msgstr ""
 
-#: ../../en/base/echo.rst:70 3b1018cd013c44ed87a877478fcebf33
+#: af6de1136e454bd4898c6e0a64a5f610 base.echo.AtomicEchoBase:4 of
 msgid "The I2C address of the ES8311. Default is 0x18."
-msgstr ""
+msgstr "ES8311的I2C地址。默认值为0x18。"
 
-#: ../../en/base/echo.rst:71 b1919aee0ad14142a246ce614b6362b4
+#: base.echo.AtomicEchoBase:5 fd283593f6a9455d8a7b573f4371287e of
 msgid "The I2S port number. Default is 1."
-msgstr ""
+msgstr "I2S 端口号。默认值为 1。"
 
-#: ../../en/base/echo.rst:72 654eff122e4f4d0faf7248cfef12d64d
-msgid "The sample rate of the audio. Default is 44100."
-msgstr ""
+#: 0cbd496010cc42b18c834492f19c6c84 base.echo.AtomicEchoBase:6 of
+msgid "The sample rate of the audio. Default is 16000."
+msgstr "音频的采样率。默认值为 16000。"
 
-#: ../../en/base/echo.rst:73 2268b224134940d4b2ccd3bdcfd853f7
+#: 9d7b0aebe6e44ea49d91b2bec685d646 base.echo.AtomicEchoBase:7 of
 msgid "The I2S SCK pin. Default is -1."
-msgstr ""
+msgstr "I2S SCK 引脚。默认值为 -1。"
 
-#: ../../en/base/echo.rst:74 897066ce2fac4f18a247d4fac5bdc676
+#: base.echo.AtomicEchoBase:8 e99b94d5f5f54013a4ac3546e93325fa of
 msgid "The I2S WS pin. Default is -1."
-msgstr ""
+msgstr "I2S WS 引脚。默认值为 -1。"
 
-#: ../../en/base/echo.rst:75 a37ef0bc0b744d4e9b9b05ce5fde6775
+#: a68760852bba4d7eab02e7a40a199e1b base.echo.AtomicEchoBase:9 of
 msgid "The I2S DI pin. Default is -1."
-msgstr ""
+msgstr "I2S DI 引脚。默认值为 -1。"
 
-#: ../../en/base/echo.rst:76 1a5ba9a6cab74a25962c5b4c94962777
+#: 1a86635ec5eb456bab51a5da25d9afae base.echo.AtomicEchoBase:10 of
 msgid "The I2S DO pin. Default is -1."
-msgstr ""
+msgstr "I2S DO 引脚。默认值为 -1。"
 
-#: ../../en/base/echo.rst:78 8bc105ae2489499286bd09bc5ba8198b
+#: 8a1c994c008b44d28c2f7499f61bf178 base.echo.AtomicEchoBase:12 of
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/base/echo.rst:80 d6b1109c83b3475cb8eef35a87ec9870
+#: 550d7b3601174053a1f8a613d26ca00f base.echo.AtomicEchoBase:14 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/base.echo.ref:7 101a832b225a45c983541132d2d10070
+#: ../../en/refs/base.echo.ref:7 0514f1bc25d546039cf0fe510ed20947
 msgid "init.png"
 msgstr ""
 
-#: ../../en/base/echo.rst:82 820309d24a8948c0985f6076405cbffb
+#: 7befb6ba64534ec4a86c216b397d31c6 base.echo.AtomicEchoBase:16 of
 msgid "Micropython::"
 msgstr ""
 
-#: ../../en/base/echo.rst:113 c3bf1a6107e947e08a93b0ba57fdfcc8
-msgid "Attributes"
+#: ../../docstring b8f42cf422644b6f89d7abb93cbaaaec
+#: base.echo.AtomicEchoBase.MONO:1 of
+msgid "Mono"
+msgstr "单声道"
+
+#: ../../docstring b537faa4b8454451ba10a6ed0078111b
+#: base.echo.AtomicEchoBase.STEREO:1 of
+msgid "Stereo"
+msgstr "立体声"
+
+#: adcc944b3f6b448c863e0cb31eeac702 base.echo.AtomicEchoBase.get_volume:1 of
+msgid "Get the speaker volume level."
+msgstr "获取扬声器音量级别。"
+
+#: 05d3d0b0b6154838af350e17a9c22b82 172d30301e8742c1987b26c117442d40
+#: 6524e46b6a984a52bd7cd29ddc4fc634 ab1efac2881d4e2da3f5ef42dd99f53a
+#: base.echo.AtomicEchoBase.get_volume base.echo.AtomicEchoBase.pcm_buffer
+#: base.echo.AtomicEchoBase.play_raw base.echo.AtomicEchoBase.play_wav
+#: base.echo.AtomicEchoBase.play_wav_file base.echo.AtomicEchoBase.tone
+#: de3fdb1b19c1471aa1a4f65394db70c4 f8469f753f0146a0b5cfd07eb9ccf938 of
+msgid "Returns"
 msgstr ""
 
-#: ../../en/base/echo.rst:117 acdab87e9884401bb220057eacb513eb
-msgid "Objects of the Speaker class."
+#: 2f6c0acf42d144f08cfe274b9596e8ac 9a53641708274719b0194827d325adbe
+#: base.echo.AtomicEchoBase.get_volume:3 base.echo.AtomicEchoBase.set_volume:3
+#: of
+msgid "The volume level (0-100)."
+msgstr "音量级别（0-100）。"
+
+#: 1ee56f1b4c004174b6ef467c1a40f416 35020b112b8a44f0a36cb2d8d886240d
+#: 397cedf59a3e4844adca7709f6f10b93 533aa8c1f2c94a8b8a18ea77b1ef71ca
+#: base.echo.AtomicEchoBase.get_volume base.echo.AtomicEchoBase.pause
+#: base.echo.AtomicEchoBase.play_raw base.echo.AtomicEchoBase.play_wav
+#: base.echo.AtomicEchoBase.play_wav_file base.echo.AtomicEchoBase.tone
+#: de68e59691d8402d8b2d465bb487c294 ebfd7a2409d74aa8b8a652f8c50834e6 of
+msgid "Return type"
 msgstr ""
 
-#: ../../en/base/echo.rst:119 10eb2e6f0f6b458cac83f4c53b5f6ab3
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.get_volume:7 of
+msgid "|get_volume.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:21 92f6a4ffadf049769a2169a16d51d693
+msgid "get_volume.png"
+msgstr ""
+
+#: base.echo.AtomicEchoBase.pause:1 c2e4bb8b465c4fc5b7170a3edc7e849d of
+msgid "Pause the playback."
+msgstr "暂停播放。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.pause:5 of
+msgid "|pause.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:25 92f6a4ffadf049769a2169a16d51d693
+msgid "pause.png"
+msgstr ""
+
+#: 26dcda15b6864bb49b2facad3379daf3 base.echo.AtomicEchoBase.pcm_buffer:1 of
+msgid "Get the PCM buffer."
+msgstr "获取 PCM 缓冲区。"
+
+#: 62bea066c71143a09e9e7c740f7a93b0 base.echo.AtomicEchoBase.pcm_buffer:3 of
+msgid "The PCM buffer."
+msgstr "PCM缓冲区。"
+
+#: 8f7e55889d0e46b4aa9c7870302fc1a8 base.echo.AtomicEchoBase.pcm_buffer:7 of
+msgid "|pcm_buffer.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:26 92f6a4ffadf049769a2169a16d51d693
+msgid "pcm_buffer.png"
+msgstr ""
+
+#: 85cf820b2dab453598028afc982fcd19 base.echo.AtomicEchoBase.play_raw:1 of
+msgid "Play a pcm buffer."
+msgstr "播放 pcm 缓冲区。"
+
+#: aa149f56aa4840aa9fd0b5d84c722974 base.echo.AtomicEchoBase.play_raw:3 of
+msgid "The PCM buffer to play."
+msgstr "要播放的 PCM 缓冲区。"
+
+#: 0cbd496010cc42b18c834492f19c6c84 base.echo.AtomicEchoBase.play_raw:4
+#: base.echo.AtomicEchoBase.record:3 base.echo.AtomicEchoBase.record_wav_file:4
+#: of
+msgid "Sample rate (default is 16000)."
+msgstr "采样率（默认为 16000）。"
+
+#: base.echo.AtomicEchoBase.play_raw:5 base.echo.AtomicEchoBase.record:4
+#: base.echo.AtomicEchoBase.record_wav_file:5 e99b94d5f5f54013a4ac3546e93325fa
+#: of
+msgid "Bit depth (default is 16)."
+msgstr "位深度（默认为 16）。"
+
+#: 0cbd496010cc42b18c834492f19c6c84 base.echo.AtomicEchoBase.play_raw:6
+#: base.echo.AtomicEchoBase.record:5 base.echo.AtomicEchoBase.record_wav_file:6
+#: of
+msgid "Number of channels (default is 2)."
+msgstr "通道数（默认为 2）。"
+
+#: ba19c6dbee6047068ce5b5cbcc43a957 base.echo.AtomicEchoBase.play_raw:7 of
 msgid ""
-"See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more "
-"details on how to use the ATOMEchoBase.speaker properties."
+"Duration of the PCM buffer in milliseconds. when duration is -1, it will "
+"play until stopped. (default is -1)."
+msgstr "PCM 缓冲区的持续时间（以毫秒为单位）。当持续时间为 -1 时，它将播放直到停止。（默认值为 -1）。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.play_raw:12 of
+msgid "|play_raw.png|"
 msgstr ""
 
-#: ../../en/base/echo.rst:123 f5efd98e3a3b4cf39a93f40cad838222
-msgid "Objects of the Microphone class."
+#: ../../en/refs/base.echo.ref:31 92f6a4ffadf049769a2169a16d51d693
+msgid "play_raw.png"
 msgstr ""
 
-#: ../../en/base/echo.rst:125 d447c5a69bfb40198457e5f25782586a
+#: base.echo.AtomicEchoBase.play_wav:1 d978e45cd85a43c8a82843749961a5f3 of
+msgid "Play a WAV buffer."
+msgstr "播放 WAV 缓冲区。"
+
+#: 3270485256fe4ef3a3705a970089e727 base.echo.AtomicEchoBase.play_wav:3 of
+msgid "The WAV buffer to play."
+msgstr "要播放的 WAV 缓冲区。"
+
+#: a2a0b2624a8d4e20810ece06c58e2591 base.echo.AtomicEchoBase.play_wav:4 of
 msgid ""
-"See :ref:`hardware.Mic.Methods <hardware.Mic.Methods>` for more details "
-"on how to use the ATOMEchoBase.microphone properties."
+"Duration of the WAV buffer in milliseconds. when duration is -1, it will "
+"play until stopped. (default is -1)."
+msgstr "WAV 缓冲区的持续时间（以毫秒为单位）。当持续时间为 -1 时，它将播放直到停止。（默认值为 -1）。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.play_wav:9 of
+msgid "|play_wav.png|"
 msgstr ""
 
-#: ../../en/base/echo.rst:127 c3e4b64c403b4ce59d8657ce651b6428
-msgid "Microphone is not quite ready yet."
+#: ../../en/refs/base.echo.ref:32 92f6a4ffadf049769a2169a16d51d693
+msgid "play_wav.png"
+msgstr ""
+
+#: base.echo.AtomicEchoBase.play_wav_file:1 c8009ca2a92d483b83f23e83c1ce6512 of
+msgid "Play a WAV file."
+msgstr "播放 WAV 文件。"
+
+#: 0cbd496010cc42b18c834492f19c6c84 base.echo.AtomicEchoBase.play_wav_file:3 of
+msgid "The path of the WAV file to play."
+msgstr "要播放的 WAV 文件的路径。"
+
+#: a0a86de22c4c4912bd343253fb49f9af base.echo.AtomicEchoBase.play_wav_file:8 of
+msgid "|play_wav_file.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:33 92f6a4ffadf049769a2169a16d51d693
+msgid "play_wav_file.png"
+msgstr ""
+
+#: base.echo.AtomicEchoBase.record:1 bb19ebe7d8694a0c98069b48bc86455e of
+msgid "Record audio to a PCM buffer."
+msgstr "将音频录制到 PCM 缓冲区。"
+
+#: 7f9bea49f8714a8d89827722524466c5 ae1d3e95ea5e4c37966dcd8d20a118df
+#: base.echo.AtomicEchoBase.record:6 base.echo.AtomicEchoBase.record_wav_file:7
+#: of
+msgid "Duration of the recording in milliseconds (default is 3000)."
+msgstr "录音时长（以毫秒为单位）（默认为 3000）。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.record:10 of
+msgid "|record.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:34 0514f1bc25d546039cf0fe510ed20947
+msgid "record.png"
+msgstr ""
+
+#: 9cfbeae565b646c3a7cd07e3d4aca0bb base.echo.AtomicEchoBase.record_wav_file:1
+#: of
+msgid "Record audio to a WAV file."
+msgstr "将音频录制为 WAV 文件。"
+
+#: 1e36b059207d4f30aa15e3bda373a5ab base.echo.AtomicEchoBase.record_wav_file:3
+#: of
+msgid "The path to save the WAV file."
+msgstr "保存 WAV 文件的路径。"
+
+#: aa728c2f1eee4ffcad73ad4f7a0e47c2 base.echo.AtomicEchoBase.record_wav_file:11
+#: of
+msgid "|record_wav_file.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:35 92f6a4ffadf049769a2169a16d51d693
+msgid "record_wav_file.png"
+msgstr ""
+
+#: 0f11aaba27e64d608959949d0ad3d58f base.echo.AtomicEchoBase.resume:1 of
+msgid "Resume the playback."
+msgstr "继续播放。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.resume:5 of
+msgid "|resume.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:36 92f6a4ffadf049769a2169a16d51d693
+msgid "resume.png"
+msgstr ""
+
+#: b70c82ebf58544b9b4221cfb7fb29b3d base.echo.AtomicEchoBase.set_volume:1 of
+msgid "Set the speaker volume level."
+msgstr "设置扬声器音量。"
+
+#: 3fbce9c2703d4a58967f1a608416bf0b base.echo.AtomicEchoBase.set_volume:7 of
+msgid "|set_volume.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:41 92f6a4ffadf049769a2169a16d51d693
+msgid "set_volume.png"
+msgstr ""
+
+#: 0f11aaba27e64d608959949d0ad3d58f base.echo.AtomicEchoBase.stop:1 of
+msgid "Stop the playback."
+msgstr "停止播放。"
+
+#: 550d7b3601174053a1f8a613d26ca00f base.echo.AtomicEchoBase.stop:5 of
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:42 0514f1bc25d546039cf0fe510ed20947
+msgid "stop.png"
+msgstr ""
+
+#: 6a80291bad9f4410a8d96ba4a36f691f base.echo.AtomicEchoBase.tone:1 of
+msgid "Play simple tone sound."
+msgstr "播放简单的音调声音。"
+
+#: 7ba2f4913420490989871afc1df95430 base.echo.AtomicEchoBase.tone:3 of
+msgid "Frequency of the tone in Hz."
+msgstr "音调的频率（以赫兹为单位）。"
+
+#: 178b4f20b9ec4436a7b98401a96c0407 base.echo.AtomicEchoBase.tone:4 of
+msgid "Duration of the tone in milliseconds."
+msgstr "音调的持续时间（以毫秒为单位）。"
+
+#: 550d7b3601174053a1f8a613d26ca00f base.echo.AtomicEchoBase.tone:9 of
+msgid "|tone.png|"
+msgstr ""
+
+#: ../../en/refs/base.echo.ref:43 0514f1bc25d546039cf0fe510ed20947
+msgid "tone.png"
 msgstr ""
 

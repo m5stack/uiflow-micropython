@@ -5,7 +5,8 @@
 import os, sys, io
 import M5
 from M5 import *
-from hardware import *
+from hardware import I2C
+from hardware import Pin
 from unit import AIN4_20MAUnit
 
 
@@ -33,8 +34,8 @@ def setup():
 def loop():
     global title0, label0, label1, i2c0, ain4_20ma_0
     M5.update()
-    label0.setText(str((str("CH1 Current:") + str((ain4_20ma_0.get_4_20ma_current_value())))))
-    label1.setText(str((str("CH1 ADC:") + str((ain4_20ma_0.get_adc_raw16_value())))))
+    label0.setText(str((str("CH1 Current:") + str((ain4_20ma_0.get_current_value())))))
+    label1.setText(str((str("CH1 ADC:") + str((ain4_20ma_0.get_adc_raw_value())))))
 
 
 if __name__ == "__main__":

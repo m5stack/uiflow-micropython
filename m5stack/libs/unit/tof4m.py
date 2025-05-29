@@ -3,3 +3,5 @@
 # SPDX-License-Identifier: MIT
 
 from driver.vl53l1x import VL53L1X as TOF4MUnit
+
+ToF4MUnit = TOF4MUnit

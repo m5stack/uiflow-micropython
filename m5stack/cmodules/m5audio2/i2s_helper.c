@@ -72,6 +72,9 @@ esp_err_t i2s_std_init_helper(int id, i2s_mode_t mode, int sck, int ws, int sd, 
 
 
 esp_err_t i2s_std_deinit_helper(i2s_chan_handle_t i2s_chan_handle) {
+    if (i2s_chan_handle == NULL) {
+        return ESP_ERR_INVALID_ARG;
+    }
     esp_err_t ret = i2s_channel_disable(i2s_chan_handle);
     if (ret != ESP_OK) {
         ESP_LOGE(TAG, "Failed to disable I2S channel");

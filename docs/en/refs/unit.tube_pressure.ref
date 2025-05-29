@@ -1,0 +1,23 @@
+.. |Tube Pressure| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/tube_pressure/tube_pressure_01.webp
+    :target: https://docs.m5stack.com/en/unit/tube_pressure
+    :height: 200px
+    :width: 200px
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tube_pressure/example.png
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tube_pressure/init.png
+
+.. |get_pressure.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tube_pressure/get_pressure.png
+
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tube_pressure/get_voltage.png
+
+.. |get_analog_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/tube_pressure/get_analog_value.png
+
+.. |tube_pressure_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/relay2/tube_pressure_core2_example.m5f2"
+        target="_blank"
+    >
+        tube_pressure_core2_example.m5f2
+    </a>

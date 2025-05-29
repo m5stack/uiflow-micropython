@@ -9,7 +9,7 @@ The following products are supported:
 
     |Atomic Echo Base|
 
-Below is the detailed support for Speaker on the host:
+Below is the detailed support for Atomic Echo Base on the host:
 
 .. table::
     :widths: auto
@@ -39,89 +39,123 @@ Below is the detailed support for Speaker on the host:
 .. |O| unicode:: U+2B55
 
 
-Micropython Example:
+UiFlow2 Example
+---------------
 
-    .. literalinclude:: ../../../examples/base/echo/atoms3_echo_example.py
-        :language: python
-        :linenos:
+Play WAV file
+^^^^^^^^^^^^^
 
-
-UIFLOW2 Example:
-
-    |example.png|
-
+Open the |atoms3_play_wav_example.m5f2| project in UiFlow2.
 
 .. only:: builder_html
 
-    |atoms3_echo_example.m5f2|
+    :download:`66.wav <../../../examples/module/audio/66.wav>`
+
+This example reads an audio file from the file system and plays it.
+
+UiFlow2 Code Block:
+
+    |atoms3_play_wav_example.png|
+
+Example output:
+
+    None
 
 
-class ATOMEchoBase
-------------------
+Playback Controls
+^^^^^^^^^^^^^^^^^
 
-Constructors
-------------
+Open the |atoms3_playback_controls_example.m5f2| project in UiFlow2.
 
-.. class:: ATOMEchoBase(i2c, address: int = 0x18, i2s_port: int = 1, sample_rate: int = 44100, i2s_sck: int = -1, i2s_ws: int = -1, i2s_di: int = -1, i2s_do: int = -1)
+.. only:: builder_html
 
-    Create an ATOMEchoBase object.
+    :download:`66.wav <../../../examples/module/audio/66.wav>`
 
-    :param I2C i2c: I2C object
-    :param int address: The I2C address of the ES8311. Default is 0x18.
-    :param int i2s_port: The I2S port number. Default is 1.
-    :param int sample_rate: The sample rate of the audio. Default is 44100.
-    :param int i2s_sck: The I2S SCK pin. Default is -1.
-    :param int i2s_ws: The I2S WS pin. Default is -1.
-    :param int i2s_di: The I2S DI pin. Default is -1.
-    :param int i2s_do: The I2S DO pin. Default is -1.
+This example demonstrates how to control playback using the AtomicEchoBase class.
 
-    UIFLOW2:
+Play the audio for 1 second, pause for 1 second, and then resume playing.
 
-        |init.png|
+UiFlow2 Code Block:
 
-    Micropython::
+    |atoms3_playback_controls_example.png|
 
-        from hardware import I2C
-        from hardware import Pin
-        from base import ATOMEchoBase
+Example output:
 
-        # atom echo
-        i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
-        echo = ATOMEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
-
-        # atom lite
-        i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
-        echo = ATOMEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
-
-        # atom matrix
-        i2c1 = I2C(1, scl=Pin(21), sda=Pin(25), freq=100000)
-        echo = ATOMEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=33, i2s_ws=19, i2s_di=23, i2s_do=22)
-
-        # atoms3 / atoms3 lite
-        i2c1 = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
-        echo = ATOMEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=8, i2s_ws=6, i2s_di=7, i2s_do=5)
-
-        # atoms3r / atoms3r-cam / atoms3-ext
-        i2c1 = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
-        echo = ATOMEchoBase(i2c1, address=0x18, i2s_port=1, sample_rate=44100, i2s_sck=8, i2s_ws=6, i2s_di=7, i2s_do=5)
-
-        echo.speaker.tone(2000, 1000)
-        echo.speaker.playWavFile('res/audio/66.wav')
+    None
 
 
-Attributes
-----------
+Record Audio
+^^^^^^^^^^^^
 
-.. attribute:: ATOMEchoBase.speaker
+Open the |atoms3_record_audio_example.m5f2| project in UiFlow2.
 
-    Objects of the Speaker class.
+This example records audio from the microphone and saves it to a PCM buffer, then plays it out through the speaker.
 
-    See :ref:`hardware.Speaker.Methods <hardware.Speaker.Methods>` for more details on how to use the ATOMEchoBase.speaker properties.
+UiFlow2 Code Block:
 
-.. attribute:: ATOMEchoBase.microphone
+    |atoms3_record_audio_example.png|
 
-    Objects of the Microphone class.
+Example output:
 
-    See :ref:`hardware.Mic.Methods <hardware.Mic.Methods>` for more details on how to use the ATOMEchoBase.microphone properties.
+    None
 
-    .. Note:: Microphone is not quite ready yet.
+
+MicroPython Example
+-------------------
+
+Play WAV file
+^^^^^^^^^^^^^
+
+This example reads an audio file from the file system and plays it.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/base/echo/atoms3_playback_controls_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+Playback Controls
+^^^^^^^^^^^^^^^^^
+
+This example demonstrates how to control playback using the AtomicEchoBase class.
+
+Play the audio for 1 second, pause for 1 second, and then resume playing.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/base/echo/atoms3_playback_controls_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+Record Audio
+^^^^^^^^^^^^
+
+This example records audio from the microphone and saves it to a PCM buffer, then plays it out through the speaker.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/base/echo/atoms3_record_audio_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+AtomicEchoBase
+^^^^^^^^^^^^^^
+
+.. autoclass:: base.echo.AtomicEchoBase
+    :members:
+    :member-order: bysource

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -7,29 +7,30 @@ import M5
 from M5 import *
 from hardware import I2C
 from hardware import Pin
-from unit import UltrasoundI2CUnit
+from base import AtomicEchoBase
+import time
 
 
-label0 = None
-i2c0 = None
-ultrasonic_0 = None
+i2c1 = None
+base_echo = None
 
 
 def setup():
-    global label0, i2c0, ultrasonic_0
+    global i2c1, base_echo
 
     M5.begin()
-    Widgets.fillScreen(0x222222)
-    label0 = Widgets.Label("label0", 132, 109, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
-
-    i2c0 = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
-    ultrasonic_0 = UltrasoundI2CUnit(i2c0)
+    i2c1 = I2C(1, scl=Pin(39), sda=Pin(38), freq=100000)
+    base_echo = AtomicEchoBase(i2c1, 0x18, 1, 16000, 8, 6, 7, 5)
+    base_echo.play_wav_file("/flash/res/audio/66.wav")
+    time.sleep(1)
+    base_echo.pause()
+    time.sleep(1)
+    base_echo.resume()
 
 
 def loop():
-    global label0, i2c0, ultrasonic_0
+    global i2c1, base_echo
     M5.update()
-    label0.setText(str(ultrasonic_0.get_target_distance(1)))
 
 
 if __name__ == "__main__":
