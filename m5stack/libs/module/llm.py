@@ -486,7 +486,7 @@ class ApiMelotts:
 
     def setup(
         self,
-        model="melotts_zh-cn",
+        model="melotts-zh-cn",
         response_format="sys.pcm",
         input="tts.utf-8.stream",
         enoutput=False,
@@ -903,6 +903,8 @@ class LlmModule:
             if self.version == "v1.0":
                 enkws = True
             else:
+                if isinstance(input, str):
+                    input = [input]
                 input.append(enkws)
         else:
             enkws = bool(enkws)
@@ -979,6 +981,8 @@ class LlmModule:
             if self.version == "v1.0":
                 enkws = True
             else:
+                if isinstance(input, str):
+                    input = [input]
                 input.append(enkws)
         else:
             enkws = bool(enkws)
@@ -995,7 +999,7 @@ class LlmModule:
     def melotts_setup(
         self,
         language="en_US",
-        model="melotts_zh-cn",
+        model="melotts-en-default",
         response_format="sys.pcm",
         input=None,
         enoutput=False,
@@ -1003,11 +1007,15 @@ class LlmModule:
         request_id="tts_setup",
     ) -> str:
         if language == "zh_CN":
-            model = "melotts_zh-cn"
+            model = "melotts-zh-cn"
+        if language == "ja_JP":
+            model = "melotts-ja-jp"
         if input is None:
             input = ["tts.utf-8.stream"]
 
         if enkws:
+            if isinstance(input, str):
+                input = [input]
             input.append(enkws)
 
         self.latest_melotts_work_id = self.melotts.setup(
@@ -1058,6 +1066,8 @@ class LlmModule:
             if self.version == "v1.0":
                 enkws = True
             else:
+                if isinstance(input, str):
+                    input = [input]
                 input.append(enkws)
         else:
             enkws = bool(enkws)
@@ -1079,6 +1089,8 @@ class LlmModule:
         if input is None:
             input = ["sys.pcm"]
         if enkws:
+            if isinstance(input, str):
+                input = [input]
             input.append(enkws)
         self.latest_vad_work_id = self.vad.setup(
             model, response_format, input, enoutput, request_id
@@ -1099,8 +1111,12 @@ class LlmModule:
         if input is None:
             input = ["sys.pcm"]
         if enkws:
+            if isinstance(input, str):
+                input = [input]
             input.append(enkws)
         if envad:
+            if isinstance(input, str):
+                input = [input]
             input.append(envad)
         self.latest_whisper_work_id = self.whisper.setup(
             model, response_format, input, enoutput, language, request_id
