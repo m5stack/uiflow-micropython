@@ -32,7 +32,7 @@ bool gfx_lvgl_touch_read(lv_disp_t *indev_drv, lv_indev_data_t *data)
         return false;
     }
 
-    auto tp = M5.Touch.getTouchPointRaw(1);
+    auto tp = M5.Touch.getDetail(0);
     data->point = (lv_point_t) { tp.x, tp.y };
     data->state = LV_INDEV_STATE_PRESSED;
     return true;

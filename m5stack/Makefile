@@ -109,14 +109,7 @@ else
 TINY_FLAG ?= 0
 endif
 
-# esp32c3's bootloader is different with esp32
-ifeq (C3, $(findstring C3,${BOARD}))
-	CHIP ?= esp32c3
-else ifeq (S3, $(findstring S3,${BOARD}))
-	CHIP ?= esp32s3
-else
-	CHIP ?= esp32
-endif
+CHIP ?= auto
 
 # If the build directory is not given, make it reflect the board name.
 BUILD ?= build-$(BOARD)
