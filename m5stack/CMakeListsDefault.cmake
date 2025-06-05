@@ -236,6 +236,7 @@ list(APPEND IDF_COMPONENTS
     uiflow_utility
     esp_dmx
     esp_mm
+    esp_driver_ppa
 )
 
 if(CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S2 OR CONFIG_IDF_TARGET_ESP32S3)

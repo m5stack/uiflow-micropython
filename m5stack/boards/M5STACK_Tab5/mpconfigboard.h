@@ -15,3 +15,5 @@
 // #ifndef MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
 // #define MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE (1) // Support machine.USBDevice
 // #endif
+
+#define MICROPY_GC_INITIAL_HEAP_SIZE (128 * 1024)
