@@ -140,7 +140,7 @@ class VL53L0X:
         self._addr = address
         self.io_timeout_ms = io_timeout_ms
         self._data_ready = False
-        if self._i2c not in self._i2c.scan():
+        if self._addr not in self._i2c.scan():
             raise Exception("VL53L0X maybe not connect.")
 
         self._reset()
