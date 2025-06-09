@@ -948,6 +948,17 @@ class LlmModule:
         self.latest_error_code = self.sys.rmmode(model)
         return self.latest_error_code
 
+    def send_image(self, image_size, image_bytearray, request_id, work_id) -> None:
+        cmd = {
+            "RAW": image_size,
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.base64",
+        }
+        self.msg.send_cmd(ujson.dumps(cmd))
+        self.msg.send_cmd(image_bytearray)
+
     def get_response_msg_list(self) -> list:
         """
 
@@ -1092,9 +1103,10 @@ class LlmModule:
             response_format = "tts.base64.wav"
         if language == "zh_CN":
             model = "single_speaker_fast"
+            model = "single-speaker-fast" if float(self.version.lstrip("v")) >= 1.6 else model
         if input is None:
             input = "tts.utf-8.stream" if self.version == "v1.0" else ["tts.utf-8.stream"]
-
+        model = "single-speaker-english-fast" if float(self.version.lstrip("v")) >= 1.6 else model
         if enkws:
             if self.version == "v1.0":
                 enkws = True
@@ -1117,17 +1129,21 @@ class LlmModule:
     def melotts_setup(
         self,
         language="en_US",
-        model="melotts-en-default",
+        model="melotts_zh-cn",
         response_format="sys.pcm",
         input=None,
         enoutput=False,
         enkws=None,
         request_id="tts_setup",
     ) -> str:
-        if language == "zh_CN":
-            model = "melotts-zh-cn"
-        if language == "ja_JP":
-            model = "melotts-ja-jp"
+        model = "melotts-zh-cn" if float(self.version.lstrip("v")) >= 1.6 else model
+        if float(self.version.lstrip("v")) >= 1.6:
+            if language == "zh_CN":
+                model = "melotts-zh-cn"
+            elif language == "ja_JP":
+                model = "melotts-ja-jp"
+            else:
+                model = "melotts-en-default"
         if input is None:
             input = ["tts.utf-8.stream"]
 
