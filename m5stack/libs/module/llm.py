@@ -13,6 +13,7 @@ class ModuleComm:
 
     def send_cmd(self, cmd):
         # print(f"[DEBUG] Sending command: {cmd}")
+        print("[DEBUG] Sending command (first 100 characters):", cmd[:200])
         self._serial.write(cmd)
 
     def get_response(self, timeout=5000):
@@ -346,13 +347,24 @@ class ApiVlm:
         self._free_temp()
         return ret_work_id
 
-    def inference(self, work_id, input_data, request_id="llm_inference") -> str:
+    def inference(self, work_id, input_data, request_id="vlm_inference") -> str:
         cmd = {
             "request_id": request_id,
             "work_id": work_id,
             "action": "inference",
             "object": "vlm.utf-8.stream",
             "data": {"delta": input_data, "index": 0, "finish": True},
+        }
+        self._module_msg.send_cmd(ujson.dumps(cmd))
+        return self._MODULE_LLM_OK
+
+    def inference_img(self, work_id, image_data, request_id="vlm_inference") -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.stream.base64",
+            "data": {"delta": image_data, "index": 0, "finish": True},
         }
         self._module_msg.send_cmd(ujson.dumps(cmd))
         return self._MODULE_LLM_OK
@@ -954,10 +966,26 @@ class LlmModule:
             "request_id": request_id,
             "work_id": work_id,
             "action": "inference",
-            "object": "cv.jpeg.base64",
+            "object": "cv.jpeg.stream.base64",
         }
-        self.msg.send_cmd(ujson.dumps(cmd))
-        self.msg.send_cmd(image_bytearray)
+        payload = ujson.dumps(cmd).encode("utf-8") + image_bytearray
+        self.msg.send_cmd(payload)
+
+    def base64_encode(self, data: bytes) -> str:
+        base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+        encoded = ""
+        i = 0
+        while i < len(data):
+            b = data[i : i + 3]
+            b_len = len(b)
+            b += b"\x00" * (3 - b_len)
+            n = (b[0] << 16) | (b[1] << 8) | b[2]
+            encoded += base64_chars[(n >> 18) & 0x3F]
+            encoded += base64_chars[(n >> 12) & 0x3F]
+            encoded += base64_chars[(n >> 6) & 0x3F] if b_len > 1 else "="
+            encoded += base64_chars[n & 0x3F] if b_len > 2 else "="
+            i += 3
+        return encoded
 
     def get_response_msg_list(self) -> list:
         """
@@ -1045,6 +1073,10 @@ class LlmModule:
 
     def vlm_inference(self, work_id, input_data, request_id="vlm_inference") -> str:
         self.latest_error_code = self.vlm.inference(work_id, input_data, request_id)
+        return self.latest_error_code
+
+    def vlm_inference_img(self, work_id, image_data, request_id="vlm_inference") -> str:
+        self.latest_error_code = self.vlm.inference_img(work_id, image_data, request_id)
         return self.latest_error_code
 
     def audio_setup(
