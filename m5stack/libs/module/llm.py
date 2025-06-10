@@ -1076,7 +1076,8 @@ class LlmModule:
         return self.latest_error_code
 
     def vlm_inference_img(self, work_id, image_data, request_id="vlm_inference") -> str:
-        self.latest_error_code = self.vlm.inference_img(work_id, image_data, request_id)
+        encoded_image = self.base64_encode(image_data)
+        self.latest_error_code = self.vlm.inference_img(work_id, encoded_image, request_id)
         return self.latest_error_code
 
     def audio_setup(
