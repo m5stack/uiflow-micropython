@@ -836,6 +836,7 @@ class ApiWhisper:
 
 
 class ApiYolo:
+    _MODULE_LLM_OK = 0
     _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
 
     def __init__(self, module_msg):
@@ -870,6 +871,17 @@ class ApiYolo:
         ret_work_id = self._yolo_work_id if success else ""
         self._free_temp()
         return ret_work_id
+
+    def inference_img(self, work_id, image_data, request_id="yolo_inference") -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.stream.base64",
+            "data": {"delta": image_data, "index": 0, "finish": True},
+        }
+        self._module_msg.send_cmd(ujson.dumps(cmd))
+        return self._MODULE_LLM_OK
 
     def _set_yolo_work_id(self, msg):
         if "work_id" in msg:
@@ -1121,6 +1133,11 @@ class LlmModule:
             model, response_format, input, enoutput, request_id
         )
         return self.latest_yolo_work_id
+
+    def yolo_inference_img(self, work_id, image_data, request_id="yolo_inference") -> str:
+        encoded_image = self.base64_encode(image_data)
+        self.latest_error_code = self.yolo.inference_img(work_id, encoded_image, request_id)
+        return self.latest_error_code
 
     def tts_setup(
         self,
