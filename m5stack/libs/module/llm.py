@@ -12,8 +12,6 @@ class ModuleComm:
         self._serial = uart
 
     def send_cmd(self, cmd):
-        # print(f"[DEBUG] Sending command: {cmd}")
-        print("[DEBUG] Sending command (first 100 characters):", cmd[:200])
         self._serial.write(cmd)
 
     def get_response(self, timeout=5000):
@@ -58,7 +56,6 @@ class ModuleMsg:
                 doc = ujson.loads(json_str)
                 # Push into resonse msg list
                 self.response_msg_list.append(doc)
-                # print(f"[DEBUG] Received message:\n{doc}")
             except ValueError:
                 continue
         return
