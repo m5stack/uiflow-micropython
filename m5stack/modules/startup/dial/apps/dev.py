@@ -58,7 +58,7 @@ class DevApp(app_base.AppBase):
             "aabbcc112233",
             20,
             140,
-            w=100,
+            w=120,
             h=15,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
