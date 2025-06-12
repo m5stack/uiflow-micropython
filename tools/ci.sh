@@ -16,8 +16,8 @@ fi
 function ci_code_formatting_setup {
     sudo apt-add-repository --yes ppa:pybricks/ppa
     sudo apt update
-    sudo apt-get install uncrustify
-    sudo apt install pipx
+    sudo apt-get install uncrustify -y
+    sudo apt install pipx -y
     pipx install uv
     uv venv
     source .venv/bin/activate
@@ -157,6 +157,23 @@ function ci_esp32_idf522_setup {
         git -C esp-idf submodule update --init \
             components/bt/controller/lib
     fi
+    ./esp-idf/install.sh
+}
+
+function ci_esp32_idf541_setup {
+    if [ -d esp-idf ]; then
+        echo "esp-idf is already cloned."
+        if [ "$(git -C esp-idf rev-parse --abbrev-ref HEAD)" == "v5.4.1" ]; then
+            echo "esp-idf is on v5.4.1 branch."
+            return 0
+        else
+            echo "esp-idf is not on v5.4.1 branch."
+            rm -rf esp-idf
+        fi
+    fi
+
+    git clone --depth 1 --branch v5.4.1 https://github.com/espressif/esp-idf.git
+    git -C esp-idf submodule update --init
     ./esp-idf/install.sh
 }
 

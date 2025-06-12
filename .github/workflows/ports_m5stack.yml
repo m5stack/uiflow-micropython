@@ -1,7 +1,7 @@
 name: m5stack port
 
 on:
-  push:
+  push: {}
   pull_request:
     paths:
       - '.github/workflows/*.yml'
@@ -11,13 +11,199 @@ on:
       - 'micropython/lib/**'
       - 'micropython/drivers/**'
       - 'm5stack/**'
+      - "third-party/**"
+  workflow_dispatch: {}
 
 jobs:
-  build_idf44:
+  build:
     runs-on: [self-hosted, Linux, X64]
     steps:
     - uses: actions/checkout@v3.3.0
+    - name: Install dependencies with apt
+      run: |
+        sudo apt-get update
+        sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+    - name: Cache esp-idf
+      uses: actions/cache@v4
+      id: cache-esp-idf
+      with:
+        path: |
+          ~/.espressif
+          ${{ github.workspace }}/esp-idf
+        key: ${{ runner.os }}-idf-${{ hashFiles('idf_version.txt') }}
+    - name: Install ESP-IDF
+      if: steps.cache-idf.outputs.cache-hit != 'true'
+      run: |
+        git clone --depth=1 -b $IDF_VERSION https://github.com/espressif/esp-idf.git
+        ./esp-idf/install.sh
+      env:
+        IDF_VERSION: "v5.4.1"
     - name: Install packages
-      run: source tools/ci.sh && ci_esp32_idf504_setup
+      run: source tools/ci.sh && ci_esp32_idf541_setup
     - name: Build
-      run: source tools/ci.sh && ci_esp32_build
+      run: source tools/ci.sh && ci_esp32_nightly_build
+    - name: Deliver AirQ firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AirQ_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AirQ/uiflow-*-*.bin
+    - name: Deliver Atom Echo firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Atom_Echo_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Echo/uiflow-*-*.bin
+    - name: Deliver Atom Lite firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Atom_Lite_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Lite/uiflow-*-*.bin
+    - name: Deliver Atom Matrix firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Atom_Matrix_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Matrix/uiflow-*-*.bin
+    - name: Deliver AtomS3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomS3_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3/uiflow-*-*.bin
+    - name: Deliver AtomS3-Lite firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomS3-Lite_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3_Lite/uiflow-*-*.bin
+    - name: Deliver AtomS3R firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomS3R_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3R/uiflow-*-*.bin
+    - name: Deliver AtomS3R-CAM firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomS3R_CAM_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3R_CAM/uiflow-*-*.bin
+    - name: Deliver AtomS3U firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomS3U_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3U/uiflow-*-*.bin
+    - name: Deliver AtomU firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_AtomU_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomU/uiflow-*-*.bin
+    - name: Deliver Basic firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Basic_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Basic/uiflow-*-*.bin
+    - name: Deliver Basic(4MB Flash) firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Basic_4MB_Flash_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Basic_4MB/uiflow-*-*.bin
+    - name: Deliver Capsule firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Capsule_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Capsule/uiflow-*-*.bin
+    - name: Deliver Cardputer firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Cardputer_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Cardputer/uiflow-*-*.bin
+    - name: Deliver Core2 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Core2_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Core2/uiflow-*-*.bin
+    - name: Deliver CoreInk firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_CoreInk_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_CoreInk/uiflow-*-*.bin
+    - name: Deliver CoreS3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_CoreS3_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_CoreS3/uiflow-*-*.bin
+    - name: Deliver Dial firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Dial_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Dial/uiflow-*-*.bin
+    - name: Deliver DinMeter firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_DinMeter_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_DinMeter/uiflow-*-*.bin
+    - name: Deliver Fire firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Fire_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+    - name: Deliver NanoC6 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_NanoC6_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
+    - name: Deliver Paper firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Paper_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Paper/uiflow-*-*.bin
+    - name: Deliver PaperS3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Paper_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_PaperS3/uiflow-*-*.bin
+    - name: Deliver Stamp PICO firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Stamp_PICO_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
+    - name: Deliver StamPLC firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_StamPLC_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_StamPLC/uiflow-*-*.bin
+    - name: Deliver StampS3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_StampS3_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_StampS3/uiflow-*-*.bin
+    - name: Deliver Station firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Station_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Station/uiflow-*-*.bin
+    - name: Deliver StickC firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_StickC_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC/uiflow-*-*.bin
+    - name: Deliver StickC_PLUS firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_StickC_PLUS_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
+    - name: Deliver StickC_PLUS2 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_StickC_PLUS2_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
+    - name: Deliver Tough firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_Tough_firmware
+        path: $GITHUB_WORKSPACE/m5stack/build-M5STACK_Tough/uiflow-*-*.bin
+    - name: Deliver XIAOS3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_XIAOS3_firmware
+        path: $GITHUB_WORKSPACE/third-party/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
+    - name: Deliver BOX-3 firmware
+      uses: actions/upload-artifact@v4
+      with:
+        name: M5STACK_BOX_3_firmware
+        path: $GITHUB_WORKSPACE/third-party/build-ESPRESSIF_ESP32_S3_BOX_3/uiflow-*-*.bin
