@@ -123,7 +123,7 @@ list(APPEND MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_dac.c
     ${PROJECT_DIR}/machine_i2c.c
     ${PROJECT_DIR}/../micropython/ports/esp32/network_common.c
-    ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
+    ${PROJECT_DIR}/network_lan.c
     ${PROJECT_DIR}/network_ppp.c
     ${PROJECT_DIR}/network_wlan.c
     ${PROJECT_DIR}/../micropython/ports/esp32/mpnimbleport.c

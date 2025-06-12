@@ -26,6 +26,7 @@ _attrs = {
     "GoPlus2Module": "goplus2",
     "HMIModule": "hmi",
     "IotBaseCatmModule": "iot_base_catm",
+    "LANModule": "lan",
     "LlmModule": "llm",
     "LoraModule": "lora",
     "LoRa868V12Module": "lora868_v12",

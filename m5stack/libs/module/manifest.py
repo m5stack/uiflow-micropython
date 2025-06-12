@@ -25,6 +25,7 @@ package(
         "goplus2.py",
         "hmi.py",
         "iot_base_catm.py",
+        "lan.py",
         "llm.py",
         "lora.py",
         "lora868_v12.py",

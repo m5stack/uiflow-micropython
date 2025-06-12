@@ -38,3 +38,5 @@ CONFIG_BSP_SPIFFS_PARTITION_LABEL="storage"
 CONFIG_BSP_SPIFFS_MAX_FILES=5
 # end of models: human_face_recognition
 
+# LAN
+CONFIG_ETH_SPI_ETHERNET_W5500=y

@@ -732,6 +732,16 @@ unknown:
 }
 MP_DEFINE_CONST_FUN_OBJ_KW(network_wlan_config_obj, 1, network_wlan_config);
 
+static mp_obj_t network_wlan_set_default_netif(mp_obj_t self_in) {
+    wlan_if_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    if (self->if_id == ESP_IF_WIFI_STA) {
+        esp_err_t err = esp_netif_set_default_netif(self->netif);
+        return mp_obj_new_int(err);
+    }
+    return mp_obj_new_int(ESP_ERR_NOT_SUPPORTED);
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(network_wlan_set_default_netif_obj, network_wlan_set_default_netif);
+
 static const mp_rom_map_elem_t wlan_if_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_active), MP_ROM_PTR(&network_wlan_active_obj) },
     { MP_ROM_QSTR(MP_QSTR_connect), MP_ROM_PTR(&network_wlan_connect_obj) },
@@ -769,6 +779,9 @@ static const mp_rom_map_elem_t wlan_if_locals_dict_table[] = {
     { MP_ROM_QSTR(MP_QSTR_SEC_WPA2_WPA3_ENT), MP_ROM_INT(WIFI_AUTH_WPA2_WPA3_ENTERPRISE) },
     #endif
 
+    { MP_ROM_QSTR(MP_QSTR_set_default_netif), MP_ROM_PTR(&network_wlan_set_default_netif_obj) },
+
+    // Constants
     { MP_ROM_QSTR(MP_QSTR_PM_NONE), MP_ROM_INT(WIFI_PS_NONE) },
     { MP_ROM_QSTR(MP_QSTR_PM_PERFORMANCE), MP_ROM_INT(WIFI_PS_MIN_MODEM) },
     { MP_ROM_QSTR(MP_QSTR_PM_POWERSAVE), MP_ROM_INT(WIFI_PS_MAX_MODEM) },

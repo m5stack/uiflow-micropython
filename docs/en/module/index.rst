@@ -23,6 +23,7 @@ Module
     grbl.rst
     goplus2.rst
     hmi.rst
+    lan.rst
     llm.rst
     lora.rst
     lora868_v12.rst
