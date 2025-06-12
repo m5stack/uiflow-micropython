@@ -1,5 +1,5 @@
 Atomic Stepmotor Base
-============================
+=====================
 
 .. sku: A132
 
@@ -11,11 +11,11 @@ Support the following products:
     |Atomic Stepmotor Base|
 
 
-UiFlow2 Example:
---------------------------
+UiFlow2 Example
+---------------
 
 Direction control 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Open the |atoms3r_stepmotor_direction_control_example.m5f2| project in UiFlow2.
 
@@ -30,7 +30,7 @@ Example output:
     None
 
 Rotate control 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 Open the |atoms3r_stepmotor_rotate_control_example.m5f2| project in UiFlow2.
 
@@ -44,11 +44,11 @@ Example output:
 
     None
 
-MicroPython Example:
---------------------------
+MicroPython Example
+-------------------
 
 Direction control 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 The example demonstrates motor direction control. Pressing the screen button toggles the rotation direction.
 
@@ -63,7 +63,7 @@ Example output:
     None
 
 Rotate control 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 The example demonstrates the motor continuously rotating for multiple turns, then reversing for multiple turns, and repeating the cycle after a 2-second pause.
 
@@ -78,10 +78,10 @@ Example output:
     None
 
 **API**
---------------------------
+-------
 
 AtomicStepmotorBase 
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. autoclass:: base.stepmotor.AtomicStepmotorBase
     :members:

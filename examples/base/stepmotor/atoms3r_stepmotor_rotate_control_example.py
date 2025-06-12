@@ -15,8 +15,8 @@ label_vol = None
 base_stepmotor = None
 step_per_rev = None
 microstep = None
-total_steps = None
 rotate_circle = None
+total_steps = None
 
 
 def setup():
@@ -27,18 +27,17 @@ def setup():
         base_stepmotor, \
         step_per_rev, \
         microstep, \
-        total_steps, \
-        rotate_circle
-
+        rotate_circle, \
+        total_steps
     M5.begin()
     title0 = Widgets.Title("Steps Ctrl", 3, 0xFFFFFF, 0x0000FF, Widgets.FONTS.DejaVu18)
     label0 = Widgets.Label("vol:", 5, 35, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu18)
     label_vol = Widgets.Label("12.0V", 43, 35, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu18)
-    base_stepmotor = AtomicStepmotorBase(5, 7, 6, 38, 39)
     step_per_rev = 200
     microstep = 1 / 2
     rotate_circle = 5
     total_steps = (step_per_rev / microstep) * rotate_circle
+    base_stepmotor = AtomicStepmotorBase(5, 7, 6, 38, 39, 8)
     label_vol.setText(str((str((base_stepmotor.get_voltage())) + str("V"))))
 
 
@@ -50,8 +49,8 @@ def loop():
         base_stepmotor, \
         step_per_rev, \
         microstep, \
-        total_steps, \
-        rotate_circle
+        rotate_circle, \
+        total_steps
     M5.update()
     print(base_stepmotor.get_voltage())
     base_stepmotor.rotate(total_steps, 1, True)

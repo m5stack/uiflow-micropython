@@ -14,6 +14,7 @@ class AtomicStepmotorBase:
     :param int stp: Step pin, used for step control of the motor.
     :param int flt: Fault pin, used to monitor the motor's fault status.
     :param int rst: Reset pin, used to reset the motor driver.
+    :param int pwr_adc: Power ADC monitoring pin, used to measure the input power supply voltage.
 
     UiFlow2 Code Block:
 
@@ -25,16 +26,25 @@ class AtomicStepmotorBase:
 
             from base import AtomicStepmotorBase
 
-            base_stepmotor = AtomicStepmotorBase(en=5, dir=7, stp=6, flt=38, rst=39)
+            base_stepmotor = AtomicStepmotorBase(en=5, dir=7, stp=6, flt=38, rst=39, pwr_adc=8)
     """
 
-    def __init__(self, en: int = 5, dir: int = 7, stp: int = 6, flt: int = 38, rst: int = 39):
+    def __init__(
+        self,
+        en: int = 5,
+        dir: int = 7,
+        stp: int = 6,
+        flt: int = 38,
+        rst: int = 39,
+        pwr_adc: int = 8,
+    ):
         self.en_pin = machine.Pin(en, machine.Pin.OUT)
         self.dir_pin = machine.Pin(dir, machine.Pin.OUT)
         self.stp_pin = machine.Pin(stp, machine.Pin.OUT)
         self.flt_pin = machine.Pin(flt, machine.Pin.IN) if flt else None
         self.rst_pin = machine.Pin(rst, machine.Pin.OUT) if rst else None
-        self.adc = machine.ADC(machine.Pin(8), atten=machine.ADC.ATTN_11DB)
+        self.adc = machine.ADC(machine.Pin(pwr_adc), atten=machine.ADC.ATTN_11DB)
+        self.use_read_uv = hasattr(self.adc, "read_uv")
         self.enable()
 
     def enable(self) -> None:
@@ -194,4 +204,7 @@ class AtomicStepmotorBase:
 
                 base_stepmotor.get_voltage()
         """
-        return self.adc.read_uv() * (6 / 1_000_000.0)  # x6 是因为输入为 VIN 的 1/ 6
+        if self.use_read_uv:
+            return self.adc.read_uv() * (6 / 1_000_000.0)  # x6 是因为输入为 VIN 的 1/ 6
+        else:
+            return ((self.adc.read() / 4096) * 3.6) / (1.5 / 9) * 0.99
