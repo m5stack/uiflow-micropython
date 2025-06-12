@@ -630,6 +630,8 @@ class VL53L0X:
         range_mm = self._read_u16(_RESULT_RANGE_STATUS + 10)
         self._write_u8(_SYSTEM_INTERRUPT_CLEAR, 0x01)
         self._data_ready = False
+        if range_mm > 4000:
+            return -1
         return range_mm
 
     def is_continuous_mode(self) -> bool:
