@@ -889,12 +889,12 @@ class ApiYolo:
 
 
 class LlmModule:
-    def __init__(self, uart_id=1, tx=17, rx=16) -> None:
+    def __init__(self, uart_id=1, tx=17, rx=16, baudrate=115200) -> None:
         self._uart = machine.UART(
             uart_id,
             tx=tx,
             rx=rx,
-            baudrate=115200,
+            baudrate=baudrate,
             bits=8,
             parity=None,
             stop=1,
@@ -1175,21 +1175,22 @@ class LlmModule:
 
     def melotts_setup(
         self,
-        language="en_US",
+        language=None,
         model="melotts_zh-cn",
         response_format="sys.pcm",
         input=None,
         enoutput=False,
         enkws=None,
-        request_id="tts_setup",
+        request_id="melotts_setup",
     ) -> str:
-        model = "melotts-zh-cn" if float(self.version.lstrip("v")) >= 1.6 else model
+        if float(self.version.lstrip("v")) >= 1.6 and model == "melotts_zh-cn":
+            model = "melotts-zh-cn"
         if float(self.version.lstrip("v")) >= 1.6:
             if language == "zh_CN":
                 model = "melotts-zh-cn"
             elif language == "ja_JP":
                 model = "melotts-ja-jp"
-            else:
+            elif language == "en_US":
                 model = "melotts-en-default"
         if input is None:
             input = ["tts.utf-8.stream"]
