@@ -9,7 +9,7 @@ import lvgl as lv
 
 
 class AppIcon:
-    _TODO_LIST = ["ADC", "GPIO", "I2CScan"]
+    _TODO_LIST = ["ADC", "GPIO", "UART", "I2CScan"]
 
     def __init__(self, pos_x: int, pos_y: int, app_name: str, icon_name: str):
         self._app_name = app_name

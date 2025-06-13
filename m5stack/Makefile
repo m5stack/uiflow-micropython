@@ -298,7 +298,8 @@ M5GFX_PATH = $(abspath ./components/M5Unified/M5GFX)
 ESP32_CAMERA_PATH = $(abspath ./components/esp32-camera)
 
 LV_BINDING_PATCH_SERIES = \
-	0003-avoid-lv_bindings-compile-error.patch
+	0003-avoid-lv_bindings-compile-error.patch \
+	0018-avoid-lvgl-font-redefine.patch
 
 MICROPYTHON_PATCH_SERIES = \
 	0006-modtime-add-timezone-method.patch              \
