@@ -21,6 +21,7 @@ code-format:
   before_script:
     - export PATH="$HOME/.local/bin:$PATH"
   script:
+    - make -C m5stack submodules
     - source tools/ci.sh && ci_code_formatting_setup
     - source tools/ci.sh && ci_code_formatting_run
     - git diff --exit-code
