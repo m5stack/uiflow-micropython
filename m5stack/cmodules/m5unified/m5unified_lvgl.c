@@ -34,53 +34,21 @@ void lvgl_deinit() {
     }
 }
 
-#if 0
-#include "esp_lcd_types.h"
-#include "esp_lcd_mipi_dsi.h"
-
-
-/**
- * @brief BSP display configuration structure
- *
- */
-typedef struct {
-    int dummy;
-} bsp_display_config_t;
-
-
-esp_lcd_panel_handle_t tab5_panel_handle;
-esp_lcd_panel_io_handle_t tab5_panel_io_handle;
-
-
-esp_err_t bsp_display_new(const bsp_display_config_t *config, esp_lcd_panel_handle_t *ret_panel,
-    esp_lcd_panel_io_handle_t *ret_io) {
-    esp_err_t ret = ESP_OK;
-    bsp_lcd_handles_t handles;
-    ret = bsp_display_new_with_handles(config, &handles);
-
-    *ret_panel = handles.panel;
-    *ret_io = handles.io;
-
-    return ret;
-}
-
-#endif
 #include "driver/ppa.h"
+#if SOC_PPA_SUPPORTED
 ppa_client_handle_t ppa_srm_handle = NULL;
-
+#endif
 mp_obj_t gfx_lvgl_init(mp_obj_t self) {
     if (lvgl_timer) {
         return mp_const_none;
     }
 
-    #if 0
-    bsp_display_new(NULL, &tab5_panel_handle, &tab5_panel_io_handle);
-    #endif
-
+    #if SOC_PPA_SUPPORTED
     ppa_client_config_t ppa_srm_config = {
         .oper_type = PPA_OPERATION_SRM,
     };
     ppa_register_client(&ppa_srm_config, &ppa_srm_handle);
+    #endif
 
     lv_init();
     lvgl_timer = xTimerCreate("lvgl_timer", 10, pdTRUE, NULL, vTimerCallback);
