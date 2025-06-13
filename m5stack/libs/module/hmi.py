@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 import struct
 import time
 
@@ -35,7 +35,7 @@ class HMIModule:
 
         @param address I2C address of the HMIModule.
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("HMI Module not found in Base")

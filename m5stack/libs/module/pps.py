@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 # Import necessary libraries
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 import struct
 
@@ -51,7 +51,7 @@ class PPSModule:
         @param addr I2C address of the device.
         """
 
-        self.i2c = i2c1
+        self.i2c = mbus.i2c1
         self.addr = address
 
         # Check if the devices are connected and accessible

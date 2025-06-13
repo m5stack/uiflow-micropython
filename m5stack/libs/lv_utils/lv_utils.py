@@ -36,15 +36,7 @@ import sys
 
 # Try standard machine.Timer, or custom timer from lv_timer, if available
 
-try:
-    from machine import Timer
-except:
-    try:
-        from lv_timer import Timer
-    except:
-        if sys.platform != "darwin":
-            raise RuntimeError("Missing machine.Timer implementation!")
-        Timer = False
+import machine
 
 # Try to determine default timer id
 
@@ -101,9 +93,11 @@ class event_loop:
             self.refresh_task = asyncio.create_task(self.async_refresh())
             self.timer_task = asyncio.create_task(self.async_timer())
         else:
-            if Timer:
-                self.timer = Timer(timer_id)
-                self.timer.init(mode=Timer.PERIODIC, period=self.delay, callback=self.timer_cb)
+            if machine.Timer:
+                self.timer = machine.Timer(timer_id)
+                self.timer.init(
+                    mode=machine.Timer.PERIODIC, period=self.delay, callback=self.timer_cb
+                )
             self.task_handler_ref = self.task_handler  # Allocation occurs here
             self.max_scheduled = max_scheduled
             self.scheduled = 0
@@ -118,7 +112,7 @@ class event_loop:
             self.refresh_task.cancel()
             self.timer_task.cancel()
         else:
-            if Timer:
+            if machine.Timer:
                 self.timer.deinit()
         event_loop._current_instance = None
 

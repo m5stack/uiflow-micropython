@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-28 18:06+0800\n"
+"POT-Creation-Date: 2025-06-12 10:08+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,46 +18,52 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../en/base/stepmotor.rst:2 ../../en/refs/base.stepmotor.ref
-#: 0760d96173f948af9f06a4ce25e8be9c 0e9f6255029e4d319da8238ec5b76707
+#: 61b2280ec89d48cf8592e457b5201206 ec0308f044394de7bc1c92e009fe7e96
 #, fuzzy
 msgid "Atomic Stepmotor Base"
 msgstr "创建一个 Stepmotor 对象。"
 
-#: ../../en/base/stepmotor.rst:9 f3d588e6c2994b4095ebb3b3ee122e91
+#: ../../en/base/stepmotor.rst:9 58c6a5a0772646a1a7c162e4969d5b1e
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/base/stepmotor.rst:11 1b19666dfcfb49e4b9ad38efe5f8a532
+#: ../../en/base/stepmotor.rst:11 9b52592b9cd24537acebe21093bb2d01
 msgid "|Atomic Stepmotor Base|"
 msgstr ""
 
-#: ../../en/base/stepmotor.rst:15 c6988c41ec3b4204913eb821e09d519f
-msgid "UiFlow2 Example:"
+#: ../../en/base/stepmotor.rst:15 8680424a662142458c5cb1ed5479245b
+#, fuzzy
+msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例："
 
 #: ../../en/base/stepmotor.rst:18 ../../en/base/stepmotor.rst:51
-#: f39989ba3f39496c984bcd711cfaf434
+#: bd2b57a98c47446aab7203da186d8211 ea5849d487b04b3aae7633ba983c106d
 msgid "Direction control"
 msgstr "方向控制"
 
-#: ../../en/base/stepmotor.rst:20 8729b223faea46acb1d3abbb01535f4a
+#: ../../en/base/stepmotor.rst:20 595341fb45494d3896b5456ebdaec9c9
 msgid ""
 "Open the |atoms3r_stepmotor_direction_control_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 上打开 |atoms3r_stepmotor_direction_control_example.m5f2| 项目。"
 
 #: ../../en/base/stepmotor.rst:22 ../../en/base/stepmotor.rst:53
-#: 35002b2a22ab4c84a5806681613410dc
+#: 77437c42e34c4b8bb60f09046f1af90a 8457256bae3843eb90cbabfa6e9aac48
 msgid ""
 "The example demonstrates motor direction control. Pressing the screen "
 "button toggles the rotation direction."
 msgstr "示例程序演示电机旋转方向控制，按下屏幕按键，切换旋转方向"
 
 #: ../../en/base/stepmotor.rst:24 ../../en/base/stepmotor.rst:39
-#: 0d45dbc88a5d4dc9903c786af65f9016 base.stepmotor.AtomicStepmotorBase:9
+#: 01bb4497839d4ac3994aa01550a090c2 3315562191124df1b301ee213edfe280
+#: 33fc0fdd5beb4047b3ab192eca978850 3a5e7f60c0214e759de351210560a1d0
+#: 440fde6530774d9388dee11e073a5f8c 639715640c194c6fad5a6a62522fc9f3
+#: 728d5e16ea89471e8d6aed4dc8c4da28 77431f5595d44b159ec8966f173f0319
+#: 813a671c35d54e1c84778297fad48592 89a5ae8d88914e38a52de60102a7d62e
+#: base.stepmotor.AtomicStepmotorBase:10
 #: base.stepmotor.AtomicStepmotorBase.disable:3
 #: base.stepmotor.AtomicStepmotorBase.enable:3
 #: base.stepmotor.AtomicStepmotorBase.get_status:6
@@ -66,63 +72,71 @@ msgstr "示例程序演示电机旋转方向控制，按下屏幕按键，切换
 #: base.stepmotor.AtomicStepmotorBase.rotate:9
 #: base.stepmotor.AtomicStepmotorBase.set_direction:5
 #: base.stepmotor.AtomicStepmotorBase.step:3
-#: base.stepmotor.AtomicStepmotorBase.stop:3 of
+#: base.stepmotor.AtomicStepmotorBase.stop:3 e307b1500a7044c3bf4a26f09eae5094
+#: e8e9555137594bd2b57eb534c0a6a738 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/base/stepmotor.rst:26 ab3e3763a95b41bb8f732dfab2d7d7cf
+#: ../../en/base/stepmotor.rst:26 df990fccab0d4fba8cc75d8a368382bb
 msgid "|atoms3r_stepmotor_direction_control_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:17 02afcc4751664593bea876f6002344d5
+#: ../../en/refs/base.stepmotor.ref:17 5ce9dcf8ba7c4edda3658910f382e9c0
 msgid "atoms3r_stepmotor_direction_control_example.png"
 msgstr ""
 
 #: ../../en/base/stepmotor.rst:28 ../../en/base/stepmotor.rst:43
 #: ../../en/base/stepmotor.rst:61 ../../en/base/stepmotor.rst:76
-#: 53befa15fbba414fae94b4666799adcb
+#: 421ee83df6a048c38f313084c3586489 493f1106a05a4508aff81d5ed80e953a
+#: f1e145c22903443f84bf631aaa61392c f483d986c1a347a582a7e648aea2cdc8
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/base/stepmotor.rst:30 ../../en/base/stepmotor.rst:45
 #: ../../en/base/stepmotor.rst:63 ../../en/base/stepmotor.rst:78
-#: 491e7d3d321f4a6b809ba99f08dc1228
+#: 2d410f383c024188b9555e43f850be7f 448575eda8ce43b7970ddae78caf730e
+#: 500dafb979564b28ac80431a69aea109 9b215e02d0ac41168a2e945fed8a793e
 msgid "None"
 msgstr "无"
 
 #: ../../en/base/stepmotor.rst:33 ../../en/base/stepmotor.rst:66
-#: 8f0e8a7ac03844998e1458cb5ce6fd8c
+#: 8846af9bbdf54d21bd0f7a568b5fdd5a f268b61c506745ada57170d564013f0b
 msgid "Rotate control"
 msgstr "旋转控制"
 
-#: ../../en/base/stepmotor.rst:35 8729b223faea46acb1d3abbb01535f4a
+#: ../../en/base/stepmotor.rst:35 aa5557d5d4234ed29fbf7d995178ff3d
 msgid ""
 "Open the |atoms3r_stepmotor_rotate_control_example.m5f2| project in "
 "UiFlow2."
 msgstr "在 UiFlow2 上打开 |atoms3r_stepmotor_rotate_control_example.m5f2| 项目。"
 
 #: ../../en/base/stepmotor.rst:37 ../../en/base/stepmotor.rst:68
-#: 9399b52d3a544f39b8cd492e7064d705
+#: cae6b558aa8841f0855da408e8839a37 fa33652409c043de981c9b87c24ec758
 msgid ""
 "The example demonstrates the motor continuously rotating for multiple "
 "turns, then reversing for multiple turns, and repeating the cycle after a"
 " 2-second pause."
 msgstr "示例程序演示电机连续旋转控制多圈，再反向旋转多圈，等待2秒后重复。 "
 
-#: ../../en/base/stepmotor.rst:41 7daa32ac857d49f59f8efc7f5cd558b5
+#: ../../en/base/stepmotor.rst:41 c960968b63624f7bbdef4cbcb8b83b13
 msgid "|atoms3r_stepmotor_rotate_control_example.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:18 c8764e1d822f4e51b11420b4c9c3766f
+#: ../../en/refs/base.stepmotor.ref:18 4bb3adcd4275400d8e6a8c3f0447dd89
 msgid "atoms3r_stepmotor_rotate_control_example.png"
 msgstr ""
 
-#: ../../en/base/stepmotor.rst:48 11a6b4dd714d489f909ca9e00fdd76f3
-msgid "MicroPython Example:"
+#: ../../en/base/stepmotor.rst:48 8df63250bf914c1e842757051cbf1658
+#, fuzzy
+msgid "MicroPython Example"
 msgstr "MicroPython 应用示例："
 
 #: ../../en/base/stepmotor.rst:55 ../../en/base/stepmotor.rst:70
-#: 0663e2b02ab946d8bef40857721f7681 base.stepmotor.AtomicStepmotorBase:13
+#: 010c06a5ac924fa69c92427118c60d8c 162e63e184ff494d9ccdbfb779b131fb
+#: 620c36ed302743cea47d08489f9d5fa0 6d7e0219dc3e43f1a941e6181392eb5c
+#: 8ea55010fcd64f3ca7034784cd1963fe 9aa121d2391646a197f4ef870a86ec68
+#: a428a9f8a24f4cfe8136056f93854551 a5b8d00166054b0798bd63244c522359
+#: ba9335d5ec6044e6be8ed2b923ea7ab1 base.stepmotor.AtomicStepmotorBase:14
 #: base.stepmotor.AtomicStepmotorBase.disable:7
 #: base.stepmotor.AtomicStepmotorBase.enable:7
 #: base.stepmotor.AtomicStepmotorBase.get_status:10
@@ -131,240 +145,249 @@ msgstr "MicroPython 应用示例："
 #: base.stepmotor.AtomicStepmotorBase.rotate:13
 #: base.stepmotor.AtomicStepmotorBase.set_direction:9
 #: base.stepmotor.AtomicStepmotorBase.step:7
-#: base.stepmotor.AtomicStepmotorBase.stop:7 of
+#: base.stepmotor.AtomicStepmotorBase.stop:7 d04595bee22d40df86c758f2a3a0e55b
+#: e132e5b944cc4e7282689fa5b8ebcc4c e527aaa394b947a1b84693aa8df5123e of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/base/stepmotor.rst:81 f1921bde992f45ca8f705b1865f4a90d
+#: ../../en/base/stepmotor.rst:81 4753a7ae4b1345aa97079cb45fe5b99f
 msgid "**API**"
 msgstr "API应用"
 
-#: base.stepmotor.AtomicStepmotorBase:1 e6ddec277e8f4ffd8c27649b8850a489 of
+#: ../../en/base/stepmotor.rst:84 a8ea1c24c2014498a51fac641dd4ef95
 msgid "AtomicStepmotorBase"
 msgstr ""
 
-#: base.stepmotor.AtomicStepmotorBase:1 c8eb7e1c7c3e4962a34fda30400394f8 of
+#: base.stepmotor.AtomicStepmotorBase:1 c54c4457aab34108876d3949c3b1b061 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: base.stepmotor.AtomicStepmotorBase:1 e6ddec277e8f4ffd8c27649b8850a489 of
+#: 1dfebda23f3d416ebf8bfa3832ded9c9 base.stepmotor.AtomicStepmotorBase:1 of
 msgid "Create an AtomicStepmotorBase object."
 msgstr "创建一个 AtomicStepmotorBase 对象。"
 
-#: ../../en/base/stepmotor.rst 82d6c9722e9d4148bad28eb830a0d17f
-#: base.stepmotor.AtomicStepmotorBase.rotate
-#: base.stepmotor.AtomicStepmotorBase.set_direction of
+#: ../../en/base/stepmotor.rst 7937b51a6f7849b9a0b73215ad13d0a5
+#: 7dc53894b19e4db9be5399a5d661bfae base.stepmotor.AtomicStepmotorBase.rotate
+#: base.stepmotor.AtomicStepmotorBase.set_direction
+#: c4f38ebfda024b949e474f436ae7b898 of
 msgid "Parameters"
 msgstr ""
 
-#: 956e1f8c62c443f780658ca63d22cec7 base.stepmotor.AtomicStepmotorBase:3 of
+#: 8058c1a421d340298bc528f6a84b8f3a base.stepmotor.AtomicStepmotorBase:3 of
 msgid "Enable pin, used to enable or disable the stepper motor."
 msgstr "使能引脚，用于启用或禁用步进电机。"
 
-#: base.stepmotor.AtomicStepmotorBase:4 d4944507ad5c4e52baec38d8b0c95e13 of
+#: base.stepmotor.AtomicStepmotorBase:4 c62844479f0a485582ae0d97f7b464cf of
 msgid "Direction pin, used to control the rotation direction of the motor."
 msgstr "方向引脚，用于控制电机的旋转方向。"
 
-#: base.stepmotor.AtomicStepmotorBase:5 c99e9343f1124ad6b7d517d9ffd0c568 of
+#: base.stepmotor.AtomicStepmotorBase:5 dfaea44bd7704b7f95f14f390d399363 of
 msgid "Step pin, used for step control of the motor."
 msgstr "步进引脚，用于步进控制。"
 
-#: 695ed6f18cd4437d80116f3cabc35952 base.stepmotor.AtomicStepmotorBase:6 of
+#: 5b3b725f5e764b97a655fb2161a3ae7e base.stepmotor.AtomicStepmotorBase:6 of
 msgid "Fault pin, used to monitor the motor's fault status."
 msgstr "故障引脚，用于监控电机故障状态。"
 
-#: 0494fe5d9b8447918e9d45366bea3e63 base.stepmotor.AtomicStepmotorBase:7 of
+#: base.stepmotor.AtomicStepmotorBase:7 f1af178db7964dee83898d98d581a5fe of
 msgid "Reset pin, used to reset the motor driver."
 msgstr "复位引脚，用于复位电机驱动器。"
 
-#: 02c1c594f76847a68adbcea45370ab35 base.stepmotor.AtomicStepmotorBase:11 of
+#: 589c13e694d845f0a5c6a7ad9863e384 base.stepmotor.AtomicStepmotorBase:8 of
+msgid "Power ADC monitoring pin, used to measure the input power supply voltage."
+msgstr "电源ADC监测引脚，用于测量输入电源电压。"
+
+#: 4638f5959e044303b65605f1cc4694c5 base.stepmotor.AtomicStepmotorBase:12 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:7 8afc8f9b69e740079fb4bd041c2843a7
+#: ../../en/refs/base.stepmotor.ref:7 7dd11705cbb94a1e9093df2291535caf
 msgid "init.png"
 msgstr ""
 
 #: base.stepmotor.AtomicStepmotorBase.disable:1
-#: cd8ad572fec8430ea18fa56a0737fd5b of
+#: e6b334330a6b4fb4ab916d09110c7350 of
 msgid "Disable the stepper motor driver."
 msgstr "禁用电机驱动。"
 
-#: 05117074a45e48d9b3dd29eeb9cc5c2c
+#: 4bd8c0d346aa4412b09e63a3450e34f6
 #: base.stepmotor.AtomicStepmotorBase.disable:5 of
 msgid "|disable.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:9 630a952504c1413abaa4d700ec290e30
+#: ../../en/refs/base.stepmotor.ref:9 87e768bd0b2343d9a9f45c37aa06ad46
 msgid "disable.png"
 msgstr ""
 
-#: 1554d9427c334840a92c8bd727f32dae base.stepmotor.AtomicStepmotorBase.enable:1
+#: base.stepmotor.AtomicStepmotorBase.enable:1 d6b007f65d0243ec9384e478a5364bbf
 #: of
 msgid "Enable the stepper motor driver."
 msgstr "启用电机驱动。"
 
-#: b03032626afb4e29911c8a24a32e1414 base.stepmotor.AtomicStepmotorBase.enable:5
+#: 0e371847a71c4fcb8ba84fd8d53c8fb0 base.stepmotor.AtomicStepmotorBase.enable:5
 #: of
 msgid "|enable.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:8 a8730defa5904c3694a7ace61c021e39
+#: ../../en/refs/base.stepmotor.ref:8 a44ff18dda4d4666816d57c65362a797
 msgid "enable.png"
 msgstr ""
 
-#: 719977b7033849e18d056f786715da18 base.stepmotor.AtomicStepmotorBase.enable
+#: 142ad02c61fd4a2c9811f2a39c0dea58 6b29260bc22f47c297b028b605e90a7e
+#: 96da3240e04c40c48be2dc989dbba15c ab2bf2d9ca744e3ba90791a004cefd13
+#: adec7d402ff04a65a0885adcd5c2b269 base.stepmotor.AtomicStepmotorBase.enable
 #: base.stepmotor.AtomicStepmotorBase.get_status
 #: base.stepmotor.AtomicStepmotorBase.get_voltage
 #: base.stepmotor.AtomicStepmotorBase.reset
 #: base.stepmotor.AtomicStepmotorBase.rotate
 #: base.stepmotor.AtomicStepmotorBase.set_direction
 #: base.stepmotor.AtomicStepmotorBase.step
-#: base.stepmotor.AtomicStepmotorBase.stop of
+#: base.stepmotor.AtomicStepmotorBase.stop d15f932012214753895aafa9621182bf
+#: e8fcc34ce37d44f4b59d46979b74323c f039e656b6e642069e48ebc6a12d9f92 of
 msgid "Return type"
 msgstr ""
 
-#: 814b3f08d42744c5886200fa941e0668
+#: 391d6ec1042c41a9bc59e75404774255
 #: base.stepmotor.AtomicStepmotorBase.get_status:1 of
 msgid "Get motor driver status."
 msgstr "获取电机驱动状态"
 
-#: 41e39715d3804e7094ed383720dfa8ec
+#: a3cb5741134c4f3e8cfbac5cfb20a8f2
 #: base.stepmotor.AtomicStepmotorBase.get_status
-#: base.stepmotor.AtomicStepmotorBase.get_voltage of
+#: base.stepmotor.AtomicStepmotorBase.get_voltage
+#: efa668a6a4b547a99fc4b645649ea630 of
 msgid "Returns"
 msgstr ""
 
-#: 08b9d473d1904987928596fd29d45194
+#: 4905761396a4443f81112a52365450d5
 #: base.stepmotor.AtomicStepmotorBase.get_status:3 of
 msgid ""
 "Returns True if the driver is operating normally, or False if a fault is "
 "detected."
 msgstr "正常工作时返回 True，故障时返回 False。 "
 
-#: 5c86fca2044c43ada204d1bc191fc411
+#: 816f566fd7e04dd59c2bcd1a1302be68
 #: base.stepmotor.AtomicStepmotorBase.get_status:8 of
 msgid "|get_status.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:14 359adc03d5574bb5bea82ce964c7d2e2
+#: ../../en/refs/base.stepmotor.ref:14 36e8653292ca4aa4bd1bee8ea5769abe
 msgid "get_status.png"
 msgstr ""
 
-#: 09121e271dbe449495a6f2585b6251c4
+#: 9fcdbc8f0051456aadef8e17e1308b7e
 #: base.stepmotor.AtomicStepmotorBase.get_voltage:1 of
 msgid "Get voltage."
 msgstr "获取电压"
 
-#: 5fe1c99937bd46ea9f62a95cff9b9601
+#: 9620c67bb05b486ab39868e37086cea8
 #: base.stepmotor.AtomicStepmotorBase.get_voltage:3 of
 msgid "The driver input voltage. unit: V"
 msgstr "驱动输入电压，单位：V。"
 
-#: 3b15a2eecbd94724aa78ecbd8cda47e6
+#: 962862a9ad754eeb975bf9422031cd7f
 #: base.stepmotor.AtomicStepmotorBase.get_voltage:8 of
 msgid "|get_voltage.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:16 caee51cc65bc42c9954af7945167ca29
+#: ../../en/refs/base.stepmotor.ref:16 91f90f416c164eaeabc3156a24c6d2dd
 msgid "get_voltage.png"
 msgstr ""
 
-#: b9cc0761da5843e39781e569e48af880 base.stepmotor.AtomicStepmotorBase.reset:1
+#: 37ada378cbe443f0829f2a7fcee68cba base.stepmotor.AtomicStepmotorBase.reset:1
 #: of
 msgid "Reset the stepper motor driver."
 msgstr "复位电机驱动。"
 
-#: base.stepmotor.AtomicStepmotorBase.reset:5 df229ad0ad8c428880d5b6c9d02b9727
+#: base.stepmotor.AtomicStepmotorBase.reset:5 d35a6d8564304ccaa7848ac9cbee1067
 #: of
 msgid "|reset.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:15 d513ba7d45a64ce280d85749c4d12fb7
+#: ../../en/refs/base.stepmotor.ref:15 6fa8968260dc4ef3991a66c40cccd1d1
 msgid "reset.png"
 msgstr ""
 
-#: 6c18afbe4f2c42d4bd4b4ab91c228f20 base.stepmotor.AtomicStepmotorBase.rotate:1
+#: 41ac7abe89034db3a4bce3806a1c419a base.stepmotor.AtomicStepmotorBase.rotate:1
 #: of
 msgid "Rotate the stepper motor for a specified number of steps."
 msgstr "旋转步进电机一定的步数。"
 
-#: 6bf481d425e64c20875c16095a16b98e base.stepmotor.AtomicStepmotorBase.rotate:3
+#: aa0a4f4c02444fb79b3bade021951a27 base.stepmotor.AtomicStepmotorBase.rotate:3
 #: of
 msgid "Number of steps to rotate."
 msgstr "转动步数。"
 
-#: base.stepmotor.AtomicStepmotorBase.rotate:4 bdf00014e91b4d0591917c99d4b60aa9
+#: 823f67853657437486b5b99de73f6fb9 base.stepmotor.AtomicStepmotorBase.rotate:4
 #: of
 msgid "Delay between steps (in milliseconds), default is 0ms."
 msgstr "步间延时（ms），默认为 0 ms。"
 
-#: 46cb58fc0f5d488fbc281414428a5210 base.stepmotor.AtomicStepmotorBase.rotate:5
+#: base.stepmotor.AtomicStepmotorBase.rotate:5 c8d1774846e447149b85105dc907ccdf
 #: of
 msgid "Rotation direction (True or False)."
 msgstr "旋转方向"
 
-#: 5d8512f584284d6dad2505ed96016f69 base.stepmotor.AtomicStepmotorBase.rotate:7
+#: base.stepmotor.AtomicStepmotorBase.rotate:7 c395e38acd1c45d5bf4782646c4db515
 #: of
 msgid ""
 "The actual rotation direction (clockwise or counterclockwise) depends on "
 "the motor wiring."
 msgstr "实际旋转方向（顺时针或逆时针）取决于电机的接线方式。"
 
-#: a76b1da5a85f4d25ba780a70784a5acf
-#: base.stepmotor.AtomicStepmotorBase.rotate:11 of
+#: base.stepmotor.AtomicStepmotorBase.rotate:11
+#: d580ccd0b09c49ffb9bfe85fd19350c5 of
 msgid "|rotate.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:12 68f2b93a75f048fe92075cfbab18c9ad
+#: ../../en/refs/base.stepmotor.ref:12 33084ecbe552453d9474b99eea398059
 msgid "rotate.png"
 msgstr ""
 
-#: 14d6bcbed2634f479005974785a4d60a
-#: base.stepmotor.AtomicStepmotorBase.set_direction:1 of
+#: base.stepmotor.AtomicStepmotorBase.set_direction:1
+#: c70cf6f8c40141dca14f6ae7b59192ad of
 msgid "Set direction."
 msgstr "设置方向。"
 
-#: base.stepmotor.AtomicStepmotorBase.set_direction:3
-#: c1e0f16f17b54e41845e4e90c2272bc9 of
+#: 1880247ab8e14520938afe1695e47681
+#: base.stepmotor.AtomicStepmotorBase.set_direction:3 of
 msgid "Rotation direction. True or False."
 msgstr "旋转方向 True 或 False。"
 
-#: 854d2de00ee346239c8d3719f1a4a7fe
-#: base.stepmotor.AtomicStepmotorBase.set_direction:7 of
+#: base.stepmotor.AtomicStepmotorBase.set_direction:7
+#: e4ea88c330fc460192c3ef1e158b35ed of
 msgid "|set_direction.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:10 26b7682884864ad5b0b27bf5f90a987c
+#: ../../en/refs/base.stepmotor.ref:10 cabfaaaf209b44f9a4902587d0733fd9
 msgid "set_direction.png"
 msgstr ""
 
-#: base.stepmotor.AtomicStepmotorBase.step:1 fbf2512e755a46c8b481237424ab7713
+#: 424999e172b2476ea6e1810c43b4bf5e base.stepmotor.AtomicStepmotorBase.step:1
 #: of
 msgid "Move the stepper motor one step."
 msgstr "电机步进一步"
 
-#: b6c229bacdf044d98359e138473abb14 base.stepmotor.AtomicStepmotorBase.step:5
+#: b2fa804e47b247198f891f5494e7ccfc base.stepmotor.AtomicStepmotorBase.step:5
 #: of
 msgid "|step.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:11 55c2574f2716453f921292e2f1e7c655
+#: ../../en/refs/base.stepmotor.ref:11 bc1987d54f0f49999327077b551ae54f
 msgid "step.png"
 msgstr ""
 
-#: base.stepmotor.AtomicStepmotorBase.stop:1 e50a34281aa34d669b43780891c95491
+#: 70e54e7e4865465abca5db992776fa63 base.stepmotor.AtomicStepmotorBase.stop:1
 #: of
 msgid "Stop motor."
 msgstr "停止电机。"
 
-#: 5a91a575bd9149638caa25c07e1e68e0 base.stepmotor.AtomicStepmotorBase.stop:5
+#: 71f9e37576804ab8a910eaa274decdc9 base.stepmotor.AtomicStepmotorBase.stop:5
 #: of
 msgid "|stop.png|"
 msgstr ""
 
-#: ../../en/refs/base.stepmotor.ref:13 cd1c5470354c49688ea2884d928161cb
+#: ../../en/refs/base.stepmotor.ref:13 655a075d3698491881f852ae9ecc36a7
 msgid "stop.png"
 msgstr ""
 
- 

@@ -1,0 +1,16 @@
+Index: micropython/ports/esp32/machine_pwm.c
+===================================================================
+--- micropython.orig/ports/esp32/machine_pwm.c
++++ micropython/ports/esp32/machine_pwm.c
+@@ -177,7 +177,11 @@ static void pwm_deinit(int channel_idx)
+             // Disable ledc signal for the pin
+             // esp_rom_gpio_connect_out_signal(pin, SIG_GPIO_OUT_IDX, false, false);
+             if (mode == LEDC_LOW_SPEED_MODE) {
++#if CONFIG_IDF_TARGET_ESP32P4
++                esp_rom_gpio_connect_out_signal(pin, LEDC_LS_SIG_OUT_PAD_OUT0_IDX + channel, false, true);
++#else
+                 esp_rom_gpio_connect_out_signal(pin, LEDC_LS_SIG_OUT0_IDX + channel, false, true);
++#endif
+             } else {
+                 #if LEDC_SPEED_MODE_MAX > 1
+                 #if CONFIG_IDF_TARGET_ESP32

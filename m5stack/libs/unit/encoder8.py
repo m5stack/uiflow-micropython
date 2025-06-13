@@ -47,7 +47,7 @@ class ENCODER8Unit:
         self,
         i2c: I2C | PAHUBUnit,
         slave_addr: int = _ENCODER8_ADDR,
-        address: int | list | tuple = 0x59,
+        address: int | list | tuple = 0x41,
     ) -> None:
         """
         note:
@@ -59,7 +59,7 @@ class ENCODER8Unit:
             slave_addr:
                 note: Deprecated parameter, kept for backward compatibility.
             address:
-                note: The I2C address of the Encoder8 Unit. Default is 0x59.
+                note: The I2C address of the Encoder8 Unit. Default is 0x41.
         """
         address = slave_addr
         self.encoder8_i2c = i2c

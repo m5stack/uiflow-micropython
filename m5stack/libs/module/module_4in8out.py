@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 import struct
 import time
 
@@ -32,7 +32,7 @@ class Module4In8Out:
 
         @param address I2C address of the 4In8OutModule.
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("4In8Out Module not found in Base")

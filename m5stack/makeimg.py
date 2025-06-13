@@ -132,6 +132,7 @@ if arg_fs_vfs_bin == "none":
     files_in.pop()
 
 file_out = arg_output_bin
+file_out_complete = os.path.abspath(arg_output_bin)
 
 # Write output file with combined firmware.
 cur_offset = 0
@@ -161,7 +162,7 @@ with open(file_out, "wb") as fout:
         "\r\nWrote 0x%x bytes to file m5stack/%s, ready to flash to offset 0x%x.\r\n\r\n"
         "\033[1;32mExample command:\033[0m\r\n"
         "    \033[1;33m1.\033[0m make BOARD=%s BOARD_TYPE=%s PORT=/dev/ttyUSBx flash\r\n"
-        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x m5stack/%s"
+        "    \033[1;33m2.\033[0m esptool.py --chip %s --port /dev/ttyUSBx --baud 1500000 write_flash 0x%x %s"
         % (
             cur_offset,
             file_out,
@@ -170,7 +171,7 @@ with open(file_out, "wb") as fout:
             arg_board_type_flag.lower(),
             idf_target.lower(),
             0x0,
-            file_out,
+            file_out_complete,
         )
     )
 
@@ -206,7 +207,7 @@ with open("./version.txt", "r") as f:
     uiflow_version = f.readline() + "-"
 
 release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
-    file_out.split(".bin")[0],
+    file_out_complete.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
@@ -219,7 +220,6 @@ print(
     "\033[1;32mRelease Firmware:\033[0m\r\n    \033[1;33m"
     + arg_board_type_flag[:-1].upper()
     + ":\033[0m "
-    + "m5stack/"
     + release_file_out
 )
 os.system("cp {} {}".format(file_out, release_file_out))

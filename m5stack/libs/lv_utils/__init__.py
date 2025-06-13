@@ -4,6 +4,7 @@
 
 import lvgl as lv
 import _lv_utils
+from .lv_utils import event_loop
 
 
 def fs_register(fs_drv, letter, cache_size=500):

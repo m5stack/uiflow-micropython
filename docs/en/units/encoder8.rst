@@ -37,7 +37,7 @@ Constructors
 
     :param  i2c: The I2C interface or PAHUBUnit instance for communication.
     :param int slave_addr: Deprecated parameter, kept for backward compatibility.
-    :param int address: The I2C address of the Encoder8 Unit. Default is 0x59.
+    :param int address: The I2C address of the Encoder8 Unit. Default is 0x41.
 
     UIFLOW2:
 

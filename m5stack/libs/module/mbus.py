@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import I2C, Pin, SPI
+import machine
 import M5
 from collections import namedtuple
 
@@ -23,21 +23,29 @@ iomap = {
     M5.BOARD.M5Tough: MBusIO(
         sda0=32, scl0=33, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=38
     ),
+    M5.BOARD.M5Tab5: MBusIO(
+        sda0=53, scl0=54, sda1=31, scl1=32, spi2_sck=5, spi2_mosi=18, spi2_miso=19
+    ),
 }.get(M5.getBoard())
 
 
 def _i2c0_init():
-    return I2C(0, scl=Pin(iomap.scl0), sda=Pin(iomap.sda0), freq=100000)
+    return machine.I2C(0, scl=machine.Pin(iomap.scl0), sda=machine.Pin(iomap.sda0), freq=100000)
 
 
 def _i2c1_init():
     if iomap.scl1 == iomap.scl0 and iomap.sda1 == iomap.sda0:
         return _i2c0_init()
-    return I2C(1, scl=Pin(iomap.scl1), sda=Pin(iomap.sda1), freq=100000)
+    return machine.I2C(1, scl=machine.Pin(iomap.scl1), sda=machine.Pin(iomap.sda1), freq=100000)
 
 
 def _spi2_init():
-    return SPI(1, sck=Pin(iomap.spi2_sck), mosi=Pin(iomap.spi2_mosi), miso=Pin(iomap.spi2_miso))
+    return machine.SPI(
+        1,
+        sck=machine.Pin(iomap.spi2_sck),
+        mosi=machine.Pin(iomap.spi2_mosi),
+        miso=machine.Pin(iomap.spi2_miso),
+    )
 
 
 _attrs = {

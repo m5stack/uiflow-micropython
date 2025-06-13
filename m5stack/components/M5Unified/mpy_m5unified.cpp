@@ -421,7 +421,7 @@ static void in_i2c_init(void) {
     gpio_num_t ex_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::ex_i2c_scl);
     gpio_num_t ex_sda = (gpio_num_t)M5.getPin(m5::pin_name_t::ex_i2c_sda);
     i2c_port_t ex_port = I2C_NUM_0;
-    #if SOC_I2C_NUM == 1
+    #if SOC_I2C_NUM == 1 || defined(CONFIG_IDF_TARGET_ESP32C6)
     i2c_port_t in_port = I2C_NUM_0;
     #else
     i2c_port_t in_port = I2C_NUM_1;
@@ -469,6 +469,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
 
     // initial
     M5.begin(cfg);
+    M5.In_I2C.release();
     in_i2c_init();
     // if (M5.getBoard() != m5::board_t::board_M5StackCoreS3
     //     && M5.getBoard() != m5::board_t::board_M5StackCoreS3SE
@@ -476,7 +477,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     //     && M5.getBoard() != m5::board_t::board_M5Tough
     //     && M5.getBoard() != m5::board_t::board_M5AtomS3
     // ) {
-    M5.In_I2C.release();
+
     // }
 
     M5.Display.clear();

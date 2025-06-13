@@ -6,14 +6,23 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+'
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     runs-on: [self-hosted, Linux, X64]
     steps:
     - uses: actions/checkout@v3.3.0
 
+    - name: Install dependencies with apt
+      run: |
+        sudo apt-get update
+        sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+
     - name: Install packages
-      run: source tools/ci.sh && ci_esp32_idf522_setup
+      run: source tools/ci.sh && ci_esp32_idf541_setup
 
     - name: Build
       run: source tools/ci.sh && ci_esp32_nightly_build
@@ -25,36 +34,36 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         files: |
-          ./m5stack/build-M5STACK_AirQ/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Atom_Echo/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Atom_Lite/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Atom_Matrix/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomS3/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomS3_Lite/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomS3R/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomS3R_CAM/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomS3U/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_AtomU/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Basic/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Basic_4MB/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Capsule/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Cardputer/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Core2/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_CoreInk/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_CoreS3/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Dial/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_DinMeter/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Fire/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Paper/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_PaperS3/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_StamPLC/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_StampS3/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Station/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_StickC/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
-          ./m5stack/build-M5STACK_Tough/uiflow-*-*.bin
-          ./third-party/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
-          ./third-party/build-ESPRESSIF_ESP32_S3_BOX_3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AirQ/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Echo/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Lite/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Atom_Matrix/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3_Lite/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3R/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3R_CAM/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomS3U/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_AtomU/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Basic/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Basic_4MB/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Capsule/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Cardputer/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Core2/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_CoreInk/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_CoreS3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Dial/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_DinMeter/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Fire/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_NanoC6/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Paper/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_PaperS3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Stamp_PICO/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_StamPLC/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_StampS3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Station/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Tough/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/third-party/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/third-party/build-ESPRESSIF_ESP32_S3_BOX_3/uiflow-*-*.bin

@@ -23,7 +23,7 @@
 #include "esp_codec_dev.h"
 #include "esp_codec_dev_defaults.h"
 
-#if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0)
+#if 0 //ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0)
 #include "driver/i2c_master.h"
 #define USE_IDF_I2C_MASTER
 #else
@@ -177,8 +177,8 @@ static int ut_i2c_init(uint8_t port)
     i2c_master_bus_config_t i2c_bus_config = {0};
     i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
     i2c_bus_config.i2c_port = port;
-    i2c_bus_config.scl_io_num = TEST_BOARD_I2C_SCL_PIN;
-    i2c_bus_config.sda_io_num = TEST_BOARD_I2C_SDA_PIN;
+    i2c_bus_config.scl_io_num = 12;
+    i2c_bus_config.sda_io_num = 11;
     i2c_bus_config.glitch_ignore_cnt = 7;
     i2c_bus_config.flags.enable_internal_pullup = true;
     return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);

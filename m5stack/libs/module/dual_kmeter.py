@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from micropython import const
-from .mbus import i2c1
+from . import mbus
 import struct
 
 
@@ -75,4 +75,4 @@ class DualKmeterBase:
 
 class DualKmeterModule(DualKmeterBase):
     def __init__(self, address: int = _DUAL_KMETER_DEFAULT_ADDRESS):
-        super().__init__(i2c1, address)
+        super().__init__(mbus.i2c1, address)

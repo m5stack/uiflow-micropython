@@ -1,0 +1,34 @@
+Index: micropython/ports/esp32/machine_timer.c
+===================================================================
+--- micropython.orig/ports/esp32/machine_timer.c
++++ micropython/ports/esp32/machine_timer.c
+@@ -38,6 +38,7 @@
+ #include "hal/timer_hal.h"
+ #include "hal/timer_ll.h"
+ #include "soc/timer_periph.h"
++#include "esp_private/periph_ctrl.h"
+ #include "machine_timer.h"
+ 
+ #define TIMER_DIVIDER  8
+@@ -155,11 +156,20 @@ static void machine_timer_isr(void *self
+     }
+ }
+ 
++#if SOC_PERIPH_CLK_CTRL_SHARED
++#define GPTIMER_CLOCK_SRC_ATOMIC() PERIPH_RCC_ATOMIC()
++#else
++#define GPTIMER_CLOCK_SRC_ATOMIC()
++#endif
++
+ void machine_timer_enable(machine_timer_obj_t *self, void (*timer_isr)) {
+     // Initialise the timer.
+     timer_hal_init(&self->hal_context, self->group, self->index);
+     timer_ll_enable_counter(self->hal_context.dev, self->index, false);
+-    timer_ll_set_clock_source(self->hal_context.dev, self->index, GPTIMER_CLK_SRC_DEFAULT);
++    GPTIMER_CLOCK_SRC_ATOMIC() {
++        timer_ll_set_clock_source(self->hal_context.dev, self->index, GPTIMER_CLK_SRC_DEFAULT);
++        timer_ll_enable_clock(self->hal_context.dev, self->index, true);
++    }
+     timer_ll_set_clock_prescale(self->hal_context.dev, self->index, TIMER_DIVIDER);
+     timer_hal_set_counter_value(&self->hal_context, 0);
+     timer_ll_set_count_direction(self->hal_context.dev, self->index, GPTIMER_COUNT_UP);

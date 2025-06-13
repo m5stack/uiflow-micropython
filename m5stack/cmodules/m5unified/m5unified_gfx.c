@@ -88,6 +88,9 @@ MAKE_METHOD_1(gfx, readData32);
 #if MICROPY_PY_LVGL
 MAKE_METHOD_0(gfx, lvgl_init);
 MAKE_METHOD_0(gfx, lvgl_deinit);
+#if MICROPY_PY_LVGL_BENCHMARK
+MAKE_METHOD_0(gfx, lvgl_benchmark);
+#endif
 #endif
 
 #define TABLE_PARTS_GFX_BASE \
@@ -279,6 +282,9 @@ static const mp_rom_map_elem_t gfxdevice_member_table[] = {
     // lvgl port function
     { MP_ROM_QSTR(MP_QSTR_lvgl_init),       MP_ROM_PTR(&gfx_lvgl_init_obj) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_deinit),     MP_ROM_PTR(&gfx_lvgl_deinit_obj) },
+    #if MICROPY_PY_LVGL_BENCHMARK
+    { MP_ROM_QSTR(MP_QSTR_lvgl_benchmark),  MP_ROM_PTR(&gfx_lvgl_benchmark_obj) },
+    #endif
     { MP_ROM_QSTR(MP_QSTR_lvgl_flush),      MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_flush)) },
     { MP_ROM_QSTR(MP_QSTR_lvgl_read),       MP_ROM_PTR(&PTR_OBJ(gfx_lvgl_touch_read)) },
     { MP_ROM_QSTR(MP_QSTR_user_lvgl_flush), MP_ROM_PTR(&PTR_OBJ(user_lvgl_flush)) },

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 from micropython import const
 import re
@@ -52,7 +52,7 @@ class GRBLModule:
                 note: The I2C address of the device.
         """
 
-        self.i2c = i2c1
+        self.i2c = mbus.i2c1
         self.addr = address
 
         # Check if the devices are connected and accessible

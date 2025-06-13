@@ -59,6 +59,9 @@ static void *lv_utils_fs_open_cb(lv_fs_drv_t *drv, const char *path, lv_fs_mode_
     if (strstr(path, "flash")) {
         ESP_LOGD(TAG, "in flash");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
+    } else if (strstr(path, "system")) {
+        ESP_LOGD(TAG, "in system");
+        vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
     } else if (strstr(path, "sd")) {
         ESP_LOGD(TAG, "in sd");
         vfs->fatfs = &((fs_user_mount_t *)MP_OBJ_TO_PTR(existing_mount->obj))->fatfs;

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 import struct
 
 
@@ -37,7 +37,7 @@ class GoPlus2Module:
 
         @param address The I2C address of the GoPlus2 module (default is 0x38).
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("GoPlus2 Module not found in Base")

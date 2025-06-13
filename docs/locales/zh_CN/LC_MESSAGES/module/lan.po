@@ -1,0 +1,376 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-12 14:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/module/lan.rst:2 ../../en/refs/module.lan.ref
+#: 3099f56e48624597aceb41b66dbbab81 920ef01384d546db9d1115df6bcee1d5
+msgid "LAN Module"
+msgstr ""
+
+#: ../../en/module/lan.rst:6 518f5d674aae47b5a0da3b12fa4bdefe
+msgid "Supported Products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/lan.rst:9 37d7484339ad4d77b5b03b23cdcf1b71
+msgid "|LAN Module|"
+msgstr ""
+
+#: ../../en/module/lan.rst:13 884c9faa1ada46448e1216d87b18ce69
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/module/lan.rst:16 ../../en/module/lan.rst:32
+#: 083fe69b180d4cfba2774e8600ca308d
+msgid "Get the weather"
+msgstr "获取天气"
+
+#: ../../en/module/lan.rst:18 ../../en/module/lan.rst:34
+#: a4be9d46d4f94b4f953e90014e98bbcf
+msgid ""
+"This example connects to the network using the LAN module and sends an "
+"HTTP request to query the geographical location of the current public IP "
+"address."
+msgstr "示例使用 LAN 模块接入网络，并通过 HTTP 请求获取当前公网 IP 所在的地理位置。"
+
+#: ../../en/module/lan.rst:20 ../../en/module/lan.rst:60
+#: ../../en/module/lan.rst:76 ../../en/module/lan.rst:93
+#: ../../en/module/lan.rst:116 ../../en/module/lan.rst:133
+#: ../../en/module/lan.rst:150 ../../en/module/lan.rst:167
+#: ../../en/module/lan.rst:184 ../../en/module/lan.rst:204
+#: ../../en/module/lan.rst:222 ../../en/module/lan.rst:242
+#: ../../en/module/lan.rst:256 ../../en/module/lan.rst:275
+#: ../../en/module/lan.rst:295 2328617b3df342f9911a3e98d443c3b4
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/lan.rst:22 e9f013c7b98b4cfe9fc0c3dc4c3ff64f
+msgid "|m5cores3_lan_module_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:23 b6e73c629de74772896be8f63fcf0685
+msgid "m5cores3_lan_module_example.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:24 ../../en/module/lan.rst:42
+#: cfe126a6ceb0499faf4c65c66cb2f06c
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/lan.rst:26 ../../en/module/lan.rst:44
+#: ../../en/module/lan.rst:240 17a517c36b8e4c56853d13e8ad536f33
+#: b516b0db02af416da16527523aa08a30
+msgid "None"
+msgstr "无"
+
+#: ../../en/module/lan.rst:29 530de5da0d8e41a28d29407e289b085a
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/module/lan.rst:36 ../../en/module/lan.rst:64
+#: ../../en/module/lan.rst:80 ../../en/module/lan.rst:97
+#: ../../en/module/lan.rst:120 ../../en/module/lan.rst:137
+#: ../../en/module/lan.rst:154 ../../en/module/lan.rst:171
+#: ../../en/module/lan.rst:188 ../../en/module/lan.rst:208
+#: ../../en/module/lan.rst:226 ../../en/module/lan.rst:246
+#: ../../en/module/lan.rst:260 ../../en/module/lan.rst:279
+#: ../../en/module/lan.rst:299 b0487b813df14ea9a0d75e69043a66a4
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/lan.rst:47 f25024aac2654f50a13fb8e0d8512e6d
+msgid "**API**"
+msgstr "API应用"
+
+
+#: ../../en/module/lan.rst:54 39932b6148ea4f13b06e675bbc41abed
+#, fuzzy
+msgid "Create a LANModule object."
+msgstr "创建一个 LANModule 对象。"
+
+#: ../../en/module/lan.rst f30df10928bf43309502a38ff7e06297
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/module/lan.rst:56 2426de7edf764ff78c2d2fb35fe72db1
+msgid "chip select pin"
+msgstr "片选引脚"
+
+#: ../../en/module/lan.rst:57 ed21443df3be47bf97c7fe2098ca3d8e
+msgid "reset pin"
+msgstr "复位引脚"
+
+#: ../../en/module/lan.rst:58 c094176ea4fa4de9a3cd5348f8246e6c
+msgid "interrupt pin"
+msgstr "中断引脚"
+
+#: ../../en/module/lan.rst:62 5fe37eb180384964a06d857155e82fd6
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:7 fdc7f635449e4ae4ae33fd3f8267cf5f
+msgid "init.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:74 a73dfec22efd48ce8404f4c5851117b9
+msgid "Deinitialize the LAN module."
+msgstr "反初始化 LANModule。"
+
+#: ../../en/module/lan.rst:78 7bc4d9e4f26d43dbb586f7db931811dd
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:8 fdc7f635449e4ae4ae33fd3f8267cf5f
+msgid "deinit.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:88 de6e4a9e69e749519092b2a613e98524
+msgid "Check whether the physical Ethernet link is active."
+msgstr "检查以太网物理连接是否已激活。"
+
+#: ../../en/module/lan.rst cebf190c732d4ae19412daa23da0eb73
+msgid "Returns"
+msgstr ""
+
+#: ../../en/module/lan.rst:90 12b5d4300cd0493991f52d8d8bc70f72
+msgid ""
+"`True` if the Ethernet cable is connected and the link is up, `False` "
+"otherwise."
+msgstr "如果以太网网线已连接且链路已建立，则为 True，否则为 False。"
+
+#: ../../en/module/lan.rst 4e865a5850e54dcc8827303f41adeded
+msgid "Return type"
+msgstr ""
+
+#: ../../en/module/lan.rst:95 891426c33f5e4db2b7a5d1a507917a82
+msgid "|isconnected.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:9 0eaf3c0daa314349b6061933989e09d5
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:105 a30645cae9654baabf0c59af0803cbeb
+msgid "Get the LAN connect status."
+msgstr "获取 LAN 连接状态。"
+
+#: ../../en/module/lan.rst:107 9579e41ef9844298b338b2610eb48040
+msgid ""
+"LAN status code, possible values: - network.ETH_INITIALIZED: Ethernet "
+"interface initialized - network.ETH_STARTED: Ethernet driver started - "
+"network.ETH_STOPPED: Ethernet driver stopped - network.ETH_CONNECTED: "
+"Physical link established (cable connected) - network.ETH_DISCONNECTED: "
+"Physical link lost (cable disconnected) - network.ETH_GOT_IP: IP address "
+"obtained, network ready"
+msgstr "LAN 状态码，可能的取值包括：
+- network.ETH_INITIALIZED：以太网接口已初始化
+- network.ETH_STARTED：以太网驱动已启动
+- network.ETH_STOPPED：以太网驱动已停止
+- network.ETH_CONNECTED：物理链路已建立（网线已连接）
+- network.ETH_DISCONNECTED：物理链路丢失（网线断开）
+- network.ETH_GOT_IP：已获取 IP 地址，网络准备就绪"
+
+#: ../../en/module/lan.rst:118 aa2368f53a0a463e9c4e0fde760e807d
+msgid "|status.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:10 2ad8360c2e274193845983e15037f817
+msgid "status.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:128 d6a1924642064fc6bf9694b5d5ec0657
+msgid "Get the local IP address."
+msgstr "获取本地 IP 地址。"
+
+#: ../../en/module/lan.rst:130 73e1d96eb51b42bf87d3cb7865ceadc6
+msgid "Local IP address as a string, e.g. \"192.168.1.100\""
+msgstr "本地 IP 地址，字符串格式，例如："192.168.1.100""
+
+#: ../../en/module/lan.rst:135 8682225861b547a590ab8d419f4b4e2e
+msgid "|get_localip.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:11 85d7420f864944d1bbfd0ec7b71014aa
+msgid "get_localip.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:145 d4548bcd446748b5b533d37f740a8bba
+msgid "Get the subnet mask."
+msgstr "获取子网掩码。"
+
+#: ../../en/module/lan.rst:147 e54c10dade3f4559a77898f374c077a5
+msgid "Subnet mask as a string, e.g. \"255.255.255.0\""
+msgstr "子网掩码，字符串格式，例如："255.255.255.0""
+
+#: ../../en/module/lan.rst:152 ee1ac31653c64d12a1b0d0767388126c
+msgid "|get_subnet.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:12 b6e73c629de74772896be8f63fcf0685
+msgid "get_subnet.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:162 7ae812f12be64ca488796eb620e1e2be
+msgid "Get the gateway address."
+msgstr "获取网关地址。"
+
+#: ../../en/module/lan.rst:164 7698e7fcc9f14542a27edc81b6211fb7
+msgid "Gateway IP as a string, e.g. \"192.168.1.1\""
+msgstr "网关 IP，字符串格式，例如："192.168.1.1""
+
+#: ../../en/module/lan.rst:169 d78606b5eb2e41148f10e03a12686f7e
+msgid "|get_gateway.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:13 2ad8360c2e274193845983e15037f817
+msgid "get_gateway.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:179 eb5242c6eaa54bfba7be16bbbddeb21b
+msgid "Get the DNS server address."
+msgstr "获取 DNS 服务地址。"
+
+#: ../../en/module/lan.rst:181 6370db3ca1cb4f8d88949e9368786cd7
+msgid "DNS server IP as a string, e.g. \"8.8.8.8\""
+msgstr "DNS 服务器 IP，字符串格式，例如："8.8.8.8""
+
+#: ../../en/module/lan.rst:186 aa2368f53a0a463e9c4e0fde760e807d
+msgid "|get_dns.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:14 2ad8360c2e274193845983e15037f817
+msgid "get_dns.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:196 a4673f2150a34587a965a3e2674b14f7
+msgid "Get the MAC address of the LAN module."
+msgstr "获取 LAN module MAC 地址。"
+
+#: ../../en/module/lan.rst:198 26fce5f905ff41a4ba5c5c8f7d560933
+msgid "Configuration parameter name, must be 'mac'"
+msgstr "配置参数名，必须是 'mac'"
+
+#: ../../en/module/lan.rst:201 1bf9a84db3d74b2f9b6d181502df8d29
+msgid "MAC address as a string or bytes, e.g. \"00:11:22:33:44:55\""
+msgstr "MAC 地址，字符串或字节格式，例如："00:11:22:33:44:55""
+
+#: ../../en/module/lan.rst:206 302d1cf000094bf3b35f7289bb2b02fc
+msgid "|get_mac.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:15 b6e73c629de74772896be8f63fcf0685
+msgid "get_mac.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:216 ab00d04c338a421aa9a3a0a96f02e0db
+msgid "Enable or disable the LAN interface."
+msgstr "使能或失能 LAN 接口。"
+
+#: ../../en/module/lan.rst:218 c4f55e11fa594249a0aa3856938c03f0
+msgid ""
+"Optional boolean value. If `True`, activates the LAN interface; if "
+"`False`, deactivates it."
+msgstr "可选的布尔值。若为 True，激活 LAN 接口；若为 False，则停用它。"
+
+#: ../../en/module/lan.rst:219 e8bfb53b60d8419e95aed8d6de5bdacb
+msgid "Current active state of the interface if no parameter is given."
+msgstr "如果没有提供参数，则返回接口当前的激活状态。"
+
+#: ../../en/module/lan.rst:224 51f1d130cdcf4252a5ccdf5345593ed8
+msgid "|active.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:17 b6e73c629de74772896be8f63fcf0685
+msgid "active.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:235 642b8a1d2b9049b9b7565573a4240f4d
+msgid "Set the MAC address of the LAN module."
+msgstr "设置 LAN module MAC 地址。"
+
+#: ../../en/module/lan.rst:237 2de8bb672fa44cddbbdc98529fdd12c2
+msgid "MAC address to set, as a bytearray of 6 bytes"
+msgstr "要设置的 MAC 地址，格式为包含 6 个字节的 bytearray。"
+
+#: ../../en/module/lan.rst:244 302d1cf000094bf3b35f7289bb2b02fc
+msgid "|set_mac.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:18 2ad8360c2e274193845983e15037f817
+msgid "set_mac.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:254 4772e66c5acd4232b51254a24adc53e6
+msgid "Sets the default network interface."
+msgstr "设置默认网络接口。"
+
+#: ../../en/module/lan.rst:258 8682225861b547a590ab8d419f4b4e2e
+msgid "|set_default_netif.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:19 1b79377b28644d4b894d0fe008ffc413
+msgid "set_default_netif.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:268 ../../en/module/lan.rst:288
+#: cb3d648463f3431f983f46989ecd2e51 ede96d92d034428e8202837549a34394
+msgid ""
+"Get or set the IP address, subnet mask, gateway, and DNS server for the "
+"LAN interface."
+msgstr "获取或设置 LAN 接口的 IP 地址、子网掩码、网关和 DNS 服务器。"
+
+#: ../../en/module/lan.rst:270 ../../en/module/lan.rst:290
+#: eddc35892d174948ba1599003e18649a
+msgid "Static IP address to assign to the LAN interface."
+msgstr "分配给 LAN 接口的静态 IP 地址。"
+
+#: ../../en/module/lan.rst:271 2840e605c36247cdaaacd7b7a3ff9131
+msgid "Subnet mask (usually '255.255.255.0')."
+msgstr "子网掩码（通常为 '255.255.255.0'）。"
+
+#: ../../en/module/lan.rst:272 ../../en/module/lan.rst:292
+#: 4081a2d2458643478c21afbbe3d676fa
+msgid "IP address of the network gateway/router."
+msgstr "网络网关/路由器的 IP 地址。"
+
+#: ../../en/module/lan.rst:273 ../../en/module/lan.rst:293
+#: 2f2fab1ea6a0460785e72becbc0880ac
+msgid "DNS server IP address."
+msgstr "DNS 服务 IP 地址。"
+
+#: ../../en/module/lan.rst:277 ee1ac31653c64d12a1b0d0767388126c
+msgid "|ifconfig_subnet.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:20 85d7420f864944d1bbfd0ec7b71014aa
+msgid "ifconfig_subnet.png"
+msgstr ""
+
+#: ../../en/module/lan.rst:291 05c24b899db14306a76e84591700dfd4
+msgid "Subnet mask as a CIDR prefix length (e.g. `24` means `255.255.255.0`)."
+msgstr "子网掩码，使用 CIDR 前缀长度表示（例如 24 表示 255.255.255.0）。"
+
+#: ../../en/module/lan.rst:297 ee1ac31653c64d12a1b0d0767388126c
+msgid "|ifconfig_netmask.png|"
+msgstr ""
+
+#: ../../en/refs/module.lan.ref:21 85d7420f864944d1bbfd0ec7b71014aa
+msgid "ifconfig_netmask.png"
+msgstr ""

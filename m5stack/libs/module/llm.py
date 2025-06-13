@@ -2,11 +2,9 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import UART
+import machine
 import time
 import ujson
-from M5 import getBoard, BOARD
-from collections import namedtuple
 
 
 class ModuleComm:
@@ -14,7 +12,6 @@ class ModuleComm:
         self._serial = uart
 
     def send_cmd(self, cmd):
-        # print(f"[DEBUG] Sending command: {cmd}")
         self._serial.write(cmd)
 
     def get_response(self, timeout=5000):
@@ -59,7 +56,6 @@ class ModuleMsg:
                 doc = ujson.loads(json_str)
                 # Push into resonse msg list
                 self.response_msg_list.append(doc)
-                # print(f"[DEBUG] Received message:\n{doc}")
             except ValueError:
                 continue
         return
@@ -265,6 +261,107 @@ class ApiLlm:
             "action": "inference",
             "object": "llm.utf-8.stream",
             "data": {"delta": input_data, "index": 0, "finish": True},
+        }
+        self._module_msg.send_cmd(ujson.dumps(cmd))
+        return self._MODULE_LLM_OK
+
+    def inference_and_wait_result(
+        self, work_id, input_data, on_result, timeout=5000, request_id="llm_inference"
+    ) -> int:
+        self.inference(work_id, input_data, request_id)
+        self._is_msg_finish = False
+        self._on_result = on_result
+
+        start_time = time.ticks_ms()
+        while time.ticks_diff(time.ticks_ms(), start_time) < timeout:
+            self._module_msg.update()
+            if self._module_msg.take_msg(request_id, self._on_inference_result):
+                start_time = time.ticks_ms()
+
+            if self._is_msg_finish:
+                break
+
+        self._free_temp()
+
+        return self._MODULE_LLM_OK
+
+    def _set_llm_work_id(self, msg):
+        if "work_id" in msg:
+            self._llm_work_id = msg["work_id"]
+
+    def _on_inference_result(self, msg):
+        if "data" in msg and "delta" in msg["data"]:
+            if self._on_result:
+                self._on_result(msg["data"]["delta"])
+        if "data" in msg and "finish" in msg["data"]:
+            self._is_msg_finish = msg["data"]["finish"]
+
+    def _free_temp(self):
+        self._llm_work_id = None
+        self._is_msg_finish = None
+        self._on_result = None
+
+
+class ApiVlm:
+    _MODULE_LLM_OK = 0
+    _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
+
+    def __init__(self, module_msg):
+        self._module_msg = module_msg
+        self._llm_work_id = None
+        self._is_msg_finish = None
+        self._on_result = None
+
+    def setup(
+        self,
+        prompt="",
+        model="internvl2.5-1B-364-ax630c",
+        response_format="vlm.utf-8.stream",
+        input="vlm.utf-8",
+        enoutput=True,
+        max_token_len=256,
+        request_id="vlm_setup",
+    ) -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": "vlm",
+            "action": "setup",
+            "object": "vlm.setup",
+            "data": {
+                "model": model,
+                "response_format": response_format,
+                "input": input,
+                "enoutput": enoutput,
+                "max_token_len": max_token_len,
+                "prompt": prompt,
+            },
+        }
+        success = self._module_msg.send_cmd_and_wait_to_take_msg(
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
+        )
+
+        ret_work_id = self._llm_work_id if success else ""
+        self._free_temp()
+        return ret_work_id
+
+    def inference(self, work_id, input_data, request_id="vlm_inference") -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "vlm.utf-8.stream",
+            "data": {"delta": input_data, "index": 0, "finish": True},
+        }
+        self._module_msg.send_cmd(ujson.dumps(cmd))
+        return self._MODULE_LLM_OK
+
+    def inference_img(self, work_id, image_data, request_id="vlm_inference") -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.stream.base64",
+            "data": {"delta": image_data, "index": 0, "finish": True},
         }
         self._module_msg.send_cmd(ujson.dumps(cmd))
         return self._MODULE_LLM_OK
@@ -736,6 +833,7 @@ class ApiWhisper:
 
 
 class ApiYolo:
+    _MODULE_LLM_OK = 0
     _MODULE_LLM_WAIT_RESPONSE_TIMEOUT = -97
 
     def __init__(self, module_msg):
@@ -771,6 +869,17 @@ class ApiYolo:
         self._free_temp()
         return ret_work_id
 
+    def inference_img(self, work_id, image_data, request_id="yolo_inference") -> str:
+        cmd = {
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.stream.base64",
+            "data": {"delta": image_data, "index": 0, "finish": True},
+        }
+        self._module_msg.send_cmd(ujson.dumps(cmd))
+        return self._MODULE_LLM_OK
+
     def _set_yolo_work_id(self, msg):
         if "work_id" in msg:
             self._yolo_work_id = msg["work_id"]
@@ -780,12 +889,12 @@ class ApiYolo:
 
 
 class LlmModule:
-    def __init__(self, uart_id=1, tx=17, rx=16) -> None:
-        self._uart = UART(
+    def __init__(self, uart_id=1, tx=17, rx=16, baudrate=115200) -> None:
+        self._uart = machine.UART(
             uart_id,
             tx=tx,
             rx=rx,
-            baudrate=115200,
+            baudrate=baudrate,
             bits=8,
             parity=None,
             stop=1,
@@ -797,6 +906,7 @@ class LlmModule:
         self.msg = ModuleMsg(self.comm)
         self.sys = ApiSys(self.msg)
         self.llm = ApiLlm(self.msg)
+        self.vlm = ApiVlm(self.msg)
         self.audio = ApiAudio(self.msg)
         self.tts = ApiTts(self.msg)
         self.melotts = ApiMelotts(self.msg)
@@ -814,6 +924,7 @@ class LlmModule:
 
         # Latest work id and error code
         self.latest_llm_work_id = "llm"
+        self.latest_vlm_work_id = "vlm"
         self.latest_audio_work_id = "audio"
         self.latest_tts_work_id = "tts"
         self.latest_melotts_work_id = "melotts"
@@ -857,6 +968,33 @@ class LlmModule:
     ) -> str:
         self.latest_error_code = self.sys.rmmode(model)
         return self.latest_error_code
+
+    def send_image(self, image_size, image_bytearray, request_id, work_id) -> None:
+        cmd = {
+            "RAW": image_size,
+            "request_id": request_id,
+            "work_id": work_id,
+            "action": "inference",
+            "object": "cv.jpeg.stream.base64",
+        }
+        payload = ujson.dumps(cmd).encode("utf-8") + image_bytearray
+        self.msg.send_cmd(payload)
+
+    def base64_encode(self, data: bytes) -> str:
+        base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+        encoded = ""
+        i = 0
+        while i < len(data):
+            b = data[i : i + 3]
+            b_len = len(b)
+            b += b"\x00" * (3 - b_len)
+            n = (b[0] << 16) | (b[1] << 8) | b[2]
+            encoded += base64_chars[(n >> 18) & 0x3F]
+            encoded += base64_chars[(n >> 12) & 0x3F]
+            encoded += base64_chars[(n >> 6) & 0x3F] if b_len > 1 else "="
+            encoded += base64_chars[n & 0x3F] if b_len > 2 else "="
+            i += 3
+        return encoded
 
     def get_response_msg_list(self) -> list:
         """
@@ -918,6 +1056,39 @@ class LlmModule:
         self.latest_error_code = self.llm.inference(work_id, input_data, request_id)
         return self.latest_error_code
 
+    def vlm_setup(
+        self,
+        prompt="",
+        model="internvl2.5-1B-364-ax630c",
+        response_format="vlm.utf-8.stream",
+        input=None,
+        enoutput=True,
+        enkws=None,
+        max_token_len=256,
+        request_id="vlm_setup",
+    ) -> str:
+        if input is None:
+            input = ["vlm.utf-8"]
+
+        if enkws:
+            if isinstance(input, str):
+                input = [input]
+            input.append(enkws)
+
+        self.latest_vlm_work_id = self.vlm.setup(
+            prompt, model, response_format, input, enoutput, max_token_len, request_id
+        )
+        return self.latest_vlm_work_id
+
+    def vlm_inference(self, work_id, input_data, request_id="vlm_inference") -> str:
+        self.latest_error_code = self.vlm.inference(work_id, input_data, request_id)
+        return self.latest_error_code
+
+    def vlm_inference_img(self, work_id, image_data, request_id="vlm_inference") -> str:
+        encoded_image = self.base64_encode(image_data)
+        self.latest_error_code = self.vlm.inference_img(work_id, encoded_image, request_id)
+        return self.latest_error_code
+
     def audio_setup(
         self,
         capcard=0,
@@ -960,6 +1131,11 @@ class LlmModule:
         )
         return self.latest_yolo_work_id
 
+    def yolo_inference_img(self, work_id, image_data, request_id="yolo_inference") -> str:
+        encoded_image = self.base64_encode(image_data)
+        self.latest_error_code = self.yolo.inference_img(work_id, encoded_image, request_id)
+        return self.latest_error_code
+
     def tts_setup(
         self,
         language="en_US",
@@ -974,9 +1150,10 @@ class LlmModule:
             response_format = "tts.base64.wav"
         if language == "zh_CN":
             model = "single_speaker_fast"
+            model = "single-speaker-fast" if float(self.version.lstrip("v")) >= 1.6 else model
         if input is None:
             input = "tts.utf-8.stream" if self.version == "v1.0" else ["tts.utf-8.stream"]
-
+        model = "single-speaker-english-fast" if float(self.version.lstrip("v")) >= 1.6 else model
         if enkws:
             if self.version == "v1.0":
                 enkws = True
@@ -998,18 +1175,23 @@ class LlmModule:
 
     def melotts_setup(
         self,
-        language="en_US",
-        model="melotts-en-default",
+        language=None,
+        model="melotts_zh-cn",
         response_format="sys.pcm",
         input=None,
         enoutput=False,
         enkws=None,
-        request_id="tts_setup",
+        request_id="melotts_setup",
     ) -> str:
-        if language == "zh_CN":
+        if float(self.version.lstrip("v")) >= 1.6 and model == "melotts_zh-cn":
             model = "melotts-zh-cn"
-        if language == "ja_JP":
-            model = "melotts-ja-jp"
+        if float(self.version.lstrip("v")) >= 1.6:
+            if language == "zh_CN":
+                model = "melotts-zh-cn"
+            elif language == "ja_JP":
+                model = "melotts-ja-jp"
+            elif language == "en_US":
+                model = "melotts-en-default"
         if input is None:
             input = ["tts.utf-8.stream"]
 
@@ -1125,6 +1307,9 @@ class LlmModule:
 
     def get_latest_llm_work_id(self) -> str:
         return self.latest_llm_work_id
+
+    def get_latest_vlm_work_id(self) -> str:
+        return self.latest_vlm_work_id
 
     def get_latest_audio_work_id(self) -> str:
         return self.latest_audio_work_id

@@ -1,7 +1,7 @@
-diff --git a/Kconfig b/Kconfig
-index 2632c82..2101ebe 100755
---- a/Kconfig
-+++ b/Kconfig
+Index: esp32-camera/Kconfig
+===================================================================
+--- esp32-camera.orig/Kconfig
++++ esp32-camera/Kconfig
 @@ -128,6 +128,10 @@ menu "Camera configuration"
  
      endchoice
@@ -9,829 +9,454 @@ index 2632c82..2101ebe 100755
 +    config SCCB_SOFTWARE_SUPPORT
 +        bool "Enable software I2C for SCCB"
 +    default n
-+    
++
      config SCCB_CLK_FREQ
      int "SCCB clk frequency"
      default 100000
-@@ -135,7 +139,7 @@ menu "Camera configuration"
-     help
-         Increasing this value can reduce the initialization time of the sensor.
-         Please refer to the relevant instructions of the sensor to adjust the value.
--    
-+
-     choice GC_SENSOR_WINDOW_MODE
-         bool "GalaxyCore Sensor Window Mode"
-         depends on (GC2145_SUPPORT || GC032A_SUPPORT || GC0308_SUPPORT)
-diff --git a/driver/sccb.c b/driver/sccb.c
-index 307166d..9ad5576 100755
---- a/driver/sccb.c
-+++ b/driver/sccb.c
-@@ -6,255 +6,560 @@
-  * SCCB (I2C like) driver.
-  *
-  */
--#include <stdbool.h>
--#include <string.h>
--#include <freertos/FreeRTOS.h>
--#include <freertos/task.h>
--#include "sccb.h"
--#include "sensor.h"
--#include <stdio.h>
--#include "sdkconfig.h"
--#if defined(ARDUINO_ARCH_ESP32) && defined(CONFIG_ARDUHAL_ESP_LOG)
--#include "esp32-hal-log.h"
--#else
--#include "esp_log.h"
--static const char* TAG = "sccb";
--#endif
+Index: esp32-camera/driver/sccb.c
+===================================================================
+--- esp32-camera.orig/driver/sccb.c
++++ esp32-camera/driver/sccb.c
+@@ -46,8 +46,162 @@ const int SCCB_I2C_PORT_DEFAULT = 0;
+ static int sccb_i2c_port;
+ static bool sccb_owns_i2c_port;
  
--#define LITTLETOBIG(x)          ((x<<8)|(x>>8))
-+ #include <stdbool.h>
-+ #include <string.h>
-+ #include <freertos/FreeRTOS.h>
-+ #include <freertos/task.h>
-+ #include "sccb.h"
-+ #include "sensor.h"
-+ #include <stdio.h>
-+ #include "sdkconfig.h"
-+ #if defined(ARDUINO_ARCH_ESP32) && defined(CONFIG_ARDUHAL_ESP_LOG)
-+ #include "esp32-hal-log.h"
-+ #else
-+ #include "esp_log.h"
-+ static const char *TAG = "sccb";
-+ #endif
-+ 
-+ #define LITTLETOBIG(x) ((x << 8) | (x >> 8))
-+ 
-+ #include "driver/i2c.h"
-+ 
-+ // support IDF 5.x
-+ #ifndef portTICK_RATE_MS
-+ #define portTICK_RATE_MS portTICK_PERIOD_MS
-+ #endif
-+ 
-+ #define SCCB_FREQ     CONFIG_SCCB_CLK_FREQ /*!< I2C master frequency*/
-+ #define WRITE_BIT     I2C_MASTER_WRITE     /*!< I2C master write */
-+ #define READ_BIT      I2C_MASTER_READ      /*!< I2C master read */
-+ #define ACK_CHECK_EN  0x1                  /*!< I2C master will check ack from slave*/
-+ #define ACK_CHECK_DIS 0x0                  /*!< I2C master will not check ack from slave */
-+ #define ACK_VAL       0x0                  /*!< I2C ack value */
-+ #define NACK_VAL      0x1                  /*!< I2C nack value */
-+ #if CONFIG_SCCB_HARDWARE_I2C_PORT1
-+ const int SCCB_I2C_PORT_DEFAULT = 1;
-+ #else
-+ const int SCCB_I2C_PORT_DEFAULT = 0;
-+ #endif
-+ 
-+ static int sccb_i2c_port;
-+ static bool sccb_owns_i2c_port;
-+ 
-+ 
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+ // =========================================================================================
-+ // software sccb implement 
-+ #include "driver/gpio.h"
-+ #include "esp_err.h"
-+ #include "esp_check.h"
-+ #include "esp_timer.h"
-+ 
-+ typedef struct {
-+     int pin_scl;
-+     int pin_sda;
-+     uint32_t time_delay_us;
-+ } soft_sccb_config_t;
-+ 
-+ static soft_sccb_config_t g_soft_sccb_config;
-+ 
-+ 
-+ static esp_err_t soft_bus_init(int pin_sda, int pin_scl)
-+ {
-+    ESP_LOGI(TAG, "soft bus init");
-+    
-+    gpio_reset_pin(g_soft_sccb_config.pin_scl);
-+    gpio_set_direction(g_soft_sccb_config.pin_scl, GPIO_MODE_OUTPUT);
-+    gpio_set_pull_mode(g_soft_sccb_config.pin_scl, GPIO_PULLUP_ONLY);
-+    gpio_reset_pin(g_soft_sccb_config.pin_sda);
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++// =========================================================================================
++// software sccb implement
++#include "driver/gpio.h"
++#include "esp_err.h"
++#include "esp_check.h"
++#include "esp_timer.h"
++
++typedef struct {
++    int pin_scl;
++    int pin_sda;
++    uint32_t time_delay_us;
++} soft_sccb_config_t;
++
++static soft_sccb_config_t g_soft_sccb_config;
++
++static esp_err_t soft_bus_init(int pin_sda, int pin_scl)
++{
++   ESP_LOGI(TAG, "soft bus init");
++
++   gpio_reset_pin(g_soft_sccb_config.pin_scl);
++   gpio_set_direction(g_soft_sccb_config.pin_scl, GPIO_MODE_OUTPUT);
++   gpio_set_pull_mode(g_soft_sccb_config.pin_scl, GPIO_PULLUP_ONLY);
++   gpio_reset_pin(g_soft_sccb_config.pin_sda);
++   gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
++   gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++   // 空闲状态，两线均为高电平
++   gpio_set_level(g_soft_sccb_config.pin_scl, 1);
++   gpio_set_level(g_soft_sccb_config.pin_sda, 1);
++   g_soft_sccb_config.time_delay_us = (uint32_t)((1e6f / 100000) / 2.0f + 0.5f);
++   return ESP_OK;
++}
++
++static esp_err_t soft_bus_start()
++{
 +    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
 +    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++    // SDA 在 SCL 为高时下降，表示 START
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA low");
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA high");
++
++    return ESP_OK;
++}
++
++static esp_err_t soft_bus_stop()
++{
++    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
++    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++    // SDA 在 SCL 为高时上升，表示 STOP
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA low");
++    esp_rom_delay_us(2);
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA high");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++    return ESP_OK;
++}
++
++static esp_err_t soft_bus_write_byte(uint8_t byte)
++{
++    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
++    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++    for (int i = 0; i < 8; i++) {
++        // SDA 在 SCL 为低时设置数据，在 SCL 为高时被采样
++        ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL low");
++        esp_rom_delay_us(2);
++        if (byte & 0x80) {
++            ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA high");
++        } else {
++            ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA low");
++        }
++        esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++        ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
++        esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++        byte <<= 1;
++    }
++
++    return ESP_OK;
++}
++
++static esp_err_t soft_bus_read_byte(uint8_t *byte, bool ack)
++{
++    esp_err_t ret = ESP_OK;
++    uint8_t value = 0;
++
++    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_INPUT);
++    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to release SDA"); /*!< First release SDA */
++    for (int i = 0; i < 8; i++) {
++        value <<= 1;
++        ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
++        esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++        if (gpio_get_level(g_soft_sccb_config.pin_sda)) {
++            value++;
++        }
++        ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL low");
++        esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    }
++
++    *byte = value;
++
++    // 在SCL低电平期间设置ACK状态
++    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
++    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, ack ? 0 : 1), TAG, "SDA level fail");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++    // 生成ACK时钟脉冲
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "SCL high fail");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us * 2);
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "SCL low fail");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++    return ret;
++}
++
++static esp_err_t soft_bus_wait_ack()
++{
++    //  第 9 个时钟周期，接收方拉低 SDA 表示 ACK
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL high");
++    gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_INPUT);
++    gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    bool ack = ESP_ERR_NOT_FOUND;
++    if (!gpio_get_level(g_soft_sccb_config.pin_sda)) {
++        ack = ESP_OK;
++    }
++
++    ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL high");
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++
++    return ack;
++}
++
++#endif
++// =========================================================================================
++
++
+ int SCCB_Init(int pin_sda, int pin_scl)
+ {
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    ESP_LOGI(TAG, "Use software sccb, pin_sda %d pin_scl %d", pin_sda, pin_scl);
++    g_soft_sccb_config.pin_scl = pin_scl;
++    g_soft_sccb_config.pin_sda = pin_sda;
++    g_soft_sccb_config.time_delay_us = (uint32_t)((1e6f / 100000) / 2.0f + 0.5f); // 100kHz
++    soft_bus_init(g_soft_sccb_config.pin_sda, g_soft_sccb_config.pin_scl);
++    return ESP_OK;
++#else
+     ESP_LOGI(TAG, "pin_sda %d pin_scl %d", pin_sda, pin_scl);
+     i2c_config_t conf;
+     esp_err_t ret;
+@@ -70,9 +224,13 @@ int SCCB_Init(int pin_sda, int pin_scl)
+     }
  
--#include "driver/i2c.h"
-+    // 空闲状态，两线均为高电平
-+    gpio_set_level(g_soft_sccb_config.pin_scl, 1);
-+    gpio_set_level(g_soft_sccb_config.pin_sda, 1);
+     return i2c_driver_install(sccb_i2c_port, conf.mode, 0, 0, 0);
++#endif
+ }
  
--// support IDF 5.x
--#ifndef portTICK_RATE_MS
--#define portTICK_RATE_MS portTICK_PERIOD_MS
--#endif
-+    g_soft_sccb_config.time_delay_us = (uint32_t)((1e6f / 100000) / 2.0f + 0.5f);
- 
--#define SCCB_FREQ               CONFIG_SCCB_CLK_FREQ  /*!< I2C master frequency*/
--#define WRITE_BIT               I2C_MASTER_WRITE      /*!< I2C master write */
--#define READ_BIT                I2C_MASTER_READ       /*!< I2C master read */
--#define ACK_CHECK_EN            0x1                   /*!< I2C master will check ack from slave*/
--#define ACK_CHECK_DIS           0x0                   /*!< I2C master will not check ack from slave */
--#define ACK_VAL                 0x0                   /*!< I2C ack value */
--#define NACK_VAL                0x1                   /*!< I2C nack value */
--#if CONFIG_SCCB_HARDWARE_I2C_PORT1
--const int SCCB_I2C_PORT_DEFAULT = 1;
--#else
--const int SCCB_I2C_PORT_DEFAULT = 0;
--#endif
--
--static int sccb_i2c_port;
--static bool sccb_owns_i2c_port;
--
--int SCCB_Init(int pin_sda, int pin_scl)
--{
--    ESP_LOGI(TAG, "pin_sda %d pin_scl %d", pin_sda, pin_scl);
--    i2c_config_t conf;
--    esp_err_t ret;
--
--    memset(&conf, 0, sizeof(i2c_config_t));
--
--    sccb_i2c_port = SCCB_I2C_PORT_DEFAULT;
--    sccb_owns_i2c_port = true;
--    ESP_LOGI(TAG, "sccb_i2c_port=%d", sccb_i2c_port);
--
--    conf.mode = I2C_MODE_MASTER;
--    conf.sda_io_num = pin_sda;
--    conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
--    conf.scl_io_num = pin_scl;
--    conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
--    conf.master.clk_speed = SCCB_FREQ;
--
--    if ((ret =  i2c_param_config(sccb_i2c_port, &conf)) != ESP_OK) {
--        return ret;
--    }
--
--    return i2c_driver_install(sccb_i2c_port, conf.mode, 0, 0, 0);
--}
--
--int SCCB_Use_Port(int i2c_num) { // sccb use an already initialized I2C port
--    if (sccb_owns_i2c_port) {
--        SCCB_Deinit();
--    }
--    if (i2c_num < 0 || i2c_num > I2C_NUM_MAX) {
--        return ESP_ERR_INVALID_ARG;
--    }
--    sccb_i2c_port = i2c_num;
+ int SCCB_Use_Port(int i2c_num) { // sccb use an already initialized I2C port
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    return ESP_OK;
++#else
+     if (sccb_owns_i2c_port) {
+         SCCB_Deinit();
+     }
+@@ -81,21 +239,44 @@ int SCCB_Use_Port(int i2c_num) { // sccb
+     }
+     sccb_i2c_port = i2c_num;
      return ESP_OK;
--}
--
--int SCCB_Deinit(void)
--{
--    if (!sccb_owns_i2c_port) {
--        return ESP_OK;
--    }
--    sccb_owns_i2c_port = false;
--    return i2c_driver_delete(sccb_i2c_port);
--}
--
--uint8_t SCCB_Probe(void)
--{
--    uint8_t slave_addr = 0x0;
--
--    for (size_t i = 0; i < CAMERA_MODEL_MAX; i++) {
--        if (slave_addr == camera_sensor[i].sccb_addr) {
--            continue;
--        }
--        slave_addr = camera_sensor[i].sccb_addr;
--        i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--        i2c_master_start(cmd);
--        i2c_master_write_byte(cmd, ( slave_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--        i2c_master_stop(cmd);
--        esp_err_t ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--        i2c_cmd_link_delete(cmd);
--        if( ret == ESP_OK) {
--            return slave_addr;
--        }
--    }
--    return 0;
--}
--
--uint8_t SCCB_Read(uint8_t slv_addr, uint8_t reg)
--{
--    uint8_t data=0;
--    esp_err_t ret = ESP_FAIL;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg, ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) return -1;
--    cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | READ_BIT, ACK_CHECK_EN);
--    i2c_master_read_byte(cmd, &data, NACK_VAL);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "SCCB_Read Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
--    }
--    return data;
--}
--
--int SCCB_Write(uint8_t slv_addr, uint8_t reg, uint8_t data)
--{
--    esp_err_t ret = ESP_FAIL;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, data, ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "SCCB_Write Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
--    }
--    return ret == ESP_OK ? 0 : -1;
--}
--
--uint8_t SCCB_Read16(uint8_t slv_addr, uint16_t reg)
--{
--    uint8_t data=0;
--    esp_err_t ret = ESP_FAIL;
--    uint16_t reg_htons = LITTLETOBIG(reg);
--    uint8_t *reg_u8 = (uint8_t *)&reg_htons;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) return -1;
--    cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | READ_BIT, ACK_CHECK_EN);
--    i2c_master_read_byte(cmd, &data, NACK_VAL);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "W [%04x]=%02x fail\n", reg, data);
--    }
--    return data;
--}
--
--int SCCB_Write16(uint8_t slv_addr, uint16_t reg, uint8_t data)
--{
--    static uint16_t i = 0;
--    esp_err_t ret = ESP_FAIL;
--    uint16_t reg_htons = LITTLETOBIG(reg);
--    uint8_t *reg_u8 = (uint8_t *)&reg_htons;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, data, ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "W [%04x]=%02x %d fail\n", reg, data, i++);
--    }
--    return ret == ESP_OK ? 0 : -1;
--}
--
--uint16_t SCCB_Read_Addr16_Val16(uint8_t slv_addr, uint16_t reg)
--{
--    uint16_t data = 0;
--    uint8_t *data_u8 = (uint8_t *)&data;
--    esp_err_t ret = ESP_FAIL;
--    uint16_t reg_htons = LITTLETOBIG(reg);
--    uint8_t *reg_u8 = (uint8_t *)&reg_htons;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) return -1;
--
--    cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | READ_BIT, ACK_CHECK_EN);
--    i2c_master_read_byte(cmd, &data_u8[1], ACK_VAL);
--    i2c_master_read_byte(cmd, &data_u8[0], NACK_VAL);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
--    }
--    return data;
--}
--
--int SCCB_Write_Addr16_Val16(uint8_t slv_addr, uint16_t reg, uint16_t data)
--{
--    esp_err_t ret = ESP_FAIL;
--    uint16_t reg_htons = LITTLETOBIG(reg);
--    uint8_t *reg_u8 = (uint8_t *)&reg_htons;
--    uint16_t data_htons = LITTLETOBIG(data);
--    uint8_t *data_u8 = (uint8_t *)&data_htons;
--    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
--    i2c_master_start(cmd);
--    i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, data_u8[0], ACK_CHECK_EN);
--    i2c_master_write_byte(cmd, data_u8[1], ACK_CHECK_EN);
--    i2c_master_stop(cmd);
--    ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
--    i2c_cmd_link_delete(cmd);
--    if(ret != ESP_OK) {
--        ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
--    }
--    return ret == ESP_OK ? 0 : -1;
--}
-+ }
-+ 
-+ static esp_err_t soft_bus_start()
-+ {
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+     // SDA 在 SCL 为高时下降，表示 START
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA low");
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA high");
-+ 
-+     return ESP_OK;
-+ }
-+ 
-+ static esp_err_t soft_bus_stop()
-+ {
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+     // SDA 在 SCL 为高时上升，表示 STOP
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA low");
-+     esp_rom_delay_us(2);
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA high");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+     return ESP_OK;
-+ }
-+ 
-+ static esp_err_t soft_bus_write_byte(uint8_t byte)
-+ {
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+     for (int i = 0; i < 8; i++) {
-+         // SDA 在 SCL 为低时设置数据，在 SCL 为高时被采样
-+         ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL low");
-+         esp_rom_delay_us(2);
-+         if (byte & 0x80) {
-+             ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to set SDA high");
-+         } else {
-+             ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 0), TAG, "Failed to set SDA low");
-+         }
-+         esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+         ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
-+         esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+         byte <<= 1;
-+     }
-+ 
-+     return ESP_OK;
-+ }
-+ 
-+ static esp_err_t soft_bus_read_byte(uint8_t *byte, bool ack)
-+ {
-+     esp_err_t ret = ESP_OK;
-+     uint8_t value = 0;
-+ 
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_INPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+ 
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, 1), TAG, "Failed to release SDA"); /*!< First release SDA */
-+     for (int i = 0; i < 8; i++) {
-+         value <<= 1;
-+         ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
-+         esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+         if (gpio_get_level(g_soft_sccb_config.pin_sda)) {
-+             value++;
-+         }
-+         ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL low");
-+         esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     }
-+ 
-+     *byte = value;
-+ 
-+     // 在SCL低电平期间设置ACK状态
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_OUTPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_sda, ack ? 0 : 1), TAG, "SDA level fail");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+     // 生成ACK时钟脉冲
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "SCL high fail");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us * 2);
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "SCL low fail");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+     return ret;
-+ }
-+ 
-+ static esp_err_t soft_bus_wait_ack()
-+ {
-+     //  第 9 个时钟周期，接收方拉低 SDA 表示 ACK
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL high");
-+     gpio_set_direction(g_soft_sccb_config.pin_sda, GPIO_MODE_INPUT);
-+     gpio_set_pull_mode(g_soft_sccb_config.pin_sda, GPIO_PULLUP_ONLY);
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 1), TAG, "Failed to set SCL high");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     bool ack = ESP_ERR_NOT_FOUND;
-+     if (!gpio_get_level(g_soft_sccb_config.pin_sda)) {
-+         ack = ESP_OK;
-+     }
-+ 
-+     ESP_RETURN_ON_ERROR(gpio_set_level(g_soft_sccb_config.pin_scl, 0), TAG, "Failed to set SCL high");
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ 
-+     return ack;
-+ }
-+ 
-+ #endif  
-+ // =========================================================================================
-+ 
-+ 
-+ int SCCB_Init(int pin_sda, int pin_scl)
-+ {
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     ESP_LOGI(TAG, "Use software sccb, pin_sda %d pin_scl %d", pin_sda, pin_scl);
-+     g_soft_sccb_config.pin_scl = pin_scl;
-+     g_soft_sccb_config.pin_sda = pin_sda;
-+     g_soft_sccb_config.time_delay_us = (uint32_t)((1e6f / 100000) / 2.0f + 0.5f); // 100kHz
-+     soft_bus_init(g_soft_sccb_config.pin_sda, g_soft_sccb_config.pin_scl);
-+     return ESP_OK;
-+ #else
-+     ESP_LOGI(TAG, "pin_sda %d pin_scl %d", pin_sda, pin_scl);
-+     i2c_config_t conf;
-+     esp_err_t ret;
-+ 
-+     memset(&conf, 0, sizeof(i2c_config_t));
-+ 
-+     sccb_i2c_port = SCCB_I2C_PORT_DEFAULT;
-+     sccb_owns_i2c_port = true;
-+     ESP_LOGI(TAG, "sccb_i2c_port=%d", sccb_i2c_port);
-+ 
-+     conf.mode = I2C_MODE_MASTER;
-+     conf.sda_io_num = pin_sda;
-+     conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
-+     conf.scl_io_num = pin_scl;
-+     conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
-+     conf.master.clk_speed = SCCB_FREQ;
-+ 
-+     if ((ret =  i2c_param_config(sccb_i2c_port, &conf)) != ESP_OK) {
-+         return ret;
-+     }
-+ 
-+     return i2c_driver_install(sccb_i2c_port, conf.mode, 0, 0, 0);
-+ #endif 
-+ }
-+ 
-+ int SCCB_Use_Port(int i2c_num)
-+ {
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     return ESP_OK;
-+ #else
-+     // sccb use an already initialized I2C port
-+     if (sccb_owns_i2c_port) {
-+         SCCB_Deinit();
-+     }
-+     if (i2c_num < 0 || i2c_num > I2C_NUM_MAX) {
-+         return ESP_ERR_INVALID_ARG;
-+     }
-+     sccb_i2c_port = i2c_num;
-+ 
-+     return ESP_OK;
-+ #endif 
-+ }
-+ 
-+ int SCCB_Deinit(void)
-+ {
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     gpio_reset_pin(g_soft_sccb_config.pin_scl);
-+     gpio_reset_pin(g_soft_sccb_config.pin_sda);
-+     return ESP_OK;
-+ #else
-+     if (!sccb_owns_i2c_port) {
-+         return ESP_OK;
-+     }
-+     sccb_owns_i2c_port = false;
-+     return i2c_driver_delete(sccb_i2c_port);
-+ #endif
-+ }
-+ 
-+ uint8_t SCCB_Probe(void)
-+ {
-+     uint8_t slave_addr = 0x0;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     for (size_t i = 0; i < CAMERA_MODEL_MAX; i++) {
-+         if (slave_addr == camera_sensor[i].sccb_addr) {
-+             continue;
-+         }
-+         slave_addr = camera_sensor[i].sccb_addr;
-+         soft_bus_start();
-+         soft_bus_write_byte((slave_addr << 1) | WRITE_BIT);
-+         esp_err_t ret = soft_bus_wait_ack();
-+         soft_bus_stop();
-+         if (ret == ESP_OK) {
-+             return slave_addr;
-+         }
-+         esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     }
-+ #else
-+     for (size_t i = 0; i < CAMERA_MODEL_MAX; i++) {
-+         if (slave_addr == camera_sensor[i].sccb_addr) {
-+             continue;
-+         }
-+         slave_addr = camera_sensor[i].sccb_addr;
-+         i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+         i2c_master_start(cmd);
-+         i2c_master_write_byte(cmd, ( slave_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
-+         i2c_master_stop(cmd);
-+         esp_err_t ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+         i2c_cmd_link_delete(cmd);
-+         if( ret == ESP_OK) {
-+             return slave_addr;
-+         }
-+     }  
-+ #endif
-+ 
-+     return 0;
-+ }
-+ 
-+ 
-+ uint8_t SCCB_Read(uint8_t slv_addr, uint8_t reg)
-+ {
-+     uint8_t data  = 0;
-+     esp_err_t ret = ESP_FAIL;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg);
-+     ret = soft_bus_wait_ack();
-+     // soft_bus_stop();
-+     if (ret != ESP_OK) return -1;
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | READ_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_read_byte(&data, false);
-+     soft_bus_stop(); 
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg, ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+     if(ret != ESP_OK) return -1;
-+     cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | READ_BIT, ACK_CHECK_EN);
-+     i2c_master_read_byte(cmd, &data, NACK_VAL);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "SCCB_Read Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
-+     }
-+ 
-+     return data;
-+ }
-+ 
-+ int SCCB_Write(uint8_t slv_addr, uint8_t reg, uint8_t data)
-+ {
-+     esp_err_t ret = ESP_FAIL;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(data);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_stop();
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+     esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, data, ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "SCCB_Write Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
-+     }
-+ 
-+     return ret == ESP_OK ? 0 : -1;
-+ }
-+ 
-+ uint8_t SCCB_Read16(uint8_t slv_addr, uint16_t reg)
-+ {
-+     uint8_t data = 0;
-+     esp_err_t ret = ESP_FAIL;
-+     uint16_t reg_htons = LITTLETOBIG(reg);
-+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[0]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[1]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_stop();
-+     if (ret != ESP_OK) return -1;
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | READ_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_read_byte(&data, true);
-+     soft_bus_stop();
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+     if(ret != ESP_OK) return -1;
-+     cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | READ_BIT, ACK_CHECK_EN);
-+     i2c_master_read_byte(cmd, &data, NACK_VAL);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "W [%04x]=%02x fail\n", reg, data);
-+     }
-+ 
-+     return data;
-+ }
-+ 
-+ int SCCB_Write16(uint8_t slv_addr, uint16_t reg, uint8_t data)
-+ {
-+     static uint16_t i  = 0;
-+     esp_err_t ret      = ESP_FAIL;
-+     uint16_t reg_htons = LITTLETOBIG(reg);
-+     uint8_t *reg_u8    = (uint8_t *)&reg_htons;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[0]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[1]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(data);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_stop();
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, (slv_addr << 1) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, data, ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "W [%04x]=%02x %d fail\n", reg, data, i++);
-+     }
-+ 
-+     return ret == ESP_OK ? 0 : -1;
-+ }
-+ 
-+ uint16_t SCCB_Read_Addr16_Val16(uint8_t slv_addr, uint16_t reg)
-+ {  
-+     uint16_t data = 0;
-+     uint8_t *data_u8 = (uint8_t *)&data;
-+     esp_err_t ret = ESP_FAIL;
-+     uint16_t reg_htons = LITTLETOBIG(reg);
-+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     // 未测试 
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[0]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[1]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_stop();
-+     if (ret != ESP_OK) return -1;
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | READ_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_read_byte(&data_u8[1], true);
-+     soft_bus_read_byte(&data_u8[0], false);
-+     soft_bus_stop();
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, (slv_addr << 1) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+     if (ret != ESP_OK) return -1;
-+     cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, (slv_addr << 1) | READ_BIT, ACK_CHECK_EN);
-+     i2c_master_read_byte(cmd, &data_u8[1], ACK_VAL);
-+     i2c_master_read_byte(cmd, &data_u8[0], NACK_VAL);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
-+     }
-+ 
-+     return data;
-+ }
-+ 
-+ int SCCB_Write_Addr16_Val16(uint8_t slv_addr, uint16_t reg, uint16_t data)
-+ {
-+     esp_err_t ret        = ESP_FAIL;
-+     uint16_t reg_htons   = LITTLETOBIG(reg);
-+     uint8_t *reg_u8      = (uint8_t *)&reg_htons;
-+     uint16_t data_htons  = LITTLETOBIG(data);
-+     uint8_t *data_u8     = (uint8_t *)&data_htons;
-+ 
-+ #if CONFIG_SCCB_SOFTWARE_SUPPORT
-+     // 未测试 
-+     soft_bus_start();
-+     soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[0]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(reg_u8[1]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(data_u8[0]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_write_byte(data_u8[1]);
-+     ret = soft_bus_wait_ack();
-+     soft_bus_stop();
-+ #else
-+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-+     i2c_master_start(cmd);
-+     i2c_master_write_byte(cmd, (slv_addr << 1) | WRITE_BIT, ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[0], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, reg_u8[1], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, data_u8[0], ACK_CHECK_EN);
-+     i2c_master_write_byte(cmd, data_u8[1], ACK_CHECK_EN);
-+     i2c_master_stop(cmd);
-+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
-+     i2c_cmd_link_delete(cmd);
-+ #endif
-+ 
-+     if (ret != ESP_OK) {
-+         ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
-+     }
-+     
-+     return ret == ESP_OK ? 0 : -1;
-+ }
-+ 
-\ No newline at end of file
++#endif
+ }
+ 
+ int SCCB_Deinit(void)
+ {
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    gpio_reset_pin(g_soft_sccb_config.pin_scl);
++    gpio_reset_pin(g_soft_sccb_config.pin_sda);
++    return ESP_OK;
++#else
+     if (!sccb_owns_i2c_port) {
+         return ESP_OK;
+     }
+     sccb_owns_i2c_port = false;
+     return i2c_driver_delete(sccb_i2c_port);
++#endif
+ }
+ 
+ uint8_t SCCB_Probe(void)
+ {
+     uint8_t slave_addr = 0x0;
+ 
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    for (size_t i = 0; i < CAMERA_MODEL_MAX; i++) {
++        if (slave_addr == camera_sensor[i].sccb_addr) {
++            continue;
++        }
++        slave_addr = camera_sensor[i].sccb_addr;
++        soft_bus_start();
++        soft_bus_write_byte((slave_addr << 1) | WRITE_BIT);
++        esp_err_t ret = soft_bus_wait_ack();
++        soft_bus_stop();
++        if (ret == ESP_OK) {
++            return slave_addr;
++        }
++        esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    }
++#else
+     for (size_t i = 0; i < CAMERA_MODEL_MAX; i++) {
+         if (slave_addr == camera_sensor[i].sccb_addr) {
+             continue;
+@@ -111,13 +292,31 @@ uint8_t SCCB_Probe(void)
+             return slave_addr;
+         }
+     }
++#endif
++
+     return 0;
+ }
+ 
++
+ uint8_t SCCB_Read(uint8_t slv_addr, uint8_t reg)
+ {
+     uint8_t data=0;
+     esp_err_t ret = ESP_FAIL;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg);
++    ret = soft_bus_wait_ack();
++    // soft_bus_stop();
++    if (ret != ESP_OK) return -1;
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | READ_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_read_byte(&data, false);
++    soft_bus_stop();
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -133,15 +332,31 @@ uint8_t SCCB_Read(uint8_t slv_addr, uint
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "SCCB_Read Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
+     }
++
+     return data;
+ }
+ 
+ int SCCB_Write(uint8_t slv_addr, uint8_t reg, uint8_t data)
+ {
+     esp_err_t ret = ESP_FAIL;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(data);
++    ret = soft_bus_wait_ack();
++    soft_bus_stop();
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++    esp_rom_delay_us(g_soft_sccb_config.time_delay_us);
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -150,9 +365,12 @@ int SCCB_Write(uint8_t slv_addr, uint8_t
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "SCCB_Write Failed addr:0x%02x, reg:0x%02x, data:0x%02x, ret:%d", slv_addr, reg, data, ret);
+     }
++
+     return ret == ESP_OK ? 0 : -1;
+ }
+ 
+@@ -162,6 +380,23 @@ uint8_t SCCB_Read16(uint8_t slv_addr, ui
+     esp_err_t ret = ESP_FAIL;
+     uint16_t reg_htons = LITTLETOBIG(reg);
+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[0]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[1]);
++    ret = soft_bus_wait_ack();
++    soft_bus_stop();
++    if (ret != ESP_OK) return -1;
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | READ_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_read_byte(&data, true);
++    soft_bus_stop();
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -178,9 +413,12 @@ uint8_t SCCB_Read16(uint8_t slv_addr, ui
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "W [%04x]=%02x fail\n", reg, data);
+     }
++
+     return data;
+ }
+ 
+@@ -190,6 +428,19 @@ int SCCB_Write16(uint8_t slv_addr, uint1
+     esp_err_t ret = ESP_FAIL;
+     uint16_t reg_htons = LITTLETOBIG(reg);
+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[0]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[1]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(data);
++    ret = soft_bus_wait_ack();
++    soft_bus_stop();
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -199,9 +450,12 @@ int SCCB_Write16(uint8_t slv_addr, uint1
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "W [%04x]=%02x %d fail\n", reg, data, i++);
+     }
++
+     return ret == ESP_OK ? 0 : -1;
+ }
+ 
+@@ -212,6 +466,25 @@ uint16_t SCCB_Read_Addr16_Val16(uint8_t
+     esp_err_t ret = ESP_FAIL;
+     uint16_t reg_htons = LITTLETOBIG(reg);
+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    // 未测试
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[0]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[1]);
++    ret = soft_bus_wait_ack();
++    soft_bus_stop();
++    if (ret != ESP_OK) return -1;
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | READ_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_read_byte(&data_u8[1], true);
++    soft_bus_read_byte(&data_u8[0], false);
++    soft_bus_stop();
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -230,9 +503,12 @@ uint16_t SCCB_Read_Addr16_Val16(uint8_t
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
+     }
++
+     return data;
+ }
+ 
+@@ -243,6 +519,22 @@ int SCCB_Write_Addr16_Val16(uint8_t slv_
+     uint8_t *reg_u8 = (uint8_t *)&reg_htons;
+     uint16_t data_htons = LITTLETOBIG(data);
+     uint8_t *data_u8 = (uint8_t *)&data_htons;
++
++#if CONFIG_SCCB_SOFTWARE_SUPPORT
++    // 未测试
++    soft_bus_start();
++    soft_bus_write_byte((slv_addr << 1) | WRITE_BIT);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[0]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(reg_u8[1]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(data_u8[0]);
++    ret = soft_bus_wait_ack();
++    soft_bus_write_byte(data_u8[1]);
++    ret = soft_bus_wait_ack();
++    soft_bus_stop();
++#else
+     i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+     i2c_master_start(cmd);
+     i2c_master_write_byte(cmd, ( slv_addr << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+@@ -253,8 +545,11 @@ int SCCB_Write_Addr16_Val16(uint8_t slv_
+     i2c_master_stop(cmd);
+     ret = i2c_master_cmd_begin(sccb_i2c_port, cmd, 1000 / portTICK_RATE_MS);
+     i2c_cmd_link_delete(cmd);
++#endif
++
+     if(ret != ESP_OK) {
+         ESP_LOGE(TAG, "W [%04x]=%04x fail\n", reg, data);
+     }
++
+     return ret == ESP_OK ? 0 : -1;
+ }

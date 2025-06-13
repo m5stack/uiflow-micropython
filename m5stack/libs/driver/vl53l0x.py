@@ -140,7 +140,7 @@ class VL53L0X:
         self._addr = address
         self.io_timeout_ms = io_timeout_ms
         self._data_ready = False
-        if self._i2c not in self._i2c.scan():
+        if self._addr not in self._i2c.scan():
             raise Exception("VL53L0X maybe not connect.")
 
         self._reset()
@@ -630,6 +630,8 @@ class VL53L0X:
         range_mm = self._read_u16(_RESULT_RANGE_STATUS + 10)
         self._write_u8(_SYSTEM_INTERRUPT_CLEAR, 0x01)
         self._data_ready = False
+        if range_mm > 4000:
+            return -1
         return range_mm
 
     def is_continuous_mode(self) -> bool:

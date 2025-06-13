@@ -2,11 +2,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 import struct
-from micropython import const
-from machine import Pin, PWM
+import micropython
+import machine
 
 
 class StepMotorDriverModule:
@@ -32,37 +32,37 @@ class StepMotorDriverModule:
     """
     constant: Motor IDs
     """
-    MOTOR_X = const(0)
-    MOTOR_Y = const(1)
-    MOTOR_Z = const(2)
+    MOTOR_X = micropython.const(0)
+    MOTOR_Y = micropython.const(1)
+    MOTOR_Z = micropython.const(2)
 
     """
     constant: Motor states
     """
-    MOTOR_STATE_ENABLE = const(1)
-    MOTOR_STATE_DISABLE = const(0)
+    MOTOR_STATE_ENABLE = micropython.const(1)
+    MOTOR_STATE_DISABLE = micropython.const(0)
 
     """
     constant: Register addresses
     """
-    INPUT_REG = const(0x00)
-    OUTPUT_REG = const(0x01)
-    POLINV_REG = const(0x02)
-    CONFIG_REG = const(0x03)
-    FAULT_REG = const(0x04)
-    RESET_REG = const(0x05)
-    FIRM_REG = const(0xFE)
-    I2C_REG = const(0xFF)
+    INPUT_REG = micropython.const(0x00)
+    OUTPUT_REG = micropython.const(0x01)
+    POLINV_REG = micropython.const(0x02)
+    CONFIG_REG = micropython.const(0x03)
+    FAULT_REG = micropython.const(0x04)
+    RESET_REG = micropython.const(0x05)
+    FIRM_REG = micropython.const(0xFE)
+    I2C_REG = micropython.const(0xFF)
 
     """
     constant: Microstep values
     """
-    STEP_FULL = const(0x00)
-    STEP1_2 = const(0x04)
-    STEP1_4 = const(0x02)
-    STEP1_8 = const(0x06)
-    STEP1_16 = const(0x01)
-    STEP1_32 = const(0x07)
+    STEP_FULL = micropython.const(0x00)
+    STEP1_2 = micropython.const(0x04)
+    STEP1_4 = micropython.const(0x02)
+    STEP1_8 = micropython.const(0x06)
+    STEP1_16 = micropython.const(0x01)
+    STEP1_32 = micropython.const(0x07)
 
     def __init__(
         self,
@@ -84,7 +84,7 @@ class StepMotorDriverModule:
               note: The dir pin (X, Y, Z) of the motor.
         """
 
-        self.i2c = i2c1
+        self.i2c = mbus.i2c1
         self.addr = address
 
         # Check if the devices are connected and accessible
@@ -96,12 +96,12 @@ class StepMotorDriverModule:
         self.reset_motor(self.MOTOR_Y, 0)
         self.reset_motor(self.MOTOR_Z, 0)
         self.set_microstep(self.STEP_FULL)
-        self.pwm_x = PWM(step_pin[0], freq=500, duty=50)
-        self.pwm_y = PWM(step_pin[1], freq=500, duty=50)
-        self.pwm_z = PWM(step_pin[2], freq=500, duty=50)
-        self.dir_x = Pin(dir_pin[0], Pin.OUT, value=1)
-        self.dir_y = Pin(dir_pin[1], Pin.OUT, value=1)
-        self.dir_z = Pin(dir_pin[2], Pin.OUT, value=1)
+        self.pwm_x = machine.PWM(step_pin[0], freq=500, duty=50)
+        self.pwm_y = machine.PWM(step_pin[1], freq=500, duty=50)
+        self.pwm_z = machine.PWM(step_pin[2], freq=500, duty=50)
+        self.dir_x = machine.Pin(dir_pin[0], machine.Pin.OUT, value=1)
+        self.dir_y = machine.Pin(dir_pin[1], machine.Pin.OUT, value=1)
+        self.dir_z = machine.Pin(dir_pin[2], machine.Pin.OUT, value=1)
 
     def reset_motor(self, motor_id, state: bool = False):
         """

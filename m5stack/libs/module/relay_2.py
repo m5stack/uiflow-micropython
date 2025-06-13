@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 import time
 
@@ -30,7 +30,7 @@ class Relay2Module:
 
         @param address: I2C address of the Relay2Module.
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._i2c_addr = address
         if self._i2c_addr not in self._i2c.scan():
             raise Exception("2 Relay Module not found in Base")

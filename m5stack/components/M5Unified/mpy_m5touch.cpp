@@ -19,11 +19,11 @@ namespace m5
     }
 
     mp_obj_t touch_getX(mp_obj_t self) {
-        return mp_obj_new_int(getTouch(&self)->getTouchPointRaw(0).x);
+        return mp_obj_new_int(getTouch(&self)->getDetail(0).x);
     }
 
     mp_obj_t touch_getY(mp_obj_t self) {
-        return mp_obj_new_int(getTouch(&self)->getTouchPointRaw(0).y);
+        return mp_obj_new_int(getTouch(&self)->getDetail(0).y);
     }
 
     mp_obj_t touch_getCount(mp_obj_t self) {

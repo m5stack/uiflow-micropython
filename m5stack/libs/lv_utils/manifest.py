@@ -4,7 +4,7 @@
 
 package(
     "lv_utils",
-    ("__init__.py",),
+    ("__init__.py", "lv_utils.py"),
     base_path="..",
     opt=0,
 )

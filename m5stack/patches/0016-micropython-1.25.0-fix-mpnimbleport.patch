@@ -1,0 +1,14 @@
+Index: micropython/ports/esp32/mpnimbleport.c
+===================================================================
+--- micropython.orig/ports/esp32/mpnimbleport.c
++++ micropython/ports/esp32/mpnimbleport.c
+@@ -71,7 +71,9 @@ void mp_bluetooth_nimble_port_shutdown(v
+     nimble_port_stop();
+ 
+     // Shuts down the event queue.
++#if !CONFIG_IDF_TARGET_ESP32P4
+     nimble_port_deinit();
++#endif
+ 
+     #if MICROPY_PY_BLUETOOTH_USE_SYNC_EVENTS_WITH_INTERLOCK
+     MP_THREAD_GIL_ENTER();

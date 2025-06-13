@@ -4,7 +4,7 @@
 
 from driver.mcp2515.mcp2515_spi import MCP2515_CAN
 from driver.mcp2515.can_frame import CANFrame
-from machine import UART, I2C
+import machine
 import time
 
 ERROR_OK = 0
@@ -25,6 +25,8 @@ iomap = {
     M5.BOARD.M5Stack: MBusIO(12, 15, 18, 23, 19),
     M5.BOARD.M5StackCore2: MBusIO(27, 2, 18, 23, 38),
     M5.BOARD.M5StackCoreS3: MBusIO(6, 13, 36, 37, 35),
+    M5.BOARD.M5Tough: MBusIO(27, 2, 18, 23, 38),
+    M5.BOARD.M5Tab5: MBusIO(2, 47, 5, 18, 19),
 }.get(M5.getBoard())
 
 
@@ -273,7 +275,7 @@ class CommuModuleRS485:
         id,
         **kwargs,
     ):
-        return UART(
+        return machine.UART(
             id,
             **kwargs,
         )
@@ -285,7 +287,7 @@ class CommuModuleI2C:
         id,
         **kwargs,
     ):
-        return I2C(
+        return machine.I2C(
             id,
             **kwargs,
         )

@@ -21,8 +21,10 @@ code-format:
   before_script:
     - export PATH="$HOME/.local/bin:$PATH"
   script:
+    - make -C m5stack submodules
     - source tools/ci.sh && ci_code_formatting_setup
     - source tools/ci.sh && ci_code_formatting_run
+    - git diff --exit-code
   tags:
     - uiflow-firmware
   only:
@@ -36,8 +38,8 @@ build-quick-job:
   stage: build_quick
   script:
     - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf522_setup
+    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+    - source tools/ci.sh && ci_esp32_idf541_setup
     - source tools/ci.sh && ci_esp32_quick_build
   artifacts:
     paths:
@@ -57,7 +59,7 @@ build-job:
   script:
     - sudo apt-get update -qy
     - sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf522_setup
+    - source tools/ci.sh && ci_esp32_idf541_setup
     - source tools/ci.sh && ci_esp32_nightly_build
   artifacts:
     paths:

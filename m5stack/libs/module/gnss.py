@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 import machine
-from .mbus import i2c1
+from . import mbus
 from .module_helper import ModuleError
 from driver.bmi270_bmm150 import BMI270_BMM150
 from driver.bmp280 import BMP280
@@ -79,7 +79,7 @@ class GNSSModule(BMI270_BMM150, BMP280):
                     '0x69': '0x69'
                     '0x68': '0x68'
         """
-        self._i2c = i2c1
+        self._i2c = mbus.i2c1
         self._addr = address
         self.uart_data = ""
         self.gps_time = "00:00:00"

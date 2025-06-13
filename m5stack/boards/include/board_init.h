@@ -10,6 +10,8 @@
 
 #if CONFIG_CORES3
 #include "../M5STACK_CoreS3/audioconfigboard.h"
+#elif CONFIG_TAB5
+#include "../M5STACK_Tab5/audioconfigboard.h"
 #endif
 
 /**

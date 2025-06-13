@@ -1,7 +1,7 @@
-Index: b/components/audio_stream/i2s_stream_idf5.c
+Index: esp-adf/components/audio_stream/i2s_stream_idf5.c
 ===================================================================
---- a/components/audio_stream/i2s_stream_idf5.c
-+++ b/components/audio_stream/i2s_stream_idf5.c
+--- esp-adf.orig/components/audio_stream/i2s_stream_idf5.c
++++ esp-adf/components/audio_stream/i2s_stream_idf5.c
 @@ -79,10 +79,10 @@ struct i2s_key_slot_s {
      int                     i2s_refcount;
  };

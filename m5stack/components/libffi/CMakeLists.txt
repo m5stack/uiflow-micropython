@@ -8,7 +8,7 @@ if(target STREQUAL "esp32" OR target STREQUAL "esp32s3")
         "libffi/src/xtensa/sysv.S"
     )
     set(include_dirs libffi/include libffi/include/xtensa)
-elseif(target STREQUAL "esp32c3" OR target STREQUAL "esp32c6")
+elseif(target STREQUAL "esp32c3" OR target STREQUAL "esp32c6" OR target STREQUAL "esp32p4")
     set(srcs
         "libffi/src/prep_cif.c"
         "libffi/src/types.c"
