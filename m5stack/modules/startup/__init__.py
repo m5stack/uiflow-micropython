@@ -242,6 +242,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             station = StampPLC_Startup()
             station.startup(ssid, pswd, timeout)
 
+        elif board_id == M5.BOARD.M5Tab5:
+            from .tab5 import Tab5_Startup
+
+            tab5 = Tab5_Startup()
+            tab5.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()
