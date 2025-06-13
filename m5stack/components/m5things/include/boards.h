@@ -24,7 +24,7 @@ const char *boards[] = {
     "papers3",        // 19
     "unknown",        // 20
     "stamplc",        // 21
-    "unknown",        // 22
+    "tab5",        // 22
     "unknown",        // 23
     "unknown",        // 24
     "unknown",        // 25
