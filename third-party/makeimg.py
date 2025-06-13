@@ -132,6 +132,7 @@ if arg_fs_vfs_bin == "none":
     files_in.pop()
 
 file_out = arg_output_bin
+file_out_complete = os.path.abspath(arg_output_bin)
 
 # Write output file with combined firmware.
 cur_offset = 0
@@ -170,7 +171,7 @@ with open(file_out, "wb") as fout:
             arg_board_type_flag.lower(),
             idf_target.lower(),
             0x0,
-            file_out,
+            file_out_complete,
         )
     )
 
@@ -206,7 +207,7 @@ with open("./version.txt", "r") as f:
     uiflow_version = f.readline() + "-"
 
 release_file_out = "{}-{}-{}{}-{}{}{}{}.bin".format(
-    file_out.split(".bin")[0],
+    file_out_complete.split(".bin")[0],
     idf_target.lower(),
     feature_str.lower(),
     load_sdkconfig_flash_size_value(arg_sdkconfig).lower(),
