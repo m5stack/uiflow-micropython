@@ -13,6 +13,7 @@ Unit
     angle.rst
     angle8.rst
     asr.rst
+    audioplayer.rst
     bldc_driver.rst
     bps.rst
     button.rst

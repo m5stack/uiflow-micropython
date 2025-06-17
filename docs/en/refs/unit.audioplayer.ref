@@ -1,0 +1,35 @@
+.. |AudioPlayer| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/audioplayer_01.webp
+    :target: https://docs.m5stack.com/en/unit/Unit_AudioPlayer
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/init.png
+
+.. |check_play_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/check_play_status.png
+.. |get_total_audio_number.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/get_total_audio_number.png
+.. |get_current_audio_number.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/get_current_audio_number.png
+.. |get_play_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/get_play_mode.png
+.. |play_audio.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/play_audio.png
+.. |pause_audio.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/pause_audio.png
+.. |stop_audio.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/stop_audio.png
+.. |next_audio.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/next_audio.png
+.. |previous_audio.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/previous_audio.png
+.. |play_audio_by_index.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/play_audio_by_index.png
+.. |select_audio_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/select_audio_num.png
+.. |set_play_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/set_play_mode.png
+.. |get_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/get_volume.png
+.. |increase_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/increase_volume.png
+.. |decrease_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/decrease_volume.png
+.. |set_volume.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/set_volume.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/audioplayer/example.png
+
+
+.. |audioplayer_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/audioplayer/audioplayer_core2_example.m5f2"
+        target="_blank"
+    >
+        audioplayer_core2_example.m5f2
+    </a>

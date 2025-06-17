@@ -14,6 +14,7 @@ _attrs = {
     "AngleUnit": "angle",
     "Angle8Unit": "angle8",
     "ASRUnit": "asr",
+    "AudioPlayerUnit": "audioplayer",
     "BLDCDriverUnit": "bldc_driver",
     "BPSUnit": "bps",
     "ButtonUnit": "button",
