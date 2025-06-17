@@ -15,6 +15,7 @@ package(
         "angle.py",
         "angle8.py",
         "asr.py",
+        "audioplayer.py",
         "bldc_driver.py",
         "bps.py",
         "button.py",
