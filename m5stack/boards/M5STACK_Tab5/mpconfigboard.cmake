@@ -17,6 +17,7 @@ set(SDKCONFIG_DEFAULTS
     # ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_16mb_omv
     ./boards/sdkconfig.freertos
+    ./boards/M5STACK_Tab5/sdkconfig.freertos
     ./boards/M5STACK_Tab5/sdkconfig.spiram_hex
     ./boards/M5STACK_Tab5/sdkconfig.adf
     ./boards/M5STACK_Tab5/sdkconfig.esp_hosted
