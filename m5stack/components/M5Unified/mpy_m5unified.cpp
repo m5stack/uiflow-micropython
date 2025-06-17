@@ -480,6 +480,9 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
 
     // }
 
+    if (M5.getBoard() == m5::board_t::board_M5Tab5) {
+        M5.Lcd.setRotation(3);
+    }
     M5.Display.clear();
     // default display
     m5_display.gfx = (void *)(&(M5.Display));
