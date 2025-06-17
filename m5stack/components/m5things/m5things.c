@@ -1,3 +1,9 @@
+/*
+* SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+*
+* SPDX-License-Identifier: MIT
+*/
+
 #pragma GCC diagnostic ignored "-Wunused-function"
 #include <stdio.h>
 #include <string.h>
@@ -20,6 +26,7 @@
 #include "esp_timer.h"
 #include "esp_mac.h"
 #include "esp_psram.h"
+#include "crypto.h"
 
 /** macro definitions */
 #define TAG "M5Things"
@@ -565,11 +572,11 @@ static int8_t mqtt_exec_parse_all(const char *data, size_t len, msg_exec_req_t *
         ret = PKG_ERR_PARSE;
     } else {
         size_t decode_len = 0;
-        msg->ctx_buf = (unsigned char *)base64_decode(
+        msg->ctx_buf = (unsigned char *)m5_base64_decode(
             pkg_ctx->valuestring, strlen(pkg_ctx->valuestring), &decode_len);
 
         if (msg->ctx_buf == NULL && strlen(pkg_ctx->valuestring)) {
-            ESP_LOGE(TAG, "No memory(@base64_decode)");
+            ESP_LOGE(TAG, "No memory(@m5_base64_decode)");
             ret = PKG_ERR_NO_MEMORY_AVAILABLE;
             goto error_base64_decode;
         }
@@ -1345,7 +1352,7 @@ static void read_task(void *pvParameter) {
 
         // base64 encode
         size_t encode_len = 0;
-        char *ctx_buf = base64_encode(buffer, pkg_len, &encode_len);
+        char *ctx_buf = m5_base64_encode(buffer, pkg_len, &encode_len);
 
         // json load
         cJSON_SetIntValue(index_obj, index);
@@ -1886,9 +1893,9 @@ static int8_t mqtt_file_parse_all(const char *data, size_t len, msg_file_req_t *
                 ret = PKG_ERR_PARSE;
             } else {
                 size_t decode_len = 0;
-                msg->ctx_buf = (uint8_t *)base64_decode(pkg_ctx->valuestring, strlen(pkg_ctx->valuestring), &decode_len);
+                msg->ctx_buf = (uint8_t *)m5_base64_decode(pkg_ctx->valuestring, strlen(pkg_ctx->valuestring), &decode_len);
                 if (msg->ctx_buf == NULL && strlen(pkg_ctx->valuestring)) {
-                    ESP_LOGE(TAG, "No memory(@base64_decode)");
+                    ESP_LOGE(TAG, "No memory(@m5_base64_decode)");
                     ret = PKG_ERR_NO_MEMORY_AVAILABLE;
                     goto error_base64_decode;
                 }
@@ -2060,9 +2067,9 @@ static char *calculate_password(char *client_id) {
 
     time(&now);
     len = sprintf((char *)singn, "%s-%lld", client_id, (now - (now % 60)));
-    hmac_sha256(encrypted_key, 16, singn, len, hash);
+    m5_hmac_sha256(encrypted_key, 16, singn, len, hash);
 
-    return (char *)base64_encode(hash, 32, &len);
+    return (char *)m5_base64_encode(hash, 32, &len);
 }
 
 static esp_err_t mqtt_app_start(void) {
@@ -2071,7 +2078,11 @@ static esp_err_t mqtt_app_start(void) {
     char *password = NULL;
     size_t topic_len;
 
+    #if !CONFIG_IDF_TARGET_ESP32P4
     esp_read_mac(sta_mac, ESP_MAC_WIFI_STA);
+    #else
+    esp_efuse_mac_get_default(sta_mac);
+    #endif
 
     for (size_t i = 0; i < 3; i++) {
         topic_len = sprintf(up_topic_list[i], M5THINGS_OTA_TOPIC_TEMPLATE, "up",
@@ -2094,9 +2105,9 @@ static esp_err_t mqtt_app_start(void) {
     sprintf(username, "uiflow-%02x%02x", sta_mac[4], sta_mac[5]);
     password = calculate_password(client_id);
 
-    // ESP_LOGI(TAG,
-    //          "MQTT Info:\r\n\tclient_id: %s\r\n\tusername: %s\r\n\tpasswd: %s",
-    //          client_id, username, password);
+    ESP_LOGI(TAG,
+        "MQTT Info:\r\n\tclient_id: %s\r\n\tusername: %s\r\n\tpasswd: %s",
+        client_id, username, password);
 
     esp_mqtt_client_config_t mqtt_cfg = {
         .buffer.size = 4096,

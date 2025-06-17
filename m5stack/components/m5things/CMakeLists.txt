@@ -1,13 +1,14 @@
 idf_component_register(
     SRCS
         "m5things.c"
+        "crypto.c"
     INCLUDE_DIRS
         "include"
     REQUIRES
         json
         nvs_flash
         freertos
-        main_${IDF_TARGET}
+        main
         uiflow_utility
 )
 

@@ -90,9 +90,7 @@ extern int mp_interrupt_char;
 
 extern esp_mqtt_client_handle_t m5things_mqtt_client;
 
-extern int hmac_sha256(const uint8_t *, size_t, const uint8_t *, size_t data_len, uint8_t *);
-extern char *base64_encode(const void *src, size_t len, size_t *out_len);
-extern unsigned char *base64_decode(const char *src, size_t len, size_t *out_len);
+
 extern char *base64_url_encode(const void *src, size_t len, size_t *out_len);
 extern unsigned char *base64_url_decode(const char *src, size_t len, size_t *out_len);
 
