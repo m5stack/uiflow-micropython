@@ -56,6 +56,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_StickC", "a44718de7ac2c0879b75cd56db8c667e", ""),
     FirewareInfo("M5STACK_StickC_PLUS", "e012605c9ebfebb7159fff2ac35f79c8", ""),
     FirewareInfo("M5STACK_StickC_PLUS2", "39d70217ff0b53c368b0efbfbf2a11af", ""),
+    FirewareInfo("M5STACK_Tab5", "b11dadb7e93c03daa3a89025f1b76d7a", ""),
     FirewareInfo("M5STACK_Tough", "ffadcb704115b88ca9fd149e567c73f5", "TOUGH"),
 )
 
