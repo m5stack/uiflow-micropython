@@ -237,6 +237,14 @@ class DownloadView:
             text_y=100,
             text_font=M5.Lcd.FONTS.DejaVu24,
         ),
+        M5.BOARD.M5Tab5: ViewInfo(
+            title_x=640,
+            title_y=302,
+            title_font=M5.Lcd.FONTS.DejaVu56,
+            text_x=640,
+            text_y=370,
+            text_font=M5.Lcd.FONTS.DejaVu40,
+        ),
     }
 
     def __init__(self) -> None:
@@ -245,6 +253,8 @@ class DownloadView:
 
     def on_view(self):
         if self.view_info:
+            if M5.getBoard() == M5.BOARD.M5Tab5:
+                M5.Lcd.setRotation(3)
             M5.Lcd.clear(0xFFFFFF)
             self.title_label = Label(
                 "Sync...",
