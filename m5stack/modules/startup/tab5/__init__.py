@@ -25,6 +25,7 @@ class Tab5_Startup:
         self.launcher = Launcher()
 
     def _init_lvgl(self):
+        M5.Lcd.setRotation(0)
         M5.Lcd.lvgl_init()
 
         disp_buf0 = lv.draw_buf_create(
