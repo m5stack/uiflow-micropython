@@ -88,16 +88,16 @@ class Launcher:
         AppManager.install_app("UART", AppUart)
         AppManager.install_app("GPIO", AppDummy)
         AppManager.install_app("ADC", AppDummy)
-        AppManager.install_app("EzData", AppEzdata)
-        AppManager.install_app("EzDataSettings", AppEzdataSettings)
+        # AppManager.install_app("EzData", AppEzdata)
+        # AppManager.install_app("EzDataSettings", AppEzdataSettings)
 
         # Create components
         self._status_bar = StatusBar()
         self._app_dock = AppDock()
-        self._ezdata_dock = EzdataDock()
+        # self._ezdata_dock = EzdataDock()
 
         # Start ezdata service
-        Ezdata.start()
+        # Ezdata.start()
 
         # Keep app manager running
         while True:
