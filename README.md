@@ -6,7 +6,7 @@
 
 ```shell
 mkdir uiflow_workspace && cd uiflow_workspace
-git clone -b v5.2.2 https://github.com/espressif/esp-idf.git
+git clone --depth 1 --branch v5.4.1 https://github.com/espressif/esp-idf.git
 git -C esp-idf submodule update --init --recursive
 ./esp-idf/install.sh
 . ./esp-idf/export.sh
@@ -24,7 +24,7 @@ make mpy-cross
 make flash_all
 ```
 
-The default board build the M5STACK_AtomS3 one, You can specify a different board by passing `BOARD=<board>` to the make commands. More BOARD type define is under [m5satck/boards](./m5stack/boards/) path.
+The default board build the M5STACK_AtomS3 one, You can use the `make BOARD=<board> pack_all` command to specify different development boards for compilation. More BOARD type definitions are located in the [m5stack/boards](./m5stack/boards/) path.
 
 More command support, you can check the [Makefile](./m5stack/Makefile).
 
