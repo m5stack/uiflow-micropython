@@ -3,7 +3,10 @@
 # SPDX-License-Identifier: MIT
 
 # Top-level cmake file for building MicroPython on ESP32.
-
+#
+# Note for maintainers: Where possible, functionality should be put into
+# esp32_common.cmake not this file. This is because this CMakeLists.txt file
+# needs to be duplicated for out-of-tree builds, and can easily get out of date.
 cmake_minimum_required(VERSION 3.12)
 
 set(CMAKE_C_FLAGS "-Wno-unused-variable -Wno-unused-but-set-variable")
@@ -18,7 +21,7 @@ set(IDF_VERSION "${IDF_VERSION_MAJOR}.${IDF_VERSION_MINOR}.${IDF_VERSION_PATCH}"
 
 # Set the board if it's not already set.
 if(NOT MICROPY_BOARD)
-    set(MICROPY_BOARD M5STACK_4MB)
+    set(MICROPY_BOARD ESPRESSIF_ESP32_S3_BOX_3)
 endif()
 
 # Set the board directory and check that it exists.
@@ -41,12 +44,6 @@ set(SDKCONFIG ${CMAKE_BINARY_DIR}/sdkconfig)
 
 # Save the manifest file set from the cmake command line.
 set(MICROPY_USER_FROZEN_MANIFEST ${MICROPY_FROZEN_MANIFEST})
-
-# Specific options for IDF v5.2 and later
-set(SDKCONFIG_IDF_VERSION_SPECIFIC "")
-if (IDF_VERSION VERSION_GREATER_EQUAL "5.2.0")
-    set(SDKCONFIG_IDF_VERSION_SPECIFIC boards/sdkconfig.idf52)
-endif()
 
 # Include board config; this is expected to set (among other options):
 # - SDKCONFIG_DEFAULTS
@@ -77,19 +74,19 @@ set(SDKCONFIG_DEFAULTS ${CMAKE_BINARY_DIR}/sdkconfig.combined)
 
 if(BUILD_WITH_LVGL)
     # Include LVGL component, ignore KCONFIG
-    idf_build_set_property(LV_MICROPYTHON 1)
-    idf_build_component(${CMAKE_SOURCE_DIR}/components/lv_bindings/lvgl)
-    idf_build_set_property(COMPILE_DEFINITIONS "-DLV_KCONFIG_IGNORE" APPEND)
-    separate_arguments(LV_CFLAGS_ENV UNIX_COMMAND $ENV{LV_CFLAGS})
-    list(APPEND LV_CFLAGS ${LV_CFLAGS_ENV})
-    idf_build_set_property(COMPILE_DEFINITIONS "${LV_CFLAGS}" APPEND)
+    # idf_build_set_property(LV_MICROPYTHON 1)
+    # idf_build_component(${CMAKE_SOURCE_DIR}/components/lv_bindings/lvgl)
+    # idf_build_set_property(COMPILE_DEFINITIONS "-DLV_KCONFIG_IGNORE" APPEND)
+    # separate_arguments(LV_CFLAGS_ENV UNIX_COMMAND $ENV{LV_CFLAGS})
+    # list(APPEND LV_CFLAGS ${LV_CFLAGS_ENV})
+    # idf_build_set_property(COMPILE_DEFINITIONS "${LV_CFLAGS}" APPEND)
 endif()
 
 # Include main IDF cmake file.
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 
 # Set the location of the main component for the project (one per target).
-list(APPEND EXTRA_COMPONENT_DIRS main_${IDF_TARGET})
+list(APPEND EXTRA_COMPONENT_DIRS main)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/esp32-camera)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/libffi)
 # list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/lv_bindings)
@@ -97,14 +94,8 @@ list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/M5Unified/M5GFX)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/M5Unified/M5Unified)
 list(APPEND EXTRA_COMPONENT_DIRS ./components/BOX3GFX)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/uiflow_utility)
+list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/esp_dmx)
 # list(APPEND EXTRA_COMPONENT_DIRS ./boards)
-
-# Enable the panic handler wrapper
-idf_build_set_property(LINK_OPTIONS "-Wl,--wrap=esp_panic_handler" APPEND)
-
-# Patch LWIP memory pool allocators (see lwip_patch.c)
-idf_build_set_property(LINK_OPTIONS "-Wl,--wrap=memp_malloc" APPEND)
-idf_build_set_property(LINK_OPTIONS "-Wl,--wrap=memp_free" APPEND)
 
 # Define the project.
 project(micropython)
