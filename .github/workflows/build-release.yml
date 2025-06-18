@@ -64,6 +64,7 @@ jobs:
           $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC/uiflow-*-*.bin
           $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS/uiflow-*-*.bin
           $GITHUB_WORKSPACE/m5stack/build-M5STACK_StickC_PLUS2/uiflow-*-*.bin
+          $GITHUB_WORKSPACE/m5stack/build-M5STACK_Tab5/uiflow-*-*.bin
           $GITHUB_WORKSPACE/m5stack/build-M5STACK_Tough/uiflow-*-*.bin
           $GITHUB_WORKSPACE/third-party/build-SEEED_STUDIO_XIAO_ESP32S3/uiflow-*-*.bin
           $GITHUB_WORKSPACE/third-party/build-ESPRESSIF_ESP32_S3_BOX_3/uiflow-*-*.bin

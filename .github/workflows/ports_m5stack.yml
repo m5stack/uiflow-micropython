@@ -90,6 +90,7 @@ jobs:
           - M5STACK_StickC
           - M5STACK_StickC_PLUS
           - M5STACK_StickC_PLUS2
+          - M5STACK_Tab5
           - M5STACK_Tough
       max-parallel: 3
     steps:
