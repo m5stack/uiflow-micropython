@@ -32,7 +32,8 @@ function ci_code_formatting_setup {
 
 function ci_code_formatting_run {
     source .venv/bin/activate
-    tools/codeformat.py -v
+    tools/codeformat.py -v -c -f
+    deactivate
 }
 
 ########################################################################################
@@ -163,7 +164,7 @@ function ci_esp32_idf522_setup {
 function ci_esp32_idf541_setup {
     if [ -d esp-idf ]; then
         echo "esp-idf is already cloned."
-        if [ "$(git -C esp-idf rev-parse --abbrev-ref HEAD)" == "v5.4.1" ]; then
+        if [ "$(git -C esp-idf describe --tags)" == "v5.4.1" ]; then
             echo "esp-idf is on v5.4.1 branch."
             return 0
         else
@@ -233,6 +234,66 @@ function ci_esp32_quick_build {
     make ${MAKEOPTS} -C third-party BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
 
+function ci_unit_build {
+    source esp-idf/export.sh
+    pip install future
+    make ${MAKEOPTS} -C m5stack unpatch
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
+    make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
+}
+
+function ci_module_build {
+    source esp-idf/export.sh
+    pip install future
+    make ${MAKEOPTS} -C m5stack unpatch
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Basic_4MB pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Fire pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Core2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
+    make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
+}
+
+
+function ci_base_build {
+    source esp-idf/export.sh
+    pip install future
+    make ${MAKEOPTS} -C m5stack unpatch
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Lite pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
+    make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
+}
+
+function ci_hat_build {
+    source esp-idf/export.sh
+    pip install future
+    make ${MAKEOPTS} -C m5stack unpatch
+    make ${MAKEOPTS} -C m5stack submodules
+    make ${MAKEOPTS} -C m5stack patch
+    make ${MAKEOPTS} -C m5stack littlefs
+    make ${MAKEOPTS} -C m5stack mpy-cross
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
+    make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
+}
+
+
 function ci_esp32_nightly_build {
     source esp-idf/export.sh
     pip install future
@@ -271,6 +332,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC_PLUS2 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tough pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
     make ${MAKEOPTS} -C third-party BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
