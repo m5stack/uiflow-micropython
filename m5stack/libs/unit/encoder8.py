@@ -181,7 +181,7 @@ class ENCODER8Unit:
             channel >= self._ENCODER_BUTTON_START_REG and channel <= self._ENCODER_BUTTON_END_REG
         ):
             channel = self._ENCODER_BUTTON_START_REG
-        return bool(self.read_reg_data(channel, 1)[0])
+        return self.read_reg_data(channel, 1)[0] == 0
 
     def get_switch_status(self) -> bool:
         """
