@@ -1,22 +1,16 @@
 variables:
-  DEBIAN_FRONTEND: noninteractive  # 设置 DEBIAN_FRONTEND 环境变量
+  DEBIAN_FRONTEND: noninteractive
   ESP_IDF_SRC_DIR: $CI_PROJECT_DIR/esp-idf
 
 cache:
-  key: "$CI_PROJECT_ID-esp-idf-v541"  # 缓存键
+  key: "$CI_PROJECT_ID-esp-idf-v541"
   paths:
     - $ESP_IDF_SRC_DIR
   policy: pull-push
+  when: on_success
 
 stages:
   - code_format
-  - build_uint
-  - build_module
-  - build_base
-  - build_hat
-  - build_cmodules
-  - build_third_party
-  - build_board
   - docs
   - build
   - release
@@ -33,215 +27,13 @@ code-format:
     - git diff --exit-code
   tags:
     - uiflow-firmware
-  only:
-    changes:
-      - ".gitlab-ci.yml"
-      - "m5stack/**"
-      - "examples/**"
-      - "tests/**"
-      - "third-party/**"
-      - "tools/ci.sh"
-
-
-build-uint-and-common-job:
-  stage: build_uint
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_unit_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - "m5stack/libs/driver/**"
-      - "m5stack/libs/unit/**"
-      - "m5stack/libs/bleuart/**"
-      - "m5stack/libs/ezdata/**"
-      - "m5stack/libs/hardware/**"
-      - "m5stack/libs/image_plus/**"
-      - "m5stack/libs/m5espnow/**"
-      - "m5stack/libs/modbus/**"
-      - "m5stack/libs/requests2/**"
-      - "m5stack/libs/umqtt/**"
-      - "m5stack/libs/usb/**"
-      - "m5stack/libs/utility/**"
-      - "m5stack/libs/*.py"
-
-
-build-module-job:
-  stage: build_module
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_module_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - "m5stack/libs/driver/**"
-      - "m5stack/libs/unit/**"
-      - "m5stack/libs/module/**"
-
-
-build-base-job:
-  stage: build_base
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_base_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - "m5stack/libs/driver/**"
-      - "m5stack/libs/unit/**"
-      - "m5stack/libs/base/**"
-
-
-build-hat-job:
-  stage: build_hat
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_hat_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - "m5stack/libs/driver/**"
-      - "m5stack/libs/unit/**"
-      - "m5stack/libs/hat/**"
-
-
-build-cmodules-job:
-  stage: build_cmodules
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_esp32_nightly_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - ".gitlab-ci.yml"
-      - "esp-adf/**"
-      - "m5stack/boards/include/**"
-      - "m5stack/boards/*.txt"
-      - "m5stack/boards/Kconfig"
-      - "m5stack/boards/*.py"
-      - "m5stack/boards/sdkconfig.*"
-      - "m5stack/cmodules/**"
-      - "m5stack/components/**"
-      - "m5stack/fs/**"
-      - "m5stack/include/**"
-      - "m5stack/main/**"
-      - "m5stack/*.c"
-      - "m5stack/*.cpp"
-      - "m5stack/*.h"
-      - "m5stack/*.cmake"
-      - "m5stack/*.csv"
-      - "m5stack/*.txt"
-      - "tools/**"
-
-build-third-party-job:
-  stage: build_third_party
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && ci_esp32_nightly_build
-  artifacts:
-    paths:
-      - m5stack/build-*/uiflow-*-*.bin
-      - third-party/build-*/uiflow-*-*.bin
-  tags:
-    - uiflow-firmware
-  only:
-    changes:
-      - "third-party/**"
-
-
-.def_job_template: &def_job_template
-  stage: build_board
-  script:
-    - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
-    - source tools/ci.sh && ci_esp32_idf541_setup
-    - source tools/ci.sh && source esp-idf/export.sh && pip install future && make -C m5stack submodules && make -C m5stack patch && make -C m5stack littlefs && make -C m5stack mpy-cross && make -C m5stack BOARD=${BOARD} pack_all
-  only:
-    changes:
-      - "m5stack/boards/${BOARD}/**"
-
-
-boards_jobs:
-  parallel:
-    matrix:
-      - BOARD: [
-          "M5STACK_AirQ",
-          "M5STACK_Atom_Echo",
-          "M5STACK_Atom_Lite",
-          "M5STACK_Atom_Matrix",
-          "M5STACK_AtomS3",
-          "M5STACK_AtomS3_Lite",
-          "M5STACK_AtomS3R",
-          "M5STACK_AtomS3R_CAM",
-          "M5STACK_AtomS3U",
-          "M5STACK_AtomU",
-          "M5STACK_Basic",
-          "M5STACK_Capsule",
-          "M5STACK_Cardputer",
-          "M5STACK_Core2",
-          "M5STACK_CoreInk",
-          "M5STACK_CoreS3",
-          "M5STACK_Dial",
-          "M5STACK_DinMeter",
-          "M5STACK_Fire",
-          "M5STACK_NanoC6",
-          "M5STACK_Paper",
-          "M5STACK_PaperS3",
-          "M5STACK_StamPLC",
-          "M5STACK_Stamp_PICO",
-          "M5STACK_StampS3",
-          "M5STACK_Station",
-          "M5STACK_StickC",
-          "M5STACK_StickC_PLUS",
-          "M5STACK_StickC_PLUS2",
-          "M5STACK_Tab5",
-          "M5STACK_Tough"
-        ]
-  extends: .def_job_template
 
 
 build-job:
   stage: build
   script:
     - sudo apt-get update -qy
-    - sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
+    - sudo apt-get install git wget flex bison gperf quilt python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0 -y
     - source tools/ci.sh && ci_esp32_idf541_setup
     - source tools/ci.sh && ci_esp32_nightly_build
   artifacts:
@@ -250,12 +42,6 @@ build-job:
       - third-party/build-*/uiflow-*-*.bin
   tags:
     - uiflow-firmware
-  only:
-    refs:
-      - tags
-    variables:
-      - $CI_COMMIT_TAG =~ /^release\/[0-9]+\.[0-9]+\.[0-9]+$/
-      - $CI_COMMIT_REF_SLUG == "develop_m5things"
 
 
 build-docs:
@@ -274,9 +60,6 @@ build-docs:
       - docs/build/
   tags:
     - uiflow-firmware
-  only:
-    changes:
-      - "docs/**"
 
 
 release_job:
@@ -284,11 +67,7 @@ release_job:
   script:
     - echo "Releasing the M5Burn..."
     - python ./tools/release.py
-  only:
-    refs:
-      - tags
-    variables:
-      - $CI_COMMIT_TAG =~ /^release\/[0-9]+\.[0-9]+\.[0-9]+$/
-      - $CI_COMMIT_REF_SLUG == "develop_m5things"
   tags:
     - uiflow-firmware
+  rules:
+    - if: '$CI_COMMIT_TAG =~ /^release\/[0-9]+\.[0-9]+\.[0-9]+$/ && $CI_COMMIT_REF_SLUG == "develop_m5things"'
