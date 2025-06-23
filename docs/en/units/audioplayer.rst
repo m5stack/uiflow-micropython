@@ -1,7 +1,7 @@
 AudioPlayer Unit
 ==================
 
-.. sku: U197
+.. sku:U197
 
 .. include:: ../refs/unit.audioplayer.ref
 
@@ -10,7 +10,6 @@ This is the driver library of AudioPlayer Unit, which is used to play audio file
 Support the following products:
 
     |AudioPlayer|
-
 
 UiFlow2 Example
 ---------------

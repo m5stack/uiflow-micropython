@@ -1,38 +1,39 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
-from machine import UART
 import sys
 import time
+import machine
 
 if sys.platform != "esp32":
     from typing import Literal
 
 
 class AudioPlayerUnit:
-    def __init__(self, id: Literal[0, 1, 2] = 1, port: list | tuple = None, verbose=False):
-        """Create an AudioPlayerUnit object.
+    """Create an AudioPlayerUnit object.
 
-        :param int id: The UART ID of the device. Default is 1.
-        :param list | tuple port: The UART port of the device.
-        :param bool verbose: The verbose mode of the device. Default is False.
+    :param int id: The UART ID of the device. Default is 2.
+    :param port: The UART port of the device.
+    :type port: list | tuple
+    :param bool verbose: The verbose mode of the device. Default is False.
 
-        UiFlow2 Code Block:
+    UiFlow2 Code Block:
 
-            |init.png|
+        |init.png|
 
-        MicroPython Code Block:
+    MicroPython Code Block:
 
-            .. code-block:: python
+        .. code-block:: python
 
-                from unit import AudioPlayerUnit
+            from unit import AudioPlayerUnit
 
-                audio_player_0 = AudioPlayerUnit(0, port=(33, 32))
-        """
+            audio_player_0 = AudioPlayerUnit(2, port=(33, 32))
+    """
 
-        self.uart = UART(id, tx=port[1], rx=port[0])
+    def __init__(self, id: Literal[0, 1, 2] = 2, port: list | tuple = None, verbose=False):
+        self.uart = machine.UART(id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=8, parity=None, stop=1)
-        self.uart.irq(handler=self._handler, trigger=UART.IRQ_RXIDLE)
+        self.uart.irq(handler=self._handler, trigger=machine.UART.IRQ_RXIDLE)
         self.uart.read()
         self.verbose = verbose
         self.raw_message = ""
