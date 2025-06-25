@@ -20,6 +20,8 @@ package(
         "tab5/launcher/apps/app_ezdata.py",
         "tab5/launcher/apps/app_wifi.py",
         "tab5/launcher/apps/app_uart.py",
+        "tab5/launcher/apps/app_gpio.py",
+        "tab5/launcher/apps/app_adc.py",
         "tab5/launcher/hal.py",
         "tab5/launcher/components/ezdata_dock.py",
         "tab5/launcher/components/status_bar.py",

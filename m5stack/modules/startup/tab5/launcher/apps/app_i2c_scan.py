@@ -3,8 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .app import AppBase
-from ..hal import *
-from ..common import *
+from ..hal import get_hal
 import lvgl as lv
 import asyncio
 
@@ -14,13 +13,11 @@ class AppI2cScan(AppBase):
         get_hal().i2c_init()
 
         img_panel_port_a = lv.image(self.get_app_panel())
-        img_panel_port_a.set_src(get_hal().get_asset_path("utils/i2c_panel_port_a" + IMAGE_SUFFIX))
+        img_panel_port_a.set_src(get_hal().get_asset_path("utils/i2c_panel_port_a.png"))
         img_panel_port_a.align(lv.ALIGN.CENTER, -279, 34)
 
         img_panel_internal = lv.image(self.get_app_panel())
-        img_panel_internal.set_src(
-            get_hal().get_asset_path("utils/i2c_panel_internal" + IMAGE_SUFFIX)
-        )
+        img_panel_internal.set_src(get_hal().get_asset_path("utils/i2c_panel_internal.png"))
         img_panel_internal.align(lv.ALIGN.CENTER, 279, 34)
 
         btn_scan_port_a = lv.button(self.get_app_panel())

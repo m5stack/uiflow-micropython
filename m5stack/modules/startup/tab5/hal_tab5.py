@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 from .launcher import *
-from machine import Pin, I2C, UART, reset, unique_id, SoftI2C
+from machine import Pin, I2C, UART, reset, unique_id, SoftI2C, ADC
 import network
 import esp32
 import time
@@ -33,6 +33,8 @@ class HALTab5(HALBase):
         self._load_network_config_from_nvs()
 
         self._pin_485_de = None
+        self._pin_obj_map = {}
+        self._adc_obj_map = {}
 
     def _load_network_config_from_nvs(self) -> NetworkConfig:
         nvs = esp32.NVS("uiflow")
@@ -240,3 +242,39 @@ class HALTab5(HALBase):
     def reset_ezdata_user_token(self):
         nvs = esp32.NVS("uiflow")
         nvs.set_str("ustoken", "")
+
+    def gpio_init(self, pin: int, mode: int):
+        """
+        mode:
+            0: input
+            1: output
+        """
+        self._pin_obj_map[pin] = Pin(pin, Pin.OUT if mode == 1 else Pin.IN)
+
+    def gpio_set_level(self, pin: int, level: bool):
+        """
+        level:
+            False: low
+            True: high
+        """
+        if pin not in self._pin_obj_map:
+            return
+        self._pin_obj_map[pin].value(level)
+
+    def gpio_deinit(self, pin: int):
+        if pin not in self._pin_obj_map:
+            return
+        del self._pin_obj_map[pin]
+
+    def adc_init(self, pin: int):
+        self._adc_obj_map[pin] = ADC(Pin(pin))
+
+    def adc_deinit(self, pin: int):
+        if pin not in self._adc_obj_map:
+            return
+        del self._adc_obj_map[pin]
+
+    def adc_read(self, pin: int) -> int:
+        if pin not in self._adc_obj_map:
+            return 0
+        return self._adc_obj_map[pin].read()

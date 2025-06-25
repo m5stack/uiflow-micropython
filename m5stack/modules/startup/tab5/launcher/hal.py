@@ -129,6 +129,33 @@ class HALBase:
     def reset_ezdata_user_token(self):
         ...
 
+    def gpio_init(self, pin: int, mode: int):
+        """
+        mode:
+            0: input
+            1: output
+        """
+        ...
+
+    def gpio_set_level(self, pin: int, level: bool):
+        """
+        level:
+            False: low
+            True: high
+        """
+
+    def gpio_deinit(self, pin: int):
+        ...
+
+    def adc_init(self, pin: int):
+        ...
+
+    def adc_deinit(self, pin: int):
+        ...
+
+    def adc_read(self, pin: int) -> int:
+        ...
+
 
 _instance: HALBase = None
 
