@@ -83,11 +83,11 @@ class Launcher:
         # Install apps
         AppManager.install_app("Wifi", AppWifi)
         AppManager.install_app("AppList", AppAppList)
-        # AppManager.install_app("I2CScan", AppI2cScan)
+        AppManager.install_app("I2CScan", AppI2cScan)
         AppManager.install_app("WifiScan", AppWifiScan)
         AppManager.install_app("UART", AppUart)
-        AppManager.install_app("GPIO", AppDummy)
-        AppManager.install_app("ADC", AppDummy)
+        AppManager.install_app("GPIO", AppGpio)
+        AppManager.install_app("ADC", AppAdc)
         # AppManager.install_app("EzData", AppEzdata)
         # AppManager.install_app("EzDataSettings", AppEzdataSettings)
 
