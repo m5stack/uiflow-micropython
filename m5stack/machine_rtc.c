@@ -208,11 +208,31 @@ static mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
         if (tz == NULL) {
             return mp_const_none;
         } else {
+            char *ptr = strchr(tz, '+');
+            if (ptr != NULL) {
+                *ptr = '-';
+            } else {
+                ptr = strchr(tz, '-');
+                if (ptr != NULL) {
+                    *ptr = '+';
+                }
+            }
             return mp_obj_new_str(tz, strlen(tz));
         }
     } else {
-        char tz[64];
-        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[1]));
+        char tz[64] = { 0 };
+        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[0]));
+
+        char *ptr = strchr(tz, '-');
+        if (ptr != NULL) {
+            *ptr = '+';
+        } else {
+            ptr = strchr(tz, '+');
+            if (ptr != NULL) {
+                *ptr = '-';
+            }
+        }
+
         setenv("TZ", tz, 1);
         tzset();
 

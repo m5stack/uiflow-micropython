@@ -100,7 +100,7 @@ Functions
 
     This is inverse function of localtime. It's argument is a full 8-tuple
     which expresses a time as per localtime. It returns an integer which is
-    the number of seconds since Jan 1, 2000.
+    the number of seconds since Jan 1, 1970.
 
     UIFLOW2:
 

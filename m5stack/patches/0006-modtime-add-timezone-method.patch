@@ -118,7 +118,7 @@ Index: micropython/ports/esp32/modtime.c
      struct timeval tv;
      gettimeofday(&tv, NULL);
      timeutils_struct_time_t tm;
-@@ -56,3 +95,36 @@ static mp_obj_t mp_time_time_get(void) {
+@@ -56,3 +95,46 @@ static mp_obj_t mp_time_time_get(void) {
      gettimeofday(&tv, NULL);
      return mp_obj_new_int(tv.tv_sec);
  }
@@ -129,23 +129,33 @@ Index: micropython/ports/esp32/modtime.c
 +        if (tz == NULL) {
 +            return mp_const_none;
 +        } else {
++            char *ptr = strchr(tz, '+');
++            if (ptr != NULL) {
++                *ptr = '-';
++            } else {
++                ptr = strchr(tz, '-');
++                if (ptr != NULL) {
++                    *ptr = '+';
++                }
++            }
 +            return mp_obj_new_str(tz, strlen(tz));
 +        }
 +    } else {
-+        char tz[64];
++        char tz[64] = { 0 };
 +        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[0]));
++
++        char *ptr = strchr(tz, '-');
++        if (ptr != NULL) {
++            *ptr = '+';
++        } else {
++            ptr = strchr(tz, '+');
++            if (ptr != NULL) {
++                *ptr = '-';
++            }
++        }
++
 +        setenv("TZ", tz, 1);
 +        tzset();
-+
-+        time_t now;
-+        char strftime_buf[64];
-+        struct tm timeinfo;
-+
-+        time(&now);
-+
-+        localtime_r(&now, &timeinfo);
-+        strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
-+        ESP_LOGE("time", "The current date/time in Shanghai is: %s", strftime_buf);
 +
 +        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
 +        return mp_const_none;
