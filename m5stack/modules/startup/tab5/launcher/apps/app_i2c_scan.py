@@ -16,9 +16,9 @@ class AppI2cScan(AppBase):
         img_panel_port_a.set_src(get_hal().get_asset_path("utils/i2c_panel_port_a.png"))
         img_panel_port_a.align(lv.ALIGN.CENTER, -279, 34)
 
-        img_panel_internal = lv.image(self.get_app_panel())
-        img_panel_internal.set_src(get_hal().get_asset_path("utils/i2c_panel_internal.png"))
-        img_panel_internal.align(lv.ALIGN.CENTER, 279, 34)
+        # img_panel_internal = lv.image(self.get_app_panel())
+        # img_panel_internal.set_src(get_hal().get_asset_path("utils/i2c_panel_internal.png"))
+        # img_panel_internal.align(lv.ALIGN.CENTER, 279, 34)
 
         btn_scan_port_a = lv.button(self.get_app_panel())
         btn_scan_port_a.set_size(260, 54)
@@ -33,18 +33,18 @@ class AppI2cScan(AppBase):
         btn_label_port_a.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
         btn_label_port_a.set_style_text_color(lv.color_hex(0x373737), lv.PART.MAIN)
 
-        btn_scan_internal = lv.button(self.get_app_panel())
-        btn_scan_internal.set_size(260, 54)
-        btn_scan_internal.align(lv.ALIGN.CENTER, 279, -158)
-        btn_scan_internal.set_style_bg_color(lv.color_hex(0xFFD733), lv.PART.MAIN)
-        btn_scan_internal.set_style_shadow_width(0, lv.PART.MAIN)
-        btn_scan_internal.add_event_cb(self._handle_scan_internal, lv.EVENT.CLICKED, None)
+        # btn_scan_internal = lv.button(self.get_app_panel())
+        # btn_scan_internal.set_size(260, 54)
+        # btn_scan_internal.align(lv.ALIGN.CENTER, 279, -158)
+        # btn_scan_internal.set_style_bg_color(lv.color_hex(0xFFD733), lv.PART.MAIN)
+        # btn_scan_internal.set_style_shadow_width(0, lv.PART.MAIN)
+        # btn_scan_internal.add_event_cb(self._handle_scan_internal, lv.EVENT.CLICKED, None)
 
-        btn_label_internal = lv.label(btn_scan_internal)
-        btn_label_internal.set_text("SCAN  INTERNAL")
-        btn_label_internal.align(lv.ALIGN.CENTER, 0, 0)
-        btn_label_internal.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
-        btn_label_internal.set_style_text_color(lv.color_hex(0x373737), lv.PART.MAIN)
+        # btn_label_internal = lv.label(btn_scan_internal)
+        # btn_label_internal.set_text("SCAN  INTERNAL")
+        # btn_label_internal.align(lv.ALIGN.CENTER, 0, 0)
+        # btn_label_internal.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
+        # btn_label_internal.set_style_text_color(lv.color_hex(0x373737), lv.PART.MAIN)
 
         self._addr_labels_port_a: list[lv.label] = []
         self._addr_labels_internal: list[lv.label] = []
