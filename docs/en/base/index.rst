@@ -12,6 +12,7 @@ Base
     atom_gps.rst
     display.rst
     echo.rst
+    gpsv2.rst
     hdriver.rst
     motion.rst
     pwm.rst

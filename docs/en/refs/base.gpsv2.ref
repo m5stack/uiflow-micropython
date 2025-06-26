@@ -1,0 +1,35 @@
+..  |Atom GPS Base v2.0| image:: https://static-cdn.m5stack.com/resource/docs/products/atom/atom_can/atom_can_01.webp
+    :target: https://docs.m5stack.com/en/atom/atom_can
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/init.png
+.. |set_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/set_work_mode.png
+.. |get_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_work_mode.png
+.. |get_antenna_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_antenna_state.png
+.. |get_gps_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_gps_time.png
+.. |get_gps_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_gps_date.png
+.. |get_gps_date_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_gps_date_time.png
+.. |get_timestamp.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_timestamp.png
+.. |get_latitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_latitude.png
+.. |get_longitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_longitude.png
+.. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_altitude.png
+.. |get_satellite_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_satellite_num.png
+.. |get_pos_quality.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_pos_quality.png
+.. |get_course_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_course_over_ground.png
+.. |get_speed_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_speed_over_ground.png
+.. |set_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/set_time_zone.png
+.. |get_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/get_time_zone.png
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/deinit.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/base/gps_v2/example.png
+
+.. |base_gpsv2_atom_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/base/gpsv2/base_gpsv2_atom_example.m5f2"
+        target="_blank"
+    >
+        base_gpsv2_atom_example.m5f2
+    </a>
+
