@@ -13,6 +13,7 @@ package(
         "dtu_lorawan_rui3.py",
         "dtu_nbiot.py",
         "echo.py",
+        "gpsv2.py",
         "hdriver.py",
         "motion.py",
         "pwm.py",

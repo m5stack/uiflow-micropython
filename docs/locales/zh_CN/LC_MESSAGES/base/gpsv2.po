@@ -1,0 +1,510 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-26 10:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/base/gpsv2.rst:2 123adce5f48f4239ba7ee9c12839e921
+msgid "Atomic GPS Base v2.0"
+msgstr ""
+
+#: ../../en/base/gpsv2.rst:8 4b1277338d98479794f0d9955303186c
+msgid ""
+"This is the driver library for the Atomic GPS Base v2.0, which is used to"
+" get the GPS data."
+msgstr "该库用于获取Atom GPS Base v2.0的GPS数据。"
+
+#: ../../en/base/gpsv2.rst:10 913e6c2512454c7aa7b2205e82f907f6
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/gpsv2.rst:12 123adce5f48f4239ba7ee9c12839e921
+msgid "|Atom GPS Base v2.0|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref 1683783b265f45318b3558b3b068983d
+msgid "Atom GPS Base v2.0"
+msgstr ""
+
+#: ../../en/base/gpsv2.rst:15 e4b3bf989e4245cb88396525a8cbcc26
+msgid "UiFlow2 Example"
+msgstr "UiFlow2示例"
+
+#: ../../en/base/gpsv2.rst:18 ../../en/base/gpsv2.rst:37
+#: bfba1e425c6e494ca68d515dceea6276
+msgid "get GPS data"
+msgstr "获取GPS数据"
+
+#: ../../en/base/gpsv2.rst:20 82b8562361934e3091a9d05e1266598e
+msgid "Open the |base_gpsv2_atom_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开 |base_gpsv2_atom_example.m5f2| 项目。"
+
+#: ../../en/base/gpsv2.rst:22 ../../en/base/gpsv2.rst:39
+#: 12fa607e2bc748c8933f7a1af037f2a4
+msgid ""
+"This example demonstrates how to get the GPS data using Atomic GPS Base "
+"v2.0."
+msgstr "该示例演示了如何使用Atomic GPS Base v2.0获取GPS数据。"
+
+#: ../../en/base/gpsv2.rst:24 driver.atgm336h.ATGM336H.deinit:3
+#: driver.atgm336h.ATGM336H.get_altitude:6
+#: driver.atgm336h.ATGM336H.get_course_over_ground:6
+#: driver.atgm336h.ATGM336H.get_gps_date:6
+#: driver.atgm336h.ATGM336H.get_gps_date_time:6
+#: driver.atgm336h.ATGM336H.get_gps_time:6
+#: driver.atgm336h.ATGM336H.get_latitude:6
+#: driver.atgm336h.ATGM336H.get_longitude:6
+#: driver.atgm336h.ATGM336H.get_pos_quality:6
+#: driver.atgm336h.ATGM336H.get_satellite_num:6
+#: driver.atgm336h.ATGM336H.get_speed_over_ground:6
+#: driver.atgm336h.ATGM336H.get_time_zone:6
+#: driver.atgm336h.ATGM336H.get_timestamp:6
+#: driver.atgm336h.ATGM336H.get_work_mode:6
+#: driver.atgm336h.ATGM336H.set_time_zone:5
+#: driver.atgm336h.ATGM336H.set_work_mode:5 e8381c785a5541798bc2f21846022f74 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2代码块："
+
+#: ../../en/base/gpsv2.rst:26 f39ee44efc3047b5b5a5df849778f26b
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:25 81744794dabc46799313e568337e4a18
+msgid "example.png"
+msgstr ""
+
+#: ../../en/base/gpsv2.rst:28 ../../en/base/gpsv2.rst:47
+#: 3065fe0132774410b034efcdab21ebf8
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/base/gpsv2.rst:30 ../../en/base/gpsv2.rst:49
+#: 292d13c718644630b6e7884f34c552c0
+msgid "None"
+msgstr ""
+
+#: ../../en/base/gpsv2.rst:34 872da499e9c14dcea58624da6c248d16
+msgid "MicroPython Example"
+msgstr "MicroPython示例"
+
+#: ../../en/base/gpsv2.rst:41 82b2389723594dc1b7d13b39529e2f38
+#: base.gpsv2.AtomicGPSV2Base:12 driver.atgm336h.ATGM336H:9
+#: driver.atgm336h.ATGM336H.deinit:7 driver.atgm336h.ATGM336H.get_altitude:10
+#: driver.atgm336h.ATGM336H.get_antenna_state:6
+#: driver.atgm336h.ATGM336H.get_course_over_ground:10
+#: driver.atgm336h.ATGM336H.get_gps_date:10
+#: driver.atgm336h.ATGM336H.get_gps_date_time:10
+#: driver.atgm336h.ATGM336H.get_gps_time:10
+#: driver.atgm336h.ATGM336H.get_latitude:10
+#: driver.atgm336h.ATGM336H.get_longitude:10
+#: driver.atgm336h.ATGM336H.get_pos_quality:10
+#: driver.atgm336h.ATGM336H.get_satellite_num:10
+#: driver.atgm336h.ATGM336H.get_speed_over_ground:10
+#: driver.atgm336h.ATGM336H.get_time_zone:10
+#: driver.atgm336h.ATGM336H.get_timestamp:10
+#: driver.atgm336h.ATGM336H.get_work_mode:10
+#: driver.atgm336h.ATGM336H.set_time_zone:9
+#: driver.atgm336h.ATGM336H.set_work_mode:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython代码块："
+
+#: ../../en/base/gpsv2.rst:53 a98e9b0688d94dd8b02338037bcd7ac7
+msgid "**API**"
+msgstr ""
+
+#: ../../en/base/gpsv2.rst:56 60e796c11291454f85290626cc648667
+msgid "AtomicGPSV2Base"
+msgstr ""
+
+#: base.gpsv2.AtomicGPSV2Base:1 bd88175e25c74a9cb07282afb90eb03f of
+msgid "Bases: :py:class:`~driver.atgm336h.ATGM336H`"
+msgstr ""
+
+#: base.gpsv2.AtomicGPSV2Base:1 ef2f98608b024173a3df0c6c6e4d5152 of
+msgid "Create an AtomicGPSV2Base object."
+msgstr "创建一个AtomicGPSV2Base对象。"
+
+#: ../../en/base/gpsv2.rst 225dfa09367847b2904875ab873d066b
+#: base.gpsv2.AtomicGPSV2Base driver.atgm336h.ATGM336H.set_time_zone
+#: driver.atgm336h.ATGM336H.set_work_mode of
+msgid "Parameters"
+msgstr "参数"
+
+#: 3daea53ce1c04d50ad05224d51874821 base.gpsv2.AtomicGPSV2Base:3
+#: driver.atgm336h.ATGM336H:3 of
+msgid "The UART ID for communication with the GPS module. It can be 1, or 2."
+msgstr "与GPS模块通信的UART ID。可以是1或2。"
+
+#: base.gpsv2.AtomicGPSV2Base:4 fe2c21d1a5c84ab6a48775c0451815a5 of
+msgid "A list or tuple containing the TX and RX pins for UART communication."
+msgstr "包含TX和RX引脚的列表或元组，用于UART通信。"
+
+#: base.gpsv2.AtomicGPSV2Base:6 driver.atgm336h.ATGM336H:7
+#: f3d1cd36e0e24156b7eac87f789ac400 of
+msgid "Whether to print verbose output."
+msgstr "是否打印详细输出。"
+
+#: 8f4d6a8b98e242118ac98c44bbdc9cf2 base.gpsv2.AtomicGPSV2Base:8 of
+msgid "UIFlow Code Block:"
+msgstr "UIFlow代码块："
+
+#: 82cc40a472c8495b9edb606243216319 base.gpsv2.AtomicGPSV2Base:10 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:6 e5d46299c5ea48f78e2697c6b4c28007
+msgid "init.png"
+msgstr ""
+
+#: 153b704dbdc0472b992a77fa0aaf7e00 driver.atgm336h.ATGM336H:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 6fd4f69cc70b42d2980e85e9b9fa7c0b driver.atgm336h.ATGM336H:1 of
+msgid "Create an ATGM336H object."
+msgstr "创建一个ATGM336H对象。"
+
+#: a33b25595ddc4887a4c8c14cd288249e driver.atgm336h.ATGM336H:4 of
+msgid "The TX pin is the pin that sends data to the GPS module."
+msgstr "TX引脚是发送数据到GPS模块的引脚。"
+
+#: driver.atgm336h.ATGM336H:5 ebce545999f247d8beb4856eb47068f9 of
+msgid "The RX pin is the pin that receives data from the GPS module."
+msgstr "RX引脚是接收来自GPS模块的数据的引脚。"
+
+#: driver.atgm336h.ATGM336H:6 f3d89f0f7bf14007b4ce707e9e0f062f of
+msgid "The PPS pin is the pin that receives the PPS signal from the GPS module."
+msgstr "PPS引脚是接收来自GPS模块的PPS信号的引脚。"
+
+#: 964508e9954e41908cd1a81bef7cd54d driver.atgm336h.ATGM336H.set_work_mode:1 of
+msgid "Set the working mode of the GPS module."
+msgstr "设置GPS模块的工作模式。"
+
+#: 595091db3fe840ff9e0b17278084cc8f driver.atgm336h.ATGM336H.set_work_mode:3 of
+msgid "The mode to set, defined by the GPS module."
+msgstr "要设置的模式，由GPS模块定义。"
+
+#: dac12dc2f32d4c28abd558e7517d7950 driver.atgm336h.ATGM336H.set_work_mode:7 of
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:7 5a22caf99f81488a8c422d43eb73a819
+msgid "set_work_mode.png"
+msgstr ""
+
+#: driver.atgm336h.ATGM336H.get_work_mode:1 e737b25794494910a833b9ba9e31ef00 of
+msgid "Get the current working mode of the GPS module."
+msgstr "获取当前GPS模块的工作模式。"
+
+#: c1cec223e74b42f988ae43e22661f95b driver.atgm336h.ATGM336H.get_altitude
+#: driver.atgm336h.ATGM336H.get_antenna_state
+#: driver.atgm336h.ATGM336H.get_course_over_ground
+#: driver.atgm336h.ATGM336H.get_gps_date
+#: driver.atgm336h.ATGM336H.get_gps_date_time
+#: driver.atgm336h.ATGM336H.get_gps_time driver.atgm336h.ATGM336H.get_latitude
+#: driver.atgm336h.ATGM336H.get_longitude
+#: driver.atgm336h.ATGM336H.get_pos_quality
+#: driver.atgm336h.ATGM336H.get_satellite_num
+#: driver.atgm336h.ATGM336H.get_speed_over_ground
+#: driver.atgm336h.ATGM336H.get_time_zone
+#: driver.atgm336h.ATGM336H.get_timestamp
+#: driver.atgm336h.ATGM336H.get_work_mode of
+msgid "Returns"
+msgstr "返回"
+
+#: 1398c3f577da44ed9be9b83f84dad3c8 driver.atgm336h.ATGM336H.get_work_mode:3 of
+msgid "The current working mode of the GPS module."
+msgstr "当前GPS模块的工作模式。"
+
+#: 49a7f809e1ba480fababa9704b2f12a9 driver.atgm336h.ATGM336H.get_altitude
+#: driver.atgm336h.ATGM336H.get_antenna_state
+#: driver.atgm336h.ATGM336H.get_course_over_ground
+#: driver.atgm336h.ATGM336H.get_gps_date
+#: driver.atgm336h.ATGM336H.get_gps_date_time
+#: driver.atgm336h.ATGM336H.get_gps_time driver.atgm336h.ATGM336H.get_latitude
+#: driver.atgm336h.ATGM336H.get_longitude
+#: driver.atgm336h.ATGM336H.get_pos_quality
+#: driver.atgm336h.ATGM336H.get_satellite_num
+#: driver.atgm336h.ATGM336H.get_speed_over_ground
+#: driver.atgm336h.ATGM336H.get_time_zone
+#: driver.atgm336h.ATGM336H.get_timestamp
+#: driver.atgm336h.ATGM336H.get_work_mode of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 9c5e676b7d90434684bfde3942235912 driver.atgm336h.ATGM336H.get_work_mode:8 of
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:8 6b0fb2bdee734caa872106bb1c84ad4a
+msgid "get_work_mode.png"
+msgstr ""
+
+#: c61c0282681e4a91bf30880700da978e
+#: driver.atgm336h.ATGM336H.get_antenna_state:1 of
+msgid "Get the state of the antenna."
+msgstr "获取天线状态。"
+
+#: bc89c10b86894c96921ac823fc208d0c
+#: driver.atgm336h.ATGM336H.get_antenna_state:3 of
+msgid "The antenna state."
+msgstr "天线状态。"
+
+#: d7d1021fbe024ce8a1a3a26c94b5df1d driver.atgm336h.ATGM336H.get_gps_time:1 of
+msgid "Get the current GPS time."
+msgstr "获取当前GPS时间。"
+
+#: 1f456aeddfa34b6f8e4517a7a05804a6 driver.atgm336h.ATGM336H.get_gps_time:3 of
+msgid "The GPS time as a list of strings [hour, minute, second]."
+msgstr "GPS时间作为字符串列表[小时，分钟，秒]。"
+
+#: c88cda92c1514cc1bec4a16d4f9971ab driver.atgm336h.ATGM336H.get_gps_time:8 of
+msgid "|get_gps_time.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:10 9c06c5f63b7244e98d5260cb75914e66
+msgid "get_gps_time.png"
+msgstr ""
+
+#: de620385033e47a097e990684729a4a7 driver.atgm336h.ATGM336H.get_gps_date:1 of
+msgid "Get the current GPS date."
+msgstr "获取当前GPS日期。"
+
+#: b5a0984ddb3b4c7bad066cc4edf48671 driver.atgm336h.ATGM336H.get_gps_date:3 of
+msgid "The GPS date as a list of strings [day, month, year]."
+msgstr "GPS日期作为字符串列表[日，月，年]。"
+
+#: 11eeba1802d547f4b5ef6270ef81d10f driver.atgm336h.ATGM336H.get_gps_date:8 of
+msgid "|get_gps_date.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:11 9e8eec9f29944ed48689d8f89138018c
+msgid "get_gps_date.png"
+msgstr ""
+
+#: driver.atgm336h.ATGM336H.get_gps_date_time:1
+#: f57e6e21b7b64ebe86504ead9bf81774 of
+msgid "Get the current GPS date and time combined."
+msgstr "获取当前GPS日期和时间组合。"
+
+#: ce021a306d0344ea9bc3aac4b1b24a28
+#: driver.atgm336h.ATGM336H.get_gps_date_time:3 of
+msgid ""
+"The GPS date and time as a list of strings [year, month, day, hour, "
+"minute, second]."
+msgstr "GPS日期和时间作为字符串列表[年，月，日，小时，分钟，秒]。"
+
+#: 64fcd5e3f2f843749dfbbdb436acba5a
+#: driver.atgm336h.ATGM336H.get_gps_date_time:8 of
+msgid "|get_gps_date_time.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:12 dabee3252b99430ebc512b92d13efa35
+msgid "get_gps_date_time.png"
+msgstr ""
+
+#: 23f41b33283d4f77b0de6941e358f1d3 driver.atgm336h.ATGM336H.get_timestamp:1 of
+msgid "Get the timestamp of the current GPS time."
+msgstr "获取当前GPS时间的时间戳。"
+
+#: d1e43cae1dc849b0b7254b29e1a92f1d driver.atgm336h.ATGM336H.get_timestamp:3 of
+msgid "The timestamp representing the current GPS time."
+msgstr "表示当前GPS时间的时间戳。"
+
+#: 7478014646b2438093eb713dc787b79b driver.atgm336h.ATGM336H.get_timestamp:8 of
+msgid "|get_timestamp.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:13 263814b2a83f49f6a2491e80ecb78290
+msgid "get_timestamp.png"
+msgstr ""
+
+#: 44b8864fec2941a8ad74164ea6796462 driver.atgm336h.ATGM336H.get_latitude:1 of
+msgid "Get the current latitude."
+msgstr "获取当前纬度。"
+
+#: bbce4630e86048d8bac5eb4f5338097a driver.atgm336h.ATGM336H.get_latitude:3 of
+msgid "The current latitude in string format."
+msgstr "当前纬度作为字符串格式。"
+
+#: 7b3f48ed105f4c158e9067525591f42b driver.atgm336h.ATGM336H.get_latitude:8 of
+msgid "|get_latitude.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:14 c10a6fc0f6a3450f9d89905174e515b2
+msgid "get_latitude.png"
+msgstr ""
+
+#: 6af07c582e9740c7bfe2d8dc45ee7201 driver.atgm336h.ATGM336H.get_longitude:1 of
+msgid "Get the current longitude."
+msgstr "获取当前经度。"
+
+#: 7b72f25a72a2432a9880ede72979667f driver.atgm336h.ATGM336H.get_longitude:3 of
+msgid "The current longitude in string format."
+msgstr "当前经度作为字符串格式。"
+
+#: 70d3b691881c4f4b8c39b3842edb1b59 driver.atgm336h.ATGM336H.get_longitude:8 of
+msgid "|get_longitude.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:15 08ca7258eef54be88181d5075c6138ca
+msgid "get_longitude.png"
+msgstr ""
+
+#: 1defe2265a9d40d6b21a708273431047 driver.atgm336h.ATGM336H.get_altitude:1 of
+msgid "Get the current altitude."
+msgstr "获取当前海拔高度。"
+
+#: driver.atgm336h.ATGM336H.get_altitude:3 fa8a91a88d1841e981b132a5dc4c245b of
+msgid "The current altitude in string format."
+msgstr "当前海拔高度作为字符串格式。"
+
+#: 1eeba883ef5845f7bc4c348c13b2eeb0 driver.atgm336h.ATGM336H.get_altitude:8 of
+msgid "|get_altitude.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:16 aaf60307b0134cd78d75ae652e8eb81a
+msgid "get_altitude.png"
+msgstr ""
+
+#: ad7393c8d23448789d5916e8515030c1
+#: driver.atgm336h.ATGM336H.get_satellite_num:1 of
+msgid "Get the number of satellites used for positioning."
+msgstr "获取用于定位的卫星数量。"
+
+#: 62f084fc2bcd492283a3a9ff1e580958
+#: driver.atgm336h.ATGM336H.get_satellite_num:3 of
+msgid "The number of satellites."
+msgstr "卫星数量。"
+
+#: 28b921cb3b5645739310867de3c78384
+#: driver.atgm336h.ATGM336H.get_satellite_num:8 of
+msgid "|get_satellite_num.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:17 f1d7799b2b19489ab4a1f0f2e02de5fd
+msgid "get_satellite_num.png"
+msgstr ""
+
+#: a4eb512e3b224c329b574f7a260bdfd5 driver.atgm336h.ATGM336H.get_pos_quality:1
+#: of
+msgid "Get the quality of the GPS position."
+msgstr "获取GPS位置的质量。"
+
+#: driver.atgm336h.ATGM336H.get_pos_quality:3 f81e1bd623e84a039c9eed4eb3e32713
+#: of
+msgid "The position quality indicator."
+msgstr "位置质量。"
+
+#: 9045afbc8a5c487d872204c09ceef187 driver.atgm336h.ATGM336H.get_pos_quality:8
+#: of
+msgid "|get_pos_quality.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:18 72c715f188a54677872460822fd1c842
+msgid "get_pos_quality.png"
+msgstr ""
+
+#: 0f8267e1bdb34dc4a752bc18979779ee
+#: driver.atgm336h.ATGM336H.get_course_over_ground:1 of
+msgid "Get the course over ground (COG)."
+msgstr "获取航向角（COG）。"
+
+#: driver.atgm336h.ATGM336H.get_course_over_ground:3
+#: f0d897d38c5f43e087a73c7b7087bd7b of
+msgid "The course over ground in degrees."
+msgstr "航向角（COG）以度为单位。"
+
+#: driver.atgm336h.ATGM336H.get_course_over_ground:8
+#: e1c86b68c7b241efb94bc4b0ec6fa23e of
+msgid "|get_course_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:19 0538c973872b486eb15bbb7b03a0f081
+msgid "get_course_over_ground.png"
+msgstr ""
+
+#: 45065bafe5b646dda665429ec6ee7de4
+#: driver.atgm336h.ATGM336H.get_speed_over_ground:1 of
+msgid "Get the speed over ground (SOG)."
+msgstr "获取地面速度（SOG）。"
+
+#: 5c24f03884f74219af99f122af730e12
+#: driver.atgm336h.ATGM336H.get_speed_over_ground:3 of
+msgid "The speed over ground in knots."
+msgstr "地面速度（SOG）以节为单位。"
+
+#: 589432a2dbe64444b07ccd6388a980a4
+#: driver.atgm336h.ATGM336H.get_speed_over_ground:8 of
+msgid "|get_speed_over_ground.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:20 17baf2dc71ff45c6a1efbe4a5e3ff0a2
+msgid "get_speed_over_ground.png"
+msgstr ""
+
+#: driver.atgm336h.ATGM336H.set_time_zone:1 f95e2688779743ed993da7d27817c7f7 of
+msgid "Set the time zone offset for the GPS time."
+msgstr "设置GPS时间的时间区偏移。"
+
+#: 79d45ff6b37f43ccbcd7e21aa8e88755 driver.atgm336h.ATGM336H.set_time_zone:3 of
+msgid "The time zone offset value to set."
+msgstr "要设置的时间区偏移值。"
+
+#: 15f33217382a4b0089c44dbfdf1ff192 driver.atgm336h.ATGM336H.set_time_zone:7 of
+msgid "|set_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:21 5b4e69277c824f3580a220e504ba298c
+msgid "set_time_zone.png"
+msgstr ""
+
+#: 0f160ed49e904118bdefe4bc4a3d59b3 driver.atgm336h.ATGM336H.get_time_zone:1 of
+msgid "Get the current time zone offset."
+msgstr "获取当前时间区偏移。"
+
+#: 658b3b772c174fb1a4657d86aaa26161 driver.atgm336h.ATGM336H.get_time_zone:3 of
+msgid "The current time zone offset."
+msgstr "当前时间区偏移。"
+
+#: 5484c54f8b60433ba03d11b04b398b71 driver.atgm336h.ATGM336H.get_time_zone:8 of
+msgid "|get_time_zone.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:22 d8ab83b809024691b039ee164d64b300
+msgid "get_time_zone.png"
+msgstr ""
+
+#: driver.atgm336h.ATGM336H.deinit:1 eb919356acff4d2f81d57d8482f6f3bf of
+msgid ""
+"Deinitialize the GPS unit, stopping any running tasks and releasing "
+"resources."
+msgstr "取消初始化GPS单元，停止任何正在运行的任务并释放资源。"
+
+#: 68e814ddd5f4496dbf06d8f54b2a6a81 driver.atgm336h.ATGM336H.deinit:5 of
+msgid "|deinit.png|"
+msgstr ""
+
+#: ../../en/refs/base.gpsv2.ref:23 f10da922c87648be991a9c6392179e5c
+msgid "deinit.png"
+msgstr ""
+
+#~ msgid "The UART ID for communication with the GPS module. It can be 1 or 2."
+#~ msgstr "与GPS模块通信的UART ID。可以是1或2。"
+

@@ -14,6 +14,7 @@ _attrs = {
     "AtomicHDriverBase": "hdriver",
     "Motion": "motion",
     "MotionBase": "motion",
+    "AtomicGPSV2Base": "gpsv2",
     "AtomicPWMBase": "pwm",
     "AtomicQRCodeBase": "qrcode",
     "AtomicQRCode2Base": "qrcode2",
