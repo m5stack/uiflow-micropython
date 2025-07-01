@@ -6,30 +6,38 @@ import lvgl as lv
 import sys
 import lv_utils
 
+_event_loop_instance = None
+
 
 def _sdl_init(width=320, height=240):
+    global _event_loop_instance
+
     lv.init()
 
     # Create an event loop and Register SDL display/mouse/keyboard drivers.
-    from lv_utils import event_loop
+    if _event_loop_instance is None:
+        from lv_utils import event_loop
 
-    event_loop = event_loop()
+        _event_loop_instance = event_loop()
 
-    disp_drv = lv.sdl_window_create(width, height)
-    disp_drv.set_default()
-    display = lv.display_get_default()
+        disp_drv = lv.sdl_window_create(width, height)
+        disp_drv.set_default()
+        display = lv.display_get_default()
 
-    group = lv.group_create()
-    group.set_default()
+        group = lv.group_create()
+        group.set_default()
 
-    mouse = lv.sdl_mouse_create()
-    mouse.set_display(display)
-    mouse.set_group(group)
+        mouse = lv.sdl_mouse_create()
+        mouse.set_display(display)
+        mouse.set_group(group)
 
-    keyboard = lv.sdl_keyboard_create()
-    keyboard.set_display(display)
-    keyboard.set_group(group)
-    print("SDL initialized with display size:", width, "x", height)
+        keyboard = lv.sdl_keyboard_create()
+        keyboard.set_display(display)
+        keyboard.set_group(group)
+        print("SDL initialized with display size:", width, "x", height)
+
+    else:
+        print("Event loop already running, skip creating new one")
 
 
 def _m5_init():
