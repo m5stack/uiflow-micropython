@@ -67,7 +67,7 @@ def _m5_init():
 def init():
     if sys.platform == "esp32":
         _m5_init()
-    elif sys.platform == "linux":
+    elif sys.platform in ["linux", "darwin"]:
         _sdl_init()
 
 
