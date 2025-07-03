@@ -1,0 +1,600 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-10 15:18+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/bar.rst:4 ../../en/m5ui/bar.rst:56
+#: 7f771fcb87084bac9a6eea3b4b0fc21a c8c828b36f94489a9af2e5c2c8e9e5ff
+msgid "M5Bar"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:8 b75806c51a5a43f786305a9f04cf6df9
+msgid ""
+"M5Bar is a widget that can be used to create progress bars in the user "
+"interface. It displays values within a specified range using a visual bar"
+" indicator. The bar can be customized with different colors, gradients, "
+"and can optionally display the current value as text."
+msgstr "M5Bar 是一个可用于在用户界面中创建进度条的小部件。它使用可视的进度条指示器显示指定范围内的值。进度条可以自定义颜色和渐变，并可选择将当前值显示为文本。"
+
+#: ../../en/m5ui/bar.rst:15 b89c5c05f8454f98a7371da10b8ec8f7
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/bar.rst:18 ../../en/m5ui/bar.rst:37
+#: 174807f6e07d4172915c78450159023f 3fb0fb22c3004f1fa9a6dd826df6219c
+msgid "Temperature meter"
+msgstr "温度计"
+
+#: ../../en/m5ui/bar.rst:20 c819a01a2f2742d1bbf8789e8afc7f40
+msgid "Open the |cores3_temperature_meter_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_temperature_meter_example.m5f2| 项目。"
+
+#: ../../en/m5ui/bar.rst:22 ../../en/m5ui/bar.rst:39
+#: 77f74d45d33f41068a01de256cf8f488 80e2845f0534430195a48a6ca98790c1
+msgid ""
+"This example demonstrates how to create a temperature meter that shows "
+"the current temperature."
+msgstr "此示例演示如何创建显示当前温度的温度计。"
+
+#: ../../en/m5ui/bar.rst:24 ../../en/m5ui/bar.rst:69 ../../en/m5ui/bar.rst:86
+#: ../../en/m5ui/bar.rst:104 ../../en/m5ui/bar.rst:121
+#: ../../en/m5ui/bar.rst:138 ../../en/m5ui/bar.rst:156
+#: ../../en/m5ui/bar.rst:173 ../../en/m5ui/bar.rst:191
+#: ../../en/m5ui/bar.rst:208 ../../en/m5ui/bar.rst:227
+#: ../../en/m5ui/bar.rst:253 ../../en/m5ui/bar.rst:274
+#: ../../en/m5ui/bar.rst:291 ../../en/m5ui/bar.rst:308
+#: ../../en/m5ui/bar.rst:326 ../../en/m5ui/bar.rst:343
+#: ../../en/m5ui/bar.rst:360 ../../en/m5ui/bar.rst:377
+#: ../../en/m5ui/bar.rst:394 ../../en/m5ui/bar.rst:414
+#: 14ac9fa1e91e488383a31ae1d34dae20 1f0de37df98542e28caef97aa28e6364
+#: 213e1a83fc9b44bd8cd6bf20bb68c5f2 2144611aa8dc443bb695a40009f91493
+#: 216f886babc64ef896a1a56769a1242c 244f4dfdcc014bca88c507eb801bcc00
+#: 3931f0577c7446c3bb6b6377e3966b40 3a07c1d5e22c4878baae1cc01105b6a7
+#: 437b6bc5eb5344449ecf04d10910960e 478cd6a60e8e488998da3f11fd3ddd1d
+#: 4f37b4e566854e0f8a8de9c9d9270ba5 648b9ce044d249ab855ef27a31e99b56
+#: 78ee2b2c82534de7b649b00826c38c02 90710ded42aa4ec2970a669b17d77326
+#: 93321cbed4194be48e35cb45156526ea a10d1928441f46f0adb55613d78b3cd7
+#: ad91355943ef4ac09682f8c0e9e42bad adfa1c7167d04a369d3c336d48a887cc
+#: b97b34aff371428fb3a7cc0bc89197cf c9cc0df6c9204bcabada5cc0e745053e
+#: d429dac87cc9441381efd739bc4ac6c8 ec83dbd0bb684dd28e03556fee46d5bc
+#: m5ui.bar.M5Bar:16 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/bar.rst:26 31520ecab446475a924e1d91f225ec17
+msgid "|cores3_temperature_meter_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:2 7e5b345f6b0d44809c14ee408d03aae4
+msgid "cores3_temperature_meter_example.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:28 ../../en/m5ui/bar.rst:47
+#: 94f4454f5ce748909df2ed88e3941d38 ed9641031be844109a8c06a565822756
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/bar.rst:30 ../../en/m5ui/bar.rst:49 ../../en/m5ui/bar.rst:67
+#: ../../en/m5ui/bar.rst:102 ../../en/m5ui/bar.rst:154
+#: ../../en/m5ui/bar.rst:171 ../../en/m5ui/bar.rst:189
+#: ../../en/m5ui/bar.rst:206 ../../en/m5ui/bar.rst:225
+#: ../../en/m5ui/bar.rst:251 ../../en/m5ui/bar.rst:272
+#: ../../en/m5ui/bar.rst:289 ../../en/m5ui/bar.rst:306
+#: ../../en/m5ui/bar.rst:324 ../../en/m5ui/bar.rst:341
+#: ../../en/m5ui/bar.rst:375 ../../en/m5ui/bar.rst:412
+#: 0ca8eba8a17c4207878e579f25ef0700 204d8f6f61b64bcc80bbe7ae7aee9631
+#: 27cc25d97d004a41a43955719fc75ffb 297be05ae3964366ae770d1ee26faecb
+#: 3214bc11b81a43f38cf9df7d8284b7b1 433de50f69e9492e871b02485bb8411b
+#: 4f00519b771e48ada81d06dcf6e23bc2 6c7a87b03375443bbdff1d6281e75672
+#: 7f3f3541d8134354b3c607fb0f861257 8cb523c0edb543a391c99b5c499b24ee
+#: b8be6ba4db5c43f69bae787d04835a02 bb8ec1a30fe14e9b85b3bc99dd6a541f
+#: c393bb592fed40b19e1e2a1bff4b3a55 d3c511eb0cd54a4081abe72da8a5234e
+#: d89ca01810a140beac528898e85f03b9 df788af995914b43baa7b74348d1ebc3
+#: e9ac69efd9ab4343a8e34ef7ab74cb3d f1216f832303499ea6083cd6bfe1cf3d
+#: f8aea44dd3a44f45ab70e583e2ac1740 m5ui.bar.M5Bar:14 m5ui.bar.M5Bar:18 of
+msgid "None"
+msgstr "无"
+
+#: ../../en/m5ui/bar.rst:34 c27dad8b2e684f8da26aed08ac6d228b
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/bar.rst:41 ../../en/m5ui/bar.rst:73 ../../en/m5ui/bar.rst:90
+#: ../../en/m5ui/bar.rst:108 ../../en/m5ui/bar.rst:125
+#: ../../en/m5ui/bar.rst:142 ../../en/m5ui/bar.rst:160
+#: ../../en/m5ui/bar.rst:177 ../../en/m5ui/bar.rst:195
+#: ../../en/m5ui/bar.rst:212 ../../en/m5ui/bar.rst:233
+#: ../../en/m5ui/bar.rst:259 ../../en/m5ui/bar.rst:278
+#: ../../en/m5ui/bar.rst:295 ../../en/m5ui/bar.rst:312
+#: ../../en/m5ui/bar.rst:330 ../../en/m5ui/bar.rst:347
+#: ../../en/m5ui/bar.rst:364 ../../en/m5ui/bar.rst:381
+#: ../../en/m5ui/bar.rst:398 ../../en/m5ui/bar.rst:418
+#: 08784b5e7069434580c9bbf118474958 0eddefb61c80440d80fe011b40b1605e
+#: 164b02e035df47febc9e55fd15a3e69c 540654f5955744fc95607b8e4bf8da33
+#: 5a4b78c2068743e5af033b9f3b533505 5ac86e81d0514f4586890612e777fb0f
+#: 6305bc868d614659b0362a24686da030 6ea40e4c51f441dba52e973acc4a38ea
+#: 73e56632f8e54f06aeedbdf64766ffcd 7fb393b8eb194ff6b6143bad8e16a25f
+#: 8399f2c72b4445b5b92545967e5d0070 8c6a27fe8bfb45bca58f558d3de76e81
+#: 8dee58fb46774200a7ed2685742a93a9 8ecd12417431453b917cc9d83b953173
+#: 9ebd85f5d1354d9697eeafc8d903a174 a5ca9b8b04bc4fb4ba4ef7010741871d
+#: aa46d40fbbf84b2f956b2e0f52878857 ad5c50a8df8746d69da713442ab14c92
+#: e6e680531f704d8682de0412cef9a13f ea4be4d4a84c47d4986b03230987eb29
+#: ee22d3e0fb2944638b83ce13a414707d eee6e0676cd6412099d0f1d05eacbf27
+#: m5ui.bar.M5Bar:20 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/bar.rst:53 1d8c4aabec064dc694caa6bcb636895c
+msgid "**API**"
+msgstr "API参考"
+
+#: 8d9307f940fa45e5ac0dad32f2366b8a m5ui.bar.M5Bar:1 of
+msgid "Bases: :py:class:`~lvgl.bar`"
+msgstr ""
+
+#: be3f0ba04f0d449f940029b2b538c3e8 m5ui.bar.M5Bar:1 of
+msgid "Initialize a new M5Bar widget."
+msgstr "初始化一个新的 M5Bar 控件。"
+
+#: ../../en/m5ui/bar.rst 145ca7d74d924234b21129b90d62e79e
+#: 26aa351b5319488293f0eee287396238 33bac1292aee41379f98a07d43b5a60a
+#: 4b64e689f3f8442a9f71ffec20a75db9 59cd565babf3489d8e3f7c0bbc607326
+#: 5f0d8bf067924020a0636f1f365e4b9d 8ade1f7f708a4c3c8899830acf609a5c
+#: 9cbda461fb0a400ca4e28cc8af3f6b0c c4c4eb32b8044aa3a6089737bffc4a21
+#: ccdadc171bb449338519f8c69d729263 cf5d3dabf008488c8e4bd84d34963a89
+#: d2e778f8c7cd450abf4a19d0d1354d9c eb548c0ce102431d8401ff5833e0f918
+#: ee70107f933e408cb863adb2f855acc1 f1504ee437a842b79fcdf9cb0d7cd976
+#: f2011de4cdf747a0a133bcf66c055802
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:270 ../../en/m5ui/bar.rst:288
+#: 164dd15eed5f4385bb9c693e237e37fb 7cd8f9f8029748c6933663addd422a4f
+#: d1f23ea8b8eb46b7a468365bf8c16b02 m5ui.bar.M5Bar:3 of
+msgid "The x-coordinate of the bar."
+msgstr "进度条的 x 坐标。"
+
+#: ../../en/m5ui/bar.rst:271 ../../en/m5ui/bar.rst:305
+#: 00f2a11d23514f068eb8ab14180d6856 fb7aec40157541bc9ea96cf42c53a17e
+#: fd34d9295d714870a6da89f9e30000bf m5ui.bar.M5Bar:4 of
+msgid "The y-coordinate of the bar."
+msgstr "进度条的 y 坐标。"
+
+#: ../../en/m5ui/bar.rst:322 ../../en/m5ui/bar.rst:340
+#: ../../en/m5ui/bar.rst:357 3666c46a9d5943e99cd99cd942e393e1
+#: 8118cb7186ac4b388265a65ebf62f604 ba930568309542e581e194d6324fea12
+#: d67f117acc384521aea36ddf5d6eca0e m5ui.bar.M5Bar:5 of
+msgid "The width of the bar."
+msgstr "进度条的宽度。"
+
+#: ../../en/m5ui/bar.rst:323 ../../en/m5ui/bar.rst:374
+#: ../../en/m5ui/bar.rst:391 11dd1ed3125e41a6a6932dfd18d5912b
+#: 37ee989d281546c2a7b6d4571d382c79 46835a835f754d12b90a53bb3af20a56
+#: ad5c944449c04d4f81ce458123d52e5b m5ui.bar.M5Bar:6 of
+msgid "The height of the bar."
+msgstr "进度条的高度。"
+
+#: 64d7be847f4d4fadb01a7277ac71f15d m5ui.bar.M5Bar:7 of
+msgid "The minimum value of the bar range."
+msgstr "进度条的最小值。"
+
+#: ff3244b1145c4088bb57b8172c4aa0f0 m5ui.bar.M5Bar:8 of
+msgid "The maximum value of the bar range."
+msgstr "进度条的最大值。"
+
+#: 7a1a8d5c270542fda7d500d0719b6500 m5ui.bar.M5Bar:9 of
+msgid "The initial value of the bar."
+msgstr "进度条的初始值。"
+
+#: 533639e76a5d489a98d7b3c6b72ff1f4 m5ui.bar.M5Bar:10 of
+msgid "Whether to display the current value as text."
+msgstr "是否显示当前值为文本。"
+
+#: b080c0ef91264098a7993de26ed6148b m5ui.bar.M5Bar:11 of
+msgid "The background color of the bar."
+msgstr "进度条的背景颜色。"
+
+#: b2435ed2028942199c155f717e237a32 m5ui.bar.M5Bar:12 of
+msgid "The indicator color of the bar."
+msgstr "进度条的指示颜色。"
+
+#: 8cadb4469dea4d47815f584eb80f8700 m5ui.bar.M5Bar:13 of
+msgid "The parent object. If None, uses the active screen."
+msgstr "父对象。如果为 None，则使用当前活动屏幕。"
+
+#: ../../en/m5ui/bar.rst 055a258a435645d7a4282c6f0985084e
+#: 09fe6b888b5c4fd9a7aa8a6a02c703a6 10423ca070f64b13b988c72d4838433c
+#: 3a8dd1e3e0a84a15aa777ff2a1b9d4b4 72590f94dda147909351b27001257bb4
+#: 7594099ca9804698a134ca63edf5191a 7b3e886d18bc4bb0ab255087f9b43c3d
+#: 7d0cfcadc35f4e7d8f63001eb8b7d48d 87b1aef05cac41f7802f550b7b3d2ddc
+#: 8bb8217766694b56995a8051f844b563 a22d0335fd9343829e585e18ed58c077
+#: a6638eed66b841cc83e83b6de63aecc7 ad9d373d167b422f8c6c66a1fb1a937a
+#: b0b72a2dbb9e44e595f8dc601ec17cba c04f315892b74a189ee4fd06f2a9465e
+#: c6f95a608e884a51b4198b885bf4d5cf cb03530ab2754748bc48a49505cd73fc
+#: dcab1cd5edcd4b699f7770d1db292762 e4731f3bb6244eff861ed3db9274de3b
+#: e76927a053524a099a08e6c472c6102c ec63bb6f0a0b4dfbb527b3d34bd71425
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:63 a26c0f00a5384c1fa7ba1316c05888b8
+msgid "Set the current value of the bar."
+msgstr "设置进度条的当前值。"
+
+#: ../../en/m5ui/bar.rst:65 026cc487113c4692b9b6072fd262ec06
+msgid "The value to set."
+msgstr "要设置的值。"
+
+#: ../../en/m5ui/bar.rst:66 0d10ef56bbbf4724a6ac737b317e0201
+msgid "Whether to enable animation when changing the value."
+msgstr "更改值时是否启用动画。"
+
+#: ../../en/m5ui/bar.rst:71 99b6f2b6a4d94073aee3275082eaf0cd
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:22 8f2dc4bf9dc9483cb6a4477434b15328
+msgid "set_value.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:81 5f3fd4d9a8b8462eb10a85af98364029
+msgid "Get the current value of the bar."
+msgstr "获取进度条的当前值。"
+
+#: ../../en/m5ui/bar.rst:83 93ef3cce9d71450e9104776491ccf84b
+msgid "The current value of the bar."
+msgstr "进度条的当前值。"
+
+#: ../../en/m5ui/bar.rst 3272eac0258447f6adb55a8685f24b43
+#: 4a81aa357fbc4253aa456c415ff666b1 af319c1c979c4badb2ac71532f5a20e3
+#: f695c4b514e14589af6068e6dbe65106 fd79c73f09de4847bdbdc2746fe5388b
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:88 9cbe4e71f9784cb59144b09777bc4488
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:8 a4dcc407ee844a4f9a78df8a9906fc24
+msgid "get_value.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:98 69ff705e9fa140b48e435d19c555d513
+msgid "Set the value range of the bar."
+msgstr "设置进度条的取值范围。"
+
+#: ../../en/m5ui/bar.rst:100 ../../en/m5ui/bar.rst:118
+#: 7336fc209ae6491688de6e7beb5b874a d6e7763d3efe4df7aab75d325a1f0dcc
+msgid "The minimum value."
+msgstr "最小值。"
+
+#: ../../en/m5ui/bar.rst:101 ../../en/m5ui/bar.rst:135
+#: 15d143df95974311974fad7e0e471e26 311c11e8fa1b4fe29bd64d372ce4275a
+msgid "The maximum value."
+msgstr "最大值。"
+
+#: ../../en/m5ui/bar.rst:106 56f1eefd3acf405ea6da8e75249b6d85
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:18 7c0decce764a4563bfc7216cdee38377
+msgid "set_range.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:116 f98412f8b8ed4ddebbcbb72887a099b9
+msgid "Get the minimum value of the bar range."
+msgstr "获取进度条范围的最小值。"
+
+#: ../../en/m5ui/bar.rst:123 e50ef2ee7a89494688db13892af74dd1
+msgid "|get_min_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:7 84d0f6e77ae04fcc828ec0560958a8f6
+msgid "get_min_value.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:133 78c29afb767c4511b4ce57d772ad19c1
+msgid "Get the maximum value of the bar range."
+msgstr "获取进度条范围的最大值。"
+
+#: ../../en/m5ui/bar.rst:140 2a526261edb341d59f8f5611e289e886
+msgid "|get_max_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:6 dee0777e465d45198a46c6eec20dbc12
+msgid "get_max_value.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:150 2ab744b2691b4ab9bcf40cbc5462d8d1
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置一个标志。如果 `value` 为 True，则添加该标志；如果 `value` 为 False，则移除该标志。"
+
+#: ../../en/m5ui/bar.rst:152 49ba704b1bfd4909838d3f6ac1af5e52
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/bar.rst:153 8287b052e9f8443a95217eedce87ad7b
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "为 True 时添加标志，为 False 时移除标志。"
+
+#: ../../en/m5ui/bar.rst:158 d9b3d58861604f728e4bd525a592c6e8
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:12 82f522b7d12f45b3b7437f5c49a7c1fc
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:168 98ccb53404c6446eb92c21fdc6b14eea
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果设置了标志，则移除该标志；如果未设置，则添加该标志。"
+
+#: ../../en/m5ui/bar.rst:170 f44afeaeb7e04ee2b610e01f455b6ecc
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/bar.rst:175 5293c96d15bb498fbc3ef204a3db5267
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:26 1927f8fa11fc4b0e9f11e89e327d0bb0
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:185 c64af2fa67094727a8ef7b3f3f7d6a71
+msgid ""
+"Set the state of the bar. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置栏的状态。如果 ``value`` 为 True，则设置状态；如果为 False，则取消设置状态。"
+
+#: ../../en/m5ui/bar.rst:187 bbc928f4c42146c29600d1d6c5da7978
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/bar.rst:188 ba275bba9319467ab6bd1a6f5907c2e1
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "为 True 时设置状态，为 False 时取消状态。"
+
+#: ../../en/m5ui/bar.rst:193 9ef39f71537343399e45c2216eec3e6c
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:20 9dc42f7fdde94da18c4639cd6b24197a
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:203 fae83d9fbf0b48f0aa43974c76cc52ab
+msgid ""
+"Toggle the state of the bar. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换栏的状态。如果状态已设置，则取消设置；如果未设置，则设置状态。"
+
+#: ../../en/m5ui/bar.rst:205 107792307de246f2ac359375c8e53a8a
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/bar.rst:210 af8884b3fb85437bb5bc7a7a3002d7fb
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:27 ab5588f78861434c9762357a7dc5da05
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:220 dbe8dfd00c8a479cb5068e7b272e7b02
+msgid "Set the background color of the bar."
+msgstr "设置进度条的背景颜色。"
+
+#: ../../en/m5ui/bar.rst:222 d83dccd4f842456eaadb0ec5c4d6b954
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/bar.rst:223 4cd6bccc5ee144c9b4e22f8961397951
+msgid "The opacity of the color."
+msgstr "颜色的不透明度。"
+
+#: ../../en/m5ui/bar.rst:224 ../../en/m5ui/bar.rst:250
+#: 4165dc6969d84335a5d9e2d4bdfa7d21 ecf0b902ae8347649ad85c47aca43341
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "应用样式的对象部分（如 lv.PART.MAIN）。"
+
+#: ../../en/m5ui/bar.rst:229 22fd1e59f1284c619e68dc242dff9a4f
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:10 c8d814f30f014d3c812f564cf142a5b3
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:231 9399030983334b3abe8464494e5f1a2c
+msgid "|set_indicator_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:14 fcf14bf155334566850217f79003b9e3
+msgid "set_indicator_color.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:243 d9607fa6dabe4718a0b55ff0c42ee68e
+msgid "Set the background gradient color of the bar."
+msgstr "设置条形的背景渐变颜色。"
+
+#: ../../en/m5ui/bar.rst:245 51ebffc391114bbcb7b182f6fd127735
+msgid "The start color of the gradient, can be an integer (RGB)."
+msgstr "渐变起始颜色，可为整数（RGB）。"
+
+#: ../../en/m5ui/bar.rst:246 11f496c2becb435aae103f5b3f2cc66d
+msgid "The opacity of the start color (0-255)."
+msgstr "起始颜色的不透明度（0-255）。"
+
+#: ../../en/m5ui/bar.rst:247 0dcb72bc434c47d2861e8a567eb35178
+msgid "The end color of the gradient, can be an integer (RGB)."
+msgstr "渐变结束颜色，可为整数（RGB）。"
+
+#: ../../en/m5ui/bar.rst:248 7a44867769c946eba66f53338d30876e
+msgid "The opacity of the end color (0-255)."
+msgstr "结束颜色的不透明度（0-255）。"
+
+#: ../../en/m5ui/bar.rst:249 bbf11cac35804e50b8f8d017b846d42a
+msgid "The direction of the gradient (e.g., lv.GRAD_DIR.VER)."
+msgstr "渐变方向（如 lv.GRAD_DIR.VER）。"
+
+#: ../../en/m5ui/bar.rst:255 b30dda6dafc5450192400f6a8a3b311c
+msgid "|set_bg_grad_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:11 585b7013e6cb4d269a1405ea9beae8c3
+msgid "set_bg_grad_color.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:257 08f4be66631b442da0d3fc1a367fa16a
+msgid "|set_indicator_grad_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:15 39862841462d4845be5e9770b2f2132d
+msgid "set_indicator_grad_color.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:268 68a8b368c16841cb9bdf25acc8e949aa
+msgid "Set the position of the bar."
+msgstr "设置进度条的位置。"
+
+#: ../../en/m5ui/bar.rst:276 8e8838cbbc4345f09bd043637f6c830f
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:17 5fce0bd13f4048f2a89f4fe8f5d1c7dc
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:286 2f935295985141269c4c64a9676769c2
+msgid "Set the x-coordinate of the bar."
+msgstr "设置进度条的 x 坐标。"
+
+#: ../../en/m5ui/bar.rst:293 f1772cc014194baf80a6911aba133392
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:24 3fa11891cc954ac6974d3f191ef20013
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:303 c2f5080babea4946aa462ef3014040fd
+msgid "Set the y-coordinate of the bar."
+msgstr "设置进度条的 y 坐标。"
+
+#: ../../en/m5ui/bar.rst:310 89c7facd984a438b8278a46c2adeaca8
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:25 4cb505a6103c4a8cb99f9b687e193173
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:320 9f5f88c6ae064fc4ab63a3f589ce37c5
+msgid "Set the size of the bar."
+msgstr "设置进度条的尺寸。"
+
+#: ../../en/m5ui/bar.rst:328 37ae60e7cf1a4010bf506c908ae7b301
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:19 95b90447734644f3827446d8b9b89cb7
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:338 9a8094dc4c024f6d95b30cad6a984ad7
+msgid "Set the width of the bar."
+msgstr "设置进度条的宽度。"
+
+#: ../../en/m5ui/bar.rst:345 d592f13be05c4240aef740077520b1b7
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:23 2f3f2bcf5c4545dea91299e46da76541
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:355 3d8150fa907d445c89f0f3f81bdaaf4a
+msgid "Get the width of the bar."
+msgstr "获取进度条的宽度。"
+
+#: ../../en/m5ui/bar.rst:362 e61bb573a2034f5fb3934759b688e02c
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:9 0a10f9112dc64edaabccf24251bcbc12
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:372 295ebb87c8bc4e6cbe66097f936cafdb
+msgid "Set the height of the bar."
+msgstr "设置进度条的高度。"
+
+#: ../../en/m5ui/bar.rst:379 a3cb26fcbcd54aa1a9c32c2ff8c11a2d
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:13 6c7fd9568c8b415d9a275f000a3366da
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:389 0f98b40f4f874dd6b010e2b145053be3
+msgid "Get the height of the bar."
+msgstr "获取进度条的高度。"
+
+#: ../../en/m5ui/bar.rst:396 4feeacdbc6f748b2b5fa8a43b458d06e
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:5 0ac3da9d56bb491da8c11cd3ab7bd606
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/bar.rst:406 54a31861257a42e08a7d911c753c3714
+msgid "Align the bar to another object."
+msgstr "将进度条对齐到另一个对象。"
+
+#: ../../en/m5ui/bar.rst:408 7737f638857d435aacc870b89a635aaf
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/bar.rst:409 75c8bcde02d0468e91785e1220bf52ea
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/bar.rst:410 f8d27f510bbc4e25929465b5bf256cc7
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/bar.rst:411 b66efc2f013747a5b7a9a95a232006cb
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/bar.rst:416 5911ff92b57443fe948865668ac95f81
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.bar.ref:4 b79ded96728041f5bbc5d461f25a7a09
+msgid "align_to.png"
+msgstr ""
+

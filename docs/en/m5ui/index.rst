@@ -37,3 +37,4 @@ Classes
     button.rst
     switch.rst
     image.rst
+    bar.rst
