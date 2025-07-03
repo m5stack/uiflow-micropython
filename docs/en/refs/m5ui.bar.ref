@@ -1,0 +1,36 @@
+
+.. |cores3_temperature_meter_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/cores3_temperature_meter_example.png
+
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/align_to.png
+.. |get_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/get_height.png
+.. |get_max_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/get_max_value.png
+.. |get_min_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/get_min_value.png
+.. |get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/get_value.png
+.. |get_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/get_width.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_bg_color.png
+.. |set_bg_grad_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_bg_grad_color.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_flag.png
+.. |set_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_height.png
+.. |set_indicator_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_indicator_color.png
+.. |set_indicator_grad_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_indicator_grad_color.png
+.. |set_indicator_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_indicator_radius.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_pos.png
+.. |set_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_range.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_size.png
+.. |set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_state.png
+.. |set_style_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_style_radius.png
+.. |set_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_value.png
+.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_width.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/set_y.png
+.. |toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/toggle_flag.png
+.. |toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/bar/toggle_state.png
+
+.. |cores3_temperature_meter_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/bar/cores3_temperature_meter_example.m5f2"
+        target="_blank"
+    >
+        cores3_temperature_meter_example.m5f2
+    </a>

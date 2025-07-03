@@ -1,0 +1,112 @@
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
+from .base import M5Base
+import lvgl as lv
+import time
+
+
+class M5Bar(lv.bar):
+    """Initialize a new M5Bar widget.
+
+    :param int x: The x-coordinate of the bar.
+    :param int y: The y-coordinate of the bar.
+    :param int w: The width of the bar.
+    :param int h: The height of the bar.
+    :param int min_value: The minimum value of the bar range.
+    :param int max_value: The maximum value of the bar range.
+    :param int value: The initial value of the bar.
+    :param bool is_show_value: Whether to display the current value as text.
+    :param int bg_c: The background color of the bar.
+    :param int color: The indicator color of the bar.
+    :param lv.obj parent: The parent object. If None, uses the active screen.
+    :return: None
+
+    UiFlow2 Code Block:
+
+        None
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            bar = M5Bar(x=50, y=50, w=200, h=30, min_value=0, max_value=100, value=50)
+    """
+
+    def __init__(
+        self,
+        x=0,
+        y=0,
+        w=100,
+        h=20,
+        min_value=0,
+        max_value=100,
+        value=25,
+        is_show_value=False,
+        bg_c=0x2193F3,
+        color=0x2193F3,
+        parent=None,
+    ):
+        if parent is None:
+            parent = lv.screen_active()
+        super().__init__(parent)
+
+        self.set_pos(x, y)
+        self.set_size(w, h)
+        self.set_range(min_value, max_value)
+        self.set_bg_color(
+            bg_c, 51, lv.PART.MAIN | lv.STATE.DEFAULT
+        )  # default opacity is 51 (20% opacity)
+        self.set_bg_color(color, lv.OPA.COVER, lv.PART.INDICATOR | lv.STATE.DEFAULT)
+        self.set_value(value, True)
+
+        if is_show_value:
+            self.add_event_cb(self._draw_cb, lv.EVENT.DRAW_MAIN_END, None)
+
+    def _draw_cb(self, event_struct):
+        label_dsc = lv.draw_label_dsc_t()
+        label_dsc.init()
+        label_dsc.font = lv.font_get_default()
+
+        txt_size = lv.point_t()
+        lv.text_get_size(
+            txt_size,
+            f"{self.get_value()}",
+            label_dsc.font,
+            label_dsc.letter_space,
+            label_dsc.line_space,
+            lv.COORD.MAX,
+            label_dsc.flag,
+        )
+
+        txt_area = lv.area_t()
+        txt_area.x1 = 0
+        txt_area.x2 = txt_size.x - 1
+        txt_area.y1 = 0
+        txt_area.y2 = txt_size.y - 1
+
+        indic_area = lv.area_t()
+        self.get_coords(indic_area)
+        indic_area.set_width(indic_area.get_width() * self.get_value() // self.get_max_value())
+
+        if indic_area.get_width() > (txt_size.x + 20):
+            print("Indicator area is large enough to display text")
+            indic_area.align(txt_area, lv.ALIGN.RIGHT_MID, -10, 0)
+            label_dsc.color = lv.color_hex(0xFFFFFF)
+        else:
+            print("Indicator area is too small to display text")
+            indic_area.align(txt_area, lv.ALIGN.OUT_RIGHT_MID, 10, 0)
+            label_dsc.color = lv.color_hex(0x000000)
+
+        label_dsc.text = f"{self.get_value()}"
+        label_dsc.text_local = True
+        lv.draw_label(event_struct.get_layer(), label_dsc, txt_area)
+
+    def __getattr__(self, name):
+        if hasattr(M5Base, name):
+            method = getattr(M5Base, name)
+            bound_method = lambda *args, **kwargs: method(self, *args, **kwargs)
+            setattr(self, name, bound_method)
+            return bound_method
+        raise AttributeError(f"'{self.__class__.__name__}' object has no attribute '{name}'")
