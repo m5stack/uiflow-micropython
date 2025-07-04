@@ -65,7 +65,7 @@ autodoc_mock_imports = [
 autodoc_default_options = {
     "members": "",
     "show-inheritance": "",
-    "members-order": "bysource",
+    "member-order": "bysource",
 }
 
 autodoc_typehints = "description"
