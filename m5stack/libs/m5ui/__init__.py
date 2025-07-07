@@ -8,6 +8,7 @@ _attrs = {
     "M5Button": "button",
     "M5Label": "label",
     "M5Page": "page",
+    "M5Switch": "switch",
 }
 
 

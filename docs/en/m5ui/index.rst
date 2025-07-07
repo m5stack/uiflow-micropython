@@ -35,3 +35,4 @@ Classes
     page.rst
     label.rst
     button.rst
+    switch.rst
