@@ -56,13 +56,13 @@ class DevApp(app_base.AppBase):
 
         self._mac_label = widgets.Label(
             "aabbcc112233",
-            20,
+            12,
             140,
             w=120,
-            h=15,
+            h=20,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._mac_label.set_text(self._mac_text)
 
@@ -74,7 +74,7 @@ class DevApp(app_base.AppBase):
             h=40,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
-            font="/system/common/font/Montserrat-Medium-18.vlw",
+            font="/system/common/font/Montserrat-Medium-16.vlw",
         )
         self._account_label.set_text(self._account_text)
 
