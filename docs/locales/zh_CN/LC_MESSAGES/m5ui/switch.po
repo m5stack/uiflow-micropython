@@ -1,0 +1,427 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-07 15:19+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/switch.rst:4 ../../en/m5ui/switch.rst:52
+#: 144bc5926f274852891e514d61248e3a ae69ec18e8ce453f82020a7bca0a60ae
+msgid "M5Switch"
+msgstr "M5Switch"
+
+#: ../../en/m5ui/switch.rst:8 e8120d01253541799205e70886cf651c
+msgid ""
+"M5Switch is a widget that can be used to create switch in the user "
+"interface. It can be used to trigger actions when checked and uncheked."
+msgstr "M5Switch 是一个用于在用户界面中创建开关的控件，可在开关被选中或取消选中时触发操作。"
+
+#: ../../en/m5ui/switch.rst:11 f843eaaab08f469c9ef7ddaadb0becbf
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/switch.rst:14 ../../en/m5ui/switch.rst:33
+#: 2eca1caa159b40b9a53b95f440339b52 4414bd7ae42e4df3959743bda4f06854
+msgid "event switch"
+msgstr "开关事件"
+
+#: ../../en/m5ui/switch.rst:16 5ba93c2b354a469dbee81beeb00233bd
+msgid "Open the |cores3_switch_event_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:18 ../../en/m5ui/switch.rst:35
+#: 3a42e2385da54548872aed34038cb4b3 3a6f5a1a1b5540e8bd4badc40fda7273
+msgid ""
+"This example creates a switch that triggers an event when checked and "
+"uncheked."
+msgstr "本示例创建了一个开关，当其被选中或取消选中时会触发事件。"
+
+#: ../../en/m5ui/switch.rst:20 ../../en/m5ui/switch.rst:67
+#: ../../en/m5ui/switch.rst:92 ../../en/m5ui/switch.rst:110
+#: ../../en/m5ui/switch.rst:128 ../../en/m5ui/switch.rst:145
+#: ../../en/m5ui/switch.rst:162 ../../en/m5ui/switch.rst:180
+#: ../../en/m5ui/switch.rst:197 ../../en/m5ui/switch.rst:231
+#: ../../en/m5ui/switch.rst:268 ../../en/m5ui/switch.rst:287
+#: 01853a4cbb4540d28d2e9c0116600706 0424f6afa3d94c2b9a16a657e5fbcd98
+#: 075e1d03e602404dab1c47d841573cc4 0c511725339b4c88956dbbf665ec8ed7
+#: 523a444188304789a4a2b7829047c253 560b835a4c2b457ca0200e7c32cb5299
+#: 57a5453538c049baa1c363abe2782504 5c3b65d3ea1442b89884c105a9976607
+#: 7bf3eb87bacc48a7af4256d85f13270a c86121c5cd78401f958e2972312c751a
+#: e24286979f504e6cb2a9354f850c0150 eddf23c9ab414b77b52527029f3ee734
+#: f44dce660e114656b0a3aeca192ceb7b m5ui.switch.M5Switch:12 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/switch.rst:22 de5619fd24684366a0772f1d8984930a
+msgid "|cores3_switch_event_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:16 6302fd9454dc45528989cd6abc3cd7dc
+msgid "cores3_switch_event_example.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:24 ../../en/m5ui/switch.rst:43
+#: 7e5a1fd5134f43afb64fcbbd603ca1a3 f6c6674aa1dc48559f37e66e5025f109
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/switch.rst:26 ../../en/m5ui/switch.rst:45
+#: ../../en/m5ui/switch.rst:65 ../../en/m5ui/switch.rst:90
+#: ../../en/m5ui/switch.rst:126 ../../en/m5ui/switch.rst:143
+#: ../../en/m5ui/switch.rst:160 ../../en/m5ui/switch.rst:178
+#: ../../en/m5ui/switch.rst:195 ../../en/m5ui/switch.rst:229
+#: ../../en/m5ui/switch.rst:266 ../../en/m5ui/switch.rst:285
+#: 01cc6ec217bc4efbb82226f78ac9bddb 03aeffdcaa344a47bf570030b3469427
+#: 309c4b1717d442389b488f246ef27ff9 3b2660d27b534e1c97e95b54a25c75ea
+#: 4d15aba6ee1f46c7869b39a27fb8e4ae 804dcbd5cdee482c86d0092bdbc4cf25
+#: 865aea79a85743c5af0b9316bcc85f4d a40dd4c82038497ea28f7df84f405e71
+#: b8257793d81449af8eba30888d4a2515 d107e8b8bcf1443bb9ddff4461d723dc
+#: e7a968d5a98f440d9d5ae784f4aa6464 e857ad3f16ab47179a71a2d61d8322bf
+#: f9355921e11748d7a567d8c07712d6dd m5ui.switch.M5Switch:14 of
+msgid "None"
+msgstr "无"
+
+#: ../../en/m5ui/switch.rst:30 95cab63deb5f4d5f85b0c9fb9092e3bb
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/switch.rst:37 ../../en/m5ui/switch.rst:77
+#: ../../en/m5ui/switch.rst:96 ../../en/m5ui/switch.rst:114
+#: ../../en/m5ui/switch.rst:132 ../../en/m5ui/switch.rst:149
+#: ../../en/m5ui/switch.rst:166 ../../en/m5ui/switch.rst:184
+#: ../../en/m5ui/switch.rst:201 ../../en/m5ui/switch.rst:235
+#: ../../en/m5ui/switch.rst:272 ../../en/m5ui/switch.rst:291
+#: 193f872f16f54b128e61bd26461c7ce4 5c7cc888c53e4c55804777194a38f2f4
+#: 5cdbf26f3a2743a6ba7e42b375cce3f2 5e4f7f1e39b44e99a55326cd5dabd386
+#: 760e8bab26be42e7b6f833be20c13321 7e9e3519808d41d9a7845f9a056c362c
+#: 863f402a224a4f9cadabc85cfc1a763d a9edb27db62543fd8c0886e50d56cada
+#: c136c379f3094a32b3f4eec45da6f436 daf2a6adb2624020886a5ac49dfd4076
+#: e233e2611a9546d69b6fd9aa0578b1db eef2013d30ff4b199587cfa0b41a4dae
+#: f8053399e629420c897bebea835c5e22 m5ui.switch.M5Switch:16 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/switch.rst:49 7d8762e883e3422d9575ab3f2ec61129
+msgid "**API**"
+msgstr "**API**"
+
+#: aebc09d502de4d40a690cf2d04baac75 m5ui.switch.M5Switch:1 of
+msgid "Bases: :py:class:`~lvgl.switch`"
+msgstr ""
+
+#: 30d7b60cbe77476bbaf58d99a5949a6b m5ui.switch.M5Switch:1 of
+msgid "Create a switch object."
+msgstr "创建一个开关对象。"
+
+#: ../../en/m5ui/switch.rst 0f52ae4b17e8494d995e51a33599a2ce
+#: 100a3aa80366401bb3bddf0ad09382ae 1a21f9655a154fda9db3a0036377cec9
+#: 1a7f2a1c872b450aa08751fbef8acf92 1d2c69b90c124fb4b6551cdcffbc35f3
+#: 2c9bfa3adc5b43a5adbaf636229f9f45 645c976a05334742ab998b08e334f0d8
+#: 762c53f7ee694f7cb2ece141c8acf0dd 7a2813f6b993491080a8823310b359e3
+#: c9e247f55ab04108beef8351981d3139 dab8ca298e634ef582025efc4d607dde
+#: f68899b6b1fb47e7a55343891e95ee95
+msgid "Parameters"
+msgstr "参数"
+
+#: 8084ba15851e449db0ba19f543177916 m5ui.switch.M5Switch:3 of
+msgid "The x position of the switch."
+msgstr "开关的 x 坐标。"
+
+#: bed123eba1f341548411ead6edea76d5 m5ui.switch.M5Switch:4 of
+msgid "The y position of the switch."
+msgstr "开关的 y 坐标。"
+
+#: ab4f2542216f44a59b7b0cf45deb2df0 m5ui.switch.M5Switch:5 of
+msgid ""
+"The width of the switch."
+msgstr "开关的宽度。
+
+#: 50e48ea8e28d4a11a8ce8321ba3446d3 m5ui.switch.M5Switch:6 of
+msgid ""
+"The height of the switch."
+msgstr "开关的高度。
+
+#: da8c3de9de314a318834840bc5326860 m5ui.switch.M5Switch:7 of
+msgid "The color of the switch in the off state in hexadecimal format."
+msgstr "开关在关闭状态下的颜色（十六进制）。"
+
+#: 0e9653609e6149efa27a49b3f6eeca00 m5ui.switch.M5Switch:8 of
+msgid "The color of the switch in the on state in hexadecimal format."
+msgstr "开关在开启状态下的颜色（十六进制）。"
+
+#: 559f5e1f78be4fcdab74d10f1c00f095 m5ui.switch.M5Switch:9 of
+msgid ""
+"This color refers to the color of the circle on the switch in hexadecimal"
+" format."
+msgstr "此颜色指开关圆钮的颜色（十六进制）。"
+
+#: 1785451c0e804514a087578146f9944c m5ui.switch.M5Switch:10 of
+msgid ""
+"The parent object to attach the switch to. If not specified, the switch "
+"will be attached to the default screen."
+msgstr "开关要附加到的父对象；若未指定，则附加到默认屏幕。"
+
+#: ../../en/m5ui/switch.rst:60 62dc326fb9f04e04875e9e6d62b52021
+msgid "Set the background color of the switch."
+msgstr "设置开关的背景颜色。"
+
+#: ../../en/m5ui/switch.rst:62 342c4ec62d884a0a9af96464117c556e
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/switch.rst:63 94bf8505647646beb0b0aad47d4ccf4c
+msgid ""
+"The opacity of the color. The value should be between 0 (transparent) and"
+" 255 (opaque)."
+msgstr "颜色的不透明度，取值范围 0（透明）至 255（不透明）。"
+
+#: ../../en/m5ui/switch.rst:64 5cced61eb3464308a02b5e80c4ce9a5e
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "应用样式的对象部分（如 lv.PART.MAIN）。"
+
+#: ../../en/m5ui/switch.rst 0c8fe987f81d4cd5a0c8b89967ec1e1a
+#: 1e2b8b8013254cdaa126d2cf73749319 1e73944b4ebe4add9d538b6c62930917
+#: 2ea508f721e9426280b422140c7b48fb 4eafedcec364431291d60f27c6e41dc9
+#: 7019e89729df42b0b027404d0e296dff 7e35a552ee69425aa017aa0ba976de27
+#: 9ab07ba0f7b54b4b92fba81507de973e b3602d5ddbac435d9ac87a8fe9ed3784
+#: cd28e03636884adfb87f9333a8f0e879 d7d8f3b14bc1497f8e7bb37262009ee8
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:69 e968e78e617342a4a9e52985a0de16d9
+msgid "|set_bg_color_default.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:4 4a2b4dcae3ad491aa9448290d978c0e9
+msgid "set_bg_color_default.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:71 095b90d472674bc89c60259aaf0082b2
+msgid "|set_bg_color_checked.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:5 e79cf68104e24cf2a78a0da0103368fa
+msgid "set_bg_color_checked.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:73 869291a671fd4fcaac95f18c17f796fe
+msgid "|set_knob_color_checked.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:10 ea0edb2c8e5f4e99b21c52cde5d320e7
+msgid "set_knob_color_checked.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:75 95ac7defc8bc4247a1a34ba83b13b88b
+msgid "|set_knob_color_default.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:11 9f7dd38e187b41cc8b6989b516d5d969
+msgid "set_knob_color_default.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:86 849a8d24abcd479c91aa3c5db5f9d39d
+msgid "Set the state of the Switch."
+msgstr "设置开关的状态。"
+
+#: ../../en/m5ui/switch.rst:88 a2e9d1ae64e44201bc8dd71e4c31eba4
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/switch.rst:89 2c4b99e1d007479988081ce5e55a59b7
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "若为 True 表示设置状态；为 False 则取消状态。"
+
+#: ../../en/m5ui/switch.rst:94 22309eb864f44e79a24af878c3a6df67
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:9 a9ad005e47cd4e69abcdf1fc92ba7bb6
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:104 9fdd83843760449a9ebf23c0b9f39ab9
+msgid "Get the state of the Switch."
+msgstr "获取开关的状态。"
+
+#: ../../en/m5ui/switch.rst:106 a546270ad5ad4f1d8970c2024216ac2c
+msgid "The state to get."
+msgstr "要获取的状态。"
+
+#: ../../en/m5ui/switch.rst:107 a239a42ae833475480dc1ee8cafdd9ec
+msgid "True if the state is set, False otherwise."
+msgstr "若状态已设置则返回 True，否则返回 False。"
+
+#: ../../en/m5ui/switch.rst d413beb2ddbc4709801204011f1af9ce
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/m5ui/switch.rst:112 be35675f7e704862b6a31ef04c966037
+msgid "|has_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:3 5768c2fa1d194646ba7d44efc3ef92a5
+msgid "has_state.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:122 c8c692c7dcde4f9d8c3ae04e388c20dc
+msgid "Set the position of the switch."
+msgstr "设置开关的位置。"
+
+#: ../../en/m5ui/switch.rst:124 ../../en/m5ui/switch.rst:142
+#: 7e7d4f99e24f4abe88dc15233a92e2cf f9b03d88a0b949a8ab091946c8295688
+msgid "The x-coordinate of the switch."
+msgstr "开关的 x 坐标。"
+
+#: ../../en/m5ui/switch.rst:125 ../../en/m5ui/switch.rst:159
+#: c9913dab3f70421093a7a42d8d8dd406 e23e3ca7bbd04270813db1cdd11278ed
+msgid "The y-coordinate of the switch."
+msgstr "开关的 y 坐标。"
+
+#: ../../en/m5ui/switch.rst:130 9354fb27fb4c47579053924ca3726022
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:7 379764c9fce443479fbc3ac603f384a9
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:140 f19c85b772144063b5649f922d8363ff
+msgid "Set the x-coordinate of the switch."
+msgstr "设置开关的 x 坐标。"
+
+#: ../../en/m5ui/switch.rst:147 f5107c8219074e5baef497e022eee811
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:13 e07cc4171bda4dd38589694dd899803c
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:157 4d99ecb7c44f4139bc528d54f60e0fe7
+msgid "Set the y-coordinate of the switch."
+msgstr "设置开关的 y 坐标。"
+
+#: ../../en/m5ui/switch.rst:164 ad968ee9f52049749994ed65a717d555
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:14 2461393db1e6476d9f8f80546192cd64
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:174 fd8d1cfd7d8940f984765fa1f82fa8eb
+msgid "Set the size of the switch."
+msgstr "设置开关的尺寸。"
+
+#: ../../en/m5ui/switch.rst:176 ../../en/m5ui/switch.rst:194
+#: 79010dacfc20429cb530555c8924faf0 a012dd7a36ee44deafa9ea7c06ff1feb
+msgid "The width of the switch."
+msgstr "开关的宽度。"
+
+#: ../../en/m5ui/switch.rst:177 ../../en/m5ui/switch.rst:228
+#: 064b526b488843c6b99193d0d180da6b c9e4f5820c5842159b31f077b3643993
+msgid "The height of the switch."
+msgstr "开关的高度。"
+
+#: ../../en/m5ui/switch.rst:182 d3b4a47d886a46f0b2368fbc33c86ea1
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:8 5e8424792d59402eb45a692733b7f812
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:192 c64fd4a7fc294fdc923dd111de7fe485
+msgid "Set the width of the switch."
+msgstr "设置开关的宽度。"
+
+#: ../../en/m5ui/switch.rst:199 b5ee9c5345354f7eb55ee65b7f5f3988
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:12 5005fb7afa8b455688f290503a303699
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:226 0c8d53f532a04212bec52a9218366cd4
+msgid "Set the height of the switch."
+msgstr "设置开关的高度。"
+
+#: ../../en/m5ui/switch.rst:233 18b0e98c1b1a4869a2497264483fa7e6
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:6 c0bd8d06c83f4c36a6683d0e829ae241
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:260 9e52c48b59ea442f92020c5d3c0cfd8b
+msgid "Align the switch to another object."
+msgstr "将开关对齐到另一个对象。"
+
+#: ../../en/m5ui/switch.rst:262 23eda6e5670b41dfbf52d35fb46298bd
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/switch.rst:263 4c6816a83b0c4425aaeb356d801ab185
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/switch.rst:264 7ab11305d2844166827a925dbc613258
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/switch.rst:265 20d0c0d3c9f142b78dc5b900177b10e5
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/switch.rst:270 b12d9fe7086a442e954be27ea8fa1d80
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:1 afba3bd73dac48579a7fc40c12c722e2
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/switch.rst:280 b4ea4bec4f404c29b5bcd321510c3177
+msgid ""
+"Add an event callback to the switch. The callback will be called when the"
+" specified event occurs."
+msgstr "为开关添加事件回调；当指定事件发生时将调用该回调。"
+
+#: ../../en/m5ui/switch.rst:282 715794ce79f2430eac35d80ae17137dc
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/switch.rst:283 70b470e696224c95b5b768225c4591f4
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/switch.rst:284 a9e2c4f962fb4957969a51effe2e2389
+msgid "Optional user data to pass to the callback."
+msgstr "可选的用户数据，将传递给回调函数。"
+
+#: ../../en/m5ui/switch.rst:289 1b26a6816bb843c28fb11298e766a040
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.switch.ref:2 5a7859c39560401a952fe530d9385eb3
+msgid "event.png"
+msgstr ""
+
