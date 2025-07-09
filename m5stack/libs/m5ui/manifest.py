@@ -14,6 +14,7 @@ package(
         "canvas.py",
         "checkbox.py",
         "image.py",
+        "keyboard.py",
         "label.py",
         "line.py",
         "list.py",

@@ -12,6 +12,7 @@ _attrs = {
     "M5Canvas": "canvas",
     "M5Checkbox": "checkbox",
     "M5Image": "image",
+    "M5Keyboard": "keyboard",
     "M5Label": "label",
     "M5Line": "line",
     "M5List": "list",

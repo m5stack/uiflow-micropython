@@ -40,6 +40,7 @@ Classes
     canvas.rst
     checkbox.rst
     image.rst
+    keyboard.rst
     label.rst
     line.rst
     list.rst
