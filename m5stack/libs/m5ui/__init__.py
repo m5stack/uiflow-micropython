@@ -16,6 +16,7 @@ _attrs = {
     "M5Page": "page",
     "M5Slider": "slider",
     "M5Switch": "switch",
+    "M5TextArea": "textarea",
 }
 
 

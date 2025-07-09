@@ -19,6 +19,7 @@ package(
         "port.py",
         "slider.py",
         "switch.py",
+        "textarea.py",
     ),
     base_path="..",
     opt=0,
