@@ -6,6 +6,7 @@ _attrs = {
     "init": "port",
     "deinit": "port",
     "M5Button": "button",
+    "M5Image": "image",
     "M5Label": "label",
     "M5Page": "page",
     "M5Switch": "switch",

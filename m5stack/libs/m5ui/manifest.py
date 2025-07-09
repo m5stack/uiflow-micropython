@@ -4,7 +4,7 @@
 
 package(
     "m5ui",
-    ("__init__.py", "base.py", "button.py", "label.py", "page.py", "switch.py", "port.py"),
+    ("__init__.py", "base.py", "button.py", "image.py", "label.py", "page.py", "switch.py", "port.py"),
     base_path="..",
     opt=0,
 )
