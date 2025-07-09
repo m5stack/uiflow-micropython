@@ -112,6 +112,7 @@ package(
         "scroll.py",
         "servos8.py",
         "ssr.py",
+        "step16.py",
         "synth.py",
         "thermal.py",
         "thermal2.py",

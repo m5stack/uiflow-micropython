@@ -1,0 +1,37 @@
+.. |Unit step16| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/step16.webp
+    :target: https://docs.m5stack.com/zh_CN/unit/step16
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/init.png
+.. |get_led_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_led_mode.png
+.. |get_led_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_led_brightness.png
+.. |set_led_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_led_mode.png
+.. |set_led_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_led_brightness.png
+.. |save_led_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/save_led_config.png
+.. |get_rgb_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_rgb_power.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_rgb_brightness.png
+.. |get_rgb_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_rgb_value.png
+.. |set_rgb_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_rgb_power.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_rgb_brightness.png
+.. |set_rgb_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_rgb_value.png
+.. |save_rgb_config.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/save_rgb_config.png
+.. |get_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_encoder_value.png
+.. |get_encoder_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_encoder_cw_increase.png
+.. |set_encoder_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_encoder_cw_increase.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_firmware_version.png
+.. |get_addr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/get_addr.png
+.. |set_addr.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/set_addr.png
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/example.png"
+
+ 
+.. |cores3_step16_unit_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/step16/example.png
+
+.. |cores3_step16_unit_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/step16/cores3_step16_unit_example.m5f2"
+        target="_blank"
+    >
+        cores3_step16_unit_example.m5f2
+    </a>

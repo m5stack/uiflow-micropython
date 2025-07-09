@@ -103,6 +103,7 @@ Unit
     scroll.rst
     servos8.rst
     ssr.rst
+    step16.rst
     synth.rst
     thermal.rst
     timerpwr.rst
