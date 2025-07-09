@@ -36,3 +36,4 @@ Classes
     label.rst
     button.rst
     switch.rst
+    image.rst
