@@ -1,0 +1,598 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-30 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/keyboard.rst:4 ../../en/m5ui/keyboard.rst:53
+#: 43177d277a9a48b0857c08c4bc371ba3 5dbf8b33abb44518b0a78549470f1c8d
+msgid "M5Keyboard"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:8 503582fe3e9e45a183313f21ffc117db
+msgid ""
+"M5Keyboard is a widget that can be used to create virtual keyboards in "
+"the user interface. It provides an on-screen keyboard that can be used "
+"for text input with support for different keyboard modes and layouts."
+msgstr ""
+"M5Keyboard是一个用于在用户界面中创建虚拟键盘的小组件。它提供屏幕键盘，可用于文本输入，"
+"支持不同的键盘模式和布局。"
+
+#: ../../en/m5ui/keyboard.rst:12 be54afbe0dee49c191ffa3c64bbb5294
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:15 ../../en/m5ui/keyboard.rst:34
+#: 7bd0397abd57464b9c454726d1f94046 c570aeaf963b48d592a5330aef95a963
+msgid "basic keyboard"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:17 8002b2a95ddc43368809578b748476c7
+msgid "Open the |cores3_keyboard_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开|cores3_keyboard_basic_example.m5f2|项目。"
+
+#: ../../en/m5ui/keyboard.rst:19 ../../en/m5ui/keyboard.rst:36
+#: 2fe17932b3f24a7a8aa4b7825cdf77da f533e0b98fa945eb892a5531a1b68d3a
+msgid ""
+"This example demonstrates how to create a virtual keyboard and connect it"
+" to a text input area."
+msgstr "此示例演示如何创建虚拟键盘并将其连接到文本输入区域。"
+
+#: ../../en/m5ui/keyboard.rst:21 ../../en/m5ui/keyboard.rst:66
+#: ../../en/m5ui/keyboard.rst:83 ../../en/m5ui/keyboard.rst:101
+#: ../../en/m5ui/keyboard.rst:118 ../../en/m5ui/keyboard.rst:137
+#: ../../en/m5ui/keyboard.rst:170 ../../en/m5ui/keyboard.rst:187
+#: ../../en/m5ui/keyboard.rst:204 ../../en/m5ui/keyboard.rst:221
+#: ../../en/m5ui/keyboard.rst:238 ../../en/m5ui/keyboard.rst:255
+#: ../../en/m5ui/keyboard.rst:273 ../../en/m5ui/keyboard.rst:291
+#: ../../en/m5ui/keyboard.rst:308 ../../en/m5ui/keyboard.rst:325
+#: ../../en/m5ui/keyboard.rst:343 ../../en/m5ui/keyboard.rst:360
+#: ../../en/m5ui/keyboard.rst:377 ../../en/m5ui/keyboard.rst:394
+#: ../../en/m5ui/keyboard.rst:411 ../../en/m5ui/keyboard.rst:431
+#: 02d2f0b8d65d49fa88357c2d22528cfc 13c964a3e11a48ab82c2ec17bb2de288
+#: 1541c6c43d6f4a5bb4a18c0cbaf17063 22378e702a6947e4b29fd3369246a441
+#: 29e4ba02090a47c3b8cc9693a9937f41 31c56bb1a1ee460497aeeb251ec1dbce
+#: 35be85a2168c4137b50416739e84aa70 3789bf0b00844d19bcd1562f3a867d9d
+#: 390609e2f6f441f599ab438fcac558b6 3d6272c9656c49469445b5f4cbbf0a58
+#: 3f2fbf6132884e8fa5b664b8b7c81253 59ffc0f94c44418b80eaadeb5f634892
+#: 5ea9478909db445284c26ac3548fdf9a 7b96572af1f24317a11063e5abc83f44
+#: 845e807e451b43c2a2821227cbccedba 9aff1158fca342c8bfd00ec9d56a4e99
+#: 9e27dfb682e04f1a9b62e6bc070fdb53 b8714b1dd1a940d7bcdc99a355f7040d
+#: c01b823d3b7c41a2b5f29c6fe650a5bc e3901e85ff4e4a78a0585262add820b4
+#: ea875b3adacc4dda8e25135fadb0cc3c f3ce0b1bb3e948f3a80701a8c2c953e0
+#: f72129804d67491ab10db98471715f62 m5ui.keyboard.M5Keyboard:11 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/keyboard.rst:23 f9a1f510625e4c8f942691d3ad28f52b
+msgid "|cores3_keyboard_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:11 090b89974ac242e5a9b5fada935ddea1
+msgid "cores3_keyboard_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:25 ../../en/m5ui/keyboard.rst:44
+#: 242dcc4809e24ce0818d2c003ba3dcb3 96858a43d618475baeb609db6a5139b5
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/keyboard.rst:27 ../../en/m5ui/keyboard.rst:46
+#: ../../en/m5ui/keyboard.rst:64 ../../en/m5ui/keyboard.rst:81
+#: ../../en/m5ui/keyboard.rst:99 ../../en/m5ui/keyboard.rst:116
+#: ../../en/m5ui/keyboard.rst:135 ../../en/m5ui/keyboard.rst:168
+#: ../../en/m5ui/keyboard.rst:202 ../../en/m5ui/keyboard.rst:236
+#: ../../en/m5ui/keyboard.rst:289 ../../en/m5ui/keyboard.rst:306
+#: ../../en/m5ui/keyboard.rst:323 ../../en/m5ui/keyboard.rst:341
+#: ../../en/m5ui/keyboard.rst:358 ../../en/m5ui/keyboard.rst:392
+#: ../../en/m5ui/keyboard.rst:429 01c2cb4b7cf845a1afc3390d9edc99f4
+#: 2b13cdc5bfb14d7a9bebe7aa7b1d31a1 2e2ab43e3caf42448d3ad6168a493178
+#: 42e62daf9105441494abd60f6dddce5a 6050dcff312c4cfe8d4ae5ade3975b2b
+#: 61a9439bb3e34fc0919c93720a300e23 72d6d5cfec8c486497e6d7d4880e7b66
+#: 87fcf3b5111e4f1599d327d9ffee355a 8df9b3d03db1403d97e237c38d77cd1a
+#: 9c9abf1a8ad9495187528def538037f2 a43a68f73f444d13b8f073d35a7f3236
+#: a9cb17e80f8544c39c2e97f048611d87 ace16a179dd14125a9b0c23f396396e1
+#: cf552a6e02624ec09b7627ebc8da3f46 d908063e7f0249e5955e86319e335e6f
+#: f1bcf850523f4d729774e8047cb171f2 f4c6f8b8db9c4165967cd3cecfd093d5
+#: f789cf7553dc4ad394135572c4de3c4b m5ui.keyboard.M5Keyboard:13 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:31 79081489d4104b7b860f8b739e7ef45b
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/keyboard.rst:38 ../../en/m5ui/keyboard.rst:70
+#: ../../en/m5ui/keyboard.rst:87 ../../en/m5ui/keyboard.rst:105
+#: ../../en/m5ui/keyboard.rst:122 ../../en/m5ui/keyboard.rst:141
+#: ../../en/m5ui/keyboard.rst:174 ../../en/m5ui/keyboard.rst:191
+#: ../../en/m5ui/keyboard.rst:208 ../../en/m5ui/keyboard.rst:225
+#: ../../en/m5ui/keyboard.rst:242 ../../en/m5ui/keyboard.rst:259
+#: ../../en/m5ui/keyboard.rst:277 ../../en/m5ui/keyboard.rst:295
+#: ../../en/m5ui/keyboard.rst:312 ../../en/m5ui/keyboard.rst:329
+#: ../../en/m5ui/keyboard.rst:347 ../../en/m5ui/keyboard.rst:364
+#: ../../en/m5ui/keyboard.rst:381 ../../en/m5ui/keyboard.rst:398
+#: ../../en/m5ui/keyboard.rst:415 ../../en/m5ui/keyboard.rst:435
+#: 07f3ee95f17740ee86bf5bffbe51c68c 1e77bc3be784415abca379bae46c950e
+#: 2b58b857018e47f69f0dcdcd98a2263a 2c0a7100033146049b4283dd60916c6d
+#: 5237eb22d2434cb58e709b6611d4f37b 59d5171c4e844441a9892b7696cafe04
+#: 5b878d2fc15143d09c5c0d5f03e163a5 6188e21eec7240839beadd7276bb2c3d
+#: 648fac9d4bc340ccbcd5e95e1c0847b2 7b401482e15140498dc54c5cf27a6ce1
+#: 7da8effdbb01418bb9e81bb12b136103 8aab1d799e92461fa180ed4141270f9f
+#: 8aeaabd0e59b485db73fd11b52b2abad 9de0b025df2043ca94b0e2c8ccc82008
+#: b5d14a13906144b1adb45ca44bf1d130 b9c5dd64c7c24a73bb1f48654140537e
+#: c135081d46ae4d278af10950b2f26d4a c47234df08064833b910e75c967faf79
+#: cfd22a06c401458e99d0b8d19db152d9 dc75e26f85da49428d84d2b54d636ff9
+#: e4a9b5ad6b51434198709146dcec2964 f3802b9adae4433da56ce0e1c047285f
+#: fe4a0e1aa2f44191b9f620d23c1543f1 m5ui.keyboard.M5Keyboard:15 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/keyboard.rst:50 da7980ff84da490aa3602c0c1fb01629
+msgid "**API**"
+msgstr "API参考"
+
+#: 90d50d7bdea1416c9796493e35b04985 m5ui.keyboard.M5Keyboard:1 of
+msgid "Bases: :py:class:`~lvgl.keyboard`"
+msgstr ""
+
+#: bf1dacee147243719739018a6f66a3ae m5ui.keyboard.M5Keyboard:1 of
+msgid "Create a keyboard widget."
+msgstr "Create a keyboard widget."
+
+#: ../../en/m5ui/keyboard.rst 0306d82c6d6145959e19007f2bab97ed
+#: 2aba4219bd64438f8260935b74f81199 56fb5e16fbec4f1fb62837ea840fe361
+#: 58fb8cec6651450a8e23dc2766730449 6156f879c834468abd2c90a0bd0099b3
+#: 68428130d1ed4210bc3bd78999bb713e 76bab6711efb44cb9ca1f2e475338ef9
+#: 7daee2c2b39f41d3892d90b8fa1fd868 81884aad9bd14cc18c958026bf09d2a9
+#: 868f013794fa41f59226fb132ccb93ce 941ecc7f714a45d9bdfee0da951aa578
+#: ccc03d0cd2a2443da2a49476873e1352 ea275e6a0f9f4add917a8ad8e0c01cff
+#: eba69320c96241648653bf96b53c2d8d f54eac3dfeb840e6806fd6c712bf8948
+#: f5e6f8fe57aa4a5ca3be4631237b49e1 fe663679b25f463083db6dadb585868d
+msgid "Parameters"
+msgstr ""
+
+#: b0cd2648e6864832bbde045619f176a4 m5ui.keyboard.M5Keyboard:3 of
+msgid "The x position of the keyboard."
+msgstr "键盘的 x 位置。"
+
+#: 9d61145cb40e4f34b2add6717f5ac345 m5ui.keyboard.M5Keyboard:4 of
+msgid "The y position of the keyboard."
+msgstr "键盘的 y 位置。"
+
+#: ../../en/m5ui/keyboard.rst:339 ../../en/m5ui/keyboard.rst:357
+#: ../../en/m5ui/keyboard.rst:374 2748339630c04767864fe6dbc4d1521c
+#: 4fa2476c28ef408292603c23c95192b7 7fa07a33bc9948d8bd5f3e59389c0326
+#: d64b9919457745b198ed5ddfa771b616 m5ui.keyboard.M5Keyboard:5 of
+msgid "The width of the keyboard."
+msgstr "键盘的宽度。"
+
+#: ../../en/m5ui/keyboard.rst:340 ../../en/m5ui/keyboard.rst:391
+#: ../../en/m5ui/keyboard.rst:408 08968b3b30bc4d50bff42d289ea4afc7
+#: 67e3e81a51524dcaa2a944340e370d11 c500fc17c63341e6a5cc3dab16eaebb6
+#: cc8c8c38435b45449051d62403783b42 m5ui.keyboard.M5Keyboard:6 of
+msgid "The height of the keyboard."
+msgstr "键盘的高度。"
+
+#: 220260199b0242d38f0f6f2c7e5eee7a m5ui.keyboard.M5Keyboard:7 of
+msgid "The keyboard mode, default is `lv.keyboard.MODE.TEXT_LOWER`."
+msgstr "键盘模式，默认为“lv.keyboard.MODE.TEXT_LOWER”。"
+
+#: 8e6c2584aac34f40908c384e1922b213 m5ui.keyboard.M5Keyboard:8 of
+msgid "The target textarea to link with the keyboard."
+msgstr "与键盘链接的目标文本区域。"
+
+#: d1acaf43e6c2433a93e79646fb624648 m5ui.keyboard.M5Keyboard:9 of
+msgid "The parent object, default is the active screen."
+msgstr "父对象，默认为活动屏幕。"
+
+#: ../../en/m5ui/keyboard.rst:60 b158ebe191a0466dbef635ce9a48041e
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr ""
+"在对象上设置标志。如果``value``为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/keyboard.rst:62 1a8e32b8e3e1415caa983d14fc665002
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/keyboard.rst:63 3ddd22aea47745caa50b054358d2dc69
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/keyboard.rst 027778077202471e8300c84736cf2779
+#: 02b32e1ec47f4f7d9b3ac145b1e6dcf0 120f96e2b2bd4c43bea1d6d6d0dcc91c
+#: 22df825669114a16882b5227a541b176 3ed44121ec3546e08d62b51eb05361cb
+#: 3fd632ff176e453bb9153682bb2d03c1 527fc5761bcb4202bff699594a12bb34
+#: 649318b8d5554edf8178633dc577cc73 7be2340e2b9c4609a1bfbf4e936f1882
+#: 85994211835646d283d89999d52abd56 8635f59bbae143c78cedeada88c6993d
+#: 9628fba40a654adba271038010f14eb2 a520cb9751d94a0dbac8f8aa6f6488dc
+#: a962ebe24b8b41e394d2f79415601772 abb457b882e44dc0ab5d18d3c6ca6d04
+#: befb4518b71040c6bb4729c7e0805f4d d206b046f1514baf89586cda9107ea98
+#: df5a6b79c9a047a7be0dd627ef7285fa f56afe096683475f9c160a48b5dae0c5
+#: fa7683dd13a44bd8828cf8eaef851b7d fbed1c645a474e858969a485e7a956a2
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:68 1825244867334c4f990a851b24484a23
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:21 eb712d18371e42f9bfe4673f177ed10e
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:78 4381ac77801845e8adf20b88865b1e5d
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr ""
+"切换对象上的标志。如果标志已设置，则移除；如果未设置，则添加。"
+
+#: ../../en/m5ui/keyboard.rst:80 1772b580ba764663bb32ad2011024087
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/keyboard.rst:85 92bb3cfb25684c90972b46d457757d88
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:32 ce499b82b78344d2a540a4a70ab9aab6
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:95 1ffe3e3d4901424eaa265d99b6246e27
+msgid ""
+"Set the state of the keyboard. If ``value`` is True, the state is set; if"
+" False, the state is unset."
+msgstr ""
+"设置键盘的状态。如果``value``为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/keyboard.rst:97 525af09ff3944df3a6a0547b76069ec6
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/keyboard.rst:98 4e2931e4ddcf455fb6bfe6f5329c39f7
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/keyboard.rst:103 74c6f422a57c4e26a617f56f39ad617f
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:27 6696a99846b4471a96796c7f65b4ca9d
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:113 18fbd369c8ef47159d60d28c1e4238cf
+msgid ""
+"Toggle the state of the keyboard. If the state is set, it is unset; if "
+"not set, it is set."
+msgstr "切换键盘状态。如果状态已设置，则取消设置；如果状态未设置，则设置状态。"
+
+#: ../../en/m5ui/keyboard.rst:115 e116db38119e4426ae97e3b5a4a61c47
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/keyboard.rst:120 3f3914a609404ac89c2139015c51a267
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:33 fe5c99da4f984e10bec2df562021cc58
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:130 ea1fda3746b248aa804f92378d4f396b
+msgid ""
+"Add an event callback to the keyboard. The callback will be called when "
+"the specified event occurs."
+msgstr ""
+"为键盘添加事件回调。当指定事件发生时，将调用回调函数。"
+
+#: ../../en/m5ui/keyboard.rst:132 cc647cbc95564a4f9082c0c68e355743
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/keyboard.rst:133 3e20e773ccfd416e94484de2c294b804
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/keyboard.rst:134 61471837508e419d8f7e0e4a8e203fc3
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调函数的可选用户数据。"
+
+#: ../../en/m5ui/keyboard.rst:139 ec36cdce90cb4b7d9df29a9b20b9fc83
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:14 285cce84a4354e30b0b44c5c60c2ec5f
+msgid "event.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:165 e8a379fc5b5344c38eda3871eb4647c4
+msgid ""
+"Set the text area that this keyboard should control. When keys are "
+"pressed, the text will be entered into the specified text area."
+msgstr ""
+"设置此键盘应控制的文本输入区域。当按下按键时，文本将输入到指定的文本区域中。"
+
+#: ../../en/m5ui/keyboard.rst:167 47864dcfa2d24ed8a4a0d8dd7e930527
+msgid "The text area object to connect to the keyboard."
+msgstr "要连接到键盘的文本输入区域对象。"
+
+#: ../../en/m5ui/keyboard.rst:172 ea4c2e98c954470a806edb6f8ce5f1ac
+msgid "|set_textarea.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:28 45ddcd86fa8f4371b8cde14568d3c06e
+msgid "set_textarea.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:182 daf8ec07d9ae4b7cba39fc6613859013
+msgid "Get the text area that is currently connected to this keyboard."
+msgstr "获取当前连接到此键盘的文本输入区域。"
+
+#: ../../en/m5ui/keyboard.rst:184 d3acacc3728e44b39a6179048372f500
+msgid "The connected text area object, or None if no text area is connected."
+msgstr "已连接的文本输入区域对象，如果没有连接文本区域则为None。"
+
+#: ../../en/m5ui/keyboard.rst 00782975ec494004b2db834a0d911c67
+#: 0b9cb6f714544285ad88caacc68287dd 1e3ac0bd03ee4ab2b9d8b2d94f391aab
+#: 69068045b3a14e4da87d0af1acfac54a 8032d6d10c884f64aa9e6fd1552b234f
+#: 882cf8355a234547bcd95605e943bac5
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:189 93eccd8fac2f4bf99e7af113a7da3bf0
+msgid "|get_textarea.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:19 04f4a493b7f04fbf9c8b48eded1aeb58
+msgid "get_textarea.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:199 156dd31923cb4a7ca9b47e298ae75add
+msgid "Set the keyboard mode to display different keyboard layouts."
+msgstr "设置键盘模式以显示不同的键盘布局。"
+
+#: ../../en/m5ui/keyboard.rst:201 c7e23284ec414a15bf449fa6aa033757
+msgid ""
+"The keyboard mode to set (e.g., lv.keyboard.MODE.TEXT_LOWER, "
+"lv.keyboard.MODE.TEXT_UPPER, lv.keyboard.MODE.SPECIAL, "
+"lv.keyboard.MODE.NUMBER)."
+msgstr ""
+"要设置的键盘模式（例如，lv.keyboard.MODE.TEXT_LOWER（小写文本）、"
+"lv.keyboard.MODE.TEXT_UPPER（大写文本）、lv.keyboard.MODE.SPECIAL（特殊字符）、"
+"lv.keyboard.MODE.NUMBER（数字））。"
+
+#: ../../en/m5ui/keyboard.rst:206 b13ca65331a248d4b51fbc39be683c39
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:23 4acf1a31547641af90866c1ad5896765
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:216 2ce19c4ecfd74affbec1bf2b51971f88
+msgid "Get the current keyboard mode."
+msgstr "获取当前的键盘模式。"
+
+#: ../../en/m5ui/keyboard.rst:218 0067a60b780d4e639b35ccd02e1895f2
+msgid "The current keyboard mode."
+msgstr "当前的键盘模式。"
+
+#: ../../en/m5ui/keyboard.rst:223 246802fb3762481d9844464b5b8182be
+msgid "|get_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:17 21dbd997195344cd8b96eb16159a54e6
+msgid "get_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:233 b1e6c1904a3f42fc998497a902c88217
+msgid ""
+"Enable or disable popovers for the keyboard. Popovers are additional UI "
+"elements that can be displayed when certain keys are pressed."
+msgstr "启用或禁用键盘的弹出窗口。弹出窗口是按下某些按键时显示的附加 UI 元素。"
+
+#: ../../en/m5ui/keyboard.rst:235 8059a5dacb134b86b8a530896e6f11c8
+msgid "If True, popovers are enabled; if False, they are disabled."
+msgstr "如果为 True，则启用弹出窗口；如果为 False，则禁用弹出窗口。"
+
+#: ../../en/m5ui/keyboard.rst:240 0ec28a1f08b540d2b7671370412db258
+msgid "|set_popovers.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:24 a78f4fc9a323416ca7fba9ff05217c34
+msgid "set_popovers.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:250 bafd4a3fe38a459db960be289956bdad
+msgid ""
+"Get the index of the last released button. This can be useful to "
+"determine which key was last pressed."
+msgstr "获取最后释放的按钮的索引。这有助于确定最后按下的键。"
+
+#: ../../en/m5ui/keyboard.rst:252 43c52f3b6e8946e684b9910d8c19696c
+msgid "index of the last released button."
+msgstr "最后释放的按钮的索引。"
+
+#: ../../en/m5ui/keyboard.rst:257 d3865fa8809a472389ef4f45623a9086
+msgid "|get_selected_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:18 74dc044074a24d9f93f07ec1edb2b965
+msgid "get_selected_button.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:267 4b3abad02a4b4a9789594aee05b8ae50
+msgid "Get the text of a button by its index."
+msgstr "根据索引获取按钮的文本。"
+
+#: ../../en/m5ui/keyboard.rst:269 591f99b1b5464354810acfbad5cb8ff1
+msgid "The index of the button."
+msgstr "按钮的索引。"
+
+#: ../../en/m5ui/keyboard.rst:270 c1cb0898752e41a0adbd8ea19f91c05d
+msgid "The text of the button."
+msgstr "按钮的文本。"
+
+#: ../../en/m5ui/keyboard.rst:275 2c81b248a0b1423f9023476bba15687f
+msgid "|get_button_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:15 d5ddcd04b751459db82a70b64a64a74b
+msgid "get_button_text.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:285 127eee969bda42d394bf4492c95c59ca
+msgid "Set the position of the keyboard."
+msgstr "设置键盘的位置。"
+
+#: ../../en/m5ui/keyboard.rst:287 ../../en/m5ui/keyboard.rst:305
+#: 00641b7881c9452ca1b038290626088b a5346e374f66489eb4290c77acecaa27
+msgid "The x-coordinate of the keyboard."
+msgstr "键盘的x坐标。"
+
+#: ../../en/m5ui/keyboard.rst:288 ../../en/m5ui/keyboard.rst:322
+#: 96422a77ab314c8e9f59d8d3dd40e742 ee0b4405877b4eb3b42185b7c81db809
+msgid "The y-coordinate of the keyboard."
+msgstr "键盘的y坐标。"
+
+#: ../../en/m5ui/keyboard.rst:293 d6e69bff24ea4a95b21b1dd744ce2e47
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:25 706923a20ad34044b47617748fba30e2
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:303 3bb734bdace441fcbbd85802c854acbe
+msgid "Set the x-coordinate of the keyboard."
+msgstr "设置键盘的x坐标。"
+
+#: ../../en/m5ui/keyboard.rst:310 09d4bbd0c3b94a9fa99bcb853e1bd4a8
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:30 c86198aed23b401ba67932739e5c7530
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:320 ea036f50804a4c7ca2ea0601dae68712
+msgid "Set the y-coordinate of the keyboard."
+msgstr "设置键盘的y坐标。"
+
+#: ../../en/m5ui/keyboard.rst:327 69e0fb2a6a6141acb923850c3e2d26fa
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:31 23afbbe59ef74123a579e19c461d4e1d
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:337 a4f55f6605004168973e852f5f05ff80
+msgid "Set the size of the keyboard."
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:345 a4041d323e91488aa3721b724ec8d44a
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:26 16910e230e1349b584254ea1889b9c27
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:355 a66db619308f427bba2df75bc7cec05b
+msgid "Set the width of the keyboard."
+msgstr "设置键盘的宽度。"
+
+#: ../../en/m5ui/keyboard.rst:362 821ea1202d7a41248f1d71c95552e7ed
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:29 e199bbab97084a0aa53fe9a09a51e8f5
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:372 cfc886272d694aae9a0fb7f7f70276af
+msgid "Get the width of the keyboard."
+msgstr "获取键盘的宽度。"
+
+#: ../../en/m5ui/keyboard.rst:379 0a1431d720c1426092186d5dcc0aea92
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:20 d65cda304b6e4fbb929a2693dda99ec0
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:389 6cd9e2c7b25f4bf6a5ec6348a9227ce1
+msgid "Set the height of the keyboard."
+msgstr "设置键盘的高度。"
+
+#: ../../en/m5ui/keyboard.rst:396 8c577b5917a74a3f88ac55de319cdd0a
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:22 13b74e9942d84033aea2326afd7938ad
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:406 623d4f4703674c29844e4a3ac3e081cd
+msgid "Get the height of the keyboard."
+msgstr "获取键盘的高度。"
+
+#: ../../en/m5ui/keyboard.rst:413 6582654a92f443acadfcaed11fe6e6bd
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:16 faf10f98f1654b35843a4e63ad57c8d2
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/keyboard.rst:423 6cfe1fa64af848cc8090072975a15741
+msgid "Align the keyboard to another object."
+msgstr "将键盘与另一个物体对齐。"
+
+#: ../../en/m5ui/keyboard.rst:425 5dfaa0096ce9426f9d847e2e5722969a
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/keyboard.rst:426 cfbd6f3fedb64884918dd6d0489fe840
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/keyboard.rst:427 1e7a2ffbb03f4e72948bd871ed402627
+msgid "The x-offset from the aligned object."
+msgstr "与对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/keyboard.rst:428 b0c074ff9b2b46f4be176940d0a9d98e
+msgid "The y-offset from the aligned object."
+msgstr "与对齐对象的 y 偏移。"
+
+#: ../../en/m5ui/keyboard.rst:433 256ce013909b440f978e3e00441f976c
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.keyboard.ref:13 62e05e46e14c46acb44cb3aed4af327c
+msgid "align_to.png"
+msgstr ""
+
