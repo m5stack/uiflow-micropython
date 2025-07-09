@@ -92,7 +92,9 @@ jobs:
           - M5STACK_StickC_PLUS2
           - M5STACK_Tab5
           - M5STACK_Tough
-      max-parallel: 3
+          - ESPRESSIF_ESP32_S3_BOX_3
+          - SEEED_STUDIO_XIAO_ESP32S3
+      max-parallel: 4
     steps:
       - uses: actions/checkout@v4
 
@@ -114,7 +116,8 @@ jobs:
         run: |
           source esp-idf/export.sh
 
-      - name: Build ${{ matrix.board }}
+      - name: Build M5Stack ${{ matrix.board }}
+        if: startsWith(matrix.board, 'M5STACK')
         run: |
           source esp-idf/export.sh
           pip install future
@@ -123,8 +126,26 @@ jobs:
           make -C m5stack littlefs
           make -C m5stack BOARD=${{ matrix.board }} pack_all
 
-      - name: Upload firmware artifact
+      - name: Build third-party ${{ matrix.board }}
+        if: "!startsWith(matrix.board, 'M5STACK')"
+        run: |
+          source esp-idf/export.sh
+          pip install future
+          make -C m5stack submodules
+          make -C m5stack patch
+          make -C m5stack littlefs
+          make -C third-party BOARD=${{ matrix.board }} pack_all
+
+      - name: Upload M5Stack firmware artifact
+        if: startsWith(matrix.board, 'M5STACK')
         uses: actions/upload-artifact@v4
         with:
           name: firmware-${{ matrix.board }}
           path: m5stack/build-${{ matrix.board }}/uiflow-*-*.bin
+
+      - name: Upload third-party firmware artifact
+        if: "!startsWith(matrix.board, 'M5STACK')"
+        uses: actions/upload-artifact@v4
+        with:
+          name: firmware-${{ matrix.board }}
+          path: third-party/build-${{ matrix.board }}/uiflow-*-*.bin
