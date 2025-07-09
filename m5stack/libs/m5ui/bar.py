@@ -4,7 +4,6 @@
 
 from .base import M5Base
 import lvgl as lv
-import time
 
 
 class M5Bar(lv.bar):
