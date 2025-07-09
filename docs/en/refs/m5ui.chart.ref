@@ -1,0 +1,44 @@
+.. |add_series.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/add_series.png
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/align_to.png
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/event.png
+.. |get_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_height.png
+.. |get_point_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_point_count.png
+.. |get_pressed_point.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_pressed_point.png
+.. |get_series_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_series_color.png
+.. |get_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_type.png
+.. |get_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/get_width.png
+.. |hide_series.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/hide_series.png
+.. |remove_series.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/remove_series.png
+.. |set_axis_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_axis_range.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_bg_color.png
+.. |set_border_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_border_color.png
+.. |set_div_line_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_div_line_count.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_flag.png
+.. |set_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_height.png
+.. |set_next_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_next_value.png
+.. |set_point_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_point_count.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_pos.png
+.. |set_series_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_series_color.png
+.. |set_series_values.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_series_values.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_size.png
+.. |set_style_border_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_style_border_width.png
+.. |set_style_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_style_radius.png
+.. |set_style_radius1.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_style_radius1.png
+.. |set_style_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_style_size.png
+.. |set_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_type.png
+.. |set_update_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_update_mode.png
+.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_width.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/set_y.png
+.. |toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/toggle_flag.png
+
+.. |cores3_chart_line_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/chart/cores3_chart_line_example.m5f2"
+        target="_blank"
+    >
+        cores3_chart_line_example.m5f2
+    </a>
+
+.. |cores3_chart_line_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/chart/cores3_chart_line_example.png

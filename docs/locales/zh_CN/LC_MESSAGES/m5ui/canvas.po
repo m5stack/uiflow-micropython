@@ -88,7 +88,7 @@ msgstr "包含各种彩色图形的画布，包括矩形、圆形和线条。"
 
 #: ../../en/m5ui/canvas.rst:31 498f42e4bb2945b0aaf04597b77567e0
 msgid "MicroPython Example"
-msgstr "MicroPython示例"
+msgstr "MicroPython 应用示例"
 
 #: ../../en/m5ui/canvas.rst:36 f1cd20ad33ce41a1980bb0e1b3f5587e
 msgid ""

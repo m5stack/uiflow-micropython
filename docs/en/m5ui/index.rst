@@ -65,6 +65,7 @@ Classes
     buttonmatrix.rst
     calendar.rst
     canvas.rst
+    chart.rst
     checkbox.rst
     dropdown.rst
     image.rst

@@ -12,6 +12,7 @@ _attrs = {
     "M5ButtonMatrix": "buttonmatrix",
     "M5Calendar": "calendar",
     "M5Canvas": "canvas",
+    "M5Chart": "chart",
     "M5Checkbox": "checkbox",
     "M5Dropdown": "dropdown",
     "M5Image": "image",
