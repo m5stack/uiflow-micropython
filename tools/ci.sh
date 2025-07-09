@@ -13,10 +13,27 @@ fi
 ########################################################################################
 # code formatting
 
+function uncrustify_setup {
+    if [ uncrustify --version | grep -q "Uncrustify-0.72.0_f" ]; then
+        echo "uncrustify 0.72.0 is already installed."
+        return 0
+    fi
+
+    wget https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.72.0.tar.gz
+    tar -xvf uncrustify-0.72.0.tar.gz
+    cd uncrustify-uncrustify-0.72.0
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release ..
+    make -j$(nproc)
+    sudo make install
+    cd ../..
+    rm -rf uncrustify-0.72.0.tar.gz
+    rm -rf uncrustify-uncrustify-0.72.0
+}
+
 function ci_code_formatting_setup {
-    sudo apt-add-repository --yes ppa:pybricks/ppa
-    sudo apt update
-    sudo apt-get install uncrustify -y
+    uncrustify_setup
     sudo apt install pipx -y
     pipx install uv
     uv venv
