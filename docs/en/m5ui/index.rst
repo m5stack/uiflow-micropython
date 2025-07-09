@@ -37,6 +37,7 @@ Classes
     bar.rst
     button.rst
     calendar.rst
+    canvas.rst
     checkbox.rst
     image.rst
     label.rst
