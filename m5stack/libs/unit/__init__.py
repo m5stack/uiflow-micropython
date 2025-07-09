@@ -113,6 +113,7 @@ _attrs = {
     "ScrollUnit": "scroll",
     "Servos8Unit": "servos8",
     "SSRUnit": "ssr",
+    "Step16Unit": "step16",
     "SynthUnit": "synth",
     "ThermalUnit": "thermal",
     "Thermal2Unit": "thermal2",
