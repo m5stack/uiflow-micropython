@@ -41,4 +41,5 @@ Classes
     image.rst
     label.rst
     line.rst
+    slider.rst
     switch.rst

@@ -1,0 +1,34 @@
+.. |cores3_slider_basic_example.m5f2| raw:: html
+
+   <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/master/examples/m5ui/slider/cores3_slider_basic_example.m5f2" target="_blank">cores3_slider_basic_example.m5f2</a>
+
+.. |cores3_slider_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/cores3_slider_basic_example.png
+
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/align_to.png
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/event.png
+.. |get_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/get_height.png
+.. |get_max_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/get_max_value.png
+.. |get_min_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/get_min_value.png
+.. |get_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/get_value.png
+.. |get_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/get_width.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_bg_color.png
+.. |set_bg_grad_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_bg_grad_color.png
+.. |set_bg_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_bg_radius.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_flag.png
+.. |set_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_height.png
+.. |set_indicator_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_indicator_color.png
+.. |set_indicator_grad_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_indicator_grad_color.png
+.. |set_indicator_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_indicator_radius.png
+.. |set_knob_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_knob_color.png
+.. |set_knob_grad_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_knob_grad_color.png
+.. |set_knob_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_knob_radius.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_pos.png
+.. |set_range.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_range.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_size.png
+.. |set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_state.png
+.. |set_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_value.png
+.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_width.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/set_y.png
+.. |toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/toggle_flag.png
+.. |toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/slider/toggle_state.png

@@ -17,6 +17,7 @@ package(
         "line.py",
         "page.py",
         "port.py",
+        "slider.py",
         "switch.py",
     ),
     base_path="..",
