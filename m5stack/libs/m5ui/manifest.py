@@ -13,6 +13,7 @@ package(
         "buttonmatrix.py",
         "calendar.py",
         "canvas.py",
+        "chart.py",
         "checkbox.py",
         "dropdown.py",
         "image.py",

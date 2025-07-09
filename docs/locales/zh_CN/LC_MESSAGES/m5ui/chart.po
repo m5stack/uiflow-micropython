@@ -1,0 +1,978 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-15 18:43+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/chart.rst:4 ../../en/m5ui/chart.rst:49
+#: 06733332c98e49e1a05857b8f5768b68 2305a713745a4052afadd06e1e3c03b8
+msgid "M5Chart"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:8 607f7a1045f548bb9deecc2b35bad5c6
+msgid ""
+"M5Chart is a versatile charting widget that allows users to create "
+"various types of charts, including line charts and bar charts. It "
+"provides features for data visualization, customization, and "
+"interactivity within the user interface."
+msgstr "M5Chart 是一个多功能的图表组件,允许用户创建各种类型的图表,包括折线图和柱状图。它提供了数据可视化、自定义和用户界面交互等功能。"
+
+#: ../../en/m5ui/chart.rst:11 90ab3f3072824d199ce9c46835844e72
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/chart.rst:14 ../../en/m5ui/chart.rst:33
+#: 17002a084f9e4af1a5405a029091615c 7b92ea6992df4903a8d78e27de197f7d
+msgid "Temperature Line Chart"
+msgstr "温度折线图"
+
+#: ../../en/m5ui/chart.rst:16 ed6f87b78dba490da090078fd370c5ca
+msgid "Open the |cores3_chart_line_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_chart_line_example.m5f2| 项目。"
+
+#: ../../en/m5ui/chart.rst:18 322ccd65336144759d2e39f7e76702fb
+msgid ""
+"This example demonstrates how to create a line chart to visualize "
+"temperature data over time."
+msgstr "此示例演示如何创建折线图来可视化随时间变化的温度数据。"
+
+#: ../../en/m5ui/chart.rst:20 ../../en/m5ui/chart.rst:62
+#: ../../en/m5ui/chart.rst:80 ../../en/m5ui/chart.rst:100
+#: ../../en/m5ui/chart.rst:132 ../../en/m5ui/chart.rst:152
+#: ../../en/m5ui/chart.rst:171 ../../en/m5ui/chart.rst:189
+#: ../../en/m5ui/chart.rst:207 ../../en/m5ui/chart.rst:225
+#: ../../en/m5ui/chart.rst:244 ../../en/m5ui/chart.rst:261
+#: ../../en/m5ui/chart.rst:279 ../../en/m5ui/chart.rst:297
+#: ../../en/m5ui/chart.rst:315 ../../en/m5ui/chart.rst:334
+#: ../../en/m5ui/chart.rst:352 ../../en/m5ui/chart.rst:371
+#: ../../en/m5ui/chart.rst:390 ../../en/m5ui/chart.rst:409
+#: ../../en/m5ui/chart.rst:427 ../../en/m5ui/chart.rst:445
+#: ../../en/m5ui/chart.rst:466 ../../en/m5ui/chart.rst:485
+#: ../../en/m5ui/chart.rst:503 ../../en/m5ui/chart.rst:521
+#: ../../en/m5ui/chart.rst:539 ../../en/m5ui/chart.rst:556
+#: 01914dcda8d842fd940ded5a6b5f21f9 040246b5d76a4513a98ad7e6b5627472
+#: 04325757fba24b57953d09c0b115c063 0d79eda60dcd47bd845cc2b4304e282b
+#: 0e09a97fbcfe4a108f4d585c5208b1db 26dbbdef15e14d04bc2fdc7bec090627
+#: 3e015e5483434e0a8990752d69d643a5 477136e6f6fc47e78731a29b9db4bfdc
+#: 4786fe265b3a4e6fae8d054ff93d68de 498540306efc4bdca2f2810d5ec50137
+#: 4a59fb9b8f994b939583fb12076289ea 5343241759c74b5d929cf8b13984b127
+#: 5946263716014305b66ccfb52922828e 6d4e2768697348589995b8bcf25da7a3
+#: 76d1573370274a8493e784d4e6684fcf 869f1caeb9544036bf143cddde660214
+#: 9aeb587a754a460396dc715805fdecb5 9d7f76924a2f4103a1304da5add6ffbb
+#: b59ae8a8903f46e7b8ca9e73163951e2 b60f89f3e5944992ac423fdba5ed2d27
+#: b936d59c8f18453a8f257cfd4d6b24a8 bc400de2b779422ca38d03c938d63feb
+#: bc6a2461b8104ffd9a0ae1e26cce423d bf3ec3f169364d318e8c7d98afc1c038
+#: c4084eefe5c04001a907a696a5c40a17 c61358acbaa14356ab875a28a9bcb51c
+#: cb52059832464aae98d7ff7ab6fdc43b d8eb7ac6b1d6485293b64e9ccedfbf4c
+#: db77da7c62e84456a5a8e6b541b65ec5 e1ad1f897ac34286ab744e1946a94985
+#: e1e1e5a2e3194453a364490bbda8fab2 ee0ce7f68d304eb299a02ef37acedd4a
+#: fb13b9bb5591482ba0f8b94717e134fa m5ui.chart.M5Chart.add_series:6
+#: m5ui.chart.M5Chart.get_series_color:6 m5ui.chart.M5Chart.set_axis_range:7
+#: m5ui.chart.M5Chart.set_series_color:6 m5ui.chart.M5Chart.set_series_values:7
+#: of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/chart.rst:22 3ab933603f1c4a6592f555011ab9b032
+msgid "|cores3_chart_line_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:44 c862caed6c5e4996b03845843a0dfaaa
+#, fuzzy
+msgid "cores3_chart_line_example.png"
+msgstr "在 UiFlow2 中打开 |cores3_chart_line_example.m5f2| 项目。"
+
+#: ../../en/m5ui/chart.rst:24 ../../en/m5ui/chart.rst:41
+#: 3df8678eb09c4c2e99a997a0395f0ffe b67b444505f14d959df41b2ec975ea47
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/chart.rst:26 ../../en/m5ui/chart.rst:43
+#: 6ec38415eddc4e82852d9c804cd70ccc 933c026133824221bd1f9d397655c4d6
+msgid "A line chart displaying temperature data with labeled axes and grid lines."
+msgstr "显示温度数据的折线图,带有标记的坐标轴和网格线。"
+
+#: ../../en/m5ui/chart.rst:30 cbe287f3eea14845892e33f1edaba9a0
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/chart.rst:35 8c9ff9b5fe1d4e8c8fa6219c9c894e57
+msgid ""
+"This example demonstrates how to create a line chart programmatically to "
+"visualize temperature data."
+msgstr "此示例演示如何通过编程方式创建折线图来可视化温度数据。"
+
+#: ../../en/m5ui/chart.rst:37 ../../en/m5ui/chart.rst:66
+#: ../../en/m5ui/chart.rst:84 ../../en/m5ui/chart.rst:104
+#: ../../en/m5ui/chart.rst:136 ../../en/m5ui/chart.rst:156
+#: ../../en/m5ui/chart.rst:175 ../../en/m5ui/chart.rst:193
+#: ../../en/m5ui/chart.rst:211 ../../en/m5ui/chart.rst:229
+#: ../../en/m5ui/chart.rst:248 ../../en/m5ui/chart.rst:265
+#: ../../en/m5ui/chart.rst:283 ../../en/m5ui/chart.rst:301
+#: ../../en/m5ui/chart.rst:319 ../../en/m5ui/chart.rst:338
+#: ../../en/m5ui/chart.rst:356 ../../en/m5ui/chart.rst:375
+#: ../../en/m5ui/chart.rst:394 ../../en/m5ui/chart.rst:413
+#: ../../en/m5ui/chart.rst:431 ../../en/m5ui/chart.rst:449
+#: ../../en/m5ui/chart.rst:470 ../../en/m5ui/chart.rst:489
+#: ../../en/m5ui/chart.rst:507 ../../en/m5ui/chart.rst:525
+#: ../../en/m5ui/chart.rst:543 ../../en/m5ui/chart.rst:560
+#: 05d57a2043c34a77b8d807f8822211f4 138a7bd915224f9dbfa80b3ba4a98081
+#: 168f72ab27d246fabdab41384b724f14 1a11bcfdad8d4188b30f70b5f39651cf
+#: 268df4bbcc334733b962548c0f0635d3 2d991481e21e4d34a95885fa3d5f192a
+#: 2eb5e3be0753405c87f14be481bd9533 33c6c2cf31e34624800ac3e1fe4cd5db
+#: 34f1ef2fca9e487a9a8a4d603be9f3df 38b40cb5c08b435e9aeb19f4ff186092
+#: 39aeace5b9a343f18bf2e496d75885f7 4326f797d9574450982b925bc9717116
+#: 485ee44d919f4dd59584e7a96c949fae 4894aede976b401c98a0f5a8d8a7a092
+#: 4e6ef6df33124eab83c57629cc039942 51b934e8ec3242af8753a94011166dac
+#: 6759df9221cb464a8b8ae78b0f98a4a2 6ba5a96528bf47608df79d075b74ed8c
+#: 6c2524cd117745a3a046bd1a5470964c 7596a7a9a16147c988c82a36fe5ea715
+#: 966cccc678034f8cb49caebf961ec4a5 9bd7b711669e44aea67e557ddff0749b
+#: a34cdc139fc64f4fb622d39d01540e3d a7733d4adf544154b7f513b29c4e8180
+#: b34d874c16904a1fa29cbc720eb040e1 c827ac6f4e4c4ab4a50196f2c393c674
+#: ce2cb4e3372a40d28f6ab8dc66075932 d618d2ef00bc486d860d3a32e1e8ec07
+#: dbcbb0f8fc9a4fbe92efce65c8a82083 e4a9068e332b486795e9f97a887213eb
+#: f2d18daa3a58426ba0fa8c7a80e1a7b6 f6c24be4485f420cad878a936022a48b
+#: fb1e6e8aa511485b8afca38904050630 m5ui.chart.M5Chart.add_series:10
+#: m5ui.chart.M5Chart.get_series_color:10 m5ui.chart.M5Chart.set_axis_range:11
+#: m5ui.chart.M5Chart.set_series_color:10
+#: m5ui.chart.M5Chart.set_series_values:11 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/chart.rst:46 62db8b58e2104bd0b6f567ffc7a46fb9
+msgid "**API**"
+msgstr "API参考"
+
+#: e57a35a4eab24b4888647fb6c981774d m5ui.chart.M5Chart:1 of
+msgid "Bases: :py:class:`~lvgl.chart`"
+msgstr ""
+
+#: 7ad1ddfbdd0341bb89172ef8dc712b33 m5ui.chart.M5Chart:1 of
+msgid "Create a Chart object."
+msgstr "创建一个图表对象。"
+
+#: ../../en/m5ui/chart.rst 0b9b889f11d446f28f1dd7471dcf9054
+#: 2c7868da08574b0795d1169b8bfec8b1 3214b5ebd8c540b69eb1a915b1adccbe
+#: 32a9d57930b74098a560acbbdc6e1233 34a49969c0d44191a8119a7c0532a0f1
+#: 35f7f0c22f25436489dad6e8bb8460d9 3f0a1863f6ad40468e179bea49be5021
+#: 5230dade9aaa4de9ac1ac4afdf99a6b2 58ebe205bc274a94806b7b4ef28b498e
+#: 5af266174ab14cc8957dcbe5f77868f9 5e686b93305941b697bc3819a8d7ec22
+#: 63127c7a35904e999a25ff6eda504ab4 6a98cd9c6c404bdd95c61649033997b1
+#: 7514279ba31f4d998ae0fbc20be1eddd 823cf7a5be3f4cc4a56928748a5d4c3a
+#: 86a1064434614299829f3caa730001c7 8856a09ee9e4472fb35009b72087cf3c
+#: 9bf7e5aa08a648ca9fec8d44b28011d5 9e594fff5909422e94083ea1f46c8560
+#: 9e7b96445e1d4ad6a04f7fe1efc2e608 a6dc574b17a2436990656d55445b52a4
+#: b05b662a8d0443a08cca93c1a559c1e9 bcd97afb09d74c52bce85aea276f270d
+#: ce22f2006a8c478480d20b55b77460df da76474fd1874145b308262fa6c7e5dc
+#: dbab73ab9a834aad8c7c41ea2920d5ec e0a184056cb24246a4bc3343fc8b1b0e
+#: e17828b6a03548f09d90f532a4a68d35 ed5a85241a7d47f29cad1f8e928ffe0d
+#: f61e37bdad2b494ca834bfa4b1ce8c94 f901c2f1195b44169d36e280703db41e
+#: m5ui.chart.M5Chart.add_series m5ui.chart.M5Chart.get_series_color
+#: m5ui.chart.M5Chart.set_axis_range m5ui.chart.M5Chart.set_series_color
+#: m5ui.chart.M5Chart.set_series_values of
+msgid "Parameters"
+msgstr ""
+
+#: e4e10d47836444c0bb448890f5015f77 m5ui.chart.M5Chart:3 of
+msgid "X coordinate of the chart's position. Default is 0."
+msgstr "图表位置的 X 坐标。默认为 0。"
+
+#: 4f723824dafc495e9cea4b6beda6644f m5ui.chart.M5Chart:4 of
+msgid "Y coordinate of the chart's position. Default is 0."
+msgstr "图表位置的 Y 坐标。默认为 0。"
+
+#: d29cc11a4a5941898573ac71eb94ea27 m5ui.chart.M5Chart:5 of
+msgid "Width of the chart. Default is 200."
+msgstr "图表的宽度。默认为 200。"
+
+#: 71719bc354754493b1e9f4e2f1d14e43 m5ui.chart.M5Chart:6 of
+msgid "Height of the chart. Default is 100."
+msgstr "图表的高度。默认为 100。"
+
+#: a608d0ca3c7b4d63b523507fddcad0ad m5ui.chart.M5Chart:7 of
+msgid ""
+"Type of the chart. lv.chart.TYPE.LINE, lv.chart.TYPE.BAR, etc. Default is"
+" lv.chart.TYPE.LINE."
+msgstr "图表的类型。lv.chart.TYPE.LINE、lv.chart.TYPE.BAR 等。默认为 lv.chart.TYPE.LINE。"
+
+#: 7dca2912ab6244e3be9c5de8e32ae2f6 m5ui.chart.M5Chart:8 of
+msgid "Number of points in the chart. Default is 10."
+msgstr "图表中的点数。默认为 10。"
+
+#: 346cd41dece940b3b58d0eb04ba85b33 m5ui.chart.M5Chart:9 of
+msgid "Number of horizontal division lines. Default is 0 (no lines)."
+msgstr "水平分割线的数量。默认为 0(无线条)。"
+
+#: 037bf6685f534bd0ab87d4c67e0c61e7 m5ui.chart.M5Chart:10 of
+msgid "Number of vertical division lines. Default is 0 (no lines)."
+msgstr "垂直分割线的数量。默认为 0(无线条)。"
+
+#: c2a07b27e22840328f5dfb43fc486592 m5ui.chart.M5Chart:11 of
+msgid "Background corner radius. Default is 7."
+msgstr "背景圆角半径。默认为 7。"
+
+#: e1e89c5a8eda47d5872d706da422f8a8 m5ui.chart.M5Chart:12 of
+msgid "Background color in hex format. Default is 0xFFFFFF (white)."
+msgstr "十六进制格式的背景颜色。默认为 0xFFFFFF(白色)。"
+
+#: fe1bebc67cea44cf86db0a3880129722 m5ui.chart.M5Chart:13 of
+msgid "Border color in hex format. Default is 0xE0E0E0 (light gray)."
+msgstr "十六进制格式的边框颜色。默认为 0xE0E0E0(浅灰色)。"
+
+#: 8402eab69c224f52bf857acecb6d7749 m5ui.chart.M5Chart:14 of
+msgid "Border width. Default is 2."
+msgstr "边框宽度。默认为 2。"
+
+#: bb979445f59e48dda6a5d7f1e7cd4e5a m5ui.chart.M5Chart:15 of
+msgid "Parent LVGL object. Default is the active screen."
+msgstr "父 LVGL 对象。默认为活动屏幕。"
+
+#: ../../en/m5ui/chart.rst:56 97bf09b8c8c347d99f22a31788c99a15
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志。如果 ``value`` 为 True,则添加标志;如果为 False,则移除标志。"
+
+#: ../../en/m5ui/chart.rst:58 8bad409db96c4ccba21b8d18a8f2f592
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/chart.rst:59 f415aebd461a42198893911f02b73bf1
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为 True,则添加标志;如果为 False,则移除标志。"
+
+#: ../../en/m5ui/chart.rst 05cecdd32adb4773b58c662f68c6bf46
+#: 0fdc663a63304ace98858edd08c41b5e 265fb722dd3b43c0b21d8c90bf00501f
+#: 2a4603d57e044208ac483af6070b4833 2a5bc242a64343f6bcea3cf305f4a0dc
+#: 2e2dbdd7557640ecbcecdebe292d5dfa 326034fa08ea488dbbef6050d5c98c1a
+#: 3c615576214e45fd96a327ee59a7b20c 3f77681113df46f986b353b1c5b2eeaa
+#: 41295e31a0fe46958a7e75c66c7fedbc 49a23950ec024fdc97d76b25682f8167
+#: 55eb0f14a3554e7e82d7f782bebab3d0 60ef832124f549d9b5e0c46741371533
+#: 6f4a73fc613c4c1999a218afce46e5e7 7cbb1c66a988425db680f9a6189d3555
+#: 7edbe8e3b3c74ddaab59ffa7096887dc 801332ccc8104009a0e35d91fe7cc82d
+#: 8ba3341bd96943d090d6e07ba215db3e 907495b9fe9347b1902819812b33193a
+#: 91dd2c5d61a343389f73499b01548db1 9578fa5b74ad4af3a3d4262ea851deb3
+#: 9668f59ace85452a9d78cdf07cb89b03 ad73449e4ab14b469fc05be488485d8e
+#: b1eb759fa60f4619b13f28e50aeaacb0 c8816bd7b0224d09907a145c320f1904
+#: ce6db45bc25b46268985bdd89b73c2a0 ece626cf916c476ca8015a149e149fd0
+#: f9154dbaf8e04415b51a1df03821cb86 m5ui.chart.M5Chart.get_series_color of
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:60 ../../en/m5ui/chart.rst:78
+#: ../../en/m5ui/chart.rst:98 ../../en/m5ui/chart.rst:130
+#: ../../en/m5ui/chart.rst:150 ../../en/m5ui/chart.rst:169
+#: ../../en/m5ui/chart.rst:187 ../../en/m5ui/chart.rst:205
+#: ../../en/m5ui/chart.rst:223 ../../en/m5ui/chart.rst:242
+#: ../../en/m5ui/chart.rst:295 ../../en/m5ui/chart.rst:313
+#: ../../en/m5ui/chart.rst:332 ../../en/m5ui/chart.rst:369
+#: ../../en/m5ui/chart.rst:388 ../../en/m5ui/chart.rst:407
+#: ../../en/m5ui/chart.rst:425 ../../en/m5ui/chart.rst:443
+#: ../../en/m5ui/chart.rst:464 ../../en/m5ui/chart.rst:483
+#: ../../en/m5ui/chart.rst:501 ../../en/m5ui/chart.rst:537
+#: 04f62d7140dd40dc943a8cc07e5d827e 0894ee69f1584d329ea619fdb8b38833
+#: 11003d30ac93431bb0ba0992e2a998bf 1a5479df9d9544a38153bd28cb0f13bf
+#: 1c636e574734484297965ff7285f48d9 3a90fcf9b09e4bbfb6ff442bafe05d63
+#: 43ced19367bb487fa4dce3ce33da76a3 478347d205e042729ffd0d5eb5a6eb17
+#: 58d02cfd170745a08e6461f0ebdfbede 6ba4f914d87a42209ca13501cd1223d6
+#: 73406593d5bf4fe7b410aea923a97873 85fce97e11284a51a7cc56cd254f3125
+#: 96d782c05b434307adb5d10ae583743e a21f712b92d94b81b67245ae2a248ee7
+#: a4ae5161e53448a79ca22ad02851e4b7 bbf0f77f211147eab55d1f8890edce8f
+#: c18e6b9c49dc4dff8b0047cc6db589ef dcbc5e0c90c543adb52c367a8422d416
+#: e353f49c84fe4ba1a7634b4886499830 e6ae4bbe19e8405399f6d68444b7630c
+#: edef2b43a5db4308acf1bdd9223c16e7 f71dc7f9789344f78975979e805a9456
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:64 b1e0b23910d4430d8a1134d1e148c6a0
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:16 0bb6519f7a6c40a1ba1015bf6478d299
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:75 4d32f036856644888de22057d72b105b
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果标志已设置,则将其移除;如果未设置,则添加它。"
+
+#: ../../en/m5ui/chart.rst:77 e0fc975e566046e0b7388e7509471a25
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/chart.rst:82 405bc54b124f4904843fa8a96b73cd16
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:33 8bd6c959171e4ad5b22be59367129841
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:93 9dd2ed1f1bd848be855f7f4ad666f670
+msgid ""
+"Add an event callback to the chart. The callback will be called when the "
+"specified event occurs."
+msgstr "为图表添加事件回调。当指定的事件发生时,将调用回调函数。"
+
+#: ../../en/m5ui/chart.rst:95 507e3519ec514c8db121fed209557967
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/chart.rst:96 8141c953d90544479f705547dd2c6040
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/chart.rst:97 fd934dec428b42c0b1a9b41b1b85338d
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调的可选用户数据。"
+
+#: ../../en/m5ui/chart.rst:102 2a1e83427f644eb685a49355596637cd
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:3 da93d8c7746f4318a84249876e1a1099
+msgid "event.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:125 91b2e17d16c24154afb043488b9c8a06
+msgid "Set the background color of the chart."
+msgstr "设置图表的背景颜色。"
+
+#: ../../en/m5ui/chart.rst:127 ../../en/m5ui/chart.rst:147
+#: 8b2896e172164d389b83db035f7d1641 f05b19846aff4e44b56eece414763fc8
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/chart.rst:128 ../../en/m5ui/chart.rst:148
+#: 67cc5018d83b44c4b6231f8f8618e876 b62fb1f4cabd42bd81298087ce5d7510
+msgid ""
+"The opacity of the color. The value should be between 0 (transparent) and"
+" 255 (opaque)."
+msgstr "颜色的不透明度。值应在 0(透明)到 255(不透明)之间。"
+
+#: ../../en/m5ui/chart.rst:129 ../../en/m5ui/chart.rst:149
+#: ../../en/m5ui/chart.rst:168 1313b86ec7784fa3992cd260308a0c25
+#: 373fc40fd16e40169e97122ffe38684a e0abb7b663e545dca01220af054ab7fc
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分(例如 lv.PART.MAIN)。"
+
+#: ../../en/m5ui/chart.rst:134 2f7086d7a2ae41cca81df121eeeefef6
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:13 74c006300ef94bef95a270a27145c49b
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:145 f517b9143a1a494fa645ed3f469edcff
+msgid "Set the border color of the chart."
+msgstr "设置图表的边框颜色。"
+
+#: ../../en/m5ui/chart.rst:154 40c7fbf7788747e3901fd59415dead4b
+msgid "|set_border_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:14 3fdb3f7ea7a44e0abf2dc1e2905a4658
+msgid "set_border_color.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:165 b126a40ab37d4055aed67e68c3ca1f73
+msgid "Set the border width of the chart."
+msgstr "设置图表的宽度。"
+
+#: ../../en/m5ui/chart.rst:167 ../../en/m5ui/chart.rst:385
+#: 06a8162b92ce4f52ba5863cef055789c 5acf7aab9dfe417c90887ce605e18858
+msgid "The width to set."
+msgstr "要设置的宽度。"
+
+#: ../../en/m5ui/chart.rst:173 7d5674b31f5846c996aed4370ee13bed
+msgid "|set_style_border_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:24 beea5b55208441919cf132b30cc2ee2a
+msgid "set_style_border_width.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:184 b5504468b43f443d8a8955c9300717a9
+msgid "Set the type of the chart."
+msgstr "设置图表的类型。"
+
+#: ../../en/m5ui/chart.rst:186 f7fc5b1daaf04bd9831ec2ccad73533c
+msgid "The type of the chart (e.g., lv.chart.TYPE.LINE, lv.chart.TYPE.BAR)."
+msgstr "图表的类型(例如 lv.chart.TYPE.LINE、lv.chart.TYPE.BAR)。"
+
+#: ../../en/m5ui/chart.rst:191 620af33fb7544bdb93eeedfa8f96a333
+msgid "|set_type.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:28 2f3ff8ad09684e7681f7c29d680922c3
+msgid "set_type.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:202 04264ee1035144bf9c1043ce9257aaf7
+msgid "Set the number of points in the chart."
+msgstr "设置图表中的点数。"
+
+#: ../../en/m5ui/chart.rst:204 ../../en/m5ui/chart.rst:276
+#: 2666a1e922fc4716833ba4578fa2282a 5342c305e9484844b51c845349ff6242
+msgid "The number of points."
+msgstr "点的数量。"
+
+#: ../../en/m5ui/chart.rst:209 8b1449992c9d4fabb7aebd7c2bf61259
+msgid "|set_point_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:19 171ed2a9bf074c5caeb5a41ad8ea4266
+msgid "set_point_count.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:220 ca8c8eac846a4e1da014ffecbfd27f9d
+msgid "Set the update mode of the chart."
+msgstr "设置图表的更新模式。"
+
+#: ../../en/m5ui/chart.rst:222 1275794d167b4e448a08fa79b63e2960
+msgid ""
+"The update mode (e.g., lv.chart.UPDATE_MODE.CIRCULAR, "
+"lv.chart.UPDATE_MODE.SHIFT)."
+msgstr "更新模式(例如 lv.chart.UPDATE_MODE.CIRCULAR、lv.chart.UPDATE_MODE.SHIFT)。"
+
+#: ../../en/m5ui/chart.rst:227 6118784864cf4ee888597623694fe90d
+msgid "|set_update_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:29 aa82b7056fa846789d9da59017646f5c
+msgid "set_update_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:238 ac81b0695b96451d835080682c639d24
+msgid "Set the number of division lines on the chart."
+msgstr "设置图表上的分割线数量。"
+
+#: ../../en/m5ui/chart.rst:240 c24950ec6436426ab17e67ad51423c2c
+msgid "The number of horizontal division lines."
+msgstr "水平分割线的数量。"
+
+#: ../../en/m5ui/chart.rst:241 4341eb8bdbdc42dc839841d50df3d937
+msgid "The number of vertical division lines."
+msgstr "垂直分割线的数量。"
+
+#: ../../en/m5ui/chart.rst:246 8c8edc1556924ff688c960ed23b4b51a
+msgid "|set_div_line_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:15 481592f564fe44679fba6c1987117140
+msgid "set_div_line_count.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:257 f9219d09d161407b9bf347060a4ebc84
+msgid "Get the type of the chart."
+msgstr "获取图表的类型。"
+
+#: ../../en/m5ui/chart.rst:259 3c775e03121e41919302644f28fac452
+msgid "The type of the chart."
+msgstr "图表的类型。"
+
+#: ../../en/m5ui/chart.rst:263 fdc10be005c74edcae0ad10d09ae11e8
+msgid "|get_type.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:8 fb821bcc87384764b2976e0a865cf724
+msgid "get_type.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:274 1178c49b7a2f42c2b9802755a51a64b0
+msgid "Get the number of points in the chart."
+msgstr "获取图表中的点数。"
+
+#: ../../en/m5ui/chart.rst 2e7d6ce0f56c402fa06204f3698bb3d8
+#: 4d3198490c444dc5b6d792e2478a5597 71b23a6b5d1344958e9d88c8473b62ab
+#: 79aafa54d74841469a81e32bf1bda4cd d832c918972c4669b2940a3199101173
+#: m5ui.chart.M5Chart.get_series_color of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:281 9fb9ba93972945fa84fef29ea323f336
+msgid "|get_point_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:5 c40748ccf27c4896a90adff9a2e8927b
+msgid "get_point_count.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:292 20703977a2b942d6a478a547c101e76f
+msgid "Remove a data series from the chart."
+msgstr "从图表中移除一个数据序列。"
+
+#: ../../en/m5ui/chart.rst:294 cf049377e36449c8985e447040d80b17
+msgid "The data series to remove."
+msgstr "要移除的数据序列。"
+
+#: ../../en/m5ui/chart.rst:299 c396dfe60c564a89a80feaaf8b4da27a
+msgid "|remove_series.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:11 1333f847d02049929b1edf76b938abde
+msgid "remove_series.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:310 d9dbabffd8ae482485b291185c7e7e4e
+msgid "Hide a data series on the chart."
+msgstr "隐藏图表上的数据序列。"
+
+#: ../../en/m5ui/chart.rst:312 4581bc2336e64fed91c585ce3b674b52
+msgid "The data series to hide."
+msgstr "要隐藏的数据序列。"
+
+#: ../../en/m5ui/chart.rst:317 0e90cd28b291451884cb01ed697ff8f1
+msgid "|hide_series.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:10 a1e20f6bdf75461981bea199e8e8d148
+msgid "hide_series.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:328 65c6a3769b9a440b88067c27909c6dba
+msgid "Set the next point's Y value according to the update mode policy."
+msgstr "根据更新模式策略设置下一个点的 Y 值。"
+
+#: ../../en/m5ui/chart.rst:330 1cf37f92e2fa41f8ba1e4d5b30511739
+msgid "The data series to update."
+msgstr "要更新的数据序列。"
+
+#: ../../en/m5ui/chart.rst:331 0a2e5fd0f6f34894850473859b7cf449
+msgid "The Y value to set."
+msgstr "要设置的 Y 值。"
+
+#: ../../en/m5ui/chart.rst:336 77e8130416fb4e4f98e57559ac395881
+msgid "|set_next_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:18 7cc1c528299d4428aa718cf425e125f1
+msgid "set_next_value.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:347 f75bf7de4af845ebb9b7ff4871914e2b
+msgid "Get the index of the pressed point on the chart."
+msgstr "获取图表上被按下的点的索引。"
+
+#: ../../en/m5ui/chart.rst:349 5e3185d1212c4693acdda582253cfed1
+msgid "The index of the pressed point."
+msgstr "被按下的点的索引。"
+
+#: ../../en/m5ui/chart.rst:354 63f339b4ca68472c95d6926e39ba17bc
+msgid "|get_pressed_point.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:6 aee7b3cb3d2745b6b12ac846036987d7
+msgid "get_pressed_point.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:365 619e0108e43a4565a6c803a4a8501bb5
+msgid "Set the corner radius of the chart."
+msgstr "设置图表的圆角半径。"
+
+#: ../../en/m5ui/chart.rst:367 dcbc8591af92426aa4819ff07c19e906
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/chart.rst:368 ../../en/m5ui/chart.rst:387
+#: 826ff7a8705b4e19a06a4eaee20dde53 cef12e0ebb194039bd3c1d587af4e4aa
+msgid "The part of the object to apply the style to (e.g., lv.PART.INDICATOR)."
+msgstr "要应用样式的对象部分(例如 lv.PART.INDICATOR)。"
+
+#: ../../en/m5ui/chart.rst:373 c8d3e720fa9e4288a93ba5eb8dbb2462
+msgid "|set_style_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:25 680b34d511fe467a92ebf368bced3033
+msgid "set_style_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:383 ../../en/m5ui/chart.rst:479
+#: 45a08f1fdbd544f5acb57c3f372e13d2 fcab90465db84c088dc13c46ee76d928
+msgid "Set the size of the chart."
+msgstr "设置图表的大小。"
+
+#: ../../en/m5ui/chart.rst:386 5c946ab21b6b47b6a11f04d8eb13dcdd
+msgid "The height to set."
+msgstr "要设置的高度。"
+
+#: ../../en/m5ui/chart.rst:392 22be6d57f49746b984e3176ac673b542
+msgid "|set_style_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:27 d9dcacb4dde54055878c1f4c4f68e610
+msgid "set_style_size.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:403 86c87b66d60c4e49892913ea965b5918
+msgid "Set the position of the chart."
+msgstr "设置图表的位置。"
+
+#: ../../en/m5ui/chart.rst:405 ../../en/m5ui/chart.rst:424
+#: 24481e25a4ab462395d6a006535aea1d 7c406fedde9f455193a011756a3f367f
+msgid "The x-coordinate of the chart."
+msgstr "图表的 x 坐标。"
+
+#: ../../en/m5ui/chart.rst:406 ../../en/m5ui/chart.rst:442
+#: 1f3c2efdd3594038baf6784ae0c1e7f2 28dba90fedd84fe89ae0d10c38b2705e
+msgid "The y-coordinate of the chart."
+msgstr "图表的 y 坐标。"
+
+#: ../../en/m5ui/chart.rst:411 d313e7e8fd5646dfaf9c1a52908077f3
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:20 c98fcb39a3ec4aa2ba67dd834a8be6ca
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:422 ca602c4ad7634eeaa67d2115b4a262b7
+msgid "Set the x-coordinate of the chart."
+msgstr "设置图表的 x 坐标。"
+
+#: ../../en/m5ui/chart.rst:429 5b598f11debe45c8a6c36f1b05a8c9fc
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:31 8157a3973e3f4a6abe2f37db92744834
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:440 43031f13a3c74757941bcfd1b04bc0f1
+msgid "Set the y-coordinate of the chart."
+msgstr "设置图表的 y 坐标。"
+
+#: ../../en/m5ui/chart.rst:447 faee0f2d32b444cd8408f26cb2b66aca
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:32 c12edb29d8d0476e95d5c60b4a79e593
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:458 16fb24f0830e49ffaed67e82f25a4022
+msgid "Align the chart to another object."
+msgstr "将图表对齐到另一个对象。"
+
+#: ../../en/m5ui/chart.rst:460 e253ed9b6a714f50bf2f62c91a923db4
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/chart.rst:461 2456e646294c4f54a12a0a536f78d190
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/chart.rst:462 242e3a0b4c454a14bf4db2784656af60
+msgid "The x-offset from the aligned object."
+msgstr "从对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/chart.rst:463 5720e562580743dc9992f65e68f467a4
+msgid "The y-offset from the aligned object."
+msgstr "从对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/chart.rst:468 4c24254ef8124ee18a2ddc98fca4d43b
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:2 597250e5407240efaa789a5217df5e8b
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:481 ../../en/m5ui/chart.rst:500
+#: ../../en/m5ui/chart.rst:518 4c81069f9d4543b189b89d7df6f9ade5
+#: 83e27c09e40b4ad8bc3245fe99ff8035 f815b39d1b6d4a8aae01ff8ea540d253
+msgid "The width of the chart."
+msgstr "图表的宽度。"
+
+#: ../../en/m5ui/chart.rst:482 ../../en/m5ui/chart.rst:536
+#: ../../en/m5ui/chart.rst:553 3848bc94f8c843a3a5c8c487d5f4271c
+#: 5b48e573b3ea4003a0470a3af4a7b727 6909bf24170b4b9b8b042ea8f51d06df
+msgid "The height of the chart."
+msgstr "图表的高度。"
+
+#: ../../en/m5ui/chart.rst:487 5428fb1968be4a4ead1c53d0dc339533
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:23 d08d1aaa1cfc4b91a4929a3bdfa82107
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:498 af184d731bbe4b7995b8ee9de797d61d
+msgid "Set the width of the chart."
+msgstr "设置图表的宽度。"
+
+#: ../../en/m5ui/chart.rst:505 43c1adbea06d467fb42b522e8172db48
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:30 f47c43d3bd664d4ea2000df9b8f6eeab
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:516 0e4593b83b8c40bab7cdf3fef6cd9c9b
+msgid "Get the width of the chart."
+msgstr "获取图表的宽度。"
+
+#: ../../en/m5ui/chart.rst:523 bee5bd94db7a41e28f28e2d5a808fcc7
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:9 6d30ba2172c94d6bbab83896fd9f47d9
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:534 cc528b9c1223488293b8e80803800a19
+msgid "Set the height of the chart."
+msgstr "设置图表的高度。"
+
+#: ../../en/m5ui/chart.rst:541 3a5f861e0d9344aebf5cd327710faa52
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:17 e350d8a601334e3ab6f51a1d96d372a1
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/chart.rst:551 ed7f2aac8fb3459c9e11b0de39e7dff6
+msgid "Get the height of the chart."
+msgstr "获取图表的高度。"
+
+#: ../../en/m5ui/chart.rst:558 e665b4d22410472687f3da9d4431abf2
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:4 a792357b6e0c40d2bdd48aec844d6dc8
+msgid "get_height.png"
+msgstr ""
+
+#: a494086cb04448caa0c9a545b92d8368 m5ui.chart.M5Chart.x_axis_init:1 of
+msgid "Initialize the X axis."
+msgstr "初始化 X 轴。"
+
+#: 792a4bb3733149cea426eb42564ae4c9 m5ui.chart.M5Chart.x_axis_init:3 of
+msgid "Width of the X axis. Default is lv.pct(100)."
+msgstr "X 轴的宽度。默认为 lv.pct(100)。"
+
+#: ad2a28dccb9343a980656e14616f9f01 m5ui.chart.M5Chart.x_axis_init:4 of
+msgid "Height of the X axis. Default is 50."
+msgstr "X 轴的高度。默认为 50。"
+
+#: df5abf8f5432485ab83c5fdd1592a4f3 m5ui.chart.M5Chart.x_axis_init:5 of
+msgid "Mode of the X axis. Default is lv.scale.MODE.HORIZONTAL_BOTTOM."
+msgstr "X 轴的模式。默认为 lv.scale.MODE.HORIZONTAL_BOTTOM。"
+
+#: b5538940699c45408184fa3b14d51fa8 m5ui.chart.M5Chart.x_axis_init:6 of
+msgid "Minimum value of the X axis. Default is 0."
+msgstr "X 轴的最小值。默认为 0。"
+
+#: 24e3e1f8df6943b29ea661b1269a62b9 m5ui.chart.M5Chart.x_axis_init:7 of
+msgid "Maximum value of the X axis. Default is 100."
+msgstr "X 轴的最大值。默认为 100。"
+
+#: a6598649817f41b6af19a55846a5ff7f m5ui.chart.M5Chart.x_axis_init:8 of
+msgid "Number of major ticks on the X axis. Default is 5."
+msgstr "X 轴上的主刻度数量。默认为 5。"
+
+#: 380966adce36414aa4d00c4ccea4577a 4593aa02bf4f4b409a89224aae31d552
+#: 801be54b28ee484491eff70f40c23399 m5ui.chart.M5Chart.x_axis_init:9
+#: m5ui.chart.M5Chart.y_axis1_init:9 m5ui.chart.M5Chart.y_axis2_init:9 of
+msgid "Length of major ticks. Default is 10."
+msgstr "主刻度的长度。默认为 10。"
+
+#: 40566de8a1e94987b8cb92f622e78dbe 497f51c8f61c437a9cc3ebe5f2b15244
+#: e325a2ee39d34f698f3370d5eabaf0b6 m5ui.chart.M5Chart.x_axis_init:10
+#: m5ui.chart.M5Chart.y_axis1_init:10 m5ui.chart.M5Chart.y_axis2_init:10 of
+msgid "Number of minor ticks between major ticks. Default is 2."
+msgstr "主刻度之间的次刻度数量。默认为 2。"
+
+#: 1ab9414162f140d4b067250cba30712e 8383b9b645094a83a39f979f585c3355
+#: 9dcece2ecdd04c198b15cbd6814f88b9 m5ui.chart.M5Chart.x_axis_init:11
+#: m5ui.chart.M5Chart.y_axis1_init:11 m5ui.chart.M5Chart.y_axis2_init:11 of
+msgid "Length of minor ticks. Default is 5."
+msgstr "次刻度的长度。默认为 5。"
+
+#: 7846eb1adb264af7b455e66ab9f22587 m5ui.chart.M5Chart.x_axis_init:12 of
+msgid "Whether to show labels on the X axis. Default is True."
+msgstr "是否在 X 轴上显示标签。默认为 True。"
+
+#: 8699df8a966345da9f04aa59dfd4e820 m5ui.chart.M5Chart.y_axis1_init:1 of
+msgid "Initialize the primary Y axis."
+msgstr "初始化主 Y 轴。"
+
+#: 7a473a89beae4a6182f88eb08b706179 dce496a811e6450da01fe54c59c242e2
+#: m5ui.chart.M5Chart.y_axis1_init:3 m5ui.chart.M5Chart.y_axis2_init:3 of
+msgid "Width of the Y axis. Default is 50."
+msgstr "Y 轴的宽度。默认为 50。"
+
+#: 1cedd149eda44d2da223237e4244d3ef 8b13d073602d43a7bd3d4710cdb3565f
+#: m5ui.chart.M5Chart.y_axis1_init:4 m5ui.chart.M5Chart.y_axis2_init:4 of
+msgid "Height of the Y axis. Default is lv.pct(100)."
+msgstr "Y 轴的高度。默认为 lv.pct(100)。"
+
+#: fe2dab1d30a9411cab3092c2ff26a38f m5ui.chart.M5Chart.y_axis1_init:5 of
+msgid "Mode of the Y axis. Default is lv.scale.MODE.VERTICAL_LEFT."
+msgstr "Y 轴的模式。默认为 lv.scale.MODE.VERTICAL_LEFT。"
+
+#: 264c9a8069564006a57547b07ec050dd fff4db76b4be48948a7d07aa508319d7
+#: m5ui.chart.M5Chart.y_axis1_init:6 m5ui.chart.M5Chart.y_axis2_init:6 of
+msgid "Minimum value of the Y axis. Default is 0."
+msgstr "Y 轴的最小值。默认为 0。"
+
+#: 40fa71eedbfe434693b96d33ab3c6588 df85bd8753414d8caebb5d199395549c
+#: m5ui.chart.M5Chart.y_axis1_init:7 m5ui.chart.M5Chart.y_axis2_init:7 of
+msgid "Maximum value of the Y axis. Default is 100."
+msgstr "Y 轴的最大值。默认为 100。"
+
+#: 4ed017fc7f4c421dbe8baa2aebb39e11 9ba59e4eaa6e4c519726db35ea016e7a
+#: m5ui.chart.M5Chart.y_axis1_init:8 m5ui.chart.M5Chart.y_axis2_init:8 of
+msgid "Number of major ticks on the Y axis. Default is 5."
+msgstr "Y 轴上的主刻度数量。默认为 5。"
+
+#: d2bcd81c5d3a42339a322fc5059b4596 m5ui.chart.M5Chart.y_axis1_init:12 of
+msgid "Whether to show labels on the Y axis. Default is True."
+msgstr "是否在 Y 轴上显示标签。默认为 True。"
+
+#: d7fb1970802343ceb11b35966f9ae2a8 m5ui.chart.M5Chart.y_axis2_init:1 of
+msgid "Initialize the secondary Y axis."
+msgstr "初始化次 Y 轴。"
+
+#: 6f5602f506d941338aa6a3f852ab34d4 m5ui.chart.M5Chart.y_axis2_init:5 of
+msgid "Mode of the Y axis. Default is lv.scale.MODE.VERTICAL_RIGHT."
+msgstr "Y 轴的模式。默认为 lv.scale.MODE.VERTICAL_RIGHT。"
+
+#: 97f3c17591a04a12b34cfc30ab9cfc13 m5ui.chart.M5Chart.y_axis2_init:12 of
+msgid "Whether to show labels on the Y axis. Default is True"
+msgstr "是否在 Y 轴上显示标签。默认为 True"
+
+#: 5fed540a00f14c769569ba33214d4a15 m5ui.chart.M5Chart.set_axis_range:1 of
+msgid "Set the range of the specified axis."
+msgstr "设置指定坐标轴的范围。"
+
+#: 8a0c12774e5e4e81adabaa085fc8e9fc m5ui.chart.M5Chart.set_axis_range:3 of
+msgid ""
+"Axis to set the range for. lv.chart.AXIS.PRIMARY_X, "
+"lv.chart.AXIS.PRIMARY_Y, or lv.chart.AXIS.SECONDARY_Y."
+msgstr ""
+"要设置范围的坐标轴。lv.chart.AXIS.PRIMARY_X、lv.chart.AXIS.PRIMARY_Y 或 "
+"lv.chart.AXIS.SECONDARY_Y。"
+
+#: 42693a533b5b41e490a380db81d5987d m5ui.chart.M5Chart.set_axis_range:4 of
+msgid "Minimum value of the axis."
+msgstr "坐标轴的最小值。"
+
+#: ae153d1f776a471ba884d737875f45c3 m5ui.chart.M5Chart.set_axis_range:5 of
+msgid "Maximum value of the axis."
+msgstr "坐标轴的最大值。"
+
+#: c2d0b8ad34d34b9f9815bd4e507ed440 m5ui.chart.M5Chart.set_axis_range:9 of
+msgid "|set_axis_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:12 618bbaa333f34be589d55e1cde213d21
+msgid "set_axis_range.png"
+msgstr ""
+
+#: 5b6621f2fede4b20bc1cdec8095cd5f4 m5ui.chart.M5Chart.add_series:1 of
+msgid "Add a data series to the chart."
+msgstr "向图表添加数据序列。"
+
+#: 450fe31144b4477cb682b18c9e6b5670 79887f7b2a154dc8bbea85ae0fb7bdf8
+#: d04688581495426b921bb5e10a215669 m5ui.chart.M5Chart.add_series:3
+#: m5ui.chart.M5Chart.get_series_color:4 m5ui.chart.M5Chart.set_series_color:4
+#: of
+msgid "Color of the series in hex format."
+msgstr "十六进制格式的序列颜色。"
+
+#: 43dcde859c14488392739afe24634435 m5ui.chart.M5Chart.add_series:4 of
+msgid ""
+"Axis to associate the series with. lv.chart.AXIS.PRIMARY_Y or "
+"lv.chart.AXIS.SECONDARY_Y."
+msgstr "与序列关联的坐标轴。lv.chart.AXIS.PRIMARY_Y 或 lv.chart.AXIS.SECONDARY_Y。"
+
+#: 95e625d9ddf842dda8c66fb9da2d5711 m5ui.chart.M5Chart.add_series:8 of
+msgid "|add_series.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:1 2f9980ba39914cfd96fb1d65236235b8
+msgid "add_series.png"
+msgstr ""
+
+#: fdb6e24837d8496da738844936e5d1e8 m5ui.chart.M5Chart.set_series_color:1 of
+msgid "Set the color of a data series."
+msgstr "设置数据序列的颜色。"
+
+#: a6f9a0fdd00649289b0a8b764bedb785 m5ui.chart.M5Chart.set_series_color:3 of
+msgid "Series to set the color for."
+msgstr "要设置颜色的序列。"
+
+#: fda3ddbdf9d1417492a2ee2588f1ea1b m5ui.chart.M5Chart.set_series_color:8 of
+msgid "|set_series_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:21 fcb0f4e4b9404514a14e162fa22c378b
+msgid "set_series_color.png"
+msgstr ""
+
+#: 166750c14bc44e9e9e0e6486512d344a m5ui.chart.M5Chart.get_series_color:1 of
+msgid "Get the color of a data series."
+msgstr "获取数据序列的颜色。"
+
+#: 4687a7343e7e4ce2b16eb17dc51ecc68 m5ui.chart.M5Chart.get_series_color:3 of
+msgid "Series to get the color for."
+msgstr "要获取颜色的序列。"
+
+#: e5ad4aeab5604c509ac9d62b7e2d710d m5ui.chart.M5Chart.get_series_color:8 of
+msgid "|get_series_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:7 eba16caec91e470ea382fa6b7edf736e
+msgid "get_series_color.png"
+msgstr ""
+
+#: 92860d3be43a4e3792c55cd2fca6e750 m5ui.chart.M5Chart.set_series_values:1 of
+msgid "Set the values of a data series."
+msgstr "设置数据序列的值。"
+
+#: 64a04aebbb744da7a340461baf007e48 m5ui.chart.M5Chart.set_series_values:3 of
+msgid "Series to set the values for."
+msgstr "要设置值的序列。"
+
+#: 03b58643f6234625901cdf9400d702ff m5ui.chart.M5Chart.set_series_values:4 of
+msgid "List of values to set."
+msgstr "要设置的值列表。"
+
+#: 3324bc3a996746169a82b6686169fa20 m5ui.chart.M5Chart.set_series_values:5 of
+msgid "Number of values to set. Default is -1 (set all values)."
+msgstr "要设置的值的数量。默认为 -1(设置所有值)。"
+
+#: 1a71ff606a624463a24e6d357696fdc4 m5ui.chart.M5Chart.set_series_values:9 of
+msgid "|set_series_values.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.chart.ref:22 82a05012cef34d3889c638f3e961c7f9
+msgid "set_series_values.png"
+msgstr ""
+
+#~ msgid "Set the border width of the roller."
+#~ msgstr ""
+
