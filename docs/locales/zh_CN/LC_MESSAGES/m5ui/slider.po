@@ -1,0 +1,641 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-27 15:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/slider.rst:4 ../../en/m5ui/slider.rst:52
+#: 1397854c521d487690d3b990e9efa6c1 19be2e4ea65b4c36948da65f7ca2742f
+msgid "M5Slider"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:8 8b35ebbe69da40938fd001afb28305ce
+msgid ""
+"M5Slider is a widget that can be used to create sliders in the user "
+"interface. It allows users to select a value from a range by dragging a "
+"handle along a track."
+msgstr "M5Slider是一个可以在用户界面中创建滑块的控件。它允许用户通过沿着轨道拖动手柄来从范围内选择一个值。"
+
+#: ../../en/m5ui/slider.rst:11 7aa95fb8de1743878179930220d7fb29
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/slider.rst:14 ../../en/m5ui/slider.rst:33
+#: 017b653fa2e943b897a0ee9183086543 04a3cea74a864e858effd9c0a145530d
+msgid "basic slider"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:16 d05430de994d4f269c407e13fb9724e2
+msgid "Open the |cores3_slider_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开|cores3_slider_basic_example.m5f2|项目。"
+
+#: ../../en/m5ui/slider.rst:18 ../../en/m5ui/slider.rst:35
+#: a090ff570bd1406cab842bb4aabbfc96
+msgid ""
+"This example creates a basic slider that can be used to select values "
+"from 0 to 100."
+msgstr "此示例创建一个基础滑块，可以用来选择0到100之间的值。"
+
+#: ../../en/m5ui/slider.rst:20 ../../en/m5ui/slider.rst:65
+#: ../../en/m5ui/slider.rst:82 ../../en/m5ui/slider.rst:100
+#: ../../en/m5ui/slider.rst:117 ../../en/m5ui/slider.rst:136
+#: ../../en/m5ui/slider.rst:167 ../../en/m5ui/slider.rst:185
+#: ../../en/m5ui/slider.rst:211 ../../en/m5ui/slider.rst:234
+#: ../../en/m5ui/slider.rst:251 ../../en/m5ui/slider.rst:269
+#: ../../en/m5ui/slider.rst:290 ../../en/m5ui/slider.rst:307
+#: ../../en/m5ui/slider.rst:325 ../../en/m5ui/slider.rst:342
+#: ../../en/m5ui/slider.rst:359 ../../en/m5ui/slider.rst:379
+#: ../../en/m5ui/slider.rst:397 ../../en/m5ui/slider.rst:414
+#: ../../en/m5ui/slider.rst:431 ../../en/m5ui/slider.rst:448
+#: ../../en/m5ui/slider.rst:465 014091ce899f43faa4a224c219a4a518
+#: 4ef61c35f92240c6b6f818a875685cb1
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/slider.rst:22 9b9f46dad577481385b5d0f3117fd9a3
+msgid "|cores3_slider_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:5 53a4405c344a4b6d8571ce3a0bb1ffde
+msgid "cores3_slider_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:24 ../../en/m5ui/slider.rst:43
+#: a491fc9033ed4847b1abafcc854368a5
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/slider.rst:26 ../../en/m5ui/slider.rst:45
+#: ../../en/m5ui/slider.rst:63 ../../en/m5ui/slider.rst:80
+#: ../../en/m5ui/slider.rst:98 ../../en/m5ui/slider.rst:115
+#: ../../en/m5ui/slider.rst:134 ../../en/m5ui/slider.rst:165
+#: ../../en/m5ui/slider.rst:183 ../../en/m5ui/slider.rst:209
+#: ../../en/m5ui/slider.rst:232 ../../en/m5ui/slider.rst:267
+#: ../../en/m5ui/slider.rst:323 ../../en/m5ui/slider.rst:340
+#: ../../en/m5ui/slider.rst:357 ../../en/m5ui/slider.rst:377
+#: ../../en/m5ui/slider.rst:395 ../../en/m5ui/slider.rst:412
+#: ../../en/m5ui/slider.rst:446 aa01d2aec7794b3280cf4080b1c0b19e
+#: cec5e0f5625b49fc879bb7a308105f44 eec338e83a3e4153bed7ce72e557098f
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:30 956901da43d1449ebfdf3644f899db94
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/slider.rst:37 ../../en/m5ui/slider.rst:69
+#: ../../en/m5ui/slider.rst:86 ../../en/m5ui/slider.rst:104
+#: ../../en/m5ui/slider.rst:121 ../../en/m5ui/slider.rst:140
+#: ../../en/m5ui/slider.rst:171 ../../en/m5ui/slider.rst:193
+#: ../../en/m5ui/slider.rst:219 ../../en/m5ui/slider.rst:238
+#: ../../en/m5ui/slider.rst:255 ../../en/m5ui/slider.rst:273
+#: ../../en/m5ui/slider.rst:294 ../../en/m5ui/slider.rst:311
+#: ../../en/m5ui/slider.rst:329 ../../en/m5ui/slider.rst:346
+#: ../../en/m5ui/slider.rst:363 ../../en/m5ui/slider.rst:383
+#: ../../en/m5ui/slider.rst:401 ../../en/m5ui/slider.rst:418
+#: ../../en/m5ui/slider.rst:435 ../../en/m5ui/slider.rst:452
+#: ../../en/m5ui/slider.rst:469 17124aac9cda4384b47343acd7439794
+#: bd1c7933189d4e7294eda9915c177864
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/slider.rst:49 7c3240cb66d3434da8b1e7fece47e122
+msgid "**API**"
+msgstr "API参考"
+
+#: 16a861e9c0ab42acbf2cda652c59b7fe m5ui.slider.M5Slider:1 of
+msgid "Bases: :py:class:`~lvgl.slider`"
+msgstr ""
+
+#: 23299e21f5734e0a8b2b353b929268b3 m5ui.slider.M5Slider:1 of
+msgid "Create a slider widget."
+msgstr "创建一个滑块小部件。"
+
+#: ../../en/m5ui/slider.rst 1732d89b6033416baced4cae5d2f2d7d
+msgid "Parameters"
+msgstr ""
+
+#: 5f84dbd4555d474db2193a2944060527 m5ui.slider.M5Slider:3 of
+msgid "The x position of the slider."
+msgstr "滑块的 x 位置。"
+
+#: 5f84dbd4555d474db2193a2944060527 m5ui.slider.M5Slider:4 of
+msgid "The y position of the slider."
+msgstr "滑块的 y 位置。"
+
+#: ../../en/m5ui/slider.rst:393 ../../en/m5ui/slider.rst:411
+#: ../../en/m5ui/slider.rst:428 4d2b6cc9402e42d582c5547c3a940565
+#: m5ui.slider.M5Slider:5 of
+msgid "The width of the slider."
+msgstr "滑块的宽度。"
+
+#: ../../en/m5ui/slider.rst:394 ../../en/m5ui/slider.rst:445
+#: ../../en/m5ui/slider.rst:462 a261bfe607e84533be1badbb50013666
+#: m5ui.slider.M5Slider:6 of
+msgid "The height of the slider."
+msgstr "滑块的高度。"
+
+#: 24f3c6d9b3c24f9f8e912d0a57cdb6e1 m5ui.slider.M5Slider:7 of
+msgid "only `lv.slider.MODE.NORMAL` is supported."
+msgstr "仅支持“lv.slider.MODE.NORMAL”。"
+
+#: 82f947a439cf4cafb10dc1d477a2fcd8 m5ui.slider.M5Slider:8 of
+msgid "The minimum value of the slider."
+msgstr "范围的最小值。"
+
+#: 076ab011d4fd4dae9f3fe7bf8eca7be1 m5ui.slider.M5Slider:9 of
+msgid "The maximum value of the slider."
+msgstr "范围的最大值。"
+
+#: 711e38aa18ba44caa4ce28e3db5e7263 m5ui.slider.M5Slider:10 of
+msgid "The initial value of the slider."
+msgstr "滑块的当前值。"
+
+#: f9e7553f221b46e79723c62330d18047 m5ui.slider.M5Slider:11 of
+msgid "The background color of the slider."
+msgstr "设置滑块的背景颜色。"
+
+#: 8fc7d234738b424f8521510485ba7d98 m5ui.slider.M5Slider:12 of
+msgid "The color of the slider indicator."
+msgstr "滑块指示器的颜色。"
+
+#: 4a54696e4090478f90822a3526b5850e m5ui.slider.M5Slider:13 of
+msgid ""
+"The parent object of the slider. If not specified, it will be set to the "
+"active screen."
+msgstr "滑块的父对象。如果未指定，则将被设置为活动屏幕。"
+
+#: ../../en/m5ui/slider.rst:59 aab92ea678f842229ae9c9f47398050a
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "设置对象上的标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/slider.rst:61 f94db829a86f44739fd888c5d571e14a
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/slider.rst:62 dac5509718a8483190f6090e5dbc46a7
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/slider.rst 00feeabbb9d44514835dd2f77943a5a5
+#: a01772ee12844d51851760cfbd879156
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:67 a5ac599efdda4b63a21ab2d202176431
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:17 6f0cd885338a4712a38be890d1e0e548
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:77 66abdee964af46b2a75a3ab6c17013ee
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果标志已设置，则移除它；如果未设置，则添加它。"
+
+#: ../../en/m5ui/slider.rst:79 5d79e9c32c2d46c283f1d48535458249
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/slider.rst:84 0c36fb8275394cfebbb72ac5ebfd6e70
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:33 2eb397982a5342bc97ca6d4e4f719eb2
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:94 aab92ea678f842229ae9c9f47398050a
+msgid ""
+"Set the state of the slider. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置滑块的状态。如果 ``value`` 为 True，则设置状态；如果为 False，则取消设置状态。"
+
+#: ../../en/m5ui/slider.rst:96 d17b68f15b6a4972971fcaf1c92c50fa
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/slider.rst:97 dac5509718a8483190f6090e5dbc46a7
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为 True，则状态已设置；如果为 False，则状态未设置。"
+
+#: ../../en/m5ui/slider.rst:102 7330e7761ca54bdc8ab9fbbf11701d44
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:28 3e9e20aadfe942c1a791c8c287653302
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:112 66abdee964af46b2a75a3ab6c17013ee
+msgid ""
+"Toggle the state of the slider. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换滑块的状态。如果滑块状态已设置，则表示取消设置；如果滑块状态未设置，则表示设置。"
+
+#: ../../en/m5ui/slider.rst:114 5d79e9c32c2d46c283f1d48535458249
+msgid "The state to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/slider.rst:119 0c36fb8275394cfebbb72ac5ebfd6e70
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:34 2eb397982a5342bc97ca6d4e4f719eb2
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:129 4a54696e4090478f90822a3526b5850e
+msgid ""
+"Add an event callback to the slider. The callback will be called when the"
+" specified event occurs."
+msgstr "为滑块添加事件回调。当指定的事件发生时，将调用回调函数。"
+
+#: ../../en/m5ui/slider.rst:131 65bb7055160a42908280b70e4604661d
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/slider.rst:132 8355c08e88924947ad1eba716d194d67
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/slider.rst:133 e32472679fad4e4e8b9a924b744adb3d
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调函数的可选用户数据。"
+
+#: ../../en/m5ui/slider.rst:138 806a741155a443598ca8be98263cbb24
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:8 c0723d4277ec4626bd1ca22afc0f351e
+msgid "event.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:160 f9e7553f221b46e79723c62330d18047
+msgid "Set the background color of the slider."
+msgstr "设置滑块的背景颜色。"
+
+#: ../../en/m5ui/slider.rst:162 20c7b4f4339d4c51aa999e2cccf2d03d
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/slider.rst:163 cb73b9f926504ae0b75af4bee33df099
+msgid ""
+"The opacity of the color. The value should be between 0 (transparent) and"
+" 255 (opaque)."
+msgstr "颜色的不透明度。值应在0（透明）和255（不透明）之间。"
+
+#: ../../en/m5ui/slider.rst:164 256992bdae0d44068f79b7494da70c8d
+msgid ""
+"The part of the object to apply the style to (e.g., lv.PART.MAIN, "
+"lv.PART.INDICATOR)."
+msgstr "要应用样式的对象部分（例如，lv.PART.MAIN，lv.PART.INDICATOR）。"
+
+#: ../../en/m5ui/slider.rst:169 d33af1890ff24042bac51bbfa6f50728
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:14 5d94c27365984efebd076f33551d38b1
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:179 8fc7d234738b424f8521510485ba7d98
+msgid "Set the corner radius of the slider components."
+msgstr "设置滑块组件的角半径。"
+
+#: ../../en/m5ui/slider.rst:181 6374ed0fac604faca29b41be4eb707fb
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/slider.rst:182 7b6469178e5142fe87eb08d67f7df969
+msgid ""
+"The part of the object to apply the style to (e.g., lv.PART.MAIN, "
+"lv.PART.KNOB)."
+msgstr "要应用样式的对象部分（例如，lv.PART.MAIN，lv.PART.KNOB）。"
+
+#: ../../en/m5ui/slider.rst:187 daf4d4ff51f94035940927cce87bd3a3
+msgid "|set_bg_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:16 f69130b4e74f4068be25ac8912ef5d02
+msgid "set_bg_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:189 daf4d4ff51f94035940927cce87bd3a3
+msgid "|set_indicator_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:21 f69130b4e74f4068be25ac8912ef5d02
+msgid "set_indicator_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:191 daf4d4ff51f94035940927cce87bd3a3
+msgid "|set_knob_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:24 f69130b4e74f4068be25ac8912ef5d02
+msgid "set_knob_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:201 f9e7553f221b46e79723c62330d18047
+msgid "Set the background gradient color of the bar."
+msgstr "设置滑块的背景颜色。"
+
+#: ../../en/m5ui/slider.rst:203 454cc3e88dfa455286fc3acbd73dddaa
+msgid "The start color of the gradient, can be an integer (RGB)."
+msgstr "渐变的起始颜色，可以是整数（RGB）。"
+
+#: ../../en/m5ui/slider.rst:204 e9d11671b32447329d23ac350a84e8e1
+msgid "The opacity of the start color (0-255)."
+msgstr "起始颜色的不透明度（0-255）。"
+
+#: ../../en/m5ui/slider.rst:205 dbee46023b0340668007aff7e26170dc
+msgid "The end color of the gradient, can be an integer (RGB)."
+msgstr "渐变的结束颜色，可以是整数（RGB）。"
+
+#: ../../en/m5ui/slider.rst:206 89c071e1827947cfbb6508595e1dd17b
+msgid "The opacity of the end color (0-255)."
+msgstr "结束颜色的不透明度（0-255）。"
+
+#: ../../en/m5ui/slider.rst:207 7b6469178e5142fe87eb08d67f7df969
+msgid "The direction of the gradient (e.g., lv.GRAD_DIR.VER)."
+msgstr "渐变的方向（例如，lv.GRAD_DIR.VER）。"
+
+#: ../../en/m5ui/slider.rst:208 7b6469178e5142fe87eb08d67f7df969
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（例如，lv.PART.MAIN，lv.PART.KNOB）。"
+
+#: ../../en/m5ui/slider.rst:213 257ddd7e18464322865311d44412e04e
+msgid "|set_bg_grad_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:15 5d94c27365984efebd076f33551d38b1
+msgid "set_bg_grad_color.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:215 257ddd7e18464322865311d44412e04e
+msgid "|set_indicator_grad_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:20 e7a5a6460d7347e28cc84bf2c45b6bfd
+msgid "set_indicator_grad_color.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:217 257ddd7e18464322865311d44412e04e
+msgid "|set_knob_grad_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:23 e7a5a6460d7347e28cc84bf2c45b6bfd
+msgid "set_knob_grad_color.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:228 d8d62a2d582c4e8c9705e7e372e9efc9
+msgid "Set the value of the slider."
+msgstr "设置滑块的值。"
+
+#: ../../en/m5ui/slider.rst:230 d17b68f15b6a4972971fcaf1c92c50fa
+msgid "The value to set."
+msgstr "要设置的值。"
+
+#: ../../en/m5ui/slider.rst:231 ca68dc5764954674beac911360a828af
+msgid "Whether to animate the change."
+msgstr "是否使用动画效果进行更改。"
+
+#: ../../en/m5ui/slider.rst:236 2f81a90297a8498392adc9bf4052ac2c
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:29 617e47f1971f41caba6c8e5e51ff98a4
+msgid "set_value.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:246 61eb97c5795d48a0a38b81e2c3c454d9
+msgid "Get the current value of the slider."
+msgstr "获取滑块的当前值。"
+
+#: ../../en/m5ui/slider.rst:248 711e38aa18ba44caa4ce28e3db5e7263
+msgid "The current value of the slider."
+msgstr "滑块的当前值。"
+
+#: ../../en/m5ui/slider.rst 8edf7a0801aa4ce4915e5eeabb892ac5
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:253 9d1c2f12ffc44b2ca77438696471e66c
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:12 f5105cbbf6ec46d7bde721288037fa81
+msgid "get_value.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:263 f4486db28a3447b0a62907d445cc998f
+msgid "Set the range of the slider."
+msgstr "设置滑块的范围。"
+
+#: ../../en/m5ui/slider.rst:265 82f947a439cf4cafb10dc1d477a2fcd8
+msgid "The minimum value of the range."
+msgstr "范围的最小值。"
+
+#: ../../en/m5ui/slider.rst:266 076ab011d4fd4dae9f3fe7bf8eca7be1
+msgid "The maximum value of the range."
+msgstr "范围的最大值。"
+
+#: ../../en/m5ui/slider.rst:271 35428c8a140c456eb3324b75cd661d46
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:26 ab58fb66243a4b7c80baa9cc0bc1bf91
+msgid "set_range.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:281 ddfb383783fe41809f04330f144f5975
+msgid "Set the mode of the slider."
+msgstr "设置滑块的模式。"
+
+#: ../../en/m5ui/slider.rst:285 61eb97c5795d48a0a38b81e2c3c454d9
+msgid "Get the minimum value of the slider range."
+msgstr "范围的最小值。"
+
+#: ../../en/m5ui/slider.rst:287 82f947a439cf4cafb10dc1d477a2fcd8
+msgid "The minimum value of the slider range."
+msgstr "范围的最小值。"
+
+#: ../../en/m5ui/slider.rst:292 9d1c2f12ffc44b2ca77438696471e66c
+msgid "|get_min_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:11 f5105cbbf6ec46d7bde721288037fa81
+msgid "get_min_value.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:302 61eb97c5795d48a0a38b81e2c3c454d9
+msgid "Get the maximum value of the slider range."
+msgstr "范围的最大值。"
+
+#: ../../en/m5ui/slider.rst:304 076ab011d4fd4dae9f3fe7bf8eca7be1
+msgid "The maximum value of the slider range."
+msgstr "范围的最大值。"
+
+#: ../../en/m5ui/slider.rst:309 9d1c2f12ffc44b2ca77438696471e66c
+msgid "|get_max_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:10 f5105cbbf6ec46d7bde721288037fa81
+msgid "get_max_value.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:319 5f84dbd4555d474db2193a2944060527
+msgid "Set the position of the slider."
+msgstr "设置滑块的位置。"
+
+#: ../../en/m5ui/slider.rst:321 ../../en/m5ui/slider.rst:339
+#: 1432d2c3dc3b4eb1b1e91cb56cf09fd6
+msgid "The x-coordinate of the slider."
+msgstr "滑块的x坐标。"
+
+#: ../../en/m5ui/slider.rst:322 ../../en/m5ui/slider.rst:356
+#: f95f24aab6f74f9987278ef180b5b977
+msgid "The y-coordinate of the slider."
+msgstr "滑块的y坐标。"
+
+#: ../../en/m5ui/slider.rst:327 0594893fa6f54a0eb96a924c4a27768f
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:25 82ea1f43cab84e93acf975a643475159
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:337 5962ac94367346f78ed7aaf94241c226
+msgid "Set the x-coordinate of the slider."
+msgstr "设置滑块的x坐标。"
+
+#: ../../en/m5ui/slider.rst:344 dd0bfec12f534b309faa0e335f85273a
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:31 c9a030ceedca4553b78a96c02bf99d97
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:354 c0d8380d483a44fe92032de62875eca1
+msgid "Set the y-coordinate of the slider."
+msgstr "设置滑块的y坐标。"
+
+#: ../../en/m5ui/slider.rst:361 6bfd7731be23448ab7d79aca4d0ba9fc
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:32 72dd2520f9e5482fa4db1835e17541a3
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:371 be06bed795104d9d882dc08766695848
+msgid "Align the slider to another object."
+msgstr "将滑块与另一个对象对齐。"
+
+#: ../../en/m5ui/slider.rst:373 50a6726f6fc341c9ba844e6c9e996b4c
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/slider.rst:374 d1577135905d4ca0a242156f1c19c8b5
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/slider.rst:375 f39a4c0ee9f746fa93ad2025bbe205ab
+msgid "The x-offset from the aligned object."
+msgstr "与对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/slider.rst:376 48d9a4569fcf41d1830e7db817367163
+msgid "The y-offset from the aligned object."
+msgstr "与对齐对象的 y 偏移。"
+
+#: ../../en/m5ui/slider.rst:381 0b53122efd844fdb852e8aa3f1629f2f
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:7 f5ec2cdf36774bf4b81e9d238c468691
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:391 ea8b0a23633c4d48b90f6397ca58f083
+msgid "Set the size of the slider."
+msgstr "设置滑块的尺寸。"
+
+#: ../../en/m5ui/slider.rst:399 7330e7761ca54bdc8ab9fbbf11701d44
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:27 3e9e20aadfe942c1a791c8c287653302
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:409 0a86d2786bc34cbba97d8bd3f68a0077
+msgid "Set the width of the slider."
+msgstr "设置滑块的宽度。"
+
+#: ../../en/m5ui/slider.rst:416 11a78c97c58d493bb0edfc939e4fac9a
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:30 7aea67faa5224156a0b2a66a47453fa3
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:426 edf0dfaf03a547fe927d811b80ffee98
+msgid "Get the width of the slider."
+msgstr "获取滑块的宽度。"
+
+#: ../../en/m5ui/slider.rst:433 9badf6bc6a574f8397f7e1564ed9fe73
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:13 2f59fe60049c4f009c5538bd0d9398d6
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:443 dbc70e98ed454c89b643f613dcab96ac
+msgid "Set the height of the slider."
+msgstr "设置滑块的高度。"
+
+#: ../../en/m5ui/slider.rst:450 7e8b33f2474f48fdaf33e07b76acd9a3
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:18 5a3ba49167904c789214c8c491b43484
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/slider.rst:460 257e3d2c7ce24590bcc341c408eb3c5e
+msgid "Get the height of the slider."
+msgstr "获取滑块的高度。"
+
+#: ../../en/m5ui/slider.rst:467 1a9c29de406b4522b910cd6698607f7e
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.slider.ref:9 1b02b5696ba14e5cad528f61709d783a
+msgid "get_height.png"
+msgstr ""
