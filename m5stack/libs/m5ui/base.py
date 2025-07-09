@@ -120,3 +120,18 @@ class M5Base:
         time.sleep(0.01)
         self.set_style_bg_grad_dir(grad_dir, part)
         time.sleep(0.01)
+
+    def set_border_color(self, color: int, opa: int, part: int):
+        """Set the border color and opacity for a given part of the object.
+
+        :param int color: The color to set, can be an integer (hex) or a lv.color object.
+        :param int opa: The opacity level (0-255).
+        :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
+        :return: None
+        """
+        if isinstance(color, int):
+            color = lv.color_hex(color)
+
+        self.set_style_border_color(color, part)
+        time.sleep(0.01)
+        self.set_style_border_opa(opa, part)

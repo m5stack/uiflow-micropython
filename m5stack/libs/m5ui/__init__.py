@@ -9,6 +9,7 @@ _attrs = {
     "M5Bar": "bar",
     "M5Button": "button",
     "M5Calendar": "calendar",
+    "M5Checkbox": "checkbox",
     "M5Image": "image",
     "M5Label": "label",
     "M5Line": "line",

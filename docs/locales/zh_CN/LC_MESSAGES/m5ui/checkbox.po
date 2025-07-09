@@ -1,0 +1,619 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-27 11:48+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/checkbox.rst:4 ../../en/m5ui/checkbox.rst:52
+#: b569382d86f2482aad9259cc59c0ba5a c77ef40216de4a7db2d8ba6770921bea
+msgid "M5Checkbox"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:8 4e102ce876694f449ceab21b9ba42867
+msgid ""
+"M5Checkbox is a widget that can be used to create checkboxes in the user "
+"interface. It can be used to allow users to select or deselect options "
+"with a visual indicator."
+msgstr ""
+"M5Checkbox是一个可以在用户界面中创建复选框的控件。它可以用来允许用户通过可视化指示器选择或取消选择选项。"
+
+#: ../../en/m5ui/checkbox.rst:11 dc9719ff45b94a0d9ada8d773074d970
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/checkbox.rst:14 ../../en/m5ui/checkbox.rst:33
+#: 2808d32e80744a68a11cff2eb2d6f416 5e4964b0d16e49fa8acae6caf915e86b
+msgid "basic checkbox"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:16 ff909c6af17a4d71a21d3ade2e3b99b1
+msgid "Open the |cores3_checkbox_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开|cores3_checkbox_basic_example.m5f2|项目。"
+
+#: ../../en/m5ui/checkbox.rst:18 ../../en/m5ui/checkbox.rst:35
+#: 06b9d4d2d8da4af099ca46bf7e4bdf19 ac7dd833bdd440fe9955c068a6e14936
+msgid "This example creates a basic checkbox that can be checked and unchecked."
+msgstr "此示例创建一个可以选中和取消选中的基础复选框。"
+
+#: ../../en/m5ui/checkbox.rst:20 ../../en/m5ui/checkbox.rst:65
+#: ../../en/m5ui/checkbox.rst:83 ../../en/m5ui/checkbox.rst:102
+#: ../../en/m5ui/checkbox.rst:120 ../../en/m5ui/checkbox.rst:138
+#: ../../en/m5ui/checkbox.rst:158 ../../en/m5ui/checkbox.rst:178
+#: ../../en/m5ui/checkbox.rst:198 ../../en/m5ui/checkbox.rst:216
+#: ../../en/m5ui/checkbox.rst:233 ../../en/m5ui/checkbox.rst:250
+#: ../../en/m5ui/checkbox.rst:268 ../../en/m5ui/checkbox.rst:285
+#: ../../en/m5ui/checkbox.rst:302 ../../en/m5ui/checkbox.rst:319
+#: ../../en/m5ui/checkbox.rst:336 ../../en/m5ui/checkbox.rst:356
+#: ../../en/m5ui/checkbox.rst:374 ../../en/m5ui/checkbox.rst:391
+#: ../../en/m5ui/checkbox.rst:408 ../../en/m5ui/checkbox.rst:428
+#: 0765111ddd434818bb6adc8a498b27ed 083bd4b52d9f44c4b5a96a20c1940076
+#: 0c2064f223a7456ebad8fcaceb34a095 1bbbfe873b534a4fb7da34a938c340f2
+#: 20f92579c02340b499fb4c3e9b7b6e3f 5dc56428d8ea4d6d9f2e3ead88774031
+#: 626a09ec181043109286b0028cfd6685 66fa55889c2747c48a66ad719e793cc0
+#: 6a9ec05e83fc4a0d85e5cdaa77a3853c 6d967554f02148f9aa03e175ac02077f
+#: 932862a08b1446fe85ebc90baa476fbe 93470fa7c65b48a188ed3b3403eafa13
+#: 97bbbbd5e9554b41ad6fcd205a675d6f a722477d45934843bc63a5b133c4e1d3
+#: c3558b8e7f2f45b68503c044afe1195f c3a802969cf64522b72d43b093bf4c16
+#: d06491045f734120ae458bdb328cd3fa e71c215353b14a99a054f4a9e88e335a
+#: e8a6a946f322482e9bd0c2c51882bfd5 e93b3512a55542d7858198bd9e151768
+#: ef915609734c400889f3853831893a6b faa7745a2cdb49ab8cb167133f003612
+#: fe28f98abd0f4860bd99dd3f319d041e m5ui.checkbox.M5Checkbox:13 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/checkbox.rst:22 1cdb9d1ef9434720bc9ce02fcec20ba1
+msgid "|cores3_checkbox_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:26 9a4a793fe8324a4aad75ba1dae82f3f8
+msgid "cores3_checkbox_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:24 ../../en/m5ui/checkbox.rst:43
+#: 2ffcd115ce2e40e2bb2879edaa81c510 925a0b9a982041adbdacf8457c854ec6
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/checkbox.rst:26 ../../en/m5ui/checkbox.rst:45
+#: ../../en/m5ui/checkbox.rst:63 ../../en/m5ui/checkbox.rst:81
+#: ../../en/m5ui/checkbox.rst:100 ../../en/m5ui/checkbox.rst:118
+#: ../../en/m5ui/checkbox.rst:136 ../../en/m5ui/checkbox.rst:156
+#: ../../en/m5ui/checkbox.rst:176 ../../en/m5ui/checkbox.rst:196
+#: ../../en/m5ui/checkbox.rst:214 ../../en/m5ui/checkbox.rst:231
+#: ../../en/m5ui/checkbox.rst:248 ../../en/m5ui/checkbox.rst:266
+#: ../../en/m5ui/checkbox.rst:283 ../../en/m5ui/checkbox.rst:317
+#: ../../en/m5ui/checkbox.rst:354 ../../en/m5ui/checkbox.rst:372
+#: ../../en/m5ui/checkbox.rst:389 ../../en/m5ui/checkbox.rst:426
+#: 00f8638f44b64b67934bad9a08dd1848 079475235cc84330a3de346154998a83
+#: 07c72b9a8b814483899068d7a74bd6dd 2357d9d03cc84a108adf2ec551b301e5
+#: 24a32ffc7c76451daf76f706d4089dd0 36fd45ad321542f99ea832ce3344591b
+#: 43df75cd090a4766bcf72876cf76a7bf 4641c857ad8a45efae05264ecac97ef7
+#: 4713b3b91849478fab5206c73d3ca5d3 687830b1174246909c9e9093ed425720
+#: 821fbdc0c170431cafe4f9061cf54461 8503e0ee8e5e406989667091790f9378
+#: 8a5e94db5a7041378080659bf0f61188 95d571a04fc9459a85793c10497cf0ce
+#: aee23707608843a99cc635eb0c4212c7 af515f006ca34952a35bbf395a3d96b9
+#: c9a90bffee114796ad49bc8a70be6196 d0b56ad7c87c458bbaf0312a8c8d5d74
+#: dd6e250ab20f4cdca79c182dc59962df f2eb4b37640d421694c81d41feda44f6
+#: fdf94589907045daa0e2feff7c139d4f m5ui.checkbox.M5Checkbox:15 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:30 c48689da2d9147949440c0be556c4495
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/checkbox.rst:37 ../../en/m5ui/checkbox.rst:69
+#: ../../en/m5ui/checkbox.rst:87 ../../en/m5ui/checkbox.rst:106
+#: ../../en/m5ui/checkbox.rst:124 ../../en/m5ui/checkbox.rst:142
+#: ../../en/m5ui/checkbox.rst:162 ../../en/m5ui/checkbox.rst:182
+#: ../../en/m5ui/checkbox.rst:202 ../../en/m5ui/checkbox.rst:220
+#: ../../en/m5ui/checkbox.rst:237 ../../en/m5ui/checkbox.rst:254
+#: ../../en/m5ui/checkbox.rst:272 ../../en/m5ui/checkbox.rst:289
+#: ../../en/m5ui/checkbox.rst:306 ../../en/m5ui/checkbox.rst:323
+#: ../../en/m5ui/checkbox.rst:340 ../../en/m5ui/checkbox.rst:360
+#: ../../en/m5ui/checkbox.rst:378 ../../en/m5ui/checkbox.rst:395
+#: ../../en/m5ui/checkbox.rst:412 ../../en/m5ui/checkbox.rst:432
+#: 041d85d89a6d4e5d94b910570eea9745 0b48a6c58a8c47769f4dd22e6126bd78
+#: 15e2d9e593d746da89bfd092224711ad 32119bcd07a146b0960a2ede042d5474
+#: 33928fa71ec94ab094e106a544009426 46f508de33394dd59be359f3901f7d64
+#: 5dffe3da72824b72b17f05f3f32450fa 6fdeb36108fa43e2a14810f3a4bebf42
+#: 8569928b2fa1496a9acaf4db4500f861 8a3412b4f5264ce4bd5668f62fb16ee6
+#: 903b4522aa434e998fb5e07167534eb1 ae919b01e1b5445a9e710e76fce8bfd1
+#: b14f72a814cb486ba042b3a10d38adc8 b29f0cc43c52450cb491e940b3c52b88
+#: b3eeffe7cb2246e4b115d0daa1dcf38d bec347f427834b19ac5b78107c4bacb4
+#: bf6e05375e9e45d6a4cf3e96b2d65fd7 bf8445d5706d48789fb83bdd3fe49663
+#: ceabf603990f43b494612fcaf2ce3b0f df4a15eebabf467fb4824630473f5c19
+#: e030ec59363b40eea47fbd46a4285c61 fe7b98d3f83246dd86cb7b9f778127a2
+#: feba7dee3be545838d3ecfae6abd5304 m5ui.checkbox.M5Checkbox:17 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/checkbox.rst:49 06be8ed0f8fe48b09e884b5193e03fee
+msgid "**API**"
+msgstr "API参考"
+
+#: 2c7ab26586ba48b7ae5791a70b3336b9 m5ui.checkbox.M5Checkbox:1 of
+msgid "Bases: :py:class:`~lvgl.checkbox`"
+msgstr ""
+
+#: 9b851b66f64c4605929de7b810884666 m5ui.checkbox.M5Checkbox:1 of
+msgid "Create a checkbox object."
+msgstr "创建一个复选框对象。"
+
+#: ../../en/m5ui/checkbox.rst 05a091b5ef294c43b7192d4b9f288628
+#: 09de210547f04d83ab8f96ae83d391a8 18656b644e3541638a02c14b41df4007
+#: 268c0b34570c4d1b9a1d3d16387cdf97 281d6debcb8549439e3f15ae9db55105
+#: 37f6505fb85e4d039408277bcbda8479 3d02bd789ff74090a95d72ea9ed57e9e
+#: 4f7142c850a345308a4302a4f6a43a6d 72003f1f738a440b8d8f72da4fefe6c9
+#: 817fe6bef933457b9b4a8bdd65670d5b 829e3c740e3744f89e696b3c577afa42
+#: 8f16b72cafed468dbf55149f0efdca6a 9532949d776a4c1b966e261e6ea8155f
+#: b45ec9d580c546a1859783006828380f c90020a029574b409ae701c4875c4e17
+#: d4c58a2bab6c4eada6b3a3eba065036c e63bd8dad0984094a8ba128d89bb6999
+#: ee7f2afd038c461a8d55cbe18d63bd29 f6ab192d5ab6416ab9574bd2d4243ce7
+msgid "Parameters"
+msgstr ""
+
+#: 2ccc234c29af43c9a617778f0d888702 m5ui.checkbox.M5Checkbox:3 of
+msgid "The title text of the checkbox."
+msgstr "复选框的标题文本。"
+
+#: c24cf4a666a94b16ba2caab6c8ccb571 m5ui.checkbox.M5Checkbox:4 of
+msgid "The initial checked state of the checkbox."
+msgstr "复选框的初始选中状态。"
+
+#: 84e728533d6b4bf9953b603c6f51f5e7 m5ui.checkbox.M5Checkbox:5 of
+msgid "The x position of the checkbox."
+msgstr "复选框的x坐标位置。"
+
+#: 411492de7c1c45a8b79ee290fb05e991 m5ui.checkbox.M5Checkbox:6 of
+msgid "The y position of the checkbox."
+msgstr "复选框的y坐标位置。"
+
+#: 34e64d256f7648beb8349c9e049c3bed m5ui.checkbox.M5Checkbox:7 of
+msgid "The color of the title text in hexadecimal format."
+msgstr "标题文本的十六进制颜色格式。"
+
+#: f60900d003b3447ca53eeeb29f71eded m5ui.checkbox.M5Checkbox:8 of
+msgid "The font to use for the title text."
+msgstr "标题文本使用的字体。"
+
+#: a2e9008b8e89429b987679aa124f1c18 m5ui.checkbox.M5Checkbox:9 of
+msgid "The border color of the checkbox bullet in hexadecimal format."
+msgstr "复选框方块的边框颜色（十六进制格式）。"
+
+#: a254f225648642a0883d27553571eb51 m5ui.checkbox.M5Checkbox:10 of
+msgid "The background color of the checkbox bullet in hexadecimal format."
+msgstr "复选框方块的背景颜色（十六进制格式）。"
+
+#: bd78b08133a84190b7434d573592ee3a m5ui.checkbox.M5Checkbox:11 of
+msgid ""
+"The parent object to attach the checkbox to. If not specified, the "
+"checkbox will be attached to the default screen."
+msgstr ""
+"要附加复选框的父对象。如果未指定，"
+"复选框将被附加到默认屏幕。"
+
+#: ../../en/m5ui/checkbox.rst:59 235e5199149c4dc7a32e488ad9d71088
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr ""
+"设置对象上的标志。如果 ``value`` 为True，则添加标志；如果为"
+"False，则移除标志。"
+
+#: ../../en/m5ui/checkbox.rst:61 5322959247214ea78f9e39d4d50b61a9
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/checkbox.rst:62 493734ff50494ae9b0a8a0621d6a636d
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/checkbox.rst 040506618fc341e8bcbbe91727a4b25c
+#: 1722afc5d5704f6eaace0ff77ecec7e4 1fa1f2daa0ad4ce7a0c2465c74cd4538
+#: 2f41e27e14914697ad1ff9d3717b87cf 302bc82bac8f4dcaa939f6087a5a2768
+#: 5c1c4469e8b442f59dba0d5c493a1d7e 605e3338ea204919bce662a50e5e365b
+#: 60a5052d5edf4121a95673ca208e8eeb 62c89e7de43c4370add008e2e57e7674
+#: 71e479be16e4465592edbd57ccb00b13 8bd33f9477554f93944dad1edc249b92
+#: 9aac1a54716a481da547f4055053bb43 9ce1f8dbc4ad42e094367a1f268ea9ee
+#: 9e6e6963fa694a578faf1e32ac956049 af87be7224ae4449b38757996cb76e97
+#: d61d1d28d5cc43fa95f74764e30d7a98 d7c6c5cd37c84923bb908bd21d5df40a
+#: e2f4d728451e408db26f29e9ff5a9f44 e75790b8ca554e2c864ec91f11765af3
+#: e81d8dd0144448f99ba85527c775c7ea ef07b25d3ce646f9afac88686d7bf42d
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:67 d3fd078549154241ac798edf7df77b99
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:11 bc4ff84a6e614f0f81bbb66b2a7a78ee
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:78 a802aefc065d4a90b3521d5268ba3cda
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr ""
+"切换对象上的标志。如果标志已设置，则移除它；如果未设置，"
+"则添加它。"
+
+#: ../../en/m5ui/checkbox.rst:80 f3243db50802473bb88d5900153eec15
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/checkbox.rst:85 c4bdf1528ec144fca8dfa37ecfae66ab
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:23 5b15dcd3211f4f2da4a27744adff2fa6
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:96 612620ce8f964a5c8dfc5dd5c87f62bd
+msgid ""
+"Set the state of the checkbox. If ``value`` is True, the state is set; if"
+" False, the state is unset."
+msgstr ""
+"设置复选框的状态。如果 ``value`` 为True，则设置状态；如果为"
+"False，则取消设置状态。"
+
+#: ../../en/m5ui/checkbox.rst:98 e18bd2de9622468ba850de56303c3f7d
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/checkbox.rst:99 cd7f19ba89774fd68ea5f4d9ef3f91e2
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/checkbox.rst:104 7862a01b704740dc8d4309a748c0162f
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:15 b87993cce71b4f40bf860c8c148fe1d5
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:115 cfe2ceb17a46434ebbd9f9f9dd3cd71c
+msgid ""
+"Toggle the state of the checkbox. If the state is set, it is unset; if "
+"not set, it is set."
+msgstr ""
+"切换复选框的状态。如果状态已设置，则取消设置；如果未设置，"
+"则设置。"
+
+#: ../../en/m5ui/checkbox.rst:117 3f43158056af42f39c0b3bc155cb78a6
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/checkbox.rst:122 4dc09d20b7f94c5a81c3e4c2cf3e484a
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:24 13778a6fd54e4f58971387c6ba3e45b3
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:132 dcc8e3c20dfc4bfba988e27999fb4635
+msgid "Set the font of the checkbox text."
+msgstr "设置复选框文本的字体。"
+
+#: ../../en/m5ui/checkbox.rst:134 e014454efc14495b8b6b1bd6d254fc3a
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/checkbox.rst:135 ../../en/m5ui/checkbox.rst:155
+#: 6a7c5dcfa3574ac9bf92a71a33dba420 8316e571d6bf4ba59af137c366481d69
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（例如，lv.PART.MAIN）。"
+
+#: ../../en/m5ui/checkbox.rst:140 1cdfab4c43674a61b3b5dcdaed6dec8b
+msgid "|set_style_text_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:17 161f20511d164a5cb50477acab1fb6eb
+msgid "set_style_text_font.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:151 074766fa9b32403bb36cbb541a668f78
+msgid "Set the color of the checkbox text."
+msgstr "设置复选框文本的颜色。"
+
+#: ../../en/m5ui/checkbox.rst:153 ../../en/m5ui/checkbox.rst:173
+#: ../../en/m5ui/checkbox.rst:193 088f1f17ccce4456a645b7ae2cac39ad
+#: 98563f7a5bf54a21a97caa86a0f63a72 990cb6fe981b407987e661ca0223cdc1
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/checkbox.rst:154 ../../en/m5ui/checkbox.rst:174
+#: ../../en/m5ui/checkbox.rst:194 1a970870178643a0ba709f7bc32a2bd4
+#: 6159c58e9b7d4155bc9600ed2251b4f0 b6f345f3179544c8a13512d38dabbb34
+msgid ""
+"The opacity of the color. The value should be between 0 (transparent) and"
+" 255 (opaque)."
+msgstr ""
+"颜色的不透明度。值应在0（透明）和"
+"255（不透明）之间。"
+
+#: ../../en/m5ui/checkbox.rst:160 b9bcc113c2bc45c0baa7d7f1157ecc0a
+msgid "|set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:19 bda8d46a5275447aa58759c0b6ecada5
+msgid "set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:171 af9b765f1e3241f89588d75c181985c0
+msgid "Set the background color of the checkbox indicator."
+msgstr "设置复选框指示器的背景颜色。"
+
+#: ../../en/m5ui/checkbox.rst:175 ../../en/m5ui/checkbox.rst:195
+#: ../../en/m5ui/checkbox.rst:371 1854f185c9e54e9ba385c45c441c220a
+#: 264b10aa17814e45815034a7fbd2e06d d34835b83c84475d807cd8bd8af6fc3c
+msgid "The part of the object to apply the style to (e.g., lv.PART.INDICATOR)."
+msgstr "要应用样式的对象部分（例如，lv.PART.INDICATOR）。"
+
+#: ../../en/m5ui/checkbox.rst:180 799beddaee1f4a49882124bd86c843d5
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:8 f1e55ba76073496486c4dfde7a44e65a
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:191 689fd9c6eb9842fe935e83bedea52b6c
+msgid "Set the border color of the checkbox indicator."
+msgstr "设置复选框指示器的边框颜色。"
+
+#: ../../en/m5ui/checkbox.rst:200 6dac135bb9ce4cc18e2dcb5211f932c5
+msgid "|set_border_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:9 a9c3c7a75bd8425eaf12c34bebd227a8
+msgid "set_border_color.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:210 133f95cfd3ea4f4c8b039cd20f48618e
+msgid "Set the position of the checkbox."
+msgstr "设置复选框的位置。"
+
+#: ../../en/m5ui/checkbox.rst:212 ../../en/m5ui/checkbox.rst:230
+#: 14f58e0fb9f6466b856050fa7ac4741a 18945e097ea946108f1a4a8e3199a177
+msgid "The x-coordinate of the checkbox."
+msgstr "复选框的x坐标。"
+
+#: ../../en/m5ui/checkbox.rst:213 ../../en/m5ui/checkbox.rst:247
+#: 4e67f664dc7f441fb8f66d9a546f0b98 fd843260c3c34eff9c25a9f410973472
+msgid "The y-coordinate of the checkbox."
+msgstr "复选框的y坐标。"
+
+#: ../../en/m5ui/checkbox.rst:218 f9b771c1b7fb4f40bf08c738fea1378a
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:13 62995bd214e14674998f1971ce347873
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:228 bd76844da5224ba1a50f2e81add7a78f
+msgid "Set the x-coordinate of the checkbox."
+msgstr "设置复选框的x坐标。"
+
+#: ../../en/m5ui/checkbox.rst:235 a2e09399c281456e93721a1a9757b7b4
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:21 5ac8df2318c94b5ea88058a5a868d107
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:245 538b4e03a04c40199dc4ca353d7db869
+msgid "Set the y-coordinate of the checkbox."
+msgstr "设置复选框的y坐标。"
+
+#: ../../en/m5ui/checkbox.rst:252 227cd4638d0b40609931156d2ca05298
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:22 dfa4c67193ea4914aefc06ba0f17c8a5
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:262 63d1e0c1c422405bb127f0f1adcdd2ca
+msgid "Set the size of the checkbox."
+msgstr "设置复选框的大小。"
+
+#: ../../en/m5ui/checkbox.rst:264 ../../en/m5ui/checkbox.rst:282
+#: ../../en/m5ui/checkbox.rst:299 1e9c3e3e0d8b42ee9abf1db00dab1da7
+#: 2ee492c546ff42a8b2f27c9d394ce867 f82b340c82f240b09cad93f87613958d
+msgid "The width of the checkbox."
+msgstr "复选框的宽度。"
+
+#: ../../en/m5ui/checkbox.rst:265 ../../en/m5ui/checkbox.rst:316
+#: ../../en/m5ui/checkbox.rst:333 4f952a62fc484865b5972ee4bcdd803c
+#: ad3a9e684a54452d8478f28b7d403422 ae54aa09ee724842b0f3c04592737b53
+msgid "The height of the checkbox."
+msgstr "复选框的高度。"
+
+#: ../../en/m5ui/checkbox.rst:270 9a9d88b670ad4024bad9ba5f88012c79
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:14 6a45b6a9a6b54c2dbf1d355f279b2e7a
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:280 5fc46536c3034704ac4135aebdc26183
+msgid "Set the width of the checkbox."
+msgstr "设置复选框的宽度。"
+
+#: ../../en/m5ui/checkbox.rst:287 98a688e7d53c430ea9f9d91c8218e21f
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:20 f50ef4baf89045d7865603ad7ecd9830
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:297 3a72bc13353848b4878b34464d96e473
+msgid "Get the width of the checkbox."
+msgstr "获取复选框的宽度。"
+
+#: ../../en/m5ui/checkbox.rst 28b316445c1b4673a748006d1f2ac1ef
+#: 7313be711b8c4befa9af362898a3e629 9aaf15a286484231aeb225b50bdd7c2a
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:304 7c2ad3106e194a229fda44c017be37cc
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:6 871d317523844cf69d29a7ff5f714d1b
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:314 9758421abb754eaf8065175b579528e7
+msgid "Set the height of the checkbox."
+msgstr "设置复选框的高度。"
+
+#: ../../en/m5ui/checkbox.rst:321 9be351361b8f452fa775cf74403057e3
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:12 57e17af98a95469dab56d8d20e9e6fdc
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:331 b5c3d90e6a1f41f18ed3e1d10e38e2b4
+msgid "Get the height of the checkbox."
+msgstr "获取复选框的高度。"
+
+#: ../../en/m5ui/checkbox.rst:338 009537ad7b7b41549d6aeec6528f7a8e
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:4 534563ba25994c3ea55ac586b7952085
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:348 34c0566c52b5465ca6c7451036f831d5
+msgid "Align the checkbox to another object."
+msgstr "将复选框对齐到另一个对象。"
+
+#: ../../en/m5ui/checkbox.rst:350 070d02d62f1546bdbdc359119a09b91c
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/checkbox.rst:351 59bfce79d82e484aa767451ecc566dd8
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/checkbox.rst:352 44ab31c7e34a4251a684680fc3fb7bda
+msgid "The x-offset from the aligned object."
+msgstr "与对齐对象的x偏移量。"
+
+#: ../../en/m5ui/checkbox.rst:353 805f117200fa4fa8bbba78e56591a6ea
+msgid "The y-offset from the aligned object."
+msgstr "与对齐对象的y偏移量。"
+
+#: ../../en/m5ui/checkbox.rst:358 fb0ae0c669e04f68947c53ab9abeb037
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:2 111f62e090ce4041bc66497027db1814
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:368 a601c1d958c44291845b09662c1ed759
+msgid "Set the corner radius of the checkbox indicator."
+msgstr "设置复选框指示器的圆角半径。"
+
+#: ../../en/m5ui/checkbox.rst:370 a41ce3b1ef034952adceaf5def62fd30
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/checkbox.rst:376 e04f01010b434bec835945811f523a5e
+msgid "|set_style_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:16 04237c87a66b49d4887f8e5198f2d0ec
+msgid "set_style_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:386 e919df338dbe4d07910d8c72c31898d7
+msgid "Set the text of the checkbox."
+msgstr "设置复选框的文本。"
+
+#: ../../en/m5ui/checkbox.rst:388 8f70bd4ef213426f851d01bc135f80e6
+msgid "The text to set."
+msgstr "要设置的文本。"
+
+#: ../../en/m5ui/checkbox.rst:393 72af5f3c7d91407e8abef87629e7b16b
+msgid "|set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:18 ebf0e33835c843188eccdfbdd8536bd6
+msgid "set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:403 57b422436faf44b0a1db806562bebb99
+msgid "Get the text of the checkbox."
+msgstr "获取复选框的文本。"
+
+#: ../../en/m5ui/checkbox.rst:405 7074d2c8e452433ca7fc1252d15047c8
+msgid "The text of the checkbox."
+msgstr "复选框的文本。"
+
+#: ../../en/m5ui/checkbox.rst:410 e73811d38cdc4e5b851f677dfdef3c4e
+msgid "|get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:5 c4719bb1d97546ef91cc0df14d57c16b
+msgid "get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/checkbox.rst:421 4131984538864106a49436d9605091a2
+msgid ""
+"Add an event callback to the checkbox. The callback will be called when "
+"the specified event occurs."
+msgstr ""
+"为复选框添加事件回调。当指定事件发生时，"
+"将调用回调函数。"
+
+#: ../../en/m5ui/checkbox.rst:423 184ea050158b474c9a4ea752db2c7fa5
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/checkbox.rst:424 44530fbb7c4440f284a5b178dc8a0eec
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/checkbox.rst:425 6c2cb458da4c40e9b40120c42e88cc89
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调函数的可选用户数据。"
+
+#: ../../en/m5ui/checkbox.rst:430 50dfb856d37f476395719015e055b8b3
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.checkbox.ref:3 3b926738ff58454585b114131d93fd5b
+msgid "event.png"
+msgstr ""
+

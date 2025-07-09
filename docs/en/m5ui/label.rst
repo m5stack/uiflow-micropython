@@ -1,6 +1,6 @@
 .. currentmodule:: m5ui
 
-N5Label
+M5Label
 =======
 
 .. include:: ../refs/m5ui.label.ref
