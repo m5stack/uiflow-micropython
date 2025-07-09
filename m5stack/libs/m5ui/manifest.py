@@ -11,6 +11,7 @@ package(
         "base.py",
         "button.py",
         "calendar.py",
+        "canvas.py",
         "checkbox.py",
         "image.py",
         "label.py",

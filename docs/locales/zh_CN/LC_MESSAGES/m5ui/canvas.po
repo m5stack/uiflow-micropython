@@ -1,0 +1,741 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-28 14:31+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/canvas.rst:4 ../../en/m5ui/canvas.rst:53
+#: 8768b891c7a545dc912c9a8472b6df12 ac10d329627449579d9b3ab8edafe40f
+msgid "M5Canvas"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:8 614b73a13b384069b9439be204d73234
+msgid ""
+"M5Canvas is a powerful graphics widget that provides a drawable surface "
+"for creating custom graphics, animations, and visual effects in the user "
+"interface. It supports drawing operations, sprite management, and "
+"advanced graphics rendering."
+msgstr "M5Canvas是一个强大的图形控件，提供可绘制的表面，用于在用户界面中创建自定义图形、动画和视觉效果。它支持绘图操作、图像管理和高级图形渲染。"
+
+#: ../../en/m5ui/canvas.rst:12 c158267309e94384b6668aa9a6ac11f0
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/canvas.rst:15 ../../en/m5ui/canvas.rst:34
+#: ba95f12783044027bf4488985231b60b c0f6e1e6bb73487ab83465fa7b5d01f8
+msgid "draw basic shapes"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:17 6b880d58607249f1b48bea4ad2a64712
+msgid "Open the |cores3_canvas_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开 |cores3_canvas_basic_example.m5f2| 项目。"
+
+#: ../../en/m5ui/canvas.rst:19 e06c13f9b8ff47439f06a7104f0fe1bc
+msgid ""
+"This example demonstrates how to create a canvas and draw basic shapes "
+"like rectangles, circles, and lines."
+msgstr "此示例演示如何创建画布并绘制矩形、圆形和线条等基本图形。"
+
+#: ../../en/m5ui/canvas.rst:21 ../../en/m5ui/canvas.rst:67
+#: ../../en/m5ui/canvas.rst:84 ../../en/m5ui/canvas.rst:103
+#: ../../en/m5ui/canvas.rst:120 ../../en/m5ui/canvas.rst:137
+#: ../../en/m5ui/canvas.rst:157 ../../en/m5ui/canvas.rst:175
+#: ../../en/m5ui/canvas.rst:192 ../../en/m5ui/canvas.rst:209
+#: ../../en/m5ui/canvas.rst:226 ../../en/m5ui/canvas.rst:243
+#: 0b5e2fc9f69c4a11ba1c4dad76c225e6 660dfa6ab4c0486298c66f3471e0a3c0
+#: m5ui.canvas.M5Canvas.draw_arc:12 m5ui.canvas.M5Canvas.draw_image:12
+#: m5ui.canvas.M5Canvas.draw_label:10 m5ui.canvas.M5Canvas.draw_line:11
+#: m5ui.canvas.M5Canvas.draw_rect:25 m5ui.canvas.M5Canvas.draw_triangle:12
+#: m5ui.canvas.M5Canvas.fill_bg:6 m5ui.canvas.M5Canvas.get_px_color:8
+#: m5ui.canvas.M5Canvas.get_px_opa:8 m5ui.canvas.M5Canvas.set_px:8 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/canvas.rst:23 a0761c40ff6d4ac088906cafca84b757
+msgid "|cores3_canvas_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:5 edc07b776b924202a0abab893e6e7e43
+msgid "cores3_canvas_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:25 ../../en/m5ui/canvas.rst:44
+#: 9cd432bf5e7b45d098a8772930c5aeac ec1f283a132046e4b450aff01a2a033f
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/canvas.rst:27 f54427e7d5d345d989b80418c650daa9
+msgid ""
+"A canvas with various colored shapes including rectangles, circles, and "
+"lines."
+msgstr "包含各种彩色图形的画布，包括矩形、圆形和线条。"
+
+#: ../../en/m5ui/canvas.rst:31 498f42e4bb2945b0aaf04597b77567e0
+msgid "MicroPython Example"
+msgstr "MicroPython示例"
+
+#: ../../en/m5ui/canvas.rst:36 f1cd20ad33ce41a1980bb0e1b3f5587e
+msgid ""
+"This example demonstrates how to create a canvas and draw basic shapes "
+"programmatically."
+msgstr "此示例演示如何以编程方式创建画布并绘制基本图形。"
+
+#: ../../en/m5ui/canvas.rst:38 ../../en/m5ui/canvas.rst:71
+#: ../../en/m5ui/canvas.rst:88 ../../en/m5ui/canvas.rst:107
+#: ../../en/m5ui/canvas.rst:124 ../../en/m5ui/canvas.rst:141
+#: ../../en/m5ui/canvas.rst:161 ../../en/m5ui/canvas.rst:179
+#: ../../en/m5ui/canvas.rst:196 ../../en/m5ui/canvas.rst:213
+#: ../../en/m5ui/canvas.rst:230 ../../en/m5ui/canvas.rst:247
+#: 410c18aebd624832bdfc5531cffdd0a2 8c45e7a7b93b4a2cadf70e91c19d6741
+#: m5ui.canvas.M5Canvas.draw_arc:16 m5ui.canvas.M5Canvas.draw_image:16
+#: m5ui.canvas.M5Canvas.draw_label:14 m5ui.canvas.M5Canvas.draw_line:15
+#: m5ui.canvas.M5Canvas.draw_rect:29 m5ui.canvas.M5Canvas.draw_triangle:16
+#: m5ui.canvas.M5Canvas.fill_bg:10 m5ui.canvas.M5Canvas.get_px_color:12
+#: m5ui.canvas.M5Canvas.get_px_opa:12 m5ui.canvas.M5Canvas.set_px:12 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/canvas.rst:46 3781abd637b844b6a6a1f04be0765c27
+msgid "A canvas displaying various geometric shapes with different colors."
+msgstr "显示不同颜色几何图形的画布。"
+
+#: ../../en/m5ui/canvas.rst:50 c061b77eeca54945a1945404e8455e53
+msgid "**API**"
+msgstr "API参考"
+
+#: 0214bfcf5a814324a02b8e74abc11fac m5ui.canvas.M5Canvas:1 of
+msgid "Bases: :py:class:`~lvgl.canvas`"
+msgstr ""
+
+#: 098fce33424f41ba940e661611b4b165 m5ui.canvas.M5Canvas:1 of
+msgid "Create a canvas widget for drawing."
+msgstr "创建用于绘图的画布控件。"
+
+#: ../../en/m5ui/canvas.rst 63b0c6d5c2374596bae32ff90a4e8a6a
+#: e43504a998374d9ba6f335bd9192d756 m5ui.canvas.M5Canvas.draw_arc
+#: m5ui.canvas.M5Canvas.draw_image m5ui.canvas.M5Canvas.draw_label
+#: m5ui.canvas.M5Canvas.draw_line m5ui.canvas.M5Canvas.draw_rect
+#: m5ui.canvas.M5Canvas.draw_triangle m5ui.canvas.M5Canvas.fill_bg
+#: m5ui.canvas.M5Canvas.get_px_color m5ui.canvas.M5Canvas.get_px_opa
+#: m5ui.canvas.M5Canvas.set_px of
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:99 ../../en/m5ui/canvas.rst:117
+#: 17883dadd3bf4f52a48652f2ac4c8a1d cd80caf4ae0a4fc9bf45194a98116667
+#: m5ui.canvas.M5Canvas:3 of
+msgid "The x-coordinate of the canvas."
+msgstr "画布的x坐标。"
+
+#: ../../en/m5ui/canvas.rst:100 ../../en/m5ui/canvas.rst:134
+#: 58aec390c0bf4177bd0e503296f9b952 f024c68ac1234587bd4d3bad3235b81e
+#: m5ui.canvas.M5Canvas:4 of
+msgid "The y-coordinate of the canvas."
+msgstr "画布的y坐标。"
+
+#: ../../en/m5ui/canvas.rst:171 ../../en/m5ui/canvas.rst:189
+#: ../../en/m5ui/canvas.rst:223 5528520b9cf944f2ac5683da242601f9
+#: 7e95f0079ff5449eba9e8a3dc24bcf77 m5ui.canvas.M5Canvas:5 of
+msgid "The width of the canvas."
+msgstr "画布的宽度。"
+
+#: ../../en/m5ui/canvas.rst:172 ../../en/m5ui/canvas.rst:206
+#: ../../en/m5ui/canvas.rst:240 2ac85d1237aa41828ee36fdd37c5db5e
+#: 32b8f100b42d4bd8befb459ef0b5026c m5ui.canvas.M5Canvas:6 of
+msgid "The height of the canvas."
+msgstr "画布的高度。"
+
+#: c505edb7328a4c1da16a396b357aa6f3 m5ui.canvas.M5Canvas:7 of
+msgid "The color format of the canvas (default is ARGB8888)."
+msgstr "画布的颜色格式（默认为ARGB8888）。"
+
+#: 129361a7120147d58f620188d8a7160f m5ui.canvas.M5Canvas:8 of
+msgid "The background color of the canvas in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr "十六进制格式的画布背景颜色（例如，0xRRGGBB）。"
+
+#: 141e7513f68b4fa9b6a35720b1427ccb d646de0763b64c689da73e267a11f7b7
+#: m5ui.canvas.M5Canvas:9 m5ui.canvas.M5Canvas.draw_rect:9
+#: m5ui.canvas.M5Canvas.fill_bg:4 of
+msgid "The opacity of the background (0-255)."
+msgstr "背景的不透明度（0-255）。"
+
+#: be57f7f86c1649d58f3e87ec59a12e4e m5ui.canvas.M5Canvas:10 of
+msgid ""
+"The parent object of the canvas. If not specified, it will be set to the "
+"active screen."
+msgstr "画布的父对象。如果未指定，将设置为活动屏幕。"
+
+#: ../../en/m5ui/canvas.rst:61 9680356c22734a7f99b42cdcbe7abf83
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "为对象设置标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/canvas.rst:63 63676386b47d42308ff44856f3011d4d
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/canvas.rst:64 bfd5751f3b8942939e6441a36d443513
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/canvas.rst db2248fe09d04164a3aed99407c92933
+#: m5ui.canvas.M5Canvas.get_px_color m5ui.canvas.M5Canvas.get_px_opa of
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:65 ../../en/m5ui/canvas.rst:82
+#: ../../en/m5ui/canvas.rst:101 ../../en/m5ui/canvas.rst:118
+#: ../../en/m5ui/canvas.rst:135 ../../en/m5ui/canvas.rst:155
+#: ../../en/m5ui/canvas.rst:173 ../../en/m5ui/canvas.rst:190
+#: ../../en/m5ui/canvas.rst:207 0c467f17a1924b2d9b479397691247ad
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:69 943e98eeef8741d6ac621827d3b662c6
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:20 a9c245b40bef4d71a0b0e03c17e042f7
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:79 db931bd9626444d3ad9b71b1cabc9093
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果标志已设置，则移除它；如果未设置，则添加它。"
+
+#: ../../en/m5ui/canvas.rst:81 3a3f68658b1e4c03b4460f80cbdf7355
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/canvas.rst:86 16696c797628439cbc002ce61b1a769f
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:30 a7c38b28d4e64ce1b034f1620e964587
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:97 e1214171c1fb4e5bad1264c47d80a052
+msgid "Set the position of the canvas."
+msgstr "设置画布的位置。"
+
+#: ../../en/m5ui/canvas.rst:105 24d0a0f269744db8ae1e1f9f35ca573e
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:22 f48a914f42dd4876a025e5d0ac4e7e4b
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:115 99dacccb5c73455ca6e1dcc2c9eb0b7e
+msgid "Set the x-coordinate of the canvas."
+msgstr "设置画布的x坐标。"
+
+#: ../../en/m5ui/canvas.rst:122 bb23547ebfde4464b1aaa6467f3b219e
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:28 f42acf29a88b4fc8b9c2a19f6057f05d
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:132 3fb22c2b72374abd97e5cbf59fee5641
+msgid "Set the y-coordinate of the canvas."
+msgstr "设置画布的y坐标。"
+
+#: ../../en/m5ui/canvas.rst:139 420b53e3cfe74dbaad8936a31de12174
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:29 f9e88b57ffab4eec80c245e2da32779c
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:149 5132e96a62db46118740dbaf6709d176
+msgid "Align the canvas to another object."
+msgstr "将画布对齐到另一个对象。"
+
+#: ../../en/m5ui/canvas.rst:151 6a6f8bf5d6354f0e9d71bb341d46f6ce
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/canvas.rst:152 46323fb938b14d6c8e0e034f5626a959
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/canvas.rst:153 796ccb88ee394c75b646500ef0ce196d
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的x偏移量。"
+
+#: ../../en/m5ui/canvas.rst:154 7e378afcde86488cb8e8904fe267f05a
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的y偏移量。"
+
+#: ../../en/m5ui/canvas.rst:159 534e20cd641f4da685a15cf14a7634f7
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:7 197ad269bf83476da5bcddd7d7924bbf
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:169 beec2221710b43c88a1a403857f79ed7
+msgid "Set the size of the canvas."
+msgstr "设置画布的尺寸。"
+
+#: ../../en/m5ui/canvas.rst:177 fcd73a782043474ca45e1682a712a0b4
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:24 b32a1d49ed194ebca7a9e91da8693b63
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:187 dbdb2cd038ac4a6baa775560ef305dfa
+msgid "Set the width of the canvas."
+msgstr "设置画布的宽度。"
+
+#: ../../en/m5ui/canvas.rst:194 fb08bb5104aa402ca07f588ea19c898c
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:27 54a8833d057448c3a3a4b268e127f1f5
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:204 be35e71aacc0430ab18cc865de106fca
+msgid "Set the height of the canvas."
+msgstr "设置画布的高度。"
+
+#: ../../en/m5ui/canvas.rst:211 406ff113bc34421983e50f02ae39bada
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:21 4f4003a8a844477f8d4615d73d487875
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:221 182279d114fe447c9bf301951f8b145e
+msgid "Get the width of the canvas."
+msgstr "获取画布的宽度。"
+
+#: ../../en/m5ui/canvas.rst 8f365ccaf9764d72822b57397fc3fdcf
+#: m5ui.canvas.M5Canvas.get_px_color m5ui.canvas.M5Canvas.get_px_opa of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:228 a7d4bfdef9204929b384fa7de0beda9f
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:17 c59b04bc743242d49aa7d4e79622c13b
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/canvas.rst:238 fc478b0f4e2348b998314c64633b5994
+msgid "Get the height of the canvas."
+msgstr "获取画布的高度。"
+
+#: ../../en/m5ui/canvas.rst:245 d5a6813eafe5421a9a64a0fc6936758c
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:14 9a3174d755704f588ac0223581784c20
+msgid "get_height.png"
+msgstr ""
+
+#: 7fab5dc991e84b50a89a8e316e947d3d m5ui.canvas.M5Canvas.fill_bg:1 of
+msgid "Fill the canvas background with the specified color and opacity."
+msgstr "用指定的颜色和不透明度填充画布背景。"
+
+#: 40efd488316a46108a3ac849e25b79b5 m5ui.canvas.M5Canvas.fill_bg:3 of
+msgid "The background color in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr "十六进制格式的背景颜色（例如，0xRRGGBB）。"
+
+#: ed0696cf8b3c4ec4b97dcb4dad61c745 m5ui.canvas.M5Canvas.fill_bg:8 of
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:18 f77bd34f3df347589742c724a1ead5d7
+msgid "set_bg_color.png"
+msgstr ""
+
+#: d4a089ddd40f4bf4b75e1877e2c566e9 m5ui.canvas.M5Canvas.set_px:1 of
+msgid "Set a pixel at (x, y) with the specified color and opacity."
+msgstr "在(x, y)位置设置具有指定颜色和不透明度的像素。"
+
+#: 469791a26d94455ea523f452518a09e2 m5ui.canvas.M5Canvas.get_px_color:3
+#: m5ui.canvas.M5Canvas.get_px_opa:3 m5ui.canvas.M5Canvas.set_px:3 of
+msgid "The x-coordinate of the pixel."
+msgstr "像素的x坐标。"
+
+#: 62add6df366c460ba2dddca11b29a348 m5ui.canvas.M5Canvas.get_px_color:4
+#: m5ui.canvas.M5Canvas.get_px_opa:4 m5ui.canvas.M5Canvas.set_px:4 of
+msgid "The y-coordinate of the pixel."
+msgstr "像素的y坐标。"
+
+#: ea101cb59aff49a9ac58cfc8590b597e m5ui.canvas.M5Canvas.get_px_color:5
+#: m5ui.canvas.M5Canvas.set_px:5 of
+msgid "The color of the pixel in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr "十六进制格式的像素颜色（例如，0xRRGGBB）。"
+
+#: 9401f158b632439c939930e470a3e4c9 d8e04c5e1c304d0c8ab63188ce4bcc14
+#: m5ui.canvas.M5Canvas.get_px_opa:5 m5ui.canvas.M5Canvas.set_px:6 of
+msgid "The opacity of the pixel (0-255)."
+msgstr "像素的不透明度（0-255）。"
+
+#: ef88dd7accff444cb7eecb7712131d6d m5ui.canvas.M5Canvas.set_px:10 of
+msgid "|set_px.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:23 fd875fecc2b54c5aa8af61df2f681eb7
+msgid "set_px.png"
+msgstr ""
+
+#: 9e543c9a46b04d8d9e71a8182ee06400 m5ui.canvas.M5Canvas.get_px_color:1 of
+msgid "Get the color of the pixel at (x, y)."
+msgstr "获取(x, y)位置像素的颜色。"
+
+#: 3473dd9e13964cce8c0f9162198145d8 m5ui.canvas.M5Canvas.get_px_color:10 of
+msgid "|get_px_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:15 cb26c4ba210844788ed8354a959b2585
+msgid "get_px_color.png"
+msgstr ""
+
+#: 0d8788b5db644200b9881fa3df31d8bf m5ui.canvas.M5Canvas.get_px_opa:1 of
+msgid "Get the opacity of the pixel at (x, y)."
+msgstr "获取(x, y)位置像素的不透明度。"
+
+#: 008f094d24264604a2ec0cde586b72a8 m5ui.canvas.M5Canvas.get_px_opa:10 of
+msgid "|get_px_opa.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:16 11e6441313384dffb36a9c577ed65a7e
+msgid "get_px_opa.png"
+msgstr ""
+
+#: 98d44c2d00f24806a26c9841d1edd4f9 m5ui.canvas.M5Canvas.draw_arc:1 of
+msgid "Draw an arc on the canvas."
+msgstr "在画布上绘制弧形。"
+
+#: 870b39a4407d41ca8795139050031e3d m5ui.canvas.M5Canvas.draw_arc:3 of
+msgid "The x-coordinate of the center of the arc."
+msgstr "弧形中心的x坐标。"
+
+#: 54c112927eae4b0a944f5f186aa66905 m5ui.canvas.M5Canvas.draw_arc:4 of
+msgid "The y-coordinate of the center of the arc."
+msgstr "弧形中心的y坐标。"
+
+#: 1c35ae6014fc4ca3aa5b41afb4cd9ded m5ui.canvas.M5Canvas.draw_arc:5 of
+msgid "The radius of the arc."
+msgstr "弧形的半径。"
+
+#: 912f91c5ce354ecbaf3101a3605dfa9c m5ui.canvas.M5Canvas.draw_arc:6 of
+msgid "The color of the arc in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr "十六进制格式的弧形颜色（例如，0xRRGGBB）。"
+
+#: 50de3a1078804bc5907f6804ceceed45 m5ui.canvas.M5Canvas.draw_arc:7 of
+msgid "The opacity of the arc (0-255)."
+msgstr "弧形的不透明度（0-255）。"
+
+#: 058731d820dd4f12a41feba250cb2a46 m5ui.canvas.M5Canvas.draw_arc:8 of
+msgid "The width of the arc line."
+msgstr "弧形线条的宽度。"
+
+#: 703bc537d3314bdaaadf1a8d94467f63 m5ui.canvas.M5Canvas.draw_arc:9 of
+msgid "The starting angle of the arc in degrees."
+msgstr "弧形的起始角度（以度为单位）。"
+
+#: 7acc802215eb40bebe5bfa4c9d5b7022 m5ui.canvas.M5Canvas.draw_arc:10 of
+msgid "The ending angle of the arc in degrees."
+msgstr "弧形的结束角度（以度为单位）。"
+
+#: dce97b716aee46a78a9df66edbe1a5db m5ui.canvas.M5Canvas.draw_arc:14 of
+msgid "|draw_arc.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:8 aff4a838d3d64f67b9b6072a211af48b
+msgid "draw_arc.png"
+msgstr ""
+
+#: 979fd68c16dd4adcbaef0646c5894246 m5ui.canvas.M5Canvas.draw_rect:1 of
+msgid "Draw a rectangle on the canvas."
+msgstr "在画布上绘制矩形。"
+
+#: a275045d45004be99eba4d09e915a781 m5ui.canvas.M5Canvas.draw_rect:3 of
+msgid "The x-coordinate of the rectangle."
+msgstr "矩形的x坐标。"
+
+#: 36890900126143c5b13e0bce7a086590 m5ui.canvas.M5Canvas.draw_rect:4 of
+msgid "The y-coordinate of the rectangle."
+msgstr "矩形的y坐标。"
+
+#: f55d42564a8d4685933f45acbd1c3d78 m5ui.canvas.M5Canvas.draw_rect:5 of
+msgid "The width of the rectangle."
+msgstr "矩形的宽度。"
+
+#: 255ec456b1014a4d995e4372b60c80ea m5ui.canvas.M5Canvas.draw_rect:6 of
+msgid "The height of the rectangle."
+msgstr "矩形的高度。"
+
+#: 2e6cd63747e64ae9a3ebcefed1d9e790 m5ui.canvas.M5Canvas.draw_rect:7 of
+msgid "The corner radius of the rectangle."
+msgstr "矩形的圆角半径。"
+
+#: 129361a7120147d58f620188d8a7160f m5ui.canvas.M5Canvas.draw_rect:8 of
+msgid ""
+"The background color of the rectangle in hexadecimal format (e.g., "
+"0xRRGGBB)."
+msgstr "十六进制格式的矩形背景颜色（例如，0xRRGGBB）。"
+
+#: 8ef00d08ca5c401a85488d8042fa3a65 m5ui.canvas.M5Canvas.draw_rect:10 of
+msgid "The border color of the rectangle in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr "十六进制格式的矩形边框颜色（例如，0xRRGGBB）。"
+
+#: 347148f4f0644ad3bdf83a3cce4755a3 m5ui.canvas.M5Canvas.draw_rect:11 of
+msgid "The opacity of the border (0-255)."
+msgstr "边框的不透明度（0-255）。"
+
+#: f6ffca0c3127491495a166e037ba56e3 m5ui.canvas.M5Canvas.draw_rect:12 of
+msgid "The width of the border."
+msgstr "边框的宽度。"
+
+#: 74a9d2a83c0141b28f46d68a880b7dae m5ui.canvas.M5Canvas.draw_rect:13 of
+msgid "The side of the border to draw (e.g., lv.BORDER_SIDE.FULL)."
+msgstr "要绘制的边框边（例如，lv.BORDER_SIDE.FULL）。"
+
+#: 7b840a66e7b148d0a9a23ffd528d21f2 m5ui.canvas.M5Canvas.draw_rect:14 of
+msgid "The outline color of the rectangle in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr ""
+
+#: ece6de775d134b1c9469d0e41a45e0f6 m5ui.canvas.M5Canvas.draw_rect:15 of
+msgid "The opacity of the outline (0-255)."
+msgstr ""
+
+#: a4b7932be51546d0ae80060487ec142b m5ui.canvas.M5Canvas.draw_rect:16 of
+msgid "The width of the outline."
+msgstr ""
+
+#: ca396cceb3bf45c8aa743dd78c016723 m5ui.canvas.M5Canvas.draw_rect:17 of
+msgid "The padding of the outline."
+msgstr ""
+
+#: 37d345b70ccf4a8c9d67aec31886f62a m5ui.canvas.M5Canvas.draw_rect:18 of
+msgid "The shadow color of the rectangle in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr ""
+
+#: 888026b534194555934d4b8c1b43ecdc m5ui.canvas.M5Canvas.draw_rect:19 of
+msgid "The opacity of the shadow (0-255)."
+msgstr ""
+
+#: a2eb74b4ecbe48d4880f115efcf74a9a m5ui.canvas.M5Canvas.draw_rect:20 of
+msgid "The width of the shadow."
+msgstr ""
+
+#: c9ab1a4171ab41fb808c2b8393b36bfd m5ui.canvas.M5Canvas.draw_rect:21 of
+msgid "The horizontal offset of the shadow."
+msgstr ""
+
+#: 111a4ad0857047f5957106ad819297b2 m5ui.canvas.M5Canvas.draw_rect:22 of
+msgid "The vertical offset of the shadow."
+msgstr ""
+
+#: 39bda1e17a724da0a83dc7a02ddf8693 m5ui.canvas.M5Canvas.draw_rect:23 of
+msgid "The spread of the shadow."
+msgstr ""
+
+#: 78f13e0eaed04248aea55db78018ba35 m5ui.canvas.M5Canvas.draw_rect:27 of
+msgid "|draw_rect.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:12 2acbc9e499594c1ba62a2e71b5803a3d
+msgid "draw_rect.png"
+msgstr ""
+
+#: f8593441b2984e8ea9bb4a3d34799203 m5ui.canvas.M5Canvas.draw_image:1 of
+msgid "Draw an image at the specified coordinates."
+msgstr "在指定坐标绘制图像。"
+
+#: 5e14026c3142448d9a70b18951ecacef m5ui.canvas.M5Canvas.draw_image:3 of
+msgid "The source of the image (e.g., a file path or an image object)."
+msgstr "图像的源（例如，文件路径或图像对象）。"
+
+#: 4efe6237d94e48f9bf5713d32e290ecb m5ui.canvas.M5Canvas.draw_image:4 of
+msgid "The x-coordinate where the image will be drawn."
+msgstr "绘制图像的x坐标。"
+
+#: 61042c702b9048e286d92b9e6d6550d2 m5ui.canvas.M5Canvas.draw_image:5 of
+msgid "The y-coordinate where the image will be drawn."
+msgstr "绘制图像的y坐标。"
+
+#: 9d711cc54b0f4c9eb712f5dce27e2e93 m5ui.canvas.M5Canvas.draw_image:6 of
+msgid "The rotation angle of the image in degrees."
+msgstr ""
+
+#: a4401e020f644ac79f9de4531efa3229 m5ui.canvas.M5Canvas.draw_image:7 of
+msgid "The horizontal scaling factor of the image."
+msgstr ""
+
+#: 99421428198f476bb7ef585200fcb2ef m5ui.canvas.M5Canvas.draw_image:8 of
+msgid "The vertical scaling factor of the image."
+msgstr ""
+
+#: fa775224d70a4961b471625a7981c895 m5ui.canvas.M5Canvas.draw_image:9 of
+msgid "The horizontal skew angle of the image in degrees."
+msgstr ""
+
+#: 5c40b6ac8b6b42b58a138e488f459912 m5ui.canvas.M5Canvas.draw_image:10 of
+msgid "The vertical skew angle of the image in degrees."
+msgstr ""
+
+#: 88d82f7b7d19451fb87b8e283afffe61 m5ui.canvas.M5Canvas.draw_image:14 of
+msgid "|draw_image.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:9 ac51c6519fd0469a812ee8a0a7c8a82f
+msgid "draw_image.png"
+msgstr ""
+
+#: bb180dc0fca14b59a761bdeabbaba2ec m5ui.canvas.M5Canvas.draw_line:1 of
+msgid "Draw a line from (x1, y1) to (x2, y2)."
+msgstr "从(x1, y1)到(x2, y2)绘制线条。"
+
+#: 489e98f54fb7465789da9e75dd2dc665 m5ui.canvas.M5Canvas.draw_line:3 of
+msgid "The x-coordinate of the start point of the line."
+msgstr "线条起点的x坐标。"
+
+#: 4208a77282634aa7802ff1f545e2ff92 m5ui.canvas.M5Canvas.draw_line:4 of
+msgid "The y-coordinate of the start point of the line."
+msgstr "线条起点的y坐标。"
+
+#: 247da3b0cb6f48599b4373e868b3fa7b m5ui.canvas.M5Canvas.draw_line:5 of
+msgid "The x-coordinate of the end point of the line."
+msgstr "线条终点的x坐标。"
+
+#: dc51d712da1540eb85523e027b058d52 m5ui.canvas.M5Canvas.draw_line:6 of
+msgid "The y-coordinate of the end point of the line."
+msgstr "线条终点的y坐标。"
+
+#: 6e2bc3884501457c8f8bc9730ccace6c m5ui.canvas.M5Canvas.draw_line:7 of
+msgid "The color of the line in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr ""
+
+#: b53ee5d8ebf24651a22a1b62d30c3e37 m5ui.canvas.M5Canvas.draw_line:8 of
+msgid "The opacity of the line (0-255)."
+msgstr ""
+
+#: f755476911d04b6d9c187dcd691897d6 m5ui.canvas.M5Canvas.draw_line:9 of
+msgid "The width of the line."
+msgstr ""
+
+#: 9581bee11a4845218bf686076981f2b5 m5ui.canvas.M5Canvas.draw_line:13 of
+msgid "|draw_line.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:11 1584906164fd458c8bb135a7b7c9be93
+msgid "draw_line.png"
+msgstr ""
+
+#: 3adefe6b982b4cb3a826a4195efeafe3 m5ui.canvas.M5Canvas.draw_label:1 of
+msgid "Draw a label with the specified text at the given coordinates."
+msgstr "在给定坐标处绘制具有指定文本的标签。"
+
+#: e6b19c2b43dc489bbfb2c4795b8e6cc9 m5ui.canvas.M5Canvas.draw_label:3 of
+msgid "The text to be displayed."
+msgstr "要显示的文本。"
+
+#: 65e1771cc7d44e15a6f3f1bc57a1c33c m5ui.canvas.M5Canvas.draw_label:4 of
+msgid "The x-coordinate where the label will be drawn."
+msgstr "绘制标签的x坐标。"
+
+#: 08bf6ba7f17d486c9088f4452cd92a44 m5ui.canvas.M5Canvas.draw_label:5 of
+msgid "The y-coordinate where the label will be drawn."
+msgstr "绘制标签的y坐标。"
+
+#: f91be191a9ee4167b09c9de646a6af18 m5ui.canvas.M5Canvas.draw_label:6 of
+msgid "The font to be used for the label (default is lv.font_montserrat_14)."
+msgstr "用于标签的字体（默认为lv.font_montserrat_14）。"
+
+#: b7ccc0d8aeed46d2ac22895e13ea0e40 m5ui.canvas.M5Canvas.draw_label:7 of
+msgid "The color of the text in hexadecimal format (e.g., 0xRRGGBB)."
+msgstr ""
+
+#: ed7fa23dbfa243a28a83d5ad5981a037 m5ui.canvas.M5Canvas.draw_label:8 of
+msgid "The opacity of the text (0-255)."
+msgstr ""
+
+#: 356ad1e49bf144c386bda0b6c47677e1 m5ui.canvas.M5Canvas.draw_label:12 of
+msgid "|draw_label.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:10 adc76eeec45a464dafb13dd7dd526bb0
+msgid "draw_label.png"
+msgstr ""
+
+#: 453d62726ba445a99f7785bd9e568b48 m5ui.canvas.M5Canvas.draw_triangle:1 of
+msgid "Draw a triangle with the specified vertices."
+msgstr "绘制具有指定顶点的三角形。"
+
+#: 9a7a0ea1dacc46ee8876edc902ec64a5 m5ui.canvas.M5Canvas.draw_triangle:3 of
+msgid "The x-coordinate of the first vertex."
+msgstr "第一个顶点的x坐标。"
+
+#: 071c263246b246e58b05b1d3a0429b9e m5ui.canvas.M5Canvas.draw_triangle:4 of
+msgid "The y-coordinate of the first vertex."
+msgstr "第一个顶点的y坐标。"
+
+#: e11153f64d3d4d08b05e96660a987165 m5ui.canvas.M5Canvas.draw_triangle:5 of
+msgid "The x-coordinate of the second vertex."
+msgstr "第二个顶点的x坐标。"
+
+#: 831bb23cbb7a431cbbf4084022ff7102 m5ui.canvas.M5Canvas.draw_triangle:6 of
+msgid "The y-coordinate of the second vertex."
+msgstr "第二个顶点的y坐标。"
+
+#: 4339fc24bd864389a1c52f71889b04c5 m5ui.canvas.M5Canvas.draw_triangle:7 of
+msgid "The x-coordinate of the third vertex."
+msgstr ""
+
+#: 9c57bb80b39947d6be62dfc7654c26b6 m5ui.canvas.M5Canvas.draw_triangle:8 of
+msgid "The y-coordinate of the third vertex."
+msgstr ""
+
+#: 2ba259696c374fdb9ed4ffba2ae2c71c m5ui.canvas.M5Canvas.draw_triangle:9 of
+msgid ""
+"The background color of the triangle in hexadecimal format (e.g., "
+"0xRRGGBB)."
+msgstr ""
+
+#: 1d77c2eef7c34a96aff6a00e0b84c1e6 m5ui.canvas.M5Canvas.draw_triangle:10 of
+msgid "The opacity of the triangle (0-255)."
+msgstr ""
+
+#: 3a7940d0372244aa8cfc053bbac61866 m5ui.canvas.M5Canvas.draw_triangle:14 of
+msgid "|draw_triangle.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.canvas.ref:13 b8d6c5fc1c39434baddba7b10c23ae8d
+msgid "draw_triangle.png"
+msgstr ""
+
