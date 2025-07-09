@@ -1,0 +1,787 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-27 16:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/textarea.rst:4 ../../en/m5ui/textarea.rst:53
+#: 7380ff9976a540fcaf17d4c27c3c2a05 9b8f71d6573846afb89b2d939b2fe19d
+msgid "M5TextArea"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:8 9b051f6a671649e3b2f45d7b45f79414
+msgid ""
+"M5TextArea is a widget that can be used to create text input areas in the"
+" user interface. It allows users to input and edit multi-line text with "
+"support for placeholders, scrolling, and various styling options."
+msgstr "M5TextArea是一个可以在用户界面中创建文本输入区域的控件。它允许用户输入和编辑多行文本，支持占位符、滚动和各种样式选项。"
+
+#: ../../en/m5ui/textarea.rst:12 dfdeab4daaaa49c3b3f72a5c82017a21
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/textarea.rst:15 ../../en/m5ui/textarea.rst:34
+#: 4764b19f5dc549eea34131ccc1c063a7 afa2d5d5481a42e8be1024b1eaedc76f
+msgid "basic textarea"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:17 38f25dfcdd3b44838b608a6b2c5d71a3
+msgid "Open the |cores3_textarea_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开|cores3_textarea_basic_example.m5f2|项目。"
+
+#: ../../en/m5ui/textarea.rst:19 ../../en/m5ui/textarea.rst:36
+#: 4bc23b841c53456f8dd399be19548e90 f217f699fae5436386aa6f12d963ff2a
+msgid ""
+"This example demonstrates how to add text content to a text box and clear"
+" the content of the text box using a button."
+msgstr "此示例演示如何向文本框添加文本内容以及使用按钮清除文本框的内容。"
+
+#: ../../en/m5ui/textarea.rst:21 ../../en/m5ui/textarea.rst:66
+#: ../../en/m5ui/textarea.rst:83 ../../en/m5ui/textarea.rst:101
+#: ../../en/m5ui/textarea.rst:118 ../../en/m5ui/textarea.rst:137
+#: ../../en/m5ui/textarea.rst:184 ../../en/m5ui/textarea.rst:202
+#: ../../en/m5ui/textarea.rst:221 ../../en/m5ui/textarea.rst:239
+#: ../../en/m5ui/textarea.rst:256 ../../en/m5ui/textarea.rst:275
+#: ../../en/m5ui/textarea.rst:293 ../../en/m5ui/textarea.rst:314
+#: ../../en/m5ui/textarea.rst:333 ../../en/m5ui/textarea.rst:351
+#: ../../en/m5ui/textarea.rst:368 ../../en/m5ui/textarea.rst:385
+#: ../../en/m5ui/textarea.rst:402 ../../en/m5ui/textarea.rst:419
+#: ../../en/m5ui/textarea.rst:436 ../../en/m5ui/textarea.rst:454
+#: ../../en/m5ui/textarea.rst:471 ../../en/m5ui/textarea.rst:488
+#: ../../en/m5ui/textarea.rst:508 ../../en/m5ui/textarea.rst:526
+#: ../../en/m5ui/textarea.rst:543 ../../en/m5ui/textarea.rst:560
+#: ../../en/m5ui/textarea.rst:577 ../../en/m5ui/textarea.rst:594
+#: 02736aa12554469d8deb6b4b358373ab 0af4d72c5025422db041226838f60dc5
+#: 13b2500144474197b6c3a01ea9e90862 2030ce385c284dcfad0f424f28011dd7
+#: 24cc17d94dfc4d699828be9109a456af 2532e7c100854003b70bc414f3520f4a
+#: 337d72a48a1f4f518691682b3ff4ad32 4666211fd9fc46d1b74124f21b33c46e
+#: 4767a0256c614f56b5c8100781beb4a0 5d372778dedb4d0189e54388862e3537
+#: 5f941679578c42efb753c53e9cb683ce 632733dff0774b9ba944353d28571232
+#: 650ed94e0d124d46918860e12ebf1342 66df5e1fb31f4bc08c637bad90dc0b21
+#: 6852dd0b0ba145a4bb6e71313c8fb3c9 7466c3579fe74c86bae708f7295fadcd
+#: 762edb9edf21420481f7376c2c4c145e 77cd6fe3a47d497ea5a406464dccfd49
+#: 7bc96bc51c044b13ba6102caf3c759c4 825bbb9d7f1a41b687d6fe0ca46ec7d9
+#: 89440c37f56540deb63640278d8e90f2 8ad6942d4d3d43eda25b198f86c6e481
+#: 990a1b2bef514451a6c93ad9bf97bade 9c8ba628351b475c9532d3cdb2ff7564
+#: a89bae180aaf442ca0d8b40df011663a a9644c56d52b4c11811799001e2da82b
+#: c6b449442d584c6f9ba197e23c5a1514 d6427cc7bc574fb9a7e29ab67494dad3
+#: d957a03039a844b5804e10992418d35b e03a9748ddc74920911d1e501a4b9623
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/textarea.rst:23 17b3ade14bbc435987f3636cc659bcde
+msgid "|cores3_textarea_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:3 fc9ed23a2de240c1a003d82ce9fd8fa4
+msgid "cores3_textarea_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:25 ../../en/m5ui/textarea.rst:44
+#: 92d573498e7d40988c9ca26b54614ab5 dc653c35e263495a82606e5eca7894f7
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/textarea.rst:27 ../../en/m5ui/textarea.rst:46
+#: ../../en/m5ui/textarea.rst:64 ../../en/m5ui/textarea.rst:81
+#: ../../en/m5ui/textarea.rst:99 ../../en/m5ui/textarea.rst:116
+#: ../../en/m5ui/textarea.rst:135 ../../en/m5ui/textarea.rst:182
+#: ../../en/m5ui/textarea.rst:200 ../../en/m5ui/textarea.rst:219
+#: ../../en/m5ui/textarea.rst:237 ../../en/m5ui/textarea.rst:254
+#: ../../en/m5ui/textarea.rst:273 ../../en/m5ui/textarea.rst:291
+#: ../../en/m5ui/textarea.rst:312 ../../en/m5ui/textarea.rst:331
+#: ../../en/m5ui/textarea.rst:366 ../../en/m5ui/textarea.rst:383
+#: ../../en/m5ui/textarea.rst:400 ../../en/m5ui/textarea.rst:417
+#: ../../en/m5ui/textarea.rst:434 ../../en/m5ui/textarea.rst:452
+#: ../../en/m5ui/textarea.rst:469 ../../en/m5ui/textarea.rst:486
+#: ../../en/m5ui/textarea.rst:506 ../../en/m5ui/textarea.rst:524
+#: ../../en/m5ui/textarea.rst:541 ../../en/m5ui/textarea.rst:558
+#: 0563769c8b964c70b162a565ad15acf8 08874644aae943c3a969456d37160dbd
+#: 0c1551b5278341888a299479208c967a 14109a9561804d85ade23bcdf0e3bdea
+#: 2962f36df32b470d9c2bc1d0a70d7631 3a61a6f2e8ce4740bee4da236ecc2302
+#: 41e8afa587054f438d5c1df0978e61eb 43041742fff5437ba38ca7cb3ed67fe1
+#: 4c5295382ee24710936afc5234c66d12 5f990c777f0f47c0928c94ab0cb2d5d3
+#: 6c1410242a2245538ab71b87026f6d41 77fbda8de6fe419380e733d753ce933a
+#: 78d74c8062074efab39aee6d538c5b80 89a0bb303f1546c2a6d4026e188735a1
+#: 95b4397bc5f54f07b5ff11c32946c2d0 9fe574a3dab749ff8ea2ca060fe622d9
+#: a1205c9095da4ae78ee19e080e0234ae c6fa1684f2ce4cd19e677f4ec70af3bf
+#: d4a78c6455764bb386d5816cc8b19e7b d68eb214f958412bab45c8105aa0c839
+#: d6f8de7a913c4619b34a07ac9008cd1e d93950eb637745698944ab03d7460f44
+#: d96b57d686ac45ef8a7865829b5a04ef dcaafe7ea46540b7bd1cef6b814e8034
+#: df8e7267bde04458af352964a3ff7fb5 f03866ece6a344e69ea5470c22fc38b8
+#: f23ac21d562b48828862b2acbe66508d fb3184ae6a1b4d27a9200b92571be564
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:31 537aabe054dc47dc978f67118fc35b88
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/textarea.rst:38 ../../en/m5ui/textarea.rst:70
+#: ../../en/m5ui/textarea.rst:87 ../../en/m5ui/textarea.rst:105
+#: ../../en/m5ui/textarea.rst:122 ../../en/m5ui/textarea.rst:141
+#: ../../en/m5ui/textarea.rst:188 ../../en/m5ui/textarea.rst:206
+#: ../../en/m5ui/textarea.rst:225 ../../en/m5ui/textarea.rst:243
+#: ../../en/m5ui/textarea.rst:260 ../../en/m5ui/textarea.rst:279
+#: ../../en/m5ui/textarea.rst:299 ../../en/m5ui/textarea.rst:320
+#: ../../en/m5ui/textarea.rst:337 ../../en/m5ui/textarea.rst:355
+#: ../../en/m5ui/textarea.rst:372 ../../en/m5ui/textarea.rst:389
+#: ../../en/m5ui/textarea.rst:406 ../../en/m5ui/textarea.rst:423
+#: ../../en/m5ui/textarea.rst:440 ../../en/m5ui/textarea.rst:458
+#: ../../en/m5ui/textarea.rst:475 ../../en/m5ui/textarea.rst:492
+#: ../../en/m5ui/textarea.rst:512 ../../en/m5ui/textarea.rst:530
+#: ../../en/m5ui/textarea.rst:547 ../../en/m5ui/textarea.rst:564
+#: ../../en/m5ui/textarea.rst:581 ../../en/m5ui/textarea.rst:598
+#: 1291a40bd1d14107a5228825499f9a28 13e79ed285d34076a57bf4086d9fe57e
+#: 1d5b5a756d5649c6bb49c96c4923ed13 22b6541af09848caa97f86e1388683bf
+#: 259efee647a3485583bcf1c1a21fa63b 3b29cc9872974375965d5282584a39f6
+#: 3c6650f96cf4492f94fd889e352e1aff 438bf3709bfe4482989060b2cf1aebf1
+#: 4549e225d1374004b5f970267c631b4c 49adeac5cf3f47b8b137290125b3273a
+#: 4bed6860ee76406b98c69c0bef297438 4e798aa3e3ec4bc491b62bf5f37086ac
+#: 579eeabd6658498d8c776797e6b4232e 6a0162b046f94e1185c2d69bde1776c0
+#: 6a6570bb7b754ae98340af7a61d73e1a 71b35c42c3b74fb88b24d75c38fd1f81
+#: 7927379218064b6ab6496c2552f4bfb6 891143f9c7fe449b87ddc12ed30a9cfb
+#: 8ae152bcf6d44cc28dc78977e1782745 915ccb67a5794b95a8931220a3c01b29
+#: 9a6922d6508e42f4b5be206c0b3ac50d adf270b52d4e45beb8d25151a5e144d5
+#: ba22cc663cf841dd86a041197b22ccdc d33094e7ba354dce8d17cef9846a133d
+#: ea3ccabfc32941ec9551865915f1cb75 eaa6737a4c8047ce853de3cb88215f16
+#: f0a3278ff7a248d382c2de7101fe1eab f3c0345899f345e3a9d0e31ad7a4754f
+#: f40ff3683c5942179eed5e05bca35d49 f69bf302f1a644c586cd92a5c5e12c5b
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/textarea.rst:50 9a2c7ef251574fd588f4f4d2bc528eda
+msgid "**API**"
+msgstr "API参考"
+
+#: a5b97698450d4f6d8a7a3faa6ba5a672 m5ui.textarea.M5TextArea:1 of
+msgid "Bases: :py:class:`~lvgl.textarea`"
+msgstr ""
+
+#: 7e67257605834333b4944c6d38f505a2 m5ui.textarea.M5TextArea:1 of
+msgid "Create a text area widget."
+msgstr "创建一个文本框控件。"
+
+#: ../../en/m5ui/textarea.rst 023ffb971d5e4172a8892271d6de71fc
+#: 0526f19da6134efabb1b0b0871e56af8 05f1be04865b4125bbbc1b0a6902d9cc
+#: 1223534d61454475935227c365959562 1430b0c30db0437c8b0e711f0fd067e4
+#: 1653b7006fc14fdcb57fb12f79dafe4c 20bf477b3c1c486b859dd49dc63cfbde
+#: 26dad7089b304da9a3e0fe5a9b646bec 2d11698fe8a84edfb7d8848efeb514b3
+#: 301803dea7bd4aff95f8e8bfa6048fcf 32a6264dfb1c4317a53b5eb2ef911096
+#: 395e0146197b4325baaa7f67bdfd3cb1 4fde6c9b1f874f51bfeb6536cdeff123
+#: 5664e0b8f3d1442a86520e5363bcb087 566d13a1d08f40abaf3418bc410c84df
+#: 6006a52570734037959b000d0b56ff16 77d4c5ba39404d2da9a51e0bb05522c9
+#: 8544dd2ef94542398e345492c1c4298f 87abe4e45c044628b95958bdb5eaccc3
+#: 9bd9aab061d44df0833446cc303767d3 a2b9c369bb8d4ea6b28cce2d49b53fb0
+#: a36befac42034cd086011490ba8eaaf2 aa47212dbf4945588c0502afdf3cacef
+#: c0f95fc94539480aa2f0bbd9df5b11bf c88fbef5416642c194e8e5a063da93d5
+#: d2ce365c54614d3a9822156420db2136 fbf2076894a54721bd50df76439c4691
+msgid "Parameters"
+msgstr ""
+
+#: 6ca4d36958ad45ccb9ea247fd097636e m5ui.textarea.M5TextArea:3 of
+msgid "Initial text content of the text area."
+msgstr "文本框的初始文本内容。"
+
+#: f5acfb4f7ec24d6bb6fa50b79b27360f m5ui.textarea.M5TextArea:4 of
+msgid "Placeholder text when the text area is empty."
+msgstr "文本框为空时的占位符文本。"
+
+#: bade8d93defa42af83f7186c83bbbff2 m5ui.textarea.M5TextArea:5 of
+msgid "X position of the text area."
+msgstr "文本框的X坐标位置。"
+
+#: 3d63217d360c48bab7d89d64e51bcaf0 m5ui.textarea.M5TextArea:6 of
+msgid "Y position of the text area."
+msgstr "文本框的Y坐标位置。"
+
+#: 9b2783dd145b426e956bee0ced946134 m5ui.textarea.M5TextArea:7 of
+msgid "Width of the text area."
+msgstr "文本框的宽度。"
+
+#: c96b3c29edca42d6ba5786dfbaca3a5c m5ui.textarea.M5TextArea:8 of
+msgid "Height of the text area."
+msgstr "文本框的高度。"
+
+#: 52359bd4167f42318794d00c00c736f5 m5ui.textarea.M5TextArea:9 of
+msgid "Font used for the text."
+msgstr "用于文本的字体。"
+
+#: dd1041090054409ca8b5a50b3cbcd131 m5ui.textarea.M5TextArea:10 of
+msgid "Background color of the text area."
+msgstr "文本框的背景颜色。"
+
+#: 443b0a759963406c94d299f249274577 m5ui.textarea.M5TextArea:11 of
+msgid "Border color of the text area."
+msgstr "文本框的边框颜色。"
+
+#: 42ef0b38b6c147d3b77353b45c058086 m5ui.textarea.M5TextArea:12 of
+msgid "Text color of the text area."
+msgstr "文本框的文本颜色。"
+
+#: 5a3cc70937a44b6691ad28ae7f73585b m5ui.textarea.M5TextArea:13 of
+msgid ""
+"Parent object of the text area. If not specified, it will be set to the "
+"active screen."
+msgstr "文本框的父对象。如果未指定，将设置为活动屏幕。"
+
+#: ../../en/m5ui/textarea.rst:60 c3ae77941f9b4470b6ac299eeb0ede31
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/textarea.rst:62 32e37b943f6c4d15a45688648defed3c
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/textarea.rst:63 19a11523b5bf46a9b60ad72ad1130c19
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/textarea.rst 04c4b1e88314400baea6d28298bd217d
+#: 0e5fadc7c4b74c108c523617709b6843 32c029fe5d32408c97f50bd98b05559d
+#: 3360375a97b343ec94f9c540e77a2cea 33b19d16cc49489d8f46a3a42dc9bb1c
+#: 37772ff140b34bfcbb42136668f9d53c 38242bd8fa1542c2bab99db4af1a7988
+#: 3a8005f8557346f78c1cfef12ab3cf09 3b6ff2ff7dc243de8339913b926870e6
+#: 3bf7c12ebefe4de18626ab223e658240 3c7c93fa08c049d4b16463b4e2911e11
+#: 45d822c8ccf1497ca6b55f2b70f11dc1 476689ae03a54751915b3035e6bae74f
+#: 4780a2806c1c4c06a1c933b043584258 4914afd3d24e43e68889d8ef0f9cdf31
+#: 4ff38f56e2474ef493e7d3d7c3a124b5 68f125c4288941288264f66a59a1d8aa
+#: a9adc63beea0469a89d879689cfe59b7 ae7931c18247439c906069491dd47911
+#: b2d51643772248f592dd22f748949318 b7f907fe54bd41da85398e45e5a1f767
+#: b902d736cc894b529e03d4ab4c0b4a10 d81362684a004a4ab295de15bbf8169b
+#: e1b55382e1574d74949f5ae305965450 e964051f206245efbec5670ec05a4b74
+#: e9f1b8ef26b74da281c97b3b78475a18 f143651bfe494e71a67adc2e6b456c80
+#: fdfba699f9d9479983ea43a3291188a3 fe6b3b5949fa4152866fcc6038d72819
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:68 0e0f6bad868d423dbc50642c75137c08
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:14 eb91f1819fb74506821bad8039cdf424
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:78 543ff656431d48e998d3018b2cce505b
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果标志已设置，则移除它；如果未设置，则添加它。"
+
+#: ../../en/m5ui/textarea.rst:80 a11d77971d334ea487360d88540dd97d
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/textarea.rst:85 88fd306722a5495e8fa784a5e480e46c
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:35 9275b6288d1a45248cb79e5fafd013fd
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:95 6d55eb8a95b34e718413bc9b4b7d11f3
+msgid ""
+"Set the state of the textarea. If ``value`` is True, the state is set; if"
+" False, the state is unset."
+msgstr "设置文本框的状态。如果 ``value`` 为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/textarea.rst:97 a601f5d8df0d445687a358f4b700b07d
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/textarea.rst:98 30b6e48479934bb8aeee0ca21b799e08
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/textarea.rst:103 0b4c0a0788a44094962f49345bb0a1cf
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:25 8eac1b4041064138ba5516fc88cdf40d
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:113 8efbf04dc06942edbd0f43fc15a3767c
+msgid ""
+"Toggle the state of the textarea. If the state is set, it is unset; if "
+"not set, it is set."
+msgstr "切换文本框的状态。如果状态已设置，则取消设置；如果未设置，则设置它。"
+
+#: ../../en/m5ui/textarea.rst:115 6859159b4db94f908b0a77b2635b9da1
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/textarea.rst:120 2ec7630acdad41f3bfaf2e81057c1013
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:36 95b6d16b28e24bedabf2505eec802bc8
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:130 fe381bb2bbb44317a90bbba6194eb0a1
+msgid ""
+"Add an event callback to the slider. The callback will be called when the"
+" specified event occurs."
+msgstr "为文本框添加事件回调。当指定的事件发生时，将调用回调函数。"
+
+#: ../../en/m5ui/textarea.rst:132 7287de61906643acbf0f469621265e2b
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/textarea.rst:133 2fa2f09ee2ba4d3aa0d7c7af35bd345b
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/textarea.rst:134 8c4a837951394812b789807a0cd23c65
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调函数的可选用户数据。"
+
+#: ../../en/m5ui/textarea.rst:139 edf9d4c1331a4bb2b21093341d1f6928
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:7 2b69e998a061464aa77d4ac3acc4ced7
+msgid "event.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:177 45d84d5749a74b64815af6df7d45e9c3
+msgid "Set the background color of the textarea."
+msgstr "设置文本框的背景颜色。"
+
+#: ../../en/m5ui/textarea.rst:179 ../../en/m5ui/textarea.rst:216
+#: ../../en/m5ui/textarea.rst:270 0eee01ed6f964c09abff102c01537683
+#: 80af6dd7eea94456a1f7dbe8ec02ff9e 98fa56505d62449890715a9b555a4287
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/textarea.rst:180 ../../en/m5ui/textarea.rst:217
+#: ../../en/m5ui/textarea.rst:271 53601b79f26a4a379279720ca23d73a3
+#: bb642507024f43999e09ee6a4782ea77 eda0116e05674a7d835b431825e61587
+msgid "The opacity of the color."
+msgstr "颜色的不透明度。"
+
+#: ../../en/m5ui/textarea.rst:181 ../../en/m5ui/textarea.rst:199
+#: ../../en/m5ui/textarea.rst:218 ../../en/m5ui/textarea.rst:236
+#: ../../en/m5ui/textarea.rst:272 ../../en/m5ui/textarea.rst:290
+#: ../../en/m5ui/textarea.rst:311 13afed9af23c4c5bb5f764fe171a3f7e
+#: 196c5f6baa78404481b24ceded0c45ee 300c22ae809b4d0f83bc6d415bfd5f85
+#: 7381c2083dda4fadb72af722edce591d 8aed369311a34d9d917f4d5bd09cc3cc
+#: df1b8f768eda41098bcbff1478794280 f6c920d88244494d84cad3de4c32f8d9
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（例如，lv.PART.MAIN）。"
+
+#: ../../en/m5ui/textarea.rst:186 bed32b395ab64ad291bd6c61d5b06538
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:12 cfc161fcc5314b11b5d536155b7b5d14
+msgid "set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:196 17c41f5a87e04a218c1cd4ba340257bf
+msgid "Set the corner radius of the slider components."
+msgstr "设置滑块组件的角半径。"
+
+#: ../../en/m5ui/textarea.rst:198 06ecfdd9ac084a40b18f0c466a874bfe
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/textarea.rst:204 38e57414964a4d34b5ef2b6b8ddd1e95
+msgid "|set_style_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:27 3e1abd26a075449dbd041ada9d3885bf
+msgid "set_style_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:214 2f6ddc5bd1e1427ba065d329eef8ee2d
+msgid "Set the border color of the textarea."
+msgstr "设置文本框的边框颜色。"
+
+#: ../../en/m5ui/textarea.rst:223 dc7cfba485dd4596922a7c3639249581
+msgid "|set_border_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:13 e5faa8d121c947cba96c86d07c78e168
+msgid "set_border_color.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:233 0a73dd7f153f459abebde4054df187fa
+msgid "Set the border width of the textarea."
+msgstr "设置文本框的边框宽度。"
+
+#: ../../en/m5ui/textarea.rst:235 d48b2c069fe24d0d80653e2faf74393d
+msgid "The width to set."
+msgstr "要设置的宽度。"
+
+#: ../../en/m5ui/textarea.rst:241 d96980bdb528473a8032f3e266359b3a
+msgid "|set_style_border_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:26 8c41b112d77e4f478dd091240587c7ad
+msgid "set_style_border_width.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:251 a7055977473a4f6b92c7402e9d8e0208
+msgid "Set the placeholder text that appears when the textarea is empty."
+msgstr "设置当文本框为空时显示的占位符文本。"
+
+#: ../../en/m5ui/textarea.rst:253 fc8e3939824c4daab6a01411e843a415
+msgid "The placeholder text to set."
+msgstr "要设置的占位符文本。"
+
+#: ../../en/m5ui/textarea.rst:258 fe212171751c4db0ae74d22776295938
+msgid "|set_placeholder_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:22 56c6f6520210423980c14692f33cc91c
+msgid "set_placeholder_text.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:268 95976a5b8f794489b79487c85e8fd22c
+msgid "Set the color of the text."
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:277 5968289dcee24a04b343bf38a58534e9
+msgid "|set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:30 604538ae4a514d8381c7a657a71333f2
+msgid "set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:287 35835826521d49fa8aaa85e1c0d64c06
+msgid "Set the font of the textarea text."
+msgstr "设置textarea文本的字体。"
+
+#: ../../en/m5ui/textarea.rst:289 4a6f18e4230849febfa63055d1d2d27c
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/textarea.rst:295 2f3a7fb5419c43a6b62b5a9755347e79
+msgid "|set_placeholder_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:21 28c3a17e052849079ee809f0863ca4d4
+msgid "set_placeholder_font.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:297 9a3be70b70c7468986a23d2514caf992
+msgid "|set_text_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:31 4c60225cafd541f5958d73fb0887cb5b
+msgid "set_text_font.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:308 346a598a987141618afd574e624b2733
+msgid "Set the text alignment of the textarea."
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:310 404666e3b5b84f0dbf96cb215cbeddb7
+msgid "The alignment to set (e.g., lv.TEXT_ALIGN.LEFT, lv.TEXT_ALIGN.CENTER)."
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:316 1372db4a715a4a6a9e7402a3627a710b
+msgid "|set_placeholder_align.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:19 d9dc44c2c370470f96076772d63964bb
+msgid "set_placeholder_align.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:318 f447b03d0e674a4d880184b810e73b43
+msgid "|set_text_align.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:29 cb7db211cba547a2832f95d97ffa84a1
+msgid "set_text_align.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:328 ac0e26256563489fbf5bdf1b9f02eb6f
+msgid "Set the text content of the textarea."
+msgstr "设置textarea的文本内容。"
+
+#: ../../en/m5ui/textarea.rst:330 3ce5b4f418f7463a81a8749508e214ce
+msgid "The text to set."
+msgstr "要设置的文本。"
+
+#: ../../en/m5ui/textarea.rst:335 a63a2ed8520240e89a014f6162d57883
+msgid "|set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:28 4bd175ce46494ca9bad98e795d918b9e
+msgid "set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:346 045536dbb2bf4349a67221ff6c5e406f
+msgid "Get the current text content of the textarea."
+msgstr "获取textarea当前的文本内容。"
+
+#: ../../en/m5ui/textarea.rst:348 3c8d462a919741428207bdb308520cdf
+msgid "The current text content."
+msgstr "当前文本内容。"
+
+#: ../../en/m5ui/textarea.rst 2db2c1ff24db42299f76cf49c0c70538
+#: 5371c7681ab0432e8d5d1c72e8b87c49 ae50d411e14f445db98fa7583199ca6e
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:353 bb0710d85fb947ce9dd9149dfdc41cb4
+msgid "|get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:9 0a5ef1bebd4c4b98b46169f1002b09e7
+msgid "get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:363 e2320a81b9bf4a7a841b9b0324769842
+msgid "Add text to the current content of the textarea."
+msgstr "将文本添加到文本框的当前内容。"
+
+#: ../../en/m5ui/textarea.rst:365 3a971c884e9e4c82b603b71ae0921a42
+msgid "The text to add."
+msgstr "要添加的文本。"
+
+#: ../../en/m5ui/textarea.rst:370 ee071ff836774627949feaba07d37c36
+msgid "|add_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:4 431c131cad8d4a4391756687219bfa2b
+msgid "add_text.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:380 86952056d06f4145b4533c551fa85e86
+msgid "Set the maximum length of text that can be entered in the textarea."
+msgstr "设置可在文本框中输入的文本的最大长度。"
+
+#: ../../en/m5ui/textarea.rst:382 905b890c3db6434fb48c50f4963b83c3
+msgid "The maximum length of text."
+msgstr "文本的最大长度。"
+
+#: ../../en/m5ui/textarea.rst:387 d188c139a5434c89a780e913d68da37b
+msgid "|set_max_length.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:16 f8153cf39d9b474eaffeb41e5905242d
+msgid "set_max_length.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:397 fc2e0f707df744b19cbe33527a5cd5ea
+msgid ""
+"Set whether the textarea should be in password mode (i.e., characters are"
+" hidden)."
+msgstr "设置文本框是否应处于密码模式（即字符被隐藏）。"
+
+#: ../../en/m5ui/textarea.rst:399 2a3324817af445a9b455f8d0a3874159
+msgid "True to enable password mode, False to disable."
+msgstr "True 表示启用密码模式，False 表示禁用。"
+
+#: ../../en/m5ui/textarea.rst:404 aa6a825f3a454429960d62cfc80902d4
+msgid "|set_password_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:18 3a8776dad1c944eb99ae9e2f80c21af6
+msgid "set_password_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:414 d99d8e28d6a44d59848a7d58d1db59e4
+msgid "Set whether the textarea should be single line or multi-line."
+msgstr "设置文本框是单行还是多行。"
+
+#: ../../en/m5ui/textarea.rst:416 23a2787a335f4579b2d448f400c4b18f
+msgid "True for single line, False for multi-line."
+msgstr "表示单行，表示多行。"
+
+#: ../../en/m5ui/textarea.rst:421 0b8299717cb4462090c20a35dbc0e18a
+msgid "|set_one_line.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:17 2b7fa5bc3640412f9140f17794025cf7
+msgid "set_one_line.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:431 3e7e721fc22a42ec9c35c8ca2aa18950
+msgid ""
+"Set the characters that are accepted in the textarea. Only these "
+"characters can be entered."
+msgstr "设置文本框可接受的字符。只有这些字符才允许输入。"
+
+#: ../../en/m5ui/textarea.rst:433 9ec4c47d3032435f9c21678cfe1f6d7a
+msgid "The string of accepted characters."
+msgstr "可接受的字符串。"
+
+#: ../../en/m5ui/textarea.rst:438 38a732734d46460fbd193cdaa6dd4dc8
+msgid "|set_accepted_chars.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:11 5f4aeb65a3504696a4e73f65c6eec294
+msgid "set_accepted_chars.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:448 d0f2a484add04f7d96746a7a1e3d1803
+msgid "Set the position of the textarea."
+msgstr "设置文本框的位置。"
+
+#: ../../en/m5ui/textarea.rst:450 ../../en/m5ui/textarea.rst:468
+#: 24c1ba3b59f04021b76441d9c0ea6885 f7f4e4a1637c4860be442c0c5aa8db07
+msgid "The x-coordinate of the textarea."
+msgstr "文本框的 x 坐标。"
+
+#: ../../en/m5ui/textarea.rst:451 ../../en/m5ui/textarea.rst:485
+#: 0a357decf3f64609b940e082c38b8200 dc3179fac29b4cf8877c0cb73df23782
+msgid "The y-coordinate of the textarea."
+msgstr "文本框的 y 坐标。"
+
+#: ../../en/m5ui/textarea.rst:456 7128c448175748e081e503741d89c668
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:23 18702d1e47ad417d9af15d4f266ab3cf
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:466 540b41bcebce4d19b2e0d5e7de7fe391
+msgid "Set the x-coordinate of the textarea."
+msgstr "设置文本框的 x 坐标。"
+
+#: ../../en/m5ui/textarea.rst:473 f29ef2497f1342c5b67ae8c163d4867b
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:33 9b145e6742074a7287f0296695f6717a
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:483 4722d40eae0e4423bf18917095f233d0
+msgid "Set the y-coordinate of the textarea."
+msgstr "设置文本框的 y 坐标。"
+
+#: ../../en/m5ui/textarea.rst:490 99cdb4e8277d4c53975413aa8dbcd4e4
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:34 21b10e3a181442f1b9155c2c9546baf9
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:500 4d7e6f7f72f54d2c8ecfb002ff986e23
+msgid "Align the textarea to another object."
+msgstr "将文本框与另一个对象对齐。"
+
+#: ../../en/m5ui/textarea.rst:502 e518d106c1f94a70a9f79b4ff9ca2da2
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/textarea.rst:503 54062efa014d4488aa70ce60426cadd9
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/textarea.rst:504 654d91466a084125afa51ffa222b2ec1
+msgid "The x-offset from the aligned object."
+msgstr "与对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/textarea.rst:505 4a5058160ef94145924d924e332af7a9
+msgid "The y-offset from the aligned object."
+msgstr "与对齐对象的 y 偏移。"
+
+#: ../../en/m5ui/textarea.rst:510 a6bb7ce697fe4df5a17e9de756d240a4
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:5 52f350d8431b4c3f88e9bfab5490c1a4
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:520 98c576f6d547413092df5a983033e491
+msgid "Set the size of the textarea."
+msgstr "设置文本框的大小。"
+
+#: ../../en/m5ui/textarea.rst:522 ../../en/m5ui/textarea.rst:540
+#: ../../en/m5ui/textarea.rst:574 21ab1c6c1a344c4b84472ba619ce61f3
+#: aad85542d882486c9eae3b12372db8d3 fd4008023fbe4015a31f6041530849a1
+msgid "The width of the textarea."
+msgstr "文本框的宽度。"
+
+#: ../../en/m5ui/textarea.rst:523 ../../en/m5ui/textarea.rst:557
+#: ../../en/m5ui/textarea.rst:591 7f7deae8e90a4d7ebcd3753690b46cf1
+#: 9844abe4d5f4449494451ff0f4de85d6 ce1cbde7dc7a470f91eb5d4010cbb409
+msgid "The height of the textarea."
+msgstr "文本框的高度。"
+
+#: ../../en/m5ui/textarea.rst:528 d4c5c3184f1e46b68ee1e7e5e98f345b
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:24 d0a726f94f104bc5a97df4262d637020
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:538 21f4f2e51b4b4192b01495a488c214e7
+msgid "Set the width of the textarea."
+msgstr "设置文本框的宽度。"
+
+#: ../../en/m5ui/textarea.rst:545 9d4714678728406380bd0aca24073f9b
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:32 a95f99f994e148c4befcc6bfdb74ddf8
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:555 f3fa5ab4d1514f1b8dcaf52c40adbe31
+msgid "Set the height of the textarea."
+msgstr "设置文本框的高度。"
+
+#: ../../en/m5ui/textarea.rst:562 512db86df3054773a29e6adedc156c21
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:15 60bbf58b36f348b98c026d522c45c697
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:572 b04893ce965a4dc0bdee76a33863b0e4
+msgid "Get the width of the textarea."
+msgstr "获取文本框的宽度。"
+
+#: ../../en/m5ui/textarea.rst:579 dca6003e24a241a9b7975d3cbb826838
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:10 6b752e2d957a411d96a725a2fe9ce106
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/textarea.rst:589 b3784c885a084eadb08e0576194647c4
+msgid "Get the height of the textarea."
+msgstr "获取文本框的高度。"
+
+#: ../../en/m5ui/textarea.rst:596 edddc9a6010b480ab4c71d171d0820f1
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.textarea.ref:8 6f954704af704ac7877d440dc6fbcae6
+msgid "get_height.png"
+msgstr ""

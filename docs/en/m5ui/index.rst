@@ -43,3 +43,4 @@ Classes
     line.rst
     slider.rst
     switch.rst
+    textarea.rst
