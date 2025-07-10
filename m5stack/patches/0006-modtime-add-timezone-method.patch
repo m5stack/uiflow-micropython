@@ -56,6 +56,15 @@ Index: micropython/extmod/modtime.c
  MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(mp_time_localtime_obj, 0, 1, time_localtime);
  
  // mktime()
+@@ -86,7 +111,7 @@ static mp_obj_t time_mktime(mp_obj_t tup
+     mp_obj_get_array(tuple, &len, &elem);
+ 
+     // localtime generates a tuple of len 8. CPython uses 9, so we accept both.
+-    if (len < 8 || len > 9) {
++    if (len < 6) {
+         mp_raise_TypeError(MP_ERROR_TEXT("mktime needs a tuple of length 8 or 9"));
+     }
+ 
 @@ -200,7 +225,7 @@ static const mp_rom_map_elem_t mp_module
      { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_time) },
  
