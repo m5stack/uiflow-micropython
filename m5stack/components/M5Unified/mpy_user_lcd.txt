@@ -45,7 +45,7 @@ public:
 
     void user_spi_panel_setup(user_panel_t panel_type, int16_t width, int16_t height,
         int16_t offset_x, int16_t offset_y, bool invert, bool rgb_order,
-        uint8_t spi_host, uint32_t spi_freq = 40, int16_t pin_sclk = -1,
+        uint8_t spi_host, uint32_t spi_freq = 40, int spi_mode = 0, int16_t pin_sclk = -1,
         int16_t pin_mosi = -1, int16_t pin_miso = -1, int16_t pin_dc = -1,
         int16_t pin_cs = -1, int16_t pin_rst = -1, int16_t pin_busy = -1) {
 
@@ -53,7 +53,7 @@ public:
             auto cfg = _spi_bus_instance.config();
 
             cfg.spi_host = (spi_host_device_t)spi_host;
-            cfg.spi_mode = 0;
+            cfg.spi_mode = spi_mode;
             cfg.freq_write = spi_freq * 1000000;
             cfg.freq_read = spi_freq * 1000000;
             cfg.spi_3wire = true;
@@ -198,7 +198,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_
         // panel commom setting
         ARG_w, ARG_h, ARG_ox, ARG_oy, ARG_invert, ARG_rgb,
         // spi display panel setting
-        ARG_spi_host, ARG_spi_freq, ARG_sclk, ARG_mosi, ARG_miso,
+        ARG_spi_host, ARG_spi_freq, ARG_spi_mode, ARG_sclk, ARG_mosi, ARG_miso,
         ARG_dc, ARG_cs, ARG_rst, ARG_busy,
         // i2c display panel setting
         ARG_i2c_host, ARG_i2c_addr, ARG_i2c_freq, ARG_sda, ARG_scl,
@@ -223,6 +223,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_
         // spi display panel setting
         { MP_QSTR_spi_host,    MP_ARG_INT                  , {.u_int = 2 } },
         { MP_QSTR_spi_freq,    MP_ARG_INT                  , {.u_int = 40 } },
+        { MP_QSTR_spi_mode,    MP_ARG_INT                  , {.u_int = 0 } },
         { MP_QSTR_sclk,        MP_ARG_INT                  , {.u_int = -1 } },
         { MP_QSTR_mosi,        MP_ARG_INT                  , {.u_int = -1 } },
         { MP_QSTR_miso,        MP_ARG_INT                  , {.u_int = -1 } },
@@ -277,7 +278,7 @@ mp_obj_t user_panel_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_
             (user_panel_t)panel_type, args[ARG_w].u_int, args[ARG_h].u_int,
             args[ARG_ox].u_int, args[ARG_oy].u_int,
             args[ARG_invert].u_bool, args[ARG_rgb].u_bool,
-            args[ARG_spi_host].u_int, args[ARG_spi_freq].u_int,
+            args[ARG_spi_host].u_int, args[ARG_spi_freq].u_int, args[ARG_spi_mode].u_int,
             args[ARG_sclk].u_int, args[ARG_mosi].u_int,
             args[ARG_miso].u_int, args[ARG_dc].u_int,
             args[ARG_cs].u_int, args[ARG_rst].u_int,
