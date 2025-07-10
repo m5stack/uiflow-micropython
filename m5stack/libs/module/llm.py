@@ -603,7 +603,7 @@ class ApiMelotts:
         }
 
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
-            ujson.dumps(cmd), request_id, self._set_llm_work_id, 15000
+            ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
 
         ret_work_id = self._llm_work_id if success else ""
