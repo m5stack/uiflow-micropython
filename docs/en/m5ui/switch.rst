@@ -65,13 +65,9 @@ M5Switch
 
         UiFlow2 Code Block:
 
-            |set_bg_color_default.png|
+            |set_bg_color.png|
 
-            |set_bg_color_checked.png|
-
-            |set_knob_color_checked.png|
-
-            |set_knob_color_default.png|
+            |set_knob_color.png|
 
         MicroPython Code Block:
 
