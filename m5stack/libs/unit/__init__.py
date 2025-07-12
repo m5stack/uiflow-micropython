@@ -77,6 +77,7 @@ _attrs = {
     "LoRaE220433Unit": "lora_e220_433",
     "LoRaE220JPUnit": "lora_e220_jp",
     "LoRaWANUnit": "lorawan",
+    "LoRaWANUnit_RUI3": "lorawan_rui3",
     "MIDIUnit": "midi",
     "MiniOLEDUnit": "minioled",
     "MiniScaleUnit": "miniscale",
