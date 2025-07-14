@@ -32,7 +32,13 @@ class NetworkInfo:
         auth = network_info[4]
         hidden = network_info[5]
 
-        auth_dict = {0: "OPEN", 1: "WEP", 2: "WPA-PSK", 3: "WPA2-PSK", 4: "WPA/WPA2-PSK"}
+        auth_dict = {
+            0: "OPEN",
+            1: "WEP",
+            2: "WPA-PSK",
+            3: "WPA2-PSK",
+            4: "WPA/WPA2-PSK",
+        }
         auth_str = auth_dict.get(auth, "UNKNOWN")
 
         self._label.set_text(

@@ -91,7 +91,10 @@ class AppAppList(AppBase):
         for i, app_name in enumerate(get_hal().get_py_app_list()):
             self._app_options.append(
                 PyAppOption(
-                    self._py_app_panel, app_name, 10 + i * 70, self._on_py_app_option_clicked
+                    self._py_app_panel,
+                    app_name,
+                    10 + i * 70,
+                    self._on_py_app_option_clicked,
                 )
             )
 

@@ -4,15 +4,15 @@
 
 from ..hal import get_hal
 from ..apps.app import AppManager
-from ..common import IconIndicator, Ezdata, EzdataAppState
+from ..common import IconIndicator, Ezdata
+from ..common import debug_print
 import lvgl as lv
 import asyncio
-import time
 
 
 class EzdataIcon:
-    def __init__(self, parent: lv.obj, pos_x: int, group_id: str, name: str):
-        self._group_id = group_id
+    def __init__(self, parent: lv.obj, pos_x: int, data_id: str, name: str, pin_color=None):
+        self._data_id = data_id
         self._icon_pos_x = pos_x
 
         btn = lv.obj(parent)
@@ -22,43 +22,45 @@ class EzdataIcon:
         btn.add_flag(lv.obj.FLAG.CLICKABLE)
         btn.set_style_pad_all(0, lv.PART.MAIN)
         btn.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
+        btn.set_style_bg_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
 
-        if not group_id:
-            btn.remove_flag(lv.obj.FLAG.CLICKABLE)
-            btn.set_style_bg_color(lv.color_hex(0x808080), lv.PART.MAIN)
-        elif group_id == "settings":
-            btn.set_style_bg_color(lv.color_hex(0x9E9E9E), lv.PART.MAIN)
-        else:
-            btn.set_style_bg_color(lv.color_hex(0xE6E6E6), lv.PART.MAIN)
+        if data_id == "settings":
+            btn.set_style_bg_color(lv.color_hex(0xE0EDFF), lv.PART.MAIN)
 
-        label = lv.label(btn)
-        label.set_text(name)
-        label.set_width(82)
-        label.align(lv.ALIGN.CENTER, 0, 0)
-        label.set_style_text_color(lv.color_hex(0x4A4949), lv.PART.MAIN)
-        label.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN)
-        if group_id == "add":
-            label.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
+            img_icon = lv.image(btn)
+            img_icon.set_src(get_hal().get_asset_path("icons/settings.png"))
+            img_icon.align(lv.ALIGN.CENTER, 0, 0)
         else:
+            label = lv.label(btn)
+            label.set_text(name)
+            label.set_width(82)
+            label.align(lv.ALIGN.CENTER, 0, 0)
+            label.set_style_text_color(lv.color_hex(0x4A4949), lv.PART.MAIN)
+            label.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN)
             label.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN)
+
+        if pin_color:
+            pin = lv.obj(btn)
+            pin.set_size(16, 16)
+            pin.align(lv.ALIGN.TOP_RIGHT, -6, 6)
+            pin.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+            pin.set_style_border_width(0, lv.PART.MAIN)
+            pin.set_style_bg_color(lv.color_hex(pin_color), lv.PART.MAIN)
 
     def _on_clicked(self, e: lv.event_t):
         get_hal().play_click_sfx()
         IconIndicator.create_indicator(e.get_target_obj())
 
-        if self._group_id == "settings":
+        if self._data_id == "settings":
             AppManager.open_app("EzDataSettings")
         else:
-            EzdataAppState.set_new_group_id(self._group_id)
+            Ezdata.set_selected_data_id(self._data_id)
             AppManager.open_app("EzData")
 
 
 class EzdataDock:
     def __init__(self):
-        self._last_ezdata_state = Ezdata.State.INIT
         self._icons = []
-        self._last_update_group_list_time = 0
-        self._last_group_list = []
 
         self._dock_panel = lv.obj(lv.screen_active())
         self._dock_panel.set_size(445, 115)
@@ -68,67 +70,52 @@ class EzdataDock:
         self._dock_panel.set_style_pad_all(8, lv.PART.MAIN)
         self._dock_panel.set_scrollbar_mode(lv.SCROLLBAR_MODE.ACTIVE)
 
-        self._create_init_dock()
+        label_init = lv.label(self._dock_panel)
+        label_init.set_text("Connecting...")
+        label_init.align(lv.ALIGN.CENTER, 0, 0)
+        label_init.set_style_text_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
+        label_init.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
 
-        self._task = asyncio.create_task(self._update_task())
+        self._task = asyncio.create_task(self._task())
 
-    async def _update_task(self):
-        while True:
+    async def _task(self):
+        # Wait ezdata ready
+        while Ezdata.get_state() == Ezdata.State.INIT:
             await asyncio.sleep(0.5)
+            continue
 
-            state = Ezdata.get_state()
+        # Connect on change signal and create initial data dock
+        Ezdata.on_data_list_changed.connect(self._handle_data_list_changed)
+        self._create_data_dock()
 
-            # If state changed
-            if not state == self._last_ezdata_state:
-                self._handle_state_changed(state)
-                self._last_ezdata_state = state
+    def _create_data_dock(self):
+        all_data = Ezdata.get_all_data()
+        # debug_print("data:", all_data)
 
-            # Check if group list is updated in every 10s
-            if state == Ezdata.State.NORMAL:
-                if time.time() - self._last_update_group_list_time > 10:
-                    new_group_list = Ezdata.get_user_group_list()
-                    if new_group_list != self._last_group_list:
-                        self._create_data_dock(new_group_list)
-                        self._last_group_list = new_group_list
-                    self._last_update_group_list_time = time.time()
-
-    def _handle_state_changed(self, new_state: Ezdata.State):
-        # State init and wait token share the same dock
-        if new_state == Ezdata.State.INIT:
-            if self._last_ezdata_state == Ezdata.State.WAIT_USER_TOKEN:
-                return
-            self._create_init_dock()
-        elif new_state == Ezdata.State.WAIT_USER_TOKEN:
-            if self._last_ezdata_state == Ezdata.State.INIT:
-                return
-            self._create_init_dock()
-
-        # Create data dock when ezdata in normal state
-        elif new_state == Ezdata.State.NORMAL:
-            new_group_list = Ezdata.get_user_group_list()
-            self._create_data_dock(new_group_list)
-            self._last_update_group_list_time = time.time()
-            self._last_group_list = new_group_list
-
-    def _create_init_dock(self):
         self._icons.clear()
         self._dock_panel.clean()
 
-        for i in range(4):
-            if i == 0:
-                self._icons.append(EzdataIcon(self._dock_panel, 0, "add", "+"))
-            else:
-                self._icons.append(EzdataIcon(self._dock_panel, i * 110, "", ""))
+        # Setting icon
+        self._icons.append(EzdataIcon(self._dock_panel, 0, "settings", "settings"))
 
-    def _create_data_dock(self, group_list: list[dict]):
-        self._icons.clear()
-        self._dock_panel.clean()
+        # If no data
+        if len(all_data) == 0:
+            label_no_data = lv.label(self._dock_panel)
+            label_no_data.set_text("No data.")
+            label_no_data.align(lv.ALIGN.CENTER, 50, 0)
+            label_no_data.set_style_text_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
+            label_no_data.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
 
-        for i, group in enumerate(group_list):
+        for i, data in enumerate(all_data):
             self._icons.append(
-                EzdataIcon(self._dock_panel, i * 110, group.get("id"), group.get("domainName"))
+                EzdataIcon(
+                    self._dock_panel,
+                    (i + 1) * 110,
+                    data.get("id"),
+                    data.get("name"),
+                )
             )
 
-        self._icons.append(
-            EzdataIcon(self._dock_panel, len(self._icons) * 110, "settings", "settings")
-        )
+    def _handle_data_list_changed(self):
+        debug_print("[EzdataDock] data list changed")
+        self._create_data_dock()

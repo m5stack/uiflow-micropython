@@ -1,25 +1,179 @@
 # SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
-# SPDX-License-Identifier: MI
+# SPDX-License-Identifier: MIT
 
-from ..hal import *
+from ..hal import get_hal, NetworkStatus
+from .uwebsockets import connect as ws_connect
+from .uwebsockets import WebsocketClient
+from .debug import debug_print
+from .signal import Signal
 import asyncio
 import requests
 import json
-from umqtt import MQTTClient
+import time
+
+
+class _EzdataClientWebsocket:
+    """
+    Ezdata client via websocket
+    """
+
+    # Response type
+    DEVICE_ADD_DATA = 100
+    DEVICE_UPDATE_DATA = 101
+    DEVICE_DELETE_DATA = 102
+    DEVICE_DATA_LIST = 103
+    DEVICE_DATA = 104
+    DEVICE_DATA_FILE = 105
+    DEVICE_REQUEST_ERROR = 500
+
+    def __init__(self, device_token: str, on_data_changed: Signal):
+        self._device_token = device_token
+        self._on_data_changed = on_data_changed
+        self._ws: WebsocketClient | None = None
+        self._ws_last_heartbeat_time = 0
+        self._data = {}
+
+    async def init(self):
+        await self._connect()
+        await self.fetch_all_data()  # Fetch actively to create initial data
+
+    def get_all_data(self):
+        return self._data
+
+    def get_data(self, data_id: str):
+        for data in self._data:
+            if data.get("id") == data_id:
+                return data
+        return None
+
+    async def _connect(self):
+        try:
+            # Close if already connected
+            if self._ws:
+                self._ws.close()
+                self._ws = None
+
+            # Connect and login
+            uri = "wss://ezdata2.m5stack.com/ws"
+            msg = f'{{"deviceToken": "{self._device_token}"}}'
+
+            self._ws = ws_connect(uri)
+
+            # Wait login
+            for i in range(10):
+                debug_print("ws send:", msg)
+                self._ws.send(msg)
+
+                await asyncio.sleep(1)
+                resp = self._ws.recv(blocking=False)
+                debug_print("ws recv:", resp)
+
+                if "Login successful" in resp:
+                    self._ws_last_heartbeat_time = time.time()
+                    debug_print("ws login successful")
+                    return
+
+            raise Exception("max login retry")
+
+        except Exception as e:
+            raise Exception("connect ws failed:", e)
+
+    async def fetch_all_data(self):
+        if self._ws is None:
+            return
+
+        self._data.clear()
+
+        for i in range(10):
+            try:
+                msg = json.dumps(
+                    {
+                        "deviceToken": self._device_token,
+                        "body": {"requestType": "DEVICE_DATA_LIST"},
+                    }
+                )
+                debug_print("ws send:", msg)
+                self._ws.send(msg)
+
+                await asyncio.sleep(1)
+                resp = self._ws.recv(blocking=False)
+
+                response = json.loads(resp)
+                if response.get("code") == 200:
+                    self._data = response.get("body")
+                    # debug_print("fetch first data success:", self._data)
+                    return
+
+            except Exception as e:
+                debug_print("fetch first data failed:", e)
+                await asyncio.sleep(1)
+                continue
+
+        self._data.clear()
+        raise Exception("max fetch data retry")
+
+    def update(self):
+        self._receive()
+        self._heartbeat()
+
+    def _receive(self):
+        if self._ws is None:
+            return
+
+        try:
+            msg = self._ws.recv(blocking=False)
+            if not msg:
+                return
+
+            # debug_print("ws recv:", msg)
+
+            # Skip heartbeat
+            if msg == "pong":
+                return
+
+            # Handle data update msg
+            response = json.loads(msg)
+            if response.get("code") == 200:
+                cmd = response.get("cmd")
+                if cmd in [
+                    self.DEVICE_ADD_DATA,
+                    self.DEVICE_UPDATE_DATA,
+                    self.DEVICE_DELETE_DATA,
+                    self.DEVICE_DATA_LIST,
+                ]:
+                    self.fetch_all_data()
+                    self._on_data_changed.emit()
+            else:
+                print("ws recv error msg:", msg)
+
+        except Exception as e:
+            debug_print("ws recv failed:", e)
+
+    def _heartbeat(self):
+        if self._ws is None:
+            return
+
+        if time.time() - self._ws_last_heartbeat_time > 25:
+            msg = f'{{"deviceToken": "{self._device_token}", "body": "ping"}}'
+            debug_print("ws send:", msg)
+            self._ws.send(msg)
+            self._ws_last_heartbeat_time = time.time()
 
 
 class Ezdata:
     class State:
         INIT = 0
-        WAIT_USER_TOKEN = 1
-        NORMAL = 2
+        NORMAL = 1
 
     _state: State = State.INIT
     _device_token: str | None = None
-    _user_token: str | None = None
-    _mqtt_client: MQTTClient | None = None
+    _client: _EzdataClientWebsocket | None = None
     _task = None
+
+    on_data_list_changed: Signal = Signal()
+    on_selected_data_changed: Signal = Signal()
+    _selected_data_id: str
 
     @staticmethod
     def start():
@@ -34,17 +188,45 @@ class Ezdata:
         Ezdata._state = state
 
     @staticmethod
+    def get_all_data():
+        if Ezdata._client is None:
+            return {}
+        return Ezdata._client.get_all_data()
+
+    @staticmethod
+    def get_data(data_id: str):
+        if Ezdata._client is None:
+            return None
+        return Ezdata._client.get_data(data_id)
+
+    @staticmethod
+    def get_selected_data():
+        return Ezdata.get_data(Ezdata._selected_data_id)
+
+    @staticmethod
+    def set_selected_data_id(data_id: str):
+        Ezdata._selected_data_id = data_id
+        Ezdata.on_selected_data_changed.emit()
+
+    @staticmethod
     async def _ezdata_task():
         try:
             Ezdata._set_state(Ezdata.State.INIT)
+
+            # Wait network and get device token
             await Ezdata._wait_network_connected()
             await Ezdata._get_device_token()
-            await Ezdata._connect_mqtt()
-            Ezdata._get_user_token_from_storage()
 
-            # Keep mqtt update
+            # Create ezdata websocket client and init
+            Ezdata._client = _EzdataClientWebsocket(
+                Ezdata._device_token, Ezdata.on_selected_data_changed
+            )
+            await Ezdata._client.init()
+            Ezdata._set_state(Ezdata.State.NORMAL)
+
+            # Keep ezdata websocket client running
             while True:
-                Ezdata._mqtt_client.check_msg()
+                Ezdata._client.update()
                 await asyncio.sleep(0.2)
 
         except Exception as e:
@@ -54,7 +236,10 @@ class Ezdata:
 
     @staticmethod
     async def _wait_network_connected():
-        while get_hal().get_network_status() in {NetworkStatus.DISCONNECTED, NetworkStatus.INIT}:
+        while get_hal().get_network_status() in {
+            NetworkStatus.DISCONNECTED,
+            NetworkStatus.INIT,
+        }:
             await asyncio.sleep(1)
 
     @staticmethod
@@ -100,154 +285,10 @@ class Ezdata:
             await asyncio.sleep(2)
 
     @staticmethod
-    async def _connect_mqtt():
-        client_id = "".join(f"{byte:02x}" for byte in get_hal().get_mac())
-        client_id = f"m5{client_id}m5"
-
-        Ezdata._mqtt_client = MQTTClient(
-            client_id,
-            "uiflow2.m5stack.com",
-            port=1883,
-            user=Ezdata._device_token,
-            password="",
-            keepalive=60,
-        )
-
-        # Try connect and subscribe
-        while True:
-            try:
-                Ezdata._mqtt_client.connect(clean_session=True)
-                Ezdata._mqtt_client.subscribe(
-                    f"$ezdata/{Ezdata._device_token}/down", Ezdata._on_ezdata_down_message
-                )
-                break
-            except Exception as e:
-                print("connect mqtt failed:", e)
-
-            await asyncio.sleep(2)
-
-    @staticmethod
-    def _on_ezdata_down_message(data: tuple[bytes, bytes]):
-        try:
-            topic = data[0].decode("utf-8")
-            payload = data[1].decode("utf-8")
-            print("mqtt >>", topic, ":", payload)
-
-            msg = json.loads(payload)
-            if msg.get("userToken"):
-                Ezdata._user_token = msg.get("userToken")
-                if Ezdata._check_token_valid(Ezdata._user_token):
-                    get_hal().store_ezdata_user_token(Ezdata._user_token)
-                    Ezdata._set_state(Ezdata.State.NORMAL)
-                else:
-                    Ezdata._user_token = None
-                    raise Exception("invalid user token")
-
-        except Exception as e:
-            print("on ezdata down message failed:", e)
-
-    @staticmethod
-    def _get_user_token_from_storage():
-        Ezdata._user_token = get_hal().get_ezdata_user_token()
-        if Ezdata._check_token_valid(Ezdata._user_token):
-            Ezdata._set_state(Ezdata.State.NORMAL)
-        else:
-            Ezdata._user_token = ""
-            Ezdata._set_state(Ezdata.State.WAIT_USER_TOKEN)
-
-    @staticmethod
     def get_add_user_qr_code():
-        data = {"deviceToken": Ezdata._device_token, "deviceType": "tab5", "type": "device"}
+        data = {
+            "deviceToken": Ezdata._device_token,
+            "deviceType": "tab5",
+            "type": "device",
+        }
         return json.dumps(data)
-
-    @staticmethod
-    def _simplify_user_group_list_response_json(data: dict):
-        return [{k: item.get(k) for k in ["id", "domainName"]} for item in data.get("data", [])]
-
-    @staticmethod
-    def get_user_group_list():
-        result = []
-
-        try:
-            if not Ezdata._check_token_valid(Ezdata._user_token):
-                raise Exception("user token not valid")
-
-            url = f"https://ezdata2.m5stack.com/api/v2/device/userGroupList/{Ezdata._user_token}"
-
-            response = requests.get(url)
-            if response.status_code == 200:
-                result = Ezdata._simplify_user_group_list_response_json(response.json())
-
-                # Filter out invalid items
-                result = [item for item in result if "id" in item and "domainName" in item]
-
-            else:
-                raise Exception(
-                    f"get user group list failed, status code: {response.status_code} , text: {response.text}"
-                )
-
-        except Exception as e:
-            print("get user group list failed:", e)
-
-        return result
-
-    @staticmethod
-    def _simplify_user_data_list_response_json(data: dict):
-        return [
-            {k: item.get(k) for k in ["alias", "value", "updateTime", "valueType"]}
-            for item in data.get("data", [])
-        ]
-
-    @staticmethod
-    def get_user_data_list(group_id: str):
-        result = []
-
-        try:
-            if not group_id:
-                raise Exception("group id not valid")
-
-            if not Ezdata._check_token_valid(Ezdata._user_token):
-                raise Exception("user token not valid")
-
-            url = f"https://ezdata2.m5stack.com/api/v2/device/userDataList/{Ezdata._user_token}/{group_id}"
-
-            response = requests.get(url)
-            if response.status_code == 200:
-                result = Ezdata._simplify_user_data_list_response_json(response.json())
-            else:
-                raise Exception(
-                    f"get user data list failed, status code: {response.status_code} , text: {response.text}"
-                )
-
-        except Exception as e:
-            print("get user data list failed:", e)
-
-        return result
-
-    @staticmethod
-    def reset_user_token():
-        get_hal().reset_ezdata_user_token()
-        Ezdata._user_token = None
-        Ezdata._set_state(Ezdata.State.WAIT_USER_TOKEN)
-
-
-class EzdataAppState:
-    _current_group_id: str = ""
-    _needs_refresh: bool = True
-
-    @staticmethod
-    def set_new_group_id(group_id: str):
-        EzdataAppState._current_group_id = group_id
-        EzdataAppState._needs_refresh = True
-
-    @staticmethod
-    def get_current_group_id():
-        return EzdataAppState._current_group_id
-
-    @staticmethod
-    def needs_refresh():
-        return EzdataAppState._needs_refresh
-
-    @staticmethod
-    def clear_needs_refresh():
-        EzdataAppState._needs_refresh = False
