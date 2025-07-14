@@ -18,6 +18,7 @@ from .components import StatusBar, AppDock, EzdataDock
 from .common import Ezdata
 import lvgl as lv
 import asyncio
+import M5
 
 
 class Launcher:
@@ -111,7 +112,10 @@ class Launcher:
         # Start ezdata service
         Ezdata.start()
 
-        # Keep app manager running
-        while True:
-            await asyncio.sleep_ms(50)
-            await AppManager.update()
+        try:
+            # Keep app manager running
+            while True:
+                await asyncio.sleep_ms(50)
+                await AppManager.update()
+        except KeyboardInterrupt:
+            M5.Lcd.lvgl_deinit()
