@@ -64,7 +64,7 @@ class ViewString(ViewBase):
         label.set_text(str(data.get("value")))
         label.align(lv.ALIGN.CENTER, 0, -10)
         label.set_style_text_color(lv.color_hex(0x272F43), lv.PART.MAIN)
-        label.set_style_text_font(lv.font_montserrat_32, lv.PART.MAIN)
+        label.set_style_text_font(lv.font_montserrat_30, lv.PART.MAIN)
         label.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN)
 
 
@@ -76,7 +76,7 @@ class ViewNumber(ViewBase):
         label.set_text(str(data.get("value")))
         label.align(lv.ALIGN.CENTER, 0, -10)
         label.set_style_text_color(lv.color_hex(0x272F43), lv.PART.MAIN)
-        label.set_style_text_font(lv.font_montserrat_32, lv.PART.MAIN)
+        label.set_style_text_font(lv.font_montserrat_30, lv.PART.MAIN)
         label.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN)
 
 
@@ -95,7 +95,7 @@ class ViewArray(ViewBase):
             label.set_text(data)
             label.align(lv.ALIGN.LEFT_MID, 34, 0)
             label.set_style_text_color(lv.color_hex(0x272F43), lv.PART.MAIN)
-            label.set_style_text_font(lv.font_montserrat_32, lv.PART.MAIN)
+            label.set_style_text_font(lv.font_montserrat_30, lv.PART.MAIN)
 
     def __init__(self, parent: lv.obj, data: list):
         super().__init__(parent, data)
