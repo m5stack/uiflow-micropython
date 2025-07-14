@@ -2,12 +2,22 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .components import *
-from .common import *
-from .apps import *
+from .apps import (
+    AppManager,
+    AppWifi,
+    AppAppList,
+    AppI2cScan,
+    AppWifiScan,
+    AppUart,
+    AppGpio,
+    AppAdc,
+    AppEzdata,
+    AppEzdataSettings,
+)
+from .components import StatusBar, AppDock, EzdataDock
+from .common import Ezdata
 import lvgl as lv
 import asyncio
-import M5
 
 
 class Launcher:
@@ -28,6 +38,7 @@ class Launcher:
         self._bottom_bar.set_style_radius(0, lv.PART.MAIN)
         self._bottom_bar.set_style_border_width(0, lv.PART.MAIN)
         self._bottom_bar.align(lv.ALIGN.BOTTOM_MID, 0, 0)
+        self._bottom_bar.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
         self._bottom_bar.set_style_pad_left(12, lv.PART.MAIN)
 
         self._bottom_label = lv.label(self._bottom_bar)
@@ -89,21 +100,18 @@ class Launcher:
         AppManager.install_app("UART", AppUart)
         AppManager.install_app("GPIO", AppGpio)
         AppManager.install_app("ADC", AppAdc)
-        # AppManager.install_app("EzData", AppEzdata)
-        # AppManager.install_app("EzDataSettings", AppEzdataSettings)
+        AppManager.install_app("EzData", AppEzdata)
+        AppManager.install_app("EzDataSettings", AppEzdataSettings)
 
         # Create components
         self._status_bar = StatusBar()
+        self._ezdata_dock = EzdataDock()
         self._app_dock = AppDock()
-        # self._ezdata_dock = EzdataDock()
 
         # Start ezdata service
-        # Ezdata.start()
+        Ezdata.start()
 
-        try:
-            # Keep app manager running
-            while True:
-                await asyncio.sleep_ms(50)
-                await AppManager.update()
-        except KeyboardInterrupt:
-            M5.Lcd.lvgl_deinit()
+        # Keep app manager running
+        while True:
+            await asyncio.sleep_ms(50)
+            await AppManager.update()
