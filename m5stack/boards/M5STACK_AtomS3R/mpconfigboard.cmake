@@ -17,6 +17,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.usb
     ./boards/sdkconfig.usb_cdc
     ./boards/sdkconfig.flash_8mb
+    ./boards/sdkconfig.spiram
     ./boards/sdkconfig.spiram_oct
     ./boards/sdkconfig.freertos
     ./boards/M5STACK_AtomS3R/sdkconfig.board
