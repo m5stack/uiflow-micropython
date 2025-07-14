@@ -55,30 +55,10 @@ class ViewBase:
                 self._get_time_since_last_update(self._data_update_time)
             )
 
-    def create_data_type_label(self, type_name: str):
-        pass
-
-        # panel = lv.obj(self._parent)
-        # panel.align(lv.ALIGN.TOP_LEFT, 30, 23)
-        # panel.set_size(len(type_name) * 22 + 20, 32)
-        # panel.set_style_pad_all(0, lv.PART.MAIN)
-        # panel.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
-        # panel.set_style_radius(12, lv.PART.MAIN)
-        # panel.set_style_bg_color(lv.color_hex(0xE0E7FF), lv.PART.MAIN)
-        # panel.set_style_border_color(lv.color_hex(0x9DC0FA), lv.PART.MAIN)
-
-        # label = lv.label(panel)
-        # label.set_text(type_name)
-        # label.align(lv.ALIGN.CENTER, 0, 0)
-        # label.set_style_text_color(lv.color_hex(0x2E3F71), lv.PART.MAIN)
-        # label.set_style_text_font(lv.font_montserrat_22, lv.PART.MAIN)
-
 
 class ViewString(ViewBase):
     def __init__(self, parent: lv.obj, data: dict):
         super().__init__(parent, data)
-
-        self.create_data_type_label("Str")
 
         label = lv.label(parent)
         label.set_text(str(data.get("value")))
@@ -91,8 +71,6 @@ class ViewString(ViewBase):
 class ViewNumber(ViewBase):
     def __init__(self, parent: lv.obj, data: dict):
         super().__init__(parent, data)
-
-        self.create_data_type_label("Num")
 
         label = lv.label(parent)
         label.set_text(str(data.get("value")))
