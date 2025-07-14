@@ -85,16 +85,13 @@ class HALTab5(HALBase):
             M5.Power.setChargeCurrent(1000)
 
     def get_battery_level(self) -> int:
-        """TODO"""
-        return 0
+        return M5.Power.getBatteryLevel()
 
     def get_output_current(self) -> float:
-        """TODO"""
-        return 0.0
+        return M5.Power.getBatteryCurrent()
 
     def is_charging(self) -> bool:
-        """TODO"""
-        return False
+        return M5.Power.isCharging()
 
     def get_network_status(self) -> NetworkStatus:
         status = self._wifi.connect_status()
