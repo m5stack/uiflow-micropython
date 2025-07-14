@@ -104,13 +104,13 @@ class ItemBattery:
         self._label_output_current.set_style_text_font(lv.font_montserrat_20, lv.PART.MAIN)
         self._label_output_current.align(lv.ALIGN.CENTER, -9, 19)
 
-        # self._update_img()
-        # self._update_labels()
+        self._update_img()
+        self._update_labels()
 
-        # # TODO: Update task
-        # self._img.set_style_image_recolor_opa(123, lv.PART.MAIN)
+        # TODO: Update task
+        self._img.set_style_image_recolor_opa(123, lv.PART.MAIN)
 
-        self._task = asyncio.create_task(self.update_task())
+        # self._task = asyncio.create_task(self.update_task())
 
     async def update_task(self):
         while True:
