@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: MIT
 
 from machine import I2C
-from .pahub import PAHUBUnit
-from .unit_helper import UnitError
+from unit.pahub import PAHUBUnit
+from unit.unit_helper import UnitError
 import time
 import struct
 
@@ -81,7 +81,7 @@ class WeightI2CUnit:
     def get_weight_int(self) -> int:
         """! Get the weight in grams(int)."""
         data = self.i2c.readfrom_mem(self.unit_addr, WEIGHT_X100_REG, 4)
-        return int(struct.unpack("<f", data)[0] / 100)
+        return int(struct.unpack("<i", data)[0] / 100)
 
     @property
     def get_weight_str(self) -> str:
