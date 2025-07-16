@@ -4,7 +4,6 @@
 
 from .app import AppBase
 from ..common import Ezdata, debug_print
-from ..hal import get_hal
 import lvgl as lv
 import asyncio
 import time
@@ -114,6 +113,40 @@ class ViewArray(ViewBase):
             self._Item(panel, str(item), i * 84)
 
 
+class ViewDict(ViewBase):
+    class _Item:
+        def __init__(self, parent: lv.obj, data: str, pos_y: int):
+            panel = lv.obj(parent)
+            panel.set_size(1044, 55)
+            panel.align(lv.ALIGN.TOP_LEFT, 0, pos_y)
+            panel.set_style_radius(16, lv.PART.MAIN)
+            panel.set_style_bg_color(lv.color_hex(0xE0EDFF), lv.PART.MAIN)
+            panel.set_style_border_width(0, lv.PART.MAIN)
+            panel.set_style_pad_all(0, lv.PART.MAIN)
+
+            label = lv.label(panel)
+            label.set_text(data)
+            label.align(lv.ALIGN.LEFT_MID, 34, 0)
+            label.set_style_text_color(lv.color_hex(0x272F43), lv.PART.MAIN)
+            label.set_style_text_font(lv.font_montserrat_30, lv.PART.MAIN)
+
+    def __init__(self, parent: lv.obj, data: dict):
+        super().__init__(parent, data)
+
+        panel = lv.obj(parent)
+        panel.set_size(1092, 429)
+        panel.align(lv.ALIGN.CENTER, 0, -20)
+        panel.set_style_bg_opa(lv.OPA.TRANSP, lv.PART.MAIN)
+        panel.set_style_border_width(0, lv.PART.MAIN)
+        panel.set_style_pad_all(0, lv.PART.MAIN)
+        panel.set_style_pad_left(24, lv.PART.MAIN)
+        panel.set_style_pad_top(28, lv.PART.MAIN)
+
+        data_dict = data.get("value")
+        for i, (key, value) in enumerate(data_dict.items()):
+            self._Item(panel, f"{str(key)}:  {str(value)}", i * 84)
+
+
 class AppEzdata(AppBase):
     async def main(self):
         self._view = None
@@ -148,8 +181,11 @@ class AppEzdata(AppBase):
             self._view = ViewNumber(self.get_app_panel(), data)
         elif isinstance(value, list):
             self._view = ViewArray(self.get_app_panel(), data)
+        elif isinstance(value, dict):
+            self._view = ViewDict(self.get_app_panel(), data)
         else:
             print("unsupported data type:", type(value))
 
     def _handle_data_changed(self):
+        debug_print("data changed")
         self._create_view()

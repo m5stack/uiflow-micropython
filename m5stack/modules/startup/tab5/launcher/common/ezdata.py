@@ -26,10 +26,25 @@ class _EzdataClientWebsocket:
     DEVICE_DATA = 104
     DEVICE_DATA_FILE = 105
     DEVICE_REQUEST_ERROR = 500
+    DEVICE_USER_SCAN = 106
+    DEVICE_USER_UPDATE_DATA = 107
+    DEVICE_USER_DELETE_DATA = 108
+    DEVICE_USER_ADD_DATA = 109
 
-    def __init__(self, device_token: str, on_data_changed: Signal):
+    DATA_CHANGE_TYPE_LIST = [
+        DEVICE_ADD_DATA,
+        DEVICE_UPDATE_DATA,
+        DEVICE_DELETE_DATA,
+        DEVICE_DATA_LIST,
+        DEVICE_USER_UPDATE_DATA,
+        DEVICE_USER_DELETE_DATA,
+        DEVICE_USER_ADD_DATA,
+    ]
+
+    def __init__(self, device_token: str, on_data_changed: Signal, on_data_list_changed: Signal):
         self._device_token = device_token
         self._on_data_changed = on_data_changed
+        self._on_data_list_changed = on_data_list_changed
         self._ws: WebsocketClient | None = None
         self._ws_last_heartbeat_time = 0
         self._data = {}
@@ -83,6 +98,8 @@ class _EzdataClientWebsocket:
         if self._ws is None:
             return
 
+        debug_print("fetch all data")
+
         self._data.clear()
 
         for i in range(10):
@@ -102,22 +119,24 @@ class _EzdataClientWebsocket:
                 response = json.loads(resp)
                 if response.get("code") == 200:
                     self._data = response.get("body")
-                    # debug_print("fetch first data success:", self._data)
+                    # debug_print("fetch all data success:", self._data)
+                    # pretty print
+
                     return
 
             except Exception as e:
-                debug_print("fetch first data failed:", e)
+                debug_print("fetch all data failed:", e)
                 await asyncio.sleep(1)
                 continue
 
         self._data.clear()
-        raise Exception("max fetch data retry")
+        raise Exception("max fetch all data retry")
 
-    def update(self):
-        self._receive()
+    async def update(self):
+        await self._receive()
         self._heartbeat()
 
-    def _receive(self):
+    async def _receive(self):
         if self._ws is None:
             return
 
@@ -126,7 +145,7 @@ class _EzdataClientWebsocket:
             if not msg:
                 return
 
-            # debug_print("ws recv:", msg)
+            debug_print("ws recv:", msg)
 
             # Skip heartbeat
             if msg == "pong":
@@ -136,14 +155,13 @@ class _EzdataClientWebsocket:
             response = json.loads(msg)
             if response.get("code") == 200:
                 cmd = response.get("cmd")
-                if cmd in [
-                    self.DEVICE_ADD_DATA,
-                    self.DEVICE_UPDATE_DATA,
-                    self.DEVICE_DELETE_DATA,
-                    self.DEVICE_DATA_LIST,
-                ]:
-                    self.fetch_all_data()
+                if cmd in self.DATA_CHANGE_TYPE_LIST:
+                    await self.fetch_all_data()
                     self._on_data_changed.emit()
+                    self._on_data_list_changed.emit()
+                else:
+                    debug_print("unhandled cmd:", cmd)
+
             else:
                 print("ws recv error msg:", msg)
 
@@ -219,14 +237,16 @@ class Ezdata:
 
             # Create ezdata websocket client and init
             Ezdata._client = _EzdataClientWebsocket(
-                Ezdata._device_token, Ezdata.on_selected_data_changed
+                Ezdata._device_token,
+                Ezdata.on_selected_data_changed,
+                Ezdata.on_data_list_changed,
             )
             await Ezdata._client.init()
             Ezdata._set_state(Ezdata.State.NORMAL)
 
             # Keep ezdata websocket client running
             while True:
-                Ezdata._client.update()
+                await Ezdata._client.update()
                 await asyncio.sleep(0.2)
 
         except Exception as e:
