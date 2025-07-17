@@ -6,9 +6,11 @@ package(
     "m5ui",
     (
         "__init__.py",
+        "arc.py",
         "bar.py",
         "base.py",
         "button.py",
+        "calendar.py",
         "image.py",
         "label.py",
         "line.py",

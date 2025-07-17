@@ -1,0 +1,23 @@
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/align_to.png
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/event.png
+.. |set_calendar_style.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_calendar_style.png
+.. |set_today_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_today_date.png
+.. |set_month_shown.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_month_shown.png
+.. |set_highlighted_dates.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_highlighted_dates.png
+.. |set_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_height.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_pos.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_size.png
+.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_width.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_y.png
+
+.. |cores3_calendar_event_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/example.png
+
+.. |cores3_calendar_event_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/switch/cores3_calendar_event_example.m5f2"
+        target="_blank"
+    >
+        cores3_calendar_event_example.m5f2
+    </a>
