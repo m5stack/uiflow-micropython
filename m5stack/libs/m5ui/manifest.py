@@ -11,6 +11,7 @@ package(
         "button.py",
         "image.py",
         "label.py",
+        "line.py",
         "page.py",
         "port.py",
         "switch.py",

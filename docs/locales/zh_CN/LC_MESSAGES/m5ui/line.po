@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-17 18:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/line.rst:4 ../../en/m5ui/line.rst:52
+#: 7607a76255bf4f5084aa92fc7f432964 a1755e319ea140728fe24d582a58b032
+msgid "M5Line"
+msgstr ""
+
+#: ../../en/m5ui/line.rst:8 a9ea1d92b912466ca601cb5aa70648cb
+msgid ""
+"M5Line is a widget that can be used to create lines in the user "
+"interface. It can be used to draw shapes and connect points."
+msgstr "M5Line 是一个可在用户界面中绘制直线的控件，可用于绘制形状或连接多个点。"
+
+#: ../../en/m5ui/line.rst:11 fc3a9e27bc314b02bff6ac512205b6d2
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/line.rst:14 ../../en/m5ui/line.rst:33
+#: 1d2a560c616746d5b2936155ca5a3954 907b9b416c994605845579f92952f4e1
+msgid "points connect"
+msgstr "连接点"
+
+#: ../../en/m5ui/line.rst:16 5164e857c3d546c4b695f5ac43ef5cca
+msgid "Open the |cores3_line_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_line_example.m5f2| 项目。"
+
+#: ../../en/m5ui/line.rst:18 ../../en/m5ui/line.rst:35
+#: 0bd252e4601c4dd4a9f8623cb8820463 b76ac01627a640cd8fe9edc40b43afb2
+msgid "This example creates a line that connects multiple points."
+msgstr "本示例将创建一条用于连接多个点的线段。"
+
+#: ../../en/m5ui/line.rst:20 ../../en/m5ui/line.rst:64
+#: ../../en/m5ui/line.rst:80 ../../en/m5ui/line.rst:96
+#: ../../en/m5ui/line.rst:116 09ca2b2f35524a06ab3e0a8264cce1ab
+#: 0ad9ac7ef74741b9a4361eff53543fb5 5efc8723908440bca65868d21ed7bd8b
+#: 87410a7252ba43a8bc7981f2ad6e9589 9f6341a7c9204ea6adc3527db5d55e61
+#: f56df05d50624069bc0c9fe2810b11c0 m5ui.line.M5Line.add_point:6
+#: m5ui.line.M5Line.set_line_color:6 m5ui.line.M5Line.set_points:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/line.rst:22 83e9c6d9436e4a03b7d1fb648dfd6429
+msgid "|cores3_line_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:10 e71269eec30747fcbec3d8aa7fb78f2f
+msgid "cores3_line_example.png"
+msgstr ""
+
+#: ../../en/m5ui/line.rst:24 ../../en/m5ui/line.rst:43
+#: 1ef75e3b7ba04d119e01d73e305a323b 72291626b96140dd812f89b8985d41ee
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/line.rst:26 ../../en/m5ui/line.rst:45
+#: 1abad8f0df3e4de1b98d395d2f5d85bc 9d69fc41092946ec90e2d1a85e5ede23
+msgid "None"
+msgstr "无"
+
+#: ../../en/m5ui/line.rst:30 68cee7a357784554853809fdf4956e13
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/line.rst:37 ../../en/m5ui/line.rst:68
+#: ../../en/m5ui/line.rst:84 ../../en/m5ui/line.rst:100
+#: ../../en/m5ui/line.rst:120 208b8a61597641078d4443fb979e4903
+#: 52cb12f2e3c146af9d58c3298aab84a3 66ccd86bc0e14f8791b6f6ef92f26078
+#: a26704f13b9644bea7d60d55f84d9790 bac912dd327c41b68ad5dbbd4802fe3d
+#: c02c5011d7714725951364d245bd77d5 fcc36b517e4a486fb43efdc2eff089c3
+#: m5ui.line.M5Line:9 m5ui.line.M5Line.add_point:10
+#: m5ui.line.M5Line.set_line_color:10 m5ui.line.M5Line.set_points:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/line.rst:49 20e87b9990a34545b806020127bdae26
+msgid "**API**"
+msgstr ""
+
+#: 362e2a3f3c5740edb0a5ca34203206ca m5ui.line.M5Line:1 of
+msgid "Bases: :py:class:`~lvgl.line`"
+msgstr ""
+
+#: 0e6fe28e921640f9b09e532f50d9c159 m5ui.line.M5Line:1 of
+msgid "Create a line object."
+msgstr "创建一个直线对象。"
+
+#: ../../en/m5ui/line.rst 39484576315448cf910a1157010d99e8
+#: 689ee15ad47b40e4b2e2243292354427 71e2bed486824601ab789ac81e13f07b
+#: 7ddb8d73439d41f7bac5060bb2b05159 8e7815c2c538419ba3bd8e67c364afa3
+#: 9c5fa2a8615d47198b97ecb82394cd85 d8415e5cf32f4ad0867098bc4f086a80
+#: m5ui.line.M5Line.add_point m5ui.line.M5Line.set_line_color
+#: m5ui.line.M5Line.set_points of
+msgid "Parameters"
+msgstr "参数"
+
+#: 40f2dded77c244d58160b845904f0004 b172130b74c241b4bd3ec328bd64c554
+#: m5ui.line.M5Line:3 m5ui.line.M5Line.set_points:3 of
+msgid "A list of points where each point is a pair of x and y coordinates."
+msgstr "点列表，每个点由一对 x、y 坐标组成。"
+
+#: e48e83b0951445bc93c73d9eeeb52894 m5ui.line.M5Line:4 of
+msgid "The width of the line."
+msgstr "线宽。"
+
+#: 0512a5721ed64f17be2b4d9dbb9fa550 cfb5abbde77641b39ce23b7a3172cbef
+#: m5ui.line.M5Line:5 m5ui.line.M5Line.set_line_color:3 of
+msgid "The color of the line in hexadecimal format."
+msgstr "线的颜色（十六进制）。"
+
+#: db2eea24545c492ca034387b472dc1c1 m5ui.line.M5Line:6 of
+msgid ""
+"If True, the line will have rounded ends; otherwise, it will have square "
+"ends."
+msgstr "若为 True，则线段端点将为圆形；若为 False，则端点将为方形。"
+
+#: 94a781e671414a5bac194647f6604896 m5ui.line.M5Line:7 of
+msgid ""
+"The parent object to attach the line to. If not specified, the line will "
+"be attached to the default screen."
+msgstr "要将线附加到的父对象；若未指定，则附加到默认屏幕。"
+
+#: ../../en/m5ui/line.rst:59 b7a8b689ac224e1db379cd4f0938b0e3
+msgid "Set the position of the switch."
+msgstr "设置线的位置。"
+
+#: ../../en/m5ui/line.rst:61 ../../en/m5ui/line.rst:78
+#: 5ece9e038b5043f0b3a7399735cdd65d f03cbc9b871f496f958cf37e1183b670
+msgid "The x-coordinate of the switch."
+msgstr "线的 x 坐标。"
+
+#: ../../en/m5ui/line.rst:62 ../../en/m5ui/line.rst:94
+#: 07677161ec2e4df498b4648b50705fc7 adb67a83a2ab4f8b8f2b5fd59bcdf997
+msgid "The y-coordinate of the switch."
+msgstr "线的 y 坐标。"
+
+#: ../../en/m5ui/line.rst:66 55d7901faf8443efa5f7c4bbb30760dc
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:2 3df262e766934c0cb46466bf356c0360
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/line.rst:76 1d978d84c9354e7b912edf583dac8449
+msgid "Set the x-coordinate of the switch."
+msgstr "设置线的 x 坐标。"
+
+#: ../../en/m5ui/line.rst:82 e2412c8fb4424cd3a2a7fe943f9dcf5d
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:4 d90a3a6380e5431d9da0a8f53da997b9
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/line.rst:92 4c4b0f36863849908e62f817ddc06580
+msgid "Set the y-coordinate of the switch."
+msgstr "设置线的 y 坐标。"
+
+#: ../../en/m5ui/line.rst:98 928fd9955e8643b997f14fa16c980615
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:5 92892a022bb54e919bbf1670edfd2d78
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/line.rst:109 6f85e913c7434d6d9453a87596cedc21
+msgid "Align the switch to another object."
+msgstr "将线对齐到另一个对象。"
+
+#: ../../en/m5ui/line.rst:111 279d42ce36f0435f99c4a2603782e803
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/line.rst:112 94e2c0d394dd4365a3a7a78fbecde0fe
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/line.rst:113 8a98f6d71a1a4c169bddab971125c416
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/line.rst:114 4e113ffa4f9f4db8973ca145e8f95e8f
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/line.rst:118 4459151a9b5741f2884bafe3c6db590e
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:1 4b5144583e7945b5a0bb1e9a86073396
+msgid "align_to.png"
+msgstr ""
+
+#: 2b04578ad9cf42e0896df31dc289fb3a m5ui.line.M5Line.set_line_color:1 of
+msgid "Set the color and opacity of the line."
+msgstr "设置线的颜色和透明度。"
+
+#: a5256fe5bd35485f85b393462604d055 m5ui.line.M5Line.set_line_color:4 of
+msgid "The opacity level (0-255)."
+msgstr "透明度级别（0-255）。"
+
+#: fcfc77041bc040fdbfb19cca69c2bea2 m5ui.line.M5Line.set_line_color:8 of
+msgid "|set_line_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:6 d8ca570fe2d94623bd9132adecfca6c1
+msgid "set_line_color.png"
+msgstr ""
+
+#: 9c33f7b983c3410e8a296322d7cf190f m5ui.line.M5Line.set_points:1 of
+msgid "Set the points of the line."
+msgstr "设置线的点列表。"
+
+#: 6c551b61882446159b3e5514222991a0 m5ui.line.M5Line.set_points:7 of
+msgid "|set_points.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:7 23a61fac549c465886e2aa463e506c9f
+msgid "set_points.png"
+msgstr ""
+
+#: dca9c6c2c02b4469be62cfaef7802c51 m5ui.line.M5Line.add_point:1 of
+msgid "Add a point to the line end."
+msgstr "在线的末端添加一个点。"
+
+#: ef299bd152f645528e35cc91cdeb095e m5ui.line.M5Line.add_point:3 of
+msgid "The x position of the point."
+msgstr "点的 x 坐标。"
+
+#: b8fe74156e1f4321a4ea92d0a1a8c62b m5ui.line.M5Line.add_point:4 of
+msgid "The y position of the point."
+msgstr "点的 y 坐标。"
+
+#: 4f184d5f0f674393986530dc779bc378 m5ui.line.M5Line.add_point:8 of
+msgid "|add_point.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.line.ref:8 fbb99756546947f3ab74b9f2fe3f038a
+msgid "add_point.png"
+msgstr ""
+

@@ -33,8 +33,9 @@ Classes
     :maxdepth: 1
 
     page.rst
-    label.rst
+    bar.rst
     button.rst
+    label.rst
+    line.rst
     switch.rst
     image.rst
-    bar.rst
