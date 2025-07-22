@@ -60,6 +60,7 @@ autodoc_mock_imports = [
     "rui3",
     "m5audio2",
     "lvgl",
+    "_espnow",
 ]
 
 autodoc_default_options = {
