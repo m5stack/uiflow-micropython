@@ -31,6 +31,9 @@ class M5Image(lv.image):
         path,
         x=0,
         y=0,
+        rotation=0,
+        scale_x=1.0,
+        scale_y=1.0,
         parent=None,
     ):
         if parent is None:
@@ -39,6 +42,10 @@ class M5Image(lv.image):
 
         self.set_src("S:" + path)
         self.set_pos(x, y)
+        self.set_width(lv.SIZE_CONTENT)
+        self.set_height(lv.SIZE_CONTENT)
+        self.set_rotation(rotation)
+        self.set_scale(scale_x, scale_y)
 
     def set_image(self, path):
         """Set the image to be displayed.
@@ -57,6 +64,45 @@ class M5Image(lv.image):
                 image_1.set_image("/sd/uiflow.png")
         """
         self.set_src("S:" + path)
+
+    def set_rotation(self, rotation):
+        """Set the rotation of the image.
+
+        :param int rotation: The rotation angle in degrees (0, 90, 180, 270).
+
+        UiFlow2 Code Block:
+
+            |set_rotation.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                image_0.set_rotation(90)
+        """
+        super().set_rotation(rotation * 10)
+
+    def set_scale(self, scale, scale_y=None):
+        """Set the scale of the image.
+
+        :param float scale_x: The horizontal scale factor.
+        :param float scale_y: The vertical scale factor.
+
+        UiFlow2 Code Block:
+
+            |set_scale.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                image_0.set_scale(2.0, 2.0)
+        """
+        if scale_y is not None:
+            super().set_scale_x(int(scale * 256))
+            super().set_scale_y(int(scale_y * 256))
+        else:
+            super().set_scale(scale * 256)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
