@@ -86,6 +86,7 @@ def setup():
         coil
 
     M5.begin()
+    Widgets.setRotation(1)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("co", 65, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("di", 135, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
@@ -127,7 +128,7 @@ def setup():
         parity=None,
         ctrl_pin=None,
     )
-    modbusrtumaster_0 = modbus.ModbusRTUMaster(uart=rs485_0, verbose=False)
+    modbusrtumaster_0 = modbus.ModbusRTUMaster(uart=rs485_0, verbose=True)
     hr = 0
     res = modbusrtumaster_0.read_coils(1, 1000, 5, timeout=2000)
     label9.setText(str(res[0]))
