@@ -277,8 +277,8 @@ class ModbusSlave:
         for reg in self.context[reg_type]:
             if reg["register"] <= register < reg["register"] + len(reg["value"]):
                 idx = register - reg["register"]
-                for i in range(idx, len(reg["value"])):
-                    reg["value"][i] = block[i]
+                for i in range(idx, idx + len(block)):
+                    reg["value"][i] = block[i - idx]
                 # for new_value in block:
                 #     reg["value"][idx] = new_value
                 #     idx += 1
@@ -747,6 +747,7 @@ class _MModbusRTUSlave(ModbusSlave):
             ignore_unit_id=kwargs.get("ignore_unit_id", False),
             device_address=kwargs.get("device_address", 1),
         )
+        self.rsp = b""
 
     async def run_async(self):
         self._verbose and print("starting async rtu slave")
@@ -767,12 +768,15 @@ class _MModbusRTUSlave(ModbusSlave):
 
     def tick(self):
         if not self.stopped and self.uart.any():
-            rsp = self.uart.read()
+            rsp = self.rsp + self.uart.read()
             frame = ModbusRTUFrame.parse_frame(rsp, verbose=self._verbose)
             if frame is None or (
                 self.ignore_unit_id is not True and frame.device_addr != self._device_address
             ):
+                if frame is None:
+                    self.rsp = rsp  # Save response for next tick
                 return
+            self.rsp = b""  # Reset response
             resp = self.handle_message(frame).get_frame()
             self.uart.write(resp)
             cb = self.cb[frame.func_code]

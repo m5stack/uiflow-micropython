@@ -16,10 +16,10 @@ modbusrtuslave_0 = None
 iso485_0 = None
 
 
-register1 = None
-slave_value1 = None
 starting_register1 = None
 slave_list1 = None
+register1 = None
+slave_value1 = None
 starting_register4 = None
 slave_list4 = None
 register2 = None
@@ -34,35 +34,6 @@ starting_register3 = None
 slave_list3 = None
 
 
-def modbus_write_single_coil_cb(args):
-    global \
-        label0, \
-        label1, \
-        label2, \
-        modbusrtuslave_0, \
-        iso485_0, \
-        register1, \
-        slave_value1, \
-        starting_register1, \
-        slave_list1, \
-        starting_register4, \
-        slave_list4, \
-        register2, \
-        slave_value2, \
-        starting_register2, \
-        slave_list2, \
-        starting_register6, \
-        slave_list6, \
-        starting_register5, \
-        slave_list5, \
-        starting_register3, \
-        slave_list3
-    _, register1, slave_value1 = args
-    label0.setText(str("write single coil"))
-    label1.setText(str(register1))
-    label2.setText(str(slave_value1))
-
-
 def modbus_read_coils_cb(args):
     global \
         label0, \
@@ -70,10 +41,10 @@ def modbus_read_coils_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -92,6 +63,35 @@ def modbus_read_coils_cb(args):
     label2.setText(str(slave_list1))
 
 
+def modbus_write_single_coil_cb(args):
+    global \
+        label0, \
+        label1, \
+        label2, \
+        modbusrtuslave_0, \
+        iso485_0, \
+        starting_register1, \
+        slave_list1, \
+        register1, \
+        slave_value1, \
+        starting_register4, \
+        slave_list4, \
+        register2, \
+        slave_value2, \
+        starting_register2, \
+        slave_list2, \
+        starting_register6, \
+        slave_list6, \
+        starting_register5, \
+        slave_list5, \
+        starting_register3, \
+        slave_list3
+    _, register1, slave_value1 = args
+    label0.setText(str("write single coil"))
+    label1.setText(str(register1))
+    label2.setText(str(slave_value1))
+
+
 def modbus_read_input_registers_cb(args):
     global \
         label0, \
@@ -99,10 +99,10 @@ def modbus_read_input_registers_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -128,10 +128,10 @@ def modbus_write_single_registers_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -157,10 +157,10 @@ def modbus_read_discrete_inputs_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -186,10 +186,10 @@ def modbus_write_multiple_registers_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -215,10 +215,10 @@ def modbus_write_multiple_coils_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -244,10 +244,10 @@ def modbus_read_holding_registers_cb(args):
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -273,10 +273,10 @@ def setup():
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
@@ -291,12 +291,13 @@ def setup():
         slave_list3
 
     M5.begin()
+    Widgets.setRotation(1)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("label0", 79, 60, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("label1", 73, 100, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label2 = Widgets.Label("label2", 67, 135, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
-    iso485_0 = ISO485Unit(2, port=(18, 17))
+    iso485_0 = ISO485Unit(2, port=(1, 2))
     iso485_0.init(
         tx_pin=None,
         rx_pin=None,
@@ -306,11 +307,11 @@ def setup():
         parity=None,
         ctrl_pin=None,
     )
-    modbusrtuslave_0 = modbus.ModbusRTUSlave(iso485_0, device_address=1, verbose=False)
+    modbusrtuslave_0 = modbus.ModbusRTUSlave(iso485_0, device_address=1, verbose=True)
+    modbusrtuslave_0.set_callback(modbusrtuslave_0.READ_COILS_EVENT, modbus_read_coils_cb)
     modbusrtuslave_0.set_callback(
         modbusrtuslave_0.WRITE_SINGLE_COIL_EVENT, modbus_write_single_coil_cb
     )
-    modbusrtuslave_0.set_callback(modbusrtuslave_0.READ_COILS_EVENT, modbus_read_coils_cb)
     modbusrtuslave_0.set_callback(
         modbusrtuslave_0.READ_INPUT_REGISTERS_EVENT, modbus_read_input_registers_cb
     )
@@ -329,14 +330,26 @@ def setup():
     modbusrtuslave_0.set_callback(
         modbusrtuslave_0.READ_HOLDING_REGISTERS_EVENT, modbus_read_holding_registers_cb
     )
-    modbusrtuslave_0.add_coil(0, True)
-    modbusrtuslave_0.add_coil(1, False)
-    modbusrtuslave_0.add_discrete_input(0, True)
-    modbusrtuslave_0.add_discrete_input(1, False)
-    modbusrtuslave_0.add_holding_register(0, 0x0102)
-    modbusrtuslave_0.add_holding_register(1, 0x0304)
-    modbusrtuslave_0.add_input_register(0, 0x0102)
-    modbusrtuslave_0.add_input_register(1, 0x0304)
+    modbusrtuslave_0.add_coil(1000, True)
+    modbusrtuslave_0.add_coil(1001, False)
+    modbusrtuslave_0.add_coil(1002, True)
+    modbusrtuslave_0.add_coil(1003, False)
+    modbusrtuslave_0.add_coil(1004, True)
+    modbusrtuslave_0.add_discrete_input(1000, True)
+    modbusrtuslave_0.add_discrete_input(1001, False)
+    modbusrtuslave_0.add_discrete_input(1002, True)
+    modbusrtuslave_0.add_discrete_input(1003, False)
+    modbusrtuslave_0.add_discrete_input(1004, True)
+    modbusrtuslave_0.add_holding_register(1000, 0x0102)
+    modbusrtuslave_0.add_holding_register(1001, 0x0304)
+    modbusrtuslave_0.add_holding_register(1002, 0x0304)
+    modbusrtuslave_0.add_holding_register(1003, 0x0304)
+    modbusrtuslave_0.add_holding_register(1004, 0x0304)
+    modbusrtuslave_0.add_input_register(1000, 0x0102)
+    modbusrtuslave_0.add_input_register(1001, 0x0304)
+    modbusrtuslave_0.add_input_register(1002, 0x0304)
+    modbusrtuslave_0.add_input_register(1003, 0x0304)
+    modbusrtuslave_0.add_input_register(1004, 0x0304)
 
 
 def loop():
@@ -346,10 +359,10 @@ def loop():
         label2, \
         modbusrtuslave_0, \
         iso485_0, \
-        register1, \
-        slave_value1, \
         starting_register1, \
         slave_list1, \
+        register1, \
+        slave_value1, \
         starting_register4, \
         slave_list4, \
         register2, \
