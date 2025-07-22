@@ -21,6 +21,7 @@ package(
         "page.py",
         "port.py",
         "slider.py",
+        "scale.py",
         "switch.py",
         "textarea.py",
     ),
