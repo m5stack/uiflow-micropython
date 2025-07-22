@@ -5,16 +5,16 @@
 #
 # SPDX-License-Identifier: MIT
 
-from _espnow import *
+import _espnow
 import network
 import binascii
 import struct
 import time
 
 
-class M5ESPNow(ESPNowBase):
+class M5ESPNow(_espnow.ESPNowBase):
     # Static buffers for alloc free receipt of messages with ESPNow.irecv().
-    _data = [None, bytearray(MAX_DATA_LEN)]
+    _data = [None, bytearray(_espnow.MAX_DATA_LEN)]
     _none_tuple = (None, None)
     AP = 0
     STA = 1
@@ -42,7 +42,7 @@ class M5ESPNow(ESPNowBase):
         while not self.active():
             self.active(True)
             time.sleep(0.5)
-        self.peer_list = [None] * 20
+        self.peer_list = [None for _ in range(20)]
         self.broadcast = False
 
     def set_add_peer(self, peer_mac, peer_id=1, ifidx=0, encrypt=False, lmk=None):
@@ -69,7 +69,7 @@ class M5ESPNow(ESPNowBase):
         #! All devices will also receive messages sent to the broadcast MAC address
         msg = self.convert_to_bytes(msg)
         peer = b"\xff\xff\xff\xff\xff\xff"
-        if self.broadcast is False:
+        if not self.broadcast:
             self.add_peer(peer)
             self.broadcast = True
         self.send(peer, msg, False)

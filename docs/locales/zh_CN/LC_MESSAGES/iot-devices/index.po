@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-26 23:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/iot-devices/index.rst:2 53d82994fd97409ca99db26bd0815b6b
+msgid "IoT Devices"
+msgstr ""
+
+#: ../../en/iot-devices/index.rst:4 65453bf4be6f40fe894241f4e09bc321
+msgid ""
+"There is some support for M5Stack IoT devices. You can use the following "
+"modules to control them."
+msgstr ""
+"支持一些M5Stack物联网设备。您可以使用以下模块来控制它们。"
+
+#: ../../en/iot-devices/index.rst:7 0393e339983241d5bb9915982043cb93
+msgid "Modules"
+msgstr ""
+
