@@ -44,6 +44,7 @@ Classes
     label.rst
     line.rst
     list.rst
+    scale.rst
     slider.rst
     switch.rst
     textarea.rst
