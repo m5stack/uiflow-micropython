@@ -14,6 +14,7 @@ _attrs = {
     "M5Image": "image",
     "M5Label": "label",
     "M5Line": "line",
+    "M5List": "list",
     "M5Page": "page",
     "M5Slider": "slider",
     "M5Switch": "switch",

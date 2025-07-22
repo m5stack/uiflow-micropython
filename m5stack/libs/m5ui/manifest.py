@@ -16,6 +16,7 @@ package(
         "image.py",
         "label.py",
         "line.py",
+        "list.py",
         "page.py",
         "port.py",
         "slider.py",
