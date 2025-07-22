@@ -7,6 +7,8 @@
 .. |set_image.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/set_image.png
 .. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/set_x.png
 .. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/set_y.png
+.. |set_rotation.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/set_rotation.png
+.. |set_scale.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/set_scale.png
 
 
 .. |cores3_show_image_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/image/example.png

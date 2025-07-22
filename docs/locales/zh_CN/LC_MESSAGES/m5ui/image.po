@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-09 09:51+0800\n"
+"POT-Creation-Date: 2025-07-22 11:52+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -52,8 +52,8 @@ msgstr "该示例演示如何在屏幕上显示图像。"
 #: ../../en/m5ui/image.rst:20 ../../en/m5ui/image.rst:64
 #: ../../en/m5ui/image.rst:81 ../../en/m5ui/image.rst:97
 #: ../../en/m5ui/image.rst:113 ../../en/m5ui/image.rst:166
-#: 1a10b6b6eac849379defe1f60f01e63c 31cb071512d148b89648a79439bccdaa
-#: c951f731ddfc4e2b8026d967f5d261f0 m5ui.image.M5Image.set_image:5 of
+#: 31cb071512d148b89648a79439bccdaa m5ui.image.M5Image.set_image:5
+#: m5ui.image.M5Image.set_rotation:5 m5ui.image.M5Image.set_scale:6 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
@@ -82,9 +82,9 @@ msgstr "MicroPython 示例"
 #: ../../en/m5ui/image.rst:37 ../../en/m5ui/image.rst:68
 #: ../../en/m5ui/image.rst:85 ../../en/m5ui/image.rst:101
 #: ../../en/m5ui/image.rst:117 ../../en/m5ui/image.rst:170
-#: 0a00eccad0b04f3aaa2c1d7a7394410f 1d7f94f68a834722a4358d61315754e8
 #: 297b0cb0f5784bf597709765289779e5 m5ui.image.M5Image:8
-#: m5ui.image.M5Image.set_image:9 of
+#: m5ui.image.M5Image.set_image:9 m5ui.image.M5Image.set_rotation:9
+#: m5ui.image.M5Image.set_scale:10 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
@@ -100,9 +100,9 @@ msgstr ""
 msgid "Create a image object."
 msgstr "创建一个图像对象。"
 
-#: ../../en/m5ui/image.rst 16927f2d78b84d7995d7757586c95c3d
-#: 86729ee12c674d32aea2dae2da7894e3 ec61dd436e75448f913e8b24464169a1
-#: m5ui.image.M5Image.set_image of
+#: ../../en/m5ui/image.rst 86729ee12c674d32aea2dae2da7894e3
+#: m5ui.image.M5Image.set_image m5ui.image.M5Image.set_rotation
+#: m5ui.image.M5Image.set_scale of
 msgid "Parameters"
 msgstr "参数"
 
@@ -165,7 +165,7 @@ msgstr "图像的 y 坐标。"
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:6 24a4191acef241d9a4969e04504367a9
+#: ../../en/refs/m5ui.image.ref:5 24a4191acef241d9a4969e04504367a9
 msgid "set_pos.png"
 msgstr ""
 
@@ -177,7 +177,7 @@ msgstr "设置图像的 x 坐标。"
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:10 7b8998924bc6499f93fc7be7de337fc0
+#: ../../en/refs/m5ui.image.ref:8 7b8998924bc6499f93fc7be7de337fc0
 msgid "set_x.png"
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr "设置图像的 y 坐标。"
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:11 3e6941e1a24c442c89a1d8f70ba3d8b5
+#: ../../en/refs/m5ui.image.ref:9 3e6941e1a24c442c89a1d8f70ba3d8b5
 msgid "set_y.png"
 msgstr ""
 
@@ -229,8 +229,46 @@ msgstr "设置要显示的图像。"
 msgid "|set_image.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:8 eff9728ed324422f82fa19876de13c62
+#: ../../en/refs/m5ui.image.ref:7 eff9728ed324422f82fa19876de13c62
 msgid "set_image.png"
+msgstr ""
+
+#: c05c9c1dbf1d4d5fb958d6716441feed m5ui.image.M5Image.set_rotation:1 of
+msgid "Set the rotation of the image."
+msgstr "设置图像的旋转角度。"
+
+#: 8814a9edc3b743428d94fa815fd38620 m5ui.image.M5Image.set_rotation:3 of
+msgid "The rotation angle in degrees (0, 90, 180, 270)."
+msgstr "旋转角度（0、90、180、270）。"
+
+#: 10f2c4f0cc5e4795a792784eae174ade m5ui.image.M5Image.set_rotation:7 of
+msgid "|set_rotation.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.image.ref:10 27d4b0e3420a47d59f4aca49083ca4a9
+msgid "set_rotation.png"
+msgstr ""
+
+#: abfb0eef70b647ee8e3e5153e6d2814b m5ui.image.M5Image.set_scale:1 of
+msgid "Set the scale of the image."
+msgstr "设置图像的缩放比例。"
+
+#: 22d5912df41c4ce5a8beb790ca320d81 m5ui.image.M5Image.set_scale:3 of
+msgid ""
+"The horizontal scale factor. If `scale_y` is not provided, this value "
+"will be used for both axes."
+msgstr "水平缩放因子。如果未提供 scale_y，则此值将用于两个轴。"
+
+#: 5f49fa823b534d249125f3d0432b1332 m5ui.image.M5Image.set_scale:4 of
+msgid "The vertical scale factor."
+msgstr "图像的垂直缩放因子。"
+
+#: 3431e1edeff3409fb8997cb1a1f60bd5 m5ui.image.M5Image.set_scale:8 of
+msgid "|set_scale.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.image.ref:11 eff9728ed324422f82fa19876de13c62
+msgid "set_scale.png"
 msgstr ""
 
 #~ msgid "Returns"
@@ -238,4 +276,7 @@ msgstr ""
 
 #~ msgid "|set_flag.png|"
 #~ msgstr ""
+
+#~ msgid "The horizontal scale factor."
+#~ msgstr "图像的水平缩放因子。"
 
