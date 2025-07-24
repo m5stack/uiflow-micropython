@@ -60,6 +60,15 @@ class HALBase:
     def get_asset_path(self, asset_path: str) -> str:
         raise NotImplementedError()
 
+    def create_temp_dir(self):
+        raise NotImplementedError()
+
+    def get_os_temp_file_path(self, file_name: str) -> str:
+        raise NotImplementedError()
+
+    def get_lvgl_temp_file_path(self, file_name: str) -> str:
+        raise NotImplementedError()
+
     def get_volume(self) -> int:
         return self._volume
 

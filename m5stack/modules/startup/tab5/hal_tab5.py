@@ -50,7 +50,19 @@ class HALTab5(HALBase):
         nvs.commit()
 
     def get_asset_path(self, asset_path: str) -> str:
-        return "S:" + "/system/tab5/" + asset_path
+        return "S:/system/tab5/" + asset_path
+
+    def create_temp_dir(self):
+        try:
+            os.stat("tmp")
+        except OSError:
+            os.mkdir("tmp")
+
+    def get_lvgl_temp_file_path(self, file_name: str) -> str:
+        return "S:/flash/tmp/" + file_name
+
+    def get_os_temp_file_path(self, file_name: str) -> str:
+        return "tmp/" + file_name
 
     def play_click_sfx(self):
         M5.Speaker.playWavFile("/system/common/wav/click.wav")

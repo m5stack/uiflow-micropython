@@ -58,6 +58,32 @@ class EzdataIcon:
             AppManager.open_app("EzData")
 
 
+class EzdataNumBadge:
+    def __init__(self):
+        self._badge = lv.obj(lv.screen_active())
+        self._badge.align(lv.ALIGN.TOP_RIGHT, -820, 9)
+        self._badge.set_size(22, 22)
+        self._badge.set_style_border_width(0, lv.PART.MAIN)
+        self._badge.set_style_bg_color(lv.color_hex(0xFF5656), lv.PART.MAIN)
+        self._badge.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+
+        self._label = lv.label(self._badge)
+        self._label.set_text("")
+        self._label.align(lv.ALIGN.CENTER, 0, 0)
+        self._label.set_style_text_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
+        self._label.set_style_text_font(lv.font_montserrat_14, lv.PART.MAIN)
+
+    def update(self, data_num: int):
+        label_text = str(data_num)
+        self._label.set_text(label_text)
+
+        width = 22
+        if len(label_text) > 1:
+            width = 22 + (len(label_text) - 1) * 14
+
+        self._badge.set_width(width)
+
+
 class EzdataDock:
     def __init__(self):
         self._icons = []
@@ -75,6 +101,8 @@ class EzdataDock:
         label_init.align(lv.ALIGN.CENTER, 0, 0)
         label_init.set_style_text_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
         label_init.set_style_text_font(lv.font_montserrat_24, lv.PART.MAIN)
+
+        self._data_num_badge = None
 
         self._task = asyncio.create_task(self._task())
 
@@ -98,6 +126,8 @@ class EzdataDock:
         # Setting icon
         self._icons.append(EzdataIcon(self._dock_panel, 0, "settings", "settings"))
 
+        self._create_data_num_badge(len(all_data))
+
         # If no data
         if len(all_data) == 0:
             label_no_data = lv.label(self._dock_panel)
@@ -115,6 +145,11 @@ class EzdataDock:
                     data.get("name"),
                 )
             )
+
+    def _create_data_num_badge(self, data_num: int):
+        if self._data_num_badge is None:
+            self._data_num_badge = EzdataNumBadge()
+        self._data_num_badge.update(data_num)
 
     def _handle_data_list_changed(self):
         debug_print("[EzdataDock] data list changed")
