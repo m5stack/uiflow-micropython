@@ -17,4 +17,3 @@
 // #endif
 
 #define MICROPY_GC_INITIAL_HEAP_SIZE (128 * 1024)
-#define MICROPY_CACHE_SIZE (1024)
