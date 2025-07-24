@@ -6,6 +6,8 @@
 .. |set_line_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/set_line_color.png
 .. |set_points.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/set_points.png
 .. |add_point.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/add_point.png
+.. |set_style_line_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/set_style_line_width.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/set_flag.png
 
 .. |cores3_line_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/line/example.png
 

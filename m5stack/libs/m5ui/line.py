@@ -49,27 +49,6 @@ class M5Line(lv.line):
         self.set_style_line_width(width, lv.PART.MAIN)
         self.set_style_line_rounded(rounded, lv.PART.MAIN)
 
-    def set_line_color(self, color, opa: int):
-        """Set the color and opacity of the line.
-
-        :param int color: The color of the line in hexadecimal format.
-        :param int opa: The opacity level (0-255).
-
-        UiFlow2 Code Block:
-
-            |set_line_color.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                label_0.set_line_color(0x2196F3)
-        """
-        if isinstance(color, int):
-            color = lv.color_hex(color)
-        self.set_style_line_color(color, lv.PART.MAIN)
-        self.set_style_line_opa(opa, lv.PART.MAIN)
-
     def set_points(self, points: list):
         """Set the points of the line.
 
@@ -83,7 +62,7 @@ class M5Line(lv.line):
 
             .. code-block:: python
 
-                label_0.set_points([0, 0, 100, 100, 200, 50])
+                line_0.set_points([0, 0, 100, 100, 200, 50])
         """
         self.lv_points = []
         for i in range(0, len(points), 2):
@@ -104,7 +83,7 @@ class M5Line(lv.line):
 
             .. code-block:: python
 
-                label_0.add_point(100, 100)
+                line_0.add_point(100, 100)
         """
         self.lv_points.append({"x": x, "y": y})
         super().set_points(self.lv_points, len(self.lv_points))
