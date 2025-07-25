@@ -11,7 +11,7 @@ Index: micropython/ports/esp32/adc.c
  
  #define DEFAULT_VREF 1100
  
-@@ -57,51 +55,52 @@ void madcblock_bits_helper(machine_adc_b
+@@ -57,52 +55,57 @@ void madcblock_bits_helper(machine_adc_b
              mp_raise_ValueError(MP_ERROR_TEXT("invalid bits"));
      }
      self->bits = bits;
@@ -78,10 +78,16 @@ Index: micropython/ports/esp32/adc.c
      int uv;
  
 -    check_esp_err(ensure_adc_calibration(self, atten));
-+    check_esp_err(ensure_adc_calibration(self, channel_id, atten));
-     check_esp_err(adc_cali_raw_to_voltage(self->handle[atten], raw, &uv));
+-    check_esp_err(adc_cali_raw_to_voltage(self->handle[atten], raw, &uv));
++    esp_err_t ret = ensure_adc_calibration(self, channel_id, atten);
++    if (ret == ESP_OK) {
++        check_esp_err(adc_cali_raw_to_voltage(self->handle[atten], raw, &uv));
++    } else {
++        uv = raw / (2 << (self->width)) * 3300;
++    }
  
      return (mp_int_t)uv * 1000;
+ }
 Index: micropython/ports/esp32/adc.h
 ===================================================================
 --- micropython.orig/ports/esp32/adc.h

@@ -181,16 +181,16 @@ function ci_esp32_idf522_setup {
 function ci_esp32_idf541_setup {
     if [ -d esp-idf ]; then
         echo "esp-idf is already cloned."
-        if [ "$(git -C esp-idf describe --tags)" == "v5.4.1" ]; then
-            echo "esp-idf is on v5.4.1 branch."
+        if [ "$(git -C esp-idf describe --tags)" == "v5.4.2" ]; then
+            echo "esp-idf is on v5.4.2 branch."
             return 0
         else
-            echo "esp-idf is not on v5.4.1 branch."
+            echo "esp-idf is not on v5.4.2 branch."
             rm -rf esp-idf
         fi
     fi
 
-    git clone --depth 1 --branch v5.4.1 https://github.com/espressif/esp-idf.git
+    git clone --depth 1 --branch v5.4.2 https://github.com/espressif/esp-idf.git
     git -C esp-idf submodule update --init
     ./esp-idf/install.sh
 }
