@@ -66,6 +66,7 @@ class EzdataNumBadge:
         self._badge.set_style_border_width(0, lv.PART.MAIN)
         self._badge.set_style_bg_color(lv.color_hex(0xFF5656), lv.PART.MAIN)
         self._badge.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+        self._badge.remove_flag(lv.obj.FLAG.SCROLLABLE)
 
         self._label = lv.label(self._badge)
         self._label.set_text("")
