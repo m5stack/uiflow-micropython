@@ -68,6 +68,7 @@ class ViewString(ViewBase):
         label.set_style_text_color(lv.color_hex(0x272F43), lv.PART.MAIN)
         label.set_style_text_font(lv.font_montserrat_30, lv.PART.MAIN)
         label.set_style_text_align(lv.TEXT_ALIGN.CENTER, lv.PART.MAIN)
+        label.set_width(1100)
 
 
 class ViewNumber(ViewBase):
@@ -169,6 +170,7 @@ class WidgetImage:
         WidgetImage._panel.set_style_pad_all(0, lv.PART.MAIN)
         WidgetImage._panel.set_style_radius(0, lv.PART.MAIN)
         WidgetImage._panel.set_scrollbar_mode(lv.SCROLLBAR_MODE.ACTIVE)
+        WidgetImage._panel.remove_flag(lv.obj.FLAG.SCROLLABLE)
         WidgetImage._panel.add_event_cb(WidgetImage._handle_on_click, lv.EVENT.CLICKED, None)
 
         WidgetImage._img = lv.image(WidgetImage._panel)
@@ -337,11 +339,13 @@ class AppEzdata(AppBase):
         value = data.get("value")
         # print("data:", data)
 
+        # if isinstance(value, str):
+        #     if data.get("dataType") == "file":
+        #         self._view = ViewFile(self.get_app_panel(), data)
+        #     else:
+        #         self._view = ViewString(self.get_app_panel(), data)
         if isinstance(value, str):
-            if data.get("dataType") == "file":
-                self._view = ViewFile(self.get_app_panel(), data)
-            else:
-                self._view = ViewString(self.get_app_panel(), data)
+            self._view = ViewString(self.get_app_panel(), data)
         elif isinstance(value, int) or isinstance(value, float):
             self._view = ViewNumber(self.get_app_panel(), data)
         elif isinstance(value, list):
