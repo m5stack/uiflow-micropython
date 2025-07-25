@@ -3,7 +3,7 @@ variables:
   ESP_IDF_SRC_DIR: $CI_PROJECT_DIR/esp-idf
 
 cache:
-  key: "$CI_PROJECT_ID-esp-idf-v541"
+  key: "$CI_PROJECT_ID-esp-idf-v542"
   paths:
     - $ESP_IDF_SRC_DIR
   policy: pull-push
