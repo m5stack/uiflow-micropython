@@ -10,46 +10,59 @@ if sys.platform != "esp32":
 
 
 class CANUnit(m5can.CAN):
-    _timing_table = {
-        # prescaler, sjw, bs1, bs2, triple_sampling
-        25000: (128, 3, 16, 8, False),
-        50000: (80, 3, 15, 4, False),
-        100000: (40, 3, 15, 4, False),
-        125000: (32, 3, 15, 4, False),
-        250000: (16, 3, 15, 4, False),
-        500000: (8, 3, 15, 4, False),
-        800000: (4, 3, 16, 8, False),
-        1000000: (4, 3, 15, 4, False),
-    }
-
     def __init__(
         self,
-        id: Literal[0, 1],
+        id: Literal[0, 1] = 0,
         port: list | tuple = None,
         mode: int = m5can.CAN.NORMAL,
-        *args,
-        **kwargs,
+        prescaler: int = 0,
+        sjw: int = 0,
+        bs1: int = 0,
+        bs2: int = 0,
+        triple_sampling: bool = False,
+        quantum_resolution_hz: int = 0,
+        baudrate: int = 0,
+        verbose: bool = False,
     ):
-        if len(kwargs) == 1:
-            (prescaler, sjw, bs1, bs2, triple_sampling) = self._timing_table.get(
-                kwargs.get("baudrate")
-            )
-        elif len(args) == 5:
-            (prescaler, sjw, bs1, bs2, triple_sampling) = args
+        verbose and print(
+            f"mode={mode}, tx={port[1]}, rx={port[0]}, quantum_resolution_hz={quantum_resolution_hz}, brp={prescaler}, sjw={sjw}, tseg_1={bs1}, tseg_2={bs2}, triple_sampling={triple_sampling}, baudrate={baudrate}"
+        )
         super().__init__(
-            0,
+            id,
             mode,
             port[1],
             port[0],
-            prescaler,
-            sjw,
-            bs1,
-            bs2,
-            triple_sampling,
+            quantum_resolution_hz,
+            brp=prescaler,
+            sjw=sjw,
+            tseg_1=bs1,
+            tseg_2=bs2,
+            triple_sampling=triple_sampling,
+            baudrate=baudrate // 1000,
         )
 
 
-# can_0 = CANUnit(0, (33, 32), CANUnit.NORMAL, baudrate=1000000)
-# can_0 = CANUnit(0, (33, 32), CANUnit.NORMAL, 4, 3, 15, 4, False)
+# can_0 = CANUnit(id=0, port=(33, 32), mode=CANUnit.NORMAL, baudrate=25000)
+# can_0 = CANUnit(
+#     id=0,
+#     port=(33, 32),
+#     mode=CANUnit.NORMAL,
+#     prescaler=128,
+#     sjw=3,
+#     bs1=16,
+#     bs2=8,
+#     triple_sampling=False,
+# )
+# can_0 = CANUnit(
+#     id=0,
+#     port=(33, 32),
+#     mode=CANUnit.NORMAL,
+#     quantum_resolution_hz=625000,
+#     sjw=3,
+#     bs1=16,
+#     bs2=8,
+#     triple_sampling=False,
+# )
+
 
 MiniCANUnit = CANUnit
