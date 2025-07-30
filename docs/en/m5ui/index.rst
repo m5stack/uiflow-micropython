@@ -36,6 +36,7 @@ Classes
     arc.rst
     bar.rst
     button.rst
+    buttonmatrix.rst
     calendar.rst
     canvas.rst
     checkbox.rst
