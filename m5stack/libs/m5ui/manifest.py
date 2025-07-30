@@ -10,6 +10,7 @@ package(
         "bar.py",
         "base.py",
         "button.py",
+        "buttonmatrix.py",
         "calendar.py",
         "canvas.py",
         "checkbox.py",
