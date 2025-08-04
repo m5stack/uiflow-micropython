@@ -11,6 +11,7 @@ _attrs = {
     "M5Calendar": "calendar",
     "M5Canvas": "canvas",
     "M5Checkbox": "checkbox",
+    "M5Dropdown": "dropdown",
     "M5Image": "image",
     "M5Keyboard": "keyboard",
     "M5Label": "label",

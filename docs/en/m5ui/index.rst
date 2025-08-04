@@ -39,6 +39,7 @@ Classes
     calendar.rst
     canvas.rst
     checkbox.rst
+    dropdown.rst
     image.rst
     keyboard.rst
     label.rst

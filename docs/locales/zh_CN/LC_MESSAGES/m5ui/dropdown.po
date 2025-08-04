@@ -1,0 +1,679 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-20 17:56+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/dropdown.rst:4 ../../en/m5ui/dropdown.rst:54
+#: 700ed03fb57b4fb0a2b0d3d29810d5e8 b2cded9f3953424980de56f390e0f348
+msgid "M5Dropdown"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:8 fffe11498bd04125ade4d5cccf8967bd
+msgid ""
+"M5Dropdown is a widget that can be used to create dropdown menus in the "
+"user interface. It allows users to select one option from a list of "
+"available options with a compact dropdown interface."
+msgstr "M5Dropdown是一个可以在用户界面中创建下拉菜单的控件。它允许用户通过紧凑的下拉界面从可用选项列表中选择一个选项。"
+
+#: ../../en/m5ui/dropdown.rst:13 cf3cfa01c87044809cbe1dc448adbdbb
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/dropdown.rst:16 ../../en/m5ui/dropdown.rst:35
+#: 3886b03cdafd443a85d233f81f10a3df 5459b6138efb487683e964b6acf94012
+msgid "Drop down in four directions"
+msgstr "四个方向的下拉菜单"
+
+#: ../../en/m5ui/dropdown.rst:18 8222f27a4c6b47d7ad8e6474e9ce51ac
+msgid "Open the |cores3_dropdown_directions_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开 |cores3_dropdown_directions_example.m5f2| 项目。"
+
+#: ../../en/m5ui/dropdown.rst:20 ../../en/m5ui/dropdown.rst:37
+#: 35f181f8a60a43ebb227a4f3d39e162a cd794b6a001041549c55a14f3fd331b9
+msgid "This example creates a drop down, up, left and right menus."
+msgstr "此示例创建了向下、向上、向左和向右的下拉菜单。"
+
+#: ../../en/m5ui/dropdown.rst:22 ../../en/m5ui/dropdown.rst:67
+#: ../../en/m5ui/dropdown.rst:85 ../../en/m5ui/dropdown.rst:104
+#: ../../en/m5ui/dropdown.rst:122 ../../en/m5ui/dropdown.rst:141
+#: ../../en/m5ui/dropdown.rst:159 ../../en/m5ui/dropdown.rst:177
+#: ../../en/m5ui/dropdown.rst:196 ../../en/m5ui/dropdown.rst:214
+#: ../../en/m5ui/dropdown.rst:232 ../../en/m5ui/dropdown.rst:250
+#: ../../en/m5ui/dropdown.rst:268 ../../en/m5ui/dropdown.rst:288
+#: ../../en/m5ui/dropdown.rst:306 ../../en/m5ui/dropdown.rst:324
+#: ../../en/m5ui/dropdown.rst:342 ../../en/m5ui/dropdown.rst:360
+#: ../../en/m5ui/dropdown.rst:382 ../../en/m5ui/dropdown.rst:401
+#: ../../en/m5ui/dropdown.rst:421 0d73842b685346d6a8e10b24661b356c
+#: 16e4277f547f4a65a66717d0e743963c 29acf5d45c1d4d46975a7b40a41f6072
+#: 48b9752f06fe42078d41e3497338b65c 52f7b56b4152489c82dfbcbb520ce6a3
+#: 5cf80b8063154cea938062b64312e87c 5fdca7c5887c4e0d8d72fba7a0a73607
+#: 6cca309ef29145e3856f1841c2a6bd4c 8277c647c370475abeb1b646dad0f18d
+#: 858b367bac5a4513b60cfda537143805 c0185dd3753745e180b2681bb495eca4
+#: c848de98228f42cfa0a4713a9e9db7bc db9585667ba24503b20ccb666d896bdf
+#: dbfc4a55285f487588be828ac4d1ad12 dd6415cd5166413d814be82f6cf515cd
+#: de805c719fb64fe3bd49459edf0bbedf e164dca07eb24c5bb8b88c9e4408c4db
+#: ebc9ba334e634262be14fe565c1dc5fb m5ui.dropdown.M5Dropdown.add_option:6
+#: m5ui.dropdown.M5Dropdown.clear_options:3
+#: m5ui.dropdown.M5Dropdown.get_selected_str:5
+#: m5ui.dropdown.M5Dropdown.set_dir:5 m5ui.dropdown.M5Dropdown.set_options:5
+#: m5ui.dropdown.M5Dropdown.set_style_radius:6 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/dropdown.rst:24 5a10b62ec7f94c1f86f303bf696810e4
+msgid "|cores3_dropdown_directions_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:1 10cee414ff374e399b73ed64ee93b863
+msgid "cores3_dropdown_directions_example.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:26 ../../en/m5ui/dropdown.rst:45
+#: 7807d83367b6492aa4e77ea91f25541f e55620a123fb4eeb9110a4af8914ddee
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/dropdown.rst:28 ../../en/m5ui/dropdown.rst:47
+#: ../../en/m5ui/dropdown.rst:65 ../../en/m5ui/dropdown.rst:83
+#: ../../en/m5ui/dropdown.rst:102 ../../en/m5ui/dropdown.rst:120
+#: ../../en/m5ui/dropdown.rst:139 ../../en/m5ui/dropdown.rst:157
+#: ../../en/m5ui/dropdown.rst:175 ../../en/m5ui/dropdown.rst:194
+#: ../../en/m5ui/dropdown.rst:212 ../../en/m5ui/dropdown.rst:248
+#: ../../en/m5ui/dropdown.rst:286 ../../en/m5ui/dropdown.rst:322
+#: ../../en/m5ui/dropdown.rst:399 ../../en/m5ui/dropdown.rst:419
+#: 129fba3f0c91499e84aa9ccc4d06e768 3202bac59af04324a52b954692ab32d4
+#: 3cafbaa29c1a4847ba6572cc056a3569 5434ab5ace5b4de3977fc2a8debf83c2
+#: 54e31901493143adb4ec8308051c562d 5fe1f197f157421aa9bfaba561c1e964
+#: 67d65ad26d084ff0b300ea5f5feefa80 6887f4306e834f9884425ae99d50a2b3
+#: 8b828bfb0e084dd3b19a3284574223e4 8f7caceab66b4ce78878a303c85f5c20
+#: 96391d4f8dfc4d81b14f8b363e6cc73e 966ea41c1743464ab00bc19017240230
+#: bd6d94c99f6d4692a20c8dc31b57557b d8542bd7d41142e8a69fbe49e150e364
+#: e12de8d516de4e3d8ed9033396eacdbc ee6dd49ec10646c18777962be81c987f
+#: m5ui.dropdown.M5Dropdown.set_style_radius:8 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:32 1c3eff7b49e9417f8b097dee3c32b53a
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/dropdown.rst:39 ../../en/m5ui/dropdown.rst:71
+#: ../../en/m5ui/dropdown.rst:89 ../../en/m5ui/dropdown.rst:108
+#: ../../en/m5ui/dropdown.rst:126 ../../en/m5ui/dropdown.rst:145
+#: ../../en/m5ui/dropdown.rst:163 ../../en/m5ui/dropdown.rst:181
+#: ../../en/m5ui/dropdown.rst:200 ../../en/m5ui/dropdown.rst:218
+#: ../../en/m5ui/dropdown.rst:236 ../../en/m5ui/dropdown.rst:254
+#: ../../en/m5ui/dropdown.rst:272 ../../en/m5ui/dropdown.rst:292
+#: ../../en/m5ui/dropdown.rst:310 ../../en/m5ui/dropdown.rst:328
+#: ../../en/m5ui/dropdown.rst:346 ../../en/m5ui/dropdown.rst:364
+#: ../../en/m5ui/dropdown.rst:386 ../../en/m5ui/dropdown.rst:405
+#: ../../en/m5ui/dropdown.rst:425 0ae30fe16f664d28a744ca80bdd345ea
+#: 11a7d99ac06d409eb152327e23b96243 21c20c90b7d648af9bbdccd72ccaf7ec
+#: 369614e2d7674d6390b30f98d3cefbb8 408d5e78b0fd4c7a9e1b082afd895d65
+#: 4355c555bd4f46d3983c51697fcaeadf 44212750369945d89ed5df2bb2fcb416
+#: 4f852af2dda942729907111218d9d663 536b00697b9444d4859c23923657c4ba
+#: 5c5f486a6dfe4faf9b36872cd1a9d36a 746ed8f36b33424788a7dfe977eaceb1
+#: 838ea220a25c4dc993dbfb706bfb245a 9fc8887ebb874326a10e837824355dd0
+#: a641aac94b084d588e84c178ac809809 b6eb7865c5ee48a69680efa4889ebe6a
+#: cdd17db52c8346dd923c261018bf3da2 da2eb3e720dc4d68b17200c40707e118
+#: f99e22e4aa814e69b1a9b056f7e0f330 m5ui.dropdown.M5Dropdown.add_option:10
+#: m5ui.dropdown.M5Dropdown.clear_options:7
+#: m5ui.dropdown.M5Dropdown.get_selected_str:9
+#: m5ui.dropdown.M5Dropdown.set_dir:9 m5ui.dropdown.M5Dropdown.set_options:9
+#: m5ui.dropdown.M5Dropdown.set_style_radius:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/dropdown.rst:51 831d62cfc1e44026bcce175bc47967ac
+msgid "**API**"
+msgstr "API参考"
+
+#: c5973e17fd3f40ffa60a28a5e13932e1 m5ui.dropdown.M5Dropdown:1 of
+msgid "Bases: :py:class:`~lvgl.dropdown`"
+msgstr ""
+
+#: ea2d79e26bd145c9a80f9c172754fb58 m5ui.dropdown.M5Dropdown:1 of
+msgid "Create a dropdown object."
+msgstr "创建一个下拉菜单对象。"
+
+#: ../../en/m5ui/dropdown.rst 17648017208941ee9eeec8e73df9dca9
+#: 1e6306b1c0bd452ab60e8ca8129d20fb 1ff356355ced4aaf834204d2d4c79b7f
+#: 2a923c817bb74a2c94b2c45aae83d11f 43e2393a79f349b897d0487733c411a9
+#: 561675051db745bbb9feebdaa40df724 6ed168a09d884a38b312da1b99b83a89
+#: 7fd5e6f9a6dd42d4829f84138ee5134b a1e4e23501a04df3a5896e5bf2a6eb87
+#: d213d5a0a34c4d9887588d9ef8c1fbf2 d5bb6c804e6e4236ac3c1f9e20d6ee02
+#: d5f3876c58694005b64569e13f55f418 dc5fee1c5a3c432e84ee8738f5ab72aa
+#: e9aed0fc5de2423c9e424c070202768d m5ui.dropdown.M5Dropdown.add_option
+#: m5ui.dropdown.M5Dropdown.set_dir m5ui.dropdown.M5Dropdown.set_options
+#: m5ui.dropdown.M5Dropdown.set_style_radius of
+msgid "Parameters"
+msgstr ""
+
+#: 2256b30bf131468483ae405dd8d3d0fd m5ui.dropdown.M5Dropdown:3 of
+msgid "The x position of the dropdown."
+msgstr "下拉菜单的X坐标位置。"
+
+#: 7a036026c0e04c71acf86c929b1ce0bf m5ui.dropdown.M5Dropdown:4 of
+msgid "The y position of the dropdown."
+msgstr "下拉菜单的Y坐标位置。"
+
+#: ../../en/m5ui/dropdown.rst:192 ../../en/m5ui/dropdown.rst:211
+#: ../../en/m5ui/dropdown.rst:229 2c758c4ba24d4d029c96e68e0924bb6a
+#: 4fcca57abdc846329cdf8fe2f7d242eb 670ffd0f57874feb9d281e70d4ee9712
+#: b4bbdcfa5cc2493a95e746c58c613681 m5ui.dropdown.M5Dropdown:5 of
+msgid "The width of the dropdown."
+msgstr "下拉菜单的宽度。"
+
+#: 64a7ee94ba954f95b17c4e22d24e8dcf m5ui.dropdown.M5Dropdown:6 of
+msgid "The height of the dropdown, default is `lv.SIZE_CONTENT`."
+msgstr "下拉菜单的高度，默认为 `lv.SIZE_CONTENT`。"
+
+#: 2a3c6cda04474856b29366e2a2efca24 c37130b4d7c84ff38a22261a1aceade5
+#: m5ui.dropdown.M5Dropdown:7 m5ui.dropdown.M5Dropdown.set_options:3 of
+msgid "A list of options to display in the dropdown."
+msgstr "在下拉菜单中显示的选项列表。"
+
+#: 2496650eab27426795554178efb26347 985e2f280f204d6cba4dc7ac407de5c5
+#: m5ui.dropdown.M5Dropdown:8 m5ui.dropdown.M5Dropdown.set_dir:3 of
+msgid ""
+"The direction of the dropdown, can be `lv.DIR.LEFT`, `lv.DIR.RIGHT`, "
+"`lv.DIR.TOP`, or `lv.DIR.BOTTOM`."
+msgstr "下拉菜单的方向，可以是 `lv.DIR.LEFT`、`lv.DIR.RIGHT`、`lv.DIR.TOP` 或 `lv.DIR.BOTTOM`。"
+
+#: 377492f603494f009b0da772ba47b661 m5ui.dropdown.M5Dropdown:9 of
+msgid "Whether to highlight the selected option, default is `True`."
+msgstr "是否高亮显示选中的选项，默认为 `True`。"
+
+#: f5f4bc4e3647482c95a540489688d844 m5ui.dropdown.M5Dropdown:10 of
+msgid ""
+"The font used for the text in the dropdown, default is "
+"`lv.font_montserrat_14`."
+msgstr "下拉菜单中文本使用的字体，默认为 `lv.font_montserrat_14`。"
+
+#: 7376aa9aab8b4eeb920d4c535b34e5f0 m5ui.dropdown.M5Dropdown:11 of
+msgid "The parent object for this dropdown, default is the active screen."
+msgstr "此下拉菜单的父对象，默认为当前活动屏幕。"
+
+#: ../../en/m5ui/dropdown.rst:61 e0d3d184d75247118e8b6cd179e31c0b
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "为对象设置标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/dropdown.rst:63 275ee2eaaaa043ea8a35162df2c39558
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/dropdown.rst:64 a88ca972572847cf9f5a1b99d83b2aaf
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/dropdown.rst 125938408c7b4fdbb8cf287ad0d4108d
+#: 2f0a96fc95824359a81266371c240e6f 35c91f8b81c448bb9d16b6ce5220107b
+#: 3858a3c7bab24bc7a9ddde13f4b9dfc4 3e34a3b4758749a28c7a5e64e9eaf01d
+#: 4070e1242bc14538b8120c9b6a783be6 665eef8bf3f546a186af3e9bd7de189f
+#: 72ae8463de7d4bcba62636d6982f1135 74a1ddaf2ffb41ccabbfd66ea0ef3294
+#: 9ddcb459d01a4488a6a7f8e08b6b65b3 b3cba1bce3204ff78d0cacfd92d83b45
+#: cae790d2044d491e80072891e27a5f89 ced2cef411144241b2e59238edd81a8c
+#: d065be4a997c4cff9077196fbc69b53d d6b87f8abbd84e249c8d196103badbb2
+#: eccb37e031f34e299aa0aeb79d9f2f1f f9d45a23f563465b964209f90e866a10
+#: m5ui.dropdown.M5Dropdown.get_selected_str of
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:69 1fda9c63a269413a9fd4f17fb4ee329e
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:17 ff2149c1905b44c187991e0b704c57c1
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:80 6fa69730b37343a99d1dd2ece537d7ff
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象的标志。如果标志已设置，则将其移除；如果未设置，则将其添加。"
+
+#: ../../en/m5ui/dropdown.rst:82 a8436bbb3098486ca83c4f18e9c995c7
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/dropdown.rst:87 b76eefa76bc245659a53d1ca638b8266
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:28 966f6ec7c2594051b12f175962d94a80
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:98 c5e7354831554a46a51a1e15a95f2d47
+msgid ""
+"Set the state of the dropdown. If ``value`` is True, the state is set; if"
+" False, the state is unset."
+msgstr "设置下拉菜单的状态。如果 ``value`` 为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/dropdown.rst:100 282e37a407ab48f8adaef3de3a878b80
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/dropdown.rst:101 a6edef7c051d4587b2eb07f775a9ed4c
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/dropdown.rst:106 7fb46e4f06f549f3a8642c3975a1b722
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:23 45cd12e4ef994143ab2639f14a8db0dd
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:117 071381a0a8a444ffbd590ea21aa1b5c8
+msgid ""
+"Toggle the state of the dropdown. If the state is set, it is unset; if "
+"not set, it is set."
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:119 c65dda359783473a88578741d675a96c
+msgid "The state to toggle."
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:124 5b007f4ea9984926a0285f3c3964295b
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:29 dde8f685922b4e53847d2d51627cb9d5
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:135 6322b879264c4593848384e7abe008cf
+msgid "Set the position of the dropdown."
+msgstr "设置下拉菜单的位置。"
+
+#: ../../en/m5ui/dropdown.rst:137 ../../en/m5ui/dropdown.rst:156
+#: 3986879235db4f91a6e84c3d02b9179f f763f120562f49ff818562acce0c7e11
+msgid "The x-coordinate of the dropdown."
+msgstr "下拉菜单的X坐标。"
+
+#: ../../en/m5ui/dropdown.rst:138 ../../en/m5ui/dropdown.rst:174
+#: 1df54d03bf3e451ba54e7f083ecb3576 d902eb9eec8f4c1ab2448904eeb30f74
+msgid "The y-coordinate of the dropdown."
+msgstr "下拉菜单的Y坐标。"
+
+#: ../../en/m5ui/dropdown.rst:143 7c9b3907113e40a48b78f195e7134b16
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:20 2eb381d050ea4d728cd1db90026749c8
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:154 3a91cd2b7ae44d54984ba0a3ef23dc92
+msgid "Set the x-coordinate of the dropdown."
+msgstr "设置下拉菜单的X坐标。"
+
+#: ../../en/m5ui/dropdown.rst:161 a4fa801d99864e5ab27111d311e5f134
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:26 33f88bd0fbfa4a3ca001412c2e279822
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:172 e758f80ab6c544f4a7481a463c23497f
+msgid "Set the y-coordinate of the dropdown."
+msgstr "设置下拉菜单的Y坐标。"
+
+#: ../../en/m5ui/dropdown.rst:179 323298fe855e426bb999c5adc700599b
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:27 39bbeb192a4440d0b919f1c50088b37a
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:190 5c5878b62d474e719a05b16c8c76e0ae
+msgid "Set the size of the dropdown."
+msgstr "设置下拉菜单的尺寸。"
+
+#: ../../en/m5ui/dropdown.rst:193 ../../en/m5ui/dropdown.rst:247
+#: ../../en/m5ui/dropdown.rst:265 439b62cb69fa4f2c826eaa9431219643
+#: 44932e7f3c594aaaa34115cd83df4536 fd9d62cec308482a9013e094a2e5d1bb
+msgid "The height of the dropdown."
+msgstr "下拉菜单的高度。"
+
+#: ../../en/m5ui/dropdown.rst:198 6cb114d806524e84827477d5593b82af
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:22 68bdada9a8f94a958e3b1ba625cdaeed
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:209 9f038de1affc4ed487f9fa0137764d47
+msgid "Set the width of the dropdown."
+msgstr "设置下拉菜单的宽度。"
+
+#: ../../en/m5ui/dropdown.rst:216 91f97c5882dc44dda50ec28b5bd003bb
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:25 942ed7884ccb49fbab786abaec103585
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:227 1ff1cbbed2754663b43f0afb72a513ef
+msgid "Get the width of the dropdown."
+msgstr "获取下拉菜单的宽度。"
+
+#: ../../en/m5ui/dropdown.rst 474ef770dea841d28199b6e57b09fbce
+#: 564d7365240e419d82857c7ba2d73d9a 81097c1f5105480db967b27e6f0e22a8
+#: 9a081cbc8da7439198671a614e30d126 m5ui.dropdown.M5Dropdown.add_option
+#: m5ui.dropdown.M5Dropdown.clear_options
+#: m5ui.dropdown.M5Dropdown.get_selected_str m5ui.dropdown.M5Dropdown.set_dir
+#: m5ui.dropdown.M5Dropdown.set_style_radius of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:234 1afac0eacba14e5e86cb7e2813c94298
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:14 7293cfab2eec47c1b3079ef5abf027f7
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:245 f93a63472b034507a60842c4941bb852
+msgid "Set the height of the dropdown."
+msgstr "设置下拉菜单的高度。"
+
+#: ../../en/m5ui/dropdown.rst:252 c371bc57641447be8d5e5a3b543da392
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:18 35e35198f0754bbb8d87bbb0c8c08621
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:263 ac0ee39436ec4c42965a6fefc3700319
+msgid "Get the height of the dropdown."
+msgstr "获取下拉菜单的高度。"
+
+#: ../../en/m5ui/dropdown.rst:270 110ac075851f463f9589f9ecb4dcc0c8
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:7 5db0e658df6e458095e1b2b1db1b1bce
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:280 bccf1adf1fa5494a97d0a185a20cda17
+msgid "Align the dropdown to another object."
+msgstr "将下拉菜单对齐到另一个对象。"
+
+#: ../../en/m5ui/dropdown.rst:282 32303bb61a2f4296a565e570ccf33d24
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/dropdown.rst:283 7e9b3c4df5854849b7767d46123f193a
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/dropdown.rst:284 99a62c8d664a4442a05f795663074592
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的X偏移量。"
+
+#: ../../en/m5ui/dropdown.rst:285 a3a790f545cb4fd29900b77040af278b
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的Y偏移量。"
+
+#: ../../en/m5ui/dropdown.rst:290 50e3ff970fc84123ac44279b1cdafab6
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:4 8e07ae2843ba4470966fcfbf22def0df
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:301 e4996e3bd3d44a48a0be6befe3bd33ab
+msgid "Get the index of the currently selected option."
+msgstr "获取当前选中选项的索引。"
+
+#: ../../en/m5ui/dropdown.rst:303 2461d21316da4c2bb3b38b98990521b4
+msgid "The index of the selected option."
+msgstr "选中选项的索引。"
+
+#: ../../en/m5ui/dropdown.rst:308 3d83ac96417f443cbf8d9d3aa6726602
+msgid "|get_selected.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:11 9a75ff836c884b439d60b2414f4402ff
+msgid "get_selected.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:319 a7c9dd03bfdc4fa0b7bbe635222a0f0c
+msgid "Enable or disable highlighting of the selected option."
+msgstr "启用或禁用选中选项的高亮显示。"
+
+#: ../../en/m5ui/dropdown.rst:321 e80f1c415cd5456f9e3306527123cf4b
+msgid "True to enable highlighting, False to disable."
+msgstr "True表示启用高亮显示，False表示禁用。"
+
+#: ../../en/m5ui/dropdown.rst:326 a5766e79c51e48bea6bfd4c77b69e975
+msgid "|set_selected_highlight.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:21 8ec98d6e1da344d28155b4d75ffddec6
+msgid "set_selected_highlight.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:337 36858c591926468c8810f262e43128fa
+msgid "Clear all options in a drop-down list."
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:339 d41f7ef1b01e43f49dacebeb1c7b16ce
+msgid "The number of options in the dropdown."
+msgstr "下拉菜单中的选项数量。"
+
+#: ../../en/m5ui/dropdown.rst:344 4f8446661ea54e8da7b634ecc47eb6b1
+msgid "|get_option_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:8 5acf63a3011140b1bffda0b916450328
+msgid "get_option_count.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:354 338c769b472f4ddfa4aca737da0bbb47
+msgid "Get the index of an option."
+msgstr "获取选项的索引。"
+
+#: ../../en/m5ui/dropdown.rst:356 61ce09b747cf42c1811919f494919ff1
+msgid "The option to find."
+msgstr "要查找的选项。"
+
+#: ../../en/m5ui/dropdown.rst:357 60f10232137c4298aa19eaeb0cdc3a48
+msgid "The index of the option, or -1 if not found."
+msgstr "选项的索引，如果未找到则返回-1。"
+
+#: ../../en/m5ui/dropdown.rst:362 82f7c1cb31ae4259ac1ba03d9348583b
+msgid "|get_option_index.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:9 11035d5f45954fb490cb79b828d3b47c
+msgid "get_option_index.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:377 224d7ab3416f4ee7b457e0e402dea9f7
+msgid "Get text of the drop-down list's button."
+msgstr "获取下拉列表按钮的文本。"
+
+#: ../../en/m5ui/dropdown.rst:379 330781e93c684698ad7763f058302280
+msgid "The text of the dropdown button."
+msgstr "下拉菜单按钮的文本。"
+
+#: ../../en/m5ui/dropdown.rst:384 14d3bfd80124446f9e9a2bd9821fa2f9
+msgid "|get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:13 f2aad20fc8884ebf8d69a3b42faa7861
+msgid "get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:396 73922f8b9df64159b6f8eab98983bb34
+msgid "Set text of the drop-down list's button."
+msgstr "设置下拉列表按钮的文本。"
+
+#: ../../en/m5ui/dropdown.rst:398 22c3546a1424404e943fe50c983e5984
+msgid "The text to set for the dropdown button."
+msgstr "为下拉按钮设置的文本。"
+
+#: ../../en/m5ui/dropdown.rst:403 f73929b35e9e4aa997ef451585055b9a
+msgid "|set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:24 6e54502bcd424a00bce19eaa78a3ab85
+msgid "set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/dropdown.rst:414 3d6a88cfc35847a994a4d00e843c4c8d
+msgid ""
+"Add an event callback to the dropdown. The callback will be called when "
+"the specified event occurs."
+msgstr "为下拉菜单添加事件回调。当指定事件发生时将调用回调函数。"
+
+#: ../../en/m5ui/dropdown.rst:416 f98d9f64457b4de8a30ca7779da852dc
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/dropdown.rst:417 d1b40fbc8e824a44a81a9d28359a7cac
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/dropdown.rst:418 d5bcaa98c0c34fd1bb1f11f21c62ee17
+msgid "Optional user data to pass to the callback."
+msgstr "要传递给回调函数的可选用户数据。"
+
+#: ../../en/m5ui/dropdown.rst:423 ad5e46b00c8f45b9a148e66db7ce66a8
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:6 6044d1d1d2f040d9b290d630362d88e2
+msgid "event.png"
+msgstr ""
+
+#: 22c3546a1424404e943fe50c983e5984 m5ui.dropdown.M5Dropdown.set_options:1 of
+msgid "Set the options for the dropdown."
+msgstr "设置下拉菜单的选项。"
+
+#: 5e5f40db66b94996b58f78217dd3f8c5 m5ui.dropdown.M5Dropdown.set_options:7 of
+msgid "|set_options.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:19 87a40a190ef5409497a3b867f4461d65
+msgid "set_options.png"
+msgstr ""
+
+#: e2a1c59745bf4a72a981db82fd07b3d5 m5ui.dropdown.M5Dropdown.get_options:1 of
+msgid "Get the list of options in the dropdown."
+msgstr "获取下拉菜单中的选项列表。"
+
+#: 8b77727f0f4043a6bcfe4352cae1f682 m5ui.dropdown.M5Dropdown.get_options:3 of
+msgid "The list of options."
+msgstr "选项列表。"
+
+#: 51377ae99f594f29b525f95074e2bdd1 m5ui.dropdown.M5Dropdown.add_option:1 of
+msgid "Add an option to the dropdown at a specific position."
+msgstr "在特定位置的下拉菜单中添加一个选项。"
+
+#: 8abf1947fc8c457c90b8b4a7e9c5a6f1 m5ui.dropdown.M5Dropdown.add_option:3 of
+msgid "The option to add."
+msgstr "要添加的选项。"
+
+#: 692d0db9d3ac444f93a788ad0431b582 m5ui.dropdown.M5Dropdown.add_option:4 of
+msgid "The position to insert the option at."
+msgstr "要插入选项的位置。"
+
+#: 328943f02eb44498bd93d68813a681e4 m5ui.dropdown.M5Dropdown.add_option:8 of
+msgid "|add_option.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:3 8ec5dbbb8b2041a1b1309cc8b518fea5
+msgid "add_option.png"
+msgstr ""
+
+#: 6a4323ba9c8043dc99944d15b791174a m5ui.dropdown.M5Dropdown.clear_options:1 of
+msgid "Clear all options in the dropdown."
+msgstr "清空下拉菜单中的所有选项。"
+
+#: b5395903259b41f197506f07f21e3bc4 m5ui.dropdown.M5Dropdown.clear_options:5 of
+msgid "|clear_options.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:5 ac4daea94abc431fb62d371e2527583e
+msgid "clear_options.png"
+msgstr ""
+
+#: 0d59a966cbd342579c74ca55f0987e1b m5ui.dropdown.M5Dropdown.get_selected_str:1
+#: of
+msgid "Get the currently selected option as a string."
+msgstr "以字符串形式获取当前选中的选项。"
+
+#: 59d26dd07e884368b07e5fd80cd669b3 m5ui.dropdown.M5Dropdown.get_selected_str:3
+#: of
+msgid "The selected option as a string."
+msgstr "选中的选项（字符串形式）。"
+
+#: 706b90f72ea34ea69b5351e11e65ab02 m5ui.dropdown.M5Dropdown.get_selected_str:7
+#: of
+msgid "|get_selected_str.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:12 6d26f1a5a28743548af9c44aee1c2ec9
+msgid "get_selected_str.png"
+msgstr ""
+
+#: 4349f6022c194b9eb659bc584d8a8a59 m5ui.dropdown.M5Dropdown.set_dir:1 of
+msgid "Set the direction of the dropdown."
+msgstr "设置下拉菜单的方向。"
+
+#: f73929b35e9e4aa997ef451585055b9a m5ui.dropdown.M5Dropdown.set_dir:7 of
+msgid "|set_dir.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.dropdown.ref:16 6e54502bcd424a00bce19eaa78a3ab85
+msgid "set_dir.png"
+msgstr ""
+
+#: 7b2c09f862be4674aa37a2075a76815f m5ui.dropdown.M5Dropdown.set_style_radius:1
+#: of
+msgid "Set the radius of the dropdown's corners."
+msgstr "设置下拉菜单角的半径。"
+
+#: 07b9a99ba6d5465c81b82abe60d58ab4 m5ui.dropdown.M5Dropdown.set_style_radius:3
+#: of
+msgid "The radius of the corners in pixels."
+msgstr "角的半径（以像素为单位）。"
+
+#: 549549766913468f816dc935b87a2794 m5ui.dropdown.M5Dropdown.set_style_radius:4
+#: of
+msgid "The part of the dropdown to apply the radius to, e.g., `lv.PART.MAIN`."
+msgstr "下拉菜单中应用半径的部分，例如“lv.PART.MAIN”。"
+
