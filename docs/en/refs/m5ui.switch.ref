@@ -10,6 +10,8 @@
 .. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_width.png
 .. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_x.png
 .. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_y.png
+.. |set_direction.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/set_direction.png
+
 
 .. |cores3_switch_event_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/switch/example.png
 

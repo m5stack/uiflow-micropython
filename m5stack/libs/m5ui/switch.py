@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .base import M5Base
+from m5ui.base import M5Base
 import lvgl as lv
 
 
@@ -52,6 +52,42 @@ class M5Switch(lv.switch):
         self.set_bg_color(bg_c_checked, 255, lv.PART.INDICATOR | lv.STATE.CHECKED)
         self.set_bg_color(circle_c, 255, lv.PART.KNOB | lv.STATE.DEFAULT)
         self.set_size(w, h)
+        self.width = w
+        self.height = h
+
+    def set_direction(self, direction):
+        """Set the direction of the switch.
+
+        :param int direction: The direction of the switch.
+
+            Options:
+
+                - 0: Horizontal
+                - 1: Vertical
+
+        UIFlow2 Code Block:
+
+            |set_direction.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                switch_0.set_direction(0)  # Set to horizontal
+                switch_0.set_direction(1)  # Set to vertical
+        """
+
+        cur_w = self.width
+        cur_h = self.height
+        if direction == 0:
+            self.set_size(max(cur_w, cur_h), min(cur_w, cur_h))
+        else:
+            self.set_size(min(cur_w, cur_h), max(cur_w, cur_h))
+
+    def set_size(self, w, h):
+        super().set_size(w, h)
+        self.width = w
+        self.height = h
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
