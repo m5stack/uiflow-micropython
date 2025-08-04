@@ -45,7 +45,7 @@ class M5Line(lv.line):
         super().__init__(parent)
 
         self.set_points(points)
-        self.set_line_color(color, 255)
+        self.set_line_color(color, 255, lv.PART.MAIN)
         self.set_style_line_width(width, lv.PART.MAIN)
         self.set_style_line_rounded(rounded, lv.PART.MAIN)
 
