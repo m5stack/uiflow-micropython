@@ -14,3 +14,13 @@ Index: micropython/ports/esp32/machine_pwm.c
              } else {
                  #if LEDC_SPEED_MODE_MAX > 1
                  #if CONFIG_IDF_TARGET_ESP32
+@@ -232,6 +236,9 @@ static void set_freq(machine_pwm_obj_t *
+         #else
+         #error No supported PWM / LEDC clocks.
+         #endif
++#if CONFIG_IDF_TARGET_ESP32P4
++        timer->clk_cfg = LEDC_USE_XTAL_CLK;
++#endif
+         #if SOC_LEDC_SUPPORT_REF_TICK
+         if (freq < EMPIRIC_FREQ) {
+             timer->clk_cfg = LEDC_USE_REF_TICK;
