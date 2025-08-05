@@ -7,23 +7,27 @@
 class ModbusFrame:
     def __init__(
         self,
-        func_code=0,
-        register=None,
-        fr_type="request",
-        length=None,
-        data=None,
-        error_code=None,
-    ):
+        func_code: int = 0,
+        register: int = None,
+        fr_type: str = "request",
+        length: int = None,
+        data: bytearray = None,
+        error_code: int = None,
+    ) -> None:
         """Init a generic modbus frame.
 
-        Args:
-            func_code (int, optional): Function Code. Defaults to 0.
-            register (int, optional): Register. Defaults to None.
-            fr_type (str, optional): Type of Frame (request or response).
-              Defaults to "request".
-            length (int, optional): Number of registers. Defaults to None.
-            data (bytearray, optional): Data. Defaults to None.
-            error_code (int, optional): Error Code. Defaults to None.
+        :param int func_code: Function code (1-6,15,16). Defaults to 0.
+        :param register: Register. Defaults to None.
+        :type register: int or None
+        :param fr_type: Frame type (request/response). Defaults to "request".
+        :type fr_type: str or None
+        :param length: Length of requested data. Defaults to None.
+        :type length: int or None
+        :param data: Payload. Defaults to None.
+        :type data: bytearray or None
+        :param error_code: Error Code. Defaults to None.
+        :type error_code: int or None
+
         """
 
         self.type = fr_type
@@ -108,7 +112,7 @@ class ModbusFrame:
         self.pdu = None
         self.frame = None
 
-    def _create_pdu(self):
+    def _create_pdu(self) -> None:
         self.pdu = bytearray([])
         self.pdu += bytearray([self.func_code])
 
@@ -133,40 +137,40 @@ class ModbusFrame:
             if self.func_code in [0x81, 0x82, 0x83, 0x84, 0x85, 0x86, 0x8F, 0x90]:
                 self.pdu += bytearray([self.error_code])
 
-    def _create_frame(self):
+    def _create_frame(self) -> None:
         """Override in derived Class"""
         pass
 
-    def get_frame(self):
+    def get_frame(self) -> bytearray:
         if self.frame is None:
             self._create_frame()
         return self.frame
 
 
 class ModbusRTUFrame(ModbusFrame):
-    def __init__(self, device_addr=0, verbose: bool = False, *args, **kwargs):
+    def __init__(self, device_addr: int = 0, verbose: bool = False, *args, **kwargs) -> None:
         """Create modbus rtu frame.
 
-        Args:
-            device_addr (int, optional): Slave address. Defaults to 0.
-            func_code (int, optional): Function code (1-6,15,16). Defaults to 0.
-            register ([type], optional): Register. Defaults to None.
-            fr_type (str, optional): Frame type (request/response). Defaults to "request".
-            length ([type], optional): Length of reqested data. Defaults to None.
-            data ([type], optional): Payload. Defaults to None.
+        :param int device_addr: Slave address. Defaults to 0.
+        :param bool verbose: If True, print debug information. Defaults to False.
+        :param int func_code: Function code (1-6,15,16). Defaults to 0.
+        :param int register: Register. Defaults to None.
+        :param str fr_type: Frame type (request/response). Defaults to "request".
+        :param int length: Length of requested data. Defaults to None.
+        :param bytes data: Payload. Defaults to None.
         """
         super(ModbusRTUFrame, self).__init__(*args, **kwargs)
         self._verbose = verbose
         self.device_addr = device_addr
         self.frame = None
 
-    def _create_frame(self):
+    def _create_frame(self) -> None:
         self._create_pdu()
         self.frame = bytearray([self.device_addr]) + self.pdu
         crc = ModbusRTUFrame._crc16(self.frame)
         self.frame += bytearray([crc & 0xFF, crc >> 8])
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "<ModbusRTUFrame ({}): device: {}, func_code: {}, frame:{}>".format(
             self.type,
             self.device_addr,
@@ -175,7 +179,7 @@ class ModbusRTUFrame(ModbusFrame):
         )
 
     @classmethod
-    def _crc16(cls, data):
+    def _crc16(cls, data: bytearray) -> int:
         offset = 0
         length = len(data)
         if data is None or offset < 0 or offset > len(data) - 1 and offset + length > len(data):
@@ -191,15 +195,18 @@ class ModbusRTUFrame(ModbusFrame):
         return crc
 
     @classmethod
-    def parse_frame(cls, frame, fr_type=None, verbose=False):
-        """Factory Method: Create a ModbusRTUFrame from bytearray.
+    def parse_frame(
+        cls, frame: bytearray, fr_type: str = None, verbose: bool = False
+    ) -> "ModbusRTUFrame":
+        """Create a ModbusRTUFrame from bytearray.
 
-        Args:
-            frame (bytearray): frame to parse.
-            fr_type (str, optional): request, response, or None
-
-        Returns:
-            ModbusRTUFrame: parsed frame
+        :param bytearray frame: The frame to parse.
+        :param str fr_type: Type of frame, either "request", "response", or
+                            None. If None, it will try to determine the type
+                            automatically.
+        :param bool verbose: If True, print debug information.
+        :return: ModbusRTUFrame object if parsing was successful, None otherwise.
+        :rtype: ModbusRTUFrame or None
         """
 
         verbose and print("Parsing RTU frame: " + " ".join(["{:02x}".format(x) for x in frame]))
@@ -278,15 +285,14 @@ class ModbusRTUFrame(ModbusFrame):
         # raise ValueError("Could not parse Frame " + " ".join(["{:02x}".format(x) for x in frame]))
 
     @classmethod
-    def _check_both(cls, frame):
-        """Parser-Helper: if func_code is 0x05 or 0x06, we can't decide if it is a
-        request or a response. This method checks, if is a valid 0x05- or 0x06-frame.
+    def _check_both(cls, frame: bytearray) -> bool:
+        """if func_code is 0x05 or 0x06, we can't decide if it is a request or a
+        response. This method checks, if is a valid 0x05- or 0x06-frame.
 
-        Args:
-            frame (bytearray): The frame to check.
+        :param bytearray frame: The frame to check.
 
-        Returns:
-            bool: True, if it is a valid 0x05- or 0x06-frame.
+        :return: True, if it is a valid 0x05- or 0x06-frame.
+        :rtype: bool
         """
         try:
             func_code = frame[1]
@@ -297,15 +303,13 @@ class ModbusRTUFrame(ModbusFrame):
             return False
 
     @classmethod
-    def _check_request(cls, frame):
-        """Parser-Helper: This method checks, if is a valid request. It returns False,
+    def _check_request(cls, frame: bytearray) -> bool:
+        """This method checks, if is a valid request. It returns False,
         if the frame could be a request or a response.
 
-        Args:
-            frame (bytearray): The frame to check.
-
-        Returns:
-            bool: True, if it is a valid request.
+        :param bytearray frame: The frame to check.
+        :return: True, if it is a valid request.
+        :rtype: bool
         """
         try:
             func_code = frame[1]
@@ -321,15 +325,13 @@ class ModbusRTUFrame(ModbusFrame):
             return False
 
     @classmethod
-    def _check_response(cls, frame):
-        """Parser-Helper: This method checks, if is a valid response. It returns False,
+    def _check_response(cls, frame: bytearray) -> bool:
+        """This method checks, if is a valid response. It returns False,
         if the frame could be a request or a response.
 
-        Args:
-            frame (bytearray): The frame to check.
-
-        Returns:
-            bool: True, if it is a valid response.
+        :param bytearray frame: The frame to check.
+        :return: True, if it is a valid response.
+        :rtype: bool
         """
         try:
             func_code = frame[1]
@@ -345,14 +347,12 @@ class ModbusRTUFrame(ModbusFrame):
             return False
 
     @classmethod
-    def transform_frame(cls, tcp_frame):
+    def transform_frame(cls, tcp_frame: "ModbusTCPFrame") -> "ModbusRTUFrame":
         """transform a tcp-frame to a rtu-frame and copy all data
 
-        Args:
-            tcp_frame (ModbusTCPFrame): tcp-frame
-
-        Returns:
-            ModbusRTUFrame
+        :param ModbusTCPFrame tcp_frame: tcp-frame to transform
+        :return: ModbusRTUFrame object with data from tcp_frame
+        :rtype: ModbusRTUFrame
         """
         frame = ModbusRTUFrame()
         frame.data = tcp_frame.data
@@ -365,24 +365,27 @@ class ModbusRTUFrame(ModbusFrame):
 
 
 class ModbusTCPFrame(ModbusFrame):
-    def __init__(self, transaction_id=0, unit_id=0, *args, **kwargs):
+    def __init__(self, transaction_id: int = 0, unit_id: int = 0, *args, **kwargs) -> None:
         """Create modbus tcp frame.
 
-        Args:
-            transaction_id (int, optional): Transaction ID. Defaults to 0.
-            unit_id (int, optional): Unit address. Defaults to 0.
-            func_code (int, optional): Function code (1-6,15,16). Defaults to 0.
-            register ([type], optional): Register. Defaults to None.
-            fr_type (str, optional): Frame type (request/response). Defaults to "request".
-            length ([type], optional): Length of reqested data. Defaults to None.
-            data ([type], optional): Payload. Defaults to None.
+        :param int transaction_id: Transaction ID. Defaults to 0.
+        :param int unit_id: Unit address. Defaults to 0.
+        :param int func_code: Function code (1-6,15,16). Defaults to 0.
+        :param register: Register. Defaults to None.
+        :type register: int or None
+        :param fr_type: Frame type (request/response). Defaults to "request".
+        :type fr_type: str or None
+        :param length: Length of requested data. Defaults to None.
+        :type length: int or None
+        :param data: Payload. Defaults to None.
+        :type data: bytearray or None
         """
         super(ModbusTCPFrame, self).__init__(*args, **kwargs)
         self.transaction_id = transaction_id
         self.unit_id = unit_id
         self.frame = None
 
-    def _create_frame(self):
+    def _create_frame(self) -> None:
         self._create_pdu()
         self.frame = bytearray([self.transaction_id >> 8, self.transaction_id & 0xFF])
         self.frame += bytearray([0x00, 0x00])  # Protocol ID
@@ -391,20 +394,19 @@ class ModbusTCPFrame(ModbusFrame):
         self.frame += bytearray([self.unit_id])
         self.frame += self.pdu
 
-    def __str__(self):
+    def __str__(self) -> str:
         return "<ModbusTCPFrame ({}): func_code: {}, frame:{}>".format(
             self.type, self.func_code, " ".join(["{:02x}".format(x) for x in self.get_frame()])
         )
 
     @classmethod
-    def parse_frame(cls, frame, verbose=False):
-        """Factory Method: Create a ModbusTCPFrame from bytearray.
+    def parse_frame(cls, frame: bytearray, verbose: bool = False) -> "ModbusTCPFrame":
+        """Create a ModbusTCPFrame from bytearray.
 
-        Args:
-            frame (bytearray): frame to parse.
-
-        Returns:
-            ModbusTCPFrame: parsed frame
+        :param bytearray frame: The frame to parse.
+        :param bool verbose: If True, print debug information.
+        :return: ModbusTCPFrame object if parsing was successful, None otherwise.
+        :rtype: ModbusTCPFrame or None
         """
 
         verbose and print("Parsing TCP frame: " + " ".join(["{:02x}".format(x) for x in frame]))
@@ -454,7 +456,7 @@ class ModbusTCPFrame(ModbusFrame):
 
         f = None
         if cls._check_response(frame, length):
-            verbose and print("frame is request")
+            verbose and print("frame is response")
             if func_code in [0x01, 0x02, 0x03, 0x04]:
                 bc = frame[8]
                 data = frame[9 : 9 + bc]
@@ -492,15 +494,13 @@ class ModbusTCPFrame(ModbusFrame):
         # raise ValueError("Could not parse Frame " + " ".join(["{:02x}".format(x) for x in frame]))
 
     @classmethod
-    def _check_both(cls, frame, length):
-        """Parser-Helper: if func_code is 0x05 or 0x06, we can't decide if it is a
+    def _check_both(cls, frame: bytearray, length: int) -> bool:
+        """if func_code is 0x05 or 0x06, we can't decide if it is a
         request or a response. This method checks, if is a valid 0x05- or 0x06-frame.
 
-        Args:
-            frame (bytearray): The frame to check.
-
-        Returns:
-            bool: True, if it is a valid 0x05- or 0x06-frame.
+        :param bytearray frame: The frame to check.
+        :returns: True, if it is a valid 0x05- or 0x06-frame.
+        :rtype: bool
         """
         try:
             func_code = frame[7]
@@ -511,15 +511,13 @@ class ModbusTCPFrame(ModbusFrame):
             return False
 
     @classmethod
-    def _check_request(cls, frame, length):
-        """Parser-Helper: This method checks, if is a valid request. It returns False,
+    def _check_request(cls, frame: bytearray, length: int) -> bool:
+        """This method checks, if is a valid request. It returns False,
         if the frame could be a request or a response.
 
-        Args:
-            frame (bytearray): The frame to check.
-
-        Returns:
-            bool: True, if it is a valid request.
+        :param bytearray frame: The frame to check.
+        :returns: True, if it is a valid request.
+        :rtype: bool
         """
         try:
             func_code = frame[7]
@@ -535,15 +533,13 @@ class ModbusTCPFrame(ModbusFrame):
             return False
 
     @classmethod
-    def _check_response(cls, frame, length):
-        """Parser-Helper: This method checks, if is a valid response. It returns False,
+    def _check_response(cls, frame: bytearray, length: int) -> bool:
+        """This method checks, if is a valid response. It returns False,
         if the frame could be a request or a response.
 
-        Args:
-            frame (bytearray): The frame to check.
-
-        Returns:
-            bool: True, if it is a valid response.
+        :param bytearray frame: The frame to check.
+        :returns: True, if it is a valid response.
+        :rtype: bool
         """
         try:
             func_code = frame[7]

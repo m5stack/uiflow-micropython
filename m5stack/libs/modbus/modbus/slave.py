@@ -50,6 +50,13 @@ class ModbusSlave:
     }
 
     def __init__(self, sl_type="tcp", context=None, ignore_unit_id=False, device_address=1):
+        """Basic Modbus Slave class
+
+        :param str sl_type: Modbus type (tcp or rtu)
+        :param dict context: Initial register context
+        :param bool ignore_unit_id: Whether to ignore unit id in requests
+        :param int device_address: Device address for RTU mode
+        """
         self.sl_type = sl_type
         self.context = context
         self.ignore_unit_id = ignore_unit_id
@@ -80,9 +87,21 @@ class ModbusSlave:
         }
 
     def set_callback(self, event, callback):
+        """Set callback function for specific modbus event
+
+        :param int event: Event code (0x01-0x2B)
+        :param function callback: Callback function to handle the event
+        """
         self.cb[event] = callback
 
     def _add_register_in_context(self, reg_type, register, value):
+        """Add a register to the context
+
+        :param str reg_type: Type of register (coils, discrete_inputs, holding_registers, input_registers)
+        :param int register: Register address
+        :param value: Value to add
+        :raises: KeyError if register type is invalid
+        """
         if reg_type not in self._available_register_types:
             raise KeyError(
                 "{} is Invalid register type of {}".format(
@@ -120,6 +139,12 @@ class ModbusSlave:
                 regs.pop(i)
 
     def _remove_register_from_context(self, reg_type, register):
+        """Remove a register from the context
+
+        :param str reg_type: Type of register (coils, discrete_inputs, holding_registers, input_registers)
+        :param int register: Register address
+        :raises: KeyError if register type is invalid
+        """
         if reg_type not in self._available_register_types:
             raise KeyError(
                 "{} is Invalid register type of {}".format(
@@ -160,82 +185,73 @@ class ModbusSlave:
                     regs[i], regs[j] = regs[j], regs[i]
 
     def add_coil(self, register: int, value: bool) -> None:
-        """Add a coil to the modbus register dictionary.
+        """Add a coil to the modbus register dictionary
 
-        Args:
-            register (int): address of the coils. The address is 0x0000 to 0xFFFF.
-            value (bool): Value to add. The value is True or False.
-
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF
+        :param bool value: Value to add. The value is True or False
         """
         self._add_register_in_context("coils", register, value)
 
     def add_discrete_input(self, register: int, value: bool) -> None:
-        """Add a discrete input to the modbus register dictionary.
+        """Add a discrete input to the modbus register dictionary
 
-        Args:
-            register (int): address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-            value (bool): Value to add. The value is True or False.
-
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF
+        :param bool value: Value to add. The value is True or False
         """
         self._add_register_in_context("discrete_inputs", register, value)
 
     def add_holding_register(self, register: int, value: int) -> None:
-        """Add a holding register to the modbus register dictionary.
+        """Add a holding register to the modbus register dictionary
 
-        Args:
-            register (int): address of the holding registers. The address is 0x0000 to 0xFFFF.
-            value (int): Value to add. The value is 0x0000 to 0xFFFF.
-
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF
         """
         self._add_register_in_context("holding_registers", register, value)
 
     def add_input_register(self, register: int, value: int) -> None:
-        """Add an input register to the modbus register dictionary.
+        """Add an input register to the modbus register dictionary
 
-        Args:
-            register (int): address of the input registers. The address is 0x0000 to 0xFFFF.
-            value (int): Value to add. The value is 0x0000 to 0xFFFF.
-
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF
         """
         self._add_register_in_context("input_registers", register, value)
 
     def remove_coil(self, register: int) -> None:
-        """Remove a coil from the modbus register dictionary.
+        """Remove a coil from the modbus register dictionary
 
-        Args:
-            register (int): address of the coils. The address is 0x0000 to 0xFFFF.
-
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF
         """
         self._remove_register_from_context("coils", register)
 
     def remove_discrete_input(self, register: int) -> None:
-        """Remove a discrete input from the modbus register dictionary.
+        """Remove a discrete input from the modbus register dictionary
 
-        Args:
-            register (int): address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF
         """
         self._remove_register_from_context("discrete_inputs", register)
 
     def remove_holding_register(self, register: int) -> None:
-        """Remove a holding register from the modbus register dictionary.
+        """Remove a holding register from the modbus register dictionary
 
-        Args:
-            register (int): address of the holding registers. The address is 0x0000 to 0xFFFF.
-
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF
         """
         self._remove_register_from_context("holding_registers", register)
 
     def remove_input_register(self, register) -> None:
-        """Remove an input register from the modbus register dictionary.
+        """Remove an input register from the modbus register dictionary
 
-        Args:
-            register (int): address of the input registers. The address is 0x0000 to 0xFFFF.
-
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF
         """
         self._remove_register_from_context("input_registers", register)
 
     def _get_reg_data(self, reg_type: str, register: int):
+        """Get register data from context
+
+        :param str reg_type: Type of register
+        :param int register: Register address
+        :returns: Register value
+        :raises: KeyError if register type is invalid or register not found
+        """
         if reg_type not in self._available_register_types:
             raise KeyError(
                 "{} is Invalid register type of {}".format(
@@ -251,6 +267,13 @@ class ModbusSlave:
         raise KeyError("Register {} not found in context".format(register))
 
     def _set_reg_data(self, reg_type, register, value):
+        """Set register data in context
+
+        :param str reg_type: Type of register
+        :param int register: Register address
+        :param value: Value to set
+        :raises: KeyError if register type is invalid or register not found
+        """
         if reg_type not in self._available_register_types:
             raise KeyError(
                 "{} is Invalid register type of {}".format(
@@ -267,6 +290,13 @@ class ModbusSlave:
         raise KeyError("Register {} not found in context".format(register))
 
     def _set_reg_datablock(self, reg_type: str, register: int, block: list):
+        """Set multiple register data in context
+
+        :param str reg_type: Type of register
+        :param int register: Starting register address
+        :param list block: List of values to set
+        :raises: KeyError if register type is invalid or register not found
+        """
         if reg_type not in self._available_register_types:
             raise KeyError(
                 "{} is Invalid register type of {}".format(
@@ -287,125 +317,115 @@ class ModbusSlave:
         raise KeyError("Register {} not found in context".format(register))
 
     def get_coil(self, register: int) -> bool:
-        """Get the coil value.
+        """Get the coil value
 
-        Args:
-            register (int): address of the coils. The address is 0x0000 to 0xFFFF.
-
-        Returns:
-            bool: Value of the coil. The value is True or False.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF
+        :returns: Value of the coil. The value is True or False
+        :rtype: bool
         """
         return self._get_reg_data("coils", register)
 
     def get_discrete_input(self, register: int) -> bool:
-        """Get the discrete input value.
+        """Get the discrete input value
 
-        Args:
-            register (int): address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-
-        Returns:
-            bool: Value of the discrete input. The value is True or False.
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF
+        :returns: Value of the discrete input. The value is True or False
+        :rtype: bool
         """
         return self._get_reg_data("discrete_inputs", register)
 
     def get_holding_register(self, register: int) -> int:
-        """Get the holding register value.
+        """Get the holding register value
 
-        Args:
-            register (int): address of the holding registers. The address is 0x0000 to 0xFFFF.
-
-        Returns:
-            int: Value of the holding register. The value is 0x0000 to 0xFFFF
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF
+        :returns: Value of the holding register. The value is 0x0000 to 0xFFFF
+        :rtype: int
         """
         return self._get_reg_data("holding_registers", register)
 
     def get_input_register(self, register: int) -> int:
-        """Get the input register value.
+        """Get the input register value
 
-        Args:
-            register (int): address of the input registers. The address is 0x0000 to 0xFFFF.
-
-        Returns:
-            int: Value of the input register. The value is 0x0000 to 0xFFFF
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF
+        :returns: Value of the input register. The value is 0x0000 to 0xFFFF
+        :rtype: int
         """
         return self._get_reg_data("input_registers", register)
 
     def set_coil(self, register: int, value: bool) -> None:
-        """Set the coil value.
+        """Set the coil value
 
-        Args:
-            register (int): address of the coils. The address is 0x0000 to 0xFFFF.
-            value (bool): Value to add. The value is True or False.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF
+        :param bool value: Value to add. The value is True or False
         """
         self._set_reg_data("coils", register, value)
 
     def set_multi_coils(self, register: int, value: list) -> None:
-        """Set the coil value.
+        """Set multiple coil values
 
-        Args:
-            register (int): Start address of the coils. The address is 0x0000 to 0xFFFF.
-            value (bool): Values to write. The item of the list is True or False.
+        :param int register: Start address of the coils. The address is 0x0000 to 0xFFFF
+        :param list value: Values to write. The item of the list is True or False
         """
         self._set_reg_datablock("coils", register, value)
 
     def set_discrete_input(self, register: int, value: bool) -> None:
-        """Set the discrete input value.
+        """Set the discrete input value
 
-        Args:
-            register (int): address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-            value (bool): Value to add. The value is True or False.
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF
+        :param bool value: Value to add. The value is True or False
         """
         self._set_reg_data("discrete_inputs", register, value)
 
     def set_multi_discrete_input(self, register: int, value: list) -> None:
-        """Set the discrete input value.
+        """Set multiple discrete input values
 
-        Args:
-            register (int): Start address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-            Values to write. The item of the list is True or False.
+        :param int register: Start address of the discrete inputs. The address is 0x0000 to 0xFFFF
+        :param list value: Values to write. The item of the list is True or False
         """
         self._set_reg_datablock("discrete_inputs", register, value)
 
     def set_holding_register(self, register: int, value: int) -> None:
-        """Set the holding register value.
+        """Set the holding register value
 
-        Args:
-            register (int): address of the holding registers. The address is 0x0000 to 0xFFFF.
-            value (int): Value to add. The value is 0x0000 to 0xFFFF.
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF
         """
         self._set_reg_data("holding_registers", register, value)
 
     def set_multi_holding_register(self, register: int, value: list) -> None:
-        """Set the holding register value.
+        """Set multiple holding register values
 
-        Args:
-            register (int): Start address of the holding registers. The address is 0x0000 to 0xFFFF.
-            value (int): Values to write. The item of the list is 0x0000 to 0xFFFF.
+        :param int register: Start address of the holding registers. The address is 0x0000 to 0xFFFF
+        :param list value: Values to write. The item of the list is 0x0000 to 0xFFFF
         """
         self._set_reg_datablock("holding_registers", register, value)
 
     def set_input_register(self, register: int, value: int) -> None:
-        """Set the input register value.
+        """Set the input register value
 
-        Args:
-            register (int): address of the input registers. The address is 0x0000 to 0xFFFF.
-            value (int): Value to add. The value is 0x0000 to 0xFFFF.
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF
         """
         self._set_reg_data("input_registers", register, value)
 
     def set_multi_input_register(self, register: int, value: list) -> None:
-        """Set the discrete input value.
+        """Set multiple input register values
 
-        Args:
-            register (int): Start address of the input registers. The address is 0x0000 to 0xFFFF.
-            Values to write. The item of the list is 0x0000 to 0xFFFF.
+        :param int register: Start address of the input registers. The address is 0x0000 to 0xFFFF
+        :param list value: Values to write. The item of the list is 0x0000 to 0xFFFF
         """
         self._set_reg_datablock("input_registers", register, value)
 
     def stop(self) -> None:
+        """Stop the modbus slave"""
         self.stopped = True
 
     def handle_message(self, frame):  # noqa: C901
+        """Handle incoming modbus message frame
+
+        :param frame: Modbus frame to handle
+        :returns: Response frame or None
+        """
         # TODO: Refactor this method
         if self.context is None:
             if self.forward_message is not None:
@@ -680,6 +700,14 @@ class ModbusSlave:
                     )
 
     def _check_register(self, register, length, regs):
+        """Check if register range is valid in context
+
+        :param int register: Starting register address
+        :param int length: Number of registers
+        :param list regs: Register context
+        :returns: True if valid, False otherwise
+        :rtype: bool
+        """
         for reg in regs:
             quantity = len(reg["value"])
             if reg["register"] <= register < reg["register"] + quantity:
@@ -688,6 +716,14 @@ class ModbusSlave:
         return False
 
     def _get_data(self, register, length, regs):
+        """Get data from register context
+
+        :param int register: Starting register address
+        :param int length: Number of registers
+        :param list regs: Register context
+        :returns: List of register values
+        :rtype: list
+        """
         for reg in regs:
             if reg["register"] <= register < reg["register"] + len(reg["value"]):
                 return reg["value"][
@@ -695,6 +731,13 @@ class ModbusSlave:
                 ]
 
     def _set_data(self, register, length, data_Block, data):
+        """Set data in register block
+
+        :param int register: Register address
+        :param int length: Data length
+        :param dict data_Block: Data block structure
+        :param data: Data to set
+        """
         offset = register - data_Block["startAddr"]
         for i in range(length * 2):
             data_Block["registers"][2 * offset + i] = data[i]
@@ -702,6 +745,11 @@ class ModbusSlave:
 
 class _CModbusRTUSlave(ModbusSlave):
     def __init__(self, uart, verbose=False, *args, **kwargs):
+        """Init a modbus RTU slave for CPython
+
+        :param uart: UART object to use
+        :param bool verbose: If True, print debug messages
+        """
         self._verbose = verbose
         self.uart = uart
         super(_CModbusRTUSlave, self).__init__(sl_type="rtu", *args, **kwargs)
@@ -712,12 +760,17 @@ class _CModbusRTUSlave(ModbusSlave):
             self.uart.read_all()
 
     async def run_async(self):
+        """Run the RTU slave asynchronously
+
+        :returns: None
+        """
         self._verbose and print("starting async rtu slave")
         while not self.stopped:
             self.tick()
             await asyncio.sleep(0.1)
 
     def tick(self):
+        """Process incoming RTU messages"""
         if not self.stopped and self.uart.inWaiting():
             rsp = self.uart.read_all()
             frame = ModbusRTUFrame.parse_frame(rsp, verbose=self._verbose)
@@ -739,6 +792,11 @@ class _CModbusRTUSlave(ModbusSlave):
 
 class _MModbusRTUSlave(ModbusSlave):
     def __init__(self, uart, verbose=False, *args, **kwargs):
+        """Init a modbus RTU slave for MicroPython
+
+        :param uart: UART object to use
+        :param bool verbose: If True, print debug messages
+        """
         self._verbose = verbose
         self.uart = uart
         super(_MModbusRTUSlave, self).__init__(
@@ -750,23 +808,33 @@ class _MModbusRTUSlave(ModbusSlave):
         self.rsp = b""
 
     async def run_async(self):
+        """Run the RTU slave asynchronously
+
+        :returns: None
+        """
         self._verbose and print("starting async rtu slave")
         while not self.stopped:
             self.tick()
             await asyncio.sleep(0.1)
 
     def start(self):
+        """Start the RTU slave and clear UART buffer"""
         self.stopped = False
         if self.uart.any() > 0:
             self.uart.read()
 
     def run(self):
+        """Run the RTU slave in blocking mode
+
+        :returns: None
+        """
         self._verbose and print("starting rtu slave")
         while not self.stopped:
             self.tick()
             time.sleep(0.1)
 
     def tick(self):
+        """Process incoming RTU messages"""
         if not self.stopped and self.uart.any():
             rsp = self.rsp + self.uart.read()
             frame = ModbusRTUFrame.parse_frame(rsp, verbose=self._verbose)
@@ -792,6 +860,11 @@ class _MModbusRTUSlave(ModbusSlave):
 
 class ModbusRTUSlave:
     def __new__(cls, *args, **kwargs):
+        """Factory class for RTU Slave
+
+        :returns: Platform-specific RTU slave instance
+        :rtype: _CModbusRTUSlave or _MModbusRTUSlave
+        """
         if sys.implementation.name == "cpython":
             return _CModbusRTUSlave(*args, **kwargs)
         elif sys.implementation.name == "micropython":
@@ -800,6 +873,12 @@ class ModbusRTUSlave:
 
 class _CModbusTCPServer(ModbusSlave):
     def __init__(self, host, port, verbose=False, *args, **kwargs):
+        """Init a modbus TCP server for CPython
+
+        :param str host: Server host address
+        :param int port: Server port number
+        :param bool verbose: If True, print debug messages
+        """
         self.host = host
         self.port = port
         self._verbose = verbose
@@ -811,6 +890,7 @@ class _CModbusTCPServer(ModbusSlave):
         )
 
     def start(self):
+        """Start the TCP server"""
         self.poll = select.poll()
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.bind((self.host, self.port))
@@ -819,6 +899,10 @@ class _CModbusTCPServer(ModbusSlave):
         self.clients = {}
 
     def run(self):
+        """Run the TCP server in blocking mode
+
+        :returns: None
+        """
         while not self.stopped:
             conn, addr = self.sock.accept()
             self._verbose and print("new connection from {}".format(addr))
@@ -843,6 +927,10 @@ class _CModbusTCPServer(ModbusSlave):
         self.sock.close()
 
     def tick(self):
+        """Process TCP connections in non-blocking mode
+
+        :returns: None
+        """
         if not self.stopped:
             fds = self.poll.poll(10)
             for fd, event in fds:
@@ -919,6 +1007,12 @@ class _CModbusTCPServer(ModbusSlave):
 
 class _MModbusTCPServer(ModbusSlave):
     def __init__(self, host, port, verbose=False, *args, **kwargs):
+        """Init a modbus TCP server for MicroPython
+
+        :param str host: Server host address
+        :param int port: Server port number
+        :param bool verbose: If True, print debug messages
+        """
         self.host = host
         self.port = port
         self._verbose = verbose
@@ -930,8 +1024,6 @@ class _MModbusTCPServer(ModbusSlave):
         )
 
     def start(self):
-        import select
-
         self.poll = select.poll()
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.bind((self.host, self.port))
@@ -963,8 +1055,6 @@ class _MModbusTCPServer(ModbusSlave):
         self.sock.close()
 
     def tick(self):
-        import select
-
         if not self.stopped:
             fds = self.poll.poll(10)
             for fd, event in fds:
@@ -981,6 +1071,7 @@ class _MModbusTCPServer(ModbusSlave):
                             self.ignore_unit_id is not True
                             and frame.unit_id != self._device_address
                         ):
+                            self._verbose and print("unit id not match")
                             return
                         res = self.handle_message(frame).get_frame()
                         self._verbose and print(res)
@@ -1035,6 +1126,11 @@ class _MModbusTCPServer(ModbusSlave):
 
 class ModbusTCPServer:
     def __new__(cls, *args, **kwargs):
+        """Factory class for TCP Server
+
+        :returns: Platform-specific TCP server instance
+        :rtype: _CModbusTCPServer or _MModbusTCPServer
+        """
         if sys.implementation.name == "cpython":
             return _CModbusTCPServer(*args, **kwargs)
         elif sys.implementation.name == "micropython":

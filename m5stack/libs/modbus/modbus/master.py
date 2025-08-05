@@ -23,47 +23,44 @@ if sys.implementation.name == "micropython":
 
 
 class ModbusMaster:
-    def __init__(self, ms_type: str = "tcp"):
-        """
-        Basic Modbus Master class
+    def __init__(self, ms_type: str = "tcp") -> None:
+        """Basic Modbus Master class
 
         :param str ms_type: Modbus type (tcp or rtu)
         """
         self.ms_type = ms_type
 
     def _send(self, frame: ModbusFrame, timeout: int = 2000) -> ModbusFrame:
-        """
-        MUST BE OVERRIDDEN
+        """MUST BE OVERRIDDEN
 
-        Args:
-            frame (ModbusFrame): the frame to send
-
-        Returns:
-            ModbusFrame: response
+        :param ModbusFrame frame: the frame to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: ModbusFrame
+        :raises: NotImplementedError
         """
         raise NotImplementedError
 
     async def _send_async(self, frame: ModbusFrame, timeout: int = 2000) -> ModbusFrame:
         """MUST BE OVERRIDDEN (async)
 
-        Args:
-            frame (ModbusFrame): the frame to send
-
-        Returns:
-            ModbusFrame: response
+        :param ModbusFrame frame: the frame to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: ModbusFrame
+        :raises: NotImplementedError
         """
         raise NotImplementedError
 
     def read_coils(self, address: int, register: int, quantity: int, timeout: int = 2000) -> list:
         """Read a number (quantity) of coils
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of coils
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of coils
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = self._read_registers(address, register, quantity, 1, timeout=timeout)
         if data is None:
@@ -79,13 +76,12 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of coils (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of coils
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of coils
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = await self._read_registers_async(address, register, quantity, 1, timeout=timeout)
         if data is None:
@@ -101,13 +97,12 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of digital inputs
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of inputs
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of inputs
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = self._read_registers(address, register, quantity, 2, timeout=timeout)
         if data is None:
@@ -123,13 +118,12 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of digital inputs (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of inputs
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of inputs
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = await self._read_registers_async(address, register, quantity, 2, timeout=timeout)
         if data is None:
@@ -145,13 +139,12 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of holding registers
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of holding registers
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of holding registers
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = self._read_registers(address, register, quantity, 3, timeout=timeout)
         if data is None:
@@ -167,13 +160,12 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of holding registers (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of holding registers
-
-        Returns:
-            list: response
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of holding registers
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: list
         """
         data = await self._read_registers_async(address, register, quantity, 3, timeout=timeout)
         if data is None:
@@ -189,13 +181,11 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of input registers
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of input registers
-
-        Returns:
-            list: response
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of input registers
+        :returns: response
+        :rtype: list
         """
         data = self._read_registers(address, register, quantity, 4, timeout=timeout)
         if data is None:
@@ -210,13 +200,13 @@ class ModbusMaster:
     ) -> list:
         """Read a number (quantity) of input registers (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of input registers
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of input registers
+        :param int timeout: timeout in milliseconds
 
-        Returns:
-            list: response
+        :returns: response
+        :rtype: list
         """
         data = await self._read_registers_async(address, register, quantity, 4, timeout=timeout)
         if data is None:
@@ -231,17 +221,19 @@ class ModbusMaster:
     ) -> bytearray:
         """private helper function
 
-        Args:
-            register (int): start register
-            quantity (int): number of registers
-            code (int): function code
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of registers
+        :param int code: function code
+        :param int timeout: timeout in milliseconds
 
-        Returns:
-            bytearray: response
+        :returns: response
+        :rtype: bytearray
         """
         if self.ms_type == "tcp":
             f = ModbusTCPFrame(
                 transaction_id=self.ti,
+                unit_id=address,
                 func_code=code,
                 register=register,
                 fr_type="request",
@@ -274,14 +266,13 @@ class ModbusMaster:
     ) -> bytearray:
         """private helper function (asnc)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            quantity (int): number of registers
-            code (int): function code
-
-        Returns:
-            bytearray: response
+        :param int address: slave address
+        :param int register: start register
+        :param int quantity: number of registers
+        :param int code: function code
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         if self.ms_type == "tcp":
             f = ModbusTCPFrame(
@@ -318,17 +309,14 @@ class ModbusMaster:
     ) -> bool:
         """Write a coil
 
-        Args:
-            address (int): slave address
-            register (int): register of the coil
-            value (bool or int or str): True/1/"on"/"ON"/"On" or False/0/"off"/"OFF"/"Off"
-
-        Raises:
-            ValueError: if value is not valid
-            ValueError: if coil can't be written
-
-        Returns:
-            bool: The value of the coil
+        :param int address: slave address
+        :param int register: register of the coil
+        :param value: the value to write
+        :type value: bool or int or str
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bool
+        :raises: ValueError if value is not valid or coil can't be written
         """
         if value in [True, 1, "on", "ON", "On"]:
             data = bytearray([0xFF, 0x00])
@@ -346,16 +334,15 @@ class ModbusMaster:
     ) -> bool:
         """Write a coil (async)
 
-        Args:
-            register (int): register of the coil
-            value (bool or int or str): True/1/"on"/"ON"/"On" or False/0/"off"/"OFF"/"Off"
+        :param int address: slave address
+        :param int register: register of the coil
+        :param value: the value to write
+        :type value: bool or int or str
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bool
 
-        Raises:
-            ValueError: if value is not valid
-            ValueError: if coil can't be written
-
-        Returns:
-            bool: The value of the coil
+        :raises: ValueError if value is not valid or coil can't be written
         """
         if value in [True, 1, "on", "ON", "On"]:
             data = bytearray([0xFF, 0x00])
@@ -371,16 +358,12 @@ class ModbusMaster:
     ) -> int:
         """Write a holding register
 
-        Args:
-            address (int): slave address
-            register (int): register of the holding register
-            value (int): value
-
-        Raises:
-            ValueError: if register can't be written
-
-        Returns:
-            int: the written value
+        :param int address: slave address
+        :param int register: register of the holding register
+        :param int value: value to write
+        :param int timeout: timeout in milliseconds
+        :returns: the written value
+        :rtype: int
         """
         resp = self._write_registers(
             address, register, 1, value.to_bytes(2, "big"), 6, timeout=timeout
@@ -394,15 +377,13 @@ class ModbusMaster:
     ) -> int:
         """Write a holding register (async)
 
-        Args:
-            register (int): register of the holding register
-            value (int): value
-
-        Raises:
-            ValueError: if register can't be written
-
-        Returns:
-            int: the written value
+        :param int address: slave address
+        :param int register: register of the holding register
+        :param int value: value to write
+        :param int timeout: timeout in milliseconds
+        :returns: the written value
+        :rtype: int
+        :raises: ValueError if register can't be written
         """
         data = await self._write_registers_async(
             address, register, 1, value.to_bytes(2, "big"), 6, timeout=timeout
@@ -416,16 +397,13 @@ class ModbusMaster:
     ) -> int:
         """Write multiple coils
 
-        Args:
-            address (int): slave address
-            register (int): start register of the coils
-            value (list): value
-
-        Raises:
-            ValueError: if coils can't be written
-
-        Returns:
-            list: the value of the coils
+        :param int address: slave address
+        :param int register: start register of the coils
+        :param list value: value
+        :param int timeout: timeout in milliseconds
+        :returns: the value of the coils
+        :rtype: int
+        :raises: ValueError if coils can't be written
         """
         new_value = bytearray(math.ceil(len(value) / 8))
         for i in range(len(value)):
@@ -441,16 +419,12 @@ class ModbusMaster:
     ) -> list:
         """Write multiple coils (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register of the coils
-            value (list): value
-
-        Raises:
-            ValueError: if coils can't be written
-
-        Returns:
-            int: the value of the coils
+        :param int address: slave address
+        :param int register: start register of the coils
+        :param list value: value
+        :param int timeout: timeout in milliseconds
+        :returns: the value of the coils
+        :raises: ValueError if coils can't be written
         """
         new_value = bytearray(math.ceil(len(value) / 8))
         for i in range(len(value)):
@@ -465,16 +439,13 @@ class ModbusMaster:
     ) -> list:
         """Write multiple registers
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            value (list): value
-
-        Raises:
-            ValueError: if registers can't be written
-
-        Returns:
-            list: the written value
+        :param int address: slave address
+        :param int register: start register
+        :param list value: value
+        :param int timeout: timeout in milliseconds
+        :returns: the written value
+        :rtype: list
+        :raises: ValueError if registers can't be written
         """
         new_value = bytearray(len(value) * 2)
         for i in range(len(value)):
@@ -489,16 +460,13 @@ class ModbusMaster:
     ) -> list:
         """Write multiple registers (async)
 
-        Args:
-            address (int): slave address
-            register (int): start register
-            value (list): value
-
-        Raises:
-            ValueError: if registers can't be written
-
-        Returns:
-            list: the written value
+        :param int address: slave address
+        :param int register: start register
+        :param list value: value
+        :param int timeout: timeout in milliseconds
+        :returns: the written value
+        :rtype: list
+        :raises: ValueError if registers can't be written
         """
         new_value = bytearray(len(value) * 2)
         for i in range(len(value)):
@@ -517,20 +485,17 @@ class ModbusMaster:
         code: int,
         timeout: int = 2000,
     ) -> bytearray or int:
-        """Helper function
+        """Helper function to write registers
 
-        Args:
-            address (int): slave address
-            register (int): register
-            quantity (int): quantity
-            value (bytearray): value
-            code (int): function code
-
-        Raises:
-            ValueError: if value can't be written
-
-        Returns:
-            bytearray or int: data or quantity (depending on function code)
+        :param int address: slave address
+        :param int register: register
+        :param int quantity: quantity of registers
+        :param bytearray value: value to write
+        :param int code: function code
+        :param int timeout: timeout in milliseconds
+        :returns: data or quantity (depending on function code)
+        :rtype: bytearray or int
+        :raises: ValueError if value can't be written
         """
         f = None
         if self.ms_type == "tcp":
@@ -621,19 +586,17 @@ class ModbusMaster:
         code: int,
         timeout: int = 2000,
     ) -> bytearray or int:
-        """Helper function (async)
+        """Helper function to write registers
 
-        Args:
-            register (int): register
-            quantity (int): quantity
-            value (bytearray): value
-            code (int): function code
-
-        Raises:
-            ValueError: if value can't be written
-
-        Returns:
-            bytearray or int: data or quantity (depending on function code)
+        :param int address: slave address
+        :param int register: register
+        :param int quantity: quantity of registers
+        :param bytearray value: value to write
+        :param int code: function code
+        :param int timeout: timeout in milliseconds
+        :returns: data or quantity (depending on function code)
+        :rtype: bytearray or int
+        :raises: ValueError if value can't be written
         """
         f = None
         if self.ms_type == "tcp":
@@ -712,12 +675,12 @@ class ModbusMaster:
 
 
 class ModbusTCPClient(ModbusMaster):
-    def __init__(self, host: str, port: int = 502, verbose=False, *args, **kwargs):
+    def __init__(self, host: str, port: int = 502, verbose=False, *args, **kwargs) -> None:
         """Init a modbus tcp client
 
-        Args:
-            host (str): IP or Hostname
-            port (int): Port Defaults to 502
+        :param str host: IP or Hostname of the modbus server
+        :param int port: Port of the modbus server, defaults to 502
+        :param bool verbose: If True, print debug messages
         """
 
         self.host = host
@@ -762,11 +725,10 @@ class ModbusTCPClient(ModbusMaster):
     async def _send_async(self, frame: bytearray, timeout: int = 2000) -> bytearray:
         """Send a frame an return the resonse (async)
 
-        Args:
-            frame (bytearray): data to send
-
-        Returns:
-            bytearray: response
+        :param bytearray frame: data to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         loop = asyncio.get_event_loop()
         self.sock.send(frame)
@@ -807,17 +769,17 @@ class _CModbusRTUMaster(ModbusMaster):
     ):
         """Init a modbus RTU master. Pins or UART-Modul can be passed. If a second slave
 
-        Args:
-            uart_no (int, optional): [description]. Defaults to 1.
-            baudrate (int, optional): [description]. Defaults to 9600.
-            bits (int, optional): [description]. Defaults to 8.
-            stop (int, optional): [description]. Defaults to 1.
-            parity (int, optional): [description]. Defaults to None.
-            tx_pin (int, optional): [description]. Defaults to 14.
-            rx_pin (int, optional): [description]. Defaults to 13.
-            en_pin (int, optional): [description]. Defaults to 15.
-            uart (uart, optional): [description]. Defaults to None.
-            device_addr (int, optional): [description]. Defaults to 1.
+        :param uart_no: UART number
+        :param baudrate: Baudrate for the UART
+        :param bits: Number of data bits
+        :param stop: Number of stop bits
+        :param parity: Parity bit (None, 'N', 'E', 'O')
+        :param tx_pin: Pin for TX (default 14)
+        :param rx_pin: Pin for RX (default 13)
+        :param en_pin: Pin for enable (default 15, -1 for no pin)
+        :param uart: UART object to use (optional)
+        :param device_addr: Modbus device address (default 1)
+        :param verbose: If True, print debug messages
         """
         self._verbose = verbose
         super(_CModbusRTUMaster, self).__init__(ms_type="rtu", *args, **kwargs)
@@ -852,11 +814,10 @@ class _CModbusRTUMaster(ModbusMaster):
     def _send(self, frame: bytearray, timeout: int = 2000) -> bytearray:
         """Send a frame an return the resonse
 
-        Args:
-            frame (bytearray): data to send
-
-        Returns:
-            bytearray: response
+        :param bytearray frame: data to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         self._verbose and print("[MODBUS] M->S: " + " ".join("{:02x}".format(x) for x in frame))
         self.uart.write(frame)
@@ -885,11 +846,10 @@ class _CModbusRTUMaster(ModbusMaster):
     async def _send_async(self, frame: bytearray, timeout: int = 2000) -> bytearray:
         """Send a frame an return the resonse (async)
 
-        Args:
-            frame (bytearray): data to send
-
-        Returns:
-            bytearray: response
+        :param bytearray frame: data to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         # TODO: implement async
         self._verbose and print("[MODBUS] M->S: " + " ".join("{:02x}".format(x) for x in frame))
@@ -935,17 +895,17 @@ class _MModbusRTUMaster(ModbusMaster):
     ):
         """Init a modbus RTU master. Pins or UART-Modul can be passed. If a second slave
 
-        Args:
-            uart_no (int, optional): [description]. Defaults to 1.
-            baudrate (int, optional): [description]. Defaults to 9600.
-            bits (int, optional): [description]. Defaults to 8.
-            stop (int, optional): [description]. Defaults to 1.
-            parity (int, optional): [description]. Defaults to None.
-            tx_pin (int, optional): [description]. Defaults to 14.
-            rx_pin (int, optional): [description]. Defaults to 13.
-            en_pin (int, optional): [description]. Defaults to 15.
-            uart (uart, optional): [description]. Defaults to None.
-            device_addr (int, optional): [description]. Defaults to 1.
+        :param int uart_no: UART number
+        :param int baudrate: Baudrate for the UART
+        :param int bits: Number of data bits
+        :param int stop: Number of stop bits
+        :param int parity: Parity bit (None, 'N', 'E', 'O')
+        :param int tx_pin: Pin for TX (default 14)
+        :param int rx_pin: Pin for RX (default 13)
+        :param int en_pin: Pin for enable (default 15, -1 for no pin)
+        :param uart: UART object to use (optional)
+        :param int device_addr: Modbus device address (default 1)
+        :param bool verbose: If True, print debug messages
         """
         self._verbose = verbose
         super(_MModbusRTUMaster, self).__init__(ms_type="rtu")
@@ -1012,11 +972,10 @@ class _MModbusRTUMaster(ModbusMaster):
     def _send(self, frame: bytearray, timeout: int = 2000) -> bytearray:
         """Send a frame an return the resonse
 
-        Args:
-            frame (bytearray): data to send
-
-        Returns:
-            bytearray: response
+        :param bytearray frame: data to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         self._verbose and print("[MODBUS] M->S: " + " ".join("{:02x}".format(x) for x in frame))
         if self.uart.any() > 0:
@@ -1048,11 +1007,10 @@ class _MModbusRTUMaster(ModbusMaster):
     async def _send_async(self, frame: bytearray, timeout: int = 2000) -> bytearray:
         """Send a frame an return the resonse (async)
 
-        Args:
-            frame (bytearray): data to send
-
-        Returns:
-            bytearray: response
+        :param bytearray frame: data to send
+        :param int timeout: timeout in milliseconds
+        :returns: response
+        :rtype: bytearray
         """
         self._verbose and print("[MODBUS] M->S: " + " ".join("{:02x}".format(x) for x in frame))
         self.uart.write(frame)
