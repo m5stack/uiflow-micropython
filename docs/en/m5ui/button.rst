@@ -1,4 +1,5 @@
 .. currentmodule:: m5ui
+.. _m5ui.M5Button:
 
 M5Button
 ========
