@@ -34,7 +34,6 @@ Classes
 
     page.rst
     arc.rst
-    list.rst
     bar.rst
     button.rst
     calendar.rst
@@ -43,6 +42,7 @@ Classes
     image.rst
     label.rst
     line.rst
+    list.rst
     slider.rst
     switch.rst
     textarea.rst

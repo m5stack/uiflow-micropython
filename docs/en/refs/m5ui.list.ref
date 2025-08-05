@@ -1,25 +1,20 @@
 
-.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/align_to.png
-.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/event.png
-.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_flag.png
-.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_pos.png
-.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_size.png
-.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_width.png
-.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_x.png
-.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/set_y.png
-.. |add_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/add_text.png
-.. |add_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/add_button.png
-.. |move_foreground.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/move_foreground.png
-.. |move_to_index.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/move_to_index.png
-.. |move_background.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/move_background.png
-.. |delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/delete.png
+.. |add_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/add_text.png
+.. |add_text2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/add_text2.png
+.. |add_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/add_button.png
+.. |add_button2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/add_button2.png
+.. |button_move_to_index.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/button_move_to.png
+.. |label_move_to_index.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/label_move_to.png
+.. |button_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/button_delete.png
+.. |label_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/label_delete.png
 
-.. |cores3_list_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/label/cores3_list_example.png
+
+.. |cores3_list_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/list/example.png
 
 .. |cores3_list_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/label/cores3_list_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/list/cores3_list_example.m5f2"
         target="_blank"
     >
         cores3_list_example.m5f2
