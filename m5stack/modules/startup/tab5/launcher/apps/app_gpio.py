@@ -5,7 +5,6 @@
 from .app import AppBase
 from ..hal import *
 import lvgl as lv
-import asyncio
 
 
 class OutputTestPanel:

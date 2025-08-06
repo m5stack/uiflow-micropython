@@ -480,9 +480,6 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
 
     // }
 
-    if (M5.getBoard() == m5::board_t::board_M5Tab5) {
-        M5.Lcd.setRotation(3);
-    }
     M5.Display.clear();
     // default display
     m5_display.gfx = (void *)(&(M5.Display));
@@ -560,7 +557,6 @@ mp_obj_t m5_Displays(mp_obj_t index) {
 }
 
 mp_obj_t m5_getDisplay(mp_obj_t index) {
-    mp_printf(&mp_plat_print, "display index: %d\n", mp_obj_get_int(index));
     gfx_obj_t *o = mp_obj_malloc_with_finaliser(gfx_obj_t, &mp_gfxdevice_type);
     o->gfx = (void *)&(M5.getDisplay(mp_obj_get_int(index)));
     return MP_OBJ_FROM_PTR(o);
