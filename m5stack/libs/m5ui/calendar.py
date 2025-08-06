@@ -102,6 +102,11 @@ class M5Calendar(lv.calendar):
             )
         super().set_highlighted_dates(self.highlighted_days, len(self.highlighted_days))
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)

@@ -62,6 +62,11 @@ class M5Checkbox(lv.checkbox):
         self.set_bg_color(bullet_bg_c, lv.OPA.COVER, lv.PART.INDICATOR | part)
         self.set_border_color(bullet_border_c, lv.OPA.COVER, lv.PART.INDICATOR | part)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)

@@ -49,6 +49,11 @@ class M5Slider(lv.slider):
         self.set_bg_color(bg_c, 51, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.set_bg_color(color, lv.OPA.COVER, lv.PART.INDICATOR | lv.STATE.DEFAULT)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)

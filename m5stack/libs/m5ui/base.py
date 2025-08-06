@@ -137,6 +137,7 @@ class M5Base:
         self.set_style_bg_grad_dir(grad_dir, part)
         time.sleep(0.01)
 
+    @staticmethod
     def set_border_color(self, color: int, opa: int, part: int):
         """Set the border color and opacity for a given part of the object.
 

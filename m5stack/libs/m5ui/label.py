@@ -100,6 +100,11 @@ class M5Label(lv.label):
         """
         self._shadow_label.add_flag(lv.obj.FLAG.HIDDEN)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __del__(self):
         self._shadow_label.delete()
         super().__delete__()
