@@ -102,6 +102,11 @@ class M5Bar(lv.bar):
         label_dsc.text_local = True
         lv.draw_label(event_struct.get_layer(), label_dsc, txt_area)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)

@@ -88,6 +88,11 @@ class M5Line(lv.line):
         self.lv_points.append({"x": x, "y": y})
         super().set_points(self.lv_points, len(self.lv_points))
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)

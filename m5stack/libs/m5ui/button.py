@@ -83,6 +83,11 @@ class M5Button(lv.button):
         """
         self.label.set_text(text)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def get_btn_text(self) -> str:
         """Get the text of the button.
 
