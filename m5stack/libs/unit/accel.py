@@ -87,6 +87,7 @@ class AccelUnit(ADXL345):
 
                 accel_0.disable_motion_detection()
         """
+        super().disable_motion_detection()
 
     def get_data_rate(self) -> int:
         """Get the data rate of the sensor.
@@ -263,7 +264,7 @@ class AccelUnit(ADXL345):
         super().disable_freefall_detection()
 
     def enable_tap_detection(
-        *,
+        self,
         tap_count: int = 1,
         threshold: int = 20,
         duration: int = 50,
