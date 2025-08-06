@@ -94,6 +94,11 @@ class M5Switch(lv.switch):
             raise ValueError("Radius must be a non-negative integer.")
         super().set_style_radius(radius, part)
 
+    def set_style_radius(self, radius: int, part: int) -> None:
+        if radius < 0:
+            raise ValueError("Radius must be a non-negative integer.")
+        super().set_style_radius(radius, part)
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)
