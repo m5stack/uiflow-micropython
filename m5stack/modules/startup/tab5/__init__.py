@@ -4,7 +4,6 @@
 
 import startup
 import M5
-import time
 import lvgl as lv
 import lv_utils
 from .launcher import Launcher, set_hal

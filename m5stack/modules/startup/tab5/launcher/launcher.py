@@ -26,8 +26,12 @@ class Launcher:
         self._init_background()
         self._create_app_panel()
 
-        # Create main loop
-        asyncio.run(self._main())
+        try:
+            # Create main loop
+            asyncio.run(self._main())
+        finally:
+            print("Launcher cleanup complete")
+            M5.Lcd.lvgl_deinit()
 
     def _init_background(self):
         screen = lv.screen_active()
@@ -112,10 +116,7 @@ class Launcher:
         # Start ezdata service
         Ezdata.start()
 
-        try:
-            # Keep app manager running
-            while True:
-                await asyncio.sleep_ms(50)
-                await AppManager.update()
-        except KeyboardInterrupt:
-            M5.Lcd.lvgl_deinit()
+        # Keep app manager running
+        while True:
+            await asyncio.sleep_ms(50)
+            await AppManager.update()

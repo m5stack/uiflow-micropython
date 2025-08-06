@@ -5,7 +5,6 @@
 from .app import AppBase
 from ..hal import *
 import lvgl as lv
-import asyncio
 
 
 COLOR_TEXT_AREA_BG = 0xE6E2E6
