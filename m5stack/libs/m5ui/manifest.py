@@ -20,6 +20,7 @@ package(
         "label.py",
         "line.py",
         "list.py",
+        "msgbox.py",
         "page.py",
         "port.py",
         "roller.py",
