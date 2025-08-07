@@ -34,17 +34,22 @@ class QRCodeM14:
     POS_LIGHT_ON_DECODE = const(2)  # 解码时亮
     POS_LIGHT_FLASH_ON_DECODE = const(1)  # 解码时闪烁
 
-    def __init__(self, id: int = 1, tx: int = 5, rx: int = 6, trig: int = 7, led=None) -> None:
+    def __init__(self, id: int = 1, tx: int = 5, rx: int = 6, trig: int = None, led=None) -> None:
         self.serial = machine.UART(id, baudrate=115200, tx=rx, rx=tx)  # 交叉
         self.serial_handler = serial_cmd_helper.SerialCmdHelper(self.serial, False)
-        self.trig = machine.Pin(trig, machine.Pin.OUT)
+        self.trig = None
+        if trig is not None:
+            self.trig = machine.Pin(trig, machine.Pin.OUT)
         self.led = led
 
     def set_trig(self, value: int) -> None:
         """Set trigger pin. 设置触发引脚。
         :param int value: ``0`` - 低电平，``1`` - 高电平。
         """
-        self.trig.value(value)
+        if self.trig is not None:
+            self.trig.value(value)
+        else:
+            raise RuntimeError("Trigger pin is not initialized.")
 
     def start_decode(self) -> None:
         """Start decode. 开始解码。"""
@@ -260,3 +265,28 @@ class QRCodeM14:
         cmd = bytes([0x21, 0x51, 0x43, mode])
         cmd_ack = bytes([0x22, 0x51, 0x43, 0x00])
         self.serial_handler.cmd(cmd, cmd_ack, timeout_ms=200)
+
+    def get_version(self, timeout_ms=500):
+        self.serial.read()
+        self.serial.write(b'\x43\x02\xc1') # 查询版本
+        start = time.ticks_ms()
+        rx = b''
+        while time.ticks_diff(time.ticks_ms(), start) < timeout_ms:
+            if self.serial.any():
+                time.sleep_ms(5)
+                rx += self.serial.read()
+                data_len = (rx[3] << 8)  + rx[4]
+                if len(rx) >= 4 + data_len:
+                    if rx[0] == 0x44 and rx[1] == 0x02 and rx[2] == 0xC1:
+                        total_len = 4 + data_len
+                        if len(rx) >= total_len:
+                            payload = rx[4:4 + data_len + 1]
+                            try:
+                                version_str = payload.decode('ascii')
+                                return version_str[1:]
+                            except:
+                                return None
+                    else:
+                        return None
+            time.sleep_ms(1)
+        return None

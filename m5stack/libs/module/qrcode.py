@@ -49,6 +49,9 @@ class QRCodeModule(QRCodeM14):
         self.init_device()
         self.set_power(True)  # 默认开启电源
         time.sleep_ms(1000)  # wait for module startup.
+        # Check Version
+        if self.get_version() != "1.0":
+            raise RuntimeError("Module13.2 QRCode not found!")
 
     def _write_reg(self, reg, value):
         self.i2c.writeto(self.address, bytes([reg, value]))
