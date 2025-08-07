@@ -18,6 +18,7 @@ _attrs = {
     "M5Label": "label",
     "M5Line": "line",
     "M5List": "list",
+    "M5Msgbox": "msgbox",
     "M5Page": "page",
     "M5Roller": "roller",
     "M5Scale": "scale",
