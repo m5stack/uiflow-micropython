@@ -1,0 +1,317 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-07 16:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/calendar.rst:4 ../../en/m5ui/calendar.rst:52
+#: 217f50617093415fae7abf285574dab5 b6d947862be6415588b41c19a38223e2
+msgid "M5Calendar"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:8 c2e5003f06b444de9874b83d3fcc4acc
+msgid ""
+"M5Calendar is a widget that can be used to create a calendar in the user "
+"interface. It can be used to display and select dates."
+msgstr "M5Calendar 是一个可在用户界面中创建日历的控件，可用于显示并选择日期。"
+
+#: ../../en/m5ui/calendar.rst:11 3a42f19d5c4446aba40470ba7affa737
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/calendar.rst:14 ../../en/m5ui/calendar.rst:33
+#: a606c5881071472cb448f67cec49b7dd
+msgid "event calendar"
+msgstr "事件日历"
+
+#: ../../en/m5ui/calendar.rst:16 c906ef0de21f4ac1b83b1690231083bf
+msgid "Open the |calendar_core2_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:18 ../../en/m5ui/calendar.rst:35
+#: ee44763896324c1b8a064c54c6537062
+msgid ""
+"This example creates a calendar that triggers an event when the date is "
+"changed."
+msgstr "本示例创建了一个日历，当日期更改时会触发事件。"
+
+#: ../../en/m5ui/calendar.rst:20 ../../en/m5ui/calendar.rst:65
+#: ../../en/m5ui/calendar.rst:82 ../../en/m5ui/calendar.rst:98
+#: ../../en/m5ui/calendar.rst:114 ../../en/m5ui/calendar.rst:131
+#: ../../en/m5ui/calendar.rst:150 ../../en/m5ui/calendar.rst:168
+#: 26eace74ec34442f84ad57404eb2f268 962058dfa346478aa7c20adc9596fcf8
+#: m5ui.calendar.M5Calendar:12 m5ui.calendar.M5Calendar.set_calendar_style:5
+#: m5ui.calendar.M5Calendar.set_highlighted_dates:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/calendar.rst:22 d1976e80d1d84423a3af2543566b6f58
+msgid "|calendar_core2_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:12 fbace895446e4599a06d22144765611a
+msgid "calendar_core2_example.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:24 ../../en/m5ui/calendar.rst:43
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/calendar.rst:26 ../../en/m5ui/calendar.rst:45
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:30 9a90fa3230004c9ca091e2145aab2b7b
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/calendar.rst:37 ../../en/m5ui/calendar.rst:69
+#: ../../en/m5ui/calendar.rst:86 ../../en/m5ui/calendar.rst:102
+#: ../../en/m5ui/calendar.rst:118 ../../en/m5ui/calendar.rst:135
+#: ../../en/m5ui/calendar.rst:154 ../../en/m5ui/calendar.rst:172
+#: 50577195f6b84bf8865333900eabc93e 56f2a4c8de2c486295e3059b8035ade5
+#: m5ui.calendar.M5Calendar:16 m5ui.calendar.M5Calendar.set_calendar_style:9
+#: m5ui.calendar.M5Calendar.set_highlighted_dates:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/calendar.rst:49 8d8a8b8cbd8844d4a77dff79fabb53df
+msgid "**API**"
+msgstr ""
+
+#: 365fff94cd484cfa940c50d770cccff1 m5ui.calendar.M5Calendar:1 of
+msgid "Bases: :py:class:`~lvgl.calendar`"
+msgstr ""
+
+#: ee47ae855f95467c9fcef4b9125a15d3 m5ui.calendar.M5Calendar:1 of
+msgid "Create a calendar object."
+msgstr "创建一个日历对象。"
+
+#: ../../en/m5ui/calendar.rst 7321058bd235427795e5c98da8936948
+#: b230a15c556343699923bf65fe70922e m5ui.calendar.M5Calendar.set_calendar_style
+#: m5ui.calendar.M5Calendar.set_highlighted_dates of
+msgid "Parameters"
+msgstr "参数"
+
+#: dbeee83de64e463bba0857321f1121ec m5ui.calendar.M5Calendar:3 of
+msgid "The x position of the calendar."
+msgstr "日历的 x 坐标。"
+
+#: 8a652163d5d04e52af868368c8c2d834 m5ui.calendar.M5Calendar:4 of
+msgid "The y position of the calendar."
+msgstr "日历的 y 坐标。"
+
+#: ../../en/m5ui/calendar.rst:128 8f2313e750534f6688e145c6f33100d7
+#: m5ui.calendar.M5Calendar:5 of
+msgid "The width of the calendar."
+msgstr "日历的宽度。"
+
+#: ../../en/m5ui/calendar.rst:129 3897da666fcb4e889859e110496867a6
+#: 7d1f8e20d7fe4b99bc3e053d450c08f6 m5ui.calendar.M5Calendar:6 of
+msgid "The height of the calendar."
+msgstr "日历的高度。"
+
+#: 4d04d1d5a8104d91a3ebd0b769d87bab m5ui.calendar.M5Calendar:7 of
+msgid "The style of the calendar, can be \"arrow\" or \"dropdown\" and None."
+msgstr "日历的样式，可为 \"arrow\"、\"dropdown\" 或 None。"
+
+#: 9408b1ae3c644362b458de962b7cb57f m5ui.calendar.M5Calendar:8 of
+msgid "The date to highlight as today in the format [year, month, day]."
+msgstr "要高亮显示为今天的日期，格式为 [year, month, day]。"
+
+#: 469a9454b56e4c3fbac2b2c9e9bc62ad m5ui.calendar.M5Calendar:9 of
+msgid "The month to show in the format [year, month]."
+msgstr "要显示的月份，格式为 [year, month]。"
+
+#: a5e738e915d94263aafdd7e7b6e65d2e m5ui.calendar.M5Calendar:10 of
+msgid ""
+"The parent object to attach the calendar to. If not specified, the "
+"calendar will be attached to the default screen."
+msgstr "要将日历附加到的父对象；若未指定，则附加到默认屏幕。"
+
+#: ../../en/m5ui/calendar.rst:60 f9181e41720d42f99f67a692c7c4006e
+msgid "Set the month and year shown in the calendar."
+msgstr "设置日历显示的年份和月份。"
+
+#: ../../en/m5ui/calendar.rst:62 dbff5892b4da468285e130a1f1f5ccc6
+msgid "The year to show."
+msgstr "要显示的年份。"
+
+#: ../../en/m5ui/calendar.rst:63 8616158910f84b6181c5af1c4bb108cb
+msgid "The month to show."
+msgstr "要显示的月份。"
+
+#: ../../en/m5ui/calendar.rst:67 9a93f2b0428b45f088beb584ae21c96a
+msgid "|set_month_shown.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:5 54456098c7c342bbac67f9567ed1802b
+msgid "set_month_shown.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:77 ea511d661a514094a4d34b8ec8889fdb
+msgid "Set the position of the calendar."
+msgstr "设置日历的位置。"
+
+#: ../../en/m5ui/calendar.rst:79 ../../en/m5ui/calendar.rst:96
+#: 043c2b6ea7aa4e73bd0230a4b81bb0f6 4b604af7ce884cac96c36eca178a4dd0
+msgid "The x-coordinate of the calendar."
+msgstr "日历的 x 坐标。"
+
+#: ../../en/m5ui/calendar.rst:80 ../../en/m5ui/calendar.rst:112
+#: a26aa37256674d769064cf2b96e003ba
+msgid "The y-coordinate of the calendar."
+msgstr "日历的 y 坐标。"
+
+#: ../../en/m5ui/calendar.rst:84 bb13862738a74ddf90a81812b7ea56c4
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:7 dd217a8cc6c2453f890b54aed1dcfbd3
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:94 6f45845359e743ab82fea16ede5cc378
+msgid "Set the x-coordinate of the calendar."
+msgstr "设置日历的 x 坐标。"
+
+#: ../../en/m5ui/calendar.rst:100 9d31009177354958b92ceefc974ed044
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:9 b1fb4df9b0534139972614c7f240feaf
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:110 56b3706541504c2588d9a83be38ffefd
+msgid "Set the y-coordinate of the calendar."
+msgstr "设置日历的 y 坐标。"
+
+#: ../../en/m5ui/calendar.rst:116 73c0036afdfb486ea337ac5b573bb91c
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:10 e6dd933379ed4a04b2a29d12cdebe25c
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:126 0e4eaa2ce50a4074ac04edf25ca22837
+msgid "Set the size of the calendar."
+msgstr "设置日历的尺寸。"
+
+#: ../../en/m5ui/calendar.rst:133
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:8 1692716dfaaa4ff38951963b24a313b3
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:143 3ed4a43ca6d04032b9e47f7ee6ed2d06
+msgid "Align the calendar to another object."
+msgstr "将日历对齐到另一个对象。"
+
+#: ../../en/m5ui/calendar.rst:145 9d1fc49c8e5642539740aad91f6119f0
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/calendar.rst:146 e1b91589524d4389a17501fe9ed5f5a8
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/calendar.rst:147 9b18e7c8d4c6422f86646e311848f390
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/calendar.rst:148 919d1db90c84495fa597db246fc72621
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/calendar.rst:152
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:1 30be346916b74c689b8d5ee956f91b71
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/calendar.rst:162 217923ee1b114d3ea5f143acb5f83c15
+msgid ""
+"Add an event callback to the calendar. The callback will be called when "
+"the specified event occurs."
+msgstr "为日历添加事件回调。当指定事件发生时，将调用该回调函数。"
+
+#: ../../en/m5ui/calendar.rst:164 3a6444c6b1a947e0beb9c9ff3e7a1b74
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/calendar.rst:165 aac00baffb0c4be3b912b176fecc1a5f
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/calendar.rst:166 7070063e6b1345a88f7a63a2a981c04c
+msgid "Optional user data to pass to the callback."
+msgstr "可选用户数据，将传递给回调函数。"
+
+#: ../../en/m5ui/calendar.rst:170 544890c4d33a4b6db3319696a7157174
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:2 888a9bf95c764d04b281c7ccaa141e74
+msgid "event.png"
+msgstr ""
+
+#: 75c0d5a417b742f1bf4bc56e40340c96
+#: m5ui.calendar.M5Calendar.set_calendar_style:1 of
+msgid "Set the style of the calendar header."
+msgstr "设置日历标题的样式。"
+
+#: ee30bd52ad1b44a89cb57ab65bdc386a
+msgid "The style of the calendar header, can be \"arrow\", \"dropdown\", or None."
+msgstr "日历标题的样式，可为 \"arrow\"、\"dropdown\" 或 None。"
+
+#: a0d8d3b2ed5740629d83cbfac1eddf3f
+msgid "|set_calendar_style.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:3 a812371f42104df2853248e9b3e4fc49
+msgid "set_calendar_style.png"
+msgstr ""
+
+#: 231de4ee14454e9891c1c042919695da
+#: m5ui.calendar.M5Calendar.set_highlighted_dates:1 of
+msgid "Set the highlighted dates in the calendar."
+msgstr "设置日历中的高亮日期。"
+
+#: 7a4547f507ae4e64b48dd030477b28c3
+#: m5ui.calendar.M5Calendar.set_highlighted_dates:3 of
+msgid ""
+"A list of dates to highlight in the format [year, month, day, year, "
+"month, day, ...]"
+msgstr "要高亮显示的日期列表，格式为 [year, month, day, year, month, day, ...]"
+
+#: d9f221fc6dd749bd9e629ed464324abf
+#: m5ui.calendar.M5Calendar.set_highlighted_dates:7 of
+msgid "|set_highlighted_dates.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.calendar.ref:6 1f2605c2650b4ed8b59a746391428539
+msgid "set_highlighted_dates.png"
+msgstr ""
+
