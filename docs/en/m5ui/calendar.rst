@@ -13,13 +13,13 @@ UiFlow2 Example
 event calendar
 ^^^^^^^^^^^^^^
 
-Open the |cores3_calendar_event_example.m5f2| project in UiFlow2.
+Open the |calendar_core2_example.m5f2| project in UiFlow2.
 
 This example creates a calendar that triggers an event when the date is changed.
 
 UiFlow2 Code Block:
 
-    |cores3_calendar_event_example.png|
+    |calendar_core2_example.png|
 
 Example output:
 
@@ -36,7 +36,7 @@ This example creates a calendar that triggers an event when the date is changed.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/m5ui/calendar/cores3_calendar_event_example.py
+    .. literalinclude:: ../../../examples/m5ui/calendar/calendar_core2_example.py
         :language: python
         :linenos:
 
@@ -137,38 +137,6 @@ M5Calendar
             .. code-block:: python
 
                 calendar_0.set_size(100, 50)
-
-    .. py:method:: set_width(width)
-
-        Set the width of the calendar.
-
-        :param int width: The width of the calendar.
-
-        UiFlow2 Code Block:
-
-            |set_width.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                calendar_0.set_width(100)
-
-    .. py:method:: set_height(height)
-
-        Set the height of the calendar.
-
-        :param int height: The height of the calendar.
-
-        UiFlow2 Code Block:
-
-            |set_height.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                calendar_0.set_height(50)
 
     .. py:method:: align_to(obj, align, x, y)
 

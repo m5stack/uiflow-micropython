@@ -18,10 +18,6 @@ class M5Calendar(lv.calendar):
     :param list show_month: The month to show in the format [year, month].
     :param lv.obj parent: The parent object to attach the calendar to. If not specified, the calendar will be attached to the default screen.
 
-    UiFlow2 Code Block:
-
-        None
-
     MicroPython Code Block:
 
         .. code-block:: python
