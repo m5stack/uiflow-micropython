@@ -49,5 +49,6 @@ Classes
     roller.rst
     scale.rst
     slider.rst
+    spinbox.rst
     switch.rst
     textarea.rst
