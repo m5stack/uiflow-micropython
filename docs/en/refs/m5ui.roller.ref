@@ -1,0 +1,36 @@
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/align_to.png
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/event.png
+.. |get_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_height.png
+.. |get_option_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_option_count.png
+.. |get_options.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_options.png
+.. |get_selected.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_selected.png
+.. |get_selected_str.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_selected_str.png
+.. |get_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/get_width.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_bg_color.png
+.. |set_border_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_border_color.png
+.. |set_default_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_default_size.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_flag.png
+.. |set_height.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_height.png
+.. |set_options.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_options.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_pos.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_size.png
+.. |set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_state.png
+.. |set_style_border_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_style_border_width.png
+.. |set_style_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_style_radius.png
+.. |set_visible_row_count.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_visible_row_count.png
+.. |set_width.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_width.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/set_y.png
+.. |toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/toggle_flag.png
+.. |toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/toggle_state.png
+
+.. |cores3_roller_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/roller/cores3_roller_basic_example.png
+
+.. |cores3_roller_basic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/roller/cores3_roller_basic_example.m5f2"
+        target="_blank"
+    >
+        cores3_roller_basic_example.m5f2
+    </a>

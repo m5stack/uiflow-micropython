@@ -46,6 +46,7 @@ Classes
     label.rst
     line.rst
     list.rst
+    roller.rst
     scale.rst
     slider.rst
     switch.rst
