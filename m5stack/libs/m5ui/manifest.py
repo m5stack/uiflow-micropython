@@ -25,6 +25,7 @@ package(
         "roller.py",
         "scale.py",
         "slider.py",
+        "spinbox.py",
         "switch.py",
         "textarea.py",
     ),

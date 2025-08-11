@@ -1,0 +1,606 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-27 17:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/m5ui/spinbox.rst:4 ../../en/m5ui/spinbox.rst:55
+#: 4c4d49a533e54005a93490d3a75ecdf0 b40fec91acbf431baf03013474563f9f
+msgid "M5Spinbox"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:8 f95a12e4dfe04f5888cbfd5f83dd134a
+msgid ""
+"M5Spinbox is a widget that provides a numeric input interface with "
+"increment and decrement buttons. It displays a numeric value that can be "
+"adjusted by clicking the + and - buttons or by typing directly. The "
+"spinbox supports both integer and floating-point numbers with "
+"customizable digit count and decimal precision."
+msgstr ""
+"M5Spinbox是一个提供数字输入界面的控件，具有递增和递减按钮。"
+"它显示一个数字值，可以通过单击+和-按钮或直接输入来调整。"
+"数字输入框支持整数和浮点数，具有可自定义的数字位数和小数精度。"
+
+#: ../../en/m5ui/spinbox.rst:14 9073c63fbadd4280b15aabd5e8528969
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/spinbox.rst:17 ../../en/m5ui/spinbox.rst:36
+#: 286e13309ae54e55be1e4c1561c4ae35
+msgid "basic spinbox"
+msgstr "基础数字输入框"
+
+#: ../../en/m5ui/spinbox.rst:19 57413b9cb5ef4d988e9d18c7d532cb26
+msgid "Open the |cores3_spinbox_basic_example.m5f2| project in UiFlow2."
+msgstr "在UiFlow2中打开 |cores3_spinbox_basic_example.m5f2| 项目。"
+
+#: ../../en/m5ui/spinbox.rst:21 ../../en/m5ui/spinbox.rst:38
+#: f727620d42254dc2b4e8feef4cecbef3
+msgid ""
+"This example demonstrates how to create a spinbox with customizable range"
+" and precision settings."
+msgstr "此示例演示如何创建具有可自定义范围和精度设置的数字输入框。"
+
+#: ../../en/m5ui/spinbox.rst:23 ../../en/m5ui/spinbox.rst:69
+#: ../../en/m5ui/spinbox.rst:86 ../../en/m5ui/spinbox.rst:104
+#: ../../en/m5ui/spinbox.rst:121 ../../en/m5ui/spinbox.rst:139
+#: ../../en/m5ui/spinbox.rst:156 ../../en/m5ui/spinbox.rst:173
+#: ../../en/m5ui/spinbox.rst:191 ../../en/m5ui/spinbox.rst:208
+#: ../../en/m5ui/spinbox.rst:225 ../../en/m5ui/spinbox.rst:242
+#: ../../en/m5ui/spinbox.rst:259 ../../en/m5ui/spinbox.rst:279
+#: 0ed679adc9ee474cbc62aaa4ad2d7869 bf23a489e6bb49819e3b07ccf807e74b
+#: m5ui.spinbox.M5Spinbox.add_event_cb:7 m5ui.spinbox.M5Spinbox.get_value:6
+#: m5ui.spinbox.M5Spinbox.set_bg_color:8
+#: m5ui.spinbox.M5Spinbox.set_border_color:8 m5ui.spinbox.M5Spinbox.set_range:8
+#: m5ui.spinbox.M5Spinbox.set_step:6
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:7
+#: m5ui.spinbox.M5Spinbox.set_style_radius:6 m5ui.spinbox.M5Spinbox.set_value:6
+#: of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/spinbox.rst:25 a45738ac5353412fb3e87a67b0b9aa00
+msgid "|cores3_spinbox_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:28 0d0a89f04d8047068995bffd177ca5f7
+msgid "cores3_spinbox_basic_example.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:27 ../../en/m5ui/spinbox.rst:46
+#: 8f4714fa1574423181e5e19bc1b3f441
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/spinbox.rst:29 ../../en/m5ui/spinbox.rst:48
+#: ../../en/m5ui/spinbox.rst:67 ../../en/m5ui/spinbox.rst:84
+#: ../../en/m5ui/spinbox.rst:102 ../../en/m5ui/spinbox.rst:119
+#: ../../en/m5ui/spinbox.rst:137 ../../en/m5ui/spinbox.rst:154
+#: ../../en/m5ui/spinbox.rst:171 ../../en/m5ui/spinbox.rst:189
+#: ../../en/m5ui/spinbox.rst:206 ../../en/m5ui/spinbox.rst:240
+#: ../../en/m5ui/spinbox.rst:277 b7d2c0b061464af787260c9b866f8b80
+#: cb4f44d15d7d40c283113052735f5f4d m5ui.spinbox.M5Spinbox.set_bg_color:6
+#: m5ui.spinbox.M5Spinbox.set_border_color:6
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:5 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:33 9afa53e059734a37aa9b0b96105d23c8
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/m5ui/spinbox.rst:40 ../../en/m5ui/spinbox.rst:73
+#: ../../en/m5ui/spinbox.rst:90 ../../en/m5ui/spinbox.rst:108
+#: ../../en/m5ui/spinbox.rst:125 ../../en/m5ui/spinbox.rst:143
+#: ../../en/m5ui/spinbox.rst:160 ../../en/m5ui/spinbox.rst:177
+#: ../../en/m5ui/spinbox.rst:195 ../../en/m5ui/spinbox.rst:212
+#: ../../en/m5ui/spinbox.rst:229 ../../en/m5ui/spinbox.rst:246
+#: ../../en/m5ui/spinbox.rst:263 ../../en/m5ui/spinbox.rst:283
+#: 0f71e03582db4a32869dc85227b04ecd 88e80a55ec3041a5944caed12440e1dc
+#: m5ui.spinbox.M5Spinbox.add_event_cb:11 m5ui.spinbox.M5Spinbox.get_value:10
+#: m5ui.spinbox.M5Spinbox.set_bg_color:12
+#: m5ui.spinbox.M5Spinbox.set_border_color:12
+#: m5ui.spinbox.M5Spinbox.set_range:12 m5ui.spinbox.M5Spinbox.set_step:10
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:11
+#: m5ui.spinbox.M5Spinbox.set_style_radius:10
+#: m5ui.spinbox.M5Spinbox.set_value:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/spinbox.rst:52 56b1837487674fe99c6576327ee772a7
+msgid "**API**"
+msgstr "API参考"
+
+#: d1bf6b9387a44250ad5ebaaaf395defb m5ui.spinbox.M5Spinbox:1 of
+msgid "Bases: :py:class:`~lvgl.obj`"
+msgstr ""
+
+#: f1c87c53952f4cff905de9f6077d3d1a m5ui.spinbox.M5Spinbox:1 of
+msgid "Create a spinbox widget."
+msgstr "创建一个数字输入框控件。"
+
+#: ../../en/m5ui/spinbox.rst 4f02a1e3f53140af8979eb24067cac33
+#: 8f45717930a840ac832596eea966333a m5ui.spinbox.M5Spinbox.add_event_cb
+#: m5ui.spinbox.M5Spinbox.set_bg_color m5ui.spinbox.M5Spinbox.set_border_color
+#: m5ui.spinbox.M5Spinbox.set_range m5ui.spinbox.M5Spinbox.set_step
+#: m5ui.spinbox.M5Spinbox.set_style_border_width
+#: m5ui.spinbox.M5Spinbox.set_style_radius m5ui.spinbox.M5Spinbox.set_value of
+msgid "Parameters"
+msgstr ""
+
+#: e108057c01be42df976b1bec935e4706 m5ui.spinbox.M5Spinbox:3 of
+msgid "The x position of the spinbox."
+msgstr "数字输入框的x位置。"
+
+#: e10878074c4d42ad804a472b2d59cae1 m5ui.spinbox.M5Spinbox:4 of
+msgid "The y position of the spinbox."
+msgstr "数字输入框的y位置。"
+
+#: ../../en/m5ui/spinbox.rst:187 ../../en/m5ui/spinbox.rst:205
+#: ../../en/m5ui/spinbox.rst:222 5021d44cd4f5473f9e8ebcb12845c14b
+#: m5ui.spinbox.M5Spinbox:5 of
+msgid "The width of the spinbox."
+msgstr "数字输入框的宽度。"
+
+#: ../../en/m5ui/spinbox.rst:188 ../../en/m5ui/spinbox.rst:239
+#: ../../en/m5ui/spinbox.rst:256 17087b6462e14c278ee73c0ab0429943
+#: m5ui.spinbox.M5Spinbox:6 of
+msgid "The height of the spinbox."
+msgstr "数字输入框的高度。"
+
+#: c8ba2294c0724deeabc323fa84984960 m5ui.spinbox.M5Spinbox:7 of
+msgid "The initial value of the spinbox."
+msgstr "数字输入框的初始值。"
+
+#: 06fdfab8762e48deaa969cef206be805 m5ui.spinbox.M5Spinbox:8
+#: m5ui.spinbox.M5Spinbox.set_range:3 of
+msgid "The minimum value of the spinbox."
+msgstr "数字输入框的最小值。"
+
+#: 7fe5cae89b824d5a96593fb08c1523c6 m5ui.spinbox.M5Spinbox:9
+#: m5ui.spinbox.M5Spinbox.set_range:5 of
+msgid "The maximum value of the spinbox."
+msgstr "数字输入框的最大值。"
+
+#: 6468ecda8d8d4a4082f281ce2b7f8faa m5ui.spinbox.M5Spinbox:10 of
+msgid "The number of digits to display."
+msgstr "显示的数字位数。"
+
+#: 26e6bee0eba54bef858527536b62cbcc m5ui.spinbox.M5Spinbox:11 of
+msgid "The number of decimal places."
+msgstr "小数位数。"
+
+#: 259ddf549eb1412d8c8995908035587f m5ui.spinbox.M5Spinbox:12 of
+msgid "The font to use for the spinbox."
+msgstr "数字输入框使用的字体。"
+
+#: c137d5a58dba4de39adc8432957d20b5 m5ui.spinbox.M5Spinbox:13 of
+msgid "The parent object of the spinbox."
+msgstr "数字输入框的父对象。"
+
+#: ../../en/m5ui/spinbox.rst:63 c4b4f50425a04b9c9a97add82e04c740
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr ""
+"在对象上设置标志。如果 ``value`` 为True，则添加标志；"
+"如果为False，则移除标志。"
+
+#: ../../en/m5ui/spinbox.rst:65 b9681eb7a2144d9092be78b9e09511f6
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/spinbox.rst:66 0d46cb119aa1473ba685244458bcd281
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "如果为True，则添加标志；如果为False，则移除标志。"
+
+#: ../../en/m5ui/spinbox.rst 8e3a60ccf9da485985c7163f39254b83
+#: m5ui.spinbox.M5Spinbox.get_value m5ui.spinbox.M5Spinbox.set_bg_color
+#: m5ui.spinbox.M5Spinbox.set_border_color
+#: m5ui.spinbox.M5Spinbox.set_style_border_width of
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:71 f5a9cb7141a640ab9747e3d9ec6f5156
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:11 ef8a8a9950f1439d896e2bb6973e8d39
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:81 a9d35daa9f6f42d9b61b0134b0b3afcf
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr ""
+"切换对象上的标志。如果标志已设置，则将其移除；"
+"如果未设置，则将其添加。"
+
+#: ../../en/m5ui/spinbox.rst:83 a5a9fa6d48e94afea397c1ea982bccd3
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/spinbox.rst:88 139fa0735bc24cba833163ab7cc5ba1b
+msgid "|toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:25 4413db6a673a4600af503d63dea4b330
+msgid "toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:98 723ece88774b48b3b48591e43d7d4e34
+msgid ""
+"Set the state of the spinbox. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr ""
+"设置数字输入框的状态。如果 ``value`` 为True，则设置状态；"
+"如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/spinbox.rst:100 b91ea714f42847d598feddb260623a67
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/spinbox.rst:101 c2ae5fb749ee49969c73a3e93e1f7330
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
+
+#: ../../en/m5ui/spinbox.rst:106 4b37653a89404111b5a373ad022b969d
+msgid "|set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:17 aac3d075c1f6477fa6ec0698c2382ec1
+msgid "set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:116 614d5a7bbb604bafaaca50371096ab00
+msgid ""
+"Toggle the state of the spinbox. If the state is set, it is unset; if not"
+" set, it is set."
+msgstr ""
+"切换数字输入框的状态。如果状态已设置，则取消设置；"
+"如果未设置，则将其设置。"
+
+#: ../../en/m5ui/spinbox.rst:118 0a9d2ed0258049718e0049a2a0564e94
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/spinbox.rst:123 4cbb5d34347e4e8a8b862b73f6bcc334
+msgid "|toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:26 f36796c7b9214e099b0143ba00654e6b
+msgid "toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:133 6f15b9e9326e4a1e9d2f45c32ec61b36
+msgid "Set the position of the spinbox."
+msgstr "设置数字输入框的位置。"
+
+#: ../../en/m5ui/spinbox.rst:135 ../../en/m5ui/spinbox.rst:153
+#: 4e33222147b54366b81b228a0911d401
+msgid "The x-coordinate of the spinbox."
+msgstr "数字输入框的x坐标。"
+
+#: ../../en/m5ui/spinbox.rst:136 ../../en/m5ui/spinbox.rst:170
+#: a538226647ba455db17165639a76e847
+msgid "The y-coordinate of the spinbox."
+msgstr "数字输入框的y坐标。"
+
+#: ../../en/m5ui/spinbox.rst:141 921f0f798a944a0c96431e12680002e6
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:13 77cd935cfdc74e179bca00ff79105f28
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:151 ab037fff9e5541148495e88773ac5ed1
+msgid "Set the x-coordinate of the spinbox."
+msgstr "设置数字输入框的x坐标。"
+
+#: ../../en/m5ui/spinbox.rst:158 6f59f831f6c7498eba643dcfe96400d8
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:23 d061e7b30c9947b4b5b543805538a023
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:168 e9d1b07c9cf145548b096d31414efa35
+msgid "Set the y-coordinate of the spinbox."
+msgstr "设置数字输入框的y坐标。"
+
+#: ../../en/m5ui/spinbox.rst:175 1c3f5a03fc6f44f097d564f0e21fc5a7
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:24 9a6454bc19774bd5910ef917a78ab8f9
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:185 6cb15a91b90d44dcbad9db06aa259c60
+msgid "Set the size of the spinbox."
+msgstr "设置数字输入框的尺寸。"
+
+#: ../../en/m5ui/spinbox.rst:193 f2da6b0817c74096aa9bf9eb791f37ec
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:16 cfa8f9f02a934c26bd491b7bc950a22e
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:203 73267d2c59404321b94df54db78a363f
+msgid "Set the width of the spinbox."
+msgstr "设置数字输入框的宽度。"
+
+#: ../../en/m5ui/spinbox.rst:210 5566e6b6b1b84cb1b847e8782381f8cb
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:22 f1980ded92fe4b178705d4b11773d1d3
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:220 6daa334eb1c74f41a14d3a4a7771936e
+msgid "Get the width of the spinbox."
+msgstr "获取数字输入框的宽度。"
+
+#: ../../en/m5ui/spinbox.rst 8f739b14d160416faf4df9585e9951eb
+#: m5ui.spinbox.M5Spinbox.get_value m5ui.spinbox.M5Spinbox.set_bg_color
+#: m5ui.spinbox.M5Spinbox.set_range m5ui.spinbox.M5Spinbox.set_step
+#: m5ui.spinbox.M5Spinbox.set_style_radius m5ui.spinbox.M5Spinbox.set_value of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:227 24030b115de243fcb425dd5006646515
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:6 476730e6ae2e491598acd262d75daba5
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:237 10bba5072558494eb09215aab70cb2ab
+msgid "Set the height of the spinbox."
+msgstr "设置数字输入框的高度。"
+
+#: ../../en/m5ui/spinbox.rst:244 17e8a53859534aed987fb1e9a01c80ea
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:12 a2b92e759d10430694b6fec9d92e671a
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:254 e72771b86367496cbecc81490fc75931
+msgid "Get the height of the spinbox."
+msgstr "获取数字输入框的高度。"
+
+#: ../../en/m5ui/spinbox.rst:261 a27b278f98a9449fbee38928c12ff2ee
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:4 aac42a157805491593bf9331cca1ff35
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/spinbox.rst:271 b9946c5ba2094dadbfce8bd7eee7e519
+msgid "Align the spinbox to another object."
+msgstr "将数字输入框对齐到另一个对象。"
+
+#: ../../en/m5ui/spinbox.rst:273 af4db98763e6479ca32edad975fddd3b
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/spinbox.rst:274 8eb6b3ef7a054a6cbbf91d9688311e87
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/spinbox.rst:275 f1b4a2efc54648cbbec77b136cb3e45b
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的x偏移量。"
+
+#: ../../en/m5ui/spinbox.rst:276 43e436dbd77642d1b1359cdd084cc4bb
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的y偏移量。"
+
+#: ../../en/m5ui/spinbox.rst:281 45389d26db0646f586d5f1b425ae4bbe
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:1 55d5ebef3c81406a88fc38c16542f560
+msgid "align_to.png"
+msgstr ""
+
+#: f21f9e9917264c4799cd03027261fdd1 m5ui.spinbox.M5Spinbox.add_event_cb:1 of
+msgid "Add an event callback to the spinbox."
+msgstr "为数字输入框添加事件回调。"
+
+#: 6468ecda8d8d4a4082f281ce2b7f8faa m5ui.spinbox.M5Spinbox.add_event_cb:3 of
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: af4db98763e6479ca32edad975fddd3b m5ui.spinbox.M5Spinbox.add_event_cb:4 of
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: af5783f07b5e41afb03cbb4640f0cfce m5ui.spinbox.M5Spinbox.add_event_cb:5 of
+msgid "Optional user data to pass to the callback."
+msgstr "传递给回调的可选用户数据。"
+
+#: 45389d26db0646f586d5f1b425ae4bbe m5ui.spinbox.M5Spinbox.add_event_cb:9 of
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:3 d061e7b30c9947b4b5b543805538a023
+msgid "event.png"
+msgstr ""
+
+#: 142fdbd8ea534cf5af80e6d0dd8bff10 m5ui.spinbox.M5Spinbox.set_bg_color:1 of
+msgid "Set the background color and opacity for a given part of the object."
+msgstr "为对象的指定部分设置背景颜色和透明度。"
+
+#: 2b24f377f9444e3289eaf426bf298838 m5ui.spinbox.M5Spinbox.set_bg_color:3
+#: m5ui.spinbox.M5Spinbox.set_border_color:3 of
+msgid "The color to set, can be an integer (hex) or a lv.color object."
+msgstr "要设置的颜色，可以是整数（十六进制）或lv.color对象。"
+
+#: 6cb6ccb385f24776b6977062f9855417 m5ui.spinbox.M5Spinbox.set_bg_color:4
+#: m5ui.spinbox.M5Spinbox.set_border_color:4 of
+msgid "The opacity level (0-255)."
+msgstr "透明度级别（0-255）。"
+
+#: 231baf2051394aeba89d78ee7e6b9727 m5ui.spinbox.M5Spinbox.set_bg_color:5
+#: m5ui.spinbox.M5Spinbox.set_border_color:5 of
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "应用样式的对象部分（例如，lv.PART.MAIN）。"
+
+#: bb9d0ba82fb946bc8ab47dd9525b851e m5ui.spinbox.M5Spinbox.set_bg_color:10 of
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:8 61ec1239e6634a829d1914368ae1f5bc
+msgid "set_bg_color.png"
+msgstr ""
+
+#: 01448c74dd474c13ae20b66c196c060c m5ui.spinbox.M5Spinbox.set_border_color:1
+#: of
+msgid "Set the border color and opacity for a given part of the object."
+msgstr "为对象的指定部分设置边框颜色和透明度。"
+
+#: 5a48184f927446cd8fa452982809ac73 m5ui.spinbox.M5Spinbox.set_border_color:10
+#: of
+msgid "|set_border_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:9 374268e93e7e4ae7ba1247566ee453af
+msgid "set_border_color.png"
+msgstr ""
+
+#: dddf82abc7f447259b7db5b6b188aef0
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:1 of
+msgid "Set the border width of the spinbox."
+msgstr "设置数字输入框的边框宽度。"
+
+#: b924cc2fb60241bcabf64cec734d0dc8
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:3 of
+msgid "The border width in pixels."
+msgstr "边框宽度（以像素为单位）。"
+
+#: 78f1993421174ebc84e5d14cbe9d9023
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:4 of
+msgid ""
+"The part of the spinbox to apply the border width to, e.g., "
+"`lv.PART.MAIN`."
+msgstr "要应用边框宽度的数字输入框部分，例如 `lv.PART.MAIN`。"
+
+#: 54c4ab5ba674430990aac94d1d1e7c25
+#: m5ui.spinbox.M5Spinbox.set_style_border_width:9 of
+msgid "|set_style_border_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:19 0d0a89f04d8047068995bffd177ca5f7
+msgid "set_style_border_width.png"
+msgstr ""
+
+#: a9972278940847c79ced9abd6caffff9 m5ui.spinbox.M5Spinbox.set_style_radius:1
+#: of
+msgid "Set the radius of the spinbox's corners."
+msgstr "设置数字输入框的圆角半径。"
+
+#: 8371a42685564013b5638ae3925b72a8 m5ui.spinbox.M5Spinbox.set_style_radius:3
+#: of
+msgid "The radius of the corners in pixels."
+msgstr "圆角半径（以像素为单位）。"
+
+#: 5cbf797b2aa14afda02b01459ce636c4 m5ui.spinbox.M5Spinbox.set_style_radius:4
+#: of
+msgid "The part of the spinbox to apply the radius to, e.g., `lv.PART.MAIN`."
+msgstr "要应用圆角半径的数字输入框部分，例如 `lv.PART.MAIN`。"
+
+#: a2bf1b3491e3425fa210a11605b41d18 m5ui.spinbox.M5Spinbox.set_style_radius:8
+#: of
+msgid "|set_style_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:20 da5cba0345d7418aa07777459258c41a
+msgid "set_style_radius.png"
+msgstr ""
+
+#: 635904f9761740a0bcbb52e525b403e2 m5ui.spinbox.M5Spinbox.set_range:1 of
+msgid "Set the range of the spinbox."
+msgstr "设置数字输入框的取值范围。"
+
+#: b299bc7e82104a5eaa11c198c8f459f7 m5ui.spinbox.M5Spinbox.set_range:10 of
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:14 4585541403c041f897fd0e5bcddf6ea3
+msgid "set_range.png"
+msgstr ""
+
+#: 07bf55e5c64c48c0b387e34ef120eb4d m5ui.spinbox.M5Spinbox.set_value:1 of
+msgid "Set the value of the spinbox."
+msgstr "设置数字输入框的值。"
+
+#: 22bdbc77bcd94d5784fa6bab889b9722 m5ui.spinbox.M5Spinbox.set_value:3 of
+msgid "The value to set."
+msgstr "要设置的值。"
+
+#: 8a6b7bcdb25342b99c03e19d9a67bead m5ui.spinbox.M5Spinbox.set_value:8 of
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:21 d436e63b852a484d83f994a810d5d047
+msgid "set_value.png"
+msgstr ""
+
+#: f21f9e9917264c4799cd03027261fdd1 m5ui.spinbox.M5Spinbox.get_value:1 of
+msgid "Get the current value of the spinbox."
+msgstr "获取数字输入框的当前值。"
+
+#: af1975ff5c0a4cf4bb5fd2dc41f939c2 m5ui.spinbox.M5Spinbox.get_value:3 of
+msgid "The current value."
+msgstr "当前值。"
+
+#: 77c54b4e662b4dc7a81ed9120ef0b323 m5ui.spinbox.M5Spinbox.get_value:8 of
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:5 867b4f02921f45688668dfab8069bb6e
+msgid "get_value.png"
+msgstr ""
+
+#: 20203e03b3b64912916f75b68d46cfdc m5ui.spinbox.M5Spinbox.set_step:1 of
+msgid "Set the step value for the spinbox."
+msgstr "设置数字输入框的步长值。"
+
+#: d43c2e53f80647338e91a642a0073410 m5ui.spinbox.M5Spinbox.set_step:3 of
+msgid "The step value to set."
+msgstr "要设置的步长值。"
+
+#: 6e0fbb2734f84903a930f9a3d96fe51a m5ui.spinbox.M5Spinbox.set_step:8 of
+msgid "|set_step.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinbox.ref:18 8f3f6093d4b84a2394a17a454e98d965
+msgid "set_step.png"
+msgstr ""
