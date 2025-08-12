@@ -107,7 +107,7 @@ class _EzdataClientWebsocket:
                 msg = json.dumps(
                     {
                         "deviceToken": self._device_token,
-                        "body": {"requestType": "DEVICE_DATA_LIST"},
+                        "body": {"requestType": 103},
                     }
                 )
                 debug_print("ws send:", msg)
