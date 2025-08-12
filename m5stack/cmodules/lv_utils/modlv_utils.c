@@ -46,7 +46,7 @@ static void *lv_utils_fs_open_cb(lv_fs_drv_t *drv, const char *path, lv_fs_mode_
     LV_UNUSED(drv);
     lv_fs_res_t res = LV_FS_RES_NOT_IMP;
 
-    ESP_LOGI("lv_utils", "fs_open_cb: path=%s, mode=%d\n", path, mode);
+    ESP_LOGI("lv_utils", "fs_open_cb: path=%s, mode=%d", path, mode);
 
     vfs_stream_t *vfs = lv_malloc(sizeof(vfs_stream_t));
 

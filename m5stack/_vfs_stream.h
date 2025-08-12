@@ -28,7 +28,7 @@
 #define VFS_CREATE 0x08
 
 void *vfs_stream_open(const char *path, int flags);
-uint32_t vfs_stream_read(void *file_p, void *buf, uint32_t btr);
+int32_t vfs_stream_read(void *file_p, void *buf, uint32_t btr);
 ssize_t vfs_stream_write(void *file_p, const void *buf, size_t len);
 int32_t vfs_stream_seek(void *file_p, uint32_t pos, int whence);
 int32_t vfs_stream_tell(void *file_p);

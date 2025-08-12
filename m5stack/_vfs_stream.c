@@ -46,7 +46,7 @@ static int lfs2_get_mode(int flags) {
     ret |= flags & VFS_READ ? LFS2_O_RDONLY : 0;
     ret = flags & VFS_WRITE ? LFS2_O_WRONLY : 0;
     ret |= flags & VFS_APPEND ? LFS2_O_APPEND : 0;
-    ret |= flags & VFS_CREATE ? LFS2_O_CREAT : 0;
+    ret |= flags & VFS_CREATE ? LFS2_O_CREAT | LFS2_O_TRUNC: 0;
 
     return ret;
 }
@@ -65,26 +65,29 @@ static int fatfs_get_mode(int flags) {
 
 
 void *vfs_stream_open(const char *path, int flags) {
-    ESP_LOGI(TAG, "vfs_stream_open: path=%s, mode=%d\n", path, flags);
+    ESP_LOGI(TAG, "vfs_stream_open: path=%s, mode=%d", path, flags);
 
     vfs_stream_t *vfs = calloc(1, sizeof(vfs_stream_t));
 
-    const char *path_out;
+    const char *path_out = {'\0'};
     mp_vfs_mount_t *existing_mount = mp_vfs_lookup_path(path, &path_out);
     if (existing_mount == MP_VFS_NONE || existing_mount == MP_VFS_ROOT) {
         ESP_LOGE(TAG, "No vfs mount");
         goto _vfs_init_exit;
     }
 
-    if (strstr(path, "flash")) {
+    if (strstr(path_out, "flash")) {
         ESP_LOGD(TAG, "in flash");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
-    } else if (strstr(path, "system")) {
+    } else if (strstr(path_out, "system")) {
         ESP_LOGD(TAG, "in system");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
-    } else if (strstr(path, "sd")) {
+    } else if (strstr(path_out, "sd")) {
         ESP_LOGD(TAG, "in sd");
         vfs->fatfs = &((fs_user_mount_t *)MP_OBJ_TO_PTR(existing_mount->obj))->fatfs;
+    } else {
+        ESP_LOGI(TAG, "default in flash");
+        vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
     }
 
     if (vfs->lfs2) {
@@ -128,9 +131,9 @@ _vfs_init_exit:
 }
 
 
-uint32_t vfs_stream_read(void *file_p, void *buf, uint32_t btr) {
+int32_t vfs_stream_read(void *file_p, void *buf, uint32_t btr) {
     vfs_stream_t *vfs = file_p;
-    uint32_t br = 0;
+    int32_t br = 0;
 
     if (vfs->lfs2) {
         br = lfs2_file_read(vfs->lfs2, vfs->file.lfs2_file, (uint8_t *)buf, btr);
@@ -213,6 +216,10 @@ int32_t vfs_stream_tell(void *file_p) {
 
 void vfs_stream_close(void *file_p) {
     vfs_stream_t *vfs = file_p;
+
+    if (vfs == NULL) {
+        return;
+    }
 
     if (vfs->lfs2) {
         lfs2_file_close(vfs->lfs2, vfs->file.lfs2_file);
