@@ -21,17 +21,14 @@ class M5Scale(lv.scale):
 
         Options:
 
-            - `lv.scale.MODE.HORIZONTAL_TOP`
-            - `lv.scale.MODE.HORIZONTAL_BOTTOM`
-            - `lv.scale.MODE.VERTICAL_LEFT`
-            - `lv.scale.MODE.VERTICAL_RIGHT`
-            - `lv.scale.MODE.CIRCULAR`
+            - `lv.scale.MODE.HORIZONTAL_TOP`: Horizontal top scale.
+            - `lv.scale.MODE.HORIZONTAL_BOTTOM`: Horizontal bottom scale.
+            - `lv.scale.MODE.VERTICAL_LEFT`: Vertical left scale.
+            - `lv.scale.MODE.VERTICAL_RIGHT`: Vertical right scale.
+            - `lv.scale.MODE.ROUND_INNER`: Round inner scale.
+            - `lv.scale.MODE.ROUND_OUTER`: Round outer scale.
 
     :param lv.obj parent: The parent object to attach the scale to. If not specified, the scale will be attached to the default screen.
-
-    UiFlow2 Code Block:
-
-        None
 
     MicroPython Code Block:
 

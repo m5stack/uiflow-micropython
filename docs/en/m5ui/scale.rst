@@ -14,13 +14,13 @@ UiFlow2 Example
 scale example
 ^^^^^^^^^^^^^^
 
-Open the |cores3_scroll_example.m5f2| project in UiFlow2.
+Open the |scale_core2_example.m5f2| project in UiFlow2.
 
 This example demonstrates how to create a scale widget with a range of values and custom styling.
 
 UiFlow2 Code Block:
 
-    |cores3_scroll_example.png|
+    |scale_core2_example.png|
 
 Example output:
 
@@ -37,7 +37,7 @@ This example demonstrates how to create a scale widget with a range of values an
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/m5ui/scale/cores3_scroll_example.py
+    .. literalinclude:: ../../../examples/m5ui/scale/scale_core2_example.py
         :language: python
         :linenos:
 
@@ -146,12 +146,12 @@ M5Scale
 
             Optional: 
 
-                - `lv.SCALE.MODE.HORIZONTAL_TOP`: Horizontal top scale.
-                - `lv.SCALE.MODE.HORIZONTAL_BOTTOM`: Horizontal bottom scale.
-                - `lv.SCALE.MODE.VERTICAL_LEFT`: Vertical left scale.
-                - `lv.SCALE.MODE.VERTICAL_RIGHT`: Vertical right scale.
-                - `lv.SCALE.MODE.ROUND_INNER`: Round inner scale.
-                - `lv.SCALE.MODE.ROUND_OUTER`: Round outer scale.
+                - `lv.scale.MODE.HORIZONTAL_TOP`: Horizontal top scale.
+                - `lv.scale.MODE.HORIZONTAL_BOTTOM`: Horizontal bottom scale.
+                - `lv.scale.MODE.VERTICAL_LEFT`: Vertical left scale.
+                - `lv.scale.MODE.VERTICAL_RIGHT`: Vertical right scale.
+                - `lv.scale.MODE.ROUND_INNER`: Round inner scale.
+                - `lv.scale.MODE.ROUND_OUTER`: Round outer scale.
 
         UiFlow2 Code Block:
 
@@ -313,10 +313,6 @@ M5Scale
         :param int width: The width of the scale.
         :param int height: The height of the scale.
 
-        UiFlow2 Code Block:
-
-            |set_size.png|
-
         MicroPython Code Block:
 
             .. code-block:: python
@@ -330,12 +326,6 @@ M5Scale
 
         :param int width: The width of the scale.
 
-        UiFlow2 Code Block:
-
-            |set_width.png|
-
-            |set_width1.png|
-
         MicroPython Code Block:
 
             .. code-block:: python
@@ -347,10 +337,6 @@ M5Scale
         Set the height of the scale.
 
         :param int height: The height of the scale.
-
-        UiFlow2 Code Block:
-
-            |set_height.png|
 
         MicroPython Code Block:
 

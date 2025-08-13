@@ -1,0 +1,593 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-13 10:20+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/scale.rst:4 ../../en/m5ui/scale.rst:53
+#: 3ff6b5f236d04ce2a6449f4da6387c40 7052ace6d4214bdcb2899784eff8e522
+msgid "M5Scale"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:8 575ce3b73df842c2849925b4c9216672
+msgid ""
+"M5Scale is a widget that can be used to create scales in the user "
+"interface. Scale Widgets show linear or circular scales with configurable"
+" ranges, tick counts, placement, labeling, and subsections (Sections) "
+"with custom styling."
+msgstr ""
+"M5Scale "
+"是一个可在用户界面中创建刻度的控件。它可显示线性或圆形刻度，并支持配置范围、刻度数量、位置、标签以及分段（Sections）等自定义样式。"
+
+#: ../../en/m5ui/scale.rst:12 a23ee1a02e3a47fda03b3b380ef4e19e
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/scale.rst:15 d6bd12a6f95a4ffeacc06517113c88d8
+msgid "scale example"
+msgstr "刻度示例"
+
+#: ../../en/m5ui/scale.rst:17 5744f4d14a7b4d1083c074d58b68cf31
+msgid "Open the |scale_core2_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:19 ../../en/m5ui/scale.rst:36
+#: 84c9c86cb2a64e518b7d9526b5d98525
+msgid ""
+"This example demonstrates how to create a scale widget with a range of "
+"values and custom styling."
+msgstr "本示例演示如何创建具有数值范围和自定义样式的刻度控件。"
+
+#: ../../en/m5ui/scale.rst:21 ../../en/m5ui/scale.rst:65
+#: ../../en/m5ui/scale.rst:82 ../../en/m5ui/scale.rst:98
+#: ../../en/m5ui/scale.rst:114 ../../en/m5ui/scale.rst:130
+#: ../../en/m5ui/scale.rst:156 ../../en/m5ui/scale.rst:172
+#: ../../en/m5ui/scale.rst:190 ../../en/m5ui/scale.rst:209
+#: ../../en/m5ui/scale.rst:229 ../../en/m5ui/scale.rst:247
+#: ../../en/m5ui/scale.rst:264 ../../en/m5ui/scale.rst:281
+#: ../../en/m5ui/scale.rst:298 ../../en/m5ui/scale.rst:356
+#: efc695bf70814a60bb45598f77e3bac2 m5ui.scale.M5Scale:24 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/scale.rst:23 fa7f48123abf48809ee063312dc72489
+msgid "|scale_core2_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:17 ed2da5f42487467c94cca9a1214f98f3
+msgid "scale_core2_example.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:25 ../../en/m5ui/scale.rst:44
+#: f9348cce69124dcaa13296ed7967b27f
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/scale.rst:27 ../../en/m5ui/scale.rst:46
+#: 0a16407cfd654350a473a7a3d83b4f23 m5ui.scale.M5Scale:26 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:31 dc3b1f988c8742fe8e016f628791faf2
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/scale.rst:34 cc27e449d0104e588cc343816d26b71d
+msgid "scroll example"
+msgstr "刻度示例"
+
+#: ../../en/m5ui/scale.rst:38 ../../en/m5ui/scale.rst:69
+#: ../../en/m5ui/scale.rst:86 ../../en/m5ui/scale.rst:102
+#: ../../en/m5ui/scale.rst:118 ../../en/m5ui/scale.rst:134
+#: ../../en/m5ui/scale.rst:160 ../../en/m5ui/scale.rst:176
+#: ../../en/m5ui/scale.rst:194 ../../en/m5ui/scale.rst:213
+#: ../../en/m5ui/scale.rst:233 ../../en/m5ui/scale.rst:251
+#: ../../en/m5ui/scale.rst:268 ../../en/m5ui/scale.rst:285
+#: ../../en/m5ui/scale.rst:302 ../../en/m5ui/scale.rst:316
+#: ../../en/m5ui/scale.rst:329 ../../en/m5ui/scale.rst:341
+#: ../../en/m5ui/scale.rst:360 1959bba6ead14443b8aeee6cbcf19356
+#: m5ui.scale.M5Scale:28 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/scale.rst:50 51cccb56a82348af89037a7e613f0d4b
+msgid "**API**"
+msgstr ""
+
+#: c389d08038954e6d94b953f102a0bb2b m5ui.scale.M5Scale:1 of
+msgid "Bases: :py:class:`~lvgl.scale`"
+msgstr ""
+
+#: 6ec3f9868bda42d6ac8729e8ea0a651a m5ui.scale.M5Scale:1 of
+msgid "Create a scale object."
+msgstr "创建一个刻度对象。"
+
+#: ../../en/m5ui/scale.rst 915381198a9b4bb68f44c91effd05bef
+msgid "Parameters"
+msgstr ""
+
+#: fb8a63fe738c47cf97125b41b659d1fc m5ui.scale.M5Scale:3 of
+msgid "The x position of the scale."
+msgstr "刻度的 x 坐标。"
+
+#: 6e175401cbdc4fcf81e8b09df31cafda m5ui.scale.M5Scale:4 of
+msgid "The y position of the scale."
+msgstr "刻度的 y 坐标。"
+
+#: a2a97166de0b4313b9e38c2a254c6437 m5ui.scale.M5Scale:5 of
+msgid ""
+"The width of the scale. If not specified, it will be set based on the "
+"mode."
+msgstr "刻度的宽度，若未指定则根据模式自动设置。"
+
+#: b2784083d4634b5baecf798457f378b5 m5ui.scale.M5Scale:6 of
+msgid ""
+"The height of the scale. If not specified, it will be set based on the "
+"mode."
+msgstr "刻度的高度，若未指定则根据模式自动设置。"
+
+#: dc6a3aa744b54ad4ac6162d4f5cbe7be m5ui.scale.M5Scale:7 of
+msgid "The starting position of the scale."
+msgstr "刻度的起始位置。"
+
+#: 4e7bf2c6d273454ab86a4a99d3b32a6e m5ui.scale.M5Scale:8 of
+msgid "The ending position of the scale."
+msgstr "刻度的结束位置。"
+
+#: 4fd843d262c6438c9ae8ed6ccad66466 m5ui.scale.M5Scale:9 of
+msgid "The total number of ticks on the scale."
+msgstr "刻度上的总刻度数。"
+
+#: e1fcf6086c8746dcb653748cbd2db62c m5ui.scale.M5Scale:10 of
+msgid "The interval between major ticks on the scale."
+msgstr "主刻度之间的间隔。"
+
+#: 05a95b86ddaf4b6e8eae56bce3adbe45 m5ui.scale.M5Scale:11 of
+msgid ""
+"The mode of the scale. It can be one of the following:  Options:      - "
+"`lv.scale.MODE.HORIZONTAL_TOP`: Horizontal top scale.     - "
+"`lv.scale.MODE.HORIZONTAL_BOTTOM`: Horizontal bottom scale.     - "
+"`lv.scale.MODE.VERTICAL_LEFT`: Vertical left scale.     - "
+"`lv.scale.MODE.VERTICAL_RIGHT`: Vertical right scale.     - "
+"`lv.scale.MODE.ROUND_INNER`: Round inner scale.     - "
+"`lv.scale.MODE.ROUND_OUTER`: Round outer scale."
+msgstr ""
+
+#: 513c463e0be74568b4b48913f7ceea28 m5ui.scale.M5Scale:11 of
+msgid "The mode of the scale. It can be one of the following:"
+msgstr "刻度的显示模式，可为以下之一："
+
+#: 9bb58e453394430390b433ec50fb859a m5ui.scale.M5Scale:13 of
+msgid "Options:"
+msgstr "选项："
+
+#: ../../en/m5ui/scale.rst:149 f61646f90aa34b9891ecb72c73889fce
+#: m5ui.scale.M5Scale:15 of
+msgid "`lv.scale.MODE.HORIZONTAL_TOP`: Horizontal top scale."
+msgstr "`lv.scale.MODE.HORIZONTAL_TOP`：水平顶部刻度"
+
+#: ../../en/m5ui/scale.rst:150 ff14584f4c314060abd29f551b8fec65
+#: m5ui.scale.M5Scale:16 of
+msgid "`lv.scale.MODE.HORIZONTAL_BOTTOM`: Horizontal bottom scale."
+msgstr "`lv.scale.MODE.HORIZONTAL_BOTTOM`：水平底部刻度"
+
+#: ../../en/m5ui/scale.rst:151 6b4380fb6d434e20b00fea956b5cec02
+#: m5ui.scale.M5Scale:17 of
+msgid "`lv.scale.MODE.VERTICAL_LEFT`: Vertical left scale."
+msgstr "`lv.scale.MODE.VERTICAL_LEFT`：垂直左侧刻度"
+
+#: ../../en/m5ui/scale.rst:152 1471e4428e254d9ca2039fc562cdf3af
+#: m5ui.scale.M5Scale:18 of
+msgid "`lv.scale.MODE.VERTICAL_RIGHT`: Vertical right scale."
+msgstr "`lv.scale.MODE.VERTICAL_RIGHT`：垂直右侧刻度"
+
+#: ../../en/m5ui/scale.rst:153 53e924113fba4bcd94d58195c83552a8
+#: m5ui.scale.M5Scale:19 of
+msgid "`lv.scale.MODE.ROUND_INNER`: Round inner scale."
+msgstr "`lv.scale.MODE.ROUND_INNER`：圆形内侧刻度"
+
+#: ../../en/m5ui/scale.rst:154 e77e023ba73e46c3b5435775c261e6ee
+#: m5ui.scale.M5Scale:20 of
+msgid "`lv.scale.MODE.ROUND_OUTER`: Round outer scale."
+msgstr "`lv.scale.MODE.ROUND_OUTER`：圆形外侧刻度"
+
+#: 81e35befcf744b8b85b1cadba23d39c9 m5ui.scale.M5Scale:22 of
+msgid ""
+"The parent object to attach the scale to. If not specified, the scale "
+"will be attached to the default screen."
+msgstr "要将刻度附加到的父对象；若未指定，则附加到默认屏幕。"
+
+#: ../../en/m5ui/scale.rst:60 51465a83caf745fa86bbb738d0e7cbae
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志；若 ``value`` 为 True 则添加标志，为 False 则移除。"
+
+#: ../../en/m5ui/scale.rst:62 f9ee83a65a91483a9ea42e16ec6abef2
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/scale.rst:63 e914610ee99b4bc29d9bcb0030d0586e
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "若为 True 则添加标志；若为 False 则移除。"
+
+#: ../../en/m5ui/scale.rst:67 12a727b2fa98472e9434223c8137adbb
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:1 c7616aff63994ffd8b7b9f35d49b98bd
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:77 e450c3a709034fc3ab9b52a7d8ac6d9e
+msgid "Set the range of the scale."
+msgstr "设置刻度的范围。"
+
+#: ../../en/m5ui/scale.rst:79 0f6e4425b8344e3f9dc225f675e72b0a
+msgid "The start position of the scale."
+msgstr "刻度的起始位置。"
+
+#: ../../en/m5ui/scale.rst:80 467c4eec0b5d40b09ad17c53d15e6d10
+msgid "The end position of the scale."
+msgstr "刻度的结束位置。"
+
+#: ../../en/m5ui/scale.rst:84 d332b5def1e54216ace26e2b603e2e43
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:2 4dddddf8b97e428485154c3e731331d0
+msgid "set_range.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:94 6630a4cd64034587b7f4fa685c09246b
+msgid "Set the interval for major ticks on the scale."
+msgstr "设置刻度主刻度的间隔。"
+
+#: ../../en/m5ui/scale.rst:96 808c81d217c542a7beda50a797028a02
+msgid "The interval for major ticks."
+msgstr "主刻度间隔值。"
+
+#: ../../en/m5ui/scale.rst:100 dffd04bc665f4ac1ba4ad53dfb98e51d
+msgid "|set_major_tick_every.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:3 54b431e2425545d38eaa68f7341af4d3
+msgid "set_major_tick_every.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:110 6047e332d4bc44c79d6bf45652d51097
+msgid "Set the total tick count of the scale."
+msgstr "设置刻度的总刻度数。"
+
+#: ../../en/m5ui/scale.rst:112 ca33b234c4314c9dba9b6b602cb10029
+msgid "The total tick count."
+msgstr "刻度的总刻度数。"
+
+#: ../../en/m5ui/scale.rst:116 6533a50313f94c6cbe9c4e93faf7659d
+msgid "|set_total_tick_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:4 d9d990dfe35141a5984d82a2e71d78ba
+msgid "set_total_tick_count.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:126 a7320439d19a400ea11f41d290361acf
+msgid "Set the visibility of the scale labels."
+msgstr "设置刻度标签的可见性。"
+
+#: ../../en/m5ui/scale.rst:128 e7a38c6567bf4ee3b850ea6ddb1fc8d2
+msgid "If True, the labels are shown; if False, they are hidden."
+msgstr "若为 True 显示标签；若为 False 隐藏标签。"
+
+#: ../../en/m5ui/scale.rst:132 fa6aca939bf541cd8f226b03a81f96e6
+msgid "|set_label_show.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:5 3681c405cf464e5391e59c99daf6cb45
+msgid "set_label_show.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:143 e3ea18f499c5491790ecc3378ff96ab2
+msgid "Set the display mode of the scale."
+msgstr "设置刻度的显示模式。"
+
+#: ../../en/m5ui/scale.rst:145 05a95b86ddaf4b6e8eae56bce3adbe45
+msgid ""
+"The display mode.  Optional:      - `lv.scale.MODE.HORIZONTAL_TOP`: "
+"Horizontal top scale.     - `lv.scale.MODE.HORIZONTAL_BOTTOM`: Horizontal"
+" bottom scale.     - `lv.scale.MODE.VERTICAL_LEFT`: Vertical left scale."
+"     - `lv.scale.MODE.VERTICAL_RIGHT`: Vertical right scale.     - "
+"`lv.scale.MODE.ROUND_INNER`: Round inner scale.     - "
+"`lv.scale.MODE.ROUND_OUTER`: Round outer scale."
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:145 8b7fc8b1af3f4638af3c64e6ee13440c
+msgid "The display mode."
+msgstr "显示模式。"
+
+#: ../../en/m5ui/scale.rst:147 c538c400fb1a42cb86aa75e62a065f84
+msgid "Optional:"
+msgstr "可选值："
+
+#: ../../en/m5ui/scale.rst:158 1c08b4b53e8649b5af4b1952a423873d
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:6 ed2da5f42487467c94cca9a1214f98f3
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:168 4302f5827cef4d8eb4e9daff493c6f6e
+msgid "Set the source of the scale label text."
+msgstr "设置刻度标签文本的来源。"
+
+#: ../../en/m5ui/scale.rst:170 218d596162b44273a5c93dab036b91ab
+msgid "The source of the scale label text."
+msgstr "标签文本来源。"
+
+#: ../../en/m5ui/scale.rst:174 7549b9d9a8634d10a7acbe6ba4478c46
+msgid "|set_text_src.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:7 5739aec84dee4d938a0ae16c9a30b354
+msgid "set_text_src.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:184 526f1f349faa430ab63966e2f0414fdf
+msgid "Set the color of the line."
+msgstr "设置线条颜色。"
+
+#: ../../en/m5ui/scale.rst:186 ../../en/m5ui/scale.rst:225
+#: a720005a64064620acaf382dc4d2ced3
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/scale.rst:187 ../../en/m5ui/scale.rst:226
+#: a837e468ffb74c3485ab42c3f37f0d32
+msgid "The opacity of the color."
+msgstr "颜色不透明度。"
+
+#: ../../en/m5ui/scale.rst:188 ../../en/m5ui/scale.rst:207
+#: e2f92be82660446089099e3e84f07a52
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（如 lv.PART.MAIN）。"
+
+#: ../../en/m5ui/scale.rst:192 3a0e3793395a433b8e8c996abf98bbd7
+msgid "|set_line_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:8 14361d7d20104742ba759d4fa8e9b883
+msgid "set_line_color.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:204 1258ebaaa66d4484aa65aef69ea427fa
+msgid "Set the line width of the scale."
+msgstr "设置刻度线宽度。"
+
+#: ../../en/m5ui/scale.rst:206 974cdf0730b242239412f33d677b496e
+msgid "The line width to set."
+msgstr "要设置的线宽。"
+
+#: ../../en/m5ui/scale.rst:211 f95095630683458abb5cb35ac2121a5d
+msgid "|set_style_line_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:9 937abbbf2484414da2bd63424d526f03
+msgid "set_style_line_width.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:223 10804ce8f0d147f8a6b0640f7b36a6cc
+msgid "Set the color of the text."
+msgstr "设置文本颜色。"
+
+#: ../../en/m5ui/scale.rst:227 ../../en/m5ui/scale.rst:245
+#: dfb41703a76e435480bcf280cecd28b2
+msgid "The part of the object to apply the style to lv.PART.INDICATOR."
+msgstr "要应用样式的对象部分 lv.PART.INDICATOR。"
+
+#: ../../en/m5ui/scale.rst:231 4b06619418b04546904fac72cfd1a86a
+msgid "|set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:10 b69f793ad3cf4d258aa570039b453afe
+msgid "set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:242 4d6d047536e7402392586128b8ba1b78
+msgid "Set the font of the scale label text."
+msgstr "设置刻度标签文本字体。"
+
+#: ../../en/m5ui/scale.rst:244 717b019d59e146f9a9edfa3b4cab0212
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/scale.rst:249 3a60b3034dc7469a898c32aace69cbd4
+msgid "|set_style_text_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:11 8e99bdf1622e4a19a023e80323f456ae
+msgid "set_style_text_font.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:259 f42d0af5aa334ee3af44b8675324da61
+msgid "Set the position of the scale."
+msgstr "设置刻度的位置。"
+
+#: ../../en/m5ui/scale.rst:261 ../../en/m5ui/scale.rst:279
+#: 9d141ef96c444b98978865d06c07e53c d4ddb7ba1c39489bbfd49d09a0931fa9
+msgid "The x-coordinate of the scale."
+msgstr "刻度的 x 坐标。"
+
+#: ../../en/m5ui/scale.rst:262 ../../en/m5ui/scale.rst:296
+#: 572fac9116784297901a8033ebf73825
+msgid "The y-coordinate of the scale."
+msgstr "刻度的 y 坐标。"
+
+#: ../../en/m5ui/scale.rst:266 afdc03efd3fe444fa4fbb72d654e840a
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:12 9fe9cfcf26aa4ea69998ef9e1bd40386
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:277 f72270701d3a47f1b37dbad635d5ab58
+msgid "Set the x-coordinate of the scale."
+msgstr "设置刻度的 x 坐标。"
+
+#: ../../en/m5ui/scale.rst:283 ba28ad45d68d43f3a8db5413e9ceafcd
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:13 d872f137e9a846209bb7b8e27f1cc993
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:294 76058868dcef43ffa1dd3dd2462c80b2
+msgid "Set the y-coordinate of the scale."
+msgstr "设置刻度的 y 坐标。"
+
+#: ../../en/m5ui/scale.rst:300 50cfa38ddea14f9b8a341c3aa14b2069
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:14 e21501d856e54fe3a2d4f81f19a62761
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/scale.rst:311 c794988987fd4065ab8161e769e16c7b
+msgid "Set the size of the scale."
+msgstr "设置刻度尺寸。"
+
+#: ../../en/m5ui/scale.rst:313 ../../en/m5ui/scale.rst:327
+#: 05d50e7f9e394cf7b11c22f37db195be c0c69121d3454c13a9428ce6432cc744
+msgid "The width of the scale."
+msgstr "刻度宽度。"
+
+#: ../../en/m5ui/scale.rst:314 ../../en/m5ui/scale.rst:339
+#: 3d6fdd2aad5444e6bf9742a01d2bc1e3
+msgid "The height of the scale."
+msgstr "刻度高度。"
+
+#: ../../en/m5ui/scale.rst:325 93d4917e61f64fa195ae8053d75827e5
+msgid "Set the width of the scale."
+msgstr "设置刻度宽度。"
+
+#: ../../en/m5ui/scale.rst:337 be6d1a74a1694c0a9c45c19fa76eba39
+msgid "Set the height of the scale."
+msgstr "设置刻度高度。"
+
+#: ../../en/m5ui/scale.rst:349 0bfcb5612a8b429bac1ca248e1c7d36c
+msgid "Align the scale to another object."
+msgstr "将刻度对齐到另一个对象。"
+
+#: ../../en/m5ui/scale.rst:351 62aa0845662a4baba1743fae1e9d6fc6
+msgid "The object to align to."
+msgstr "要对齐到的对象。"
+
+#: ../../en/m5ui/scale.rst:352 5f87b2d64477463f9973b9669eda1c83
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/scale.rst:353 d16f318b9c8547a4b56df887335181b2
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/scale.rst:354 a84b480ffd0641a2b8c3f99ebbbfb1ad
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/scale.rst:358 de033291ad46422e88b75f2d3128a970
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.scale.ref:15 e1b359f0f2664755a993ea42c78b8281
+msgid "align_to.png"
+msgstr ""
+
+#~ msgid "Open the |cores3_scale_example.m5f2| project in UiFlow2."
+#~ msgstr ""
+
+#~ msgid "|cores3_scale_example.png|"
+#~ msgstr ""
+
+#~ msgid "cores3_scale_example.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The mode of the scale. It can "
+#~ "be one of the following:  Options:"
+#~ "      - `lv.scale.MODE.HORIZONTAL_TOP`     - "
+#~ "`lv.scale.MODE.HORIZONTAL_BOTTOM`     - "
+#~ "`lv.scale.MODE.VERTICAL_LEFT`     - "
+#~ "`lv.scale.MODE.VERTICAL_RIGHT`     - "
+#~ "`lv.scale.MODE.CIRCULAR`"
+#~ msgstr ""
+
+#~ msgid "`lv.scale.MODE.HORIZONTAL_TOP`"
+#~ msgstr ""
+
+#~ msgid "`lv.scale.MODE.HORIZONTAL_BOTTOM`"
+#~ msgstr ""
+
+#~ msgid "`lv.scale.MODE.VERTICAL_LEFT`"
+#~ msgstr ""
+
+#~ msgid "`lv.scale.MODE.VERTICAL_RIGHT`"
+#~ msgstr ""
+
+#~ msgid "`lv.scale.MODE.CIRCULAR`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The display mode.  Optional:      - "
+#~ "`lv.SCALE.MODE.HORIZONTAL_TOP`: Horizontal top "
+#~ "scale.     - `lv.SCALE.MODE.HORIZONTAL_BOTTOM`: "
+#~ "Horizontal bottom scale.     - "
+#~ "`lv.SCALE.MODE.VERTICAL_LEFT`: Vertical left scale."
+#~ "     - `lv.SCALE.MODE.VERTICAL_RIGHT`: Vertical "
+#~ "right scale.     - `lv.SCALE.MODE.ROUND_INNER`: "
+#~ "Round inner scale.     - "
+#~ "`lv.SCALE.MODE.ROUND_OUTER`: Round outer scale."
+#~ msgstr ""
+
+#~ msgid "|set_size.png|"
+#~ msgstr ""
+
+#~ msgid "set_size.png"
+#~ msgstr ""
+
+#~ msgid "|set_width.png|"
+#~ msgstr ""
+
+#~ msgid "set_width.png"
+#~ msgstr ""
+
+#~ msgid "|set_width1.png|"
+#~ msgstr ""
+
+#~ msgid "set_width1.png"
+#~ msgstr ""
+
+#~ msgid "|set_height.png|"
+#~ msgstr ""
+
+#~ msgid "set_height.png"
+#~ msgstr ""
+
