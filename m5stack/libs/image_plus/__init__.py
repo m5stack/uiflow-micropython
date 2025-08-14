@@ -14,7 +14,9 @@ import micropython
 
 
 class ImagePlus(Widgets.Image):
-    def __init__(self, url, x, y, enable, period, default_img="res/img/default.jpg", parent=None):
+    def __init__(
+        self, url, x, y, enable, period, default_img="/flash/res/img/default.jpg", parent=None
+    ):
         self._url = url
         self._x = x
         self._y = y
