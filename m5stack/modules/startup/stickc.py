@@ -26,41 +26,41 @@ except ImportError:
 DEBUG = True
 
 # launcher
-LAUNCHER_IMG = "res/stickc/launcher.jpeg"
+LAUNCHER_IMG = "/flash/res/stickc/launcher.jpeg"
 
 # menu
-MENU_DEV_IMG = "res/stickc/menu_dev.jpeg"
-MENU_APPRUN_IMG = "res/stickc/menu_apprun.jpeg"
-MENU_APPLIST_IMG = "res/stickc/menu_applist.jpeg"
+MENU_DEV_IMG = "/flash/res/stickc/menu_dev.jpeg"
+MENU_APPRUN_IMG = "/flash/res/stickc/menu_apprun.jpeg"
+MENU_APPLIST_IMG = "/flash/res/stickc/menu_applist.jpeg"
 
 # app.run
-APPRUN_IMG = "res/stickc/apprun.jpeg"
-RUN_ONCE_SELECT_IMG = "res/stickc/run_once_select.jpeg"
-RUN_ONCE_UNSELECT_IMG = "res/stickc/run_once_unselect.jpeg"
-RUN_ALWAYS_SELECT_IMG = "res/stickc/run_always_select.jpeg"
-RUN_ALWAYS_UNSELECT_IMG = "res/stickc/run_always_unselect.jpeg"
+APPRUN_IMG = "/flash/res/stickc/apprun.jpeg"
+RUN_ONCE_SELECT_IMG = "/flash/res/stickc/run_once_select.jpeg"
+RUN_ONCE_UNSELECT_IMG = "/flash/res/stickc/run_once_unselect.jpeg"
+RUN_ALWAYS_SELECT_IMG = "/flash/res/stickc/run_always_select.jpeg"
+RUN_ALWAYS_UNSELECT_IMG = "/flash/res/stickc/run_always_unselect.jpeg"
 
 # app.list
-APPLIST_IMG = "res/stickc/applist.jpeg"
+APPLIST_IMG = "/flash/res/stickc/applist.jpeg"
 
 # app.cloud
-CLOUD_WAIT_IMG = "res/stickc/wifi_wait.jpeg"
-CLOUD_CONNECTED_IMG = "res/stickc/wifi_connect.jpeg"
-CLOUD_DISCONNECTED_IMG = "res/stickc/wifi_disconnected.jpeg"
-CLOUD_ERROR_IMG = "res/stickc/wifi_error.jpeg"
-CLOUD_READY_IMG = "res/stickc/wifi_ready.jpeg"
+CLOUD_WAIT_IMG = "/flash/res/stickc/wifi_wait.jpeg"
+CLOUD_CONNECTED_IMG = "/flash/res/stickc/wifi_connect.jpeg"
+CLOUD_DISCONNECTED_IMG = "/flash/res/stickc/wifi_disconnected.jpeg"
+CLOUD_ERROR_IMG = "/flash/res/stickc/wifi_error.jpeg"
+CLOUD_READY_IMG = "/flash/res/stickc/wifi_ready.jpeg"
 
 # statusbar
-BAT_IMG_PATH = "res/stickc/battery/"
+BAT_IMG_PATH = "/flash/res/stickc/battery/"
 
 # develop
-AVATAR_IMG = "res/img/avatar.jpeg"
-DEVELOP_PRIVATE_IMG = "res/stickc/develop_private.jpeg"
-DEVELOP_PUBLIC_IMG = "res/stickc/develop_public.jpeg"
+AVATAR_IMG = "/flash/res/img/avatar.jpeg"
+DEVELOP_PRIVATE_IMG = "/flash/res/stickc/develop_private.jpeg"
+DEVELOP_PUBLIC_IMG = "/flash/res/stickc/develop_public.jpeg"
 
 # font
-MontserratMedium10_VLW = "res/stickc/Montserrat-Medium-10.vlw"
-MontserratMedium12_VLW = "res/stickc/Montserrat-Medium-12.vlw"
+MontserratMedium10_VLW = "/flash/res/stickc/Montserrat-Medium-10.vlw"
+MontserratMedium12_VLW = "/flash/res/stickc/Montserrat-Medium-12.vlw"
 
 
 class AppBase:
@@ -254,7 +254,7 @@ class DevApp(AppBase):
             if len(infos[4]) == 0:
                 return AVATAR_IMG
             else:
-                return "res/img/" + str(infos[4]).split("/")[-1]
+                return "/flash/res/img/" + str(infos[4]).split("/")[-1]
         else:
             return AVATAR_IMG
 
