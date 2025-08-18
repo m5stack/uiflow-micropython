@@ -1,0 +1,319 @@
+Index: M5Unified/src/M5Unified.cpp
+===================================================================
+--- M5Unified.orig/src/M5Unified.cpp
++++ M5Unified/src/M5Unified.cpp
+@@ -1408,6 +1408,7 @@ static constexpr const uint8_t _pin_tabl
+ #elif defined (CONFIG_IDF_TARGET_ESP32S3)
+       case board_t::board_M5StackCoreS3:
+       case board_t::board_M5StackCoreS3SE:
++        cfg.internal_als = true;
+         if (cfg.internal_mic)
+         {
+           mic_cfg.magnification = 2;
+@@ -1914,6 +1915,9 @@ static constexpr const uint8_t _pin_tabl
+     {
+       port_a_used = M5.Imu.begin(&M5.Ex_I2C) || port_a_used;
+     }
++    if (cfg.internal_als && In_I2C.isEnabled()) {
++      M5.Als.begin();
++    }
+     return port_a_used;
+   }
+ 
+Index: M5Unified/src/M5Unified.hpp
+===================================================================
+--- M5Unified.orig/src/M5Unified.hpp
++++ M5Unified/src/M5Unified.hpp
+@@ -62,6 +62,7 @@ namespace m5
+ #include "utility/Touch_Class.hpp"
+ #include "utility/Log_Class.hpp"
+ #include "utility/IMU_Class.hpp"
++#include "utility/LTR553_Class.hpp"
+ #include "utility/IOExpander_Base.hpp"
+ 
+ #include <memory>
+@@ -138,6 +139,9 @@ namespace m5
+       /// use the speaker.
+       bool internal_spk  = true;
+ 
++      /// use als
++      bool internal_als  = false;
++
+       /// use Unit Accel & Gyro.
+       bool external_imu  = false;
+ 
+@@ -214,6 +218,7 @@ namespace m5
+     Power_Class Power;
+     RTC8563_Class Rtc;
+     Touch_Class Touch;
++    LTR553_Class Als;
+ 
+ /*
+   /// List of available buttons:
+Index: M5Unified/src/utility/LTR553_Class.cpp
+===================================================================
+--- /dev/null
++++ M5Unified/src/utility/LTR553_Class.cpp
+@@ -0,0 +1,135 @@
++#include "LTR553_Class.hpp"
++
++namespace m5
++{
++    bool LTR553_Class::begin(I2C_Class* i2c) {
++        if (i2c != nullptr) {
++            _i2c = i2c;
++            i2c->begin();
++        }
++
++        uint8_t partID = readRegister8(0x86);
++        uint8_t mfrID = readRegister8(0x87);
++        if (partID != 0x92 || mfrID != 0x05) {
++            return false;
++        }
++
++        // software reset
++        // bool ret = writeRegister8(0x80, 0x02);
++
++        // active als
++        // bool ret = bitOn(0x80, 0);
++        bool ret = writeRegister8(0x80, 0x01);
++        // active ps
++        ret = ret && writeRegister8(0x81, 0x03);
++        return ret;
++    }
++
++    bool LTR553_Class::sleep() {
++        // deactivate als
++        bool ret = writeRegister8(0x80, 0x00);
++        // deactivate ps
++        ret = ret && writeRegister8(0x81, 0x00);
++        return ret;
++    }
++
++    bool LTR553_Class::softwareReset() {
++        return writeRegister8(0x80, 0x02);
++    }
++
++    void LTR553_Class::setLightSensorMode(uint8_t mode)
++    {
++        uint8_t value = readRegister8(0x80);
++        value &= (~0x01);
++        value |= mode;
++        writeRegister8(0x80, value);
++    }
++
++    void LTR553_Class::setProximitySensorMode(uint8_t mode)
++    {
++        uint8_t value = readRegister8(0x81);
++        value &= (~0x03);
++        value |= mode;
++        writeRegister8(0x81, value);
++    }
++
++    void LTR553_Class::setLightSensorGain(uint8_t gain)
++    {
++        uint8_t value = readRegister8(0x80);
++        value &= (~0x1C);
++        value |= gain;
++        writeRegister8(0x80, value);
++    }
++
++    void LTR553_Class::setProximitySensorGain(uint8_t gain)
++    {
++        uint8_t value = readRegister8(0x81);
++        value &= ~(0x0C);
++        value |= gain;
++        writeRegister8(0x81, value);
++    }
++
++    void LTR553_Class::setProximitySensorLEDPulsePeriod(uint8_t period)
++    {
++        uint8_t value = readRegister8(0x82);
++        value &= ~(0xE0);
++        value |= period;
++        writeRegister8(0x82, value);
++    }
++
++    void LTR553_Class::setProximitySensorLEDPulseDuty(uint8_t duty)
++    {
++        uint8_t value = readRegister8(0x82);
++        value &= ~(0x18);
++        value |= duty;
++        writeRegister8(0x82, value);
++    }
++
++    void LTR553_Class::setProximitySensorLEDCurrent(uint8_t current)
++    {
++        uint8_t value = readRegister8(0x82);
++        value &= ~(0x07);
++        value |= current;
++        writeRegister8(0x82, value);
++    }
++
++    void LTR553_Class::setLightSensorMeasurementRate(uint8_t rate)
++    {
++        uint8_t value = readRegister8(0x85);
++        value &= ~(0x07);
++        value |= rate;
++        writeRegister8(0x85, value);
++    }
++
++    void LTR553_Class::setProximitySensorMeasurementRate(uint8_t rate)
++    {
++        writeRegister8(0x84, rate);
++    }
++
++    uint16_t LTR553_Class::getLightSensorData()
++    {
++        uint8_t buffer[4] = {0};
++        uint16_t result;
++
++        readRegister(0x88, &buffer[0], 4);
++
++        uint16_t ch1_value, ch0_value;
++        ch1_value = (buffer[1] << 8) | buffer[0];
++        ch0_value = (buffer[3] << 8) | buffer[2];
++        result = (ch1_value + ch0_value) >> 1;
++        return result;
++    }
++
++    uint16_t LTR553_Class::getProximitySensorData()
++    {
++        uint8_t buffer[2];
++        uint16_t result;
++
++        readRegister(0x8D, &buffer[0], 2);
++        buffer[0] &= 0xFF;
++        buffer[1] &= 0x07;
++        result = (buffer[1] << 8) | buffer[0];
++        return result;
++    }
++
++}
+Index: M5Unified/src/utility/LTR553_Class.hpp
+===================================================================
+--- /dev/null
++++ M5Unified/src/utility/LTR553_Class.hpp
+@@ -0,0 +1,122 @@
++#ifndef __M5_LTR553_CLASS_H__
++#define __M5_LTR553_CLASS_H__
++
++#include "I2C_Class.hpp"
++
++namespace m5
++{
++    class LTR553_Class : public I2C_Device
++    {
++    public:
++        enum als_mode_t : std::uint8_t
++        {
++            E_ALS_MODE_STANDBY,
++            E_ALS_MODE_ACTIVE,
++        };
++        enum ps_mode_t : std::uint8_t
++        {
++            E_PS_MODE_STANDBY = 0x00,
++            E_PS_MODE_ACTIVE = 0x10,
++        };
++
++        enum als_agin_t : std::uint8_t
++        {
++            E_ALS_MODE_X1 = 0x00,
++            E_ALS_MODE_X2 = 0x04,
++            E_ALS_MODE_X4 = 0x08,
++            E_ALS_MODE_X8 = 0x0C,
++            E_ALS_MODE_X48 = 0x18,
++            E_ALS_MODE_X96 = 0x1C,
++        };
++
++        enum ps_agin_t : std::uint8_t
++        {
++            E_ALS_MODE_X16 = 0x00,
++            E_ALS_MODE_X32 = 0x08,
++            E_ALS_MODE_X64 = 0x0C,
++        };
++
++        enum led_period_t : std::uint8_t
++        {
++            E_LED_PERIOD_30KHZ = 0x00,
++            E_LED_PERIOD_40KHZ = 0x20,
++            E_LED_PERIOD_50KHZ = 0x40,
++            E_LED_PERIOD_60KHZ = 0x60,
++            E_LED_PERIOD_70KHZ = 0x80,
++            E_LED_PERIOD_80KHZ = 0xA0,
++            E_LED_PERIOD_90KHZ = 0xC0,
++            E_LED_PERIOD_100KHZ = 0xE0,
++        };
++
++        enum led_duty_t : std::uint8_t
++        {
++            E_LED_DUTY_25 = 0x00,
++            E_LED_DUTY_50 = 0x08,
++            E_LED_DUTY_75 = 0x10,
++            E_LED_DUTY_100 = 0x18,
++        };
++
++        enum led_current_t : std::uint8_t
++        {
++            E_LED_CURRENT_5MA = 0x00,
++            E_LED_CURRENT_10MA = 0x01,
++            E_LED_CURRENT_20MA = 0x02,
++            E_LED_CURRENT_50MA = 0x03,
++            E_LED_CURRENT_100MA = 0x04,
++        };
++
++        enum als_rate_t : std::uint8_t
++        {
++            E_ALS_RATE_50MS = 0x00,
++            E_ALS_RATE_100MS = 0x01,
++            E_ALS_RATE_200MS = 0x02,
++            E_ALS_RATE_500MS = 0x03,
++            E_ALS_RATE_1000MS = 0x04,
++            E_ALS_RATE_2000MS = 0x05,
++        };
++
++        enum ps_rate_t : std::uint8_t
++        {
++            E_PS_RATE_50MS = 0x00,
++            E_PS_RATE_70MS = 0x01,
++            E_PS_RATE_100MS = 0x02,
++            E_PS_RATE_200MS = 0x03,
++            E_PS_RATE_500MS = 0x04,
++            E_PS_RATE_1000MS = 0x05,
++            E_PS_RATE_2000MS = 0x06,
++            E_PS_RATE_10MS = 0x08,
++        };
++
++        static constexpr std::uint8_t DEFAULT_ADDRESS = 0x23;
++
++        LTR553_Class(
++            std::uint8_t i2c_addr = DEFAULT_ADDRESS,
++            std::uint32_t freq = 400000,
++            I2C_Class *i2c = &In_I2C) : I2C_Device(i2c_addr, freq, i2c)
++        {
++        }
++
++        ~LTR553_Class() {}
++
++        bool begin(I2C_Class *i2c = nullptr);
++        bool sleep();
++        bool softwareReset();
++        void setLightSensorMode(uint8_t mode);
++        void setProximitySensorMode(uint8_t mode);
++        void setLightSensorGain(uint8_t gain);
++        void setProximitySensorGain(uint8_t gain);
++        void setProximitySensorLEDPulsePeriod(uint8_t period);
++        void setProximitySensorLEDPulseDuty(uint8_t duty);
++        void setProximitySensorLEDCurrent(uint8_t current);
++
++        void setLightSensorMeasurementRate(uint8_t rate);
++        void setProximitySensorMeasurementRate(uint8_t rate);
++
++        uint16_t getLightSensorData();
++        uint16_t getProximitySensorData();
++
++        bool isEnabled(void) const { return true; }
++    };
++}
++
++#endif
