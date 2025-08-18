@@ -4,6 +4,7 @@
 import sys
 import time
 import machine
+from micropython import schedule
 
 if sys.platform != "esp32":
     from typing import Literal
@@ -30,51 +31,34 @@ class AudioPlayerUnit:
             audio_player_0 = AudioPlayerUnit(2, port=(33, 32))
     """
 
+    _uart_instance = None
+
     def __init__(self, id: Literal[0, 1, 2] = 2, port: list | tuple = None, verbose=False):
+        if AudioPlayerUnit._uart_instance is not None:
+            AudioPlayerUnit._uart_instance.deinit()
+            verbose and print("UART instance exit, deinit uart obj")
+
         self.uart = machine.UART(id, tx=port[1], rx=port[0])
         self.uart.init(9600, bits=8, parity=None, stop=1)
         self.uart.irq(handler=self._handler, trigger=machine.UART.IRQ_RXIDLE)
-        self.uart.read()
+        AudioPlayerUnit._uart_instance = self.uart
         self.verbose = verbose
         self.raw_message = ""
         self.command_num = 0
         self.is_recieved = False
         self.received_data = [False]
         self.play_status = None
+        self.uart.read()
 
     def _handler(self, uart) -> None:
         data = uart.read()
+        schedule(self._handler_data, data)
+
+    def _handler_data(self, data):
         if data is not None and len(data) > 5:
             self.verbose and print(
                 "Received message:", " ".join(f"0x{byte:02X}" for byte in data).split()
             )
-            # self.verbose and print(data[0] == self.command)
-            # self.verbose and print(data[1] == (~self.command) & 0xFF)
-            # if self.retun_value is not None:
-            #     self.verbose and print(data[2:4] == bytes(self.retun_value))
-            # else:
-            #     self.verbose and print("True")
-            # self.verbose and print(
-            #     data[-1]
-            #     == (
-            #         self.command + ~self.command
-            #         & 0xFF
-            #         + sum(data[4:-1])
-            #         + (0 if self.retun_value is None else sum(self.retun_value))
-            #     )
-            #     & 0xFF
-            # )
-            # self.verbose and print(
-            #     (
-            #         hex(
-            #             self.command
-            #             + (~self.command & 0xFF)
-            #             + sum(data[4:-1])
-            #             + (0 if self.retun_value is None else sum(self.retun_value))
-            #             & 0xFF
-            #         )
-            #     )
-            # )
             if (data[0] == 0x0A and self.command == 0x05) or (
                 data[0] == self.command and data[1] == (~self.command & 0xFF)
             ):
@@ -99,7 +83,7 @@ class AudioPlayerUnit:
                     # self.check_tick_callback()
             else:
                 self.verbose and print("Invalid frame received: header/footer mismatch")
-                uart.read()
+                self.uart.read()
 
     def _wait_for_message(self, time_out: int = 500):
         self.is_recieved = False
@@ -146,7 +130,7 @@ class AudioPlayerUnit:
                 audio_player_0.check_play_status()
         """
         self._send_message(0x04, [0x00], [0x02, 0x00])
-        return self._wait_for_message(500)[0]
+        return self._wait_for_message(600)[0]
 
     def play_audio(self) -> int:  # 可从暂停处开始播放
         """Play the audio.
@@ -165,7 +149,7 @@ class AudioPlayerUnit:
                 audio_player_0.play_audio()
         """
         self._send_message(0x04, [0x01], [0x02, 0x00])
-        return self._wait_for_message(500)[0]
+        time.sleep(0.6)
 
     def pause_audio(self) -> int:  # 暂停播放
         """Pause the audio.
