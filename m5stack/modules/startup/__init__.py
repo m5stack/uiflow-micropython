@@ -197,6 +197,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cardputer = Cardputer_Startup()
             cardputer.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5CardputerADV:
+            from .cardputeradv import CardputerADV_Startup
+
+            cardputeradv = CardputerADV_Startup()
+            cardputeradv.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5NanoC6:
             from .nanoc6 import NanoC6_Startup
 

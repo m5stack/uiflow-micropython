@@ -42,7 +42,8 @@ boards := \
 	M5STACK_AtomS3R:atoms3r          \
 	M5STACK_AtomS3R_CAM:atoms3r_cam  \
 	M5STACK_StamPLC:stamplc          \
-	M5STACK_Tab5:tab5
+	M5STACK_Tab5:tab5                \
+	M5STACK_CardputerADV:cardputeradv
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -81,7 +82,8 @@ BOARD_TYPE_DEF := \
 	atoms3r     \
 	atoms3r_cam \
 	stamplc     \
-	tab5
+	tab5        \
+	cardputeradv
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -319,7 +321,7 @@ IDF_PATH_PATCH_SERIES = \
 	1004-idf_v5.4_freertos.patch
 
 M5UNIFIED_PATCH_SERIES = \
-	2005-Support-LTR553.patch
+	2006-Support-LTR553.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
