@@ -1,0 +1,19 @@
+{
+    "include": [
+        "m5stack/**"
+    ],
+    "exclude": [],
+    "ignore": [],
+    "defineConstant": {
+        "DEBUG": true
+    },
+    "stubPath": "stubs",
+    "reportMissingImports": "error",
+    "reportMissingTypeStubs": false,
+    "executionEnvironments": [
+        {
+            "root": "./",
+            "reportMissingImports": "warning"
+        },
+    ]
+}
