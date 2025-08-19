@@ -92,6 +92,7 @@ package(
         "sht30.py",
         "soft_timer.py",
         "sths34pf80.py",
+        "tca8418.py",
         "tcs3472.py",
         "timer_thread.py",
         "vl53l0x.py",
