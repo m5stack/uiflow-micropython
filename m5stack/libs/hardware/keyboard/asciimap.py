@@ -2,6 +2,18 @@
 #
 # SPDX-License-Identifier: MIT
 
+import micropython
+
+# Modifier masks
+KEY_MOD_LCTRL = micropython.const(0x01)
+KEY_MOD_LSHIFT = micropython.const(0x02)
+KEY_MOD_LALT = micropython.const(0x04)
+KEY_MOD_LMETA = micropython.const(0x08)  # windows key or command key on macOS
+KEY_MOD_RCTRL = micropython.const(0x10)
+KEY_MOD_RSHIFT = micropython.const(0x20)
+KEY_MOD_RALT = micropython.const(0x40)
+KEY_MOD_RMETA = micropython.const(0x80)  # right windows key or command key on macOS
+
 SHIFT = 0x80
 
 KEY_LEFT_CTRL = 0x80
@@ -9,11 +21,18 @@ KEY_LEFT_SHIFT = 0x81
 KEY_LEFT_ALT = 0x82
 
 KEY_FN = 0xFF
-KEY_OPT = 0x00
+KEY_LEFT_OPT = 0xFE
 
+KEY_ESC = 0x29
 KEY_BACKSPACE = 0x2A
 KEY_TAB = 0x2B
 KEY_ENTER = 0x28
+
+# user defined keys
+KEY_LEFT = 180
+KEY_UP = 181
+KEY_DOWN = 182
+KEY_RIGHT = 183
 
 # +-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
 # | NUL | SOH | STX | ETX | EOT | ENQ | ACK | BEL | BS  | TAB | LF  | VT  | FF  | CR  | SO  | SI  |

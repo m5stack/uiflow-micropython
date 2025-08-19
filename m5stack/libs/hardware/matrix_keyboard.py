@@ -2,15 +2,27 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .keyboard import Keyboard
-from micropython import schedule
+from . import Keyboard
+import micropython
 
 
 class MatrixKeyboard(Keyboard):
+    _instance = None
+    _initialized = False
+
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
     def __init__(self) -> None:
+        if self._initialized:
+            return
+
         super().__init__()
         self._keys = []
         self._handler = None
+        self._initialized = True
 
     def get_key(self) -> int:
         if self._keys:
@@ -61,4 +73,4 @@ class MatrixKeyboard(Keyboard):
                     for word in status.word:
                         self._keys.append(word)
         if self.is_pressed() and self._handler:
-            schedule(self._handler, self)
+            micropython.schedule(self._handler, self)
