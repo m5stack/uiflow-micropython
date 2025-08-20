@@ -1,0 +1,483 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-04 10:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/arc.rst:4 ../../en/m5ui/arc.rst:52
+#: 593821ab4623459d895d5e5171c3f3ae ff9885fe3890467aa6691e6544615792
+msgid "M5Arc"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:8 ea499dbfe4644d8eaa8d62ca016d98c2
+msgid ""
+"M5Arc is a widget that can be used to create arcs in the user interface. "
+"It can be used to display circular progress or other circular indicators."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:11 403dabb03a1243449ce18d64a75c1717
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:14 ../../en/m5ui/arc.rst:33
+#: 4985e0fd79b24299af1366970297be55 ff105dda36e74e3eb901886f9d88c7c9
+msgid "event arc"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:16 b5fccef3ab0444ceb1138bc17f8f38a5
+msgid "Open the |cores3_arc_event_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:18 ../../en/m5ui/arc.rst:35
+#: 588852d970bc4f9c9093cf6a135edae1 7914cec46f124c90b0e3237e55847e1f
+msgid "This example creates an arc that triggers an event when the value changes."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:20 ../../en/m5ui/arc.rst:64 ../../en/m5ui/arc.rst:80
+#: ../../en/m5ui/arc.rst:97 ../../en/m5ui/arc.rst:114 ../../en/m5ui/arc.rst:136
+#: ../../en/m5ui/arc.rst:154 ../../en/m5ui/arc.rst:172
+#: ../../en/m5ui/arc.rst:188 ../../en/m5ui/arc.rst:204
+#: ../../en/m5ui/arc.rst:221 ../../en/m5ui/arc.rst:237
+#: ../../en/m5ui/arc.rst:253 ../../en/m5ui/arc.rst:272
+#: ../../en/m5ui/arc.rst:290 0a8e7c374ecc4a239431750ecf5afcec
+#: 0af850d9d9d84583b0d03c01b76b63cd 0cc9241b7245407bbd3ebab63487c884
+#: 0dc0a22fe4704a60bf856ea0d1528fc4 0fa33ea1d8b34975aebea8dcfcb10af0
+#: 123e77a661ee474fa283cab139f512d8 257e1b710a3d4e8bb03b2910000deb6c
+#: 2cdd76530e3f453783ee7c07fc7e81aa 2ed2a0747ca147ae919d152eaf3e7a1c
+#: 4fe4008a4eee48fa83057008f1f99cca 64a12f1ceb1c4934b7a0416db2380e3f
+#: 6aba9ec21ae74fcc8fcec5422efada25 75f0ca1ca65b4f97bf1f21c22b14c50a
+#: a203d11dece547039fa7e1089d2a19bd bbaad1f677604cd5a715555cb38ddc75
+#: dc340b2d19a7475bb2d60c8100cf9972 f93e3a088a77494fa5db63a90b5e87e1
+#: m5ui.arc.M5Arc:16 m5ui.arc.M5Arc.set_arc_color:7 of
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:22 902d83403e884e71b9aa24a1971da53c
+msgid "|cores3_arc_event_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:17 26adc3495cb34fe385de80e6fdecaa08
+msgid "cores3_arc_event_example.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:24 ../../en/m5ui/arc.rst:43
+#: 282ca485745c454daa17294585ebaf14 b663444d5e4e4a6d8ab55f39f21471a6
+msgid "Example output:"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:26 ../../en/m5ui/arc.rst:45 ../../en/m5ui/arc.rst:152
+#: 1d0410ba2e5c4afb87d7f832fbf2e525 306bc39dd58e4eeca0078104fb590dcf
+#: 5ad1ca7fec0e4b9ca6104f5a9aaab319 bd1657dafd574f339d6e0166a383d289
+#: m5ui.arc.M5Arc:18 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:30 f7a2fde0095141aa97c19b00569a6be4
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:37 ../../en/m5ui/arc.rst:68 ../../en/m5ui/arc.rst:84
+#: ../../en/m5ui/arc.rst:101 ../../en/m5ui/arc.rst:118
+#: ../../en/m5ui/arc.rst:140 ../../en/m5ui/arc.rst:158
+#: ../../en/m5ui/arc.rst:176 ../../en/m5ui/arc.rst:192
+#: ../../en/m5ui/arc.rst:208 ../../en/m5ui/arc.rst:225
+#: ../../en/m5ui/arc.rst:241 ../../en/m5ui/arc.rst:257
+#: ../../en/m5ui/arc.rst:276 ../../en/m5ui/arc.rst:294
+#: 063841cd208c41b3b17d30fd7161d93f 0f102faad19b406caa4e61fd4ea91e98
+#: 3ad3a966354047d39dd54ff7d808fba7 6b23534eb4a744cfabd1b302f84da597
+#: 80be8c378bd74714ad88d6eb208db8e0 83d35c384e30483caf10657af23ff3f7
+#: 970ed5b434cd461798c19b8e54efd2b4 98fca75648a24a97a636faf7c4cb8abc
+#: a547ce6a56da446c8a3d6ce0c2fc3d29 ac26b303f8a24f35977e90e994ca8f9e
+#: b1d2dde3eb7a415eae12539ec9150e53 b28277eb52a74f9680b72f55cbf1d10b
+#: c20e7525386b434abac03e8f03c0da02 cc3bf681e89848dfa8766e56c8db6959
+#: def108ae2c35419abced43bf47ca2560 e790e8fa4509462ebd7da809de03cb1e
+#: f56f1dd118474413848d3d807e5efa24 m5ui.arc.M5Arc:20
+#: m5ui.arc.M5Arc.set_arc_color:11 of
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:49 dc5e373ef93b46f4b51f793d9e293f88
+msgid "**API**"
+msgstr ""
+
+#: da50986c7f68480da02c290a5c14aefa m5ui.arc.M5Arc:1 of
+msgid "Bases: :py:class:`~lvgl.arc`"
+msgstr ""
+
+#: 9cea13e9b0514801b7f7b13c9369ff71 m5ui.arc.M5Arc:1 of
+msgid "Create a arc object."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst 012452aa982d4c378578746684b36d81
+#: 37bbb4105e2c47449e6b4847a477efb6 3ba8c1bf46bb4aaebb340838efff6098
+#: 4e1247d569734a5097c7cfb9c266f9de 85b564eff9b144ef998c1d8f919185ae
+#: 8f2a3bd1ae864228926f67c14e02f73b bc3bccdc8a1c4a17ab7e03c524dfc092
+#: c0079a98e4ba4c3fbf7d27fe7b441f0b c9c25ed179c04e3ab1a0421a7cb460eb
+#: e095ba7315a04046bc7401de21a9cc2a e29985bf7cbd409a86c120798a805630
+#: f8853ba1242b4949bec8e792c5eb7afc fdfe134d5c4b4b0fb676c31b1961937d
+#: feeef60ba7814a2fb9203bf0ca7ec222 ff4783db43e54360a199737efb8ebe32
+#: m5ui.arc.M5Arc.set_arc_color of
+msgid "Parameters"
+msgstr ""
+
+#: 61a87cfc71c148819ef7bbace828f3f9 m5ui.arc.M5Arc:3 of
+msgid "The x position of the arc."
+msgstr ""
+
+#: 8bc4a72ba38e419794003fbbc39f9995 m5ui.arc.M5Arc:4 of
+msgid "The y position of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:218 ../../en/m5ui/arc.rst:235
+#: 3bb7eb5bcd874fcebeb069d169a091a0 b93a5ab46943482d953721f8f62c43b2
+#: d8a26d044b0841c8a13ded8a5f465283 m5ui.arc.M5Arc:5 of
+msgid "The width of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:219 ../../en/m5ui/arc.rst:251
+#: 6966ab01fdc24f29a736ce8f62434d9f 9fa2f5f13bc14826a2434f803fd4bbb5
+#: f072167b5dbc44518e8bb73cfa4909ea m5ui.arc.M5Arc:6 of
+msgid "The height of the arc."
+msgstr ""
+
+#: 1c93c552bfe845e7bea673621a14ac72 m5ui.arc.M5Arc:7 of
+msgid "The initial value of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:111 31862ba40e6e49918b4306ad736b1895
+#: 328f91e959c04a469019b0e5fc76452f m5ui.arc.M5Arc:8 of
+msgid "The minimum value of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:112 2a8a29ff3d6944eea808d74419347efa
+#: 7ca2fd642d7d4980a7d285eb20027180 m5ui.arc.M5Arc:9 of
+msgid "The maximum value of the arc."
+msgstr ""
+
+#: 2c1411a2bc8f467eab473cd3f7119fc0 m5ui.arc.M5Arc:10 of
+msgid "The rotation of the arc in degrees."
+msgstr ""
+
+#: 31467c972da24a649f204b6b2525e6f3 m5ui.arc.M5Arc:11 of
+msgid "The color of the arc in the off state in hexadecimal format."
+msgstr ""
+
+#: deffbed7b42c46da81389af40fc649a0 m5ui.arc.M5Arc:12 of
+msgid "The color of the arc in the on state in hexadecimal format."
+msgstr ""
+
+#: ff1b090e19344693b24a78dda46d682b m5ui.arc.M5Arc:13 of
+msgid "The color of the knob on the arc in hexadecimal format."
+msgstr ""
+
+#: dfb87872ba66465cbc880792a4bb88a7 m5ui.arc.M5Arc:14 of
+msgid ""
+"The parent object to attach the arc to. If not specified, the arc will be"
+" attached to the default screen."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:60 df4555c8d28349a0b8d09b6c7a2a8419
+msgid "Set the rotation of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:62 53a6249138a54990bde70244e42b1548
+msgid "The rotation angle of the arc in degrees."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:66 8313ad8d3e04498ea3e271afd5d72631
+msgid "|set_rotation.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:4 619c8c6912d64b39a05804e931adacfd
+msgid "set_rotation.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:76 7c18884b99ea408a8ee5cd18c6b60d14
+msgid "Set the value of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:78 ../../en/m5ui/arc.rst:94
+#: ae688c321be04923b06216621074766d bb4d4021fa74495aaf9fcaeecd8f5310
+msgid "The value of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:82 ab7fb1281b5d41528f8623366cb25f80
+msgid "|set_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:5 6131869528744a9d9a0ab397e9b0b167
+msgid "set_value.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:92 17936446d6e340a88487ea2f5ae51c7d
+msgid "Get the value of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst 22aa5acf4bc5485e9fa3bd3214479d03
+#: f3fd703c47d242da8eb3d30364734908
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst 5f34b04fc98748e2a177d2098a98a5a9
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:99 6cf6924f7e0a48988f288d0fd868759a
+msgid "|get_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:6 4a4b483223364fe2ae35d6f0d405b4ad
+msgid "get_value.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:109 1c7bde8a9e6144a0b42f3071086dc631
+msgid "Set the range of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:116 9ec86360cc9c4022bbaea3f9c6f1ceb8
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:7 efbe2ea3d0f64cff8983b5048872f8b9
+msgid "set_range.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:127 dd416f6914c940e2baabaa258d10e97b
+msgid "Set the mode of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:129 97a5655ab2d84a6ba50a0db778922a08
+msgid ""
+"The mode of the arc.  Option:     - lv.arc.MODE.NORMAL: Normal mode.     "
+"- lv.arc.MODE.REVERSE: Reverse mode.     - lv.arc.MODE.SYMMETRICAL: "
+"Symmetrical mode."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:129 a6c71908897049358ce139ffb35a1beb
+msgid "The mode of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:134 a1d2464025f046b789c4cafd3f462064
+msgid "Option:"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:132 9d1e0a057c104ff183aabd283fdf0861
+msgid "lv.arc.MODE.NORMAL: Normal mode."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:133 d215bf9bc4624dc785712732fc424de2
+msgid "lv.arc.MODE.REVERSE: Reverse mode."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:134 086285fe1c1a4fe49c8cedd032ad12c0
+msgid "lv.arc.MODE.SYMMETRICAL: Symmetrical mode."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:138 ecc1e786202f4031a6bda3422e45869f
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:8 e7c3c4ea65e44f6784f579bc6bd3447d
+msgid "set_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:148 8afc088838294e608bd3af3b391b1b0c
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:150 d781e6f70aa54113ad8d0cc5e5dbc518
+msgid "The flag to set."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:151 7a675549d2064b97a97e5cdc028c5d49
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:156 869a35221e854b649e7399d9888e1629
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:15 17f33ce7e5d74ab2ab4e8561f4898255
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:167 babd0012fbab4e469755761e9ccd06af
+msgid "Set the position of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:169 ../../en/m5ui/arc.rst:186
+#: 35a7e9125d0d4ae3a8a446dea9335ad3 f030bf96e0154cb5887ad6ee42c37342
+msgid "The x-coordinate of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:170 ../../en/m5ui/arc.rst:202
+#: 48cc12bde64744509efa3b23e59d9687 e521445e9c414178a16f88bc4aae59b3
+msgid "The y-coordinate of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:174 a415ccc84d2445728d0e41ec3ec84f33
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:10 b00a11e71d084ac3a018ed123ebb3f47
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:184 ee7d8e5a3dab4363b7b9ed1585bec910
+msgid "Set the x-coordinate of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:190 b5be812c9619474caf311862811e802b
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:13 43ee9d93b9564a62aae98bf8b0e5978c
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:200 07e903771d7c4887a2553f003977b8c5
+msgid "Set the y-coordinate of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:206 e6501e980e654501ac9ca6c8ae6e907b
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:14 440ed13b349d4bc8ad9aefb2abaff495
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:216 ae2a11f92e604caaa7b3100c919dc569
+msgid "Set the size of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:223 34f95be0eaf84610a7d4736cacb8daf1
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:11 ca6fcf889f8b465ea527ad23945b27ec
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:233 eca7bf4796154018b6ecc20ff10799c1
+msgid "Set the width of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:239 45b4d6baef334e9da51ace8acd2914af
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:12 6f96b4ac0df54a7487b200da89021035
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:249 8692a72419ab454ea6316fa7f5125588
+msgid "Set the height of the arc."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:255 ff16c88b6fbf445fa8e66e24001b0c8d
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:9 b4d9d811b4cd4ffdb678247a95bc10fb
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:265 49135d2421d142828e47bcb7321a6fed
+msgid "Align the arc to another object."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:267 e10aa63deb8a472f96065eb2349d9786
+msgid "The object to align to."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:268 d25e445265664dfa9da033beec440ed9
+msgid "The alignment type."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:269 a766b01b17b144f69c1c8d5f6a4871c7
+msgid "The x-offset from the aligned object."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:270 2ba16dada0464a228e166e7cc4edf640
+msgid "The y-offset from the aligned object."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:274 56fef355b414464a99eada969c439d4b
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:1 a0ec3097c44b4a36a1439b0b5068a6b9
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:284 a188fb22a954481b94a3d280f9a60fc5
+msgid ""
+"Add an event callback to the arc. The callback will be called when the "
+"specified event occurs."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:286 386b44195d6c4067aeaf87c62e3a2658
+msgid "The callback function to call."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:287 801a63958e8147f1a192aaa36b9b4d95
+msgid "The event to listen for."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:288 1b542ee486d1486bb72b76757873b071
+msgid "Optional user data to pass to the callback."
+msgstr ""
+
+#: ../../en/m5ui/arc.rst:292 29bcd2aac110422f9d111beb34d44a95
+msgid "|event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:2 e5aa300ed91e4826aa97487796748668
+msgid "event.png"
+msgstr ""
+
+#: a7b25b9620474a38bf26e46b3647b49b m5ui.arc.M5Arc.set_arc_color:1 of
+msgid "Set the color of the arc."
+msgstr ""
+
+#: e1490ec8262f401187c814f684f51e74 m5ui.arc.M5Arc.set_arc_color:3 of
+msgid "The color of the arc in hexadecimal format."
+msgstr ""
+
+#: 53e8338028a7458b88b773bdaa03e113 m5ui.arc.M5Arc.set_arc_color:4 of
+msgid "The opacity level (0-255)."
+msgstr ""
+
+#: d943bd2c35ef451d8117743620ae87d5 m5ui.arc.M5Arc.set_arc_color:5 of
+msgid ""
+"The part of the arc to apply the style to (e.g., lv.PART.MAIN | "
+"lv.STATE.DEFAULT)."
+msgstr ""
+
+#: 114f27d771064397bfbfbf5a0c188a98 m5ui.arc.M5Arc.set_arc_color:9 of
+msgid "|set_arc_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.arc.ref:3 b41b439184344485bbc5a8deae3ccdb8
+msgid "set_arc_color.png"
+msgstr ""
+

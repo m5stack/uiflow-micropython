@@ -228,38 +228,6 @@ M5Arc
 
                 arc_0.set_size(100, 50)
 
-    .. py:method:: set_width(width)
-
-        Set the width of the arc.
-
-        :param int width: The width of the arc.
-
-        UiFlow2 Code Block:
-
-            |set_width.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                arc_0.set_width(100)
-
-    .. py:method:: set_height(height)
-
-        Set the height of the arc.
-
-        :param int height: The height of the arc.
-
-        UiFlow2 Code Block:
-
-            |set_height.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                arc_0.set_height(50)
-
     .. py:method:: align_to(obj, align, x, y)
 
         Align the arc to another object.
