@@ -89,7 +89,9 @@ class M5Arc(lv.arc):
 
         UiFlow2 Code Block:
 
-            |set_arc_color.png|
+            |set_bg_color.png|
+            |set_indicator_color.png|
+            |set_knob_color.png|
 
         MicroPython Code Block:
 
