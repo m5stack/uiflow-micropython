@@ -1,0 +1,33 @@
+
+.. |MQ| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/co2/co2_01.webp
+    :target: https://docs.m5stack.com/en/unit/co2
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/init.png
+
+.. |set_mq_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/set_mq_mode.png
+.. |get_mq_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_mq_mode.png
+.. |set_led_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/set_led_status.png
+.. |get_led_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_led_status.png
+.. |set_heat_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/set_heat_time.png
+.. |get_heat_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_heat_time.png
+.. |get_adc_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_adc_value.png
+.. |get_valid_tags.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_valid_tags.png
+.. |get_ntc_adc_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_ntc_adc_value.png
+.. |get_ntc_res_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_ntc_res_value.png
+.. |get_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_voltage.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_firmware_version.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/get_i2c_address.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/set_i2c_address.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/mq/example.png
+
+.. |mq_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/mq/mq_core2_example.m5f2"
+        target="_blank"
+    >
+        mq_core2_example.m5f2
+    </a>

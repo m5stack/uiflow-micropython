@@ -74,9 +74,10 @@ Unit
     midi.rst
     minioled.rst
     miniscale.rst
-    tof90.rst
+    mq.rst
     mqtt.rst
     mqttpoe.rst
+    tof90.rst
     nbiot.rst
     nbiot2.rst
     ncir.rst
