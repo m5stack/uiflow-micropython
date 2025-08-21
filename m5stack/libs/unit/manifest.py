@@ -80,6 +80,7 @@ package(
         "midi.py",
         "minioled.py",
         "miniscale.py",
+        "mq.py",
         "mqtt.py",
         "mqttpoe.py",
         "nbiot.py",

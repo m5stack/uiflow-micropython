@@ -81,6 +81,7 @@ _attrs = {
     "MIDIUnit": "midi",
     "MiniOLEDUnit": "minioled",
     "MiniScaleUnit": "miniscale",
+    "MQUnit": "mq",
     "MQTTUnit": "mqtt",
     "MQTTPoEUnit": "mqttpoe",
     "NBIOTUnit": "nbiot",
