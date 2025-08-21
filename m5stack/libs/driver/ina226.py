@@ -8,6 +8,39 @@ from micropython import const
 
 
 class INA226:
+    """Create an INA226 object.
+
+    :param I2C i2c: The I2C bus the INA226 is connected to.
+    :param int address: The I2C address of the device.
+    :param float shunt_resistor: The value of the shunt resistor in ohms. Default is 0.2.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from hardware import I2C
+            from driver import INA226
+
+            i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+            ina226 = INA226(i2c0, 0x40, shunt_resistor=0.02)
+    """
+
+    # Register Constants
+    REG_CONFIG = const(0x00)  # Configuration
+    REG_SHUNT_VOLTAGE = const(0x01)  # Shunt Voltage
+    REG_BUS_VOLTAGE = const(0x02)  # Bus Voltage
+    REG_POWER = const(0x03)  # Power
+    REG_CURRENT = const(0x04)  # Current
+    REG_CALIBRATION = const(0x05)  # Calibration
+    REG_MASK = const(0x06)  # Mask/Enable (R/W)，报警设置和转换准备标志
+    REG_ALERTL = const(0x07)  # Alert Limit (R/W)，报警阈值
+    REG_MANUF_ID = const(0xFE)  # Manufacturer ID (R)，0x5449
+    REG_DIE_ID = const(0xFF)  # Die ID (R),0x2260
+
     # Averaging mode
     # Configuration Register: Bit[11:9]
     CFG_AVGMODE_MASK = const(0x0E00)
@@ -30,7 +63,7 @@ class INA226:
     CFG_VBUSCT_1100us = const(0x0100)
     CFG_VBUSCT_21116us = const(0x0140)
     CFG_VBUSCT_4156us = const(0x0180)
-    CFG_AVGMODE_8244us = const(0x01C0)
+    CFG_VBUSCT_8244us = const(0x01C0)
 
     # Shunt voltage conversion time
     # Configuration Register: Bit[5:3]
@@ -56,26 +89,18 @@ class INA226:
     CFG_MODE_BVOLT_CONTINUOUS = const(0x0006)
     CFG_MODE_SANDBVOLT_CONTINUOUS = const(0x0007)
 
-    # Register Constants
-    REG_CONFIG = const(0x00)  # Configuration
-    REG_SHUNT_VOLTAGE = const(0x01)  # Shunt Voltage
-    REG_BUS_VOLTAGE = const(0x02)  # Bus Voltage
-    REG_POWER = const(0x03)  # Power
-    REG_CURRENT = const(0x04)  # Current
-    REG_CALIBRATION = const(0x05)  # Calibration
-
     def __init__(self, i2c: I2C, addr=0x40, shunt_resistor=0.02):
-        """
-        init
-        :param i2c: I2C object
-        :param addr: INA226 slave address
-        :param shunt_resistor: shunt resistor (unit: Ω)
-        """
         self.i2c = i2c
         self.addr = addr
+        self._available()
         self.shunt_resistor = shunt_resistor
         self.current_lsb = None
         self.power_lsb = None
+
+    def _available(self):
+        buf = self._read_register(self.REG_MANUF_ID)
+        if buf != b"\x54\x49":  # Manufacturer ID for Texas Instruments (0x5449)
+            raise ValueError("UnitByteSwitch not found in I2C bus.")
 
     def _write_register(self, reg, value):
         data = value.to_bytes(2, "big")
@@ -89,37 +114,86 @@ class INA226:
         config = avg | vbus_conv_time | vshunt_conv_time | mode
         self._write_register(self.REG_CONFIG, config)
 
-    def calibrate(self, max_expected_current):
+    def calibrate(self, max_expected_current=0, cal_value=None):
+        """Calibrate the INA226.
+
+        :param float max_expected_current: The maximum expected current in Amperes.
+        :param int cal_value: The calibration value to use. If None, it will be calculated based on the maximum expected current and the shunt resistor value.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ina226_0.calibrate(10)
+
+                ina226_0.calibrate(cal_value=0xC80)
         """
-        calibrate INA226
-        :param max_expected_current: unit: A
-        """
-        self.current_lsb = max_expected_current / 32768
-        calibration = int(0.00512 / (self.current_lsb * self.shunt_resistor))
+        if cal_value is None:
+            self.current_lsb = max_expected_current / 32768
+            calibration = int(0.00512 / (self.current_lsb * self.shunt_resistor))
+        else:
+            calibration = cal_value
+            self.current_lsb = 0.00512 / (calibration * self.shunt_resistor)
         self.power_lsb = (
             self.current_lsb * 25
         )  # The power LSB has a fixed ratio to the Current_LSB of 25
         self._write_register(self.REG_CALIBRATION, calibration)
 
     def read_shunt_voltage(self):
-        """
-        unit: V
+        """Read the shunt voltage in Volts.
+
+        :returns: The shunt voltage in Volts.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |read_shunt_voltage.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ina226_0.read_shunt_voltage()
         """
         raw = self._read_register(self.REG_SHUNT_VOLTAGE)
         raw_value = struct.unpack(">h", raw)[0]
         return raw_value * 2.5e-6  # Full-scale range = 81.92 mV (decimal = 7FFF); LSB: 2.5 μV
 
     def read_bus_voltage(self):
-        """
-        unit: V
+        """Read the bus voltage in Volts.
+
+        :returns: The bus voltage in Volts.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |read_bus_voltage.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ina226_0.read_bus_voltage()
         """
         raw = self._read_register(self.REG_BUS_VOLTAGE)
         raw_value = struct.unpack(">H", raw)[0]
         return raw_value * 1.25e-3  # Full-scale range = 40.96 V (decimal = 7FFF); LSB = 1.25 mV.
 
     def read_current(self):
-        """
-        unit: A
+        """Read the current in Amperes.
+
+        :returns: The current in Amperes.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |read_current.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ina226_0.read_current()
         """
         if self.current_lsb is None:
             raise ValueError("Please call the calibrate() method for calibration first.")
@@ -129,8 +203,20 @@ class INA226:
         return raw_value * self.current_lsb  # convert to unit: A
 
     def read_power(self):
-        """
-        unit: W
+        """Read the power in Watts.
+
+        :returns: The power in Watts.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |read_power.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ina226_0.read_power()
         """
         if self.current_lsb is None:
             raise ValueError("Please call the calibrate() method for calibration first.")

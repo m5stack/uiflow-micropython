@@ -1,0 +1,65 @@
+INA226 Unit
+============
+
+.. sku: U200 / U200-1A
+
+.. include:: ../refs/unit.ina226.ref
+
+This is the driver library of INA226 Unit, which is used to obtain current and power data from the INA226 sensor.
+
+Support the following products:
+
+    |INA226|
+
+
+UiFlow2 Example
+---------------
+
+get value
+^^^^^^^^^^^^^^^
+
+Open the |ina226_core2_example.m5f2| project in UiFlow2.
+
+This example gets the current, voltage, and power values from the INA226 Unit and displays them on the screen.
+
+UiFlow2 Code Block:
+
+    |example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+get value
+^^^^^^^^^^^^^^^
+
+This example gets the current, voltage, and power values from the INA226 Unit and displays them on the screen.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/ina226/ina226_core2_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+
+**API**
+-------
+
+INA226Unit
+^^^^^^^^^^
+
+.. autoclass:: unit.ina226.INA226Unit
+    :members:
+
+INA226
+^^^^^^^
+
+.. autoclass:: driver.ina226.INA226
+    :members:

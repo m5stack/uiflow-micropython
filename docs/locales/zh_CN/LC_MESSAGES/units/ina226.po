@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-11 14:46+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/ina226.rst:2 309e555f5e0e43c6ad018adbd741a106
+msgid "INA226 Unit"
+msgstr ""
+
+#: ../../en/units/ina226.rst:8 441f48534fdd48c687a5d4b0ff520351
+msgid ""
+"This is the driver library of INA226 Unit, which is used "
+"to obtain current and power data from the INA226 sensor."
+msgstr "这是 INA226 单元的驱动库，用于从 INA226 传感器获取电流与功率数据。"
+
+#: ../../en/units/ina226.rst:10 28f98c0c1bdd4980913345e62ed35161
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/ina226.rst:12 a278cadedef14b689a7fcc99c3df0d02
+msgid "|INA226|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref ../../en/units/ina226.rst:62
+#: 3f55be23a385402f9418cce6c31f1a20 40e273b9843a4f8ba323907a21841fb4
+msgid "INA226"
+msgstr ""
+
+#: ../../en/units/ina226.rst:16 fefd38959ab94d7285b5b7aabd613662
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/units/ina226.rst:19 ../../en/units/ina226.rst:37
+#: 2f3f99063e5a47af8e8d6e975a2a79ff 9e69a492f01f48d696607cf0e2ef2ee2
+msgid "get value"
+msgstr "获取数值"
+
+#: ../../en/units/ina226.rst:21 db3cfe3c82e248eb976a259af7ea6685
+msgid "Open the |ina226_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |ina226_core2_example.m5f2| 项目。"
+
+#: ../../en/units/ina226.rst:23 ../../en/units/ina226.rst:39
+#: 07c953e04ff44549b39195f121b64e90 a2df234e337245bb8468698418af7276
+msgid ""
+"This example gets the current, voltage, and power values from the INA226 "
+"Unit and displays them on the screen."
+msgstr "该示例从 INA226 单元读取电流、电压和功率值并显示在屏幕上。"
+
+#: ../../en/units/ina226.rst:25 1dbbce64cab64cb4af4c519e82e4cf87
+#: 2eaccd5ab2fe45a09dfb1428517f0250 5c34fd58e62747c584383850378b9be4
+#: 88266ce0f2134fc092f3805214e64e4b b9088dcede4244a7b8a17a25b1ee46fb
+#: ba60a36b1f7c4d35a6fb36a31960cdb6 driver.ina226.INA226:7
+#: driver.ina226.INA226.read_bus_voltage:6 driver.ina226.INA226.read_current:6
+#: driver.ina226.INA226.read_power:6 driver.ina226.INA226.read_shunt_voltage:6
+#: fc485d6f0dbb487ab85eef26901a8d35 of unit.ina226.INA226Unit:7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/ina226.rst:27
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref:13 58703b60996c4f6e803134e038cb3e4a
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/ina226.rst:29 ../../en/units/ina226.rst:47
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/ina226.rst:31 ../../en/units/ina226.rst:49
+#: 5d411285103746879e67eac6ea748260 eedb4da36c4c4d3f81449a79460b8fb5
+msgid "None"
+msgstr ""
+
+#: ../../en/units/ina226.rst:34 385e4c482ee748bba376c0e020eecb76
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/ina226.rst:41 3c2cd89eceb146bda9ddfd713f893aae
+#: 4174176606434c7784e799a57499c01b 4e3b93ec92ee405ca919a56fb61222eb
+#: 625c6fad5a954b6aba4b8f059021baf9 9a88d3b331cd4157bac1d351865d42c7
+#: c6486c07c92b45a4bd64544fac0e092e driver.ina226.INA226:11
+#: driver.ina226.INA226.calibrate:6 driver.ina226.INA226.read_bus_voltage:10
+#: driver.ina226.INA226.read_current:10 driver.ina226.INA226.read_power:10
+#: driver.ina226.INA226.read_shunt_voltage:10 f825a485f5a844d4b26fc1d6a8d1ddf8
+#: f9f2da003eec4d8da2cf0cd0af53b79d of unit.ina226.INA226Unit:11
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/ina226.rst:53 712e6414b4a94c858e480ec132e69961
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/ina226.rst:56 d86f5601afbb49e2b8cc47aadf26b4ed
+msgid "INA226Unit"
+msgstr ""
+
+#: 28c3ee6a71044f4ba9a1454dbeed58b3 of unit.ina226.INA226Unit:1
+msgid "Bases: :py:class:`~driver.ina226.INA226`"
+msgstr ""
+
+#: db3c95f1bb564e1089fed63dfdd169da of unit.ina226.INA226Unit:1
+msgid "Create an INA226Unit object."
+msgstr "创建 INA226Unit 对象。"
+
+#: ../../en/units/ina226.rst 408124a742a34effb69f50c1bbf21e63
+#: c915ff596cdf4ae78741a3e3607d71f7 cb6f9a076caa4fde9f91005681914a00
+#: driver.ina226.INA226.calibrate of unit.ina226.INA226Unit
+msgid "Parameters"
+msgstr "参数"
+
+#: 52fbd03c38114fa9999e87aa9e8f3126 of unit.ina226.INA226Unit:3
+msgid "The I2C bus the Accel Unit is connected to."
+msgstr "INA226 单元连接的 I2C 总线。"
+
+#: ba2d0a5f2cf04fc39832ce111969704d of unit.ina226.INA226Unit:4
+msgid "The I2C address of the device. Default is 0x41."
+msgstr "设备的 I2C 地址，默认 0x41。"
+
+#: e7e21cab9a034839931760eec5577b4a of unit.ina226.INA226Unit:5
+msgid "The type of INA226. Default is \"10A\". Options are \"1A\" and \"10A\"."
+msgstr "INA226 的规格类型，默认 \"10A\"，可选 \"1A\" 或 \"10A\"。"
+
+#: driver.ina226.INA226:1 e7dbb5585a094365a6ee5d587740a304 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: driver.ina226.INA226:1 e94afddef1714697a24c8ed006cf742e of
+msgid "Create an INA226 object."
+msgstr "创建 INA226 对象。"
+
+#: d46a8cd285ee46a498f5b8145daf5e54 driver.ina226.INA226:3 of
+msgid "The I2C bus the INA226 is connected to."
+msgstr "INA226 所连接的 I2C 总线。"
+
+#: 5da9b3dcd783404c9d574c60e79f93cf driver.ina226.INA226:4 of
+msgid "The I2C address of the device."
+msgstr "设备的 I2C 地址。"
+
+#: driver.ina226.INA226:5 f404624bcb004bc49033d097c29cbc9e of
+msgid "The value of the shunt resistor in ohms. Default is 0.2."
+msgstr "分流电阻值（欧姆），默认 0.2。"
+
+#: 7efd1dbb024444a48ad2b3184f496da3 driver.ina226.INA226.calibrate:1 of
+msgid "Calibrate the INA226."
+msgstr "对 INA226 进行校准。"
+
+#: 8bb9550806dc4350897a0138e35333a1 driver.ina226.INA226.calibrate:3 of
+msgid "The maximum expected current in Amperes."
+msgstr "预期的最大电流（安培）。"
+
+#: 17eb1274907044b4b323feead89cc16d driver.ina226.INA226.calibrate:4 of
+msgid ""
+"The calibration value to use. If None, it will be calculated based on the"
+" maximum expected current and the shunt resistor value."
+msgstr "要使用的校准值；若为 None，则根据最大预期电流和分流电阻自动计算。"
+
+#: c7fbee1fb0354a48ba2134a0baa71817 driver.ina226.INA226.read_shunt_voltage:1
+#: of
+msgid "Read the shunt voltage in Volts."
+msgstr "读取分流电压（伏特）。"
+
+#: 862d74165b264fe3a68695703ef82471 d5d2ddc22f784ce0bd4471e6acf78d76
+#: driver.ina226.INA226.read_bus_voltage driver.ina226.INA226.read_current
+#: driver.ina226.INA226.read_power driver.ina226.INA226.read_shunt_voltage
+#: f24bb361c58b471bacca2a4777f87acb f5e8834d181447adb07652d501311875 of
+msgid "Returns"
+msgstr "返回值"
+
+#: b8bbed26ecc64f2f976497663844a08e driver.ina226.INA226.read_shunt_voltage:3
+#: of
+msgid "The shunt voltage in Volts."
+msgstr "分流电压（伏特）。"
+
+#: 32a8767c184545e9babda2662e830bce a159e961d1c94cfe9654e050adfe44b1
+#: aacbdda54aed456d8cd7b23810877853 c3c5bdb659224661af68d59a2f5b674d
+#: driver.ina226.INA226.read_bus_voltage driver.ina226.INA226.read_current
+#: driver.ina226.INA226.read_power driver.ina226.INA226.read_shunt_voltage of
+msgid "Return type"
+msgstr ""
+
+#: db6a415a030a433fa007bddccda58f34 driver.ina226.INA226.read_shunt_voltage:8
+#: of
+msgid "|read_shunt_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref:8 527fc0188a79408a8f81350ec555cc67
+msgid "read_shunt_voltage.png"
+msgstr ""
+
+#: ac5031c03e2a4d45be00cc6aff930d2e driver.ina226.INA226.read_bus_voltage:1
+msgid "Read the bus voltage in Volts."
+msgstr "读取总线电压（伏特）。"
+
+#: 61d04711378745e2b0407949f5667b5b driver.ina226.INA226.read_bus_voltage:3 of
+msgid "The bus voltage in Volts."
+msgstr "总线电压（伏特）。"
+
+#: 68e90b711ff9425abf6ddbfaf30b5e50 driver.ina226.INA226.read_bus_voltage:8 of
+msgid "|read_bus_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref:9 049210999b604381b6b921701dc4c400
+msgid "read_bus_voltage.png"
+msgstr ""
+
+#: driver.ina226.INA226.read_current:1
+msgid "Read the current in Amperes."
+msgstr "读取电流（安培）。"
+
+#: 3d1d513659c946bb9f815a1702646594 driver.ina226.INA226.read_current:3 of
+msgid "The current in Amperes."
+msgstr "电流（安培）。"
+
+#: 55298385f12845d99a3d574e992dbf12 driver.ina226.INA226.read_current:8 of
+msgid "|read_current.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref:10 80d1529cf24d4360a99aad53db7b8e54
+msgid "read_current.png"
+msgstr ""
+
+#: d7f07cb4b2344a989bc37974e238e066 driver.ina226.INA226.read_power:1 of
+msgid "Read the power in Watts."
+msgstr "读取功率（瓦）。"
+
+#: 3eed67a019574fe98787d98131d8261b driver.ina226.INA226.read_power:3 of
+msgid "The power in Watts."
+msgstr "功率（瓦）。"
+
+#: 2313238bcafa424c9354e35e858ba5e8 driver.ina226.INA226.read_power:8 of
+msgid "|read_power.png|"
+msgstr ""
+
+#: ../../en/refs/unit.ina226.ref:11 d030faceb19f4ea6a18d1e2c097d0793
+msgid "read_power.png"
+msgstr ""
+
