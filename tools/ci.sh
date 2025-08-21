@@ -22,6 +22,10 @@ function uncrustify_setup {
     wget https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.72.0.tar.gz
     tar -xvf uncrustify-0.72.0.tar.gz
     cd uncrustify-uncrustify-0.72.0
+    chmod +x ./scripts/make_option_enum.py
+    sed -i -e '1s@.*@cmake_minimum_required(VERSION 3.5...4.1)@' \
+            -e '20s@.*@find_package(Python3 COMPONENTS Interpreter REQUIRED)@' ./CMakeLists.txt
+    sed -i '1s@.*@cmake_minimum_required(VERSION 3.5...4.1)@' ./tests/CMakeLists.txt
     mkdir build
     cd build
     cmake -DCMAKE_BUILD_TYPE=Release ..
@@ -159,26 +163,26 @@ function ci_esp32_idf522_setup {
             rm -rf esp-idf
         fi
     fi
-
+    echo "Cloning esp-idf v5.2.2..."
     git clone --depth 1 --branch v5.2.2 https://github.com/espressif/esp-idf.git
-    git -C esp-idf submodule update --init \
+    git -C esp-idf submodule update --init --depth 1 \
         components/bt/host/nimble/nimble \
         components/esp_wifi \
         components/esptool_py/esptool \
         components/lwip/lwip \
         components/mbedtls/mbedtls
     if [ -d esp-idf/components/bt/controller/esp32 ]; then
-        git -C esp-idf submodule update --init \
+        git -C esp-idf submodule update --init --depth 1 \
             components/bt/controller/lib_esp32 \
             components/bt/controller/lib_esp32c3_family
     else
-        git -C esp-idf submodule update --init \
+        git -C esp-idf submodule update --init --depth 1 \
             components/bt/controller/lib
     fi
     ./esp-idf/install.sh
 }
 
-function ci_esp32_idf541_setup {
+function ci_esp32_idf542_setup {
     if [ -d esp-idf ]; then
         echo "esp-idf is already cloned."
         if [ "$(git -C esp-idf describe --tags)" == "v5.4.2" ]; then
@@ -191,7 +195,7 @@ function ci_esp32_idf541_setup {
     fi
 
     git clone --depth 1 --branch v5.4.2 https://github.com/espressif/esp-idf.git
-    git -C esp-idf submodule update --init
+    git -C esp-idf submodule update --init --depth 1 
     ./esp-idf/install.sh
 }
 
@@ -312,6 +316,13 @@ function ci_hat_build {
 
 
 function ci_esp32_nightly_build {
+    REQUIRED_VERSION="3.28.3"
+    CURRENT_VERSION=$(cmake --version | head -n1 | awk '{print $3}')
+
+    if [ "$(printf '%s\n' "$REQUIRED_VERSION" "$CURRENT_VERSION" | sort -V | head -n1)" != "$REQUIRED_VERSION" ]; then
+        echo "❌ CMake version $CURRENT_VERSION is too old! Require >= $REQUIRED_VERSION"
+        exit 1
+    fi
     source esp-idf/export.sh
     pip install future
     make ${MAKEOPTS} -C m5stack unpatch
