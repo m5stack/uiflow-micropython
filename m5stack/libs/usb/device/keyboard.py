@@ -196,7 +196,7 @@ class Keyboard(HIDInterface):
             r[i] = 0
             i += 1
 
-        if self.send_report(r, timeout_ms):
+        if super().send_report(r, timeout_ms):
             # Swap buffers if the previous one is newly queued to send, so
             # any subsequent call can't modify that buffer mid-send
             self._key_reports[0] = s
@@ -204,7 +204,7 @@ class Keyboard(HIDInterface):
             return True
         return False
 
-    def _send_report(self, timeout_ms=100):
+    def send_report(self, timeout_ms=100):
         struct.pack_into(
             "8B",
             self._buf,
@@ -218,7 +218,7 @@ class Keyboard(HIDInterface):
             self._keypresses[4],
             self._keypresses[5],
         )
-        if self.send_report(self._buf, timeout_ms):
+        if super().send_report(self._buf, timeout_ms):
             return True
         return False
 
@@ -249,9 +249,9 @@ class Keyboard(HIDInterface):
 
     def send_key(self, key):
         self.set_keys(k0=key)
-        self._send_report()
+        self.send_report()
         self.set_keys()
-        self._send_report()
+        self.send_report()
 
     def input(self, key):
         if isinstance(key, str):
@@ -264,10 +264,10 @@ class Keyboard(HIDInterface):
                         key_cache.clear()
                     self.set_modifiers(left_shift=True)
                     self.set_keys(k0=hid_key)
-                    self._send_report()
+                    self.send_report()
                     self.set_modifiers()
                     self.set_keys()
-                    self._send_report()
+                    self.send_report()
                 else:
                     key_cache.append(hid_key)
                     if len(key_cache) == 6:
@@ -277,7 +277,7 @@ class Keyboard(HIDInterface):
                 self.send_keypresses(key_cache)
                 key_cache.clear()
             self.set_keys()
-            self._send_report()
+            self.send_report()
         else:
             self.send_key(key)
 
@@ -287,13 +287,13 @@ class Keyboard(HIDInterface):
         for i, k in enumerate(key):
             if k == last_k:
                 self._keypresses[cnt - 1] = 0x00
-                self._send_report()
+                self.send_report()
             self._keypresses[cnt] = k
             cnt += 1
             last_k = k
-            self._send_report()
+            self.send_report()
         self.set_keys()
-        self._send_report()
+        self.send_report()
         time.sleep_ms(10)
 
 
