@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-26 23:25+0800\n"
+"POT-Creation-Date: 2025-08-20 18:56+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,43 +20,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../en/iot-devices/switchc6.rst:2 fe54764279e54b5489ca2aab566c4977
+#: ../../en/iot-devices/switchc6.rst:2 838a6af22b9443a9ba4d67e56109a5c9
 msgid "SwitchC6"
 msgstr ""
 
-#: ../../en/iot-devices/switchc6.rst:9 a8659eada64d4b11b883b13bef452276
+#: ../../en/iot-devices/switchc6.rst:9 acf935bd3a014735ba840d431c9e683b
 msgid ""
 "The SwitchC6 is a device that can be controlled using the M5Stack "
 "platform. This module provides functions to interact with the SwitchC6 "
 "device."
-msgstr ""
-"SwitchC6是一个可以通过M5Stack平台控制的设备。此模块提供与SwitchC6设备交互的功能。"
+msgstr "SwitchC6是一个可以通过M5Stack平台控制的设备。此模块提供与SwitchC6设备交互的功能。"
 
-#: ../../en/iot-devices/switchc6.rst:12 7184ce970883404e90158a02e428488d
+#: ../../en/iot-devices/switchc6.rst:12 5049fdb2312e4491999bc16aefdf94e1
 msgid "UiFlow2 Example"
 msgstr "UIFLOW2 应用示例"
 
 #: ../../en/iot-devices/switchc6.rst:15 ../../en/iot-devices/switchc6.rst:34
-#: a2959859885243218e8032dbbb742718 a5fb5829e05b4a26bcd5b78d8506c81f
+#: 70f66a41bd0c43e5a96bfeda3200d266 a529d886fd6a4aa68086ea8444f1a2ef
 msgid "SwitchC6 Control"
 msgstr "SwitchC6控制"
 
-#: ../../en/iot-devices/switchc6.rst:17 25028d872b6b4ad7a0caa77fca7a23c6
+#: ../../en/iot-devices/switchc6.rst:17 cecd47fc737e42bfa94911463d162864
 msgid "Open the |cores3_switchc6_example.m5f2| project in UiFlow2."
 msgstr "在UiFlow2中打开|cores3_switchc6_example.m5f2|项目。"
 
-#: ../../en/iot-devices/switchc6.rst:19 337a535f63704126991b7664ae76640c
+#: ../../en/iot-devices/switchc6.rst:19 efb9136415d84f62bfd9e4bf7e4e31ee
 msgid ""
 "This example demonstrates how to control the SwitchC6 device using "
 "UiFlow2."
-msgstr ""
-"此示例演示如何使用UiFlow2控制SwitchC6设备。"
+msgstr "此示例演示如何使用UiFlow2控制SwitchC6设备。"
 
-#: ../../en/iot-devices/switchc6.rst:21 1ff55eb867e34d97b4341059958210fe
-#: 31f88b46e8b84d60bbcba28db73318f1 463d0752f06f4712aa5857a2557877de
-#: 5b571c4f4339489f81ab3a2e567d11f6 888bc242b21242698ee97df24610c7e0
-#: 938899417a2741d1a7b117572663d130 b2dab64a8d3b4444ad5d8a9743298954
-#: bfada81bddb942a18a766a611b42096d iot_devices.switchc6.SwitchC6Controller:8
+#: ../../en/iot-devices/switchc6.rst:21 15f4e3edc6c34885991dfd1bb1556e8a
+#: 4582b8005c724f0e88286956f95cb81f 4e8cd899b3d9462daed90442a5107c54
+#: 535232eb40ff4d448860a8d0e2332453 83c42565ffa444c2beac8c72c7035547
+#: cd55f9caa68c45669cd57adf5e8a176a e73c41661bee491dab1a5b9d59a54d38
+#: edf97b2c7e1f4d2ba6412cae064ffbe9 iot_devices.switchc6.SwitchC6Controller:8
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:8
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:9
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:8
@@ -66,36 +64,40 @@ msgstr ""
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2代码块："
 
-#: ../../en/iot-devices/switchc6.rst:23 53019f9fd8b34a559527178087bc04ec
+#: ../../en/iot-devices/switchc6.rst:23 d8568018ecd840969f318d175e08cbd0
 msgid "|cores3_switchc6_example.png|"
 msgstr ""
 
+#: ../../en/refs/iot-devices.switchc6.ref:10 65bacd84bf3a4dbb9a70888c3c4edbd4
+#, fuzzy
+msgid "cores3_switchc6_example.png"
+msgstr "在UiFlow2中打开|cores3_switchc6_example.m5f2|项目。"
+
 #: ../../en/iot-devices/switchc6.rst:25 ../../en/iot-devices/switchc6.rst:44
-#: c2ebda8f144143cc9459d8d9447f7c5f d4a3332ca71a4939b2796d7c0c3aa136
+#: 2bf8794fdc514b72bb083503dc2b5f87 9bd3937e1bbc45d2b8e2ac2139bc52f5
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/iot-devices/switchc6.rst:27 ../../en/iot-devices/switchc6.rst:46
-#: 45e287f362864084928878a015db23b5 66af327bdf3c45aea0ab744ba0f8232f
+#: 36223b1294904f9eac08695d6eb771c3 a91efc6f59154a2b9a99331618f25144
 msgid "None"
 msgstr ""
 
-#: ../../en/iot-devices/switchc6.rst:31 65e53998c77f442ab007113ffcbb7c38
+#: ../../en/iot-devices/switchc6.rst:31 70f773789b8f4f30bc64e8d9736a397f
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/iot-devices/switchc6.rst:36 5292b5cf231c41bc961328b036dcf0f6
+#: ../../en/iot-devices/switchc6.rst:36 3d6a2318ddfd4fe1850b9990619897ea
 msgid ""
 "This example demonstrates how to control the SwitchC6 device using "
 "MicroPython."
-msgstr ""
-"此示例演示如何使用MicroPython控制SwitchC6设备。"
+msgstr "此示例演示如何使用MicroPython控制SwitchC6设备。"
 
-#: ../../en/iot-devices/switchc6.rst:38 22e25d767f7642bb82cb217febbb1c76
-#: 378959de60fd442899507078b49741bd 3b11e92a2b754c37a4f9608082932727
-#: 6d75d2a28abd4a3d96ede4ee99bfbdab a02d9565f63549c6bf2bcddcc8157fa1
-#: c8dabaf613414934b13ee3cdece3c1ea dcb28eefca0b46f6918889ea5c1c1789
-#: f9566e47f37b43b4a2004a871f78d1b5 iot_devices.switchc6.SwitchC6Controller:12
+#: ../../en/iot-devices/switchc6.rst:38 11876878cb8d4b179519b6d65a3aae54
+#: 280d70fc51a04a1290d6220c41e2fe84 7e685d2611c44284ad0553f564a96824
+#: 8e527d9c4d774387a90f21f69581cfef bf62cdb336e6431e8960d333715d2df3
+#: c833580f97ee45f7bab96cc39618c897 d7a0d4bfec45414199b84824fe943c8b
+#: f27c4e8b00914fa1bb304202fc5f3ff2 iot_devices.switchc6.SwitchC6Controller:12
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:12
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:13
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:12
@@ -105,28 +107,28 @@ msgstr ""
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/iot-devices/switchc6.rst:50 11b687be04cd4b698e225fd8c8363c66
+#: ../../en/iot-devices/switchc6.rst:50 f2f1bbe1717d47b59c16ec706b71db70
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../en/iot-devices/switchc6.rst:53 010aad280b5149969b740ef25f7698af
+#: ../../en/iot-devices/switchc6.rst:53 c37f8997bf58478a9e0e34812384e2d4
 msgid "SwitchC6Controller"
 msgstr ""
 
-#: df34f0659edc4beb8e67371dfd18bfe1 iot_devices.switchc6.SwitchC6Controller:1
+#: 433fe9fa0c94478cae58d7d72f5092d1 iot_devices.switchc6.SwitchC6Controller:1
 #: of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: 86a4b3f3f7f74be79b4d9caf061c752e iot_devices.switchc6.SwitchC6Controller:1
+#: bd5a1ba6e13445c194d8d8d2aa585be1 iot_devices.switchc6.SwitchC6Controller:1
 #: of
 msgid "Create a SwitchC6Controller instance to control M5Stack SwitchC6 devices."
 msgstr "创建SwitchC6Controller实例来控制M5Stack SwitchC6设备。"
 
-#: ../../en/iot-devices/switchc6.rst 0dc3346e4f1040ed8cfa565694d1e097
-#: 3ab6ad6e8189479b99ebd1ca4fba819f 7b6762da210943f6b083ffb5ae318d7f
-#: a3671bd7a88c47e092cbd861dd317ff8 ab140eb323294dc7a6ce5f09130658a0
-#: dcd239cc9e2c47d5adfca83dcdc099be fd0bb8dbc84e4703b15159d1a0388fda
+#: ../../en/iot-devices/switchc6.rst 03cd2ace6ec84516acf72e0617e0a535
+#: 50024437995c4092b702dcf6ef4c2bf1 53e63db4f2844bed9432851f1296e62d
+#: 5cb95c5399094f2ab7d2d7da0d802710 6d922674ddc447d48ec529d0d5f1c606
+#: b276d1145ff1477a8468596a82669593 c4143286a92f4414ac4912479916f4fe
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status
@@ -136,50 +138,49 @@ msgstr "创建SwitchC6Controller实例来控制M5Stack SwitchC6设备。"
 msgid "Parameters"
 msgstr ""
 
-#: 1219045777e84db5b6b7508c4571c0a8 iot_devices.switchc6.SwitchC6Controller:3
+#: fcecbb3e1fd5445b9b3e4e79243db60b iot_devices.switchc6.SwitchC6Controller:3
 #: of
 msgid "List of target MAC addresses in \"XXXX-XXXX-XXXX\" format."
 msgstr "\"XXXX-XXXX-XXXX\"格式的目标MAC地址列表。"
 
-#: 8de7b3d162a84fffb1aaf970d2d12828 iot_devices.switchc6.SwitchC6Controller:4
+#: a98a595feb1f4c17bbf1635a1e02d54e iot_devices.switchc6.SwitchC6Controller:4
 #: of
 msgid ""
 "WiFi channel to use for communication (default is 0, which uses the "
 "current channel)."
-msgstr ""
-"用于通信的WiFi信道（默认为0，使用当前信道）。"
+msgstr "用于通信的WiFi信道（默认为0，使用当前信道）。"
 
-#: 077fe70d56d54c2a8c04c9926e2a4aa6 iot_devices.switchc6.SwitchC6Controller:5
+#: 7e06dfcc693d4793b51624fcd8169763 iot_devices.switchc6.SwitchC6Controller:5
 #: of
 msgid "If True, print debug information (default is False)."
 msgstr "如果为True，打印调试信息（默认为False）。"
 
-#: ../../en/iot-devices/switchc6.rst dbd31c4247fb4dcf9dfe219af15a431a
+#: ../../en/iot-devices/switchc6.rst 3d9fed57ae784cefa2f834d5ae25c82c
 msgid "Raises"
 msgstr ""
 
-#: 030ce84c25a848f6aad2d3e6657ccb51 iot_devices.switchc6.SwitchC6Controller:6
+#: 63ab8843d443460b8059be02175acc2d iot_devices.switchc6.SwitchC6Controller:6
 #: of
 msgid "If any MAC address in target_mac is not in the \"XXXX-XXXX-XXXX\" format."
 msgstr "如果target_mac中的任何MAC地址不符合\"XXXX-XXXX-XXXX\"格式。"
 
-#: c9e99e5c549d4ce8b446050ca2ca4628 iot_devices.switchc6.SwitchC6Controller:10
+#: 3954e4340a6c4b4ca58cc63c1859ee0f iot_devices.switchc6.SwitchC6Controller:10
 #: of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:6 41409e8434544f81b3a60a29205eb119
+#: ../../en/refs/iot-devices.switchc6.ref:6 f23ca791ab074955a9d75c472ab26e9a
 msgid "init.png"
 msgstr ""
 
-#: 58b2f17e93ff444a92aff51e8c0c85f4
+#: 6c20d7924e3f470082d1c8fcc1b83000
 #: iot_devices.switchc6.SwitchC6Controller.set_switch:1 of
 msgid "Set the switch state of the target device."
 msgstr "设置目标设备的开关状态。"
 
-#: 3273464f057f478da7e917a23f397089 34c94b856df447a5816f6bb11f81c969
-#: 8a93321452a94fe89c747a602da01529 bf81d3fe2d7a40b49866c83a6df4e5f1
-#: ea3f43a6faff496c8986b80be14b15d4
+#: 481b09f5ad274ae7972167431385184c 5f8b61faae2e47de89a23dbc6f6eff03
+#: af24e3ae15e44f6e93dc27b7609390a9 f2ceef52067e40b09b9e52885a5710c4
+#: f84f17d00c89452a852eb128f024f95b
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:3
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:3
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:3
@@ -188,14 +189,14 @@ msgstr "设置目标设备的开关状态。"
 msgid "Target MAC address in \"XXXX-XXXX-XXXX\" format."
 msgstr "\"XXXX-XXXX-XXXX\"格式的目标MAC地址。"
 
-#: 83178c7c38bd4f73b993aef331b393b3
+#: ebae2096383d41c1948922fb00cb141d
 #: iot_devices.switchc6.SwitchC6Controller.set_switch:4 of
 msgid "True to turn on, False to turn off."
 msgstr "True表示开启，False表示关闭。"
 
-#: 4548df054c814090a0b8078652b5e11f 689831b7928742d29502b94728a580db
-#: 9200b47b0ddf480b8ee0a1a51b4b1f74 9ab91feb95a843cd90263be2d03b0558
-#: 9bd17e36bc8a45cf9d625c5ec2ad568e
+#: 078b836848c4435f91126ecbe56d7daf 3410a6e82a454e38af3de750556f5837
+#: 4a935b945891488fabb334269c78df2e 7b8a98f3038644b9819dc7ee09f5b8ea
+#: c50c6866077c480c822ed5d4dbffc7d1
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:4
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:4
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:4
@@ -204,49 +205,49 @@ msgstr "True表示开启，False表示关闭。"
 msgid "Timeout in milliseconds for waiting for a response (default is 5000)."
 msgstr "等待响应的超时时间（毫秒）（默认为5000）。"
 
-#: 184d9829507e4c57bdbf558b5f0ae138
+#: 18aebacb5273458790a069f4d5367ff9
 #: iot_devices.switchc6.SwitchC6Controller.set_switch:9 of
 msgid "|set_switch.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:7 39a17b3cb0d24f5f98cab4039741c821
+#: ../../en/refs/iot-devices.switchc6.ref:7 13e573293e1947fd9dbd55690ea1d54d
 msgid "set_switch.png"
 msgstr ""
 
-#: b610415585bd484082c8e35cbe9746c3
+#: b7d589fb60484f26967c3358a4a30f40
 #: iot_devices.switchc6.SwitchC6Controller.toggle_switch:1 of
 msgid "Toggle the switch status of the target device."
 msgstr "切换目标设备的开关状态。"
 
-#: 52bddc708bc444a8a60fd8071fdfb8aa
+#: eb73f4272714493b83d4fc73fbc6f512
 #: iot_devices.switchc6.SwitchC6Controller.toggle_switch:8 of
 msgid "|toggle_switch.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:8 e64d34b3fb1f4945a3367db9abb81641
+#: ../../en/refs/iot-devices.switchc6.ref:8 bf7074600efc46739ef8ab9a80d1d76b
 msgid "toggle_switch.png"
 msgstr ""
 
-#: 8c5465595f0948ee95ee164640285421
+#: e851468a7566470bafe9a96ccea56bfe
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:1 of
 msgid "Get the capacitor voltage of the target device."
 msgstr "获取目标设备的电容电压。"
 
-#: 10518091a8cc452db29bb403d6108046 b549692ac87246bca67cc13687a26942
-#: dc7f3ed269b6448aae1b69d9a1fc9c82
+#: 0b4cc2111298420db9e714bd92b502a6 342ab40f969b47e4a901c14b3f1c08bd
+#: ca5b85354b6745aea621a714dbae4717
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status of
 msgid "Returns"
 msgstr ""
 
-#: 6d1f019979d04659b58ffdb4489abbe9
+#: c23db0f037d9421bb0485d7e45f82a4e
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:5 of
 msgid "The capacitor voltage as a float."
 msgstr "电容电压（浮点数）。"
 
-#: 54831efd1fa1448c9e3ee1605926b8e0 6855fbaeb09747ab873700c09b9106cd
-#: 8449fa4386124438a5976c3bb15dba3a dc76cb1b99c04282974952b62579f37a
+#: 1d278d9c83ee4cc8a3185888f3476fc2 326956a2bc574f2b9bbf10409d208ada
+#: 646592c215084da9bee75acd3ffe7067 f997397929414c3790c41ae2ed3e0890
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status
@@ -254,74 +255,74 @@ msgstr "电容电压（浮点数）。"
 msgid "Return type"
 msgstr ""
 
-#: 98aa6817f72f4bdb9d7b3093d63134d8
+#: e14c54792bcc455abcc40af03d61b4fa
 #: iot_devices.switchc6.SwitchC6Controller.get_capacitor_voltage:10 of
 msgid "|get_capacitor_voltage.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:3 f119861789eb4715acfd32e58f929257
+#: ../../en/refs/iot-devices.switchc6.ref:3 49fae596257e423d97498558de89e6df
 msgid "get_capacitor_voltage.png"
 msgstr ""
 
-#: c75439dbc60c42c5af773b45205b4f56
+#: e1c40e18d0a149d2aa1b95792dc9234f
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:1 of
 msgid "Get the switch status of the target device."
 msgstr "获取目标设备的开关状态。"
 
-#: 650699a96a3e478ca87db249ae792ad5
+#: dae956cd3fde45ecb9fb872ff9dcbe89
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:5 of
 msgid "True if the switch is ON, False if it is OFF."
 msgstr "如果开关为开启状态返回True，关闭状态返回False。"
 
-#: 1d468920fe0d4743a169fc4fe0cbef6f
+#: eb23c9b6f7804b1f9c8437aab24438b5
 #: iot_devices.switchc6.SwitchC6Controller.get_switch_status:10 of
 msgid "|get_switch_status.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:5 48e501a4230541b1864e3758a7b317d1
+#: ../../en/refs/iot-devices.switchc6.ref:5 149ef8f5d4184b55af9112aeb52da919
 msgid "get_switch_status.png"
 msgstr ""
 
-#: 6d07d692178b4b02bbe74a5580f3e704
+#: 3fa494873f894ec393f1367a31baeec2
 #: iot_devices.switchc6.SwitchC6Controller.set_callback:1 of
 msgid "Set a callback function for the specified trigger."
 msgstr "为指定触发器设置回调函数。"
 
-#: a7a6abd7958e48e19a19c1db5bc7ddb0
+#: 5b03b50cf6f14212b55d9a42447d6f40
 #: iot_devices.switchc6.SwitchC6Controller.set_callback:3 of
 msgid "The callback function to be called when the trigger occurs."
 msgstr "触发器发生时要调用的回调函数。"
 
-#: e14600e1dcb34de191bde269e9dff4c7
+#: 9f2aa39c76024f3a87a887119b222a44
 #: iot_devices.switchc6.SwitchC6Controller.set_callback:4 of
 msgid "The trigger type (0 for OFF, 1 for ON)."
 msgstr "触发器类型（0表示关闭，1表示开启）。"
 
-#: 2bb8726e0e5545a39bb9f1e594756b23
+#: 8f69152cbd1547b28dc0e7381edf5924
 #: iot_devices.switchc6.SwitchC6Controller.set_callback:8 of
 msgid "|event.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:2 6a2aeb5985d749d89384772165a22352
+#: ../../en/refs/iot-devices.switchc6.ref:2 7e782079feb441ab87299eea85a3d77f
 msgid "event.png"
 msgstr ""
 
-#: 0620e0400d6a41d7bb127c423287e2cb
+#: 72d2104371274385ad48ea384271c934
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:1 of
 msgid "Get the firmware version of the target device."
 msgstr "获取目标设备的固件版本。"
 
-#: 866d59d651b3448a942067a574f5839f
+#: 46317e3f85f54ed89dc4596e5da3e204
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:6 of
 msgid "The firmware version as a string."
 msgstr "固件版本（字符串）。"
 
-#: 7d594796e61146ed9adbf476f76a5e57
+#: 574c041f20a244ce9c738d802d03d68d
 #: iot_devices.switchc6.SwitchC6Controller.get_firmware_version:11 of
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../en/refs/iot-devices.switchc6.ref:4 0c8456f08e8c4c23a4be0e697c4c26af
+#: ../../en/refs/iot-devices.switchc6.ref:4 74cb811bc38a4538a94dc45cfd2b607e
 msgid "get_firmware_version.png"
 msgstr ""
 
