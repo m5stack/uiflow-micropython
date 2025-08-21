@@ -56,6 +56,7 @@ Unit
     id.rst
     imu.rst
     imupro.rst
+    ina226.rst
     ir.rst
     joystick.rst
     joystick2.rst

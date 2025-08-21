@@ -108,6 +108,7 @@ _attrs = {
     "Roller485Unit": "roller485",
     "RollerCANUnit": "rollercan",
     "ISO485Unit": "rs485_iso",
+    "INA226Unit": "ina226",
     "RS485Unit": "rs485",
     "RTC8563Unit": "rtc8563",
     "ScalesUnit": "scales",

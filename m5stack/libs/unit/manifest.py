@@ -61,6 +61,7 @@ package(
         "id.py",
         "imu_pro.py",
         "imu.py",
+        "ina226.py",
         "ir.py",
         "joystick.py",
         "joystick2.py",
