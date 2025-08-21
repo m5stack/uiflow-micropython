@@ -1,6 +1,6 @@
 key,type,encoding,value
 uiflow,namespace,,
-server,data,string,uiflow2.m5stack.com
+server,data,string,192.168.20.93
 ssid0,data,string,
 pswd0,data,string,
 ssid1,data,string,
