@@ -24,12 +24,17 @@
 #include "extmod/vfs_lfs.h"
 #include "lib/littlefs/lfs2.h"
 
+/** configurations */
+#define M5THINGS_MQTT_RECONNECT_WAIT_MS (15000)
+#define M5THINGS_MQTT_PING_REPORT_INTERVAL_US (30 * 1000 * 1000) // 30 seconds
+/** configurations */
+
 #define OTA_UPDATE_FILE_NAME "main_ota_temp.py"  // Fixed name!!!
 
 #define M5THINGS_OTA_TOPIC_TEMPLATE \
     "$m5/uiflow/v1/%s/%02x%02x%02x%02x%02x%02x/%s"
 
-#define FILE_RECORD_PATH "res/res.json"
+#define FILE_RECORD_PATH "/flash/res/res.json"
 
 #define BOOT_OPT_NOTHING  0  // Run main.py(after download code to device set to this)
 #define BOOT_OPT_MENU_NET 1  // Show startup menu and network setup

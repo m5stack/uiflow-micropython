@@ -27,11 +27,23 @@
 #include "esp_mac.h"
 #include "esp_psram.h"
 #include "crypto.h"
+#include "_vfs_stream.h"
 
 /** macro definitions */
 #define TAG "M5Things"
 
 #define DEBUG_printf(fmt, ...) // mp_printf(&mp_plat_print, fmt"\r\n", ##__VA_ARGS__)
+
+typedef enum {
+    E_M5THING_FILE_OP_WRITE = 0,
+    E_M5THING_FILE_OP_READ,
+    E_M5THING_FILE_OP_LIST,
+    E_M5THING_FILE_OP_REMOVE,
+    E_M5THING_FILE_OP_WRITE_V2,
+    E_M5THING_FILE_OP_MULTI_WRITE,
+    E_M5THING_FILE_OP_LIST_V2,
+    E_M5THING_FILE_OP_MAX,
+} m5thing_file_operator_t;
 
 /** type definitions */
 typedef struct _msg_ping_req_t
@@ -82,8 +94,8 @@ volatile m5things_info_t m5things_info;
 
 // order is request.
 const char *topic_action_list[] = {"ping", "exec", "file"};
-const char *file_operation[] = {"WRITE", "READ", "LIST", "REMOVE", "WRITE"};
-const char *resulet_msg[] = {
+const char *file_op_dsc[] = {"WRITE", "READ", "LIST", "REMOVE", "WRITE_V2", "MULTI_WRITE"};
+const char *result_dsc[] = {
     "Success",
     "JSON parse error",
     "Packet data is not continuous",
@@ -126,45 +138,6 @@ static char *json_buf = NULL;
 static void mqtt_ping_report();
 
 /******************************************************************************/
-static lfs2_t *_fp = NULL;
-static lfs2_file_t _file;
-static struct lfs2_file_config _fcfg;
-
-static bool lfs2_open_file(const char *path, int flags) {
-    const char *full_path = {'\0'};
-
-    mp_vfs_mount_t *_fm = mp_vfs_lookup_path(path, &full_path);
-    if (_fm == MP_VFS_NONE || _fm == MP_VFS_ROOT) {
-        // mp_printf(&mp_plat_print, "UiFlOW OTA Failed(OS Error:-99)");
-        return false;
-    }
-    ESP_LOGW(TAG, "full_path: %s", full_path);
-    _fp = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(_fm->obj))->lfs;
-    memset(&_file, 0x00, sizeof(_file));
-    _fcfg.buffer = malloc(_fp->cfg->cache_size * sizeof(uint8_t));
-    return (lfs2_file_opencfg(_fp, &_file, full_path, flags, &_fcfg) == LFS2_ERR_OK)
-            ? true
-            : false;
-}
-
-static inline int lfs2_write_file(const void *buffer, lfs2_size_t size) {
-    return lfs2_file_write(_fp, &_file, buffer, size);
-}
-
-static inline int lfs2_seek_file(lfs2_soff_t off, int whence) {
-    return lfs2_file_seek(_fp, &_file, off, whence);
-}
-
-static int lfs2_close_file(void) {
-    int ret = LFS2_ERR_OK;
-    if (_fp) {
-        ret = lfs2_file_close(_fp, &_file);
-    }
-    if (_fcfg.buffer) {
-        free(_fcfg.buffer);
-    }
-    return ret;
-}
 
 static void log_error_if_nonzero(const char *message, int error_code) {
     if (error_code != 0) {
@@ -666,25 +639,26 @@ static int8_t file_write_helper(
     bool is_new_file
     ) {
     int8_t ret = PKG_OK;
-
     int flags = 0;
+
     if (is_new_file) {
         // NEW + RW + ZERO File
-        flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
+        flags = VFS_CREATE | VFS_WRITE;
     } else {
         // open file, RW + MOVE to END
-        flags = LFS2_O_RDWR | LFS2_O_APPEND;
+        flags = VFS_WRITE | VFS_APPEND;
     }
 
     // open file
-    if (!lfs2_open_file(path, flags)) {
+    void *stream = vfs_stream_open(path, flags);
+    if (!stream) {
         ESP_LOGW(TAG, "File create and open failed");
         ret = PKG_ERR_FILE_OPEN;
         goto out;
     }
 
     // write file
-    size_t write_len = lfs2_write_file(ctx, ctx_len);
+    size_t write_len = vfs_stream_write(stream, ctx, ctx_len);
     if (write_len != ctx_len) {
         ESP_LOGW(TAG, "File write error, written: %d, total length: %d", write_len, ctx_len);
         ret = PKG_ERR_FILE_WRITE;
@@ -693,11 +667,7 @@ static int8_t file_write_helper(
 
 out:
     // close file
-    if (lfs2_close_file() != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "File close failed");
-        ret = PKG_ERR_FILE_CLOSE;
-    }
-
+    vfs_stream_close(stream);
     return ret;
 }
 
@@ -782,7 +752,6 @@ static int8_t mqtt_handle_file_write(msg_file_req_t *msg) {
         }
     }
 
-    free(msg->ctx_buf);
 error:
     return ret;
 }
@@ -798,146 +767,113 @@ lfs2_t *get_lfs2(const char *path, const char **full_path) {
 }
 
 
-static int8_t create_res_record(msg_file_req_t *msg_file_req) {
-    int8_t ret = PKG_OK;
+cJSON *generate_res_record(void) {
     cJSON *root = cJSON_CreateObject();
     if (root == NULL) {
         ESP_LOGE(TAG, "root object create failed");
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-        return ret;
+        return NULL;
     }
+
     cJSON *file_list = cJSON_CreateArray();
     if (file_list == NULL) {
         ESP_LOGE(TAG, "file_list object create failed");
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-        goto out;
+        cJSON_Delete(root);
+        return NULL;
     }
 
-    cJSON_AddNumberToObject(root, "time", msg_file_req->time);
+    cJSON_AddNumberToObject(root, "time", 0);
     cJSON_AddBoolToObject(root, "cache", false);
     cJSON_AddNumberToObject(root, "totalSize", 0);
     cJSON_AddItemToObject(root, "fileList", file_list);
-
-    const char *full_path = {'\0'};
-    lfs2_t *lfs2 = get_lfs2(FILE_RECORD_PATH, &full_path);
-    if (lfs2 == NULL) {
-        ESP_LOGE(TAG, "Unable to find mounted filesystem");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    // open file
-    lfs2_file_t fp;
-    int flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
-    struct lfs2_file_config config;
-    memset(&config, 0x00, sizeof(config));
-    config.buffer = malloc(lfs2->cfg->cache_size * sizeof(uint8_t));
-    int lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
-    if (lfs2_ret != LFS2_ERR_OK) {
-        ESP_LOGE(TAG, "Fail to open the file");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    xSemaphoreTake(xSemaphore, portMAX_DELAY);
-    memset(json_buf, 0x00, 4096 + 8);
-    if (cJSON_PrintPreallocated(root, json_buf, 4096 + 8, true)) {
-        lfs2_file_write(lfs2, &fp, json_buf, strlen(json_buf));
-    } else {
-        ESP_LOGE(TAG, "json object serialization failed");
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-    }
-    xSemaphoreGive(xSemaphore);
-
-    lfs2_file_close(lfs2, &fp);
-out:
-    free(config.buffer);
-    cJSON_Delete(root);
-    return 0;
+    return root;
 }
 
 
-static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
+int8_t update_res_record(cJSON *json) {
     int8_t ret = PKG_OK;
-
-    // find vfs
-    const char *full_path = {'\0'};
-    lfs2_t *lfs2 = get_lfs2(FILE_RECORD_PATH, &full_path);
-    if (lfs2 == NULL) {
-        ESP_LOGE(TAG, "Unable to find mounted filesystem");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    // get file stat
-    struct lfs2_info info;
-    if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "'%s' file does not exist, create it", FILE_RECORD_PATH);
-        ret = create_res_record(msg_file_req);
-        if (ret != PKG_OK) {
-            ESP_LOGE(TAG, "'%s' file creation failed", FILE_RECORD_PATH);
-            goto out;
-        }
-    }
-
-    if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "'%s' file does not exist", FILE_RECORD_PATH);
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    ESP_LOGI(TAG, "'%s' file size: %ld", FILE_RECORD_PATH, info.size);
-
-    if (info.type == LFS2_TYPE_DIR) {
-        ESP_LOGW(TAG, "Directory read request not accepted");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    // 创建缓冲区
-    int8_t *buffer = (int8_t *)malloc(info.size + 1);
-    if (buffer == NULL) {
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-        goto no_memory;
-    }
-
-    // open file
-    lfs2_file_t fp;
-    int flags = LFS2_O_CREAT | LFS2_O_RDWR;
-    struct lfs2_file_config config;
-    memset(&config, 0x00, sizeof(config));
-    config.buffer = malloc(lfs2->cfg->cache_size * sizeof(uint8_t));
-    int lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
-    if (lfs2_ret != LFS2_ERR_OK) {
+    void *stream = vfs_stream_open(FILE_RECORD_PATH, VFS_WRITE | VFS_CREATE);
+    if (stream == NULL) {
         ESP_LOGE(TAG, "Fail to open the file");
         ret = PKG_ERR_FILE_OPEN;
-        goto error_file;
+        goto out;
     }
 
-    lfs2_size_t read = 0;
-    while (read != info.size) {
-        lfs2_ssize_t len = lfs2_file_read(lfs2, &fp, &buffer[read], info.size - read);
-        if (len < 0) {
-            ESP_LOGW(TAG, "Failed to read file");
-            lfs2_file_close(lfs2, &fp);
-            ret = PKG_ERR_FILE_READ;
-            goto error_read;
+    // serialize json object
+    char *buf = cJSON_PrintUnformatted(json);
+    xSemaphoreTake(xSemaphore, portMAX_DELAY);
+    if (buf == NULL) {
+        ESP_LOGE(TAG, "json object serialization failed");
+        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
+    } else {
+        vfs_stream_write(stream, buf, strlen(buf));
+        free(buf);
+    }
+    xSemaphoreGive(xSemaphore);
+
+    vfs_stream_close(stream);
+out:
+    return ret;
+}
+
+
+static size_t vfs_stream_size(const char *path) {
+    void *stream = vfs_stream_open(path, VFS_READ);
+    if (!stream) {
+        return 0;
+    }
+    size_t size = vfs_stream_seek(stream, 0, SEEK_END);
+    vfs_stream_close(stream);
+    return size;
+}
+
+static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
+    int8_t ret = PKG_OK;
+    cJSON *json = NULL;
+    void *stream = NULL;
+
+    // get file record
+    size_t file_size = vfs_stream_size(FILE_RECORD_PATH);
+    ESP_LOGI(TAG, "'%s' file size: %d", FILE_RECORD_PATH, file_size);
+    if (file_size == 0) {
+        ESP_LOGW(TAG, "'%s' file does not exist, create it", FILE_RECORD_PATH);
+        json = generate_res_record();
+    } else {
+        stream = vfs_stream_open(FILE_RECORD_PATH, VFS_READ);
+        if (stream == NULL) {
+            ESP_LOGE(TAG, "Fail to open the file");
+            ret = PKG_ERR_FILE_OPEN;
+            goto out;
         }
-        read += len;
-    }
-    buffer[read] = '\0';
-    lfs2_file_close(lfs2, &fp);
+        int8_t *buffer = (int8_t *)malloc(file_size + 1);
+        if (buffer == NULL) {
+            ESP_LOGE(TAG, "No memory available");
+            ret = PKG_ERR_NO_MEMORY_AVAILABLE;
+            vfs_stream_close(stream);
+            goto out;
+        }
+        if (vfs_stream_read(stream, buffer, file_size) != file_size) {
+            free(buffer);
+            vfs_stream_close(stream);
+            goto out;
+        }
+        buffer[file_size] = '\0';
+        vfs_stream_close(stream);
 
-    cJSON *json = cJSON_ParseWithLength((const char *)buffer, info.size);
+        json = cJSON_ParseWithLength((const char *)buffer, file_size);
+        free(buffer);
+    }
+
+    // check json object
     if (!json) {
         const char *error_ptr = cJSON_GetErrorPtr();
         if (error_ptr != NULL) {
             fprintf(stderr, "Error before: %s\n", error_ptr);
         }
         ret = PKG_ERR_PARSE;
-        goto error_read;
+        goto out;
     }
 
+    // process file write request
     cJSON *time = cJSON_GetObjectItemCaseSensitive(json, "time");
     if (time) {
         cJSON_SetNumberValue(time, msg_file_req->time);
@@ -945,66 +881,42 @@ static int8_t mqtt_handle_file_write_v2_helper(msg_file_req_t *msg_file_req) {
     cJSON *totalSize = cJSON_GetObjectItemCaseSensitive(json, "totalSize");
     int total_size = totalSize->valueint;
 
-    cJSON *old_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
-    int old_file_num = cJSON_GetArraySize(old_file_list);
+    cJSON *res_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
+    int old_file_num = cJSON_GetArraySize(res_file_list);
     bool exist = false;
 
     cJSON *new_file = cJSON_GetArrayItem(msg_file_req->file_list, 0);
     if (new_file) {
+        cJSON_AddStringToObject(new_file, "devicePath", msg_file_req->path);
+        cJSON_AddStringToObject(new_file, "domain", "user");
+        total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
+
         for (int i = 0; i < old_file_num; i++) {
-            cJSON *file = cJSON_GetArrayItem(old_file_list, i);
+            cJSON *file = cJSON_GetArrayItem(res_file_list, i);
             cJSON *path = cJSON_GetObjectItemCaseSensitive(file, "devicePath");
             if (strcmp(path->valuestring, msg_file_req->path) == 0) {
                 // NOTE: 添加 "devicePath" 保存文件路径
                 total_size -= cJSON_GetObjectItemCaseSensitive(file, "size")->valueint;
-                total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
-                cJSON_AddStringToObject(new_file, "devicePath", msg_file_req->path);
-                cJSON_ReplaceItemInArray(old_file_list, i, cJSON_Duplicate(new_file, true));
+                cJSON_ReplaceItemInArray(res_file_list, i, cJSON_Duplicate(new_file, true));
                 exist = true;
             }
         }
         if (exist == false) {
             // NOTE: 添加 "devicePath" 保存文件路径
-            total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
-            cJSON_AddStringToObject(new_file, "devicePath", msg_file_req->path);
-            cJSON_AddItemToArray(old_file_list, cJSON_Duplicate(new_file, true));
+            cJSON_AddItemToArray(res_file_list, cJSON_Duplicate(new_file, true));
         }
     } else {
         ESP_LOGW(TAG, "'fileList' object is empty");
         ret = PKG_ERR_PARSE;
-        goto error_read;
+        goto out;
     }
     cJSON_SetNumberValue(totalSize, total_size);
 
     // save res.json
-    flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
-    lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
-    if (lfs2_ret != LFS2_ERR_OK) {
-        ESP_LOGE(TAG, "Fail to open the file");
-        ret = PKG_ERR_FILE_OPEN;
-        goto error_file;
-    }
-
-    xSemaphoreTake(xSemaphore, portMAX_DELAY);
-    memset(json_buf, 0x00, 4096 + 8);
-    if (cJSON_PrintPreallocated(json, json_buf, 4096 + 8, false)) {
-        ESP_LOGI(TAG, "json_buf: %s", json_buf);
-        lfs2_file_write(lfs2, &fp, json_buf, strlen(json_buf));
-    } else {
-        ESP_LOGE(TAG, "json object serialization failed");
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-    }
-    xSemaphoreGive(xSemaphore);
+    ret = update_res_record(json);
     cJSON_Delete(json);
 
-error_read:
-    lfs2_file_close(lfs2, &fp);
-error_file:
-    free(buffer);
-    free(config.buffer);
-no_memory:
 out:
-    cJSON_Delete(msg_file_req->file_list);
     return ret;
 }
 
@@ -1039,84 +951,39 @@ error:
 
 static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) {
     int8_t ret = PKG_OK;
+    cJSON *json = NULL;
+    void *stream = NULL;
 
-    // find vfs
-    const char *full_path = {'\0'};
-    lfs2_t *lfs2 = get_lfs2(FILE_RECORD_PATH, &full_path);
-    if (lfs2 == NULL) {
-        ESP_LOGE(TAG, "Unable to find mounted filesystem");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    // get file stat
-    struct lfs2_info info;
-    if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
+    // get file record
+    size_t file_size = vfs_stream_size(FILE_RECORD_PATH);
+    ESP_LOGI(TAG, "'%s' file size: %d", FILE_RECORD_PATH, file_size);
+    if (file_size == 0) {
         ESP_LOGW(TAG, "'%s' file does not exist, create it", FILE_RECORD_PATH);
-        ret = create_res_record(msg_file_req);
-        if (ret != PKG_OK) {
-            ESP_LOGE(TAG, "'%s' file creation failed", FILE_RECORD_PATH);
+        json = generate_res_record();
+    } else {
+        stream = vfs_stream_open(FILE_RECORD_PATH, VFS_READ);
+        if (stream == NULL) {
+            ESP_LOGE(TAG, "Fail to open the file");
+            ret = PKG_ERR_FILE_OPEN;
             goto out;
         }
-    }
-
-    if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "'%s' file does not exist", FILE_RECORD_PATH);
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-    ESP_LOGI(TAG, "'%s' file size: %ld", FILE_RECORD_PATH, info.size);
-
-    if (info.type == LFS2_TYPE_DIR) {
-        ESP_LOGW(TAG, "Directory read request not accepted");
-        ret = PKG_ERR_FILE_OPEN;
-        goto out;
-    }
-
-    // 创建缓冲区
-    int8_t *buffer = (int8_t *)malloc(info.size + 1);
-    if (buffer == NULL) {
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-        goto no_memory;
-    }
-
-    // open file
-    lfs2_file_t fp;
-    int flags = LFS2_O_RDONLY;
-    struct lfs2_file_config config;
-    memset(&config, 0x00, sizeof(config));
-    config.buffer = malloc(lfs2->cfg->cache_size * sizeof(uint8_t));
-    int lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
-    ESP_LOGW(TAG, "lfs2_ret: %d", lfs2_ret);
-    if (lfs2_ret != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "Fail to open the file");
-        goto error_file;
-    }
-
-    // read file
-    lfs2_size_t read = 0;
-    while (read != info.size) {
-        lfs2_ssize_t len = lfs2_file_read(lfs2, &fp, &buffer[read], info.size - read);
-        if (len < 0) {
-            ESP_LOGW(TAG, "Failed to read file");
-            lfs2_file_close(lfs2, &fp);
-            goto error_read;
+        int8_t *buffer = (int8_t *)malloc(file_size + 1);
+        if (buffer == NULL) {
+            ESP_LOGE(TAG, "No memory available");
+            ret = PKG_ERR_NO_MEMORY_AVAILABLE;
+            vfs_stream_close(stream);
+            goto out;
         }
-        read += len;
-    }
-    buffer[read] = '\0';
-
-    // close file
-    lfs2_file_close(lfs2, &fp);
-
-    cJSON *json = cJSON_ParseWithLength((const char *)buffer, info.size);
-    if (!json) {
-        const char *error_ptr = cJSON_GetErrorPtr();
-        if (error_ptr != NULL) {
-            fprintf(stderr, "Error before: %s\n", error_ptr);
+        if (vfs_stream_read(stream, buffer, file_size) != file_size) {
+            free(buffer);
+            vfs_stream_close(stream);
+            goto out;
         }
-        ret = PKG_ERR_PARSE;
-        goto error_read;
+        buffer[file_size] = '\0';
+        vfs_stream_close(stream);
+
+        json = cJSON_ParseWithLength((const char *)buffer, file_size);
+        free(buffer);
     }
 
     cJSON *time = cJSON_GetObjectItemCaseSensitive(json, "time");
@@ -1126,8 +993,25 @@ static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) 
     cJSON *totalSize = cJSON_GetObjectItemCaseSensitive(json, "totalSize");
     int total_size = totalSize->valueint;
 
+    // 对于 multi_file_write 请求，先删除旧的项目域文件
     cJSON *old_file_list = cJSON_GetObjectItemCaseSensitive(json, "fileList");
     int old_file_num = cJSON_GetArraySize(old_file_list);
+    // 倒序遍历，避免删除元素后索引变化的问题
+    for (int i = old_file_num - 1; i >= 0; i--) {
+        cJSON *file = cJSON_GetArrayItem(old_file_list, i);
+        cJSON *domain_obj = cJSON_GetObjectItemCaseSensitive(file, "domain");
+        if (domain_obj) {
+            if (strncmp(domain_obj->valuestring, "project", strlen("project")) == 0) {
+                total_size -= cJSON_GetObjectItemCaseSensitive(file, "size")->valueint;
+                // 找到匹配的项目域文件，从数组中删除
+                cJSON *deleted_item = cJSON_DetachItemFromArray(old_file_list, i);
+                if (deleted_item) {
+                    cJSON_Delete(deleted_item);
+                }
+            }
+        }
+    }
+    old_file_num = cJSON_GetArraySize(old_file_list);
 
     cJSON *new_file_list = msg_file_req->file_list;
     int new_file_num = cJSON_GetArraySize(new_file_list);
@@ -1163,39 +1047,18 @@ static int8_t mqtt_handle_multi_file_write_helper(msg_file_req_t *msg_file_req) 
         if (exist == false) {
             total_size += cJSON_GetObjectItemCaseSensitive(new_file, "size")->valueint;
             cJSON_ReplaceItemInObject(new_file, "devicePath", cJSON_CreateString(new_file_path));
+            // 对于不存在的项目域文件，添加 domain 字段
+            cJSON_AddStringToObject(new_file, "domain", "project");
             cJSON_AddItemToArray(old_file_list, cJSON_Duplicate(new_file, true));
         }
     }
     cJSON_SetNumberValue(totalSize, total_size);
 
-    flags = LFS2_O_CREAT | LFS2_O_RDWR | LFS2_O_TRUNC;
-    lfs2_ret = lfs2_file_opencfg(lfs2, &fp, full_path, flags, &config);
-    if (lfs2_ret != LFS2_ERR_OK) {
-        ESP_LOGE(TAG, "Fail to open the file");
-        ret = PKG_ERR_FILE_OPEN;
-        goto error_file;
-    }
-
-    xSemaphoreTake(xSemaphore, portMAX_DELAY);
-    memset(json_buf, 0x00, 4096 + 8);
-    if (cJSON_PrintPreallocated(json, json_buf, 4096 + 8, false)) {
-        ESP_LOGI(TAG, "json_buf: %s", json_buf);
-        lfs2_file_write(lfs2, &fp, json_buf, strlen(json_buf));
-    } else {
-        ESP_LOGW(TAG, "json object serialization failed");
-        ret = PKG_ERR_NO_MEMORY_AVAILABLE;
-    }
-    xSemaphoreGive(xSemaphore);
+    // save res.json
+    ret = update_res_record(json);
     cJSON_Delete(json);
 
-error_read:
-    lfs2_file_close(lfs2, &fp);
-error_file:
-    free(buffer);
-    free(config.buffer);
-no_memory:
 out:
-    cJSON_Delete(msg_file_req->file_list);
     return ret;
 }
 
@@ -1257,8 +1120,8 @@ static void read_task(void *pvParameter) {
     int8_t ret = PKG_OK;
 
     // rsp json
-    cJSON *rsp = cJSON_CreateObject();
-    if (rsp == NULL) {
+    cJSON *rsp_obj = cJSON_CreateObject();
+    if (rsp_obj == NULL) {
         ESP_LOGW(TAG, "Failed to create rsp json object");
         ret = PKG_ERR_NO_MEMORY_AVAILABLE;
         char rsp_buf[256] = {0};
@@ -1270,84 +1133,72 @@ static void read_task(void *pvParameter) {
             ret
             );
         mqtt_file_read_response_helper(NULL, rsp_buf);
-        goto no_memory;
+        goto out;
     }
 
-    cJSON_AddNumberToObject(rsp, "file_op", msg->operator);
-    cJSON_AddStringToObject(rsp, "fs_path", msg->path);
-    cJSON_AddNumberToObject(rsp, "pkg_sn", msg->sn);
-    cJSON *total_obj = cJSON_AddNumberToObject(rsp, "pkg_tot", 1);
-    cJSON *index_obj = cJSON_AddNumberToObject(rsp, "pkg_idx", 0);
-    cJSON *len_obj = cJSON_AddNumberToObject(rsp, "pkg_len", 0);
-    cJSON *ctx_obj = cJSON_AddStringToObject(rsp, "pkg_ctx", "");
-    cJSON *err_obj = cJSON_AddNumberToObject(rsp, "err_code", 0);
+    cJSON_AddNumberToObject(rsp_obj, "file_op", msg->operator);
+    cJSON_AddStringToObject(rsp_obj, "fs_path", msg->path);
+    cJSON_AddNumberToObject(rsp_obj, "pkg_sn", msg->sn);
+    cJSON *total_obj = cJSON_AddNumberToObject(rsp_obj, "pkg_tot", 1);
+    cJSON *index_obj = cJSON_AddNumberToObject(rsp_obj, "pkg_idx", 0);
+    cJSON *len_obj = cJSON_AddNumberToObject(rsp_obj, "pkg_len", 0);
+    cJSON *ctx_obj = cJSON_AddStringToObject(rsp_obj, "pkg_ctx", "");
+    cJSON *err_obj = cJSON_AddNumberToObject(rsp_obj, "err_code", 0);
 
     // find vfs
-    const char *full_path = {'\0'};
-    mp_vfs_mount_t *vfs = mp_vfs_lookup_path(msg->path, &full_path);
-    if (vfs == MP_VFS_NONE || vfs == MP_VFS_ROOT) {
-        ESP_LOGW(TAG, "Unable to find mounted filesystem");
-        err_obj->valueint = PKG_ERR_NO_FILE_OR_DIR;
-        mqtt_file_read_response_helper(rsp, NULL);
-        goto error_fs;
+    size_t file_size = vfs_stream_size(msg->path);
+    if (file_size == 0) {
+        ESP_LOGW(TAG, "File '%s' does not exist", msg->path);
+        err_obj->valueint = PKG_ERR_FILE_OPEN;
+        mqtt_file_read_response_helper(rsp_obj, NULL);
+        goto file_err;
     }
-    lfs2_t *lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(vfs->obj))->lfs;
 
-    // get file stat
-    struct lfs2_info info;
-    if (lfs2_stat(lfs2, full_path, &info) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "No such file or directory");
-        err_obj->valueint = PKG_ERR_NO_FILE_OR_DIR;
-        mqtt_file_read_response_helper(rsp, NULL);
-        goto error_fs;
-    }
-    if (info.type == LFS2_TYPE_DIR) {
-        ESP_LOGW(TAG, "Directory read request not accepted");
+    void *stream = vfs_stream_open(msg->path, VFS_READ);
+    if (!stream) {
+        ESP_LOGW(TAG, "Failed to open VFS stream");
         err_obj->valueint = PKG_ERR_FILE_READ;
-        mqtt_file_read_response_helper(rsp, NULL);
-        goto error_fs;
+        mqtt_file_read_response_helper(rsp_obj, NULL);
+        goto file_err;
     }
 
-    lfs2_ssize_t pkg_len = info.size > 2600 ? 2600 : info.size;
+    lfs2_ssize_t pkg_len = file_size > 2600 ? 2600 : file_size;
     int8_t *buffer = (int8_t *)malloc(pkg_len);
-
-    // open file
-    lfs2_file_t fp;
-    int flags = LFS2_O_RDONLY;
-    struct lfs2_file_config config;
-    config.buffer = malloc(lfs2->cfg->cache_size * sizeof(uint8_t));
-    if (lfs2_file_opencfg(lfs2, &fp, msg->path, flags, &config) != LFS2_ERR_OK) {
-        ESP_LOGW(TAG, "Fail to open the file");
-        err_obj->valueint = PKG_ERR_FILE_READ;
-        mqtt_file_read_response_helper(rsp, NULL);
-        goto error_file;
+    if (buffer == NULL) {
+        ESP_LOGW(TAG, "No memory available for buffer");
+        err_obj->valueint = PKG_ERR_NO_MEMORY_AVAILABLE;
+        mqtt_file_read_response_helper(rsp_obj, NULL);
+        vfs_stream_close(stream);
+        goto file_err;
     }
 
     int total = 0;
-    if (info.size % 2600) {
-        total = (info.size / 2600) + 1;
+    if (file_size % 2600) {
+        total = (file_size / 2600) + 1;
     } else {
-        total = (info.size / 2600);
+        total = (file_size / 2600);
     }
-    cJSON_SetIntValue(total_obj, (info.size / 2600) + 1);
+    cJSON_SetIntValue(total_obj, (file_size / 2600) + 1);
 
     int index = 0;
     while (1) {
         if (index == total - 1) {
-            pkg_len = info.size % 2600;
+            pkg_len = file_size % 2600;
         }
 
         // read file
-        lfs2_ssize_t len = 0;
+        size_t read = 0;
+        size_t len = 0;
         while (len != pkg_len) {
-            len = lfs2_file_read(lfs2, &fp, &buffer[len], pkg_len - len);
+            len = vfs_stream_read(stream, &buffer[read], pkg_len - read);
             if (len < 0) {
                 ESP_LOGW(TAG, "Failed to read file");
                 err_obj->valueint = PKG_ERR_FILE_READ;
-                lfs2_file_close(lfs2, &fp);
-                mqtt_file_read_response_helper(rsp, NULL);
-                goto error_read;
+                vfs_stream_close(stream);
+                mqtt_file_read_response_helper(rsp_obj, NULL);
+                goto file_err;
             }
+            read += len;
         }
 
         // base64 encode
@@ -1360,7 +1211,7 @@ static void read_task(void *pvParameter) {
         cJSON_SetValuestring(ctx_obj, ctx_buf);
         xSemaphoreTake(xSemaphore, portMAX_DELAY);
         memset(json_buf, 0x00, 4096 + 8);
-        if (cJSON_PrintPreallocated(rsp, json_buf, 4096 + 8, false)) {
+        if (cJSON_PrintPreallocated(rsp_obj, json_buf, 4096 + 8, false)) {
             esp_mqtt_client_publish(
                 m5things_mqtt_client,
                 mqtt_up_file_topic,
@@ -1379,21 +1230,17 @@ static void read_task(void *pvParameter) {
         vTaskDelay(200 / portTICK_PERIOD_MS);
         index += 1;
         if (index == total) {
-            ESP_LOGI(TAG, "File read complete, total: %ld bytes, packages: %d", info.size, total);
+            ESP_LOGI(TAG, "File read complete, total: %d bytes, packages: %d", file_size, total);
             break;
         }
     }
 
-error_read:
-    lfs2_file_close(lfs2, &fp);
-error_file:
-    free(config.buffer);
-    free(buffer);
+    vfs_stream_close(stream);
 
-error_fs:
-    cJSON_Delete(rsp);
+file_err:
+    cJSON_Delete(rsp_obj);
 
-no_memory:
+out:
     free(msg);
     vTaskDelete(NULL);
     return;
@@ -1971,34 +1818,34 @@ static int8_t mqtt_file_process(
         return ret;
     }
 
-    ESP_LOGI(TAG, "File Operation: %s(%d)", file_operation[msg.operator], msg.operator);
+    ESP_LOGI(TAG, "File Operation: %s(%d)", file_op_dsc[msg.operator], msg.operator);
 
     switch (msg.operator) {
-        case 0:
+        case E_M5THING_FILE_OP_WRITE:
             ret = mqtt_handle_file_write(&msg);
             break;
 
-        case 1:
+        case E_M5THING_FILE_OP_READ:
             ret = mqtt_handle_file_read(&msg);
             break;
 
-        case 2:
+        case E_M5THING_FILE_OP_LIST:
             ret = mqtt_handle_file_list(&msg);
             break;
 
-        case 3:
+        case E_M5THING_FILE_OP_REMOVE:
             ret = mqtt_handle_file_remove(&msg);
             break;
 
-        case 4:
+        case E_M5THING_FILE_OP_WRITE_V2:
             ret = mqtt_handle_file_write_v2(&msg);
             break;
 
-        case 5:
+        case E_M5THING_FILE_OP_MULTI_WRITE:
             ret = mqtt_handle_multi_file_write_v2(&msg);
             break;
 
-        case 6:
+        case E_M5THING_FILE_OP_LIST_V2:
             ret = mqtt_handle_file_list_v2(&msg);
             break;
 
@@ -2007,7 +1854,13 @@ static int8_t mqtt_file_process(
             break;
     }
 
-    ESP_LOGI(TAG, "Result: %s(%d)", resulet_msg[-ret], ret);
+    ESP_LOGI(TAG, "Result: %s(%d)", result_dsc[-ret], ret);
+    if (msg.ctx_buf != NULL) {
+        free(msg.ctx_buf);
+    }
+    if (msg.file_list != NULL) {
+        cJSON_Delete(msg.file_list);
+    }
     return ret;
 }
 
@@ -2235,7 +2088,7 @@ soft_reset:
             break;
         } else {
             // report device status
-            if ((esp_timer_get_time() - last_ping_time) > 30000000 /* microseconds */) {
+            if ((esp_timer_get_time() - last_ping_time) > M5THINGS_MQTT_PING_REPORT_INTERVAL_US) {
                 last_ping_time = esp_timer_get_time();
                 mqtt_ping_report();
             }
@@ -2249,6 +2102,6 @@ soft_reset_exit:
     ESP_LOGI(TAG, "Destroy mqtt client and reconnect");
     esp_mqtt_client_disconnect(m5things_mqtt_client);
     esp_mqtt_client_destroy(m5things_mqtt_client);
-    vTaskDelay(15000 / portTICK_PERIOD_MS);
+    vTaskDelay(M5THINGS_MQTT_RECONNECT_WAIT_MS / portTICK_PERIOD_MS);
     goto soft_reset;
 }
