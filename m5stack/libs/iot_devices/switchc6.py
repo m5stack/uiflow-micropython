@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 import m5espnow
 import time
 import sys
@@ -196,7 +200,7 @@ class SwitchC6Controller:
             is_wait=True,
         )
         self._verbose = verbose
-        self._callback = [None for _ in range(self.MAX)]
+        self._callback = None
 
     def espnow_recv_callback(self, espnow_obj):
         event_mac, event_data = espnow_obj.recv_data()
@@ -248,9 +252,9 @@ class SwitchC6Controller:
                 return
 
         if event.target_mac == "FFFF-FFFF-FFFF":
-            if self._callback[int(event.onoff)]:
+            if self._callback:
                 micropython.schedule(
-                    self._callback[int(event.onoff)],
+                    self._callback,
                     (self, event.source_mac, event.onoff, event.voltage),
                 )
 
@@ -388,7 +392,7 @@ class SwitchC6Controller:
         self._communicate(payload, self.queue, timeout=timeout)
         return self.queue.onoff
 
-    def set_callback(self, handler, trigger: Literal[0, 1]) -> None:
+    def set_callback(self, handler) -> None:
         """Set a callback function for the specified trigger.
 
         :param handler: The callback function to be called when the trigger occurs.
@@ -404,7 +408,7 @@ class SwitchC6Controller:
 
                 switchc6.set_callback(handler, trigger)
         """
-        self._callback[trigger] = handler
+        self._callback = handler
 
     def get_firmware_version(self, target_mac: str, timeout: int = 5000) -> str:
         """Get the firmware version of the target device.
