@@ -6,7 +6,7 @@
 
 ```shell
 mkdir uiflow_workspace && cd uiflow_workspace
-git clone --depth 1 --branch v5.4.1 https://github.com/espressif/esp-idf.git
+git clone --depth 1 --branch v5.4.2 https://github.com/espressif/esp-idf.git
 git -C esp-idf submodule update --init --recursive
 ./esp-idf/install.sh
 . ./esp-idf/export.sh
