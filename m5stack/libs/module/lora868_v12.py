@@ -91,7 +91,7 @@ class LoRa868V12Module:
         }
 
         self.modem = SX1262(
-            spi=mbus.spi2,
+            spi=mbus.spi,
             reset=machine.Pin(pin_rst),
             cs=machine.Pin(pin_cs),
             busy=machine.Pin(pin_busy),

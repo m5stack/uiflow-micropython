@@ -148,7 +148,7 @@ static void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
         case ESP_ERR_INVALID_STATE:
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
-            //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
+            //     所以这里不需要对 SPI 进行初始化。
             if (!self->is_shared) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI device already freed"));
                 return;
@@ -157,8 +157,8 @@ static void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
 
     // NOTE:
     //     core2和cores3的屏幕和sd卡复用一个spi，
-    //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
-    if (self->is_shared) {
+    //     所以这里不需要对 SPI 进行初始化。
+    if (!self->is_shared) {
         switch (spi_bus_free(self->host)) {
             case ESP_ERR_INVALID_ARG:
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("invalid configuration"));
@@ -168,15 +168,15 @@ static void machine_hw_spi_deinit_internal(machine_hw_spi_obj_t *self) {
                 mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("SPI bus already freed"));
                 return;
         }
-    }
 
-    int8_t pins[3] = {self->miso, self->mosi, self->sck};
+        int8_t pins[3] = {self->miso, self->mosi, self->sck};
 
-    for (int i = 0; i < 3; i++) {
-        if (pins[i] != -1) {
-            esp_rom_gpio_pad_select_gpio(pins[i]);
-            esp_rom_gpio_connect_out_signal(pins[i], SIG_GPIO_OUT_IDX, false, false);
-            gpio_set_direction(pins[i], GPIO_MODE_INPUT);
+        for (int i = 0; i < 3; i++) {
+            if (pins[i] != -1) {
+                esp_rom_gpio_pad_select_gpio(pins[i]);
+                esp_rom_gpio_connect_out_signal(pins[i], SIG_GPIO_OUT_IDX, false, false);
+                gpio_set_direction(pins[i], GPIO_MODE_INPUT);
+            }
         }
     }
 }
@@ -284,7 +284,7 @@ static void machine_hw_spi_init_internal(machine_hw_spi_obj_t *self, mp_arg_val_
         case ESP_ERR_INVALID_STATE:
             // NOTE:
             //     core2和cores3的屏幕和sd卡复用一个spi，
-            //     所以这里不需要对VSPI_HOST和SPI2_HOST进行初始化。
+            //     所以这里不需要对 SPI 进行初始化。
             self->is_shared = true;
             mp_warning("hw_spi", "SPI bus already initialized");
     }

@@ -9,6 +9,7 @@ import micropython
 from lora import SX1278
 from lora import SX1276
 from lora import RxPacket
+import M5
 
 
 class LoraModule:
@@ -108,8 +109,11 @@ class LoraModule:
             "output_power": output_power,  # dBm
         }
 
+        if M5.getBoard() in (M5.BOARD.M5Stack, M5.BOARD.M5StackCore2, M5.BOARD.M5Tough):
+            mbus.spi.init(baudrate=1000000, polarity=0, phase=0)
+        print(mbus.spi)
         self.modem = sx_instance(
-            spi=mbus.spi2,
+            spi=mbus.spi,
             cs=machine.Pin(pin_cs),
             dio0=machine.Pin(pin_irq),
             # dio1=machine.Pin(35),
