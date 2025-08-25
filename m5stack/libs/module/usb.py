@@ -91,7 +91,7 @@ def keycode_to_ascii(keycode, shift=False):
 class USBModule(UsbHID):
     def __init__(self, pin_cs=0, pin_int=14):
         super().__init__(
-            spi=mbus.spi2, cs=machine.Pin(pin_cs, machine.Pin.OUT), irq=machine.Pin(pin_int)
+            spi=mbus.spi, cs=machine.Pin(pin_cs, machine.Pin.OUT), irq=machine.Pin(pin_int)
         )
         self.event = 0
         self.event_callback = None

@@ -7,24 +7,59 @@ import M5
 from collections import namedtuple
 
 MBusIO = namedtuple(
-    "MBusIO", ["sda0", "scl0", "sda1", "scl1", "spi2_sck", "spi2_mosi", "spi2_miso"]
+    "MBusIO", ["sda0", "scl0", "sda1", "scl1", "spi_host", "spi_sck", "spi_mosi", "spi_miso"]
 )
 
 iomap = {
     M5.BOARD.M5Stack: MBusIO(
-        sda0=21, scl0=22, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=19
+        sda0=21,
+        scl0=22,
+        sda1=21,
+        scl1=22,
+        spi_host=2,
+        spi_sck=18,
+        spi_mosi=23,
+        spi_miso=19,  # SPI3_HOST
     ),
     M5.BOARD.M5StackCore2: MBusIO(
-        sda0=32, scl0=33, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=38
+        sda0=32,
+        scl0=33,
+        sda1=21,
+        scl1=22,
+        spi_host=2,
+        spi_sck=18,
+        spi_mosi=23,
+        spi_miso=38,  # SPI3_HOST
     ),
     M5.BOARD.M5StackCoreS3: MBusIO(
-        sda0=2, scl0=1, sda1=12, scl1=11, spi2_sck=36, spi2_mosi=37, spi2_miso=35
+        sda0=2,
+        scl0=1,
+        sda1=12,
+        scl1=11,
+        spi_host=1,
+        spi_sck=36,
+        spi_mosi=37,
+        spi_miso=35,  # SPI2_HOST
     ),
     M5.BOARD.M5Tough: MBusIO(
-        sda0=32, scl0=33, sda1=21, scl1=22, spi2_sck=18, spi2_mosi=23, spi2_miso=38
+        sda0=32,
+        scl0=33,
+        sda1=21,
+        scl1=22,
+        spi_host=2,
+        spi_sck=18,
+        spi_mosi=23,
+        spi_miso=38,  # SPI3_HOST
     ),
     M5.BOARD.M5Tab5: MBusIO(
-        sda0=53, scl0=54, sda1=31, scl1=32, spi2_sck=5, spi2_mosi=18, spi2_miso=19
+        sda0=53,
+        scl0=54,
+        sda1=31,
+        scl1=32,
+        spi_host=1,
+        spi_sck=5,
+        spi_mosi=18,
+        spi_miso=19,  # SPI2_HOST
     ),
 }.get(M5.getBoard())
 
@@ -39,19 +74,19 @@ def _i2c1_init():
     return machine.I2C(1, scl=machine.Pin(iomap.scl1), sda=machine.Pin(iomap.sda1), freq=100000)
 
 
-def _spi2_init():
+def _spi_init():
     return machine.SPI(
-        1,
-        sck=machine.Pin(iomap.spi2_sck),
-        mosi=machine.Pin(iomap.spi2_mosi),
-        miso=machine.Pin(iomap.spi2_miso),
+        iomap.spi_host,
+        sck=machine.Pin(iomap.spi_sck),
+        mosi=machine.Pin(iomap.spi_mosi),
+        miso=machine.Pin(iomap.spi_miso),
     )
 
 
 _attrs = {
     "i2c0": _i2c0_init,
     "i2c1": _i2c1_init,
-    "spi2": _spi2_init,
+    "spi": _spi_init,
 }
 
 

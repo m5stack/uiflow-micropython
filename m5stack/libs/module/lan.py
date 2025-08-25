@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .mbus import spi2
+from . import mbus
 import network
 import machine
 import builtins
@@ -14,7 +14,7 @@ class LANModule:
             0,
             phy_addr=0,
             phy_type=network.PHY_W5500,
-            spi=spi2,
+            spi=mbus.spi,
             cs=machine.Pin(cs),
             int=machine.Pin(int),
             power=machine.Pin(rst),
