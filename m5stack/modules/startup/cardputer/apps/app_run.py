@@ -8,9 +8,9 @@ import widgets
 import M5
 import esp32
 import machine
-import sys
 import os
 import time
+from unit import KeyCode
 
 try:
     import M5Things
@@ -148,13 +148,13 @@ class RunApp(app_base.AppBase):
         return (mtime, account, ver)
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 183:  # Right key
+        if event.key == KeyCode.KEYCODE_RIGHT:  # Right key
             M5.Lcd.drawImage(res.RUN_ONCE_UNSELECT_IMG, 6, 100)
             M5.Lcd.drawImage(res.RUN_ALWAYS_SELECT_IMG, 123, 100)
             self._enter_handler = self._handle_run_always
-        elif event.key == 180:  # Left key
+        elif event.key == KeyCode.KEYCODE_LEFT:  # Left key
             M5.Lcd.drawImage(res.RUN_ONCE_SELECT_IMG, 6, 100)
             M5.Lcd.drawImage(res.RUN_ALWAYS_UNSELECT_IMG, 123, 100)
             self._enter_handler = self._handle_run_once
-        elif event.key == 0x0D:  # Enter key
+        elif event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._enter_handler(fw)

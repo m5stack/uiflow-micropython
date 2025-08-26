@@ -7,6 +7,7 @@ from .. import res
 import widgets
 import M5
 import esp32
+from unit import KeyCode
 
 
 class WiFiSettingApp(app_base.AppBase):
@@ -105,21 +106,22 @@ class WiFiSettingApp(app_base.AppBase):
         )
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 182:  # down key
+        if event.key == KeyCode.KEYCODE_DOWN:  # down key
             self._option, view_fn = self._menu_selector.next()
             view_fn()
             event.status = True
-        elif event.key == 181:  # up key
+        elif event.key == KeyCode.KEYCODE_UP:  # up key
             self._option, view_fn = self._menu_selector.prev()
             view_fn()
             event.status = True
 
-        if event.key == 0x0D and self._option == 4:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER and self._option == 4:  # Enter key
             self._option, view_fn = self._menu_selector.current()
             view_fn()
+            self.set_data()
             event.status = True
 
-        if event.key == 0x1B:  # ESC key
+        if event.key == KeyCode.KEYCODE_ESC:  # ESC key
             self.ssid_tmp = self.ssid
             self.psk_tmp = self.psk
             self.server_tmp = self.server
@@ -127,7 +129,7 @@ class WiFiSettingApp(app_base.AppBase):
             view_fn()
             event.status = True
 
-        if event.key == 0x08 and self._option in (1, 2, 3):
+        if event.key == KeyCode.KEYCODE_BACKSPACE and self._option in (1, 2, 3):
             print("backspace")
             if self._option == 1:
                 self.ssid_tmp = self.ssid_tmp[:-1]
@@ -307,7 +309,7 @@ class BootScreenSetting(app_base.AppBase):
         self._option_img.set_src(self._boot_options.get(self._option))
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._handle_boot_option(fw)
             event.status = True
 
@@ -373,7 +375,7 @@ class ComLinkSetting(app_base.AppBase):
         self._option_img.set_src(self._comlink_options.get(self._option))
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._handle_option(fw)
             event.status = True
 
@@ -451,7 +453,7 @@ class BrightnessSettingApp(app_base.AppBase):
                 return v
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 0x0D:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._handle_brightness(fw)
             event.status = True
 
@@ -493,15 +495,15 @@ class GeneralSettingApp(app_base.AppBase):
         super().stop()
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 182:  # down key
+        if event.key == KeyCode.KEYCODE_DOWN:  # down key
             self._menu_selector.current().pause()
             app = self._menu_selector.next().resume()
             event.status = True
-        elif event.key == 181:  # up key
+        elif event.key == KeyCode.KEYCODE_UP:  # up key
             self._menu_selector.current().pause()
             self._menu_selector.prev().resume()
             event.status = True
-        elif event.key == 0x0D:  # Enter key
+        elif event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             app = self._menu_selector.current()
             await app._kb_event_handler(event, fw)
 
@@ -593,12 +595,12 @@ class SettingsApp(app_base.AppBase):
             await self._app._kb_event_handler(event, fw)
             return
 
-        if event.key == 0x0D:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._app = self._menu_selector.current()
             print("current app:", self._app)
             await fw.load(self._app)
             event.status = True
-        elif event.key == 182:  # down key
+        elif event.key == KeyCode.KEYCODE_DOWN:  # down key
             self._menu_selector.index(1)
             self._imgs[0].set_src(res.CARD_228x32_UNSELECT_IMG)
             self._icos[0].refresh()
@@ -613,7 +615,7 @@ class SettingsApp(app_base.AppBase):
             M5.Lcd.drawImage(res.CARET_RIGHT, 213, 63)
 
             event.status = True
-        elif event.key == 181:  # up key
+        elif event.key == KeyCode.KEYCODE_UP:  # up key
             self._menu_selector.index(0)
             self._imgs[0].set_src(res.CARD_228x32_SELECT_IMG)
             self._icos[0].refresh()
