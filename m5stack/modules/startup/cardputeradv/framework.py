@@ -7,6 +7,7 @@ from hardware import MatrixKeyboard
 import M5
 import gc
 import asyncio
+from unit import KeyCode
 
 
 class KeyEvent:
@@ -62,7 +63,7 @@ class Framework:
 
         while True:
             M5.update()
-            kb.tick()
+            # kb.tick()
             if kb.is_pressed():
                 M5.Speaker.tone(3500, 50)
                 event.key = kb.get_key()
@@ -87,7 +88,7 @@ class Framework:
             await app._kb_event_handler(event, self)
 
         if event.status is False:
-            if event.key == 96:  # ESC key
+            if event.key == KeyCode.KEYCODE_ESC:  # ESC key
                 app = self._app_selector.current()
                 if hasattr(app, "_btna_event_handler"):
                     await app._btna_event_handler(self)

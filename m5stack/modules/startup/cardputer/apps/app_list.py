@@ -9,7 +9,7 @@ import M5
 import esp32
 import machine
 import os
-import sys
+from unit import KeyCode
 
 
 class Rectangle:
@@ -273,12 +273,12 @@ class ListApp(app_base.AppBase):
         machine.reset()
 
     async def _kb_event_handler(self, event, fw):
-        if event.key == 182:  # down key
+        if event.key == KeyCode.KEYCODE_DOWN:  # down key
             self._btn_down_event_handler(None)
-        if event.key == 181:  # up key
+        if event.key == KeyCode.KEYCODE_UP:  # up key
             self._btn_up_event_handler(None)
 
-        if event.key == 0x0D:  # Enter key
+        if event.key == KeyCode.KEYCODE_ENTER:  # Enter key
             self._btn_once_event_handler(event)
         elif event.key in (ord("a"), ord("A")):
             self._btn_always_event_handler(event)

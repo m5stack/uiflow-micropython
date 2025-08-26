@@ -7,6 +7,7 @@ from .. import res
 import widgets
 import M5
 from collections import namedtuple
+from unit import KeyCode
 
 Icon = namedtuple("Icon", ["name", "src"])
 
@@ -100,13 +101,13 @@ class LauncherApp(app_base.AppBase):
         left = 0
         right = 0
         refresh = False
-        if event.key == 183:  # right key
+        if event.key == KeyCode.KEYCODE_RIGHT:  # right key
             self._id = self._id + 1 if self._id + 1 < len(self._icos) else 0
             left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
             right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
             refresh = True
 
-        if event.key == 180:  #  left key
+        if event.key == KeyCode.KEYCODE_LEFT:  #  left key
             self._id = self._id - 1 if self._id - 1 >= 0 else (len(self._icos) - 1)
             left = (len(self._icos) - 1) if self._id - 1 < 0 else self._id - 1
             right = 0 if self._id + 1 > (len(self._icos) - 1) else self._id + 1
@@ -120,6 +121,6 @@ class LauncherApp(app_base.AppBase):
             self._right_img.set_src(self._icos[right].src)
             self._right_label.set_text(self._icos[right].name)
 
-        if event.key == 0x0D:
+        if event.key == KeyCode.KEYCODE_ENTER:
             app = fw._app_selector.index(self._id + 1)
             app.start()
