@@ -146,7 +146,14 @@ int cpt_scan_files(const char *board, const char *basePath, char (*file_path)[25
             sprintf(path_new, "%s/%s", basePath, ptr->d_name);
             if (strstr(path_new, "system/") != NULL) {
                 if (strstr(path_new, "system/common") == NULL) {
-                    if (strstr(path_new, board) == NULL) {
+                    // Check for exact board match - ensure board name is either at end or followed by '/'
+                    char *board_pos = strstr(path_new, board);
+                    if (board_pos == NULL) {
+                        continue;
+                    }
+                    // Check if it's an exact match (not a substring)
+                    char next_char = board_pos[strlen(board)];
+                    if (next_char != '\0' && next_char != '/') {
                         continue;
                     }
                 }
