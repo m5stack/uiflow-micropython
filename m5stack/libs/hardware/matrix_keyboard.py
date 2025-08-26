@@ -3,51 +3,84 @@
 # SPDX-License-Identifier: MIT
 
 from . import Keyboard
+from . import KeyboardI2C
 import micropython
+import machine
+import M5
 
 
-class MatrixKeyboard(Keyboard):
+class MatrixKeyboard:
     _instance = None
     _initialized = False
 
     def __new__(cls):
         if cls._instance is None:
-            cls._instance = super().__new__(cls)
+            cls._instance = super(MatrixKeyboard, cls).__new__(cls)
         return cls._instance
 
     def __init__(self) -> None:
         if self._initialized:
             return
 
-        super().__init__()
+        board_id = M5.getBoard()
+        if M5.BOARD.M5Cardputer == board_id:
+            self._keyboard = Keyboard()
+        elif M5.BOARD.M5CardputerADV == board_id:
+            i2c1 = machine.I2C(1, scl=machine.Pin(9), sda=machine.Pin(8), freq=100000)
+            self._keyboard = KeyboardI2C(
+                i2c1, intr_pin=machine.Pin(11), mode=KeyboardI2C.ASCII_MODE
+            )
+        else:
+            self._keyboard = None
+
         self._keys = []
         self._handler = None
         self._initialized = True
 
     def get_key(self) -> int:
+        if self._keyboard and hasattr(self._keyboard, "_keyevents"):
+            if self._keyboard._keyevents:
+                keyevent = self._keyboard._keyevents.pop(0)
+                return keyevent.keycode
+            else:
+                return None
+
         if self._keys:
             return self._keys.pop(0)
         else:
             return None
 
     def get_string(self) -> str:
-        return chr(self.get_key())
+        key = self.get_key()
+        return chr(key) if key is not None else None
 
     def is_pressed(self) -> bool:
+        if self._keyboard and hasattr(self._keyboard, "_keyevents"):
+            if self._keyboard._keyevents:
+                return True
+            else:
+                return False
+
         if self._keys:
             return True
         else:
             return False
 
     def set_callback(self, handler) -> None:
+        if isinstance(self._keyboard, KeyboardI2C):
+            self._keyboard.set_keyevent_callback(handler)
+            return
         self._handler = handler
 
     def tick(self) -> None:
-        self.update_key_list()
-        self.update_keys_state()
-        if self.is_change():
-            if super().is_pressed():
-                status = self.keys_state()
+        if not self._keyboard or not hasattr(self._keyboard, "update_key_list"):
+            return
+
+        self._keyboard.update_key_list()
+        self._keyboard.update_keys_state()
+        if self._keyboard.is_change():
+            if self._keyboard.is_pressed():
+                status = self._keyboard.keys_state()
                 if status.tab:
                     self._keys.append(0x09)
                 elif status.enter:
