@@ -230,6 +230,7 @@ class ApiLlm:
         enkws=True,
         max_token_len=127,
         request_id="llm_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -246,6 +247,7 @@ class ApiLlm:
                 "prompt": prompt,
             },
         }
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -321,6 +323,7 @@ class ApiVlm:
         enoutput=True,
         max_token_len=256,
         request_id="vlm_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -336,6 +339,7 @@ class ApiVlm:
                 "prompt": prompt,
             },
         }
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -420,6 +424,7 @@ class ApiAudio:
         playdevice=1,
         play_volume=0.15,
         request_id="audio_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -435,7 +440,7 @@ class ApiAudio:
                 "playVolume": play_volume,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_audio_work_id, 5000
         )
@@ -468,6 +473,7 @@ class ApiCamera:
         enoutput=False,
         response_format="camera.raw",
         request_id="camera_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -482,7 +488,7 @@ class ApiCamera:
                 "enoutput": enoutput,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_camera_work_id, 10000
         )
@@ -517,6 +523,7 @@ class ApiTts:
         enoutput=False,
         enkws=False,
         request_id="tts_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -531,7 +538,7 @@ class ApiTts:
                 "enkws": enkws,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 10000
         )
@@ -588,6 +595,7 @@ class ApiMelotts:
         input="tts.utf-8.stream",
         enoutput=False,
         request_id="melotts_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -601,7 +609,7 @@ class ApiMelotts:
                 "enoutput": enoutput,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -658,6 +666,7 @@ class ApiKws:
         enoutput=True,
         enaudio=True,
         request_id="kws_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -673,7 +682,7 @@ class ApiKws:
                 "kws": kws,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -708,6 +717,7 @@ class ApiAsr:
         rule2=1.2,
         rule3=30.0,
         request_id="asr_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -725,7 +735,7 @@ class ApiAsr:
                 "rule3": rule3,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 10000
         )
@@ -756,6 +766,7 @@ class ApiVad:
         input="sys.pcm",
         enoutput=True,
         request_id="vad_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -769,7 +780,7 @@ class ApiVad:
                 "enoutput": enoutput,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -801,6 +812,7 @@ class ApiWhisper:
         enoutput=True,
         language="en",
         request_id="whisper_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -815,7 +827,7 @@ class ApiWhisper:
                 "enoutput": enoutput,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_llm_work_id, 30000
         )
@@ -847,6 +859,7 @@ class ApiYolo:
         input="yolo.jpg.base64",
         enoutput=True,
         request_id="yolo_setup",
+        **kwargs,
     ) -> str:
         cmd = {
             "request_id": request_id,
@@ -860,7 +873,7 @@ class ApiYolo:
                 "enoutput": enoutput,
             },
         }
-
+        cmd["data"].update(kwargs)
         success = self._module_msg.send_cmd_and_wait_to_take_msg(
             ujson.dumps(cmd), request_id, self._set_yolo_work_id, 10000
         )
@@ -1030,6 +1043,7 @@ class LlmModule:
         enkws=None,
         max_token_len=127,
         request_id="llm_setup",
+        **kwargs,
     ) -> str:
         if self.version == "v1.0":
             model = "qwen2.5-0.5b"
@@ -1048,7 +1062,15 @@ class LlmModule:
             enkws = bool(enkws)
 
         self.latest_llm_work_id = self.llm.setup(
-            prompt, model, response_format, input, enoutput, enkws, max_token_len, request_id
+            prompt,
+            model,
+            response_format,
+            input,
+            enoutput,
+            enkws,
+            max_token_len,
+            request_id,
+            **kwargs,
         )
         return self.latest_llm_work_id
 
@@ -1066,6 +1088,7 @@ class LlmModule:
         enkws=None,
         max_token_len=256,
         request_id="vlm_setup",
+        **kwargs,
     ) -> str:
         if input is None:
             input = ["vlm.utf-8"]
@@ -1076,7 +1099,7 @@ class LlmModule:
             input.append(enkws)
 
         self.latest_vlm_work_id = self.vlm.setup(
-            prompt, model, response_format, input, enoutput, max_token_len, request_id
+            prompt, model, response_format, input, enoutput, max_token_len, request_id, **kwargs
         )
         return self.latest_vlm_work_id
 
@@ -1098,9 +1121,10 @@ class LlmModule:
         playdevice=1,
         play_volume=0.15,
         request_id="audio_setup",
+        **kwargs,
     ) -> str:
         self.latest_audio_work_id = self.audio.setup(
-            capcard, capdevice, cap_volume, playcard, playdevice, play_volume, request_id
+            capcard, capdevice, cap_volume, playcard, playdevice, play_volume, request_id, **kwargs
         )
         return self.latest_audio_work_id
 
@@ -1112,9 +1136,10 @@ class LlmModule:
         frame_height=320,
         enoutput=False,
         response_format="camera.raw",
+        **kwargs,
     ) -> str:
         self.latest_camera_work_id = self.camera.setup(
-            input, frame_width, frame_height, enoutput, response_format, request_id
+            input, frame_width, frame_height, enoutput, response_format, request_id, **kwargs
         )
         return self.latest_camera_work_id
 
@@ -1145,6 +1170,7 @@ class LlmModule:
         enoutput=False,
         enkws=None,
         request_id="tts_setup",
+        **kwargs,
     ) -> str:
         if self.version == "v1.0":
             response_format = "tts.base64.wav"
@@ -1165,7 +1191,7 @@ class LlmModule:
             enkws = bool(enkws)
 
         self.latest_tts_work_id = self.tts.setup(
-            model, response_format, input, enoutput, enkws, request_id
+            model, response_format, input, enoutput, enkws, request_id, **kwargs
         )
         return self.latest_tts_work_id
 
@@ -1182,6 +1208,7 @@ class LlmModule:
         enoutput=False,
         enkws=None,
         request_id="melotts_setup",
+        **kwargs,
     ) -> str:
         if float(self.version.lstrip("v")) >= 1.6 and model == "melotts_zh-cn":
             model = "melotts-zh-cn"
@@ -1201,7 +1228,7 @@ class LlmModule:
             input.append(enkws)
 
         self.latest_melotts_work_id = self.melotts.setup(
-            model, response_format, input, enoutput, request_id
+            model, response_format, input, enoutput, request_id, **kwargs
         )
         return self.latest_melotts_work_id
 
@@ -1219,11 +1246,12 @@ class LlmModule:
         enoutput=True,
         enaudio=True,
         request_id="kws_setup",
+        **kwargs,
     ) -> str:
         if language == "zh_CN":
             model = "sherpa-onnx-kws-zipformer-wenetspeech-3.3M-2024-01-01"
         self.latest_kws_work_id = self.kws.setup(
-            kws, model, response_format, input, enoutput, enaudio, request_id
+            kws, model, response_format, input, enoutput, enaudio, request_id, **kwargs
         )
         return self.latest_kws_work_id
 
@@ -1239,6 +1267,7 @@ class LlmModule:
         rule2=1.2,
         rule3=30.0,
         request_id="asr_setup",
+        **kwargs,
     ) -> str:
         if input is None:
             input = "sys.pcm" if self.version == "v1.0" else ["sys.pcm"]
@@ -1255,7 +1284,16 @@ class LlmModule:
             enkws = bool(enkws)
 
         self.latest_asr_work_id = self.asr.setup(
-            model, response_format, input, enoutput, enkws, rule1, rule2, rule3, request_id
+            model,
+            response_format,
+            input,
+            enoutput,
+            enkws,
+            rule1,
+            rule2,
+            rule3,
+            request_id,
+            **kwargs,
         )
         return self.latest_asr_work_id
 
@@ -1267,6 +1305,7 @@ class LlmModule:
         enoutput=True,
         enkws=None,
         request_id="kws_setup",
+        **kwargs,
     ) -> str:
         if input is None:
             input = ["sys.pcm"]
@@ -1275,7 +1314,7 @@ class LlmModule:
                 input = [input]
             input.append(enkws)
         self.latest_vad_work_id = self.vad.setup(
-            model, response_format, input, enoutput, request_id
+            model, response_format, input, enoutput, request_id, **kwargs
         )
         return self.latest_vad_work_id
 
@@ -1289,6 +1328,7 @@ class LlmModule:
         enkws=None,
         envad=None,
         request_id="asr_setup",
+        **kwargs,
     ) -> str:
         if input is None:
             input = ["sys.pcm"]
@@ -1301,7 +1341,7 @@ class LlmModule:
                 input = [input]
             input.append(envad)
         self.latest_whisper_work_id = self.whisper.setup(
-            model, response_format, input, enoutput, language, request_id
+            model, response_format, input, enoutput, language, request_id, **kwargs
         )
         return self.latest_whisper_work_id
 
