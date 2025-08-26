@@ -13,54 +13,43 @@ page0 = None
 canvas0 = None
 
 
+y = None
+x = None
+
+
 def setup():
-    global page0, canvas0
+    global page0, canvas0, x, y
 
     M5.begin()
     Widgets.setRotation(1)
     m5ui.init()
     page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     canvas0 = m5ui.M5Canvas(
-        x=83,
-        y=53,
-        w=150,
-        h=70,
+        x=120,
+        y=100,
+        w=80,
+        h=40,
         color_format=lv.COLOR_FORMAT.ARGB8888,
-        bg_c=0xC9C9C9,
+        bg_c=0x4994EC,
         bg_opa=255,
         parent=page0,
     )
 
+    page0.set_bg_color(0xFFCCCC, 255, 0)
     page0.screen_load()
-    canvas0.draw_arc(0, 0, 10, color=0x6600CC, opa=255, width=2, start_angle=0, end_angle=90)
-    canvas0.draw_rect(
-        0,
-        0,
-        20,
-        20,
-        0,
-        bg_c=0xFF0000,
-        bg_opa=255,
-        border_c=0xFF0000,
-        border_opa=255,
-        border_w=0,
-        border_side=lv.BORDER_SIDE.FULL,
-        outline_c=0x6600CC,
-        outline_opa=255,
-        outline_w=0,
-        outline_pad=0,
-        shadow_c=0x6600CC,
-        shadow_opa=255,
-        shadow_w=0,
-        shadow_offset_x=0,
-        shadow_offset_y=0,
-        shadow_spread=0,
-    )
-    canvas0.draw_line(0, 0, 50, 50, color=0x6600CC, opa=255, width=1)
+    for y in range(10, 21):
+        for x in range(5, 76):
+            canvas0.set_px(x, y, 0x4994EC, 50)
+    for y in range(20, 31):
+        for x in range(5, 76):
+            canvas0.set_px(x, y, 0x4994EC, 20)
+    for y in range(30, 41):
+        for x in range(5, 76):
+            canvas0.set_px(x, y, 0x4994EC, 0)
 
 
 def loop():
-    global page0, canvas0
+    global page0, canvas0, x, y
     M5.update()
 
 

@@ -1,8 +1,13 @@
 .. |cores3_canvas_basic_example.m5f2| raw:: html
 
-   <a href="https://flow.m5stack.com/f/1730346745645/cores3_canvas_basic_example.m5f2" target="_blank">cores3_canvas_basic_example.m5f2</a>
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/canvas/cores3_canvas_basic_example.m5f2"
+        target="_blank"
+    >
+        cores3_canvas_basic_example.m5f2
+    </a>
 
-.. |cores3_canvas_basic_example.png| image:: https://static-cdn.m5stack.com/image/m5-docs/docs-en/tutorial/m5ui/canvas/cores3_canvas_basic_example.png
+.. |cores3_canvas_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/canvas/cores3_canvas_basic_example.png
 
 .. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/canvas/align_to.png
 .. |draw_arc.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/canvas/draw_arc.png
