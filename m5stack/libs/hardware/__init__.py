@@ -4,6 +4,7 @@
 
 _attrs = {
     "Keyboard": "keyboard",
+    "KeyboardI2C": "keyboard",
     "Button": "button",
     "CAN": "can",
     "IR": "ir",

@@ -37,7 +37,7 @@ _key_value_map = (
         KeyValue(ord("0"), ord(")")),
         KeyValue(ord("-"), ord("_")),
         KeyValue(ord("="), ord("+")),
-        KeyValue(asciimap.KEY_BACKSPACE, asciimap.KEY_BACKSPACE),
+        KeyValue(0x08, 0x08),
     ),
     (
         KeyValue(asciimap.KEY_TAB, asciimap.KEY_TAB),
@@ -69,7 +69,7 @@ _key_value_map = (
         KeyValue(ord("l"), ord("L")),
         KeyValue(ord(";"), ord(":")),
         KeyValue(ord("'"), ord('"')),
-        KeyValue(asciimap.KEY_ENTER, asciimap.KEY_ENTER),
+        KeyValue(0x0A, 0x0A),
     ),
     (
         KeyValue(asciimap.KEY_LEFT_CTRL, asciimap.KEY_LEFT_CTRL),
@@ -149,17 +149,19 @@ class Keyboard:
 
     @staticmethod
     def _set_output(pin_list, output):
-        output = output & 0b00000111
-        pin_list[0].value(output & 0b00000001)
-        pin_list[1].value(output & 0b00000010)
-        pin_list[2].value(output & 0b00000100)
+        n = len(pin_list)
+        mask = (1 << n) - 1
+        output = output & mask
+        for i in range(n):
+            pin_list[i].value(output & (1 << i))
 
     @staticmethod
     def _get_input(pin_list):
         buffer = 0x00
         pin_value = 0x00
+        n = len(pin_list)
 
-        for i in range(7):
+        for i in range(n):
             pin_value = 0x00 if pin_list[i].value() == 1 else 0x01
             pin_value = pin_value << i
             buffer = buffer | pin_value
@@ -312,7 +314,7 @@ class Keyboard:
         self._is_caps_locked = isLocked
 
 
-class KeyEventRaw:
+class _KeyEventConverter:
     state: bool = False
     row: int = 0
     col: int = 0
@@ -339,7 +341,7 @@ class KeyEventRaw:
         self.col = col
 
     def __str__(self) -> str:
-        return f"KeyEventRaw(({self.row}, {self.col}), {'pressed' if self.state else 'released'})"
+        return f"_KeyEventConverter(({self.row}, {self.col}), {'pressed' if self.state else 'released'})"
 
 
 class KeyEvent:
@@ -351,7 +353,7 @@ class KeyEvent:
 
     def __init__(
         self,
-        raw_event: KeyEventRaw,
+        raw_event: _KeyEventConverter,
         modifier_mask,
         fn_state: bool = False,
         is_capslock_locked=False,
@@ -359,7 +361,7 @@ class KeyEvent:
         self.convert(raw_event, modifier_mask, fn_state, is_capslock_locked)
 
     def convert(
-        self, raw_event: KeyEventRaw, modifier_mask, fn_state: bool, is_capslock_locked
+        self, raw_event: _KeyEventConverter, modifier_mask, fn_state: bool, is_capslock_locked
     ) -> None:
         self.state = raw_event.state
         self.row = raw_event.row
@@ -368,9 +370,9 @@ class KeyEvent:
 
         if fn_state and (self.row, self.col) != (0, 2):  # FN key
             if (self.row, self.col) == (0, 0):  # ESC key
-                self.keycode = asciimap.KEY_ESC
+                self.keycode = 0x1B  # ascii ESC
             elif (self.row, self.col) == (0, 13):  # delete key
-                self.keycode = asciimap.KEY_BACKSPACE
+                self.keycode = 0x7F  # ascii DEL
             elif (self.row, self.col) == (2, 11):  # up key
                 self.keycode = asciimap.KEY_UP
             elif (self.row, self.col) == (3, 10):  # left key
@@ -399,6 +401,7 @@ class HIDInputReport:
     """HID Input Report for keyboard events. only supports cardputer keyboard layout."""
 
     scancode = (
+        # Row 0
         b"\x35"  # Keyboard ` and ~
         b"\x1e"  # Keyboard 1 and !
         b"\x1f"  # Keyboard 2 and @
@@ -413,6 +416,7 @@ class HIDInputReport:
         b"\x2d"  # Keyboard - and _
         b"\x2e"  # Keyboard = and +
         b"\x2a"  # Keyboard DELETE (Backspace)
+        # Row 1
         b"\x2b"  # Keyboard TAB
         b"\x14"  # Keyboard q and Q
         b"\x1a"  # Keyboard w and W
@@ -427,6 +431,7 @@ class HIDInputReport:
         b"\x2f"  # Keyboard [ and {
         b"\x30"  # Keyboard ] and }
         b"\x31"  # Keyboard \ and |
+        # Row 2
         b"\x00"  # No key pressed (FN POSITION)
         b"\x00"  # No key pressed (SHIFT POSITION)
         b"\x04"  # Keyboard a and A
@@ -441,6 +446,7 @@ class HIDInputReport:
         b"\x33"  # Keyboard ; and :
         b"\x34"  # Keyboard ' and "
         b"\x28"  # Keyboard ENTER (Return)
+        # Row 3
         b"\x00"  # No key pressed (CTRL POSITION)
         b"\x00"  # No key pressed (META/OPT POSITION)
         b"\x00"  # No key pressed (ALT POSITION)
@@ -497,17 +503,22 @@ class HIDInputReport:
 
 
 class KeyboardI2C:
-    def __init__(self, i2c: machine.I2C, address: int = 0x34, intr_pin=None) -> None:
+    ASCII_MODE = 0
+    HID_MODE = 1
+
+    def __init__(
+        self, i2c: machine.I2C, address: int = 0x34, intr_pin=None, mode=ASCII_MODE
+    ) -> None:
         super().__init__()
         self._is_caps_locked = False
-        self._last_key_size = 0
 
         self._modifier_mask = 0
         self._shift_state = False
         self._fn_state = False
-        self.keyevent_raw = KeyEventRaw(0)
-        self.keyevent = KeyEvent(self.keyevent_raw, 0, False, False)
+        self._keyevent_converter = _KeyEventConverter(0)
 
+        self._mode = mode
+        self._tick_handler = self._ascii_handler if mode == self.ASCII_MODE else self._hid_handler
         self._keyevents = []
         self._hid_reports = []
 
@@ -552,6 +563,11 @@ class KeyboardI2C:
         # turn on INT output pin
         self._tca.key_intenable = True
 
+    def deinit(self):
+        if self._intr_pin is not None:
+            self._intr_pin.irq(None)
+        self._tca.key_int = True  # clear the IRQ by writing 1 to it
+
     def set_hid_report_callback(self, callback):
         """
         Set a callback function to be called when a HID report is ready.
@@ -572,23 +588,51 @@ class KeyboardI2C:
                 events = bytearray()
                 while self._tca.events_count:
                     events.append(self._tca.next_event)
-                micropython.schedule(self.tick, events)
+                micropython.schedule(self._tick_handler, events)
         # clear interrupt
         self._tca.key_int = True  # clear the IRQ by writing 1 to it
 
-    def tick(self, events):
+    def _ascii_handler(self, events):
+        count = len(events)
+        if count == 0:
+            return
+
+        for i in range(count):
+            self._keyevent_converter.decode(events[i])
+            self._update_modifier_mask(self._keyevent_converter)
+
+            # ascii key event
+            # !!! release event is ignored
+            keyevent = KeyEvent(
+                self._keyevent_converter, self._modifier_mask, self._fn_state, self._is_caps_locked
+            )
+            if self._keyevent_callback and keyevent.state:
+                micropython.schedule(
+                    self._keyevent_callback,
+                    self,  # (self, keyevent.keycode, keyevent.state)
+                )
+            else:
+                # append to the key events list
+                keyevent.state and self._keyevents.append(keyevent)
+            # print(keyevent)
+
+    def _hid_handler(self, events):
         count = len(events)
         if count == 0:
             return
 
         hid_report = HIDInputReport()
         for i in range(count):
-            self.keyevent_raw.decode(events[i])
-            self.update_modifier_mask(self.keyevent_raw)
+            self._keyevent_converter.decode(events[i])
+            self._update_modifier_mask(self._keyevent_converter)
 
             # hid report
             hid_report.set_modifier_mask(self._modifier_mask)
-            hid_report.append_key(self.keyevent_raw.row, self.keyevent_raw.col, self._fn_state)
+            # !!! only append key if it's a press event
+            if self._keyevent_converter.state:
+                hid_report.append_key(
+                    self._keyevent_converter.row, self._keyevent_converter.col, self._fn_state
+                )
             if hid_report.done:
                 # send the HID report
                 if self._hid_report_callback:
@@ -600,19 +644,6 @@ class KeyboardI2C:
                     self._hid_reports.append(hid_report)
                 hid_report = HIDInputReport()
 
-            # user key event
-            keyevent = KeyEvent(
-                self.keyevent_raw, self._modifier_mask, self._fn_state, self._is_caps_locked
-            )
-            if self._keyevent_callback:
-                micropython.schedule(
-                    self._keyevent_callback, (self, keyevent.keycode, keyevent.state)
-                )
-            else:
-                # append to the key events list
-                self._keyevents.append(keyevent)
-            # print(keyevent)
-
         if not hid_report.done:
             # send the HID report
             if self._hid_report_callback:
@@ -622,31 +653,31 @@ class KeyboardI2C:
             else:
                 self._hid_reports.append(hid_report)
 
-    def update_modifier_mask(self, keyevent_raw: KeyEventRaw):
-        if (keyevent_raw.row, keyevent_raw.col) == (2, 0):  # FN
-            self._fn_state = keyevent_raw.state
+    def _update_modifier_mask(self, keyevent_converter: _KeyEventConverter):
+        if (keyevent_converter.row, keyevent_converter.col) == (2, 0):  # FN
+            self._fn_state = keyevent_converter.state
 
-        if (keyevent_raw.row, keyevent_raw.col) == (2, 1):  # left shift
-            self._shift_state = keyevent_raw.state
-            if keyevent_raw.state:
+        if (keyevent_converter.row, keyevent_converter.col) == (2, 1):  # left shift
+            self._shift_state = keyevent_converter.state
+            if keyevent_converter.state:
                 self._modifier_mask |= asciimap.KEY_MOD_LSHIFT
             else:
                 self._modifier_mask &= ~asciimap.KEY_MOD_LSHIFT
 
-        if (keyevent_raw.row, keyevent_raw.col) == (3, 0):  # left ctrl
-            if keyevent_raw.state:
+        if (keyevent_converter.row, keyevent_converter.col) == (3, 0):  # left ctrl
+            if keyevent_converter.state:
                 self._modifier_mask |= asciimap.KEY_MOD_LCTRL
             else:
                 self._modifier_mask &= ~asciimap.KEY_MOD_LCTRL
 
-        if (keyevent_raw.row, keyevent_raw.col) == (3, 1):  # left opt
-            if keyevent_raw.state:
+        if (keyevent_converter.row, keyevent_converter.col) == (3, 1):  # left opt
+            if keyevent_converter.state:
                 self._modifier_mask |= asciimap.KEY_MOD_LMETA
             else:
                 self._modifier_mask &= ~asciimap.KEY_MOD_LMETA
 
-        if (keyevent_raw.row, keyevent_raw.col) == (3, 2):  # left alt
-            if keyevent_raw.state:
+        if (keyevent_converter.row, keyevent_converter.col) == (3, 2):  # left alt
+            if keyevent_converter.state:
                 self._modifier_mask |= asciimap.KEY_MOD_LALT
             else:
                 self._modifier_mask &= ~asciimap.KEY_MOD_LALT
