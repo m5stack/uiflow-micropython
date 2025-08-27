@@ -4,6 +4,7 @@
 
 from m5ui.base import M5Base
 import lvgl as lv
+import M5
 
 
 class M5Switch(lv.switch):
@@ -85,19 +86,20 @@ class M5Switch(lv.switch):
             self.set_size(min(cur_w, cur_h), max(cur_w, cur_h))
 
     def set_size(self, w, h):
-        super().set_size(w, h)
+        if w < 0 or h < 0:
+            raise ValueError("Width and height must be non-negative")
+
+        _width = M5.Display.width()
+        _height = M5.Display.height()
+
+        if w < _width and h < _height:
+            super().set_size(w, h)
+        else:
+            print("Warning: width or height exceed screen size, auto set to screen size")
+            super().set_size(_width, _height)
+
         self.width = w
         self.height = h
-
-    def set_style_radius(self, radius: int, part: int) -> None:
-        if radius < 0:
-            raise ValueError("Radius must be a non-negative integer.")
-        super().set_style_radius(radius, part)
-
-    def set_style_radius(self, radius: int, part: int) -> None:
-        if radius < 0:
-            raise ValueError("Radius must be a non-negative integer.")
-        super().set_style_radius(radius, part)
 
     def set_style_radius(self, radius: int, part: int) -> None:
         if radius < 0:
