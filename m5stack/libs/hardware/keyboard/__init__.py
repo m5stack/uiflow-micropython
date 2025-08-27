@@ -557,11 +557,14 @@ class KeyboardI2C:
             self._tca.event_mode_fifo[pin] = True
 
         if self._intr_pin is not None:
-            self._intr_pin.init(machine.Pin.IN, pull=None)
+            # self._intr_pin.init(machine.Pin.IN, pull=None)
             self._intr_pin.irq(self._irq_handler, machine.Pin.IRQ_FALLING)
 
         # turn on INT output pin
         self._tca.key_intenable = True
+
+        # Magic Code
+        self._irq_handler(self._intr_pin)
 
     def deinit(self):
         if self._intr_pin is not None:
