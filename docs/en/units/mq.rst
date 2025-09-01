@@ -16,12 +16,12 @@ Support the following products:
 UiFlow2 Example
 ---------------
 
-get MQ value
-^^^^^^^^^^^^^^^
+get MQ ADC value
+^^^^^^^^^^^^^^^^^
 
 Open the |mq_core2_example.m5f2| project in UiFlow2.
 
-This example gets the MQ value of the MQ Unit and displays it on the screen.
+This example gets the ADC value of the MQ Unit and displays it on the screen.
 
 UiFlow2 Code Block:
 
@@ -34,10 +34,10 @@ Example output:
 MicroPython Example
 -------------------
 
-get MQ value
-^^^^^^^^^^^^^^^
+get MQ ADC value
+^^^^^^^^^^^^^^^^^
 
-This example gets the MQ value of the MQ Unit and displays it on the screen.
+This example gets the ADC value of the MQ Unit and displays it on the screen.
 
 MicroPython Code Block:
 
