@@ -1,0 +1,46 @@
+.. |add_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/add_text.png
+.. |add_text2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/add_text2.png
+.. |add_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/add_button.png
+.. |add_button2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/add_button2.png
+.. |add_close_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/add_close_button.png
+.. |label_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_delete.png
+.. |button_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_delete.png
+.. |button_set_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_text.png
+.. |label_set_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_text.png
+.. |set_style_text_font.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_style_text_font.png
+.. |button_set_text_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_text_color.png
+.. |label_set_text_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_text_color.png
+.. |button_set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_bg_color.png
+.. |label_set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_bg_color.png
+.. |label_set_long_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_long_mode.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_flag.png
+.. |label_set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_flag.png
+.. |button_set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_flag.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_pos.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_y.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/set_size.png
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/align_to.png
+.. |button_set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_state.png
+.. |button_toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_toggle_flag.png
+.. |button_set_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_radius.png
+.. |label_set_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_shadow.png
+.. |label_unset_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_unset_shadow.png
+.. |button_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_get_text.png
+.. |label_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_get_text.png
+.. |button_toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_toggle_state.png
+.. |button_set_font.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_set_font.png
+.. |label_set_font.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/label_set_font.png
+
+.. |button_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/button_event.png
+
+.. |msgbox_core2_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/msgbox/example.png
+
+.. |msgbox_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/msgbox/msgbox_core2_example.m5f2"
+        target="_blank"
+    >
+        msgbox_core2_example.m5f2
+    </a>

@@ -8,6 +8,33 @@ import m5ui
 
 
 class M5Msgbox(lv.msgbox):
+    """Create a msgbox object.
+
+    :param str title: The title of the msgbox.
+    :param int x: The x-coordinate of the msgbox.
+    :param int y: The y-coordinate of the msgbox.
+    :param int w: The width of the msgbox.
+    :param int h: The height of the msgbox.
+    :param lv.obj parent: The parent object to attach the msgbox to. If not specified, the msgbox will be attached to the default screen.
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from m5ui import M5Msgbox
+            import lvgl as lv
+
+            m5ui.init()
+            msgbox_0 = M5Msgbox(
+                title="msgbox",
+                x=0,
+                y=0,
+                w=320,
+                h=240,
+                parent=page0,
+            )
+    """
+
     def __init__(
         self,
         title="",
@@ -34,6 +61,37 @@ class M5Msgbox(lv.msgbox):
         bg_opa=255,
         font=lv.font_montserrat_14,
     ):
+        """Add a text label to the msgbox.
+
+        :param str text: The text to display.
+        :param int text_c: The text color in hexadecimal format.
+        :param int text_opa: The text opacity (0-255).
+        :param int bg_c: The background color in hexadecimal format.
+        :param int bg_opa: The background opacity (0-255).
+        :param lv.font font: The font to use for the text.
+
+        :return: The created label object.
+        :rtype: m5ui.M5Label
+
+        UiFlow2 Code Block:
+
+            |add_text.png|
+
+            |add_text2.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                text0 = msgbox_0.add_text(
+                    text="Hello World",
+                    text_c=0x212121,
+                    text_opa=255,
+                    bg_c=0xFFFFFF,
+                    bg_opa=255,
+                    font=lv.font_montserrat_14,
+                )
+        """
         _label = m5ui.M5Label(
             text=text,
             text_c=text_c,
@@ -57,6 +115,41 @@ class M5Msgbox(lv.msgbox):
         font=lv.font_montserrat_14,
         option="footer",
     ):
+        """Add a button to the msgbox.
+
+        :param str icon: The icon to display on the button.
+        :param str text: The text to display on the button.
+        :param int bg_c: The background color in hexadecimal format.
+        :param int bg_opa: The background opacity (0-255).
+        :param int text_c: The text color in hexadecimal format.
+        :param int text_opa: The text opacity (0-255).
+        :param lv.font font: The font to use for the button text.
+        :param str option: The position of the button ("header" or "footer").
+
+        :return: The created button object.
+        :rtype: m5ui.M5Button
+
+        UiFlow2 Code Block:
+
+            |add_button.png|
+
+            |add_button2.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                button0 = msgbox_0.add_button(
+                    icon=None,
+                    text="OK",
+                    bg_c=0x2196F3,
+                    bg_opa=255,
+                    text_c=0xFFFFFF,
+                    text_opa=255,
+                    font=lv.font_montserrat_14,
+                    option="footer",
+                )
+        """
         _parent = None
         _w = 0
         _h = 0

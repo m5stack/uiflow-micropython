@@ -72,6 +72,7 @@ Classes
     label.rst
     line.rst
     list.rst
+    msgbox.rst
     roller.rst
     scale.rst
     slider.rst

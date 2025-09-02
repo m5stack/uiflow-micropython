@@ -19,7 +19,7 @@ class M5Line(lv.line):
 
         .. code-block:: python
 
-            from m5ui import M5Image
+            from m5ui import M5Line
             import lvgl as lv
 
             m5ui.init()
