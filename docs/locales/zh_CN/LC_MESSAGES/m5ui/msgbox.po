@@ -1,0 +1,747 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-02 15:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/msgbox.rst:4 ../../en/m5ui/msgbox.rst:51
+#: b98d06f002be443aa3cdab2a0634bdc8 f734a60e9e7547dfa2c1d7e14db63eba
+msgid "M5Msgbox"
+msgstr "M5Msgbox"
+
+#: ../../en/m5ui/msgbox.rst:8 b25ffcab4ef448b8931970137fd64ba5
+msgid ""
+"M5Msgbox is a widget that can be used to create msgboxes in the user "
+"interface."
+msgstr "M5Msgbox 是一个用于在用户界面中创建msgbox的组件。"
+
+#: ../../en/m5ui/msgbox.rst:11 94df4e26fa73437ebb02c78671d48cce
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/msgbox.rst:14 ../../en/m5ui/msgbox.rst:33
+#: 12a172334cfa4a5097452fb9ce3011da e44935d0d177460b986f8ab8dc262359
+msgid "msgbox event"
+msgstr "msgbox事件"
+
+#: ../../en/m5ui/msgbox.rst:16 9106ef4fc3474e2a8dd2a86a43b17506
+msgid "Open the |msgbox_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |msgbox_core2_example.m5f2| 项目。"
+
+#: ../../en/m5ui/msgbox.rst:18 ../../en/m5ui/msgbox.rst:35
+#: 94efb564b6d64e9692bb34702a6e9095 e3617d4b1113463eb795154685c85fbe
+msgid "This example creates msgbox and associated with events."
+msgstr "本示例创建msgbox并关联事件。"
+
+#: ../../en/m5ui/msgbox.rst:20 ../../en/m5ui/msgbox.rst:62
+#: ../../en/m5ui/msgbox.rst:76 ../../en/m5ui/msgbox.rst:97
+#: ../../en/m5ui/msgbox.rst:120 ../../en/m5ui/msgbox.rst:143
+#: ../../en/m5ui/msgbox.rst:167 ../../en/m5ui/msgbox.rst:187
+#: ../../en/m5ui/msgbox.rst:204 ../../en/m5ui/msgbox.rst:225
+#: ../../en/m5ui/msgbox.rst:241 ../../en/m5ui/msgbox.rst:257
+#: ../../en/m5ui/msgbox.rst:275 ../../en/m5ui/msgbox.rst:295
+#: ../../en/m5ui/msgbox.rst:313 ../../en/m5ui/msgbox.rst:330
+#: ../../en/m5ui/msgbox.rst:349 ../../en/m5ui/msgbox.rst:370
+#: ../../en/m5ui/msgbox.rst:384 ../../en/m5ui/msgbox.rst:401
+#: ../../en/m5ui/msgbox.rst:422 ../../en/m5ui/msgbox.rst:441
+#: 16f351a8bb80460da9129e4687f51411 2f53e10dfef34d39817cb3c49424bbe3
+#: 31cc0a1fdb0a428ca49d0274bea6c169 5a51c7805b744de0ace8fb7782c67c2e
+#: 5c60031c9875426d806fdd1f08c27b6b 6dad63c22313458f86cd09ded2f07a84
+#: 7197bcc65a5d4262b2729290911d7e60 735699b5e4364597822a342c9117b734
+#: 73ee40c7643d4038a3f3d954e8fe1d32 8a31868c5d0e411f9ec7c85e124e49cd
+#: 91c58fb8c56b4af59704e3aeb7de51ee 949132f1d94d4c3686c1e5ed1f40ce17
+#: adef8210908645229de08e8602398579 b1b83f89ea81497da936a364cc3fee5a
+#: b1e3c74a523740d6934305e0fe02d778 c285a859f3da439a9f942466595653db
+#: c34f1212d20d4b7184455dac2db35745 c9efcfdd4ec0456d8f45a4984eb18bb2
+#: ca6b037f99b24549a2b0eb5281826226 d0ac783584c84a5d81873824a0160dbd
+#: d2207234ab7f4945b0550cac6e290d67 d8fd7b96b6e8483b928941e4989f62ea
+#: e04c0cafaea74a2ca4dcfda6a156e3bf e647b90e494c4d1bb6e4aa7cfd3e000f
+#: m5ui.msgbox.M5Msgbox.add_button:15 m5ui.msgbox.M5Msgbox.add_text:13 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/msgbox.rst:22 70bf04edf7f0453c8467a7410afc7a84
+msgid "|msgbox_core2_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:37 cb7e8638ec7c4954a724a896b4674021
+msgid "msgbox_core2_example.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:24 ../../en/m5ui/msgbox.rst:43
+#: 811db614a6a5486c9756440d894e3114 bc9a9b998049438bba87256ebcfcea04
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/msgbox.rst:26 ../../en/m5ui/msgbox.rst:45
+#: ../../en/m5ui/msgbox.rst:60 ../../en/m5ui/msgbox.rst:95
+#: ../../en/m5ui/msgbox.rst:118 ../../en/m5ui/msgbox.rst:141
+#: ../../en/m5ui/msgbox.rst:165 ../../en/m5ui/msgbox.rst:273
+#: ../../en/m5ui/msgbox.rst:311 ../../en/m5ui/msgbox.rst:328
+#: ../../en/m5ui/msgbox.rst:347 ../../en/m5ui/msgbox.rst:368
+#: ../../en/m5ui/msgbox.rst:420 ../../en/m5ui/msgbox.rst:439
+#: 1535cdc5f47a48538603c8c15cad9044 26b0061beb6642f3a698834b2249f958
+#: 2f7cf0bdadb1494885ac064ee3ad25c0 378dbd63cc8a488dabe928c6bc1f955f
+#: 424dc93985414176a9feb600ad768ea6 505f0b9ede0e4a9897ca8431d67d0654
+#: 5348cfc07cb146208b46a50f8dbfa4d9 7b32a293011542518dabe8250bbfb629
+#: 7da17916b8bd491387c486dfa3657257 7dd5a75c2bfd40dbb4348f12273560cb
+#: a78d975e95a24b00bb7ee317e6d15dc8 da2f58f03de141b9b0bec1eabd1599fd
+#: e3449784b9c545ebad4054fb891ee4ac f44912973a8c4d158bf34a9fb67e4514
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:30 7e28d37c4e3c45cbb2721796e24ea5d7
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:37 ../../en/m5ui/msgbox.rst:66
+#: ../../en/m5ui/msgbox.rst:82 ../../en/m5ui/msgbox.rst:104
+#: ../../en/m5ui/msgbox.rst:126 ../../en/m5ui/msgbox.rst:150
+#: ../../en/m5ui/msgbox.rst:173 ../../en/m5ui/msgbox.rst:191
+#: ../../en/m5ui/msgbox.rst:212 ../../en/m5ui/msgbox.rst:229
+#: ../../en/m5ui/msgbox.rst:245 ../../en/m5ui/msgbox.rst:261
+#: ../../en/m5ui/msgbox.rst:279 ../../en/m5ui/msgbox.rst:299
+#: ../../en/m5ui/msgbox.rst:317 ../../en/m5ui/msgbox.rst:334
+#: ../../en/m5ui/msgbox.rst:353 ../../en/m5ui/msgbox.rst:374
+#: ../../en/m5ui/msgbox.rst:388 ../../en/m5ui/msgbox.rst:407
+#: ../../en/m5ui/msgbox.rst:426 ../../en/m5ui/msgbox.rst:445
+#: 19bbf021db3b4200891e5595e6b639c3 1e234f899888408b86632e6f07fd4717
+#: 289e37cbbf9d426785704f022ccfc8db 2bec61d81ef54028b383133d59901cc8
+#: 2d1b25ce5fdf4c958ff093dad842c240 3443e868e2b746e388b0014259e8f265
+#: 3650beef8528486a91f08bd4c206c90b 42001e1487084d3f8e05845cb7176410
+#: 4cb0a50f7e1b4ce08df04356f3cc7cd0 504b1a25900d4b95b3d0a875a0c47c5e
+#: 5c19d35bf85a4ca1b05ad108db0bac79 6151fdc3726e4ab0a08d97cd179c8b35
+#: 631d5a7b40194ff2b2a446eab23374c9 63b6819d4c3549ffb13f998f18c53ccb
+#: 783ffe0573c1454f9b7fcee5ebf3ffaa 7926297dc026418685cffa7a1678fbdd
+#: 8013fd55e44b485a829324ca9c373d9a 86a601631d4649c89e5e513cd71551d9
+#: 875a573f3f2445b4a58c26c20342be00 957f2f0a214b45b9a7237863aff2157b
+#: ace8a3fa94714b5fbe15515632cc4574 cd9e6a44daf442518795d53d0116a94e
+#: d1fe6b29f5e849cc80664618c2b57582 ef11300e9ae24a189db6b35b3bb65b0d
+#: f77a9658044d4c2f93a0649520ff9a99 m5ui.msgbox.M5Msgbox:10
+#: m5ui.msgbox.M5Msgbox.add_button:21 m5ui.msgbox.M5Msgbox.add_text:19 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/msgbox.rst:49 e663be305c0b4440aaa9a6da3a69b99a
+msgid "**API**"
+msgstr ""
+
+#: 8f82413b826c42fb8ebb54b1dbc9f8b1 m5ui.msgbox.M5Msgbox:1 of
+msgid "Bases: :py:class:`~lvgl.msgbox`"
+msgstr ""
+
+#: db04dd5d578f41cda69c62a35e55caef m5ui.msgbox.M5Msgbox:1 of
+msgid "Create a msgbox object."
+msgstr "创建一个msgbox对象。"
+
+#: ../../en/m5ui/msgbox.rst 1317b17574344c69b9322cee2b847e93
+#: 1d167cf7dca44cafb260d4a0a6c2181e 331b4827c1c34a7fba545ce080a3225c
+#: 373acf590461427892d8cfec87ca978d 58b037ee587748d5a63881978668befb
+#: 643edb5aea3842efb17bbe82607eab3a 6d865c845999404685c7744772928dbb
+#: 75787c8256fa45589747fb003f01eafc 7f59ed24d9ec443a92daeca09f0b2740
+#: 982aa912906547e0b757a54becd75c78 9f6053207e42443dbbebfc29fd3aaafb
+#: a9ea2c5bebd14ca5ad97ed9cd220de46 b707d97c34a04fec847d209ee5a952bb
+#: bbfede6f3f2f40eea0afbc9b58825838 cff07912de0a4d4b87adc6b01a867c9c
+#: d4a93c1dbc4d455d9c0af6887674f832 dfe97bc8967b42f0815010060d2ef3b4
+#: ee2289c581b4464aac46bf489450e819 f0c87a347f1d4960ac604d94083681df
+#: f20d222fe59c47499809c984bba28a84 m5ui.msgbox.M5Msgbox.add_button
+#: m5ui.msgbox.M5Msgbox.add_text of
+msgid "Parameters"
+msgstr "参数"
+
+#: 79c5bcac2d98488ba10449d3434d7ae4 m5ui.msgbox.M5Msgbox:3 of
+msgid "The title of the msgbox."
+msgstr "msgbox的标题。"
+
+#: ../../en/m5ui/msgbox.rst:222 ../../en/m5ui/msgbox.rst:239
+#: 107a6e9cd9244a02b8f70df7edf92740 8ea007afe63744bbb5248f931add1d38
+#: ef7e5cc03d474768ab7bfbe5b55e27e0 m5ui.msgbox.M5Msgbox:4 of
+msgid "The x-coordinate of the msgbox."
+msgstr "msgbox的 x 坐标。"
+
+#: ../../en/m5ui/msgbox.rst:223 ../../en/m5ui/msgbox.rst:255
+#: 25818443728c470c9fa353076263924d 38e3e7393eae4d36993d762ec3b3edba
+#: cd74d75a56854012b7eca26f18e08f4d m5ui.msgbox.M5Msgbox:5 of
+msgid "The y-coordinate of the msgbox."
+msgstr "msgbox的 y 坐标。"
+
+#: ../../en/m5ui/msgbox.rst:271 103c84e220074ae8a67f8e6d1fdb751e
+#: d0791b6da6164e6eaf2f76d79278f1f2 m5ui.msgbox.M5Msgbox:6 of
+msgid "The width of the msgbox."
+msgstr "msgbox的宽度。"
+
+#: ../../en/m5ui/msgbox.rst:272 3051a88d8d2b49149a34b6ae71ffc0a8
+#: c64a3be890974410a4de91a177052f53 m5ui.msgbox.M5Msgbox:7 of
+msgid "The height of the msgbox."
+msgstr "msgbox的高度。"
+
+#: f7465520adf44693ab39db83ed053065 m5ui.msgbox.M5Msgbox:8 of
+msgid ""
+"The parent object to attach the msgbox to. If not specified, the msgbox "
+"will be attached to the default screen."
+msgstr "要附加msgbox的父对象。如果未指定，则msgbox会附加到默认屏幕。"
+
+#: ../../en/m5ui/msgbox.rst:58 efdee2e4fd654e918b0110d1b86377a4
+msgid "Add a close button to the msgboxheader."
+msgstr "为msgbox头部添加关闭按钮。"
+
+#: ../../en/m5ui/msgbox.rst 08a437c0961742dba3a65ab5fcd6686f
+#: 2d1d88aca78b433ca064ce4033fa2ddc 4414e1acef4a499b9bd80c0922dee1ae
+#: 61480c4c26fa4605bfe788bb33ab732f 65f157e088f9481890b0362dc38c8358
+#: 6b4720f0a5944812820ae40d553f73a1 71547769b6584dda8b5230487e9f365c
+#: 7b2d57b249264730974a3dc90de8ad8c 7dd0cb4c36ed4b5fa1d25e21a9b02f96
+#: 7e40ca77345b4c73bb2f1caf3e356f2f 83c1b7aadfbd416daac4dd7a4dea6b29
+#: b2a4fe24763b45f69b7c9262afdeec15 b82a8134c6774dc691a845fbe454fa5c
+#: c3abea219a73478aa7b5b7756c1b5a16 fb2cd4a6e2b2492088f7f99793ba8281
+#: m5ui.msgbox.M5Msgbox.add_button m5ui.msgbox.M5Msgbox.add_text of
+msgid "Returns"
+msgstr "返回"
+
+#: ../../en/m5ui/msgbox.rst:64 509cf4a3749f45069db940f09d5ce0ae
+msgid "|add_close_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:5 867a8e64d9044aaa9b92a0ae6e4b4a7c
+msgid "add_close_button.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:74 e25122ba43db46c89cf62df452a42a2a
+msgid "Delete the item from the msgbox."
+msgstr "从msgbox中删除项目。"
+
+#: ../../en/m5ui/msgbox.rst:78 dbb6fb6ed6df4239a50c7653891987ad
+msgid "|label_delete.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:6 210a133e82904ec5b110dffa6e0b5661
+msgid "label_delete.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:80 eac05698fdd34e5a8a96741875723eb5
+msgid "|button_delete.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:7 ad7603fbc3c94871b761fc8b3fbfead7
+msgid "button_delete.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:92 4d87c1c680f54ce2ac7787b6ed453583
+msgid "Set text of the msgbox button/label."
+msgstr "设置msgbox按钮/标签的文本。"
+
+#: ../../en/m5ui/msgbox.rst:94 bbdfa550a23e4335b7f0785ab3858049
+msgid "The text to set for the msgbox button/label."
+msgstr "要为msgbox按钮/标签设置的文本。"
+
+#: ../../en/m5ui/msgbox.rst:99 11debc6f98ec4e1ea6e2cdbf20cc728f
+msgid "|button_set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:8 3d8a085f731f44de8b2dd3abbc5e9763
+msgid "button_set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:101 c59c19b2b9cc401abd181a31a3dd9787
+msgid "|label_set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:9 73e06a4c5ede4958b390bf50bfb98d6b
+msgid "label_set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:114 aef1e628038a4d8c94ef959791c695fc
+msgid "Set the font of the msgbox button/label text."
+msgstr "设置msgbox按钮/标签文本的字体。"
+
+#: ../../en/m5ui/msgbox.rst:116 6844c4e5c8bd4709a5c82c8d58c0aae2
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/msgbox.rst:117 ../../en/m5ui/msgbox.rst:140
+#: ../../en/m5ui/msgbox.rst:164 ../../en/m5ui/msgbox.rst:346
+#: 29b474be855c4fa6b4a05ede5e9f2183 6545f55d34c743408f99c8698b2ef673
+#: 91435c973e9d42d992670caa73e1402d 9bcdeadb5e3241b997d2797b73143097
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（例如 lv.PART.MAIN）。"
+
+#: ../../en/m5ui/msgbox.rst:122 ef1be4dea3a94cd7966efdce4a54bb18
+msgid "|button_set_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:32 03c108c02dbb49589cda835df7804c89
+msgid "button_set_font.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:124 946fda450da4408491f1a188706fd6c6
+msgid "|label_set_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:33 3b8d31ea18d74bb9b226d8e6706227fd
+msgid "label_set_font.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:136 d7b474ab9924498f893e975f538ae396
+msgid "Set the color of the msgbox button/label."
+msgstr "设置msgbox按钮/标签的颜色。"
+
+#: ../../en/m5ui/msgbox.rst:138 ../../en/m5ui/msgbox.rst:162
+#: 282a2c6823a54d05a74d3ebec9b82223 dc45b25b171944f6a5bfe3632e3caa22
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/msgbox.rst:139 ../../en/m5ui/msgbox.rst:163
+#: ced18a4de717429d8504ad116c2da720 dfdb491edfd545048a2eb0c4cc9ed9e5
+msgid "The opacity of the color."
+msgstr "颜色的不透明度。"
+
+#: ../../en/m5ui/msgbox.rst:145 c68579db4b824e4a97542241762edd77
+msgid "|button_set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:11 b74067ce4f88486eb210ca8701258e12
+msgid "button_set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:147 e723bc9bf9f84ba18eea92de40a72a77
+msgid "|label_set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:12 2bfdfd38ed7d48b09b84f20a97a5a163
+msgid "label_set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:160 f4733a58047d45dea91a5c68f35c08e9
+msgid "Set the background color of the msgbox label."
+msgstr "设置msgbox按钮/标签的背景颜色。"
+
+#: ../../en/m5ui/msgbox.rst:169 e7c14f7d94a947d89ff55ca0b6fb6f41
+msgid "|button_set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:13 1fad6b359fc24ade85f4e4e6e717de86
+msgid "button_set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:171 bb743b0ddf484e83b89dd7341df4dcae
+msgid "|label_set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:14 9fba92b1cba34977a760ce209e73b9f0
+msgid "label_set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:183 547065cd01144a0fadb2be7e6e481cf8
+msgid "Set the long mode of the msgbox label."
+msgstr "设置msgbox标签的长文本模式。"
+
+#: ../../en/m5ui/msgbox.rst:185 c6b719b3c27f47ddab4482d8e44a32b8
+msgid "The long mode to set."
+msgstr "要设置的长文本模式。"
+
+#: ../../en/m5ui/msgbox.rst:189 3ef0fa5f93b545cfb97a05449448b08e
+msgid "|label_set_long_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:15 708ff911cc084d75afbe3ea49b79e40d
+msgid "label_set_long_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:199 95e28a2824a24fa98c45a9481a095ec2
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志。如果 ``value`` 为 True，则添加该标志；为 False 时移除该标志。"
+
+#: ../../en/m5ui/msgbox.rst:201 397f1a15cc4c426dad99828568b9115d
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/msgbox.rst:202 bae22d70113e4a9da38ef5118a75605a
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "为 True 时添加标志，为 False 时移除标志。"
+
+#: ../../en/m5ui/msgbox.rst:206 4476358802e9466d9e8cd0575fb5acf0
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:16 873f8cc7de0c4cc0bfc92c42c2924324
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:208 804360b55cd24bdb81b752371696e7e5
+msgid "|label_set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:17 1d10330247fd40b995b709f92a389339
+msgid "label_set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:210 e3b816e2e42743a8a1a19f058c0e5c62
+msgid "|button_set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:18 2bf3f15264674506baa163bfeea565f8
+msgid "button_set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:220 ce7e68a66df14107932a6fe90766abb2
+msgid "Set the position of the msgbox."
+msgstr "设置msgbox的位置。"
+
+#: ../../en/m5ui/msgbox.rst:227 e75c515a60654bb5beba83228bf3e18b
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:19 723738aa41374df8ad43b34f13a7aebc
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:237 fcbaf4965b2c4ac9b9040ebd699fc240
+msgid "Set the x-coordinate of the msgbox."
+msgstr "设置msgbox的 x 坐标。"
+
+#: ../../en/m5ui/msgbox.rst:243 beab43a7cd714156928d936b44595c14
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:20 549442c99fe745cd90e1e4ca310ec999
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:253 535cfeb842144f349f02c53e4b87980e
+msgid "Set the y-coordinate of the msgbox."
+msgstr "设置msgbox的 y 坐标。"
+
+#: ../../en/m5ui/msgbox.rst:259 842dd0dedc5348529148c8c8231ffea1
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:21 c2a9dfd2910843b4b34e41c96c64879e
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:269 4015e66038584bfd9452bef4dd72978f
+msgid "Set the size of the msgbox."
+msgstr "设置msgbox的尺寸。"
+
+#: ../../en/m5ui/msgbox.rst:277 7ca1b2b7730d452b84e56f3ff371e59a
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:22 b5630dcf000d473fbec60f5fd84e49a4
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:288 8146e66a45a843aa883ef438c614c875
+msgid "Align the msgboxto another object."
+msgstr "将msgbox对齐到其他对象。"
+
+#: ../../en/m5ui/msgbox.rst:290 0e425f24dfa5450eb49cb42552e2ca48
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/msgbox.rst:291 2dcb6cbab20a494aaa283a58a5323cd3
+msgid "The alignment type."
+msgstr "对齐方式类型。"
+
+#: ../../en/m5ui/msgbox.rst:292 e753a37d893f442da4e519063549956a
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/msgbox.rst:293 3c55e984883f4af8bb42eb00294e907b
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/msgbox.rst:297 f6737bd7a4c94e6aaf6b130ee666aaab
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:23 5086bf5926b54bbb9b1d2fb4c7b6319d
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:307 ce249d865cfd473f81117e057bb99dd8
+msgid ""
+"Set the state of the bar. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置进度条的状态。如果 ``value`` 为 True，则设置状态；为 False 时取消状态。"
+
+#: ../../en/m5ui/msgbox.rst:309 8247a022ca6e4709b0b6ecd6a0af4e64
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/msgbox.rst:310 d55db59b65584ab9b8af2d27768b485c
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "为 True 时设置状态；为 False 时取消状态。"
+
+#: ../../en/m5ui/msgbox.rst:315 8f1e6cc6c9684c84a6a3ac25adae07ea
+msgid "|button_set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:24 825121590e2e415ca2ad2191f08ad949
+msgid "button_set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:325 5475a8e7bbd044b5af478e3097facfc1
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果该标志已设置，则移除；否则添加。"
+
+#: ../../en/m5ui/msgbox.rst:327 b07d4602fe434aa7a42a7d84d678452b
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/msgbox.rst:332 ea1b7765bfb64de09d03511efdad29a3
+msgid "|button_toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:25 b2c4748a6890439f9057ff136ef866de
+msgid "button_toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:343 b39b1e0ec1e442d0815e6426e0056280
+msgid "Set the corner radius of the msgbox button."
+msgstr "设置msgbox按钮的圆角半径。"
+
+#: ../../en/m5ui/msgbox.rst:345 dc6bcbd7e66148eda6368d043aad5607
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/msgbox.rst:351 4d392cb252014b349081c446b84bbc6f
+msgid "|button_set_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:26 69cd2af0b1b64b25b2cf6ce6b9d9b6cc
+msgid "button_set_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:361 b7fa38ed942040c3b33dfcf481fcad22
+msgid "Set a shadow for the label."
+msgstr "为标签设置阴影。"
+
+#: ../../en/m5ui/msgbox.rst:363 8e7da18d822e4bc0ac7931b275acc2c3
+msgid "The color of the shadow in hexadecimal format or an integer."
+msgstr "阴影的颜色，十六进制格式或整数。"
+
+#: ../../en/m5ui/msgbox.rst:364 a1099da4587a48d88cca6bad66e61cd8
+msgid "The opacity of the shadow (0-255)."
+msgstr "阴影的不透明度（0-255）。"
+
+#: ../../en/m5ui/msgbox.rst:365 2a8cbed6196f4a3cb15c6f638c75495d
+msgid "The alignment of the shadow relative to the label."
+msgstr "阴影相对于标签的对齐方式。"
+
+#: ../../en/m5ui/msgbox.rst:366 9df8fcfe3379425082c4330fd7ceda31
+msgid "The horizontal offset of the shadow."
+msgstr "阴影的水平偏移量。"
+
+#: ../../en/m5ui/msgbox.rst:367 1ce6bca14c70424d8f8ff069c7f31fbc
+msgid "The vertical offset of the shadow."
+msgstr "阴影的垂直偏移量。"
+
+#: ../../en/m5ui/msgbox.rst:372 6f336eaa93d845268a1dec38800e3db1
+msgid "|label_set_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:27 d1348f12831b4e84b809aeba821e7f35
+msgid "label_set_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:382 a6632e521a124990a6d4c81101963ebe
+msgid "Remove the shadow from the label."
+msgstr "移除标签的阴影。"
+
+#: ../../en/m5ui/msgbox.rst:386 de63b0ba157d4de2b95cd681e6126ec1
+msgid "|label_unset_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:28 45c2e08dcc4e4046956f290eaf85ba17
+msgid "label_unset_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:396 c3a2e0455f7e4bcb927d87f144905d7b
+msgid "Get the text of the label."
+msgstr "获取标签的文本。"
+
+#: ../../en/m5ui/msgbox.rst:398 c00696f37194401399aa02002a7f32d4
+msgid "The text of the label."
+msgstr "标签的文本内容。"
+
+#: ../../en/m5ui/msgbox.rst 32c5a89519b14a469a30f71be7b27c1d
+#: 7fa5a1c62453407e9f67a32c7d420c86 c562db8a0e3c4d67924c9f914ad1a5f2
+#: m5ui.msgbox.M5Msgbox.add_button m5ui.msgbox.M5Msgbox.add_text of
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/m5ui/msgbox.rst:403 120462a994a1467b8d9db25c16971362
+msgid "|button_get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:29 2541558cfc9f403eaa238387db763f95
+msgid "button_get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:405 b56ed59ccbf3471f888ec7a44961dace
+msgid "|label_get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:30 941c5e7cafb642b986bbcb58be6bbcd2
+msgid "label_get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:417 75f9586c0bab41b7b7aeaa8548032b6d
+msgid ""
+"Toggle the state of the button. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换按钮的状态。如果该状态已设置则取消设置，未设置则添加设置。"
+
+#: ../../en/m5ui/msgbox.rst:419 ccbd951feb05454ba2a0ec48bea1c3ea
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/msgbox.rst:424 1906a0273dcc426e9c672c18b0c0982d
+msgid "|button_toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:31 bfbe058cf23d43e5a3e04329a55f904f
+msgid "button_toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/msgbox.rst:434 15acf780e8f34f8b898de42efc87ac91
+msgid ""
+"Add an event callback to the button. The callback will be called when the"
+" specified event occurs."
+msgstr "为按钮添加事件回调。当指定事件发生时将调用该回调函数。"
+
+#: ../../en/m5ui/msgbox.rst:436 b964809baad84c7780675a0f5f8a7e9d
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/msgbox.rst:437 90fcea00fc7c4342b46c684dd0d211a0
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/msgbox.rst:438 3a4f7380ce3f4918a2d3958e0f3f4b06
+msgid "Optional user data to pass to the callback."
+msgstr "可选的用户数据，将传递给回调函数。"
+
+#: ../../en/m5ui/msgbox.rst:443 3061b7e3dd3542949215fdf8f765871f
+msgid "|button_event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:35 ad355bc6f0ed4ef5b0d07f34f41da5a0
+msgid "button_event.png"
+msgstr ""
+
+#: e28174cb4367447ba89bbc6b8dcdb225 m5ui.msgbox.M5Msgbox.add_text:1 of
+msgid "Add a text label to the msgbox."
+msgstr "向msgbox添加文本标签。"
+
+#: a6f021657b0e40d591008a0214ca88ca m5ui.msgbox.M5Msgbox.add_text:3 of
+msgid "The text to display."
+msgstr "要显示的文本。"
+
+#: 5a1137e29d1946f7b334ac324acf024e d5b9da854ee84c7bbf96ab3b88b86ca8
+#: m5ui.msgbox.M5Msgbox.add_button:7 m5ui.msgbox.M5Msgbox.add_text:4 of
+msgid "The text color in hexadecimal format."
+msgstr "文本颜色（十六进制格式）。"
+
+#: 60017204fb96434e87aa0dd515398605 8f29483a94fa475fade5e0e3e574ebe1
+#: m5ui.msgbox.M5Msgbox.add_button:8 m5ui.msgbox.M5Msgbox.add_text:5 of
+msgid "The text opacity (0-255)."
+msgstr "文本不透明度（0-255）。"
+
+#: 25ddd74094744f41a37c59a2ef110e76 fcf806790cc7435b8b249ab667e14441
+#: m5ui.msgbox.M5Msgbox.add_button:5 m5ui.msgbox.M5Msgbox.add_text:6 of
+msgid "The background color in hexadecimal format."
+msgstr "背景颜色（十六进制格式）。"
+
+#: 456eb40ff53e4d239bdeff3f6595e87b ad6e2a5b4a2f4a8c80ae520b9d53670b
+#: m5ui.msgbox.M5Msgbox.add_button:6 m5ui.msgbox.M5Msgbox.add_text:7 of
+msgid "The background opacity (0-255)."
+msgstr "背景不透明度（0-255）。"
+
+#: 47360c8e10834877a2fa4be62ffc416f m5ui.msgbox.M5Msgbox.add_text:8 of
+msgid "The font to use for the text."
+msgstr "用于文本的字体。"
+
+#: 2a551721b74c4280b1aff55a4126f091 m5ui.msgbox.M5Msgbox.add_text:10 of
+msgid "The created label object."
+msgstr "创建的标签对象。"
+
+#: 4dc557247ea44daaaf2add05089f1409 m5ui.msgbox.M5Msgbox.add_text:15 of
+msgid "|add_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:1 432528e330ab44cdad32c957920c8f52
+msgid "add_text.png"
+msgstr ""
+
+#: f2c5fbbd65d04487a937b4e9abd9af95 m5ui.msgbox.M5Msgbox.add_text:17 of
+msgid "|add_text2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:2 c341de6efec74c07ba4e953d06033354
+msgid "add_text2.png"
+msgstr ""
+
+#: fc6dd6ec699b4de0a0981ee24d35102c m5ui.msgbox.M5Msgbox.add_button:1 of
+msgid "Add a button to the msgbox."
+msgstr "向msgbox添加按钮。"
+
+#: 236cf72ad71e4f2ba710ac36739b01be m5ui.msgbox.M5Msgbox.add_button:3 of
+msgid "The icon to display on the button."
+msgstr "按钮上要显示的图标。"
+
+#: 44f76786aa444c598a0df7d377470df3 m5ui.msgbox.M5Msgbox.add_button:4 of
+msgid "The text to display on the button."
+msgstr "按钮上要显示的文本。"
+
+#: 64a4a18b5d294dbcb7cacb46b94ad4ba m5ui.msgbox.M5Msgbox.add_button:9 of
+msgid "The font to use for the button text."
+msgstr "按钮文本所使用的字体。"
+
+#: 0a8fc32dcf0646799c48796cb0677118 m5ui.msgbox.M5Msgbox.add_button:10 of
+msgid "The position of the button (\"header\" or \"footer\")."
+msgstr "按钮的位置（“header” 或 “footer”）。"
+
+#: ce04d7bc474a4138972b10598c477073 m5ui.msgbox.M5Msgbox.add_button:12 of
+msgid "The created button object."
+msgstr "创建的按钮对象。"
+
+#: cdf7d987b76a4d34a3a6ef2b93e288f8 m5ui.msgbox.M5Msgbox.add_button:17 of
+msgid "|add_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:3 46a08c2815de4967b941174d4ce856bb
+msgid "add_button.png"
+msgstr ""
+
+#: bb2d71483e264bfc8acb4dc7705b67d7 m5ui.msgbox.M5Msgbox.add_button:19 of
+msgid "|add_button2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.msgbox.ref:4 b25d6ac9d44d41d097304e7a05275cb0
+msgid "add_button2.png"
+msgstr ""
+
+#~ msgid "points connect"
+#~ msgstr ""
+
