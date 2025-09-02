@@ -33,6 +33,15 @@
 static char *TAG = "cores3";
 static void *audio_hal = NULL;
 
+#define AUDIO_I2S_GPIO_MCLK      GPIO_NUM_0
+#define AUDIO_I2S_GPIO_WS        GPIO_NUM_33
+#define AUDIO_I2S_GPIO_BCLK      GPIO_NUM_34
+#define AUDIO_I2S_GPIO_DIN       GPIO_NUM_14
+#define AUDIO_I2S_GPIO_DOUT      GPIO_NUM_13
+#define AUDIO_CODEC_I2C_SCL_PIN  GPIO_NUM_11
+#define AUDIO_CODEC_I2C_SDA_PIN  GPIO_NUM_12
+#define AUDIO_CODEC_GPIO_PA      GPIO_NUM_NC
+
 
 #if USE_IDF5
 
@@ -63,11 +72,11 @@ esp_err_t get_i2s_pins(int port, board_i2s_pin_t *i2s_config)
     ESP_LOGI(TAG, "get_i2s_pins !!!");
     AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
     if (port == 1) {
-        i2s_config->bck_io_num = GPIO_NUM_34;
-        i2s_config->ws_io_num = GPIO_NUM_33;
-        i2s_config->data_out_num = GPIO_NUM_13;
-        i2s_config->data_in_num = GPIO_NUM_14;
-        i2s_config->mck_io_num = GPIO_NUM_0;
+        i2s_config->bck_io_num = AUDIO_I2S_GPIO_BCLK;
+        i2s_config->ws_io_num = AUDIO_I2S_GPIO_WS;
+        i2s_config->data_out_num = AUDIO_I2S_GPIO_DOUT;
+        i2s_config->data_in_num = AUDIO_I2S_GPIO_DIN;
+        i2s_config->mck_io_num = AUDIO_I2S_GPIO_MCLK;
     } else {
         memset(i2s_config, -1, sizeof(board_i2s_pin_t));
         ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
@@ -127,8 +136,8 @@ void * board_codec_init(void)
     const audio_codec_if_t *in_codec_if = es7210_codec_new(&es7210_cfg);
 
     esp_codec_dev_cfg_t dev_cfg = {
-        .codec_if = out_codec_if,              // aw88298_codec_new 获取到的接口实现
-        .data_if = data_if,                    // 这里不实例化 i2s; 后续的 i2s_stream_init 会实例化 i2s。
+        .codec_if = out_codec_if,           // aw88298_codec_new 获取到的接口实现
+        .data_if = data_if,                 // 这里不实例化 i2s; 后续的 i2s_stream_init 会实例化 i2s。
         .dev_type = ESP_CODEC_DEV_TYPE_OUT, // 设备只播放
     };
     audio_hal = esp_codec_dev_new(&dev_cfg);
@@ -156,13 +165,11 @@ void * board_codec_init(void)
     return audio_hal;
 }
 
-
 // NOTE: 使用内联函数???
 int board_codec_volume_set(void *hd, int vol)
 {
     return esp_codec_dev_set_out_vol(hd, vol);
 }
-
 
 // NOTE: 使用内联函数???
 int board_codec_volume_get(void *hd, int *vol)
@@ -170,15 +177,14 @@ int board_codec_volume_get(void *hd, int *vol)
     return esp_codec_dev_get_out_vol(hd, vol);
 }
 
-
 static int ut_i2c_init(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
     i2c_master_bus_config_t i2c_bus_config = {0};
     i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
     i2c_bus_config.i2c_port = port;
-    i2c_bus_config.scl_io_num = 12;
-    i2c_bus_config.sda_io_num = 11;
+    i2c_bus_config.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
+    i2c_bus_config.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
     i2c_bus_config.glitch_ignore_cnt = 7;
     i2c_bus_config.flags.enable_internal_pullup = true;
     return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
@@ -189,8 +195,8 @@ static int ut_i2c_init(uint8_t port)
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = 100000,
     };
-    i2c_cfg.sda_io_num = 12;
-    i2c_cfg.scl_io_num = 11;
+    i2c_cfg.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
+    i2c_cfg.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
     esp_err_t ret = i2c_param_config(port, &i2c_cfg);
     if (ret != ESP_OK) {
         return -1;
@@ -198,7 +204,6 @@ static int ut_i2c_init(uint8_t port)
     return i2c_driver_install(port, i2c_cfg.mode, 0, 0, 0);
 #endif
 }
-
 
 static int ut_i2c_deinit(uint8_t port)
 {
@@ -213,7 +218,6 @@ static int ut_i2c_deinit(uint8_t port)
 #endif
 }
 
-
 #if USE_IDF5
 static void ut_set_i2s_mode(i2s_comm_mode_t out_mode, i2s_comm_mode_t in_mode)
 {
@@ -221,14 +225,12 @@ static void ut_set_i2s_mode(i2s_comm_mode_t out_mode, i2s_comm_mode_t in_mode)
     i2s_out_mode = out_mode;
 }
 
-
 static void ut_clr_i2s_mode(void)
 {
     i2s_in_mode = I2S_COMM_MODE_STD;
     i2s_out_mode = I2S_COMM_MODE_STD;
 }
 #endif
-
 
 static int ut_i2s_init(uint8_t port)
 {
@@ -245,10 +247,10 @@ static int ut_i2s_init(uint8_t port)
         .clk_cfg = I2S_STD_CLK_DEFAULT_CONFIG(16000),
         .slot_cfg = I2S_STD_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO),
         .gpio_cfg ={
-            .mclk = 0,
-            .bclk = 34,
-            .ws = 33,
-            .dout = 13,
+            .mclk = AUDIO_I2S_GPIO_MCLK,
+            .bclk = AUDIO_I2S_GPIO_BCLK,
+            .ws = AUDIO_I2S_GPIO_WS,
+            .dout = AUDIO_I2S_GPIO_DOUT,
             .din = -1,
         },
     };
@@ -262,10 +264,10 @@ static int ut_i2s_init(uint8_t port)
         .slot_cfg = I2S_TDM_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO, slot_mask),
         .clk_cfg  = I2S_TDM_CLK_DEFAULT_CONFIG(16000),
         .gpio_cfg = {
-            .mclk = 0,
-            .bclk = 34,
-            .ws = 33,
-            .dout = 13,
+            .mclk = AUDIO_I2S_GPIO_MCLK,
+            .bclk = AUDIO_I2S_GPIO_BCLK,
+            .ws = AUDIO_I2S_GPIO_WS,
+            .dout = AUDIO_I2S_GPIO_DOUT,
             .din = -1,
         },
     };
@@ -305,17 +307,16 @@ static int ut_i2s_init(uint8_t port)
     };
     int ret = i2s_driver_install(port, &i2s_config, 0, NULL);
     i2s_pin_config_t i2s_pin_cfg = {
-        .mck_io_num = 0,
-        .bck_io_num = 34,
-        .ws_io_num = 33,
-        .data_out_num = 13,
-        .data_in_num = 14,
+        .mck_io_num = AUDIO_I2S_GPIO_MCLK,
+        .bck_io_num = AUDIO_I2S_GPIO_BCLK,
+        .ws_io_num = AUDIO_I2S_GPIO_WS,
+        .data_out_num = AUDIO_I2S_GPIO_DOUT,
+        .data_in_num = AUDIO_I2S_GPIO_DIN,
     };
     i2s_set_pin(port, &i2s_pin_cfg);
 #endif
     return ret;
 }
-
 
 static int ut_i2s_deinit(uint8_t port)
 {
