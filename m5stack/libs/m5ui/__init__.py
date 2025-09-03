@@ -25,6 +25,7 @@ _attrs = {
     "M5Spinbox": "spinbox",
     "M5Switch": "switch",
     "M5TextArea": "textarea",
+    "M5Win": "win",
 }
 
 
