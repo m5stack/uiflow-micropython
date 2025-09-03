@@ -28,6 +28,7 @@ package(
         "spinbox.py",
         "switch.py",
         "textarea.py",
+        "win.py",
     ),
     base_path="..",
     opt=0,
