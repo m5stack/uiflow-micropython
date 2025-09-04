@@ -5,7 +5,6 @@
  *
  * Copyright (c) 2017 "Eric Poulsen" <eric@zyxod.com>
  * Copyright (c) 2017 "Tom Manning" <tom@manningetal.com>
- * Copyright (c) 2024 M5Stack Technology CO LTD
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -37,11 +36,10 @@
 #include "py/obj.h"
 #include "py/runtime.h"
 #include "py/mphal.h"
+#include "extmod/modmachine.h"
 #include "shared/timeutils/timeutils.h"
-#include "modmachine.h"
 #include "machine_rtc.h"
 #include "uiflow_utility.h"
-#include "extmod/modmachine.h"
 
 typedef struct _machine_rtc_obj_t {
     mp_obj_base_t base;
@@ -109,15 +107,14 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
         // Get time
 
         struct timeval tv;
-
         gettimeofday(&tv, NULL);
-        timeutils_struct_time_t tm;
 
-        timeutils_seconds_since_epoch_to_struct_time(tv.tv_sec, &tm);
+        struct tm tm;
+        gmtime_r(&tv.tv_sec, &tm);
 
         mp_obj_t tuple[8] = {
-            mp_obj_new_int(tm.tm_year),
-            mp_obj_new_int(tm.tm_mon),
+            mp_obj_new_int(tm.tm_year + 1900),
+            mp_obj_new_int(tm.tm_mon + 1),
             mp_obj_new_int(tm.tm_mday),
             mp_obj_new_int(tm.tm_wday),
             mp_obj_new_int(tm.tm_hour),
@@ -204,39 +201,43 @@ static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_rtc_local_datetime_obj, 1, 2,
 
 static mp_obj_t machine_rtc_timezone(size_t n_args, const mp_obj_t *args) {
     if (n_args == 1) {
+        // Get timezone
         char *tz = getenv("TZ");
         if (tz == NULL) {
             return mp_const_none;
         } else {
-            char *ptr = strchr(tz, '+');
+            char timezone[64] = { 0 };
+            memcpy(timezone, tz, strlen(tz));
+            char *ptr = strchr(timezone, '+');
             if (ptr != NULL) {
                 *ptr = '-';
             } else {
-                ptr = strchr(tz, '-');
+                ptr = strchr(timezone, '-');
                 if (ptr != NULL) {
                     *ptr = '+';
                 }
             }
-            return mp_obj_new_str(tz, strlen(tz));
+            return mp_obj_new_str(timezone, strlen(timezone));
         }
     } else {
-        char tz[64] = { 0 };
-        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[0]));
+        // Set timezone
+        char timezone[64] = { 0 };
+        snprintf(timezone, sizeof(timezone) - 1, "%s", mp_obj_str_get_str(args[1]));
 
-        char *ptr = strchr(tz, '-');
+        char *ptr = strchr(timezone, '-');
         if (ptr != NULL) {
             *ptr = '+';
         } else {
-            ptr = strchr(tz, '+');
+            ptr = strchr(timezone, '+');
             if (ptr != NULL) {
                 *ptr = '-';
             }
         }
 
-        setenv("TZ", tz, 1);
+        setenv("TZ", timezone, 1);
         tzset();
 
-        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
+        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", timezone);
         return mp_const_none;
     }
 }
