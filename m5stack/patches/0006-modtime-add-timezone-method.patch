@@ -127,46 +127,50 @@ Index: micropython/ports/esp32/modtime.c
      struct timeval tv;
      gettimeofday(&tv, NULL);
      timeutils_struct_time_t tm;
-@@ -56,3 +95,46 @@ static mp_obj_t mp_time_time_get(void) {
+@@ -56,3 +95,50 @@ static mp_obj_t mp_time_time_get(void) {
      gettimeofday(&tv, NULL);
      return mp_obj_new_int(tv.tv_sec);
  }
 +
 +static mp_obj_t time_timezone(size_t n_args, const mp_obj_t *args) {
 +    if (n_args == 0 || args[0] == mp_const_none) {
++        // Get timezone
 +        char *tz = getenv("TZ");
 +        if (tz == NULL) {
 +            return mp_const_none;
 +        } else {
-+            char *ptr = strchr(tz, '+');
++            char timezone[64] = { 0 };
++            memcpy(timezone, tz, strlen(tz));
++            char *ptr = strchr(timezone, '+');
 +            if (ptr != NULL) {
 +                *ptr = '-';
 +            } else {
-+                ptr = strchr(tz, '-');
++                ptr = strchr(timezone, '-');
 +                if (ptr != NULL) {
 +                    *ptr = '+';
 +                }
 +            }
-+            return mp_obj_new_str(tz, strlen(tz));
++            return mp_obj_new_str(timezone, strlen(timezone));
 +        }
 +    } else {
-+        char tz[64] = { 0 };
-+        snprintf(tz, sizeof(tz), "%s", mp_obj_str_get_str(args[0]));
++        // Set timezone
++        char timezone[64] = { 0 };
++        snprintf(timezone, sizeof(timezone), "%s", mp_obj_str_get_str(args[0]));
 +
-+        char *ptr = strchr(tz, '-');
++        char *ptr = strchr(timezone, '-');
 +        if (ptr != NULL) {
 +            *ptr = '+';
 +        } else {
-+            ptr = strchr(tz, '+');
++            ptr = strchr(timezone, '+');
 +            if (ptr != NULL) {
 +                *ptr = '-';
 +            }
 +        }
 +
-+        setenv("TZ", tz, 1);
++        setenv("TZ", timezone, 1);
 +        tzset();
 +
-+        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", tz);
++        nvs_write_str_helper(UIFLOW_NVS_NAMESPACE, "tz", timezone);
 +        return mp_const_none;
 +    }
 +}
