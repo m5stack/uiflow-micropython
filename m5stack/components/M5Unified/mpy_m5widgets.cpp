@@ -297,6 +297,14 @@ mp_obj_t m5widgets_label_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
     return mp_const_none;
 }
 
+mp_obj_t m5widgets_label___del__(mp_obj_t self_in) {
+    widgets_label_obj_t *self = (widgets_label_obj_t *)MP_OBJ_TO_PTR(self_in);
+
+    self->rtfont->unloadFont();
+    self->fontWrapper->close();
+    return mp_const_none;
+}
+
 extern gfx_obj_t m5_display;
 mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
     enum {ARG_text, ARG_x, ARG_y, ARG_text_sz, ARG_text_c, ARG_bg_c, ARG_font, ARG_parent};
@@ -505,6 +513,14 @@ mp_obj_t m5widgets_title_setVisible(size_t n_args, const mp_obj_t *pos_args, mp_
         m5widgets_title_erase_helper(self);
     }
     self->gfx->setTextStyle(stash_style);
+    return mp_const_none;
+}
+
+mp_obj_t m5widgets_title___del__(mp_obj_t self_in) {
+    widgets_title_obj_t *self = (widgets_title_obj_t *)MP_OBJ_TO_PTR(self_in);
+
+    self->rtfont->unloadFont();
+    self->fontWrapper->close();
     return mp_const_none;
 }
 
@@ -723,6 +739,7 @@ static bool m5widgets_image_draw_helper(widgets_image_obj_t *self) {
     } else {
         printf("Image format was not bmp, jpg, png\r\n");
     }
+    wrapper.close();
 
     if (!ret) {
         printf("Get %s width and height failed\r\n", self->img);

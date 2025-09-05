@@ -183,6 +183,8 @@ mp_obj_t gfx_setFont(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
         if (fontWrapper == NULL) {
             fontWrapper = new LFS2Wrapper();
             ((gfx_obj_t *)MP_OBJ_TO_PTR(pos_args[0]))->font_wrapper = fontWrapper;
+        } else {
+            fontWrapper->close();
         }
         fontWrapper->open(mp_obj_str_get_str(args[ARG_font].u_obj), VFS_READ);
         gfx->loadFont((lgfx::DataWrapper *)fontWrapper);
@@ -829,6 +831,7 @@ mp_obj_t gfx_drawJpg(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
             , args[ARG_maxW].u_int, args[ARG_maxH].u_int
             , args[ARG_offX].u_int, args[ARG_offY].u_int
             , mp_obj_get_float(args[ARG_scaleX].u_obj), mp_obj_get_float(args[ARG_scaleY].u_obj));
+        wrapper.close();
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_img].u_obj, &bufinfo, MP_BUFFER_READ);
@@ -870,6 +873,7 @@ mp_obj_t gfx_drawPng(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
             , args[ARG_maxW].u_int, args[ARG_maxH].u_int
             , args[ARG_offX].u_int, args[ARG_offY].u_int
             , mp_obj_get_float(args[ARG_scaleX].u_obj), mp_obj_get_float(args[ARG_scaleY].u_obj));
+        wrapper.close();
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_img].u_obj, &bufinfo, MP_BUFFER_READ);
@@ -911,6 +915,7 @@ mp_obj_t gfx_drawBmp(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args)
             , args[ARG_maxW].u_int, args[ARG_maxH].u_int
             , args[ARG_offX].u_int, args[ARG_offY].u_int
             , mp_obj_get_float(args[ARG_scaleX].u_obj), mp_obj_get_float(args[ARG_scaleY].u_obj));
+        wrapper.close();
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_img].u_obj, &bufinfo, MP_BUFFER_READ);
@@ -977,6 +982,7 @@ mp_obj_t gfx_drawImage(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_arg
                 , args[ARG_offX].u_int, args[ARG_offY].u_int
                 , mp_obj_get_float(args[ARG_scaleX].u_obj), mp_obj_get_float(args[ARG_scaleY].u_obj));
         }
+        wrapper.close();
     } else { // buffer
         mp_buffer_info_t bufinfo;
         mp_get_buffer_raise(args[ARG_img].u_obj, &bufinfo, MP_BUFFER_READ);
