@@ -228,4 +228,6 @@ void vfs_stream_close(void *file_p) {
     } else if (vfs->fatfs) {
         f_close(&vfs->file.fat_file);
     }
+    free(vfs);
+    vfs = NULL;
 }

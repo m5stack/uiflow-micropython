@@ -13,13 +13,15 @@ MAKE_METHOD_KW(m5widgets_label, setCursor, 1);
 MAKE_METHOD_KW(m5widgets_label, setSize, 1);
 MAKE_METHOD_KW(m5widgets_label, setFont, 1);
 MAKE_METHOD_KW(m5widgets_label, setVisible, 1);
+MAKE_METHOD_KW(m5widgets_label, __del__, 1);
 static const mp_rom_map_elem_t m5widgets_label_member_table[] = {
     MAKE_TABLE(m5widgets_label, setText),
     MAKE_TABLE(m5widgets_label, setColor),
     MAKE_TABLE(m5widgets_label, setCursor),
     MAKE_TABLE(m5widgets_label, setSize),
     MAKE_TABLE(m5widgets_label, setFont),
-    MAKE_TABLE(m5widgets_label, setVisible)
+    MAKE_TABLE(m5widgets_label, setVisible),
+    MAKE_TABLE(m5widgets_label, __del__)
 };
 static MP_DEFINE_CONST_DICT(m5widgets_label_member, m5widgets_label_member_table);
 extern mp_obj_t m5widgets_label_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args);
