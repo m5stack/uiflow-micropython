@@ -8,6 +8,8 @@ SwitchC6
 
 The SwitchC6 is a device that can be controlled using the M5Stack platform. This module provides functions to interact with the SwitchC6 device.
 
+|SwitchC6|
+
 UiFlow2 Example
 ---------------
 

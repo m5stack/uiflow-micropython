@@ -1,4 +1,9 @@
 
+.. |SwitchC6| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1159/k140_switchc6_01.webp
+    :target: https://docs.m5stack.com/en/iot/SwitchC6
+    :height: 200px
+    :width: 200px
+
 .. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/iot_devices/switchc6/event.png
 .. |get_capacitor_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/iot_devices/switchc6/get_capacitor_voltage.png
 .. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/iot_devices/switchc6/get_firmware_version.png
