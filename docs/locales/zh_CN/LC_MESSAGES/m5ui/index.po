@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-26 15:06+0800\n"
+"POT-Creation-Date: 2025-09-05 00:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,49 +20,164 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/m5ui/index.rst:2 7cf56d7cd22e4f0d9fc5892bc9653652
+#: ../../en/m5ui/index.rst:2 7d7435bc07204952982bc8d17c08447f
 msgid "M5UI"
 msgstr ""
 
-#: ../../en/m5ui/index.rst:7 1f54d93f6547485685ad7c4ee3f758e9
+#: ../../en/m5ui/index.rst:7 8f5899301791406d86e42521e8b7556f
 msgid ""
 "M5UI is a UI library based on LVGL v9.3. It provides a set of widgets and"
 " functions to create user interfaces for M5Stack devices."
 msgstr "M5UI 是一个基于 LVGL v9.3 的 UI 库。它提供了一组用于创建 M5Stack 设备用户界面的小部件和函数。"
 
-#: ../../en/m5ui/index.rst:9 f0ff465507ef443dbcc943023f445901
+#: ../../en/m5ui/index.rst:9 c60047038d4a4476ba97dd7705c0a410
 msgid ""
 "It has been adapted for M5Stack devices and you only need to call "
 "``m5ui.init()`` to start using it."
 msgstr "它已适用于 M5Stack 设备，您只需调用 ``m5ui.init()`` 即可开始使用它。"
 
-#: ../../en/m5ui/index.rst:13 9f83572a079f4c05bb00b4f02644e266
+#: ../../en/m5ui/index.rst:12 484602ca23dd42f1944e40cc327269ca
+msgid "M5 Series Display Libraries"
+msgstr "M5 系列显示库说明"
+
+#: ../../en/m5ui/index.rst:15 36c7d6ef76a84cb69ca0064067e2aae9
+msgid "1. Display"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:16 deaa108368b64b269c5da36b7a772f03
+msgid ""
+"A low-level graphics library providing basic screen drawing, text, lines,"
+" and color management."
+msgstr "底层图形库，提供屏幕绘制、文字、线条、颜色管理等基础功能。"
+
+#: ../../en/m5ui/index.rst:17 382922b24d004cae8946153a9f3c7fe3
+msgid ""
+"Can be used independently, suitable for scenarios that only require "
+"drawing graphics or text."
+msgstr "可独立使用，适合只需要绘制图形或文字的场景。"
+
+#: ../../en/m5ui/index.rst:20 014a99bdfe9b4377876de176daf5acf6
+msgid "2. Widgets"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:21 db2dbdcdddb9456ea4232801d9c6dc3c
+msgid ""
+"A basic UI widget library providing labels, image displays, and other UI "
+"controls."
+msgstr "基础控件库，提供标签、图片显示等 UI 控件。"
+
+#: ../../en/m5ui/index.rst:22 d6141fbdadd747fb804746fad082b3f7
+msgid "Built on top of M5GFX."
+msgstr "底层依赖 M5GFX。"
+
+#: ../../en/m5ui/index.rst:23 c3d73de7f57b45a6b6bdbdc1c1fe91e1
+msgid "Suitable for simple interactive UI elements."
+msgstr "适合需要简单交互控件的界面。"
+
+#: ../../en/m5ui/index.rst:26 2a26706a264d466580297e52f600e91e
+msgid "3. M5UI"
+msgstr ""
+
+#: ../../en/m5ui/index.rst:27 bfa4f9b122494e6691ae282085e7a728
+msgid "A high-level UI framework based on LVGL."
+msgstr "高层 UI 框架，基于 LVGL 封装。"
+
+#: ../../en/m5ui/index.rst:28 105acb23326e4ff99fe0d463d47abd73
+msgid ""
+"Provides page management, multi-widget layouts, and unified event "
+"handling."
+msgstr "提供页面管理、多控件布局和统一事件处理。"
+
+#: ../../en/m5ui/index.rst:31 5462ecccf0a743cbbe52fe1b0edc3541
+msgid "Usage Tips"
+msgstr "使用提示"
+
+#: ../../en/m5ui/index.rst:32 66c7248770694fa7baeba86c0bdddf9e
+msgid ""
+"⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause "
+"rendering issues or event conflicts."
+msgstr "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
+
+#: ../../en/m5ui/index.rst:33 1cabe9cb1184401dbb7dd28cbbbe8b59
+msgid "For graphics-only drawing → use M5GFX."
+msgstr "单独绘图 → 使用 M5GFX。"
+
+#: ../../en/m5ui/index.rst:34 c6490d5c3681467c9f858ed733f35708
+msgid "For simple interactive widgets → use M5Widgets."
+msgstr "简单控件交互 → 使用 M5Widgets。"
+
+#: ../../en/m5ui/index.rst:35 8073036d0a314ceebfaa9c5633b1022d
+msgid "For multi-page UI → use M5UI."
+msgstr "多页面 UI → 使用 M5UI。"
+
+#: ../../en/m5ui/index.rst:39 96f377de8991490fb90f6671a92dbccb
 msgid "Functions"
 msgstr ""
 
-#: ../../en/m5ui/index.rst:17 c4264d75fb94489e9097c8ffba561275
+#: ../../en/m5ui/index.rst:43 9812232ebd594d2aa3ec65fdf611a159
 msgid ""
 "Initialize the M5UI library. This function must be called before using "
 "any other M5UI functions."
 msgstr "初始化 M5UI 库。使用任何其他 M5UI 函数之前必须调用此函数"
 
-#: ../../en/m5ui/index.rst 1d8bffeebb3847e3890345a8514b8880
-#: 5997afce9da645fbb58bd18819ff4269
+#: ../../en/m5ui/index.rst e4264090847b4654a40083ad31895c3e
 msgid "Returns"
 msgstr ""
 
-#: ../../en/m5ui/index.rst:19 ../../en/m5ui/index.rst:26
-#: 3efafbfbb7e04b799b65b12c8861fb5a 422bba168c324167b20ff975239d9c1a
+#: ../../en/m5ui/index.rst:45 ../../en/m5ui/index.rst:52
+#: c57ce1f22ea84475b48836b193f29569
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/index.rst:24 9fca89b6e5bf47c1966b794858aa4abd
+#: ../../en/m5ui/index.rst:50 94cec5f5c077430bac992df8c3396179
 msgid ""
 "Deinitialize the M5UI library. This function should be called when you no"
 " longer need to use M5UI."
 msgstr "取消初始化 M5UI 库。当您不再需要使用 M5UI 时，应调用此函数。"
 
-#: ../../en/m5ui/index.rst:30 2101ab814a3146218b046b976e577481
+#: ../../en/m5ui/index.rst:56 a62583117fe2465c90f3174667c96fa2
 msgid "Classes"
 msgstr ""
+
+#~ msgid "M5 系列显示库说明"
+#~ msgstr ""
+
+#~ msgid "底层图形库，提供屏幕绘制、文字、线条、颜色管理等基础功能。"
+#~ msgstr ""
+
+#~ msgid "可独立使用，适合只需要绘制图形或文字的场景。"
+#~ msgstr ""
+
+#~ msgid "2. M5Widgets"
+#~ msgstr ""
+
+#~ msgid "基础控件库，提供标签、图片显示等 UI 控件。"
+#~ msgstr ""
+
+#~ msgid "底层依赖 M5GFX。"
+#~ msgstr ""
+
+#~ msgid "适合需要简单交互控件的界面。"
+#~ msgstr ""
+
+#~ msgid "高层 UI 框架，基于 LVGL 封装。"
+#~ msgstr ""
+
+#~ msgid "提供页面管理、多控件布局和统一事件处理。"
+#~ msgstr ""
+
+#~ msgid "使用提示"
+#~ msgstr ""
+
+#~ msgid "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
+#~ msgstr ""
+
+#~ msgid "单独绘图 → 使用 M5GFX。"
+#~ msgstr ""
+
+#~ msgid "简单控件交互 → 使用 M5Widgets。"
+#~ msgstr ""
+
+#~ msgid "多页面 UI → 使用 M5UI。"
+#~ msgstr ""
 

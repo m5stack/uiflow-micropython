@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2025-09-05 00:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,99 +20,172 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/widgets/index.rst:2 4186b000a4f44b309bd23218f94b7ef4
+#: ../../en/widgets/index.rst:2 c422be4b225a42dbb622bc4af828960b
 msgid ":mod:`Widgets` --- A basic UI library"
+msgstr ":mod:`Widgets` --- 基础 UI 库"
+
+#: ../../en/widgets/index.rst:10 5b69130a1c1641e1a2f1888d2d2f7406
+msgid "M5 Series Display Libraries"
+msgstr "M5 系列显示库说明"
+
+#: ../../en/widgets/index.rst:13 1194bbb7dbc24b6ea1a4803519f3147c
+msgid "1. Display"
 msgstr ""
 
-#: ../../en/widgets/index.rst:9 021edf90ab7a4781bac939e2e4fc840f
+#: ../../en/widgets/index.rst:14 c366ea5653cb4448ba7712c0a343ae73
+msgid ""
+"A low-level graphics library providing basic screen drawing, text, lines,"
+" and color management."
+msgstr "底层图形库，提供屏幕绘制、文字、线条、颜色管理等基础功能。"
+
+#: ../../en/widgets/index.rst:15 5af9fddf85384b36ac624349dc511b3e
+msgid ""
+"Can be used independently, suitable for scenarios that only require "
+"drawing graphics or text."
+msgstr "可独立使用，适合只需要绘制图形或文字的场景。"
+
+#: ../../en/widgets/index.rst:18 ef160a506adc4a20bc8044179b754f84
+msgid "2. M5Widgets"
+msgstr ""
+
+#: ../../en/widgets/index.rst:19 08e6ae4be55c447da6cb5d6fbb372523
+msgid ""
+"A basic UI widget library providing labels, image displays, and other UI "
+"controls."
+msgstr "基础控件库，提供标签、图片显示等 UI 控件。"
+
+#: ../../en/widgets/index.rst:20 1c976a3fff654a039fe1daf2908ba9b6
+msgid "Built on top of M5GFX."
+msgstr "底层依赖 M5GFX。"
+
+#: ../../en/widgets/index.rst:21 51b52ac4af694944a20c02e3e3cad738
+msgid "Suitable for simple interactive UI elements."
+msgstr "适合需要简单交互控件的界面。"
+
+#: ../../en/widgets/index.rst:24 e5171bb5996145b8a7e9daeeecb4260d
+msgid "3. M5UI"
+msgstr ""
+
+#: ../../en/widgets/index.rst:25 11b4f35350154c17a0a2c9034b8b2d4d
+msgid "A high-level UI framework based on LVGL."
+msgstr "高层 UI 框架，基于 LVGL 封装。"
+
+#: ../../en/widgets/index.rst:26 6cd2fe0e169a401e81a1ed0d0aeaae43
+msgid ""
+"Provides page management, multi-widget layouts, and unified event "
+"handling."
+msgstr "提供页面管理、多控件布局和统一事件处理。"
+
+#: ../../en/widgets/index.rst:29 c431e86416664e668b1806d7dc9419ca
+msgid "Usage Tips"
+msgstr "使用提示"
+
+#: ../../en/widgets/index.rst:30 e51f41baf9054c2686a2d693c6d10458
+msgid ""
+"⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause "
+"rendering issues or event conflicts."
+msgstr "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
+
+#: ../../en/widgets/index.rst:31 d0f69ebd374d40db9f8ffe40ba08b8fe
+msgid "For graphics-only drawing → use M5GFX."
+msgstr "单独绘图 → 使用 M5GFX。"
+
+#: ../../en/widgets/index.rst:32 a5feddda10094b1ca1e8a088fffc5b77
+msgid "For simple interactive widgets → use M5Widgets."
+msgstr "简单控件交互 → 使用 M5Widgets。"
+
+#: ../../en/widgets/index.rst:33 e36398314fcc4adb8b416919192db2cb
+msgid "For multi-page UI → use M5UI."
+msgstr "多页面 UI → 使用 M5UI。"
+
+#: ../../en/widgets/index.rst:35 d97969d699ff4bc286645ebf12c5deeb
 msgid "Micropython Example:"
-msgstr ""
+msgstr "MicroPython 应用示例"
 
-#: ../../en/widgets/index.rst:16 ec9dcaa263904387b15600f0e96a58d8
+#: ../../en/widgets/index.rst:42 1a912f61f7d04c9bb73372b5d45fa33a
 msgid "UIFLOW2 Example:"
-msgstr ""
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/widgets/index.rst:18 492cd82d4940403b9b008ac88eb7246f
+#: ../../en/widgets/index.rst:44 c6e84d4c10cd4818bf39db9ccb2ee08e
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/widgets.ref:1 0fbe71cc6dfb454fa9d25a0c28c260b4
+#: ../../en/refs/widgets.ref:1 34a71c42501b4bfda8f32304750d949e
 msgid "example.png"
 msgstr ""
 
-#: ../../en/widgets/index.rst:22 6fe55f1fec8f45b690962e91c3c858a2
+#: ../../en/widgets/index.rst:48 3d9578eb767a4aeda9b09d20590abfbc
 msgid "|cores3_widgets_example.m5f2|"
 msgstr ""
 
-#: ../../en/widgets/index.rst:25 210dbcbad77b48bb825e69b35b411c7d
+#: ../../en/widgets/index.rst:51 b857983e661c4217aab0932bc47982a6
 msgid "Screen functions"
 msgstr ""
 
-#: ../../en/widgets/index.rst:29 a8d55305f85a4dddb88db3a9b3721685
+#: ../../en/widgets/index.rst:55 af0ca7284ee142e183750c679052e2d7
 msgid "Set the backlight of the monitor。``brightness`` ranges from 0 to 255."
-msgstr ""
+msgstr "设置显示器的背光亮度。参数 brightness 的取值范围是 0 到 255。"
 
-#: ../../en/widgets/index.rst:31 ../../en/widgets/index.rst:39
-#: ../../en/widgets/index.rst:54 3eb16b5d7aef458d91130492d9be395f
-#: 6b45ec589c3040b4bcb8d42801dd0936 b40f6b449b464ce9a9a710fe7b8d23d8
+#: ../../en/widgets/index.rst:57 ../../en/widgets/index.rst:65
+#: ../../en/widgets/index.rst:80 e0efabe1cb674e608d123da9097c8e12
 msgid "UIFLOW2:"
-msgstr ""
+msgstr "UiFlow2："
 
-#: ../../en/widgets/index.rst:33 6ff62e7c40854516813d99d8e4f3ad53
+#: ../../en/widgets/index.rst:59 cf8db21a3be84fe6a9c69e2e921ad0ac
 msgid "|setBrightness.png|"
 msgstr ""
 
-#: ../../en/refs/widgets.ref:3 02e52c35c9944b65bfbd13dc79dc996b
+#: ../../en/refs/widgets.ref:3 664d1dc186af46998978d41a8275e736
 msgid "setBrightness.png"
 msgstr ""
 
-#: ../../en/widgets/index.rst:37 adc355e448234646ae8d715fb5b0c6dc
+#: ../../en/widgets/index.rst:63 2c6b5e2a4896415e8ef4087f85a11593
 msgid ""
 "Set the background color of the monitor. ``color`` accepts the color code"
 " of RGB888."
-msgstr ""
+msgstr "设置显示器的背景颜色。参数 color 接受 RGB888 的颜色代码。"
 
-#: ../../en/widgets/index.rst:41 f7b65a43b979464780a572494ffdd62e
+#: ../../en/widgets/index.rst:67 0de2efc385ea4fca870189ed31d65a6f
 msgid "|fillScreen.png|"
 msgstr ""
 
-#: ../../en/refs/widgets.ref:5 e221699e1d344aa29c6e7a5b5726188b
+#: ../../en/refs/widgets.ref:5 632b61e227134f81b67d267b72f35abc
 msgid "fillScreen.png"
 msgstr ""
 
-#: ../../en/widgets/index.rst:45 81d74f3ccd304672b4e31d8cdd16fb79
+#: ../../en/widgets/index.rst:71 87f39a6801524da7abe378e377bf7601
 msgid "Set the rotation Angle of the display."
-msgstr ""
+msgstr "设置显示器的旋转角度。"
 
-#: ../../en/widgets/index.rst:47 a42a6c26a42b4cb282f786606794159d
+#: ../../en/widgets/index.rst:73 638b01ea821b4c729b73683754f86714
 msgid "The ``rotation`` parameter only accepts the following values:"
-msgstr ""
+msgstr "``rotation`` 参数只接受以下值："
 
-#: ../../en/widgets/index.rst:49 40feb84e30b94e1194fd5921002c3658
+#: ../../en/widgets/index.rst:75 2b250874e87e4b3c852aff7920bcbd07
 msgid "``0``: Portrait (0°C)"
-msgstr ""
+msgstr "``0``: 竖屏 (0°C)"
 
-#: ../../en/widgets/index.rst:50 a74a64296a804d28b319be0b9347a4af
+#: ../../en/widgets/index.rst:76 d1707a4865ca4b8d92dfca0da1f552ee
 msgid "``1``: Landscape (90°C)"
-msgstr ""
+msgstr "``1``: 横屏 (90°C)"
 
-#: ../../en/widgets/index.rst:51 fe910c0dbada43038353e54bc3694837
+#: ../../en/widgets/index.rst:77 22545305c9424d4cb7d7b62ed62387c1
 msgid "``2``: Inverse Portrait (180°C)"
-msgstr ""
+msgstr "``2``: 反向竖屏 (180°C)"
 
-#: ../../en/widgets/index.rst:52 217d7b8beb244bb3a50b3f56b53c9b6a
+#: ../../en/widgets/index.rst:78 77ffffa9ad1241bda84d274eef07311e
 msgid "``3``: Inverse Landscape (270°C)"
-msgstr ""
+msgstr "``3``: 反向横屏 (270°C)"
 
-#: ../../en/widgets/index.rst:56 18b36fe2be0e4e8aa05a9c89a217f2ae
+#: ../../en/widgets/index.rst:82 34d0f17d8bc34bc7a666eea18aac942f
 msgid "|setRotation.png|"
 msgstr ""
 
-#: ../../en/refs/widgets.ref:7 7023b5bb83d6422cb0f73acc8352d685
+#: ../../en/refs/widgets.ref:7 6c473ab5b5bd41078b138d1b54b0b3b3
 msgid "setRotation.png"
 msgstr ""
 
-#: ../../en/widgets/index.rst:59 2c5b56d6bf644eb8915db483d76cdca6
+#: ../../en/widgets/index.rst:85 8c672047b28140f0943dc3e7335ce3bd
 msgid "Classes"
 msgstr ""
 

@@ -3,479 +3,988 @@
 Display
 =======
 
+.. include:: ../refs/hardware.display.ref
+
 A lcd display library
 
 .. module:: Display
     :synopsis: A lcd display library
 
 
-Micropython Example
+M5 Series Display Libraries
+---------------------------
+
+1. Display
+^^^^^^^^^^^
+- A low-level graphics library providing basic screen drawing, text, lines, and color management.
+- Can be used independently, suitable for scenarios that only require drawing graphics or text.
+
+2. M5Widgets
+^^^^^^^^^^^^^
+- A basic UI widget library providing labels, image displays, and other UI controls.
+- Built on top of M5GFX.
+- Suitable for simple interactive UI elements.
+
+3. M5UI
+^^^^^^^^
+- A high-level UI framework based on LVGL.
+- Provides page management, multi-widget layouts, and unified event handling.
+
+Usage Tips
+^^^^^^^^^^
+- ⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause rendering issues or event conflicts.
+- For graphics-only drawing → use M5GFX.
+- For simple interactive widgets → use M5Widgets.
+- For multi-page UI → use M5UI.
+
+
+UiFlow2 Example
+---------------
+
+draw test
+^^^^^^^^^
+
+Open the |cores3_draw_test_example.m5f2| project in UiFlow2.
+
+This example demonstrates basic drawing functions of Display, including text, images, QR code, and various shapes.
+
+UiFlow2 Code Block:
+
+    |cores3_draw_test_example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
 -------------------
 
 draw test
-+++++++++
+^^^^^^^^^
 
-::
+This example demonstrates basic drawing functions of Display, including text, images, QR code, and various shapes.
 
-    import M5
-    from M5 import Display
-    import random
-    import time
+MicroPython Code Block:
 
-    M5.begin()
+    .. literalinclude:: ../../../examples/hardware/display/cores3_draw_test_example.py
+        :language: python
+        :linenos:
 
-    print("rotation: ", Display.getRotation())
-    print("color depth: ", Display.getColorDepth())
-    print("w: %d, h: %d"%(Display.width(), Display.height()))
+Example output:
 
-    Display.setRotation(1)
-    Display.clear(0)
-    Display.setTextColor(fgcolor=0x0000FF, bgcolor=0)
-    Display.setFont(M5.Lcd.FONTS.EFontCN24)
-    Display.setCursor(220, 3)
-    Display.print("你好",color=0xFF0000)
+    None
 
-    Display.drawImage("res/img/uiflow.jpg", 0, 0)
-    Display.drawJpg("res/img/default.jpg", 60, 0)
+**API**
+-------
 
-    Display.drawQR("Hello", 220, 40, 100)
+.. class:: M5.Display
 
-    Display.drawCircle(30, 80, 20, 0x0000FF)
-    Display.fillCircle(80, 80, 20, 0x0000FF)
+    .. method:: width()
 
-    Display.drawEllipse(60, 140, 50, 30, 0x00FF00)
-    Display.fillEllipse(60, 140, 30, 20, 0xFFFF00)
+        Get the horizontal resolution of the display.
 
-    Display.drawLine(x0=115, y0=10, x1=115, y1=60, color=0xFF0000)
+        :returns width: horizontal resolution in pixels.
+        :return type: int
 
-    Display.drawRect(125, 10, 40, 30, 0xFF0000)
-    Display.fillRect(125, 50, 40, 30, 0x00FF00)
+        UiFlow2 Code Block:
 
-    Display.drawRoundRect(120, 90, 50, 40, 10, 0xFF0000)
-    Display.fillRoundRect(125, 95, 40, 30, 10, 0x00FF00)
+            |width.png|
 
-    Display.drawTriangle(135, 150, 110, 190, 160, 190, 0x00FF00)
-    Display.fillTriangle(145, 150, 170, 190, 190, 150, 0x0000FF)
+        MicroPython Code Block:
 
-    Display.drawArc(10, 180, 40, 45, 0, 90, 0xFFFF00)
-    Display.fillArc(20, 190, 40, 45, 0, 90, 0x00FFFF)
+            .. code-block:: python
 
-    Display.drawEllipseArc(200, 150, 30, 35, 20, 25, 0, 90, 0x00FF0F)
-    Display.fillEllipseArc(200, 170, 30, 35, 20, 25, 0, 90, 0x00FFF0)
+                Display.width()
 
+    .. method:: height()
 
-Functions
----------
+        Get the vertical resolution of the display.
 
-.. method:: Display.width() -> int
+        :returns height: vertical resolution in pixels.
+        :return type: int
 
-    Get the horizontal resolution of the display.
+        UiFlow2 Code Block:
 
-    Returns An integer representing the horizontal resolution (width) in pixels.
+            |height.png|
 
-.. method:: Display.height() -> int
+        MicroPython Code Block:
 
-    Get the vertical resolution of the display.
+            .. code-block:: python
 
-    Returns An integer representing the vertical resolution (height) in pixels.
+                Display.height()
 
-.. method:: Display.getRotation() -> int
+    .. method:: getRotation()
 
-    Get the current rotation of the display.
+        Get the current rotation of the display.
 
-    Returns An integer representing the display's rotation:
+        :returns rotation: display rotation value.
+        :return type: int
 
-    - ``1``: 0° rotation
-    - ``2``: 90° rotation
-    - ``3``: 180° rotation
-    - ``4``: 270° rotation
+        Rotation values:
 
-.. method:: Display.getColorDepth() -> int
+        - 1: 0° rotation
+        - 2: 90° rotation
+        - 3: 180° rotation
+        - 4: 270° rotation
 
-    Get the color depth of the display.
+        UiFlow2 Code Block:
 
-    Returns An integer representing the display's color depth in bits.
+            |getrotation.png|
 
-.. method::Display.getCursor() -> Tuple[int, int]
+        MicroPython Code Block:
 
-    Get the current cursor position on the display.
+            .. code-block:: python
 
-    Returns A tuple (x, y) where:
+                Display.getRotation()
 
-    - ``x`` is the horizontal position of the cursor.
-    - ``y`` is the vertical position of the cursor.
+    .. method:: getColorDepth()
 
-.. method:: Display.setRotation(r: int = -1)
+        Get the color depth of the display.
 
-    Set the rotation of the display.
+        :returns depth: color depth in bits per pixel.
+        :return type: int
 
-    The ``r`` parameter only accepts the following values:
+        UiFlow2 Code Block:
 
-    - ``1``: 0° rotation
-    - ``2``: 90° rotation
-    - ``3``: 180° rotation
-    - ``4``: 270° rotation
+            |getcolordepth.png|
 
-.. method:: Display.setColorDepth(bpp: int = 1)
+        MicroPython Code Block:
 
-    Set the color depth of the display.
+            .. code-block:: python
 
-    - ``bpp`` The desired color depth in bits per pixel.
+                Display.getColorDepth()
 
-    Notes: For CoreS3 devices, the color depth is fixed at 16 bits, and this method has no effect.
+    .. method:: getCursor()
 
-.. method:: Display.setEpdMode(epd_mode)
+        Get the current cursor position on the display.
 
-    Set the EPD mode for the display.
+        :returns pos: tuple (x, y) of cursor position.
+        :return type: tuple
 
-    - ``epd_mode`` The desired EPD mode.
-        - 0: M5.Lcd.EPDMode.EPD_QUALITY 
-        - 1: M5.Lcd.EPDMode.EPD_TEXT
-        - 2: M5.Lcd.EPDMode.EPD_FAST
-        - 3: M5.Lcd.EPDMode.EPD_FASTEST
+        UiFlow2 Code Block:
 
-    Notes: This method is only applicable to devices with EPD (Electronic Paper Display) capabilities.
+            |getcursor.png|
 
-.. method:: Display.isEPD() -> bool
+        MicroPython Code Block:
 
-    Check if the display is an EPD (Electronic Paper Display).
+            .. code-block:: python
 
-    Returns A boolean indicating whether the display is an EPD.
+                Display.getCursor()
 
-.. method:: Display.setFont(font)
+    .. method:: setRotation(r)
 
-    Set the font for the display.
+        Set the rotation of the display.
 
-    The ``font`` parameter only accepts the following values:
+        :param int r: rotation value (1~4)
+            - 1: 0° rotation
+            - 2: 90° rotation
+            - 3: 180° rotation
+            - 4: 270° rotation
 
-    - M5.Lcd.FONTS.ASCII7
-    - M5.Lcd.FONTS.DejaVu9
-    - M5.Lcd.FONTS.DejaVu12
-    - M5.Lcd.FONTS.DejaVu18
-    - M5.Lcd.FONTS.DejaVu24
-    - M5.Lcd.FONTS.DejaVu40
-    - M5.Lcd.FONTS.DejaVu56
-    - M5.Lcd.FONTS.DejaVu72
-    - M5.Lcd.FONTS.EFontCN24
-    - M5.Lcd.FONTS.EFontJA24
-    - M5.Lcd.FONTS.EFontKR24
+        UiFlow2 Code Block:
 
-.. method:: Display.setTextColor(fgcolor: int = 0, bgcolor: int = 0)
+            |setrotation.png|
 
-    Set the text color and background color.
+        MicroPython Code Block:
 
-    - ``fgcolor`` The text color in RGB888 format. Default is 0 (black).
-    - ``bgcolor`` The background color in RGB888 format. Default is 0 (black).
+            .. code-block:: python
 
-.. method:: Display.setTextScroll(scroll: bool = False)
+                Display.setRotation(2)
 
-    Enable or disable text scrolling.
+    .. method:: setColorDepth(bpp)
 
-    - ``scroll`` Set to True to enable text scrolling, or False to disable it. Default is False.\
+        Set the color depth of the display.
 
-.. method:: Display.setTextSize(size)
+        :param int bpp: desired color depth in bits per pixel.
 
-    Set the size of the text.
+        Notes: For CoreS3 devices, color depth is fixed at 16 bits and this method has no effect.
 
-    - ``size`` The desired text size.
+        UiFlow2 Code Block:
 
-.. method:: Display.setCursor(x: int = 0, y: int = 0)
+            |setcolordepth.png|
 
-    Set the cursor position.
+        MicroPython Code Block:
 
-    - ``x`` The horizontal position of the cursor. Default is 0.
-    - ``y`` The vertical position of the cursor. Default is 0.
+            .. code-block:: python
 
-.. method:: Display.clear(color: int = 0)
+                Display.setColorDepth(16)
 
-    Clear the display with a specific color.
+    .. method:: setEpdMode(epd_mode)
 
-    - ``color`` The fill color in RGB888 format. Default is 0.
+        Set the EPD mode for the display.
 
-.. method:: Display.fillScreen(color: int = 0)
+        :param int epd_mode: desired EPD mode
+            - 0: M5.Lcd.EPDMode.EPD_QUALITY
+            - 1: M5.Lcd.EPDMode.EPD_TEXT
+            - 2: M5.Lcd.EPDMode.EPD_FAST
+            - 3: M5.Lcd.EPDMode.EPD_FASTEST
 
-    Fill the entire screen with a specified color.
+        Notes: Only applicable to devices with EPD capabilities.
 
-    - ``color`` The fill color in RGB888 format. Default is 0.
+        UiFlow2 Code Block:
 
+            |setepdmode.png|
 
-.. method:: Display.drawPixel(x: int = -1, y: int = -1, color: int = 0)
+        MicroPython Code Block:
 
-    Draw a single pixel on the screen.
+            .. code-block:: python
 
-    - ``x`` The horizontal coordinate of the pixel. Default is -1.
-    - ``y`` The vertical coordinate of the pixel. Default is -1.
-    - ``color`` The color of the pixel in RGB888 format. Default is 0.
+                Display.setEpdMode(2)
 
-.. method:: Display.drawCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
+    .. method:: isEPD()
 
-    Draw an outline of a circle.
+        Check if the display is an EPD (Electronic Paper Display).
 
-    - ``x`` The x-coordinate of the circle center. Default is -1.
-    - ``y`` The y-coordinate of the circle center. Default is -1.
-    - ``r`` The radius of the circle. Default is -1.
-    - ``color`` The color of the circle in RGB888 format. Default is 0.
+        :returns is_epd: True if the display is EPD, False otherwise.
+        :return type: bool
 
-.. method:: Display.fillCircle(x: int = -1, y: int = -1, r: int = -1, color: int = 0)
+        UiFlow2 Code Block:
 
-    Draw a filled circle.
+            |isepd.png|
 
-    - ``x`` The x-coordinate of the circle center. Default is -1.
-    - ``y`` The y-coordinate of the circle center. Default is -1.
-    - ``r`` The radius of the circle. Default is -1.
-    - ``color`` The fill color in RGB888 format. Default is 0.
+        MicroPython Code Block:
 
-.. method:: Display.drawEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
+            .. code-block:: python
 
-    Draw an outline of an ellipse.
+                Display.isEPD()
 
-    - ``x`` The x-coordinate of the ellipse center. Default is -1.
-    - ``y`` The y-coordinate of the ellipse center. Default is -1.
-    - ``rx`` The horizontal radius of the ellipse. Default is -1.
-    - ``ry`` The vertical radius of the ellipse. Default is -1.
-    - ``color`` The color of the ellipse in RGB888 format. Default is 0.
+    .. method:: setFont(font)
 
-.. method:: Display.fillEllipse(x: int = -1, y: int = -1, rx: int = -1, ry: int = -1, color: int = 0)
+        Set the font for the display.
 
-    Draw a filled ellipse.
+        :param font: font type. Available options:
 
-    - ``x`` The x-coordinate of the ellipse center. Default is -1.
-    - ``y`` The y-coordinate of the ellipse center. Default is -1.
-    - ``rx`` The horizontal radius of the ellipse. Default is -1.
-    - ``ry`` The vertical radius of the ellipse. Default is -1.
-    - ``color`` The fill color in RGB888 format. Default is 0.
+            - M5.Lcd.FONTS.ASCII7
+            - M5.Lcd.FONTS.DejaVu9
+            - M5.Lcd.FONTS.DejaVu12
+            - M5.Lcd.FONTS.DejaVu18
+            - M5.Lcd.FONTS.DejaVu24
+            - M5.Lcd.FONTS.DejaVu40
+            - M5.Lcd.FONTS.DejaVu56
+            - M5.Lcd.FONTS.DejaVu72
+            - M5.Lcd.FONTS.EFontCN24
+            - M5.Lcd.FONTS.EFontJA24
+            - M5.Lcd.FONTS.EFontKR24
 
-.. method:: Display.drawLine(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, color: int = 0)
+        UiFlow2 Code Block:
 
-    Draw a line.
+            |setfont.png|
 
-    - ``x0, y0`` Starting point coordinates of the line. Default is -1.
-    - ``x1, y1`` Ending point coordinates of the line. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+        MicroPython Code Block:
 
-.. method:: Display.drawRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
+            .. code-block:: python
 
-    Draw a rectangle.
+                Display.setFont(M5.Lcd.FONTS.DejaVu18)
 
-    - ``x, y`` Top-left corner coordinates of the rectangle. Default is -1.
-    - ``w, h`` Width and height of the rectangle. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+    .. method:: setTextColor(fgcolor, bgcolor)
 
-.. method:: Display.fillRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, color: int = 0)
+        Set the text color and background color.
 
-    Draw a filled rectangle.
+        :param int fgcolor: text color in RGB888 format (default 0, black)
+        :param int bgcolor: background color in RGB888 format (default 0, black)
 
-    - ``x, y`` Top-left corner coordinates of the rectangle. Default is -1.
-    - ``w, h`` Width and height of the rectangle. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+        UiFlow2 Code Block:
 
-.. method:: Display.drawRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
+            |settextcolor.png|
 
-    Draw a rounded rectangle.
+        MicroPython Code Block:
 
-    - ``x, y`` Top-left corner coordinates of the rectangle. Default is -1.
-    - ``w, h`` Width and height of the rectangle. Default is -1.
-    - ``r`` Radius of the corners. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+            .. code-block:: python
 
-.. method:: Display.fillRoundRect(x: int = -1, y: int = -1, w: int = -1, h: int = -1, r: int = -1, color: int = 0)
+                Display.setTextColor(0xFF0000, 0x000000)
 
-    Draw a filled rounded rectangle.
+    .. method:: setTextScroll(scroll)
 
-    - ``x, y`` Top-left corner coordinates of the rectangle. Default is -1.
-    - ``w, h`` Width and height of the rectangle. Default is -1.
-    - ``r`` Radius of the corners. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+        Enable or disable text scrolling.
 
+        :param bool scroll: True to enable text scrolling, False to disable (default False)
 
-.. method:: Display.drawTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
+        UiFlow2 Code Block:
 
-    Draw a triangle.
+            |settextscroll.png|
 
-    - ``x0, y0`` Coordinates of the first vertex. Default is -1.
-    - ``x1, y1`` Coordinates of the second vertex. Default is -1.
-    - ``x2, y2`` Coordinates of the third vertex. Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+        MicroPython Code Block:
 
-.. method:: Display.fillTriangle(x0: int = -1, y0: int = -1, x1: int = -1, y1: int = -1, x2: int = -1, y2: int = -1, color: int = 0)
+            .. code-block:: python
 
-    Draw a filled triangle.
+                Display.setTextScroll(True)
 
-    - ``x0, y0`` Coordinates of the first vertex. Default is -1.
-    - ``x1, y1`` Coordinates of the second vertex. Default is -1.
-    - ``x2, y2`` Coordinates of the third vertex. Default is -1.
-    - ``color:`` Color in RGB888 format. Default is 0.
+    .. method:: setTextSize(size)
 
-.. method:: Display.drawArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+        Set the size of the text.
 
-    Draw an arc.
+        :param int size: desired text size
 
-    - ``x, y`` Center coordinates of the arc. Default is -1.
-    - ``r0`` Inner radius of the arc. Default is -1.
-    - ``r1`` Outer radius of the arc. Default is -1.
-    - ``angle0`` Starting angle of the arc (in degrees). Default is -1.
-    - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+        UiFlow2 Code Block:
 
-.. method:: Display.fillArc(x: int = -1, y: int = -1, r0: int = -1, r1: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+            |settextsize.png|
 
-    Draw a filled arc.
+        MicroPython Code Block:
 
-    - ``x, y`` Center coordinates of the arc. Default is -1.
-    - ``r0`` Inner radius of the arc. Default is -1.
-    - ``r1`` Outer radius of the arc. Default is -1.
-    - ``angle0`` Starting angle of the arc (in degrees). Default is -1.
-    - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
-    - ``color`` Color in RGB888 format. Default is 0.
+            .. code-block:: python
 
-.. method:: Display.drawEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+                Display.setTextSize(2)
 
-    Draw an elliptical arc.
+    .. method:: setCursor(x, y)
 
-    - ``x, y`` Center coordinates of the elliptical arc. Default is -1.
-    - ``r0x, r0y`` Radii of the inner ellipse (horizontal and vertical). Default is -1.
-    - ``r1x, r1y`` Radii of the outer ellipse (horizontal and vertical). Default is -1.
-    - ``angle0`` Starting angle of the arc (in degrees). Default is -1.
-    - ``angle1`` Ending angle of the arc (in degrees). Default is 0.
-    - ``color`` Color in RGB888 format. Default is 0.
+        Set the cursor position.
 
-.. method:: Display.fillEllipseArc(x: int = -1, y: int = -1, r0x: int = -1, r0y: int = -1, r1x: int = -1, r1y: int = -1, angle0: int = -1, angle1: int = -1, color: int = 0)
+        :param int x: horizontal position of the cursor (default 0)
+        :param int y: vertical position of the cursor (default 0)
 
-    Draw a filled elliptical arc.
+        UiFlow2 Code Block:
 
-    - ``x, y`` Center coordinates of the elliptical arc. Default is -1.
-    - ``r0x, r0y`` Radii of the inner ellipse (horizontal and vertical). Default is -1.
-    - ``r1x, r1y`` Radii of the outer ellipse (horizontal and vertical). Default is -1.
-    - ``angle0`` Starting angle of the arc (in degrees). Default is -1.
-    - ``angle1`` Ending angle of the arc (in degrees). Default is -1.
-    - ``color:`` Color in RGB888 format. Default is 0.
+            |setcursor.png|
 
-.. method:: Display.drawQR(text: str = None, x: int = 0, y: int = 0, w: int = 0, version: int = 1)
+        MicroPython Code Block:
 
-    Draw a QR code.
+            .. code-block:: python
 
-    - ``text`` QR code content.
-    - ``x, y`` Starting coordinates for displaying the QR code.
-    - ``w:`` Width of the QR code. Default is 0.
-    - ``version`` QR code version. Default is 1.
+                Display.setCursor(10, 20)
 
-    **Example**:
+    .. method:: clear(color)
 
-    Generate and display a QR code with the content "hello":
+        Clear the display with a specific color.
 
-    .. code-block:: python
+        :param int color: fill color in RGB888 format (default 0)
 
-        Display.drawQR("Hello", 0, 0, 200)
+        UiFlow2 Code Block:
 
-.. method:: Display.drawPng(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0, scaleX=True, scaleY=False)
+            |clear.png|
 
-    Draw a PNG image.
+        MicroPython Code Block:
 
-    - ``img`` Image file path or opened image data.
-    - ``x, y`` Starting coordinates on the display screen.
-    - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
-    - ``offX, offY`` Offset in the image to start from.
-    - ``scaleX, scaleY`` Whether to scale the image horizontally or vertically.
+            .. code-block:: python
 
-    **Examples**:
+                Display.clear(0xFFFFFF)
 
-    Display a PNG image from a specified path:
+    .. method:: fillScreen(color)
 
-    .. code-block:: python
+        Fill the entire screen with a specified color.
 
-        Display.drawPng("res/img/uiflow.png", 0, 0)
+        :param int color: fill color in RGB888 format (default 0)
 
-    Display a PNG image from read data:
+        UiFlow2 Code Block:
 
-    .. code-block:: python
+            |fillscreen.png|
 
-        img = open("res/img/uiflow.png", "b")
-        img.seek(0)
-        Display.drawPng(img.read(), 0, 100)
-        img.close()
+        MicroPython Code Block:
 
-.. method:: Display.drawJpg(img, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+            .. code-block:: python
 
-    Draw a JPG image.
+                Display.fillScreen(0xFF0000)
 
-    - ``img`` Image file path or opened image data.
-    - ``x, y`` Starting coordinates on the display screen.
-    - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
-    - ``offX, offY`` Offset in the image to start from.
+    .. method:: drawPixel(x, y, color)
 
-.. method:: Display.drawBmp(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+        Draw a single pixel on the screen.
 
-    Draw a BMP image.
+        :param int x: horizontal coordinate of the pixel (default -1)
+        :param int y: vertical coordinate of the pixel (default -1)
+        :param int color: pixel color in RGB888 format (default 0)
 
-    - ``img`` Image file path or opened image data.
-    - ``x, y`` Starting coordinates on the display screen.
-    - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
-    - ``offX, offY`` Offset in the image to start from.
+        UiFlow2 Code Block:
 
-.. method:: Display.drawImage(img: str, x: int = 0, y: int = 0, maxW: int = 0, maxH: int = 0, offX: int = 0, offY: int = 0)
+            |drawpixel.png|
 
-    Draw an image.
+        MicroPython Code Block:
 
-    - ``img`` Image file path or opened image data.
-    - ``x, y`` Starting coordinates on the display screen.
-    - ``maxW, maxH`` Width and height to be drawn. Draws the full image if ≤0.
-    - ``offX, offY`` Offset in the image to start from.
+            .. code-block:: python
 
-    **Example**:
+                Display.drawPixel(50, 50, 0x00FF00)
 
-    Draw an image from the buffer:
+    .. method:: drawCircle(x, y, r, color)
 
-    .. code-block:: python
+        Draw an outline of a circle.
 
-        img = open(img_path)
-        img.seek(0)
-        drawImage(img.read())
+        :param int x: x-coordinate of circle center (default -1)
+        :param int y: y-coordinate of circle center (default -1)
+        :param int r: radius of the circle (default -1)
+        :param int color: circle color in RGB888 format (default 0)
 
-.. method:: Display.drawRawBuf(buf, x: int = 0, y: int = 0, w: int = 0, h: int = 0, len: int = 0, swap: bool = False)
+        UiFlow2 Code Block:
 
-    Draw an image from raw buffer data.
+            |drawcircle.png|
 
-    - ``buf`` Image buffer.
-    - ``x, y`` Starting coordinates on the display screen.
-    - ``w, h`` Width and height of the image.
-    - ``len`` Length of the image data.
-    - ``swap`` Whether to enable inverted display.
+        MicroPython Code Block:
 
-.. method:: Display.print(text: str = None, color: int = 0)
+            .. code-block:: python
 
-    Display a string (no formatting support).
+                Display.drawCircle(60, 60, 20, 0x0000FF)
 
-    - ``text`` Text to display.
-    - ``color`` Color in RGB888 format. Default is 0.
+    .. method:: fillCircle(x, y, r, color)
 
-.. method:: Display.printf(text: str = None)
+        Draw a filled circle.
 
-    Display a formatted string.
+        :param int x: x-coordinate of circle center (default -1)
+        :param int y: y-coordinate of circle center (default -1)
+        :param int r: radius of the circle (default -1)
+        :param int color: fill color in RGB888 format (default 0)
 
-    - ``text`` Text to display with formatting.
+        UiFlow2 Code Block:
 
-.. method:: Display.newCanvas(w: int = 0, h: int = 0, bpp: int = -1, psram: bool = False)
+            |fillcircle.png|
 
-    Create a canvas.
+        MicroPython Code Block:
 
-    - ``w, h`` Width and height of the canvas.
-    - ``bpp`` Color depth. Default is -1.
-    - ``psram`` Whether to use PSRAM. Default is False.
+            .. code-block:: python
 
-    Returns Created canvas object.
+                Display.fillCircle(60, 60, 20, 0x00FFFF)
 
-    **Example**:
+    .. method:: drawEllipse(x, y, rx, ry, color)
 
-    .. code-block:: python
+        Draw an outline of an ellipse.
 
-        w1 = Display.newCanvas(w=100, h=100, bpp=16)
-        w1.drawImage("res/img/uiflow.jpg", 80, 0)
-        w1.push(30, 0)
+        :param int x: x-coordinate of ellipse center (default -1)
+        :param int y: y-coordinate of ellipse center (default -1)
+        :param int rx: horizontal radius (default -1)
+        :param int ry: vertical radius (default -1)
+        :param int color: ellipse color in RGB888 format (default 0)
 
-.. method:: Display.startWrite()
+        UiFlow2 Code Block:
 
-    Start writing to the display.
+            |drawellipse.png|
 
-.. method:: Display.endWrite()
+        MicroPython Code Block:
 
-    End writing to the display.
+            .. code-block:: python
+
+                Display.drawEllipse(80, 40, 30, 20, 0xFF00FF)
+
+    .. method:: fillEllipse(x, y, rx, ry, color)
+
+        Draw a filled ellipse.
+
+        :param int x: x-coordinate of ellipse center (default -1)
+        :param int y: y-coordinate of ellipse center (default -1)
+        :param int rx: horizontal radius (default -1)
+        :param int ry: vertical radius (default -1)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |fillellipse.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillEllipse(80, 40, 30, 20, 0x00FF00)
+
+    .. method:: drawLine(x0, y0, x1, y1, color)
+
+        Draw a line.
+
+        :param int x0: starting x-coordinate (default -1)
+        :param int y0: starting y-coordinate (default -1)
+        :param int x1: ending x-coordinate (default -1)
+        :param int y1: ending y-coordinate (default -1)
+        :param int color: line color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawline.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawLine(10, 10, 100, 100, 0xFF0000)
+
+    .. method:: drawRect(x, y, w, h, color)
+
+        Draw a rectangle.
+
+        :param int x: top-left x-coordinate (default -1)
+        :param int y: top-left y-coordinate (default -1)
+        :param int w: width of rectangle (default -1)
+        :param int h: height of rectangle (default -1)
+        :param int color: rectangle color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawrect.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                display.drawRect(20, 20, 80, 50, 0x00FF00)
+
+    .. method:: fillRect(x, y, w, h, color)
+
+        Draw a filled rectangle.
+
+        :param int x: top-left x-coordinate (default -1)
+        :param int y: top-left y-coordinate (default -1)
+        :param int w: width of rectangle (default -1)
+        :param int h: height of rectangle (default -1)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |fillrect.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillRect(20, 20, 80, 50, 0x0000FF)
+
+    .. method:: drawRoundRect(x, y, w, h, r, color)
+
+        Draw a rounded rectangle.
+
+        :param int x: top-left x-coordinate (default -1)
+        :param int y: top-left y-coordinate (default -1)
+        :param int w: width of rectangle (default -1)
+        :param int h: height of rectangle (default -1)
+        :param int r: corner radius (default -1)
+        :param int color: rectangle color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawroundrect.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawRoundRect(30, 30, 60, 40, 10, 0xFF00FF)
+
+    .. method:: fillRoundRect(x, y, w, h, r, color)
+
+        Draw a filled rounded rectangle.
+
+        :param int x: top-left x-coordinate (default -1)
+        :param int y: top-left y-coordinate (default -1)
+        :param int w: width of rectangle (default -1)
+        :param int h: height of rectangle (default -1)
+        :param int r: corner radius (default -1)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |fillroundrect.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillRoundRect(30, 30, 60, 40, 10, 0x00FFFF)
+
+    .. method:: drawTriangle(x0, y0, x1, y1, x2, y2, color)
+
+        Draw a triangle.
+
+        :param int x0: first vertex x-coordinate (default -1)
+        :param int y0: first vertex y-coordinate (default -1)
+        :param int x1: second vertex x-coordinate (default -1)
+        :param int y1: second vertex y-coordinate (default -1)
+        :param int x2: third vertex x-coordinate (default -1)
+        :param int y2: third vertex y-coordinate (default -1)
+        :param int color: triangle color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawtriangle.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawTriangle(10, 10, 50, 80, 90, 10, 0xFF0000)
+
+    .. method:: fillTriangle(x0, y0, x1, y1, x2, y2, color)
+
+        Draw a filled triangle.
+
+        :param int x0: first vertex x-coordinate (default -1)
+        :param int y0: first vertex y-coordinate (default -1)
+        :param int x1: second vertex x-coordinate (default -1)
+        :param int y1: second vertex y-coordinate (default -1)
+        :param int x2: third vertex x-coordinate (default -1)
+        :param int y2: third vertex y-coordinate (default -1)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |filltriangle.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillTriangle(10, 10, 50, 80, 90, 10, 0x00FF00)
+
+    .. method:: drawArc(x, y, r0, r1, angle0, angle1, color)
+
+        Draw an arc.
+
+        :param int x: center x-coordinate (default -1)
+        :param int y: center y-coordinate (default -1)
+        :param int r0: first radius (default -1)
+        :param int r1: second radius (default -1)
+        :param int angle0: starting angle in degrees (default -1)
+        :param int angle1: ending angle in degrees (default -1)
+        :param int color: arc color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawarc.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawArc(50, 50, 20, 30, 0, 180, 0xFF0000)
+
+    .. method:: fillArc(x, y, r0, r1, angle0, angle1, color)
+
+        Draw a filled arc.
+
+        :param int x: center x-coordinate (default -1)
+        :param int y: center y-coordinate (default -1)
+        :param int r0: first radius (default -1)
+        :param int r1: second radius (default -1)
+        :param int angle0: starting angle in degrees (default -1)
+        :param int angle1: ending angle in degrees (default -1)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |fillarc.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillArc(50, 50, 20, 30, 0, 180, 0x00FF00)
+
+    .. method:: drawEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
+
+        Draw an elliptical arc.
+
+        :param int x: center x-coordinate (default -1)
+        :param int y: center y-coordinate (default -1)
+        :param int r0x: first horizontal radius (default -1)
+        :param int r1x: second horizontal radius (default -1)
+        :param int r0y: first vertical radius (default -1)
+        :param int r1y: second vertical radius (default -1)
+        :param int angle0: starting angle in degrees (default -1)
+        :param int angle1: ending angle in degrees (default 0)
+        :param int color: arc color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawellipsearc.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0xFF00FF)
+
+    .. method:: fillEllipseArc(x, y, r0x, r1x, r0y, r1y, angle0, angle1, color)
+
+        Draw a filled elliptical arc.
+
+        :param int x: center x-coordinate (default -1)
+        :param int y: center y-coordinate (default -1)
+        :param int r0x: first horizontal radius (default -1)
+        :param int r1x: second horizontal radius (default -1)
+        :param int r0y: first vertical radius (default -1)
+        :param int r1y: second vertical radius (default -1)
+        :param int angle0: starting angle in degrees (default -1)
+        :param int angle1: ending angle in degrees (default 0)
+        :param int color: fill color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |fillellipsearc.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.fillEllipseArc(50, 50, 20, 40, 10, 30, 0, 180, 0x00FFFF)
+
+    .. method:: drawQR(text, x, y, w, version)
+
+        Draw a QR code.
+
+        :param str text: QR code content
+        :param int x: x-coordinate to display (default 0)
+        :param int y: y-coordinate to display (default 0)
+        :param int w: QR code width (default 0)
+        :param int version: QR code version (default 1)
+
+        UiFlow2 Code Block:
+
+            |drawqr.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawQR("Hello", 0, 0, 200)
+
+    .. method:: drawPng(img, x, y, maxW, maxH, offX, offY, scaleX, scaleY)
+
+        Draw a PNG image.
+
+        :param str img: image path or data
+        :param int x: display x-coordinate (default 0)
+        :param int y: display y-coordinate (default 0)
+        :param int maxW: max width to draw (default 0)
+        :param int maxH: max height to draw (default 0)
+        :param int offX: x-offset in image (default 0)
+        :param int offY: y-offset in image (default 0)
+        :param bool scaleX: scale horizontally (default True)
+        :param bool scaleY: scale vertically (default False)
+
+        UiFlow2 Code Block:
+
+            |drawpng.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawPng("res/img/uiflow.png", 0, 0)
+
+        Example:
+
+            .. code-block:: python
+
+                Display.drawPng("res/img/uiflow.png", 0, 0)
+                img = open("res/img/uiflow.png", "b")
+                img.seek(0)
+                Display.drawPng(img.read(), 0, 100)
+                img.close()
+
+    .. method:: drawJpg(img, x, y, maxW, maxH, offX, offY)
+
+        Draw a JPG image.
+
+        :param img: image path or data
+        :param int x: display x-coordinate (default 0)
+        :param int y: display y-coordinate (default 0)
+        :param int maxW: max width to draw (default 0)
+        :param int maxH: max height to draw (default 0)
+        :param int offX: x-offset in image (default 0)
+        :param int offY: y-offset in image (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawjpg.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+
+        Example:
+
+            .. code-block:: python
+
+                Display.drawJpg("res/img/uiflow.jpg", 0, 0)
+                img = open("res/img/uiflow.jpg", "b")
+                img.seek(0)
+                Display.drawJpg(img.read(), 0, 100)
+                img.close()
+
+    .. method:: drawBmp(img, x, y, maxW, maxH, offX, offY)
+
+        Draw a BMP image.
+
+        :param img: image path or data
+        :param int x: display x-coordinate (default 0)
+        :param int y: display y-coordinate (default 0)
+        :param int maxW: max width to draw (default 0)
+        :param int maxH: max height to draw (default 0)
+        :param int offX: x-offset in image (default 0)
+        :param int offY: y-offset in image (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawbmp.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+
+        Example:
+
+            .. code-block:: python
+
+                Display.drawBmp("res/img/uiflow.bmp", 0, 0)
+                img = open("res/img/uiflow.bmp", "b")
+                img.seek(0)
+                Display.drawBmp(img.read(), 0, 100)
+                img.close()
+
+    .. method:: drawImage(img, x, y, maxW, maxH, offX, offY)
+
+        Draw an image.
+
+        :param img: image path or data
+        :param int x: display x-coordinate (default 0)
+        :param int y: display y-coordinate (default 0)
+        :param int maxW: max width to draw (default 0)
+        :param int maxH: max height to draw (default 0)
+        :param int offX: x-offset in image (default 0)
+        :param int offY: y-offset in image (default 0)
+
+        UiFlow2 Code Block:
+
+            |drawimage.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                img = open("res/img/uiflow.jpg", "b")
+
+        Example:
+
+            .. code-block:: python
+
+                img = open("res/img/uiflow.jpg", "b")
+                img.seek(0)
+                Display.drawImage(img.read(), 0, 0)
+                img.close()
+
+    .. method:: drawRawBuf(buf, x, y, w, h, len, swap)
+
+        Draw an image from raw buffer data.
+
+        :param buf: image buffer
+        :param int x: display x-coordinate (default 0)
+        :param int y: display y-coordinate (default 0)
+        :param int w: image width (default 0)
+        :param int h: image height (default 0)
+        :param int len: length of image data (default 0)
+        :param bool swap: inverted display (default False)
+
+        UiFlow2 Code Block:
+
+            |drawrawbuf.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.drawRawBuf(raw_buf, 0, 0, 100, 100, len(raw_buf), swap=False)
+
+        Example:
+
+            .. code-block:: python
+
+                width, height = 40, 30
+                green565 = 0x07E0
+                raw_buf = bytearray(width * height * 2)
+                for i in range(width * height):
+                    raw_buf[2*i]   = (green565 >> 8) & 0xFF
+                    raw_buf[2*i+1] = green565 & 0xFF
+                Display.drawRawBuf(raw_buf, 100, 100, width, height, len(raw_buf), swap=False)
+
+    .. method:: print(text, color)
+
+        Display a string (no formatting support).
+
+        :param str text: text to display
+        :param int color: color in RGB888 format (default 0)
+
+        UiFlow2 Code Block:
+
+            |print.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.print("Hello World", color=0xFF0000)
+
+    .. method:: printf(text)
+
+        Display a formatted string.
+
+        :param str text: text to display with formatting
+
+        UiFlow2 Code Block:
+
+            |printf.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.printf("Value: %d" % 100)
+
+    .. method:: newCanvas(w, h, bpp, psram)
+
+        Create a canvas.
+
+        :param int w: canvas width
+        :param int h: canvas height
+        :param int bpp: color depth (default -1)
+        :param bool psram: use PSRAM (default False)
+        :returns: created canvas object
+
+        UiFlow2 Code Block:
+
+            |newcanvas.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                w1 = Display.newCanvas(w=100, h=100, bpp=16)
+
+        Example:
+
+            .. code-block:: python
+
+                w1 = Display.newCanvas(w=100, h=100, bpp=16)
+                w1.drawImage("res/img/uiflow.jpg", 80, 0)
+                w1.push(30, 0)
+
+    .. method:: startWrite()
+
+        Start writing to the display.
+
+        UiFlow2 Code Block:
+
+            |startwrite.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.startWrite()
+
+        Example:
+
+            .. code-block:: python
+
+                Display.startWrite()
+                Display.drawPixel(10, 10, 0xFF0000)
+                Display.endWrite()
+
+    .. method:: endWrite()
+
+        End writing to the display.
+
+        UiFlow2 Code Block:
+
+            |endwrite.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Display.endWrite()
+
