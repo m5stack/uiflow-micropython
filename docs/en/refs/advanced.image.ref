@@ -12,6 +12,20 @@
 .. |snapshot.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/image/snapshot.png
 .. |show.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/image/show.png
 
+.. |find_qrcodes.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/find_qrcodes.png
+.. |corners.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/corners.png
+.. |rect.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/rect.png
+.. |x.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/x.png
+.. |y.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/y.png
+.. |w.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/w.png
+.. |h.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/h.png
+.. |payload.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/payload.png
+.. |version.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/version.png
+.. |ecc_level.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/ecc_level.png
+.. |mask.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/mask.png
+.. |eci.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/qrcode/eci.png
+.. |cores3_image_find_qrcode_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/advanced/openmv/image_find_qrcode_example.png
+
 
 .. |cores3_example_draw_test.m5f2| raw:: html
 
@@ -20,4 +34,13 @@
         target="_blank"
     >
         cores3_example_draw_test.m5f2
+    </a> 
+
+.. |cores3_image_find_qrcode_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/advanced/image/cores3_image_find_qrcode_example.m5f2"
+        target="_blank"
+    >
+        cores3_image_find_qrcode_example.m5f2
     </a> 

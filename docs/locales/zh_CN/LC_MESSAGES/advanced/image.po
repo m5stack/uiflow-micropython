@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 17:26+0800\n"
+"POT-Creation-Date: 2025-09-02 09:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,268 +20,726 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/advanced/image.rst:2 ee4bf22e05eb47b786085e7077ef7f7d
+#: ../../en/advanced/image.rst:2 ee9e434e946c430c84047af3256f3a54
 msgid "image"
 msgstr ""
 
-#: ../../en/advanced/image.rst:6 ac9cc9cbcd654cfd97c4dfff79a3d6ec
+#: ../../en/advanced/image.rst:6 d37210f151d145d1939185bd0dd468ca
 msgid "This module is only applicable to the CoreS3 Controller"
 msgstr "当前模块只适用于 CoreS3 主机"
 
-#: ../../en/advanced/image.rst:12 e3dab7ec026f4655bfa578e4e8ef7144
-msgid "Micropython Example"
-msgstr "Micropython 案例"
+#: ../../en/advanced/image.rst:10 4f83b87722d140ce8a27ae5c2d534e1b
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/advanced/image.rst:15 ../../en/advanced/image.rst:25
-#: 393726024e9043cfa0ae22c9f086f3b2 885040fac4cc4b43b544250aef319906
+#: ../../en/advanced/image.rst:13 ../../en/advanced/image.rst:46
+#: bf25eb8c81a24ab7949da15771169f38
 msgid "draw test"
 msgstr "绘图测试"
 
-#: ../../en/advanced/image.rst:22 2de7e679b9f947868c69ee79cf030c9f
-msgid "UIFlow2.0 Example"
-msgstr ""
+#: ../../en/advanced/image.rst:15 110b7ad814ba4291bb88764cb183d5a6
+msgid "Open the |cores3_example_draw_test.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_example_draw_test.m5f2| 项目。"
 
-#: ../../en/advanced/image.rst:27 16c38ffcb50644508a39eae531a32942
+#: ../../en/advanced/image.rst:17 4958410910f54d3ab1174c6d86360e4c
+msgid ""
+"This example captures an image from the camera and demonstrates how to "
+"draw text and basic shapes on it."
+msgstr "此示例从摄像头拍摄图像，并演示如何在其上绘制文本和基本图形。"
+
+#: ../../en/advanced/image.rst:19 ../../en/advanced/image.rst:34
+#: ../../en/advanced/image.rst:73 ../../en/advanced/image.rst:90
+#: ../../en/advanced/image.rst:109 ../../en/advanced/image.rst:126
+#: ../../en/advanced/image.rst:143 ../../en/advanced/image.rst:168
+#: ../../en/advanced/image.rst:194 ../../en/advanced/image.rst:219
+#: ../../en/advanced/image.rst:243 ../../en/advanced/image.rst:261
+#: ../../en/advanced/image.rst:282 ../../en/advanced/image.rst:299
+#: ../../en/advanced/image.rst:316 ../../en/advanced/image.rst:333
+#: ../../en/advanced/image.rst:350 ../../en/advanced/image.rst:367
+#: ../../en/advanced/image.rst:384 ../../en/advanced/image.rst:401
+#: ../../en/advanced/image.rst:420 ../../en/advanced/image.rst:439
+#: ../../en/advanced/image.rst:458 ../../en/advanced/image.rst:499
+#: 2656e05a96f148918070cb719c316ad8 710bbaaf4f484348a682277f1e527a47
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块:"
+
+#: ../../en/advanced/image.rst:21 4e9270d214aa49cca575bb0dfaf27b93
 msgid "|image_draw_example.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:7 70a3fb541c8a4f979fce702018f0e617
+#: ../../en/refs/advanced.image.ref:7 c5e4cf7d1dcc419e845767d710bf7796
 msgid "image_draw_example.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:31 6f7448cdece94e16a4f4cd64d8d8ad18
-msgid "|cores3_example_draw_test.m5f2|"
+#: ../../en/advanced/image.rst:23 ../../en/advanced/image.rst:38
+#: 0fbca08cafea4466a3efa81b00735ee6 511c7016e4514a198d882adc1f519794
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/advanced/image.rst:25 ../../en/advanced/image.rst:40
+#: b7197fc9687a4f5790e227fb3f7a68e4 e8fe1dd0aea346e3a83354bd239969af
+msgid "None"
 msgstr ""
 
-#: ../../en/advanced/image.rst:34 2b540bcb5bbf43efa57f2ae993419a22
-msgid "class image.Image"
+#: ../../en/advanced/image.rst:28 ../../en/advanced/image.rst:53
+#: edcd4964df974cd29cb8366e675408ff
+msgid "find qrcode"
+msgstr "查找二维码"
+
+#: ../../en/advanced/image.rst:30 2a260c5648e445fdaaf84fcf5d988866
+msgid "Open the |cores3_image_find_qrcode_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_image_find_qrcode_example.m5f2| 项目。"
+
+#: ../../en/advanced/image.rst:32 9df40b5efde14c2687662807c056bb92
+msgid ""
+"This example captures images from the camera, detects QR codes, and draws"
+" their bounding boxes and decoded payload text on the LCD."
+msgstr "此示例从摄像头拍摄图像，检测二维码，并在 LCD 上绘制其边界框和解码后的文本。"
+
+#: ../../en/advanced/image.rst:36 752391eef0ff482cae40f1d83d53e141
+msgid "|cores3_image_find_qrcode_example.png|"
 msgstr ""
 
-#: ../../en/advanced/image.rst:35 2fe3ddfd25d64a6093f304f63d852d28
-msgid "The line object is returned by `camera.snapshot()`."
+#: ../../en/refs/advanced.image.ref:28 194468293f69448692285c301c78dd2c
+msgid "cores3_image_find_qrcode_example.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:43 9d15155a50be4487b20e1b85062dccba
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/advanced/image.rst:60 ec0bf8f00592459abf3b56e5f5a08e14
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/advanced/image.rst:64 5b94bc825b8b44878d86a21c0fe2d258
+msgid "The image.Image object is returned by `camera.snapshot()`."
 msgstr "``image.Image`` 对象由 `camera.snapshot()` 返回."
 
-#: ../../en/advanced/image.rst:38 d265f707bb8d4be4928f48c7608180f8
-msgid "Basic Methods"
-msgstr ""
-
-#: ../../en/advanced/image.rst:42 f8bbfb9f358f495ba4a5ded17b2dde06
+#: ../../en/advanced/image.rst:68 0278e0c555434a69bdbf363b3ce3c3bb
 msgid "Returns the image width in pixels."
 msgstr "返回图像的宽度（以像素为单位）。"
 
-#: ../../en/advanced/image.rst:44 ../../en/advanced/image.rst:52
-#: ../../en/advanced/image.rst:60 ../../en/advanced/image.rst:68
-#: ../../en/advanced/image.rst:76 ../../en/advanced/image.rst:97
-#: ../../en/advanced/image.rst:116 ../../en/advanced/image.rst:135
-#: ../../en/advanced/image.rst:158 ../../en/advanced/image.rst:189
-#: 1ba2b755d2984b4fbe7b70469a4957d4 33013c866cd94672a9e92de291019465
-#: 3bd044c0d20749408235cba0081ab5d5 3d9fedfde9a94e819ab6c4fcb9de6271
-#: 5907d01216aa4276b2e6b4ebad37f82c 66480c95cea04b3fb914650f032ede38
-#: 7868b23b76e44da58a82afc78aab7f16 7be962d6a8e2460a81716adbec2d2381
-#: c0c9b2445f744e9f844b98cf8d98844b c43764dca7614bfba7ec67ec0a881764
-msgid "UIFlow2.0"
+#: ../../en/advanced/image.rst 589332a44e9a48dcbffeb253bb16d711
+msgid "returns width"
 msgstr ""
 
-#: ../../en/advanced/image.rst:46 a0a2778d4acf463780ad6332a970e37d
+#: ../../en/advanced/image.rst:70 6a9549b3ad5d4095bde359511e7733a6
+msgid "image width."
+msgstr ""
+
+#: ../../en/advanced/image.rst fc6baf1a54f54f1a8d1da81400327402
+msgid "return type"
+msgstr ""
+
+#: ../../en/advanced/image.rst:71 ../../en/advanced/image.rst:88
+#: ../../en/advanced/image.rst:107 ../../en/advanced/image.rst:124
+#: ../../en/advanced/image.rst:314 ../../en/advanced/image.rst:331
+#: ../../en/advanced/image.rst:348 ../../en/advanced/image.rst:365
+#: ../../en/advanced/image.rst:399 ../../en/advanced/image.rst:418
+#: ../../en/advanced/image.rst:437 ../../en/advanced/image.rst:456
+#: ../../en/advanced/image.rst:473 ../../en/advanced/image.rst:480
+#: ../../en/advanced/image.rst:486 ../../en/advanced/image.rst:492
+#: 32508641492e42a39fd9a081d162cc99 4938587c1aca460b9394bc273c2f4888
+#: 86adb6ec02504e5b84b0d3de26024b39 9ce97c68c18745609412d230d87d1a5f
+#: fe1a31bc5dac4054b64c11cf12920e2a
+msgid "int"
+msgstr ""
+
+#: ../../en/advanced/image.rst:75 c3e0b3d8cc77475b9d7f4419398dd5a3
 msgid "|width.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:1 fbc07c7112de4bb2b1038e494c3aa60d
+#: ../../en/refs/advanced.image.ref:1 0d3f52dd61914798ba7be499eb16a727
 msgid "width.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:50 25304f03dc8147e8b5134e822b26d9ab
+#: ../../en/advanced/image.rst:77 ../../en/advanced/image.rst:94
+#: ../../en/advanced/image.rst:113 ../../en/advanced/image.rst:130
+#: ../../en/advanced/image.rst:147 ../../en/advanced/image.rst:172
+#: ../../en/advanced/image.rst:198 ../../en/advanced/image.rst:223
+#: ../../en/advanced/image.rst:247 ../../en/advanced/image.rst:265
+#: ../../en/advanced/image.rst:286 ../../en/advanced/image.rst:303
+#: ../../en/advanced/image.rst:320 ../../en/advanced/image.rst:337
+#: ../../en/advanced/image.rst:354 ../../en/advanced/image.rst:371
+#: ../../en/advanced/image.rst:388 ../../en/advanced/image.rst:405
+#: ../../en/advanced/image.rst:424 ../../en/advanced/image.rst:443
+#: ../../en/advanced/image.rst:462 821b8793be07424b995eb4fa659851c4
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/advanced/image.rst:85 a5cc488a444a49d5be4fabfc59f93506
 msgid "Returns the image height in pixels."
 msgstr "返回图像的高度（以像素为单位）。"
 
-#: ../../en/advanced/image.rst:54 c7899c7acd7f4e86930369e30529fb19
+#: ../../en/advanced/image.rst 1e9c3c0faaeb4f49b869d78b6492a082
+msgid "returns height"
+msgstr ""
+
+#: ../../en/advanced/image.rst:87 968141dd80b44945b8c2a3a92a6125ff
+msgid "image height."
+msgstr ""
+
+#: ../../en/advanced/image.rst:92 7d9366955bb640a3a441a6aac7088cba
 msgid "|height.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:2 ada8c480d57344188a420417694284b8
+#: ../../en/refs/advanced.image.ref:2 6367a5535d364fc1a1ee7fc4ab2cf99c
 msgid "height.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:58 f712ef47acea4ab68e3818d062d95de0
-msgid "Returns the image format"
+#: ../../en/advanced/image.rst:102 b722b7ed4b814452b8a2aeb25bb1ae8d
+msgid "Returns the image format."
 msgstr "返回图像的格式"
 
-#: ../../en/advanced/image.rst:62 4d28d37ac42248c295f24e8cb26da936
+#: ../../en/advanced/image.rst:104 68eb35d1f5804d82a9b30ae5b2650044
+msgid ""
+"Returns image.GRAYSCALE for grayscale images, image.RGB565 for RGB565 "
+"images, image.BAYER for bayer pattern images, and image.JPEG for JPEG "
+"images."
+msgstr "返回值为 image.GRAYSCALE（灰度图）、image.RGB565（RGB565 图）、image.BAYER（Bayer 图像）、或 "
+"image.JPEG（JPEG 图像）。"
+
+#: ../../en/advanced/image.rst 61294bf986c441079aa97f799c9b7252
+msgid "returns format"
+msgstr ""
+
+#: ../../en/advanced/image.rst:106 1512263a59e142d28520bf73e3b0e249
+msgid "image format."
+msgstr ""
+
+#: ../../en/advanced/image.rst:111 d1155712ca4f4fd1b8b42b5df24dfabb
 msgid "|format.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:3 23c15a3da6ec40619b4e7d40077bd8b0
+#: ../../en/refs/advanced.image.ref:3 57c65c5bf9ee429989d202e6cb134b3e
 msgid "format.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:66 a71cb5a4f0c047cc9f662d1882def710
+#: ../../en/advanced/image.rst:121 083884928c4b4542ad1db5690dbde955
 msgid "Returns the image size in bytes."
 msgstr "返回图像的大小（以字节为单位）。"
 
-#: ../../en/advanced/image.rst:70 67fceb72b26742518a7300bb76439e93
+#: ../../en/advanced/image.rst 2525b6f7bb80474ba54f5063efc40abc
+msgid "returns size"
+msgstr ""
+
+#: ../../en/advanced/image.rst:123 8582a5ff32ac4e618da1423df545e597
+msgid "image size in bytes."
+msgstr "图像大小，单位：字节"
+
+#: ../../en/advanced/image.rst:128 0eb70006a55145b896b835498a3bd0bb
 msgid "|size.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:5 12d6f83317e541dd9d601ebfc32a4b23
+#: ../../en/refs/advanced.image.ref:5 04c2319fdba344808a75d098101254f3
 msgid "size.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:74 c5b734979560409da5ba55074e29f67b
+#: ../../en/advanced/image.rst:138 18e34b54e689444da7f03beed0c01d6c
 msgid ""
 "Returns a bytearray object that points to the image data for byte-level "
 "read/write access."
 msgstr "返回一个 bytearray 对象，该对象指向图像数据，允许进行字节级别的读写访问。"
 
-#: ../../en/advanced/image.rst:78 5fb0d6cf079e42e98a1ecac81fc736b6
+#: ../../en/advanced/image.rst 00e6ef5a3b624f1e9d4dbda20df9e3b1
+msgid "returns data"
+msgstr ""
+
+#: ../../en/advanced/image.rst:140 595d720c96334b20b58d3faa90953bc6
+msgid "image data buffer."
+msgstr ""
+
+#: ../../en/advanced/image.rst:141 84dda8f8b6214a8ba4603dede3d7de64
+msgid "bytearray"
+msgstr ""
+
+#: ../../en/advanced/image.rst:145 c8f7d4945ca142ab970bbd40dca523c6
 msgid "|bytearray.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:6 f87985c4bb9e4fa48a273e3aeb8aa7c9
+#: ../../en/refs/advanced.image.ref:6 994c303fcbec457da2b58a7a32e6ee36
 msgid "bytearray.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:82 5fda9afdf9c94752bbceabb5b8c234ee
-msgid "Drawing Methods"
-msgstr ""
-
-#: ../../en/advanced/image.rst:86 c551e18cbb044d2388a65589670550df
+#: ../../en/advanced/image.rst:155 bb8f6d9bb7454e148fad0030938a34d9
 msgid ""
 "Draws a line from (x0, y0) to (x1, y1) on the image. You may either pass "
 "x0, y0, x1, y1 separately or as a tuple (x0, y0, x1, y1)."
-msgstr "在图像上绘制一条从 (x0, y0) 到 (x1, y1) 的线段。你可以分别传递 x0, y0, x1, y1，或者将它们作为元组 (x0, y0, x1, y1) 一起传递。"
+msgstr ""
+"在图像上绘制一条从 (x0, y0) 到 (x1, y1) 的线段。你可以分别传递 x0, y0, x1, y1，或者将它们作为元组 (x0, "
+"y0, x1, y1) 一起传递。"
 
-#: ../../en/advanced/image.rst:89 ../../en/advanced/image.rst:106
-#: ../../en/advanced/image.rst:125 ../../en/advanced/image.rst:148
-#: 7597fe3727d74e6686fc38912af2ef2a 8e7fff87b4dd4ddea7c6236685ccc6e2
-#: b32fdbcfbaf74f44abc256e3a63fdb0b cf5b7b6cbba24caaa8913c1dc49bea68
-msgid ""
-"``color`` is an RGB888 tuple for Grayscale or RGB565 images. Defaults to "
-"white. However, you may also pass the underlying pixel value (0-255) for "
-"grayscale images or a RGB565 value for RGB565 images."
-msgstr "``color`` 颜色值 RGB888 格式，可以是 (r, g, b) 元组或整数。"
+#: ../../en/advanced/image.rst 58d43195e29942b8ba090d8b9d5a08d1
+msgid "Parameters"
+msgstr ""
 
-#: ../../en/advanced/image.rst:93 5afde101ae0c480a9e25ac2b4f75337f
-msgid "``thickness`` controls how thick the line is in pixels."
-msgstr "``thickness`` 控制线条的粗细（以像素为单位）。"
+#: ../../en/advanced/image.rst:158 8586cd7790a1454faa5f427d70947cfa
+msgid "start x coordinate."
+msgstr "起始坐标 x"
 
-#: ../../en/advanced/image.rst:95 ../../en/advanced/image.rst:114
-#: ../../en/advanced/image.rst:133 ../../en/advanced/image.rst:155
-#: 2e0b49bfb9d74b39875bd80621bcc006 3d049b022f2d48d596d1fddf547861db
-#: 91a904127e1846a994fd349fac389c78 f7c67126a0c14d3c870d85a0adcb8bb0
-msgid ""
-"Returns the image object so you can call another method using ``.`` "
-"notation."
-msgstr "返回 ``image.Image`` 对象，以便你可以使用 . 表示法调用其他方法。"
+#: ../../en/advanced/image.rst:159 c90835e4e1874fa8b9ab9eaa3c442929
+msgid "start y coordinate."
+msgstr "起始坐标 y"
 
-#: ../../en/advanced/image.rst:99 1a45057613904a83acc52f57a4be9fa9
+#: ../../en/advanced/image.rst:160 faab8f16427d468dbae45ed8431c0beb
+msgid "end x coordinate."
+msgstr "结束坐标 x"
+
+#: ../../en/advanced/image.rst:161 64a8f36b867b490fbed17e639a19557c
+msgid "end y coordinate."
+msgstr "结束坐标 y"
+
+#: ../../en/advanced/image.rst:162 ../../en/advanced/image.rst:187
+#: ../../en/advanced/image.rst:212 ../../en/advanced/image.rst:237
+#: 2817b8961b09416e95c72917aaf4eac5
+msgid "RGB888 tuple, grayscale value (0-255), or RGB565 value. Defaults to white."
+msgstr "RGB888 元组、灰度值 (0–255)，或 RGB565 值。默认为白色。"
+
+#: ../../en/advanced/image.rst:163 1a10a3c96e7642f796cc81dd54611610
+msgid "line thickness in pixels. Defaults to 1."
+msgstr "线条厚度，单位为像素。默认值为 1。"
+
+#: ../../en/advanced/image.rst 7827bfae4b8244909ce80eb2ba1927e0
+msgid "returns self"
+msgstr ""
+
+#: ../../en/advanced/image.rst:165 ../../en/advanced/image.rst:191
+#: ../../en/advanced/image.rst:216 ../../en/advanced/image.rst:240
+#: cfbf48a03762439d9f1d3b2d46cc68d2
+msgid "the image object for method chaining."
+msgstr "图像对象，可用于链式调用方法。"
+
+#: ../../en/advanced/image.rst:166 ../../en/advanced/image.rst:192
+#: ../../en/advanced/image.rst:217 ../../en/advanced/image.rst:241
+#: bf79bdb73e9a47aa81adc18c84f1fae1
+msgid "Image"
+msgstr ""
+
+#: ../../en/advanced/image.rst:170 3d80adbfe63a4169bb1d3a4a79f26d90
 msgid "|draw_line.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:10 d237c67d052541cf977e0f8ead03dc67
+#: ../../en/refs/advanced.image.ref:10 9dc8c86f5f1847539e517446d08ec76e
 msgid "draw_line.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:103 128ab18b172449db868c24c4270ff803
+#: ../../en/advanced/image.rst:180 9dab6eebf9464ba2aea3de8f491c2b7d
 msgid ""
 "Draws a rectangle on the image. You may either pass x, y, w, h separately"
 " or as a tuple (x, y, w, h)."
 msgstr "在图像上绘制一个矩形。你可以分别传递 x, y, w, h，或者将它们作为元组 (x, y, w, h) 一起传递。"
 
-#: ../../en/advanced/image.rst:110 c06db4eebf6c4e7f980a49639d8f1171
-msgid "``thickness`` controls how thick the lines are in pixels."
-msgstr "``thickness`` 控制线条的粗细（以像素为单位）。"
+#: ../../en/advanced/image.rst:183 a19222e41f8748c39109e967fe199249
+msgid "top-left x coordinate."
+msgstr "左上角坐标 x"
 
-#: ../../en/advanced/image.rst:112 56b2897d03a6491fa7a29da28574d58b
-msgid "``fill`` set to True to fill the rectangle."
-msgstr "``fill`` 是否填充。"
+#: ../../en/advanced/image.rst:184 d9d65954796341de98efe8d5533ecbe8
+msgid "top-left y coordinate."
+msgstr "左上角坐标 y"
 
-#: ../../en/advanced/image.rst:118 a6aa19b86bef482894c887e6f6b4d137
+#: ../../en/advanced/image.rst:185 40f18d06c3d64234a973b8f1392f2b6c
+msgid "rectangle width."
+msgstr "矩形宽"
+
+#: ../../en/advanced/image.rst:186 5c42cc21597d4231a082432a1eb7e222
+msgid "rectangle height."
+msgstr "矩形高"
+
+#: ../../en/advanced/image.rst:188 ../../en/advanced/image.rst:213
+#: d961529f4c4148bdb6bbdf7a9db0b2bf
+msgid "border thickness in pixels. Defaults to 1."
+msgstr "边框厚度，单位为像素。默认值为 1。"
+
+#: ../../en/advanced/image.rst:189 81ff9f7efa364a2e8aec7156d327a800
+msgid "set True to fill the rectangle. Defaults to False."
+msgstr "设置为 True 以填充矩形。默认值为 False。"
+
+#: ../../en/advanced/image.rst:196 da7dcbf493dd4f77a70e32221bd9e3da
 msgid "|draw_rectangle.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:9 ac018a76bd5541c9915e7387c80c89a4
+#: ../../en/refs/advanced.image.ref:9 194468293f69448692285c301c78dd2c
 msgid "draw_rectangle.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:122 ecb49d9d4c1043c2996f5e49189b00bd
+#: ../../en/advanced/image.rst:206 33197f0565a34a76bf14fb5fa9252ecb
 msgid ""
 "Draws a circle on the image. You may either pass x, y, radius separately "
 "or as a tuple (x, y, radius)."
 msgstr "在图像上绘制一个圆形。你可以分别传递 x, y, radius，或者将它们作为元组 (x, y, radius) 一起传递。"
 
-#: ../../en/advanced/image.rst:129 2f6a30e3deeb46c4a6da3b4797255d53
-msgid "``thickness`` controls how thick the edges are in pixels."
-msgstr "``thickness`` 厚度”控制边缘的像素厚度。 "
+#: ../../en/advanced/image.rst:209 526a17f01e804964ab1ba35928e1b253
+msgid "circle center x coordinate."
+msgstr "圆心坐标 x"
 
-#: ../../en/advanced/image.rst:131 105a1cec0c9a490e8432b4d5fc5510d5
-msgid "``fill`` set to True to fill the circle."
-msgstr "- ``fill`` 是否填充。"
+#: ../../en/advanced/image.rst:210 eced48f92cea4108be8259c39e01ed84
+msgid "circle center y coordinate."
+msgstr "圆心坐标 y"
 
-#: ../../en/advanced/image.rst:137 37076ba5b66a4cdb9e4528e33c781611
+#: ../../en/advanced/image.rst:211 acff0df186ac47dd9215539d718491e3
+msgid "circle radius."
+msgstr "圆半径"
+
+#: ../../en/advanced/image.rst:214 b4cab23f06054ccb90c064ff44e6f7db
+msgid "set True to fill the circle. Defaults to False."
+msgstr "设置为 True 以填充圆形。默认值为 False。"
+
+#: ../../en/advanced/image.rst:221 a0f77cfe0ad34f0194d28752cc6e269d
 msgid "|draw_circle.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:11 d0459a44daa346929aff6b338453fafb
+#: ../../en/refs/advanced.image.ref:11 acd6058addf442fea84a864e4f03b5a6
 msgid "draw_circle.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:142 4b7bf3c7bb6e480bb9dffb0587ce95fa
+#: ../../en/advanced/image.rst:231 009d7aee129b4c99a67a95f6087419d0
 msgid ""
 "Draws 8x16 text starting at location (x, y) in the image. You may either "
 "pass x, y separately or as a tuple (x, y)."
 msgstr "在图像上绘制从位置 (x, y) 开始的 8x16 文本。你可以分别传递 x, y，或者将它们作为元组 (x, y) 一起传递。"
 
-#: ../../en/advanced/image.rst:145 2a937d934552420aa366eb29661ce3de
-msgid ""
-"``text`` is a string to write to the image. ``\\n``, ``\\r``, and "
-"``\\r\\n`` line endings move the cursor to the next line."
-msgstr "``text`` 是要写入图像的字符串。``\n``、``\r`` 和 ``\r\n`` 换行符将光标移动到下一行。"
+#: ../../en/advanced/image.rst:234 ee9b4548b6794eb283b2e03a3dbeea70
+msgid "text start x coordinate."
+msgstr "文本起始坐标 x"
 
-#: ../../en/advanced/image.rst:152 462401bf084740a2a2fef098e148359c
-msgid ""
-"``scale`` may be increased to increase/decrease the size of the text on "
-"the image. You can pass greater than 0 integer or floating point values."
-msgstr "``scale`` 可增加或减少图像中文本的大小。你可以传递大于 0 的整数或浮动值。"
+#: ../../en/advanced/image.rst:235 bcc5e28ccde34188b18850a408acdd06
+msgid "text start y coordinate."
+msgstr "文本起始坐标 y"
 
-#: ../../en/advanced/image.rst:160 1f2443a1311d40ef8def4c7f791c3a03
+#: ../../en/advanced/image.rst:236 54cde5f4c87046f9ade7de965d2b7e4c
+msgid "text to draw. Supports ``\\n``, ``\\r``, ``\\r\\n`` line breaks."
+msgstr "要绘制的文本。支持换行符 ``\\n``, ``\\r``, ``\\r\\n``。"
+
+#: ../../en/advanced/image.rst:238 9b25c0f2f1d449feafa4b10a60f5d0db
+msgid "scale factor to resize text. Integer or float > 0. Defaults to 1."
+msgstr "文本缩放因子，可用于调整文字大小。接受大于 0 的整数或浮点数。默认值为 1。"
+
+#: ../../en/advanced/image.rst:245 4cab100098c04749898b4b1aef50c676
 msgid "|draw_string.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:8 c1eda54bd4c242de968f12a94e3ab041
+#: ../../en/refs/advanced.image.ref:8 d6febf6a9e0c46ed8cac99784cb749f9
 msgid "draw_string.png"
 msgstr ""
 
-#: ../../en/advanced/image.rst:163 3ec51ba93f5641cfaf8e5c3f3cd286c8
+#: ../../en/advanced/image.rst:255 da9442f4b3014fb394b1cf67272e4a85
+msgid ""
+"Finds all QR codes returns a list of ``image.qrcode`` objects. Please see"
+" the image.qrcode object for more details."
+msgstr "查找所有二维码，并返回一个包含 ``image.qrcode`` 对象的列表。更多详情请参见 image.qrcode 对象。"
+
+#: ../../en/advanced/image.rst 589332a44e9a48dcbffeb253bb16d711
+msgid "returns qrcodes"
+msgstr ""
+
+#: ../../en/advanced/image.rst:258 af8f20fd84d84dd1b26621906a5384a0
+msgid "list of detected QR codes."
+msgstr "检测到的二维码列表。"
+
+#: ../../en/advanced/image.rst:259 b099bf33fef44883a4d55f3c272cf00d
+msgid "List[image.qrcode]"
+msgstr ""
+
+#: ../../en/advanced/image.rst:263 752391eef0ff482cae40f1d83d53e141
+msgid "|find_qrcodes.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:16 acd6058addf442fea84a864e4f03b5a6
+msgid "find_qrcodes.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:273 fd3f6b1060814bf98c6ae7d332dec9d7
+msgid "Please call ``Image.find_qrcodes()`` to create this object."
+msgstr "请调用 Image.find_qrcodes() 来创建该对象。"
+
+#: ../../en/advanced/image.rst:277 45499c7fb4e141b1968a03e67b8e8eec
+msgid ""
+"Get the 4 corners of the QR code in clockwise order starting from the "
+"top-left."
+msgstr "按顺时针顺序获取二维码的四个角点，从左上角开始。"
+
+#: ../../en/advanced/image.rst 61294bf986c441079aa97f799c9b7252
+msgid "returns corners"
+msgstr ""
+
+#: ../../en/advanced/image.rst:279 98cc911926ef44298fdd75859c0d274f
+msgid "list of 4 (x, y) tuples."
+msgstr "包含 4 个 (x, y) 元组的列表。"
+
+#: ../../en/advanced/image.rst:280 60ba9068176d43389ea1f2714da0e7f9
+msgid "List[Tuple[int, int]]"
+msgstr ""
+
+#: ../../en/advanced/image.rst:284 d1155712ca4f4fd1b8b42b5df24dfabb
+msgid "|corners.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:17 194468293f69448692285c301c78dd2c
+msgid "corners.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:294 bcd20d2cfc3043ca8f785745890241c7
+msgid "Get the bounding box of the QR code."
+msgstr "获取二维码的边界框。"
+
+#: ../../en/advanced/image.rst 7827bfae4b8244909ce80eb2ba1927e0
+msgid "returns rect"
+msgstr ""
+
+#: ../../en/advanced/image.rst:296 6271f81c58734f6598d6410ffdf77b30
+msgid "(x, y, w, h) tuple."
+msgstr "(x, y, w, h) 元组"
+
+#: ../../en/advanced/image.rst:297 747b7a648b8b4cf4b6c73175f7c7cc95
+msgid "Tuple[int, int, int, int]"
+msgstr ""
+
+#: ../../en/advanced/image.rst:301 7d9366955bb640a3a441a6aac7088cba
+msgid "|rect.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:18 57c65c5bf9ee429989d202e6cb134b3e
+msgid "rect.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:311 526a17f01e804964ab1ba35928e1b253
+msgid "Get the bounding box x coordinate."
+msgstr "获取边界框的 x 坐标。"
+
+#: ../../en/advanced/image.rst 2525b6f7bb80474ba54f5063efc40abc
+msgid "returns x"
+msgstr ""
+
+#: ../../en/advanced/image.rst:313 faab8f16427d468dbae45ed8431c0beb
+msgid "the x coordinate."
+msgstr "坐标 x"
+
+#: ../../en/advanced/image.rst:318 0eb70006a55145b896b835498a3bd0bb
+msgid "|x.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:19 57c65c5bf9ee429989d202e6cb134b3e
+msgid "x.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:328 526a17f01e804964ab1ba35928e1b253
+msgid "Get the bounding box y coordinate."
+msgstr "获取边界框的 y 坐标。"
+
+#: ../../en/advanced/image.rst 2525b6f7bb80474ba54f5063efc40abc
+msgid "returns y"
+msgstr ""
+
+#: ../../en/advanced/image.rst:330 64a8f36b867b490fbed17e639a19557c
+msgid "the y coordinate."
+msgstr "坐标 y"
+
+#: ../../en/advanced/image.rst:335 0eb70006a55145b896b835498a3bd0bb
+msgid "|y.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:20 57c65c5bf9ee429989d202e6cb134b3e
+msgid "y.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:345 f1e252a4990a4e14a4339728405dbe42
+msgid "Get the bounding box width."
+msgstr "获取边界框的宽。"
+
+#: ../../en/advanced/image.rst 589332a44e9a48dcbffeb253bb16d711
+msgid "returns w"
+msgstr ""
+
+#: ../../en/advanced/image.rst:347 8732d7ff9e4245c3b7227a356348eb3c
+msgid "the width of the QR code."
+msgstr "二维码宽。"
+
+#: ../../en/advanced/image.rst:352 c3e0b3d8cc77475b9d7f4419398dd5a3
+msgid "|w.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:21 57c65c5bf9ee429989d202e6cb134b3e
+msgid "w.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:362 27d19b63e6df48ef91a8aec5ee847e52
+msgid "Get the bounding box height."
+msgstr "获取边界框的高。"
+
+#: ../../en/advanced/image.rst 589332a44e9a48dcbffeb253bb16d711
+msgid "returns h"
+msgstr ""
+
+#: ../../en/advanced/image.rst:364 cfbf48a03762439d9f1d3b2d46cc68d2
+msgid "the height of the QR code."
+msgstr "二维码高。"
+
+#: ../../en/advanced/image.rst:369 c3e0b3d8cc77475b9d7f4419398dd5a3
+msgid "|h.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:22 0d3f52dd61914798ba7be499eb16a727
+msgid "h.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:379 78c5ac370647434e881f378c3f4a17e5
+msgid "Get the decoded payload string (e.g. URL) from the QR code."
+msgstr "获取二维码解码后的数据字符串（例如 URL）。"
+
+#: ../../en/advanced/image.rst 00e6ef5a3b624f1e9d4dbda20df9e3b1
+msgid "returns payload"
+msgstr ""
+
+#: ../../en/advanced/image.rst:381 db2f784d3fc74ad9af160edf6c7729b6
+msgid "decoded string."
+msgstr ""
+
+#: ../../en/advanced/image.rst:382 cd14bff54b9c494895325082a1e1842c
+msgid "str"
+msgstr ""
+
+#: ../../en/advanced/image.rst:386 3d80adbfe63a4169bb1d3a4a79f26d90
+msgid "|payload.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:23 994c303fcbec457da2b58a7a32e6ee36
+msgid "payload.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:396 6736227f9aeb4b05bd0c3c6f599a71fc
+msgid "Get the QR code version number."
+msgstr "获取二维码版本号。"
+
+#: ../../en/advanced/image.rst 2525b6f7bb80474ba54f5063efc40abc
+msgid "returns version"
+msgstr ""
+
+#: ../../en/advanced/image.rst:398 ecf13c132bcd4f658c33e588b9f7757c
+msgid "QR code version."
+msgstr "二维码版本。"
+
+#: ../../en/advanced/image.rst:403 44fc5752a4a34bfda06739794d9beb85
+msgid "|version.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:24 44eba0823c99432c89764caf1b702a90
+msgid "version.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:413 fee9edd3170843e5990804c73aaf350c
+msgid "Get the QR code ECC (error correction) level."
+msgstr "获取二维码的 ECC（纠错）等级。"
+
+#: ../../en/advanced/image.rst:415 6feaa2d2915f43298338390e1cfea321
+msgid ""
+"ECC levels: L, M, Q, H. Higher levels allow more damage tolerance but "
+"reduce data capacity."
+msgstr "ECC 等级：L、M、Q、H。等级越高，二维码对损坏的容忍度越高，但可存储的数据量会减少。"
+
+#: ../../en/advanced/image.rst 7827bfae4b8244909ce80eb2ba1927e0
+msgid "returns ecc"
+msgstr ""
+
+#: ../../en/advanced/image.rst:417 647cf102869c4c378bf41d6a340503b5
+msgid "ECC level (0~3)."
+msgstr "ECC 等级（0~3）。"
+
+#: ../../en/advanced/image.rst:422 3d80adbfe63a4169bb1d3a4a79f26d90
+msgid "|ecc_level.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:25 194468293f69448692285c301c78dd2c
+msgid "ecc_level.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:432 001dcc6fa72246b69fbde7a44c25cf0d
+msgid "Get the QR code mask pattern (0~7)."
+msgstr "获取二维码的掩码模式（0~7）。"
+
+#: ../../en/advanced/image.rst:434 cd8fa847cb1244a1b1d1c59da365e8d0
+msgid "Mask is used to improve QR readability."
+msgstr "掩码用于提高二维码的可读性。"
+
+#: ../../en/advanced/image.rst 00e6ef5a3b624f1e9d4dbda20df9e3b1
+msgid "returns mask"
+msgstr ""
+
+#: ../../en/advanced/image.rst:436 91dc3c1c66e44c509e12187fe87a0aa3
+msgid "mask pattern ID."
+msgstr "掩码模式 ID。"
+
+#: ../../en/advanced/image.rst:441 0eb70006a55145b896b835498a3bd0bb
+msgid "|mask.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:26 57c65c5bf9ee429989d202e6cb134b3e
+msgid "mask.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:451 d33ccd4bdd3b450c957183454b904c30
+msgid "Get the QR code ECI (Extended Channel Interpretation) value."
+msgstr "获取二维码的 ECI（扩展通道解释）值。"
+
+#: ../../en/advanced/image.rst:453 7e467f93191746e29b1c0e6cc1e31478
+msgid ""
+"ECI indicates the text encoding (e.g. UTF-8, Shift-JIS). ``0`` means ECI "
+"not used."
+msgstr "ECI 表示文本编码（例如 UTF-8、Shift-JIS）。0 表示未使用 ECI。"
+
+#: ../../en/advanced/image.rst 7827bfae4b8244909ce80eb2ba1927e0
+msgid "returns eci"
+msgstr ""
+
+#: ../../en/advanced/image.rst:455 2a14def4e98a4491b49d40d4dfb1df5a
+msgid "ECI value."
+msgstr ""
+
+#: ../../en/advanced/image.rst:460 0eb70006a55145b896b835498a3bd0bb
+msgid "|eci.png|"
+msgstr ""
+
+#: ../../en/refs/advanced.image.ref:27 acd6058addf442fea84a864e4f03b5a6
+msgid "eci.png"
+msgstr ""
+
+#: ../../en/advanced/image.rst:469 7214528470814e45817349ecfded2e21
 msgid "Constants"
 msgstr ""
 
-#: ../../en/advanced/image.rst:168 5d1a7434ab314023aea591bfa1704ce1
+#: ../../en/advanced/image.rst 92236ea2eb51472cbedfe0c9d54a895e
+#: d2d186c696ec4aee846b9d0b48d5d9ab f58744f436074981946af935880c17db
+#: f69c4586430c4e499e801017fe8d5592
+msgid "type"
+msgstr ""
+
+#: ../../en/advanced/image.rst:475 4e50a7ac9b534b57aa2e429c5474a114
 msgid ""
 "RGB565 pixel format. Each pixel is 16-bits, 2-bytes. 5-bits are used for "
 "red, 6-bits are used for green, and 5-bits are used for blue."
-msgstr "RGB565 像素格式。每个像素为 16 位，2 字节。5 位用于红色，6 位用于绿色，5 位用于蓝色。"
+msgstr "RGB565 像素格式。每个像素占 16 位（2 字节）。其中红色占 5 位，绿色占 6 位，蓝色占 5 位。"
 
-#: ../../en/advanced/image.rst:174 77b2a84e2364448c9d1e4ac21b122a92
+#: ../../en/advanced/image.rst:482 7bf04212ffac44a2af1c4e9ab62d5203
 msgid "GRAYSCALE pixel format. Each pixel is 8-bits, 1-byte."
-msgstr "灰度图像像素格式。每个像素为 8 位，1 字节。"
+msgstr "GRAYSCALE 像素格式。每个像素占 8 位（1 字节）。"
 
-#: ../../en/advanced/image.rst:179 18ce7865508d4540ba3f899ebba03219
+#: ../../en/advanced/image.rst:488 52a28e9f99294fd5a377ca4e501eede5
 msgid "A JPEG image."
-msgstr ""
+msgstr "JPEG 图像"
 
-#: ../../en/advanced/image.rst:184 6213c2259ac2432ea2e506da09e3c439
+#: ../../en/advanced/image.rst:494 d0faecbff62144e0910ff24289847eb8
 msgid ""
 "A pixel format that is very easy to jpeg compress. Each pixel is stored "
 "as a grayscale 8-bit Y value followed by alternating 8-bit U/V color "
 "values that are shared between two Y values (8-bits Y1, 8-bits U, 8-bits "
 "Y2, 8-bits V, etc.). Only some image processing methods work with YUV422."
-msgstr "一种非常适合 JPEG 压缩的像素格式。每个像素存储为一个灰度 8 位 Y 值，后跟交替的 8 位 U/V 色彩值，这些值在两个 Y 值之间共享（8 位 Y1，8 位 U，8 位 Y2，8 位 V，依此类推）。只有一些图像处理方法可以与 YUV422 格式兼容。"
+msgstr "一种非常容易进行 JPEG 压缩的像素格式。每个像素存储为 8 位灰度 Y 值，后跟在两个 Y 值之间共享的交替 8 位 U/V 色度值（即 8 位 Y1、8 位 U、8 位 Y2、8 位 V，依此类推）。只有部分图像处理方法支持 YUV422。"
 
-#: ../../en/advanced/image.rst:191 597faf9e0ff440f290a3e053855bf9f2
+#: ../../en/advanced/image.rst:501 d9e7b9b4e7084cf4b7ec3bddac6b68a4
 msgid "|format_option.png|"
 msgstr ""
 
-#: ../../en/refs/advanced.image.ref:4 fdbf90a128bc487abee7636677122783
+#: ../../en/refs/advanced.image.ref:4 396d84d1f80342529f33d0e10b86342e
 msgid "format_option.png"
 msgstr ""
 

@@ -238,6 +238,7 @@ list(APPEND IDF_COMPONENTS
     pedestrian_detect
     human_face_recognition
     esp-code-scanner
+    quirc
 )
 endif()
 
@@ -249,7 +250,6 @@ if(IDF_TARGET STREQUAL "esp32" OR IDF_TARGET STREQUAL "esp32s3")
     list(APPEND IDF_COMPONENTS esp-sr)
     list(APPEND IDF_COMPONENTS esp_codec_dev)
 endif()
-
 
 # Register the main IDF component.
 idf_component_register(
