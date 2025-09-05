@@ -78,3 +78,4 @@ Classes
     spinbox.rst
     switch.rst
     textarea.rst
+    win.rst

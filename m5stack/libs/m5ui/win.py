@@ -6,6 +6,11 @@ from m5ui.base import M5Base
 import lvgl as lv
 import m5ui
 
+try:
+    DPI = lv.DPI_DEF / 3
+except Exception:
+    DPI = 80
+
 
 class M5Win(lv.win):
     """Create a window object.
@@ -69,6 +74,8 @@ class M5Win(lv.win):
 
             |add_title.png|
 
+            |add_title2.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
@@ -116,6 +123,8 @@ class M5Win(lv.win):
 
             |add_text.png|
 
+            |add_text2.png|
+
         MicroPython Code Block:
 
             .. code-block:: python
@@ -139,7 +148,7 @@ class M5Win(lv.win):
         self,
         icon=None,
         text="",
-        w=lv.DPI_DEF // 3,
+        w=DPI,
         bg_c=0x2196F3,
         bg_opa=255,
         text_c=0xFFFFFF,
@@ -162,14 +171,16 @@ class M5Win(lv.win):
         UiFlow2 Code Block:
 
             |add_button.png|
+
             |add_button2.png|
 
         MicroPython Code Block:
 
             .. code-block:: python
 
-                win0.add_button(lv.SYMBOL.BULLET, text="", w=40, bg_c=0x2196F3)
-                win0.add_button(text="btn", w=40, bg_c=0x2196F3, bg_opa=255, text_c=0xFFFFFF, text_opa=255, font=lv.font_montserrat_14)
+                win0.add_button(icon=lv.SYMBOL.BULLET, text_c=0xffffff, text_opa=255, bg_c=0x2196f3, bg_opa=255, font=lv.font_montserrat_14)
+
+                win0.add_button(text='M5', text_c=0xffffff, text_opa=255, bg_c=0x2196f3, bg_opa=255, font=lv.font_montserrat_14)
         """
         _h = lv.pct(100)
         _button = m5ui.M5Button(

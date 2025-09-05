@@ -1,0 +1,876 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-05 16:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/win.rst:4 5620992a311d4cd798d37f5884821191
+msgid "M5Window"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:8 b8ccbd2a8c0c4a3dac3a86a426372fe0
+msgid ""
+"M5Window is a widget that can be used to create windows in the user "
+"interface."
+msgstr "M5Window 是一个可用于在用户界面中创建 window 的组件。"
+
+#: ../../en/m5ui/win.rst:11 4e8b73665c7148a4a0cd8bdf6fb77396
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/win.rst:14 ../../en/m5ui/win.rst:33
+#: 08135837d63d458881799d17bb0e815f 50de28be4c1e47c4a79c784a6db2d2ff
+msgid "window event"
+msgstr "window 事件"
+
+#: ../../en/m5ui/win.rst:16 ce32af2725cf4dda89fcbc523d27fc7c
+msgid "Open the |window_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |window_core2_example.m5f2| 项目。"
+
+#: ../../en/m5ui/win.rst:18 ../../en/m5ui/win.rst:35
+#: 22447cf9be55460685f01d6f0342b647 809aca67853547ab80350babb782b570
+msgid "This example creates a window and associates it with events."
+msgstr "此示例创建一个 window 并将其与事件关联。"
+
+#: ../../en/m5ui/win.rst:20 ../../en/m5ui/win.rst:71 ../../en/m5ui/win.rst:89
+#: ../../en/m5ui/win.rst:115 ../../en/m5ui/win.rst:141
+#: ../../en/m5ui/win.rst:160 ../../en/m5ui/win.rst:187
+#: ../../en/m5ui/win.rst:211 ../../en/m5ui/win.rst:230
+#: ../../en/m5ui/win.rst:251 ../../en/m5ui/win.rst:267
+#: ../../en/m5ui/win.rst:283 ../../en/m5ui/win.rst:301
+#: ../../en/m5ui/win.rst:321 ../../en/m5ui/win.rst:339
+#: ../../en/m5ui/win.rst:356 ../../en/m5ui/win.rst:375
+#: ../../en/m5ui/win.rst:396 ../../en/m5ui/win.rst:412
+#: ../../en/m5ui/win.rst:431 ../../en/m5ui/win.rst:457
+#: ../../en/m5ui/win.rst:476 0bea274951e94e298dd230b54be366af
+#: 146116ab0de34e22a8ae3464d817e2d0 1dc627c178604f689b098b2036181812
+#: 2e9f1f32b70348aaa013cc375f020744 3118c5f78b1042e084c01af42323ebee
+#: 3c21384bd9064a4fbf9c6ebf272cd8af 3ed05e66e0a8483ca2eae78be59cf552
+#: 44aaf5f179044dde92393c4e67546390 4862c4a1e2644ac1b44b05f396a8697a
+#: 48db3a17f37c4d44b2491d558e4c2aab 4a5cdde192464335a388070bd815f371
+#: 4c09e32898f243e0a735cde335a11ceb 5353af56b1da40d797c3fa3b70d7658f
+#: 705b6e04ec344fddbdc0c38cb403b52b 706f61d1965748a292e9471ce4b381a8
+#: 824fa447eb644b6c8f2b001ae7f01a58 87e1b4e1e3de46a2acc95dacd3260ccf
+#: 98b4ee35143f4291b8be3843ae391535 9cec1bf47a5740a9bd00e5e38f12181a
+#: a5df161859bd4fe6a5375f8de3212110 b82f8c2548bf4771898cc33547ff59dd
+#: c6e64b8beb6443579f2f15b3be71cd02 d2fb70102f554864a18c34cf08309929
+#: d8b8703f7cf1403bb22590f049764189 e107b8760b4b44c59d5fce26c0f86d7d
+#: f6ec6d16898e44e3b8a3d4bff3849a0a m5ui.win.M5Win:9
+#: m5ui.win.M5Win.add_button:14 m5ui.win.M5Win.add_text:14
+#: m5ui.win.M5Win.add_title:12 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/win.rst:22 e2f36e6fec0e4bb0b7bbe8e414bff490
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:43 28fa7b13abad429ba74faf42f92806b3
+msgid "example.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:24 ../../en/m5ui/win.rst:43
+#: 538948fab98445ff8404449f71018331 5aad7c8b41f9425f82f3a8298d8afa82
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/win.rst:26 ../../en/m5ui/win.rst:45 ../../en/m5ui/win.rst:113
+#: ../../en/m5ui/win.rst:139 ../../en/m5ui/win.rst:158
+#: ../../en/m5ui/win.rst:185 ../../en/m5ui/win.rst:299
+#: ../../en/m5ui/win.rst:337 ../../en/m5ui/win.rst:354
+#: ../../en/m5ui/win.rst:373 ../../en/m5ui/win.rst:394
+#: ../../en/m5ui/win.rst:455 ../../en/m5ui/win.rst:474
+#: 08d2b32464134b68ab6602c5002c9f57 0a4cdc9d6c1c42b888b07ba6fa391053
+#: 0c036f2446f441f39efcf7619e12dd25 12bc0ccb3ede461a9bc1c4220a0da2b4
+#: 977607a3a03146d5aa9be377a97c4bb2 a5d57fb9c3724287a068c0804b6cbcae
+#: b0a63f4b235f4583b43bd54a883a4417 b0e7adfb2b3449cd911d4e9fc972a2da
+#: c048bc65a55f4ee5816cc2a5c4a9e4c7 c699ad4392974748a55a3764ba084ac0
+#: ce9edc79352842adbfa5df089209e512 dfed5562031246a4afc2068da01de943
+#: e42cc35419dc4f7395021bef04a2e504 f712f10e3046443ba45b25a0099eba4d
+#: m5ui.win.M5Win:11 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:30 0363679c629845998badccdb395afc81
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/win.rst:37 ../../en/m5ui/win.rst:77 ../../en/m5ui/win.rst:97
+#: ../../en/m5ui/win.rst:123 ../../en/m5ui/win.rst:145
+#: ../../en/m5ui/win.rst:168 ../../en/m5ui/win.rst:195
+#: ../../en/m5ui/win.rst:217 ../../en/m5ui/win.rst:238
+#: ../../en/m5ui/win.rst:255 ../../en/m5ui/win.rst:271
+#: ../../en/m5ui/win.rst:287 ../../en/m5ui/win.rst:305
+#: ../../en/m5ui/win.rst:325 ../../en/m5ui/win.rst:343
+#: ../../en/m5ui/win.rst:360 ../../en/m5ui/win.rst:379
+#: ../../en/m5ui/win.rst:402 ../../en/m5ui/win.rst:418
+#: ../../en/m5ui/win.rst:439 ../../en/m5ui/win.rst:461
+#: ../../en/m5ui/win.rst:480 264cb5a349b9438c9a971a17f67ea3dc
+#: 3713e1312393415393645037455c4983 44df0f1c2b8a4b719c8048a2393667c3
+#: 50a7aa25a6784a8aaf4c08fb2dc65ce1 528b00db47ee4d15a0ed8b62bf7dd608
+#: 59004e3271144107aac179344cc123c3 5d4483c6efca4b5c9dfb4ebfd93367c8
+#: 604d9c34651d4e158930cae7437806b6 715f2b3306f9405894183c52737bd81f
+#: 77f4f928dcfd4bf88ac2a26cf36c0063 833de2527c84406da734546b2ea1ce49
+#: 873c1cda2a0d415e8cc959cb7f884614 8ae0a3680b6540fabd10ad9e4c67c4a7
+#: 949a9581b4ff489eb67d1e636d7ade71 95182a21d67446338e03f45e8a2fa4cd
+#: 9912d8d64b454c72975e3f3d0b84203e 9d1b72925e35455cb3b2f3a397ae3380
+#: 9ff689d3364b40f89a5b3a7e05350d60 a3bd171a300d49e58fc9863f22e27f2b
+#: a5592c12d52b4c57bd77e33d88081cbc a8097d5439354f4fa5f9ad2063dd40b4
+#: ad4315eb8ef6420f894f3fde24a11a89 cc62f29c900440d3bbe0c042498bc144
+#: d9913f36d6c0442cb1f19fcf0549c97a ec1f7ebfdd6b433abf31de2980cf5b0e
+#: f5bfd210b81743168defc6d4b77952b2 m5ui.win.M5Win:13
+#: m5ui.win.M5Win.add_button:19 m5ui.win.M5Win.add_text:20
+#: m5ui.win.M5Win.add_title:18 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/win.rst:49 b1ee14c8140c4b3ca92c9d2459852be3
+msgid "**API**"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:51 1c933015b3d54231a3b3b8d140112292
+msgid "M5Win"
+msgstr "M5Win"
+
+#: feabfdc3713a46e3b04e8d90875f9e44 m5ui.win.M5Win:1 of
+msgid "Bases: :py:class:`~lvgl.win`"
+msgstr ""
+
+#: 2d2aedf337314784a679e84d753543a8 m5ui.win.M5Win:1 of
+msgid "Create a window object."
+msgstr "创建一个 window 对象。"
+
+#: ../../en/m5ui/win.rst 0125e8d97e5c41afae34707fe4417fd7
+#: 0674a017abae4dbaa77d0d172c4a1e3b 0875199a74f34a7a8aeb30faafa75c4b
+#: 0db5adba1a824e518b6d5bf0df4d09fd 188783d3c1e24879bf2e9f1f8ead48ef
+#: 2cc7121b76b9431396305a694a035106 33b263f317e64703890c8533542e04d4
+#: 36c3581212984c839f1d04f1049f8577 3fa0b1fca6064acf969f4a607629d331
+#: 4c747ab2e88e4c4e8f5c639b61fab9fa 554b43c66f1a450cad74f064ad9f002f
+#: 604ec054a2214ec99c77ecadb5700412 72206541b207447f950cc82470dbf55d
+#: 72221673c39e4228a58a6095666fb488 80190723491844d4b018fdef5b1c52c2
+#: 83d6e9d0da58497786e31de51a04f060 964b3fbf26da4fa99da4b938ff8c8558
+#: 97444c6d5f2a4b23b43134a033980dd2 a4c7b6526e524640b13b2f192236eee6
+#: ac8cde4c00f4472d8bce8b5986d2a435 d6928d7f2e3348e5bd126e30d5f2de9f
+#: ed67afb04b0b4384b894dd1a8a11137d m5ui.win.M5Win.add_button
+#: m5ui.win.M5Win.add_text m5ui.win.M5Win.add_title of
+msgid "Parameters"
+msgstr "参数"
+
+#: 70d259da5684470cb9d9e2fa6f6f675a m5ui.win.M5Win:3 of
+msgid "The x position of the window."
+msgstr "window 的 x 坐标位置。"
+
+#: b0a4e5f4592643bbb96ba68f4486f712 m5ui.win.M5Win:4 of
+msgid "The y position of the window."
+msgstr "window 的 y 坐标位置。"
+
+#: ../../en/m5ui/win.rst:297 617edf0328774b8da642db8136a57076
+#: bbf5ad69e78548e48368ce4043481820 m5ui.win.M5Win:5 of
+msgid "The width of the window."
+msgstr "window 的宽度。"
+
+#: ../../en/m5ui/win.rst:298 49fcf44ba54d4469ae56ec37b544a624
+#: bdac5fcd866d4326960dd50e8ef58b36 m5ui.win.M5Win:6 of
+msgid "The height of the window."
+msgstr "window 的高度。"
+
+#: 54c1ad4f628048c29edeed9a376b26a0 m5ui.win.M5Win:7 of
+msgid ""
+"The parent object to attach the window to. If not specified, the window "
+"will be attached to the default screen."
+msgstr "window 要附加到的父对象。如果未指定，则 window 会附加到默认屏幕。"
+
+#: ../../en/m5ui/win.rst:68 4fe526d38c81437fa4f701e87abeaec2
+#: 5d9414d2e98c4f5db1f2272f525021a6 m5ui.win.M5Win.add_button:11 of
+msgid "The created button object :ref:`m5ui.M5Button <m5ui.M5Button>`."
+msgstr "创建的按钮对象 :ref:`m5ui.M5Button <m5ui.M5Button>`。"
+
+#: ../../en/m5ui/win.rst 6b58733f23c64e03bab3e9f23a8165a4
+#: 87eb70039a9e4711ba46472613126bf4 c473ad5c77c1455fa06f926fc7a46770
+#: eda35e820c4d4e7c9bbdb4e1f46f75c5 f7ee5a4f650841debd6aa2efe6ce47ec
+#: m5ui.win.M5Win.add_button m5ui.win.M5Win.add_text m5ui.win.M5Win.add_title
+#: of
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/m5ui/win.rst:73 d4c3ff034a9948fdaa8efaf04bd36938
+msgid "|add_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:1 4cb2926d3d894626b556c65fe7ab0418
+#: 63a37297a40941c4a8eeccddbf4ec93d
+msgid "add_button.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:75 0c127bccaebd4074bb307465be5047d7
+msgid "|add_button2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:2 5c6144762bd34df697633cda9a61828f
+#: dc6bc7a032ca4fe983babee7cb54074f
+msgid "add_button2.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:87 e90cc944293c4f26adfbeb2b9d969bc2
+msgid "Delete the item from the window."
+msgstr "从 window 中删除项目。"
+
+#: ../../en/m5ui/win.rst:91 3d0cde916b7248c89adcc9f7ea970812
+msgid "|label_delete.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:7 4b706aa569c54260b29b45bf8472aae8
+msgid "label_delete.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:93 a9db2a94c95a45078740c0a88b4cbc55
+msgid "|button_delete.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:8 202dc7f99a624035a73edbdc7906dcf2
+msgid "button_delete.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:95 bce98e7595274dbca36e0f3183301c23
+msgid "|title_delete.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:9 76ec128a76dc49559ab5adcbc59aeb79
+msgid "title_delete.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:110 6281f7c489c840d384c0b1fdd593bd5c
+msgid "Set text of the window button/label/title."
+msgstr "设置 window 按钮/标签/标题的文本。"
+
+#: ../../en/m5ui/win.rst:112 849539a129224b839e9eaeb3d03fde2b
+msgid "The text to set for the window button/label/title."
+msgstr "要为 window 按钮/标签/标题设置的文本。"
+
+#: ../../en/m5ui/win.rst 0234dbd8c7b3464aaaa7432d92a4eeb9
+#: 14c714892bbc41ef931d001f4d782d3f 2460785ae329424eb01686c55d312673
+#: 3063d265cbaa4139b1e3ad5521864d6e 314ffeb6fb8e4123948baabfdda08a38
+#: 4d7cd9bf1cee40bf8d45b6d8575ff0af 635e8bd9849d468783be198539b96953
+#: 961ec95b27cb4d19ae1339f4c275358c abd0b4cdb3f94f218ac0eebfa42b8f77
+#: b0acb44d7a074cc38105aff59f2cc452 c18bef160da94b14a224aee971db46a6
+#: c1b59eaa841c4cf4a257b5b81962a231 cafeb95d41184b25b922fec56663b9a3
+#: e72f19834a514bdf97660a0840721192 faa2a1a6c2a3419484977364fcc25382
+#: m5ui.win.M5Win.add_button m5ui.win.M5Win.add_text m5ui.win.M5Win.add_title
+#: of
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:88 2efb053197484082a533f90f72db972c
+msgid "|button_set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:10 26efb6eb016648a3ab2b14301e3dcb0b
+msgid "button_set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:119 ce5d67acb5b34343b76ccc86cbd63d04
+msgid "|label_set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:11 902a1aa0695141b98b77cfcd46a0ef20
+msgid "label_set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:121 3a035f838d814ecca412ac907dd6ac00
+msgid "|title_set_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:12 7a650ba761654691ad5aa55fb1932c41
+msgid "title_set_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:135 3e3bb7c61fe840d881c3deede98ab208
+msgid "Set the font of the window button text."
+msgstr "设置 window 按钮文本的字体。"
+
+#: ../../en/m5ui/win.rst:137 1674d27ce6cf4513b97037c0c4267e23
+msgid "The font to set."
+msgstr "要设置的字体。"
+
+#: ../../en/m5ui/win.rst:138 ../../en/m5ui/win.rst:157
+#: ../../en/m5ui/win.rst:184 ../../en/m5ui/win.rst:372
+#: 43aa77c12e354968a2edc1864f156695 4ffb3bee80864ad7bd20ffe8f02b723f
+#: 981103fdc949429aae1ba8cc23c95186 ab289701290a46f38e50f5282b518e4e
+msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
+msgstr "要应用样式的对象部分（例如 lv.PART.MAIN）。"
+
+#: ../../en/m5ui/win.rst:143 aa35fbbff88345a4972a4df44daac35a
+msgid "|button_set_font.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:13 e22f173c4ed84b17ac2d4d8e79a1ba1b
+msgid "button_set_font.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:153 5e4b37eed08f4295a4d358ab99d93c59
+msgid "Set the color of the window button/label/title."
+msgstr "设置 window 按钮/标签/标题的颜色。"
+
+#: ../../en/m5ui/win.rst:155 ../../en/m5ui/win.rst:182
+#: 066ce98275ed4ec08cab69205a0655df 6118e14fd15c4a86b7e3f59c1a30409d
+msgid "The color to set."
+msgstr "要设置的颜色。"
+
+#: ../../en/m5ui/win.rst:156 ../../en/m5ui/win.rst:183
+#: 2053cec248934f4fa32c72e66cc42e9f 43e89cb273244be1ad0c6f546f442d34
+msgid "The opacity of the color."
+msgstr "颜色的不透明度。"
+
+#: ../../en/m5ui/win.rst:162 9af9565ec5b6410eba60b19e285fc950
+msgid "|button_set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:14 df7c02e499e44661b315b50b9e6ba8b3
+msgid "button_set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:164 9bd306ff80ff45a8bc7df1aa99eb7246
+msgid "|label_set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:15 09dfcf2df4f74d1d80c7b5e4dba776fb
+msgid "label_set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:166 b2629a0dfe404dc4ad8ef8fb73822e14
+msgid "|title_set_text_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:16 0e9df25ed06441f5ac9f2b4e3cde51cf
+msgid "title_set_text_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:180 2b684c42beaa454283537e10bdfaaa1c
+msgid "Set the background color of the window button/label/title."
+msgstr "设置 window 按钮/标签/标题的背景颜色。"
+
+#: ../../en/m5ui/win.rst:189 7f5fc2306fac4f20a004c9fb18289c92
+msgid "|button_set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:17 71cf7be0ccb94bd692987e9562871e07
+msgid "button_set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:191 b7be83e4b666458795c7085d88132c36
+msgid "|label_set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:18 0a0aef3beebb485b8de5dc6cfbaae16d
+msgid "label_set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:193 91aad32d16124c55a5ef20d1f72e09ce
+msgid "|title_set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:19 c041d4812a7942c2bad0c9b2c4da9d5c
+msgid "title_set_bg_color.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:207 ed0041f0a8344a9097c9733a4408f2a5
+msgid "Set the long mode of the window label/title."
+msgstr "设置 window 标签/标题的长文本模式。"
+
+#: ../../en/m5ui/win.rst:209 2beff9e6ba1f4565a24318d3286f198b
+msgid "The long mode to set."
+msgstr "要设置的长文本模式。"
+
+#: ../../en/m5ui/win.rst:213 c0105eb503304333a0092d10faf3cdd4
+msgid "|label_set_long_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:20 c2413036a11d4b338204849e03776a4e
+msgid "label_set_long_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:215 3aa421f0a4a64340bf5cb68b1f9597eb
+msgid "|title_set_long_mode.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:21 9bb21c5fb6c54ad7816a2c4c0f02a282
+msgid "title_set_long_mode.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:225 d5102af2c04e45aea1bf911a89430ae7
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志。如果 ``value`` 为 True，则添加标志；为 False 时移除标志。"
+
+#: ../../en/m5ui/win.rst:227 b4822e8a06fb4efdbf67c69b6865b630
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/win.rst:228 dbe78995b09844b08166cfc5e1b8a236
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "为 True 时添加标志，为 False 时移除标志。"
+
+#: ../../en/m5ui/win.rst:232 06162249a3ca4003aef49ce0b266dd96
+msgid "|button_set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:22 9409bd7abc6745518b3efec7e0cdc4a2
+msgid "button_set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:234 b1267bc2df924c05a008c458cf800a35
+msgid "|label_set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:23 460d743f3bd84f9f948d63d24a62f05a
+msgid "label_set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:236 7f68694ac8354b8e9f879c4c9c03c0fc
+msgid "|title_set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:24 e4e8a287cc4a438ca352b387ac9bb283
+msgid "title_set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:246 0f3958dae36b46a6801ff3064d99c1e8
+msgid "Set the position of the window."
+msgstr "设置 window 的位置。"
+
+#: ../../en/m5ui/win.rst:248 ../../en/m5ui/win.rst:265
+#: 046273bb5b4b46dc8d42efe021d0f271 81fe3724aad34f64a8791ee3bbd90044
+msgid "The x-coordinate of the window."
+msgstr "window 的 x 坐标。"
+
+#: ../../en/m5ui/win.rst:249 ../../en/m5ui/win.rst:281
+#: 1e5f2c97dc374dba8ab22c0d852fcdb3 9a89f366b181457a9fcd816e37b517c9
+msgid "The y-coordinate of the window."
+msgstr "window 的 y 坐标。"
+
+#: ../../en/m5ui/win.rst:253 72c9e40670de4b508006b60a24fed838
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:25 a9385b33902f4f9ca29a486617779fbd
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:263 732c83f16a454bc990dfdf7e1b25d28e
+msgid "Set the x-coordinate of the window."
+msgstr "设置 window 的 x 坐标。"
+
+#: ../../en/m5ui/win.rst:269 e94e54580a8f456b9941d86e465e55ad
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:26 5d1e2c1d134b4220a080e50da9b348e9
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:279 11b49011688d454fb3e13035d0d6f8e6
+msgid "Set the y-coordinate of the window."
+msgstr "设置 window 的 y 坐标。"
+
+#: ../../en/m5ui/win.rst:285 84f6f877a3b64baca86b6e0ce7cce497
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:27 de50551a9ed24d1cb73426df0a12b464
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:295 cc18c62b1d5e48f99a8ed6b596038d13
+msgid "Set the size of the window."
+msgstr "设置 window 的尺寸。"
+
+#: ../../en/m5ui/win.rst:303 93ac24232cfa47a9b5e8aa83221ec6ba
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:28 f569a5194ce046fb8213d62d6448c740
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:314 07c66ffdd7aa4334b801997c15e5996a
+msgid "Align the windowto another object."
+msgstr "将 window 对齐到其他对象。"
+
+#: ../../en/m5ui/win.rst:316 05745fef730e499fbf1d63e5e97fcb79
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/win.rst:317 87c11d5e870b4c019ed61f21afda9880
+msgid "The alignment type."
+msgstr "对齐方式类型。"
+
+#: ../../en/m5ui/win.rst:318 567ee52a9cb84dfcb0e9eee559a55b22
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/win.rst:319 59d91d078fa243abb5d4bc196887a933
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/win.rst:323 023bd7e2a15f4a33b84c6c9b2b9b74c9
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:29 e47b248a728b471a9ac51998afcc377d
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:333 4976fb9bc6a745b8bb970656f633f8d1
+msgid ""
+"Set the state of the bar. If ``value`` is True, the state is set; if "
+"False, the state is unset."
+msgstr "设置进度条的状态。如果 ``value`` 为 True，则设置状态；为 False 时取消状态。"
+
+#: ../../en/m5ui/win.rst:335 5752db18c9bd48289743cdb4b84d478e
+msgid "The state to set."
+msgstr "要设置的状态。"
+
+#: ../../en/m5ui/win.rst:336 c52ab56438424ddfa1ffb6842f64771b
+msgid "If True, the state is set; if False, the state is unset."
+msgstr "为 True 时设置状态；为 False 时取消状态。"
+
+#: ../../en/m5ui/win.rst:341 e038548d20a9455bb84e1f1343629a6b
+msgid "|button_set_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:30 88e103ccc2584f56abde4692e94b9456
+msgid "button_set_state.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:351 3a1e893cc6204cfd812239dd3fbf19d2
+msgid ""
+"Toggle a flag on the object. If the flag is set, it is removed; if not "
+"set, it is added."
+msgstr "切换对象上的标志。如果该标志已设置，则移除；否则添加。"
+
+#: ../../en/m5ui/win.rst:353 e504feeac8d9406b8696d69139b58689
+msgid "The flag to toggle."
+msgstr "要切换的标志。"
+
+#: ../../en/m5ui/win.rst:358 bcb895c3192e4c23adfd76ba0d1505bd
+msgid "|button_toggle_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:31 ab7a75dcbc6c4111a82d54550bd944b3
+msgid "button_toggle_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:369 7d8ee367f8234847a344c8ec76cd8d4e
+msgid "Set the corner radius of the window button."
+msgstr "设置 window 按钮的圆角半径。"
+
+#: ../../en/m5ui/win.rst:371 067d5129afa54fe6806e4cb9b835530e
+msgid "The radius to set."
+msgstr "要设置的半径。"
+
+#: ../../en/m5ui/win.rst:377 1cc4937e46144016a29d03a279a3ec20
+msgid "|button_set_radius.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:32 cc4b2d8ffd254a0a8b88ea8582f74ede
+msgid "button_set_radius.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:387 2e4d7731c8df4e29ba9ba48270150cdf
+msgid "Set a shadow for the label/title."
+msgstr "为标签/标题设置阴影。"
+
+#: ../../en/m5ui/win.rst:389 313e382842694d7a950fe781c479f81a
+msgid "The color of the shadow in hexadecimal format or an integer."
+msgstr "阴影的颜色，十六进制格式或整数。"
+#: ../../en/m5ui/win.rst:390 444b28adaa614086ba1f6bb68af4f789
+msgid "The opacity of the shadow (0-255)."
+msgstr "阴影的不透明度（0-255）。"
+
+#: ../../en/m5ui/win.rst:391 ab7b305f97944b1fb53597206eb68ad8
+msgid "The alignment of the shadow relative to the label/title."
+msgstr "阴影相对于标签/标题的对齐方式。"
+
+#: ../../en/m5ui/win.rst:392 9f4def86587c493fb22a82bb4b7e1eee
+msgid "The horizontal offset of the shadow."
+msgstr "阴影的水平偏移量。"
+
+#: ../../en/m5ui/win.rst:393 46d299538066423eb9d2d3a5dd1ef863
+msgid "The vertical offset of the shadow."
+msgstr "阴影的垂直偏移量。"
+
+#: ../../en/m5ui/win.rst:398 d467cd3968df417a8fd8b24d4b3ccbb5
+msgid "|label_set_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:33 c0a5e8c8ffeb4bc9b917c1fed331e8f2
+msgid "label_set_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:400 61ef08f67f494287a6d0b6e7bfd52d30
+msgid "|title_set_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:34 782b477b5c5c46c298e8a51151a121da
+msgid "title_set_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:410 1450d8e1e9c14df3b0036c501a243dbb
+msgid "Remove the shadow from the label/title."
+msgstr "移除标签/标题的阴影。"
+
+#: ../../en/m5ui/win.rst:414 24f824ba2ae74bba957ef7b0475c6980
+msgid "|label_unset_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:35 5c29cad7261e441491234333ad069f77
+msgid "label_unset_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:416 eac3a08c444545c9a23178553e3c797b
+msgid "|title_unset_shadow.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:36 6e6d071b22d24bb7ac6b2aec3d603a86
+msgid "title_unset_shadow.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:426 b0913c0acae645509af2ae01f7175220
+msgid "Get the text of the button/label/title."
+msgstr "获取按钮/标签/标题的文本。"
+
+#: ../../en/m5ui/win.rst:428 c5f7ae5d75524409afb5238c8c7ab3e4
+msgid "The text of the button/label/title."
+msgstr ""
+
+#: ../../en/m5ui/win.rst 20a9c7c04f1a484e9e77ad99abfe8024
+#: 286bd797005b4d0cbef9d3b5144e7170 645820f773bd4c13b13b1335fcf9c46b
+#: d1a7cd822445480ca330642fcfc12ec9 m5ui.win.M5Win.add_button
+#: m5ui.win.M5Win.add_text m5ui.win.M5Win.add_title of
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:433 006b1f123f0b4da889b72dc6e063a5b4
+msgid "|button_get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:37 1b89c1e468f04c549c919bbe4e6b0e1d
+msgid "button_get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:435 0cf4229af3a84552a59c494c6a24c0cc
+msgid "|label_get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:38 2289ec017100403994b223bf1ac46fa1
+msgid "label_get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:437 cd1d6f1a53c14a14ae0dcc58109b19f2
+msgid "|title_get_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:39 2ad0676c57434710be1632fefbe19b5e
+msgid "title_get_text.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:452 33580215d6864929847c79fe31a38e15
+msgid ""
+"Toggle the state of the button. If the state is set, it is unset; if not "
+"set, it is set."
+msgstr "切换按钮的状态。如果该状态已设置则取消设置，未设置则添加设置。"
+
+#: ../../en/m5ui/win.rst:454 f478140116754151b634afaf6acad2dd
+msgid "The state to toggle."
+msgstr "要切换的状态。"
+
+#: ../../en/m5ui/win.rst:459 1b9c198dd6534128954323f424bc89c1
+msgid "|button_toggle_state.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:40 ac0931a7107041cd92ea3ecb15d6a47c
+msgid "button_toggle_state.png"
+msgstr ""
+
+#: ../../en/m5ui/win.rst:469 b7ebbe97932a4031a98c2f292054d0e5
+msgid ""
+"Add an event callback to the button. The callback will be called when the"
+" specified event occurs."
+msgstr "为按钮添加事件回调。当指定事件发生时将调用该回调函数。"
+
+#: ../../en/m5ui/win.rst:471 68abdc5dc21646b484352aea8654387a
+msgid "The callback function to call."
+msgstr "要调用的回调函数。"
+
+#: ../../en/m5ui/win.rst:472 2f6fc86273444462b04094fcd54d5b02
+msgid "The event to listen for."
+msgstr "要监听的事件。"
+
+#: ../../en/m5ui/win.rst:473 3f854db5c72a4aab9cff9fea7d85d7dd
+msgid "Optional user data to pass to the callback."
+msgstr "可选的用户数据，将传递给回调函数。"
+
+#: ../../en/m5ui/win.rst:478 7db342e3fa814647b9204262e1cada68
+msgid "|button_event.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:41 b3827b0583de4b029dabce33f0a1b414
+msgid "button_event.png"
+msgstr ""
+
+#: 1a4c0eb42a9f4aa9b66095e0bc4584f9 m5ui.win.M5Win.add_title:1 of
+msgid "Add a title label to the window."
+msgstr "向 window 添加标题标签。"
+
+#: 2e918c05ab824e96bd205d1b3de34111 a9f040d7ea7f47baaae5535e1f6a0080
+#: m5ui.win.M5Win.add_text:3 m5ui.win.M5Win.add_title:3 of
+msgid "The text to display on the window."
+msgstr "要在 window 上显示的文本。"
+
+#: 4b5de88a8911415fa86f1febab21d1a0 c649c4f64d404b8ba3687d9aedbc254a
+#: m5ui.win.M5Win.add_text:6 m5ui.win.M5Win.add_title:4 of
+msgid "The text color of the label in hexadecimal format."
+msgstr "标签的文本颜色（十六进制格式）。"
+
+#: af020be1bbab4647ad5f824006be6c8d e62c57ff24cf4d6b85dde437fe8c4dcb
+#: m5ui.win.M5Win.add_text:7 m5ui.win.M5Win.add_title:5 of
+msgid "The text opacity of the label (0-255)."
+msgstr "标签文本的不透明度（0-255）。"
+
+#: 38eaf543c41a4af492afdd663a5efd54 ae351b687b964f47992f5d18f9abfe3f
+#: m5ui.win.M5Win.add_text:8 m5ui.win.M5Win.add_title:6 of
+msgid "The background color of the label in hexadecimal format."
+msgstr "标签的背景颜色（十六进制格式）。"
+
+#: a254f911d6f44f1cab4c0a0fa8c98878 bd885d632dc849888bf71eec5d76317a
+#: m5ui.win.M5Win.add_text:9 m5ui.win.M5Win.add_title:7 of
+msgid "The background opacity of the label (0-255)."
+msgstr "标签背景的不透明度（0-255）。"
+
+#: 1b3df7cb5fad4774a8ac107bcf003b50 d5870aaa38bc48dcaf3d9dd01da55f56
+#: m5ui.win.M5Win.add_text:10 m5ui.win.M5Win.add_title:8 of
+msgid "The font to use for the label."
+msgstr "用于标签的字体。"
+
+#: 3091c1498d7341c68e133a5b3bff41b2 ed86a9ce738a490dbc931a11b69a313a
+#: m5ui.win.M5Win.add_text:11 m5ui.win.M5Win.add_title:9 of
+msgid "The created label object :ref:`m5ui.M5Label <m5ui.M5Label>`."
+msgstr "创建的标签对象 :ref:`m5ui.M5Label <m5ui.M5Label>`。"
+
+#: fc7f8b78b3534cab9185f7deb6036c31 m5ui.win.M5Win.add_title:14 of
+msgid "|add_title.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:3 bcca65458aa640889b0aa5af36a1808e
+msgid "add_title.png"
+msgstr ""
+
+#: 6e6630ab97434e6c9a9b022384006491 m5ui.win.M5Win.add_title:16 of
+msgid "|add_title2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:4 be5232c3dc844f87825cf70494754e7f
+msgid "add_title2.png"
+msgstr ""
+
+#: 52eddef19de342409156ece51413e233 m5ui.win.M5Win.add_text:1 of
+msgid "Add a text label to the window."
+msgstr "向 window 添加文本标签。"
+
+#: 7210bc0baf9443e6ad1d974763543fd9 m5ui.win.M5Win.add_text:4 of
+msgid "The x position of the label."
+msgstr "标签的 x 坐标位置。"
+
+#: f51b6af81da44d728535705d4f468d37 m5ui.win.M5Win.add_text:5 of
+msgid "The y position of the label."
+msgstr "标签的 y 坐标位置。"
+
+#: cfbb36f087b84910a6a69aa2b2e85d6f m5ui.win.M5Win.add_text:16 of
+msgid "|add_text.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:5 f2da1f5c408446aa849adb1d1b2ed962
+msgid "add_text.png"
+msgstr ""
+
+#: cc746f6edefe44a795d7ec815d10369a m5ui.win.M5Win.add_text:18 of
+msgid "|add_text2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:6 777eb74d6e5a47a5b37dc105ca65ecff
+msgid "add_text2.png"
+msgstr ""
+
+#: 079d7a332c2c411ba3aaaf1e65b771e2 m5ui.win.M5Win.add_button:1 of
+msgid "Add a button to the window."
+msgstr "向 window 添加按钮。"
+
+#: 1c33fc2ef7ec4a74a78dd0867eb524ee m5ui.win.M5Win.add_button:3 of
+msgid "The icon to display on the button."
+msgstr "按钮上要显示的图标。"
+
+#: 9e45844f585f4eac978a252e414d06b9 m5ui.win.M5Win.add_button:4 of
+msgid "The text to display on the button."
+msgstr "按钮上要显示的文本。"
+
+#: 72c83ebd0d684b45b6bd0a9274fbc3d5 m5ui.win.M5Win.add_button:5 of
+msgid "The height of the button."
+msgstr "按钮的高度。"
+
+#: d7882fd07cba4eb6bd0d2b82147fb79a m5ui.win.M5Win.add_button:6 of
+msgid "The background color of the button in hexadecimal format."
+msgstr "按钮的背景颜色（十六进制格式）。"
+
+#: dfca510cf1f141cebe1c6b28f7127708 m5ui.win.M5Win.add_button:7 of
+msgid "The background opacity of the button (0-255)."
+msgstr "按钮背景的不透明度（0-255）。"
+
+#: 08d074435a4f4c7f96860a647a22d62d m5ui.win.M5Win.add_button:8 of
+msgid "The text color of the button in hexadecimal format."
+msgstr "按钮文本颜色（十六进制格式）。"
+
+#: 03c290d8e88a4634955d78f37751cd3d m5ui.win.M5Win.add_button:9 of
+msgid "The text opacity of the button (0-255)."
+msgstr "按钮文本的不透明度（0-255）。"
+
+#: 5d487fa1c17a4eaaa8d34bb7a9b16045 m5ui.win.M5Win.add_button:10 of
+msgid "The font to use for the button text."
+msgstr "按钮文本所使用的字体。"
+
+#: a0af2d491ef440689c14b2abb69322e5 m5ui.win.M5Win.add_button:11 of
+msgid "The created button object :ref:`m5ui.M5Button <m5ui.M5Button>`."
+msgstr "创建的按钮对象 :ref:`m5ui.M5Button <m5ui.M5Button>`。"
+
+#: 1399e94b513640d9a65cd16a8ef3f7be m5ui.win.M5Win.add_button:16 of
+msgid "|add_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:1 8b451815050f4bb88cd48016d9f870ad
+msgid "add_button.png"
+msgstr ""
+
+#: 8ad225b3a1914410b2f38dea3957193d m5ui.win.M5Win.add_button:18 of
+msgid "|add_button2.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.win.ref:2 8e60b385a6b1402db028f83839270678
+msgid "add_button2.png"
+msgstr ""
+

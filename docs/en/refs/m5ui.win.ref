@@ -1,0 +1,52 @@
+.. |add_button.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_button.png
+.. |add_button2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_button2.png
+.. |add_title.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_title.png
+.. |add_title2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_title2.png
+.. |add_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_text.png
+.. |add_text2.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/add_text2.png
+.. |label_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_delete.png
+.. |button_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_delete.png
+.. |title_delete.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_delete.png
+.. |button_set_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_text.png
+.. |label_set_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_text.png
+.. |title_set_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_text.png
+.. |button_set_font.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_font.png
+.. |button_set_text_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_text_color.png
+.. |label_set_text_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_text_color.png
+.. |title_set_text_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_text_color.png
+.. |button_set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_bg_color.png
+.. |label_set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_bg_color.png
+.. |title_set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_bg_color.png
+.. |label_set_long_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_long_mode.png
+.. |title_set_long_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_long_mode.png
+.. |button_set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_flag.png
+.. |label_set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_flag.png
+.. |title_set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_flag.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/set_pos.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/set_y.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/set_size.png
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/align_to.png
+.. |button_set_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_state.png
+.. |button_toggle_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_toggle_flag.png
+.. |button_set_radius.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_set_radius.png
+.. |label_set_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_set_shadow.png
+.. |title_set_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_set_shadow.png
+.. |label_unset_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_unset_shadow.png
+.. |title_unset_shadow.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_unset_shadow.png
+.. |button_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_get_text.png
+.. |label_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/label_get_text.png
+.. |title_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/title_get_text.png
+.. |button_toggle_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_toggle_state.png
+.. |button_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/button_event.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/window/example.png
+
+.. |window_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/window/window_core2_example.m5f2"
+        target="_blank"
+    >
+        window_core2_example.m5f2
+    </a>
