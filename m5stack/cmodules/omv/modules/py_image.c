@@ -1,8 +1,8 @@
 /*
  * SPDX-License-Identifier: MIT
  *
- * Copyright (C) 2013-2024 OpenMV, LLC.
- * Copyright (c) 2024 M5Stack Technology CO LTD
+ * Copyright (C) 2013-2025 OpenMV, LLC.
+ * Copyright (c) 2025 M5Stack Technology CO LTD
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,7 +39,8 @@
 #include "imlib.h"
 #include "py_helper.h"
 #include "py_assert.h"
-
+#include "quirc.h"
+#include <math.h>
 
 
 #define PY_ASSERT_TYPE(obj, type)                            \
@@ -358,8 +359,297 @@ static mp_obj_t py_image_draw_edges(uint n_args, const mp_obj_t *args, mp_map_t 
 }
 static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_draw_edges_obj, 2, py_image_draw_edges);
 
+// ====================================================================================
+// Find Methods
+// ====================================================================================
+
+// QRCode Object
+#define py_qrcode2_obj_size 10
+typedef struct py_qrcode2_obj {
+    mp_obj_base_t base;
+    mp_obj_t corners;
+    mp_obj_t x, y, w, h, payload, version, ecc_level, mask, data_type, eci;
+} py_qrcode_obj_t;
+
+static void py_qrcode_print(const mp_print_t *print, mp_obj_t self_in, mp_print_kind_t kind) {
+    py_qrcode_obj_t *self = self_in;
+    mp_printf(print,
+        "{\"x\":%d, \"y\":%d, \"w\":%d, \"h\":%d, \"payload\":\"%s\","
+        " \"version\":%d, \"ecc_level\":%d, \"mask\":%d, \"data_type\":%d, \"eci\":%d}",
+        mp_obj_get_int(self->x),
+        mp_obj_get_int(self->y),
+        mp_obj_get_int(self->w),
+        mp_obj_get_int(self->h),
+        mp_obj_str_get_str(self->payload),
+        mp_obj_get_int(self->version),
+        mp_obj_get_int(self->ecc_level),
+        mp_obj_get_int(self->mask),
+        mp_obj_get_int(self->data_type),
+        mp_obj_get_int(self->eci));
+}
+
+static mp_obj_t py_qrcode_subscr(mp_obj_t self_in, mp_obj_t index, mp_obj_t value) {
+    if (value == MP_OBJ_SENTINEL) {
+        py_qrcode_obj_t *self = self_in;
+        if (MP_OBJ_IS_TYPE(index, &mp_type_slice)) {
+            mp_bound_slice_t slice;
+            if (!mp_seq_get_fast_slice_indexes(py_qrcode2_obj_size, index, &slice)) {
+                mp_raise_msg(&mp_type_OSError, MP_ERROR_TEXT("only slices with step=1 (aka None) are supported"));
+            }
+            mp_obj_tuple_t *result = mp_obj_new_tuple(slice.stop - slice.start, NULL);
+            mp_seq_copy(result->items, &(self->x) + slice.start, result->len, mp_obj_t);
+            return result;
+        }
+        switch (mp_get_index(self->base.type, py_qrcode2_obj_size, index, false)) {
+            case 0:
+                return self->x;
+            case 1:
+                return self->y;
+            case 2:
+                return self->w;
+            case 3:
+                return self->h;
+            case 4:
+                return self->payload;
+            case 5:
+                return self->version;
+            case 6:
+                return self->ecc_level;
+            case 7:
+                return self->mask;
+            case 8:
+                return self->data_type;
+            case 9:
+                return self->eci;
+        }
+    }
+    return MP_OBJ_NULL; // op not supported
+}
+
+mp_obj_t py_qrcode_corners(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->corners;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_corners_obj, py_qrcode_corners);
+
+mp_obj_t py_qrcode_rect(mp_obj_t self_in) {
+    return mp_obj_new_tuple(4, (mp_obj_t []) {((py_qrcode_obj_t *)self_in)->x,
+                                              ((py_qrcode_obj_t *)self_in)->y,
+                                              ((py_qrcode_obj_t *)self_in)->w,
+                                              ((py_qrcode_obj_t *)self_in)->h});
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_rect_obj, py_qrcode_rect);
+
+mp_obj_t py_qrcode_x(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->x;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_x_obj, py_qrcode_x);
+
+mp_obj_t py_qrcode_y(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->y;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_y_obj, py_qrcode_y);
+
+mp_obj_t py_qrcode_w(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->w;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_w_obj, py_qrcode_w);
+
+mp_obj_t py_qrcode_h(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->h;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_h_obj, py_qrcode_h);
+
+mp_obj_t py_qrcode_payload(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->payload;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_payload_obj, py_qrcode_payload);
+
+mp_obj_t py_qrcode_version(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->version;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_version_obj, py_qrcode_version);
+
+mp_obj_t py_qrcode_ecc_level(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->ecc_level;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_ecc_level_obj, py_qrcode_ecc_level);
+
+mp_obj_t py_qrcode_mask(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->mask;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_mask_obj, py_qrcode_mask);
+
+mp_obj_t py_qrcode_data_type(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->data_type;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_data_type_obj, py_qrcode_data_type);
+
+mp_obj_t py_qrcode_eci(mp_obj_t self_in) {
+    return ((py_qrcode_obj_t *)self_in)->eci;
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_eci_obj, py_qrcode_eci);
+
+mp_obj_t py_qrcode_is_numeric(mp_obj_t self_in) {
+    return mp_obj_new_bool(mp_obj_get_int(((py_qrcode_obj_t *)self_in)->data_type) == 1);
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_is_numeric_obj, py_qrcode_is_numeric);
+
+mp_obj_t py_qrcode_is_alphanumeric(mp_obj_t self_in) {
+    return mp_obj_new_bool(mp_obj_get_int(((py_qrcode_obj_t *)self_in)->data_type) == 2);
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_is_alphanumeric_obj, py_qrcode_is_alphanumeric);
+
+mp_obj_t py_qrcode_is_binary(mp_obj_t self_in) {
+    return mp_obj_new_bool(mp_obj_get_int(((py_qrcode_obj_t *)self_in)->data_type) == 4);
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_is_binary_obj, py_qrcode_is_binary);
+
+mp_obj_t py_qrcode_is_kanji(mp_obj_t self_in) {
+    return mp_obj_new_bool(mp_obj_get_int(((py_qrcode_obj_t *)self_in)->data_type) == 8);
+}
+static MP_DEFINE_CONST_FUN_OBJ_1(py_qrcode_is_kanji_obj, py_qrcode_is_kanji);
+
+static const mp_rom_map_elem_t py_qrcode_locals_dict_table[] = {
+    { MP_ROM_QSTR(MP_QSTR_corners),         MP_ROM_PTR(&py_qrcode_corners_obj) },
+    { MP_ROM_QSTR(MP_QSTR_rect),            MP_ROM_PTR(&py_qrcode_rect_obj) },
+    { MP_ROM_QSTR(MP_QSTR_x),               MP_ROM_PTR(&py_qrcode_x_obj) },
+    { MP_ROM_QSTR(MP_QSTR_y),               MP_ROM_PTR(&py_qrcode_y_obj) },
+    { MP_ROM_QSTR(MP_QSTR_w),               MP_ROM_PTR(&py_qrcode_w_obj) },
+    { MP_ROM_QSTR(MP_QSTR_h),               MP_ROM_PTR(&py_qrcode_h_obj) },
+    { MP_ROM_QSTR(MP_QSTR_payload),         MP_ROM_PTR(&py_qrcode_payload_obj) },
+    { MP_ROM_QSTR(MP_QSTR_version),         MP_ROM_PTR(&py_qrcode_version_obj) },
+    { MP_ROM_QSTR(MP_QSTR_ecc_level),       MP_ROM_PTR(&py_qrcode_ecc_level_obj) },
+    { MP_ROM_QSTR(MP_QSTR_mask),            MP_ROM_PTR(&py_qrcode_mask_obj) },
+    { MP_ROM_QSTR(MP_QSTR_data_type),       MP_ROM_PTR(&py_qrcode_data_type_obj) },
+    { MP_ROM_QSTR(MP_QSTR_eci),             MP_ROM_PTR(&py_qrcode_eci_obj) },
+    { MP_ROM_QSTR(MP_QSTR_is_numeric),      MP_ROM_PTR(&py_qrcode_is_numeric_obj) },
+    { MP_ROM_QSTR(MP_QSTR_is_alphanumeric), MP_ROM_PTR(&py_qrcode_is_alphanumeric_obj) },
+    { MP_ROM_QSTR(MP_QSTR_is_binary),       MP_ROM_PTR(&py_qrcode_is_binary_obj) },
+    { MP_ROM_QSTR(MP_QSTR_is_kanji),        MP_ROM_PTR(&py_qrcode_is_kanji_obj) }
+};
+
+static MP_DEFINE_CONST_DICT(py_qrcode_locals_dict, py_qrcode_locals_dict_table);
+
+static MP_DEFINE_CONST_OBJ_TYPE(
+    py_qrcode_type,
+    MP_QSTR_qrcode,
+    MP_TYPE_FLAG_NONE,
+    print, py_qrcode_print,
+    subscr, py_qrcode_subscr,
+    locals_dict, &py_qrcode_locals_dict
+    );
 
 
+typedef union {
+    uint16_t val;
+    struct {
+        uint16_t b : 5;
+        uint16_t g : 6;
+        uint16_t r : 5;
+    };
+} rgb565_t;
+
+static uint8_t rgb565_to_grayscale(const uint8_t *img) {
+    uint16_t *img_16 = (uint16_t *)img;
+    rgb565_t rgb = {.val = __builtin_bswap16(*img_16)};
+    uint16_t val = (rgb.r * 8 + rgb.g * 4 + rgb.b * 8) / 3;
+    return (uint8_t)MIN(255, val);
+}
+
+static void rgb565_to_grayscale_buf(const uint8_t *src, uint8_t *dst, int qr_width, int qr_height) {
+    for (size_t y = 0; y < qr_height; y++) {
+        for (size_t x = 0; x < qr_width; x++) {
+            dst[y * qr_width + x] = rgb565_to_grayscale(&src[(y * qr_width + x) * 2]);
+        }
+    }
+}
+
+static struct quirc *qr_decoder;
+struct quirc_code code = {};
+struct quirc_data qr_data = {};
+static mp_obj_t py_image_find_qrcodes(size_t n_args, const mp_obj_t *args, mp_map_t *kw_args) {
+    image_t *img = py_image_cobj(args[0]);
+
+    qr_decoder = quirc_new();
+    if (!qr_decoder) {
+        return mp_const_none;
+    }
+
+    if (quirc_resize(qr_decoder, img->w, img->h) < 0) {
+        return mp_const_none;
+    }
+
+    uint8_t *qr_buf = quirc_begin(qr_decoder, NULL, NULL);
+
+    // Convert the frame to grayscale. We could have asked the camera for a grayscale frame,
+    // but then the image on the display would be grayscale too.
+    rgb565_to_grayscale_buf(img->data, qr_buf, img->w, img->h);
+
+    // Process the frame. This step find the corners of the QR code (capstones)
+    quirc_end(qr_decoder);
+
+    int count = quirc_count(qr_decoder);
+    quirc_decode_error_t err = QUIRC_ERROR_DATA_UNDERFLOW;
+
+    mp_obj_list_t *objects_list = mp_obj_new_list(count, NULL);
+    for (size_t i = 0; i < count; i++) {
+        // Extract raw QR code binary data (values of black/white modules)
+        quirc_extract(qr_decoder, i, &code);
+
+        // Decode the raw data. This step also performs error correction.
+        err = quirc_decode(&code, &qr_data);
+        if (err == QUIRC_ERROR_DATA_ECC) {
+            quirc_flip(&code);
+            err = quirc_decode(&code, &qr_data);
+        }
+        if (err != 0) {
+            continue;
+        }
+
+        py_qrcode_obj_t *o = m_new_obj(py_qrcode_obj_t);
+        o->base.type = &py_qrcode_type;
+        o->corners = mp_obj_new_tuple(4, (mp_obj_t []) {
+            mp_obj_new_tuple(2, (mp_obj_t []) { mp_obj_new_int(code.corners[0].x), mp_obj_new_int(code.corners[0].y) }),
+            mp_obj_new_tuple(2, (mp_obj_t []) { mp_obj_new_int(code.corners[1].x), mp_obj_new_int(code.corners[1].y) }),
+            mp_obj_new_tuple(2, (mp_obj_t []) { mp_obj_new_int(code.corners[2].x), mp_obj_new_int(code.corners[2].y) }),
+            mp_obj_new_tuple(2, (mp_obj_t []) { mp_obj_new_int(code.corners[3].x), mp_obj_new_int(code.corners[3].y) })
+        });
+        int min_x = code.corners[0].x;
+        int min_y = code.corners[0].y;
+        int max_x = code.corners[0].x;
+        int max_y = code.corners[0].y;
+        for (int i = 1; i < 4; i++) {
+            if (code.corners[i].x < min_x) {
+                min_x = code.corners[i].x;
+            }
+            if (code.corners[i].y < min_y) {
+                min_y = code.corners[i].y;
+            }
+            if (code.corners[i].x > max_x) {
+                max_x = code.corners[i].x;
+            }
+            if (code.corners[i].y > max_y) {
+                max_y = code.corners[i].y;
+            }
+        }
+        o->x = mp_obj_new_int(min_x);
+        o->y = mp_obj_new_int(min_y);
+        o->w = mp_obj_new_int(max_x - min_x + 1);
+        o->h = mp_obj_new_int(max_y - min_y + 1);
+        o->payload = mp_obj_new_str((const char *)qr_data.payload, strlen((const char *)qr_data.payload));
+        o->version = mp_obj_new_int(qr_data.version);
+        o->ecc_level = mp_obj_new_int(qr_data.ecc_level);
+        o->mask = mp_obj_new_int(qr_data.mask);
+        o->data_type = mp_obj_new_int(qr_data.data_type);
+        o->eci = mp_obj_new_int(qr_data.eci);
+        objects_list->items[i] = o;
+    }
+
+    quirc_destroy(qr_decoder);
+
+    return objects_list;
+}
+static MP_DEFINE_CONST_FUN_OBJ_KW(py_image_find_qrcodes_obj, 1, py_image_find_qrcodes);
 
 mp_obj_t py_image(int w, int h, omv_pixformat_t pixfmt, uint32_t size, void *pixels) {
     py_image_obj_t *o = m_new_obj(py_image_obj_t);
@@ -379,24 +669,25 @@ mp_obj_t py_image_from_struct(image_t *img) {
     return o;
 }
 
-
 static const mp_rom_map_elem_t locals_dict_table[] = {
     /* Basic Methods */
-    {MP_ROM_QSTR(MP_QSTR_width),               MP_ROM_PTR(&py_image_width_obj)},
-    {MP_ROM_QSTR(MP_QSTR_height),              MP_ROM_PTR(&py_image_height_obj)},
-    {MP_ROM_QSTR(MP_QSTR_format),              MP_ROM_PTR(&py_image_format_obj)},
-    {MP_ROM_QSTR(MP_QSTR_size),                MP_ROM_PTR(&py_image_size_obj)},
-    {MP_ROM_QSTR(MP_QSTR_bytearray),           MP_ROM_PTR(&py_image_bytearray_obj)},
+    {MP_ROM_QSTR(MP_QSTR_width),          MP_ROM_PTR(&py_image_width_obj)},
+    {MP_ROM_QSTR(MP_QSTR_height),         MP_ROM_PTR(&py_image_height_obj)},
+    {MP_ROM_QSTR(MP_QSTR_format),         MP_ROM_PTR(&py_image_format_obj)},
+    {MP_ROM_QSTR(MP_QSTR_size),           MP_ROM_PTR(&py_image_size_obj)},
+    {MP_ROM_QSTR(MP_QSTR_bytearray),      MP_ROM_PTR(&py_image_bytearray_obj)},
     /* Drawing Methods */
-    {MP_ROM_QSTR(MP_QSTR_clear),               MP_ROM_PTR(&py_image_clear_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_line),           MP_ROM_PTR(&py_image_draw_line_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_rectangle),      MP_ROM_PTR(&py_image_draw_rectangle_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_circle),         MP_ROM_PTR(&py_image_draw_circle_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_ellipse),        MP_ROM_PTR(&py_image_draw_ellipse_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_string),         MP_ROM_PTR(&py_image_draw_string_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_cross),          MP_ROM_PTR(&py_image_draw_cross_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_arrow),          MP_ROM_PTR(&py_image_draw_arrow_obj)},
-    {MP_ROM_QSTR(MP_QSTR_draw_edges),          MP_ROM_PTR(&py_image_draw_edges_obj)},
+    {MP_ROM_QSTR(MP_QSTR_clear),          MP_ROM_PTR(&py_image_clear_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_line),      MP_ROM_PTR(&py_image_draw_line_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_rectangle), MP_ROM_PTR(&py_image_draw_rectangle_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_circle),    MP_ROM_PTR(&py_image_draw_circle_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_ellipse),   MP_ROM_PTR(&py_image_draw_ellipse_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_string),    MP_ROM_PTR(&py_image_draw_string_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_cross),     MP_ROM_PTR(&py_image_draw_cross_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_arrow),     MP_ROM_PTR(&py_image_draw_arrow_obj)},
+    {MP_ROM_QSTR(MP_QSTR_draw_edges),     MP_ROM_PTR(&py_image_draw_edges_obj)},
+    /* Find Methods */
+    {MP_ROM_QSTR(MP_QSTR_find_qrcodes),   MP_ROM_PTR(&py_image_find_qrcodes_obj)},
 };
 
 static MP_DEFINE_CONST_DICT(py_image_locals_dict, locals_dict_table);
@@ -408,12 +699,9 @@ MP_DEFINE_CONST_OBJ_TYPE(
     locals_dict, &py_image_locals_dict
     );
 
-
-
 // ==================================================================================
 // module: image
 // ==================================================================================
-
 static const mp_rom_map_elem_t globals_dict_table[] = {
     {MP_ROM_QSTR(MP_QSTR___name__),  MP_OBJ_NEW_QSTR(MP_QSTR_image)},
     // Pixel formats

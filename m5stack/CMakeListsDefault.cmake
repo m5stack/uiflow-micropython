@@ -252,12 +252,14 @@ list(APPEND IDF_COMPONENTS
     pedestrian_detect
     human_face_recognition
     esp-code-scanner
+    quirc
 )
 endif()
 
 if (M5_CAMERA_MODULE_ENABLE AND BOARD_TYPE STREQUAL "atoms3r_cam")
 list(APPEND IDF_COMPONENTS
     esp-code-scanner
+    quirc
 )
 endif()
 

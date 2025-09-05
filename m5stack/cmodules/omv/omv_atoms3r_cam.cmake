@@ -35,6 +35,8 @@ target_include_directories(moudle_omv INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/../../components/esp32-camera/sensors/private_include
     # esp-code-scanner
     ${CMAKE_CURRENT_LIST_DIR}/../../components/esp-code-scanner/include
+    # quirc
+    ${CMAKE_CURRENT_LIST_DIR}/../../managed_components/espressif__quirc/quirc/lib
 )
 
 # Link our INTERFACE library to the usermod target.
