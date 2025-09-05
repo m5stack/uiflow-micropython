@@ -26,7 +26,7 @@ class UltrasoundI2CUnit:
             data = self.i2c.readfrom(self.i2c_addr, 3)
             self._distance = ((data[0] << 16) | (data[1] << 8) | data[2]) / 1000
         except OSError:
-            pass
+            return -1
         if mode == 2:
             self._distance = self._distance / 10
         return round(self._distance, 2)
