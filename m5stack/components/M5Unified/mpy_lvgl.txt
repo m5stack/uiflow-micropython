@@ -190,15 +190,15 @@ bool gfx_lvgl_touch_read(lv_disp_t *indev_drv, lv_indev_data_t *data)
 {
     M5.update();
 
-    if (!M5.Touch.getCount()) {
-        data->point = (lv_point_t) { 0, 0 };
+    if (M5.Touch.getCount()) {
+        auto tp = M5.Touch.getDetail(0);
+        data->point.x = tp.x;
+        data->point.y = tp.y;
+        data->state = LV_INDEV_STATE_PRESSED;
+    } else {
         data->state = LV_INDEV_STATE_RELEASED;
-        return false;
     }
 
-    auto tp = M5.Touch.getDetail(0);
-    data->point = (lv_point_t) { tp.x, tp.y };
-    data->state = LV_INDEV_STATE_PRESSED;
     return true;
 }
 
