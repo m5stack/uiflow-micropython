@@ -42,6 +42,7 @@ class SHT30:
             raise ValueError("An I2C object is required.")
         self.i2c = i2c
         self.i2c_addr = i2c_address
+        self.is_present()
         self.set_delta(delta_temp, delta_hum)
         time.sleep_ms(50)
 
@@ -157,6 +158,12 @@ class SHT30:
         h_int = aux // 0xFFFF
         h_dec = (aux % 0xFFFF * 100) // 0xFFFF
         return t_int, t_dec, h_int, h_dec
+
+    def get_temperature(self):
+        return round(self.measure()[0], 2)
+
+    def get_humidity(self):
+        return round(self.measure()[1], 2)
 
 
 class SHT30Error(Exception):

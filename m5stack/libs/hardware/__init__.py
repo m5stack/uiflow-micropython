@@ -18,6 +18,7 @@ _attrs = {
     "SCD40": "scd40",
     "SDCard": "sdcard",
     "SEN55": "sen55",
+    "SHT30": "sht30",
 }
 
 
