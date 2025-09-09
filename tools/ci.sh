@@ -14,7 +14,7 @@ fi
 # code formatting
 
 function uncrustify_setup {
-    if [ uncrustify --version | grep -q "Uncrustify-0.72.0_f" ]; then
+    if command -v uncrustify >/dev/null 2>&1 && uncrustify --version | grep -q "Uncrustify-0.72.0_f"; then
         echo "uncrustify 0.72.0 is already installed."
         return 0
     fi
