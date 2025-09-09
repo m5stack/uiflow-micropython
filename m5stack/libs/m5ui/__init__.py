@@ -24,6 +24,7 @@ _attrs = {
     "M5Scale": "scale",
     "M5Slider": "slider",
     "M5Spinbox": "spinbox",
+    "M5Spinner": "spinner",
     "M5Switch": "switch",
     "M5TextArea": "textarea",
     "M5Win": "win",

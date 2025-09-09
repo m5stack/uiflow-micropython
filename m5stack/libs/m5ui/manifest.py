@@ -27,6 +27,7 @@ package(
         "scale.py",
         "slider.py",
         "spinbox.py",
+        "spinner.py",
         "switch.py",
         "textarea.py",
         "win.py",
