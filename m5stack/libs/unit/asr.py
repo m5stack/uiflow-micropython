@@ -287,7 +287,8 @@ class ASRUnit:
 
                 asr.search_command_num("custom command")
         """
-        return -1
+        command_dict = {v[0]: k for k, v in self._COMMAND_LIST.items()}
+        return command_dict.get(command_word, -1)
 
     def search_command_word(self, command_num: int) -> str:
         """Search for the command word associated with a command number.
