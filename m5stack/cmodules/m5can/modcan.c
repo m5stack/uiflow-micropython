@@ -21,9 +21,9 @@
 
 #define DEBUG 1
 #if DEBUG
-#define DEBUG_printf(...) mp_printf(&mp_plat_print, __VA_ARGS__)
+    #define DEBUG_printf(...) mp_printf(&mp_plat_print, __VA_ARGS__)
 #else
-#define DEBUG_printf(...) (void)0
+    #define DEBUG_printf(...) (void)0
 #endif
 
 // Default timings; 125Kbps
@@ -301,10 +301,10 @@ static mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp
 
     if (args[ARG_baudrate].u_int != 0) {
         int xtal = esp_clk_xtal_freq() / 1000000;
-        DEBUG_printf("XTAL frequency: %d MHz\n", xtal);
-        DEBUG_printf("find_timing_config: xtal=%d MHz, baudrate=%d kbps\n", xtal, args[ARG_baudrate].u_int);
+        // DEBUG_printf("XTAL frequency: %d MHz\n", xtal);
+        // DEBUG_printf("find_timing_config: xtal=%d MHz, baudrate=%d kbps\n", xtal, args[ARG_baudrate].u_int);
         if (find_timing_config(xtal, args[ARG_baudrate].u_int, &self->t_config) != 0) {
-            DEBUG_printf("Timing config not found for baudrate %d kbps\n", args[ARG_baudrate].u_int);
+            // DEBUG_printf("Timing config not found for baudrate %d kbps\n", args[ARG_baudrate].u_int);
             mp_raise_msg_varg(&mp_type_ValueError,
                 MP_ERROR_TEXT("Unsupported baudrate %d kbps for %d MHz crystal. Supported: 25, 50, 100, "
                     "125, 250, 500, 800, 1000"),
@@ -316,10 +316,10 @@ static mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp
             uint32_t xtal_apb_freq_hz;
 
             esp_clk_tree_src_get_freq_hz(CAN_DEFAULT_CLK_SRC, ESP_CLK_TREE_SRC_FREQ_PRECISION_EXACT, &xtal_apb_freq_hz);
-            DEBUG_printf("XTAL APB frequency: %d MHz\n", xtal_apb_freq_hz / 1000000);
+            // DEBUG_printf("XTAL APB frequency: %d MHz\n", xtal_apb_freq_hz / 1000000);
             args[ARG_quanta_resolution_hz].u_int = xtal_apb_freq_hz / args[ARG_brp].u_int;
-            DEBUG_printf("Using quanta_resolution_hz=%u based on brp=%u\n", args[ARG_quanta_resolution_hz].u_int,
-                args[ARG_brp].u_int);
+            // DEBUG_printf("Using quanta_resolution_hz=%u based on brp=%u\n", args[ARG_quanta_resolution_hz].u_int,
+            //  args[ARG_brp].u_int);
             args[ARG_brp].u_int = 0;
         }
         self->t_config.quanta_resolution_hz = args[ARG_quanta_resolution_hz].u_int;
@@ -330,10 +330,10 @@ static mp_obj_t pyb_can_init_helper(pyb_can_obj_t *self, size_t n_args, const mp
         self->t_config.triple_sampling = args[ARG_triple_sampling].u_bool;
     }
 
-    DEBUG_printf("tx=%u, rx=%u, mode=%u\n", self->g_config.tx_io, self->g_config.rx_io, self->g_config.mode);
-    DEBUG_printf("quanta_resolution_hz=%u brp=%u, tseg_1=%u, tseg_2=%u, sjw=%u, triple_sampling=%u\n",
-        self->t_config.quanta_resolution_hz, self->t_config.brp, self->t_config.tseg_1, self->t_config.tseg_2,
-        self->t_config.sjw, self->t_config.triple_sampling);
+    // DEBUG_printf("tx=%u, rx=%u, mode=%u\n", self->g_config.tx_io, self->g_config.rx_io, self->g_config.mode);
+    // DEBUG_printf("quanta_resolution_hz=%u brp=%u, tseg_1=%u, tseg_2=%u, sjw=%u, triple_sampling=%u\n",
+    //              self->t_config.quanta_resolution_hz, self->t_config.brp, self->t_config.tseg_1,
+    //              self->t_config.tseg_2, self->t_config.sjw, self->t_config.triple_sampling);
 
     check_esp_err(twai_driver_install(&self->g_config, &self->t_config, &self->f_config));
     check_esp_err(twai_start());
@@ -449,6 +449,7 @@ static mp_obj_t pyb_can_state(mp_obj_t self_in) {
     if (self->is_enabled) {
         twai_status_info_t status_info;
         check_esp_err(twai_get_status_info(&status_info));
+        // DEBUG_printf("get status %d\n", status_info.state);
         if (status_info.state == TWAI_STATE_STOPPED) {
             state = CAN_STATE_STOPPED;
         } else if (status_info.state == TWAI_STATE_RUNNING) {

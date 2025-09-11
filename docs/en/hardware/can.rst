@@ -102,11 +102,11 @@ Methods
 
     Return the state of the controller.  The return value can be one of:
 
-    - ``CAN.STOPPED`` -- the controller is completely off and reset;
-    - ``CAN.RUNNING`` -- The controller can transmit and receive messages;
-    - ``CAN.BUS_OFF`` -- the controller is on but not participating in bus activity
+    - ``0`` -- ``CAN.STOPPED`` : the controller is completely off and reset;
+    - ``4`` -- ``CAN.BUS_OFF`` : the controller is on but not participating in bus activity
       (TEC overflowed beyond 255);
-    - ``RECOVERING`` -- The controller is undergoing bus recovery.
+    - ``5`` -- ``CAN.RECOVERING`` -- The controller is undergoing bus recovery.
+    - ``6`` -- ``CAN.RUNNING`` : The controller can transmit and receive messages;
 
     UIFLOW2:
 
