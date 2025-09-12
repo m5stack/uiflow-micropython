@@ -255,7 +255,7 @@ class ENCODER8Unit:
             addr:
                 note: The new I2C address. Default is 0x41.
         """
-        if addr >= 1 and addr <= 127:
+        if addr >= 0x08 and addr <= 0x77:
             if addr != self.i2c_addr:
                 self.write_reg_data(self._ENCODER_I2C_ADDR_REG, [addr])
                 self.i2c_addr = addr
