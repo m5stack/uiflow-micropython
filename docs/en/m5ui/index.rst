@@ -77,6 +77,7 @@ Classes
     scale.rst
     slider.rst
     spinbox.rst
+    spinner.rst
     switch.rst
     textarea.rst
     win.rst

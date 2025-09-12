@@ -1,0 +1,20 @@
+.. |align_to.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/align_to.png
+.. |set_bg_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_bg_color.png
+.. |set_indicator_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_indicator_color.png
+.. |set_pos.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_pos.png
+.. |set_size.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_size.png
+.. |set_x.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_x.png
+.. |set_y.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_y.png
+.. |set_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_flag.png
+.. |set_anim_params.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/set_anim_params.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/m5ui/spinner/example.png
+
+.. |core2_spinner_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/m5ui/spinner/core2_spinner_example.m5f2"
+        target="_blank"
+    >
+        core2_spinner_example.m5f2
+    </a>
