@@ -610,6 +610,8 @@ class KeyboardI2C:
                 self._keyevent_converter, self._modifier_mask, self._fn_state, self._is_caps_locked
             )
             if self._keyevent_callback and keyevent.state:
+                # append to the key events list
+                keyevent.state and self._keyevents.append(keyevent)
                 micropython.schedule(
                     self._keyevent_callback,
                     self,  # (self, keyevent.keycode, keyevent.state)
