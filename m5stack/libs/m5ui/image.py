@@ -46,6 +46,7 @@ class M5Image(lv.image):
         self.set_height(lv.SIZE_CONTENT)
         self.set_rotation(rotation)
         self.set_scale(scale_x, scale_y)
+        self.set_pivot(0, 0)
 
     def set_image(self, path):
         """Set the image to be displayed.
