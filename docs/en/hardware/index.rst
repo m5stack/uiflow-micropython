@@ -18,6 +18,7 @@ Hardware
     rotary.rst
     scd40.rst
     sen55.rst
+    sht30.rst
     speaker.rst
     uart.rst
     wdt.rst

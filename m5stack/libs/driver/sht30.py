@@ -9,16 +9,37 @@ DEFAULT_I2C_ADDRESS = 0x44
 
 
 class SHT30:
-    """
-    SHT30 sensor driver in pure python based on I2C bus
+    """Create a SHT30 object.
 
-    References:
-    * https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf  # NOQA
-    * https://www.wemos.cc/sites/default/files/2016-11/SHT30-DIS_datasheet.pdf
-    * https://github.com/wemos/WEMOS_SHT3x_Arduino_Library
-    * https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/11_Sample_Codes_Software/Humidity_Sensors/Sensirion_Humidity_Sensors_SHT3x_Sample_Code_V2.pdf
+    :param I2C i2c: The I2C bus object.
+    :param int delta_temp: The temperature delta to apply to measurements.
+    :param int delta_hum: The humidity delta to apply to measurements.
+    :param int i2c_address: The I2C address of the sensor.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from hardware import Pin
+            from hardware import I2C
+            from hardware import SHT30
+
+            # Paper
+            i2c0 = I2C(0, scl=Pin(22), sda=Pin(21), freq=100000)
+            sht30 = SHT30(i2c0)
     """
 
+    # SHT30 sensor driver in pure python based on I2C bus
+
+    # References:
+    # * https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/2_Humidity_Sensors/Sensirion_Humidity_Sensors_SHT3x_Datasheet_digital.pdf  # NOQA
+    # * https://www.wemos.cc/sites/default/files/2016-11/SHT30-DIS_datasheet.pdf
+    # * https://github.com/wemos/WEMOS_SHT3x_Arduino_Library
+    # * https://www.sensirion.com/fileadmin/user_upload/customers/sensirion/Dokumente/11_Sample_Codes_Software/Humidity_Sensors/Sensirion_Humidity_Sensors_SHT3x_Sample_Code_V2.pdf
     POLYNOMIAL = 0x131  # P(x) = x^8 + x^5 + x^4 + 1 = 100110001
 
     ALERT_PENDING_MASK = 0x8000  # 15
@@ -47,16 +68,12 @@ class SHT30:
         time.sleep_ms(50)
 
     def is_present(self):
-        """
-        Return true if the sensor is correctly conneced, False otherwise
-        """
+        # Return true if the sensor is correctly connected, False otherwise
         return self.i2c_addr in self.i2c.scan()
 
     def set_delta(self, delta_temp=0, delta_hum=0):
-        """
-        Apply a delta value on the future measurements of temperature and/or humidity
-        The units are Celsius for temperature and percent for humidity (can be negative values)
-        """
+        # Apply a delta value on the future measurements of temperature and/or humidity
+        # The units are Celsius for temperature and percent for humidity (can be negative values)
         self.delta_temp = delta_temp
         self.delta_hum = delta_hum
 
@@ -75,10 +92,8 @@ class SHT30:
         return crc_to_check == crc
 
     def send_cmd(self, cmd_request, response_size=6, read_delay_ms=100):
-        """
-        Send a command to the sensor and read (optionally) the response
-        The responsed data is validated by CRC
-        """
+        # Send a command to the sensor and read (optionally) the response
+        # The responsed data is validated by CRC
         try:
             self.i2c.writeto(self.i2c_addr, cmd_request)
             if not response_size:
@@ -98,22 +113,16 @@ class SHT30:
             raise ex
 
     def clear_status(self):
-        """
-        Clear the status register
-        """
+        # Clear the status register
         return self.send_cmd(SHT30.CLEAR_STATUS_CMD, None)
 
     def reset(self):
-        """
-        Send a soft-reset to the sensor
-        """
+        # Send a soft-reset to the sensor
         return self.send_cmd(SHT30.RESET_CMD, None)
 
     def status(self, raw=False):
-        """
-        Get the sensor status register.
-        It returns a int value or the bytearray(3) if raw==True
-        """
+        # Get the sensor status register.
+        # It returns a int value or the bytearray(3) if raw==True
         data = self.send_cmd(SHT30.STATUS_CMD, 3, read_delay_ms=20)
 
         if raw:
@@ -123,12 +132,10 @@ class SHT30:
         return status_register
 
     def measure(self, raw=False):
-        """
-        If raw==True returns a bytearrya(6) with sensor direct measurement otherwise
-        It gets the temperature (T) and humidity (RH) measurement and return them.
+        # If raw==True returns a bytearrya(6) with sensor direct measurement otherwise
+        # It gets the temperature (T) and humidity (RH) measurement and return them.
 
-        The units are Celsius and percent
-        """
+        # The units are Celsius and percent
         data = self.send_cmd(SHT30.MEASURE_CMD, 6)
 
         if raw:
@@ -139,15 +146,13 @@ class SHT30:
         return t_celsius, rh
 
     def measure_int(self, raw=False):
-        """
-        Get the temperature (T) and humidity (RH) measurement using integers.
-        If raw==True returns a bytearrya(6) with sensor direct measurement otherwise
-        It returns a tuple with 4 values: T integer, T decimal, H integer, H decimal
-        For instance to return T=24.0512 and RH= 34.662 This method will return
-        (24, 5, 34, 66) Only 2 decimal digits are returned, .05 becomes 5
-        Delta values are not applied in this method
-        The units are Celsius and percent.
-        """
+        # Get the temperature (T) and humidity (RH) measurement using integers.
+        # If raw==True returns a bytearrya(6) with sensor direct measurement otherwise
+        # It returns a tuple with 4 values: T integer, T decimal, H integer, H decimal
+        # For instance to return T=24.0512 and RH= 34.662 This method will return
+        # (24, 5, 34, 66) Only 2 decimal digits are returned, .05 becomes 5
+        # Delta values are not applied in this method
+        # The units are Celsius and percent.
         data = self.send_cmd(SHT30.MEASURE_CMD, 6)
         if raw:
             return data
@@ -160,9 +165,33 @@ class SHT30:
         return t_int, t_dec, h_int, h_dec
 
     def get_temperature(self):
+        """Get the temperature in Celsius.
+
+        UiFlow2 Code Block:
+
+            |get_temperature.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht30.get_temperature()
+        """
         return round(self.measure()[0], 2)
 
     def get_humidity(self):
+        """Get the relative humidity in percent.
+
+        UiFlow2 Code Block:
+
+            |get_humidity.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht30.get_humidity()
+        """
         return round(self.measure()[1], 2)
 
 

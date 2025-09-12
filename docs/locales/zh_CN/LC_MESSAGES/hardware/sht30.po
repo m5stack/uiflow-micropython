@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-12 11:12+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/hardware/sht30.rst:2 1a658bcbc53c4897b6fa5cb29986a6d9
+msgid "SHT30"
+msgstr "SHT30"
+
+#: ../../en/hardware/sht30.rst:6 2d3a8b048e1341859e5950c76736b753
+msgid "SHT30 is a sensor that can be used to measure temperature and humidity."
+msgstr "SHT30 是一款用于测量温度和湿度的传感器。"
+
+#: ../../en/hardware/sht30.rst:9 64bc0199440345a1b186e93853110609
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/hardware/sht30.rst:12 ../../en/hardware/sht30.rst:31
+#: 048ff22e69fe457e982e85388d7e2084 0b8693284b8b4f989c807a24587c1a1a
+msgid "get temperature and humidity"
+msgstr "获取温度和湿度"
+
+#: ../../en/hardware/sht30.rst:14 d376db4a1f5742b181af75a303567e34
+msgid "Open the |paper_sht30_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |paper_sht30_example.m5f2| 项目。"
+
+#: ../../en/hardware/sht30.rst:16 ../../en/hardware/sht30.rst:33
+#: d052ec4c3e0e4c798346b6129c388e4e dfc0221dde784a918c8bbef56ef73140
+msgid "This example reads the temperature and humidity from the SHT30 sensor."
+msgstr "本示例从 SHT30 传感器读取温度和湿度。"
+
+#: ../../en/hardware/sht30.rst:18 16d7b5912af745d890e31019ee44041f
+#: 18c744c833d74a38b82d5a27f5cdb2cf 9507e089ac6743afb4af9c272e917094
+#: d7c94b089b46411190443c1d813951ff driver.sht30.SHT30:8
+#: driver.sht30.SHT30.get_humidity:3 driver.sht30.SHT30.get_temperature:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/hardware/sht30.rst:20 71051090651d423ebc44c7fb6836600d
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sht30.ref:5 6f254916dccd4c3c94c4772dc7bab3b7
+msgid "example.png"
+msgstr ""
+
+#: ../../en/hardware/sht30.rst:22 ../../en/hardware/sht30.rst:41
+#: 1c3e1314595b4ff2b195ce0ec6d25efa fe6710e6217948b28fcb9144bf3fc0c7
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/hardware/sht30.rst:24 ../../en/hardware/sht30.rst:43
+#: 8267aa325283457a9e85d976ec7ecf6f cf9f3d7ed1784fc198cfc8de685b6bf8
+msgid "None"
+msgstr ""
+
+#: ../../en/hardware/sht30.rst:28 bf1c9d423b154111b63cc2e2f57cb245
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/hardware/sht30.rst:35 1b14ba704c894b228597a11635c5393b
+#: 895499913f3841cbb62ca1b3c1d89fd2 9ddb8a19ed4940d19a2eda9b97ee905a
+#: driver.sht30.SHT30:12 driver.sht30.SHT30.get_humidity:7
+#: driver.sht30.SHT30.get_temperature:7 eb5b76f5ad34419c93b12db063217503 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/hardware/sht30.rst:47 7b62471d405f44f28106b5b843e1b63a
+msgid "**API**"
+msgstr ""
+
+#: ../../en/hardware/sht30.rst:50 5bfca301ce0943b8be4f5658d7fd3aeb
+msgid "SHT30"
+msgstr "SHT30"
+
+#: d88349f9550a47f2b30d126f15e9164c hardware.sht30.SHT30:1 of
+msgid "Bases: :py:class:`~driver.sht30.SHT30`"
+msgstr ""
+
+#: 07fb9ec4bfd74e2987d2be5f70183ff5 driver.sht30.SHT30:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: c426a0803192475abf5b8e9b51501202 driver.sht30.SHT30:1 of
+msgid "Create a SHT30 object."
+msgstr "创建一个 SHT30 对象。"
+
+#: ../../en/hardware/sht30.rst edbb8047523e4fbb8353569303c4859e
+msgid "Parameters"
+msgstr "参数"
+
+#: 6e2766960697430eae4f1222de3f57a2 driver.sht30.SHT30:3 of
+msgid "The I2C bus object."
+msgstr "I2C 总线对象。"
+
+#: 92cddc7bfa88454c99eedb5ee5a5ed65 driver.sht30.SHT30:4 of
+msgid "The temperature delta to apply to measurements."
+msgstr "用于测量的温度修正值。"
+
+#: driver.sht30.SHT30:5 e69b1c8b5e2d424c99461f610f8461c2 of
+msgid "The humidity delta to apply to measurements."
+msgstr "用于测量的湿度修正值。"
+
+#: 241f3621f6da4367a6c7f9658f0a5fff driver.sht30.SHT30:6 of
+msgid "The I2C address of the sensor."
+msgstr "传感器的 I2C 地址。"
+
+#: dd64f46f32fc4ecd92ad01ce7a58e0c6 driver.sht30.SHT30:10 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sht30.ref:2 165b3ef7681c4fd0ae2f4604859c41e8
+msgid "init.png"
+msgstr ""
+
+#: 8446b18821584ebabd34d0acf1e368c7 driver.sht30.SHT30.get_temperature:1 of
+msgid "Get the temperature in Celsius."
+msgstr "获取摄氏温度。"
+
+#: 9f7cab196d834b19a39e7b568981af11 driver.sht30.SHT30.get_temperature:5 of
+msgid "|get_temperature.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sht30.ref:4 fb2d147c10ac4fc98479fc847ffda065
+msgid "get_temperature.png"
+msgstr ""
+
+#: c0201b1f38654ee5bd67ac21a4e2d917 driver.sht30.SHT30.get_humidity:1 of
+msgid "Get the relative humidity in percent."
+msgstr "获取相对湿度（百分比）。"
+
+#: ba20f5e9d7c442849b4f4ec6046d9e50 driver.sht30.SHT30.get_humidity:5 of
+msgid "|get_humidity.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.sht30.ref:3 2b9a568f9db44e759f8127055a5a3a92
+msgid "get_humidity.png"
+msgstr ""
