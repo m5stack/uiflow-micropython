@@ -15,6 +15,8 @@ class M5Spinner(lv.spinner):
     :param int h: The height of the spinner.
     :param int anim_t: The animation time in milliseconds.
     :param int angle: The angle of the spinner in degrees.
+    :param int bg_c: The background color of the spinner in hexadecimal format.
+    :param int bg_c_indicator: The indicator color of the spinner in hexadecimal format.
     :param lv.obj parent: The parent object to attach the spinner to. If not specified, the spinner will be attached to the default screen.
 
     UiFlow2 Code Block:
@@ -29,7 +31,7 @@ class M5Spinner(lv.spinner):
             import lvgl as lv
 
             m5ui.init()
-            spinner_0 = M5Spinner(x=120, y=80, w=60, h=30, anim_t=1000, angle=180, parent=page0)
+            spinner_0 = M5Spinner(x=120, y=80, w=60, h=30, anim_t=1000, angle=180, bg_c=0xE7E3E7, bg_c_indicator=0x0288FB, parent=page0)
     """
 
     def __init__(
@@ -40,6 +42,8 @@ class M5Spinner(lv.spinner):
         h=0,
         anim_t=10000,
         angle=180,
+        bg_c=0xE7E3E7,
+        bg_c_indicator=0x0288FB,
         parent=None,
     ):
         if parent is None:
@@ -48,21 +52,27 @@ class M5Spinner(lv.spinner):
         self.set_pos(x, y)
         self.set_size(w, h)
         self.set_anim_params(anim_t, angle)
+        self.set_spinner_color(bg_c, 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.set_spinner_color(bg_c_indicator, 255, lv.PART.INDICATOR | lv.STATE.DEFAULT)
 
     def set_spinner_color(self, color, opa: int, part: int):
         """Set the color of the spinner.
 
         :param int color: The color of the spinner in hexadecimal format.
+        :param int opa: The opacity of the color (0-255).
+        :param int part: The part of the spinner to set the color for.
 
         UiFlow2 Code Block:
 
-            |set_spinner_color.png|
+            |set_indicator_color.png|
+
+            |set_bg_color.png|
 
         MicroPython Code Block:
 
             .. code-block:: python
 
-                label_0.set_spinner_color(0x2196F3, lv.PART.MAIN | lv.STATE.DEFAULT)
+                spinner_0.set_spinner_color(0x2196F3, 255, lv.PART.MAIN | lv.STATE.DEFAULT)
         """
         if isinstance(color, int):
             color = lv.color_hex(color)

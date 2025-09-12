@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-12 10:47+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/spinner.rst:4 ../../en/m5ui/spinner.rst:52
+#: 5fe7caab91d14429ad412309292ddb49 d82fad7e493b4296b0c7e078fcbfa792
+msgid "M5Spinner"
+msgstr "M5Spinner"
+
+#: ../../en/m5ui/spinner.rst:8 13d8479a91534fb1b975b508d0ce25a7
+msgid ""
+"M5Spinner is a spinning arc over a ring, typically used to show some type"
+" of activity is in progress."
+msgstr "M5Spinner 是一个环形上旋转的弧形，通常用于显示有某些操作正在进行中。"
+
+#: ../../en/m5ui/spinner.rst:11 5ab7c5284f9b44b09039b55616a87b8c
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/spinner.rst:14 ../../en/m5ui/spinner.rst:33
+#: afb5bd511cbb46608719f85d4d946e20 ff2677ed658c400e95c34c94e55f7ff7
+msgid "spinner"
+msgstr "spinner"
+
+#: ../../en/m5ui/spinner.rst:16 fed5ce0d70744d6e8ed3a98f7b16c92b
+msgid "Open the |core2_spinner_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |core2_spinner_example.m5f2| 项目。"
+
+#: ../../en/m5ui/spinner.rst:18 ../../en/m5ui/spinner.rst:35
+#: 2b7d3c9873314fc4b49bad49a6508a2b 6130abd93b974459b1bc6984dbfeb8db
+msgid "This example shows a spinning arc over a ring."
+msgstr "本示例演示了一个在环形上旋转的弧形。"
+
+#: ../../en/m5ui/spinner.rst:20 ../../en/m5ui/spinner.rst:66
+#: ../../en/m5ui/spinner.rst:83 ../../en/m5ui/spinner.rst:99
+#: ../../en/m5ui/spinner.rst:115 ../../en/m5ui/spinner.rst:132
+#: ../../en/m5ui/spinner.rst:151 ../../en/m5ui/spinner.rst:168
+#: 14cef86ae6584315934840f8721948f8 1ba3d1d99dfb49dbac4399bfb4ea1a68
+#: 1d228f34add74653853aa14ddb29a568 4f0e175a323043dda20873faca63ca7a
+#: 5fd1b48ed1444f6c9994ec505b92757a 71550b271d5e4dabac7e432e0f2792b6
+#: 8a5142a33f98431ba52d3db12d3b7156 9bc83632bcdf4150970312c721797b44
+#: c7606be360f346f8a30ffe6e080abfd0 ec29ad76e7204533815957e8dc2d73ad
+#: m5ui.spinner.M5Spinner:13 m5ui.spinner.M5Spinner.set_spinner_color:7 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/spinner.rst:22 852c6c2a88ef46a69ae88585140864ca
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:11 ec86f6cbb8ef4a9bb7d94331684dc8ef
+msgid "example.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:24 ../../en/m5ui/spinner.rst:43
+#: 626f309b02c14dd78f0106d0aa79527a aef66c9e71164e608d7b885c744ec084
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/spinner.rst:26 ../../en/m5ui/spinner.rst:45
+#: ../../en/m5ui/spinner.rst:64 4ff9fcc7e3374f10bf0c06fb1311a870
+#: bc88698626014b91a4cae305de69dfd6 cfae4546150748499dc6172d33d39c7f
+#: d044d27835db4388ae8fc9f0184e8fb1 m5ui.spinner.M5Spinner:15 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:30 0c12ad3f157d4b1f87ffca08bb865229
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/spinner.rst:37 ../../en/m5ui/spinner.rst:70
+#: ../../en/m5ui/spinner.rst:87 ../../en/m5ui/spinner.rst:103
+#: ../../en/m5ui/spinner.rst:119 ../../en/m5ui/spinner.rst:136
+#: ../../en/m5ui/spinner.rst:155 ../../en/m5ui/spinner.rst:172
+#: 0c3b48eb24464fcc947d74376ebccf8a 17ec5f41d5134bc9992b3f959270b54c
+#: 229a8f3c5f144b0aa2b431d23d442d43 41237149d69640b1b4e489ea10d237a6
+#: 7abadabce0504bbcb6a6cb17fbdf501d a2c6a773905e4b8d8b6a580c61170418
+#: b7a01b6e02e74ed88b2d1baf82bfac86 b7d8f6c792cc4100a457735c31d7e488
+#: bbd55ee9ae69480aa9d1a1f5d69ce2c8 f505c60c4b5c414c87018a1f20250e47
+#: m5ui.spinner.M5Spinner:17 m5ui.spinner.M5Spinner.set_spinner_color:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/spinner.rst:49 81ad4a560dd34af0bbde5c284072c408
+msgid "**API**"
+msgstr ""
+
+#: 646aa81d6909490cbb34818f02af11b4 m5ui.spinner.M5Spinner:1 of
+msgid "Bases: :py:class:`~lvgl.spinner`"
+msgstr ""
+
+#: 07ac6cc7a5e147f7b19c52752c2217f5 m5ui.spinner.M5Spinner:1 of
+msgid "Create a spinner object."
+msgstr "创建一个spinner对象。"
+
+#: ../../en/m5ui/spinner.rst 3788bb7a048142e0972d385bc070afc9
+#: 6fff59dee0f046dcae1c4fded3931fe0 939c4ef3eca84b41bff7d9a5e3fa8552
+#: 9652112174024c54a80f8d2f5eae8a38 ad8add8ff5f5474b932eaef2cfc8cecf
+#: c5be7e0f9c5444269e6d8cb238b26fd4 ef5d703c0c3a440ea0dc467b2bee4083
+#: f46afabb4cf94a0ea847f80123ad9c80 f843ed3578ab4e538efd28c5b405e045
+#: m5ui.spinner.M5Spinner.set_spinner_color of
+msgid "Parameters"
+msgstr "参数"
+
+#: 5235e4c4abc44804b24447ebf2b710ea m5ui.spinner.M5Spinner:3 of
+msgid "The x position of the spinner."
+msgstr "spinner的 x 坐标位置。"
+
+#: 2a78ad328f5d46aeafa94cddad3313b5 m5ui.spinner.M5Spinner:4 of
+msgid "The y position of the spinner."
+msgstr "spinner的 y 坐标位置。"
+
+#: ../../en/m5ui/spinner.rst:129 d0c3f9e210ea4de4b0a651ebf8cf16cc
+#: ee9e30a11a1340ed9f3eee5288e1d785 m5ui.spinner.M5Spinner:5 of
+msgid "The width of the spinner."
+msgstr "spinner的宽度。"
+
+#: ../../en/m5ui/spinner.rst:130 0a8efc2c34ce45519382f156bafaef22
+#: e6477f6fb81a4ea0b16a91bb93591cea m5ui.spinner.M5Spinner:6 of
+msgid "The height of the spinner."
+msgstr "spinner的高度。"
+
+#: ../../en/m5ui/spinner.rst:165 770451d7739b4085b8ef24446865d346
+#: b5f14933c9314e9a89ed671445c5cde4 m5ui.spinner.M5Spinner:7 of
+msgid "The animation time in milliseconds."
+msgstr "动画时间（毫秒）。"
+
+#: ../../en/m5ui/spinner.rst:166 00b92a7fef024ee39514af004a0ba898
+#: eb4257cf1f7f4055b60583c133a1c1ba m5ui.spinner.M5Spinner:8 of
+msgid "The angle of the spinner in degrees."
+msgstr "spinner的角度（度）。"
+
+#: fb343d66ba524fb59a78caabcb1fc694 m5ui.spinner.M5Spinner:9 of
+msgid "The background color of the spinner in hexadecimal format."
+msgstr "spinner的背景颜色（十六进制格式）。"
+
+#: ad2c7c607b874c4aab37812768a9510b m5ui.spinner.M5Spinner:10 of
+msgid "The indicator color of the spinner in hexadecimal format."
+msgstr "spinner指示器的颜色（十六进制格式）。"
+
+#: 08944caf536c47ea935793965d11d888 m5ui.spinner.M5Spinner:11 of
+msgid ""
+"The parent object to attach the spinner to. If not specified, the spinner"
+" will be attached to the default screen."
+msgstr "要附加spinner的父对象。如果未指定，spinner将附加到默认屏幕。"
+
+#: ../../en/m5ui/spinner.rst:60 64f917b75b904bde9cf0e30917a3714a
+msgid ""
+"Set a flag on the object. If ``value`` is True, the flag is added; if "
+"False, the flag is removed."
+msgstr "在对象上设置标志。如果 ``value`` 为 True，则添加标志；为 False 时移除标志。"
+
+#: ../../en/m5ui/spinner.rst:62 108eb6f0dab9411687e0673a868debdf
+msgid "The flag to set."
+msgstr "要设置的标志。"
+
+#: ../../en/m5ui/spinner.rst:63 9d6a6339116846bc860f7624051d58c3
+msgid "If True, the flag is added; if False, the flag is removed."
+msgstr "为 True 时添加标志，为 False 时移除标志。"
+
+#: ../../en/m5ui/spinner.rst fb4eec82b3944bb8a18184b1d4e915d6
+msgid "Returns"
+msgstr "返回"
+
+#: ../../en/m5ui/spinner.rst:68 42595aefc4144ca89245f619d79c3acf
+msgid "|set_flag.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:8 2b7ff25626dc4e698ee1bf6c4587a735
+msgid "set_flag.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:78 15d4f044e7ab42e597b2233b81b0e4d3
+msgid "Set the position of the spinner."
+msgstr "设置spinner的位置。"
+
+#: ../../en/m5ui/spinner.rst:80 ../../en/m5ui/spinner.rst:97
+#: 95e4f4a7e8f044aabcf763dba7d2c935 a65ce0e060804707a9b60d55b3dddb3c
+msgid "The x-coordinate of the spinner."
+msgstr "spinner的 x 坐标。"
+
+#: ../../en/m5ui/spinner.rst:81 ../../en/m5ui/spinner.rst:113
+#: 7eb60bb4cc244a1f91d2c531c2b32a93 cca15f6896c547f78bd0535c83048dc2
+msgid "The y-coordinate of the spinner."
+msgstr "spinner的 y 坐标。"
+
+#: ../../en/m5ui/spinner.rst:85 c72b99d391e54289baa94503cac7a7ae
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:4 081428b9409b4bf19583681d6c7b4d55
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:95 7311ab152238405593f843df9c14c887
+msgid "Set the x-coordinate of the spinner."
+msgstr "设置spinner的 x 坐标。"
+
+#: ../../en/m5ui/spinner.rst:101 2de8b1a2648c492cbd83100ede378916
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:6 aa8de5f43694450e8063cc2adcdfac02
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:111 af456f55778b453681ac4a1ac8baab4e
+msgid "Set the y-coordinate of the spinner."
+msgstr "设置spinner的 y 坐标。"
+
+#: ../../en/m5ui/spinner.rst:117 6d9b819a8aab4c7dacae72b83b3354b8
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:7 975e4e66499a42699ad0510265d696a8
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:127 0bb386cba62545f7821319762012ff42
+msgid "Set the size of the spinner."
+msgstr "设置spinner的尺寸。"
+
+#: ../../en/m5ui/spinner.rst:134 7717aa1ae5c24ee8b2a8bbcee9a14f78
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:5 11d1d4be555a4560817df87196604ef4
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:144 445075ef291a44b3ad107e5230b4e19d
+msgid "Align the spinner to another object."
+msgstr "将spinner对齐到另一个对象。"
+
+#: ../../en/m5ui/spinner.rst:146 03f3122196c14969b9bd9e2e005a2f1d
+msgid "The object to align to."
+msgstr "要对齐的对象。"
+
+#: ../../en/m5ui/spinner.rst:147 878a44f925264832b857305b6a73d11e
+msgid "The alignment type."
+msgstr "对齐类型。"
+
+#: ../../en/m5ui/spinner.rst:148 e71c8208f235467895006872c88211ea
+msgid "The x-offset from the aligned object."
+msgstr "相对于对齐对象的 x 偏移量。"
+
+#: ../../en/m5ui/spinner.rst:149 a15dc2a98da34b3aaeea0b781d58c1de
+msgid "The y-offset from the aligned object."
+msgstr "相对于对齐对象的 y 偏移量。"
+
+#: ../../en/m5ui/spinner.rst:153 ddf88816e42947718155179116a46bd2
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:1 77e08ebae9b74a04a2571feab5c6b875
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/spinner.rst:163 4525615aa3a84615a3d62dcb088596dd
+msgid "Set the animation parameters of the spinner."
+msgstr "设置spinner的动画参数。"
+
+#: ../../en/m5ui/spinner.rst:170 976fb0b843ee40f09629c1897365c6b7
+msgid "|set_anim_params.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:9 08bd4c26a57749a7b6dfe43af984c07e
+msgid "set_anim_params.png"
+msgstr ""
+
+#: 961c683bc93048a98643e23cd24886f3 m5ui.spinner.M5Spinner.set_spinner_color:1
+#: of
+msgid "Set the color of the spinner."
+msgstr "设置spinner的颜色。"
+
+#: 9d5976f902df4b3f97b8ca1208a6f010 m5ui.spinner.M5Spinner.set_spinner_color:3
+#: of
+msgid "The color of the spinner in hexadecimal format."
+msgstr "spinner的颜色（十六进制格式）。"
+
+#: a06947314c1a4c82813fee6412b13ca3 m5ui.spinner.M5Spinner.set_spinner_color:4
+#: of
+msgid "The opacity of the color (0-255)."
+msgstr "颜色的不透明度（0-255）。"
+
+#: 9d5976f902df4b3f97b8ca1208a6f010 m5ui.spinner.M5Spinner.set_spinner_color:5
+#: of
+#, fuzzy
+msgid "The part of the spinner to set the color for."
+msgstr "要设置颜色的spinner部分。"
+
+#: 64c3b2982c4c498994ba739d0ce100aa m5ui.spinner.M5Spinner.set_spinner_color:9
+#: of
+msgid "|set_indicator_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:3 bc4d79b5ca644868ad43fc7b5946cefa
+msgid "set_indicator_color.png"
+msgstr ""
+
+#: a801f04b247042599fbbb2b37b5bd6da m5ui.spinner.M5Spinner.set_spinner_color:11
+#: of
+msgid "|set_bg_color.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.spinner.ref:2 92d9fb4bc9df4128841277eb9401911b
+msgid "set_bg_color.png"
+msgstr ""
+
