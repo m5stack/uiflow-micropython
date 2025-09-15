@@ -55,24 +55,6 @@ M5Bar
 .. autoclass:: m5ui.bar.M5Bar
     :members:
 
-    .. py:method:: set_value(value, anim_enable)
-
-        Set the current value of the bar.
-
-        :param int value: The value to set.
-        :param bool anim_enable: Whether to enable animation when changing the value.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_value.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                bar.set_value(75, True)
-
     .. py:method:: get_value()
 
         Get the current value of the bar.
@@ -89,24 +71,6 @@ M5Bar
             .. code-block:: python
 
                 current_value = bar.get_value()
-
-    .. py:method:: set_range(min_value, max_value)
-
-        Set the value range of the bar.
-
-        :param int min_value: The minimum value.
-        :param int max_value: The maximum value.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_range.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                bar.set_range(0, 200)
 
     .. py:method:: get_min_value()
 

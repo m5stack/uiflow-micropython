@@ -4,6 +4,7 @@
 
 from .base import M5Base
 import lvgl as lv
+import warnings
 
 
 class M5Bar(lv.bar):
@@ -53,15 +54,64 @@ class M5Bar(lv.bar):
 
         self.set_pos(x, y)
         self.set_size(w, h)
-        self.set_range(min_value, max_value)
+        super().set_range(min_value, max_value)
         self.set_bg_color(
             bg_c, 51, lv.PART.MAIN | lv.STATE.DEFAULT
         )  # default opacity is 51 (20% opacity)
         self.set_bg_color(color, lv.OPA.COVER, lv.PART.INDICATOR | lv.STATE.DEFAULT)
-        self.set_value(value, True)
+        super().set_value(value, True)
 
         if is_show_value:
             self.add_event_cb(self._draw_cb, lv.EVENT.DRAW_MAIN_END, None)
+
+    def set_value(self, value: int, anim: bool = False) -> None:
+        """Set the current value of the bar.
+
+        :param int value: The value to set.
+        :param bool anim_enable: Whether to enable animation when changing the value.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_value.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                bar.set_value(75, True)
+        """
+        if not isinstance(value, int):
+            raise ValueError("Value must be an integer.")
+        if value < self.get_min_value():
+            warnings.warn(f"Value is less than min_value, setting to {self.get_min_value()}.")
+            value = self.get_min_value()
+        if value > self.get_max_value():
+            warnings.warn(f"Value is greater than max_value, setting to {self.get_max_value()}.")
+            value = self.get_max_value()
+        super().set_value(value, anim)
+
+    def set_range(self, min_value: int, max_value: int) -> None:
+        """Set the value range of the bar.
+
+        :param int min_value: The minimum value.
+        :param int max_value: The maximum value.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_range.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                bar.set_range(0, 200)
+        """
+        if not isinstance(min_value, int) or not isinstance(max_value, int):
+            raise ValueError("min_value and max_value must be integers.")
+        super().set_range(min_value, max_value)
+        self.set_value(self.get_value(), False)
 
     def _draw_cb(self, event_struct):
         label_dsc = lv.draw_label_dsc_t()
