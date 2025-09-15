@@ -4,7 +4,6 @@
 
 from m5ui.base import M5Base
 import lvgl as lv
-import M5
 
 
 class M5Switch(lv.switch):
@@ -49,12 +48,12 @@ class M5Switch(lv.switch):
             parent = lv.screen_active()
         super().__init__(parent)
         self.set_pos(x, y)
-        self.set_bg_color(bg_c, 255, lv.PART.MAIN | lv.STATE.DEFAULT)
-        self.set_bg_color(bg_c_checked, 255, lv.PART.INDICATOR | lv.STATE.CHECKED)
-        self.set_bg_color(circle_c, 255, lv.PART.KNOB | lv.STATE.DEFAULT)
         self.set_size(w, h)
         self.width = w
         self.height = h
+        self.set_bg_color(bg_c, 255, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self.set_bg_color(bg_c_checked, 255, lv.PART.INDICATOR | lv.STATE.CHECKED)
+        self.set_bg_color(circle_c, 255, lv.PART.KNOB | lv.STATE.DEFAULT)
 
     def set_direction(self, direction):
         """Set the direction of the switch.
@@ -89,13 +88,13 @@ class M5Switch(lv.switch):
         if w < 0 or h < 0:
             raise ValueError("Width and height must be non-negative")
 
-        _width = M5.Display.width()
-        _height = M5.Display.height()
+        _width, _height = self.get_display_size()
 
         if w < _width and h < _height:
             super().set_size(w, h)
         else:
             print("Warning: width or height exceed screen size, auto set to screen size")
+            self.set_pos(0, 0)
             super().set_size(_width, _height)
 
         self.width = w

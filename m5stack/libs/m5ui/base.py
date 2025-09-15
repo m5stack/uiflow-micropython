@@ -106,22 +106,6 @@ class M5Base:
         self.set_style_bg_opa(opa, part)
 
     @staticmethod
-    def set_line_color(self, color: int, opa: int, part: int = lv.PART.MAIN) -> None:
-        """Set the line color and opacity for a given part of the object.
-
-        :param int color: The color to set, can be an integer (hex) or a lv.color object.
-        :param int opa: The opacity level (0-255).
-        :param int part: The part of the object to apply the style to (e.g., lv.PART.MAIN).
-        :return: None
-        """
-        if isinstance(color, int):
-            color = lv.color_hex(color)
-
-        self.set_style_line_color(color, part)
-        time.sleep(0.01)
-        self.set_style_line_opa(opa, part)
-
-    @staticmethod
     def set_bg_grad_color(self, color, opa, grad_color, grad_opd, grad_dir, part: int) -> None:
         """Set the background gradient color of the bar.
 
@@ -168,3 +152,13 @@ class M5Base:
         self.set_style_border_color(color, part)
         time.sleep(0.01)
         self.set_style_border_opa(opa, part)
+
+    @staticmethod
+    def get_display_size(self):
+        """Get the display size.
+
+        :return: A tuple containing the width and height of the display.
+        :rtype: tuple
+        """
+        scr = lv.screen_active()
+        return scr.get_width(), scr.get_height()
