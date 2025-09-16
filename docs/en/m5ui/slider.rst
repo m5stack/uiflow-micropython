@@ -223,24 +223,6 @@ M5Slider
                 bar.set_bg_grad_color(0x00FF00, 255, 0xFF0000, 255, lv.GRAD_DIR.HOR, lv.PART.MAIN | lv.STATE.DEFAULT)
                 bar.set_bg_grad_color(0x00FF00, 255, 0xFF0000, 255, lv.GRAD_DIR.HOR, lv.PART.INDICATOR | lv.STATE.DEFAULT)
 
-    .. py:method:: set_value(value, anim)
-
-        Set the value of the slider.
-
-        :param int value: The value to set.
-        :param bool anim: Whether to animate the change.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_value.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                slider_0.set_value(50, True)
-
     .. py:method:: get_value()
 
         Get the current value of the slider.
@@ -257,24 +239,6 @@ M5Slider
             .. code-block:: python
 
                 value = slider_0.get_value()
-
-    .. py:method:: set_range(min_value, max_value)
-
-        Set the range of the slider.
-
-        :param int min_value: The minimum value of the range.
-        :param int max_value: The maximum value of the range.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_range.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                slider_0.set_range(0, 200)
 
     .. py:method:: set_mode(mode)
 

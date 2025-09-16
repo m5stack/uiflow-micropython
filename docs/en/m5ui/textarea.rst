@@ -409,23 +409,6 @@ M5TextArea
 
                 textarea_0.set_password_mode(True)
 
-    .. py:method:: set_one_line(text)
-
-        Set whether the textarea should be single line or multi-line.
-
-        :param bool text: True for single line, False for multi-line.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_one_line.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                textarea_0.set_one_line(True)
-
     .. py:method:: set_accepted_chars(chars)
 
         Set the characters that are accepted in the textarea. Only these characters can be entered.

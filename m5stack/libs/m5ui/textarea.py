@@ -49,6 +49,30 @@ class M5TextArea(lv.textarea):
         self.set_border_color(border_c, lv.OPA.COVER, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.set_text_color(text_c, lv.OPA.COVER, lv.PART.MAIN | lv.STATE.DEFAULT)
 
+        self._h = h
+
+    def set_one_line(self, en: bool) -> None:
+        """Set whether the textarea should be single line or multi-line.
+
+        :param bool text: True for single line, False for multi-line.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_one_line.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                textarea_0.set_one_line(True)
+        """
+        if en:
+            self._h = self.get_height()
+        super().set_one_line(en)
+        if not en:
+            self.set_height(self._h)
+
     def set_style_radius(self, radius: int, part: int) -> None:
         if radius < 0:
             raise ValueError("Radius must be a non-negative integer.")
