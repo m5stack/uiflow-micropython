@@ -4,6 +4,7 @@
 
 from .base import M5Base
 import lvgl as lv
+import warnings
 
 
 class M5Slider(lv.slider):
@@ -21,6 +22,19 @@ class M5Slider(lv.slider):
     :param bg_c: The background color of the slider.
     :param color: The color of the slider indicator.
     :param parent: The parent object of the slider. If not specified, it will be set to the active screen.
+
+    UiFlow2 Code Block:
+
+        None
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from m5ui import M5Slider
+            import lvgl as lv
+
+            slider_0 = M5Slider(x=50, y=50, w=200, h=20, min_value=0, max_value=100, value=25)
     """
 
     def __init__(
@@ -44,10 +58,59 @@ class M5Slider(lv.slider):
         self.set_size(w, h)
         self.set_pos(x, y)
         self.set_mode(mode)
-        self.set_range(min_value, max_value)
-        self.set_value(value, False)
+        super().set_range(min_value, max_value)
+        super().set_value(value, False)
         self.set_bg_color(bg_c, 51, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.set_bg_color(color, lv.OPA.COVER, lv.PART.INDICATOR | lv.STATE.DEFAULT)
+
+    def set_value(self, value: int, anim: bool = False) -> None:
+        """Set the value of the slider.
+
+        :param int value: The value to set.
+        :param bool anim: Whether to animate the change.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_value.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slider_0.set_value(50, True)
+        """
+        if not isinstance(value, int):
+            raise ValueError("Value must be an integer.")
+        if value < self.get_min_value():
+            warnings.warn(f"Value is less than min_value, setting to {self.get_min_value()}.")
+            value = self.get_min_value()
+        if value > self.get_max_value():
+            warnings.warn(f"Value is greater than max_value, setting to {self.get_max_value()}.")
+            value = self.get_max_value()
+        super().set_value(value, anim)
+
+    def set_range(self, min_value: int, max_value: int) -> None:
+        """Set the range of the slider.
+
+        :param int min_value: The minimum value of the range.
+        :param int max_value: The maximum value of the range.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_range.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slider_0.set_range(0, 200)
+        """
+        if not isinstance(min_value, int) or not isinstance(max_value, int):
+            raise ValueError("min_value and max_value must be integers.")
+        super().set_range(min_value, max_value)
+        self.set_value(self.get_value(), False)
 
     def set_style_radius(self, radius: int, part: int) -> None:
         if radius < 0:

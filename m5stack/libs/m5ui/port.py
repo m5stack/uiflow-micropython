@@ -84,5 +84,6 @@ def deinit():
         import M5
 
         M5.Lcd.lvgl_deinit()
+        lv.mp_lv_deinit_gc()
     else:
         pass
