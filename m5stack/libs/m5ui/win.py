@@ -7,7 +7,7 @@ import lvgl as lv
 import m5ui
 
 try:
-    DPI = lv.DPI_DEF / 3
+    DPI = int(lv.DPI_DEF / 3)
 except Exception:
     DPI = 80
 
