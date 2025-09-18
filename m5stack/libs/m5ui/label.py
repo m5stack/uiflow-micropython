@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .base import M5Base
+from m5ui.base import M5Base
 import lvgl as lv
 
 
@@ -83,6 +83,19 @@ class M5Label(lv.label):
         self._shadow_label.set_text(self.get_text())
         self._shadow_label.set_style_text_color(color, lv.PART.MAIN | lv.STATE.DEFAULT)
         self._shadow_label.set_style_text_opa(opa, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self._shadow_label.set_style_text_font(
+            self.get_style_text_font(lv.PART.MAIN), lv.PART.MAIN
+        )
+        self._shadow_label.set_width(self.get_width())
+
+        for part in (lv.PART.MAIN,):
+            self._shadow_label.set_style_pad_left(self.get_style_pad_left(part), part)
+            self._shadow_label.set_style_pad_right(self.get_style_pad_right(part), part)
+            self._shadow_label.set_style_pad_top(self.get_style_pad_top(part), part)
+            self._shadow_label.set_style_pad_bottom(self.get_style_pad_bottom(part), part)
+
+        if isinstance(self.get_parent(), lv.list):
+            offset_x -= self.get_style_pad_left(part)
         self._shadow_label.align_to(self, align, offset_x, offset_y)
 
     def unset_shadow(self) -> None:
