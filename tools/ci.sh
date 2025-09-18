@@ -298,6 +298,7 @@ function ci_base_build {
     make ${MAKEOPTS} -C m5stack mpy-cross
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Lite pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_EchoS3R pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
 }
 
@@ -334,6 +335,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Echo pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Lite pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_Matrix pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Atom_EchoS3R pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3_Lite pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_AtomS3R pack_all

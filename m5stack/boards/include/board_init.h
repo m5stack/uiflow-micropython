@@ -12,7 +12,10 @@
 #include "../M5STACK_CoreS3/audioconfigboard.h"
 #elif CONFIG_TAB5
 #include "../M5STACK_Tab5/audioconfigboard.h"
+#elif CONFIG_ATOM_ECHOS3R
+#include "../M5STACK_Atom_EchoS3R/audioconfigboard.h"
 #endif
+
 
 /**
  * @brief                  Board i2s pin definition

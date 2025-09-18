@@ -11,4 +11,10 @@ menu "Audio Board Configuration"
         default n
         help
             Enable this option to support m5stack tab5.
+
+    config ATOM_ECHOS3R
+        bool "select M5STACK ATOM ECHOS3R"
+        default n
+        help
+            Enable this option to support m5stack atom_echos3r.
 endmenu
