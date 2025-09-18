@@ -65,6 +65,18 @@ mp_obj_t gfx_getEpdMode(mp_obj_t self) {
     return mp_obj_new_int((int)gfx->getEpdMode());
 }
 
+mp_obj_t gfx_powerSaveOn(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    gfx->powerSaveOn();
+    return mp_const_none;
+}
+
+mp_obj_t gfx_powerSaveOff(mp_obj_t self) {
+    auto gfx = getGfx(&self);
+    gfx->powerSaveOff();
+    return mp_const_none;
+}
+
 mp_obj_t gfx_getCursor(mp_obj_t self) {
     auto gfx = getGfx(&self);
     mp_obj_t tuple[2] = { mp_obj_new_int(gfx->getCursorX())
