@@ -287,6 +287,9 @@ class ASRUnit:
 
                 asr.search_command_num("custom command")
         """
+        for key, value in self._COMMAND_LIST.items():
+            if value[0] == command_word:
+                return key
         return -1
 
     def search_command_word(self, command_num: int) -> str:
