@@ -135,7 +135,6 @@ static void audio_recorder_endtime_task(void *arg) {
     vTaskDelete(NULL);
 }
 
-
 static mp_obj_t audio_recorder_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *all_args) {
     enum { ARG_sample, ARG_bits, ARG_stereo, };
     static const mp_arg_t allowed_args[] = {
