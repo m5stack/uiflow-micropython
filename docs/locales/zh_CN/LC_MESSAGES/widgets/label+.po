@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-18 15:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/widgets/label+.rst:4 e49b3673babe4197b89484ac93bc9444
+msgid "class LabelPlus -- display remote text"
+msgstr "class LabelPlus -- 显示远程文本"
+
+#: ../../en/widgets/label+.rst:6 d78d106629724159b83c2a00e3ba477a
+msgid ""
+"The `LabelPlus` class extends the `Widgets.Label` class to provide "
+"additional functionalities for handling text with dynamic updates."
+msgstr "`LabelPlus` 类扩展了 `Widgets.Label` 类，提供了处理动态更新文本的附加功能。"
+
+#: ../../en/widgets/label+.rst:8 feb5f64f978341e58f23087cd8a4af52
+msgid ""
+"Currently only accepts strings in json format, and extracts data through "
+"``json_key``."
+msgstr "目前只接受json格式的字符串，并通过``json_key``提取数据。"
+
+#: ../../en/widgets/label+.rst:13 236322b79f8848d7a8e804a7afcd86c8
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/widgets/label+.rst:16 ../../en/widgets/label+.rst:35
+#: 5258cf1a47884f32873445ee864ca718 919d134b77d3495aab2695fb486a3f17
+msgid "Simple Usage"
+msgstr "简单用法"
+
+#: ../../en/widgets/label+.rst:18 008e92b827b644f8841108bb8fbff161
+msgid "Open the |cores3_labelplus_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_labelplus_example.m5f2| 项目。"
+
+#: ../../en/widgets/label+.rst:20 ../../en/widgets/label+.rst:37
+#: 87645af84a584930af22e2de6f1a8137 dd696bedea6b468eaacc4924036e350d
+msgid "This example demonstrates how to create and manipulate a LabelPlus widget."
+msgstr "此示例演示如何创建和操作 LabelPlus 控件。"
+
+#: ../../en/widgets/label+.rst:22 ../../en/widgets/label+.rst:64
+#: ../../en/widgets/label+.rst:81 ../../en/widgets/label+.rst:97
+#: ../../en/widgets/label+.rst:113 ../../en/widgets/label+.rst:129
+#: ae3a23ad408a4e12aa012982743737db label_plus.LabelPlus:17
+#: label_plus.LabelPlus.get_data:6 label_plus.LabelPlus.is_valid_data:6
+#: label_plus.LabelPlus.setColor:6 label_plus.LabelPlus.set_update_enable:5
+#: label_plus.LabelPlus.set_update_period:5 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/widgets/label+.rst:24 6e80b80fa10642afb60f269348f35fcf
+msgid "|cores3_labelplus_example.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:1 46c5612e650a4b06bd56076c6653a035
+msgid "cores3_labelplus_example.png"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:26 ../../en/widgets/label+.rst:43
+#: 4a50eec73fbe485eabde02feb47b1a1f e6158c4df4504cbfbd3e29e51df0d0d1
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/widgets/label+.rst:28 ../../en/widgets/label+.rst:45
+#: 49f778b7c3c345be9b430e44367f8855 label_plus.LabelPlus:19 of
+msgid "None"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:32 82e7dfc213dd48d4a40ab86a5779c368
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/widgets/label+.rst:39 ../../en/widgets/label+.rst:68
+#: ../../en/widgets/label+.rst:85 ../../en/widgets/label+.rst:101
+#: ../../en/widgets/label+.rst:117 ../../en/widgets/label+.rst:133
+#: 7e750a5501c843fc81103ab4b8a2fa6b label_plus.LabelPlus:21
+#: label_plus.LabelPlus.get_data:10 label_plus.LabelPlus.is_valid_data:10
+#: label_plus.LabelPlus.setColor:10 label_plus.LabelPlus.set_update_enable:9
+#: label_plus.LabelPlus.set_update_period:9 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/widgets/label+.rst:49 9bf2ee5d8e8a48d79b0e8f696c7abb44
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/widgets/label+.rst:52 4d801252417f49109111fa80cd8bf383
+msgid "LabelPlus"
+msgstr ""
+
+#: 479bdf87c85a4fae9030078cc3977b0d label_plus.LabelPlus:1 of
+msgid "Bases: :py:class:`~M5.Widgets.Label`"
+msgstr ""
+
+#: 6d2a22cb2f2d45bdbb2d6b50999fcedc label_plus.LabelPlus:1 of
+msgid "Create a LabelPlus object that can fetch and display text from a URL."
+msgstr "创建一个可以从 URL 获取和显示文本的 LabelPlus 对象。"
+
+#: ../../en/widgets/label+.rst 8209e4a1697b40ce8a1aa4f4a76221e8
+#: label_plus.LabelPlus.setColor label_plus.LabelPlus.set_update_enable
+#: label_plus.LabelPlus.set_update_period of
+msgid "Parameters"
+msgstr ""
+
+#: 83b1299f0b4848b2bb77e9a7ed3b4c1d label_plus.LabelPlus:3 of
+msgid "The initial text to display on the label."
+msgstr "标签上显示的初始文本。"
+
+#: 301b85b82c8b46159216a3fbd661b6c6 label_plus.LabelPlus:4 of
+msgid "The x position of the label."
+msgstr "标签的 x 坐标。"
+
+#: 620a50eecd74458695a04151fde65141 label_plus.LabelPlus:5 of
+msgid "The y position of the label."
+msgstr "标签的 y 坐标。"
+
+#: 8e140938cf374f40b78189a74cda3b48 label_plus.LabelPlus:6 of
+msgid "The font size of the label text."
+msgstr "标签文本的字体大小。"
+
+#: be5f685694684680bc81ba93754ecfa4 label_plus.LabelPlus:7 of
+msgid "The text color of the label in hexadecimal format."
+msgstr "标签的文本颜色，十六进制格式。"
+
+#: f8ff805ff114425dbfabe5021fdfc576 label_plus.LabelPlus:8 of
+msgid "The background color of the label in hexadecimal format."
+msgstr "标签的背景颜色，十六进制格式。"
+
+#: 0c41d3f695154d0ba2674f84b6ae86bb label_plus.LabelPlus:9 of
+msgid "The font to use for the label text."
+msgstr "用于标签文本的字体。"
+
+#: 4370d38cccb34a689d91d2226bb99ecc label_plus.LabelPlus:10 of
+msgid "The URL to fetch data from."
+msgstr "从中获取数据的 URL。"
+
+#: 0a5263ae5342442cbc74c564e7d4c497 label_plus.LabelPlus:11 of
+msgid ""
+"The update period in milliseconds. If set to 0, the label will not update"
+" automatically."
+msgstr "更新周期（以毫秒为单位）。如果设置为 0，标签将不会自动更新。"
+
+#: 4342321c36c144429a0a0a74f741471f label_plus.LabelPlus:12 of
+msgid "Whether to enable automatic updates."
+msgstr "是否启用自动更新。"
+
+#: 3d5230c01e374cd7b4228732e0476ab7 label_plus.LabelPlus:13 of
+msgid "The JSON key to extract from the fetched data."
+msgstr "要从获取的数据中提取的 JSON 键。"
+
+#: a9991153efb946009b231c0587e49c9f label_plus.LabelPlus:14 of
+msgid "The message to display in case of an error."
+msgstr "出现错误时显示的消息。"
+
+#: 756b91071ec94bddbe014917498fe9c2 label_plus.LabelPlus:15 of
+msgid ""
+"The text color to use when displaying an error message, in hexadecimal "
+"format."
+msgstr "显示错误消息时使用的文本颜色。"
+
+#: ../../en/widgets/label+.rst:60 0b34f9643eb94c90b65d6bad76f33c45
+msgid "Set the text of the LabelPlus widget."
+msgstr "设置 LabelPlus 控件的文本。"
+
+#: ../../en/widgets/label+.rst:62 83b1299f0b4848b2bb77e9a7ed3b4c1d
+msgid "The text to set on the label."
+msgstr "要在标签上设置的文本。"
+
+#: ../../en/widgets/label+.rst:66 6a0cb3cd881842a8949752b79b88c27e
+msgid "|setText.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:8 66d69d5e100e42b0a833696b5ff77fd9
+msgid "setText.png"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:76 091746525cbf4945bf374cb15bf7cca1
+msgid "Sets the starting coordinates of the text cursor in the LabelPlus widget."
+msgstr "设置 LabelPlus 控件中文本光标的起始坐标。"
+
+#: ../../en/widgets/label+.rst:78 301b85b82c8b46159216a3fbd661b6c6
+msgid "The x-coordinate of the cursor."
+msgstr "光标的 x 坐标。"
+
+#: ../../en/widgets/label+.rst:79 620a50eecd74458695a04151fde65141
+msgid "The y-coordinate of the cursor."
+msgstr "光标的 y 坐标。"
+
+#: ../../en/widgets/label+.rst:83 36ebd0a4effe4419826c047c2ce2232e
+msgid "|setCursor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:5 966f62f181084c21b28f13514a1c7e82
+msgid "setCursor.png"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:93 0b34f9643eb94c90b65d6bad76f33c45
+msgid "Sets the font size of the text in the LabelPlus widget."
+msgstr "设置 LabelPlus 控件中文本的字体大小。"
+
+#: ../../en/widgets/label+.rst:95 8e140938cf374f40b78189a74cda3b48
+msgid "The font size to set."
+msgstr "要设置的字体大小。"
+
+#: ../../en/widgets/label+.rst:99 36ebd0a4effe4419826c047c2ce2232e
+msgid "|setSize.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:7 dd8b86888a904dee80288805e0846c83
+msgid "setSize.png"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:109 0b34f9643eb94c90b65d6bad76f33c45
+msgid "Sets the font of the text in the LabelPlus widget."
+msgstr "设置 LabelPlus 控件中文本的字体。"
+
+#: ../../en/widgets/label+.rst:111 645f96112019407f9079acf5fe6607fb
+msgid "The font to set (e.g., Widgets.FONTS.DejaVu9)."
+msgstr "要设置的字体（例如，Widgets.FONTS.DejaVu9）。"
+
+#: ../../en/widgets/label+.rst:115 36ebd0a4effe4419826c047c2ce2232e
+msgid "|setFont.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:6 9e63a4f6b4cf46b2b0e6c55861215523
+msgid "setFont.png"
+msgstr ""
+
+#: ../../en/widgets/label+.rst:125 0b34f9643eb94c90b65d6bad76f33c45
+msgid "Set the visible property of the LabelPlus widget."
+msgstr "设置 LabelPlus 控件的可见属性。"
+
+#: ../../en/widgets/label+.rst:127 f238cd95e9ea4f9ea862214dd09537df
+msgid "True to make the label visible, False to hide it."
+msgstr "True 使标签可见，False 隐藏它。"
+
+#: ../../en/widgets/label+.rst:131 634c9234286c43919c568264df566ac6
+msgid "|setVisible.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:9 71947e39cfcd4c83aa82ddf1094b8f84
+msgid "setVisible.png"
+msgstr ""
+
+#: 1d417870a52f4dfca5ae5f8a6210205c label_plus.LabelPlus.set_update_enable:1 of
+msgid "Enable or disable automatic updates."
+msgstr "启用或禁用自动更新。"
+
+#: f238cd95e9ea4f9ea862214dd09537df label_plus.LabelPlus.set_update_enable:3 of
+msgid "True to enable automatic updates, False to disable."
+msgstr "True 启用自动更新，False 禁用。"
+
+#: 634c9234286c43919c568264df566ac6 label_plus.LabelPlus.set_update_enable:7 of
+msgid "|set_update_enable.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:10 0743c5c1ca5c4e829ce765bcca488d1e
+msgid "set_update_enable.png"
+msgstr ""
+
+#: cacd684db7864656a592acb8b16770dd label_plus.LabelPlus.set_update_period:1 of
+msgid "Set the update period for automatic updates."
+msgstr "设置自动更新的更新周期。"
+
+#: 4c8fc2d049b54145b8c67c6c0933a50d label_plus.LabelPlus.set_update_period:3 of
+msgid "The update period in milliseconds."
+msgstr "更新周期（以毫秒为单位）。"
+
+#: 182d18f31bcd4439a7d9c0b3c34bb1b3 label_plus.LabelPlus.set_update_period:7 of
+msgid "|set_update_period.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:11 2267453aa0f4499ba7b182ba9cb81fff
+msgid "set_update_period.png"
+msgstr ""
+
+#: d013ac06f15740d79c27ba29e31a804b label_plus.LabelPlus.is_valid_data:1 of
+msgid "Check if the current data is valid (i.e., not an error message)."
+msgstr "检查当前数据是否有效（即不是错误消息）。"
+
+#: 7a342334b7ec47ea8eb9bcf9961531e9 label_plus.LabelPlus.get_data
+#: label_plus.LabelPlus.is_valid_data of
+msgid "Returns"
+msgstr ""
+
+#: 0b25f286d39549878781c1d0d30eeecf label_plus.LabelPlus.is_valid_data:3 of
+msgid "True if the current data is valid, False otherwise."
+msgstr "如果当前数据有效则返回 True，否则返回 False。"
+
+#: 6df4c23661274bffa0ccc7d8ca52f88d label_plus.LabelPlus.get_data
+#: label_plus.LabelPlus.is_valid_data of
+msgid "Return type"
+msgstr ""
+
+#: 43596db0a2a24b9484fe874d376cced5 label_plus.LabelPlus.is_valid_data:8 of
+msgid "|is_valid_data.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:3 16feb3006e594f47849ff619b9f70ce0
+msgid "is_valid_data.png"
+msgstr ""
+
+#: 44d519502b064268a3be68a5e09afe6d label_plus.LabelPlus.get_data:1 of
+msgid "Get the current data displayed on the label."
+msgstr "获取标签上显示的当前数据。"
+
+#: b17a74f980a84b11ae703f757b974d50 label_plus.LabelPlus.get_data:3 of
+msgid "The current data."
+msgstr "当前数据。"
+
+#: 6a0cb3cd881842a8949752b79b88c27e label_plus.LabelPlus.get_data:8 of
+msgid "|get_data.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:2 88c85310e9d24ab8b526292f02c9856b
+msgid "get_data.png"
+msgstr ""
+
+#: 0b34f9643eb94c90b65d6bad76f33c45 label_plus.LabelPlus.setColor:1 of
+msgid "Sets the text font color of the Label object."
+msgstr "设置 Label 对象的文本字体颜色。"
+
+#: 1abe2962bfb24aaa83813b046e85d9dc label_plus.LabelPlus.setColor:3 of
+msgid "The text color in hexadecimal format."
+msgstr "文本颜色，十六进制格式。"
+
+#: 5c93e622efc44f50b3636aed02cd8fa9 label_plus.LabelPlus.setColor:4 of
+msgid "The background color in hexadecimal format."
+msgstr "背景颜色，十六进制格式。"
+
+#: 36ebd0a4effe4419826c047c2ce2232e label_plus.LabelPlus.setColor:8 of
+msgid "|setColor.png|"
+msgstr ""
+
+#: ../../en/refs/widgets.label+.ref:4 b9ecefbe5f2449ed8ad170120c3534d5
+msgid "setColor.png"
+msgstr ""
+

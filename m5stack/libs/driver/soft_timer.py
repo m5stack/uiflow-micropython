@@ -14,12 +14,21 @@ class SoftTimerScheduler:
 
     def __new__(cls, *args, **kw):
         if cls._instance is None:
-            cls._instance = object.__new__(cls)
-            cls._instance._tims = []
-            cls._run = False
+            cls._instance = super().__new__(cls)
+            cls._instance._initialized = False
         return cls._instance
 
+    def __init__(self):
+        if self._initialized:
+            return
+        self._tims = []
+        self._run = False
+        self._initialized = True
+
     def add_timer(self, tim):
+        if tim in self._tims:
+            return
+
         self._tims.append(tim)
         if not self._run:
             _thread.start_new_thread(self._cb, ())
@@ -31,29 +40,26 @@ class SoftTimerScheduler:
 
     def _cb(self):
         while self._run:
-            to_delete = []
+            # print("running...", self._tims)
+
             for tim in self._tims:
-                if tim.dead:
-                    to_delete.append(tim)
-                else:
+                if not tim.dead:
                     self.update(tim)
-            for tim in to_delete:
-                self._tims.remove(tim)
-            to_delete = []
-            #             if not self._tims:
-            #                 break;
+
             time.sleep_ms(10)
+
         self._wait = False
         self._run = False
 
-    def update(self, tim):
+    def update(self, tim: "SoftTimer"):
         if time.ticks_ms() > tim.next_time:
             tim.next_time = time.ticks_ms() + tim.period
-            tim.callback and tim.callback()
             if tim.mode == ONE_SHOT:
                 tim.dead = True
+            if tim.callback:
+                tim.callback(tim)
 
-    def deinit(self, tim):
+    def deinit(self, tim: "SoftTimer"):
         self._wait = True
         self._run = False
         while self._wait:
@@ -70,7 +76,7 @@ class SoftTimer:
         self.init(mode, period, callback)
 
     def init(self, mode=PERIODIC, period=-1, callback=None):
-        SoftTimerScheduler().del_timer(self)
+        # SoftTimerScheduler().del_timer(self)
         self.callback = callback
         self.next_time = time.ticks_ms() + period
         self.period = period
