@@ -30,6 +30,8 @@ MAKE_METHOD_0(gfx, height);
 MAKE_METHOD_0(gfx, getRotation);
 MAKE_METHOD_0(gfx, getColorDepth);
 MAKE_METHOD_0(gfx, getEpdMode);
+MAKE_METHOD_0(gfx, powerSaveOn);
+MAKE_METHOD_0(gfx, powerSaveOff);
 MAKE_METHOD_0(gfx, getCursor);
 MAKE_METHOD_KW(gfx, setRotation, 1);
 MAKE_METHOD_KW(gfx, setColorDepth, 1);
@@ -99,6 +101,8 @@ MAKE_METHOD_0(gfx, lvgl_benchmark);
     MAKE_TABLE(gfx, getRotation), \
     MAKE_TABLE(gfx, getColorDepth), \
     MAKE_TABLE(gfx, getEpdMode), \
+    MAKE_TABLE(gfx, powerSaveOn), \
+    MAKE_TABLE(gfx, powerSaveOff), \
     MAKE_TABLE(gfx, getCursor), \
     MAKE_TABLE(gfx, setRotation), \
     MAKE_TABLE(gfx, setColorDepth), \
