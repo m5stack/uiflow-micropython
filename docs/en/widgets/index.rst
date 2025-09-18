@@ -91,3 +91,4 @@ Classes
     image.rst
     image+.rst
     label.rst
+    label+.rst

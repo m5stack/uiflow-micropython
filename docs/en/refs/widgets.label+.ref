@@ -1,0 +1,20 @@
+.. |cores3_labelplus_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/cores3_labelplus_example.png
+.. |get_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/get_data.png
+.. |is_valid_data.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/is_valid_data.png
+.. |setColor.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setColor.png
+.. |setCursor.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setCursor.png
+.. |setFont.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setFont.png
+.. |setSize.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setSize.png
+.. |setText.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setText.png
+.. |setVisible.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/setVisible.png
+.. |set_update_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/set_update_enable.png
+.. |set_update_period.png| image:: https://static-cdn.m5stack.com/mpy_docs/widgets/label_plus/set_update_period.png
+
+.. |cores3_labelplus_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/widgets/labelplus/cores3_labelplus_example.m5f2"
+        target="_blank"
+    >
+        cores3_labelplus_example.m5f2
+    </a>

@@ -75,3 +75,6 @@ class ImagePlus(Widgets.Image):
 
     def __del__(self):
         self._enable = False
+
+    def deinit(self):
+        self._enable = False
