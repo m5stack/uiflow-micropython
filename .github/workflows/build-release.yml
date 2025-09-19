@@ -59,6 +59,7 @@ jobs:
         board:
           - M5STACK_AirQ
           - M5STACK_Atom_Echo
+          - M5STACK_Atom_EchoS3R
           - M5STACK_Atom_Lite
           - M5STACK_Atom_Matrix
           - M5STACK_AtomS3
