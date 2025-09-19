@@ -40,6 +40,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Basic_4MB", "3ca95a4ce9c2c94514a97573962e43c2", "4MB"),
     FirewareInfo("M5STACK_Capsule", "36d3ea31ed0a039b0efa1a2ff102d93b", ""),
     FirewareInfo("M5STACK_Cardputer", "375d772b179c54d6a3f61f20be574235", ""),
+    FirewareInfo("M5STACK_CardputerADV", "375d772b179c54d6a3f61f20be574235", ""),
     FirewareInfo("M5STACK_Core2", "ffadcb704115b88ca9fd149e567c73f5", "CORE2"),
     FirewareInfo("M5STACK_CoreInk", "737cc4a5469a3db81ed66e086f467ef5", ""),
     FirewareInfo("M5STACK_CoreS3", "94163f815781c124742a0ea26f22509c", ""),
