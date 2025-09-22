@@ -469,6 +469,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
 
     // initial
     M5.begin(cfg);
+    M5.Power.setExtOutput(true); // enable external power by default
     M5.In_I2C.release();
     in_i2c_init();
     // if (M5.getBoard() != m5::board_t::board_M5StackCoreS3
