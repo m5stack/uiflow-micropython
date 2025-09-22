@@ -17,6 +17,7 @@ _attrs = {
     "M5Image": "image",
     "M5Keyboard": "keyboard",
     "M5Label": "label",
+    "M5LED": "led",
     "M5Line": "line",
     "M5List": "list",
     "M5Msgbox": "msgbox",

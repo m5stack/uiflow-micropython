@@ -70,6 +70,7 @@ Classes
     image.rst
     keyboard.rst
     label.rst
+    led.rst
     line.rst
     list.rst
     msgbox.rst

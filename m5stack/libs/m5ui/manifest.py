@@ -18,6 +18,7 @@ package(
         "image.py",
         "keyboard.py",
         "label.py",
+        "led.py",
         "line.py",
         "list.py",
         "msgbox.py",
