@@ -19,6 +19,7 @@ from .common import Ezdata
 import lvgl as lv
 import asyncio
 import M5
+import m5ui
 
 
 class Launcher:
@@ -31,7 +32,7 @@ class Launcher:
             asyncio.run(self._main())
         finally:
             print("Launcher cleanup complete")
-            M5.Lcd.lvgl_deinit()
+            m5ui.deinit()
 
     def _init_background(self):
         screen = lv.screen_active()

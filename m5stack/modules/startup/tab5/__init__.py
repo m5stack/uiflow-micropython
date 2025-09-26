@@ -8,6 +8,7 @@ import lvgl as lv
 import lv_utils
 from .launcher import Launcher, set_hal
 from .hal_tab5 import HALTab5
+import m5ui
 
 
 class Tab5_Startup:
@@ -50,3 +51,5 @@ class Tab5_Startup:
 
         fs_drv = lv.fs_drv_t()
         lv_utils.fs_register(fs_drv, "S", 500)
+
+        m5ui.event_loop()  # start event loop
