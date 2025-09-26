@@ -5,8 +5,62 @@
 import lvgl as lv
 import sys
 import lv_utils
+import m5utils
+import micropython
 
 _event_loop_instance = None
+
+
+class event_loop:
+    _instance = None
+    _initialized = False
+
+    def __new__(cls, freq=33, max_scheduled=2):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+        return cls._instance
+
+    def __init__(self, freq=33, max_scheduled=2):
+        # 防止重复初始化
+        if self._initialized:
+            return
+
+        self._initialized = True
+        self.delay = 1000 // freq
+        self.timer = m5utils.Timer(
+            0, mode=m5utils.Timer.PERIODIC, period=self.delay, callback=self.timer_cb
+        )
+        self.max_scheduled = max_scheduled
+        self.scheduled = 0
+
+    def timer_cb(self, t):
+        lv.tick_inc(self.delay)
+        if self.scheduled < self.max_scheduled:
+            micropython.schedule(self.task_handler, 0)
+            self.scheduled += 1
+
+    def task_handler(self, _):
+        if lv._nesting.value == 0:
+            lv.task_handler()
+        self.scheduled -= 1
+
+    def deinit(self):
+        if hasattr(self, "timer"):
+            self.timer.deinit()
+        event_loop._initialized = False
+        event_loop._instance = None
+
+    @classmethod
+    def get_instance(cls):
+        """获取单例实例"""
+        if cls._instance is None:
+            cls._instance = cls()
+        return cls._instance
+
+    @classmethod
+    def is_initialized(cls):
+        """检查是否已经初始化"""
+        return cls._instance is not None and cls._initialized
 
 
 def _sdl_init(width=320, height=240):
@@ -71,6 +125,8 @@ def _m5_init():
     fs_drv = lv.fs_drv_t()
     lv_utils.fs_register(fs_drv, "S", 500)
 
+    event_loop()
+
 
 def init():
     if sys.platform == "esp32":
@@ -83,6 +139,7 @@ def deinit():
     if sys.platform == "esp32":
         import M5
 
+        event_loop().deinit()
         M5.Lcd.lvgl_deinit()
         lv.mp_lv_deinit_gc()
     else:

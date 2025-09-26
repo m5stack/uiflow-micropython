@@ -5,6 +5,7 @@
 _attrs = {
     "init": "port",
     "deinit": "port",
+    "event_loop": "port",
     "M5Arc": "arc",
     "M5Bar": "bar",
     "M5Button": "button",

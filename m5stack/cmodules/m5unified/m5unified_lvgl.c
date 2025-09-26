@@ -51,11 +51,11 @@ mp_obj_t gfx_lvgl_init(mp_obj_t self) {
     #endif
 
     lv_init();
-    lvgl_timer = xTimerCreate("lvgl_timer", 10, pdTRUE, NULL, vTimerCallback);
+    // lvgl_timer = xTimerCreate("lvgl_timer", pdMS_TO_TICKS(10), pdTRUE, NULL, vTimerCallback);
 
-    if (lvgl_timer == NULL || xTimerStart(lvgl_timer, 0) != pdPASS) {
-        ESP_LOGE("LVGL", "Failed creating or starting LVGL timer!");
-    }
+    // if (lvgl_timer == NULL || xTimerStart(lvgl_timer, 0) != pdPASS) {
+    //     ESP_LOGE("LVGL", "Failed creating or starting LVGL timer!");
+    // }
     return mp_const_none;
 }
 
