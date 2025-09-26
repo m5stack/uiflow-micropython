@@ -23,31 +23,32 @@ static int hmac_vector(mbedtls_md_type_t md_type,
 
     md_info = mbedtls_md_info_from_type(md_type);
     if (!md_info) {
-        return -1;
+        ret = -1;
+        goto out;
     }
 
     ret = mbedtls_md_setup(&md_ctx, md_info, 1);
     if (ret != 0) {
-        return ret;
+        goto out;
     }
 
     ret = mbedtls_md_hmac_starts(&md_ctx, key, key_len);
     if (ret != 0) {
-        return ret;
+        goto out;
     }
 
     for (i = 0; i < num_elem; i++) {
         ret = mbedtls_md_hmac_update(&md_ctx, addr[i], len[i]);
         if (ret != 0) {
-            return ret;
+            goto out;
         }
 
     }
 
     ret = mbedtls_md_hmac_finish(&md_ctx, mac);
 
+out:
     mbedtls_md_free(&md_ctx);
-
     return ret;
 }
 
