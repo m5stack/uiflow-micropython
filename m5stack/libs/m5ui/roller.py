@@ -104,6 +104,24 @@ class M5Roller(lv.roller):
         """
         return self.options
 
+    def get_option_count(self) -> int:
+        """Get the number of options in the roller.
+
+        :return: The number of options.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_option_count.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                option_count = roller_0.get_option_count()
+        """
+        return len(self.options)
+
     def get_selected_str(self) -> str:
         """Get the currently selected option as a string.
 

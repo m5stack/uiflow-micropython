@@ -120,6 +120,25 @@ class M5ButtonMatrix(lv.buttonmatrix):
         """
         return self.textarea
 
+    def get_selected_button(self) -> int:
+        """Get the ID of the currently selected button.
+
+        :return: The ID of the currently selected button, or -1 if none is selected.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_selected_button.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                selected_button = buttonmatrix_0.get_selected_button()
+        """
+        index = super().get_selected_button()
+        return -1 if index == 65535 else index
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)
