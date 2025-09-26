@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 10:29+0800\n"
+"POT-Creation-Date: 2025-09-26 17:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,45 +21,42 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../en/m5ui/buttonmatrix.rst:4 ../../en/m5ui/buttonmatrix.rst:55
-#: 5540d17ce9bf49a49657e76df5326c98 c1a370daed7a42bab6901e65abc485dc
+#: 82e37b7d30594c8c8999d9db2da4df34 b24eea0e529b4ac7a8269c25b974bd6c
 msgid "M5ButtonMatrix"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:8 56aba2e590c143b3a4ed6079d42f344f
+#: ../../en/m5ui/buttonmatrix.rst:8 19d08bf79ea84336ac04342e7effcd7f
 msgid ""
 "M5ButtonMatrix is a widget that can be used to create a matrix of buttons"
 " in the user interface. It provides a flexible layout for displaying "
 "multiple buttons in a grid format with support for different button "
 "configurations and text labels."
-msgstr ""
-"M5ButtonMatrix是一个可以在用户界面中创建按钮矩阵的控件。它提供了一个灵活的布局来"
-"以网格格式显示多个按钮，支持不同的按钮配置和文本标签。"
+msgstr "M5ButtonMatrix是一个可以在用户界面中创建按钮矩阵的控件。它提供了一个灵活的布局来以网格格式显示多个按钮，支持不同的按钮配置和文本标签。"
 
-#: ../../en/m5ui/buttonmatrix.rst:14 484db3bd4a304115b7b1fc3b78542fd0
+#: ../../en/m5ui/buttonmatrix.rst:14 8f08d601ce96476fa0e4374ba6fcd95d
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
 #: ../../en/m5ui/buttonmatrix.rst:17 ../../en/m5ui/buttonmatrix.rst:36
-#: 26f4e3e2ea4e414a8b5431520b4c4e80 3fe97a02cef1487a86909a5dcedda56c
+#: 4dc85ee4125b454fb7050b7f64470dbc ed1dc1cb44a548c6ab95bf436e105cb1
 msgid "basic buttonmatrix"
 msgstr "基础按钮矩阵"
 
-#: ../../en/m5ui/buttonmatrix.rst:19 6063f9f18efb4521984fd55828216f48
+#: ../../en/m5ui/buttonmatrix.rst:19 a59b27def0a843f2b4be009ba459dc75
 msgid "Open the |cores3_buttonmatrix_basic_example.m5f2| project in UiFlow2."
 msgstr "在UiFlow2中打开 |cores3_buttonmatrix_basic_example.m5f2| 项目。"
 
 #: ../../en/m5ui/buttonmatrix.rst:21 ../../en/m5ui/buttonmatrix.rst:38
-#: 8b93ad2cd7e44ed4ac53089dd635f8d6 aa278b5e1af44ae7a0b19790f72dbb8c
+#: 8a7020988a2f46068b90fcc9d631d552 f973c5b90d5a4d209f3ed8f45163f486
 msgid ""
 "This example demonstrates how to create a button matrix with custom "
 "labels and handle button press events."
-msgstr ""
-"此示例演示如何创建带有自定义标签的按钮矩阵并处理按钮按下事件。"
+msgstr "此示例演示如何创建带有自定义标签的按钮矩阵并处理按钮按下事件。"
 
 #: ../../en/m5ui/buttonmatrix.rst:23 ../../en/m5ui/buttonmatrix.rst:68
 #: ../../en/m5ui/buttonmatrix.rst:86 ../../en/m5ui/buttonmatrix.rst:105
 #: ../../en/m5ui/buttonmatrix.rst:123 ../../en/m5ui/buttonmatrix.rst:143
-#: ../../en/m5ui/buttonmatrix.rst:173 ../../en/m5ui/buttonmatrix.rst:191
+#: ../../en/m5ui/buttonmatrix.rst:173 ../../en/m5ui/buttonmatrix.rst:192
 #: ../../en/m5ui/buttonmatrix.rst:210 ../../en/m5ui/buttonmatrix.rst:228
 #: ../../en/m5ui/buttonmatrix.rst:245 ../../en/m5ui/buttonmatrix.rst:262
 #: ../../en/m5ui/buttonmatrix.rst:279 ../../en/m5ui/buttonmatrix.rst:298
@@ -67,37 +64,32 @@ msgstr ""
 #: ../../en/m5ui/buttonmatrix.rst:353 ../../en/m5ui/buttonmatrix.rst:371
 #: ../../en/m5ui/buttonmatrix.rst:389 ../../en/m5ui/buttonmatrix.rst:407
 #: ../../en/m5ui/buttonmatrix.rst:425 ../../en/m5ui/buttonmatrix.rst:446
-#: 02a02d7e6bc94d84bfef99865c78f3d7 127f7507c27b43648e74332e979cb131
-#: 17609aee372a463eae2178c6cac4802d 1920c33f359643fd97dee33f1b3a1b8d
-#: 27f04587fc7c4389abf2a271ab36c078 28e57792daac47acb064a5c3a3e1a381
-#: 29613927d51a47a4b56c3f05bc2ac866 29a271aeb10a4132902656b69f9aca60
-#: 3ffbabe73081426dad8b1c19d51b1c4a 5a0fbae37b7f4c1ea4073390a919562e
-#: 5e42eec4715343a3ab2204b2aa003120 6b7e3a6e2e2b40a2938a8536a18ff339
-#: 7510c92bfb374c228c198ba9cac837d5 751d5726debb4b51a7adf75d6482e705
-#: 91d925c1d8464f93aa6ab3394e0937f0 94d6431f27964204980dfbd0917c7e7a
-#: a4d9774ae5b14fa08654e698ca3fae58 a96f52a3c5994b9daab1677546289c65
-#: b86c5952aeed4208963794cf7cd54b82 bea3c0f4332b48e09f355e44c97d2b70
-#: bf40d9b6ebfa4f82af275854a9bca5eb bff22d5a6d474cf9b6fe5a90fb9fac61
-#: c58393615e2d474c98a3eb8061d112fc e2714ee6dbfd41ab82a97166efa19b38
-#: e7ca0f07fbeb45caad3fe7401552eba0 e8b21e987e4644a39c9f2ea46ddaf5db
-#: f49523acb9264116949665cebc3969f2 m5ui.buttonmatrix.M5ButtonMatrix:11
+#: 051a38d7763442408d95eb86214e76dc 280196a9608c47c38d6468623c4ad4da
+#: 353f1c07ceb442078c93f376f4aee1af 52855fd14fbf4c14bcdf8d4a2128ad23
+#: 55e3e07e60fe460a8409e918b43861f1 701f07e19f7b4d3f97f2a34cd1de65d8
+#: 7b158603e8674d0c83eb6440d78897a8 8766881576294cfb98e2642b600e1f34
+#: 8e3634a4cccf41fbae93da1d91867cea a550f18ccfc048ec957cb6798ea26d56
+#: b03d0a71c34c4773a35a2cc993dfae8a b6069bee2ce5435b9144d094336768df
+#: b917a52ca1da49fb943640d0303ed1bd d2a952149fcb4b1dafc2a0ca68eb4c29
+#: d97d4ab0f6c246f5a51a06d73a5fd5cf dfb647f7b1cb44bdae1f69b13e662ef6
+#: m5ui.buttonmatrix.M5ButtonMatrix:11
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button:6
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea:6
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:6
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea:5
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:6 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/buttonmatrix.rst:25 b8d0995f15764f8d9957c2b2a75bc8df
+#: ../../en/m5ui/buttonmatrix.rst:25 0d0dfb5b08824056b933de498cdc22b8
 msgid "|cores3_buttonmatrix_basic_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:1 e0c79052be26427b931cb88991bcf002
+#: ../../en/refs/m5ui.buttonmatrix.ref:1 58ff8ea5816541bb87d4b573f48cf53e
 msgid "cores3_buttonmatrix_basic_example.png"
 msgstr ""
 
 #: ../../en/m5ui/buttonmatrix.rst:27 ../../en/m5ui/buttonmatrix.rst:46
-#: 5b6b20a8dfd34cb3bcb6072dde7dcc50 d107297ae68846a98657d1569b6e500a
+#: a4145fb97f5c46ed983075ebf564b263 d5b2281527d44e42a98cf9de548ae8a4
 msgid "Example output:"
 msgstr "示例输出："
 
@@ -108,26 +100,23 @@ msgstr "示例输出："
 #: ../../en/m5ui/buttonmatrix.rst:296 ../../en/m5ui/buttonmatrix.rst:314
 #: ../../en/m5ui/buttonmatrix.rst:332 ../../en/m5ui/buttonmatrix.rst:351
 #: ../../en/m5ui/buttonmatrix.rst:369 ../../en/m5ui/buttonmatrix.rst:405
-#: ../../en/m5ui/buttonmatrix.rst:444 2968b41bc2c042a09568a4583d88be5c
-#: 2d60a0129e71478394c4cea95891e57b 3a1f458c21ce4fe48aeb6a823096f526
-#: 4118a1df1eac4febb56ec6f2064b4a69 428dd7ecacc0472288f0b83ca1da2513
-#: 4459f6152868472c8c5057ee9dd54e28 4568bc03133c45739344a7a39f6c6b31
-#: 5411898078b044c2a009a480e4e0b9a5 5aca548655b440f98081707e63fe1026
-#: 8fddca55027443bfb99e005f9b262f10 98d6d05300d3478bb563aabe34486153
-#: b40ebadcb0b24887b69c7ded9747dcd2 ce896fbb3ae14a36a0ec76f0a3c8acca
-#: d9130a4557ff4dcfa5c38be003ebb871 f63d4929161a4b64b7e5b59abfc543ad
-#: fdd8ddcc9b754500b8c5f62db787bf50 m5ui.buttonmatrix.M5ButtonMatrix:13 of
+#: ../../en/m5ui/buttonmatrix.rst:444 16eefc01b0d141558e8e57ac51d3e844
+#: 2b4f63c5afe5484396e13b1380bfc2e6 4de42112e50c45b684a90f388e996ab1
+#: 6108cc904c9747e8b0904e41751dce68 9dcc693dc074452eb4a13f86cd6b4a00
+#: d0dbe00ab01d4ecfba92ebcb5b6f35b8 d365e857ff5f478887a28e440af53e50
+#: d411e0a78f4a4b23b8e954e0e996c61c d55ce19db63c4e31b0d71f1c267c6937
+#: fb98cb0a0a564b949efecfcba44fcdaf m5ui.buttonmatrix.M5ButtonMatrix:13 of
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:33 32f3171d95a44daabff6bf7f5d7b99b7
+#: ../../en/m5ui/buttonmatrix.rst:33 fa27740135394e80a33bd0ecc7452c88
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
 #: ../../en/m5ui/buttonmatrix.rst:40 ../../en/m5ui/buttonmatrix.rst:72
 #: ../../en/m5ui/buttonmatrix.rst:90 ../../en/m5ui/buttonmatrix.rst:109
 #: ../../en/m5ui/buttonmatrix.rst:127 ../../en/m5ui/buttonmatrix.rst:147
-#: ../../en/m5ui/buttonmatrix.rst:177 ../../en/m5ui/buttonmatrix.rst:195
+#: ../../en/m5ui/buttonmatrix.rst:177 ../../en/m5ui/buttonmatrix.rst:196
 #: ../../en/m5ui/buttonmatrix.rst:214 ../../en/m5ui/buttonmatrix.rst:232
 #: ../../en/m5ui/buttonmatrix.rst:249 ../../en/m5ui/buttonmatrix.rst:266
 #: ../../en/m5ui/buttonmatrix.rst:283 ../../en/m5ui/buttonmatrix.rst:302
@@ -135,574 +124,549 @@ msgstr "MicroPython 示例"
 #: ../../en/m5ui/buttonmatrix.rst:357 ../../en/m5ui/buttonmatrix.rst:375
 #: ../../en/m5ui/buttonmatrix.rst:393 ../../en/m5ui/buttonmatrix.rst:411
 #: ../../en/m5ui/buttonmatrix.rst:429 ../../en/m5ui/buttonmatrix.rst:450
-#: 0667645069c34cf49b6f5b252c7df01e 0dbef0068b3d4ae5a24075264e53d3b2
-#: 102f061e3bd94c70b576019eaae66dd3 330f863643e74eea9a65f10cad391432
-#: 40c141d36b884b09a33946c0848ea4c3 447bc046119e45b3acbf4eebcc98b3ac
-#: 4a1263344bf74e89a2ce00fc026dcaee 4e322aac4b60439b9c3321654dde2c76
-#: 5953f6208ad747bea7d161add8599003 6332ee192504424f842fbe4e9fd7f4c9
-#: 65d3a7dc714249d4b4b19367be4bdc4d 810e57004062417f916a2242a708a024
-#: 926ceb223ed84a3a802f658ea348fe8b 94f73b4b71fc4a43a17a64ec7a985d63
-#: a4d427efa51449cf904fb39532d9f928 a77faff5ccc749bfa9c0e7114aa76a01
-#: abc4ab1baf1544cabd4ebacf1dde6d3e b4c3e87876c544c5bb6a9971986e8140
-#: b85fa40004f04b888eed7101ce1781f2 c2b9bdf7f38a4016be9b0db264314356
-#: c45ea1134a3a423994f6c34f5cad7eca c66e4daa769d4215802d17c30efc5fe0
-#: d35b2638e7e4493dae19687223610223 eb2ce9bbfddd4e25ae2ac5025dddd02d
-#: f1c8c600baf14275b02c46948cae66e1 f6ed04b0b6934a94a501c61532478745
-#: f8c2b975b4b24a578acee5547a8602d4 m5ui.buttonmatrix.M5ButtonMatrix:15
+#: 369127c63efd47e4917877ace3ed0a64 38769807186046f7954c825474fb4879
+#: 4acd1f7d11ea495c8d6f754d29382299 4bc26b4f2b464d48a4db8980952853ec
+#: 4d1de191a30e41d48cc9029dfdf5a659 4d2668b50b984c1c920f15d46d0c9893
+#: 606cc4cee81c43f0b6e92f0653e51a0c 7df8fd03a38943eab267615ad5e8103b
+#: 7ed1eafe3ce049e6b43de8fa2afaa370 837c521080174275820fdbe3cdf1bf92
+#: 936391616e564e1690822c1f41a70559 a7141a5bcaf14acfa9941136bf4603c5
+#: baf317b3422a42a2b4d999758d1b5903 de887bc15c604dd49c09a6736485274f
+#: e0fe5edf98ad492eb6e3575dc1d69e59 e71d0438f65f452bb6193726872292e6
+#: m5ui.buttonmatrix.M5ButtonMatrix:15
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button:10
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea:10
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:10
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea:9
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:10 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/buttonmatrix.rst:52 d5afc4903c5f4a88b65d2693704b2459
+#: ../../en/m5ui/buttonmatrix.rst:52 de8bce7a89304c85a5933967af998a05
 msgid "**API**"
 msgstr "API参考"
 
-#: fd8ec279238c4c4abc7231d5232e0125 m5ui.buttonmatrix.M5ButtonMatrix:1 of
+#: 2ec9ca4946b442fb93a6a1cf98fc5d17 m5ui.buttonmatrix.M5ButtonMatrix:1 of
 msgid "Bases: :py:class:`~lvgl.buttonmatrix`"
 msgstr ""
 
-#: eff27f8a9faf4363a7a43575df8b5ba6 m5ui.buttonmatrix.M5ButtonMatrix:1 of
+#: f209024a98df4c39b70ee83307697861 m5ui.buttonmatrix.M5ButtonMatrix:1 of
 msgid "Create a button matrix object."
 msgstr "创建一个按钮矩阵对象。"
 
-#: ../../en/m5ui/buttonmatrix.rst 042ce52ee71543cd8bfc82a49bcfcf09
-#: 0c61091ff89f4337861d71931d14a523 0f1767473e294ad2a3e71b121ad1bbf0
-#: 14fe256407e645789be12cd953a25f30 15927dc4edde4d448ee2ec342eafc78e
-#: 39a159aa8778419db86186ae4d57f2eb 4030e73dddac46c38d51d888840e0a84
-#: 4a63810e00474900badd2f779c27ee12 5a7d308730044e71a0a73c91c6b81d32
-#: 6e1c7a231f274fbcb4206b97b639e2e1 7ffd799c661044f997aa86f076eb1e20
-#: 837f894983c646daa56d3f199c4c1d00 861a43962e534edd91d24c87b074dcd1
-#: 90033b52a2694ae5b2c886199ab87f4d 90d01ba093dc478c9d9c951bf9f359fe
-#: a812a39711e74989a984211d5c77eba0 bbbcc20636ec4be1957a319c2373d768
-#: bc8e3863b38143d194c4cc53c900a49e cec0a79cd2e74897ac572b0b0a121ad2
-#: d9d8f6e7e1164c4ea1d0748a8a1b4289 f0c8723682d44dbaacc919a9bfdf3dea
-#: f49815423e2844c583b2d5df93623655
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl
+#: ../../en/m5ui/buttonmatrix.rst 0a34415339584da29ace1cfca2cd37bc
+#: 0f0d20cccd6349c79df30ddb74c7bdd1 2435a2cc4b224c239a60a7a6ac909e8c
+#: 8421b5e9a7ea48c2842145f6c24bdabc 882d3cec8cf74b85a8f746f90a3af686
+#: 9c6a02eb199f47b8afb46bfc58be5154 a8ec0040092f400db0a7532c18e1ce50
+#: afbce974fa7447228357773d5b14162f b6acdd0dc4f24b9cbb074c9e90a03881
+#: d3eeea86721d4cae81906ce5f576c198 dc2e243eb9b64f57aac7e7ac5344c010
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl of
 msgid "Parameters"
 msgstr ""
 
-#: 5e7815bd5c7d4f7e868a88162dcdee89 m5ui.buttonmatrix.M5ButtonMatrix:3 of
+#: 6cc0f8ac0d824c7b82c483b49de58b44 m5ui.buttonmatrix.M5ButtonMatrix:3 of
 msgid "A list of button labels. Use \"\\\\n\" to create a new row."
 msgstr "按钮标签的列表。使用 \"\\\\n\" 来创建新行。"
 
-#: d4afa28525474cb481dd1e9b0ea82703 m5ui.buttonmatrix.M5ButtonMatrix:4 of
+#: a131620bf2134099aebc6e31fed59793 m5ui.buttonmatrix.M5ButtonMatrix:4 of
 msgid "The x position of the button matrix."
 msgstr "按钮矩阵的X坐标位置。"
 
-#: 6e249107cffd41b491c88bf271345ed1 m5ui.buttonmatrix.M5ButtonMatrix:5 of
+#: 0722f0ae2d53421cb8879812c3f854aa m5ui.buttonmatrix.M5ButtonMatrix:5 of
 msgid "The y position of the button matrix."
 msgstr "按钮矩阵的Y坐标位置。"
 
-#: 5bcdb5c3e6744f05a6bb980fe8402897 m5ui.buttonmatrix.M5ButtonMatrix:6 of
+#: fc20c78db3ad4f1b898138f0b12a280e m5ui.buttonmatrix.M5ButtonMatrix:6 of
 msgid "The width of the button matrix."
 msgstr "按钮矩阵的宽度。"
 
-#: 7cff769227934455a2afd0c1c0c26002 m5ui.buttonmatrix.M5ButtonMatrix:7 of
+#: 17798ea59b81410ba67437c8e9f2f312 m5ui.buttonmatrix.M5ButtonMatrix:7 of
 msgid "The height of the button matrix."
 msgstr "按钮矩阵的高度。"
 
-#: 3949957319424622b0a4334deff57bdd m5ui.buttonmatrix.M5ButtonMatrix:8 of
+#: e78c36a46ea24d21bdd286e4edb389ca m5ui.buttonmatrix.M5ButtonMatrix:8 of
 msgid "A M5TextArea to display the button text when a button is pressed."
 msgstr "按下按钮时显示按钮文本的M5TextArea。"
 
-#: b370113d5e9b4d03b2825a1e651297fd m5ui.buttonmatrix.M5ButtonMatrix:9 of
+#: ab9faf77d98747cc9d1f773f28344d13 m5ui.buttonmatrix.M5ButtonMatrix:9 of
 msgid "The parent object to attach the button matrix to."
 msgstr "要附加按钮矩阵的父对象。"
 
-#: ../../en/m5ui/buttonmatrix.rst:62 ed569c16ef7941e88ce99de07ca9b246
+#: ../../en/m5ui/buttonmatrix.rst:62 344e821f72a84ea5b4d69f7f2e636754
 msgid ""
 "Set a flag on the object. If ``value`` is True, the flag is added; if "
 "False, the flag is removed."
-msgstr ""
-"为对象设置标志。如果 ``value`` 为True，则添加标志；"
-"如果为False，则移除标志。"
+msgstr "为对象设置标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:64 36df2029433a46bb92d84913fdfd5d3a
+#: ../../en/m5ui/buttonmatrix.rst:64 f941942123e042d99949343254b7579f
 msgid "The flag to set."
 msgstr "要设置的标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:65 1493a7be63ca4db0be812d3b013a8bc3
+#: ../../en/m5ui/buttonmatrix.rst:65 2751e470eb3c4fb080ce5f79678cf1c1
 msgid "If True, the flag is added; if False, the flag is removed."
 msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst 13eb4fc85c6842fa8ef55a522a6fb3f5
-#: 17b6dd91bee34629a4aa199846e1da2e 1e609d4eaaf94fe3a40546d12731aab1
-#: 2394118fb0714e8393d9aeabf2029389 4083b5fb5c854ed5a0ea763c20db20ec
-#: 4e470cd453c34b359488d5118d979a51 584d4b55fa144076921a467ce69e5e3b
-#: 6d4a5654b4114f6d978b2985cc8bdafb 717e7e25aef8475693f1b0ced893bcf7
-#: 71cea7df68ee4c83afa5cb87c881fde1 84042f93a07b4f75b0e3029f034ba112
-#: a4a519ea04944c66b635e038e7bc17b1 b47772aabe9743efb8ed843c3477c7f1
-#: cdbeb9aa83274acea1e3de82fad96233 cff7467562b746f7b6d420fc777a0cdc
-#: dd546278eb254121918b3b1572409301 ea4ca98941674be299935fb00e19b3af
-#: f5cd5d74ba864874bef5a0fb3f959082
+#: ../../en/m5ui/buttonmatrix.rst 09149188d7ba4dd7af59a5d5740363d7
+#: 0b2639019dad4ab48c2026601b7cff08 329da0f493234801a19f2a2cd3cb3d4e
+#: 8c449a54ce42441ba03c951dceb1d5f2 a801b90f9787480881614068e976bc9e
+#: ab94939985c642a38ae82166484a327f d7cb7b5c0e4b4a8fb7ecf0dde5add086
+#: f895d9db7e3b405ba5b4799508a689ca
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea of
 msgid "Returns"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:70 cd41a618fbdf40bca11e2a447610d5a5
+#: ../../en/m5ui/buttonmatrix.rst:70 4d46a61d475a40f69911de9c966ba7a7
 msgid "|set_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:15 bcf3870ebd1242808b34d0dc30cfe8d0
+#: ../../en/refs/m5ui.buttonmatrix.ref:15 957ff1c9741443a680e19e3eebfbaf12
 msgid "set_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:81 bb0411c537304bbb86298911c713fa51
+#: ../../en/m5ui/buttonmatrix.rst:81 d594c84a7e6a45fbbc342db94903a088
 msgid ""
 "Toggle a flag on the object. If the flag is set, it is removed; if not "
 "set, it is added."
-msgstr ""
-"切换对象的标志。如果标志已设置，则将其移除；"
-"如果未设置，则将其添加。"
+msgstr "切换对象的标志。如果标志已设置，则将其移除；如果未设置，则将其添加。"
 
-#: ../../en/m5ui/buttonmatrix.rst:83 2f2db537d78d40638be2f68dd80366f0
+#: ../../en/m5ui/buttonmatrix.rst:83 1cdcd410dfaa4603ae87a6e50311ac13
 msgid "The flag to toggle."
 msgstr "要切换的标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:88 96dbf1c24fc645bd8a8805fe3f469be8
+#: ../../en/m5ui/buttonmatrix.rst:88 2deea6ab0ea44df6b5cedb4bcc213141
 msgid "|toggle_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:26 c3eb7348ea13490a8b44a470254bd3f5
+#: ../../en/refs/m5ui.buttonmatrix.ref:26 fdade57a7e174771b3e9f74256d97eef
 msgid "toggle_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:99 f4a1dc354870488cb58ad545c6648820
+#: ../../en/m5ui/buttonmatrix.rst:99 e7dd93b92cb7428a8768dff4b2c5e957
 msgid ""
 "Set the state of the buttonmatrix. If ``value`` is True, the state is "
 "set; if False, the state is unset."
-msgstr ""
-"设置按钮矩阵的状态。如果 ``value`` 为True，则设置状态；"
-"如果为False，则取消设置状态。"
+msgstr "设置按钮矩阵的状态。如果 ``value`` 为True，则设置状态；如果为False，则取消设置状态。"
 
-#: ../../en/m5ui/buttonmatrix.rst:101 914b414d54514771a92594c984b0f563
+#: ../../en/m5ui/buttonmatrix.rst:101 22ada3cc8ea843178f23715c8b49540e
 msgid "The state to set."
 msgstr "要设置的状态。"
 
-#: ../../en/m5ui/buttonmatrix.rst:102 ff3d27ae23ca42968cb35ad9b17df9c1
+#: ../../en/m5ui/buttonmatrix.rst:102 6ec26dc81d2a4754814257fb2c5dbc43
 msgid "If True, the state is set; if False, the state is unset."
 msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
 
-#: ../../en/m5ui/buttonmatrix.rst:107 d7d39541e10d4193ade2a6d71807cab9
+#: ../../en/m5ui/buttonmatrix.rst:107 07810eb16a5147ad801c9565ddaeefd9
 msgid "|set_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:20 1d7b8d308b5e47948c85ff40c80d8196
+#: ../../en/refs/m5ui.buttonmatrix.ref:20 da164366549448db9f40d64bbde6e7ec
 msgid "set_state.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:118 b67650dc628545149c83c321a4b47cab
+#: ../../en/m5ui/buttonmatrix.rst:118 31ea256185574aa8b54835b8b623e7a1
 msgid ""
 "Toggle the state of the buttonmatrix. If the state is set, it is unset; "
 "if not set, it is set."
-msgstr ""
-"切换按钮矩阵的状态。如果状态已设置，则取消设置；"
-"如果未设置，则将其设置。"
+msgstr "切换按钮矩阵的状态。如果状态已设置，则取消设置；如果未设置，则将其设置。"
 
-#: ../../en/m5ui/buttonmatrix.rst:120 5fbf1d5f84db46fab1d62e4c6bb83b76
+#: ../../en/m5ui/buttonmatrix.rst:120 04102280beac48ac9fc74bbe69333d11
 msgid "The state to toggle."
 msgstr "要切换的状态。"
 
-#: ../../en/m5ui/buttonmatrix.rst:125 25d347cfdbb14c748e2d4a1d7c10a194
+#: ../../en/m5ui/buttonmatrix.rst:125 9ace6eab96064b0991d220b482ffe840
 msgid "|toggle_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:27 3d3e51742d3042f18abdd31127d27846
+#: ../../en/refs/m5ui.buttonmatrix.ref:27 79f71ed4b79e424fa764a0671369f0b8
 msgid "toggle_state.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:136 3ab536245ed34698b17230883a81ceb7
+#: ../../en/m5ui/buttonmatrix.rst:136 19cdd8d7cc174b36a9d345748495a5b6
 msgid ""
 "Add an event callback to the buttonmatrix. The callback will be called "
 "when the specified event occurs."
-msgstr ""
-"为按钮矩阵添加事件回调。当指定事件发生时将调用回调函数。"
+msgstr "为按钮矩阵添加事件回调。当指定事件发生时将调用回调函数。"
 
-#: ../../en/m5ui/buttonmatrix.rst:138 3666759557b747589a7597e8b8403ee7
+#: ../../en/m5ui/buttonmatrix.rst:138 72bbd98d06e740a8ac61f90c395f37b9
 msgid "The callback function to call."
 msgstr "要调用的回调函数。"
 
-#: ../../en/m5ui/buttonmatrix.rst:139 e319252ac13f4e6aa51a650c061a6a7c
+#: ../../en/m5ui/buttonmatrix.rst:139 f9b2adc1cf37472993f333a2ab3ede23
 msgid "The event to listen for."
 msgstr "要监听的事件。"
 
-#: ../../en/m5ui/buttonmatrix.rst:140 eac92d3024a74df08fa76e32f3c05333
+#: ../../en/m5ui/buttonmatrix.rst:140 a6a8897ddb784d79974c7274a684076e
 msgid "Optional user data to pass to the callback."
 msgstr "传递给回调函数的可选用户数据。"
 
-#: ../../en/m5ui/buttonmatrix.rst:145 0ebf81a0a90a4e6db175c35db6043a83
+#: ../../en/m5ui/buttonmatrix.rst:145 a02ab07f1e7543e59ac4a27672d38ef0
 msgid "|event.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:6 e7abf0112d9a45828fc20915a47b3a37
+#: ../../en/refs/m5ui.buttonmatrix.ref:6 3e9cc60957d74fb38c810bcfe906c67b
 msgid "event.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:167 9fe7ce3f8d104e9da7ea91813963b90a
+#: ../../en/m5ui/buttonmatrix.rst:167 ba7b7093c8784a5da0c106d74986371a
 msgid "Set the relative width of a specific button."
 msgstr "设置特定按钮的相对宽度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:169 ../../en/m5ui/buttonmatrix.rst:206
-#: 0866fdba42b6496691f63093cdcf1983 7c3248bf15f2433abdbf7c714e8af038
+#: ../../en/m5ui/buttonmatrix.rst:169 ../../en/m5ui/buttonmatrix.rst:188
+#: 77f382e23e6d43f4a83ee86306659541 a8415e2f23b54b139b762efdbb5b7cb7
 msgid "The index of the button."
 msgstr "按钮的索引。"
 
-#: ../../en/m5ui/buttonmatrix.rst:170 9d4d94e899ed48c3b197b9fd059b6b73
+#: ../../en/m5ui/buttonmatrix.rst:170 9cf32cf2a2f745269427fbd3beb60843
 msgid "The relative width (1-7, where 1 is normal width)."
 msgstr "相对宽度（1-7，其中1为正常宽度）。"
 
-#: ../../en/m5ui/buttonmatrix.rst:175 4244126fa9b14a688ceff6698e58d5fb
+#: ../../en/m5ui/buttonmatrix.rst:175 4299c6a31be049b1b5a6f5daddac56d5
 msgid "|set_button_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:14 1ca3c4dea4974e39b6ba5ed1d15798c2
+#: ../../en/refs/m5ui.buttonmatrix.ref:14 262f870996144dbcab3ad2a8c5abc02b
 msgid "set_button_width.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:186 928d93d38ed545e19bff7a8bdf3e4640
-msgid "Get the index of the last pressed button."
-msgstr "获取最后按下按钮的索引。"
+#: ../../en/m5ui/buttonmatrix.rst:186 014d7fa535a54fb1814a371ae61af696
+msgid "Get the text of a specific button."
+msgstr "获取特定按钮的文本。"
 
-#: ../../en/m5ui/buttonmatrix.rst:188 c74310fa070d40beaa731fa6c499053a
-msgid ""
-"The index of the last pressed button, or lv.buttonmatrix.BUTTON.NONE if "
-"no button is pressed."
-msgstr ""
-"最后按下按钮的索引，如果没有按钮被按下，则返回 lv.buttonmatrix.BUTTON.NONE。"
+#: ../../en/m5ui/buttonmatrix.rst:189 ab9d7b11006b456d8d5397ad1d056cbd
+msgid "The text of the button."
+msgstr "按钮的文本。"
 
-#: ../../en/m5ui/buttonmatrix.rst 05bdf3628bf948b0ac2ed630c31ee226
-#: 2168f531f7d64bc58588e41cbcc68aa0 6822aae96eaa4fc3a73b418b446a3c20
-#: e2329f520947424f8514ed2febe6f625 e5d5cb002e4240b7992ac32532a59c17
+#: ../../en/m5ui/buttonmatrix.rst 9cca8ed38b554625866409865edbcb22
+#: ff1a84e38686411fa85fc5f530a4f020
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea of
 msgid "Return type"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:193 71fe635b95864a8d88fcad53fd3877e9
-msgid "|get_selected_button.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.buttonmatrix.ref:9 9b652c56af2f447f897fe5dea3f26e56
-msgid "get_selected_button.png"
-msgstr ""
-
-#: ../../en/m5ui/buttonmatrix.rst:204 ef72caabcdbe4dccb347598f01bbb563
-msgid "Get the text of a specific button."
-msgstr "获取特定按钮的文本。"
-
-#: ../../en/m5ui/buttonmatrix.rst:207 74011edd0fa84f0aaa3d5f2f96cd5446
-msgid "The text of the button."
-msgstr "按钮的文本。"
-
-#: ../../en/m5ui/buttonmatrix.rst:212 d2fdb15431ff4701b3d6dca396d31b49
+#: ../../en/m5ui/buttonmatrix.rst:194 ef8d890ca5bc466ba65c35843be53882
 msgid "|get_button_text.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:7 f66bebff11a9460eb8f3518c7ad5c718
+#: ../../en/refs/m5ui.buttonmatrix.ref:7 dfc6664bcf884d7e9a69d0fa70647897
 msgid "get_button_text.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:223 1dc9387b9d7f4dc0afc1bf679499cd17
+#: ../../en/m5ui/buttonmatrix.rst:205 168a336b474544d8b76cf0b21a323cda
 msgid "Clear control flags for a specific button."
 msgstr "清除特定按钮的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:225 265da30b55f74a949195ad50214d343c
+#: ../../en/m5ui/buttonmatrix.rst:207 c27f46ab6d7a4b71b83b9fa402a91ff6
 msgid "The button ID to clear control flags for."
 msgstr "要清除控制标志的按钮ID。"
 
-#: ../../en/m5ui/buttonmatrix.rst:226 dbb968dbe1784c9ea7eede5ab16984f8
+#: ../../en/m5ui/buttonmatrix.rst:208 09a507de4d0843d9bca6e1e752e912dd
 msgid "The control flags to clear."
 msgstr "要清除的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:230 94961f589edd4177b44e5b96231a82de
+#: ../../en/m5ui/buttonmatrix.rst:212 f9d1dc4c4d99487880f236a82dd5307a
 msgid "|clear_button_ctrl.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:4 5ce0470b6c334024aa8a7e1d2b1f6a6f
+#: ../../en/refs/m5ui.buttonmatrix.ref:4 e47a13612bf24561a8e9124bb56644f3
 msgid "clear_button_ctrl.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:241 8d12baf25b7a4ce2b38aa4a1e437b1e4
+#: ../../en/m5ui/buttonmatrix.rst:223 f98960b1922c43d69dfb57a1e8ca172f
+msgid "Set control flags for a specific button."
+msgstr "设置特定按钮的控制标志。"
+
+#: ../../en/m5ui/buttonmatrix.rst:225 23b583fa8afc4293af472072c5056ab2
+msgid "The button ID to set control flags for."
+msgstr "要设置控制标志的按钮ID。"
+
+#: ../../en/m5ui/buttonmatrix.rst:226 b1f2f9345718497ea1593adc713bdf35
+msgid "The control flags to set."
+msgstr "要设置的控制标志。"
+
+#: ../../en/m5ui/buttonmatrix.rst:230 53f659bdf7834a96a8558d9cc86ce516
+msgid "|set_button_ctrl.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.buttonmatrix.ref:12 7b6312df8edf46e29810b8f882ec3707
+msgid "set_button_ctrl.png"
+msgstr ""
+
+#: ../../en/m5ui/buttonmatrix.rst:241 8087a446b11b4ed782fe73e1d02c87c2
 msgid "Set control flags for all buttons."
 msgstr "设置所有按钮的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:243 6a52f9802f9c4b59bfd1c1f26029608d
+#: ../../en/m5ui/buttonmatrix.rst:243 f8b5f005febf4a349aa3011b27b867b2
 msgid "The control flags to set for all buttons."
 msgstr "要为所有按钮设置的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:247 84556ea9ef114fc188c44072f1ea7f7d
+#: ../../en/m5ui/buttonmatrix.rst:247 c49f33247cbc467c88803248e728053b
 msgid "|set_button_ctrl_all.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:13 8696de0788d94fcba671750c191a138c
+#: ../../en/refs/m5ui.buttonmatrix.ref:13 227ffee5e7a94ca68e9428ca0cfd20c2
 msgid "set_button_ctrl_all.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:258 93a54d78aa4a4e8fb412ac1f82250566
+#: ../../en/m5ui/buttonmatrix.rst:258 cbb48b146c2740d0848e4f9f34d7bef1
 msgid "Clear control flags for all buttons."
 msgstr "清除所有按钮的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:260 819df99dcd934240ba61afd78c76d6f4
+#: ../../en/m5ui/buttonmatrix.rst:260 8f4b418b2ac740a687c46b636e7bb6b9
 msgid "The control flags to clear for all buttons."
 msgstr "要为所有按钮清除的控制标志。"
 
-#: ../../en/m5ui/buttonmatrix.rst:264 fefabb691498400c89104748c98eafe6
+#: ../../en/m5ui/buttonmatrix.rst:264 5c5e6b64e4f142fda1ea6de98cb926c9
 msgid "|clear_button_ctrl_all.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:5 aad19dd39782480287548491f6cdaa87
+#: ../../en/refs/m5ui.buttonmatrix.ref:5 39892f92c5d64c389dacf9685f8c4dc0
 msgid "clear_button_ctrl_all.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:275 0958c73f77d443b689bfabba4a56fb0b
+#: ../../en/m5ui/buttonmatrix.rst:275 d30043132ff64afba42651780f32d069
 msgid "Set a specific button as checked."
 msgstr "将特定按钮设置为选中状态。"
 
-#: ../../en/m5ui/buttonmatrix.rst:277 094f082f90c4465697fb46460fae8d7d
+#: ../../en/m5ui/buttonmatrix.rst:277 90101522efd7418d893f857cf4f6f18c
 msgid "The button ID to set as checked."
 msgstr "要设置为选中状态的按钮ID。"
 
-#: ../../en/m5ui/buttonmatrix.rst:281 d8a0314aead84a86bf91524ba213fa7d
+#: ../../en/m5ui/buttonmatrix.rst:281 f658c0b5a052461d9093b2eae89a0bcc
 msgid "|set_one_checked.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:17 9ee66e48a1b34aeaaae0c5ca58c4e40d
+#: ../../en/refs/m5ui.buttonmatrix.ref:17 5bcb9dbd0d7440219e8f6f2b0d756737
 msgid "set_one_checked.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:292 ec36f17f24f3442897b6178998a7a902
+#: ../../en/m5ui/buttonmatrix.rst:292 93aade8f39344ef0b011e7648c4cdf06
 msgid "Set the position of the buttonmatrix."
 msgstr "设置按钮矩阵的位置。"
 
 #: ../../en/m5ui/buttonmatrix.rst:294 ../../en/m5ui/buttonmatrix.rst:313
-#: 3f6dbd60d590487e9516ecf5a3fd2d01 5cc7717548c74df787eb0b11c1bfcb4e
+#: 54936663cf1648c0add2f2b07624cd57
 msgid "The x-coordinate of the buttonmatrix."
 msgstr "按钮矩阵的x坐标。"
 
 #: ../../en/m5ui/buttonmatrix.rst:295 ../../en/m5ui/buttonmatrix.rst:331
-#: 1c9bdaccb7e24735b13efe525a6ef64a 32f44ed032864480861a9966e288de4d
+#: 6baa3e5d6fc84bc2a84b95bc5d655c77
 msgid "The y-coordinate of the buttonmatrix."
 msgstr "按钮矩阵的y坐标。"
 
-#: ../../en/m5ui/buttonmatrix.rst:300 8f76b714dd384eb0aad06145ec8f1bc3
+#: ../../en/m5ui/buttonmatrix.rst:300 a0caf5cd072c4334a990910eddb4a63c
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:18 7a9c9e30f4e04a5c9d5fdaf271f5180b
+#: ../../en/refs/m5ui.buttonmatrix.ref:18 8a093bf6ec1a4372a0eefb607872cf66
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:311 b22a7fb2485443579993355fa813ddf0
+#: ../../en/m5ui/buttonmatrix.rst:311 761d9d698b8a4fa8bd673180d446bd1c
 msgid "Set the x-coordinate of the buttonmatrix."
 msgstr "设置按钮矩阵的x坐标。"
 
-#: ../../en/m5ui/buttonmatrix.rst:318 9fb0c8cdae0a4d45879a805b8a25d1ef
+#: ../../en/m5ui/buttonmatrix.rst:318 8c9a972d90d0475d8d75d903b5cbab78
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:23 22448ccc65ac4eb49ef0123032d9dbc3
+#: ../../en/refs/m5ui.buttonmatrix.ref:23 627474758fae458fb131b226d3724fd7
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:329 3746cb3fe11640d6910bf1f43746602c
+#: ../../en/m5ui/buttonmatrix.rst:329 f51399db99d145ce982ea0eb29517902
 msgid "Set the y-coordinate of the buttonmatrix."
 msgstr "设置按钮矩阵的y坐标。"
 
-#: ../../en/m5ui/buttonmatrix.rst:336 6080a7b1b44947a189ddd6ec86b06fac
+#: ../../en/m5ui/buttonmatrix.rst:336 eed645483f5c44379b6c30d9b87c659c
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:24 d21b5dc3ee17459ebc54e0ea2626b878
+#: ../../en/refs/m5ui.buttonmatrix.ref:24 acd7855c3a04443b97fc7c8b10af7240
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:347 b4d3a1043b0c4e3d87b20330b0bff182
+#: ../../en/m5ui/buttonmatrix.rst:347 e97c99db2b1746328c84e5efb095c047
 msgid "Set the size of the buttonmatrix."
 msgstr "设置按钮矩阵的大小。"
 
 #: ../../en/m5ui/buttonmatrix.rst:349 ../../en/m5ui/buttonmatrix.rst:368
-#: ../../en/m5ui/buttonmatrix.rst:386 42799b1058cb4f6da4b7fdb06457296b
-#: d22c132bee814267985b02d4ad513cf8 ea8e6a2afc9447818576b76d22606db1
+#: ../../en/m5ui/buttonmatrix.rst:386 4295f9b4a372407895e2e3015ea3c3aa
 msgid "The width of the buttonmatrix."
 msgstr "按钮矩阵的宽度。"
 
 #: ../../en/m5ui/buttonmatrix.rst:350 ../../en/m5ui/buttonmatrix.rst:404
-#: ../../en/m5ui/buttonmatrix.rst:422 392a019e40d3476e9852f57b216d5a78
-#: 93b95db8851a4ba19b859d2f5e454380 ac85ac03ad014915b9d390650858d825
+#: ../../en/m5ui/buttonmatrix.rst:422 23e02a84adea455c8e9763d1f8552ccb
 msgid "The height of the buttonmatrix."
 msgstr "按钮矩阵的高度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:355 72e5253b380d4ca7b9f0fd50400d752a
+#: ../../en/m5ui/buttonmatrix.rst:355 58d2ea1e333e4ff39e4fb3e41ffcd4df
 msgid "|set_size.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:19 5d8c8c3b195f426c8ffa3fea13e915e5
+#: ../../en/refs/m5ui.buttonmatrix.ref:19 8a7f519f98c74eaca64098b8cc35d87d
 msgid "set_size.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:366 55ab12a4e97b471aa4e3fc90c043b38c
+#: ../../en/m5ui/buttonmatrix.rst:366 6d8cdbb66f32490284a88c11f0051b1f
 msgid "Set the width of the buttonmatrix."
 msgstr "设置按钮矩阵的宽度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:373 ae911a4cf0344098a52a85a93922c7a9
+#: ../../en/m5ui/buttonmatrix.rst:373 5cbe5536b73c439ea04b53b61a254a14
 msgid "|set_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:22 a8c1d896eda5453386445d46827d10a9
+#: ../../en/refs/m5ui.buttonmatrix.ref:22 9eff67b3840c4a15923e78ded22254d3
 msgid "set_width.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:384 a8b64cab0adf4c0eb62ee3f40d8a75b9
+#: ../../en/m5ui/buttonmatrix.rst:384 c11939882ea44300a1193dd02ff1deff
 msgid "Get the width of the buttonmatrix."
 msgstr "获取按钮矩阵的宽度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:391 28319137d94b45f98b6ae448c7fe3d45
+#: ../../en/m5ui/buttonmatrix.rst:391 af8078fd298c48c184b5d31f2874a5dd
 msgid "|get_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:11 cbcf296acf1a4be9a56f986e57a6c3ef
+#: ../../en/refs/m5ui.buttonmatrix.ref:11 e8972ae2336149739515166a333f1f5e
 msgid "get_width.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:402 af7284046bf64d11b23ecb07b07fb137
+#: ../../en/m5ui/buttonmatrix.rst:402 2d0c66fccd7043989285649ce1b353e6
 msgid "Set the height of the buttonmatrix."
 msgstr "设置按钮矩阵的高度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:409 41a5a210c11a4a6a8f765afdbf8756a0
+#: ../../en/m5ui/buttonmatrix.rst:409 dd6701e354b6462db514f74cbf58b20a
 msgid "|set_height.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:16 77f4ce850d3e4988a3c7432340cb1a0d
+#: ../../en/refs/m5ui.buttonmatrix.ref:16 c2b555e7cc9a4042b228130dceeb5a61
 msgid "set_height.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:420 a8b3c9d998a3490899029f37a3113eba
+#: ../../en/m5ui/buttonmatrix.rst:420 b5e216316e5c43eeb674fb8f3d3126e9
 msgid "Get the height of the buttonmatrix."
 msgstr "获取按钮矩阵的高度。"
 
-#: ../../en/m5ui/buttonmatrix.rst:427 79abb9feb0c74bb38d1e87fc7963ee6b
+#: ../../en/m5ui/buttonmatrix.rst:427 5dd7a8c13ff1455c8d5afc3e89fb84ad
 msgid "|get_height.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:8 36a6c21feb8c41e08de6531c907227f7
+#: ../../en/refs/m5ui.buttonmatrix.ref:8 139e3bd8ada44e3a8c6bb8bebfabe1ab
 msgid "get_height.png"
 msgstr ""
 
-#: ../../en/m5ui/buttonmatrix.rst:438 09dc01b29ba94648a767407122216007
+#: ../../en/m5ui/buttonmatrix.rst:438 e6acf6bc45974422a2c34d047442645c
 msgid "Align the buttonmatrix to another object."
 msgstr "将按钮矩阵对齐到另一个对象。"
 
-#: ../../en/m5ui/buttonmatrix.rst:440 b6dbc5ad976d4b6787a6ffc2b3fb3005
+#: ../../en/m5ui/buttonmatrix.rst:440 2de7ebf297324b55a591c7caacdf1518
 msgid "The object to align to."
 msgstr "要对齐到的对象。"
 
-#: ../../en/m5ui/buttonmatrix.rst:441 ad98b6216f1140eba9fea3367507b85e
+#: ../../en/m5ui/buttonmatrix.rst:441 4db40c35c0504922ac0d0f6b2c1b0b6a
 msgid "The alignment type."
 msgstr "对齐类型。"
 
-#: ../../en/m5ui/buttonmatrix.rst:442 6df57c3bfa75495c90e9b59bdad81934
+#: ../../en/m5ui/buttonmatrix.rst:442 7eac3d00fc18405bafa2ee62bf9f63f3
 msgid "The x-offset from the aligned object."
 msgstr "与对齐对象的x偏移量。"
 
-#: ../../en/m5ui/buttonmatrix.rst:443 0a9351caf6964c1786f6fb335c6e5a13
+#: ../../en/m5ui/buttonmatrix.rst:443 f3ce1f11c28143db9dbe4721084da27d
 msgid "The y-offset from the aligned object."
 msgstr "与对齐对象的y偏移量。"
 
-#: ../../en/m5ui/buttonmatrix.rst:448 81ccc58f7e4e48a7a51d155e1d0d7263
+#: ../../en/m5ui/buttonmatrix.rst:448 06910263057e4d6db3147c2dbe2d60ef
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:3 18a38fbf6b4040efb0ec4ab99f7176ed
+#: ../../en/refs/m5ui.buttonmatrix.ref:3 85eba71f4d454eefa77b81fe39fdc4bf
 msgid "align_to.png"
 msgstr ""
 
-#: 2a5c4c9acf2842e98c587d6cb44e23d1
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:1 of
-msgid "Set control flags for a specific button."
-msgstr "设置特定按钮的控制标志。"
-
-#: 573451ee7cde41b18f8a5554111ed3b6
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:3 of
-msgid "The button ID to set control flags for."
-msgstr "要设置控制标志的按钮ID。"
-
-#: 52da1f38c2284129b3d26849cb7dcdc0
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:4 of
-msgid "The control flags to set."
-msgstr "要设置的控制标志。"
-
-#: fa7c38942b1843149b4eef9212eaa5b5
-#: m5ui.buttonmatrix.M5ButtonMatrix.set_button_ctrl:8 of
-msgid "|set_button_ctrl.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.buttonmatrix.ref:12 c463c2a21a9b44e9af94c3bb58ea0b7a
-msgid "set_button_ctrl.png"
-msgstr ""
-
-#: 2ade3b61acf34022a87f4d5a10ce7445
+#: 14627d142bf844f984a3951cb313231d
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:1 of
 msgid "Toggle control flags for a specific button."
 msgstr "切换特定按钮的控制标志。"
 
-#: fcb4fe6c55744da0884785e0f2dce691
+#: 982997e0f587400087900a2815a81a7c
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:3 of
 msgid "The button ID to toggle control flags for."
 msgstr "要切换控制标志的按钮ID。"
 
-#: c56d38fbcdbd46509a42c75153ef7ad8
+#: 95a8378325d440b3843a00db95f9634f
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:4 of
 msgid "The control flags to toggle."
 msgstr "要切换的控制标志。"
 
-#: 8a184cd855b34277ad7327e49aca8b7a
+#: 5a88c97c7fa042289e089fc29718324f
 #: m5ui.buttonmatrix.M5ButtonMatrix.toggle_button_ctrl:8 of
 msgid "|toggle_button_ctrl.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:25 5612193223184918a9e0af0d7ccbb901
+#: ../../en/refs/m5ui.buttonmatrix.ref:25 92772a8190944aa8b60ecfd9644f02f5
 msgid "toggle_button_ctrl.png"
 msgstr ""
 
-#: e8f727ee3a774960abfaf3e476b1f29f
+#: 54989dd248474a289a129af8c0693255
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea:1 of
 msgid "Set a M5TextArea to display button text."
 msgstr "设置M5TextArea以显示按钮文本。"
 
-#: 0d3f3197228243968e3796eb9052d808
+#: a0084a4593c34258bc941954fc8e33c9
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea:3 of
 msgid "The M5TextArea to set."
 msgstr "要设置的M5TextArea。"
 
-#: 1197b3d677ae456bafe004025c9021fe
+#: 5e4d7561b037442ca3c9d9daf2d4c21d
 #: m5ui.buttonmatrix.M5ButtonMatrix.set_textarea:7 of
 msgid "|set_textarea.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:21 1384e3ff95e2497baeef20489ebd81e9
+#: ../../en/refs/m5ui.buttonmatrix.ref:21 444685851a78469fadf4619102af0f63
 msgid "set_textarea.png"
 msgstr ""
 
-#: 2e71884ccb414638bd34087d55dba57a
+#: 9b0be599f5a846a69abb97d8db9c4279
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea:1 of
 msgid "Get the currently set M5TextArea."
 msgstr "获取当前设置的M5TextArea。"
 
-#: 5b304a9de35d4e02adb75fe6d74aabf4
+#: 763909d96662424d9e3b88ca4f40ff3a
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea:3 of
 msgid "The M5TextArea currently set for the button matrix."
 msgstr "当前为按钮矩阵设置的M5TextArea。"
 
-#: 8f05b93ccadb4717810f4b4e7a931c38
+#: 86aa65cede284701a8e9a79651479bb9
 #: m5ui.buttonmatrix.M5ButtonMatrix.get_textarea:8 of
 msgid "|get_textarea.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.buttonmatrix.ref:10 372e9c2854ed429db5133d3a7ae264bd
+#: ../../en/refs/m5ui.buttonmatrix.ref:10 75f777bc234f4369834fa13a3d3d7ccd
 msgid "get_textarea.png"
 msgstr ""
+
+#: 7f41c1ab482d41bea85eb02b7bf646c6
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button:1 of
+msgid "Get the ID of the currently selected button."
+msgstr "获取最后按下按钮的索引。"
+
+#: 14b39acd790f41c5a2779add1c4538f9
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button:3 of
+msgid "The ID of the currently selected button, or -1 if none is selected."
+msgstr "当前选定按钮的 ID，如果未选定则为 -1。"
+
+#: 130694dd1931421882e99123804b94b2
+#: m5ui.buttonmatrix.M5ButtonMatrix.get_selected_button:8 of
+msgid "|get_selected_button.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.buttonmatrix.ref:9 935cb3d2b293478c91082b1eba4a5489
+msgid "get_selected_button.png"
+msgstr ""
+
+#~ msgid ""
+#~ "The index of the last pressed "
+#~ "button, or lv.buttonmatrix.BUTTON.NONE if no"
+#~ " button is pressed."
+#~ msgstr "最后按下按钮的索引，如果没有按钮被按下，则返回 lv.buttonmatrix.BUTTON.NONE。"
 

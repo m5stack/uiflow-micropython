@@ -217,24 +217,6 @@ M5Roller
                 roller_0.set_style_border_width(2, lv.PART.SELECTED | lv.STATE.DEFAULT)
 
 
-    .. py:method:: get_option_count()
-
-        Get the total number of options in the roller.
-
-        :return: The number of options.
-        :rtype: int
-
-        UiFlow2 Code Block:
-
-            |get_option_count.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                option_count = roller_0.get_option_count()
-
-
     .. py:method:: get_selected()
 
         Get the index of the currently selected option.

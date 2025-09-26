@@ -181,24 +181,6 @@ M5ButtonMatrix
                 buttonmatrix_0.set_button_width(0, 2)  # Make first button twice as wide
 
 
-    .. py:method:: get_selected_button()
-
-        Get the index of the last pressed button.
-
-        :return: The index of the last pressed button, or lv.buttonmatrix.BUTTON.NONE if no button is pressed.
-        :rtype: int
-
-        UiFlow2 Code Block:
-
-            |get_selected_button.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                btn_id = buttonmatrix_0.get_selected_button()
-
-
     .. py:method:: get_button_text(btn_id)
 
         Get the text of a specific button.

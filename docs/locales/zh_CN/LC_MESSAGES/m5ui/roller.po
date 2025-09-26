@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-20 16:20+0800\n"
+"POT-Creation-Date: 2025-09-26 17:20+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Generated-By: Babel 2.17.0\n"
 
 #: ../../en/m5ui/roller.rst:4 ../../en/m5ui/roller.rst:55
-#: 03aefaf61d89499baf7f73bc451f9489 3c6adfc5e58f4324b856c0bec5337562
+#: 3be29225c5304c408d83c83824cee275 ac95942236c54fea914fbc9416c6347b
 msgid "M5Roller"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:8 f8de2edb47414ea18db9c77a3e8b0f56
+#: ../../en/m5ui/roller.rst:8 725f0d969c814243b72c61cee23268d9
 msgid ""
 "M5Roller is a widget that can be used to create a roller (spinner/wheel "
 "picker) in the user interface. It provides a scrollable list of options "
@@ -33,21 +33,21 @@ msgid ""
 "picker wheels."
 msgstr "M5Roller是一个可用于在用户界面中创建滚轮（旋转器/滚轮选择器）的控件。它提供了一个可滚动的选项列表，用户可以通过向上或向下滚动来选择，类似于iOS风格的选择器滚轮。"
 
-#: ../../en/m5ui/roller.rst:14 00e3bd9b460d442cbdaf611045d338cc
+#: ../../en/m5ui/roller.rst:14 a63f58117b2e448498110f70dafd356b
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
 #: ../../en/m5ui/roller.rst:17 ../../en/m5ui/roller.rst:36
-#: 66d4206f0546410c8a838c96010a3972 983ecbc60b2b46939afb847cee060f16
+#: 770a8f6844174761a1af181d339daad4 c39d722711004ea9b616532d31259a99
 msgid "basic roller"
 msgstr "基础滚轮"
 
-#: ../../en/m5ui/roller.rst:19 6308a7a1e1d441f5966889d01a52d786
+#: ../../en/m5ui/roller.rst:19 99660fe997ef42f99eda66cf20fe246a
 msgid "Open the |cores3_roller_basic_example.m5f2| project in UiFlow2."
 msgstr "在UiFlow2中打开 |cores3_roller_basic_example.m5f2| 项目。"
 
 #: ../../en/m5ui/roller.rst:21 ../../en/m5ui/roller.rst:38
-#: 65d26675a441467facc29d964699367e 843af05dee4647e6bb5eb51ded7208e8
+#: 5757d34231f74d51ab34464846936c3e d40f3ee96ee04e93b2a6d72ccd7989e6
 msgid ""
 "This example demonstrates how to create a roller with multiple options "
 "and handle selection events."
@@ -58,37 +58,37 @@ msgstr "此示例演示如何创建具有多个选项的滚轮并处理选择事
 #: ../../en/m5ui/roller.rst:123 ../../en/m5ui/roller.rst:143
 #: ../../en/m5ui/roller.rst:166 ../../en/m5ui/roller.rst:188
 #: ../../en/m5ui/roller.rst:208 ../../en/m5ui/roller.rst:227
-#: ../../en/m5ui/roller.rst:245 ../../en/m5ui/roller.rst:263
+#: ../../en/m5ui/roller.rst:245 ../../en/m5ui/roller.rst:264
 #: ../../en/m5ui/roller.rst:282 ../../en/m5ui/roller.rst:300
-#: ../../en/m5ui/roller.rst:318 ../../en/m5ui/roller.rst:339
+#: ../../en/m5ui/roller.rst:321 ../../en/m5ui/roller.rst:340
 #: ../../en/m5ui/roller.rst:358 ../../en/m5ui/roller.rst:376
 #: ../../en/m5ui/roller.rst:394 ../../en/m5ui/roller.rst:412
-#: ../../en/m5ui/roller.rst:430 00d1cc73792549d7b600de5480ac41ca
-#: 150d4ae6f15c49b6b83c0b8442648b1e 1cd06a22831b4a17bdd08f67f85dc250
-#: 2fa6c1c63b554af1950db23cc26d5291 364f596f547a4dfb92643687faa98be9
-#: 445f3627fe39467aa2fbd0d4f4788118 460f565e83d64fd3af95ad0d2bf65e4a
-#: 48e01fdf8cb9424b8776000f13e32703 54271383760e4fe5a0e93ce021e5c77b
-#: 59fa6f1ad4b241eea2d30f9c08df804f 7317fb14e9064ea1b058c94c1f53ffd8
-#: 922fe8cf729644afa91b6bb15c8663c7 97b8d82de0e24543b1e2ecd86f9e6a97
-#: 9ea387244f284575972cee1c87cda4c4 c5474666859549a0afeee27e24d2b332
-#: cd318783e3134535929cebc498f2d677 d58dbdb189894d9d903bbc317416c06b
-#: fa4f095e542c40ceb9165795a30ac610 m5ui.roller.M5Roller:15
-#: m5ui.roller.M5Roller.get_options:6 m5ui.roller.M5Roller.get_selected_str:5
-#: m5ui.roller.M5Roller.set_options:6 m5ui.roller.M5Roller.set_style_radius:7
-#: of
+#: 0867fd9eee7346dcbc7f626ee92044a6 14588c8c963b40b5ba7485f19203eb54
+#: 32ca65d9bd014041adeacf81b2b1d9ad 359769533eda4537b33c4ed80fcf4a6a
+#: 361b8e3e491c4935a5f69097b9e77c1a 51a20a576ce84d2b917fd1ae964c1e9f
+#: 6faa33fce9644140b71a8ddd467b4ef1 72b8f3c55ace4b3e9d9ce52fd3df7048
+#: 73e094d768334de59e213565b22e57dc 7ecb31effa3549e688cd436459229768
+#: 99f1a46896894d63bdb9d6652f1d6111 a15234e360394b8682ef78ca0a611d15
+#: d74e833a251c4c9f94f2998c5c93b198 d765d8d9f461423f8638243946fea6f9
+#: db4b69c197b5453f88152e714ec6f36a dfe37399af404571acae545482a0c346
+#: e87d2c992a9e463c92d2f68d0e9f414d e9af57beea82464aab3f3c33bc75eea8
+#: f8c2702341c04bf8aac59fea783610db m5ui.roller.M5Roller:15
+#: m5ui.roller.M5Roller.get_option_count:6 m5ui.roller.M5Roller.get_options:6
+#: m5ui.roller.M5Roller.get_selected_str:5 m5ui.roller.M5Roller.set_options:6
+#: m5ui.roller.M5Roller.set_style_radius:7 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/roller.rst:25 9b96c48b3cfa47cfa0f6a924c2523626
+#: ../../en/m5ui/roller.rst:25 db3bb70b2c23413588b2efc47cf30205
 msgid "|cores3_roller_basic_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:27 4db04f298f0b48519b52d820e59415e1
+#: ../../en/refs/m5ui.roller.ref:27 6a7c1ca400f147b6998f598e0a062e13
 msgid "cores3_roller_basic_example.png"
 msgstr ""
 
 #: ../../en/m5ui/roller.rst:27 ../../en/m5ui/roller.rst:46
-#: 2fedc330b1ad48d782a86cb96fe13c58 a1cf058dc9f640309f83c5aad07dbbaa
+#: 89390b18314e4735b7400f6c9107717f 9cae2e8b417d40cca3f1784991412ee4
 msgid "Example output:"
 msgstr "示例输出："
 
@@ -97,21 +97,22 @@ msgstr "示例输出："
 #: ../../en/m5ui/roller.rst:103 ../../en/m5ui/roller.rst:121
 #: ../../en/m5ui/roller.rst:141 ../../en/m5ui/roller.rst:164
 #: ../../en/m5ui/roller.rst:186 ../../en/m5ui/roller.rst:206
-#: ../../en/m5ui/roller.rst:261 ../../en/m5ui/roller.rst:280
-#: ../../en/m5ui/roller.rst:298 ../../en/m5ui/roller.rst:316
-#: ../../en/m5ui/roller.rst:337 ../../en/m5ui/roller.rst:356
-#: ../../en/m5ui/roller.rst:374 ../../en/m5ui/roller.rst:410
-#: 1e233d688cd64517aaec5c9b73fda8cb 3cde07dc91bc41dd8f3ddf1405ef9d23
-#: 48c68a56f3fd4936af73dcb93254971b 4c20bcb3b3cf407e9d198b003c8800be
-#: 5de223d03ec644a5a89ab38dc77c8769 6cc45b6993fd4dd89446b566acec6694
-#: 8b6291073ce64d46b7da19c9cd7452e4 9d5040c5e8bf4e5992dfe2f517fae646
-#: c80f955e3aac4f2d9b4ddc569569aaf8 e056e23663bd45c38fd12ed9975e0199
-#: fdbb31fc824d47c5b83b699cd46e8aa4 ff69cdc6e1764141968cb7aa644fc97d
-#: m5ui.roller.M5Roller:17 m5ui.roller.M5Roller.set_style_radius:5 of
+#: ../../en/m5ui/roller.rst:243 ../../en/m5ui/roller.rst:262
+#: ../../en/m5ui/roller.rst:280 ../../en/m5ui/roller.rst:298
+#: ../../en/m5ui/roller.rst:319 ../../en/m5ui/roller.rst:338
+#: ../../en/m5ui/roller.rst:356 ../../en/m5ui/roller.rst:392
+#: 0ae8797324cc44b4ae54a13a444deab7 15116e418c47412faf6d32914bbed853
+#: 31fe09dc9b2d4ad9b13f1bce9b37d472 45b579b01e434f3b9b8ca54d7dfeb356
+#: 5151fd006e264a24a2d4f82fc3f08373 67a92f26a416447caf15001a842625a1
+#: 7a79293d0ab444a7b726bfb58e7db665 7bad50beb32a4fd59c084bc6cc18680c
+#: 8ce93b144c9a4f42ab2aa6355b6e5bac a9e9b20d76b240c6a53bf879667e641b
+#: d8d04a9b2ed24a5da108a9a9d1c9be41 eb1ee431fa6e4a1cb0818674f5f3a8ee
+#: f843be8003cb495191aab325f0e5f1f7 m5ui.roller.M5Roller:17
+#: m5ui.roller.M5Roller.set_style_radius:5 of
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:33 790fa83906e249449dbd10dce3817e6a
+#: ../../en/m5ui/roller.rst:33 dd3befe2ed604e728d81f9ec81526c48
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
@@ -120,533 +121,535 @@ msgstr "MicroPython 示例"
 #: ../../en/m5ui/roller.rst:127 ../../en/m5ui/roller.rst:147
 #: ../../en/m5ui/roller.rst:170 ../../en/m5ui/roller.rst:192
 #: ../../en/m5ui/roller.rst:212 ../../en/m5ui/roller.rst:231
-#: ../../en/m5ui/roller.rst:249 ../../en/m5ui/roller.rst:267
+#: ../../en/m5ui/roller.rst:249 ../../en/m5ui/roller.rst:268
 #: ../../en/m5ui/roller.rst:286 ../../en/m5ui/roller.rst:304
-#: ../../en/m5ui/roller.rst:322 ../../en/m5ui/roller.rst:343
+#: ../../en/m5ui/roller.rst:325 ../../en/m5ui/roller.rst:344
 #: ../../en/m5ui/roller.rst:362 ../../en/m5ui/roller.rst:380
 #: ../../en/m5ui/roller.rst:398 ../../en/m5ui/roller.rst:416
-#: ../../en/m5ui/roller.rst:434 122f63549d6349e2b982449666f03f0a
-#: 15184d078fad4c3bad724d7a91d5f752 17f7381012b344faa61d7c2a6fadd34b
-#: 18c11a799ece4b9793769af94e5bb841 2016aa51e15149ef9261ba1b12899b50
-#: 23b2d5f5ea3b487dba711db84419fa54 23bf4f192f0d4313a9f6252fb4759b12
-#: 399cd361aaea4837854bf0073645950f 4591144c269d4804915591cc44f97fab
-#: 50349280d9f247c1a79b2234b4cdb08a 6953f30c075147e29787a2ec2fb34aa3
-#: 85cc4d43275449fbb3cfdc9f359c5382 92875f78278744aeb636a14c9a824841
-#: ae424a7b8b11424792c2f37a9b444a2b c94bed96f58b4177bd5ada70bee785c7
-#: e7fb84f0fb6f446d92028daa01a0a963 e9e5e7e603d740e3beba550a5a8d52e3
-#: ef644d5b7a744f69acf17d273c940637 m5ui.roller.M5Roller:19
-#: m5ui.roller.M5Roller.get_options:10 m5ui.roller.M5Roller.get_selected_str:9
-#: m5ui.roller.M5Roller.set_options:10 m5ui.roller.M5Roller.set_style_radius:11
-#: of
+#: 005bd3084d164d42bef8478415840705 18ff6251a7b44baca856d903f11f0a81
+#: 2224d1158f6f43759af5067713033dae 351e9dd1fde348fbbfa53f5bd7b2d61e
+#: 4bf85d5627024028bb223a39a53d14e3 7116b65f29504f128218c6c4b8117705
+#: 81ef85fe0fa14e6a833bffc7040b6e62 8d7efad0fb5241d8a04f5f6313e19cb9
+#: 96adf39897da4eb08086c2aac3151565 a10647e5474148b185b58967273881db
+#: a7a6774eca6a4771bebe9331115eb57a c3c3318d668942d69513a0061c4cc737
+#: c79db2eb57f247c98eb65e87b794a914 ca33b8bee1f344baa2ca3d97272202ca
+#: d68ff138e5b7499a9e0147bee48f55f7 dc84e9354f904b8d988b77a86c6ff3ab
+#: e1c8d9b146184feea6d4314d033d2594 e9641d70fc174b66a5fdfbb52eeb84cb
+#: efc07c856fc9482eb0d01727f6e24910 m5ui.roller.M5Roller:19
+#: m5ui.roller.M5Roller.get_option_count:10 m5ui.roller.M5Roller.get_options:10
+#: m5ui.roller.M5Roller.get_selected_str:9 m5ui.roller.M5Roller.set_options:10
+#: m5ui.roller.M5Roller.set_style_radius:11 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/roller.rst:52 1abc33be93484fe695e55162474ec757
+#: ../../en/m5ui/roller.rst:52 ec2227c01a6b468f8828adb0bbc0736a
 msgid "**API**"
 msgstr "API参考"
 
-#: e93f7a2dc7b3425a9247526e9cafc3a0 m5ui.roller.M5Roller:1 of
+#: 9ce4bf7d09274d6ea76573b62bffb335 m5ui.roller.M5Roller:1 of
 msgid "Bases: :py:class:`~lvgl.roller`"
 msgstr ""
 
-#: a2b59b2069494f249fdb0a4a60676bb4 m5ui.roller.M5Roller:1 of
+#: 977cc14125624adf97b893a77f151c59 m5ui.roller.M5Roller:1 of
 msgid "Create a roller widget."
 msgstr "创建一个滚轮控件。"
 
-#: ../../en/m5ui/roller.rst 60b9e97567f5479f8296bb04da4bc269
-#: 705a46e829fa4881a2c823d5be61fd68 79a3d47545944513afe48855a7da91e1
-#: 8b7845143c7c4f219de00ed86272b1cc 941ca056cee14b8085d2d361fcb6ceaa
-#: b74b125d19ac4f49b1e346dee3c1170f de13638003aa4584a5105da66118616a
-#: f3c77a6c4c914939a473af65c9f3aa90 f8d74ea25bc344aab29259cae8ab904a
-#: fd1b258ae55f414bb9e10d9ba625e1fb m5ui.roller.M5Roller.set_options
-#: m5ui.roller.M5Roller.set_style_radius of
+#: ../../en/m5ui/roller.rst 083027081a3645b2b1b0092459f95adc
+#: 2e696b0cd3d349fe911ad99f6be5f95d 35d8ca5dc87845cc9e6b2d38fa1ea55f
+#: 497122c5c4a240f687872a8e788d22af 4f0ed224074841a7ba1629585029e67a
+#: 769553d617d740d49e9f56ea21573964 81f2c87a0632497488e2415f66986ba1
+#: 9408ffc593514c70b4b345f815b3ec3e adbcae610d984604a1dbe0ad78aeb0fc
+#: dea2f2de3e65472795ff37a915c535ae ff4393b9d2e549cdba5c2a58969d2a77
+#: m5ui.roller.M5Roller.set_options m5ui.roller.M5Roller.set_style_radius of
 msgid "Parameters"
 msgstr ""
 
-#: b8c4a4137d084d1384fda80699b0b3a7 m5ui.roller.M5Roller:3 of
+#: c42af21103df468c90a4006af95db9e6 m5ui.roller.M5Roller:3 of
 msgid "X position of the widget."
 msgstr "控件的X位置。"
 
-#: 208ce15b2a9f4dbc81249fc7eccfbb01 m5ui.roller.M5Roller:4 of
+#: 469cafe28f4f4e3dbc3b2259dbfb77cf m5ui.roller.M5Roller:4 of
 msgid "Y position of the widget."
 msgstr "控件的Y位置。"
 
-#: 3eb9238dd9f746ce8d56694963f7dd39 m5ui.roller.M5Roller:5 of
+#: 3823f92cd3f24762ac3624a0163058fe m5ui.roller.M5Roller:5 of
 msgid "Width of the widget."
 msgstr "控件的宽度。"
 
-#: f1f01dab795240b1a17b72b6222c2f51 m5ui.roller.M5Roller:6 of
+#: c7e9584df79a4e789bc4d580a3626726 m5ui.roller.M5Roller:6 of
 msgid "Height of the widget."
 msgstr "控件的高度。"
 
-#: 8201d10c644747c9a22aad41021a10e5 d4fc84ab03c740dfb594927c1e0d29e9
+#: 0ae3df878f8b4b13b972e520419d10e6 673e4be3a63344c59d0c64ee0770d778
 #: m5ui.roller.M5Roller:7 m5ui.roller.M5Roller.set_options:3 of
 msgid "List of options to display in the roller."
 msgstr "要在滚轮中显示的选项列表。"
 
-#: 2eaf953632bc4496bcd124aebbcf41ce a6a28a169e384402bbab065faa44993b
+#: 0b42ab001c5a41458998fb8e892f67b1 12f471bc4d2d4a4d820d30368691d51d
 #: m5ui.roller.M5Roller:8 m5ui.roller.M5Roller.set_options:4 of
 msgid "Roller mode (default is NORMAL)."
 msgstr "滚轮模式（默认为NORMAL）。"
 
-#: a1b10c8232fe4c02a058a6efdf428538 m5ui.roller.M5Roller:9 of
+#: 728766de86814fd89106dd2717ecbb5f m5ui.roller.M5Roller:9 of
 msgid "Index of the initially selected option."
 msgstr "初始选中选项的索引。"
 
-#: 2bd7a18253a9431588a9d4150c825e1c m5ui.roller.M5Roller:10 of
+#: c514b5c54cc7442fb8b72e7f1c2283c9 m5ui.roller.M5Roller:10 of
 msgid "Number of visible rows in the roller."
 msgstr "滚轮中可见行数。"
 
-#: 54acc259d1624984837714d2a7bce3fa m5ui.roller.M5Roller:11 of
+#: a7836b821542461297b8f02bcff1e25f m5ui.roller.M5Roller:11 of
 msgid "Font to use for the text in the roller."
 msgstr "滚轮中文本使用的字体。"
 
-#: f6311311e8b34d5cb1d6cd43c584adca m5ui.roller.M5Roller:12 of
+#: 89ace5eb8e034a089c75130053a6bda2 m5ui.roller.M5Roller:12 of
 msgid "Parent widget to attach this roller to (default is the active screen)."
 msgstr "要附加此滚轮的父控件（默认为活动屏幕）。"
 
-#: ../../en/m5ui/roller.rst:62 ba6689c80ec346e0961ddbe4d40c5ad7
+#: ../../en/m5ui/roller.rst:62 f03904f1395c413ba13a7a1ef2d761de
 msgid ""
 "Set a flag on the object. If ``value`` is True, the flag is added; if "
 "False, the flag is removed."
 msgstr "为对象设置标志。如果 ``value`` 为True，则添加标志；如果为False，则移除标志。"
 
-#: ../../en/m5ui/roller.rst:64 749a3b0aff7f4bb4b7d0fb44a9a2ae4a
+#: ../../en/m5ui/roller.rst:64 a30e5b7cfef1458a81e8e75126f303c8
 msgid "The flag to set."
 msgstr "要设置的标志。"
 
-#: ../../en/m5ui/roller.rst:65 da878c64c811402b8258b71d5f7b8def
+#: ../../en/m5ui/roller.rst:65 59094b47b41242a58cb9d5cf501ac06f
 msgid "If True, the flag is added; if False, the flag is removed."
 msgstr "如果为True，则添加标志；如果为False，则移除标志。"
 
-#: ../../en/m5ui/roller.rst 1721e80c55fd48edaea8748da7c6cf9e
-#: 2cfd2eab9ded49a7bcfd1809823b438d 36a6521260c149e9b930c69797826cdf
-#: 3eb19df571db4804a8bd08435dfd82c5 57348c97a50d421db1e5b0334cc043ef
-#: 59b902c2e401491595deeec51a41f045 674a89b323c847ebad35c599e1841a20
-#: 68bdd897b67141149d5a2fbb6107aa5e 8dc140070ef347c28c3673bc9b7afb56
-#: 915ac9452d954b95be2caa9609ca183a e010b23ae74a4c17bf291a4012774279
-#: e08b759b6b604f9fb82a4fa7a7fb23c1 m5ui.roller.M5Roller.get_options
+#: ../../en/m5ui/roller.rst 095b6d880ae1481185ab4def08def99d
+#: 1fc7ac9c11aa464e83fce975b2052cb4 3c8a98acad2a4645a7254f3c82f9abde
+#: 483786279aa64edfafb4019747908bbf 6fdefe3cde6a4f9ab42c7e288ea7a725
+#: 7160fd0c40a849b6b7e99c485e6481d9 75f176d024dd4c4296930b71f0575414
+#: 7c657d686dd54e00b2b7e33e338d9483 859b879b7aab42e0b3a085f2565277ae
+#: 9e2aa91322eb455580b8c9e219199a3a c9a1f92bd6b34be2a682737f0cdf83e6
+#: ec25709bf96941cbb59e89b1b3e7f864 fbd8181cc11248aa9b55bfd1e8a62a25
+#: m5ui.roller.M5Roller.get_option_count m5ui.roller.M5Roller.get_options
 #: m5ui.roller.M5Roller.get_selected_str m5ui.roller.M5Roller.set_style_radius
 #: of
 msgid "Returns"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:70 ea50da8e345f4a61b3f6a7cecacd41fe
+#: ../../en/m5ui/roller.rst:70 5f94bc038a9f44c08e95c9dc6aaf0428
 msgid "|set_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:12 e8a7eaf3bad04eb8bd8d0d35afd1460e
+#: ../../en/refs/m5ui.roller.ref:12 b010d665ea6e46318ffeff63c5c9c67d
 msgid "set_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:81 c9cf79181311405f940907261e015a6e
+#: ../../en/m5ui/roller.rst:81 05e58c9aa030420fafcca02c300d2763
 msgid ""
 "Toggle a flag on the object. If the flag is set, it is removed; if not "
 "set, it is added."
 msgstr "切换对象的标志。如果标志已设置，则将其移除；如果未设置，则将其添加。"
 
-#: ../../en/m5ui/roller.rst:83 5dd46c570cd84f5cae7c0a50cbbf3c3b
+#: ../../en/m5ui/roller.rst:83 f50ba43c8bbd4a3f8be35ebd2e7468a7
 msgid "The flag to toggle."
 msgstr "要切换的标志。"
 
-#: ../../en/m5ui/roller.rst:88 e8acb0f76df644589753609dfb2c8222
+#: ../../en/m5ui/roller.rst:88 c735abd1bde2467b8eb6278ae94ef6a6
 msgid "|toggle_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:24 96ba18576580402b9ae7121eb7f5fc4a
+#: ../../en/refs/m5ui.roller.ref:24 475d345baafd46fca26a7374bf13c174
 msgid "toggle_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:99 6d023bd86f3848538291a3ed26a182c4
+#: ../../en/m5ui/roller.rst:99 ab5b7e6b78c84a2b9d7dc1e8ac35d8c8
 msgid ""
 "Set the state of the roller. If ``value`` is True, the state is set; if "
 "False, the state is unset."
 msgstr "设置滚轮的状态。如果 ``value`` 为True，则设置状态；如果为False，则取消设置状态。"
 
-#: ../../en/m5ui/roller.rst:101 37bc3bc31bc1443a9d28601283480b01
+#: ../../en/m5ui/roller.rst:101 28ac4688609649918faf3d62cf397ad6
 msgid "The state to set."
 msgstr "要设置的状态。"
 
-#: ../../en/m5ui/roller.rst:102 22570de35e1f4ed9b3c1b80b51ae0ebb
+#: ../../en/m5ui/roller.rst:102 d94f49dc7e394d1ea9629a3f49b09703
 msgid "If True, the state is set; if False, the state is unset."
 msgstr "如果为True，则设置状态；如果为False，则取消设置状态。"
 
-#: ../../en/m5ui/roller.rst:107 2968bb55e5944dbca8634c2289ce9da3
+#: ../../en/m5ui/roller.rst:107 75fdb9530b64401d89f7c1078b77012c
 msgid "|set_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:17 33adda7784464040b51104b535d3867a
+#: ../../en/refs/m5ui.roller.ref:17 ed67b43339d04a1581523a9b43610cb3
 msgid "set_state.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:118 95e75435b6da4576abd5f1535d156587
+#: ../../en/m5ui/roller.rst:118 8a3a34d3624344c0b04c691feaa0db3c
 msgid ""
 "Toggle the state of the roller. If the state is set, it is unset; if not "
 "set, it is set."
 msgstr "切换滚轮的状态。如果状态已设置，则取消设置；如果未设置，则将其设置。"
 
-#: ../../en/m5ui/roller.rst:120 913c2b56f48c499295ca2aa1665123fc
+#: ../../en/m5ui/roller.rst:120 6eebd21786ef44b7a7bcdaa8c4dd5100
 msgid "The state to toggle."
 msgstr "要切换的状态。"
 
-#: ../../en/m5ui/roller.rst:125 29c00c9e797745808381b661f8f47ff4
+#: ../../en/m5ui/roller.rst:125 01cba5f71f7840e3a917f63d56582482
 msgid "|toggle_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:25 81a7f05f6f1a4ad481cad2dd914d9ad6
+#: ../../en/refs/m5ui.roller.ref:25 38492f0e84224d22968b4a2757aedf1b
 msgid "toggle_state.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:136 c05d566c009d43a8bdc902f5bc85f9ef
+#: ../../en/m5ui/roller.rst:136 2f011186308444ce950a445ce926b17f
 msgid ""
 "Add an event callback to the roller. The callback will be called when the"
 " specified event occurs."
 msgstr "为滚轮添加事件回调。当指定事件发生时将调用回调函数。"
 
-#: ../../en/m5ui/roller.rst:138 c2c6bf8bcd2a45b991102441ca07b410
+#: ../../en/m5ui/roller.rst:138 323e3388eef44da491f33ff287694fbb
 msgid "The callback function to call."
 msgstr "要调用的回调函数。"
 
-#: ../../en/m5ui/roller.rst:139 2e5955501b6f4700a02a470a44fa8dee
+#: ../../en/m5ui/roller.rst:139 82a1dd9a86174028bb639b6c83231c3c
 msgid "The event to listen for."
 msgstr "要监听的事件。"
 
-#: ../../en/m5ui/roller.rst:140 bb7be24006fc43569e57422b893f454e
+#: ../../en/m5ui/roller.rst:140 d945a9e09be24606b6b71bd38085cf62
 msgid "Optional user data to pass to the callback."
 msgstr "传递给回调函数的可选用户数据。"
 
-#: ../../en/m5ui/roller.rst:145 9c2d88e3f9ad4fccab9d86adbdd5f9e2
+#: ../../en/m5ui/roller.rst:145 b1755d8476044ee588ff07523bb67206
 msgid "|event.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:2 1946019a72ad43c4bd1079be50747e13
+#: ../../en/refs/m5ui.roller.ref:2 d4823fd32ea84cafa3bf604fbd8f527e
 msgid "event.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:159 885368c6163a4dc8bc1b4ab1aa88eba1
+#: ../../en/m5ui/roller.rst:159 0cd123ae66a0469dae299d3b7fc1bc89
 msgid "Set the background color of the roller."
 msgstr "设置滚轮的背景颜色。"
 
 #: ../../en/m5ui/roller.rst:161 ../../en/m5ui/roller.rst:183
-#: 8c5cf9f5d8e74299bc187622d336b904 f070b8f19a784584b86ac98539e2a43b
+#: 41713e2e228a4b66b40394a2e615525e 4a567dc557584de88f0934b8bc53858a
 msgid "The color to set."
 msgstr "要设置的颜色。"
 
-#: ../../en/m5ui/roller.rst:162 655c136d4b184c40b2e09e85c7a99016
+#: ../../en/m5ui/roller.rst:162 06a6df1fcbc441e8911b8b3a8aac264e
 msgid "The opacity of the color."
 msgstr "颜色的不透明度。"
 
 #: ../../en/m5ui/roller.rst:163 ../../en/m5ui/roller.rst:185
-#: ../../en/m5ui/roller.rst:205 2a5f8351301643bfa5f9ee0c7d0c3b71
-#: 756ffa83fd014b0ebc30e39798b27acf a6f470c8a7da4d1ba821dc259ed67f68
+#: ../../en/m5ui/roller.rst:205 0af3eb450b9b4042af43dd0f10bcad8c
+#: 14d38eafdc4c43a5a56d4cc24808b4ed a42043d54537431a8c1c0cb6729226a9
 msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
 msgstr "要应用样式的对象部分（例如：lv.PART.MAIN）。"
 
-#: ../../en/m5ui/roller.rst:168 75389e48a43847ffb63ea63fed49cb36
+#: ../../en/m5ui/roller.rst:168 390494116b264223a14d34a028ce215c
 msgid "|set_bg_color.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:9 4d44a84b702f409f87c0a42fdf7761f3
+#: ../../en/refs/m5ui.roller.ref:9 ed134e17ba164b97bc151439de0e2123
 msgid "set_bg_color.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:181 d8f10aa78dec4b41a938d161bd830eff
+#: ../../en/m5ui/roller.rst:181 b0a56c7e88764e70b65b95d0e91221ef
 msgid "Set the border color of the roller."
 msgstr "设置滚轮的边框颜色。"
 
-#: ../../en/m5ui/roller.rst:184 e1df2129867d4c578c6c664e163d59e4
+#: ../../en/m5ui/roller.rst:184 131b2774f26042199e50d82b82b8b2b3
 msgid ""
 "The opacity of the color. The value should be between 0 (transparent) and"
 " 255 (opaque)."
 msgstr "颜色的不透明度。值应在0（透明）到255（不透明）之间。"
 
-#: ../../en/m5ui/roller.rst:190 dffa8a087d9743a69df4bf801079c5e8
+#: ../../en/m5ui/roller.rst:190 dc11bcd6154d4fe39541ba7b3c44c555
 msgid "|set_border_color.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:10 f219b370aae24d879a0a21eb720e6195
+#: ../../en/refs/m5ui.roller.ref:10 4bf73af88a49456fae30d99f37623252
 msgid "set_border_color.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:202 8055958c699c4a49ac64529af17dcd2d
+#: ../../en/m5ui/roller.rst:202 593350ee9f3149958d942e1a3b776087
 msgid "Set the border width of the roller."
 msgstr "设置滚轮的边框宽度。"
 
-#: ../../en/m5ui/roller.rst:204 bc8a491b8de74a69ac76df46251028e4
+#: ../../en/m5ui/roller.rst:204 40ba18751562404587aa3b276022894b
 msgid "The width to set."
 msgstr "要设置的宽度。"
 
-#: ../../en/m5ui/roller.rst:210 de8807ff1fe6438a814b06a283ee85c7
+#: ../../en/m5ui/roller.rst:210 3cb3e9ca3beb4fce9c284b1ca6ed0faf
 msgid "|set_style_border_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:18 46ee39f78df94e148ff3dd877a59758f
+#: ../../en/refs/m5ui.roller.ref:18 71d26ca19aa948218a9143396f7f5d82
 msgid "set_style_border_width.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:222 4c5fc73d3962444fb52e52eee8ef6da6
-msgid "Get the total number of options in the roller."
-msgstr "获取滚轮中选项的总数。"
+#: ../../en/m5ui/roller.rst:222 345f51cac85a4e1db0edf45afa7e436e
+msgid "Get the index of the currently selected option."
+msgstr "获取当前选中选项的索引。"
 
-#: ../../en/m5ui/roller.rst:224 cd413ae846b246e1a63de5666281c3e6
-msgid "The number of options."
-msgstr "选项的数量。"
+#: ../../en/m5ui/roller.rst:224 c11e4946dc1b4057afa63863bb95d216
+msgid "The index of the selected option."
+msgstr "选中选项的索引。"
 
-#: ../../en/m5ui/roller.rst 3c71709ae0674c27bb94db8b1e0a4a9d
-#: 594d2693cb304632863c89145dfea6a4 81467515d3be4d4eba54989e4836c8e3
-#: 9e1e23ea38f34856a7ae711de65ccd0c m5ui.roller.M5Roller.get_options
+#: ../../en/m5ui/roller.rst 297241525dea4017bf165b9c5d5d30e5
+#: aba6394d60304f1c9d73eff8f192087c b1000ed914e549b2b33201125492c46e
+#: bd817d4dd3fa42d6a277387ab37234b9 dce91b5571e642b7949f1741cb043374
+#: m5ui.roller.M5Roller.get_option_count m5ui.roller.M5Roller.get_options
 #: m5ui.roller.M5Roller.get_selected_str m5ui.roller.M5Roller.set_style_radius
 #: of
 msgid "Return type"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:229 5729fe3f6fde4b92ab7c4a0e183c4f61
-msgid "|get_option_count.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.roller.ref:4 dae8c20852e64e5b843eadb1ebf16743
-msgid "get_option_count.png"
-msgstr ""
-
-#: ../../en/m5ui/roller.rst:240 a4986c031a5a4bdfbf1833e852b33577
-msgid "Get the index of the currently selected option."
-msgstr "获取当前选中选项的索引。"
-
-#: ../../en/m5ui/roller.rst:242 21c2d3cfd0d74eb8b090e9aae9dcacc7
-msgid "The index of the selected option."
-msgstr "选中选项的索引。"
-
-#: ../../en/m5ui/roller.rst:247 5cc5b2ebb048492fa48f117a4edac327
+#: ../../en/m5ui/roller.rst:229 49dda85905a54689bf28c6ab637f6498
 msgid "|get_selected.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:6 2238fad457534e35901a7f7683268258
+#: ../../en/refs/m5ui.roller.ref:6 1dfb9324e60043b2b34d6ad63c6c4938
 msgid "get_selected.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:258 351b7914a1be4d45ad1b88752e4d13a8
+#: ../../en/m5ui/roller.rst:240 c9bb58a1ca2749f0aed4fac3cd2db419
 msgid "Set the number of visible rows in the roller."
 msgstr "设置滚轮中可见行数。"
 
-#: ../../en/m5ui/roller.rst:260 93c125fa336f419d9c2570d41e6bd7b3
+#: ../../en/m5ui/roller.rst:242 9ebb3ea0ba864bfdb052e6926954e252
 msgid "The number of visible rows."
 msgstr "可见行数。"
 
-#: ../../en/m5ui/roller.rst:265 55b7364719d54745afb8725823d950d4
+#: ../../en/m5ui/roller.rst:247 bc6518f73ec940438a85838290b1f559
 msgid "|set_visible_row_count.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:20 41a61cde0bc04b07847de927350ea685
+#: ../../en/refs/m5ui.roller.ref:20 a175329fd8884d50956c6d4cfd8c84e1
 msgid "set_visible_row_count.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:276 f8a8120886574013a6c0944fb7421200
+#: ../../en/m5ui/roller.rst:258 5e107276ad9142419b7165675da40c3c
 msgid "Set the position of the roller."
 msgstr "设置滚轮的位置。"
 
-#: ../../en/m5ui/roller.rst:278 ../../en/m5ui/roller.rst:297
-#: d0bc1ae6ebc3440e849c5202cc1b3cc1
+#: ../../en/m5ui/roller.rst:260 ../../en/m5ui/roller.rst:279
+#: 1a631b56a1e94caa94337d398f478313
 msgid "The x-coordinate of the roller."
 msgstr "滚轮的x坐标。"
 
-#: ../../en/m5ui/roller.rst:279 ../../en/m5ui/roller.rst:315
-#: c08c7b47237f43999c4c3736b81f227e
+#: ../../en/m5ui/roller.rst:261 ../../en/m5ui/roller.rst:297
+#: 92d7d334930044dbbce79c58d84e5e96
 msgid "The y-coordinate of the roller."
 msgstr "滚轮的y坐标。"
 
-#: ../../en/m5ui/roller.rst:284 002f5a3723394ce2904e4fc068793f4e
+#: ../../en/m5ui/roller.rst:266 b5a75351fe604752b3285e7a4e17e3d4
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:15 0de4992913dc4ec89b06a0a5fc5984ef
+#: ../../en/refs/m5ui.roller.ref:15 60c9dfe2098c4d12b418422b6fb78e57
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:295 106873ef2fe94b3c861b08713dd72b1c
+#: ../../en/m5ui/roller.rst:277 ad757872a70d404ea166f3e4f552c683
 msgid "Set the x-coordinate of the roller."
 msgstr "设置滚轮的x坐标。"
 
-#: ../../en/m5ui/roller.rst:302 bb252726e9bb4c729cd86096b7641400
+#: ../../en/m5ui/roller.rst:284 bc169154654d4d379c42bfe0e0500b04
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:22 ef79f30f3e454eeca83e61f9b4c6e35f
+#: ../../en/refs/m5ui.roller.ref:22 68cd474e68cd40aaafd10dab9bc1053a
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:313 d1fb85bec44d4275801af365170427b6
+#: ../../en/m5ui/roller.rst:295 0e424b368a6945fa88f31da4b59d9037
 msgid "Set the y-coordinate of the roller."
 msgstr "设置滚轮的y坐标。"
 
-#: ../../en/m5ui/roller.rst:320 15806ede2556412195559af3d1d3e33e
+#: ../../en/m5ui/roller.rst:302 e0bed5fc78764aea86bdcab4d925c7d1
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:23 242445e2c73542c2878b001984321a4d
+#: ../../en/refs/m5ui.roller.ref:23 3f7931e7e5634dc2a7ad4a5277086347
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:331 7ecb3e7fb9c94c7b95726a1c6a57d1b7
+#: ../../en/m5ui/roller.rst:313 51114f321c8b4190a452c46b01e3d1a5
 msgid "Align the roller to another object."
 msgstr "将滚轮对齐到另一个对象。"
 
-#: ../../en/m5ui/roller.rst:333 3f84b9ceb957474caa708e6165901a11
+#: ../../en/m5ui/roller.rst:315 264ddc309df14ed0938b2d45fc1aede4
 msgid "The object to align to."
 msgstr "要对齐的对象。"
 
-#: ../../en/m5ui/roller.rst:334 7f905cd94d7549b39d03db355510d2c4
+#: ../../en/m5ui/roller.rst:316 3d7c52c3593041ddb275d50ec1308a5e
 msgid "The alignment type."
 msgstr "对齐类型。"
 
-#: ../../en/m5ui/roller.rst:335 f6c42898c6944e6f8438725180692049
+#: ../../en/m5ui/roller.rst:317 c642bfa66d8040c08f4d1e5cf9201e6f
 msgid "The x-offset from the aligned object."
 msgstr "与对齐对象的x偏移量。"
 
-#: ../../en/m5ui/roller.rst:336 337e4465b8684ddb85f3f3f5543e4c98
+#: ../../en/m5ui/roller.rst:318 d8057a78eae74453a86eafa8d2610d49
 msgid "The y-offset from the aligned object."
 msgstr "与对齐对象的y偏移量。"
 
-#: ../../en/m5ui/roller.rst:341 3bffd6a71d6748e38c99762a0837b941
+#: ../../en/m5ui/roller.rst:323 d25cca412f614bcb997ede436c105bf7
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:1 c24a368034b04a68b66da367628ec6cf
+#: ../../en/refs/m5ui.roller.ref:1 6ef84661c5cd4e0ea276902fd586a890
 msgid "align_to.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:352 7ea6bd3ff39b4428b5dc71cb42d88ea9
+#: ../../en/m5ui/roller.rst:334 d46e63d768cc468ab12348cdc2bd9133
 msgid "Set the size of the roller."
 msgstr "设置滚轮的尺寸。"
 
-#: ../../en/m5ui/roller.rst:354 ../../en/m5ui/roller.rst:373
-#: ../../en/m5ui/roller.rst:391 a83c72a7a6ce478ab4e080c7465c0c48
+#: ../../en/m5ui/roller.rst:336 ../../en/m5ui/roller.rst:355
+#: ../../en/m5ui/roller.rst:373 b77a6217f25d4c7ba91ebfe7533a0abb
 msgid "The width of the roller."
 msgstr "滚轮的宽度。"
 
-#: ../../en/m5ui/roller.rst:355 ../../en/m5ui/roller.rst:409
-#: ../../en/m5ui/roller.rst:427 f520cb0c374845acab6b5624959afcb0
+#: ../../en/m5ui/roller.rst:337 ../../en/m5ui/roller.rst:391
+#: ../../en/m5ui/roller.rst:409 d77afb2a3edd48d0bcb3a556eaad052f
 msgid "The height of the roller."
 msgstr "滚轮的高度。"
 
-#: ../../en/m5ui/roller.rst:360 84a5d84fce164012a259950a2e118d82
+#: ../../en/m5ui/roller.rst:342 68144ec2d7534a4eb0d8385065a5a205
 msgid "|set_size.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:16 1c2c16bb2a4946969805e06d4b5be3cd
+#: ../../en/refs/m5ui.roller.ref:16 e6d8524a2980436d9fbee88198fc04e9
 msgid "set_size.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:371 6cd5324f9d064d0390cbe0626a82bcad
+#: ../../en/m5ui/roller.rst:353 db5d3de136314152a463ff0e6d4c154f
 msgid "Set the width of the roller."
 msgstr "设置滚轮的宽度。"
 
-#: ../../en/m5ui/roller.rst:378 fd00c50bb4894d5c93c1098007f7c9dc
+#: ../../en/m5ui/roller.rst:360 db0985674e5346ae8d382aae7fa4b0ed
 msgid "|set_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:21 63efe9d60480417285e37d9a5685b468
+#: ../../en/refs/m5ui.roller.ref:21 cbd07be36a704eb0a3fadd7245caf9fa
 msgid "set_width.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:389 8c4030ce4105480a9bd012ffa13089c0
+#: ../../en/m5ui/roller.rst:371 c78ddd3223d54c51b99e99b042286246
 msgid "Get the width of the roller."
 msgstr "获取滚轮的宽度。"
 
-#: ../../en/m5ui/roller.rst:396 2dccff5831ec45de886a4731272d2d0b
+#: ../../en/m5ui/roller.rst:378 77fee9036ebd4296a9c2af06103c1782
 msgid "|get_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:8 b76dccc96d4543ec875e5fe3ec39d2cb
+#: ../../en/refs/m5ui.roller.ref:8 6661246d75b045aeb86a19950aa5d5bd
 msgid "get_width.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:407 d48d966d24ae4de1a48e622c0e676af9
+#: ../../en/m5ui/roller.rst:389 13d82cacf688411ba37772ad01171aa6
 msgid "Set the height of the roller."
 msgstr "设置滚轮的高度。"
 
-#: ../../en/m5ui/roller.rst:414 02cc628f7b5445c39516ffc381bbed0f
+#: ../../en/m5ui/roller.rst:396 6d406ca412814d9a9effcf2521582099
 msgid "|set_height.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:13 7cbd0908c5ff467683bad1f6b02159b7
+#: ../../en/refs/m5ui.roller.ref:13 117085ba4da640e185fa21e828dde744
 msgid "set_height.png"
 msgstr ""
 
-#: ../../en/m5ui/roller.rst:425 060bea8edfc04473badd0322d00cba3e
+#: ../../en/m5ui/roller.rst:407 32cfacfeda014a8883749c639b9deb80
 msgid "Get the height of the roller."
 msgstr "获取滚轮的高度。"
 
-#: ../../en/m5ui/roller.rst:432 1f0fad375f75427a86c71598906506a5
+#: ../../en/m5ui/roller.rst:414 c857183bac924b96b87e439dfc9b48a6
 msgid "|get_height.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:3 2d92694d0a22402c8907b4cd682aacd0
+#: ../../en/refs/m5ui.roller.ref:3 fd5d726d182a4b988dc067072a39966b
 msgid "get_height.png"
 msgstr ""
 
-#: f8a3c23138894109bd1db6f07386ed85 m5ui.roller.M5Roller.set_options:1 of
+#: 4ecfa4f884dc4d5384801f6e152836f4 m5ui.roller.M5Roller.set_options:1 of
 msgid "Set the options for the roller."
 msgstr "设置滚轮的选项。"
 
-#: 9a4e9c3115d4461a90340d7ff22dcb99 m5ui.roller.M5Roller.set_options:8 of
+#: d24fda6c148e421db92fc6a1c6febd27 m5ui.roller.M5Roller.set_options:8 of
 msgid "|set_options.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:14 217d6c3e60e74f088fa3fe2e399b81bf
+#: ../../en/refs/m5ui.roller.ref:14 7ffbcee1715d4168916eda4be89827aa
 msgid "set_options.png"
 msgstr ""
 
-#: 0c78f21c6ca34956a2cfebae7460ce80 m5ui.roller.M5Roller.get_options:1 of
+#: f848cfa043214f87877d7ae19934b155 m5ui.roller.M5Roller.get_options:1 of
 msgid "Get the list of options in the dropdown."
 msgstr "获取下拉菜单中的选项列表。"
 
-#: 568828dc38034a838d05b8350be89fa7 m5ui.roller.M5Roller.get_options:3 of
+#: 5e8e27844eeb45a4b446b850e114b819 m5ui.roller.M5Roller.get_options:3 of
 msgid "The list of options."
 msgstr "选项列表。"
 
-#: c9d886d11858439d8407c3012ca4e264 m5ui.roller.M5Roller.get_options:8 of
+#: 9c54bbfe63004af6a52c6ef64bed9b9a m5ui.roller.M5Roller.get_options:8 of
 msgid "|get_options.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:5 fc47b0fe8af44ba7b5ffd3d9c27c0c86
+#: ../../en/refs/m5ui.roller.ref:5 ef03aba5a9e046f5878a41ed3077380f
 msgid "get_options.png"
 msgstr ""
 
-#: b812bc4c90124088ac18e51938c50696 m5ui.roller.M5Roller.get_selected_str:1 of
+#: 6d8be90a39a74ca9999a1c0975f80920 m5ui.roller.M5Roller.get_option_count:1 of
+msgid "Get the number of options in the roller."
+msgstr "获取滚轮中选项的总数。"
+
+#: 33acdda6eef443509b8dc28caf18e47a m5ui.roller.M5Roller.get_option_count:3 of
+msgid "The number of options."
+msgstr "选项的数量。"
+
+#: 4b118c3f574a4976a3b235ca03288778 m5ui.roller.M5Roller.get_option_count:8 of
+msgid "|get_option_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.roller.ref:4 d88609c23bee4fec8c3dab0551e9ce79
+msgid "get_option_count.png"
+msgstr ""
+
+#: 7606868789c7458c89722277f4008b32 m5ui.roller.M5Roller.get_selected_str:1 of
 msgid "Get the currently selected option as a string."
 msgstr "获取当前选中选项的文本。"
 
-#: 82adc507d46645b3bf6bb213b1082e40 m5ui.roller.M5Roller.get_selected_str:3 of
+#: 7333380fd8a44cd5885a4105b6f443e4 m5ui.roller.M5Roller.get_selected_str:3 of
 msgid "The selected option as a string."
 msgstr "选中选项的文本。"
 
-#: 288d04a2a7354ac08af9660ccbeaf0fe m5ui.roller.M5Roller.get_selected_str:7 of
+#: ff946e05e5744c4f8a1c64f945487259 m5ui.roller.M5Roller.get_selected_str:7 of
 msgid "|get_selected_str.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:7 be1564e559a5408eaf6a058cc02c8d7f
+#: ../../en/refs/m5ui.roller.ref:7 95f1f9eb86594e5b89b8441cd635c6b8
 msgid "get_selected_str.png"
 msgstr ""
 
-#: 737042603d1c46118c0b7b63a9bab803 m5ui.roller.M5Roller.set_style_radius:1 of
+#: 234d0763545d481b987f1eb4ce3dd409 m5ui.roller.M5Roller.set_style_radius:1 of
 msgid "Set the corner radius of the slider components."
 msgstr "设置滑块组件的圆角半径。"
 
-#: ab485dc557d64e2baf1b4383eabf9a27 m5ui.roller.M5Roller.set_style_radius:3 of
+#: 173aca5345f24b048352f6d7c13084a6 m5ui.roller.M5Roller.set_style_radius:3 of
 msgid "The radius to set."
 msgstr "要设置的半径。"
 
-#: 653fa0736d2a479db72b5db36d213a55 m5ui.roller.M5Roller.set_style_radius:4 of
+#: 023cfc855d1b4f21bb7f25d795b1cdf4 m5ui.roller.M5Roller.set_style_radius:4 of
 msgid ""
 "The part of the object to apply the style to (e.g., lv.PART.MAIN, "
 "lv.PART.SELECTED)."
 msgstr "要应用样式的对象部分（例如，lv.PART.MAIN、lv.PART.SELECTED）。"
 
-#: 7d98abf0d01c4e1ea4272ce5ebe0cc65 m5ui.roller.M5Roller.set_style_radius:9 of
+#: 0eca6d08c4f749b6a6867776a78c8842 m5ui.roller.M5Roller.set_style_radius:9 of
 msgid "|set_style_radius.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.roller.ref:19 a2e56529da964f5aa08ec959f9ed8b90
+#: ../../en/refs/m5ui.roller.ref:19 1031f158b5dc431aa33319950d756849
 msgid "set_style_radius.png"
 msgstr ""
 
