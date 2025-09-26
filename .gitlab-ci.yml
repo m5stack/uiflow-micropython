@@ -26,6 +26,7 @@ code-format:
   before_script:
     - export PATH="$HOME/.local/bin:$PATH"
   script:
+    - make -C m5stack submodules
     - sudo apt-get update -qy
     - sudo apt-get install build-essential python3 python3-pip python-is-python3 cmake -y
     - source tools/ci.sh && ci_code_formatting_setup
@@ -74,7 +75,7 @@ release_job:
   stage: release
   script:
     - echo "Releasing the M5Burn..."
-    - apt install pipx -y
+    - sudo apt install pipx -y
     - pipx install uv
     - uv venv
     - source .venv/bin/activate
