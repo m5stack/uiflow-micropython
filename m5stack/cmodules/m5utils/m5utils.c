@@ -26,11 +26,13 @@ static mp_obj_t m5_utils_remap(size_t n_args, const mp_obj_t *args) {
 }
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_utils_remap_obj, 5, 5, m5_utils_remap);
 
+extern const mp_obj_type_t mp_m5utils_timer_type;
 
 static const mp_rom_map_elem_t m5utils_module_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_m5utils) },
 
     { MP_ROM_QSTR(MP_QSTR_remap), MP_ROM_PTR(&m5_utils_remap_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Timer), MP_ROM_PTR(&mp_m5utils_timer_type) },
 };
 
 static MP_DEFINE_CONST_DICT(m5utils_module_globals, m5utils_module_globals_table);
