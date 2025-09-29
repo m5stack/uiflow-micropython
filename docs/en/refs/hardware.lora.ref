@@ -1,0 +1,40 @@
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/init.png 
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_freq.png 
+.. |set_sf.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_sf.png 
+.. |set_bw.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_bw.png 
+.. |set_coding_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_coding_rate.png 
+.. |set_syncword.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_syncword.png 
+.. |set_preamble_len.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_preamble_len.png 
+.. |set_output_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_output_power.png 
+.. |start_recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/start_recv.png
+.. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/recv.png
+.. |recv_data_param.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/recv_data_param.png
+.. |set_irq_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/set_irq_callback.png
+.. |send_return.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/send_return.png
+.. |send_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/send_time.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/send.png
+.. |irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/irq_triggered.png
+.. |standby.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/standby.png
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/sleep.png
+
+.. |unit_c6l_tx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/tx_example.png
+.. |unit_c6l_rx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hardware/lora/rx_example.png
+
+.. |unit_c6l_tx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/lora/unit_c6l_tx_example.m5f2"
+        target="_blank"
+    >
+        unit_c6l_tx_example.m5f2
+    </a>
+
+.. |unit_c6l_rx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hardware/lora/unit_c6l_rx_example.m5f2"
+        target="_blank"
+    >
+        unit_c6l_rx_example.m5f2
+    </a>

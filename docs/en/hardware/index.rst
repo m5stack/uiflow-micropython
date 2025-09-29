@@ -11,6 +11,7 @@ Hardware
     display.rst
     imu.rst
     ir.rst
+    lora.rst
     mic.rst
     pin.rst
     plcio.rst

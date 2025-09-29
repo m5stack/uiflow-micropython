@@ -1,0 +1,22 @@
+{
+    "deploy": [
+        "deploy_unit_c6l.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "WiFi",
+        "LoRa",
+        "Buzzer",
+        "RGB LED",
+        "USB",
+    ],
+    "images": [
+        "m5stack_unit_c6l.jpg"
+    ],
+    "mcu": "esp32c6",
+    "product": "M5Stack UnitC6L",
+    "url": "https://shop.m5stack.com/products/m5stack-unit-c6l",
+    "vendor": "M5Stack"
+}
+

@@ -11,40 +11,40 @@
 BOARD ?= M5STACK_AtomS3
 
 boards := \
-	M5STACK_AtomS3:atoms3             \
-	M5STACK_AtomS3_Lite:atoms3-lite   \
-	M5STACK_StampS3:stamps3           \
-	M5STACK_CoreS3:cores3             \
-	M5STACK_AtomS3U:atoms3u           \
-	M5STACK_Core2:core2               \
-	M5STACK_Tough:tough               \
-	M5STACK_StickC_PLUS2:stickcplus2  \
-	M5STACK_StickC_PLUS:stickcplus    \
-	M5STACK_Fire:fire                 \
-	M5STACK_NanoC6:nanoc6             \
-	M5STACK_Basic:basic               \
-	M5STACK_Basic_4MB:basic           \
-	M5STACK_Capsule:capsule           \
-	M5STACK_CoreInk:coreink           \
-	M5STACK_AirQ:airq                 \
-	M5STACK_Dial:dial                 \
-	M5STACK_Cardputer:cardputer       \
-	M5STACK_Paper:paper               \
-	M5STACK_PaperS3:papers3           \
-	M5STACK_DinMeter:dinmeter         \
-	M5STACK_StickC:stickc             \
-	M5STACK_Station:station           \
-	M5STACK_Atom_Lite:atom-lite       \
-	M5STACK_Stamp_PICO:stamppico      \
-	M5STACK_Atom_Matrix:atommatrix    \
-	M5STACK_AtomU:atomu               \
-	M5STACK_Atom_Echo:atomecho        \
-	M5STACK_AtomS3R:atoms3r           \
-	M5STACK_AtomS3R_CAM:atoms3r_cam   \
-	M5STACK_Atom_EchoS3R:atom_echos3r \
-	M5STACK_StamPLC:stamplc           \
-	M5STACK_Tab5:tab5                 \
-	M5STACK_CardputerADV:cardputeradv
+	M5STACK_AtomS3:atoms3            \
+	M5STACK_AtomS3_Lite:atoms3-lite  \
+	M5STACK_StampS3:stamps3          \
+	M5STACK_CoreS3:cores3            \
+	M5STACK_AtomS3U:atoms3u          \
+	M5STACK_Core2:core2              \
+	M5STACK_Tough:tough              \
+	M5STACK_StickC_PLUS2:stickcplus2 \
+	M5STACK_StickC_PLUS:stickcplus   \
+	M5STACK_Fire:fire                \
+	M5STACK_NanoC6:nanoc6            \
+	M5STACK_Basic:basic              \
+	M5STACK_Basic_4MB:basic          \
+	M5STACK_Capsule:capsule          \
+	M5STACK_CoreInk:coreink          \
+	M5STACK_AirQ:airq                \
+	M5STACK_Dial:dial                \
+	M5STACK_Cardputer:cardputer      \
+	M5STACK_Paper:paper              \
+	M5STACK_PaperS3:papers3          \
+	M5STACK_DinMeter:dinmeter        \
+	M5STACK_StickC:stickc            \
+	M5STACK_Station:station          \
+	M5STACK_Atom_Lite:atom-lite      \
+	M5STACK_Stamp_PICO:stamppico     \
+	M5STACK_Atom_Matrix:atommatrix   \
+	M5STACK_AtomU:atomu              \
+	M5STACK_Atom_Echo:atomecho       \
+	M5STACK_AtomS3R:atoms3r          \
+	M5STACK_AtomS3R_CAM:atoms3r_cam  \
+	M5STACK_StamPLC:stamplc          \
+	M5STACK_Tab5:tab5                \
+	M5STACK_CardputerADV:cardputeradv\
+	M5STACK_Unit_C6L:unit_c6l
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -52,40 +52,40 @@ endef
 
 # Board type list
 BOARD_TYPE_DEF := \
-	none         \
-	atoms3       \
-	atoms3-lite  \
-	stamps3      \
-	cores3       \
-	atoms3u      \
-	core2        \
-	tough        \
-	stickcplus2  \
-	stickcplus   \
-	fire         \
-	nanoc6       \
-	basic        \
-	capsule      \
-	coreink      \
-	airq         \
-	dial         \
-	cardputer    \
-	paper        \
-	papers3      \
-	dinmeter     \
-	stickc       \
-	station      \
-	atom-lite    \
-	stamppico    \
-	atommatrix   \
-	atomu        \
-	atomecho     \
-	atoms3r      \
-	atoms3r_cam  \
-	atom_echos3r \
-	stamplc      \
-	tab5         \
-	cardputeradv
+	none        \
+	atoms3      \
+	atoms3-lite \
+	stamps3     \
+	cores3      \
+	atoms3u     \
+	core2       \
+	tough       \
+	stickcplus2 \
+	stickcplus  \
+	fire        \
+	nanoc6      \
+	basic       \
+	capsule     \
+	coreink     \
+	airq        \
+	dial        \
+	cardputer   \
+	paper       \
+	papers3     \
+	dinmeter    \
+	stickc      \
+	station     \
+	atom-lite   \
+	stamppico   \
+	atommatrix  \
+	atomu       \
+	atomecho    \
+	atoms3r     \
+	atoms3r_cam \
+	stamplc     \
+	tab5        \
+	cardputeradv\
+	unit_c6l
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -323,7 +323,8 @@ IDF_PATH_PATCH_SERIES = \
 	1004-idf_v5.4_freertos.patch
 
 M5UNIFIED_PATCH_SERIES = \
-	2006-Support-LTR553.patch
+	2006-Support-LTR553.patch \
+	2007-Support-UnitC6L.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch

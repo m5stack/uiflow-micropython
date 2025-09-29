@@ -138,6 +138,7 @@ if (
     OR BOARD_TYPE STREQUAL "capsule"
     OR BOARD_TYPE STREQUAL "tough"
     OR BOARD_TYPE STREQUAL "stamplc"
+    OR BOARD_TYPE STREQUAL "unit_c6l"
 )
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_sdcard.c)
