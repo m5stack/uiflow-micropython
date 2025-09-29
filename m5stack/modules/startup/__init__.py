@@ -258,6 +258,12 @@ def startup(boot_opt, timeout: int = 60) -> None:
             tab5 = Tab5_Startup()
             tab5.startup(ssid, pswd, timeout)
 
+        elif board_id == M5.BOARD.M5UnitC6L:
+            from .unit_c6l import UnitC6L_Startup
+
+            unit_c6l = UnitC6L_Startup()
+            unit_c6l.startup(ssid, pswd, timeout)
+
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
         startup = Startup()

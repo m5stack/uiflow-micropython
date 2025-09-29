@@ -61,6 +61,9 @@ class RGB:
                 en(1)
                 cls._instance = WS2812(io=20, n=1)
                 return cls._instance
+            elif board_id == M5.BOARD.M5UnitC6L:
+                cls._instance = WS2812(io=2, n=1)
+                return cls._instance
             else:
                 pass
         else:

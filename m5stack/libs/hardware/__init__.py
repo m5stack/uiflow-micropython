@@ -8,6 +8,7 @@ _attrs = {
     "Button": "button",
     "CAN": "can",
     "IR": "ir",
+    "LoRa": "lora",
     "MatrixKeyboard": "matrix_keyboard",
     "DigitalInput": "plcio",
     "Relay": "plcio",

@@ -11,6 +11,7 @@ package(
         "button.py",
         "can.py",
         "ir.py",
+        "lora.py",
         "matrix_keyboard.py",
         "plcio.py",
         "pwr485.py",

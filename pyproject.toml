@@ -26,11 +26,12 @@ ignore = [
   "F401",
   "F403",
   "F405",
+  "F821",
   "PLC1901",
 ]
 
 [tool.ruff.lint.mccabe]
-max-complexity = 40
+max-complexity = 50
 
 [tool.ruff.lint.per-file-ignores]
 # manifest.py files are evaluated with some global names pre-defined

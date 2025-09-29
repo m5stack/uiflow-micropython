@@ -1,31 +1,35 @@
-LoRa868 v1.2 Module 
-===================
+LoRa
+====
 
-.. sku: M029-V12
+.. include:: ../refs/hardware.lora.ref
 
-.. include:: ../refs/module.lora868_v12.ref
+LoRa is used to control the built-in long-range wireless communication module inside the host device. Below is the detailed LoRa support for the host:
 
-The LoRa868 v1.2 Module is part of the M5Stack stackable module series. It is a LoRa communication module that operates at a 900MHz frequency band and utilizes the SX1262 chip solution.
+.. table::
+    :widths: auto
+    :align: center
 
-Support the following products:
+    +-----------------+---------+
+    | Controllers     | LoRa    |
+    +=================+=========+
+    | UnitC6L         | |S|     |
+    +-----------------+---------+
 
-    |LoRa868Module v1.2|
+.. |S| unicode:: U+2714
 
 UiFlow2 Example 
 ---------------
 
-.. note:: Before using the following examples, please check the DIP switches on the module to ensure that the pins used in the example match the DIP switch positions. For specific configurations, please refer to the product manual page. The SPI configuration has been implemented internally, so users do not need to worry about it.
-
 Sender
 ^^^^^^
 
-Open the |cores3_lora868_v12_tx_example.m5f2| project in UiFlow2.
+Open the |unit_c6l_tx_example.m5f2| project in UiFlow2.
 
 This example sends data every second.
 
 UiFlow2 Code Block:
 
-    |cores3_lora868_v12_tx_example.png|
+    |unit_c6l_tx_example.png|
 
 Example output:
 
@@ -34,22 +38,20 @@ Example output:
 Receiver
 ^^^^^^^^
 
-Open the |cores3_lora868_v12_rx_example.m5f2| project in UiFlow2.
+Open the |unit_c6l_rx_example.m5f2| project in UiFlow2.
 
 This example receives and displays data.
 
 UiFlow2 Code Block:
 
-    |cores3_lora868_v12_rx_example.png|
+    |unit_c6l_rx_example.png|
 
 Example output:
 
     None
 
-MicroPython Example 
+MicroPython Example
 -------------------
-
-.. note:: Before using the following examples, please check the DIP switches on the module to ensure that the pins used in the example match the DIP switch positions. For specific configurations, please refer to the product manual page. The SPI configuration has been implemented internally, so users do not need to worry about it.
 
 Sender
 ^^^^^^
@@ -58,7 +60,7 @@ This example sends data every second.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/module/lora868_v12/cores3_lora868_v12_tx_example.py
+    .. literalinclude:: ../../../examples/hardware/lora/unit_c6l_tx_example.py
         :language: python
         :linenos:
 
@@ -73,7 +75,7 @@ This example receives and displays data.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/module/lora868_v12/cores3_lora868_v12_rx_example.py
+    .. literalinclude:: ../../../examples/hardware/lora/unit_c6l_rx_example.py
         :language: python
         :linenos:
 
@@ -84,30 +86,21 @@ Example output:
 **API**
 -------
 
-
-class LoRa868V12Module  
-^^^^^^^^^^^^^^^^^^^^^^
+class LoRa
+^^^^^^^^^^
  
-.. class:: module.lora868_v12.LoRa868V12Module(pin_rst = 5, \
-                            pin_cs = 1, \
-                            pin_irq = 10, \  
-                            pin_busy = 2, \
-                            freq_khz = 868000, \
-                            bw = "250", \
-                            sf = 8, \
-                            coding_rate = 8, \
-                            reamble_len = 12, \
-                            syncword = 0x12, \
-                            output_power = 10)
+.. class:: hardware.LoRa(freq_khz = 868000, \
+                        bw = "250", \
+                        sf = 8, \
+                        coding_rate = 8, \
+                        reamble_len = 12, \
+                        syncword = 0x12, \
+                        output_power = 10)
 
-    Create an LoRa868V12Module object.
+    Create an LoRa object.
 
-    :param int pin_rst: (RST) Reset pin number.
-    :param int pin_cs: (NSS) Chip select pin number.
-    :param int pin_irq: (IRQ) Interrupt pin number.
-    :param int pin_busy: (BUSY) Busy pin number.
     :param int freq_khz: LoRa RF frequency in KHz, with a range of 850000 KHz to 930000 KHz.
-    :param str bw: Bandwidth, options include: 
+    :param str bw: Bandwidth, options include:
 
         - ``"7.8"``: 7.8 KHz
         - ``"10.4"``: 10.4 KHz
@@ -133,9 +126,9 @@ class LoRa868V12Module
 
         .. code-block:: python
 
-            from module import LoRa868V12Module
+            from hardware import LoRa
 
-            module_lora868v12_0 = LoRa868V12Module(5, 1, 10, 2, 868000, '250', 8, 8, 12, 0x12, 10)
+            lora_0 = LoRa(868000, '250', 8, 8, 12, 0x12, 10)
 
     .. method:: set_freq(freq_khz)
 
@@ -151,7 +144,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_freq(freq_khz)
+                lora_0.set_freq(freq_khz)
 
     .. method:: set_sf(sf)
 
@@ -167,7 +160,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_sf(sf)
+                lora_0.set_sf(sf)
 
     .. method:: set_bw(bw)
 
@@ -185,7 +178,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_bw(bw)
+                lora_0.set_bw(bw)
 
     .. method:: set_coding_rate(coding_rate)
 
@@ -201,7 +194,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_coding_rate(coding_rate)
+                lora_0.set_coding_rate(coding_rate)
 
     .. method:: set_syncword(syncword)
 
@@ -217,7 +210,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_syncword(syncword)
+                lora_0.set_syncword(syncword)
 
     .. method:: set_preamble_len(preamble_len)
 
@@ -233,7 +226,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_preamble_len(preamble_len)
+                lora_0.set_preamble_len(preamble_len)
 
     .. method:: set_output_power(output_power) 
 
@@ -249,7 +242,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_output_power(output_power)
+                lora_0.set_output_power(output_power)
 
     .. method:: set_irq_callback(callback)
         
@@ -268,7 +261,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.set_irq_callback()
+                lora_0.set_irq_callback()
 
     .. method:: start_recv()
         
@@ -284,7 +277,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.start_recv()
+                lora_0.start_recv()
 
     .. method:: recv(self, timeout_ms, rx_length, rx_packet) 
         
@@ -306,7 +299,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                data = module_lora868v12_0.recv()
+                data = lora_0.recv()
 
     .. method:: send(buf, tx_at_ms=None) 
 
@@ -327,7 +320,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.send()
+                lora_0.send()
 
     .. method:: standby()
 
@@ -343,7 +336,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.standby()
+                lora_0.standby()
 
     .. method:: sleep()
 
@@ -359,7 +352,7 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.sleep()
+                lora_0.sleep()
 
     .. method:: irq_triggered()  
 
@@ -376,33 +369,6 @@ class LoRa868V12Module
 
             .. code-block:: python
 
-                module_lora868v12_0.irq_triggered()
+                lora_0.irq_triggered()
 
-.. _lora_rxpacket:
-
-class RxPacket   
-^^^^^^^^^^^^^^
-
-.. class:: lora.RxPacket()
-
-    Create an RxPacket object. 
-
-    .. method:: decode()
-
-        Decode the received data.
-
-    .. method:: ticks_ms
-
-        Timestamp of when the data was received.
-
-    .. method:: rssi
-
-        Received signal strength (units: dBm).
-
-    .. method:: snr
-
-        Signal-to-noise ratio (units: dB * 4). 
-
-    .. method:: valid_crc
-
-        CRC validity check.
+Refer to :ref:`lora_rxpacket` for more details about RxPacket.

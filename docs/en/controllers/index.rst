@@ -15,3 +15,4 @@ Controllers
     airq.rst
     paper.rst
     dinmeter.rst
+    unit_c6l.rst
