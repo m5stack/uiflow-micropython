@@ -11,7 +11,7 @@ Support the following products:
 
     |Unit Gateway H2|
 
-.. note:: When using this unit, you need to flash the NCP firmware to the unit. For details, refer to the `ESP Zigbee NCP <https://docs.m5stack.com/zh_CN/guide/zigbee/unit_gateway_h2/zigbee_ncp>`_ documentation.
+.. note:: When using this unit, you need to flash the NCP firmware to the unit. For details, refer to the `ESP Zigbee NCP <https://docs.m5stack.com/en/esp_idf/zigbee/unit_gateway_h2/zigbee_ncp>`_ documentation.
 
 UiFlow2 Example
 ---------------
