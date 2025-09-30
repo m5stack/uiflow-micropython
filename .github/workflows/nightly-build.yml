@@ -89,6 +89,7 @@ jobs:
           - M5STACK_StickC_PLUS2
           - M5STACK_Tab5
           - M5STACK_Tough
+          - M5STACK_Unit_C6L
           - ESPRESSIF_ESP32_S3_BOX_3
           - SEEED_STUDIO_XIAO_ESP32S3
       max-parallel: 4
