@@ -11,7 +11,7 @@ Support the following products:
 
     |Module Gateway H2|
 
-.. note:: When using this module, you need to flash the NCP firmware to the module. For details, refer to the `ESP Zigbee NCP <https://docs.m5stack.com/zh_CN/guide/zigbee/module_gateway_h2/zigbee_ncp>`_ documentation.
+.. note:: When using this module, you need to flash the NCP firmware to the module. For details, refer to the `ESP Zigbee NCP <https://docs.m5stack.com/en/esp_idf/zigbee/module_gateway_h2/zigbee_ncp>`_ documentation.
 
 UiFlow2 Example
 ---------------
