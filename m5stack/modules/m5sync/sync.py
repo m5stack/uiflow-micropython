@@ -245,6 +245,14 @@ class DownloadView:
             text_y=370,
             text_font=M5.Lcd.FONTS.DejaVu40,
         ),
+        M5.BOARD.M5UnitC6L: ViewInfo(
+            title_x=3,
+            title_y=4,
+            title_font=M5.Lcd.FONTS.DejaVu18,
+            text_x=22,
+            text_y=26,
+            text_font=M5.Lcd.FONTS.DejaVu12,
+        ),
     }
 
     def __init__(self) -> None:
