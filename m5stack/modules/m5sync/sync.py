@@ -246,12 +246,12 @@ class DownloadView:
             text_font=M5.Lcd.FONTS.DejaVu40,
         ),
         M5.BOARD.M5UnitC6L: ViewInfo(
-            title_x=3,
-            title_y=4,
-            title_font=M5.Lcd.FONTS.DejaVu18,
-            text_x=22,
-            text_y=26,
-            text_font=M5.Lcd.FONTS.DejaVu12,
+            title_x=32,
+            title_y=9,
+            title_font=M5.Lcd.FONTS.DejaVu12,
+            text_x=32,
+            text_y=24,
+            text_font=M5.Lcd.FONTS.DejaVu9,
         ),
     }
 
