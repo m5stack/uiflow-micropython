@@ -3,3 +3,4 @@
 # SPDX-License-Identifier: MIT
 
 include("$(MPY_DIR)/../m5stack/modules/startup/manifest_unit_c6l.py")
+include("$(MPY_DIR)/../m5stack/libs/unit/manifest.py")
