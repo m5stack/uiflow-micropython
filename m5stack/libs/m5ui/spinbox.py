@@ -45,7 +45,7 @@ class M5Spinbox(lv.obj):
         self.remove_style_all()
         self.set_flex_flow(lv.FLEX_FLOW.ROW)
         self.set_flex_align(lv.FLEX_ALIGN.SPACE_AROUND, lv.FLEX_ALIGN.CENTER, lv.FLEX_ALIGN.CENTER)
-        self.set_size(w, h)
+        super().set_size(w, h)
         self.set_style_pad_gap(5, 0)
         self.set_pos(x, y)
         self.set_style_text_font(font, lv.PART.MAIN | lv.STATE.DEFAULT)
@@ -79,6 +79,124 @@ class M5Spinbox(lv.obj):
         self._btn_inc.add_event_cb(self._increment_event_cb, lv.EVENT.CLICKED, None)
         self._btn_inc.add_event_cb(self._increment_event_cb, lv.EVENT.SHORT_CLICKED, None)
         self._btn_inc.add_event_cb(self._increment_event_cb, lv.EVENT.LONG_PRESSED_REPEAT, None)
+
+    def set_state(self, state: int, value: bool) -> None:
+        """Set the state of the spinbox. If ``value`` is True, the state is set; if False, the state is unset.
+
+        :param int state: The state to set.
+        :param bool value: If True, the state is set; if False, the state is unset.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_state.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                spinbox_0.set_state(lv.STATE.DISABLED, True)
+        """
+        if value:
+            self._spinbox.add_state(state)
+            self._btn_dec.add_state(state)
+            self._btn_inc.add_state(state)
+        else:
+            self._spinbox.remove_state(state)
+            self._btn_dec.remove_state(state)
+            self._btn_inc.remove_state(state)
+
+    def toggle_state(self, state: int) -> None:
+        """Toggle the state of the spinbox. If the state is set, it is unset; if not set, it is set.
+
+        :param int state: The state to toggle.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |toggle_state.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                spinbox_0.toggle_state(lv.STATE.CHECKED)
+        """
+        if self._spinbox.has_state(state):
+            self._spinbox.remove_state(state)
+            self._btn_dec.remove_state(state)
+            self._btn_inc.remove_state(state)
+        else:
+            self._spinbox.add_state(state)
+            self._btn_dec.add_state(state)
+            self._btn_inc.add_state(state)
+        return
+
+    def set_size(self, width: int, height: int) -> None:
+        """Set the size of the spinbox.
+
+        :param int width: The width of the spinbox.
+        :param int height: The height of the spinbox.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_size.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                spinbox_0.set_size(150, 40)
+        """
+        super().set_size(width, height)
+        self._btn_dec.set_size(height, height)
+        self._btn_inc.set_size(height, height)
+        self._spinbox.set_height(height)
+        self._spinbox.set_flex_grow(1)
+        self.update_layout()
+
+    def set_width(self, width: int) -> None:
+        """Set the width of the spinbox.
+
+        :param int width: The width of the spinbox.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_width.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                spinbox_0.set_width(180)
+        """
+        super().set_width(width)
+        self._spinbox.set_flex_grow(1)
+        self.update_layout()
+
+    def set_height(self, height: int) -> None:
+        """Set the height of the spinbox.
+
+        :param int height: The height of the spinbox.
+        :return: None
+
+        UiFlow2 Code Block:
+
+            |set_height.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                spinbox_0.set_height(50)
+        """
+        super().set_height(height)
+        self._btn_dec.set_size(height, height)
+        self._btn_inc.set_size(height, height)
+        self._spinbox.set_height(height)
+        self.update_layout()
 
     def _check_value(self, value, min_value, max_value, digit_count, prec):
         if value < min_value or value > max_value:
@@ -216,12 +334,12 @@ class M5Spinbox(lv.obj):
 
     def _increment_event_cb(self, event_struct):
         event = event_struct.code
-        if event in (lv.EVENT.CLICKED, lv.EVENT.SHORT_CLICKED, lv.EVENT.LONG_PRESSED_REPEAT):
+        if event in (lv.EVENT.SHORT_CLICKED, lv.EVENT.LONG_PRESSED_REPEAT):
             self._spinbox.increment()
 
     def _decrement_event_cb(self, event_struct):
         event = event_struct.code
-        if event in (lv.EVENT.CLICKED, lv.EVENT.SHORT_CLICKED, lv.EVENT.LONG_PRESSED_REPEAT):
+        if event in (lv.EVENT.SHORT_CLICKED, lv.EVENT.LONG_PRESSED_REPEAT):
             self._spinbox.decrement()
 
     def set_digit_format(self, digit_count: int, sep_pos: int) -> None:
@@ -325,6 +443,9 @@ class M5Spinbox(lv.obj):
                 spinbox0.set_step(1)
                 spinbox0.set_step(0.1)
         """
+        if self._digit_count - self._sep_pos == 0:
+            warnings.warn(f"No decimal places, step {step} converted to {int(step * 10)}.")
+            step = int(step * 10)
         self._spinbox.set_step(self.value2raw(step, self._digit_count, self._sep_pos))
 
     @staticmethod
@@ -335,7 +456,7 @@ class M5Spinbox(lv.obj):
         :return: The converted integer value.
         :rtype: int
         """
-        if sep_pos < 0 or sep_pos >= digit_count:
+        if sep_pos < 0 or sep_pos > digit_count:
             raise ValueError("sep_pos must be between 0 and digit_count.")
 
         dec_pos = digit_count - sep_pos
@@ -351,7 +472,7 @@ class M5Spinbox(lv.obj):
         :return: The converted float value.
         :rtype: float
         """
-        if sep_pos < 0 or sep_pos >= digit_count:
+        if sep_pos < 0 or sep_pos > digit_count:
             raise ValueError("sep_pos must be between 0 and digit_count.")
 
         if sep_pos == 0:

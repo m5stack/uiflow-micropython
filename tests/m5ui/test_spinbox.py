@@ -69,6 +69,18 @@ class Test(unittest.TestCase):
         self.spinbox1.decrement()
         self.assertEqual(self.spinbox1.get_value(), 50)
 
+    def test_set_size(self):
+        self.spinbox1.set_size(150, 30)
+        self.assertEqual((self.spinbox1.get_width(), self.spinbox1.get_height()), (150, 30))
+
+    def test_set_width(self):
+        self.spinbox1.set_width(180)
+        self.assertEqual(self.spinbox1.get_width(), 180)
+
+    def test_set_height(self):
+        self.spinbox1.set_height(35)
+        self.assertEqual(self.spinbox1.get_height(), 35)
+
 
 if __name__ == "__main__":
     unittest.main()
