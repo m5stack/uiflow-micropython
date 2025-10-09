@@ -93,41 +93,6 @@ M5Spinbox
 
                 spinbox_0.toggle_flag(lv.obj.FLAG.HIDDEN)
 
-    .. py:method:: set_state(state, value)
-
-        Set the state of the spinbox. If ``value`` is True, the state is set; if False, the state is unset.
-
-        :param int state: The state to set.
-        :param bool value: If True, the state is set; if False, the state is unset.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_state.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                spinbox_0.set_state(lv.STATE.DISABLED, True)
-
-    .. py:method:: toggle_state(state)
-
-        Toggle the state of the spinbox. If the state is set, it is unset; if not set, it is set.
-
-        :param int state: The state to toggle.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |toggle_state.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                spinbox_0.toggle_state(lv.STATE.CHECKED)
-
     .. py:method:: set_pos(x, y)
 
         Set the position of the spinbox.
@@ -180,41 +145,6 @@ M5Spinbox
 
                 spinbox_0.set_y(250)
 
-    .. py:method:: set_size(width, height)
-
-        Set the size of the spinbox.
-
-        :param int width: The width of the spinbox.
-        :param int height: The height of the spinbox.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_size.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                spinbox_0.set_size(150, 40)
-
-    .. py:method:: set_width(width)
-
-        Set the width of the spinbox.
-
-        :param int width: The width of the spinbox.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_width.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                spinbox_0.set_width(180)
-
     .. py:method:: get_width()
 
         Get the width of the spinbox.
@@ -231,23 +161,6 @@ M5Spinbox
             .. code-block:: python
 
                 width = spinbox_0.get_width()
-
-    .. py:method:: set_height(height)
-
-        Set the height of the spinbox.
-
-        :param int height: The height of the spinbox.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_height.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                spinbox_0.set_height(50)
 
     .. py:method:: get_height()
 

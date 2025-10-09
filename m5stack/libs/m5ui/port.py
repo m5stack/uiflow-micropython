@@ -5,7 +5,6 @@
 import lvgl as lv
 import sys
 import lv_utils
-import m5utils
 import micropython
 
 _event_loop_instance = None
@@ -27,6 +26,8 @@ class event_loop:
 
         self._initialized = True
         self.delay = 1000 // freq
+        import m5utils
+
         self.timer = m5utils.Timer(
             0, mode=m5utils.Timer.PERIODIC, period=self.delay, callback=self.timer_cb
         )
