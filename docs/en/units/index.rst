@@ -44,6 +44,7 @@ Unit
     extio2.rst
     fader.rst
     finger.rst
+    fingerprint2.rst
     flash_light.rst
     gateway_h2.rst
     glass.rst

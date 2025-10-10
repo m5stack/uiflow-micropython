@@ -47,6 +47,7 @@ package(
         "fader.py",
         "fan.py",
         "finger.py",
+        "fingerprint2.py",
         "flash_light.py",
         "gateway_h2.py",
         "gesture.py",
