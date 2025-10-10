@@ -1,0 +1,1016 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-10 16:28+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/fingerprint2.rst:2 c051023fc4ea43beb39a558732fd15f0
+msgid "Fingerprint2 Unit"
+msgstr ""
+
+#: ../../en/units/fingerprint2.rst:8 57aa5122e038445da4829605eb917f2c
+msgid "This library is the driver for Unit Fingerprint2."
+msgstr "此库是 Unit Fingerprint2 的驱动程序。"
+
+#: ../../en/units/fingerprint2.rst:10 2f6e6781284c4455aa62d86bcef114a6
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/fingerprint2.rst:12 dd56c40223f44e599ec631ae795748c5
+msgid "|Unit Fingerprint2|"
+msgstr "|Unit Fingerprint2|"
+
+#: ../../en/refs/unit.fingerprint2.ref 8ef13580abd848a991d812cd7396f35b
+msgid "Unit Fingerprint2"
+msgstr "Unit Fingerprint2"
+
+#: ../../en/units/fingerprint2.rst:15 2d8131ded56b42858cec9349b411d3a8
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/units/fingerprint2.rst:18 ../../en/units/fingerprint2.rst:69
+#: 640658f9c5934ffa85988cba25167c32
+msgid "Enroll and recognize"
+msgstr "录入与识别"
+
+#: ../../en/units/fingerprint2.rst:20 b0e43048825e49e4b56ffc58816f5e13
+msgid "Open the |m5cores3_fp2_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |m5cores3_fp2_basic_example.m5f2| 项目。"
+
+#: ../../en/units/fingerprint2.rst:22 ../../en/units/fingerprint2.rst:71
+#: 64304efbb45c4b74afad7d1c96991e26
+msgid ""
+"This example demonstrates how to use a fingerprint recognition module to "
+"perform the complete process of fingerprint enrollment, identification, "
+"and deletion."
+msgstr "本案例演示了如何使用指纹识别模块实现指纹录入、识别与删除的完整流程。"
+
+#: ../../en/units/fingerprint2.rst:25 ../../en/units/fingerprint2.rst:42
+#: ../../en/units/fingerprint2.rst:57 092ad019634e470889da561f4de67bbb of
+#: unit.fingerprint2.Fingerprint2Unit.activate_module:3
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:8
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:9
+#: unit.fingerprint2.Fingerprint2Unit.download_template:9
+#: unit.fingerprint2.Fingerprint2Unit.find_match:10
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:9
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:8
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:9
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image:6
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version:6
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:10
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:8
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image:6
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:10
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status:6
+#: unit.fingerprint2.Fingerprint2Unit.is_connected:6
+#: unit.fingerprint2.Fingerprint2Unit.load_template:11
+#: unit.fingerprint2.Fingerprint2Unit.match:8
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:10
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:19
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:17
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:6
+#: unit.fingerprint2.Fingerprint2Unit.store_template:9
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:11
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:9
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/fingerprint2.rst:27 57bb9a2b8b6c420198e4e223af49834e
+msgid "|m5cores3_fp2_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:34 c87145f892884bf6a0baebf22bc083d6
+msgid "m5cores3_fp2_basic_example.png"
+msgstr ""
+
+#: ../../en/units/fingerprint2.rst:29 ../../en/units/fingerprint2.rst:46
+#: ../../en/units/fingerprint2.rst:61 ../../en/units/fingerprint2.rst:80
+#: ../../en/units/fingerprint2.rst:97 ../../en/units/fingerprint2.rst:112
+#: 447e38e8b6e7489a892282f4044992dd
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/fingerprint2.rst:31 ../../en/units/fingerprint2.rst:48
+#: ../../en/units/fingerprint2.rst:63 ../../en/units/fingerprint2.rst:82
+#: ../../en/units/fingerprint2.rst:99 ../../en/units/fingerprint2.rst:114
+#: 90087bea2b1f44f8bd3e961a75848657
+msgid "None"
+msgstr "无"
+
+#: ../../en/units/fingerprint2.rst:34 ../../en/units/fingerprint2.rst:85
+#: 13a751f621774f4c8161f5022660deea
+msgid "Upload and download template"
+msgstr "上传与下载指纹模板"
+
+#: ../../en/units/fingerprint2.rst:36 b0e43048825e49e4b56ffc58816f5e13
+msgid ""
+"Open the |m5cores3_fp2_template_upload_download_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 上打开 |m5cores3_fp2_template_upload_download_example.m5f2| 项目。"
+
+#: ../../en/units/fingerprint2.rst:38 ../../en/units/fingerprint2.rst:87
+#: e14148889d254406b4caf0ea42f488bb
+msgid ""
+"This example demonstrates how to use a fingerprint recognition module to "
+"perform the complete process of fingerprint enrollment, identification, "
+"deletion, and template upload/download.(The upload and download functions"
+" enable cross-device fingerprint recognition — a fingerprint enrolled on "
+"one module can be verified on another. The fingerprint template transfer "
+"method can be customized according to user requirements, such as via "
+"serial communication, network, or cloud synchronization.)"
+msgstr "本案例演示了如何使用指纹识别模块实现指纹录入、识别、删除以及指纹模板的上传、下载的完整流程。（指纹模板的上传与下载功能可实现跨设备的指纹识别，即可以在一个指纹模块上录入指纹，在另一个指纹模块上进行验证识别。指纹模板的传输方式可根据用户需求进行灵活设计，例如通过串口、网络或云端进行数据同步。）"
+
+#: ../../en/units/fingerprint2.rst:44 57bb9a2b8b6c420198e4e223af49834e
+msgid "|m5cores3_fp2_template_upload_download_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:45 7eddab8286454987a8ae5d35c572bd06
+msgid "m5cores3_fp2_template_upload_download_example.png"
+msgstr ""
+
+#: ../../en/units/fingerprint2.rst:51 ../../en/units/fingerprint2.rst:102
+#: eed3c9687e104c72bdb5f3d7fa9f845a
+msgid "Upload adn display fingerprint image"
+msgstr "上传和显示指纹图像"
+
+#: ../../en/units/fingerprint2.rst:53 da3136b61ee94457acd7a284cbbb11e7
+msgid "Open the |m5cores3_fp2_upload_image_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |m5cores3_fp2_upload_image_example.m5f2| 项目。"
+
+#: ../../en/units/fingerprint2.rst:55 ../../en/units/fingerprint2.rst:104
+#: 5dafe4cf3356470495b64c5de1c2a784
+msgid "This example demonstrates how to upload and display the fingerprint image."
+msgstr "本示例演示如何上传并显示指纹图像。"
+
+#: ../../en/units/fingerprint2.rst:59 14ab60403a2e4b42821910e8e0015fa6
+msgid "|m5cores3_fp2_upload_image_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:56 b3e8e133e8784744b1e15e010e35c74a
+msgid "m5cores3_fp2_upload_image_example.png"
+msgstr ""
+
+#: ../../en/units/fingerprint2.rst:66 c2d63b76dd6d4359b265ea29e02ac3c8
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/fingerprint2.rst:74 ../../en/units/fingerprint2.rst:91
+#: ../../en/units/fingerprint2.rst:106 4c10eb36764d404b84330ec812b62ce2 of
+#: unit.fingerprint2.Fingerprint2Unit.activate_module:7
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:12
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:13
+#: unit.fingerprint2.Fingerprint2Unit.download_template:13
+#: unit.fingerprint2.Fingerprint2Unit.find_match:14
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:13
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:12
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:13
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image:10
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version:10
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:14
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:12
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image:10
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:14
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status:10
+#: unit.fingerprint2.Fingerprint2Unit.is_connected:10
+#: unit.fingerprint2.Fingerprint2Unit.load_template:15
+#: unit.fingerprint2.Fingerprint2Unit.match:12
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:14
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:23
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:21
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:10
+#: unit.fingerprint2.Fingerprint2Unit.store_template:13
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:15
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:13
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/fingerprint2.rst:117 bee4514136c34c9785dec1dc14c720ec
+msgid "**API**"
+msgstr "**API 应用**"
+
+#: ../../en/units/fingerprint2.rst:120 b3858e1c19f14f3ebb39e651afcea629
+msgid "Fingerprint2Unit"
+msgstr ""
+
+#: 1be8bdc6dbfb4e18bf00a84262c8b0c5 of unit.fingerprint2.Fingerprint2Unit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ../../en/units/fingerprint2.rst 4c8a9fc225f24c1f99a53084610b8ec8 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_template
+#: unit.fingerprint2.Fingerprint2Unit.download_template
+#: unit.fingerprint2.Fingerprint2Unit.load_template
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode
+#: unit.fingerprint2.Fingerprint2Unit.store_template
+#: unit.fingerprint2.Fingerprint2Unit.upload_image
+#: unit.fingerprint2.Fingerprint2Unit.upload_template
+msgid "Parameters"
+msgstr "参数"
+
+#: 9ca11dc921cb49f9a0cbb8faf366c06f of
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image:1
+msgid "Capture fingerprint image for verification."
+msgstr "获取用于验证的指纹图像获"
+
+#: 2a412df9939b4a9c8472e9568d78c499 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template
+#: unit.fingerprint2.Fingerprint2Unit.delete_template
+#: unit.fingerprint2.Fingerprint2Unit.download_template
+#: unit.fingerprint2.Fingerprint2Unit.find_match
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature
+#: unit.fingerprint2.Fingerprint2Unit.gen_template
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status
+#: unit.fingerprint2.Fingerprint2Unit.is_connected
+#: unit.fingerprint2.Fingerprint2Unit.load_template
+#: unit.fingerprint2.Fingerprint2Unit.match
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color
+#: unit.fingerprint2.Fingerprint2Unit.store_template
+#: unit.fingerprint2.Fingerprint2Unit.upload_image
+#: unit.fingerprint2.Fingerprint2Unit.upload_template
+msgid "Returns"
+msgstr "返回值"
+
+#: 3c2668b112f849279b2be5692a587a53 of
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image:3
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image:3
+msgid "True if the fingerprint image was successfully captured, False otherwise."
+msgstr "如果成功获取指纹图像则返回 True，否则返回 False。"
+
+#: c8642f93730a4e2a887c1c02b5192c44 of
+#: unit.fingerprint2.Fingerprint2Unit.activate_module
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template
+#: unit.fingerprint2.Fingerprint2Unit.delete_template
+#: unit.fingerprint2.Fingerprint2Unit.download_template
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature
+#: unit.fingerprint2.Fingerprint2Unit.gen_template
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status
+#: unit.fingerprint2.Fingerprint2Unit.is_connected
+#: unit.fingerprint2.Fingerprint2Unit.load_template
+#: unit.fingerprint2.Fingerprint2Unit.match
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode
+#: unit.fingerprint2.Fingerprint2Unit.store_template
+#: unit.fingerprint2.Fingerprint2Unit.upload_image
+#: unit.fingerprint2.Fingerprint2Unit.upload_template
+msgid "Return type"
+msgstr "返回类型"
+
+#: 585d455170134f3baee787adbe4b16a6 of
+#: unit.fingerprint2.Fingerprint2Unit.get_verify_image:8
+msgid "|get_verify_image.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:7 53ccbc9dddf841d094b7789e69bef717
+msgid "get_verify_image.png"
+msgstr ""
+
+#: cb9863d35f35477eac2f7a9e1711280e of
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image:1
+msgid "Capture fingerprint image for enrollment."
+msgstr "获取用于注册的指纹图像。"
+
+#: d42ea5e78c7a4db3945f8fe8f0b3125c of
+#: unit.fingerprint2.Fingerprint2Unit.get_enroll_image:8
+msgid "|get_enroll_image.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:8 ee400b6cb03b40a7bf6e901487cd1aa5
+msgid "get_enroll_image.png"
+msgstr ""
+
+#: 81508ba95bf94ec499a5c8c3c53f2cd6 of
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:1
+msgid "Generate fingerprint feature."
+msgstr "生成指纹特征。"
+
+#: a5f9184ccf5a41f9b53958f6a447560c of
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:3
+msgid ""
+"Converts the original fingerprint image stored in the image buffer into a"
+" feature file, which is then stored in the template buffer."
+msgstr "将存储在图像缓冲区中的原始指纹图像转换为特征文件，然后存储在模板缓冲区中。"
+
+#: 197bb08183be4884be3955be70de08ac of
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:6
+msgid ""
+"True if the fingerprint feature was successfully generate, False "
+"otherwise."
+msgstr "如果成功生成指纹特征则返回 True，否则返回 False。"
+
+#: 59bcc303be244db19505c3eb6dce83bc of
+#: unit.fingerprint2.Fingerprint2Unit.gen_feature:11
+msgid "|gen_feature.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:9 34baed69c99c4a5fb1728977633d8aa5
+msgid "gen_feature.png"
+msgstr ""
+
+#: 0a752ebf37324ca295f10ec7354dc6e3 of
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:1
+msgid "Merge fingerprint features to generate a template."
+msgstr "合并指纹特征以生成模板。"
+
+#: 9938641430fb4ee1be084f139b26a2bd of
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:3
+msgid "Combines two fingerprint feature files into one fingerprint template."
+msgstr "将两个指纹特征文件合并为一个指纹模板。"
+
+#: 7aa15684f8d64f728cee64e663c064b0 of
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:5
+msgid ""
+"True if the fingerprint template was successfully generate, False "
+"otherwise."
+msgstr "如果成功生成指纹模板则返回 True，否则返回 False。"
+
+#: 59bcc303be244db19505c3eb6dce83bc of
+#: unit.fingerprint2.Fingerprint2Unit.gen_template:10
+msgid "|gen_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:10 34baed69c99c4a5fb1728977633d8aa5
+msgid "gen_template.png"
+msgstr ""
+
+#: 155c9fa551714456b4827720117133cf of
+#: unit.fingerprint2.Fingerprint2Unit.store_template:1
+msgid "Store fingerprint template into flash memory."
+msgstr "将指纹模板存储到 flash 中。"
+
+#: c0383e937a74422f884ff68e154ac1e4 of
+#: unit.fingerprint2.Fingerprint2Unit.store_template:3
+msgid ""
+"Stores the generated fingerprint template into flash memory at the "
+"specified ID."
+msgstr "将生成的指纹模板以指定的 ID 存储到 flash 中。"
+
+#: 69ad664fb4ae42cbadbe1eaa6996b171 of
+#: unit.fingerprint2.Fingerprint2Unit.store_template:5
+msgid "Storage location ID (range: 0 ~ 99)"
+msgstr "存储位置 ID（范围：0 ~ 99）"
+
+#: 8ed5c65af4ad44aab46b30ecfa3388df of
+#: unit.fingerprint2.Fingerprint2Unit.store_template:6
+msgid "True if storage successful False otherwise."
+msgstr "如果存储成功则返回 True，否则返回 False。"
+
+#: 5cd4d2b472c4405cbc402692e9d0b5c8 of
+#: unit.fingerprint2.Fingerprint2Unit.store_template:11
+msgid "|store_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:11 2fb6adb767cb40d5a54c5d5cde59e650
+msgid "store_template.png"
+msgstr ""
+
+#: 66f28028b67e4250ad35f32c0b3602bb of
+#: unit.fingerprint2.Fingerprint2Unit.load_template:1
+msgid "Load fingerprint template from flash memory."
+msgstr "从 flash 加载指纹模板。"
+
+#: 0cb541194b63433a9ac459825b01429a of
+#: unit.fingerprint2.Fingerprint2Unit.load_template:3
+msgid ""
+"Loads the fingerprint template with the specified ID from flash memory "
+"into the template buffer."
+msgstr "将指定 ID 的指纹模板从 flash 加载到模板缓冲区中。"
+
+#: b4e47a0ef5d24dc28e1ef058473c8e9a of
+#: unit.fingerprint2.Fingerprint2Unit.load_template:6
+msgid "ID of the fingerprint template to load"
+msgstr "要加载的指纹模板 ID"
+
+#: 81d4c26f97e54f01b81f3c7423e80c22 of
+#: unit.fingerprint2.Fingerprint2Unit.load_template:8
+msgid "True if load template succcessful."
+msgstr "如果成功加载模板则返回 True。"
+
+#: 64a730c076ce4e4a8fe1ac744e3a3536 of
+#: unit.fingerprint2.Fingerprint2Unit.load_template:13
+msgid "|load_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:12 c6f040b5c3754c4599c176d06d846803
+msgid "load_template.png"
+msgstr ""
+
+#: e5f643eec6b743b4bf9e3cfdbeca47f5 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:1
+msgid "Delete fingerprint template from flash memory."
+msgstr "从 flash 删除指纹模板。"
+
+#: aae1355a73034753af0ccde5099b49e4 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:3
+msgid ""
+"Deletes the fingerprint template with the specified ID from the flash "
+"storage."
+msgstr "从 flash 中删除指定 ID 的指纹模板。"
+
+#: c3e4f82b4ab14b278d8904b065c38211 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:5
+msgid "ID of the fingerprint template to delete"
+msgstr "要删除的指纹模板 ID"
+
+#: 98221620c92146729e44bd5a6270f4b5 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:5
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:6
+msgid "True if deletion successful, False otherwise"
+msgstr "如果删除成功则返回 True，否则返回 False"
+
+#: bfb368b74c7e435dbccc8cae5df7418c of
+#: unit.fingerprint2.Fingerprint2Unit.delete_template:11
+msgid "|delete_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:13 a3d1b08d39244023a9035efefee4bd7e
+msgid "delete_template.png"
+msgstr ""
+
+#: 1d3cdc5f55324a6d823a0d17dbdd0ce4 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:1
+msgid "Clear the fingerprint database."
+msgstr "清空指纹数据库。"
+
+#: 168ec3633fde45b1964fcda043d82760 of
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:3
+msgid "Deletes all fingerprint templates stored in the fingerprint database."
+msgstr "删除存储在指纹数据库中的所有指纹模板。"
+
+#: bfb368b74c7e435dbccc8cae5df7418c of
+#: unit.fingerprint2.Fingerprint2Unit.delete_all_template:10
+msgid "|delete_all_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:14 a3d1b08d39244023a9035efefee4bd7e
+msgid "delete_all_template.png"
+msgstr ""
+
+#: 2b6370d9f6e041b19f898ca2acfdcf8b of
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:1
+msgid "Upload fingerprint template and save to specified path"
+msgstr "上传指纹模板并保存到指定路径"
+
+#: 26c52da350704037975c9ca13c1e0a74 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:3
+msgid "Uploads the template stored in the template buffer to the host controller."
+msgstr "将模板缓冲区中存储的模板上传到主机控制器。"
+
+#: 13a751f621774f4c8161f5022660deea of
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:5
+msgid "File path to save the uploaded template"
+msgstr "保存上传模板的文件路径"
+
+#: bc6b35880f4b45d6b40dc866a0cd8107 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:6
+msgid "True if upload template successful."
+msgstr "如果成功上传模板则返回 True。"
+
+#: 7213018da615497d823a084863183406 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_template:11
+msgid "|upload_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:15 b3e8e133e8784744b1e15e010e35c74a
+msgid "upload_template.png"
+msgstr ""
+
+#: 4c44f478242f483e932586b2616c6c1f of
+#: unit.fingerprint2.Fingerprint2Unit.download_template:1
+msgid "Download template."
+msgstr "下载模板。"
+
+#: 5dafe4cf3356470495b64c5de1c2a784 of
+#: unit.fingerprint2.Fingerprint2Unit.download_template:3
+msgid ""
+"Reads the fingerprint template from the file system and downloads it to "
+"the fingerprint module."
+msgstr "从文件系统读取指纹模板并下载到指纹模块。"
+
+#: 2a4be5e1643a4b478be41ec618c08ee6 of
+#: unit.fingerprint2.Fingerprint2Unit.download_template:5
+msgid "Path to the fingerprint template file"
+msgstr "指纹模板文件的路径"
+
+#: 80612a947dee443a85953468de1040a1 of
+#: unit.fingerprint2.Fingerprint2Unit.download_template:6
+msgid "True if download template successful."
+msgstr "如果成功下载模板则返回 True。"
+
+#: 44548c1beff14b3d836c04de876ce966 of
+#: unit.fingerprint2.Fingerprint2Unit.download_template:11
+msgid "|download_template.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:16 1f0aac1074b444bb8883a9648d08cb79
+msgid "download_template.png"
+msgstr ""
+
+#: cb9863d35f35477eac2f7a9e1711280e of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:1
+msgid "Upload fingerprint image from module."
+msgstr "上传指纹图像。"
+
+#: 6a88270b31304aa0830bd47fb5979382 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:3
+msgid ""
+"Uploads the 4-bit grayscale fingerprint image from the module (size: "
+"80x208). Optionally, converts the raw image to RGB565 format suitable for"
+" display."
+msgstr "从模块上传 4 位灰度指纹图像（尺寸：80x208）。可选地，将原始图像转换为适合显示的 RGB565 格式。"
+
+#: 06b00b1e8fb3494aadd938a3707896fd of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:6
+msgid "Whether to convert raw image to RGB565 (default True)"
+msgstr "是否将原始图像转换为 RGB565（默认 True）"
+
+#: fcd3150b0c6948e9ba3736e1586fc1dc of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:7
+#, fuzzy
+msgid ""
+"If converting to RGB565, set True for little-endian byte order, or False "
+"for big-endian. Default is True."
+msgstr "如果转换为 RGB565，选择小端字节序（默认 True）"
+
+#: da88f1093bb3416e8f5a83c97cce9395 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:8
+msgid "Fingerprint image data as bytearray. Returns None on failure."
+msgstr "指纹图像数据，类型为 bytearray。失败时返回 None。"
+
+#: 7213018da615497d823a084863183406 of
+#: unit.fingerprint2.Fingerprint2Unit.upload_image:13
+msgid "|upload_image.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:17 b3e8e133e8784744b1e15e010e35c74a
+msgid "upload_image.png"
+msgstr ""
+
+#: 98ed35f791ee4a13a5e64a293ebe0a7b of
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:1
+msgid "Get the number of valid fingerprint templates."
+msgstr "获取有效指纹模板的数量。"
+
+#: 6be3bb471574412b9a4b391d2d79b23f of
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:3
+msgid ""
+"Returns the count of fingerprint templates currently stored in the "
+"fingerprint database."
+msgstr "返回当前存储在指纹数据库中的指纹模板数量。"
+
+#: eed3c9687e104c72bdb5f3d7fa9f845a of
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:5
+msgid "Number of valid fingerprint templates"
+msgstr "有效指纹模板的数量"
+
+#: aac19c32c733466b94243fed1dc7f0b0 of
+#: unit.fingerprint2.Fingerprint2Unit.get_valid_template_num:10
+msgid "|get_valid_template_num.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:18 9c980b774ac34a029f3c3fc81075b784
+msgid "get_valid_template_num.png"
+msgstr ""
+
+#: cfeb3e996c4d49a991d1482d16ef3473 of
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:1
+msgid ""
+"Get the list of stored fingerprint template IDs from the fingerprint "
+"sensor."
+msgstr "从指纹传感器获取已存储的指纹模板 ID 列表。"
+
+#: 963dd27821bb40d99fb962a51282f9bd of
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:3
+msgid ""
+"This function queries the fingerprint sensor for its template index map, "
+"which represents the occupied (used) template slots in the database, and "
+"returns the list of those occupied IDs."
+msgstr "此函数查询指纹传感器的模板索引映射，该映射表示数据库中已占用（使用）的模板槽位，并返回这些已占用ID的列表。"
+
+#: 4d6c86937bee4c3192f362ab93a02b48 of
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:7
+msgid "A list of occupied fingerprint template IDs, or None if retrieval fails."
+msgstr "已占用的指纹模板 ID 列表，如果检索失败则返回 None。"
+
+#: 3bae7b521c7243e4a2d9ece93dfd8220 of
+#: unit.fingerprint2.Fingerprint2Unit.get_stored_template_id:12
+msgid "|get_stored_template_id.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:19 58216a801e57488180161f3680abdd72
+msgid "get_stored_template_id.png"
+msgstr ""
+
+#: 380874e5d8274e7a90cf238afbea570f of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:1
+msgid "Search for a matching fingerprint in the database."
+msgstr "在数据库中搜索匹配的指纹。"
+
+#: dd04ed9302b447bbbd8d641617ee957b of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:3
+msgid ""
+"Compares the fingerprint features stored in the template buffer with the "
+"stored templates in the database."
+msgstr "将模板缓冲区中存储的指纹特征与数据库中存储的模板进行比较。"
+
+#: 53f99026476f41c89f35523d307be866 of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:6
+msgid ""
+"- (id, score): A tuple of the matched fingerprint ID and match score. - "
+"None: If no matching fingerprint is found."
+msgstr "- (id, score)：包含匹配的指纹ID和匹配分数的元组。 - None：如果未找到匹配的指纹。"
+
+#: 88f444fea50440ba8f5f8195febf6b89 of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:7
+msgid "(id, score): A tuple of the matched fingerprint ID and match score."
+msgstr "(id, score)：包含匹配的指纹ID和匹配分数的元组。"
+
+#: 25844d5c884a4fdabce1b91b07ae0c90 of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:8
+msgid "None: If no matching fingerprint is found."
+msgstr "None：如果未找到匹配的指纹。"
+
+#: 44b2798383b44a5080c41434528530cf of
+#: unit.fingerprint2.Fingerprint2Unit.find_match:12
+msgid "|find_match.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:20 7ea8c26a341e49faab69cf0fb8d15b0e
+msgid "find_match.png"
+msgstr ""
+
+#: 6b64067daf984401a62eb201217306e4 of
+#: unit.fingerprint2.Fingerprint2Unit.match:1
+msgid "Precisely match two fingerprint features."
+msgstr "精确匹配两个指纹特征。"
+
+#: ed7bfa9388d047898cd8fdc5cca4a8ec of
+#: unit.fingerprint2.Fingerprint2Unit.match:3
+msgid "Compares two fingerprint feature files and returns the result and score."
+msgstr "比较两个指纹特征文件并返回结果和分数。"
+
+#: c7dd6f9257d44ec8b24280d94fdb6173 of
+#: unit.fingerprint2.Fingerprint2Unit.match:5
+msgid "Similarity score of the match"
+msgstr "匹配的相似度分数"
+
+#: 44b2798383b44a5080c41434528530cf of
+#: unit.fingerprint2.Fingerprint2Unit.match:10
+msgid "|match.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:21 18a4eb2417b24e8b97c4c4752776fd96
+msgid "match.png"
+msgstr ""
+
+#: b4dcc89bccae4caba90d5fba2cf4fcd6 of
+#: unit.fingerprint2.Fingerprint2Unit.is_connected:1
+msgid "Check whether the fingerprint module is connected."
+msgstr "检查指纹模块是否已连接。"
+
+#: 7f143800116a415ca03b900aff8e52aa of
+#: unit.fingerprint2.Fingerprint2Unit.is_connected:3
+msgid "True if the module is connected, False otherwise."
+msgstr "如果模块已连接则返回 True，否则返回 False。"
+
+#: 2254126e406d49f9b42b29e1a684de3c of
+#: unit.fingerprint2.Fingerprint2Unit.is_connected:8
+msgid "|is_connected.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:22 b45d0c42e30046fa99a318e1ca0ea443
+msgid "is_connected.png"
+msgstr ""
+
+#: 60743d2da02f48d4a3637e17db0cef23 of
+#: unit.fingerprint2.Fingerprint2Unit.activate_module:1
+msgid "Activate the module."
+msgstr "激活指纹模组。"
+
+#: 817ac323cf584957ae0588de3c15a4ff of
+#: unit.fingerprint2.Fingerprint2Unit.activate_module:5
+msgid "|activate_module.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:23 bd20362e883b418ab0aebbd84e37b52e
+msgid "activate_module.png"
+msgstr ""
+
+#: 827185a05863449591af5080c9ab1b5c of
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:1
+msgid "Set the working mode."
+msgstr "设置工作模式。"
+
+#: 04c926446ee44868b397bb281d5a83ba of
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:3
+msgid "Working mode (0: Auto sleep, 1: Always-on)."
+msgstr "工作模式（0：自动休眠，1：常开）"
+
+#: 06b00b1e8fb3494aadd938a3707896fd of
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:4
+msgid "Whether to save the setting to the device. Default is False."
+msgstr "是否将设置保存到设备。默认为 False。"
+
+#: 785bae11782f46348c29e8f2dde58d31 of
+#: unit.fingerprint2.Fingerprint2Unit.set_work_mode:8
+msgid "|set_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:24 89d44c18994d40afa6798cbefbe8918a
+msgid "set_work_mode.png"
+msgstr ""
+
+#: 9b649fe316e64dfabd218d943b7f8430 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:1
+msgid "Get the current working mode."
+msgstr "获取当前工作模式。"
+
+#: 21e585ffad0845d4a8881eab9aed3f2a of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:5
+msgid "Returns the module's current working mode:"
+msgstr "返回模块的当前工作模式："
+
+#: c88034cb3ff34929a9aa709f2929b7e9 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:4
+msgid "0: Auto sleep mode"
+msgstr "0：自动休眠模式"
+
+#: e04a7db7dd8e4cf3aec08b20a6b99cff of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:5
+msgid "1: Always-on mode"
+msgstr "1：常开模式"
+
+#: 1bfd0524581c4634915dd3e282fa05da of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:7
+msgid "Current working mode"
+msgstr "当前工作模式"
+
+#: 42c9f0cbd1654e48b36514adc53eaa25 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_mode:12
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:25 d1ec4662dc874425aa1f1ba931596b04
+msgid "get_work_mode.png"
+msgstr ""
+
+#: 69c4cc8307334d858d3f71b5ea924852 of
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:1
+msgid "Set the sleep timeout."
+msgstr "设置休眠超时时间。"
+
+#: 7f9f25f86f4b4d71a472972e943f5692 of
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:3
+msgid ""
+"This parameter is only effective in \"Auto Sleep Mode\". It determines "
+"how long the fingerprint module waits without receiving any command "
+"before it enters sleep mode and starts monitoring for fingerprint press."
+msgstr "此参数仅在\"自动休眠模式\"下有效。它决定指纹模块在进入休眠模式并开始监控指纹按压之前，在没有接收到任何命令的情况下等待多长时间。"
+
+#: b38a366dfc1741f6bc46cb2118a9a6c4 of
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:7
+msgid "Auto sleep timeout in seconds. Range: 10~254."
+msgstr "自动休眠超时时间（秒）。范围：10~254。"
+
+#: 0de05b20e661417c8df755878cac36d6 of
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:8
+msgid "Whether to save this configuration to flash."
+msgstr "是否将此配置保存到 flash 。"
+
+#: 43c638cdbe8f474e8ec42096b6c401db of
+#: unit.fingerprint2.Fingerprint2Unit.set_auto_sleep_time:12
+msgid "|set_auto_sleep_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:26 2d36cdcdfddd4cf29607a17757e45a41
+msgid "set_auto_sleep_time.png"
+msgstr ""
+
+#: aef1a78cc9e945dfb927fa407cf7c981 of
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:1
+msgid "Get auto sleep time."
+msgstr "获取自动休眠时间。"
+
+#: 1175fa946ca44807bcfdd5ea532cce47 of
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:3
+msgid ""
+"This value is only valid in \"Timed Sleep Mode\". It indicates how long "
+"the module will wait without receiving commands before entering sleep "
+"state."
+msgstr "此值仅在\"定时休眠模式\"下有效。它表示模块在进入休眠状态之前，在没有接收到命令的情况下等待多长时间。"
+
+#: 12b9487764214a19b5d5094745756266 of
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:6
+msgid "Auto sleep time in seconds"
+msgstr "自动休眠时间（秒）"
+
+#: 12d290c29bcf4ce29d4244acba952536 of
+#: unit.fingerprint2.Fingerprint2Unit.get_auto_sleep_time:11
+msgid "|get_auto_sleep_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:27 4fadce4436ac48bbb3d7b228e25ec8ce
+msgid "get_auto_sleep_time.png"
+msgstr ""
+
+#: bd8d27308c1e46619ce04ae7f70c4888 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status:1
+msgid "Get fingerprint module work status."
+msgstr "获取指纹模块工作状态。"
+
+#: c7b830b4e1214718975f8baee5adada1 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status:3
+msgid "True if active, False otherwise"
+msgstr "如果已激活则返回 True，否则返回 False。"
+
+#: 1c5db1878188450380fb955dece64845 of
+#: unit.fingerprint2.Fingerprint2Unit.get_work_status:8
+msgid "|get_work_status.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:28 89f020ff49f842dea97f9ec505416ad4
+msgid "get_work_status.png"
+msgstr ""
+
+#: dfd655b333e84f0a95b7798a61c27d4c of
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version:1
+msgid "Get firmware version."
+msgstr "获取固件版本。"
+
+#: c1132940c57f42608f9b89b8baed1b24 of
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version:3
+msgid "Firmware version number"
+msgstr "固件版本号"
+
+#: a521c0ea9e8f401c8599d4dcadcf548d of
+#: unit.fingerprint2.Fingerprint2Unit.get_firmware_version:8
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:29 2220a87fdabc49c98bb6a61d86f72e3d
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: 62a2f87139104fb3a081a9991acc2511 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:1
+msgid "Set LED breathing mode."
+msgstr "设置 LED 呼吸模式。"
+
+#: 6fef7f5f811949e7b545653df4f63c95 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:3
+msgid "Start color (bit0: blue, bit1: green, bit2: red)"
+msgstr "起始颜色（bit0：蓝色，bit1：绿色，bit2：红色）"
+
+#: 36e199dc4fa648518c2bc837f2a31cd9 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:4
+msgid "End color (bit0: blue, bit1: green, bit2: red)"
+msgstr "结束颜色（bit0：蓝色，bit1：绿色，bit2：红色）"
+
+#: 4d1df482d1a24dbeabcb556b08c37d58 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:5
+msgid "Number of cycles (0=infinite)"
+msgstr "循环次数（0=无限）"
+
+#: d98e52cee2bd4a259d02496299f7fb71 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:6
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:4
+msgid "True if command successful, False otherwise"
+msgstr "如果命令成功则返回 True，否则返回 False。"
+
+#: c324b12ee2fd4ded91a558c9bed9437c of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:17
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:15
+msgid "Color codes:"
+msgstr "颜色代码："
+
+#: ad5ebfd5a9534ab9919870b435b41936 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:10
+msgid "0x00: All off"
+msgstr "0x00：全部关闭"
+
+#: 95017fced1d74aafaae2001c51fc4ac9 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:11
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:9
+msgid "0x01: Blue"
+msgstr "0x01：蓝色"
+
+#: f1f9b5ddc7724be7b55a3ee48882642d of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:12
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:10
+msgid "0x02: Green"
+msgstr "0x02：绿色"
+
+#: d12d953f39194d21b9055f1ca2a32bfb of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:13
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:11
+msgid "0x03: Cyan (blue + green)"
+msgstr "0x03：青色（蓝色 + 绿色）"
+
+#: 6a4626deeea54fe1b0e8ff34d4ed761b of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:14
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:12
+msgid "0x04: Red"
+msgstr "0x04：红色"
+
+#: a3416a513f50433eb4225b3137213045 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:15
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:13
+msgid "0x05: Magenta (red + blue)"
+msgstr "0x05：品红色（红色 + 蓝色）"
+
+#: be47eea126e84d27a422973cb3c2573b of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:16
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:14
+msgid "0x06: Yellow (red + green)"
+msgstr "0x06：黄色（红色 + 绿色）"
+
+#: 7213dafad20a4d44907c188dde4e7c91 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:17
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:15
+msgid "0x07: White (red + green + blue)"
+msgstr "0x07：白色（红色 + 绿色 + 蓝色）"
+
+#: 6af2837a72f6474e98e873fe75124201 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_breath:21
+msgid "|set_led_breath.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:30 3b16da51b92341f9929b6281d48c73cb
+msgid "set_led_breath.png"
+msgstr ""
+
+#: 1ff86e3b53204e35a63ce2039fb99c7e of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:1
+msgid "Set LED color."
+msgstr "设置LED颜色。"
+
+#: ebf80624ed8a45a79468831759db8b17 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:3
+msgid "LED color (0: always off, other values: always on with specified color)"
+msgstr "LED颜色（0：始终关闭，其他值：使用指定颜色始终开启）"
+
+#: f066a29fb4a14f18a6052c2ebb1d02f9 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:8
+msgid "0x00: Always off"
+msgstr "0x00：始终关闭"
+
+#: 061c62e3d84049779b8aca9d0079b570 of
+#: unit.fingerprint2.Fingerprint2Unit.set_led_color:19
+msgid "|set_led_color.png|"
+msgstr ""
+
+#: ../../en/refs/unit.fingerprint2.ref:31 52575bf273bc47a18e15ec11883d4445
+msgid "set_led_color.png"
+msgstr ""
+
+#~ msgid "|get_stored_templates_id.png|"
+#~ msgstr ""
+
+#~ msgid "get_stored_templates_id.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Uploads the 4-bit grayscale fingerprint "
+#~ "image from the module. Optionally, "
+#~ "converts the raw image to RGB565 "
+#~ "format suitable for display."
+#~ msgstr ""
+
+#~ msgid "Image data as bytearray (raw 4-bit grayscale or RGB565)"
+#~ msgstr "图像数据，类型为 bytearray（原始 4 位灰度或 RGB565）"
+

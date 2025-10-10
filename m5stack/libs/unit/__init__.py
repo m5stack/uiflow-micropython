@@ -49,6 +49,7 @@ _attrs = {
     "FaderUnit": "fader",
     "FanUnit": "fan",
     "FingerUnit": "finger",
+    "Fingerprint2Unit": "fingerprint2",
     "FlashLightUnit": "flash_light",
     "GatewayH2Unit": "gateway_h2",
     "GestureUnit": "gesture",
