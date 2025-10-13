@@ -2,23 +2,17 @@
 #
 # SPDX-License-Identifier: MIT
 
-from machine import UART
+import machine
 from micropython import const
-
-try:
-    import struct
-except ImportError:
-    import ustruct as struct
-
-try:
-    from typing import Literal, Union
-except ImportError:
-    pass
-
+import struct
+import sys
 import time
 import binascii
-
+import warnings
 from . import types as t
+
+if sys.platform != "esp32":
+    from typing import Literal, Union
 
 
 class CommandId:
@@ -107,7 +101,7 @@ class FPC1020A:
     REPEAT_ALLOWED = 0x00
     NO_REPETITION = 0x01
 
-    def __init__(self, uart: UART, verbose=False) -> None:
+    def __init__(self, uart: machine.UART, verbose=False) -> None:
         self._uart = uart
         self._verbose = verbose
         self._add_mode = self.NO_REPETITION
@@ -115,7 +109,7 @@ class FPC1020A:
         while self._uart.any():
             self._uart.read(self._uart.any())
         if self.get_version() not in ("B1.10.00", "B1.07.00"):
-            raise RuntimeError("FPC1020A not found")
+            warnings.warn("Version mismatch or no device found")
 
     def sleep(self) -> bool:
         """After calling this method successfully, FPC1020A will not be able to
