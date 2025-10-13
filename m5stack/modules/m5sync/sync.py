@@ -27,6 +27,7 @@ import network
 import M5
 from hardware import RGB
 from widgets.label import Label
+import binascii
 
 # Log control
 WARN = True
@@ -50,15 +51,15 @@ def calculate_md5(file_path):
     md5_hash = hashlib.md5()
 
     with open(file_path, "rb") as f:
-        while True:
-            data = f.read(4096)
-            if not data:
-                break
-            md5_hash.update(data)
-    return md5_hash.digest().hex()
+        while chunk := f.read(1024):
+            md5_hash.update(chunk)
+    r = md5_hash.digest()
+    print("file_path:", file_path, "md5:", r.hex(), "raw:", r)
+    return binascii.hexlify(r).decode()
+    return binascii.hexlify(md5_hash.digest()).decode()
 
 
-def open_or_create_chche(file_path):
+def open_or_create_cache(file_path):
     if file_exists(file_path):
         root = None
         with open(file_path, "r") as f:
@@ -349,7 +350,7 @@ class M5Sync:
 
     def run(self):
         # STEP1: create or open record.json
-        cache_records = open_or_create_chche(self.RECORD_JSON_PATH)
+        cache_records = open_or_create_cache(self.RECORD_JSON_PATH)
         DEBUG and print("[DEBUG] record.json:", cache_records)
 
         # STEP2: open res.json
@@ -380,6 +381,8 @@ class M5Sync:
         else:
             self._view.on_success()
 
+        time.sleep(0.5)
+
         # STEP5: save record, remove res.json
         save_json(self.RECORD_JSON_PATH, cache_records)
         if len(err) > 0:
@@ -391,7 +394,6 @@ class M5Sync:
         return
 
     def process_files(self, record, sync):
-        # TODO
         err = ""
 
         # 检查sync文件中的记录在不在record中，不在就删除
@@ -430,18 +432,17 @@ class M5Sync:
 
             # 如果文件不存在或者md5不匹配，下载文件
             INFO and print(f"[INFO] MD5 mismatch for file: {file['name']}")
-            for _ in range(3):
-                if self.download_file(file["url"], file["devicePath"]) is False:
-                    INFO and print(f"[INFO] Failed to download file: {file['devicePath']}")
-                    continue
-                if calculate_md5(file["devicePath"]) == file["md5"]:
-                    INFO and print(f"[INFO] Downloaded and verified file: {file['devicePath']}")
-                    for index in range(len(record)):
-                        if record[index]["devicePath"] == file["devicePath"]:
-                            record.pop(index)
-                            break
-                    record.append(file)
-                    break
+            if self.download_file(file["url"], file["devicePath"]) is False:
+                INFO and print(f"[INFO] Failed to download file: {file['devicePath']}")
+                continue
+            if calculate_md5(file["devicePath"]) == file["md5"]:
+                INFO and print(f"[INFO] Downloaded and verified file: {file['devicePath']}")
+                for index in range(len(record)):
+                    if record[index]["devicePath"] == file["devicePath"]:
+                        record.pop(index)
+                        break
+                record.append(file)
+                break
         return err
 
     def download_file(self, url, save_path, retry=3):
@@ -451,7 +452,7 @@ class M5Sync:
 
             if response.status_code == 200:
                 length = int(response.headers["Content-Length"])
-                block_len = 4096
+                block_len = 1024
                 source = response.raw
                 read = 0
                 with open(save_path, "wb") as file:
