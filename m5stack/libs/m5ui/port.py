@@ -6,6 +6,7 @@ import lvgl as lv
 import sys
 import lv_utils
 import micropython
+import time
 
 _event_loop_instance = None
 
@@ -48,6 +49,8 @@ class event_loop:
     def deinit(self):
         if hasattr(self, "timer"):
             self.timer.deinit()
+        while self.scheduled > 0:
+            time.sleep_ms(20)
         event_loop._initialized = False
         event_loop._instance = None
 
