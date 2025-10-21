@@ -1,4 +1,5 @@
 .. currentmodule:: m5ui
+.. _m5ui.M5Switch:
 
 M5Switch
 ========

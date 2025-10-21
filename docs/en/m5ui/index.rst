@@ -73,6 +73,7 @@ Classes
     led.rst
     line.rst
     list.rst
+    menu.rst
     msgbox.rst
     roller.rst
     scale.rst
