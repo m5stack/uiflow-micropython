@@ -1,0 +1,328 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-27 17:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/menu.rst:4 ../../en/m5ui/menu.rst:50
+#: b002356162034699bac4296792fd317e c8cecd2bc8704d5eba21b3fc0fc21f7e
+msgid "M5Menu"
+msgstr "M5Menu"
+
+#: ../../en/m5ui/menu.rst:8 0848d8ae571d4a96ab3c468f4ade190b
+msgid ""
+"M5Menu is a widget that can be used to create multi-level menus in the "
+"user interface."
+msgstr "M5Menu 是一个用于在用户界面中创建多级菜单的组件。"
+
+#: ../../en/m5ui/menu.rst:11 7238a7b978f040cdb08a08c62c66dc45
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/menu.rst:14 ../../en/m5ui/menu.rst:32
+#: 727a3973c7d94854aa803f269c97765c
+msgid "menu event"
+msgstr "菜单事件"
+
+#: ../../en/m5ui/menu.rst:16 298a332bd8f04bfb82efbff1151787f6
+msgid "Open the |menu_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |menu_core2_example.m5f2| 项目。"
+
+#: ../../en/m5ui/menu.rst:18 ../../en/m5ui/menu.rst:34
+#: 505ce99474c54f62840974a64ec30277 b45bdb9b954c42abb47692beb707dee9
+msgid "This example creates a multi-level menus."
+msgstr "本示例创建了一个多级菜单。"
+
+#: ../../en/m5ui/menu.rst:20 ../../en/m5ui/menu.rst:61
+#: ../../en/m5ui/menu.rst:83 ../../en/m5ui/menu.rst:100
+#: ../../en/m5ui/menu.rst:117 117fc01a664c4dfe89260fd3ca3e620d
+#: m5ui.menu.M5Menu:9 m5ui.menu.M5Menu.add_label:12
+#: m5ui.menu.M5Menu.add_switch:14 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/menu.rst:22 e8d630b7e5c04740b8d4db411d2005c7
+msgid "|menu_core2_example.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:9 df4c0117f6c443a89ceb6436dc301457
+msgid "menu_core2_example.png"
+msgstr ""
+
+#: ../../en/m5ui/menu.rst:24 ../../en/m5ui/menu.rst:42
+#: 71843c511f4542fea44ed89ad4b4e90d
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/menu.rst:26 ../../en/m5ui/menu.rst:44
+#: d67807bfb92d438696e2099a54fa26ee m5ui.menu.M5Menu:11 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/menu.rst:29 5a27301cab0246e285497857514efb00
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/menu.rst:36 ../../en/m5ui/menu.rst:65
+#: ../../en/m5ui/menu.rst:87 ../../en/m5ui/menu.rst:104
+#: ../../en/m5ui/menu.rst:121 8d9119d3e49f4526b695b6de472a2269
+#: m5ui.menu.M5Menu:13 m5ui.menu.M5Menu.add_label:16
+#: m5ui.menu.M5Menu.add_switch:18 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/menu.rst:48 b23b13ec056c4ab0a69250e712cbf646
+msgid "**API**"
+msgstr ""
+
+#: 0a82de82acac41bf82579f8cab417087 m5ui.menu.M5Menu:1 of
+msgid "Bases: :py:class:`~lvgl.menu`"
+msgstr ""
+
+#: 68512e43e0b84fcb965cb5b45ca978de m5ui.menu.M5Menu:1 of
+msgid "Create a list object."
+msgstr "创建一个列表对象。"
+
+#: ../../en/m5ui/menu.rst 00c29291fbb641b6a7b3eed27fa361d9
+#: m5ui.menu.M5Menu.add_label m5ui.menu.M5Menu.add_switch of
+msgid "Parameters"
+msgstr "参数"
+
+#: bc0a4c8e8a1e4dbfb883d0e081ad4cc9 m5ui.menu.M5Menu:3 of
+msgid "The x position of the menu."
+msgstr "菜单的 x 坐标位置。"
+
+#: bc0a4c8e8a1e4dbfb883d0e081ad4cc9 m5ui.menu.M5Menu:4 of
+msgid "The y position of the menu."
+msgstr "菜单的 y 坐标位置。"
+
+#: ../../en/m5ui/menu.rst:114 ac7b991bbb014aa4ad9c35732ca72aaf
+#: m5ui.menu.M5Menu:5 of
+msgid "The width of the menu."
+msgstr "菜单的宽度。"
+
+#: ../../en/m5ui/menu.rst:115 fd3b0c0e972543f4b83e21a5ee21789b
+#: m5ui.menu.M5Menu:6 of
+msgid "The height of the menu."
+msgstr "菜单的高度。"
+
+#: 877b4455e5964b84a099cbea8cb8b6a0 m5ui.menu.M5Menu:7 of
+msgid ""
+"The parent object to attach the menu to. If not specified, the menu will "
+"be attached to the default screen."
+msgstr "要附加菜单的父对象。如果未指定，菜单会附加到默认屏幕。"
+
+#: ../../en/m5ui/menu.rst:57 dcd6ea52eb08465781eb8e6afbef5fc2
+msgid "Set main page for the menu."
+msgstr "为菜单设置主页面。"
+
+#: ../../en/m5ui/menu.rst:59 306b64274a124f81afb402c68eeff115
+msgid "The main page object."
+msgstr "主页面对象。"
+
+#: ../../en/m5ui/menu.rst:63 caa00bda651541daa530e566b9aa9aa4
+msgid "|set_page.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:1 58d0b807152a4cb5948e18b515833e4e
+msgid "set_page.png"
+msgstr ""
+
+#: ../../en/m5ui/menu.rst:73 22a64323436f44389aa345d6dabefcc2
+msgid "Set the mode header for the menu."
+msgstr "设置菜单的模式头部。"
+
+#: ../../en/m5ui/menu.rst:75 7f9664625b05453e91f220dc6941eb4e
+msgid ""
+"The mode header text.  Options:      - ``lv.menu.HEADER.TOP_FIXED``     -"
+" ``lv.menu.HEADER.TOP_UNFIXED``     - ``lv.menu.HEADER.BOTTOM_FIXED``"
+msgstr "模式头部文本。 选项：- ``lv.menu.HEADER.TOP_FIXED`` - ``lv.menu.HEADER.TOP_UNFIXED`` - ``lv.menu.HEADER.BOTTOM_FIXED``"
+
+#: ../../en/m5ui/menu.rst:75 67b5aa011561441ba66fde854eacdf4b
+msgid "The mode header text."
+msgstr "模式头部文本。"
+
+#: ../../en/m5ui/menu.rst:77 4de8a50126e04091ad30fe51045a9dbb
+msgid "Options:"
+msgstr "选项："
+
+#: ../../en/m5ui/menu.rst:79 2a62218832094acaa3f14a8907f9c4b0
+msgid "``lv.menu.HEADER.TOP_FIXED``"
+msgstr "``lv.menu.HEADER.TOP_FIXED``"
+
+#: ../../en/m5ui/menu.rst:80 5f4209a398224d9a988ad138ec20fa66
+msgid "``lv.menu.HEADER.TOP_UNFIXED``"
+msgstr "``lv.menu.HEADER.TOP_UNFIXED``"
+
+#: ../../en/m5ui/menu.rst:81 71842d84ec3f48d98e83b742af0cc786
+msgid "``lv.menu.HEADER.BOTTOM_FIXED``"
+msgstr "``lv.menu.HEADER.BOTTOM_FIXED``"
+
+#: ../../en/m5ui/menu.rst:85 32cd6f79be21441c9054887c893cae03
+msgid "|set_mode_header.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:2 629bdd469fb946969b42a4688313dedf
+msgid "set_mode_header.png"
+msgstr ""
+
+#: ../../en/m5ui/menu.rst:95 bc0a4c8e8a1e4dbfb883d0e081ad4cc9
+msgid "Set the position of the menu."
+msgstr "设置菜单的位置。"
+
+#: ../../en/m5ui/menu.rst:97 055bc45beaaf483f9f58db6beab64341
+msgid "The x-coordinate of the menu."
+msgstr "菜单的 x 坐标。"
+
+#: ../../en/m5ui/menu.rst:98 700a8567d2d64ff5bebb9959e180bc9b
+msgid "The y-coordinate of the menu."
+msgstr "菜单的 y 坐标。"
+
+#: ../../en/m5ui/menu.rst:102 6c003355babe4b2ab98ff72f8c3d2edd
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:3 041cae90a5bd464798af7e7f15cf79ff
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/menu.rst:112 9ab8973ffdc74ce294e790ba81cc0e23
+msgid "Set the size of the menu."
+msgstr "设置菜单的尺寸。"
+
+#: ../../en/m5ui/menu.rst:119 2aafedacbdc64a52be865cd9af615ffc
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:4 cff27d7ea8c7476897930b91ef8b20cc
+msgid "set_size.png"
+msgstr ""
+
+#: 38f8844c6f0e403b8ca33760f48ea8d9 m5ui.menu.M5Menu.add_label:1 of
+msgid "Add a label to the menu."
+msgstr "向菜单添加一个标签。"
+
+#: 7295825c775b41db97d50616c985e858 m5ui.menu.M5Menu.add_label:3 of
+msgid "The text to display on the label."
+msgstr "标签上要显示的文本。"
+
+#: 36034266289844fb88f978abf317f0a6 m5ui.menu.M5Menu.add_label:4 of
+msgid "The text color of the label."
+msgstr "标签的文本颜色。"
+
+#: f100e5dae1f84367977d7cb88b6691b4 m5ui.menu.M5Menu.add_label:5 of
+msgid "The background color of the label."
+msgstr "标签的背景颜色。"
+
+#: 98da860f799c4ac9bd34cc2ebcfc8107 m5ui.menu.M5Menu.add_label:6 of
+msgid "The background opacity of the label."
+msgstr "标签背景的不透明度。"
+
+#: 36034266289844fb88f978abf317f0a6 m5ui.menu.M5Menu.add_label:7 of
+msgid "The font of the label."
+msgstr "标签的字体。"
+
+#: 877b4455e5964b84a099cbea8cb8b6a0 m5ui.menu.M5Menu.add_label:8 of
+msgid ""
+"The parent object to attach the label to. If not specified, the label "
+"will be attached to the main page of the menu."
+msgstr "要附加标签的父对象。如果未指定，标签将附加到菜单的主页面。"
+
+#: 4da60e9e1a674bc48535263a53c4ed92 m5ui.menu.M5Menu.add_label
+#: m5ui.menu.M5Menu.add_switch of
+msgid "Returns"
+msgstr "返回"
+
+#: 306b64274a124f81afb402c68eeff115 m5ui.menu.M5Menu.add_label:9 of
+msgid "The created label object."
+msgstr "创建的标签对象。"
+
+#: 773ed29216b64489877153d004010a1a m5ui.menu.M5Menu.add_label
+#: m5ui.menu.M5Menu.add_switch of
+msgid "Return type"
+msgstr "返回类型"
+
+#: bf9d7fb1b73841d0aed089dff44467db m5ui.menu.M5Menu.add_label:10 of
+msgid ""
+":ref:`m5ui.M5Label <m5ui.M5Label>`  UiFlow2 Code Block:     "
+"|add_label.png|"
+msgstr ""
+
+#: 22778bf038c249879d8c6db8ca7ff07d m5ui.menu.M5Menu.add_label:10 of
+msgid ":ref:`m5ui.M5Label <m5ui.M5Label>`"
+msgstr ":ref:`m5ui.M5Label <m5ui.M5Label>`"
+
+#: b3d85c37d5e0476ab8a98fa77f65095d m5ui.menu.M5Menu.add_label:14 of
+msgid "|add_label.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:5 66f2fa29a8214a1bac0adf720d9c70df
+msgid "add_label.png"
+msgstr ""
+
+#: 7a34b85aea20499cb15de7ba351d8090 m5ui.menu.M5Menu.add_switch:1 of
+msgid "Add a switch to the menu."
+msgstr "向菜单添加一个开关。"
+
+#: 7295825c775b41db97d50616c985e858 m5ui.menu.M5Menu.add_switch:3 of
+msgid "The text to display next to the switch."
+msgstr "开关旁显示的文本。"
+
+#: ac7b991bbb014aa4ad9c35732ca72aaf m5ui.menu.M5Menu.add_switch:4 of
+msgid "The width of the switch."
+msgstr "开关的宽度。"
+
+#: fd3b0c0e972543f4b83e21a5ee21789b m5ui.menu.M5Menu.add_switch:6 of
+msgid "The height of the switch."
+msgstr "开关的高度。"
+
+#: f100e5dae1f84367977d7cb88b6691b4 m5ui.menu.M5Menu.add_switch:7 of
+msgid "The background color of the switch when unchecked."
+msgstr "开关未选中时的背景颜色。"
+
+#: 58ba7043a53a4aca8c6a820f10fd5865 m5ui.menu.M5Menu.add_switch:8 of
+msgid "The background color of the switch when checked."
+msgstr "开关选中时的背景颜色。"
+
+#: 6791b866281243b59d8f6e76071525d4 m5ui.menu.M5Menu.add_switch:9 of
+msgid "The color of the switch circle."
+msgstr "开关圆圈的颜色。"
+
+#: 877b4455e5964b84a099cbea8cb8b6a0 m5ui.menu.M5Menu.add_switch:10 of
+msgid ""
+"The parent object to attach the switch to. If not specified, the switch "
+"will be attached to the main page of the menu."
+msgstr "要附加开关的父对象。如果未指定，开关将附加到菜单的主页面。"
+
+#: 379f16791f9b4fb6be440e36e3997bd0 m5ui.menu.M5Menu.add_switch:11 of
+msgid "The created switch object."
+msgstr "创建的开关对象。"
+
+#: b42613764d0f4569b7cbadcc2b6a77c9 m5ui.menu.M5Menu.add_switch:12 of
+msgid ":ref:`m5ui.M5Switch <m5ui.M5Switch>`"
+msgstr ""
+
+#: ca67896047824c9187502f11e5a47fd4 m5ui.menu.M5Menu.add_switch:16 of
+msgid "|add_switch.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.menu.ref:6 12e5e78c540b43c69fccc3f96078c4f9
+msgid "add_switch.png"
+msgstr ""
+
