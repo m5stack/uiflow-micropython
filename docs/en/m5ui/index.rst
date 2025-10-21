@@ -81,5 +81,6 @@ Classes
     spinbox.rst
     spinner.rst
     switch.rst
+    tabview.rst
     textarea.rst
     win.rst
