@@ -21,6 +21,7 @@ package(
         "led.py",
         "line.py",
         "list.py",
+        "menu.py",
         "msgbox.py",
         "page.py",
         "port.py",

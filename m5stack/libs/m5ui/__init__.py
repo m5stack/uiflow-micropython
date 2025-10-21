@@ -20,6 +20,7 @@ _attrs = {
     "M5LED": "led",
     "M5Line": "line",
     "M5List": "list",
+    "M5Menu": "menu",
     "M5Msgbox": "msgbox",
     "M5Page": "page",
     "M5Roller": "roller",
