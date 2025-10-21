@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-21 14:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/tabview.rst:4 ../../en/m5ui/tabview.rst:50
+#: f8aaff8085724c9cbe38eb7e28b6bcec fe3084a33f924e60a4cd8322cac89cdb
+msgid "M5TabView"
+msgstr "M5TabView"
+
+#: ../../en/m5ui/tabview.rst:8 39d39083f595411f9a44e1ae197a57c6
+msgid ""
+"M5TabView is a widget that can be used to create tabbed views in the user"
+" interface."
+msgstr "M5TabView 是一个可用于在用户界面中创建选项卡视图的组件。"
+
+#: ../../en/m5ui/tabview.rst:11 4ccf4866659847b2aba9803b87b1a964
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/m5ui/tabview.rst:14 ../../en/m5ui/tabview.rst:32
+#: 009cef26e9a5400b8a3b7f898b251576 47e3fcbe8a584d49a6c664f6898a84b3
+msgid "tabview basic"
+msgstr "标签视图基础"
+
+#: ../../en/m5ui/tabview.rst:16 1a555f20b14d4a0bb89e4686d160f67c
+msgid "Open the |tabview_cores3_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tabview_cores3_example.m5f2| 项目。"
+
+#: ../../en/m5ui/tabview.rst:18 ../../en/m5ui/tabview.rst:34
+#: 47db8d11a0ea4a9a99a093534575830c e9a5c5bbc13b447b851246c8eea96d48
+msgid "This example creates a tabview."
+msgstr "本示例创建了一个标签视图。"
+
+#: ../../en/m5ui/tabview.rst:20 6d697ff939dd4df8bbec838efe515b07
+#: 86a41203a50b4841bec2cc29731ef9b4 bcca9ebf7787411188de5aa958e797f9
+#: cea791fe5b3340aab0f19cfbb63e38f3 m5ui.tabview.M5TabView:11
+#: m5ui.tabview.M5TabView.add_tab:6 m5ui.tabview.M5TabView.rename_tab:6 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/tabview.rst:22 5b843d1635bc435eb74f41d614904016
+msgid "|tabview_cores3_example.png|"
+msgstr ""
+
+#: ../../en/m5ui/tabview.rst:24 ../../en/m5ui/tabview.rst:42
+#: 36d577315fb94d45841a615b54e9aff2 8b4f40a95a4142778ae289baef6cd47e
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/tabview.rst:26 ../../en/m5ui/tabview.rst:44
+#: 39e3a309d0b34e39b9959d99bc757dd6 3b6fd4edffca4d84be144d79aa3bc8b4
+#: 85ffaa4297934a3ea869525098f20328 m5ui.tabview.M5TabView:13 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/tabview.rst:29 8b45204efe6f440ba10444395978f4d5
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/tabview.rst:36 3681ae5c4fa049ff8d43bcb0c403fa2d
+#: a0faacfccd6f459e82666482c393465b c3ac910e1c494b128b3f8c9e069ef9ba
+#: c765971ae4544e16adef3a9a0aa542ad m5ui.tabview.M5TabView:15
+#: m5ui.tabview.M5TabView.add_tab:10 m5ui.tabview.M5TabView.rename_tab:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/tabview.rst:48 cf958ae7984a418f85ed01077c8e22df
+msgid "**API**"
+msgstr ""
+
+#: 2f333ccfae6e4d508551ad5405414083 m5ui.tabview.M5TabView:1 of
+msgid "Bases: :py:class:`~lvgl.tabview`"
+msgstr ""
+
+#: 8b5f2ea1833e49af8c62cfb1fe156990 m5ui.tabview.M5TabView:1 of
+msgid "Create a TabView object."
+msgstr "创建一个标签页视图对象。"
+
+#: ../../en/m5ui/tabview.rst 250f97edf0e449a3b635e41e17d4d4e2
+#: 444f50f5219541dca4e838f6470d25e8 9ab25bd18dfb4504895db06fc17dc610
+#: m5ui.tabview.M5TabView.add_tab m5ui.tabview.M5TabView.rename_tab of
+msgid "Parameters"
+msgstr "参数"
+
+#: 5d5165905eca4946a82e4146c7ab8d96 m5ui.tabview.M5TabView:3 of
+msgid "The x position of the tab view."
+msgstr "标签视图的 x 坐标位置。"
+
+#: aa2da75a65e0493fbcb510cccf14bdbc m5ui.tabview.M5TabView:4 of
+msgid "The y position of the tab view."
+msgstr "标签视图的 y 坐标位置。"
+
+#: d7780f94c42a464792052e0ac168a256 m5ui.tabview.M5TabView:5 of
+msgid "The width of the tab view."
+msgstr "标签视图的宽度。"
+
+#: c73ed2ef2b374fdf805e39e948bc7eb9 m5ui.tabview.M5TabView:6 of
+msgid "The height of the tab view."
+msgstr "标签视图的高度。"
+
+#: 44cafac5ab6740acb24187e667551d77 m5ui.tabview.M5TabView:7 of
+msgid "The size of the tab bar."
+msgstr "标签栏的大小。"
+
+#: 88abacbe24c247f0bc21f061d08565f0 m5ui.tabview.M5TabView:8 of
+msgid "The position of the tab bar."
+msgstr "标签栏的位置。"
+
+#: 04ce0b2a8012408e89ab64a5d64650ad m5ui.tabview.M5TabView:9 of
+msgid ""
+"The parent object to attach the tab view to. If not specified, the tab "
+"view will be attached to the default screen."
+msgstr "要附加标签视图的父对象。如果未指定，标签视图将附加到默认屏幕。"
+
+#: ace90a0df9b64d72acdf5c6ecef556d0 m5ui.tabview.M5TabView.add_tab:1 of
+msgid "Add a tab to the tab view."
+msgstr "向标签视图添加一个标签页。"
+
+#: 6517d9755d2c4850885b480280136ad7 m5ui.tabview.M5TabView.add_tab:3 of
+msgid "The text to display on the tab."
+msgstr "标签页上要显示的文本。"
+
+#: 52a2c484e38c45c0b224459c197802ac 8c99ea63ddc24ee4ac1834098839855c
+#: m5ui.tabview.M5TabView.add_tab m5ui.tabview.M5TabView.rename_tab of
+msgid "Return type"
+msgstr "返回类型"
+
+#: c0739e0ff1d2424187f0d7deff296f9a m5ui.tabview.M5TabView.add_tab:8 of
+msgid "|add_tab.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.tabview.ref:1 4e37763c5a7c4f9f87a997d00bffbaf2
+msgid "add_tab.png"
+msgstr ""
+
+#: 7c9b54eb99004eec8bf9a27495b42ff6 m5ui.tabview.M5TabView.rename_tab:1 of
+msgid "Rename a tab in the tab view."
+msgstr "重命名标签视图中的标签。"
+
+#: b1cbc60b595f4af29df0b6dc8efbd3ab m5ui.tabview.M5TabView.rename_tab:3 of
+msgid "The position of the tab to rename."
+msgstr "要重命名的标签页位置。"
+
+#: 3f65f35ad0ba4dc9a10d194b1e86f198 m5ui.tabview.M5TabView.rename_tab:4 of
+msgid "The new text for the tab."
+msgstr "标签页的新文本。"
+
+#: 5148ed7a179f4353a0f80c232275875a m5ui.tabview.M5TabView.rename_tab:8 of
+msgid "|rename_tab.png|"
+msgstr ""
+
+#: ../../en/m5ui/tabview.rst:55 b43c8a04903d4255bb27c60588f67f63
+msgid ""
+"M5Label can be used in TabView. For specific usage, please refer to "
+":ref:`m5ui.M5Label <m5ui.M5Label>` Documentation."
+msgstr "M5Label 可以在 TabView 中使用。具体用法请参考 :ref:`m5ui.M5Label <m5ui.M5Label>` 文档。"

@@ -19,16 +19,15 @@ def _button_clicked_event_cb(event_struct):
 
 
 class M5TabView(lv.tabview):
-    """Create a label object.
+    """Create a TabView object.
 
-    :param str text: The text to display on the label.
-    :param int x: The x position of the label.
-    :param int y: The y position of the label.
-    :param int text_c: The text color of the label in hexadecimal format.
-    :param int bg_c: The background color of the label in hexadecimal format.
-    :param int bg_opa: The background opacity of the label (0-255).
-    :param lv.lv_font_t font: The font to use for the button text.
-    :param lv.obj parent: The parent object to attach the button to. If not specified, the button will be attached to the default screen.
+    :param int x: The x position of the tab view.
+    :param int y: The y position of the tab view.
+    :param int w: The width of the tab view.
+    :param int h: The height of the tab view.
+    :param int bar_size: The size of the tab bar.
+    :param int bar_pos: The position of the tab bar.
+    :param lv.obj parent: The parent object to attach the tab view to. If not specified, the tab view will be attached to the default screen.
 
     UiFlow2 Code Block:
 
@@ -42,7 +41,7 @@ class M5TabView(lv.tabview):
             import lvgl as lv
 
             m5ui.init()
-            label_0 = M5Label(text="Hello, World!", x=10, y=10, text_c=0x212121, bg_c=0xFFFFFF, bg_opa=0, font=lv.font_montserrat_14, parent=page0)
+            tabview0 = m5ui.M5TabView(x=0, y=-2, w=320, h=240, bar_size=60, bar_pos=lv.DIR.TOP, parent=page0)
     """
 
     def __init__(
@@ -65,6 +64,22 @@ class M5TabView(lv.tabview):
         self.tab_num = 0
 
     def add_tab(self, text):
+        """Add a tab to the tab view.
+
+        :param str text: The text to display on the tab.
+        :rtype: lv.obj
+
+        UiFlow2 Code Block:
+
+            |add_tab.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                Tab1 = tabview0.add_tab("Tab1")
+                Tab2 = tabview0.add_tab("Tab2")
+        """
         _button = M5Button(
             text=text,
             w=lv.pct(100),
@@ -83,6 +98,21 @@ class M5TabView(lv.tabview):
         return _page
 
     def rename_tab(self, pos: int, txt: str) -> None:
+        """Rename a tab in the tab view.
+
+        :param int pos: The position of the tab to rename.
+        :param str txt: The new text for the tab.
+
+        UiFlow2 Code Block:
+
+            |rename_tab.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                tabview0.rename_tab(0, 'hello M5')
+        """
         if pos < self.tab_num:
             super().rename_tab(pos, txt)
 
