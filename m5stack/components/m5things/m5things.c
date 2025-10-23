@@ -1839,9 +1839,9 @@ static bool sync_time_by_sntp(void) {
     time_t now = 0;
 
     time(&now);
-    if (now > 1670484240) {  // magic day :)
-        return true;
-    }
+    // if (now > 1670484240) {  // magic day :)
+    //     return true;
+    // }
 
     ESP_LOGI(TAG, "Initializing SNTP");
     sntp_setoperatingmode(SNTP_OPMODE_POLL);
