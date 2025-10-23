@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-22 11:43+0800\n"
+"POT-Creation-Date: 2025-10-23 12:14+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,34 +18,34 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../en/m5ui/led.rst:4 ../../en/m5ui/led.rst:52
-#: a11337000bd6414a8a0290c2be8b2629 f61a7c7f3a9945dc86d39375dc438e6d
+#: 0318c23acc9a4c63a172d879d41186f1 96f093565b5f42cf82d9ea8807aabb5b
 msgid "M5LED"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:8 6d25a5ba316b46809744d356077c57d8
+#: ../../en/m5ui/led.rst:8 8203482b8d89470da4994c7fb64822a5
 msgid ""
 "M5LED is a lightweight widget that simulates a light-emitting diode "
 "indicator in the user interface."
 msgstr "M5LED 是一个轻量级控件，用于在用户界面中模拟发光二极管（LED）指示灯。"
 
-#: ../../en/m5ui/led.rst:11 59f079c806d7496797b560f805faa829
+#: ../../en/m5ui/led.rst:11 6724b357394b4a23b94c87973068bc1f
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../en/m5ui/led.rst:14 ../../en/m5ui/led.rst:33
-#: 7594bfeea96c41c6890fe6dd18030b4d
+#: 69be6bc6d2b643c79614c5c9c438ebc4 b832c25c422d427681db2fbda7b93da7
 msgid "LED Basic Usage Example"
 msgstr "LED 基本用法示例"
 
-#: ../../en/m5ui/led.rst:16 8c1c5001c1d64e40b4fc74bef62da27a
+#: ../../en/m5ui/led.rst:16 0fe0e8e40f3b4f05a795c4d7458769a0
 msgid "Open the |m5cores3_m5ui_led_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |m5cores3_m5ui_led_example.m5f2| 项目。"
 
 #: ../../en/m5ui/led.rst:18 ../../en/m5ui/led.rst:35
-#: 985dcd6af9234ec383a6aef19c6ae210
+#: 6f3c20b9d17d489783e19675469b994a 9f7c642079ad465f8372c9e841ac913b
 msgid ""
 "This example demonstrates how to create and control an LED widget. It "
 "shows how to turn the LED on and off, change its color, adjust "
@@ -53,419 +53,463 @@ msgid ""
 msgstr "该示例演示如何创建并控制 LED 控件，展示了如何打开/关闭 LED、改变颜色、调整亮度。"
 
 #: ../../en/m5ui/led.rst:21 ../../en/m5ui/led.rst:63 ../../en/m5ui/led.rst:79
-#: ../../en/m5ui/led.rst:95 ../../en/m5ui/led.rst:112 ../../en/m5ui/led.rst:129
-#: ../../en/m5ui/led.rst:146 ../../en/m5ui/led.rst:164
+#: ../../en/m5ui/led.rst:95 ../../en/m5ui/led.rst:112 ../../en/m5ui/led.rst:130
+#: ../../en/m5ui/led.rst:147 ../../en/m5ui/led.rst:164
 #: ../../en/m5ui/led.rst:181 ../../en/m5ui/led.rst:198
-#: ../../en/m5ui/led.rst:215 ../../en/m5ui/led.rst:232
-#: ../../en/m5ui/led.rst:250 ../../en/m5ui/led.rst:267
-#: ../../en/m5ui/led.rst:284 ../../en/m5ui/led.rst:304
-#: ac594b5062d44751854b422f8ece5703 m5ui.led.M5LED:10 of
+#: ../../en/m5ui/led.rst:216 ../../en/m5ui/led.rst:233
+#: ../../en/m5ui/led.rst:250 ../../en/m5ui/led.rst:270
+#: 0cc4cf70a6554974ad854bd631e6afec 3b08f68c7edd4beca3a326c6f24dc0a7
+#: 3e937901ceb2402088f0cfc21b7bb328 3f40bc166ba440c5b7f472721edb2e8a
+#: 44fe2a779aee48949e3d94e9d544ce35 4f75f43da4bd480f83e8d2f85c414f8c
+#: 596e5ce34c244069a94c25c2e2fb2e23 59c8d43ed9e44845935cb95623e3ec10
+#: 6d4089f919794dafa5c8de5a8f60d541 8da62713c92348bd892f0029c7075795
+#: 9d934633801140b5ac266c32045aaf78 a40bb9a559d8468ba2235c859d1efb71
+#: a7f064d7812c40b5acb6b1ad5b382c7e bc56677951e240a39e6c1402b26dda14
+#: c625ff5a047041589b13d27f4884b6d0 ee252552f068419b8a2c82d7ddb1306e
+#: ff1eaead43144c8d9822ec2701c54516 m5ui.led.M5LED:10
+#: m5ui.led.M5LED.get_brightness:6 m5ui.led.M5LED.set_brightness:5 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/led.rst:23 83fe5d94c59e462b92a27fbfde08554e
+#: ../../en/m5ui/led.rst:23 a10d8d19e2be478ca09af5f6e9af3d0d
 msgid "|m5cores3_m5ui_led_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:18 06843d737bac488bb96d08597998b590
+#: ../../en/refs/m5ui.led.ref:18 b87efe7388b44ce0ae0f3bc6db51cbb5
 msgid "m5cores3_m5ui_led_example.png"
 msgstr ""
 
 #: ../../en/m5ui/led.rst:25 ../../en/m5ui/led.rst:44
-#: a965150f258a4189a30db02faeb4fbe7
+#: 1433ac87df5e42d5a009676a41425249 e664e2fc8c3348caa1e23d2dfd504601
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/m5ui/led.rst:27 ../../en/m5ui/led.rst:46
-#: d49f10f13bac42b2a87a472907ede0c4
+#: 3eaf66e4ed1e4f7f9664cee32ea2c88f 47e5c7bddc624fccb0d275c5e88c0a0e
 msgid "None."
 msgstr "无。"
 
-#: ../../en/m5ui/led.rst:30 29d179a9781d4f3e9b99cda7003a3d0c
+#: ../../en/m5ui/led.rst:30 5434cb59b017455bae4809ee39441005
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
 #: ../../en/m5ui/led.rst:38 ../../en/m5ui/led.rst:67 ../../en/m5ui/led.rst:83
-#: ../../en/m5ui/led.rst:99 ../../en/m5ui/led.rst:116 ../../en/m5ui/led.rst:133
-#: ../../en/m5ui/led.rst:150 ../../en/m5ui/led.rst:168
+#: ../../en/m5ui/led.rst:99 ../../en/m5ui/led.rst:116 ../../en/m5ui/led.rst:134
+#: ../../en/m5ui/led.rst:151 ../../en/m5ui/led.rst:168
 #: ../../en/m5ui/led.rst:185 ../../en/m5ui/led.rst:202
-#: ../../en/m5ui/led.rst:219 ../../en/m5ui/led.rst:236
-#: ../../en/m5ui/led.rst:254 ../../en/m5ui/led.rst:271
-#: ../../en/m5ui/led.rst:288 ../../en/m5ui/led.rst:308
-#: db3f0fa388784215a836805cfb7c883a m5ui.led.M5LED:14 of
+#: ../../en/m5ui/led.rst:220 ../../en/m5ui/led.rst:237
+#: ../../en/m5ui/led.rst:254 ../../en/m5ui/led.rst:274
+#: 1fd3fbcf6c4b484ea2d99199cc4c333e 4d3b8948b8134413975cd11fa29c11be
+#: 57b6395e98544a838a02c374a5a6ef4d 5970c498190a4997aa3215b2a03a8403
+#: 7659dc2f70f54a00ac16af47d6853596 77dc481c605d4664a67529ffbcc79837
+#: 94dd56b7ad98491c93f6bcabc770b0fd ad5f0920384243dba545d856bc12c845
+#: b5d8072449b8405ba392d34aedf4a3de ba20c564a27c45f2b951a59b69e3458d
+#: bb35e29911bf4af08296f63ec8152f7f cc15a7e8310647caad40792e32b0a926
+#: e3af92b752734f268aa6e302cef29b78 e50d71c62a504a0ca51274c3166fd5e6
+#: f0e5047d8baa4d559243e2b42a86e167 f7dac53f008e454b85aabdfcd4f2839d
+#: fe881ae429c8411387f341949c69a44f m5ui.led.M5LED:14
+#: m5ui.led.M5LED.get_brightness:10 m5ui.led.M5LED.set_brightness:9 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/led.rst:49 13a052fe8ee841ccae0656893167e489
+#: ../../en/m5ui/led.rst:49 e08e377822364a07917220f90b7babfb
 msgid "**API**"
 msgstr "API 参考"
 
-#: b9de8f31bfbc47a8a2bfa4973871de37 m5ui.led.M5LED:1 of
+#: 45186bf85c1246ea9c87ae3553de1f4e m5ui.led.M5LED:1 of
 msgid "Bases: :py:class:`~lvgl.led`"
 msgstr ""
 
-#: 2b03cfcc3ade45ef842406d0a5932316 m5ui.led.M5LED:1 of
+#: 231140a70e184c26af006c8b59d5b832 m5ui.led.M5LED:1 of
 msgid "Create a LED object."
 msgstr "创建一个 LED 对象。"
 
-#: ../../en/m5ui/led.rst 4b48887862424386b65b467ac7aed374
+#: ../../en/m5ui/led.rst 447cbb40de8a42789a490d0f920b9707
+#: 4879a0b0da4b42e4bced6b4fac0aee7d 5d3043b366284a658095c9fa9aabdd37
+#: 62eb36ab698f4ed4807976485ab1eb1f 6f324787e4de4543ae8e6aae96101f99
+#: a2c9f17a35464872bfb39d97dc138bb9 ad53cf4337a94fd0b45da94df2f23c57
+#: adf08ca1833b4328b3ae98dc27c7dc03 c45428266ee74c8b9cccd89a49464451
+#: e695c4f47ad741e9ab350b4eff5d9076 m5ui.led.M5LED.set_brightness of
 msgid "Parameters"
 msgstr "参数"
 
-#: ../../en/m5ui/led.rst:160 ../../en/m5ui/led.rst:178
-#: ../../en/m5ui/led.rst:212 06cc5237a3c540478cd68d20f0745322 m5ui.led.M5LED:3
-#: of
+#: ../../en/m5ui/led.rst:126 ../../en/m5ui/led.rst:144
+#: ../../en/m5ui/led.rst:178 0dac5425362b4fadbbefeda9eb01ce8d
+#: 3de231db696f4eebb47e8d638547fb70 6f60663258c948e39aeca621f8d524a1
+#: f7344cdde58a4445a3d59823ae255a95 m5ui.led.M5LED:3 of
 msgid "The x position of the LED."
 msgstr "LED 的 x 坐标。"
 
-#: ../../en/m5ui/led.rst:161 ../../en/m5ui/led.rst:195
-#: ../../en/m5ui/led.rst:229 dd93e2eff66f4ee4984e6b507695220c m5ui.led.M5LED:4
-#: of
+#: ../../en/m5ui/led.rst:127 ../../en/m5ui/led.rst:161
+#: ../../en/m5ui/led.rst:195 4e12a0e0911d4e4a954cea23261183d5
+#: 9a9a07a4d51845ffb6ed7f63a18ffd8f 9bbd014c0631408ebeaf60d99fe7f723
+#: c86ba34560a54c1fb8864b35b0299487 m5ui.led.M5LED:4 of
 msgid "The y position of the LED."
 msgstr "LED 的 y 坐标。"
 
-#: 37fa14ba63e24a91b1e5e7afbb2bb3b3 m5ui.led.M5LED:5 of
+#: 34bf456080cf4ba697ffd861e8e7a562 m5ui.led.M5LED:5 of
 msgid "The size (width and height) of the LED."
 msgstr "LED 的大小（宽度和高度）。"
 
-#: a1132247048a4454a4a58ec672b93a34 m5ui.led.M5LED:6 of
+#: 60388bc41bab45008696b0afa562fb49 m5ui.led.M5LED:6 of
 msgid "The color of the LED in RGB888 format."
 msgstr "LED 的颜色（RGB888 格式）。"
 
-#: 0bb5559edfe14e8d8b6a7824dcb9331b m5ui.led.M5LED:7 of
+#: f99ef847d68d4dde800c3b8b6ca15542 m5ui.led.M5LED:7 of
 msgid "Initial state of the LED (True for ON, False for OFF)."
 msgstr "LED 的初始状态（True 表示打开，False 表示关闭）。"
 
-#: d78b7a1899f84e639378e795190355d5 m5ui.led.M5LED:8 of
+#: aa30ac3d8ab54be3a12bad57b8fa312a m5ui.led.M5LED:8 of
 msgid ""
 "The parent object to attach the LED to. If not specified, the LED will be"
 " attached to the default screen."
 msgstr "要将 LED 附加到的父对象。如果未指定，LED 将附加到默认屏幕。"
 
 #: ../../en/m5ui/led.rst:61 ../../en/m5ui/led.rst:77 ../../en/m5ui/led.rst:93
-#: ../../en/m5ui/led.rst:110 ../../en/m5ui/led.rst:127
-#: ../../en/m5ui/led.rst:162 ../../en/m5ui/led.rst:179
-#: ../../en/m5ui/led.rst:196 ../../en/m5ui/led.rst:248
-#: ../../en/m5ui/led.rst:265 ../../en/m5ui/led.rst:282
-#: ../../en/m5ui/led.rst:302 7c4d22e7809b45a098159ffbebc804aa
-#: 8fa35ff50ac24bf09ae3ddb4add40cea m5ui.led.M5LED:12 of
+#: ../../en/m5ui/led.rst:110 ../../en/m5ui/led.rst:128
+#: ../../en/m5ui/led.rst:145 ../../en/m5ui/led.rst:162
+#: ../../en/m5ui/led.rst:214 ../../en/m5ui/led.rst:231
+#: ../../en/m5ui/led.rst:248 ../../en/m5ui/led.rst:268
+#: 000e462d11ba4a6db273fac0a77e162d 0885b9c20ca44311884ce1762a103066
+#: 2012117538494d8f92b42b90f19792f8 3329da92826b47f18dcea7a34236317c
+#: 3f665042a94f4ef7b0ed4b0cc5869191 45c32c33a19048d2999b5b8f95850227
+#: 4786d604f72042a09842385311af5b36 6f0cd51ecdbf473bb1a1cd575e321180
+#: 778f69e645f24e1b809d36cb88c919c8 8e6b1182cc3c45f48d919c1e54178710
+#: b1c4fa0c272c4bb29a01414c67a8d63c deddf11122fa46c08bdfecdb452ef819
+#: m5ui.led.M5LED:12 of
 msgid "None"
-msgstr "无"
+msgstr ""
 
-#: ../../en/m5ui/led.rst:59 95cdc85d96ab4200b08024083ece515e
+#: ../../en/m5ui/led.rst:59 ba97c8bb668b4087b04088e669ca41d7
 msgid "Turn on the LED."
 msgstr "打开 LED。"
 
-#: ../../en/m5ui/led.rst 81eb01b492e348d8ad91d72bd64f7e10
+#: ../../en/m5ui/led.rst 073c0c04685e4e2db1d7084c24573760
+#: 10eca4a218244180a3ecf7606cf52dd9 114cf0439cd44d7e81d954324f50ddb4
+#: 1770f0daf9b94a129a330bff9e2dd80c 1b2036221a9d4e61aea3c819203f48e0
+#: 2a0fd5e1e5cc48c6beb9c3c99ef4d6ef 48f519db2e5c4bf9ad60c31677c1dc98
+#: 51788c5ad5894f50a0a82e7b6294f929 5bb7f437b7bf4d53959489641fde2469
+#: 7267bd2b3879490e8a35b7838ddf7bb9 91801e1201454f839272acd1ad924d41
+#: ab9b924b68a742e8ba6b369b70f5c8cc e0437fff98b74c3dbb4c7cd0f21240bc
+#: f72e1586f5354affaf44e11c97563404 m5ui.led.M5LED.get_brightness of
 msgid "Returns"
 msgstr "返回"
 
-#: ../../en/m5ui/led.rst:65 13510135685e4268a2a5288d59b89051
+#: ../../en/m5ui/led.rst:65 0b203224f1ce4620a65a11ec7e31285e
 msgid "|on.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:1 06843d737bac488bb96d08597998b590
+#: ../../en/refs/m5ui.led.ref:1 38ad5df376714057a22f726ac861efdb
 msgid "on.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:75 c72f1526a1e442f48d108788d9b7df28
+#: ../../en/m5ui/led.rst:75 cffa342b3f77491291fcc26425941d3e
 msgid "Turn off the LED."
 msgstr "关闭 LED。"
 
-#: ../../en/m5ui/led.rst:81 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:81 168ba90734bc49e49836d6259287dc59
 msgid "|set_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:2 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:2 6fedf21c358c46deaec72bd5fc0dfe20
 msgid "set_state.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:91 da7762418e4c458f9d6d633de55fc699
+#: ../../en/m5ui/led.rst:91 518047b3087842b9b7065d9b633c76a6
 msgid "Toggle the state of a LED."
 msgstr "切换 LED 的状态。"
 
-#: ../../en/m5ui/led.rst:97 13510135685e4268a2a5288d59b89051
+#: ../../en/m5ui/led.rst:97 b58dd15b518341c3b0e9656b4cc5e1d0
 msgid "|toggle.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:3 06843d737bac488bb96d08597998b590
+#: ../../en/refs/m5ui.led.ref:3 82a6ba5ad1de43328fc0f92872cf38fd
 msgid "toggle.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:107 d70f90480ef242aba3f4b6ae57f911fa
+#: ../../en/m5ui/led.rst:107 7d5376e49314436a814d1504ffed4519
 msgid "Set the color of the LED."
 msgstr "设置 LED 的颜色。"
 
-#: ../../en/m5ui/led.rst:109 9536adb67aca4c3490e9d44e8d718e3f
+#: ../../en/m5ui/led.rst:109 7480bd59eb4e4cfc8f04aff2f8b86fe8
 msgid "The color of the LED (RGB888 format)."
 msgstr "LED 的颜色（RGB888 格式）。"
 
-#: ../../en/m5ui/led.rst:114 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:114 5f0bd158011943799406fa5c8a46464b
 msgid "|set_color.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:6 82db32b366154a68912d1a484e906648
+#: ../../en/refs/m5ui.led.ref:6 341e96d2f72f4b779778d1ae2e8c194e
 msgid "set_color.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:124 5b57eeae1e664d4aa0c67f70570c487d
-msgid "Set the brightness of the LED."
-msgstr "设置 LED 的亮度。"
-
-#: ../../en/m5ui/led.rst:126 99e59fa79b4041d7bf651efc0af62cb0
-msgid "Brightness value, range: 80 ~ 255 (80 = dark, 255 = light)."
-msgstr "亮度值，范围：80 ~ 255（80 = 暗，255 = 亮）。"
-
-#: ../../en/m5ui/led.rst:131 89b0a317e2e64ee1a71ddfe9e826399a
-msgid "|set_brightness.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.led.ref:5 c43a0b5fb19445ccb7e338b0e4673cca
-msgid "set_brightness.png"
-msgstr ""
-
-#: ../../en/m5ui/led.rst:141 363e1ccd635044d39a0d54d82a3eeb4d
-msgid "Get the brightness of the LED."
-msgstr "获取 LED 的亮度。"
-
-#: ../../en/m5ui/led.rst:143 7cf84ffea4b1408dac3a90ebbc904067
-msgid "The brightness value of the LED."
-msgstr "LED 的亮度值。"
-
-#: ../../en/m5ui/led.rst b8d758dd39aa4a35a1a06aa72e99267a
-msgid "Return type"
-msgstr "返回类型"
-
-#: ../../en/m5ui/led.rst:148 bc5ad52e9e814bafa80921459188ab83
-msgid "|get_brightness.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.led.ref:4 71822bc0863f4286af7fd0f8eb012bfa
-msgid "get_brightness.png"
-msgstr ""
-
-#: ../../en/m5ui/led.rst:158 06cc5237a3c540478cd68d20f0745322
+#: ../../en/m5ui/led.rst:124 a14c7206807a411f8057bcbbb6808ae8
 msgid "Set the position of the LED."
 msgstr "设置 LED 的位置。"
 
-#: ../../en/m5ui/led.rst:166 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:132 5db27a90adbd4811a29cc405f386c987
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:9 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:9 8afcb18c86304e5bb67570dbfbf15f5d
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:176 06cc5237a3c540478cd68d20f0745322
+#: ../../en/m5ui/led.rst:142 5fdee37118d644c1baddc5cf28647063
 msgid "Set the x position of the LED."
 msgstr "设置 LED 的 x 坐标。"
 
-#: ../../en/m5ui/led.rst:183 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:149 aa858069bc944d558a80893b0854fde5
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:10 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:10 fadae12b3f3b45eea03d72d739acf40f
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:193 dd93e2eff66f4ee4984e6b507695220c
+#: ../../en/m5ui/led.rst:159 e59e7d81a3fb4e8d9c700f1003f08566
 msgid "Set the y position of the LED."
 msgstr "设置 LED 的 y 坐标。"
 
-#: ../../en/m5ui/led.rst:200 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:166 e65467b852c1482fb3b82e4898caf260
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:11 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:11 577610aa995f48eba05c4111ab66e75f
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:210 06cc5237a3c540478cd68d20f0745322
+#: ../../en/m5ui/led.rst:176 1e091cf08fd24ef09193ce8d0a7e076c
 msgid "Get the x position of the LED."
 msgstr "获取 LED 的 x 坐标。"
 
-#: ../../en/m5ui/led.rst:217 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst 2877da7f2bad4b7996acf420c2407d10
+#: 3e3331767e1145efbc86ddadabd27968 724b517a9a9a47f4bce33bd33095d6e2
+#: m5ui.led.M5LED.get_brightness of
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../en/m5ui/led.rst:183 cd420f6e51aa4fdcab40f4dbc451cd11
 msgid "|get_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:7 2612ef0e389f43449ef95aaad7207f46
+#: ../../en/refs/m5ui.led.ref:7 5f021229fe4e4630a2ac38e7a868cb92
 msgid "get_x.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:227 dd93e2eff66f4ee4984e6b507695220c
+#: ../../en/m5ui/led.rst:193 dbe6d45a3c114933a6fa02c0afae3411
 msgid "Get the y position of the LED."
 msgstr "获取 LED 的 y 坐标。"
 
-#: ../../en/m5ui/led.rst:234 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:200 fb186493e5f147a3a7c253d431a4ff13
 msgid "|get_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:8 2612ef0e389f43449ef95aaad7207f46
+#: ../../en/refs/m5ui.led.ref:8 e22cf95fcf4b4e4c98d688848f7c5e9d
 msgid "get_y.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:244 d70f90480ef242aba3f4b6ae57f911fa
+#: ../../en/m5ui/led.rst:210 936eaf01aed34e7aa4f0b4d854110e9f
 msgid "Set the size of the LED."
 msgstr "设置 LED 的大小。"
 
-#: ../../en/m5ui/led.rst:246 ../../en/m5ui/led.rst:264
-#: f6d45ebb803a4d8d9869f351a10b38a0
+#: ../../en/m5ui/led.rst:212 ../../en/m5ui/led.rst:230
+#: 964b45d7177c4340904b4a3eb6832c11 d7115cb036214aeebf46d07ae622b3ee
 msgid "The width of the LED."
 msgstr "LED 的宽度。"
 
-#: ../../en/m5ui/led.rst:247 ../../en/m5ui/led.rst:281
-#: f6d45ebb803a4d8d9869f351a10b38a0
+#: ../../en/m5ui/led.rst:213 ../../en/m5ui/led.rst:247
+#: 6b5f3e810e984cd08a14e98e606e6edf 755ceb2391374b94912b8287e1f50b88
 msgid "The height of the LED."
 msgstr "LED 的高度。"
 
-#: ../../en/m5ui/led.rst:252 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:218 c6af51b7340e4010ab32c3432974c238
 msgid "|set_size.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:15 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:15 94cde1407a944393b3d2e98d8c9f0e84
 msgid "set_size.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:262 d70f90480ef242aba3f4b6ae57f911fa
+#: ../../en/m5ui/led.rst:228 f27fe763c3de4c338f0d7a37f83d2dcc
 msgid "Set the width of the LED."
 msgstr "设置 LED 的宽度。"
 
-#: ../../en/m5ui/led.rst:269 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:235 b5d4c52bd1844ddf92de30c77f4b013a
 msgid "|set_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:16 c68fbda5acd34fdab28f705b0b114c31
+#: ../../en/refs/m5ui.led.ref:16 16d53043eef84abbbb0ab23b0021f831
 msgid "set_width.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:279 5b57eeae1e664d4aa0c67f70570c487d
+#: ../../en/m5ui/led.rst:245 982e4c780085462cbb5f1c8da6e11a81
 msgid "Set the height of the LED."
 msgstr "设置 LED 的高度。"
 
-#: ../../en/m5ui/led.rst:286 89b0a317e2e64ee1a71ddfe9e826399a
+#: ../../en/m5ui/led.rst:252 ff46dd6481b34ad7a135ea1c92874783
 msgid "|set_height.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:17 c43a0b5fb19445ccb7e338b0e4673cca
+#: ../../en/refs/m5ui.led.ref:17 a8f1bfcbddfc4307a5cfd23dad949da2
 msgid "set_height.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:296 8e0690f870eb403bbe6f4b3e099d13e0
+#: ../../en/m5ui/led.rst:262 ee66654e8eb146cf99b1778e37a364c8
 msgid "Align the LED relative to another object."
 msgstr "将 LED 相对于另一个对象对齐。"
 
-#: ../../en/m5ui/led.rst:298 f9fc1cfa9d974a17bfc87b493ef13283
+#: ../../en/m5ui/led.rst:264 a11faadbb9ad43129cab32dda63c68c8
 msgid "The reference object (e.g. page0)."
-msgstr ""
+msgstr "引用对象（例如 page0）。"
 
-#: ../../en/m5ui/led.rst:299 feb68f38f854494190ffac0c65e0caa2
+#: ../../en/m5ui/led.rst:265 4c091af30c38461c9be103b84e094c01
 msgid "Alignment option (see lv.ALIGN constants below)."
 msgstr "对齐选项（参见下方 lv.ALIGN 常量）。"
 
-#: ../../en/m5ui/led.rst:300 3fb3a67665d24542b09a9d3056205290
+#: ../../en/m5ui/led.rst:266 88f9b6e027e546d68974e2138f6ec95e
 msgid "X offset after alignment."
 msgstr "对齐后的 X 偏移。"
 
-#: ../../en/m5ui/led.rst:301 7fc0124ed5e14afeb4bf03b03abcd839
+#: ../../en/m5ui/led.rst:267 c31e780c61554df1a2096f70fabb33c5
 msgid "Y offset after alignment."
 msgstr "对齐后的 Y 偏移。"
 
-#: ../../en/m5ui/led.rst:306 0a6eb0f4f55348698782f61ca5612f32
+#: ../../en/m5ui/led.rst:272 3ce01b49976f4e089c482832220cdd58
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.led.ref:12 06843d737bac488bb96d08597998b590
+#: ../../en/refs/m5ui.led.ref:12 cbde9379eaa147bf96f3270d9d7c164c
 msgid "align_to.png"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:316 52e7b2822eea49d4af7649ffcf3cc08e
+#: ../../en/m5ui/led.rst:282 25ecac70abb74a048c7111c6dc41691c
 msgid "Alignment options for positioning objects."
 msgstr "用于定位对象的对齐选项。"
 
-#: ../../en/m5ui/led.rst:318 eaeb667a06b34f2091ef9f2f7b542c63
+#: ../../en/m5ui/led.rst:284 39663f57f2784b5099cb56534db794eb
 msgid "lv.ALIGN.DEFAULT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:319 d12f1c9155134d86b7e15bdc430cd244
+#: ../../en/m5ui/led.rst:285 68ff5d51584b4950a17da064f32588b4
 msgid "lv.ALIGN.TOP_LEFT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:320 eb24fb905a4a4e9bb4bc4fff07d0ffac
+#: ../../en/m5ui/led.rst:286 0af754fd0e9a45bf86215011c98e3fc9
 msgid "lv.ALIGN.TOP_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:321 d10a2adc8f864426ac68ee863663e34d
+#: ../../en/m5ui/led.rst:287 c392cfde26924f99a42e908631899da5
 msgid "lv.ALIGN.TOP_RIGHT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:322 7c2a96f6b4f142ce9e8081f40333874a
+#: ../../en/m5ui/led.rst:288 8255cf21446344e4959c28a69ac32579
 msgid "lv.ALIGN.BOTTOM_LEFT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:323 21f1737f125e4dc382203ad614cc3280
+#: ../../en/m5ui/led.rst:289 794a12886c6f4d998da064555bcd70ca
 msgid "lv.ALIGN.BOTTOM_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:324 b7306e65637b43ab9134680d8a4fef62
+#: ../../en/m5ui/led.rst:290 69e91663b9194f7ab6ed2f1fdb5471f0
 msgid "lv.ALIGN.BOTTOM_RIGHT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:325 41cd3d19a86f4fd79c0660571fd42ef4
+#: ../../en/m5ui/led.rst:291 aa973c90f09c44919628063ec00136a2
 msgid "lv.ALIGN.LEFT_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:326 edec3bcd17094a189d2b7c8571b48342
+#: ../../en/m5ui/led.rst:292 217c65145a56430fb6cacf9dc45ac268
 msgid "lv.ALIGN.RIGHT_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:327 c698a185166e458ba821b04b5ab64360
+#: ../../en/m5ui/led.rst:293 946b11a5f41842b882f92d7b97d71329
 msgid "lv.ALIGN.CENTER"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:328 613c104d2f104a4aa88797cefdb7751f
+#: ../../en/m5ui/led.rst:294 a39141f6d53f401cbce9090004daa73b
 msgid "lv.ALIGN.OUT_TOP_LEFT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:329 d0758ba31b9b4a8ca47aac7d89bc063d
+#: ../../en/m5ui/led.rst:295 f45d0fe5c9414fbca4bafc39f45f1d94
 msgid "lv.ALIGN.OUT_TOP_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:330 d4369f62c57542c2b983eafe8274ca6d
+#: ../../en/m5ui/led.rst:296 487bcd5553f442398ddc8396669d5b4c
 msgid "lv.ALIGN.OUT_TOP_RIGHT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:331 d4a07186d69d4b1192bca641f3e80c40
+#: ../../en/m5ui/led.rst:297 b272d509d2324498857734c4a5dee612
 msgid "lv.ALIGN.OUT_BOTTOM_LEFT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:332 9bd211e14df44e11b61df9176fb55e10
+#: ../../en/m5ui/led.rst:298 06448a66b1484befa9841f3d9928bf84
 msgid "lv.ALIGN.OUT_BOTTOM_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:333 fa4ba1fd752a4829b8e6d5a7ce40b32f
+#: ../../en/m5ui/led.rst:299 4da2fb4e1bb543a9beab3cfc7eb27bb9
 msgid "lv.ALIGN.OUT_BOTTOM_RIGHT"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:334 ab668faee47d4d4f8bf4325dca8cd316
+#: ../../en/m5ui/led.rst:300 9e573d3fe73b49d98af8a85f70037c0a
 msgid "lv.ALIGN.OUT_LEFT_TOP"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:335 ea14ca3e58f943d6850f3c753405aeee
+#: ../../en/m5ui/led.rst:301 a5ffb28a011e4f629b72199aa664e12d
 msgid "lv.ALIGN.OUT_LEFT_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:336 d425f9467fc24a2cb520eb443773f094
+#: ../../en/m5ui/led.rst:302 56159053801d46dead584ca185656eb4
 msgid "lv.ALIGN.OUT_LEFT_BOTTOM"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:337 85fdff55da324e69b410271baf108cdc
+#: ../../en/m5ui/led.rst:303 dcfafe5ddc57421491413a044f9b0c82
 msgid "lv.ALIGN.OUT_RIGHT_TOP"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:338 96c144a0876c493485e16c284baad05a
+#: ../../en/m5ui/led.rst:304 622b40ce2dfa42e1b3eb227438a7fdda
 msgid "lv.ALIGN.OUT_RIGHT_MID"
 msgstr ""
 
-#: ../../en/m5ui/led.rst:339 16ee12515d644eadabaa8e06b8c99f33
+#: ../../en/m5ui/led.rst:305 622b3277449246a29abd451a7933c3d0
 msgid "lv.ALIGN.OUT_RIGHT_BOTTOM"
 msgstr ""
+
+#: b19ca9270759482e97c8c2dda5aa7704 m5ui.led.M5LED.set_brightness:1 of
+msgid "Set the brightness of the LED."
+msgstr "设置 LED 的亮度。"
+
+#: 01cb2b161c804a8b997435b77ce4feea m5ui.led.M5LED.set_brightness:3 of
+msgid "Brightness level (0-100). Will be mapped to 80-255 internally."
+msgstr "亮度等级 (0-100)。内部将映射到 80-255。"
+
+#: da88c931790d4416b769246bcc2ff7fc m5ui.led.M5LED.set_brightness:7 of
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.led.ref:5 7698d9db07a14b7db4d50472b6882458
+msgid "set_brightness.png"
+msgstr ""
+
+#: 275518dab24440c59fc621c2f11800dc m5ui.led.M5LED.get_brightness:1 of
+msgid "Get the brightness of the LED."
+msgstr "获取 LED 的亮度。"
+
+#: e3755ed6d5254e80a3748fea124f22bd m5ui.led.M5LED.get_brightness:3 of
+msgid "Brightness level (0-100)."
+msgstr "亮度级别（0-100）。"
+
+#: 01ccd7d3f11142e29371e812fde109cb m5ui.led.M5LED.get_brightness:8 of
+msgid "|get_brightness.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.led.ref:4 8351631dd6f444c39acdb9914971b6df
+msgid "get_brightness.png"
+msgstr ""
+
+#~ msgid "Brightness value, range: 80 ~ 255 (80 = dark, 255 = light)."
+#~ msgstr "亮度值，范围：80 ~ 255（80 = 暗，255 = 亮）。"
+
+#~ msgid "The brightness value of the LED."
+#~ msgstr "LED 的亮度值。"
+

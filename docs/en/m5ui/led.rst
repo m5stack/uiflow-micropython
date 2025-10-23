@@ -119,40 +119,6 @@ M5LED
 
                 led_0.set_color(color)
 
-    .. py:method:: set_brightness(brightness)
-
-        Set the brightness of the LED.
-
-        :param int brightness: Brightness value, range: 80 ~ 255 (80 = dark, 255 = light).
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_brightness.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                led_0.set_brightness(brightness)
-
-    .. py:method:: get_brightness()
-
-        Get the brightness of the LED.
-
-        :return: The brightness value of the LED.
-        :rtype: int
-
-        UiFlow2 Code Block:
-
-            |get_brightness.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                brightness = led_0.get_brightness()
-
     .. py:method:: set_pos(x, y)
 
         Set the position of the LED.

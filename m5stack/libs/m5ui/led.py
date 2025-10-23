@@ -4,6 +4,7 @@
 
 from .base import M5Base
 import lvgl as lv
+import warnings
 
 
 class M5LED(lv.led):
@@ -45,6 +46,60 @@ class M5LED(lv.led):
 
     def set_color(self, color: int):
         super().set_color(lv.color_hex(color))
+
+    def set_brightness(self, brightness: int):
+        """Set the brightness of the LED.
+
+        :param int brightness: Brightness level (0-100). Will be mapped to 80-255 internally.
+
+        UiFlow2 Code Block:
+
+            |set_brightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                led_0.set_brightness(50)  # Set brightness to 50%
+        """
+        # Clamp input to [0, 100]
+        if brightness < 0:
+            brightness = 0
+            warnings.warn("Brightness below 0, clamped to 0")
+        elif brightness > 100:
+            brightness = 100
+            warnings.warn("Brightness above 100, clamped to 100")
+
+        # Map 0..100 -> 80..255 linearly
+        # 0 -> 80, 100 -> 255
+        mapped = 80 + (175 * brightness + 50) // 100  # integer rounding
+        super().set_brightness(int(mapped))
+
+    def get_brightness(self) -> int:
+        """Get the brightness of the LED.
+
+        :return: Brightness level (0-100).
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_brightness.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                brightness = led_0.get_brightness()
+        """
+        raw_brightness = super().get_brightness()
+        # Map 80..255 -> 0..100 linearly with rounding to match set_brightness mapping
+        if raw_brightness <= 80:
+            return 0
+        if raw_brightness >= 255:
+            return 100
+        # round to nearest: add half of denominator (175//2 == 87)
+        mapped = ((raw_brightness - 80) * 100 + 87) // 175
+        return int(mapped)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
