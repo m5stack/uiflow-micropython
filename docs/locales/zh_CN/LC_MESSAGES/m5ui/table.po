@@ -1,0 +1,630 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-23 12:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/m5ui/table.rst:4 ../../en/m5ui/table.rst:50
+#: c876f3e60f5343d59b6de38bacf1abde fc4efe692bd74cf3987d4d692892f347
+msgid "M5Table"
+msgstr "M5Table"
+
+#: ../../en/m5ui/table.rst:8 bf9885eecc2a41449f821d9fc5bed059
+msgid "M5Table are built from rows, columns, and cells containing text."
+msgstr "M5Table 由包含文本的行、列和单元格构成。"
+
+#: ../../en/m5ui/table.rst:11 b9b8973a384a4622a4619f950d631bd0
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/m5ui/table.rst:14 ../../en/m5ui/table.rst:32
+#: 6788e82c8b1e4488b5de409251fd47b7
+msgid "Table Basic Usage Example"
+msgstr "表格基本使用示例"
+
+#: ../../en/m5ui/table.rst:16 f3ae5be9651045769bcbc56bfe10d545
+msgid "Open the |cores3_m5ui_table_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_m5ui_table_example.m5f2| 项目。"
+
+#: ../../en/m5ui/table.rst:18 ../../en/m5ui/table.rst:34
+#: 0e97eae21b324a938140ed773551d5f1 5ba35147260a441d8d68902eb574b70e
+msgid ""
+"This example demonstrates how to create a table with student information "
+"including names, ages, and scores. The table displays data for three "
+"students: Alice (18, 95), Bob (18, 80), and Carol (17, 86)."
+msgstr ""
+"此示例演示了如何创建一个包含学生信息的表格，包括姓名、年龄和分数。该表格显示三名学生的数据：Alice (18, 95)、Bob (18, 80)"
+" 和 Carol (17, 86)。"
+
+#: ../../en/m5ui/table.rst:20 ../../en/m5ui/table.rst:68
+#: ../../en/m5ui/table.rst:87 ../../en/m5ui/table.rst:104
+#: ../../en/m5ui/table.rst:121 ../../en/m5ui/table.rst:138
+#: ../../en/m5ui/table.rst:155 ../../en/m5ui/table.rst:173
+#: ../../en/m5ui/table.rst:191 ../../en/m5ui/table.rst:209
+#: ../../en/m5ui/table.rst:226 ../../en/m5ui/table.rst:243
+#: ../../en/m5ui/table.rst:260 ../../en/m5ui/table.rst:277
+#: ../../en/m5ui/table.rst:295 ../../en/m5ui/table.rst:312
+#: ../../en/m5ui/table.rst:329 ../../en/m5ui/table.rst:346
+#: ../../en/m5ui/table.rst:363 ../../en/m5ui/table.rst:383
+#: 54ffd8f584294e55a9e8ac62fdb79998 579881ac22b6472c981d21728e567f94
+#: 5d6efb476cf14084ada61b602cd4d2a8 5dbd8d9f85c04cb4bd30f6c5d6c15cc7
+#: 62dceb371c3747aab1c989b1b6dfd69b 634ae17525cd45f9a67ca7670d887648
+#: 64f36dffd962408dadb638d42a71279b 7f340e003b644884a9f9c9cd8940b620
+#: 812c16e4c33b47c5b083606cfaa07c42 b734e8d34ef6452282c0ce351ae50ed8
+#: bdb773d8e22649829966daeeafcd0189 d074b4984eda460db15cfd437a70f3a8
+#: d3e1f99de9c742e88a72e3edc78aa5bc df60f5b7c6c146fb89baf2da5c1fa34e
+#: e5e2c52d79bc47e59340cd2dfab9f5b8 f3e74e92ac744f2bb6798342b91461a5
+#: m5ui.table.M5Table:11 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/m5ui/table.rst:22 2bfcafa6716d488aa603c49214e9629e
+msgid "|cores3_m5ui_table_example.png|"
+msgstr "|cores3_m5ui_table_example.png|"
+
+#: ../../en/refs/m5ui.table.ref:1 67eab3f7921b4dbd83c8be7ffdb7f6ef
+msgid "cores3_m5ui_table_example.png"
+msgstr "cores3_m5ui_table_example.png"
+
+#: ../../en/m5ui/table.rst:24 ../../en/m5ui/table.rst:42
+#: d09055bb1707467a936809834a7335c6
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/m5ui/table.rst:26 ../../en/m5ui/table.rst:44
+#: f999396b5ab845cfa9912c94ef371ccf
+msgid "None."
+msgstr "无。"
+
+#: ../../en/m5ui/table.rst:29 0a681efc77584a31a40cca8fdb22b2bb
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/m5ui/table.rst:36 ../../en/m5ui/table.rst:72
+#: ../../en/m5ui/table.rst:91 ../../en/m5ui/table.rst:108
+#: ../../en/m5ui/table.rst:125 ../../en/m5ui/table.rst:142
+#: ../../en/m5ui/table.rst:159 ../../en/m5ui/table.rst:177
+#: ../../en/m5ui/table.rst:195 ../../en/m5ui/table.rst:213
+#: ../../en/m5ui/table.rst:230 ../../en/m5ui/table.rst:247
+#: ../../en/m5ui/table.rst:264 ../../en/m5ui/table.rst:281
+#: ../../en/m5ui/table.rst:299 ../../en/m5ui/table.rst:316
+#: ../../en/m5ui/table.rst:333 ../../en/m5ui/table.rst:350
+#: ../../en/m5ui/table.rst:367 ../../en/m5ui/table.rst:387
+#: 12f1bce221a540eeb65287ac8f969eb5 3b09cf3dff0a4c3f9900308e0ea5f058
+#: 3c28341833474d1cb4e599ae331cdbb9 4d0be268e0df4bc997646c6772e5c675
+#: 4e88f168847d42d9b7810ac0ea011a2e 50dc981f802e45a28353f683a9f1c937
+#: 735b742472534943898a039bf464c837 b2f2558122a34df3a889318e9e6a4d1c
+#: b7ffe92d4eb3418d800255fafcd84cd9 bbb11231c2154eecb9435bdf5c3fa223
+#: c77dc0f1bd90457aae4c586e855128af d72bdb30392240c09f41e6a5f3ee09c9
+#: dd67f3b7c2ca47509b2f0c884a54a2f2 dd90c48f7e63477f86a1da1b0d1e741e
+#: e42197bbe06048dca88ab5e7660618bf m5ui.table.M5Table:15 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/m5ui/table.rst:47 aa3c4e4c9eed45e38e905812c5c564b7
+msgid "**API**"
+msgstr "**API 应用**"
+
+#: 137dcace5699442c96b5021d5ef0e762 m5ui.table.M5Table:1 of
+msgid "Bases: :py:class:`~lvgl.table`"
+msgstr ""
+
+#: 69adc1b05b8b4543a548c13fbad3d246 m5ui.table.M5Table:1 of
+msgid "Create a table object."
+msgstr "创建表格对象。"
+
+#: ../../en/m5ui/table.rst 0f3a25541b9f4da2b16c59ec4f14dd76
+#: 1b3758c498f044e8af3e94b116970a56 264360a58de94d529893c6ba4310d43b
+#: 2874bc8f5e314248be4a4c2092c37752 322144e8f30d4e6495f8351067733d61
+#: 5f7cd41f1e224a0ca32b71c73edbb115 8bb11a9195df4f13a432e1ce93f2d1d4
+#: 9b761c4e3d4f456597083b3331ad4c6b dc84027c9b6d4404b411584227b8d011
+#: f7c9b0eea1024355a458460b6ad395c9
+msgid "Parameters"
+msgstr "参数"
+
+#: 2fd3d2aa92b34442839ad799cf1a2906 m5ui.table.M5Table:3 of
+msgid "The x position of the table."
+msgstr "表格的 x 坐标位置。"
+
+#: c89c15c14a7d430bb56ee3f2d58726a2 m5ui.table.M5Table:4 of
+msgid "The y position of the table."
+msgstr "表格的 y 坐标位置。"
+
+#: 1e7f1691d79a44d0951123e46002486e m5ui.table.M5Table:5 of
+msgid "The width of the table."
+msgstr "表格的宽度。"
+
+#: aa2b1854d8874de1927145a13041a115 m5ui.table.M5Table:6 of
+msgid "The height of the table."
+msgstr "表格的高度。"
+
+#: ../../en/m5ui/table.rst:101 685aca28dc4c4b3d95bff43320409ab8
+#: 921617c5ecf446aba12245d968c59e5a m5ui.table.M5Table:7 of
+msgid "Number of rows."
+msgstr "行数。"
+
+#: ../../en/m5ui/table.rst:118 ../../en/m5ui/table.rst:152
+#: 44ccf59d9f0f4099ad4b8c3cd7562feb ac1073d37bf64dcc90e115e3999cb1fc
+#: e9a11bf08ef6401b916d88442b977a6c m5ui.table.M5Table:8 of
+msgid "Number of columns."
+msgstr "列数。"
+
+#: b22fb907e7cf4224aa4858f70e5a7dcf m5ui.table.M5Table:9 of
+msgid ""
+"The parent object to attach the table to. If not specified, the table "
+"will be attached to the default screen."
+msgstr "要附加表格的父对象。如果未指定，表格将附加到默认屏幕。"
+
+#: ../../en/m5ui/table.rst:66 ../../en/m5ui/table.rst:102
+#: ../../en/m5ui/table.rst:119 ../../en/m5ui/table.rst:171
+#: ../../en/m5ui/table.rst:207 ../../en/m5ui/table.rst:224
+#: ../../en/m5ui/table.rst:241 ../../en/m5ui/table.rst:293
+#: ../../en/m5ui/table.rst:310 ../../en/m5ui/table.rst:344
+#: ../../en/m5ui/table.rst:381 0a6bcdcbdf414833b5107daab2431d8f
+#: 3c83f708a75c4aa2940f5b06f8d06956 85c8d0ad4cc14c6ca7444b3ce5c537a3
+#: a0e001350a0e44cdb720e5c5442da4bb a4ed395b2eda48378a26b06f67aa2101
+#: be83beb95a3c4c8ca9cf22ee2dbb4925 c70848f8140c4f32a0fa5b9735011eee
+#: d3f6874ce3f549fda157215c822c10bd ee4720287a3d4923bfe7c047580be971
+#: m5ui.table.M5Table:13 of
+msgid "None"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:58 47cc6b246ea444c69e7f2cc8af4feda7
+msgid "Set the value of a cell."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:60 83e3a39136fc4327a04324ba68a011e5
+msgid "New rows/columns are added automatically if required."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:62 d379218f7db34b859052e16bfa044456
+msgid "Row index [0 .. row_cnt - 1]"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:63 a6acb828eb2943aba2604b2f12903ee0
+msgid "Column index [0 .. col_cnt - 1]"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:64 0ed250cb641745e4a0766b90b850886d
+msgid "Text to display in the cell"
+msgstr ""
+
+#: ../../en/m5ui/table.rst 01e4208c16d04b7f90f4c322facde6e6
+#: 0c883c4fdc2a43408c2a270a49bc0053 1c87c51b13c647d3a4a023d290e0c2df
+#: 2671d604944f40328446a21304de17c3 6689ae9ea48843e9a3d9da412ae9c10e
+#: 722322c50fbc4c54a21801adb4b94ea4 8ba594820b554d9793bab81b582edaf8
+#: aa12c50d91744a55858c0d994f9c47df b59d3e2859cf4fac9df508d175863ef4
+#: d73e8d3e9a104fa9b694c24829cb555d db616cf86d1c47289bc4c6ca1429776d
+#: e59a798de2ea46d5a5f10dd33b1be767 f6b9ac7d06dd4865a7875f12080fb829
+msgid "Returns"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:70 2f2aecad0c874569bddd5382a9b68a5e
+msgid "|set_cell_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:3 b374eaf476114663bfca14cf13c80693
+msgid "set_cell_value.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:80 f064ed7be834493db94b8262670b439c
+msgid "Get the value of a cell."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:82 0a50e2b10d2c49d2894493ab6cf18700
+msgid "Row index"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:83 a75704b1f38d4f85bbdf32a20bb22a36
+msgid "Column index"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:84 a7d9d00324fe43f0b33ca14158a313c0
+msgid "Text in the cell"
+msgstr ""
+
+#: ../../en/m5ui/table.rst 8b66f2c97d8c49ff88298b09250cbcfa
+#: 8f069428379d40f1ac0117f956d73df9 8f2cf237606b4d348efe9f6209788d98
+#: 9488b85984f143a894becf1be38005e1 aebb2c59dcc6425382aa3ae10478686d
+#: c08b6bb6532f407c892e65185d8f8a1b ef163b95fbd3427fa4e42de1bbe0777a
+msgid "Return type"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:89 7e224098540d4d82a016d0027005d51e
+msgid "|get_cell_value.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:4 e2e33afe8f254eac915e8b3038d530e8
+msgid "get_cell_value.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:99 1891eb7ba51744c088fc9f8a6a746f8f
+msgid "Set the number of rows."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:106 1c590fab774249d4a47cc97337b60424
+msgid "|set_row_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:5 f3162911614a4da69889ba9613cd40ac
+msgid "set_row_count.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:116 ec85a468353e44c9babaf079cb2800af
+msgid "Set the number of columns."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:123 cfe9c187bff7411b93fdb969b0707925
+msgid "|set_column_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:6 d0f478d90ae64f28b7ac7b6d0af4ea4b
+msgid "set_column_count.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:133 861b4f4ba67a4e14b5024498d0f96d4e
+msgid "Get the number of rows."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:135 888294566d7d4bc884e6c195ec4f23ac
+msgid "Number of row."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:140 29bac22238484e9c848116f54bf7b88e
+msgid "|get_row_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:7 bfcbc5fa82254f0d9b0f5bc2599eb69a
+msgid "get_row_count.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:150 9e86001b933042629eb5e45ab4ea6c24
+msgid "Get the number of columns."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:157 3cfda23e464c4347956d4b86d9854793
+msgid "|get_column_count.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:8 3a8c24fb774f4b9c938ec3247d83ddcb
+msgid "get_column_count.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:167 9d4c6bd4137544c7bf325c719f97647e
+msgid "Set the width of a column."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:169 ../../en/m5ui/table.rst:187
+#: ab197548bc7f47d787c961c10ec635a3 dd6758f6075f46e6bd4636b4291dc5d2
+msgid "Column index [0 .. LV_TABLE_COL_MAX - 1]."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:170 ../../en/m5ui/table.rst:188
+#: 1b0dfd80ce644746a5d0fffd45eb14da 5d7d7e76882541208c15119cad40628c
+msgid "Column width."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:175 219727761f8e4d82bc3905d3c0309f59
+msgid "|set_column_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:9 0e1c6ab52c484db885910fc57081cc2f
+msgid "set_column_width.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:185 bb1436c530ca4aa4b74078eaefb3572b
+msgid "Get the width of a column."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:193 bc9f553d76914269abdf58fa128e6308
+msgid "|get_column_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:10 9b72c244167b4e2c9ae8ab7f08fe6af1
+msgid "get_column_width.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:203 8342172b09bf482c81e30a8394f5af9d
+msgid "Set the position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst 9680a5fc62a546adb5619e652d43c540
+msgid "param int x"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:205 ../../en/m5ui/table.rst:223
+#: ../../en/m5ui/table.rst:257 52cd890b996943d78e9c53b0bd54767e
+#: 93d2ef7b54cb4cb891ff7934aac34ab1 f8f5886fdd1745b5b432cb47fdfd85d2
+msgid "The x position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst d7a7b6cebd34431cb3eba7a9ff142ae5
+msgid "param int y"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:206 ../../en/m5ui/table.rst:240
+#: ../../en/m5ui/table.rst:274 5ea4bed923764c46890c7705a470d730
+#: da8387086ec145fbab3f1c2ff0a52d82 e76da59ee4344048b2c8ba4f9a0b33d2
+msgid "The y position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst b7dfa5becd0d4f94abb49648858951e9
+msgid "return"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:211 08f03019ec5d4258863864ea116b994a
+msgid "|set_pos.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:11 af6d0d673342408d83154e47f6a8a9a7
+msgid "set_pos.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:221 996d244cacf7480797a43a1b6ed220bb
+msgid "Set the x position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:228 4ecf4f61a4e24d9c9bce6ddda4588663
+msgid "|set_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:12 5f89798640b84f27a3a4a7d77d1b1221
+msgid "set_x.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:238 c2fa313b6ee445adb744034a992a21b7
+msgid "Set the y position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:245 c22f1eff60154e3894bbc0f38ff5717e
+msgid "|set_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:13 e0a806a695114e548aba8e28f9baaffc
+msgid "set_y.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:255 7fdd15d1641749a4af72e9ecf5bf3707
+msgid "Get the x position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:262 d81fca4ed77d4d378212d3364e4123d0
+msgid "|get_x.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:14 7e853730efde4f8fa2de1b802ccca5b2
+msgid "get_x.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:272 ea8e835c3c0042ebad038f8ff9731fc0
+msgid "Get the y position of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:279 02920fe09be14692a547cdbececafea6
+msgid "|get_y.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:15 483c27e3b3b8495f9dcbb9f69139e6fb
+msgid "get_y.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:289 8f74f1eab49c497cb3fd244f05513edc
+msgid "Set the size of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:291 ../../en/m5ui/table.rst:309
+#: ../../en/m5ui/table.rst:326 f8196371b0824aee8a91050045498065
+msgid "The width of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:292 ../../en/m5ui/table.rst:343
+#: ../../en/m5ui/table.rst:360 57207ce30027452fbbe809f8e9c364db
+msgid "The height of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:297 ee276f2f58874e3ebe9e32eef1aa0a31
+msgid "|set_size.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:16 0aa69a2ba7a445d7b5361a4921ad1080
+msgid "set_size.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:307 f8eb07fc9d584333a3685bc664d67f3f
+msgid "Set the width of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:314 ca7fd165135d42caa3a670bf89bac9ac
+msgid "|set_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:17 41e8ca8cd3ab4ecc8d7c9e14340dde0f
+msgid "set_width.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:324 dab43bca977a479fb8f912d91ca9d044
+msgid "Get the width of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:331 eb542d6ce7564e7ead1bcfc86b80f8ad
+msgid "|get_width.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:19 5be26bac7472410a8dd1936e4d8a581e
+msgid "get_width.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:341 f9d55a23be9f41afbde4a405f7bf63f3
+msgid "Set the height of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:348 c49333269b214e5e883b32323babd758
+msgid "|set_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:18 7dbeca0b76ae412bbc267d2ef634ff69
+msgid "set_height.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:358 9b601b1dd00a4a11a55736b08463bc74
+msgid "Get the height of the Table."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:365 3320493d141348dd989366c0308511da
+msgid "|get_height.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:20 4f08b4476421493d94c3ea11aa56ecaf
+msgid "get_height.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:375 f0a985a42b3b4b11a0aea7195d05ff36
+msgid "Align the Table relative to another object."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:377 e453d640a32b43a19fee60efab6175f2
+msgid "The reference object (e.g. page0)."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:378 c8962fc69c3e459da003315b31f927c8
+msgid "Alignment option (see lv.ALIGN constants below)."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:379 b6fbcaebd1a84d5698b5aa7fae3f3418
+msgid "X offset after alignment."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:380 e00df0ba46f14605a1a804590267ab2f
+msgid "Y offset after alignment."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:385 be7d39b5dce2459e9d76965a98ff36cd
+msgid "|align_to.png|"
+msgstr ""
+
+#: ../../en/refs/m5ui.table.ref:21 c600dd192d7b4a20a859ccf040f7229c
+msgid "align_to.png"
+msgstr ""
+
+#: ../../en/m5ui/table.rst:395 225fb725e9104e9fba16fd9575f8cb3d
+msgid "Alignment options for positioning objects."
+msgstr ""
+
+#: ../../en/m5ui/table.rst:397 30c212fc4b1543df9e76bf65fa76da23
+msgid "lv.ALIGN.DEFAULT"
+msgstr "lv.ALIGN.DEFAULT"
+
+#: ../../en/m5ui/table.rst:398 2c1371adcdc0468eb7b7802b3d4b9da9
+msgid "lv.ALIGN.TOP_LEFT"
+msgstr "lv.ALIGN.TOP_LEFT"
+
+#: ../../en/m5ui/table.rst:399 86c9a8417e414fe79f79583f5eda6ffe
+msgid "lv.ALIGN.TOP_MID"
+msgstr "lv.ALIGN.TOP_MID"
+
+#: ../../en/m5ui/table.rst:400 5e4836ac96824ef7b77023cc06de04c6
+msgid "lv.ALIGN.TOP_RIGHT"
+msgstr "lv.ALIGN.TOP_RIGHT"
+
+#: ../../en/m5ui/table.rst:401 cb31695347744ec79783dd4f3f233473
+msgid "lv.ALIGN.BOTTOM_LEFT"
+msgstr "lv.ALIGN.BOTTOM_LEFT"
+
+#: ../../en/m5ui/table.rst:402 1fde9619010d492d96c3aabf4643a174
+msgid "lv.ALIGN.BOTTOM_MID"
+msgstr "lv.ALIGN.BOTTOM_MID"
+
+#: ../../en/m5ui/table.rst:403 cc7b32476148415b9d653604f339a51e
+msgid "lv.ALIGN.BOTTOM_RIGHT"
+msgstr "lv.ALIGN.BOTTOM_RIGHT"
+
+#: ../../en/m5ui/table.rst:404 c5ee92f705a1453a858d2b1dfbb5adc4
+msgid "lv.ALIGN.LEFT_MID"
+msgstr "lv.ALIGN.LEFT_MID"
+
+#: ../../en/m5ui/table.rst:405 3e796c99656743d590ce2c357c76f00e
+msgid "lv.ALIGN.RIGHT_MID"
+msgstr "lv.ALIGN.RIGHT_MID"
+
+#: ../../en/m5ui/table.rst:406 5360d6673b2245a7874e183abf0200ab
+msgid "lv.ALIGN.CENTER"
+msgstr "lv.ALIGN.CENTER"
+
+#: ../../en/m5ui/table.rst:407 38a802cfcf684455a31aa034f1dc0c21
+msgid "lv.ALIGN.OUT_TOP_LEFT"
+msgstr "lv.ALIGN.OUT_TOP_LEFT"
+
+#: ../../en/m5ui/table.rst:408 c9f532227a7f43b19dec9ff9fc4935d2
+msgid "lv.ALIGN.OUT_TOP_MID"
+msgstr "lv.ALIGN.OUT_TOP_MID"
+
+#: ../../en/m5ui/table.rst:409 8dea72afa843400eacd3a12e30e71fb6
+msgid "lv.ALIGN.OUT_TOP_RIGHT"
+msgstr "lv.ALIGN.OUT_TOP_RIGHT"
+
+#: ../../en/m5ui/table.rst:410 4b79cce8cb104806ab405bcd16a28faf
+msgid "lv.ALIGN.OUT_BOTTOM_LEFT"
+msgstr "lv.ALIGN.OUT_BOTTOM_LEFT"
+
+#: ../../en/m5ui/table.rst:411 db0dcbd46fc64e659ae41dfb849642a5
+msgid "lv.ALIGN.OUT_BOTTOM_MID"
+msgstr "lv.ALIGN.OUT_BOTTOM_MID"
+
+#: ../../en/m5ui/table.rst:412 6c94198ff28d47e89f288db718c0f1fb
+msgid "lv.ALIGN.OUT_BOTTOM_RIGHT"
+msgstr "lv.ALIGN.OUT_BOTTOM_RIGHT"
+
+#: ../../en/m5ui/table.rst:413 0c1b600f51304c2b880059c291e9994c
+msgid "lv.ALIGN.OUT_LEFT_TOP"
+msgstr "lv.ALIGN.OUT_LEFT_TOP"
+
+#: ../../en/m5ui/table.rst:414 5755cb0f902141e4bf1ef13c60a4caae
+msgid "lv.ALIGN.OUT_LEFT_MID"
+msgstr "lv.ALIGN.OUT_LEFT_MID"
+
+#: ../../en/m5ui/table.rst:415 d0d1c80d7fec4b6f9df5760b922ee47d
+msgid "lv.ALIGN.OUT_LEFT_BOTTOM"
+msgstr "lv.ALIGN.OUT_LEFT_BOTTOM"
+
+#: ../../en/m5ui/table.rst:416 62bc0f8afa1b4633a5355edbe0f8778f
+msgid "lv.ALIGN.OUT_RIGHT_TOP"
+msgstr "lv.ALIGN.OUT_RIGHT_TOP"
+
+#: ../../en/m5ui/table.rst:417 0809386117f64ad69761ec72a28a8e07
+msgid "lv.ALIGN.OUT_RIGHT_MID"
+msgstr "lv.ALIGN.OUT_RIGHT_MID"
+
+#: ../../en/m5ui/table.rst:418 42b62ccb1ba94c2783f8f7c72b6b7844
+msgid "lv.ALIGN.OUT_RIGHT_BOTTOM"
+msgstr "lv.ALIGN.OUT_RIGHT_BOTTOM"
+
+#~ msgid ""
+#~ "This example demonstrates how to create"
+#~ " a table with student information "
+#~ "using MicroPython. The code creates a"
+#~ " 3x4 table (3 columns, 4 rows "
+#~ "including header) that displays student "
+#~ "data with names, ages, and scores. "
+#~ "The table is centered on the page"
+#~ " and uses a dictionary to store "
+#~ "the student information."
+#~ msgstr ""
+#~ "此示例演示了如何创建一个包含学生信息的表格，包括姓名、年龄和分数。该表格显示三名学生的数据：Alice (18, "
+#~ "95)、Bob (18, 80) 和 Carol (17, 86)。"
+

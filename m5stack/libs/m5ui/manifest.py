@@ -31,6 +31,7 @@ package(
         "spinbox.py",
         "spinner.py",
         "switch.py",
+        "table.py",
         "tabview.py",
         "textarea.py",
         "win.py",
