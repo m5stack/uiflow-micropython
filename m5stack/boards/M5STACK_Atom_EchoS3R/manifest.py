@@ -5,3 +5,4 @@
 include("$(MPY_DIR)/../m5stack/modules/startup/manifest_atom_echos3r.py")
 include("$(MPY_DIR)/../m5stack/libs/base/manifest.py")
 include("$(MPY_DIR)/../m5stack/libs/unit/manifest.py")
+include("$(MPY_DIR)/../m5stack/libs/chain/manifest.py")

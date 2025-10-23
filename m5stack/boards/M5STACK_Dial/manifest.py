@@ -5,3 +5,4 @@
 include("$(MPY_DIR)/../m5stack/modules/startup/manifest_dial.py")
 include("$(MPY_DIR)/../m5stack/libs/m5ui/manifest.py")
 include("$(MPY_DIR)/../m5stack/libs/unit/manifest.py")
+include("$(MPY_DIR)/../m5stack/libs/chain/manifest.py")

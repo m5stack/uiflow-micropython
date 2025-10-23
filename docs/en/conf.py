@@ -61,7 +61,8 @@ autodoc_mock_imports = [
     "m5audio2",
     "lvgl",
     "_espnow",
-    "lora"
+    "lora",
+    "m5utils"
 ]
 
 autodoc_default_options = {
