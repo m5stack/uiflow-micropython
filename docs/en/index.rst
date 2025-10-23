@@ -17,6 +17,7 @@ UiFlow2 documentation and references
     hats/index.rst
     base/index.rst
     cap/index.rst
+    chain/index.rst
     iot-devices/index.rst
     advanced/index.rst
     quick-reference/index.rst

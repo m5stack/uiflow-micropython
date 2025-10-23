@@ -15,6 +15,5 @@ Controllers
     airq.rst
     paper.rst
     dinmeter.rst
-    dualkey.rst
     nesso-n1.rst
     unit_c6l.rst

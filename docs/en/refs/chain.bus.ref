@@ -1,0 +1,5 @@
+
+.. |get_device_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/bus/get_device_num.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/bus/init.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/bus/send.png
+.. |send_return.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/bus/send_return.png
