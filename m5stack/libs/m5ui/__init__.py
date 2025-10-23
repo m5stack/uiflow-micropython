@@ -29,6 +29,7 @@ _attrs = {
     "M5Spinbox": "spinbox",
     "M5Spinner": "spinner",
     "M5Switch": "switch",
+    "M5Table": "table",
     "M5TabView": "tabview",
     "M5TextArea": "textarea",
     "M5Win": "win",
