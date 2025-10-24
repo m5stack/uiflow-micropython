@@ -1,0 +1,52 @@
+diff --git a/src/utility/led/LED_Strip_Class.cpp b/src/utility/led/LED_Strip_Class.cpp
+index 7ea1cd1..47691d3 100644
+--- a/src/utility/led/LED_Strip_Class.cpp
++++ b/src/utility/led/LED_Strip_Class.cpp
+@@ -126,9 +126,11 @@ namespace m5
+     if (_config.pin_data < 0) {
+       return false;
+     }
++    #if M5UNIFIED_RMT_VERSION == 2
+     if (_led_encoder && _rmt_ch_handle) {
+       return true;
+     }
++    #endif
+ 
+ #if M5UNIFIED_RMT_VERSION == 2
+     rmt_tx_channel_config_t rmt_tx;
+diff --git a/src/utility/led/LED_Strip_Class.hpp b/src/utility/led/LED_Strip_Class.hpp
+index a41e2de..c0b1e07 100644
+--- a/src/utility/led/LED_Strip_Class.hpp
++++ b/src/utility/led/LED_Strip_Class.hpp
+@@ -12,12 +12,13 @@
+ #if __has_include (<sdkconfig.h>)
+  #include <sdkconfig.h>
+  #include <esp_idf_version.h>
++ #define M5UNIFIED_RMT_VERSION 1
+ // RMT
+- #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
+-  #define M5UNIFIED_RMT_VERSION 2
+- #else
+-  #define M5UNIFIED_RMT_VERSION 1
+- #endif
++//  #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 0, 0)
++//   #define M5UNIFIED_RMT_VERSION 2
++//  #else
++//   #define M5UNIFIED_RMT_VERSION 1
++//  #endif
+ #endif
+ 
+ #if M5UNIFIED_RMT_VERSION == 2
+diff --git a/src/utility/rtc/RTC_PowerHub_Class.cpp b/src/utility/rtc/RTC_PowerHub_Class.cpp
+index bf2fae6..5729f5c 100644
+--- a/src/utility/rtc/RTC_PowerHub_Class.cpp
++++ b/src/utility/rtc/RTC_PowerHub_Class.cpp
+@@ -87,7 +87,7 @@ namespace m5
+   int RTC_PowerHub_Class::setAlarmIRQ(const rtc_date_t *date, const rtc_time_t *time)
+   {
+ 
+-    std::uint8_t buf[3];
++    std::uint8_t buf[3] = { 0 };
+     bool irq_enable = false;
+ 
+     if (time) {

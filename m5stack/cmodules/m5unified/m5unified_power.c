@@ -10,13 +10,15 @@
 // power port mask
 static const mp_rom_map_elem_t power_port_masks_table[] = {
     /* *FORMAT-OFF* */
-    { MP_ROM_QSTR(MP_QSTR_A),   MP_ROM_INT(0b00000001) },
-    { MP_ROM_QSTR(MP_QSTR_B1),  MP_ROM_INT(0b00000010) },
-    { MP_ROM_QSTR(MP_QSTR_B2),  MP_ROM_INT(0b00000100) },
-    { MP_ROM_QSTR(MP_QSTR_C1),  MP_ROM_INT(0b00001000) },
-    { MP_ROM_QSTR(MP_QSTR_C2),  MP_ROM_INT(0b00010000) },
-    { MP_ROM_QSTR(MP_QSTR_USB), MP_ROM_INT(0b00100000) },
-    { MP_ROM_QSTR(MP_QSTR_MAIN), MP_ROM_INT(0b10000000) },
+    { MP_ROM_QSTR(MP_QSTR_A),      MP_ROM_INT(1 << 0 ) },
+    { MP_ROM_QSTR(MP_QSTR_B1),     MP_ROM_INT(1 << 1 ) },
+    { MP_ROM_QSTR(MP_QSTR_B2),     MP_ROM_INT(1 << 2 ) },
+    { MP_ROM_QSTR(MP_QSTR_C1),     MP_ROM_INT(1 << 3 ) },
+    { MP_ROM_QSTR(MP_QSTR_C2),     MP_ROM_INT(1 << 4 ) },
+    { MP_ROM_QSTR(MP_QSTR_USB),    MP_ROM_INT(1 << 5 ) },
+    { MP_ROM_QSTR(MP_QSTR_PWR485), MP_ROM_INT(1 << 6 ) },
+    { MP_ROM_QSTR(MP_QSTR_PWRCAN), MP_ROM_INT(1 << 7 ) },
+    { MP_ROM_QSTR(MP_QSTR_MAIN),   MP_ROM_INT(1 << 15) },
     /* *FORMAT-ON* */
 };
 static MP_DEFINE_CONST_DICT(power_port_masks, power_port_masks_table);
@@ -38,6 +40,9 @@ const mp_obj_type_t mp_power_port_mask_enum = {
 
 MAKE_METHOD_KW(power, setExtOutput, 1);
 MAKE_METHOD_0(power, getExtOutput);
+MAKE_METHOD_KW(power, setExtPortBusConfig, 4);
+MAKE_METHOD_1(power, getExtVoltage);
+MAKE_METHOD_1(power, getExtCurrent);
 MAKE_METHOD_KW(power, setUsbOutput, 1);
 MAKE_METHOD_0(power, getUsbOutput);
 MAKE_METHOD_KW(power, setLed, 1);
@@ -63,6 +68,9 @@ static const mp_rom_map_elem_t power_member_table[] = {
     // control functions
     MAKE_TABLE(power, setExtOutput),
     MAKE_TABLE(power, getExtOutput),
+    MAKE_TABLE(power, setExtPortBusConfig),
+    MAKE_TABLE(power, getExtVoltage),
+    MAKE_TABLE(power, getExtCurrent),
     MAKE_TABLE(power, setUsbOutput),
     MAKE_TABLE(power, getUsbOutput),
     MAKE_TABLE(power, setLed),

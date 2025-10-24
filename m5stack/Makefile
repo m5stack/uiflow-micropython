@@ -324,7 +324,8 @@ IDF_PATH_PATCH_SERIES = \
 
 M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \
-	2007-Support-UnitC6L.patch
+	2007-Support-UnitC6L.patch \
+	2008-Only-use-old-rmt-driver.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
