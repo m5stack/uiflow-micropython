@@ -21,13 +21,14 @@
 /* *FORMAT-ON* */
 
 #define MAKE_TABLE(prefix, func) \
-    { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
+        { MP_ROM_QSTR(MP_QSTR_##func), MP_ROM_PTR(&prefix##_##func##_obj) }
 
 extern const mp_obj_type_t mp_fonts_type;
 extern const mp_obj_type_t mp_color_type;
 
 extern const mp_obj_type_t mp_btn_type;
 extern const mp_obj_type_t mp_imu_type;
+extern const mp_obj_type_t mp_led_type;
 extern const mp_obj_type_t mp_spk_type;
 extern const mp_obj_type_t mp_power_type;
 extern const mp_obj_type_t mp_gfxcanvas_type;

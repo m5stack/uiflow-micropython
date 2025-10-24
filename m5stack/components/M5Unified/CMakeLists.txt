@@ -24,7 +24,9 @@ file(GLOB SRCS
     M5Unified/src/*.cpp
     M5Unified/src/utility/*.cpp
     M5Unified/src/utility/imu/*.cpp
+    M5Unified/src/utility/led/*.cpp
     M5Unified/src/utility/power/*.cpp
+    M5Unified/src/utility/rtc/*.cpp
     *.cpp
 )
 
