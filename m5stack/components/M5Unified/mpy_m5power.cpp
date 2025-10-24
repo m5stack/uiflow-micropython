@@ -4,7 +4,8 @@
 * SPDX-License-Identifier: MIT
 */
 
-#include <utility/Power_Class.hpp>
+// #include <utility/Power_Class.hpp>
+#include <M5Unified.h>
 
 extern "C"
 {
@@ -49,6 +50,39 @@ namespace m5
 
     mp_obj_t power_getExtOutput(mp_obj_t self) {
         return mp_obj_new_bool(getPower(self)->getExtOutput());
+    }
+
+    mp_obj_t power_setExtPortBusConfig(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+        enum {ARG_voltage, ARG_current_limit, ARG_enable, ARG_direction};
+        const mp_arg_t allowed_args[] = {
+            /* *FORMAT-OFF* */
+            { MP_QSTR_voltage,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 3000} },
+            { MP_QSTR_current_limit, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 232} },
+            { MP_QSTR_enable,        MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true} },
+            { MP_QSTR_direction,     MP_ARG_INT,                    {.u_int = 0}  },
+            /* *FORMAT-ON* */
+        };
+        mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+        // The first parameter is the Power object, parse from second parameter.
+        mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
+
+        ext_port_bus_t cfg;
+        cfg.voltage = args[ARG_voltage].u_int;
+        cfg.currentLimit = args[ARG_current_limit].u_int;
+        cfg.enable = args[ARG_enable].u_bool;
+        cfg.direction = args[ARG_direction].u_int;
+
+        getPower(pos_args[0])->setExtPortBusConfig(cfg);
+
+        return mp_const_none;
+    }
+
+    mp_obj_t power_getExtVoltage(mp_obj_t self, mp_obj_t ext_port) {
+        return mp_obj_new_int(getPower(self)->getExtVoltage((ext_port_mask_t)mp_obj_get_int(ext_port)));
+    }
+
+    mp_obj_t power_getExtCurrent(mp_obj_t self, mp_obj_t ext_port) {
+        return mp_obj_new_int(getPower(self)->getExtCurrent((ext_port_mask_t)mp_obj_get_int(ext_port)));
     }
 
     mp_obj_t power_setUsbOutput(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {

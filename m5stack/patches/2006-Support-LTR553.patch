@@ -1,8 +1,8 @@
-Index: M5Unified/src/M5Unified.cpp
-===================================================================
---- M5Unified.orig/src/M5Unified.cpp
-+++ M5Unified/src/M5Unified.cpp
-@@ -1408,6 +1408,7 @@ static constexpr const uint8_t _pin_tabl
+diff --git a/src/M5Unified.cpp b/src/M5Unified.cpp
+index 8f2132a..9e175f3 100644
+--- a/src/M5Unified.cpp
++++ b/src/M5Unified.cpp
+@@ -1672,6 +1672,7 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
  #elif defined (CONFIG_IDF_TARGET_ESP32S3)
        case board_t::board_M5StackCoreS3:
        case board_t::board_M5StackCoreS3SE:
@@ -10,7 +10,7 @@ Index: M5Unified/src/M5Unified.cpp
          if (cfg.internal_mic)
          {
            mic_cfg.magnification = 2;
-@@ -1914,6 +1915,9 @@ static constexpr const uint8_t _pin_tabl
+@@ -2203,6 +2204,9 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
      {
        port_a_used = M5.Imu.begin(&M5.Ex_I2C) || port_a_used;
      }
@@ -20,19 +20,19 @@ Index: M5Unified/src/M5Unified.cpp
      return port_a_used;
    }
  
-Index: M5Unified/src/M5Unified.hpp
-===================================================================
---- M5Unified.orig/src/M5Unified.hpp
-+++ M5Unified/src/M5Unified.hpp
-@@ -62,6 +62,7 @@ namespace m5
- #include "utility/Touch_Class.hpp"
+diff --git a/src/M5Unified.hpp b/src/M5Unified.hpp
+index 1e19b4d..5651b85 100644
+--- a/src/M5Unified.hpp
++++ b/src/M5Unified.hpp
+@@ -63,6 +63,7 @@ namespace m5
  #include "utility/Log_Class.hpp"
+ #include "utility/LED_Class.hpp"
  #include "utility/IMU_Class.hpp"
 +#include "utility/LTR553_Class.hpp"
  #include "utility/IOExpander_Base.hpp"
  
  #include <memory>
-@@ -138,6 +139,9 @@ namespace m5
+@@ -144,6 +145,9 @@ namespace m5
        /// use the speaker.
        bool internal_spk  = true;
  
@@ -42,18 +42,19 @@ Index: M5Unified/src/M5Unified.hpp
        /// use Unit Accel & Gyro.
        bool external_imu  = false;
  
-@@ -214,6 +218,7 @@ namespace m5
+@@ -220,6 +224,7 @@ namespace m5
      Power_Class Power;
-     RTC8563_Class Rtc;
+     RTC_Class Rtc;
      Touch_Class Touch;
 +    LTR553_Class Als;
- 
- /*
-   /// List of available buttons:
-Index: M5Unified/src/utility/LTR553_Class.cpp
-===================================================================
+     Speaker_Class Speaker;
+     Mic_Class Mic;
+     LED_Class Led;
+diff --git a/src/utility/LTR553_Class.cpp b/src/utility/LTR553_Class.cpp
+new file mode 100644
+index 0000000..38f8ce8
 --- /dev/null
-+++ M5Unified/src/utility/LTR553_Class.cpp
++++ b/src/utility/LTR553_Class.cpp
 @@ -0,0 +1,135 @@
 +#include "LTR553_Class.hpp"
 +
@@ -190,10 +191,12 @@ Index: M5Unified/src/utility/LTR553_Class.cpp
 +    }
 +
 +}
-Index: M5Unified/src/utility/LTR553_Class.hpp
-===================================================================
+\ No newline at end of file
+diff --git a/src/utility/LTR553_Class.hpp b/src/utility/LTR553_Class.hpp
+new file mode 100644
+index 0000000..f1e57bc
 --- /dev/null
-+++ M5Unified/src/utility/LTR553_Class.hpp
++++ b/src/utility/LTR553_Class.hpp
 @@ -0,0 +1,122 @@
 +#ifndef __M5_LTR553_CLASS_H__
 +#define __M5_LTR553_CLASS_H__
