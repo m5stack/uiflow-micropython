@@ -14,6 +14,7 @@
 #include "mpy_m5btn.h"
 #include "mpy_m5gfx.h"
 #include "mpy_m5imu.h"
+#include "mpy_m5led.h"
 #include "mpy_m5spk.h"
 #include "mpy_m5power.h"
 #include "mpy_m5widgets.h"
@@ -35,6 +36,7 @@ extern mp_obj_t m5_getDisplayCount(void);
 extern const spk_obj_t m5_speaker;
 extern const pwr_obj_t m5_power;
 extern const pwr_obj_t m5_imu;
+extern const pwr_obj_t m5_led;
 extern btn_obj_t m5_btnA;
 extern btn_obj_t m5_btnB;
 extern btn_obj_t m5_btnC;

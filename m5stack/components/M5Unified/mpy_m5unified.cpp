@@ -57,6 +57,7 @@ mp_obj_t m5_getDisplay(mp_obj_t index);
 const spk_obj_t m5_speaker = {&mp_spk_type,       &(M5.Speaker)};
 const pwr_obj_t m5_power   = {&mp_power_type,     &(M5.Power)  };
 const pwr_obj_t m5_imu     = {&mp_imu_type,       &(M5.Imu)    };
+const pwr_obj_t m5_led     = {&mp_led_type,       &(M5.Led)    };
       als_obj_t m5_als     = {&mp_als_type,       &(M5.Als)    };
       btn_obj_t m5_btnA    = {&mp_btn_type,       &(M5.BtnA),   {0}};
       btn_obj_t m5_btnB    = {&mp_btn_type,       &(M5.BtnB),   {0}};
