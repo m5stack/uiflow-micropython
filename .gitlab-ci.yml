@@ -77,8 +77,11 @@ release_job:
     - echo "Releasing the M5Burn..."
     - sudo apt install pipx -y
     - pipx install uv
+    - pipx ensurepath
+    - export PATH="$PATH:$HOME/.local/bin"
     - uv venv
     - source .venv/bin/activate
+    - uv pip install requests
     - python ./tools/release.py
   only:
     refs:
