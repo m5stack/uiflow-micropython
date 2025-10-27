@@ -253,6 +253,7 @@ function ci_esp32_quick_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickC pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Unit_C6L pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PowerHub pack_all
     make ${MAKEOPTS} -C third-party BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
 
@@ -268,6 +269,7 @@ function ci_unit_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_CoreS3 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Tab5 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PowerHub pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
 }
 
@@ -357,6 +359,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_NanoC6 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Paper pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PaperS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_PowerHub pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Stamp_PICO pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StamPLC pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StampS3 pack_all

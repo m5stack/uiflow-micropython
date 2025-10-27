@@ -263,6 +263,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             unit_c6l = UnitC6L_Startup()
             unit_c6l.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5PowerHub:
+            from .powerhub import PowerHub_Startup
+
+            powerhub = PowerHub_Startup()
+            powerhub.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:

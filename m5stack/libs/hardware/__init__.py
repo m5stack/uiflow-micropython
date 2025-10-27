@@ -7,6 +7,7 @@ _attrs = {
     "KeyboardI2C": "keyboard",
     "Button": "button",
     "CAN": "can",
+    "PWRCAN": "can",
     "IR": "ir",
     "LoRa": "lora",
     "MatrixKeyboard": "matrix_keyboard",

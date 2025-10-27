@@ -40,3 +40,6 @@ class CAN(m5can.CAN):
             triple_sampling=triple_sampling,
             baudrate=baudrate // 1000,
         )
+
+
+PWRCAN = CAN
