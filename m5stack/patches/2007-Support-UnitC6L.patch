@@ -1,33 +1,33 @@
-Index: M5Unified/src/M5Unified.cpp
-===================================================================
---- M5Unified.orig/src/M5Unified.cpp
-+++ M5Unified/src/M5Unified.cpp
-@@ -88,6 +88,7 @@ static constexpr const uint8_t _pin_tabl
+diff --git a/src/M5Unified.cpp b/src/M5Unified.cpp
+index 6c79ee8..2ba4e31 100644
+--- a/src/M5Unified.cpp
++++ b/src/M5Unified.cpp
+@@ -94,7 +94,7 @@ static constexpr const uint8_t _pin_table_i2c_ex_in[][5] = {
+ #elif defined (CONFIG_IDF_TARGET_ESP32C3)
  { board_t::board_unknown      , 255        ,255         , GPIO_NUM_0 ,GPIO_NUM_1  },
  #elif defined (CONFIG_IDF_TARGET_ESP32C6)
- { board_t::board_ArduinoNessoN1,GPIO_NUM_8 ,GPIO_NUM_10 , GPIO_NUM_8 ,GPIO_NUM_10 },
+-{ board_t::board_M5UnitC6L     ,GPIO_NUM_8 ,GPIO_NUM_10 , 255        ,255         },
 +{ board_t::board_M5UnitC6L     , 255       , 255        , 255        ,255         },
+ { board_t::board_ArduinoNessoN1,GPIO_NUM_8 ,GPIO_NUM_10 , GPIO_NUM_8 ,GPIO_NUM_10 },
  { board_t::board_unknown      , 255        ,255         , GPIO_NUM_1 ,GPIO_NUM_2  }, // NanoC6
  #elif defined (CONFIG_IDF_TARGET_ESP32P4)
- { board_t::board_M5Tab5       , GPIO_NUM_32,GPIO_NUM_31, GPIO_NUM_54,GPIO_NUM_53 }, // Tab5
-@@ -115,6 +116,7 @@ static constexpr const uint8_t _pin_tabl
+@@ -123,7 +123,7 @@ static constexpr const uint8_t _pin_table_port_bc[][5] = {
+ { board_t::board_M5PowerHub   , 255        ,       255 , GPIO_NUM_1 ,GPIO_NUM_2  },
  #elif defined (CONFIG_IDF_TARGET_ESP32C3)
  #elif defined (CONFIG_IDF_TARGET_ESP32C6)
- { board_t::board_ArduinoNessoN1,GPIO_NUM_4 ,GPIO_NUM_5 , 255        ,255         },
+-{ board_t::board_M5UnitC6L     ,GPIO_NUM_4 ,GPIO_NUM_5 , GPIO_NUM_4 ,GPIO_NUM_5  },
 +{ board_t::board_M5UnitC6L     ,GPIO_NUM_4 ,GPIO_NUM_5 , 255        ,255         },
+ { board_t::board_ArduinoNessoN1,GPIO_NUM_4 ,GPIO_NUM_5 , GPIO_NUM_4 ,GPIO_NUM_5  },
  #elif defined (CONFIG_IDF_TARGET_ESP32P4)
  { board_t::board_M5Tab5       , GPIO_NUM_17,GPIO_NUM_52, GPIO_NUM_7 ,GPIO_NUM_6  }, // Tab5
- #else
-@@ -1320,6 +1322,36 @@ static constexpr const uint8_t _pin_tabl
-         _io_expander[i].reset(ioexp);
-       }
-       break;
-+    case board_t::board_M5UnitC6L:
-+      {
+@@ -1383,9 +1383,32 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
+ #elif defined (CONFIG_IDF_TARGET_ESP32C6)
+     case board_t::board_M5UnitC6L:
+       {
 +        In_SoftI2C.begin(10, 8);
-+        auto ioexp = new PI4IOE5V6408_Class(0x43);
-+        ioexp->begin();
-+        _io_expander[0].reset(ioexp);
+         auto ioexp = new PI4IOE5V6408_Class(0x43);
+         ioexp->begin();
+         _io_expander[0].reset(ioexp);
 +        // user button(P0) input pullup 
 +        _io_expander[0]->setDirection(0, false);
 +        _io_expander[0]->setPullMode(0, true);
@@ -50,32 +50,14 @@ Index: M5Unified/src/M5Unified.cpp
 +        _io_expander[0]->setPullMode(6, false);
 +        _io_expander[0]->setHighImpedance(6, false);
 +        _io_expander[0]->digitalWrite(6, true);
-+      }
-+      break;
- #elif defined (CONFIG_IDF_TARGET_ESP32S3)
-     case board_t::board_M5StampPLC:
-       {
-@@ -1679,7 +1711,14 @@ static constexpr const uint8_t _pin_tabl
-           spk_cfg.magnification = 48;
-         }
-         break;
--
-+      case board_t::board_M5UnitC6L:
-+        if (cfg.internal_spk)
-+        {
-+          spk_cfg.pin_data_out = GPIO_NUM_11;
-+          spk_cfg.buzzer = true;
-+          spk_cfg.magnification = 16;
-+        }
-+        break;
- #elif defined (CONFIG_IDF_TARGET_ESP32P4)
-       case board_t::board_M5Tab5:
-         if (cfg.internal_spk)
-@@ -2307,7 +2346,14 @@ static constexpr const uint8_t _pin_tabl
-                         ;
+       }
        break;
-     }
--
+     case board_t::board_ArduinoNessoN1:
+@@ -2323,6 +2346,15 @@ static constexpr const uint8_t _pin_table_mbus[][31] = {
+       btn_rawstate_bits |= (( raw_gpio32_39 >> (GPIO_NUM_37 & 31)) & 1    )  // gpio37 A
+                          | (((raw_gpio32_39 >> (GPIO_NUM_39 & 31)) & 1)<<1); // gpio39 B
+       break;
++    
 +    case board_t::board_M5UnitC6L:
 +    {
 +      use_rawstate_bits = 0b00001;
@@ -84,21 +66,25 @@ Index: M5Unified/src/M5Unified.cpp
 +      btn_rawstate_bits = (!(value & 0b00001) ? 0b00001 : 0); // BtnA
 +      break;
 +    }
+ 
      default:
        break;
-     }
-Index: M5Unified/src/utility/IOExpander_Base.hpp
-===================================================================
---- M5Unified.orig/src/utility/IOExpander_Base.hpp
-+++ M5Unified/src/utility/IOExpander_Base.hpp
-@@ -6,15 +6,28 @@
+diff --git a/src/utility/IOExpander_Base.hpp b/src/utility/IOExpander_Base.hpp
+index 93bade7..e7b6039 100644
+--- a/src/utility/IOExpander_Base.hpp
++++ b/src/utility/IOExpander_Base.hpp
+@@ -3,18 +3,31 @@
  
+ #ifndef __M5_IOEXPANDER_BASE_H__
+ #define __M5_IOEXPANDER_BASE_H__
+-
  #include <stdint.h>
  #include "I2C_Class.hpp"
+ 
 +#if CONFIG_IDF_TARGET_ESP32C6
 +#include "SoftI2C_Class.hpp"
 +#endif
- 
++
  namespace m5
  {
 +
@@ -120,10 +106,10 @@ Index: M5Unified/src/utility/IOExpander_Base.hpp
      IOExpander_Base(const IOExpander_Base&) = delete;
  
      // false input, true output
-Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
-===================================================================
---- M5Unified.orig/src/utility/PI4IOE5V6408_Class.hpp
-+++ M5Unified/src/utility/PI4IOE5V6408_Class.hpp
+diff --git a/src/utility/PI4IOE5V6408_Class.hpp b/src/utility/PI4IOE5V6408_Class.hpp
+index 97e1a95..cd74b71 100644
+--- a/src/utility/PI4IOE5V6408_Class.hpp
++++ b/src/utility/PI4IOE5V6408_Class.hpp
 @@ -15,6 +15,9 @@
  
  #include "IOExpander_Base.hpp"
@@ -134,10 +120,11 @@ Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
  
  namespace m5
  {
-@@ -24,9 +27,15 @@ namespace m5
+@@ -23,10 +26,15 @@ namespace m5
+   {
    public:
      static constexpr std::uint8_t DEFAULT_ADDRESS = 0x43;
- 
+-
 +#if CONFIG_IDF_TARGET_ESP32C6
 +    PI4IOE5V6408_Class(std::uint8_t i2c_addr = DEFAULT_ADDRESS, std::uint32_t freq = 400000, m5::SoftI2C_Class* i2c = &m5::In_SoftI2C)
 +    : IOExpander_Base(i2c_addr, freq, i2c)
@@ -150,10 +137,11 @@ Index: M5Unified/src/utility/PI4IOE5V6408_Class.hpp
  
      bool begin();
  
-Index: M5Unified/src/utility/SoftI2C_Class.cpp
-===================================================================
+diff --git a/src/utility/SoftI2C_Class.cpp b/src/utility/SoftI2C_Class.cpp
+new file mode 100644
+index 0000000..2dba3a6
 --- /dev/null
-+++ M5Unified/src/utility/SoftI2C_Class.cpp
++++ b/src/utility/SoftI2C_Class.cpp
 @@ -0,0 +1,479 @@
 +// Copyright (c) M5Stack. All rights reserved.
 +// Licensed under the MIT license. See LICENSE file in the project root for full license information.
@@ -634,10 +622,12 @@ Index: M5Unified/src/utility/SoftI2C_Class.cpp
 +  }
 +
 +} // namespace m5
-Index: M5Unified/src/utility/SoftI2C_Class.hpp
-===================================================================
+\ No newline at end of file
+diff --git a/src/utility/SoftI2C_Class.hpp b/src/utility/SoftI2C_Class.hpp
+new file mode 100644
+index 0000000..a466704
 --- /dev/null
-+++ M5Unified/src/utility/SoftI2C_Class.hpp
++++ b/src/utility/SoftI2C_Class.hpp
 @@ -0,0 +1,214 @@
 +// Copyright (c) M5Stack. All rights reserved.
 +// Licensed under the MIT license. See LICENSE file in the project root for full license information.
