@@ -40,7 +40,7 @@ const mp_obj_type_t mp_power_port_mask_enum = {
 
 MAKE_METHOD_KW(power, setExtOutput, 1);
 MAKE_METHOD_0(power, getExtOutput);
-MAKE_METHOD_KW(power, setExtPortBusConfig, 4);
+MAKE_METHOD_KW(power, setExtPortBusConfig, 1);
 MAKE_METHOD_1(power, getExtVoltage);
 MAKE_METHOD_1(power, getExtCurrent);
 MAKE_METHOD_KW(power, setUsbOutput, 1);
