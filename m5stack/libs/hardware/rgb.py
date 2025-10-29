@@ -6,6 +6,7 @@ import M5
 from driver.neopixel import NeoPixel
 from driver.neopixel.ws2812 import WS2812
 from driver.neopixel.sk6812 import SK6812
+from driver.neopixel.powerhub_rgb import PowerHubRGB
 import machine
 
 
@@ -63,6 +64,9 @@ class RGB:
                 return cls._instance
             elif board_id == M5.BOARD.M5UnitC6L:
                 cls._instance = WS2812(io=2, n=1)
+                return cls._instance
+            elif board_id == M5.BOARD.M5PowerHub:
+                cls._instance = PowerHubRGB()
                 return cls._instance
             else:
                 pass

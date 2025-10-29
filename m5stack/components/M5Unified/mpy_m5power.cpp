@@ -53,13 +53,13 @@ namespace m5
     }
 
     mp_obj_t power_setExtPortBusConfig(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
-        enum {ARG_voltage, ARG_current_limit, ARG_enable, ARG_direction};
+        enum {ARG_direction, ARG_output_enable, ARG_voltage, ARG_current_limit};
         const mp_arg_t allowed_args[] = {
             /* *FORMAT-OFF* */
-            { MP_QSTR_voltage,       MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 3000} },
-            { MP_QSTR_current_limit, MP_ARG_INT | MP_ARG_REQUIRED, {.u_int = 232} },
-            { MP_QSTR_enable,        MP_ARG_BOOL | MP_ARG_REQUIRED, {.u_bool = true} },
-            { MP_QSTR_direction,     MP_ARG_INT,                    {.u_int = 0}  },
+            { MP_QSTR_direction,     MP_ARG_INT | MP_ARG_REQUIRED , {.u_int = 0} },
+            { MP_QSTR_output_enable, MP_ARG_INT , {.u_int = 1} },
+            { MP_QSTR_voltage,       MP_ARG_INT , {.u_int = 3000} },
+            { MP_QSTR_current_limit, MP_ARG_INT , {.u_int = 232} },
             /* *FORMAT-ON* */
         };
         mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
@@ -69,7 +69,7 @@ namespace m5
         ext_port_bus_t cfg;
         cfg.voltage = args[ARG_voltage].u_int;
         cfg.currentLimit = args[ARG_current_limit].u_int;
-        cfg.enable = args[ARG_enable].u_bool;
+        cfg.enable = args[ARG_output_enable].u_int;
         cfg.direction = args[ARG_direction].u_int;
 
         getPower(pos_args[0])->setExtPortBusConfig(cfg);
