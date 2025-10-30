@@ -293,7 +293,11 @@ class DownloadView:
         else:
             self.rgb = RGB()
             if self.rgb:
-                self.rgb.set_color(0, self.COLOR_YELLOW)
+                if M5.getBoard() == M5.BOARD.M5PowerHub:
+                    _rgb_index = 5
+                else:
+                    _rgb_index = 0
+                self.rgb.set_color(_rgb_index, self.COLOR_YELLOW)
             else:
                 print("Sync...")
                 print("0%")
@@ -309,9 +313,13 @@ class DownloadView:
             self.progress_label.set_text(f"{percent}%")
         else:
             if self.rgb:
-                self.rgb.set_color(0, self.COLOR_BLACK)
+                if M5.getBoard() == M5.BOARD.M5PowerHub:
+                    _rgb_index = 5
+                else:
+                    _rgb_index = 0
+                self.rgb.set_color(_rgb_index, self.COLOR_BLACK)
                 time.sleep(0.02)
-                self.rgb.set_color(0, self.COLOR_BLUE)
+                self.rgb.set_color(_rgb_index, self.COLOR_BLUE)
                 time.sleep(0.02)
             else:
                 print(f"{percent}%")
@@ -321,7 +329,11 @@ class DownloadView:
             self.title_label.set_text("Success")
         else:
             if self.rgb:
-                self.rgb.set_color(0, self.COLOR_GREEN)
+                if M5.getBoard() == M5.BOARD.M5PowerHub:
+                    _rgb_index = 5
+                else:
+                    _rgb_index = 0
+                self.rgb.set_color(_rgb_index, self.COLOR_GREEN)
             else:
                 print("Success")
         time.sleep(1)
@@ -331,7 +343,11 @@ class DownloadView:
             self.title_label.set_text("Failed")
         else:
             if self.rgb:
-                self.rgb.set_color(0, self.COLOR_RED)
+                if M5.getBoard() == M5.BOARD.M5PowerHub:
+                    _rgb_index = 5
+                else:
+                    _rgb_index = 0
+                self.rgb.set_color(_rgb_index, self.COLOR_RED)
             else:
                 print("Failed")
 
