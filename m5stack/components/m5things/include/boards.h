@@ -150,7 +150,7 @@ const char *boards[] = {
     "atoms3r-ext",    // 143
     "atoms3r-cam",    // 144
     "atom-echos3r",   // 145
-    "unknown",        // 146
+    "powerhub",       // 146
     "unknown",        // 147
     "unknown",        // 148
     "unknown",        // 149
