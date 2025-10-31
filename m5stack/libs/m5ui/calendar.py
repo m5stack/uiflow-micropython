@@ -47,6 +47,10 @@ class M5Calendar(lv.calendar):
         self.set_pos(x, y)
         self.set_size(w, h)
         self.set_calendar_style(style)
+        if style == "dropdown":
+            self.header_dropdown_set_year_list(
+                "\n".join(str(year) for year in range(show_month[0], 1999, -1))
+            )
         self.set_today_date(*today_date)
         self.set_month_shown(*show_month)
 

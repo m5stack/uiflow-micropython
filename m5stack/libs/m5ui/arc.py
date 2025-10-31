@@ -107,6 +107,9 @@ class M5Arc(lv.arc):
             self.set_style_arc_color(color, part)
             self.set_style_arc_opa(opa, part)
 
+    def set_range(self, min_value: int, max_value: int) -> None:
+        super().set_range(min(min_value, max_value), max(min_value, max_value))
+
     def set_style_radius(self, radius: int, part: int) -> None:
         if radius < 0:
             raise ValueError("Radius must be a non-negative integer.")
