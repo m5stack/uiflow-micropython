@@ -15,7 +15,7 @@ class MiniScaleUnit:
     def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = 0x26):
         self.i2c = i2c
         self.addr = address
-        self.tare = 0
+        self._tare = 0
         self._available()
 
     def _available(self):
@@ -38,7 +38,7 @@ class MiniScaleUnit:
         """! Get the weight in grams."""
         data = self.i2c.readfrom_mem(self.addr, 0x10, 4)
         result = struct.unpack("<f", data)[0]
-        return result - self.tare
+        return result - self._tare
 
     @property
     def button(self) -> bool:
@@ -48,7 +48,7 @@ class MiniScaleUnit:
 
     def tare(self):
         """! Tare the scale."""
-        self.tare = self.weight
+        self._tare = self.weight
 
     def set_led(self, r: int, g: int, b: int):
         """! Set the RGB LED color.
