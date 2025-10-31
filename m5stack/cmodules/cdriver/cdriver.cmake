@@ -6,10 +6,10 @@ add_library(usermod_DRIVER INTERFACE)
 
 target_sources(usermod_DRIVER INTERFACE
     ${CMAKE_CURRENT_LIST_DIR}/cdriver.c
-    ${CMAKE_CURRENT_LIST_DIR}/max30100/max30100.c
-    ${CMAKE_CURRENT_LIST_DIR}/max30100/driver_max30100.c
-    ${CMAKE_CURRENT_LIST_DIR}/max30102/max30102.c
-    ${CMAKE_CURRENT_LIST_DIR}/max30102/driver_max30102.c
+    # ${CMAKE_CURRENT_LIST_DIR}/max30100/max30100.c
+    # ${CMAKE_CURRENT_LIST_DIR}/max30100/driver_max30100.c
+    # ${CMAKE_CURRENT_LIST_DIR}/max30102/max30102.c
+    # ${CMAKE_CURRENT_LIST_DIR}/max30102/driver_max30102.c
     ${CMAKE_CURRENT_LIST_DIR}/esp_dmx/driver_esp_dmx.c
 )
 

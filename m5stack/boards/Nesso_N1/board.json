@@ -1,0 +1,22 @@
+{
+    "deploy": [
+        "deploy_arduino_n1.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "WiFi",
+        "LoRa",
+        "Buzzer",
+        "RGB LED",
+        "USB"
+    ],
+    "images": [
+        "m5stack_unit_c6l.jpg"
+    ],
+    "mcu": "esp32c6",
+    "product": "Arduino Nesso N1",
+    "url": "https://shop.m5stack.com/products/arduino-nesso-n1",
+    "vendor": "M5Stack"
+}
+

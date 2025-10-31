@@ -11,6 +11,7 @@
 BOARD ?= M5STACK_AtomS3
 
 boards := \
+	Nesso_N1:nesso-n1                \
 	M5STACK_AtomS3:atoms3            \
 	M5STACK_AtomS3_Lite:atoms3-lite  \
 	M5STACK_StampS3:stamps3          \
@@ -55,6 +56,7 @@ endef
 # Board type list
 BOARD_TYPE_DEF := \
 	none        \
+	nesso-n1    \
 	atoms3      \
 	atoms3-lite \
 	stamps3     \
@@ -329,7 +331,8 @@ IDF_PATH_PATCH_SERIES = \
 M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \
 	2007-Support-UnitC6L.patch \
-	2008-Only-use-old-rmt-driver.patch
+	2008-Only-use-old-rmt-driver.patch \
+	2009-fix-SoftI2C.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
@@ -372,7 +375,6 @@ PKG_PATCH_SERIES := $(strip \
 	$(if $(filter esp-idf,$(PKG)),$(IDF_PATH_PATCH_SERIES))                  \
 	$(if $(filter M5Unified,$(PKG)),$(M5UNIFIED_PATCH_SERIES))               \
 	$(if $(filter esp-adf,$(PKG)),$(ADF_PATCH_SERIES))                       \
-	$(if $(filter M5GFX,$(PKG)),$(M5GFX_PATCH_SERIES))                       \
 	$(if $(filter esp32-camera,$(PKG)),$(ESP32_CAMERA_PATCH_SERIES))         \
 )
 # $(info PKG_PATCH_SERIES for $(PKG) is [$(PKG_PATCH_SERIES)])
@@ -395,7 +397,7 @@ patch: unpatch
 	$(call Patch/prepare,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
 	$(call Patch/prepare,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
 	$(call Patch/prepare,$(ADF_PATH),$(ADF_PATCH_SERIES))
-	$(call Patch/prepare,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+# 	$(call Patch/prepare,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
 	$(call Patch/prepare,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))
 
 # Unapply patches
@@ -405,5 +407,5 @@ unpatch:
 	$(call Patch/clean,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
 	$(call Patch/clean,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
 	$(call Patch/clean,$(ADF_PATH),$(ADF_PATCH_SERIES))
-	$(call Patch/clean,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+# 	$(call Patch/clean,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
 	$(call Patch/clean,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))

@@ -24,6 +24,7 @@ class IR:
             M5.BOARD.M5AtomEcho: (None, 12),
             M5.BOARD.M5AtomEchoS3R: (None, 47),
             M5.BOARD.M5NanoC6: (None, 3),
+            M5.BOARD.ArduinoNessoN1: (None, 9),
         }
         (self._rx_pin, self._tx_pin) = _pin_map.get(M5.getBoard())
         if self._tx_pin:

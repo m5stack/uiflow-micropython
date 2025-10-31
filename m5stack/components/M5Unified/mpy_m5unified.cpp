@@ -35,17 +35,30 @@ extern "C"
 {
 #include "mpy_m5unified.h"
 #include "mphalport.h"
-#include <driver/i2c.h>
+
+#define MICROPY_HW_ESP_NEW_I2C_DRIVER 1
+
 // #include <driver/periph_ctrl.h>
+#if MICROPY_HW_ESP_NEW_I2C_DRIVER
+#include "driver/i2c_master.h"
+#else
+#include "driver/i2c.h"
+#include "hal/i2c_ll.h"
+#endif
 
 typedef struct _machine_hw_i2c_obj_t {
     mp_obj_base_t base;
-    i2c_port_t port : 8;
+    i2c_master_bus_handle_t bus_handle;
+    #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 5, 0)
+    i2c_master_dev_handle_t dev_handle;
+    #endif
+    uint8_t port : 8;
     gpio_num_t scl : 8;
     gpio_num_t sda : 8;
+    uint32_t freq;
+    uint32_t timeout_us;
     // Start of modification section, by M5Stack
     uint8_t pos;
-    uint32_t freq;
     // End of modification section, by M5Stack
 } machine_hw_i2c_obj_t;
 
@@ -438,6 +451,19 @@ static void in_i2c_init(void) {
         // } else {
         //     periph_module_enable(PERIPH_I2C1_MODULE);
         // }
+        #if MICROPY_HW_ESP_NEW_I2C_DRIVER
+        i2c_master_bus_handle_t bus_handle;
+        if (i2c_master_get_bus_handle(in_port, &bus_handle) == ESP_ERR_INVALID_STATE) {
+            i2c_master_bus_config_t i2c_bus_config;
+            memset(&i2c_bus_config, 0, sizeof(i2c_bus_config));
+            i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
+            i2c_bus_config.i2c_port = in_port;
+            i2c_bus_config.scl_io_num = in_scl;
+            i2c_bus_config.sda_io_num = in_sda;
+            i2c_bus_config.glitch_ignore_cnt = 7;
+            i2c_new_master_bus(&i2c_bus_config, &bus_handle);
+        }
+        #else
         i2c_config_t conf;
         memset(&conf, 0, sizeof(i2c_config_t));
         conf.mode = I2C_MODE_MASTER;
@@ -449,6 +475,7 @@ static void in_i2c_init(void) {
         // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
         i2c_param_config(in_port, &conf);
         i2c_driver_install(in_port, I2C_MODE_MASTER, 0, 0, 0);
+        #endif
     }
 }
 
