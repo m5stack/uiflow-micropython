@@ -14,6 +14,7 @@ class M5Menu(lv.menu):
     :param int y: The y position of the menu.
     :param int w: The width of the menu.
     :param int h: The height of the menu.
+    :param str page_name: The name of the main page of the menu.
     :param lv.obj parent: The parent object to attach the menu to. If not specified, the menu will be attached to the default screen.
 
     UiFlow2 Code Block:
@@ -37,6 +38,7 @@ class M5Menu(lv.menu):
         y=0,
         w=0,
         h=0,
+        page_name=None,
         parent=None,
     ):
         if parent is None:
@@ -44,7 +46,7 @@ class M5Menu(lv.menu):
         super().__init__(parent)
         self.set_pos(x, y)
         self.set_size(w, h)
-        self.main_page = lv.menu_page(self, None)  # Create a main page
+        self.main_page = lv.menu_page(self, page_name)  # Create a main page
 
     def add_label(
         self,

@@ -7,17 +7,6 @@ from m5ui.button import M5Button
 import lvgl as lv
 
 
-def _button_clicked_event_cb(event_struct):
-    _button = event_struct.get_current_target()
-
-    if not hasattr(_button, "get_parent"):
-        _button = lv.obj.__cast__(_button)
-
-    tv = _button.get_parent().get_parent()
-    idx = _button.get_index()
-    lv.tabview.set_active(tv, idx, False)
-
-
 class M5TabView(lv.tabview):
     """Create a TabView object.
 
@@ -63,6 +52,17 @@ class M5TabView(lv.tabview):
         self.set_tab_bar_size(bar_size)
         self.tab_num = 0
 
+    @staticmethod
+    def _button_clicked_event_cb(event_struct):
+        _button = event_struct.get_current_target()
+
+        if not hasattr(_button, "get_parent"):
+            _button = lv.obj.__cast__(_button)
+
+        tv = _button.get_parent().get_parent()
+        idx = _button.get_index()
+        lv.tabview.set_active(tv, idx, False)
+
     def add_tab(self, text):
         """Add a tab to the tab view.
 
@@ -89,7 +89,7 @@ class M5TabView(lv.tabview):
             parent=self.get_tab_bar(),
         )
         _button.set_flex_grow(1)
-        _button.add_event_cb(_button_clicked_event_cb, lv.EVENT.CLICKED, None)
+        _button.add_event_cb(self._button_clicked_event_cb, lv.EVENT.CLICKED, None)
 
         _cont = self.get_content()
         _page = lv.obj(_cont)
