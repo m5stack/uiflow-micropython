@@ -23,7 +23,7 @@
 #include "esp_codec_dev.h"
 #include "esp_codec_dev_defaults.h"
 
-#if 0 //ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0)
+#if (ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 3, 0))
 #include "driver/i2c_master.h"
 #define USE_IDF_I2C_MASTER
 #else

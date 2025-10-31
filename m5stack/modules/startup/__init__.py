@@ -268,6 +268,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             powerhub = PowerHub_Startup()
             powerhub.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.ArduinoNessoN1:
+            from .nesson1 import NessoN1_Startup
+
+            nesson1 = NessoN1_Startup()
+            nesson1.startup(ssid, pswd, timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:

@@ -11,6 +11,15 @@ extern "C" {
     // #include <driver/periph_ctrl.h>
     #include "esp_log.h"
 
+    #define MICROPY_HW_ESP_NEW_I2C_DRIVER 1
+
+    #if MICROPY_HW_ESP_NEW_I2C_DRIVER
+    #include "driver/i2c_master.h"
+    #else
+    #include "driver/i2c.h"
+    #include "hal/i2c_ll.h"
+    #endif
+
     static void in_i2c_init(void)
     {
         gpio_num_t in_scl = (gpio_num_t)M5.getPin(m5::pin_name_t::in_i2c_scl);
@@ -29,6 +38,19 @@ extern "C" {
 
         if (in_scl != GPIO_NUM_NC || in_sda != GPIO_NUM_NC) {
             ESP_LOGI("BOARD", "Internal I2C(%d) init", in_port);
+#if MICROPY_HW_ESP_NEW_I2C_DRIVER
+        i2c_master_bus_handle_t bus_handle;
+        if (i2c_master_get_bus_handle(in_port, &bus_handle) == ESP_ERR_INVALID_STATE) {
+            i2c_master_bus_config_t i2c_bus_config;
+            memset(&i2c_bus_config, 0, sizeof(i2c_bus_config));
+            i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
+            i2c_bus_config.i2c_port = in_port;
+            i2c_bus_config.scl_io_num = in_scl;
+            i2c_bus_config.sda_io_num = in_sda;
+            i2c_bus_config.glitch_ignore_cnt = 7;
+            i2c_new_master_bus(&i2c_bus_config, &bus_handle);
+        }
+#else
             i2c_config_t conf;
             memset(&conf, 0, sizeof(i2c_config_t));
             conf.mode = I2C_MODE_MASTER;
@@ -40,6 +62,7 @@ extern "C" {
             // .clk_flags = 0,          /*!< Optional, you can use I2C_SCLK_SRC_FLAG_* flags to choose i2c source clock here. */
             i2c_param_config(in_port, &conf);
             i2c_driver_install(in_port, I2C_MODE_MASTER, 0, 0, 0);
+#endif
         }
     }
 

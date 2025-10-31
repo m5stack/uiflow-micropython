@@ -18,7 +18,7 @@ file(GLOB SRCS
     M5GFX/src/lgfx/v1/panel/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32c3/*.cpp
-    # M5GFX/src/lgfx/v1/platforms/esp32s3/*.cpp
+    M5GFX/src/lgfx/v1/platforms/esp32s3/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32p4/*.cpp
     M5GFX/src/lgfx/v1/touch/*.cpp
     M5Unified/src/*.cpp
