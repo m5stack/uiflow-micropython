@@ -41,6 +41,7 @@ boards := \
 	M5STACK_Atom_Echo:atomecho       \
 	M5STACK_AtomS3R:atoms3r          \
 	M5STACK_AtomS3R_CAM:atoms3r_cam  \
+	M5STACK_Atom_EchoS3R:atom_echos3r\
 	M5STACK_StamPLC:stamplc          \
 	M5STACK_Tab5:tab5                \
 	M5STACK_CardputerADV:cardputeradv\
@@ -83,6 +84,7 @@ BOARD_TYPE_DEF := \
 	atomecho    \
 	atoms3r     \
 	atoms3r_cam \
+	atom_echos3r\
 	stamplc     \
 	tab5        \
 	cardputeradv\
