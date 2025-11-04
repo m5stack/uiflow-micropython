@@ -1,0 +1,255 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-04 12:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/controllers/dualkey.rst:3 ../../en/refs/controllers.dualkey.ref
+#: e4c13a15d6874e16a42ab035bfe72ce8 f73c1408caa14e70acd68623e90f4e55
+msgid "DualKey"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:7 154cd974d9d84778a6b0fcad1dc417d8
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/controllers/dualkey.rst:9 03effb497bc04374b9488d1ad8e92db4
+msgid "|DualKey|"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:12 c0a9746f142b4b54aa071d62e11012d9
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/controllers/dualkey.rst:15 ../../en/controllers/dualkey.rst:63
+#: de5c74d187b3418bbe99dcba4b570200
+msgid "Button LED Control"
+msgstr "按钮 LED 控制"
+
+#: ../../en/controllers/dualkey.rst:17 4806ebbd2acc46beb486e4c2d0a5ddc4
+msgid "Open the |dualkey_button_led_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |dualkey_button_led_example.m5f2| 项目。"
+
+#: ../../en/controllers/dualkey.rst:19 ../../en/controllers/dualkey.rst:65
+#: d57d781a800e42718fc4db9578ff4241
+msgid ""
+"This example demonstrates button callback functions to toggle RGB LEDs. "
+"When the left button (BtnA) is clicked, it toggles the left RGB LED (LED "
+"0). When the right button (BtnB) is clicked, it toggles the right RGB LED"
+" (LED 1)."
+msgstr ""
+"该示例演示了使用按钮回调函数来切换 RGB LED 灯。当点击左侧按钮（BtnA）时，"
+"它会切换左侧 RGB LED（LED 0）。当点击右侧按钮（BtnB）时，它会切换右侧 RGB "
+"LED（LED 1）。"
+
+#: ../../en/controllers/dualkey.rst:21 ../../en/controllers/dualkey.rst:36
+#: ../../en/controllers/dualkey.rst:51 ../../en/controllers/dualkey.rst:134
+#: ../../en/controllers/dualkey.rst:152 ../../en/controllers/dualkey.rst:170
+#: ../../en/controllers/dualkey.rst:193 24cf82f98e8d4b01bec77b96285a4111
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/controllers/dualkey.rst:23 d261453da55e4802ac303640872291f5
+msgid "|dualkey_button_led_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:10 743478e872f24e359f282e2b75f2a54b
+msgid "dualkey_button_led_example.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:25 ../../en/controllers/dualkey.rst:40
+#: ../../en/controllers/dualkey.rst:55 ../../en/controllers/dualkey.rst:73
+#: ../../en/controllers/dualkey.rst:88 ../../en/controllers/dualkey.rst:105
+#: 31b808407f8840fdb30e1ece69185b49
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/controllers/dualkey.rst:27 ../../en/controllers/dualkey.rst:42
+#: ../../en/controllers/dualkey.rst:57 ../../en/controllers/dualkey.rst:75
+#: ../../en/controllers/dualkey.rst:90 ../../en/controllers/dualkey.rst:107
+#: c6371c147a284e45b63d632162fa5458
+msgid "None"
+msgstr "无"
+
+#: ../../en/controllers/dualkey.rst:30 ../../en/controllers/dualkey.rst:78
+#: 5560865a95bb43efa5c5e032ba1e7868
+msgid "Power Detection"
+msgstr "电源检测"
+
+#: ../../en/controllers/dualkey.rst:32 3dd6fad48873462683884692789fedd0
+msgid "Open the |dualkey_power_detection_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |dualkey_power_detection_example.m5f2| 项目。"
+
+#: ../../en/controllers/dualkey.rst:34 ../../en/controllers/dualkey.rst:80
+#: 6e9b5dab66fb45b4a7d2dc1ed6a53724
+msgid ""
+"This example demonstrates battery voltage monitoring and switch position "
+"detection. It reads the switch position (left/middle/right) and displays "
+"corresponding RGB LED colors, while also periodically reading and "
+"displaying the battery voltage in millivolts."
+msgstr ""
+"该示例演示了电池电压监测和开关位置检测。它读取开关位置（左/中/右）并显示相应"
+"的 RGB LED 颜色，同时定期读取并显示电池电压（单位为毫伏）。"
+
+#: ../../en/controllers/dualkey.rst:38 6f560b6a97104145ae50c87fb134be54
+msgid "|dualkey_power_detection_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:11 aef003d0f24448db9a392e368b6c8442
+msgid "dualkey_power_detection_example.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:45 ../../en/controllers/dualkey.rst:93
+#: b15ab69765164d5799e1af3917a27a6f
+msgid "USB Mouse"
+msgstr "USB 鼠标"
+
+#: ../../en/controllers/dualkey.rst:47 d0e0cc21ea58486aa571ae203aad3013
+msgid "Open the |dualkey_usb_mouse_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |dualkey_usb_mouse_example.m5f2| 项目。"
+
+#: ../../en/controllers/dualkey.rst:49 ../../en/controllers/dualkey.rst:95
+#: f8cb6d3cb543449d803fa6654a777316
+msgid ""
+"This example demonstrates USB HID mouse functionality with button-"
+"triggered clicks. When the left button (BtnA) is clicked, it sends a left"
+" mouse click and lights up the left RGB LED. When the right button (BtnB)"
+" is clicked, it sends a right mouse click and lights up the right RGB "
+"LED. The LEDs automatically turn off after 300ms."
+msgstr ""
+"该示例演示了通过按钮触发点击的 USB HID 鼠标功能。当点击左侧按钮（BtnA）时，"
+"它会发送左键点击并点亮左侧 RGB LED。当点击右侧按钮（BtnB）时，它会发送右键点"
+"击并点亮右侧 RGB LED。LED 会在 300ms 后自动熄灭。"
+
+#: ../../en/controllers/dualkey.rst:53 9f2bf3a3a39e444b9d57bf4d7309adee
+msgid "|dualkey_usb_mouse_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:12 0a8222a51bd9435d877126afa8ce33fe
+msgid "dualkey_usb_mouse_example.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:60 ec7a8e00cd8348b2800002710548a0e2
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/controllers/dualkey.rst:67 ../../en/controllers/dualkey.rst:82
+#: ../../en/controllers/dualkey.rst:99 ../../en/controllers/dualkey.rst:121
+#: ../../en/controllers/dualkey.rst:138 ../../en/controllers/dualkey.rst:156
+#: ../../en/controllers/dualkey.rst:174 ../../en/controllers/dualkey.rst:197
+#: 42dfa851cd7841ae86088232367fce66
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/controllers/dualkey.rst:97 36281075562d4446b0de8cdddbcf3e08
+msgid ""
+"When USB mouse is initialized, the USB-CDC REPL may disconnect. You may "
+"need to reconnect to the device after running this example."
+msgstr "当 USB 鼠标初始化时，USB-CDC REPL 可能会断开连接。运行此示例后，您可能需要重新连接到设备。"
+
+#: ../../en/controllers/dualkey.rst:110 72f176508f994cbabb37facfc9ddfbb8
+msgid "**API**"
+msgstr "API应用"
+
+#: ../../en/controllers/dualkey.rst:113 d3f40afa51564451a526289bf31cb2da
+msgid "class DualKey"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:117 e2cf79576cff4404bf41e79f157043a0
+msgid "DualKey module - voltage and switch detection (singleton)."
+msgstr "DualKey 模块
+
+#: ../../en/controllers/dualkey.rst:119 2e43741bbbf849ff88746031081b63fa
+msgid ""
+"The DualKey class is a singleton that provides methods to monitor battery"
+" voltage, VBUS voltage, charging status, and switch position."
+msgstr "DualKey 类是一个单例，提供了监控电池电压、VBUS 电压、充电状态和开关位置的方法。"
+
+#: ../../en/controllers/dualkey.rst:129 93cb46d24ea74376a86dcfd240610731
+msgid "Get battery voltage."
+msgstr "获取电池电压。"
+
+#: ../../en/controllers/dualkey.rst c0f4c19441214046bd2d58f5967223e8
+msgid "Returns"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:131 eef8d0ebc97e453ba49d77528c094f2a
+msgid "Battery voltage value in millivolts (mV)."
+msgstr "电池电压值，单位为毫伏 (mV)。"
+
+#: ../../en/controllers/dualkey.rst 9bcaa3f732814e23a46fef92687094ba
+msgid "Return type"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:136 a389dab8cec6442d9803e239dd7c407b
+msgid "|get_battery_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:5 8b82c0ab35c14fedab4c952fc8ddbed3
+msgid "get_battery_voltage.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:147 f43407de190f49dba59045f346a3c180
+msgid "Get VBUS(USB power) voltage."
+msgstr "获取 VBUS（USB 电源）电压。"
+
+#: ../../en/controllers/dualkey.rst:149 d63cc156c5944d6992b363042c309cf0
+msgid "VBUS voltage value in millivolts (mV)."
+msgstr "VBUS 电压值，单位为毫伏 (mV)。"
+
+#: ../../en/controllers/dualkey.rst:154 f2f8e08444b244a2a8b13d740741bf88
+msgid "|get_vbus_voltage.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:6 8b82c0ab35c14fedab4c952fc8ddbed3
+msgid "get_vbus_voltage.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:165 ffd06617766b4177b2716358b12d0c8d
+msgid "Check if the device is charging."
+msgstr "检测设备是否正在充电。"
+
+#: ../../en/controllers/dualkey.rst:167 4832efe33093475f948fefe38e6ae737
+msgid "Returns `True` if charging, `False` if not charging."
+msgstr "如果正在充电返回 `True`，如果未在充电返回 `False`。"
+
+#: ../../en/controllers/dualkey.rst:172 1b948cc9873e4b18b9a575e478394e40
+msgid "|is_charging.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:7 3e6a72b2aea047e4a1955a643936a3dc
+msgid "is_charging.png"
+msgstr ""
+
+#: ../../en/controllers/dualkey.rst:185 bd7e99d1e2b94d7c9ab05730ef5d7ad4
+msgid "Get switch position."
+msgstr "获取开关位置。"
+
+#: ../../en/controllers/dualkey.rst:187 101cccb82b32403f968b9c45f18462d3
+msgid "Switch position value: - ``0``: left - ``1``: middle - ``2``: right"
+msgstr "开关位置值：- ``0``: 左侧 - ``1``: 中间 - ``2``: 右侧"
+
+#: ../../en/controllers/dualkey.rst:195 6cddf9d9f3c44e659e26cd46f443b569
+msgid "|get_switch_position.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.dualkey.ref:8 9e3d887bfc6c4271aeeae2338ed76dd5
+msgid "get_switch_position.png"
+msgstr ""
+

@@ -10,6 +10,7 @@ package(
         "keyboard/asciimap.py",
         "button.py",
         "can.py",
+        "dualkey.py",
         "ir.py",
         "lora.py",
         "matrix_keyboard.py",
