@@ -68,6 +68,11 @@ class RGB:
             elif board_id == M5.BOARD.M5PowerHub:
                 cls._instance = PowerHubRGB()
                 return cls._instance
+            elif board_id == M5.BOARD.M5DualKey:
+                pin = machine.Pin(40, machine.Pin.OUT)  # Power Enable
+                pin.value(1)
+                cls._instance = WS2812(io=21, n=2)  # RGB Data
+                return cls._instance
             else:
                 pass
         else:

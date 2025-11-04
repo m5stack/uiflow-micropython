@@ -125,6 +125,11 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             atom_echos3r = AtomEchoS3R_Startup()
             atom_echos3r.startup(ssid, pswd, timeout)
+        elif board_id == M5.BOARD.M5DualKey:
+            from .dualkey import DualKey_Startup
+
+            dualkey = DualKey_Startup()
+            dualkey.startup(ssid, pswd, timeout)
         elif board_id == M5.BOARD.M5AtomMatrix:
             from .atommatrix import AtomMatrix_Startup
 

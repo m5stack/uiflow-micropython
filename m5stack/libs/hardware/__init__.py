@@ -21,6 +21,7 @@ _attrs = {
     "SDCard": "sdcard",
     "SEN55": "sen55",
     "SHT30": "sht30",
+    "dualkey": "dualkey",
 }
 
 
