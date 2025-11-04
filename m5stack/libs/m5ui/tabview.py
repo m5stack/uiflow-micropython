@@ -116,6 +116,9 @@ class M5TabView(lv.tabview):
         if pos < self.tab_num:
             super().rename_tab(pos, txt)
 
+    def get_tab_active(self) -> int:
+        return super().get_tab_active() + 1
+
     def __getattr__(self, name):
         if hasattr(M5Base, name):
             method = getattr(M5Base, name)
