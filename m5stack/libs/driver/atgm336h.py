@@ -35,9 +35,9 @@ class ATGM336H:
     def __init__(self, id: Literal[0, 1, 2], tx: int, rx: int, pps=None, rst=None, verbose=False):
         self.mode = 0
         self.antenna_state = "0"
-        self.gps_time = ["00", "00", "00"]
-        self.gps_date = ["00", "00", "00"]
-        self.gps_date_time = ["00", "00", "00", "00", "00", "00"]
+        self.utc_time = ["00", "00", "00"]
+        self.utc_date = ["00", "00", "00"]
+        self.utc_date_time = ["00", "00", "00", "00", "00", "00"]
         self.timestamp = 0
         self.latitude = "0N"
         self.longitude = "0E"
@@ -47,6 +47,7 @@ class ATGM336H:
         self.course_ground_degree = "0"
         self.speed_ground_knot = "0"
         self.time_offset = 0
+        self.local_dt = ["00", "00", "00", "00", "00", "00"]
         self.verbose = verbose
         self.rst = rst
         if self.rst:
@@ -131,13 +132,13 @@ class ATGM336H:
 
                 gps_0.get_gps_time()
         """
-        return self.gps_time
+        return self.local_dt[3:6]
 
     def get_gps_date(self):
         """
         Get the current GPS date.
 
-        :returns: The GPS date as a list of strings [day, month, year].
+        :returns: The GPS date as a list of strings [year, month, day].
         :rtype: list[str]
 
         UiFlow2 Code Block:
@@ -150,7 +151,7 @@ class ATGM336H:
 
                 gps_0.get_gps_date()
         """
-        return self.gps_date
+        return self.local_dt[0:3]
 
     def get_gps_date_time(self):
         """
@@ -169,7 +170,7 @@ class ATGM336H:
 
                 gps_0.get_gps_date_time()
         """
-        return self.gps_date_time
+        return self.get_gps_date() + self.get_gps_time()
 
     def get_timestamp(self) -> int | float:
         """
@@ -402,8 +403,8 @@ class ATGM336H:
         gps_list = data.split(",")
         if gps_list[2] == "A":
             time_buf = gps_list[1]
-            self.gps_time = [
-                int(time_buf[0:2]) + self.time_offset,
+            self.utc_time = [
+                int(time_buf[0:2]),
                 int(time_buf[2:4]),
                 int(time_buf[4:6]),
             ]
@@ -412,20 +413,20 @@ class ATGM336H:
             self.speed_ground_knot = gps_list[7]
             self.course_ground_degree = gps_list[8]
             data_buf = gps_list[9]
-            self.gps_date = [int(data_buf[4:7]) + 2000, int(data_buf[2:4]), int(data_buf[0:2])]
+            self.utc_date = [int(data_buf[4:7]) + 2000, int(data_buf[2:4]), int(data_buf[0:2])]
             t = (
-                self.gps_date[0],
-                self.gps_date[1],
-                self.gps_date[2],
-                self.gps_time[0] - self.time_offset,
-                self.gps_time[1],
-                self.gps_time[2],
+                self.utc_date[0],
+                self.utc_date[1],
+                self.utc_date[2],
+                self.utc_time[0],
+                self.utc_time[1],
+                self.utc_time[2],
                 0,
                 0,
             )
-            self.gps_date_time = self.gps_date + self.gps_time
-            buf = time.mktime(t)
-            self.timestamp = buf
+            self.utc_date_time = self.utc_date + self.utc_time
+            self.timestamp = time.mktime(t)
+            self.local_dt = time.localtime(self.timestamp + self.time_offset * 3600)
 
     def _convert_to_decimal(self, degrees_minutes, direction, latitude: bool = True) -> float:
         if latitude:
