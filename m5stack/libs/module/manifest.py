@@ -9,6 +9,7 @@ package(
         "ain4.py",
         "audio.py",
         "bala2.py",
+        "cc1101.py",
         "commu.py",
         "dc_motor.py",
         "display.py",

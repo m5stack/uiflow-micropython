@@ -10,6 +10,7 @@ package(
         "atecc608b_tngtls/atecc_asn1.py",
         "atecc608b_tngtls/atecc_cert_util.py",
         "atecc608b_tngtls/atecc.py",
+        "cc1101.py",
         "es8311/__init__.py",
         "es8311/reg.py",
         "es8388/__init__.py",

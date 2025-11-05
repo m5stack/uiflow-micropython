@@ -1,0 +1,48 @@
+
+.. |CC1101Module| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1188/M146-main-pictures_01.webp
+    :target: https://docs.m5stack.com/en/products/sku/M146
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/init.png
+.. |init_advanced.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/init_advanced.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_freq.png
+.. |set_bitrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_bitrate.png
+.. |set_freq_dev.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_freq_dev.png
+.. |set_rx_bw.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_rx_bw.png
+.. |set_output_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_output_power.png
+.. |set_preamble_length.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_preamble_length.png
+.. |set_sync_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/set_sync_word.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/send.png
+.. |send_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/send_event.png
+.. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/receive.png
+.. |recv_data_param.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/recv_data_param.png
+.. |start_recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/start_recv.png
+.. |set_rx_irq_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/receive_event.png
+.. |set_tx_irq_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/send_event.png
+.. |standby.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/standby.png
+.. |rx_irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/rx_irq_triggered.png
+.. |tx_irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/tx_irq_triggered.png
+
+
+.. |example_tx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/tx_example.png
+.. |example_rx.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/cc1101/rx_example.png
+
+.. |m5cores3_cc1101_rx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/cc1101/m5cores3_cc1101_rx_example.m5f2"
+        target="_blank"
+    >
+        m5cores3_cc1101_rx_example.m5f2
+    </a>
+
+.. |m5cores3_cc1101_tx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/cc1101/m5cores3_cc1101_tx_example.m5f2"
+        target="_blank"
+    >
+        m5cores3_cc1101_tx_example.m5f2
+    </a>
+
