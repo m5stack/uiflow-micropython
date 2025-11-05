@@ -8,6 +8,7 @@ _attrs = {
     "AIN4Module": "ain4",
     "AudioModule": "audio",
     "Bala2Module": "bala2",
+    "CC1101Module": "cc1101",
     "CommuModuleCAN": "commu",
     "CommuModuleI2C": "commu",
     "CommuModuleRS485": "commu",

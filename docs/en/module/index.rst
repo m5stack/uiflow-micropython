@@ -8,6 +8,7 @@ Module
     ain4.rst
     audio.rst
     bala2.rst
+    cc1101.rst
     commu.rst
     dc_motor.rst
     display.rst
