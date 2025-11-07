@@ -28,6 +28,7 @@ FirewareInfo = namedtuple("FirewareInfo", ["board", "fid", "suffix"])
 fireware_info_table = (
     FirewareInfo("M5STACK_AirQ", "9b14de127a34084d5c8aaedc7e762547", ""),
     FirewareInfo("M5STACK_Atom_Echo", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-ECHO"),
+    FirewareInfo("M5STACK_Atom_EchoS3R", "3c10524d6cf4fdfb4f8790ff56f56219", ""),
     FirewareInfo("M5STACK_Atom_Lite", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-LITE"),
     FirewareInfo("M5STACK_Atom_Matrix", "be2520992ff600ec2b8cf1e79d0229d5", "ATOM-Matrix"),
     FirewareInfo("M5STACK_AtomS3", "b5dcd270f671956482a8f8a363dc5f7d", "ATOMS3"),
