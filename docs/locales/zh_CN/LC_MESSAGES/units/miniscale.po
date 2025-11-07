@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"POT-Creation-Date: 2025-11-07 12:16+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/miniscale.rst:2 cb191df082804ef4a8ff4daaa208f7b9
+#: ../../en/units/miniscale.rst:2 7c77e8b42ed4463f99680d9da858fae7
 msgid "Miniscale Unit"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:6 553b5fe9c6994505a517b4e4240f4072
+#: ../../en/units/miniscale.rst:6 88e5d198bebf4a9f8f2d450d0ea59bb4
 msgid ""
 "The ``Miniscale`` class is designed for interfacing with a mini scale "
 "weight sensor, which includes a HX711 22-bit ADC. This sensor is capable "
@@ -34,299 +34,429 @@ msgstr ""
 "``Miniscale`` 是为微型称重传感器设计的接口，其中包括一个HX711 "
 "22位ADC。此传感器能够测量重量，并且还包括其他功能，如LED控制和各种滤波器。"
 
-#: ../../en/units/miniscale.rst:8 f0bceb30305e4cb4b6fb9b50eee58794
+#: ../../en/units/miniscale.rst:8 f37296c1ddc64868bc9520a209a3f014
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/miniscale.rst:11 b9710dba3ec8471d828122615b69258a
+#: ../../en/units/miniscale.rst:11 1b922bbb8e1f439cae683e8f150e9b3e
 msgid "|MINISCALE|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref 91b21480c07742dd84c62d680fc06a42
+#: ../../en/refs/unit.miniscale.ref 40591d2ddae3492ca95763f1a42e1047
 msgid "MINISCALE"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:15 1b52a066919b4bfd81c9240d2a274090
-msgid "Micropython Example::"
+#: ../../en/units/miniscale.rst:16 a78db993884643999ca7f65612491246
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/units/miniscale.rst:19 ../../en/units/miniscale.rst:52
+#: a78db993884643999ca7f65612491246
+msgid "Basic Example"
+msgstr "基础示例"
+
+#: ../../en/units/miniscale.rst:21 2a5e8a909e0540f69292618d672377ca
+msgid "Open the |m5cores3_miniscales_base_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |m5cores3_miniscales_base_example.m5f2| 项目。"
+
+#: ../../en/units/miniscale.rst:23 ../../en/units/miniscale.rst:54
+#: 05c33406b2244983b01b801b37649df6 8cfb014492654a1db3dc4e640a39e148
+msgid ""
+"This example demonstrates how to read and display weight values from the "
+"MiniScale unit. It sets up an average filter level of 10 for smoother "
+"readings and updates the weight display every second."
+msgstr ""
+"该示例演示了如何从 MiniScale 单元读取和显示重量值。它设置平均滤波等级为 10 "
+"以获得更平滑的读数，并每秒更新一次重量显示。"
+
+#: ../../en/units/miniscale.rst:25 ../../en/units/miniscale.rst:40
+#: ../../en/units/miniscale.rst:95 ../../en/units/miniscale.rst:116
+#: ../../en/units/miniscale.rst:133 ../../en/units/miniscale.rst:150
+#: ../../en/units/miniscale.rst:164 ../../en/units/miniscale.rst:182
+#: ../../en/units/miniscale.rst:196 ../../en/units/miniscale.rst:223
+#: ../../en/units/miniscale.rst:239 ../../en/units/miniscale.rst:256
+#: ../../en/units/miniscale.rst:273 ../../en/units/miniscale.rst:290
+#: ../../en/units/miniscale.rst:309 ../../en/units/miniscale.rst:326
+#: 14c653d05a394673a4dc74b9d6b4d94f 1578872fef644beaa0dfc88cbafe8976
+#: 1a15e069bb394cd2835a4ac1dbdfe7e8 2193f33656304e04b4ee54fbcb769c45
+#: 38461c47d991405a801c173007e59e11 4ead829ecef54b578bd2a6e78efa37c2
+#: 73cfd33313014de89d227b2afc655882 942ae3c05b2645f8913ca620f62df162
+#: 9929f6de35b44cc7acc74dd8453109dc 9a1c69c6ceab47738418c218b96f825f
+#: 9a30dbb99f2c4246b62f10489a5c74a5 9ca1a5ec05a846898e730ea87aef0ad0
+#: a4b3d0391ebb4d85a7e99a0c7031d6e7 c1fd596ddd694911b2bd198b18c7f18d
+#: cccc641f741b4bed9a7f691daed2c10d d433503ed3d8426886c10b19f7e132e7
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/miniscale.rst:27 87be289caafe45f6a7c7064861f3ac3f
+msgid "|m5cores3_miniscales_base_example.png|"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:29 9fee616278fc4b89864b4e4a56b24619
-msgid "UIFLOW2 Example:"
+#: ../../en/refs/unit.miniscale.ref:21 787936fd9546470ca3acbc0107542b32
+msgid "m5cores3_miniscales_base_example.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:31 cdc1b0091a5e4522ac0c3dd3514167eb
-msgid "|example.png|"
+#: ../../en/units/miniscale.rst:29 ../../en/units/miniscale.rst:44
+#: ../../en/units/miniscale.rst:62 ../../en/units/miniscale.rst:77
+#: 34e81d316305457b90b4897dfbd10b55 ac5c9812d98e4b169145504f96f82453
+#: f07f478f94e84109a44836932a60a300 f4413aab1ceb4147b62478ef4343875a
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/miniscale.rst:31 ../../en/units/miniscale.rst:46
+#: ../../en/units/miniscale.rst:64 ../../en/units/miniscale.rst:79
+#: 58b81e5fb56049fda9220db18e10a680 b4d5ab989e594dc193c4b69dd639c20c
+#: c1b6bd64f82145c3a59278f3d4e0a13e d49892787f964396aa3e7cc585cd5ad9
+msgid "None"
+msgstr "无"
+
+#: ../../en/units/miniscale.rst:34 ../../en/units/miniscale.rst:67
+#: ac36cc4bd8474c0d980fb79403e42553
+msgid "Calibration Example"
+msgstr "校准示例"
+
+#: ../../en/units/miniscale.rst:36 2bc980a47b6b4c4b85524a4d534e4e21
+msgid "Open the |m5cores3_miniscales_calibrate_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |m5cores3_miniscales_calibrate_example.m5f2| 项目。"
+
+#: ../../en/units/miniscale.rst:38 ../../en/units/miniscale.rst:69
+#: 096b3c83272643c68324115fdb914493 1ff8ee98e1174805a9d1a220df480ad5
+msgid ""
+"This example demonstrates the complete calibration process for the "
+"MiniScale unit. It guides users through a three-step calibration: first "
+"removing all items and recording the zero-point ADC value, then placing a"
+" 100g weight and recording that ADC value, and finally performing tare "
+"operation to set the zero point. After calibration, the weight is "
+"displayed with an average filter level of 5."
+msgstr ""
+"该示例演示了 MiniScale 单元的完整校准过程。它引导用户完成三步校准：首先移除所有"
+"物品并记录零点 ADC 值，然后放置 100g 重量并记录该 ADC 值，最后执行去皮操作以设"
+"置零点。校准后，重量以平均滤波等级 5 显示。"
+
+#: ../../en/units/miniscale.rst:42 68ae0df140194f9c99e109180cdf510d
+msgid "|m5cores3_miniscales_calibrate_example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:34 09c6f381d09e47b38a2b435d1da06254
-msgid "example.png"
+#: ../../en/refs/unit.miniscale.ref:23 61abf029092e4a42b2cc65b20c91e08f
+msgid "m5cores3_miniscales_calibrate_example.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:38 e646f58bb6f244ebbb7955f910c2f05a
+#: ../../en/units/miniscale.rst:49 49ef68234a4c4fae93bb6cda3e5d52e3
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/units/miniscale.rst:56 ../../en/units/miniscale.rst:71
+#: ../../en/units/miniscale.rst:99 ../../en/units/miniscale.rst:120
+#: ../../en/units/miniscale.rst:137 ../../en/units/miniscale.rst:154
+#: ../../en/units/miniscale.rst:168 ../../en/units/miniscale.rst:186
+#: ../../en/units/miniscale.rst:200 ../../en/units/miniscale.rst:227
+#: ../../en/units/miniscale.rst:243 ../../en/units/miniscale.rst:260
+#: ../../en/units/miniscale.rst:277 ../../en/units/miniscale.rst:294
+#: ../../en/units/miniscale.rst:313 ../../en/units/miniscale.rst:330
+#: 49ef68234a4c4fae93bb6cda3e5d52e3
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/miniscale.rst:83 bb892db6ac7a4678b04a482f3de67352
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/units/miniscale.rst:86 c80da2ea4b80471b95e4fc10e9b6047d
 msgid "class MiniScaleUnit"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:41 08bb6f07f5ca47988a600d5c2b603472
-msgid "Constructors"
-msgstr ""
-
-#: ../../en/units/miniscale.rst:45 b5d0957900f946c7aadbeeb7bbbd1bfb
-msgid "Create an MiniScaleUnit object."
+#: ../../en/units/miniscale.rst:90 08b5dab8f8cd4a82979367cc3abe5c34
+msgid "Create a MiniScaleUnit object."
 msgstr "创建一个 MiniScaleUnit 对象。"
 
-#: ../../en/units/miniscale.rst:47 bc534ecbe9864c2f978ca0595c303a32
-msgid "``I2C0`` is I2C Port."
-msgstr "``I2C0`` is I2C Port."
-
-#: ../../en/units/miniscale.rst:50 ../../en/units/miniscale.rst:63
-#: ../../en/units/miniscale.rst:72 ../../en/units/miniscale.rst:82
-#: ../../en/units/miniscale.rst:91 ../../en/units/miniscale.rst:103
-#: ../../en/units/miniscale.rst:112 ../../en/units/miniscale.rst:133
-#: ../../en/units/miniscale.rst:142 ../../en/units/miniscale.rst:152
-#: ../../en/units/miniscale.rst:162 ../../en/units/miniscale.rst:170
-#: ../../en/units/miniscale.rst:182 ../../en/units/miniscale.rst:190
-#: 0a550e55796245cf9a4ee69e640070c7 2a76747a028546a38a925b7be305d18f
-#: 3abd720fc10b4358b279ad641f1a2521 3ceba0716e274d8fb4ac902359c1625c
-#: 3f41ca6121764710ada34fd71904b26b 4be817bc3f6e4afa9d5a88b4305d2bf3
-#: 77cb52295f9d42e1afe4f7b057e2ac1f c39a3c532aee4514824c5747c21091d5
-#: c7ba30908b6b4c82be444f8a64e020cd d5aaf28a1b744fc9a67bbef7766c4f14
-#: d6b4b1a83efe4a42a9124a326cfdd787 dd5b3a652a834f7094052cd592e93320
-#: dea68305a79b45f9b06ddabd684d6278 f03a26142c634a0899934f02c9744248
-msgid "UIFLOW2:"
+#: ../../en/units/miniscale.rst 552182180ea34bfa89738326523b3e87
+#: 6ebe04c0b89d40a7a0915fd6080f3aeb cb17bbcc97e8416d9b8ba92dd39effa3
+#: cf4e2a5a98954d4eba48f888c91f7d14 da9d86fae4ec4a48b6601d82580bab1d
+#: ebff48803b2c4076963be88506d4b67d
+msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:52 30c2a3dc405c48319189d77a676a4f0b
+#: ../../en/units/miniscale.rst:92 0f22296dc2f9429c89ab3470ec6bee7a
+msgid "The I2C or PAHUBUnit instance for communication."
+msgstr "用于通信的 I2C 或 PAHUBUnit 实例。"
+
+#: ../../en/units/miniscale.rst:93 8f8f615f784e4a4482a77bdbcb2e8bb8
+msgid "The I2C address of the MiniScale unit, default is 0x26."
+msgstr "MiniScale 单元的 I2C 地址，默认为 0x26。"
+
+#: ../../en/units/miniscale.rst:97 87c8734544a84da49c8a77489966d42c
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:6 0e745bc79f6e4e1dbe18bd8660bce5ec
+#: ../../en/refs/unit.miniscale.ref:6 067dea94d6064570982934ddd7dfadb8
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:56 f9e769c7df844b319e7d638cd7cb7a6c
-msgid "Methods"
+#: ../../en/units/miniscale.rst:111 6c083041ab2c4a31b48a9a85cf1604c1
+msgid "Read raw ADC value (unprocessed)."
+msgstr "读取原始 ADC 值（未经处理）。"
+
+#: ../../en/units/miniscale.rst db931597993c43549d1a55f44c67144f
+msgid "Returns"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:61 ae2ed66e50564eb886a79f17716ee843
-msgid "Gets the raw adc readout."
-msgstr "获取原始的 ADC 读数。"
+#: ../../en/units/miniscale.rst:113 e56feb00c2db4168adf3cad43f83854b
+msgid "Raw ADC value (integer)."
+msgstr "原始 ADC 值（整数）。"
 
-#: ../../en/units/miniscale.rst:65 fa540129ae554bf3827b6f38f289d7b2
+#: ../../en/units/miniscale.rst 0717064469e446e6920be1167318133b
+#: 92efedff6c5b4ae5acff5d45431c12d1 b7d8309bc0ea436493b764fd1240ed82
+#: bfedb1595834468fa1d09c97d359a687 c1cca3a957904065abcce1d15cf9768d
+#: f0fc20c102144ff6b1fe0fa13dd1c1cc
+msgid "Return type"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:118 096a4a5073f74b6c8a4f2429dfd1d5f3
 msgid "|get_adc.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:18 78c6c950063142e7bf43557198204bb6
+#: ../../en/refs/unit.miniscale.ref:12 8c431521fc1246f2a817bd9c74f910b7
 msgid "get_adc.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:70 1d940438409545abad533129e5d79024
-msgid "Gets the weight readout in grams."
-msgstr "获取以克为单位的重量读数。"
+#: ../../en/units/miniscale.rst:128 b5c9ca2f23964c55b1fa7c8d3913a809
+msgid "Read current weight (grams)."
+msgstr "读取当前重量（克）。"
 
-#: ../../en/units/miniscale.rst:74 bec7efa63604461192b57d435a5a18f8
+#: ../../en/units/miniscale.rst:130 ad690271311a40b4ae55aee54d2ade9a
+msgid "Actual weight (float after subtracting tare value)."
+msgstr "实际重量（减去去皮值后的浮点数）。"
+
+#: ../../en/units/miniscale.rst:135 54e92b69f5cb4839b0245e88be7c6138
 msgid "|get_weight.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:22 800f45d58f47461e918224233b8f3d90
+#: ../../en/refs/unit.miniscale.ref:14 09ed56fa9313495ab980e78b4d7720d2
 msgid "get_weight.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:80 b585e00644114f99ae4816c4825ac016
-msgid "Gets the button state."
-msgstr "获取按钮状态。 "
+#: ../../en/units/miniscale.rst:145 6f78990f7569403e8a5874f34d1ea270
+msgid "Read button state."
+msgstr "读取按钮状态。"
 
-#: ../../en/units/miniscale.rst:84 baf8e2a22d404ca9ad3d115ab8429cbe
+#: ../../en/units/miniscale.rst:147 de1fdeb20c7147e29438605991c7e7a0
+msgid "True if pressed, False if not pressed."
+msgstr "如果按下返回 True，如果未按下返回 False。"
+
+#: ../../en/units/miniscale.rst:152 1572ca097764427ab1a11d5803c65d0e
 msgid "|get_button.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:20 dcf39b4c0669439fa6ed295ccddb5586
+#: ../../en/refs/unit.miniscale.ref:13 4be36b439dd443e7b14d21e747ad7609
 msgid "get_button.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:89 ac94d56cfd634f5e9289907823c30096
-msgid "Tare the scale."
+#: ../../en/units/miniscale.rst:162 9c50eb4b42d64e5fb5f81fe7e6d05209
+msgid ""
+"Tare operation. Record current weight as offset value, so subsequent "
+"weight readings use current as zero point."
 msgstr ""
+"去皮操作。记录当前重量作为偏移值，以便后续重量读数以当前为零点。"
 
-#: ../../en/units/miniscale.rst:93 3b098a901e0743019e932684ecd94b29
+#: ../../en/units/miniscale.rst:166 1082fb65370642b2b81fb2e1a4c6ea75
 msgid "|tare.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:10 fc8f4b7b5ffd44fe8cce785c26faebf0
+#: ../../en/refs/unit.miniscale.ref:8 867b032deb484292a9448fc883c709e7
 msgid "tare.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:97 41177a0bb1ee45d59a3f994bc5d8ee10
-msgid "Sets the RGB LED color."
-msgstr "设置 RGB LED 的颜色。"
+#: ../../en/units/miniscale.rst:176 d9767c91c94b4b2896eb807eb3b5c155
+msgid "Set RGB indicator color."
+msgstr "设置 RGB 指示灯颜色。"
 
-#: ../../en/units/miniscale.rst:99 6040786e7aa04237bf268060f9a51c47
-msgid "``r``: Red value (0 - 255)."
-msgstr "``r``: Red value (0 - 255)."
+#: ../../en/units/miniscale.rst:178 0874dd1cc0c6433caacd7a8e0da87ee2
+msgid "Red component (0~255)."
+msgstr "红色分量（0~255）。"
 
-#: ../../en/units/miniscale.rst:100 e78c8ac199b5493fa2786eb2bb0fb462
-msgid "``g``: Green value (0 - 255)."
-msgstr "``g``: Green value (0 - 255)."
+#: ../../en/units/miniscale.rst:179 b73e0fb1926f48dda32f89313cf78f32
+msgid "Green component (0~255)."
+msgstr "绿色分量（0~255）。"
 
-#: ../../en/units/miniscale.rst:101 183968723565492784ce3b772d0ea76e
-msgid "``b``: Blue value (0 - 255)."
-msgstr "``b``: Blue value (0 - 255)."
+#: ../../en/units/miniscale.rst:180 7ccf8de7fffa4b16903a002b61be73d6
+msgid "Blue component (0~255)."
+msgstr "蓝色分量（0~255）。"
 
-#: ../../en/units/miniscale.rst:105 f2089a2f6c5e4b99be34957a45dd9ace
-msgid "|setLed.png|"
+#: ../../en/units/miniscale.rst:184 0caf783df77c460c85673603ef7dc2dc
+msgid "|set_led.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:30 669a4f1cf6ce44eb96f9bcd99df1bc27
-msgid "setLed.png"
+#: ../../en/refs/unit.miniscale.ref:18 1bf4a8c914124a0b99b4fc654fa3c987
+msgid "set_led.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:109 a4472c7367e041ecbfaea91472332bca
-msgid "Resets sensor."
-msgstr "重置传感器。"
+#: ../../en/units/miniscale.rst:194 8fe3937fdf354efda27b620974f72279
+msgid "Reset module internal weight register (clear to zero)."
+msgstr "重置模块内部重量寄存器（清零）。"
 
-#: ../../en/units/miniscale.rst:114 7968b647e0334557814eb05bdfc36f63
+#: ../../en/units/miniscale.rst:198 6be04059408e43f6a09ec5af9847d303
 msgid "|reset.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:24 f53a481663c44e3390cf4b0c7c979ede
+#: ../../en/refs/unit.miniscale.ref:15 42bd80acf95a4eb295ba96312f0a2e30
 msgid "reset.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:119 140108aedf3d47b985fa9a30b2cd8a5a
-msgid "Calibrates the MiniScale sensor."
-msgstr "校准微型称重传感器。"
+#: ../../en/units/miniscale.rst:208 87f23887373040c5b71817311a64f826
+msgid "Calibrate module gain (GAP value)."
+msgstr "校准模块增益（GAP 值）。"
 
-#: ../../en/units/miniscale.rst:121 fe9fd18345ab425591cb11ca5968cc1a
-msgid "``weight1_g``: Weight1 in grams."
-msgstr ""
-
-#: ../../en/units/miniscale.rst:122 4dfeea577e474dea844d407b4848001b
-msgid "``weight1_adc``: Weight1 in ADC value."
-msgstr ""
-
-#: ../../en/units/miniscale.rst:123 06402f3db0594dffa89ad6c81fce2795
-msgid "``weight2_g``: Weight2 in grams."
-msgstr ""
-
-#: ../../en/units/miniscale.rst:124 cd644f8f2fe84e38ade3a23db990d145
-msgid "``weight2_adc``: Weight2 in ADC value."
-msgstr ""
-
-#: ../../en/units/miniscale.rst:126 69bcd897885946a2b78b8cc54a8a83b3
-msgid "calibration steps:"
-msgstr "校准步骤:"
-
-#: ../../en/units/miniscale.rst:128 f71ab2747e1c4036b4418a85237af5a7
-msgid "Reset sensor;"
-msgstr "重置传感器"
-
-#: ../../en/units/miniscale.rst:129 8fddb44435b44810a098de9f76272777
-msgid "Get adc, this is weight1_adc (should be zero). And weight1_g is also 0."
-msgstr "得到adc，这是weight1_adc(应该是零)。而weight1_g也是0。"
-
-#: ../../en/units/miniscale.rst:130 80779f98aee34659b9b7f347e639e7dc
+#: ../../en/units/miniscale.rst:210 36060ee885d14bbc9cb110aaa7a9737d
 msgid ""
-"Put some weight on it, then get adc, this is weight2_adc. And weight2_g "
-"is weight in gram you put on it."
-msgstr "AI润色104/5000给它加一些权重，然后得到adc，这是weight2_adc。而weight2_g是以克为单位的重量。"
+"Calibration process example: 1. Reset offset 2. Read no-load ADC "
+"(RawADC_0g) 3. Place known weight (e.g., 100g) and read ADC (RawADC_100g)"
+" 4. Calculate GAP = (RawADC_100g - RawADC_0g) / 100 5. Write to module to"
+" save calibration coefficient"
+msgstr ""
+"校准流程示例：1. 重置偏移 2. 读取空载 ADC（RawADC_0g）3. 放置已知重量（例如 "
+"100g）并读取 ADC（RawADC_100g）4. 计算 GAP = (RawADC_100g - RawADC_0g) / 100 "
+"5. 写入模块保存校准系数"
 
-#: ../../en/units/miniscale.rst:135 2ac5a189c3334d40a565cd8bce5c6291
-#, fuzzy
+#: ../../en/units/miniscale.rst:217 3866b32843f840b89376954859254e03
+msgid "Weight at first point (unit: g)."
+msgstr "第一点的重量（单位：g）。"
+
+#: ../../en/units/miniscale.rst:218 ccb6fee3931a4e58b6c5a55436e6a709
+msgid "ADC value at first point."
+msgstr "第一点的 ADC 值。"
+
+#: ../../en/units/miniscale.rst:219 54be703ba13246629035639a201ac887
+msgid "Weight at second point (unit: g)."
+msgstr "第二点的重量（单位：g）。"
+
+#: ../../en/units/miniscale.rst:220 719d312f7d3241e6a92997d8a42193a5
+msgid "ADC value at second point."
+msgstr "第二点的 ADC 值。"
+
+#: ../../en/units/miniscale.rst 06310b054edd4b1e8443acc76836ed14
+#: 5052612a0ea340eaa14b34edfde4a070 66ff7f3cf0ef49e8a22b8728d8323901
+msgid "Raises"
+msgstr ""
+
+#: ../../en/units/miniscale.rst:221 569f75879aed42eb96bf8b303f942c0e
+msgid "If two weights are equal."
+msgstr "如果两个重量相等。"
+
+#: ../../en/units/miniscale.rst:225 8bbc2b61921247298377dd24d7f44962
 msgid "|calibration.png|"
-msgstr "校准步骤:"
+msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:8 3cde5a5480494c94bb03489f2f50a0fe
-#, fuzzy
+#: ../../en/refs/unit.miniscale.ref:7 61abf029092e4a42b2cc65b20c91e08f
 msgid "calibration.png"
-msgstr "校准步骤:"
-
-#: ../../en/units/miniscale.rst:139 335d4f778e0f4449979059b04156120d
-msgid "Enables or disables the low pass filter."
-msgstr "启用或禁用低通滤波器"
-
-#: ../../en/units/miniscale.rst:144 54a8c46824ae46c088bc2c11223ee916
-msgid "|setLowPassFilter.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:32 f995623c681446948c7e8899faa113dd
-msgid "setLowPassFilter.png"
+#: ../../en/units/miniscale.rst:235 dbb0ac51f45243408c89d4d990f91c14
+msgid "Enable or disable low-pass filter."
+msgstr "启用或禁用低通滤波器。"
+
+#: ../../en/units/miniscale.rst:237 1084ba2ffd4f4647917b51436553dc41
+msgid "True to enable filter, False to disable filter."
+msgstr "True 启用滤波器，False 禁用滤波器。"
+
+#: ../../en/units/miniscale.rst:241 caddcb3ebe18494d9a6354558c267e68
+msgid "|set_low_pass_filter.png|"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:149 f35a8a925134409493be750cd65723f6
-msgid "Returns the status of the low pass filter (enabled or not)."
-msgstr "返回低通滤波器的状态（是否启用）"
-
-#: ../../en/units/miniscale.rst:154 4d39da164bd948e9b064b2f04f291a0f
-msgid "|getLowPassFilter.png|"
+#: ../../en/refs/unit.miniscale.ref:19 68e1280944834911970c138a98d7ae26
+msgid "set_low_pass_filter.png"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:16 edef98ebff8f456984cfad27b626c244
-msgid "getLowPassFilter.png"
+#: ../../en/units/miniscale.rst:251 b5d320f9bce2438fa13b2f4061d7cc2e
+msgid "Get low-pass filter status."
+msgstr "获取低通滤波器状态。"
+
+#: ../../en/units/miniscale.rst:253 076eb9573841485681ed6a8f65f23d4e
+msgid "True if filter is enabled."
+msgstr "如果滤波器已启用返回 True。"
+
+#: ../../en/units/miniscale.rst:258 9e13d725101d41d2917a4f4d853fe239
+msgid "|get_low_pass_filter.png|"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:158 79d3626162d8434aa1349bcc5a9764ff
-msgid "Sets the level of the average filter."
-msgstr "设置平均滤波器的级别"
-
-#: ../../en/units/miniscale.rst:160 6d7dc6ab634f4aa29a03f55bd2efd46b
-msgid ""
-"``level``: Level of the average filter (0 - 50). Larger value for "
-"smoother result but more latency"
-msgstr "``level``:平均过滤器的电平(0 - 50)。更大的值可以获得更平滑的结果，但延迟更长"
-
-#: ../../en/units/miniscale.rst:164 1d58c8234ed446ab87fb8c467f76b7ee
-msgid "|setAverageFilterLevel.png|"
+#: ../../en/refs/unit.miniscale.ref:11 2de395e53c6d47c0aa999782ec9c0ae7
+msgid "get_low_pass_filter.png"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:26 cc8d797eaf6140bc81d407f0eb623b92
-msgid "setAverageFilterLevel.png"
+#: ../../en/units/miniscale.rst:268 ea986430e9a44d86a68b95b52d4d2adb
+msgid "Set average filter level."
+msgstr "设置平均滤波等级。"
+
+#: ../../en/units/miniscale.rst:270 04d8d88b462443b183d4c0a2d5570475
+msgid "Average count level (0~50), higher value means smoother but more delay."
+msgstr "平均次数等级（0~50），值越大平滑度越高但延迟越大。"
+
+#: ../../en/units/miniscale.rst:271 ../../en/units/miniscale.rst:307
+#: 2cabed15083d45959718d71d95f5c294 bc43b42d63944f819158f828458c0ac1
+msgid "If out of range."
+msgstr "如果超出范围。"
+
+#: ../../en/units/miniscale.rst:275 ea986430e9a44d86a68b95b52d4d2adb
+msgid "|set_average_filter_level.png|"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:168 d5973abdcdc341dabaaa2bfd6aff85d9
-msgid "Returns the level of the average filter."
-msgstr "返回平均滤波器的级别"
-
-#: ../../en/units/miniscale.rst:172 e0fea83835cf4c17a37b0c94e8cf4734
-msgid "|getAverageFilterLevel.png|"
+#: ../../en/refs/unit.miniscale.ref:16 b4a281005f554221be346c3b7750af8d
+msgid "set_average_filter_level.png"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:12 904db8a2384c4cc08c3b5b4e37f9336f
-msgid "getAverageFilterLevel.png"
+#: ../../en/units/miniscale.rst:285 ea986430e9a44d86a68b95b52d4d2adb
+msgid "Get average filter level."
+msgstr "获取平均滤波等级。"
+
+#: ../../en/units/miniscale.rst:287 1c809f118178436a903ca32ffc4e383d
+msgid "Current average filter level (integer)."
+msgstr "当前平均滤波等级（整数）。"
+
+#: ../../en/units/miniscale.rst:292 887c760e9c484452b7e361e1dc7ea853
+msgid "|get_average_filter_level.png|"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:176 57f5c9f52fdb4921ae534cf247edbbad
-msgid "Sets the alpha value for the EMA filter."
-msgstr "设置EMA滤波器的alpha值。"
+#: ../../en/refs/unit.miniscale.ref:9 d2430dc5c38f45acb17a39c585e8d4b6
+msgid "get_average_filter_level.png"
+msgstr ""
 
-#: ../../en/units/miniscale.rst:178 8327385268954b628b39f59509c41b72
+#: ../../en/units/miniscale.rst:302 991807a695b04cdd8d1d62e8911aa3c9
+msgid "Set exponential moving average (EMA) filter parameter."
+msgstr "设置指数滑动平均（EMA）滤波参数。"
+
+#: ../../en/units/miniscale.rst:304 991807a695b04cdd8d1d62e8911aa3c9
 msgid ""
 "The EMA (Exponential Moving Average) filter is more sensitive to changes "
 "in data compared to the average filter."
 msgstr "与平均滤波器相比，EMA（指数移动平均）滤波器对数据的变化更敏感。"
 
-#: ../../en/units/miniscale.rst:180 a90ec332c6494a0898cba5b89c716933
+#: ../../en/units/miniscale.rst:306 1e4d640e7e0a46b499b03c38d4e8f9be
 msgid ""
-"``alpha``: Alpha value for the EMA filter (0 - 99). Smaller value for "
-"smoother result but more latency"
-msgstr "`` alpha``: EMA过滤器的alpha值(0 - 99)。较小的值可以获得更平滑的结果，但会增加延迟"
+"EMA filter coefficient (0~99), smaller value means smoother but more "
+"response delay."
+msgstr "EMA 滤波系数（0~99），值越小平滑度越高但响应延迟越大。"
 
-#: ../../en/units/miniscale.rst:184 92491b1188d7436fa428cff094913225
-msgid "|setEMAFilterAlpha.png|"
+#: ../../en/units/miniscale.rst:311 eab364913d4446bb998b94eaff2f355e
+msgid "|set_ema_filter_alpha.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:28 8a457529a6fc43a9bb1d65e830ecb1df
-msgid "setEMAFilterAlpha.png"
+#: ../../en/refs/unit.miniscale.ref:17 a15bb2f9f44946f7a8143ced5103be62
+msgid "set_ema_filter_alpha.png"
 msgstr ""
 
-#: ../../en/units/miniscale.rst:188 366a404460d646bf8e0acce59ee27ea1
-msgid "Returns the alpha value for the EMA filter."
-msgstr "返回EMA滤波器的alpha值。"
+#: ../../en/units/miniscale.rst:321 8197d9100d10415c926b0a2debcc1500
+msgid "Get EMA filter coefficient."
+msgstr "获取 EMA 滤波系数。"
 
-#: ../../en/units/miniscale.rst:192 6c900ab9aa534a729385e84785d53951
-msgid "|getEMAFilterAlpha.png|"
+#: ../../en/units/miniscale.rst:323 3548cff82c2940cba88d1721f4194587
+msgid "Current EMA alpha value (integer)."
+msgstr "当前 EMA alpha 值（整数）。"
+
+#: ../../en/units/miniscale.rst:328 d9e1fa9043ab4c958fd010367c367f5f
+msgid "|get_ema_filter_alpha.png|"
 msgstr ""
 
-#: ../../en/refs/unit.miniscale.ref:14 8ddbbea257524c60953feaa004754501
-msgid "getEMAFilterAlpha.png"
+#: ../../en/refs/unit.miniscale.ref:10 aee5624f872e43a3a92435fb33609bbc
+msgid "get_ema_filter_alpha.png"
 msgstr ""
 
 #~ msgid "|example.svg|"
@@ -417,5 +547,144 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "getEMAFilterAlpha.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example:"
+#~ msgstr ""
+
+#~ msgid "|example.png|"
+#~ msgstr ""
+
+#~ msgid "example.png"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "``I2C0`` is I2C Port."
+#~ msgstr "``I2C0`` is I2C Port."
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "Gets the raw adc readout."
+#~ msgstr "获取原始的 ADC 读数。"
+
+#~ msgid "Gets the weight readout in grams."
+#~ msgstr "获取以克为单位的重量读数。"
+
+#~ msgid "Tare the scale."
+#~ msgstr ""
+
+#~ msgid "``r``: Red value (0 - 255)."
+#~ msgstr "``r``: Red value (0 - 255)."
+
+#~ msgid "``g``: Green value (0 - 255)."
+#~ msgstr "``g``: Green value (0 - 255)."
+
+#~ msgid "``b``: Blue value (0 - 255)."
+#~ msgstr "``b``: Blue value (0 - 255)."
+
+#~ msgid "|setLed.png|"
+#~ msgstr ""
+
+#~ msgid "setLed.png"
+#~ msgstr ""
+
+#~ msgid "Resets sensor."
+#~ msgstr "重置传感器。"
+
+#~ msgid "Calibrates the MiniScale sensor."
+#~ msgstr "校准微型称重传感器。"
+
+#~ msgid "``weight1_g``: Weight1 in grams."
+#~ msgstr ""
+
+#~ msgid "``weight1_adc``: Weight1 in ADC value."
+#~ msgstr ""
+
+#~ msgid "``weight2_g``: Weight2 in grams."
+#~ msgstr ""
+
+#~ msgid "``weight2_adc``: Weight2 in ADC value."
+#~ msgstr ""
+
+#~ msgid "Reset sensor;"
+#~ msgstr "重置传感器"
+
+#~ msgid "Get adc, this is weight1_adc (should be zero). And weight1_g is also 0."
+#~ msgstr "得到adc，这是weight1_adc(应该是零)。而weight1_g也是0。"
+
+#~ msgid ""
+#~ "Put some weight on it, then get"
+#~ " adc, this is weight2_adc. And "
+#~ "weight2_g is weight in gram you "
+#~ "put on it."
+#~ msgstr "AI润色104/5000给它加一些权重，然后得到adc，这是weight2_adc。而weight2_g是以克为单位的重量。"
+
+#~ msgid "|setLowPassFilter.png|"
+#~ msgstr ""
+
+#~ msgid "setLowPassFilter.png"
+#~ msgstr ""
+
+#~ msgid "Returns the status of the low pass filter (enabled or not)."
+#~ msgstr "返回低通滤波器的状态（是否启用）"
+
+#~ msgid "|getLowPassFilter.png|"
+#~ msgstr ""
+
+#~ msgid "getLowPassFilter.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``level``: Level of the average filter"
+#~ " (0 - 50). Larger value for "
+#~ "smoother result but more latency"
+#~ msgstr "``level``:平均过滤器的电平(0 - 50)。更大的值可以获得更平滑的结果，但延迟更长"
+
+#~ msgid "|setAverageFilterLevel.png|"
+#~ msgstr ""
+
+#~ msgid "setAverageFilterLevel.png"
+#~ msgstr ""
+
+#~ msgid "Returns the level of the average filter."
+#~ msgstr "返回平均滤波器的级别"
+
+#~ msgid "|getAverageFilterLevel.png|"
+#~ msgstr ""
+
+#~ msgid "getAverageFilterLevel.png"
+#~ msgstr ""
+
+#~ msgid "Sets the alpha value for the EMA filter."
+#~ msgstr "设置EMA滤波器的alpha值。"
+
+#~ msgid ""
+#~ "``alpha``: Alpha value for the EMA "
+#~ "filter (0 - 99). Smaller value for"
+#~ " smoother result but more latency"
+#~ msgstr "`` alpha``: EMA过滤器的alpha值(0 - 99)。较小的值可以获得更平滑的结果，但会增加延迟"
+
+#~ msgid "|setEMAFilterAlpha.png|"
+#~ msgstr ""
+
+#~ msgid "setEMAFilterAlpha.png"
+#~ msgstr ""
+
+#~ msgid "Returns the alpha value for the EMA filter."
+#~ msgstr "返回EMA滤波器的alpha值。"
+
+#~ msgid "|getEMAFilterAlpha.png|"
+#~ msgstr ""
+
+#~ msgid "getEMAFilterAlpha.png"
 #~ msgstr ""
 
