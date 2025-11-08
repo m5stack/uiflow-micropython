@@ -10,10 +10,10 @@
 """
 
 # Import necessary libraries
-from machine import I2C
-from cdriver import max30102
-import struct
-import _thread, time
+import machine
+import cdriver
+import _thread
+import time
 
 
 class HeartHat:
@@ -74,7 +74,7 @@ class HeartHat:
     SAMPLING_RATE_800HZ = 0x06
     SAMPLING_RATE_1000HZ = 0x07
 
-    def __init__(self, i2c: I2C, address: int | list | tuple = 0x57) -> None:
+    def __init__(self, i2c: machine.I2C, address: int | list | tuple = 0x57) -> None:
         """! Initialize the HeartHat.
 
         @param i2c I2C port to use.
@@ -82,23 +82,16 @@ class HeartHat:
         """
         self.i2c = i2c
         self.addr = address
-        self._available()
-        max30102.init(i2c, address)
+        if self.addr not in self.i2c.scan():
+            raise Exception("HeartHat not found on I2C bus.")
+        self._max30102 = cdriver.MAX30102(i2c, address=address)
+        self._max30102.set_mode(self.MODE_SPO2_HR)
         self._task_running = False
 
     def _thread_task(self) -> None:
         while self._task_running:
-            max30102.update()
+            self._max30102.update()
             time.sleep_ms(5)
-
-    def _available(self) -> None:
-        """! Check if HeartHat is available on the I2C bus.
-
-        Raises:
-            Exception: If the HeartHat is not found.
-        """
-        if self.addr not in self.i2c.scan():
-            raise Exception("HeartHat not found on I2C bus.")
 
     def stop(self) -> None:
         """! Stop the HeartHat.
@@ -128,7 +121,7 @@ class HeartHat:
         """
         self.stop()
         time.sleep_ms(50)
-        max30102.deinit()
+        self._max30102.deinit()
 
     def get_heart_rate(self) -> int:
         """! Get the heart rate.
@@ -138,7 +131,7 @@ class HeartHat:
 
         @return Heart rate.
         """
-        return max30102.get_heart_rate()
+        return self._max30102.get_heart_rate()
 
     def get_spo2(self) -> int:
         """! Get the SpO2.
@@ -148,7 +141,7 @@ class HeartHat:
 
         @return SpO2.
         """
-        return max30102.get_spo2()
+        return self._max30102.get_spo2()
 
     def get_ir(self) -> int:
         """! Get the IR value.
@@ -158,7 +151,7 @@ class HeartHat:
 
         @return IR value.
         """
-        return max30102.get_ir()
+        return self._max30102.get_ir()
 
     def get_red(self) -> int:
         """! Get the red value.
@@ -168,7 +161,7 @@ class HeartHat:
 
         @return Red value.
         """
-        return max30102.get_red()
+        return self._max30102.get_red()
 
     def set_mode(self, mode: int) -> None:
         """! Set the mode of the HeartHat.
@@ -182,7 +175,7 @@ class HeartHat:
                     [Heart rate and SpO2, HeartHat.MODE_SPO2_HR]
             }
         """
-        max30102.set_mode(mode)
+        self._max30102.set_mode(mode)
 
     def set_led_current(self, red_current: int, ir_current) -> None:
         """! Set the LED current of the HeartHat.
@@ -229,7 +222,7 @@ class HeartHat:
                     [50mA, HeartHat.LED_CURRENT_50MA]
             }
         """
-        max30102.set_led_current(red_current, ir_current)
+        self._max30102.set_led_current(red_current, ir_current)
 
     def set_pulse_width(self, pulse_width: int) -> None:
         """! Set the pulse width of the HeartHat.
@@ -245,7 +238,7 @@ class HeartHat:
                     [1600us, HeartHat.PULSE_WIDTH_1600US_ADC_16]
             }
         """
-        max30102.set_pulse_width(pulse_width)
+        self._max30102.set_pulse_width(pulse_width)
 
     def set_sampling_rate(self, sampling_rate: int) -> None:
         """! Set the sampling rate of the HeartHat.
@@ -265,4 +258,4 @@ class HeartHat:
                     [1000Hz, HeartHat.SAMPLING_RATE_1000HZ]
             }
         """
-        max30102.set_sampling_rate(sampling_rate)
+        self._max30102.set_sampling_rate(sampling_rate)
