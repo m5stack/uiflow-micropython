@@ -4,8 +4,6 @@
 * SPDX-License-Identifier: MIT
 */
 
-#include <stdio.h>
-
 #include "py/runtime.h"
 #include "py/mphal.h"
 #include "py/objlist.h"
@@ -14,113 +12,100 @@
 #include "py/mperrno.h"
 #include "mphalport.h"
 
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "driver/i2c.h"
-#include "driver/gpio.h"
-#include "esp_system.h"
-#include "esp_err.h"
-#include "esp_log.h"
+#include "max30102.h"
 
-#include "esp_task.h"
-
-#include "include/max30102/max30102.h"
-
-// static volatile TaskHandle_t max30102_handle = NULL;
-
-static max30102_config_t max30102 = {};
-
-static volatile int _heart_bpm, previous_heart_bpm, previous_spo2, _spo2, _ir, _red, _curr_mode;
-
-typedef struct _max30102_hw_i2c_obj_t {
-    // from _machine_hw_i2c_obj_t
+typedef struct _cdriver_max30102_obj_t {
     mp_obj_base_t base;
-    i2c_port_t port : 8;
-    gpio_num_t scl : 8;
-    gpio_num_t sda : 8;
-    // user defined
-    uint8_t pos;
-    uint32_t freq;
-} max30102_hw_i2c_obj_t;
+    mp_obj_t i2c_obj;
+    uint8_t address;
+    mp_obj_t readfrom_mem_method[2];
+    mp_obj_t writeto_mem_method[2];
+    max30102_config_t *max30102;
+    int heart_bpm;
+    int previous_heart_bpm;
+    int previous_spo2;
+    int spo2;
+    int ir;
+    int red;
+    int curr_mode;
+} cdriver_max30102_obj_t;
 
-static mp_obj_t mp_MAX30102_get_heart_rate(void) {
-    if (_heart_bpm > 0) {
-        if (_heart_bpm > 60 && _heart_bpm < 120) {
-            previous_heart_bpm = _heart_bpm;
-        }
-        if (_heart_bpm < 60 || _heart_bpm > 120) {
-            _heart_bpm = previous_heart_bpm;
-        }
-    }
-    return mp_obj_new_int(_heart_bpm);
+extern const mp_obj_type_t cdriver_max30102_type;
+
+static int8_t i2c_bus_read(uint8_t addr, uint8_t reg, uint8_t *out_data, uint32_t len, void *intf_ptr) {
+    cdriver_max30102_obj_t *self = (cdriver_max30102_obj_t *)intf_ptr;
+    mp_obj_t args[3];
+    const char *buf;
+    size_t out_len = 0;
+
+    args[0] = mp_obj_new_int(addr);
+    args[1] = mp_obj_new_int(reg);
+    args[2] = mp_obj_new_int(len);
+
+    // mp_printf(&mp_plat_print, "addr: 0x%x, reg: 0x%x\n", addr, reg);
+
+    mp_obj_t ret = mp_call_method_self_n_kw(
+        self->readfrom_mem_method[0],
+        self->readfrom_mem_method[1],
+        3,
+        0,
+        args
+        );
+
+    buf = mp_obj_str_get_data(ret, &out_len);
+    memcpy(out_data, buf, out_len);
+
+    return 0;
 }
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_get_heart_rate_obj, mp_MAX30102_get_heart_rate);
 
-static mp_obj_t mp_MAX30102_get_spo2(void) {
-    if (_curr_mode == MAX30102_MODE_SPO2_HR && _spo2 > 0) {
-        if (_spo2 >= 80 && _spo2 <= 100) {
-            previous_spo2 = _spo2;
-        }
-        if (_spo2 < 80 || _spo2 > 100) {
-            _spo2 = previous_spo2;
-        }
-    } else {
-        _spo2 = 0;
-    }
-    return mp_obj_new_int(_spo2);
+static int8_t i2c_bus_write(uint8_t addr, uint8_t reg, const uint8_t *in_data, uint32_t len, void *intf_ptr) {
+    cdriver_max30102_obj_t *self = (cdriver_max30102_obj_t *)intf_ptr;
+    mp_obj_t args[3];
+    const char *buf;
+    size_t l = 0;
+
+    args[0] = mp_obj_new_int(addr);
+    args[1] = mp_obj_new_int(reg);
+    args[2] = mp_obj_new_bytes(in_data, len);
+
+    mp_obj_t ret = mp_call_method_self_n_kw(
+        self->writeto_mem_method[0],
+        self->writeto_mem_method[1],
+        3,
+        0,
+        args
+        );
+
+    return 0;
 }
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_get_spo2_obj, mp_MAX30102_get_spo2);
 
-static mp_obj_t mp_MAX30102_get_ir(void) {
-    return mp_obj_new_int(_ir);
-}
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_get_ir_obj, mp_MAX30102_get_ir);
+static mp_obj_t cdriver_max30102_make_new(const mp_obj_type_t *type, size_t n_args, size_t n_kw, const mp_obj_t *args_in) {
+    enum { ARG_i2c, ARG_address, };
+    mp_map_t kw_args;
 
+    mp_arg_check_num(n_args, n_kw, 1, MP_OBJ_FUN_ARGS_MAX, true);
+    mp_map_init_fixed_table(&kw_args, n_kw, args_in + n_args);
+    static const mp_arg_t allowed_args[] = {
+        /* *FORMAT-OFF* */
+        { MP_QSTR_i2c,     MP_ARG_REQUIRED | MP_ARG_OBJ, {.u_obj = MP_OBJ_NULL} },
+        { MP_QSTR_address, MP_ARG_KW_ONLY | MP_ARG_INT,  {.u_int = 0x57}        },
+        /* *FORMAT-ON* */
+    };
+    // parse args
+    mp_arg_val_t args[MP_ARRAY_SIZE(allowed_args)];
+    mp_arg_parse_all(n_args, args_in, &kw_args, MP_ARRAY_SIZE(allowed_args), allowed_args, args);
 
-static mp_obj_t mp_MAX30102_get_red(void) {
-    return mp_obj_new_int(_red);
-}
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_get_red_obj, mp_MAX30102_get_red);
+    cdriver_max30102_obj_t *self = mp_obj_malloc(cdriver_max30102_obj_t, &cdriver_max30102_type);
+    self->i2c_obj = args[ARG_i2c].u_obj;
+    self->address = args[ARG_address].u_int;
+    mp_load_method_maybe(self->i2c_obj, MP_QSTR_writeto_mem, self->writeto_mem_method);
+    mp_load_method_maybe(self->i2c_obj, MP_QSTR_readfrom_mem, self->readfrom_mem_method);
+    self->max30102 = (max30102_config_t *)m_malloc(sizeof(max30102_config_t));
+    self->max30102->intf_ptr = self;
+    self->max30102->i2c_bus_read = i2c_bus_read;
+    self->max30102->i2c_bus_write = i2c_bus_write;
 
-
-static mp_obj_t mp_MAX30102_update(void) {
-    max30102_data_t result = {};
-
-    esp_err_t ret = max30102_update(&max30102, &result);
-
-    if (ret != ESP_OK) {
-        printf("error\n");
-    }
-
-    _ir = result.ir_raw;
-    _red = result.red_raw;
-
-    if ((_ir > 2000) && (_red > 2000)) {
-        if (result.pulse_detected) {
-            _heart_bpm = (int)result.heart_bpm;
-            _spo2 = (int)result.spO2;
-            if (_spo2 < 95) {
-                _spo2 += 5;
-            }
-        }
-    } else {
-        _heart_bpm = 0;
-        _spo2 = 0;
-    }
-
-    return mp_const_none;
-}
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_update_obj, mp_MAX30102_update);
-
-static mp_obj_t mp_MAX30102_init(mp_obj_t i2c_bus_in, mp_obj_t addr_in) {
-    max30102_hw_i2c_obj_t *i2c_bus = (max30102_hw_i2c_obj_t *)i2c_bus_in;
-    max30102.i2c_num = i2c_bus->port;
-    max30102.device_pos = i2c_bus->pos;
-
-    max30102.i2c_addr = mp_obj_get_int(addr_in);
-    // printf("id :%d, pos: %d\n", max30102.i2c_num, max30102.device_pos);
-
-    ESP_ERROR_CHECK(max30102_init(&max30102, max30102.i2c_num,
+    ESP_ERROR_CHECK(max30102_init(self->max30102, self->address,
         MAX30102_DEFAULT_OPERATING_MODE,
         MAX30102_DEFAULT_SAMPLING_RATE,
         MAX30102_DEFAULT_LED_PULSE_WIDTH,
@@ -130,76 +115,156 @@ static mp_obj_t mp_MAX30102_init(mp_obj_t i2c_bus_in, mp_obj_t addr_in) {
         MAX30102_DEFAULT_MEAN_FILTER_SIZE,
         MAX30102_DEFAULT_PULSE_BPM_SAMPLE_SIZE,
         false));
+
+    return MP_OBJ_FROM_PTR(self);
+}
+
+static mp_obj_t cdriver_max30102_get_heart_rate(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    if (self->heart_bpm > 0) {
+        if (self->heart_bpm > 60 && self->heart_bpm < 120) {
+            self->previous_heart_bpm = self->heart_bpm;
+        }
+        if (self->heart_bpm < 60 || self->heart_bpm > 120) {
+            self->heart_bpm = self->previous_heart_bpm;
+        }
+    }
+    return mp_obj_new_int(self->heart_bpm);
+}
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_get_heart_rate_obj, cdriver_max30102_get_heart_rate);
+
+static mp_obj_t cdriver_max30102_get_spo2(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    if (self->curr_mode == MAX30102_MODE_SPO2_HR && self->spo2 > 0) {
+        if (self->spo2 >= 80 && self->spo2 <= 100) {
+            self->previous_spo2 = self->spo2;
+        }
+        if (self->spo2 < 80 || self->spo2 > 100) {
+            self->spo2 = self->previous_spo2;
+        }
+    } else {
+        self->spo2 = 0;
+    }
+    return mp_obj_new_int(self->spo2);
+}
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_get_spo2_obj, cdriver_max30102_get_spo2);
+
+static mp_obj_t cdriver_max30102_get_ir(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    return mp_obj_new_int(self->ir);
+}
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_get_ir_obj, cdriver_max30102_get_ir);
+
+
+static mp_obj_t cdriver_max30102_get_red(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    return mp_obj_new_int(self->red);
+}
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_get_red_obj, cdriver_max30102_get_red);
+
+
+static mp_obj_t cdriver_max30102_update(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    max30102_data_t result = { 0 };
+
+    esp_err_t ret = max30102_update(self->max30102, &result);
+
+    if (ret != ESP_OK) {
+        mp_printf(&mp_plat_print, "max30102 update failed\n");
+    }
+
+    self->ir = result.ir_raw;
+    self->red = result.red_raw;
+
+    if ((self->ir > 2000) && (self->red > 2000)) {
+        if (result.pulse_detected) {
+            self->heart_bpm = (int)result.heart_bpm;
+            self->spo2 = (int)result.spO2;
+            if (self->spo2 < 95) {
+                self->spo2 += 5;
+            }
+        }
+    } else {
+        self->heart_bpm = 0;
+        self->spo2 = 0;
+    }
+
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_2(mp_MAX30102_init_obj, mp_MAX30102_init);
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_update_obj, cdriver_max30102_update);
 
-static mp_obj_t mp_MAX30102_set_mode(mp_obj_t mode_in) {
-
+static mp_obj_t cdriver_max30102_set_mode(mp_obj_t self_in, mp_obj_t mode_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
     uint8_t mode = mp_obj_get_int(mode_in);
-    _curr_mode = mode;
-    max30102_set_mode(&max30102, mode);
+
+    self->curr_mode = mode;
+    max30102_set_mode(self->max30102, mode);
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30102_set_mode_obj, mp_MAX30102_set_mode);
+MP_DEFINE_CONST_FUN_OBJ_2(cdriver_max30102_set_mode_obj, cdriver_max30102_set_mode);
 
-static mp_obj_t mp_MAX30102_set_led_current(mp_obj_t red, mp_obj_t ir) {
-
+static mp_obj_t cdriver_max30102_set_led_current(mp_obj_t self_in, mp_obj_t red, mp_obj_t ir) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
     uint8_t red_current = mp_obj_get_int(red);
     uint8_t ir_current = mp_obj_get_int(ir);
 
-    max30102_set_led_current(&max30102, red_current, ir_current);
+    max30102_set_led_current(self->max30102, red_current, ir_current);
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_2(mp_MAX30102_set_led_current_obj, mp_MAX30102_set_led_current);
+MP_DEFINE_CONST_FUN_OBJ_3(cdriver_max30102_set_led_current_obj, cdriver_max30102_set_led_current);
 
 
-static mp_obj_t mp_MAX30102_set_plus_width(mp_obj_t pw) {
+static mp_obj_t cdriver_max30102_set_pulse_width(mp_obj_t self_in, mp_obj_t pw) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    uint8_t pulse_width = mp_obj_get_int(pw);
 
-    uint8_t plus_width = mp_obj_get_int(pw);
-
-    max30102_set_pulse_width(&max30102, plus_width);
+    max30102_set_pulse_width(self->max30102, pulse_width);
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30102_set_plus_width_obj, mp_MAX30102_set_plus_width);
+MP_DEFINE_CONST_FUN_OBJ_2(cdriver_max30102_set_pulse_width_obj, cdriver_max30102_set_pulse_width);
 
-static mp_obj_t mp_MAX30102_set_sampling_rate(mp_obj_t rate) {
-
+static mp_obj_t cdriver_max30102_set_sampling_rate(mp_obj_t self_in, mp_obj_t rate) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
     uint8_t sampling_rate = mp_obj_get_int(rate);
 
-    max30102_set_sampling_rate(&max30102, sampling_rate);
+    max30102_set_sampling_rate(self->max30102, sampling_rate);
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_1(mp_MAX30102_set_sampling_rate_obj, mp_MAX30102_set_sampling_rate);
+MP_DEFINE_CONST_FUN_OBJ_2(cdriver_max30102_set_sampling_rate_obj, cdriver_max30102_set_sampling_rate);
 
 
-static mp_obj_t mp_MAX30102_deinit(void) {
-    _heart_bpm = 0;
-    _spo2 = 0;
+static mp_obj_t cdriver_max30102_deinit(mp_obj_t self_in) {
+    cdriver_max30102_obj_t *self = MP_OBJ_TO_PTR(self_in);
+    self->heart_bpm = 0;
+    self->spo2 = 0;
     return mp_const_none;
 }
-MP_DEFINE_CONST_FUN_OBJ_0(mp_MAX30102_deinit_obj, mp_MAX30102_deinit);
+MP_DEFINE_CONST_FUN_OBJ_1(cdriver_max30102_deinit_obj, cdriver_max30102_deinit);
 
 
-static const mp_rom_map_elem_t max30102_globals_dict_table[] = {
-    { MP_ROM_QSTR(MP_QSTR_init),           (mp_obj_t)&mp_MAX30102_init_obj },
-    { MP_ROM_QSTR(MP_QSTR_get_heart_rate),  (mp_obj_t)&mp_MAX30102_get_heart_rate_obj },
-    { MP_ROM_QSTR(MP_QSTR_get_spo2),       (mp_obj_t)&mp_MAX30102_get_spo2_obj },
-    { MP_ROM_QSTR(MP_QSTR_get_ir),         (mp_obj_t)&mp_MAX30102_get_ir_obj },
-    { MP_ROM_QSTR(MP_QSTR_get_red),        (mp_obj_t)&mp_MAX30102_get_red_obj },
+static const mp_rom_map_elem_t cdriver_max30102_locals_dict_table[] = {
+    /* *FORMAT-OFF* */
+    { MP_ROM_QSTR(MP_QSTR_get_heart_rate),    MP_ROM_PTR(&cdriver_max30102_get_heart_rate_obj)    },
+    { MP_ROM_QSTR(MP_QSTR_get_spo2),          MP_ROM_PTR(&cdriver_max30102_get_spo2_obj)          },
+    { MP_ROM_QSTR(MP_QSTR_get_ir),            MP_ROM_PTR(&cdriver_max30102_get_ir_obj)            },
+    { MP_ROM_QSTR(MP_QSTR_get_red),           MP_ROM_PTR(&cdriver_max30102_get_red_obj)           },
 
-    { MP_ROM_QSTR(MP_QSTR_set_mode),       (mp_obj_t)&mp_MAX30102_set_mode_obj },
-    { MP_ROM_QSTR(MP_QSTR_set_led_current),(mp_obj_t)&mp_MAX30102_set_led_current_obj },
+    { MP_ROM_QSTR(MP_QSTR_set_mode),          MP_ROM_PTR(&cdriver_max30102_set_mode_obj)          },
+    { MP_ROM_QSTR(MP_QSTR_set_led_current),   MP_ROM_PTR(&cdriver_max30102_set_led_current_obj)   },
 
-    { MP_ROM_QSTR(MP_QSTR_update),         (mp_obj_t)&mp_MAX30102_update_obj },
-    { MP_ROM_QSTR(MP_QSTR_set_plus_width), (mp_obj_t)&mp_MAX30102_set_plus_width_obj},
-    { MP_ROM_QSTR(MP_QSTR_set_sampling_rate), (mp_obj_t)&mp_MAX30102_set_sampling_rate_obj},
-    { MP_ROM_QSTR(MP_QSTR_deinit),         (mp_obj_t)&mp_MAX30102_deinit_obj}
+    { MP_ROM_QSTR(MP_QSTR_update),            MP_ROM_PTR(&cdriver_max30102_update_obj)            },
+    { MP_ROM_QSTR(MP_QSTR_set_pulse_width),    MP_ROM_PTR(&cdriver_max30102_set_pulse_width_obj)   },
+    { MP_ROM_QSTR(MP_QSTR_set_sampling_rate), MP_ROM_PTR(&cdriver_max30102_set_sampling_rate_obj) },
+    { MP_ROM_QSTR(MP_QSTR_deinit),            MP_ROM_PTR(&cdriver_max30102_deinit_obj)            },
+    /* *FORMAT-ON* */
 };
 
-static MP_DEFINE_CONST_DICT(max30102_globals_dict, max30102_globals_dict_table);
+static MP_DEFINE_CONST_DICT(cdriver_max30102_locals_dict, cdriver_max30102_locals_dict_table);
 
-const mp_obj_module_t mp_module_max30102 = {
-    .base = {&mp_type_module},
-    .globals = (mp_obj_dict_t *)&max30102_globals_dict,
-};
+MP_DEFINE_CONST_OBJ_TYPE(
+    cdriver_max30102_type,
+    MP_QSTR_MAX30102,
+    MP_TYPE_FLAG_NONE,
+    make_new, cdriver_max30102_make_new,
+    locals_dict, &cdriver_max30102_locals_dict
+    );

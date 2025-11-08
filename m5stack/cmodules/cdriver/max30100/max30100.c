@@ -13,21 +13,16 @@
  * MAX30100 ESP32 Library.
 */
 
-#include <stdio.h>
-#include "./include/max30100/max30100.h"
-#include "./include/max30100/registers.h"
+#include "max30100.h"
+#include "registers.h"
+
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+
 #include <string.h>
+#include <stdio.h>
 
-#include "py/runtime.h"
-static void apply_bus(uint8_t pos) {
-
-}
-static void free_bus(uint8_t pos) {
-
-}
-
-esp_err_t max30100_init(max30100_config_t *this,
-    i2c_port_t i2c_num,
+esp_err_t max30100_init(max30100_config_t *this, uint8_t i2c_addr,
     max30100_mode_t mode,
     max30100_sampling_rate_t sampling_rate,
     max30100_pulse_width_t pulse_width,
@@ -37,7 +32,8 @@ esp_err_t max30100_init(max30100_config_t *this,
     uint8_t pulse_bpm_sample_size,
     bool high_res_mode,
     bool debug) {
-    this->i2c_num = i2c_num;
+
+    this->i2c_addr = i2c_addr;
 
     this->acceptable_intense_diff = MAX30100_DEFAULT_ACCEPTABLE_INTENSITY_DIFF;
     this->red_current_adj_ms = MAX30100_DEFAULT_RED_LED_CURRENT_ADJUSTMENT_MS;
@@ -355,93 +351,20 @@ esp_err_t max30100_balance_intensities(max30100_config_t *this,
 
 
 // Writes val to address register on device
-esp_err_t max30100_write_register(max30100_config_t *this,
-    uint8_t address,
-    uint8_t val) {
-    apply_bus(this->device_pos);
-    // start transmission to device
-    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-    i2c_master_start(cmd);
-    i2c_master_write_byte(cmd, (this->i2c_addr << 1) | I2C_MASTER_WRITE, true);
-
-    i2c_master_write_byte(cmd, address, true); // send register address
-    i2c_master_write_byte(cmd, val, true); // send value to write
-
-    // end transmission
-    i2c_master_stop(cmd);
-    esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
-        cmd,
-        1000 / portTICK_PERIOD_MS);
-    i2c_cmd_link_delete(cmd);
-    free_bus(this->device_pos);
-    if (ret != ESP_OK) {
-        mp_raise_ValueError(MP_ERROR_TEXT("max30100 I2C bus error"));
-    }
-    return ret;
+inline esp_err_t max30100_write_register(max30100_config_t *this, uint8_t reg, uint8_t val) {
+    return this->i2c_bus_write(this->i2c_addr, reg, &val, 1, this->intf_ptr);
 }
 
-esp_err_t max30100_read_register(max30100_config_t *this,
-    uint8_t address,
-    uint8_t *reg) {
-    apply_bus(this->device_pos);
-    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-    i2c_master_start(cmd);
-    i2c_master_write_byte(cmd, (this->i2c_addr << 1) | I2C_MASTER_WRITE, true);
-    i2c_master_write_byte(cmd, address, true);
-
-    // i2c_master_stop(cmd);
-    i2c_master_start(cmd);
-
-    i2c_master_write_byte(cmd, (this->i2c_addr << 1) | I2C_MASTER_READ, true);
-    i2c_master_read_byte(cmd, reg, 1); // 1 is NACK
-
-    // end transmission
-    i2c_master_stop(cmd);
-    esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
-        cmd,
-        1000 / portTICK_PERIOD_MS);
-
-    i2c_cmd_link_delete(cmd);
-    free_bus(this->device_pos);
-    if (ret != ESP_OK) {
-        mp_raise_ValueError(MP_ERROR_TEXT("max30100 I2C bus error"));
-    }
-    return ret;
+inline esp_err_t max30100_read_register(max30100_config_t *this, uint8_t reg, uint8_t *val) {
+    return this->i2c_bus_read(this->i2c_addr, reg, val, 1, this->intf_ptr);
 }
 
 // Reads num bytes starting from address register on device in to _buff array
-esp_err_t max30100_read_from(max30100_config_t *this,
-    uint8_t address,
-    uint8_t *reg,
-    uint8_t size) {
+esp_err_t max30100_read_from(max30100_config_t *this, uint8_t reg, uint8_t *buf, uint8_t size) {
     if (!size) {
         return ESP_OK;
     }
-    apply_bus(this->device_pos);
-    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
-    i2c_master_start(cmd);
-    i2c_master_write_byte(cmd, (this->i2c_addr << 1) | I2C_MASTER_WRITE, 1);
-    i2c_master_write_byte(cmd, address, true);
-
-    i2c_master_start(cmd);
-    i2c_master_write_byte(cmd, (this->i2c_addr << 1) | I2C_MASTER_READ, true);
-
-    if (size > 1) {
-        i2c_master_read(cmd, reg, size - 1, 0); // 0 is ACK
-
-    }
-    i2c_master_read_byte(cmd, reg + size - 1, 1); // 1 is NACK
-
-    i2c_master_stop(cmd);
-    esp_err_t ret = i2c_master_cmd_begin(this->i2c_num,
-        cmd,
-        1000 / portTICK_PERIOD_MS);
-    i2c_cmd_link_delete(cmd);
-    free_bus(this->device_pos);
-    if (ret != ESP_OK) {
-        mp_raise_ValueError(MP_ERROR_TEXT("max30100 I2C bus error"));
-    }
-    return ret;
+    return this->i2c_bus_read(this->i2c_addr, reg, buf, size, this->intf_ptr);
 }
 
 esp_err_t max30100_set_mode(max30100_config_t *this, max30100_mode_t mode) {
