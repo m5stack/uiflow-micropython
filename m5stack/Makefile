@@ -332,7 +332,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \
 	2007-Support-UnitC6L.patch \
 	2008-Only-use-old-rmt-driver.patch \
-	2009-fix-SoftI2C.patch
+	2009-fix-SoftI2C.patch \
+	2010-Support-Nesso-N1.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
