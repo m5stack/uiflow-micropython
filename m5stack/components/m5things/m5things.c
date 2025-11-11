@@ -28,6 +28,8 @@
 #include "esp_psram.h"
 #include "crypto.h"
 #include "_vfs_stream.h"
+#include "esp_netif_sntp.h"
+#include "esp_sntp.h"
 
 /** macro definitions */
 #define TAG "M5Things"
@@ -1838,28 +1840,36 @@ void time_sync_notification_cb(struct timeval *tv) {
 static bool sync_time_by_sntp(void) {
     time_t now = 0;
 
-    time(&now);
+    // time(&now);
     // if (now > 1670484240) {  // magic day :)
     //     return true;
     // }
 
     ESP_LOGI(TAG, "Initializing SNTP");
-    sntp_setoperatingmode(SNTP_OPMODE_POLL);
+    // sntp_setoperatingmode(SNTP_OPMODE_POLL);
 
     char sntp[64];
     size_t len = sizeof(sntp);
     if (nvs_read_str_helper(UIFLOW_NVS_NAMESPACE, "sntp0", sntp, &len) && len > 0 && strlen(sntp) > 0) {
-        sntp_setservername(0, sntp);
+        // sntp_setservername(0, sntp);
+        // memcpy(sntp, sntp, strlen(sntp) + 1);
     } else {
-        sntp_setservername(0, "uiflow2.m5stack.com");  // default
+        // sntp_setservername(0, "ntp.aliyun.com");  // default
+        memcpy(sntp, "ntp.aliyun.com", strlen("ntp.aliyun.com") + 1);
     }
 
-    sntp_set_time_sync_notification_cb(time_sync_notification_cb);
-    sntp_init();
+    esp_sntp_config_t config = ESP_NETIF_SNTP_DEFAULT_CONFIG(sntp);
+    config.sync_cb = time_sync_notification_cb;
+    #ifdef CONFIG_SNTP_TIME_SYNC_METHOD_SMOOTH
+    config.smooth_sync = true;
+    #endif
+    esp_netif_sntp_init(&config);
+    // sntp_set_time_sync_notification_cb(time_sync_notification_cb);
+    // sntp_init();
 
     int retry = 0;
     const int retry_count = 30;
-    while ((sntp_get_sync_status() == SNTP_SYNC_STATUS_RESET) &&
+    while ((esp_netif_sntp_sync_wait(2000 / portTICK_PERIOD_MS) == ESP_ERR_TIMEOUT) &&
            (++retry < retry_count)) {
         ESP_LOGI(TAG, "Waiting for system time to be set... (%d/%d)", retry,
             retry_count);
@@ -1872,6 +1882,8 @@ static bool sync_time_by_sntp(void) {
     localtime_r(&now, &timeinfo);
     strftime(strftime_buf, sizeof(strftime_buf), "%c", &timeinfo);
     ESP_LOGI(TAG, "date/time is: %s, timestamp: %lld", strftime_buf, now);
+
+    esp_netif_sntp_deinit();
 
     return retry < retry_count ? true : false;
 }
