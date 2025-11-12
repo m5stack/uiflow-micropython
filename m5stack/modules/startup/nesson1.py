@@ -589,6 +589,7 @@ class LauncherApp(AppBase):
 
     async def _keycode_enter_event_handler(self, fw: "Framework"):
         DEBUG and print("_keycode_enter_event_handler")
+        self.stop()
         app = fw._app_selector.index(self._id + 1)
         app.start()
 
