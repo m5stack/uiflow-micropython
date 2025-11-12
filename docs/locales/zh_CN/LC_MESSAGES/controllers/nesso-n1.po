@@ -1,0 +1,150 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-12 11:13+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/controllers/nesso-n1.rst:3 c295bae9d68b4d67a5c8e21ee7ce40de
+msgid "Nesso N1"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:9 8bcf25f13728465eb4ac0ed552da1b11
+msgid "Startup UI"
+msgstr "启动界面"
+
+#: ../../en/controllers/nesso-n1.rst:11 988128e71cdb4a93856b3063e0fa6628
+msgid "Power on the Nesso N1 by pressing the power button."
+msgstr "按下电源键启动 Nesso N1。"
+
+#: ../../en/controllers/nesso-n1.rst:12 f110dac306774ac3948b50c90f6ea40f
+msgid "Wait for the device to boot up and display the main interface."
+msgstr "等待设备启动并显示主界面。"
+
+#: ../../en/controllers/nesso-n1.rst:13 332dca2702fb482a9baf9f111dc90fdf
+msgid "Press BtnB to switch apps."
+msgstr "按下 BtnB 切换应用。"
+
+#: ../../en/controllers/nesso-n1.rst:14 e234dbe7edf94ccbb13c232701dad206
+msgid "Press BtnA to open the APP."
+msgstr "按下 BtnA 打开应用。"
+
+#: ../../en/controllers/nesso-n1.rst:15 66cdb055deff4c6b847c0d09bffe8eac
+msgid "Double-click BtnA to exit the app."
+msgstr "双击 BtnA 退出应用。"
+
+#: ../../en/controllers/nesso-n1.rst:17 928ee9d74bfd41b582fdffeba3337790
+msgid "|indicator.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.nesso_n1.ref:1 c89e7d27225240ea88b093b32b636d4c
+msgid "indicator.png"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:20 36fb0fc0e7ac4823aa547baa1a65b447
+msgid "Launcher"
+msgstr "启动器"
+
+#: ../../en/controllers/nesso-n1.rst:22 4defea54235842a2bddcebe61d080ec6
+msgid ""
+"Launcher displays the device's network connection status, charging "
+"status, and remaining battery power."
+msgstr "启动器显示设备的网络连接状态、充电状态和剩余电量。"
+
+#: ../../en/controllers/nesso-n1.rst:24 9d29b0cd100a46e482f3fbb9d3266cdf
+msgid "You can switch between different apps via BtnB."
+msgstr "可通过 BtnB 在不同应用间切换。"
+
+#: ../../en/controllers/nesso-n1.rst:26 6c0fadfef8084d74ab1336c3e9fc9091
+msgid "|launcher.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.nesso_n1.ref:9 c89e7d27225240ea88b093b32b636d4c
+msgid "launcher.png"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:29 fa9fa73e23464aeeb05a941a20c29677
+msgid "Cloud"
+msgstr "云"
+
+#: ../../en/controllers/nesso-n1.rst:31 a1be80832b024760bc7e2d25aa850370
+msgid "You can find more detailed network connection status."
+msgstr "可查看更详细的网络连接状态。"
+
+#: ../../en/controllers/nesso-n1.rst:33 57a99fc2aabf4223b790fcedf8fb0e6d
+msgid "|cloud.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.nesso_n1.ref:5 c10b76b7b76b43cfbf0ffd5944184c99
+msgid "cloud.png"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:36 cd02717cec3a4366b63ea7f4fbd55e9d
+msgid "USB"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:38 a7d502d885df4e7ab87645f8926b173e
+msgid ""
+"To check the device's Serial baud rate, it is not currently supported to "
+"reset the baud rate."
+msgstr "用于查看设备的串口波特率，当前不支持重置波特率。"
+
+#: ../../en/controllers/nesso-n1.rst:40 71d215bca18f4295a369af68d21cbe71
+msgid "|usb.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.nesso_n1.ref:7 c10b76b7b76b43cfbf0ffd5944184c99
+msgid "usb.png"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:43 026188b82d6242a986b370152b84d521
+msgid "APP.LIST"
+msgstr "应用列表"
+
+#: ../../en/controllers/nesso-n1.rst:45 7d7e9fa7da79447d8b3c22abd909d0d4
+msgid "Select the Python application via BtnA."
+msgstr "通过 BtnA 选择 Python 应用。"
+
+#: ../../en/controllers/nesso-n1.rst:46 053c3d714ea64bfeb1959637eab88dea
+msgid "Press BtnA to run the selected Python application."
+msgstr "按下 BtnA 运行所选的 Python 应用。"
+
+#: ../../en/controllers/nesso-n1.rst:48 e5394559958345929c16036012e571a2
+msgid "|applist.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.nesso_n1.ref:3 ac168309118a4860942cc538f8d60fc2
+msgid "applist.png"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:51 4ba4026153c44404b8535b03387f8eb0
+msgid "LoRaChat"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:53 ../../en/controllers/nesso-n1.rst:58
+#: 12c68d7bec074c9e8da33bf476e3cf8a d6fe2066bb4b4f5abccfd247eef328c4
+msgid "Coming soon"
+msgstr ""
+
+#: ../../en/controllers/nesso-n1.rst:56 8bcf25f13728465eb4ac0ed552da1b11
+msgid "Setup"
+msgstr ""
+
+#~ msgid "DinMeter"
+#~ msgstr ""
+

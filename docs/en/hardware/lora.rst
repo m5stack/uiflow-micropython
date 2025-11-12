@@ -14,16 +14,20 @@ LoRa is used to control the built-in long-range wireless communication module in
     +=================+=========+
     | UnitC6L         | |S|     |
     +-----------------+---------+
+    | Nesso N1        | |S|     |
+    +-----------------+---------+
 
 .. |S| unicode:: U+2714
 
-UiFlow2 Example 
+UiFlow2 Example
 ---------------
 
 Sender
 ^^^^^^
 
 Open the |unit_c6l_tx_example.m5f2| project in UiFlow2.
+
+Open the |nesso_n1_sender_example.m5f2| project in UiFlow2.
 
 This example sends data every second.
 
@@ -39,6 +43,8 @@ Receiver
 ^^^^^^^^
 
 Open the |unit_c6l_rx_example.m5f2| project in UiFlow2.
+
+Open the |nesso_n1_receiver_example.m5f2| project in UiFlow2.
 
 This example receives and displays data.
 
@@ -88,7 +94,7 @@ Example output:
 
 class LoRa
 ^^^^^^^^^^
- 
+
 .. class:: hardware.LoRa(freq_khz = 868000, \
                         bw = "250", \
                         sf = 8, \
@@ -116,7 +122,7 @@ class LoRa
     :param int coding_rate: Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
     :param int preamble_len: Length of the preamble sequence in symbols, range from 0 to 255.
     :param int syncword: Sync word to mark the start of the data frame, default is 0x12.
-    :param int output_power: Output power in dBm, range from -9 to 22. 
+    :param int output_power: Output power in dBm, range from -9 to 22.
 
     UiFlow2 Code Block:
 
@@ -228,7 +234,7 @@ class LoRa
 
                 lora_0.set_preamble_len(preamble_len)
 
-    .. method:: set_output_power(output_power) 
+    .. method:: set_output_power(output_power)
 
         Set output power in dBm.
 
@@ -245,12 +251,12 @@ class LoRa
                 lora_0.set_output_power(output_power)
 
     .. method:: set_irq_callback(callback)
-        
+
         Set the interrupt callback function to be executed on IRQ.
-        
+
         :param callback: The callback function to be invoked when the interrupt is triggered.
                           The callback should not take any arguments and should return nothing.
-        
+
         Call `start_recv()` to begin receiving data.
 
         UiFlow2 Code Block:
@@ -264,7 +270,7 @@ class LoRa
                 lora_0.set_irq_callback()
 
     .. method:: start_recv()
-        
+
         Start receive data.
 
         This method initiates the process to begin receiving data.
@@ -279,8 +285,8 @@ class LoRa
 
                 lora_0.start_recv()
 
-    .. method:: recv(self, timeout_ms, rx_length, rx_packet) 
-        
+    .. method:: recv(self, timeout_ms, rx_length, rx_packet)
+
         Receive data.
 
         :param int timeout_ms: Timeout in milliseconds (optional). Default is None.
@@ -301,14 +307,14 @@ class LoRa
 
                 data = lora_0.recv()
 
-    .. method:: send(buf, tx_at_ms=None) 
+    .. method:: send(buf, tx_at_ms=None)
 
         Send data.
 
         :param str | list | tuple | int | bytearray packet: The data to be sent.
         :param int tx_at_ms: The timestamp in milliseconds when to send the data (optional). Default is None.
         :returns: Returns a timestamp (result of `time.ticks_ms()`) indicating when the data packet was sent.
-        :rtype: int 
+        :rtype: int
 
         Send a data packet and return the timestamp after the packet is sent.
 
@@ -354,7 +360,7 @@ class LoRa
 
                 lora_0.sleep()
 
-    .. method:: irq_triggered()  
+    .. method:: irq_triggered()
 
         Check IRQ trigger.
 
