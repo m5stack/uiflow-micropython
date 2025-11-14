@@ -17,17 +17,17 @@
 
 #include <esp_log.h>
 #include <sdkconfig.h>
-#include <M5AtomDisplay.h>
-#include <M5ModuleDisplay.h>
-#include <M5ModuleRCA.h>
-#include <M5UnitOLED.h>
-#include <M5UnitLCD.h>
-#include <M5UnitMiniOLED.h>
-#include <M5UnitGLASS.h>
-#include <M5UnitGLASS2.h>
+// #include <M5AtomDisplay.h>
+// #include <M5ModuleDisplay.h>
+// #include <M5ModuleRCA.h>
+// #include <M5UnitOLED.h>
+// #include <M5UnitLCD.h>
+// #include <M5UnitMiniOLED.h>
+// #include <M5UnitGLASS.h>
+// #include <M5UnitGLASS2.h>
 
-#include <M5UnitRCA.h>
-#include <M5Unified.h>
+// #include <M5UnitRCA.h>
+#include <M5Unified.hpp>
 
 #include <utility/Button_Class.hpp>
 
@@ -84,6 +84,7 @@ const mic_obj_t m5_mic     = {&mp_mic_type,       &(M5.Mic)    };
 static btn_obj_t *m5_btn_list[5] = {&m5_btnA, &m5_btnB, &m5_btnC, &m5_btnPWR, &m5_btnEXT};
 /* *FORMAT-ON* */
 
+#if 0
 static void m5_config_helper_module_display(mp_obj_t config_obj, m5::M5Unified::config_t &cfg) {
     if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
         mp_raise_TypeError("module_display must be a dict");
@@ -239,7 +240,9 @@ static void m5_config_helper_unit_rca(mp_obj_t config_obj, m5::M5Unified::config
     }
 }
 #endif
+#endif
 
+#if 0
 static void m5_config_helper(mp_obj_t config_obj, m5::M5Unified::config_t &cfg, machine_hw_i2c_obj_t *i2c_bus, uint8_t addr) {
     mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
 
@@ -411,7 +414,7 @@ mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
 
     return m5_getDisplay(mp_obj_new_int(M5.getDisplayCount() - 1));
 }
-
+#endif
 
 mp_obj_t m5_create_speaker(void) {
     auto spk = new m5::Speaker_Class();
