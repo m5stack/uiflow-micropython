@@ -1,0 +1,72 @@
+Index: lv_binding_micropython/lv_conf.h
+===================================================================
+--- lv_binding_micropython.orig/lv_conf.h
++++ lv_binding_micropython/lv_conf.h
+@@ -440,7 +440,7 @@ extern void mp_lv_deinit_gc();
+     #define LV_FONT_MONTSERRAT_18 0
+ #endif
+ #ifndef LV_FONT_MONTSERRAT_20
+-    #define LV_FONT_MONTSERRAT_20 0
++    #define LV_FONT_MONTSERRAT_20 1
+ #endif
+ #ifndef LV_FONT_MONTSERRAT_22
+     #define LV_FONT_MONTSERRAT_22 0
+@@ -449,7 +449,7 @@ extern void mp_lv_deinit_gc();
+     #define LV_FONT_MONTSERRAT_24 1
+ #endif
+ #ifndef LV_FONT_MONTSERRAT_26
+-    #define LV_FONT_MONTSERRAT_26 0
++    #define LV_FONT_MONTSERRAT_26 1
+ #endif
+ #ifndef LV_FONT_MONTSERRAT_28
+     #define LV_FONT_MONTSERRAT_28 0
+@@ -841,14 +841,14 @@ extern void mp_lv_deinit_gc();
+ #define LV_USE_SNAPSHOT 1
+ 
+ /*1: Enable system monitor component*/
+-#define LV_USE_SYSMON   0
++#define LV_USE_SYSMON   1
+ #if LV_USE_SYSMON
+     /*Get the idle percentage. E.g. uint32_t my_get_idle(void);*/
+     #define LV_SYSMON_GET_IDLE lv_timer_get_idle
+ 
+     /*1: Show CPU usage and FPS count
+      * Requires `LV_USE_SYSMON = 1`*/
+-    #define LV_USE_PERF_MONITOR 0
++    #define LV_USE_PERF_MONITOR 1
+     #if LV_USE_PERF_MONITOR
+         #define LV_USE_PERF_MONITOR_POS LV_ALIGN_BOTTOM_RIGHT
+ 
+@@ -1052,13 +1052,13 @@ extern void mp_lv_deinit_gc();
+  ====================*/
+ 
+ /*Show some widget. It might be required to increase `LV_MEM_SIZE` */
+-#define LV_USE_DEMO_WIDGETS 0
++#define LV_USE_DEMO_WIDGETS 1
+ 
+ /*Demonstrate the usage of encoder and keyboard*/
+ #define LV_USE_DEMO_KEYPAD_AND_ENCODER 0
+ 
+ /*Benchmark your system*/
+-#define LV_USE_DEMO_BENCHMARK 0
++#define LV_USE_DEMO_BENCHMARK 1
+ 
+ /*Render test for each primitives. Requires at least 480x272 display*/
+ #define LV_USE_DEMO_RENDER 0
+Index: lv_binding_micropython/micropython.cmake
+===================================================================
+--- lv_binding_micropython.orig/micropython.cmake
++++ lv_binding_micropython/micropython.cmake
+@@ -34,10 +34,11 @@ all_lv_bindings()
+ # target_link_libraries(usermod INTERFACE usermod_lvgl)
+ 
+ file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_LIST_DIR}/lvgl/src/*.c)
++file(GLOB_RECURSE DEMO_SOURCES ${CMAKE_CURRENT_LIST_DIR}/lvgl/demos/*.c)
+ 
+ add_library(lvgl_interface INTERFACE)
+ 
+-target_sources(lvgl_interface INTERFACE ${SOURCES})
++target_sources(lvgl_interface INTERFACE ${SOURCES} ${DEMO_SOURCES})
+ target_compile_options(lvgl_interface INTERFACE ${LV_CFLAGS})
+ 
+ # # lvgl bindings target (the mpy module)

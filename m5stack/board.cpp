@@ -40,7 +40,7 @@ extern "C" {
             ESP_LOGI("BOARD", "Internal I2C(%d) init", in_port);
 #if MICROPY_HW_ESP_NEW_I2C_DRIVER
         i2c_master_bus_handle_t bus_handle;
-        if (i2c_master_get_bus_handle(in_port, &bus_handle) == ESP_ERR_INVALID_STATE) {
+        if (i2c_master_get_bus_handle(in_port, &bus_handle) != ESP_OK) {
             i2c_master_bus_config_t i2c_bus_config;
             memset(&i2c_bus_config, 0, sizeof(i2c_bus_config));
             i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
