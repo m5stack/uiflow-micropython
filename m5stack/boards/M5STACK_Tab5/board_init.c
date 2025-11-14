@@ -33,6 +33,13 @@
 static char *TAG = "tab5";
 static void *audio_hal = NULL;
 
+#define AUDIO_I2S_GPIO_MCLK      GPIO_NUM_30
+#define AUDIO_I2S_GPIO_WS        GPIO_NUM_29
+#define AUDIO_I2S_GPIO_BCLK      GPIO_NUM_27
+#define AUDIO_I2S_GPIO_DIN       GPIO_NUM_28
+#define AUDIO_I2S_GPIO_DOUT      GPIO_NUM_26
+#define AUDIO_CODEC_I2C_SCL_PIN  GPIO_NUM_32
+#define AUDIO_CODEC_I2C_SDA_PIN  GPIO_NUM_31
 
 #if USE_IDF5
 
@@ -50,24 +57,27 @@ static i2s_keep_t *i2s_keep[I2S_MAX_KEEP];
 
 #ifdef USE_IDF_I2C_MASTER
 static i2c_master_bus_handle_t i2c_bus_handle;
+static bool first_i2c_init = false;
 #endif
 
 static int ut_i2c_init(uint8_t port);
 static int ut_i2c_deinit(uint8_t port);
+static void amp_control(bool on);
 
 static int ut_i2s_init(uint8_t port);
 static int ut_i2s_deinit(uint8_t port);
+
 
 esp_err_t get_i2s_pins(int port, board_i2s_pin_t *i2s_config)
 {
     ESP_LOGI(TAG, "get_i2s_pins !!!");
     AUDIO_NULL_CHECK(TAG, i2s_config, return ESP_FAIL);
     if (port == 1) {
-        i2s_config->bck_io_num = GPIO_NUM_27;
-        i2s_config->ws_io_num = GPIO_NUM_29;
-        i2s_config->data_out_num = GPIO_NUM_26;
-        i2s_config->data_in_num = GPIO_NUM_28;
-        i2s_config->mck_io_num = GPIO_NUM_30;
+        i2s_config->bck_io_num = AUDIO_I2S_GPIO_BCLK;
+        i2s_config->ws_io_num = AUDIO_I2S_GPIO_WS;
+        i2s_config->data_out_num = AUDIO_I2S_GPIO_DOUT;
+        i2s_config->data_in_num = AUDIO_I2S_GPIO_DIN;
+        i2s_config->mck_io_num = AUDIO_I2S_GPIO_MCLK;
     } else {
         memset(i2s_config, -1, sizeof(board_i2s_pin_t));
         ESP_LOGE(TAG, "I2S PORT %d is not supported, please use I2S PORT 0", port);
@@ -84,13 +94,16 @@ void * board_codec_init(void)
     ESP_LOGI(TAG, "init");
 
     int ret = ut_i2c_init(1);
-    ret |= ut_i2s_init(1);
+    ret |= ut_i2s_init(0);
+
+    // amp control
+    amp_control(true);
 
     audio_codec_i2s_cfg_t i2s_cfg = {
-        .port = 1,
+        .port = 0,
 #if USE_IDF5
-        .rx_handle = i2s_keep[1]->rx_handle,
-        .tx_handle = i2s_keep[1]->tx_handle,
+        .rx_handle = i2s_keep[0]->rx_handle,
+        .tx_handle = i2s_keep[0]->tx_handle,
 #endif
     };
     const audio_codec_data_if_t *data_if = audio_codec_new_i2s_data(&i2s_cfg);
@@ -155,7 +168,7 @@ void * board_codec_init(void)
     ret = esp_codec_dev_open(record_dev, &fs);
 
     // i2s_stream_init 会实例化 i2s。初始化 codec 之后，需要将 i2s 释放。
-    ut_i2s_deinit(1);
+    ut_i2s_deinit(0);
 
     return audio_hal;
 }
@@ -178,14 +191,18 @@ int board_codec_volume_get(void *hd, int *vol)
 static int ut_i2c_init(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
-    i2c_master_bus_config_t i2c_bus_config = {0};
-    i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
-    i2c_bus_config.i2c_port = port;
-    i2c_bus_config.scl_io_num = 31;
-    i2c_bus_config.sda_io_num = 32;
-    i2c_bus_config.glitch_ignore_cnt = 7;
-    i2c_bus_config.flags.enable_internal_pullup = true;
-    return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
+    if (i2c_master_get_bus_handle(port, &i2c_bus_handle) != ESP_OK) {
+        first_i2c_init = true;
+        i2c_master_bus_config_t i2c_bus_config = {0};
+        i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
+        i2c_bus_config.i2c_port = port;
+        i2c_bus_config.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
+        i2c_bus_config.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
+        i2c_bus_config.glitch_ignore_cnt = 7;
+        i2c_bus_config.flags.enable_internal_pullup = true;
+        return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
+    }
+    return ESP_OK;
 #else
     i2c_config_t i2c_cfg = {
         .mode = I2C_MODE_MASTER,
@@ -193,8 +210,8 @@ static int ut_i2c_init(uint8_t port)
         .scl_pullup_en = GPIO_PULLUP_ENABLE,
         .master.clk_speed = 100000,
     };
-    i2c_cfg.sda_io_num = 31;
-    i2c_cfg.scl_io_num = 32;
+    i2c_cfg.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
+    i2c_cfg.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
     esp_err_t ret = i2c_param_config(port, &i2c_cfg);
     if (ret != ESP_OK) {
         return -1;
@@ -207,7 +224,7 @@ static int ut_i2c_init(uint8_t port)
 static int ut_i2c_deinit(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
-    if (i2c_bus_handle) {
+    if (i2c_bus_handle && first_i2c_init) {
         i2c_del_master_bus(i2c_bus_handle);
     }
     i2c_bus_handle = NULL;
@@ -260,7 +277,7 @@ static int ut_i2s_init(uint8_t port)
     if (i2s_keep[port] == NULL) {
         return -1;
     }
-#if SOC_I2S_SUPPORTS_TDM 
+#if SOC_I2S_SUPPORTS_TDM
     i2s_tdm_slot_mask_t slot_mask = I2S_TDM_SLOT0 | I2S_TDM_SLOT1 | I2S_TDM_SLOT2 | I2S_TDM_SLOT3;
     i2s_tdm_config_t tdm_cfg = {
         .slot_cfg = I2S_TDM_PHILIPS_SLOT_DEFAULT_CONFIG(16, I2S_SLOT_MODE_STEREO, slot_mask),
@@ -279,21 +296,22 @@ static int ut_i2s_init(uint8_t port)
     if (i2s_out_mode == I2S_COMM_MODE_STD) {
         ret = i2s_channel_init_std_mode(i2s_keep[port]->tx_handle, &std_cfg);
     }
-#if SOC_I2S_SUPPORTS_TDM 
+#if SOC_I2S_SUPPORTS_TDM
     else if (i2s_out_mode == I2S_COMM_MODE_TDM) {
         ret = i2s_channel_init_tdm_mode(i2s_keep[port]->tx_handle, &tdm_cfg);
     }
 #endif
     if (i2s_in_mode == I2S_COMM_MODE_STD) {
         ret = i2s_channel_init_std_mode(i2s_keep[port]->rx_handle, &std_cfg);
-    } 
-#if SOC_I2S_SUPPORTS_TDM 
+    }
+#if SOC_I2S_SUPPORTS_TDM
     else if (i2s_in_mode == I2S_COMM_MODE_TDM) {
         ret = i2s_channel_init_tdm_mode(i2s_keep[port]->rx_handle, &tdm_cfg);
     }
 #endif
     // For tx master using duplex mode
     i2s_channel_enable(i2s_keep[port]->tx_handle);
+    i2s_channel_enable(i2s_keep[port]->rx_handle);
 #else
     i2s_config_t i2s_config = {
         .mode = (i2s_mode_t) (I2S_MODE_TX | I2S_MODE_RX | I2S_MODE_MASTER),
@@ -341,4 +359,64 @@ static int ut_i2s_deinit(uint8_t port)
     i2s_driver_uninstall(port);
 #endif
     return 0;
+}
+
+static void amp_control(bool on)
+{
+#ifdef USE_IDF_I2C_MASTER
+    i2c_device_config_t i2c_dev_conf = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .scl_speed_hz = 400000,
+        .device_address = 0x43,
+    };
+    i2c_master_dev_handle_t dev_handle;
+    if (i2c_master_bus_add_device(i2c_bus_handle, &i2c_dev_conf, &dev_handle) != ESP_OK) {
+        ESP_LOGE(TAG, "amp_control i2c_master_bus_add_device failed");
+        return ;
+    }
+
+    uint8_t reg_addr = 0x00;
+    uint8_t value = 0;
+    uint8_t write_buf[2] = { 0 };
+
+    // PP
+    reg_addr = 0x07;
+    i2c_master_transmit_receive(dev_handle, &reg_addr, 1, &value, 1, -1);
+    value &= ~0b00000010;
+    write_buf[0] = reg_addr;
+    write_buf[1] = value;
+    i2c_master_transmit(dev_handle, write_buf, sizeof(write_buf), -1);
+
+    // PULLUP
+    reg_addr = 0x0D;
+    i2c_master_transmit_receive(dev_handle, &reg_addr, 1, &value, 1, -1);
+    value |= 0b00000010;
+    write_buf[0] = reg_addr;
+    write_buf[1] = value;
+    i2c_master_transmit(dev_handle, write_buf, sizeof(write_buf), -1);
+
+    // DIR
+    reg_addr = 0x03;
+    i2c_master_transmit_receive(dev_handle, &reg_addr, 1, &value, 1, -1);
+    value |= 0b00000010;
+    write_buf[0] = reg_addr;
+    write_buf[1] = value;
+    i2c_master_transmit(dev_handle, write_buf, sizeof(write_buf), -1);
+
+    // OUTPUT
+    reg_addr = 0x05;
+    value = 0;
+    i2c_master_transmit_receive(dev_handle, &reg_addr, 1, &value, 1, -1);
+    if (on) {
+        value |= 0b00000010;
+    } else {
+        value &= ~0b00000010;
+    }
+    write_buf[0] = reg_addr;
+    write_buf[1] = value;
+    i2c_master_transmit(dev_handle, write_buf, sizeof(write_buf), -1);
+    i2c_master_bus_rm_device(dev_handle);
+#else
+    #error "Not implemented"
+#endif
 }

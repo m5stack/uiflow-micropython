@@ -4,6 +4,8 @@ CONFIG_SPIRAM=y
 CONFIG_SPIRAM_CACHE_WORKAROUND=y
 CONFIG_SPIRAM_IGNORE_NOTFOUND=y
 CONFIG_SPIRAM_USE_MALLOC=y
+CONFIG_SPIRAM_SPEED_80M=y
+CONFIG_SPIRAM_SPEED=80
 
 # This is the threshold for preferring small allocations from internal memory
 # first, before failing over to PSRAM.

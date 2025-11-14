@@ -80,7 +80,7 @@ static void machine_hw_i2c_init(machine_hw_i2c_obj_t *self, bool first_init) {
 
     // Start of modification section, by M5Stack
     i2c_master_bus_handle_t bus_handle;
-    if (i2c_master_get_bus_handle(self->port, &self->bus_handle) == ESP_ERR_INVALID_STATE) {
+    if (i2c_master_get_bus_handle(self->port, &self->bus_handle) != ESP_OK) {
         i2c_master_bus_config_t bus_cfg = {
             .i2c_port = self->port,
             .scl_io_num = self->scl,

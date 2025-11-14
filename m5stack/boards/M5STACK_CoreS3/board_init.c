@@ -59,6 +59,7 @@ static i2s_keep_t *i2s_keep[I2S_MAX_KEEP];
 
 #ifdef USE_IDF_I2C_MASTER
 static i2c_master_bus_handle_t i2c_bus_handle;
+static bool first_i2c_init = false;
 #endif
 
 static int ut_i2c_init(uint8_t port);
@@ -180,14 +181,18 @@ int board_codec_volume_get(void *hd, int *vol)
 static int ut_i2c_init(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
-    i2c_master_bus_config_t i2c_bus_config = {0};
-    i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
-    i2c_bus_config.i2c_port = port;
-    i2c_bus_config.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
-    i2c_bus_config.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
-    i2c_bus_config.glitch_ignore_cnt = 7;
-    i2c_bus_config.flags.enable_internal_pullup = true;
-    return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
+    if (i2c_master_get_bus_handle(port, &i2c_bus_handle) != ESP_OK) {
+        first_i2c_init = true;
+        i2c_master_bus_config_t i2c_bus_config = {0};
+        i2c_bus_config.clk_source = I2C_CLK_SRC_DEFAULT;
+        i2c_bus_config.i2c_port = port;
+        i2c_bus_config.scl_io_num = AUDIO_CODEC_I2C_SCL_PIN;
+        i2c_bus_config.sda_io_num = AUDIO_CODEC_I2C_SDA_PIN;
+        i2c_bus_config.glitch_ignore_cnt = 7;
+        i2c_bus_config.flags.enable_internal_pullup = true;
+        return i2c_new_master_bus(&i2c_bus_config, &i2c_bus_handle);
+    }
+    return ESP_OK;
 #else
     i2c_config_t i2c_cfg = {
         .mode = I2C_MODE_MASTER,
@@ -208,7 +213,7 @@ static int ut_i2c_init(uint8_t port)
 static int ut_i2c_deinit(uint8_t port)
 {
 #ifdef USE_IDF_I2C_MASTER
-    if (i2c_bus_handle) {
+    if (i2c_bus_handle && first_i2c_init) {
         i2c_del_master_bus(i2c_bus_handle);
     }
     i2c_bus_handle = NULL;

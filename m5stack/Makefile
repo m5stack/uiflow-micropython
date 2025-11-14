@@ -308,8 +308,8 @@ M5GFX_PATH = $(abspath ./components/M5Unified/M5GFX)
 ESP32_CAMERA_PATH = $(abspath ./components/esp32-camera)
 
 LV_BINDING_PATCH_SERIES = \
-	0003-avoid-lv_bindings-compile-error.patch \
-	0018-avoid-lvgl-font-redefine.patch
+	6000-avoid-lv_bindings-compile-error.patch \
+	6001-avoid-lvgl-font-redefine.patch
 
 MICROPYTHON_PATCH_SERIES = \
 	0006-modtime-add-timezone-method.patch              \
@@ -342,7 +342,7 @@ M5GFX_PATCH_SERIES = \
 	4002-M5GFX-use-i2c-driver.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
-	5001-Add-software-i2c-support.patch
+	5002-Add-software-i2c-support.patch
 
 PACKAGES = \
 	lv_binding_micropython \
