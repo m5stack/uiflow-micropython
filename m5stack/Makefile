@@ -47,7 +47,8 @@ boards := \
 	M5STACK_Tab5:tab5                \
 	M5STACK_CardputerADV:cardputeradv\
 	M5STACK_Unit_C6L:unit_c6l        \
-	M5STACK_PowerHub:powerhub
+	M5STACK_PowerHub:powerhub        \
+	M5STACK_DualKey:dualkey
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -91,7 +92,8 @@ BOARD_TYPE_DEF := \
 	tab5        \
 	cardputeradv\
 	unit_c6l    \
-	powerhub
+	powerhub    \
+	dualkey
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -333,13 +335,14 @@ M5UNIFIED_PATCH_SERIES = \
 	2007-Support-UnitC6L.patch \
 	2008-Only-use-old-rmt-driver.patch \
 	2009-fix-SoftI2C.patch \
-	2010-Support-Nesso-N1.patch
+	2010-Support-Nesso-N1.patch \
+	2011-Add-DualKey.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
 
 M5GFX_PATCH_SERIES = \
-	4002-M5GFX-use-i2c-driver.patch
+	4003-Add-DualKey.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch
@@ -398,7 +401,7 @@ patch: unpatch
 	$(call Patch/prepare,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
 	$(call Patch/prepare,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
 	$(call Patch/prepare,$(ADF_PATH),$(ADF_PATCH_SERIES))
-# 	$(call Patch/prepare,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+	$(call Patch/prepare,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
 	$(call Patch/prepare,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))
 
 # Unapply patches
@@ -408,5 +411,5 @@ unpatch:
 	$(call Patch/clean,$(IDF_PATH),$(IDF_PATH_PATCH_SERIES))
 	$(call Patch/clean,$(M5UNIFIED_PATH),$(M5UNIFIED_PATCH_SERIES))
 	$(call Patch/clean,$(ADF_PATH),$(ADF_PATCH_SERIES))
-# 	$(call Patch/clean,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
+	$(call Patch/clean,$(M5GFX_PATH),$(M5GFX_PATCH_SERIES))
 	$(call Patch/clean,$(ESP32_CAMERA_PATH),$(ESP32_CAMERA_PATCH_SERIES))
