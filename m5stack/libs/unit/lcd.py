@@ -4,8 +4,9 @@
 
 
 import M5
-from .pahub import PAHUBUnit
-from machine import I2C
+
+# from .pahub import PAHUBUnit
+import machine
 import sys
 
 if sys.platform != "esp32":
@@ -16,7 +17,7 @@ class LCDUnit:
     """Initialize the LCD Unit.
 
     :param i2c: The I2C bus the LCD Unit is connected to.
-    :type i2c: I2C | PAHUBUnit
+    :type i2c: I2C
     :param int address: The I2C address of the LCD Unit, default is 0x3E.
 
     UiFlow2 Code Block:
@@ -31,5 +32,5 @@ class LCDUnit:
             lcd_0 = LCDUnit(i2c0, 0x3e)
     """
 
-    def __new__(cls, i2c: Union[I2C, PAHUBUnit], address: int | list | tuple = 0x3E) -> None:
+    def __new__(cls, i2c: machine.I2C, address: int | list | tuple = 0x3E) -> None:
         return M5.addDisplay(i2c, address, {"unit_lcd": True})  # Add LCD unit

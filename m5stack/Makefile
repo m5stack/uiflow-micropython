@@ -342,7 +342,7 @@ ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
 
 M5GFX_PATCH_SERIES = \
-	4003-Add-DualKey.patch
+	4004-I2C-repeated-initialization.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch
@@ -380,6 +380,7 @@ PKG_PATCH_SERIES := $(strip \
 	$(if $(filter M5Unified,$(PKG)),$(M5UNIFIED_PATCH_SERIES))               \
 	$(if $(filter esp-adf,$(PKG)),$(ADF_PATCH_SERIES))                       \
 	$(if $(filter esp32-camera,$(PKG)),$(ESP32_CAMERA_PATCH_SERIES))         \
+	$(if $(filter M5GFX,$(PKG)),$(M5GFX_PATCH_SERIES))                       \
 )
 # $(info PKG_PATCH_SERIES for $(PKG) is [$(PKG_PATCH_SERIES)])
 
