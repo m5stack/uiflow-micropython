@@ -5,7 +5,7 @@
 
 import M5
 from .pahub import PAHUBUnit
-from machine import I2C
+import machine
 import sys
 
 if sys.platform != "esp32":
@@ -31,5 +31,5 @@ class GlassUnit:
             glass_0 = GlassUnit(i2c0, 0x3d)
     """
 
-    def __new__(cls, i2c: Union[I2C, PAHUBUnit], address: int | list | tuple = 0x3D):
+    def __new__(cls, i2c: Union[machine.I2C, PAHUBUnit], address: int | list | tuple = 0x3D):
         return M5.addDisplay(i2c, address, {"unit_glass": True})  # Add Glass unit

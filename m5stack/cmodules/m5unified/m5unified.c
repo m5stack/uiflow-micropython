@@ -84,7 +84,7 @@ const mp_obj_type_t m5_board_type = {
 
 // -------- M5 wrapper
 static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(m5_begin_obj, 0, 1, m5_begin);
-// static MP_DEFINE_CONST_FUN_OBJ_3(m5_add_display_obj, m5_add_display);
+static MP_DEFINE_CONST_FUN_OBJ_3(m5_add_display_obj, m5_add_display);
 static MP_DEFINE_CONST_FUN_OBJ_0(m5_create_speaker_obj, m5_create_speaker);
 static MP_DEFINE_CONST_FUN_OBJ_0(m5_create_mic_obj, m5_create_mic);
 static MP_DEFINE_CONST_FUN_OBJ_0(m5_update_obj, m5_update);
@@ -118,7 +118,7 @@ static const mp_rom_map_elem_t mp_module_m5_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_Widgets),           MP_OBJ_FROM_PTR(&m5_widgets) },
 
     { MP_ROM_QSTR(MP_QSTR_begin),             MP_ROM_PTR(&m5_begin_obj) },
-    // { MP_ROM_QSTR(MP_QSTR_addDisplay),        MP_ROM_PTR(&m5_add_display_obj) },
+    { MP_ROM_QSTR(MP_QSTR_addDisplay),        MP_ROM_PTR(&m5_add_display_obj) },
     { MP_ROM_QSTR(MP_QSTR_createSpeaker),     MP_ROM_PTR(&m5_create_speaker_obj) },
     { MP_ROM_QSTR(MP_QSTR_createMic),         MP_ROM_PTR(&m5_create_mic_obj) },
     { MP_ROM_QSTR(MP_QSTR_update),            MP_ROM_PTR(&m5_update_obj) },
