@@ -71,6 +71,17 @@ class ASRUnit:
         0x43: ["medium volume", None],
         0x44: ["minimum volume", None],
         0x45: ["check firmware version", None],
+        0x50: ["PA2 high level", None],
+        0x51: ["PA2 low level", None],
+        0x52: ["PA3 high level", None],
+        0x53: ["PA3 low level", None],
+        0x54: ["PA4 high level", None],
+        0x55: ["PA4 low level", None],
+        0x56: ["PA5 high level", None],
+        0x57: ["PA5 low level", None],
+        0x58: ["PC4 high level", None],
+        0x59: ["PC4 low level", None],
+        0x5A: ["inversion level", None],
         0xFE: ["Announce", None],
         0xFF: ["Hi,M Five", None],
     }
@@ -90,20 +101,48 @@ class ASRUnit:
             print(*args, **kwargs)
 
     def _handler(self, uart) -> None:
+        if uart.any() < 5:
+            return
+
         data = uart.read()
-        if data is not None and len(data) >= 5:
-            self._debug_print(("Received data: ", data))
+        if data is None or len(data) < 5:
+            return
 
-            if data[0] == 0xAA and data[1] == 0x55 and data[-2] == 0x55 and data[-1] == 0xAA:
-                self.is_recieved = True
-                self.raw_message = " ".join(f"0x{byte:02X}" for byte in data)
-                self._debug_print(("Parsed message:", self.raw_message.split()))
+        self._debug_print(("Received data: ", data))
 
-                self.command_num = data[2]
-                self.check_tick_callback()
-            else:
-                self._debug_print("Invalid frame received: header/footer mismatch")
-                uart.read()
+        # 检查5字节格式: AA 55 CMD 55 AA
+        if (
+            len(data) >= 5
+            and data[0] == 0xAA
+            and data[1] == 0x55
+            and data[3] == 0x55
+            and data[4] == 0xAA
+        ):
+            self.is_recieved = True
+            self.command_num = data[2]
+            self.msg = 0  # 5字节格式没有msg字段
+            self.raw_message = " ".join(f"0x{byte:02X}" for byte in data[:5])
+            self._debug_print(("Parsed 5-byte message:", self.raw_message))
+            self.check_tick_callback()
+
+        # 检查6字节格式: AA 55 CMD MSG 55 AA
+        elif (
+            len(data) >= 6
+            and data[0] == 0xAA
+            and data[1] == 0x55
+            and data[4] == 0x55
+            and data[5] == 0xAA
+        ):
+            self.is_recieved = True
+            self.command_num = data[2]
+            self.msg = data[3]  # 6字节格式包含msg字段
+            self.raw_message = " ".join(f"0x{byte:02X}" for byte in data[:6])
+            self._debug_print(("Parsed 6-byte message:", self.raw_message))
+            self.check_tick_callback()
+
+        else:
+            self._debug_print("Invalid frame received: header/footer mismatch")
+            uart.read()
 
     def get_received_status(self) -> bool:
         """Get message reception status.
