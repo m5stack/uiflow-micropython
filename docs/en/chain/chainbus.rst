@@ -3,6 +3,8 @@ Chain BUS
 
 .. include:: ../refs/chain.bus.ref
 
+Chain BUS is a communication bus module that allows multiple devices to connect and communicate with each other in the M5Chain series devices.
+
 **API**
 -------
 

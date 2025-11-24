@@ -1,4 +1,4 @@
-
+.. |chain_joystick_usb_mouse_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/chain_joystick_usb_mouse_example.png
 .. |click_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/click_callback.png
 .. |double_click_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/double_click_callback.png
 .. |get_16bit_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/get_16bit_value.png
@@ -22,3 +22,12 @@
 .. |set_mapping_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/set_mapping_value.png
 .. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/set_rgb_brightness.png
 .. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/set_rgb_color.png
+
+.. |chain_joystick_usb_mouse_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/joystick/chain_joystick_usb_mouse_example.m5f2"
+        target="_blank"
+    >
+        chain_joystick_usb_mouse_example.m5f2
+    </a>

@@ -58,7 +58,7 @@ class JoystickChain(KeyChain):
             self.device_id, self.CMD_GET_POSITION_8BIT, bytes()
         )
         if state:
-            return response[0]
+            return struct.unpack("bb", response)[0]
         return 0
 
     def get_y(self) -> int:
@@ -81,7 +81,7 @@ class JoystickChain(KeyChain):
             self.device_id, self.CMD_GET_POSITION_8BIT, bytes()
         )
         if state:
-            return response[1]
+            return struct.unpack("bb", response)[1]
         return 0
 
     def get_x_16bit(self) -> int:
@@ -104,7 +104,7 @@ class JoystickChain(KeyChain):
             self.device_id, self.CMD_GET_POSITION_16BIT, bytes()
         )
         if state:
-            return struct.unpack(">HH", response)[0]
+            return struct.unpack(">hh", response)[0]
         return 0
 
     def get_y_16bit(self) -> int:
@@ -127,7 +127,7 @@ class JoystickChain(KeyChain):
             self.device_id, self.CMD_GET_POSITION_16BIT, bytes()
         )
         if state:
-            return struct.unpack(">HH", response)[1]
+            return struct.unpack(">hh", response)[1]
         return 0
 
     def get_x_raw(self) -> int:
