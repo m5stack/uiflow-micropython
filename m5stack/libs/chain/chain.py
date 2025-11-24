@@ -460,7 +460,7 @@ class ChainBus:
         self._verbose = verbose
 
         self._device = []
-        self._event = []
+        self._event = {}
         self.chainll = ChainLinkLayer(self.uart, verbose=self._verbose)
         # self.timer = m5utils.Timer(
         #     0, mode=m5utils.Timer.ONE_SHOT, period=3000, callback=self._device_connect_task
@@ -480,7 +480,11 @@ class ChainBus:
         self._device.append(device)
 
     def register_event(self, device, cmd, payload, callback):
-        self._event.append((device, cmd, payload, callback))
+        if device not in self._event:
+            self._event[device] = {}
+        if cmd not in self._event[device]:
+            self._event[device][cmd] = {}
+        self._event[device][cmd][payload] = callback
 
     def send(self, device_id: int, cmd: int, payload: bytes, timeout_ms: int) -> bytes:
         """Send custom command to device.
@@ -551,11 +555,18 @@ class ChainBus:
                 decoded = self.chainll._decode_packet(self.uart.read())
 
             # handle registered events
-            if decoded:
-                for device, cmd, payload, callback in self._event:
-                    state, response = self.chainll.receive_packet(device.device_id, cmd)
-                    if state and response == bytearray(payload) and callback:
-                        micropython.schedule(callback, None)
+            if decoded and self._event:
+                # 遍历嵌套结构: device -> cmd -> payload(bytes) -> callback
+                for device, cmd_map in self._event.items():
+                    for cmd, payload_map in cmd_map.items():
+                        # 只取一次响应，保持与旧实现行为一致（旧实现会消费一条匹配 device/cmd 的数据包）
+                        state, response = self.chainll.receive_packet(device.device_id, cmd)
+                        if not state:
+                            continue
+                        # 匹配注册的 payload，命中后调度对应 callback
+                        cb = payload_map.get(bytes(response))
+                        if cb:
+                            micropython.schedule(cb, None)
 
             # 5s clear old packets in queue
             if time.ticks_ms() - last_clear_time > 5000:

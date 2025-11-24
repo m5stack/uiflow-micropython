@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-24 09:26+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/chain/chainbus.rst:2 b72e588a4f804d21a05e99e31d7d394b
+msgid "Chain BUS"
+msgstr ""
+
+#: ../../en/chain/chainbus.rst:6 8049fe6981e045d29ac7b9b597523672
+msgid ""
+"Chain BUS is a communication bus module that allows multiple devices to "
+"connect and communicate with each other in the M5Chain series devices."
+msgstr "Chain BUS 是一个通信总线模块，它允许 M5Chain 系列设备中的多个设备相互连接和通信。"
+
+#: ../../en/chain/chainbus.rst:9 92895914138547139ede2433dc78e2bc
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/chain/chainbus.rst:12 9947e786783a403b8b6bc853f6c1f2a1
+msgid "ChainBUS"
+msgstr ""
+
+#: 1db62ffdadf2437698d099b39c27df87 chain.chain.ChainBus:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 1d9542b736f14961aa986ec001bb10f2 chain.chain.ChainBus:1 of
+msgid "Create a Chain bus instance."
+msgstr "创建一个 Chain 总线实例。"
+
+#: ../../en/chain/chainbus.rst 29e7f19e28b24ecbb6a1f9b7395f22ba
+#: chain.chain.ChainBus.send of
+msgid "Parameters"
+msgstr ""
+
+#: 30abfa87f9244d26a5bfab57eee3dcc2 chain.chain.ChainBus:3 of
+msgid "UART ID."
+msgstr "UART 编号。"
+
+#: chain.chain.ChainBus:4 e4946d6a163343bbaca428352bb9b6f0 of
+msgid "TX pin."
+msgstr "TX 引脚。"
+
+#: 6dc3676b14bd40eca4a5ad0102a67b63 chain.chain.ChainBus:5 of
+msgid "RX pin."
+msgstr "RX 引脚。"
+
+#: 4e0abac79262499eb24f69108a5a85a6 chain.chain.ChainBus:6 of
+msgid "Enable verbose mode. Default is False."
+msgstr "是否启用详细输出模式，默认 False。"
+
+#: 8b574aa6414d4a759a33b869137530f1 chain.chain.ChainBus:8
+#: chain.chain.ChainBus.get_device_num:6 chain.chain.ChainBus.send:11 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: 58b3dc48a7bb4aa08cc6ba0db5beab52 chain.chain.ChainBus:10
+#: chain.chain.ChainBus.get_device_num:8 of
+msgid "|get_device_num.png|"
+msgstr ""
+
+#: ../../en/refs/chain.bus.ref:2 e9042ed6668044a5b5ebc5e0dbc16c52
+msgid "get_device_num.png"
+msgstr ""
+
+#: 5477f673d0f844f28364c0dead1972a3 chain.chain.ChainBus:12
+#: chain.chain.ChainBus.get_device_num:10 chain.chain.ChainBus.send:15 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: a5d1619f55d7415bbbc1bc3c225f6601 chain.chain.ChainBus.send:1 of
+msgid "Send custom command to device."
+msgstr "向设备发送自定义命令。"
+
+#: 6d858dc45c8b404bb2ce5cecf7df427d chain.chain.ChainBus.send:3 of
+msgid "Device ID."
+msgstr "设备 ID。"
+
+#: c289fca75b474dc5ac635596b66ca9d1 chain.chain.ChainBus.send:4 of
+msgid "Command."
+msgstr "命令。"
+
+#: 45cc2c28feda49eb8589817d4238ea02 chain.chain.ChainBus.send:5 of
+msgid "Data."
+msgstr "数据。"
+
+#: 0d24202392e74f838f5de0835403f805 chain.chain.ChainBus.send:6 of
+msgid "receive timeout in milliseconds."
+msgstr "接收超时时间（毫秒）。"
+
+#: 25213c4845174e0d82eac7f114023374 chain.chain.ChainBus.get_device_num
+#: chain.chain.ChainBus.send of
+msgid "Returns"
+msgstr ""
+
+#: 594921dbedd14de5be81a8f17a5b7064 chain.chain.ChainBus.send:8 of
+msgid "Response data."
+msgstr "响应数据。"
+
+#: 2646b444ec8c4241acf88c13c3dd958b chain.chain.ChainBus.get_device_num
+#: chain.chain.ChainBus.send of
+msgid "Return type"
+msgstr ""
+
+#: cd2a13fbd7e44ff686a5422b9280f9be chain.chain.ChainBus.send:13 of
+msgid "|send.png|"
+msgstr ""
+
+#: ../../en/refs/chain.bus.ref:4 2c47f1d75f8c46769d722d5b0af81597
+msgid "send.png"
+msgstr ""
+
+#: 8d6b5e07d17045deac619e0c7776d935 chain.chain.ChainBus.get_device_num:1 of
+msgid "Get connected device number."
+msgstr "获取已连接设备数量。"
+
+#: 35bd7a49891244009aab70c7009e2f4c chain.chain.ChainBus.get_device_num:3 of
+msgid "Number of connected devices."
+msgstr "已连接设备的数量。"
+
+#: 4edf9a3fbc354f1081be6430993c6d55 chain.chain.ChainBus.deinit:1 of
+msgid "Deinitialize the Chain bus."
+msgstr "反初始化 Chain 总线。"
+
