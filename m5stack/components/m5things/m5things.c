@@ -91,11 +91,12 @@ esp_mqtt_client_handle_t m5things_mqtt_client = NULL;
 
 volatile m5things_status_t m5things_cnct_status = M5THING_STATUS_STANDBY;
 volatile m5things_info_t m5things_info;
+volatile char pair_code[16] = {0};
 
 /** local variables */
 
 // order is request.
-const char *topic_action_list[] = {"ping", "exec", "file"};
+const char *topic_action_list[] = {"ping", "exec", "file", "syscmd"};
 const char *file_op_dsc[] = {"WRITE", "READ", "LIST", "REMOVE", "WRITE_V2", "MULTI_WRITE"};
 const char *result_dsc[] = {
     "Success",
@@ -123,21 +124,27 @@ static char mqtt_down_exec_topic[64] = {0};
 static char mqtt_up_file_topic[64] = {0};
 static char mqtt_down_file_topic[64] = {0};
 
-static char *up_topic_list[3] = {
+static char mqtt_up_paircode_topic[64] = {0};
+static char mqtt_down_paircode_topic[64] = {0};
+
+static char *up_topic_list[4] = {
     mqtt_up_ping_topic,
     mqtt_up_exec_topic,
-    mqtt_up_file_topic
+    mqtt_up_file_topic,
+    mqtt_up_paircode_topic,
 };
-static char *down_topic_list[3] = {
+static char *down_topic_list[4] = {
     mqtt_down_ping_topic,
     mqtt_down_exec_topic,
-    mqtt_down_file_topic
+    mqtt_down_file_topic,
+    mqtt_down_paircode_topic,
 };
 
 static SemaphoreHandle_t xSemaphore = NULL;
 static char *json_buf = NULL;
 
 static void mqtt_ping_report();
+static void mqtt_paircode_report();
 
 /******************************************************************************/
 
@@ -291,7 +298,12 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                 ESP_LOGI(TAG, "sent %s topic subscribe successful, msg_id=%d",
                     topic_action_list[i], msg_id);
             }
+            msg_id = esp_mqtt_client_subscribe(m5things_mqtt_client,
+                down_topic_list[3], 0);
+            ESP_LOGI(TAG, "sent %s topic subscribe successful, msg_id=%d",
+                topic_action_list[3], msg_id);
             mqtt_ping_report();
+            mqtt_paircode_report();
             m5things_cnct_status = M5THING_STATUS_CONNECTED;
         } break;
         case MQTT_EVENT_DISCONNECTED:
@@ -370,6 +382,26 @@ static void mqtt_ping_report() {
     esp_mqtt_client_publish(
         m5things_mqtt_client,
         mqtt_up_ping_topic,
+        mqtt_report_buf,
+        len,
+        0,
+        0
+        );
+}
+
+static void mqtt_paircode_report() {
+    char mqtt_report_buf[64] = { 0 };
+    size_t len = 0;
+
+    len = sprintf(
+        mqtt_report_buf,
+        "{\"action\":\"%d\"}",
+        0
+        );
+
+    esp_mqtt_client_publish(
+        m5things_mqtt_client,
+        mqtt_up_paircode_topic,
         mqtt_report_buf,
         len,
         0,
@@ -1703,6 +1735,40 @@ static int8_t mqtt_file_process(
     return ret;
 }
 
+int8_t mqtt_paircode_process(
+    esp_mqtt_event_handle_t event,
+    uint64_t *_pkg_sn
+    ) {
+    int8_t ret = PKG_OK;
+
+    cJSON *root = cJSON_ParseWithLength(event->data, event->data_len);
+    if (root == NULL || cJSON_IsNull(root)) {
+        ESP_LOGW(TAG, "FILE JSON parsing failed");
+        ret = PKG_ERR_PARSE;
+        return ret;
+    }
+
+    cJSON *data = cJSON_GetObjectItemCaseSensitive(root, "data");
+    cJSON *code = cJSON_GetObjectItemCaseSensitive(data, "code");
+    if (data == NULL || cJSON_IsNull(data) || code == NULL || cJSON_IsNull(code)) {
+        ESP_LOGW(TAG, "'data' or 'code' parsing failed");
+        ret = PKG_ERR_PARSE;
+        goto end;
+    }
+    ESP_LOGI(TAG, "New Paircode data: %s", code->valuestring);
+    ESP_LOGI(TAG, "Old Paircode data: %s", pair_code);
+
+    if (strcmp(code->valuestring, pair_code) != 0) {
+        memset(pair_code, 0x00, sizeof(pair_code));
+        memcpy(pair_code, code->valuestring, strlen(code->valuestring));
+    }
+
+    ESP_LOGI(TAG, "Result: %s(%d)", result_dsc[-ret], ret);
+end:
+    cJSON_Delete(root);
+    return ret;
+}
+
 static void mqtt_message_handle(void *event_data) {
     esp_mqtt_event_handle_t event = event_data;
 
@@ -1729,6 +1795,12 @@ static void mqtt_message_handle(void *event_data) {
         ESP_LOGI(TAG, "Downlink msg's topic is match down file topic");
         result = mqtt_file_process(event, &resp_pkg_sn, &resp_pkg_idx);
         // mqtt_response_helper(TOPIC_FILE_IDX, resp_pkg_sn, resp_pkg_idx, result);
+    } else if ((strncmp(mqtt_down_paircode_topic, event->topic, event->topic_len) == 0)) {
+        ESP_LOGI(TAG, "Downlink msg's topic is match down paircode topic");
+        result = mqtt_paircode_process(event, &resp_pkg_sn);
+        // mqtt_response_helper(TOPIC_PAIRCODE_IDX, resp_pkg_sn, 0, result);
+    } else {
+        ESP_LOGW(TAG, "Downlink msg's topic is not match any topic");
     }
 }
 
@@ -1767,7 +1839,7 @@ static char *calculate_password(char *client_id) {
 static esp_err_t mqtt_app_start(void) {
     uint8_t sta_mac[6] = {0};
     char client_id[17], username[12];
-    char *password = NULL;
+    static char *password = NULL;
     size_t topic_len;
 
     #if !CONFIG_IDF_TARGET_ESP32P4
@@ -1785,6 +1857,13 @@ static esp_err_t mqtt_app_start(void) {
             "down", MAC2STR(sta_mac), topic_action_list[i]);
         down_topic_list[i][topic_len] = '\0';
     }
+    topic_len = sprintf(up_topic_list[3], "$m5/uiflow/v2/%s/%02x%02x%02x%02x%02x%02x/%s", "up",
+        MAC2STR(sta_mac), topic_action_list[3]);
+    up_topic_list[3][topic_len] = '\0';
+
+    topic_len = sprintf(down_topic_list[3], "$m5/uiflow/v2/%s/%02x%02x%02x%02x%02x%02x/%s", "down",
+        MAC2STR(sta_mac), topic_action_list[3]);
+    down_topic_list[3][topic_len] = '\0';
 
     ESP_LOGI(TAG, "PING:\r\n\t%s\r\n\t%s", mqtt_up_ping_topic,
         mqtt_down_ping_topic);
@@ -1792,6 +1871,8 @@ static esp_err_t mqtt_app_start(void) {
         mqtt_down_exec_topic);
     ESP_LOGI(TAG, "FILE:\r\n\t%s\r\n\t%s", mqtt_up_file_topic,
         mqtt_down_file_topic);
+    ESP_LOGI(TAG, "PAIRCODE:\r\n\t%s\r\n\t%s", mqtt_up_paircode_topic,
+        mqtt_down_paircode_topic);
 
     sprintf(client_id, "m5%02x%02x%02x%02x%02x%02xm5", MAC2STR(sta_mac));
     sprintf(username, "uiflow-%02x%02x", sta_mac[4], sta_mac[5]);
@@ -1956,5 +2037,6 @@ soft_reset_exit:
     esp_mqtt_client_disconnect(m5things_mqtt_client);
     esp_mqtt_client_destroy(m5things_mqtt_client);
     vTaskDelay(M5THINGS_MQTT_RECONNECT_WAIT_MS / portTICK_PERIOD_MS);
+    m5things_cnct_status = M5THING_STATUS_STANDBY;
     goto soft_reset;
 }
