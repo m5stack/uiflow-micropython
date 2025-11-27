@@ -11,6 +11,11 @@ import sys
 import gc
 import asyncio
 import esp32
+import machine
+import binascii
+from microdot import Microdot
+from microdot import send_file
+from microdot import Response
 
 try:
     import M5Things
@@ -39,6 +44,13 @@ STATE_WIFI_NO_SET_IMG = "/system/nesso-n1/wifiNeverSet.jpg"
 STATE_WIFI_NG_IMG = "/system/nesso-n1/wifiNG.jpg"
 STATE_WIFI_OK_IMG = "/system/nesso-n1/wifiOKServerNG.jpg"
 STATE_SERVER_OK_IMG = "/system/nesso-n1/wifiOKServerOK.jpg"
+SETUP_AP_IMG = "/system/nesso-n1/a1.jpg"
+SETUP_WEB_IMG = "/system/nesso-n1/a2.jpg"
+SETUP_WIFI_IMG = "/system/nesso-n1/a3.jpg"
+SETUP_WIFI_NG_IMG = "/system/nesso-n1/a4.jpg"
+SETUP_WIFI_OK_IMG = "/system/nesso-n1/a7.jpg"
+SETUP_SERVER_NG_IMG = "/system/nesso-n1/a9.jpg"
+SETUP_SERVER_OK_IMG = "/system/nesso-n1/a11.jpg"
 
 
 class AppBase:
@@ -376,13 +388,409 @@ class LoRaChatApp(AppBase):
         DEBUG and print("_keycode_dpad_down_event_handler")
 
 
+class DNSServer:
+    """DNS Server implementation for captive portal"""
+
+    DNS_PORT = 53
+    DNS_QR_FLAG = 1 << 15
+    DNS_QTYPE_A = 0x0001
+    DNS_QCLASS_IN = 0x0001
+    DNS_ANSWER_TTL = 300
+
+    def __init__(self, ip_address="192.168.4.1"):
+        """Initialize DNS server
+
+        Args:
+            ip_address: IP address to respond with for all queries
+        """
+        self._ip = ip_address
+        self._socket = None
+        self._running = False
+        self._buffer = bytearray(512)
+
+    def start(self):
+        """Start DNS server on port 53"""
+        if self._running:
+            return
+
+        try:
+            import socket
+
+            self._socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            self._socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            self._socket.bind(("0.0.0.0", self.DNS_PORT))
+            self._socket.setblocking(False)
+            self._running = True
+            DEBUG and print(
+                f"DNS Server started on port {self.DNS_PORT}, responding with {self._ip}"
+            )
+        except Exception as e:
+            print(f"DNS Server start failed: {e}")
+            self._socket = None
+
+    def stop(self):
+        """Stop DNS server"""
+        if self._socket:
+            try:
+                self._socket.close()
+            except:
+                pass
+            self._socket = None
+        self._running = False
+        DEBUG and print("DNS Server stopped")
+
+    def process_next_request(self):
+        """Process one DNS request if available"""
+        if not self._running or not self._socket:
+            return
+
+        try:
+            # Try to receive data (non-blocking)
+            data, addr = self._socket.recvfrom(512)
+            if len(data) < 12:  # Minimum DNS header size
+                return
+
+            # Parse DNS header
+            transaction_id = data[0:2]  # noqa: F841
+            flags = (data[2] << 8) | data[3]
+            qd_count = (data[4] << 8) | data[5]
+
+            # Check if it's a standard query
+            if (flags & self.DNS_QR_FLAG) or qd_count != 1:
+                return
+
+            # Parse domain name (skip it, we redirect everything)
+            pos = 12
+            domain_parts = []
+            while pos < len(data) and data[pos] != 0:
+                label_len = data[pos]
+                if label_len > 63 or pos + label_len + 1 > len(data):
+                    return
+                domain_parts.append(data[pos + 1 : pos + 1 + label_len].decode("utf-8", "ignore"))
+                pos += label_len + 1
+
+            domain_name = ".".join(domain_parts)
+
+            if pos >= len(data):
+                return
+            pos += 1  # Skip null terminator
+
+            # Check question type and class
+            if pos + 4 > len(data):
+                return
+            qtype = (data[pos] << 8) | data[pos + 1]
+            qclass = (data[pos + 2] << 8) | data[pos + 3]
+
+            # Only handle A record queries
+            if qtype != self.DNS_QTYPE_A or qclass != self.DNS_QCLASS_IN:
+                return
+
+            # Build response
+            response = bytearray(data[: pos + 4])  # Copy query
+
+            # Set response flags: QR=1, AA=1 (authoritative answer)
+            response[2] = 0x81
+            response[3] = 0x80
+
+            # Set answer count to 1
+            response[6] = 0x00
+            response[7] = 0x01
+
+            # Add answer section
+            # Name pointer (points to name in question)
+            response.extend(b"\xc0\x0c")  # Pointer to offset 12
+
+            # Type A
+            response.extend(b"\x00\x01")
+
+            # Class IN
+            response.extend(b"\x00\x01")
+
+            # TTL
+            ttl = self.DNS_ANSWER_TTL
+            response.extend(
+                bytes([(ttl >> 24) & 0xFF, (ttl >> 16) & 0xFF, (ttl >> 8) & 0xFF, ttl & 0xFF])
+            )
+
+            # Data length (4 bytes for IPv4)
+            response.extend(b"\x00\x04")
+
+            # IP address
+            ip_parts = self._ip.split(".")
+            response.extend(bytes([int(p) for p in ip_parts]))
+
+            # Send response
+            self._socket.sendto(response, addr)
+            print(f"DNS: {domain_name} -> {self._ip} (from {addr[0]})")
+
+        except OSError as e:
+            # EAGAIN/EWOULDBLOCK is expected for non-blocking socket
+            if e.args[0] not in (11, 35, 115):  # EAGAIN, EWOULDBLOCK variations
+                print(f"DNS error: {e}")
+        except Exception as e:
+            print(f"DNS error: {e}")
+
+
 class SetupApp(AppBase):
-    def __init__(self) -> None:
+    _STATE_AP = 0
+    _STATE_WEB = 1
+    _STATE_WAIT_WIFI = 2
+    _STATE_WIFI_NG = 3
+    _STATE_WIFI_OK = 4
+    _STATE_SERVER_NG = 5
+    _STATE_SERVER_OK = 6
+
+    def __init__(self, data=None) -> None:
         super().__init__()
+        self._wifi = data
+        self._sta = data.wlan
+
+        self._ap = network.WLAN(network.WLAN.IF_AP)
+
+        self.app = Microdot()
+        self.register_routes()
+        self._state = self._STATE_AP
+        self._clients = set()
+
+        # Initialize DNS server for captive portal
+        self._dns_server = DNSServer("192.168.4.1")
+
+    def register_routes(self):
+        @self.app.get("/")
+        async def handle_index(request):
+            self._clients.add(request.client_addr[0])
+            response = send_file("/system/nesso-n1/index.html")
+            return response
+
+        # Captive portal detection endpoints for various platforms
+        @self.app.get("/generate_204")
+        async def handle_generate_204(request):
+            """Android captive portal detection"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/hotspot-detect.html")
+        async def handle_hotspot_detect(request):
+            """iOS captive portal detection"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/library/test/success.html")
+        async def handle_apple_success(request):
+            """iOS alternative detection"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/connecttest.txt")
+        async def handle_windows_connect(request):
+            """Windows captive portal detection"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/redirect")
+        async def handle_windows_redirect(request):
+            """Windows redirect page"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/success.txt")
+        async def handle_firefox_success(request):
+            """Firefox captive portal detection"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+        @self.app.get("/config.json")
+        async def handle_config(request):
+            """{
+                "name": "ESP-AP",
+                "mac": "24:0A:C4:12:34:56",
+                "aps": [
+                    {}
+                    ,{"ssid":"Hermione","rssi":-50,"lock":0}
+                    ,{"ssid":"Neville","rssi":-65,"lock":1}
+                    ,{"ssid":"Gandalf the Grey","rssi":-85,"lock":1}
+                    ,{"ssid":"Hagrid","rssi":-95,"lock":0}
+                ]
+            }
+            """
+            points = self._sta.scan()
+
+            return {
+                "name": self._ap.config("ssid"),
+                "mac": binascii.hexlify(machine.unique_id()).upper().decode(),
+                "aps": [
+                    {
+                        "ssid": ssid.decode("utf-8"),
+                        "rssi": rssi,
+                        "lock": 1 if authmode > 0 else 0,
+                    }
+                    for ssid, bssid, channel, rssi, authmode, hidden in points
+                ],
+            }
+
+        @self.app.get("/wifisave")
+        async def handler_wifisave(request):
+            self.ssid = request.args.get("ssid")
+            self.password = request.args.get("psk")
+            print("Saving Wi-Fi config:", self.ssid, self.password)
+            self._wifisave = True
+            self.nvs.set_str("ssid0", self.ssid)
+            self.nvs.set_str("pswd0", self.password)
+            self.nvs.commit()
+            return Response.redirect("/?save")
+
+        # Catch-all route to redirect any unhandled requests to main page
+        @self.app.route("/<path:path>")
+        async def handle_catchall(request, path):
+            """Redirect all other requests to main page"""
+            self._clients.add(request.client_addr[0])
+            return Response.redirect("http://192.168.4.1/")
+
+    def on_launch(self):
+        self.nvs = esp32.NVS("uiflow")
+        # self._sta.active(False)
+        # self._sta.active(True)
+        self.ssid = self.nvs.get_str("ssid0")
+        self.password = self.nvs.get_str("pswd0")
+        self._wifisave = False
+        self._state = self._STATE_AP
+
+        # Disconnect station if connected
+        self._sta.disconnect()
+
+        # Setup Access Point
+        ap_name = "N1_" + binascii.hexlify(machine.unique_id()).upper().decode()[-4:]
+        self._ap.active(True)
+        self._ap.config(essid=ap_name, authmode=self._ap.SEC_OPEN)
+        self._ap.config(max_clients=2)
+
+        # Start DNS server for captive portal
+        self._dns_server.start()
+
+        # Start web server
+        self._server = asyncio.create_task(
+            self.app.start_server(host="0.0.0.0", port=80, debug=True)
+        )
 
     def on_view(self):
-        M5.Lcd.clear(0x000000)
-        M5.Lcd.drawImage(PLACEHOLDER_IMG, 0, 0, 135, 240)
+        self._bg_img = widgets.Image(use_sprite=False)
+        self._bg_img.set_x(0)
+        self._bg_img.set_y(0)
+        self._bg_img.set_size(135, 240)
+        self._bg_img.set_src(SETUP_AP_IMG)
+
+        self._ap_label = widgets.Label(
+            str(self._ap.config("ssid")),
+            67,
+            130,
+            w=103,
+            h=29,
+            font_align=widgets.Label.CENTER_ALIGNED,
+            fg_color=0x000000,
+            bg_color=0xF3F3F3,
+            font=M5.Lcd.FONTS.DejaVu24,
+        )
+        self._ap_label.set_text(self._ap.config("ssid"))
+        offset_y = M5.Lcd.fontHeight(M5.Lcd.FONTS.DejaVu24)
+        w = M5.Lcd.textWidth(str(self._ap.config("ssid")), M5.Lcd.FONTS.DejaVu24)
+        M5.Lcd.fillRect((135 - w) // 2, 130 + offset_y, w, 2, 0x000000)
+        self._state = self._STATE_AP
+
+    async def on_run(self):
+        while True:
+            # Process DNS requests for captive portal
+            self._dns_server.process_next_request()
+
+            if self._state == self._STATE_AP:
+                if self._ap.status("stations"):
+                    self._state = self._STATE_WEB
+                    self._bg_img.set_src(SETUP_WEB_IMG)
+                    M5.Lcd.drawQR("http://192.168.4.1", 13, 49, 109, 1)
+
+            if self._state == self._STATE_WEB:
+                if self._clients:
+                    self._state = self._STATE_WAIT_WIFI
+                    self._bg_img.set_src(SETUP_WIFI_IMG)
+
+            if self._state == self._STATE_WAIT_WIFI:
+                # 等待 /wifisave 请求
+                if self._wifisave:
+                    self._wifi.connect_network(self.ssid, self.password)
+                    self._wifisave = False
+                if self._wifi.connect_status() in (network.STAT_IDLE, network.STAT_CONNECTING):
+                    pass
+                elif self._wifi.connect_status() == network.STAT_GOT_IP:
+                    self._state = self._STATE_WIFI_OK
+                    self._bg_img.set_src(SETUP_WIFI_OK_IMG)
+                else:
+                    self._state = self._STATE_WIFI_NG
+                    self._bg_img.set_src(SETUP_WIFI_NG_IMG)
+
+            if self._state == self._STATE_WIFI_NG:
+                if self._wifi.connect_status() == network.STAT_GOT_IP:
+                    self._state = self._STATE_WIFI_OK
+                    self._bg_img.set_src(SETUP_WIFI_OK_IMG)
+
+            if self._state == self._STATE_WIFI_OK:
+                if _HAS_SERVER:
+                    if M5Things.status() < 2:
+                        pass
+                    if M5Things.status() == 2:
+                        if M5Things.paircode() != "":
+                            self._state = self._STATE_SERVER_OK
+                            self._bg_img.set_src(SETUP_SERVER_OK_IMG)
+
+                            self._net_status_img = widgets.Image(use_sprite=False)
+                            self._net_status_img.set_x(98)
+                            self._net_status_img.set_y(2)
+                            self._net_status_img.set_size(34, 24)
+                            self._net_status_img.set_src(WIFI_OK_IMG)
+
+                            self._server_status_img = widgets.Image(use_sprite=False)
+                            self._server_status_img.set_x(98)
+                            self._server_status_img.set_y(30)
+                            self._server_status_img.set_size(34, 24)
+                            self._server_status_img.set_src(SERVER_OK_IMG)
+
+                            self._pair_code_label = widgets.Label(
+                                M5Things.paircode(),
+                                67,
+                                185,
+                                w=103,
+                                h=29,
+                                font_align=widgets.Label.CENTER_ALIGNED,
+                                fg_color=0x000000,
+                                bg_color=0xCBDFE0,
+                                font=M5.Lcd.FONTS.DejaVu24,
+                            )
+                            self._pair_code_label.set_text(M5Things.paircode())
+                    elif M5Things.status() > 2:
+                        self._state = self._STATE_SERVER_NG
+                        self._bg_img.set_src(SETUP_SERVER_NG_IMG)
+                else:
+                    self._state = self._STATE_SERVER_NG
+                    self._bg_img.set_src(SETUP_SERVER_NG_IMG)
+
+            if self._state == self._STATE_SERVER_NG:
+                if _HAS_SERVER:
+                    self._state = self._STATE_WIFI_OK
+
+            if self._state == self._STATE_SERVER_OK:
+                pass
+
+            await asyncio.sleep_ms(100)
+
+            # await self._server
+
+    def on_exit(self):
+        # Stop DNS server
+        self._dns_server.stop()
+        self.app.shutdown()
+        # self._ap.disconnect()
+        self._ap.active(False)
+        if self._wifi.connect_status() == network.STAT_IDLE:
+            self._wifi.connect_network(self.nvs.get_str("ssid0"), self.nvs.get_str("pswd0"))
+        del self.nvs
 
     async def _keycode_enter_event_handler(self, fw: "Framework"):
         DEBUG and print("_keycode_enter_event_handler")
@@ -408,6 +816,7 @@ class CloudApp(AppBase):
         self._server = None
         self._wifi_status = False
         self._cloud_status = False
+        self._pair_code = ""
 
     def _get_wifi_status(self) -> bool:
         return self._wifi.connect_status() == network.STAT_GOT_IP
@@ -437,11 +846,22 @@ class CloudApp(AppBase):
         self._server_status_img.set_size(34, 24)
         self._server_status_img.set_src(NG_IMG)
 
-        M5.Lcd.fillRect(3, 164, 129, 46, 0xF3F3F3)
+        self._pair_code_label = widgets.Label(
+            str(""),
+            67,
+            185,
+            w=103,
+            h=29,
+            font_align=widgets.Label.CENTER_ALIGNED,
+            fg_color=0x000000,
+            bg_color=0xCBDFE0,
+            font=M5.Lcd.FONTS.DejaVu24,
+        )
 
     def on_view(self):
         self._net_status_img.set_src(WIFI_OK_IMG if self._get_wifi_status() else NG_IMG)
         self._server_status_img.set_src(SERVER_OK_IMG if self._get_cloud_status() else NG_IMG)
+        self._pair_code_label.set_text(self._pair_code)
 
     async def on_run(self):
         while True:
@@ -454,6 +874,12 @@ class CloudApp(AppBase):
             if t is not self._cloud_status:
                 self._cloud_status = t
                 self._server_status_img.set_src(SERVER_OK_IMG if t else NG_IMG)
+
+            if _HAS_SERVER:
+                t = M5Things.paircode()
+                if t != self._pair_code:
+                    self._pair_code = t
+                    self._pair_code_label.set_text(t)
 
             await asyncio.sleep_ms(1000)
 
@@ -504,6 +930,7 @@ class LauncherApp(AppBase):
         self._icon_selector = _charge_ico(self._icons)
         self._img_src = next(self._icon_selector)
         self._id = 0
+        self._nvs = esp32.NVS("uiflow")
 
     def on_view(self):
         self._bg_img = widgets.Image(use_sprite=False)
@@ -546,7 +973,6 @@ class LauncherApp(AppBase):
         )
         self._version_label.set_text(esp32.firmware_info()[3])
 
-        self.nvs = esp32.NVS("uiflow")
         self._state_img = widgets.Image(use_sprite=False)
         self._state_img.set_x(6)
         self._state_img.set_y(6)
@@ -554,7 +980,8 @@ class LauncherApp(AppBase):
         self._state_img.set_src(self._get_state_img())
 
     def _get_state_img(self) -> str:
-        if self.nvs.get_str("ssid0") == "":
+        ssid0 = self._nvs.get_str("ssid0")
+        if ssid0 == "":
             return STATE_WIFI_NO_SET_IMG
         if not self._cloud_app._get_wifi_status():
             return STATE_WIFI_NG_IMG
@@ -586,6 +1013,7 @@ class LauncherApp(AppBase):
 
     def on_exit(self):
         del self._bg_img, self._icon_selector
+        del self._nvs
 
     async def _keycode_enter_event_handler(self, fw: "Framework"):
         DEBUG and print("_keycode_enter_event_handler")
@@ -685,7 +1113,7 @@ class NessoN1_Startup:
         usb_app = UsbApp()
         list_app = ListApp()
         lorachat_app = LoRaChatApp()
-        setup_app = SetupApp()
+        setup_app = SetupApp(data=self._wifi)
         launcher = LauncherApp(data=cloud_app)
 
         fw = Framework()
