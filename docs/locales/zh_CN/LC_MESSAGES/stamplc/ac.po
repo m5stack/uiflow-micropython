@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-11-27 10:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/stamplc/ac.rst:2 d873f99d33d649bf81b44776fd4290d1
+msgid "StamPLC AC"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:8 d7d70e3911094b6993089dabd571bb81
+msgid ""
+"ACStamPLC is a class that drives the relay and RGB LED on the AC "
+"extension board."
+msgstr "ACStamPLC 是用于驱动 AC 扩展板上的继电器和 RGB LED 的类。"
+
+#: ../../en/stamplc/ac.rst:10 626cc1ed316e4e0e93984d0686f1fbcf
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/stamplc/ac.rst:12 b2c465c5faea483c9b9989584755ae32
+msgid "|StampPLC|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref a7771f573d224366b048b89e17ebb644
+msgid "StampPLC"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:15 f3a1ab71316e468a8dede7058dfbee17
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/stamplc/ac.rst:18 ../../en/stamplc/ac.rst:38
+#: 79de04783e7d4a4eaa74ae9d846408f2
+msgid "Relay and RGB LED control"
+msgstr "继电器和 RGB LED 控制"
+
+#: ../../en/stamplc/ac.rst:20 3c6bfe828dcc40da8a2b479f19dcd975
+msgid "Open the |stamplc_ac_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |stamplc_ac_example.m5f2| 项目。"
+
+#: ../../en/stamplc/ac.rst:22 ../../en/stamplc/ac.rst:40
+#: 9d3aca242c2a438894be1fa5f1aa70bb
+msgid ""
+"This example demonstrates interactive control of the AC relay and RGB "
+"LED. Press button A to toggle the relay state. When the relay is turned "
+"on, the red LED lights up; when turned off, the red LED turns off."
+msgstr ""
+"此示例演示了 AC 继电器和 RGB LED 的交互式控制。按下按钮 A 可切换继电器状态。当继电器打开时，红色 LED 亮起；当关闭时，红色 "
+"LED 熄灭。"
+
+#: ../../en/stamplc/ac.rst:25 ../../en/stamplc/ac.rst:63
+#: ../../en/stamplc/ac.rst:81 ../../en/stamplc/ac.rst:97
+#: ../../en/stamplc/ac.rst:113 ../../en/stamplc/ac.rst:129
+#: 7183b313d7cd4706b5f6aba7ddc38d55
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/stamplc/ac.rst:27 412154a228c54344b42f0b15936a1c61
+msgid "|stamplc_ac_example.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:11 c50b4f150ba343d883615559c63575ed
+msgid "stamplc_ac_example.png"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:29 ../../en/stamplc/ac.rst:49
+#: 344fd838e1984fedbb0f9cb020fa75b7
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/stamplc/ac.rst:31 ../../en/stamplc/ac.rst:51
+#: 40fecac6951549f08685e7b1b6fc7cb4
+msgid "None"
+msgstr "无"
+
+#: ../../en/stamplc/ac.rst:35 546fef68093647c2a738df5d534ed678
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/stamplc/ac.rst:43 ../../en/stamplc/ac.rst:67
+#: ../../en/stamplc/ac.rst:85 ../../en/stamplc/ac.rst:101
+#: ../../en/stamplc/ac.rst:117 ../../en/stamplc/ac.rst:133
+#: 012b8de977504a8781e3679c11c25e2d
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/stamplc/ac.rst:54 25efe0280f834db6b54efe0b7cb6a226
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/stamplc/ac.rst:57 581afb63beb9449eac8f9329f54a7ae0
+msgid "ACStamPLC"
+msgstr "ACStamPLC"
+
+#: ../../en/stamplc/ac.rst:61 4f495d777be84615a9de9c11c02850c6
+msgid "Create a ACStamPLC object."
+msgstr "创建一个 ACStamPLC 对象。"
+
+#: ../../en/stamplc/ac.rst:65 2bde25404693407fa4b4c4ac1058532b
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:6 b774410de36240e7b06409b4345362d2
+msgid "init.png"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:77 71ee00f19b0a48de9c800aef7507ae40
+msgid "Switch the AC relay output."
+msgstr "切换 AC 继电器输出。"
+
+#: ../../en/stamplc/ac.rst c19504a96f234527b2bc79e64d3467ae
+msgid "Parameters"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:79 3004cdca520a4ada8b8683a15c8aa301
+msgid "``True`` turns the relay on, ``False`` releases it."
+msgstr "``True`` 闭合继电器，``False`` 断开继电器。"
+
+#: ../../en/stamplc/ac.rst:83 2bde25404693407fa4b4c4ac1058532b
+msgid "|set_relay.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:7 b774410de36240e7b06409b4345362d2
+msgid "set_relay.png"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:93 8f9365842f814e9fa05cc5a692a2b914
+msgid "Control the red channel of the RGB LED."
+msgstr "控制 RGB LED 的红色通道。"
+
+#: ../../en/stamplc/ac.rst:95 ../../en/stamplc/ac.rst:111
+#: ../../en/stamplc/ac.rst:127 5174678bdf98428d89c6635808c9499c
+msgid "``True`` lights the LED, ``False`` turns it off."
+msgstr "``True`` 点亮 LED，``False`` 熄灭 LED。"
+
+#: ../../en/stamplc/ac.rst:99 21626e6bfb424b99888a3a226c51aa41
+msgid "|set_red_led.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:8 b3fd71084fb54b229dd34ed537e009d5
+msgid "set_red_led.png"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:109 dfb177213a5c42caace146fadf642e2c
+msgid "Control the green channel of the RGB LED."
+msgstr "控制 RGB LED 的绿色通道。"
+
+#: ../../en/stamplc/ac.rst:115 21626e6bfb424b99888a3a226c51aa41
+msgid "|set_green_led.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:9 0f899cde612d412eaa022fac4bdbb141
+msgid "set_green_led.png"
+msgstr ""
+
+#: ../../en/stamplc/ac.rst:125 6b2398b6e6804e4e9e6d5688b9806552
+msgid "Control the blue channel of the RGB LED."
+msgstr "控制 RGB LED 的蓝色通道。"
+
+#: ../../en/stamplc/ac.rst:131 3579219a0ae44601818f24e317cb0828
+msgid "|set_blue_led.png|"
+msgstr ""
+
+#: ../../en/refs/stamplc.ac.ref:10 3dc8809ea8d94c10a3902bcc1440f356
+msgid "set_blue_led.png"
+msgstr ""
+
+#~ msgid "default is None, will try to get from hardware.plcio."
+#~ msgstr ""
+
+#~ msgid "default is 0x44, PI4IOE5V6408 slave address."
+#~ msgstr ""
+
+#~ msgid "|stamplc_set_relay.png|"
+#~ msgstr ""
+
+#~ msgid "stamplc_set_relay.png"
+#~ msgstr ""
+
+#~ msgid "|stamplc_set_r_led.png|"
+#~ msgstr ""
+
+#~ msgid "stamplc_set_r_led.png"
+#~ msgstr ""
+
+#~ msgid "|stamplc_set_g_led.png|"
+#~ msgstr ""
+
+#~ msgid "stamplc_set_g_led.png"
+#~ msgstr ""
+
+#~ msgid "|stamplc_set_b_led.png|"
+#~ msgstr ""
+
+#~ msgid "stamplc_set_b_led.png"
+#~ msgstr ""
+
