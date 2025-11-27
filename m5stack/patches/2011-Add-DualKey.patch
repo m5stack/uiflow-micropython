@@ -38,8 +38,8 @@ Index: M5Unified/src/M5Unified.cpp
 +    case board_t::board_M5DualKey:
 +    {
 +      use_rawstate_bits = 0b00011;
-+      btn_rawstate_bits = ((!m5gfx::gpio_in(GPIO_NUM_17)) & 1)
-+                        | ((!m5gfx::gpio_in(GPIO_NUM_0)) & 1) << 1;
++      btn_rawstate_bits = ((!m5gfx::gpio_in(GPIO_NUM_0)) & 1)
++                        | ((!m5gfx::gpio_in(GPIO_NUM_17)) & 1) << 1;
 +      break;
 +    }
      default:

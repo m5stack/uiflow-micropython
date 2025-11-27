@@ -16,13 +16,13 @@ click_right = None
 last_time = None
 
 
-def btna_was_clicked_event(state):
+def btnb_was_clicked_event(state):
     global rgb, mouse, click_left, click_right, last_time
     print("click left")
     click_left = True
 
 
-def btnb_was_clicked_event(state):
+def btna_was_clicked_event(state):
     global rgb, mouse, click_left, click_right, last_time
     print("click right")
     click_right = True
