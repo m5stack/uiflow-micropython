@@ -65,7 +65,7 @@ class Modem(object):
         output, error = self.execute_at_command(at, True)
         return not error
 
-    def set_command_echo_mode(self, state=1):
+    def set_command_echo_mode(self, state=0):
         # Set echo mode off or on
         ate = AT_CMD("ATE{}".format(state), "OK", 3)
         output, error = self.execute_at_command(ate)

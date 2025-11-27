@@ -47,6 +47,7 @@ package(
         "rotary/rotary.py",
         "simcom/__init__.py",
         "simcom/common.py",
+        "simcom/ml307r.py",
         "simcom/sim7020.py",
         "simcom/sim7028.py",
         "simcom/sim7080.py",
