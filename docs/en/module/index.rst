@@ -6,6 +6,7 @@ Module
 
     4in8out.rst
     ain4.rst
+    asr.rst
     audio.rst
     bala2.rst
     cc1101.rst

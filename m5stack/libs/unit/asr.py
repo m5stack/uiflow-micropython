@@ -12,7 +12,7 @@ if sys.platform != "esp32":
 class ASRUnit:
     """Voice recognition hardware module.
 
-    :param int id: UART port ID for communication. Default is 1.
+    :param int id: UART port ID for communication. Default is 2.
     :param list|tuple port: Tuple containing TX and RX pin numbers.
 
     UiFlow2 Code Block:
@@ -26,7 +26,7 @@ class ASRUnit:
             from unit import ASRUnit
 
             # Initialize with UART1, TX on pin 2, RX on pin 1
-            asr = ASRUnit(id=1, port=(1, 2))
+            asr = ASRUnit(id=2, port=(1, 2))
     """
 
     _COMMAND_LIST = {

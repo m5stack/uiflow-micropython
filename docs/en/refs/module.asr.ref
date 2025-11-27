@@ -1,0 +1,32 @@
+
+.. |ASRModule| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/635/U914_01.webp
+    :target: https://docs.m5stack.com/en/module/M147
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/asr/init.png
+.. |_handler.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/asr/_handler.png
+.. |get_received_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_received_status.png
+.. |send_message.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/send_message.png
+.. |get_current_raw_message.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_current_raw_message.png
+.. |get_current_command_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_current_command_word.png
+.. |get_current_command_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_current_command_num.png
+.. |get_command_handler.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_command_handler.png
+.. |add_command_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/add_command_word.png
+.. |event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/event.png
+.. |remove_command_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/remove_command_word.png
+.. |search_command_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/search_command_num.png
+.. |search_command_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/search_command_word.png
+.. |get_command_list.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/get_command_list.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/asr/example.png
+
+.. |asr_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/asr/asr_core2_example.m5f2"
+        target="_blank"
+    >
+        asr_core2_example.m5f2
+    </a>
+

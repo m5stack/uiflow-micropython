@@ -7,8 +7,10 @@ from unit.asr import ASRUnit
 class ASRModule(ASRUnit):
     """Voice recognition hardware module.
 
-    :param int id: UART port ID for communication. Default is 1.
-    :param list|tuple port: Tuple containing TX and RX pin numbers.
+    :param int id: UART port ID for communication. Default is 2.
+    :param int tx: TX pin number.
+    :param int rx: RX pin number.
+    :param bool verbose: Enable verbose output. Default is False.
 
     UiFlow2 Code Block:
 
@@ -21,8 +23,8 @@ class ASRModule(ASRUnit):
             from unit import ASRUnit
 
             # Initialize with UART1, TX on pin 2, RX on pin 1
-            asr = ASRUnit(id=1, port=(1, 2))
+            asr = ASRModule(id=2, tx=2, rx=1)
     """
 
-    def __init__(self, id: Literal[0, 1, 2] = 1, tx=-1, rx=-1, verbose: bool = False):
+    def __init__(self, id=1, tx=-1, rx=-1, verbose: bool = False):
         super().__init__(id, port=(rx, tx), verbose=verbose)
