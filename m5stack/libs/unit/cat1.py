@@ -16,9 +16,29 @@ AT_CMD = namedtuple("AT_CMD", ["command", "response", "timeout"])
 
 
 class Cat1Unit(ML307R, Modem):
+    """Create an Cat1Unit object
+
+    :param int id: The UART ID to use (0, 1, or 2). Default is 2.
+    :param port: A list or tuple containing the TX and RX pin numbers.
+    :type port: list | tuple
+    :param verbose: Enable verbose output for debugging. Default is False.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from base import Cat1Unit
+
+            cat1cn_0 = Cat1Unit(2, port=(33, 32))
+    """
+
     def __init__(
         self,
-        uart_or_id: machine.UART | int,
+        uart_or_id,
         port: list | tuple = None,
         verbose: bool = False,
     ) -> None:
@@ -45,21 +65,3 @@ class Cat1Unit(ML307R, Modem):
         self.set_command_echo_mode(0)
 
         ML307R.__init__(self, uart=self.uart, verbose=verbose)
-
-
-# from unit import Cat1Unit
-# cat1 = Cat1Unit(2, port=(33, 32), verbose=True)
-# cat1.mqtt_server_connect("broker-cn.emqx.io", 1883, "mqttx_ad4bc4fa", "", "", 120)
-# socket = cat1.socket()
-# socket.connect(("8.135.10.183", 33864))
-# socket.sendto(b"Hello, World!", ("8.135.10.183", 33864))
-# socket.send(b"Hello, World!")
-# socket.close()
-# cat1.getaddrinfo("www.m5stack.com", 80)
-# cat1.http_request(
-#     1,
-#     "http://httpbin.org/post",
-#     {"Content-Type": "application/json", "Custom-Header": "MyHeaderValue"},
-#     {"message": "Hello from M5Stack! ", "status": "active"},
-# )
-# cat1.mqtt_publish_topic("Subscription", "asdfas", 0)
