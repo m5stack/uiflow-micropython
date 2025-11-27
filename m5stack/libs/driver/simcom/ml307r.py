@@ -704,7 +704,9 @@ class ML307R(umodem.UModem):
 
     def get_imei_number(self) -> str:
         """Request TA Serial Number Identification(IMEI)"""
-        cmd = umodem.Command("+GSN", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command(
+            "+GSN", umodem.Command.CMD_EXECUTION, 1, timeout=self._default_timeout
+        )
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
