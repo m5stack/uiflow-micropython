@@ -56,7 +56,7 @@ def _aw9523_closure() -> tuple:  # noqa: C901
                 pass
 
             if irq_pin is not None:
-                print("irq pin", irq_pin)
+                # print("irq pin", irq_pin)
                 self._irq = machine.Pin(irq_pin, machine.Pin.IN, machine.Pin.PULL_UP)
                 self._irq.irq(self._irq_pin_handler, machine.Pin.IRQ_FALLING)
 
@@ -126,7 +126,7 @@ def _aw9523_closure() -> tuple:  # noqa: C901
             :param int reg: The register address.
             :param int bit: The bit number to turn on. The bit number is 0-7.
             """
-            print("reg_bit_on", reg, bit)
+            # print("reg_bit_on", reg, bit)
             value = self._i2c.readfrom_mem(self._address, reg, 1)[0]
             self._i2c.writeto_mem(self._address, reg, bytes([value | 1 << bit]))
 
@@ -136,7 +136,7 @@ def _aw9523_closure() -> tuple:  # noqa: C901
             :param int reg: The register address.
             :param int bit: The bit number to turn off. The bit number is 0-7.
             """
-            print("reg_bit_off", reg, bit)
+            # print("reg_bit_off", reg, bit)
             value = self._i2c.readfrom_mem(self._address, reg, 1)[0]
             self._i2c.writeto_mem(self._address, reg, bytes([value & ~(1 << bit)]))
 
