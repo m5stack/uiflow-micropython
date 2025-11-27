@@ -13,7 +13,7 @@ led1_state = None
 led2_state = None
 
 
-def btna_was_clicked_event(state):
+def btnb_was_clicked_event(state):
     global rgb, led1_state, led2_state
     print("clicke left")
     led1_state = not led1_state
@@ -23,7 +23,7 @@ def btna_was_clicked_event(state):
         rgb.set_color(0, 0x000000)
 
 
-def btnb_was_clicked_event(state):
+def btna_was_clicked_event(state):
     global rgb, led1_state, led2_state
     print("click right")
     led2_state = not led2_state
