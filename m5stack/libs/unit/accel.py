@@ -95,6 +95,25 @@ class AccelUnit(ADXL345):
         :returns: The data rate of the sensor.
         :rtype: int
 
+        Rate options are:
+
+            - ``0``: 0.1 Hz
+            - ``1``: 0.20 Hz
+            - ``2``: 0.39 Hz
+            - ``3``: 0.78 Hz
+            - ``4``: 1.56 Hz
+            - ``5``: 3.13 Hz
+            - ``6``: 6.25 Hz
+            - ``7``: 12.5 Hz
+            - ``8``: 25 Hz
+            - ``9``: 50 Hz
+            - ``10``: 100 Hz
+            - ``11``: 200 Hz
+            - ``12``: 400 Hz
+            - ``13``: 800 Hz
+            - ``14``: 1600 Hz
+            - ``15``: 3200 Hz
+
         UiFlow2 Code Block:
 
             |get_data_rate.png|
@@ -111,6 +130,25 @@ class AccelUnit(ADXL345):
         """Set the data rate of the sensor.
 
         :param int rate: The data rate of the sensor.
+
+        Rate options are:
+
+            - ``0``: 0.1 Hz
+            - ``1``: 0.20 Hz
+            - ``2``: 0.39 Hz
+            - ``3``: 0.78 Hz
+            - ``4``: 1.56 Hz
+            - ``5``: 3.13 Hz
+            - ``6``: 6.25 Hz
+            - ``7``: 12.5 Hz
+            - ``8``: 25 Hz
+            - ``9``: 50 Hz
+            - ``10``: 100 Hz
+            - ``11``: 200 Hz
+            - ``12``: 400 Hz
+            - ``13``: 800 Hz
+            - ``14``: 1600 Hz
+            - ``15``: 3200 Hz
 
         UiFlow2 Code Block:
 
