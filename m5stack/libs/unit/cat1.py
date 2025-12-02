@@ -40,7 +40,7 @@ class Cat1Unit(ML307R, Modem):
         self,
         uart_or_id,
         port: list | tuple = None,
-        verbose: bool = False,
+        verbose: bool = True,
     ) -> None:
         if isinstance(uart_or_id, machine.UART):
             self.uart = uart_or_id
