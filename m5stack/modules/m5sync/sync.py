@@ -466,7 +466,7 @@ class M5Sync:
                         record.pop(index)
                         break
                 record.append(file)
-                break
+
         return err
 
     def download_file(self, url, save_path, retry=3):
