@@ -107,10 +107,7 @@ class ItemBattery:
         self._update_img()
         self._update_labels()
 
-        # TODO: Update task
-        self._img.set_style_image_recolor_opa(123, lv.PART.MAIN)
-
-        # self._task = asyncio.create_task(self.update_task())
+        self._task = asyncio.create_task(self.update_task())
 
     async def update_task(self):
         while True:
@@ -128,7 +125,7 @@ class ItemBattery:
 
     def _update_labels(self):
         self._label_bat_level.set_text(str(get_hal().get_battery_level()) + "%")
-        self._label_output_current.set_text(str(round(get_hal().get_output_current(), 2)) + "A")
+        self._label_output_current.set_text(str(round(get_hal().get_output_current(), 1)) + "A")
 
 
 class ItemCharge:
