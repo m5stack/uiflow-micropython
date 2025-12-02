@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -27,7 +27,7 @@ def cat1cn_0_subscription_event(_topic, _msg):
 def button0_clicked_event(event_struct):
     global page0, button0, cat1cn_0
     cat1cn_0.mqtt_publish_topic(
-        "Subscription", (str("Random num:") + str((str((random.randint(1, 100)))))), 0
+        "Push", (str("Random num:") + str((str((random.randint(1, 100)))))), 0
     )
 
 
