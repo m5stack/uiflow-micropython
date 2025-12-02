@@ -13,3 +13,5 @@
 
 #define AUDIO_RECORDER_DOWN_CH (1)
 #define MICROPY_PY_MACHINE_I2S (0)
+
+#define NO_HAVE_RTC_SYNC (1)

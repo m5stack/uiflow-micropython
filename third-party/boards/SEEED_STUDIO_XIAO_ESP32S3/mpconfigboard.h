@@ -17,5 +17,7 @@
 
 #define MICROPY_HW_USB_CDC_INTERFACE_STRING  "Seeed XIAO ESP32S3(UiFlow2)"
 
+#define NO_HAVE_RTC_SYNC (1)
+
 // If not enable LVGL, ignore this...
 #include "./../mpconfiglvgl.h"
