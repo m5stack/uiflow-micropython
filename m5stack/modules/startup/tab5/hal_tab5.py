@@ -100,7 +100,7 @@ class HALTab5(HALBase):
         return M5.Power.getBatteryLevel()
 
     def get_output_current(self) -> float:
-        return M5.Power.getBatteryCurrent()
+        return M5.Power.getBatteryCurrent() / 1000.0
 
     def is_charging(self) -> bool:
         return M5.Power.isCharging()
