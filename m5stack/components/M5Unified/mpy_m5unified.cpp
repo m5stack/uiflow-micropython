@@ -502,6 +502,17 @@ static void in_i2c_init(void) {
     }
 }
 
+void rtc_sync(struct timeval *tv_in) {
+    struct timeval tv;
+    if (tv_in == nullptr) {
+        gettimeofday(&tv, NULL);
+    } else {
+        tv = *tv_in;
+    }
+    struct tm now;
+    localtime_r(&tv.tv_sec, &now);
+    M5.Rtc.setDateTime(&now);
+}
 
 // TODO: pass configuration parameters
 mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
@@ -537,6 +548,9 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     m5_display.gfx = (void *)(&(M5.Display));
     // set default font to DejaVu9, keep same style with UIFlow website UI design.
     M5.Display.setTextFont(&fonts::DejaVu9);
+
+    // get local time and sync to RTC IC
+    rtc_sync(nullptr);
 
     {
         for (uint8_t i = 0; i < 5; i++) {

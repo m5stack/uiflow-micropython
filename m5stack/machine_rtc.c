@@ -41,6 +41,14 @@
 #include "machine_rtc.h"
 #include "uiflow_utility.h"
 
+#ifndef NO_HAVE_RTC_SYNC
+#define NO_HAVE_RTC_SYNC 0
+#endif
+
+#if NO_HAVE_RTC_SYNC == 0
+#include "mpy_m5unified.h"
+#endif
+
 typedef struct _machine_rtc_obj_t {
     mp_obj_base_t base;
 } machine_rtc_obj_t;
@@ -141,6 +149,9 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
             );
         tv.tv_usec = mp_obj_get_int(items[7]);
         settimeofday(&tv, NULL);
+        #if NO_HAVE_RTC_SYNC == 0
+        rtc_sync(&tv);
+        #endif
 
         return mp_const_none;
     }
@@ -190,6 +201,9 @@ static mp_obj_t machine_rtc_local_datetime_helper(mp_uint_t n_args, const mp_obj
         #endif
         tv.tv_usec = mp_obj_get_int(items[7]);
         settimeofday(&tv, NULL);
+        #if NO_HAVE_RTC_SYNC == 0
+        rtc_sync(&tv);
+        #endif
 
         return mp_const_none;
     }
