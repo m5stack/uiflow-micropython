@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-02 18:08+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/chain/encoder.rst:2 ../../en/refs/chain.encoder.ref
+#: 3c67b827e5a1402f966e231c0bdb62d9 6bbeca0407144714a4d7dd2e3eb0e5e2
+msgid "Chain Encoder"
+msgstr ""
+
+#: ../../en/chain/encoder.rst:6 955227e2a6834ad4a89848bfca133df8
+msgid ""
+"EncoderChain is the helper class for encoder devices on the Chain bus. It"
+" provides methods to read encoder values and increments, reset the "
+"encoder, configure the clockwise rotation direction, and handle button "
+"events with RGB LED feedback."
+msgstr ""
+"EncoderChain 是用于 Chain 总线上编码器设备的辅助类。它提供了读取编码器值和增量、重置编码器、配置顺时针旋转方向以及处理按钮事件和 RGB LED 反馈的方法。"
+
+#: ../../en/chain/encoder.rst:8 ea29766883ba4f3a8d98b405cef30f48
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/chain/encoder.rst:10 c9369abb757c4abba9fc90c09f4b378c
+msgid "|Chain Encoder|"
+msgstr ""
+
+#: ../../en/chain/encoder.rst:13 6d447414d6a74f01a2d6f1b8e7a23e9f
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/chain/encoder.rst:16 ../../en/chain/encoder.rst:34
+#: 3da9d4c68bf2444ca6c5bcf9ad5fdd75 95db0652e32145d4a034f7345b3f40d9
+msgid "Encoder reading with brightness control"
+msgstr "编码器读取与亮度控制"
+
+#: ../../en/chain/encoder.rst:18 32e33a5d40ae455db22dcdbbc0917840
+msgid "Open the |m5core_chain_encoder_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_encoder_basic_example.m5f2| 项目。"
+
+#: ../../en/chain/encoder.rst:20 ../../en/chain/encoder.rst:36
+#: 7bac7c43951c447fbd09f7391f2437f3 b7e5c4b8a94640e8baa632d2a882fe3d
+msgid ""
+"This example demonstrates how to read encoder values and increments, "
+"handle button click events, and control RGB LED brightness based on "
+"encoder rotation. The encoder value is displayed on screen and updated in"
+" real-time."
+msgstr ""
+"此示例演示如何读取编码器值和增量、处理按钮点击事件，并根据编码器旋转控制 RGB LED 亮度。编码器值显示在屏幕上并实时更新。"
+
+#: ../../en/chain/encoder.rst:22 c72eb4581e3c42c4b2b582ead351f95c
+#: chain.encoder.EncoderChain:6 chain.encoder.EncoderChain.get_cw_increase:6
+#: chain.encoder.EncoderChain.get_encoder_increment:6
+#: chain.encoder.EncoderChain.get_encoder_value:6
+#: chain.encoder.EncoderChain.reset_encoder_increment:6
+#: chain.encoder.EncoderChain.reset_encoder_value:6
+#: chain.encoder.EncoderChain.set_cw_increase:8
+#: f7c9ec11d21a4c499295fbf05c0d8b93 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/chain/encoder.rst:24 c1283f5243db49e4ab68b6659d8a4944
+msgid "|m5core_chain_encoder_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:31 40efecf6c05f4b929211853494a0adce
+msgid "m5core_chain_encoder_basic_example.png"
+msgstr ""
+
+#: ../../en/chain/encoder.rst:26 ../../en/chain/encoder.rst:44
+#: 260a6a670d8740298f405b3ed2a11e9d
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/chain/encoder.rst:28 ../../en/chain/encoder.rst:46
+#: 500b226791c343ca9ade828bafec4d76
+msgid "None"
+msgstr "无"
+
+#: ../../en/chain/encoder.rst:31 f8381214cc6847d787510557c16b2629
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/chain/encoder.rst:38 717e8b7cadc149c3903f623e38d73d61
+#: chain.encoder.EncoderChain:10 chain.encoder.EncoderChain.get_cw_increase:10
+#: chain.encoder.EncoderChain.get_encoder_increment:10
+#: chain.encoder.EncoderChain.get_encoder_value:10
+#: chain.encoder.EncoderChain.reset_encoder_increment:10
+#: chain.encoder.EncoderChain.reset_encoder_value:10
+#: chain.encoder.EncoderChain.set_cw_increase:12 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/chain/encoder.rst:50 1e12c499593f46cf915aa36852826d49
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/chain/encoder.rst:53 5212de402ba24569aea7ac3866592566
+msgid "EncoderChain"
+msgstr "EncoderChain"
+
+#: c588f7d0d56346bfb4f787155d50e809 chain.encoder.EncoderChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr ""
+
+#: 8bd2e8edc4cb4234a2e39304e3d99f6f chain.encoder.EncoderChain:1 of
+msgid "Encoder Chain class for interacting with encoder devices over Chain bus."
+msgstr "用于通过 Chain 总线与编码器设备交互的 Encoder Chain 类。"
+
+#: ../../en/chain/encoder.rst af1b23001e61417bbfde337f5c1fd323
+#: chain.encoder.EncoderChain.set_cw_increase of
+msgid "Parameters"
+msgstr "参数"
+
+#: 281e972dec274be8a364d2c4bede1682 chain.encoder.EncoderChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 0b8ecce2b1b34f558611b8d25e91fedf chain.encoder.EncoderChain:4 of
+msgid "The device ID of the encoder on the Chain bus."
+msgstr "Chain 总线上编码器的设备 ID。"
+
+#: bc378ad839aa4218a998457f2851e059 chain.encoder.EncoderChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:7 40efecf6c05f4b929211853494a0adce
+msgid "init.png"
+msgstr ""
+
+#: ../../en/chain/encoder.rst:60 2b52ed8caf9b4f2899e9782dfa8a3f93
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"有关其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: chain.encoder.EncoderChain.get_encoder_value:1
+#: e6348875a8944dbc8c507c7e61cc71a2 of
+msgid "Get the encoder value."
+msgstr "获取编码器值。"
+
+#: 66312fff5ec944d9b2e10f9587062f1e chain.encoder.EncoderChain.get_cw_increase
+#: chain.encoder.EncoderChain.get_encoder_increment
+#: chain.encoder.EncoderChain.get_encoder_value
+#: chain.encoder.EncoderChain.reset_encoder_increment
+#: chain.encoder.EncoderChain.reset_encoder_value
+#: chain.encoder.EncoderChain.set_cw_increase of
+msgid "Returns"
+msgstr "返回"
+
+#: 7c2515b680924ffaa13d573fb46e18ac
+#: chain.encoder.EncoderChain.get_encoder_value:3 of
+msgid "Encoder value as int16_t (-32768 to 32767), or None if failed."
+msgstr "编码器值，类型为 int16_t（-32768 到 32767），失败时返回 None。"
+
+#: 7070cce0eb314bf785e776563b4d8015 chain.encoder.EncoderChain.get_cw_increase
+#: chain.encoder.EncoderChain.get_encoder_increment
+#: chain.encoder.EncoderChain.get_encoder_value
+#: chain.encoder.EncoderChain.reset_encoder_increment
+#: chain.encoder.EncoderChain.reset_encoder_value
+#: chain.encoder.EncoderChain.set_cw_increase of
+msgid "Return type"
+msgstr "返回类型"
+
+#: chain.encoder.EncoderChain.get_encoder_value:8
+#: dd3504645ab34d39b702f6a711687b53 of
+msgid "|get_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:8 f99a5fe1f1ae43a3a3c6db0caa3ca7e0
+msgid "get_encoder_value.png"
+msgstr ""
+
+#: chain.encoder.EncoderChain.get_encoder_increment:1
+#: e65d6129a18a45d9b9c1e1c7a536b08e of
+msgid "Get the encoder increment value."
+msgstr "获取编码器增量值。"
+
+#: adf067601201484e8a91aa2a8c63652b
+#: chain.encoder.EncoderChain.get_encoder_increment:3 of
+msgid "Encoder increment value as int16_t (-32768 to 32767), or None if failed."
+msgstr "编码器增量值，类型为 int16_t（-32768 到 32767），失败时返回 None。"
+
+#: c413f3c537254be78e9d5897837b25d8
+#: chain.encoder.EncoderChain.get_encoder_increment:8 of
+msgid "|get_encoder_increment.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:12 304c4c27479246e0b50fb03c6080528e
+msgid "get_encoder_increment.png"
+msgstr ""
+
+#: a0c94344dd4444ffb8914150dcd94dd4
+#: chain.encoder.EncoderChain.reset_encoder_value:1 of
+msgid "Reset the encoder value."
+msgstr "重置编码器值。"
+
+#: 6b893f24fd60493aae4dc603758ae8fd
+#: chain.encoder.EncoderChain.reset_encoder_increment:3
+#: chain.encoder.EncoderChain.reset_encoder_value:3 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: 759992ef712546b3963251429d0eb3e0
+#: chain.encoder.EncoderChain.reset_encoder_value:8 of
+msgid "|reset_encoder_value.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:9 84a4f1ec1dd8467d843fcacae1431369
+msgid "reset_encoder_value.png"
+msgstr ""
+
+#: 5bd23e2d005f417c9e114b5fc9849cb9
+#: chain.encoder.EncoderChain.reset_encoder_increment:1 of
+msgid "Reset the encoder increment value."
+msgstr "重置编码器增量值。"
+
+#: a8e029ae1bb1454bae02288386e9c8dc
+#: chain.encoder.EncoderChain.reset_encoder_increment:8 of
+msgid "|reset_encoder_increment.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:13 ec509d92d616439fbf0af8f94af189b5
+msgid "reset_encoder_increment.png"
+msgstr ""
+
+#: 71dc34c9a1ba4cb18fdc9c4e1ed76315
+#: chain.encoder.EncoderChain.set_cw_increase:1 of
+msgid "Set whether clockwise rotation increases the encoder value."
+msgstr "设置顺时针旋转是否增加编码器值。"
+
+#: 59ad500248044dfda5370cda8edcc766
+#: chain.encoder.EncoderChain.set_cw_increase:3 of
+msgid ""
+"Whether clockwise rotation increases. True means clockwise increases "
+"(sends 0), False means clockwise decreases (sends 1)."
+msgstr ""
+"顺时针旋转是否增加。True 表示顺时针增加（发送 0），False 表示顺时针减少（发送 1）。"
+
+#: 5fbca797aef5436fbf9ee7d20dd214b4
+#: chain.encoder.EncoderChain.set_cw_increase:4 of
+msgid "Whether to save to flash. False means don't save, True means save."
+msgstr "是否保存到 Flash。False 表示不保存，True 表示保存。"
+
+#: 829cb5b96253464582207f58d06432d0
+#: chain.encoder.EncoderChain.set_cw_increase:5 of
+msgid "True if the setting was set successfully, False otherwise."
+msgstr "设置成功返回 True，否则返回 False。"
+
+#: 3b28a34dd8d04227af3691020cfaac64
+#: chain.encoder.EncoderChain.set_cw_increase:10 of
+msgid "|set_cw_increase.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:11 c4ac7a1c1e684b5595ab09d833a0b72d
+msgid "set_cw_increase.png"
+msgstr ""
+
+#: chain.encoder.EncoderChain.get_cw_increase:1
+#: d537dc547f0a4fc28725e10330a2c7dd of
+msgid "Get whether clockwise rotation increases the encoder value."
+msgstr "获取顺时针旋转是否增加编码器值。"
+
+#: c6544a3ff6934f8ab1c8257716881cc4
+#: chain.encoder.EncoderChain.get_cw_increase:3 of
+msgid ""
+"Whether clockwise rotation increases. True means clockwise increases, "
+"False means clockwise decreases. Returns False if failed."
+msgstr ""
+"顺时针旋转是否增加。True 表示顺时针增加，False 表示顺时针减少。失败时返回 False。"
+
+#: 3e665cbc73cd42a08a1374015ee274b6
+#: chain.encoder.EncoderChain.get_cw_increase:8 of
+msgid "|get_cw_increase.png|"
+msgstr ""
+
+#: ../../en/refs/chain.encoder.ref:10 fbd7f7a48a1e4759ae4fdf1ad3791395
+msgid "get_cw_increase.png"
+msgstr ""
+

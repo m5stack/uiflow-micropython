@@ -1,0 +1,40 @@
+
+.. |Chain Encoder| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1192/U207-Chain-encoder-main-pictures-01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U207
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/init.png
+.. |get_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_encoder_value.png
+.. |reset_encoder_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/reset_encoder_value.png
+.. |get_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_cw_increase.png
+.. |set_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_cw_increase.png
+.. |get_encoder_increment.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_encoder_increment.png
+.. |reset_encoder_increment.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/reset_encoder_increment.png
+.. |get_button_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_button_state.png
+.. |get_button_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_button_mode.png
+.. |set_button_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_button_mode.png
+.. |get_button_double_click_trigger_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_button_double_click_trigger_interval.png
+.. |set_button_double_click_trigger_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_button_double_click_trigger_interval.png
+.. |get_button_long_press_trigger_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_button_long_press_trigger_interval.png
+.. |set_button_long_press_trigger_interval.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_button_long_press_trigger_interval.png
+.. |click_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/click_event.png
+.. |double_click_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/double_click_event.png
+.. |long_press_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/long_press_event.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_rgb_color.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_rgb_color.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_rgb_brightness.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/set_rgb_brightness.png
+.. |get_device_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_device_uid.png
+.. |get_bootloader_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_bootloader_version.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/get_firmware_version.png
+.. |m5core_chain_encoder_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/encoder/example.png
+
+.. |m5core_chain_encoder_basic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/encoder/m5core_chain_encoder_basic_example.m5f2"
+        target="_blank"
+    >
+        m5core_chain_encoder_basic_example.m5f2
+    </a>
