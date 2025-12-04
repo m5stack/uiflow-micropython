@@ -17,6 +17,7 @@ CMD_GET_RGB_BRIGHTNESS = 0x23  # Get RGB brightness
 CMD_GET_BOOTLOADER_VERSION = 0xF9  # Get bootloader version
 CMD_GET_FIRMWARE_VERSION = 0xFA  # Get firmware version
 CMD_GET_DEVICE_TYPE = 0xFB  # Get device type
+CMD_GET_DEVICE_UID = 0xF8  # Get device UID
 CMD_ENUM_REQUEST = 0xFC  # Enumeration request
 CMD_HEARTBEAT = 0xFD  # Heartbeat command
 CMD_ENUM_RESPONSE = 0xFE  # Enumeration response
@@ -331,9 +332,9 @@ class ChainLinkLayer:
         state, response = self.send(device_id, CMD_GET_RGB_VALUE, payload)
         if state and response and len(response) == 4:
             if response[0] == 1:
-                r = response[2]
-                g = response[3]
-                b = response[4]
+                r = response[1]
+                g = response[2]
+                b = response[3]
                 return (r << 16) | (g << 8) | b
         return -1
 
@@ -389,6 +390,24 @@ class ChainLinkLayer:
         if state and response:
             return struct.unpack("<H", response)[0]
         return -1
+
+    def get_device_uid(self, device_id: int, uid_type: int) -> tuple:
+        """Get device UID.
+
+        :param int device_id: Device ID.
+        :param int uid_type: UID type, 0 for 4-byte UID, 1 for 12-byte UID.
+        :return: Tuple of UID bytes (4 bytes or 12 bytes). Returns empty tuple on error.
+        """
+        payload = struct.pack("B", uid_type & 0xFF)
+        state, response = self.send(device_id, CMD_GET_DEVICE_UID, payload)
+        if state and response:
+            if uid_type == 0:
+                if len(response) >= 4:
+                    return tuple(response[:4])
+            elif uid_type == 1:
+                if len(response) >= 12:
+                    return tuple(response[:12])
+        return tuple()
 
     def send_heartbeat(self):
         """Send heartbeat command."""

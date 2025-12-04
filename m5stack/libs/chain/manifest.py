@@ -6,6 +6,8 @@ package(
     "chain",
     (
         "__init__.py",
+        "angle.py",
+        "encoder.py",
         "chain.py",
         "joystick.py",
         "key.py",

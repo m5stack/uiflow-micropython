@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 18:14+0800\n"
+"POT-Creation-Date: 2025-12-05 15:22+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,40 +20,40 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../en/chain/key.rst:2 1c7b8b8927af4500bf1a7306fba58d03
+#: ../../en/chain/key.rst:2 19dd511b1e21407cbdf3c62998ba977c
 msgid "Chain Key"
 msgstr ""
 
-#: ../../en/chain/key.rst:6 410790c86efc46f8a26d3ceb688a11c5
+#: ../../en/chain/key.rst:6 ea3a15ca5d324eba8ca8f7c4e67062b6
 msgid ""
 "Chain Key is a key module that can be connected to the M5Chain series "
 "devices. This module provides functions to read the key states."
-msgstr ""
-"Chain Key 是一个可连接到 M5Chain 系列设备的按键模块，提供读取按键状态的功能。"
+msgstr "Chain Key 是一个可连接到 M5Chain 系列设备的按键模块，提供读取按键状态的功能。"
 
-#: ../../en/chain/key.rst:9 1ae2d055e55745f49954904ce4985735
+#: ../../en/chain/key.rst:9 72e39fa3a01c4e90bc7ff92597114a78
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../en/chain/key.rst:12 ../../en/chain/key.rst:30
-#: cb40b8d1cf2948fc9210d381d74c9f00
+#: ed843ffb6a994216b289aff1010cb64a
 msgid "USB Keyboard"
 msgstr "USB 键盘"
 
-#: ../../en/chain/key.rst:14 5b9a27d36b764d90a4fa38d210960f79
+#: ../../en/chain/key.rst:14 ff87175820ce41189a77f2503d73cb0e
 msgid "Open the |chain_key_usb_keyboard_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |chain_key_usb_keyboard_example.m5f2| 项目。"
 
 #: ../../en/chain/key.rst:16 ../../en/chain/key.rst:32
-#: 043e3070439442c5ae2636f143e2d088
+#: a98a428eeff14b0aa2860b4276832551
 msgid "This example demonstrates how to use the Chain Key as a USB keyboard."
 msgstr "该示例演示如何将 Chain Key 作为 USB 键盘使用。"
 
-#: ../../en/chain/key.rst:18 1ae2d055e55745f49954904ce4985735
-#: chain.key.KeyChain:6 chain.key.KeyChain.get_bootloader_version:6
+#: ../../en/chain/key.rst:18 chain.key.KeyChain:6
+#: chain.key.KeyChain.get_bootloader_version:6
 #: chain.key.KeyChain.get_button_double_click_trigger_interval:6
 #: chain.key.KeyChain.get_button_long_press_trigger_interval:6
 #: chain.key.KeyChain.get_button_mode:6 chain.key.KeyChain.get_button_state:6
+#: chain.key.KeyChain.get_device_uid:7
 #: chain.key.KeyChain.get_firmware_version:6
 #: chain.key.KeyChain.get_rgb_brightness:6 chain.key.KeyChain.get_rgb_color:7
 #: chain.key.KeyChain.set_button_double_click_trigger_interval:7
@@ -62,37 +62,38 @@ msgstr "该示例演示如何将 Chain Key 作为 USB 键盘使用。"
 #: chain.key.KeyChain.set_double_click_callback:5
 #: chain.key.KeyChain.set_long_press_callback:5
 #: chain.key.KeyChain.set_rgb_brightness:8 chain.key.KeyChain.set_rgb_color:7
-#: of
+#: f7458ce6f85644eaa40fd478faf7ff11 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/chain/key.rst:20 a170b38ae9054d839aa6ef86bc18737e
+#: ../../en/chain/key.rst:20 e9b7c3d64062479d89463a8e7eb2bec7
 msgid "|chain_key_usb_keyboard_example.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:1 823398a771a9498fa2ead5c07ed3c06e
+#: ../../en/refs/chain.key.ref:1 3f9345c01d5d40abad2fac0d8668d1a6
 msgid "chain_key_usb_keyboard_example.png"
 msgstr ""
 
 #: ../../en/chain/key.rst:22 ../../en/chain/key.rst:40
-#: 1ee3f847b7ce4b4c8f0d70ec4cca2b26
+#: 601f456cf2cf4cf892c9a4dc6af31cc2
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/chain/key.rst:24 ../../en/chain/key.rst:42
-#: 08515583d53c4c4dbe309b7b5c897284
+#: 530cbb23548a4bf5beb1a584dfbe6b87
 msgid "None"
 msgstr ""
 
-#: ../../en/chain/key.rst:27 1efdf92c14aa43719e73a58bfe4865ac
+#: ../../en/chain/key.rst:27 f77d47e736ba43e5b5060b7484985a4f
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../en/chain/key.rst:34 1efdf92c14aa43719e73a58bfe4865ac
+#: ../../en/chain/key.rst:34 30d3c9e6e5eb44eab02cae9c49ccd5dc
 #: chain.key.KeyChain:10 chain.key.KeyChain.get_bootloader_version:10
 #: chain.key.KeyChain.get_button_double_click_trigger_interval:10
 #: chain.key.KeyChain.get_button_long_press_trigger_interval:10
 #: chain.key.KeyChain.get_button_mode:10 chain.key.KeyChain.get_button_state:10
+#: chain.key.KeyChain.get_device_uid:11
 #: chain.key.KeyChain.get_firmware_version:10
 #: chain.key.KeyChain.get_rgb_brightness:10 chain.key.KeyChain.get_rgb_color:11
 #: chain.key.KeyChain.set_button_double_click_trigger_interval:11
@@ -106,161 +107,161 @@ msgstr "MicroPython 示例"
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/chain/key.rst:45 d569a39ed4254f8e9ca70636a34549fa
+#: ../../en/chain/key.rst:45 e7a57c2de36f47deb15a53f3d70ae529
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../en/chain/key.rst:48 331daff0caca40a7a625d76b40525d8a
+#: ../../en/chain/key.rst:48 a0b36b4b9cd64960b11a2a602b67bff5
 msgid "KeyChain"
 msgstr ""
 
-#: chain.key.KeyChain:1 dc2f2db1b5df46dc8a92f82780744589 of
+#: 36afcd2604434c22b42c7178556c0bda chain.key.KeyChain:1 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: chain.key.KeyChain:1 d74961248b2440fd8078b60af84383e7 of
+#: 4f54a7a52adb4ffbb004eac38d891561 chain.key.KeyChain:1 of
 msgid "Create a KeyChain object."
 msgstr "创建一个 KeyChain 对象。"
 
-#: ../../en/chain/key.rst 86cfa66d6d7e4593b81521ba6f670db5
+#: ../../en/chain/key.rst chain.key.KeyChain.get_device_uid
 #: chain.key.KeyChain.get_rgb_color
 #: chain.key.KeyChain.set_button_double_click_trigger_interval
 #: chain.key.KeyChain.set_button_long_press_trigger_interval
 #: chain.key.KeyChain.set_button_mode chain.key.KeyChain.set_click_callback
 #: chain.key.KeyChain.set_double_click_callback
 #: chain.key.KeyChain.set_long_press_callback
-#: chain.key.KeyChain.set_rgb_brightness chain.key.KeyChain.set_rgb_color of
+#: chain.key.KeyChain.set_rgb_brightness chain.key.KeyChain.set_rgb_color
+#: d1a215882fb040ec9961793ef9f208d6 of
 msgid "Parameters"
 msgstr ""
 
-#: 80e6a62695404d4691cb7c62502a60fe chain.key.KeyChain:3 of
+#: chain.key.KeyChain:3 e291e2c7472a423bb260c6104cdc91ce of
 msgid "ChainBus object."
 msgstr "ChainBus 对象。"
 
-#: bf2070578c2746c2b3ca27654eb103a7 chain.key.KeyChain:4 of
+#: chain.key.KeyChain:4 e82b2ce7f6714b54bc1b982bf97e4506 of
 msgid "Device ID."
 msgstr "设备 ID。"
 
-#: 2bf928610ec74f2d8425aefaf21811b4 chain.key.KeyChain:8 of
+#: 77280ee98d7046c0aed2374c3966aacf chain.key.KeyChain:8 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:11 a1126668332c46c9b688b2297e72d770
+#: ../../en/refs/chain.key.ref:12 cc4ddb2c3e774956bd3e4fad2995f182
 msgid "init.png"
 msgstr ""
 
-#: ../../docstring 7def775f4c4b41f8ab2c30a1316c5e28
-#: chain.key.KeyChain.MODE_POLL:1 of
+#: ../../docstring chain.key.KeyChain.MODE_POLL:1
+#: ebc632c9e64d476ba16b40f02b7fb0a5 of
 msgid "Button Polling mode"
 msgstr "按钮轮询模式"
 
-#: ../../docstring 91511f7dee374c8d8d2b689216872602
+#: ../../docstring 3c4636a39c9d484485d0d649d6029bcb
 #: chain.key.KeyChain.MODE_EVENT:1 of
 msgid "Button Event mode"
 msgstr "按钮事件模式"
 
-#: 239aa9b4abfa4b5d8264a329724cf619 chain.key.KeyChain.get_button_state:1 of
+#: cfd07e3741544a46a4fab22b042b43c4 chain.key.KeyChain.get_button_state:1 of
 msgid "get button state."
 msgstr "获取按钮状态。"
-
-#: ce5d599566bb4bcf88afadfd13b9d0d4 chain.key.KeyChain.get_bootloader_version
-#: chain.key.KeyChain.get_button_double_click_trigger_interval
-#: chain.key.KeyChain.get_button_long_press_trigger_interval
-#: chain.key.KeyChain.get_button_mode chain.key.KeyChain.get_button_state
-#: chain.key.KeyChain.get_firmware_version
-#: chain.key.KeyChain.get_rgb_brightness chain.key.KeyChain.get_rgb_color
-#: chain.key.KeyChain.set_button_double_click_trigger_interval
-#: chain.key.KeyChain.set_button_long_press_trigger_interval
-#: chain.key.KeyChain.set_button_mode chain.key.KeyChain.set_rgb_brightness
-#: chain.key.KeyChain.set_rgb_color of
-msgid "Returns"
-msgstr ""
-
-#: 6df32ea16faa428d901bc264fb0c12a8 chain.key.KeyChain.get_button_state:3 of
-msgid "Button state, True if pressed, False otherwise."
-msgstr "按钮状态，按下为 True，否则为 False。"
 
 #: chain.key.KeyChain.get_bootloader_version
 #: chain.key.KeyChain.get_button_double_click_trigger_interval
 #: chain.key.KeyChain.get_button_long_press_trigger_interval
 #: chain.key.KeyChain.get_button_mode chain.key.KeyChain.get_button_state
-#: chain.key.KeyChain.get_firmware_version
+#: chain.key.KeyChain.get_device_uid chain.key.KeyChain.get_firmware_version
+#: chain.key.KeyChain.get_rgb_brightness chain.key.KeyChain.get_rgb_color
+#: chain.key.KeyChain.set_button_double_click_trigger_interval
+#: chain.key.KeyChain.set_button_long_press_trigger_interval
+#: chain.key.KeyChain.set_button_mode chain.key.KeyChain.set_rgb_brightness
+#: chain.key.KeyChain.set_rgb_color f6e297f33381401bbb769f34573134ba of
+msgid "Returns"
+msgstr ""
+
+#: chain.key.KeyChain.get_button_state:3 d807a0771dcd407f87fa318eabe0094f of
+msgid "Button state, True if pressed, False otherwise."
+msgstr "按钮状态，按下为 True，否则为 False。"
+
+#: 3375cc1a44f04850818dbeaad91604da chain.key.KeyChain.get_bootloader_version
+#: chain.key.KeyChain.get_button_double_click_trigger_interval
+#: chain.key.KeyChain.get_button_long_press_trigger_interval
+#: chain.key.KeyChain.get_button_mode chain.key.KeyChain.get_button_state
+#: chain.key.KeyChain.get_device_uid chain.key.KeyChain.get_firmware_version
 #: chain.key.KeyChain.get_rgb_brightness chain.key.KeyChain.get_rgb_color
 #: chain.key.KeyChain.set_button_double_click_trigger_interval
 #: chain.key.KeyChain.set_button_long_press_trigger_interval
 #: chain.key.KeyChain.set_button_mode chain.key.KeyChain.set_click_callback
 #: chain.key.KeyChain.set_double_click_callback
 #: chain.key.KeyChain.set_long_press_callback
-#: chain.key.KeyChain.set_rgb_brightness chain.key.KeyChain.set_rgb_color
-#: ec7e7d547460488fbb688ad94bb02c09 of
+#: chain.key.KeyChain.set_rgb_brightness chain.key.KeyChain.set_rgb_color of
 msgid "Return type"
 msgstr ""
 
-#: 6b0aef3556234c559e44d9cbe8f2884b chain.key.KeyChain.get_button_state:8 of
+#: 5ddf02e8715541d4960ebc29e82417fe chain.key.KeyChain.get_button_state:8 of
 msgid "|get_button_state.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:7 30ed7dfbd8fc4e84bb2650afbabd8884
+#: ../../en/refs/chain.key.ref:7 65695f7ec24e4e6e8e8ecc03530cc460
 msgid "get_button_state.png"
 msgstr ""
 
-#: 4fd662405b2e40248f770e443de5604a chain.key.KeyChain.set_click_callback:1 of
+#: 100e31ec11694333814db3f29da24dc7 chain.key.KeyChain.set_click_callback:1 of
 msgid "set button click callback."
 msgstr "设置按钮单击回调。"
 
-#: 9f490bec046b47dc8c2909010921fe05 chain.key.KeyChain.set_click_callback:3
+#: 73b71a993d36440d9c5cadfd7cda2b31 chain.key.KeyChain.set_click_callback:3
 #: chain.key.KeyChain.set_double_click_callback:3
 #: chain.key.KeyChain.set_long_press_callback:3 of
 msgid "Callback function."
 msgstr "回调函数。"
 
-#: 759ee9458e064287953c714fe3aa824f chain.key.KeyChain.set_click_callback:7 of
+#: 2c87e083fae04e6a8e742a091c0884ee chain.key.KeyChain.set_click_callback:7 of
 msgid "|key_click_callback.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:12 823398a771a9498fa2ead5c07ed3c06e
+#: ../../en/refs/chain.key.ref:13 e6eec90bc220480b9ce957a780085d27
 msgid "key_click_callback.png"
 msgstr ""
 
-#: 654e7bc49aa4494284491f786ff6d096
+#: a2a9e7049fd24503bdd06481df468791
 #: chain.key.KeyChain.set_double_click_callback:1 of
 msgid "set button double click callback."
 msgstr "设置按钮双击回调。"
 
-#: 54313f5122644d2da245642090c6efa9
-#: chain.key.KeyChain.set_double_click_callback:7 of
+#: chain.key.KeyChain.set_double_click_callback:7
+#: fea47612488d43cfba4381d1195294e1 of
 msgid "|double_click_callback.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:2 cfb1004a63454e809a24af0138b9966c
+#: ../../en/refs/chain.key.ref:2 8bd30d7ae61845ae807e0849561acaea
 msgid "double_click_callback.png"
 msgstr ""
 
-#: a4d4b45f8cf14a74ae0e89158ef2a863
+#: 714acd58e5d443c7808768fd48505aa0
 #: chain.key.KeyChain.set_long_press_callback:1 of
 msgid "set button long press callback."
 msgstr "设置按钮长按回调。"
 
-#: 759ee9458e064287953c714fe3aa824f
+#: 2502741f81364bed97317bada5ef8381
 #: chain.key.KeyChain.set_long_press_callback:7 of
 msgid "|long_press_callback.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:13 5e12449decd345e2954d79db1e35281f
+#: ../../en/refs/chain.key.ref:14 ec97e6851700444192581622ced07ea6
 msgid "long_press_callback.png"
 msgstr ""
 
-#: b5e9f1f79675423eb685c7964771e5a0
+#: 68bf85e3f96c4e449edf43fce6ae3e13
 #: chain.key.KeyChain.set_button_double_click_trigger_interval:1 of
 msgid "set button double click trigger interval."
 msgstr "设置按钮双击触发间隔。"
 
-#: bad58c29efea4d2ca65b2b8b49dd8c38
-#: chain.key.KeyChain.set_button_double_click_trigger_interval:3 of
+#: chain.key.KeyChain.set_button_double_click_trigger_interval:3
+#: dab16dc97269403aad830bf40015cd09 of
 msgid "Interval time in milliseconds. range: 100-1000"
 msgstr "间隔时间（毫秒）。范围：100-1000"
 
-#: a6b2799177fa40809525c58c03829a84
+#: af0617be2de549228c1ac64ad6c99f78
 #: chain.key.KeyChain.set_button_double_click_trigger_interval:4
 #: chain.key.KeyChain.set_button_long_press_trigger_interval:4
 #: chain.key.KeyChain.set_button_mode:4 chain.key.KeyChain.set_rgb_brightness:5
@@ -268,203 +269,223 @@ msgstr "间隔时间（毫秒）。范围：100-1000"
 msgid "True if success, False otherwise."
 msgstr "成功返回 True，否则返回 False。"
 
-#: 8f592ec4a83f491bbd4383dc72766efa
+#: 0ae2c3b83d9344728450202086865dff
 #: chain.key.KeyChain.set_button_double_click_trigger_interval:9 of
 msgid "|set_button_double_click_trigger_interval.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:14 ffa1063196014b5e88617e5b1020e3d0
+#: ../../en/refs/chain.key.ref:15 5429af8359d94577be3de5db2fd574ce
 msgid "set_button_double_click_trigger_interval.png"
 msgstr ""
 
-#: b86388f30ad641778c9eefd016ee5363
+#: 2455a4429094471abd4d8398bd566ce0
 #: chain.key.KeyChain.set_button_long_press_trigger_interval:1 of
 msgid "set button long press trigger interval."
 msgstr "设置按钮长按触发间隔。"
 
-#: 03c421f657064d919c871498c2529d00
+#: 7bb64a39b7e0462795726765eb20123d
 #: chain.key.KeyChain.set_button_long_press_trigger_interval:3 of
 msgid "Interval time in milliseconds. range: 3000-30000"
 msgstr "间隔时间（毫秒）。范围：3000-30000"
 
-#: 3aeae22c99214c3498ad1b9fd5c98938
+#: 4f488f854d924ba0a3ffaf9bd948e9ce
 #: chain.key.KeyChain.set_button_long_press_trigger_interval:9 of
 msgid "|set_button_long_press_trigger_interval.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:15 344072712f2141e4b4f7495b27ee1edc
+#: ../../en/refs/chain.key.ref:16 9fd17ad864a242169134b604618637d3
 msgid "set_button_long_press_trigger_interval.png"
 msgstr ""
 
-#: 9b7214ca277a4a1e993822be9eb28d08
+#: 95782a12e6a648928576ece639d55338
 #: chain.key.KeyChain.get_button_double_click_trigger_interval:1 of
 msgid "get button double click trigger interval."
 msgstr "获取按钮双击触发间隔。"
 
+#: 354582fe002e41809053c447065c5491
 #: chain.key.KeyChain.get_button_double_click_trigger_interval:3
-#: chain.key.KeyChain.get_button_long_press_trigger_interval:3
-#: efe9ab941d9b4038a4c562f101bf3b9f of
+#: chain.key.KeyChain.get_button_long_press_trigger_interval:3 of
 msgid "Interval time in milliseconds."
 msgstr "间隔时间（毫秒）。"
 
-#: bf830a3a610c4359a4bfd30b2e39792a
+#: 5ee88ba950da46ff8b77b7ace5d3a7f9
 #: chain.key.KeyChain.get_button_double_click_trigger_interval:8 of
 msgid "|get_button_double_click_trigger_interval.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:4 158d835b73274cce9cd98f3bb6532690
+#: ../../en/refs/chain.key.ref:4 d123c11a3ff74000a6725cee98b577e8
 msgid "get_button_double_click_trigger_interval.png"
 msgstr ""
 
-#: ca278808fa6e4e5eabd646d89345c3f1
+#: ace5561d6af14f9da917b6ee9225ad6c
 #: chain.key.KeyChain.get_button_long_press_trigger_interval:1 of
 msgid "get button long press trigger interval."
 msgstr "获取按钮长按触发间隔。"
 
-#: 241259ecce174193a6ea3df641d4c0c8
+#: ac8b6bf05ee44af1ad4d6f4c91839441
 #: chain.key.KeyChain.get_button_long_press_trigger_interval:8 of
 msgid "|get_button_long_press_trigger_interval.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:5 dfb7ec5f4d28404b9fa6aeceea58c621
+#: ../../en/refs/chain.key.ref:5 420c895c2b3e41bebe62604c42ce81ac
 msgid "get_button_long_press_trigger_interval.png"
 msgstr ""
 
-#: 8dc3bdf7a8f3445ba16a8f9868a64fc7 chain.key.KeyChain.set_button_mode:1 of
+#: chain.key.KeyChain.set_button_mode:1 fe468994c2274ee3b138193d03545549 of
 msgid "set button mode."
 msgstr "设置按钮模式。"
 
-#: 0fd18102072a490384adf4fd1f2bddfb chain.key.KeyChain.set_button_mode:3 of
+#: chain.key.KeyChain.set_button_mode:3 e2e81d0451d74d778bf546f1a2ba3e97 of
 msgid ""
 "Button mode. Use :attr:`KeyChain.MODE_POLL` or "
 ":attr:`KeyChain.MODE_EVENT`."
 msgstr "按钮模式。使用 :attr:`KeyChain.MODE_POLL` 或 :attr:`KeyChain.MODE_EVENT`。"
 
-#: c2b2d8e5e6e9495c9dc38fe0fb553968 chain.key.KeyChain.set_button_mode:9 of
+#: 323b0db1b1394a729e928868a8512c02 chain.key.KeyChain.set_button_mode:9 of
 msgid "|set_button_mode.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:16 84a21b6a367b462ead3478c11db7dcd1
+#: ../../en/refs/chain.key.ref:17 49aeafeb5ebe44c8b8923436e604a495
 msgid "set_button_mode.png"
 msgstr ""
 
-#: 42b636db864b4010a3b5541a486d6482 chain.key.KeyChain.get_button_mode:1 of
+#: 8d3eb8e3ce3644158a42ea3e5965f5bd chain.key.KeyChain.get_button_mode:1 of
 msgid "get button mode."
 msgstr "获取按钮模式。"
 
-#: 8aa44beb2a484d918175a4c217765ed7 chain.key.KeyChain.get_button_mode:3 of
+#: 42ce9fa3795a41d1b021c655ed407005 chain.key.KeyChain.get_button_mode:3 of
 msgid "Button mode. :attr:`KeyChain.MODE_POLL` or :attr:`KeyChain.MODE_EVENT`."
 msgstr "按钮模式。:attr:`KeyChain.MODE_POLL` 或 :attr:`KeyChain.MODE_EVENT`。"
 
-#: 983430e3bc9843248958ae7eb754d556 chain.key.KeyChain.get_button_mode:8 of
+#: 4ac78b19ec63407ca01204e4ca675a25 chain.key.KeyChain.get_button_mode:8 of
 msgid "|get_button_mode.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:6 f1d9b3bc832c425ebf44fcc127478d0a
+#: ../../en/refs/chain.key.ref:6 287bb451f08c4d5c9b0774a9dd73be64
 msgid "get_button_mode.png"
 msgstr ""
 
-#: 576ad690b1c047798fe277625daff624 chain.key.KeyChain.set_rgb_color:1 of
+#: 9d5cfa57e7ff465a8fcbe707831a02c4 chain.key.KeyChain.set_rgb_color:1 of
 msgid "set RGB color."
 msgstr "设置 RGB 颜色。"
 
-#: 733047325d974726a68daaa337d32e56 chain.key.KeyChain.get_rgb_color:4
+#: 09086f6a166b47eb875c5b13b9d63c0f chain.key.KeyChain.get_rgb_color:4
 #: chain.key.KeyChain.set_rgb_color:3 of
 msgid "RGB color value."
 msgstr "RGB 颜色值。"
 
-#: 671fbff11d694746b6beb8ade2618fc9 chain.key.KeyChain.set_rgb_color:9 of
+#: ca91a699703f4cdd887a5c4352b2e5ed chain.key.KeyChain.set_rgb_color:9 of
 msgid "|set_rgb_color.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:18 a85ee4cda404462f82d287dc1aa37617
+#: ../../en/refs/chain.key.ref:19 4ce63b3089ee477880df1fe009b53fef
 msgid "set_rgb_color.png"
 msgstr ""
 
-#: 7bf88e21af1c4d78908c8a57ac6b8250 chain.key.KeyChain.get_rgb_color:1 of
+#: c3a112434e514beda2e9ca0238834b28 chain.key.KeyChain.get_rgb_color:1 of
 msgid "get RGB color."
 msgstr "获取 RGB 颜色。"
 
-#: 21f2ecf9ee3543a0b0d2dd60b1b10773 chain.key.KeyChain.get_rgb_color:3 of
+#: 396abafa32d14b5b8b577590a5947983 chain.key.KeyChain.get_rgb_color:3 of
 msgid "Index of the RGB LED."
 msgstr "RGB LED 的索引。"
 
-#: 7379e0ad44a84f91a2056b8be74d147b chain.key.KeyChain.get_rgb_color:9 of
+#: 7ff0dbe3153c48b7ab86f3299766612b chain.key.KeyChain.get_rgb_color:9 of
 msgid "|get_rgb_color.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:10 706edd9c165d4374b3df1f454abe6a90
+#: ../../en/refs/chain.key.ref:10 b463765ff6a44927850eceffca6c2c03
 msgid "get_rgb_color.png"
 msgstr ""
 
-#: 5460cb942791453e8dfc76dc49fadd48 chain.key.KeyChain.set_rgb_brightness:1 of
+#: 90214ae9dd204cbe8feeb5af60777cdb chain.key.KeyChain.set_rgb_brightness:1 of
 msgid "set RGB brightness."
 msgstr "设置 RGB 亮度。"
 
-#: 268daabb2b4d471f99ca9fa113968b74 chain.key.KeyChain.get_rgb_brightness:3
+#: 7ce0065e0bc94aa09a2537411dc27365 chain.key.KeyChain.get_rgb_brightness:3
 #: chain.key.KeyChain.set_rgb_brightness:3 of
 msgid "Brightness value (0-100)."
 msgstr "亮度值 (0-100)。"
 
-#: 48bf49b4d6ad40809191ab3eef090b1c chain.key.KeyChain.set_rgb_brightness:4 of
+#: chain.key.KeyChain.set_rgb_brightness:4 eafa98dccfab45559c47aecaa306533d of
 msgid "Whether to save the brightness setting to flash."
 msgstr "是否将亮度设置保存到闪存。"
 
-#: bf984f4771c74de3b6cdb781047d3bfa chain.key.KeyChain.set_rgb_brightness:10 of
+#: 73b439223abb481bad9d558ff2801774 chain.key.KeyChain.set_rgb_brightness:10 of
 msgid "|set_rgb_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:17 85366f44a81b4d7082455435ef075abc
+#: ../../en/refs/chain.key.ref:18 0e208b9635a043eebb20e346ae8ea9f4
 msgid "set_rgb_brightness.png"
 msgstr ""
 
-#: b8dbf979f7ad45158355ed2ad1beabde chain.key.KeyChain.get_rgb_brightness:1 of
+#: 89a920d829bd419e82e7b060ad454d8e chain.key.KeyChain.get_rgb_brightness:1 of
 msgid "get RGB brightness."
 msgstr "获取 RGB 亮度。"
 
-#: 68d60c5bc1f24ccead51e28d1d7e9383 chain.key.KeyChain.get_rgb_brightness:8 of
+#: 5c58d3e5d3d440919b07bec25b5f8af7 chain.key.KeyChain.get_rgb_brightness:8 of
 msgid "|get_rgb_brightness.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:9 e420967d3b2b4c7e8868df8cd179083b
+#: ../../en/refs/chain.key.ref:9 a33cadb430f74b8f93ab5232b283775e
 msgid "get_rgb_brightness.png"
 msgstr ""
 
-#: a92bff5aae6243d084efadd014d2b0ed chain.key.KeyChain.get_bootloader_version:1
+#: chain.key.KeyChain.get_bootloader_version:1 da84525301e047b8a01bf78579c24707
 #: of
 msgid "get bootloader version."
 msgstr "获取引导程序版本。"
 
-#: 9324c44d44e1444589af27b26ecaeb01 chain.key.KeyChain.get_bootloader_version:3
+#: 8b9911415c9e4851bb824ee54bd4a5b3 chain.key.KeyChain.get_bootloader_version:3
 #: of
 msgid "Bootloader version."
 msgstr "引导程序版本。"
 
-#: 4c4939e332f048ebbea37ee5da11a27d chain.key.KeyChain.get_bootloader_version:8
+#: 82b462a19a714c30b0feec5edda7bc83 chain.key.KeyChain.get_bootloader_version:8
 #: of
 msgid "|get_bootloader_version.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:3 7aa090dc621046f0bc7f943eeb11518b
+#: ../../en/refs/chain.key.ref:3 ff99d405d76049e3a65bc4f5d3ce5672
 msgid "get_bootloader_version.png"
 msgstr ""
 
-#: 2bca5a68380f4bc4a04817cb898bac2e chain.key.KeyChain.get_firmware_version:1
+#: 0bdb558792b14cd0a996ddb3bcee961a chain.key.KeyChain.get_firmware_version:1
 #: of
 msgid "get firmware version."
 msgstr "获取固件版本。"
 
-#: 5683773aebe44d89a463f54b579ca093 chain.key.KeyChain.get_firmware_version:3
+#: 284c5ce923f94f47be5be8acf644e8c6 chain.key.KeyChain.get_firmware_version:3
 #: of
 msgid "Firmware version."
 msgstr "固件版本。"
 
-#: 0e3b5f265b574666915263255c436969 chain.key.KeyChain.get_firmware_version:8
+#: 4af10ea7dab04dbfa245d213f89053fe chain.key.KeyChain.get_firmware_version:8
 #: of
 msgid "|get_firmware_version.png|"
 msgstr ""
 
-#: ../../en/refs/chain.key.ref:8 138c57a2ee784480b7e1ebf97994c094
+#: ../../en/refs/chain.key.ref:8 8998acd2528e4504ac54f3ae53445585
 msgid "get_firmware_version.png"
+msgstr ""
+
+#: 8d3eb8e3ce3644158a42ea3e5965f5bd chain.key.KeyChain.get_device_uid:1 of
+msgid "get device UID."
+msgstr "获取设备 UID。"
+
+#: 2b7ab969bd364d1faec58fd7fa8cab36 chain.key.KeyChain.get_device_uid:3 of
+msgid "UID type, 0 for 4-byte UID, 1 for 12-byte UID."
+msgstr "UID 类型，0 表示 4 字节 UID，1 表示 12 字节 UID。"
+
+#: a53a4f68bbc040699ff783c0570a50ea chain.key.KeyChain.get_device_uid:4 of
+msgid "Tuple of UID bytes (4 bytes or 12 bytes). Returns empty tuple on error."
+msgstr "UID 字节元组（4 字节或 12 字节）。出错时返回空元组。"
+
+#: 4ac78b19ec63407ca01204e4ca675a25 chain.key.KeyChain.get_device_uid:9 of
+msgid "|get_device_uid.png|"
+msgstr ""
+
+#: ../../en/refs/chain.key.ref:11 287bb451f08c4d5c9b0774a9dd73be64
+msgid "get_device_uid.png"
 msgstr ""
 

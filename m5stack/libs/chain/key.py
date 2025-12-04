@@ -394,3 +394,24 @@ class KeyChain:
                 version = keychain_0.get_firmware_version()
         """
         return self.bus.chainll.get_firmware_version(self.device_id)
+
+    def get_device_uid(self, uid_type: int) -> tuple:
+        """get device UID.
+
+        :param int uid_type: UID type, 0 for 4-byte UID, 1 for 12-byte UID.
+        :return: Tuple of UID bytes (4 bytes or 12 bytes). Returns empty tuple on error.
+        :rtype: tuple
+
+        UiFlow2 Code Block:
+
+            |get_device_uid.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                uid = keychain_0.get_device_uid(0)  # 4-byte UID
+                uid = keychain_0.get_device_uid(1)  # 12-byte UID
+        """
+        return self.bus.chainll.get_device_uid(self.device_id, uid_type)
+

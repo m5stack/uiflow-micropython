@@ -1,0 +1,245 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-02 12:17+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/chain/angle.rst:2 ../../en/refs/chain.angle.ref
+#: 4a28fef408b146d1a92b0cdf477f3b41 6f91ee80647a430b887938659f8d0513
+msgid "Chain Angle"
+msgstr ""
+
+#: ../../en/chain/angle.rst:6 1595d6b81a394b05b6687b357931a6f1
+msgid ""
+"AngleChain is the helper class for angle sensor devices on the Chain bus."
+" It provides methods to read angle values in different resolutions "
+"(12-bit and 8-bit ADC) and configure the clockwise rotation direction."
+msgstr ""
+"AngleChain 是用于 Chain 总线上角度传感器设备的辅助类。它提供了以不同分辨率（12 位和 8 位 ADC）读取角度值以及配置顺时针旋转方向的方法。"
+
+#: ../../en/chain/angle.rst:8 fac77cae4f16481e9a168041aaab2d53
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/chain/angle.rst:10 94be3ce343c040d583054338b83c25c7
+msgid "|Chain Angle|"
+msgstr ""
+
+#: ../../en/chain/angle.rst:13 48f282f997c848f9bf6b111d2059a350
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/chain/angle.rst:16 ../../en/chain/angle.rst:35
+#: 2b74550f39a44b58882e5ed847f06ea4 b546975156a540408ea76b8e169e96ad
+msgid "Angle reading with RGB brightness control"
+msgstr "角度读取与 RGB 亮度控制"
+
+#: ../../en/chain/angle.rst:18 d414f4eeca57498cad38de0bb31456ba
+msgid "Open the |m5core_chain_angle_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_angle_basic_example.m5f2| 项目。"
+
+#: ../../en/chain/angle.rst:20 ../../en/chain/angle.rst:37
+#: 2320c2045f0245fda72a399ea09f27d0 4e8a825ca698413da8dd33032b556e63
+msgid ""
+"This example demonstrates how to read angle values from the Chain Angle "
+"sensor and control RGB brightness based on the angle value. The example "
+"reads 8-bit ADC values (0-255) and maps them to brightness values (0-100)"
+" for visual feedback."
+msgstr ""
+"此示例演示如何从 Chain 角度传感器读取角度值，并根据角度值控制 RGB 亮度。该示例读取 8 位 ADC 值（0-255）并将其映射到亮度值（0-100）以提供视觉反馈。"
+
+#: ../../en/chain/angle.rst:23 3a8d8ed6ac8f4d2796275502abe858a6
+#: 5c1f9e6e94c6499fadddda268244091f 67d41441e98e4c649d2e3d3ab832da77
+#: ada800e54c8d4ad6b2536113a51bdcb2 chain.angle.AngleChain:6
+#: chain.angle.AngleChain.get_adc12:6 chain.angle.AngleChain.get_adc8:6
+#: chain.angle.AngleChain.get_cw_increase:6
+#: chain.angle.AngleChain.set_cw_increase:8 d0d6366ce1b4492699cb5078edf52f3a
+#: e3d53edb13fc4098bde3e6ccaa6013db of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/chain/angle.rst:25 9837a423b6c944e2af07f5c23a313142
+msgid "|m5core_chain_angle_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:12 d1a4bc01b8eb4ce5900518599f859625
+msgid "m5core_chain_angle_basic_example.png"
+msgstr ""
+
+#: ../../en/chain/angle.rst:27 ../../en/chain/angle.rst:46
+#: a52a13f6d4804928ad384f7c2aacfb5b fcd73e3303d54c0eaaf78d24c3808739
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/chain/angle.rst:29 ../../en/chain/angle.rst:48
+#: 570b2d875a764d65b4d04552401fd0de b3a1b45baf6440d89d3f9c2801ce9dca
+msgid "None"
+msgstr "无"
+
+#: ../../en/chain/angle.rst:32 e7f340f8b3bd4814a4bdb8589dd4c61f
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/chain/angle.rst:40 0cffab413a3143ff84dd9583eff806af
+#: 11e45edb23c941e4bc38c58c458b5fee 1f85d2e97df14e97858759b10c035583
+#: 70d10b2b0eab42509ed5b680e04a79c3 90d063fafda34f72a26f1c56d5ec2531
+#: chain.angle.AngleChain:10 chain.angle.AngleChain.get_adc12:10
+#: chain.angle.AngleChain.get_adc8:10 chain.angle.AngleChain.get_cw_increase:10
+#: chain.angle.AngleChain.set_cw_increase:12 dda4ad95fea04547903785592fd8e4d2
+#: of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/chain/angle.rst:52 7feffe79d7e649cd9ded38396d0a7e6b
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/chain/angle.rst:55 b1d06f3ee02f448a93f9d1a8222af365
+msgid "AngleChain"
+msgstr "AngleChain"
+
+#: 2321ffa964674512abc03630868d92ef chain.angle.AngleChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr ""
+
+#: 0dd8b11da34b4c43bd58652bbb9910ed chain.angle.AngleChain:1 of
+msgid "Angle Chain class for interacting with angle devices over Chain bus."
+msgstr "用于通过 Chain 总线与角度设备交互的 Angle Chain 类。"
+
+#: ../../en/chain/angle.rst 484eb80cba8c4c40ae9bf00c4b055023
+#: chain.angle.AngleChain.set_cw_increase e84c083fddf8421ca8f2b8e54b352aaf of
+msgid "Parameters"
+msgstr "参数"
+
+#: 930cd97c5b6e4b43a5391ff8cae578ab chain.angle.AngleChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: c02cbb829f8b42ff804638d506964197 chain.angle.AngleChain:4 of
+msgid "The device ID of the angle sensor on the Chain bus."
+msgstr "Chain 总线上角度传感器的设备 ID。"
+
+#: chain.angle.AngleChain:8 de179d20c1fe4bad97a07d622eeae328 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:7 ea49e2051b9e4f5dbeb2aee01c32f0b4
+msgid "init.png"
+msgstr ""
+
+#: ../../en/chain/angle.rst:62 953cff19eb094814a447c3f3e3a1a063
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"有关其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: b6f78edc74434b769fec8b16f233b5d1 chain.angle.AngleChain.get_adc12:1 of
+msgid "Get the angle value in 12-bit ADC resolution."
+msgstr "获取 12 位 ADC 分辨率的角度值。"
+
+#: 582da706868241a1a97eee09062ff88e 66c18a655f864a96830ca9ebfd8a3159
+#: c7591bbc6bb746d2af4e44844b95058d chain.angle.AngleChain.get_adc12
+#: chain.angle.AngleChain.get_adc8 chain.angle.AngleChain.get_cw_increase
+#: chain.angle.AngleChain.set_cw_increase f84748430dd54f44864a2aa528a480a6 of
+msgid "Returns"
+msgstr "返回"
+
+#: 3881bfadc6264b14907eeaa35b46360d chain.angle.AngleChain.get_adc12:3 of
+msgid "Angle value in 12-bit ADC (0-4095), or None if failed."
+msgstr "12 位 ADC 角度值（0-4095），失败时返回 None。"
+
+#: 0850d01efeec49c0a90f46b57273f2d6 247bb1bbf67e49319421d13bd6abd418
+#: 6fea68facc2d4f889d2985325ff034c5 8af9c77fa4a14b6389c838a3a1c62175
+#: chain.angle.AngleChain.get_adc12 chain.angle.AngleChain.get_adc8
+#: chain.angle.AngleChain.get_cw_increase
+#: chain.angle.AngleChain.set_cw_increase of
+msgid "Return type"
+msgstr "返回类型"
+
+#: a18db58e73554ad19b20d1578109381a chain.angle.AngleChain.get_adc12:8 of
+msgid "|get_adc12.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:8 8b657e1f12ca4a579e8a7f249f8effa4
+msgid "get_adc12.png"
+msgstr ""
+
+#: chain.angle.AngleChain.get_adc8:1 ffa07b8449014e5e86bf48cf6f9da942 of
+msgid "Get the angle value in 8-bit ADC resolution."
+msgstr "获取 8 位 ADC 分辨率的角度值。"
+
+#: 72d00ce3fd7d472b98f9d769d1acc6ca chain.angle.AngleChain.get_adc8:3 of
+msgid "Angle value in 8-bit ADC (0-255), or None if failed."
+msgstr "8 位 ADC 角度值（0-255），失败时返回 None。"
+
+#: 2029fbb468324c2d913c5a86d70476bd chain.angle.AngleChain.get_adc8:8 of
+msgid "|get_adc8.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:9 a65a00a4b0194c4e80f9f2433c19cb9a
+msgid "get_adc8.png"
+msgstr ""
+
+#: 9c21a8c34ddd47af83aa76be6b09dabf chain.angle.AngleChain.set_cw_increase:1 of
+msgid "Set whether clockwise rotation increases the angle value."
+msgstr "设置顺时针旋转是否增加角度值。"
+
+#: 0bb53212cf094b01b4e54dfa70a06202 chain.angle.AngleChain.set_cw_increase:3 of
+msgid ""
+"Whether clockwise rotation increases. False means clockwise decreases, "
+"True means clockwise increases."
+msgstr ""
+"顺时针旋转是否增加。False 表示顺时针减少，True 表示顺时针增加。"
+
+#: 055b9e814aec4f82901be2e59e0087ff chain.angle.AngleChain.set_cw_increase:4 of
+msgid "Whether to save to flash. False means don't save, True means save."
+msgstr "是否保存到 Flash。False 表示不保存，True 表示保存。"
+
+#: c8de77a391da464aa58211287e458659 chain.angle.AngleChain.set_cw_increase:5 of
+msgid "True if the setting was set successfully, False otherwise."
+msgstr "设置成功返回 True，否则返回 False。"
+
+#: 28b1479038244d7d80b16f5c525ecc0d chain.angle.AngleChain.set_cw_increase:10
+#: of
+msgid "|set_cw_increase.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:11 f2c13c9dd6ad4deb87de06226834c8e9
+msgid "set_cw_increase.png"
+msgstr ""
+
+#: chain.angle.AngleChain.get_cw_increase:1 f8971a6e82cc45bf8b3cfe6db43ca9ff of
+msgid "Get whether clockwise rotation increases the angle value."
+msgstr "获取顺时针旋转是否增加角度值。"
+
+#: 366246c76aa547b589f10530f4b5f908 chain.angle.AngleChain.get_cw_increase:3 of
+msgid ""
+"Whether clockwise rotation increases. False means clockwise decreases, "
+"True means clockwise increases. Returns False if failed."
+msgstr ""
+"顺时针旋转是否增加。False 表示顺时针减少，True 表示顺时针增加。失败时返回 False。"
+
+#: chain.angle.AngleChain.get_cw_increase:8 e0fa1aa7283247a985ff3544f900d8d1 of
+msgid "|get_cw_increase.png|"
+msgstr ""
+
+#: ../../en/refs/chain.angle.ref:10 f10ad6a4f3f34d44b8c4b5411a0dc6ab
+msgid "get_cw_increase.png"
+msgstr ""

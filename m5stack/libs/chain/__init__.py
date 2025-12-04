@@ -3,7 +3,9 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "AngleChain": "angle",
     "ChainBus": "chain",
+    "EncoderChain": "encoder",
     "JoystickChain": "joystick",
     "KeyChain": "key",
 }

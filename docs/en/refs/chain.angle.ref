@@ -1,0 +1,21 @@
+
+.. |Chain Angle| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1192/U208-Chain-angle-main-pictures-01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U208
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/init.png
+.. |get_adc12.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/get_adc12.png
+.. |get_adc8.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/get_adc8.png
+.. |get_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/get_cw_increase.png
+.. |set_cw_increase.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/set_cw_increase.png
+.. |m5core_chain_angle_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/angle/example.png
+
+.. |m5core_chain_angle_basic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/angle/m5core_chain_angle_basic_example.m5f2"
+        target="_blank"
+    >
+        m5core_chain_angle_basic_example.m5f2
+    </a>
