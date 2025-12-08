@@ -47,6 +47,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_CoreS3", "94163f815781c124742a0ea26f22509c", ""),
     FirewareInfo("M5STACK_Dial", "431644329f5431d5ea36bec9ab94f664", ""),
     FirewareInfo("M5STACK_DinMeter", "42e62514d351731e7bcb6ce032789e00", ""),
+    FirewareInfo("M5STACK_DualKey", "d7ca7f74ead7762e9956789b4cc8f698", ""),
     FirewareInfo("M5STACK_Fire", "fb3bf2d6484fcc25ae5c962a4245e88a", ""),
     FirewareInfo("M5STACK_NanoC6", "578da1c556435cd75d67b4810a7e4769", ""),
     FirewareInfo("M5STACK_Paper", "a003515b05be5c2aba5282630ecb3a51", ""),
@@ -62,6 +63,7 @@ fireware_info_table = (
     FirewareInfo("M5STACK_Tab5", "b11dadb7e93c03daa3a89025f1b76d7a", ""),
     FirewareInfo("M5STACK_Tough", "ffadcb704115b88ca9fd149e567c73f5", "TOUGH"),
     FirewareInfo("M5STACK_Unit_C6L", "9bbb8540dcedf2d7422285c2c077933c", ""),
+    FirewareInfo("Nesso_N1", "c379aaababfcb6e470e953804db0c4c7", ""),
 )
 
 third_party_info_table = (
