@@ -76,17 +76,17 @@ void *vfs_stream_open(const char *path, int flags) {
         goto _vfs_init_exit;
     }
 
-    if (strstr(path_out, "flash")) {
+    if (strstr(path, "flash")) {
         ESP_LOGD(TAG, "in flash");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
-    } else if (strstr(path_out, "system")) {
+    } else if (strstr(path, "system")) {
         ESP_LOGD(TAG, "in system");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
-    } else if (strstr(path_out, "sd")) {
+    } else if (strstr(path, "sd")) {
         ESP_LOGD(TAG, "in sd");
         vfs->fatfs = &((fs_user_mount_t *)MP_OBJ_TO_PTR(existing_mount->obj))->fatfs;
     } else {
-        ESP_LOGI(TAG, "default in flash");
+        ESP_LOGD(TAG, "default in flash");
         vfs->lfs2 = &((mp_obj_vfs_lfs2_t *)MP_OBJ_TO_PTR(existing_mount->obj))->lfs;
     }
 
