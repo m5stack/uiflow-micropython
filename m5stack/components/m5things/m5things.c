@@ -287,7 +287,7 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base,
                 log_error_if_nonzero(
                     "captured as transport's socket errno",
                     event->error_handle->esp_transport_sock_errno);
-                ESP_LOGI(TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
+                ESP_LOGE(TAG, "Last errno string (%s)", strerror(event->error_handle->esp_transport_sock_errno));
             }
             m5things_cnct_status = M5THING_STATUS_CNCT_ERR;
             break;
