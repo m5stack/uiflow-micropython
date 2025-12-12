@@ -185,25 +185,6 @@ M5Dropdown
                 dropdown_0.set_y(100)
 
 
-    .. py:method:: set_size(width, height)
-
-        Set the size of the dropdown.
-
-        :param int width: The width of the dropdown.
-        :param int height: The height of the dropdown.
-        :return: None
-
-        UiFlow2 Code Block:
-
-            |set_size.png|
-
-        MicroPython Code Block:
-
-            .. code-block:: python
-
-                dropdown_0.set_size(100, 50)
-
-
     .. py:method:: set_width(width)
 
         Set the width of the dropdown.

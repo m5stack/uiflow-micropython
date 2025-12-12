@@ -37,7 +37,9 @@ class M5Dropdown(lv.dropdown):
             parent = lv.screen_active()
         super().__init__(parent)
         self.set_pos(x, y)
-        self.set_size(w, h)
+        super().set_size(w, h)
+        self._w = w
+        self._h = h
 
         self.options = []
         if options:
@@ -179,6 +181,28 @@ class M5Dropdown(lv.dropdown):
             warnings.warn("Radius must be a non-negative integer.")
             return
         super().set_style_radius(radius, part)
+
+    def set_size(self, w: int, h: int) -> None:
+        """Set the size of the dropdown.
+
+        :param w: The width of the dropdown.
+        :param h: The height of the dropdown.
+
+        UiFlow2 Code Block:
+
+            |set_size.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                dropdown_0.set_size(150, 40)
+        """
+        if w == -1:
+            w = self._w
+        if h == -1:
+            h = self._h
+        super().set_size(w, h)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
