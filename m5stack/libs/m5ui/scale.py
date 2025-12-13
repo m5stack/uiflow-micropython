@@ -56,25 +56,58 @@ class M5Scale(lv.scale):
     ):
         if parent is None:
             parent = lv.screen_active()
-        super().__init__(parent)
-        self.set_pos(x, y)
+        self.mode = show_mode
+
+        self.wrapper = lv.obj(parent)
+        self.wrapper.set_pos(0, 0)
+        self.wrapper.set_size(lv.pct(100), lv.pct(100))
+        self.wrapper.set_style_border_width(0, 0)
+        self.wrapper.set_style_pad_all(0, 0)
+        # self.wrapper.set_style_bg_color(lv.color_hex(0xF00000), 0)   # 红色
+
+        super().__init__(self.wrapper)
+        self._positions = {
+            lv.scale.MODE.HORIZONTAL_TOP: (10, 10),
+            lv.scale.MODE.HORIZONTAL_BOTTOM: (10, 8),
+            lv.scale.MODE.VERTICAL_LEFT: (10, 10),
+            lv.scale.MODE.VERTICAL_RIGHT: (8, 10),
+            lv.scale.MODE.ROUND_OUTER: (30, 20),
+        }
+        super().set_pos(*self._positions[self.mode])
         self.set_range(start_pos, end_pos)
         self.set_total_tick_count(tick_count)
         self.set_major_tick_every(tick_every)
         self.set_mode(show_mode)
-        if show_mode in [
+        self.set_size(w, h)
+        self.set_pos(x, y)
+
+    def set_mode(self, mode: int) -> None:
+        self.mode = mode
+        return super().set_mode(mode)
+
+    def set_size(self, w: int, h: int) -> None:
+        if self.mode in [
             lv.scale.MODE.HORIZONTAL_TOP,
             lv.scale.MODE.HORIZONTAL_BOTTOM,
         ]:
-            self.set_size(w, 20)
-        elif show_mode in [
+            super().set_size(w, 20)
+        elif self.mode in [
             lv.scale.MODE.VERTICAL_LEFT,
             lv.scale.MODE.VERTICAL_RIGHT,
         ]:
-            self.set_size(20, h)
+            super().set_size(20, h)
         else:
             r = max(w, h)
-            self.set_size(r, r)
+            super().set_size(r, r)
+
+    def set_pos(self, x: int, y: int) -> None:
+        return self.wrapper.set_pos(x, y)
+
+    def set_x(self, x: int) -> None:
+        return self.wrapper.set_x(x)
+
+    def set_y(self, y: int) -> None:
+        return self.wrapper.set_y(y)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
