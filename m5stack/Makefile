@@ -340,7 +340,8 @@ M5UNIFIED_PATCH_SERIES = \
 	2012-Implementing-deepSleep-for-Tab5.patch \
 	2013-Implement-setChargeCurrent-for-Tab5.patch \
 	2014-Fix-PowerHub-current-sign.patch \
-	2015-Fix-PowerHub-battery-level.patch
+	2015-Fix-PowerHub-battery-level.patch \
+	2016-Add-INA226-for-StamPLC.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
