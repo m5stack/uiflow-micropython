@@ -7,6 +7,7 @@ package(
     (
         "__init__.py",
         "ac.py",
+        "poe.py",
     ),
     base_path="..",
     opt=0,
