@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-import utime
+import time
 from . import simple
 
 
@@ -11,7 +11,7 @@ class MQTTClient(simple.MQTTClient):
     DEBUG = False
 
     def delay(self, i):
-        utime.sleep(self.DELAY)
+        time.sleep(self.DELAY)
 
     def log(self, in_reconnect, e):
         if self.DEBUG:

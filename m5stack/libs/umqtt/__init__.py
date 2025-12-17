@@ -15,7 +15,7 @@ class MQTTClient(robust.MQTTClient):
         user=None,
         password=None,
         keepalive=0,
-        ssl=False,
+        ssl=None,
         ssl_params={},
     ):
         super().__init__(client_id, server, port, user, password, keepalive, ssl, ssl_params)
@@ -38,3 +38,8 @@ class MQTTClient(robust.MQTTClient):
     def subscribe(self, topic, handler, qos=0):
         self._topics[topic] = handler
         return super().subscribe(topic, qos)
+
+    def unsubscribe(self, topic):
+        if topic in self._topics:
+            del self._topics[topic]
+        return super().unsubscribe(topic)
