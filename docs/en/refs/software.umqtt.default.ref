@@ -1,32 +1,46 @@
-.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/example.png
-
-.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init.png
-
-.. |init_ssl.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init_ssl.png
-
 .. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/connect.png
-
+.. |connect.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/connect.svg
+.. |cores3_mqtt_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/cores3_mqtt_basic_example.png
+.. |cores3_mqtt_over_ssl_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/cores3_mqtt_over_ssl_example.png
 .. |disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/disconnect.png
-
-.. |reconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/reconnect.png
-
-.. |publish.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/publish.png
-
-.. |subscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/subscribe.png
-
-.. |get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_topic.png
-
+.. |disconnect.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/disconnect.svg
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/example.png
+.. |example.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/example.svg
 .. |get_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_msg.png
-
+.. |get_msg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_msg.svg
+.. |get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_topic.png
+.. |get_topic.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/get_topic.svg
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init.png
+.. |init.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init.svg
+.. |init_ssl.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init_ssl.png
+.. |init_ssl.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/init_ssl.svg
+.. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/isconnected.png
+.. |publish.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/publish.png
+.. |publish.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/publish.svg
+.. |reconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/reconnect.png
+.. |reconnect.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/reconnect.svg
 .. |set_last_will.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/set_last_will.png
-
+.. |set_last_will.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/set_last_will.svg
+.. |subscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/subscribe.png
+.. |subscribe.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/subscribe.svg
+.. |unsubscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/unsubscribe.png
 .. |wait_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/wait_msg.png
+.. |wait_msg.svg| image:: https://static-cdn.m5stack.com/mpy_docs/software/mqtt/wait_msg.svg
 
-.. |mqtts_cores3_example.m5f2| raw:: html
+.. |cores3_mqtt_basic_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/mqtts_cores3_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/cores3_mqtt_basic_example.m5f2"
         target="_blank"
     >
-        mqtts_cores3_example.m5f2
+        cores3_mqtt_basic_example.m5f2
+    </a>
+
+.. |cores3_mqtt_over_ssl_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/cores3_mqtt_over_ssl_example.m5f2"
+        target="_blank"
+    >
+        cores3_mqtt_over_ssl_example.m5f2
     </a>

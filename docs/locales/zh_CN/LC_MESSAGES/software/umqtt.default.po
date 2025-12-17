@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"POT-Creation-Date: 2025-12-17 10:48+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,293 +18,355 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/software/umqtt.default.rst:4 a66e31c6c8aa4393903275df94ac8860
+#: ../../en/software/umqtt.default.rst:4 efa51b92bc704ad6a3d04bfa11bd6cce
 msgid "umqtt.default"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:8 ab67ec74972f4f5096536e5de93765f0
+#: ../../en/software/umqtt.default.rst:8 2e57eda828be4ed282140a542e128de8
 msgid ""
 "`umqtt.default` rewrites the :py:meth:`subscribe` method and supports ca "
 "file."
 msgstr "`umqtt.default` 重写了 :py:meth:`subscribe` 方法并支持 ca 文件。"
 
-#: ../../en/software/umqtt.default.rst:11 e120fc43b2f541e2b251f43878f7a91f
-msgid "Micropython Example:"
+#: ../../en/software/umqtt.default.rst:11 640b58ea27754f83b83809015f211f8b
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../en/software/umqtt.default.rst:14
+#: ../../en/software/umqtt.default.rst:49 83f218ddc488446098602444c80db7ac
+msgid "MQTT basic"
+msgstr "MQTT 基础"
+
+#: ../../en/software/umqtt.default.rst:16 bfca43ac26ec45d99dd8ea6db4d6c554
+msgid "Open the |cores3_mqtt_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_mqtt_basic_example.m5f2| 项目。"
+
+#: ../../en/software/umqtt.default.rst:18
+#: ../../en/software/umqtt.default.rst:51 7318bf0a13d94c388111081d10511902
+msgid "This example demonstrates how to connect to an MQTT broker."
+msgstr "此示例演示如何连接到 MQTT 代理服务器。"
+
+#: ../../en/software/umqtt.default.rst:20
+#: ../../en/software/umqtt.default.rst:36
+#: ../../en/software/umqtt.default.rst:104
+#: ../../en/software/umqtt.default.rst:139
+#: ../../en/software/umqtt.default.rst:154
+#: ../../en/software/umqtt.default.rst:169
+#: ../../en/software/umqtt.default.rst:203
+#: ../../en/software/umqtt.default.rst:226
+#: ../../en/software/umqtt.default.rst:247
+#: ../../en/software/umqtt.default.rst:275
+#: ../../en/software/umqtt.default.rst:315 b9501f0089124b7d944adc45d29880a4
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/software/umqtt.default.rst:22 6180d90f290344f1924837aae292d632
+msgid "|cores3_mqtt_basic_example.png|"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:18 4ed270b76162421ca3b264eba6bae1ee
-msgid "UIFLOW2 Example:"
+#: ../../en/refs/software.umqtt.default.ref:1 9ca9fc32badc4c4999fbfb5eea877840
+msgid "cores3_mqtt_basic_example.png"
+msgstr "在 UiFlow2 中打开 |cores3_mqtt_basic_example.m5f2| 项目。"
+
+#: ../../en/software/umqtt.default.rst:24
+#: ../../en/software/umqtt.default.rst:40
+#: ../../en/software/umqtt.default.rst:57
+#: ../../en/software/umqtt.default.rst:73 f442cc7be2694a298afeb71edb06660a
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/software/umqtt.default.rst:26
+#: ../../en/software/umqtt.default.rst:42
+#: ../../en/software/umqtt.default.rst:59
+#: ../../en/software/umqtt.default.rst:75 e580097a9ef04e9daf8b87f086a462b1
+msgid "None"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:20 bbae5d5317f648509ce50801bebeafdf
-msgid "|example.png|"
+#: ../../en/software/umqtt.default.rst:30
+#: ../../en/software/umqtt.default.rst:63 83f218ddc488446098602444c80db7ac
+msgid "MQTT over SSL"
+msgstr "MQTT SSL 连接"
+
+#: ../../en/software/umqtt.default.rst:32 b48ab2175583454481dc59e4dd6d949f
+msgid "Open the |cores3_mqtt_over_ssl_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_mqtt_over_ssl_example.m5f2| 项目。"
+
+#: ../../en/software/umqtt.default.rst:34
+#: ../../en/software/umqtt.default.rst:65 4569a1ea1d6a4b66adc07b9580545abb
+msgid "This example demonstrates how to connect to an MQTT broker over SSL."
+msgstr "此示例演示如何通过 SSL 连接到 MQTT 代理服务器。"
+
+#: ../../en/software/umqtt.default.rst:38 5e4b691cac4d468998a279f6a776184a
+msgid "|cores3_mqtt_over_ssl_example.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:1 b3130552ab29452f8e83d51cc9dd0014
-msgid "example.png"
+#: ../../en/refs/software.umqtt.default.ref:3 9ca9fc32badc4c4999fbfb5eea877840
+msgid "cores3_mqtt_over_ssl_example.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:25 93f5021ceee84e8d92a394d2f12e192a
-msgid "|mqtts_cores3_example.m5f2|"
-msgstr ""
+#: ../../en/software/umqtt.default.rst:46 2a5fc975f57b4f0b95c085410c8db153
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
 
-#: ../../en/software/umqtt.default.rst:29 821dbc35d81a4dc4849b2492f415455f
-msgid "Constructors"
-msgstr ""
+#: ../../en/software/umqtt.default.rst:53
+#: ../../en/software/umqtt.default.rst:67
+#: ../../en/software/umqtt.default.rst:110
+#: ../../en/software/umqtt.default.rst:143
+#: ../../en/software/umqtt.default.rst:158
+#: ../../en/software/umqtt.default.rst:173
+#: ../../en/software/umqtt.default.rst:184
+#: ../../en/software/umqtt.default.rst:207
+#: ../../en/software/umqtt.default.rst:251
+#: ../../en/software/umqtt.default.rst:279
+#: ../../en/software/umqtt.default.rst:303
+#: ../../en/software/umqtt.default.rst:319 2a5fc975f57b4f0b95c085410c8db153
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
 
-#: ../../en/software/umqtt.default.rst:33 e1472179ce094330bc025d34f4aa02e6
-#, fuzzy
+#: ../../en/software/umqtt.default.rst:78 e8710d788016433497b02bd717540c39
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/software/umqtt.default.rst:81 83f218ddc488446098602444c80db7ac
+msgid "MQTTClient"
+msgstr "MQTTClient"
+
+#: ../../en/software/umqtt.default.rst:85 0ed737c54a7a499586ff359a81587c7d
 msgid "Create an MQTTClient object."
-msgstr "MQTTClient 对象"
+msgstr "创建 MQTTClient 对象。"
 
-#: ../../en/software/umqtt.default.rst 68ad5af425b64cdc909a89da46b6e4cc
-#: 822232e9a65a4f6e958d98b9d8259784 adb7998b1c1c496c889b8ad352307d33
-#: ed65c3dc312640e6a5d825ce947cc9e8
+#: ../../en/software/umqtt.default.rst 94aa95085d4a42c7a06b24b5dffde972
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:35 5142d64093bf4024b3b093ae98002c7d
+#: ../../en/software/umqtt.default.rst:87 7318bf0a13d94c388111081d10511902
 msgid "the unique client id string used when connecting to the broker."
-msgstr " 连接到MQTT broker时使用的唯一客户端 ID 字符串"
+msgstr "连接到 MQTT 代理服务器时使用的唯一客户端 ID 字符串。"
 
-#: ../../en/software/umqtt.default.rst:37 c38cedf3dbd74ab6b07ae0f77013a04e
+#: ../../en/software/umqtt.default.rst:89 ce38c32d2e284afaa9269dad3ad136c7
 msgid "the hostname or IP address of the remote broker."
-msgstr "远程MQTT broker的主机名或 IP 地址。"
+msgstr "远程 MQTT 代理服务器的主机名或 IP 地址。"
 
-#: ../../en/software/umqtt.default.rst:38 2d5e792b20134dc08de6f7b19653807d
+#: ../../en/software/umqtt.default.rst:90 e388a9011f1042d9bb8d68bc3ddbad2a
 msgid "the network port of the server host to connect to."
 msgstr "要连接的服务器主机的网络端口。"
 
-#: ../../en/software/umqtt.default.rst:39 5c0ca891d3754751b07a0a5e8f569607
+#: ../../en/software/umqtt.default.rst:91 41b3888df6244b40ad14cbf954f1bf60
 msgid "a username for broker authentication."
-msgstr "用于MQTT broker身份验证的用户名。"
+msgstr "用于代理服务器身份验证的用户名。"
 
-#: ../../en/software/umqtt.default.rst:41 c13e2129e39744b8b9153eb420198ed9
+#: ../../en/software/umqtt.default.rst:93 63a46e89f3c54d489b59b56e2007aa44
 msgid "a password for broker authentication."
-msgstr "用于MQTT broker身份验证的密码。"
+msgstr "用于代理服务器身份验证的密码。"
 
-#: ../../en/software/umqtt.default.rst:43 6cb7e3d410894ce6a4c131be22cf7936
+#: ../../en/software/umqtt.default.rst:95 6d3b92ca64734d1bae89f826e2580d22
 msgid ""
 "maximum period in seconds allowed between communications with the broker."
 " If no other messages are being exchanged, this controls the rate at "
 "which the client will send ping messages to the broker."
-msgstr "与代理通信之间允许的最长时间（以秒为单位）。如果没有交换其他消息，这将控制客户端向代理发送 ping 消息的速率。"
+msgstr "与代理服务器通信之间允许的最长时间（以秒为单位）。如果没有交换其他消息，这将控制客户端向代理服务器发送 ping 消息的速率。"
 
-#: ../../en/software/umqtt.default.rst:47 e6dc3740877f45f1bf60b902b62ef8b0
+#: ../../en/software/umqtt.default.rst:99 5618449e1cf74105a26f797852a2b2b7
 msgid "Whether to use ssl."
-msgstr "是否使用ssl。"
+msgstr "是否使用 SSL。"
 
-#: ../../en/software/umqtt.default.rst:48 21c8bfdf73c84f1ca05e0cd6a7d3672f
+#: ../../en/software/umqtt.default.rst:100 a8602ce272b048f5aa31ea548b0a85c2
 msgid "Some parameters required to initiate an ssl connection."
-msgstr "启动 ssl 连接所需的一些参数。"
+msgstr "启动 SSL 连接所需的一些参数。"
 
-#: ../../en/software/umqtt.default.rst c581f0f7eaf7427cb177829d62d92cc2
+#: ../../en/software/umqtt.default.rst f752024bf28b47708dce8df841744330
 msgid "Returns"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:49 763f1c5a50f64393b4cfb0cce530e1df
+#: ../../en/software/umqtt.default.rst:101 83f218ddc488446098602444c80db7ac
 msgid "MQTTClient object"
 msgstr "MQTTClient 对象"
 
-#: ../../en/software/umqtt.default.rst d197b65775ad4d72a91eeea4719ecbe1
+#: ../../en/software/umqtt.default.rst 39e2bba8e1804b9eb5a2bd85e0c0659f
 msgid "Return type"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:52
-#: ../../en/software/umqtt.default.rst:68
-#: ../../en/software/umqtt.default.rst:77
-#: ../../en/software/umqtt.default.rst:86
-#: ../../en/software/umqtt.default.rst:95
-#: ../../en/software/umqtt.default.rst:112
-#: ../../en/software/umqtt.default.rst:129
-#: ../../en/software/umqtt.default.rst:160
-#: ../../en/software/umqtt.default.rst:182
-#: ../../en/software/umqtt.default.rst:192 2b0d42a3d9974ddaafb6214b89305f36
-#: 3818c37a1d4c4600bceef189130954fc 477c69bdba2a44b7b90f63485561d2de
-#: 7c8c4ee4d89d4e12831ef71fe1da64a5 978e192c814441eaa0f5779227e61910
-#: 99a258e4c7b04c4eacda246a162751ac b18dcdcb27a64f5cbb9c3e8a9cbe42ad
-#: c99320177259425cb9b95c388dd31aab cb065cdf233f480ebdf710e1ef8cd8e9
-#: cba4170e0faf4307996d4d6d661263de
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/software/umqtt.default.rst:54 fb8c022908ed472684d6eeaf46de6e43
+#: ../../en/software/umqtt.default.rst:106 e92f46e5a57c482ebccff0377e2756b4
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:3 c44cceab7dac4cd590989d9a88463039
+#: ../../en/refs/software.umqtt.default.ref:5 e9e463867bd5444a8776f99fe72c4d67
 msgid "init.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:56 940c24d2b4c04a77af5bce981e8202d8
+#: ../../en/software/umqtt.default.rst:108 89bfcbaf496a4ef9b82f1882895354de
 msgid "|init_ssl.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:5 2ce1d383214e415689ee1d19ecd1c2b2
+#: ../../en/refs/software.umqtt.default.ref:7 b53c599a92804bbe901a32c901293c17
 msgid "init_ssl.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:60 0e10fc037e324e07a495c10c8ed7c272
-msgid "Methods"
-msgstr ""
-
-#: ../../en/software/umqtt.default.rst:64 40e64231bdd04100b1aa304dd8edc43d
+#: ../../en/software/umqtt.default.rst:135 ea260e7de4c0464f8fa6fe2bfdf87275
 msgid ""
 "Connect to a server. Returns True if this connection uses persisten "
 "session stored on a server (this will be always False if "
 "clean_session=True argument is used (default))."
 msgstr ""
-"连接到服务器。如果此连接使用存储在服务器上的持久会话，则返回 True （如果使用clean_session=True 参数（默认），则始终为 "
-"False ）。"
+"连接到服务器。如果此连接使用存储在服务器上的持久会话，则返回 True（如果使用 clean_session=True 参数（默认），则始终为 "
+"False）。"
 
-#: ../../en/software/umqtt.default.rst:70 0694c38039b54b34871ae0c864e69e92
+#: ../../en/software/umqtt.default.rst:141 84944dc5bb954cfd98623e38ead28150
 msgid "|connect.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:7 f25732a504d645e990a49db5a0fdbb63
+#: ../../en/refs/software.umqtt.default.ref:9 7247bf72dd1645b2a12aeb2f287ebaee
 msgid "connect.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:75
-#: ../../en/software/umqtt.default.rst:84 b156af1453b5405ca6fe50c228a89ea8
-#: c659c312c4924d9fafc2e5094355311d
+#: ../../en/software/umqtt.default.rst:152
+#: ../../en/software/umqtt.default.rst:167 1911571a32fe405f8fa4dce25ce7dfb9
 msgid "Disconnect from a server, release resources."
 msgstr "断开与服务器的连接，释放资源。"
 
-#: ../../en/software/umqtt.default.rst:79 0d9f8c5ef40b4e5cbac028cbab2497c1
+#: ../../en/software/umqtt.default.rst:156 39fb3ea25d184d4f9e4acbb7612d1fc3
 msgid "|disconnect.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:9 892276de09634c298ff73620c2a7b04e
+#: ../../en/refs/software.umqtt.default.ref:11 38857b1d949e47bba128c379ed9bafbe
 msgid "disconnect.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:88 3e5f81f45fd14d00beef6f3a6ee8b05e
+#: ../../en/software/umqtt.default.rst:171 d7f3cd4d5e2c4162963efb73cda8fcb5
 msgid "|reconnect.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:11 8b473925850648b0adedddd5e6194e19
+#: ../../en/refs/software.umqtt.default.ref:13 b38f475ecdad4418b660900b36080470
 msgid "reconnect.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:93 b86ba6bda9e24adab54383cbbf3bc00c
+#: ../../en/software/umqtt.default.rst:182 5663b95e61ea48d79791cdb6ad3610a1
 msgid ""
 "Ping server (response is processed automatically by "
 ":py:meth:`wait_msg()`)."
 msgstr "Ping 服务器（响应由 :py:meth:`wait_msg()` 自动处理）。"
 
-#: ../../en/software/umqtt.default.rst:97
-#: ../../en/software/umqtt.default.rst:184 8f3897d79ce8440c941c79fe4fa9bd00
-#: a1aea52a0cf14b0d9e1bb740fdda4185
-msgid "None"
-msgstr ""
-
-#: ../../en/software/umqtt.default.rst:102 26c46aa9e8ae4a789eb5582d1e407c04
+#: ../../en/software/umqtt.default.rst:193 0ff2b8f4fdbb45608aee5bc898cc9835
 msgid "Publish a message."
 msgstr "发布消息。"
 
-#: ../../en/software/umqtt.default.rst:104 83a9a69fac98492e81fd0a24ad131e7c
+#: ../../en/software/umqtt.default.rst:195 a928de379bce4606938587149dadfa4d
 msgid "the topic that the message should be published on."
 msgstr "应发布消息的主题。"
 
-#: ../../en/software/umqtt.default.rst:106 5687a9fce96e41eaa8b5186849cedc52
+#: ../../en/software/umqtt.default.rst:197 08000343eb534adc951757e1e5458e80
 msgid "the message to send as a will."
 msgstr "实际要发送的消息。"
 
-#: ../../en/software/umqtt.default.rst:108
-#: ../../en/software/umqtt.default.rst:156 e6ffa35768fa41edbc5de67e89f94019
-#: f54a54b79a0643d3a8b39c131bb1780f
+#: ../../en/software/umqtt.default.rst:199
+#: ../../en/software/umqtt.default.rst:271 41c1e3911a2f449082a3fb616e69e9ac
 msgid ""
 "if set to True, the will message will be set as the \"last "
 "will\"/retained message for the topic."
 msgstr "如果设置为 True ，则遗嘱消息将被设置为该主题的“最后遗嘱”/保留消息。"
 
-#: ../../en/software/umqtt.default.rst:110 8ed0015b5634453591810bc7ae39c56a
+#: ../../en/software/umqtt.default.rst:201 1bf2e8b701ca42a6bb199fa10c7524f8
 msgid "the quality of service level to use"
 msgstr "使用的服务质量级别"
 
-#: ../../en/software/umqtt.default.rst:114 ce2a76acdd904861a337df3567e17bfa
+#: ../../en/software/umqtt.default.rst:205 ffe420a34326477a8ca77e0d2b0ff8d5
 msgid "|publish.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:13 056afb33542046c7b964244dddec6bb9
+#: ../../en/refs/software.umqtt.default.ref:15 aaa24f2eb70748bd85afc6ca917ab338
 msgid "publish.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:119 5c2ba4d26a3245c9a08ac0281afa9e92
+#: ../../en/software/umqtt.default.rst:216 a9ccf074422e48f48a26d745ddf2c706
 msgid "Subscribe to a topic."
 msgstr "订阅主题。"
 
-#: ../../en/software/umqtt.default.rst:121 6759c4fd8e684d94a80a1bb9ae46430b
+#: ../../en/software/umqtt.default.rst:218 1ef9b306f8c447b6baab66315efe321b
 msgid "a string specifying the subscription topic to subscribe to."
 msgstr "指定要订阅的订阅主题的字符串。"
 
-#: ../../en/software/umqtt.default.rst:123 31e279e1e55c41658edfcf0c47bdff82
+#: ../../en/software/umqtt.default.rst:220 c16aa507306044d98b477098422396aa
 msgid ""
 "called when a message has been received on a topic that the client "
 "subscribes to and the message does match an existing topic filter "
 "callback."
 msgstr "当收到有关客户端订阅的主题的消息并且该消息与现有主题过滤器回调匹配时调用。"
 
-#: ../../en/software/umqtt.default.rst:126 5d92784c83ae4f3a9971b76f07e216fa
+#: ../../en/software/umqtt.default.rst:223 fa870860b15d43abbd688d8823453be3
 msgid "the desired quality of service level for the subscription. Defaults to 0."
 msgstr "订阅所需的服务质量级别。 默认为 0。"
 
-#: ../../en/software/umqtt.default.rst:131
-#: ../../en/software/umqtt.default.rst:162 3fd9062e3bcd4acbb50b164eb7d46e4a
-#: f18d113418634474a5f4d5549164a9ad
+#: ../../en/software/umqtt.default.rst:228 ca6c6e6f2f6b4a8bb39c2f12cda991da
 msgid "|subscribe.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:15 6d2f6ac967cc45b38f0e899a7a53df6b
-#: 8c7b1d0cd1214d51b11fd5359c00c8d5
+#: ../../en/refs/software.umqtt.default.ref:17 9e69ea1e8c2c4c2b99129c4d820c2890
 msgid "subscribe.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:133 92dbcc4b54a246e1884276da81950833
+#: ../../en/software/umqtt.default.rst:230 eabdfb9871c34f1e8af02eb977a8913e
 msgid "An handler showing a message has been received::"
 msgstr "显示已收到消息的处理程序::"
 
-#: ../../en/software/umqtt.default.rst:139 93680928ed704e39afd561da2c5d07e2
-#, fuzzy
+#: ../../en/software/umqtt.default.rst:236 aef9979f9da74dc292c8d9455f6f1eb5
 msgid ""
 "On uiflow2, you can get the **topic** and **message** of the current "
 "handler through |get_topic.png| and |get_msg.png|."
-msgstr "在 uiflow2 上，可以通过 |get_topic.svg| 和 |get_msg.svg| 获取当前 handler "
+msgstr "在 UiFlow2 上，可以通过 |get_topic.png| 和 |get_msg.png| 获取当前处理器的 **主题** 和 **消息**。"
 
-#: ../../en/refs/software.umqtt.default.ref:17 66a7b5c57c0f4d3e878c432cffd3b6fc
+#: ../../en/refs/software.umqtt.default.ref:19 8badc0b327cd496f9db503503ce68c29
 msgid "get_topic.png"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:19 25051e05cd04491bae994604e3345470
+#: ../../en/refs/software.umqtt.default.ref:21 4a6ab6ff81164734b2a392fcf83c7569
 msgid "get_msg.png"
 msgstr ""
 
-#: ../../en/software/umqtt.default.rst:147 825b7295f49d4ba9be52721146473680
+#: ../../en/software/umqtt.default.rst:242 a9ccf074422e48f48a26d745ddf2c706
+msgid "Unsubscribe from a topic."
+msgstr "取消订阅主题。"
+
+#: ../../en/software/umqtt.default.rst:244 1ef9b306f8c447b6baab66315efe321b
+msgid "a string specifying the subscription topic to unsubscribe from."
+msgstr "指定要取消订阅的主题的字符串。"
+
+#: ../../en/software/umqtt.default.rst:249 ca6c6e6f2f6b4a8bb39c2f12cda991da
+msgid "|unsubscribe.png|"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:262 c99fb09e06d34210aa2f1c630ecdf556
 msgid "Should be called before :py:meth:`connect()`."
 msgstr "应该在 :py:meth:`connect()` 之前调用。"
 
-#: ../../en/software/umqtt.default.rst:149 8d59d6d422304ce7a577fc2e5bcd6c0f
+#: ../../en/software/umqtt.default.rst:264 e96693d82e594ec4aa1e8caeb02d63bf
 msgid "Set MQTT \"last will\" message."
 msgstr "设置 MQTT 遗嘱消息。"
 
-#: ../../en/software/umqtt.default.rst:151 3dc86ef0061e4c5bb0f5d3591ae59dc0
+#: ../../en/software/umqtt.default.rst:266 045e1953893d4ac595c9d3aea41d927b
 msgid "the topic that the will message should be published on."
 msgstr "将发布意愿消息的主题。"
 
-#: ../../en/software/umqtt.default.rst:153 2718bafa53634e718cc1dfaa45432da7
+#: ../../en/software/umqtt.default.rst:268 6b34f64daa394b178e0cfdc248fa3961
 msgid ""
 "the message to send as a will. If not given, or set to None a zero length"
 " message will be used as the will."
-msgstr " 如果设置为 True ，则遗嘱消息将被设置为该主题的“最后遗嘱”/保留消息。"
+msgstr "作为遗嘱发送的消息。如果未提供或设置为 None，则将使用零长度消息作为遗嘱。"
 
-#: ../../en/software/umqtt.default.rst:158 ae72509c7dec4d80876cc9ebf1fd8911
+#: ../../en/software/umqtt.default.rst:273 b90cfd4699364f80b2b510c51fafd0fc
 msgid "the quality of service level to use for the will."
 msgstr "用于意愿的服务质量水平。"
 
-#: ../../en/software/umqtt.default.rst:169 8f2acff033d544c79cd015d25e1c0f84
+#: ../../en/software/umqtt.default.rst:277 e778f61300aa4237bf90fc801a5ee16e
+msgid "|set_last_will.png|"
+msgstr ""
+
+#: ../../en/refs/software.umqtt.default.ref:23 9ca9fc32badc4c4999fbfb5eea877840
+msgid "set_last_will.png"
+msgstr ""
+
+#: ../../en/software/umqtt.default.rst:290 e092b45e96b147d59af20424a9983d12
 msgid ""
 ":py:meth:`wait_msg()` and :py:meth:`check_msg()` are \"main loop "
 "iteration\" methods, blocking and non-blocking version. They should be "
@@ -313,34 +375,32 @@ msgid ""
 "subscribed MQTT messages), :py:meth:`check_msg()` if you process other "
 "foreground tasks too."
 msgstr ""
-":py:meth:`wait_msg()` 和 :py:meth:`check_msg()` 是主循环迭代方法，有阻塞和非阻塞版本。 "
-"如果您没有任何其他前台任务要执行（即您的应用程序仅对订阅的MQTT 消息做出反应），则应在循环中定期调用 "
-":py:meth:`wait_msg()` ，如果您还处理其他前台任务，则使用 :py:meth:`check_msg ()` 。"
+":py:meth:`wait_msg()` 和 :py:meth:`check_msg()` "
+"是主循环迭代方法，有阻塞和非阻塞版本。如果您没有任何其他前台任务要执行（即您的应用程序仅对订阅的 MQTT 消息做出反应），则应在循环中定期调用 "
+":py:meth:`wait_msg()`；如果您还需要处理其他前台任务，则使用 :py:meth:`check_msg()`。"
 
-#: ../../en/software/umqtt.default.rst:176 473607d9aac14457b84458a2246cf6f8
+#: ../../en/software/umqtt.default.rst:297 46d86a88a0894b0598d49cbe7ff0c747
 msgid ""
 "Note that you don't need to call :py:meth:`wait_msg()` / "
 ":py:meth:`check_msg()` if you only publish messages, never subscribe to "
 "them."
-msgstr ""
-"请注意，如果您只发布消息，从不订阅消息，则不需要调用 :py:meth:`wait_msg()` / :py:meth:`check_msg()`"
-" 。"
+msgstr "请注意，如果您只发布消息而从不订阅消息，则不需要调用 :py:meth:`wait_msg()` / :py:meth:`check_msg()`。"
 
-#: ../../en/software/umqtt.default.rst:180 9e26210a1cba42d98102e4329ca2e73c
+#: ../../en/software/umqtt.default.rst:301 628942df0a124787bd729dda824e23f8
 msgid "Wait for a server message."
 msgstr "等待服务器消息。"
 
-#: ../../en/software/umqtt.default.rst:189 3dd7d026706d4d8c81ad301126587b45
+#: ../../en/software/umqtt.default.rst:312 d916e90f31f04880b03210c6dec15150
 msgid ""
 "Check if there's pending message from server. If yes, process the same "
 "way as :py:meth:`wait_msg()`, if not, return immediately."
-msgstr "检查是否有来自服务器的待处理消息。如果是， 则与 :py:meth:`wait_msg()` 处理方式"
+msgstr "检查是否有来自服务器的待处理消息。如果有，则与 :py:meth:`wait_msg()` 处理方式相同；如果没有，则立即返回。"
 
-#: ../../en/software/umqtt.default.rst:194 6be388d2d87f424991e122eee9a20868
+#: ../../en/software/umqtt.default.rst:317 01f41fde34fd466a81f8f01b41281e5d
 msgid "|wait_msg.png|"
 msgstr ""
 
-#: ../../en/refs/software.umqtt.default.ref:23 e8796e7aa78c408ba113b7867a7edcbd
+#: ../../en/refs/software.umqtt.default.ref:25 83b18429c40b4ef69f0c6344dff4ee6f
 msgid "wait_msg.png"
 msgstr ""
 
@@ -411,5 +471,29 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "example.svg"
+#~ msgstr ""
+
+#~ msgid "Micropython Example:"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example:"
+#~ msgstr ""
+
+#~ msgid "|example.png|"
+#~ msgstr ""
+
+#~ msgid "example.png"
+#~ msgstr ""
+
+#~ msgid "|mqtts_cores3_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "Methods"
 #~ msgstr ""
 
