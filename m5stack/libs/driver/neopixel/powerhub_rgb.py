@@ -17,6 +17,8 @@ class PowerHubRGB(NeoPixel):
         return int((x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min)
 
     def set_color(self, index: int, color: int) -> None:
+        if index < 0:
+            return
         Led.setColor(index, color)
         Led.display()
 
