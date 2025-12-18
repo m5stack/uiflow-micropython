@@ -25,6 +25,7 @@ import requests
 from collections import namedtuple
 import network
 import M5
+import esp32
 from hardware import RGB
 from widgets.label import Label
 import binascii
@@ -502,24 +503,30 @@ class M5Sync:
         for i in range(retry):
             if _download_file(url, save_path):
                 return True
-            WARN and print(f"[WARN] Retry {i+1}...")
+            WARN and print(f"[WARN] Retry {i + 1}...")
 
 
 def run():
     INFO and print("[INFO] Syncing resources...")
 
-    wlan = network.WLAN(network.STA_IF)
+    nvs = esp32.NVS("uiflow")
+    net_mode = nvs.get_str("net_mode")
+    net_if = None
+    if net_mode == "WIFI":
+        net_if = network.WLAN(network.STA_IF)
+    elif net_mode == "ETH":
+        net_if = network.LAN()
     timeout = 10
-    while not wlan.isconnected() and timeout > 0:
+    while not net_if.isconnected() and timeout > 0:
         time.sleep(1)
         timeout -= 1
 
-    if not wlan.isconnected():
-        WARN and print("[WARN] WiFi not connected.")
+    if not net_if.isconnected():
+        WARN and print("[WARN] Network not connected.")
         WARN and print("[WARN] quit sync.")
         return
 
-    INFO and print("[INFO] WiFi connected!")
+    INFO and print("[INFO] Network connected!")
     sync = M5Sync()
     sync.run()
     del sync
