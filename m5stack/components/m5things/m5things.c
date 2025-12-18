@@ -1997,16 +1997,16 @@ json_buffer_preallocated:
     json_buf = (char *)malloc(4096 + 8);
     #endif
     if (json_buf == NULL) {
-        ESP_LOGE(TAG, "waiting connect to Wi-Fi");
+        ESP_LOGE(TAG, "waiting connect to network");
         goto json_buffer_preallocated;
     }
 
 soft_reset:
-    ESP_LOGI(TAG, "waiting connect to Wi-Fi");
-    while (!wifi_sta_connected) {
+    ESP_LOGI(TAG, "waiting connect to network");
+    while (!(wifi_sta_connected || lan_connected)) {
         vTaskDelay(500 / portTICK_PERIOD_MS);
     }
-    ESP_LOGI(TAG, "Wi-Fi is connected, connect to server");
+    ESP_LOGI(TAG, "Network is connected, connect to server");
     vTaskDelay(500 / portTICK_PERIOD_MS);
 
     if (!sync_time_by_sntp()) {

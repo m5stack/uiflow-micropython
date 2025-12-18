@@ -91,6 +91,7 @@ typedef struct _mp_obj_vfs_lfs2_t {
 extern ringbuf_t stdin_ringbuf;  // mp_task will take code form this buffer
 extern TaskHandle_t m5thing_task_handle;
 extern bool wifi_sta_connected;
+extern bool lan_connected;
 extern int mp_interrupt_char;
 
 extern esp_mqtt_client_handle_t m5things_mqtt_client;
