@@ -1,0 +1,345 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-16 17:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/chain/tof.rst:2 ../../en/refs/chain.tof.ref
+#: 53fb2366b56041a2b212244a51e80302 905457187b0f46f68b36cdd4e5713b9e
+msgid "Chain ToF"
+msgstr ""
+
+#: ../../en/chain/tof.rst:6 2ba3f090e099450f8520224c58b93fdb
+msgid ""
+"ToFChain is the helper class for ToF (Time of Flight) sensor devices on "
+"the Chain bus. It provides methods to read distance measurements, "
+"configure measurement parameters (time, mode, status), and check "
+"measurement completion status."
+msgstr ""
+"ToFChain 是用于 Chain 总线上的 ToF（飞行时间）传感器设备的辅助类。它提供了读取距离测量值、配置测量参数（时间、模式、状态）以及检查测量完成状态的方法。"
+
+#: ../../en/chain/tof.rst:8 c48e9b3e044047cfbcfa0fc7d59de580
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/chain/tof.rst:10 44799aafbf2c4ccfa7c533b15354ae27
+msgid "|Chain ToF|"
+msgstr ""
+
+#: ../../en/chain/tof.rst:13 b5eef5cd4f6e46feb5b6912a7f2b424c
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/chain/tof.rst:16 ../../en/chain/tof.rst:34
+#: 40c1247e84334d7b88d905cd66e6cb2d 673e43a7c63545beb456db3209c0427c
+msgid "Distance measurement display"
+msgstr "距离测量显示"
+
+#: ../../en/chain/tof.rst:18 c44b91ad04754766a6fbd1f9cfaf15e5
+msgid "Open the |m5core_chain_tof_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_tof_basic_example.m5f2| 项目。"
+
+#: ../../en/chain/tof.rst:20 ../../en/chain/tof.rst:36
+#: 42d48ea679234a6c99f8c80aab130d49 81e67f99c364436dabeb1b0aed209d01
+msgid ""
+"This example demonstrates how to read distance measurements from the "
+"Chain ToF sensor and display them on screen. The example configures the "
+"sensor for continuous measurement mode and updates the distance value in "
+"real-time."
+msgstr ""
+"本示例演示如何从 Chain ToF 传感器读取距离测量值并在屏幕上显示。示例将传感器配置为连续测量模式，并实时更新距离值。"
+
+#: ../../en/chain/tof.rst:22 30dadb88b8e64812ab66e3d44daca945
+#: 3953f36157c44560b45d3685784f78b0 46ce7128152a427cb1fb2f8030fbcd80
+#: 5f0a6e49a8a44cfd8fff9adb510ec3f4 6cfdca8084d44ba4a0932fd62510f42c
+#: 6df125a3b1364971ae5bff877d8b5cbe b9d0da907f5047e2b6215676c5040a0b
+#: bdb5dd723f734fca82087e5dc6ee6189 chain.tof.ToFChain:6
+#: chain.tof.ToFChain.get_distance:6
+#: chain.tof.ToFChain.get_measure_complete_flag:6
+#: chain.tof.ToFChain.get_measure_mode:6
+#: chain.tof.ToFChain.get_measure_status:6
+#: chain.tof.ToFChain.get_measure_time:6 chain.tof.ToFChain.set_measure_mode:7
+#: chain.tof.ToFChain.set_measure_status:7
+#: chain.tof.ToFChain.set_measure_time:7 d1afec9af01a4e269fa1bb2aba8c0d71
+#: dbd5c56d9ab04046aad54a9a120096cd of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/chain/tof.rst:24 53235a8192bc49fb9c422bf795c432a2
+msgid "|m5core_chain_tof_basic_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:16 0a1ae4636fc34e4ba486981ebb5b3215
+msgid "m5core_chain_tof_basic_example.png"
+msgstr ""
+
+#: ../../en/chain/tof.rst:26 ../../en/chain/tof.rst:44
+#: 4621d6d243c14267b459afa40b2c0020 ce67d815c2a842488a30c146cb9b6298
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/chain/tof.rst:28 ../../en/chain/tof.rst:46
+#: 24c6d30159ce40a0999e2ffce66b3acf db66c73227e746acb5a12b978a99233c
+msgid "None"
+msgstr ""
+
+#: ../../en/chain/tof.rst:31 751c9db4ef6d4a1a88dd9325f809a9b0
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/chain/tof.rst:38 1b6ad1b2944b4eb78e413e44c296b37b
+#: 3d90060153c849f3b923601b1a30d9e2 4a174d8125bf4057a2e4920661da14b4
+#: 63202fa8f98b4d10a051173cbd27cc63 9662d0c7ca1d4900bb354e0fe3c5b379
+#: bc97c0ad05d8423892711d46128eee3f cf136ae75495400fb828f55ee93e5635
+#: chain.tof.ToFChain:10 chain.tof.ToFChain.get_distance:10
+#: chain.tof.ToFChain.get_measure_complete_flag:10
+#: chain.tof.ToFChain.get_measure_mode:10
+#: chain.tof.ToFChain.get_measure_status:10
+#: chain.tof.ToFChain.get_measure_time:10
+#: chain.tof.ToFChain.set_measure_mode:11
+#: chain.tof.ToFChain.set_measure_status:11
+#: chain.tof.ToFChain.set_measure_time:11 db2a824b097840398140e3cc06d240e3
+#: e7756a0f49164869913a25afaf1cefeb f16e2874c06a4970bcbb7cf455dab726 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/chain/tof.rst:50 f33050f4b187444e974c02838de107c9
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/chain/tof.rst:53 f43bacf7d1504718b4e1164c30930009
+msgid "ToFChain"
+msgstr ""
+
+#: chain.tof.ToFChain:1 dec2b467171042f0a8c290270b5c0776 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+#: 065d7bcee4cb48c29e2a7dced925be91 chain.tof.ToFChain:1 of
+msgid ""
+"ToF Chain class for interacting with ToF (Time of Flight) devices over "
+"Chain bus."
+msgstr "用于通过 Chain 总线与 ToF（飞行时间）设备交互的 ToF Chain 类。"
+
+#: ../../en/chain/tof.rst 115855ac76f6411aba9bd07f388c48f1
+#: 4181193068764e0da0db7913758ba40f 7cb64f2edf1d4e3290dabf8ae3dd2d65
+#: cde5454127bb4f99ba68e71e94edf6c6 chain.tof.ToFChain.set_measure_mode
+#: chain.tof.ToFChain.set_measure_status chain.tof.ToFChain.set_measure_time of
+msgid "Parameters"
+msgstr "参数"
+
+#: 311ea78ea5a14413b4b01a8740602735 chain.tof.ToFChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 41a2b8d898f14dc3b74f89d8c372c294 chain.tof.ToFChain:4 of
+msgid "The device ID of the ToF sensor on the Chain bus."
+msgstr "Chain 总线上 ToF 传感器的设备 ID。"
+
+#: 6b2ebbfbce9e46f9b7a03c2ca81c6490 chain.tof.ToFChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:7 ab834d37dae84b889ac1be3e4020a6eb
+msgid "init.png"
+msgstr ""
+
+#: ../../en/chain/tof.rst:60 b11ad0ba5d80434a861279ccb58ebe33
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"有关其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: 49a1ecb3c58244cebadc6faa7551d849 chain.tof.ToFChain.get_distance:1 of
+msgid "Get the distance measurement."
+msgstr "获取距离测量值。"
+
+#: 20f195ec67d44e9b951660f918edc959 488a1d2e0b594f7b86463543e0481911
+#: b5c3c5004ee743d08ae6b92a27962cbc c98358118b8142c5adfd10f6d754a2e4
+#: ce8a746b17f14a38b406986e8caa2a52 chain.tof.ToFChain.get_distance
+#: chain.tof.ToFChain.get_measure_complete_flag
+#: chain.tof.ToFChain.get_measure_mode chain.tof.ToFChain.get_measure_status
+#: chain.tof.ToFChain.get_measure_time chain.tof.ToFChain.set_measure_mode
+#: chain.tof.ToFChain.set_measure_status chain.tof.ToFChain.set_measure_time
+#: d79c56a9601b43c4944f2a87585b8442 e4d0c9e9a69748cc87950f9acad841bd
+#: f65ddd9a7e8a4bd08db9c3c65de3d8bf of
+msgid "Returns"
+msgstr "返回"
+
+#: ca729ab84d154b009e80320935d950d8 chain.tof.ToFChain.get_distance:3 of
+msgid "Distance in millimeters, or None if failed."
+msgstr "距离（单位：毫米），如果失败则返回 None。"
+
+#: 029ee3f269d04dc9ae6c0519849fe987 1c9b239e277d4dafb2bfce4f7d7066b8
+#: 20f3e5edc679435b94b21066d5826eae 45b1393d22974344b9401f7e2bb70806
+#: 5379034e25f3485fb2e0afae0022f385 9a71331d188547ec974f801c5123109c
+#: chain.tof.ToFChain.get_distance chain.tof.ToFChain.get_measure_complete_flag
+#: chain.tof.ToFChain.get_measure_mode chain.tof.ToFChain.get_measure_status
+#: chain.tof.ToFChain.get_measure_time chain.tof.ToFChain.set_measure_mode
+#: chain.tof.ToFChain.set_measure_status chain.tof.ToFChain.set_measure_time
+#: d4becbfd3a2d4b4c93b5a982f1e49ef8 d60fd8ecdb6d4b7ca537532273fc17c6 of
+msgid "Return type"
+msgstr "返回类型"
+
+#: c9cdd985b4f8419ea5ffe7b49a9b0b6a chain.tof.ToFChain.get_distance:8 of
+msgid "|get_distance.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:8 bcbb880486fb4a19a8faf66b95354b0a
+msgid "get_distance.png"
+msgstr ""
+
+#: 6ffbf797b8904bb2a4bc50dac8d7d0a3 chain.tof.ToFChain.set_measure_time:1 of
+msgid "Set the measurement time."
+msgstr "设置测量时间。"
+
+#: b1aebe9e3ddd449d862060f081343227 chain.tof.ToFChain.set_measure_time:3 of
+msgid "Measurement time in milliseconds. Range: 20-200, default: 33."
+msgstr "测量时间（单位：毫秒）。范围：20-200，默认值：33。"
+
+#: bfb83150be7145c0ad9a5ebd2676f2fb chain.tof.ToFChain.set_measure_mode:4
+#: chain.tof.ToFChain.set_measure_status:4
+#: chain.tof.ToFChain.set_measure_time:4 d2f2be89dcf9473b8696295a8c3ecf54
+#: f41a4f76fa8b42deb5c11389ec267506 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "如果操作成功则返回 True，否则返回 False。"
+
+#: 2601d70b112a42e4854cf045f1409bcb chain.tof.ToFChain.set_measure_time:9 of
+msgid "|set_measure_time.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:9 59d023fec0244810a57eda7d542da5d7
+msgid "set_measure_time.png"
+msgstr ""
+
+#: b4087bcf97c64e45a8310029399bf2a1 chain.tof.ToFChain.get_measure_time:1 of
+msgid "Get the measurement time."
+msgstr "获取测量时间。"
+
+#: chain.tof.ToFChain.get_measure_time:3 e7a954e179704633849476ab7f40a831 of
+msgid "Measurement time in milliseconds, or None if failed."
+msgstr "测量时间（单位：毫秒），如果失败则返回 None。"
+
+#: 07f63619ca0a4fc5ac173842205db096 chain.tof.ToFChain.get_measure_time:8 of
+msgid "|get_measure_time.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:10 27af83eb22db45c5a9a576b516be4c2b
+msgid "get_measure_time.png"
+msgstr ""
+
+#: 082ff6cb1afb47eb98ac4735e2fec62c chain.tof.ToFChain.set_measure_mode:1 of
+msgid "Set the measurement mode."
+msgstr "设置测量模式。"
+
+#: chain.tof.ToFChain.set_measure_mode:3 f4c04b5a25ee4b138dbca0668bb292bd of
+msgid ""
+"Measurement mode. Use :attr:`ToFChain.MODE_STOP` (0), "
+":attr:`ToFChain.MODE_SINGLE` (1), or :attr:`ToFChain.MODE_CONTINUOUS` "
+"(2). Default: 2."
+msgstr ""
+"测量模式。使用 :attr:`ToFChain.MODE_STOP` (0)、:attr:`ToFChain.MODE_SINGLE` "
+"(1) 或 :attr:`ToFChain.MODE_CONTINUOUS` (2)。默认值：2。"
+
+#: 137b5d872edb452e875cd93e6358f7d1 chain.tof.ToFChain.set_measure_mode:9 of
+msgid "|set_measure_mode.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:11 4c1c8da8f3054c89ad17de7e4bdcf8a4
+msgid "set_measure_mode.png"
+msgstr ""
+
+#: 1d92aef27b5942f0b6bf5911221d6c5b chain.tof.ToFChain.get_measure_mode:1 of
+msgid "Get the measurement mode."
+msgstr "获取测量模式。"
+
+#: 3a38f3588c1a4d0d85b36311df23c7c9 chain.tof.ToFChain.get_measure_mode:3 of
+msgid ""
+"Measurement mode. :attr:`ToFChain.MODE_STOP` (0), "
+":attr:`ToFChain.MODE_SINGLE` (1), or :attr:`ToFChain.MODE_CONTINUOUS` "
+"(2). Returns None if failed."
+msgstr ""
+"测量模式。:attr:`ToFChain.MODE_STOP` (0)、:attr:`ToFChain.MODE_SINGLE` (1) "
+"或 :attr:`ToFChain.MODE_CONTINUOUS` (2)。如果失败则返回 None。"
+
+#: c225a0fc3d534a979532407eecf80296 chain.tof.ToFChain.get_measure_mode:8 of
+msgid "|get_measure_mode.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:12 0f3939fad35743cc9a809d3a9f2d0e1c
+msgid "get_measure_mode.png"
+msgstr ""
+
+#: 0f3c52709c39445eab940c0ffea02ea3 chain.tof.ToFChain.set_measure_status:1 of
+msgid "Set the measurement status."
+msgstr "设置测量状态。"
+
+#: 160805941e2b42759cf9dbd680c04c17 chain.tof.ToFChain.set_measure_status:3 of
+msgid "Measurement status. 0 means not measuring, 1 means measuring."
+msgstr "测量状态。0 表示未测量，1 表示正在测量。"
+
+#: c26f7cf3df864397a29859a27cc189c6 chain.tof.ToFChain.set_measure_status:9 of
+msgid "|set_measure_status.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:13 3f8f6c578968415ab2cf25f037ba604f
+msgid "set_measure_status.png"
+msgstr ""
+
+#: chain.tof.ToFChain.get_measure_status:1 d6b1f776520c4604a61c9ff19aae6a84 of
+msgid "Get the measurement status."
+msgstr "获取测量状态。"
+
+#: chain.tof.ToFChain.get_measure_status:3 fe5d17000a6b4c818a959828d0bbe5e5 of
+msgid ""
+"Measurement status. 0 means not measuring, 1 means measuring. Returns "
+"None if failed."
+msgstr "测量状态。0 表示未测量，1 表示正在测量。如果失败则返回 None。"
+
+#: 3ca3963b3e714388808979ca01a5189f chain.tof.ToFChain.get_measure_status:8 of
+msgid "|get_measure_status.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:14 86cd0fec30e0484d98d7c507be9c72a9
+msgid "get_measure_status.png"
+msgstr ""
+
+#: ab3d3e3a1cec4ad9ab26fab6e73a3907
+#: chain.tof.ToFChain.get_measure_complete_flag:1 of
+msgid "Get the measurement complete flag."
+msgstr "获取测量完成标志。"
+
+#: 3a6bb0600a1e412dbdba860ff9106d67
+#: chain.tof.ToFChain.get_measure_complete_flag:3 of
+msgid ""
+"Measurement complete flag. 0 means measurement not complete, 1 means "
+"measurement complete. Returns None if failed."
+msgstr ""
+"测量完成标志。0 表示测量未完成，1 表示测量完成。如果失败则返回 None。"
+
+#: 23222333a66b42c18fed2674173510c5
+#: chain.tof.ToFChain.get_measure_complete_flag:8 of
+msgid "|get_measure_complete_flag.png|"
+msgstr ""
+
+#: ../../en/refs/chain.tof.ref:15 494c84c2dcf9452596882180ac8d7df7
+msgid "get_measure_complete_flag.png"
+msgstr ""
+

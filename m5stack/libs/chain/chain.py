@@ -462,17 +462,7 @@ class ChainBus:
             chainbus_0 = ChainBus(2, 32, 33, verbose=True)
     """
 
-    _instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if cls._instance is None:
-            cls._instance = super().__new__(cls)
-            cls._instance._initialized = False
-        return cls._instance
-
     def __init__(self, id, tx, rx, verbose=False):
-        if self._initialized:
-            return
         self.uart = machine.UART(id, baudrate=115200, tx=tx, rx=rx, rxbuf=2048)
         if self.uart.any() > 0:
             self.uart.read()  # flush rx buffer
@@ -489,7 +479,6 @@ class ChainBus:
         self._running = True
         _thread.start_new_thread(self._recv_task, ())
         self.device_num = self.chainll.get_device_num()
-        self._initialized = True
 
     def register_device(self, device):
         """Register a Chain device.
@@ -617,5 +606,3 @@ class ChainBus:
         if hasattr(self, "timer"):
             self.timer.deinit()
         self._running = False
-        ChainBus._instance = None
-        self._initialized = False
