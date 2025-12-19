@@ -26,7 +26,7 @@ class MatrixKeyboard:
         if M5.BOARD.M5Cardputer == board_id:
             self._keyboard = Keyboard()
         elif M5.BOARD.M5CardputerADV == board_id:
-            i2c1 = machine.I2C(1, scl=machine.Pin(9), sda=machine.Pin(8), freq=100000)
+            i2c1 = machine.I2C(1, scl=machine.Pin(9), sda=machine.Pin(8), freq=400000)
             self._keyboard = KeyboardI2C(
                 i2c1,
                 intr_pin=machine.Pin(11, mode=machine.Pin.IN, pull=None),
