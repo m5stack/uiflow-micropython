@@ -40,6 +40,8 @@ class M5Table(lv.table):
         self.set_size(w, h)
         self.set_row_count(row_cnt)
         self.set_column_count(col_cnt)
+        # Enable column borders (default theme only shows row borders)
+        self.set_style_border_side(lv.BORDER_SIDE.FULL, lv.PART.ITEMS)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):

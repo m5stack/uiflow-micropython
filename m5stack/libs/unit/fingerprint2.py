@@ -738,7 +738,7 @@ class Fingerprint2Unit:
         """
         rx = self.send_cmd(b"\xD5")
         if rx and len(rx) == 13 and rx[-4] == 0x00:
-            return rx[-3] == 0x00
+            return rx[-3] == 0x01
         return False
 
     def get_firmware_version(self) -> int:
