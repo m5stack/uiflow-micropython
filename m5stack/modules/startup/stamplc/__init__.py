@@ -19,23 +19,42 @@ import time
 
 class StampPLC_Startup:
     def __init__(self) -> None:
-        self._wlan = Startup()
+        pass
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
-        self._wlan.connect_network(ssid, pswd)
+    def startup(
+        self,
+        net_mode: str = "WIFI",
+        ssid: str = "",
+        pswd: str = "",
+        eth_mode: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
+        self._net_if = Startup(network_type=net_mode)  # type: ignore
+        if net_mode == "WIFI":
+            self._net_if.connect_network(ssid, pswd)
+        elif net_mode == "ETH":
+            from stamplc import PoEStamPLC
+
+            lan_if = PoEStamPLC()
+            self._net_if.connect_network(ssid, pswd, lan_if, eth_mode, ip, netmask, gateway, dns)
+
         # M5.Lcd.setRotation(0)
         # M5.Lcd.drawImage(LOGO_IMG)
         time.sleep_ms(200)
         M5.Lcd.clear(0x333333)
 
         fw = framework.Framework()
-        setting_app = SettingsApp(None, data=self._wlan)
-        dev_app = DevApp(None, data=self._wlan)
+        setting_app = SettingsApp(None, data=self._net_if)
+        dev_app = DevApp(None, data=self._net_if)
         launcher = LauncherApp()
-        run_app = RunApp(None, data=self._wlan)
-        list_app = ListApp(None, data=self._wlan)
-        ezdata_app = EzDataApp(None, data=self._wlan)
-        fw.install_bar(StatusBarApp(None, self._wlan))
+        run_app = RunApp(None, data=self._net_if)
+        list_app = ListApp(None, data=self._net_if)
+        ezdata_app = EzDataApp(None, data=self._net_if)
+        fw.install_bar(StatusBarApp(None, self._net_if))
         fw.install_launcher(launcher)
         fw.install(launcher)
         fw.install(setting_app)

@@ -1,6 +1,12 @@
 key,type,encoding,value
 uiflow,namespace,,
 server,data,string,uiflow2.m5stack.com
+net_mode,data,string,WIFI
+eth_mode,data,string,DHCP
+ip_addr,data,string,
+netmask,data,string,
+gateway,data,string,
+dns,data,string,8.8.8.8
 ssid0,data,string,
 pswd0,data,string,
 ssid1,data,string,

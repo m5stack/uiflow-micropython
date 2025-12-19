@@ -25,15 +25,21 @@ _attrs = {
     "LEFT_ICO": "/system/stamplc/left.jpeg",
     # setting
     "WLAN_ICO_IMG": "/system/stamplc/setting/wlan.jpeg",
+    "ETHERNET_ICO_IMG": "/system/stamplc/setting/ethernet.jpeg",
     "GENERAL_ICO_IMG": "/system/stamplc/setting/general.jpeg",
     "CARET_RIGHT": "/system/stamplc/setting/caret_right.jpeg",
+    "SUBMIT_SELECT_BUTTON_IMG": "/system/stamplc/setting/submit_select.jpeg",
+    "SUBMIT_UNSELECT_BUTTON_IMG": "/system/stamplc/setting/submit_unselect.jpeg",
     # wlan
     "WIFI_DEFAULT_IMG": "/system/stamplc/setting/wlan/input_default.jpeg",
     "WIFI_SSID_IMG": "/system/stamplc/setting/wlan/input_ssid.jpeg",
     "WIFI_PSK_IMG": "/system/stamplc/setting/wlan/input_psk.jpeg",
     "WIFI_SERVER_IMG": "/system/stamplc/setting/wlan/input_server.jpeg",
-    "SUBMIT_SELECT_BUTTON_IMG": "/system/stamplc/setting/wlan/submit_select.jpeg",
-    "SUBMIT_UNSELECT_BUTTON_IMG": "/system/stamplc/setting/wlan/submit_unselect.jpeg",
+    # ethernet
+    "ETHERNET_DEFAULT_IMG": "/system/stamplc/setting/ethernet/input_default.jpeg",
+    "ETHERNET_IP_IMG": "/system/stamplc/setting/ethernet/input_ip.jpeg",
+    "ETHERNET_MASK_IMG": "/system/stamplc/setting/ethernet/input_mask.jpeg",
+    "ETHERNET_SERVER_IMG": "/system/stamplc/setting/ethernet/input_server.jpeg",
     # general
     "DISABLE_IMG": "/system/stamplc/setting/general/disable.jpeg",
     "ENABLE_IMG": "/system/stamplc/setting/general/enable.jpeg",
@@ -52,6 +58,8 @@ _attrs = {
     "WIFI_GOOD_IMG": "/system/stamplc/statusbar/wifi/good.jpeg",
     "WIFI_MID_IMG": "/system/stamplc/statusbar/wifi/mid.jpeg",
     "WIFI_WORSE_IMG": "/system/stamplc/statusbar/wifi/worse.jpeg",
+    "ETHERNET_ONLINE_IMG": "/system/stamplc/statusbar/ethernet/online.jpeg",
+    "ETHERNET_OFFLINE_IMG": "/system/stamplc/statusbar/ethernet/offline.jpeg",
     "BLUE_TITLE_IMG": "/system/stamplc/statusbar/title_blue.jpeg",
     # common
     "CARD_228x32_SELECT_IMG": "/system/stamplc/common/card_228x32_select.jpeg",

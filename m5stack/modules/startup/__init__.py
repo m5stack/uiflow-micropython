@@ -15,26 +15,56 @@ BOOT_OPT_NETWORK = 2  # Only Network setup
 
 
 class Startup:
-    def __init__(self) -> None:
-        self.wlan = network.WLAN(network.STA_IF)
-        self.wlan.active(False)
-        self.wlan.active(True)
+    STAT_GOT_IP = 1010
+    ETH_GOT_IP = 5
 
-    def connect_network(self, ssid: str, pswd: str) -> bool:
-        if len(ssid) > 0:
-            self.wlan.connect(ssid, pswd)
+    def __init__(self, network_type: str = "WIFI") -> None:
+        self.network_type = network_type
+        if network_type == "WIFI":
+            self.network = network.WLAN(network.STA_IF)
+            self.network.active(False)
+            self.network.active(True)
+
+    def connect_network(
+        self,
+        ssid: str = "",
+        pswd: str = "",
+        lan_if: "network.LAN" = None,
+        eth_mode: str = "DHCP",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+    ) -> bool:
+        if self.network_type == "WIFI" and len(ssid) > 0:
+            self.network.connect(ssid, pswd)
+            return True
+        elif self.network_type == "ETH":
+            self.network = lan_if
+            self.network.active(True)
+            if eth_mode == "STATIC":
+                self.network.ifconfig((ip, netmask, gateway, dns))
             return True
         else:
             return False
 
+    def active(self, is_active: bool) -> None:
+        self.network.active(is_active)
+
     def connect_status(self) -> int:
-        return self.wlan.status()
+        return self.network.status()
 
     def local_ip(self) -> str:
-        return self.wlan.ifconfig()[0]
+        return self.network.ifconfig()[0]
+
+    def status(self, param: str) -> int:
+        return self.network.status(param)
 
     def get_rssi(self) -> int:
-        return self.wlan.status("rssi")
+        if hasattr(self.network, "status"):
+            return self.network.status("rssi")
+        else:
+            return 0
 
 
 def _is_psram():
@@ -49,8 +79,14 @@ def startup(boot_opt, timeout: int = 60) -> None:
     M5.begin()
     # Read saved Wi-Fi information from NVS
     nvs = esp32.NVS("uiflow")
+    net_mode = nvs.get_str("net_mode")
     ssid = nvs.get_str("ssid0")
     pswd = nvs.get_str("pswd0")
+    eth_mode = nvs.get_str("eth_mode")
+    ip = nvs.get_str("ip_addr")
+    netmask = nvs.get_str("netmask")
+    gateway = nvs.get_str("gateway")
+    dns = nvs.get_str("dns")
     try:
         tz = nvs.get_str("tz")
         time.timezone(tz)
@@ -254,8 +290,8 @@ def startup(boot_opt, timeout: int = 60) -> None:
         elif board_id == M5.BOARD.M5StamPLC:
             from .stamplc import StampPLC_Startup
 
-            station = StampPLC_Startup()
-            station.startup(ssid, pswd, timeout)
+            plc = StampPLC_Startup()
+            plc.startup(net_mode, ssid, pswd, eth_mode, ip, netmask, gateway, dns, timeout)
 
         elif board_id == M5.BOARD.M5Tab5:
             from .tab5 import Tab5_Startup
