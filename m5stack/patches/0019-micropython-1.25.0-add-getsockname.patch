@@ -1,0 +1,44 @@
+Index: micropython/ports/esp32/modsocket.c
+===================================================================
+--- micropython.orig/ports/esp32/modsocket.c
++++ micropython/ports/esp32/modsocket.c
+@@ -776,6 +776,30 @@ static mp_obj_t socket_sendto(mp_obj_t s
+ }
+ static MP_DEFINE_CONST_FUN_OBJ_3(socket_sendto_obj, socket_sendto);
+ 
++static mp_obj_t socket_getpeername(const mp_obj_t arg0) {
++    socket_obj_t *self = MP_OBJ_TO_PTR(arg0);
++    struct sockaddr addr;
++    socklen_t addr_len = sizeof(addr);
++    lwip_getpeername(self->fd, &addr, &addr_len);
++    uint8_t *ip = (uint8_t *)&((struct sockaddr_in *)&addr)->sin_addr;
++    mp_uint_t port = lwip_ntohs(((struct sockaddr_in *)&addr)->sin_port);
++    mp_obj_tuple_t *client = mp_obj_new_tuple(2, NULL);
++    return netutils_format_inet_addr(ip, port, NETUTILS_BIG);
++}
++static MP_DEFINE_CONST_FUN_OBJ_1(socket_getpeername_obj, socket_getpeername);
++
++static mp_obj_t socket_getsockname(const mp_obj_t arg0) {
++    socket_obj_t *self = MP_OBJ_TO_PTR(arg0);
++    struct sockaddr addr;
++    socklen_t addr_len = sizeof(addr);
++    lwip_getsockname(self->fd, &addr, &addr_len);
++    uint8_t *ip = (uint8_t *)&((struct sockaddr_in *)&addr)->sin_addr;
++    mp_uint_t port = lwip_ntohs(((struct sockaddr_in *)&addr)->sin_port);
++    mp_obj_tuple_t *client = mp_obj_new_tuple(2, NULL);
++    return netutils_format_inet_addr(ip, port, NETUTILS_BIG);
++}
++static MP_DEFINE_CONST_FUN_OBJ_1(socket_getsockname_obj, socket_getsockname);
++
+ static mp_obj_t socket_fileno(const mp_obj_t arg0) {
+     socket_obj_t *self = MP_OBJ_TO_PTR(arg0);
+     return mp_obj_new_int(self->fd);
+@@ -898,6 +922,8 @@ static const mp_rom_map_elem_t socket_lo
+     { MP_ROM_QSTR(MP_QSTR_setblocking), MP_ROM_PTR(&socket_setblocking_obj) },
+     { MP_ROM_QSTR(MP_QSTR_makefile), MP_ROM_PTR(&socket_makefile_obj) },
+     { MP_ROM_QSTR(MP_QSTR_fileno), MP_ROM_PTR(&socket_fileno_obj) },
++    { MP_ROM_QSTR(MP_QSTR_getpeername), MP_ROM_PTR(&socket_getpeername_obj) },
++    { MP_ROM_QSTR(MP_QSTR_getsockname), MP_ROM_PTR(&socket_getsockname_obj) },
+ 
+     { MP_ROM_QSTR(MP_QSTR_read), MP_ROM_PTR(&mp_stream_read_obj) },
+     { MP_ROM_QSTR(MP_QSTR_readinto), MP_ROM_PTR(&mp_stream_readinto_obj) },

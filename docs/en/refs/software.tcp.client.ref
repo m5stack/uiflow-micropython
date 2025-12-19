@@ -4,7 +4,7 @@
 .. |read.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/read.png
 .. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/recv.png
 .. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/send.png
-.. .. |setsockopt.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/setsockopt.png
+.. |setsockopt.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/setsockopt.png
 .. |write.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/write.png
 .. |readline.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/readline.png
 .. |setblocking.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/tcp/client/setblocking.png
