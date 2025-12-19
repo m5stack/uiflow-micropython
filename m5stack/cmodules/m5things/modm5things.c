@@ -16,6 +16,7 @@
 extern volatile m5things_status_t m5things_cnct_status;
 extern volatile m5things_info_t m5things_info;
 extern volatile char pair_code[16];
+extern volatile char alias_name[32];
 
 static mp_obj_t m5things_status() {
     return mp_obj_new_int(m5things_cnct_status);
@@ -41,6 +42,11 @@ static mp_obj_t m5things_paircode() {
 }
 static MP_DEFINE_CONST_FUN_OBJ_0(m5things_paircode_obj, m5things_paircode);
 
+static mp_obj_t m5things_nick_name() {
+    return mp_obj_new_str((const char *)alias_name, strlen((const char *)alias_name));
+}
+static MP_DEFINE_CONST_FUN_OBJ_0(nick_name_obj, m5things_nick_name);
+
 static const mp_rom_map_elem_t m5things_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR___name__), MP_ROM_QSTR(MP_QSTR_M5Things) },
 
@@ -48,6 +54,7 @@ static const mp_rom_map_elem_t m5things_globals_table[] = {
     { MP_ROM_QSTR(MP_QSTR_status),  MP_ROM_PTR(&m5things_status_obj) },
     { MP_ROM_QSTR(MP_QSTR_info),  MP_ROM_PTR(&m5things_info_obj) },
     { MP_ROM_QSTR(MP_QSTR_paircode),  MP_ROM_PTR(&m5things_paircode_obj) },
+    { MP_ROM_QSTR(MP_QSTR_nick_name),  MP_ROM_PTR(&nick_name_obj) },
 };
 static MP_DEFINE_CONST_DICT(mp_module_m5things_globals, m5things_globals_table);
 

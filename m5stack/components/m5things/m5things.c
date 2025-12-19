@@ -92,6 +92,7 @@ esp_mqtt_client_handle_t m5things_mqtt_client = NULL;
 volatile m5things_status_t m5things_cnct_status = M5THING_STATUS_STANDBY;
 volatile m5things_info_t m5things_info;
 volatile char pair_code[16] = {0};
+volatile char alias_name[32] = {0};
 
 /** local variables */
 
@@ -1761,6 +1762,17 @@ int8_t mqtt_paircode_process(
     if (strcmp(code->valuestring, pair_code) != 0) {
         memset(pair_code, 0x00, sizeof(pair_code));
         memcpy(pair_code, code->valuestring, strlen(code->valuestring));
+    }
+
+    cJSON *name = cJSON_GetObjectItemCaseSensitive(data, "name");
+    if (name != NULL && !cJSON_IsNull(name)) {
+        ESP_LOGI(TAG, "New Device Name data: %s", name->valuestring);
+        ESP_LOGI(TAG, "Old Device Name data: %s", alias_name);
+
+        if (strcmp(name->valuestring, alias_name) != 0) {
+            memset(alias_name, 0x00, sizeof(alias_name));
+            memcpy(alias_name, name->valuestring, strlen(name->valuestring));
+        }
     }
 
     ESP_LOGI(TAG, "Result: %s(%d)", result_dsc[-ret], ret);
