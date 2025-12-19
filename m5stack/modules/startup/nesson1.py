@@ -738,24 +738,28 @@ class SetupApp(AppBase):
                     if M5Things.status() == 2:
                         if M5Things.paircode() != "":
                             self._state = self._STATE_SERVER_OK
+                            self._pair_code = M5Things.paircode()
+                            self._nick_name = M5Things.nick_name()
                             self._bg_img.set_src(SETUP_SERVER_OK_IMG)
 
                             self._net_status_img = widgets.Image(use_sprite=False)
                             self._net_status_img.set_x(98)
-                            self._net_status_img.set_y(2)
+                            self._net_status_img.set_y(27)
                             self._net_status_img.set_size(34, 24)
                             self._net_status_img.set_src(WIFI_OK_IMG)
+                            self._net_status = True
 
                             self._server_status_img = widgets.Image(use_sprite=False)
                             self._server_status_img.set_x(98)
-                            self._server_status_img.set_y(30)
+                            self._server_status_img.set_y(55)
                             self._server_status_img.set_size(34, 24)
                             self._server_status_img.set_src(SERVER_OK_IMG)
+                            self._server_status = True
 
                             self._pair_code_label = widgets.Label(
-                                M5Things.paircode(),
+                                self._pair_code,
                                 67,
-                                185,
+                                153,
                                 w=103,
                                 h=29,
                                 font_align=widgets.Label.CENTER_ALIGNED,
@@ -763,7 +767,19 @@ class SetupApp(AppBase):
                                 bg_color=0xCBDFE0,
                                 font=M5.Lcd.FONTS.DejaVu24,
                             )
-                            self._pair_code_label.set_text(M5Things.paircode())
+                            self._nick_name_label = widgets.Label(
+                                self._nick_name,
+                                67,
+                                103,
+                                w=129,
+                                h=29,
+                                font_align=widgets.Label.CENTER_ALIGNED,
+                                fg_color=0x000000,
+                                bg_color=0xCBDFE0,
+                                font=M5.Lcd.FONTS.DejaVu24,
+                            )
+                            self._nick_name_label.set_long_mode(self._nick_name_label.LONG_DOT)
+                            self._pair_code_label.set_text(self._pair_code)
                     elif M5Things.status() > 2:
                         self._state = self._STATE_SERVER_NG
                         self._bg_img.set_src(SETUP_SERVER_NG_IMG)
@@ -776,7 +792,27 @@ class SetupApp(AppBase):
                     self._state = self._STATE_WIFI_OK
 
             if self._state == self._STATE_SERVER_OK:
-                pass
+                t = self._wifi.connect_status() == network.STAT_GOT_IP
+                if t != self._net_status:
+                    self._net_status = t
+                    self._net_status_img.set_src(WIFI_OK_IMG if self._net_status else NG_IMG)
+
+                t = M5Things.status() == 2
+                if t != self._server_status:
+                    self._server_status = t
+                    self._server_status_img.set_src(
+                        SERVER_OK_IMG if self._server_status else NG_IMG
+                    )
+
+                t = M5Things.nick_name()
+                if t != self._nick_name:
+                    self._nick_name = t
+                    self._nick_name_label.set_text(t)
+
+                t = M5Things.paircode()
+                if t != self._pair_code:
+                    self._pair_code = t
+                    self._pair_code_label.set_text(t)
 
             await asyncio.sleep_ms(100)
 
@@ -816,6 +852,7 @@ class CloudApp(AppBase):
         self._server = None
         self._wifi_status = False
         self._cloud_status = False
+        self._nick_name = ""
         self._pair_code = ""
 
     def _get_wifi_status(self) -> bool:
@@ -836,20 +873,20 @@ class CloudApp(AppBase):
 
         self._net_status_img = widgets.Image(use_sprite=False)
         self._net_status_img.set_x(98)
-        self._net_status_img.set_y(2)
+        self._net_status_img.set_y(27)
         self._net_status_img.set_size(34, 24)
         self._net_status_img.set_src(NG_IMG)
 
         self._server_status_img = widgets.Image(use_sprite=False)
         self._server_status_img.set_x(98)
-        self._server_status_img.set_y(30)
+        self._server_status_img.set_y(55)
         self._server_status_img.set_size(34, 24)
         self._server_status_img.set_src(NG_IMG)
 
         self._pair_code_label = widgets.Label(
-            str(""),
+            self._pair_code,
             67,
-            185,
+            153,
             w=103,
             h=29,
             font_align=widgets.Label.CENTER_ALIGNED,
@@ -858,10 +895,24 @@ class CloudApp(AppBase):
             font=M5.Lcd.FONTS.DejaVu24,
         )
 
+        self._nick_name_label = widgets.Label(
+            self._nick_name,
+            67,
+            103,
+            w=129,
+            h=29,
+            font_align=widgets.Label.CENTER_ALIGNED,
+            fg_color=0x000000,
+            bg_color=0xCBDFE0,
+            font=M5.Lcd.FONTS.DejaVu24,
+        )
+        self._nick_name_label.set_long_mode(self._nick_name_label.LONG_DOT)
+
     def on_view(self):
         self._net_status_img.set_src(WIFI_OK_IMG if self._get_wifi_status() else NG_IMG)
         self._server_status_img.set_src(SERVER_OK_IMG if self._get_cloud_status() else NG_IMG)
         self._pair_code_label.set_text(self._pair_code)
+        self._nick_name_label.set_text(self._nick_name)
 
     async def on_run(self):
         while True:
@@ -876,6 +927,11 @@ class CloudApp(AppBase):
                 self._server_status_img.set_src(SERVER_OK_IMG if t else NG_IMG)
 
             if _HAS_SERVER:
+                t = M5Things.nick_name()
+                if t != self._nick_name:
+                    self._nick_name = t
+                    self._nick_name_label.set_text(t)
+
                 t = M5Things.paircode()
                 if t != self._pair_code:
                     self._pair_code = t
