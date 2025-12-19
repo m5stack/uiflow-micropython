@@ -241,6 +241,8 @@ class TCA8418:
     _TCA8418_REG_INTEN1 = micropython.const(0x1A)
     _TCA8418_REG_KPGPIO1 = micropython.const(0x1D)
     _TCA8418_REG_GPIOINTSTAT1 = micropython.const(0x11)
+    _TCA8418_REG_GPIOINTSTAT2 = micropython.const(0x12)
+    _TCA8418_REG_GPIOINTSTAT3 = micropython.const(0x13)
 
     _TCA8418_REG_EVTMODE1 = micropython.const(0x20)
     _TCA8418_REG_GPIODIR1 = micropython.const(0x23)
@@ -291,6 +293,14 @@ class TCA8418:
         self.enable_int = TCA8418_register(self, self._TCA8418_REG_INTEN1, initial_value=0)
         self.gpio_int_status = TCA8418_register(
             self, self._TCA8418_REG_GPIOINTSTAT1, read_only=True
+        )
+        _ = self.gpio_int_status  # read to clear
+        self.gpio_int_status = TCA8418_register(
+            self, self._TCA8418_REG_GPIOINTSTAT2, read_only=True
+        )
+        _ = self.gpio_int_status  # read to clear
+        self.gpio_int_status = TCA8418_register(
+            self, self._TCA8418_REG_GPIOINTSTAT3, read_only=True
         )
         _ = self.gpio_int_status  # read to clear
 
