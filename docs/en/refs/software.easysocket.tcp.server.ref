@@ -1,0 +1,24 @@
+
+.. |check_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/check_event.png
+.. |close.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/close.png
+.. |on_client_connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/connect_callback.png
+.. |cores3_simple_server_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/cores3_simple_server_example.png
+.. |on_client_disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/disconnect_callback.png
+.. |get_sessions.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/get_sessions.png
+.. |getpeername.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/getpeername.png
+.. |getsockname.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/getsockname.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/init.png
+.. |on_data_received.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/received_callback.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/send.png
+.. |sendall.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/sendall.png
+.. |start.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/start.png
+.. |stop.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_tcp/server/stop.png
+
+.. |cores3_simple_server_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/easysocket/tcp_server/cores3_simple_server_example.m5f2"
+        target="_blank"
+    >
+        cores3_simple_server_example.m5f2
+    </a>

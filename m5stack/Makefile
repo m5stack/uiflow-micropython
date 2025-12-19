@@ -327,7 +327,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0015-micropython-1.25.0-fix-hostname.patch          \
 	0016-micropython-1.25.0-fix-mpnimbleport.patch      \
 	0017-micropython-1.25.0-add-uart-mode.patch         \
-	0018-micropython-1.25.0-support-esp-idf-v5.4.2.patch
+	0018-micropython-1.25.0-support-esp-idf-v5.4.2.patch \
+	0019-micropython-1.25.0-add-getsockname.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1004-idf_v5.4_freertos.patch
