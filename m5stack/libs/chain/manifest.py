@@ -11,6 +11,7 @@ package(
         "chain.py",
         "joystick.py",
         "key.py",
+        "tof.py",
     ),
     base_path="..",
     opt=0,

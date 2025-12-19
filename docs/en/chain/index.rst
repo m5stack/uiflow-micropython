@@ -9,3 +9,4 @@ Chain
     chainbus.rst
     joystick.rst
     key.rst
+    tof.rst

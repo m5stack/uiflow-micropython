@@ -8,6 +8,7 @@ _attrs = {
     "EncoderChain": "encoder",
     "JoystickChain": "joystick",
     "KeyChain": "key",
+    "ToFChain": "tof",
 }
 
 
