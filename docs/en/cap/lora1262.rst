@@ -1,0 +1,124 @@
+LoRa1262 Cap
+============
+
+.. sku: U214
+
+.. include:: ../refs/cap.lora1262.ref
+
+Cap LoRa1262 is a high-performance LoRa communication and GNSS global navigation expansion module designed for the Cardputer-Adv.
+
+Support the following products:
+
+    |LoRa1262Cap|
+
+UiFlow2 Example
+---------------
+
+Sender
+^^^^^^
+
+Open the |cardputer_adv_lora1262_cap_sender_example.m5f2| project in UiFlow2.
+
+Use the keyboard to enter the text you want to send and press ENTER to send it.
+
+UiFlow2 Code Block:
+
+    |cardputer_adv_lora1262_cap_sender_example.png|
+
+Example output:
+
+    None
+
+Receiver
+^^^^^^^^
+
+Open the |cardputer_adv_lora1262_cap_receiver_example.m5f2| project in UiFlow2.
+
+This example receives and displays data.
+
+UiFlow2 Code Block:
+
+    |cardputer_adv_lora1262_cap_receiver_example.png|
+
+Example output:
+
+    None
+
+GPS Usage
+^^^^^^^^^
+
+Open the |cardputer_adv_lora1262_cap_gps_example.m5f2| project in UiFlow2.
+
+This example demonstrates how to use the GPS functionality of the LoRa1262 Cap.
+
+UiFlow2 Code Block:
+
+    |cardputer_adv_lora1262_cap_gps_example.png|
+
+Example output:
+
+    None
+
+
+MicroPython Example
+-------------------
+
+Sender
+^^^^^^
+
+Use the keyboard to enter the text you want to send and press ENTER to send it.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/cap/lora1262/cardputer_adv_lora1262_cap_sender_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+Receiver
+^^^^^^^^
+
+This example receives and displays data.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/cap/lora1262/cardputer_adv_lora1262_cap_receiver_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+GPS Usage
+^^^^^^^^^
+
+This example demonstrates how to use the GPS functionality of the LoRa1262 Cap.
+
+MicroPython Code Block:
+
+   .. literalinclude:: ../../../examples/cap/lora1262/cardputer_adv_lora1262_cap_gps_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+**API**
+-------
+
+class LoRa1262Cap
+^^^^^^^^^^^^^^^^^
+
+.. autoclass:: cap.lora1262.LoRa1262Cap
+    :members:
+    :member-order: bysource
+
+class GPSCap
+^^^^^^^^^^^^
+
+please refer to the `GPSCap <lora868.html#cap.lora868.GPSCap>`_ class for GPS functionality.

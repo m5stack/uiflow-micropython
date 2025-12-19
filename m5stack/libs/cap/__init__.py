@@ -4,6 +4,7 @@
 
 _attrs = {
     "LoRa868Cap": "lora868",
+    "LoRa1262Cap": "lora1262",
     "GPSCap": "lora868",
 }
 
