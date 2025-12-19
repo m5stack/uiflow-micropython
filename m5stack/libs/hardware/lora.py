@@ -73,7 +73,7 @@ class LoRa:
         self.modem.configure(lora_cfg)
 
     def set_sf(self, sf: int) -> None:
-        self._validate_range(sf, 7, 12)
+        self._validate_range(sf, 6, 12)
         lora_cfg = {"sf": sf}
         self.modem.configure(lora_cfg)
 
@@ -89,12 +89,12 @@ class LoRa:
         self.modem.configure(lora_cfg)
 
     def set_syncword(self, syncword: int) -> None:
-        self._validate_range(syncword, 0, 0xFF)
+        self._validate_range(syncword, 1, 255)
         lora_cfg = {"syncword": syncword}
         self.modem.configure(lora_cfg)
 
     def set_preamble_len(self, preamble_len: int) -> None:
-        self._validate_range(preamble_len, 6, 65535)
+        self._validate_range(preamble_len, 5, 255)
         lora_cfg = {"preamble_len": preamble_len}
         self.modem.configure(lora_cfg)
 

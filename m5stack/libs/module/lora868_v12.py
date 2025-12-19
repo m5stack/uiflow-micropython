@@ -29,9 +29,9 @@ class LoRa868V12Module:
         - ``"125"``: 125 KHz
         - ``"250"``: 250 KHz
         - ``"500"``: 500 KHz
-    :param int sf: Spreading factor, range from 7 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
+    :param int sf: Spreading factor, range from 6 to 12. Higher spreading factors allow reception of weaker signals but with slower data rates.
     :param int coding_rate: Forward Error Correction (FEC) coding rate expressed as 4/N, with a range from 5 to 8.
-    :param int preamble_len: Length of the preamble sequence in symbols, range from 0 to 255.
+    :param int preamble_len: Length of the preamble sequence in symbols, range from 5 to 255.
     :param int syncword: Sync word to mark the start of the data frame, default is 0x12.
     :param int output_power: Output power in dBm, range from -9 to 22.
 
@@ -128,7 +128,7 @@ class LoRa868V12Module:
     def set_sf(self, sf: int) -> None:
         """Set spreading factor (SF).
 
-        :param int sf: Spreading factor (7 ~ 12)
+        :param int sf: Spreading factor (6 ~ 12)
 
         UiFlow2 Code Block:
 
@@ -140,7 +140,7 @@ class LoRa868V12Module:
 
                 module_lora868v12_0.set_sf(7)
         """
-        self._validate_range(sf, 7, 12)
+        self._validate_range(sf, 6, 12)
         lora_cfg = {"sf": sf}
         self.modem.configure(lora_cfg)
 
@@ -188,7 +188,7 @@ class LoRa868V12Module:
     def set_syncword(self, syncword: int) -> None:
         """Set syncword.
 
-        :param int syncword: Sync word (0 ~ 0xFF)
+        :param int syncword: Sync word (1 ~ 255)
 
         UiFlow2 Code Block:
 
@@ -200,14 +200,14 @@ class LoRa868V12Module:
 
                 module_lora868v12_0.set_syncword(syncword)
         """
-        self._validate_range(syncword, 0, 0xFF)
+        self._validate_range(syncword, 1, 255)
         lora_cfg = {"syncword": syncword}
         self.modem.configure(lora_cfg)
 
     def set_preamble_len(self, preamble_len: int) -> None:
         """Set preamble length.
 
-        :param int preamble_len: Preamble length, range: 0~255.
+        :param int preamble_len: Preamble length, range: 5~255.
 
         UiFlow2 Code Block:
 
@@ -219,7 +219,7 @@ class LoRa868V12Module:
 
                 module_lora868v12_0.set_preamble_len(preamble_len)
         """
-        self._validate_range(preamble_len, 6, 65535)
+        self._validate_range(preamble_len, 5, 255)
         lora_cfg = {"preamble_len": preamble_len}
         self.modem.configure(lora_cfg)
 

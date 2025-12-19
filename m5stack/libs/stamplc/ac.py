@@ -43,8 +43,13 @@ class ACStamPLC:
         # Enable pull-up for output pins (optional, for better signal stability)
         self.write_reg(self.PI4IO_REG_PULL_SEL, self.output_mask)
         self.write_reg(self.PI4IO_REG_PULL_EN, self.output_mask)
-        # Initialize all outputs to LOW (relay off, LEDs off)
-        self.write_reg(self.PI4IO_REG_OUT_SET, 0x00)
+        # Initialize: relay off (LOW), LEDs off (HIGH due to inverted logic)
+        init_mask = (
+            (1 << self.PIN_LED_R)  # LED pins HIGH = off
+            | (1 << self.PIN_LED_G)
+            | (1 << self.PIN_LED_B)
+        )
+        self.write_reg(self.PI4IO_REG_OUT_SET, init_mask)
 
     def write_reg(self, reg, value):
         """Write a value to PI4IOE register
