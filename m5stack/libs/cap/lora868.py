@@ -139,7 +139,7 @@ class LoRa868Cap:
             raise ValueError(f"Invalid bandwidth {bw}")
 
         self._i2c = machine.I2C(
-            0,
+            1,
             scl=machine.Pin(self._port.i2c_scl),
             sda=machine.Pin(self._port.i2c_sda),
             freq=100000,

@@ -44,7 +44,7 @@ msgstr ""
 
 #: ../../en/cap/lora868.rst:15 ba3ef3254b4d42178e1fe2a2a1873d12
 msgid "UiFlow2 Example"
-msgstr ""
+msgstr "UIFLOW2 应用示例"
 
 #: ../../en/cap/lora868.rst:18 ../../en/cap/lora868.rst:67
 #: 48241198995441c085c1bf1d8236a3a1 6f98111c025f493f961b3c9dd9ae5418

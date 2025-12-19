@@ -7,6 +7,7 @@ package(
     (
         "__init__.py",
         "lora868.py",
+        "lora1262.py",
     ),
     base_path="..",
     opt=0,

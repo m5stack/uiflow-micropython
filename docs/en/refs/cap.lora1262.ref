@@ -1,0 +1,71 @@
+.. |LoRa1262Cap| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1177/Cap_LoRa868_01.webp
+    :target: https://docs.m5stack.com/en/cap/Cap_LoRa868
+    :height: 200px
+    :width: 200px
+
+.. |cardputer_adv_lora1262_cap_gps_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/cardputer_adv_lora1262_cap_gps_example.png
+.. |cardputer_adv_lora1262_cap_receiver_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/cardputer_adv_lora1262_cap_receiver_example.png
+.. |cardputer_adv_lora1262_cap_sender_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/cardputer_adv_lora1262_cap_sender_example.png
+
+.. |deinit.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/deinit.png
+.. |get_altitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_altitude.png
+.. |get_corse_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_corse_over_ground.png
+.. |get_gps_date.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_gps_date.png
+.. |get_gps_date_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_gps_date_time.png
+.. |get_gps_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_gps_time.png
+.. |get_latitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_latitude.png
+.. |get_longitude.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_longitude.png
+.. |get_pos_quality.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_pos_quality.png
+.. |get_satellite_num.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_satellite_num.png
+.. |get_speed_over_ground.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_speed_over_ground.png
+.. |get_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_time_zone.png
+.. |get_timestamp.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_timestamp.png
+.. |get_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/get_work_mode.png
+.. |gps_init.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/gps_init.png
+.. |irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/irq_triggered.png
+.. |lora_init.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/lora_init.png
+.. |recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/recv.png
+.. |recv_data_param.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/recv_data_param.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/send.png
+.. |send_return.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/send_return.png
+.. |send_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/send_time.png
+.. |set_bw.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_bw.png
+.. |set_coding_rate.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_coding_rate.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_freq.png
+.. |set_irq_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_irq_callback.png
+.. |set_output_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_output_power.png
+.. |set_preamble_len.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_preamble_len.png
+.. |set_sf.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_sf.png
+.. |set_syncword.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_syncword.png
+.. |set_time_zone.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_time_zone.png
+.. |set_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/set_work_mode.png
+.. |sleep.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/sleep.png
+.. |standby.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/standby.png
+.. |start_recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/lora1262/start_recv.png
+
+.. |cardputer_adv_lora1262_cap_gps_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/lora1262/cardputer_adv_lora1262_cap_gps_example.m5f2"
+        target="_blank"
+    >
+        cardputer_adv_lora1262_cap_gps_example.m5f2
+    </a>
+
+.. |cardputer_adv_lora1262_cap_receiver_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/lora1262/cardputer_adv_lora1262_cap_receiver_example.m5f2"
+        target="_blank"
+    >
+        cardputer_adv_lora1262_cap_receiver_example.m5f2
+    </a>
+
+.. |cardputer_adv_lora1262_cap_sender_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/lora1262/cardputer_adv_lora1262_cap_sender_example.m5f2"
+        target="_blank"
+    >
+        cardputer_adv_lora1262_cap_sender_example.m5f2
+    </a>

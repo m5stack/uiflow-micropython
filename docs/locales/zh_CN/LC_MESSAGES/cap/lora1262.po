@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-19 15:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/cap/lora1262.rst:2 9211aa2408a44edca333c4d60a0b9165
+msgid "LoRa1262 Cap"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:8 2a5f29f9213a48998322fd04069ebfa7
+msgid ""
+"Cap LoRa1262 is a high-performance LoRa communication and GNSS global "
+"navigation expansion module designed for the Cardputer-Adv."
+msgstr "Cap LoRa1262 是一款专为 Cardputer-Adv 设计的高性能 LoRa 通信和 GNSS 全球导航扩展模块。"
+
+#: ../../en/cap/lora1262.rst:10 5cc2031705a448bb833f29a16704ef29
+msgid "Support the following products:"
+msgstr "支持以下产品:"
+
+#: ../../en/cap/lora1262.rst:12 7a09d1f3d5b4452b93ba7c486884397b
+msgid "|LoRa1262Cap|"
+msgstr ""
+
+#: ../../en/refs/cap.lora1262.ref 4d9de2ff3cb54199b37dab9fd51607a6
+msgid "LoRa1262Cap"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:15 9f063e4750134cf899a345c1cb7efe4b
+msgid "UiFlow2 Example"
+msgstr "UIFLOW2 应用示例"
+
+#: ../../en/cap/lora1262.rst:18 ../../en/cap/lora1262.rst:67
+#: d1d81b448b944827b76c2eece01805ec d5a8f4c848a4413e9adfddacdc0ffc23
+msgid "Sender"
+msgstr "发送端"
+
+#: ../../en/cap/lora1262.rst:20 8fe49ddadf9342fb878dd5f37524432f
+msgid ""
+"Open the |cardputer_adv_lora1262_cap_sender_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardputer_adv_lora1262_cap_sender_example.m5f2| 项目。"
+
+#: ../../en/cap/lora1262.rst:22 ../../en/cap/lora1262.rst:69
+#: be644509c8d846b39df1258cc97f7a16 e30bd39dc8a44d4d83d6f4b853252584
+msgid ""
+"Use the keyboard to enter the text you want to send and press ENTER to "
+"send it."
+msgstr "使用键盘输入要发送的文本，然后按 ENTER 键发送。"
+
+#: ../../en/cap/lora1262.rst:24 ../../en/cap/lora1262.rst:39
+#: ../../en/cap/lora1262.rst:54 4cff11aa71234b3385a3127026392fdd
+#: 849666af786a460aa454fda6486b17c5 cd2c2aefee634a6ba1d0630014e26e0d
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/cap/lora1262.rst:26 55e2dea2f2b04156b0027543337688e0
+msgid "|cardputer_adv_lora1262_cap_sender_example.png|"
+msgstr ""
+
+#: ../../en/refs/cap.lora1262.ref:8 987f28b9c9dc49068fd58cb64925a8a3
+msgid "cardputer_adv_lora1262_cap_sender_example.png"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:28 ../../en/cap/lora1262.rst:43
+#: ../../en/cap/lora1262.rst:58 ../../en/cap/lora1262.rst:77
+#: ../../en/cap/lora1262.rst:92 ../../en/cap/lora1262.rst:107
+#: 732655c43dce43969d7d68b50c0293d6 7499e6ac4ee04d60baf1e5c9491fb80c
+#: 80abe7e9e0c74b3f8fee1f40e505b6b0 8e4c9fea66654ca4865140f1fecb36bd
+#: 96fd75dbe344435eb8f93aff5ae2d168 b35f765f30874c2c9b92f57d26ecdfc5
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/cap/lora1262.rst:30 ../../en/cap/lora1262.rst:45
+#: ../../en/cap/lora1262.rst:60 ../../en/cap/lora1262.rst:79
+#: ../../en/cap/lora1262.rst:94 ../../en/cap/lora1262.rst:109
+#: 29841c7ee7044a619f1df80ab3e604c5 51f58d05e8174aaba43f8b8ed4bac260
+#: 54a2a13c51634d0491893e73ae15fbd0 90e52c3bb71b4fcb9fdd17f0a0714f88
+#: 9f699363619c4e0caa5a07f6c4c4bc8c d4ea8e72e7a54b0b91d007917973aea7
+msgid "None"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:33 ../../en/cap/lora1262.rst:82
+#: 941951c8eb424ea392ec476c77de26ce b88a65753ddc42eb9259bdbd9d8f3bb2
+msgid "Receiver"
+msgstr "接收端"
+
+#: ../../en/cap/lora1262.rst:35 39e6499568774fb78ec8aff5eba53992
+msgid ""
+"Open the |cardputer_adv_lora1262_cap_receiver_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardputer_adv_lora1262_cap_receiver_example.m5f2| 项目。"
+
+#: ../../en/cap/lora1262.rst:37 ../../en/cap/lora1262.rst:84
+#: 7f15d08f3c4f485eb998af470b580bf7 c0a7883f9d5a4ab087aecb82b5d57ab1
+msgid "This example receives and displays data."
+msgstr "此示例接收并显示数据。"
+
+#: ../../en/cap/lora1262.rst:41 235bacad3a044154a638926712873e02
+msgid "|cardputer_adv_lora1262_cap_receiver_example.png|"
+msgstr ""
+
+#: ../../en/refs/cap.lora1262.ref:7 31c3f166945842d38fb14bb2098ca1b4
+msgid "cardputer_adv_lora1262_cap_receiver_example.png"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:48 ../../en/cap/lora1262.rst:97
+#: 6de89c657ae84f9f9cb12063ab205da4 e0bdefaeac8f48fabdf41924ba149e01
+msgid "GPS Usage"
+msgstr "GPS 使用"
+
+#: ../../en/cap/lora1262.rst:50 1e060e81e7794f61bcc7c87a70320fd4
+msgid "Open the |cardputer_adv_lora1262_cap_gps_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cardputer_adv_lora1262_cap_gps_example.m5f2| 项目。"
+
+#: ../../en/cap/lora1262.rst:52 ../../en/cap/lora1262.rst:99
+#: af85a4ff80eb4439b343484e87449375 d0741c331ad74ab5a2cf972335988477
+msgid ""
+"This example demonstrates how to use the GPS functionality of the "
+"LoRa1262 Cap."
+msgstr "此示例演示如何使用 LoRa1262 Cap 的 GPS 功能。"
+
+#: ../../en/cap/lora1262.rst:56 ecc2471e90a348df8ccfadbd4c93016e
+msgid "|cardputer_adv_lora1262_cap_gps_example.png|"
+msgstr ""
+
+#: ../../en/refs/cap.lora1262.ref:6 bf244697c99346e995b72c3ae834d36c
+msgid "cardputer_adv_lora1262_cap_gps_example.png"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:64 5e12a5df740e49c1832a3c38d6796599
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../en/cap/lora1262.rst:71 ../../en/cap/lora1262.rst:86
+#: ../../en/cap/lora1262.rst:101 1ef78c734478478f9a692afdf1c127bc
+#: 55318258b21c4f9ea5d5fa48b9d1e6d0 6665dca0df664aa6bbeb2b66fd02f709
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/cap/lora1262.rst:112 61873496744f409b8cb2f56f6b1ae05f
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/cap/lora1262.rst:115 206ddde756a44a82bc365ce823e7fd7b
+msgid "class LoRa1262Cap"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:122 173fcce472034dc692b5004b83b4e7db
+msgid "class GPSCap"
+msgstr ""
+
+#: ../../en/cap/lora1262.rst:124 ac02c26bd84f4bea92988285330d31aa
+msgid ""
+"please refer to the `GPSCap <lora868.html#cap.lora868.GPSCap>`_ class for"
+" GPS functionality."
+msgstr "有关 GPS 功能，请参阅 `GPSCap <lora868.html#cap.lora868.GPSCap>`_ 类。"
+
