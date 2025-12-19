@@ -24,6 +24,8 @@ class NetworkStatus:
     RSSI_MID = 2
     RSSI_WORSE = 3
     DISCONNECTED = 4
+    ETH_CONNECTED = 5
+    ETH_DISCONNECTED = 6
 
 
 class CloudStatus:
@@ -38,6 +40,8 @@ _WIFI_STATUS_ICO = {
     NetworkStatus.RSSI_MID: res.WIFI_MID_IMG,
     NetworkStatus.RSSI_WORSE: res.WIFI_WORSE_IMG,
     NetworkStatus.DISCONNECTED: res.WIFI_DISCONNECTED_IMG,
+    NetworkStatus.ETH_CONNECTED: res.ETHERNET_ONLINE_IMG,
+    NetworkStatus.ETH_DISCONNECTED: res.ETHERNET_OFFLINE_IMG,
 }
 
 _CLOUD_STATUS_ICOS = {
@@ -48,8 +52,8 @@ _CLOUD_STATUS_ICOS = {
 
 
 class StatusBarApp(app_base.AppBase):
-    def __init__(self, icos: dict, wifi) -> None:
-        self._wifi = wifi
+    def __init__(self, icos: dict, net_if) -> None:
+        self._net_if = net_if
 
     def on_launch(self):
         self._time_text = self._get_local_time_text()
@@ -137,8 +141,8 @@ class StatusBarApp(app_base.AppBase):
         self._time_label.set_text("{:02d}:{:02d}".format(struct_time[3], struct_time[4]))
 
     def _update_wifi(self, status):
-        self._wifi_status = status
-        src = _WIFI_STATUS_ICO.get(self._wifi_status)
+        self._network_status = status
+        src = _WIFI_STATUS_ICO.get(self._network_status)
         M5.Lcd.drawImage(src.src, src.x, src.y)
 
     def _update_server(self, status):
@@ -152,17 +156,23 @@ class StatusBarApp(app_base.AppBase):
         return "{:02d}:{:02d}".format(struct_time[3], struct_time[4])
 
     def _get_network_status(self):
-        status = self._wifi.connect_status()
-        if status is network.STAT_GOT_IP:
-            rssi = self._wifi.get_rssi()
-            if rssi <= -80:
-                return NetworkStatus.RSSI_WORSE
-            elif rssi <= -60:
-                return NetworkStatus.RSSI_MID
+        status = self._net_if.connect_status()
+        if self._net_if.network_type == "WIFI":
+            if status == self._net_if.STAT_GOT_IP:
+                rssi = self._net_if.status("rssi")
+                if rssi <= -80:
+                    return NetworkStatus.RSSI_WORSE
+                elif rssi <= -60:
+                    return NetworkStatus.RSSI_MID
+                else:
+                    return NetworkStatus.RSSI_GOOD
             else:
-                return NetworkStatus.RSSI_GOOD
-        else:
-            return NetworkStatus.DISCONNECTED
+                return NetworkStatus.DISCONNECTED
+        elif self._net_if.network_type == "ETH":
+            if status == self._net_if.ETH_GOT_IP:
+                return NetworkStatus.ETH_CONNECTED
+            else:
+                return NetworkStatus.ETH_DISCONNECTED
 
     @staticmethod
     def _get_cloud_status():
