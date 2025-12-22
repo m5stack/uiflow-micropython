@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.  
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd  
+# This file is distributed under the same license as the UIFlow2 Programming  
+# Guide package.  
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.  
+#  
+#, fuzzy  
+msgid ""  
+msgstr ""  
+"Project-Id-Version: UIFlow2 Programming Guide \n"  
+"Report-Msgid-Bugs-To: \n"  
+"POT-Creation-Date: 2025-12-16 15:35+0800\n"  
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"  
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"  
+"Language: zh_CN\n"  
+"Language-Team: zh_CN <LL@li.org>\n"  
+"Plural-Forms: nplurals=1; plural=0;\n"  
+"MIME-Version: 1.0\n"  
+"Content-Type: text/plain; charset=utf-8\n"  
+"Content-Transfer-Encoding: 8bit\n"  
+"Generated-By: Babel 2.16.0\n"  
+  
+#: ../../en/refs/stamplc.poe.ref ../../en/stamplc/poe.rst:2  
+#: ../../en/stamplc/poe.rst:48 870143ad11fe4d2e95e47c661ac1be5e  
+#: 87dd1fdc11f74e8bb03a5958dfd073b4 ebb610598f204c899fc776604cb55e3a  
+msgid "StamPLC PoE"  
+msgstr "StamPLC PoE"  
+  
+#: ../../en/stamplc/poe.rst:6 5a4f31d5116947a6adce692ee1cd49f6  
+msgid "Supported Products:"  
+msgstr "支持下列产品："  
+  
+#: ../../en/stamplc/poe.rst:8 ccb3845b4f8d49f19a030437a8cacf75  
+msgid "|StamPLC PoE|"  
+msgstr ""  
+  
+#: ../../en/stamplc/poe.rst:11 983d1dd530dc4aabac52441053786c9a  
+msgid "UiFlow2 Example"  
+msgstr "UiFlow2 示例"  
+  
+#: ../../en/stamplc/poe.rst:14 ../../en/stamplc/poe.rst:30  
+#: 7d4b17401d074a80807d7a88eb80f219 889ad69b140849de9330901d0da51a8b  
+msgid "Get the weather"  
+msgstr "获取天气"  
+  
+#: ../../en/stamplc/poe.rst:16 ../../en/stamplc/poe.rst:32  
+#: 67d9bb0b3a71443e96e8d7c11267eb96 ac64dd9691d84bceb7a63a105ffae7f9  
+msgid ""  
+"This example connects to the network using the StamPLC PoE and sends an "  
+"HTTP request to query the geographical location of the current public IP "  
+"address."  
+msgstr "本示例使用 StamPLC PoE 连接网络，并发送 HTTP 请求以查询当前公网 IP 地址的地理位置。"  
+  
+#: ../../en/stamplc/poe.rst:18 c20589966a3c4897ad828ec86e993222  
+#: e9ae4431b4d740a0a8b09e4e8eb27923 of stamplc.poe.PoEStamPLC:7  
+msgid "UiFlow2 Code Block:"  
+msgstr "UiFlow2 代码块："  
+  
+#: ../../en/stamplc/poe.rst:20 8903d1312e804de081a5c9fc90a3a64e  
+msgid "|stamplc_poe_example.png|"  
+msgstr ""  
+  
+#: ../../en/refs/stamplc.poe.ref:7 60f9797602464bb19141647c366ddc8d  
+msgid "stamplc_poe_example.png"  
+msgstr ""  
+  
+#: ../../en/stamplc/poe.rst:22 ../../en/stamplc/poe.rst:40  
+#: 0ced811fee5e467cabda6b5ca13163a5 b638a82a95d34b749ccf81b667aa2210  
+msgid "Example output:"  
+msgstr "示例输出："  
+  
+#: ../../en/stamplc/poe.rst:24 ../../en/stamplc/poe.rst:42  
+#: ac521701485e4b9fba54b88b4cf7857d fcab01960ad1470dae95b780cebb720e  
+msgid "None"  
+msgstr ""  
+  
+#: ../../en/stamplc/poe.rst:27 d855378efec449d2a06b1a5989094f9f  
+msgid "MicroPython Example"  
+msgstr "MicroPython 示例"  
+  
+#: ../../en/stamplc/poe.rst:34 63c385fc5cd342f28edaed5437ded40a  
+#: bcdb8ad5fee143de87a14e4a2f9a3cd0 of stamplc.poe.PoEStamPLC:11  
+msgid "MicroPython Code Block:"  
+msgstr "MicroPython 代码块："  
+  
+#: ../../en/stamplc/poe.rst:45 cd2b256f6980431ab5cc691be00d1101  
+msgid "**API**"  
+msgstr ""  
+  
+#: 62940af935a8497580783fbb6e721a14 of stamplc.poe.PoEStamPLC:1  
+msgid "Bases: :py:class:`object`"  
+msgstr ""  
+  
+#: 38390bd3762b443a9ee146ced4599f52 of stamplc.poe.PoEStamPLC:1  
+msgid "Create an PoEStamPLC object"  
+msgstr "创建一个 PoEStamPLC 对象"  
+  
+#: 17b084b413954e39bed6ed0603a4dc5a of stamplc.poe.PoEStamPLC  
+msgid "Parameters"  
+msgstr "参数"  
+  
+#: 880377844baf43f89f3450b981979816 of stamplc.poe.PoEStamPLC:3  
+msgid "The chip select pin number."  
+msgstr "片选引脚编号。"  
+  
+#: f334225eca4d4e24a6de4727c7ba0603 of stamplc.poe.PoEStamPLC:4  
+msgid "The reset pin number."  
+msgstr "复位引脚编号。"  
+  
+#: bc6cb667247743c6896004dd0a2cb02a of stamplc.poe.PoEStamPLC:5  
+msgid "The interrupt pin number."  
+msgstr "中断引脚编号。"  
+  
+#: 67e770f14b8b49308d414c1175f6c48b of stamplc.poe.PoEStamPLC:9  
+msgid "|init.png|"  
+msgstr ""  
+  
+#: ../../en/refs/stamplc.poe.ref:6 3d175fad77364599841d58df739f6648  
+msgid "init.png"  
+msgstr ""  
+  
+#: ../../en/stamplc/poe.rst:53 52529d9d8dd94b6aa009d53df6c6c6d3  
+msgid "See :ref:`module.LAN.Methods <module.LAN.Methods>` for more APIs details."  
+msgstr "更多 API 详情请参考 :ref:`module.LAN.Methods <module.LAN.Methods>`。"
