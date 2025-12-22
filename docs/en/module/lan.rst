@@ -46,6 +46,8 @@ Example output:
 **API**
 -------
 
+.. _module.LAN.Methods:
+
 class LANModule
 ---------------
 
