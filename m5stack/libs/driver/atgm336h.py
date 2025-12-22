@@ -393,8 +393,6 @@ class ATGM336H:
     def _decode_gga(self, data: str):
         gps_list = data.split(",")
         self.pos_quality = gps_list[6]
-        if self.pos_quality == "0":
-            return
         self.satellite_num = gps_list[7]
         if gps_list[9]:
             self.altitude = gps_list[9] + gps_list[10]
