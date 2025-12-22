@@ -558,7 +558,7 @@ class KeyboardI2C:
 
         if self._intr_pin is not None:
             # self._intr_pin.init(machine.Pin.IN, pull=None)
-            self._intr_pin.irq(self._irq_handler, machine.Pin.IRQ_FALLING)
+            self._intr_pin.irq(self._irq_handler, machine.Pin.IRQ_FALLING | machine.Pin.IRQ_RISING)
 
         # turn on INT output pin
         self._tca.key_intenable = True
