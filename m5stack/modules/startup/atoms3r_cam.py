@@ -38,10 +38,28 @@ class AtomS3R_CAM_Startup(Startup):
         self.show_mac()
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
         self.show_mac()
 
-        if super().connect_network(ssid=ssid, pswd=pswd):
+        if super().connect_network(
+            ssid=ssid,
+            pswd=pswd,
+            protocol=protocol,
+            ip=ip,
+            netmask=netmask,
+            gateway=gateway,
+            dns=dns,
+        ):
             self.show_ssid(ssid)
             count = 1
             status = super().connect_status()

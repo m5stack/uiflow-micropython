@@ -14,11 +14,29 @@ class Capsule_Startup(StampS3_Startup):
     def __init__(self) -> None:
         super().__init__()
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
         self.show_mac()
         M5.Speaker.setVolumePercentage(1.0)
 
-        if super().connect_network(ssid=ssid, pswd=pswd):
+        if super().connect_network(
+            ssid=ssid,
+            pswd=pswd,
+            protocol=protocol,
+            ip=ip,
+            netmask=netmask,
+            gateway=gateway,
+            dns=dns,
+        ):
             print("Connecting to " + ssid + " ", end="")
             status = super().connect_status()
             self.rgb.set_brightness(60)

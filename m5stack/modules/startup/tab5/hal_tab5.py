@@ -156,9 +156,9 @@ class HALTab5(HALBase):
             self._save_network_config_to_nvs()
 
             # Reconnect
-            self._wifi.wlan.disconnect()
-            self._wifi.wlan.active(False)
-            self._wifi.wlan.active(True)
+            self._wifi.network.disconnect()
+            self._wifi.network.active(False)
+            self._wifi.network.active(True)
             self._wifi.connect_network(self._network_config.ssid, self._network_config.password)
 
     def get_py_app_list(self) -> list[str]:
@@ -189,7 +189,7 @@ class HALTab5(HALBase):
             reset()
 
     async def scan_wifi(self):
-        return self._wifi.wlan.scan()
+        return self._wifi.network.scan()
 
     def i2c_init(self):
         # self._i2c_0 = I2C(0, scl=Pin(32), sda=Pin(31),

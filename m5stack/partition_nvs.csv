@@ -2,7 +2,7 @@ key,type,encoding,value
 uiflow,namespace,,
 server,data,string,uiflow2.m5stack.com
 net_mode,data,string,WIFI
-eth_mode,data,string,DHCP
+protocol,data,string,DHCP
 ip_addr,data,string,
 netmask,data,string,
 gateway,data,string,

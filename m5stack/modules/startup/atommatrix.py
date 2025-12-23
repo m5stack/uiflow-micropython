@@ -38,10 +38,28 @@ class AtomMatrix_Startup(Startup):
     def show_error(self, ssid: str, error: str) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
         self.show_mac()
 
-        if super().connect_network(ssid=ssid, pswd=pswd):
+        if super().connect_network(
+            ssid=ssid,
+            pswd=pswd,
+            protocol=protocol,
+            ip=ip,
+            netmask=netmask,
+            gateway=gateway,
+            dns=dns,
+        ):
             print("Connecting to " + ssid + " ", end="")
             status = super().connect_status()
             self.rgb.set_brightness(60)

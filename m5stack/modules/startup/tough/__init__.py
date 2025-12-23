@@ -21,8 +21,20 @@ class Tough_Startup:
         self._wlan = Startup()
         # self._status_bar = StatusBarApp(None, self._wifi)
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
-        self._wlan.connect_network(ssid, pswd)
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
+        self._wlan.connect_network(
+            ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
+        )
         M5.Lcd.drawImage("/system/tough/boot.png", 0, 0)
         time.sleep(0.2)
 
