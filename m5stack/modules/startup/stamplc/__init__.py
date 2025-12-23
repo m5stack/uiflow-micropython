@@ -26,7 +26,7 @@ class StampPLC_Startup:
         net_mode: str = "WIFI",
         ssid: str = "",
         pswd: str = "",
-        eth_mode: str = "",
+        protocol: str = "",
         ip: str = "",
         netmask: str = "",
         gateway: str = "",
@@ -35,12 +35,14 @@ class StampPLC_Startup:
     ) -> None:
         self._net_if = Startup(network_type=net_mode)  # type: ignore
         if net_mode == "WIFI":
-            self._net_if.connect_network(ssid, pswd)
+            self._net_if.connect_network(
+                ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
+            )
         elif net_mode == "ETH":
             from stamplc import PoEStamPLC
 
             lan_if = PoEStamPLC()
-            self._net_if.connect_network(ssid, pswd, lan_if, eth_mode, ip, netmask, gateway, dns)
+            self._net_if.connect_network(ssid, pswd, lan_if, protocol, ip, netmask, gateway, dns)
 
         # M5.Lcd.setRotation(0)
         # M5.Lcd.drawImage(LOGO_IMG)

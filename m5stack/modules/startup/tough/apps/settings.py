@@ -243,9 +243,9 @@ class WiFiSetting(app_base.AppBase):
 
         if is_save is True:
             self.nvs.commit()
-            self._wifi.wlan.disconnect()
-            self._wifi.wlan.active(False)
-            self._wifi.wlan.active(True)
+            self._wifi.network.disconnect()
+            self._wifi.network.active(False)
+            self._wifi.network.active(True)
             self._wifi.connect_network(self.ssid, self.psk)
 
 

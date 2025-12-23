@@ -249,9 +249,9 @@ class WiFiSettingApp(app_base.AppBase):
 
         if is_save is True:
             self.nvs.commit()
-            self._wifi.wlan.disconnect()
-            self._wifi.wlan.active(False)
-            self._wifi.wlan.active(True)
+            self._wifi.network.disconnect()
+            self._wifi.network.active(False)
+            self._wifi.network.active(True)
             self._wifi.connect_network(self.ssid, self.psk)
 
 
@@ -477,9 +477,9 @@ class EthernetSettingApp(app_base.AppBase):
 
         if is_save is True:
             self.nvs.commit()
-            self._net_if.wlan.disconnect()
-            self._net_if.wlan.active(False)
-            self._net_if.wlan.active(True)
+            self._net_if.network.disconnect()
+            self._net_if.network.active(False)
+            self._net_if.network.active(True)
             self._net_if.connect_network(self.ip, self.mask)
 
 

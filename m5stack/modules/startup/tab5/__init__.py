@@ -15,8 +15,20 @@ class Tab5_Startup:
     def __init__(self) -> None:
         self._wlan = startup.Startup()
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
-        self._wlan.connect_network(ssid, pswd)
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
+        self._wlan.connect_network(
+            ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
+        )
 
         self._init_lvgl()
 

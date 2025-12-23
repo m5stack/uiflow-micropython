@@ -705,8 +705,20 @@ class StickCPlus_Startup:
     def __init__(self) -> None:
         self._wifi = Startup()
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
-        self._wifi.connect_network(ssid, pswd)
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
+        self._wifi.connect_network(
+            ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
+        )
         M5.Speaker.setVolume(255)
         M5.Speaker.tone(4000, 50)
 

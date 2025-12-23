@@ -493,10 +493,22 @@ class CoreInk_Startup:
     def __init__(self) -> None:
         self._wifi = Startup()
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
         DEBUG and print("Corink startup")
         # DEBUG and M5.Lcd.drawCenterString("Corink startup2", 100, 100)
-        self._wifi.connect_network(ssid, pswd)
+        self._wifi.connect_network(
+            ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
+        )
 
         sprite = M5.Lcd.newCanvas(200, 200, 1, False)
         sprite.drawBmp(STARTUP_BG_IMG, 0, 0)

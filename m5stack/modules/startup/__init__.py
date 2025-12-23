@@ -30,7 +30,7 @@ class Startup:
         ssid: str = "",
         pswd: str = "",
         lan_if: "network.LAN" = None,
-        eth_mode: str = "DHCP",
+        protocol: str = "DHCP",
         ip: str = "",
         netmask: str = "",
         gateway: str = "",
@@ -38,11 +38,13 @@ class Startup:
     ) -> bool:
         if self.network_type == "WIFI" and len(ssid) > 0:
             self.network.connect(ssid, pswd)
+            if protocol == "STATIC":
+                self.network.ifconfig((ip, netmask, gateway, dns))
             return True
         elif self.network_type == "ETH":
             self.network = lan_if
             self.network.active(True)
-            if eth_mode == "STATIC":
+            if protocol == "STATIC":
                 self.network.ifconfig((ip, netmask, gateway, dns))
             return True
         else:
@@ -82,7 +84,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
     net_mode = nvs.get_str("net_mode")
     ssid = nvs.get_str("ssid0")
     pswd = nvs.get_str("pswd0")
-    eth_mode = nvs.get_str("eth_mode")
+    protocol = nvs.get_str("protocol")
     ip = nvs.get_str("ip_addr")
     netmask = nvs.get_str("netmask")
     gateway = nvs.get_str("gateway")
@@ -291,7 +293,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             from .stamplc import StampPLC_Startup
 
             plc = StampPLC_Startup()
-            plc.startup(net_mode, ssid, pswd, eth_mode, ip, netmask, gateway, dns, timeout)
+            plc.startup(net_mode, ssid, pswd, protocol, ip, netmask, gateway, dns, timeout)
 
         elif board_id == M5.BOARD.M5Tab5:
             from .tab5 import Tab5_Startup

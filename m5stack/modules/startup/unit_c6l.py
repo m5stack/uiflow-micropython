@@ -414,7 +414,17 @@ class UnitC6L_Startup(Startup):
         self.show_mac()
         print("SSID: " + ssid + "\r\nNotice: " + error)
 
-    def startup(self, ssid: str, pswd: str, timeout: int = 60) -> None:
+    def startup(
+        self,
+        ssid: str,
+        pswd: str,
+        protocol: str = "",
+        ip: str = "",
+        netmask: str = "",
+        gateway: str = "",
+        dns: str = "",
+        timeout: int = 60,
+    ) -> None:
         M5.Speaker.begin()
         M5.Speaker.setVolumePercentage(1)
         # 显示启动画面
@@ -428,7 +438,15 @@ class UnitC6L_Startup(Startup):
         M5.Speaker.tone(888, 200)
         self.show_mac()
         # 连接网络
-        if super().connect_network(ssid=ssid, pswd=pswd):
+        if super().connect_network(
+            ssid=ssid,
+            pswd=pswd,
+            protocol=protocol,
+            ip=ip,
+            netmask=netmask,
+            gateway=gateway,
+            dns=dns,
+        ):
             self.show_ssid(ssid)
             count = 1
             status = super().connect_status()
