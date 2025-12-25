@@ -1,13 +1,14 @@
 diff --git a/src/utility/Power_Class.cpp b/src/utility/Power_Class.cpp
-index cd55d3b..cb5b044 100644
+index cd55d3b..5aa1c92 100644
 --- a/src/utility/Power_Class.cpp
 +++ b/src/utility/Power_Class.cpp
-@@ -210,6 +210,18 @@ namespace m5
+@@ -210,6 +210,19 @@ namespace m5
      case board_t::board_M5PowerHub:
        M5.In_I2C.writeRegister8(powerhub_i2c_addr, 0x05, 1, i2c_freq); // Enabel VAMeter
        break;
 +    
 +    case board_t::board_M5StampPLC:
++      _rtcIntPin = GPIO_NUM_14;
 +      Ina226.begin();
 +      INA226_Class::config_t cfg;
 +      cfg.sampling_rate = INA226_Class::Sampling::Rate16;
@@ -21,7 +22,49 @@ index cd55d3b..cb5b044 100644
      }
  
  #elif !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32)
-@@ -1550,11 +1562,11 @@ namespace m5
+@@ -976,6 +989,17 @@ namespace m5
+       break;
+     }
+ #endif
++#if !defined (CONFIG_IDF_TARGET) || defined (CONFIG_IDF_TARGET_ESP32S3)
++    switch (M5.getBoard())
++    {
++    case board_t::board_M5StampPLC:
++      M5.getIOExpander(0).resetIrq();
++      break;
++
++    default:
++      break;
++    }
++#endif
+ #endif
+     _powerOff(true);
+   }
+@@ -1072,6 +1096,7 @@ namespace m5
+   void Power_Class::timerSleep( int seconds )
+   {
+     M5.Rtc.disableIRQ();
++    M5.Rtc.clearIRQ();
+     M5.Rtc.setAlarmIRQ(seconds);
+ #if !defined (M5UNIFIED_PC_BUILD)
+     esp_sleep_enable_timer_wakeup(seconds * 1000000ULL);
+@@ -1082,6 +1107,7 @@ namespace m5
+   void Power_Class::timerSleep( const rtc_time_t& time)
+   {
+     M5.Rtc.disableIRQ();
++    M5.Rtc.clearIRQ();
+     M5.Rtc.setAlarmIRQ(time);
+     _timerSleep();
+   }
+@@ -1089,6 +1115,7 @@ namespace m5
+   void Power_Class::timerSleep( const rtc_date_t& date, const rtc_time_t& time)
+   {
+     M5.Rtc.disableIRQ();
++    M5.Rtc.clearIRQ();
+     M5.Rtc.setAlarmIRQ(date, time);
+     _timerSleep();
+   }
+@@ -1550,11 +1577,11 @@ namespace m5
      }
    }
  
@@ -35,7 +78,7 @@ index cd55d3b..cb5b044 100644
  #else
      switch (M5.getBoard()) {
      #if defined(CONFIG_IDF_TARGET_ESP32S3)
-@@ -1574,14 +1586,23 @@ namespace m5
+@@ -1574,14 +1601,23 @@ namespace m5
          uint8_t buf[2];
          for (const auto& pr : port_regs) {
            if (port_mask & pr.mask) {
@@ -61,7 +104,7 @@ index cd55d3b..cb5b044 100644
      #endif
        default:
          return 0;
-@@ -1591,12 +1612,12 @@ namespace m5
+@@ -1591,12 +1627,12 @@ namespace m5
  
    int16_t Power_Class::getExtVoltage(ext_port_mask_t port_mask)
    {
@@ -97,3 +140,30 @@ index 56e485b..36e6b63 100644
  
      float _adc_ratio = 0;
      std::uint8_t _wakeupPin = 255;
+diff --git a/src/utility/RTC_Class.cpp b/src/utility/RTC_Class.cpp
+index b919ae4..c7142cd 100644
+--- a/src/utility/RTC_Class.cpp
++++ b/src/utility/RTC_Class.cpp
+@@ -41,14 +41,18 @@ namespace m5
+     {
+     RTC_Base* instance = nullptr;
+ #if defined (CONFIG_IDF_TARGET_ESP32S3)
+-      switch (M5.getBoard())
++      switch (board)
+         {
+-          default:
+-            break;
+-
+           case board_t::board_M5PowerHub:
+             instance = new RTC_PowerHub_Class(RTC_PowerHub_Class::DEFAULT_ADDRESS, 400000);
+             break;
++          
++          case board_t::board_M5StampPLC:
++            instance = new RX8130_Class( RX8130_Class::DEFAULT_ADDRESS, 400000, i2c );
++            break;
++
++          default:
++            break;
+         }
+ #endif
+       if (instance ==nullptr ){
