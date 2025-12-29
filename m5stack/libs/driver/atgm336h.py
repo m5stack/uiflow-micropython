@@ -293,6 +293,8 @@ class ATGM336H:
         """
         Get the course over ground (COG).
 
+        Note: Only data returned by the satellite is extracted. If the data does not display properly, it indicates that the satellite did not actually return that data.
+
         :returns: The course over ground in degrees.
         :rtype: str
 
