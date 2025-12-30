@@ -2,288 +2,821 @@
 #
 # SPDX-License-Identifier: MIT
 
+from . import sim7020
+from driver.umodem import modem as umodem
+from driver.umodem.parser import Parser
+from . import utils
+import time
+import socket
+import micropython
+import binascii
 
-from .common import Modem
-from .common import AT_CMD
-import re
 
-
-class SIM7028(Modem):
-    def __init__(
-        self,
-        uart=None,
-        pwrkey_pin=None,
-        reset_pin=None,
-        power_pin=None,
-        tx_pin=None,
-        rx_pin=None,
-    ) -> None:
-        super().__init__(uart, pwrkey_pin, reset_pin, power_pin, tx_pin, rx_pin)
-
-    def get_imei_number(self) -> str | bool:
-        # Request TA Serial Number Identification(IMEI)
-        CGSN = AT_CMD("AT+CGSN=1", "OK", 3)  # noqa: N806
-        output, error = self.execute_at_command(CGSN)
-        return False if error else output
-
-    def get_ccid_number(self) -> str | bool:
-        # Show ICCID
-        CICCID = AT_CMD("AT+CICCID", "+CICCID:", 3)  # noqa: N806
-        output, error = self.execute_at_command(CICCID)
-        return False if error else output.split(" ")[1]
-
-    def get_pdp_context_dynamic_parameters(self, param=1) -> str | bool:
-        # PDP Context Read Dynamic Parameters
-        CGCONTRDP = AT_CMD("AT+CGCONTRDP", "+CGCONTRDP:", 5)  # noqa: N806
-        output, error = self.execute_at_command(CGCONTRDP)
-        if error:
-            return False
-        return (
-            output.split(",")[4].replace('"', "")
-            if param == 1
-            else output.split(",")[2].replace('"', "")
+# TCP/UDP socket
+class _socket(sim7020._socket):
+    def close(self) -> None:
+        if self._fd == -1:
+            return
+        cmd = umodem.Command(
+            "+CIPCLOSE",
+            umodem.Command.CMD_WRITE,
+            self._fd,
+            timeout=10000,
         )
 
-    # MQTT Test Server:mqtt.m5stack.com, Port:1883.
-    def mqtt_server_configure(self, server, port, client_id, username, passwd, keepalive) -> bool:
-        #! Connect to MQTT broker.
-        self.mqtt_username = username
-        self.mqtt_passwd = passwd
-        self.mqtt_keepalive = keepalive
-        self.mqtt_host_port = "tcp://" + server + ":" + str(port)
-        self.clean_session = self.mqttclient_index = None
-        self.mqtt_connect_status = False
+        self._modem.execute(cmd)
+        self._modem.release_fd(self._fd)
+        self._fd = -1
+        self._state = self._STATE_CLOSE
+        if hasattr(self, "_local_port"):
+            self._modem.release_port(self._local_port)
 
-        # mqtt callback function keyword is set
-        self.downlink_keyword.append("+CMQTTRXTOPIC:")
-        self.downlink_keyword.append("+CMQTTRXPAYLOAD:")
-        self.downlink_keyword.append("+CMQTTCONNLOST:")
-        self.callback_keyword.append("MQTT_CB")
-        self.downlink_callback["MQTT_CB"] = self.mqtt_subscribe_cb
-        self.mqtt_subscribe_cb_list = {}
-        self.topic = self.message = None
+    def connect(self, address: tuple[str, int]):
+        if self._fd == -1:
+            raise sim7020.SIMComError("socket closed")
 
-        CMQTTSTART = AT_CMD("AT+CMQTTSTART", "+CMQTTSTART: 0", 12)  # noqa: N806
-        output, error = self.execute_at_command(CMQTTSTART)
-        if error or output[-1] != "0":
-            return False
+        if self._state == self._STATE_OPEN:
+            return
 
-        CMQTTACCQ = AT_CMD('AT+CMQTTACCQ=0,"{0}"'.format(client_id), "OK", 5)  # noqa: N806
-        _, error = self.execute_at_command(CMQTTACCQ)
-        if error:
-            return False
+        self._address = address
+        # _fd is connect num
+        cmd = umodem.Command(
+            "+CIPOPEN",
+            umodem.Command.CMD_WRITE,
+            self._fd,
+            self._proto_type.get(self._proto, ""),
+            address[0],
+            address[1],
+            rsp1="+CIPOPEN:",
+            timeout=160000,
+        )
+        resp = self._modem.execute(cmd)
+        if resp.status_code == resp.ERR_NONE:
+            self._state = self._STATE_OPEN
+            return True
+        elif resp.status_code == resp.ERR_TIMEOUT:
+            raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd)
+        elif resp.status_code == resp.ERR_GENERIC:
+            parser = Parser(resp.content)
+            parser.skipuntil("{},".format(self._fd).encode())
+            err = parser.parseutil(b"\r\n")
+            raise sim7020.SIMComError(err.decode())
 
-        return self.mqtt_server_connect(0)
+    def send(self, data: bytes | str | bytearray) -> int:
+        # data type check
+        data = utils.converter(data, bytes)
+        # print(f"tcp data: {data}")
+        total_length = len(data)
+        total_sent = 0
 
-    def mqtt_server_connect(self, clean_session=0) -> bool:
-        self.clean_session = clean_session
-        CMQTTCONNECT = AT_CMD(  # noqa: N806
-            (
-                'AT+CMQTTCONNECT=0,"{0}",{1},{2},"{3}","{4}"'.format(
-                    self.mqtt_host_port,
-                    self.mqtt_keepalive,
-                    clean_session,
-                    self.mqtt_username,
-                    self.mqtt_passwd,
+        max_segment_size = 1500
+
+        while total_sent < total_length:
+            segment_size = min(max_segment_size, total_length - total_sent)
+            segment_data = data[total_sent : total_sent + segment_size]
+
+            cmd = umodem.Command(
+                "+CIPSEND",
+                umodem.Command.CMD_WRITE,
+                self._fd,
+                segment_size,
+                rsp1=">",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.execute(cmd, line_end="")
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil(b"+CIPERROR: ")
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR, err, cmd.cmd)
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+            self._modem.uart.write(segment_data)
+
+            cmd = umodem.Command(
+                "+CIPSEND",
+                umodem.Command.CMD_EXEC,
+                rsp1="+CIPSEND",
+                rsp2="+CIPERROR",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.response_at_command2(cmd)
+
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil("{},".format(self._fd).encode())
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(err.decode())
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+            total_sent += segment_size
+            # print(f"Sent segment: {segment_size} bytes, Total: {total_sent}/{total_length}")
+
+        return total_length
+
+    def sendall(self, data: bytes | str | bytearray) -> None:
+        self.send(data)
+
+    def sendto(self, data: bytes | str | bytearray, address) -> int:
+        if self._state == self._STATE_CLOSE:
+            self._local_port = self._modem.apply_port()
+            cipopen = umodem.Command(
+                "+CIPSEND",
+                umodem.Command.CMD_WRITE,
+                self._fd,
+                str(address[0]),
+                str(address[1]),
+                rsp1="CONNECT OK",
+                timeout=self._modem._default_timeout,
+            )
+            resp: umodem.Response = self._modem.execute(cipopen)
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil("{},".format(self._fd).encode())
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(err.decode())
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(
+                    sim7020.SIMComError.D_GENERIC, resp.status_code, cipopen.cmd
                 )
-                if len(self.mqtt_username) and len(self.mqtt_passwd)
-                else 'AT+CMQTTCONNECT=0,"{0}",{1},{2}'.format(
-                    self.mqtt_host_port, self.mqtt_keepalive, clean_session
-                )
-            ),
-            "+CMQTTCONNECT:",
-            30,
+            self._state = self._STATE_OPEN
+
+        # data type check
+        data = utils.converter(data, bytes)
+        total_length = len(data)
+        total_sent = 0
+
+        max_segment_size = 1460
+
+        while total_sent < total_length:
+            segment_size = min(max_segment_size, total_length - total_sent)
+            segment_data = data[total_sent : total_sent + segment_size]
+
+            cmd = umodem.Command(
+                "+CIPSEND",
+                umodem.Command.CMD_WRITE,
+                self._fd,
+                segment_size,
+                rsp1=">",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.execute(cmd, line_end="")
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil(b"+CIPERROR: ")
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR, err, cmd.cmd)
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+            self._modem.uart.write(segment_data)
+
+            cmd = umodem.Command(
+                "+CIPSEND",
+                umodem.Command.CMD_EXEC,
+                rsp1="+CIPSEND",
+                rsp2="+CIPERROR",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.response_at_command2(cmd)
+
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil("{},".format(self._fd).encode())
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(err.decode())
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+            total_sent += segment_size
+            # print(f"Sent segment: {segment_size} bytes, Total: {total_sent}/{total_length}")
+
+        return total_length
+
+    def _recv(self) -> None:
+        ciprxget = umodem.Command(
+            "+CIPRXGET",
+            umodem.Command.CMD_WRITE,
+            4,
+            self._fd,
+            timeout=self._modem._default_timeout,
         )
-        output, error = self.execute_at_command(CMQTTCONNECT)
-        if error or output[-1] != "0":
-            return False
-        self.mqttclient_index = int(output[15])
-        self.mqtt_connect_status = True
-        return True
+        resp = self._modem.execute(ciprxget)
+        if resp.status_code == resp.ERR_GENERIC:
+            parser = Parser(resp.content)
+            parser.skipuntil(b"+IP ERROR:")
+            err = parser.parseutil(b"\r\n")
+            raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR, err, ciprxget.cmd)
+        elif resp.status_code == resp.ERR_TIMEOUT:
+            raise sim7020.SIMComError(
+                sim7020.SIMComError.D_GENERIC, resp.status_code, ciprxget.cmd
+            )
 
-    def mqtt_server_disconnect(self) -> None | bool:
-        CMQTTDISC = AT_CMD("AT+CMQTTDISC={0},120".format(self.mqttclient_index), "+CMQTTDISC:", 5)  # noqa: N806
-        _, error = self.execute_at_command(CMQTTDISC)
-        if error:
-            return False
-        CMQTTREL = AT_CMD("AT+CMQTTREL={0}".format(self.mqttclient_index), "OK", 5)  # noqa: N806
-        _, error = self.execute_at_command(CMQTTREL)
-        if error:
-            return False
-        CMQTTSTOP = AT_CMD("AT+CMQTTSTOP", "+CMQTTSTOP:", 5)  # noqa: N806
-        _, error = self.execute_at_command(CMQTTSTOP)
-        if error:
-            return False
+        parser = Parser(resp.content)
+        parser.skipuntil("+CIPRXGET: 4,{},".format(self._fd).encode())
+        to_recv = parser.parseint(b"\r\n")
+        # print(f"to_recv: {to_recv}")
+        if to_recv == 0:
+            return
 
-    def mqtt_subscribe_topic(self, topic, cb, qos=0) -> bool:
-        # Subscribe topic(support wildcards).
-        CMQTTSUB = AT_CMD(  # noqa: N806
-            "AT+CMQTTSUB={0},{1},{2}".format(self.mqttclient_index, len(topic), qos), ">", 10
+        to_recv = (1500 - self._ringio.any()) if to_recv > (1500 - self._ringio.any()) else to_recv
+
+        # using hex format to receive data
+        ciprxget = umodem.Command(
+            "+CIPRXGET",
+            umodem.Command.CMD_WRITE,
+            3,
+            self._fd,
+            to_recv,
+            timeout=self._modem._default_timeout,
         )
-        output, error = self.execute_at_command(CMQTTSUB)
-        if error:
-            return False
-        TOPIC = AT_CMD("{0}".format(topic), "+CMQTTSUB:", 10)  # noqa: N806
-        output, error = self.execute_at_command(TOPIC)
-        if error or output[-1] != "0":
-            return False
-        if topic not in self.mqtt_subscribe_cb_list.keys():
-            self.mqtt_subscribe_cb_list[topic] = cb
-        return True
+        resp = self._modem.execute(ciprxget)
+        if resp.status_code == resp.ERR_GENERIC:
+            parser = Parser(resp.content)
+            parser.skipuntil("+CME ERROR ".encode())
+            errno = parser.parseutil(b"\r\n")
+            raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR_INFO, errno, ciprxget.cmd)
+        elif resp.status_code == resp.ERR_TIMEOUT:
+            raise sim7020.SIMComError(
+                sim7020.SIMComError.D_GENERIC, resp.status_code, ciprxget.cmd
+            )
 
-    def mqtt_unsubscribe_topic(self, topic) -> bool:
-        # Unsubscribe topic.
-        CMQTTUNSUB = AT_CMD(  # noqa: N806
-            "AT+CMQTTUNSUB={0},{1}".format(self.mqttclient_index, len(topic)), ">", 10
+        # prase data
+        parser = Parser(resp.content)
+        parser.skipuntil("+CIPRXGET: 3,{},".format(self._fd).encode())
+        read_len = parser.parseint()
+        parser.skipuntil("+CIPRXGET: 3,{},{},".format(self._fd, read_len).encode())
+        rest_len = parser.parseint(b"\r\n")
+        fstr = utils.converter(
+            "+CIPRXGET: 3,{},{},{}\r\n\r\n".format(self._fd, read_len, rest_len),
+            type(resp.content),
         )
-        output, error = self.execute_at_command(CMQTTUNSUB)
-        if error:
-            return False
-        TOPIC = AT_CMD("{0}".format(topic), "+CMQTTUNSUB:", 10)  # noqa: N806
-        output, error = self.execute_at_command(TOPIC)
-        if error or output[-1] != "0":
-            return False
-        if topic in self.mqtt_subscribe_cb_list.keys():
-            self.mqtt_subscribe_cb_list.pop(topic)
-        return True
+        start = resp.content.find(fstr) + len(fstr)
 
-    def mqtt_publish_topic(self, topic, payload, qos=0) -> None | bool:
-        # Publish message with topic.
-        CMQTTTOPIC = AT_CMD(  # noqa: N806
-            "AT+CMQTTTOPIC={0},{1}".format(self.mqttclient_index, len(topic)), ">", 10
+        self._ringio.write(binascii.unhexlify(resp.content[start : start + read_len * 2]))
+
+    def setsockopt(self, level, optname, value):
+        print("setsockopt is not implemented")
+
+
+class _sockets(_socket):
+    AF_INET = socket.AF_INET
+    AF_INET6 = socket.AF_INET6
+
+    SOCK_STREAM = socket.SOCK_STREAM
+    SOCK_DGRAM = socket.SOCK_DGRAM
+    SOCK_RAW = socket.SOCK_RAW
+
+    IPPROTO_IP = socket.IPPROTO_IP
+    IPPROTO_TCP = socket.IPPROTO_TCP
+    IPPROTO_UDP = socket.IPPROTO_UDP
+
+    _proto_type = {
+        IPPROTO_TCP: "TCP",
+        IPPROTO_UDP: "UDP",
+    }
+
+    _STATE_OPEN = 0
+    _STATE_CLOSE = 1
+
+    def __init__(self, modem: "SIM7028", af=AF_INET, type=SOCK_STREAM, proto=IPPROTO_TCP):
+        self._modem = modem
+        self._domain = af
+        self._type = type
+        self._proto = proto
+        self._fd = self._modem.apply_session_id()
+        self._address = None
+        if self._fd == -1:
+            raise sim7020.SIMComError("No available session")
+
+        self._state = self._STATE_CLOSE
+        self._ringio = micropython.RingIO(1500)
+        self._timeout = 2000
+        self.blocking = False
+
+    def __del__(self):
+        self.close()
+
+    def close(self) -> None:
+        if self._fd == -1:
+            return
+        # _fd is connect num
+        cmd = umodem.Command(
+            "+CCHCLOSE",
+            umodem.Command.CMD_WRITE,
+            self._fd,
+            timeout=self._modem._default_timeout,
         )
-        _, error = self.execute_at_command(CMQTTTOPIC)
-        if error:
-            return False
-        TOPIC = AT_CMD("{0}".format(topic), "OK", 10)  # noqa: N806
-        _, error = self.execute_at_command(TOPIC)
-        if error:
-            return False
+        self._modem.execute(cmd)
 
-        CMQTTPAYLOAD = AT_CMD(  # noqa: N806
-            "AT+CMQTTPAYLOAD={0},{1}".format(self.mqttclient_index, len(payload)), ">", 10
+        self._modem.release_session_id(self._fd)
+        self._fd = -1
+        self._state = self._STATE_CLOSE
+        if hasattr(self, "_local_port"):
+            self._modem.release_port(self._local_port)
+
+    def bind(self, address):
+        pass
+
+    def listen(self, backlog):
+        pass
+
+    def accept(self):
+        pass
+
+    def tls_config(self, address):
+        if self._fd == -1:
+            raise sim7020.SIMComError("socket closed")
+
+        if self._state == self._STATE_OPEN:
+            return
+        # Set the first SSL context to be used in the SSL connection
+        cmd = umodem.Command(
+            "+CSSLCFG",
+            umodem.Command.CMD_WRITE,
+            "authmode",
+            self._fd,  # tid
+            0,  # no authentication.
+            timeout=self._modem._default_timeout,
         )
-        _, error = self.execute_at_command(CMQTTPAYLOAD)
-        if error:
-            return False
-        TOPIC = AT_CMD("{0}".format(payload), "OK", 10)  # noqa: N806
-        _, error = self.execute_at_command(TOPIC)
-        if error:
-            return False
+        resp = self._modem.execute(cmd)
+        return resp.status_code == resp.ERR_NONE
 
-        CMQTTPUB = AT_CMD(  # noqa: N806
-            "AT+CMQTTPUB={0},{1},120".format(self.mqttclient_index, qos), "+CMQTTPUB:", 10
+    def connect(self, address):
+        if self._fd == -1:
+            raise sim7020.SIMComError("socket closed")
+
+        if self._state == self._STATE_OPEN:
+            return
+
+        self._address = address
+        cipstart = umodem.Command(
+            "+CCHOPEN",
+            umodem.Command.CMD_WRITE,
+            self._fd,
+            address[0],
+            address[1],
+            2,  # SSL/TLS client.
+            rsp1="+CCHOPEN:",
+            timeout=60000,
         )
-        output, error = self.execute_at_command(CMQTTPUB)
-        if error or output[-1] != "0":
-            return False
+        resp = self._modem.execute(cipstart)
 
-    def mqtt_server_is_connect(self) -> bool:
-        # Check mqtt server connection.
-        CMQTTCONNECT = AT_CMD("AT+CMQTTCONNECT?", "+CMQTTCONNECT:", 5)  # noqa: N806
-        output, error = self.execute_at_command(CMQTTCONNECT)
-        if error:
-            return False
-        self.mqttclient_index = int(output[-1])
-        return True if (output.split(",")[1].replace('"', "") == self.mqtt_host_port) else False
+        if resp.status_code == resp.ERR_NONE:
+            self._state = self._STATE_OPEN
+            self._connect_time = time.ticks_ms()
+            return True
+        elif resp.status_code == resp.ERR_TIMEOUT:
+            raise sim7020.SIMComError(
+                sim7020.SIMComError.D_GENERIC, resp.status_code, cipstart.cmd
+            )
+        elif resp.status_code == resp.ERR_GENERIC:
+            parser = Parser(resp.content)
+            parser.skipuntil("+CCHOPEN: {},".format(self._fd).encode())
+            err = parser.parseutil(b"\r\n")
+            raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR, err, cipstart.cmd)
 
-    def mqtt_polling_loop(self) -> None:
-        DUMMY = AT_CMD("", "", 0)  # noqa: N806
-        self.response_at_command(DUMMY)
-        if self.mqtt_connect_status is not True:
-            self.mqtt_server_connect(self.clean_session)
+    def send(self, data: bytes | str | bytearray) -> int:
+        # data type check
+        data = utils.converter(data, bytes)
+        # print(f"raw data: {repr(data)}")
+        # data = data.decode("utf-8").replace("\r\n", "\\r\\n")
+        # print(f"after raw data: {repr(data)}")
+        total_length = len(data)
+        total_sent = 0
+        # print(f"data: {data}")
 
-    def mqtt_subscribe_cb(self, buffer) -> None:
-        # main callback function
-        if "+CMQTTCONNLOST:" in buffer:
-            self.mqtt_connect_status = False
-        if "+CMQTTRXTOPIC:" in buffer:
-            self.topic = self.message = None
-            self.topic = buffer.split(",")[-1][:-2]
-        if "+CMQTTRXPAYLOAD:" in buffer:
-            self.message = buffer.split(",")[-1][:-1]
-        if self.topic in self.mqtt_subscribe_cb_list.keys():
-            if self.message:
-                self.mqtt_subscribe_cb_list[self.topic](self.topic, self.message)
-                self.topic = self.message = None
+        max_segment_size = 1024
 
-    # Create & Request Http(s)
-    HTTPCLIENT_GET = 0
-    HTTPCLIENT_POST = 1
+        while total_sent < total_length:
+            segment_size = min(max_segment_size, total_length - total_sent)
+            segment_data = data[total_sent : total_sent + segment_size]
+            # print(f"segment_data: {segment_data}")
+            # print(f"raw segment_data: {repr(segment_data)}")
+            # print(f"segment_size: {segment_size}")
+            cmd = umodem.Command(
+                "+CCHSEND",
+                umodem.Command.CMD_WRITE,
+                self._fd,
+                segment_size,
+                rsp1=">",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.execute(cmd, line_end="")
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil("+CCHSEND: {},".format(self._fd).encode())
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR, err, cmd.cmd)
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
 
-    def http_request(
-        self, method=HTTPCLIENT_GET, url="http://api.m5stack.com/v1", headers={}, data=None
-    ) -> str | bool:
-        # Create HTTP host instance
-        self.response_code = 0
-        self.data_content = ""
+            self._modem.uart.write(segment_data)
+            self._modem._log("TE -> TA:", repr(segment_data))
 
-        self.set_pdp_context("cmnbiot")
+            cmd = umodem.Command(
+                "+CCHSEND",
+                umodem.Command.CMD_EXEC,
+                rsp1="+CCHSEND",
+                timeout=self._modem._default_timeout,
+            )
+            resp = self._modem.response_at_command2(cmd)
 
-        for i in range(3):
-            HTTPINIT = AT_CMD("AT+HTTPINIT", "OK", 15)  # noqa: N806
-            output, error = self.execute_at_command(HTTPINIT)
-            if not error:
+            if resp.status_code == resp.ERR_GENERIC:
+                parser = Parser(resp.content)
+                parser.skipuntil("{},".format(self._fd).encode())
+                err = parser.parseutil(b"\r\n")
+                raise sim7020.SIMComError(err.decode())
+            elif resp.status_code == resp.ERR_TIMEOUT:
+                raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+            total_sent += segment_size
+            # print(f"Sent segment: {segment_size} bytes, Total: {total_sent}/{total_length}")
+
+        return total_length
+
+    def sendall(self, data: bytes | str | bytearray) -> None:
+        self.send(data)
+
+    def _recv(self) -> None:
+        cmd = umodem.Command(
+            "+CCHRECV",
+            umodem.Command.CMD_WRITE,
+            self._fd,
+            512,  # max length to receive
+            rsp1="CCHRECV:",
+            timeout=self._modem._default_timeout,
+        )
+        resp = self._modem.execute(cmd)
+        if resp.status_code == resp.ERR_GENERIC:
+            parser = Parser(resp.content)
+            parser.skipuntil("+CCHRECV: {},".format(self._fd).encode())
+            errno = parser.parseutil(b"\r\n")
+            raise sim7020.SIMComError(sim7020.SIMComError.D_TCPIP_ERR_INFO, errno, cmd.cmd)
+        elif resp.status_code == resp.ERR_TIMEOUT:
+            raise sim7020.SIMComError(sim7020.SIMComError.D_GENERIC, resp.status_code, cmd.cmd)
+
+        # print(f"resp.content: {resp.content}")
+        parser = Parser(resp.content)
+        find_data = 0
+        while True:
+            if parser.skipuntil("+CCHRECV: DATA,{},".format(self._fd).encode()) != find_data:
+                recv_len = parser.parseint(b"\r\n")
+
+                if recv_len is not None and recv_len > 0:
+                    fstr = utils.converter(
+                        "+CCHRECV: DATA,{},{}".format(self._fd, recv_len), type(resp.content)
+                    )
+                    start = resp.content.find(fstr) + len(fstr)
+                    data = resp.content[start : start + recv_len]
+                    # print(f"data: {data}")
+                    self._ringio.write(data)
+            else:
                 break
-            self.http_terminate()
 
-        HTTPPARA = AT_CMD('AT+HTTPPARA="URL","{0}"'.format(url), "OK", 10)  # noqa: N806
-        output, error = self.execute_at_command(HTTPPARA)
-        if error:
-            return False
+    def recv(self, bufsize) -> bytes:
+        return self.recvfrom(bufsize)
 
-        if method == self.HTTPCLIENT_POST:
-            for head in headers.items():
-                if head[0] == "Content-Type":
-                    contenttype = head[1]
+    def readall(self) -> bytes:
+        out = bytearray(self._ringio.any())
+        self._ringio.readinto(out)
+        last_time = time.ticks_ms()
+        while time.ticks_diff(time.ticks_ms(), last_time) < self._timeout:
+            self._recv()
+            buf = self._ringio.read()
+            out.extend(buf)
 
-            HTTPPARA = AT_CMD('AT+HTTPPARA="CONTENT","{0}"'.format(contenttype), "OK", 5)  # noqa: N806
-            output, error = self.execute_at_command(HTTPPARA)
-            if error:
-                return False
-            HTTPPARA = AT_CMD("AT+HTTPDATA={0},3000".format(len(data)), "DOWNLOAD", 5)  # noqa: N806
-            output, error = self.execute_at_command(HTTPPARA)
-            if error:
-                return False
-            DATA = AT_CMD("{0}".format(data), "OK", 10)  # noqa: N806
-            _, error = self.execute_at_command(DATA)
-            if error:
-                return False
+        return bytes(out)
 
-        HTTPACTION = AT_CMD("AT+HTTPACTION={0}".format(method), "+HTTPACTION:", 25)  # noqa: N806
-        output, error = self.execute_at_command(HTTPACTION)
-        if error:
-            return False
+    def recvfrom(self, bufsize) -> bytes:
+        if bufsize == -1:
+            return self.readall()
 
-        self.response_code = int(output.split(",")[1])
-        if self.response_code != 200:
-            print('Response code: "{0}"'.format(self.response_code))
-            return False
+        if self._ringio.any() > bufsize:
+            return self._ringio.read(bufsize)
 
-        HTTPREAD = AT_CMD("AT+HTTPREAD=0,500", "+HTTPREAD:", 25)  # noqa: N806
-        output, error = self.execute_at_command(HTTPREAD)
-        if error:
-            return False
-        match = re.search(r"\+HTTPREAD: (\d+)", output)
-        if match:
-            data_len = match.group(1)
+        read_len = self._ringio.any()
+        out = bytearray(read_len)
+        self._ringio.readinto(out)
+        last_time = time.ticks_ms()
+        while read_len < bufsize and time.ticks_diff(time.ticks_ms(), last_time) < self._timeout:
+            self._recv()
+            buf = self._ringio.read(bufsize - read_len)
+            out.extend(buf)
+            read_len += len(buf)
+
+        # https://docs.python.org/3.4/library/io.html#io.RawIOBase.read
+        # "If the object is in non-blocking mode and no bytes are available,
+        # None is returned."
+        # This is actually very weird, as naive truth check will treat
+        # this as EOF.
+        if self.blocking is False and read_len == 0:
+            return None
+
+        return bytes(out)
+
+    def setsockopt(self, level, optname, value):
+        print("setsockopt is not implemented")
+        return None
+
+    def settimeout(self, timeout):
+        print("settimeout is not implemented")
+        return None
+
+    def setblocking(self, flag):
+        self.blocking = flag
+        return None
+
+    def makefile(self, mode):
+        return self
+
+    def fileno(self):
+        return self._fd
+
+    def read(self, *args) -> bytes:
+        return self.recvfrom(args[0] if len(args) > 0 else -1)
+
+    def readinto(self, *args) -> int:
+        buf = args[0]
+        nbytes = len(buf)
+        if len(args) > 1:
+            nbytes = args[1] if args[1] < nbytes else nbytes
+
+        if self._ringio.any() < nbytes:
+            self._recv()
+
+        return self._ringio.readinto(buf, nbytes)
+
+    def readline(self) -> bytes:
+        last_time = time.ticks_ms()
+        while (
+            self._ringio.any() == 0 and time.ticks_diff(time.ticks_ms(), last_time) < self._timeout
+        ):
+            self._recv()
+        return self._ringio.readline()
+
+    def write(self, data) -> int:
+        return self.send(data)
+
+
+class SIM7028(sim7020.SIM7020):
+    # tcp/udp socket fd list
+
+    SOCKET_COUNT = 2
+    SSL_COUNT = 2
+
+    _fds = [-1 for _ in range(SOCKET_COUNT)]
+
+    _session_id = [-1 for _ in range(SSL_COUNT)]
+
+    def __init__(
+        self, uart=None, pwrkey_pin=None, reset_pin=None, power_pin=None, verbose=False
+    ) -> None:
+        super().__init__(
+            uart=uart,
+            pwrkey_pin=pwrkey_pin,
+            reset_pin=reset_pin,
+            power_pin=power_pin,
+            verbose=verbose,
+        )
+        self._socket_initialized = False
+        self._ssl_initialized = False
+
+    def connect(self, apn=None):
+        # reference SIM7028 Series_TCPIP_Application Note_V1.03.pdf
+        if apn is None:
+            apn = "CMNET"
+
+        # Check SIM card status
+        while self.status("pin") != self.PIN_READY:
+            time.sleep(0.1)
+            if self._verbose:
+                print("Waiting for SIM card ready...")
+
+        # Check RF signal
+        while self.status("rssi") < -109:
+            time.sleep(0.1)
+            if self._verbose:
+                print("Waiting for signal...")
+
+        # Network Registration
+        while True:
+            cmd = umodem.Command("+CREG", umodem.Command.CMD_READ, timeout=self._default_timeout)
+            resp = self.execute(cmd)
+            if resp.status_code == umodem.Response.ERR_NONE:
+                break
+            time.sleep(0.1)
+            if self._verbose:
+                print("Waiting for network registration...")
+
+        # EPS Network Registration Status
+        while True:
+            cmd = umodem.Command("+CEREG", umodem.Command.CMD_READ, timeout=self._default_timeout)
+            resp = self.execute(cmd)
+            if resp.status_code == umodem.Response.ERR_NONE:
+                break
+            time.sleep(0.1)
+            if self._verbose:
+                print("Waiting for EPS network registration...")
+
+        # Inquiring UE system information
+        while True:
+            # Activate PDP context
+            cmd = umodem.Command("+CPSI", umodem.Command.CMD_READ, timeout=self._default_timeout)
+            resp = self.execute(cmd)
+            if resp.status_code == umodem.Response.ERR_NONE:
+                break
+            time.sleep(0.1)
+            if self._verbose:
+                print("Waiting for UE system information...")
+
+    def reset(self):
+        pass
+
+    def socket(self, af=socket.AF_INET, type=socket.SOCK_STREAM, proto=socket.IPPROTO_TCP):
+        if self._socket_initialized is False:
+            # Open TCP/IP stack
+            cmd = umodem.Command(
+                "+NETOPEN", umodem.Command.CMD_EXEC, timeout=self._default_timeout
+            )
+            resp = self.execute(cmd)
+            if (
+                resp.status_code != umodem.Response.ERR_NONE
+                and resp.content.find(b"Network is already opened") == -1
+            ):
+                raise sim7020.SIMComError("Failed to open network")
+
+            # buffer access mode
+            cmd = umodem.Command(
+                "+CIPRXGET", umodem.Command.CMD_WRITE, 1, timeout=self._default_timeout
+            )
+            resp = self.execute(cmd)
+            if resp.status_code != umodem.Response.ERR_NONE:
+                raise sim7020.SIMComError("Failed to set buffer access mode")
+
+            self._socket_initialized = True
+
+        return _socket(self, af, type, proto)
+
+    def wrap_socket(
+        self,
+        sock: _socket,
+        # server_side=False,
+        # key=None,
+        # cert=None,
+        # cert_reqs=None,
+        # cadata=None,
+        server_hostname=None,
+        # do_handshake=True,
+    ):
+        sock.close()
+
+        if self.config("version") == "2110B07SIM7028":
+            raise sim7020.SIMComError("SIM7028 does not support SSL/TLS")
+
+        if self._ssl_initialized is False:
+            # Initialize TLS/SSL stack
+            cmd = umodem.Command(
+                "+CCHSTART", umodem.Command.CMD_EXEC, timeout=self._default_timeout
+            )
+            self.execute(cmd)
+            self._ssl_initialized = True
+
+        s = _sockets(self, sock._domain, sock._type, sock._proto)
+        s.tls_config(sock._address)
+        s.connect(sock._address)
+        return s
+
+    def get_ccid_number(self) -> str:
+        """Show CICCID"""
+        cmd = umodem.Command("+CICCID", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
+        resp = self.execute(cmd)
+        if resp.status_code == umodem.Response.ERR_NONE:
+            parser = Parser(resp.content)
+            parser.skipuntil(b"+CICCID: ")
+            return parser.parseutil(b"\r\n").decode()
+        return ""
+
+    def set_band(self, band: tuple) -> bool:
+        lte_mode = sum(1 << (i - 1) for i in band)
+        cmd = umodem.Command(
+            "+CNBP",
+            umodem.Command.CMD_WRITE,
+            "0x{:016X}".format(lte_mode),
+            timeout=self._default_timeout,
+        )
+        resp = self.execute(cmd)
+        return resp.status_code == umodem.Response.ERR_NONE
+
+    def get_band(self) -> tuple:
+        cmd = umodem.Command("+CNBP", umodem.Command.CMD_READ, timeout=self._default_timeout)
+        resp = self.execute(cmd)
+        if resp.status_code == umodem.Response.ERR_NONE:
+            parser = Parser(resp.content)
+            parser.skipuntil(b"+CNBP: ")
+            lte_mode = parser.parseint(chr=b"\r\n")
+            return tuple([i + 1 for i in range(64) if (lte_mode >> i) & 1])
+        return ()
+
+    def _get_pdp_context_dynamic_parameters(self) -> tuple:
+        """PDP Context Read Dynamic Parameters"""
+        cmd = umodem.Command(
+            "+CGCONTRDP",
+            umodem.Command.CMD_WRITE,
+            0,
+            rsp1="+CGCONTRDP",
+            timeout=self._default_timeout,
+        )
+        resp = self.execute(cmd)
+        if resp.status_code == umodem.Response.ERR_NONE:
+            parser = Parser(resp.content)
+            parser.skipuntil(b"+CGCONTRDP: ")
+            cid = parser.parseint()  # cid
+            bearer_id = parser.parseint()  # bearer_id
+            apn = parser.parseutil(b",").strip(b'"')  # apn
+            locl_ip = parser.parseutil(b",").strip(b'"')  # local_ip and subnet_mask
+            if locl_ip.count(b".") == 7:
+                # ipv4
+                parts = locl_ip.split(b".")
+                locl_ip = b".".join(parts[:4])
+                subnet_mask = b".".join(parts[4:])
+            elif locl_ip.count(b".") == 31:
+                # ipv6
+                parts = locl_ip.split(b".")
+                locl_ip = b".".join(parts[:16])
+                subnet_mask = b".".join(parts[16:])
+            else:
+                locl_ip = b"0.0.0.0"
+                subnet_mask = b"0.0.0.0"
+            gateway = parser.parseutil(b",").strip(b'"')  # gateway
+            gateway = gateway if gateway != b"" else b"0.0.0.0"
+            dns1 = parser.parseutil(b",").strip(b'"')
+            dns1 = dns1 if dns1 != b"" else b"0.0.0.0"
+            dns2 = parser.parseutil(b",").strip(b'"')
+            dns2 = dns2 if dns2 != b"" else b"0.0.0.0"
+            return (
+                cid,
+                bearer_id,
+                apn.decode(),
+                locl_ip.decode(),
+                subnet_mask.decode(),
+                gateway.decode(),
+                dns1.decode(),
+                dns2.decode(),
+            )
         else:
-            return False
-        # data_len = ''.join(filter(str.isdigit, output.split(' ')[1]))
-        data_index = len(output.split(" ")[0]) + len(data_len) + 1
-        self.data_content = output[data_index : (data_index + int(data_len))]
+            return (-9999, -9999, "", "0.0.0.0", "0.0.0.0", "0.0.0.0", "0.0.0.0", "0.0.0.0")
 
-    def http_terminate(self) -> bool:
-        # http service terminate
-        HTTPTERM = AT_CMD("AT+HTTPTERM", "OK", 15)  # noqa: N806
-        _, error = self.execute_at_command(HTTPTERM)
-        return not error
+    def _get_network_state(self):
+        cmd = umodem.Command("+QCBCINFO", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
+        resp = self.execute(cmd)
+        if resp.status_code == umodem.Response.ERR_NONE:
+            parser = Parser(resp.content)
+            parser.skipuntil(b"+QCBCINFOSC: ")
+            station = []
+            sc_earfcn = parser.parseint()  # sc_earfcn
+            sc_pci = parser.parseint()  # sc_pci
+            sc_rsrp = parser.parseint()  # sc_rsrp
+            sc_rsrq = parser.parseint()  # sc_rsrq
+            parser.parsestr()  # mcc
+            parser.parsestr()  # mnc
+            sc_cellid = parser.parsestr()  # sc_cellid
+            sc_tac = parser.parsestr(b"\r\n")  # sc_tac
 
-    def make_header(self, key, value) -> str:
-        return str(key) + ":" + str(value) + "\n"
+            station.append(sc_earfcn)  # sc_earfcn
+            station.append(-1)  # sc_earfcn_offset
+            station.append(sc_pci)  # sc_pci
+            station.append(sc_cellid)  # sc_cellid
+            station.append(sc_rsrp)  # sc_rsrp
+            station.append(sc_rsrq)  # sc_rsrq
+            station.append(-1)  # sc_rssi
+            station.append(-1)  # sc_snr
+            station.append(-1)  # sc_band
+            station.append(sc_tac)  # sc_tac
+            station.append(-1)  # sc_ecl
+            station.append(-1)  # sc_tx_pwr
+            station.append(-1)  # sc_re_rsrp
 
-    def asciistr_to_hexstr(self, byte) -> bool:
-        return "".join(["%02X" % x for x in byte.encode()]).strip()
+            # neighbor cell info
+            parser.skipuntil(b"+QCBCINFONC: ")
+            neighbor = []
+            neighbor.append(parser.parseint())  # nc_earfcn
+            neighbor.append(parser.parseint())  # nc_pci
+            neighbor.append(parser.parseint())  # nc_rsrp
+            neighbor.append(parser.parseint(b"\r\n"))  # nc_rsrq
+            return (tuple(station), (tuple(neighbor),))
+        return ((), ())
 
-    def hexstr_to_asciistr(self, hex) -> str:
-        return bytes.fromhex(hex).decode()
+    def _convert_rssi(self, rssi) -> int:
+        """return dbm"""
+        if rssi == 0:
+            return -113
+        elif rssi == 1:
+            return -111
+        elif rssi >= 2 and rssi <= 30:
+            return -109 + (rssi - 2) * 2
+        elif rssi == 31:
+            return -51
+        return -113

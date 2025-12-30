@@ -79,18 +79,20 @@ static void machine_hw_i2c_init(machine_hw_i2c_obj_t *self, bool first_init) {
     }
 
     // Start of modification section, by M5Stack
-    i2c_master_bus_handle_t bus_handle;
-    if (i2c_master_get_bus_handle(self->port, &self->bus_handle) != ESP_OK) {
-        i2c_master_bus_config_t bus_cfg = {
-            .i2c_port = self->port,
-            .scl_io_num = self->scl,
-            .sda_io_num = self->sda,
-            .clk_source = I2C_CLK_SRC_DEFAULT,
-            .glitch_ignore_cnt = 7,
-            .flags.enable_internal_pullup = true,
-        };
-        ESP_ERROR_CHECK(i2c_new_master_bus(&bus_cfg, &self->bus_handle));
+    if (i2c_master_get_bus_handle(self->port, &self->bus_handle) == ESP_OK) {
+        i2c_del_master_bus(self->bus_handle);
+        self->bus_handle = NULL;
     }
+
+    i2c_master_bus_config_t bus_cfg = {
+        .i2c_port = self->port,
+        .scl_io_num = self->scl,
+        .sda_io_num = self->sda,
+        .clk_source = I2C_CLK_SRC_DEFAULT,
+        .glitch_ignore_cnt = 7,
+        .flags.enable_internal_pullup = true,
+    };
+    ESP_ERROR_CHECK(i2c_new_master_bus(&bus_cfg, &self->bus_handle));
     // End of modification section, by M5Stack
     #if ESP_IDF_VERSION >= ESP_IDF_VERSION_VAL(5, 5, 0)
     i2c_device_config_t dev_cfg = {

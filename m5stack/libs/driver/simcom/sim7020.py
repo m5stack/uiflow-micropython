@@ -8,9 +8,10 @@ import machine
 import micropython
 from driver.umodem import modem as umodem
 from driver.umodem.parser import Parser
-from driver.simcom.common import utils
+from . import utils
 from driver.simcom.toolkit import requests2
 from driver.simcom.toolkit import umqtt
+import binascii
 
 
 class SIMComError(Exception):
@@ -209,7 +210,7 @@ class _socket:
 
             cmd = umodem.Command(
                 "+CIPSEND",
-                umodem.Command.CMD_EXECUTION,
+                umodem.Command.CMD_EXEC,
                 rsp1="SEND OK",
                 timeout=self._modem._default_timeout,
             )
@@ -287,7 +288,7 @@ class _socket:
 
             cmd = umodem.Command(
                 "+CIPSEND",
-                umodem.Command.CMD_EXECUTION,
+                umodem.Command.CMD_EXEC,
                 rsp1="SEND OK",
                 timeout=self._modem._default_timeout,
             )
@@ -335,7 +336,7 @@ class _socket:
         ciprxget = umodem.Command(
             "+CIPRXGET",
             umodem.Command.CMD_WRITE,
-            2,
+            3,
             self._fd,
             to_recv,
             timeout=self._modem._default_timeout,
@@ -351,17 +352,17 @@ class _socket:
 
         # prase data
         parser = Parser(resp.content)
-        parser.skipuntil("+CIPRXGET: 2,{},".format(self._fd).encode())
+        parser.skipuntil("+CIPRXGET: 3,{},".format(self._fd).encode())
         read_len = parser.parseint()
-        parser.skipuntil("+CIPRXGET: 2,{},{},".format(self._fd, read_len).encode())
+        parser.skipuntil("+CIPRXGET: 3,{},{},".format(self._fd, read_len).encode())
         rest_len = parser.parseint(b"\r\n")
         fstr = utils.converter(
-            "+CIPRXGET: 2,{},{},{}\r\n".format(self._fd, read_len, rest_len), type(resp.content)
+            "+CIPRXGET: 3,{},{},{}\r\n".format(self._fd, read_len, rest_len), type(resp.content)
         )
         # print(f"fstr: {fstr}")
         start = resp.content.find(fstr) + len(fstr)
 
-        self._ringio.write(resp.content[start : start + read_len])
+        self._ringio.write(binascii.unhexlify(resp.content[start : start + read_len * 2]))
 
     def recv(self, bufsize) -> bytes | None:
         return self.recvfrom(bufsize)
@@ -548,7 +549,8 @@ class _sockets(_socket):
             timeout=self._modem._default_timeout,
         )
         self._modem.execute(cmd)
-        # TODO: check error
+        resp = self._modem.execute(cmd)
+        return resp.status_code == resp.ERR_NONE
 
     def connect(self, address):
         if self._fd == -1:
@@ -657,7 +659,7 @@ class _sockets(_socket):
             # print(f"data: {data}")
             self._ringio.write(data)
 
-    def recv(self, bufsize) -> bytes:
+    def recv(self, bufsize) -> bytes | None:
         return self.recvfrom(bufsize)
 
     def readall(self) -> bytes:
@@ -671,7 +673,7 @@ class _sockets(_socket):
 
         return bytes(out)
 
-    def recvfrom(self, bufsize) -> bytes:
+    def recvfrom(self, bufsize) -> bytes | None:
         if bufsize == -1:
             return self.readall()
 
@@ -738,15 +740,20 @@ class _sockets(_socket):
             self._recv()
         return self._ringio.readline()
 
-    def write(self, data) -> int:
-        return self.send(data)
+    def write(self, *args) -> int:
+        return self.send(args[0])
 
 
 class SIM7020(umodem.UModem):
-    # tcp/udp socket fd list
-    _fds = [-1 for _ in range(6)]
+    MODE_NB_IOT = 9
 
-    _session_id = [-1 for _ in range(6)]
+    SOCKET_COUNT = 2
+    SSL_COUNT = 2
+
+    # tcp/udp socket fd list
+    _fds = [-1 for _ in range(SOCKET_COUNT)]
+
+    _session_id = [-1 for _ in range(SSL_COUNT)]
 
     # tcp/udp socket port list
     _used_port = []
@@ -760,25 +767,29 @@ class SIM7020(umodem.UModem):
         power_obj = machine.Pin(power_pin, machine.Pin.OUT) if power_pin else None
 
         # Status setup
-        pwrkey_obj and pwrkey_obj(0)
-        reset_obj and reset_obj(1)
-        power_obj and power_obj(1)
+        if pwrkey_obj:
+            pwrkey_obj(0)
+        if reset_obj:
+            reset_obj(1)
+        if power_obj:
+            power_obj(1)
         super().__init__(uart, verbose=verbose)
 
         # pdp
         self._cid = 1
 
         self._default_timeout = 3000
-        self._is_active = True
+        self._is_active = False
         self._mqtt_client = None
+        if self.test(timeout=10000) is False:
+            raise SIMComError("Modem not found")
         self.reset()
         self.active(True)
-        self.connect()
 
     """fd/port management"""
 
     def apply_fd(self) -> int:
-        for i in range(6):
+        for i in range(self.SOCKET_COUNT):
             if self._fds[i] == -1:
                 self._fds[i] = i
                 return i
@@ -788,10 +799,10 @@ class SIM7020(umodem.UModem):
         self._fds[fd] = -1
 
     def apply_session_id(self) -> int:
-        for i in range(6):
+        for i in range(self.SSL_COUNT):
             if self._session_id[i] == -1:
-                self._session_id[i] = i + 1
-                return i + 1
+                self._session_id[i] = i
+                return i
         return -1
 
     def release_session_id(self, session_id: int) -> None:
@@ -814,10 +825,9 @@ class SIM7020(umodem.UModem):
                 "+CFUN", umodem.Command.CMD_WRITE, 1, timeout=self._default_timeout
             )
             resp = self.execute(cmd)
-            self.connect()
             if resp.status_code == resp.ERR_NONE:
                 self._is_active = True
-            time.sleep_ms(1000)
+            time.sleep(1)
         else:
             self.reset()
             self._low_power_mode()
@@ -829,11 +839,9 @@ class SIM7020(umodem.UModem):
             # Check SIM card status
             cmd = umodem.Command("+CPIN", umodem.Command.CMD_READ, timeout=self._default_timeout)
             self.execute(cmd)
-            time.sleep_ms(100)
+            time.sleep(0.1)
             # Check RF signal
-            cmd = umodem.Command(
-                "+CSQ", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout
-            )
+            cmd = umodem.Command("+CSQ", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
             self.execute(cmd)
             # Enable getting data from network manually.
             cmd = umodem.Command(
@@ -888,18 +896,18 @@ class SIM7020(umodem.UModem):
         # Attached PS domain and got IP address and APN automatically from network
         cmd = umodem.Command(
             "+CGCONTRDP",
-            umodem.Command.CMD_EXECUTION,
+            umodem.Command.CMD_EXEC,
             rsp1="+CGCONTRDP:",
             timeout=10000,
         )
         self.execute(cmd)
         # Bring Up Wireless Connection
-        cmd = umodem.Command("+CIICR", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CIICR", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         self.execute(cmd)
         # Get Local IP Address
         cmd = umodem.Command(
             "+CIFSR",
-            umodem.Command.CMD_EXECUTION,
+            umodem.Command.CMD_EXEC,
             rsp1="",
             rsp2='"',
             timeout=self._default_timeout,
@@ -907,19 +915,25 @@ class SIM7020(umodem.UModem):
         self.execute(cmd)
 
     def disconnect(self):
-        # 断开PDP连接，但是RF还是开启的
-        raise NotImplementedError
+        cmd = umodem.Command("+CGATT", umodem.Command.CMD_WRITE, 0, timeout=5000)
+        if self.execute(cmd).status_code == umodem.Response.ERR_NONE:
+            return True
+        return False
 
     def isconnected(self) -> bool:
         parameters = self._get_pdp_context_dynamic_parameters()
         return parameters[3] != "0.0.0.0" and parameters[3] != ""
 
     def reset(self):
-        cmd = umodem.Command(
-            "+CRESET", umodem.Command.CMD_EXECUTION, rsp1="", rsp2="", timeout=500
-        )
+        cmd = umodem.Command("+CRESET", umodem.Command.CMD_EXEC, rsp1="", rsp2="", timeout=500)
         self.execute(cmd)
-        time.sleep(3.5)
+        while self.test(timeout=1000) is False:
+            time.sleep(0.1)
+
+    def test(self, timeout=10000) -> bool:
+        cmd = umodem.Command("", umodem.Command.CMD_EXEC, timeout=timeout)
+        resp = self.execute(cmd)
+        return resp.status_code == resp.ERR_NONE
 
     PIN_ERROR = -1  # PIN is not correct
     PIN_READY = 0  # MT is not pending for any password
@@ -936,18 +950,18 @@ class SIM7020(umodem.UModem):
     PH_CORP_PIN = 11  # Corporate personalization password is required.
 
     _cpin_code = {
-        "READY": PIN_READY,
-        "SIM PIN": SIM_PIN,
-        "SIM PUK": SIM_PUK,
-        "PH_SIM PIN": PH_SIM_PIN,
-        "PH_SIM PUK": PH_SIM_PUK,
-        "SIM PIN2": SIM_PIN2,
-        "SIM PUK2": SIM_PUK2,
-        "PH-SIM PIN": PH_SIM_PIN,
-        "PH-NET PIN": PH_NET_PIN,
-        "PH-NETSUB PIN": PH_NETSUB_PIN,
-        "PH-SP PIN": PH_SP_PIN,
-        "PH-CORP PIN": PH_CORP_PIN,
+        b"READY": PIN_READY,
+        b"SIM PIN": SIM_PIN,
+        b"SIM PUK": SIM_PUK,
+        b"PH_SIM PIN": PH_SIM_PIN,
+        b"PH_SIM PUK": PH_SIM_PUK,
+        b"SIM PIN2": SIM_PIN2,
+        b"SIM PUK2": SIM_PUK2,
+        b"PH-SIM PIN": PH_SIM_PIN,
+        b"PH-NET PIN": PH_NET_PIN,
+        b"PH-NETSUB PIN": PH_NETSUB_PIN,
+        b"PH-SP PIN": PH_SP_PIN,
+        b"PH-CORP PIN": PH_CORP_PIN,
     }
 
     def _convert_rssi(self, rssi) -> int:
@@ -969,9 +983,7 @@ class SIM7020(umodem.UModem):
             parameters = self._get_pdp_context_dynamic_parameters()
             return parameters[3] != "0.0.0.0" and parameters[3] != ""
         elif param == "rssi":
-            cmd = umodem.Command(
-                "+CSQ", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout
-            )
+            cmd = umodem.Command("+CSQ", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
             resp = self.execute(cmd)
             if resp.status_code == umodem.Response.ERR_NONE:
                 parser = Parser(resp.content)
@@ -984,7 +996,7 @@ class SIM7020(umodem.UModem):
             if resp.status_code == umodem.Response.ERR_NONE:
                 parser = Parser(resp.content)
                 parser.skipuntil(b"+CPIN: ")
-                code = parser.parseutil(b"\r\n").replace(b'"', b"")
+                code = parser.parseutil(b"\r\n")
                 return self._cpin_code.get(code, self.PIN_ERROR)
             return self.PIN_ERROR
         elif param == "station":
@@ -997,8 +1009,6 @@ class SIM7020(umodem.UModem):
     def ifconfig(self, addr=None, mask=None, gateway=None, dns=None):
         params = self._get_pdp_context_dynamic_parameters()
         return (params[3], params[4], params[5], params[6])
-
-    MODE_NB_IOT = 9
 
     def config(self, *args, **kwargs):
         if len(kwargs) != 0:
@@ -1083,33 +1093,33 @@ class SIM7020(umodem.UModem):
         cmd = umodem.Command("+CENG", umodem.Command.CMD_READ, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
-            num = resp.content.count("+CENG: ")
+            num = resp.content.count(b"+CENG: ")
             if num == 0:
                 return ((), ())
             parser = Parser(resp.content)
             parser.skipuntil(b"+CENG: ")
             station = []
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseutil(",").strip(b'"'))
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseutil(",").strip(b'"'))
-            station.append(parser.parseint())
-            station.append(parser.parseint())
-            station.append(parser.parseint(chr=b"\r"))
+            station.append(parser.parseint())  # sc_earfcn
+            station.append(parser.parseint())  # sc_earfcn_offset
+            station.append(parser.parseint())  # sc_pci
+            station.append(parser.parseutil(",").strip(b'"'))  # sc_cellid
+            station.append(parser.parseint())  # sc_rsrp
+            station.append(parser.parseint())  # sc_rsrq
+            station.append(parser.parseint())  # sc_rssi
+            station.append(parser.parseint())  # sc_snr
+            station.append(parser.parseint())  # sc_band
+            station.append(parser.parseutil(",").strip(b'"'))  # sc_tac
+            station.append(parser.parseint())  # sc_ecl
+            station.append(parser.parseint())  # sc_tx_pwr
+            station.append(parser.parseint(chr=b"\r"))  # sc_re_rsrp
             neighbors = []
             for _ in range(num - 1):
                 parser.skipuntil(b"+CENG: ")
                 neighbor = []
-                neighbor.append(parser.parseint())
-                neighbor.append(parser.parseint())
-                neighbor.append(parser.parseint())
-                neighbor.append(parser.parseint(chr=b"\r"))
+                neighbor.append(parser.parseint())  # nc_earfcn
+                neighbor.append(parser.parseint())  # nc_earfcn_offset
+                neighbor.append(parser.parseint())  # nc_pci
+                neighbor.append(parser.parseint(chr=b"\r"))  # nc_rsrp
                 neighbors.append(tuple(neighbor))
             return (tuple(station), tuple(neighbors))
         return ((), ())
@@ -1133,14 +1143,11 @@ class SIM7020(umodem.UModem):
 
         cmd = umodem.Command(
             "+CDNSGIP={}".format(host.strip('"')),
-            umodem.Command.CMD_EXECUTION,
+            umodem.Command.CMD_EXEC,
             rsp1="+CDNSGIP:",
             timeout=10000,
         )
-
         resp = self.execute(cmd)
-        self._verbose and print(resp.content)
-        self._verbose and print(resp.status_code)
 
         ip = "0.0.0.0"
         if resp.status_code == umodem.Response.ERR_NONE:
@@ -1177,46 +1184,9 @@ class SIM7020(umodem.UModem):
         server_hostname=None,
         # do_handshake=True,
     ):
-        # print(f"key: {key}")
-        # print(f"cert: {cert}")
-        # print(f"raw cert: {repr(cert)}")
-        # cert = cert.replace("\r\n", "\\r\\n")
-        # print(f"after replace cert: {cert}")
-        # print(f"cert_reqs: {cert_reqs}")
-        # print(f"cadata: {cadata}")
-        # print(f"server_hostname: {server_hostname}")
-        # print(f"do_handshake: {do_handshake}")
         sock.close()
         s = _sockets(self, sock._domain, sock._type, sock._proto)
         s.tls_config(sock._address)
-        # if cert is not None:
-        #     cmd = umodem.Command(
-        #         "+CTLSCFG",
-        #         umodem.Command.CMD_WRITE,
-        #         1,
-        #         6,
-        #         timeout=self._default_timeout,
-        #     )
-        #     self.execute(cmd)
-        # if cert is not None:
-        #     cert_len = len(cert)
-        #     chunk_size = 450
-        #     for i in range(0, cert_len, chunk_size):
-        #         chunk = cert[i : i + chunk_size]
-        #         last_chunk = i + chunk_size >= cert_len
-        #         is_last_flag = 0 if last_chunk else 1
-
-        #         cmd = umodem.Command(
-        #             "+CTLSCERT",
-        #             umodem.Command.CMD_WRITE,
-        #             1,
-        #             6,
-        #             cert_len,
-        #             is_last_flag,
-        #             chunk,
-        #             timeout=self._default_timeout,
-        #         )
-        #         self.execute(cmd)
         s.connect(sock._address)
         return s
 
@@ -1299,7 +1269,7 @@ class SIM7020(umodem.UModem):
         return ()
 
     def get_manufacturer(self) -> str:
-        cmd = umodem.Command("+CGMI", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CGMI", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
@@ -1308,7 +1278,7 @@ class SIM7020(umodem.UModem):
         return ""
 
     def get_model_id(self) -> str:
-        cmd = umodem.Command("+CGMM", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CGMM", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
@@ -1317,7 +1287,7 @@ class SIM7020(umodem.UModem):
         return ""
 
     def get_model_software_version(self) -> str:
-        cmd = umodem.Command("+CGMR", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CGMR", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
@@ -1327,9 +1297,9 @@ class SIM7020(umodem.UModem):
 
     def get_imei_number(self) -> str:
         """Request TA Serial Number Identification(IMEI)"""
-        cmd = umodem.Command("+CGSN", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CGSN", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
-        self._verbose and print(f"resp.content: {resp.content}")
+        self._log(f"resp.content: {resp.content}")
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
             parser.skipuntil(b"\n")
@@ -1338,7 +1308,7 @@ class SIM7020(umodem.UModem):
 
     def get_ccid_number(self) -> str:
         """Show ICCID"""
-        cmd = umodem.Command("+CCID", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CCID", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
@@ -1347,7 +1317,7 @@ class SIM7020(umodem.UModem):
         return ""
 
     def get_imsi_number(self) -> str:
-        cmd = umodem.Command("+CIMI", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CIMI", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == umodem.Response.ERR_NONE:
             parser = Parser(resp.content)
@@ -1487,41 +1457,3 @@ class SIM7020(umodem.UModem):
             response = self.request(str_method, url, data=data, headers=headers)
             self.data_content = response.reason
             self.response_code = response.status_code
-
-    def write_read(self, cmd: str, rsp1="OK", rsp2="ERROR", line_end="\r\n", timeout: int = 10000):
-        cmdstr = "AT+" + "{}\r\n".format(cmd)
-        self._verbose and print("TE -> TA:", repr(cmdstr))
-        self.uart.write(cmdstr.encode("utf-8"))
-        output = bytearray()
-        ticks = time.ticks_ms()
-
-        rsp1_bytes = rsp1.encode("utf-8")
-        rsp2_bytes = rsp2.encode("utf-8")
-        line_end_bytes = line_end.encode("utf-8")
-
-        find_keyword = False
-
-        while time.ticks_diff(time.ticks_ms(), ticks) < timeout:
-            if self.uart.any() == 0:
-                time.sleep_ms(10)
-                continue
-
-            line = self.uart.read(self.uart.any())
-            self._verbose and print("TE <- TA:", repr(line))
-            output.extend(line)
-
-            # Do we have an error?
-            if output.rfind(rsp2_bytes) != -1:
-                if output.endswith(line_end_bytes):
-                    print("Get AT command error response:", repr(output))
-                    find_keyword = True
-
-            # If we had a pre-end, do we have the expected end?
-            if output.rfind(rsp1_bytes) != -1:
-                if output.endswith(line_end_bytes):
-                    find_keyword = True
-
-            if find_keyword:
-                break
-
-        return output.decode("utf-8")

@@ -2,40 +2,29 @@
 #
 # SPDX-License-Identifier: MIT
 
-import machine
 from driver.simcom.sim7020 import SIM7020
-from driver.simcom.common import Modem
-import sys
-
-if sys.platform != "esp32":
-    from typing import Literal
 
 
-class AtomDTUNBIoT(SIM7020, Modem):
-    """Create an AtomDTUNBIoT object
+class AtomDTUNBIoT(SIM7020):
+    """Create an AtomDTUNBIoT object.
 
-    :param int id: The UART ID to use (0, 1, or 2). Default is 2.
-    :param port: A list or tuple containing the TX and RX pin numbers.
-    :type port: list | tuple
+    :param machine.UART uart: The UART object to use.
+    :param bool verbose: Whether to print debug information.
 
     UiFlow2 Code Block:
 
-        |init.png|
+        |nbiot_init.png|
 
     MicroPython Code Block:
 
         .. code-block:: python
 
             from base import AtomDTUNBIoT
+            from hardware import UART
 
-            dtu_nbiot = AtomDTUNBIoT(0, (22, 19))
+            uart0 = UART(2, baudrate=115200, bits=8, parity=None, stop=1, tx=22, rx=19)
+            dtu_nbiot = AtomDTUNBIoT(uart0, verbose=False)
     """
 
     def __init__(self, uart, verbose=False):
-        self.uart = uart
-        self.verbose = verbose
-        Modem.__init__(self, uart=self.uart, verbose=verbose)
-        SIM7020.__init__(self, uart=self.uart, verbose=verbose)
-
-        if not self.check_modem_is_ready():
-            raise Exception("NBIoT Base not found in bus")
+        super().__init__(uart=uart, verbose=verbose)

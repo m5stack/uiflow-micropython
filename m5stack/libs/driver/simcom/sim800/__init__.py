@@ -386,9 +386,7 @@ class SIM800(umodem.UModem):
             cmd = umodem.Command("+CFIN?", umodem.Command.CMD_READ, timeout=self._default_timeout)
             self.execute(cmd)
             # Check RF signal
-            cmd = umodem.Command(
-                "+CSQ", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout
-            )
+            cmd = umodem.Command("+CSQ", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
             self.execute(cmd)
             # Check PS service. 1 indicates PS has attached.
             cmd = umodem.Command("+CGATT", umodem.Command.CMD_READ, timeout=self._default_timeout)
@@ -421,9 +419,7 @@ class SIM800(umodem.UModem):
             self.execute(cmd)
 
         # Attached PS domain and got IP address automatically
-        cmd = umodem.Command(
-            "+CGCONTRDP", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout
-        )
+        cmd = umodem.Command("+CGCONTRDP", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         self.execute(cmd)
 
     def disconnect(self):
@@ -449,7 +445,7 @@ class SIM800(umodem.UModem):
 
     def get_imei_number(self) -> str:
         # Request TA Serial Number Identification(IMEI)
-        cmd = umodem.Command("+CGSN", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+CGSN", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == resp.ERR_NONE:
             parser = umodem.parser.Parser(resp.content)
@@ -459,7 +455,7 @@ class SIM800(umodem.UModem):
 
     def get_ccid_number(self) -> str:
         # Show ICCID
-        cmd = umodem.Command("+ICCID", umodem.Command.CMD_EXECUTION, timeout=self._default_timeout)
+        cmd = umodem.Command("+ICCID", umodem.Command.CMD_EXEC, timeout=self._default_timeout)
         resp = self.execute(cmd)
         if resp.status_code == resp.ERR_NONE:
             parser = umodem.parser.Parser(resp.content)

@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 import time
-from machine import UART
+import machine
 
 
 def _measure_time(func):
@@ -24,17 +24,19 @@ class Response:
     ERR_TIMEOUT = 2
 
     def __init__(self, status_code, content):
-        self.status_code = int(status_code)
-        self.content = content
+        self.status_code: int = int(status_code)
+        self.content: bytes = bytes(content)
 
 
 class Command:
     CMD_TEST = "=?"
     CMD_READ = "?"
     CMD_WRITE = "="
-    CMD_EXECUTION = ""
+    CMD_EXEC = ""
 
-    def __init__(self, cmd, type, *args, rsp1="OK", rsp2="ERROR", timeout=2000) -> None:
+    def __init__(
+        self, cmd, type, *args, payload_len=-1, rsp1="OK", rsp2="ERROR", timeout=2000
+    ) -> None:
         self.cmd = cmd
         self.cmd_type = type
         self.args = []
@@ -44,6 +46,7 @@ class Command:
             elif isinstance(arg, int):
                 self.args.append(str(arg))
 
+        self.payload_len = payload_len
         self.rsp1 = rsp1
         self.rsp2 = rsp2
 
@@ -60,7 +63,7 @@ class Command:
 
 
 class UModem:
-    def __init__(self, uart: UART, verbose=False):
+    def __init__(self, uart: machine.UART, verbose=False):
         self.uart = uart
         self._verbose = verbose
 
@@ -70,7 +73,7 @@ class UModem:
             self.uart.read(self.uart.any())
 
         # execute the AT command
-        self._verbose and print("TE -> TA:", repr(command()))
+        self._log("TE -> TA:", repr(command()))
         self.uart.write(command())
 
         # wait for response
@@ -95,7 +98,7 @@ class UModem:
                 continue
 
             line = self.uart.read(self.uart.any())
-            self._verbose and print("TE <- TA:", repr(line))
+            self._log("TE <- TA:", repr(line))
             output.extend(line)
 
             # Do we have an error?
@@ -129,3 +132,7 @@ class UModem:
 
         # Return
         return Response(error, output)
+
+    def _log(self, *args, **kwargs) -> None:
+        if self._verbose:
+            print(*args, **kwargs)

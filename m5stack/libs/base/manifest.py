@@ -12,6 +12,8 @@ package(
         "dtu_lorawan.py",
         "dtu_lorawan_rui3.py",
         "dtu_nbiot.py",
+        "dtu_nbiot2_v11.py",
+        "dtu_nbiot2.py",
         "echo.py",
         "gpsv2.py",
         "hdriver.py",

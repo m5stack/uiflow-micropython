@@ -56,6 +56,11 @@ class MQTTClient(robust.MQTTClient):
         self._topics[topic] = handler
         return super().subscribe(topic, qos)
 
+    def unsubscribe(self, topic):
+        if topic in self._topics:
+            del self._topics[topic]
+        return super().unsubscribe(topic)
+
     @staticmethod
     def _load_file(path):
         if isinstance(path, str) and path.startswith("/flash"):

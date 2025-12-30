@@ -27,12 +27,19 @@ class Parser:
     @_logging
     def parseint(self, chr=b",") -> int:
         s = self.parseutil(chr)
-        if s == "":
+        if not s:
             return -9999
-        return int(s)
+        return int(s, 0)
 
     @_logging
-    def parseutil(self, chr: str | bytearray | bytes):
+    def parsestr(self, chr=b",") -> str:
+        s = self.parseutil(chr)
+        if not s:
+            return ""
+        return s.decode().strip('"')
+
+    @_logging
+    def parseutil(self, chr: str | bytearray | bytes) -> bytes:
         if isinstance(chr, str):
             chr_bytes = chr.encode()
         else:

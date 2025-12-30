@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-01-09 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,64 +18,208 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
 #: ../../en/module/nbiot.rst:2 ../../en/refs/module.nbiot.ref
-#: 246e7d7caa4e48d2b41e5fb27a5cb288 f5b536bc0add4dcda7551d2f7c110885
+#: 001f81d0273c401cbca11b82d67d765c 2d5e5609d8e74e9b82ab78b9c7ffb49a
 msgid "NB-IoT Module"
 msgstr ""
 
-#: ../../en/module/nbiot.rst:6 c5cbcb846a7e4c0f844057405dfe23fe
-msgid "The following products are supported:"
+#: ../../en/module/nbiot.rst:6 29e6fbc734e1459cb2ead40c238fe548
+msgid ""
+"The ``NB-IoT Module`` is a wireless communication module suitable for "
+"global Cat-NB frequency bands. It features an integrated SIM7020G "
+"communication module and communicates via serial port (AT commands)."
 msgstr ""
+"``NB-IoT Module`` 是一款适用于全球 Cat-NB 频段的无线通信模块。它集成了 SIM7020G 通信模块，通过串口通信（使用 "
+"AT 指令）。"
 
-#: ../../en/module/nbiot.rst:8 6dae58d2df824951a7950b99d0c16cde
+#: ../../en/module/nbiot.rst:8 c39ae0af28c04e6e8cd32793a58514b0
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/module/nbiot.rst:10 474d417604064a87a2c12ffced4697af
 msgid "|NB-IoT Module|"
 msgstr ""
 
-#: ../../en/module/nbiot.rst:12 cce9f59bfdaf46b1bd2414137b810042
-msgid "class NBIOTModule"
+#: ../../en/module/nbiot.rst:14 ce20161c6e164edc8bf63958717484ee
+msgid ""
+"Please ensure that the device supports the NB-IoT frequency bands in your"
+" area before use."
+msgstr "请在使用前确认设备是否支持您所在地区的 NB-IoT 频段。"
+
+#: ../../en/module/nbiot.rst:18 bad6143f2e444200a3e8674cf512a875
+msgid ""
+"Please ensure that the firmware version of SIM7020 is greater than or "
+"equal to **1752B12SIM7020C**."
+msgstr "请确保 SIM7020 的固件版本大于或等于 **1752B12SIM7020C**。"
+
+#: ../../en/module/nbiot.rst:20 bad6143f2e444200a3e8674cf512a875
+msgid "|get_version.png| can be used to check the firmware version."
+msgstr "可以使用 |get_version.png| 来检查固件版本。"
+
+#: ../../en/refs/module.nbiot.ref:24 6294a269281b474b9187e303ddab2008
+msgid "get_version.png"
 msgstr ""
 
-#: ../../en/module/nbiot.rst:15 4518bbdd920a47c48040c7e6ecd90a8f
-msgid "Constructors"
+#: ../../en/module/nbiot.rst:24 3bd2f5e63ac446ee94d953fcba579434
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/module/nbiot.rst:27 ../../en/module/nbiot.rst:63
+#: 6b717cd1aff34e5dac6bbd2f708dc308
+msgid "NBIoT HTTP Example"
+msgstr "NBIoT HTTP 示例"
+
+#: ../../en/module/nbiot.rst:29 d4e14f89648a4ab19b8b03ca46a1b98c
+msgid "Open the |cores3_module_nbiot_http_example.m5f2| project in UiFlow2."
 msgstr ""
 
-#: ../../en/module/nbiot.rst:19 892ed5aeb66a45c3bf792b74ed6682a2
-msgid "Create a NBIOTModule object"
+#: ../../en/module/nbiot.rst:31 ../../en/module/nbiot.rst:65
+#: 4a0c773693bb4cae9f39c216dda555fb
+msgid "This example shows how to send HTTP request using the NBIoT Module."
+msgstr "此示例展示了如何使用 NB-IoT Module 发送 HTTP 请求。"
+
+#: ../../en/module/nbiot.rst:33 ../../en/module/nbiot.rst:49
+#: 36086158445345169dc81fe351289f98 module.nbiot.NBIOTModule:9 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/module/nbiot.rst:35 a4ff5e4b65184450aca4eb84a7b6726b
+msgid "|cores3_module_nbiot_http_example.png|"
 msgstr ""
 
-#: ../../en/module/nbiot.rst d186b217eb014e1bbd5a6e864a160dcb
+#: ../../en/refs/module.nbiot.ref:8 6294a269281b474b9187e303ddab2008
+msgid "cores3_module_nbiot_http_example.png"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:37 ../../en/module/nbiot.rst:53
+#: ../../en/module/nbiot.rst:73 ../../en/module/nbiot.rst:89
+#: 1fe57a5de03a487bb0a4eef5c7b7228b
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/module/nbiot.rst:39 ../../en/module/nbiot.rst:55
+#: ../../en/module/nbiot.rst:75 ../../en/module/nbiot.rst:91
+#: e30ace86e6734cea948c02e001ffa058
+msgid "Output of received NBIoT message data on screen."
+msgstr "屏幕上显示接收到的NBIoT消息数据。"
+
+#: ../../en/module/nbiot.rst:43 ../../en/module/nbiot.rst:79
+#: 43f861bfcecf49c686642b3e54101200
+msgid "MQTT Example"
+msgstr "MQTT 示例"
+
+#: ../../en/module/nbiot.rst:45 e74585a991994ef7a9eef34a84743f1a
+msgid "Open the |cores3_module_nbiot_mqtt_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_module_nbiot_mqtt_example.m5f2| 项目。"
+
+#: ../../en/module/nbiot.rst:47 ../../en/module/nbiot.rst:81
+#: 33f4de4536734646bd0240282b70ca6a
+msgid "This example shows how to send MQTT message using the NBIoT Module."
+msgstr "此示例展示了如何使用 NB-IoT Module 发送 MQTT 消息。"
+
+#: ../../en/module/nbiot.rst:51 d535e0d19d2d4b66ae94a16adaeeeb1d
+msgid "|cores3_module_nbiot_mqtt_example.png|"
+msgstr ""
+
+#: ../../en/refs/module.nbiot.ref:9 6294a269281b474b9187e303ddab2008
+msgid "cores3_module_nbiot_mqtt_example.png"
+msgstr ""
+
+#: ../../en/module/nbiot.rst:60 e4ea2f5f610045d5958e28e7735aa33f
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/module/nbiot.rst:67 ../../en/module/nbiot.rst:83
+#: 2b4be87ff1e64c1fb77b10ea9a44acce module.nbiot.NBIOTModule:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/module/nbiot.rst:95 d50a3cfa71df431a90696c9072138252
+msgid "**API**"
+msgstr "API参考"
+
+#: 4a16c3a1169d4cab9380f18b1014f628 module.nbiot.NBIOTModule:1 of
+msgid "Bases: :py:class:`~driver.simcom.sim7020.SIM7020`"
+msgstr ""
+
+#: 5f1411b937cd4f2d93ee9b565de86b43 module.nbiot.NBIOTModule:1 of
+msgid "Create an NBIOTModule object."
+msgstr "创建 NBIOTModule 对象。"
+
+#: ../../en/module/nbiot.rst 303d29f32ffd4faf846e3f8b255a4ff8
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/module/nbiot.rst:21 1b7cede31e2e4f38942752ba0d8b2ea6
-msgid "UART ID."
-msgstr ""
+#: d29a8bcab63b4a6ea58e59509c417848 module.nbiot.NBIOTModule:3 of
+msgid "The UART object or UART ID."
+msgstr "UART 对象或 UART ID。"
 
-#: ../../en/module/nbiot.rst:22 5324f7142db342f48e55d3186c44c7d9
-msgid "the UART TX pin."
-msgstr ""
+#: f36de35f824343a4b54dbcc5d9d98215 module.nbiot.NBIOTModule:5 of
+msgid "The UART TX pin. Required if uart_or_id is an ID."
+msgstr "UART TX 引脚。如果 uart_or_id 为 ID，则此引脚为必填项。"
 
-#: ../../en/module/nbiot.rst:23 ed2ae13b1f894491971b4d9bd7c38ec5
-msgid "the UART RX pin."
-msgstr ""
+#: acbf45501c2a4fcb85985e5dddfbc46a module.nbiot.NBIOTModule:6 of
+msgid "The UART RX pin. Required if uart_or_id is an ID."
+msgstr "UART RX 引脚。如果 uart_or_id 为 ID，则此引脚为必填项。"
 
-#: ../../en/module/nbiot.rst:25 e577c831cc534bd38d8865f3cfda147f
-msgid "UIFLOW2:"
-msgstr ""
+#: 8baac873cd83431c830f402e9f55fa96 module.nbiot.NBIOTModule:7 of
+msgid "Whether to print debug information."
+msgstr "是否打印调试信息。"
 
-#: ../../en/module/nbiot.rst:27 9824a3f04b964262ac6af58d20343217
+#: 2eeda938b2cf47d7915d83b45bb26f81 module.nbiot.NBIOTModule:11 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/module.nbiot.ref:7 b85a2f04d6b946ab911ac61291774341
+#: ../../en/refs/module.nbiot.ref:33 6294a269281b474b9187e303ddab2008
 msgid "init.png"
 msgstr ""
 
-#: ../../en/module/nbiot.rst:30 18c61ccdd4884b0c857304bdfd7d0723
-msgid ""
-"See :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>` for more "
-"details."
-msgstr ""
+#: ../../en/module/nbiot.rst:102 650d304b5e3c4dcdbdb9121fefccc3e2
+msgid "See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details."
+msgstr "有关更多详细信息，请参阅 :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>`。"
+
+#~ msgid "The following products are supported:"
+#~ msgstr ""
+
+#~ msgid "class NBIOTModule"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "Create a NBIOTModule object"
+#~ msgstr ""
+
+#~ msgid "UART ID."
+#~ msgstr ""
+
+#~ msgid "the UART TX pin."
+#~ msgstr ""
+
+#~ msgid "the UART RX pin."
+#~ msgstr ""
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "See :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>`"
+#~ " for more details."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please ensure that the firmware version"
+#~ " of SIM7020 is greater than or "
+#~ "equal to **1752B12SIM7020C**. |firmware.png| "
+#~ "can be used to check the firmware"
+#~ " version."
+#~ msgstr ""
+
+#~ msgid "|http_example.png|"
+#~ msgstr ""
+
+#~ msgid "|mqtt_example.png|"
+#~ msgstr ""
 
