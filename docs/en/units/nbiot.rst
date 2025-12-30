@@ -1,409 +1,401 @@
 NB-IoT Unit
 ===========
 
+.. sku: U111 U112
+
 .. include:: ../refs/unit.nbiot.ref
 
 The ``NB-IOT Unit`` is a wireless communication module suitable for global wide Cat-NB frequency band . It has a built-in SIM7020G communication module, uses serial communication (AT instruction set control).
 
+
 Support the following products:
 
-    |NB-IOTUnit|
+    ================== ====================
+    |Unit NBIoT|       |Unit NBIoT-CN|
+    ================== ====================
 
-Micropython Example::
+.. note::
 
-    import os, sys, io
-    import M5
-    from M5 import *
-    from unit import NBIOTUnit
-    import time
+    Please ensure that the device supports the NB-IoT frequency bands in your area before use.
 
-    def nbiot_0_SubTopic_event(_topic, _msg):
-        print(_topic)
-        print(_msg)
+.. note::
 
-    nbiot_0 = NBIOTUnit(port=(18, 17))
-    while not (nbiot_0.get_gprs_network_status()):
-        time.sleep(2)
-    nbiot_0.mqtt_server_connect('mqtt.m5stack.com', 1883, 'm5-mqtt-2024', '', '', 120)
-    nbiot_0.mqtt_subscribe_topic('SubTopic', nbiot_0_SubTopic_event, 0)
+    Please ensure that the firmware version of SIM7020 is greater than or equal to **1752B12SIM7020C**.
 
-    while True:
-        nbiot_0.mqtt_polling_loop()
-
-UIFLOW2 Example:
-
-    |example.png|
-
-.. only:: builder_html
-
-    |nbiot-mqtt-demo.m5f2|
+    |get_version.png| can be used to check the firmware version.
 
 
-class NBIOTUnit
+UiFlow2 Example
 ---------------
 
-Constructors
-------------
+NBIoT HTTP Example
+^^^^^^^^^^^^^^^^^^
 
-.. class:: NBIOTUnit(port=(,))
+Open the |cores3_unit_nbiot_http_example.m5f2| project in UiFlow2.
 
-    Create a NBIOTUnit object
+This example shows how to send HTTP request using the NBIoT Unit.
 
-    The parameters is:
-        - ``port`` uart pin tuple, which contains: ``(tx_pin, rx_pin)``.
-    
-    UIFLOW2:
+click **Send** button to send HTTP request. Response data will be printed in the textarea.
 
-        |init.png|
+UiFlow2 Code Block:
 
-.. _unit.NBIOTUnit.Methods:
+    |cores3_unit_nbiot_http_example.png|
 
-Methods
+Example output:
+
+    Output of received NBIoT message data on screen.
+
+
+MQTT Example
+^^^^^^^^^^^^
+
+Open the |cores3_unit_nbiot_mqtt_example.m5f2| project in UiFlow2.
+
+This example shows how to send MQTT message using the NBIoT Unit.
+
+UiFlow2 Code Block:
+
+    |cores3_unit_nbiot_mqtt_example.png|
+
+Example output:
+
+    Output of received NBIoT message data on screen.
+
+
+MicroPython Example
+-------------------
+
+NBIoT HTTP Example
+^^^^^^^^^^^^^^^^^^
+
+This example shows how to send HTTP request using the NBIoT Unit.
+
+click **Send** button to send HTTP request. Response data will be printed in the textarea.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/nbiot/cores3_unit_nbiot_http_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    Output of received NBIoT message data on screen.
+
+
+MQTT Example
+^^^^^^^^^^^^
+
+This example shows how to send MQTT message using the NBIoT Unit.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/unit/nbiot/cores3_unit_nbiot_mqtt_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    Output of received NBIoT message data on screen.
+
+
+**API**
 -------
 
-.. method:: NBIOTUnit.check_modem_is_ready()
+.. autoclass:: unit.nbiot.NBIOTUnit
+    :members:
 
-    To check whether the communication with the NBIOT unit has been successful. 
 
-    - Return: ``bool``:  True or False
+    .. py:method:: connect(apn="cmnbiot")
 
-    UIFLOW2:
+        Connect to the NB-IoT network.
 
-        |check_modem_is_ready.png|
+        :param str apn: The APN of the NB-IoT network. Default is "cmnbiot".
 
+        UiFlow2 Code Block:
 
-.. method:: NBIOTUnit.get_imei_number()
+            |connect.png|
 
-    Get the International Mobile station Equipment Identity(IMEI) number. 
+        MicroPython Code Block:
 
-    - Return: ``string``   
+            .. code-block:: python
 
-    UIFLOW2:
+                nbiot.connect("cmnbiot")
 
-        |get_imei_number.png|
 
+    .. py:method:: isconnected()
 
-.. method:: NBIOTUnit.get_signal_strength()
+        Check if the NB-IoT unit is connected to the network.
 
-    Get the received signal strength indication level. 
+        :return: True if connected, False otherwise.
+        :rtype: bool
 
-    - Return: ``int``:  
-        ====            ===========================
-        Int             Rx signal strength level
-        0               -110 dBm or less
-        1               -109 dBm <=rssi< -107 dBm
-        2               -107 dBm <=rssi< -105 dBm
-        3…30            -105 dBm <=rssi< -48 dBm
-        31              -48  dBm <=rssi
-        99              Not known or not detectable 
-        ====            ===========================
+        UiFlow2 Code Block:
 
-    UIFLOW2:
+            |isconnected.png|
 
-        |get_signal_strength.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: NBIOTUnit.get_model_identification()
+                if nbiot.isconnected():
+                    print("NB-IoT unit is connected")
+                else:
+                    print("NB-IoT unit is not connected")
 
-    Get the product model identification. 
 
-    - Return: ``string``: SIMxxxx
+    .. py:method:: active(en)
 
-    UIFLOW2:
+        Activate or deactivate the NB-IoT unit. Deactivating will enter low power consumption mode.
 
-        |get_model_identification.png|
+        :param bool en: True to activate, False to deactivate.
 
+        UiFlow2 Code Block:
 
-.. method:: NBIOTUnit.get_gprs_network_status()
+            |active.png|
 
-    Get the Indicates the Status of GPRS/Packet Domain Attached or Detached. 
-                        
-    - Return: ``int``:  0 ~ 1
-        ===     ========
-        Int     Status
-        0       Detached
-        1       Attached
-        ===     ========
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |get_gprs_network_status.png|
+                nbiot.active(True)
 
 
-.. method:: NBIOTUnit.get_show_pdp_address_cid(cid)
+    .. py:method:: status([param])
 
-    Get the requests of PDP address for context identifier(1~2) 
+        Get the status of the NB-IoT unit.
 
-    The parameters is:
-        - ``cid``: 1 ~ 2 
-    
-    UIFLOW2:
+        Following are commonly supported parameters.
 
-        |get_show_pdp_address.png|
+        ================= =================
+        Parameter         Description
+        ----------------- -----------------
+        rssi              signal strength
+        ----------------- -----------------
+        pin               SIM Card status
+        ----------------- -----------------
+        station           station registration status
+        ================= =================
 
+        :param str param: Optional parameter to specify the status type.
+        :return: Status information.
+        :rtype: str | tuple
 
-.. method:: NBIOTUnit.get_pdp_context_status()
+        UiFlow2 Code Block:
 
-    Get the Indicates the Status of PDP Context Activated or Deactivated. 
+            |get_rssi_status.png|
 
-    - Return: ``int``:  0 ~ 1
-        ===     ===========
-        Int     Status
-        0       Deactivated
-        1       Activated
-        ===     ===========
+            |get_sim_status.png|
 
-    UIFLOW2:
+            |get_station_info.png|
 
-        |get_pdp_context_status.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: NBIOTUnit.get_pdp_context_dynamic_parameters(param)
+                # get signal strength
+                print(nbiot.status("rssi"))
 
-    Get the PDP Context Read Dynamic Network Parameters. 
-    
-    The parameters is:
-        - ``param``: IP: 1, APN: 2.
-    
-    UIFLOW2:
+                # get SIM Card status
+                print(nbiot.status("pin"))
 
-        |get_pdp_context_dynamic_parameters.png|
+                # get station registration status
+                print(nbiot.status("station"))
 
 
-.. method:: NBIOTUnit.set_command_echo_mode(state)
+    .. py:method:: ifconfig
 
-    Set the Command Echo Mode Off or On
-    
-    The parameters is:
-        - ``state``: Off: 0, On: 1.
-    
-    UIFLOW2:
+        Get IP-level network interface parameters: IP address, subnet mask, gateway and DNS server.
 
-        |set_command_echo_mode.png|
+        :return: A tuple with the network interface parameters.
+        :rtype: tuple
 
-    
-.. method:: NBIOTUnit.set_gprs_network_state(enable)
+        UiFlow2 Code Block:
 
-    Set the State of GPRS/Packet Domain Attached or Detached.
-    
-    The parameters is:
-        - ``enable``: Detached: 0, Attached: 1.
+            |get_local_ip.png|
 
-    UIFLOW2:
+            |get_subnet.png|
 
-        |set_gprs_network_state.png|
+            |get_gateway.png|
 
+            |get_dns.png|
 
-.. method:: NBIOTUnit.set_pdp_context_apn(apn)
+        MicroPython Code Block:
 
-    Set the Default PSD Connection Settings.
+            .. code-block:: python
 
-    The parameters is:
-        - ``apn``:  apn a string parameter and "cmnbiot" is default
+                # Get IP address
+                print(nbiot.ifconfig()[0])
+                # Get subnet mask
+                print(nbiot.ifconfig()[1])
+                # Get gateway
+                print(nbiot.ifconfig()[2])
+                # Get DNS server
+                print(nbiot.ifconfig()[3])
 
-    UIFLOW2:
 
-        |set_pdp_context_apn.png|
+    .. py:method:: config('param')
+                   config(param=value)
 
+        Get or set the configuration parameters of the NB-IoT unit.
 
-.. method:: NBIOTUnit.set_pdp_context(active)
+        Following are commonly supported parameters.
 
-    Set the PDP Context Activate or Deactivate.
+        ================= ================= =================
+        Parameter         permissions       Description
+        ----------------- ----------------- -----------------
+        apn               R                 Access Point Name
+        ----------------- ----------------- -----------------
+        mode              R                 Network mode(only supported NB-IoT)
+        ----------------- ----------------- -----------------
+        band              R/W               Frequency Band
+        ----------------- ----------------- -----------------
+        ccid              R                 SIM Card CCID
+        ----------------- ----------------- -----------------
+        imei              R                 Device IMEI
+        ----------------- ----------------- -----------------
+        imsi              R                 SIM Card IMSI
+        ----------------- ----------------- -----------------
+        mfr               R                 Manufacturer
+        ----------------- ----------------- -----------------
+        model             R                 Module Model
+        ----------------- ----------------- -----------------
+        version           R                 Firmware Version
+        ================= ================= =================
 
-    The parameters is:
-        - ``active``:  Deactivate: 0, Activate: 1.
+        :param str param: The configuration parameter to get or set.
+        :param value: The value to set for the configuration parameter.
+        :return: The value of the configuration parameter when getting.
+        :rtype: None | str | int | tuple
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |set_pdp_context.png|
+            |get_apn.png|
 
+            |get_mode.png|
 
-.. method:: NBIOTUnit.modem_debug = True/False
+            |get_iccid.png|
 
-    Set the AT Command debug print enable or disable.
+            |get_imei.png|
 
-    The parameters is:
-        - ``modem_debug``:  disable: False, enable: True.
+            |get_imsi.png|
 
-    UIFLOW2:
+            |get_mfr.png|
 
-        |modem_debug.png|
-        
-        
-.. method:: NBIOTUnit.mqtt_server_connect(server, port, client_id, username, passwd, keepalive)
+            |get_model.png|
 
-    Set the MQTT Server address, port number, client id, username, password and keepalive time of the MQTT server.
-    
-    The parameters is:
-        - ``server``:  server address is string format
-        - ``port``:  port number is int format
-        - ``client_id``:  client id is string format
-        - ``username``:  username is string format
-        - ``passwd``:  password is string format
-        - ``keepalive``:  seconds is int format
+            |get_version.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |mqtt_server_connect.png|
+            .. code-block:: python
 
+                # Get apn
+                print(nbiot.config('apn'))
 
-.. method:: NBIOTUnit.mqtt_server_disconnect()
- 
-    Disconnect the MQTT Server
+                # Get network mode
+                nbiot.config('mode')
 
-    .. NOTE:: "mqtt server connect" must be set before this block for it to work effectively.
+                # Get Frequency Band
+                nbiot.config('band')
 
-    UIFLOW2:
+                # Set Frequency Band
+                nbiot.config(band=(1, 3, 5, 8))
 
-        |mqtt_server_disconnect.png|
+                # Get CCID
+                nbiot.config('ccid')
 
+                # Get IMEI
+                nbiot.config('imei')
 
-.. method:: NBIOTUnit.mqtt_server_is_connect()
- 
-    Check the MQTT Server Connection Status
+                # Get IMSI
+                nbiot.config('imsi')
 
-    - Return: ``int``:  0 ~ 1
-        ===     =============
-        Int     Status
-        0       Not connected
-        1       Connected
-        ===     =============
+                # Get Manufacturer
+                nbiot.config('mfr')
 
-    UIFLOW2:
+                # Get Module Model
+                nbiot.config('model')
 
-        |mqtt_server_is_connect.png|
+                # Get Firmware Version
+                nbiot.config('version')
 
 
-.. method:: NBIOTUnit.mqtt_subscribe_topic(topic, cb, qos)
+    .. py:method:: request(method, url, data=None, json=None, headers={}, stream=None, auth=None, timeout=None, parse_headers=True)
+                   head(url, **kw)
+                   get(url, **kw)
+                   post(url, **kw)
+                   put(url, **kw)
+                   patch(url, **kw)
+                   delete(url, **kw)
 
-    Specifies the subscription topic to subscribe.
+        Send an HTTP request.
 
-    The parameters is:
-        - ``topic``: string format
-        - ``cb``: callback function is called when a message has been received on a topic   
-        - ``qos``: 0 ~ 2 (Default is 0)
+        :param str method: HTTP method to use (e.g. "GET", "POST").
+        :param str url: URL to send the request to.
+        :param data: (optional) Dictionary, list of tuples, bytes, or file-like object to send in the body of the Request.
+        :param json: (optional) A JSON serializable Python object to send in the body of the Request.
+        :param dict headers: (optional) Dictionary of HTTP Headers to send with the Request.
+        :param bool stream: (optional) if False, the response content will be immediately downloaded.
+        :param tuple auth: (optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth.
+        :param float timeout: (optional) How many seconds to wait for the server to send data before giving up.
+        :param bool parse_headers: (optional) Whether to parse response headers.
 
-    .. NOTE:: When using this block, the "mqtt_server_connect" block must be set after this block
+        :return: A Response object.
 
-    UIFLOW2:
+        .. note::
 
-        |mqtt_subscribe_callback.png|
+            See :mod:`requests2` for more details.
 
-    An handler showing a message has been received::
+        UiFlow2 Code Block:
 
-        def nbiot_0_xxxxxxxx_event(_topic, _msg):
-            print("topic:", _topic)
-            print("msg:", _msg)
+            |http_request.png|
 
-    On uiflow2, you can get the **topic** and **message** of the current handler
-    through |get_topic.png| and |get_msg.png|.
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: NBIOTUnit.mqtt_unsubscribe_topic(topic)
+                # GET request
+                response = nbiot.get("http://httpbin.org/get")
+                print(response.status_code)
+                print(response.text)
+                response.close()
 
-    Unsubscribed topic to the MQTT server. 
+                # POST request with JSON data
+                response = nbiot.post("http://httpbin.org/post", json={"key": "value"})
+                print(response.json())
+                response.close()
 
-    The parameters is:
-        - ``topic``:  topic is string format
 
-    UIFLOW2:
+    .. py:method:: MQTTClient(client_id, server, port=0, user=None, password=None, keepalive=0, ssl=False, ssl_params={})
 
-        |mqtt_unsubscribe_topic.png|
+        Create an MQTT client.
 
+        :param str client_id: The unique client ID string.
+        :param str server: The hostname or IP address of the remote broker.
+        :param int port: Network port of the server host to connect to. Default is 0.
+        :param str user: User name for authentication.
+        :param str password: Password for authentication.
+        :param int keepalive: Maximum period in seconds allowed between communications with the broker. Default is 0.
+        :param bool ssl: Whether to use SSL/TLS support. Default is False.
+        :param dict ssl_params: SSL/TLS parameters.
 
-.. method:: NBIOTUnit.mqtt_publish_topic(topic, payload, quality)
+        :return: An MQTTClient object.
 
-    Set the published topic and message to the MQTT server. 
+        .. note::
 
-    The parameters is:
-        - ``topic``:  topic is string format 
-        - ``payload``:  payload is string format 
-        - ``quality``:  quality of service of 0, 1, 2
+            See :class:`MQTTClient <umqtt.MQTTClient>` for more details.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |mqtt_publish_topic.png|
+            |mqtt_client.png|
 
+        MicroPython Code Block:
 
-.. method:: NBIOTUnit.mqtt_polling_loop()
- 
-    The mqtt polling loop block must be used inside a loop.
+            .. code-block:: python
 
-    UIFLOW2:
-
-        |mqtt_polling_loop.png|
-
-
-.. method:: NBIOTUnit.http_request(method, url, headers, data)
-
-    Create an HTTP or HTTPS request and set the configuration.
-    
-    The parameters is:
-        - ``method``:  GET: 0, POST: 1, PUT: 2, DELETE: 3
-        - ``url``:  HTTP server host is string format
-        - ``headers``:  headers is Dictionaries type
-        - ``data``:  data is Dictionaries type
-
-    UIFLOW2:
-
-        |http_request.png|
-
-
-.. method:: NBIOTUnit.http_server_connect()
- 
-    HTTP Connect to target server host 
-
-    UIFLOW2:
-
-        |http_server_connect.png|
-
-
-.. method:: NBIOTUnit.http_server_disconnect()
- 
-    HTTP Disconnect to target server host
-
-    .. NOTE:: "http server connect" must be set before this block for it to work effectively.
-
-    UIFLOW2:
-
-        |http_server_disconnect.png|
-
-
-.. method:: NBIOTUnit.is_http_server_connect()
- 
-    Check the HTTP Server Connection Status
-
-    - Return: ``int``:  0 ~ 1
-        ===     =============
-        Int     Status
-        0       Not connected
-        1       Connected
-        ===     =============
-
-    UIFLOW2:
-
-        |is_http_server_connect.png|
-
-
-.. method:: NBIOTUnit.data_content
- 
-    Get the HTTP content data of the response from the host
-
-    - Return: ``string``:  Content data is string 
-
-    UIFLOW2:
-
-        |data_content.png|
-
-
-.. method:: NBIOTUnit.response_code
- 
-    Get the HTTP response code
-
-    - Return: ``int``: 100, 101, 200 ... 504, 505
-
-    UIFLOW2:
-
-        |response_code.png|
-
-
+                mqtt = nbiot.MQTTClient("client_id", "mqtt.m5stack.com", port=1883, user="user", password="password")
+                mqtt.connect()
+                mqtt.publish("topic", "message")
+                mqtt.subscribe("topic", lambda topic, msg: print(topic, msg))
+                mqtt.check_msg()

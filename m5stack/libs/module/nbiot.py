@@ -2,21 +2,47 @@
 #
 # SPDX-License-Identifier: MIT
 
+import sys
 import machine
 from driver.simcom.sim7020 import SIM7020
-from driver.simcom.common import Modem
-import sys
 
 if sys.platform != "esp32":
-    from typing import Literal
+    from typing import Union
 
 
-class NBIOTModule(SIM7020, Modem):
+class NBIOTModule(SIM7020):
+    """Create an NBIOTModule object.
+
+    :param uart_or_id: The UART object or UART ID.
+    :type uart_or_id: machine.UART | int
+    :param int tx: The UART TX pin. Required if uart_or_id is an ID.
+    :param int rx: The UART RX pin. Required if uart_or_id is an ID.
+    :param bool verbose: Whether to print debug information.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from module import NBIOTModule
+            import machine
+
+            # Using UART ID and pins (rx, tx)
+            nbiot = NBIOTModule(1, tx=17, rx=16)
+
+            # Or using UART object
+            uart = machine.UART(1, tx=17, rx=16)
+            nbiot = NBIOTModule(uart)
+    """
+
     def __init__(
         self,
-        uart_or_id: machine.UART | int,
-        tx: int = None,
-        rx: int = None,
+        uart_or_id: "Union[machine.UART, int]",
+        tx: "Union[int, None]" = None,
+        rx: "Union[int, None]" = None,
         verbose: bool = False,
     ) -> None:
         if isinstance(uart_or_id, machine.UART):
@@ -36,9 +62,4 @@ class NBIOTModule(SIM7020, Modem):
         else:
             raise ValueError("Invalid arguments: please provide UART instance or (id, tx, rx)")
 
-        Modem.__init__(self, uart=self.uart, verbose=verbose)
-        SIM7020.__init__(self, uart=self.uart, verbose=verbose)
-
-        if not self.check_modem_is_ready():
-            raise Exception("NBIOT module not found in mbus")
-        self.set_command_echo_mode(0)
+        super().__init__(uart=self.uart, verbose=verbose)

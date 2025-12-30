@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-15 12:10+0800\n"
+"POT-Creation-Date: 2026-01-09 16:36+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,154 +18,223 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/base/dtu_nbiot.rst:2 dc6bf45326a74bf49be5fb34d0ecfbd3
-msgid "Atom DTU NBIoT Base"
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:8 a64f48860caf4af99a0f4ac6d0d3e425
-msgid ""
-"This is the driver library for the ATOM DTU NBIoT Base to accept and send"
-" data from the DTU NBIoT."
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:10 2165c65bc0c54864a47c27ecf0c338a8
-msgid "Support the following products:"
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:13 ebcc9ef01434446b85db48f792391283
-msgid "|Atom DTU NBIoT|"
-msgstr ""
-
-#: ../../en/refs/base.dtu_nbiot.ref 427f07832075481687a8e30ef21d6a42
+#: ../../en/base/dtu_nbiot.rst:2 ../../en/refs/base.dtu_nbiot.ref
+#: 4620709491cd4b6ba1a7f22643a8713b c51dce79dda84dd390c12e0ddb0d81b8
 msgid "Atom DTU NBIoT"
 msgstr ""
 
-#: ../../en/base/dtu_nbiot.rst:13 9f58f650259a4dfcad0f7f33be94efd4
+#: ../../en/base/dtu_nbiot.rst:8 0dce050d673244639b1d88a642cf144e
+msgid ""
+"This is the driver library for the ATOM DTU NBIoT to accept and send data"
+" from the DTU NBIoT."
+msgstr "这是 ATOM DTU NBIoT 的驱动程序库，用于从DTU NBIoT 接受和发送数据。"
+
+#: ../../en/base/dtu_nbiot.rst:10 6bf1ae8f3aef4a6cb0286b611c519c01
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/base/dtu_nbiot.rst:13 8586148e5f5348d8934c7547721c43d8
+msgid "|Atom DTU NBIoT|"
+msgstr ""
+
+#: ../../en/base/dtu_nbiot.rst:13 7f0433dd150f4be08641afbd08ea393d
 msgid "|Atom DTU NBIoT CN|"
 msgstr ""
 
-#: ../../en/refs/base.dtu_nbiot.ref 6d59451623804771852c0a65e45dcdd3
+#: ../../en/refs/base.dtu_nbiot.ref a6a8dc33f6a54a7c8754d348f187db8c
 msgid "Atom DTU NBIoT CN"
 msgstr ""
 
-#: ../../en/base/dtu_nbiot.rst:18 e9bb27675f694103b13e8895645c6f60
+#: ../../en/base/dtu_nbiot.rst:18 4240a06c3ec44869b34eb3ce56f3f64d
+msgid ""
+"Please ensure that the device supports the NB-IoT frequency bands in your"
+" area before use."
+msgstr "请在使用前确认设备是否支持您所在地区的 NB-IoT 频段。"
+
+#: ../../en/base/dtu_nbiot.rst:22 558ae7cea8f245ed85e72d617514153c
+msgid ""
+"Please ensure that the firmware version of SIM7020 is greater than or "
+"equal to **1752B12SIM7020C**."
+msgstr "请确保 SIM7020 的固件版本大于或等于 **1752B12SIM7020C**。"
+
+#: ../../en/base/dtu_nbiot.rst:24 558ae7cea8f245ed85e72d617514153c
+msgid "|nbiot_get_version.png| can be used to check the firmware version."
+msgstr "可以使用 |nbiot_get_version.png| 来检查固件版本。"
+
+#: ../../en/refs/base.dtu_nbiot.ref:31 1df8d48e7049496197f52af3b2190eb6
+msgid "nbiot_get_version.png"
+msgstr ""
+
+#: ../../en/base/dtu_nbiot.rst:27 9ec3c9fee54d480c911f24181818214c
 msgid "UiFlow2 Example"
-msgstr ""
+msgstr "UiFlow2 示例"
 
-#: ../../en/base/dtu_nbiot.rst:21 ../../en/base/dtu_nbiot.rst:39
-#: e7a588f082484f72be4346dfb3a73572
+#: ../../en/base/dtu_nbiot.rst:30 ../../en/base/dtu_nbiot.rst:65
+#: 72306bb97e5e4df2910c35edb3465fd7
 msgid "NBIoT HTTP Example"
-msgstr ""
+msgstr "NBIoT HTTP 示例"
 
-#: ../../en/base/dtu_nbiot.rst:23 5b9f6108c98a47a4b0065aa5851b1541
-msgid "Open the |base_nbiot_atoms3_http_example.m5f2| project in UiFlow2."
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:32 0c18dc0a7cdb43d88456a7670d722890
+msgid "Open the |atoms3_base_nbiot_http_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3_base_nbiot_http_example.m5f2| 项目。"
 
-#: ../../en/base/dtu_nbiot.rst:25 ../../en/base/dtu_nbiot.rst:41
-#: f86be4b0a1024f558f50dea7183e2948
-msgid "This example shows how to send HTTP request using the Atom DTU NBIoT Base."
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:34 ../../en/base/dtu_nbiot.rst:67
+#: 56e91bcaff5b4d22bd5854114680cea1
+msgid "This example shows how to send HTTP request using the Atom DTU NBIoT."
+msgstr "此示例展示了如何使用 Atom DTU NBIoT 发送 HTTP 请求。"
 
-#: ../../en/base/dtu_nbiot.rst:27 ../../en/base/dtu_nbiot.rst:60
-#: 82cd66bf4be54279a2af5f8331bd1523 base.dtu_nbiot.AtomDTUNBIoT:7 of
+#: ../../en/base/dtu_nbiot.rst:36 ../../en/base/dtu_nbiot.rst:52
+#: 3922752e0ce148d8a695044576ed8928 base.dtu_nbiot.AtomDTUNBIoT:6 of
 msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/base/dtu_nbiot.rst:38 0c18dc0a7cdb43d88456a7670d722890
+msgid "|atoms3_base_nbiot_http_example.png|"
 msgstr ""
 
-#: ../../en/base/dtu_nbiot.rst:29 d985345df7114d6494691b72239d7ea2
-msgid "|http_example.png|"
+#: ../../en/refs/base.dtu_nbiot.ref:11 66e5f61110ab482c98dad200a0c0c0dd
+msgid "atoms3_base_nbiot_http_example.png"
 msgstr ""
 
-#: ../../en/refs/base.dtu_nbiot.ref:32 480bc719553243a392517bc01d2397d4
-msgid "http_example.png"
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:31 ../../en/base/dtu_nbiot.rst:49
-#: ../../en/base/dtu_nbiot.rst:64 ../../en/base/dtu_nbiot.rst:82
-#: 2cbae97da3ff4fa0b9fc0267dc7a88c0
+#: ../../en/base/dtu_nbiot.rst:40 ../../en/base/dtu_nbiot.rst:56
+#: ../../en/base/dtu_nbiot.rst:75 ../../en/base/dtu_nbiot.rst:91
+#: e7b0feb105bc4e088709f220d7e3f369
 msgid "Example output:"
-msgstr ""
+msgstr "示例输出："
 
-#: ../../en/base/dtu_nbiot.rst:33 ../../en/base/dtu_nbiot.rst:51
-#: ../../en/base/dtu_nbiot.rst:66 ../../en/base/dtu_nbiot.rst:84
-#: f03725e51ee04c7f82f9ddd2128e27cd
+#: ../../en/base/dtu_nbiot.rst:42 ../../en/base/dtu_nbiot.rst:77
+#: f43c9c05456e4a5dba4a8896a519126e
 msgid "Output of received NBIoT message data via serial port."
-msgstr ""
+msgstr "通过串口接收到的 NBIoT 消息输出数据。"
 
-#: ../../en/base/dtu_nbiot.rst:36 ../../en/base/dtu_nbiot.rst:69
-#: 164e8cc36a8b4a19a67bdd6a8a695028
-msgid "MicroPython Example"
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:43 ../../en/base/dtu_nbiot.rst:76
-#: 00e701fe788241bcba91711e77a8a642 base.dtu_nbiot.AtomDTUNBIoT:11 of
-msgid "MicroPython Code Block:"
-msgstr ""
-
-#: ../../en/base/dtu_nbiot.rst:54 ../../en/base/dtu_nbiot.rst:72
-#: ee0cd7437df8499c9b6269cede315b3a
+#: ../../en/base/dtu_nbiot.rst:46 ../../en/base/dtu_nbiot.rst:81
+#: c9a98509ca2b49dca4d294f720a954c4
 msgid "MQTT Example"
+msgstr "MQTT 示例"
+
+#: ../../en/base/dtu_nbiot.rst:48 c997591599ba4a32bbace2b0112bb81e
+msgid "Open the |atoms3_base_nbiot_mqtt_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |atoms3_base_nbiot_mqtt_example.m5f2| 项目。"
+
+#: ../../en/base/dtu_nbiot.rst:50 ../../en/base/dtu_nbiot.rst:83
+#: c7f8c5c44dc341418ae06ee403f0a1a8
+msgid "This example shows how to send MQTT message using the Atom DTU NBIoT."
+msgstr "此示例展示了如何使用 Atom DTU NBIoT 发送 MQTT 消息。"
+
+#: ../../en/base/dtu_nbiot.rst:54 c997591599ba4a32bbace2b0112bb81e
+msgid "|atoms3_base_nbiot_mqtt_example.png|"
 msgstr ""
 
-#: ../../en/base/dtu_nbiot.rst:56 7a7ffad9589c4e2580626e34c90b8880
-msgid "Open the |base_nbiot_atoms3_mqtt_example.m5f2| project in UiFlow2."
+#: ../../en/refs/base.dtu_nbiot.ref:12 66e5f61110ab482c98dad200a0c0c0dd
+msgid "atoms3_base_nbiot_mqtt_example.png"
 msgstr ""
 
-#: ../../en/base/dtu_nbiot.rst:58 ../../en/base/dtu_nbiot.rst:74
-#: 94c724f5f3ad49199e9de96c93131d80
-msgid "This example shows how to send MQTT message using the Atom DTU NBIoT Base."
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:58 ../../en/base/dtu_nbiot.rst:93
+#: f43c9c05456e4a5dba4a8896a519126e
+msgid "Output of received NBIoT message data on screen."
+msgstr "屏幕上显示接收到的 NBIoT 消息数据。"
 
-#: ../../en/base/dtu_nbiot.rst:62 d985345df7114d6494691b72239d7ea2
-msgid "|mqtt_example.png|"
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:62 2eec66bbb1884ff1a45118dabe474af3
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
 
-#: ../../en/refs/base.dtu_nbiot.ref:33 480bc719553243a392517bc01d2397d4
-msgid "mqtt_example.png"
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:69 ../../en/base/dtu_nbiot.rst:85
+#: 09974d8fff824e9c9d0b9bbf025a489b base.dtu_nbiot.AtomDTUNBIoT:10 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
 
-#: ../../en/base/dtu_nbiot.rst:87 19ee992b3a13490f8b4a65b332482a23
+#: ../../en/base/dtu_nbiot.rst:97 4826e588cc4844098b1f365a5b2ee8c4
 msgid "**API**"
-msgstr ""
+msgstr "API参考"
 
-#: ../../en/base/dtu_nbiot.rst:90 6a0d1dd4e87043d6a1eef17d691073f4
+#: ../../en/base/dtu_nbiot.rst:100 c51dce79dda84dd390c12e0ddb0d81b8
 msgid "AtomDTUNBIoT"
 msgstr ""
 
-#: base.dtu_nbiot.AtomDTUNBIoT:1 dce00b205c734efd98a9dbb2783cc9b5 of
-msgid ""
-"Bases: :py:class:`~driver.simcom.sim7020.SIM7020`, "
-":py:class:`~driver.simcom.common.Modem`"
+#: base.dtu_nbiot.AtomDTUNBIoT:1 da526788c30d4c2ab8e624367dd65c16 of
+msgid "Bases: :py:class:`~driver.simcom.sim7020.SIM7020`"
 msgstr ""
 
-#: 3f424382f8084268a30aec7990f6787f base.dtu_nbiot.AtomDTUNBIoT:1 of
-msgid "Create an AtomDTUNBIoT object"
-msgstr ""
+#: 13838d7f3fee4c349dc68219e9af2486 base.dtu_nbiot.AtomDTUNBIoT:1 of
+msgid "Create an AtomDTUNBIoT object."
+msgstr "创建 AtomDTUNBIoT 对象。"
 
-#: 84118ec1ff59477594fad4ead16a202f base.dtu_nbiot.AtomDTUNBIoT of
+#: ../../en/base/dtu_nbiot.rst 64cff787ef914870b2524a520be0ebd9
 msgid "Parameters"
 msgstr ""
 
-#: base.dtu_nbiot.AtomDTUNBIoT:3 c02d0ea8ce0e4aea9b32db7472b4f531 of
-msgid "The UART ID to use (0, 1, or 2). Default is 2."
+#: 8a6d9baf4cbd470f8da15b94cb2f9598 base.dtu_nbiot.AtomDTUNBIoT:3 of
+msgid "The UART object to use."
+msgstr "要使用的UART对象。"
+
+#: 2cb9385f7fed4408ac324c54a109fd4e base.dtu_nbiot.AtomDTUNBIoT:4 of
+msgid "Whether to print debug information."
+msgstr "是否打印调试信息。"
+
+#: 2a78e7ea426a4634abc068a183689f02 base.dtu_nbiot.AtomDTUNBIoT:8 of
+msgid "|nbiot_init.png|"
 msgstr ""
 
-#: 7433dd66688b4fc9a50fe34fcbc9c633 base.dtu_nbiot.AtomDTUNBIoT:4 of
-msgid "A list or tuple containing the TX and RX pin numbers."
+#: ../../en/refs/base.dtu_nbiot.ref:40 1c2470044bd144f183a042a336cc2631
+msgid "nbiot_init.png"
 msgstr ""
 
-#: base.dtu_nbiot.AtomDTUNBIoT:9 e27c7db01eb9489892b7de86551d7d69 of
-msgid "|init.png|"
+#: ../../en/base/dtu_nbiot.rst:107 caebe30c38cc4da3afe0d645149e65b0
+msgid "See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details."
+msgstr "更多详细信息请参阅 :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>`。"
+
+#: ../../en/base/dtu_nbiot.rst:110 ca20a6f5320445d3a502961371786e9f
+msgid "AtomRS485"
 msgstr ""
 
-#: ../../en/refs/base.dtu_nbiot.ref:12 5c580082af8843538abfac23ba1b191a
-msgid "init.png"
-msgstr ""
+#: ../../en/base/dtu_nbiot.rst:114 caebe30c38cc4da3afe0d645149e65b0
+msgid "See :class:`AtomRS485 <base.rs232.AtomRS232>` for more details."
+msgstr "更多详细信息请参阅 :class:`AtomRS485 <base.rs232.AtomRS232>`。"
 
-#: ../../en/base/dtu_nbiot.rst:95 edef0992b959438fbd86a620bca4538f
-msgid ""
-"See :ref:`base.AtomDTUNBIoT.Methods <unit.NBIOTUnit.Methods>` for more "
-"details."
-msgstr ""
+#~ msgid ""
+#~ "Bases: :py:class:`~driver.simcom.sim7020.SIM7020`, "
+#~ ":py:class:`~driver.simcom.common.Modem`"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "See :ref:`base.AtomDTUNBIoT.Methods "
+#~ "<unit.NBIOTUnit.Methods>` for more details."
+#~ msgstr ""
+
+#~ msgid "The UART ID to use (0, 1, or 2). Default is 2."
+#~ msgstr "使用的 UART ID (0, 1, 或 2)。默认为 2。"
+
+#~ msgid "A list or tuple containing the TX and RX pin numbers."
+#~ msgstr "包含 TX 和 RX 引脚号的列表或元组。"
+
+#~ msgid "Atom DTU NBIoT Base"
+#~ msgstr ""
+
+#~ msgid "|http_example.png|"
+#~ msgstr ""
+
+#~ msgid "http_example.png"
+#~ msgstr ""
+
+#~ msgid "|mqtt_example.png|"
+#~ msgstr ""
+
+#~ msgid "mqtt_example.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please ensure that the firmware version"
+#~ " of SIM7020 is greater than or "
+#~ "equal to **1752B12SIM7020C**. |firmware.png| "
+#~ "can be used to check the firmware"
+#~ " version."
+#~ msgstr ""
+
+#~ msgid "|init.png|"
+#~ msgstr ""
+
+#~ msgid "init.png"
+#~ msgstr ""
 

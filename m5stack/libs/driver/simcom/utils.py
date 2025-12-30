@@ -5,7 +5,7 @@
 import time
 
 
-def converter(data, type):
+def converter(data: str | bytes | bytearray, type: type) -> str | bytes | bytearray:
     if isinstance(data, type):
         return data
 
@@ -26,6 +26,8 @@ def converter(data, type):
             return str(data, "utf-8")
         if type is bytes:
             return bytes(data)
+
+    return data
 
 
 def extract_text(text, beg, end) -> str | bytes | bytearray:

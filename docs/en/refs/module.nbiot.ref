@@ -3,5 +3,62 @@
     :height: 200px
     :width: 200px
 
-
+.. |active.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/active.png
+.. |connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/connect.png
+.. |cores3_module_nbiot_http_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/cores3_module_nbiot_http_example.png
+.. |cores3_module_nbiot_mqtt_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/cores3_module_nbiot_mqtt_example.png
+.. |get_apn.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_apn.png
+.. |get_dns.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_dns.png
+.. |get_gateway.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_gateway.png
+.. |get_iccid.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_iccid.png
+.. |get_imei.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_imei.png
+.. |get_imsi.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_imsi.png
+.. |get_local_ip.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_local_ip.png
+.. |get_mfr.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_mfr.png
+.. |get_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_mode.png
+.. |get_model.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_model.png
+.. |get_rssi_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_rssi_status.png
+.. |get_sim_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_sim_status.png
+.. |get_station_info.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_station_info.png
+.. |get_subnet.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_subnet.png
+.. |get_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/get_version.png
+.. |http_close.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_close.png
+.. |http_get_content.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_content.png
+.. |http_get_headers.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_headers.png
+.. |http_get_json.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_json.png
+.. |http_get_reason.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_reason.png
+.. |http_get_status_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_status_code.png
+.. |http_get_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_get_text.png
+.. |http_request.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/http_request.png
 .. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/init.png
+.. |isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/isconnected.png
+.. |mqtt_check_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_check_msg.png
+.. |mqtt_client.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_client.png
+.. |mqtt_connect.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_connect.png
+.. |mqtt_disconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_disconnect.png
+.. |mqtt_get_msg.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_get_msg.png
+.. |mqtt_get_topic.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_get_topic.png
+.. |mqtt_isconnected.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_isconnected.png
+.. |mqtt_last_will.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_last_will.png
+.. |mqtt_publish.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_publish.png
+.. |mqtt_reconnect.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_reconnect.png
+.. |mqtt_subscribe_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_subscribe_event.png
+.. |mqtt_unsubscribe.png| image:: https://static-cdn.m5stack.com/mpy_docs/module/com_nbiot/mqtt_unsubscribe.png
+
+.. |cores3_module_nbiot_http_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/nbiot/cores3_module_nbiot_http_example.m5f2"
+        target="_blank"
+    >
+        cores3_module_nbiot_http_example.m5f2
+    </a>
+
+.. |cores3_module_nbiot_mqtt_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/module/nbiot/cores3_module_nbiot_mqtt_example.m5f2"
+        target="_blank"
+    >
+        cores3_module_nbiot_mqtt_example.m5f2
+    </a>

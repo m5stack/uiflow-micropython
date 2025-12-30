@@ -143,7 +143,7 @@ def _request(
                     s.write(data)
 
         l = s.readline()
-        print(f"request2 l: {repr(l)}")
+        # print(f"request2 l: {repr(l)}")
         l = l.split(None, 2)
         if len(l) < 2:
             # Invalid response

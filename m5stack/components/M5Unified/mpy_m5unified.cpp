@@ -484,6 +484,7 @@ static void in_i2c_init(void) {
             i2c_bus_config.scl_io_num = in_scl;
             i2c_bus_config.sda_io_num = in_sda;
             i2c_bus_config.glitch_ignore_cnt = 7;
+            i2c_bus_config.flags.enable_internal_pullup = true;
             i2c_new_master_bus(&i2c_bus_config, &bus_handle);
         }
         #else
