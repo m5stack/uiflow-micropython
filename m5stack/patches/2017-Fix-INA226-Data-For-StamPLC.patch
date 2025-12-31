@@ -1,0 +1,73 @@
+Index: M5Unified/src/utility/Power_Class.cpp
+===================================================================
+--- M5Unified.orig/src/utility/Power_Class.cpp
++++ M5Unified/src/utility/Power_Class.cpp
+@@ -221,7 +221,7 @@ namespace m5
+       cfg.shunt_conversion_time = INA226_Class::ConversionTime::US_1100;
+       cfg.mode = INA226_Class::Mode::ShuntAndBus;
+       cfg.shunt_res = 0.01f;
+-      cfg.max_expected_current = 8.192f;
++      cfg.max_expected_current = 2.0f;
+       Ina226.config(cfg);
+       break;
+     }
+@@ -1620,7 +1620,7 @@ namespace m5
+     }
+   }
+ 
+-  int16_t Power_Class::_readExtValue(ext_port_mask_t port_mask, bool is_voltage)
++  float Power_Class::_readExtValue(ext_port_mask_t port_mask, bool is_voltage)
+   {
+ #if defined(M5UNIFIED_PC_BUILD)
+       (void)port_mask;
+@@ -1658,7 +1658,7 @@ namespace m5
+           if (is_voltage)
+             return Ina226.getBusVoltage() * 1000;
+           else
+-            return 0;
++            return Ina226.getShuntCurrent() * 1000;
+         }
+         return 0;
+     #endif
+@@ -1668,12 +1668,12 @@ namespace m5
+ #endif
+   }
+ 
+-  int16_t Power_Class::getExtVoltage(ext_port_mask_t port_mask)
++  float Power_Class::getExtVoltage(ext_port_mask_t port_mask)
+   {
+     return _readExtValue(port_mask, true);
+   }
+ 
+-  int16_t Power_Class::getExtCurrent(ext_port_mask_t port_mask)
++  float Power_Class::getExtCurrent(ext_port_mask_t port_mask)
+   {
+     return _readExtValue(port_mask, false);
+   }
+Index: M5Unified/src/utility/Power_Class.hpp
+===================================================================
+--- M5Unified.orig/src/utility/Power_Class.hpp
++++ M5Unified/src/utility/Power_Class.hpp
+@@ -179,11 +179,11 @@ namespace m5
+ 
+     /// Get Ext Port voltage
+     /// @return Ext voltage [mV]
+-    int16_t getExtVoltage(ext_port_mask_t port_mask);
++    float getExtVoltage(ext_port_mask_t port_mask);
+ 
+     /// get Ext Port current
+     /// @return Ext current [mA] ( +=charge / -=discharge )
+-    int16_t getExtCurrent(ext_port_mask_t port_mask);
++    float getExtCurrent(ext_port_mask_t port_mask);
+ 
+     /// Get Power Key Press condition.
+     /// @return 0=none / 1=long pressed / 2=short clicked / 3=both
+@@ -230,7 +230,7 @@ namespace m5
+     std::int32_t _getBatteryAdcRaw(void);
+     void _powerOff(bool withTimer);
+     void _timerSleep(void);
+-    int16_t _readExtValue(ext_port_mask_t port_mask, bool is_voltage);
++    float _readExtValue(ext_port_mask_t port_mask, bool is_voltage);
+ 
+     float _adc_ratio = 0;
+     std::uint8_t _wakeupPin = 255;

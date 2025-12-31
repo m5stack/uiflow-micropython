@@ -78,11 +78,11 @@ namespace m5
     }
 
     mp_obj_t power_getExtVoltage(mp_obj_t self, mp_obj_t ext_port) {
-        return mp_obj_new_int(getPower(self)->getExtVoltage((ext_port_mask_t)mp_obj_get_int(ext_port)));
+        return mp_obj_new_float(getPower(self)->getExtVoltage((ext_port_mask_t)mp_obj_get_float(ext_port)));
     }
 
     mp_obj_t power_getExtCurrent(mp_obj_t self, mp_obj_t ext_port) {
-        return mp_obj_new_int(getPower(self)->getExtCurrent((ext_port_mask_t)mp_obj_get_int(ext_port)));
+        return mp_obj_new_float(getPower(self)->getExtCurrent((ext_port_mask_t)mp_obj_get_float(ext_port)));
     }
 
     mp_obj_t power_setUsbOutput(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
