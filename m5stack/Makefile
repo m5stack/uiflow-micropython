@@ -342,6 +342,7 @@ M5UNIFIED_PATCH_SERIES = \
 	2014-Fix-PowerHub-current-sign.patch \
 	2015-Fix-PowerHub-battery-level.patch \
 	2016-Fix-Rtc-For-StamPLC.patch \
+	2017-Fix-INA226-Data-For-StamPLC.patch \
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
