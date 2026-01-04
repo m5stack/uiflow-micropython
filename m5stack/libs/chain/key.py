@@ -72,6 +72,9 @@ class KeyChain:
 
         :param callback: Callback function.
 
+        .. note::
+            Chain related methods cannot be called in the callback function.
+
         UiFlow2 Code Block:
 
             |key_click_callback.png|
@@ -91,6 +94,9 @@ class KeyChain:
         """set button double click callback.
 
         :param callback: Callback function.
+
+        .. note::
+            Chain related methods cannot be called in the callback function.
 
         UiFlow2 Code Block:
 
@@ -112,6 +118,9 @@ class KeyChain:
 
         :param callback: Callback function.
 
+        .. note::
+            Chain related methods cannot be called in the callback function.
+
         UiFlow2 Code Block:
 
             |long_press_callback.png|
@@ -131,7 +140,9 @@ class KeyChain:
         self, double_click_interval: int, long_press_interval: int
     ) -> bool:
         payload = struct.pack("<BB", double_click_interval, long_press_interval)
-        state, response = self.bus.chainll.send(self.device_id, self.CMD_SET_BUTTON_MODE, payload)
+        state, response = self.bus.chainll.send(
+            self.device_id, self.CMD_SET_BUTTON_TRIGGER_TIMEOUT, payload
+        )
         if state:
             return response[0] == 1
         return False
@@ -414,4 +425,3 @@ class KeyChain:
                 uid = keychain_0.get_device_uid(1)  # 12-byte UID
         """
         return self.bus.chainll.get_device_uid(self.device_id, uid_type)
-
