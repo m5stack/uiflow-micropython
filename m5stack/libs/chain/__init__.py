@@ -4,6 +4,7 @@
 
 _attrs = {
     "AngleChain": "angle",
+    "BusChainUnit": "unit_bus",
     "ChainBus": "chain",
     "EncoderChain": "encoder",
     "JoystickChain": "joystick",

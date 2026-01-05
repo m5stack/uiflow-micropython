@@ -5,6 +5,10 @@ Chain Joystick
 
 Chain Joystick is a joystick module that can be connected to the M5Chain series devices. This module provides functions to read the joystick position and button states.
 
+Support the following products:
+
+    |Chain Joystick|
+
 UiFlow2 Example
 ---------------
 

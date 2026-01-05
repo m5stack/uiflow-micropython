@@ -1,0 +1,55 @@
+
+.. |Unit Chain Bus| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1192/U212-Unit-Chain-Bus-main-pictures-01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U212
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/init.png
+.. |get_work_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/get_work_mode.png
+.. |set_gpio_output.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_gpio_output.png
+.. |set_gpio_output_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_gpio_output_value.png
+.. |set_gpio_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_gpio_input.png
+.. |get_gpio_input_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/get_gpio_input_value.png
+.. |set_gpio_exit.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_gpio_exit.png
+.. |set_gpio_exit_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/event.png
+.. |set_adc.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_adc.png
+.. |get_adc_input.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/get_adc_input.png
+.. |set_i2c.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/set_i2c.png
+.. |readfrom.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/readfrom.png
+.. |readfrom_into.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/readfrom_into.png
+.. |writeto.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/writeto.png
+.. |readfrom_mem.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/readfrom_mem.png
+.. |readfrom_mem_into.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/readfrom_mem_into.png
+.. |writeto_mem.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/writeto_mem.png
+.. |scan.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/scan.png
+
+.. |m5basic_unit_chain_bus_gpio_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/gpio_example.png
+.. |m5basic_unit_chain_bus_i2c_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/i2c_dlight_example.png
+.. |m5basic_unit_chain_bus_adc_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/unit_chain_bus/adc_example.png
+
+.. |m5basic_unit_chain_bus_gpio_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/unit_chain_bus/m5basic_unit_chain_bus_gpio_example.m5f2"
+        target="_blank"
+    >
+        m5basic_unit_chain_bus_gpio_example.m5f2
+    </a>
+
+.. |m5basic_unit_chain_bus_i2c_dlight_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/unit_chain_bus/m5basic_unit_chain_bus_i2c_dlight_example.m5f2"
+        target="_blank"
+    >
+        m5basic_unit_chain_bus_i2c_dlight_example.m5f2
+    </a>
+
+.. |m5basic_unit_chain_bus_adc_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/unit_chain_bus/m5basic_unit_chain_bus_adc_example.m5f2"
+        target="_blank"
+    >
+        m5basic_unit_chain_bus_adc_example.m5f2
+    </a>

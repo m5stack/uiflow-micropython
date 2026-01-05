@@ -5,6 +5,10 @@ Chain Key
 
 Chain Key is a key module that can be connected to the M5Chain series devices. This module provides functions to read the key states.
 
+Support the following products:
+
+    |Chain Key|
+
 UiFlow2 Example
 ---------------
 

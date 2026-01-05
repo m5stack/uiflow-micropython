@@ -10,3 +10,4 @@ Chain
     joystick.rst
     key.rst
     tof.rst
+    unit_bus.rst
