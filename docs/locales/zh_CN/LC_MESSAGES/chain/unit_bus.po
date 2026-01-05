@@ -1,0 +1,796 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-05 12:59+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/chain/unit_bus.rst:2 ../../en/refs/chain.unit_bus.ref
+#: 25c088ab48ce4ec1a63b8c8bf2cc5b43 c9a549390b504b0c9baad223d0de98e0
+msgid "Unit Chain Bus"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:6 f7d90ac9f6bf40cc8d0e6198773dac25
+msgid ""
+"BusChainUnit is the helper class for Bus devices on the Chain bus. It "
+"provides methods to configure GPIO pins (input, output, external "
+"interrupt), read ADC values, and communicate with I2C devices. The class "
+"supports multiple work modes including GPIO output, GPIO input, external "
+"interrupt, ADC, and I2C."
+msgstr ""
+"BusChainUnit 是用于 Chain 总线上的 Bus 设备的辅助类。它提供了配置 GPIO 引脚（输入、输出、外部中断）、读取 ADC "
+"值以及与 I2C 设备通信的方法。该类支持多种工作模式，包括 GPIO 输出、GPIO 输入、外部中断、ADC 和 I2C。"
+
+#: ../../en/chain/unit_bus.rst:10 d2bb4ec85fdf4d4fb2b5daa247532867
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/chain/unit_bus.rst:12 e7fe905e8d8d46ee80a1f6f9586868fa
+msgid "|Unit Chain Bus|"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:15 ee70c7ddb17f4f1c8fa344ab542d0656
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/chain/unit_bus.rst:18 ../../en/chain/unit_bus.rst:69
+#: 4f77eeaf21cc4d059ee759668bf8ddac
+msgid "GPIO control"
+msgstr "GPIO 控制"
+
+#: ../../en/chain/unit_bus.rst:20 2da9aa946d8a4301b2a98341d5b94e80
+msgid "Open the |m5basic_unit_chain_bus_gpio_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5basic_unit_chain_bus_gpio_example.m5f2| 项目。"
+
+#: ../../en/chain/unit_bus.rst:22 ../../en/chain/unit_bus.rst:71
+#: a91022360a824c02a76541d34b1fa7e3
+msgid ""
+"This example demonstrates how to configure and use GPIO pins with the "
+"Unit Chain Bus module. The example configures GPIO1 as input mode with "
+"pull-up, and GPIO2 as output mode with push-pull configuration. It "
+"continuously reads GPIO1 input value every 200ms and displays the state "
+"(HIGH/LOW) on screen. GPIO2 output level toggles every 1 second (every 5 "
+"cycles) between HIGH and LOW, demonstrating output control functionality."
+msgstr ""
+"本示例演示如何使用 Unit Chain Bus 模块配置和使用 GPIO 引脚。示例将 GPIO1 配置为带上拉的输入模式，将 GPIO2 "
+"配置为推挽输出模式。它每 200ms 连续读取 GPIO1 的输入值，并在屏幕上显示状态（高/低）。GPIO2 的输出电平每 1 秒（每 5 "
+"个周期）在高和低之间切换，演示输出控制功能。"
+
+#: ../../en/chain/unit_bus.rst:27 ../../en/chain/unit_bus.rst:42
+#: ../../en/chain/unit_bus.rst:57 2364fe3c6bf44390a1a402415c8f0cc7
+#: chain.unit_bus.BusChainUnit:6 chain.unit_bus.BusChainUnit.get_adc_input:7
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:7
+#: chain.unit_bus.BusChainUnit.get_work_mode:17
+#: chain.unit_bus.BusChainUnit.readfrom:9
+#: chain.unit_bus.BusChainUnit.readfrom_into:7
+#: chain.unit_bus.BusChainUnit.readfrom_mem:10
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:8
+#: chain.unit_bus.BusChainUnit.scan:6 chain.unit_bus.BusChainUnit.set_adc:7
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:9
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:7
+#: chain.unit_bus.BusChainUnit.set_gpio_input:8
+#: chain.unit_bus.BusChainUnit.set_gpio_output:9
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:8
+#: chain.unit_bus.BusChainUnit.set_i2c:7 chain.unit_bus.BusChainUnit.writeto:9
+#: chain.unit_bus.BusChainUnit.writeto_mem:8 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/chain/unit_bus.rst:29 f15f166f45ad405fb53b8cab6b10635f
+msgid "|m5basic_unit_chain_bus_gpio_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:26 35ae7beff9964985a563ff846a875c67
+msgid "m5basic_unit_chain_bus_gpio_example.png"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:31 ../../en/chain/unit_bus.rst:46
+#: ../../en/chain/unit_bus.rst:61 ../../en/chain/unit_bus.rst:82
+#: ../../en/chain/unit_bus.rst:97 ../../en/chain/unit_bus.rst:112
+#: 83f067d17d9e4d20855d170c7d40bbf3
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/chain/unit_bus.rst:33 ../../en/chain/unit_bus.rst:48
+#: ../../en/chain/unit_bus.rst:63 ../../en/chain/unit_bus.rst:84
+#: ../../en/chain/unit_bus.rst:99 ../../en/chain/unit_bus.rst:114
+#: 114dcf64510f45b497bed90e712e7b3b
+msgid "None"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:36 ../../en/chain/unit_bus.rst:87
+#: ceff848dc23a4df59103759bcaecce4b
+msgid "ADC reading"
+msgstr "ADC 读取"
+
+#: ../../en/chain/unit_bus.rst:38 c607f66b0ac748a39c3ab3e6d9faa127
+msgid "Open the |m5basic_unit_chain_bus_adc_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5basic_unit_chain_bus_adc_example.m5f2| 项目。"
+
+#: ../../en/chain/unit_bus.rst:40 ../../en/chain/unit_bus.rst:89
+#: 4fa34e3776b6480ab41df77bf35a3084
+msgid ""
+"This example demonstrates how to read ADC values from the Unit Chain Bus "
+"module and use them to control RGB brightness."
+msgstr "本示例演示如何从 Unit Chain Bus 模块读取 ADC 值，并使用它们来控制 RGB 亮度。"
+
+#: ../../en/chain/unit_bus.rst:44 a04b0213518941b287a75b1a4fc9e066
+msgid "|m5basic_unit_chain_bus_adc_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:28 25853a457c07465596988cfc44bc3f42
+msgid "m5basic_unit_chain_bus_adc_example.png"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:51 ../../en/chain/unit_bus.rst:102
+#: 9ea7e44ce3034be8bfe221e633791912
+msgid "I2C device communication"
+msgstr "I2C 设备通信"
+
+#: ../../en/chain/unit_bus.rst:53 f4e53b1541884a96b9014c48419bbdea
+msgid ""
+"Open the |m5basic_unit_chain_bus_i2c_dlight_example.m5f2| project in "
+"UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5basic_unit_chain_bus_i2c_dlight_example.m5f2| 项目。"
+
+#: ../../en/chain/unit_bus.rst:55 ../../en/chain/unit_bus.rst:104
+#: 301618b4825b4eee98d5afd97e2452b1
+msgid ""
+"This example demonstrates how to use the Unit Chain Bus module to "
+"communicate with I2C devices. The example shows how to configure the bus "
+"for I2C mode and use it with I2C devices like the DLight sensor."
+msgstr ""
+"本示例演示如何使用 Unit Chain Bus 模块与 I2C 设备通信。示例展示了如何将总线配置为 I2C 模式，以及如何将其与 DLight"
+" 传感器等 I2C 设备一起使用。"
+
+#: ../../en/chain/unit_bus.rst:59 ab4f9b5acfb745fea1883d3224a4e07e
+msgid "|m5basic_unit_chain_bus_i2c_example.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:27 fa3b38b4116a4294abcb026ec1ae5730
+msgid "m5basic_unit_chain_bus_i2c_example.png"
+msgstr ""
+
+#: ../../en/chain/unit_bus.rst:66 d1af4824612b4645b61ef03327e08658
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/chain/unit_bus.rst:76 ../../en/chain/unit_bus.rst:91
+#: ../../en/chain/unit_bus.rst:106 14dc6b657e3c4a6181c14a75a0aa817a
+#: chain.unit_bus.BusChainUnit:10 chain.unit_bus.BusChainUnit.get_adc_input:11
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:11
+#: chain.unit_bus.BusChainUnit.get_work_mode:21
+#: chain.unit_bus.BusChainUnit.readfrom:13
+#: chain.unit_bus.BusChainUnit.readfrom_into:11
+#: chain.unit_bus.BusChainUnit.readfrom_mem:14
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:12
+#: chain.unit_bus.BusChainUnit.scan:10 chain.unit_bus.BusChainUnit.set_adc:11
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:13
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:11
+#: chain.unit_bus.BusChainUnit.set_gpio_input:12
+#: chain.unit_bus.BusChainUnit.set_gpio_output:13
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:12
+#: chain.unit_bus.BusChainUnit.set_i2c:11
+#: chain.unit_bus.BusChainUnit.writeto:13
+#: chain.unit_bus.BusChainUnit.writeto_mem:12 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/chain/unit_bus.rst:118 66ef9c31119f4241994eefcfdaaa2433
+msgid "**API**"
+msgstr "**API**"
+
+#: ../../en/chain/unit_bus.rst:121 26c7e78e32f7464ea67edfe6ee745f47
+msgid "BusChainUnit"
+msgstr ""
+
+#: chain.unit_bus.BusChainUnit:1 f30e4bd7d6bf437e8bf4c196ba7b1b3f of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+#: 27ca939f7644410b8c1c60aa0cf475d8 chain.unit_bus.BusChainUnit:1 of
+msgid "Bus Chain Unit class for interacting with Bus devices over Chain bus."
+msgstr "用于通过 Chain 总线与 Bus 设备交互的 Bus Chain Unit 类。"
+
+#: ../../en/chain/unit_bus.rst chain.unit_bus.BusChainUnit.get_adc_input
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value
+#: chain.unit_bus.BusChainUnit.get_work_mode
+#: chain.unit_bus.BusChainUnit.readfrom
+#: chain.unit_bus.BusChainUnit.readfrom_into
+#: chain.unit_bus.BusChainUnit.readfrom_mem
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into
+#: chain.unit_bus.BusChainUnit.set_adc
+#: chain.unit_bus.BusChainUnit.set_gpio_exit
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback
+#: chain.unit_bus.BusChainUnit.set_gpio_input
+#: chain.unit_bus.BusChainUnit.set_gpio_output
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value
+#: chain.unit_bus.BusChainUnit.set_i2c chain.unit_bus.BusChainUnit.writeto
+#: chain.unit_bus.BusChainUnit.writeto_mem d55f9978954d4d89a14e7a9bd3d42aa0 of
+msgid "Parameters"
+msgstr "参数"
+
+#: chain.unit_bus.BusChainUnit:3 dda931e84bc848f883a8084e3d0a58e8 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: chain.unit_bus.BusChainUnit:4 e4b30026cbc44198b6deb17740a8ce0c of
+msgid "The device ID of the Bus device on the Chain bus."
+msgstr "Chain 总线上 Bus 设备的设备 ID。"
+
+#: chain.unit_bus.BusChainUnit:8 fd84a87feeaf45e7a5ef310e2657ea69 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:7 e8fb2780861c480d8e291f0b62e09d9b
+msgid "init.png"
+msgstr ""
+
+#: 4e299607b4894b9496549b517ade16a2 chain.unit_bus.BusChainUnit.get_work_mode:1
+#: of
+msgid "Get the Unit ChainBus work mode."
+msgstr "获取 Unit ChainBus 工作模式。"
+
+#: 816f9f783ae24a988065268692c4cc61 chain.unit_bus.BusChainUnit.get_work_mode:3
+#: of
+msgid "Returns the work mode of the specified GPIO pin."
+msgstr "返回指定 GPIO 引脚的工作模式。"
+
+#: 28cdba96f7ae41b38a5f15e9137a8af3
+#: chain.unit_bus.BusChainUnit.get_work_mode:11 of
+msgid "Work mode values:"
+msgstr "工作模式值："
+
+#: 30f9d913c115446baf3acbabd9d4de50 chain.unit_bus.BusChainUnit.get_work_mode:6
+#: of
+msgid ":attr:`BusChainUnit.WORK_MODE_UNCONFIGURED`"
+msgstr ""
+
+#: 25bfea9a26c94fbabf823734aafa011a chain.unit_bus.BusChainUnit.get_work_mode:7
+#: of
+msgid ":attr:`BusChainUnit.WORK_MODE_GPIO_OUTPUT`"
+msgstr ""
+
+#: 9a305eb1a9324418ac1b3e306a795536 chain.unit_bus.BusChainUnit.get_work_mode:8
+#: of
+msgid ":attr:`BusChainUnit.WORK_MODE_GPIO_INPUT`"
+msgstr ""
+
+#: b4b9efb0bb8d44659d0908ea7733c7d0 chain.unit_bus.BusChainUnit.get_work_mode:9
+#: of
+msgid ":attr:`BusChainUnit.WORK_MODE_EXIT`"
+msgstr ""
+
+#: 99c870baf1ce4e829493dbb0a2f9d0f7
+#: chain.unit_bus.BusChainUnit.get_work_mode:10 of
+msgid ":attr:`BusChainUnit.WORK_MODE_ADC`"
+msgstr ""
+
+#: 5d55fa58419248a9b3297f11b28df1a3
+#: chain.unit_bus.BusChainUnit.get_work_mode:11 of
+msgid ":attr:`BusChainUnit.WORK_MODE_I2C`"
+msgstr ""
+
+#: a8988ba9b8544c0599d8e706c1676eb9
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:3
+#: chain.unit_bus.BusChainUnit.get_work_mode:13
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:3
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:3
+#: chain.unit_bus.BusChainUnit.set_gpio_input:3
+#: chain.unit_bus.BusChainUnit.set_gpio_output:3
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:3 of
+msgid "GPIO number (1 or 2)."
+msgstr "GPIO 编号（1 或 2）。"
+
+#: 183d33f070e84cb9a6eab97df173d69f chain.unit_bus.BusChainUnit.get_adc_input
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value
+#: chain.unit_bus.BusChainUnit.get_work_mode
+#: chain.unit_bus.BusChainUnit.readfrom
+#: chain.unit_bus.BusChainUnit.readfrom_mem chain.unit_bus.BusChainUnit.scan
+#: chain.unit_bus.BusChainUnit.set_adc
+#: chain.unit_bus.BusChainUnit.set_gpio_exit
+#: chain.unit_bus.BusChainUnit.set_gpio_input
+#: chain.unit_bus.BusChainUnit.set_gpio_output
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value
+#: chain.unit_bus.BusChainUnit.set_i2c chain.unit_bus.BusChainUnit.writeto of
+msgid "Returns"
+msgstr "返回"
+
+#: 3137a36ca9a24164b88a1fb0c7b0242a
+#: chain.unit_bus.BusChainUnit.get_work_mode:14 of
+msgid "Work mode value, or None if failed."
+msgstr "工作模式值，如果失败则返回 None。"
+
+#: ab46aa2f29ad417883ad0c2e6e2117b3 chain.unit_bus.BusChainUnit.get_adc_input
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value
+#: chain.unit_bus.BusChainUnit.get_work_mode
+#: chain.unit_bus.BusChainUnit.readfrom
+#: chain.unit_bus.BusChainUnit.readfrom_into
+#: chain.unit_bus.BusChainUnit.readfrom_mem
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into
+#: chain.unit_bus.BusChainUnit.scan chain.unit_bus.BusChainUnit.set_adc
+#: chain.unit_bus.BusChainUnit.set_gpio_exit
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback
+#: chain.unit_bus.BusChainUnit.set_gpio_input
+#: chain.unit_bus.BusChainUnit.set_gpio_output
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value
+#: chain.unit_bus.BusChainUnit.set_i2c chain.unit_bus.BusChainUnit.writeto
+#: chain.unit_bus.BusChainUnit.writeto_mem of
+msgid "Return type"
+msgstr "返回类型"
+
+#: chain.unit_bus.BusChainUnit.get_work_mode:19
+#: df929b29bf3e4f3792643b86b5b0dc15 of
+msgid "|get_work_mode.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:8 cc6a30c1a2bd4f7bb34973fa82a976a0
+msgid "get_work_mode.png"
+msgstr ""
+
+#: chain.unit_bus.BusChainUnit.set_gpio_output:1
+#: d85d7c27d4774efc8ad171d704e06306 of
+msgid "Set pin as output."
+msgstr "将引脚设置为输出。"
+
+#: chain.unit_bus.BusChainUnit.set_gpio_output:4
+#: dddc8abf2b6c43be9ca3c613a3b9b813 of
+msgid ""
+"Output mode. Use :attr:`BusChainUnit.GPIO_MODE_PUSHPULL` (0) or "
+":attr:`BusChainUnit.GPIO_MODE_OPENDRAIN` (1)."
+msgstr ""
+"输出模式。使用 :attr:`BusChainUnit.GPIO_MODE_PUSHPULL` (0) 或 "
+":attr:`BusChainUnit.GPIO_MODE_OPENDRAIN` (1)。"
+
+#: chain.unit_bus.BusChainUnit.set_gpio_output:5
+#: dd1e3335133b43dba5c1a3bb916920b0 of
+msgid ""
+"Pull-up/down configuration. Use :attr:`BusChainUnit.GPIO_PULL_UP` (0), "
+":attr:`BusChainUnit.GPIO_PULL_DOWN` (1), or "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2). Default is "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2)."
+msgstr ""
+"上拉/下拉配置。使用 :attr:`BusChainUnit.GPIO_PULL_UP` "
+"(0)、:attr:`BusChainUnit.GPIO_PULL_DOWN` (1) 或 "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2)。默认值为 "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2)。"
+
+#: 33bde36bc27447de9a7db19fc0874e93 chain.unit_bus.BusChainUnit.set_adc:4
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:6
+#: chain.unit_bus.BusChainUnit.set_gpio_input:5
+#: chain.unit_bus.BusChainUnit.set_gpio_output:6
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:5
+#: chain.unit_bus.BusChainUnit.set_i2c:4 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "如果操作成功则返回 True，否则返回 False。"
+
+#: 51203980ea8645a8bfa6da98bf7c89ce
+#: chain.unit_bus.BusChainUnit.set_gpio_output:11 of
+msgid "|set_gpio_output.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:9 c3420e13c9e144ed8c64f32e4ae3bdb2
+msgid "set_gpio_output.png"
+msgstr ""
+
+#: 919c34e75e8843158a9cb0ad5b2fa436
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:1 of
+msgid "Set GPIO output value."
+msgstr "设置 GPIO 输出值。"
+
+#: 27e9580005074bab8db93dcd37ed9363
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:4 of
+msgid "Output value. 0 for low level, 1 for high level."
+msgstr "输出值。0 表示低电平，1 表示高电平。"
+
+#: 949b09ac2b2f470fb49cfa0d1bcf7c1d
+#: chain.unit_bus.BusChainUnit.set_gpio_output_value:10 of
+msgid "|set_gpio_output_value.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:10 dc08bb94736f4081806ff5f557034d57
+msgid "set_gpio_output_value.png"
+msgstr ""
+
+#: 1cc7c4b72ac04963a9579b82b495b3df
+#: chain.unit_bus.BusChainUnit.set_gpio_input:1 of
+msgid "Set GPIO input mode configuration."
+msgstr "设置 GPIO 输入模式配置。"
+
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:4
+#: chain.unit_bus.BusChainUnit.set_gpio_input:4
+#: fedbdcd274634c4d971307655e84be7a of
+msgid ""
+"Pull-up/down configuration. Use :attr:`BusChainUnit.GPIO_PULL_UP` (0), "
+":attr:`BusChainUnit.GPIO_PULL_DOWN` (1), or "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2)."
+msgstr ""
+"上拉/下拉配置。使用 :attr:`BusChainUnit.GPIO_PULL_UP` "
+"(0)、:attr:`BusChainUnit.GPIO_PULL_DOWN` (1) 或 "
+":attr:`BusChainUnit.GPIO_PULL_NONE` (2)。"
+
+#: a8f9fe6c3a264dc9b24736d0ce0b97cf
+#: chain.unit_bus.BusChainUnit.set_gpio_input:10 of
+msgid "|set_gpio_input.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:11 58ae2bfcdf3741a5afd3056e9a01ae4f
+msgid "set_gpio_input.png"
+msgstr ""
+
+#: 8fb2c327933b4966a04279aff6f0fcf4
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:1 of
+msgid "Get GPIO input value."
+msgstr "获取 GPIO 输入值。"
+
+#: c1119249cbf94b1aa1d92fe27ae489d0
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:4 of
+msgid "GPIO value. 0 for low level, 1 for high level. Returns None if failed."
+msgstr "GPIO 值。0 表示低电平，1 表示高电平。如果失败则返回 None。"
+
+#: 13f50a03beb24485b9fec3edaa5e49e5
+#: chain.unit_bus.BusChainUnit.get_gpio_input_value:9 of
+msgid "|get_gpio_input_value.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:12 89f7ccc69e8845fb8f62e05d35abd17a
+msgid "get_gpio_input_value.png"
+msgstr ""
+
+#: 2317b392d22a4ccdb2acc538399e4623 chain.unit_bus.BusChainUnit.set_gpio_exit:1
+#: of
+msgid "Set pin as external interrupt input mode."
+msgstr "将引脚设置为外部中断输入模式。"
+
+#: b56d65c492294c7c9d263abf9d83364f chain.unit_bus.BusChainUnit.set_gpio_exit:5
+#: of
+msgid ""
+"Trigger mode. Use :attr:`BusChainUnit.GPIO_INTR_RISING` (0), "
+":attr:`BusChainUnit.GPIO_INTR_FALLING` (1), or "
+":attr:`BusChainUnit.GPIO_INTR_ANYEDGE` (2)."
+msgstr ""
+"触发模式。使用 :attr:`BusChainUnit.GPIO_INTR_RISING` "
+"(0)、:attr:`BusChainUnit.GPIO_INTR_FALLING` (1) 或 "
+":attr:`BusChainUnit.GPIO_INTR_ANYEDGE` (2)。"
+
+#: chain.unit_bus.BusChainUnit.set_gpio_exit:11
+#: dcd14430938e4e34a209f4a5d89c7db9 of
+msgid "|set_gpio_exit.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:13 7dd9281e36fc4ba28f543487c026c741
+msgid "set_gpio_exit.png"
+msgstr ""
+
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:1
+#: e18e139495434f4fac5d1e2a4b004eb8 of
+msgid "Set GPIO external interrupt callback."
+msgstr "设置 GPIO 外部中断回调。"
+
+#: b48e5a874f0545cfa850e41c08d96c87
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:4 of
+msgid ""
+"Trigger mode. Use :attr:`BusChainUnit.GPIO_INTR_RISING` (0) for rising "
+"edge or :attr:`BusChainUnit.GPIO_INTR_FALLING` (1) for falling edge."
+msgstr ""
+"触发模式。使用 :attr:`BusChainUnit.GPIO_INTR_RISING` (0) 表示上升沿，或 "
+":attr:`BusChainUnit.GPIO_INTR_FALLING` (1) 表示下降沿。"
+
+#: 4c04bc4b91d6457883056e60f9dc05a8
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:5 of
+msgid "Callback function."
+msgstr "回调函数。"
+
+#: 6a5913d3ce5f4618897c9a03ce5b8a6c
+#: chain.unit_bus.BusChainUnit.set_gpio_exit_callback:9 of
+msgid "|set_gpio_exit_callback.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:14 d3d7e51874884a04b5ada50359b0533c
+msgid "set_gpio_exit_callback.png"
+msgstr ""
+
+#: 56d955e2e383409da79dd0f036c19bad chain.unit_bus.BusChainUnit.set_adc:1 of
+msgid "Set ADC channel."
+msgstr "设置 ADC 通道。"
+
+#: 0361c7845a5b4389bb881c1eb701762b chain.unit_bus.BusChainUnit.set_adc:3 of
+msgid "ADC channel number (1 or 2), corresponding to GPIO1 or GPIO2."
+msgstr "ADC 通道编号（1 或 2），对应 GPIO1 或 GPIO2。"
+
+#: 5ab635e0463a449a918ee5f6c88f15e9 chain.unit_bus.BusChainUnit.set_adc:9 of
+msgid "|set_adc.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:15 fdb328b39a8b4bb29e15e78e00a869f4
+msgid "set_adc.png"
+msgstr ""
+
+#: 9eeea91e25f5411babc1dd347b7bbe8e chain.unit_bus.BusChainUnit.get_adc_input:1
+#: of
+msgid "Read ADC value."
+msgstr "读取 ADC 值。"
+
+#: 85ed382409a948548bbccb15700d4fad chain.unit_bus.BusChainUnit.get_adc_input:3
+#: of
+msgid "ADC channel number (1 or 2)."
+msgstr "ADC 通道编号（1 或 2）。"
+
+#: b3945468d07641e8b72cf756135bc0eb chain.unit_bus.BusChainUnit.get_adc_input:4
+#: of
+msgid "ADC value (0-4095), or None if failed."
+msgstr "ADC 值（0-4095），如果失败则返回 None。"
+
+#: ad150640f23a467c8f7751adc9efa626 chain.unit_bus.BusChainUnit.get_adc_input:9
+#: of
+msgid "|get_adc_input.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:16 29f32799fd5d4f7eaace35dcab57fb89
+msgid "get_adc_input.png"
+msgstr ""
+
+#: 32d3ceb1920b4c44aa109e4fe8161f8b chain.unit_bus.BusChainUnit.set_i2c:1 of
+msgid "Set I2C mode."
+msgstr "设置 I2C 模式。"
+
+#: 789e16b513da4a5aab193d3c82f4d0fb chain.unit_bus.BusChainUnit.set_i2c:3 of
+msgid ""
+"I2C speed. Use :attr:`BusChainUnit.I2C_SPEED_100K` (0) or "
+":attr:`BusChainUnit.I2C_SPEED_400K` (1). Default: 0."
+msgstr ""
+"I2C 速度。使用 :attr:`BusChainUnit.I2C_SPEED_100K` (0) 或 "
+":attr:`BusChainUnit.I2C_SPEED_400K` (1)。默认值：0。"
+
+#: a3f642062e0140d3810f42aff063fe60 chain.unit_bus.BusChainUnit.set_i2c:9 of
+msgid "|set_i2c.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:17 cf7ac87bfd164976821933b4fc65d7a0
+msgid "set_i2c.png"
+msgstr ""
+
+#: 7172e884cdca435ca67bd797d043b675 chain.unit_bus.BusChainUnit.readfrom:1 of
+msgid "Read data from an I2C device."
+msgstr "从 I2C 设备读取数据。"
+
+#: chain.unit_bus.BusChainUnit.readfrom:3
+#: chain.unit_bus.BusChainUnit.readfrom_into:3
+#: chain.unit_bus.BusChainUnit.readfrom_mem:3
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:3
+#: chain.unit_bus.BusChainUnit.writeto:3
+#: chain.unit_bus.BusChainUnit.writeto_mem:3 fca84db438ba4e7286f8a8fc55c14424
+#: of
+msgid "I2C device address (7-bit)."
+msgstr "I2C 设备地址（7位）。"
+
+#: 18fec95e40ad4271a6d27ab39fa03328 chain.unit_bus.BusChainUnit.readfrom:4 of
+msgid "Number of bytes to read (max 64)."
+msgstr "要读取的字节数（最大64）。"
+
+#: 25c433e247f249b1ae765cd37167084a chain.unit_bus.BusChainUnit.readfrom:5
+#: chain.unit_bus.BusChainUnit.readfrom_into:5
+#: chain.unit_bus.BusChainUnit.writeto:5 of
+msgid "Generate stop condition (ignored, kept for compatibility)."
+msgstr "生成停止条件（忽略，为兼容性保留）。"
+
+#: 292ae2983ad14bcbae62fdab1987ab48 chain.unit_bus.BusChainUnit.readfrom:6
+#: chain.unit_bus.BusChainUnit.readfrom_mem:7 of
+msgid "Read data as bytes."
+msgstr "以字节形式返回读取的数据。"
+
+#: chain.unit_bus.BusChainUnit.readfrom:11 e0c30f63882b48f5b7769e4c4ce3eb83 of
+msgid "|readfrom.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:18 42fdf23f0d7d4d9aacfbc66ba16ffadf
+msgid "readfrom.png"
+msgstr ""
+
+#: chain.unit_bus.BusChainUnit.readfrom_into:1 ddc1b13a01fc44c7970b9ae0662cdc5b
+#: of
+msgid "Read data from an I2C device into a buffer."
+msgstr "从 I2C 设备读取数据到缓冲区。"
+
+#: 86d8097ec2a6454fb7669ec4039c71f6 chain.unit_bus.BusChainUnit.readfrom_into:4
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:5 of
+msgid "Buffer to read into."
+msgstr "要读取数据的缓冲区。"
+
+#: 8c64c6ff206e477f860d01ba7fd4c406 chain.unit_bus.BusChainUnit.readfrom_into:9
+#: of
+msgid "|readfrom_into.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:19 19532e4b339e48c5bc81a834091d3075
+msgid "readfrom_into.png"
+msgstr ""
+
+#: 972eb2ca34d541ab96f0552d89c25c38 chain.unit_bus.BusChainUnit.writeto:1 of
+msgid "Write data to an I2C device."
+msgstr "向 I2C 设备写入数据。"
+
+#: chain.unit_bus.BusChainUnit.writeto:4
+#: chain.unit_bus.BusChainUnit.writeto_mem:5 d14d116573a34a6298eec5ca2bc39629
+#: of
+msgid "Data to write."
+msgstr "要写入的数据。"
+
+#: 366671edd02d428a9601b6d66b8d4f6b chain.unit_bus.BusChainUnit.writeto:6 of
+msgid "Number of bytes written."
+msgstr "写入的字节数。"
+
+#: 49583adaf53a4134857c5fa4ac694336 chain.unit_bus.BusChainUnit.writeto:11 of
+msgid "|writeto.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:20 87e12234939a424396a43ab9ac8a5ab9
+msgid "writeto.png"
+msgstr ""
+
+#: 68dfa892c2f1480388aa9269db7aa2d5 chain.unit_bus.BusChainUnit.readfrom_mem:1
+#: of
+msgid "Read data from an I2C device memory (register)."
+msgstr "从 I2C 设备存储器（寄存器）读取数据。"
+
+#: 2e257e248ebb4f47ae77a7970b62dcec chain.unit_bus.BusChainUnit.readfrom_mem:4
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:4
+#: chain.unit_bus.BusChainUnit.writeto_mem:4 of
+msgid "Memory/register address."
+msgstr "存储器/寄存器地址。"
+
+#: a559f1015fb64b88b6e0050e88666af2 chain.unit_bus.BusChainUnit.readfrom_mem:5
+#: of
+msgid "Number of bytes to read."
+msgstr "要读取的字节数。"
+
+#: 4736b0db0fe04c0285789b7b4bd7fdab 4f992289bfdd4d3c823ef68fc430fcf3
+#: chain.unit_bus.BusChainUnit.readfrom_mem:6
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:6
+#: chain.unit_bus.BusChainUnit.writeto_mem:6 of
+msgid "Register address size in bits (8 or 16). Default: 8."
+msgstr "寄存器地址大小（8 或 16 位）。默认值：8。"
+
+#: 8c64c6ff206e477f860d01ba7fd4c406 chain.unit_bus.BusChainUnit.readfrom_mem:12
+#: of
+msgid "|readfrom_mem.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:21 19532e4b339e48c5bc81a834091d3075
+msgid "readfrom_mem.png"
+msgstr ""
+
+#: 9eebee927eec4fb8bd2a9759d25d10d3
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:1 of
+msgid "Read data from an I2C device memory (register) into a buffer."
+msgstr "从 I2C 设备存储器（寄存器）读取数据到缓冲区。"
+
+#: 8c64c6ff206e477f860d01ba7fd4c406
+#: chain.unit_bus.BusChainUnit.readfrom_mem_into:10 of
+msgid "|readfrom_mem_into.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:22 19532e4b339e48c5bc81a834091d3075
+msgid "readfrom_mem_into.png"
+msgstr ""
+
+#: 6dfa861d3273495ea540e959608e31f9 chain.unit_bus.BusChainUnit.writeto_mem:1
+#: of
+msgid "Write data to an I2C device memory (register)."
+msgstr "向 I2C 设备存储器（寄存器）写入数据。"
+
+#: 8c64c6ff206e477f860d01ba7fd4c406 chain.unit_bus.BusChainUnit.writeto_mem:10
+#: of
+msgid "|writeto_mem.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:23 19532e4b339e48c5bc81a834091d3075
+msgid "writeto_mem.png"
+msgstr ""
+
+#: 7012a216b52744b79f3232750cdec9e8 chain.unit_bus.BusChainUnit.scan:1 of
+msgid "Scan for I2C devices."
+msgstr "扫描 I2C 设备。"
+
+#: chain.unit_bus.BusChainUnit.scan:3 ed22dd75752340be9be45d7e22cf9bd7 of
+msgid "List of I2C device addresses found, or empty list if failed."
+msgstr "找到的 I2C 设备地址列表，如果失败则返回空列表。"
+
+#: 5ab635e0463a449a918ee5f6c88f15e9 chain.unit_bus.BusChainUnit.scan:8 of
+msgid "|scan.png|"
+msgstr ""
+
+#: ../../en/refs/chain.unit_bus.ref:24 fdb328b39a8b4bb29e15e78e00a869f4
+msgid "scan.png"
+msgstr ""
+
+#~ msgid "|adc_config.png|"
+#~ msgstr ""
+
+#~ msgid "adc_config.png"
+#~ msgstr ""
+
+#~ msgid "|i2c_readfrom.png|"
+#~ msgstr ""
+
+#~ msgid "i2c_readfrom.png"
+#~ msgstr ""
+
+#~ msgid "|i2c_write.png|"
+#~ msgstr ""
+
+#~ msgid "i2c_write.png"
+#~ msgstr ""
+
+#~ msgid "|i2c_read_mem.png|"
+#~ msgstr ""
+
+#~ msgid "i2c_read_mem.png"
+#~ msgstr ""
+
+#~ msgid "|i2c_write_mem.png|"
+#~ msgstr ""
+
+#~ msgid "i2c_write_mem.png"
+#~ msgstr ""
+
+#~ msgid "Maximum number of devices to return. Default: 32."
+#~ msgstr ""
+
+#~ msgid "|i2c_scan.png|"
+#~ msgstr ""
+
+#~ msgid "i2c_scan.png"
+#~ msgstr ""
+
+#~ msgid "Read data from an I2C device (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This method provides compatibility with "
+#~ "standard I2C interface, allowing BusChainUnit"
+#~ " to be used as an I2C object"
+#~ " in drivers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read data from an I2C device into"
+#~ " a buffer (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid "Write data to an I2C device (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid "Read data from an I2C device memory (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Read data from an I2C device "
+#~ "memory into a buffer (I2C interface "
+#~ "compatibility)."
+#~ msgstr ""
+
+#~ msgid "Write data to an I2C device memory (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid "Scan for I2C devices (I2C interface compatibility)."
+#~ msgstr ""
+
+#~ msgid "List of I2C device addresses found."
+#~ msgstr ""
+

@@ -12,6 +12,7 @@ package(
         "joystick.py",
         "key.py",
         "tof.py",
+        "unit_bus.py",
     ),
     base_path="..",
     opt=0,

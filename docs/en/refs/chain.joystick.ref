@@ -1,3 +1,8 @@
+.. |Chain Joystick| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1191/U205-Chain-joystick-main-pictures-01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U205
+    :height: 200px
+    :width: 200px
+
 .. |chain_joystick_usb_mouse_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/chain_joystick_usb_mouse_example.png
 .. |click_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/click_callback.png
 .. |double_click_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/joystick/double_click_callback.png
