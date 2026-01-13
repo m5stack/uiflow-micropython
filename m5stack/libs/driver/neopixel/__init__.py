@@ -201,6 +201,10 @@ class NeoPixel:
             br:
                 note: The brightness level as a percentage (0-100).
         """
+        if hasattr(self, "br") and self.br > 0:
+            for i in range(len(self.buf)):
+                self.buf[i] = min(255, int(self.buf[i] / self.br))
+
         b = self.buf
         self.br = br / 100.0
         for i in range(len(self.buf)):
