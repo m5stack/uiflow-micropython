@@ -1,0 +1,22 @@
+
+.. |Servo Kit 180°| image:: https://static-cdn.m5stack.com/resource/docs/products/accessory/servo_kit/servo_kit_180_01.webp
+    :target: https://docs.m5stack.com/en/accessory/servo_kit
+    :height: 200px
+    :width: 200px
+
+.. |cores3_servo180_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/cores3_servo180_example.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/init.png
+.. |init_advanced.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/init_advanced.png
+.. |set_angle.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/set_angle.png
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/set_duty.png
+.. |set_percent.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/set_percent.png
+.. |set_radian.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/servo180/set_radian.png
+
+.. |cores3_servo180_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/servo180/cores3_servo180_example.m5f2"
+        target="_blank"
+    >
+        cores3_servo180_example.m5f2
+    </a>

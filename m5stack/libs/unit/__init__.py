@@ -116,6 +116,8 @@ _attrs = {
     "RTC8563Unit": "rtc8563",
     "ScalesUnit": "scales",
     "ScrollUnit": "scroll",
+    "Servo180Unit": "servo180",
+    "Servo360Unit": "servo360",
     "Servos8Unit": "servos8",
     "SSRUnit": "ssr",
     "Step16Unit": "step16",
