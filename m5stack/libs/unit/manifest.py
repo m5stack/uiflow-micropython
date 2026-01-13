@@ -114,6 +114,8 @@ package(
         "rtc8563.py",
         "scales.py",
         "scroll.py",
+        "servo180.py",
+        "servo360.py",
         "servos8.py",
         "ssr.py",
         "step16.py",

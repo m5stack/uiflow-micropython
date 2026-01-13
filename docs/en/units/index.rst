@@ -105,6 +105,8 @@ Unit
     rollercan.rst
     scales.rst
     scroll.rst
+    servo180.rst
+    servo360.rst
     servos8.rst
     ssr.rst
     step16.rst

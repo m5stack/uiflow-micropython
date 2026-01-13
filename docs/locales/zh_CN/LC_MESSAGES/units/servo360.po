@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-13 15:00+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/refs/unit.servo360.ref ../../en/units/servo360.rst:2
+#: 02e122d6cadd4dddaeced87ded203d55 ce5cdb052ff341e8a1ad658e6e878fd1
+msgid "Servo Kit 360°"
+msgstr ""
+
+#: ../../en/units/servo360.rst:8 7253c86749294206a20383c4b9762a9a
+msgid ""
+"This is the driver library of Servo 360 Unit, which is used to control "
+"the rotation speed and direction of the servo."
+msgstr "这是360°舵机的驱动库，用于控制舵机的旋转速度和方向。"
+
+#: ../../en/units/servo360.rst:10 9132c62a10dd4275a38c536c1ff0c25f
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/servo360.rst:12 2600912bb4cd44acb4a4aa317954d312
+msgid "|Servo Kit 360°|"
+msgstr ""
+
+#: ../../en/units/servo360.rst:16 bfa7923715b642cb81900d7998eae3cc
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/units/servo360.rst:19 ../../en/units/servo360.rst:33
+#: 565dd27ca4e741d987974fa5fd8199b9
+msgid "Control servo rotation"
+msgstr "控制舵机旋转"
+
+#: ../../en/units/servo360.rst:21 35a2b51276ea43cc86ec3335a05e72b1
+msgid "Open the |cores3_servo360_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_servo360_example.m5f2| 项目。"
+
+#: ../../en/units/servo360.rst:23 ../../en/units/servo360.rst:35
+#: 5d3f53a7baa34f04b2392914f8546365
+msgid "This example controls the servo rotation direction and speed."
+msgstr "该示例控制舵机的旋转方向和速度。"
+
+#: ../../en/units/servo360.rst:25 4721f6974e33426c8c54e5dbaed61c98 of
+#: unit.servo360.Servo360Unit:21 unit.servo360.Servo360Unit.clockwise:7
+#: unit.servo360.Servo360Unit.counterclockwise:6
+#: unit.servo360.Servo360Unit.stop:5
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/servo360.rst:27 ccf90da77a4a49bd80cc191eaf8c3e78
+msgid "|cores3_servo360_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:7 1c01886916b44413ac47fe4b46cc87ae
+msgid "cores3_servo360_example.png"
+msgstr ""
+
+#: ../../en/units/servo360.rst:30 e1db729d9b4b4b61ae9d55f1a4551df3
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/servo360.rst:37 7d0eacd2f8244ff381250d5b893f8da3 of
+#: unit.servo360.Servo360Unit:27 unit.servo360.Servo360Unit.clockwise:11
+#: unit.servo360.Servo360Unit.counterclockwise:10
+#: unit.servo360.Servo360Unit.stop:9
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/servo360.rst:45 a627d99e9673495783360e8c9c5eb49a
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../en/units/servo360.rst:48 ce70077785d045b1bb67a349349d01ce
+msgid "Servo360Unit"
+msgstr ""
+
+#: 289ec343d4c7415db2e3abf2a3e726bc of unit.servo360.Servo360Unit:1
+msgid "Bases: :py:class:`~unit.servo180.Servo180Unit`"
+msgstr ""
+
+#: 3de08e18d4e949c58e7b75f06f843060 of unit.servo360.Servo360Unit:1
+msgid "Control a 360-degree continuous rotation servo motor."
+msgstr "控制 360 度连续旋转舵机。"
+
+#: 58c1351f22b1456d865f3ead9aacb8bb of unit.servo360.Servo360Unit:5
+msgid ""
+"For Servo Kit 360°, the duty cycle microseconds count controls rotation "
+"speed and direction: **count_low** corresponds to maximum clockwise "
+"speed, **count_high** to maximum counterclockwise speed, and the "
+"**midpoint** value indicates stop. Values in **count_low** ~ **midpoint**"
+" rotate clockwise (smaller values = faster speed), while values in "
+"**midpoint** ~ **count_high** rotate counterclockwise (larger values = "
+"faster speed). **midpoint** controls the stop position."
+msgstr "对于 360° 伺服套件，占空比微秒计数控制旋转速度和方向：**count_low** 对应于最大顺时针速度，**count_high** 对应于最大逆时针速度，**midpoint** 值指示停止位置。**count_low** 到 **midpoint** 之间的值表示顺时针旋转（值越小速度越快），而 **midpoint** 到 **count_high** 之间的值表示逆时针旋转（值越大速度越快）。**midpoint** 控制停止位置。"
+
+#: ../../en/units/servo360.rst f0ae2be9dd35406384a438e20c430796 of
+#: unit.servo360.Servo360Unit.clockwise
+#: unit.servo360.Servo360Unit.counterclockwise unit.servo360.Servo360Unit.stop
+msgid "Parameters"
+msgstr ""
+
+#: 8cb3cfe64e5f4e26a88f054fd42301fd of unit.servo360.Servo360Unit:14
+msgid "The port the servo is connected to."
+msgstr "舵机连接的端口。"
+
+#: b8b8853032a54c9280191a440ce06eb8 of unit.servo360.Servo360Unit:16
+msgid "The pin the servo is connected to (if not using a port)."
+msgstr "舵机连接的引脚（如果不使用端口）。"
+
+#: 8ed4d522d8bd40f8b33ff2be6363c59e of unit.servo360.Servo360Unit:17
+msgid "The PWM frequency. Default is 50Hz."
+msgstr "PWM 频率。默认为 50Hz。"
+
+#: 2be44220bbee4797abf3a01abeafe379 of unit.servo360.Servo360Unit:18
+msgid "The duty cycle microseconds count for the lowest range. Default is 500."
+msgstr "占空比以微秒为单位，用于确定最低量程。默认值为 500。"
+
+#: ce3054c57b7a46f3a4cb70256c69bfa3 of unit.servo360.Servo360Unit:19
+msgid "The duty cycle microseconds count for the highest range. Default is 2500."
+msgstr "占空比以微秒为单位，用于确定最大测量范围。默认值为 2500。"
+
+#: 2f1940196a024da092ba1bd7d84d1cfc of unit.servo360.Servo360Unit:23
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:9 81f0dbe02fac4cc7bc6d865bf14c696b
+msgid "init.png"
+msgstr ""
+
+#: 939d464a1fcf4af8b9a57b8872d3fd82 of unit.servo360.Servo360Unit:25
+msgid "|init_advanced.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:10 c5083c8f5aa14c5da0d435682ba2e211
+msgid "init_advanced.png"
+msgstr ""
+
+#: 7fe48b6374c84800a69e7882cd485b95 of unit.servo360.Servo360Unit.clockwise:1
+msgid "Rotate the servo clockwise at a specified speed."
+msgstr "以指定速度顺时针旋转舵机。"
+
+#: 102c94c9a3074221a756c07fc22b6389 of unit.servo360.Servo360Unit.clockwise:3
+#: unit.servo360.Servo360Unit.counterclockwise:3
+msgid "Speed percentage (0 to 100)."
+msgstr "速度百分比（0 到 100）。"
+
+#: 03624ebd89be4ee6a81a4543e8d83f06 51a8f3980308429ba6a1cbf8bd04fcee of
+#: unit.servo360.Servo360Unit.clockwise:4
+#: unit.servo360.Servo360Unit.counterclockwise:4
+#: unit.servo360.Servo360Unit.stop:3
+msgid "Whether to wait for the operation to complete."
+msgstr "是否等待操作完成。"
+
+#: c9c653ac610c4db7b43405ad053b2332 of unit.servo360.Servo360Unit.clockwise
+#: unit.servo360.Servo360Unit.counterclockwise unit.servo360.Servo360Unit.stop
+msgid "Return type"
+msgstr ""
+
+#: 8788afe4b299413a9e7e66380ebc6ae2 of unit.servo360.Servo360Unit.clockwise:9
+msgid "|clockwise.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:6 1d83302f575e4df2ad626d92b97a16fa
+msgid "clockwise.png"
+msgstr ""
+
+#: 97d0b347a8454794830b51b882e0547d of
+#: unit.servo360.Servo360Unit.counterclockwise:1
+msgid "Rotate the servo counterclockwise at a specified speed."
+msgstr "以指定速度逆时针旋转舵机。"
+
+#: 66e24c481b7b48ffa69ee2887034517e of
+#: unit.servo360.Servo360Unit.counterclockwise:8
+msgid "|counterclockwise.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:8 f16173fd8711422b9b86cea8169a7743
+msgid "counterclockwise.png"
+msgstr ""
+
+#: d1337d3b13084034a59026f8866fe4b9 of unit.servo360.Servo360Unit.stop:1
+msgid "Stop the servo rotation."
+msgstr "停止舵机旋转。"
+
+#: 95202ac13b244c158264fffe8b6e73da of unit.servo360.Servo360Unit.stop:7
+msgid "|stop.png|"
+msgstr ""
+
+#: ../../en/refs/unit.servo360.ref:11 44ec527ae7094115a016cb6d51f963e6
+msgid "stop.png"
+msgstr ""
+
+#~ msgid "Servo 360 Unit"
+#~ msgstr ""
+
+#~ msgid "Servo 360° Unit"
+#~ msgstr ""
+
