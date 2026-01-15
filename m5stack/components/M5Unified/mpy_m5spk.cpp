@@ -220,6 +220,25 @@ namespace m5
         return mp_obj_new_bool(getSpk(&self)->isEnabled());
     }
 
+    mp_obj_t spk_setPA(mp_obj_t self, mp_obj_t enable) {
+        // Control PA via PM1_G3 (I2C) Only for M5StickS3 with M5PM1 PMIC
+        if (M5.getBoard() == m5::board_t::board_M5StickS3) {
+            static constexpr uint8_t m5pm1_i2c_addr = 0x6E;
+            int i2c_speed = 100000;
+            // PM1_G3 -- PA Enable
+            lgfx::i2c::bitOff(1, m5pm1_i2c_addr, 0x16, 1 << 3, i2c_speed); // Set pin gpio3 as gpio function
+            lgfx::i2c::bitOn(1, m5pm1_i2c_addr, 0x10, 1 << 3, i2c_speed);  // Set pin gpio3 mode: output
+            lgfx::i2c::bitOff(1, m5pm1_i2c_addr, 0x13, 1 << 3, i2c_speed); // Set gpio3 push-pull mode
+            if (mp_obj_is_true(enable)) {
+                lgfx::i2c::bitOn(1, m5pm1_i2c_addr, 0x11, 1 << 3, i2c_speed);  // Set gpio3 output high
+            } else {
+                lgfx::i2c::bitOff(1, m5pm1_i2c_addr, 0x11, 1 << 3, i2c_speed); // Set gpio3 output low
+            }
+            return mp_obj_new_bool(true);
+        }
+        return mp_obj_new_bool(false);
+    }
+
     mp_obj_t spk_isPlaying(size_t n_args, const mp_obj_t *args) {
         Speaker_Class *speaker = getSpk(&args[0]);
         if (n_args == 1) {

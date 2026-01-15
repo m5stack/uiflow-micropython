@@ -57,6 +57,7 @@ MAKE_METHOD_1(power, setChargeVoltage);
 MAKE_METHOD_0(power, isCharging);
 MAKE_METHOD_0(power, getBatteryVoltage);
 MAKE_METHOD_0(power, getBatteryCurrent);
+MAKE_METHOD_0(power, getVBUSVoltage);
 MAKE_METHOD_0(power, getKeyState);
 MAKE_METHOD_1(power, setVibration);
 MAKE_METHOD_0(power, getType);
@@ -85,6 +86,7 @@ static const mp_rom_map_elem_t power_member_table[] = {
     MAKE_TABLE(power, isCharging),
     MAKE_TABLE(power, getBatteryVoltage),
     MAKE_TABLE(power, getBatteryCurrent),
+    MAKE_TABLE(power, getVBUSVoltage),
     MAKE_TABLE(power, getKeyState),
     MAKE_TABLE(power, setVibration),
     MAKE_TABLE(power, getType),

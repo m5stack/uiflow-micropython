@@ -1,0 +1,280 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-29 15:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/controllers/sticks3.rst:3 ../../en/refs/controllers.sticks3.ref
+#: 09cd623cea254eac89c08d2617263872 0c102da595904be285df845f92446092
+msgid "StickS3"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:7 321aa666232b439bbfe2294956da9998
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/controllers/sticks3.rst:9 cfa920f1ac234c14bfe53eb8b20ac22f
+msgid "|StickS3|"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:12 50461d94f78f4eae826d378524b8acfe
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/controllers/sticks3.rst:15 ../../en/controllers/sticks3.rst:119
+#: 359e1d69f4a5404b8ed8a296793afb4d
+msgid "Button Control"
+msgstr "按键控制"
+
+#: ../../en/controllers/sticks3.rst:17 1495f07508e5471e8cd344e67100028d
+msgid "Open the |sticks3_button_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_button_example.m5f2| 项目。"
+
+#: ../../en/controllers/sticks3.rst:19 ../../en/controllers/sticks3.rst:121
+#: 2451305e2d524bf2baadaf52c79ee5bd
+msgid ""
+"This example demonstrates button callback functions. When button A (BtnA)"
+" is clicked, it increments a counter and updates the display. When button"
+" B (BtnB) is clicked, it also increments a counter and updates the "
+"display."
+msgstr ""
+"此示例演示了按键的使用。当按下按键 A (BtnA) 时，计数器递增并更新显示。"
+"当按下按键 B (BtnB) 时，计数器也会递增并更新显示。"
+
+#: ../../en/controllers/sticks3.rst:21 ../../en/controllers/sticks3.rst:34
+#: ../../en/controllers/sticks3.rst:49 ../../en/controllers/sticks3.rst:64
+#: ../../en/controllers/sticks3.rst:77 ../../en/controllers/sticks3.rst:92
+#: ../../en/controllers/sticks3.rst:107 6c9979ee84e249f0ad0b05bdb329551e
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/controllers/sticks3.rst:23 70553ecca10746109d638b2a55e8307d
+msgid "|sticks3_button_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:4 2135a84249134cbabfb6ff278efa2464
+msgid "sticks3_button_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:25 ../../en/controllers/sticks3.rst:38
+#: ../../en/controllers/sticks3.rst:53 ../../en/controllers/sticks3.rst:68
+#: ../../en/controllers/sticks3.rst:81 ../../en/controllers/sticks3.rst:96
+#: ../../en/controllers/sticks3.rst:111 ../../en/controllers/sticks3.rst:129
+#: ../../en/controllers/sticks3.rst:144 ../../en/controllers/sticks3.rst:159
+#: ../../en/controllers/sticks3.rst:174 ../../en/controllers/sticks3.rst:190
+#: ../../en/controllers/sticks3.rst:205 ../../en/controllers/sticks3.rst:220
+#: 6f2fe1bfd7184989aecb7536b7778229
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/controllers/sticks3.rst:27 ../../en/controllers/sticks3.rst:40
+#: ../../en/controllers/sticks3.rst:55 ../../en/controllers/sticks3.rst:70
+#: ../../en/controllers/sticks3.rst:83 ../../en/controllers/sticks3.rst:98
+#: ../../en/controllers/sticks3.rst:113 ../../en/controllers/sticks3.rst:131
+#: ../../en/controllers/sticks3.rst:146 ../../en/controllers/sticks3.rst:161
+#: ../../en/controllers/sticks3.rst:176 ../../en/controllers/sticks3.rst:192
+#: ../../en/controllers/sticks3.rst:207 ../../en/controllers/sticks3.rst:222
+#: da0ad89fc7484f0baa8023916e9e3f29
+msgid "None"
+msgstr "无"
+
+#: ../../en/controllers/sticks3.rst:30 ../../en/controllers/sticks3.rst:134
+#: 7f753baaa05d465587cd1c3866fcf374
+msgid "IMU Sensor"
+msgstr "IMU 传感器"
+
+#: ../../en/controllers/sticks3.rst:32 ../../en/controllers/sticks3.rst:136
+#: 4e6ced01747646dea3a5474485daba9b
+msgid ""
+"This example demonstrates the built-in IMU (Inertial Measurement Unit) "
+"sensor functionality. It reads and displays accelerometer and gyroscope "
+"data in real-time, showing acceleration values in m/s² and gyroscope "
+"values in degrees per second (dps)."
+msgstr ""
+"此示例演示了内置 IMU（惯性测量单元）传感器功能。它实时读取并显示加速度计和"
+"陀螺仪数据，以 m/s² 显示加速度值，以度/秒 (dps) 显示陀螺仪值。"
+
+#: ../../en/controllers/sticks3.rst:36 bea86b293b8843b8b8057b3a979fa9a5
+msgid "|sticks3_imu_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:5 a265ce1a51864e318c03624c62c8c508
+msgid "sticks3_imu_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:43 ../../en/controllers/sticks3.rst:149
+#: 5b8531628c7a4aac8f7e14301caf3038
+msgid "Power Management"
+msgstr "电源管理"
+
+#: ../../en/controllers/sticks3.rst:45 f9a192f7cd4444bb8d63bfc87cc80ede
+msgid "Open the |sticks3_power_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_power_example.m5f2| 项目。"
+
+#: ../../en/controllers/sticks3.rst:47 ../../en/controllers/sticks3.rst:151
+#: a4ed307b72834fb58f0764a3f2d9150e
+msgid ""
+"This example demonstrates power management features including battery "
+"voltage monitoring, VBUS voltage reading, charging status detection, and "
+"control of battery charging and external output. Press BtnA to toggle "
+"battery charging, and press BtnB to toggle Grove output."
+msgstr ""
+"此示例演示了电源管理功能，包括电池电压监控、VBUS 电压读取、充电状态检测以及"
+"电池充电和外部输出的控制。按 BtnA 切换电池充电，按 BtnB 切换 Grove 输出。"
+
+#: ../../en/controllers/sticks3.rst:51 6d3e1bfd7c0946d48fccf1aa2570e298
+msgid "|sticks3_power_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:6 fe239f62cdfe434c8cb62df1630152ab
+msgid "sticks3_power_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:58 ../../en/controllers/sticks3.rst:164
+#: d6c397dee27845d1b155645e9cfc723c
+msgid "IR Transmission"
+msgstr "红外发射"
+
+#: ../../en/controllers/sticks3.rst:60 6d770c08a48a4061a1a6457c80792643
+msgid "Open the |sticks3_ir_tx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_ir_tx_example.m5f2| 项目。"
+
+#: ../../en/controllers/sticks3.rst:62 ccd748eb0f96444d991c3c689561fd25
+msgid ""
+"This example demonstrates infrared (IR) transmission functionality. When "
+"button A is pressed, it sends IR data with a specified address and data "
+"value."
+msgstr ""
+"此示例演示了红外（IR）发射功能。当按下按键 A 时，它会发送带有指定地址和数据值"
+"的 IR 数据。"
+
+#: ../../en/controllers/sticks3.rst:66 bea86b293b8843b8b8057b3a979fa9a5
+msgid "|sticks3_ir_tx_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:7 a265ce1a51864e318c03624c62c8c508
+msgid "sticks3_ir_tx_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:73 ../../en/controllers/sticks3.rst:179
+#: ff65479dfde94e6e84570f688bddd973
+msgid "Audio Recording and Playback"
+msgstr "音频录制与播放"
+
+#: ../../en/controllers/sticks3.rst:75 ../../en/controllers/sticks3.rst:181
+#: f35dcf07119944949a4bdf9a527c4852 f591f9a593b442a58a302ef3d518151b
+msgid ""
+"This example demonstrates audio recording and playback functionality. "
+"Press button A to start recording for 5 seconds. After recording "
+"completes, the audio will automatically play back. The example displays "
+"the recording status and countdown timer."
+msgstr ""
+"此示例演示了音频录制与播放功能。按下按键 A 开始录制 5 秒。录制完成后，音频将"
+"自动播放。示例会显示录制状态和倒计时。"
+
+#: ../../en/controllers/sticks3.rst:79 70553ecca10746109d638b2a55e8307d
+msgid "|sticks3_audio_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:8 66e091245f4341b386e0de368f0bff9a
+msgid "sticks3_audio_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:86 ../../en/controllers/sticks3.rst:195
+#: f96987de37774fcc934f86f3a840114c
+msgid "Speaker"
+msgstr "扬声器"
+
+#: ../../en/controllers/sticks3.rst:88 21f7d530337b45ad9e62531ff9efd3cc
+msgid "Open the |sticks3_speaker_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_speaker_example.m5f2| 项目。"
+
+#: ../../en/controllers/sticks3.rst:90 ../../en/controllers/sticks3.rst:197
+#: 9c3a5fdba7a44f888ad3fdb0070e49ad
+msgid ""
+"This example demonstrates the built-in speaker functionality. Press "
+"button A to play a tone at a random frequency between 600Hz and 1600Hz. "
+"The example displays the current frequency on the screen."
+msgstr ""
+"此示例演示了内置扬声器功能。按下按键 A 播放 600Hz 到 1600Hz 之间的随机频率音"
+"调。示例会在屏幕上显示当前频率。"
+
+#: ../../en/controllers/sticks3.rst:94 1a91aeaf90154c58a06c76f1ebe9008f
+msgid "|sticks3_speaker_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:9 01a7e982b4cb48e699d446c3cba9b583
+msgid "sticks3_speaker_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:101 ../../en/controllers/sticks3.rst:210
+#: f030ee9742ae4573a2c58d5023484721
+msgid "HAT ToF Sensor"
+msgstr "HAT ToF 传感器"
+
+#: ../../en/controllers/sticks3.rst:103 6ec1b3a39f2f4b1c9430995107ebb335
+msgid "Open the |sticks3_hat_tof_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_hat_tof_example.m5f2| 项目。"
+
+#: ../../en/controllers/sticks3.rst:105 6cc0215338b94b14a24567a895f681d0
+msgid ""
+"This example demonstrates how to use the ToF (Time of Flight) HAT sensor "
+"to measure distance. The example reads distance values from the sensor "
+"and displays them on the screen."
+msgstr ""
+"此示例演示了如何使用 ToF（飞行时间）HAT 传感器测量距离。示例从传感器读取距离"
+"值并在屏幕上显示。"
+
+#: ../../en/controllers/sticks3.rst:109 eff890638c394aa3a8fa804b60068b9c
+msgid "|sticks3_hat_tof_example.png|"
+msgstr ""
+
+#: ../../en/refs/controllers.sticks3.ref:10 ab202f21063a48c3965dfad193a1e81b
+msgid "sticks3_hat_tof_example.png"
+msgstr ""
+
+#: ../../en/controllers/sticks3.rst:116 16b0206fe7c2453c8c12164c8f12aaa2
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/controllers/sticks3.rst:123 ../../en/controllers/sticks3.rst:138
+#: ../../en/controllers/sticks3.rst:153 ../../en/controllers/sticks3.rst:168
+#: ../../en/controllers/sticks3.rst:184 ../../en/controllers/sticks3.rst:199
+#: ../../en/controllers/sticks3.rst:214 509d84bf9fd3456b97f206bc55cbe149
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/controllers/sticks3.rst:166 60e8ed5b1e0f44a9bb14cecfeb3c9563
+msgid ""
+"This example demonstrates infrared (IR) transmission functionality. When "
+"button A is pressed, it sends IR data with a specified address and data "
+"value. The example displays the address and data being transmitted."
+msgstr ""
+"此示例演示了红外（IR）发射功能。当按下按键 A 时，它会发送带有指定地址和数据值"
+"的 IR 数据。示例会显示正在传输的地址和数据。"
+
+#: ../../en/controllers/sticks3.rst:212 f7d587b6cdc44f3b920df072cc8bfb58
+msgid ""
+"This example demonstrates how to use the ToF (Time of Flight) HAT sensor "
+"to measure distance. The example reads distance values from the sensor "
+"and displays them on the screen in real-time."
+msgstr ""
+"此示例演示了如何使用 ToF（飞行时间）HAT 传感器测量距离。示例从传感器实时读取"
+"距离值并在屏幕上显示。"
+

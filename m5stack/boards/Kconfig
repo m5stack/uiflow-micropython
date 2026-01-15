@@ -17,4 +17,11 @@ menu "Audio Board Configuration"
         default n
         help
             Enable this option to support m5stack atom_echos3r.
+
+    config STICKS3
+        bool "select M5STACK STICKS3"
+        default n
+        help
+            Enable this option to support m5stack sticks3.
+
 endmenu

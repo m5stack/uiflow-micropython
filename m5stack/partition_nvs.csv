@@ -1,6 +1,6 @@
 key,type,encoding,value
 uiflow,namespace,,
-server,data,string,192.168.20.93
+server,data,string,uiflow2.m5stack.com
 net_mode,data,string,WIFI
 protocol,data,string,DHCP
 ip_addr,data,string,

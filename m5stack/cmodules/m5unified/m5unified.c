@@ -33,6 +33,7 @@ static const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_ArduinoNessoN1),  MP_ROM_INT(23) },
     { MP_ROM_QSTR(MP_QSTR_M5CardputerADV),  MP_ROM_INT(24) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitC6L),       MP_ROM_INT(25) },
+    { MP_ROM_QSTR(MP_QSTR_M5StickS3),       MP_ROM_INT(26) },
     // non display boards
     { MP_ROM_QSTR(MP_QSTR_M5Atom),          MP_ROM_INT(128) },
     { MP_ROM_QSTR(MP_QSTR_M5AtomPsram),     MP_ROM_INT(129) },
