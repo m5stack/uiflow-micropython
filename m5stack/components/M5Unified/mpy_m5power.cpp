@@ -239,6 +239,10 @@ namespace m5
         return mp_obj_new_int(getPower(self)->getBatteryCurrent());
     }
 
+    mp_obj_t power_getVBUSVoltage(mp_obj_t self) {
+        return mp_obj_new_int(getPower(self)->getVBUSVoltage());
+    }
+
     mp_obj_t power_getKeyState(mp_obj_t self) {
         return mp_obj_new_int(getPower(self)->getKeyState());
     }

@@ -12,6 +12,7 @@ MAKE_METHOD_0(spk, begin);
 MAKE_METHOD_0(spk, end);
 MAKE_METHOD_0(spk, isRunning);
 MAKE_METHOD_0(spk, isEnabled);
+MAKE_METHOD_1(spk, setPA);
 MAKE_METHOD_V(spk, isPlaying, 1, 2);
 MAKE_METHOD_0(spk, getPlayingChannels);
 MAKE_METHOD_KW(spk, setVolume, 1);
@@ -33,6 +34,7 @@ static const mp_rom_map_elem_t spk_member_table[] = {
     MAKE_TABLE(spk, end),
     MAKE_TABLE(spk, isRunning),
     MAKE_TABLE(spk, isEnabled),
+    MAKE_TABLE(spk, setPA),
     MAKE_TABLE(spk, isPlaying),
     MAKE_TABLE(spk, getPlayingChannels),
     MAKE_TABLE(spk, setVolume),

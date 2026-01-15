@@ -48,7 +48,8 @@ boards := \
 	M5STACK_CardputerADV:cardputeradv\
 	M5STACK_Unit_C6L:unit_c6l        \
 	M5STACK_PowerHub:powerhub        \
-	M5STACK_DualKey:dualkey
+	M5STACK_DualKey:dualkey          \
+	M5STACK_StickS3:sticks3
 
 define find_board
 $(if $(filter $(1):%,$(boards)),$(word 2,$(subst :, ,$(filter $(1):%,$(boards)))),none)
@@ -93,7 +94,8 @@ BOARD_TYPE_DEF := \
 	cardputeradv\
 	unit_c6l    \
 	powerhub    \
-	dualkey
+	dualkey     \
+	sticks3
 
 # Select the board type to build, default is None
 # This value affects which folder in the "./fs/system/" directory is pack into "fs-system.bin"
@@ -343,12 +345,14 @@ M5UNIFIED_PATCH_SERIES = \
 	2015-Fix-PowerHub-battery-level.patch \
 	2016-Fix-Rtc-For-StamPLC.patch \
 	2017-Fix-INA226-Data-For-StamPLC.patch \
+	2018-Add-StickS3.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
 
 M5GFX_PATCH_SERIES = \
-	4004-I2C-repeated-initialization.patch
+	4004-I2C-repeated-initialization.patch \
+	4005-Fix-StickS3.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch

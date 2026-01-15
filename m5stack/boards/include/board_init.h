@@ -14,6 +14,8 @@
 #include "../M5STACK_Tab5/audioconfigboard.h"
 #elif CONFIG_ATOM_ECHOS3R
 #include "../M5STACK_Atom_EchoS3R/audioconfigboard.h"
+#elif CONFIG_STICKS3
+#include "../M5STACK_StickS3/audioconfigboard.h"
 #endif
 
 

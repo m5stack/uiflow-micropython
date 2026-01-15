@@ -137,7 +137,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             from .atoms3 import AtomS3_Startup
 
             atoms3 = AtomS3_Startup()
-            atoms3.startup(ssid, pswd, timeout)
+            atoms3.startup(ssid, pswd, timeout=timeout)
         elif board_id in (
             M5.BOARD.M5Atom,
             M5.BOARD.M5StampPico,
@@ -147,147 +147,147 @@ def startup(boot_opt, timeout: int = 60) -> None:
             from .atoms3lite import AtomS3Lite_Startup
 
             atomlite = AtomS3Lite_Startup()
-            atomlite.startup(ssid, pswd, timeout)
+            atomlite.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomS3R:
             from .atoms3r import AtomS3R_Startup
 
             atoms3r = AtomS3R_Startup()
-            atoms3r.startup(ssid, pswd, timeout)
+            atoms3r.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomS3R_CAM:
             from .atoms3r_cam import AtomS3R_CAM_Startup
 
             atoms3r = AtomS3R_CAM_Startup()
-            atoms3r.startup(ssid, pswd, timeout)
+            atoms3r.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomEchoS3R:
             from .atom_echos3r import AtomEchoS3R_Startup
 
             atom_echos3r = AtomEchoS3R_Startup()
-            atom_echos3r.startup(ssid, pswd, timeout)
+            atom_echos3r.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5DualKey:
             from .dualkey import DualKey_Startup
 
             dualkey = DualKey_Startup()
-            dualkey.startup(ssid, pswd, timeout)
+            dualkey.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomMatrix:
             from .atommatrix import AtomMatrix_Startup
 
             atommatrix = AtomMatrix_Startup()
-            atommatrix.startup(ssid, pswd, timeout)
+            atommatrix.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomS3Lite:
             from .atoms3lite import AtomS3Lite_Startup
 
             atoms3 = AtomS3Lite_Startup()
-            atoms3.startup(ssid, pswd, timeout)
+            atoms3.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StampS3:
             from .stamps3 import StampS3_Startup
 
             stamps3 = StampS3_Startup()
-            stamps3.startup(ssid, pswd, timeout)
+            stamps3.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StackCoreS3:
             from .cores3 import CoreS3_Startup
 
             cores3 = CoreS3_Startup()
-            cores3.startup(ssid, pswd, timeout)
+            cores3.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StackCore2:
             from .core2 import Core2_Startup
 
             core2 = Core2_Startup()
-            core2.startup(ssid, pswd, timeout)
+            core2.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AtomS3U:
             from .atoms3u import AtomS3U_Startup
 
             atoms3u = AtomS3U_Startup()
-            atoms3u.startup(ssid, pswd, timeout)
+            atoms3u.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StickCPlus2:
             from .stickcplus import StickCPlus_Startup
 
             stickcplus = StickCPlus_Startup()
-            stickcplus.startup(ssid, pswd, timeout)
+            stickcplus.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StickCPlus:
             from .stickcplus import StickCPlus_Startup
 
             stickcplus2 = StickCPlus_Startup()
-            stickcplus2.startup(ssid, pswd, timeout)
+            stickcplus2.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Stack:
             if _is_psram():
                 from .fire import Fire_Startup
 
                 fire = Fire_Startup()
-                fire.startup(ssid, pswd, timeout)
+                fire.startup(ssid, pswd, timeout=timeout)
             else:
                 from .basic import Basic_Startup
 
                 basic = Basic_Startup()
-                basic.startup(ssid, pswd, timeout)
+                basic.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Capsule:
             from .capsule import Capsule_Startup
 
             capsule = Capsule_Startup()
-            capsule.startup(ssid, pswd, timeout)
+            capsule.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Dial:
             from .dial import Dial_Startup
 
             dial = Dial_Startup()
-            dial.startup(ssid, pswd, timeout)
+            dial.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5StackCoreInk:
             from .coreink import CoreInk_Startup
 
             coreink = CoreInk_Startup()
-            coreink.startup(ssid, pswd, timeout)
+            coreink.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5AirQ:
             from .airq import AirQ_Startup
 
             airq = AirQ_Startup()
-            airq.startup(ssid, pswd, timeout)
+            airq.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Cardputer:
             from .cardputer import Cardputer_Startup
 
             cardputer = Cardputer_Startup()
-            cardputer.startup(ssid, pswd, timeout)
+            cardputer.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5CardputerADV:
             from .cardputeradv import CardputerADV_Startup
 
             cardputeradv = CardputerADV_Startup()
-            cardputeradv.startup(ssid, pswd, timeout)
+            cardputeradv.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5NanoC6:
             from .nanoc6 import NanoC6_Startup
 
             nanoc6 = NanoC6_Startup()
-            nanoc6.startup(ssid, pswd, timeout)
+            nanoc6.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Paper:
             from .paper import Paper_Startup
 
             paper = Paper_Startup()
-            paper.startup(ssid, pswd, timeout)
+            paper.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5DinMeter:
             from .dinmeter import DinMeter_Startup
 
             dinmeter = DinMeter_Startup()
-            dinmeter.startup(ssid, pswd, timeout)
+            dinmeter.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StickC:
             from .stickc import StickC_Startup
 
             stickc = StickC_Startup()
-            stickc.startup(ssid, pswd, timeout)
+            stickc.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5Station:
             from .station import Station_Startup
 
             station = Station_Startup()
-            station.startup(ssid, pswd, timeout)
+            station.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5Tough:
             from .tough import Tough_Startup
 
             tough = Tough_Startup()
-            tough.startup(ssid, pswd, timeout)
+            tough.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5PaperS3:
             from .papers3 import PaperS3_Startup
 
             papers3 = PaperS3_Startup()
-            papers3.startup(ssid, pswd, timeout)
+            papers3.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5StamPLC:
             from .stamplc import StampPLC_Startup
@@ -299,23 +299,28 @@ def startup(boot_opt, timeout: int = 60) -> None:
             from .tab5 import Tab5_Startup
 
             tab5 = Tab5_Startup()
-            tab5.startup(ssid, pswd, timeout)
+            tab5.startup(ssid, pswd, timeout=timeout)
 
         elif board_id == M5.BOARD.M5UnitC6L:
             from .unit_c6l import UnitC6L_Startup
 
             unit_c6l = UnitC6L_Startup()
-            unit_c6l.startup(ssid, pswd, timeout)
+            unit_c6l.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5PowerHub:
             from .powerhub import PowerHub_Startup
 
             powerhub = PowerHub_Startup()
-            powerhub.startup(ssid, pswd, timeout)
+            powerhub.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.ArduinoNessoN1:
             from .nesson1 import NessoN1_Startup
 
             nesson1 = NessoN1_Startup()
-            nesson1.startup(ssid, pswd, timeout)
+            nesson1.startup(ssid, pswd, timeout=timeout)
+        elif board_id == M5.BOARD.M5StickS3:
+            from .sticks3 import StickS3_Startup
+
+            sticks3 = StickS3_Startup()
+            sticks3.startup(ssid, pswd, timeout=timeout)
 
     # Only connect to network, not show any menu
     elif boot_opt is BOOT_OPT_NETWORK:
