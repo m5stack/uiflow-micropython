@@ -135,6 +135,14 @@ class DownloadView:
             text_y=120,
             text_font=M5.Lcd.FONTS.DejaVu18,
         ),
+        M5.BOARD.M5StickS3: ViewInfo(
+            title_x=67,
+            title_y=91,
+            title_font=M5.Lcd.FONTS.DejaVu24,
+            text_x=67,
+            text_y=120,
+            text_font=M5.Lcd.FONTS.DejaVu18,
+        ),
         M5.BOARD.M5StackCoreInk: ViewInfo(
             title_x=100,
             title_y=51,
