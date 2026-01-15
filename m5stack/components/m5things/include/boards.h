@@ -28,7 +28,7 @@ const char *boards[] = {
     "arduino-nesso-n1", // 23
     "cardputer-adv",  // 24
     "unit-c6l",       // 25
-    "unknown",        // 26
+    "sticks3",        // 26
     "unknown",        // 27
     "unknown",        // 28
     "unknown",        // 29
