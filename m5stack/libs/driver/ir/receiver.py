@@ -2,14 +2,14 @@
 # IR_RX abstract base class for IR receivers.
 
 # Author: Peter Hinch
-# Copyright Peter Hinch 2020-2021 Released under the MIT license
-# Copyright (c) 2024 M5Stack Technology CO LTD
+# Copyright Peter Hinch 2020-2024 Released under the MIT license
+
+# Thanks are due to @Pax-IT for diagnosing a problem with ESP32C3.
 
 from machine import Timer, Pin
 from array import array
 from utime import ticks_us
 
-# Save RAM
 # from micropython import alloc_emergency_exception_buf
 # alloc_emergency_exception_buf(100)
 
@@ -21,6 +21,7 @@ from utime import ticks_us
 
 
 class IR_RX:
+    Timer_id = -1  # Software timer but enable override
     # Result/error codes
     # Repeat button code
     REPEAT = -1
@@ -44,7 +45,7 @@ class IR_RX:
         self._times = array("i", (0 for _ in range(nedges + 1)))  # +1 for overrun
         pin.irq(handler=self._cb_pin, trigger=(Pin.IRQ_FALLING | Pin.IRQ_RISING))
         self.edge = 0
-        self.tim = Timer(-1)  # Sofware timer
+        self.tim = Timer(self.Timer_id)  # Defaul is sofware timer
         self.cb = self.decode
 
     # Pin interrupt. Save time of each edge for later decode.
