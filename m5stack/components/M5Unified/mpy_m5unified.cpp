@@ -556,36 +556,42 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     {
         for (uint8_t i = 0; i < 5; i++) {
             MP_STATE_PORT(wasClicked_cb)[i] = mp_const_none;
+            MP_STATE_PORT(wasSingleClicked_cb)[i] = mp_const_none;
             MP_STATE_PORT(wasDoubleClicked_cb)[i] = mp_const_none;
             MP_STATE_PORT(wasHold_cb)[i] = mp_const_none;
             MP_STATE_PORT(wasPressed_cb)[i] = mp_const_none;
             MP_STATE_PORT(wasReleased_cb)[i] = mp_const_none;
         }
         m5_btnA.callbacks.wasClicked_cb = &MP_STATE_PORT(wasClicked_cb)[0];
+        m5_btnA.callbacks.wasSingleClicked_cb = &MP_STATE_PORT(wasSingleClicked_cb)[0];
         m5_btnA.callbacks.wasDoubleClicked_cb = &MP_STATE_PORT(wasDoubleClicked_cb)[0];
         m5_btnA.callbacks.wasHold_cb = &MP_STATE_PORT(wasHold_cb)[0];
         m5_btnA.callbacks.wasPressed_cb = &MP_STATE_PORT(wasPressed_cb)[0];
         m5_btnA.callbacks.wasReleased_cb = &MP_STATE_PORT(wasReleased_cb)[0];
 
         m5_btnB.callbacks.wasClicked_cb = &MP_STATE_PORT(wasClicked_cb)[1];
+        m5_btnB.callbacks.wasSingleClicked_cb = &MP_STATE_PORT(wasSingleClicked_cb)[1];
         m5_btnB.callbacks.wasDoubleClicked_cb = &MP_STATE_PORT(wasDoubleClicked_cb)[1];
         m5_btnB.callbacks.wasHold_cb = &MP_STATE_PORT(wasHold_cb)[1];
         m5_btnB.callbacks.wasPressed_cb = &MP_STATE_PORT(wasPressed_cb)[1];
         m5_btnB.callbacks.wasReleased_cb = &MP_STATE_PORT(wasReleased_cb)[1];
 
         m5_btnC.callbacks.wasClicked_cb = &MP_STATE_PORT(wasClicked_cb)[2];
+        m5_btnC.callbacks.wasSingleClicked_cb = &MP_STATE_PORT(wasSingleClicked_cb)[2];
         m5_btnC.callbacks.wasDoubleClicked_cb = &MP_STATE_PORT(wasDoubleClicked_cb)[2];
         m5_btnC.callbacks.wasHold_cb = &MP_STATE_PORT(wasHold_cb)[2];
         m5_btnC.callbacks.wasPressed_cb = &MP_STATE_PORT(wasPressed_cb)[2];
         m5_btnC.callbacks.wasReleased_cb = &MP_STATE_PORT(wasReleased_cb)[2];
 
         m5_btnPWR.callbacks.wasClicked_cb = &MP_STATE_PORT(wasClicked_cb)[3];
+        m5_btnPWR.callbacks.wasSingleClicked_cb = &MP_STATE_PORT(wasSingleClicked_cb)[3];
         m5_btnPWR.callbacks.wasDoubleClicked_cb = &MP_STATE_PORT(wasDoubleClicked_cb)[3];
         m5_btnPWR.callbacks.wasHold_cb = &MP_STATE_PORT(wasHold_cb)[3];
         m5_btnPWR.callbacks.wasPressed_cb = &MP_STATE_PORT(wasPressed_cb)[3];
         m5_btnPWR.callbacks.wasReleased_cb = &MP_STATE_PORT(wasReleased_cb)[3];
 
         m5_btnEXT.callbacks.wasClicked_cb = &MP_STATE_PORT(wasClicked_cb)[4];
+        m5_btnEXT.callbacks.wasSingleClicked_cb = &MP_STATE_PORT(wasSingleClicked_cb)[4];
         m5_btnEXT.callbacks.wasDoubleClicked_cb = &MP_STATE_PORT(wasDoubleClicked_cb)[4];
         m5_btnEXT.callbacks.wasHold_cb = &MP_STATE_PORT(wasHold_cb)[4];
         m5_btnEXT.callbacks.wasPressed_cb = &MP_STATE_PORT(wasPressed_cb)[4];
@@ -657,6 +663,13 @@ static void m5_btns_callbacks_check(void) {
                 }
             }
 
+            if (m5_btn_list[i]->callbacks.flag_bit.wasSingleClicked) {
+                if (((m5::Button_Class *)(m5_btn_list[i]->btn))->wasSingleClicked()) {
+                    mp_sched_schedule(*m5_btn_list[i]->callbacks.wasSingleClicked_cb,
+                        mp_obj_new_int(((m5::Button_Class *)(m5_btn_list[i]->btn))->getState()));
+                }
+            }
+
             if (m5_btn_list[i]->callbacks.flag_bit.wasDoubleClicked) {
                 if (((m5::Button_Class *)(m5_btn_list[i]->btn))->wasDoubleClicked()) {
                     mp_sched_schedule(*m5_btn_list[i]->callbacks.wasDoubleClicked_cb,
@@ -702,6 +715,7 @@ static void m5_btns_callbacks_deinit(void) {
 #endif
 
 MP_REGISTER_ROOT_POINTER(mp_obj_t wasClicked_cb[5]);
+MP_REGISTER_ROOT_POINTER(mp_obj_t wasSingleClicked_cb[5]);
 MP_REGISTER_ROOT_POINTER(mp_obj_t wasDoubleClicked_cb[5]);
 MP_REGISTER_ROOT_POINTER(mp_obj_t wasHold_cb[5]);
 MP_REGISTER_ROOT_POINTER(mp_obj_t wasPressed_cb[5]);

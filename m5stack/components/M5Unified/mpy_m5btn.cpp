@@ -86,6 +86,10 @@ namespace m5
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 1;
                 *((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = args[ARG_cb].u_obj;
                 break;
+            case BTN_TYPE_WAS_SINGLE_CLICKED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasSingleClicked = 1;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasSingleClicked_cb = args[ARG_cb].u_obj;
+                break;
             case BTN_TYPE_WAS_DOUBLECLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 1;
                 *((btn_obj_t *)pos_args[0])->callbacks.wasDoubleClicked_cb = args[ARG_cb].u_obj;
@@ -122,6 +126,10 @@ namespace m5
             case BTN_TYPE_WAS_CLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasClicked = 0;
                 *((btn_obj_t *)pos_args[0])->callbacks.wasClicked_cb = NULL;
+                break;
+            case BTN_TYPE_WAS_SINGLE_CLICKED:
+                ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasSingleClicked = 0;
+                *((btn_obj_t *)pos_args[0])->callbacks.wasSingleClicked_cb = NULL;
                 break;
             case BTN_TYPE_WAS_DOUBLECLICKED:
                 ((btn_obj_t *)pos_args[0])->callbacks.flag_bit.wasDoubleClicked = 0;
