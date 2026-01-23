@@ -173,7 +173,7 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
     }
 
     eth_mac_config_t mac_config = ETH_MAC_CUSTOM_CONFIG();
-    #if CONFIG_IDF_TARGET_ESP32
+    #if CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32P4
     eth_esp32_emac_config_t esp32_config = ETH_ESP32_EMAC_DEFAULT_CONFIG();
     #endif
 
@@ -212,9 +212,6 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
         case PHY_LAN8720:
             self->phy = esp_eth_phy_new_lan87xx(&phy_config);
             break;
-        case PHY_IP101:
-            self->phy = esp_eth_phy_new_ip101(&phy_config);
-            break;
         case PHY_RTL8201:
             self->phy = esp_eth_phy_new_rtl8201(&phy_config);
             break;
@@ -224,6 +221,11 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
         case PHY_KSZ8041:
         case PHY_KSZ8081:
             self->phy = esp_eth_phy_new_ksz80xx(&phy_config);
+            break;
+        #endif
+        #if CONFIG_IDF_TARGET_ESP32P4
+        case PHY_IP101:
+            self->phy = esp_eth_phy_new_ip101(&phy_config);
             break;
         #endif
         #if CONFIG_ETH_USE_SPI_ETHERNET
@@ -260,13 +262,13 @@ static mp_obj_t get_lan(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_ar
         #endif
     }
 
-    #if CONFIG_IDF_TARGET_ESP32
+    #if CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32P4
     if (!IS_SPI_PHY(args[ARG_phy_type].u_int)) {
         if (self->mdc_pin == -1 || self->mdio_pin == -1) {
             mp_raise_ValueError(MP_ERROR_TEXT("mdc and mdio must be specified"));
         }
-        esp32_config.smi_mdc_gpio_num = self->mdc_pin;
-        esp32_config.smi_mdio_gpio_num = self->mdio_pin;
+        esp32_config.smi_gpio.mdc_num = self->mdc_pin;
+        esp32_config.smi_gpio.mdio_num = self->mdio_pin;
         self->mac = esp_eth_mac_new_esp32(&esp32_config, &mac_config);
     }
     #endif
