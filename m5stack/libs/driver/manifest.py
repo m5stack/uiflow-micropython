@@ -77,6 +77,7 @@ package(
         "drf1609h.py",
         "haptic.py",
         "ina226.py",
+        "ip101gri.py",
         "max3421e.py",
         "mcp4725.py",
         "mlx90614.py",
