@@ -152,7 +152,7 @@ const char *boards[] = {
     "atom-echos3r",   // 145
     "powerhub",       // 146
     "dualkey",        // 147
-    "unknown",        // 148
+    "unit-poep4",     // 148
     "unknown",        // 149
     "unknown",        // 150
     "unknown",        // 151
