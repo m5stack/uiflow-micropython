@@ -124,7 +124,7 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
             mp_obj_new_int(tm.tm_year + 1900),
             mp_obj_new_int(tm.tm_mon + 1),
             mp_obj_new_int(tm.tm_mday),
-            mp_obj_new_int(tm.tm_wday),
+            mp_obj_new_int((tm.tm_wday + 6) % 7),
             mp_obj_new_int(tm.tm_hour),
             mp_obj_new_int(tm.tm_min),
             mp_obj_new_int(tm.tm_sec),
@@ -138,20 +138,36 @@ static mp_obj_t machine_rtc_datetime_helper(mp_uint_t n_args, const mp_obj_t *ar
         mp_obj_t *items;
         mp_obj_get_array_fixed_n(args[1], 8, &items);
 
+        // Get timezone info
+        char timezone[64] = { 0 };
+        char *tz = getenv("TZ");
+        memcpy(timezone, tz, strlen(tz));
+
+        // Set UTC timezone temporarily to set time correctly
+        setenv("TZ", "UTC", 1);
+        tzset();
+
+        // Set utc time
+        struct tm t;
         struct timeval tv = {0};
-        tv.tv_sec = timeutils_seconds_since_epoch(
-            mp_obj_get_int(items[0]),
-            mp_obj_get_int(items[1]),
-            mp_obj_get_int(items[2]),
-            mp_obj_get_int(items[hour_index]),
-            mp_obj_get_int(items[hour_index + 1]),
-            mp_obj_get_int(items[hour_index + 2])
-            );
-        tv.tv_usec = mp_obj_get_int(items[7]);
+        memset(&t, 0, sizeof(struct tm));
+        t.tm_year = mp_obj_get_int(items[0]) - 1900;
+        t.tm_mon = mp_obj_get_int(items[1]) - 1;
+        t.tm_mday = mp_obj_get_int(items[2]);
+        t.tm_hour = mp_obj_get_int(items[hour_index]);
+        t.tm_min = mp_obj_get_int(items[hour_index + 1]);
+        t.tm_sec = mp_obj_get_int(items[hour_index + 2]);
+        t.tm_isdst = 0; // Daylight Saving Time not implemented
+        tv.tv_sec = mktime(&t);
+        tv.tv_usec = mp_obj_get_int(items[6]);
         settimeofday(&tv, NULL);
         #if NO_HAVE_RTC_SYNC == 0
         rtc_sync(&tv);
         #endif
+
+        // Restore previous timezone
+        setenv("TZ", timezone, 1);
+        tzset();
 
         return mp_const_none;
     }
@@ -174,7 +190,7 @@ static mp_obj_t machine_rtc_local_datetime_helper(mp_uint_t n_args, const mp_obj
             mp_obj_new_int(tm.tm_year + 1900),
             mp_obj_new_int(tm.tm_mon + 1),
             mp_obj_new_int(tm.tm_mday),
-            mp_obj_new_int(tm.tm_wday),
+            mp_obj_new_int((tm.tm_wday + 6) % 7),
             mp_obj_new_int(tm.tm_hour),
             mp_obj_new_int(tm.tm_min),
             mp_obj_new_int(tm.tm_sec),

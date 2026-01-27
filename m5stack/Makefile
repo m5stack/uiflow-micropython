@@ -328,7 +328,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0016-micropython-1.25.0-fix-mpnimbleport.patch      \
 	0017-micropython-1.25.0-add-uart-mode.patch         \
 	0018-micropython-1.25.0-support-esp-idf-v5.4.2.patch \
-	0019-micropython-1.25.0-add-getsockname.patch
+	0019-micropython-1.25.0-add-getsockname.patch \
+	0020-micropython-1.25.0-modtime.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1004-idf_v5.4_freertos.patch
