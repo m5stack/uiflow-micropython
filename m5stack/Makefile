@@ -338,22 +338,13 @@ M5UNIFIED_PATCH_SERIES = \
 	2007-Support-UnitC6L.patch \
 	2008-Only-use-old-rmt-driver.patch \
 	2009-fix-SoftI2C.patch \
-	2010-Support-Nesso-N1.patch \
-	2011-Add-DualKey.patch \
-	2012-Implementing-deepSleep-for-Tab5.patch \
-	2013-Implement-setChargeCurrent-for-Tab5.patch \
-	2014-Fix-PowerHub-current-sign.patch \
-	2015-Fix-PowerHub-battery-level.patch \
-	2016-Fix-Rtc-For-StamPLC.patch \
-	2017-Fix-INA226-Data-For-StamPLC.patch \
-	2018-Add-StickS3.patch
+	2010-Support-Nesso-N1.patch
 
 ADF_PATCH_SERIES = \
 	3002-Modify-i2s_stream_idf5.patch
 
 M5GFX_PATCH_SERIES = \
-	4004-I2C-repeated-initialization.patch \
-	4005-Fix-StickS3.patch
+	4004-I2C-repeated-initialization.patch
 
 ESP32_CAMERA_PATCH_SERIES = \
 	5002-Add-software-i2c-support.patch
