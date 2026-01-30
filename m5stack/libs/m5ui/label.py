@@ -118,6 +118,10 @@ class M5Label(lv.label):
             raise ValueError("Radius must be a non-negative integer.")
         super().set_style_radius(radius, part)
 
+    def set_size(self, w: int, h: int) -> None:
+        super().set_size(w, h)
+        lv.refr_now(None)
+
     def __del__(self):
         self._shadow_label.delete()
         super().__delete__()
