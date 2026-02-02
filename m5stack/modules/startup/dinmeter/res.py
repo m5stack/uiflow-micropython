@@ -13,7 +13,7 @@ _attrs = {
     # develop
     "DEVELOP_PRIVATE_IMG": "/system/dinmeter/develop/private.jpeg",
     "DEVELOP_PUBLIC_IMG": "/system/dinmeter/develop/public.jpeg",
-    "AVATAR_IMG": "/system/common/img/avatar.jpeg",
+    "AVATAR_IMG": "/system/common/img/avatar.jpg",
     # ezdata
     # launcher
     "APPLIST_ICO": "/system/dinmeter/applist.jpeg",

@@ -54,7 +54,7 @@ CLOUD_READY_IMG = "/flash/res/stickc/wifi_ready.jpeg"
 BAT_IMG_PATH = "/flash/res/stickc/battery/"
 
 # develop
-AVATAR_IMG = "/flash/res/img/avatar.jpeg"
+AVATAR_IMG = "/flash/res/img/avatar.jpg"
 DEVELOP_PRIVATE_IMG = "/flash/res/stickc/develop_private.jpeg"
 DEVELOP_PUBLIC_IMG = "/flash/res/stickc/develop_public.jpeg"
 
