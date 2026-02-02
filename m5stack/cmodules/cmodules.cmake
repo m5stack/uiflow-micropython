@@ -39,9 +39,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/m5unified/m5unified.cmake)
 include(${CMAKE_CURRENT_LIST_DIR}/rf433/micropython.cmake)
 
 # add rmt_ir module
-if(IDF_TARGET STREQUAL "esp32s3")
-    include(${CMAKE_CURRENT_LIST_DIR}/rmt_ir/micropython.cmake)
-endif()
+include(${CMAKE_CURRENT_LIST_DIR}/rmt_ir/micropython.cmake)
 
 # add esp_zigbee_host module
 include(${CMAKE_CURRENT_LIST_DIR}/esp_zigbee_host/micropython.cmake)
