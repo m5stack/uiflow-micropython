@@ -10,12 +10,14 @@
 #include "py/obj.h"
 #include "py/objtuple.h"
 #include "py/runtime.h"
+#include "py/mphal.h"
 #include "driver/rmt.h"
 #include "driver/gpio.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/ringbuf.h"
 #include "esp_log.h"
+#include "soc/soc_caps.h"
 
 static const char *TAG = "rmt_ir";
 
@@ -52,7 +54,7 @@ static mp_obj_t ir_rx_callback = mp_const_none;
 static RingbufHandle_t ir_rx_rb = NULL;
 static TaskHandle_t ir_rx_task_handle = NULL;
 static bool ir_rx_is_initialized = false;
-static rmt_channel_t ir_rx_channel = RMT_CHANNEL_4;   // Default RX channel
+static rmt_channel_t ir_rx_channel = RMT_CHANNEL_MAX - 1;   // Default RX channel
 static int ir_rx_initialized_pin = -1;
 static uint16_t ir_nec_address = 0;
 static uint16_t ir_nec_command = 0;
@@ -61,7 +63,7 @@ static bool ir_data_ready = false;
 
 // TX global state
 static bool ir_tx_is_initialized = false;
-static rmt_channel_t ir_tx_channel = RMT_CHANNEL_3;  // Default TX channel
+static rmt_channel_t ir_tx_channel = (RMT_CHANNEL_MAX - SOC_RMT_TX_CANDIDATES_PER_GROUP) - 1;  // Default TX channel
 static int ir_tx_initialized_pin = -1;
 
 
@@ -381,14 +383,7 @@ static mp_obj_t rmt_ir_make_new(const mp_obj_type_t *type, size_t n_args, size_t
     }
     ir_rx_callback = cb_obj;
 
-    esp_err_t err = init_tx_if_needed(tx_pin, &self->tx_channel);
-    if (err == ESP_ERR_INVALID_STATE) {
-        mp_raise_msg_varg(&mp_type_RuntimeError,
-            MP_ERROR_TEXT("IR TX already initialized on pin %d, cannot use pin %d"),
-            ir_tx_initialized_pin, tx_pin);
-    } else if (err != ESP_OK) {
-        mp_raise_msg_varg(&mp_type_RuntimeError, MP_ERROR_TEXT("TX initialization failed: %d"), err);
-    }
+    check_esp_err(init_tx_if_needed(tx_pin, &self->tx_channel));
 
     return MP_OBJ_FROM_PTR(self);
 }
