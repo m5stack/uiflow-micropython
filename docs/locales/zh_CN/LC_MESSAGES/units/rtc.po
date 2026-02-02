@@ -1,0 +1,509 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-02 16:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/rtc.rst:3 a38b30115dab466aa714824a14bfb3bd
+msgid "RTC Unit"
+msgstr ""
+
+#: ../../en/units/rtc.rst:9 f9924322b8b547fa8e852c7b39a0839f
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../en/units/rtc.rst:11 61f3944302a847de9d6aecb83e506afc
+msgid "|RTCUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref 74237708bb9041f398800522452815cf
+msgid "RTCUnit"
+msgstr "RTC单元"
+
+#: ../../en/units/rtc.rst:15 870f49b431934a0781b5c7f2956a72f9
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/units/rtc.rst:18 ../../en/units/rtc.rst:37
+#: 0a0608a9a2ee422dabc1f59c5a4fd934 268877c65b114f7fbd77068ebb73277a
+msgid "get real time"
+msgstr ""
+
+#: ../../en/units/rtc.rst:20 a6b3615b166b4699a6bea7a5ea8193f1
+msgid "Open the |rtc_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |rtc_core2_example.m5f2| 项目。"
+
+#: ../../en/units/rtc.rst:22 ../../en/units/rtc.rst:39
+#: 22f187a3869a4fa7990bef1878da08db 37e50cc809bb40b09028dde81d54551f
+msgid "This example displays the Real time on the screen and serial."
+msgstr "本示例将在屏幕和串口上显示实时时间。"
+
+#: ../../en/units/rtc.rst:24 16f94506f06345c495b80b1470fa8dc5
+#: 36c90f34635143e7bf180df887809247 4e2cd20c4d2546d683977014bbec57c1
+#: 511ac1850d4248c58fac59ce6bf30530 79b6b6f1654846888387c02bc09eb618
+#: 81a59524e35d4e1b95618c7762ded24e 8479d86f36124f0a990980892d287c5b
+#: 8ff672e7df5c41fdb4b61c613307ce88 94c3147d5ac14ee887cdc79880e7f9ba
+#: b12e21c0fd4744c5a8c9263be80a7943 bb342253134942f1a7fce4ec5917efb5
+#: c1928002de4c470fa2a173c1d0d6b5d2 dee63537722c4a0785c2b1900546b87b
+#: e52dda5bdca64fc889d46e03d5c95ae4 efd2969cf3214df3967a238456f917a5
+#: f5411ea28521426aa5fef71c639b0024 f769a914b46347468ce5fd613074d521 of
+#: unit.rtc8563.RTC8563Unit:6 unit.rtc8563.RTC8563Unit.check_if_alarm_on:6
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on:6
+#: unit.rtc8563.RTC8563Unit.clear_alarm_flag:3
+#: unit.rtc8563.RTC8563Unit.clear_timer_flag:3
+#: unit.rtc8563.RTC8563Unit.datetime:5 unit.rtc8563.RTC8563Unit.get_date_time:7
+#: unit.rtc8563.RTC8563Unit.get_timer_value:6
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency:5
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:8
+#: unit.rtc8563.RTC8563Unit.set_date_time:11
+#: unit.rtc8563.RTC8563Unit.set_internet_time:8
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:6
+#: unit.rtc8563.RTC8563Unit.turn_off_alarm:3
+#: unit.rtc8563.RTC8563Unit.turn_off_timer:3
+#: unit.rtc8563.RTC8563Unit.write_now:3
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/rtc.rst:26 73ccabbaedfc4969b116f307a59b8a9a
+msgid "|example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:24 fee76cb3623444ba8dc85c7b6000c43f
+msgid "example.png"
+msgstr ""
+
+#: ../../en/units/rtc.rst:28 ../../en/units/rtc.rst:47
+#: 0ef9e57742b049be83bfd8e81d8b23c8 d11dae1c81d646d0b33d24f52aef25aa
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/rtc.rst:30 ../../en/units/rtc.rst:49
+#: 3fcaae60bb444a9fa1cce471a7acdd3c a9df8cdc5aa24e9f977759a925d81217
+msgid "None"
+msgstr ""
+
+#: ../../en/units/rtc.rst:34 897ba0d6100645a990143180a0044736
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/rtc.rst:41 0c5ca602a55342ad9fe19e0e3b9c4ec9
+#: 0f5e15f1d6424cfeab888a878fea232f 2f00bb2cb9c54995840d048e2bd07be6
+#: 357a431ee20842efab1cc2d66bdba003 42cacee787f24d699b267d060d5f1df7
+#: 43b653c0610640f18ef36ae8be6f1089 43d0d0e411b64f92916d8561107801b5
+#: 4a29ebb44d994f25be1165c39bdd2e44 4ce35d7ab63f400d9e4be76a163dcedb
+#: 61af53698e1a43809a00cf2ea8be30d5 69a9fad508a64c13a39b20a282742874
+#: 6a7a47b7088346129f062f0e70fb756f 75792c0a191f4f1687aaa2c389b9208a
+#: 7a8dea7431b3409fa861c781e1b50e37 820413b17a9b4aeca9c38a5e40ce0bec
+#: d86194695f8b401a89b7a8155cb672c3 dfebf5235b0647a88a85efd94f46223e of
+#: unit.rtc8563.RTC8563Unit:10 unit.rtc8563.RTC8563Unit.check_if_alarm_on:10
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on:10
+#: unit.rtc8563.RTC8563Unit.clear_alarm_flag:7
+#: unit.rtc8563.RTC8563Unit.clear_timer_flag:7
+#: unit.rtc8563.RTC8563Unit.datetime:9
+#: unit.rtc8563.RTC8563Unit.get_date_time:11
+#: unit.rtc8563.RTC8563Unit.get_timer_value:10
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency:9
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:12
+#: unit.rtc8563.RTC8563Unit.set_date_time:15
+#: unit.rtc8563.RTC8563Unit.set_internet_time:12
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:10
+#: unit.rtc8563.RTC8563Unit.turn_off_alarm:7
+#: unit.rtc8563.RTC8563Unit.turn_off_timer:7
+#: unit.rtc8563.RTC8563Unit.write_now:7
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/rtc.rst:53 34c99f438fda4cac8677fb4c53caba56
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/rtc.rst:56 ee6fecb52e2d4da7b4228d8dadc6cff8
+msgid "Class RTC8563Unit"
+msgstr "RTC8563Unit 类"
+
+#: 7ba856c0f4de4b66bc7cb2963b4c45ef of unit.rtc8563.RTC8563Unit:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: 6de2ce7f629742f7a699fbe1f5126efe of unit.rtc8563.RTC8563Unit:1
+msgid "Create an RTC8563Unit object."
+msgstr "创建一个 RTC8563Unit 对象。"
+
+#: ../../en/units/rtc.rst 0c007efd547e449ba01fe0c4ff95a6cf
+#: 2e40a0635ced40dc8d4ee0a2d467e62e 6fb9e747137344399954656893e4cbc5
+#: 862922464686475289db3b6075d15415 a3d7a68caeef459594042a97d98024d2
+#: afc13432f8f24c24afec9c5bbf74de15 b3ce1edd132a430e8eba7103c8e521de
+#: e636288820fa4d5fad7c93cd7774366b of unit.rtc8563.RTC8563Unit.datetime
+#: unit.rtc8563.RTC8563Unit.get_date_time
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm
+#: unit.rtc8563.RTC8563Unit.set_date_time
+#: unit.rtc8563.RTC8563Unit.set_internet_time
+#: unit.rtc8563.RTC8563Unit.set_timer_mode
+msgid "Parameters"
+msgstr "参数"
+
+#: d3333a8178c34d63a356fec2e5c79617 of unit.rtc8563.RTC8563Unit:3
+msgid "The I2C port used for communication."
+msgstr "用于通信的I2C端口。"
+
+#: 897195c55e52444ca2edba0a9fd6e96a of unit.rtc8563.RTC8563Unit:4
+msgid "The I2C address of the RTC8563/PCF8563."
+msgstr "RTC8563/PCF8563的I2C地址。"
+
+#: f9446c2592734f5dbc7b6e5ac19e53ae of unit.rtc8563.RTC8563Unit:8
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:7 b26465b62bbc402582dc30fc58ae3da3
+msgid "init.png"
+msgstr ""
+
+#: 6a487c14dada4f35b6bccb96494474ad of unit.rtc8563.RTC8563Unit.get_date_time:1
+msgid "Getting specific date or time components."
+msgstr "获取指定的日期或时间。"
+
+#: 19fbbebca2f9477dae56f685570cba17 of unit.rtc8563.RTC8563Unit.get_date_time:3
+msgid "The component to get (SECONDS, MINUTES, HOURS, DAY, DATE, MONTH, YEAR)."
+msgstr "要获取的部份(秒, 分钟, 小时, 日期, 月, 年)"
+
+#: 074e79e5e3bd41fb8f4a91781734846a 334c4e807ca54505aeb34af1e93da548
+#: 9051678b5f72424087894eb9e5639689 b56f6311b8264666ac393e48b2b5ae91 of
+#: unit.rtc8563.RTC8563Unit.check_if_alarm_on
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on
+#: unit.rtc8563.RTC8563Unit.get_date_time
+#: unit.rtc8563.RTC8563Unit.get_timer_value
+msgid "Returns"
+msgstr "返回值"
+
+#: 3b773137b1f44cc3825c53ff3d7edf67 of unit.rtc8563.RTC8563Unit.get_date_time:4
+msgid "The value of the selected component."
+msgstr "所选部份的值。"
+
+#: 752604cc63904e0d8703a34ff0399286 9e5a31d53398483ca1b288670bd22187
+#: a6283c9faebb45b8b25d6662c0fc29f1 ba1d6f0c2bc84d21aee5f521884f2ff3 of
+#: unit.rtc8563.RTC8563Unit.check_if_alarm_on
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on
+#: unit.rtc8563.RTC8563Unit.get_date_time
+#: unit.rtc8563.RTC8563Unit.get_timer_value
+msgid "Return type"
+msgstr "返回类型"
+
+#: f1d718c34f4f497ab0e34450d5ea456a of unit.rtc8563.RTC8563Unit.get_date_time:9
+msgid "|get_date_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:8 ad88199e38f247bcb056c54f90227422
+msgid "get_date_time.png"
+msgstr ""
+
+#: a1d1f5f23c87442ab9b47d3b69ab7d9a of unit.rtc8563.RTC8563Unit.set_date_time:1
+msgid "Setting the date and time values."
+msgstr "设置日期和时间的值。"
+
+#: 2cfff5cc6bf1466baeef39e6b15e4f6c 554da07c20f64e7fa5a74d474b8471c8 of
+#: unit.rtc8563.RTC8563Unit.set_date_time:3
+#: unit.rtc8563.RTC8563Unit.set_date_time:4
+msgid "Range [0,59]."
+msgstr "范围 [0,59]。"
+
+#: 6adbcbe527f34ff9aebe0c0e25d1ce82 of unit.rtc8563.RTC8563Unit.set_date_time:5
+msgid "Range [0,23]."
+msgstr "范围 [0,23]。"
+
+#: c091b3b45dd340159e26355bba2c6f5f of unit.rtc8563.RTC8563Unit.set_date_time:6
+msgid "Range [0,6] (0 for Sunday)."
+msgstr "范围 [0,6]（0 代表星期天）。"
+
+#: 6bf1f5c16895481a96d298ac3724552a of unit.rtc8563.RTC8563Unit.set_date_time:7
+msgid "Range [1-31]."
+msgstr "范围 [1-31]。"
+
+#: 19834ab9b4db4c3688308a89927d3187 of unit.rtc8563.RTC8563Unit.set_date_time:8
+msgid "Range [1-12]."
+msgstr "范围 [1-12]。"
+
+#: a56b7641218c437dbe3d18f40a5789d2 of unit.rtc8563.RTC8563Unit.set_date_time:9
+msgid "Range [0-99] (Last two digits)."
+msgstr "范围 [0-99]（最后两位数字）。"
+
+#: 214f33bae1d843f393bd2ce66e6c0816 of
+#: unit.rtc8563.RTC8563Unit.set_date_time:13
+msgid "|set_date_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:9 943697caa50f4391b1fa8712193d1aaa
+msgid "set_date_time.png"
+msgstr ""
+
+#: 0a808fcb83594d5185de184defad59b2 of unit.rtc8563.RTC8563Unit.datetime:1
+msgid "Setting the complete date and time using a tuple."
+msgstr "使用元组设置完整的日期和时间。"
+
+#: d4549adde6e241e1855846a1a1ddcbfa of unit.rtc8563.RTC8563Unit.datetime:3
+msgid "(year, month, date, hours, minutes, seconds, day)."
+msgstr "（年，月，日，小时，分钟，秒，星期）。"
+
+#: 92e342635e0d4a1e94b374d8797bd454 of unit.rtc8563.RTC8563Unit.datetime:7
+msgid "|datetime.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:10 035a9727fc8a47bf8a4f7f2d4c2aa0c6
+msgid "datetime.png"
+msgstr ""
+
+#: d61d9791e3474c77ab60b3a2649110c1 of unit.rtc8563.RTC8563Unit.write_now:1
+msgid "Writing the current system time (from ESP32) to the RTC."
+msgstr "将当前系统时间（来自ESP32）写入RTC。"
+
+#: 92cba9b51ee5494e8edddc3bb20ae13c of unit.rtc8563.RTC8563Unit.write_now:5
+msgid "|write_now.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:11 6200730b99cb4f88bc9aafd583ce72a7
+msgid "write_now.png"
+msgstr ""
+
+#: 0aa512ff3b0b4aedb095705a32155cc9 of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:1
+msgid "Synchronizing the RTC with network time."
+msgstr "将RTC与网络时间同步。"
+
+#: 66656cc71ba9416e921b8d53da2195fb of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:3
+msgid "Time source (\"ntp\")."
+msgstr "时间源（“ntp”）。"
+
+#: 3b6eaa08d2dd4305a7c4a216d28d795b of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:4
+msgid "NTP server address."
+msgstr "NTP服务器地址。"
+
+#: 502f747afc70481794f51953ec42dc83 of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:5
+msgid "Timezone offset."
+msgstr "时区偏移量。"
+
+#: ff5dd407261b473a8d2f98ce0582bb64 of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:6
+msgid "Whether to consider daylight saving time."
+msgstr "是否考虑夏令时。"
+
+#: 344cb2ec1929406cbde3daec94ca2cb3 of
+#: unit.rtc8563.RTC8563Unit.set_internet_time:10
+msgid "|set_internet_time.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:12 d2447b3583c64a4d8f18ce209a28a1fb
+msgid "set_internet_time.png"
+msgstr ""
+
+#: 367b9330b1b34d0f8e703cad95de22e0 of
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency:1
+msgid "Setting the frequency of the CLKOUT pin."
+msgstr "设置CLKOUT引脚的频率。"
+
+#: ce1495b45e7443468094775da691b734 of
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency:3
+msgid "Frequency constant (e.g., CLOCK_CLK_OUT_FREQ_1_HZ)."
+msgstr "频率常量（如 CLOCK_CLK_OUT_FREQ_1_HZ）。"
+
+#: 15000718a3b14ea8aad7df33f8cdbbdf of
+#: unit.rtc8563.RTC8563Unit.set_clk_out_frequency:7
+msgid "|set_clk_out_frequency.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:13 311551274d1d4304afcb8e81a976bd55
+msgid "set_clk_out_frequency.png"
+msgstr ""
+
+#: e5010cfa7471487ebad50c7d5081b0d8 of
+#: unit.rtc8563.RTC8563Unit.check_if_alarm_on:1
+msgid "Checking if the alarm flag is triggered."
+msgstr "检查闹钟标志是否被触发。"
+
+#: 77bb11359c984d3cab89d6f7dd02f6df of
+#: unit.rtc8563.RTC8563Unit.check_if_alarm_on:3
+msgid "True if alarm is triggered, False otherwise."
+msgstr "如果闹钟被触发则为True，否则为False。"
+
+#: bd9b19b966fe43fc86e1c82dfd0874d8 of
+#: unit.rtc8563.RTC8563Unit.check_if_alarm_on:8
+msgid "|check_if_alarm_on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:14 9e586c510a0b40ec9a4d89cc7dad1612
+msgid "check_if_alarm_on.png"
+msgstr ""
+
+#: 1e5f832d3d9a4b6e92ae5782177370c4 of
+#: unit.rtc8563.RTC8563Unit.turn_off_alarm:1
+msgid "Disabling the alarm function."
+msgstr "禁用闹钟功能。"
+
+#: e90a4b6681174d868066803e284f9be3 of
+#: unit.rtc8563.RTC8563Unit.turn_off_alarm:5
+msgid "|turn_off_alarm.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:15 cb59ed5e4d0c4ec187c832a492830e63
+msgid "turn_off_alarm.png"
+msgstr ""
+
+#: 7fe8ef4524494a0195ba823b4bc090b8 of
+#: unit.rtc8563.RTC8563Unit.clear_alarm_flag:1
+msgid "Clearing the alarm status flag and resetting alarm registers."
+msgstr "清除闹钟状态标志并重置闹钟寄存器。"
+
+#: 30734c34c51248499b0dae422bd85e10 of
+#: unit.rtc8563.RTC8563Unit.clear_alarm_flag:5
+msgid "|clear_alarm_flag.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:16 2b0712593984496faae68ee3c92a66d3
+msgid "clear_alarm_flag.png"
+msgstr ""
+
+#: d776ba923ddf47a7a5ef3ca415eb0dc3 of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:1
+msgid "Setting a daily or periodic alarm."
+msgstr "设置每日或周期性闹钟。"
+
+#: 7a207788a29c4d9691f1057affa60fdd of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:3
+msgid "Alarm hour."
+msgstr "闹钟小时。"
+
+#: 8b13d7dbe4de49a5b751804b37b6e84c of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:4
+msgid "Alarm minute."
+msgstr "闹钟分钟。"
+
+#: da70258b637044e4ba90b0cb1f244012 of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:5
+msgid "Alarm date."
+msgstr "闹钟日期。"
+
+#: 626303c01cdb4c0db7eea550ee490a01 of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:6
+msgid "Alarm weekday."
+msgstr "闹钟星期。"
+
+#: 27ac0414400641dcad72b41a7385740d of
+#: unit.rtc8563.RTC8563Unit.set_daily_alarm:10
+msgid "|set_daily_alarm.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:17 7a0f2de1f1d5473691af6384ef5a6707
+msgid "set_daily_alarm.png"
+msgstr ""
+
+#: bb494e68b5804b1eaae6bd22b8e9d814 of
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:1
+msgid "Setting the countdown timer mode and initial value."
+msgstr "设置倒计时定时器模式和初始值。"
+
+#: e8734e6fa41445c3880d387b74c43d2d of
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:3
+msgid "Timer clock frequency mode."
+msgstr "定时器时钟频率模式。"
+
+#: 212bb9558b814d0abc0f84e8cc5da997 of
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:4
+msgid "Initial countdown value."
+msgstr "初始倒计时值。"
+
+#: 8c11380016f548c0a4558bc00230399a of
+#: unit.rtc8563.RTC8563Unit.set_timer_mode:8
+msgid "|set_timer_mode.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:18 cd57976b50034f44af583962537e81c0
+msgid "set_timer_mode.png"
+msgstr ""
+
+#: 6d3ef31b877243778d8fee9ad45854cb of
+#: unit.rtc8563.RTC8563Unit.get_timer_value:1
+msgid "Getting the current countdown timer value."
+msgstr "获取当前倒计时定时器的数值。"
+
+#: b90da4f90787458d9c95d4ce60c2affb of
+#: unit.rtc8563.RTC8563Unit.get_timer_value:3
+msgid "Current timer value."
+msgstr "当前定时器数值。"
+
+#: 505a6918e81d4472bfd6c782af85324c of
+#: unit.rtc8563.RTC8563Unit.get_timer_value:8
+msgid "|get_timer_value.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:19 dc2de34868e54c9faa0eec5dc6bb46d1
+msgid "get_timer_value.png"
+msgstr ""
+
+#: 77212be66fe4489694be6edc58b2c304 of
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on:1
+msgid "Checking if the timer flag is triggered."
+msgstr "检查定时器标志是否被触发。"
+
+#: db36f7696f1746889bdf8c38cee13569 of
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on:3
+msgid "True if timer is triggered, False otherwise."
+msgstr "如果定时器被触发则为True，否则为False。"
+
+#: fcf5a176e5ff4e2ca23e4797b09d4a5d of
+#: unit.rtc8563.RTC8563Unit.check_if_timer_on:8
+msgid "|check_if_timer_on.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:20 05169d450bf849c99e7a52cd0ebd7229
+msgid "check_if_timer_on.png"
+msgstr ""
+
+#: dba41228925d4c0f915034d4cf7b5e7f of
+#: unit.rtc8563.RTC8563Unit.turn_off_timer:1
+msgid "Disabling the timer and clearing the timer flag."
+msgstr "禁用定时器并清除定时器标志。"
+
+#: b879f6f11ca14942bcd6d49cdc3a704c of
+#: unit.rtc8563.RTC8563Unit.turn_off_timer:5
+msgid "|turn_off_timer.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:21 75e5813b194f42c9883190bca1b646e5
+msgid "turn_off_timer.png"
+msgstr ""
+
+#: 0692d02772fc45c4bd18a39f2ae7a109 of
+#: unit.rtc8563.RTC8563Unit.clear_timer_flag:1
+msgid "Clearing the timer status flag."
+msgstr "清除定时器状态标志。"
+
+#: c999955e30ae4fc094555bd3d7d48162 of
+#: unit.rtc8563.RTC8563Unit.clear_timer_flag:5
+msgid "|clear_timer_flag.png|"
+msgstr ""
+
+#: ../../en/refs/unit.rtc.ref:22 9408140475a749489c7ff6d14fd834aa
+msgid "clear_timer_flag.png"
+msgstr ""
+
+#~ msgid "Draw Text"
+#~ msgstr "绘制文本"
+
