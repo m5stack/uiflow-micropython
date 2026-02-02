@@ -1,0 +1,34 @@
+
+.. |RTCUnit| image:: https://static-cdn.m5stack.com/resource/docs/products/unit/UNIT%20RTC/img-1d24e2f2-7e72-48df-91a3-db5d837ea3d7.webp
+    :target: https://docs.m5stack.com/en/products/sku/U126
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/init.png
+.. |get_date_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/get_date_time.png
+.. |set_date_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/set_date_time.png
+.. |datetime.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/datetime.png
+.. |write_now.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/write_now.png
+.. |set_internet_time.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/set_internet_time.png
+.. |set_clk_out_frequency.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/set_clk_out_frequency.png
+.. |check_if_alarm_on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/check_if_alarm_on.png
+.. |turn_off_alarm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/turn_off_alarm.png
+.. |clear_alarm_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/clear_alarm_flag.png
+.. |set_daily_alarm.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/set_daily_alarm.png
+.. |set_timer_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/set_timer_mode.png
+.. |get_timer_value.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/get_timer_value.png
+.. |check_if_timer_on.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/check_if_timer_on.png
+.. |turn_off_timer.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/turn_off_timer.png
+.. |clear_timer_flag.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/clear_timer_flag.png
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/unit/rtc/example.png
+
+
+.. |rtc_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/unit/rtc/rtc_core2_example.m5f2"
+        target="_blank"
+    >
+        rtc_core2_example.m5f2
+    </a>

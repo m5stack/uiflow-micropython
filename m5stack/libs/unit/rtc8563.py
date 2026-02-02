@@ -31,8 +31,6 @@ from time import localtime, sleep
 from gc import collect
 from driver.timezone import TZONE
 from micropython import const
-from .pahub import PAHUBUnit
-from .unit_helper import UnitError
 
 
 PCF8563_SLAVE_ADDRESS = const(0x51)
@@ -86,8 +84,27 @@ YEAR = 6
 
 
 class RTC8563Unit:
-    def __init__(self, i2c: I2C | PAHUBUnit, address: int | list | tuple = PCF8563_SLAVE_ADDRESS):
-        """Initialization needs to be given an initialized I2C port"""
+    """Create an RTC8563Unit object.
+
+    :param I2C i2c: The I2C port used for communication.
+    :param int address: The I2C address of the RTC8563/PCF8563.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from machine import I2C, Pin
+            from unit import RTC8563Unit
+
+            i2c0 = I2C(0, scl=Pin(26), sda=Pin(32), freq=400000)
+            rtc_0 = RTC8563Unit(i2c0)
+    """
+
+    def __init__(self, i2c: I2C, address: int | list | tuple = PCF8563_SLAVE_ADDRESS):
         self.i2c = i2c
         self.i2c_addr = address
         self.buffer = bytearray(16)
@@ -100,7 +117,7 @@ class RTC8563Unit:
 
     def _available(self):
         if self.i2c_addr not in self.i2c.scan():
-            raise UnitError("RTC unit maybe not connect")
+            raise Exception("RTC unit maybe not connect")
 
     def __write_byte(self, reg, val):
         self.bytebuf[0] = val
@@ -118,6 +135,22 @@ class RTC8563Unit:
         return (tens << 4) + units
 
     def get_date_time(self, select=0):
+        """Getting specific date or time components.
+
+        :param int select: The component to get (SECONDS, MINUTES, HOURS, DAY, DATE, MONTH, YEAR).
+        :returns: The value of the selected component.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_date_time.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.get_date_time(0) # Get seconds
+        """
         if select == SECONDS:
             return self.__bcd2dec(self.__read_byte(PCF8563_SEC_REG) & 0x7F)
 
@@ -143,9 +176,25 @@ class RTC8563Unit:
     def set_date_time(
         self, seconds=None, minutes=None, hours=None, day=None, date=None, month=None, year=None
     ):
-        """Direct write un-none value.
-        Range: seconds [0,59], minutes [0,59], hours [0,23],
-               day [0,7], date [1-31], month [1-12], year [0-99].
+        """Setting the date and time values.
+
+        :param int seconds: Range [0,59].
+        :param int minutes: Range [0,59].
+        :param int hours: Range [0,23].
+        :param int day: Range [0,6] (0 for Sunday).
+        :param int date: Range [1-31].
+        :param int month: Range [1-12].
+        :param int year: Range [0-99] (Last two digits).
+
+        UiFlow2 Code Block:
+
+            |set_date_time.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.set_date_time(hours=12, minutes=30)
         """
         if seconds is not None:
             if seconds < 0 or seconds > 59:
@@ -185,19 +234,49 @@ class RTC8563Unit:
             self.__write_byte(PCF8563_WEEKDAY_REG, self.__dec2bcd(day))
 
     def datetime(self, dt):
-        """Input a tuple such as (year, month, date, day, hours, minutes,
-        seconds).
+        """Setting the complete date and time using a tuple.
+
+        :param tuple dt: (year, month, date, hours, minutes, seconds, day).
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.datetime((2024, 5, 20, 10, 0, 0, 1))
         """
         self.set_date_time(dt[5], dt[4], dt[3], dt[6], dt[2], dt[1], dt[0] % 100)
 
     def write_now(self):
-        """Write the current system time to PCF8563"""
+        """Writing the current system time (from ESP32) to the RTC.
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.write_now()
+        """
         self.datetime(localtime())
 
-    def set_internet_time(self, source="ntp", host="cn.pool.ntp.org", tzone=0):
-        """Set the time from the NTP server"""
+    def set_internet_time(self, source="ntp", host="cn.pool.ntp.org", tzone=0, win=True):
+        """Synchronizing the RTC with network time.
+
+        :param str source: Time source ("ntp").
+        :param str host: NTP server address.
+        :param float tzone: Timezone offset.
+        :param bool win: Whether to consider daylight saving time.
+
+        UiFlow2 Code Block:
+
+            |set_internet_time.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.set_internet_time(tzone=8)
+        """
         if source == "ntp":
-            self.tzone = TZONE(tzone)
+            self.tzone = TZONE(tzone, win)
             for i in range(5):
                 ntp = self.tzone.getntp(host)
                 if ntp != 0:
@@ -211,20 +290,65 @@ class RTC8563Unit:
         self.datetime((yy - 2000, MM, mday, hh, mm, ss, wday))
 
     def set_clk_out_frequency(self, frequency=CLOCK_CLK_OUT_FREQ_1_HZ):
-        """Set the clock output pin frequency"""
+        """Setting the frequency of the CLKOUT pin.
+
+        :param int frequency: Frequency constant (e.g., CLOCK_CLK_OUT_FREQ_1_HZ).
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.set_clk_out_frequency(0x83)
+        """
         self.__write_byte(PCF8563_SQW_REG, frequency)
 
     def check_if_alarm_on(self):
-        """Read the register to get the alarm enabled"""
+        """Checking if the alarm flag is triggered.
+
+        :returns: True if alarm is triggered, False otherwise.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |check_if_alarm_on.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.check_if_alarm_on()
+        """
         return bool(self.__read_byte(PCF8563_STAT2_REG) & PCF8563_ALARM_AF)
 
     def turn_off_alarm(self):
-        """Should not affect the alarm interrupt state."""
+        """Disabling the alarm function.
+
+        UiFlow2 Code Block:
+
+            |turn_off_alarm.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.turn_off_alarm()
+        """
         alarm_state = self.__read_byte(PCF8563_STAT2_REG)
         self.__write_byte(PCF8563_STAT2_REG, alarm_state & 0xF7)
 
     def clear_alarm_flag(self):
-        """Clear status register."""
+        """Clearing the alarm status flag and resetting alarm registers.
+
+        UiFlow2 Code Block:
+
+            |clear_alarm_flag.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.clear_alarm_flag()
+        """
         alarm_state = self.__read_byte(PCF8563_STAT2_REG)
         alarm_state &= ~(PCF8563_ALARM_AF)
         alarm_state |= PCF8563_TIMER_TF
@@ -236,7 +360,23 @@ class RTC8563Unit:
         self.__write_byte(PCF8563_ALARM_WEEKDAY, 0x80)
 
     def set_daily_alarm(self, hours=None, minutes=None, date=None, weekday=None):
-        """Set alarm match, allow sometimes, minute, day, week"""
+        """Setting a daily or periodic alarm.
+
+        :param int hours: Alarm hour.
+        :param int minutes: Alarm minute.
+        :param int date: Alarm date.
+        :param int weekday: Alarm weekday.
+
+        UiFlow2 Code Block:
+
+            |set_daily_alarm.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.set_daily_alarm(hours=7, minutes=0)
+        """
         if minutes is None:
             minutes = PCF8563_ALARM_ENABLE
             self.__write_byte(PCF8563_ALARM_MINUTES, minutes)
@@ -270,39 +410,92 @@ class RTC8563Unit:
             self.__write_byte(PCF8563_ALARM_WEEKDAY, self.__dec2bcd(weekday) & 0x7F)
 
     def set_timer_mode(self, mode=0, value=0):
-        """
-        Set the timer mode.
+        """Setting the countdown timer mode and initial value.
+
+        :param int mode: Timer clock frequency mode.
+        :param int value: Initial countdown value.
+
+        UiFlow2 Code Block:
+
+            |set_timer_mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.set_timer_mode(mode=2, value=60)
         """
         self.__write_byte(PCF8563_TIMER2_REG, value)
         timer_state = PCF8563_TIMER_TE | 0x02 | mode
         self.__write_byte(PCF8563_TIMER1_REG, timer_state)
 
     def get_timer_value(self):
-        """
-        get the timer value.
+        """Getting the current countdown timer value.
+
+        :returns: Current timer value.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_timer_value.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.get_timer_value()
         """
         return self.__read_byte(PCF8563_TIMER2_REG)
 
     def check_if_timer_on(self):
-        """
-        Read the register to get the alarm status
+        """Checking if the timer flag is triggered.
+
+        :returns: True if timer is triggered, False otherwise.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |check_if_timer_on.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.check_if_timer_on()
         """
         return bool(self.__read_byte(PCF8563_STAT2_REG) & PCF8563_TIMER_TF)
 
     def turn_off_timer(self):
-        """
-        clear the timer flag and disable timer.
+        """Disabling the timer and clearing the timer flag.
+
+        UiFlow2 Code Block:
+
+            |turn_off_timer.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.turn_off_timer()
         """
         self.__write_byte(PCF8563_TIMER1_REG, PCF8563_TIMER_TD10)
         self.__write_byte(PCF8563_TIMER2_REG, 0x00)
-
         timer_state = self.__read_byte(PCF8563_STAT2_REG)
         timer_state &= ~(PCF8563_TIMER_TF)
         self.__write_byte(PCF8563_STAT2_REG, timer_state)
 
     def clear_timer_flag(self):
-        """
-        clear the timer flag.
+        """Clearing the timer status flag.
+
+        UiFlow2 Code Block:
+
+            |clear_timer_flag.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                rtc_0.clear_timer_flag()
         """
         timer_state = self.__read_byte(PCF8563_STAT2_REG)
         self.__write_byte(PCF8563_STAT2_REG, (timer_state & 0xFB))

@@ -103,6 +103,7 @@ Unit
     rgb.rst
     roller485.rst
     rollercan.rst
+    rtc.rst
     scales.rst
     scroll.rst
     servo180.rst
