@@ -13,7 +13,7 @@ _attrs = {
     # develop
     "DEVELOP_PRIVATE_IMG": "/system/stamplc/develop/private.jpeg",
     "DEVELOP_PUBLIC_IMG": "/system/stamplc/develop/public.jpeg",
-    "AVATAR_IMG": "/system/common/img/avatar.jpeg",
+    "AVATAR_IMG": "/system/common/img/avatar.jpg",
     # ezdata
     # launcher
     "APPLIST_ICO": "/system/stamplc/applist.jpeg",

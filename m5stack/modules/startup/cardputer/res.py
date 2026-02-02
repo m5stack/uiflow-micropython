@@ -13,7 +13,7 @@ _attrs = {
     # develop
     "DEVELOP_PRIVATE_IMG": "/system/cardputer/develop/private.jpeg",
     "DEVELOP_PUBLIC_IMG": "/system/cardputer/develop/public.jpeg",
-    "AVATAR_IMG": "/system/common/img/avatar.jpeg",
+    "AVATAR_IMG": "/system/common/img/avatar.jpg",
     # ezdata
     # launcher
     "APPLIST_ICO": "/system/cardputer/applist.jpeg",
