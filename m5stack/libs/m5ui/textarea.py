@@ -48,6 +48,7 @@ class M5TextArea(lv.textarea):
         self.set_bg_color(bg_c, lv.OPA.COVER, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.set_border_color(border_c, lv.OPA.COVER, lv.PART.MAIN | lv.STATE.DEFAULT)
         self.set_text_color(text_c, lv.OPA.COVER, lv.PART.MAIN | lv.STATE.DEFAULT)
+        self._text_buffer = text
 
         self._h = h
 
@@ -77,6 +78,11 @@ class M5TextArea(lv.textarea):
         if radius < 0:
             raise ValueError("Radius must be a non-negative integer.")
         super().set_style_radius(radius, part)
+
+    def set_max_length(self, max_length: int) -> None:
+        current_text = self.get_text()
+        super().set_max_length(max_length)
+        self.set_text(current_text)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
