@@ -91,14 +91,17 @@ class M5Scale(lv.scale):
             lv.scale.MODE.HORIZONTAL_BOTTOM,
         ]:
             super().set_size(w, 20)
+            self.wrapper.set_size(w + 20, 40)
         elif self.mode in [
             lv.scale.MODE.VERTICAL_LEFT,
             lv.scale.MODE.VERTICAL_RIGHT,
         ]:
             super().set_size(20, h)
+            self.wrapper.set_size(40, h + 20)
         else:
             r = max(w, h)
             super().set_size(r, r)
+            self.wrapper.set_size(r + 60, r + 60)
 
     def set_pos(self, x: int, y: int) -> None:
         return self.wrapper.set_pos(x, y)
@@ -108,6 +111,9 @@ class M5Scale(lv.scale):
 
     def set_y(self, y: int) -> None:
         return self.wrapper.set_y(y)
+
+    def align_to(self, base: lv.obj, align: int, x_ofs: int, y_ofs: int) -> None:
+        return self.wrapper.align_to(base, align, x_ofs, y_ofs)
 
     def __getattr__(self, name):
         if hasattr(M5Base, name):
