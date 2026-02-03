@@ -198,8 +198,15 @@ M5Keyboard
 
         Set the keyboard mode to display different keyboard layouts.
 
-        :param int mode: The keyboard mode to set (e.g., lv.keyboard.MODE.TEXT_LOWER, lv.keyboard.MODE.TEXT_UPPER, lv.keyboard.MODE.SPECIAL, lv.keyboard.MODE.NUMBER).
+        :param int mode: The keyboard mode to set.
         :return: None
+
+        Available modes include:
+
+            - lv.keyboard.MODE.TEXT_LOWER: 0.
+            - lv.keyboard.MODE.TEXT_UPPER: 1.
+            - lv.keyboard.MODE.SYMBOL: 2.
+            - lv.keyboard.MODE.NUMBER: 3.
 
         UiFlow2 Code Block:
 
@@ -217,6 +224,13 @@ M5Keyboard
 
         :return: The current keyboard mode.
         :rtype: int
+
+        Keyboard modes include:
+
+            - lv.keyboard.MODE.TEXT_LOWER: 0.
+            - lv.keyboard.MODE.TEXT_UPPER: 1.
+            - lv.keyboard.MODE.SYMBOL: 2.
+            - lv.keyboard.MODE.NUMBER: 3.
 
         UiFlow2 Code Block:
 
