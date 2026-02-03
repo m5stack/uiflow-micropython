@@ -1,33 +1,55 @@
 .. py:currentmodule:: modbus
 
-class ModbusRTUSlave -- Modbus RTU slave
-==========================================
+ModbusRTUSlave
+==============
 
 .. include:: ../refs/software.modbus.rtu.slave.ref
 
 ModbusRTUSlave implements the Modbus RTU slave. ModbusRTUSlave support function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding Registers), 4 (Read Input Registers), 5 (Write Single Coil), 6 (Write Single Holding Register), 15 (Write Multiple Coils), and 16 (Write Multiple Holding Registers).
 
+UiFlow2 Example
+---------------
 
-Micropython Example:
+CoreS3 RTU Slave
+^^^^^^^^^^^^^^^^
 
-    .. literalinclude:: ../../../examples/softwave/modbus/cores3_rtu_slave_example.py
-        :language: python
-        :linenos:
+Open the |cores3_rtu_slave_example.m5f2| project in UiFlow2.
 
+This example demonstrates how to use the ``ModbusRTUSlave`` class.
 
-UIFLOW2 Example:
+UiFlow2 Code Block:
 
     |example.png|
 
+Example output:
 
-.. only:: builder_html
+    None
 
-    |cores3_rtu_slave_example.m5f2|
+MicroPython Example
+-------------------
 
-Constructors
-------------
+CoreS3 RTU Slave
+^^^^^^^^^^^^^^^^
 
-.. py:class:: modbus.ModbusRTUSlave(uart, device_address: int=1, context=None, ignore_unit_id: bool=False, verbose: bool=False)
+This example demonstrates how to use the ``ModbusRTUSlave`` class.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/software/modbus/cores3_rtu_slave_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+API
+---
+
+ModbusRTUSlave
+^^^^^^^^^^^^^^
+
+.. class:: ModbusRTUSlave(uart, device_address: int = 1, context=None, ignore_unit_id: bool = False, verbose: bool = False)
 
     Create a ModbusRTUSlave object.
 
@@ -66,345 +88,511 @@ Constructors
             ],
         }
 
-    UIFLOW2:
+    UiFlow2 Code Block:
 
         |init.png|
 
+    MicroPython Code Block:
 
-Methods
--------
+        .. code-block:: python
 
-.. method:: ModbusRTUSlave.start() -> None
+            from modbus import ModbusRTUSlave
+            # slave = ModbusRTUSlave(uart, device_address=1, context=context)
 
-    Start the Modbus RTU slave.
 
-    UIFLOW2:
+    .. py:method:: ModbusRTUSlave.start()
 
-        |start.png|
+        Start the Modbus RTU slave.
 
+        :returns: None
 
-.. method:: ModbusRTUSlave.stop() -> None
+        UiFlow2 Code Block:
 
-    Stop the Modbus RTU slave.
+            |start.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |stop.png|
+            .. code-block:: python
 
+                slave.start()
 
-.. method:: ModbusRTUSlave.add_coil(register: int, value: bool) -> None
 
-    Add a coil to the modbus register dictionary.
+    .. py:method:: ModbusRTUSlave.stop()
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is True or False.
+        Stop the Modbus RTU slave.
 
-    UIFLOW2:
+        :returns: None
 
-        |add_coil.png|
+        UiFlow2 Code Block:
 
+            |stop.png|
 
-.. method:: ModbusRTUSlave.add_discrete_input(register: int, value: bool) -> None
+        MicroPython Code Block:
 
-    Add a discrete input to the modbus register dictionary.
+            .. code-block:: python
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is True or False.
+                slave.stop()
 
-    UIFLOW2:
 
-        |add_discrete_input.png|
+    .. py:method:: ModbusRTUSlave.add_coil(register: int, value: bool)
 
+        Add a coil to the modbus register dictionary.
 
-.. method:: ModbusRTUSlave.add_holding_register(register: int, value: int) -> None
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param bool value: Value to add. The value is True or False.
+        :returns: None
 
-    Add a holding register to the modbus register dictionary.
+        UiFlow2 Code Block:
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+            |add_coil.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |add_holding_register.png|
+            .. code-block:: python
 
+                slave.add_coil(0, True)
 
-.. method:: ModbusRTUSlave.add_input_register(register: int, value: int) -> None
 
-    Add an input register to the modbus register dictionary.
+    .. py:method:: ModbusRTUSlave.add_discrete_input(register: int, value: bool)
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+        Add a discrete input to the modbus register dictionary.
 
-    UIFLOW2:
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param bool value: Value to add. The value is True or False.
+        :returns: None
 
-        |add_input_register.png|
+        UiFlow2 Code Block:
 
+            |add_discrete_input.png|
 
-.. method:: ModbusRTUSlave.remove_coil(register: int) -> None
+        MicroPython Code Block:
 
-    Remove a coil from the modbus register dictionary.
+            .. code-block:: python
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+                slave.add_discrete_input(0, True)
 
-    UIFLOW2:
 
-        |remove_coil.png|
+    .. py:method:: ModbusRTUSlave.add_holding_register(register: int, value: int)
 
+        Add a holding register to the modbus register dictionary.
 
-.. method:: ModbusRTUSlave.remove_discrete_input(register: int) -> None
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+        :returns: None
 
-    Remove a discrete input from the modbus register dictionary.
+        UiFlow2 Code Block:
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+            |add_holding_register.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |remove_discrete_input.png|
+            .. code-block:: python
 
+                slave.add_holding_register(0, 100)
 
-.. method:: ModbusRTUSlave.remove_holding_register(register: int) -> None
 
-    Remove a holding register from the modbus register dictionary.
+    .. py:method:: ModbusRTUSlave.add_input_register(register: int, value: int)
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        Add an input register to the modbus register dictionary.
 
-    UIFLOW2:
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+        :returns: None
 
-        |remove_holding_register.png|
+        UiFlow2 Code Block:
 
+            |add_input_register.png|
 
-.. method:: ModbusRTUSlave.remove_input_register(register: int) -> None
+        MicroPython Code Block:
 
-    Remove an input register from the modbus register dictionary.
+            .. code-block:: python
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+                slave.add_input_register(0, 100)
 
-    UIFLOW2:
 
-        |remove_input_register.png|
+    .. py:method:: ModbusRTUSlave.remove_coil(register: int)
 
+        Remove a coil from the modbus register dictionary.
 
-.. method:: ModbusRTUSlave.get_coil(register: int) -> bool
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :returns: None
 
-    Get the coil value.
+        UiFlow2 Code Block:
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+            |remove_coil.png|
 
-    :return: The value of the coil.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |get_coil.png|
+                slave.remove_coil(0)
 
 
-.. method:: ModbusRTUSlave.get_discrete_input(register: int) -> bool
+    .. py:method:: ModbusRTUSlave.remove_discrete_input(register: int)
 
-    Get the discrete input value.
+        Remove a discrete input from the modbus register dictionary.
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :returns: None
 
-    :return: The value of the discrete input.
+        UiFlow2 Code Block:
 
-    UIFLOW2:
+            |remove_discrete_input.png|
 
-        |get_discrete_input.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: ModbusRTUSlave.get_holding_register(register: int) -> int
+                slave.remove_discrete_input(0)
 
-    Get the holding register value.
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+    .. py:method:: ModbusRTUSlave.remove_holding_register(register: int)
 
-    :return: The value of the holding register.
+        Remove a holding register from the modbus register dictionary.
 
-    UIFLOW2:
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :returns: None
 
-        |get_holding_register.png|
+        UiFlow2 Code Block:
 
+            |remove_holding_register.png|
 
-.. method:: ModbusRTUSlave.get_input_register(register: int) -> int
+        MicroPython Code Block:
 
-    Get the input register value.
+            .. code-block:: python
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+                slave.remove_holding_register(0)
 
-    :return: The value of the input register.
 
-    UIFLOW2:
+    .. py:method:: ModbusRTUSlave.remove_input_register(register: int)
 
-        |get_input_register.png|
+        Remove an input register from the modbus register dictionary.
 
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :returns: None
 
-.. method:: ModbusRTUSlave.set_coil(register: int, value: bool) -> None
+        UiFlow2 Code Block:
 
-    Set the coil value.
+            |remove_input_register.png|
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is True or False.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |set_coil.png|
+                slave.remove_input_register(0)
 
 
-.. method:: ModbusRTUSlave.set_multi_coils(register: int, value: list) -> None
+    .. py:method:: ModbusRTUSlave.get_coil(register: int)
 
-    Set the multi coils value.
+        Get the coil value.
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of True or False.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :returns: bool - The value of the coil.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |set_multi_coils.png|
+            |get_coil.png|
 
+        MicroPython Code Block:
 
-.. method:: ModbusRTUSlave.set_discrete_input(register: int, value: bool) -> None
+            .. code-block:: python
 
-    Set the discrete input value.
+                value = slave.get_coil(0)
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is True or False.
 
-    UIFLOW2:
+    .. py:method:: ModbusRTUSlave.get_discrete_input(register: int)
 
-        |set_discrete_input.png|
+        Get the discrete input value.
 
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :returns: bool - The value of the discrete input.
 
-.. method:: ModbusRTUSlave.set_multi_discrete_input(register: int, value: list) -> None
+        UiFlow2 Code Block:
 
-    Set the multi discrete inputs value.
+            |get_discrete_input.png|
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of True or False.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |set_multi_discrete_input.png|
+                value = slave.get_discrete_input(0)
 
 
-.. method:: ModbusRTUSlave.set_holding_register(register: int, value: int) -> None
+    .. py:method:: ModbusRTUSlave.get_holding_register(register: int)
 
-    Set the holding register value.
+        Get the holding register value.
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :returns: int - The value of the holding register.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |set_holding_register.png|
+            |get_holding_register.png|
 
+        MicroPython Code Block:
 
-.. method:: ModbusRTUSlave.set_multi_holding_register(register: int, value: list) -> None
+            .. code-block:: python
 
-    Set the multi holding registers value.
+                value = slave.get_holding_register(0)
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
 
-    UIFLOW2:
+    .. py:method:: ModbusRTUSlave.get_input_register(register: int)
 
-        |set_multi_holding_register.png|
+        Get the input register value.
 
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :returns: int - The value of the input register.
 
-.. method:: ModbusRTUSlave.set_input_register(register: int, value: int) -> None
+        UiFlow2 Code Block:
 
-    Set the input register value.
+            |get_input_register.png|
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |set_input_register.png|
+                value = slave.get_input_register(0)
 
 
-.. method:: ModbusRTUSlave.set_multi_input_register(register: int, value: list) -> None
+    .. py:method:: ModbusRTUSlave.set_coil(register: int, value: bool)
 
-    Set the multi input registers value.
+        Set the coil value.
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param bool value: Value to set. The value is True or False.
+        :returns: None
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |set_multi_input_register.png|
+            |set_coil.png|
 
+        MicroPython Code Block:
 
-.. method:: ModbusRTUSlave.tick() -> None
+            .. code-block:: python
 
-    Modbus RTU slave tick function. This function should be called in the main loop.
+                slave.set_coil(0, True)
 
-    UIFLOW2:
 
-        |tick.png|
+    .. py:method:: ModbusRTUSlave.set_multi_coils(register: int, value: list)
 
+        Set the multi coils value.
 
-.. method:: ModbusRTUSlave.set_callback(func_code: int, handler) -> None
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of True or False.
+        :returns: None
 
-    Set the callback function for the function code.
+        UiFlow2 Code Block:
 
-    :param int func_code: Function code. The function code is 1 to 6, 15, 16. the symbol is defined in the modbus.ModbusRTUSlave (\*_EVENT etc.).
-    :param handler: Callback function.
+            |set_multi_coils.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |read_coils_callback.png|
+            .. code-block:: python
 
-        |read_discrete_inputs_callback.png|
+                slave.set_multi_coils(0, [True, False])
 
-        |read_holding_registers_callback.png|
 
-        |read_input_registers_callback.png|
+    .. py:method:: ModbusRTUSlave.set_discrete_input(register: int, value: bool)
 
-        |write_multiple_coils_callback.png|
+        Set the discrete input value.
 
-        |write_multiple_registers_callback.png|
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param bool value: Value to set. The value is True or False.
+        :returns: None
 
-        |write_single_coil_callback.png|
+        UiFlow2 Code Block:
 
-        |write_single_register_callback.png|
+            |set_discrete_input.png|
 
+        MicroPython Code Block:
 
-Constants
----------
+            .. code-block:: python
 
-.. data:: ModbusRTUSlave.READ_COILS_EVENT
+                slave.set_discrete_input(0, True)
 
-    Function code 1 (Read Coils).
 
+    .. py:method:: ModbusRTUSlave.set_multi_discrete_input(register: int, value: list)
 
-.. data:: ModbusRTUSlave.READ_DISCRETE_INPUTS_EVENT
+        Set the multi discrete inputs value.
 
-    Function code 2 (Read Discrete Inputs).
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of True or False.
+        :returns: None
 
+        UiFlow2 Code Block:
 
-.. data:: ModbusRTUSlave.READ_HOLDING_REGISTERS_EVENT
+            |set_multi_discrete_input.png|
 
-    Function code 3 (Read Holding Registers).
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. data:: ModbusRTUSlave.READ_INPUT_REGISTERS_EVENT
+                slave.set_multi_discrete_input(0, [True, False])
 
-    Function code 4 (Read Input Registers).
 
+    .. py:method:: ModbusRTUSlave.set_holding_register(register: int, value: int)
 
-.. data:: ModbusRTUSlave.WRITE_SINGLE_COIL_EVENT
+        Set the holding register value.
 
-    Function code 5 (Write Single Coil).
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        :returns: None
 
+        UiFlow2 Code Block:
 
-.. data:: ModbusRTUSlave.WRITE_SINGLE_HOLDING_REGISTER_EVENT
+            |set_holding_register.png|
 
-    Function code 6 (Write Single Holding Register).
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. data:: ModbusRTUSlave.WRITE_MULTIPLE_COILS_EVENT
+                slave.set_holding_register(0, 100)
 
-    Function code 15 (Write Multiple Coils).
 
+    .. py:method:: ModbusRTUSlave.set_multi_holding_register(register: int, value: list)
 
-.. data:: ModbusRTUSlave.WRITE_MULTIPLE_HOLDING_REGISTERS_EVENT
+        Set the multi holding registers value.
 
-    Function code 16 (Write Multiple Holding Registers).
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
+        :returns: None
+
+        UiFlow2 Code Block:
+
+            |set_multi_holding_register.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slave.set_multi_holding_register(0, [100, 200])
+
+
+    .. py:method:: ModbusRTUSlave.set_input_register(register: int, value: int)
+
+        Set the input register value.
+
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        :returns: None
+
+        UiFlow2 Code Block:
+
+            |set_input_register.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slave.set_input_register(0, 100)
+
+
+    .. py:method:: ModbusRTUSlave.set_multi_input_register(register: int, value: list)
+
+        Set the multi input registers value.
+
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
+        :returns: None
+
+        UiFlow2 Code Block:
+
+            |set_multi_input_register.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slave.set_multi_input_register(0, [100, 200])
+
+
+    .. py:method:: ModbusRTUSlave.tick()
+
+        Modbus RTU slave tick function. This function should be called in the main loop.
+
+        :returns: None
+
+        UiFlow2 Code Block:
+
+            |tick.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                slave.tick()
+
+
+    .. py:method:: ModbusRTUSlave.set_callback(func_code: int, handler)
+
+        Set the callback function for the function code.
+
+        :param int func_code: Function code. The function code is 1 to 6, 15, 16. the symbol is defined in the modbus.ModbusRTUSlave (\*_EVENT etc.).
+        :param handler: Callback function.
+        :returns: None
+
+        UiFlow2 Code Block:
+
+            |read_coils_callback.png|
+
+            |read_discrete_inputs_callback.png|
+
+            |read_holding_registers_callback.png|
+
+            |read_input_registers_callback.png|
+
+            |write_multiple_coils_callback.png|
+
+            |write_multiple_registers_callback.png|
+
+            |write_single_coil_callback.png|
+
+            |write_single_register_callback.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def callback(arg):
+                    pass
+                slave.set_callback(1, callback)
+
+
+    .. py:data:: ModbusRTUSlave.READ_COILS_EVENT
+
+        Function code 1 (Read Coils).
+
+
+    .. py:data:: ModbusRTUSlave.READ_DISCRETE_INPUTS_EVENT
+
+        Function code 2 (Read Discrete Inputs).
+
+
+    .. py:data:: ModbusRTUSlave.READ_HOLDING_REGISTERS_EVENT
+
+        Function code 3 (Read Holding Registers).
+
+
+    .. py:data:: ModbusRTUSlave.READ_INPUT_REGISTERS_EVENT
+
+        Function code 4 (Read Input Registers).
+
+
+    .. py:data:: ModbusRTUSlave.WRITE_SINGLE_COIL_EVENT
+
+        Function code 5 (Write Single Coil).
+
+
+    .. py:data:: ModbusRTUSlave.WRITE_SINGLE_HOLDING_REGISTER_EVENT
+
+        Function code 6 (Write Single Holding Register).
+
+
+    .. py:data:: ModbusRTUSlave.WRITE_MULTIPLE_COILS_EVENT
+
+        Function code 15 (Write Multiple Coils).
+
+
+    .. py:data:: ModbusRTUSlave.WRITE_MULTIPLE_HOLDING_REGISTERS_EVENT
+
+        Function code 16 (Write Multiple Holding Registers).

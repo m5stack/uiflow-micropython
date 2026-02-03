@@ -13,7 +13,7 @@ The main functionality and function of the ``requests2`` module.
 
 Micropython Example:
 
-    .. literalinclude:: ../../../examples/softwave/http/cores3_http_get_example.py
+    .. literalinclude:: ../../../examples/software/http/cores3_http_get_example.py
         :language: python
         :linenos:
 

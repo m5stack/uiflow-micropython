@@ -31,7 +31,7 @@ This example creates a UDP client that sends data to a server.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/udp/cores3_udp_client_example.py
+    .. literalinclude:: ../../../examples/software/udp/cores3_udp_client_example.py
         :language: python
         :linenos:
 

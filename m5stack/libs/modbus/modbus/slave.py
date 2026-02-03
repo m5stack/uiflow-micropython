@@ -49,18 +49,22 @@ class ModbusSlave:
         16: "holding_registers",
     }
 
-    def __init__(self, sl_type="tcp", context=None, ignore_unit_id=False, device_address=1):
+    def __init__(
+        self, sl_type="tcp", context=None, ignore_unit_id=False, device_address=1, verbose=False
+    ):
         """Basic Modbus Slave class
 
         :param str sl_type: Modbus type (tcp or rtu)
         :param dict context: Initial register context
         :param bool ignore_unit_id: Whether to ignore unit id in requests
         :param int device_address: Device address for RTU mode
+        :param bool verbose: Enable verbose logging
         """
         self.sl_type = sl_type
         self.context = context
         self.ignore_unit_id = ignore_unit_id
         self._device_address = device_address
+        self._verbose = verbose
         self.forward_message = None
         self.stopped = False
         if context is None:
@@ -742,6 +746,10 @@ class ModbusSlave:
         for i in range(length * 2):
             data_Block["registers"][2 * offset + i] = data[i]
 
+    def _log(self, *args, **kwargs) -> None:
+        if self._verbose:
+            print(*args, **kwargs)
+
 
 class _CModbusRTUSlave(ModbusSlave):
     def __init__(self, uart, verbose=False, *args, **kwargs):
@@ -750,9 +758,8 @@ class _CModbusRTUSlave(ModbusSlave):
         :param uart: UART object to use
         :param bool verbose: If True, print debug messages
         """
-        self._verbose = verbose
         self.uart = uart
-        super(_CModbusRTUSlave, self).__init__(sl_type="rtu", *args, **kwargs)
+        super(_CModbusRTUSlave, self).__init__(sl_type="rtu", verbose=verbose, *args, **kwargs)
 
     def start(self):
         self.stopped = False
@@ -764,7 +771,7 @@ class _CModbusRTUSlave(ModbusSlave):
 
         :returns: None
         """
-        self._verbose and print("starting async rtu slave")
+        self._log("starting async rtu slave")
         while not self.stopped:
             self.tick()
             await asyncio.sleep(0.1)
@@ -797,13 +804,13 @@ class _MModbusRTUSlave(ModbusSlave):
         :param uart: UART object to use
         :param bool verbose: If True, print debug messages
         """
-        self._verbose = verbose
         self.uart = uart
         super(_MModbusRTUSlave, self).__init__(
             sl_type="rtu",
             context=kwargs.get("context", None),
             ignore_unit_id=kwargs.get("ignore_unit_id", False),
             device_address=kwargs.get("device_address", 1),
+            verbose=verbose,
         )
         self.rsp = b""
 
@@ -812,7 +819,7 @@ class _MModbusRTUSlave(ModbusSlave):
 
         :returns: None
         """
-        self._verbose and print("starting async rtu slave")
+        self._log("starting async rtu slave")
         while not self.stopped:
             self.tick()
             await asyncio.sleep(0.1)
@@ -828,7 +835,7 @@ class _MModbusRTUSlave(ModbusSlave):
 
         :returns: None
         """
-        self._verbose and print("starting rtu slave")
+        self._log("starting rtu slave")
         while not self.stopped:
             self.tick()
             time.sleep(0.1)
@@ -881,12 +888,12 @@ class _CModbusTCPServer(ModbusSlave):
         """
         self.host = host
         self.port = port
-        self._verbose = verbose
         super(_CModbusTCPServer, self).__init__(
             sl_type="tcp",
             context=kwargs.get("context", None),
             ignore_unit_id=kwargs.get("ignore_unit_id", False),
             device_address=kwargs.get("device_address", 1),
+            verbose=verbose,
         )
 
     def start(self):
@@ -905,7 +912,7 @@ class _CModbusTCPServer(ModbusSlave):
         """
         while not self.stopped:
             conn, addr = self.sock.accept()
-            self._verbose and print("new connection from {}".format(addr))
+            self._log("new connection from {}".format(addr))
             while True:
                 frame = conn.recv(256)
                 if len(frame) > 0:
@@ -917,7 +924,7 @@ class _CModbusTCPServer(ModbusSlave):
                         ):
                             return
                         res = self.handle_message(frame).get_frame()
-                        self._verbose and print(res)
+                        self._log(res)
                         conn.send(res)
                     except:
                         break
@@ -932,8 +939,8 @@ class _CModbusTCPServer(ModbusSlave):
         :returns: None
         """
         if not self.stopped:
-            fds = self.poll.poll(10)
-            for fd, event in fds:
+            events = self.poll.poll(10)
+            for fd, event in events:
                 # fd == file no(int)
                 # print(fd, event)
                 if event & select.POLLIN:
@@ -942,7 +949,7 @@ class _CModbusTCPServer(ModbusSlave):
                         conn.setblocking(False)
                         self.poll.register(conn.fileno(), select.POLLIN)
                         self.clients[conn.fileno()] = conn
-                        self._verbose and print(conn, "accept", addr)
+                        self._log(conn, "accept", addr)
                     else:
                         client = self.clients[fd]
                         frame = client.recv(256)
@@ -952,10 +959,10 @@ class _CModbusTCPServer(ModbusSlave):
                                 self.ignore_unit_id is not True
                                 and frame.unit_id != self._device_address
                             ):
-                                self._verbose and print("unit id not match")
+                                self._log("unit id not match")
                                 return
                             res = self.handle_message(frame).get_frame()
-                            self._verbose and print(res)
+                            self._log(res)
                             client.send(res)
                             cb = self.cb[frame.func_code]
                             if cb is not None:
@@ -969,25 +976,25 @@ class _CModbusTCPServer(ModbusSlave):
                                     data = self._get_data(frame.register, 1, self.context[db])
                                     micropython.schedule(cb, (self, frame.register, data[0]))
                         else:
-                            self._verbose and print(fd, "closed")
+                            self._log(fd, "closed")
                             self.poll.unregister(fd)
 
     async def run_async(self):
-        self._verbose and print("starting async tcp server on port {}".format(self.port))
+        self._log("starting async tcp server on port {}".format(self.port))
         loop = asyncio.get_event_loop()
         self.sock.setblocking(False)
         while not self.stopped:
             conn, addr = await loop.sock_accept(self.sock)
-            self._verbose and print("new connection from {}".format(addr))
+            self._log("new connection from {}".format(addr))
             while True:
                 frame = await loop.sock_recv(conn, 256)
                 if len(frame) > 0:
                     req = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                     if req is None or (req.device_addr != self._device_address):
                         continue
-                    self._verbose and print("received Frame        {}".format(req))
+                    self._log("received Frame        {}".format(req))
                     res = self.handle_message(req)
-                    self._verbose and print("responding with Frame {}".format(res))
+                    self._log("responding with Frame {}".format(res))
                     conn.send(res.get_frame())
                     cb = self.cb[frame.func_code]
                     if cb is not None:
@@ -999,7 +1006,7 @@ class _CModbusTCPServer(ModbusSlave):
                             data = self._get_data(frame.register, 1, self.context[db])
                             micropython.schedule(cb, (self, frame.register, data[0]))
                 else:
-                    self._verbose and print("shutting down async server")
+                    self._log("shutting down async server")
                     break
             conn.close()
         self.sock.close()
@@ -1015,25 +1022,27 @@ class _MModbusTCPServer(ModbusSlave):
         """
         self.host = host
         self.port = port
-        self._verbose = verbose
         super(_MModbusTCPServer, self).__init__(
             sl_type="tcp",
             context=kwargs.get("context", None),
             ignore_unit_id=kwargs.get("ignore_unit_id", False),
             device_address=kwargs.get("device_address", 1),
+            verbose=verbose,
         )
 
     def start(self):
         self.poll = select.poll()
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sock.bind((self.host, self.port))
         self.sock.listen(5)
+        self.sock.setblocking(False)
         self.poll.register(self.sock, select.POLLIN)
 
     def run(self):
         while not self.stopped:
             conn, addr = self.sock.accept()
-            self._verbose and print("new connection from {}".format(addr))
+            self._log("new connection from {}".format(addr))
             while True:
                 frame = conn.recv(256)
                 if len(frame) > 0:
@@ -1045,7 +1054,7 @@ class _MModbusTCPServer(ModbusSlave):
                         ):
                             return
                         res = self.handle_message(frame).get_frame()
-                        self._verbose and print(res)
+                        self._log(res)
                         conn.send(res)
                     except:
                         break
@@ -1056,57 +1065,61 @@ class _MModbusTCPServer(ModbusSlave):
 
     def tick(self):
         if not self.stopped:
-            fds = self.poll.poll(10)
-            for fd, event in fds:
-                print(fd, event)
+            events = self.poll.poll(10)
+            for fd, event in events:
                 if fd == self.sock:
                     conn, addr = self.sock.accept()
                     self.poll.register(conn, select.POLLIN)
-                    self._verbose and print(conn, "accept", addr)
+                    self._log(conn, "accept", addr)
                 else:
-                    frame = fd.recv(256)
-                    if len(frame) > 0:
-                        frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
-                        if frame is None or (
-                            self.ignore_unit_id is not True
-                            and frame.unit_id != self._device_address
-                        ):
-                            self._verbose and print("unit id not match")
-                            return
-                        res = self.handle_message(frame).get_frame()
-                        self._verbose and print(res)
-                        fd.send(res)
-                        cb = self.cb[frame.func_code]
-                        if cb is not None:
-                            db = self._FUNCTION_MAP[frame.func_code]
-                            if frame.func_code in [1, 2, 3, 4, 15, 16]:
-                                data = self._get_data(
-                                    frame.register, frame.length, self.context[db]
-                                )
-                                micropython.schedule(cb, (self, frame.register, data))
-                            if frame.func_code in [5, 6]:
-                                data = self._get_data(frame.register, 1, self.context[db])
-                                micropython.schedule(cb, (self, frame.register, data[0]))
-                    else:
-                        self._verbose and print(fd, "closed")
+                    if event & select.POLLIN:
+                        frame = fd.recv(256)
+                        if len(frame) > 0:
+                            frame = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
+                            if frame is None or (
+                                self.ignore_unit_id is not True
+                                and frame.unit_id != self._device_address
+                            ):
+                                self._log("unit id not match")
+                                return
+                            res = self.handle_message(frame).get_frame()
+                            self._log(res)
+                            fd.send(res)
+                            cb = self.cb[frame.func_code]
+                            if cb is not None:
+                                db = self._FUNCTION_MAP[frame.func_code]
+                                if frame.func_code in [1, 2, 3, 4, 15, 16]:
+                                    data = self._get_data(
+                                        frame.register, frame.length, self.context[db]
+                                    )
+                                    micropython.schedule(cb, (self, frame.register, data))
+                                if frame.func_code in [5, 6]:
+                                    data = self._get_data(frame.register, 1, self.context[db])
+                                    micropython.schedule(cb, (self, frame.register, data[0]))
+                        else:
+                            self._log(fd, "closed")
+                            self.poll.unregister(fd)
+
+                    if event & (select.POLLERR | select.POLLHUP):
                         self.poll.unregister(fd)
+                        fd.close()
 
     async def run_async(self):
-        self._verbose and print("starting async tcp server on port {}".format(self.port))
+        self._log("starting async tcp server on port {}".format(self.port))
         loop = asyncio.get_event_loop()
         self.sock.setblocking(False)
         while not self.stopped:
             conn, addr = await loop.sock_accept(self.sock)
-            self._verbose and print("new connection from {}".format(addr))
+            self._log("new connection from {}".format(addr))
             while True:
                 frame = await loop.sock_recv(conn, 256)
                 if len(frame) > 0:
                     req = ModbusTCPFrame.parse_frame(frame, verbose=self._verbose)
                     if req is None or req.device_addr != self._device_address:
                         continue
-                    self._verbose and print("received Frame        {}".format(req))
+                    self._log("received Frame        {}".format(req))
                     res = self.handle_message(req)
-                    self._verbose and print("responding with Frame {}".format(res))
+                    self._log("responding with Frame {}".format(res))
                     conn.send(res.get_frame())
                     cb = self.cb[frame.func_code]
                     if cb is not None:
@@ -1118,7 +1131,7 @@ class _MModbusTCPServer(ModbusSlave):
                             data = self._get_data(frame.register, 1, self.context[db])
                             micropython.schedule(cb, (self, frame.register, data[0]))
                 else:
-                    self._verbose and print("shutting down async server")
+                    self._log("shutting down async server")
                     break
             conn.close()
         self.sock.close()

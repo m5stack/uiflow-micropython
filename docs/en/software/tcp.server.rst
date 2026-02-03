@@ -33,7 +33,7 @@ This example creates a TCP server that listens on port 8000 and displays the rec
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/easysocket/tcp_server/cores3_simple_server_example.py
+    .. literalinclude:: ../../../examples/software/easysocket/tcp_server/cores3_simple_server_example.py
         :language: python
         :linenos:
 

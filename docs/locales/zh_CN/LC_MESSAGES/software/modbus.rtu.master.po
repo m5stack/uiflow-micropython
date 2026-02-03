@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-02 18:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,13 +18,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/software/modbus.rtu.master.rst:4 05a209104afb49828d54d5eebb16f0bb
-msgid "class ModbusRTUMaster -- Modbus RTU master"
+#: ../../en/software/modbus.rtu.master.rst:4
+#: ../../en/software/modbus.rtu.master.rst:50 702c0bb20e01475b9b653c68105833b0
+msgid "ModbusRTUMaster"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:8 65d6f5191ada45d4a756d04ccd53c3b7
+#: ../../en/software/modbus.rtu.master.rst:8 b30f9a8c4bd84b839afa2f56811fb039
 msgid ""
 "ModbusRTUMaster implements the Modbus RTU master. ModbusRTUMaster support"
 " function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding"
@@ -32,297 +33,367 @@ msgid ""
 "Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
 "Multiple Holding Registers)."
 msgstr ""
+"ModbusRTUMaster 实现了 Modbus RTU 主站。ModbusRTUMaster 支持功能码 1（读线圈）"
+"、2（读离散输入）、3（读保持寄存器）、4（读输入寄存器）、5（写单线圈）、6"
+"（写单保持寄存器）、15（写多线圈）和 16（写多保持寄存器）。"
 
-#: ../../en/software/modbus.rtu.master.rst:11 4d45737363f744a9891af05a72a04bfd
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:11 2c9c1c0a4fa440eb9cb12347c07aeffd
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
 
-#: ../../en/software/modbus.rtu.master.rst:18 93501843576649eb9faa9ea2c18dc5ac
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:14
+#: ../../en/software/modbus.rtu.master.rst:32 3a626e817f8d486d9e3e4cda13a685ad
+#: 55466c610f9d4d05908aecb48c2cb9ed
+msgid "CoreS3 RTU Master"
+msgstr "CoreS3 RTU 主站"
 
-#: ../../en/software/modbus.rtu.master.rst:20 77f5886043a74653a4651b83dc84feec
+#: ../../en/software/modbus.rtu.master.rst:16 0bf4468d0a6e486d82f8e7d2d37b59c1
+msgid "Open the |cores3_rtu_master_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_rtu_master_example.m5f2| 项目。"
+
+#: ../../en/software/modbus.rtu.master.rst:18
+#: ../../en/software/modbus.rtu.master.rst:34 a0ec17dac0cc4cac8683b25419890637
+#: f4c6f64809c44308965a224b6e98e75c
+msgid "This example demonstrates how to use the ``ModbusRTUMaster`` class."
+msgstr "该示例演示如何使用 ``ModbusRTUMaster`` 类。"
+
+#: ../../en/software/modbus.rtu.master.rst:20
+#: ../../en/software/modbus.rtu.master.rst:59
+#: ../../en/software/modbus.rtu.master.rst:82
+#: ../../en/software/modbus.rtu.master.rst:103
+#: ../../en/software/modbus.rtu.master.rst:124
+#: ../../en/software/modbus.rtu.master.rst:145
+#: ../../en/software/modbus.rtu.master.rst:166
+#: ../../en/software/modbus.rtu.master.rst:187
+#: ../../en/software/modbus.rtu.master.rst:208
+#: ../../en/software/modbus.rtu.master.rst:229 0dfe37c0839b41f69e362145076ced10
+#: 2f2993de30b040e983aa140bd1832784 359c3245414b49508b3d5834ffccc8be
+#: 3d4c78ad63034f659024d199efdc0be0 af645cf996bb4b16bab4d6587b66f2b2
+#: bdc3866c95d246819f7648ce3da95f82 cf03890981934f9b8649ff121ce1bd47
+#: cff5041d95a84b36a2089f5283e48e8d d0895b71a50c4489a75791c022158a04
+#: fb5a6d040ead4f258ab71ae204b130fa
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/software/modbus.rtu.master.rst:22 f2316dcd63df4ce1a4684b0aa82f72ee
 msgid "|example.png|"
-msgstr ""
+msgstr "|example.png|"
 
-#: ../../en/refs/software.modbus.rtu.master.ref:13
-#: 2c41ab0037844cbc92f2c0e516e48e29
+#: ../../en/refs/software.modbus.rtu.master.ref:11
+#: 8a981295c8ef4ee6b277024d719d6724
 msgid "example.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:25 3cf67bae6bff44828b984bacf9575361
-msgid "|cores3_rtu_master_example.m5f2|"
+#: ../../en/software/modbus.rtu.master.rst:24
+#: ../../en/software/modbus.rtu.master.rst:42 86585cdde7ec44fdb1cc54bd36da846d
+#: b14310d2068f413bbb872c7cc97934bf
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/software/modbus.rtu.master.rst:26
+#: ../../en/software/modbus.rtu.master.rst:44 7cfbd7413aa140afa4da5b0ab2f32ac9
+#: bdd834968da94b97b45152ce295e82fa
+msgid "None"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:28 9b6d3a821bdd429aa53b99223c09fff3
-msgid "Constructors"
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:29 bf16dd80be0e4056b97801b88f77f593
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
 
-#: ../../en/software/modbus.rtu.master.rst:32 b22d577a3da2478290cc3b59304eb528
+#: ../../en/software/modbus.rtu.master.rst:36
+#: ../../en/software/modbus.rtu.master.rst:63
+#: ../../en/software/modbus.rtu.master.rst:86
+#: ../../en/software/modbus.rtu.master.rst:107
+#: ../../en/software/modbus.rtu.master.rst:128
+#: ../../en/software/modbus.rtu.master.rst:149
+#: ../../en/software/modbus.rtu.master.rst:170
+#: ../../en/software/modbus.rtu.master.rst:191
+#: ../../en/software/modbus.rtu.master.rst:212
+#: ../../en/software/modbus.rtu.master.rst:233 bf16dd80be0e4056b97801b88f77f593
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/software/modbus.rtu.master.rst:47 f17e65ae73524b96ab8f01a0606d0eeb
+msgid "API"
+msgstr "API参考"
+
+#: ../../en/software/modbus.rtu.master.rst:54 702c0bb20e01475b9b653c68105833b0
 msgid "Create a ModbusRTUMaster object."
-msgstr ""
+msgstr "创建一个 ModbusRTUMaster 对象。"
 
-#: ../../en/software/modbus.rtu.master.rst 0fb97eea719d4ebbab9f68f837e00917
-#: 4fb18f5dff5843e0a4d2f926e31098ce 69fca03fa0534a74814dd318ea3277c4
-#: 6fec61dfbf314e368c96953eed96eb52 8a7edd6f1480477fbf62032e7383894e
-#: ac1078f931004d61a578265f87daa6f7 c703f31ddef84d589dd991d0010194c3
-#: db7bfdedad29430cb4fa456e6820a295 eb2eb0287dd246f4867dc55597c29636
+#: ../../en/software/modbus.rtu.master.rst 4a183018b7cb4fb3bcf941e55b2737f2
+#: 8e1d8dbba25e498084b2344dc53f07ca
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:34 b0d1a7f58d444481ad749e96cd92e93a
+#: ../../en/software/modbus.rtu.master.rst:56 43184fc10a244389ab24271c85a9361f
 msgid "UART object or RS485 object."
-msgstr ""
+msgstr "UART 对象或 RS485 对象。"
 
-#: ../../en/software/modbus.rtu.master.rst:35 4e810e7af0f543a2aea12e32163c2388
+#: ../../en/software/modbus.rtu.master.rst:57 79cb9bec196048c2af334d0a7b194abe
 msgid "Verbose mode."
-msgstr ""
+msgstr "是否启用详细日志。"
 
-#: ../../en/software/modbus.rtu.master.rst:37
-#: ../../en/software/modbus.rtu.master.rst:56
-#: ../../en/software/modbus.rtu.master.rst:72
-#: ../../en/software/modbus.rtu.master.rst:88
-#: ../../en/software/modbus.rtu.master.rst:104
-#: ../../en/software/modbus.rtu.master.rst:120
-#: ../../en/software/modbus.rtu.master.rst:136
-#: ../../en/software/modbus.rtu.master.rst:152
-#: ../../en/software/modbus.rtu.master.rst:168 01771431e75044c0a4363f87e87a35ce
-#: 11bac0b84ca24ab1915e580784c054c4 42436e9c3d904da3ae8cb44c2dd40774
-#: 473fd98c03cc4ab9830cebcd3de845f7 8eece5c3f66d472ea8d418f04ac1e17b
-#: 9bbc6257943b44c7a2cc661f35153ff6 a890b422b33d4e2fb42231555a87d117
-#: b6d06be895b94574b4858f28fc41b462 dc9e2247ff474340bf076bbad68c8fec
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/software/modbus.rtu.master.rst:39 5ca0dda4cff048e984745884f29eaaee
+#: ../../en/software/modbus.rtu.master.rst:61 cb356701298949b09971577fdc9a3b1b
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:3
-#: 625a3bfa09dc4ec2baa704c4b5c3ccad
+#: ../../en/refs/software.modbus.rtu.master.ref:1
+#: fe35d90127944ce4b796e737372ae3f9
 msgid "init.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:43 ecce5735716c49c28cf2188be6f83ad6
-msgid "Methods"
-msgstr ""
-
-#: ../../en/software/modbus.rtu.master.rst:47 ff7d8e7093df48fe887f2aa75e60fd08
+#: ../../en/software/modbus.rtu.master.rst:74 2bf9bdf63e8a4d789576e64de660d5f2
 msgid "Read coils."
-msgstr ""
+msgstr "读取线圈。"
 
-#: ../../en/software/modbus.rtu.master.rst:49
-#: ../../en/software/modbus.rtu.master.rst:65
-#: ../../en/software/modbus.rtu.master.rst:81
+#: ../../en/software/modbus.rtu.master.rst:76
 #: ../../en/software/modbus.rtu.master.rst:97
-#: ../../en/software/modbus.rtu.master.rst:113
-#: ../../en/software/modbus.rtu.master.rst:129
-#: ../../en/software/modbus.rtu.master.rst:145
-#: ../../en/software/modbus.rtu.master.rst:161 0b0420eb19c84a77a2a813992dde77b8
-#: 0bebd1851ca9472e885043df011e91c4 501fdda4abb54a8e95a655911b74e6ad
-#: 637a79e6858044789bdea72aa1c58016 89e73cfaea23479391bf0bcafa475bab
-#: 91e26c6b9da64402ad199f2f52eddded d31f5a11ed2148c599bd4d931d28c080
-#: fc8bdddff8cf4fdc9db40f2ad9ebf39f
+#: ../../en/software/modbus.rtu.master.rst:118
+#: ../../en/software/modbus.rtu.master.rst:139
+#: ../../en/software/modbus.rtu.master.rst:160
+#: ../../en/software/modbus.rtu.master.rst:181
+#: ../../en/software/modbus.rtu.master.rst:202
+#: ../../en/software/modbus.rtu.master.rst:223 7ee7908fc985412587b16f2d089869ee
+#: d07e98c5f23b413eb6e6a08df0bdff75
 msgid "Slave address. The address is 0 to 247."
-msgstr ""
+msgstr "从站地址，范围为 0 到 247。"
 
-#: ../../en/software/modbus.rtu.master.rst:50
-#: ../../en/software/modbus.rtu.master.rst:114
-#: ../../en/software/modbus.rtu.master.rst:146 6fd8233aa2cc49e7ae409ebb1c781861
-#: cf77146369e849d2b702b87ecb6d148e d2acaf2e23d044cd8889254c4ef89437
+#: ../../en/software/modbus.rtu.master.rst:77
+#: ../../en/software/modbus.rtu.master.rst:161
+#: ../../en/software/modbus.rtu.master.rst:203 201d2267b73941acb89cabebbf835639
 msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "线圈起始地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:51
-#: ../../en/software/modbus.rtu.master.rst:67
-#: ../../en/software/modbus.rtu.master.rst:83
-#: ../../en/software/modbus.rtu.master.rst:99 8b46dfbea8684c2a8186584645d9fecc
-#: a74cb8f608334904a865090d17ad09ce b9af04545a4f47f6bacf38b46a0f6a9b
-#: c8f20843491e4e369ca7880e358fe243
+#: ../../en/software/modbus.rtu.master.rst:78
+#: ../../en/software/modbus.rtu.master.rst:99
+#: ../../en/software/modbus.rtu.master.rst:120
+#: ../../en/software/modbus.rtu.master.rst:141 bd69f11585f74ae8b95d3e6341a092f7
+#: cd2353c6f5dc4c2db78c6b984e987191
 msgid "Quantity of registers to read."
-msgstr ""
+msgstr "要读取的寄存器数量。"
 
-#: ../../en/software/modbus.rtu.master.rst:52
-#: ../../en/software/modbus.rtu.master.rst:68
-#: ../../en/software/modbus.rtu.master.rst:84
+#: ../../en/software/modbus.rtu.master.rst:79
 #: ../../en/software/modbus.rtu.master.rst:100
-#: ../../en/software/modbus.rtu.master.rst:116
-#: ../../en/software/modbus.rtu.master.rst:132
-#: ../../en/software/modbus.rtu.master.rst:148
-#: ../../en/software/modbus.rtu.master.rst:164 3372ff5f9dd840738e6acb822ec5fa0b
-#: 3c1b5878511947df82b26fcb4d2df4e1 63c4d5387fb343e8bccddc732c5c331b
-#: 653f463dacf141f392a60381b73df50a 8baf237151bc475aa5ca416cc28d0409
-#: a4e41d1f85f54a508b57d3d6b5674943 e172e548ad8441cc83a08ce4df96a06d
-#: e742c0f5515145b88afc86de09904ae2
+#: ../../en/software/modbus.rtu.master.rst:121
+#: ../../en/software/modbus.rtu.master.rst:142
+#: ../../en/software/modbus.rtu.master.rst:163
+#: ../../en/software/modbus.rtu.master.rst:184
+#: ../../en/software/modbus.rtu.master.rst:205
+#: ../../en/software/modbus.rtu.master.rst:226 136cf81699164d2086fb19fc6fad4c9e
+#: 63c264c704f54d90890075f9799f6439
 msgid "Timeout in milliseconds."
-msgstr ""
+msgstr "超时时间（毫秒）。"
 
-#: ../../en/software/modbus.rtu.master.rst 046532dfba124fc08a6e003aa1eaacd2
-#: 11f9af380b3f45e79e763282626f679e 16928351ffeb48138ab8e916bff1ec64
-#: 2c1f73604e1c45ceb18aa43a329d051b 63fe1bf1fb7946ee87abe6221e6c13e9
-#: 9b1d045cd3a64f52b4a38fb32063df42 a2736ba6ecc1428a924230be3e23b73e
-#: d9cb5c6e4f27482390a4554e62150f65
+#: ../../en/software/modbus.rtu.master.rst 589fdd69d8454e42ae5c003bc837575d
+#: f5ee5bfbf48440499a61588807436607
 msgid "Returns"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:54 28aaba06b7b54abe813ed34c1ad1f81f
-msgid "A list of coils. The item of the list is True or False."
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:80 6252afde58d94083aab8cb80b5761afe
+msgid "list - A list of coils. The item of the list is True or False."
+msgstr "list - 线圈列表，每一项为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.master.rst:58 55f943f206134193bf4d977051b6a920
+#: ../../en/software/modbus.rtu.master.rst:84 33d0f8fa857c41189f39fac3037f4f48
 msgid "|read_coils.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:4
-#: fd158fd8719e4b1c8545334184b80ce8
+#: ../../en/refs/software.modbus.rtu.master.ref:2
+#: c6c94feedb6b4717959ad8459e12e960
 msgid "read_coils.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:63 c00dc62898e64ec099fe9f5c8f845d26
+#: ../../en/software/modbus.rtu.master.rst:95 27cdd836cfbc498bbce782d933f3b567
 msgid "Read discrete inputs."
-msgstr ""
+msgstr "读取离散输入。"
 
-#: ../../en/software/modbus.rtu.master.rst:66 416318080ec6437b8710376090655ae0
+#: ../../en/software/modbus.rtu.master.rst:98 8bfc0ed63b2d4d2e9a5334da9a263825
 msgid "Start address of the discrete inputs. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "离散输入起始地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:70 af1172a28cc14a278147d5ab75244c2c
-msgid "A list of discrete inputs. The item of the list is True or False."
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:101 c7fcb74e526b4035a4bd8df30897de31
+msgid "list - A list of discrete inputs. The item of the list is True or False."
+msgstr "list - 离散输入列表，每一项为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.master.rst:74 5c31ac97fe054de18a3e83c2b400afd4
+#: ../../en/software/modbus.rtu.master.rst:105 499175028eda4c95873d5e888a6b6576
 msgid "|read_discrete_inputs.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:5
-#: dd6deb4f962840af94b16077afa6a3e4
+#: ../../en/refs/software.modbus.rtu.master.ref:3
+#: 0193341032c24f0ebbff60917dfa64f3
 msgid "read_discrete_inputs.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:79 b754a224ca0f49bdbaf3bebd85e4a765
+#: ../../en/software/modbus.rtu.master.rst:116 3b0241b8f2434fda91e5d5947c024a68
 msgid "Read holding registers."
-msgstr ""
+msgstr "读取保持寄存器。"
 
-#: ../../en/software/modbus.rtu.master.rst:82
-#: ../../en/software/modbus.rtu.master.rst:130
-#: ../../en/software/modbus.rtu.master.rst:162 12291a70780448da89cc2a27627b9a98
-#: 38db17252d6e4e0ca69e21d0c8149e87 916e16f2654d4618a7cfc5f847b1ebae
+#: ../../en/software/modbus.rtu.master.rst:119
+#: ../../en/software/modbus.rtu.master.rst:182
+#: ../../en/software/modbus.rtu.master.rst:224 85ff9da97f974dac96e6a7e32f829b71
 msgid "Start address of the holding registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "保持寄存器起始地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:86 1c4993df08924d6c804721be5a640de0
-msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
+#: ../../en/software/modbus.rtu.master.rst:122 b3e49c8ac286475f96c01156ac94d40d
+msgid ""
+"list - A list of holding registers. The item of the list is 0x0000 to "
+"0xFFFF."
 msgstr ""
+"list - 保持寄存器列表，每一项为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:90 8a806122d4ea4ef1ab0c922db3d09a45
+#: ../../en/software/modbus.rtu.master.rst:126 ca6e7fc64277468ebd80fd03d4e7848b
 msgid "|read_holding_registers.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:6
-#: a876fe34cfa741df987ec5cea977187a
+#: ../../en/refs/software.modbus.rtu.master.ref:4
+#: 6ccdc557149449d1955d6940ca3604db
 msgid "read_holding_registers.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:95 9f767c93e3e84c3baf2964a526839e62
+#: ../../en/software/modbus.rtu.master.rst:137 0ebf055a1b144be2af0f417cd31edfe7
 msgid "Read input registers."
-msgstr ""
+msgstr "读取输入寄存器。"
 
-#: ../../en/software/modbus.rtu.master.rst:98 547e21cccd0b47e7b29f0755567329d3
+#: ../../en/software/modbus.rtu.master.rst:140 841adf9ecece4b7c92190c54ecc788ae
 msgid "Start address of the input registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "输入寄存器起始地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:102 ffff06ef8fdf4f86b6643cb4429bd687
-msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
+#: ../../en/software/modbus.rtu.master.rst:143 483599417f7e4662a544d902e26daa14
+msgid ""
+"list - A list of input registers. The item of the list is 0x0000 to "
+"0xFFFF."
 msgstr ""
+"list - 输入寄存器列表，每一项为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:106 8c82092098224e3a8be150260f40980f
+#: ../../en/software/modbus.rtu.master.rst:147 40248a410d86426c81360a3b65a91933
 msgid "|read_input_registers.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:7
-#: 260ca115ce2441f48fe1cc3593f15633
+#: ../../en/refs/software.modbus.rtu.master.ref:5
+#: bdea48a66d0047748c36f211a4ea0c82
 msgid "read_input_registers.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:111 c66cd55282f146529df2b528be6e739b
+#: ../../en/software/modbus.rtu.master.rst:158 89d3580edd6d47bcab49756957021fa1
 msgid "Write a single coil."
-msgstr ""
+msgstr "写入单个线圈。"
 
-#: ../../en/software/modbus.rtu.master.rst:115 5b6ab2a8c676459a8e1141e964f3fb8e
+#: ../../en/software/modbus.rtu.master.rst:162 5fabe60d30f84c1f8708c1aecaed61a1
 msgid "Value to write. The value is True or False."
-msgstr ""
+msgstr "写入值，取值为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.master.rst:118 a017af64530c4061896243e9376cf1e3
-msgid "The value of the coil."
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:164 aa49f33bd23f4baa863f1da03ed137be
+msgid "bool - The value of the coil."
+msgstr "bool - 线圈值。"
 
-#: ../../en/software/modbus.rtu.master.rst:122 15933a3e81b742f0a8546845b31a3000
+#: ../../en/software/modbus.rtu.master.rst:168 69dc37d44aee46adafb89e1dc804a617
 msgid "|write_single_coil.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:10
-#: c2593a7c931743aeb03710eea107bd33
+#: ../../en/refs/software.modbus.rtu.master.ref:8
+#: a2d9f21ef31949bbba1f8f7aeab4fe16
 msgid "write_single_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:127 691ce912b71940128ddd09a243fe6d2a
+#: ../../en/software/modbus.rtu.master.rst:179 a668c3950148415b8e49b9be30582f33
 msgid "Write a single register."
-msgstr ""
+msgstr "写入单个寄存器。"
 
-#: ../../en/software/modbus.rtu.master.rst:131 c320f49e9fa34aaf943e908d24b309c6
+#: ../../en/software/modbus.rtu.master.rst:183 1e14003950cf4bd698ab61e8563b1c94
 msgid "Value to write. The value is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "写入值，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:134 f1f407b2c29340368d8f538a11e9d20f
-msgid "the written value"
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:185 76e574bdf11646ea9024994e50b2d589
+msgid "int - the written value"
+msgstr "int - 写入的值。"
 
-#: ../../en/software/modbus.rtu.master.rst:138 de25245d4adc411d808c8283462f537f
+#: ../../en/software/modbus.rtu.master.rst:189 b4635e40c7af4730847428fa12d259a5
 msgid "|write_single_register.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:11
-#: 18893c3fee4c4c649c244db5bd93b5d8
+#: ../../en/refs/software.modbus.rtu.master.ref:9
+#: dabb56d018724dc7a52d7013aa673751
 msgid "write_single_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:143 f020b6a0e07141088ae582fc2ab8433a
+#: ../../en/software/modbus.rtu.master.rst:200 e0a8450c305c4edb89e9ddb9c8b0e9e7
 msgid "Write multiple coils."
-msgstr ""
+msgstr "写入多个线圈。"
 
-#: ../../en/software/modbus.rtu.master.rst:147 637063387703498f8884fc6b15ce7a6c
+#: ../../en/software/modbus.rtu.master.rst:204 533e3d2d8728444d9687abbce999d627
 msgid "Values to write. The item of the list is True or False."
-msgstr ""
+msgstr "写入值列表，每一项为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.master.rst:150
-#: ../../en/software/modbus.rtu.master.rst:166 0767e10b59c04724b59db168bfc3cefe
-#: d7fd805bccd54f248e86bc8821ff52ec
-msgid "the written count."
-msgstr ""
+#: ../../en/software/modbus.rtu.master.rst:206
+#: ../../en/software/modbus.rtu.master.rst:227 6b295a70912e4e95a4e258184d891b08
+msgid "int - the written count."
+msgstr "int - 已写入的数量。"
 
-#: ../../en/software/modbus.rtu.master.rst:154 b544fc5177a348429a340598c9ab6fad
+#: ../../en/software/modbus.rtu.master.rst:210 2969d43cfabb440e86d23998dbdfdb5c
 msgid "|write_multiple_coils.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:8
-#: 369927752d8c4f52be201f44b42d2df5
+#: ../../en/refs/software.modbus.rtu.master.ref:6
+#: 05ea977c550a4ca9ae74d41d4b2d56ce
 msgid "write_multiple_coils.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.master.rst:159 c427268b3fbd4c719b31a4f689e46a79
+#: ../../en/software/modbus.rtu.master.rst:221 a1948a0855a74853a019b60c8f33e783
 msgid "Write multiple registers."
-msgstr ""
+msgstr "写入多个寄存器。"
 
-#: ../../en/software/modbus.rtu.master.rst:163 e65db90c902542d385a3f8c6d585ca7e
+#: ../../en/software/modbus.rtu.master.rst:225 07144ba51acf483f9a2b38f6e6fc0ce3
 msgid "Values to write. The item of the list is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "写入值列表，每一项为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.master.rst:170 10bc2578b9764937a6e7d0e6e16a0bcb
+#: ../../en/software/modbus.rtu.master.rst:231 e70b8204b1d8414d94015d62322030bb
 msgid "|write_multiple_registers.png|"
 msgstr ""
 
-#: ../../en/refs/software.modbus.rtu.master.ref:9
-#: a42123aa9ae14f038d04a5dc61b62dcd
+#: ../../en/refs/software.modbus.rtu.master.ref:7
+#: b92e1d309d00401995b93f1aef31cfa3
 msgid "write_multiple_registers.png"
 msgstr ""
+
+#~ msgid "class ModbusRTUMaster -- Modbus RTU master"
+#~ msgstr ""
+
+#~ msgid "Micropython Example:"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example:"
+#~ msgstr ""
+
+#~ msgid "|cores3_rtu_master_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "A list of coils. The item of the list is True or False."
+#~ msgstr ""
+
+#~ msgid "A list of discrete inputs. The item of the list is True or False."
+#~ msgstr ""
+
+#~ msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "The value of the coil."
+#~ msgstr ""
+
+#~ msgid "the written value"
+#~ msgstr ""
+
+#~ msgid "the written count."
+#~ msgstr ""
 

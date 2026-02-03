@@ -1,6 +1,9 @@
 :py:mod:`modbus` -- a Modbus library
 ====================================
 
+.. py:module:: modbus
+    :synopsis: a Modbus library for MicroPython.
+
 a Modbus library for MicroPython.
 
 Classes

@@ -31,7 +31,7 @@ This example creates a UDP server that echoes the received data.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/udp/cores3_udp_server_example.py
+    .. literalinclude:: ../../../examples/software/udp/cores3_udp_server_example.py
         :language: python
         :linenos:
 

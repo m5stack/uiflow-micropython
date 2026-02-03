@@ -33,7 +33,7 @@ This example creates a TCP client that connects to a server and sends data.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/easysocket/tcp_client/cores3_simple_client_example.py
+    .. literalinclude:: ../../../examples/software/easysocket/tcp_client/cores3_simple_client_example.py
         :language: python
         :linenos:
 

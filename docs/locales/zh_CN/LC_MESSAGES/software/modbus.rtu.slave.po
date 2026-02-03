@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-02 18:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,13 +18,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/software/modbus.rtu.slave.rst:4 fbfa451512a148b7823c57420050ff5f
-msgid "class ModbusRTUSlave -- Modbus RTU slave"
+#: ../../en/software/modbus.rtu.slave.rst:4
+#: ../../en/software/modbus.rtu.slave.rst:50 6c65be4648b1419183281f9bee9bbbbd
+msgid "ModbusRTUSlave"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:8 39c89b69bbd24828a4131dadcdb37e67
+#: ../../en/software/modbus.rtu.slave.rst:8 209b1a567c2848a8b7df7facfb4b6200
 msgid ""
 "ModbusRTUSlave implements the Modbus RTU slave. ModbusRTUSlave support "
 "function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding "
@@ -32,648 +33,738 @@ msgid ""
 "Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
 "Multiple Holding Registers)."
 msgstr ""
+"ModbusRTUSlave 实现了 Modbus RTU 从站。ModbusRTUSlave 支持功能码 1（读线圈）、"
+"2（读离散输入）、3（读保持寄存器）、4（读输入寄存器）、5（写单线圈）、6（"
+"写单保持寄存器）、15（写多线圈）和 16（写多保持寄存器）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:11 0f8c8589ba654c86a474e15369106fce
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:11 d86d312aa3d6492cb34bedfd4b8dcb6d
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
 
-#: ../../en/software/modbus.rtu.slave.rst:18 4311a8cfb53c4e7bb364fc8030559cd8
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:14
+#: ../../en/software/modbus.rtu.slave.rst:32 6c65be4648b1419183281f9bee9bbbbd
+msgid "CoreS3 RTU Slave"
+msgstr "CoreS3 RTU 从站"
 
-#: ../../en/software/modbus.rtu.slave.rst:20 bb02ed2e89e449d889a7d5e09bdb44c8
+#: ../../en/software/modbus.rtu.slave.rst:16 95137e520506427e948350013e618d71
+msgid "Open the |cores3_rtu_slave_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_rtu_slave_example.m5f2| 项目。"
+
+#: ../../en/software/modbus.rtu.slave.rst:18
+#: ../../en/software/modbus.rtu.slave.rst:34 3c5f476407a4428680b1270ae302696c
+#: f65ed1de346c440db08f67b26d70c5e2
+msgid "This example demonstrates how to use the ``ModbusRTUSlave`` class."
+msgstr "该示例演示如何使用 ``ModbusRTUSlave`` 类。"
+
+#: ../../en/software/modbus.rtu.slave.rst:20
+#: ../../en/software/modbus.rtu.slave.rst:91
+#: ../../en/software/modbus.rtu.slave.rst:109
+#: ../../en/software/modbus.rtu.slave.rst:126
+#: ../../en/software/modbus.rtu.slave.rst:145
+#: ../../en/software/modbus.rtu.slave.rst:164
+#: ../../en/software/modbus.rtu.slave.rst:183
+#: ../../en/software/modbus.rtu.slave.rst:202
+#: ../../en/software/modbus.rtu.slave.rst:220
+#: ../../en/software/modbus.rtu.slave.rst:238
+#: ../../en/software/modbus.rtu.slave.rst:256
+#: ../../en/software/modbus.rtu.slave.rst:274
+#: ../../en/software/modbus.rtu.slave.rst:292
+#: ../../en/software/modbus.rtu.slave.rst:310
+#: ../../en/software/modbus.rtu.slave.rst:328
+#: ../../en/software/modbus.rtu.slave.rst:346
+#: ../../en/software/modbus.rtu.slave.rst:365
+#: ../../en/software/modbus.rtu.slave.rst:384
+#: ../../en/software/modbus.rtu.slave.rst:403
+#: ../../en/software/modbus.rtu.slave.rst:422
+#: ../../en/software/modbus.rtu.slave.rst:441
+#: ../../en/software/modbus.rtu.slave.rst:460
+#: ../../en/software/modbus.rtu.slave.rst:479
+#: ../../en/software/modbus.rtu.slave.rst:498
+#: ../../en/software/modbus.rtu.slave.rst:515
+#: ../../en/software/modbus.rtu.slave.rst:534 02b7b00fbeaf41aaa3600125a9e6fcaa
+#: 06d6620b7ce54e839b1366922b131ea1 06d6c293fcd24e1bad2384f46cc0410d
+#: 06e781a7cf1e4eeeb708f933890900af 0b4709581e66435ebcf87069b96ccb23
+#: 0fb314701da34de8b9fe665241b3a76b 187c7781621e460b8bab178281dc546f
+#: 224aeff9396e4df3b930f5a6c48cd2ae 25f0391123d44c24b654a84f5c1233d6
+#: 27bd95adf630424ab60ee40c2362528e 4e5121fc86354143bbf82d5bc92122c2
+#: 543090075c474957b7922d789cf03100 68d322f19e73452c94ef38ad55299c81
+#: 6e066a84e4024253a7c3c9a2ba4164aa 8284fe24b6504a57906aa55e9321d5e6
+#: a76af67f2a224b42bbae1f4487ddd110 a8c3c47e1e0e4fe695aa959a901679b5
+#: ba18c60179ba4c3c89212680b26fcbaf bb20c3fb8fdc48078783f042cb6baf5a
+#: c3eff17e11724ae1b23e263f1df31cdc c47acaa8330d4328bd7929cb3848b611
+#: c4f55cc403de4f36adba83c95ec246c3 c6293c317e4540a0bfb2e5d3047cb8cb
+#: cd0a426af1cf46209921c491c5de9c2d cef68bd9ae294774a3f2c704e4ed96d5
+#: eb4f71e5e1064ce681331d5973700e04
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/software/modbus.rtu.slave.rst:22 ff2b74349a5f42e18b6e9164cb82fa6f
 msgid "|example.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:34
-#: e6aa563a367d4b96922a0a3e8d81a648
+#: 4ac67abb16594eb6b2fbe4840b32ca80
 msgid "example.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:25 91d1a10466a548f78eb6aec25143c505
-msgid "|cores3_rtu_slave_example.m5f2|"
+#: ../../en/software/modbus.rtu.slave.rst:24
+#: ../../en/software/modbus.rtu.slave.rst:42 49fe5e037d1d4edda255e33d9d9ddbd2
+#: d1c594fc2658468da027c1ae8a111c10
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/software/modbus.rtu.slave.rst:26
+#: ../../en/software/modbus.rtu.slave.rst:44
+#: ../../en/software/modbus.rtu.slave.rst:107
+#: ../../en/software/modbus.rtu.slave.rst:124
+#: ../../en/software/modbus.rtu.slave.rst:143
+#: ../../en/software/modbus.rtu.slave.rst:162
+#: ../../en/software/modbus.rtu.slave.rst:181
+#: ../../en/software/modbus.rtu.slave.rst:200
+#: ../../en/software/modbus.rtu.slave.rst:218
+#: ../../en/software/modbus.rtu.slave.rst:236
+#: ../../en/software/modbus.rtu.slave.rst:254
+#: ../../en/software/modbus.rtu.slave.rst:272
+#: ../../en/software/modbus.rtu.slave.rst:363
+#: ../../en/software/modbus.rtu.slave.rst:382
+#: ../../en/software/modbus.rtu.slave.rst:401
+#: ../../en/software/modbus.rtu.slave.rst:420
+#: ../../en/software/modbus.rtu.slave.rst:439
+#: ../../en/software/modbus.rtu.slave.rst:458
+#: ../../en/software/modbus.rtu.slave.rst:477
+#: ../../en/software/modbus.rtu.slave.rst:496
+#: ../../en/software/modbus.rtu.slave.rst:513
+#: ../../en/software/modbus.rtu.slave.rst:532 0074cdcb711b475f9302448c18492bb2
+#: 0ce87c63db5f433b802bade0319190b5 298a321bd45c44adbe4b49b9f8ae17e8
+#: 2d5de3e3845b4458887be1311edf5b99 33aa7a3931a945f69bb943dbe8b514e5
+#: 3a28758e943b47169eb2bfbfa2cb5b08 4b7fbd1ca9854154875fabcb508a0b9e
+#: 526c5bc453a4407fb384688cbd099e4c 76ce3f7d9fca45adb1a0ad74f6f59ea7
+#: 7cbd3f36b18842feb409ef85eb2cd347 9955c667bcdf49569e86964b80fbe2d3
+#: a6ad570a15de4a0e9a4e08f6b4871ec8 b176196036964e7c999d6676de63b023
+#: bf1586757ca247b39474964926419bb9 c6ceebddd4404e1a88d04c92af4af92f
+#: ca02e1dfcc1f497c8b8d7b2aaf649d77 cd9e3a42bdbf4507afb771b2319c4896
+#: db3c2df56d254685bd02e6e036610a0e e85a4428a141493681d2de3c30e132d7
+#: f2bc5c11b6114aec866debe9da518868 fbaaa0b767ff4d8b94dd1b0a251aab5f
+#: fbb10ee63d6f45dd9d24518c796fbddf
+msgid "None"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:28 b39febf7a50d4e178245a6ae6f9ea20b
-msgid "Constructors"
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:29 72ce33f258e2448b923e6881cbb88d33
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
 
-#: ../../en/software/modbus.rtu.slave.rst:32 fedb4a5da3fe4fdb85d0e8c9ff519569
+#: ../../en/software/modbus.rtu.slave.rst:36
+#: ../../en/software/modbus.rtu.slave.rst:95
+#: ../../en/software/modbus.rtu.slave.rst:113
+#: ../../en/software/modbus.rtu.slave.rst:130
+#: ../../en/software/modbus.rtu.slave.rst:149
+#: ../../en/software/modbus.rtu.slave.rst:168
+#: ../../en/software/modbus.rtu.slave.rst:187
+#: ../../en/software/modbus.rtu.slave.rst:206
+#: ../../en/software/modbus.rtu.slave.rst:224
+#: ../../en/software/modbus.rtu.slave.rst:242
+#: ../../en/software/modbus.rtu.slave.rst:260
+#: ../../en/software/modbus.rtu.slave.rst:278
+#: ../../en/software/modbus.rtu.slave.rst:296
+#: ../../en/software/modbus.rtu.slave.rst:314
+#: ../../en/software/modbus.rtu.slave.rst:332
+#: ../../en/software/modbus.rtu.slave.rst:350
+#: ../../en/software/modbus.rtu.slave.rst:369
+#: ../../en/software/modbus.rtu.slave.rst:388
+#: ../../en/software/modbus.rtu.slave.rst:407
+#: ../../en/software/modbus.rtu.slave.rst:426
+#: ../../en/software/modbus.rtu.slave.rst:445
+#: ../../en/software/modbus.rtu.slave.rst:464
+#: ../../en/software/modbus.rtu.slave.rst:483
+#: ../../en/software/modbus.rtu.slave.rst:502
+#: ../../en/software/modbus.rtu.slave.rst:519
+#: ../../en/software/modbus.rtu.slave.rst:552 72ce33f258e2448b923e6881cbb88d33
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/software/modbus.rtu.slave.rst:47 8fae5cfcf36a432ab25ef91e1e67fb10
+msgid "API"
+msgstr "API参考"
+
+#: ../../en/software/modbus.rtu.slave.rst:54 6134df1ac7d041ad8da9bda6adf7e32a
 msgid "Create a ModbusRTUSlave object."
-msgstr ""
+msgstr "创建一个 ModbusRTUSlave 对象。"
 
-#: ../../en/software/modbus.rtu.slave.rst 042611d21ca0496e9ebc7e036b6f1799
-#: 0c0dcd54335d41d1bd9064fb8768cea7 0dfb95b14f4b4a158fa8aa28deee5e50
-#: 213f79f978c64f26aa4e722669a6f25f 21d6d73ba77441d9a2db13ac6f336891
-#: 351eb9159dd941ba95b89f6e73ed466c 56f5ffb5d88e42fabf0246f18e7b991a
-#: 5ff8954e9e85475b85c0822ee688b82f 6041dde2d3a14cfc9dd77b03f74cabe3
-#: 79682266161a4ec7aa025526a3808535 8033aa708e274bb79a3ce26ab52adc42
-#: 8393abcaaa7c4e0dad574ae8c5a7145b 898c36d91899484999a72ce0264b0fba
-#: 8b30ed4ce98d4b53a992236a96bdc0ee 98f9d881cf2343418456e3386a5fb643
-#: bb34a620a4d143ec9d19b683a5537e0f c7ed8d06361a40edb19c6b396f7adf4e
-#: cfcd8e07fb804d79a6b13037bae275ae d4f9a53c6d0f4275b4a77f7e909506c5
-#: d7589cedcf574d049d6601268a7db8ad f72bb50417b548f19aa692e9e29d96d9
-#: fce2bd85476a4568bd203399419adc27
+#: ../../en/software/modbus.rtu.slave.rst 0216c1f3259847d1bc0259fdf1e382ea
+#: f9d8ecf517c748efad2b1835dbf6574b
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:34 a6b5a59fbdc143838014eae3dd61da42
+#: ../../en/software/modbus.rtu.slave.rst:56 02f3370fe48844949fd7a7f0dc36a729
 msgid "UART object or RS485 object."
-msgstr ""
+msgstr "UART 对象或 RS485 对象。"
 
-#: ../../en/software/modbus.rtu.slave.rst:35 2d491c5df11f485a87e5f3bf82c0c01a
+#: ../../en/software/modbus.rtu.slave.rst:57 37e4be7e744f4afb86ccda988f681731
 msgid "Device address. The address is 0 to 247."
-msgstr ""
+msgstr "设备地址，范围为 0 到 247。"
 
-#: ../../en/software/modbus.rtu.slave.rst:36 0eb079d45675401b8ced02d2effcc4d5
+#: ../../en/software/modbus.rtu.slave.rst:58 cdd386ff6ef94fbba423336130e95987
 msgid "Modbus server context."
-msgstr ""
+msgstr "Modbus 服务器上下文。"
 
-#: ../../en/software/modbus.rtu.slave.rst:37 8c7caab05a7540bb8550233c2c62e66b
+#: ../../en/software/modbus.rtu.slave.rst:59 efd8818b12014462b928019ff783b508
 msgid "Ignore unit ID(or Device address)."
-msgstr ""
+msgstr "是否忽略单元 ID（或设备地址）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:38 94f81decbf184306addbe3ed89c804de
+#: ../../en/software/modbus.rtu.slave.rst:60 3ff8e03a846d4e7d9fc28b17be3db7ea
 msgid "Verbose mode."
-msgstr ""
+msgstr "是否启用详细日志。"
 
-#: ../../en/software/modbus.rtu.slave.rst:40 57f168b83c104e2592200e7dd6451ffa
+#: ../../en/software/modbus.rtu.slave.rst:62 475edadd5b894a2f93e7fb4a7c7e2230
 msgid ""
 "``context`` is a dictionary that contains the Modbus server context. the "
 "format is as follows::"
 msgstr ""
+"``context`` 是一个包含 Modbus 服务器上下文的字典，格式如下::"
 
-#: ../../en/software/modbus.rtu.slave.rst:69
-#: ../../en/software/modbus.rtu.slave.rst:81
-#: ../../en/software/modbus.rtu.slave.rst:90
-#: ../../en/software/modbus.rtu.slave.rst:102
-#: ../../en/software/modbus.rtu.slave.rst:114
-#: ../../en/software/modbus.rtu.slave.rst:126
-#: ../../en/software/modbus.rtu.slave.rst:138
-#: ../../en/software/modbus.rtu.slave.rst:149
-#: ../../en/software/modbus.rtu.slave.rst:160
-#: ../../en/software/modbus.rtu.slave.rst:171
-#: ../../en/software/modbus.rtu.slave.rst:182
-#: ../../en/software/modbus.rtu.slave.rst:195
-#: ../../en/software/modbus.rtu.slave.rst:208
-#: ../../en/software/modbus.rtu.slave.rst:221
-#: ../../en/software/modbus.rtu.slave.rst:234
-#: ../../en/software/modbus.rtu.slave.rst:246
-#: ../../en/software/modbus.rtu.slave.rst:258
-#: ../../en/software/modbus.rtu.slave.rst:270
-#: ../../en/software/modbus.rtu.slave.rst:282
-#: ../../en/software/modbus.rtu.slave.rst:294
-#: ../../en/software/modbus.rtu.slave.rst:306
-#: ../../en/software/modbus.rtu.slave.rst:318
-#: ../../en/software/modbus.rtu.slave.rst:330
-#: ../../en/software/modbus.rtu.slave.rst:339
-#: ../../en/software/modbus.rtu.slave.rst:351 03f6910a0eaf487e91a8afd9d8cc29aa
-#: 049c34e16ea7472ab32f5c8a5a93a758 13d52e2cd5814923a439294660a7eae8
-#: 1aeb41fe3de74ce18c28ba6565b22ae1 2a520150f8b34ddf85114c716b46fc0b
-#: 44a2bb864b534cb99503af7e782715a6 6922f8b656f4439db927be991169e73c
-#: 6aec89ea551e44ffa88ddce25c2b0b5b 78e0aa0ae4454b96a6ea8b8ea8dd0962
-#: 7a35289cc3244e8ba8b78bf57ea0572c 8d4f49eb39b84a2ea1cb9afc0849db30
-#: 9793545315134102b1bab8cac04a48cc a006dc8195634f4085a6f26d3df9c5e7
-#: af5bcbc69b7a44f784f7831c100c75d3 b46b9720ced24f499d9f89256ac15b39
-#: b806fcd33a61447c84f4d49515fc2b6b b92ec3730151455183b00ff794018128
-#: c1480e3297054e88ac0875d93b9323f2 c32360291d7c4759956d168174110edd
-#: cebe085264ce42d6911a1033fbd313af d1efdb313aed4235a82742ab8125a090
-#: d4daa7a61d4646fca890384e1772a14a e7f5cbd782004052a5b1fa2890239b83
-#: f70f8e9c7abe446188c21149cb6646aa fa64c66e072243149972eb036ac197c2
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/software/modbus.rtu.slave.rst:71 86bc9ccd621c4b86b95a94e9ee7ac4f5
+#: ../../en/software/modbus.rtu.slave.rst:93 5020026542334fe6ab5832ed3317e55d
 msgid "|init.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:9
-#: b5edb9eb9f4248b7abc874a05b693cea
+#: 96898015eaa949c6a4636b79857cb433
 msgid "init.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:75 7f92ed6756ee4ddc99711f76b76b6688
-msgid "Methods"
-msgstr ""
-
-#: ../../en/software/modbus.rtu.slave.rst:79 bc75ba560e0545d29cc363482a860b0a
+#: ../../en/software/modbus.rtu.slave.rst:105 fef48079530c48aeb93b8f3c90adbf7c
 msgid "Start the Modbus RTU slave."
+msgstr "启动 Modbus RTU 从站。"
+
+#: ../../en/software/modbus.rtu.slave.rst e17ca69e2c674c4dac607cd52b8ae5c6
+msgid "Returns"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:83 8cf2429b0966464cb65a7a06ce40ba85
+#: ../../en/software/modbus.rtu.slave.rst:111 5568d3382f25473e984b772003fa8b51
 msgid "|start.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:26
-#: 079885184b804f909d746c5e1dc2b58e
+#: 7e60d0577e634b37be60daf504a8aba9
 msgid "start.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:88 e8220a22d9864d0094048bde9b04deee
+#: ../../en/software/modbus.rtu.slave.rst:122 6c65be4648b1419183281f9bee9bbbbd
 msgid "Stop the Modbus RTU slave."
-msgstr ""
+msgstr "停止 Modbus RTU 从站。"
 
-#: ../../en/software/modbus.rtu.slave.rst:92 41376a9e18ac4bf2a6862f509297e3a8
+#: ../../en/software/modbus.rtu.slave.rst:128 d6c93853c62c4cf68b0c41559322d55a
 msgid "|stop.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:27
-#: 6a4fa358461d48b98c28bf1f16ee99fa
+#: 387d2a19b0814082a5bd8de2f242fdf8
 msgid "stop.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:97 212ca018be6a4880a9466a9bd2214b57
+#: ../../en/software/modbus.rtu.slave.rst:139 2aeadd383278440aaad1e7e1ad98b341
 msgid "Add a coil to the modbus register dictionary."
-msgstr ""
+msgstr "向 Modbus 寄存器字典添加线圈。"
 
-#: ../../en/software/modbus.rtu.slave.rst:99
-#: ../../en/software/modbus.rtu.slave.rst:147
-#: ../../en/software/modbus.rtu.slave.rst:191
-#: ../../en/software/modbus.rtu.slave.rst:243
-#: ../../en/software/modbus.rtu.slave.rst:255 8eaec2f075274bc69d9660511d7fdc0a
-#: a1380dcb9317415eae5a245529ea4e4e ce39bbcfee4c4f6e9b22d233fe8db80e
-#: d214586ac44b49af9321071f79be93b3 e9ed44eb7a6347fb8548145ab83cd492
+#: ../../en/software/modbus.rtu.slave.rst:141
+#: ../../en/software/modbus.rtu.slave.rst:217
+#: ../../en/software/modbus.rtu.slave.rst:289
+#: ../../en/software/modbus.rtu.slave.rst:361
+#: ../../en/software/modbus.rtu.slave.rst:380 1ad33fcbc7fb417999bd817093d43be7
 msgid "address of the coils. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "线圈地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:100
-#: ../../en/software/modbus.rtu.slave.rst:112 92270ef147674d269156e8ad0822448a
-#: e57a768b54474680ade1c1809192b24f
+#: ../../en/software/modbus.rtu.slave.rst:142
+#: ../../en/software/modbus.rtu.slave.rst:161 e0b2dc545eef4d26853f4916ef530656
 msgid "Value to add. The value is True or False."
-msgstr ""
+msgstr "要添加的值，取值为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.slave.rst:104 d99232f6131644bc8b2dba3fab59cc97
+#: ../../en/software/modbus.rtu.slave.rst:147 a0da7c6a9f0a4636a7e02c06fe5d988c
 msgid "|add_coil.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:1
-#: 101bd2c02a8a45a6824d4729975d8a7e
+#: 5fce19ad3f704c38ac2d89cc229d85e1
 msgid "add_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:109 2534c356cf6d41ad85e00cc8a2db55e8
+#: ../../en/software/modbus.rtu.slave.rst:158 09d213960cc64e20991c31a09d21f4f8
 msgid "Add a discrete input to the modbus register dictionary."
-msgstr ""
+msgstr "向 Modbus 寄存器字典添加离散输入。"
 
-#: ../../en/software/modbus.rtu.slave.rst:111
-#: ../../en/software/modbus.rtu.slave.rst:158
-#: ../../en/software/modbus.rtu.slave.rst:204
-#: ../../en/software/modbus.rtu.slave.rst:267
-#: ../../en/software/modbus.rtu.slave.rst:279 1ec6bc4db9d0467987bfc35f0cc33f1b
-#: 888ec2a776c04357a8bbab25276f87d4 9e24616b46ed4af2a3006959bac2440f
-#: b9316101101e41ed8e28094ed7e89ff0 feb96d75094f499eab8678b64b07f818
+#: ../../en/software/modbus.rtu.slave.rst:160
+#: ../../en/software/modbus.rtu.slave.rst:235
+#: ../../en/software/modbus.rtu.slave.rst:307
+#: ../../en/software/modbus.rtu.slave.rst:399
+#: ../../en/software/modbus.rtu.slave.rst:418 57387472696647f6b11a7aee69cf5a7e
 msgid "address of the discrete inputs. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "离散输入地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:116 8bc1e0582dfb41e7a7e431c555013803
+#: ../../en/software/modbus.rtu.slave.rst:166 b637a67f6f8d41029bdcbf5434f19995
 msgid "|add_discrete_input.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:2
-#: 5f69b3d52e7c4dbc9bb156c3883d5821
+#: 99c2cac6f5444021a38e45c1c1be522d
 msgid "add_discrete_input.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:121 c2e4bedbc1054a06956acacedbbafc62
+#: ../../en/software/modbus.rtu.slave.rst:177 fcb713731b604c4298366ed864fefb8f
 msgid "Add a holding register to the modbus register dictionary."
-msgstr ""
+msgstr "向 Modbus 寄存器字典添加保持寄存器。"
 
-#: ../../en/software/modbus.rtu.slave.rst:123
-#: ../../en/software/modbus.rtu.slave.rst:169
-#: ../../en/software/modbus.rtu.slave.rst:217
-#: ../../en/software/modbus.rtu.slave.rst:291
-#: ../../en/software/modbus.rtu.slave.rst:303 19e91d2678794485ace5c16119aaa6b4
-#: 32b343b2d7964fee9ec3c7dfd1271c71 48fe29b1996e4794a2328c24fffb09cf
-#: 74cc514959e247ffa43e0940f87335fe b96252be73154603a9effc208c0f115c
+#: ../../en/software/modbus.rtu.slave.rst:179
+#: ../../en/software/modbus.rtu.slave.rst:253
+#: ../../en/software/modbus.rtu.slave.rst:325
+#: ../../en/software/modbus.rtu.slave.rst:437
+#: ../../en/software/modbus.rtu.slave.rst:456 25aa63cd5f0147dc9d4ee91e4c682953
 msgid "address of the holding registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "保持寄存器地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:124
-#: ../../en/software/modbus.rtu.slave.rst:136 7a9bd480313442f28aa1fd174cdfd0bd
-#: c110a8c945494d9f91dbd9cea2171b53
+#: ../../en/software/modbus.rtu.slave.rst:180
+#: ../../en/software/modbus.rtu.slave.rst:199 c9adbc907bf249b5807caa53e9d0e420
 msgid "Value to add. The value is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "要添加的值，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:128 4bdd460091d24cadacefd1107f90c26d
+#: ../../en/software/modbus.rtu.slave.rst:185 797c6a64c2a24a6bb4d6f605dd78f57d
 msgid "|add_holding_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:3
-#: d42f71a19e244bf2a7a48cd1648d1c42
+#: 51f3c27c34694c38b5063557c10041e9
 msgid "add_holding_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:133 a0c9f60ec4c24c048b1aa853db45a072
+#: ../../en/software/modbus.rtu.slave.rst:196 65c12c4761254006bef1b5afff0bdfa3
 msgid "Add an input register to the modbus register dictionary."
-msgstr ""
+msgstr "向 Modbus 寄存器字典添加输入寄存器。"
 
-#: ../../en/software/modbus.rtu.slave.rst:135
-#: ../../en/software/modbus.rtu.slave.rst:180
-#: ../../en/software/modbus.rtu.slave.rst:230
-#: ../../en/software/modbus.rtu.slave.rst:315
-#: ../../en/software/modbus.rtu.slave.rst:327 9cd336621f7f4937bd7f628996518081
-#: c997a1fccc084179a52c4b75152d3d54 d05ccf8a2eb34350a09612d1c3daf9ab
-#: dfee7589efb14c32be500d92226ef3e2 f5205326e6bd498c980a137757922f4d
+#: ../../en/software/modbus.rtu.slave.rst:198
+#: ../../en/software/modbus.rtu.slave.rst:271
+#: ../../en/software/modbus.rtu.slave.rst:343
+#: ../../en/software/modbus.rtu.slave.rst:475
+#: ../../en/software/modbus.rtu.slave.rst:494 12fef961719447e8953cdffecee82094
 msgid "address of the input registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "输入寄存器地址，范围为 0x0000 至 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:140 fae7ffee46bb47ec9689a226f2e701b1
+#: ../../en/software/modbus.rtu.slave.rst:204 9f7e4ad100b94ac28cf32af75a513d83
 msgid "|add_input_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:4
-#: 63691f478ae343fdbdb557efc5b88d55
+#: a45022ddd7ad432ca3366003b0289b20
 msgid "add_input_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:145 e2ddd09ac18f48dc890789c089389c63
+#: ../../en/software/modbus.rtu.slave.rst:215 313103164578459fa21427f759bf8ec8
 msgid "Remove a coil from the modbus register dictionary."
-msgstr ""
+msgstr "从 Modbus 寄存器字典中移除一个线圈。"
 
-#: ../../en/software/modbus.rtu.slave.rst:151 22e6b7396e7848ef89b70cb7d59a578d
+#: ../../en/software/modbus.rtu.slave.rst:222 49ca8d8fed1d46b4b67e3f495ab51412
 msgid "|remove_coil.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:14
-#: 497db445696d4a7d80d17610e9e7f80b
+#: be63d92930144bcbb079568ae9d1725f
 msgid "remove_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:156 5f60acafe2204180b1224e7bd9aebd2f
+#: ../../en/software/modbus.rtu.slave.rst:233 bb78dcbe93294f5faed53fd6dcf8d69e
 msgid "Remove a discrete input from the modbus register dictionary."
-msgstr ""
+msgstr "从 Modbus 寄存器字典中移除一个离散输入。"
 
-#: ../../en/software/modbus.rtu.slave.rst:162 42eede4e14ef4e22a4cc1f646cc08d5a
+#: ../../en/software/modbus.rtu.slave.rst:240 051b5277adba45eb92a38ac629ea5ce2
 msgid "|remove_discrete_input.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:15
-#: edbf52c3e3de4543887c440bf363d886
+#: 4735ea9fd77548b2b722800857d41aea
 msgid "remove_discrete_input.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:167 59c0a747d93449afb617560c4cb40425
+#: ../../en/software/modbus.rtu.slave.rst:251 5b0b64400f1245dda933bc687c3e86d5
 msgid "Remove a holding register from the modbus register dictionary."
-msgstr ""
+msgstr "从 Modbus 寄存器字典中移除一个保持寄存器。"
 
-#: ../../en/software/modbus.rtu.slave.rst:173 c7a287d93a334be69e9fc408504d2c95
+#: ../../en/software/modbus.rtu.slave.rst:258 12adefd82c1f443194d6d4f26e8e21ec
 msgid "|remove_holding_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:16
-#: 36a82f8bc0664e5799fb137e264b5d2f
+#: e392a0e09c314facafcc0b20ac5c5fae
 msgid "remove_holding_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:178 774fd05419b4408ab47565b7c67f7ccd
+#: ../../en/software/modbus.rtu.slave.rst:269 3e2342cc674740f5a36694c3625e7560
 msgid "Remove an input register from the modbus register dictionary."
-msgstr ""
+msgstr "从 Modbus 寄存器字典中移除一个输入寄存器。"
 
-#: ../../en/software/modbus.rtu.slave.rst:184 16c253c2f05f45a38b1f974ec934fdce
+#: ../../en/software/modbus.rtu.slave.rst:276 838f7498ccf94c82a9cc200de27085a5
 msgid "|remove_input_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:17
-#: dfdf7c4b503341618e90bc1133bf805c
+#: 9937182a6e094fcb9fe8ad729848a72f
 msgid "remove_input_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:189 5dd2c209f78548949b4fdf134d728f7f
+#: ../../en/software/modbus.rtu.slave.rst:287 4e79e79ab1ef43a89da7148334d16813
 msgid "Get the coil value."
-msgstr ""
+msgstr "获取线圈的阻值。"
 
-#: ../../en/software/modbus.rtu.slave.rst 0d07be3f81584cfab26acf1a844f2dce
-#: 899386aa7c0e40c4acea733bb5d18338 9df7ccd550d84567bb6d64373e544223
-#: 9e6b252698424ed7ad4558bf322cb9c5
-msgid "Returns"
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:290 d87a90f4424042ac94a29123072f0535
+msgid "bool - The value of the coil."
+msgstr "bool - 线圈的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:193 0484b400bc66448f87589296394e414e
-msgid "The value of the coil."
-msgstr ""
-
-#: ../../en/software/modbus.rtu.slave.rst:197 659b55f85c004d41b472738f0f307af3
+#: ../../en/software/modbus.rtu.slave.rst:294 6933d2553750496d9f5d2f9d55f16937
 msgid "|get_coil.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:5
-#: a09e0e316aef4ec29e4cb34eb280c98f
+#: 9d5e507a63a5470ba3060e5a37235d0a
 msgid "get_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:202 ed0b4c122e4444e18eabaf4236d34f79
+#: ../../en/software/modbus.rtu.slave.rst:305 38827335f4554391acd2b81db0e16914
 msgid "Get the discrete input value."
-msgstr ""
+msgstr "获取离散输入值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:206 b09ef62097cc402aaa2d2ed0ca073eeb
-msgid "The value of the discrete input."
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:308 988b43225a0e4d7f82d43936e97912f9
+msgid "bool - The value of the discrete input."
+msgstr "布尔值 - 离散输入的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:210 23636b557fd1403fbb1ad705e9883bc2
+#: ../../en/software/modbus.rtu.slave.rst:312 84be3665f47047a0bfb4296728bbf9f4
 msgid "|get_discrete_input.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:6
-#: 354a042039174497bfac7dbaa80cb8bf
+#: bf4d43d4181f435c8877f504e7154ef8
 msgid "get_discrete_input.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:215 4421ecf2aadd46ba8ad44b8841a59cce
+#: ../../en/software/modbus.rtu.slave.rst:323 7f3ec653e945453cbd3ca908abc87154
 msgid "Get the holding register value."
-msgstr ""
+msgstr "获取持有寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:219 27f84b59d63d4e27b678b4c5f116a4c3
-msgid "The value of the holding register."
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:326 b086800496eb47a68f7a7265850bde12
+msgid "int - The value of the holding register."
+msgstr "int - 持有寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:223 04069677bf3e4679a8280b132603a027
+#: ../../en/software/modbus.rtu.slave.rst:330 10c8435928a94b2e899d4a32464b3e83
 msgid "|get_holding_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:7
-#: a6a3d2ff83454c5ab359c812bb8324c3
+#: 8c7bb15227c949b8925215580d28591b
 msgid "get_holding_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:228 9a86adbed0eb451e90fd2d80b905adce
+#: ../../en/software/modbus.rtu.slave.rst:341 440f68d7c0f6485584a173172abfa140
 msgid "Get the input register value."
-msgstr ""
+msgstr "获取输入寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:232 96138eb962154afe8ec355f9d7183cae
-msgid "The value of the input register."
-msgstr ""
+#: ../../en/software/modbus.rtu.slave.rst:344 49a1994df6204b18ada9cf3097c63a82
+msgid "int - The value of the input register."
+msgstr "int - 输入寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:236 78bbc7010da14eca82e46d0a9fca9d52
+#: ../../en/software/modbus.rtu.slave.rst:348 21d4ddfca4bb42a998cb6cb15f89de87
 msgid "|get_input_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:8
-#: db65486c0c7241a78f36b4a4aa8d6bd9
+#: 81e5e24be04340d4aa3612d9b7018c09
 msgid "get_input_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:241 49755ee3f5af4958a4438cdfb8d49568
+#: ../../en/software/modbus.rtu.slave.rst:359 019fc46f4c3842c6a0335365d0e1abbf
 msgid "Set the coil value."
-msgstr ""
+msgstr "设置线圈值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:244
-#: ../../en/software/modbus.rtu.slave.rst:268 1012898cc8f4490d9c601f08ed12273f
-#: a2ed0617f6194f2aa0519eb59d6a7008
+#: ../../en/software/modbus.rtu.slave.rst:362
+#: ../../en/software/modbus.rtu.slave.rst:400 29f2d92e67f9438ebbf925ea290f31e2
 msgid "Value to set. The value is True or False."
-msgstr ""
+msgstr "要设置的值。该值为 True 或 False。"
 
-#: ../../en/software/modbus.rtu.slave.rst:248 8eb252167a614913a6a01b8a38a06172
+#: ../../en/software/modbus.rtu.slave.rst:367 e5583ee84f344589a5c58f8220a0e87a
 msgid "|set_coil.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:18
-#: 0fbf28b33edb41c5b25967f605bed6fe
+#: 79beeb5d0008492b85c96a33c8ef16ba
 msgid "set_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:253 cd2414f6d7114e38a7eac821186d6c0a
+#: ../../en/software/modbus.rtu.slave.rst:378 bc0c52226d314c25aef9bba9eeb24286
 msgid "Set the multi coils value."
-msgstr ""
+msgstr "设置多线圈值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:256
-#: ../../en/software/modbus.rtu.slave.rst:280 820261769aa8467395c0a909470ceb8f
-#: 8725324097ed4c0080ba07f301f65159
+#: ../../en/software/modbus.rtu.slave.rst:381
+#: ../../en/software/modbus.rtu.slave.rst:419 0ec98507f9744701bf2f5174379d90df
 msgid "Values to set. The value is a list of True or False."
-msgstr ""
+msgstr "要设置的值。该值是一个包含 True 或 False 的列表。"
 
-#: ../../en/software/modbus.rtu.slave.rst:260 e3e238d8e34f4707a6d43f472eece3a1
+#: ../../en/software/modbus.rtu.slave.rst:386 5ce634df74924d5499fb8a2c290d72f0
 msgid "|set_multi_coils.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:22
-#: 70588fe60c874a56b2c62ef327153a63
+#: 574f99e189254b8282422dc7d83ac175
 msgid "set_multi_coils.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:265 a3c1764de598453385643a8e2d24fa35
+#: ../../en/software/modbus.rtu.slave.rst:397 08a44dfc7be6460481a4ec1c836f5d92
 msgid "Set the discrete input value."
-msgstr ""
+msgstr "设置离散输入值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:272 1d949faed8e34d33a791a77a6f75e3af
+#: ../../en/software/modbus.rtu.slave.rst:405 4c00783d8cbe41349cf40a72df03e5f7
 msgid "|set_discrete_input.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:19
-#: 2b51e2add451453c84040813dec58394
+#: 3003ac71d4134aabb6d7b61f246d7700
 msgid "set_discrete_input.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:277 b6ea76b069934bdeaf117c3c49d765c4
+#: ../../en/software/modbus.rtu.slave.rst:416 3314e234b74948a8a30a27783fd549de
 msgid "Set the multi discrete inputs value."
-msgstr ""
+msgstr "设置多离散输入值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:284 df6ab7c84bc240698cb8efefa4a284d5
+#: ../../en/software/modbus.rtu.slave.rst:424 342cc3ba857247d4bcec080096f47b64
 msgid "|set_multi_discrete_input.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:23
-#: 3adb5068a6124755b55ac5505d8c6112
+#: b123a659cb134c10b604080ce10e7563
 msgid "set_multi_discrete_input.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:289 0cdfe59cf44e4d2982b670be2efbca11
+#: ../../en/software/modbus.rtu.slave.rst:435 6a789fc61ad24c24b0b1c32b5779e4cc
 msgid "Set the holding register value."
-msgstr ""
+msgstr "设置保持寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:292
-#: ../../en/software/modbus.rtu.slave.rst:316 285b5af36da9457a8f65cef057730372
-#: 525db7f278bf41c1943f2b1d4d9b5f23
+#: ../../en/software/modbus.rtu.slave.rst:438
+#: ../../en/software/modbus.rtu.slave.rst:476 dbbb2f74d51845dc835262b81e9535b6
 msgid "Value to set. The value is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "要设置的值。取值范围为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.rtu.slave.rst:296 6bf7cf14c7d8479b9210b7d839526849
+#: ../../en/software/modbus.rtu.slave.rst:443 384c097c4af44150a84ba1d5749859e9
 msgid "|set_holding_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:20
-#: f656168917ff43fe932978fbbaba5227
+#: 829d5e8a01d544a78871c62dcb428fd1
 msgid "set_holding_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:301 ef4383c03d6e4f68b92ad72aa461706d
+#: ../../en/software/modbus.rtu.slave.rst:454 547281b4c0204d73a754a672fefa4d65
 msgid "Set the multi holding registers value."
-msgstr ""
+msgstr "设置多重保持寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:304
-#: ../../en/software/modbus.rtu.slave.rst:328 5a090c7c50f04cf5a02ba3f076c7c2e9
-#: 5f7df4af91b045e7bc151cd7ac01e608
+#: ../../en/software/modbus.rtu.slave.rst:457
+#: ../../en/software/modbus.rtu.slave.rst:495 3bb5d3181eae45598e4e9c0317460721
 msgid "Values to set. The value is a list of 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "要设置的值。该值是一个介于 0x0000 到 0xFFFF 之间的列表。"
 
-#: ../../en/software/modbus.rtu.slave.rst:308 54868adeb65d40f1b68bdf92d32cae10
+#: ../../en/software/modbus.rtu.slave.rst:462 81b2912d0d00438894c83f86acc6468a
 msgid "|set_multi_holding_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:24
-#: 95e54b695ff64dbca0145664a397129d
+#: 5d9ea92072264d98b3191dad3045672f
 msgid "set_multi_holding_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:313 2907cabbf0b144ed8007978888d5820b
+#: ../../en/software/modbus.rtu.slave.rst:473 69413fea87de4bdb99cf508a9c9cc298
 msgid "Set the input register value."
-msgstr ""
+msgstr "设置输入寄存器值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:320 269f5d4af7d64fac876b3a50690ae2df
+#: ../../en/software/modbus.rtu.slave.rst:481 0b66f50e962247c19ca4e331a0f82e96
 msgid "|set_input_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:21
-#: 3ec461cf30074a55a937be1cf473ace4
+#: 002251585d824518bdaf5d011aeb106f
 msgid "set_input_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:325 5f054b280fc64123a28b5d63cc80780a
+#: ../../en/software/modbus.rtu.slave.rst:492 24a0ee4cf8194113923512e7ec1accd6
 msgid "Set the multi input registers value."
-msgstr ""
+msgstr "设置多输入寄存器的值。"
 
-#: ../../en/software/modbus.rtu.slave.rst:332 80db306bff6042958c61a90fe1b4a56e
+#: ../../en/software/modbus.rtu.slave.rst:500 81acfd2cbfb243a3991e7a789649b979
 msgid "|set_multi_input_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:25
-#: fb4ee67e79164607b5a54e7ba5335725
+#: 03ee0eff02fa4fc3bf39000ab5a9db56
 msgid "set_multi_input_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:337 9e05dafb0e30421c91afcd3c4029956b
+#: ../../en/software/modbus.rtu.slave.rst:511 1b026678735b4211a12500081043ff49
 msgid ""
 "Modbus RTU slave tick function. This function should be called in the "
 "main loop."
-msgstr ""
+msgstr "Modbus RTU 从站滴答函数。此函数应在主循环中调用。"
 
-#: ../../en/software/modbus.rtu.slave.rst:341 ec514580972f4e028d7ff9f3901cc43c
+#: ../../en/software/modbus.rtu.slave.rst:517 126c04de06104b449aa07588efc215cb
 msgid "|tick.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:28
-#: d2bc512652314f44971cf309b1545088
+#: 9a31c01c92234a16bc36d5dfbf7e22a4
 msgid "tick.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:346 d1176cdf115943d7a56f89517ed76fb4
+#: ../../en/software/modbus.rtu.slave.rst:528 48c03a41eace451c9dbd5e47cdd8ddcc
 msgid "Set the callback function for the function code."
-msgstr ""
+msgstr "为函数代码设置回调函数。"
 
-#: ../../en/software/modbus.rtu.slave.rst:348 8d2802058ff34aa2931950d88fe416bd
+#: ../../en/software/modbus.rtu.slave.rst:530 cfb9c2e8ae5640749b298d628a0f6421
 msgid ""
 "Function code. The function code is 1 to 6, 15, 16. the symbol is defined"
 " in the modbus.ModbusRTUSlave (\\*_EVENT etc.)."
-msgstr ""
+msgstr "功能码。功能码为 1 至 6、15、16。符号在 modbus.ModbusRTUSlave 中定义（\\*_EVENT 等）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:349 266be9077735496d9f754d4e042dd750
+#: ../../en/software/modbus.rtu.slave.rst:531 8fbc8a1bc0364fea9bd8f011563926cc
 msgid "Callback function."
-msgstr ""
+msgstr "回调函数。"
 
-#: ../../en/software/modbus.rtu.slave.rst:353 4f35df83e4104adea76f949314c4a314
+#: ../../en/software/modbus.rtu.slave.rst:536 cd1aaf7a320543ce94ca5bfc25f7310a
 msgid "|read_coils_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:10
-#: 8f4d8a066bb94009b3d612a2b1efbbbc
+#: db9f143f06e340ea8d093c7b020052f3
 msgid "read_coils_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:355 b1e75a4a57f04c0db98ad9879a0dc06e
+#: ../../en/software/modbus.rtu.slave.rst:538 87378dde228243bbabb4d67202a09ecf
 msgid "|read_discrete_inputs_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:11
-#: 1d08348fb12743288c586062ef1b281c
+#: b08a40627cdb45ce9423efa67e097c90
 msgid "read_discrete_inputs_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:357 ca0c92d44c144ff5a2390851d725b4cd
+#: ../../en/software/modbus.rtu.slave.rst:540 575ded12a0484289b05a0c43fe0b08eb
 msgid "|read_holding_registers_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:12
-#: 8624892821204e13965d37f862f96ddb
+#: 85fab943de0f44e8bf90fcb5c3bf3d2e
 msgid "read_holding_registers_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:359 1ff4ce5086934e31a51e3ab2c2e956d2
+#: ../../en/software/modbus.rtu.slave.rst:542 917e2f036b8e4c818e698ac44f3e8410
 msgid "|read_input_registers_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:13
-#: fb955b247e5646a0b7c3060a9d3e595a
+#: 7ea6c6cd9cfe44a3bfa7369262ad317c
 msgid "read_input_registers_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:361 8ff30527f9f54f0cabc1963544977793
+#: ../../en/software/modbus.rtu.slave.rst:544 f0c461815e274efe95ffa3b4dce6ae3f
 msgid "|write_multiple_coils_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:29
-#: 32a4b1dc31214e19bc820c31c4978520
+#: 659d330c151d46529fdadcee25d89f63
 msgid "write_multiple_coils_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:363 c6454ed6d0c94379847ce7d93140a0cd
+#: ../../en/software/modbus.rtu.slave.rst:546 1df240bc4b0c40efb306514f29c85fe5
 msgid "|write_multiple_registers_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:30
-#: 602aae11b3dd4a36824f6a7766d47a68
+#: bd085d1beac24313a83c719fa62360ba
 msgid "write_multiple_registers_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:365 40745c29a6e54effb970437a26087dbd
+#: ../../en/software/modbus.rtu.slave.rst:548 0c83cc3d54ad4481bc062e455a2a5b05
 msgid "|write_single_coil_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:31
-#: 20c7b9cfa9744119a915c9a6abb3ea47
+#: 56e431ddd71b4371b2eccdb19926b70a
 msgid "write_single_coil_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:367 4da5eca42cba448b81976ba5960a62bb
+#: ../../en/software/modbus.rtu.slave.rst:550 8ac0af93e2f546ae98c1c17f191347d6
 msgid "|write_single_register_callback.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.rtu.slave.ref:32
-#: 5bc311c2a8364fbfad96cb737e26e1a1
+#: 78f0fc4cc2774b30b5d6a0a0aaeedb3a
 msgid "write_single_register_callback.png"
 msgstr ""
 
-#: ../../en/software/modbus.rtu.slave.rst:371 31aed2d86fd742cdbae3ddc76def2f63
-msgid "Constants"
-msgstr ""
-
-#: ../../en/software/modbus.rtu.slave.rst:375 7405041dc2f64b60a907ad382c222dd0
+#: ../../en/software/modbus.rtu.slave.rst:563 5d22f2bda5504b6cb455d67f1fee95b7
 msgid "Function code 1 (Read Coils)."
-msgstr ""
+msgstr "功能代码 1（读取线圈）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:380 1142943482d9417184f6e11b066ae65c
+#: ../../en/software/modbus.rtu.slave.rst:568 35efb6d318ce41a2ae5f6f338d4ed3db
 msgid "Function code 2 (Read Discrete Inputs)."
-msgstr ""
+msgstr "功能码 2（读取离散输入）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:385 897572eaa635403da8ec30b2b9dce055
+#: ../../en/software/modbus.rtu.slave.rst:573 1092e67c51d44ee9a46c5949e3745c31
 msgid "Function code 3 (Read Holding Registers)."
-msgstr ""
+msgstr "功能码 3（读取保持寄存器）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:390 e245c018bc6f41ea8063c8f88b260d7d
+#: ../../en/software/modbus.rtu.slave.rst:578 7b42b4836fe74094a16170f3aab3c341
 msgid "Function code 4 (Read Input Registers)."
-msgstr ""
+msgstr "Function code 4 (Read Input Registers)."
 
-#: ../../en/software/modbus.rtu.slave.rst:395 b4dcdb045626407d91461782493fd7fc
+#: ../../en/software/modbus.rtu.slave.rst:583 3a96b14b211841558a86265406f5ed46
 msgid "Function code 5 (Write Single Coil)."
-msgstr ""
+msgstr "功能代码 5（写入单线圈）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:400 7be43b13c17c49388e26527b17c38f98
+#: ../../en/software/modbus.rtu.slave.rst:588 b114a8fdbc394795bb3a750bcdc2fa9e
 msgid "Function code 6 (Write Single Holding Register)."
-msgstr ""
+msgstr "功能码 6（写入单个保持寄存器）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:405 9314bfd7e31b4be7a54493824dcf66c4
+#: ../../en/software/modbus.rtu.slave.rst:593 df47b740155241ec8644c655d7d78299
 msgid "Function code 15 (Write Multiple Coils)."
-msgstr ""
+msgstr "功能代码 15（写入多个线圈）。"
 
-#: ../../en/software/modbus.rtu.slave.rst:410 51b11d5ef18e44479a5f54313cd3687c
+#: ../../en/software/modbus.rtu.slave.rst:598 b6d98f9289724e3db91122e6ca3e9ffd
 msgid "Function code 16 (Write Multiple Holding Registers)."
-msgstr ""
+msgstr "功能码 16（写入多个保持寄存器）。"
+
+#~ msgid "class ModbusRTUSlave -- Modbus RTU slave"
+#~ msgstr ""
+
+#~ msgid "Micropython Example:"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example:"
+#~ msgstr ""
+
+#~ msgid "|cores3_rtu_slave_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "The value of the coil."
+#~ msgstr ""
+
+#~ msgid "The value of the discrete input."
+#~ msgstr ""
+
+#~ msgid "The value of the holding register."
+#~ msgstr ""
+
+#~ msgid "The value of the input register."
+#~ msgstr ""
+
+#~ msgid "Constants"
+#~ msgstr ""
 
