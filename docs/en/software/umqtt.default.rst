@@ -52,7 +52,7 @@ This example demonstrates how to connect to an MQTT broker.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/mqtt/cores3_mqtt_basic_example.py
+    .. literalinclude:: ../../../examples/software/mqtt/cores3_mqtt_basic_example.py
 
 Example output:
 
@@ -66,7 +66,7 @@ This example demonstrates how to connect to an MQTT broker over SSL.
 
 MicroPython Code Block:
 
-    .. literalinclude:: ../../../examples/softwave/mqtt/cores3_mqtt_over_ssl_example.py
+    .. literalinclude:: ../../../examples/software/mqtt/cores3_mqtt_over_ssl_example.py
         :language: python
         :linenos:
 

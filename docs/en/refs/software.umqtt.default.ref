@@ -30,7 +30,7 @@
 .. |cores3_mqtt_basic_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/cores3_mqtt_basic_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/software/mqtt/cores3_mqtt_basic_example.m5f2"
         target="_blank"
     >
         cores3_mqtt_basic_example.m5f2
@@ -39,7 +39,7 @@
 .. |cores3_mqtt_over_ssl_example.m5f2| raw:: html
 
     <a
-        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/softwave/mqtt/cores3_mqtt_over_ssl_example.m5f2"
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/software/mqtt/cores3_mqtt_over_ssl_example.m5f2"
         target="_blank"
     >
         cores3_mqtt_over_ssl_example.m5f2

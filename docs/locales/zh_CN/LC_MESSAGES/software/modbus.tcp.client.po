@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-02 18:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,13 +18,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/software/modbus.tcp.client.rst:4 6eadca7827c54e679c4d40b4fa3d9a57
-msgid "class ModbusTCPClient -- Modbus TCP client"
+#: ../../en/software/modbus.tcp.client.rst:4
+#: ../../en/software/modbus.tcp.client.rst:50 92612e98675f401d93856e1600011aab
+#: a7e73f5dcb924f229b03c27fea7e4765
+msgid "ModbusTCPClient"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:9 e41715f6a6c749fc91e8860f89289b13
+#: ../../en/software/modbus.tcp.client.rst:8 bc89ab6fc1d348c1a6c48cbe13219fa7
 msgid ""
 "ModbusTCPClient implements the Modbus TCP client. ModbusTCPClient support"
 " function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding"
@@ -32,330 +34,562 @@ msgid ""
 "Single Holding Register), 15 (Write Multiple Coils), and 16 (Write "
 "Multiple Holding Registers)."
 msgstr ""
+"ModbusTCPClient 实现了 Modbus TCP 客户端。ModbusTCPClient 支持功能码 "
+"1（读线圈）、2（读离散输入）、3（读保持寄存器）、4（读输入寄存器）、5（写单个线圈）、6（写单个保持寄存器）、15（写多个线圈）和 "
+"16（写多个保持寄存器）。"
 
-#: ../../en/software/modbus.tcp.client.rst:12 d1f1fa5f18d04bd39b3a119a5f93ff7e
-msgid "Micropython Example:"
-msgstr ""
+#: ../../en/software/modbus.tcp.client.rst:11 26f75abbf01e46d489f04bf920d9acb3
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
 
-#: ../../en/software/modbus.tcp.client.rst:19 a8d2f3d2011b41eb936f715c170daeca
-msgid "UIFLOW2 Example:"
-msgstr ""
+#: ../../en/software/modbus.tcp.client.rst:14
+#: ../../en/software/modbus.tcp.client.rst:32 1ee62c24a63c4f2faa00b10ca0270de1
+#: ea23cba6cfe847e89c6f041a37c9052e
+msgid "CoreS3 TCP Client"
+msgstr "CoreS3 TCP 客户端"
 
-#: ../../en/software/modbus.tcp.client.rst:21 8ceea24c22574045a86d7f0a1f51b764
-msgid "|example.png|"
+#: ../../en/software/modbus.tcp.client.rst:16 70bc93b82c8841e5a481461bb8bf1176
+msgid "Open the |cores3_tcp_client_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_tcp_client_example.m5f2| 项目。"
+
+#: ../../en/software/modbus.tcp.client.rst:18
+#: ../../en/software/modbus.tcp.client.rst:34 1e050ba5ef3b4aa8824919c830831bb6
+#: ae492aa5b9664f589f5889c06458a73b
+msgid ""
+"This example demonstrates how to use `ModbusTCPClient` to implement a "
+"Modbus TCP client."
+msgstr "此示例演示如何使用 `ModbusTCPClient` 实现 Modbus TCP 客户端。"
+
+#: ../../en/software/modbus.tcp.client.rst:20
+#: ../../en/software/modbus.tcp.client.rst:60
+#: ../../en/software/modbus.tcp.client.rst:75
+#: ../../en/software/modbus.tcp.client.rst:89
+#: ../../en/software/modbus.tcp.client.rst:110
+#: ../../en/software/modbus.tcp.client.rst:131
+#: ../../en/software/modbus.tcp.client.rst:152
+#: ../../en/software/modbus.tcp.client.rst:173
+#: ../../en/software/modbus.tcp.client.rst:194
+#: ../../en/software/modbus.tcp.client.rst:215
+#: ../../en/software/modbus.tcp.client.rst:236
+#: ../../en/software/modbus.tcp.client.rst:257 3f4db25c18564345a1813cd1b3b9d5b6
+#: c91df9c7b5b4441880f5285b4798d895
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块:"
+
+#: ../../en/software/modbus.tcp.client.rst:22 f6582f65ee0144b5afff05c02a9040ca
+msgid "|cores3_tcp_client_example.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:13
-#: 866e77d45074494ba88c6f0257720de0
-msgid "example.png"
+#: cd9abb645ce34e0997bd7419484246f5
+msgid "cores3_tcp_client_example.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:26 0733c27263f242bd913e954aceba5e1c
-msgid "|cores3_tcp_client_example.m5f2|"
+#: ../../en/software/modbus.tcp.client.rst:24
+#: ../../en/software/modbus.tcp.client.rst:42 b1f0784eed7545908f0b3eb3333ee273
+msgid "Example output:"
+msgstr "输出示例:"
+
+#: ../../en/software/modbus.tcp.client.rst:26
+#: ../../en/software/modbus.tcp.client.rst:44 cf796a77aa6242b88586066fb2579a54
+msgid "None"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:30 36ad587e63044277b62d0144a50464db
-msgid "Constructors"
-msgstr ""
+#: ../../en/software/modbus.tcp.client.rst:29 c91df9c7b5b4441880f5285b4798d895
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
 
-#: ../../en/software/modbus.tcp.client.rst:34 02d8986692a041f89b513ffff90f6dca
+#: ../../en/software/modbus.tcp.client.rst:36
+#: ../../en/software/modbus.tcp.client.rst:64
+#: ../../en/software/modbus.tcp.client.rst:79
+#: ../../en/software/modbus.tcp.client.rst:93
+#: ../../en/software/modbus.tcp.client.rst:114
+#: ../../en/software/modbus.tcp.client.rst:135
+#: ../../en/software/modbus.tcp.client.rst:156
+#: ../../en/software/modbus.tcp.client.rst:177
+#: ../../en/software/modbus.tcp.client.rst:198
+#: ../../en/software/modbus.tcp.client.rst:219
+#: ../../en/software/modbus.tcp.client.rst:240
+#: ../../en/software/modbus.tcp.client.rst:261 c91df9c7b5b4441880f5285b4798d895
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块:"
+
+#: ../../en/software/modbus.tcp.client.rst:47 899def0e7c3043698226939efe649123
+msgid "API"
+msgstr "API参考"
+
+#: ../../en/software/modbus.tcp.client.rst:54 89b9a82572a64cd287865c19e80b712e
 msgid "Create a ModbusTCPClient object."
-msgstr ""
+msgstr "创建 ModbusTCPClient 对象。"
 
-#: ../../en/software/modbus.tcp.client.rst 16ca13be037943a6b1f685e7b3dd27d6
-#: 25da431eaaab4f538517ac747feaf3a2 4b5d45be5d8341dba78611780fa9b1fa
-#: 61a2ce63787747e2a18d8ab7cf3e1551 62e91d792f294235aa485f8eac0e0a19
-#: 7b644dfcebf5472a907999a704fb81b0 811eb06ce52747beaed9f6036638c311
-#: a8a7241683bf44b09ad3954fc6990d98 f133faccf5914b8587947e8fe6ef85ea
+#: ../../en/software/modbus.tcp.client.rst 2218ce9117b74e0f958c9f0cd84d7f11
+#: 28c5acfeac9543aeb0c1757e5af50e5a 2f3b4440983648df88092388e2dd1e80
+#: 65532d7de9e04c318a1c4f45e4b64cec 8069bd0e6db146c180cab06eacc3202d
+#: 95287786fae543a9aaf83c310053cc46 bc3f11443c0045ac9f98aad2ad962a60
+#: d5c0224509aa4b03a81909a5612970a1 e88d3f7a60364173b7f70834462abd13
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:36 08e94b0cacd244a0ac72fcac8c2b5c8b
+#: ../../en/software/modbus.tcp.client.rst:56 14f896e0976043f096631a3142c1f1a6
 msgid "Hostname or IP address."
-msgstr ""
+msgstr "主机名或 IP 地址。"
 
-#: ../../en/software/modbus.tcp.client.rst:37 6b1b140ffbc6484c8714f152e6fc01ff
+#: ../../en/software/modbus.tcp.client.rst:57 daaf1aeaf14b45ccb5c0e0bc056758fa
 msgid "Port number."
-msgstr ""
+msgstr "端口号。"
 
-#: ../../en/software/modbus.tcp.client.rst:38 2c6b58b4a4194cbab372e77f8ff31e5f
+#: ../../en/software/modbus.tcp.client.rst:58 868db2b27dc54903af8f9e5b11689aa9
 msgid "Verbose mode."
-msgstr ""
+msgstr "详细模式。"
 
-#: ../../en/software/modbus.tcp.client.rst:40
-#: ../../en/software/modbus.tcp.client.rst:52
-#: ../../en/software/modbus.tcp.client.rst:61
-#: ../../en/software/modbus.tcp.client.rst:77
-#: ../../en/software/modbus.tcp.client.rst:93
-#: ../../en/software/modbus.tcp.client.rst:109
-#: ../../en/software/modbus.tcp.client.rst:125
-#: ../../en/software/modbus.tcp.client.rst:141
-#: ../../en/software/modbus.tcp.client.rst:157
-#: ../../en/software/modbus.tcp.client.rst:173
-#: ../../en/software/modbus.tcp.client.rst:189 1cded05a0d6448909433e6f3f5185360
-#: 3b7a2db700b54477b9a5048839f23a70 4cfdd77fa7fc4fd6b605a20aea7f4add
-#: 591c8b0d7815465a9d05c24ba8eace91 5edb8b3b11054b738ff900ff1deb78d7
-#: 5fadef8a597d467c8b90ee0f3082e05b 7780bf12fad543689697c9cbcb7c214c
-#: 88e9c995db24492f8198207ce5b94d9d c6dcf70c4f0b4819aad6eb33714e47ad
-#: d570b8a092b145cc9b47f4c796ad72d7 e7e674582d934b888616d098fa6b5a4f
-msgid "UIFLOW2:"
-msgstr ""
-
-#: ../../en/software/modbus.tcp.client.rst:42 4d7f7da7990a4e02a3a998f58a9c2b8c
+#: ../../en/software/modbus.tcp.client.rst:62 bdeff75a94414af7a40bf01a1af79928
 msgid "|init.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:3
-#: 19061c911ba349b49c13a9646151062c
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "init.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:46 e4168cdc10944f4ca36c526f9422d150
-msgid "Methods"
-msgstr ""
-
-#: ../../en/software/modbus.tcp.client.rst:50 135aa0da5c9f43b387778bc46de12fc4
+#: ../../en/software/modbus.tcp.client.rst:73 342313b76eaf41d89173e2243b10eacf
 msgid "Connect to the Modbus server."
-msgstr ""
+msgstr "连接到 Modbus 服务器。"
 
-#: ../../en/software/modbus.tcp.client.rst:54 9256dcf85e434574bb48d91815fd9513
+#: ../../en/software/modbus.tcp.client.rst:77 a64cfdb71dd6462388dcb869ecf01c9d
 msgid "|connect.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:1
-#: 7d5fabad0eab4f5485e2febfd54ed077
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "connect.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:59 ef99deef0ddf4085985a8a5fa875001c
+#: ../../en/software/modbus.tcp.client.rst:87 c51b2cba3074464d91e5e401066368b2
 msgid "Disconnect from the Modbus server."
-msgstr ""
+msgstr "断开与 Modbus 服务器的连接。"
 
-#: ../../en/software/modbus.tcp.client.rst:63 314758be2ac34f469adacf17d9d1cd2f
+#: ../../en/software/modbus.tcp.client.rst:91 b0f4f267eff44d2f883faf5ebd52f02f
 msgid "|disconnect.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:2
-#: 489a71b77a584a808aa4ba9647292b89
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "disconnect.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:68 256502fb9a1843f49ce0452e96fee804
+#: ../../en/software/modbus.tcp.client.rst:101 1171f82652bb41c689c4a82546c9b827
 msgid "Read coils."
-msgstr ""
+msgstr "读取线圈。"
 
-#: ../../en/software/modbus.tcp.client.rst:70
-#: ../../en/software/modbus.tcp.client.rst:86
-#: ../../en/software/modbus.tcp.client.rst:102
-#: ../../en/software/modbus.tcp.client.rst:118
-#: ../../en/software/modbus.tcp.client.rst:134
-#: ../../en/software/modbus.tcp.client.rst:150
+#: ../../en/software/modbus.tcp.client.rst:103
+#: ../../en/software/modbus.tcp.client.rst:124
+#: ../../en/software/modbus.tcp.client.rst:145
 #: ../../en/software/modbus.tcp.client.rst:166
-#: ../../en/software/modbus.tcp.client.rst:182 1cf571b9e2be47e8af1dddbc4cd80cf9
-#: 2484b87e06d14f4a8eb97336403d657b 336923a95c714d0aa61f4f760da5c6b4
-#: 62228226cfb4478bb50d6186a7af2eb5 6954efd75f464544956754eeb03b527c
-#: b5f6553229b44761ad6c56dee4724d2e c16724cc12d5496a8bb6792fa87a1e4c
-#: ff0631227c1c4037b3acd5cfb2335145
+#: ../../en/software/modbus.tcp.client.rst:187
+#: ../../en/software/modbus.tcp.client.rst:208
+#: ../../en/software/modbus.tcp.client.rst:229
+#: ../../en/software/modbus.tcp.client.rst:250 0b387ea086c04ebf83f412ab51561b38
+#: 0ff6af8ade394e1d931a2aa3bae6a9ce 16128775fe0645f1ab40b64aff575bd2
+#: 41c3f01eb259483baaebf57abf789730 611c7d763faa4dc3bcdc47295b1c45d6
+#: 665db875bf944042809a520d647b8eca 82f09c30d3564a82a3a676465cccd0ff
+#: bc063e7082d64246b4b89fb6c81ae4fa
 msgid "Slave address. The address is 0 to 247."
-msgstr ""
+msgstr "从机地址。地址范围为 0 到 247。"
 
-#: ../../en/software/modbus.tcp.client.rst:71
-#: ../../en/software/modbus.tcp.client.rst:135
-#: ../../en/software/modbus.tcp.client.rst:167 2199bc9db9704ef7826dd33b9711d595
-#: 4dd120e64bbd4c25b96b74e488b27dfb 5c3b055c7a0345e1996cb02e1a3eaf5a
-msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
-msgstr ""
-
-#: ../../en/software/modbus.tcp.client.rst:72
-#: ../../en/software/modbus.tcp.client.rst:88
 #: ../../en/software/modbus.tcp.client.rst:104
-#: ../../en/software/modbus.tcp.client.rst:120 3683b337381940f499f28ae0af0ab279
-#: 63258fad8a2d4b2a9280b6cf4fe6e503 b627786135ec4185861fe5298d539932
-#: c24422f43cdd421b80e0f08a349bdad7
-msgid "Quantity of registers to read."
-msgstr ""
+#: ../../en/software/modbus.tcp.client.rst:188
+#: ../../en/software/modbus.tcp.client.rst:230 3a9b080734aa435d8e2c07df2ed2cf3f
+#: 502ff98b528a4b049187d836e8fe0b28 8b6cbb7b97534be4975e992e4bddba5b
+msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
+msgstr "线圈起始地址。地址范围为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:73
-#: ../../en/software/modbus.tcp.client.rst:89
 #: ../../en/software/modbus.tcp.client.rst:105
-#: ../../en/software/modbus.tcp.client.rst:121
-#: ../../en/software/modbus.tcp.client.rst:137
-#: ../../en/software/modbus.tcp.client.rst:153
-#: ../../en/software/modbus.tcp.client.rst:169
-#: ../../en/software/modbus.tcp.client.rst:185 1e7991b192144559864d7ad6748ab014
-#: 59bf366076a44fbca7b16cf09d8185fd 7d50aeb560424d269c36ec9e401d78ea
-#: a7ca8dc65ffe43ceb7fdaa21b3ed4b12 ca3418913f38484883748e17178d73cb
-#: d30444a2946740bba749b2ecbcaf5b17 fcdbadcc24f0435eb630a85ecd2537a8
-#: feae1609c039481482a0c722117a6bea
-msgid "Timeout in milliseconds."
-msgstr ""
+#: ../../en/software/modbus.tcp.client.rst:126
+#: ../../en/software/modbus.tcp.client.rst:147
+#: ../../en/software/modbus.tcp.client.rst:168 53b7f465b75e46b4b74157fdff11e12c
+#: 7bcc53258e104298a8dba52706d29b51 c2065b4a59e34ee4bf00820b7be5b139
+#: f5f2fd466f684e9389b78b4b98c79a2a
+msgid "Quantity of registers to read."
+msgstr "要读取的寄存器数量。"
 
-#: ../../en/software/modbus.tcp.client.rst 04503b34dfeb4b878154917e9eccf600
-#: 0a5ddf79f98f4217a6caaa6be649af6f 318835e981ab4611a62c35c4907581c8
-#: 49bbbd25b1024ffc8fc3834ee3c35c15 a92545736eb04113bf80291408982bfd
-#: c92ca076587848c7b7c2c757cb613120 d743476bc56d4244b54c7eccd3ce9462
-#: e88d083c07164141b5ecfc6bfc32c7e9
+#: ../../en/software/modbus.tcp.client.rst:106
+#: ../../en/software/modbus.tcp.client.rst:127
+#: ../../en/software/modbus.tcp.client.rst:148
+#: ../../en/software/modbus.tcp.client.rst:169
+#: ../../en/software/modbus.tcp.client.rst:190
+#: ../../en/software/modbus.tcp.client.rst:211
+#: ../../en/software/modbus.tcp.client.rst:232
+#: ../../en/software/modbus.tcp.client.rst:253 065225b71bd14be5b3e94a88db2362d1
+#: 1067d4e3fe5c4d78a1079df2b5e22eab 249b88071dd84c75a11e8a0aafd89056
+#: 3b2cb0aa3de7431a8c759fb4879d964f 4a9583eeec24434eb32e6047a4e144e1
+#: 6ac954e3696046989ba97fb1c03008bd 750966938f254ba788674cb4e67a5d01
+#: c29246af55b6409c820f73f5fe4cd2d2
+msgid "Timeout in milliseconds."
+msgstr "超时时间（毫秒）。"
+
+#: ../../en/software/modbus.tcp.client.rst 0e25a0d9cfe841b0a6335bcc5854f1b9
+#: 15ca6ce6c14c4dcaaf91b2b345c95794 631c935d886a4a3c96aeaafd4a9c3948
+#: 85e138ca171c49418c13535a2f005321 8996e0c82c824c1fa738d1d0d2818a7b
+#: c2ba6c547ba5466784b532dae107c477 ca6e6046ea384c049fc491bcae409e0e
+#: d30434e460084d99875e4bbbe1631294
 msgid "Returns"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:75 7331aefd926541dfa6cfdd59efb86d26
+#: ../../en/software/modbus.tcp.client.rst:108 7ab2735d8e4747eea4f89a30f488e655
 msgid "A list of coils. The item of the list is True or False."
-msgstr ""
+msgstr "线圈列表。列表项为 True 或 False。"
 
-#: ../../en/software/modbus.tcp.client.rst:79 901290a33a784dcab969e45d81e0dee6
+#: ../../en/software/modbus.tcp.client.rst:112 20bcaba039b542e2b2872bcdb6a1667d
 msgid "|read_coils.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:4
-#: f2ea8e88383b42479d0570efd241bd09
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "read_coils.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:84 d608facfa39f43cd8df437782a9e6d9f
+#: ../../en/software/modbus.tcp.client.rst:122 a32a6782229f4816a3c877f62d5ec73d
 msgid "Read discrete inputs."
-msgstr ""
+msgstr "读取离散输入。"
 
-#: ../../en/software/modbus.tcp.client.rst:87 3ffb119e8716454b8147c2f4f1a9e8de
+#: ../../en/software/modbus.tcp.client.rst:125 43d206932f9844aa9410f0a30011f57b
 msgid "Start address of the discrete inputs. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "离散输入起始地址。地址范围为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:91 cbd35ce846c8491e9468f061de48e19f
+#: ../../en/software/modbus.tcp.client.rst:129 d3b581e6dfa04d3398e1e9b5fbf5ba4d
 msgid "A list of discrete inputs. The item of the list is True or False."
-msgstr ""
+msgstr "离散输入列表。列表项为 True 或 False。"
 
-#: ../../en/software/modbus.tcp.client.rst:95 d2b2b5c2e0474f358be910ef130a930f
+#: ../../en/software/modbus.tcp.client.rst:133 45f3a486f73e4526ae6be23ec9ec22fa
 msgid "|read_discrete_inputs.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:5
-#: b509c0bacc0e45b888a1f8776b001b95
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "read_discrete_inputs.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:100 cb711659efec4235851d3258f0f64bc3
+#: ../../en/software/modbus.tcp.client.rst:143 3c5140b41c214b6ba69770de372e2917
 msgid "Read holding registers."
-msgstr ""
+msgstr "读取保持寄存器。"
 
-#: ../../en/software/modbus.tcp.client.rst:103
-#: ../../en/software/modbus.tcp.client.rst:151
-#: ../../en/software/modbus.tcp.client.rst:183 4faf8818ed884ab4adc92f7837dbfda3
-#: c6848ef27292446c900bddaafe135914 e159dc587ba949f0983d96a736c1c3a7
+#: ../../en/software/modbus.tcp.client.rst:146
+#: ../../en/software/modbus.tcp.client.rst:209
+#: ../../en/software/modbus.tcp.client.rst:251 190ffa990a28441695a585e221411540
+#: 6cf276805c884310b9c5c05d093e974f b1c8f2fe9894431389c8a0ef187a3c88
 msgid "Start address of the holding registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "保持寄存器起始地址。地址范围为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:107 2677e3a6e7a34058be9776ef402b064f
+#: ../../en/software/modbus.tcp.client.rst:150 e025601259e84530b404244e9195ce2d
 msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "保持寄存器列表。列表项为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:111 4647556f62aa4d1c91649fe3ec53642d
+#: ../../en/software/modbus.tcp.client.rst:154 217ff651e4e046ab9bc63ab3603f73bc
 msgid "|read_holding_registers.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:6
-#: 0410a18219be430e97c546a5e9695798
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "read_holding_registers.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:116 8b2358a1968741aa9113ec6848123484
+#: ../../en/software/modbus.tcp.client.rst:164 630132536cad4764b6d2be70ed338928
 msgid "Read input registers."
-msgstr ""
+msgstr "读取输入寄存器。"
 
-#: ../../en/software/modbus.tcp.client.rst:119 9b38c89d15e140ecafdb3641930f60f0
+#: ../../en/software/modbus.tcp.client.rst:167 0d62feb3f0a94897b1a8e71aeeafe3f8
 msgid "Start address of the input registers. The address is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "输入寄存器起始地址。地址范围为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:123 c17cbcc851aa4400ac2f9c76cf0bd1b6
+#: ../../en/software/modbus.tcp.client.rst:171 e545b36d4295497c81c3721cd9565635
 msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "输入寄存器列表。列表项为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:127 bddb831c3ad5436fa2ef929d46f29b48
+#: ../../en/software/modbus.tcp.client.rst:175 be06cd2aa87844f28bc2b430cb643669
 msgid "|read_input_registers.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:7
-#: 8470351fa624404ea0b0c60734649e50
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "read_input_registers.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:132 da0d6edfc1bb4efea2060f5553c0e3e7
+#: ../../en/software/modbus.tcp.client.rst:185 4df03fa2e3f24adfa72f593362b2d176
 msgid "Write a single coil."
-msgstr ""
+msgstr "写单个线圈。"
 
-#: ../../en/software/modbus.tcp.client.rst:136 8060721979ca46d9a13e42b7aeb26c64
+#: ../../en/software/modbus.tcp.client.rst:189 706a3823230a4ef88259fd1a94e08377
 msgid "Value to write. The value is True or False."
-msgstr ""
+msgstr "要写入的值。值为 True 或 False。"
 
-#: ../../en/software/modbus.tcp.client.rst:139 9bd09b7078904c49aa06eb9f0753e4d9
+#: ../../en/software/modbus.tcp.client.rst:192 33c2e00b01324ed9b4cb4afc07fb61e0
 msgid "The value of the coil."
-msgstr ""
+msgstr "线圈的值。"
 
-#: ../../en/software/modbus.tcp.client.rst:143 a347536348ae41969e155a35e8d4a900
+#: ../../en/software/modbus.tcp.client.rst:196 8ba05717b8c54d39a01bdb78b0884e5c
 msgid "|write_single_coil.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:10
-#: 15f437b4be874a909ea1a54cdceb579a
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "write_single_coil.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:148 14eff4e8608e45a481de0b0889a4ca83
+#: ../../en/software/modbus.tcp.client.rst:206 e899a47136b3441f957e8fd72f020665
 msgid "Write a single register."
-msgstr ""
+msgstr "写单个寄存器。"
 
-#: ../../en/software/modbus.tcp.client.rst:152 581fcb593604437d93bca630acc97e9f
+#: ../../en/software/modbus.tcp.client.rst:210 b58e48e5334c46f69d376a04753b049f
 msgid "Value to write. The value is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "要写入的值。值为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:155 3203d47e844042ad9ccd704a1db21016
+#: ../../en/software/modbus.tcp.client.rst:213 7439f9aab4a440299eba6a4706446423
 msgid "the written value"
-msgstr ""
+msgstr "写入的值"
 
-#: ../../en/software/modbus.tcp.client.rst:159 399c7620f139462ea5e1f108c0a9805a
+#: ../../en/software/modbus.tcp.client.rst:217 0687d94e6f184a789731467fde99a024
 msgid "|write_single_register.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:11
-#: b223eefccab44ab8a4d4d856051bd8bc
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "write_single_register.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:164 df9b24e7b1e84ab183484c5cf0967b93
+#: ../../en/software/modbus.tcp.client.rst:227 81098aaa7e84470a9d37a295be390d9d
 msgid "Write multiple coils."
-msgstr ""
+msgstr "写多个线圈。"
 
-#: ../../en/software/modbus.tcp.client.rst:168 4e3d8ae135c94a33b71a0b5a690169fa
+#: ../../en/software/modbus.tcp.client.rst:231 c628246fc4a04c14af33ff95b65a7301
 msgid "Values to write. The item of the list is True or False."
-msgstr ""
+msgstr "要写入的值。列表项为 True 或 False。"
 
-#: ../../en/software/modbus.tcp.client.rst:171
-#: ../../en/software/modbus.tcp.client.rst:187 61aa14c3ddf84530865f0d1b13aa3e86
-#: 71e7a8850e154a5484435666f1b3dbb8
+#: ../../en/software/modbus.tcp.client.rst:234
+#: ../../en/software/modbus.tcp.client.rst:255 1cd62f05b0844d95ba41dec979b47c5a
+#: 5770b3fe42db412590f53cf9c6f7c7aa
 msgid "the written count."
-msgstr ""
+msgstr "写入的数量。"
 
-#: ../../en/software/modbus.tcp.client.rst:175 f4a93ee7b8b24e6aa904d68a6f03a01c
+#: ../../en/software/modbus.tcp.client.rst:238 9118c5ec3cf94d61832e9141a04fcbed
 msgid "|write_multiple_coils.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:8
-#: fca4f52b34194f63acb4cd90da0bf881
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "write_multiple_coils.png"
 msgstr ""
 
-#: ../../en/software/modbus.tcp.client.rst:180 40e7e8f6b9dc4e1eae74b09214147a05
+#: ../../en/software/modbus.tcp.client.rst:248 a670cf12d11242b7859b9aee4c8d5543
 msgid "Write multiple registers."
-msgstr ""
+msgstr "写多个寄存器。"
 
-#: ../../en/software/modbus.tcp.client.rst:184 8c82e87d1ece4cb891d6b524faaaf920
+#: ../../en/software/modbus.tcp.client.rst:252 0173b925da3a41e5a9748fe060ed9179
 msgid "Values to write. The item of the list is 0x0000 to 0xFFFF."
-msgstr ""
+msgstr "要写入的值。列表项为 0x0000 到 0xFFFF。"
 
-#: ../../en/software/modbus.tcp.client.rst:191 cf6db3659f6c467f84effbc3288d8326
+#: ../../en/software/modbus.tcp.client.rst:259 9015fe8e430b479c83edee502e6084e3
 msgid "|write_multiple_registers.png|"
 msgstr ""
 
 #: ../../en/refs/software.modbus.tcp.client.ref:9
-#: adb5526ab9714f3b9f1cbe945dab448a
+#: cd9abb645ce34e0997bd7419484246f5
 msgid "write_multiple_registers.png"
 msgstr ""
+
+#~ msgid "Micropython Example:"
+#~ msgstr ""
+
+#~ msgid "UIFLOW2 Example:"
+#~ msgstr ""
+
+#~ msgid "|example.png|"
+#~ msgstr ""
+
+#~ msgid "example.png"
+#~ msgstr ""
+
+#~ msgid "|cores3_tcp_client_example.m5f2|"
+#~ msgstr ""
+
+#~ msgid "Constructors"
+#~ msgstr ""
+
+#~ msgid "Create a ModbusTCPClient object."
+#~ msgstr ""
+
+#~ msgid "Parameters"
+#~ msgstr ""
+
+#~ msgid "Hostname or IP address."
+#~ msgstr ""
+
+#~ msgid "Port number."
+#~ msgstr ""
+
+#~ msgid "Verbose mode."
+#~ msgstr ""
+
+#~ msgid "UIFLOW2:"
+#~ msgstr ""
+
+#~ msgid "|init.png|"
+#~ msgstr ""
+
+#~ msgid "init.png"
+#~ msgstr ""
+
+#~ msgid "Methods"
+#~ msgstr ""
+
+#~ msgid "Connect to the Modbus server."
+#~ msgstr ""
+
+#~ msgid "|connect.png|"
+#~ msgstr ""
+
+#~ msgid "connect.png"
+#~ msgstr ""
+
+#~ msgid "Disconnect from the Modbus server."
+#~ msgstr ""
+
+#~ msgid "|disconnect.png|"
+#~ msgstr ""
+
+#~ msgid "disconnect.png"
+#~ msgstr ""
+
+#~ msgid "Read coils."
+#~ msgstr ""
+
+#~ msgid "Slave address. The address is 0 to 247."
+#~ msgstr ""
+
+#~ msgid "Start address of the coils. The address is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "Quantity of registers to read."
+#~ msgstr ""
+
+#~ msgid "Timeout in milliseconds."
+#~ msgstr ""
+
+#~ msgid "Returns"
+#~ msgstr ""
+
+#~ msgid "A list of coils. The item of the list is True or False."
+#~ msgstr ""
+
+#~ msgid "|read_coils.png|"
+#~ msgstr ""
+
+#~ msgid "read_coils.png"
+#~ msgstr ""
+
+#~ msgid "Read discrete inputs."
+#~ msgstr ""
+
+#~ msgid "Start address of the discrete inputs. The address is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "A list of discrete inputs. The item of the list is True or False."
+#~ msgstr ""
+
+#~ msgid "|read_discrete_inputs.png|"
+#~ msgstr ""
+
+#~ msgid "read_discrete_inputs.png"
+#~ msgstr ""
+
+#~ msgid "Read holding registers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Start address of the holding registers."
+#~ " The address is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "A list of holding registers. The item of the list is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "|read_holding_registers.png|"
+#~ msgstr ""
+
+#~ msgid "read_holding_registers.png"
+#~ msgstr ""
+
+#~ msgid "Read input registers."
+#~ msgstr ""
+
+#~ msgid "Start address of the input registers. The address is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "A list of input registers. The item of the list is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "|read_input_registers.png|"
+#~ msgstr ""
+
+#~ msgid "read_input_registers.png"
+#~ msgstr ""
+
+#~ msgid "Write a single coil."
+#~ msgstr ""
+
+#~ msgid "Value to write. The value is True or False."
+#~ msgstr ""
+
+#~ msgid "The value of the coil."
+#~ msgstr ""
+
+#~ msgid "|write_single_coil.png|"
+#~ msgstr ""
+
+#~ msgid "write_single_coil.png"
+#~ msgstr ""
+
+#~ msgid "Write a single register."
+#~ msgstr ""
+
+#~ msgid "Value to write. The value is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "the written value"
+#~ msgstr ""
+
+#~ msgid "|write_single_register.png|"
+#~ msgstr ""
+
+#~ msgid "write_single_register.png"
+#~ msgstr ""
+
+#~ msgid "Write multiple coils."
+#~ msgstr ""
+
+#~ msgid "Values to write. The item of the list is True or False."
+#~ msgstr ""
+
+#~ msgid "the written count."
+#~ msgstr ""
+
+#~ msgid "|write_multiple_coils.png|"
+#~ msgstr ""
+
+#~ msgid "write_multiple_coils.png"
+#~ msgstr ""
+
+#~ msgid "Write multiple registers."
+#~ msgstr ""
+
+#~ msgid "Values to write. The item of the list is 0x0000 to 0xFFFF."
+#~ msgstr ""
+
+#~ msgid "|write_multiple_registers.png|"
+#~ msgstr ""
+
+#~ msgid "write_multiple_registers.png"
+#~ msgstr ""
+
+#~ msgid "class ModbusTCPClient -- Modbus TCP client"
+#~ msgstr "class ModbusTCPClient -- Modbus TCP 客户端"
 

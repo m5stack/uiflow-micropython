@@ -1,35 +1,55 @@
 .. py:currentmodule:: modbus
 
-class ModbusTCPServer -- Modbus TCP server
-==========================================
+ModbusTCPServer
+===============
 
 .. include:: ../refs/software.modbus.tcp.server.ref
 
-
 ModbusTCPServer implements the Modbus TCP server. ModbusTCPServer support function codes 1 (Read Coils), 2 (Read Discrete Inputs), 3 (Read Holding Registers), 4 (Read Input Registers), 5 (Write Single Coil), 6 (Write Single Holding Register), 15 (Write Multiple Coils), and 16 (Write Multiple Holding Registers).
 
+UiFlow2 Example
+---------------
 
-Micropython Example:
+CoreS3 TCP Server
+^^^^^^^^^^^^^^^^^
 
-    .. literalinclude:: ../../../examples/softwave/modbus/cores3_tcp_server_example.py
+Open the |cores3_tcp_server_example.m5f2| project in UiFlow2.
+
+This example demonstrates how to use `ModbusTCPServer` to implement a Modbus TCP server.
+
+UiFlow2 Code Block:
+
+    |cores3_tcp_server_example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+CoreS3 TCP Server
+^^^^^^^^^^^^^^^^^
+
+This example demonstrates how to use `ModbusTCPServer` to implement a Modbus TCP server.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/software/modbus/cores3_tcp_server_example.py
         :language: python
         :linenos:
 
+Example output:
 
-UIFLOW2 Example:
+    None
 
-    |example.png|
+API
+---
 
+ModbusTCPServer
+^^^^^^^^^^^^^^^
 
-.. only:: builder_html
-
-    |cores3_tcp_server_example.m5f2|
-
-
-Constructors
-------------
-
-.. py:class:: modbus.ModbusTCPServer(host: str, port: int=502, verbose: bool=False)
+.. class:: ModbusTCPServer(host: str, port: int=502, verbose: bool=False)
 
     Create a ModbusTCPServer object.
 
@@ -37,345 +57,468 @@ Constructors
     :param int port: Port number.
     :param bool verbose: Verbose mode.
 
-    UIFLOW2:
+    UiFlow2 Code Block:
 
         |init.png|
 
+    MicroPython Code Block:
 
-Methods
--------
+        .. code-block:: python
 
-.. method:: ModbusTCPServer.start() -> None
+            from modbus import ModbusTCPServer
+            server = ModbusTCPServer('0.0.0.0', 502)
 
-    Start the Modbus RTU slave.
+    .. method:: ModbusTCPServer.start() -> None
 
-    UIFLOW2:
+        Start the Modbus RTU slave.
 
-        |start.png|
+        UiFlow2 Code Block:
 
+            |start.png|
 
-.. method:: ModbusTCPServer.stop() -> None
+        MicroPython Code Block:
 
-    Stop the Modbus RTU slave.
+            .. code-block:: python
 
-    UIFLOW2:
+                server.start()
 
-        |stop.png|
+    .. method:: ModbusTCPServer.stop() -> None
 
+        Stop the Modbus RTU slave.
 
-.. method:: ModbusTCPServer.add_coil(register: int, value: bool) -> None
+        UiFlow2 Code Block:
 
-    Add a coil to the modbus register dictionary.
+            |stop.png|
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is True or False.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |add_coil.png|
+                server.stop()
 
+    .. method:: ModbusTCPServer.add_coil(register: int, value: bool) -> None
 
-.. method:: ModbusTCPServer.add_discrete_input(register: int, value: bool) -> None
+        Add a coil to the modbus register dictionary.
 
-    Add a discrete input to the modbus register dictionary.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is True or False.
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is True or False.
+        UiFlow2 Code Block:
 
-    UIFLOW2:
+            |add_coil.png|
 
-        |add_discrete_input.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: ModbusTCPServer.add_holding_register(register: int, value: int) -> None
+                server.add_coil(0, False)
 
-    Add a holding register to the modbus register dictionary.
+    .. method:: ModbusTCPServer.add_discrete_input(register: int, value: bool) -> None
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+        Add a discrete input to the modbus register dictionary.
 
-    UIFLOW2:
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is True or False.
 
-        |add_holding_register.png|
+        UiFlow2 Code Block:
 
+            |add_discrete_input.png|
 
-.. method:: ModbusTCPServer.add_input_register(register: int, value: int) -> None
+        MicroPython Code Block:
 
-    Add an input register to the modbus register dictionary.
+            .. code-block:: python
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to add. The value is 0x0000 to 0xFFFF.
+                server.add_discrete_input(0, False)
 
-    UIFLOW2:
+    .. method:: ModbusTCPServer.add_holding_register(register: int, value: int) -> None
 
-        |add_input_register.png|
+        Add a holding register to the modbus register dictionary.
 
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF.
 
-.. method:: ModbusTCPServer.remove_coil(register: int) -> None
+        UiFlow2 Code Block:
 
-    Remove a coil from the modbus register dictionary.
+            |add_holding_register.png|
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |remove_coil.png|
+                server.add_holding_register(0, 0)
 
+    .. method:: ModbusTCPServer.add_input_register(register: int, value: int) -> None
 
-.. method:: ModbusTCPServer.remove_discrete_input(register: int) -> None
+        Add an input register to the modbus register dictionary.
 
-    Remove a discrete input from the modbus register dictionary.
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to add. The value is 0x0000 to 0xFFFF.
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        UiFlow2 Code Block:
 
-    UIFLOW2:
+            |add_input_register.png|
 
-        |remove_discrete_input.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: ModbusTCPServer.remove_holding_register(register: int) -> None
+                server.add_input_register(0, 0)
 
-    Remove a holding register from the modbus register dictionary.
+    .. method:: ModbusTCPServer.remove_coil(register: int) -> None
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        Remove a coil from the modbus register dictionary.
 
-    UIFLOW2:
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
 
-        |remove_holding_register.png|
+        UiFlow2 Code Block:
 
+            |remove_coil.png|
 
-.. method:: ModbusTCPServer.remove_input_register(register: int) -> None
+        MicroPython Code Block:
 
-    Remove an input register from the modbus register dictionary.
+            .. code-block:: python
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+                server.remove_coil(0)
 
-    UIFLOW2:
+    .. method:: ModbusTCPServer.remove_discrete_input(register: int) -> None
 
-        |remove_input_register.png|
+        Remove a discrete input from the modbus register dictionary.
 
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
 
-.. method:: ModbusTCPServer.get_coil(register: int) -> bool
+        UiFlow2 Code Block:
 
-    Get the coil value.
+            |remove_discrete_input.png|
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        MicroPython Code Block:
 
-    :return: The value of the coil.
+            .. code-block:: python
 
-    UIFLOW2:
+                server.remove_discrete_input(0)
 
-        |get_coil.png|
+    .. method:: ModbusTCPServer.remove_holding_register(register: int) -> None
 
+        Remove a holding register from the modbus register dictionary.
 
-.. method:: ModbusTCPServer.get_discrete_input(register: int) -> bool
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
 
-    Get the discrete input value.
+        UiFlow2 Code Block:
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+            |remove_holding_register.png|
 
-    :return: The value of the discrete input.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |get_discrete_input.png|
+                server.remove_holding_register(0)
 
+    .. method:: ModbusTCPServer.remove_input_register(register: int) -> None
 
-.. method:: ModbusTCPServer.get_holding_register(register: int) -> int
+        Remove an input register from the modbus register dictionary.
 
-    Get the holding register value.
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        UiFlow2 Code Block:
 
-    :return: The value of the holding register.
+            |remove_input_register.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |get_holding_register.png|
+            .. code-block:: python
 
+                server.remove_input_register(0)
 
-.. method:: ModbusTCPServer.get_input_register(register: int) -> int
+    .. method:: ModbusTCPServer.get_coil(register: int) -> bool
 
-    Get the input register value.
+        Get the coil value.
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
 
-    :return: The value of the input register.
+        :return: The value of the coil.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |get_input_register.png|
+            |get_coil.png|
 
+        MicroPython Code Block:
 
-.. method:: ModbusTCPServer.set_coil(register: int, value: bool) -> None
+            .. code-block:: python
 
-    Set the coil value.
+                server.get_coil(0)
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is True or False.
+    .. method:: ModbusTCPServer.get_discrete_input(register: int) -> bool
 
-    UIFLOW2:
+        Get the discrete input value.
 
-        |set_coil.png|
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
 
+        :return: The value of the discrete input.
 
-.. method:: ModbusTCPServer.set_multi_coils(register: int, value: list) -> None
+        UiFlow2 Code Block:
 
-    Set the multi coils value.
+            |get_discrete_input.png|
 
-    :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of True or False.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |set_multi_coils.png|
+                server.get_discrete_input(0)
 
+    .. method:: ModbusTCPServer.get_holding_register(register: int) -> int
 
-.. method:: ModbusTCPServer.set_discrete_input(register: int, value: bool) -> None
+        Get the holding register value.
 
-    Set the discrete input value.
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is True or False.
+        :return: The value of the holding register.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |set_discrete_input.png|
+            |get_holding_register.png|
 
+        MicroPython Code Block:
 
-.. method:: ModbusTCPServer.set_multi_discrete_input(register: int, value: list) -> None
+            .. code-block:: python
 
-    Set the multi discrete inputs value.
+                server.get_holding_register(0)
 
-    :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of True or False.
+    .. method:: ModbusTCPServer.get_input_register(register: int) -> int
 
-    UIFLOW2:
+        Get the input register value.
 
-        |set_multi_discrete_input.png|
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
 
+        :return: The value of the input register.
 
-.. method:: ModbusTCPServer.set_holding_register(register: int, value: int) -> None
+        UiFlow2 Code Block:
 
-    Set the holding register value.
+            |get_input_register.png|
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        MicroPython Code Block:
 
-    UIFLOW2:
+            .. code-block:: python
 
-        |set_holding_register.png|
+                server.get_input_register(0)
 
+    .. method:: ModbusTCPServer.set_coil(register: int, value: bool) -> None
 
-.. method:: ModbusTCPServer.set_multi_holding_register(register: int, value: list) -> None
+        Set the coil value.
 
-    Set the multi holding registers value.
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is True or False.
 
-    :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
+        UiFlow2 Code Block:
 
-    UIFLOW2:
+            |set_coil.png|
 
-        |set_multi_holding_register.png|
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. method:: ModbusTCPServer.set_input_register(register: int, value: int) -> None
+                server.set_coil(0, False)
 
-    Set the input register value.
+    .. method:: ModbusTCPServer.set_multi_coils(register: int, value: list) -> None
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param int value: Value to set. The value is 0x0000 to 0xFFFF.
+        Set the multi coils value.
 
-    UIFLOW2:
+        :param int register: address of the coils. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of True or False.
 
-        |set_input_register.png|
+        UiFlow2 Code Block:
 
+            |set_multi_coils.png|
 
-.. method:: ModbusTCPServer.set_multi_input_register(register: int, value: list) -> None
+        MicroPython Code Block:
 
-    Set the multi input registers value.
+            .. code-block:: python
 
-    :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
-    :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
+                server.set_multi_coils(0, [False, True])
 
-    UIFLOW2:
+    .. method:: ModbusTCPServer.set_discrete_input(register: int, value: bool) -> None
 
-        |set_multi_input_register.png|
+        Set the discrete input value.
 
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is True or False.
 
-.. method:: ModbusTCPServer.tick() -> None
+        UiFlow2 Code Block:
 
-    Modbus RTU slave tick function. This function should be called in the main loop.
+            |set_discrete_input.png|
 
-    UIFLOW2:
+        MicroPython Code Block:
 
-        |tick.png|
+            .. code-block:: python
 
+                server.set_discrete_input(0, False)
 
-.. method:: ModbusTCPServer.set_callback(func_code: int, handler) -> None
+    .. method:: ModbusTCPServer.set_multi_discrete_input(register: int, value: list) -> None
 
-    Set the callback function for the function code.
+        Set the multi discrete inputs value.
 
-    :param int func_code: Function code. The function code is 1 to 6, 15, 16. the symbol is defined in the modbus.ModbusTCPServer (\*_EVENT etc.).
-    :param handler: Callback function.
+        :param int register: address of the discrete inputs. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of True or False.
 
-    UIFLOW2:
+        UiFlow2 Code Block:
 
-        |read_coils_callback.png|
+            |set_multi_discrete_input.png|
 
-        |read_discrete_inputs_callback.png|
+        MicroPython Code Block:
 
-        |read_holding_registers_callback.png|
+            .. code-block:: python
 
-        |read_input_registers_callback.png|
+                server.set_multi_discrete_input(0, [False, True])
 
-        |write_multiple_coils_callback.png|
+    .. method:: ModbusTCPServer.set_holding_register(register: int, value: int) -> None
 
-        |write_multiple_registers_callback.png|
+        Set the holding register value.
 
-        |write_single_coil_callback.png|
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is 0x0000 to 0xFFFF.
 
-        |write_single_register_callback.png|
+        UiFlow2 Code Block:
 
+            |set_holding_register.png|
 
-Constants
----------
+        MicroPython Code Block:
 
-.. data:: ModbusTCPServer.READ_COILS_EVENT
+            .. code-block:: python
 
-    Function code 1 (Read Coils).
+                server.set_holding_register(0, 0)
 
+    .. method:: ModbusTCPServer.set_multi_holding_register(register: int, value: list) -> None
 
-.. data:: ModbusTCPServer.READ_DISCRETE_INPUTS_EVENT
+        Set the multi holding registers value.
 
-    Function code 2 (Read Discrete Inputs).
+        :param int register: address of the holding registers. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
 
+        UiFlow2 Code Block:
 
-.. data:: ModbusTCPServer.READ_HOLDING_REGISTERS_EVENT
+            |set_multi_holding_register.png|
 
-    Function code 3 (Read Holding Registers).
+        MicroPython Code Block:
 
+            .. code-block:: python
 
-.. data:: ModbusTCPServer.READ_INPUT_REGISTERS_EVENT
+                server.set_multi_holding_register(0, [0, 1])
 
-    Function code 4 (Read Input Registers).
+    .. method:: ModbusTCPServer.set_input_register(register: int, value: int) -> None
 
+        Set the input register value.
 
-.. data:: ModbusTCPServer.WRITE_SINGLE_COIL_EVENT
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param int value: Value to set. The value is 0x0000 to 0xFFFF.
 
-    Function code 5 (Write Single Coil).
+        UiFlow2 Code Block:
 
+            |set_input_register.png|
 
-.. data:: ModbusTCPServer.WRITE_SINGLE_HOLDING_REGISTER_EVENT
+        MicroPython Code Block:
 
-    Function code 6 (Write Single Holding Register).
+            .. code-block:: python
 
+                server.set_input_register(0, 0)
 
-.. data:: ModbusTCPServer.WRITE_MULTIPLE_COILS_EVENT
+    .. method:: ModbusTCPServer.set_multi_input_register(register: int, value: list) -> None
 
-    Function code 15 (Write Multiple Coils).
+        Set the multi input registers value.
 
+        :param int register: address of the input registers. The address is 0x0000 to 0xFFFF.
+        :param list value: Values to set. The value is a list of 0x0000 to 0xFFFF.
 
-.. data:: ModbusTCPServer.WRITE_MULTIPLE_HOLDING_REGISTERS_EVENT
+        UiFlow2 Code Block:
 
-    Function code 16 (Write Multiple Holding Registers).
+            |set_multi_input_register.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                server.set_multi_input_register(0, [0, 1])
+
+    .. method:: ModbusTCPServer.tick() -> None
+
+        Modbus RTU slave tick function. This function should be called in the main loop.
+
+        UiFlow2 Code Block:
+
+            |tick.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                server.tick()
+
+    .. method:: ModbusTCPServer.set_callback(func_code: int, handler) -> None
+
+        Set the callback function for the function code.
+
+        :param int func_code: Function code. The function code is 1 to 6, 15, 16. the symbol is defined in the modbus.ModbusTCPServer (\*_EVENT etc.).
+        :param handler: Callback function.
+
+        UiFlow2 Code Block:
+
+            |read_coils_callback.png|
+
+            |read_discrete_inputs_callback.png|
+
+            |read_holding_registers_callback.png|
+
+            |read_input_registers_callback.png|
+
+            |write_multiple_coils_callback.png|
+
+            |write_multiple_registers_callback.png|
+
+            |write_single_coil_callback.png|
+
+            |write_single_register_callback.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def cb(arg):
+                    pass
+                server.set_callback(1, cb)
+
+
+    .. data:: ModbusTCPServer.READ_COILS_EVENT
+
+        Function code 1 (Read Coils).
+
+
+    .. data:: ModbusTCPServer.READ_DISCRETE_INPUTS_EVENT
+
+        Function code 2 (Read Discrete Inputs).
+
+
+    .. data:: ModbusTCPServer.READ_HOLDING_REGISTERS_EVENT
+
+        Function code 3 (Read Holding Registers).
+
+
+    .. data:: ModbusTCPServer.READ_INPUT_REGISTERS_EVENT
+
+        Function code 4 (Read Input Registers).
+
+
+    .. data:: ModbusTCPServer.WRITE_SINGLE_COIL_EVENT
+
+        Function code 5 (Write Single Coil).
+
+
+    .. data:: ModbusTCPServer.WRITE_SINGLE_HOLDING_REGISTER_EVENT
+
+        Function code 6 (Write Single Holding Register).
+
+
+    .. data:: ModbusTCPServer.WRITE_MULTIPLE_COILS_EVENT
+
+        Function code 15 (Write Multiple Coils).
+
+
+    .. data:: ModbusTCPServer.WRITE_MULTIPLE_HOLDING_REGISTERS_EVENT
+
+        Function code 16 (Write Multiple Holding Registers).

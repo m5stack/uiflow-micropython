@@ -83,6 +83,7 @@ def setup():
         res
 
     M5.begin()
+    Widgets.setRotation(1)
     Widgets.fillScreen(0x222222)
     label0 = Widgets.Label("co", 65, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label1 = Widgets.Label("di", 135, 8, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
@@ -114,7 +115,7 @@ def setup():
     label23 = Widgets.Label("a42", 205, 205, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
     label28 = Widgets.Label("a43", 275, 205, 1.0, 0xFFFFFF, 0x222222, Widgets.FONTS.DejaVu18)
 
-    modbustcpclient_0 = modbus.ModbusTCPClient("192.168.8.48", 502, verbose=True)
+    modbustcpclient_0 = modbus.ModbusTCPClient("192.168.52.60", 5000, verbose=True)
     modbustcpclient_0.connect()
     hr = 0
     res = modbustcpclient_0.read_coils(1, 1000, 5, timeout=2000)
@@ -183,11 +184,11 @@ def loop():
     coil = not coil
     modbustcpclient_0.write_single_coil(1, 1000, coil, timeout=2000)
     modbustcpclient_0.write_single_register(1, 1000, hr, timeout=2000)
-    modbustcpclient_0.write_multiple_coils(1, 1000, [coil, coil, coil], timeout=2000)
+    modbustcpclient_0.write_multiple_coils(1, 1000, [coil, coil, coil, coil, coil], timeout=2000)
     label9.setText(str(coil))
     label10.setText(str(coil))
     label11.setText(str(coil))
-    modbustcpclient_0.write_multiple_registers(1, 1000, [hr, hr, hr], timeout=2000)
+    modbustcpclient_0.write_multiple_registers(1, 1000, [hr, hr, hr, hr, hr], timeout=2000)
     label19.setText(str(hr))
     label20.setText(str(hr))
     label21.setText(str(hr))
