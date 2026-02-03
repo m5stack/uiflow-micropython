@@ -4,6 +4,7 @@
 
 from .base import M5Base
 import lvgl as lv
+import warnings
 
 
 class M5Canvas(lv.canvas):
@@ -38,6 +39,8 @@ class M5Canvas(lv.canvas):
         self._cbuf = lv.draw_buf_create(w, h, color_format, 0)
         self.set_draw_buf(self._cbuf)
         self.set_pos(x, y)
+        self._w = w
+        self._h = h
 
         self.fill_bg(bg_c, bg_opa)
 
@@ -108,6 +111,8 @@ class M5Canvas(lv.canvas):
                 color = canvas_0.get_px_color(100, 100)
                 print(hex(color))  # Prints the color in hexadecimal format
         """
+        if x >= self._w or y >= self._h:
+            warnings.warn("x or y out of range")
         c = super().get_px(x, y)
         return c.red << 16 | c.green << 8 | c.blue
 
@@ -127,6 +132,8 @@ class M5Canvas(lv.canvas):
 
             .. code-block:: python
         """
+        if x >= self._w or y >= self._h:
+            warnings.warn("x or y out of range")
         c = super().get_px(x, y)
         return c.alpha
 
