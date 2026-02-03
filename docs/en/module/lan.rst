@@ -107,12 +107,14 @@ class LANModule
         Get the LAN connect status.
  
         :return: LAN status code, possible values:
-            - network.ETH_INITIALIZED: Ethernet interface initialized
-            - network.ETH_STARTED: Ethernet driver started
-            - network.ETH_STOPPED: Ethernet driver stopped
-            - network.ETH_CONNECTED: Physical link established (cable connected)
-            - network.ETH_DISCONNECTED: Physical link lost (cable disconnected)
-            - network.ETH_GOT_IP: IP address obtained, network ready
+
+            - network.ETH_INITIALIZED(0): Ethernet interface initialized
+            - network.ETH_STARTED(1): Ethernet driver started
+            - network.ETH_STOPPED(2): Ethernet driver stopped
+            - network.ETH_CONNECTED(3): Physical link established (cable connected)
+            - network.ETH_DISCONNECTED(4): Physical link lost (cable disconnected)
+            - network.ETH_GOT_IP(5): IP address obtained, network ready
+            
         :rtype: int 
         
         UiFlow2 Code Block:
