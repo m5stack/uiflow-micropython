@@ -105,6 +105,38 @@ class M5Button(lv.button):
         """
         return self.label.get_text()
 
+    def set_flag(self, flag: int, en: bool) -> None:
+        if flag == lv.obj.FLAG.SCROLLABLE:
+            self.label.set_long_mode(lv.label.LONG_MODE.SCROLL if en else lv.label.LONG_MODE.WRAP)
+        else:
+            super().set_flag(flag, en)
+
+    def toggle_flag(self, flag: int) -> None:
+        if flag == lv.obj.FLAG.SCROLLABLE:
+            current_mode = self.label.get_long_mode()
+            new_mode = (
+                lv.label.LONG_MODE.WRAP
+                if current_mode == lv.label.LONG_MODE.SCROLL
+                else lv.label.LONG_MODE.SCROLL
+            )
+            self.label.set_long_mode(new_mode)
+        else:
+            super().toggle_flag(flag)
+
+    def set_size(self, w: int, h: int) -> None:
+        super().set_size(w, h)
+        lv.refr_now(None)
+
+    def set_height(self, height: int) -> None:
+        self.label.set_height(height)
+        super().set_height(height)
+        lv.refr_now(None)
+
+    def set_width(self, width: int) -> None:
+        self.label.set_width(width)
+        super().set_width(width)
+        lv.refr_now(None)
+
     def set_shadow(self, color, opa, align, offset_x, offset_y):
         if isinstance(color, int):
             color = lv.color_hex(color)
