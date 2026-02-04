@@ -87,4 +87,4 @@ Cat1Unit
 .. autoclass:: unit.cat1.Cat1Unit
     :members:
 
-See :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>` for more details.
+See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details.
