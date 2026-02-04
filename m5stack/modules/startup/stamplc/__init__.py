@@ -33,22 +33,29 @@ class StampPLC_Startup:
         dns: str = "",
         timeout: int = 60,
     ) -> None:
+        M5.Lcd.clear(0x333333)
         self._net_if = Startup(network_type=net_mode)  # type: ignore
         if net_mode == "WIFI":
             self._net_if.connect_network(
                 ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
             )
         elif net_mode == "ETH":
-            from stamplc import PoEStamPLC
+            try:
+                from stamplc import PoEStamPLC
 
-            lan_if = PoEStamPLC()
-            self._net_if.connect_network(ssid, pswd, lan_if, protocol, ip, netmask, gateway, dns)
+                lan_if = PoEStamPLC()
+                self._net_if.connect_network(
+                    ssid, pswd, lan_if, protocol, ip, netmask, gateway, dns
+                )
+            except Exception:
+                M5.Lcd.print(
+                    "Failed to initialize StamPLC-PoE, Please check PoE module connect status"
+                )
+                raise OSError(
+                    "Failed to initialize StamPLC-PoE, Please check PoE module connect status"
+                )
 
-        # M5.Lcd.setRotation(0)
-        # M5.Lcd.drawImage(LOGO_IMG)
         time.sleep_ms(200)
-        M5.Lcd.clear(0x333333)
-
         fw = framework.Framework()
         setting_app = SettingsApp(None, data=self._net_if)
         dev_app = DevApp(None, data=self._net_if)
