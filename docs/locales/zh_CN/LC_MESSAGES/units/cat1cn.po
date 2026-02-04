@@ -1,168 +1,167 @@
-# SOME DESCRIPTIVE TITLE.  
-# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd  
-# This file is distributed under the same license as the UIFlow2 Programming  
-# Guide package.  
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.  
-#  
-#, fuzzy  
-msgid ""  
-msgstr ""  
-"Project-Id-Version: UIFlow2 Programming Guide \n"  
-"Report-Msgid-Bugs-To: \n"  
-"POT-Creation-Date: 2025-11-27 15:24+0800\n"  
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"  
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"  
-"Language: zh_CN\n"  
-"Language-Team: zh_CN <LL@li.org>\n"  
-"Plural-Forms: nplurals=1; plural=0;\n"  
-"MIME-Version: 1.0\n"  
-"Content-Type: text/plain; charset=utf-8\n"  
-"Content-Transfer-Encoding: 8bit\n"  
-"Generated-By: Babel 2.16.0\n"  
-  
-#: ../../en/units/cat1cn.rst:2 d090baa3e4c745deaa9f99632eb582b7  
-msgid "Cat1CN Unit"  
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
 msgstr ""
-  
-#: ../../en/units/cat1cn.rst:8 1c266de4c39a4dabbc8cf268d9efd8ca  
-msgid "This is the driver library for the Cat1CN Unit to accept and send data."  
-msgstr "这是用于 Cat1CN Unit收发数据的驱动库。"  
-  
-#: ../../en/units/cat1cn.rst:10 1935cbed7b70489faaebfae6e52ae3d4  
-msgid "Support the following products:"  
-msgstr "支持如下产品："  
-  
-#: ../../en/units/cat1cn.rst:12 1a753e0704c44641a037e75ce0693d54  
-msgid "|Cat1CNUnit|"  
-msgstr ""  
-  
-#: ../../en/refs/unit.cat1cn.ref 370fa4b905c84ad095a1885927d8159c  
-msgid "Cat1CNUnit"  
-msgstr "Cat1CNUnit"  
-  
-#: ../../en/units/cat1cn.rst:15 02e45146365041fea576d357e7c75743  
-msgid "UiFlow2 Example"  
-msgstr "UiFlow2 示例"  
-  
-#: ../../en/units/cat1cn.rst:17 ../../en/units/cat1cn.rst:34  
-#: 04da42b42d2a45e4a254d4ec3e06ad26 d6f0ceaf9a264e6ea12a0c737b1388bb  
-msgid "HTTP Example"  
-msgstr "HTTP 示例"  
-  
-#: ../../en/units/cat1cn.rst:19 ccd6209e855740c28fae0f31e80086d3  
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-04 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../en/units/cat1cn.rst:2 93b4ff5a796745bebfa59403c2072720
+msgid "Cat1CN Unit"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:8 78a800aa72654ed194deedf4a27b4a09
+msgid "This is the driver library for the Cat1CN Unit to accept and send data."
+msgstr "这是用于 Cat1CN Unit收发数据的驱动库。"
+
+#: ../../en/units/cat1cn.rst:10 f842401312c845b8b3629a6f78061765
+msgid "Support the following products:"
+msgstr "支持如下产品："
+
+#: ../../en/units/cat1cn.rst:12 ffa5df718e4d4838819bc10a6c38823f
+msgid "|Cat1CNUnit|"
+msgstr ""
+
+#: ../../en/refs/unit.cat1cn.ref 2f873b500cbe40b9aba6240ff55595f8
+msgid "Cat1CNUnit"
+msgstr "Cat1CNUnit"
+
+#: ../../en/units/cat1cn.rst:15 f6eb40076537457fb77354754174d5d1
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../en/units/cat1cn.rst:17 ../../en/units/cat1cn.rst:34
+#: 7e165763b92841ce9f88c0d75a31510b c537dea3715f4715992c3b56200bb289
+msgid "HTTP Example"
+msgstr "HTTP 示例"
+
+#: ../../en/units/cat1cn.rst:19 2392a15281ee4bf8b7543f905938871f
 msgid "Open the |cat1cn_core2_http_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cat1cn_core2_http_example.m5f2| 项目。"
-  
-#: ../../en/units/cat1cn.rst:21 ../../en/units/cat1cn.rst:36  
-#: 05014c1a5fb746a8a833da497b001340 50fa61d957c04cd5af53dc8decd3ea6c  
-msgid "This example shows how to send HTTP request."  
-msgstr "本示例演示如何发送 HTTP 请求。"  
-  
-#: ../../en/units/cat1cn.rst:23 ../../en/units/cat1cn.rst:55  
-#: 24e0ae0ab0604f8883296614b9160d64 6d73b5da19054b4c82754afaeb7d5ce3  
-#: 6fd2fa227e0d4bc5b790cbb693178f00 of unit.cat1.Cat1Unit:8  
-msgid "UiFlow2 Code Block:"  
-msgstr "UiFlow2 代码块："  
-  
-#: ../../en/units/cat1cn.rst:25 2e1674ae9f2e4879a8a8b64312643669  
-msgid "|http_example.png|"  
-msgstr ""  
-  
-#: ../../en/refs/unit.cat1cn.ref:8 639f1f7bf7ef4a14bdbbaea77f98f8e3  
-msgid "http_example.png"  
-msgstr ""  
-  
-#: ../../en/units/cat1cn.rst:27 ../../en/units/cat1cn.rst:44  
-#: ../../en/units/cat1cn.rst:59 ../../en/units/cat1cn.rst:77  
-#: 93a6ca9191154a1580840ac585fe43a7 98cef784eacd448c8418af325fcb619e  
-#: cc2b7c9f43fe466bbd888f1e90900a99 fdb4f55914db4941b7982a547109cfd2  
-msgid "Example output:"  
-msgstr "示例输出："  
-  
-#: ../../en/units/cat1cn.rst:29 ../../en/units/cat1cn.rst:46  
-#: ../../en/units/cat1cn.rst:61 ../../en/units/cat1cn.rst:79  
-#: 4b03c061b1ff4d4d8a2d5ffa5992a319 815827aeb6e842ca80173750822db14a  
-#: 88c605de8fe24fdf9b54d5aa942ea55c e4475aead4654c549142bfac536ecd70  
-msgid "None"  
-msgstr ""  
-  
-#: ../../en/units/cat1cn.rst:32 ../../en/units/cat1cn.rst:64  
-#: 813c90ee606148aca448ade17b6bdeca e5f0f00806b74ee5a3cbbd897447ba9f  
-msgid "MicroPython Example"  
-msgstr "MicroPython 示例"  
-  
-#: ../../en/units/cat1cn.rst:38 ../../en/units/cat1cn.rst:71  
-#: b2ac2f25bc3c4c82a7ff378cbeb95319 babf39bfaf7b45a4aaaaca4b6c1ed1b4  
-#: ef7abd146b7546ccba00ba82c0c2a4b1 of unit.cat1.Cat1Unit:12  
-msgid "MicroPython Code Block:"  
-msgstr "MicroPython 代码块："  
-  
-#: ../../en/units/cat1cn.rst:49 ../../en/units/cat1cn.rst:67  
-#: d66c76573c3c4f50aa27106c70c43d28 d68eaae436ce48b880b104aa2c706718  
-msgid "MQTT Example"  
-msgstr "MQTT 示例"  
-  
-#: ../../en/units/cat1cn.rst:51 3dce062a869441a6807f7cde2a8fb4c4  
+
+#: ../../en/units/cat1cn.rst:21 ../../en/units/cat1cn.rst:36
+#: 40bc35d308054a789623ac68a16b9b4f ae845963bf594a2db01ce6fe8dcc1a66
+msgid "This example shows how to send HTTP request."
+msgstr "本示例演示如何发送 HTTP 请求。"
+
+#: ../../en/units/cat1cn.rst:23 ../../en/units/cat1cn.rst:55
+#: 0af675c391644429a6b2616f6ca9164a 3c7897f59c0f4c8ea9b2eb8b0b393973
+#: a1c43c9af98f434b9953bcc58c886e98 of unit.cat1.Cat1Unit:8
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../en/units/cat1cn.rst:25 35897e655a2840c8858c0e0f14fc7481
+msgid "|http_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cat1cn.ref:8 9697d50e025f48d195b62ce769f4228f
+msgid "http_example.png"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:27 ../../en/units/cat1cn.rst:44
+#: ../../en/units/cat1cn.rst:59 ../../en/units/cat1cn.rst:77
+#: 106677e87fa44373a35e28998077353c 1fc4253340574f8cb08e51b2f6c3fb11
+#: c0418f5ee6874be4bb77568580420676 f232981e374d482ab2dd96087fcd0bd4
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../en/units/cat1cn.rst:29 ../../en/units/cat1cn.rst:46
+#: ../../en/units/cat1cn.rst:61 ../../en/units/cat1cn.rst:79
+#: 0b069b1765914190b9e2bc8561be2b76 2d919dacecc648a5975431d1f07bd64b
+#: 89d14c811eb84089b4187f65020cce7b a268b78b318440b1a0c927dec2b3b6c8
+msgid "None"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:32 ../../en/units/cat1cn.rst:64
+#: 580f0180304c4f0bbcabcf3c7a76cdf9 e6541f930fc7465cad31c87d25bbd2c9
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../en/units/cat1cn.rst:38 ../../en/units/cat1cn.rst:71
+#: 60f8ba5dddae41b799af0bc70540cedf 8266138e7073493482e13b15d50cd941
+#: 9748f87540214cf8bd0026d056587fe2 of unit.cat1.Cat1Unit:12
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../en/units/cat1cn.rst:49 ../../en/units/cat1cn.rst:67
+#: 1e4e0c07852c43e8b2de75395011e878 851aa10edfc74e22aaeefa9783b0f55e
+msgid "MQTT Example"
+msgstr "MQTT 示例"
+
+#: ../../en/units/cat1cn.rst:51 a6ca48da6da34d5c98a3d9c8ab76d022
 msgid "Open the |cat1cn_core2_mqtt_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cat1cn_core2_mqtt_example.m5f2| 项目。"
-  
-#: ../../en/units/cat1cn.rst:53 ../../en/units/cat1cn.rst:69  
-#: 016ba7d60a644618b84765c927df58a7 47434b71ff4c4fc99ca0e6d19a1cf02f  
-msgid "This example shows how to send MQTT message."  
-msgstr "本示例演示如何发送 MQTT 消息。"  
-  
-#: ../../en/units/cat1cn.rst:57 787547af45254b3897699d879821005f  
-msgid "|mqtt_example.png|"  
-msgstr ""  
-  
-#: ../../en/refs/unit.cat1cn.ref:9 1d93e206984a46c0b5d07bd3a9c26f18  
-msgid "mqtt_example.png"  
-msgstr ""  
-  
-#: ../../en/units/cat1cn.rst:82 d2b821232007472eb7d0096ddc77ceae  
-msgid "**API**"  
-msgstr ""  
-  
-#: ../../en/units/cat1cn.rst:85 e643e111b7864cce909d195ab0d01cf5  
-msgid "Cat1Unit"  
-msgstr "Cat1Unit"  
-  
-#: 55d352613e374cb5abaf63efaec54b67 of unit.cat1.Cat1Unit:1  
-msgid ""  
-"Bases: :py:class:`~driver.simcom.ml307r.ML307R`, "  
-":py:class:`~driver.simcom.common.Modem`"  
-msgstr ""  
-  
-#: b65f377e9f014b98a8d880375b1fdb37 of unit.cat1.Cat1Unit:1  
-msgid "Create an Cat1Unit object"  
-msgstr "创建一个 Cat1Unit 对象"  
-  
-#: 3c9f42a905ef40fcb80bd1cfb2b090ad of unit.cat1.Cat1Unit  
-msgid "Parameters"  
-msgstr "参数"  
-  
-#: a1753a8ae172459f9af3309d2815e7a8 of unit.cat1.Cat1Unit:3  
-msgid "The UART ID to use (0, 1, or 2). Default is 2."  
-msgstr "要使用的 UART ID（0、1 或 2），默认值为 2。"  
-  
-#: 1149d99befd048b48278040fee4325de of unit.cat1.Cat1Unit:4  
-msgid "A list or tuple containing the TX and RX pin numbers."  
-msgstr "包含 TX 和 RX 引脚编号的列表或元组。"  
-  
-#: 456dd282a6944dfcbc189ab7e36b26b2 of unit.cat1.Cat1Unit:6  
-msgid "Enable verbose output for debugging. Default is False."  
-msgstr "启用详细调试输出。默认值为 False。"  
-  
-#: 3680f5f00c2b4c808af64aaa0635997e of unit.cat1.Cat1Unit:10  
-msgid "|init.png|"  
-msgstr ""  
-  
-#: ../../en/refs/unit.cat1cn.ref:6 7009ec890dc34621addc10de518785b3  
-msgid "init.png"  
-msgstr ""  
-  
-#: ../../en/units/cat1cn.rst:90 c4c3b8980b424b0e813ab68e8a4f3814  
-msgid ""  
-"See :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>` for more "  
-"details."  
-msgstr "更多细节请参见 :ref:`unit.NBIOTUnit.Methods <unit.NBIOTUnit.Methods>`。"
+
+#: ../../en/units/cat1cn.rst:53 ../../en/units/cat1cn.rst:69
+#: a26e33d6941647bb88601c9affae224c cbf130ff79a14e60a94b826e7875e7e1
+msgid "This example shows how to send MQTT message."
+msgstr "本示例演示如何发送 MQTT 消息。"
+
+#: ../../en/units/cat1cn.rst:57 2140cf3420c047ebb7c36f2d1d471d40
+msgid "|mqtt_example.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cat1cn.ref:9 eb26079f43db432e9716c31c1e96b550
+msgid "mqtt_example.png"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:82 722c99e9ea474cc7956ef58fef5e0059
+msgid "**API**"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:85 6eb33a4d48ea4b5cbd5b07d55dde44e1
+msgid "Cat1Unit"
+msgstr "Cat1Unit"
+
+#: a39305656b55462cb5818e0ac2897113 of unit.cat1.Cat1Unit:1
+msgid ""
+"Bases: :py:class:`~driver.simcom.ml307r.ML307R`, "
+":py:class:`~driver.simcom.common.Modem`"
+msgstr ""
+
+#: 3e4dac9cadd944f7bedcde116e8b0648 of unit.cat1.Cat1Unit:1
+msgid "Create an Cat1Unit object"
+msgstr "创建一个 Cat1Unit 对象"
+
+#: 5730b09fbe1e44fb813f90cb07bf493d of unit.cat1.Cat1Unit
+msgid "Parameters"
+msgstr "参数"
+
+#: 804c97b2ff924ad3af6d187879b31912 of unit.cat1.Cat1Unit:3
+msgid "The UART ID to use (0, 1, or 2). Default is 2."
+msgstr "要使用的 UART ID（0、1 或 2），默认值为 2。"
+
+#: 8937eabdd85146a59ee05da605628ee7 of unit.cat1.Cat1Unit:4
+msgid "A list or tuple containing the TX and RX pin numbers."
+msgstr "包含 TX 和 RX 引脚编号的列表或元组。"
+
+#: e8a92eaf8c0e438bb48071daeca09f79 of unit.cat1.Cat1Unit:6
+msgid "Enable verbose output for debugging. Default is False."
+msgstr "启用详细调试输出。默认值为 False。"
+
+#: b383ea66af2941cbbbebb72813572df4 of unit.cat1.Cat1Unit:10
+msgid "|init.png|"
+msgstr ""
+
+#: ../../en/refs/unit.cat1cn.ref:6 80591fa2368a4caf9b2fc1b429f0d320
+msgid "init.png"
+msgstr ""
+
+#: ../../en/units/cat1cn.rst:90 6f9a4d95605c4ed6ad65db97872b1460
+msgid "See :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>` for more details."
+msgstr "更多细节请参见 :class:`NBIOTUnit <unit.nbiot.NBIOTUnit>`。"
+
