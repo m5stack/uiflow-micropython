@@ -29,6 +29,8 @@ Example output:
 IMU Sensor
 ^^^^^^^^^^
 
+Open the |sticks3_imu_example.m5f2| project in UiFlow2.
+
 This example demonstrates the built-in IMU (Inertial Measurement Unit) sensor functionality. It reads and displays accelerometer and gyroscope data in real-time, showing acceleration values in m/s² and gyroscope values in degrees per second (dps).
 
 UiFlow2 Code Block:
@@ -44,7 +46,7 @@ Power Management
 
 Open the |sticks3_power_example.m5f2| project in UiFlow2.
 
-This example demonstrates power management features including battery voltage monitoring, VBUS voltage reading, charging status detection, and control of battery charging and external output. Press BtnA to toggle battery charging, and press BtnB to toggle Grove output.
+This example demonstrates power management features including battery voltage monitoring, VBUS voltage reading, charging status detection, and control of battery charging and external output. Press BtnA to toggle external output (5V OUT), and press BtnB to toggle battery charging.
 
 UiFlow2 Code Block:
 
@@ -59,7 +61,10 @@ IR Transmission
 
 Open the |sticks3_ir_tx_example.m5f2| project in UiFlow2.
 
-This example demonstrates infrared (IR) transmission functionality. When button A is pressed, it sends IR data with a specified address and data value.
+This example demonstrates infrared (IR) transmission functionality. When button A is pressed, it sends IR data with a specified address and data value. The example displays the address and data being transmitted.
+
+.. NOTE::
+   When using IR transmission, the external output mode should be enabled.
 
 UiFlow2 Code Block:
 
@@ -69,29 +74,34 @@ Example output:
 
     None
 
+IR Reception
+^^^^^^^^^^^^
+
+Open the |sticks3_ir_rx_example.m5f2| project in UiFlow2.
+
+This example demonstrates infrared (IR) reception functionality using NEC decode protocol. When IR data is received, it displays the address and data values on the screen.
+
+.. NOTE::
+   When using IR reception, the PA (Power Amplifier) should be turned off and the external output mode should be enabled.
+
+UiFlow2 Code Block:
+
+    |sticks3_ir_rx_example.png|
+
+Example output:
+
+    None
+
 Audio Recording and Playback
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Open the |sticks3_audio_example.m5f2| project in UiFlow2.
 
 This example demonstrates audio recording and playback functionality. Press button A to start recording for 5 seconds. After recording completes, the audio will automatically play back. The example displays the recording status and countdown timer.
 
 UiFlow2 Code Block:
 
     |sticks3_audio_example.png|
-
-Example output:
-
-    None
-
-Speaker
-^^^^^^^
-
-Open the |sticks3_speaker_example.m5f2| project in UiFlow2.
-
-This example demonstrates the built-in speaker functionality. Press button A to play a tone at a random frequency between 600Hz and 1600Hz. The example displays the current frequency on the screen.
-
-UiFlow2 Code Block:
-
-    |sticks3_speaker_example.png|
 
 Example output:
 
@@ -148,7 +158,7 @@ Example output:
 Power Management
 ^^^^^^^^^^^^^^^^
 
-This example demonstrates power management features including battery voltage monitoring, VBUS voltage reading, charging status detection, and control of battery charging and external output. Press BtnA to toggle battery charging, and press BtnB to toggle Grove output.
+This example demonstrates power management features including battery voltage monitoring, VBUS voltage reading, charging status detection, and control of battery charging and external output. Press BtnA to toggle external output (5V OUT), and press BtnB to toggle battery charging.
 
 MicroPython Code Block:
 
@@ -165,9 +175,30 @@ IR Transmission
 
 This example demonstrates infrared (IR) transmission functionality. When button A is pressed, it sends IR data with a specified address and data value. The example displays the address and data being transmitted.
 
+.. NOTE::
+   When using IR transmission, the external output mode should be enabled.
+
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_ir_tx_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+IR Reception
+^^^^^^^^^^^^
+
+This example demonstrates infrared (IR) reception functionality using NEC decode protocol. When IR data is received, it displays the address and data values on the screen in real-time.
+
+.. NOTE::
+   When using IR reception, the PA (Power Amplifier) should be turned off and the external output mode should be enabled.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_ir_rx_example.py
         :language: python
         :linenos:
 
@@ -184,21 +215,6 @@ After recording completes, the audio will automatically play back. The example d
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_audio_example.py
-        :language: python
-        :linenos:
-
-Example output:
-
-    None
-
-Speaker
-^^^^^^^
-
-This example demonstrates the built-in speaker functionality. Press button A to play a tone at a random frequency between 600Hz and 1600Hz. The example displays the current frequency on the screen.
-
-MicroPython Code Block:
-
-    .. literalinclude:: ../../../examples/controllers/sticks3/sticks3_speaker_example.py
         :language: python
         :linenos:
 

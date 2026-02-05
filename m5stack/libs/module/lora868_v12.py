@@ -264,7 +264,7 @@ class LoRa868V12Module:
         """
         if isinstance(packet, str):
             packet = bytes(packet, "utf-8")
-        elif isinstance(packet, list | tuple):
+        elif isinstance(packet, (list, tuple)):
             packet = bytes(packet)
         elif isinstance(packet, int):
             packet = bytes([packet])

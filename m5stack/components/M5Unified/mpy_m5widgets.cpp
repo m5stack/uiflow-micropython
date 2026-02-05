@@ -130,11 +130,17 @@ typedef struct _widgets_label_obj_t {
     widgets_size_t size;
 }widgets_label_obj_t;
 
-static void m5widgets_label_erase_helper(const widgets_label_obj_t *self) {
+static void m5widgets_label_erase_helper(const widgets_label_obj_t *self, float text_size = -1.0f) {
+    // Use provided text_size, or fall back to stored text_size
+    // Use -1.0f as sentinel value to indicate "use stored text_size"
+    float erase_size = (text_size > 0.0f) ? text_size : self->size.text_size;
+    auto stash_style = self->gfx->getTextStyle();
+    self->gfx->setTextSize(erase_size);
     self->gfx->fillRect(self->text_pos.x0, self->text_pos.y0,
         self->gfx->textWidth(self->text, self->font),
         self->gfx->fontHeight(self->font),
         _bg_color_g);
+    self->gfx->setTextStyle(stash_style);
 }
 
 static void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
@@ -250,8 +256,11 @@ mp_obj_t m5widgets_label_setSize(size_t n_args, const mp_obj_t *pos_args, mp_map
 
     widgets_label_obj_t *self = (widgets_label_obj_t *)pos_args[0];
     auto stash_style = self->gfx->getTextStyle();
-    m5widgets_label_erase_helper(self);
-    self->size.text_size = mp_obj_get_float(args[ARG_text_sz].u_obj);
+    // Use old text_size for erasing to ensure we clear the larger area
+    float old_text_size = self->size.text_size;
+    float new_text_size = mp_obj_get_float(args[ARG_text_sz].u_obj);
+    m5widgets_label_erase_helper(self, old_text_size);
+    self->size.text_size = new_text_size;
     m5widgets_label_draw_helper(self);
     self->gfx->setTextStyle(stash_style);
     return mp_const_none;

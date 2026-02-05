@@ -584,12 +584,14 @@ class Fingerprint2Unit:
         """
         score = 0
         rx = self.send_cmd(b"\x03")
-        if rx and len(rx) == 16 and rx[0] == 0xEF and rx[1] == 0x01 and rx[6] == 0x07:
+        if rx and len(rx) == 14 and rx[0] == 0xEF and rx[1] == 0x01 and rx[6] == 0x07:
             score = int.from_bytes(rx[10:12], "big")
             if rx[9] == 0x00:
                 return (True, score)
+            else:
+                return (False, score)
         else:
-            return (False, score)
+            return (False, 0)
 
     def is_connected(self) -> bool:
         """Check whether the fingerprint module is connected.

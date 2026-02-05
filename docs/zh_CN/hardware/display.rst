@@ -1,67 +1,81 @@
 :mod:`Display`   
-=====================================
+==============
 显示屏显示库
+
+.. include:: ../refs/hardware.display.ref
 
 .. module:: Display
     :synopsis: A lcd display library
 
-Micropython 案例 
-------------------------------
+UiFlow2 示例
+------------
 
-绘图测试
-++++++++++++++++++++++++++++
+基本绘图
+^^^^^^^
 
-::
+在 UiFlow2 中打开 |cores3_draw_test_example.m5f2| 项目。
 
-    import M5
-    from M5 import Display
-    import random
-    import time
+此示例演示了 Display 的基本绘图功能，包括文本、图片、二维码以及各种形状。
 
-    M5.begin()
+UiFlow2 代码块：
 
-    print("rotation: ", Display.getRotation())
-    print("color depth: ", Display.getColorDepth())
-    print("w: %d, h: %d"%(Display.width(), Display.height()))
+    |cores3_draw_test_example.png|
 
-    Display.setRotation(1)
-    Display.clear(0)
-    Display.setTextColor(fgcolor=0x0000FF, bgcolor=0)
-    Display.setFont(M5.Lcd.FONTS.EFontCN24)
-    Display.setCursor(220, 3)
-    Display.print("你好",color=0xFF0000)
+示例输出：
 
-    Display.drawImage("res/img/uiflow.jpg", 0, 0)
-    Display.drawJpg("res/img/default.jpg", 60, 0)
+    无
 
-    Display.drawQR("Hello", 220, 40, 100)
+画布使用
+^^^^^^^
 
-    Display.drawCircle(30, 80, 20, 0x0000FF)
-    Display.fillCircle(80, 80, 20, 0x0000FF)
+在 UiFlow2 中打开 |cores3_display_canvas_example.m5f2| 项目。
 
-    Display.drawEllipse(60, 140, 50, 30, 0x00FF00)
-    Display.fillEllipse(60, 140, 30, 20, 0xFFFF00)
+此示例演示了如何创建和使用画布进行绘图。它创建一个 2 位颜色深度的画布，在上面绘制圆形，然后将画布推送到显示屏。
 
-    Display.drawLine(x0=115, y0=10, x1=115, y1=60, color=0xFF0000)
+UiFlow2 代码块：
 
-    Display.drawRect(125, 10, 40, 30, 0xFF0000)
-    Display.fillRect(125, 50, 40, 30, 0x00FF00)
+    |cores3_display_canvas_example.png|
 
-    Display.drawRoundRect(120, 90, 50, 40, 10, 0xFF0000)
-    Display.fillRoundRect(125, 95, 40, 30, 10, 0x00FF00)
+示例输出：
 
-    Display.drawTriangle(135, 150, 110, 190, 160, 190, 0x00FF00)
-    Display.fillTriangle(145, 150, 170, 190, 190, 150, 0x0000FF)
+    无
 
-    Display.drawArc(10, 180, 40, 45, 0, 90, 0xFFFF00)
-    Display.fillArc(20, 190, 40, 45, 0, 90, 0x00FFFF)
+MicroPython 示例
+----------------
 
-    Display.drawEllipseArc(200, 150, 30, 35, 20, 25, 0, 90, 0x00FF0F)
-    Display.fillEllipseArc(200, 170, 30, 35, 20, 25, 0, 90, 0x00FFF0)
+基本绘图
+^^^^^^^^
+
+此示例演示了 Display 的基本绘图功能，包括文本、图片、二维码以及各种形状。
+
+MicroPython 代码块：
+
+    .. literalinclude:: ../../../examples/hardware/display/cores3_draw_test_example.py
+        :language: python
+        :linenos:
+
+示例输出：
+
+    无
+
+画布绘图
+^^^^^^^^
+
+此示例演示了如何创建和使用画布进行绘图。它创建一个 2 位颜色深度的画布，在上面绘制圆形，然后将画布推送到显示屏。
+
+MicroPython 代码块：
+
+    .. literalinclude:: ../../../examples/hardware/display/cores3_display_canvas_example.m5f2.py
+        :language: python
+        :linenos:
+
+示例输出：
+
+    无
 
 
-函数
-------------------------------
+API 应用
+^^^^^^^^
 
 .. function:: Display.width() -> int
 
@@ -115,11 +129,11 @@ Micropython 案例
 
 .. function:: Display.setColorDepth(bpp: int = 1)
 
-    设置显示屏的颜色深度。
+    设置画布的颜色深度。
 
     - ``bpp`` 期望的颜色深度，单位为每像素的位数。  
     
-    注意：对于 CoreS3 设备，颜色深度固定为 16 位，此方法无效。 
+    注意：此方法仅对画布（canvas）对象有效，不对显示屏本身生效。对于 CoreS3 设备，显示屏的颜色深度固定为 16 位。 
 
 .. function:: Display.setFont(font)
 
@@ -326,7 +340,7 @@ Micropython 案例
     - ``text`` 二维码内容，默认值为 None。
     - ``x, y`` 二维码显示的起始坐标，默认值为 0。
     - ``w`` 二维码的宽度，默认值为 0。
-    - ``version`` Q二维码版本，默认值为 1。
+    - ``version`` 二维码版本，默认值为 1，范围: 0~38。
 
     **Example**:
 

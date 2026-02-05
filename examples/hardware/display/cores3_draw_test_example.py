@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 import os, sys, io
@@ -11,7 +11,6 @@ def setup():
     Widgets.setRotation(1)
     Widgets.fillScreen(0x222222)
     print((str("rotation: ") + str((M5.Lcd.getRotation()))))
-    print((str("color depth: ") + str((M5.Lcd.getColorDepth()))))
     print((str((str("w: ") + str((M5.Lcd.width())))) + str((str("h:") + str((M5.Lcd.height()))))))
     M5.Lcd.setRotation(1)
     M5.Lcd.clear(0x000000)
