@@ -1,0 +1,19 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "docs": "",
+    "features": [
+        "BLE",
+        "External Flash",
+        "WiFi"
+    ],
+    "images": [
+        "generic_p4.jpg"
+    ],
+    "mcu": "esp32p4",
+    "product": "M5Stack P4 Serials",
+    "thumbnail": "",
+    "url": "https://www.espressif.com/en/products/",
+    "vendor": "M5Stack"
+}

@@ -375,6 +375,7 @@ function ci_esp32_nightly_build {
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Unit_C6L pack_all
     make ${MAKEOPTS} -C m5stack BOARD=Nesso_N1 pack_all
     make ${MAKEOPTS} -C m5stack BOARD=M5STACK_StickS3 pack_all
+    make ${MAKEOPTS} -C m5stack BOARD=M5STACK_Unit_PoEP4 pack_all
     make ${MAKEOPTS} -C third-party BOARD=ESPRESSIF_ESP32_S3_BOX_3 pack_all
     make ${MAKEOPTS} -C third-party BOARD=SEEED_STUDIO_XIAO_ESP32S3 pack_all
 }
