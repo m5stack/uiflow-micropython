@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"POT-Creation-Date: 2026-02-05 14:33+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,116 +20,124 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/units/accel.rst:2 a42364e5de6442ee99d860a5f5fbf996
+#: ../../en/units/accel.rst:2 69e031bbfb624077b434fbe89190f80e
 msgid "Accel Unit"
 msgstr ""
 
-#: ../../en/units/accel.rst:8 be7bd41375074ee0a6bdb4511965615d
+#: ../../en/units/accel.rst:8 efd956cd10b84aa4b5a2277ebe286d63
 msgid ""
 "This is the driver library of Accel Unit, which is used to obtain data "
 "from the acceleration sensor and support motion detection."
 msgstr "这是Accel Unit的驱动库，用于从加速度传感器获取数据，并支持运动检测。"
 
-#: ../../en/units/accel.rst:11 ffcc244c06494dab86ec8efe41c6a989
+#: ../../en/units/accel.rst:11 967e81771be8415d86b95d634f3e9382
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/accel.rst:13 1341b9fb55884f089cb745d428c3ee8f
+#: ../../en/units/accel.rst:13 dc7216177dd647fa982095274c8f9186
 msgid "|ACCEL|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref 59fb828193b5409e942511b25b1d391a
+#: ../../en/refs/unit.accel.ref 675d572639964707b4c7677e1cd80126
 msgid "ACCEL"
 msgstr ""
 
-#: ../../en/units/accel.rst:17 616145209a3249db91dbf6fc2f015464
+#: ../../en/units/accel.rst:17 87d876bc86944f7aa4f57835f99c0bd5
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../en/units/accel.rst:20 ../../en/units/accel.rst:38
-#: 7455903155c2496488c60f0e41a169a4
+#: 035954b9589048b4baa7f6ce46041958 4cda10409b6041719f9c798710d9f873
 msgid "get accel value"
 msgstr "获取加速度值"
 
-#: ../../en/units/accel.rst:22 5ce66ee2d2a94288b95cf42501a9eea8
+#: ../../en/units/accel.rst:22 151a6dbcc47a4de0a818bf016eda20e1
 msgid "Open the |stickcplus2_unit_accel_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |stickcplus2_unit_accel_example.m5f2| 项目。"
 
 #: ../../en/units/accel.rst:24 ../../en/units/accel.rst:40
-#: 25ca27d36e814ca3964f599a0896ca40
+#: 904d0fe5ca554f038f8cc55e51c1d41c f22384f00c334f7aa38609b5ea24da44
 msgid ""
 "This example gets the acceleration value of the Accel Unit and displays "
 "it on the screen."
 msgstr "此示例获取加速度单元的加速度值并将其显示在屏幕上。"
 
-#: ../../en/units/accel.rst:26 a249159b8dec461c9529e39f1d0eb3b1 of
-#: unit.accel.AccelUnit:6 unit.accel.AccelUnit.disable_freefall_detection:3
+#: ../../en/units/accel.rst:26 204d6808850c489f9e2c4202bd526da2
+#: 44013ee192f94fd884ef3cca9ddd974a 4a8dbad3d1164556985ba83173395590
+#: 5331534dda5347f0a8309b5e5d41076f 5bc778954039444c8fc76128b480bb36
+#: 9132f2d9fd6f41afac5ec8ebad865645 a266db81ef23442da5c9b312a8a9de24
+#: b36ba4d8bf834aa18f581ac4702c0e7b of unit.accel.AccelUnit:6
+#: unit.accel.AccelUnit.disable_freefall_detection:3
 #: unit.accel.AccelUnit.disable_motion_detection:3
 #: unit.accel.AccelUnit.disable_tap_detection:3
 #: unit.accel.AccelUnit.enable_freefall_detection:19
 #: unit.accel.AccelUnit.enable_motion_detection:12
 #: unit.accel.AccelUnit.enable_tap_detection:29
-#: unit.accel.AccelUnit.get_accel:6 unit.accel.AccelUnit.get_data_rate:6
-#: unit.accel.AccelUnit.get_range:6 unit.accel.AccelUnit.is_freefall:6
+#: unit.accel.AccelUnit.get_accel:6 unit.accel.AccelUnit.get_data_rate:25
+#: unit.accel.AccelUnit.get_range:13 unit.accel.AccelUnit.is_freefall:6
 #: unit.accel.AccelUnit.is_motion:7 unit.accel.AccelUnit.is_tap:6
-#: unit.accel.AccelUnit.set_data_rate:5 unit.accel.AccelUnit.set_range:5
+#: unit.accel.AccelUnit.set_data_rate:24 unit.accel.AccelUnit.set_range:12
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/units/accel.rst:28 c949df9c35fa47359b876696b493abe8
+#: ../../en/units/accel.rst:28 9adffb56e0c74fc4bd1c630cdf698795
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:6 e6d021da4ba14b19b1dd397fb72286ba
+#: ../../en/refs/unit.accel.ref:6 b0080e1bd7fd41b79eb5febea03b3604
 msgid "example.png"
 msgstr ""
 
 #: ../../en/units/accel.rst:30 ../../en/units/accel.rst:48
-#: 99790a236b374684b3e5acd0b0b66aa7
+#: 47300513ed4747229abe113568fdfde5 4b5d182a8d304e14983cba99aad3a596
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/units/accel.rst:32 ../../en/units/accel.rst:50
-#: ee15cd039eed4cefbd12940a8a427624
+#: 761c031096ee4f4986ea6c5f4741ac15 8867daaf942648a0a07ffa0fbf874029
 msgid "None"
 msgstr "无"
 
-#: ../../en/units/accel.rst:35 d7bd35e7e2204b4f85e86651f8457d7a
+#: ../../en/units/accel.rst:35 6a21588b4b71437d818e4c8aa8874df9
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/units/accel.rst:42 b39048b4283c4f03afb76c3ae656a4a2
-#: ed85db5961f8435c82f1877562a52db8 of unit.accel.AccelUnit:10
-#: unit.accel.AccelUnit.disable_freefall_detection:7
+#: ../../en/units/accel.rst:42 1784df016046497d88314fd7723e0459
+#: 3c2b88fa9f9f4dff88e3a44754da3bd1 5fc9f730aa274717b40d363d68b99575
+#: 5ffcbc431fb342faa4cf2c0ec59f3fc2 982b1f1d768547bfa02a09d610137609
+#: c7bbdb62987746d39a8d1e3e0bd9df97 cc50faae1a14408caa9b7c453ce38160 of
+#: unit.accel.AccelUnit:10 unit.accel.AccelUnit.disable_freefall_detection:7
 #: unit.accel.AccelUnit.disable_motion_detection:7
 #: unit.accel.AccelUnit.disable_tap_detection:7
 #: unit.accel.AccelUnit.enable_freefall_detection:25
 #: unit.accel.AccelUnit.enable_motion_detection:18
 #: unit.accel.AccelUnit.enable_tap_detection:35
-#: unit.accel.AccelUnit.get_accel:10 unit.accel.AccelUnit.get_data_rate:10
-#: unit.accel.AccelUnit.get_range:10 unit.accel.AccelUnit.is_freefall:10
+#: unit.accel.AccelUnit.get_accel:10 unit.accel.AccelUnit.get_data_rate:29
+#: unit.accel.AccelUnit.get_range:17 unit.accel.AccelUnit.is_freefall:10
 #: unit.accel.AccelUnit.is_motion:9 unit.accel.AccelUnit.is_tap:10
-#: unit.accel.AccelUnit.set_data_rate:9 unit.accel.AccelUnit.set_range:9
+#: unit.accel.AccelUnit.set_data_rate:28 unit.accel.AccelUnit.set_range:16
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/units/accel.rst:54 eb74d241d4514552acb9d1375a11c87e
+#: ../../en/units/accel.rst:54 2e2e6a03a0984ef0a2a0d21e0221dd92
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../en/units/accel.rst:57 8659fd462d264358a2dca0fe636cc399
+#: ../../en/units/accel.rst:57 f2dea4eb39454c2f97f1b608327c9d61
 msgid "AccelUnit"
 msgstr ""
 
-#: abac852125094fda97383b3663768adc of unit.accel.AccelUnit:1
+#: 2f26d0d6603a4b8b9a5b1b49d125c5eb of unit.accel.AccelUnit:1
 msgid "Bases: :py:class:`~driver.adxl34x.ADXL345`"
 msgstr ""
 
-#: 6e9ae389b89a4138b1cea587a8b535a9 of unit.accel.AccelUnit:1
+#: f4350159701045759f85b3e97b739fac of unit.accel.AccelUnit:1
 msgid "Create an AccelUnit object."
 msgstr "创建一个 AccelUnit 对象。"
 
-#: ../../en/units/accel.rst c57f5d19f68642a1bf645fcfa67de397 of
+#: ../../en/units/accel.rst 1da2417dec1b4ef68b5721da45c6eb5d
+#: 4c52f52042d9417a8daa03c3bea6c314 57eb987a2e8d44ec86d3ab344e5cbc23
+#: ce22dff8f60046de8b9a27e2092d6ee6 of
 #: unit.accel.AccelUnit.enable_freefall_detection
 #: unit.accel.AccelUnit.enable_motion_detection
 #: unit.accel.AccelUnit.enable_tap_detection unit.accel.AccelUnit.set_data_rate
@@ -137,42 +145,48 @@ msgstr "创建一个 AccelUnit 对象。"
 msgid "Parameters"
 msgstr ""
 
-#: 398d3d98d6fc48b8826cea4edcc10d29 of unit.accel.AccelUnit:3
+#: 2f1a2100d17d4f09a31e46267d8b5d0a of unit.accel.AccelUnit:3
 msgid "The I2C bus the Accel Unit is connected to."
 msgstr "Accel Unit 所连接的 I2C 总线。"
 
-#: c144cf754efc4a4c8a94287b0de23313 of unit.accel.AccelUnit:4
+#: 53a2e1084e0f40c4b0520b331ee2d771 of unit.accel.AccelUnit:4
 msgid "The I2C address of the device. Default is 0x53."
 msgstr "设备的 I2C 地址。默认值为 0x53。"
 
-#: ee35fc066ba24c6a83c25eb8d0071100 of unit.accel.AccelUnit:8
+#: f4c3761afc4d49cd88bbfca7a52f19f6 of unit.accel.AccelUnit:8
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:8 ff96fc000d924aa4995230876f2a13b9
+#: ../../en/refs/unit.accel.ref:8 b8a891e47b22498fafa36b78f53d324c
 msgid "init.png"
 msgstr ""
 
-#: 3745b220ad5b49748cf5c4ce3b6ebbf2
-#: driver.adxl34x.ADXL345.disable_freefall_detection:1 of
-#: unit.accel.AccelUnit.disable_freefall_detection:1
-msgid "Disable freefall detection."
-msgstr "禁用自由落体检测。"
+#: d1093fdd03b347b3be92865ac6b43e94 f51ca126aca04539bc65a9e3a3df1ad6 of
+#: unit.accel.ADXL345.acceleration:1 unit.accel.AccelUnit.get_accel:1
+msgid ""
+"The x, y, z acceleration values returned in a 3-tuple in :math:`m / s ^ "
+"2`."
+msgstr "以 3 元组形式返回 x、y、z 加速度值，单位为 :math:`m / s ^ 2`。"
 
-#: 649a5733518c47e5936d30573724b242 of
-#: unit.accel.AccelUnit.disable_freefall_detection:5
-msgid "|disable_freefall_detection.png|"
+#: 5094a55d90764824a541afb3d0853307 d4fe3a2a9f304d1385fa0ed1898d5091
+#: edc18fe32ec64e92b8b6fe14aefc7120 of unit.accel.AccelUnit.get_accel
+#: unit.accel.AccelUnit.get_data_rate unit.accel.AccelUnit.get_range
+#: unit.accel.AccelUnit.is_freefall unit.accel.AccelUnit.is_motion
+#: unit.accel.AccelUnit.is_tap
+msgid "Returns"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:28 89ad411a75e34feaa9cc177da5a5250d
-msgid "disable_freefall_detection.png"
-msgstr ""
+#: 464ddc6844a6473b99d34b028a9988ef of unit.accel.AccelUnit.get_accel:3
+msgid "x, y, z acceleration values in :math:`m / s ^ 2`."
+msgstr "x、y、z 加速度值，单位为 ：math:`m / s ^ 2` 。"
 
-#: ../../en/units/accel.rst 0d654cbd53dc4f759bb38a92b225fb3f
+#: ../../en/units/accel.rst 08ee895b31f74ad6a014b23da8722ef8
+#: 2a85a125b08a4ff6a9b6c9d2dba7fe23 3267071996b740bf80de33b2138b4621
+#: 56e1332a0dd5461590d02e54b45162ac abf6a5659fe54be292942ccac569926a
 #: driver.adxl34x.ADXL345.disable_freefall_detection
 #: driver.adxl34x.ADXL345.disable_motion_detection
 #: driver.adxl34x.ADXL345.disable_tap_detection
-#: ed821feb9cdf47e0801699c422391fdb of
+#: e5c9c3ad37794a1082065bbbff5025ea of
 #: unit.accel.AccelUnit.disable_freefall_detection
 #: unit.accel.AccelUnit.disable_motion_detection
 #: unit.accel.AccelUnit.disable_tap_detection
@@ -186,43 +200,292 @@ msgstr ""
 msgid "Return type"
 msgstr ""
 
-#: bc27d6f9bfa6475faa00daa504c71bed
-#: driver.adxl34x.ADXL345.disable_motion_detection:1 of
+#: 6aff692cda2a4b7183ebad522fa896d6 of unit.accel.AccelUnit.get_accel:8
+msgid "|get_accel.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:10 6a5c6e9044b343bbbb77046983609d63
+msgid "get_accel.png"
+msgstr ""
+
+#: 1f524b85715344659df301030b533f42 25a26404d39a413d8705d21717714b4d
+#: driver.adxl34x.ADXL345.enable_motion_detection:1 of
+#: unit.accel.AccelUnit.enable_motion_detection:1
+msgid "The activity detection parameters."
+msgstr "活动检测参数。"
+
+#: 5fb069513c7940229f617626ff366797
+#: driver.adxl34x.ADXL345.enable_motion_detection:3
+#: e4e6c9f186824b3296a2a3942fd3a716 of
+#: unit.accel.AccelUnit.enable_motion_detection:3
+msgid ""
+"The value that acceleration on any axis must exceed to register as "
+"active. The scale factor is 62.5 mg/LSB."
+msgstr "任何轴上的加速度必须超过该值才能注册为活动值。比例因子为 62.5 mg/LSB。"
+
+#: de1cd827f0764ab99a6245d28c349d1e of
+#: unit.accel.AccelUnit.enable_motion_detection:7
+msgid ""
+"If you wish to set them yourself rather than using the defaults, you must"
+" use keyword arguments::"
+msgstr "如果您希望自己设置它们而不是使用默认值，则必须使用关键字参数："
+
+#: 2ab4e0e884374c23aca8ebbfa24f6279 of
+#: unit.accel.AccelUnit.enable_motion_detection:14
+msgid "|enable_motion_detection1.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:12 f3cb5cc430344c468869b027aa4da48d
+msgid "enable_motion_detection1.png"
+msgstr ""
+
+#: 2192f1d6081e4965a59c26a3b815418f of
+#: unit.accel.AccelUnit.enable_motion_detection:16
+msgid "|enable_motion_detection2.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:14 175ae5c3ce5d471da9f53755f7a13884
+msgid "enable_motion_detection2.png"
+msgstr ""
+
+#: 5896604aa28b48b1a696392eb6182cc1
+#: driver.adxl34x.ADXL345.disable_motion_detection:1
+#: e92b0b8cfc184f01b00e51aac847738b of
 #: unit.accel.AccelUnit.disable_motion_detection:1
 msgid "Disable motion detection."
 msgstr "禁用运动检测。"
 
-#: 0483dce6eb2345afac6293e619a3588b of
+#: 50f3284975284f8493e5c95dd98e2488 of
 #: unit.accel.AccelUnit.disable_motion_detection:5
 msgid "|disable_motion_detection.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:16 b5505a9a8f944e71bf717eefe0d9c206
+#: ../../en/refs/unit.accel.ref:16 3f68cf7fb1f4424eab8a97f437a13e7f
 msgid "disable_motion_detection.png"
 msgstr ""
 
-#: c463930bcbb14463b489704784b09516
-#: driver.adxl34x.ADXL345.disable_tap_detection:1 of
-#: unit.accel.AccelUnit.disable_tap_detection:1
-msgid "Disable tap detection."
-msgstr "禁用点击检测。"
+#: ca089fffc9e54b40b234f52f79f38fe1 of unit.accel.AccelUnit.get_data_rate:1
+msgid "Get the data rate of the sensor."
+msgstr "获取传感器的数据速率。"
 
-#: f1043f37adb24efc8559457d753a7720 of
-#: unit.accel.AccelUnit.disable_tap_detection:5
-msgid "|disable_tap_detection.png|"
+#: 77cde4bd341c4749bf32f199ded8a617 9fccbcb677fd4d0db4f157582ff1eede
+#: c38f5280f0274d3c9ade264ed8aa0cd5 of unit.accel.ADXL345.data_rate:1
+#: unit.accel.AccelUnit.get_data_rate:3 unit.accel.AccelUnit.set_data_rate:3
+msgid "The data rate of the sensor."
+msgstr "传感器的数据速率。"
+
+#: ded00f94dd5445469435694cde3a2589 e7f4ab1a4d3744a89575a41e0c4e6fcc of
+#: unit.accel.AccelUnit.get_data_rate:6 unit.accel.AccelUnit.set_data_rate:5
+msgid "Rate options are:"
+msgstr "速率选项："
+
+#: 3ffef8fe517a4c3498e78cd153bf053d abbb676c4a404c7faa1b2dca16eaba3b of
+#: unit.accel.AccelUnit.get_data_rate:8 unit.accel.AccelUnit.set_data_rate:7
+msgid "``0``: 0.1 Hz"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:34 91e45bd3033749b2a20b92bc8e7f4c25
-msgid "disable_tap_detection.png"
+#: 323c8e7a0b774d41b7adb8df607e5c49 93cbc0b388bb46a49a5015726df4335e of
+#: unit.accel.AccelUnit.get_data_rate:9 unit.accel.AccelUnit.set_data_rate:8
+msgid "``1``: 0.20 Hz"
 msgstr ""
 
-#: 1b2b2816067d4ae1b9bff24e91432f5e
-#: driver.adxl34x.ADXL345.enable_freefall_detection:1 of
+#: 5344e1b8d2c34a65854e288f1f43e7cb dcd0445c6bd64b6b87e5e716f24b7d6c of
+#: unit.accel.AccelUnit.get_data_rate:10 unit.accel.AccelUnit.set_data_rate:9
+msgid "``2``: 0.39 Hz"
+msgstr ""
+
+#: 1c69b027811446349e1806442ad91562 80d39d9bb837425ba9e10a7fc35dc12b of
+#: unit.accel.AccelUnit.get_data_rate:11 unit.accel.AccelUnit.set_data_rate:10
+msgid "``3``: 0.78 Hz"
+msgstr ""
+
+#: 580860761b1a4af8845c2726009a5f3f abbb676c4a404c7faa1b2dca16eaba3b of
+#: unit.accel.AccelUnit.get_data_rate:12 unit.accel.AccelUnit.set_data_rate:11
+msgid "``4``: 1.56 Hz"
+msgstr ""
+
+#: 224eed21b1464d98a1e2d2e0a2afa75a 8c99d39846684c90ac97276516025133 of
+#: unit.accel.AccelUnit.get_data_rate:13 unit.accel.AccelUnit.set_data_rate:12
+msgid "``5``: 3.13 Hz"
+msgstr ""
+
+#: 24bee54ffc204de38bba7b04a2f5cd60 c15cd6bdd1134f4598ef6d49580e1770 of
+#: unit.accel.AccelUnit.get_data_rate:14 unit.accel.AccelUnit.set_data_rate:13
+msgid "``6``: 6.25 Hz"
+msgstr ""
+
+#: 3369589e2520423aa2bd122876b5fa08 ed0589fff9a74124afcb4e092cdc8130 of
+#: unit.accel.AccelUnit.get_data_rate:15 unit.accel.AccelUnit.set_data_rate:14
+msgid "``7``: 12.5 Hz"
+msgstr ""
+
+#: a9c50930ddf84fb48cfd2bbb22c2de40 e845f56b8cd74f64932d814197621ac7 of
+#: unit.accel.AccelUnit.get_data_rate:16 unit.accel.AccelUnit.set_data_rate:15
+msgid "``8``: 25 Hz"
+msgstr ""
+
+#: 1156f34408ac4a22a16a631cac65a87b abbb676c4a404c7faa1b2dca16eaba3b of
+#: unit.accel.AccelUnit.get_data_rate:17 unit.accel.AccelUnit.set_data_rate:16
+msgid "``9``: 50 Hz"
+msgstr ""
+
+#: 2fb01d64d01541d1927d74e7c8eb41a4 e1126009c9de4d24818dae251e113a68 of
+#: unit.accel.AccelUnit.get_data_rate:18 unit.accel.AccelUnit.set_data_rate:17
+msgid "``10``: 100 Hz"
+msgstr ""
+
+#: 040703cc502443fb8cd0f24981962887 12acade4ff22425c87f0da51ae261e45 of
+#: unit.accel.AccelUnit.get_data_rate:19 unit.accel.AccelUnit.set_data_rate:18
+msgid "``11``: 200 Hz"
+msgstr ""
+
+#: 0e5156ede74d43f58efc70aa41de9e07 fd4571fd3d3e4ed98d6e18ad45ec5e04 of
+#: unit.accel.AccelUnit.get_data_rate:20 unit.accel.AccelUnit.set_data_rate:19
+msgid "``12``: 400 Hz"
+msgstr ""
+
+#: 7179a284099645fd9163a71e6769e9ed e61cd91afc2d451d9897e2260086cfb6 of
+#: unit.accel.AccelUnit.get_data_rate:21 unit.accel.AccelUnit.set_data_rate:20
+msgid "``13``: 800 Hz"
+msgstr ""
+
+#: 911f2f43fddc409c84e3c55d6e420b7b f2663910bfa24fab9b1de3321334fb20 of
+#: unit.accel.AccelUnit.get_data_rate:22 unit.accel.AccelUnit.set_data_rate:21
+msgid "``14``: 1600 Hz"
+msgstr ""
+
+#: 78e4b4b149fd4119aa3bcf81b9d40e44 f85d7fbcbabf4b74a5c4491db195ff35 of
+#: unit.accel.AccelUnit.get_data_rate:23 unit.accel.AccelUnit.set_data_rate:22
+msgid "``15``: 3200 Hz"
+msgstr ""
+
+#: 0353521793b44f96b6b6c74e49c74aaa of unit.accel.AccelUnit.get_data_rate:27
+msgid "|get_data_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:36 678d835648bb4aaea1c9f79be13ceacb
+msgid "get_data_rate.png"
+msgstr ""
+
+#: 4454c6ff9f074e6b858bc5714768fee0 of unit.accel.AccelUnit.set_data_rate:1
+#, fuzzy
+msgid "Set the data rate of the sensor."
+msgstr "获取传感器的数据速率。"
+
+#: b61d7b86c028439288edf5f6bc94318c of unit.accel.AccelUnit.set_data_rate:26
+msgid "|set_data_rate.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:38 024642d5ee7844cdb913fc883912b6e0
+msgid "set_data_rate.png"
+msgstr ""
+
+#: 6b0baa2133b04e9da0dcd8cf547cb2e3 of unit.accel.AccelUnit.get_range:1
+msgid "Get the measurement range of the sensor."
+msgstr "获取传感器的测量范围。"
+
+#: cb420b56b54f4eb9a62c8a9ed6169bc8 df4911d31ea74c4090cac2e1d303838d of
+#: unit.accel.ADXL345.range:1 unit.accel.AccelUnit.get_range:3
+#: unit.accel.AccelUnit.set_range:1 unit.accel.AccelUnit.set_range:3
+msgid "The measurement range of the sensor."
+msgstr "传感器的测量范围。"
+
+#: ded00f94dd5445469435694cde3a2589 of unit.accel.AccelUnit.get_range:6
+#: unit.accel.AccelUnit.set_range:5
+msgid "Range options are:"
+msgstr "速率选项："
+
+#: e845f56b8cd74f64932d814197621ac7 of unit.accel.AccelUnit.get_range:8
+#: unit.accel.AccelUnit.set_range:7
+msgid "``0``: 2G"
+msgstr ""
+
+#: d5db0a0abd51494bb043b9e4b1f816d7 of unit.accel.AccelUnit.get_range:9
+#: unit.accel.AccelUnit.set_range:8
+msgid "``1``: 4G"
+msgstr ""
+
+#: d3c3b9bde7e14376a5d18633ef470822 of unit.accel.AccelUnit.get_range:10
+#: unit.accel.AccelUnit.set_range:9
+msgid "``2``: 8G"
+msgstr ""
+
+#: abbb676c4a404c7faa1b2dca16eaba3b of unit.accel.AccelUnit.get_range:11
+#: unit.accel.AccelUnit.set_range:10
+msgid "``3``: 16G"
+msgstr ""
+
+#: 7553ae7ea3e84bb1906dcc6439d158e6 of unit.accel.AccelUnit.get_range:15
+msgid "|get_range.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:40 5987fa8708de41829305ff36249a8c51
+msgid "get_range.png"
+msgstr ""
+
+#: 91e200714ce048c4a67b33a1ce59015e of unit.accel.AccelUnit.set_range:14
+msgid "|set_range.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:42 1ea45003f30241e285a7484245364be2
+msgid "set_range.png"
+msgstr ""
+
+#: 9ed8082918914b2c9887f0fed083adbd of unit.accel.AccelUnit.is_tap:1
+msgid "Returns True if a tap has been detected."
+msgstr "如果检测到点击则返回 True。"
+
+#: 1007ca3741954803b1cbf837be7629cd of unit.accel.AccelUnit.is_tap:3
+msgid "True if a tap has been detected."
+msgstr "如果检测到点击则为 True。"
+
+#: ef396e0a6fc143b38a5be827269539f3 of unit.accel.AccelUnit.is_tap:8
+msgid "|is_tap.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:18 f3c2d3961dd442868bd5773c28bd434c
+msgid "is_tap.png"
+msgstr ""
+
+#: 1ebd78e93db34ef5a2a1709e75769b6a of unit.accel.AccelUnit.is_motion:1
+msgid "Returns True if motion has been detected."
+msgstr "如果检测到运动则返回 True。"
+
+#: 5a12f03a7fb5470a96405f68f855302f of unit.accel.AccelUnit.is_motion:3
+msgid "True if motion has been detected."
+msgstr "如果检测到运动则返回 True。"
+
+#: 7be81adec4fe4bfbba677cd9901f9ae6 of unit.accel.AccelUnit.is_motion:7
+msgid "|is_motion.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:20 8e54557e629c42c19fc536cbaa9d85dc
+msgid "is_motion.png"
+msgstr ""
+
+#: 5098895b66c94e79be4bbf09f2111504 of unit.accel.AccelUnit.is_freefall:1
+msgid "Returns True if freefall has been detected."
+msgstr "如果检测到自由落体则返回 True。"
+
+#: f5934fa8b7df42b09ac99e1980682e0f of unit.accel.AccelUnit.is_freefall:3
+msgid "True if freefall has been detected."
+msgstr "如果检测到自由落体则返回 True。"
+
+#: 1515ac39c27a48c286ac0f2c4761bc15 of unit.accel.AccelUnit.is_freefall:8
+msgid "|is_freefall.png|"
+msgstr ""
+
+#: ../../en/refs/unit.accel.ref:22 a0edd854873e4364bd6167599d41d92c
+msgid "is_freefall.png"
+msgstr ""
+
+#: driver.adxl34x.ADXL345.enable_freefall_detection:1
+#: f95c07943dc54ad19b2259f8d2938826 of
 #: unit.accel.AccelUnit.enable_freefall_detection:1
 msgid "Freefall detection parameters:"
 msgstr "自由落体检测参数："
 
-#: 69a21864aecb436b977e445f3b5d9675 c323c67f2e1f4cf38fffd0c0a5be0956
+#: 2b1c5528ba8547e3b16218a74d44dd9f 46b8981325e544078d6eba46c18aa3ae
 #: driver.adxl34x.ADXL345.enable_freefall_detection:3 of
 #: unit.accel.AccelUnit.enable_freefall_detection:3
 msgid ""
@@ -230,8 +493,9 @@ msgid ""
 "dropped. The scale factor is 62.5 mg/LSB."
 msgstr "所有轴上的加速度必须低于该值才能记录为下降。比例因子为 62.5 mg/LSB。"
 
-#: c5ddd22e80da4a2aa47106c9edd165e2 df1568d4a1154b099d978f93bb1a4803
-#: driver.adxl34x.ADXL345.enable_freefall_detection:7 of
+#: 330ca3651cb4415bbbefd1f0a7ab584a
+#: driver.adxl34x.ADXL345.enable_freefall_detection:7
+#: f4b51896bce541d1af8ae373fa1e64ba of
 #: unit.accel.AccelUnit.enable_freefall_detection:7
 msgid ""
 "The amount of time that acceleration on all axes must be less than "
@@ -241,7 +505,7 @@ msgstr ""
 "所有轴上的加速度必须小于“阈值”的时间量才能记录为掉落。比例因子为 5 毫秒/LSB。建议值介于 100 毫秒和 350 毫秒（20 到 "
 "70）之间。"
 
-#: b9beb141e00246c68c111b6aa493876e
+#: 51d80548fb85439bac8dc820a386f9fa
 #: driver.adxl34x.ADXL345.enable_freefall_detection:12
 #: driver.adxl34x.ADXL345.enable_motion_detection:7
 #: driver.adxl34x.ADXL345.enable_tap_detection:23 of
@@ -252,76 +516,52 @@ msgid ""
 " use keyword arguments:"
 msgstr "如果您希望自己设置它们而不是使用默认值，则必须使用关键字参数："
 
-#: fa8d0124482b4d35ad0f49b95fdc870c of
+#: dee294652b594bdf800eacaaa85b430a of
 #: unit.accel.AccelUnit.enable_freefall_detection:21
 msgid "|enable_freefall_detection1.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:24 9f3f312b28fb42d881aa771cec9150fd
+#: ../../en/refs/unit.accel.ref:24 a4dff179ee1247fd8d012346c7f396a0
 msgid "enable_freefall_detection1.png"
 msgstr ""
 
-#: dabcd8ffeda849eb9cbdcdd64d6879ed of
+#: faf324ee58454dfcb2e2df5240daadc4 of
 #: unit.accel.AccelUnit.enable_freefall_detection:23
 msgid "|enable_freefall_detection2.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:26 dbb512261b684f658dd78c06f27d9d1c
+#: ../../en/refs/unit.accel.ref:26 eec8d13325834e5ba12051bc2901702a
 msgid "enable_freefall_detection2.png"
 msgstr ""
 
-#: driver.adxl34x.ADXL345.enable_motion_detection:1
-#: e238f49747b04267b97d448cce26f9d1 of
-#: unit.accel.AccelUnit.enable_motion_detection:1
-msgid "The activity detection parameters."
-msgstr "活动检测参数。"
+#: driver.adxl34x.ADXL345.disable_freefall_detection:1
+#: e2d2753bece44af483836ea559958f36 of
+#: unit.accel.AccelUnit.disable_freefall_detection:1
+msgid "Disable freefall detection."
+msgstr "禁用自由落体检测。"
 
-#: 98994f51b06e4cbb859d51915cbf6c40 a9b8d55cfd7f42b680ebd215f3844408
-#: driver.adxl34x.ADXL345.enable_motion_detection:3 of
-#: unit.accel.AccelUnit.enable_motion_detection:3
-msgid ""
-"The value that acceleration on any axis must exceed to register as "
-"active. The scale factor is 62.5 mg/LSB."
-msgstr "任何轴上的加速度必须超过该值才能注册为活动值。比例因子为 62.5 mg/LSB。"
-
-#: d65b19af8f3e4d0190a4977cec0c20b7 of
-#: unit.accel.AccelUnit.enable_motion_detection:7
-msgid ""
-"If you wish to set them yourself rather than using the defaults, you must"
-" use keyword arguments::"
-msgstr "如果您希望自己设置它们而不是使用默认值，则必须使用关键字参数："
-
-#: 4c6f58d0d8634c5ab6bc66b2038b4e06 of
-#: unit.accel.AccelUnit.enable_motion_detection:14
-msgid "|enable_motion_detection1.png|"
+#: f06dae3a70b448afb510a38807a01601 of
+#: unit.accel.AccelUnit.disable_freefall_detection:5
+msgid "|disable_freefall_detection.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:12 2ed2c1556ba14d0b8e656b5fcf2aa99a
-msgid "enable_motion_detection1.png"
+#: ../../en/refs/unit.accel.ref:28 c4deb2cf56c042509f299e0ae4d91ceb
+msgid "disable_freefall_detection.png"
 msgstr ""
 
-#: b39c9774004143bbb743647e51be712f of
-#: unit.accel.AccelUnit.enable_motion_detection:16
-msgid "|enable_motion_detection2.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:14 3875a176f6814205a1ab52c1a1aed444
-msgid "enable_motion_detection2.png"
-msgstr ""
-
-#: 499a03f1808c4e699bfd12bdd6c655b3
+#: a34f969a66e04a009f3aebc4d559861e
 #: driver.adxl34x.ADXL345.enable_tap_detection:1 of
 #: unit.accel.AccelUnit.enable_tap_detection:1
 msgid "The tap detection parameters."
 msgstr "点击检测参数。"
 
-#: 431d6061c25c499cbc9488a29d359049
+#: 84a7fb0a837c4fa3a27e9d61a3fc8da2
 #: driver.adxl34x.ADXL345.enable_tap_detection:3 of
 #: unit.accel.AccelUnit.enable_tap_detection:3
 msgid "1 to detect only single taps, and 2 to detect only double taps."
 msgstr "1 仅检测单击，2 仅检测双击。"
 
-#: 184c73bbd9534c6199406a57e73f762b a379e297d6964080900d13d9e2303313
+#: 318f33fdf0794208b49d60858cad3285 9ff613ca542d479bb477acd97d47b778
 #: driver.adxl34x.ADXL345.enable_tap_detection:6 of
 #: unit.accel.AccelUnit.enable_tap_detection:6
 msgid ""
@@ -329,15 +569,15 @@ msgid ""
 "higher the value the less sensitive the detection."
 msgstr "点击检测的阈值。比例因子为 62.5 mg/LSB。值越高，检测越不灵敏。"
 
-#: 89bbaea06ca3494991c6a8f078b57799
-#: driver.adxl34x.ADXL345.enable_tap_detection:10 of
+#: driver.adxl34x.ADXL345.enable_tap_detection:10
+#: f208f17ab78140bbb4edc4c2fe35df25 of
 #: unit.accel.AccelUnit.enable_tap_detection:10
 msgid ""
 "This caps the duration of the impulse above ``threshold``. Anything above"
 " ``duration`` won't register as a tap. The scale factor is 625 µs/LSB."
 msgstr "这将限制脉冲持续时间高于“阈值”。任何超过“持续时间”的脉冲都不会被记录为抽头。比例因子为 625 µs/LSB。"
 
-#: 035422a92628463ba5c1bcc3df95fbc4 83169e08cae444e2b828dc1809632512
+#: 1a5bff10ca134f548571a6cab8c542b8 7e4a5d6281c34606a5df3065cd4e239f
 #: driver.adxl34x.ADXL345.enable_tap_detection:14 of
 #: unit.accel.AccelUnit.enable_tap_detection:14
 msgid ""
@@ -346,7 +586,7 @@ msgid ""
 " scale factor is 1.25 ms/LSB."
 msgstr "（仅限双击）初始脉冲低于“阈值”后，启动窗口寻找第二个脉冲的时间长度。比例因子为 1.25 ms/LSB。"
 
-#: 57cce65774a94dae95d981b2ab2c300c 874ef7f3d0484746abd6cf0da71fa97d
+#: 0b6609fe9e214c30bd0f70f4d11547c6 2a20899e83dd4ea58d05472226253bca
 #: driver.adxl34x.ADXL345.enable_tap_detection:19 of
 #: unit.accel.AccelUnit.enable_tap_detection:19
 msgid ""
@@ -354,261 +594,146 @@ msgid ""
 "tap. The scale factor is 1.25 ms/LSB."
 msgstr "（仅限双击）查找第二次点击的窗口长度。比例因子为 1.25 ms/LSB。"
 
-#: b9e43d2bd916423b93bdd7d97b576484 of
+#: 06312561686e4a3a85bfd017b05b6b2b of
 #: unit.accel.AccelUnit.enable_tap_detection:31
 msgid "|enable_tap_detection1.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:30 24f34d6681ea473d9f0f6a2695a0afcc
+#: ../../en/refs/unit.accel.ref:30 9731d9f128af4fadbf00be5bebe65482
 msgid "enable_tap_detection1.png"
 msgstr ""
 
-#: 73b2155c40464a44a00363af079ff735 of
+#: 1d14849e88234cd684c9b27ccd862a0e of
 #: unit.accel.AccelUnit.enable_tap_detection:33
 msgid "|enable_tap_detection2.png|"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:32 f76ea27d9d3f41fd9beab83b755469dd
+#: ../../en/refs/unit.accel.ref:32 40611b16ec6c44c7a356d0a7ecb1d2d0
 msgid "enable_tap_detection2.png"
 msgstr ""
 
-#: e3b40c0792ad40acbbb0c877d6f664ee of unit.accel.ADXL345.acceleration:1
-#: unit.accel.AccelUnit.get_accel:1
-msgid ""
-"The x, y, z acceleration values returned in a 3-tuple in :math:`m / s ^ "
-"2`."
-msgstr "以 3 元组形式返回 x、y、z 加速度值，单位为 :math:`m / s ^ 2`。"
+#: driver.adxl34x.ADXL345.disable_tap_detection:1
+#: e46b837e2e7842d4bea5d609c0ab7004 of
+#: unit.accel.AccelUnit.disable_tap_detection:1
+msgid "Disable tap detection."
+msgstr "禁用点击检测。"
 
-#: 76d119ad9521421bb6228b473ecde02c of unit.accel.AccelUnit.get_accel
-#: unit.accel.AccelUnit.get_data_rate unit.accel.AccelUnit.get_range
-#: unit.accel.AccelUnit.is_freefall unit.accel.AccelUnit.is_motion
-#: unit.accel.AccelUnit.is_tap
-msgid "Returns"
+#: bd7bee733e7a46e39f400bad65e131aa of
+#: unit.accel.AccelUnit.disable_tap_detection:5
+msgid "|disable_tap_detection.png|"
 msgstr ""
 
-#: e32be9b55df04c38943e31590c8d0cab of unit.accel.AccelUnit.get_accel:3
-msgid "x, y, z acceleration values in :math:`m / s ^ 2`."
-msgstr "x、y、z 加速度值，单位为 ：math:`m / s ^ 2` 。"
-
-#: 829e1cfb6bc349fea242d4703fb144f3 of unit.accel.AccelUnit.get_accel:8
-msgid "|get_accel.png|"
+#: ../../en/refs/unit.accel.ref:34 dda09de48373455ea9232b3a8fde4f10
+msgid "disable_tap_detection.png"
 msgstr ""
 
-#: ../../en/refs/unit.accel.ref:10 ec5c9346ff8a467ba6dbd0b7877a89ed
-msgid "get_accel.png"
-msgstr ""
-
-#: d542339afeed42878350ed99a831b5ec of unit.accel.AccelUnit.get_data_rate:1
-msgid "Get the data rate of the sensor."
-msgstr "获取传感器的数据速率。"
-
-#: 0b16bfce611d49caa4346f9460bde1cf 8643750e77e14c8bb941450e1bed69b8 of
-#: unit.accel.ADXL345.data_rate:1 unit.accel.AccelUnit.get_data_rate:3
-#: unit.accel.AccelUnit.set_data_rate:3
-msgid "The data rate of the sensor."
-msgstr "传感器的数据速率。"
-
-#: 923b04b25c274bbd99b6d94ec7cab946 of unit.accel.AccelUnit.get_data_rate:8
-msgid "|get_data_rate.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:36 028d3c08350a42a4a7b11642393566f3
-msgid "get_data_rate.png"
-msgstr ""
-
-#: 59068dabd8004f5e9747b620bd17af4a of unit.accel.AccelUnit.get_range:1
-msgid "Get the measurement range of the sensor."
-msgstr "获取传感器的测量范围。"
-
-#: 9c84e815159f4583ac43487f41bb761d a7a9731b5a2a40b9950808252b084dc9 of
-#: unit.accel.ADXL345.range:1 unit.accel.AccelUnit.get_range:3
-#: unit.accel.AccelUnit.set_range:1 unit.accel.AccelUnit.set_range:3
-msgid "The measurement range of the sensor."
-msgstr "传感器的测量范围。"
-
-#: 87e70daf7fbf40d4881b34cddcbd8157 of unit.accel.AccelUnit.get_range:8
-msgid "|get_range.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:40 53513738514e4f1794dd0894b2d9ba15
-msgid "get_range.png"
-msgstr ""
-
-#: 062eacb8428e40bdb6311ddfffa012b6 of unit.accel.AccelUnit.is_freefall:1
-msgid "Returns True if freefall has been detected."
-msgstr "如果检测到自由落体则返回 True。"
-
-#: 9c2633bb41dc489c928c164039a363ba of unit.accel.AccelUnit.is_freefall:3
-msgid "True if freefall has been detected."
-msgstr "如果检测到自由落体则返回 True。"
-
-#: 2d44296a7db34f8697a66361d60bc287 of unit.accel.AccelUnit.is_freefall:8
-msgid "|is_freefall.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:22 e0240099696344fe964c7a11a72ffeaf
-msgid "is_freefall.png"
-msgstr ""
-
-#: 04ed824e2b1b4cfe998f281ec2808ae9 of unit.accel.AccelUnit.is_motion:1
-msgid "Returns True if motion has been detected."
-msgstr "如果检测到运动则返回 True。"
-
-#: 20e8a78ae585449cba838227a2afc329 of unit.accel.AccelUnit.is_motion:3
-msgid "True if motion has been detected."
-msgstr "如果检测到运动则返回 True。"
-
-#: 715f9fbf744b4c40b62cb0734bdef2a4 of unit.accel.AccelUnit.is_motion:7
-msgid "|is_motion.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:20 a9bfaa8f5efb4491b47b066821a3ae9a
-msgid "is_motion.png"
-msgstr ""
-
-#: b3db09631cd344ea8c3149873b7a35d6 of unit.accel.AccelUnit.is_tap:1
-msgid "Returns True if a tap has been detected."
-msgstr "如果检测到点击则返回 True。"
-
-#: 962cc9221d95444ba8b5309fafb099c1 of unit.accel.AccelUnit.is_tap:3
-msgid "True if a tap has been detected."
-msgstr "如果检测到点击则为 True。"
-
-#: b1e6dcdff63e447abf3ee6cf946662c0 of unit.accel.AccelUnit.is_tap:8
-msgid "|is_tap.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:18 47f085cf416841d29d31e53049457c75
-msgid "is_tap.png"
-msgstr ""
-
-#: fc41e1a437a34220a5c7ce27a6f99ded of unit.accel.AccelUnit.set_data_rate:1
-msgid "Set the data rate of the sensor."
-msgstr "设置传感器的数据速率。"
-
-#: 6ca1c540080f43678903799a2149ed06 of unit.accel.AccelUnit.set_data_rate:7
-msgid "|set_data_rate.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:38 56146f437d1b4cad85994a13bce298e4
-msgid "set_data_rate.png"
-msgstr ""
-
-#: 7a3fb91876e2454ea5535c6f04e5594c of unit.accel.AccelUnit.set_range:7
-msgid "|set_range.png|"
-msgstr ""
-
-#: ../../en/refs/unit.accel.ref:42 bb85b7a1c8834ffa964723d972172ddd
-msgid "set_range.png"
-msgstr ""
-
-#: ../../en/units/accel.rst:63 c66b3ac340aa491ebec8b14fa457ae5c
+#: ../../en/units/accel.rst:63 7b5296494c314707b8231bf335501a0f
 msgid "ADXL345"
 msgstr ""
 
-#: driver.adxl34x.ADXL345:1 ff5020779b6c4f058aef6704faaa7cba of
+#: driver.adxl34x.ADXL345:1 eecfd81db387458aa241335d03fc6465 of
 msgid "Bases: :py:class:`object`"
 msgstr ""
 
-#: 5461f5fca9e7475aaad22cf8d821a32c driver.adxl34x.ADXL345:1 of
+#: 0374eb9843674aeda4d7f2fdbd9c56d5 driver.adxl34x.ADXL345:1 of
 msgid "Driver for the ADXL345 3 axis accelerometer."
 msgstr "ADXL345 3 轴加速度计的驱动程序。"
 
-#: b234f6f056234ae1b71d39dc69158cde driver.adxl34x.ADXL345:3 of
+#: 0555373020954b2e9eea016438f172d9 driver.adxl34x.ADXL345:3 of
 msgid "The I2C bus the ADXL345 is connected to."
 msgstr "ADXL345 所连接的 I2C 总线。"
 
-#: 973fa1dbd05843ceade42299220f7445 driver.adxl34x.ADXL345:4 of
+#: 0282146cc45a45adb18de44bec1162f3 driver.adxl34x.ADXL345:4 of
 msgid "The I2C device address for the sensor. Default is :const:`0x53`."
 msgstr "传感器的 I2C 设备地址。默认值为 :const:`0x53`。"
 
-#: 48d210ae04eb4427ba2491b793ed05b4 driver.adxl34x.ADXL345:7 of
+#: 6716a3342f7a440e9e6073e28ff60ecc driver.adxl34x.ADXL345:7 of
 msgid "**Quickstart: Importing and using the device**"
 msgstr "**快速入门：导入和使用设备**"
 
-#: cf61299ba3b840f5ad65f09c7d2964fb driver.adxl34x.ADXL345:9 of
+#: 3238f41c3e5842b895cf738bb84bc71d driver.adxl34x.ADXL345:9 of
 msgid ""
 "Here is an example of using the :class:`ADXL345` class. First you will "
 "need to import the libraries to use the sensor:"
 msgstr "以下是使用 :class:`ADXL345` 类的示例。首先，您需要导入库才能使用传感器："
 
-#: 4358ca655b7a48158a36c8bad1916e48 driver.adxl34x.ADXL345:17 of
+#: 76976827b6264412bcde60518e85d45a driver.adxl34x.ADXL345:17 of
 msgid ""
 "Once this is done you can define your `I2C` object and define your sensor"
 " object:"
 msgstr "完成后，您可以定义 `I2C` 对象并定义传感器对象："
 
-#: 76e7623efced4b0894d09f8cc6e5d63b driver.adxl34x.ADXL345:25 of
+#: 3ca2b4e7d42b4fccb35615f97f32305f driver.adxl34x.ADXL345:25 of
 msgid "Now you have access to the :attr:`acceleration` attribute:"
 msgstr "现在你可以访问 :attr:`acceleration` 属性："
 
-#: 04c95efc13424e198246a14f8183145a of unit.accel.ADXL345.events:1
+#: 5a7de0455511417cad77aabde9cd394b of unit.accel.ADXL345.raw_x:1
+msgid "The raw x value."
+msgstr "原始 x 轴的值。"
+
+#: 2441977e149945988103cc7c1d23018b of unit.accel.ADXL345.raw_y:1
+msgid "The raw y value."
+msgstr "原始 y 轴的值。"
+
+#: d67b2a9a643e4e088c95038da87e7fea of unit.accel.ADXL345.raw_z:1
+msgid "The raw z value."
+msgstr "原始 z 轴的值。"
+
+#: e2b2122db00a4fcc93b9a054446193ac of unit.accel.ADXL345.events:1
 msgid ""
 ":attr:`events` will return a dictionary with a key for each event type "
 "that has been enabled."
 msgstr ":attr:`events` 将返回一个字典，其中包含已启用的每个事件类型的键。"
 
-#: d78bac19581e451ca87628ef2c66c8d0 of unit.accel.ADXL345.events:4
+#: 50ef7a4533cb49cb93bb09e0663a4907 of unit.accel.ADXL345.events:4
 msgid "The possible keys are:"
 msgstr "可能的关键字有："
 
-#: 7c3c6362ccd34724bd7456a60b99c34a of unit.accel.ADXL345.events:7
+#: c1c16514acc94c2aa0e2a5e6db3eaf0e of unit.accel.ADXL345.events:7
 msgid "Key"
 msgstr "关键字"
 
-#: 5d46acc26b934940a70384c041800089 of unit.accel.ADXL345.events:7
+#: 2c6097b0b89e4bb5ba5ce7cbe850df07 of unit.accel.ADXL345.events:7
 msgid "Description"
 msgstr "描述"
 
-#: 704fc59e476f4b56b6a7729e7ec071ea of unit.accel.ADXL345.events:9
+#: 665be57f64a34354afc1f122bd6aab7e of unit.accel.ADXL345.events:9
 msgid "``tap``"
 msgstr ""
 
-#: 34f79a952e5d499dad717fffb2249e9c of unit.accel.ADXL345.events:9
+#: 31125110ff2745bd8aea0d8a1afe7878 of unit.accel.ADXL345.events:9
 msgid ""
 "True if a tap was detected recently. Whether it's looking for a single or"
 " double tap is determined by the tap param of `enable_tap_detection`."
 msgstr "如果最近检测到点击，则为 True。是否寻找单击或双击取决于 `enable_tap_detection` 的点击参数。"
 
-#: 9cef7901207d4112a26b2cfff4f885c6 of unit.accel.ADXL345.events:12
+#: 8639af8f215941c3aa06f919b4037350 of unit.accel.ADXL345.events:12
 msgid "``motion``"
 msgstr ""
 
-#: 78a9591bfe804edda28f283cdfdb0aae of unit.accel.ADXL345.events:12
+#: b8bfcebeb012432d8400440b2ee8f407 of unit.accel.ADXL345.events:12
 msgid ""
 "True if the sensor has seen acceleration above the threshold set with "
 "`enable_motion_detection`."
 msgstr "如果传感器检测到的加速度高于使用 `enable_motion_detection` 设置的阈值，则为真。"
 
-#: a8098c20bbb14496a9787f300459d2fb of unit.accel.ADXL345.events:15
+#: ddadf01d6be7460a8d0b09805b017b62 of unit.accel.ADXL345.events:15
 msgid "``freefall``"
 msgstr ""
 
-#: fb84eaecb6194edf84b7edd5e8511c54 of unit.accel.ADXL345.events:15
+#: 06c4f568c917413192a1b63ddbdee0aa of unit.accel.ADXL345.events:15
 msgid ""
 "True if the sensor was in freefall. Parameters are set when enabled with "
 "`enable_freefall_detection`."
 msgstr "如果传感器处于自由落体状态，则为 True。使用 `enable_freefall_detection` 启用时设置参数。"
 
-#: 9015558362f5434ebd3430842d0d9e5c of unit.accel.ADXL345.offset:1
+#: edb6a1cdc537466ab4538b34682b3d14 of unit.accel.ADXL345.offset:1
 msgid "The x, y, z offsets as a tuple of raw count values."
 msgstr "x、y、z 偏移量作为原始计数值的元组。"
 
-#: 782238f20055429c9d1b27c875603c88 of unit.accel.ADXL345.offset:3
+#: 5114b8a927df40449e0719551ca15986 of unit.accel.ADXL345.offset:3
 msgid "See offset_calibration example for usage."
 msgstr "请参阅 offset_calibration 示例以了解用法。"
-
-#: 000ed8f733ac465896a17ba2de1066a7 of unit.accel.ADXL345.raw_x:1
-msgid "The raw x value."
-msgstr "原始 x 轴的值。"
-
-#: 931d0577b91e461d85fa29221dff875d of unit.accel.ADXL345.raw_y:1
-msgid "The raw y value."
-msgstr "原始 y 轴的值。"
-
-#: 972ecb35860b413aba1fddcf6c5264b8 of unit.accel.ADXL345.raw_z:1
-msgid "The raw z value."
-msgstr "原始 z 轴的值。"
 
 #~ msgid "Micropython Example:"
 #~ msgstr ""
