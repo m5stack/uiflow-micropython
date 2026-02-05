@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -90,6 +90,7 @@ def setup():
         bat_vol, \
         vout_vol, \
         vout_state
+
     M5.begin()
     Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
@@ -151,7 +152,7 @@ def loop():
             label_state.setColor(0x666666, 0x000000)
         label_usb.setText(str((str("USB:") + str((str(usb_vol) + str("mV"))))))
         label_bat.setText(str((str("Bat:") + str((str(bat_vol) + str("mV"))))))
-        label_5vout.setText(str((str("Out:") + str((str(vout_vol) + str("mV"))))))
+        label_5vout.setText(str((str("Out:") + str((str((int(vout_vol))) + str("mV"))))))
 
 
 if __name__ == "__main__":

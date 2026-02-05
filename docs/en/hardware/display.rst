@@ -41,8 +41,8 @@ Usage Tips
 UiFlow2 Example
 ---------------
 
-draw test
-^^^^^^^^^
+Basic Drawing
+^^^^^^^^^^^^^
 
 Open the |cores3_draw_test_example.m5f2| project in UiFlow2.
 
@@ -56,17 +56,47 @@ Example output:
 
     None
 
+Canvas Drawing
+^^^^^^^^^^^^^^
+
+Open the |cores3_display_canvas_example.m5f2| project in UiFlow2.
+
+This example demonstrates how to create and use a canvas for drawing. It creates a canvas with 2-bit color depth, draws circles on it, and then pushes the canvas to the display.
+
+UiFlow2 Code Block:
+
+    |cores3_display_canvas_example.png|
+
+Example output:
+
+    None
+
 MicroPython Example
 -------------------
 
-draw test
-^^^^^^^^^
+Basic Drawing
+^^^^^^^^^^^^^
 
 This example demonstrates basic drawing functions of Display, including text, images, QR code, and various shapes.
 
 MicroPython Code Block:
 
     .. literalinclude:: ../../../examples/hardware/display/cores3_draw_test_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+Canvas Drawing
+^^^^^^^^^^^^^^
+
+This example demonstrates how to create and use a canvas for drawing. It creates a canvas with 2-bit color depth, draws circles on it, and then pushes the canvas to the display.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/hardware/display/cores3_display_canvas_example.m5f2.py
         :language: python
         :linenos:
 
@@ -193,11 +223,11 @@ Example output:
 
     .. method:: setColorDepth(bpp)
 
-        Set the color depth of the display.
+        Set the color depth of the canvas.
 
         :param int bpp: desired color depth in bits per pixel.
 
-        Notes: For CoreS3 devices, color depth is fixed at 16 bits and this method has no effect.
+        Notes: This method only applies to canvas objects, not the display itself. For CoreS3 devices, the display color depth is fixed at 16 bits.
 
         UiFlow2 Code Block:
 
@@ -716,7 +746,7 @@ Example output:
         :param int x: x-coordinate to display (default 0)
         :param int y: y-coordinate to display (default 0)
         :param int w: QR code width (default 0)
-        :param int version: QR code version (default 1)
+        :param int version: QR code version (default 1, range: 0~38)
 
         UiFlow2 Code Block:
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-05 01:05+0800\n"
+"POT-Creation-Date: 2026-02-05 09:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,420 +20,448 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hardware/display.rst:4 320f6c3301e9466383d70854c8571565
+#: ../../en/hardware/display.rst:4 4651c527a7964973ac22e62c8e183692
 msgid "Display"
-msgstr ""
+msgstr "显示屏"
 
-#: ../../en/hardware/display.rst:8 aabe2a468551495390ec3ad98851669d
+#: ../../en/hardware/display.rst:8 d4ca7b9433fe428eb8dd5baf5cbfbc31
 msgid "A lcd display library"
 msgstr "LCD 屏幕显示库"
 
-#: ../../en/hardware/display.rst:15 1a86dcd18afc4dacb59ac2a89b6ec11d
+#: ../../en/hardware/display.rst:15 840ac5cd2e27470d82bd0764a006ba65
 msgid "M5 Series Display Libraries"
 msgstr "M5 系列显示库说明"
 
-#: ../../en/hardware/display.rst:18 fb41e2d8095540aab10449315e84bf84
+#: ../../en/hardware/display.rst:18 4c9baeb5cca147859fc647625b345d53
 msgid "1. Display"
 msgstr ""
 
-#: ../../en/hardware/display.rst:19 8fd8b80ad6234027968326fa0a6162eb
+#: ../../en/hardware/display.rst:19 04c5e28125404c9b9249cc14e085cb9a
 msgid ""
 "A low-level graphics library providing basic screen drawing, text, lines,"
 " and color management."
 msgstr "底层图形库，提供屏幕绘制、文字、线条、颜色管理等基础功能。"
 
-#: ../../en/hardware/display.rst:20 446ad13c87924839bbc55db8cc391f30
+#: ../../en/hardware/display.rst:20 b55d49befae540559c6bdf45cfc25189
 msgid ""
 "Can be used independently, suitable for scenarios that only require "
 "drawing graphics or text."
 msgstr "可独立使用，适合只需要绘制图形或文字的场景。"
 
-#: ../../en/hardware/display.rst:23 7ad8885c7b314f1db803f9b16d89b9fa
+#: ../../en/hardware/display.rst:23 244a08bd49414120adef46d24bc23cc5
 msgid "2. M5Widgets"
 msgstr ""
 
-#: ../../en/hardware/display.rst:24 7a2262fd362b4be989d1cfcfe658d13e
+#: ../../en/hardware/display.rst:24 13cf80da751f45a3813108cd96591932
 msgid ""
 "A basic UI widget library providing labels, image displays, and other UI "
 "controls."
 msgstr "基础控件库，提供标签、图片显示等 UI 控件。"
 
-#: ../../en/hardware/display.rst:25 41d5f1e230c4464b9c1b8828ccdd9a6d
+#: ../../en/hardware/display.rst:25 4001bb01423543a8b29601ed913d04bd
 msgid "Built on top of M5GFX."
 msgstr "底层依赖 M5GFX。"
 
-#: ../../en/hardware/display.rst:26 5756086635fc4c09b12f20d0ce70ca3b
+#: ../../en/hardware/display.rst:26 55390375cb7a4392ac443a50cb07b9d0
 msgid "Suitable for simple interactive UI elements."
 msgstr "适合需要简单交互控件的界面。"
 
-#: ../../en/hardware/display.rst:29 6a5109fa6f574c9fb8ae416cccbd091e
+#: ../../en/hardware/display.rst:29 29f5438aa5ba44d78abe08b7b78b2f4f
 msgid "3. M5UI"
 msgstr ""
 
-#: ../../en/hardware/display.rst:30 013c8177e366468c8c1f16f1a9e1c64e
+#: ../../en/hardware/display.rst:30 4b3749defc644179a6cf38cd7a65bd85
 msgid "A high-level UI framework based on LVGL."
 msgstr "高层 UI 框架，基于 LVGL 封装。"
 
-#: ../../en/hardware/display.rst:31 bfd5ae3cdc5c4c63b0d9c0907e156991
+#: ../../en/hardware/display.rst:31 50111d6158f2459f8aa297a191293f3a
 msgid ""
 "Provides page management, multi-widget layouts, and unified event "
 "handling."
 msgstr "提供页面管理、多控件布局和统一事件处理。"
 
-#: ../../en/hardware/display.rst:34 422d1949d6024346b79e7383c7e26a97
+#: ../../en/hardware/display.rst:34 98cf07f226a245fba47f6f3bdd93a74f
 msgid "Usage Tips"
 msgstr "使用提示"
 
-#: ../../en/hardware/display.rst:35 b7be0027f3674840a758ae96702630bf
+#: ../../en/hardware/display.rst:35 973c686c62e94e9daca6cbb7f64a7b38
 msgid ""
 "⚠️ Do not mix M5GFX, M5Widgets, and M5UI simultaneously, as it may cause "
 "rendering issues or event conflicts."
 msgstr "⚠️ 不建议同时混用 M5GFX、M5Widgets、M5UI，可能导致渲染异常或事件冲突。"
 
-#: ../../en/hardware/display.rst:36 a0e0aeba0e3d450babad162463a5d61b
+#: ../../en/hardware/display.rst:36 2aecde8080db457d80122c8aaecffae3
 msgid "For graphics-only drawing → use M5GFX."
 msgstr "单独绘图 → 使用 M5GFX。"
 
-#: ../../en/hardware/display.rst:37 bf64cb1ffbab41beaf42a751c12bc5be
+#: ../../en/hardware/display.rst:37 d588aec864a54292a312a5a4fc0fec1e
 msgid "For simple interactive widgets → use M5Widgets."
 msgstr "简单控件交互 → 使用 M5Widgets。"
 
-#: ../../en/hardware/display.rst:38 b7de8274cfed4466bba03c8384c4014a
+#: ../../en/hardware/display.rst:38 5743956dea9e4c579abc7aced59ba3f8
 msgid "For multi-page UI → use M5UI."
 msgstr "多页面 UI → 使用 M5UI。"
 
-#: ../../en/hardware/display.rst:42 87701e9fc234487d886be4719762eee1
+#: ../../en/hardware/display.rst:42 ef6bd398f2c84975a8d5ac409804107e
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../en/hardware/display.rst:45 ../../en/hardware/display.rst:63
-#: e779ff613d3e4a45a7a282bec77a5019
-msgid "draw test"
-msgstr "绘图测试"
+#: ../../en/hardware/display.rst:96 5129d84dd96d4766acf948eb107f67fb
+#: be1c6a78baef4effaecf60a6b96dff56 c43497f50e7146a28bd151fa608cb31d
+msgid "Basic Drawing"
+msgstr "基础绘图"
 
-#: ../../en/hardware/display.rst:47 926664d6d0ae43c0bdf8f18b62e91521
+#: ../../en/hardware/display.rst:47 186cf1eae201474588f84e5a967e7ef8
 msgid "Open the |cores3_draw_test_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |cores3_draw_test_example.m5f2| 项目。"
 
 #: ../../en/hardware/display.rst:49 ../../en/hardware/display.rst:65
-#: 17c3cfc65fa34f1bb9a1ad07809009d4 783259c6ecba480fbbb1916d462ca372
+#: ../../en/hardware/display.rst:98 06ad85ee862544a495930dddd1b4cd5f
 msgid ""
 "This example demonstrates basic drawing functions of Display, including "
 "text, images, QR code, and various shapes."
 msgstr "本示例演示了 M5.Lcd 的基本绘图功能，包括文字、图片、二维码以及各种图形。"
 
-#: ../../en/hardware/display.rst:51 ../../en/hardware/display.rst:89
-#: ../../en/hardware/display.rst:106 ../../en/hardware/display.rst:130
-#: ../../en/hardware/display.rst:147 ../../en/hardware/display.rst:164
-#: ../../en/hardware/display.rst:184 ../../en/hardware/display.rst:202
-#: ../../en/hardware/display.rst:224 ../../en/hardware/display.rst:241
-#: ../../en/hardware/display.rst:269 ../../en/hardware/display.rst:286
-#: ../../en/hardware/display.rst:302 ../../en/hardware/display.rst:318
-#: ../../en/hardware/display.rst:335 ../../en/hardware/display.rst:351
-#: ../../en/hardware/display.rst:367 ../../en/hardware/display.rst:385
-#: ../../en/hardware/display.rst:404 ../../en/hardware/display.rst:423
-#: ../../en/hardware/display.rst:443 ../../en/hardware/display.rst:463
-#: ../../en/hardware/display.rst:483 ../../en/hardware/display.rst:503
-#: ../../en/hardware/display.rst:523 ../../en/hardware/display.rst:544
-#: ../../en/hardware/display.rst:565 ../../en/hardware/display.rst:587
-#: ../../en/hardware/display.rst:609 ../../en/hardware/display.rst:631
-#: ../../en/hardware/display.rst:653 ../../en/hardware/display.rst:677
-#: ../../en/hardware/display.rst:701 ../../en/hardware/display.rst:721
-#: ../../en/hardware/display.rst:745 ../../en/hardware/display.rst:777
-#: ../../en/hardware/display.rst:809 ../../en/hardware/display.rst:841
-#: ../../en/hardware/display.rst:872 ../../en/hardware/display.rst:901
-#: ../../en/hardware/display.rst:917 ../../en/hardware/display.rst:937
-#: ../../en/hardware/display.rst:959 ../../en/hardware/display.rst:981
-#: 2db3ac00d78a4612a3d0b6edbc9a6dda 7088c3a89b214e2e8fcf8d547fdc070b
-#: 7c44bb3d09eb4d8db38abdcbdf52a4de 87206c7138a1463a87adbca44e529a2b
-#: d1043f0316d042258c38417a28fd3b85
+#: ../../en/hardware/display.rst:51 ../../en/hardware/display.rst:84
+#: ../../en/hardware/display.rst:137 ../../en/hardware/display.rst:154
+#: ../../en/hardware/display.rst:178 ../../en/hardware/display.rst:195
+#: ../../en/hardware/display.rst:212 ../../en/hardware/display.rst:232
+#: ../../en/hardware/display.rst:250 ../../en/hardware/display.rst:272
+#: ../../en/hardware/display.rst:289 ../../en/hardware/display.rst:317
+#: ../../en/hardware/display.rst:334 ../../en/hardware/display.rst:350
+#: ../../en/hardware/display.rst:366 ../../en/hardware/display.rst:383
+#: ../../en/hardware/display.rst:399 ../../en/hardware/display.rst:415
+#: ../../en/hardware/display.rst:433 ../../en/hardware/display.rst:452
+#: ../../en/hardware/display.rst:471 ../../en/hardware/display.rst:491
+#: ../../en/hardware/display.rst:511 ../../en/hardware/display.rst:531
+#: ../../en/hardware/display.rst:551 ../../en/hardware/display.rst:571
+#: ../../en/hardware/display.rst:592 ../../en/hardware/display.rst:613
+#: ../../en/hardware/display.rst:635 ../../en/hardware/display.rst:657
+#: ../../en/hardware/display.rst:679 ../../en/hardware/display.rst:701
+#: ../../en/hardware/display.rst:725 ../../en/hardware/display.rst:749
+#: ../../en/hardware/display.rst:769 ../../en/hardware/display.rst:793
+#: ../../en/hardware/display.rst:825 ../../en/hardware/display.rst:857
+#: ../../en/hardware/display.rst:889 ../../en/hardware/display.rst:920
+#: ../../en/hardware/display.rst:949 ../../en/hardware/display.rst:965
+#: ../../en/hardware/display.rst:985 ../../en/hardware/display.rst:1007
+#: ../../en/hardware/display.rst:1029 3db2e614070a40af8bb9be7da1b0beac
+#: a328ca9fa2a04f00ad58bc396065b8ff
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/hardware/display.rst:53 aa8c4e6c72924263a5bbbd63fa5c2613
+#: ../../en/hardware/display.rst:53 e96bc9d844af40c49ebcb79327a2f965
 msgid "|cores3_draw_test_example.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:1 ff2aa4c6570045e5897602c48e95fd31
+#: ../../en/refs/hardware.display.ref:1 a46544123451413e8af24bcbdaa670d3
 msgid "cores3_draw_test_example.png"
 msgstr ""
 
 #: ../../en/hardware/display.rst:55 ../../en/hardware/display.rst:73
-#: 20e517109db64f80af0066eb150fed42
+#: ../../en/hardware/display.rst:88 ../../en/hardware/display.rst:106
+#: ../../en/hardware/display.rst:121 d76b0b6e8c6a489f870c3b36665b0d97
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../en/hardware/display.rst:57 ../../en/hardware/display.rst:75
-#: 079ef8c8e5d6425b8a1716f42200ad8e
+#: ../../en/hardware/display.rst:90 ../../en/hardware/display.rst:108
+#: ../../en/hardware/display.rst:123 4707836226884fc6ad8d7347d34cf267
 msgid "None"
 msgstr "无"
 
-#: ../../en/hardware/display.rst:60 87701e9fc234487d886be4719762eee1
+#: ../../en/hardware/display.rst:60 ../../en/hardware/display.rst:93
+#: 0591aeb185f3454ebac74920369e1c30
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/hardware/display.rst:67 ../../en/hardware/display.rst:93
-#: ../../en/hardware/display.rst:110 ../../en/hardware/display.rst:134
-#: ../../en/hardware/display.rst:151 ../../en/hardware/display.rst:168
-#: ../../en/hardware/display.rst:188 ../../en/hardware/display.rst:206
-#: ../../en/hardware/display.rst:228 ../../en/hardware/display.rst:245
-#: ../../en/hardware/display.rst:273 ../../en/hardware/display.rst:290
-#: ../../en/hardware/display.rst:306 ../../en/hardware/display.rst:322
-#: ../../en/hardware/display.rst:339 ../../en/hardware/display.rst:355
-#: ../../en/hardware/display.rst:371 ../../en/hardware/display.rst:389
-#: ../../en/hardware/display.rst:408 ../../en/hardware/display.rst:427
-#: ../../en/hardware/display.rst:447 ../../en/hardware/display.rst:467
-#: ../../en/hardware/display.rst:487 ../../en/hardware/display.rst:507
-#: ../../en/hardware/display.rst:527 ../../en/hardware/display.rst:548
-#: ../../en/hardware/display.rst:569 ../../en/hardware/display.rst:591
-#: ../../en/hardware/display.rst:613 ../../en/hardware/display.rst:635
-#: ../../en/hardware/display.rst:657 ../../en/hardware/display.rst:681
-#: ../../en/hardware/display.rst:705 ../../en/hardware/display.rst:725
-#: ../../en/hardware/display.rst:749 ../../en/hardware/display.rst:781
-#: ../../en/hardware/display.rst:813 ../../en/hardware/display.rst:845
-#: ../../en/hardware/display.rst:876 ../../en/hardware/display.rst:905
-#: ../../en/hardware/display.rst:921 ../../en/hardware/display.rst:941
-#: ../../en/hardware/display.rst:963 ../../en/hardware/display.rst:985
-#: 87701e9fc234487d886be4719762eee1
+#: ../../en/hardware/display.rst:67 ../../en/hardware/display.rst:100
+#: ../../en/hardware/display.rst:115 ../../en/hardware/display.rst:141
+#: ../../en/hardware/display.rst:158 ../../en/hardware/display.rst:182
+#: ../../en/hardware/display.rst:199 ../../en/hardware/display.rst:216
+#: ../../en/hardware/display.rst:236 ../../en/hardware/display.rst:254
+#: ../../en/hardware/display.rst:276 ../../en/hardware/display.rst:293
+#: ../../en/hardware/display.rst:321 ../../en/hardware/display.rst:338
+#: ../../en/hardware/display.rst:354 ../../en/hardware/display.rst:370
+#: ../../en/hardware/display.rst:387 ../../en/hardware/display.rst:403
+#: ../../en/hardware/display.rst:419 ../../en/hardware/display.rst:437
+#: ../../en/hardware/display.rst:456 ../../en/hardware/display.rst:475
+#: ../../en/hardware/display.rst:495 ../../en/hardware/display.rst:515
+#: ../../en/hardware/display.rst:535 ../../en/hardware/display.rst:555
+#: ../../en/hardware/display.rst:575 ../../en/hardware/display.rst:596
+#: ../../en/hardware/display.rst:617 ../../en/hardware/display.rst:639
+#: ../../en/hardware/display.rst:661 ../../en/hardware/display.rst:683
+#: ../../en/hardware/display.rst:705 ../../en/hardware/display.rst:729
+#: ../../en/hardware/display.rst:753 ../../en/hardware/display.rst:773
+#: ../../en/hardware/display.rst:797 ../../en/hardware/display.rst:829
+#: ../../en/hardware/display.rst:861 ../../en/hardware/display.rst:893
+#: ../../en/hardware/display.rst:924 ../../en/hardware/display.rst:953
+#: ../../en/hardware/display.rst:969 ../../en/hardware/display.rst:989
+#: ../../en/hardware/display.rst:1011 ../../en/hardware/display.rst:1033
+#: 81600384e28d4c61a8a9341d6e366eed 8544aeb3fec34dde94e4db5962746364
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/hardware/display.rst:78 0feedf81b67745a3b05baa06d9f93465
+#: ../../en/hardware/display.rst:78 ../../en/hardware/display.rst:111
+#: 4de48e3355664a599d2e7a1561b2e019
+msgid "Canvas Drawing"
+msgstr "画布绘图"
+
+#: ../../en/hardware/display.rst:80 186cf1eae201474588f84e5a967e7ef8
+msgid "Open the |cores3_display_canvas_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 上打开 |cores3_display_canvas_example.m5f2| 项目。"
+
+#: ../../en/hardware/display.rst:82 ../../en/hardware/display.rst:113
+#: 62c0aed6757540bca335fce55ccfc7d2 d07552c2dbdb476494aad8deaa253a18
+msgid ""
+"This example demonstrates how to create and use a canvas for drawing. It "
+"creates a canvas with 2-bit color depth, draws circles on it, and then "
+"pushes the canvas to the display."
+msgstr "本示例演示了如何创建和使用画布进行绘图。它创建一个 2 位颜色深度的画布，在上面绘制圆形，然后将画布推送到显示屏。"
+
+#: ../../en/hardware/display.rst:86 e96bc9d844af40c49ebcb79327a2f965
+msgid "|cores3_display_canvas_example.png|"
+msgstr ""
+
+#: ../../en/refs/hardware.display.ref:2 a46544123451413e8af24bcbdaa670d3
+msgid "cores3_display_canvas_example.png"
+msgstr ""
+
+#: ../../en/hardware/display.rst:126 e740102c2be0474db57834c7179287f4
 msgid "**API**"
 msgstr "API 应用"
 
-#: ../../en/hardware/display.rst:84 81bda3ba5be04d8b9a406d69d15457a7
+#: ../../en/hardware/display.rst:132 64b54788c5544543a88a5fa64c399a8a
 msgid "Get the horizontal resolution of the display."
 msgstr "获取显示屏水平分辨率。"
 
-#: ../../en/hardware/display.rst 273e68e983b2430188619faf645c5b84
+#: ../../en/hardware/display.rst 72632666f229425ab60320e3bc4e31a5
 msgid "returns width"
 msgstr ""
 
-#: ../../en/hardware/display.rst:86 81bda3ba5be04d8b9a406d69d15457a7
+#: ../../en/hardware/display.rst:134 131ab97f7dce4c4da92bd8f132dd0c5f
 msgid "horizontal resolution in pixels."
 msgstr "水平分辨率。"
 
-#: ../../en/hardware/display.rst be2900f665784c6b93e4d3e60b8615fc
+#: ../../en/hardware/display.rst e89bd783ceea4496aeafb325378e246c
 msgid "return type"
 msgstr ""
 
-#: ../../en/hardware/display.rst:87 ../../en/hardware/display.rst:104
-#: ../../en/hardware/display.rst:121 ../../en/hardware/display.rst:145
-#: 624d9819e31f4d96ba1e2362e635b8ea
+#: ../../en/hardware/display.rst:135 ../../en/hardware/display.rst:152
+#: ../../en/hardware/display.rst:169 ../../en/hardware/display.rst:193
+#: 025ec47b364d4c78a4690fc0d08bfa32
 msgid "int"
 msgstr ""
 
-#: ../../en/hardware/display.rst:91 5ad1811bcbb74418a843bcf8fc8b804b
+#: ../../en/hardware/display.rst:139 0d9c2b91685d43aebb2e6c174bfdc933
 msgid "|width.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:3 8a9bdad16ee944b5961e110da941af16
+#: ../../en/refs/hardware.display.ref:4 643ab2ae9dc345488a7de2a332188333
 msgid "width.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:101 888ecf06b9a24d7ea6551a01856926d7
+#: ../../en/hardware/display.rst:149 0d219ee1b6ac42aeb8d85c60b0d1d1ad
 msgid "Get the vertical resolution of the display."
 msgstr "获取显示屏垂直分辨率。"
 
-#: ../../en/hardware/display.rst 365526b4c4ac48999c516edb1da09249
+#: ../../en/hardware/display.rst 972d3e63a52e4492bde4895c8a78d624
 msgid "returns height"
 msgstr ""
 
-#: ../../en/hardware/display.rst:103 888ecf06b9a24d7ea6551a01856926d7
+#: ../../en/hardware/display.rst:151 66c4a484e863416d8c2120705120f4c9
 msgid "vertical resolution in pixels."
 msgstr "垂直分辨率。"
 
-#: ../../en/hardware/display.rst:108 6c1193c8148947fabf973c3c2f2664d0
+#: ../../en/hardware/display.rst:156 f30288c9c54042ac9014fefc36ab9498
 msgid "|height.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:4 2323bca87aec4c44a324e09925bc7265
+#: ../../en/refs/hardware.display.ref:5 3d385bc211b94a3f9ef12d8a8e65b381
 msgid "height.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:118 05a69311881a483cbcaaf6c0b5ff04eb
+#: ../../en/hardware/display.rst:166 bdca84d8fe724a8ab9f834ca73e4a7ae
 msgid "Get the current rotation of the display."
 msgstr "获取显示屏旋转方向。"
 
-#: ../../en/hardware/display.rst 771e82b8e2d241c4933ef50fd38b43a8
+#: ../../en/hardware/display.rst 2612dcf96c664fd7911a389c23104356
 msgid "returns rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:120 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:168 e29d1a034ddf4ed3b295d7f2583e413a
 msgid "display rotation value."
 msgstr "旋转方向值"
 
-#: ../../en/hardware/display.rst:123 0013573cae9f47b6b7626604356231a0
+#: ../../en/hardware/display.rst:171 5597921ea70f4e419d829203c290884c
 msgid "Rotation values:"
 msgstr ""
 
-#: ../../en/hardware/display.rst:125 771e82b8e2d241c4933ef50fd38b43a8
+#: ../../en/hardware/display.rst:173 192468d742e8415cb4f30fea865d2a40
 msgid "1: 0° rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:126 15993cd5eba84629aad32fb38b93cc54
+#: ../../en/hardware/display.rst:174 3333e630e02b497e821b00e030f4b270
 msgid "2: 90° rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:127 d5d824077e214b10a49b02cd179af652
+#: ../../en/hardware/display.rst:175 29c5e0869e2b4d06ade7971890592979
 msgid "3: 180° rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:128 01ce3e006be94a54a1c44825fca065e4
+#: ../../en/hardware/display.rst:176 0ff00bc591434fe99a513e74f5e0a8ad
 msgid "4: 270° rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:132 0f8d49506429412c844320f23f5e823f
+#: ../../en/hardware/display.rst:180 4eb25c9ea536443080fa54d38cea09f7
 msgid "|getrotation.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:5 3314fcb26d8540c9b697ac75a3be4851
+#: ../../en/refs/hardware.display.ref:6 ee7b6346c382406b9079fa4eaedfa60b
 msgid "getRotation.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:142 8df5a94dd4b6498287f400ccbc7b73e2
+#: ../../en/hardware/display.rst:190 a0381ecd58554fada048ba8f7ecc0fbc
 msgid "Get the color depth of the display."
 msgstr "获取显示屏颜色深度。"
 
-#: ../../en/hardware/display.rst a0c974f7947b45d6b71ac8c13b6b2de3
+#: ../../en/hardware/display.rst d2b2c8fc5eef49938835ece4a56799c1
 msgid "returns depth"
 msgstr ""
 
-#: ../../en/hardware/display.rst:144 6abe3bb09711432da3065b686288fa07
+#: ../../en/hardware/display.rst:192 ae6b19bbe95a40cdbf60f80c0be8a870
 msgid "color depth in bits per pixel."
 msgstr "以每像素位数表示的颜色深度。"
 
-#: ../../en/hardware/display.rst:149 402a3bed4cec4dd2b9708fba84332162
+#: ../../en/hardware/display.rst:197 d946848349fb4ae98d38e703da93f6da
 msgid "|getcolordepth.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:6 79a864ea866a4254823b47d08126f9aa
+#: ../../en/refs/hardware.display.ref:7 9b73907274f54ffcb18a01cde6ce8b7e
 msgid "getColorDepth.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:159 05a69311881a483cbcaaf6c0b5ff04eb
+#: ../../en/hardware/display.rst:207 6639a64274144655bde3b5d8d7f0b11e
 msgid "Get the current cursor position on the display."
 msgstr "获取显示屏绘图光标位置。"
 
-#: ../../en/hardware/display.rst f11a0bf64ba54834b5b31f47664620b0
+#: ../../en/hardware/display.rst b813425d979540feb08d4876e9d4f4be
 msgid "returns pos"
 msgstr ""
 
-#: ../../en/hardware/display.rst:161 4b046990b80548eb9bca421c86c3902d
+#: ../../en/hardware/display.rst:209 e0d25d41b053471cbe4635348b474b31
 msgid "tuple (x, y) of cursor position."
 msgstr "tuple (x, y) 光标位置。"
 
-#: ../../en/hardware/display.rst:162 f1c59d3bf7ba484ab2d45a05219a0faa
+#: ../../en/hardware/display.rst:210 54031592f0334761ac9d148a6feb1a6f
 msgid "tuple"
 msgstr ""
 
-#: ../../en/hardware/display.rst:166 ec314d03032748e284d57a447175d6e8
+#: ../../en/hardware/display.rst:214 5fe30e8270444c6e856416cd5fe60ab5
 msgid "|getcursor.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:7 9b4dd130a8b14960947ee43d2551d264
+#: ../../en/refs/hardware.display.ref:8 9df11c519a3d4bfeb185f6c4e2481e74
 msgid "getCursor.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:176 41a8dfba301d429ab267d4b5e83cfd74
+#: ../../en/hardware/display.rst:224 18ed4b9ca54341b388204d75c340640f
 msgid "Set the rotation of the display."
 msgstr "设置显示屏旋转。"
 
-#: ../../en/hardware/display.rst 02a89f80d63d42b18bb6329895fda7e7
-#: 2faefb33c24b4ba0b8846e175af4b4cb 40c6d6f79ea04f8787149117c755b08f
-#: f0385575a7af469c828d47fbb3b92b06 fa9970ae3d154193aacb5ead92b195d0
+#: ../../en/hardware/display.rst ccfe1fbb534d4c71a2a9676f38614a5e
+#: e353143dcc5e4e9a8d1a4eac2d981457
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/hardware/display.rst:178 59dd68a126ba4c3e8572a928f68dd8f2
+#: ../../en/hardware/display.rst:226 b0ed41a061c54466a9cc93fa8ea226a0
 msgid ""
 "rotation value (1~4) - 1: 0° rotation - 2: 90° rotation - 3: 180° "
 "rotation - 4: 270° rotation"
 msgstr ""
 
-#: ../../en/hardware/display.rst:186 b9b2135813884b6b98a9439c11323e44
+#: ../../en/hardware/display.rst:234 1656b2e2c6ad407099b798dfaf781fba
 msgid "|setrotation.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:8 5e5dfb633e2c4772b114f72f0ceac5eb
+#: ../../en/refs/hardware.display.ref:9 9f52429f8e0c4689a4978761a7ee70bb
 msgid "setRotation.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:196 b54b5f5a5dcf48488ce48cd2ffd7acb9
-msgid "Set the color depth of the display."
-msgstr "设置显示屏的颜色深度。"
+#: ../../en/hardware/display.rst:244 29af57503dac479fb10275bc7cb87c16
+msgid "Set the color depth of the canvas."
+msgstr "设置画布的颜色深度。"
 
-#: ../../en/hardware/display.rst:198 6abe3bb09711432da3065b686288fa07
+#: ../../en/hardware/display.rst:246 02af2d9638a946469b25da7a28af5f44
 msgid "desired color depth in bits per pixel."
 msgstr "期望的颜色深度（以每像素位数表示）。"
 
-#: ../../en/hardware/display.rst:200 314597b63fca47929eed02ab9a1fbb3e
+#: ../../en/hardware/display.rst:248 9c27522c6632460ea6da7c3935e4de43
 msgid ""
-"Notes: For CoreS3 devices, color depth is fixed at 16 bits and this "
-"method has no effect."
-msgstr "注意：对于 CoreS3 设备，颜色深度固定为 16 位，此方法无效。"
+"Notes: This method only applies to canvas objects, not the display "
+"itself. For CoreS3 devices, the display color depth is fixed at 16 bits."
+msgstr "注意：此方法仅适用于画布对象，不适用于显示屏本身。对于 CoreS3 设备，显示屏颜色深度固定为 16 位。"
 
-#: ../../en/hardware/display.rst:204 041b75e955694464b45fda72a419ae40
+#: ../../en/hardware/display.rst:252 1f6d25415b344c1fb63b13ad5ba87bf4
 msgid "|setcolordepth.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:9 707ca9ebf80a4f13904ef1215efc381e
+#: ../../en/refs/hardware.display.ref:10 f7e1535507414552b0bbd8f754dc3292
 msgid "setColorDepth.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:214 d442aad848c14f539a43a8add5a2157a
+#: ../../en/hardware/display.rst:262 1f7c53ed77a742be859c97d0feb35156
 msgid "Set the EPD mode for the display."
 msgstr "设置显示屏的 EPD 模式。"
 
-#: ../../en/hardware/display.rst:216 ae4109cbaa574613904d4e328ca9b39b
+#: ../../en/hardware/display.rst:264 cc160d73c4f04336a742090a656f0fe8
 msgid ""
 "desired EPD mode - 0: M5.Lcd.EPDMode.EPD_QUALITY - 1: "
 "M5.Lcd.EPDMode.EPD_TEXT - 2: M5.Lcd.EPDMode.EPD_FAST - 3: "
 "M5.Lcd.EPDMode.EPD_FASTEST"
 msgstr ""
 
-#: ../../en/hardware/display.rst:222 39494dcbb24249c791de0e9a31a77f8a
+#: ../../en/hardware/display.rst:270 128a3332208f40d1b012f513d194674c
 msgid "Notes: Only applicable to devices with EPD capabilities."
 msgstr "注意：仅适用于具有 EPD 功能的设备。"
 
-#: ../../en/hardware/display.rst:226 19e3eef19c07403a8b413e0438e0a811
+#: ../../en/hardware/display.rst:274 5169ef76b9ec4ee0beae0476698be903
 msgid "|setepdmode.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:10 d22ecae101b34646b20cb4ae2e50b47b
+#: ../../en/refs/hardware.display.ref:11 b0d98b0ca0214a18895e58f552cbc6c9
 msgid "setEpdMode.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:236 99382d57c66d4eafb52a942ecd526de7
+#: ../../en/hardware/display.rst:284 0f629e034b5f42ae8e2236376ed8c04b
 msgid "Check if the display is an EPD (Electronic Paper Display)."
 msgstr "检查显示屏是否为电子墨水屏（EPD）。"
 
-#: ../../en/hardware/display.rst fb35e1cef072455bb2ff30d24f2f1fbf
+#: ../../en/hardware/display.rst fcc7d9ee4d5b481981d78e04cf340032
 msgid "returns is_epd"
 msgstr ""
 
-#: ../../en/hardware/display.rst:238 99382d57c66d4eafb52a942ecd526de7
+#: ../../en/hardware/display.rst:286 418b6c3043d946238fa061b77a49a001
 msgid "True if the display is EPD, False otherwise."
 msgstr "如果显示屏为 EPD，则返回 True，否则返回 False。"
 
-#: ../../en/hardware/display.rst:239 1840f052787c449bb852570fab18f626
+#: ../../en/hardware/display.rst:287 bfdb728c53cf4c9f87141c534ca10f73
 msgid "bool"
 msgstr ""
 
-#: ../../en/hardware/display.rst:243 63027857b78c4b8893aee312c0a4fb0f
+#: ../../en/hardware/display.rst:291 75573cd4e50f4afb803152636de2bb61
 msgid "|isepd.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:11 5eb43b7f2f3e4b45bea18bf978ea89e0
+#: ../../en/refs/hardware.display.ref:12 b1bacff148f54588ba738e9e1236ea80
 msgid "isEPD.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:253 1122916c27ba49dcb9b6967597d0d008
+#: ../../en/hardware/display.rst:301 d08299a301ea4ee28adc588cffba5dfe
 msgid "Set the font for the display."
-msgstr 设置显示字体。"
+msgstr "置显示字体。"
 
-#: ../../en/hardware/display.rst:255 5285475bd8494ae4bfe70469967e3e71
+#: ../../en/hardware/display.rst:303 64f31b62023943cd82111f32b6c3a655
 msgid ""
 "font type. Available options:  - M5.Lcd.FONTS.ASCII7 - "
 "M5.Lcd.FONTS.DejaVu9 - M5.Lcd.FONTS.DejaVu12 - M5.Lcd.FONTS.DejaVu18 - "
@@ -442,829 +470,838 @@ msgid ""
 " M5.Lcd.FONTS.EFontKR24"
 msgstr ""
 
-#: ../../en/hardware/display.rst:255 ae3bc8a0498c492c886f16bd40832443
+#: ../../en/hardware/display.rst:303 27a9b9cc9dde4d7789bde8999c8d41c3
 msgid "font type. Available options:"
 msgstr "字体类型，可选："
 
-#: ../../en/hardware/display.rst:257 1765bce8c8a04eebb104b4580b677d4f
+#: ../../en/hardware/display.rst:305 3cdaebbbc3d2475d86c32bb047840fe0
 msgid "M5.Lcd.FONTS.ASCII7"
 msgstr ""
 
-#: ../../en/hardware/display.rst:258 a3b156a28d1c4939be136f2aea20dd34
+#: ../../en/hardware/display.rst:306 9dc8f691fb824fbe8bb8755587047968
 msgid "M5.Lcd.FONTS.DejaVu9"
 msgstr ""
 
-#: ../../en/hardware/display.rst:259 228ed5df834042dc82615f02d8a23a34
+#: ../../en/hardware/display.rst:307 66da74f734974f3785c51f579b218c91
 msgid "M5.Lcd.FONTS.DejaVu12"
 msgstr ""
 
-#: ../../en/hardware/display.rst:260 8e25ff78ae064d96be72fa09e10c79e6
+#: ../../en/hardware/display.rst:308 6368cc9780f745459da1c64a018a1905
 msgid "M5.Lcd.FONTS.DejaVu18"
 msgstr ""
 
-#: ../../en/hardware/display.rst:261 740eac43be3442c9a3a304efb569740a
+#: ../../en/hardware/display.rst:309 a67a9687461a46bb93457fb1319de008
 msgid "M5.Lcd.FONTS.DejaVu24"
 msgstr ""
 
-#: ../../en/hardware/display.rst:262 7714188f98d940b6b2dd266cdf2d6520
+#: ../../en/hardware/display.rst:310 704f9b783ae247aca62bbe49a3b982f2
 msgid "M5.Lcd.FONTS.DejaVu40"
 msgstr ""
 
-#: ../../en/hardware/display.rst:263 fd6beb22a9304989a94d33870e86adcc
+#: ../../en/hardware/display.rst:311 2c1f120485034788833f21b00d827948
 msgid "M5.Lcd.FONTS.DejaVu56"
 msgstr ""
 
-#: ../../en/hardware/display.rst:264 14ac36dcd4194f3088e1448d70b6a753
+#: ../../en/hardware/display.rst:312 75f93476fb5b486d85e734d2aff306fd
 msgid "M5.Lcd.FONTS.DejaVu72"
 msgstr ""
 
-#: ../../en/hardware/display.rst:265 a534c9a6f70a46d8b884f10cc8c3c1d2
+#: ../../en/hardware/display.rst:313 4b97d6672b124144ac6806c837cf39ea
 msgid "M5.Lcd.FONTS.EFontCN24"
 msgstr ""
 
-#: ../../en/hardware/display.rst:266 5f8bc1d7feed4925901a2228f5c89174
+#: ../../en/hardware/display.rst:314 31f4157b748841b58d59bdf25cc6fa09
 msgid "M5.Lcd.FONTS.EFontJA24"
 msgstr ""
 
-#: ../../en/hardware/display.rst:267 4779de869c3d49d392ba50c2d91ae4f8
+#: ../../en/hardware/display.rst:315 6b308500a2174f2e93f1036509560e80
 msgid "M5.Lcd.FONTS.EFontKR24"
 msgstr ""
 
-#: ../../en/hardware/display.rst:271 f0094d94163e4186b6e27d345c76fb6b
+#: ../../en/hardware/display.rst:319 4ea94b26cd5d43deb5a229faada57e19
 msgid "|setfont.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:12 a8ca6a35120741c9a5cbc5486521cd3f
+#: ../../en/refs/hardware.display.ref:13 1618971a2c9d412a9274548317388e55
 msgid "setFont.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:281 217ecff01fd34171a6713a8a6d517c97
+#: ../../en/hardware/display.rst:329 e05455d93da24286808437452371ecf9
 msgid "Set the text color and background color."
 msgstr "设置文本颜色和背景颜色。"
 
-#: ../../en/hardware/display.rst:283 53a5737130c141319590acfef68145bd
+#: ../../en/hardware/display.rst:331 cee1ddb5ce844b4080d80e3c5b2989a1
 msgid "text color in RGB888 format (default 0, black)"
 msgstr "文本颜色，RGB888 格式。默认值为 0（黑色）。"
 
-#: ../../en/hardware/display.rst:284 2bce215d09a74963a053b350a4b0e7b5
+#: ../../en/hardware/display.rst:332 6c05783870a24fec8ed163913c8817df
 msgid "background color in RGB888 format (default 0, black)"
 msgstr "背景颜色，RGB888 格式。默认值为 0（黑色）"
 
-#: ../../en/hardware/display.rst:288 a62056f757ca4d5bbadc82fbde025865
+#: ../../en/hardware/display.rst:336 333114628d324e0a81f019439685fc26
 msgid "|settextcolor.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:13 77fbf250a11d4ce2a22cc04b04d49e2a
+#: ../../en/refs/hardware.display.ref:14 4f581ec8b6134adaa14cb0cfca9e2fcb
 msgid "setTextColor.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:298 bd6fd0cf8bc44a96bb31af0dbf8a354e
+#: ../../en/hardware/display.rst:346 4762e08478544a3e8c61d8820f81e22a
 msgid "Enable or disable text scrolling."
 msgstr "启用或禁用文本滚动。"
 
-#: ../../en/hardware/display.rst:300 eb76728072774aacb0362388b8cec790
+#: ../../en/hardware/display.rst:348 9a085e0c64174933a75de01a538bbc98
 msgid "True to enable text scrolling, False to disable (default False)"
 msgstr "设置为 True 启用文本滚动，设置为 False 禁用文本滚动。默认值为 False。"
 
-#: ../../en/hardware/display.rst:304 bd6fd0cf8bc44a96bb31af0dbf8a354e
+#: ../../en/hardware/display.rst:352 ef31b151f788499cae8d04e864452556
 msgid "|settextscroll.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:14 5facdd3fe9f14475885d006298ac2d71
+#: ../../en/refs/hardware.display.ref:15 7e82a58175c049ac9e7a511e874aaa52
 msgid "setTextScroll.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:314 b7de3ad229d04a44a17266ad7c9662a7
+#: ../../en/hardware/display.rst:362 9052f8c19bab4944864b526dc5aa5c98
 msgid "Set the size of the text."
 msgstr "设置文本的大小。"
 
-#: ../../en/hardware/display.rst:316 cfbfa8ac02614842a21808d5761f3c17
+#: ../../en/hardware/display.rst:364 a22274f067cd49638ac037075bb5d019
 msgid "desired text size"
 msgstr "期望的文本大小。"
 
-#: ../../en/hardware/display.rst:320 792b2e03c7dd4a7c83327e03f180496c
+#: ../../en/hardware/display.rst:368 1fecaf0c79b74413ad594dad40f1ae8c
 msgid "|settextsize.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:15 aa932b75bc02420da8524956880cfbf2
+#: ../../en/refs/hardware.display.ref:16 73c15dd5fb3d4af3b9632abc323ac7f1
 msgid "setTextSize.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:330 4b046990b80548eb9bca421c86c3902d
+#: ../../en/hardware/display.rst:378 334dec34790b405f9be8757d882b8046
 msgid "Set the cursor position."
 msgstr "设置光标位置。"
 
-#: ../../en/hardware/display.rst:332 5d793ff68f2842d2a800ab718273d71c
+#: ../../en/hardware/display.rst:380 e64b14b8d3714e419ac3f998331d1e9e
 msgid "horizontal position of the cursor (default 0)"
 msgstr "光标的水平位置。默认值为 0。  "
 
-#: ../../en/hardware/display.rst:333 2dc3041f71d24d4aa6ed91b684a358bb
+#: ../../en/hardware/display.rst:381 34dde49eeab846f18b6f95bc85e72aa9
 msgid "vertical position of the cursor (default 0)"
 msgstr "光标的垂直位置。默认值为 0。"
 
-#: ../../en/hardware/display.rst:337 7a695d3c23804d678281e46ab6c5c0b3
+#: ../../en/hardware/display.rst:385 0ffefe72b4164c40bf529649de3008d7
 msgid "|setcursor.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:16 317473be3dc3465583415f0073d07459
+#: ../../en/refs/hardware.display.ref:17 c99a2fba2f6f46998dc35182864958c1
 msgid "setCursor.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:347 c1797e30a96342a8929e7eda20877849
+#: ../../en/hardware/display.rst:395 9ebd71ab937a48bb801625a873a045d5
 msgid "Clear the display with a specific color."
 msgstr "使用指定颜色清空显示屏"
 
-#: ../../en/hardware/display.rst:349 ../../en/hardware/display.rst:365
-#: ../../en/hardware/display.rst:421 ../../en/hardware/display.rst:461
-#: ../../en/hardware/display.rst:521 ../../en/hardware/display.rst:563
-#: ../../en/hardware/display.rst:607 ../../en/hardware/display.rst:651
-#: ../../en/hardware/display.rst:699 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:397 ../../en/hardware/display.rst:413
+#: ../../en/hardware/display.rst:469 ../../en/hardware/display.rst:509
+#: ../../en/hardware/display.rst:569 ../../en/hardware/display.rst:611
+#: ../../en/hardware/display.rst:655 ../../en/hardware/display.rst:699
+#: ../../en/hardware/display.rst:747 4708e48134c54e15b211d3a8831380c3
 msgid "fill color in RGB888 format (default 0)"
 msgstr "填充颜色，使用 RGB888 格式（默认值为 0）。"
 
-#: ../../en/hardware/display.rst:353 a5f6832acdb04470aabac3c1acb07a91
+#: ../../en/hardware/display.rst:401 c8b2a308da624423927be3bd7f8d2760
 msgid "|clear.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:17 5cb675258a9f4cc1a027b097ba96e4c4
+#: ../../en/refs/hardware.display.ref:18 cf01176e370148f7962f9930efc42bb2
 msgid "clear.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:363 76fad14a34b34e4e917e804cb5d6bb39
+#: ../../en/hardware/display.rst:411 2ad5cbec40834b278aa17a4377578334
 msgid "Fill the entire screen with a specified color."
 msgstr "用指定颜色填充整个屏幕。"
 
-#: ../../en/hardware/display.rst:369 91c84d4da49a46dc9df72cdb8bb68c6f
+#: ../../en/hardware/display.rst:417 568b9df4fe37469b923f97bdc165e86a
 msgid "|fillscreen.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:18 af1f7695296347efae034f9f5a1f2072
+#: ../../en/refs/hardware.display.ref:19 b25230d5bd6e429493b93cdab1b20491
 msgid "fillScreen.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:379 4bf91ab9b3494e9eabacd530adcf3e0e
+#: ../../en/hardware/display.rst:427 a3f2e672cd7e4ec1bcf77759113e7ac5
 msgid "Draw a single pixel on the screen."
 msgstr "在屏幕上绘制单个像素。"
 
-#: ../../en/hardware/display.rst:381 8ee59db1f6cb425da4ef612f8bee5d41
+#: ../../en/hardware/display.rst:429 ff00ac30c1b64427b491c7667ec4b0ce
 msgid "horizontal coordinate of the pixel (default -1)"
 msgstr "像素的水平坐标。默认值为 -1"
 
-#: ../../en/hardware/display.rst:382 ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:430 c36449af09e84d5088a8daeff3a7abf6
 msgid "vertical coordinate of the pixel (default -1)"
 msgstr "像素的垂直坐标。默认值为 -1"
 
-#: ../../en/hardware/display.rst:383 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:431 9669d22d334a42b0b7885e6f28e537ce
 msgid "pixel color in RGB888 format (default 0)"
-msgstr 像素的颜色，RGB888 格式。默认值为 0"
+msgstr "素的颜色，RGB888 格式。默认值为 0"
 
-#: ../../en/hardware/display.rst:387 d58ddf6cd39a47688a1675b9cd2bfced
+#: ../../en/hardware/display.rst:435 41b6bfec286d4b8996227c37842d25ac
 msgid "|drawpixel.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:19 c1bfe42aa624499e8fe12128f39de560
+#: ../../en/refs/hardware.display.ref:20 59aeef4752244efcb9991e0e3b4465d0
 msgid "drawPixel.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:397 95d9adcee2a541688e382e903d1a124d
+#: ../../en/hardware/display.rst:445 7bbf19546fcb4772a54c8ff8a0edbc82
 msgid "Draw an outline of a circle."
 msgstr "绘制一个圆。"
 
-#: ../../en/hardware/display.rst:399 ../../en/hardware/display.rst:418
-#: e912e17f212e4e73997160730ce8716e
+#: ../../en/hardware/display.rst:447 ../../en/hardware/display.rst:466
+#: 875e55f0d51f432eb26e685011315e48
 msgid "x-coordinate of circle center (default -1)"
 msgstr "圆心的 x 坐标。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:400 ../../en/hardware/display.rst:419
-#: 33ead5ad749c43b0a8363db4d4255a38
+#: ../../en/hardware/display.rst:448 ../../en/hardware/display.rst:467
+#: 2773263025c54f3780a3682687b86d7f
 msgid "y-coordinate of circle center (default -1)"
 msgstr "圆心的 y 坐标。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:401 ../../en/hardware/display.rst:420
-#: 7e64e196d68b4225b1f1694d013ac559
+#: ../../en/hardware/display.rst:449 ../../en/hardware/display.rst:468
+#: ebe8763bc9554ce4ac7c0b859cd70b84
 msgid "radius of the circle (default -1)"
 msgstr "圆的半径。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:402 14b64745dff04ebcad4896bf02e64b43
+#: ../../en/hardware/display.rst:450 adff412dc8e64eb19681bbfbc917a850
 msgid "circle color in RGB888 format (default 0)"
 msgstr "圆的颜色，RGB888 格式。默认值为 0。"
 
-#: ../../en/hardware/display.rst:406 f3e4f41b8e864a07849f3772e6eab8c6
+#: ../../en/hardware/display.rst:454 ca340a6a2391410da130d06580eba6f2
 msgid "|drawcircle.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:20 71158a8309d74b8cb64b695b1baecdc0
+#: ../../en/refs/hardware.display.ref:21 6097990c2ef147d49fb20b735a1e90d4
 msgid "drawCircle.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:416 c3ef5d6b8f3b4e4e8dff2511ebaef60f
+#: ../../en/hardware/display.rst:464 9dc2fca967b243bcbc91147ce358ad6c
 msgid "Draw a filled circle."
 msgstr "绘制一个实心圆。  "
 
-#: ../../en/hardware/display.rst:425 f029d9aa297a4b889a9b48ef39f9d145
+#: ../../en/hardware/display.rst:473 0709bbeb3d364fddb6c0bbb24891e7c3
 msgid "|fillcircle.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:21 dc36b71e06234cbdbd581b403920e594
+#: ../../en/refs/hardware.display.ref:22 1cdcbfa7f11a473fa35988b7ee2a1a8f
 msgid "fillCircle.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:435 bfba436aa7d1418c81d3cc078cff1696
+#: ../../en/hardware/display.rst:483 7998d147b0f84ac0998548f198dc042f
 msgid "Draw an outline of an ellipse."
 msgstr "绘制一个椭圆。"
 
-#: ../../en/hardware/display.rst:437 ../../en/hardware/display.rst:457
-#: d374ff5fe5564382adfc84277aeec332
+#: ../../en/hardware/display.rst:485 ../../en/hardware/display.rst:505
+#: 7619e4f4c331493c9498959c58c24c7b
 msgid "x-coordinate of ellipse center (default -1)"
 msgstr "椭圆中心的 x 坐标。默认值为 -1。 "
 
-#: ../../en/hardware/display.rst:438 ../../en/hardware/display.rst:458
-#: fc11af7ea32348a18313da33cf8951d5
+#: ../../en/hardware/display.rst:486 ../../en/hardware/display.rst:506
+#: b2d46539c7c3408086e35777dc63483d
 msgid "y-coordinate of ellipse center (default -1)"
 msgstr "椭圆中心的 y 坐标。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:439 ../../en/hardware/display.rst:459
-#: 44ec027e0f5e47608b5ba7cf20eb1e58
+#: ../../en/hardware/display.rst:487 ../../en/hardware/display.rst:507
+#: 278f7bc00fa0469abbdb12d45303cbbc
 msgid "horizontal radius (default -1)"
 msgstr "椭圆的水平半径。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:440 ../../en/hardware/display.rst:460
-#: d1cb9fe8cda84b9dab6e2cd3ee75160c
+#: ../../en/hardware/display.rst:488 ../../en/hardware/display.rst:508
+#: a1bc2e62b7c44d15802b9a7abfc06868
 msgid "vertical radius (default -1)"
 msgstr "椭圆的垂直半径。默认值为 -1。"
 
-#: ../../en/hardware/display.rst:441 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:489 73a501db06cd4fcbb4fde208907a270d
 msgid "ellipse color in RGB888 format (default 0)"
 msgstr "椭圆颜色，RGB888 格式。默认值为 0。"
 
-#: ../../en/hardware/display.rst:445 d48c237e1db143859ee9d5e7a0e8aab0
+#: ../../en/hardware/display.rst:493 3782e186db624ee3a8d89eb4e68e3e07
 msgid "|drawellipse.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:22 4fcf56598a774e12a981509d3c7bda1a
+#: ../../en/refs/hardware.display.ref:23 15c232e3219f43409ac088eabf165656
 msgid "drawEllipse.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:455 391ee9f9325546cf9200a59293ff0030
+#: ../../en/hardware/display.rst:503 445f0917ee784bad8ad363066a3ac994
 msgid "Draw a filled ellipse."
 msgstr "绘制一个实心椭圆。"
 
-#: ../../en/hardware/display.rst:465 78f4b0a6dd434fd1b7bcb523de3e9253
+#: ../../en/hardware/display.rst:513 2f73f25190004286989c0b4a90d16f5a
 msgid "|fillellipse.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:23 0fe170b98f6e4040bc1c21cd57dd64bc
+#: ../../en/refs/hardware.display.ref:24 861224988f0d4eadb9b90e71bdd5d009
 msgid "fillEllipse.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:475 1951e7367a6346339a1e326f254cf498
+#: ../../en/hardware/display.rst:523 8fe0bdc6ef1c49f591f2cfb3522259e6
 msgid "Draw a line."
 msgstr "绘制一条直线。"
 
-#: ../../en/hardware/display.rst:477 a0e6b86a7a1742079d5deee1326991cc
+#: ../../en/hardware/display.rst:525 3092acd34a954c28b75ec99e42991e99
 msgid "starting x-coordinate (default -1)"
 msgstr "直线起点坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:478 a0e6b86a7a1742079d5deee1326991cc
+#: ../../en/hardware/display.rst:526 fd23d1ffc77e4db7b9ff1b4786988964
 msgid "starting y-coordinate (default -1)"
 msgstr "直线起点坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:479 d685b9c9e92d4d008c5e53d575c76037
+#: ../../en/hardware/display.rst:527 75ef4f8c731648c288887f6948e52544
 msgid "ending x-coordinate (default -1)"
 msgstr "直线终点坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:480 d685b9c9e92d4d008c5e53d575c76037
+#: ../../en/hardware/display.rst:528 c9d7dbcf294243108baf2aaaa702d39c
 msgid "ending y-coordinate (default -1)"
 msgstr "直线终点坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:481 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:529 9882c09e1c064040b170594b86dd751f
 msgid "line color in RGB888 format (default 0)"
 msgstr "线颜色，RGB888 格式，默认值为 0。"
 
-#: ../../en/hardware/display.rst:485 cc505916ed92475c823f744ce9f14100
+#: ../../en/hardware/display.rst:533 5c47433b92324c0ab43368ce78a3ef21
 msgid "|drawline.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:24 eac86bba16da4fbf86212419670536a9
+#: ../../en/refs/hardware.display.ref:25 6facd76be9ca467f966fd4c23a36895d
 msgid "drawLine.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:495 1ec912129ee84a2a8619e8f52d7f5fa7
+#: ../../en/hardware/display.rst:543 3b8a785aed5546b4b5a34036591a72d2
 msgid "Draw a rectangle."
 msgstr "绘制一个矩形。"
 
-#: ../../en/hardware/display.rst:497 ../../en/hardware/display.rst:517
-#: ../../en/hardware/display.rst:537 ../../en/hardware/display.rst:558
-#: 4284dad8d5d843579b1c55ea6ee8bd82
+#: ../../en/hardware/display.rst:545 ../../en/hardware/display.rst:565
+#: ../../en/hardware/display.rst:585 ../../en/hardware/display.rst:606
+#: b474d6148cda40778f577fd5e4b19041
 msgid "top-left x-coordinate (default -1)"
-msgstr 矩形左上角坐标 x，默认值为 -1。""
+msgstr "形左上角坐标 x，默认值为 -1。\""
 
-#: ../../en/hardware/display.rst:498 ../../en/hardware/display.rst:518
-#: ../../en/hardware/display.rst:538 ../../en/hardware/display.rst:559
-#: 4284dad8d5d843579b1c55ea6ee8bd82
+#: ../../en/hardware/display.rst:546 ../../en/hardware/display.rst:566
+#: ../../en/hardware/display.rst:586 ../../en/hardware/display.rst:607
+#: 8cfb11f4551b475f862cf9a2c091677e
 msgid "top-left y-coordinate (default -1)"
 msgstr "矩形左上角坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:499 ../../en/hardware/display.rst:519
-#: ../../en/hardware/display.rst:539 ../../en/hardware/display.rst:560
-#: 87753b18a9e84ea988b0b89da58a73ba
+#: ../../en/hardware/display.rst:547 ../../en/hardware/display.rst:567
+#: ../../en/hardware/display.rst:587 ../../en/hardware/display.rst:608
+#: 7b3d50b130dc4df0a077b7036288d56f
 msgid "width of rectangle (default -1)"
 msgstr "矩形的宽度，默认值为 -1。 "
 
-#: ../../en/hardware/display.rst:500 ../../en/hardware/display.rst:520
-#: ../../en/hardware/display.rst:540 ../../en/hardware/display.rst:561
-#: 87753b18a9e84ea988b0b89da58a73ba
+#: ../../en/hardware/display.rst:548 ../../en/hardware/display.rst:568
+#: ../../en/hardware/display.rst:588 ../../en/hardware/display.rst:609
+#: 44eb1ce7aac649979d9d1418478071aa
 msgid "height of rectangle (default -1)"
 msgstr "矩形的高度，默认值为 -1。 "
 
-#: ../../en/hardware/display.rst:501 ../../en/hardware/display.rst:542
-#: 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:549 ../../en/hardware/display.rst:590
+#: a84b50d2bf0e4c5fa68f419f1fa349d2
 msgid "rectangle color in RGB888 format (default 0)"
 msgstr "矩形颜色，RGB888 格式，默认值为 0。"
 
-#: ../../en/hardware/display.rst:505 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:553 25bc2616a33747a294b71a928c5b2cda
 msgid "|drawrect.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:25 35f3ee5e17ac429aaf858c274c7571cb
+#: ../../en/refs/hardware.display.ref:26 caf28b9d487d4032a547cf08a6060284
 msgid "drawRect.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:515 9bab821100214ea58ce84e321e5b4637
+#: ../../en/hardware/display.rst:563 b42492a09de44964a4da7cfb18adcd05
 msgid "Draw a filled rectangle."
 msgstr "绘制一个填充矩形。"
 
-#: ../../en/hardware/display.rst:525 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:573 9fc3fcd05d7e429987d81e1a86bc51b2
 msgid "|fillrect.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:26 c0dac482d8ca463f80e3948e573eee2b
+#: ../../en/refs/hardware.display.ref:27 988b428564784ccb89102ddc500e32a6
 msgid "fillRect.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:535 7586bf5a682945be9b2a0e2e4621381f
+#: ../../en/hardware/display.rst:583 adf1d55be8114a3c996327f28dcad1d0
 msgid "Draw a rounded rectangle."
 msgstr "绘制一个圆角矩形。"
 
-#: ../../en/hardware/display.rst:541 ../../en/hardware/display.rst:562
-#: b8118b7a72b94009a0e534aab80aa184
+#: ../../en/hardware/display.rst:589 ../../en/hardware/display.rst:610
+#: 2f349e5550a54a3e9e288941c8585b08
 msgid "corner radius (default -1)"
 msgstr "圆角半径，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:546 2f0e46eb70fe4183b03b878ae7d6e176
+#: ../../en/hardware/display.rst:594 2878bea246ce48bd88ffbbfa4d86be72
 msgid "|drawroundrect.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:27 7d138dab284a4f469d56fbd426ac3876
+#: ../../en/refs/hardware.display.ref:28 0efd332197cd4b28a45d6b9211220616
 msgid "drawRoundRect.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:556 d5ea65a32d0a4dd887b32e3d10603e8e
+#: ../../en/hardware/display.rst:604 c17e6d300e004662aa88e28c3908f596
 msgid "Draw a filled rounded rectangle."
 msgstr "绘制一个填充圆角矩形。"
 
-#: ../../en/hardware/display.rst:567 d5ea65a32d0a4dd887b32e3d10603e8e
+#: ../../en/hardware/display.rst:615 7d699e876cb24d44a846d284fb685685
 msgid "|fillroundrect.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:28 ded350ea33ef4f088114ee27d7c46a47
+#: ../../en/refs/hardware.display.ref:29 66db2b50a5f0433685c32daee2e53cf2
 msgid "fillRoundRect.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:577 e7329aaf1e554e5fba4c7b60a97e8e20
+#: ../../en/hardware/display.rst:625 e347828d1a214049811b4b9212279e17
 msgid "Draw a triangle."
 msgstr "绘制一个三角形。"
 
-#: ../../en/hardware/display.rst:579 ../../en/hardware/display.rst:601
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:627 ../../en/hardware/display.rst:649
+#: d3ca18ce4b79454babd2efee448bc25a
 msgid "first vertex x-coordinate (default -1)"
 msgstr "第一个顶点的坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:580 ../../en/hardware/display.rst:602
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:628 ../../en/hardware/display.rst:650
+#: fa3a0cfa95f5455797a4445d4790b8a7
 msgid "first vertex y-coordinate (default -1)"
 msgstr "第一个顶点的坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:581 ../../en/hardware/display.rst:603
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:629 ../../en/hardware/display.rst:651
+#: efb45111f286416f98367baa290df50e
 msgid "second vertex x-coordinate (default -1)"
 msgstr "第二个顶点的坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:582 ../../en/hardware/display.rst:604
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:630 ../../en/hardware/display.rst:652
+#: bebb3239b3b2405dbe55f110f3a0b815
 msgid "second vertex y-coordinate (default -1)"
-msgstr "第二个顶点的坐标 y，默认值为 -1。
+msgstr "第二个顶点的坐标 y，默认值为 -1"
 
-#: ../../en/hardware/display.rst:583 ../../en/hardware/display.rst:605
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:631 ../../en/hardware/display.rst:653
+#: 5d2f5d1ecefe41b6b04807160ad8088b
 msgid "third vertex x-coordinate (default -1)"
 msgstr "第三个顶点的坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:584 ../../en/hardware/display.rst:606
-#: ce29c038a4d14bc3a0cfab0dac653685
+#: ../../en/hardware/display.rst:632 ../../en/hardware/display.rst:654
+#: e5bd6a9eaba34a5c86994e71a9f672de
 msgid "third vertex y-coordinate (default -1)"
 msgstr "第三个顶点的坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:585 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:633 bf9bd940513e4ccf80dae26e784b6b83
 msgid "triangle color in RGB888 format (default 0)"
 msgstr "三角形颜色，RGB888 格式，默认值为 0。"
 
-#: ../../en/hardware/display.rst:589 47b63a6dfdd444f7aa6d9c8593860cc0
+#: ../../en/hardware/display.rst:637 329942835b3042b7905257d3768befd8
 msgid "|drawtriangle.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:29 955d4ae7980c4a389efec7313b8b52b6
+#: ../../en/refs/hardware.display.ref:30 1f1bee773b704ccf823f4758468b5cef
 msgid "drawTriangle.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:599 9bd29948e7da4663827d01ea2ce36b71
+#: ../../en/hardware/display.rst:647 c845edcd2973417fa525402099e7acf4
 msgid "Draw a filled triangle."
 msgstr "绘制一个填充三角形。"
 
-#: ../../en/hardware/display.rst:611 9ccab09ac7a748ff923e094de34356b1
+#: ../../en/hardware/display.rst:659 81902de21102453485eaa46a06b92636
 msgid "|filltriangle.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:30 219840d1abe14ea382ef5795224b9d49
+#: ../../en/refs/hardware.display.ref:31 93994307ffd94923bcb05a4e9a965634
 msgid "fillTriangle.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:621 3fb91a0d94c548b1bd6a02ec3f517f91
+#: ../../en/hardware/display.rst:669 85fedad76475424bbffb9350ae71f043
 msgid "Draw an arc."
 msgstr "绘制一个弧线。"
 
-#: ../../en/hardware/display.rst:623 ../../en/hardware/display.rst:645
-#: ../../en/hardware/display.rst:667 ../../en/hardware/display.rst:691
-#: 4284dad8d5d843579b1c55ea6ee8bd82
+#: ../../en/hardware/display.rst:671 ../../en/hardware/display.rst:693
+#: ../../en/hardware/display.rst:715 ../../en/hardware/display.rst:739
+#: 98b77ac4f8fd44ce8c78532d88be05dd
 msgid "center x-coordinate (default -1)"
 msgstr "弧线的中心坐标 x，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:624 ../../en/hardware/display.rst:646
-#: ../../en/hardware/display.rst:668 ../../en/hardware/display.rst:692
-#: 4284dad8d5d843579b1c55ea6ee8bd82
+#: ../../en/hardware/display.rst:672 ../../en/hardware/display.rst:694
+#: ../../en/hardware/display.rst:716 ../../en/hardware/display.rst:740
+#: dd85192aa7fa4453a7e799d8c72ef639
 msgid "center y-coordinate (default -1)"
 msgstr "弧线的中心坐标 y，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:625 ../../en/hardware/display.rst:647
-#: 3f139b071f874fe29dbf0ec74795c28a
+#: ../../en/hardware/display.rst:673 ../../en/hardware/display.rst:695
+#: 12c2293f67de45aaba440b0b37ccef2c
 msgid "first radius (default -1)"
 msgstr "第一个半径，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:626 ../../en/hardware/display.rst:648
-#: b8118b7a72b94009a0e534aab80aa184
+#: ../../en/hardware/display.rst:674 ../../en/hardware/display.rst:696
+#: f449a855ed2945fbbc022009e5bbe044
 msgid "second radius (default -1)"
 msgstr "第二个半价，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:627 ../../en/hardware/display.rst:649
-#: ../../en/hardware/display.rst:673 ../../en/hardware/display.rst:697
-#: 66f93f2e4d5e48d7ab23a61a3f86af49
+#: ../../en/hardware/display.rst:675 ../../en/hardware/display.rst:697
+#: ../../en/hardware/display.rst:721 ../../en/hardware/display.rst:745
+#: 1cdbeccdb126453c8c7906568f571cb4
 msgid "starting angle in degrees (default -1)"
 msgstr "弧线的起始角度（单位：度），默认值为 -1。"
 
-#: ../../en/hardware/display.rst:628 ../../en/hardware/display.rst:650
-#: 639356a81fbe4110902efdb8c770f7bb
+#: ../../en/hardware/display.rst:676 ../../en/hardware/display.rst:698
+#: 58b6ad3fb7ce41c8881a27ee41c83d69
 msgid "ending angle in degrees (default -1)"
 msgstr "弧线的终止角度（单位：度），默认值为 -1。"
 
-#: ../../en/hardware/display.rst:629 ../../en/hardware/display.rst:675
-#: 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:677 ../../en/hardware/display.rst:723
+#: c9859969c00a45d1a5178b3bb67062c8
 msgid "arc color in RGB888 format (default 0)"
 msgstr "弧线颜色，RGB888 格式，默认值为 0。"
 
-#: ../../en/hardware/display.rst:633 1ca64ea992e9452abde49e8bce106c5f
+#: ../../en/hardware/display.rst:681 2c5d505109a5498caf928fccbb272e40
 msgid "|drawarc.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:31 a7e72bb7b9d94c66bc7fa7857abef865
+#: ../../en/refs/hardware.display.ref:32 f50e0bbd1ba647b9a01b5e4392b8cea1
 msgid "drawArc.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:643 7bf48f536796466fa6a1a9677368cff9
+#: ../../en/hardware/display.rst:691 d66ae4b1b2a7477592fca872c826d0fc
 msgid "Draw a filled arc."
 msgstr "绘制一个填充弧线。"
 
-#: ../../en/hardware/display.rst:655 a24cfa7b5b424996a79dec7fa1d47beb
+#: ../../en/hardware/display.rst:703 b45185c42027483db1e6fe87d4426f6c
 msgid "|fillarc.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:32 fcc50a71d4e74fe187a0e728f8bd62ab
+#: ../../en/refs/hardware.display.ref:33 ee1024c71e21411d9ebde6bfac19a3b8
 msgid "fillArc.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:665 6d492da623ed4914800730a6c90de6d3
+#: ../../en/hardware/display.rst:713 a04cfd34a6044db2af8f90423b3645ef
 msgid "Draw an elliptical arc."
 msgstr "绘制一个椭圆弧线。"
 
-#: ../../en/hardware/display.rst:669 ../../en/hardware/display.rst:693
-#: 44ec027e0f5e47608b5ba7cf20eb1e58
+#: ../../en/hardware/display.rst:717 ../../en/hardware/display.rst:741
+#: cf112cf36aa1464db6fcf503c6a33c15
 msgid "first horizontal radius (default -1)"
 msgstr "第一个水平半径，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:670 ../../en/hardware/display.rst:694
-#: d1cb9fe8cda84b9dab6e2cd3ee75160c
-msgid "first vertical radius (default -1)"
-msgstr "第一个垂直半径，默认值为 -1。"
-
-#: ../../en/hardware/display.rst:671 ../../en/hardware/display.rst:695
-#: 44ec027e0f5e47608b5ba7cf20eb1e58
+#: ../../en/hardware/display.rst:718 ../../en/hardware/display.rst:742
+#: d90d6fa84d5445b281c8ece053cb90f9
 msgid "second horizontal radius (default -1)"
 msgstr "第二个水平半径，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:672 ../../en/hardware/display.rst:696
-#: d1cb9fe8cda84b9dab6e2cd3ee75160c
-msgid "second vertical radius (default -1)"
-msgstr 第二个垂直半径，默认值为 -1。""
+#: ../../en/hardware/display.rst:719 ../../en/hardware/display.rst:743
+#: 2f3736134e0641f2b328163f679c3fda
+msgid "first vertical radius (default -1)"
+msgstr "第一个垂直半径，默认值为 -1。"
 
-#: ../../en/hardware/display.rst:674 ../../en/hardware/display.rst:698
-#: a340a7fd3fd94f14945d7702dbe34547
+#: ../../en/hardware/display.rst:720 ../../en/hardware/display.rst:744
+#: 4ccef78cc6b8468eada573eda71193ca
+msgid "second vertical radius (default -1)"
+msgstr "二个垂直半径，默认值为 -1。\""
+
+#: ../../en/hardware/display.rst:722 ../../en/hardware/display.rst:746
+#: fe9d505151ff49b0a363676263cb9593
 msgid "ending angle in degrees (default 0)"
 msgstr "椭圆弧线的终止角度（单位：度），默认值为 0。"
 
-#: ../../en/hardware/display.rst:679 28461b360f93460ebb167524425cec2a
+#: ../../en/hardware/display.rst:727 63f6af14507f465a815ed12930de050b
 msgid "|drawellipsearc.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:33 e50e635166724479b566986c48b58618
+#: ../../en/refs/hardware.display.ref:34 44ae5d6f51724b398ce901124975adb3
 msgid "drawEllipseArc.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:689 671e1de97cb0427d9a8a1809f49b9cad
+#: ../../en/hardware/display.rst:737 b94a0ed19eae44eabc424bd66b1644e2
 msgid "Draw a filled elliptical arc."
 msgstr "绘制一个填充椭圆弧线。"
 
-#: ../../en/hardware/display.rst:703 f1140bf9ccd24a578ba5736daf8c94b9
+#: ../../en/hardware/display.rst:751 66575960d9c849feba3ae4a437040cc9
 msgid "|fillellipsearc.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:34 9326ad0418904093bbbb497f753b3c5a
+#: ../../en/refs/hardware.display.ref:35 b818e313b2f140a49755d8d2bd0ebcc4
 msgid "fillEllipseArc.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:713 5c19e5bc336e4b3ba3bcd5efeb139950
+#: ../../en/hardware/display.rst:761 9944ff02fedd4921899406b9c8061ce0
 msgid "Draw a QR code."
 msgstr "绘制二维码。"
 
-#: ../../en/hardware/display.rst:715 aa954d954a9b49a5b3ba8408da81631d
+#: ../../en/hardware/display.rst:763 da05f888e7814f00af73fdb43f2a7d7b
 msgid "QR code content"
 msgstr "二维码内容"
 
-#: ../../en/hardware/display.rst:716 e912e17f212e4e73997160730ce8716e
+#: ../../en/hardware/display.rst:764 8c9937217917469aaa3d5608a1a231cf
 msgid "x-coordinate to display (default 0)"
 msgstr "二维码显示的起始坐标 x，默认值为 0。"
 
-#: ../../en/hardware/display.rst:717 33ead5ad749c43b0a8363db4d4255a38
+#: ../../en/hardware/display.rst:765 f48d302d0da84e4ca6a2dbe6e883d810
 msgid "y-coordinate to display (default 0)"
 msgstr "二维码显示的起始坐标 y，默认值为 0。"
 
-#: ../../en/hardware/display.rst:718 a41a1c7fa9494d17b7fc6e01c7cf5a38
+#: ../../en/hardware/display.rst:766 9258d15e8cda41bb9ddd9a7282c18602
 msgid "QR code width (default 0)"
 msgstr "二维码的宽度，默认值为 0。"
 
-#: ../../en/hardware/display.rst:719 a41a1c7fa9494d17b7fc6e01c7cf5a38
-msgid "QR code version (default 1)"
-msgstr "二维码版本，默认值为 1。"
+#: ../../en/hardware/display.rst:767 5a5b43620dbb4b6e9686b7c29a1bf6aa
+msgid "QR code version (default 1, range: 0~38)"
+msgstr "二维码版本（默认值为 1，范围：0~38）。"
 
-#: ../../en/hardware/display.rst:723 eef5d9dc766a4014a8a23e37f310925d
+#: ../../en/hardware/display.rst:771 87275d223e4f4493b3e0501e21774a31
 msgid "|drawqr.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:35 2d8c02a33464488f8a34c81521724bd6
+#: ../../en/refs/hardware.display.ref:36 768b04d3fe534381ae4345e34d9a54b3
 msgid "drawQR.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:733 ac84db764545449f83b4c48902968ff0
+#: ../../en/hardware/display.rst:781 27fedf51a1c748d4b2b178522c72b133
 msgid "Draw a PNG image."
 msgstr "绘制 PNG 图片。"
 
-#: ../../en/hardware/display.rst:735 ../../en/hardware/display.rst:769
-#: ../../en/hardware/display.rst:801 ../../en/hardware/display.rst:833
-#: 44dbc9a23015460a92589f45bc24f5bd
+#: ../../en/hardware/display.rst:783 ../../en/hardware/display.rst:817
+#: ../../en/hardware/display.rst:849 ../../en/hardware/display.rst:881
+#: f6a2a674b989495ca1182e02dc592ae7
 msgid "image path or data"
 msgstr "图片文件路径或已打开的图片数据。"
 
-#: ../../en/hardware/display.rst:736 ../../en/hardware/display.rst:770
-#: ../../en/hardware/display.rst:802 ../../en/hardware/display.rst:834
-#: ../../en/hardware/display.rst:865 e912e17f212e4e73997160730ce8716e
+#: ../../en/hardware/display.rst:784 ../../en/hardware/display.rst:818
+#: ../../en/hardware/display.rst:850 ../../en/hardware/display.rst:882
+#: ../../en/hardware/display.rst:913 6ab3f089c67043109de68c51edd0eab1
 msgid "display x-coordinate (default 0)"
 msgstr "图片显示的起始坐标 x，默认值为 0。"
 
-#: ../../en/hardware/display.rst:737 ../../en/hardware/display.rst:771
-#: ../../en/hardware/display.rst:803 ../../en/hardware/display.rst:835
-#: ../../en/hardware/display.rst:866 33ead5ad749c43b0a8363db4d4255a38
+#: ../../en/hardware/display.rst:785 ../../en/hardware/display.rst:819
+#: ../../en/hardware/display.rst:851 ../../en/hardware/display.rst:883
+#: ../../en/hardware/display.rst:914 aae792ce2a2e49569110474fa288901e
 msgid "display y-coordinate (default 0)"
 msgstr "图片显示的起始坐标 y，默认值为 0。"
 
-#: ../../en/hardware/display.rst:738 ../../en/hardware/display.rst:772
-#: ../../en/hardware/display.rst:804 ../../en/hardware/display.rst:836
-#: f4a2ba9ed88a48e299ea27649cebac2e
+#: ../../en/hardware/display.rst:786 ../../en/hardware/display.rst:820
+#: ../../en/hardware/display.rst:852 ../../en/hardware/display.rst:884
+#: 534010833e484cc7ab9060a47ee8df59
 msgid "max width to draw (default 0)"
 msgstr "要绘制的宽度"
 
-#: ../../en/hardware/display.rst:739 ../../en/hardware/display.rst:773
-#: ../../en/hardware/display.rst:805 ../../en/hardware/display.rst:837
-#: 5a4c9eca12eb439a9a06de76728659b1
+#: ../../en/hardware/display.rst:787 ../../en/hardware/display.rst:821
+#: ../../en/hardware/display.rst:853 ../../en/hardware/display.rst:885
+#: 7f49f220297743b1a91d2a0206054ce1
 msgid "max height to draw (default 0)"
 msgstr "要绘制的高度"
 
-#: ../../en/hardware/display.rst:740 ../../en/hardware/display.rst:774
-#: ../../en/hardware/display.rst:806 ../../en/hardware/display.rst:838
-#: 368f705038a34f959cacb1e03899298f
+#: ../../en/hardware/display.rst:788 ../../en/hardware/display.rst:822
+#: ../../en/hardware/display.rst:854 ../../en/hardware/display.rst:886
+#: f75ba08c79954618b9835c6eea05568d
 msgid "x-offset in image (default 0)"
 msgstr "图片中起始的偏移量 x，默认值为 0。"
 
-#: ../../en/hardware/display.rst:741 ../../en/hardware/display.rst:775
-#: ../../en/hardware/display.rst:807 ../../en/hardware/display.rst:839
-#: 368f705038a34f959cacb1e03899298f
+#: ../../en/hardware/display.rst:789 ../../en/hardware/display.rst:823
+#: ../../en/hardware/display.rst:855 ../../en/hardware/display.rst:887
+#: 0fd8cf0dda994aa4adb766acf5f6e757 3a4b4088354b49ee875ef999e191e19a
 msgid "y-offset in image (default 0)"
 msgstr "图片中起始的偏移量 y，默认值为 0。"
 
-#: ../../en/hardware/display.rst:742 45647fec51574936803a8d77e8e8751f
+#: ../../en/hardware/display.rst:790 c835d1a4ef764506871dcdf5f80d699b
 msgid "scale horizontally (default True)"
 msgstr "是否水平缩放图片，默认值分别为 True。"
 
-#: ../../en/hardware/display.rst:743 a9046833e9a24c4c952aaa51a6c37341
+#: ../../en/hardware/display.rst:791 8b3558e1d20645ff804c1a31a45f4d65
 msgid "scale vertically (default False)"
 msgstr "是否垂直缩放图片，默认值分别为 False。"
 
-#: ../../en/hardware/display.rst:747 60d3901fe72f4d729045ea9450f2185e
+#: ../../en/hardware/display.rst:795 c3a3ced4ba8241578627cd0a6f5fcef2
 msgid "|drawpng.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:36 2eac840158024b899e0ee3a80b94c752
+#: ../../en/refs/hardware.display.ref:37 975880dd10a74fd891c108b308a742ba
 msgid "drawPng.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:755 ../../en/hardware/display.rst:787
-#: ../../en/hardware/display.rst:819 ../../en/hardware/display.rst:851
-#: ../../en/hardware/display.rst:882 ../../en/hardware/display.rst:947
-#: ../../en/hardware/display.rst:969 66c9e1eb48004e5eb0037b3ce5fd5d2b
+#: ../../en/hardware/display.rst:803 ../../en/hardware/display.rst:835
+#: ../../en/hardware/display.rst:867 ../../en/hardware/display.rst:899
+#: ../../en/hardware/display.rst:930 ../../en/hardware/display.rst:995
+#: ../../en/hardware/display.rst:1017 e0f6ffccb2994b3094986ba0855c3978
 msgid "Example:"
 msgstr "示例："
 
-#: ../../en/hardware/display.rst:767 31497a79ab7a4ee78a868996bd2e20ca
+#: ../../en/hardware/display.rst:815 c51b0bd51cf2492ea3e89e44f5c480da
 msgid "Draw a JPG image."
 msgstr "绘制 JPG 图片。"
 
-#: ../../en/hardware/display.rst:779 f962bfa1e81d48df9fc5289522386c7a
+#: ../../en/hardware/display.rst:827 d95a77a385244b4abccac42cb80c6856
 msgid "|drawjpg.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:37 d81a3bc9230247d297a8ba09103c5cfd
+#: ../../en/refs/hardware.display.ref:38 c555b7d3db0b42ada942caa65237d247
 msgid "drawJpg.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:799 05b27ca3359240468fc9ab6fae8eae9d
+#: ../../en/hardware/display.rst:847 d89c671f6351441d929deb6528f99a65
 msgid "Draw a BMP image."
 msgstr "绘制 BMP 图片。"
 
-#: ../../en/hardware/display.rst:811 80aee5fdb99849538d5b9bf46347cddc
+#: ../../en/hardware/display.rst:859 201a3c11824644a9a9fdc3c7e94b3e7d
 msgid "|drawbmp.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:38 89239652cddf492781581a83934b3509
+#: ../../en/refs/hardware.display.ref:39 9d7989be4a9c4495a5614a375bc83df6
 msgid "drawBmp.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:831 91472a1549d346ee8132e6440bbb83d2
+#: ../../en/hardware/display.rst:879 be8040b2d16e483fa559076703f8b400
 msgid "Draw an image."
 msgstr "绘制图片。"
 
-#: ../../en/hardware/display.rst:843 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:891 bbec2d3c62be4adea5a0c56a2d7227e1
 msgid "|drawimage.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:39 7cec0363c4324af1ac16f44a07ba3c0d
+#: ../../en/refs/hardware.display.ref:40 d6b63506b4984ab3b1fb30195b3e39b0
 msgid "drawImage.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:862 ec2c52eca7264f7b809e4aa7327eda40
+#: ../../en/hardware/display.rst:910 e587d8b80ec34f91a67e54b876f0d2a5
 msgid "Draw an image from raw buffer data."
 msgstr "绘制缓冲区中的图片。"
 
-#: ../../en/hardware/display.rst:864 4fa52c47c4294a7188bcbcc2ccaaff33
+#: ../../en/hardware/display.rst:912 af0299f1ed4449728b18c31f19182663
 msgid "image buffer"
 msgstr "图像数据"
 
-#: ../../en/hardware/display.rst:867 f4a2ba9ed88a48e299ea27649cebac2e
+#: ../../en/hardware/display.rst:915 063d1d77654949b4a14ad25a72516792
 msgid "image width (default 0)"
 msgstr "图像宽"
 
-#: ../../en/hardware/display.rst:868 93c0e5cee256497f967ac52543d1cc8b
+#: ../../en/hardware/display.rst:916 f44c69b61abb49c1b826669cecd4d54b
 msgid "image height (default 0)"
 msgstr "图像高"
 
-#: ../../en/hardware/display.rst:869 f4a2ba9ed88a48e299ea27649cebac2e
+#: ../../en/hardware/display.rst:917 ceb89ae2ab81457ab2009e09b9960420
 msgid "length of image data (default 0)"
 msgstr "图像大小"
 
-#: ../../en/hardware/display.rst:870 3080fc5052534ae581c78ae5917b0fae
+#: ../../en/hardware/display.rst:918 2d45edc0c1554cf5b784522e3c1bea2e
 msgid "inverted display (default False)"
 msgstr "是否反色显示（默认值为 False）。"
 
-#: ../../en/hardware/display.rst:874 db8ea69f5de94169a1b07a29358b6e2a
+#: ../../en/hardware/display.rst:922 37bf0ace387d4fe1b48bb6a5cf1b7304
 msgid "|drawrawbuf.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:40 0e376fd69c1f42a0b1524de0c369d2de
+#: ../../en/refs/hardware.display.ref:41 65bb9e64836645d6b84efb1fd3ae8c0a
 msgid "drawRawBuf.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:896 da6461317bed48b7af2b30b7d86f2011
+#: ../../en/hardware/display.rst:944 dadb0a777505475092f1938bba929ca0
 msgid "Display a string (no formatting support)."
 msgstr "显示字符串（不支持格式化）。"
 
-#: ../../en/hardware/display.rst:898 330c11fc086940f6bfc55608f5abeecb
+#: ../../en/hardware/display.rst:946 e5641db935aa4b5e9b57ef1c5883f778
 msgid "text to display"
 msgstr "要显示的字符串。"
 
-#: ../../en/hardware/display.rst:899 1053eb3d56a24ab29cb9cd5f0dd71eba
+#: ../../en/hardware/display.rst:947 71b58efdda8c47d49943a3eb2a15e53f
 msgid "color in RGB888 format (default 0)"
 msgstr "颜色值，RGB888 格式。"
 
-#: ../../en/hardware/display.rst:903 59c3937a5ef647089ca583845fee2c25
+#: ../../en/hardware/display.rst:951 888ac470ad2d4e7f8480dcfd52ea4795
 msgid "|print.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:41 a01fce1c563f48a385913ff5ffc5569c
+#: ../../en/refs/hardware.display.ref:42 cfc4cfd7347b463681866f6fa7c9148e
 msgid "print.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:913 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:961 1fc601bb126e4a09b8a4b2b00fb88f99
 msgid "Display a formatted string."
 msgstr "显示格式化字符串。"
 
-#: ../../en/hardware/display.rst:915 c1b397690cd04e348bb8b539a5c8cc0e
+#: ../../en/hardware/display.rst:963 0f0d9ca4a904488893f459cbef28b063
 msgid "text to display with formatting"
 msgstr "要显示的格式化字符串。"
 
-#: ../../en/hardware/display.rst:919 945c13c7d239426cbcbbe9be26a8cbbf
+#: ../../en/hardware/display.rst:967 9e860da514ae435f9ee48a37744c02df
 msgid "|printf.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:42 55c723d797b742d8a67d05156fea7d15
+#: ../../en/refs/hardware.display.ref:43 359209f66e6344b1a7875d237d935fc0
 msgid "printf.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:929 aad4a5440dc34aeab1f73366ad3aa602
+#: ../../en/hardware/display.rst:977 948876c64b5147c688c51ed9e7f492bc
 msgid "Create a canvas."
 msgstr "创建一个画布。"
 
-#: ../../en/hardware/display.rst:931 a7177f73556e41039ed39fbd9369b60b
+#: ../../en/hardware/display.rst:979 4de48e3355664a599d2e7a1561b2e019
 msgid "canvas width"
 msgstr "画布宽"
 
-#: ../../en/hardware/display.rst:932 d81d44b88ee543dcbaf54d85d722d9c8
+#: ../../en/hardware/display.rst:980 1ee44d8fe26546f895715c33c2d466d9
 msgid "canvas height"
 msgstr "画布高"
 
-#: ../../en/hardware/display.rst:933 c24560527d6a4858983518a8cdaba006
+#: ../../en/hardware/display.rst:981 a9b4b4c0d2cc42af856b65aca4900e63
 msgid "color depth (default -1)"
 msgstr "颜色深度"
 
-#: ../../en/hardware/display.rst:934 882a81ffb06f4ffab26314d270fe0253
+#: ../../en/hardware/display.rst:982 dd0f40c36cc9493183d6a932f586a59c
 msgid "use PSRAM (default False)"
 msgstr "使用 PSRAM"
 
-#: ../../en/hardware/display.rst 72c3095b146646e68ce17650b953cac5
+#: ../../en/hardware/display.rst 0a09cc01b8204d2aab0d08f50c862224
 msgid "Returns"
 msgstr ""
 
-#: ../../en/hardware/display.rst:935 6dde2d148d6742f79bb35c0ca05189d4
+#: ../../en/hardware/display.rst:983 37dc2d4d5d954332bd7e8a3e98decac9
 msgid "created canvas object"
 msgstr "创建画布对象。"
 
-#: ../../en/hardware/display.rst:939 0cfafa1a6e4843b891b0a4f1530e9933
+#: ../../en/hardware/display.rst:987 6d85f01f757644318a1ee00c26248aa7
 msgid "|newcanvas.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:43 30c24844685044778c2ec2b8fa3af1fb
+#: ../../en/refs/hardware.display.ref:44 aa768cffe85b4da79b0c668176fd79e7
 msgid "newCanvas.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:957 5f692055f8314d02b8548192ab21d060
+#: ../../en/hardware/display.rst:1005 7b1af3a4ac8b40609024406b1208541f
 msgid "Start writing to the display."
 msgstr "开始向显示屏写入内容。"
 
-#: ../../en/hardware/display.rst:961 41204217b44b44779ba15a0cd966cfdf
+#: ../../en/hardware/display.rst:1009 7f6141b7b0c14f4ea891aa777704d4ee
 msgid "|startwrite.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:44 a0804da3243e44908b07a20fa4d84fee
+#: ../../en/refs/hardware.display.ref:45 5e927f5f14e84d5182e54bad7f56d853
 msgid "startWrite.png"
 msgstr ""
 
-#: ../../en/hardware/display.rst:979 a40c68b06a9a41e688a071b2bc1aaf6a
+#: ../../en/hardware/display.rst:1027 d9d67c16b52a40ec947e25fea224b6be
 msgid "End writing to the display."
 msgstr "结束显示屏写入。"
 
-#: ../../en/hardware/display.rst:983 23f81682ec0c4b7fba344f4f9db9c6d3
+#: ../../en/hardware/display.rst:1031 ffefe4e600c347949dea77930bffd886
 msgid "|endwrite.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.display.ref:45 30e75656bcc44d1c9c625090414c6d19
+#: ../../en/refs/hardware.display.ref:46 fce4a176fe38475b8064f7f8f571952d
 msgid "endWrite.png"
 msgstr ""
 
 #~ msgid "This example shows how to display an image on the screen."
 #~ msgstr ""
+
+#~ msgid "draw test"
+#~ msgstr "绘图测试"
+
+#~ msgid ""
+#~ "Notes: For CoreS3 devices, color depth"
+#~ " is fixed at 16 bits and this"
+#~ " method has no effect."
+#~ msgstr "注意：对于 CoreS3 设备，颜色深度固定为 16 位，此方法无效。"
 

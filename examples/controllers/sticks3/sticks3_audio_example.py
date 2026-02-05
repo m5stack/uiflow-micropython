@@ -5,8 +5,8 @@ import os, sys, io
 import M5
 from M5 import *
 from audio import Recorder
-from audio import Player
 import time
+from audio import Player
 
 
 label_title = None
@@ -18,8 +18,8 @@ recorder = None
 player = None
 flag_record = None
 record_start_time = None
-RECORD_DURATION = None
 remaining = None
+RECORD_DURATION = None
 record_file_path = None
 
 
@@ -34,8 +34,8 @@ def btna_click_event_cb(state):
         player, \
         flag_record, \
         record_start_time, \
-        RECORD_DURATION, \
         remaining, \
+        RECORD_DURATION, \
         record_file_path
     if not flag_record and not (recorder.is_recording()):
         print("start record")
@@ -58,9 +58,10 @@ def setup():
         player, \
         flag_record, \
         record_start_time, \
-        RECORD_DURATION, \
         remaining, \
+        RECORD_DURATION, \
         record_file_path
+
     M5.begin()
     Widgets.setRotation(0)
     Widgets.fillScreen(0x000000)
@@ -73,9 +74,12 @@ def setup():
     )
     label_conut = Widgets.Label("5", 48, 118, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu56)
     label_status = Widgets.Label("Stop", 45, 50, 1.0, 0xFFFFFF, 0x000000, Widgets.FONTS.DejaVu18)
+
     BtnA.setCallback(type=BtnA.CB_TYPE.WAS_CLICKED, cb=btna_click_event_cb)
+
     Mic.end()
     Speaker.end()
+    Speaker.setPA(True)
     recorder = Recorder(8000, 16, True)
     player = Player(None)
     RECORD_DURATION = 5
@@ -94,8 +98,8 @@ def loop():
         player, \
         flag_record, \
         record_start_time, \
-        RECORD_DURATION, \
         remaining, \
+        RECORD_DURATION, \
         record_file_path
     M5.update()
     if flag_record:

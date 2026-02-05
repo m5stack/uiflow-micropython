@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 import os, sys, io
@@ -37,6 +37,7 @@ def setup():
     )
     BtnA.setCallback(type=BtnA.CB_TYPE.WAS_CLICKED, cb=btna_click_event_cb)
     ir = IR()
+    ir.rx_cb(ir_rx_event)
     addr = 56
     data = 0
     Power.setExtOutput(True)
