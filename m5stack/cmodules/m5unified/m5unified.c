@@ -54,6 +54,7 @@ static const mp_rom_map_elem_t m5_board_member_table[] = {
     { MP_ROM_QSTR(MP_QSTR_M5AtomEchoS3R),   MP_ROM_INT(145) },
     { MP_ROM_QSTR(MP_QSTR_M5PowerHub),      MP_ROM_INT(146) },
     { MP_ROM_QSTR(MP_QSTR_M5DualKey),       MP_ROM_INT(147) },
+    { MP_ROM_QSTR(MP_QSTR_M5Unit_PoEP4),    MP_ROM_INT(148) },
     // external displays
     { MP_ROM_QSTR(MP_QSTR_M5ATOMDisplay),   MP_ROM_INT(192) },
     { MP_ROM_QSTR(MP_QSTR_M5UnitLCD),       MP_ROM_INT(193) },

@@ -17,6 +17,7 @@ import machine
 class IR:
     def __init__(self) -> None:
         _pin_map = {
+            # rx_pin, tx_pin
             M5.BOARD.M5AtomS3: (None, 4),
             M5.BOARD.M5AtomS3Lite: (None, 4),
             M5.BOARD.M5AtomS3U: (None, 12),
@@ -33,6 +34,7 @@ class IR:
             M5.BOARD.M5NanoC6: (None, 3),
             M5.BOARD.ArduinoNessoN1: (None, 9),
             M5.BOARD.M5StickS3: (42, 46),
+            M5.BOARD.M5Unit_PoEP4: (None, 14),
         }
         (self._rx_pin, self._tx_pin) = _pin_map.get(M5.getBoard())
         self._receiver = None
