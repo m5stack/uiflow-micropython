@@ -6,6 +6,8 @@
 _attrs = {
     "EasyTCPClient": "tcp_client",
     "EasyTCPServer": "tcp_server",
+    "EasyUDPClient": "udp_client",
+    "EasyUDPServer": "udp_server",
 }
 
 

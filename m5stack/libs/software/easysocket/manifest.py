@@ -8,6 +8,8 @@ package(
         "__init__.py",
         "tcp_client.py",
         "tcp_server.py",
+        "udp_client.py",
+        "udp_server.py",
     ),
     base_path="..",
     opt=0,

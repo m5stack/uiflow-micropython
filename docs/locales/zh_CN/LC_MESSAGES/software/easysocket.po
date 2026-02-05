@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-05 17:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../en/software/easysocket.rst:2 b708bcfffc3f4eeba89cdeb680231181
+msgid ":py:mod:`easysocket` -- a lightweight network library"
+msgstr ":py:mod:`easysocket` —— 轻量级网络库"
+
+#: ../../en/software/easysocket.rst:4 30fb99f45efa40df801d1115bdde7dc0
+msgid ""
+"easysocket is a lightweight, non-blocking, event-driven network library "
+"designed for MicroPython. It encapsulates the complexity of raw socket "
+"operations and ``select.poll`` mechanisms, providing a simple callback-"
+"based API. Currently, it supports TCP (Transmission Control Protocol) for"
+" building robust clients and servers, with UDP (User Datagram Protocol) "
+"support planned for future releases."
+msgstr ""
+"easysocket 是为 MicroPython 设计的轻量级、非阻塞、事件驱动网络库。"
+"它封装了原始 socket 操作与 ``select.poll`` 机制的复杂性，提供简单的回调式 API。"
+"目前支持 TCP（传输控制协议）用于构建健壮的客户端与服务器，"
+"未来版本计划支持 UDP（用户数据报协议）。"
+
+#: ../../en/software/easysocket.rst:7 a349343013894d0987a4022558cf29e8
+msgid "Features"
+msgstr "特性"
+
+#: ../../en/software/easysocket.rst:9 db37ae0cdf184329ba692d6e526bfe1e
+msgid ""
+"**Non-blocking & Event-driven**: Based on the ``select.poll()`` "
+"mechanism, all socket operations are non-blocking. Events are dispatched "
+"via periodic ``check_event()`` calls, preventing network I/O from "
+"blocking the main thread—ideal for MicroPython."
+msgstr ""
+"**非阻塞与事件驱动**：基于 ``select.poll()`` 机制，所有 socket 操作为非阻塞。"
+"事件通过周期性调用 ``check_event()`` 分发，避免网络 I/O 阻塞主线程——非常适合 MicroPython。"
+
+#: ../../en/software/easysocket.rst:12 4651ebe1beb646cb8929f249e8625fc2
+msgid ""
+"**Callback-based**: Simple event hooks for clients (``on_connect``, "
+"``on_data_received``, ``on_disconnect``) and servers "
+"(``on_client_connect``, ``on_data_received``, ``on_client_disconnect``). "
+"Callbacks are safely scheduled using ``micropython.schedule``."
+msgstr ""
+"**回调式**：为客户端（``on_connect``、``on_data_received``、``on_disconnect``）"
+"和服务器（``on_client_connect``、``on_data_received``、``on_client_disconnect``）"
+"提供简洁的事件钩子。回调通过 ``micropython.schedule`` 安全调度。"
+
+#: ../../en/software/easysocket.rst:15 47d0ef8170264385b6e90d15f1aacb7e
+msgid ""
+"**High Abstraction**: Automatic connection/listening upon initialization."
+" Server-side client connections are wrapped in ``EasyTCPClientSocket`` "
+"objects for easy management."
+msgstr ""
+"**高度抽象**：初始化时自动连接/监听。服务器端的客户端连接会被封装为 ``EasyTCPClientSocket`` "
+"对象，便于管理。"
+
+#: ../../en/software/easysocket.rst:18 6c4c6733e72546cf8bc81615d6231d8a
+msgid ""
+"**Concurrency**: ``EasyTCPServer`` handles multiple client connections "
+"simultaneously, managing the lifecycle of each session."
+msgstr ""
+"**并发**：``EasyTCPServer`` 可同时处理多个客户端连接，并管理每个会话的生命周期。"
+
+#: ../../en/software/easysocket.rst:21 b2cd12338cf949a785c3950de5bcdaaa
+msgid ""
+"**Robustness**: Handles non-blocking errors (like ``EAGAIN``) and ensures"
+" proper resource cleanup (socket closing, poll unregistering) on "
+"disconnection."
+msgstr ""
+"**健壮性**：处理非阻塞错误（如 ``EAGAIN``），并在断开连接时确保资源正确清理（关闭 socket、取消 poll 注册）。"
+
+#: ../../en/software/easysocket.rst:25 98f0e137efb84888a78af2780703d821
+msgid "Classes"
+msgstr ""
+
