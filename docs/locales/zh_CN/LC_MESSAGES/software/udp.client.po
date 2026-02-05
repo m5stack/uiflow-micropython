@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-03 11:49+0800\n"
+"POT-Creation-Date: 2026-02-05 17:41+0800\n"
 "PO-Revision-Date: 2025-04-03 11:35+0800\n"
 "Last-Translator: \n"
 "Language: zh_CN\n"
@@ -18,228 +18,398 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/software/udp.client.rst:2 0a528c0383e1478bba5d54fd27e0e8f2
-msgid "UDP Client"
-msgstr "UDP 客户端"
+#: ../../en/software/udp.client.rst:2 2ab9d9e4ad6f4d7ea025c06de1b73b79
+msgid "EasyUDPClient"
+msgstr ""
 
-#: ../../en/software/udp.client.rst:7 62e18ac8fe834b51b1ae288230962fd9
+#: ../../en/software/udp.client.rst:6 1a8077a6f23744b5b97fffb37c3f24ed
+msgid ""
+"EasyUDPClient provides a simple way to create UDP clients in an event-"
+"driven manner."
+msgstr "EasyUDPClient 提供了一种以事件驱动方式创建 UDP 客户端的简单方法。"
+
+#: ../../en/software/udp.client.rst:9 c8a03bcc0d8644f1a73a5c0b0c9b1b9a
 msgid "UiFlow2 Example"
 msgstr "UIFLOW2 应用示例"
 
-#: ../../en/software/udp.client.rst:10 d34e605a20bd4e9489b70f24b5074ead
+#: ../../en/software/udp.client.rst:12 ../../en/software/udp.client.rst:30
+#: ccf1e85a9d3e4a2ca666fd762fefd6b7
 msgid "simple client"
 msgstr "简单客户端"
 
-#: ../../en/software/udp.client.rst:12 c566cc6b82964928bd485dbdb9e73ec3
-msgid "Open the |cores3_udp_client_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |cores3_udp_client_example.m5f2| 项目。"
+#: ../../en/software/udp.client.rst:14 b7e1105837d3431da0c890639df611ba
+msgid "Open the |udp_client_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |udp_client_core2_example.m5f2| 项目。"
 
-#: ../../en/software/udp.client.rst:14 ../../en/software/udp.client.rst:30
-#: c8e2e14e35714fefba447b9dc3950cd5 e09475f1c50e47c582892a9ef0ccf472
-msgid "This example creates a UDP client that sends data to a server."
-msgstr "此示例创建一个向服务器发送数据的 UDP 客户端。"
+#: ../../en/software/udp.client.rst:16 ../../en/software/udp.client.rst:32
+#: d80d4a66df5e4a8a86003bd91dd6f86a
+msgid ""
+"This example creates a UDP client that connects to a server and sends "
+"data."
+msgstr "本示例创建一个 UDP 客户端，该客户端连接到服务器并发送数据。"
 
-#: ../../en/software/udp.client.rst:16 ../../en/software/udp.client.rst:56
-#: ../../en/software/udp.client.rst:75 ../../en/software/udp.client.rst:95
-#: ../../en/software/udp.client.rst:115 ../../en/software/udp.client.rst:137
-#: ../../en/software/udp.client.rst:162 ../../en/software/udp.client.rst:185
-#: 07578219b6ed42d8bbaed47c8ee2287c 491aea1073d94d57bcc8cc34a2ab26d5
-#: 4f1839566f4b4058849b92cb06f124c8 5c0359f4ede847cbb35b3fc3ba48f091
-#: c5353a8ef9f04603be101b40d83d1716 c5580b38497d46e98f07cb81b113b72b
-#: d6787e23d7c64a01801a55524971f393 f19bd2f6f73147fbbf5e1ad66a9c9ea8
+#: ../../en/software/udp.client.rst:18 945ce7409a1a4f6c8c5bf5436091c414
+#: d1094f3c8bba407ea0ef080e23b63408 of
+#: software.easysocket.udp_client.EasyUDPClient:15
+#: software.easysocket.udp_client.EasyUDPClient.check_event:5
+#: software.easysocket.udp_client.EasyUDPClient.close:3
+#: software.easysocket.udp_client.EasyUDPClient.getpeername:6
+#: software.easysocket.udp_client.EasyUDPClient.getsockname:6
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received:5
+#: software.easysocket.udp_client.EasyUDPClient.send:6
+#: software.easysocket.udp_client.EasyUDPClient.sendto:7
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/software/udp.client.rst:18 78fa70a7fa8c469a94cc1f41d1f1a64d
-msgid "|cores3_udp_client_example.png|"
+#: ../../en/software/udp.client.rst:20 36f6ee9b3dbe4c9c834cc4689ac4a901
+msgid "|udp_client_core2_example.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:10 7682e67c17d24069a29b5be2270a7436
-msgid "cores3_udp_client_example.png"
+#: ../../en/refs/software.easysocket.udp.client.ref:4
+#: 36b6d840821a486a9d53cc384aee6e69
+msgid "udp_client_core2_example.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:20 ../../en/software/udp.client.rst:38
-#: 763f50bd156741b89f0afaea94101af9 b632d2a9b73944c683023e1203f4355a
+#: ../../en/software/udp.client.rst:22 ../../en/software/udp.client.rst:40
+#: 36bc05a80f1a437e9a7782a59b71fb44
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/software/udp.client.rst:22 ../../en/software/udp.client.rst:40
-#: a3102655616245cf965855bf195591bd d1ee4d320734478d9a05c2efb4027549
+#: ../../en/software/udp.client.rst:24 ../../en/software/udp.client.rst:42
+#: 2b421c6cb6174510a94d71ac26dc3a27
 msgid "None"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:25 e531617aebd342d1b17c1352451678b9
+#: ../../en/software/udp.client.rst:27 9128be6f07c5492aa21a182fd5e6f639
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/software/udp.client.rst:28 bc4367d1dfa343f8b335723ae5d60fd8
-msgid "sample client"
-msgstr "简单客户端"
-
-#: ../../en/software/udp.client.rst:32 ../../en/software/udp.client.rst:60
-#: ../../en/software/udp.client.rst:79 ../../en/software/udp.client.rst:99
-#: ../../en/software/udp.client.rst:119 ../../en/software/udp.client.rst:141
-#: ../../en/software/udp.client.rst:166 ../../en/software/udp.client.rst:189
-#: 02a87cc640c048afb19e7cc81be65eb7 30ff11cca97042c18b29c70bf8cba834
-#: 3d65858c366649b3af836852463b3526 576e33629be343a5be9f1fd98c301128
-#: 964f34c7e1fb49dab5a34bd324897cdf c18dcb8753f340988e80bed7376bd700
-#: e17504b08cd74dd0aec3b7d652660b95 e3352431b4214c0f804933e5f4fa9522
+#: ../../en/software/udp.client.rst:34 534191496252438196aa609affa9d1c4
+#: c187160094ab4e2db7fc34f924bb9c72 of
+#: software.easysocket.udp_client.EasyUDPClient:19
+#: software.easysocket.udp_client.EasyUDPClient.check_event:9
+#: software.easysocket.udp_client.EasyUDPClient.close:7
+#: software.easysocket.udp_client.EasyUDPClient.connect:3
+#: software.easysocket.udp_client.EasyUDPClient.getpeername:10
+#: software.easysocket.udp_client.EasyUDPClient.getsockname:10
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received:9
+#: software.easysocket.udp_client.EasyUDPClient.send:10
+#: software.easysocket.udp_client.EasyUDPClient.sendto:13
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/software/udp.client.rst:44 38085219afa747c2a9545202a657754d
+#: ../../en/software/udp.client.rst:46 48f2186ff4164c89b14f55cef0b9172e
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../en/software/udp.client.rst:50 d8eb45ac5513450e901c0efb2bc60d05
-msgid "Create a socket object and connect to the server."
-msgstr "创建一个套接字对象并连接到服务器。"
+#: 65440fcc0c2a40dfba50c81db2f6b982 of
+#: software.easysocket.udp_client.EasyUDPClient:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
 
-#: ../../en/software/udp.client.rst 1a7e34dfe87c41e19d63660e89684d25
-#: 9b0307647b6843c3b0f5735d7333006b aa4b11b381594f1fbb965fc2853ddbec
-#: ba01636c4cd84ed5ba789c2c642df4cb c452d362231d4424ab4bf32b7b5842a0
+#: 70f77d21e34a4ea2bd52f48cbc5b3632 of
+#: software.easysocket.udp_client.EasyUDPClient:1
+msgid "Create an EasyUDPClient object."
+msgstr "创建一个 EasyUDPClient 对象。"
+
+#: ../../en/software/udp.client.rst 9afc261a425e42678ed2f9009ce58a11 of
+#: software.easysocket.udp_client.EasyUDPClient.check_event
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received
+#: software.easysocket.udp_client.EasyUDPClient.send
+#: software.easysocket.udp_client.EasyUDPClient.sendto
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:52 2840a881b4144dc29a696aeb4ee30eac
-msgid "A tuple containing the server IP address and port number."
-msgstr "包含服务器 IP 地址和端口号的元组。"
+#: 9586fddfef3c4179a15e52becd4f4326 of
+#: software.easysocket.udp_client.EasyUDPClient:3
+msgid "The remote host address."
+msgstr "远程主机地址。"
 
-#: ../../en/software/udp.client.rst 002c3ef2170a4b668b2d1ce8bed6c568
-#: 3da3e39f2631465e96dd819c50821217 b45d582b8f4c4afdad90be9faba96457
-#: d0893fad547143bfa2522d35195eca35 dd3bb143f5504859934bc31339d2d766
-msgid "Returns"
-msgstr ""
+#: 9586fddfef3c4179a15e52becd4f4326 of
+#: software.easysocket.udp_client.EasyUDPClient:4
+msgid "The remote port number."
+msgstr "远程端口号。"
 
-#: ../../en/software/udp.client.rst:53 bc9b80df2a984d969eecced5833d356e
-msgid "A socket object."
-msgstr "一个套接字对象。"
+#: 91c92bb14205477ca75d4996d35c7221 of
+#: software.easysocket.udp_client.EasyUDPClient:5
+msgid "The UDP mode (unicast, broadcast, multicast). Default is unicast."
+msgstr "UDP模式（单播、广播、组播）。默认为单播。"
 
-#: ../../en/software/udp.client.rst 1450f82b10284002b646ae57fdce7328
-#: 8dc42167a89447a7a1dd05e35c5a4e79 9091013762394793b696ab2d44318b51
-#: b5f1a74d37e74aa6a6c078796181d6f4 ff4e8652f01b4db1a65358e3d3d7cbd9
-msgid "Return type"
-msgstr ""
+#: a0c615c975574766b43af9e8e4520152 of
+#: software.easysocket.udp_client.EasyUDPClient:9
+msgid "connection is initiated in the background when the object is created."
+msgstr "对象创建时，连接会在后台启动。"
 
-#: ../../en/software/udp.client.rst:58 3b9ec4363c864ef4af0102820f8477a5
+#: 8d5fa95dc54e4feb8984a8e786561f27 of
+#: software.easysocket.udp_client.EasyUDPClient:13
+msgid ""
+"This class is non-blocking and event-driven. You need to call "
+"`check_event()` periodically to process events."
+msgstr "这个类是非阻塞式的，并且是事件驱动的。你需要定期调用 `check_event()` 来处理事件。"
+
+#: daa8535011164a889b015a4dacf4f421 of
+#: software.easysocket.udp_client.EasyUDPClient:17
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:3 dcc408c11d78491aa63c8f8cfeb1e0b6
+#: ../../en/refs/software.easysocket.udp.client.ref:7
+#: 4ee1c0692af849ee853a2717b1ff5e3e
 msgid "init.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:73 0760c6f39f9f4932afbc5c5b2dbff1d9
-msgid "Close the socket connection."
-msgstr "关闭套接字连接。"
+#: d8a0414868b1448fad34b7ac26d298af of
+#: software.easysocket.udp_client.EasyUDPClient.connect:1
+msgid "Connect to the remote server."
+msgstr "连接到远程服务器。"
 
-#: ../../en/software/udp.client.rst:77 81f8e5ed73904c798bea0f2be9857efb
-msgid "|close.png|"
+#: bbdf84f7ee1e4a88999903a47210b204 of
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received:1
+msgid "Set the callback function for data received event."
+msgstr "设置数据接收事件的回调函数。"
+
+#: c2d4e2ffdf6b46618be6556deb57688c of
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received:3
+msgid "The callback function."
+msgstr "回调函数。"
+
+#: 36f6ee9b3dbe4c9c834cc4689ac4a901 of
+#: software.easysocket.udp_client.EasyUDPClient.on_data_received:7
+msgid "|received_callback.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:2 8f03a3227abc4c178bd1951e7e023953
-msgid "close.png"
+#: ../../en/refs/software.easysocket.udp.client.ref:8
+#: 04ebe03c30964e55ae3222f841f5903d
+msgid "received_callback.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:89 05a649a48fed4cbda5d44f2d4c0c6587
-msgid "Receive data from the socket."
-msgstr "从套接字接收数据。"
+#: e8538b28cf1f47d8bf7c330b3dc40d2a of
+#: software.easysocket.udp_client.EasyUDPClient.check_event:1
+msgid "Check for events."
+msgstr "检查事件。"
 
-#: ../../en/software/udp.client.rst:91 643ad60f52f541a0a655cf124f97213e
-msgid "The maximum amount of data to be received at once."
-msgstr "一次可接收的最大数据量。"
+#: d81ca7e887da4ffb82a403cf942b382f of
+#: software.easysocket.udp_client.EasyUDPClient.check_event:3
+msgid "The timeout in milliseconds. Default is -1 (no timeout)."
+msgstr "超时时间，单位为毫秒。默认值为 -1（无超时）。"
 
-#: ../../en/software/udp.client.rst:92 ../../en/software/udp.client.rst:112
-#: 30864224da054da2b9bb3a71a63ad9d6 6a569b67b0074506b10eb66d9346d54b
-msgid "The received data."
-msgstr "接收到的数据。"
-
-#: ../../en/software/udp.client.rst:97 1448c467b8d04affa8dc62f703e64f39
-msgid "|recv.png|"
+#: b8ba2c60cc6c4d0585e5605c4e05c353 of
+#: software.easysocket.udp_client.EasyUDPClient.check_event:7
+msgid "|check_event.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:5 1291d8e82e9a4101b94415cd67b92490
-msgid "recv.png"
+#: ../../en/refs/software.easysocket.udp.client.ref:2
+#: 0f11824863ef41049eee625f525be981
+msgid "check_event.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:110 a75cb8dbdedb47b38dcfa6675f068ff8
-msgid "Read data from the socket."
+#: 0d52de03a4a349e186655eae4fa467a9 of
+#: software.easysocket.udp_client.EasyUDPClient.send:1
+#: software.easysocket.udp_client.EasyUDPClient.sendto:1
+msgid "Send data to the remote server."
+msgstr "向远程服务器发送数据。"
+
+#: e8538b28cf1f47d8bf7c330b3dc40d2a of
+#: software.easysocket.udp_client.EasyUDPClient.send:3
+#: software.easysocket.udp_client.EasyUDPClient.sendto:3
+msgid "The data to send."
+msgstr "要发送的数据。"
+
+#: bf0d66e1a6c246e5a75adc3b912bc9a2 of
+#: software.easysocket.udp_client.EasyUDPClient.getpeername
+#: software.easysocket.udp_client.EasyUDPClient.getsockname
+#: software.easysocket.udp_client.EasyUDPClient.send
+#: software.easysocket.udp_client.EasyUDPClient.sendto
+msgid "Returns"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:117 ad5a77bf21e342578cd86248a29111d5
-msgid "|read.png|"
-msgstr ""
-
-#: ../../en/refs/software.udp.client.ref:4 835b40b79cae4430bab9f57837704bda
-msgid "read.png"
-msgstr ""
-
-#: ../../en/software/udp.client.rst:130 b00b59a24f184d9ebfb1d2817d6bc450
-msgid "Send data to the socket. The socket must be connected to a remote socket."
-msgstr "向套接字发送数据。该套接字必须连接到远程套接字。"
-
-#: ../../en/software/udp.client.rst:132 ../../en/software/udp.client.rst:157
-#: 63cff285ee4147f3af158738759f6234 ba19d636a9754ea7b478eb5971315e6b
-msgid "The data to be sent."
-msgstr "The data to be sent."
-
-#: ../../en/software/udp.client.rst:134 ../../en/software/udp.client.rst:159
-#: 216f70d04201456cb7528c858c451e4e db87f57a19ab46e2ba306f14bca392ed
+#: 3097347b7c2a4cc5bc7cb2753ff9924f of
+#: software.easysocket.udp_client.EasyUDPClient.send:4
+#: software.easysocket.udp_client.EasyUDPClient.sendto:5
 msgid "The number of bytes sent."
 msgstr "已发送的字节数。"
 
-#: ../../en/software/udp.client.rst:139 7e85942aa4f14924ba3318a6d2ff0c10
+#: 607266db0b7b4821aa6429b51ce1aebc of
+#: software.easysocket.udp_client.EasyUDPClient.send:8
 msgid "|send.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:6 77394ffd34d346e9a5ebabe285e34bfe
+#: ../../en/refs/software.easysocket.udp.client.ref:9
+#: 67524c7092454982b9aca9f70457b531
 msgid "send.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:152 c8c5c547b33b487f81ec8385ab8cb674
-msgid ""
-"Write the buffer of bytes to the socket. This function will try to write "
-"all data to a socket (no “short writes”). This may be not possible with a"
-" non-blocking socket though, and returned value will be less than the "
-"length of buf."
-msgstr ""
-"将字节缓冲区写入套接字。此函数将尝试将所有数据写入套接字（无“短写入”）。不过，对于非阻塞套接字，这可能无法实现，并且返回的值将小于 buf "
-"的长度。"
+#: d80d4a66df5e4a8a86003bd91dd6f86a of
+#: software.easysocket.udp_client.EasyUDPClient.sendto:4
+msgid "The (host, port) tuple to send data to."
+msgstr "要发送数据的（主机，端口）元组。"
 
-#: ../../en/software/udp.client.rst:164 e8c96ebf6d934f4b84497a93ed1b12a9
-msgid "|write.png|"
+#: 607266db0b7b4821aa6429b51ce1aebc of
+#: software.easysocket.udp_client.EasyUDPClient.sendto:9
+msgid "|sendto.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:8 21fbdf8c954a497d9f6da054f7c4d1d7
-msgid "write.png"
+#: ../../en/refs/software.easysocket.udp.client.ref:10
+#: 67524c7092454982b9aca9f70457b531
+msgid "sendto.png"
 msgstr ""
 
-#: ../../en/software/udp.client.rst:177 f7bfb5103b3d43b9bb6dff4f544e6f22
-msgid ""
-"Set the value of the given socket option. The needed symbolic constants "
-"are defined in the socket module (SO_* etc.). The value can be an integer"
-" or a bytes-like object representing a buffer."
-msgstr "设置给定套接字选项的值。所需的符号常量在套接字模块中定义（SO_* 等）。该值可以是整数或表示缓冲区的字节类对象。"
-
-#: ../../en/software/udp.client.rst:181 261cd4f469954396af46c2d5f6a1a741
-msgid "The level at which the option is defined."
-msgstr "定义选项的级别。"
-
-#: ../../en/software/udp.client.rst:182 d1231b780a0e499d851741e2f7736ba1
-msgid "The name of the option to set."
-msgstr "要设置的选项的名称。"
-
-#: ../../en/software/udp.client.rst:183 6e1a6e5c8ed547e3acfbbeb59c2263bf
-msgid "The value to set for the option."
-msgstr "为选项设置的值。"
-
-#: ../../en/software/udp.client.rst:187 c41c9ca02e9f47028cf7f8686cd4d956
-msgid "|setsockopt.png|"
+#: 607266db0b7b4821aa6429b51ce1aebc of
+#: software.easysocket.udp_client.EasyUDPClient.sendto:11
+msgid "|sendto2.png|"
 msgstr ""
 
-#: ../../en/refs/software.udp.client.ref:7 afe6934a7a9a4d8abfbfca013f7706e3
-msgid "setsockopt.png"
+#: ../../en/refs/software.easysocket.udp.client.ref:11
+#: 67524c7092454982b9aca9f70457b531
+msgid "sendto2.png"
 msgstr ""
+
+#: abc9d2641dea4f81a5ccdd5fb956b6e1 of
+#: software.easysocket.udp_client.EasyUDPClient.close:1
+msgid "Close the socket."
+msgstr "关闭套接字连接。"
+
+#: e64842f7fb3342289d8f9447d06de4c9 of
+#: software.easysocket.udp_client.EasyUDPClient.close:5
+msgid "|close.png|"
+msgstr ""
+
+#: ../../en/refs/software.easysocket.udp.client.ref:3
+#: 36b6d840821a486a9d53cc384aee6e69
+msgid "close.png"
+msgstr ""
+
+#: abc9d2641dea4f81a5ccdd5fb956b6e1 of
+#: software.easysocket.udp_client.EasyUDPClient.getsockname:1
+msgid "Return the socket's own address."
+msgstr "返回套接字自身的地址。"
+
+#: bc84fa85552a492abc8e01eaa3c76f8f of
+#: software.easysocket.udp_client.EasyUDPClient.getsockname:3
+msgid "The socket's own address. the format is (host, port)."
+msgstr "套接字自身的地址。格式为（主机，端口）。"
+
+#: 5575fc7bfaed4e9983fc7601fbfbcad2 of
+#: software.easysocket.udp_client.EasyUDPClient.getpeername
+#: software.easysocket.udp_client.EasyUDPClient.getsockname
+msgid "Return type"
+msgstr ""
+
+#: b8ba2c60cc6c4d0585e5605c4e05c353 of
+#: software.easysocket.udp_client.EasyUDPClient.getsockname:8
+msgid "|getsockname.png|"
+msgstr ""
+
+#: ../../en/refs/software.easysocket.udp.client.ref:6
+#: 0f11824863ef41049eee625f525be981
+msgid "getsockname.png"
+msgstr ""
+
+#: 1f3f8fc935294d92a41653598e21b5ae of
+#: software.easysocket.udp_client.EasyUDPClient.getpeername:1
+msgid "Return the remote address to which the socket is connected."
+msgstr "返回套接字所连接的远程地址。"
+
+#: 19794e87301d4764b7d09d306bf4a7e8 of
+#: software.easysocket.udp_client.EasyUDPClient.getpeername:3
+msgid "The remote address. the format is (host, port)."
+msgstr "远程地址。格式为（主机，端口）。"
+
+#: b8ba2c60cc6c4d0585e5605c4e05c353 of
+#: software.easysocket.udp_client.EasyUDPClient.getpeername:8
+msgid "|getpeername.png|"
+msgstr ""
+
+#: ../../en/refs/software.easysocket.udp.client.ref:5
+#: 0f11824863ef41049eee625f525be981
+msgid "getpeername.png"
+msgstr ""
+
+#~ msgid "|cores3_udp_client_example.png|"
+#~ msgstr ""
+
+#~ msgid "cores3_udp_client_example.png"
+#~ msgstr ""
+
+#~ msgid "sample client"
+#~ msgstr "简单客户端"
+
+#~ msgid "Create a socket object and connect to the server."
+#~ msgstr "创建一个套接字对象并连接到服务器。"
+
+#~ msgid "A tuple containing the server IP address and port number."
+#~ msgstr "包含服务器 IP 地址和端口号的元组。"
+
+#~ msgid "A socket object."
+#~ msgstr "一个套接字对象。"
+
+#~ msgid "Receive data from the socket."
+#~ msgstr "从套接字接收数据。"
+
+#~ msgid "The maximum amount of data to be received at once."
+#~ msgstr "一次可接收的最大数据量。"
+
+#~ msgid "The received data."
+#~ msgstr "接收到的数据。"
+
+#~ msgid "|recv.png|"
+#~ msgstr ""
+
+#~ msgid "recv.png"
+#~ msgstr ""
+
+#~ msgid "Read data from the socket."
+#~ msgstr ""
+
+#~ msgid "|read.png|"
+#~ msgstr ""
+
+#~ msgid "read.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Send data to the socket. The "
+#~ "socket must be connected to a "
+#~ "remote socket."
+#~ msgstr "向套接字发送数据。该套接字必须连接到远程套接字。"
+
+#~ msgid ""
+#~ "Write the buffer of bytes to the"
+#~ " socket. This function will try to"
+#~ " write all data to a socket (no"
+#~ " “short writes”). This may be not "
+#~ "possible with a non-blocking socket "
+#~ "though, and returned value will be "
+#~ "less than the length of buf."
+#~ msgstr ""
+#~ "将字节缓冲区写入套接字。此函数将尝试将所有数据写入套接字（无“短写入”）。不过，对于非阻塞套接字，这可能无法实现，并且返回的值将小于 "
+#~ "buf 的长度。"
+
+#~ msgid "|write.png|"
+#~ msgstr ""
+
+#~ msgid "write.png"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Set the value of the given socket"
+#~ " option. The needed symbolic constants "
+#~ "are defined in the socket module "
+#~ "(SO_* etc.). The value can be an"
+#~ " integer or a bytes-like object "
+#~ "representing a buffer."
+#~ msgstr "设置给定套接字选项的值。所需的符号常量在套接字模块中定义（SO_* 等）。该值可以是整数或表示缓冲区的字节类对象。"
+
+#~ msgid "The name of the option to set."
+#~ msgstr "要设置的选项的名称。"
+
+#~ msgid "The value to set for the option."
+#~ msgstr "为选项设置的值。"
+
+#~ msgid "|setsockopt.png|"
+#~ msgstr ""
+
+#~ msgid "setsockopt.png"
+#~ msgstr ""
 

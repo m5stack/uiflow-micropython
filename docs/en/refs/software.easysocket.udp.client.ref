@@ -1,0 +1,20 @@
+
+.. |check_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/check_event.png
+.. |close.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/close.png
+.. |udp_client_core2_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/example.png
+.. |getpeername.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/getpeername.png
+.. |getsockname.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/getsockname.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/init.png
+.. |received_callback.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/received_callback.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/send.png
+.. |sendto.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/sendto.png
+.. |sendto2.png| image:: https://static-cdn.m5stack.com/mpy_docs/software/easy_udp/client/sendto2.png
+
+.. |udp_client_core2_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/software/easysocket/udp_client/udp_client_core2_example.m5f2"
+        target="_blank"
+    >
+        udp_client_core2_example.m5f2
+    </a>

@@ -29,3 +29,5 @@ Classes
 
     tcp.client.rst
     tcp.server.rst
+    udp.client.rst
+    udp.server.rst
