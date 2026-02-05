@@ -168,6 +168,13 @@ class AccelUnit(ADXL345):
         :returns: The measurement range of the sensor.
         :rtype: int
 
+        Range options are:
+
+            - ``0``: 2G
+            - ``1``: 4G
+            - ``2``: 8G
+            - ``3``: 16G
+
         UiFlow2 Code Block:
 
             |get_range.png|
@@ -184,6 +191,13 @@ class AccelUnit(ADXL345):
         """The measurement range of the sensor.
 
         :param int range: The measurement range of the sensor.
+
+        Range options are:
+
+            - ``0``: 2G
+            - ``1``: 4G
+            - ``2``: 8G
+            - ``3``: 16G
 
         UiFlow2 Code Block:
 
