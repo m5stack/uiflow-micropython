@@ -1,13 +1,14 @@
+
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2016 - 2025 M5Stack Technology Co., Ltd
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
 # This file is distributed under the same license as the UIFlow2 Programming
 # Guide package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: UIFlow2 Programming Guide\n"
+"Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-02-05 17:41+0800\n"
 "PO-Revision-Date: 2025-04-03 11:46+0800\n"
@@ -32,7 +33,7 @@ msgstr "EasyUDPServer 和 EasyUDPClientSocket 提供了一种简单的方法来�
 
 #: ../../en/software/udp.server.rst:9 5d44fe63594342f69079b3d263ac3e1a
 msgid "UiFlow2 Example"
-msgstr "UIFLOW2 应用示例"
+msgstr "UiFlow2 示例"
 
 #: ../../en/software/udp.server.rst:12 ../../en/software/udp.server.rst:30
 #: 2cb3b47f39ec4d44b6bdc63230214d03
@@ -80,7 +81,7 @@ msgstr ""
 
 #: ../../en/software/udp.server.rst:27 69b12c55af9a4405a16e4b05b8ebc61b
 msgid "MicroPython Example"
-msgstr "MicroPython 应用示例"
+msgstr "MicroPython 示例"
 
 #: ../../en/software/udp.server.rst:34 65736e2862cc4f098f473f152ef176bb
 #: 88b987cc1e0c4d11a74068aefbe07a2d 9ab736a1db0f4b139967f3df7e725439 of
@@ -154,12 +155,12 @@ msgstr "这个类是非阻塞式的，并且是事件驱动的。你需要定期
 #: 515f700997b44f808221022d9b011ee3 of
 #: software.easysocket.udp_server.EasyUDPServer:19
 msgid "|init.png|"
-msgstr ""
+msgstr "|init.png|"
 
 #: ../../en/refs/software.easysocket.udp.server.ref:7
 #: f6abca22fc254d8787e7545a7df006b2
 msgid "init.png"
-msgstr ""
+msgstr "init.png"
 
 #: 59087f42783c4104b374d74b67e6a0fd of
 #: software.easysocket.udp_server.EasyUDPServer.start:1
@@ -239,7 +240,7 @@ msgstr "已发送的字节数。"
 #: dbff5beee42c4a30a48b2a5c4953043a of
 #: software.easysocket.udp_server.EasyUDPServer.sendto:9
 msgid "|sendto.png|"
-msgstr ""
+msgstr "|sendto.png|"
 
 #: ../../en/refs/software.easysocket.udp.server.ref:10
 #: a6f7cd251f4145708a3330f35e1f789f
