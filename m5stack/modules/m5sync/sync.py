@@ -274,12 +274,12 @@ class DownloadView:
     }
 
     def __init__(self) -> None:
-        board_id = M5.getBoard()
-        self.view_info = self.view_info_table.get(board_id, None)
+        self.board_id = M5.getBoard()
+        self.view_info = self.view_info_table.get(self.board_id, None)
 
     def on_view(self):
         if self.view_info:
-            if M5.getBoard() == M5.BOARD.M5Tab5:
+            if self.board_id == M5.BOARD.M5Tab5:
                 M5.Lcd.setRotation(3)
             M5.Lcd.clear(0xFFFFFF)
             self.title_label = Label(
@@ -309,13 +309,16 @@ class DownloadView:
             self.progress_label.set_text("0%")
         else:
             self.rgb = RGB()
+            if self.board_id == M5.BOARD.M5Unit_PoEP4:
+                self.rgb = None
             if self.rgb:
-                if M5.getBoard() == M5.BOARD.M5PowerHub:
+                if self.board_id == M5.BOARD.M5PowerHub:
                     _rgb_index = 5
                 else:
                     _rgb_index = 0
                 self.rgb.set_color(_rgb_index, self.COLOR_YELLOW)
             else:
+                self._unit_poep4_rgb_show("yellow")
                 print("Sync...")
                 print("0%")
 
@@ -339,6 +342,10 @@ class DownloadView:
                 self.rgb.set_color(_rgb_index, self.COLOR_BLUE)
                 time.sleep(0.02)
             else:
+                self._unit_poep4_rgb_show("black")
+                time.sleep(0.02)
+                self._unit_poep4_rgb_show("blue")
+                time.sleep(0.02)
                 print(f"{percent}%")
 
     def on_success(self):
@@ -352,6 +359,7 @@ class DownloadView:
                     _rgb_index = 0
                 self.rgb.set_color(_rgb_index, self.COLOR_GREEN)
             else:
+                self._unit_poep4_rgb_show("green")
                 print("Success")
         time.sleep(1)
 
@@ -366,12 +374,42 @@ class DownloadView:
                     _rgb_index = 0
                 self.rgb.set_color(_rgb_index, self.COLOR_RED)
             else:
+                self._unit_poep4_rgb_show("red")
                 print("Failed")
 
     def on_exit(self):
         if self.view_info:
             M5.Lcd.clear(0x000000)
             M5.Lcd.setTextColor(0xFFFFFF, 0)
+
+    def _unit_poep4_rgb_show(self, color: str):
+        if self.board_id != M5.BOARD.M5Unit_PoEP4:
+            return
+        from machine import Pin
+
+        if not hasattr(self, "_poep4_led"):
+            self._poep4_led = {
+                "r": Pin(17, Pin.OUT, value=1),
+                "g": Pin(15, Pin.OUT, value=1),
+                "b": Pin(16, Pin.OUT, value=1),
+            }
+
+        _color_table = {
+            "black": (1, 1, 1),
+            "red": (0, 1, 1),
+            "green": (1, 0, 1),
+            "blue": (1, 1, 0),
+            "yellow": (0, 0, 1),
+        }
+
+        color = color.lower()
+        if color not in _color_table:
+            raise ValueError("Unsupported color: " + color)
+
+        r, g, b = _color_table[color]
+        self._poep4_led["r"].value(r)
+        self._poep4_led["g"].value(g)
+        self._poep4_led["b"].value(b)
 
 
 class M5Sync:
