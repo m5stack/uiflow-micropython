@@ -225,7 +225,7 @@ class EasyTCPClient:
                 client.send(b"Hello")
         """
         if self._con_state != self._STATE_CONNECTED:
-            warnings.warn("Socket is not connected. Call connect() first.", RuntimeWarning)
+            warnings.warn("Socket is not connected. Call connect() first.")
             return 0
         return self._client_sock.send(*args, **kwargs)
 
@@ -245,13 +245,13 @@ class EasyTCPClient:
                 client.sendall(b"Hello")
         """
         if self._con_state != self._STATE_CONNECTED:
-            warnings.warn("Socket is not connected. Call connect() first.", RuntimeWarning)
+            warnings.warn("Socket is not connected. Call connect() first.")
             return 0
         return self._client_sock.sendall(*args, **kwargs)
 
     def recv(self, *args, **kwargs):
         if self._con_state != self._STATE_CONNECTED:
-            warnings.warn("Socket is not connected. Call connect() first.", RuntimeWarning)
+            warnings.warn("Socket is not connected. Call connect() first.")
             return b""
         return self._client_sock.recv(*args, **kwargs)
 
