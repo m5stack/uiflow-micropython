@@ -406,7 +406,7 @@ class BusChainUnit(KeyChain):
     # ============================================================================
     # I2C operations
     # ============================================================================
-    def readfrom(self, addr: int, nbytes: int, stop: bool = True) -> bytes:
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs) -> bytes:
         """Read data from an I2C device.
 
         :param int addr: I2C device address (7-bit).
@@ -439,7 +439,7 @@ class BusChainUnit(KeyChain):
                     return bytes(response[1 : 1 + data_len])
         return b""
 
-    def readfrom_into(self, addr: int, buf: bytearray, stop: bool = True) -> None:
+    def readfrom_into(self, addr: int, buf: bytearray, *args, **kwargs) -> None:
         """Read data from an I2C device into a buffer.
 
         :param int addr: I2C device address (7-bit).
@@ -461,7 +461,7 @@ class BusChainUnit(KeyChain):
         if data:
             buf[: len(data)] = data
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True) -> int:
+    def writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs) -> int:
         """Write data to an I2C device.
 
         :param int addr: I2C device address (7-bit).
@@ -493,7 +493,7 @@ class BusChainUnit(KeyChain):
                     return len(buf)
         return 0
 
-    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int, addrsize: int = 8) -> bytes:
+    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int, *args, **kwargs) -> bytes:
         """Read data from an I2C device memory (register).
 
         :param int addr: I2C device address (7-bit).
@@ -513,6 +513,7 @@ class BusChainUnit(KeyChain):
 
                 data = unit_chain_bus.readfrom_mem(0x48, 0x00, 4)
         """
+        addrsize = args[0] if len(args) > 0 and isinstance(args[0], int) else 8
         if addrsize not in (8, 16):
             return b""
         if nbytes <= 0:
@@ -534,7 +535,7 @@ class BusChainUnit(KeyChain):
         return b""
 
     def readfrom_mem_into(
-        self, addr: int, memaddr: int, buf: bytearray, addrsize: int = 8
+        self, addr: int, memaddr: int, buf: bytearray, addrsize: int = 8, *args, **kwargs
     ) -> None:
         """Read data from an I2C device memory (register) into a buffer.
 
@@ -554,12 +555,12 @@ class BusChainUnit(KeyChain):
                 buf = bytearray(4)
                 unit_chain_bus.readfrom_mem_into(0x48, 0x00, buf)
         """
-        data = self.readfrom_mem(addr, memaddr, len(buf), addrsize)
+        data = self.readfrom_mem(addr, memaddr, len(buf), *args, **kwargs)
         if data:
             buf[: len(data)] = data
 
     def writeto_mem(
-        self, addr: int, memaddr: int, buf: bytes | bytearray, addrsize: int = 8
+        self, addr: int, memaddr: int, buf: bytes | bytearray, *args, **kwargs
     ) -> None:
         """Write data to an I2C device memory (register).
 
@@ -580,6 +581,7 @@ class BusChainUnit(KeyChain):
         """
         if isinstance(buf, bytearray):
             buf = bytes(buf)
+        addrsize = args[0] if len(args) > 0 and isinstance(args[0], int) else 8
         if addrsize not in (8, 16):
             return
         if not buf or len(buf) == 0:
@@ -599,7 +601,7 @@ class BusChainUnit(KeyChain):
                     return
         return
 
-    def scan(self) -> list:
+    def scan(self, *args, **kwargs) -> list:
         """Scan for I2C devices.
 
         :return: List of I2C device addresses found, or empty list if failed.

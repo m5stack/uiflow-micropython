@@ -45,9 +45,9 @@ class PAHUBUnit:
     def deinit(self) -> None:
         self.release_channel(self._chn)
 
-    def scan(self) -> list[int]:
+    def scan(self, *args, **kwargs) -> list[int]:
         self.select_channel(self._chn)
-        result = self._i2c.scan()
+        result = self._i2c.scan(*args, **kwargs)
         self.release_channel(self._chn)
         return result
 
@@ -72,42 +72,42 @@ class PAHUBUnit:
         self.release_channel(self._chn)
         return result
 
-    def readfrom(self, addr: int, nbytes: int, stop: bool = True) -> bytes:
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs) -> bytes:
         self.select_channel(self._chn)
-        result = self._i2c.readfrom(addr, nbytes, stop)
+        result = self._i2c.readfrom(addr, nbytes, *args, **kwargs)
         self.release_channel(self._chn)
         return result
 
-    def readfrom_into(self, addr: int, buf, stop: bool = True) -> None:
+    def readfrom_into(self, addr: int, buf, *args, **kwargs) -> None:
         self.select_channel(self._chn)
-        self._i2c.readfrom_into(addr, buf, stop)
+        self._i2c.readfrom_into(addr, buf, *args, **kwargs)
         self.release_channel(self._chn)
 
-    def writeto(self, addr: int, buf, stop: bool = True) -> int:
+    def writeto(self, addr: int, buf, *args, **kwargs) -> int:
         self.select_channel(self._chn)
-        result = self._i2c.writeto(addr, buf, stop)
+        result = self._i2c.writeto(addr, buf, *args, **kwargs)
         time.sleep_ms(100)
         self.release_channel(self._chn)
         return result
 
-    def writevto(self, addr: int, vector, stop: bool = True) -> int:
+    def writevto(self, addr: int, vector, *args, **kwargs) -> int:
         self.select_channel(self._chn)
-        result = self._i2c.writevto(addr, vector, stop)
+        result = self._i2c.writevto(addr, vector, *args, **kwargs)
         self.release_channel(self._chn)
         return result
 
-    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int, addrsize: int = 8) -> bytes:
+    def readfrom_mem(self, addr: int, memaddr: int, nbytes: int, *args, **kwargs) -> bytes:
         self.select_channel(self._chn)
-        result = self._i2c.readfrom_mem(addr, memaddr, nbytes, addrsize=addrsize)
+        result = self._i2c.readfrom_mem(addr, memaddr, nbytes, *args, **kwargs)
         self.release_channel(self._chn)
         return result
 
-    def readfrom_mem_into(self, addr: int, memaddr: int, buf, addrsize: int = 8) -> None:
+    def readfrom_mem_into(self, addr: int, memaddr: int, buf, *args, **kwargs) -> None:
         self.select_channel(self._chn)
-        self._i2c.readfrom_mem_into(addr, memaddr, buf, addrsize=addrsize)
+        self._i2c.readfrom_mem_into(addr, memaddr, buf, *args, **kwargs)
         self.release_channel(self._chn)
 
-    def writeto_mem(self, addr: int, memaddr: int, buf, addrsize: int = 8) -> None:
+    def writeto_mem(self, addr: int, memaddr: int, buf, *args, **kwargs) -> None:
         self.select_channel(self._chn)
-        self._i2c.writeto_mem(addr, memaddr, buf, addrsize=addrsize)
+        self._i2c.writeto_mem(addr, memaddr, buf, *args, **kwargs)
         self.release_channel(self._chn)

@@ -73,25 +73,31 @@ class RollerBase:
     def write(self, register, data: bytes) -> None:
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
+    def readfrom_mem(
+        self, addr: int, mem_addr: int, nbytes: int, *args, **kwargs
+    ) -> bytes:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
+    def readfrom_mem_into(
+        self, addr: int, mem_addr: int, buf: bytearray, *args, **kwargs
+    ) -> None:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def writeto_mem(self, addr: int, mem_addr: int, buf: list) -> Literal[True]:  # 0x61
+    def writeto_mem(
+        self, addr: int, mem_addr: int, buf: list, *args, **kwargs
+    ) -> Literal[True]:  # 0x61
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom(self, addr: int, nbytes: int):  # 0x62
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs):  # 0x62
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+    def readfrom_into(self, addr: int, buf: bytearray, *args, **kwargs) -> None:  # 0x62
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+    def writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs):
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def scan(self) -> list:
+    def scan(self, *args, **kwargs) -> list:
         raise NotImplementedError("Subclasses should implement this method!")
 
     def deinit(self) -> None:
@@ -668,7 +674,9 @@ class Roller485ToI2CBus(Roller485):
         self._rs485_addr = address  # Motor ID == address
         super().__init__(bus, address=address)
 
-    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
+    def readfrom_mem(
+        self, addr: int, mem_addr: int, nbytes: int, *args, **kwargs
+    ) -> bytes:  # 0x60
         """Read data from the I2C memory register."""
         chunk_size = 16  # 设置一次最多读取16字节
         byte_len = 2 if mem_addr > 0xFF else 1  # 根据寄存器地址长度确定字节数
@@ -697,7 +705,7 @@ class Roller485ToI2CBus(Roller485):
                 )
         return bytes(result)
 
-    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray, *args, **kwargs) -> None:
         """! Read data from the I2C memory register and store it in the provided buffer.
 
         @param addr: I2C device address.
@@ -707,7 +715,7 @@ class Roller485ToI2CBus(Roller485):
         data = self.readfrom_mem(addr, mem_addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto_mem(self, addr: int, mem_addr: int, buf) -> Literal[True]:  # 0x61
+    def writeto_mem(self, addr: int, mem_addr: int, buf, *args, **kwargs) -> Literal[True]:  # 0x61
         """Write data to the I2C memory register in chunks."""
         # print(f"addr: {addr:#04x}, mem_addr: {mem_addr:#04x}, buf: {buf}")
         byte_len = 2 if mem_addr > 0xFF else 1
@@ -729,7 +737,7 @@ class Roller485ToI2CBus(Roller485):
                 )
         return True
 
-    def readfrom(self, addr: int, nbytes: int) -> bytes:
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs) -> bytes:
         """Read data from the I2C slave."""
         chunk_size = 16
         blocks = (nbytes + chunk_size - 1) // chunk_size  # 计算需要多少块
@@ -744,7 +752,7 @@ class Roller485ToI2CBus(Roller485):
                 raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
         return bytes(result)
 
-    def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+    def readfrom_into(self, addr: int, buf: bytearray, *args, **kwargs) -> None:  # 0x62
         """! Read data from the I2C device and store it in the provided buffer.
 
         @param addr: I2C device address.
@@ -753,10 +761,11 @@ class Roller485ToI2CBus(Roller485):
         data = self.readfrom(addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True) -> Literal[True]:
+    def writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs) -> Literal[True]:
         """Write data to the I2C slave in chunks."""
         total_len = len(buf)
         chunk_size = 16
+        stop = args[0] if args else True
 
         for i in range(0, total_len, chunk_size):
             chunk = buf[i : i + chunk_size]
@@ -769,15 +778,16 @@ class Roller485ToI2CBus(Roller485):
                 raise Exception(f"Write to I2C Slave failed for chunk {chunk}")
         return True
 
-    def _writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+    def _writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs) -> bool:
         data_len = len(buf)
+        stop = args[0] if args else True
         data = [addr, data_len, stop, 0, 0, 0] + list(buf)
         self.send_command(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr, data, buf_len=25)
         success, output = self.read_response(_WRITE_I2C_SLAVE_ADDR, self._rs485_addr)
         if success and output[2]:
             return True
 
-    def scan(self) -> list:
+    def scan(self, *args, **kwargs) -> list:
         """! Scan for I2C devices on the bus.
 
         @return: A list of addresses of the found I2C devices.
@@ -785,7 +795,7 @@ class Roller485ToI2CBus(Roller485):
         found_devices = []
         for address in range(0x08, 0x77 + 1):
             try:
-                if self._writeto(address, bytes(0x01), stop=False):
+                if self._writeto(address, bytes(0x01), False):
                     found_devices.append(address)
                     # print(f"Found device at address {address:#04x}")
             except OSError:

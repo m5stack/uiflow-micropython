@@ -16,14 +16,14 @@ class UltrasoundI2CUnit:
         self._available()
 
     def _available(self):
-        if self.i2c_addr not in self.i2c.scan():
+        if self.i2c_addr not in self.i2c.scan(False):
             raise UnitError("Ultrasonic unit maybe not connect")
 
     def get_target_distance(self, mode=1):
         try:
-            self.i2c.writeto(self.i2c_addr, bytearray([0x01]))
-            time.sleep_ms(150)
-            data = self.i2c.readfrom(self.i2c_addr, 3)
+            self.i2c.writeto(self.i2c_addr, bytearray([0x01]), True, False)
+            time.sleep_ms(120)
+            data = self.i2c.readfrom(self.i2c_addr, 3, True, False)
             self._distance = ((data[0] << 16) | (data[1] << 8) | data[2]) / 1000
         except OSError:
             return -1

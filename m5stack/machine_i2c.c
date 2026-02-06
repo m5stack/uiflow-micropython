@@ -128,10 +128,13 @@ int machine_hw_i2c_transfer(mp_obj_base_t *self_in, uint16_t addr, size_t n, mp_
 
     // Probe the address to see if any device responds.
     // This test uses a fixed scl freq of 100_000.
-    // esp_err_t err = i2c_master_probe(self->bus_handle, addr, self->timeout_us / 1000);
-    // if (err != ESP_OK) {
-    //     return -MP_ENODEV;   // No device at address, return immediately
-    // }
+    esp_err_t err;
+    if (flags & MP_MACHINE_I2C_FLAG_PROBE) {
+        err = i2c_master_probe(self->bus_handle, addr, self->timeout_us / 1000);
+        if (err != ESP_OK) {
+            return -MP_ENODEV;   // No device at address, return immediately
+        }
+    }
 
     #if ESP_IDF_VERSION < ESP_IDF_VERSION_VAL(5, 5, 0)
     // Using ".device_address = I2C_DEVICE_ADDRESS_NOT_USED," below
@@ -143,7 +146,7 @@ int machine_hw_i2c_transfer(mp_obj_base_t *self_in, uint16_t addr, size_t n, mp_
         .scl_speed_hz = self->freq,
     };
     i2c_master_dev_handle_t dev_handle;
-    esp_err_t err = i2c_master_bus_add_device(self->bus_handle, &dev_cfg, &dev_handle);
+    err = i2c_master_bus_add_device(self->bus_handle, &dev_cfg, &dev_handle);
     #else
     #define dev_handle self->dev_handle
     err = i2c_master_device_change_address(dev_handle, addr, self->timeout_us / 1000);

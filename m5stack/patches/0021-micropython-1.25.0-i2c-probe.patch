@@ -1,0 +1,253 @@
+Index: micropython/extmod/machine_i2c.c
+===================================================================
+--- micropython.orig/extmod/machine_i2c.c
++++ micropython/extmod/machine_i2c.c
+@@ -291,17 +291,19 @@ int mp_machine_i2c_transfer_adaptor(mp_o
+     return ret;
+ }
+ 
+-static int mp_machine_i2c_readfrom(mp_obj_base_t *self, uint16_t addr, uint8_t *dest, size_t len, bool stop) {
++static int mp_machine_i2c_readfrom(mp_obj_base_t *self, uint16_t addr, uint8_t *dest, size_t len, bool stop, bool probe) {
+     mp_machine_i2c_p_t *i2c_p = (mp_machine_i2c_p_t *)MP_OBJ_TYPE_GET_SLOT(self->type, protocol);
+     mp_machine_i2c_buf_t buf = {.len = len, .buf = dest};
+     unsigned int flags = MP_MACHINE_I2C_FLAG_READ | (stop ? MP_MACHINE_I2C_FLAG_STOP : 0);
++    flags |= probe ? MP_MACHINE_I2C_FLAG_PROBE : 0;
+     return i2c_p->transfer(self, addr, 1, &buf, flags);
+ }
+ 
+-static int mp_machine_i2c_writeto(mp_obj_base_t *self, uint16_t addr, const uint8_t *src, size_t len, bool stop) {
++static int mp_machine_i2c_writeto(mp_obj_base_t *self, uint16_t addr, const uint8_t *src, size_t len, bool stop, bool probe) {
+     mp_machine_i2c_p_t *i2c_p = (mp_machine_i2c_p_t *)MP_OBJ_TYPE_GET_SLOT(self->type, protocol);
+     mp_machine_i2c_buf_t buf = {.len = len, .buf = (uint8_t *)src};
+     unsigned int flags = stop ? MP_MACHINE_I2C_FLAG_STOP : 0;
++    flags |= probe ? MP_MACHINE_I2C_FLAG_PROBE : 0;
+     return i2c_p->transfer(self, addr, 1, &buf, flags);
+ }
+ 
+@@ -319,12 +321,16 @@ static mp_obj_t machine_i2c_init(size_t
+ }
+ MP_DEFINE_CONST_FUN_OBJ_KW(machine_i2c_init_obj, 1, machine_i2c_init);
+ 
+-static mp_obj_t machine_i2c_scan(mp_obj_t self_in) {
+-    mp_obj_base_t *self = MP_OBJ_TO_PTR(self_in);
++static mp_obj_t machine_i2c_scan(size_t n_args, const mp_obj_t *args) {
++    mp_obj_base_t *self = MP_OBJ_TO_PTR(args[0]);
++    bool probe = true;
++    if (n_args == 2) {
++        probe = mp_obj_is_true(args[1]);
++    }
+     mp_obj_t list = mp_obj_new_list(0, NULL);
+     // 7-bit addresses 0b0000xxx and 0b1111xxx are reserved
+     for (int addr = 0x08; addr < 0x78; ++addr) {
+-        int ret = mp_machine_i2c_writeto(self, addr, NULL, 0, true);
++        int ret = mp_machine_i2c_writeto(self, addr, NULL, 0, true, probe);
+         if (ret == 0) {
+             mp_obj_list_append(list, MP_OBJ_NEW_SMALL_INT(addr));
+         }
+@@ -335,7 +341,7 @@ static mp_obj_t machine_i2c_scan(mp_obj_
+     }
+     return list;
+ }
+-MP_DEFINE_CONST_FUN_OBJ_1(machine_i2c_scan_obj, machine_i2c_scan);
++MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_scan_obj, 1, 2, machine_i2c_scan);
+ 
+ static mp_obj_t machine_i2c_start(mp_obj_t self_in) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(self_in);
+@@ -416,43 +422,46 @@ static mp_obj_t machine_i2c_readfrom(siz
+     mp_int_t addr = mp_obj_get_int(args[1]);
+     vstr_t vstr;
+     vstr_init_len(&vstr, mp_obj_get_int(args[2]));
+-    bool stop = (n_args == 3) ? true : mp_obj_is_true(args[3]);
+-    int ret = mp_machine_i2c_readfrom(self, addr, (uint8_t *)vstr.buf, vstr.len, stop);
++    bool stop = (n_args > 3) ? mp_obj_is_true(args[3]) : true;
++    bool probe = (n_args > 4) ? mp_obj_is_true(args[4]) : false;
++    int ret = mp_machine_i2c_readfrom(self, addr, (uint8_t *)vstr.buf, vstr.len, stop, probe);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+     return mp_obj_new_bytes_from_vstr(&vstr);
+ }
+-MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_readfrom_obj, 3, 4, machine_i2c_readfrom);
++MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_readfrom_obj, 3, 5, machine_i2c_readfrom);
+ 
+ static mp_obj_t machine_i2c_readfrom_into(size_t n_args, const mp_obj_t *args) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(args[0]);
+     mp_int_t addr = mp_obj_get_int(args[1]);
+     mp_buffer_info_t bufinfo;
+     mp_get_buffer_raise(args[2], &bufinfo, MP_BUFFER_WRITE);
+-    bool stop = (n_args == 3) ? true : mp_obj_is_true(args[3]);
+-    int ret = mp_machine_i2c_readfrom(self, addr, bufinfo.buf, bufinfo.len, stop);
++    bool stop = (n_args > 3) ? mp_obj_is_true(args[3]) : true;
++    bool probe = (n_args > 4) ? mp_obj_is_true(args[4]) : false;
++    int ret = mp_machine_i2c_readfrom(self, addr, bufinfo.buf, bufinfo.len, stop, probe);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+     return mp_const_none;
+ }
+-MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_readfrom_into_obj, 3, 4, machine_i2c_readfrom_into);
++MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_readfrom_into_obj, 3, 5, machine_i2c_readfrom_into);
+ 
+ static mp_obj_t machine_i2c_writeto(size_t n_args, const mp_obj_t *args) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(args[0]);
+     mp_int_t addr = mp_obj_get_int(args[1]);
+     mp_buffer_info_t bufinfo;
+     mp_get_buffer_raise(args[2], &bufinfo, MP_BUFFER_READ);
+-    bool stop = (n_args == 3) ? true : mp_obj_is_true(args[3]);
+-    int ret = mp_machine_i2c_writeto(self, addr, bufinfo.buf, bufinfo.len, stop);
++    bool stop = (n_args > 3) ? mp_obj_is_true(args[3]) : true;
++    bool probe = (n_args > 4) ? mp_obj_is_true(args[4]) : false;
++    int ret = mp_machine_i2c_writeto(self, addr, bufinfo.buf, bufinfo.len, stop, probe);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+     // return number of acks received
+     return MP_OBJ_NEW_SMALL_INT(ret);
+ }
+-static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_writeto_obj, 3, 4, machine_i2c_writeto);
++static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_writeto_obj, 3, 5, machine_i2c_writeto);
+ 
+ static mp_obj_t machine_i2c_writevto(size_t n_args, const mp_obj_t *args) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(args[0]);
+@@ -464,7 +473,8 @@ static mp_obj_t machine_i2c_writevto(siz
+     mp_obj_get_array(args[2], &nitems, (mp_obj_t **)&items);
+ 
+     // Get the stop argument
+-    bool stop = (n_args == 3) ? true : mp_obj_is_true(args[3]);
++    bool stop = (n_args > 3) ? mp_obj_is_true(args[3]) : true;
++    bool probe = (n_args > 4) ? mp_obj_is_true(args[4]) : false;
+ 
+     // Extract all buffer data, skipping zero-length buffers
+     size_t alloc = nitems == 0 ? 1 : nitems;
+@@ -488,7 +498,9 @@ static mp_obj_t machine_i2c_writevto(siz
+ 
+     // Do the I2C transfer
+     mp_machine_i2c_p_t *i2c_p = (mp_machine_i2c_p_t *)MP_OBJ_TYPE_GET_SLOT(self->type, protocol);
+-    int ret = i2c_p->transfer(self, addr, nbufs, bufs, stop ? MP_MACHINE_I2C_FLAG_STOP : 0);
++    unsigned int flags = stop ? MP_MACHINE_I2C_FLAG_STOP : 0;
++    flags |= probe ? MP_MACHINE_I2C_FLAG_PROBE : 0;
++    int ret = i2c_p->transfer(self, addr, nbufs, bufs, flags);
+     mp_local_free(bufs);
+ 
+     if (ret < 0) {
+@@ -498,7 +510,7 @@ static mp_obj_t machine_i2c_writevto(siz
+     // Return number of acks received
+     return MP_OBJ_NEW_SMALL_INT(ret);
+ }
+-static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_writevto_obj, 3, 4, machine_i2c_writevto);
++static MP_DEFINE_CONST_FUN_OBJ_VAR_BETWEEN(machine_i2c_writevto_obj, 3, 5, machine_i2c_writevto);
+ 
+ static size_t fill_memaddr_buf(uint8_t *memaddr_buf, uint32_t memaddr, uint8_t addrsize) {
+     size_t memaddr_len = 0;
+@@ -511,7 +523,7 @@ static size_t fill_memaddr_buf(uint8_t *
+     return memaddr_len;
+ }
+ 
+-static int read_mem(mp_obj_t self_in, uint16_t addr, uint32_t memaddr, uint8_t addrsize, uint8_t *buf, size_t len) {
++static int read_mem(mp_obj_t self_in, uint16_t addr, uint32_t memaddr, uint8_t addrsize, uint8_t *buf, size_t len, bool probe) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(self_in);
+ 
+     // Create buffer with memory address
+@@ -534,16 +546,16 @@ static int read_mem(mp_obj_t self_in, ui
+     }
+     #endif
+ 
+-    int ret = mp_machine_i2c_writeto(self, addr, memaddr_buf, memaddr_len, false);
++    int ret = mp_machine_i2c_writeto(self, addr, memaddr_buf, memaddr_len, false, probe);
+     if (ret != memaddr_len) {
+         // must generate STOP
+-        mp_machine_i2c_writeto(self, addr, NULL, 0, true);
++        mp_machine_i2c_writeto(self, addr, NULL, 0, true, probe);
+         return ret;
+     }
+-    return mp_machine_i2c_readfrom(self, addr, buf, len, true);
++    return mp_machine_i2c_readfrom(self, addr, buf, len, true, probe);
+ }
+ 
+-static int write_mem(mp_obj_t self_in, uint16_t addr, uint32_t memaddr, uint8_t addrsize, const uint8_t *buf, size_t len) {
++static int write_mem(mp_obj_t self_in, uint16_t addr, uint32_t memaddr, uint8_t addrsize, const uint8_t *buf, size_t len, bool probe) {
+     mp_obj_base_t *self = (mp_obj_base_t *)MP_OBJ_TO_PTR(self_in);
+ 
+     // Create buffer with memory address
+@@ -558,7 +570,9 @@ static int write_mem(mp_obj_t self_in, u
+ 
+     // Do I2C transfer
+     mp_machine_i2c_p_t *i2c_p = (mp_machine_i2c_p_t *)MP_OBJ_TYPE_GET_SLOT(self->type, protocol);
+-    return i2c_p->transfer(self, addr, 2, bufs, MP_MACHINE_I2C_FLAG_STOP);
++    unsigned int flags = MP_MACHINE_I2C_FLAG_STOP;
++    flags |= probe ? MP_MACHINE_I2C_FLAG_PROBE : 0;
++    return i2c_p->transfer(self, addr, 2, bufs, flags);
+ }
+ 
+ static const mp_arg_t machine_i2c_mem_allowed_args[] = {
+@@ -566,10 +580,11 @@ static const mp_arg_t machine_i2c_mem_al
+     { MP_QSTR_memaddr, MP_ARG_REQUIRED | MP_ARG_INT, {.u_int = 0} },
+     { MP_QSTR_arg,     MP_ARG_REQUIRED | MP_ARG_OBJ, {.u_obj = MP_OBJ_NULL} },
+     { MP_QSTR_addrsize, MP_ARG_KW_ONLY | MP_ARG_INT, {.u_int = 8} },
++    { MP_QSTR_probe, MP_ARG_KW_ONLY | MP_ARG_BOOL, {.u_bool = true} },
+ };
+ 
+ static mp_obj_t machine_i2c_readfrom_mem(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+-    enum { ARG_addr, ARG_memaddr, ARG_n, ARG_addrsize };
++    enum { ARG_addr, ARG_memaddr, ARG_n, ARG_addrsize, ARG_probe };
+     mp_arg_val_t args[MP_ARRAY_SIZE(machine_i2c_mem_allowed_args)];
+     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args,
+         MP_ARRAY_SIZE(machine_i2c_mem_allowed_args), machine_i2c_mem_allowed_args, args);
+@@ -580,7 +595,7 @@ static mp_obj_t machine_i2c_readfrom_mem
+ 
+     // do the transfer
+     int ret = read_mem(pos_args[0], args[ARG_addr].u_int, args[ARG_memaddr].u_int,
+-        args[ARG_addrsize].u_int, (uint8_t *)vstr.buf, vstr.len);
++        args[ARG_addrsize].u_int, (uint8_t *)vstr.buf, vstr.len, args[ARG_probe].u_bool);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+@@ -591,7 +606,7 @@ MP_DEFINE_CONST_FUN_OBJ_KW(machine_i2c_r
+ 
+ 
+ static mp_obj_t machine_i2c_readfrom_mem_into(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+-    enum { ARG_addr, ARG_memaddr, ARG_buf, ARG_addrsize };
++    enum { ARG_addr, ARG_memaddr, ARG_buf, ARG_addrsize, ARG_probe };
+     mp_arg_val_t args[MP_ARRAY_SIZE(machine_i2c_mem_allowed_args)];
+     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args,
+         MP_ARRAY_SIZE(machine_i2c_mem_allowed_args), machine_i2c_mem_allowed_args, args);
+@@ -602,7 +617,7 @@ static mp_obj_t machine_i2c_readfrom_mem
+ 
+     // do the transfer
+     int ret = read_mem(pos_args[0], args[ARG_addr].u_int, args[ARG_memaddr].u_int,
+-        args[ARG_addrsize].u_int, bufinfo.buf, bufinfo.len);
++        args[ARG_addrsize].u_int, bufinfo.buf, bufinfo.len, args[ARG_probe].u_bool);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+@@ -611,7 +626,7 @@ static mp_obj_t machine_i2c_readfrom_mem
+ MP_DEFINE_CONST_FUN_OBJ_KW(machine_i2c_readfrom_mem_into_obj, 1, machine_i2c_readfrom_mem_into);
+ 
+ static mp_obj_t machine_i2c_writeto_mem(size_t n_args, const mp_obj_t *pos_args, mp_map_t *kw_args) {
+-    enum { ARG_addr, ARG_memaddr, ARG_buf, ARG_addrsize };
++    enum { ARG_addr, ARG_memaddr, ARG_buf, ARG_addrsize, ARG_probe };
+     mp_arg_val_t args[MP_ARRAY_SIZE(machine_i2c_mem_allowed_args)];
+     mp_arg_parse_all(n_args - 1, pos_args + 1, kw_args,
+         MP_ARRAY_SIZE(machine_i2c_mem_allowed_args), machine_i2c_mem_allowed_args, args);
+@@ -622,7 +637,7 @@ static mp_obj_t machine_i2c_writeto_mem(
+ 
+     // do the transfer
+     int ret = write_mem(pos_args[0], args[ARG_addr].u_int, args[ARG_memaddr].u_int,
+-        args[ARG_addrsize].u_int, bufinfo.buf, bufinfo.len);
++        args[ARG_addrsize].u_int, bufinfo.buf, bufinfo.len, args[ARG_probe].u_bool);
+     if (ret < 0) {
+         mp_raise_OSError(-ret);
+     }
+Index: micropython/extmod/modmachine.h
+===================================================================
+--- micropython.orig/extmod/modmachine.h
++++ micropython/extmod/modmachine.h
+@@ -124,6 +124,8 @@
+ #define MP_MACHINE_I2C_FLAG_WRITE1 (0x04)
+ #endif
+ 
++#define MP_MACHINE_I2C_FLAG_PROBE (0x08) // for internal use: probe for device at address
++
+ #endif
+ 
+ // A port must provide these types, but they are otherwise opaque.

@@ -75,31 +75,37 @@ class RollerBase:
     def i2c_read(self, register, length):
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def i2c_write(self, register, data, stop: bool = True):
+    def i2c_write(self, register, data, *args, **kwargs):
         raise NotImplementedError("Subclasses should implement this method!")
 
     def write(self, register, data: bytes):
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:  # 0x60
+    def readfrom_mem(
+        self, addr: int, mem_addr: int, nbytes: int, *args, **kwargs
+    ) -> bytes:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:  # 0x60
+    def readfrom_mem_into(
+        self, addr: int, mem_addr: int, buf: bytearray, *args, **kwargs
+    ) -> None:  # 0x60
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def writeto_mem(self, addr: int, mem_addr: int, buf: list) -> Literal[True]:  # 0x61
+    def writeto_mem(
+        self, addr: int, mem_addr: int, buf: list, *args, **kwargs
+    ) -> Literal[True]:  # 0x61
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom(self, addr: int, nbytes: int):  # 0x62
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs):  # 0x62
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def readfrom_into(self, addr: int, buf: bytearray) -> None:  # 0x62
+    def readfrom_into(self, addr: int, buf: bytearray, *args, **kwargs) -> None:  # 0x62
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True):
+    def writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs):
         raise NotImplementedError("Subclasses should implement this method!")
 
-    def scan(self) -> list:
+    def scan(self, *args, **kwargs) -> list:
         raise NotImplementedError("Subclasses should implement this method!")
 
     def deinit(self) -> None:
@@ -618,7 +624,7 @@ class RollerCAN(RollerBase):
         self._can_bus.send(can_data, id=identifier, timeout=0, rtr=False, extframe=True)
         return self.read_response()
 
-    def i2c_write(self, register, data, stop: bool = True):
+    def i2c_write(self, register, data, *args, **kwargs):
         """! Write data to an I2C slave via CAN.
 
         @param register: The I2C register address to write to.
@@ -626,6 +632,7 @@ class RollerCAN(RollerBase):
         @param stop: Whether to end the transaction with a stop condition.
         @return: Success status of the write operation.
         """
+        stop = args[0] if args else True
         identifier, can_data = self.create_frame(
             "WRITE_I2C_SLAVE", register | 0x80 if stop else register, bytes([len(data)]) + data
         )
@@ -723,7 +730,7 @@ class RollerCANToI2CBus(RollerCAN):
         self.error_code = 0
         super().__init__(bus, address=address)
 
-    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int) -> bytes:
+    def readfrom_mem(self, addr: int, mem_addr: int, nbytes: int, *args, **kwargs) -> bytes:
         """! Read data from an I2C memory register.
 
         @param addr: I2C device address.
@@ -736,7 +743,7 @@ class RollerCANToI2CBus(RollerCAN):
         print(f"buf: {buf}")
         return buf
 
-    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray) -> None:
+    def readfrom_mem_into(self, addr: int, mem_addr: int, buf: bytearray, *args, **kwargs) -> None:
         """! Read data from an I2C memory register and store it in the provided buffer.
 
         @param addr: I2C device address.
@@ -746,7 +753,9 @@ class RollerCANToI2CBus(RollerCAN):
         data = self.readfrom_mem(addr, mem_addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto_mem(self, addr: int, mem_addr: int, buf: bytearray) -> Literal[True]:
+    def writeto_mem(
+        self, addr: int, mem_addr: int, buf: bytearray, *args, **kwargs
+    ) -> Literal[True]:
         """! Write data to an I2C memory register.
 
         @param addr: I2C device address.
@@ -757,7 +766,7 @@ class RollerCANToI2CBus(RollerCAN):
         print(f"addr: {addr:#04x}, mem_addr: {mem_addr:#04x}, buf: {[hex(b) for b in buf]}")
         return self.writeto(addr, bytes([mem_addr]) + buf, True)
 
-    def readfrom(self, addr: int, nbytes: int) -> bytes:
+    def readfrom(self, addr: int, nbytes: int, *args, **kwargs) -> bytes:
         """! Read data from an I2C device.
 
         @param addr: I2C device address.
@@ -779,7 +788,7 @@ class RollerCANToI2CBus(RollerCAN):
                 raise Exception(f"Read I2C Slave failed: register {addr:#04x}, nbytes {nbytes}")
         return bytes(result)
 
-    def readfrom_into(self, addr: int, buf: bytearray) -> None:
+    def readfrom_into(self, addr: int, buf: bytearray, *args, **kwargs) -> None:
         """! Read data from an I2C device and store it in the provided buffer.
 
         @param addr: I2C device address.
@@ -788,7 +797,7 @@ class RollerCANToI2CBus(RollerCAN):
         data = self.readfrom(addr, len(buf))
         buf[: len(data)] = data
 
-    def writeto(self, addr: int, buf: bytes | bytearray, stop: bool = True) -> Literal[True]:
+    def writeto(self, addr: int, buf: bytes | bytearray, *args, **kwargs) -> Literal[True]:
         """! Write data to an I2C device in chunks.
 
         @param addr: I2C device address.
@@ -796,9 +805,10 @@ class RollerCANToI2CBus(RollerCAN):
         @param stop: Whether to end the transaction with a stop condition.
         @return: True if the write operation was successful.
         """
-        print(f"addr: {addr:#04x}, buf: {[hex(b) for b in buf]}, stop: {stop}")
         total_len = len(buf)
         chunk_size = 7
+        stop = args[0] if args else True
+        print(f"addr: {addr:#04x}, buf: {[hex(b) for b in buf]}, stop: {stop}")
 
         for i in range(0, total_len, chunk_size):
             chunk = buf[i : i + chunk_size]
@@ -811,7 +821,7 @@ class RollerCANToI2CBus(RollerCAN):
                 # raise Exception(f"Write to I2C Slave failed for chunk {chunk}")
         return True
 
-    def scan(self) -> list:
+    def scan(self, *args, **kwargs) -> list:
         """! Scan for I2C devices on the bus.
 
         @return: List of addresses of detected I2C devices.
