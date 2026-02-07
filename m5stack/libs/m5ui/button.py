@@ -109,7 +109,7 @@ class M5Button(lv.button):
         if flag == lv.obj.FLAG.SCROLLABLE:
             self.label.set_long_mode(lv.label.LONG_MODE.SCROLL if en else lv.label.LONG_MODE.WRAP)
         else:
-            super().set_flag(flag, en)
+            M5Base.set_flag(self, flag, en)
 
     def toggle_flag(self, flag: int) -> None:
         if flag == lv.obj.FLAG.SCROLLABLE:
@@ -121,7 +121,7 @@ class M5Button(lv.button):
             )
             self.label.set_long_mode(new_mode)
         else:
-            super().toggle_flag(flag)
+            M5Base.toggle_flag(self, flag)
 
     def set_size(self, w: int, h: int) -> None:
         super().set_size(w, h)
