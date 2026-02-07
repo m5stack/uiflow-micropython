@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,129 +18,129 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/relay.rst:2 91657bbfd6864d46865a3f16c12c4529
-msgid "RELAY Unit"
+#: ../../source/units/relay.rst:2 61d5be42c6ee4c1c9c16f6443d8af17f
+msgid "Relay Unit"
 msgstr ""
 
-#: ../../en/units/relay.rst:6 5ff886d1031443f1b1e698d6d2793baf
+#: ../../source/units/relay.rst:6 1cd81cb9167f4aa692d1dddfd945265e
 msgid "Support the following products:"
-msgstr "支持以下产品:"
+msgstr "支持以下产品："
 
-#: ../../en/units/relay.rst:8 8229d9c5641142aeaa019b98deb7fe1b
+#: ../../source/units/relay.rst:8 a4ecfef7370a41b395bbf615c5cb18dc
 msgid "|RELAY|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref 8b2b5162aa614ccb9c83a96c13343434
+#: ../../source/refs/unit.relay.ref b988808528024d06a3a9c93d80f96427
 msgid "RELAY"
 msgstr ""
 
-#: ../../en/units/relay.rst:11 81f0f9467d1e44678db18d170714d111
+#: ../../source/units/relay.rst:11 6e7ec50483d545a098ea35cff190db80
 msgid "Micropython Example:"
-msgstr ""
+msgstr "MicroPython 应用示例："
 
-#: ../../en/units/relay.rst:18 b2f9012491ab4820818e9962ed9ee28e
+#: ../../source/units/relay.rst:18 ecbc0b38651f415e9da6af6c11201d3e
 msgid "UIFLOW2 Example:"
-msgstr ""
+msgstr "UiFlow2 应用示例："
 
-#: ../../en/units/relay.rst:20 c26c0533dac94ed09d52b61c459d2af7
+#: ../../source/units/relay.rst:20 93a391bbf24b4eeb8473c6ebd975fafd
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:7 a9f7dbbfb8fc40cc9bcd4b6b4bbe9cd0
+#: ../../source/refs/unit.relay.ref:6 921378bb8bcb4eb3943c8cb616375bf9
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/relay.rst:25 3daa5309237d4bf8b560f7f15e37c85f
+#: ../../source/units/relay.rst:25 72e060b2d830489b840892a0de6a9a6b
 msgid "|relay_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/relay.rst:29 30dcb29529644a31b53296b308d809cb
+#: ../../source/units/relay.rst:29 6c8a5dbb85be4666873b89987ed0c5d1
 msgid "class RelayUnit"
 msgstr ""
 
-#: ../../en/units/relay.rst:32 cc842900a19344bbb7f35a08bb89ee72
+#: ../../source/units/relay.rst:32 a67ac2d8d039470091ac38f80d3a79c1
 msgid "Constructors"
-msgstr ""
+msgstr "构造函数"
 
-#: ../../en/units/relay.rst:36 8122dbcb04e14fa1a50d709c4585908d
+#: ../../source/units/relay.rst:36 acc5337ef0c944c8a2406bfc50b64841
 msgid "Create a RelayUnit object."
-msgstr "创建一个RelayUnit对象."
+msgstr "创建一个 RelayUnit 对象。"
 
-#: ../../en/units/relay.rst:39 8321c373daa7470fa7cbc224dafc33e5
+#: ../../source/units/relay.rst:39 235c971da03647098002ab50280a901f
 msgid "The parameters is:"
 msgstr "参数如下："
 
-#: ../../en/units/relay.rst:39 c0b3ba6867854e6a87f5db4a5d06d227
+#: ../../source/units/relay.rst:39 09b8fb6ef2a3459aa97caedc5df08702
 msgid "``io`` Define the control pin."
 msgstr "``io`` 定义控制引脚。"
 
-#: ../../en/units/relay.rst:41 ../../en/units/relay.rst:53
-#: ../../en/units/relay.rst:62 ../../en/units/relay.rst:71
-#: ../../en/units/relay.rst:80 16772773593d4ea7bd08aa2481b5d80a
-#: 55c537e158004dfaa7e694fd2994fbd0 7eae4fbe172f446a850a6ebacd6cb702
-#: d4a02ebce9bd4b7dbd85c17bc6861041 f096627643394438b6f5e13f92186b60
+#: ../../source/units/relay.rst:41 ../../source/units/relay.rst:53
+#: ../../source/units/relay.rst:62 ../../source/units/relay.rst:71
+#: ../../source/units/relay.rst:80 4a38c742242c48e98ba7b25f6dda0820
+#: 880b9a4a64ea4214b46a2ddd71aa8242 9ab3bc08fd2e425b8fa639a116a41812
+#: deac79378ec34992905e395e016ee525 fe31cb4f6177418dbb3f320c8d6195e2
 msgid "UIFLOW2:"
-msgstr ""
+msgstr "UiFlow2："
 
-#: ../../en/units/relay.rst:43 ba90f31355974ea1b76015f1e1a89975
+#: ../../source/units/relay.rst:43 a5ccda75173b41fc82d8b3453faf89fd
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:10 854df25ea151417e99f66c6be4eb0b9c
+#: ../../source/refs/unit.relay.ref:8 7c14ed2328034885b6b0fd8e1f1c4312
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/relay.rst:47 36dd930f2ab74319b8d17f56591783e9
+#: ../../source/units/relay.rst:47 bd8840f376d3490cacc7d6da0166164d
 msgid "Methods"
 msgstr ""
 
-#: ../../en/units/relay.rst:51 7a282497634749a791e8f0b3c051cda1
+#: ../../source/units/relay.rst:51 a363617506134521aac04da722536413
 msgid "Gets the relay switch status."
 msgstr "获取继电器开关状态。"
 
-#: ../../en/units/relay.rst:55 b97d3b0005fd443783282543bf9f87c9
+#: ../../source/units/relay.rst:55 b6e0ac95981f4d93a1b896d5986a9b75
 msgid "|get_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:13 6eaa04ba324e42a799b1644f3beaac8c
+#: ../../source/refs/unit.relay.ref:10 c6af3d866c6344a1a3aebc816ef8575a
 msgid "get_status.png"
 msgstr ""
 
-#: ../../en/units/relay.rst:60 9a9368ae0d8840db8db0c08796c11d46
+#: ../../source/units/relay.rst:60 1ccb98b7ebf947e9bf64d7ea398e5d20
 msgid "turn on the relay."
 msgstr "闭合继电器。"
 
-#: ../../en/units/relay.rst:64 50e3e70c32b7462faec97f2b73c806f3
+#: ../../source/units/relay.rst:64 95336e504d724d659cce91cb1cf17bc9
 msgid "|on.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:16 ed02da494a174edd9d3428d4f29de7cc
+#: ../../source/refs/unit.relay.ref:12 b7a3919531ed454499b0b18e0d3ad86c
 msgid "on.png"
 msgstr ""
 
-#: ../../en/units/relay.rst:69 29589cff0dbd4dddbbaa6392cef4b17c
+#: ../../source/units/relay.rst:69 5c8825c8a2da4b78a3d7c2e07d2a43e3
 msgid "Turn off the relay."
-msgstr "打开继电器。"
+msgstr "断开继电器。"
 
-#: ../../en/units/relay.rst:73 7d74e682137847b6b51f89f8096bb00e
+#: ../../source/units/relay.rst:73 586add327f394b26b19e50736e6f77bf
 msgid "|off.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:19 f651d2649c5c44e381c01c2ddfe46a10
+#: ../../source/refs/unit.relay.ref:14 810a9cc7ecd747309c569abc6fc4cc6f
 msgid "off.png"
 msgstr ""
 
-#: ../../en/units/relay.rst:78 5b4f17619b3a4095b3b9f05b12ec6dd6
+#: ../../source/units/relay.rst:78 9f373ec043d74138be6b89a0466ee207
 msgid "Set the relay status (True or false)."
-msgstr "设置继电器状态（ True 或者 false ）。"
+msgstr "设置继电器状态（True 或 False）。"
 
-#: ../../en/units/relay.rst:82 3985eabc5e744a579a4ec3912679f4ab
+#: ../../source/units/relay.rst:82 2f99d6ed49424e88b9acf6798b6bf3d0
 msgid "|set_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay.ref:22 490dc0c341044431a4ccfd06e498e8d8
+#: ../../source/refs/unit.relay.ref:16 515c1da83d3f4520a8224fb2ec9af480
 msgid "set_status.png"
 msgstr ""
 
@@ -181,5 +181,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|set_status.svg|"
+#~ msgstr ""
+
+#~ msgid "RELAY Unit"
 #~ msgstr ""
 

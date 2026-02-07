@@ -108,7 +108,6 @@ class M5Menu(lv.menu):
 
         :param str text: The text to display next to the switch.
         :param int w: The width of the switch.
-
         :param int h: The height of the switch.
         :param int bg_c: The background color of the switch when unchecked.
         :param int bg_c_checked: The background color of the switch when checked.

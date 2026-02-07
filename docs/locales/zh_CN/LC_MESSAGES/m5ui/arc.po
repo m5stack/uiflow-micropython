@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-04 10:27+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,466 +18,468 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/m5ui/arc.rst:4 ../../en/m5ui/arc.rst:52
-#: 593821ab4623459d895d5e5171c3f3ae ff9885fe3890467aa6691e6544615792
+#: ../../source/m5ui/arc.rst:4 ../../source/m5ui/arc.rst:52
+#: 1577699b78fe42faaa66fcae11e5df78 bd104499e0154a848ee19c9a771090cf
 msgid "M5Arc"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:8 ea499dbfe4644d8eaa8d62ca016d98c2
+#: ../../source/m5ui/arc.rst:8 252764fe17214b1ba3c8d2d59350806a
 msgid ""
 "M5Arc is a widget that can be used to create arcs in the user interface. "
 "It can be used to display circular progress or other circular indicators."
-msgstr ""
+msgstr "M5Arc 是一个可在用户界面中创建弧形元素的小部件，可用于显示环形进度或其他环状指示器。"
 
-#: ../../en/m5ui/arc.rst:11 403dabb03a1243449ce18d64a75c1717
+#: ../../source/m5ui/arc.rst:11 d0ec44508cb14c29bcc60f7ff3638ba0
 msgid "UiFlow2 Example"
-msgstr ""
+msgstr "UiFlow2 示例"
 
-#: ../../en/m5ui/arc.rst:14 ../../en/m5ui/arc.rst:33
-#: 4985e0fd79b24299af1366970297be55 ff105dda36e74e3eb901886f9d88c7c9
+#: ../../source/m5ui/arc.rst:14 ../../source/m5ui/arc.rst:33
+#: dacd38f9992543c1a1bf6d87167221dc dc2317caa2fb4496ba5efaad72f93951
 msgid "event arc"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:16 b5fccef3ab0444ceb1138bc17f8f38a5
+#: ../../source/m5ui/arc.rst:16 b5241d48d6584fe2804d5451f27ab55b
 msgid "Open the |cores3_arc_event_example.m5f2| project in UiFlow2."
-msgstr ""
+msgstr "在 UiFlow2 中打开 |cores3_arc_event_example.m5f2| 项目。"
 
-#: ../../en/m5ui/arc.rst:18 ../../en/m5ui/arc.rst:35
-#: 588852d970bc4f9c9093cf6a135edae1 7914cec46f124c90b0e3237e55847e1f
+#: ../../source/m5ui/arc.rst:18 ../../source/m5ui/arc.rst:35
+#: 60762a182c2f4c08a4d8c38c4c237a36 e653d9ceb2dd42dcb2ba876e274bbb6b
 msgid "This example creates an arc that triggers an event when the value changes."
-msgstr ""
+msgstr "该示例创建一个弧形控件，当数值变化时触发事件。"
 
-#: ../../en/m5ui/arc.rst:20 ../../en/m5ui/arc.rst:64 ../../en/m5ui/arc.rst:80
-#: ../../en/m5ui/arc.rst:97 ../../en/m5ui/arc.rst:114 ../../en/m5ui/arc.rst:136
-#: ../../en/m5ui/arc.rst:154 ../../en/m5ui/arc.rst:172
-#: ../../en/m5ui/arc.rst:188 ../../en/m5ui/arc.rst:204
-#: ../../en/m5ui/arc.rst:221 ../../en/m5ui/arc.rst:237
-#: ../../en/m5ui/arc.rst:253 ../../en/m5ui/arc.rst:272
-#: ../../en/m5ui/arc.rst:290 0a8e7c374ecc4a239431750ecf5afcec
-#: 0af850d9d9d84583b0d03c01b76b63cd 0cc9241b7245407bbd3ebab63487c884
-#: 0dc0a22fe4704a60bf856ea0d1528fc4 0fa33ea1d8b34975aebea8dcfcb10af0
-#: 123e77a661ee474fa283cab139f512d8 257e1b710a3d4e8bb03b2910000deb6c
-#: 2cdd76530e3f453783ee7c07fc7e81aa 2ed2a0747ca147ae919d152eaf3e7a1c
-#: 4fe4008a4eee48fa83057008f1f99cca 64a12f1ceb1c4934b7a0416db2380e3f
-#: 6aba9ec21ae74fcc8fcec5422efada25 75f0ca1ca65b4f97bf1f21c22b14c50a
-#: a203d11dece547039fa7e1089d2a19bd bbaad1f677604cd5a715555cb38ddc75
-#: dc340b2d19a7475bb2d60c8100cf9972 f93e3a088a77494fa5db63a90b5e87e1
+#: ../../source/m5ui/arc.rst:20 ../../source/m5ui/arc.rst:64
+#: ../../source/m5ui/arc.rst:80 ../../source/m5ui/arc.rst:97
+#: ../../source/m5ui/arc.rst:114 ../../source/m5ui/arc.rst:136
+#: ../../source/m5ui/arc.rst:154 ../../source/m5ui/arc.rst:172
+#: ../../source/m5ui/arc.rst:188 ../../source/m5ui/arc.rst:204
+#: ../../source/m5ui/arc.rst:221 ../../source/m5ui/arc.rst:240
+#: ../../source/m5ui/arc.rst:258 0ae763fd28f3470caef04e2dad83106e
+#: 0beb764f1edc43fa91151ffd6b8d77a2 0e462c2577cb427087e1ac335acea712
+#: 121569741c1249c9b577ad2f4da4ab48 212d3232edd2434fab6714c3fdc80352
+#: 2373a2b52fd24f3891b6aa8c7dc824a1 273e7c42aed045b6b77501b22761c463
+#: 4ab88a49f5774502b61b25b46369f99f 52346d4504034486b2fd583818b98f34
+#: 6fbb5e01c95948f490cadb55f1fcd914 9747b8bfab734ee8a3c421e6a4983a89
+#: 9bc282aba2f340c2bb7f212cfb79f7c0 a4d7c12ef4e247f593f67dd76ba3b80d
+#: b77451c6dac44d939c6a05d0e3417c8b d8331e0488d14f0ca938bc746c5f2a1a
 #: m5ui.arc.M5Arc:16 m5ui.arc.M5Arc.set_arc_color:7 of
 msgid "UiFlow2 Code Block:"
-msgstr ""
+msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/arc.rst:22 902d83403e884e71b9aa24a1971da53c
+#: ../../source/m5ui/arc.rst:22 09dc038543a549abbaba3bbd38322f5d
 msgid "|cores3_arc_event_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:17 26adc3495cb34fe385de80e6fdecaa08
+#: ../../source/refs/m5ui.arc.ref:17 278be8f25909467c8eccd1deab0b6b05
 msgid "cores3_arc_event_example.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:24 ../../en/m5ui/arc.rst:43
-#: 282ca485745c454daa17294585ebaf14 b663444d5e4e4a6d8ab55f39f21471a6
+#: ../../source/m5ui/arc.rst:24 ../../source/m5ui/arc.rst:43
+#: 1daf8cd14aa84fa8966f17b60e1d5d29 59e22a45239f4783b58868dcaa3a0b65
 msgid "Example output:"
-msgstr ""
+msgstr "示例输出："
 
-#: ../../en/m5ui/arc.rst:26 ../../en/m5ui/arc.rst:45 ../../en/m5ui/arc.rst:152
-#: 1d0410ba2e5c4afb87d7f832fbf2e525 306bc39dd58e4eeca0078104fb590dcf
-#: 5ad1ca7fec0e4b9ca6104f5a9aaab319 bd1657dafd574f339d6e0166a383d289
-#: m5ui.arc.M5Arc:18 of
+#: ../../source/m5ui/arc.rst:26 ../../source/m5ui/arc.rst:45
+#: ../../source/m5ui/arc.rst:152 40d35a0a749e41e59a087557ee0bd0f7
+#: 8a752afaa4c5405ab1cd3a2894f099b4 924c81ce36344cad91d3495397220b99
+#: f000537da4744958af0e6c6d95064c2e m5ui.arc.M5Arc:18 of
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:30 f7a2fde0095141aa97c19b00569a6be4
+#: ../../source/m5ui/arc.rst:30 983b1e3b981f4c2cbba4b58f29730a2a
 msgid "MicroPython Example"
-msgstr ""
+msgstr "MicroPython 示例"
 
-#: ../../en/m5ui/arc.rst:37 ../../en/m5ui/arc.rst:68 ../../en/m5ui/arc.rst:84
-#: ../../en/m5ui/arc.rst:101 ../../en/m5ui/arc.rst:118
-#: ../../en/m5ui/arc.rst:140 ../../en/m5ui/arc.rst:158
-#: ../../en/m5ui/arc.rst:176 ../../en/m5ui/arc.rst:192
-#: ../../en/m5ui/arc.rst:208 ../../en/m5ui/arc.rst:225
-#: ../../en/m5ui/arc.rst:241 ../../en/m5ui/arc.rst:257
-#: ../../en/m5ui/arc.rst:276 ../../en/m5ui/arc.rst:294
-#: 063841cd208c41b3b17d30fd7161d93f 0f102faad19b406caa4e61fd4ea91e98
-#: 3ad3a966354047d39dd54ff7d808fba7 6b23534eb4a744cfabd1b302f84da597
-#: 80be8c378bd74714ad88d6eb208db8e0 83d35c384e30483caf10657af23ff3f7
-#: 970ed5b434cd461798c19b8e54efd2b4 98fca75648a24a97a636faf7c4cb8abc
-#: a547ce6a56da446c8a3d6ce0c2fc3d29 ac26b303f8a24f35977e90e994ca8f9e
-#: b1d2dde3eb7a415eae12539ec9150e53 b28277eb52a74f9680b72f55cbf1d10b
-#: c20e7525386b434abac03e8f03c0da02 cc3bf681e89848dfa8766e56c8db6959
-#: def108ae2c35419abced43bf47ca2560 e790e8fa4509462ebd7da809de03cb1e
-#: f56f1dd118474413848d3d807e5efa24 m5ui.arc.M5Arc:20
-#: m5ui.arc.M5Arc.set_arc_color:11 of
+#: ../../source/m5ui/arc.rst:37 ../../source/m5ui/arc.rst:68
+#: ../../source/m5ui/arc.rst:84 ../../source/m5ui/arc.rst:101
+#: ../../source/m5ui/arc.rst:118 ../../source/m5ui/arc.rst:140
+#: ../../source/m5ui/arc.rst:158 ../../source/m5ui/arc.rst:176
+#: ../../source/m5ui/arc.rst:192 ../../source/m5ui/arc.rst:208
+#: ../../source/m5ui/arc.rst:225 ../../source/m5ui/arc.rst:244
+#: ../../source/m5ui/arc.rst:262 03ad3af6e80c4e54ba8c84380d1ec485
+#: 1f0f8602ac134f9b8617313dcc83f30a 249c564bed85453eb9882ed3a07cf48c
+#: 3645372fe9a544adbfa7f546b72ab799 4244ee5813ae438d97110eebf730a78c
+#: 4d416245a2f542e2aef754a616b813a9 5d366a8618024d46b1c93c7b15924bf0
+#: 61e5aef1064c4df3bf5002b84be1a5e4 6378844f5f794a878eb42b3b088803e6
+#: 77715997f72446e3ac3b1585b83006d9 84cf208f16774638b0685d80480b8bd1
+#: 86757143e75f4e6bb7dbea906ae64bdf af95a833f3c24e2eb81f3306165e5ac3
+#: e0466aad322a4bb78ba1b7b67d1f991d f695a26375a24c02bc5ae83d23bf4319
+#: m5ui.arc.M5Arc:20 m5ui.arc.M5Arc.set_arc_color:13 of
 msgid "MicroPython Code Block:"
-msgstr ""
+msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/arc.rst:49 dc5e373ef93b46f4b51f793d9e293f88
+#: ../../source/m5ui/arc.rst:49 354e5fadfd384deea5f970fbd47fa6a5
 msgid "**API**"
-msgstr ""
+msgstr "API参考"
 
-#: da50986c7f68480da02c290a5c14aefa m5ui.arc.M5Arc:1 of
+#: 8151fd5c875c48b6bc20dab46c0874a3 m5ui.arc.M5Arc:1 of
 msgid "Bases: :py:class:`~lvgl.arc`"
 msgstr ""
 
-#: 9cea13e9b0514801b7f7b13c9369ff71 m5ui.arc.M5Arc:1 of
+#: 8a42903df1e94220ab7a77886a3dbccc m5ui.arc.M5Arc:1 of
 msgid "Create a arc object."
-msgstr ""
+msgstr "创建一个弧形对象。"
 
-#: ../../en/m5ui/arc.rst 012452aa982d4c378578746684b36d81
-#: 37bbb4105e2c47449e6b4847a477efb6 3ba8c1bf46bb4aaebb340838efff6098
-#: 4e1247d569734a5097c7cfb9c266f9de 85b564eff9b144ef998c1d8f919185ae
-#: 8f2a3bd1ae864228926f67c14e02f73b bc3bccdc8a1c4a17ab7e03c524dfc092
-#: c0079a98e4ba4c3fbf7d27fe7b441f0b c9c25ed179c04e3ab1a0421a7cb460eb
-#: e095ba7315a04046bc7401de21a9cc2a e29985bf7cbd409a86c120798a805630
-#: f8853ba1242b4949bec8e792c5eb7afc fdfe134d5c4b4b0fb676c31b1961937d
-#: feeef60ba7814a2fb9203bf0ca7ec222 ff4783db43e54360a199737efb8ebe32
+#: ../../source/m5ui/arc.rst 08ab7b2f3afc42a5b400f9858a5a3061
+#: 2521f9ec6497452e9bc766c6ee740c6b 29974999ed994a13bee77820565d6986
+#: 50b2ca5f444444b0b1ba4659be88482f 52f0dcf868d84adea96b0095c564329c
+#: 5526532fe90a4b8d9c1781079976f79d 6e4e2356565d4b6a8860149228a9e3ae
+#: ae86e682e1f44320bb4cdcf18935b197 b8217b3da71848c5b328775212a16232
+#: ce2e730ae1f042198997f47b8ccce092 d664df88df6d47cb8cc53e1c21878026
+#: e1843687993a4810b7937e0173460072 f521692c047b4bbbada82b1a60e8a9c8
 #: m5ui.arc.M5Arc.set_arc_color of
 msgid "Parameters"
 msgstr ""
 
-#: 61a87cfc71c148819ef7bbace828f3f9 m5ui.arc.M5Arc:3 of
+#: d7470eb36b1449869664508ab939e227 m5ui.arc.M5Arc:3 of
 msgid "The x position of the arc."
-msgstr ""
+msgstr "弧形的 x 位置。"
 
-#: 8bc4a72ba38e419794003fbbc39f9995 m5ui.arc.M5Arc:4 of
+#: 365000c45e2e40fca16da2b270e21f70 m5ui.arc.M5Arc:4 of
 msgid "The y position of the arc."
-msgstr ""
+msgstr "弧形的 y 位置。"
 
-#: ../../en/m5ui/arc.rst:218 ../../en/m5ui/arc.rst:235
-#: 3bb7eb5bcd874fcebeb069d169a091a0 b93a5ab46943482d953721f8f62c43b2
-#: d8a26d044b0841c8a13ded8a5f465283 m5ui.arc.M5Arc:5 of
+#: ../../source/m5ui/arc.rst:218 2d494b3a6cd34bbdae62d23b9645033a
+#: 6d8752dafe11462d8b7f9551688e4b49 m5ui.arc.M5Arc:5 of
 msgid "The width of the arc."
-msgstr ""
+msgstr "弧形的宽度。"
 
-#: ../../en/m5ui/arc.rst:219 ../../en/m5ui/arc.rst:251
-#: 6966ab01fdc24f29a736ce8f62434d9f 9fa2f5f13bc14826a2434f803fd4bbb5
-#: f072167b5dbc44518e8bb73cfa4909ea m5ui.arc.M5Arc:6 of
+#: ../../source/m5ui/arc.rst:219 1cb93f3527014409880d01ab3d2ff67e
+#: 256dc5d58eb44120bcb3962358e71538 m5ui.arc.M5Arc:6 of
 msgid "The height of the arc."
-msgstr ""
+msgstr "弧形的高度。"
 
-#: 1c93c552bfe845e7bea673621a14ac72 m5ui.arc.M5Arc:7 of
+#: 5cb6a5e333f74b46abed3a78e5384c8b m5ui.arc.M5Arc:7 of
 msgid "The initial value of the arc."
-msgstr ""
+msgstr "弧形的初始值。"
 
-#: ../../en/m5ui/arc.rst:111 31862ba40e6e49918b4306ad736b1895
-#: 328f91e959c04a469019b0e5fc76452f m5ui.arc.M5Arc:8 of
+#: ../../source/m5ui/arc.rst:111 8d44084eefde48fa895598e3e9b8eae8
+#: bee3800f964f4deeb05d03eefcb4b401 m5ui.arc.M5Arc:8 of
 msgid "The minimum value of the arc."
-msgstr ""
+msgstr "弧形的最小值。"
 
-#: ../../en/m5ui/arc.rst:112 2a8a29ff3d6944eea808d74419347efa
-#: 7ca2fd642d7d4980a7d285eb20027180 m5ui.arc.M5Arc:9 of
+#: ../../source/m5ui/arc.rst:112 48117b025ab4475da10f0d71113aba25
+#: c912de2c515e449cbe2316357ec33e44 m5ui.arc.M5Arc:9 of
 msgid "The maximum value of the arc."
-msgstr ""
+msgstr "弧形的最大值。"
 
-#: 2c1411a2bc8f467eab473cd3f7119fc0 m5ui.arc.M5Arc:10 of
+#: dda4fd68f1b84c72bdff52155d65fa01 m5ui.arc.M5Arc:10 of
 msgid "The rotation of the arc in degrees."
-msgstr ""
+msgstr "弧形的旋转角度（度）。"
 
-#: 31467c972da24a649f204b6b2525e6f3 m5ui.arc.M5Arc:11 of
+#: fea552746b5b4ce69d8613ac1b2c58d8 m5ui.arc.M5Arc:11 of
 msgid "The color of the arc in the off state in hexadecimal format."
-msgstr ""
+msgstr "弧形处于关闭状态时的十六进制颜色值。"
 
-#: deffbed7b42c46da81389af40fc649a0 m5ui.arc.M5Arc:12 of
+#: 14f033719d2f40428a8b466a9df92a41 m5ui.arc.M5Arc:12 of
 msgid "The color of the arc in the on state in hexadecimal format."
-msgstr ""
+msgstr "弧形处于开启状态时的十六进制颜色值。"
 
-#: ff1b090e19344693b24a78dda46d682b m5ui.arc.M5Arc:13 of
+#: ea626b6f89be426181c8df7a94057a49 m5ui.arc.M5Arc:13 of
 msgid "The color of the knob on the arc in hexadecimal format."
-msgstr ""
+msgstr "弧形旋钮的十六进制颜色值。"
 
-#: dfb87872ba66465cbc880792a4bb88a7 m5ui.arc.M5Arc:14 of
+#: 3f9606b4b1b248fb9a6dadd8ff09e935 m5ui.arc.M5Arc:14 of
 msgid ""
 "The parent object to attach the arc to. If not specified, the arc will be"
 " attached to the default screen."
-msgstr ""
+msgstr "弧形要附加到的父对象；若未指定，则附加到默认屏幕。"
 
-#: ../../en/m5ui/arc.rst:60 df4555c8d28349a0b8d09b6c7a2a8419
+#: ../../source/m5ui/arc.rst:60 a39ff612f68244e6994ea30ad520f2dc
 msgid "Set the rotation of the arc."
-msgstr ""
+msgstr "设置弧形的旋转角度。"
 
-#: ../../en/m5ui/arc.rst:62 53a6249138a54990bde70244e42b1548
+#: ../../source/m5ui/arc.rst:62 4c63d433d88e4e5182aafb4fa90d1e88
 msgid "The rotation angle of the arc in degrees."
-msgstr ""
+msgstr "弧形的旋转角度（度）。"
 
-#: ../../en/m5ui/arc.rst:66 8313ad8d3e04498ea3e271afd5d72631
+#: ../../source/m5ui/arc.rst:66 7498965fe8e340c183695d79bbee1793
 msgid "|set_rotation.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:4 619c8c6912d64b39a05804e931adacfd
+#: ../../source/refs/m5ui.arc.ref:6 14bcdaf4705c4d44b2313ed4492b7984
 msgid "set_rotation.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:76 7c18884b99ea408a8ee5cd18c6b60d14
+#: ../../source/m5ui/arc.rst:76 449141f3467540ccba7fceb90670433d
 msgid "Set the value of the arc."
-msgstr ""
+msgstr "设置弧形的数值。"
 
-#: ../../en/m5ui/arc.rst:78 ../../en/m5ui/arc.rst:94
-#: ae688c321be04923b06216621074766d bb4d4021fa74495aaf9fcaeecd8f5310
+#: ../../source/m5ui/arc.rst:78 ../../source/m5ui/arc.rst:94
+#: c2d387d611de41ab84f1eac2fe451572 ca5c135bb6234f049c16c1c5d3f94759
 msgid "The value of the arc."
-msgstr ""
+msgstr "弧形的数值。"
 
-#: ../../en/m5ui/arc.rst:82 ab7fb1281b5d41528f8623366cb25f80
+#: ../../source/m5ui/arc.rst:82 93410eda3ec64e8890fb93c2e4e3aae5
 msgid "|set_value.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:5 6131869528744a9d9a0ab397e9b0b167
+#: ../../source/refs/m5ui.arc.ref:7 cf9b19ac1f1047f4a451f48b289c0a3a
 msgid "set_value.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:92 17936446d6e340a88487ea2f5ae51c7d
+#: ../../source/m5ui/arc.rst:92 a299c328f48f4fabb4e4353f5d507455
 msgid "Get the value of the arc."
-msgstr ""
+msgstr "获取弧形的数值。"
 
-#: ../../en/m5ui/arc.rst 22aa5acf4bc5485e9fa3bd3214479d03
-#: f3fd703c47d242da8eb3d30364734908
+#: ../../source/m5ui/arc.rst 4ce727892ab84bea94a8ef5c7dd20dad
+#: 89383fe8dbc64db5824c91c3ae836661
 msgid "Returns"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst 5f34b04fc98748e2a177d2098a98a5a9
+#: ../../source/m5ui/arc.rst 8f36635dec324ae8b5588b679421a2f4
 msgid "Return type"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:99 6cf6924f7e0a48988f288d0fd868759a
+#: ../../source/m5ui/arc.rst:99 13513824cc894e4e84409c1c05bc8a5a
 msgid "|get_value.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:6 4a4b483223364fe2ae35d6f0d405b4ad
+#: ../../source/refs/m5ui.arc.ref:8 8e606d1f72d543e780a0dd7f165a0a0b
 msgid "get_value.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:109 1c7bde8a9e6144a0b42f3071086dc631
+#: ../../source/m5ui/arc.rst:109 80b82ab1590643ddbf1ac0d62440b67e
 msgid "Set the range of the arc."
-msgstr ""
+msgstr "设置弧形的取值范围。"
 
-#: ../../en/m5ui/arc.rst:116 9ec86360cc9c4022bbaea3f9c6f1ceb8
+#: ../../source/m5ui/arc.rst:116 9d65fcefe011414296472e8efb6aae45
 msgid "|set_range.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:7 efbe2ea3d0f64cff8983b5048872f8b9
+#: ../../source/refs/m5ui.arc.ref:9 ae7951a98a7d46c88cb6196195ea6822
 msgid "set_range.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:127 dd416f6914c940e2baabaa258d10e97b
+#: ../../source/m5ui/arc.rst:127 1d5a6215768541afb8da5c04b681a337
 msgid "Set the mode of the arc."
-msgstr ""
+msgstr "设置弧形的模式。"
 
-#: ../../en/m5ui/arc.rst:129 97a5655ab2d84a6ba50a0db778922a08
+#: ../../source/m5ui/arc.rst:129 33e73109f2674c16a1a33787ff9d2f55
 msgid ""
 "The mode of the arc.  Option:     - lv.arc.MODE.NORMAL: Normal mode.     "
 "- lv.arc.MODE.REVERSE: Reverse mode.     - lv.arc.MODE.SYMMETRICAL: "
 "Symmetrical mode."
-msgstr ""
+msgstr "弧形的模式。选项：- lv.arc.MODE.NORMAL：正常模式；- lv.arc.MODE.REVERSE：反向模式；- lv.arc.MODE.SYMMETRICAL：对称模式。"
 
-#: ../../en/m5ui/arc.rst:129 a6c71908897049358ce139ffb35a1beb
+#: ../../source/m5ui/arc.rst:129 bdcf30e03dc7468bafcf6a84323b8db3
 msgid "The mode of the arc."
-msgstr ""
+msgstr "弧形的模式。"
 
-#: ../../en/m5ui/arc.rst:134 a1d2464025f046b789c4cafd3f462064
+#: ../../source/m5ui/arc.rst:134 2b4c7f2da280406c9b8b9404163408fb
 msgid "Option:"
-msgstr ""
+msgstr "选项："
 
-#: ../../en/m5ui/arc.rst:132 9d1e0a057c104ff183aabd283fdf0861
+#: ../../source/m5ui/arc.rst:132 be679571dbb54559b4ab25d053904fc4
 msgid "lv.arc.MODE.NORMAL: Normal mode."
-msgstr ""
+msgstr "lv.arc.MODE.NORMAL：正常模式。"
 
-#: ../../en/m5ui/arc.rst:133 d215bf9bc4624dc785712732fc424de2
+#: ../../source/m5ui/arc.rst:133 1e8a21c126b6490b9072898ff9bcd1fa
 msgid "lv.arc.MODE.REVERSE: Reverse mode."
-msgstr ""
+msgstr "lv.arc.MODE.REVERSE：反向模式。"
 
-#: ../../en/m5ui/arc.rst:134 086285fe1c1a4fe49c8cedd032ad12c0
+#: ../../source/m5ui/arc.rst:134 c56494668d9d44789589626520b74f04
 msgid "lv.arc.MODE.SYMMETRICAL: Symmetrical mode."
-msgstr ""
+msgstr "lv.arc.MODE.SYMMETRICAL：对称模式。"
 
-#: ../../en/m5ui/arc.rst:138 ecc1e786202f4031a6bda3422e45869f
+#: ../../source/m5ui/arc.rst:138 e67b31da74b1401eb26429a0f7d6a843
 msgid "|set_mode.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:8 e7c3c4ea65e44f6784f579bc6bd3447d
+#: ../../source/refs/m5ui.arc.ref:10 70d7f1400d7947069745bbbb8063fb7e
 msgid "set_mode.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:148 8afc088838294e608bd3af3b391b1b0c
+#: ../../source/m5ui/arc.rst:148 fbce7ae4aab147b3be685d276037d2dc
 msgid ""
 "Set a flag on the object. If ``value`` is True, the flag is added; if "
 "False, the flag is removed."
-msgstr ""
+msgstr "为对象设置标志。若 ``value`` 为 True 则添加标志，为 False 则移除标志。"
 
-#: ../../en/m5ui/arc.rst:150 d781e6f70aa54113ad8d0cc5e5dbc518
+#: ../../source/m5ui/arc.rst:150 53bb251f8cd043409e0ba4ff65d80856
 msgid "The flag to set."
-msgstr ""
+msgstr "要设置的标志。"
 
-#: ../../en/m5ui/arc.rst:151 7a675549d2064b97a97e5cdc028c5d49
+#: ../../source/m5ui/arc.rst:151 36f1a064aedc4f8484bf085e305d35ff
 msgid "If True, the flag is added; if False, the flag is removed."
-msgstr ""
+msgstr "True 表示添加该标志，False 表示移除该标志。"
 
-#: ../../en/m5ui/arc.rst:156 869a35221e854b649e7399d9888e1629
+#: ../../source/m5ui/arc.rst:156 4750758134744ce782d04ecf8f3cdffc
 msgid "|set_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:15 17f33ce7e5d74ab2ab4e8561f4898255
+#: ../../source/refs/m5ui.arc.ref:15 38cd491b3ba34046926ca9238504e33d
 msgid "set_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:167 babd0012fbab4e469755761e9ccd06af
+#: ../../source/m5ui/arc.rst:167 4702b6afd2e24b95ae563f7d047423d9
 msgid "Set the position of the arc."
-msgstr ""
+msgstr "设置弧形的位置。"
 
-#: ../../en/m5ui/arc.rst:169 ../../en/m5ui/arc.rst:186
-#: 35a7e9125d0d4ae3a8a446dea9335ad3 f030bf96e0154cb5887ad6ee42c37342
+#: ../../source/m5ui/arc.rst:169 ../../source/m5ui/arc.rst:186
+#: 866d6d118d0b40068f3f5ce47543e7e1 c70471aa983a423f9ccfbd27cdbaa41a
 msgid "The x-coordinate of the arc."
-msgstr ""
+msgstr "弧形的 x 坐标。"
 
-#: ../../en/m5ui/arc.rst:170 ../../en/m5ui/arc.rst:202
-#: 48cc12bde64744509efa3b23e59d9687 e521445e9c414178a16f88bc4aae59b3
+#: ../../source/m5ui/arc.rst:170 ../../source/m5ui/arc.rst:202
+#: 0c93af5f057144dfba736751c4a5a5ba 691fefda04ad4c27a6eb1127048a84f5
 msgid "The y-coordinate of the arc."
-msgstr ""
+msgstr "弧形的 y 坐标。"
 
-#: ../../en/m5ui/arc.rst:174 a415ccc84d2445728d0e41ec3ec84f33
+#: ../../source/m5ui/arc.rst:174 0e67cf58424a4108b134483c715a1de8
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:10 b00a11e71d084ac3a018ed123ebb3f47
+#: ../../source/refs/m5ui.arc.ref:11 7b4132dc890348bf98dd5694b12753e7
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:184 ee7d8e5a3dab4363b7b9ed1585bec910
+#: ../../source/m5ui/arc.rst:184 0c2a1f7967c149dfbd83d377889094c7
 msgid "Set the x-coordinate of the arc."
-msgstr ""
+msgstr "设置弧形的 x 坐标。"
 
-#: ../../en/m5ui/arc.rst:190 b5be812c9619474caf311862811e802b
+#: ../../source/m5ui/arc.rst:190 bb2a2fe3cfd84592a401a0ea8e7a38d0
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:13 43ee9d93b9564a62aae98bf8b0e5978c
+#: ../../source/refs/m5ui.arc.ref:13 1942f7e65b8d496aa0a168a7228f2845
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:200 07e903771d7c4887a2553f003977b8c5
+#: ../../source/m5ui/arc.rst:200 ef59805712b646bfac7ff33361e7d911
 msgid "Set the y-coordinate of the arc."
-msgstr ""
+msgstr "设置弧形的 y 坐标。"
 
-#: ../../en/m5ui/arc.rst:206 e6501e980e654501ac9ca6c8ae6e907b
+#: ../../source/m5ui/arc.rst:206 b13c1e1120e64d9b884956d3d4bccc00
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:14 440ed13b349d4bc8ad9aefb2abaff495
+#: ../../source/refs/m5ui.arc.ref:14 29190419d4a746fe933d914827b07c60
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:216 ae2a11f92e604caaa7b3100c919dc569
+#: ../../source/m5ui/arc.rst:216 a036b1c08b084fb5a50c2da03b91c9bd
 msgid "Set the size of the arc."
-msgstr ""
+msgstr "设置弧形的尺寸。"
 
-#: ../../en/m5ui/arc.rst:223 34f95be0eaf84610a7d4736cacb8daf1
+#: ../../source/m5ui/arc.rst:223 453e48063d88412390cb7532ab0450a5
 msgid "|set_size.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:11 ca6fcf889f8b465ea527ad23945b27ec
+#: ../../source/refs/m5ui.arc.ref:12 7abed547770d447dace3b4e575bba35e
 msgid "set_size.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:233 eca7bf4796154018b6ecc20ff10799c1
-msgid "Set the width of the arc."
-msgstr ""
-
-#: ../../en/m5ui/arc.rst:239 45b4d6baef334e9da51ace8acd2914af
-msgid "|set_width.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.arc.ref:12 6f96b4ac0df54a7487b200da89021035
-msgid "set_width.png"
-msgstr ""
-
-#: ../../en/m5ui/arc.rst:249 8692a72419ab454ea6316fa7f5125588
-msgid "Set the height of the arc."
-msgstr ""
-
-#: ../../en/m5ui/arc.rst:255 ff16c88b6fbf445fa8e66e24001b0c8d
-msgid "|set_height.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.arc.ref:9 b4d9d811b4cd4ffdb678247a95bc10fb
-msgid "set_height.png"
-msgstr ""
-
-#: ../../en/m5ui/arc.rst:265 49135d2421d142828e47bcb7321a6fed
+#: ../../source/m5ui/arc.rst:233 75240f269b184f5cb3eff0a7f0ebe66b
 msgid "Align the arc to another object."
-msgstr ""
+msgstr "将弧形对齐到另一个对象。"
 
-#: ../../en/m5ui/arc.rst:267 e10aa63deb8a472f96065eb2349d9786
+#: ../../source/m5ui/arc.rst:235 88dd457e7b884aedb144e4f699b74254
 msgid "The object to align to."
-msgstr ""
+msgstr "要对齐的目标对象。"
 
-#: ../../en/m5ui/arc.rst:268 d25e445265664dfa9da033beec440ed9
+#: ../../source/m5ui/arc.rst:236 201f2a727ffe4139af1c6fa4e116a5cd
 msgid "The alignment type."
-msgstr ""
+msgstr "对齐方式。"
 
-#: ../../en/m5ui/arc.rst:269 a766b01b17b144f69c1c8d5f6a4871c7
+#: ../../source/m5ui/arc.rst:237 5022bdf1a8b948028269db676a4d8074
 msgid "The x-offset from the aligned object."
-msgstr ""
+msgstr "相对于目标对象的 x 偏移。"
 
-#: ../../en/m5ui/arc.rst:270 2ba16dada0464a228e166e7cc4edf640
+#: ../../source/m5ui/arc.rst:238 6e1d647776174bb5a13f89e3e81ab599
 msgid "The y-offset from the aligned object."
-msgstr ""
+msgstr "相对于目标对象的 y 偏移。"
 
-#: ../../en/m5ui/arc.rst:274 56fef355b414464a99eada969c439d4b
+#: ../../source/m5ui/arc.rst:242 f2fd7c9b8989402886367db0979ad39d
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:1 a0ec3097c44b4a36a1439b0b5068a6b9
+#: ../../source/refs/m5ui.arc.ref:1 4851bd0c42684fee8a90ef6a421352d6
 msgid "align_to.png"
 msgstr ""
 
-#: ../../en/m5ui/arc.rst:284 a188fb22a954481b94a3d280f9a60fc5
+#: ../../source/m5ui/arc.rst:252 377e76c408b84e08af09a3dd60754cbe
 msgid ""
 "Add an event callback to the arc. The callback will be called when the "
 "specified event occurs."
-msgstr ""
+msgstr "为弧形添加事件回调；当指定事件发生时会调用该回调。"
 
-#: ../../en/m5ui/arc.rst:286 386b44195d6c4067aeaf87c62e3a2658
+#: ../../source/m5ui/arc.rst:254 e58759b59d6d4ecdabb46704ed6e4093
 msgid "The callback function to call."
-msgstr ""
+msgstr "要调用的回调函数。"
 
-#: ../../en/m5ui/arc.rst:287 801a63958e8147f1a192aaa36b9b4d95
+#: ../../source/m5ui/arc.rst:255 7ddb03d391664175af0a9b26316213c7
 msgid "The event to listen for."
-msgstr ""
+msgstr "需要监听的事件。"
 
-#: ../../en/m5ui/arc.rst:288 1b542ee486d1486bb72b76757873b071
+#: ../../source/m5ui/arc.rst:256 a54098598bd64d2bb48e07bdd1fd5afc
 msgid "Optional user data to pass to the callback."
-msgstr ""
+msgstr "可选的用户数据，会传递给回调。"
 
-#: ../../en/m5ui/arc.rst:292 29bcd2aac110422f9d111beb34d44a95
+#: ../../source/m5ui/arc.rst:260 551c95dd69954d93a7a5c92ea9833010
 msgid "|event.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:2 e5aa300ed91e4826aa97487796748668
+#: ../../source/refs/m5ui.arc.ref:2 89f506b0af254976883edb587ce00c35
 msgid "event.png"
 msgstr ""
 
-#: a7b25b9620474a38bf26e46b3647b49b m5ui.arc.M5Arc.set_arc_color:1 of
+#: f81c3c40e1604e0dadbfab23b5a75b3f m5ui.arc.M5Arc.set_arc_color:1 of
 msgid "Set the color of the arc."
-msgstr ""
+msgstr "设置弧形的颜色。"
 
-#: e1490ec8262f401187c814f684f51e74 m5ui.arc.M5Arc.set_arc_color:3 of
+#: c057fc971f28421087970f90f30f3e88 m5ui.arc.M5Arc.set_arc_color:3 of
 msgid "The color of the arc in hexadecimal format."
-msgstr ""
+msgstr "弧形的十六进制颜色值。"
 
-#: 53e8338028a7458b88b773bdaa03e113 m5ui.arc.M5Arc.set_arc_color:4 of
+#: 78df3bb433d74513bed68602489c618d m5ui.arc.M5Arc.set_arc_color:4 of
 msgid "The opacity level (0-255)."
-msgstr ""
+msgstr "不透明度级别（0-255）。"
 
-#: d943bd2c35ef451d8117743620ae87d5 m5ui.arc.M5Arc.set_arc_color:5 of
+#: 42bd9e82a9af40b3b45f259a777db58f m5ui.arc.M5Arc.set_arc_color:5 of
 msgid ""
 "The part of the arc to apply the style to (e.g., lv.PART.MAIN | "
 "lv.STATE.DEFAULT)."
+msgstr "要应用样式的弧形部件（例如 lv.PART.MAIN | lv.STATE.DEFAULT）。"
+
+#: b749015181b34ce4a8d0648e475a6d41 m5ui.arc.M5Arc.set_arc_color:9 of
+msgid "|set_bg_color.png| |set_indicator_color.png| |set_knob_color.png|"
 msgstr ""
 
-#: 114f27d771064397bfbfbf5a0c188a98 m5ui.arc.M5Arc.set_arc_color:9 of
-msgid "|set_arc_color.png|"
+#: ../../source/refs/m5ui.arc.ref:3 a7ecf4b517474153a05f0cc5dea1363c
+msgid "set_bg_color.png"
 msgstr ""
 
-#: ../../en/refs/m5ui.arc.ref:3 b41b439184344485bbc5a8deae3ccdb8
-msgid "set_arc_color.png"
+#: ../../source/refs/m5ui.arc.ref:4 f7476e35d8a64e4a8e5d08c5e28f7815
+msgid "set_indicator_color.png"
 msgstr ""
+
+#: ../../source/refs/m5ui.arc.ref:5 c2262c65c14d42fe96745d20fdd4a541
+msgid "set_knob_color.png"
+msgstr ""
+
+#~ msgid "Set the width of the arc."
+#~ msgstr ""
+
+#~ msgid "|set_width.png|"
+#~ msgstr ""
+
+#~ msgid "set_width.png"
+#~ msgstr ""
+
+#~ msgid "Set the height of the arc."
+#~ msgstr ""
+
+#~ msgid "|set_height.png|"
+#~ msgstr ""
+
+#~ msgid "set_height.png"
+#~ msgstr ""
+
+#~ msgid "|set_arc_color.png|"
+#~ msgstr ""
+
+#~ msgid "set_arc_color.png"
+#~ msgstr ""
 

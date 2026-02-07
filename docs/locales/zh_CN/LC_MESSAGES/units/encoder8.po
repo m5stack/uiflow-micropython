@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,13 +18,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/encoder8.rst:3 5f65da7cfb1146c880e823c17a87794b
+#: ../../source/units/encoder8.rst:3 10abf56054f14aed9fec1db19fde4ddb
 msgid "Encoder8 Unit"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:7 92db58b5f8e640e1a1855edca00b152c
+#: ../../source/units/encoder8.rst:7 333e66e2a44841848de8aac7c648dc87
 msgid ""
 "UNIT 8Encoder is a set of 8 rotary encoders as one of the input unit, the"
 " internal use of STM32 single-chip microcomputer as the acquisition and "
@@ -33,319 +33,322 @@ msgid ""
 " addition to left and right rotation, but also radially pressed, in "
 "addition to a physical toggle switch and its corresponding RGB LED light,"
 " including 5V->3V3 DCDC circuit."
-msgstr ""
+msgstr "UNIT 8Encoder 是一款由 8 个旋转编码器组成的输入单元，内部采用 STM32 单片机作为采集和通信处理器，并通过 I2C 通信接口与主机连接。每个旋转编码器对应 1 颗 RGB LED 灯，编码器除可左右旋转外，还支持轴向按压；此外还带有一个物理拨动开关及其对应的 RGB LED 灯，并集成 5V->3V3 DCDC 电路。"
 
-#: ../../en/units/encoder8.rst:9 a9b3f58b2f6841f38d4a937e4682d202
+#: ../../source/units/encoder8.rst:9 081c39e5977f46c5b34efc51a6eae4f9
 msgid "Support the following products:"
-msgstr ""
+msgstr "支持下列产品："
 
-#: ../../en/units/encoder8.rst:11 5fe90ff2366e4eb19c98c83e7be824dc
+#: ../../source/units/encoder8.rst:11 aab29bf61bc0434195e68e5bbc6d36f9
 msgid "|Encoder8Unit|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref abb9da67806d4cb3bd095a196a558f0f
+#: ../../source/refs/unit.encoder8.ref 103d9fa7472143f08257cc866add13ea
 msgid "Encoder8Unit"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:13 c1366adafee744928a0f08140b65d45b
+#: ../../source/units/encoder8.rst:13 a3f53a6d89e347a7bac81bdee938bd93
 msgid "Micropython Example:"
-msgstr ""
+msgstr "MicroPython 应用示例："
 
-#: ../../en/units/encoder8.rst:20 47f1fb6ae9c042fbbf07b623522a1394
+#: ../../source/units/encoder8.rst:20 f594c39fdb574b79bbe7ca344d3aac98
 msgid "UIFLOW2 Example:"
-msgstr ""
+msgstr "UiFlow2 应用示例："
 
-#: ../../en/units/encoder8.rst:22 0ae3c0a5d1e3477d966c86bbe4d8a66b
+#: ../../source/units/encoder8.rst:22 fb3ecfca3767465bb39c5658d13a387e
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:19 cbe8e8355691464fa2e09a52b0e87353
+#: ../../source/refs/unit.encoder8.ref:19 92f0cd0fac664976ae1478c958385c13
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:26 9b04f5d7549a493eb0ff751cb7e8943e
+#: ../../source/units/encoder8.rst:26 ee705686dfac4abcb7ab6726ba946163
 msgid "|encoder8_cores3_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:29 19f67e374d044968a943aa38d40e6e8d
+#: ../../source/units/encoder8.rst:29 2293084a258a44349aa76be04403d1c6
 msgid "class Encoder8Unit"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:32 e0ebec80469442e58396a353ecdf3402
+#: ../../source/units/encoder8.rst:32 c38222a13bf74fba84fe51bad0ab79ed
 msgid "Constructors"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:36 080ba669a9644f1ebfb7856bf55baafd
+#: ../../source/units/encoder8.rst:36 9f1b2840abd444a7b57020b7d9897b8b
 msgid "Initialize the Encoder8 Unit with the specified I2C interface and address."
-msgstr ""
+msgstr "使用指定的 I2C 接口和地址初始化 Encoder8 Unit。"
 
-#: ../../en/units/encoder8.rst 2b46c9e4f6ce4b5dbac38fae06bd293e
-#: 2ecf0bf3663e4f1fbd979f1761cd19eb 5092ef60452a47c58550bd33d3d49c01
-#: 54f951a5d8bc456fb3e3ae7be2accfce 91aaa41fa61b4c318fd5f6643448bece
-#: 95bf545be1f44838880e00e4f6e46779 a188bfa50e5d440a9da1beb4184a1e52
-#: ab782284a68743649dc7f7eaeea8525e db10df9abe8b4c1ca8424bbd9cde944c
-#: e030cb76248742e0a107a7612a4e310f e0a113ee0c1c40aab22011eb83bbacd1
-#: e7b7cced19804048aa9a9369f196f154 ecd6b78e24bc4692ba5903bdccae1f6d
+#: ../../source/units/encoder8.rst 0002bddf0b894d648ba122d35ac8c664
+#: 144400042d064ee6874104350468d656 1c313db8672e4774b554ace46b0528e1
+#: 1cf4bf946e59440a9dc60186ec61bb3d 3f336ea84fcf47629a7b6c554adfe694
+#: 41ff9364577e4fe5b08b377680608092 528b2ef432124a35a91974a6da8b781a
+#: 56a954cc180f49b3a4ea8617249e6345 7a17df5930e54577a21fd915f57a5110
+#: 8f01a07b13b849309224e6b177d93065 953ed844ced841aca2784e42cda9e93f
+#: ceaa6b8514af401891e3d7db3af79340 d7c83f7a1f0b415a8e64ad0388eac18f
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:38 d6ccbbe10f774180a95b651210083b15
+#: ../../source/units/encoder8.rst:38 887bce227931452695e76c62a91edf02
 msgid "The I2C interface or PAHUBUnit instance for communication."
-msgstr ""
+msgstr "用于通信的 I2C 接口或 PAHUBUnit 实例。"
 
-#: ../../en/units/encoder8.rst:39 6162dd8259d748fba95d2ea713e8693d
+#: ../../source/units/encoder8.rst:39 968df2bf36b043ab9b2bc93a1599f24c
 msgid "Deprecated parameter, kept for backward compatibility."
-msgstr ""
+msgstr "已弃用参数，仅为向后兼容而保留。"
 
-#: ../../en/units/encoder8.rst:40 84448fdf5bf3490fb1371458b8f1041e
-msgid "The I2C address of the Encoder8 Unit. Default is 0x59."
-msgstr ""
+#: ../../source/units/encoder8.rst:40 a61827fb02c24fb09206b272337f1a15
+msgid "The I2C address of the Encoder8 Unit. Default is 0x41."
+msgstr "Encoder8 Unit 的 I2C 地址，默认值为 0x41。"
 
-#: ../../en/units/encoder8.rst:42 ../../en/units/encoder8.rst:68
-#: ../../en/units/encoder8.rst:79 ../../en/units/encoder8.rst:91
-#: ../../en/units/encoder8.rst:101 ../../en/units/encoder8.rst:113
-#: ../../en/units/encoder8.rst:123 ../../en/units/encoder8.rst:134
-#: ../../en/units/encoder8.rst:146 ../../en/units/encoder8.rst:158
-#: ../../en/units/encoder8.rst:168 0cb970714b8e4434bffe7f51f1d0ace5
-#: 14b96bdfe9984edda1ba029dfa3dd3e9 189bf80e78bf46e2bcd65d22244eb798
-#: 65c00f420e0c4adc9aa7d20cf442646f 74b14447c45c488d984ac4419c7be014
-#: 8fe1a3262b1c4016871169accf1f3f45 c32395b0cbde4984b451147c97eebeea
-#: ca5dff34561d4d81854197f22a4d8fce d14a69a7e5d949e8af86282e08cafbba
-#: d83fedd492ba4b579b61f09c022813cb f8c540741c774a5193ec99269abd4a16
+#: ../../source/units/encoder8.rst:42 ../../source/units/encoder8.rst:68
+#: ../../source/units/encoder8.rst:79 ../../source/units/encoder8.rst:91
+#: ../../source/units/encoder8.rst:101 ../../source/units/encoder8.rst:113
+#: ../../source/units/encoder8.rst:123 ../../source/units/encoder8.rst:134
+#: ../../source/units/encoder8.rst:146 ../../source/units/encoder8.rst:158
+#: ../../source/units/encoder8.rst:168 027209c1ec8b4503a697ac9de4d1f57d
+#: 0444368521d14d69b27f818b485d259e 297b6d6499cd4fdabc88d86b9c25df73
+#: 3519bf6c83264aa983b3f207d011d2d2 3d4046e1b8e14bc88775adaa74f0bb86
+#: 417ddff46a154d58b82829eb8ffc0a62 45a9877c8328423883305fe41892864e
+#: 5ed58b7458a04df8a8d4fff94756d1d0 9d512aca4f38461480f7faf4e21669f0
+#: d4ae9adea8dc46f0b51336e156525c76 db4f7bf8606e42b4a2c219d65c32e756
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:44 df7b9247d07f42ceaa4ea5883287f4de
+#: ../../source/units/encoder8.rst:44 d36c275a3611400ea4cd3557742d3f96
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:7 95a34763d8854c1ebb8b96129253a814
+#: ../../source/refs/unit.encoder8.ref:7 def03989580542c4b7c895d8a43053a6
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:48 726d33fba8ae48b79dca03da5bb17147
+#: ../../source/units/encoder8.rst:48 e20c0b6feb2342beb1a062b2ab6fab4a
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
-#: ../../en/units/encoder8.rst:52 d52d60610cd44a2f9ce2143aeff7489b
+#: ../../source/units/encoder8.rst:52 0c639f0f010a4b17b5f4a5086d7fc6a6
 msgid "Set or change the I2C address of the Encoder8 Unit."
-msgstr ""
+msgstr "设置或更改 Encoder8 Unit 的 I2C 地址。"
 
-#: ../../en/units/encoder8.rst:54 ff87f20eb33941a79e46a4e54cb9ea35
+#: ../../source/units/encoder8.rst:54 f06343d9289448eeacd878b402931f87
 msgid "The new I2C address to set."
-msgstr ""
+msgstr "要设置的新 I2C 地址。"
 
-#: ../../en/units/encoder8.rst:58 d426182b14ae45c89196c373ee8d73c1
+#: ../../source/units/encoder8.rst:58 f7b7b837639a4808b153338a57383eb3
 msgid "Check if the Encoder8 Unit is connected on the I2C bus."
-msgstr ""
+msgstr "检查 Encoder8 Unit 是否连接在 I2C 总线上。"
 
-#: ../../en/units/encoder8.rst:62 58ea71d7a2944bf7a6150aa262073108
+#: ../../source/units/encoder8.rst:62 15fdc34fb80b401599147298084f70c2
 msgid "Get the current counter value of the specified channel."
-msgstr ""
+msgstr "获取指定通道当前的计数值。"
 
-#: ../../en/units/encoder8.rst:64 ../../en/units/encoder8.rst:76
-#: ../../en/units/encoder8.rst:87 ../../en/units/encoder8.rst:99
-#: ../../en/units/encoder8.rst:109 ../../en/units/encoder8.rst:131
-#: 0939b12d69274bc687f7e1f26a32755d 5ba6dd352ee848878477e8f8006eaea2
-#: 8bf7099749144352afb7732b60752747 e8f1731361d64a528167e31e269a5e16
-#: e946f851d9c54bfe8a828b76e8352adf ea10dc977ea0422185d3fcbf918792d0
+#: ../../source/units/encoder8.rst:64 ../../source/units/encoder8.rst:76
+#: ../../source/units/encoder8.rst:87 ../../source/units/encoder8.rst:99
+#: ../../source/units/encoder8.rst:109 ../../source/units/encoder8.rst:131
+#: 237fed48f2e2469c80af2605a3eaa26b 2526cf8ffb81439da917f876baa3c14a
+#: 261ecbb4b35c4c04a1bae872ff35a0c5 46b6ee5de78a456f94e43526ac87c783
+#: 4fd33c52ec8d407f94997276ed314eff a32386ef759b4b978259ff0b6a9d8d16
 msgid "The encoder channel (1-8). Default is 1."
-msgstr ""
+msgstr "编码器通道（1-8），默认值为 1。"
 
-#: ../../en/units/encoder8.rst 27bf8411adaf4ac0b57268fd04b652b3
-#: 3743ba08096348dabb95ff35e0723095 97857f53104e4fb5b6c2ed26cee9c9d8
-#: b4899b8daa714498b384e0bbd74827e1 f893189a78d740ac9d06500c9ebe8f25
+#: ../../source/units/encoder8.rst 3adcf96a2e4a4c11b8039367d69e0e34
+#: 95e6251c09a747068a08cba9aa7b80a4 a1048aafa2e7465e99af7f23403caa34
+#: eee9913471904342901b34018b67e8bf f9d0d438a60044acb3574e8dbe7e6b4a
 msgid "Returns"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:66 f44e098d204e4a16bcdc2d154de595e1
+#: ../../source/units/encoder8.rst:66 6ed45eb407f848408531260a44e2c980
 msgid "The current counter value as an integer."
-msgstr ""
+msgstr "以整数形式表示的当前计数值。"
 
-#: ../../en/units/encoder8.rst:70 de55af0a171d474097cf02265f601ef3
+#: ../../source/units/encoder8.rst:70 517a8833d6d54abb909aafdfc71c83b0
 msgid "|get_counter_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:8 32b9db7b39ad4b4dba1df2af9b3325ca
+#: ../../source/refs/unit.encoder8.ref:8 fc2d73adf8b74e7dab12153c3fcdc66d
 msgid "get_counter_value.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:74 d4eae250ea674573a1a404d80ba004e6
+#: ../../source/units/encoder8.rst:74 a6cb7ceab58a4d34869e1bf6df4a47b5
 msgid "Set the counter value for the specified channel."
-msgstr ""
+msgstr "设置指定通道的计数值。"
 
-#: ../../en/units/encoder8.rst:77 2e14a8aa139d44d2b056633b9a7c3bd7
+#: ../../source/units/encoder8.rst:77 021d8c0221e040d88ecad17a510cdf10
 msgid "The counter value to set."
-msgstr ""
+msgstr "要设置的计数值。"
 
-#: ../../en/units/encoder8.rst:81 b745134d8a6a4894bbfff987ce883d64
+#: ../../source/units/encoder8.rst:81 7e84a6cb6ee04911893cca1e6f7efc0f
 msgid "|set_counter_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:9 5010561301b44ebba1fd3115ba107bb3
+#: ../../source/refs/unit.encoder8.ref:9 19a6c1e3a75c43dbbcc481869e239ffb
 msgid "set_counter_value.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:85 8169b8e3f44d42c39a897c05967c5b01
+#: ../../source/units/encoder8.rst:85 5fc2f74f10e349c084655f04b567fdfe
 msgid "Get the incremental value of the specified channel."
-msgstr ""
+msgstr "获取指定通道的增量值。"
 
-#: ../../en/units/encoder8.rst:89 2b24053a325e411ba14484d84d6d568b
+#: ../../source/units/encoder8.rst:89 729b147f84844938be90b626f3cfe900
 msgid "The incremental value as an integer."
-msgstr ""
+msgstr "以整数形式表示的增量值。"
 
-#: ../../en/units/encoder8.rst:93 f5fb9b47f9164343aeb8d8ef5a9c0637
+#: ../../source/units/encoder8.rst:93 a883635ee6c243509b533c87a0905e24
 msgid "|get_increment_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:10 b52d92cdd2b04315a74ff807a1ee1f97
+#: ../../source/refs/unit.encoder8.ref:10 6eed55e0f6034e6a94433475ddd06a36
 msgid "get_increment_value.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:97 2763ddbb01254eb18ac41c39270ae9a3
+#: ../../source/units/encoder8.rst:97 f9e84ca60ed64468a4876c11b0392d96
 msgid "Reset the counter value for the specified channel."
-msgstr ""
+msgstr "重置指定通道的计数值。"
 
-#: ../../en/units/encoder8.rst:103 09f37eb2b0d54dfb9d07c58ffdc5e5d6
+#: ../../source/units/encoder8.rst:103 7cb309c5304f404caf6a5cbe7a2e2a0a
 msgid "|reset_counter_value.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:11 6ceb5f8a79584e89b8a1753f730d956b
+#: ../../source/refs/unit.encoder8.ref:11 bc87989db5c64706a99a210cbc66ee70
 msgid "reset_counter_value.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:107 30748d4158af48ce8b1d4a30b78b1f8b
+#: ../../source/units/encoder8.rst:107 1bf6b0fd87544cf68064a6a5b08fe583
 msgid "Get the button status for the specified channel."
-msgstr ""
+msgstr "获取指定通道的按键状态。"
 
-#: ../../en/units/encoder8.rst:111 7ebf69cbb65544ddad79f29719ba4845
+#: ../../source/units/encoder8.rst:111 c59f002991aa404eb4c1ee463dac8e04
 msgid "True if the button is pressed, False otherwise."
-msgstr ""
+msgstr "如果按键被按下则为 True，否则为 False。"
 
-#: ../../en/units/encoder8.rst:115 d95f4d61078c4a67961995bd33a10bbc
+#: ../../source/units/encoder8.rst:115 24b6fd0b46f8492fb5b736d1869ad25e
 msgid "|get_button_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:12 f475ffe380034dc8b11f62cb1c66bb72
+#: ../../source/refs/unit.encoder8.ref:12 3f14ae22d0f94460af754f77ac78aa52
 msgid "get_button_status.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:119 4f7f566debc4432f901d7d2959ee6c81
+#: ../../source/units/encoder8.rst:119 6788de41ee4c44e8a011c0974db1efda
 msgid "Get the status of the global switch."
-msgstr ""
+msgstr "获取全局开关的状态。"
 
-#: ../../en/units/encoder8.rst:121 774cfe1d07674a5ca8bd4742799dfdc8
+#: ../../source/units/encoder8.rst:121 6d622ff415ed4ea7b5539cbf598aeb05
 msgid "True if the switch is on, False otherwise."
-msgstr ""
+msgstr "如果开关为打开状态则为 True，否则为 False。"
 
-#: ../../en/units/encoder8.rst:125 fa4d58268c65469e86afd6ca9303260e
+#: ../../source/units/encoder8.rst:125 735bb08163d14a6ab67973b063f372c0
 msgid "|get_switch_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:13 f7d3903a4da448e19de67b6d12c54900
+#: ../../source/refs/unit.encoder8.ref:13 8f78c98908b346d7bdcc7b73334cf7c0
 msgid "get_switch_status.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:129 6147a5b410624848b7a5152eedd29bf4
+#: ../../source/units/encoder8.rst:129 6db133c32c0942f9b751d4387cb19afd
 msgid "Set the RGB color of the specified channel&#x27;s LED."
-msgstr ""
+msgstr "设置指定通道 LED 的 RGB 颜色。"
 
-#: ../../en/units/encoder8.rst:132 ../../en/units/encoder8.rst:144
-#: 2d3876ae8e9e4ce6848a1967055c70a4 66e83980e4fa46d3825553b8aa8488a2
+#: ../../source/units/encoder8.rst:132 ../../source/units/encoder8.rst:144
+#: 597f15c4fbf84b318e203e9ab441bc6f 60e953d542374723af65b7fd30e16dfc
 msgid "The RGB color value (0-0xFFFFFF). Default is 0."
-msgstr ""
+msgstr "RGB 颜色值（0-0xFFFFFF），默认值为 0。"
 
-#: ../../en/units/encoder8.rst:136 b7899bc82b4f41018dbcbfdc149651f0
+#: ../../source/units/encoder8.rst:136 025b9a278dbf4a10bb38869aca9bf6e4
 msgid "|set_led_rgb.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:14 6109302e2187433daa3f6e19e3d6984f
+#: ../../source/refs/unit.encoder8.ref:14 c96203caf29246718dbeaac55a6871c4
 msgid "set_led_rgb.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:140 0f6047b804774c5a828b814591b83a2b
+#: ../../source/units/encoder8.rst:140 0654f0701dfb45619f7d0eab537ed02e
 msgid "Set the RGB color for a range of channels&#x27; LEDs."
 msgstr ""
 
-#: ../../en/units/encoder8.rst:142 3fc4ac8ef63a4d1497963c640603cc91
+#: ../../source/units/encoder8.rst:142 9db0e64cd870401088eb8400e889df77
 msgid "The starting channel index. Default is 0."
 msgstr ""
 
-#: ../../en/units/encoder8.rst:143 ced7721b0fae4bcf9a6797da5c767ad6
+#: ../../source/units/encoder8.rst:143 50dcd95e13b544c3a909322e02f31a7a
 msgid "The ending channel index. Default is 0."
 msgstr ""
 
-#: ../../en/units/encoder8.rst:148 ac0826e10c9d40a58eed5c44a1dd5649
+#: ../../source/units/encoder8.rst:148 747e064af03547ef83a0fec16ac5cb7e
 msgid "|set_led_rgb_from.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:15 873df53513504a0d88d5a704a6b3f8ca
+#: ../../source/refs/unit.encoder8.ref:15 5908f7d46bb549b293423ab8a0e93fb2
 msgid "set_led_rgb_from.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:152 0e4f2b8ea646478191a050d5303014e6
+#: ../../source/units/encoder8.rst:152 7883a327042f4eac9266fcaf1af119cd
 msgid "Get the device firmware version or I2C address."
-msgstr ""
+msgstr "获取设备固件版本或 I2C 地址。"
 
-#: ../../en/units/encoder8.rst:154 590e268f87a74334a02cf09353762c88
+#: ../../source/units/encoder8.rst:154 c98345e3812f49feba4d16c84d5fc478
 msgid ""
 "The mode to read. 0xFE for firmware version, 0xFF for I2C address. "
 "Default is 0xFE."
-msgstr ""
+msgstr "要读取的模式。0xFE 表示固件版本，0xFF 表示 I2C 地址，默认值为 0xFE。"
 
-#: ../../en/units/encoder8.rst:156 f669dae2a11449ba807eaf85d68e326b
+#: ../../source/units/encoder8.rst:156 7bc00d90670b462e973ae408494494ce
 msgid "The value read from the specified mode register."
-msgstr ""
+msgstr "从指定的模式寄存器读取的值。"
 
-#: ../../en/units/encoder8.rst:160 8f9500c3d28d42e2a3cb1896d4128758
+#: ../../source/units/encoder8.rst:160 a9c95d710256427fbf3ec8d3bc52b9ed
 msgid "|get_device_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:16 fcaf62b3389a4d52903ec12b414bf239
+#: ../../source/refs/unit.encoder8.ref:16 f60575c128f14572adb9e5d91a8a7fbd
 msgid "get_device_status.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:164 26dc0a6431604d798678fe7b2ee1e1bd
+#: ../../source/units/encoder8.rst:164 f28df231b0364031960928524febde9c
 msgid "Set a new I2C address for the device."
-msgstr ""
+msgstr "为设备设置新的 I2C 地址。"
 
-#: ../../en/units/encoder8.rst:166 8e0ca6b407b24fa6bbe8e11ea6b977d9
+#: ../../source/units/encoder8.rst:166 1091932271a849b4bf815222167a45cd
 msgid "The new I2C address. Default is 0x41."
-msgstr ""
+msgstr "新的 I2C 地址，默认值为 0x41。"
 
-#: ../../en/units/encoder8.rst:170 ec3c603dad0448809438b5a0f003314e
+#: ../../source/units/encoder8.rst:170 da2996a8d71f47d1bd9168c0d29a4b34
 msgid "|set_i2c_address.png|"
 msgstr ""
 
-#: ../../en/refs/unit.encoder8.ref:17 46147690b03c4d2a8e955f6baa5748dc
+#: ../../source/refs/unit.encoder8.ref:17 7deda30b0e9a428498cc7cb739e2d665
 msgid "set_i2c_address.png"
 msgstr ""
 
-#: ../../en/units/encoder8.rst:174 cf983efe19394b91b37d272ddd9c98b3
+#: ../../source/units/encoder8.rst:174 57683f2504634530b35c926b67030041
 msgid "Read data from a specified register."
-msgstr ""
+msgstr "从指定寄存器读取数据。"
 
-#: ../../en/units/encoder8.rst:176 6c8bc226575c4499943b231c3a082ed1
+#: ../../source/units/encoder8.rst:176 3f7407ffa75a4863aaa50cba5b971f3c
 msgid "The register address to read from."
-msgstr ""
+msgstr "要读取的寄存器地址。"
 
-#: ../../en/units/encoder8.rst:177 bb1afa7a04f745dabedd0c45e21c59bc
+#: ../../source/units/encoder8.rst:177 b1c2cc5b9e2d4367ba0b137ac5828192
 msgid "The number of bytes to read."
-msgstr ""
+msgstr "要读取的字节数。"
 
-#: ../../en/units/encoder8.rst:181 224fd7168174445680e2873b3c755e3b
+#: ../../source/units/encoder8.rst:181 ea4f4dc3675542fd87974aabfa379dde
 msgid "Write data to a specified register."
-msgstr ""
+msgstr "向指定寄存器写入数据。"
 
-#: ../../en/units/encoder8.rst:183 64212e6c23574f248e2dfc0127db6d22
+#: ../../source/units/encoder8.rst:183 053260f4b0714d3b8fec00f5cb016356
 msgid "The register address to write to."
-msgstr ""
+msgstr "要写入的寄存器地址。"
 
-#: ../../en/units/encoder8.rst:184 93dbb96ef7054098a5498315856d2152
+#: ../../source/units/encoder8.rst:184 b24f429dad964b74b6535bf0ad13db38
 msgid "A list of bytes to write to the register."
-msgstr ""
+msgstr "要写入该寄存器的字节列表。"
 
-#: ../../en/units/encoder8.rst:188 0ff070d60ad94e4fa10e4caa4a73916e
+#: ../../source/units/encoder8.rst:188 60af60bc854540198209ac616168145f
 msgid "Deinitialize the Encoder8 Unit instance."
-msgstr ""
+msgstr "反初始化 Encoder8 Unit 实例。"
+
+#~ msgid "The I2C address of the Encoder8 Unit. Default is 0x59."
+#~ msgstr ""
 

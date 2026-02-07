@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-16 14:43+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,160 +18,158 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/gateway_h2.rst:2 00fd5c9b1bb640b08a8136df45f53064
+#: ../../source/units/gateway_h2.rst:2 dc44bab6c98f452194113ba343e319f2
 msgid "GatewayH2 Unit"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:8 af38035430784624b2bb20f3f36dd6cf
+#: ../../source/units/gateway_h2.rst:8 a9d973d28ca145889b2622f002dd6dd9
 msgid ""
 "This library is the driver for Unit Gateway H2, and the unit communicates"
 " via UART."
 msgstr "这个库是 Unit Gateway H2 的驱动，该模块使用 UART 通信。"
 
-#: ../../en/units/gateway_h2.rst:10 bf8ee5ec8951475b8f1138d3a6b8f3a9
+#: ../../source/units/gateway_h2.rst:10 be970f2fb2514f909d10d5ac10e4bce0
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/gateway_h2.rst:12 faf931d7845d49eda50fb955b3cf352a
+#: ../../source/units/gateway_h2.rst:12 1cff059fb0214a2f8bb2733165fb49c6
 msgid "|Unit Gateway H2|"
 msgstr ""
 
-#: ../../en/refs/unit.gateway_h2.ref a676443a238440a391d26f5c38d559e6
+#: ../../source/refs/unit.gateway_h2.ref 4f29bde406964ac1ae1c87e2c159868b
 msgid "Unit Gateway H2"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:14 53917815b30c4d408e9915a275a7bad2
+#: ../../source/units/gateway_h2.rst:14 5e75274a4a5040dfa6fe2af70b46790e
 msgid ""
 "When using this unit, you need to flash the NCP firmware to the unit. For"
 " details, refer to the `ESP Zigbee NCP "
-"<https://docs.m5stack.com/zh_CN/guide/zigbee/unit_gateway_h2/zigbee_ncp>`_"
+"<https://docs.m5stack.com/en/esp_idf/zigbee/unit_gateway_h2/zigbee_ncp>`_"
 " documentation."
-msgstr ""
-"当使用此模块时，需要先给模块烧录 NCP 固件，详情请查看 `ESP Zigbee NCP "
-"<https://docs.m5stack.com/zh_CN/guide/zigbee/unit_gateway_h2/zigbee_ncp>`_"
+msgstr "在使用此单元前，需要先为其烧录 NCP 固件，详情请参阅 `ESP Zigbee NCP <https://docs.m5stack.com/en/esp_idf/zigbee/unit_gateway_h2/zigbee_ncp>`_ 文档。"
 
-#: ../../en/units/gateway_h2.rst:17 94d3bed7cf134d988fd819a6f70b6d95
+#: ../../source/units/gateway_h2.rst:17 f342e562dcdf474490709bab44ec1040
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/gateway_h2.rst:20 ../../en/units/gateway_h2.rst:40
-#: c100ad358015413a9eeae7b616f664e5 c782745885a94a2e82578d001b705cb8
+#: ../../source/units/gateway_h2.rst:20 ../../source/units/gateway_h2.rst:40
+#: 459504dbee364d05b6ca027cc0548d03 d33c8b3035cd41869addfd96eaf8379e
 msgid "Switch Control"
 msgstr "开关控制"
 
-#: ../../en/units/gateway_h2.rst:22 00ff7b965c6b495b80bc9cbbf18e9024
+#: ../../source/units/gateway_h2.rst:22 46047227b5b84e39a0d3c3be102535ed
 msgid ""
 "To use this example, you need to flash this program onto an ESP32C6 or "
 "similar unit as a light node device. For details, refer to "
 "`HA_on_off_light <https://github.com/espressif/esp-zigbee-"
 "sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_"
 msgstr ""
-"要使用此示例，您还需要 ESP32C6 或类似模块，作为灯节点设备。详情请查看 `HA_on_off_light "
+"要使用此示例，需要将该程序烧录到 ESP32C6 或类似模块上，作为灯节点设备。详情请查看 `HA_on_off_light "
 "<https://github.com/espressif/esp-zigbee-"
-"sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_"
+"sdk/tree/main/examples/esp_zigbee_HA_sample/HA_on_off_light>`_。"
 
-#: ../../en/units/gateway_h2.rst:24 c1cdce59267a41db868d2edc82d072fb
+#: ../../source/units/gateway_h2.rst:24 7ad13979edbb4eaa94cbe4969d0eca73
 msgid "Open the |cores3_switch_endpoint_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 上打开 |cores3_switch_endpoint_example.m5f2| 项目。"
 
-#: ../../en/units/gateway_h2.rst:26 ../../en/units/gateway_h2.rst:42
-#: d4dd1a358ed6427cbe642b13b71232fc d54e4bb7a66146788f97928b97fb6212
+#: ../../source/units/gateway_h2.rst:26 ../../source/units/gateway_h2.rst:42
+#: 472294e9163b4d22bca7995044efab11 be3f0f0905d248c6b3a4aecc2de766e5
 msgid ""
 "The example demonstrates group control and targeted device operation for "
 "light nodes through SwitchEndpoint of Gateway H2 unit."
-msgstr "示例程序演示通过 Gateway H2 模块的 SwitchEndpoint 对灯节点进开关控制。"
+msgstr "该示例演示通过 Gateway H2 单元的 SwitchEndpoint 对灯节点进行分组控制和指定设备操作。"
 
-#: ../../en/units/gateway_h2.rst:28 ../../en/units/gateway_h2.rst:67
-#: ../../en/units/gateway_h2.rst:86 193f88b522af4785885e96c300e6f838
-#: ae55947be3f24026a61c2e1a9a3a6152
+#: ../../source/units/gateway_h2.rst:28 ../../source/units/gateway_h2.rst:67
+#: ../../source/units/gateway_h2.rst:86 284e0ccf18f842feaf95f4cc9fe250f0
+#: 93d814c8c46044e2b7b6885e322f98a9 f30005e2106e446a871c859de444757e
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/units/gateway_h2.rst:30 16f5936162be481291bfa8b30a9cb6bd
+#: ../../source/units/gateway_h2.rst:30 de28daf3236a49889eb54a17977fb79a
 msgid "|cores3_switch_endpoint_example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.gateway_h2.ref:13 2e8ac7f831b24a95af782ccf576998b8
+#: ../../source/refs/unit.gateway_h2.ref:13 2b48ceac8ffe47aa85f597b054ed96eb
 msgid "cores3_switch_endpoint_example.png"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:32 ../../en/units/gateway_h2.rst:50
-#: 3977fdae371c4c95bfdda9d35e87cf98 8240f07386a1415fbae1623b6a7c50ef
+#: ../../source/units/gateway_h2.rst:32 ../../source/units/gateway_h2.rst:50
+#: 54b591a7c63a4a94a6aabc9146049234 afba7c68f37746b2b6e33295715bff7d
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/units/gateway_h2.rst:34 ../../en/units/gateway_h2.rst:52
-#: 2ec875f4a97345d6bf485b351e286274 5401194be05446c9809c4f8cdfcde14a
+#: ../../source/units/gateway_h2.rst:34 ../../source/units/gateway_h2.rst:52
+#: 38f57bdfc8824dffb90b7020d8d52ef1 d99ec69d43da41e3bed183a2b36e3b47
 msgid "None"
-msgstr "无"
+msgstr ""
 
-#: ../../en/units/gateway_h2.rst:37 a627431acfff4896bd66d73d9937ad43
+#: ../../source/units/gateway_h2.rst:37 48618834d15d421482876cbbf67ef319
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/units/gateway_h2.rst:44 ../../en/units/gateway_h2.rst:71
-#: ../../en/units/gateway_h2.rst:90 1a396482ee65498fb4498a3df629375c
-#: 7779328d589041b78bdc8300d35d278d
+#: ../../source/units/gateway_h2.rst:44 ../../source/units/gateway_h2.rst:71
+#: ../../source/units/gateway_h2.rst:90 75c96e02c20b477fbc2f0e1389ca37aa
+#: afa29b829ad44afb90cdf1e7e0186e87 fa51e9e06d5643d098ce48d58e5f2968
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/units/gateway_h2.rst:55 3d736c5b33284573bf88239548edfbb6
+#: ../../source/units/gateway_h2.rst:55 beaa16f12a4e451983ee3fe6fbd88533
 msgid "**API**"
-msgstr "API应用"
+msgstr "API参考"
 
-#: ../../en/units/gateway_h2.rst:58 03f47d1842694c7da9d5ad7152b106c7
+#: ../../source/units/gateway_h2.rst:58 8b94eb98d4f24eaca261adbba1999ed8
 msgid "GatewayH2Unit"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:62 12ba050162674d6e8b58734725b311e8
+#: ../../source/units/gateway_h2.rst:62 7135838550f44a69a297adc1407949b8
 msgid "Create an GatewayH2Unit object."
 msgstr "创建一个 GatewayH2Unit 对象。"
 
-#: ../../en/units/gateway_h2.rst 1e635756d7a74411b5f9ee3fee2c67e1
+#: ../../source/units/gateway_h2.rst 3122d4bceb1248f19561c042326b1a7a
 msgid "Parameters"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:64 e186baa1fc72459fab8b63040bd70375
+#: ../../source/units/gateway_h2.rst:64 a4d0e64dddb24956a5674c79f4d014e6
 msgid "The UART ID for communication with the GatewayH2 Unit. It can be 1, 2."
 msgstr "与 GatewayH2 单元通信所使用的 UART 编号，可以为 1 或 2。"
 
-#: ../../en/units/gateway_h2.rst:65 2599ea56e7304b7392af2391c8d6deef
+#: ../../source/units/gateway_h2.rst:65 acf8803ef8e84bb9ae0083a9c630096f
 msgid "A list or tuple containing the TX and RX pins for UART communication."
 msgstr "一个包含用于 UART 通信的 TX 和 RX 引脚的列表或元组。"
 
-#: ../../en/units/gateway_h2.rst:69 ../../en/units/gateway_h2.rst:88
-#: 61dfa00bda83435dbffcd6a828fd4e0c
+#: ../../source/units/gateway_h2.rst:69 ../../source/units/gateway_h2.rst:88
+#: 113c0a7f94ff4f4c8b4a381ea465778c c140c91375074063929edf40d56cf709
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.gateway_h2.ref:6 97b5d00ff803403bb697aa57120f679c
+#: ../../source/refs/unit.gateway_h2.ref:6 467fcfd5d6f54120b8831fc9e76ce855
+#: 7bef36cdb648433da9f5c699071120ad
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:81 ef16fa07d97a477a9ed9f4ebff04be59
+#: ../../source/units/gateway_h2.rst:81 17cdd808c0644151aca8166d5924e77f
 msgid "Create Switch Endpoint."
 msgstr "创建 Switch Endpoint。"
 
-#: ../../en/units/gateway_h2.rst b14dc63fd9924d8994bf7849aed72520
+#: ../../source/units/gateway_h2.rst f3af28e272eb4557964c519a77290910
 msgid "returns SwitchEndpoint"
-msgstr ""
+msgstr "返回 SwitchEndpoint。"
 
-#: ../../en/units/gateway_h2.rst:83 376ea1f6e02b4c548ccd15ea8c971674
+#: ../../source/units/gateway_h2.rst:83 84d86ab7058744159aecf147800f281b
 msgid "zigbee switch endpoint object."
 msgstr "zigbee 开关节点对象。"
 
-#: ../../en/units/gateway_h2.rst c16b42954f754494bf5dabb42e488316
+#: ../../source/units/gateway_h2.rst 4855b4218ddc42128d923af5698213e1
 msgid "return type"
 msgstr ""
 
-#: ../../en/units/gateway_h2.rst:84 a811f82b732645b984ae0401406c6fb1
-#, fuzzy
+#: ../../source/units/gateway_h2.rst:84 b3d9b36240194bcfa19efe9371c34104
 msgid "SwitchEndpoint"
-msgstr "创建 Switch Endpoint。"
+msgstr ""
 
-#: ../../en/units/gateway_h2.rst:96 95fa2b2ca8b44bd1bc8b176794afecd2
+#: ../../source/units/gateway_h2.rst:96 755d6f5d4c3f4dd28c673a7995379099
 msgid "Refer to :ref:`switchendpoint` for more details about SwitchEndpoint."
 msgstr "请参阅 :ref:`switchendpoint` 了解 SwitchEndpoint 的详细信息。"
 

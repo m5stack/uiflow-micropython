@@ -9,183 +9,186 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-27 17:57+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: 2025-05-27 18:00+0800\n"
 "Last-Translator: \n"
-"Language-Team: zh_CN <LL@li.org>\n"
 "Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"Generated-By: Babel 2.16.0\n"
-"X-Generator: Poedit 3.6\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/relay2.rst:2 a2e720fca2a34d97aea3c075208200ae
+#: ../../source/units/relay2.rst:2 a211127f92c341978a9fb7cb7a9d5dee
 msgid "Relay2 Unit"
 msgstr ""
 
-#: ../../en/units/relay2.rst:8 7ab6b43c52f44c1198b9080f6ac68efa
+#: ../../source/units/relay2.rst:8 c3778274121a4126ad974a9d94340155
 msgid ""
 "This is the driver library of Relay2 Unit, which is used to control the "
 "relay."
 msgstr "Relay2 Unit 驱动库，用于控制继电器。"
 
-#: ../../en/units/relay2.rst:10 e37bc949a4794cd5a89cd18bf9252d36
+#: ../../source/units/relay2.rst:10 a26fe699f1b84a399302f5494198c46c
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/relay2.rst:12 8b410f03be324787bab54d1c718bd103
+#: ../../source/units/relay2.rst:12 592cfdfae8634d6c9bb8448ffd69ba40
 msgid "|RELAY2|"
 msgstr ""
 
-#: ../../en/refs/unit.relay2.ref fd1b8eb90a9e4d9ebe7d3ef8b0050dd8
+#: ../../source/refs/unit.relay2.ref a56eef6068694946b8956960f4e1ade3
 msgid "RELAY2"
 msgstr ""
 
-#: ../../en/units/relay2.rst:16 19d84e2547de4b5f8bc7a2ed1c4c2ac3
+#: ../../source/units/relay2.rst:16 504f8729c18548b599e00af18498a594
 msgid "UiFlow2 Example"
-msgstr "UiFlow2 示例"
+msgstr "UiFlow2 应用示例"
 
-#: ../../en/units/relay2.rst:19 ../../en/units/relay2.rst:37
-#: 628867eba78e48c5990a30572f081378 c943c88b52d7418ca18eded1a226f283
+#: ../../source/units/relay2.rst:19 ../../source/units/relay2.rst:37
+#: 84422f3b59c54fe795a8ef6d012cc78b 8b1be82f7b8545ec98e312c23d816650
 msgid "control relay"
 msgstr "控制继电器"
 
-#: ../../en/units/relay2.rst:21 357871833610416097c51afa073c8367
+#: ../../source/units/relay2.rst:21 2a8744a58c274377b53aed1cb7811f7d
 msgid "Open the |relay2_core2_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |relay2_core2_example.m5f2| 项目。"
 
-#: ../../en/units/relay2.rst:23 ../../en/units/relay2.rst:39
-#: 0340a02062a547fb8b0cca28f16d9786 26f16f0acfb94afc815161975ce27a99
+#: ../../source/units/relay2.rst:23 ../../source/units/relay2.rst:39
+#: 0a2b1b2f2e9b4423952ce236e2227548 d897689649ad43fb8528ff58ee3ec5a3
 msgid ""
-"This example controls the relay of the Relay2 Unit and displays it on the "
-"screen."
+"This example controls the relay of the Relay2 Unit and displays it on the"
+" screen."
 msgstr "该示例控制 Relay2 Unit 的继电器并将其状态显示在屏幕上。"
 
-#: ../../en/units/relay2.rst:25 1cc34e995c1b4a9781bc4eb0b857069b
-#: 336cae8b0ab44cda925a85feca672aab 7cd59b02af0145f28223a1d3f772c263
-#: 967643f139fa43ffac0fe6b8139ba9af of unit.relay2.Relay2Unit:5
+#: ../../source/units/relay2.rst:25 1da13a3b490c43f4a86ddf17c33ae076
+#: 65e98024db9b4fb29322889c943fec89 aae34da494f44776933aaf378f110d5d
+#: cd4879650db249aa96349c3415ef6d28 of unit.relay2.Relay2Unit:5
 #: unit.relay2.Relay2Unit.get_relay_status:7
 #: unit.relay2.Relay2Unit.set_relay_cntrl:6
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/units/relay2.rst:27 d0df8bacfdbf42dc9f98b347117bc6c0
+#: ../../source/units/relay2.rst:27 3f12ef67417e48c79bb75ddba44201ee
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay2.ref:6 9b9d0efdd56f4987b617dea76ab53073
+#: ../../source/refs/unit.relay2.ref:6 774c2c75972f42efaf3129807a1ce058
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/relay2.rst:29 ../../en/units/relay2.rst:47
-#: 035dc573357a41f7a04cd7f9ba5918b4 579bbbb31c004f4da53dbe2f1288c0dd
+#: ../../source/units/relay2.rst:29 ../../source/units/relay2.rst:47
+#: 2710d1be9ff54542b525eb63cf753c8e 92c857c71a64441586e6163689c1a3eb
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/units/relay2.rst:31 ../../en/units/relay2.rst:49
-#: 9de65933dabf40e99986927c2da6af3d 9e7fc9c7a8204cf2a148552c743e11b7
+#: ../../source/units/relay2.rst:31 ../../source/units/relay2.rst:49
+#: 635d0f1c1ddb4f28b2a8d48f493348be f56e68b2fbb14efdbeb4d2a1bc9c8b68
 msgid "None"
 msgstr ""
 
-#: ../../en/units/relay2.rst:34 ff58355d656547ffab9e64eb34ed928d
+#: ../../source/units/relay2.rst:34 e98dc76e1dfc446e8008baff4b9986f4
 msgid "MicroPython Example"
-msgstr "MicroPython 示例"
+msgstr "MicroPython 应用示例"
 
-#: ../../en/units/relay2.rst:41 010d1dfe83a5435093e83e774cdf93e3
-#: 12fa7ade91414eaab0c0f4eba9cce32c 2a153b58ffaf453fbec1051169aa1665
-#: f04624064ced4c7bb0a67208e655087a of unit.relay2.Relay2Unit:9
+#: ../../source/units/relay2.rst:41 1178f9ff509541f29f892149e3e9faf7
+#: c4bcf6f3ab7143738b0ebb34963eb90c ed96ed04be3c48ba90a929d11eac2a23
+#: fdff345a4f0c43b0998776203db77f51 of unit.relay2.Relay2Unit:9
 #: unit.relay2.Relay2Unit.get_relay_status:11
 #: unit.relay2.Relay2Unit.set_relay_cntrl:10
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/units/relay2.rst:53 e09b3cbf9a534dd599ad1a31526904da
+#: ../../source/units/relay2.rst:53 8644b862b2244cf2a174ff4b888608d5
 msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/units/relay2.rst:56 e2459283dfd84ec2a1e68e7c9cd37cc1
+msgid "Relay2Unit"
 msgstr ""
 
-#: ../../en/units/relay2.rst:56 61a98a582b824f3e9caac4529c964fc8
-msgid "AccelUnit"
-msgstr ""
-
-#: 8f6d5aeffb894461acc918cc8543466a of unit.relay2.Relay2Unit:1
+#: 27e06d8bcd104317b48b5572b3851422 of unit.relay2.Relay2Unit:1
 msgid "Bases: :py:class:`object`"
-msgstr ""
+msgstr "基类：:py:class:`object`"
 
-#: a98ea6afa72042efacb0a910a1a35137 of unit.relay2.Relay2Unit:1
+#: 35e8095de4044ffbaaa0db56b12622bd of unit.relay2.Relay2Unit:1
 msgid "Create an Relay2Unit object."
-msgstr "创建 Relay2Unit 对象。"
+msgstr "创建一个 Relay2Unit 对象。"
 
-#: ../../en/units/relay2.rst 5a55789323d4452ba6dd1a3375da6a28
-#: 9dd1435f6ca44930bf84b4af3177584f ee841ed6f3e8488ebb5db44c5413ebe5 of
+#: ../../source/units/relay2.rst 49443ad4e6e8470793dacbff11a6c809
+#: 9171da6783724fa4bc5e019183f374dd 9bc6b90e78134b84aa81c5c4988cda76 of
 #: unit.relay2.Relay2Unit.get_relay_status
 #: unit.relay2.Relay2Unit.set_relay_cntrl
 msgid "Parameters"
-msgstr "参数"
+msgstr ""
 
-#: 849892e558e84319867acaac325c5386 of unit.relay2.Relay2Unit:3
+#: 18d6474edb4b4e75911b0f6906e4ae80 of unit.relay2.Relay2Unit:3
 msgid "The port of the relay."
 msgstr "继电器使用到的端口。"
 
-#: 5dddccb482e24fcf96ede2482a8a062b of unit.relay2.Relay2Unit:7
+#: 84e92866758c4dcfa10f0fde8a041b65 of unit.relay2.Relay2Unit:7
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay2.ref:8 b3cf7e2256ad44ddb88e55192715c674
+#: ../../source/refs/unit.relay2.ref:8 87873dc5f11e447cb7b481991c1c5dc4
 msgid "init.png"
 msgstr ""
 
-#: 271b21a2d06a4cb08572b4f64c5ef666 of
+#: 644da2e1fcf140109a9e9e5697e0b926 of unit.relay2.Relay2Unit.set_relay_cntrl:1
+msgid "Set the on/off status of a relay"
+msgstr "设置继电器的开/关状态。"
+
+#: 0ca0b38cb4c944679a66c5726139c8b9 of unit.relay2.Relay2Unit.set_relay_cntrl:3
+msgid "The relay number(the range is 1-2)."
+msgstr "继电器编号（范围为 1-2）。"
+
+#: 13c26605d52b48fdb4891f227894e218 of unit.relay2.Relay2Unit.set_relay_cntrl:4
+msgid "The control value(0: off, 1: on)."
+msgstr "控制值（0：关闭，1：打开）。"
+
+#: 63ebb29234944a0c8e390a8770e3ddbe cac57683c4a04a83b225ea0096a4ef8b of
+#: unit.relay2.Relay2Unit.get_relay_status
+#: unit.relay2.Relay2Unit.set_relay_cntrl
+msgid "Return type"
+msgstr ""
+
+#: 5bba8c5e311c456ba1a178854e37aace of unit.relay2.Relay2Unit.set_relay_cntrl:8
+msgid "|set_relay_cntrl.png|"
+msgstr ""
+
+#: ../../source/refs/unit.relay2.ref:12 0106bc21ab6b4efbabbff428516b8033
+msgid "set_relay_cntrl.png"
+msgstr ""
+
+#: 252265e4e2c54e7cab25a82003ea83ab of
 #: unit.relay2.Relay2Unit.get_relay_status:1
 msgid "Getting the on/off status of a relay"
-msgstr "获取继电器的开/关状态"
+msgstr "获取继电器的开/关状态。"
 
-#: 39e3a49e0e044648a1694bae035e84db of
+#: 9c03df522c3e48f1806e0abd15882242 of
 #: unit.relay2.Relay2Unit.get_relay_status:3
 msgid "The relay number."
 msgstr "继电器编号。"
 
-#: a30248f6b96d4dc48c67cf8247addd06 of unit.relay2.Relay2Unit.get_relay_status
+#: eb77a6e04f1444759b151e8112a65718 of unit.relay2.Relay2Unit.get_relay_status
 msgid "Returns"
-msgstr "返回"
+msgstr ""
 
-#: ab57f8bab81a4d4bb2657016f17d207c of
+#: 1396e4a47125429db51d777a1b805a21 of
 #: unit.relay2.Relay2Unit.get_relay_status:4
 msgid "relay status."
 msgstr "继电器状态。"
 
-#: 56dd1ca224c6434db0413d9dda1dd59a ed1148c81e2e454581a3cc00e6b41563 of
-#: unit.relay2.Relay2Unit.get_relay_status
-#: unit.relay2.Relay2Unit.set_relay_cntrl
-msgid "Return type"
-msgstr "返回类型"
-
-#: 01ce5af7c3e747f699cfbe9374d22814 of
+#: c8396ee6e758465ea3645b1e13167b16 of
 #: unit.relay2.Relay2Unit.get_relay_status:9
 msgid "|get_relay_status.png|"
 msgstr ""
 
-#: ../../en/refs/unit.relay2.ref:10 02b1fe9c5e2047fdaedd2909f4414081
+#: ../../source/refs/unit.relay2.ref:10 f688783995194347b3a6d5340c9c3777
 msgid "get_relay_status.png"
 msgstr ""
 
-#: 1335f290630842c8abaf5a9ac2ec3da6 of unit.relay2.Relay2Unit.set_relay_cntrl:1
-msgid "Set the on/off status of a relay"
-msgstr "设置继电器的开/关状态"
+#~ msgid "AccelUnit"
+#~ msgstr ""
 
-#: 2cb8317c08474323a4fcb6764bfc0c58 of unit.relay2.Relay2Unit.set_relay_cntrl:3
-msgid "The relay number(the range is 1-2)."
-msgstr "继电器编号（范围为 1-2）。"
-
-#: 7a8642dae5714864911bd4eb826c2ee2 of unit.relay2.Relay2Unit.set_relay_cntrl:4
-msgid "The control value(0: off, 1: on)."
-msgstr "控制值（0：关闭，1：打开）。"
-
-#: c8220c50dbe94c14af7e1248e3f0e4e9 of unit.relay2.Relay2Unit.set_relay_cntrl:8
-msgid "|set_relay_cntrl.png|"
-msgstr ""
-
-#: ../../en/refs/unit.relay2.ref:12 5356ff314c414204a05c83c0dba0bf8e
-msgid "set_relay_cntrl.png"
-msgstr ""

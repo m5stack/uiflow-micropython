@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-22 11:52+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,265 +18,282 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/m5ui/image.rst:4 ../../en/m5ui/image.rst:52
-#: 59ef4add906b41b1804e3973bf4a51a7 b16cbe9a816d4817b4f9deddfe26f513
+#: ../../source/m5ui/image.rst:4 ../../source/m5ui/image.rst:52
+#: 3d9636c8524141a5a02a64d21b29ceaf 82bebcd9b27c47a48496dd41e8d8f118
 msgid "M5Image"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:8 80f11e838d2b431fbe8e44bbc44c7365
+#: ../../source/m5ui/image.rst:8 9efc218ed7af4e10a305a10e466344b0
 msgid ""
 "M5Image is a widget that can be used to create image in the user "
 "interface."
 msgstr "M5Image 是一个可在用户界面中显示图像的控件。"
 
-#: ../../en/m5ui/image.rst:11 fba241f4f15a4a9da102afd3b911b692
+#: ../../source/m5ui/image.rst:11 ea372547ab274909bec47a221e5e0765
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
-#: ../../en/m5ui/image.rst:14 ../../en/m5ui/image.rst:33
-#: 5d49c0d041244751a234dd8bc5a0a49b
+#: ../../source/m5ui/image.rst:14 ../../source/m5ui/image.rst:33
+#: 692148595c0d4ce097a19e93a44d90b3 74f6c85b335740c88a09c98611543a0a
 msgid "show image"
 msgstr "显示图像"
 
-#: ../../en/m5ui/image.rst:16 c23ec2641c4e463896cecb9755e24e2d
+#: ../../source/m5ui/image.rst:16 58f7a507af994d1d9a61ccfc5567ae73
 msgid "Open the |cores3_show_image_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cores3_show_image_example.m5f2| 项目。"
 
-#: ../../en/m5ui/image.rst:18 ../../en/m5ui/image.rst:35
-#: 1df0f203a7d64485aee4e85e84d6d0b5
+#: ../../source/m5ui/image.rst:18 ../../source/m5ui/image.rst:35
+#: 52161c1e02594888867d4788bdb65d76 efdb47e5dcf8463693b8fce94a658169
 msgid "This example shows how to display an image on the screen."
 msgstr "该示例演示如何在屏幕上显示图像。"
 
-#: ../../en/m5ui/image.rst:20 ../../en/m5ui/image.rst:64
-#: ../../en/m5ui/image.rst:81 ../../en/m5ui/image.rst:97
-#: ../../en/m5ui/image.rst:113 ../../en/m5ui/image.rst:166
-#: 31cb071512d148b89648a79439bccdaa m5ui.image.M5Image.set_image:5
+#: ../../source/m5ui/image.rst:20 ../../source/m5ui/image.rst:64
+#: ../../source/m5ui/image.rst:81 ../../source/m5ui/image.rst:97
+#: ../../source/m5ui/image.rst:113 ../../source/m5ui/image.rst:166
+#: 169f2a0775c6485b9f962d8b1cf47fc4 1a85f7e80afd4a6a8a699e124c1c7634
+#: 4a931965008d46ee9c070be64903f7cb 8b573084f0b44116b81ca480c03d798f
+#: a5c904a94b58413e91b9b662f225471a c0b2b4e59f134f78842ef7a377cad196
+#: c91939f07fa74724aa197be06bc2e6ba cef8f1cb04fe4369a3cca6f739343b95
+#: d9399d7aa8d04e2c9dceac592e133284 m5ui.image.M5Image.set_image:5
 #: m5ui.image.M5Image.set_rotation:5 m5ui.image.M5Image.set_scale:6 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/image.rst:22 8c81ea4af0da4b4b947ac731c495add0
+#: ../../source/m5ui/image.rst:22 edfda465173b46998ea991f76f3433df
 msgid "|cores3_show_image_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:14 eff9728ed324422f82fa19876de13c62
+#: ../../source/refs/m5ui.image.ref:14 d75282618f27426ca1baffbc135ec009
 msgid "cores3_show_image_example.png"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:24 ../../en/m5ui/image.rst:43
-#: 4d95d498196842dab975c900b9a55ddc
+#: ../../source/m5ui/image.rst:24 ../../source/m5ui/image.rst:43
+#: a9d8c9a94f9546c3ad04e2a4c2cc450c efe0f69a77454ca6a36ae1fa5c66ce0a
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/m5ui/image.rst:26 ../../en/m5ui/image.rst:45
-#: d921d19fb06941f58e35e462941733c8
+#: ../../source/m5ui/image.rst:26 ../../source/m5ui/image.rst:45
+#: bdfc6f1b8d544c978c3d3474d6250c49 eb080d1d2a464f8992a8a68d0ef745d0
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:30 aecdee844f1543c993e1d78ab48580c9
+#: ../../source/m5ui/image.rst:30 61f74709d8a249959e4a6128177af39c
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../en/m5ui/image.rst:37 ../../en/m5ui/image.rst:68
-#: ../../en/m5ui/image.rst:85 ../../en/m5ui/image.rst:101
-#: ../../en/m5ui/image.rst:117 ../../en/m5ui/image.rst:170
-#: 297b0cb0f5784bf597709765289779e5 m5ui.image.M5Image:8
-#: m5ui.image.M5Image.set_image:9 m5ui.image.M5Image.set_rotation:9
-#: m5ui.image.M5Image.set_scale:10 of
+#: ../../source/m5ui/image.rst:37 ../../source/m5ui/image.rst:68
+#: ../../source/m5ui/image.rst:85 ../../source/m5ui/image.rst:101
+#: ../../source/m5ui/image.rst:117 ../../source/m5ui/image.rst:170
+#: 08cae81d461c4cc49a5d265e1bd5fbf5 2ab432bb1a7f4ab48d724da13e0aaf71
+#: 305d2ae23a2c4fe78ae9b5c0e2972d13 418590a1e260477891b110951e380eea
+#: 4467d58e45c14568baf9d53aac1ecf94 5987e8715fc649e3aae40bd96a7ddba7
+#: 8a0d29bdf462410284b65b0429690bc2 968776fe7e8042c0a52ed529f4887604
+#: a88f88895dc14172ac449ac4372c5c6c b51966db525244c99a172ed2b929796e
+#: m5ui.image.M5Image:8 m5ui.image.M5Image.set_image:9
+#: m5ui.image.M5Image.set_rotation:9 m5ui.image.M5Image.set_scale:10 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/image.rst:49 c2ceb3f64d0546be8007e88058e20538
+#: ../../source/m5ui/image.rst:49 39f49aa0c35f4560a213dfc07826375b
 msgid "**API**"
-msgstr ""
+msgstr "API参考"
 
-#: 049a75f9354943ed8657fe78a5cbe3f7 m5ui.image.M5Image:1 of
+#: 3f5969f40ab0455686bc3685fc528cf0 m5ui.image.M5Image:1 of
 msgid "Bases: :py:class:`~lvgl.image`"
 msgstr ""
 
-#: f292f253e25a4d718f5dbec4e0b02088 m5ui.image.M5Image:1 of
+#: 4de335247b3a4837aab0f6eaf4958139 m5ui.image.M5Image:1 of
 msgid "Create a image object."
 msgstr "创建一个图像对象。"
 
-#: ../../en/m5ui/image.rst 86729ee12c674d32aea2dae2da7894e3
+#: ../../source/m5ui/image.rst 25dd135adbc6493a9b1ff7ffcbf8a125
+#: 6416a895ba0245a289b0f85fd13d318c 7e914baa5498435bbf8946caa2396f7a
+#: 895b70507a5645af99de329978d8aa71 a79d596411a14a9b853803f9b4b91a1c
+#: c411704b7f4a4c40947c59e78fde4d4e c89d95532b1d43f4908c4fc94fe66a29
+#: d2bede1777e2410894cea4eaaaada4b8 e1795a99af4c4effadc0661da3e0d9b3
 #: m5ui.image.M5Image.set_image m5ui.image.M5Image.set_rotation
 #: m5ui.image.M5Image.set_scale of
 msgid "Parameters"
-msgstr "参数"
+msgstr ""
 
-#: 3742e69c06194b94b9c11afe4f4bfaa5 49e9d407a7d64059a13227027da17dba
+#: 7c868089b8e944e5a45a8c8915e5c190 a56f869e29f94185b85a686f30b1d685
 #: m5ui.image.M5Image:3 m5ui.image.M5Image.set_image:3 of
 msgid "The path of the image file."
 msgstr "图像文件的路径。"
 
-#: b541baf1a7874a98a09246196908bb1f m5ui.image.M5Image:4 of
+#: 192f487d58c74389bfea0fce4b80e214 m5ui.image.M5Image:4 of
 msgid "The x position of the image."
 msgstr "图像的 x 坐标。"
 
-#: f58674b306cf4e8aa6ea38b4a49d0232 m5ui.image.M5Image:5 of
+#: 9040c1688f304c049d3457800d009baa m5ui.image.M5Image:5 of
 msgid "The y position of the image."
 msgstr "图像的 y 坐标。"
 
-#: 16f395d4ce6d45ce97986ef95d5b1ed1 m5ui.image.M5Image:6 of
+#: 142e0abbc9204e8db37bb32ed979fa94 m5ui.image.M5Image:6 of
 msgid ""
 "The parent object to attach the image to. If not specified, the image "
 "will be attached to the default screen."
 msgstr "要将图像附加到的父对象；若未指定，则附加到默认屏幕。"
 
-#: ../../en/m5ui/image.rst:59 20c504d46cce4553ba3bb68e9857060a
+#: ../../source/m5ui/image.rst:59 3d251e694a5e42bb98fff20f1b5e44f7
 msgid ""
 "Set a flag on the object. If ``value`` is True, the flag is added; if "
 "False, the flag is removed."
 msgstr "在对象上设置标志。若 ``value`` 为 True，则添加该标志；为 False 则移除。"
 
-#: ../../en/m5ui/image.rst:61 3e032fc3fccf44aab1e76ac2ccd94c0a
+#: ../../source/m5ui/image.rst:61 48e01825311e481595982ca43d27d5ba
 msgid "The flag to set."
 msgstr "要设置的标志。"
 
-#: ../../en/m5ui/image.rst:62 15241b4c3aee401d95d1d777df2ed4ff
+#: ../../source/m5ui/image.rst:62 8dbd8a00dac4457cbfa1cf8210414e95
 msgid "If True, the flag is added; if False, the flag is removed."
 msgstr "若为 True 则添加标志；若为 False 则移除标志。"
 
-#: ../../en/m5ui/image.rst:66 17a44a0c4f0f48b2924caf80c479e6dd
+#: ../../source/m5ui/image.rst:66 657d4a251bef40948d8fdb850dd76122
 msgid "|set_hidden.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:4 27d4b0e3420a47d59f4aca49083ca4a9
+#: ../../source/refs/m5ui.image.ref:4 0ea024fab2e04f1082e56c9e36409490
 msgid "set_hidden.png"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:76 3bb74b0aee3748e7bf173a389cf180ba
+#: ../../source/m5ui/image.rst:76 a664d7870a6b44868e43876347cca05b
 msgid "Set the position of the image."
 msgstr "设置图像的位置。"
 
-#: ../../en/m5ui/image.rst:78 ../../en/m5ui/image.rst:95
-#: f5e4c7e526d246c0b4132a2ef9a69913
+#: ../../source/m5ui/image.rst:78 ../../source/m5ui/image.rst:95
+#: bec68b3b58d84c9b8de758da2449f6c3 dd5b4da1d6a646ed9ee1ac60d40d22a3
 msgid "The x-coordinate of the image."
 msgstr "图像的 x 坐标。"
 
-#: ../../en/m5ui/image.rst:79 ../../en/m5ui/image.rst:111
-#: 54e475225c644dfbbcb171633990f0ba
+#: ../../source/m5ui/image.rst:79 ../../source/m5ui/image.rst:111
+#: 88f30fb5b3e8484b887f4af9946539a4 c18be1828f714b85bac5dfaea5a208be
 msgid "The y-coordinate of the image."
 msgstr "图像的 y 坐标。"
 
-#: ../../en/m5ui/image.rst:83 3a8cf141b542438eb416b2ab54ca393f
+#: ../../source/m5ui/image.rst:83 e0e709fd18e348f48cd532e25d3d5572
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:5 24a4191acef241d9a4969e04504367a9
+#: ../../source/refs/m5ui.image.ref:5 aeba6a1fefbf48a49434a42ed4845fc0
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:93 611e471bd31749bb99c619e9793f6168
+#: ../../source/m5ui/image.rst:93 f29e2754f9c6425f9a51887941e42d55
 msgid "Set the x-coordinate of the image."
 msgstr "设置图像的 x 坐标。"
 
-#: ../../en/m5ui/image.rst:99 5eda9f9a336b44ab9149b2c9025580b0
+#: ../../source/m5ui/image.rst:99 92ac5588b6cf4623aeccb2e4172d2dc7
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:8 7b8998924bc6499f93fc7be7de337fc0
+#: ../../source/refs/m5ui.image.ref:8 6e7270b8aabb4a94ae5e1c5043cf4175
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:109 c395debe7cd14c63995fcd2d6af994b7
+#: ../../source/m5ui/image.rst:109 6c6b66e6bf2745f48d7c655d70d1525c
 msgid "Set the y-coordinate of the image."
 msgstr "设置图像的 y 坐标。"
 
-#: ../../en/m5ui/image.rst:115 d689cef4eb664e75863cc7811103a6f5
+#: ../../source/m5ui/image.rst:115 69e042c7529746d691f4576e49338115
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:9 3e6941e1a24c442c89a1d8f70ba3d8b5
+#: ../../source/refs/m5ui.image.ref:9 94b988b0f7b74297a6d66d8c3263246d
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/image.rst:159 92c076d0e0b4422987c865b109da27a9
+#: ../../source/m5ui/image.rst:159 9e69faa743484469a057dfda2271b9a2
 msgid "Align the image to another object."
 msgstr "将图像对齐到另一个对象。"
 
-#: ../../en/m5ui/image.rst:161 61374108f5f345b6819c66b4129d89d0
+#: ../../source/m5ui/image.rst:161 908c2f36e4e54d3bab8b67ffa2cabf1f
 msgid "The object to align to."
 msgstr "要对齐到的对象。"
 
-#: ../../en/m5ui/image.rst:162 361946d1d10747cd9a6f20aba544d9a4
+#: ../../source/m5ui/image.rst:162 8bbbaeeed3564a0dbea88cfdf724ce0f
 msgid "The alignment type."
 msgstr "对齐类型。"
 
-#: ../../en/m5ui/image.rst:163 4794a10c97644ef6b1dff87cfdd86707
+#: ../../source/m5ui/image.rst:163 2c898967ff5d42b6b74fa3cdbdfe964d
 msgid "The x-offset from the aligned object."
 msgstr "相对于对齐对象的 x 偏移量。"
 
-#: ../../en/m5ui/image.rst:164 c3ee4b8072d44b879a121cad26445c0f
+#: ../../source/m5ui/image.rst:164 c0599e63d04c49ed945a5867b189eb8b
 msgid "The y-offset from the aligned object."
 msgstr "相对于对齐对象的 y 偏移量。"
 
-#: ../../en/m5ui/image.rst:168 f3a36705019a4260b94cc1b79eed94e6
+#: ../../source/m5ui/image.rst:168 2abc1586e00849e8a8a062e35ac33e31
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:1 69dcdbfc60284f939a79fe2699ad5fc3
+#: ../../source/refs/m5ui.image.ref:1 55541c18e15a465595a069dcf092faca
 msgid "align_to.png"
 msgstr ""
 
-#: c8c7a9a0479a422eaf5d1039d7bf5beb m5ui.image.M5Image.set_image:1 of
+#: 174cce2769ad4d4795ccaeedafd5fc32 m5ui.image.M5Image.set_image:1 of
 msgid "Set the image to be displayed."
 msgstr "设置要显示的图像。"
 
-#: 17a44a0c4f0f48b2924caf80c479e6dd m5ui.image.M5Image.set_image:7 of
+#: 00e0c766ca294b11a1915c98b009e97e m5ui.image.M5Image.set_image:7 of
 msgid "|set_image.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:7 eff9728ed324422f82fa19876de13c62
+#: ../../source/refs/m5ui.image.ref:7 5a602e72b89e46f98f48c99a859f21f3
 msgid "set_image.png"
 msgstr ""
 
-#: c05c9c1dbf1d4d5fb958d6716441feed m5ui.image.M5Image.set_rotation:1 of
+#: 71c725b220144b1caca2b75e28f58c52 m5ui.image.M5Image.set_rotation:1 of
 msgid "Set the rotation of the image."
 msgstr "设置图像的旋转角度。"
 
-#: 8814a9edc3b743428d94fa815fd38620 m5ui.image.M5Image.set_rotation:3 of
+#: 4d7c7ed397c84e6195936eeac3133e12 m5ui.image.M5Image.set_rotation:3 of
 msgid "The rotation angle in degrees (0, 90, 180, 270)."
 msgstr "旋转角度（0、90、180、270）。"
 
-#: 10f2c4f0cc5e4795a792784eae174ade m5ui.image.M5Image.set_rotation:7 of
+#: d946ff4827014d9aaa20a7d6a7d5f304 m5ui.image.M5Image.set_rotation:7 of
 msgid "|set_rotation.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:10 27d4b0e3420a47d59f4aca49083ca4a9
+#: ../../source/refs/m5ui.image.ref:10 0af68d117e16468eb4c9eb4b82dbdd15
 msgid "set_rotation.png"
 msgstr ""
 
-#: abfb0eef70b647ee8e3e5153e6d2814b m5ui.image.M5Image.set_scale:1 of
+#: 0f1e067f0f1d4dca85bbfc3d95719f01 m5ui.image.M5Image.set_scale:1 of
 msgid "Set the scale of the image."
 msgstr "设置图像的缩放比例。"
 
-#: 22d5912df41c4ce5a8beb790ca320d81 m5ui.image.M5Image.set_scale:3 of
-msgid ""
-"The horizontal scale factor. If `scale_y` is not provided, this value "
-"will be used for both axes."
-msgstr "水平缩放因子。如果未提供 scale_y，则此值将用于两个轴。"
+#: b1020bbaa1254504b78015e9f81b9a59 m5ui.image.M5Image.set_scale:3 of
+#, fuzzy
+msgid "The horizontal scale factor."
+msgstr "图像的垂直缩放因子。"
 
-#: 5f49fa823b534d249125f3d0432b1332 m5ui.image.M5Image.set_scale:4 of
+#: 2c8b1cb181e24649a5a4602ff7f5bcaa m5ui.image.M5Image.set_scale:4 of
 msgid "The vertical scale factor."
 msgstr "图像的垂直缩放因子。"
 
-#: 3431e1edeff3409fb8997cb1a1f60bd5 m5ui.image.M5Image.set_scale:8 of
+#: de9b9986b102463baa05b8a4e7bb915b m5ui.image.M5Image.set_scale:8 of
 msgid "|set_scale.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.image.ref:11 eff9728ed324422f82fa19876de13c62
+#: ../../source/refs/m5ui.image.ref:11 fdff407c7ed2492a9a7160bbd8a20868
 msgid "set_scale.png"
 msgstr ""
 
 #~ msgid "Returns"
-#~ msgstr "返回值"
+#~ msgstr ""
 
 #~ msgid "|set_flag.png|"
 #~ msgstr ""
 
 #~ msgid "The horizontal scale factor."
 #~ msgstr "图像的水平缩放因子。"
+
+#~ msgid ""
+#~ "The horizontal scale factor. If "
+#~ "`scale_y` is not provided, this value"
+#~ " will be used for both axes."
+#~ msgstr "水平缩放因子。如果未提供 scale_y，则此值将用于两个轴。"
 

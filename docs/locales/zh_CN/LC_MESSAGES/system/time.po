@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-16 15:35+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,25 +18,25 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/system/time.rst:2 7acb8ec201504a47a79f3de46bd017bd
+#: ../../source/system/time.rst:2 302a4fe316fd4d28bb72dc8c7928571f
 msgid ":mod:`time` -- time related functions"
-msgstr ""
+msgstr ":mod:`time` —— 与时间相关的函数"
 
-#: ../../en/system/time.rst:9 4f2d6385161a4e9cbc87c7f0c1c495b4
+#: ../../source/system/time.rst:9 ba802123713345ad8f4f0b4697b2dd67
 msgid ""
 "The ``time`` module provides functions for getting the current time and "
 "date, measuring time intervals, and for delays."
-msgstr ""
+msgstr "``time`` 模块提供获取当前时间和日期、测量时间间隔以及执行延时的函数。"
 
-#: ../../en/system/time.rst:12 ed05fb06c62c44289e707eb0cc1b898e
+#: ../../source/system/time.rst:12 19de9f59d7f84e8499215c1aa4a89209
 msgid ""
 "**Time Epoch**: It is January 1, 1970, 00:00:00 (UTC) on all platforms. "
 "Epoch year may be determined with ``gmtime(0)[0]``."
-msgstr ""
+msgstr "**时间纪元（Time Epoch）**：在所有平台上都是 1970 年 1 月 1 日 00:00:00（UTC）。可以通过 ``gmtime(0)[0]`` 获取纪元年份。"
 
-#: ../../en/system/time.rst:15 a08d52c24dd943bd9a0e40ee96eefee2
+#: ../../source/system/time.rst:15 c4ee60460c724ceb94c53b164a898297
 msgid ""
 "**Maintaining actual calendar date/time**: This requires a Real Time "
 "Clock (RTC). On systems with underlying OS (including some RTOS), an RTC "
@@ -46,261 +46,261 @@ msgid ""
 "depends on ``machine.RTC()`` object. The current calendar time may be set"
 " using ``machine.RTC().datetime(tuple)`` function, and maintained by "
 "following means:"
-msgstr ""
+msgstr "**维护实际日历日期/时间**：这需要实时时钟（RTC）。在具有底层操作系统（包括某些 RTOS） 的系统上，RTC 可能是隐含存在的。设置和维护实际日历时间是 OS/RTOS 的职责，并在 MicroPython 之外完成，MicroPython 仅通过操作系统 API 查询日期/时间。而在裸机端口上，系统时间依赖 ``machine.RTC()`` 对象。可以使用 ``machine.RTC().datetime(tuple)`` 函数设置当前日历时间，并通过以下方式进行维持："
 
-#: ../../en/system/time.rst:24 a10ff306e1ae4eacac1f632d670e0c7e
+#: ../../source/system/time.rst:24 5fe68046c1f448128ecd226c3237526c
 msgid ""
 "By a backup battery (which may be an additional, optional component for a"
 " particular board)."
-msgstr ""
+msgstr "通过后备电池供电（对于某些开发板，这可能是一个额外的可选组件）。"
 
-#: ../../en/system/time.rst:26 4997e002f49c408fa9c0e5af32d491a6
+#: ../../source/system/time.rst:26 ef9c9f9cf2fa42009d3e26fbb095f8e6
 msgid "Using networked time protocol (requires setup by a port/user)."
-msgstr ""
+msgstr "使用网络时间协议进行同步（需要由端口或用户进行配置）。"
 
-#: ../../en/system/time.rst:27 cd55ca10372e4aa1a941aebd0937c94a
+#: ../../source/system/time.rst:27 8cb2a74ca9c2429aa78f939de00b04bc
 msgid ""
 "Set manually by a user on each power-up (many boards then maintain RTC "
 "time across hard resets, though some may require setting it again in such"
 " case)."
-msgstr ""
+msgstr "由用户在每次上电时手动设置（许多开发板在硬复位后会保持 RTC 时间，尽管有些板子在这种情况下可能需要重新设置）。"
 
-#: ../../en/system/time.rst:31 62ab43a045d74154a2c04e60d8b40996
+#: ../../source/system/time.rst:31 adc0910ab665420083daa39f588df0ce
 msgid ""
 "If actual calendar time is not maintained with a system/MicroPython RTC, "
 "functions below which require reference to current absolute time may "
 "behave not as expected."
-msgstr ""
+msgstr "如果系统或 MicroPython 的 RTC 未维护实际日历时间，下面那些需要参考当前绝对时间的函数可能不会按照预期工作。"
 
-#: ../../en/system/time.rst:35 6fcf2e1fb886466ab559df6b8b05c2d1
+#: ../../source/system/time.rst:35 8983e02282a84a5a9c3a06496fc51a43
 msgid "Micropython Example:"
-msgstr ""
+msgstr "MicroPython 示例："
 
-#: ../../en/system/time.rst:41 40eb5c48032346fa8c56b3f30271608a
+#: ../../source/system/time.rst:41 eadbf23420e14d4d9c4b9669e86dea8e
 msgid "UIFLOW2 Example:"
-msgstr ""
+msgstr "UiFlow2 示例："
 
-#: ../../en/system/time.rst:43 d0dbcb0cc0e04de3a50c4502721badf1
+#: ../../source/system/time.rst:43 6b793b16d2554a44acd632df3dcdc4c4
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:35 28f48610f08d4b5fa9959e0f9000659e
+#: ../../source/refs/system.time.ref:35 656128fc281446cbaacc5f76390412fb
 msgid "example.png"
 msgstr ""
 
-#: ../../en/system/time.rst:47 c42f73837b9e42c28e248558915a8232
+#: ../../source/system/time.rst:47 f2d4919638d74b77a91ad17bc962e3dc
 msgid "|cores3_time_example.m5f2|"
 msgstr ""
 
-#: ../../en/system/time.rst:50 bca4e777f8aa485cbdd41392a2b8f26b
+#: ../../source/system/time.rst:50 afb8a4d5e99a4389b4232de8a2b332f6
 msgid "Functions"
 msgstr ""
 
-#: ../../en/system/time.rst:54 c00adae64cdc45699535e183c02b85c5
+#: ../../source/system/time.rst:54 bd4e33ddb8fa4837b8b92ec49f8201c1
 msgid ""
 "When no parameters are passed in, get the current time zone and return "
 "the string of the time zone."
-msgstr ""
+msgstr "当不传入任何参数时，获取当前时区并返回表示该时区的字符串。"
 
-#: ../../en/system/time.rst:57 ../../en/system/time.rst:64
-#: ../../en/system/time.rst:93 ../../en/system/time.rst:105
-#: ../../en/system/time.rst:118 ../../en/system/time.rst:132
-#: ../../en/system/time.rst:144 ../../en/system/time.rst:170
-#: ../../en/system/time.rst:178 ../../en/system/time.rst:196
-#: ../../en/system/time.rst:226 ../../en/system/time.rst:299
-#: ../../en/system/time.rst:330 ../../en/system/time.rst:339
-#: 015bea67a30e49559eeafb23785178f0 089a80b647184bb99490c35fa0a7228a
-#: 0defaa0943514c65beb6397ced06a9a0 1dc40357c0f743019774937c66f4b9ff
-#: 3c9cb7e06c3e42b8bfacf214e6acefdc 423dee2fd8fb4de4a0d8a3ed97161660
-#: 60ef3ee3a29644489fe226fe8038341d 62e7a9a80aa24a278743c18edcaf5c95
-#: 86a6054a98a647a1b9b54dafea931543 8c19e4b3c38d4251a79a806e4b89543d
-#: 94b396c5d50a4aa7b804d86fe7382544 c06a6264d6f3483699a3656bf4f1315d
-#: cfd6a0a6375844ac93c4e25cf32fc116 d256dea69a7341789441a7a15ba6908d
+#: ../../source/system/time.rst:57 ../../source/system/time.rst:64
+#: ../../source/system/time.rst:93 ../../source/system/time.rst:105
+#: ../../source/system/time.rst:118 ../../source/system/time.rst:132
+#: ../../source/system/time.rst:144 ../../source/system/time.rst:170
+#: ../../source/system/time.rst:178 ../../source/system/time.rst:196
+#: ../../source/system/time.rst:226 ../../source/system/time.rst:299
+#: ../../source/system/time.rst:330 ../../source/system/time.rst:339
+#: 045d8852e61d46db81e6fe5b893d7064 362c76cc801f4d7bba3dc756ed56b020
+#: 4851947b874d4c8ebae289ba93c99604 5210271d4357442595bb830725094bc3
+#: 61ab2065ecca42208070dd11272b1c8a 904d2ddceb1e408d81feb503ff55483f
+#: 9c2964c79fc540b8a5c5916a185cae77 aae178d39ab8421581b9da0d76dea278
+#: cf209a5a05bb4637ae0394e196e43586 cf41e5480d4c471fb24c3f0800c8c2ef
+#: e193361d9ecd45d380a27d67045901e5 efb6ef230f4e44f79643853620fa9b37
+#: f55ae04600864761bd40178354da9e1c fa025f26a25e45cfbdc9a1aabd8eb33b
 msgid "UIFLOW2:"
 msgstr ""
 
-#: ../../en/system/time.rst:59 1235df7b433d46738f37a36a4fc08d81
+#: ../../source/system/time.rst:59 d33f167d1d464997a95cc09bc1bf5d63
 msgid "|timezone.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:1 07444ee6ebe748c69c24201bca624da0
+#: ../../source/refs/system.time.ref:1 eeba57a11b2840f39b4d8342f204dd39
 msgid "timezone.png"
 msgstr ""
 
-#: ../../en/system/time.rst:61 3f2cbf31a0b64454837032b687ba4f1d
+#: ../../source/system/time.rst:61 a7e5f39a9f4d41d58cefd4f77e1c2fb2
 msgid ""
 "Pass in a time zone string to set the time zone. The value of ``tz`` can "
 "be found at this `link <tz_database_>`_."
-msgstr ""
+msgstr "传入一个时区字符串来设置时区。``tz`` 的可选值可以在此 `链接 <tz_database_>`_ 中找到。"
 
-#: ../../en/system/time.rst:66 6f058c3619064c2e9a73db14ee2bd93c
+#: ../../source/system/time.rst:66 defde03424434e789f8e0113d9f22d02
 msgid "|timezone1.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:3 1e68a055282b4ea9ba144c32e7114fed
+#: ../../source/refs/system.time.ref:3 a9eaaf1b0ab94b54bfc31b3104afb0da
 msgid "timezone1.png"
 msgstr ""
 
-#: ../../en/system/time.rst:68 7ce20167071c4ab6a5821ed2645e9c16
+#: ../../source/system/time.rst:68 2fc853a1288b4183adafb6594b415bb8
 msgid "|timezone2.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:5 7984c64673064fdfa7e146c36e2d691e
+#: ../../source/refs/system.time.ref:5 f86141812a334f5dba09589eb45c242b
 msgid "timezone2.png"
 msgstr ""
 
-#: ../../en/system/time.rst:73 de3730fb45694241a625f36d9b282ac0
+#: ../../source/system/time.rst:73 09ab24bfdc6542688545eaceec16279c
 msgid ""
 "Convert the time *secs* expressed in seconds since the Epoch (see above) "
 "into an 8-tuple which contains: ``(year, month, mday, hour, minute, "
 "second, weekday, yearday)`` If *secs* is not provided or None, then the "
 "current time from the RTC is used."
-msgstr ""
+msgstr "将自时间纪元（见上文）起的秒数 *secs* 转换为一个包含 8 个元素的元组：``(year, month, mday, hour, minute, second, weekday, yearday)``。如果未提供 *secs* 或其为 None，则使用 RTC 中的当前时间。"
 
-#: ../../en/system/time.rst:79 e9c451c71f074287b7ae4fcfb220e56b
+#: ../../source/system/time.rst:79 90ed0867ccc24df987e04f0f5dbe3166
 msgid ""
 "The `gmtime()` function returns a date-time tuple in UTC, and "
 "`localtime()` returns a date-time tuple in local time."
-msgstr ""
+msgstr "`gmtime()` 函数返回 UTC 的日期时间元组，而 `localtime()` 返回本地时间的日期时间元组。"
 
-#: ../../en/system/time.rst:82 861034e451594c379cb17f6eba0cc35d
+#: ../../source/system/time.rst:82 ada70a7df3c247f2ac9fb8ab6f3774a1
 msgid "The format of the entries in the 8-tuple are:"
-msgstr ""
+msgstr "该 8 元组中各项的含义如下："
 
-#: ../../en/system/time.rst:84 5a0e99bf35024bfe9997ca6703536210
+#: ../../source/system/time.rst:84 39536eff90cb414d814e9c414fd6e218
 msgid "year includes the century (for example 2014)."
-msgstr ""
+msgstr "year 含有世纪信息（例如 2014）。"
 
-#: ../../en/system/time.rst:85 c89f244df7a44814aa2b028b704c3e1c
+#: ../../source/system/time.rst:85 901416316c904ede8e3ef0f47ff720b6
 msgid "month   is 1-12"
-msgstr ""
+msgstr "month 的取值范围为 1–12。"
 
-#: ../../en/system/time.rst:86 aedfa21bbd7a4142957a02a07333df17
+#: ../../source/system/time.rst:86 94b96b9ccbbb4290869427139d52bd51
 msgid "mday    is 1-31"
-msgstr ""
+msgstr "mday 的取值范围为 1–31。"
 
-#: ../../en/system/time.rst:87 2e604b6079f64240b40fd0c8b5acaaa8
+#: ../../source/system/time.rst:87 c880ed9ccfa94af68878689ce695e8a9
 msgid "hour    is 0-23"
-msgstr ""
+msgstr "hour 的取值范围为 0–23。"
 
-#: ../../en/system/time.rst:88 3174485356ab4006acfbc3a12ca0dfe7
+#: ../../source/system/time.rst:88 dd4209c3ad014e058ef85ba6623add24
 msgid "minute  is 0-59"
-msgstr ""
+msgstr "minute 的取值范围为 0–59。"
 
-#: ../../en/system/time.rst:89 d891aca227f44b4db5dff3d28c07b064
+#: ../../source/system/time.rst:89 7ae3438e087e4ce3953e481d2a62799e
 msgid "second  is 0-59"
-msgstr ""
+msgstr "second 的取值范围为 0–59。"
 
-#: ../../en/system/time.rst:90 5193c8d4f93a4368bc948123a4b00c55
+#: ../../source/system/time.rst:90 85b8b324ba1f479ebd6c9e04a39b4266
 msgid "weekday is 0-6 for Mon-Sun"
-msgstr ""
+msgstr "weekday 的取值范围为 0–6，分别表示周一到周日。"
 
-#: ../../en/system/time.rst:91 ad3ea1bd462e4daab80bce8631cb4712
+#: ../../source/system/time.rst:91 6c1f7dd1225943c7ad76da89067ead8a
 msgid "yearday is 1-366"
-msgstr ""
+msgstr "yearday 的取值范围为 1–366。"
 
-#: ../../en/system/time.rst:95 490192b1420346baaf320267744aaa31
+#: ../../source/system/time.rst:95 49f867fee3774a76b2cf4e18e06a2c39
 msgid "|gmtime.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:7 33072b7a1ea5476d810621659ae4fd3c
+#: ../../source/refs/system.time.ref:7 8824541973444914aca87624373ce565
 msgid "gmtime.png"
 msgstr ""
 
-#: ../../en/system/time.rst:97 8655ea32a421484cbb38136056c897ab
+#: ../../source/system/time.rst:97 3bc6d1a770274ba1b4fa5d24f361cdc3
 msgid "|localtime.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:9 6d38d3fe26314001a5b7f12ef438650e
+#: ../../source/refs/system.time.ref:9 28cfeaa68b6d4b938843c7f8268f9ff6
 msgid "localtime.png"
 msgstr ""
 
-#: ../../en/system/time.rst:101 1b0d65ed7efb40698310504b5d439d40
+#: ../../source/system/time.rst:101 736c14122bfe4de4ae4776df8d3a4b4f
 msgid ""
 "This is inverse function of localtime. It's argument is a full 8-tuple "
 "which expresses a time as per localtime. It returns an integer which is "
-"the number of seconds since Jan 1, 2000."
-msgstr ""
+"the number of seconds since Jan 1, 1970."
+msgstr "这是 `localtime()` 的反函数。其参数是一个完整的 8 元组，表示一个与 `localtime()` 相同格式的时间。返回值为自 1970 年 1 月 1 日以来的秒数（整数）。"
 
-#: ../../en/system/time.rst:107 584324a396254c43b706010e7f02bfd1
+#: ../../source/system/time.rst:107 be7d7b938deb4c74ac89b376ff98487b
 msgid "|mktime.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:11 029ec0b233ec44c1889fa035382b3efd
+#: ../../source/refs/system.time.ref:11 5fa894135e5a44eab4a9234de8f9ab47
 msgid "mktime.png"
 msgstr ""
 
-#: ../../en/system/time.rst:109 97cd31574492404e86adec35bf7b3a74
+#: ../../source/system/time.rst:109 7e303a0e8a484a17b9ee4a65008c0387
 msgid "|mktime1.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:13 372b5bd7a6d04a22ac65f3c5cca72cb4
+#: ../../source/refs/system.time.ref:13 c5ca9e62fe654138ad28fffa366bf2d5
 msgid "mktime1.png"
 msgstr ""
 
-#: ../../en/system/time.rst:113 1a21b0a320f0403aa48f1c875fbeed21
+#: ../../source/system/time.rst:113 034bc4cdd3514ff48e44c97d2e247d89
 msgid ""
 "Sleep for the given number of seconds. Some boards may accept *seconds* "
 "as a floating-point number to sleep for a fractional number of seconds. "
 "Note that other boards may not accept a floating-point argument, for "
 "compatibility with them use `sleep_ms()` and `sleep_us()` functions."
-msgstr ""
+msgstr "按给定的秒数休眠。某些开发板可能接受浮点数形式的 *seconds*，以便休眠小数秒。需要注意的是，其他开发板可能不接受浮点参数，为了兼容它们，请使用 `sleep_ms()` 和 `sleep_us()` 函数。"
 
-#: ../../en/system/time.rst:120 1c7c9989988045c8988800627e1e5042
+#: ../../source/system/time.rst:120 2130ece01ecf402681b061431528e53c
 msgid "|sleep.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:19 2fc7a4c2077d4fb98454578649e9d054
+#: ../../source/refs/system.time.ref:19 f7f4255e3de649da97ca39e983edbb96
 msgid "sleep.png"
 msgstr ""
 
-#: ../../en/system/time.rst:124 0068f2d822eb43af8ea26466b4f9505f
+#: ../../source/system/time.rst:124 5328f96421a44973beff0fc60d2ee089
 msgid "Delay for given number of milliseconds, should be positive or 0."
-msgstr ""
+msgstr "按给定的毫秒数延时，取值应为正数或 0。"
 
-#: ../../en/system/time.rst:126 d2cd268d0d2e4860ba201935ddb924ad
+#: ../../source/system/time.rst:126 0e0a9628ec39472cba6b225d76d2e2b4
 msgid ""
 "This function will delay for at least the given number of milliseconds, "
 "but may take longer than that if other processing must take place, for "
 "example interrupt handlers or other threads. Passing in 0 for *ms* will "
 "still allow this other processing to occur. Use `sleep_us()` for more "
 "precise delays."
-msgstr ""
+msgstr "该函数至少会延时给定的毫秒数，但如果系统还需要执行其他处理（例如中断处理程序或其他线程），实际延时可能更长。即使传入的 *ms* 为 0，其他处理仍然可以执行。若需要更精确的延时，请使用 `sleep_us()`。"
 
-#: ../../en/system/time.rst:134 c833a47dd68947b588361b22fffdc28e
+#: ../../source/system/time.rst:134 3683d8e8c0774b48bbd14a8c8e9499cb
 msgid "|sleep_ms.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:15 e74d302ca3da4be3a1fa9f400d650cb0
+#: ../../source/refs/system.time.ref:15 0bf8273126e14693881362189700cad1
 msgid "sleep_ms.png"
 msgstr ""
 
-#: ../../en/system/time.rst:138 8bc054986fea451d8654266dcfaba7d3
+#: ../../source/system/time.rst:138 9b03bc3f7ce5451c8534068cb9545563
 msgid "Delay for given number of microseconds, should be positive or 0."
-msgstr ""
+msgstr "按给定的微秒数延时，取值应为正数或 0。"
 
-#: ../../en/system/time.rst:140 696196ef8dd74afe93d72480f8867833
+#: ../../source/system/time.rst:140 0da6fbd4d8b74265bf297539a5d13033
 msgid ""
 "This function attempts to provide an accurate delay of at least *us* "
 "microseconds, but it may take longer if the system has other higher "
 "priority processing to perform."
-msgstr ""
+msgstr "该函数尝试提供至少 *us* 微秒的精确延时，但如果系统还有其他更高优先级的处理需要执行，实际延时可能更长。"
 
-#: ../../en/system/time.rst:146 8485facf127f464b80bc60e12b0b4288
+#: ../../source/system/time.rst:146 fc031bb44d334a13b25b1d219842317b
 msgid "|sleep_us.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:17 50d076e18eec45b889fc0f108c613a72
+#: ../../source/refs/system.time.ref:17 3752c2bdcf8743179d7c43df667d75cb
 msgid "sleep_us.png"
 msgstr ""
 
-#: ../../en/system/time.rst:150 f3282c94ed3447c082e007484e1b18c5
+#: ../../source/system/time.rst:150 05af7541a8e241599cf091577cf9eaef
 msgid ""
 "Returns an increasing millisecond counter with an arbitrary reference "
 "point, that wraps around after some value."
-msgstr ""
+msgstr "返回一个不断递增的毫秒计数器，其参考起点是任意的，并且在达到某个值后会回绕。"
 
-#: ../../en/system/time.rst:153 91473db840c8466d8f426aee2b86f923
+#: ../../source/system/time.rst:153 34d4da2d54b143ea81fe894c216f9555
 msgid ""
 "The wrap-around value is not explicitly exposed, but we will refer to it "
 "as *TICKS_MAX* to simplify discussion. Period of the values is "
@@ -313,32 +313,32 @@ msgid ""
 "treat values returned by these functions as opaque. The only operations "
 "available for them are `ticks_diff()` and `ticks_add()` functions "
 "described below."
-msgstr ""
+msgstr "回绕阈值不会被显式暴露，我们将其记为 *TICKS_MAX* 以便讨论。计数值的周期为 *TICKS_PERIOD = TICKS_MAX + 1*。*TICKS_PERIOD* 一定是 2 的幂，但在不同移植之间可能不同。所有 `ticks_ms()`、`ticks_us()`、`ticks_cpu()` 函数使用相同的周期值（为简化处理）。因此，这些函数会返回范围为 [*0* .. *TICKS_MAX*]（含端点）的值，总共 *TICKS_PERIOD* 种取值。注意只使用非负值。在大多数情况下，你应当将这些函数返回的值视为不透明值。对这些值唯一可用的操作是下面介绍的 `ticks_diff()` 和 `ticks_add()` 函数。"
 
-#: ../../en/system/time.rst:164 c83d2ab4b23c4419834db266334d4de8
+#: ../../source/system/time.rst:164 36b2604b1ada4b728d2aff1236493e9b
 msgid ""
 "Note: Performing standard mathematical operations (+, -) or relational "
 "operators (<, <=, >, >=) directly on these value will lead to invalid "
 "result. Performing mathematical operations and then passing their results"
 " as arguments to `ticks_diff()` or `ticks_add()` will also lead to "
 "invalid results from the latter functions."
-msgstr ""
+msgstr "注意：直接对这些值执行标准算术运算（+、-）或关系运算符（<、<=、>、>=）会导致错误结果。先做算术运算再将结果作为参数传给 `ticks_diff()` 或 `ticks_add()` 也会导致这些函数返回错误结果。"
 
-#: ../../en/system/time.rst:172 ../../en/system/time.rst:180
-#: 7357ceb5675d4fe39fb8f5ea6b4d5ff7 e428ac9a8d5c481fa82a9dffd2de72a6
+#: ../../source/system/time.rst:172 ../../source/system/time.rst:180
+#: 3def4727973b4ce0be8aa9993b22fa1d 3f54b7ac95454b1e906284cb10d0a07b
 msgid "|ticks_ms.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:27 56b28308d70648c6b1365160f627ec28
-#: 8120d95e82684a6e9d2445431dea07e5
+#: ../../source/refs/system.time.ref:27 1904845689f14e738a98cbb23db9066c
+#: 33a46b5946cf4dfba7adaf3ef0530edb
 msgid "ticks_ms.png"
 msgstr ""
 
-#: ../../en/system/time.rst:176 4a5a67ec92464b68adc10937e789c617
+#: ../../source/system/time.rst:176 c4238bcbbe284ad9a164dc0b16a29953
 msgid "Just like `ticks_ms()` above, but in microseconds."
-msgstr ""
+msgstr "与上面的 `ticks_ms()` 类似，但单位为微秒。"
 
-#: ../../en/system/time.rst:184 baa004dd81c7405286d343b1a47fda98
+#: ../../source/system/time.rst:184 89395322977d4b878478c1b14bf633d5
 msgid ""
 "Similar to `ticks_ms()` and `ticks_us()`, but with the highest possible "
 "resolution in the system. This is usually CPU clocks, and that's why the "
@@ -349,21 +349,21 @@ msgid ""
 "specific port may provide more specific information. This function is "
 "intended for very \\ fine benchmarking or very tight real-time loops. "
 "Avoid using it in portable code."
-msgstr ""
+msgstr "类似于 `ticks_ms()` 和 `ticks_us()`，但具有系统中尽可能高的分辨率。通常使用的是 CPU 时钟，这也是该函数命名的原因。但它不一定必须是 CPU 时钟，也可以使用系统中其它可用的高分辨率计时源（例如高精度定时器）。该函数的精确时间单位（分辨率）在 ``time`` 模块层面未做规定，但特定移植版本的文档可能会给出更具体的信息。该函数适用于非常精细的基准测试或非常紧凑的实时循环。请避免在可移植代码中使用它。"
 
-#: ../../en/system/time.rst:194 81c1add17ee942bc896092c87670bcde
+#: ../../source/system/time.rst:194 e2bcfce10f064b2483fefd981588706b
 msgid "Availability: Not every port implements this function."
-msgstr ""
+msgstr "可用性：并非所有移植都实现了该函数。"
 
-#: ../../en/system/time.rst:198 3c83ae2e40554ebcb59c812ff6414be0
+#: ../../source/system/time.rst:198 67e24c607f8545f5bf0fcd774ec6a106
 msgid "|ticks_cpu.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:23 07b98a1c418d4b69a1a81fe5c92815ef
+#: ../../source/refs/system.time.ref:23 440257f4770548a285c836f789df26fc
 msgid "ticks_cpu.png"
 msgstr ""
 
-#: ../../en/system/time.rst:202 a2f0939717794fe18c779896662483c0
+#: ../../source/system/time.rst:202 10d6cad6a6c2400e94e997c7badb25b1
 msgid ""
 "Offset ticks value by a given number, which can be either positive or "
 "negative. Given a *ticks* value, this function allows to calculate ticks "
@@ -375,28 +375,28 @@ msgid ""
 "expression. `ticks_add()` is useful for calculating deadlines for "
 "events/tasks. (Note: you must use `ticks_diff()` function to work with "
 "deadlines.)"
-msgstr ""
+msgstr "将 ticks 值按给定的偏移量进行平移，该偏移量可以为正也可以为负。给定一个 *ticks* 值，该函数允许根据模运算定义（见上文 `ticks_ms()`）计算在该值之前或之后 *delta* 个 ticks 的值。*ticks* 参数必须是 `ticks_ms()`、`ticks_us()` 或 `ticks_cpu()` 函数（或前一次 `ticks_add()` 调用）直接返回的结果。然而，*delta* 可以是任意整数或数值表达式。`ticks_add()` 适用于计算事件/任务的截止时间。（注意：你必须使用 `ticks_diff()` 函数来处理这些截止时间。）"
 
-#: ../../en/system/time.rst:212 7302c11cdde84ee7a0c1dadc3fa181ad
+#: ../../source/system/time.rst:212 ca69d3d7bad7423c8bd3b4df7da157aa
 msgid "Examples::"
 msgstr ""
 
-#: ../../en/system/time.rst:228 c1f6a47f0d624dd693f3aec61fc87071
+#: ../../source/system/time.rst:228 f14e0fc453e24016ac596635bf604607
 msgid "|ticks_add.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:21 cabd20a4fbe64c18a3ff4b8821691853
+#: ../../source/refs/system.time.ref:21 795643079450496f95818b25f5f17a8e
 msgid "ticks_add.png"
 msgstr ""
 
-#: ../../en/system/time.rst:232 97272245256347269cbe581460d3e7c5
+#: ../../source/system/time.rst:232 fa377830dcd84aa39602561cd287c2aa
 msgid ""
 "Measure ticks difference between values returned from `ticks_ms()`, "
 "`ticks_us()`, or `ticks_cpu()` functions, as a signed value which may "
 "wrap around."
-msgstr ""
+msgstr "计算由 `ticks_ms()`、`ticks_us()` 或 `ticks_cpu()` 函数返回值之间的差值，并以有符号数形式返回，该值可能会发生回绕。"
 
-#: ../../en/system/time.rst:236 d39f539fd4d14f5da0a99b9dae5c97b6
+#: ../../source/system/time.rst:236 28a03977636c4981b80d4ee3a25cd8b3
 msgid ""
 "The argument order is the same as for subtraction operator, "
 "``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - "
@@ -417,9 +417,9 @@ msgid ""
 "However, if *TICKS_PERIOD/2* of real-time ticks has passed between them, "
 "the function will return *-TICKS_PERIOD/2* instead, i.e. result value "
 "will wrap around to the negative range of possible values."
-msgstr ""
+msgstr "参数顺序与减法运算符相同，``ticks_diff(ticks1, ticks2)`` 的含义等同于 ``ticks1 - ticks2``。然而，由 `ticks_ms()` 等函数返回的值可能发生回绕，直接对它们做减法会产生错误结果。这就是需要 `ticks_diff()` 的原因：它实现了模（更具体地说是环）运算，即使在值发生回绕时（只要它们之间的间隔不太大，见下文），也能给出正确结果。该函数返回范围为 [*-TICKS_PERIOD/2* .. *TICKS_PERIOD/2-1*] 的**有符号**值（这是二进制补码有符号整数的典型取值范围）。如果结果为负，表示 *ticks1* 发生在 *ticks2* 之前；否则表示 *ticks1* 发生在 *ticks2* 之后。这**仅在** *ticks1* 和 *ticks2* 之间相隔不超过 *TICKS_PERIOD/2-1* 个 ticks 时成立。如果不满足该条件，将返回错误结果。具体来说，如果两个 tick 值相隔 *TICKS_PERIOD/2-1* 个 ticks，函数会返回该值。但如果两次调用之间实际经过了 *TICKS_PERIOD/2* 个实时 ticks，函数则会返回 *-TICKS_PERIOD/2*，即结果会回绕到可能取值的负区间。"
 
-#: ../../en/system/time.rst:256 7f70a81a41ed403ca95735553569b2eb
+#: ../../source/system/time.rst:256 df472bd7797b4dd8ab53c33f1863f2c6
 msgid ""
 "Informal rationale of the constraints above: Suppose you are locked in a "
 "room with no means to monitor passing of time except a standard 12-notch "
@@ -430,43 +430,43 @@ msgid ""
 "should do the same. \"Too long sleep\" metaphor also maps directly to "
 "application behaviour: don't let your application run any single task for"
 " too long. Run tasks in steps, and do time-keeping inbetween."
-msgstr ""
+msgstr "上述约束条件背后的非正式理由是这样的：假设你被关在一个房间里，监测时间流逝的唯一工具是一只标准的 12 刻度钟表。如果你现在看了一眼表盘，然后在 13 小时内都没有再看（例如，你睡了很久），当你再次看表时，可能会误以为只过去了 1 小时。为了避免这种错误，你应该定期查看钟表。你的应用程序也应该如此。“睡得太久”的比喻可以直接映射到应用行为：不要让应用中的任何单个任务运行得太久。应当将任务拆分成多个步骤，并在其间进行时间记录。"
 
-#: ../../en/system/time.rst:266 2e985eac49cd4c728b56cfd33de7e924
+#: ../../source/system/time.rst:266 3e16dbe1816d43c297c6eb09bd974f40
 msgid ""
 "`ticks_diff()` is designed to accommodate various usage patterns, among "
 "them:"
-msgstr ""
+msgstr "`ticks_diff()` 被设计为可以适配多种使用模式，其中包括："
 
-#: ../../en/system/time.rst:269 7275d0056aee41bbb7e95b19055e0f05
+#: ../../source/system/time.rst:269 049f62ad7fcd4319a236d12b4183ae55
 msgid ""
 "Polling with timeout. In this case, the order of events is known, and you"
 " will deal only with positive results of `ticks_diff()`::"
-msgstr ""
+msgstr "带超时的轮询。在这种情况下，事件的发生顺序是已知的，你只需要处理 `ticks_diff()` 的正结果::"
 
-#: ../../en/system/time.rst:278 85a0b8d998d24ed79a00c1f25352c74f
+#: ../../source/system/time.rst:278 b2dc475738564454a522fce6c8aee2bb
 msgid ""
 "Scheduling events. In this case, `ticks_diff()` result may be negative if"
 " an event is overdue::"
-msgstr ""
+msgstr "事件调度。在这种情况下，如果某个事件已经过期，`ticks_diff()` 的结果可能为负数::"
 
-#: ../../en/system/time.rst:295 cf55136babb14376a8f734cf84f38e3b
+#: ../../source/system/time.rst:295 e6fd9610b90949ec8227e7f696d40ecc
 msgid ""
 "Note: Do not pass `time()` values to `ticks_diff()`, you should use "
 "normal mathematical operations on them. But note that `time()` may (and "
 "will) also overflow. This is known as "
 "https://en.wikipedia.org/wiki/Year_2038_problem ."
-msgstr ""
+msgstr "注意：不要将 `time()` 的返回值传给 `ticks_diff()`，你应该对它们使用普通的数学运算。但也要注意，`time()` 也可能（并且将会）溢出。这就是著名的 https://en.wikipedia.org/wiki/Year_2038_problem 。"
 
-#: ../../en/system/time.rst:301 e152e55461e040d694a1f2bed896db1b
+#: ../../source/system/time.rst:301 9dc57f41418f44f296d5a01f94504120
 msgid "|ticks_diff.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:25 e0e0c3fff3aa4b4aa86c7e24244bcd89
+#: ../../source/refs/system.time.ref:25 f0c3b3297c5e41e7b793e06ebaeabde8
 msgid "ticks_diff.png"
 msgstr ""
 
-#: ../../en/system/time.rst:305 60baccc6de7a4dd7ba3c6f635f8cd143
+#: ../../source/system/time.rst:305 8b6d69eb269444fa832b7e0ccd072ecd
 msgid ""
 "Returns the number of seconds, as an integer, since the Epoch, assuming "
 "that underlying RTC is set and maintained as described above. If an RTC "
@@ -478,13 +478,13 @@ msgid ""
 "timestamps, use `time_ns()`.  If relative times are acceptable then use "
 "the `ticks_ms()` and `ticks_us()` functions.  If you need calendar time, "
 "`gmtime()` or `localtime()` without an argument is a better choice."
-msgstr ""
+msgstr "返回自时间纪元以来的秒数（整数），前提是底层 RTC 已按前文所述正确设置并维护。如果未设置 RTC，则该函数返回自端口特定参考时间点以来的秒数（对于没有电池供电 RTC 的嵌入式开发板，通常是自上电或复位以来）。如果你希望编写可移植的 MicroPython 应用，不应依赖该函数提供高于秒级的精度。若需要更高精度的绝对时间戳，请使用 `time_ns()`。如果只需要相对时间，请使用 `ticks_ms()` 和 `ticks_us()`。如果需要日历时间，调用不带参数的 `gmtime()` 或 `localtime()` 会是更好的选择。"
 
-#: ../../en/system/time.rst:316 647dac0aedae44849f2a8015330e23fd
+#: ../../source/system/time.rst:316 4b38cd66e3b6480584c544c5c36dd5d0
 msgid "Difference to CPython"
-msgstr ""
+msgstr "与 CPython 的差异"
 
-#: ../../en/system/time.rst:319 7daae6bc2ffe4a39b5d18321394100b8
+#: ../../source/system/time.rst:319 993b0d8da39842f0ae97ed3f49f76d6b
 msgid ""
 "In CPython, this function returns number of seconds since Unix epoch, "
 "1970-01-01 00:00 UTC, as a floating-point, usually having microsecond "
@@ -495,23 +495,32 @@ msgid ""
 "second precision. Some embedded hardware also lacks battery-powered RTC, "
 "so returns number of seconds since last power-up or from other relative, "
 "hardware-specific point(e.g. reset)."
-msgstr ""
+msgstr "在 CPython 中，该函数返回自 Unix 纪元（1970-01-01 00:00 UTC）以来的秒数，类型为浮点数，通常具有微秒级精度。在 MicroPython 中，只有 Unix 端口使用相同的纪元，并且在浮点精度允许的情况下返回子秒级精度。嵌入式硬件通常没有足够的浮点精度同时表示很长的时间范围和子秒精度，因此会使用秒级精度的整数值。一些嵌入式硬件也缺少电池供电的 RTC，因此会返回自上次上电或其它相对且与硬件相关的时间点（例如复位）以来的秒数。"
 
-#: ../../en/system/time.rst:332 d3e56edd74114466ba4c7328432d2dfe
+#: ../../source/system/time.rst:332 7da395a7708e404593cef61c186b9493
 msgid "|time.png|"
 msgstr ""
 
-#: ../../en/refs/system.time.ref:31 5fca5c2a61fe4983b22e7da4bfade26d
+#: ../../source/refs/system.time.ref:31 ce66a3341c304a1e85c2582b0c4097ac
 msgid "time.png"
 msgstr ""
 
-#: ../../en/system/time.rst:336 e3c1cabdb87c4e108d2e5ddbf64478f7
+#: ../../source/system/time.rst:336 6b4e59182c214169b1d74089b79c245b
 msgid ""
 "Similar to `time()` but returns nanoseconds since the Epoch, as an "
 "integer (usually a big integer, so will allocate on the heap)."
-msgstr ""
+msgstr "与 `time()` 类似，但返回自时间纪元以来的纳秒数，类型为整数（通常是大整数，因此会在堆上分配）。"
 
-#: ../../en/system/time.rst:341 82ff6726e4814dfcbf238b1762e66b74
+#: ../../source/system/time.rst:341 8bcfe2f44fad4844ad371b69af4e5275
 msgid "None"
 msgstr ""
+
+#~ msgid ""
+#~ "This is inverse function of localtime."
+#~ " It's argument is a full 8-tuple "
+#~ "which expresses a time as per "
+#~ "localtime. It returns an integer which"
+#~ " is the number of seconds since "
+#~ "Jan 1, 2000."
+#~ msgstr ""
 

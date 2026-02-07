@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-07 09:33+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,115 +20,152 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/nbiot.rst:2 71b3df4ea7a344c192e0465084be5a83
+#: ../../source/units/nbiot.rst:2 71b3df4ea7a344c192e0465084be5a83
 msgid "NB-IoT Unit"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:8 b683174db0124f59870927a07e78f633
+#: ../../source/units/nbiot.rst:8 b683174db0124f59870927a07e78f633
 msgid ""
 "The ``NB-IOT Unit`` is a wireless communication module suitable for "
 "global wide Cat-NB frequency band . It has a built-in SIM7020G "
 "communication module, uses serial communication (AT instruction set "
 "control)."
-msgstr "``NB-IOT Unit`` 是一款适用于全球 Cat-NB 频段的无线通信模块。它内置 SIM7020G 通信模块，采用串口通信（AT 指令集控制）。"
+msgstr ""
+"``NB-IOT Unit`` 是一款适用于全球 Cat-NB 频段的无线通信模块。它内置 SIM7020G 通信模块，采用串口通信（AT "
+"指令集控制）。"
 
-#: ../../en/units/nbiot.rst:10 b6a6b58bcc864eb5b99243858b943f43
+#: ../../source/units/nbiot.rst:11 b6a6b58bcc864eb5b99243858b943f43
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/nbiot.rst:13 c65e7043a3ad4b1aa1980b45a1a755d6
+#: ../../source/units/nbiot.rst:14 c65e7043a3ad4b1aa1980b45a1a755d6
 msgid "|Unit NBIoT|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:13 2ea2ea125c3a4706aeb1c0ced8be183e
+#: ../../source/refs/unit.nbiot.ref 144b6cc495df410982f0cd68f6af25fc
+msgid "Unit NBIoT"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:14 2ea2ea125c3a4706aeb1c0ced8be183e
 msgid "|Unit NBIoT-CN|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:18 e8dbe5a2ab1c4e0ba3862c29b7f9449c
-msgid "UiFlow2 Example"
-msgstr "UiFlow2 示例"
+#: ../../source/refs/unit.nbiot.ref 340ff052f9124860916b5a5693c1112a
+msgid "Unit NBIoT-CN"
+msgstr ""
 
-#: ../../en/units/nbiot.rst:21 ../../en/units/nbiot.rst:39
+#: ../../source/units/nbiot.rst:19 75ad9eeb6a334c5b98250d9b5f1d7150
+msgid ""
+"Please ensure that the device supports the NB-IoT frequency bands in your"
+" area before use."
+msgstr "在使用前，请确保设备支持您所在地区的 NB-IoT 频段。"
+
+#: ../../source/units/nbiot.rst:23 a92ce3e0d22d41959826bbec725564e3
+msgid ""
+"Please ensure that the firmware version of SIM7020 is greater than or "
+"equal to **1752B12SIM7020C**."
+msgstr "请确保 SIM7020 的固件版本大于或等于 **1752B12SIM7020C**。"
+
+#: ../../source/units/nbiot.rst:25 a92ce3e0d22d41959826bbec725564e3
+msgid "|get_version.png| can be used to check the firmware version."
+msgstr "可以使用 |get_version.png| 检查固件版本。"
+
+#: ../../source/refs/unit.nbiot.ref:30 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_version.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:29 e8dbe5a2ab1c4e0ba3862c29b7f9449c
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/units/nbiot.rst:32 ../../source/units/nbiot.rst:69
 #: 7e7e1500897c4f099fbb91839b55ffd2
 msgid "NBIoT HTTP Example"
 msgstr "NBIoT HTTP 示例"
 
-#: ../../en/units/nbiot.rst:23 35f491af138742e999b5b336ed983527
-msgid "Open the |base_nbiot_atoms3_http_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |base_nbiot_atoms3_http_example.m5f2| 项目。"
+#: ../../source/units/nbiot.rst:34 35f491af138742e999b5b336ed983527
+msgid "Open the |cores3_unit_nbiot_http_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_unit_nbiot_http_example.m5f2| 项目。"
 
-#: ../../en/units/nbiot.rst:25 ../../en/units/nbiot.rst:41
-#: 0a2464130c574c25a2895e4d9b88a6d6 be2fc1154c1d48b0b7206aaceefc36a0
-msgid "This example shows how to send HTTP request using the Atom DTU NBIoT Base."
-msgstr "此示例展示了如何使用 Atom DTU NBIoT Base 发送 HTTP 请求。"
+#: ../../source/units/nbiot.rst:36 ../../source/units/nbiot.rst:71
+#: 0a2464130c574c25a2895e4d9b88a6d6
+msgid "This example shows how to send HTTP request using the NBIoT Unit."
+msgstr "该示例演示如何使用 NBIoT Unit 发送 HTTP 请求。"
 
-#: ../../en/units/nbiot.rst:27 ../../en/units/nbiot.rst:61
-#: ../../en/units/nbiot.rst:101 ../../en/units/nbiot.rst:119
-#: ../../en/units/nbiot.rst:139 ../../en/units/nbiot.rst:170
-#: ../../en/units/nbiot.rst:195 ../../en/units/nbiot.rst:247
-#: ../../en/units/nbiot.rst:314 ../../en/units/nbiot.rst:353
-#: 0504678968cb4bc494658acc9a4389a5 0adc5a98f3914cda921c2a0a98cc6c14
-#: 42a1dac461894a58b9b49f7ab9e82659 42be90fe213f4ab68bfb49fc3bc44a9a
-#: 70c3695e3f9843568ff7b3bc447328c7 b86f6ef37139445c85353c36bac72830
-#: da9f76125d1a4fc3b46d4998a3864e56 dd4823b416124c7b926add6c941da6c1
-#: df52e878ae394358b24d2c6711bf3822 f0ad40f10d9f49e68792e0af821e0c99
-#: f826e6094ab642eab6dc7bdd5121da74 of unit.nbiot.NBIOTUnit:9
+#: ../../source/units/nbiot.rst:38 ../../source/units/nbiot.rst:73
+#: bebf0d65e7594f678ff79bd1c8ce4496 d942716442d043f0928743f45d4ec2d0
+msgid ""
+"click **Send** button to send HTTP request. Response data will be printed"
+" in the textarea."
+msgstr "点击 **Send** 按钮发送 HTTP 请求，响应数据将打印在文本区域中。"
+
+#: ../../source/units/nbiot.rst:40 ../../source/units/nbiot.rst:56
+#: ../../source/units/nbiot.rst:115 ../../source/units/nbiot.rst:133
+#: ../../source/units/nbiot.rst:153 ../../source/units/nbiot.rst:184
+#: ../../source/units/nbiot.rst:213 ../../source/units/nbiot.rst:271
+#: ../../source/units/nbiot.rst:350 ../../source/units/nbiot.rst:389
+#: da9f76125d1a4fc3b46d4998a3864e56 of unit.nbiot.NBIOTUnit:9
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/units/nbiot.rst:29 604ab25eff3b446e8df557fabbc09293
-msgid "|http_example.png|"
+#: ../../source/units/nbiot.rst:42 e522c5a9a274448eaf56373e78bbf99a
+msgid "|cores3_unit_nbiot_http_example.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:31 ../../en/units/nbiot.rst:49
-#: ../../en/units/nbiot.rst:65 ../../en/units/nbiot.rst:84
-#: 354d809f093c461bbeeade1ef8133cbd 62adfd82951a44bc9ec59fc7ae16addb
-#: d6769e6ed0f045e4a00772550dae0741 f00af5ec608f4c32ae515d2b2bd7ca3a
+#: ../../source/refs/unit.nbiot.ref:13 c430304cbaf948659461d13d44f88291
+msgid "cores3_unit_nbiot_http_example.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:44 ../../source/units/nbiot.rst:60
+#: ../../source/units/nbiot.rst:81 ../../source/units/nbiot.rst:97
+#: 62adfd82951a44bc9ec59fc7ae16addb
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/units/nbiot.rst:33 ../../en/units/nbiot.rst:51
-#: ../../en/units/nbiot.rst:67 ../../en/units/nbiot.rst:86
-#: 1525aeed6cf14e40a55d3f1caa72d3fe 33768726d8704a4ca866bff069ce7e7e
-#: 664d56d7cfcc43198d18653cbf27e59b 8cec8a41771347fb88b83bb60495cd6d
-msgid "Output of received NBIoT message data via serial port."
-msgstr "通过串口接收到的 NBIoT 消息输出数据。"
+#: ../../source/units/nbiot.rst:46 ../../source/units/nbiot.rst:62
+#: ../../source/units/nbiot.rst:83 ../../source/units/nbiot.rst:99
+#: 8cec8a41771347fb88b83bb60495cd6d
+msgid "Output of received NBIoT message data on screen."
+msgstr "在屏幕上输出接收到的 NBIoT 消息数据。"
 
-#: ../../en/units/nbiot.rst:36 ../../en/units/nbiot.rst:71
-#: 7e7e1500897c4f099fbb91839b55ffd2
-msgid "MicroPython Example"
-msgstr "MicroPython 示例"
-
-#: ../../en/units/nbiot.rst:43 ../../en/units/nbiot.rst:78
-#: ../../en/units/nbiot.rst:105 ../../en/units/nbiot.rst:123
-#: ../../en/units/nbiot.rst:143 ../../en/units/nbiot.rst:174
-#: ../../en/units/nbiot.rst:199 ../../en/units/nbiot.rst:253
-#: ../../en/units/nbiot.rst:318 ../../en/units/nbiot.rst:357
-#: 7e7e1500897c4f099fbb91839b55ffd2 of unit.nbiot.NBIOTUnit:13
-msgid "MicroPython Code Block:"
-msgstr "MicroPython 代码块："
-
-#: ../../en/units/nbiot.rst:55 ../../en/units/nbiot.rst:74
+#: ../../source/units/nbiot.rst:50 ../../source/units/nbiot.rst:87
 #: e8dbe5a2ab1c4e0ba3862c29b7f9449c
 msgid "MQTT Example"
 msgstr "MQTT 示例"
 
-#: ../../en/units/nbiot.rst:57 76238301ea1f462da1f9f0eae9c5943d
-msgid "Open the |base_nbiot_atoms3_mqtt_example.m5f2| project in UiFlow2."
-msgstr "在 UiFlow2 中打开 |base_nbiot_atoms3_mqtt_example.m5f2| 项目。"
+#: ../../source/units/nbiot.rst:52 76238301ea1f462da1f9f0eae9c5943d
+msgid "Open the |cores3_unit_nbiot_mqtt_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cores3_unit_nbiot_mqtt_example.m5f2| 项目。"
 
-#: ../../en/units/nbiot.rst:59 ../../en/units/nbiot.rst:76
-#: 651bf4071ad54695820f8a37aebc1722 75ddf76001bf4a639fdfb02c25c3986a
-msgid "This example shows how to send MQTT message using the Atom DTU NBIoT Base."
-msgstr "此示例展示了如何使用 Atom DTU NBIoT Base 发送 MQTT 消息。"
+#: ../../source/units/nbiot.rst:54 ../../source/units/nbiot.rst:89
+#: 75ddf76001bf4a639fdfb02c25c3986a
+msgid "This example shows how to send MQTT message using the NBIoT Unit."
+msgstr "该示例演示如何使用 NBIoT Unit 发送 MQTT 消息。"
 
-#: ../../en/units/nbiot.rst:63 604ab25eff3b446e8df557fabbc09293
-msgid "|mqtt_example.png|"
+#: ../../source/units/nbiot.rst:58 59095d41268941ff9d71730e03a87f96
+msgid "|cores3_unit_nbiot_mqtt_example.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:89 e23a72132ffb42479d19b1b9c97de3fd
+#: ../../source/refs/unit.nbiot.ref:14 c430304cbaf948659461d13d44f88291
+msgid "cores3_unit_nbiot_mqtt_example.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:66 7e7e1500897c4f099fbb91839b55ffd2
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/units/nbiot.rst:75 ../../source/units/nbiot.rst:91
+#: ../../source/units/nbiot.rst:119 ../../source/units/nbiot.rst:137
+#: ../../source/units/nbiot.rst:157 ../../source/units/nbiot.rst:192
+#: ../../source/units/nbiot.rst:223 ../../source/units/nbiot.rst:289
+#: ../../source/units/nbiot.rst:354 ../../source/units/nbiot.rst:393
+#: 7e7e1500897c4f099fbb91839b55ffd2 of unit.nbiot.NBIOTUnit:13
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/units/nbiot.rst:103 e23a72132ffb42479d19b1b9c97de3fd
 msgid "**API**"
-msgstr "API参考"
+msgstr "**API参考**"
 
 #: 9448e0ee5c66414793f7e0811a8cc02a of unit.nbiot.NBIOTUnit:1
 msgid "Bases: :py:class:`~driver.simcom.sim7020.SIM7020`"
@@ -138,7 +175,7 @@ msgstr ""
 msgid "Create an NBIOTUnit object."
 msgstr "创建 NBIOTUnit 对象。"
 
-#: ../../en/units/nbiot.rst d7f14ef1e8514e67be72c9f792a22749
+#: ../../source/units/nbiot.rst d7f14ef1e8514e67be72c9f792a22749
 msgid "Parameters"
 msgstr ""
 
@@ -160,350 +197,463 @@ msgstr "是否打印调试信息。"
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.nbiot.ref:6 9dee64c34dcc44aca19bf506d2ffd5f5
+#: ../../source/refs/unit.nbiot.ref:39 b0979cee98c240e1a992eed6aad7e4d6
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:97 5789b6be18204107b568f3bf1e888737
+#: ../../source/units/nbiot.rst:111 5789b6be18204107b568f3bf1e888737
 msgid "Connect to the NB-IoT network."
 msgstr "连接到 NB-IoT 网络。"
 
-#: ../../en/units/nbiot.rst:99 e8d6d171e6e04af9919d69561e3090a2
+#: ../../source/units/nbiot.rst:113 e8d6d171e6e04af9919d69561e3090a2
 msgid "The APN of the NB-IoT network. Default is \"cmnbiot\"."
 msgstr "NB-IoT 网络的 APN。默认为 \"cmnbiot\"。"
 
-#: ../../en/units/nbiot.rst:103 1bd7924794ee462eb693e7034b5e0011
+#: ../../source/units/nbiot.rst:117 1bd7924794ee462eb693e7034b5e0011
 msgid "|connect.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:114 cdaa9df6f033409e89283532d46854bc
+#: ../../source/refs/unit.nbiot.ref:12 b0979cee98c240e1a992eed6aad7e4d6
+msgid "connect.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:128 cdaa9df6f033409e89283532d46854bc
 msgid "Check if the NB-IoT unit is connected to the network."
 msgstr "检查 NB-IoT 单元是否已连接到网络。"
 
-#: ../../en/units/nbiot.rst f7d51d7af2804939a7e1f1cf244af4c5
+#: ../../source/units/nbiot.rst f7d51d7af2804939a7e1f1cf244af4c5
 msgid "Returns"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:116 b4572df525f84113afff47783914407e
+#: ../../source/units/nbiot.rst:130 b4572df525f84113afff47783914407e
 msgid "True if connected, False otherwise."
 msgstr "已连接则返回 True，否则返回 False。"
 
-#: ../../en/units/nbiot.rst bd5ab7ddbf9449609df2cd85fe9d45ab
+#: ../../source/units/nbiot.rst bd5ab7ddbf9449609df2cd85fe9d45ab
 msgid "Return type"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:121 e55b9a9eb47148c5896b91fd3d25ddb9
+#: ../../source/units/nbiot.rst:135 e55b9a9eb47148c5896b91fd3d25ddb9
 msgid "|isconnected.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:135 72bbf8d1edc04730bd61040f46f3a2fe
+#: ../../source/refs/unit.nbiot.ref:40 0de1861674894721a0b16744e7a3727b
+msgid "isconnected.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:149 72bbf8d1edc04730bd61040f46f3a2fe
 msgid ""
 "Activate or deactivate the NB-IoT unit. Deactivating will enter low power"
 " consumption mode."
 msgstr "激活或禁用 NB-IoT 单元。禁用将进入低功耗模式。"
 
-#: ../../en/units/nbiot.rst:137 408900b683684aa28c25a93cc3f3dcc1
+#: ../../source/units/nbiot.rst:151 408900b683684aa28c25a93cc3f3dcc1
 msgid "True to activate, False to deactivate."
 msgstr "True 为激活，False 为禁用。"
 
-#: ../../en/units/nbiot.rst:141 604ab25eff3b446e8df557fabbc09293
+#: ../../source/units/nbiot.rst:155 604ab25eff3b446e8df557fabbc09293
 msgid "|active.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:152 d5b8ed3a00b943b68d37078076059cc2
+#: ../../source/refs/unit.nbiot.ref:11 b0979cee98c240e1a992eed6aad7e4d6
+msgid "active.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:166 d5b8ed3a00b943b68d37078076059cc2
 msgid "Get the status of the NB-IoT unit."
 msgstr "获取 NB-IoT 单元的状态。"
 
-#: ../../en/units/nbiot.rst:154 ../../en/units/nbiot.rst:218
-#: 6c00493d771d483785d8a29e7c45dc47 cfba1179967747bc9af19e3a39db64d5
+#: ../../source/units/nbiot.rst:168 ../../source/units/nbiot.rst:242
+#: cfba1179967747bc9af19e3a39db64d5
 msgid "Following are commonly supported parameters."
 msgstr "以下是常用的支持参数。"
 
-#: ../../en/units/nbiot.rst:157 ../../en/units/nbiot.rst:221
+#: ../../source/units/nbiot.rst:171 ../../source/units/nbiot.rst:245
 #: d7f14ef1e8514e67be72c9f792a22749
 msgid "Parameter"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:157 ../../en/units/nbiot.rst:221
+#: ../../source/units/nbiot.rst:171 ../../source/units/nbiot.rst:245
 #: f11b0021d21245eb82444dde26b14cb0
 msgid "Description"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:159 a16b634dbafc471695b539b18e75f432
+#: ../../source/units/nbiot.rst:173 a16b634dbafc471695b539b18e75f432
 msgid "rssi"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:159 85b3c5a3c3274ab398045dd10396ea87
+#: ../../source/units/nbiot.rst:173 85b3c5a3c3274ab398045dd10396ea87
 msgid "signal strength"
 msgstr "信号强度"
 
-#: ../../en/units/nbiot.rst:161 9468c889b4c94de49c9765bba6455efc
+#: ../../source/units/nbiot.rst:175 9468c889b4c94de49c9765bba6455efc
 msgid "pin"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:161 2813e6c5a10a404c87d7307b827da513
+#: ../../source/units/nbiot.rst:175 2813e6c5a10a404c87d7307b827da513
 msgid "SIM Card status"
 msgstr "SIM 卡状态"
 
-#: ../../en/units/nbiot.rst:163 05283f7cde1b4955a5bb1ee50730e0f0
+#: ../../source/units/nbiot.rst:177 05283f7cde1b4955a5bb1ee50730e0f0
 msgid "station"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:163 4e69d69d937549debe35a95e5e360353
+#: ../../source/units/nbiot.rst:177 4e69d69d937549debe35a95e5e360353
 msgid "station registration status"
 msgstr "基站注册状态"
 
-#: ../../en/units/nbiot.rst:166 3a3d3684e6a74fddb853142a46f768cf
+#: ../../source/units/nbiot.rst:180 3a3d3684e6a74fddb853142a46f768cf
 msgid "Optional parameter to specify the status type."
 msgstr "可选参数，用于指定状态类型。"
 
-#: ../../en/units/nbiot.rst:167 f200b92507ec4b54813eb16bd63c9913
+#: ../../source/units/nbiot.rst:181 f200b92507ec4b54813eb16bd63c9913
 msgid "Status information."
 msgstr "状态信息。"
 
-#: ../../en/units/nbiot.rst:172 604ab25eff3b446e8df557fabbc09293
-msgid "|status.png|"
+#: ../../source/units/nbiot.rst:186 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_rssi_status.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:190 d5ec59faf3324c888f422329e1b9ee90
+#: ../../source/refs/unit.nbiot.ref:26 4624c897875f49a8adf9d0ad2ca39c56
+msgid "get_rssi_status.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:188 d84bb573417347b48c5b0be6c2305c3c
+msgid "|get_sim_status.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:27 440d102385a445b8a9325bdf968e3fe2
+msgid "get_sim_status.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:190 84160178bae44f37bba3272fc35b1390
+msgid "|get_station_info.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:28 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_station_info.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:208 d5ec59faf3324c888f422329e1b9ee90
 msgid ""
 "Get IP-level network interface parameters: IP address, subnet mask, "
 "gateway and DNS server."
 msgstr "获取 IP 层网络接口参数：IP 地址、子网掩码、网关和 DNS 服务器。"
 
-#: ../../en/units/nbiot.rst:192 23a5f359123c492fa5cae38a892cc475
+#: ../../source/units/nbiot.rst:210 23a5f359123c492fa5cae38a892cc475
 msgid "A tuple with the network interface parameters."
 msgstr "包含网络接口参数的元组。"
 
-#: ../../en/units/nbiot.rst:197 075a2d3c552d4ec98ad51b5cf4c45fe3
-msgid "|ifconfig.png|"
+#: ../../source/units/nbiot.rst:215 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_local_ip.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:216 d2492f39c8cd462c81c6ade381273c2e
+#: ../../source/refs/unit.nbiot.ref:22 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_local_ip.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:217 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_subnet.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:29 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_subnet.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:219 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_gateway.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:18 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_gateway.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:221 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_dns.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:17 440d102385a445b8a9325bdf968e3fe2
+msgid "get_dns.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:240 d2492f39c8cd462c81c6ade381273c2e
 msgid "Get or set the configuration parameters of the NB-IoT unit."
 msgstr "获取或设置 NB-IoT 单元的配置参数。"
 
-#: ../../en/units/nbiot.rst:221 e9fc5be42070400cb91e9cf9e45cb3ca
+#: ../../source/units/nbiot.rst:245 e9fc5be42070400cb91e9cf9e45cb3ca
 msgid "permissions"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:223 5454d569bf0f4749be120a39acd89a18
+#: ../../source/units/nbiot.rst:247 5454d569bf0f4749be120a39acd89a18
 msgid "apn"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:223 ../../en/units/nbiot.rst:225
-#: ../../en/units/nbiot.rst:229 ../../en/units/nbiot.rst:231
-#: ../../en/units/nbiot.rst:233 ../../en/units/nbiot.rst:235
-#: ../../en/units/nbiot.rst:237 ../../en/units/nbiot.rst:239
-#: 019ec5d561274aec94c3985cdbb3cd87 11e98304ea27430ca64b33f41c71d46e
-#: 3369a59da1d0433d9727248bf4cb35a9 406478a1587e4345b494b452a74ab67d
-#: 5830c212b55542df95065f0df191b47e 714151b365a44e52a7ec8e7f056d2b45
-#: ae1b2fdfc814458085e1c61d824d12ad e241a03f68604d30bdeac745049a31a1
+#: ../../source/units/nbiot.rst:247 ../../source/units/nbiot.rst:249
+#: ../../source/units/nbiot.rst:253 ../../source/units/nbiot.rst:255
+#: ../../source/units/nbiot.rst:257 ../../source/units/nbiot.rst:259
+#: ../../source/units/nbiot.rst:261 ../../source/units/nbiot.rst:263
+#: 3369a59da1d0433d9727248bf4cb35a9
 msgid "R"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:223 f5dc059b5fb24f0bb2b1a3adff817b03
+#: ../../source/units/nbiot.rst:247 f5dc059b5fb24f0bb2b1a3adff817b03
 msgid "Access Point Name"
 msgstr "接入点名称"
 
-#: ../../en/units/nbiot.rst:225 ec1a07c8cbd24ddeab868ff15ae37851
+#: ../../source/units/nbiot.rst:249 ec1a07c8cbd24ddeab868ff15ae37851
 msgid "mode"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:225 0f1c5ec797a546fdbaac1781c357e979
+#: ../../source/units/nbiot.rst:249 0f1c5ec797a546fdbaac1781c357e979
 msgid "Network mode(only supported NB-IoT)"
 msgstr "网络模式（仅支持 NB-IoT）"
 
-#: ../../en/units/nbiot.rst:227 1ad0bea572fc426ca1938098fa332a28
+#: ../../source/units/nbiot.rst:251 1ad0bea572fc426ca1938098fa332a28
 msgid "band"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:227 1ded877c41e5463196f53ce6134ae5c0
+#: ../../source/units/nbiot.rst:251 1ded877c41e5463196f53ce6134ae5c0
 msgid "R/W"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:227 4ef76bdd0d2d486da9f50d7b6ef8e3b7
+#: ../../source/units/nbiot.rst:251 4ef76bdd0d2d486da9f50d7b6ef8e3b7
 msgid "Frequency Band"
 msgstr "频段"
 
-#: ../../en/units/nbiot.rst:229 211477aba8d4465085eced67ed0d6ed1
+#: ../../source/units/nbiot.rst:253 211477aba8d4465085eced67ed0d6ed1
 msgid "ccid"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:229 842283dcd4fe4b819e57e9abb108eb0d
+#: ../../source/units/nbiot.rst:253 842283dcd4fe4b819e57e9abb108eb0d
 msgid "SIM Card CCID"
 msgstr "SIM 卡 CCID"
 
-#: ../../en/units/nbiot.rst:231 6c1e8f60874f44cdadde242453b25cbf
+#: ../../source/units/nbiot.rst:255 6c1e8f60874f44cdadde242453b25cbf
 msgid "imei"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:231 ef1f54a7b13f41bba72756eb70c9d0c6
+#: ../../source/units/nbiot.rst:255 ef1f54a7b13f41bba72756eb70c9d0c6
 msgid "Device IMEI"
 msgstr "设备 IMEI"
 
-#: ../../en/units/nbiot.rst:233 0558f152b76742fb8a9639adcc889033
+#: ../../source/units/nbiot.rst:257 0558f152b76742fb8a9639adcc889033
 msgid "imsi"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:233 7ef1dcb5755d496d8a00f3b4b3dafd59
+#: ../../source/units/nbiot.rst:257 7ef1dcb5755d496d8a00f3b4b3dafd59
 msgid "SIM Card IMSI"
 msgstr "SIM 卡 IMSI"
 
-#: ../../en/units/nbiot.rst:235 6e3affb624604058a5e5470fdbd421b9
+#: ../../source/units/nbiot.rst:259 6e3affb624604058a5e5470fdbd421b9
 msgid "mfr"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:235 12712910f20142bd88c6402eab265e32
+#: ../../source/units/nbiot.rst:259 12712910f20142bd88c6402eab265e32
 msgid "Manufacturer"
 msgstr "制造商"
 
-#: ../../en/units/nbiot.rst:237 5987e4a5222e4c4e92d606c5f55c50cf
+#: ../../source/units/nbiot.rst:261 5987e4a5222e4c4e92d606c5f55c50cf
 msgid "model"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:237 01307d49a0de4bbd977446990ce71f2d
+#: ../../source/units/nbiot.rst:261 01307d49a0de4bbd977446990ce71f2d
 msgid "Module Model"
 msgstr "模块型号"
 
-#: ../../en/units/nbiot.rst:239 469dc879f7d544949e565e28bfc96fe7
+#: ../../source/units/nbiot.rst:263 469dc879f7d544949e565e28bfc96fe7
 msgid "version"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:239 5eac0a65a9ff40c181478da9bfbd59a3
+#: ../../source/units/nbiot.rst:263 5eac0a65a9ff40c181478da9bfbd59a3
 msgid "Firmware Version"
 msgstr "固件版本"
 
-#: ../../en/units/nbiot.rst:242 301c4011e78348cdbd2e525deb1e5b0a
+#: ../../source/units/nbiot.rst:266 301c4011e78348cdbd2e525deb1e5b0a
 msgid "The configuration parameter to get or set."
 msgstr "要获取或设置的配置参数。"
 
-#: ../../en/units/nbiot.rst:243 d2dcbeeb0e7a4419b20f47f6f8964adc
+#: ../../source/units/nbiot.rst:267 d2dcbeeb0e7a4419b20f47f6f8964adc
 msgid "The value to set for the configuration parameter."
 msgstr "要设置的配置参数值。"
 
-#: ../../en/units/nbiot.rst:244 d766960c8693497fa28c933323d158be
+#: ../../source/units/nbiot.rst:268 d766960c8693497fa28c933323d158be
 msgid "The value of the configuration parameter when getting."
 msgstr "获取到的配置参数值。"
 
-#: ../../en/units/nbiot.rst:249 fb6f72ce9b054a9bb6cc5c2e1fec779d
-msgid "|config_get.png|"
+#: ../../source/units/nbiot.rst:273 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_apn.png|"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:251 d84bb573417347b48c5b0be6c2305c3c
-msgid "|config_set.png|"
+#: ../../source/refs/unit.nbiot.ref:16 440d102385a445b8a9325bdf968e3fe2
+msgid "get_apn.png"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:296 eaf1e21b877e4dc78c94ee4833fe698f
+#: ../../source/units/nbiot.rst:275 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_mode.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:24 440d102385a445b8a9325bdf968e3fe2
+msgid "get_mode.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:277 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_iccid.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:19 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_iccid.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:279 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_imei.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:20 440d102385a445b8a9325bdf968e3fe2
+msgid "get_imei.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:281 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_imsi.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:21 440d102385a445b8a9325bdf968e3fe2
+msgid "get_imsi.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:283 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|get_mfr.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:23 440d102385a445b8a9325bdf968e3fe2
+msgid "get_mfr.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:285 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_model.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:25 138d9c9e5d834c86b836c57d8485b10d
+msgid "get_model.png"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:287 15601afbf1e74d8182baba3b8b9e1e97
+msgid "|get_version.png|"
+msgstr ""
+
+#: ../../source/units/nbiot.rst:332 eaf1e21b877e4dc78c94ee4833fe698f
 msgid "Send an HTTP request."
 msgstr "发送 HTTP 请求。"
 
-#: ../../en/units/nbiot.rst:298 724e64aa01654740992cec473afe0125
+#: ../../source/units/nbiot.rst:334 724e64aa01654740992cec473afe0125
 msgid "HTTP method to use (e.g. \"GET\", \"POST\")."
 msgstr "使用的 HTTP 方法（例如 \"GET\", \"POST\"）。"
 
-#: ../../en/units/nbiot.rst:299 498e34fe6388420ca0f12cf82f367496
+#: ../../source/units/nbiot.rst:335 498e34fe6388420ca0f12cf82f367496
 msgid "URL to send the request to."
 msgstr "发送请求的 URL。"
 
-#: ../../en/units/nbiot.rst:300 b736db4277324424b8e76119adb47312
+#: ../../source/units/nbiot.rst:336 b736db4277324424b8e76119adb47312
 msgid ""
 "(optional) Dictionary, list of tuples, bytes, or file-like object to send"
 " in the body of the Request."
 msgstr "(可选) 要在请求体中发送的字典、元组列表、字节或类文件对象。"
 
-#: ../../en/units/nbiot.rst:301 975acc47e5f64b8f9d37a768d8ab2340
+#: ../../source/units/nbiot.rst:337 975acc47e5f64b8f9d37a768d8ab2340
 msgid ""
 "(optional) A JSON serializable Python object to send in the body of the "
 "Request."
 msgstr "(可选) 要在请求体中发送的 JSON序列化的 Python 对象。"
 
-#: ../../en/units/nbiot.rst:302 4019f81d918b4a9684f27df5dcdbe246
+#: ../../source/units/nbiot.rst:338 4019f81d918b4a9684f27df5dcdbe246
 msgid "(optional) Dictionary of HTTP Headers to send with the Request."
 msgstr "(可选) 随请求发送的 HTTP 头字典。"
 
-#: ../../en/units/nbiot.rst:303 d0d0045f31c745e2b68bc71cf815df72
+#: ../../source/units/nbiot.rst:339 d0d0045f31c745e2b68bc71cf815df72
 msgid "(optional) if False, the response content will be immediately downloaded."
 msgstr "(可选) 如果为 False，响应内容将被立即下载。"
 
-#: ../../en/units/nbiot.rst:304 699512ca96a347cfa950216184d24a5b
+#: ../../source/units/nbiot.rst:340 699512ca96a347cfa950216184d24a5b
 msgid "(optional) Auth tuple to enable Basic/Digest/Custom HTTP Auth."
 msgstr "(可选) 用于启用 Basic/Digest/Custom HTTP 认证的元组。"
 
-#: ../../en/units/nbiot.rst:305 89f8801d3d4c4c47af9b6c5eeb917e04
+#: ../../source/units/nbiot.rst:341 89f8801d3d4c4c47af9b6c5eeb917e04
 msgid ""
 "(optional) How many seconds to wait for the server to send data before "
 "giving up."
 msgstr "(可选) 等待服务器发送数据的秒数。"
 
-#: ../../en/units/nbiot.rst:306 cbd270a4ada14b1faea3afffae076521
+#: ../../source/units/nbiot.rst:342 cbd270a4ada14b1faea3afffae076521
 msgid "(optional) Whether to parse response headers."
 msgstr "(可选) 是否解析响应头。"
 
-#: ../../en/units/nbiot.rst:308 e55b9a9eb47148c5896b91fd3d25ddb9
+#: ../../source/units/nbiot.rst:344 e55b9a9eb47148c5896b91fd3d25ddb9
 msgid "A Response object."
 msgstr "Response 对象。"
 
-#: ../../en/units/nbiot.rst:312 13fb93e8ee64469c9f835b477b35818b
+#: ../../source/units/nbiot.rst:348 13fb93e8ee64469c9f835b477b35818b
 msgid "See :mod:`requests2` for more details."
 msgstr "更多详细信息请参阅 :mod:`requests2`。"
 
-#: ../../en/units/nbiot.rst:316 15601afbf1e74d8182baba3b8b9e1e97
+#: ../../source/units/nbiot.rst:352 15601afbf1e74d8182baba3b8b9e1e97
 msgid "|http_request.png|"
 msgstr ""
 
-#: ../../en/refs/unit.nbiot.ref:30 3af3973eeb3840dea50ebdae410d4d07
+#: ../../source/refs/unit.nbiot.ref:38 0a29cb1f44144804b408a1bb9ba891f6
 msgid "http_request.png"
 msgstr ""
 
-#: ../../en/units/nbiot.rst:336 b65e05a4114346f0a80bdb5013992773
+#: ../../source/units/nbiot.rst:372 b65e05a4114346f0a80bdb5013992773
 msgid "Create an MQTT client."
 msgstr "创建 MQTT 客户端。"
 
-#: ../../en/units/nbiot.rst:338 b6c0381cbd3b4d05aa498c598a9e38ca
+#: ../../source/units/nbiot.rst:374 b6c0381cbd3b4d05aa498c598a9e38ca
 msgid "The unique client ID string."
 msgstr "唯一的客户端 ID 字符串。"
 
-#: ../../en/units/nbiot.rst:339 cef6f35bed5740c28ab19ff87f3fd2b5
+#: ../../source/units/nbiot.rst:375 cef6f35bed5740c28ab19ff87f3fd2b5
 msgid "The hostname or IP address of the remote broker."
 msgstr "远程代理的主机名或 IP 地址。"
 
-#: ../../en/units/nbiot.rst:340 d91a2d90ff244f6b89c86ae17f70afc8
+#: ../../source/units/nbiot.rst:376 d91a2d90ff244f6b89c86ae17f70afc8
 msgid "Network port of the server host to connect to. Default is 0."
 msgstr "要连接的服务器主机网络端口。默认是 0。"
 
-#: ../../en/units/nbiot.rst:341 536b771a1f4846a6a53eab0e204b80ec
+#: ../../source/units/nbiot.rst:377 536b771a1f4846a6a53eab0e204b80ec
 msgid "User name for authentication."
 msgstr "认证用的用户名。"
 
-#: ../../en/units/nbiot.rst:342 536b771a1f4846a6a53eab0e204b80ec
+#: ../../source/units/nbiot.rst:378 536b771a1f4846a6a53eab0e204b80ec
 msgid "Password for authentication."
 msgstr "认证用的密码。"
 
-#: ../../en/units/nbiot.rst:343 b0780d1a86b44fe19944cb139e97ac49
+#: ../../source/units/nbiot.rst:379 b0780d1a86b44fe19944cb139e97ac49
 msgid ""
 "Maximum period in seconds allowed between communications with the broker."
 " Default is 0."
 msgstr "与代理通信之间允许的最大秒数。默认为 0。"
 
-#: ../../en/units/nbiot.rst:344 6f1931ad8ecc437ab6c695bb3df13cd4
+#: ../../source/units/nbiot.rst:380 6f1931ad8ecc437ab6c695bb3df13cd4
 msgid "Whether to use SSL/TLS support. Default is False."
 msgstr "是否使用 SSL/TLS 支持。默认为 False。"
 
-#: ../../en/units/nbiot.rst:345 d7f14ef1e8514e67be72c9f792a22749
+#: ../../source/units/nbiot.rst:381 d7f14ef1e8514e67be72c9f792a22749
 msgid "SSL/TLS parameters."
 msgstr "SSL/TLS 参数。"
 
-#: ../../en/units/nbiot.rst:347 d7870a6663b6404a846d671a23f3ac42
+#: ../../source/units/nbiot.rst:383 d7870a6663b6404a846d671a23f3ac42
 msgid "An MQTTClient object."
 msgstr "MQTTClient 对象。"
 
-#: ../../en/units/nbiot.rst:351 b3ea6c65892b4a2ea9225522e65816c2
+#: ../../source/units/nbiot.rst:387 b3ea6c65892b4a2ea9225522e65816c2
 msgid "See :class:`MQTTClient <umqtt.MQTTClient>` for more details."
 msgstr "更多详细信息请参阅 :class:`MQTTClient <umqtt.MQTTClient>`。"
 
-#: ../../en/units/nbiot.rst:355 b2ceb23d678f4a3f993303f1decdb4e0
-msgid "|mqtt_init.png|"
+#: ../../source/units/nbiot.rst:391 b2ceb23d678f4a3f993303f1decdb4e0
+msgid "|mqtt_client.png|"
+msgstr ""
+
+#: ../../source/refs/unit.nbiot.ref:42 6b995d1fcbeb450ebe1e7aa4b84cb066
+msgid "mqtt_client.png"
 msgstr ""
 
 #~ msgid "|NB-IOTUnit|"
@@ -975,5 +1125,26 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Create an NBIOTUnit object"
+#~ msgstr ""
+
+#~ msgid "|http_example.png|"
+#~ msgstr ""
+
+#~ msgid "|mqtt_example.png|"
+#~ msgstr ""
+
+#~ msgid "|status.png|"
+#~ msgstr ""
+
+#~ msgid "|ifconfig.png|"
+#~ msgstr ""
+
+#~ msgid "|config_get.png|"
+#~ msgstr ""
+
+#~ msgid "|config_set.png|"
+#~ msgstr ""
+
+#~ msgid "|mqtt_init.png|"
 #~ msgstr ""
 

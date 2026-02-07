@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-21 18:14+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,36 +20,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: ../../en/chain/joystick.rst:2 402b7971fa534456ad23a522862a18f2
+#: ../../source/chain/joystick.rst:2 ../../source/refs/chain.joystick.ref
+#: 03a152def46b4646a7475b530d2f2bfd e0119b04f9c3404b9bd8c1ea1c9c22b9
 msgid "Chain Joystick"
 msgstr ""
 
-#: ../../en/chain/joystick.rst:6 a8ca978038d34cf6ad20e15c4f51310a
+#: ../../source/chain/joystick.rst:6 a6eca184445e40dd926084a10cfcd773
 msgid ""
 "Chain Joystick is a joystick module that can be connected to the M5Chain "
 "series devices. This module provides functions to read the joystick "
 "position and button states."
 msgstr "Chain Joystick 是一个可连接到 M5Chain 系列设备的摇杆模块，提供读取摇杆位置和按键状态的功能。"
 
-#: ../../en/chain/joystick.rst:9 32a4d90767db4378adbc025e979742b3
+#: ../../source/chain/joystick.rst:8 1c9d42bc7cbb4cc7bff5303023500585
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/joystick.rst:10 dd619f0dc2d845039402569454601277
+msgid "|Chain Joystick|"
+msgstr ""
+
+#: ../../source/chain/joystick.rst:13 2e2747b977974b799d411e53ae156e20
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
-#: ../../en/chain/joystick.rst:12 ../../en/chain/joystick.rst:30
-#: 6b8e9bcf5f6d4c9a853ee73901b37f68
+#: ../../source/chain/joystick.rst:16 ../../source/chain/joystick.rst:34
+#: 0ef0d95f3a0e4e2dbcbbe5886485a804
 msgid "USB Mouse"
 msgstr "USB 鼠标"
 
-#: ../../en/chain/joystick.rst:14 4319442ba6144940bcbe36222883c32b
+#: ../../source/chain/joystick.rst:18 bea9246cdc154d758429f51ace0a8b23
 msgid "Open the |chain_joystick_usb_mouse_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |chain_joystick_usb_mouse_example.m5f2| 项目。"
 
-#: ../../en/chain/joystick.rst:16 ../../en/chain/joystick.rst:32
-#: b99fabd1d1b647ee8058cf64259fe0cb
+#: ../../source/chain/joystick.rst:20 ../../source/chain/joystick.rst:36
+#: 810b1e31fef34140898219c1380a6585
 msgid "This example demonstrates how to use the Chain Joystick as a USB mouse."
 msgstr "该示例演示如何将 Chain Joystick 作为 USB 鼠标使用。"
 
-#: ../../en/chain/joystick.rst:18 32a4d90767db4378adbc025e979742b3
+#: ../../source/chain/joystick.rst:22 1b233b75ad754fd99aff50939ea5d4b2
 #: chain.joystick.JoystickChain:6
 #: chain.joystick.JoystickChain.get_mapping_value:6
 #: chain.joystick.JoystickChain.get_x:6
@@ -64,30 +73,29 @@ msgstr "该示例演示如何将 Chain Joystick 作为 USB 鼠标使用。"
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/chain/joystick.rst:20 b93a0510ea2a4ea4b91199df700a8633
+#: ../../source/chain/joystick.rst:24 a73d7c3452cd465b845a7aee9ef81d6b
 msgid "|chain_joystick_usb_mouse_example.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:1 489133cfd29e41bd8a7c37a094cd0902
+#: ../../source/refs/chain.joystick.ref:6 62388807c2e54e69a6caeb64270c2135
 msgid "chain_joystick_usb_mouse_example.png"
 msgstr ""
 
-#: ../../en/chain/joystick.rst:22 ../../en/chain/joystick.rst:40
-#: 5261228ceb574c71a7f63cbfe44c8127
+#: ../../source/chain/joystick.rst:26 ../../source/chain/joystick.rst:44
+#: a741b21c1ac148bbbce659c8450d0681
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/chain/joystick.rst:24 ../../en/chain/joystick.rst:42
-#: 7d1fede34b504d6cb394370f1b5e1b9e
+#: ../../source/chain/joystick.rst:28 ../../source/chain/joystick.rst:46
+#: e8ea6d529ce84610afa53736bc2fe2af
 msgid "None"
 msgstr ""
 
-#: ../../en/chain/joystick.rst:27 0927148a99004f26abaddcb5ec8c6284
+#: ../../source/chain/joystick.rst:31 c092224c9bcc4e749380c82bc8f7140a
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../en/chain/joystick.rst:34 0927148a99004f26abaddcb5ec8c6284
-#: chain.joystick.JoystickChain:10
+#: ../../source/chain/joystick.rst:38 chain.joystick.JoystickChain:10
 #: chain.joystick.JoystickChain.get_mapping_value:10
 #: chain.joystick.JoystickChain.get_x:10
 #: chain.joystick.JoystickChain.get_x_16bit:10
@@ -97,57 +105,59 @@ msgstr "MicroPython 示例"
 #: chain.joystick.JoystickChain.get_y_16bit:10
 #: chain.joystick.JoystickChain.get_y_16bit_raw:10
 #: chain.joystick.JoystickChain.get_y_raw:10
-#: chain.joystick.JoystickChain.set_mapping_value:12 of
+#: chain.joystick.JoystickChain.set_mapping_value:12
+#: daf03035dbfc4fc6a23d6a6de7ab6060 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/chain/joystick.rst:46 dc1a265747fc4a7bbfb9f80722d03944
+#: ../../source/chain/joystick.rst:50 745a4088856f4dc1bfe96d8e1423af12
 msgid "**API**"
 msgstr "API参考"
 
-#: ../../en/chain/joystick.rst:49 55599e03177147f9ba5c5b42ae94f4d9
+#: ../../source/chain/joystick.rst:53 1a75a2956f304495b5e2392fec4d45b4
 msgid "JoystickChain"
 msgstr ""
 
-#: 9fa06a13e9cd40e28c632f97628fdd48 chain.joystick.JoystickChain:1 of
+#: 80a32f48547b4fc68d8faa277017042b chain.joystick.JoystickChain:1 of
 msgid "Bases: :py:class:`~chain.key.KeyChain`"
 msgstr ""
 
-#: 1742196354ee47b8a0c77a9b4a05bfba chain.joystick.JoystickChain:1 of
+#: chain.joystick.JoystickChain:1 f61fdd04ca494232b40369d69f404eef of
 msgid "Joystick Chain class for interacting with joystick devices over Chain bus."
 msgstr "用于通过 Chain 总线与摇杆设备交互的 JoystickChain 类。"
 
-#: ../../en/chain/joystick.rst chain.joystick.JoystickChain.set_mapping_value
-#: f19bf0648bef427bb6ecc35910aa656f of
+#: ../../source/chain/joystick.rst 2e450086f084487a9a297fcd8bb2083f
+#: chain.joystick.JoystickChain.set_mapping_value of
 msgid "Parameters"
 msgstr ""
 
-#: chain.joystick.JoystickChain:3 e1b629303d6b42da90289f23b1064286 of
+#: chain.joystick.JoystickChain:3 dd619f0dc2d845039402569454601277 of
 msgid "The Chain bus instance."
 msgstr "Chain 总线实例。"
 
-#: chain.joystick.JoystickChain:4 eaa46d74734b41bb9748c51872b14b86 of
+#: 13a0666ed19f4d07895e2e614498f8a7 chain.joystick.JoystickChain:4 of
 msgid "The device ID of the joystick on the Chain bus."
 msgstr "Chain 总线上摇杆的设备 ID。"
 
-#: 1eaf58acd2004acea35c02ec1c4f30e7 chain.joystick.JoystickChain:8 of
+#: 018f40bfb2e04ab1a39da13ac372ae8f chain.joystick.JoystickChain:8 of
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:17 fd311b255d9d4ce1b608f6e27ed9e111
+#: ../../source/refs/chain.joystick.ref:22 5a2668f4e4474908b81dae6e04d33194
 msgid "init.png"
 msgstr ""
 
-#: ../../en/chain/joystick.rst:56 dcd650b06e014f13b74afac217207f2a
+#: ../../source/chain/joystick.rst:60 7090bcbda9034ae48bd55a988f0965a2
 msgid ""
 "For other button and some general methods, please refer to the "
 ":class:`ChainKey <chain.key.KeyChain>` class."
 msgstr "其它按键及通用方法请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
 
-#: 3f862d2c7cf74094ac26d78ded21a567 chain.joystick.JoystickChain.get_x:1 of
+#: b20a2fd2d37c4d53afe1ccc1a6490758 chain.joystick.JoystickChain.get_x:1 of
 msgid "Get the X position of the joystick."
 msgstr "获取摇杆的 X 位置。"
 
+#: 1ac34a6ee43d4e8e8e566cbf240f4904
 #: chain.joystick.JoystickChain.get_mapping_value
 #: chain.joystick.JoystickChain.get_x chain.joystick.JoystickChain.get_x_16bit
 #: chain.joystick.JoystickChain.get_x_16bit_raw
@@ -155,16 +165,15 @@ msgstr "获取摇杆的 X 位置。"
 #: chain.joystick.JoystickChain.get_y_16bit
 #: chain.joystick.JoystickChain.get_y_16bit_raw
 #: chain.joystick.JoystickChain.get_y_raw
-#: chain.joystick.JoystickChain.set_mapping_value
-#: e7fd34031a9b4ce7a43f254d619c7a3d of
+#: chain.joystick.JoystickChain.set_mapping_value of
 msgid "Returns"
 msgstr ""
 
-#: 873de6c2f929434689c56d3612b56e02 chain.joystick.JoystickChain.get_x:3 of
+#: 9664191ef3aa4f679822279afe81704d chain.joystick.JoystickChain.get_x:3 of
 msgid "X position (-128 to 127)."
 msgstr "X 位置 (-128 到 127)。"
 
-#: 1b7668de6aa84207a03165900be9e7d1
+#: 54cfb300c38e4e9992f032be4bec0959
 #: chain.joystick.JoystickChain.get_mapping_value
 #: chain.joystick.JoystickChain.get_x chain.joystick.JoystickChain.get_x_16bit
 #: chain.joystick.JoystickChain.get_x_16bit_raw
@@ -176,151 +185,153 @@ msgstr "X 位置 (-128 到 127)。"
 msgid "Return type"
 msgstr ""
 
-#: c190035cc1ce40feb696ea0378f70d19 chain.joystick.JoystickChain.get_x:8
+#: 0f373ed730a74ce787362633df393d10 chain.joystick.JoystickChain.get_x:8
 #: chain.joystick.JoystickChain.get_y:8 of
 msgid "|get_8bit_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:5 ec2b3d394ff243e3be433eb8e627e59d
+#: ../../source/refs/chain.joystick.ref:10 4b06160b325b4ab18a48ffc10237b996
 msgid "get_8bit_value.png"
 msgstr ""
 
-#: 6816aec30bdf4d648e471881bd17ecf0 chain.joystick.JoystickChain.get_y:1 of
+#: 6e74d425a0c34096ac792c3192f5b3d7 chain.joystick.JoystickChain.get_y:1 of
 msgid "Get the Y position of the joystick."
 msgstr "获取摇杆的 Y 位置。"
 
-#: 1cef47e0546c45ac82f2a767fa44fd14 chain.joystick.JoystickChain.get_y:3 of
+#: afa5b42cafd147c28686541fc8f8c0c1 chain.joystick.JoystickChain.get_y:3 of
 msgid "Y position (-128 to 127)."
 msgstr "Y 位置 (-128 到 127)。"
 
-#: c63c13fc3e4247249958ef80070bec7a chain.joystick.JoystickChain.get_x_16bit:1
+#: 83491e22f2664866ba50f94f8340600c chain.joystick.JoystickChain.get_x_16bit:1
 #: of
 msgid "Get the X position of the joystick in 16-bit resolution."
 msgstr "获取摇杆的 X 位置（16 位分辨率）。"
 
-#: 0842d9e84d614f1bba44715626852988 chain.joystick.JoystickChain.get_x_16bit:3
+#: chain.joystick.JoystickChain.get_x_16bit:3 f9a7e98e925742148a17637cfd54ed74
 #: of
 msgid "X position (-4095 to 4095)."
 msgstr "X 位置 (-4095 到 4095)。"
 
-#: 7805066088054db5a3903cd5364a2e5d chain.joystick.JoystickChain.get_x_16bit:8
+#: 61c6eca9c70e470c862182db2a185305 chain.joystick.JoystickChain.get_x_16bit:8
 #: chain.joystick.JoystickChain.get_y_16bit:8 of
 msgid "|get_16bit_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:4 f609a80fdbe24a27859285d1cd91aa6b
+#: ../../source/refs/chain.joystick.ref:9 01ba4ed8220c4f1dbb91c980535d9a26
 msgid "get_16bit_value.png"
 msgstr ""
 
-#: 31736e01d5654601b7c56f0a5922abde chain.joystick.JoystickChain.get_y_16bit:1
+#: 49763fb2b18c4980a49f130696e22b85 chain.joystick.JoystickChain.get_y_16bit:1
 #: of
 msgid "Get the Y position of the joystick in 16-bit resolution."
 msgstr "获取摇杆的 Y 位置（16 位分辨率）。"
 
-#: chain.joystick.JoystickChain.get_y_16bit:3 e59eab37a0fc44f0b670962dec4472da
+#: ce8bdd80d59a4531a5955288b4a0c64b chain.joystick.JoystickChain.get_y_16bit:3
 #: of
 msgid "Y position (-4095 to 4095)."
 msgstr "Y 位置 (-4095 到 4095)。"
 
-#: b512013f94454c38bacb6c0472f0ac6e chain.joystick.JoystickChain.get_x_raw:1 of
+#: 5a68fbe7f95547a0b9b5fa05b235f36c chain.joystick.JoystickChain.get_x_raw:1 of
 msgid "Get the raw X ADC value of the joystick."
 msgstr "获取摇杆的原始 X ADC 值。"
 
-#: 979ec81637804bdba3a55f9c0568659f chain.joystick.JoystickChain.get_x_raw:3 of
+#: 7d1b4459bee74b62b553de9f6a0bc8a0 chain.joystick.JoystickChain.get_x_raw:3 of
 msgid "Raw X ADC value (0-255)."
 msgstr "原始 X ADC 值 (0-255)。"
 
-#: b4c23a3bed45482d9872cb3c08e833d9 chain.joystick.JoystickChain.get_x_raw:8
+#: ada4bfea17204343b07a609aee153160 chain.joystick.JoystickChain.get_x_raw:8
 #: chain.joystick.JoystickChain.get_y_raw:8 of
 msgid "|get_raw_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:14 d99dc49a29454ed09ad9459548eb71fe
+#: ../../source/refs/chain.joystick.ref:19 d00bbc049528443ab64f18f69771618e
 msgid "get_raw_value.png"
 msgstr ""
 
-#: chain.joystick.JoystickChain.get_y_raw:1 eb990f55fd2e44c9b87aee443277c23d of
+#: 681ede71103846d4ad6cc379a6fb5baf chain.joystick.JoystickChain.get_y_raw:1 of
 msgid "Get the raw Y ADC value of the joystick."
 msgstr "获取摇杆的原始 Y ADC 值。"
 
-#: ae0c895712c94f2799b2674e10ea9a9c chain.joystick.JoystickChain.get_y_raw:3 of
+#: chain.joystick.JoystickChain.get_y_raw:3 d5e41eb5d2f2480d9ae4ca76edfa6d50 of
 msgid "Raw Y ADC value (0-255)."
 msgstr "原始 Y ADC 值 (0-255)。"
 
-#: 3f638329e4e840bba2f1a87e2bf4af7e
+#: b933807bc93a41a3ade955c14e90fb1d
 #: chain.joystick.JoystickChain.get_x_16bit_raw:1 of
 msgid "Get the raw X ADC value of the joystick in 16-bit resolution."
 msgstr "获取摇杆的原始 X ADC 值（16 位分辨率）。"
 
-#: chain.joystick.JoystickChain.get_x_16bit_raw:3
-#: f67da344a77b400096922a134655e909 of
+#: c87702e2a48947818b79ecc6c2dc9667
+#: chain.joystick.JoystickChain.get_x_16bit_raw:3 of
 msgid "Raw X ADC value (0-65535)."
 msgstr "原始 X ADC 值 (0-65535)。"
 
-#: 7095cc3cee594ecaa9836fe479b38d95
+#: 85251f6165344e648368a51e341114b0
 #: chain.joystick.JoystickChain.get_x_16bit_raw:8
 #: chain.joystick.JoystickChain.get_y_16bit_raw:8 of
 msgid "|get_raw_16bit_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:13 489133cfd29e41bd8a7c37a094cd0902
+#: ../../source/refs/chain.joystick.ref:18 1473caaf8690431bb9c1658938b3d7ea
 msgid "get_raw_16bit_value.png"
 msgstr ""
 
-#: 3f03af2c17534b47b7eb6ecce4ed3127
+#: 4b040e4e660d422fa508c183c6b50888
 #: chain.joystick.JoystickChain.get_y_16bit_raw:1 of
 msgid "Get the raw Y ADC value of the joystick in 16-bit resolution."
 msgstr "获取摇杆的原始 Y ADC 值（16 位分辨率）。"
 
-#: 2668c016a5a341b9ba6e2912c3a3c2ec
+#: c1ea1e6f8f434e2e9ce5cfe04f7f375b
 #: chain.joystick.JoystickChain.get_y_16bit_raw:3 of
 msgid "Raw Y ADC value (0-65535)."
 msgstr "原始 Y ADC 值 (0-65535)。"
 
-#: 0743a1eb772347e58b85c0b6d6a81441
+#: 42b356a086f74b40a6881b8fe00e5aca
 #: chain.joystick.JoystickChain.get_mapping_value:1 of
 msgid "Get the mapping values of the joystick."
 msgstr "获取摇杆的映射值。"
 
-#: 63d3568cef0b450e93d7adf265bf2d29
+#: 216e789d85594768a9d5ae968afb113c
 #: chain.joystick.JoystickChain.get_mapping_value:3
 #: chain.joystick.JoystickChain.set_mapping_value:3 of
 msgid ""
 "A tuple containing the mapping values (x_negative_min, x_negative_max, "
 "x_positive_min, x_positive_max, y_negative_min, y_negative_max, "
 "y_positive_min, y_positive_max)."
-msgstr "包含映射值的元组 (x_negative_min, x_negative_max, x_positive_min, x_positive_max, y_negative_min, y_negative_max, y_positive_min, y_positive_max)。"
+msgstr ""
+"包含映射值的元组 (x_negative_min, x_negative_max, x_positive_min, x_positive_max,"
+" y_negative_min, y_negative_max, y_positive_min, y_positive_max)。"
 
-#: 48ed487e79914f2f90095d201cc38b1e
+#: 8409ad12de3c48508adbb0b5edb0b3c9
 #: chain.joystick.JoystickChain.get_mapping_value:8 of
 msgid "|get_mapping_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:12 77b90c111c3c41e79f2679038264b75b
+#: ../../source/refs/chain.joystick.ref:17 2aee298f0f5a41d0bde6e6d1a2be5e39
 msgid "get_mapping_value.png"
 msgstr ""
 
-#: 672153bfa5fa4e439323bfaa965b7f91
+#: 00e035d3f02e4d43a3647cb0ddb31812
 #: chain.joystick.JoystickChain.set_mapping_value:1 of
 msgid "Set the mapping values of the joystick."
 msgstr "设置摇杆的映射值。"
 
-#: bd8ac815b58f4937910d1a1f70c3a25e
-#: chain.joystick.JoystickChain.set_mapping_value:4 of
+#: chain.joystick.JoystickChain.set_mapping_value:4
+#: fbb20672956d45daba41004a7ad26646 of
 msgid "Whether to save the mapping values to non-volatile memory."
 msgstr "是否将映射值保存到非易失性存储。"
 
-#: 043f0a3a9d7b448aa763fe01cc15b13c
+#: 47e9b60f25e0438ca6d6e1911ca139e9
 #: chain.joystick.JoystickChain.set_mapping_value:5 of
 msgid "True if the mapping values were set successfully, False otherwise."
 msgstr "设置成功返回 True，否则返回 False。"
 
-#: c4b9b815945044bc819cb470921bb66d
+#: 0691d518cb514390bab63a7d6d0aa0d7
 #: chain.joystick.JoystickChain.set_mapping_value:10 of
 msgid "|set_mapping_value.png|"
 msgstr ""
 
-#: ../../en/refs/chain.joystick.ref:22 0d15853bf5f24998be0dd32e154c8ffb
+#: ../../source/refs/chain.joystick.ref:27 1da095a63539467a9ce568c62e8af860
 msgid "set_mapping_value.png"
 msgstr ""
 

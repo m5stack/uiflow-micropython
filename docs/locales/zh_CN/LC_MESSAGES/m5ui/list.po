@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-04 11:13+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,268 +18,312 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/m5ui/list.rst:4 ../../en/m5ui/list.rst:53
-#: b38d28b891054b83bf1be37113263177 dc9f681fa2904cec91fa9f5773f117dc
+#: ../../source/m5ui/list.rst:4 ../../source/m5ui/list.rst:53
+#: 1cba2678dee84af7b56e5f8159504e11 c2f1e459d0a54b30809254f6135ea9f2
 msgid "M5List"
 msgstr ""
 
-#: ../../en/m5ui/list.rst:8 d2ae8de227454dbbacc39ef10e7cc07b
+#: ../../source/m5ui/list.rst:8 2274eb4270f94e4d8002f68ac62dedfc
 msgid ""
 "M5List is a widget that can be used to create lists in user interfaces. "
 "It is basically a rectangle with vertical layout to which Buttons and "
 "Text can be added."
 msgstr "M5List 是一个可在用户界面中创建列表的控件。本质上它是一个具有垂直布局的矩形，可向其中添加按钮和文本。"
 
-#: ../../en/m5ui/list.rst:12 9d93af2b969349bba5700381828bd26f
+#: ../../source/m5ui/list.rst:12 68534fcd03a540669d9d77a76b64aef6
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 示例"
 
-#: ../../en/m5ui/list.rst:15 ../../en/m5ui/list.rst:34
-#: 14e420f5ef6e458cbfd6648ec4eddff6 eab239fc5a144ae58df4569aeb881220
+#: ../../source/m5ui/list.rst:15 ../../source/m5ui/list.rst:34
+#: 365eaa94c41c47d0b781bb6bb6fe2fab 41a44dd6ba794aea9d5742d073d5f702
 msgid "list example"
 msgstr "列表示例"
 
-#: ../../en/m5ui/list.rst:17 266309c33e7e481e81c60d3ff6290d34
+#: ../../source/m5ui/list.rst:17 41dcf40e92e449f4af7ac2b123968c9b
 msgid "Open the |cores3_list_example.m5f2| project in UiFlow2."
 msgstr ""
 
-#: ../../en/m5ui/list.rst:19 ../../en/m5ui/list.rst:36
-#: b4db489f0c64435ea02f9cb9fbdfe5ca ff89bc3611f440beaf2e997989c79412
+#: ../../source/m5ui/list.rst:19 ../../source/m5ui/list.rst:36
+#: 8aa86cc9b49d4420b187121652f3c017 e4cffc05f1b944e9b70fbf351e3c1a5f
 msgid ""
 "This example demonstrates how to create a list that displays a series of "
 "items."
 msgstr "本示例演示如何创建一个用于显示一系列条目的列表。"
 
-#: ../../en/m5ui/list.rst:21 ../../en/m5ui/list.rst:62
-#: ../../en/m5ui/list.rst:78 ../../en/m5ui/list.rst:93
-#: ../../en/m5ui/list.rst:108 1d68dba86e5549d5bc92e5d233cdddca
-#: 54fc028b960044ee9e701a262c82c34e 62e11d48e10c4909ac140c3495257886
-#: 73e4d6c120424c45abcdf1d069faa852 7ec14ed5d8c84bef8fb555ff991cd00b
-#: 87910c8749e34c63ab6b7451e81ad9bd b113fa96139b4f16ac1d0c5adf9d54b9
-#: m5ui.list.M5List:9 m5ui.list.M5List.add_button:14
-#: m5ui.list.M5List.add_text:12 of
+#: ../../source/m5ui/list.rst:21 ../../source/m5ui/list.rst:62
+#: ../../source/m5ui/list.rst:80 ../../source/m5ui/list.rst:97
+#: ../../source/m5ui/list.rst:114 185105ce1d674ab8b789c521498e5645
+#: 45c5c57a98cb4e999bfc76e8ea13f2de 7e4f8f520df548b9b7e248f299864ff3
+#: 95546fd8f87d4f4989b9eeec5d11e693 97825dc4d45b4899ada545100267e2f8
+#: b14f0fe489404f8c9d54a626fe61a141 e6ed5b8ea94f4d1588f4c0f998d4073e
+#: ecfd98b726dd42fd989729529ba5f852 m5ui.list.M5List:9
+#: m5ui.list.M5List.add_button:14 m5ui.list.M5List.add_text:12 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/list.rst:23 f62061f2457d49e18fc4b1595d852db2
+#: ../../source/m5ui/list.rst:23 6de33dfd36b041158cf850dfa9df2395
 msgid "|cores3_list_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.list.ref:9 a90a74f44ee34a119414ada249758947
+#: ../../source/refs/m5ui.list.ref:12 50cb744ebb7e4888996997a27783cfc9
 msgid "cores3_list_example.png"
 msgstr ""
 
-#: ../../en/m5ui/list.rst:25 ../../en/m5ui/list.rst:44
-#: 1eb3444b1e6444ed9b1f019f02467e43 39c0d9bf26eb4e46af2605b686ad7277
+#: ../../source/m5ui/list.rst:25 ../../source/m5ui/list.rst:44
+#: 9aa66cb65eab4c63900661baad03e474 fa2f75940aaf48caadf94d88245791ac
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/m5ui/list.rst:27 ../../en/m5ui/list.rst:46
-#: 484ff2e836254c6092eb63423e03b690 49102d2d24d444598daa0acde7d14438
-#: 52ee58dfbdf8401e86ab3f03e6930beb m5ui.list.M5List:11 of
+#: ../../source/m5ui/list.rst:27 ../../source/m5ui/list.rst:46
+#: 0debc47c1ca3404f8d24ea7fd89b2c9a 88bc94ef7ef44cfea8d3f6f8c4a7ab34
+#: e48cebbd76f04831a4f855ba3ca9acf8 m5ui.list.M5List:11 of
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/list.rst:31 f74b3fa1d5bd4118b1577464ff5b4398
+#: ../../source/m5ui/list.rst:31 7b71db02e2cd47088c5f9476bdcf2f82
 msgid "MicroPython Example"
 msgstr "MicroPython 示例"
 
-#: ../../en/m5ui/list.rst:38 ../../en/m5ui/list.rst:66
-#: ../../en/m5ui/list.rst:82 ../../en/m5ui/list.rst:97
-#: ../../en/m5ui/list.rst:112 536363d47eb94abf81a9ad58c2afea1e
-#: 56aa7187d1a24e89818a56ab41a64716 7e3d3a25ab094cb496c4efe917d09a36
-#: 8e6c128ea739472c8da8a15d0d22b1e1 b838777af5734bf28381a4945d19728d
-#: c88f5d96b5fb426e8c9f0945812035e1 e35f8bb6249e456f808a095f1cd53c5b
-#: m5ui.list.M5List:13 m5ui.list.M5List.add_button:18
-#: m5ui.list.M5List.add_text:16 of
+#: ../../source/m5ui/list.rst:38 ../../source/m5ui/list.rst:68
+#: ../../source/m5ui/list.rst:86 ../../source/m5ui/list.rst:103
+#: ../../source/m5ui/list.rst:120 04860ca294ff48aba34e69e47f765c44
+#: 12bcc12270e6402f9fb67fd1f07fdfc4 8efddf296dff4d2294d4d8329820dc7d
+#: a606eaba115b4769b1c19b4b929f44b8 c156ea6ba9c142e28701e8245894e43b
+#: cfed098690d44432a578ff2941b07ca7 d0c5ba363e8940a488a58ea453b605d6
+#: d21d0a78af144b12af0d428628f95ea3 m5ui.list.M5List:13
+#: m5ui.list.M5List.add_button:19 m5ui.list.M5List.add_text:17 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/list.rst:50 224526be4e8a42e883ddcf41f91eb7e8
+#: ../../source/m5ui/list.rst:50 a222289c015b4486b7a47406b6ade7ba
 msgid "**API**"
 msgstr ""
 
-#: 6d3b95eca8444ef9aa3154e837e4e2cc m5ui.list.M5List:1 of
+#: 5fc60cb4e5904481b29ea992dcede1b6 m5ui.list.M5List:1 of
 msgid "Bases: :py:class:`~lvgl.list`"
 msgstr ""
 
-#: b1ee101d1d2d4d33b42a6fd2df364a31 m5ui.list.M5List:1 of
+#: fcefa7b698d04a3595325cff59d49bf3 m5ui.list.M5List:1 of
 msgid "Create a list object."
 msgstr "创建一个列表对象。"
 
-#: ../../en/m5ui/list.rst 9de3302485ba4a59b6198c28b3f561d0
-#: c49e9ea3fd4b4cc98cbf7cba05084874 eb41495127f9476ba2f4da5763c74a1b
+#: ../../source/m5ui/list.rst aac6fa2cc92f4b24b948dd3d5d945826
+#: c9ce7c7ace1d40eda1d31030ad0e3cb7 d1f13ceb07404acf809a3830daaf70fb
 #: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Parameters"
-msgstr "参数"
+msgstr ""
 
-#: e0515e09e87f43ce9c7ff37c1d9e9004 m5ui.list.M5List:3 of
+#: 656be22e7fab478c8b640bddbb49461c m5ui.list.M5List:3 of
 msgid "The x position of the list."
 msgstr "列表的 x 坐标。"
 
-#: f6c49bb0507d48839befcffd36ef0edf m5ui.list.M5List:4 of
+#: f63ff533aa9d471f8f7ef2356f491b9e m5ui.list.M5List:4 of
 msgid "The y position of the list."
 msgstr "列表的 y 坐标。"
 
-#: a71156b246ba46d4b50752731d8de5d5 m5ui.list.M5List:5 of
+#: 226328d8faf64748b1688bbc352874d9 m5ui.list.M5List:5 of
 msgid "The width of the list."
 msgstr "列表的宽度。"
 
-#: af904d7b2d8148168e85e3919cebc920 m5ui.list.M5List:6 of
+#: 1cb8c154a8e64e988f8ea7ad67dde6ae m5ui.list.M5List:6 of
 msgid "The height of the list."
 msgstr "列表的高度。"
 
-#: 69b97570c4fb4573b5ec087664add798 m5ui.list.M5List:7 of
+#: b2ba1833a71a49b897ff0287d619f2f6 m5ui.list.M5List:7 of
 msgid ""
 "The parent object to attach the list to. If not specified, the list will "
 "be attached to the default screen."
 msgstr "要将列表附加到的父对象；若未指定，则附加到默认屏幕。"
 
-#: ../../en/m5ui/list.rst:60 90b79cb1cd4d46b3af94fa39d6c218e1
+#: ../../source/m5ui/list.rst:60 a0b4c65f1b8443799a85172185dabd78
 msgid "Move the background of the list to the end."
 msgstr "将列表的背景项移动到末尾。"
 
-#: ../../en/m5ui/list.rst:64 7072db51146a480fb4167fcb23dac431
-msgid "|move_background.png|"
+#: ../../source/m5ui/list.rst:64 ../../source/m5ui/list.rst:82
+#: ../../source/m5ui/list.rst:99 0ea72b456c764cbb8638a342dbe64c40
+#: 2c7127d48e10478084d8d7dbaade236c 4bb9dc6437234218809cafe80d71d0de
+msgid "|button_move_to_index.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.list.ref:6 0180e942ba4c4178b2efa6d748ac540b
-msgid "move_background.png"
+#: ../../source/refs/m5ui.list.ref:6 28d6d49b9df4415ea10798ec2d42d17c
+#: 88802e565b0a474da539f6d5b4833657 a7da508a87d24c1a91f0f01c3aef0221
+msgid "button_move_to_index.png"
 msgstr ""
 
-#: ../../en/m5ui/list.rst:76 a4ff761882484ad18482edb30dcdc904
+#: ../../source/m5ui/list.rst:66 ../../source/m5ui/list.rst:84
+#: ../../source/m5ui/list.rst:101 9f46549720f442f1ab152d0e53420ea7
+#: af9b8b7264bd4868ae0076ff19a78ac1 dde498cd3d904cf7b5f757c5be6baae3
+msgid "|label_move_to_index.png|"
+msgstr ""
+
+#: ../../source/refs/m5ui.list.ref:7 3a52db6948c2449aa5d296dc7096592d
+#: 6a564908c68044999259adce8dd2e2b5 c35b93e55462479f9cc3f724dc18cccb
+msgid "label_move_to_index.png"
+msgstr ""
+
+#: ../../source/m5ui/list.rst:78 1dd16803cefe4ebb91c825d554216b42
 msgid "Move the foreground of the list to the end."
 msgstr "将列表的前景项移动到末尾。"
 
-#: ../../en/m5ui/list.rst:80 dfb9eb2799f245eabb3c2ab635abdf1f
-msgid "|move_foreground.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.list.ref:4 bccaa8e488cc451b9b8bd5fb3db3f486
-msgid "move_foreground.png"
-msgstr ""
-
-#: ../../en/m5ui/list.rst:91 e6b3d08f418547a798993c8901f0b933
+#: ../../source/m5ui/list.rst:95 f15c9d85509a4bd2bf5216d1acfb1ef0
 msgid "Move the item at the specified index to the end of the list."
 msgstr "将指定索引的项目移动到列表末尾。"
 
-#: ../../en/m5ui/list.rst:95 6fb0c1be103f44ef8b5ea49d1e087771
-msgid "|move_to_index.png|"
-msgstr ""
-
-#: ../../en/refs/m5ui.list.ref:5 a7df447f3064481a9995eaf197781491
-msgid "move_to_index.png"
-msgstr ""
-
-#: ../../en/m5ui/list.rst:106 6a7abda68b6d4edbabb1274b457a6ba5
+#: ../../source/m5ui/list.rst:112 47ac5dcbab694d028cf8e70f70ac8e9b
 msgid "Delete the item from the list."
 msgstr "从列表中删除该项目。"
 
-#: ../../en/m5ui/list.rst:110 b0b4ada34c5e41c7a4e77d4202638616
-msgid "|delete.png|"
+#: ../../source/m5ui/list.rst:116 0cc46ca3b9f44723aebe93805b970dbb
+msgid "|button_delete.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.list.ref:7 38e625981589407690ae69f136d099a7
-msgid "delete.png"
+#: ../../source/refs/m5ui.list.ref:8 8b236eef20804fa592e89698039db21b
+msgid "button_delete.png"
 msgstr ""
 
-#: 1c44467a8ea84d129c70ef27dd1e78c2 m5ui.list.M5List.add_text:1 of
+#: ../../source/m5ui/list.rst:118 8ce514b3a5b04809bf75caf02b9cf5e3
+msgid "|label_delete.png|"
+msgstr ""
+
+#: ../../source/refs/m5ui.list.ref:9 0bbfe72ca1174a99826b1f44a7866a3e
+msgid "label_delete.png"
+msgstr ""
+
+#: 6c2f3be64bec4a01a1ba85d001e23931 m5ui.list.M5List.add_text:1 of
 msgid "Add a text label to the list."
 msgstr "向列表添加文本标签。"
 
-#: 64c95aed4740483b99063b3e4d452ce2 m5ui.list.M5List.add_text:3 of
+#: b64f10bd2d7c4ed2949092e80ab6179c m5ui.list.M5List.add_text:3 of
 msgid "The text to display on the label."
 msgstr "要在标签上显示的文本。"
 
-#: 61f0e87e7a9947dcb0451f061aa22115 m5ui.list.M5List.add_text:4 of
+#: b93427ef60f3451582bed32bf59aad35 m5ui.list.M5List.add_text:4 of
 msgid "The text color of the label in hexadecimal format."
 msgstr "标签文字的颜色（十六进制）。"
 
-#: 967fff07cabb4b3b96fc97f8518ca2a2 m5ui.list.M5List.add_text:5 of
+#: 9982eb4615c64511948006f6c2c36850 m5ui.list.M5List.add_text:5 of
 msgid "The text opacity of the label (0-255)."
 msgstr "按钮文字的不透明度（0-255）。"
 
-#: b4ef09172c334a65a1cd432653096dfb m5ui.list.M5List.add_text:6 of
+#: 93e0de0e5c06474a89855729d3d6cfbc m5ui.list.M5List.add_text:6 of
 msgid "The background color of the label in hexadecimal format."
 msgstr "标签背景颜色（十六进制）。"
 
-#: 77f8d297393a4204beb71411914a7efd m5ui.list.M5List.add_text:7 of
+#: 5beaf6ad45bb41b0b695731d67676571 m5ui.list.M5List.add_text:7 of
 msgid "The background opacity of the label (0-255)."
 msgstr "标签背景的不透明度（0-255）。"
 
-#: 11db5ee401d9457293753bdd43ddfa24 m5ui.list.M5List.add_text:8 of
+#: 7f111b6046524390899b4c23c2145697 m5ui.list.M5List.add_text:8 of
 msgid "The font to use for the label."
 msgstr "标签使用的字体。"
 
-#: cb4f3f13431b4716af9e7d36c8e2f9b9 m5ui.list.M5List.add_button
-#: m5ui.list.M5List.add_text of
+#: b6652f01b589498cbcdfe8c3367f3e3f bc0cde36666e43eb87167cefd1009706
+#: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Returns"
-msgstr "返回值"
+msgstr ""
 
-#: 60ca2092b17f48d4a2d1771d8d368e94 m5ui.list.M5List.add_text:9 of
+#: c3b78ad83a764a06ab7233f20cccc7e1 m5ui.list.M5List.add_text:9 of
 msgid "The created label object :ref:`m5ui.M5Label <m5ui.M5Label>`."
 msgstr "创建的标签对象 :ref:`m5ui.M5Label <m5ui.M5Label>`。"
 
-#: be5a6ad7a5844507b7311e6846b2079b m5ui.list.M5List.add_button
-#: m5ui.list.M5List.add_text of
+#: 75f600ac35d545d382151ee7a58beaca ecdd19082e054be3ab7119136bff2ce5
+#: m5ui.list.M5List.add_button m5ui.list.M5List.add_text of
 msgid "Return type"
-msgstr "返回类型"
-
-#: 6e1c4e95ec53476bb98fac251d2c7cf9 m5ui.list.M5List.add_text:14 of
-msgid "|add_text.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.list.ref:2 387f0da3b41f4f1eae4590184c88099b
+#: 665c248379e3426fad778960a6fbce48 m5ui.list.M5List.add_text:14 of
+msgid "|add_text.png| |add_text2.png|"
+msgstr ""
+
+#: ../../source/refs/m5ui.list.ref:2 f8d5016491a74f44a1ab2f055b57f58d
 msgid "add_text.png"
 msgstr ""
 
-#: c102e0ea40e24ff08227144efa8316f8 m5ui.list.M5List.add_button:1 of
+#: ../../source/refs/m5ui.list.ref:3 f1aad17bceb945239c1a8f5f2f7a1e97
+msgid "add_text2.png"
+msgstr ""
+
+#: f8ef7e41b71147da84d4aab3e4decb80 m5ui.list.M5List.add_button:1 of
 msgid "Add a button to the list."
 msgstr "向列表添加按钮。"
 
-#: f378228c517e4e87aeca6281e2c69bfd m5ui.list.M5List.add_button:3 of
+#: b9b46a4f748a41f8af08325bd22d2044 m5ui.list.M5List.add_button:3 of
 msgid "The icon to display on the button."
 msgstr "按钮上要显示的图标。"
 
-#: f899cec7313a4f84bc5951c983675f3d m5ui.list.M5List.add_button:4 of
+#: 6d5aa03871234b08bef3f53db0d1cb18 m5ui.list.M5List.add_button:4 of
 msgid "The text to display on the button."
 msgstr "按钮上要显示的文本。"
 
-#: 52486ef6f47f421db5d60edd88240f6a m5ui.list.M5List.add_button:5 of
+#: b223e3560ca8439a94de0c8c5bb0d15f m5ui.list.M5List.add_button:5 of
 msgid "The height of the button."
 msgstr "按钮的高度。"
 
-#: 12dda48295df4de7b812db36c73aec61 m5ui.list.M5List.add_button:6 of
+#: dd6fef347b3e46138fb41156489143ab m5ui.list.M5List.add_button:6 of
 msgid "The background color of the button in hexadecimal format."
 msgstr "按钮背景颜色（十六进制）。"
 
-#: b4526e38b14a4ae0af5088e6246d3053 m5ui.list.M5List.add_button:7 of
+#: 7bcf0fac1b1e4ba9aa1a19edbe68b766 m5ui.list.M5List.add_button:7 of
 msgid "The background opacity of the button (0-255)."
 msgstr "按钮背景的不透明度（0-255）。"
 
-#: 7ef72bfc265f4f2f95bc0874c7787027 m5ui.list.M5List.add_button:8 of
+#: fa145e49d81c431cb6392abdc6ff0902 m5ui.list.M5List.add_button:8 of
 msgid "The text color of the button in hexadecimal format."
 msgstr "按钮文字颜色（十六进制）。"
 
-#: 967fff07cabb4b3b96fc97f8518ca2a2 m5ui.list.M5List.add_button:9 of
+#: 0c5518b1876c4e31a26fa625a2f7479a m5ui.list.M5List.add_button:9 of
 msgid "The text opacity of the button (0-255)."
 msgstr "按钮文字的不透明度（0-255）。"
 
-#: ee5a7140c6ad4260b488b270a6a7bc5a m5ui.list.M5List.add_button:10 of
+#: 445d680a8c1a441983ec47dc66dafe04 m5ui.list.M5List.add_button:10 of
 msgid "The font to use for the button text."
 msgstr "按钮文字所使用的字体。"
 
-#: f061c4bdd4b14a1f95281b4ff948686b m5ui.list.M5List.add_button:11 of
+#: c45e80f039804f62acd3a22be93809c1 m5ui.list.M5List.add_button:11 of
 msgid "The created button object :ref:`m5ui.M5Button <m5ui.M5Button>`."
 msgstr "创建的按钮对象 :ref:`m5ui.M5Button <m5ui.M5Button>`。"
 
-#: f101b3db15ce4d60b0942126ddc8ca73 m5ui.list.M5List.add_button:16 of
-msgid "|add_button.png|"
+#: 72a2f5458a174a8891a9a8f16369ef19 m5ui.list.M5List.add_button:16 of
+msgid "|add_button.png| |add_button2.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.list.ref:3 5a6614b568c043e585e1d47a10acb894
+#: ../../source/refs/m5ui.list.ref:4 8612fd13c4b44c42be5ba6c785889927
 msgid "add_button.png"
 msgstr ""
+
+#: ../../source/refs/m5ui.list.ref:5 8d2a711be22344d4a353d14b3ed4cd85
+msgid "add_button2.png"
+msgstr ""
+
+#~ msgid "|move_background.png|"
+#~ msgstr ""
+
+#~ msgid "move_background.png"
+#~ msgstr ""
+
+#~ msgid "|move_foreground.png|"
+#~ msgstr ""
+
+#~ msgid "move_foreground.png"
+#~ msgstr ""
+
+#~ msgid "|move_to_index.png|"
+#~ msgstr ""
+
+#~ msgid "move_to_index.png"
+#~ msgstr ""
+
+#~ msgid "|delete.png|"
+#~ msgstr ""
+
+#~ msgid "delete.png"
+#~ msgstr ""
+
+#~ msgid "|add_text.png|"
+#~ msgstr ""
+
+#~ msgid "|add_button.png|"
+#~ msgstr ""
 

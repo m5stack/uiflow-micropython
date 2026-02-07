@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/module/asr.rst:3 65b90dbbc9e74529913de3c44a61023c
+msgid "ASR Module"
+msgstr ""
+
+#: ../../source/module/asr.rst:7 38c7b2a0769c4296ac4ae7fb04e53e44
+msgid "This is the driver library of ASR Module."
+msgstr "这是 ASR 模块的驱动库。"
+
+#: ../../source/module/asr.rst:9 a3a5c24d72d24684bc7cf0edd1e470db
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/module/asr.rst:11 13c5e8a0a17d4640800a32600923e0fa
+msgid "|ASRModule|"
+msgstr ""
+
+#: ../../source/module/asr.rst:53 ../../source/refs/module.asr.ref
+#: 262ec74e581a421f92f12059c4cde6e2 2e88590758f943e6b3e4dae9ca829d10
+msgid "ASRModule"
+msgstr ""
+
+#: ../../source/module/asr.rst:14 84d29a3df2e24cba9e637981ff40d049
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 示例"
+
+#: ../../source/module/asr.rst:17 ../../source/module/asr.rst:35
+#: 5472c507a19246589d2a0971ce171372 681b25a1f7b74766a44ad301b96121a4
+msgid "ASR Example"
+msgstr ""
+
+#: ../../source/module/asr.rst:19 39e30f66d496447db50df7b4fe867248
+msgid "Open the |asr_core2_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |asr_core2_example.m5f2| 项目。"
+
+#: ../../source/module/asr.rst:21 ../../source/module/asr.rst:37
+#: 0b33d5a85dd447a3a578ac7e4f5a5612 20f73d2ddb7e4d6baa68544c72066889
+msgid ""
+"This example shows how to use Module ASR to get the current command word,"
+" command number, and trigger an event when you say hello to do something "
+"you want to do."
+msgstr "该示例演示如何使用 ASR 模块获取当前指令词和指令编号，并在你说出“hello”时触发事件以执行所需操作。"
+
+#: ../../source/module/asr.rst:23 1c07778540e9477c8549620e6f3b7c03
+#: 3be6b6087ea14cfda309189fc1002310 module.asr.ASRModule:8 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/module/asr.rst:25 89b000cbacc547b0b1f6de4777acfb6c
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/module.asr.ref:22 0e24542a5a2947b6addae701759ce2f4
+msgid "example.png"
+msgstr ""
+
+#: ../../source/module/asr.rst:27 ../../source/module/asr.rst:45
+#: 553c003d1e9f4d9db29e9641459366da c9c1488f0e2e4c2f85eec100e5259548
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/module/asr.rst:29 ../../source/module/asr.rst:47
+#: 7e4872c3cbae4aa1818d36069f222895 ae655cd87561409499d9620443cb89a0
+msgid "None"
+msgstr ""
+
+#: ../../source/module/asr.rst:32 1506bf83c15348bebb211c3276b247a3
+msgid "MicroPython Example"
+msgstr "MicroPython 示例"
+
+#: ../../source/module/asr.rst:39 2de34b9261c346a0af0e6640d90ba984
+#: 3e597511a506417d9346ea5a42e720e0 module.asr.ASRModule:12 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/module/asr.rst:50 d1055de01bba422b886749df3b95ee4c
+msgid "**API**"
+msgstr "API参考"
+
+#: a437e2d0224f4338baa54d79bce4027e module.asr.ASRModule:1 of
+msgid "Bases: :py:class:`~unit.asr.ASRUnit`"
+msgstr ""
+
+#: cb028c1caa4f45c09070ba4845d2c1c8 module.asr.ASRModule:1 of
+msgid "Voice recognition hardware module."
+msgstr "语音识别硬件模块。"
+
+#: 194cb5ca254c4e07a6fde94b40ccfd33 module.asr.ASRModule of
+msgid "Parameters"
+msgstr ""
+
+#: 8e1c2edd4de94eb9848e02d4ad7d24d3 module.asr.ASRModule:3 of
+msgid "UART port ID for communication. Default is 2."
+msgstr "用于通信的 UART 端口编号，默认值为 2。"
+
+#: 943a2e5ce0b64fc6a1e2f53ce1626a9e module.asr.ASRModule:4 of
+msgid "TX pin number."
+msgstr "TX 引脚编号。"
+
+#: 1f104fe1d1314978971923f411ff64d9 module.asr.ASRModule:5 of
+msgid "RX pin number."
+msgstr "RX 引脚编号。"
+
+#: 2c0c091ef1d5413eab4562c8a6a0e184 module.asr.ASRModule:6 of
+msgid "Enable verbose output. Default is False."
+msgstr "是否启用详细输出，默认值为 False。"
+
+#: 47484394fbbd42d7b5d82270461c7e41 module.asr.ASRModule:10 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/module.asr.ref:7 c380695f28424db5a1ad1e3dd9a993ec
+msgid "init.png"
+msgstr ""
+

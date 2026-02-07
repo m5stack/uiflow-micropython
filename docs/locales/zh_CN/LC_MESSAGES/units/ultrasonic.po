@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"POT-Creation-Date: 2026-02-07 10:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -18,90 +18,90 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: ../../en/units/ultrasonic.rst:2 2d1c7199191a4886a380db2341fec0fe
+#: ../../source/units/ultrasonic.rst:2 60b950c7caa4418fb2a7a46aa070e90a
 msgid "Ultrasonic Unit"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:6 0b19677ee6fd4e3a897fe8c9bfe576a1
+#: ../../source/units/ultrasonic.rst:6 5fb27e2d4bcf4e92a493dce38fbfa737
 msgid "Support the following products:"
 msgstr "支持以下产品："
 
-#: ../../en/units/ultrasonic.rst:8 016ccee5eb614dfcbd83de7a2d4bd1f7
+#: ../../source/units/ultrasonic.rst:8 6447192914694857a21d8878a22e3467
 msgid "|Ultrasonic|"
 msgstr ""
 
-#: ../../en/refs/unit.ultrasonic.ref 6672f1a6417a47dd9ed769fb3cab3b7a
+#: ../../source/refs/unit.ultrasonic.ref 937e57305fa74de288a3c50253fa0abf
 msgid "Ultrasonic"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:11 c3546b2e4cb24f5ca0f48881802a3802
-msgid "Micropython Example::"
-msgstr ""
+#: ../../source/units/ultrasonic.rst:11 7b2c96bf65ab4522ba41613bdd3a52ec
+msgid "Micropython Example:"
+msgstr "MicroPython 应用示例："
 
-#: ../../en/units/ultrasonic.rst:31 6db0856c0fe54bd4862e9daaa9ad212e
+#: ../../source/units/ultrasonic.rst:18 42265cfddde84d309e6375be4f07c0a5
 msgid "UIFLOW2 Example:"
-msgstr ""
+msgstr "UiFlow2 应用示例："
 
-#: ../../en/units/ultrasonic.rst:33 8d8b83cd003341818e72f6c90325fe6c
+#: ../../source/units/ultrasonic.rst:20 9fd6819dec7f4cbf883a1397008c8d53
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/unit.ultrasonic.ref:7 45a304a861104a6897ad125c48be6cb1
+#: ../../source/refs/unit.ultrasonic.ref:7 f1e426bd3fe64512a6dac7b9513010fc
 msgid "example.png"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:38 eb98e20571d048edb45ffb9661be541c
+#: ../../source/units/ultrasonic.rst:25 96993be7066b46e4a3cf5b8a033866ff
 msgid "|ultrasonic_core_example.m5f2|"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:42 01e60b7ce5964cb7abec5bfbaa107b10
+#: ../../source/units/ultrasonic.rst:29 3469c0ba470e4ff58eea9b37fbce685d
 msgid "class ULTRASONIC_I2C"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:45 1abdfc7aea9840d896e019b27a4c5e74
+#: ../../source/units/ultrasonic.rst:32 d0fe9800b9fe41668e366fc977f0d22e
 msgid "Constructors"
-msgstr ""
+msgstr "构造函数"
 
-#: ../../en/units/ultrasonic.rst:49 be8c155d0d4f4823ab0390e2774b4149
+#: ../../source/units/ultrasonic.rst:36 357501d3ae4a46e8ad2cf95998e8b836
 msgid "Create a ULTRASONIC I2C object."
-msgstr "创建一个ULTRASONIC_I2C对象."
+msgstr "创建一个 ULTRASONIC_I2C 对象。"
 
-#: ../../en/units/ultrasonic.rst:52 f24bd778ab3c47c695557a9997ac8fb2
+#: ../../source/units/ultrasonic.rst:39 f392a97be8014b1a8f60ff214a50c090
 msgid "The parameters is:"
-msgstr "参数是:"
+msgstr "参数说明："
 
-#: ../../en/units/ultrasonic.rst:52 7df1c8063ad747bb9427c0e2d50d0de9
+#: ../../source/units/ultrasonic.rst:39 e85d856cead44a8bb4503e3d99593acc
 msgid "``PORT`` Define an i2c port."
-msgstr "``PORT`` 定义i2c端口。"
+msgstr "``PORT`` 定义 I2C 端口。"
 
-#: ../../en/units/ultrasonic.rst:54 ../../en/units/ultrasonic.rst:66
-#: 4df1ca8c10c04c0a97658fa3408dea87 ad4284d905164d30867f77640beebc7f
+#: ../../source/units/ultrasonic.rst:41 ../../source/units/ultrasonic.rst:53
+#: 99f0dde03cd148d281a28d562b29b318 c5ec3524f509469c8210d2ad98efcfaf
 msgid "UIFLOW2:"
-msgstr ""
+msgstr "UiFlow2："
 
-#: ../../en/units/ultrasonic.rst:56 07a9a98eb92e4e8a9c492996e0fe238f
+#: ../../source/units/ultrasonic.rst:43 02c8194509dd4b08a528063d3968256f
 msgid "|init.png|"
 msgstr ""
 
-#: ../../en/refs/unit.ultrasonic.ref:9 f65c2e661f4d4f919cbca17858b5279a
+#: ../../source/refs/unit.ultrasonic.ref:9 12c2d3088ad14f3ab559f8892bd1d65b
 msgid "init.png"
 msgstr ""
 
-#: ../../en/units/ultrasonic.rst:60 1b62db4b742c4a1b8c06742d78985f0b
+#: ../../source/units/ultrasonic.rst:47 85b8a06f1d134f11b67d596f173467ef
 msgid "Methods"
-msgstr ""
+msgstr "方法"
 
-#: ../../en/units/ultrasonic.rst:64 1f6e01cf908b43bc8810cd70cfe7a669
+#: ../../source/units/ultrasonic.rst:51 b8458fdb2fbf47b884d2a21b1f66f734
 msgid "Acquire transmitting distance"
-msgstr "获取发射距离"
+msgstr "获取目标距离"
 
-#: ../../en/units/ultrasonic.rst:68 c32009c62fcd48759ec96a78b1b40282
+#: ../../source/units/ultrasonic.rst:55 ff59b349add8426b8d7107f06b3d069a
 msgid "|get_target_distance.png|"
 msgstr ""
 
-#: ../../en/refs/unit.ultrasonic.ref:11 69715c4484fe410d9de0ec3ef76c803b
+#: ../../source/refs/unit.ultrasonic.ref:11 cbfd3cc3bd6641458b8359871bf3aeac
 msgid "get_target_distance.png"
 msgstr ""
 
@@ -121,5 +121,8 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "|get_target_distance.svg|"
+#~ msgstr ""
+
+#~ msgid "Micropython Example::"
 #~ msgstr ""
 
