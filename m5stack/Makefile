@@ -339,7 +339,7 @@ MICROPYTHON_PATCH_SERIES = \
 	0027-micropython-1.27.0-fix-mpnimbleport.patch
 
 IDF_PATH_PATCH_SERIES = \
-	1005-idf_v5.5_freertos.patch
+	1004-idf_v5.4_freertos.patch
 
 M5UNIFIED_PATCH_SERIES = \
 	2006-Support-LTR553.patch \
