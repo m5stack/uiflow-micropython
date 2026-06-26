@@ -1,0 +1,281 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-26 17:13+0800\n"
+"PO-Revision-Date: 2026-06-26 00:00+0800\n"
+"Last-Translator: M5Stack <support@m5stack.com>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/hardware/sht4x.rst:2 ../../source/hardware/sht4x.rst:16
+#: ../../source/hardware/sht4x.rst:68 0988a7ed15d4443abd4c29ea42eb99b4
+#: 4b3fe238b6584ae5a750f8bdeb5b429a 8aa0a7b44b3e40dc8bb73bc83789574a
+msgid "SHT4X"
+msgstr "SHT4X"
+
+#: ../../source/hardware/sht4x.rst:7 9fd53c411bd2489481f2843d4be51017
+msgid "SHT4X measures temperature and relative humidity."
+msgstr "SHT4X 用于测量温度和相对湿度。"
+
+#: ../../source/hardware/sht4x.rst:9 eb260c79a1674721a0a33b6a7be42632
+msgid "Supported controllers:"
+msgstr "支持的控制器："
+
+#: ../../source/hardware/sht4x.rst:16 9273352c18ee4b21b7ee2520d173976b
+msgid "Controller"
+msgstr "控制器"
+
+#: ../../source/hardware/sht4x.rst:18 57c6959c9acd468b9d0e75f09cd39fef
+msgid "M5PaperColor"
+msgstr "M5PaperColor"
+
+#: ../../source/hardware/sht4x.rst:18 bee2c4da6fa74c368762ad733ecc64ba
+msgid "|S|"
+msgstr "|S|"
+
+#: ../../source/hardware/sht4x.rst:25 ec43e66495ef442d8b950853901ec597
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/hardware/sht4x.rst:28 ../../source/hardware/sht4x.rst:48
+#: 91738f16c0c54fe099e0df73c9fd8cc4 b92b58de28f148029a1c4bd02363d262
+msgid "get temperature and humidity"
+msgstr "获取温度和湿度"
+
+#: ../../source/hardware/sht4x.rst:30 4cb333d306454d55bf33ad37cfbea80e
+msgid ""
+"This example initializes the onboard SHT4X sensor and reads the "
+"temperature and relative humidity."
+msgstr "本示例初始化板载 SHT4X 传感器，并读取温度和相对湿度。"
+
+#: ../../source/hardware/sht4x.rst:33 619fede36dc640f8907e8b52f132159e
+msgid "Open the |sht4x_papercolor_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sht4x_papercolor_example.m5f2| 项目。"
+
+#: ../../source/hardware/sht4x.rst:35 19e786fa734c48519124439256f6e930
+#: 26b778d87c0d43d3b4e719c1020fdff2 44ad4869a7854287befc37c5a0f1c60e
+#: 5f116d55efba4532a99e5c704f003e15 d7f629f811ea4248afc66f0b56d35950
+#: driver.sht4x.SHT4x:10 driver.sht4x.SHT4x.get_humidity:6
+#: driver.sht4x.SHT4x.get_temperature:6 driver.sht4x.SHT4x.relative_humidity:6
+#: driver.sht4x.SHT4x.temperature:6 e191c96dded1415abc46c14416bacf61
+#: fc83598d604a41608edb07e4b8affdc3 hardware.sht4x.SHT4X:9 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/hardware/sht4x.rst:37 ae874b59887642309e9a3a60e8cc85a8
+msgid "|example.png|"
+msgstr "|example.png|"
+
+#: ../../source/refs/hardware.sht4x.ref:9 70948cd88bd84fbdb818ff2f615776c4
+msgid "example.png"
+msgstr "example.png"
+
+#: ../../source/hardware/sht4x.rst:39 ../../source/hardware/sht4x.rst:59
+#: 10e31d16db1b4c99a30dd07ba4ff27ec 4af728de4f1440208926e17377dd5aa8
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/hardware/sht4x.rst:41 ../../source/hardware/sht4x.rst:61
+#: 5f1b17ee0d61472c80aea3b28795f439 6eda3d820a2049e8a0f5739a867a3f5c
+msgid "None"
+msgstr "None"
+
+#: ../../source/hardware/sht4x.rst:45 87093ddc80e94f7bbb263e5a7c194564
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/hardware/sht4x.rst:50 98a5097623d04e9f825cca06f5fdd1ad
+msgid ""
+"This example reads temperature and relative humidity from the onboard "
+"SHT4X sensor on M5PaperColor."
+msgstr "本示例从 M5PaperColor 的板载 SHT4X 传感器读取温度和相对湿度。"
+
+#: ../../source/hardware/sht4x.rst:53 025bff8b37b24e51934c6ef34bd94bfa
+#: 05ff70b7fcd94f19bfbdd409cbd8d222 0f099ba50a684e12ac6817d4ca8bd069
+#: 25bd57f52602430cb033b0ca3754f337 35a8b6406a6c4370aec069f0eed66ddd
+#: 6145a516a91645ca912f0f89e1abe7ce 8d5f1729cd4c4d8e9950178b6c9dfa21
+#: b3776050c7d249cf82f02ad944ce2d4c d0f82086aabd42a395f0d61762929b6e
+#: driver.sht4x.SHT4x:14 driver.sht4x.SHT4x.get_humidity:10
+#: driver.sht4x.SHT4x.get_temperature:10 driver.sht4x.SHT4x.measure:7
+#: driver.sht4x.SHT4x.mode:10 driver.sht4x.SHT4x.relative_humidity:10
+#: driver.sht4x.SHT4x.reset:5 driver.sht4x.SHT4x.serial_number:7
+#: driver.sht4x.SHT4x.temperature:10 e874adc9058442fe8e7cb3b04667fab5
+#: f2ff0a90992d4b82984e7126b4f4654c hardware.sht4x.SHT4X:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/hardware/sht4x.rst:65 709116bb80654806a3803fe09f626ea2
+msgid "**API**"
+msgstr "API参考"
+
+#: 2ac7f8eaff014935aadcbdef9ee10fc0 hardware.sht4x.SHT4X:1 of
+msgid "Bases: :py:class:`~driver.sht4x.SHT4x`"
+msgstr "基类：:py:class:`~driver.sht4x.SHT4x`"
+
+#: 5fa2294050504de28d9ceaf610083e86 hardware.sht4x.SHT4X:1 of
+msgid "Create an onboard SHT4X sensor object."
+msgstr "创建板载 SHT4X 传感器对象。"
+
+#: 82af1c3598ee4466a11452c12da80d62 driver.sht4x.SHT4x.measure
+#: driver.sht4x.SHT4x.serial_number ecfeab7541004ee4bf972962fcc0674a
+#: f2409be531f74d2398ba9f1e7206bae3 hardware.sht4x.SHT4X of
+msgid "Raises"
+msgstr "引发"
+
+#: 08b2588b3c51472988472773f4aa1a38 c5ac67035490464b80bf09483976778d
+#: driver.sht4x.SHT4x:12 hardware.sht4x.SHT4X:11 of
+msgid "|init.png|"
+msgstr "|init.png|"
+
+#: ../../source/refs/hardware.sht4x.ref:2 aa41a06c1ca742ecb74e8ce75565cc12
+#: d7260984fee946e1985dcc5732dd1c0b
+msgid "init.png"
+msgstr "init.png"
+
+#: 8ac35a83a566458b884738a94fa8eb05 driver.sht4x.SHT4x:1 of
+msgid "Bases: :py:class:`object`"
+msgstr "基类：:py:class:`object`"
+
+#: cf818b1653364ed6bc258cf17fcd65dd driver.sht4x.SHT4x:1 of
+msgid "Create an SHT4x temperature and humidity sensor object."
+msgstr "创建 SHT4x 温湿度传感器对象。"
+
+#: ../../source/hardware/sht4x.rst 793731af26454d85a5794ccc354b7cb8
+msgid "Parameters"
+msgstr "参数"
+
+#: 82d2fe803e1648bb8a59c48f0d18fe0a driver.sht4x.SHT4x:7 of
+msgid "The I2C bus object connected to the sensor."
+msgstr "连接到传感器的 I2C 总线对象。"
+
+#: 20cdfd8c0d014762ab052252609d4065 driver.sht4x.SHT4x:8 of
+msgid "The I2C address of the sensor. Default is ``0x44``."
+msgstr "传感器的 I2C 地址，默认值为 ``0x44``。"
+
+#: 3b1375eb182a44a7b5ab8efbc8342c27 driver.sht4x.SHT4x.serial_number:1 of
+msgid "The unique 32-bit serial number of the sensor."
+msgstr "传感器唯一的 32 位序列号。"
+
+#: 03bfeb0f53ee4de6a6cca2a6b1d6294d 32588975823f400d9a81ef97f7f3f71f
+#: 44f29068558e44f297f2ba87d65126f7 72f6d06555b5430e814eed525bfdcf74
+#: 75a3fc1bd75040c5aa45253b7f8cf707 dcdc0d0b27ef4edbac642619fedc63c7
+#: driver.sht4x.SHT4x.get_humidity driver.sht4x.SHT4x.get_temperature
+#: driver.sht4x.SHT4x.measure driver.sht4x.SHT4x.mode
+#: driver.sht4x.SHT4x.relative_humidity driver.sht4x.SHT4x.serial_number
+#: driver.sht4x.SHT4x.temperature f3277490f1fd4a428bd4ae21032666ee of
+msgid "Returns"
+msgstr "返回"
+
+#: 8bc271905aad4ae684b5a6673967809d driver.sht4x.SHT4x.serial_number:3 of
+msgid "The sensor serial number."
+msgstr "传感器序列号。"
+
+#: 300fea6bacb1451c9fcad311f9eb7402 3223ae34fb98474badbf3f314fd414f6
+#: 378c82b3db48445d934d3ca8979b3918 586e9b25fbee4b4798a2f3690e08cd2f
+#: 5927d243daea43e2b3852ae03c769fdf 5f47e83f50d044b0bed3a7d0176742f8
+#: 680b8e57ca17414ab235bb5e52af8813 driver.sht4x.SHT4x.get_humidity
+#: driver.sht4x.SHT4x.get_temperature driver.sht4x.SHT4x.measure
+#: driver.sht4x.SHT4x.mode driver.sht4x.SHT4x.relative_humidity
+#: driver.sht4x.SHT4x.reset driver.sht4x.SHT4x.serial_number
+#: driver.sht4x.SHT4x.temperature ec5acc02099e41eaa5dce9509b7b8dff of
+msgid "Return type"
+msgstr "返回类型"
+
+#: driver.sht4x.SHT4x.serial_number:5 f71b0dd4d4094d1988c009e9b8c71c73 of
+msgid "If the received serial number CRC is invalid."
+msgstr "接收到的序列号 CRC 无效时引发。"
+
+#: 2bfc615717164dd1acde768cea70ff3c driver.sht4x.SHT4x.reset:1 of
+msgid "Perform a soft reset of the sensor."
+msgstr "对传感器执行软复位。"
+
+#: bb4154d201584231a7cf2ebb2b83a6a1 driver.sht4x.SHT4x.mode:1 of
+msgid "The current sensor reading mode."
+msgstr "当前传感器读取模式。"
+
+#: driver.sht4x.SHT4x.mode:3 fdc6712307f54b59a8a90414dc751ec0 of
+msgid ""
+"The mode selects both heater behavior and measurement precision. Use one "
+"of the values from :class:`Mode`, such as ``Mode.NOHEAT_HIGHPRECISION`` "
+"or ``Mode.HIGHHEAT_100MS``."
+msgstr "该模式同时选择加热器行为和测量精度。使用 :class:`Mode` 中的值，例如 ``Mode.NOHEAT_HIGHPRECISION`` 或 ``Mode.HIGHHEAT_100MS``。"
+
+#: 70560e63565a4c769e0dd03fbab2be24 driver.sht4x.SHT4x.mode:7 of
+msgid "The current measurement mode command."
+msgstr "当前测量模式命令。"
+
+#: 68b86fe7523649ac902dc78a0d4fbe15 driver.sht4x.SHT4x.relative_humidity:1 of
+msgid "The current relative humidity in percent RH."
+msgstr "当前相对湿度，单位为 %RH。"
+
+#: 0f67f815b0b64d10b471d7552f48c793 93fbb705eb6a439d8a2af780465b68ec
+#: driver.sht4x.SHT4x.get_humidity:3 driver.sht4x.SHT4x.relative_humidity:3 of
+msgid "The relative humidity, constrained to ``0`` through ``100``."
+msgstr "相对湿度，范围限制为 ``0`` 到 ``100``。"
+
+#: 32cde82b77ce42448c46ca117b1f4fa3 driver.sht4x.SHT4x.get_humidity:8
+#: driver.sht4x.SHT4x.relative_humidity:8 fff800bfdb8e421f8c38c3cd7de2d62a of
+msgid "|get_humidity.png|"
+msgstr "|get_humidity.png|"
+
+#: ../../source/refs/hardware.sht4x.ref:6 5bf5691eaa094177b7dd7fa62be1439b
+#: ffea8b53865d44ae8bceb01eaeafb3d3
+msgid "get_humidity.png"
+msgstr "get_humidity.png"
+
+#: 08ae21987db140cc920b137e139c8497 driver.sht4x.SHT4x.get_humidity:1 of
+msgid "Get the current relative humidity in percent RH."
+msgstr "获取当前相对湿度，单位为 %RH。"
+
+#: a5003cd1964e452ebfda21957936d599 driver.sht4x.SHT4x.temperature:1 of
+msgid "The current temperature in degrees Celsius."
+msgstr "当前温度，单位为摄氏度。"
+
+#: 7115df7f555d4e4689f2434be161b7ef 8e4a19a7a04b472f819de3eb28d77aba
+#: driver.sht4x.SHT4x.get_temperature:3 driver.sht4x.SHT4x.temperature:3 of
+msgid "The temperature in degrees Celsius."
+msgstr "温度，单位为摄氏度。"
+
+#: 295b200969444fa5b782ecb65cd72b59 driver.sht4x.SHT4x.get_temperature:8
+#: driver.sht4x.SHT4x.temperature:8 e05f7d5dd4284ed8afd1a00443480ecd of
+msgid "|get_temperature.png|"
+msgstr "|get_temperature.png|"
+
+#: ../../source/refs/hardware.sht4x.ref:7 5206e0e90ea14e40b4fd61a82536cbe1
+#: 61e760388ff543909fddebe3d9779a90
+msgid "get_temperature.png"
+msgstr "get_temperature.png"
+
+#: 909f017a834a43c5b4f6f8ee51a007d0 driver.sht4x.SHT4x.get_temperature:1 of
+msgid "Get the current temperature in degrees Celsius."
+msgstr "获取当前温度，单位为摄氏度。"
+
+#: 656ebc5d0bc74324b15358b552278123 driver.sht4x.SHT4x.measure:1 of
+msgid "Measure temperature and relative humidity simultaneously."
+msgstr "同时测量温度和相对湿度。"
+
+#: abc221405abf4b50a13580e6a6f910ea driver.sht4x.SHT4x.measure:3 of
+msgid "A tuple containing ``(temperature, relative_humidity)``."
+msgstr "包含 ``(temperature, relative_humidity)`` 的元组。"
+
+#: driver.sht4x.SHT4x.measure:5 eb696beca0c14b6abd8eef07f295f2ca of
+msgid "If the received measurement CRC is invalid."
+msgstr "接收到的测量数据 CRC 无效时引发。"
+
+#~ msgid "Supported."
+#~ msgstr "支持。"
+
+#~ msgid "sht4x_papercolor_example.m5f2"
+#~ msgstr ""

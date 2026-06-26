@@ -24,11 +24,19 @@ _SHT4X_SOFTRESET = const(0x94)  # Soft Reset
 
 
 class CV:
-    """struct helper"""
+    """Helper for command-value classes.
+
+    ``CV`` stores a numeric command value together with a human-readable label
+    and the delay required before reading the sensor response.
+    """
 
     @classmethod
     def add_values(cls, value_tuples: Tuple[str, int, str, float]) -> None:
-        """Add CV values to the class"""
+        """Add values to the command-value class.
+
+        :param tuple value_tuples: Tuples in the form
+            ``(name, command, description, delay)``.
+        """
         cls.string = {}
         cls.delay = {}
 
@@ -40,12 +48,38 @@ class CV:
 
     @classmethod
     def is_valid(cls, value: int) -> bool:
-        """Validate that a given value is a member"""
+        """Check whether a value is defined by the class.
+
+        :param int value: Command value to validate.
+        :returns: ``True`` if ``value`` is a known command, otherwise ``False``.
+        :rtype: bool
+        """
         return value in cls.string
 
 
 class Mode(CV):
-    """Options for ``power_mode``"""
+    """Measurement precision and heater mode values.
+
+    Use these constants with :attr:`SHT4x.mode` to select the measurement
+    command sent by :meth:`SHT4x.measure`.
+
+    Available values:
+
+    - ``Mode.NOHEAT_HIGHPRECISION``
+    - ``Mode.NOHEAT_MEDPRECISION``
+    - ``Mode.NOHEAT_LOWPRECISION``
+    - ``Mode.HIGHHEAT_1S``
+    - ``Mode.HIGHHEAT_100MS``
+    - ``Mode.MEDHEAT_1S``
+    - ``Mode.MEDHEAT_100MS``
+    - ``Mode.LOWHEAT_1S``
+    - ``Mode.LOWHEAT_100MS``
+
+    .. note::
+
+        Heater modes are intended for sensor diagnostics and condensation
+        removal. They heat the sensor briefly before returning a reading.
+    """
 
     pass  # pylint: disable=unnecessary-pass
 
@@ -68,10 +102,6 @@ Mode.add_values(
 class SHT4x:
     """Create an SHT4x temperature and humidity sensor object.
 
-    This driver communicates with Sensirion SHT4x sensors over an I2C bus and
-    provides temperature, relative humidity, serial number, reset, and
-    measurement mode APIs.
-
     :param I2C i2c: The I2C bus object connected to the sensor.
     :param int address: The I2C address of the sensor. Default is ``0x44``.
 
@@ -91,6 +121,7 @@ class SHT4x:
     """
 
     def __init__(self, i2c, address: int = _SHT4X_DEFAULT_ADDR) -> None:
+        """Initialize the SHT4x driver."""
         self.i2c_device = i2c
         self.sht4x_i2c_addr = address
         self._buffer = bytearray(6)
@@ -104,10 +135,6 @@ class SHT4x:
         :returns: The sensor serial number.
         :rtype: int
         :raises RuntimeError: If the received serial number CRC is invalid.
-
-        UiFlow2 Code Block:
-
-            |serial_number.png|
 
         MicroPython Code Block:
 
@@ -134,12 +161,6 @@ class SHT4x:
     def reset(self) -> None:
         """Perform a soft reset of the sensor.
 
-        This method resets the sensor settings to their power-on defaults.
-
-        UiFlow2 Code Block:
-
-            |reset.png|
-
         MicroPython Code Block:
 
             .. code-block:: python
@@ -159,10 +180,6 @@ class SHT4x:
 
         :returns: The current measurement mode command.
         :rtype: int
-
-        UiFlow2 Code Block:
-
-            |mode.png|
 
         MicroPython Code Block:
 
@@ -266,10 +283,6 @@ class SHT4x:
         :returns: A tuple containing ``(temperature, relative_humidity)``.
         :rtype: tuple[float, float]
         :raises RuntimeError: If the received measurement CRC is invalid.
-
-        UiFlow2 Code Block:
-
-            |measure.png|
 
         MicroPython Code Block:
 

@@ -10,9 +10,6 @@ from machine import I2C, Pin
 class SHT4X(sht4x):
     """Create an onboard SHT4X sensor object.
 
-    This hardware wrapper initializes the SHT4X sensor with the board-specific
-    I2C pins. It currently supports M5PaperColor.
-
     UiFlow2 Code Block:
 
         |init.png|
@@ -27,6 +24,7 @@ class SHT4X(sht4x):
     """
 
     def __init__(self):
+        """Initialize the onboard SHT4X sensor using the current board profile."""
         self._board = M5.getBoard()
         if self._board == M5.BOARD.M5PaperColor:
             in_i2c = I2C(1, scl=Pin(2), sda=Pin(3))

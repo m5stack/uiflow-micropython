@@ -21,6 +21,7 @@ Hardware
     scd40.rst
     sen55.rst
     sht30.rst
+    sht4x.rst
     speaker.rst
     touch.rst
     uart.rst
