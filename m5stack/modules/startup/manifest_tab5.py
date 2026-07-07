@@ -17,7 +17,7 @@ package(
         "tab5/launcher/common/uwebsockets/protocol.py",
         "tab5/launcher/apps/app.py",
         "tab5/launcher/apps/app_i2c_scan.py",
-        "tab5/launcher/apps/app_app_list.py",
+        "tab5/launcher/apps/app_develop.py",
         "tab5/launcher/apps/app_wifi_scan.py",
         "tab5/launcher/apps/app_dummy.py",
         "tab5/launcher/apps/app_uiflow.py",

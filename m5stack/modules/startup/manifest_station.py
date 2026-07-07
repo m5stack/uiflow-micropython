@@ -10,8 +10,6 @@ package(
         "station/app_base.py",
         "station/framework.py",
         "station/res.py",
-        "station/apps/app_list.py",
-        "station/apps/app_run.py",
         "station/apps/dev.py",
         "station/apps/ezdata.py",
         "station/apps/launcher.py",

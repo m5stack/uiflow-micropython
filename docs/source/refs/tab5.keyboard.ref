@@ -1,0 +1,17 @@
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/example.png
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/init.png
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/set_brightness.png
+.. |get_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/get_brightness.png
+.. |set_keyboard_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/set_keyboard_mode.png
+.. |set_rgb_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/set_rgb_mode.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/set_rgb_color.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/get_rgb_color.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/get_firmware_version.png
+.. |set_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/set_i2c_address.png
+.. |get_i2c_address.png| image:: https://static-cdn.m5stack.com/mpy_docs/tab5_module/keyboard/get_i2c_address.png
+
+.. |tab5_keyboard_example.m5f2| raw:: html
+
+    <a href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/tab5/keyboard/tab5_keyboard_example.m5f2">
+        tab5_keyboard_example.m5f2
+    </a>

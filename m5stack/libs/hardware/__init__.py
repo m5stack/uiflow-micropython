@@ -11,8 +11,6 @@ _attrs = {
     "IR": "ir",
     "LoRa": "lora",
     "MatrixKeyboard": "matrix_keyboard",
-    "DigitalInput": "plcio",
-    "Relay": "plcio",
     "PWR485": "pwr485",
     "RFID": "rfid",
     "RGB": "rgb",
@@ -21,6 +19,7 @@ _attrs = {
     "SDCard": "sdcard",
     "SEN55": "sen55",
     "SHT30": "sht30",
+    "SHT4X": "sht4x",
     "dualkey": "dualkey",
 }
 

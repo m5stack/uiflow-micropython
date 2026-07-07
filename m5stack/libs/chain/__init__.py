@@ -4,12 +4,18 @@
 
 _attrs = {
     "AngleChain": "angle",
-    "BusChainUnit": "unit_bus",
+    "BuzzerChain": "buzzer",
     "ChainBus": "chain",
     "EncoderChain": "encoder",
     "JoystickChain": "joystick",
     "KeyChain": "key",
+    "MicChain": "mic",
+    "MonoChain": "mono",
+    "PIRChain": "pir",
+    "RGBChain": "rgb",
+    "SwitchChain": "switch",
     "ToFChain": "tof",
+    "BusChainUnit": "unit_bus",
 }
 
 

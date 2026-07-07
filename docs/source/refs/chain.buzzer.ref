@@ -1,0 +1,39 @@
+
+.. |Chain Buzzer| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U209
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/init.png
+.. |set_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_mode.png
+.. |get_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_mode.png
+.. |tone.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/tone.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_freq.png
+.. |get_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_freq.png
+.. |set_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_duty.png
+.. |get_duty.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_duty.png
+.. |set_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_status.png
+.. |get_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_status.png
+.. |note.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/note.png
+.. |status_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/status_option.png
+.. |work_mode_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/work_mode_option.png
+.. |get_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_rgb_brightness.png
+.. |set_rgb_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_rgb_brightness.png
+.. |get_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_rgb_color.png
+.. |set_rgb_color.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/set_rgb_color.png
+.. |get_device_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_device_uid.png
+.. |get_bootloader_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_bootloader_version.png
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_firmware_version.png
+.. |get_device_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/get_device_type.png
+.. |m5core_chain_buzzer_basic_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/buzzer/example.png
+
+.. |m5core_chain_buzzer_basic_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/buzzer/m5core_chain_buzzer_basic_example.m5f2"
+        target="_blank"
+    >
+        m5core_chain_buzzer_basic_example.m5f2
+    </a>
+
+

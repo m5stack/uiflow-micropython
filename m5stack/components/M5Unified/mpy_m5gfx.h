@@ -53,6 +53,19 @@ extern const mp_obj_type_t mp_gfxcanvas_type;
 extern const mp_obj_type_t m5_user_display;
 extern const mp_obj_type_t mp_gfxdevice_type;
 
+#if BOARD_ID == 25
+extern const font_obj_t gfx_font_0_obj;
+extern const font_obj_t gfx_font_DejaVu9_obj;
+extern const font_obj_t gfx_font_DejaVu12_obj;
+extern const font_obj_t gfx_font_DejaVu18_obj;
+extern const font_obj_t gfx_font_DejaVu24_obj;
+extern const font_obj_t gfx_font_DejaVu40_obj;
+extern const font_obj_t gfx_font_DejaVu56_obj;
+extern const font_obj_t gfx_font_DejaVu72_obj;
+extern const font_obj_t gfx_font_efontCN_24_obj;
+extern const font_obj_t gfx_font_efontJA_24_obj;
+extern const font_obj_t gfx_font_efontKR_24_obj;
+#else
 extern const font_obj_t gfx_font_montserrat_12_obj;
 extern const font_obj_t gfx_font_montserrat_14_obj;
 extern const font_obj_t gfx_font_montserrat_16_obj;
@@ -68,3 +81,4 @@ extern const font_obj_t gfx_font_montserrat_48_obj;
 extern const font_obj_t gfx_font_AlibabaPuHuiTi_CN24_obj;
 extern const font_obj_t gfx_font_AlibabaSans_JP24_obj;
 extern const font_obj_t gfx_font_AlibabaSans_KR24_obj;
+#endif

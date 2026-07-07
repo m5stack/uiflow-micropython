@@ -144,6 +144,19 @@ list(APPEND MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/modespnow.c
 )
 
+if(BOARD_TYPE STREQUAL "box3" OR BOARD_TYPE STREQUAL "xiao-s3")
+    # Use M5Stack network hooks and VFS stream helpers for third-party boards that expose access code.
+    list(REMOVE_ITEM MICROPY_SOURCE_PORT
+        ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
+        ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
+    )
+    list(APPEND MICROPY_SOURCE_PORT
+        ${PROJECT_DIR}/../m5stack/network_lan.c
+        ${PROJECT_DIR}/../m5stack/network_wlan.c
+        ${PROJECT_DIR}/../m5stack/_vfs_stream.c
+    )
+endif()
+
 # list(TRANSFORM MICROPY_SOURCE_PORT PREPEND ${MICROPY_PORT_DIR}/)
 list(APPEND MICROPY_SOURCE_PORT ${CMAKE_BINARY_DIR}/pins.c)
 
@@ -224,6 +237,11 @@ list(APPEND IDF_COMPONENTS
     esp_driver_ppa
 )
 
+if(MICROPY_BOARD STREQUAL "ESPRESSIF_ESP32_S3_BOX_3" OR MICROPY_BOARD STREQUAL "SEEED_STUDIO_XIAO_ESP32S3")
+    list(APPEND IDF_COMPONENTS mqtt)
+    list(APPEND IDF_COMPONENTS m5things)
+endif()
+
 if(CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S2 OR CONFIG_IDF_TARGET_ESP32S3)
     list(APPEND IDF_COMPONENTS xtensa)
 endif()
@@ -272,6 +290,7 @@ idf_component_register(
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
         ${CMAKE_CURRENT_LIST_DIR}
+        ${PROJECT_DIR}/../m5stack
     LDFRAGMENTS
         ${MICROPY_LDFRAGMENTS}
     REQUIRES

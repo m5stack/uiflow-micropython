@@ -7,6 +7,20 @@ from .. import res
 import M5
 
 
+_MESSAGE = "Coming soon..."
+_FONT = M5.Lcd.FONTS.Montserrat24
+_CONTENT_W = 320
+_CONTENT_H = 184
+
+
+def _draw_center_message(parent, x, y, w, h):
+    parent.setFont(_FONT)
+    parent.setTextColor(0x008FD7, 0x000000)
+    text_x = x + (w - parent.textWidth(_MESSAGE)) // 2
+    text_y = y + (h - parent.fontHeight()) // 2
+    parent.drawString(_MESSAGE, text_x, text_y)
+
+
 class EzDataApp(app_base.AppBase):
     def __init__(self, icos) -> None:
         self._lcd = icos
@@ -20,7 +34,8 @@ class EzDataApp(app_base.AppBase):
 
         self._origin_x = 0
         self._origin_y = 56
-        M5.Lcd.fillRect(self._origin_x, self._origin_y, 320, 184, 0x000000)
+        M5.Lcd.fillRect(self._origin_x, self._origin_y, _CONTENT_W, _CONTENT_H, 0x000000)
+        _draw_center_message(M5.Lcd, self._origin_x, self._origin_y, _CONTENT_W, _CONTENT_H)
 
     def on_ready(self):
         pass

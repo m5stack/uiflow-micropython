@@ -18,11 +18,15 @@
 #include <esp_log.h>
 #include <sdkconfig.h>
 #include <M5Unified.hpp>
+#include <LGFX_Fonts.hpp>
+#include "mpy_lgfx_lvgl_font.hpp"
 #include <M5AtomDisplay.h>
 #include <M5ModuleDisplay.h>
 #if CONFIG_IDF_TARGET_ESP32
 #include <M5ModuleRCA.h>
 #include <M5UnitRCA.h>
+#elif CONFIG_IDF_TARGET_ESP32P4
+#include <M5UnitPoEP4HDMI.h>
 #endif
 // #include <M5UnitOLED.h>
 #include "mpy_unitoled.hpp"
@@ -321,6 +325,39 @@ static void m5_config_helper_unit_rca(mp_obj_t config_obj, M5UnitRCA::config_t &
         }
     }
 }
+#elif CONFIG_IDF_TARGET_ESP32P4
+
+static void m5_config_helper_unit_poep4_hdmi(mp_obj_t config_obj, M5UnitPoEP4HDMI::config_t &cfg) {
+    if (!MP_OBJ_IS_TYPE(config_obj, &mp_type_dict)) {
+        mp_raise_TypeError(MP_ERROR_TEXT("unit_poep4_hdmi must be a dict"));
+    }
+
+    // cfg.unit_poep4_hdmi = M5UnitPoEP4HDMI::config_t();
+    mp_map_t *config_map = mp_obj_dict_get_map(config_obj);
+
+    for (size_t i = 0; i < config_map->alloc; i++) {
+        if (MP_MAP_SLOT_IS_FILLED(config_map, i)) {
+            mp_obj_t key = config_map->table[i].key;
+            mp_obj_t value = config_map->table[i].value;
+
+            const char *key_str = mp_obj_str_get_str(key);
+
+            if (strcmp(key_str, "enabled") == 0) {
+                // cfg.unit_poep4_hdmi.enabled = mp_obj_is_true(value);
+            } else if (strcmp(key_str, "width") == 0) {
+                // cfg.unit_poep4_hdmi.width = mp_obj_get_int(value);
+                cfg.width = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "height") == 0) {
+                // cfg.unit_poep4_hdmi.height = mp_obj_get_int(value);
+                cfg.height = mp_obj_get_int(value);
+            } else if (strcmp(key_str, "refresh_rate") == 0) {
+                // cfg.unit_poep4_hdmi.refresh_rate = mp_obj_get_int(value);
+                cfg.refresh_rate = mp_obj_get_int(value);
+            }
+        }
+    }
+}
+
 #endif
 
 mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
@@ -367,33 +404,7 @@ mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
                 } else {
                     mp_raise_msg_varg(&mp_type_OSError, MP_ERROR_TEXT("AtomDisplay init failed"));
                 }
-            }
-            #if CONFIG_IDF_TARGET_ESP32
-            else if (strcmp(key_str, "module_rca") == 0) {
-                M5ModuleRCA::config_t cfg;
-                m5_config_helper_module_rca(value, cfg);
-                if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough) {
-                    M5ModuleRCA dsp(cfg);
-                    if (dsp.init()) {
-                        M5.addDisplay(dsp);
-                        mp_printf(&mp_plat_print, "module_rca added\n");
-                    }
-                } else {
-                    mp_raise_NotImplementedError(MP_ERROR_TEXT("module_rca is not supported on this board"));
-                }
-            } else if (strcmp(key_str, "unit_rca") == 0) {
-                M5UnitRCA::config_t cfg;
-                m5_config_helper_unit_rca(value, cfg);
-                M5UnitRCA dsp(cfg);
-                if (dsp.init()) {
-                    M5.addDisplay(dsp);
-                    mp_printf(&mp_plat_print, "unit_rca added\n");
-                } else {
-                    mp_raise_msg_varg(&mp_type_OSError, MP_ERROR_TEXT("RCA Unit init failed"));
-                }
-            }
-            #endif
-            else if (strcmp(key_str, "unit_lcd") == 0) {
+            } else if (strcmp(key_str, "unit_lcd") == 0) {
                 M5UnitLCD::config_t cfg;
                 cfg.i2c_addr = addr;
                 cfg.i2c_freq = i2c_bus->freq;
@@ -472,7 +483,54 @@ mp_obj_t m5_add_display(mp_obj_t i2c_bus_in, mp_obj_t addr_in, mp_obj_t dict) {
                 } else {
                     mp_raise_msg_varg(&mp_type_OSError, MP_ERROR_TEXT("GLASS2 Unit init failed"));
                 }
-            } else {
+            }
+            #if CONFIG_IDF_TARGET_ESP32
+            else if (strcmp(key_str, "module_rca") == 0) {
+                M5ModuleRCA::config_t cfg;
+                m5_config_helper_module_rca(value, cfg);
+                if (board == m5::board_t::board_M5Stack || board == m5::board_t::board_M5StackCore2 || board == m5::board_t::board_M5Tough) {
+                    M5ModuleRCA dsp(cfg);
+                    if (dsp.init()) {
+                        M5.addDisplay(dsp);
+                        mp_printf(&mp_plat_print, "module_rca added\n");
+                    }
+                } else {
+                    mp_raise_NotImplementedError(MP_ERROR_TEXT("module_rca is not supported on this board"));
+                }
+            } else if (strcmp(key_str, "unit_rca") == 0) {
+                M5UnitRCA::config_t cfg;
+                m5_config_helper_unit_rca(value, cfg);
+                M5UnitRCA dsp(cfg);
+                if (dsp.init()) {
+                    M5.addDisplay(dsp);
+                    mp_printf(&mp_plat_print, "unit_rca added\n");
+                } else {
+                    mp_raise_msg_varg(&mp_type_OSError, MP_ERROR_TEXT("RCA Unit init failed"));
+                }
+            }
+            #elif CONFIG_IDF_TARGET_ESP32P4
+            else if (strcmp(key_str, "unit_poep4_hdmi") == 0) {
+                M5UnitPoEP4HDMI::config_t cfg;
+                m5_config_helper_unit_poep4_hdmi(value, cfg);
+                if (board == m5::board_t::board_M5UnitPoEP4) {
+                    int index = M5.getDisplayIndex(lgfx::board_t::board_M5UnitPoEP4HDMI);
+                    if (index >= 0) {
+                        mp_printf(&mp_plat_print, "unit_poep4_hdmi already added; reuse display %d\n", index);
+                        return m5_getDisplay(mp_obj_new_int(index));
+                    }
+                    M5UnitPoEP4HDMI dsp(cfg);
+                    dsp.setI2C(&M5.In_I2C);
+                    if (dsp.init()) {
+                        M5.addDisplay(dsp);
+                        mp_printf(&mp_plat_print, "unit_poep4_hdmi added: %ux%u@%u lane=%u fb=%u\n",
+                            cfg.width, cfg.height, cfg.refresh_rate, cfg.dsi_lane_mbps, cfg.fb_num);
+                    }
+                } else {
+                    mp_raise_NotImplementedError(MP_ERROR_TEXT("unit_poep4_hdmi is not supported on this board"));
+                }
+            }
+            #endif
+            else {
                 mp_printf(&mp_plat_print, "%s is not a valid display.\n", key_str);
             }
         }
@@ -596,13 +654,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args) {
     // default display
     m5_display.gfx = (void *)(&(M5.Display));
     // set default font to Montserrat 12, keep same style with UIFlow website UI design.
-    #if MICROPY_PY_LVGL
-    extern const lv_font_t lv_font_montserrat_12;
-    static const lgfx::LVGLfont lv_font_montserrat_12_obj(&lv_font_montserrat_12);
-    M5.Display.setFont(&lv_font_montserrat_12_obj);
-    #else
-    M5.Display.setFont(&m5gfx::fonts::lv_font_montserrat_12);
-    #endif
+    M5.Display.setFont(&m5gfx::fonts::lvFontMontserrat12);
 
     // get local time and sync to RTC IC
     rtc_sync(nullptr);

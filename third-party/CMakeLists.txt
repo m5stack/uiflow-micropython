@@ -102,6 +102,9 @@ list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/M5Unified/M5Unified)
 list(APPEND EXTRA_COMPONENT_DIRS ./components/BOX3GFX)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/uiflow_utility)
 list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/esp_dmx)
+if(MICROPY_BOARD STREQUAL "ESPRESSIF_ESP32_S3_BOX_3" OR MICROPY_BOARD STREQUAL "SEEED_STUDIO_XIAO_ESP32S3")
+    list(APPEND EXTRA_COMPONENT_DIRS ../m5stack/components/m5things)
+endif()
 # list(APPEND EXTRA_COMPONENT_DIRS ./boards)
 
 # Define the project.

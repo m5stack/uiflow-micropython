@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 # PaperColor startup script
-from startup import Startup
+from startup import Startup, print_access_info
 from M5 import Widgets
 import M5
 import time
@@ -96,10 +96,10 @@ class PaperColorCloudApp(AppBase):
         self._ssid = str(data[1] or "")
         self._timeout = data[2]
         self._last_screen_key = None
-        self._had_pair_code = False
+        self._had_access_code = False
         self._logged_wifi_connected = False
         self._logged_ip = None
-        self._logged_pair_code = None
+        self._logged_access_code = None
         self._wait_stage = None
 
     def on_launch(self):
@@ -130,20 +130,20 @@ class PaperColorCloudApp(AppBase):
         wifi_ok = wifi_status == network.STAT_GOT_IP
         ip_addr = self._wifi.local_ip() if wifi_ok else ""
         cloud_status = 0
-        pair_code = ""
+        access_code = ""
         nick_name = ""
 
         if wifi_ok and _HAS_SERVER:
             cloud_status = M5Things.status()
             if cloud_status == 2:
-                pair_code = M5Things.paircode()
+                access_code = M5Things.accesscode()
                 nick_name = M5Things.nick_name()
 
-        cloud_ok = wifi_ok and _HAS_SERVER and cloud_status == 2 and pair_code != ""
+        cloud_ok = wifi_ok and _HAS_SERVER and cloud_status == 2 and access_code != ""
         return {
             "wifi_ok": wifi_ok,
             "cloud_ok": cloud_ok,
-            "pair_code": pair_code,
+            "access_code": access_code,
             "nick_name": nick_name,
             "ip_addr": ip_addr,
         }
@@ -167,9 +167,10 @@ class PaperColorCloudApp(AppBase):
             print(f"IP address: {state['ip_addr']}")
             self._logged_ip = state["ip_addr"]
 
-        if state["pair_code"] and state["pair_code"] != self._logged_pair_code:
-            print(f"Pair code: {state['pair_code']}")
-            self._logged_pair_code = state["pair_code"]
+        if state["access_code"] and state["access_code"] != self._logged_access_code:
+            self._logged_access_code = state["access_code"]
+
+        print_access_info(state.get("nick_name", ""), state.get("access_code", ""))
 
     def _log_wait_stage(self, state) -> None:
         if not state["wifi_ok"]:
@@ -178,14 +179,14 @@ class PaperColorCloudApp(AppBase):
         elif not _HAS_SERVER:
             stage = "server-unavailable"
             message = "Waiting for server skipped: M5Things unavailable"
-        elif not state["cloud_ok"] and not state["pair_code"]:
+        elif not state["cloud_ok"] and not state["access_code"]:
             cloud_status = M5Things.status()
             if cloud_status != 2:
                 stage = "server"
                 message = "Waiting for server connection"
             else:
-                stage = "pair-code"
-                message = "Waiting for pair code"
+                stage = "access-code"
+                message = "Waiting for access code"
         else:
             stage = None
             message = None
@@ -252,7 +253,7 @@ class PaperColorCloudApp(AppBase):
             self._log_state_events(state)
             self._log_wait_stage(state)
             if state["cloud_ok"]:
-                self._had_pair_code = True
+                self._had_access_code = True
                 return state, False
             await asyncio.sleep_ms(self.POLL_INTERVAL_MS)
 
@@ -260,9 +261,9 @@ class PaperColorCloudApp(AppBase):
 
     async def on_run(self):
         state, timed_out = await self._wait_result()
-        access_text = state["pair_code"] if not timed_out and state["cloud_ok"] else "TIMEOUT"
+        access_text = state["access_code"] if not timed_out and state["cloud_ok"] else "TIMEOUT"
         if state["cloud_ok"]:
-            self._had_pair_code = True
+            self._had_access_code = True
         self._render_if_changed(self._screen_payload(state, access_text), "startup result")
 
         wifi_bad_since = None
@@ -279,15 +280,15 @@ class PaperColorCloudApp(AppBase):
 
             if state["cloud_ok"]:
                 cloud_bad_since = None
-                self._had_pair_code = True
+                self._had_access_code = True
                 self._render_if_changed(
-                    self._screen_payload(state, state["pair_code"]), "cloud recovered"
+                    self._screen_payload(state, state["access_code"]), "cloud recovered"
                 )
             else:
                 if cloud_bad_since is None:
                     cloud_bad_since = now
 
-                offline_text = "OFFLINE" if self._had_pair_code else "TIMEOUT"
+                offline_text = "OFFLINE" if self._had_access_code else "TIMEOUT"
                 if (
                     wifi_bad_since is not None
                     and time.ticks_diff(now, wifi_bad_since) >= self.REFRESH_GRACE_MS
@@ -318,7 +319,7 @@ class PaperColor_Startup:
         state = {
             "wifi_ok": False,
             "cloud_ok": False,
-            "pair_code": "",
+            "access_code": "",
             "nick_name": "-",
             "ip_addr": "",
         }

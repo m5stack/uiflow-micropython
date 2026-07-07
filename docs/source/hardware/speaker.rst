@@ -7,7 +7,7 @@ Speaker
 .. include:: ../refs/hardware.speaker.ref
 
 
-The Speaker is used to control the built-in speaker inside the host device. 
+The Speaker is used to control the built-in speaker inside the host device.
 Below is the detailed support for Speaker on the host:
 
 .. table::
@@ -97,6 +97,12 @@ class Speaker
     Methods of the Speaker Class heavily rely on ``M5.begin()`` |M5.begin.png| and ``M5.update()`` |M5.update.png|.
 
     All calls to methods of Speaker objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
+
+.. note::
+
+    Speaker is registered in the ``M5`` module, **not** in the ``hardware``
+    module. Use ``from M5 import *`` to make ``Speaker`` available. Do not
+    write ``from hardware import Speaker``.
 
 .. _hardware.Speaker.Methods:
 

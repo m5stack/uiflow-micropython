@@ -2,22 +2,23 @@
 #
 # SPDX-License-Identifier: MIT
 
-from .stamps3 import StampS3_Startup
+from startup.headless import Headless_Startup
 import network
 import time
 import M5
+import M5Things
+from startup import Startup
 
 
-class Capsule_Startup(StampS3_Startup):
-    """AtomS3U startup menu"""
-
+class Capsule_Startup(Headless_Startup):
     def __init__(self) -> None:
         super().__init__()
 
     def startup(
         self,
-        ssid: str,
-        pswd: str,
+        net_mode: str = "WIFI",
+        ssid: str = "",
+        pswd: str = "",
         protocol: str = "",
         ip: str = "",
         netmask: str = "",
@@ -28,7 +29,8 @@ class Capsule_Startup(StampS3_Startup):
         self.show_mac()
         M5.Speaker.setVolumePercentage(1.0)
 
-        if super().connect_network(
+        self._net_if = Startup(network_type=net_mode)  # type: ignore
+        if self._net_if.connect_network(
             ssid=ssid,
             pswd=pswd,
             protocol=protocol,
@@ -38,42 +40,40 @@ class Capsule_Startup(StampS3_Startup):
             dns=dns,
         ):
             print("Connecting to " + ssid + " ", end="")
-            status = super().connect_status()
-            self.rgb.set_brightness(60)
-            start = time.time()
-            while True:
-                t = super().connect_status()
-                if t != network.STAT_GOT_IP:
-                    status = t
-                    M5.Speaker.tone(5000, 50)
-                    if t is network.STAT_NO_AP_FOUND:
-                        self.show_error(ssid, "NO AP FOUND")
+            start = time.ticks_ms()
+            success = False
+            while time.ticks_diff(time.ticks_ms(), start) < timeout * 1000:
+                status = self._net_if.connect_status()
+                if status is network.STAT_GOT_IP:
+                    access_code = M5Things.accesscode()
+                    if access_code != "":
+                        M5.Speaker.tone(4500, 50)
+                        time.sleep(0.1)
+                        M5.Speaker.tone(4500, 50)
+                        print(" ")
+                        print("Local IP: " + self._net_if.local_ip())
+                        print("=======================")
+                        print("Nickname: " + M5Things.nick_name())
+                        print("Access Code: " + access_code)
+                        print("=======================")
+                        self.rgb.fill_color(self.COLOR_GREEN)
+                        success = True
                         break
-                    elif t is network.STAT_WRONG_PASSWORD:
-                        self.show_error(ssid, "WRONG PASSWORD")
-                        break
-                    elif t is network.STAT_HANDSHAKE_TIMEOUT:
-                        self.show_error(ssid, "HANDSHAKE ERR")
-                        break
-                    elif t is network.STAT_CONNECTING:
+                    else:
                         print(".", end="")
-                if t != status and t == network.STAT_GOT_IP:
-                    status = t
-                    print(" ")
-                    print("Local IP: " + super().local_ip())
-                    self.rgb.set_color(0, self.COLOR_GREEN)
-                    self.rgb.set_brightness(100)
-                    break
-                # connect to network timeout
-                if (time.time() - start) > timeout:
-                    self.show_error(ssid, "TIMEOUT")
-                    break
-                time.sleep_ms(300)
-            if status == network.STAT_GOT_IP:
-                M5.Speaker.tone(4500, 50)
-                time.sleep(0.1)
-                M5.Speaker.tone(4500, 50)
+                else:
+                    print(".", end="")
+                time.sleep(1)
+
+            if not success:
+                M5.Speaker.tone(5000, 50)
+                print(" ")
+                self.show_error(ssid, "TIMEOUT")
+                print(
+                    f"[NET]: {self._net_if.wifi_status_str(status)} | "
+                    f"[MQTT]: {self._net_if.m5things_status_str(M5Things.status())}"
+                )
         else:
-            self.rgb.set_color(0, self.COLOR_RED)
-            self.rgb.set_brightness(100)
+            self.rgb.fill_color(self.COLOR_RED)
             self.show_error("Not Found", "Please use M5Burner setup :)")
+            print("Connecting to " + ssid + " ", end="")

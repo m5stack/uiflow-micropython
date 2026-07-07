@@ -1,6 +1,7 @@
 set(IDF_TARGET esp32s3)
 
 set(BOARD_ID 2)
+set(M5THINGS_BOARD_NAME "box3")
 
 # Font Support
 set(FONT_MONTSERRAT_12 1)

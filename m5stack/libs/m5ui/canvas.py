@@ -46,8 +46,30 @@ class M5Canvas(lv.canvas):
 
         self._layer = lv.layer_t()
         self.init_layer(self._layer)
+        self._batch_mode = False
 
         self._area = lv.area_t()
+
+    def _commit_layer(self):
+        if not self._batch_mode:
+            self.finish_layer(self._layer)
+
+    def begin_draw(self):
+        """Start batch drawing and defer layer commit until ``end_draw()``.
+
+        Draw methods keep their default behavior when batch drawing is not active.
+        Call this before multiple draw operations to avoid refreshing the canvas
+        after each individual operation.
+        """
+        if not self._batch_mode:
+            self.init_layer(self._layer)
+            self._batch_mode = True
+
+    def end_draw(self):
+        """Finish batch drawing and commit all pending draw operations once."""
+        if self._batch_mode:
+            self._batch_mode = False
+            self.finish_layer(self._layer)
 
     def fill_bg(self, color: int, opa: int):
         """Fill the canvas background with the specified color and opacity.
@@ -183,7 +205,7 @@ class M5Canvas(lv.canvas):
         self._arc_dsc.end_angle = end_angle
 
         lv.draw_arc(self._layer, self._arc_dsc)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def draw_rect(
         self,
@@ -275,7 +297,7 @@ class M5Canvas(lv.canvas):
         self._area.x2 = x + w - 1
         self._area.y2 = y + h - 1
         lv.draw_rect(self._layer, self._rect_dsc, self._area)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def draw_image(
         self,
@@ -330,7 +352,7 @@ class M5Canvas(lv.canvas):
         self._area.x2 = x + self._image_header.w - 1
         self._area.y2 = y + self._image_header.h - 1
         lv.draw_image(self._layer, self._image_dsc, self._area)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def draw_line(
         self,
@@ -376,7 +398,7 @@ class M5Canvas(lv.canvas):
         self._line_dsc.round_end = 1
 
         lv.draw_line(self._layer, self._line_dsc)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def draw_label(
         self,
@@ -423,7 +445,7 @@ class M5Canvas(lv.canvas):
         self._area.y2 = y + text_size.y - 1
 
         lv.draw_label(self._layer, self._label_dsc, self._area)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def draw_triangle(
         self,
@@ -471,7 +493,7 @@ class M5Canvas(lv.canvas):
         self._triangle_dsc.p[2].y = y3
 
         lv.draw_triangle(self._layer, self._triangle_dsc)
-        self.finish_layer(self._layer)
+        self._commit_layer()
 
     def set_style_radius(self, radius: int, part: int) -> None:
         if radius < 0:

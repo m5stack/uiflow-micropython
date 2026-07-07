@@ -36,7 +36,7 @@ class PowerHub_Startup(Startup):
 
     def show_mac(self) -> None:
         mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
-        print("Mac: " + mac[0:6] + "_" + mac[6:])
+        print("MAC: " + mac[0:6] + "_" + mac[6:])
 
     def show_error(self, ssid: str, error: str) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)

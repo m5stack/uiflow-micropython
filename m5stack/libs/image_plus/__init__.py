@@ -28,7 +28,7 @@ class ImagePlus(Widgets.Image):
 
         self._path = "/flash/res/img/" + url.split("/")[-1]
         print("path:", self._path)
-        super(ImagePlus, self).__init__(self._path, x, y, parent)
+        super(ImagePlus, self).__init__(self._path, x, y, parent=parent)
         self._draw()
 
         self._enable and _thread.start_new_thread(self._loop, tuple())

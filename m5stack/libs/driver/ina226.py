@@ -100,7 +100,7 @@ class INA226:
     def _available(self):
         buf = self._read_register(self.REG_MANUF_ID)
         if buf != b"\x54\x49":  # Manufacturer ID for Texas Instruments (0x5449)
-            raise ValueError("UnitByteSwitch not found in I2C bus.")
+            raise ValueError("INA226 not found in I2C bus.")
 
     def _write_register(self, reg, value):
         data = value.to_bytes(2, "big")

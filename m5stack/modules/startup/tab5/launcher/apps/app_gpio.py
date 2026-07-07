@@ -11,6 +11,7 @@ class OutputTestPanel:
     def __init__(self, parent: lv.obj, pin: int, pos_x: int, pos_y: int):
         self._pin = pin
         self._is_on = False
+        self._is_initialized = False
 
         panel = lv.obj(parent)
         panel.remove_flag(lv.obj.FLAG.SCROLLABLE)
@@ -40,10 +41,13 @@ class OutputTestPanel:
 
         self._update_btn_style()
 
-        # Setup pin
+    def _ensure_pin_init(self):
+        if self._is_initialized:
+            return
         get_hal().gpio_deinit(self._pin)
         get_hal().gpio_init(self._pin, 1)
         get_hal().gpio_set_level(self._pin, False)
+        self._is_initialized = True
 
     def _update_btn_style(self):
         if self._is_on:
@@ -54,6 +58,7 @@ class OutputTestPanel:
             self._label_btn.set_text("LOW")
 
     def _handle_toggle(self, e: lv.event_t):
+        self._ensure_pin_init()
         self._is_on = not self._is_on
         self._update_btn_style()
         get_hal().gpio_set_level(self._pin, self._is_on)
@@ -61,11 +66,14 @@ class OutputTestPanel:
     def cleanup(self):
         self._btn_io_toggle.delete()
         self._btn_io_toggle = None
-        get_hal().gpio_deinit(self._pin)
+        if self._is_initialized:
+            get_hal().gpio_set_level(self._pin, False)
+            get_hal().gpio_deinit(self._pin)
+            self._is_initialized = False
 
 
 class ExtPortPanel:
-    _PINS = [49, 50, 0, 1, 54, 53]
+    _PINS = [0, 1, 49, 50]
 
     def __init__(self, parent: lv.obj):
         panel = lv.obj(parent)
@@ -91,40 +99,9 @@ class ExtPortPanel:
         self._test_panels = []
 
 
-class MbusPanel:
-    _PINS = [18, 19, 5, 38, 7, 3, 2, 47, 16, 17, 45, 52, 37, 6, 4, 48, 35, 51]
-
-    def __init__(self, parent: lv.obj):
-        panel = lv.obj(parent)
-        panel.set_size(520, 460)
-        panel.align(lv.ALIGN.CENTER, 230, 0)
-        panel.set_style_border_width(0, lv.PART.MAIN)
-        panel.set_style_bg_color(lv.color_hex(0xFFFFFF), lv.PART.MAIN)
-        panel.set_style_radius(10, lv.PART.MAIN)
-
-        label_title = lv.label(panel)
-        label_title.align(lv.ALIGN.TOP_MID, 0, 0)
-        label_title.set_style_text_font(lv.font_montserrat_18, lv.PART.MAIN)
-        label_title.set_style_text_color(lv.color_hex(0x000000), lv.PART.MAIN)
-        label_title.set_text("MBUS")
-
-        self._test_panels = []
-        for i, pin in enumerate(self._PINS):
-            self._test_panels.append(
-                OutputTestPanel(panel, pin, 124 if i > 8 else -124, 40 + 81 * (i % 9))
-            )
-
-    def cleanup(self):
-        for panel in self._test_panels:
-            panel.cleanup()
-        self._test_panels = []
-
-
 class AppGpio(AppBase):
     async def main(self):
         self._panel_ext = ExtPortPanel(self.get_app_panel())
-        self._panel_mbus = MbusPanel(self.get_app_panel())
 
     def on_cleanup(self):
         self._panel_ext.cleanup()
-        self._panel_mbus.cleanup()

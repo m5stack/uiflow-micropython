@@ -4,6 +4,7 @@ Module
 .. toctree::
     :maxdepth: 1
 
+    module16340.rst
     4in8out.rst
     ain4.rst
     asr.rst

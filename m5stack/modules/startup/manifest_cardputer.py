@@ -10,8 +10,6 @@ package(
         "cardputer/app_base.py",
         "cardputer/framework.py",
         "cardputer/res.py",
-        "cardputer/apps/app_list.py",
-        "cardputer/apps/app_run.py",
         "cardputer/apps/dev.py",
         "cardputer/apps/ezdata.py",
         "cardputer/apps/launcher.py",

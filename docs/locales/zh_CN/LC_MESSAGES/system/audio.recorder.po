@@ -100,8 +100,8 @@ msgstr "从麦克风录制音频到文件。"
 #: ../../en/system/audio.recorder.rst:37 561207f0ea2043b99924643baa949e0c
 msgid ""
 "The uri of the audio file. e.g. \"file://flash/test.amr\", "
-"\"file:///sd/test.wav\"."
-msgstr "音频文件的 URI。例如：\"file://flash/test.amr\"、\"file:///sd/test.wav\"。"
+"\"file://sd/test.wav\"."
+msgstr "音频文件的 URI。例如：\"file://flash/test.amr\"、\"file://sd/test.wav\"。"
 
 #: ../../en/system/audio.recorder.rst:38 ../../en/system/audio.recorder.rst:53
 #: 22a43402e602470991022395ccc18cf5 3e8b55ce67b44fabbe68e2ced41b2ebd
@@ -266,4 +266,3 @@ msgstr ""
 #: ../../en/refs/system.audio.recorder.ref:12 a05b58d1effd4504954ff9fb41dd7551
 msgid "config.png"
 msgstr ""
-

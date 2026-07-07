@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-25 22:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/buzzer.rst:2 ../../source/refs/chain.buzzer.ref
+#: 86b873e1ad1f4440b3c2aed7bb3d0d23 e5f73fb8095e479da58ac96f2b8e58d6
+msgid "Chain Buzzer"
+msgstr "Chain Buzzer"
+
+#: ../../source/chain/buzzer.rst:6 c0d989cf114349b79bb35d9c3549542a
+msgid ""
+"BuzzerChain is the helper class for buzzer devices on the Chain bus. It "
+"provides methods to control buzzer frequency, duty cycle, play modes "
+"(auto play, manual play, note play), and play musical notes."
+msgstr ""
+"BuzzerChain 是链式总线上蜂鸣器设备的辅助类。它提供了控制蜂鸣器频率、占空比、播放模式（自动播放、"
+"手动播放、音符播放）以及播放音符的方法。"
+
+#: ../../source/chain/buzzer.rst:8 b9fd1a54c6894003ba046830deed4810
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/buzzer.rst:10 39c08f20d40d4bdebb662d9d0cd0e1f3
+msgid "|Chain Buzzer|"
+msgstr ""
+
+#: ../../source/chain/buzzer.rst:13 7791de2faff347b08e624cde762e6b38
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/chain/buzzer.rst:16 ../../source/chain/buzzer.rst:34
+#: dfc1a03178f74a0985ce8d03320e6839
+msgid "Button tone playback"
+msgstr "按键音播放"
+
+#: ../../source/chain/buzzer.rst:18 34fab419fcae4d509ca099e96aaca44b
+msgid "Open the |m5core_chain_buzzer_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_buzzer_basic_example.m5f2| 项目。"
+
+#: ../../source/chain/buzzer.rst:20 ../../source/chain/buzzer.rst:36
+#: 5bf6319d8f7f4127ae41c6fbaee3da66
+msgid ""
+"This example demonstrates how to use the Chain Buzzer in auto play mode. "
+"It initializes the buzzer RGB indicator, then plays 500 Hz, 1000 Hz, or "
+"1500 Hz tones when button A, B, or C is clicked."
+msgstr ""
+"本示例演示如何在自动播放模式下使用 Chain Buzzer。它初始化蜂鸣器 RGB 指示灯，然后在按钮 A、B 或 C "
+"被点击时播放 500 Hz、1000 Hz 或 1500 Hz 的音调。"
+
+#: ../../source/chain/buzzer.rst:22 781eddc2326c4c53a0ff6f5e0e54cae5
+#: 8d472e7d6e144e1088859899c679ef85 c6eae7bd6db446a9aeeb3d2974d6f019
+#: chain.buzzer.BuzzerChain:6 chain.buzzer.BuzzerChain.get_duty:6
+#: chain.buzzer.BuzzerChain.get_freq:6 chain.buzzer.BuzzerChain.get_mode:6
+#: chain.buzzer.BuzzerChain.get_status:6 chain.buzzer.BuzzerChain.note:8
+#: chain.buzzer.BuzzerChain.set_duty:7 chain.buzzer.BuzzerChain.set_freq:7
+#: chain.buzzer.BuzzerChain.set_mode:7 chain.buzzer.BuzzerChain.set_status:7
+#: chain.buzzer.BuzzerChain.tone:9 f829649a4e824b049e382560f49f1afb of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/buzzer.rst:24 2b24505985024fd8b9e68dce3fff9c6a
+msgid "|m5core_chain_buzzer_basic_example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:28 da452bf1e36044b68f6769319e357e62
+msgid "m5core_chain_buzzer_basic_example.png"
+msgstr ""
+
+#: ../../source/chain/buzzer.rst:26 ../../source/chain/buzzer.rst:44
+#: c916ad8548754d4c922582cb629ac890
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/buzzer.rst:28 ../../source/chain/buzzer.rst:46
+#: ef1203ebccf640769c5bbb09bb0a1cf2
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/buzzer.rst:31 b47173892a484876bf324f2262555c9a
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/chain/buzzer.rst:38 1b5282de8e6f4f72882e56191fa99b30
+#: 628d7491afdb479a94fb04ec835c3c7a ce9248f2c6144bb18e646cec60be584e
+#: chain.buzzer.BuzzerChain:10 chain.buzzer.BuzzerChain.get_duty:10
+#: chain.buzzer.BuzzerChain.get_freq:10 chain.buzzer.BuzzerChain.get_mode:10
+#: chain.buzzer.BuzzerChain.get_status:10 chain.buzzer.BuzzerChain.note:12
+#: chain.buzzer.BuzzerChain.set_duty:11 chain.buzzer.BuzzerChain.set_freq:11
+#: chain.buzzer.BuzzerChain.set_mode:11 chain.buzzer.BuzzerChain.set_status:11
+#: chain.buzzer.BuzzerChain.tone:13 e1b39c2b9933415fb8daafe84ba02be0 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/buzzer.rst:50 98bfda66f5884513bb4a5eaedc07fa9e
+msgid "**API**"
+msgstr "API 参考"
+
+#: ../../source/chain/buzzer.rst:53 c55893762a20456b9723fa60607ef017
+msgid "BuzzerChain"
+msgstr "BuzzerChain"
+
+#: 9f693f8bcbea4cc29fb3d85bb684558b chain.buzzer.BuzzerChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "Bases: :py:class:`~chain.key.KeyChain`"
+
+#: 61c6317909c74d4d9a88c8f97cdf2803 chain.buzzer.BuzzerChain:1 of
+msgid "Buzzer Chain class for interacting with buzzer devices over Chain bus."
+msgstr "用于通过链式总线与蜂鸣器设备交互的 Buzzer Chain 类。"
+
+#: ../../source/chain/buzzer.rst 6947349a4b084c43ae5b63dc069adb1a
+#: chain.buzzer.BuzzerChain.note chain.buzzer.BuzzerChain.set_duty
+#: chain.buzzer.BuzzerChain.set_freq chain.buzzer.BuzzerChain.set_mode
+#: chain.buzzer.BuzzerChain.set_status chain.buzzer.BuzzerChain.tone of
+msgid "Parameters"
+msgstr "参数"
+
+#: a935377c20954764b3c12d3cd718afaf chain.buzzer.BuzzerChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: c22b7fad644542c4aa7ded398e06ee0b chain.buzzer.BuzzerChain:4 of
+msgid "The device ID of the buzzer on the Chain bus."
+msgstr "Chain 总线上蜂鸣器的设备 ID。"
+
+#: 169b2ce0385a4b45b42651f46dbecd08 chain.buzzer.BuzzerChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:7 cf8fdc2001714fcf93228062b4e9e66d
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/buzzer.rst:60 eee5157e202647ec9eab347b3e8e5481
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: chain.buzzer.BuzzerChain.set_mode:1 db6b824051fb4011bb894fb195a0bec6 of
+msgid "Set the buzzer mode."
+msgstr "设置蜂鸣器模式。"
+
+#: cde39fbef4514fa682a5ca08e7990af7 chain.buzzer.BuzzerChain.set_mode:3 of
+msgid ""
+"Buzzer mode. Use :attr:`BuzzerChain.MODE_AUTO_PLAY` (0), "
+":attr:`BuzzerChain.MODE_MANUAL_PLAY` (1), or "
+":attr:`BuzzerChain.MODE_NOTE_PLAY` (2)."
+msgstr ""
+"蜂鸣器模式。使用 :attr:`BuzzerChain.MODE_AUTO_PLAY` (0)、"
+":attr:`BuzzerChain.MODE_MANUAL_PLAY` (1) 或 "
+":attr:`BuzzerChain.MODE_NOTE_PLAY` (2)。"
+
+#: 21082d76e1c84fea9993cabf56f8632c 4c3ba539e4fb4f358f6b61426ddfc59b
+#: 7fd39cf3f7684c94911796a5ef3c9658 8871af1c2b9b49a9a219b7c2e291a1c5
+#: chain.buzzer.BuzzerChain.get_duty chain.buzzer.BuzzerChain.get_freq
+#: chain.buzzer.BuzzerChain.get_mode chain.buzzer.BuzzerChain.get_status
+#: chain.buzzer.BuzzerChain.note chain.buzzer.BuzzerChain.set_duty
+#: chain.buzzer.BuzzerChain.set_freq chain.buzzer.BuzzerChain.set_mode
+#: chain.buzzer.BuzzerChain.set_status chain.buzzer.BuzzerChain.tone of
+msgid "Returns"
+msgstr "返回"
+
+#: c1a5c7c2fb35453d901a42c695e3272c chain.buzzer.BuzzerChain.note:5
+#: chain.buzzer.BuzzerChain.set_duty:4 chain.buzzer.BuzzerChain.set_freq:4
+#: chain.buzzer.BuzzerChain.set_mode:4 chain.buzzer.BuzzerChain.set_status:4
+#: chain.buzzer.BuzzerChain.tone:6 da82a418e3d9470c9c7a17e543c4ed0a of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: 108cb781aac44c5ea3690f8c07402884 ace7eccd4b684e96ae67927e3330d2f4
+#: be70bcce10504c7da1d29c55dfcf7199 chain.buzzer.BuzzerChain.get_duty
+#: chain.buzzer.BuzzerChain.get_freq chain.buzzer.BuzzerChain.get_mode
+#: chain.buzzer.BuzzerChain.get_status chain.buzzer.BuzzerChain.note
+#: chain.buzzer.BuzzerChain.set_duty chain.buzzer.BuzzerChain.set_freq
+#: chain.buzzer.BuzzerChain.set_mode chain.buzzer.BuzzerChain.set_status
+#: chain.buzzer.BuzzerChain.tone e8513a7b096f4138836230ea688d4938 of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 29136a5e764d46d8a4a28a68cca6c145 chain.buzzer.BuzzerChain.set_mode:9 of
+msgid "|set_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:8 6d974c37eb354acb8b959eb8bec7ab02
+msgid "set_mode.png"
+msgstr ""
+
+#: 27f437200d89426e9d2da16121d0daf3 chain.buzzer.BuzzerChain.get_mode:1 of
+msgid "Get the buzzer mode."
+msgstr "获取蜂鸣器模式。"
+
+#: a3219448de474cfc8218b5f1693e45c9 chain.buzzer.BuzzerChain.get_mode:3 of
+msgid ""
+"Buzzer mode. :attr:`BuzzerChain.MODE_AUTO_PLAY` (0), "
+":attr:`BuzzerChain.MODE_MANUAL_PLAY` (1), or "
+":attr:`BuzzerChain.MODE_NOTE_PLAY` (2). Returns None if failed."
+msgstr ""
+"蜂鸣器模式。:attr:`BuzzerChain.MODE_AUTO_PLAY` (0)、"
+":attr:`BuzzerChain.MODE_MANUAL_PLAY` (1) 或 "
+":attr:`BuzzerChain.MODE_NOTE_PLAY` (2)。失败时返回 None。"
+
+#: chain.buzzer.BuzzerChain.get_mode:8 fb869bd399b84f5c86b47c9aac17599a of
+msgid "|get_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:9 62944a9c8d1f4be485280b6ac5f1a14f
+msgid "get_mode.png"
+msgstr ""
+
+#: 7efd8a6a56b544eca8c42f0368dd357c chain.buzzer.BuzzerChain.tone:1 of
+msgid "Play tone (only works in AUTO_PLAY mode)."
+msgstr "播放音调（仅在 AUTO_PLAY 模式下有效）。"
+
+#: b9b84c24633843008f0253e6a5690eb6 chain.buzzer.BuzzerChain.set_freq:3
+#: chain.buzzer.BuzzerChain.tone:3 of
+msgid "Frequency in Hz. Range: 100-10000. Default: 2700."
+msgstr "频率（Hz）。范围：100-10000。默认值：2700。"
+
+#: a23b059955a44b0fbdd42e15ca82a873 chain.buzzer.BuzzerChain.set_duty:3
+#: chain.buzzer.BuzzerChain.tone:4 of
+msgid "Duty cycle (0-100). Default: 50."
+msgstr "占空比（0-100）。默认值：50。"
+
+#: 00f64f8d4bb142ab9b34d63f63f2f094 chain.buzzer.BuzzerChain.note:4
+#: chain.buzzer.BuzzerChain.tone:5 of
+msgid "Duration in milliseconds. Default: 100."
+msgstr "持续时间（毫秒）。默认值：100。"
+
+#: 93b2d636228a49c7bdd514376ad87326 chain.buzzer.BuzzerChain.tone:11 of
+msgid "|tone.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:10 776cb6752edb43519c73132c6ddb5470
+msgid "tone.png"
+msgstr ""
+
+#: b9be44b551b04c758eddb6290b94297d chain.buzzer.BuzzerChain.set_freq:1 of
+msgid "Set the buzzer frequency."
+msgstr "设置蜂鸣器频率。"
+
+#: 917b00cd6b3f48449b901fecd90c3d2f chain.buzzer.BuzzerChain.set_freq:9 of
+msgid "|set_freq.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:11 13a9d3ea3a924047aceaa3f267598e1f
+msgid "set_freq.png"
+msgstr ""
+
+#: c4bd55baac0a4a7b9dc5498a21edbd51 chain.buzzer.BuzzerChain.get_freq:1 of
+msgid "Get the buzzer frequency."
+msgstr "获取蜂鸣器频率。"
+
+#: ce384454aae043f1b9624b781a95f3e4 chain.buzzer.BuzzerChain.get_freq:3 of
+msgid "Frequency in Hz, or None if failed."
+msgstr "频率（Hz），失败时返回 None。"
+
+#: 66dd20f482d94225a6f04c5d4a1f1845 chain.buzzer.BuzzerChain.get_freq:8 of
+msgid "|get_freq.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:12 8e6dcc032f0444d397cbbbf2b6f71ae2
+msgid "get_freq.png"
+msgstr ""
+
+#: a89622b86467432e8b333d47d3b0c539 chain.buzzer.BuzzerChain.set_duty:1 of
+msgid "Set the buzzer duty cycle."
+msgstr "设置蜂鸣器占空比。"
+
+#: chain.buzzer.BuzzerChain.set_duty:9 ea16b181f34e47208d9cc14833d1fcd9 of
+msgid "|set_duty.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:13 874c461a4555493e8efaf783b4a432a8
+msgid "set_duty.png"
+msgstr ""
+
+#: 1645b544187349ff873c6f0edafec2fa chain.buzzer.BuzzerChain.get_duty:1 of
+msgid "Get the buzzer duty cycle."
+msgstr "获取蜂鸣器占空比。"
+
+#: 6e7739c68a1b43dbb70705340a68b6c4 chain.buzzer.BuzzerChain.get_duty:3 of
+msgid "Duty cycle (0-100), or None if failed."
+msgstr "占空比（0-100），失败时返回 None。"
+
+#: chain.buzzer.BuzzerChain.get_duty:8 e03c17f24afe43b3a28525ba03f3cffe of
+msgid "|get_duty.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:14 190d9f9c49e544679cc4bdd78ec0d11d
+msgid "get_duty.png"
+msgstr ""
+
+#: chain.buzzer.BuzzerChain.set_status:1 ff5345d093c54ae59ef18fb51f465d89 of
+msgid "Set the buzzer status (only works in MANUAL_PLAY mode)."
+msgstr "设置蜂鸣器状态（仅在 MANUAL_PLAY 模式下有效）。"
+
+#: 80b43fdb5b8e41a39c967828ea8c8631 chain.buzzer.BuzzerChain.set_status:3 of
+msgid ""
+"Buzzer status. Use :attr:`BuzzerChain.STATUS_OFF` (0) or "
+":attr:`BuzzerChain.STATUS_ON` (1)."
+msgstr ""
+"蜂鸣器状态。使用 :attr:`BuzzerChain.STATUS_OFF` (0) 或 "
+":attr:`BuzzerChain.STATUS_ON` (1)。"
+
+#: 8e6ed6a0e53e4cd8b126c1ad65c07880 chain.buzzer.BuzzerChain.set_status:9 of
+msgid "|set_status.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:15 21edfa190b7c4ae9be86bc44ef312e44
+msgid "set_status.png"
+msgstr ""
+
+#: chain.buzzer.BuzzerChain.get_status:1 e1f96e4d5f474ca8971beadb9b22fd5b of
+msgid "Get the buzzer status."
+msgstr "获取蜂鸣器状态。"
+
+#: b6a9dcbd30604c74a41841fbc4b88501 chain.buzzer.BuzzerChain.get_status:3 of
+msgid ""
+"Buzzer status. :attr:`BuzzerChain.STATUS_OFF` (0) or "
+":attr:`BuzzerChain.STATUS_ON` (1). Returns None if failed."
+msgstr ""
+"蜂鸣器状态。:attr:`BuzzerChain.STATUS_OFF` (0) 或 "
+":attr:`BuzzerChain.STATUS_ON` (1)。失败时返回 None。"
+
+#: 8213b3a592444001b58f0d1907953d6a chain.buzzer.BuzzerChain.get_status:8 of
+msgid "|get_status.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:16 a3e96fbe7e374effb7199ab788913132
+msgid "get_status.png"
+msgstr ""
+
+#: 56693657b662411ab85dbb762e2a6e83 chain.buzzer.BuzzerChain.note:1 of
+msgid "Play note (only works in NOTE_PLAY mode)."
+msgstr "播放音符（仅在 NOTE_PLAY 模式下有效）。"
+
+#: chain.buzzer.BuzzerChain.note:3 fe21da77e678464b8bd4245480d29ee2 of
+msgid "Note index (0-61). 0 is rest (silence), 13 is C4, and 61 is C8."
+msgstr "音阶索引（0-61）。0 为休止符（静音），13 为 C4，61 为 C8。"
+
+#: ce6d211059d74914a57e15bd3af08ff0 chain.buzzer.BuzzerChain.note:10 of
+msgid "|note.png|"
+msgstr ""
+
+#: ../../source/refs/chain.buzzer.ref:17 52cd3e670d6742ec9aa71d303cb07b87
+msgid "note.png"
+msgstr ""

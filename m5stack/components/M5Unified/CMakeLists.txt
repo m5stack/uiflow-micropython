@@ -5,6 +5,7 @@
 set(COMPONENT_ADD_INCLUDEDIRS
     M5Unified/src
     M5GFX/src/
+    LGFX_Fonts/src/
     ../../cmodules/lv_binding_micropython
     .
 )
@@ -25,6 +26,11 @@ file(GLOB SRCS
     M5GFX/src/lgfx/v1/platforms/esp32s3/*.cpp
     M5GFX/src/lgfx/v1/platforms/esp32p4/*.cpp
     M5GFX/src/lgfx/v1/touch/*.cpp
+    LGFX_Fonts/src/*.cpp
+    LGFX_Fonts/src/Fonts/lvgl/*.c
+    LGFX_Fonts/src/utility/lvgl/*.c
+    LGFX_Fonts/src/utility/lvgl/*.cpp
+    LGFX_Fonts/src/utility/emojis/*.cpp
     M5Unified/src/*.cpp
     M5Unified/src/utility/*.cpp
     M5Unified/src/utility/imu/*.cpp

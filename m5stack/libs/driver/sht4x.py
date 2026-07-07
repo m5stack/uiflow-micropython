@@ -3,6 +3,11 @@
 #
 # SPDX-License-Identifier: MIT
 
+# References:
+
+# - https://sensirion.com/media/documents/33FD6951/63E1087C/Datasheet_SHT4x_1.pdf
+# - https://github.com/adafruit/Adafruit_CircuitPython_SHT4x/blob/main/adafruit_sht4x.py
+
 import time
 import struct
 from micropython import const
@@ -61,12 +66,28 @@ Mode.add_values(
 
 
 class SHT4x:
-    """
-    SHT4x sensor driver in pure python based on I2C bus
+    """Create an SHT4x temperature and humidity sensor object.
 
-    References:
-    * https://sensirion.com/media/documents/33FD6951/63E1087C/Datasheet_SHT4x_1.pdf
-    * https://github.com/adafruit/Adafruit_CircuitPython_SHT4x/blob/main/adafruit_sht4x.py
+    This driver communicates with Sensirion SHT4x sensors over an I2C bus and
+    provides temperature, relative humidity, serial number, reset, and
+    measurement mode APIs.
+
+    :param I2C i2c: The I2C bus object connected to the sensor.
+    :param int address: The I2C address of the sensor. Default is ``0x44``.
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from hardware import I2C, Pin
+            from driver.sht4x import SHT4x
+
+            i2c0 = I2C(0, scl=Pin(2), sda=Pin(3), freq=100000)
+            sht4x = SHT4x(i2c0)
     """
 
     def __init__(self, i2c, address: int = _SHT4X_DEFAULT_ADDR) -> None:
@@ -78,7 +99,22 @@ class SHT4x:
 
     @property
     def serial_number(self) -> int:
-        """The unique 32-bit serial number"""
+        """The unique 32-bit serial number of the sensor.
+
+        :returns: The sensor serial number.
+        :rtype: int
+        :raises RuntimeError: If the received serial number CRC is invalid.
+
+        UiFlow2 Code Block:
+
+            |serial_number.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.serial_number
+        """
         self.i2c_device.writeto(self.sht4x_i2c_addr, bytearray([_SHT4X_READSERIAL]))
         time.sleep(0.01)
         self._buffer = self.i2c_device.readfrom(self.sht4x_i2c_addr, 6)
@@ -96,33 +132,151 @@ class SHT4x:
         return serial
 
     def reset(self) -> None:
-        """Perform a soft reset of the sensor, resetting all settings to their power-on defaults"""
+        """Perform a soft reset of the sensor.
+
+        This method resets the sensor settings to their power-on defaults.
+
+        UiFlow2 Code Block:
+
+            |reset.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.reset()
+        """
         self.i2c_device.writeto(self.sht4x_i2c_addr, bytearray([_SHT4X_SOFTRESET]))
         time.sleep(0.001)
 
     @property
     def mode(self) -> int:
-        """The current sensor reading mode (heater and precision)"""
+        """The current sensor reading mode.
+
+        The mode selects both heater behavior and measurement precision. Use
+        one of the values from :class:`Mode`, such as
+        ``Mode.NOHEAT_HIGHPRECISION`` or ``Mode.HIGHHEAT_100MS``.
+
+        :returns: The current measurement mode command.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |mode.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                from driver.sht4x import Mode
+
+                sht4x.mode = Mode.NOHEAT_HIGHPRECISION
+                sht4x.mode
+        """
         return self._mode
 
     @mode.setter
     def mode(self, new_mode: int) -> None:
+        """Set the sensor reading mode.
+
+        :param int new_mode: A mode value from :class:`Mode`.
+        :raises AttributeError: If ``new_mode`` is not a valid mode value.
+        """
         if not Mode.is_valid(new_mode):
             raise AttributeError("mode must be a Mode")
         self._mode = new_mode
 
     @property
     def relative_humidity(self) -> float:
-        """The current relative humidity in % rH. This is a value from 0-100%."""
-        return self.measure[1]
+        """The current relative humidity in percent RH.
+
+        :returns: The relative humidity, constrained to ``0`` through ``100``.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |get_humidity.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.relative_humidity
+        """
+        return self.measure()[1]
+
+    def get_humidity(self) -> float:
+        """Get the current relative humidity in percent RH.
+
+        :returns: The relative humidity, constrained to ``0`` through ``100``.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |get_humidity.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.get_humidity()
+        """
+        return self.relative_humidity
 
     @property
     def temperature(self) -> float:
-        """The current temperature in degrees Celsius"""
-        return self.measure[0]
+        """The current temperature in degrees Celsius.
+
+        :returns: The temperature in degrees Celsius.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |get_temperature.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.temperature
+        """
+        return self.measure()[0]
+
+    def get_temperature(self) -> float:
+        """Get the current temperature in degrees Celsius.
+
+        :returns: The temperature in degrees Celsius.
+        :rtype: float
+
+        UiFlow2 Code Block:
+
+            |get_temperature.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                sht4x.get_temperature()
+        """
+        return self.temperature
 
     def measure(self) -> Tuple[float, float]:
-        """both `temperature` and `relative_humidity`, read simultaneously"""
+        """Measure temperature and relative humidity simultaneously.
+
+        :returns: A tuple containing ``(temperature, relative_humidity)``.
+        :rtype: tuple[float, float]
+        :raises RuntimeError: If the received measurement CRC is invalid.
+
+        UiFlow2 Code Block:
+
+            |measure.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                temperature, humidity = sht4x.measure()
+        """
 
         temperature = None
         humidity = None
@@ -154,10 +308,6 @@ class SHT4x:
         humidity = max(min(humidity, 100), 0)
 
         return (temperature, humidity)
-
-    ## CRC-8 formula from page 14 of SHTC3 datasheet
-    # https://media.digikey.com/pdf/Data%20Sheets/Sensirion%20PDFs/HT_DS_SHTC3_D1.pdf
-    # Test data [0xBE, 0xEF] should yield 0x92
 
     @staticmethod
     def _crc8(buffer) -> int:

@@ -18,8 +18,6 @@ class LauncherApp(app_base.AppBase):
         self._icos = (
             Icon("SETTING", res.SETTING_ICO),
             Icon("DEVELOP", res.DEVELOP_ICO),
-            Icon("APP.RUN", res.APPRUN_ICO),
-            Icon("APP.LIST", res.APPLIST_ICO),
             Icon("EZDATA", res.EZDATA_ICO),
         )
         self._id = 1
@@ -71,7 +69,7 @@ class LauncherApp(app_base.AppBase):
         self._right_img.set_src(self._icos[right].src)
 
         self._right_label = widgets.Label(
-            "APP.RUN",
+            "EZDATA",
             193,
             92,
             w=48 + 4,

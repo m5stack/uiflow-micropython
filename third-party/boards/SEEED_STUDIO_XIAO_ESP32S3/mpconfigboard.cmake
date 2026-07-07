@@ -6,6 +6,7 @@ set(IDF_TARGET esp32s3)
 
 # https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L12
 set(BOARD_ID 136)
+set(M5THINGS_BOARD_NAME "xiao-s3")
 
 # Enable camera module
 set(M5_CAMERA_MODULE_ENABLE TRUE)

@@ -74,7 +74,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args)
     // default display
     m5_display.gfx = (void *)(&(M5.Display));
     // set default font to DejaVu9, keep same style with UIFlow website UI design.
-    M5.Display.setFont(&m5gfx::fonts::lv_font_montserrat_12);
+    M5.Display.setFont(&m5gfx::fonts::DejaVu12);
 #endif
     // https://github.com/lovyan03/LovyanGFX/issues/569
 
@@ -89,7 +89,7 @@ mp_obj_t m5_begin(size_t n_args, const mp_obj_t *args)
     box3GFX.setRotation(2);
     box3GFX.setBrightness(127);
     m5_display.gfx = (void *)(&(box3GFX));
-    box3GFX.setFont(&m5gfx::fonts::lv_font_montserrat_12);
+    box3GFX.setFont(&m5gfx::fonts::DejaVu12);
     box3GFX.fillScreen(0x000000);
 
     box3GFX.Touch.begin(&box3GFX);

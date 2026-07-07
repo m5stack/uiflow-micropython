@@ -39,6 +39,8 @@ CHAIN_DEVICE_TYPE_SWITCH = 0x0007  # Switch device type
 CHAIN_DEVICE_TYPE_PEDAL = 0x0008  # Pedal device type
 CHAIN_DEVICE_TYPE_PIR = 0x0009  # PIR device type
 CHAIN_DEVICE_TYPE_MIC = 0x000A  # Microphone device type
+CHAIN_DEVICE_TYPE_MONO = 0x000D  # Mono display device type
+CHAIN_DEVICE_TYPE_RGB = 0x000E  # RGB display device type
 
 
 class RecvData:
@@ -400,13 +402,11 @@ class ChainLinkLayer:
         """
         payload = struct.pack("B", uid_type & 0xFF)
         state, response = self.send(device_id, CMD_GET_DEVICE_UID, payload)
-        if state and response:
-            if uid_type == 0:
-                if len(response) >= 4:
-                    return tuple(response[:4])
-            elif uid_type == 1:
-                if len(response) >= 12:
-                    return tuple(response[:12])
+        if state and response and response[0] == 1:
+            if uid_type == 0 and len(response) >= 5:
+                return tuple(response[1:5])
+            elif uid_type == 1 and len(response) >= 13:
+                return tuple(response[1:13])
         return tuple()
 
     def send_heartbeat(self):
@@ -414,15 +414,24 @@ class ChainLinkLayer:
         state, _ = self.send(0xFD, CMD_HEARTBEAT, bytes())
         return state
 
-    def get_device_num(self) -> int:
+    def get_device_num(self, timeout_ms: int = 3000, retries: int = 3) -> int:
         """Get connected device number."""
-        state, response = self.send(0xFF, CMD_ENUM_RESPONSE, b"\x00")
+        state, response = self.send(
+            0xFF, CMD_ENUM_RESPONSE, b"\x00", timeout_ms=timeout_ms, retries=retries
+        )
         if state and response:
             self._device_num = response[0]
             return self._device_num
         return 0
 
-    def send(self, device_id: int, cmd: int, payload: bytes) -> (bool, bytes):
+    def send(
+        self,
+        device_id: int,
+        cmd: int,
+        payload: bytes,
+        timeout_ms: int = 3000,
+        retries: int = 3,
+    ) -> (bool, bytes):
         """Send custom command to device.
 
         :param int device_id: Device ID.
@@ -430,12 +439,12 @@ class ChainLinkLayer:
         :param bytes payload: Data.
         :return: True if success, False otherwise.
         """
-        if device_id != 0xFF and device_id > self._device_num:
+        if self._device_num and device_id != 0xFF and device_id > self._device_num:
             warnings.warn(f"Device ID {device_id} is disconnected.")
-        for _ in range(3):
+        for _ in range(retries):
             self._send_packet(device_id, cmd, payload)
             time.sleep_ms(10)
-            state, response = self._receive_packet(device_id, cmd)
+            state, response = self._receive_packet(device_id, cmd, timeout_ms=timeout_ms)
             if state:
                 return (state, response)
         return (False, b"")
@@ -478,7 +487,7 @@ class ChainBus:
         self.disconnect_device_handler = None
         self._running = True
         _thread.start_new_thread(self._recv_task, ())
-        self.device_num = self.chainll.get_device_num()
+        self.device_num = self.chainll.get_device_num(timeout_ms=300, retries=1)
 
     def register_device(self, device):
         """Register a Chain device.
@@ -522,7 +531,7 @@ class ChainBus:
                 return response
         return b""
 
-    def get_device_num(self) -> int:
+    def get_device_num(self, timeout_ms: int = 3000, retries: int = 3) -> int:
         """Get connected device number.
 
         :return: Number of connected devices.
@@ -538,7 +547,7 @@ class ChainBus:
 
                 num = chainbus_0.get_device_num()
         """
-        return self.chainll.get_device_num()
+        return self.chainll.get_device_num(timeout_ms=timeout_ms, retries=retries)
 
     def set_device_connected_handler(self, handler):
         """Set new device connection handler callback.

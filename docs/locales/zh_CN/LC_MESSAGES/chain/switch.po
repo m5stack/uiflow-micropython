@@ -1,0 +1,449 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-25 22:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/switch.rst:2 ../../source/refs/chain.switch.ref
+#: a668891392f94f53b0522d0ddce70f27 c2deba1d4fcc4e70b699e061f555a963
+msgid "Chain Switch"
+msgstr "Chain Switch"
+
+#: ../../source/chain/switch.rst:6 97c7c01fd5ec468e8821cd778a4939d1
+msgid ""
+"SwitchChain is the helper class for switch devices on the Chain bus. It "
+"provides methods to read ADC values (12-bit and 8-bit), configure switch "
+"thresholds, set slip mode, and monitor switch status changes."
+msgstr ""
+"SwitchChain 是链式总线上开关设备的辅助类。它提供了读取 ADC 值（12 位和 8 位）、配置开关阈值、设置滑动模式以及监控开关状态变化的方法。"
+
+#: ../../source/chain/switch.rst:8 b9876286f439452d9f254dea95d692c3
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/switch.rst:10 e6edb6dbf7a74ddd9a9f19e45e1cf963
+msgid "|Chain Switch|"
+msgstr ""
+
+#: ../../source/chain/switch.rst:13 4682438e03f34689ae3ae76ea0580c76
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/chain/switch.rst:16 ../../source/chain/switch.rst:34
+#: 14011b19fcaa4b3e8b44b72e656ddcec 84fa736dfc8943019cb459976f46b7d5
+msgid "Switch status monitoring"
+msgstr "开关状态监控"
+
+#: ../../source/chain/switch.rst:18 64963e4128cb47249a8e89e58ae5804a
+msgid "Open the |m5core_chain_switch_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_switch_basic_example.m5f2| 项目。"
+
+#: ../../source/chain/switch.rst:20 ../../source/chain/switch.rst:36
+#: 126f7e07428e4c46a6609b37925d0356 7d11214cdc684794aca3c87275cec93a
+msgid ""
+"This example demonstrates how to read ADC values and switch status from "
+"the Chain Switch sensor and display them on screen. It registers "
+"open/close trigger callbacks and updates the status label when the switch"
+" state changes."
+msgstr ""
+"本示例演示如何从 Chain Switch 传感器读取 ADC 值和开关状态并显示在屏幕上。它注册打开/关闭触发回调，并在开关状态变化时更新状态标签。"
+
+#: ../../source/chain/switch.rst:22 03b0becd29f74f6a8093e783e6a837f4
+#: 05b7303f50c844f6a24b46283260fcd4 1f1fe1fcdd0747a9a6a6b43fec31f965
+#: 21ad45eaf34c499893b8ad22bdb212c1 37165f7b71ac488193e0917c660b37ee
+#: 513d4cac134d43d9b87483824b7c8593 64bb0185c6ed4306b00bb06525dd9b58
+#: 6f8a64935c084cc2a264831177f44390 a80b2ca6adc34db88833409fb377e913
+#: b19a8eaefff141aab77661ccce90ddbe b41cd5858761423898e185ae8c497837
+#: bbf056195d144edaa47607418f626737 c4f5634d04a4403eb5e831d6a75c3e40
+#: chain.switch.SwitchChain:6 chain.switch.SwitchChain.get_adc12:6
+#: chain.switch.SwitchChain.get_adc8:6
+#: chain.switch.SwitchChain.get_close_thresh:6
+#: chain.switch.SwitchChain.get_open_thresh:6
+#: chain.switch.SwitchChain.get_slip_mode:6
+#: chain.switch.SwitchChain.get_switch_status:6
+#: chain.switch.SwitchChain.get_trigger:6
+#: chain.switch.SwitchChain.set_slip_mode:8
+#: chain.switch.SwitchChain.set_switch_thresh:9
+#: chain.switch.SwitchChain.set_trigger:7
+#: chain.switch.SwitchChain.set_trigger_callback:9 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/switch.rst:24 7d03d802d759412ea4549ba611999229
+msgid "|m5core_chain_switch_basic_example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:19 84eb1c3cbfe347fc97b9bd2f3bea7ba8
+msgid "m5core_chain_switch_basic_example.png"
+msgstr ""
+
+#: ../../source/chain/switch.rst:26 ../../source/chain/switch.rst:44
+#: 7370bd5c70804cf185b91858cd7fb39c b74f126ac5604f8fb2a73362ee2065e1
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/switch.rst:28 ../../source/chain/switch.rst:46
+#: 2814d39b816e4c0f83c62b89010bc1d1 b8502c19c4814b95b861d024c79ac45f
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/switch.rst:31 d891f627bf45445cbf90025eca049f46
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/chain/switch.rst:38 113ad2dc419c448aa82fa9a5f341813e
+#: 37e13a093101433e9dc48dd2628fee68 461ceeb2f58f4631befdacb57193115e
+#: 4f65a5dd6b164e4bb03ecc4923d93590 5f91014e9ab143899fa2c509e3faad3b
+#: 66399bb6c2b64a54b746ba87da58c947 6ad21e93b9bc45f9be57c9e91fa32e89
+#: 6cf106ed57354d3f99648905ad971620 8b738099f64945069ce8eba9b93261f7
+#: a7758ef8f93f485cac788cddd4ade3bb aa1070244fbe4921aa9af1511d87f2c8
+#: b0abc558b7c54030b03a05cb72711367 c791cf1901284002a750b07580eec062
+#: chain.switch.SwitchChain:10 chain.switch.SwitchChain.get_adc12:10
+#: chain.switch.SwitchChain.get_adc8:10
+#: chain.switch.SwitchChain.get_close_thresh:10
+#: chain.switch.SwitchChain.get_open_thresh:10
+#: chain.switch.SwitchChain.get_slip_mode:10
+#: chain.switch.SwitchChain.get_switch_status:10
+#: chain.switch.SwitchChain.get_trigger:10
+#: chain.switch.SwitchChain.set_slip_mode:12
+#: chain.switch.SwitchChain.set_switch_thresh:13
+#: chain.switch.SwitchChain.set_trigger:11
+#: chain.switch.SwitchChain.set_trigger_callback:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/switch.rst:50 1c7aacff4c514b78819284e23c137b55
+msgid "**API**"
+msgstr "API 参考"
+
+#: ../../source/chain/switch.rst:53 fa16af3903484a58a0b2df16689052f9
+msgid "SwitchChain"
+msgstr "SwitchChain"
+
+#: c1ff90d65afb430ea182d8a023f3c155 chain.switch.SwitchChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "Bases: :py:class:`~chain.key.KeyChain`"
+
+#: 9d2ee0a7951c4f2da5fcecaae7db3392 chain.switch.SwitchChain:1 of
+msgid "Switch Chain class for interacting with switch devices over Chain bus."
+msgstr "用于通过链式总线与开关设备交互的 Switch Chain 类。"
+
+#: ../../source/chain/switch.rst 44e8e8478b0f4848b3f8a10553fc37e4
+#: a75d3cdd99da42659dbd4dc6f93bf989 chain.switch.SwitchChain.set_slip_mode
+#: chain.switch.SwitchChain.set_switch_thresh
+#: chain.switch.SwitchChain.set_trigger
+#: chain.switch.SwitchChain.set_trigger_callback
+#: d52c2138296646848cb9bf002d956a74 d70ba63e71ff40288b56b458027e8a91
+#: ec4cfb65d18d4d5caaed2eff0a982e77 of
+msgid "Parameters"
+msgstr "参数"
+
+#: 7d8466dff9544a7dbe29e08209057e11 chain.switch.SwitchChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 55d6017b61e54dd09da8f330944239d5 chain.switch.SwitchChain:4 of
+msgid "The device ID of the switch on the Chain bus."
+msgstr "Chain 总线上开关的设备 ID。"
+
+#: chain.switch.SwitchChain:8 d54bc00913c04d698e9395b751f19bfb of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:7 8d57bddb4c274d88be3ce2e6b3b3c7ca
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/switch.rst:60 09ade0d077b84e56a1dc676a85c3588b
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: chain.switch.SwitchChain.get_adc12:1 e696e290e5be4cf79faae6f7f24ece8a of
+msgid "Get the 12-bit ADC value of the switch."
+msgstr "获取开关的 12 位 ADC 值。"
+
+#: 0d8d48d8fc5a4b4ab9c3bad42ebae765 0f96884d30a349ee950ae3b37cc3af2c
+#: 1911f42b561342d394591668da67e62b 7188005ebe5541439f59e7c4d55f2fbe
+#: 76ee326893874762896d41fd715fd21a a656d2f0deb742628f503db361aa0133
+#: adec921ceb094b6e94f93b37e2d70690 cebc0d9f7bda4a40b45b1858cf86340b
+#: chain.switch.SwitchChain.get_adc12 chain.switch.SwitchChain.get_adc8
+#: chain.switch.SwitchChain.get_close_thresh
+#: chain.switch.SwitchChain.get_open_thresh
+#: chain.switch.SwitchChain.get_slip_mode
+#: chain.switch.SwitchChain.get_switch_status
+#: chain.switch.SwitchChain.get_trigger chain.switch.SwitchChain.set_slip_mode
+#: chain.switch.SwitchChain.set_switch_thresh
+#: chain.switch.SwitchChain.set_trigger d4e8d9f2e3e44e058d69e7c39a4ec14a
+#: e65f5a57177f4540a534e252ff472f47 of
+msgid "Returns"
+msgstr "返回"
+
+#: 28a7113709ee4e2e85cc25def2ae848d chain.switch.SwitchChain.get_adc12:3 of
+msgid "12-bit ADC value (0-4095), or None if failed."
+msgstr "12 位 ADC 值（0-4095），失败时返回 None。"
+
+#: 1a398f914a9840ee8ab9c807f33e2c7e 36e4d6454ba74c0bab7acea25e34e63c
+#: 6be8a18d2d8c4b08b47abc7f0a9eae16 7711d3a3cf27410b908571e62d69da46
+#: 82ad7504e3a34ad5a274138379b59680 b913afd1213343b3a20b590b9e03eb3d
+#: c9bc3cf68e274304a0e0e418502875f1 chain.switch.SwitchChain.get_adc12
+#: chain.switch.SwitchChain.get_adc8 chain.switch.SwitchChain.get_close_thresh
+#: chain.switch.SwitchChain.get_open_thresh
+#: chain.switch.SwitchChain.get_slip_mode
+#: chain.switch.SwitchChain.get_switch_status
+#: chain.switch.SwitchChain.get_trigger chain.switch.SwitchChain.set_slip_mode
+#: chain.switch.SwitchChain.set_switch_thresh
+#: chain.switch.SwitchChain.set_trigger
+#: chain.switch.SwitchChain.set_trigger_callback
+#: d91b498427014fc089e8e538550f8238 ddf5d077260d4818928e6fa451b2f178
+#: ec26171da16745eebc73073e77b324f4 ed4ae27d6124433593c95b2a55016f4a of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 9af780f47ac44cb2946406468cfdeb8c chain.switch.SwitchChain.get_adc12:8 of
+msgid "|get_adc12.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:8 adce5be8313a4348aea05bd33afd2408
+msgid "get_adc12.png"
+msgstr ""
+
+#: 9846ef6e63b04e659e73e422e4d1f2ec chain.switch.SwitchChain.get_adc8:1 of
+msgid "Get the 8-bit ADC value of the switch."
+msgstr "获取开关的 8 位 ADC 值。"
+
+#: af355683220748f5b3eee08d5109acc2 chain.switch.SwitchChain.get_adc8:3 of
+msgid "8-bit ADC value (0-255), or None if failed."
+msgstr "8 位 ADC 值（0-255），失败时返回 None。"
+
+#: chain.switch.SwitchChain.get_adc8:8 d47dd1c2414043dca2248343fa4dd7a9 of
+msgid "|get_adc8.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:9 62a42d29e6f845ac956ddd99d0ce9302
+msgid "get_adc8.png"
+msgstr ""
+
+#: bced4f5601fd4790852dc0417056c4b5 chain.switch.SwitchChain.set_slip_mode:1 of
+msgid "Set the slider change mode."
+msgstr "设置滑块变化模式。"
+
+#: 92877739388b46b6b533d9c6c6869e63 chain.switch.SwitchChain.set_slip_mode:3 of
+msgid ""
+"Slider change mode. Use :attr:`SwitchChain.SLIP_MODE_DOWNUP_DEC` (0) for "
+"decreasing or :attr:`SwitchChain.SLIP_MODE_DOWNUP_INC` (1) for "
+"increasing."
+msgstr ""
+"滑块变化模式。使用 :attr:`SwitchChain.SLIP_MODE_DOWNUP_DEC` (0) 表示递减，或 :attr:`SwitchChain.SLIP_MODE_DOWNUP_INC` (1) 表示递增。"
+
+#: 4eb5ba4959284e89bfb346afa5a81465 chain.switch.SwitchChain.set_slip_mode:4 of
+msgid "Whether to save the setting to flash. Default: False."
+msgstr "是否将设置保存到闪存。默认值：False。"
+
+#: 5ef264879dc7455abd08adaaf4927ae3 86b868edbcbb4b1d89522fe818ff540e
+#: chain.switch.SwitchChain.set_slip_mode:5
+#: chain.switch.SwitchChain.set_switch_thresh:6
+#: chain.switch.SwitchChain.set_trigger:4 efeea4115be742e5837988868c354a1e of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: 564a54df7797415cad943b3c6b632f9b chain.switch.SwitchChain.set_slip_mode:10
+#: of
+msgid "|set_slip_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:10 489a0c05f496498daae1d28ff8bc150d
+msgid "set_slip_mode.png"
+msgstr ""
+
+#: ba52c34161ee46eeb24a077a11ca0315 chain.switch.SwitchChain.get_slip_mode:1 of
+msgid "Get the slider change mode."
+msgstr "获取滑块变化模式。"
+
+#: 45c4a6a286bc491382e3ede26f42d412 chain.switch.SwitchChain.get_slip_mode:3 of
+msgid ""
+"Slider change mode. :attr:`SwitchChain.SLIP_MODE_DOWNUP_DEC` (0) for "
+"decreasing or :attr:`SwitchChain.SLIP_MODE_DOWNUP_INC` (1) for "
+"increasing. Returns None if failed."
+msgstr ""
+"滑块变化模式。:attr:`SwitchChain.SLIP_MODE_DOWNUP_DEC` (0) 表示递减，或 :attr:`SwitchChain.SLIP_MODE_DOWNUP_INC` (1) 表示递增。失败时返回 None。"
+
+#: 456e7af09a1640ad9df213675d618e4f chain.switch.SwitchChain.get_slip_mode:8 of
+msgid "|get_slip_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:11 5333847314214c98a23a7c7a132226b3
+msgid "get_slip_mode.png"
+msgstr ""
+
+#: 299d718bcd7e42f1b7207e16c175d85a
+#: chain.switch.SwitchChain.set_switch_thresh:1 of
+msgid "Set the switch open and close thresholds."
+msgstr "设置开关打开和关闭阈值。"
+
+#: 869274b6eff44813a2e34c1386f4ba60
+#: chain.switch.SwitchChain.set_switch_thresh:3 of
+msgid "Open threshold value (0-4095). Must be greater than close_threshold."
+msgstr "打开阈值（0-4095）。必须大于 close_threshold。"
+
+#: chain.switch.SwitchChain.set_switch_thresh:4
+#: d7ff91478127425d9266674a0a0585a2 of
+msgid "Close threshold value (0-4095). Must be less than open_threshold."
+msgstr "关闭阈值（0-4095）。必须小于 open_threshold。"
+
+#: chain.switch.SwitchChain.set_switch_thresh:5
+#: f4b4a39b811b4af4bf9cb2615251308e of
+msgid "Whether to save the threshold to flash. Default: False."
+msgstr "是否将阈值保存到闪存。默认值：False。"
+
+#: chain.switch.SwitchChain.set_switch_thresh:11
+#: e37363ac423f4d4b8d717cd3342cbaba of
+msgid "|set_switch_thresh.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:12 03d02b0681454f74a77360279d65a277
+msgid "set_switch_thresh.png"
+msgstr ""
+
+#: 280fafb0d016440996270edccb1d8bde chain.switch.SwitchChain.get_open_thresh:1
+#: of
+msgid "Get the switch open threshold."
+msgstr "获取开关打开阈值。"
+
+#: 137d44edd63e4c9abaaad31633721bb4 chain.switch.SwitchChain.get_open_thresh:3
+#: of
+msgid "Open threshold value (0-4095), or None if failed."
+msgstr "打开阈值（0-4095），失败时返回 None。"
+
+#: chain.switch.SwitchChain.get_open_thresh:8 f024cb9492fa4dd0a7f097bebe59b061
+#: of
+msgid "|get_open_thresh.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:13 a1bc3985a3b54d28bc9cfd1436232ded
+msgid "get_open_thresh.png"
+msgstr ""
+
+#: 0769888a20f14e26accd2d1cae7e5e29 chain.switch.SwitchChain.get_close_thresh:1
+#: of
+msgid "Get the switch close threshold."
+msgstr "获取开关关闭阈值。"
+
+#: 81a7f4c8c4da42099d6f134a3f10e54e chain.switch.SwitchChain.get_close_thresh:3
+#: of
+msgid "Close threshold value (0-4095), or None if failed."
+msgstr "关闭阈值（0-4095），失败时返回 None。"
+
+#: b2b086fbbdd14f1bb13d583d7c7bba97 chain.switch.SwitchChain.get_close_thresh:8
+#: of
+msgid "|get_close_thresh.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:14 3fe4c416f68e4a79bef4165f76ba00a6
+msgid "get_close_thresh.png"
+msgstr ""
+
+#: bb65a0440b8f41b7976a25fed4574238
+#: chain.switch.SwitchChain.get_switch_status:1 of
+msgid "Get the switch status."
+msgstr "获取开关状态。"
+
+#: a2cd1b5888c34a72b615bb379fc1b5ff
+#: chain.switch.SwitchChain.get_switch_status:3 of
+msgid "Switch status. 0 means close, 1 means open. Returns None if failed."
+msgstr "开关状态。0 表示关闭，1 表示打开。失败时返回 None。"
+
+#: 8f86fb5da787417ba2c880d3ca713724
+#: chain.switch.SwitchChain.get_switch_status:8 of
+msgid "|get_switch_status.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:15 c473ffc14a2b4ef996d8e2d0f19809cb
+msgid "get_switch_status.png"
+msgstr ""
+
+#: 26001044da784813a1f81237f1a1e40b chain.switch.SwitchChain.set_trigger:1 of
+msgid "Enable or disable status change reporting."
+msgstr "启用或禁用状态变化报告。"
+
+#: 5bbd1dc288e244859d8dbcbaecc34b26 chain.switch.SwitchChain.set_trigger:3 of
+msgid "True to enable status change reporting, False to disable it."
+msgstr "True 启用状态变化报告，False 禁用。"
+
+#: 5a6c5588a19844aa8ead3c5250e67369 chain.switch.SwitchChain.set_trigger:9 of
+msgid "|set_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:16 6901505145a648f0b008c9c74597dd67
+msgid "set_trigger.png"
+msgstr ""
+
+#: 018eeab8262b40d1a32143e334385759 chain.switch.SwitchChain.get_trigger:1 of
+msgid "Get whether status change reporting is enabled."
+msgstr "获取是否启用状态变化报告。"
+
+#: 3c3a9562c78f485384d3d37928072f09 chain.switch.SwitchChain.get_trigger:3 of
+msgid ""
+"True if status change reporting is enabled, False if disabled. Returns "
+"False if failed."
+msgstr ""
+"启用状态变化报告返回 True，禁用返回 False。失败时返回 False。"
+
+#: chain.switch.SwitchChain.get_trigger:8 dee21526bbea460081e4ee798899d26c of
+msgid "|get_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:17 266127d172644903a7a63ff71e9e9f19
+msgid "get_trigger.png"
+msgstr ""
+
+#: 67971bc784bb4f49bfcc00d9d522ff70
+#: chain.switch.SwitchChain.set_trigger_callback:1 of
+msgid "Set callback for switch status change events."
+msgstr "设置开关状态变化事件的回调。"
+
+#: 012abd50f790442ca28d12165e0c2647
+#: chain.switch.SwitchChain.set_trigger_callback:3 of
+msgid ""
+"Trigger type to listen for. Use :attr:`SwitchChain.STATUS_CLOSE` (0) or "
+":attr:`SwitchChain.STATUS_OPEN` (1)."
+msgstr ""
+"要监听的触发类型。使用 :attr:`SwitchChain.STATUS_CLOSE` (0) 或 :attr:`SwitchChain.STATUS_OPEN` (1)。"
+
+#: chain.switch.SwitchChain.set_trigger_callback:4
+#: f48279fc523840649dda532068357e22 of
+msgid "Callback function that will be called when switch status changes."
+msgstr "当开关状态变化时将被调用的回调函数。"
+
+#: 282b422ac04b455490ba0f94cf3cdfab
+#: chain.switch.SwitchChain.set_trigger_callback:7 of
+msgid "Chain related methods cannot be called in the callback function."
+msgstr "在回调函数中不能调用链式相关方法。"
+
+#: 0921109769024cb79851808a25c0f0c9
+#: chain.switch.SwitchChain.set_trigger_callback:11 of
+msgid "|set_trigger_callback.png|"
+msgstr ""
+
+#: ../../source/refs/chain.switch.ref:18 8fdca764b4774bc9956fe5281b7fbebf
+msgid "set_trigger_callback.png"
+msgstr ""
+

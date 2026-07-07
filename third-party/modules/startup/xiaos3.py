@@ -11,6 +11,14 @@ import binascii
 from . import Startup
 
 
+try:
+    import M5Things
+
+    _HAS_SERVER = True
+except ImportError:
+    _HAS_SERVER = False
+
+
 # StampS3 startup menu
 class XIAOS3_Startup(Startup):
     COLOR_RED = 0xFF0000  # WiFi not connected
@@ -32,7 +40,21 @@ class XIAOS3_Startup(Startup):
 
     def show_mac(self) -> None:
         mac = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
-        print("Mac: " + mac[0:6] + "_" + mac[6:])
+        print("MAC: " + mac[0:6] + "_" + mac[6:])
+
+    def show_access_code(self) -> bool:
+        if _HAS_SERVER is True:
+            try:
+                access_code = M5Things.accesscode()
+                if len(access_code) > 0:
+                    print("=======================")
+                    print("Nickname: " + M5Things.nick_name())
+                    print("Access Code: " + access_code)
+                    print("=======================")
+                    return True
+            except Exception:
+                pass
+        return False
 
     def show_error(self, ssid: str, error: str) -> None:
         print("SSID: " + ssid + "\r\nNotice: " + error)
@@ -74,6 +96,12 @@ class XIAOS3_Startup(Startup):
             if status is network.STAT_GOT_IP:
                 print("Local IP: " + super().local_ip())
                 self.led.value(1)
+                if _HAS_SERVER is True:
+                    start = time.time()
+                    while self.show_access_code() is False:
+                        if (time.time() - start) > timeout:
+                            break
+                        time.sleep_ms(500)
             else:
                 self.led.value(0)
         else:

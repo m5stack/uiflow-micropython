@@ -38,6 +38,7 @@ package(
         "mbus.py",
         "module_4in8out.py",
         "module_helper.py",
+        "module16340.py",
         "nbiot.py",
         "odrive.py",
         "plus.py",

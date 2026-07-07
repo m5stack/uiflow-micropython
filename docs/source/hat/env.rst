@@ -56,7 +56,7 @@ Methods
 
 .. method:: ENVHat.read_temperature()
 
-    This method allows to read the temperature value collected by ENV and returns a floating point value. The hat of measurement is °C.
+    This method allows to read the temperature value collected by ENV and returns a floating point value. The unit of measurement is °C.
 
     UIFLOW2:
 
@@ -65,7 +65,7 @@ Methods
 
 .. method:: ENVHat.read_humidity()
 
-    This method allows to read the relative humidity value collected by ENV and returns a floating point value. The hat of measurement is %RH.
+    This method allows to read the relative humidity value collected by ENV and returns a floating point value. The unit of measurement is %RH.
 
     UIFLOW2:
 
@@ -74,7 +74,7 @@ Methods
 
 .. method:: ENVHat.read_pressure()
 
-    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The hat of measurement is Pa.
+    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is hPa.
 
     UIFLOW2:
 

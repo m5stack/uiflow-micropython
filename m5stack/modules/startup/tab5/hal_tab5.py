@@ -271,6 +271,7 @@ class HALTab5(HALBase):
     def gpio_deinit(self, pin: int):
         if pin not in self._pin_obj_map:
             return
+        self._pin_obj_map[pin].init(Pin.IN)
         del self._pin_obj_map[pin]
 
     def adc_init(self, pin: int):

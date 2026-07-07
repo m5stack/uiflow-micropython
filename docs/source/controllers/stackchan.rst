@@ -317,11 +317,13 @@ StackChan
 
                 sc.set_servo_zero()
 
-    .. method:: set_servo_power(enable=True)
+    .. method:: set_servo_power(enable=True, settle_ms=None)
 
         Enable or disable servo rail power via the IO expander.
 
         :param bool enable: Power on or off.
+        :param int settle_ms: Optional power-on wait time in milliseconds. If omitted,
+            the default is 500 ms.
 
         UiFlow2 Code Block:
 
@@ -453,8 +455,9 @@ StackChan
 
         Read touch state (three logical slots).
 
-        :param int index: If ``None``, return a list of three levels; if ``0``, ``1``, or ``2``, return that slot’s level.
-        :returns: ``OUTPUT_NONE``…``OUTPUT_HIGH`` style values, or ``None`` on failure.
+        :param int index: If ``None``, return a list of three levels; if ``0``, ``1``, or ``2``, return that slot's level.
+        :returns: ``OUTPUT_NONE``...``OUTPUT_HIGH`` style values. A read failure returns
+            ``OUTPUT_NONE`` values so examples can safely index the result.
 
         UiFlow2 Code Block:
 

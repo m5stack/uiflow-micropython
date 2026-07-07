@@ -13,6 +13,18 @@ class Power
 
     All methods calling the Power object need to be placed after ``M5.begin()`` |M5.begin.png|.
 
+.. note::
+
+    The Power class manages the **built-in** power monitoring chip (INA226,
+    INA3221, AXP192, etc.) on the host device's internal I2C bus. If your
+    device has a built-in power monitor, use the Power API below to read
+    battery voltage/current — do **not** initialize I2C manually or
+    instantiate an external ``INA226Unit``, as this will conflict with the
+    system driver and may cause crashes.
+
+    External (Grove-connected) power monitor units should still be
+    initialized via ``from unit import INA226Unit`` with user-created I2C.
+
 
 Methods
 -------

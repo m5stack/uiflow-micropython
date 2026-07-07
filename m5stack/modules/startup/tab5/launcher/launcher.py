@@ -5,7 +5,7 @@
 from .apps import (
     AppManager,
     AppWifi,
-    AppAppList,
+    AppDevelop,
     AppI2cScan,
     AppWifiScan,
     AppUart,
@@ -100,7 +100,7 @@ class Launcher:
 
         # Install apps
         AppManager.install_app("Wifi", AppWifi)
-        AppManager.install_app("AppList", AppAppList)
+        AppManager.install_app("Develop", AppDevelop)
         AppManager.install_app("I2CScan", AppI2cScan)
         AppManager.install_app("WifiScan", AppWifiScan)
         AppManager.install_app("UART", AppUart)
@@ -116,6 +116,9 @@ class Launcher:
 
         # Start ezdata service
         Ezdata.start()
+
+        # Open access code page by default
+        AppManager.open_app("Develop")
 
         # Keep app manager running
         while True:

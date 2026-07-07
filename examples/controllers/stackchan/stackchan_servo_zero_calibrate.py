@@ -38,6 +38,7 @@ def button_save_short_clicked_event(event_struct):
     stackchan.set_servo_zero()
     label_tip.set_text(str("Tip: Calibration success"))
     Speaker.tone(1000, 100)
+    last_time = time.ticks_ms()
 
 
 def button_save_event_handler(event_struct):
@@ -129,12 +130,13 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    stackchan.set_servo_power(enable=True)
+    stackchan.set_servo_power(enable=True, settle_ms=500)
     stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
     stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
     Speaker.begin()
     Speaker.setVolumePercentage(0.6)
     Speaker.tone(1000, 100)
+    last_time = time.ticks_ms()
 
 
 def loop():
@@ -151,6 +153,7 @@ def loop():
         last_time
     M5.update()
     if (time.ticks_diff((time.ticks_ms()), last_time)) >= 100:
+        last_time = time.ticks_ms()
         x_angle = stackchan.get_servo_angle(stackchan.SERVO_ID_X)
         y_angle = stackchan.get_servo_angle(stackchan.SERVO_ID_Y)
         label_angle_x.set_text(str((str("X-Axis Servo Angle:") + str(x_angle))))

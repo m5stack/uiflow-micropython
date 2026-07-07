@@ -31,3 +31,6 @@
 [submodule "m5stack/cmodules/lv_binding_micropython"]
 	path = m5stack/cmodules/lv_binding_micropython
 	url = https://github.com/lvgl/lv_binding_micropython.git
+[submodule "m5stack/components/M5Unified/LGFX_Fonts"]
+	path = m5stack/components/M5Unified/LGFX_Fonts
+	url = https://github.com/tobozo/LGFX_Fonts.git

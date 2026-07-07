@@ -18,7 +18,7 @@ def setup():
 
     M5.begin()
     m5ui.init()
-    page0 = m5ui.M5Screen(bg_c=0xFFFFFF)
+    page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     label0 = m5ui.M5Label(
         "It is a circularly scrolling text. ",
         x=60,

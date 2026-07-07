@@ -4,13 +4,13 @@
 
 
 class ACStamPLC:
-    """ACStamPLC with relay and RGB LED control via PI4IOE I2C GPIO expander.
-    """
+    """ACStamPLC with relay and RGB LED control via PI4IOE I2C GPIO expander."""
+
     # PI4IOE register addresses
-    PI4IO_REG_IO_DIR = 0x03    # I/O direction register (0=input, 1=output)
-    PI4IO_REG_OUT_SET = 0x05   # Output port register
+    PI4IO_REG_IO_DIR = 0x03  # I/O direction register (0=input, 1=output)
+    PI4IO_REG_OUT_SET = 0x05  # Output port register
     PI4IO_REG_OUT_H_IM = 0x07  # Output high-impedance register
-    PI4IO_REG_PULL_EN = 0x0B   # Pull-up/pull-down enable register
+    PI4IO_REG_PULL_EN = 0x0B  # Pull-up/pull-down enable register
     PI4IO_REG_PULL_SEL = 0x0D  # Pull-up/pull-down selection register (0=down, 1=up)
     # Pin definitions
     PIN_RELAY = 2  # P2 -> REL_EN
@@ -21,12 +21,13 @@ class ACStamPLC:
     def __init__(self, i2c=None, addr=0x44):
         """Initialize ACStamPLC
 
-        @param i2c I2C instance. If None, will try to get from hardware.plcio
+        @param i2c I2C instance. If None, will use the shared StamPLC I2C bus
         @param addr PI4IOE I2C address, default is 0x44
-        """     
+        """
         if i2c is None:
-            plcio = __import__("hardware.plcio", None, None, True, 0)
-            self.i2c = plcio.get_i2c()
+            from .plc import get_i2c
+
+            self.i2c = get_i2c()
         else:
             self.i2c = i2c
         self.addr = addr
@@ -100,4 +101,3 @@ class ACStamPLC:
         :param bool state: True to turn on, False to turn off
         """
         self._set_pin(self.PIN_LED_B, not state)
-

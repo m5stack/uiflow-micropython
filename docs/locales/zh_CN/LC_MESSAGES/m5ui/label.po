@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 10:26+0800\n"
+"POT-Creation-Date: 2026-06-18 13:57+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,475 +20,456 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/m5ui/label.rst:5 ../../en/m5ui/label.rst:54
-#: 376604be23a94a70b92e32ddd3f8bd3f ac8107500c424193a0a4fc4b4b7224b9
+#: ../../source/m5ui/label.rst:5 ../../source/m5ui/label.rst:64
+#: 90d778f1bc744935ac559bc0fec2d2ca e77b2d069c2047148830b6a86b5c2725
 msgid "M5Label"
 msgstr "\"\"\"M5Label\"\"\""
 
-#: ../../en/m5ui/label.rst:9 4358ab0e70924e38aa29c2cd0160b60f
+#: ../../source/m5ui/label.rst:9 db711b0b665e43a594afc24d1eeb6612
 msgid ""
 "M5Label is a widget that can be used to create labels in the user "
 "interface. It can display text and can be styled with different fonts, "
 "colors, and sizes."
 msgstr "M5Label 是一个可用于在用户界面中创建标签的小部件。它可以显示文本，并可以使用不同的字体、颜色和大小进行样式设置。"
 
-#: ../../en/m5ui/label.rst:13 0435a6bbedeb4a41a1a24a2b45e951a3
+#: ../../source/m5ui/label.rst:13 12f38f26808f42ac92b64aedea22b2dc
+msgid ""
+"**Available Fonts**: For ``m5ui`` widgets, use LVGL fonts such as "
+"``lv.font_montserrat_12``, ``14``, ``16``, ``18``, ``24``, ``40``, "
+"``44``, and ``48``. Some builds, such as Tab5, also include ``20``, "
+"``22``, ``30``, and ``36``. Check with ``hasattr(lv, "
+"\"font_montserrat_20\")`` before using an optional size in cross-board "
+"examples. The Alibaba CJK fonts are ``M5.Lcd.FONTS`` fonts for ``M5.Lcd``"
+" / ``M5.Widgets`` drawing, not ``lv.font_montserrat_*`` objects."
+msgstr ""
+
+#: ../../source/m5ui/label.rst:23 1c29035949b24c62a1d48865643b2d7d
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
-#: ../../en/m5ui/label.rst:16 ../../en/m5ui/label.rst:35
-#: 3f70cd8b4bd84a81a365491b09cd76f2 42515a0f37f94994aba87664f73525a9
+#: ../../source/m5ui/label.rst:26 ../../source/m5ui/label.rst:45
+#: 5b0c753f6c5b41e8b7306e157c7b961c
 msgid "scroll label"
 msgstr "滚动标签"
 
-#: ../../en/m5ui/label.rst:18 fb8f8a367e074cb58873f924479799cb
+#: ../../source/m5ui/label.rst:28 e424699f765548caa0f4450abf960c97
 msgid "Open the |cores3_scroll_label_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cores3_scroll_label_example.m5f2| 项目。"
 
-#: ../../en/m5ui/label.rst:20 ../../en/m5ui/label.rst:37
-#: 018c87c5b7c449f384af5c968e0ab6c9 13e1dbcdb9b644fa80cbddc046f50f77
+#: ../../source/m5ui/label.rst:30 ../../source/m5ui/label.rst:47
+#: 808feeb069554cf08ed958f056b90768
 msgid ""
 "This example demonstrates how to create a label that scrolls text in a "
 "circular manner."
 msgstr "此示例演示如何创建以循环方式滚动文本的标签。"
 
-#: ../../en/m5ui/label.rst:22 ../../en/m5ui/label.rst:67
-#: ../../en/m5ui/label.rst:84 ../../en/m5ui/label.rst:102
-#: ../../en/m5ui/label.rst:119 ../../en/m5ui/label.rst:137
-#: ../../en/m5ui/label.rst:157 ../../en/m5ui/label.rst:177
-#: ../../en/m5ui/label.rst:196 ../../en/m5ui/label.rst:214
-#: ../../en/m5ui/label.rst:232 ../../en/m5ui/label.rst:251
-#: ../../en/m5ui/label.rst:269 ../../en/m5ui/label.rst:310
-#: 0b069956c08d48699cd861f2419cbbdd 0d939d30a2e4497f8fbe43f54d81741b
-#: 124338016c334d8f9ec81346f6465c96 1b6f918df9484e07a81d7d2850ef42fb
-#: 2fd29a2432a24d73b134ff5f9ee8db4e 496d00b140f046c2b685d7b0d3e87dc8
-#: 55b88905847949a59b0d0b9af4829c90 652ac41caa0b45dfabd8078d1ceed7b6
-#: 7fe44de071f94683b32be994d06dc4e2 8838b8c875ca46fea15ebb31dc0b96d7
-#: 9f64923ca7c24914adb6323d7790fab0 b3d54cdcd76c48d2a411e9d693643fe4
-#: c3de89accb524e83a2d2cc43a5bc05d6 cf6d8b1d37434ce987991478e791f948
-#: eb1c9ccc5131425eb6a2fdcec1d8fe4b f025007e24f344bca4b2ca4f39fdadb7
-#: f30fa1bac306420d8cbf7cc3dc47ccfb m5ui.label.M5Label:12
+#: ../../source/m5ui/label.rst:32 ../../source/m5ui/label.rst:84
+#: ../../source/m5ui/label.rst:101 ../../source/m5ui/label.rst:119
+#: ../../source/m5ui/label.rst:136 ../../source/m5ui/label.rst:154
+#: ../../source/m5ui/label.rst:174 ../../source/m5ui/label.rst:194
+#: ../../source/m5ui/label.rst:213 ../../source/m5ui/label.rst:231
+#: ../../source/m5ui/label.rst:249 ../../source/m5ui/label.rst:268
+#: ../../source/m5ui/label.rst:286 ../../source/m5ui/label.rst:327
+#: effe3729e2be461cb5bfe1f1161bd418 m5ui.label.M5Label:12
 #: m5ui.label.M5Label.set_shadow:10 m5ui.label.M5Label.unset_shadow:3 of
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../en/m5ui/label.rst:24 648ad234e28d412594a313546f6dfd2e
+#: ../../source/m5ui/label.rst:34 ad598730e8e8447abd57bd66dec5b6ff
 msgid "|cores3_scroll_label_example.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:1 0328bc203bc94066bd4164bc9cf6f14b
+#: ../../source/refs/m5ui.label.ref:1 bd407ab29eae4c7ba426414516720d19
 msgid "cores3_scroll_label_example.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:26 ../../en/m5ui/label.rst:45
-#: 46f13ee682894f0a9c7f5df93bd24d5f e93351a2ea85459b9e11e43f2f031ed6
+#: ../../source/m5ui/label.rst:36 ../../source/m5ui/label.rst:55
+#: e46d1228f5a54c94b97269decf5575a6
 msgid "Example output:"
 msgstr "示例输出："
 
-#: ../../en/m5ui/label.rst:28 ../../en/m5ui/label.rst:47
-#: ../../en/m5ui/label.rst:65 ../../en/m5ui/label.rst:82
-#: ../../en/m5ui/label.rst:100 ../../en/m5ui/label.rst:117
-#: ../../en/m5ui/label.rst:135 ../../en/m5ui/label.rst:155
-#: ../../en/m5ui/label.rst:175 ../../en/m5ui/label.rst:194
-#: ../../en/m5ui/label.rst:212 ../../en/m5ui/label.rst:230
-#: ../../en/m5ui/label.rst:249 ../../en/m5ui/label.rst:267
-#: ../../en/m5ui/label.rst:308 082435bebb164a9a82bce7e06a98016d
-#: 0ab17acbad6146779c56590872e6bcfb 100639a41abe4cfca482685a663330f4
-#: 1274518871eb429c9137ddddd7d6a68e 2b60b52797fb484a92af365adb1ffd38
-#: 3ac05b3a22334f549fb10aeb744ec298 44df700dfece4401b99e64c7a8479a35
-#: 478491bdc4ef457cb2a6463bd3cc76a5 5d84a5287d1d47aeb7ca7b8e9dfe149c
-#: 64429d893e5b496798707ec899c5682d 8c384d38fdac4ebb8c1c36ae319c1426
-#: 8cdaa4eb3ecc40509d1da909cd3465a4 944c83fbce264edf96745efb87a06199
-#: 9ae7d90f727e4cf0bcb0c292fca2de7b bf124c86985b4ebf819d745edd280faa
-#: e3fac589206f4def85ec6e7f9f47e7a2 f91f748dc3294396b8219572f2fd6c2c
-#: m5ui.label.M5Label:14 m5ui.label.M5Label.set_shadow:8 of
+#: ../../source/m5ui/label.rst:38 ../../source/m5ui/label.rst:57
+#: ../../source/m5ui/label.rst:82 ../../source/m5ui/label.rst:99
+#: ../../source/m5ui/label.rst:117 ../../source/m5ui/label.rst:134
+#: ../../source/m5ui/label.rst:152 ../../source/m5ui/label.rst:172
+#: ../../source/m5ui/label.rst:192 ../../source/m5ui/label.rst:211
+#: ../../source/m5ui/label.rst:229 ../../source/m5ui/label.rst:247
+#: ../../source/m5ui/label.rst:266 ../../source/m5ui/label.rst:284
+#: ../../source/m5ui/label.rst:325 2ef54b5119134750af8c3a365e89c10f
+#: 52e6760a63a44cacbcfa292144beaa59 m5ui.label.M5Label:14
+#: m5ui.label.M5Label.set_shadow:8 of
 msgid "None"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:32 d3d0f54b55ac466b8f139593854ade75
+#: ../../source/m5ui/label.rst:42 193d1a1eede44abbb8d7b5592c5cbc11
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../en/m5ui/label.rst:39 ../../en/m5ui/label.rst:71
-#: ../../en/m5ui/label.rst:88 ../../en/m5ui/label.rst:106
-#: ../../en/m5ui/label.rst:123 ../../en/m5ui/label.rst:141
-#: ../../en/m5ui/label.rst:161 ../../en/m5ui/label.rst:181
-#: ../../en/m5ui/label.rst:200 ../../en/m5ui/label.rst:218
-#: ../../en/m5ui/label.rst:236 ../../en/m5ui/label.rst:255
-#: ../../en/m5ui/label.rst:275 ../../en/m5ui/label.rst:314
-#: 06024133178a489aaf84df0e758e7778 3ec479ab7b394c71a7768fb72184d390
-#: 5b401a0bde814bf2a70cae10804d1c6b 62c790fac18546c7b5f13296ce035e93
-#: 63b34a4e13404b82997c5546aa7bde0a 63ef962b93b045f6bfd52448e5a1ddb3
-#: 6f287f162a694049a75ebf32403b2880 9500d65e0c3b4d50a7eebd0fce5d44e8
-#: 9a462ae30643429d821721de459ef7f1 9de03957790343bb98657f89c9a8f2f6
-#: 9fac3347f9624bae848b4af3fcfb06d0 c0ae02a01f43406d9777ce0d000ba5b7
-#: c25ec0fc4406488b9a73c0360d6c2ce5 e7341bee00f242dc8c7e9127f8255aef
-#: e8264ecba56245ea90064254017c998f e9cfed5119dd4a3bbf96d0716f7f7a0a
-#: f7608caa809d4de0858228abea5e8153 m5ui.label.M5Label:16
+#: ../../source/m5ui/label.rst:49 ../../source/m5ui/label.rst:88
+#: ../../source/m5ui/label.rst:105 ../../source/m5ui/label.rst:123
+#: ../../source/m5ui/label.rst:140 ../../source/m5ui/label.rst:158
+#: ../../source/m5ui/label.rst:178 ../../source/m5ui/label.rst:198
+#: ../../source/m5ui/label.rst:217 ../../source/m5ui/label.rst:235
+#: ../../source/m5ui/label.rst:253 ../../source/m5ui/label.rst:272
+#: ../../source/m5ui/label.rst:292 ../../source/m5ui/label.rst:331
+#: 6ca4320d539c42d5bfea278cabda75a7 m5ui.label.M5Label:16
 #: m5ui.label.M5Label.set_shadow:14 m5ui.label.M5Label.unset_shadow:7 of
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../en/m5ui/label.rst:51 60f1af137fe5443793dd11aa19dcd5dd
+#: ../../source/m5ui/label.rst:61 76f25dfc5c304f668cf34ae9dfd00f70
 msgid "**API**"
 msgstr "API参考"
 
-#: e0421b850705488a80dc9004af5c4bef m5ui.label.M5Label:1 of
+#: ../../source/m5ui/label.rst:68 2b61bf4587c9424cbb4c832810e91f48
+msgid ""
+"Unlike ``M5Button`` and ``M5Chart``, the ``M5Label`` constructor does "
+"**not** accept ``w`` or ``h`` parameters. Label size is determined "
+"automatically by its text content. To explicitly set a label's width, "
+"call ``label.set_width(150)`` after creation."
+msgstr ""
+
+#: aa5a298bcd8e4a5882cda2467ebe174b m5ui.label.M5Label:1 of
 msgid "Bases: :py:class:`~lvgl.label`"
 msgstr "Bases: :py:class:`~lvgl.label`"
 
-#: 1a22803e0f8f433998555e1845c8460f m5ui.label.M5Label:1 of
+#: b28c80b15e434b2bb5db885defce3d45 m5ui.label.M5Label:1 of
 msgid "Create a label object."
 msgstr "创建标签对象。"
 
-#: ../../en/m5ui/label.rst 27414db2b195418c98f50f0ce2c67bfb
-#: 2988e120bb1f46c58750cb0e188ea72b 36be8a60b77a4bb8a9a1bb0a8f11af29
-#: 3f5c9d0315ff4292afb7b15b695ebce7 3fd9a9112cf54844853e4f1488115500
-#: 618dd160161349489d014757d11444d1 76af675d9b0a46b3935d1f80cc77aa22
-#: 92820eba5a634e0db154c73c0c906462 96fed367554142eabad8a7dfd51a7763
-#: 9a473e7cd7c44e8995ee963fe5dd6ca2 a158957ae08d4206bc5efd5680190c4f
-#: ac512b386ba142e2936d2125614f7a21 bcc6bf59d88f4ffc9ad0fae155128417
-#: f504cffe91fb47b6abba5a93df739fbd f7c8018eb88741d9965c5df61379f12b
+#: ../../source/m5ui/label.rst dab4ae0b9d1741ce86d3f2aea733b20c
 #: m5ui.label.M5Label.set_shadow of
 msgid "Parameters"
 msgstr ""
 
-#: c0eaacee0cd645f09246d199276bef8a m5ui.label.M5Label:3 of
+#: acd2118e39464407ad64ca40cb8ab7a0 m5ui.label.M5Label:3 of
 msgid "The text to display on the label."
 msgstr "标签上显示的文本。"
 
-#: 39412d4366764080a4df1580264d154f m5ui.label.M5Label:4 of
+#: 8765bc5e68064cb7a5e5554044aebab8 m5ui.label.M5Label:4 of
 msgid "The x position of the label."
 msgstr "标签的 x 位置。"
 
-#: 95740d560eb5458e9b0d953e37f625fb m5ui.label.M5Label:5 of
+#: eca3f72a7fec437781bc839880230f82 m5ui.label.M5Label:5 of
 msgid "The y position of the label."
 msgstr "标签的 y 位置。"
 
-#: c66e3cd779f24c57b979f79b85137fc0 m5ui.label.M5Label:6 of
+#: 99762c06140241d6a426ffdf35b7d7a9 m5ui.label.M5Label:6 of
 msgid "The text color of the label in hexadecimal format."
 msgstr "标签的文本颜色（十六进制格式）。"
 
-#: 15245b4e754e4780a9a867b04651dcd7 m5ui.label.M5Label:7 of
+#: 4a86e0bd77c24e4aaeff7ea1a31c8ecb m5ui.label.M5Label:7 of
 msgid "The background color of the label in hexadecimal format."
 msgstr "标签的背景颜色（十六进制格式）。"
 
-#: 15ce9eaffa334ac387d236adb6c629f2 m5ui.label.M5Label:8 of
+#: a932909649a14f61b8a809008525f38d m5ui.label.M5Label:8 of
 msgid "The background opacity of the label (0-255)."
 msgstr "标签的背景不透明度（0-255）。"
 
-#: 0c5872ee4f5c46da8ad5604ebb7a103c m5ui.label.M5Label:9 of
+#: bec61ae27adf44fc82fafbf76cfab78a m5ui.label.M5Label:9 of
 msgid "The font to use for the button text."
 msgstr "按钮文本使用的字体。"
 
-#: 6f878ec385dd4a1db9f0bb79cd92581f m5ui.label.M5Label:10 of
+#: d25ce94bc72e4f7496d9e8aa34641417 m5ui.label.M5Label:10 of
 msgid ""
 "The parent object to attach the button to. If not specified, the button "
 "will be attached to the default screen."
 msgstr "按钮要附加到的父对象。如果未指定，按钮将附加到默认屏幕。"
 
-#: ../../en/m5ui/label.rst:61 dba786db3f224345aab3336c7443d266
+#: ../../source/m5ui/label.rst:78 6cac4a9407ad42b6b5752afacc33f7d4
 msgid ""
 "Set a flag on the object. If ``value`` is True, the flag is added; if "
 "False, the flag is removed."
 msgstr "在对象上设置一个标志。如果 ``value`` 为 True，则添加该标志；如果为 False，则移除该标志。"
 
-#: ../../en/m5ui/label.rst:63 ceb6442604fd4bdeba358b01f539d496
+#: ../../source/m5ui/label.rst:80 7511094c6c434a62bde7efdbbc5ecce4
 msgid "The flag to set."
 msgstr "要设置的标志。"
 
-#: ../../en/m5ui/label.rst:64 32917838489542f1bfb05b79ce625a94
+#: ../../source/m5ui/label.rst:81 2d8b740d436644388a3753a1e4cbbff0
 msgid "If True, the flag is added; if False, the flag is removed."
 msgstr "如果为 True，则添加标志；如果为 False，则删除标志。"
 
-#: ../../en/m5ui/label.rst 0a3fde6ad1584a2f87c20ade8a397ceb
-#: 2176cfe05dd44650b8940e0fc37338ee 2b2b96ca60854ffeaacf51750a4aed0c
-#: 3150e7bdbcfb4f5caa618d3ae2cf7f8e 423c2f1ad5394cffa420103cae170448
-#: 7c7ef35aa87c497781765372ecd37d7b 7f050270f4824e50aa7777bbe1096982
-#: a2db8edf0a784adea825ac5ef642fb63 abc1d234bb9941d593cb9dc9c4d68f8e
-#: b5e26fa7a46d4748aba406a799aeedc5 b7d30c03a49c4f1c89a103cf3ec5ee77
-#: d22bee9d4e6440aa881ac151c67dccbe ebd4dea953ba42deaa21d564b1c3b31b
-#: ebdb8b10e7f6434f95cb47ed8d0a7f75 m5ui.label.M5Label.set_shadow of
+#: ../../source/m5ui/label.rst cdfbde51e69147488c64a6b1c303317f
+#: m5ui.label.M5Label.set_shadow of
 msgid "Returns"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:69 13c6d36d9c8248809c696effcbe7f964
+#: ../../source/m5ui/label.rst:86 b7f11a39907541e38dfe7b98b702e47e
 msgid "|set_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:8 26319a1a78174e589eb536e50a86c9e7
+#: ../../source/refs/m5ui.label.ref:8 e9f25d73d2304315b7c0abebaade8a03
 msgid "set_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:79 2cda1d9276ea45148e7fcc3f87fa5482
+#: ../../source/m5ui/label.rst:96 99427c979d274adeb05b183997149968
 msgid ""
 "Toggle a flag on the object. If the flag is set, it is removed; if not "
 "set, it is added."
 msgstr "切换对象上的标志。如果设置了标志，则移除该标志；如果未设置，则添加该标志。"
 
-#: ../../en/m5ui/label.rst:81 918a57eece2d4cbfb88d52787e7691ca
+#: ../../source/m5ui/label.rst:98 d4a37c2c3ab74c93861b7cb07fd5d514
 msgid "The flag to toggle."
 msgstr "要切换的标志。"
 
-#: ../../en/m5ui/label.rst:86 74734572efe64f06baa1435f119697bf
+#: ../../source/m5ui/label.rst:103 8aaae395edb64d1bb61270741b9341c3
 msgid "|toggle_flag.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:21 97b9823d33184385b07ba595017183c0
+#: ../../source/refs/m5ui.label.ref:21 bb2bb89ca17e4ba9b7fff20fb78d401c
 msgid "toggle_flag.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:96 0c9c63f8bb3545fc835053834987fb18
+#: ../../source/m5ui/label.rst:113 87f1b92f610644a49eded45bacb478ef
 msgid ""
 "Set the state of the label. If ``value`` is True, the state is set; if "
 "False, the state is unset."
 msgstr "设置标签的状态。如果 ``value`` 为 True，则设置状态；如果为 False，则取消设置状态。"
 
-#: ../../en/m5ui/label.rst:98 677eb30c70fc45b186e7e1b6e2fdc056
+#: ../../source/m5ui/label.rst:115 34a276aaf0af4c2bb9430d2e680a0d76
 msgid "The state to set."
 msgstr "要设置的状态。"
 
-#: ../../en/m5ui/label.rst:99 012534341d3e4e57aaff89c5f5df6f74
+#: ../../source/m5ui/label.rst:116 d2307e7fbc4a4d579c2b70ee95c0b95a
 msgid "If True, the state is set; if False, the state is unset."
 msgstr "如果为 True，则状态已设置；如果为 False，则状态未设置。"
 
-#: ../../en/m5ui/label.rst:104 bd043e9b91f74ceb99ebdb3a09ba4493
+#: ../../source/m5ui/label.rst:121 c28b47745efb420dab8eeb8338ebf6d6
 msgid "|set_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:13 3880c54d24fe4f9eb3f84d3f042b4de2
+#: ../../source/refs/m5ui.label.ref:13 438b436a8b584283bd2d496c47348b81
 msgid "set_state.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:114 60c3221daef942599a1791c761be8e24
+#: ../../source/m5ui/label.rst:131 f4b48eae516c4efca4e2b33d0e83d9af
 msgid ""
 "Toggle the state of the label. If the state is set, it is unset; if not "
 "set, it is set."
 msgstr "切换标签的状态。如果标签状态已设置，则取消设置；如果标签状态未设置，则设置标签状态。"
 
-#: ../../en/m5ui/label.rst:116 7337a094dd8f45beb8263b2c23039a40
+#: ../../source/m5ui/label.rst:133 be6ae0b2551c40e9822fba6af9f01fa9
 msgid "The state to toggle."
 msgstr "要切换的状态。"
 
-#: ../../en/m5ui/label.rst:121 7d025e237f0842e1a3972263eb64216b
+#: ../../source/m5ui/label.rst:138 4e46a94ff64a4365b3085c0cffea27ee
 msgid "|toggle_state.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:22 de26a88a9a35460eb9a7f4de98b7b05f
+#: ../../source/refs/m5ui.label.ref:22 69c32876e2e245ad9fff1c9ad26c41df
 msgid "toggle_state.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:131 4b78566efc5645759e5723dd1b1a3580
+#: ../../source/m5ui/label.rst:148 86680d78c42e434dadec812541534f83
 msgid "Set the font of the label text."
 msgstr "设置标签文本的字体。"
 
-#: ../../en/m5ui/label.rst:133 752ec3ce2f724f9aa6da2b67727a7125
+#: ../../source/m5ui/label.rst:150 ec8469c6a6254c34ae8b8a3f90d3a6d7
 msgid "The font to set."
 msgstr "要设置的字体。"
 
-#: ../../en/m5ui/label.rst:134 ../../en/m5ui/label.rst:154
-#: ../../en/m5ui/label.rst:174 5aeec82d8eef48f7bddd62d62e9449f1
-#: 6299cb0821b44bdc901e11f3fd8e862b 7525fb974333418693c22b9ebce14209
+#: ../../source/m5ui/label.rst:151 ../../source/m5ui/label.rst:171
+#: ../../source/m5ui/label.rst:191 93c49b9b2bfe4e43a99e0f4c6236e05f
 msgid "The part of the object to apply the style to (e.g., lv.PART.MAIN)."
 msgstr "应用样式的对象部分（例如，lv.PART.MAIN）。"
 
-#: ../../en/m5ui/label.rst:139 81b84cb21e964a4c84856c110602fe53
+#: ../../source/m5ui/label.rst:156 e0148f434c164de0ac727184328c948d
 msgid "|set_style_text_font.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:14 6b8d343d52274ac4803334bc75ebfd41
+#: ../../source/refs/m5ui.label.ref:14 43e73bf4dab14e268ad5e72683d9d8a4
 msgid "set_style_text_font.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:150 da2ad69b5794482db6ef9cf7ede48f05
+#: ../../source/m5ui/label.rst:167 bf5dba578e21494fa39c1fee4381047a
 msgid "Set the color of the text."
 msgstr "设置文本的颜色。"
 
-#: ../../en/m5ui/label.rst:152 ../../en/m5ui/label.rst:172
-#: 44a330aab78b48f7854a3438026cab78 6c9fc90b51ca4c67b2bcd8377253ba64
+#: ../../source/m5ui/label.rst:169 ../../source/m5ui/label.rst:189
+#: d920e9bdd5bb43fbb3dbf17f4cdcba6b
 msgid "The color to set."
 msgstr "要设置的颜色。"
 
-#: ../../en/m5ui/label.rst:153 ../../en/m5ui/label.rst:173
-#: 022eec252f814d99b919ee0d67c3bc97 c24bdca6776b4f378a512af889bbd642
+#: ../../source/m5ui/label.rst:170 ../../source/m5ui/label.rst:190
+#: 2c3c2d4d0b504817a4eef06b538d87da
 msgid "The opacity of the color."
 msgstr "颜色的不透明度。"
 
-#: ../../en/m5ui/label.rst:159 ../../en/m5ui/label.rst:179
-#: 086c6ffc68a8452dba283a9032f70e34 8c9483f6922d40a6af2c87670a3cb5de
+#: ../../source/m5ui/label.rst:176 ../../source/m5ui/label.rst:196
+#: 0af5bd8338754486839de6a814c5db01
 msgid "|set_text_color.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:16 89ef8599143f436283c743b20197525a
-#: a517129421ec42ad96937bb34112a88f
+#: ../../source/refs/m5ui.label.ref:16 7618049552eb4fcfabd69cf5e15889a0
 msgid "set_text_color.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:170 cfa4074f6c644680ad85b30601f2e390
+#: ../../source/m5ui/label.rst:187 5eb6bbf39b2e4662b15417a028017fb9
 msgid "Set the background color of the label."
 msgstr "设置标签的背景颜色。"
 
-#: ../../en/m5ui/label.rst:190 2abd33ad502c40f38ff3e64f33933861
+#: ../../source/m5ui/label.rst:207 382e9ac1a5ac4647927a0528202bbae7
 msgid "Set the position of the label."
 msgstr "设置标签的位置。"
 
-#: ../../en/m5ui/label.rst:192 ../../en/m5ui/label.rst:211
-#: 4ef0d57b743f417f8587d2b5617beefc 5e1849e9c18d4f3cb37b3715742c3b9f
+#: ../../source/m5ui/label.rst:209 ../../source/m5ui/label.rst:228
+#: b6ab310208d0450983c7764500946da8
 msgid "The x-coordinate of the label."
 msgstr "标签的 x 坐标。"
 
-#: ../../en/m5ui/label.rst:193 ../../en/m5ui/label.rst:229
-#: 0713e77dfefa435d92a59cb7320a8e5a b8c0e89f51d047b69c1407513d46d5e1
+#: ../../source/m5ui/label.rst:210 ../../source/m5ui/label.rst:246
+#: 657ff499ee694d18a3502d758b7dded4
 msgid "The y-coordinate of the label."
 msgstr "标签的 y 坐标。"
 
-#: ../../en/m5ui/label.rst:198 2a50eec7cda54bd0ac6bd60f6049e9dd
+#: ../../source/m5ui/label.rst:215 5bf1aed1c98e42789b4610edfe7351ad
 msgid "|set_pos.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:10 1cacbf2bc5184eb699784c76dc127684
+#: ../../source/refs/m5ui.label.ref:10 463b996dd0b94e66b59a3be785b33cc2
 msgid "set_pos.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:209 e9887628f26346c8a9ad96c9c3771ee8
+#: ../../source/m5ui/label.rst:226 266925dc8db64b52b2a0a158834c82e5
 msgid "Set the x-coordinate of the label."
 msgstr "设置标签的 x 坐标。"
 
-#: ../../en/m5ui/label.rst:216 0dc473420fa24a7bbe4e48e3a68b52ef
+#: ../../source/m5ui/label.rst:233 97890bdeda62408a96b7e9848cb07747
 msgid "|set_x.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:19 ab1140004f2943069fa693ffd36c9eb4
+#: ../../source/refs/m5ui.label.ref:19 22aa182f1c534e44a82ce0fe2c67607d
 msgid "set_x.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:227 8126b635737b496ebd70061daffcfbce
+#: ../../source/m5ui/label.rst:244 ac8035e04fff4c759f6e41d31cc76faa
 msgid "Set the y-coordinate of the label."
 msgstr "设置标签的 y 坐标。"
 
-#: ../../en/m5ui/label.rst:234 a685f574aac9429e935574a4620aa77f
+#: ../../source/m5ui/label.rst:251 686f45905a904c4297996a575a70d940
 msgid "|set_y.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:20 de0fd93f806f4dea9eb0f9fa6540fcc5
+#: ../../source/refs/m5ui.label.ref:20 75f6b8ef4a2e4be48401f07001644216
 msgid "set_y.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:245 949126d7ddbc4be381c871a0df158785
+#: ../../source/m5ui/label.rst:262 c6590a657fd64badadd90f655329152e
 msgid "Set the size of the label."
 msgstr "设置标签的大小。"
 
-#: ../../en/m5ui/label.rst:247 ../../en/m5ui/label.rst:266
-#: 2a7473c7f4d44b699463fc3fc0073ce1 b6a8d1eaeb3d40cfbcd71ea8aeda96d7
+#: ../../source/m5ui/label.rst:264 ../../source/m5ui/label.rst:283
+#: f246cb810b4a480a9833ae0b21c184f5
 msgid "The width of the label."
 msgstr "标签的宽度。"
 
-#: ../../en/m5ui/label.rst:248 83d1aefea63a4f1cb6cedcb55ad47c4f
+#: ../../source/m5ui/label.rst:265 00595ae9cbd740d1b32e2ae4d7971621
 msgid "The height of the label."
 msgstr "标签的高度。"
 
-#: ../../en/m5ui/label.rst:253 61f1eca6dce14644965e89f1f86daf8d
+#: ../../source/m5ui/label.rst:270 ea522214855c455a9683d4c853e30194
 msgid "|set_size.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:12 7fc2f522083844c39057f7a36fa206e7
+#: ../../source/refs/m5ui.label.ref:12 8575050a295f41a2b1faa0b637b62f55
 msgid "set_size.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:264 c24e972904324c8eb97bfda44f1fa9d9
+#: ../../source/m5ui/label.rst:281 6fe157db525544f7a8d2a26da30ba7dd
 msgid "Set the width of the label."
 msgstr "设置标签的宽度。"
 
-#: ../../en/m5ui/label.rst:271 4be1cff486b84b829ffb9e134e8a8f78
+#: ../../source/m5ui/label.rst:288 de84a11a47b54e5f9f7db2b3081dcec3
 msgid "|set_width.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:17 a570fc9a192543bfa8f8a386c3e8ab8e
+#: ../../source/refs/m5ui.label.ref:17 4c04d915f15347c089bee6b05eea7007
 msgid "set_width.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:273 3f4f131c89194d5a8e13be7c7232114e
+#: ../../source/m5ui/label.rst:290 06a5bf34d8f240ca82e981cc00d0fbd0
 msgid "|set_width1.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:18 715d549cf9e84434ac6fe61794885e68
+#: ../../source/refs/m5ui.label.ref:18 83185912de054b72812d468f4ac9f581
 msgid "set_width1.png"
 msgstr ""
 
-#: ../../en/m5ui/label.rst:302 2630483b9d99411bba4e46e310b823aa
+#: ../../source/m5ui/label.rst:319 0742b320dc42488189457aa21cc708a1
 msgid "Align the label to another object."
 msgstr "将标签与另一个对象对齐。"
 
-#: ../../en/m5ui/label.rst:304 48188b55753d4a9d817972384d261113
+#: ../../source/m5ui/label.rst:321 11c8029f4ac14890970f898de8b8641e
 msgid "The object to align to."
 msgstr "要对齐的对象。"
 
-#: ../../en/m5ui/label.rst:305 09a6025b6cd6403fb589f4949a060ff3
+#: ../../source/m5ui/label.rst:322 47ca26fdbd2047a696202cda72feae25
 msgid "The alignment type."
 msgstr "对齐类型。"
 
-#: ../../en/m5ui/label.rst:306 a6d27d8f9ed941c5930bcc035a551abf
+#: ../../source/m5ui/label.rst:323 514049fb711d4a8d8344cc3d2da217e0
 msgid "The x-offset from the aligned object."
 msgstr "与对齐对象的 x 偏移量。"
 
-#: ../../en/m5ui/label.rst:307 276208dee0184d0187fbd6f07956e0a1
+#: ../../source/m5ui/label.rst:324 49f82ce72c514b14aaebf05f1b906639
 msgid "The y-offset from the aligned object."
 msgstr "与对齐对象的 y 偏移。"
 
-#: ../../en/m5ui/label.rst:312 f8c73fab27384682af5a3f165877bd24
+#: ../../source/m5ui/label.rst:329 6fd94b834d594c3d8dbae44335ba560d
 msgid "|align_to.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:3 a28da7d554d64a0887ecb1aa32ffa503
+#: ../../source/refs/m5ui.label.ref:3 664f5b5fb2ac458d998aff0cbfb19dff
 msgid "align_to.png"
 msgstr ""
 
-#: 104107c3533f41e09889f716984932c4 m5ui.label.M5Label.set_shadow:1 of
+#: d7b361d7904a44c7ba876cce52ef183d m5ui.label.M5Label.set_shadow:1 of
 msgid "Set a shadow for the label."
 msgstr "为标签设置阴影。"
 
-#: 627e7545d8224e20a769ac345e83530a m5ui.label.M5Label.set_shadow:3 of
+#: 47b8fb58fe8641fdbe703986279b028e m5ui.label.M5Label.set_shadow:3 of
 msgid "The color of the shadow in hexadecimal format or an integer."
 msgstr "阴影的颜色（十六进制格式或整数）。"
 
-#: b5183b993ed1403d8a1371a0c6056426 m5ui.label.M5Label.set_shadow:4 of
+#: d524e851b5ae4e06b05c4416dd8377a5 m5ui.label.M5Label.set_shadow:4 of
 msgid "The opacity of the shadow (0-255)."
 msgstr "阴影的不透明度（0-255）。"
 
-#: fffd78b741754f7cbcdf386079633a3c m5ui.label.M5Label.set_shadow:5 of
+#: 5eab0ac4aa4b42348316e00430f1d2e8 m5ui.label.M5Label.set_shadow:5 of
 msgid "The alignment of the shadow relative to the label."
 msgstr "阴影相对于标签的对齐方式。"
 
-#: 380f569df7fc4d8ca82d317fed7d257f m5ui.label.M5Label.set_shadow:6 of
+#: 1230e586e427404c9a6d77d89751dd60 m5ui.label.M5Label.set_shadow:6 of
 msgid "The horizontal offset of the shadow."
 msgstr "阴影的水平偏移。"
 
-#: 89948bba1dd540eea65529ae4b63bc18 m5ui.label.M5Label.set_shadow:7 of
+#: ae486a79073544f48e8e42f21157a2fb m5ui.label.M5Label.set_shadow:7 of
 msgid "The vertical offset of the shadow."
 msgstr "阴影的垂直偏移。"
 
-#: 96c3ec41bee14520ac33b9e57da5e771 e182fd3604494f80b3bdeb2844c11a78
-#: m5ui.label.M5Label.set_shadow m5ui.label.M5Label.unset_shadow of
+#: 7da295d490bb4ec5b47082025f74672f m5ui.label.M5Label.set_shadow
+#: m5ui.label.M5Label.unset_shadow of
 msgid "Return type"
 msgstr ""
 
-#: 3ca7c041458c4dba95d90ec3f674ef8c m5ui.label.M5Label.set_shadow:12 of
+#: f30147a9e794416586f7c49d8883aefa m5ui.label.M5Label.set_shadow:12 of
 msgid "|set_shadow.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:11 1aa4392b9dc349799b65dfa3f8e981bb
+#: ../../source/refs/m5ui.label.ref:11 4b34b3890d5e46aeb8212011b0a28de3
 msgid "set_shadow.png"
 msgstr ""
 
-#: 8910810756074dfea6bfa3d63ae2470f m5ui.label.M5Label.unset_shadow:1 of
+#: 5ed6be7e32ad4fbba605f7e252822ee5 m5ui.label.M5Label.unset_shadow:1 of
 msgid "Remove the shadow from the label."
 msgstr "删除标签上的阴影。"
 
-#: f763b62cca5e48cf88b8b629478b991b m5ui.label.M5Label.unset_shadow:5 of
+#: 157ced02863c437dac277102fa5debfa m5ui.label.M5Label.unset_shadow:5 of
 msgid "|unset_shadow.png|"
 msgstr ""
 
-#: ../../en/refs/m5ui.label.ref:23 6adcb7102e664350ae96f736f8a094a7
+#: ../../source/refs/m5ui.label.ref:23 f3d8e9beb3e44dada0650a49dc414db0
 msgid "unset_shadow.png"
 msgstr ""
 
@@ -501,3 +482,31 @@ msgstr ""
 #~ msgid "N5Label"
 #~ msgstr ""
 
+#~ msgid "**Available Fonts**: The firmware only includes these Montserrat fonts:"
+#~ msgstr ""
+
+#~ msgid "``lv.font_montserrat_14`` (default)"
+#~ msgstr ""
+
+#~ msgid "``lv.font_montserrat_16``"
+#~ msgstr ""
+
+#~ msgid "``lv.font_montserrat_24``"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Other sizes (18, 20, 22, 28, etc.)"
+#~ " are **not compiled** and will cause"
+#~ " ``AttributeError``."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "**Available Fonts**: Most firmware builds "
+#~ "include ``lv.font_montserrat_12``, ``14``, ``16``,"
+#~ " ``18``, ``24``, ``40``, ``44``, and "
+#~ "``48``. Some builds, such as Tab5, "
+#~ "also include ``20``, ``22``, ``30``, and"
+#~ " ``36``. Check with ``hasattr(lv, "
+#~ "\"font_montserrat_20\")`` before using an "
+#~ "optional size in cross-board examples."
+#~ msgstr ""

@@ -11,18 +11,30 @@ import time
 from hardware.stackchan import StackChan
 
 
+HOLD_MS = 300
+TOUCH_COLORS = (0x33CC00, 0x00CCCC, 0x000099)
+TOUCH_TONES = (700, 900, 1100)
+TOUCH_LEDS = (
+    ((0, 0), (0, 1), (1, 0), (1, 1)),
+    ((0, 2), (0, 3), (1, 2), (1, 3)),
+    ((0, 4), (0, 5), (1, 4), (1, 5)),
+)
+
 page0 = None
 label_title = None
 stackchan = None
 tp = None
-tp1 = None
 last_time = None
-tp2 = None
-tp3 = None
+active = None
+
+
+def set_touch_group(index, color):
+    for strip, led in TOUCH_LEDS[index]:
+        stackchan.set_rgb_color(strip, led, color)
 
 
 def setup():
-    global page0, label_title, stackchan, tp, tp1, last_time, tp2, tp3
+    global page0, label_title, stackchan, tp, last_time, active
 
     M5.begin()
     Widgets.setRotation(1)
@@ -41,57 +53,32 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    last_time = [0, 0, 0]
+    now = time.ticks_ms()
+    last_time = [now, now, now]
+    active = [False, False, False]
     Speaker.begin()
     Speaker.setVolumePercentage(0.5)
+    stackchan.set_rgb_color(0x000000)
 
 
 def loop():
-    global page0, label_title, stackchan, tp, tp1, last_time, tp2, tp3
+    global page0, label_title, stackchan, tp, last_time, active
     M5.update()
+    now = time.ticks_ms()
     tp = stackchan.get_touch()
-    tp1 = tp[0]
-    tp2 = tp[1]
-    tp3 = tp[2]
-    if tp1:
-        last_time[0] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 0, 0x33CC00)
-        stackchan.set_rgb_color(0, 1, 0x33CC00)
-        stackchan.set_rgb_color(1, 0, 0x33CC00)
-        stackchan.set_rgb_color(1, 1, 0x33CC00)
-        Speaker.tone(700, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[0]))) > 300:
-            stackchan.set_rgb_color(0, 0, 0x000000)
-            stackchan.set_rgb_color(0, 1, 0x000000)
-            stackchan.set_rgb_color(1, 0, 0x000000)
-            stackchan.set_rgb_color(1, 1, 0x000000)
-    if tp2:
-        last_time[1] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 2, 0x00CCCC)
-        stackchan.set_rgb_color(0, 3, 0x00CCCC)
-        stackchan.set_rgb_color(1, 2, 0x00CCCC)
-        stackchan.set_rgb_color(1, 3, 0x00CCCC)
-        Speaker.tone(900, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[1]))) > 300:
-            stackchan.set_rgb_color(0, 2, 0x000000)
-            stackchan.set_rgb_color(0, 3, 0x000000)
-            stackchan.set_rgb_color(1, 2, 0x000000)
-            stackchan.set_rgb_color(1, 3, 0x000000)
-    if tp3:
-        last_time[2] = time.ticks_ms()
-        stackchan.set_rgb_color(0, 4, 0x000099)
-        stackchan.set_rgb_color(0, 5, 0x000099)
-        stackchan.set_rgb_color(1, 4, 0x000099)
-        stackchan.set_rgb_color(1, 5, 0x000099)
-        Speaker.tone(1100, 50)
-    else:
-        if (time.ticks_diff((time.ticks_ms()), (last_time[2]))) > 300:
-            stackchan.set_rgb_color(0, 4, 0x000000)
-            stackchan.set_rgb_color(0, 5, 0x000000)
-            stackchan.set_rgb_color(1, 4, 0x000000)
-            stackchan.set_rgb_color(1, 5, 0x000000)
+    if tp is None:
+        tp = [0, 0, 0]
+
+    for index in range(3):
+        if tp[index]:
+            last_time[index] = now
+            if not active[index]:
+                active[index] = True
+                set_touch_group(index, TOUCH_COLORS[index])
+                Speaker.tone(TOUCH_TONES[index], 50)
+        elif active[index] and time.ticks_diff(now, last_time[index]) > HOLD_MS:
+            active[index] = False
+            set_touch_group(index, 0x000000)
 
 
 if __name__ == "__main__":

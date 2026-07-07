@@ -18,5 +18,6 @@
 #define MICROPY_HW_USB_PID 0x832F
 #define MICROPY_HW_USB_MANUFACTURER_STRING "M5Stack"
 #define MICROPY_HW_USB_PRODUCT_FS_STRING "StopWatch(UiFlow2)"
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING "StopWatch(UiFlow2)"
 
 #include "./../mpconfiglvgl.h"

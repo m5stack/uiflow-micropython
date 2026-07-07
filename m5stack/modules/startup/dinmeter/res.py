@@ -4,21 +4,14 @@
 
 _attrs = {
     "LOGO_IMG": "/system/dinmeter/boot/boot_logo_1.jpeg",
-    # apprun
-    "RUN_INFO_IMG": "/system/dinmeter/apprun/run_info.jpeg",
-    "RUN_ONCE_SELECT_IMG": "/system/dinmeter/apprun/run_once_select.jpeg",
-    "RUN_ONCE_UNSELECT_IMG": "/system/dinmeter/apprun/run_once_unselect.jpeg",
-    "RUN_ALWAYS_SELECT_IMG": "/system/dinmeter/apprun/run_always_select.jpeg",
-    "RUN_ALWAYS_UNSELECT_IMG": "/system/dinmeter/apprun/run_always_unselect.jpeg",
     # develop
-    "DEVELOP_PRIVATE_IMG": "/system/dinmeter/develop/private.jpeg",
-    "DEVELOP_PUBLIC_IMG": "/system/dinmeter/develop/public.jpeg",
+    "DEVELOP_BG_IMG": "/system/dinmeter/develop/bg.jpg",
+    "DEVELOP_OFFLINE_IMG": "/system/dinmeter/develop/offline.jpg",
+    "DEVELOP_ONLINE_IMG": "/system/dinmeter/develop/online.jpg",
     "AVATAR_IMG": "/system/common/img/avatar.jpg",
     # ezdata
     # launcher
-    "APPLIST_ICO": "/system/dinmeter/applist.jpeg",
     "DEVELOP_ICO": "/system/dinmeter/develop.jpeg",
-    "APPRUN_ICO": "/system/dinmeter/apprun.jpeg",
     "EZDATA_ICO": "/system/dinmeter/ezdata.jpeg",
     "SETTING_ICO": "/system/dinmeter/setting.jpeg",
     "RIGHT_ICO": "/system/dinmeter/right.jpeg",

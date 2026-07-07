@@ -50,9 +50,10 @@ class IR:
     def tx(self, cmd, data):
         if self._tx_pin is None:
             raise NotImplementedError("IR transmitter is not supported on this board")
-        # Clamp to range: 0~255
-        cmd = max(0, min(255, cmd))
-        data = max(0, min(255, data))
+        if not 0 <= cmd <= 255:
+            raise ValueError("cmd must be in range 0~255")
+        if not 0 <= data <= 255:
+            raise ValueError("data must be in range 0~255")
         if _HAS_RMT_IR_CMODULE:
             if self._rmt_ir_instance is None:
                 rx_pin = self._rx_pin if self._rx_pin is not None else -1

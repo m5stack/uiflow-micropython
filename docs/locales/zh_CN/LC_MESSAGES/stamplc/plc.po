@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-01 17:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/refs/stamplc.plc.ref ../../source/stamplc/plc.rst:2
+#: ../../source/stamplc/plc.rst:64 873ba3a8a60c4fb7b81c7fdd2ccc8114
+#: eb25303a78d64f45b39868077a287c54 f12914241a0042dd95a7f1062ee3a1d0
+msgid "StamPLC"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:8 f39b6b78807a4025bb03605814625a51
+msgid "``StamPLC`` is the board-level helper for the built-in PLC I/O on StamPLC."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:10 7870d038c00043b1acdc224d6d65ffe0
+msgid "Supported Products:"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:12 76b166bd90b24c7696c69f12d6666a69
+msgid "|StamPLC|"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:14 bb13f1479fb248618ade90e45ce0c73d
+msgid ""
+"Create one ``StamPLC`` object, then access relay outputs, digital inputs,"
+" and the built-in RGB LED from that object."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:17 64002f538b814ca8a0d9d6060e777fa1
+msgid "Channels are 1-based:"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:19 7b05c5aded074d9bac036779d9f10d8b
+msgid "``relay[1]`` to ``relay[4]`` control the four relay outputs."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:20 abceff38910c4ad98081f4c7d218034d
+msgid "``input[1]`` to ``input[8]`` read the eight digital inputs."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:21 b22f1f00207540dda9f8721008d2010f
+msgid "``led.red``, ``led.green``, and ``led.blue`` control the built-in RGB LED."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:24 0ee5a5bef0304d19a3ded31e4528deee
+msgid "MicroPython Examples"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:27 e58938e5065b45d6a0d95c9d1d9ecdc0
+msgid "Relay control"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:29 7e9133bff1074e6ca07342e97c543584
+msgid "Open the |stamplc_relay_control_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:31 ff73db05a175415c857b92218630da09
+msgid ""
+"This example uses button A to toggle relay output 1 and turns on the "
+"built-in blue LED."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:33 ../../source/stamplc/plc.rst:50
+#: 156b411d0db34601a973cdca3c0c9d33 8fc24a6021db459d97a7d623a9cb27cf
+msgid "UiFlow2 Code Block:"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:35 cef76339ac0b4f03a8fc5cea13491157
+msgid "|stamplc_relay_control_example.png|"
+msgstr ""
+
+#: ../../source/refs/stamplc.plc.ref:11 734c7cacce7d406aa1add018c16297cb
+msgid "stamplc_relay_control_example.png"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:37 ../../source/stamplc/plc.rst:54
+#: ../../source/stamplc/plc.rst:70 ../../source/stamplc/plc.rst:89
+#: ../../source/stamplc/plc.rst:101 ../../source/stamplc/plc.rst:113
+#: ../../source/stamplc/plc.rst:128 ../../source/stamplc/plc.rst:142
+#: ../../source/stamplc/plc.rst:161 ../../source/stamplc/plc.rst:174
+#: ../../source/stamplc/plc.rst:187 ../../source/stamplc/plc.rst:202
+#: ../../source/stamplc/plc.rst:218 ../../source/stamplc/plc.rst:238
+#: ../../source/stamplc/plc.rst:248 ../../source/stamplc/plc.rst:258
+#: ../../source/stamplc/plc.rst:272 ../../source/stamplc/plc.rst:279
+#: 03dbad5c9c2b429390160b5bb672ebeb 093f2301fe00475d94d2dc4481a75889
+#: 123042ec9465453c86fe0cc05f54ee6b 1b1c31d85f3446b4a2a6cd9d0700fbf0
+#: 2db9fc7c284f478d970b30b0eb4f0f67 3bade64ebfed453190fc6ce44aceae1e
+#: 3c4353bdf6c64c3294856fc87da21ed1 491cf5830d5f4112a27269b5ac405bc4
+#: 59e51b148f31453892f3bf7446d03818 5d47a883b2cd400c839e3aa3f283847a
+#: 65148a5c17ca494b975c5bbbd38c225c 98aa73d7b54046539d29eb171d268a15
+#: a428f8102789418eac4a49dcea6c5919 b439526d0f7849a78652e652138c9d6c
+#: bbe70b38798c49f0b8e09cbc2815db7e c7f6aff698284ad98d2258804268de2c
+#: e9fbf47d674f4aafae2e1f8cce05abbc fbf272e36d524b118e402a14aae8c937
+msgid "MicroPython Code Block:"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:44 4253b9b91b6b422197c9029a9ed89bd0
+msgid "Digital input control"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:46 bdf496e193824b6aa6b9ca6db193beb6
+msgid "Open the |stamplc_input_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:48 a6f8d06229234909801d8834863e9a32
+msgid ""
+"This example reads digital inputs 1-3 and uses them to control relay "
+"outputs 1-3."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:52 7e46702b9c8d4e169efa78ad6144f99b
+msgid "|stamplc_input_example.png|"
+msgstr ""
+
+#: ../../source/refs/stamplc.plc.ref:9 581091bccf3e474ab5ed44416f1cc1be
+msgid "stamplc_input_example.png"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:61 3dca78f5ccb64b14ba00dc64432407ae
+msgid "**API**"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:68 a1e461caa69348b9a6ca43a5b3d89889
+msgid "Create a StamPLC board helper."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:80 9d35106934054f7897dd4574e8afa3ae
+msgid ""
+"Relay output bank. Relay channels are indexed from 1 to 4. Relays are "
+"initialized to ``False``/off when ``StamPLC()`` is created."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:85 bfc31e38861d4e4fad5c4da851e2fd3c
+msgid "Turn one relay output on."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst 0083e6007bbd4575824c11477f08ba84
+#: 49d923aecdd548bc8fa4b01341a318b9 6cf38155377641afa0c37fe061829b85
+#: 6e41236d46804450bb5dd210a3f6ed14 72c49ad018574f75b404806789ab976f
+#: 87cbc1abe80349418915b2034fa1d488 8e396ad9ca2d47d9bdb6a2ed39688b42
+#: f8785a0ecaeb4dfa84e9c72b5d3abbf2
+msgid "Parameters"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:87 ../../source/stamplc/plc.rst:99
+#: ../../source/stamplc/plc.rst:111 ../../source/stamplc/plc.rst:123
+#: 2203cba1c7084623a409de5a9f15e5f4 8ccac888af9642cc8134266ae870723d
+#: c080dc3db9024d9ba53bb5e051b3ba8b ede05122b2894aac97a64432795520a4
+msgid "Relay channel, 1-4."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:97 e2a02e5db793446ebb448875508c5aa6
+msgid "Turn one relay output off."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:109 90a2363d4755414f8e5cce0cbfd3cb51
+msgid "Toggle one relay output."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:121 77b0170e49cc4ee0899911f9561b28bd
+msgid "Get or set one relay output."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:124 0a96d032c22c448b9946dda7fa5af154
+msgid ""
+"Optional output state. ``True`` turns the relay on, ``False`` turns it "
+"off."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst 193940ac70b74a459414e45dd59dd617
+#: 3efce12215f147c799d69813b090b78b a43d98225e0b4d7885814502ffbfc53c
+#: c1d3935fe314400cae371c0cdfaae413 d50c50dc4d1c4425a8ad935d21227def
+#: f5fd9db00f894d169a270e9feb48a3b4
+msgid "Returns"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:125 c1f89122bc654dd1b55c8def4cd4a7a4
+msgid "Relay state when ``state`` is omitted."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst 040327fa6118451ab28a5c456ac95fe9
+#: 95b78a6235104f8c979b3eb351cead75 97b6e5a7ec0b44d88a2b1bff3727963b
+#: a4331ef7f138420f9d0ff87bd0f109d5 ac8070d4f08046f58aac604a71623b55
+#: ccf34dc991f6465f85d5b127649dc222
+msgid "Return type"
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:137 d3a6167014cb440f9b537265d87991c9
+msgid "Read all relay outputs as a bit mask."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:139 d7414311abc8449da1327dcfa8986482
+msgid "Bit mask where bit0 is relay 1 and bit3 is relay 4."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:150 361458afb738451081caa6a84e54c818
+msgid ""
+"Digital input bank. All digital input channels are initialized as inputs "
+"when ``StamPLC()`` is created. Input channels are indexed from 1 to 8."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:155 228e46a223674618b1c3c66c8f7cb47b
+msgid "Read one input channel."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:157 ../../source/stamplc/plc.rst:198
+#: 45a0ae2f5e4a427abd17d6d1274015b3 98457ae3f4d84f36904361db4945e6d0
+msgid "Input channel, 1-8."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:158 27acaa7367554a35a196a085859f9908
+msgid "The selected input value, ``0`` or ``1``."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:169 5a41f3d52174435e96296ef154f38f96
+msgid "Read all eight input channels."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:171 f37bed9f3ed14142adacc820c89bc721
+msgid ""
+"Tuple of eight values. Tuple index 0 is input 1, and tuple index 7 is "
+"input 8."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:182 d94ef67d6b18415594fdda99bb4977bd
+msgid "Read all eight input channels as a bit mask."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:184 3b4aa6ff684146e7870e96292dad4760
+msgid "Bit mask where bit0 is input 1 and bit7 is input 8."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:195 080439c979d34f0fa537dfa25aa40ab6
+msgid ""
+"Set an interrupt handler for one input channel. The callback receives the"
+" input pin object; use ``pin.channel`` to get the channel number."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:199 ../../source/stamplc/plc.rst:215
+#: 0c2a872340b34a76bd702d0d5a9ab30d fa96a9a9b6fc441fb4d728e291e0ec42
+msgid "Interrupt callback."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:200 ../../source/stamplc/plc.rst:216
+#: 114f1ba7a83c4efea69f38ed1dda1fbd a09a94b390ac4958a49c4490f4e4f739
+msgid "``plc.input.IRQ_FALLING`` or ``plc.input.IRQ_RISING``."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:213 17a3fc1abe7d4a07b2473a9fb2f08094
+msgid "Set the same interrupt handler for all input channels."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:229 8d03ad7675154c6f9a2539e9e973e532
+msgid ""
+"Built-in RGB LED controller. The LED is driven by PI4IOE5V6408: red maps "
+"to P6, green maps to P5, and blue maps to P4."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:232 bc2740a737944ed6bd0b4d68e2df18e0
+msgid "``led.red``, ``led.green``, and ``led.blue`` provide the same methods."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:236 0df5dea072b54057876e0eb22eafbe68
+msgid "Turn the red LED on."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:246 d91864f4411d4fe6b559830d39b0a641
+msgid "Turn the red LED off."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:256 07c92518989d4a6d89ecd547f27b833c
+msgid "Toggle the red LED."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:266 a4a8c9ae9792476ea0ea81e26410d5b2
+msgid "Get or set the red LED state."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:268 ba1ec9870cff48a69e94dbbb98a97e01
+msgid "Optional LED state. ``True`` turns the LED on, ``False`` turns it off."
+msgstr ""
+
+#: ../../source/stamplc/plc.rst:269 6227f658997e454bb11f8ca3ed9ba56b
+msgid "LED state when ``state`` is omitted."
+msgstr ""

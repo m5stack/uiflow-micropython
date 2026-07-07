@@ -55,7 +55,7 @@ def setup():
 
     M5.begin()
     m5ui.init()
-    page0 = m5ui.M5Screen(bg_c=0xFFFFFF)
+    page0 = m5ui.M5Page(bg_c=0xFFFFFF)
 
     page0.add_event_cb(page0_event_handler, lv.EVENT.ALL, None)
 

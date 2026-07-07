@@ -1,0 +1,613 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-09 22:01+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/mono.rst:2 ../../source/refs/chain.mono.ref
+#: b6d35d37b3fc4a98962f6d983d418939 c692ad4690394e2abdee8ec6d9f26dc8
+msgid "Chain Mono"
+msgstr ""
+
+#: ../../source/chain/mono.rst:6 a5ad2682cc094c1ab5539f1d40553d95
+msgid ""
+"MonoChain is the helper class for Chain Mono display devices on the Chain"
+" bus. It provides methods to control an 8 x 8 monochrome display, "
+"including pixel drawing, full-screen buffer refresh, ASCII character "
+"display, scrolling text, brightness, and rotation."
+msgstr ""
+"MonoChain 是 Chain 总线上 Chain Mono 显示设备的辅助类。它提供控制 8 x 8 "
+"单色显示屏的方法，包括像素绘制、全屏缓冲区刷新、ASCII 字符显示、滚动文本、亮度和旋转。"
+
+#: ../../source/chain/mono.rst:11 b67e21f7ddfc49daba3d5d3d60abdb2a
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/mono.rst:13 f9f2f0c5ef1445c1b11efd2397f5e128
+msgid "|Chain Mono|"
+msgstr ""
+
+#: ../../source/chain/mono.rst:16 7f4a2a8a85a1460683a19c3f5ad61b8a
+msgid "Constants"
+msgstr "常量"
+
+#: ../../source/chain/mono.rst:18 c0057e5da23a4379894cf2a2aadefbf8
+msgid "Display modes use ``MonoChain.MODE_PIXEL`` and ``MonoChain.MODE_SCROLL``."
+msgstr "显示模式使用 ``MonoChain.MODE_PIXEL`` 和 ``MonoChain.MODE_SCROLL``。"
+
+#: ../../source/chain/mono.rst:20 2bb1397c82ef4a7aa7805a8ada9a26bc
+msgid ""
+"Scroll directions use ``MonoChain.SCROLL_DIR_LEFT``, "
+"``MonoChain.SCROLL_DIR_RIGHT``, ``MonoChain.SCROLL_DIR_UP``, and "
+"``MonoChain.SCROLL_DIR_DOWN``."
+msgstr ""
+"滚动方向使用 "
+"``MonoChain.SCROLL_DIR_LEFT``、``MonoChain.SCROLL_DIR_RIGHT``、``MonoChain.SCROLL_DIR_UP``"
+" 和 ``MonoChain.SCROLL_DIR_DOWN``。"
+
+#: ../../source/chain/mono.rst:24 c57e1facd09646078eaeb1d6e8cfed1a
+msgid ""
+"Scroll modes use ``MonoChain.SCROLL_MODE_ONCE``, "
+"``MonoChain.SCROLL_MODE_LOOP``, and ``MonoChain.SCROLL_MODE_BOUNCE``."
+msgstr ""
+"滚动模式使用 ``MonoChain.SCROLL_MODE_ONCE``、``MonoChain.SCROLL_MODE_LOOP`` 和 "
+"``MonoChain.SCROLL_MODE_BOUNCE``。"
+
+#: ../../source/chain/mono.rst:27 36d348f016ff4ffe8ea13231b4106c45
+msgid ""
+"Scroll states use ``MonoChain.SCROLL_STATE_START``, "
+"``MonoChain.SCROLL_STATE_PAUSE``, and ``MonoChain.SCROLL_STATE_RESET``."
+msgstr ""
+"滚动状态使用 ``MonoChain.SCROLL_STATE_START``、``MonoChain.SCROLL_STATE_PAUSE`` "
+"和 ``MonoChain.SCROLL_STATE_RESET``。"
+
+#: ../../source/chain/mono.rst:30 2bb1397c82ef4a7aa7805a8ada9a26bc
+msgid ""
+"Display rotation uses ``MonoChain.ROTATION_0``, "
+"``MonoChain.ROTATION_90``, ``MonoChain.ROTATION_180``, and "
+"``MonoChain.ROTATION_270``."
+msgstr ""
+"显示旋转使用 "
+"``MonoChain.ROTATION_0``、``MonoChain.ROTATION_90``、``MonoChain.ROTATION_180``"
+" 和 ``MonoChain.ROTATION_270``。"
+
+#: ../../source/chain/mono.rst:34 61679cdabdcd4b7ababf3eb733e5aa52
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../source/chain/mono.rst:37 ../../source/chain/mono.rst:57
+#: 84c6ada3a9334108ae2c5855d5b7e818 b68b8e849147401eb38ec6e11edc8fa1
+msgid "Scroll text, rotation, and brightness control"
+msgstr "滚动文本、旋转和亮度控制"
+
+#: ../../source/chain/mono.rst:39 a931ac76380d4fd6be5cec71913da2e3
+msgid "Open the |basic_chain_mono_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/chain/mono.rst:41 64754550c98549f5bf2cd72ea5fa406f
+#, fuzzy
+msgid ""
+"This example initializes Chain Mono in scroll mode and displays the text "
+"``M5STACK``. It also shows a simple controller UI on the host display and"
+" uses the hardware buttons to control the Chain Mono module."
+msgstr ""
+"该示例将 Chain Mono 初始化为滚动模式并显示文本 ``M5STACK``，同时在主机屏幕上显示一个简单的控制界面，并使用硬件按键控制 "
+"Chain Mono 模块："
+
+#: ../../source/chain/mono.rst:45 0850148ef66c4a8c9c176f6502416226
+#: chain.mono.MonoChain:6 chain.mono.MonoChain.get_brightness:6
+#: chain.mono.MonoChain.get_display_buffer:6
+#: chain.mono.MonoChain.get_display_mode:6
+#: chain.mono.MonoChain.get_display_rotation:6 chain.mono.MonoChain.get_pixel:8
+#: chain.mono.MonoChain.get_pixels:7 chain.mono.MonoChain.get_scroll_state:6
+#: chain.mono.MonoChain.set_brightness:8
+#: chain.mono.MonoChain.set_display_buffer:7
+#: chain.mono.MonoChain.set_display_char:9
+#: chain.mono.MonoChain.set_display_mode:7
+#: chain.mono.MonoChain.set_display_rotation:8 chain.mono.MonoChain.set_pixel:9
+#: chain.mono.MonoChain.set_pixels:7 chain.mono.MonoChain.set_scroll_state:7
+#: chain.mono.MonoChain.set_scroll_text:10 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/mono.rst:47 1c3f914229374f2f9c330e023bdb95d5
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:29 90704497015a45fb82ceb135aacdfacb
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
+
+#: ../../source/chain/mono.rst:49 ../../source/chain/mono.rst:73
+#: 55a46ba0923f4a8386ade015e2632300 f0e0d1a8608c420faf777ce43fc6ad06
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/mono.rst:51 ../../source/chain/mono.rst:75
+#: 4819ce495e8b4054bba0f2c26f83b9d1 78349056ab664eb0a07bde9311273776
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/mono.rst:54 61679cdabdcd4b7ababf3eb733e5aa52
+msgid "MicroPython Examples"
+msgstr "MicroPython 示例"
+
+#: ../../source/chain/mono.rst:59 64754550c98549f5bf2cd72ea5fa406f
+msgid ""
+"This example initializes Chain Mono in scroll mode and displays the text "
+"``M5STACK``. It also shows a simple controller UI on the host display and"
+" uses the hardware buttons to control the Chain Mono module:"
+msgstr ""
+"该示例将 Chain Mono 初始化为滚动模式并显示文本 ``M5STACK``，同时在主机屏幕上显示一个简单的控制界面，并使用硬件按键控制 "
+"Chain Mono 模块："
+
+#: ../../source/chain/mono.rst:63 680d6fc597334c93bc9076b27c44d3da
+msgid "``BtnA`` toggles the scroll state between start and pause."
+msgstr "``BtnA`` 在开始和暂停之间切换滚动状态。"
+
+#: ../../source/chain/mono.rst:64 16171f4370024f42bf10a3cb76157461
+msgid "``BtnB`` cycles the display rotation through 0, 90, 180, and 270 degrees."
+msgstr "``BtnB`` 在 0、90、180、270 度之间循环切换显示旋转。"
+
+#: ../../source/chain/mono.rst:65 14dfeaab4b744799b03acddb0c2e178c
+msgid "``BtnC`` cycles the display brightness level."
+msgstr "``BtnC`` 循环切换显示亮度等级。"
+
+#: ../../source/chain/mono.rst:67 acf75639cd804c81991c0c99307cee43
+#: chain.mono.MonoChain:10 chain.mono.MonoChain.get_brightness:10
+#: chain.mono.MonoChain.get_display_buffer:10
+#: chain.mono.MonoChain.get_display_mode:10
+#: chain.mono.MonoChain.get_display_rotation:10
+#: chain.mono.MonoChain.get_pixel:12 chain.mono.MonoChain.get_pixels:11
+#: chain.mono.MonoChain.get_scroll_state:10
+#: chain.mono.MonoChain.set_brightness:12
+#: chain.mono.MonoChain.set_display_buffer:11
+#: chain.mono.MonoChain.set_display_char:13
+#: chain.mono.MonoChain.set_display_mode:11
+#: chain.mono.MonoChain.set_display_rotation:12
+#: chain.mono.MonoChain.set_pixel:13 chain.mono.MonoChain.set_pixels:11
+#: chain.mono.MonoChain.set_scroll_state:11
+#: chain.mono.MonoChain.set_scroll_text:14 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/mono.rst:78 b3c8acaa7e964ebe87bfd1f6dd074824
+msgid "**API**"
+msgstr ""
+
+#: ../../source/chain/mono.rst:81 70a81d7129dd48afab74e920d6558afc
+msgid "MonoChain"
+msgstr ""
+
+#: 77a174128dfd4a53a734e6776689ffca chain.mono.MonoChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+#: 4d4316bdfbbc49168fe54bd0e0b368ae chain.mono.MonoChain:1 of
+msgid ""
+"Mono Chain class for interacting with 8x8 monochrome display devices over"
+" Chain bus."
+msgstr "用于通过 Chain 总线与 8x8 单色显示设备交互的 Mono Chain 类。"
+
+#: ../../source/chain/mono.rst 6d7da80abb9e4e0f9a7d3ca28daf0f57
+#: chain.mono.MonoChain.get_pixel chain.mono.MonoChain.get_pixels
+#: chain.mono.MonoChain.set_brightness chain.mono.MonoChain.set_display_buffer
+#: chain.mono.MonoChain.set_display_char chain.mono.MonoChain.set_display_mode
+#: chain.mono.MonoChain.set_display_rotation chain.mono.MonoChain.set_pixel
+#: chain.mono.MonoChain.set_pixels chain.mono.MonoChain.set_scroll_state
+#: chain.mono.MonoChain.set_scroll_text of
+msgid "Parameters"
+msgstr "参数"
+
+#: chain.mono.MonoChain:3 f201be5402ae4e9aabff10c2bd09b9a5 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 9af8ba554ca14017b6bd7bafdd40fe8d chain.mono.MonoChain:4 of
+msgid "The device ID of the Mono display on the Chain bus."
+msgstr "Chain 总线上 Mono 显示设备的设备 ID。"
+
+#: 0b4c632016c04db991401cc4fc8695d4 chain.mono.MonoChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:6 90704497015a45fb82ceb135aacdfacb
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/mono.rst:88 aef4a6420b4641489033b9833733f780
+msgid ""
+"For general Chain device methods, please refer to the :class:`ChainKey "
+"<chain.key.KeyChain>` class."
+msgstr "通用 Chain 设备方法请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: c0a23ee45543462393617e06ff83fabe chain.mono.MonoChain.set_display_mode:1 of
+msgid "Set the display mode."
+msgstr "设置显示模式。"
+
+#: c0057e5da23a4379894cf2a2aadefbf8 chain.mono.MonoChain.set_display_mode:3 of
+msgid ""
+"Display mode. Use :attr:`MonoChain.MODE_PIXEL` (0) for pixel mode or "
+":attr:`MonoChain.MODE_SCROLL` (1) for scrolling string mode."
+msgstr ""
+"显示模式。使用 :attr:`MonoChain.MODE_PIXEL` (0) 表示像素模式，使用 "
+":attr:`MonoChain.MODE_SCROLL` (1) 表示字符串滚动模式。"
+
+#: 7d2358caa5374a90813bbe5da9e1ea95 chain.mono.MonoChain.get_brightness
+#: chain.mono.MonoChain.get_display_buffer
+#: chain.mono.MonoChain.get_display_mode
+#: chain.mono.MonoChain.get_display_rotation chain.mono.MonoChain.get_pixel
+#: chain.mono.MonoChain.get_pixels chain.mono.MonoChain.get_scroll_state
+#: chain.mono.MonoChain.set_brightness chain.mono.MonoChain.set_display_buffer
+#: chain.mono.MonoChain.set_display_char chain.mono.MonoChain.set_display_mode
+#: chain.mono.MonoChain.set_display_rotation chain.mono.MonoChain.set_pixel
+#: chain.mono.MonoChain.set_pixels chain.mono.MonoChain.set_scroll_state
+#: chain.mono.MonoChain.set_scroll_text of
+msgid "Returns"
+msgstr "返回值"
+
+#: 0c8dbc07d8f74b90bf30d3c972bc1e98 chain.mono.MonoChain.set_brightness:5
+#: chain.mono.MonoChain.set_display_buffer:4
+#: chain.mono.MonoChain.set_display_char:6
+#: chain.mono.MonoChain.set_display_mode:4
+#: chain.mono.MonoChain.set_display_rotation:5 chain.mono.MonoChain.set_pixel:6
+#: chain.mono.MonoChain.set_pixels:4 chain.mono.MonoChain.set_scroll_state:4
+#: chain.mono.MonoChain.set_scroll_text:7 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: c2c1271a434d4929b0606de894864767 chain.mono.MonoChain.get_brightness
+#: chain.mono.MonoChain.get_display_buffer
+#: chain.mono.MonoChain.get_display_mode
+#: chain.mono.MonoChain.get_display_rotation chain.mono.MonoChain.get_pixel
+#: chain.mono.MonoChain.get_pixels chain.mono.MonoChain.get_scroll_state
+#: chain.mono.MonoChain.set_brightness chain.mono.MonoChain.set_display_buffer
+#: chain.mono.MonoChain.set_display_char chain.mono.MonoChain.set_display_mode
+#: chain.mono.MonoChain.set_display_rotation chain.mono.MonoChain.set_pixel
+#: chain.mono.MonoChain.set_pixels chain.mono.MonoChain.set_scroll_state
+#: chain.mono.MonoChain.set_scroll_text of
+msgid "Return type"
+msgstr "返回类型"
+
+#: chain.mono.MonoChain.set_display_mode:9 e83a5fe17fde4e1aa24e7063e51c2dea of
+msgid "|set_display_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:8 9c60943c3cb347138887caa0d697efa8
+msgid "set_display_mode.png"
+msgstr ""
+
+#: 8a42a1ead61948f496b84ad53344ff0c chain.mono.MonoChain.get_display_mode:1 of
+msgid "Get the display mode."
+msgstr "获取显示模式。"
+
+#: 861b74f94bc6451f809cfe3b338f355a chain.mono.MonoChain.get_display_mode:3 of
+msgid ""
+"Display mode. 0 means pixel mode, 1 means scrolling string mode. Returns "
+"None if failed."
+msgstr "显示模式。0 表示像素模式，1 表示字符串滚动模式。失败时返回 None。"
+
+#: 44f167ade33d4b9b9211b881c31b2a34 chain.mono.MonoChain.get_display_mode:8 of
+msgid "|get_display_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:7 3c22e48581484812b3985fc213f0c398
+msgid "get_display_mode.png"
+msgstr ""
+
+#: chain.mono.MonoChain.set_pixel:1 f4c169d403c244dfb26e70bf71df9751 of
+msgid "Set one pixel state on the 8x8 display."
+msgstr "设置 8x8 显示屏上单个像素的状态。"
+
+#: chain.mono.MonoChain.get_pixel:3 chain.mono.MonoChain.set_pixel:3
+#: d284bbaf21bc4537970fbcb879b6fa46 of
+msgid "X coordinate, range 0-7."
+msgstr "X 坐标，范围 0-7。"
+
+#: chain.mono.MonoChain.get_pixel:4 chain.mono.MonoChain.set_pixel:4
+#: f0a827b245c04fa48fb20462a75562e6 of
+msgid "Y coordinate, range 0-7."
+msgstr "Y 坐标，范围 0-7。"
+
+#: 7331dc04706a43d5bafaf7307f56ec96 chain.mono.MonoChain.set_pixel:5 of
+msgid "Pixel state. True means on, False means off."
+msgstr "像素状态。True 表示点亮，False 表示熄灭。"
+
+#: 1c3f914229374f2f9c330e023bdb95d5 chain.mono.MonoChain.set_pixel:11 of
+msgid "|set_pixel.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:12 90704497015a45fb82ceb135aacdfacb
+msgid "set_pixel.png"
+msgstr ""
+
+#: 6a4a1b54f7ee45629d062e9dbfe4da3b chain.mono.MonoChain.set_pixels:1 of
+msgid "Set multiple pixel states on the 8x8 display."
+msgstr "设置 8x8 显示屏上多个像素的状态。"
+
+#: 2216c97a21b14eb6a42f14a88fa5b2ca chain.mono.MonoChain.set_pixels:3 of
+msgid "Iterable of ``(x, y, state)`` or ``(x, y)`` values. Supports 1-64 pixels."
+msgstr "``(x, y, state)`` 或 ``(x, y)`` 值的可迭代对象，支持 1-64 个像素；``(x, y)`` 表示将该像素置为点亮。"
+
+#: b320c7a9a7b145038670fbe06528a80c chain.mono.MonoChain.set_pixels:9 of
+msgid "|set_pixels.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:14 90704497015a45fb82ceb135aacdfacb
+msgid "set_pixels.png"
+msgstr ""
+
+#: a4dd1ef2032448f5971e4e6b92bf96db chain.mono.MonoChain.get_pixel:1 of
+msgid "Get one pixel state from the 8x8 display."
+msgstr "从 8x8 显示屏读取单个像素状态。"
+
+#: 3097500a5dce44499d9151e6fe6b60a6 chain.mono.MonoChain.get_pixel:5 of
+msgid "Pixel state. True means on, False means off. Returns None if failed."
+msgstr "像素状态。True 表示点亮，False 表示熄灭。失败时返回 None。"
+
+#: 02cbbb592028417680beedd544d2e5d9 chain.mono.MonoChain.get_pixel:10 of
+msgid "|get_pixel.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:11 90704497015a45fb82ceb135aacdfacb
+msgid "get_pixel.png"
+msgstr ""
+
+#: chain.mono.MonoChain.get_pixels:1 dd4d42be286540e7957d0d2ea3ce0b1a of
+msgid "Get multiple pixel states from the 8x8 display."
+msgstr "从 8x8 显示屏读取多个像素状态。"
+
+#: 41c7dd14b32a4438a4456c8f16c0b355 chain.mono.MonoChain.get_pixels:3 of
+msgid "Iterable of ``(x, y)`` coordinates. Supports 1-64 pixels."
+msgstr "``(x, y)`` 坐标的可迭代对象，支持 1-64 个像素。"
+
+#: 4ce08412c625495189e8a99bf0a1db8f chain.mono.MonoChain.get_pixels:4 of
+msgid "Tuple of 0/1 pixel states, or None if failed."
+msgstr "0/1 像素状态组成的元组，失败时返回 None。"
+
+#: b67a49ad38f84919a00d3fb7235f8e0a chain.mono.MonoChain.get_pixels:9 of
+msgid "|get_pixels.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:13 90704497015a45fb82ceb135aacdfacb
+msgid "get_pixels.png"
+msgstr ""
+
+#: chain.mono.MonoChain.set_display_buffer:1 fe6a294cf1b6424c863159efe4567655
+#: of
+msgid "Refresh the full 8x8 display buffer."
+msgstr "刷新完整的 8x8 显示缓冲区。"
+
+#: 96f0c71fa95e4ef99919f6e2ce828781 chain.mono.MonoChain.set_display_buffer:3
+#: of
+msgid "8 row bytes. Row 0 is Y=0, bit7 maps to X=0 and bit0 maps to X=7."
+msgstr "8 个行字节。第 0 行对应 Y=0，bit7 映射到 X=0，bit0 映射到 X=7。"
+
+#: ac217928b836473e9fd1e563d9add85f chain.mono.MonoChain.set_display_buffer:9
+#: of
+msgid "|set_display_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:10 88aefdbb1894410fa938a7ddebaec5ff
+msgid "set_display_buffer.png"
+msgstr ""
+
+#: 1a015e51a32245b1ac05277bd9b32510 chain.mono.MonoChain.get_display_buffer:1
+#: of
+msgid "Get the full 8-byte display buffer."
+msgstr "获取完整的 8 字节显示缓冲区。"
+
+#: 92d1e96959404492861eaac5f0676749 chain.mono.MonoChain.get_display_buffer:3
+#: of
+msgid "Tuple of 8 row bytes, or None if failed."
+msgstr "8 个行字节组成的元组，失败时返回 None。"
+
+#: 81ccba43ad694e5f9491368df26d4848 chain.mono.MonoChain.get_display_buffer:8
+#: of
+msgid "|get_display_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:9 816404f35e094d77aa1a1bde52daed6f
+msgid "get_display_buffer.png"
+msgstr ""
+
+#: 898298e60be3442da10b841d8d76f3fa chain.mono.MonoChain.set_display_char:1 of
+msgid "Set one ASCII character in pixel mode."
+msgstr "在像素模式下设置单个 ASCII 字符。"
+
+#: chain.mono.MonoChain.set_display_char:3 f51a9232713f4b80b6c9b31d71b60f4b of
+msgid "Character or ASCII code in range 32-127."
+msgstr "字符或 ASCII 编码，范围 32-127。"
+
+#: chain.mono.MonoChain.set_display_char:4 f2c2428eca274710b13fcf87d80f7b63 of
+msgid "X offset, range 0-7."
+msgstr "X 偏移，范围 0-7。"
+
+#: 798acb3cc80f452cbe6032b179cbc01c chain.mono.MonoChain.set_display_char:5 of
+msgid "Y offset, range 0-7."
+msgstr "Y 偏移，范围 0-7。"
+
+#: chain.mono.MonoChain.set_display_char:11 e83a5fe17fde4e1aa24e7063e51c2dea of
+msgid "|set_display_char.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:15 80e754af629b470a8b5f5bf68fd1350a
+msgid "set_display_char.png"
+msgstr ""
+
+#: chain.mono.MonoChain.set_scroll_text:1 d09c08b98eb44009ae08af8f2ff2ab0f of
+msgid "Set the scrolling ASCII text."
+msgstr "设置滚动 ASCII 文本。"
+
+#: 835974f2355441b88ced9999d9557ba3 chain.mono.MonoChain.set_scroll_text:3 of
+msgid "ASCII string or bytes to display. Supports ASCII characters 32-127."
+msgstr "要显示的 ASCII 字符串或字节，支持 ASCII 字符 32-127。"
+
+#: 2bb1397c82ef4a7aa7805a8ada9a26bc chain.mono.MonoChain.set_scroll_text:4 of
+msgid ""
+"Scroll direction. Use :attr:`MonoChain.SCROLL_DIR_RIGHT` (0), "
+":attr:`MonoChain.SCROLL_DIR_LEFT` (1), :attr:`MonoChain.SCROLL_DIR_UP` "
+"(2), or :attr:`MonoChain.SCROLL_DIR_DOWN` (3)."
+msgstr ""
+"滚动方向。使用 :attr:`MonoChain.SCROLL_DIR_RIGHT` "
+"(0)、:attr:`MonoChain.SCROLL_DIR_LEFT` (1)、:attr:`MonoChain.SCROLL_DIR_UP`"
+" (2) 或 :attr:`MonoChain.SCROLL_DIR_DOWN` (3)。"
+
+#: c57e1facd09646078eaeb1d6e8cfed1a chain.mono.MonoChain.set_scroll_text:5 of
+msgid ""
+"Scroll mode. Use :attr:`MonoChain.SCROLL_MODE_ONCE` (0), "
+":attr:`MonoChain.SCROLL_MODE_LOOP` (1), or "
+":attr:`MonoChain.SCROLL_MODE_BOUNCE` (3)."
+msgstr ""
+"滚动模式。使用 :attr:`MonoChain.SCROLL_MODE_ONCE` "
+"(0)、:attr:`MonoChain.SCROLL_MODE_LOOP` (1) 或 "
+":attr:`MonoChain.SCROLL_MODE_BOUNCE` (3)。"
+
+#: 13b8adf222bc4c4986553b5d7121c11e chain.mono.MonoChain.set_scroll_text:6 of
+msgid "Scroll speed in milliseconds per pixel. Range: 0-65535."
+msgstr "滚动速度，单位为毫秒/像素。范围：0-65535。"
+
+#: 85f9689d3b70421d93f57fc18451545c chain.mono.MonoChain.set_scroll_text:12 of
+msgid "|set_scroll_text.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:16 a370cfc132394d55b60ed835255a84c0
+msgid "set_scroll_text.png"
+msgstr ""
+
+#: chain.mono.MonoChain.set_scroll_state:1 fb13f15eba6e4e42b148359efece1e7f of
+msgid "Set the scrolling text state."
+msgstr "设置滚动文本状态。"
+
+#: 36d348f016ff4ffe8ea13231b4106c45 chain.mono.MonoChain.set_scroll_state:3 of
+msgid ""
+"Scroll state. Use :attr:`MonoChain.SCROLL_STATE_START` (0), "
+":attr:`MonoChain.SCROLL_STATE_PAUSE` (1), or "
+":attr:`MonoChain.SCROLL_STATE_RESET` (2)."
+msgstr ""
+"滚动状态。使用 :attr:`MonoChain.SCROLL_STATE_START` "
+"(0)、:attr:`MonoChain.SCROLL_STATE_PAUSE` (1) 或 "
+":attr:`MonoChain.SCROLL_STATE_RESET` (2)。"
+
+#: 85f9689d3b70421d93f57fc18451545c chain.mono.MonoChain.set_scroll_state:9 of
+msgid "|set_scroll_state.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:18 cb9695c8bb3e46f8a0105ea8794d9e64
+msgid "set_scroll_state.png"
+msgstr ""
+
+#: chain.mono.MonoChain.get_scroll_state:1 d05dbdcc4b3d4e6693db3c7256a2361e of
+msgid "Get the scrolling text state."
+msgstr "获取滚动文本状态。"
+
+#: chain.mono.MonoChain.get_scroll_state:3 d76fbf7f187e4f28bba00b081a98c3d8 of
+msgid ""
+"Scroll state. 0 means scrolling, 1 means paused, 2 means reset/idle. "
+"Returns None if failed."
+msgstr "滚动状态。0 表示滚动中，1 表示暂停，2 表示复位/空闲。失败时返回 None。"
+
+#: 2cf4afcd77f64811adb06d43bbf92919 chain.mono.MonoChain.get_scroll_state:8 of
+msgid "|get_scroll_state.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:17 66bef625e7154a1bb9bbad332ed493d7
+msgid "get_scroll_state.png"
+msgstr ""
+
+#: 3e4572bde6a14890b1cb758068be569a chain.mono.MonoChain.set_display_rotation:1
+#: of
+msgid "Set the display rotation."
+msgstr "设置显示旋转。"
+
+#: chain.mono.MonoChain.set_display_rotation:3 f2919c0da74745d2888855a20283902a
+#: of
+msgid ""
+"Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 "
+"degrees, 3 clockwise 270 degrees."
+msgstr "显示旋转。0 为默认方向，1 为顺时针 90 度，2 为顺时针 180 度，3 为顺时针 270 度。"
+
+#: 6e7ec44e05d444b3bca2f941ca29b1ae chain.mono.MonoChain.set_brightness:4
+#: chain.mono.MonoChain.set_display_rotation:4 of
+msgid "Whether to save the setting to flash."
+msgstr "是否将设置保存到 Flash。"
+
+#: 305816be182f40c6a221883db9dc1996
+#: chain.mono.MonoChain.set_display_rotation:10 of
+msgid "|set_display_rotation.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:20 613c22b3e9db4f1595678b10ab160bf1
+msgid "set_display_rotation.png"
+msgstr ""
+
+#: 6d128ec3d6d24d139404bb9952e6f22d chain.mono.MonoChain.get_display_rotation:1
+#: of
+msgid "Get the display rotation."
+msgstr "获取显示旋转。"
+
+#: c9e517ad9eeb415694aeb18dba3757a6 chain.mono.MonoChain.get_display_rotation:3
+#: of
+msgid ""
+"Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 "
+"degrees, 3 clockwise 270 degrees. Returns None if failed."
+msgstr "显示旋转。0 为默认方向，1 为顺时针 90 度，2 为顺时针 180 度，3 为顺时针 270 度。失败时返回 None。"
+
+#: 35a722f49b2d4c63a61d3852cd0c1910 chain.mono.MonoChain.get_display_rotation:8
+#: of
+msgid "|get_display_rotation.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:19 2d12ebe27c9a47368e37fef3c2daa4fb
+msgid "get_display_rotation.png"
+msgstr ""
+
+#: chain.mono.MonoChain.set_brightness:1 f4875704abfc45d08ce370a905ba1b72 of
+msgid "Set the screen brightness level."
+msgstr "设置屏幕亮度等级。"
+
+#: c276a6129ee4488dbab4855dbd9e81d4 chain.mono.MonoChain.set_brightness:3 of
+msgid "Brightness level. Range: 0-7."
+msgstr "亮度等级。范围：0-7。"
+
+#: 90a180ae917646f18e23d64ee80c3491 chain.mono.MonoChain.set_brightness:10 of
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:22 f318e8110c5443b9bad70e5069f0ee4c
+msgid "set_brightness.png"
+msgstr ""
+
+#: a1d0ecceaf2e4c1abcfd5f24246ac3bd chain.mono.MonoChain.get_brightness:1 of
+msgid "Get the screen brightness level."
+msgstr "获取屏幕亮度等级。"
+
+#: 162b70bbdce04f5194dca0c708824eae chain.mono.MonoChain.get_brightness:3 of
+msgid "Brightness level, range 0-7. Returns None if failed."
+msgstr "亮度等级，范围 0-7。失败时返回 None。"
+
+#: 8fcd1a98d67e49318277e6ed7774c562 chain.mono.MonoChain.get_brightness:8 of
+msgid "|get_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mono.ref:21 c8808233652141558bf8477004dcca84
+msgid "get_brightness.png"
+msgstr ""
+

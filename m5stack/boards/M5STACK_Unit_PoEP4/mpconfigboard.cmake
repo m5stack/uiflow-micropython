@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2025 M5Stack Technology CO LTD
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
 #
 # SPDX-License-Identifier: MIT
 
@@ -6,18 +6,18 @@ set(IDF_TARGET esp32p4)
 
 # https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L29
 set(BOARD_ID 148)
-set(MICROPY_PY_LVGL 0)
+set(MICROPY_PY_LVGL 1)
 
 # Font Support
 set(FONT_MONTSERRAT_12 1)
 set(FONT_MONTSERRAT_14 1)
 set(FONT_MONTSERRAT_16 1)
 set(FONT_MONTSERRAT_18 1)
-set(FONT_MONTSERRAT_20 0)
-set(FONT_MONTSERRAT_22 0)
+set(FONT_MONTSERRAT_20 1)
+set(FONT_MONTSERRAT_22 1)
 set(FONT_MONTSERRAT_24 1)
-set(FONT_MONTSERRAT_30 0)
-set(FONT_MONTSERRAT_36 0)
+set(FONT_MONTSERRAT_30 1)
+set(FONT_MONTSERRAT_36 1)
 set(FONT_MONTSERRAT_40 1)
 set(FONT_MONTSERRAT_44 1)
 set(FONT_MONTSERRAT_48 1)
@@ -31,6 +31,7 @@ set(SDKCONFIG_DEFAULTS
     ./boards/sdkconfig.disable_iram
     ./boards/sdkconfig.flash_16mb
     ./boards/sdkconfig.freertos
+    ./boards/sdkconfig.spiram_hex
     ./boards/M5STACK_Unit_PoEP4/sdkconfig.board
 )
 

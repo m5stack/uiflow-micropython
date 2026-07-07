@@ -32,6 +32,8 @@ SERVO_PWM_HW_MAX = 1023
 X_AXIS_ZERO_POS = 450
 Y_AXIS_ZERO_POS = 125
 MOVE_TIME_MS = 10
+SERVO_POWER_ON_DELAY_MS = 1000
+SERVO_POWER_OFF_DELAY_MS = 200
 SERVO_SPEED_USER_MAX = 100
 SERVO_SPEED_HW_MAX = 1500
 
@@ -86,18 +88,21 @@ class StackChan:
 
     def __init__(self, i2c=1, uart=1):
         if StackChan._initialized:
-            self.rgb.clear()
             if i2c != self._i2c_num or uart != self._uart_num:
                 raise ValueError(
                     "StackChan already initialized with i2c=%s uart=%s"
                     % (self._i2c_num, self._uart_num)
                 )
+            self.rgb.clear()
+            # Re-running examples re-enters here; leave servos in a deterministic off state.
+            self.set_servo_power(False)
             return
 
         self._i2c_num = int(i2c)
         self._uart_num = int(uart)
         self.servo_power_enabled = False
         self.servo_torque_enabled = {SERVO_ID_X: False, SERVO_ID_Y: False}
+        self._servo_x_mode = None
         # I2C
         self.i2c = machine.I2C(
             self._i2c_num, scl=machine.Pin(11), sda=machine.Pin(12), freq=100000
@@ -236,24 +241,65 @@ class StackChan:
             return self._reset_servo_zero(SERVO_ID_X) and self._reset_servo_zero(SERVO_ID_Y)
         return self._save_servo_zero(SERVO_ID_X) and self._save_servo_zero(SERVO_ID_Y)
 
-    def set_servo_power(self, enable=True):
+    def set_servo_power(self, enable=True, settle_ms=None):
         if enable:
             self.servo_power_pin.on()
-            time.sleep_ms(200)
+            if settle_ms is None:
+                settle_ms = SERVO_POWER_ON_DELAY_MS
+            time.sleep_ms(max(0, int(settle_ms)))
+            if hasattr(self, "uart"):
+                while self.uart.any() > 0:
+                    self.uart.read(self.uart.any())
         else:
             self.servo_power_pin.off()
+            if settle_ms is None:
+                settle_ms = SERVO_POWER_OFF_DELAY_MS
+            time.sleep_ms(max(0, int(settle_ms)))
+            self._servo_x_mode = None
+            self.servo_torque_enabled[SERVO_ID_X] = False
+            self.servo_torque_enabled[SERVO_ID_Y] = False
         self.servo_power_enabled = enable
 
+    def _servo_retry(self, func, args=(), ok=(1, True), attempts=5, delay_ms=50):
+        result = None
+        for _ in range(attempts):
+            result = func(*args)
+            if result in ok:
+                return result
+            time.sleep_ms(delay_ms)
+        return result
+
     def set_servo_torque(self, servo_id, enable=True):
-        self.servo.enable_torque(servo_id, 1 if enable else 0)
-        self.servo_torque_enabled[servo_id] = enable
+        result = self._servo_retry(self.servo.enable_torque, (servo_id, 1 if enable else 0))
+        if result == 1:
+            self.servo_torque_enabled[servo_id] = enable
+            return True
+        print("[StackChan] servo %s torque(%s) failed: %s" % (servo_id, enable, result))
+        return False
 
     def ensure_servo_x_mode(self, mode):
-        if self.servo.read_mode(SERVO_ID_X) != mode:
-            self.servo.switch_mode(SERVO_ID_X, mode)
+        if self._servo_x_mode == mode:
+            return True
+        if self._servo_x_mode is None:
+            current = self.servo.read_mode(SERVO_ID_X)
+            if current == mode:
+                self._servo_x_mode = mode
+                return True
+            if current == SERVO_MODE_POS:
+                self.servo.min_angle[SERVO_ID_X] = _SERVO_RAW_MIN
+                self.servo.max_angle[SERVO_ID_X] = _SERVO_RAW_MAX
+        result = self._servo_retry(
+            self.servo.switch_mode, (SERVO_ID_X, mode), ok=(0,), attempts=5, delay_ms=80
+        )
+        if result == 0:
+            self._servo_x_mode = mode
+            return True
+        print("[StackChan] servo X switch_mode(%s) failed: %s" % (mode, result))
+        return False
 
     def set_servo_x_pwm(self, pwm_out):
-        self.ensure_servo_x_mode(SERVO_MODE_PWM)
+        if not self.ensure_servo_x_mode(SERVO_MODE_PWM):
+            return False
         p = max(-100, min(100, int(pwm_out)))
         ap = abs(p)
         mag = int(
@@ -269,11 +315,12 @@ class StackChan:
         )
         hw = -mag if p < 0 else mag
         hw = max(-SERVO_PWM_HW_MAX, min(SERVO_PWM_HW_MAX, hw))
-        self.servo.write_pwm(SERVO_ID_X, hw)
+        return self._servo_retry(self.servo.write_pwm, (SERVO_ID_X, hw)) == 1
 
     def set_servo_angle(self, servo_id, angle_deg, time_ms=MOVE_TIME_MS, speed=0):
         if servo_id == SERVO_ID_X:
-            self.ensure_servo_x_mode(SERVO_MODE_POS)
+            if not self.ensure_servo_x_mode(SERVO_MODE_POS):
+                return False
         elif servo_id != SERVO_ID_Y:
             raise ValueError("servo_id must be SERVO_ID_X or SERVO_ID_Y")
         zero = self._servo_zero_runtime[servo_id]
@@ -291,7 +338,7 @@ class StackChan:
             )
         )
         hw_speed = max(0, min(SERVO_SPEED_HW_MAX, hw_speed))
-        self.servo.write_pos(servo_id, pos, time_ms, hw_speed)
+        return self._servo_retry(self.servo.write_pos, (servo_id, pos, time_ms, hw_speed)) == 1
 
     def get_servo_angle(self, servo_id):
         if servo_id not in (SERVO_ID_X, SERVO_ID_Y):
@@ -323,12 +370,12 @@ class StackChan:
     def get_touch(self, index=None):
         tp = self.touch.get_touch_status()
         if tp is None:
-            return None
+            tp = [OUTPUT_NONE, OUTPUT_NONE, OUTPUT_NONE]
         if index is None:
             return [tp[2], tp[1], tp[0]]
         i = int(index)
         if i < 0 or i > 2:
-            return None
+            return OUTPUT_NONE
         return tp[2 - i]
 
     """

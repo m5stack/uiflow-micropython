@@ -41,7 +41,7 @@ def setup():
 
     M5.begin()
     m5ui.init()
-    page0 = m5ui.M5Screen(bg_c=0xFFFFFF)
+    page0 = m5ui.M5Page(bg_c=0xFFFFFF)
     button0 = m5ui.M5Button(
         text="click me",
         x=117,

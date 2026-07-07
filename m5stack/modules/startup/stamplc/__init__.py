@@ -6,8 +6,6 @@ from . import framework
 from .apps.settings import SettingsApp
 from .apps.dev import DevApp
 from .apps.launcher import LauncherApp
-from .apps.app_run import RunApp
-from .apps.app_list import ListApp
 from .apps.statusbar import StatusBarApp
 from .apps.ezdata import EzDataApp
 from startup import Startup
@@ -60,15 +58,11 @@ class StampPLC_Startup:
         setting_app = SettingsApp(None, data=self._net_if)
         dev_app = DevApp(None, data=self._net_if)
         launcher = LauncherApp()
-        run_app = RunApp(None, data=self._net_if)
-        list_app = ListApp(None, data=self._net_if)
         ezdata_app = EzDataApp(None, data=self._net_if)
         fw.install_bar(StatusBarApp(None, self._net_if))
         fw.install_launcher(launcher)
         fw.install(launcher)
         fw.install(setting_app)
         fw.install(dev_app)
-        fw.install(run_app)
-        fw.install(list_app)
         fw.install(ezdata_app)
         fw.start()

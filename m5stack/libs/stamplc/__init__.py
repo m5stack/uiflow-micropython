@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: MIT
 
 _attrs = {
+    "StamPLC": "plc",
     "ACStamPLC": "ac",
     "PoEStamPLC": "poe",
 }

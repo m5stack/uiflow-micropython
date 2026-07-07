@@ -61,6 +61,12 @@ class Mic
 
     All calls to methods of Mic objects should be placed after ``M5.begin()`` |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in the main loop.
 
+.. note::
+
+    Mic is registered in the ``M5`` module, **not** in the ``hardware``
+    module. Use ``from M5 import *`` to make ``Mic`` available. Do not
+    write ``from hardware import Mic``.
+
 .. _hardware.Mic.Methods:
 
 Methods

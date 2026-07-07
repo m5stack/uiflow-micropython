@@ -10,8 +10,6 @@ package(
         "stamplc/app_base.py",
         "stamplc/framework.py",
         "stamplc/res.py",
-        "stamplc/apps/app_list.py",
-        "stamplc/apps/app_run.py",
         "stamplc/apps/dev.py",
         "stamplc/apps/ezdata.py",
         "stamplc/apps/launcher.py",

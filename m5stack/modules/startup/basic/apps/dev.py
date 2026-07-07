@@ -9,6 +9,7 @@ from M5 import Widgets
 import widgets
 import asyncio
 import binascii
+from startup import print_access_info
 import machine
 import network
 
@@ -45,6 +46,11 @@ _CLOUD_STATUS_ICOS = {
     CLOUD_STATUS_DISCONNECTED: res.SERVER_ERROR_IMG,
 }
 
+_BG_COLOR = 0xEEEEEF
+_LABEL_COLOR = 0x008FD7
+_VALUE_COLOR = 0x000000
+_TEXT_PANEL_W = 181
+
 
 class DevApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
@@ -55,9 +61,7 @@ class DevApp(app_base.AppBase):
         M5.Lcd.drawImage(res.DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
 
     def on_launch(self):
-        self._mac_text = self._get_mac()
-        self._account_text = self._get_account()
-        self._bg_src = self._get_bg_src()
+        self._state = self._collect_state()
         self._status_bar_src = self._get_bar_src()
         self._network_status = self._get_network_status()
         self._cloud_status = self._get_cloud_status()
@@ -65,7 +69,6 @@ class DevApp(app_base.AppBase):
             M5.Power.getBatteryLevel(), M5.Power.isCharging()
         )
         self._battery_text = self._get_battery_text(M5.Power.getBatteryLevel())
-        # self._avatar_src = self._get_avatar()
 
     def on_view(self):
         M5.Lcd.drawImage(res.DEVELOP_SELECTED_IMG, 5 + 62 * 1, 0)
@@ -77,41 +80,17 @@ class DevApp(app_base.AppBase):
         self._bg_img = widgets.Image(use_sprite=False)
         self._bg_img.set_pos(self._origin_x + 4, self._origin_y + 4)
         self._bg_img.set_size(312, 156)
-        self._bg_img.set_src(self._bg_src)
+        self._bg_img.set_src(res.DEVELOP_BG_IMG)
+        M5.Lcd.fillRect(4, self._origin_y + 4, _TEXT_PANEL_W, 156, _BG_COLOR)
 
-        self._mac_label = widgets.Label(
-            "aabbcc112233",
-            4 + 6,
-            self._origin_y + 4 + 57,
-            w=177,
-            fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font=Widgets.FONTS.Montserrat18,
-        )
-        self._mac_label.set_text(self._mac_text)
+        self._mac_label, self._mac_value = self._create_row("Device MAC:", 8)
+        self._code_label, self._code_value = self._create_row("Access Code:", 59)
+        self._nick_label, self._nick_value = self._create_row("Nickname:", 110)
 
-        self._account_label = widgets.Label(
-            "XXABC",
-            4 + 6,
-            self._origin_y + 4 + 57 + 40,
-            w=110,
-            h=60,
-            fg_color=0x000000,
-            bg_color=0xEEEEEF,
-            font=Widgets.FONTS.Montserrat18,
-        )
-        self._account_label.set_text(self._account_text)
-
-        # self._avatar_img = widgets.Image(use_sprite=False)
-        # self._avatar_img.set_pos(130, self._origin_y + 100)
-        # self._avatar_img.set_size(56, 56)
-        # self._avatar_img.set_scale(0.28, 0.28)
-        # try:
-        #     os.stat(self._avatar_src)
-        #     self._avatar_img.set_src(self._avatar_src)
-        # except OSError:
-        #     self._avatar_img.set_src(AVATAR_IMG)
-        M5.Lcd.drawImage(res.AVATAR_IMG, 130, self._origin_y + 100, 56, 56, 0, 0, 0.28, 0.28)
+        self._set_value(self._mac_value, self._state.get("mac", "-"))
+        self._set_value(self._code_value, self._state.get("access_code", ""), fallback="")
+        self._set_value(self._nick_value, self._state.get("nick_name", ""), fallback="")
+        print_access_info(self._state.get("nick_name", ""), self._state.get("access_code", ""))
 
         self._bar_img = widgets.Image(use_sprite=False)
         self._bar_img.set_pos(0, self._origin_y + 164)
@@ -147,36 +126,19 @@ class DevApp(app_base.AppBase):
         self._battery_label.set_text(self._battery_text)
 
     async def on_run(self):
-        refresh_bg = False
         refresh_bar = False
         while True:
-            t = self._get_bg_src()
-            if t != self._bg_src:
-                self._bg_src = t
-                self._bg_img.set_src(self._bg_src)
-                refresh_bg = True
+            new_state = self._collect_state()
 
-            refresh_bg and self._mac_label.set_text(self._mac_text)
+            if new_state["access_code"] != self._state.get("access_code"):
+                self._state["access_code"] = new_state["access_code"]
+                self._set_value(self._code_value, new_state["access_code"], fallback="")
+                print_access_info(self._state.get("nick_name", ""), new_state["access_code"])
 
-            t = self._get_account()
-            if t != self._account_text or refresh_bg:
-                self._account_text = t
-                self._account_label.set_text(self._account_text)
-
-            # t = self._get_avatar()
-            # if t != self._avatar_src:
-            #     self._avatar_src = t
-            #     try:
-            #         os.stat(self._avatar_src)
-            #         self._avatar_img.set_src(self._avatar_src)
-            #     except OSError:
-            #         self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
-            # elif refresh_bg:
-            #     self._avatar_img._draw(False)
-            if refresh_bg:
-                M5.Lcd.drawImage(
-                    res.AVATAR_IMG, 130, self._origin_y + 100, 56, 56, 0, 0, 0.28, 0.28
-                )
+            if new_state["nick_name"] != self._state.get("nick_name"):
+                self._state["nick_name"] = new_state["nick_name"]
+                self._set_value(self._nick_value, new_state["nick_name"], fallback="")
+                print_access_info(new_state["nick_name"], self._state.get("access_code", ""))
 
             t = self._get_bar_src()
             if t != self._status_bar_src:
@@ -210,7 +172,6 @@ class DevApp(app_base.AppBase):
                 self._battery_text = t
                 self._battery_label.set_text(self._battery_text)
 
-            refresh_bg = False
             refresh_bar = False
             await asyncio.sleep_ms(1500)
 
@@ -223,7 +184,11 @@ class DevApp(app_base.AppBase):
         M5.Lcd.drawImage(res.DEVELOP_UNSELECTED_IMG, 5 + 62 * 1, 0)
         del (self._bg_img,)
         del (self._mac_label,)
-        del (self._account_label,)
+        del (self._mac_value,)
+        del (self._code_label,)
+        del (self._code_value,)
+        del (self._nick_label,)
+        del (self._nick_value,)
         del (self._bar_img,)
         del (self._network_img,)
         del (self._cloud_img,)
@@ -231,15 +196,11 @@ class DevApp(app_base.AppBase):
         del (self._battery_label,)
         del (self._origin_x,)
         del (self._origin_y,)
-        del (self._mac_text,)
-        del (self._account_text,)
-        del (self._bg_src,)
         del (self._status_bar_src,)
         del (self._network_status,)
         del (self._cloud_status,)
         del (self._battery_src,)
         del (self._battery_text,)
-        # del self._avatar_src,
 
     async def _btna_event_handler(self, fw):
         # print("_btna_event_handler")
@@ -253,59 +214,67 @@ class DevApp(app_base.AppBase):
         # print("_btnc_event_handler")
         pass
 
-    # async def _dl_avatar(self, dst):
-    #     if _HAS_SERVER is True and M5Things.status() == 2:
-    #         infos = M5Things.info()
-    #         if len(infos[4]) == 0:
-    #             self._avatar_img.set_src(AVATAR_IMG)
-    #         else:
-    #             try:
-    #                 rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
-    #                 f = open(dst, "wb")
-    #                 f.write(rsp.content)
-    #                 f.close()
-    #                 self._avatar_img.set_src(dst)
-    #             except Exception as e:
-    #                 print(e)
-    #                 os.remove(dst)
-    #                 self._avatar_img.set_src(AVATAR_IMG)
-    #             finally:
-    #                 rsp.close()
-    #     else:
-    #         self._avatar_img.set_src(AVATAR_IMG)
+    def _create_row(self, label_text, y):
+        label = widgets.Label(
+            label_text,
+            12,
+            self._origin_y + y,
+            w=_TEXT_PANEL_W - 18,
+            h=20,
+            fg_color=_LABEL_COLOR,
+            bg_color=_BG_COLOR,
+            font=Widgets.FONTS.Montserrat14,
+        )
+        label.set_text(label_text)
+
+        value = widgets.Label(
+            "",
+            12,
+            self._origin_y + y + 22,
+            w=_TEXT_PANEL_W - 18,
+            h=26,
+            fg_color=_VALUE_COLOR,
+            bg_color=_BG_COLOR,
+            font=Widgets.FONTS.Montserrat18,
+        )
+        value.set_long_mode(widgets.Label.LONG_DOT)
+        return label, value
+
+    @staticmethod
+    def _set_value(label, text, fallback="-"):
+        text = fallback if text is None or text == "" else str(text)
+        label.set_text(text)
 
     @staticmethod
     def _get_mac():
-        return binascii.hexlify(machine.unique_id()).upper()
+        return binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
 
     @staticmethod
-    def _get_account():
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            return "None" if len(infos[1]) == 0 else infos[1]
-        else:
-            return "None"
+    def _get_access_code():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.accesscode() or ""
+            except Exception:
+                pass
+        return ""
 
-    # @staticmethod
-    # def _get_avatar():
-    #     if _HAS_SERVER is True and M5Things.status() == 2:
-    #         infos = M5Things.info()
-    #         if len(infos[4]) == 0:
-    #             return AVATAR_IMG
-    #         else:
-    #             return USER_AVATAR_PATH + str(infos[4]).split("/")[-1]
-    #     else:
-    #         return AVATAR_IMG
+    @staticmethod
+    def _get_nick_name():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.nick_name() or ""
+            except Exception:
+                pass
+        return ""
 
-    def _get_bg_src(self):
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            if infos[0] == 0:
-                return res.DEVELOP_PRIVATE_IMG
-            elif infos[0] in (1, 2):
-                return res.DEVELOP_PUBLIC_IMG
-        else:
-            return res.DEVELOP_PRIVATE_IMG
+    def _collect_state(self):
+        return {
+            "mac": self._get_mac(),
+            "access_code": self._get_access_code(),
+            "nick_name": self._get_nick_name(),
+        }
 
     def _get_bar_src(self):
         if _HAS_SERVER is True and M5Things.status() == 2:

@@ -46,6 +46,23 @@ Example output:
     A canvas displaying various geometric shapes with different colors.
 
 
+batch drawing
+^^^^^^^^^^^^^
+
+Use ``begin_draw()`` and ``end_draw()`` to combine multiple canvas drawing operations into a single layer commit. This avoids visible intermediate redraws when a complex shape or animation frame needs several draw calls.
+
+MicroPython Code Block:
+
+    .. code-block:: python
+
+        canvas_0.fill_bg(0xFFFFFF, 255)
+        canvas_0.begin_draw()
+        canvas_0.draw_rect(50, 50, 200, 200, radius=20, bg_c=0xFFD54F)
+        canvas_0.draw_arc(120, 100, 10, 0x333333, 255, 3, 200, 340)
+        canvas_0.draw_triangle(140, 130, 160, 130, 150, 145, bg_c=0xFF8A65)
+        canvas_0.end_draw()
+
+
 **API**
 -------
 

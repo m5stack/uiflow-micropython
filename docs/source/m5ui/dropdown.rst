@@ -9,6 +9,10 @@ M5Dropdown is a widget that can be used to create dropdown menus in the user
 interface. It allows users to select one option from a list of available options
 with a compact dropdown interface.
 
+.. important::
+
+    **Available Fonts**: For ``m5ui`` widgets, use LVGL fonts such as ``lv.font_montserrat_12``, ``14``, ``16``, ``18``, ``24``, ``40``, ``44``, and ``48``. Some builds, such as Tab5, also include ``20``, ``22``, ``30``, and ``36``. The Alibaba CJK fonts are ``M5.Lcd.FONTS`` fonts for ``M5.Lcd`` / ``M5.Widgets`` drawing.
+
 UiFlow2 Example
 ---------------
 
@@ -384,7 +388,7 @@ M5Dropdown
             |set_text.png|
 
         MicroPython Code Block:
-    
+
             .. code-block:: python
 
                 dropdown_0.set_text("Select an option")

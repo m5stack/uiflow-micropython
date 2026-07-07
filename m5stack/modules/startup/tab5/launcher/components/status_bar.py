@@ -10,18 +10,36 @@ import time as t
 import asyncio
 
 
+_STATUS_BAR_W = 110
+_STATUS_BAR_H = 685
+_STATUS_ITEM_H = 85
+_STATUS_ACTION_ENABLE_DELAY_MS = 800
+
+
+def _align_status_img(img, index):
+    img.set_size(_STATUS_BAR_W, _STATUS_ITEM_H)
+    img.align(lv.ALIGN.TOP_LEFT, 0, index * _STATUS_ITEM_H)
+
+
 class ItemPowerOff:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._press_start_time = 0
         self._press_count = 0
+        self._img_id = None
 
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
+        self._update_img()
+
+        # Avoid stale touch state during boot animating the long-press icon.
+        self._task = asyncio.create_task(self._enable_interaction())
+
+    async def _enable_interaction(self):
+        await asyncio.sleep_ms(_STATUS_ACTION_ENABLE_DELAY_MS)
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_pressed, lv.EVENT.PRESSED, None)
         self._img.add_event_cb(self._on_long_pressed_repeat, lv.EVENT.LONG_PRESSED_REPEAT, None)
         self._img.add_event_cb(self._on_released, lv.EVENT.RELEASED, None)
-
-        self._update_img()
 
     def _on_pressed(self, e: lv.event_t):
         get_hal().play_click_sfx()
@@ -45,23 +63,32 @@ class ItemPowerOff:
         self._update_img()
 
     def _update_img(self):
+        if self._press_count == self._img_id:
+            return
+        self._img_id = self._press_count
         self._img.set_src(
             get_hal().get_asset_path("status_bar/off_" + str(self._press_count) + IMAGE_SUFFIX)
         )
 
 
 class ItemSleep:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._press_start_time = 0
         self._press_count = 0
+        self._img_id = None
 
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
+        self._update_img()
+
+        self._task = asyncio.create_task(self._enable_interaction())
+
+    async def _enable_interaction(self):
+        await asyncio.sleep_ms(_STATUS_ACTION_ENABLE_DELAY_MS)
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_pressed, lv.EVENT.PRESSED, None)
         self._img.add_event_cb(self._on_long_pressed_repeat, lv.EVENT.LONG_PRESSED_REPEAT, None)
         self._img.add_event_cb(self._on_released, lv.EVENT.RELEASED, None)
-
-        self._update_img()
 
     def _on_pressed(self, e: lv.event_t):
         get_hal().play_click_sfx()
@@ -85,14 +112,21 @@ class ItemSleep:
         self._update_img()
 
     def _update_img(self):
+        if self._press_count == self._img_id:
+            return
+        self._img_id = self._press_count
         self._img.set_src(
             get_hal().get_asset_path("status_bar/z_" + str(self._press_count) + IMAGE_SUFFIX)
         )
 
 
 class ItemBattery:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
+        self._img_id = None
+        self._bat_level_text = None
+        self._output_current_text = None
 
         self._label_bat_level = lv.label(self._img)
         self._label_bat_level.set_style_text_color(lv.color_hex(0x000000), lv.PART.MAIN)
@@ -104,33 +138,51 @@ class ItemBattery:
         self._label_output_current.set_style_text_font(lv.font_montserrat_20, lv.PART.MAIN)
         self._label_output_current.align(lv.ALIGN.CENTER, -9, 19)
 
-        self._update_img()
-        self._update_labels()
+        self._update()
 
         self._task = asyncio.create_task(self.update_task())
 
     async def update_task(self):
         while True:
-            self._update_img()
-            self._update_labels()
+            self._update()
             await asyncio.sleep_ms(1000)
 
-    def _update_img(self):
-        if get_hal().is_charging():
-            self._img.set_src(get_hal().get_asset_path("status_bar/bat_2" + IMAGE_SUFFIX))
-        elif get_hal().get_battery_level() <= 20:
-            self._img.set_src(get_hal().get_asset_path("status_bar/bat_1" + IMAGE_SUFFIX))
-        else:
-            self._img.set_src(get_hal().get_asset_path("status_bar/bat_0" + IMAGE_SUFFIX))
+    def _update(self):
+        bat_level = get_hal().get_battery_level()
+        output_current = get_hal().get_output_current()
+        self._update_img(bat_level, get_hal().is_charging())
+        self._update_labels(bat_level, output_current)
 
-    def _update_labels(self):
-        self._label_bat_level.set_text(str(get_hal().get_battery_level()) + "%")
-        self._label_output_current.set_text(str(round(get_hal().get_output_current(), 1)) + "A")
+    def _update_img(self, bat_level, is_charging):
+        if is_charging:
+            img_id = 2
+        elif bat_level <= 20:
+            img_id = 1
+        else:
+            img_id = 0
+
+        if img_id != self._img_id:
+            self._img_id = img_id
+            self._img.set_src(
+                get_hal().get_asset_path("status_bar/bat_" + str(img_id) + IMAGE_SUFFIX)
+            )
+
+    def _update_labels(self, bat_level, output_current):
+        bat_level_text = str(bat_level) + "%"
+        if bat_level_text != self._bat_level_text:
+            self._bat_level_text = bat_level_text
+            self._label_bat_level.set_text(bat_level_text)
+
+        output_current_text = str(round(output_current, 1)) + "A"
+        if output_current_text != self._output_current_text:
+            self._output_current_text = output_current_text
+            self._label_output_current.set_text(output_current_text)
 
 
 class ItemCharge:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
 
@@ -161,9 +213,11 @@ class ItemCharge:
 
 
 class ItemWifi:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
-        self._img.set_src(get_hal().get_asset_path("status_bar/wifi_0" + IMAGE_SUFFIX))
+        _align_status_img(self._img, index)
+        self._network_status = None
+        self._update_img()
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
 
@@ -180,20 +234,23 @@ class ItemWifi:
             self._update_img()
 
     def _update_img(self):
-        self._img.set_src(
-            get_hal().get_asset_path(
-                "status_bar/wifi_" + str(get_hal().get_network_status()) + IMAGE_SUFFIX
+        status = get_hal().get_network_status()
+        if status != self._network_status:
+            self._network_status = status
+            self._img.set_src(
+                get_hal().get_asset_path("status_bar/wifi_" + str(status) + IMAGE_SUFFIX)
             )
-        )
 
     def __del__(self):
         self._task.cancel()
 
 
 class ItemServer:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
-        self._img.set_src(get_hal().get_asset_path("status_bar/server_0" + IMAGE_SUFFIX))
+        _align_status_img(self._img, index)
+        self._cloud_status = None
+        self._update_img()
 
         self._task = asyncio.create_task(self.update_task())
 
@@ -203,19 +260,21 @@ class ItemServer:
             self._update_img()
 
     def _update_img(self):
-        self._img.set_src(
-            get_hal().get_asset_path(
-                "status_bar/server_" + str(get_hal().get_cloud_status()) + IMAGE_SUFFIX
+        status = get_hal().get_cloud_status()
+        if status != self._cloud_status:
+            self._cloud_status = status
+            self._img.set_src(
+                get_hal().get_asset_path("status_bar/server_" + str(status) + IMAGE_SUFFIX)
             )
-        )
 
     def __del__(self):
         self._task.cancel()
 
 
 class ItemVolume:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
 
@@ -240,8 +299,9 @@ class ItemVolume:
 
 
 class ItemBacklight:
-    def __init__(self, parent: lv.obj):
+    def __init__(self, parent: lv.obj, index: int):
         self._img = lv.image(parent)
+        _align_status_img(self._img, index)
         self._img.add_flag(lv.obj.FLAG.CLICKABLE)
         self._img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
 
@@ -268,23 +328,22 @@ class ItemBacklight:
 class StatusBar:
     def __init__(self):
         self._panel = lv.obj(lv.screen_active())
-        self._panel.set_size(110, 685)
+        self._panel.set_size(_STATUS_BAR_W, _STATUS_BAR_H)
         self._panel.set_style_bg_color(lv.color_hex(0x000000), lv.PART.MAIN)
         self._panel.set_style_radius(0, lv.PART.MAIN)
         self._panel.set_style_border_width(0, lv.PART.MAIN)
         self._panel.align(lv.ALIGN.TOP_RIGHT, 0, 0)
         self._panel.set_style_pad_all(0, lv.PART.MAIN)
-        self._panel.set_flex_flow(lv.FLEX_FLOW.COLUMN)
-        self._panel.set_flex_align(
-            lv.FLEX_ALIGN.CENTER, lv.FLEX_ALIGN.CENTER, lv.FLEX_ALIGN.CENTER
-        )
-        self._panel.set_style_pad_gap(0, lv.PART.MAIN)
+        self._panel.set_scrollbar_mode(lv.SCROLLBAR_MODE.OFF)
+        self._panel.remove_flag(lv.obj.FLAG.SCROLLABLE)
 
-        self._item_power_off = ItemPowerOff(self._panel)
-        self._item_sleep = ItemSleep(self._panel)
-        self._item_battery = ItemBattery(self._panel)
-        self._item_charge = ItemCharge(self._panel)
-        self._item_wifi = ItemWifi(self._panel)
-        self._item_server = ItemServer(self._panel)
-        self._item_volume = ItemVolume(self._panel)
-        self._item_backlight = ItemBacklight(self._panel)
+        self._items = (
+            ItemPowerOff(self._panel, 0),
+            ItemSleep(self._panel, 1),
+            ItemBattery(self._panel, 2),
+            ItemCharge(self._panel, 3),
+            ItemWifi(self._panel, 4),
+            ItemServer(self._panel, 5),
+            ItemVolume(self._panel, 6),
+            ItemBacklight(self._panel, 7),
+        )

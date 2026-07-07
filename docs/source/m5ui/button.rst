@@ -8,6 +8,10 @@ M5Button
 
 M5Button is a widget that can be used to create buttons in the user interface. It can be used to trigger actions when clicked.
 
+.. important::
+
+    **Available Fonts**: For ``m5ui`` widgets, use LVGL fonts such as ``lv.font_montserrat_12``, ``14``, ``16``, ``18``, ``24``, ``40``, ``44``, and ``48``. Some builds, such as Tab5, also include ``20``, ``22``, ``30``, and ``36``. Check optional sizes with ``hasattr()`` before using them in cross-board examples. The Alibaba CJK fonts are ``M5.Lcd.FONTS`` fonts for ``M5.Lcd`` / ``M5.Widgets`` drawing.
+
 UiFlow2 Example
 ---------------
 

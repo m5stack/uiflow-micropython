@@ -1,0 +1,352 @@
+# Translations template for PROJECT.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-04-02 10:32+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/mic.rst:2 0b1cd38dbd8d4b3fab3e856e75a3f103
+msgid "Chain Mic"
+msgstr "Chain Mic"
+
+#: ../../source/chain/mic.rst:6 10dca77636594983872aa812d7117b7d
+msgid ""
+"MicChain is the helper class for microphone devices on the Chain bus. It "
+"provides methods to read ADC values, configure threshold values, set "
+"trigger cycle, and monitor microphone trigger events."
+msgstr ""
+"MicChain 是链式总线上麦克风设备的辅助类。它提供了读取 ADC 值、配置阈值、设置触发周期和监控麦克风触发事件的方法。"
+
+#: ../../source/chain/mic.rst:8 3868c6e4aa914e3bbce0b8b8841991c4
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/mic.rst:10 f3201bd54c0a4278a0dcb50ccff0ebdb
+msgid "|Chain Mic|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref 15ea56b706e54005bc2d06fa3be93bc4
+msgid "Chain MIC"
+msgstr ""
+
+#: ../../source/chain/mic.rst:13 ba5c7d54b66f4b778febbc5e7a8dcaf9
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/chain/mic.rst:16 ../../source/chain/mic.rst:34
+#: 5cf9608a4bcd44a3a0a3d0cbf60b1b1f aad7357a79874765bcd64cfee96ff25a
+msgid "Microphone sound detection"
+msgstr "麦克风声音检测"
+
+#: ../../source/chain/mic.rst:18 573afb2b074b41cc8d02cbf0fc131279
+msgid "Open the |m5core_chain_mic_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_mic_basic_example.m5f2| 项目。"
+
+#: ../../source/chain/mic.rst:20 ../../source/chain/mic.rst:36
+#: 31567234b185480ea53a0992bce162e5
+msgid ""
+"This example demonstrates how to read ADC values from the Chain Mic "
+"sensor and monitor sound detection."
+msgstr ""
+"本示例演示如何从 Chain MIC 传感器读取 ADC 值并监控声音检测。"
+
+#: ../../source/chain/mic.rst:22 61e615cf09c34589ac04bb8030ac677e
+#: 7b0d8379dd7e4dd7a5f7832719b0c474 chain.mic.MicChain:6
+#: chain.mic.MicChain.get_adc12:6 chain.mic.MicChain.get_adc8:6
+#: chain.mic.MicChain.get_trigger:6 chain.mic.MicChain.get_trigger_interval:6
+#: chain.mic.MicChain.get_trigger_thresh:6 chain.mic.MicChain.set_trigger:7
+#: chain.mic.MicChain.set_trigger_callback:9
+#: chain.mic.MicChain.set_trigger_interval:7
+#: chain.mic.MicChain.set_trigger_thresh:8 da0ae3bba3804efc8277c40decfe6039 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/mic.rst:24 8ce1a6dae50945de861f4c825ca3c848
+msgid "|m5core_chain_mic_basic_example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:25 a5d5db6c576a4326a364ce995600534a
+msgid "m5core_chain_mic_basic_example.png"
+msgstr ""
+
+#: ../../source/chain/mic.rst:26 ../../source/chain/mic.rst:44
+#: 6d392b8d7f704bed964b483ccb2b98d9
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/mic.rst:28 ../../source/chain/mic.rst:46
+#: fa6406ce0fbd4814a2e1d094b57e8709
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/mic.rst:31 bedf962574744438bd4083ff7f1b0d93
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/chain/mic.rst:38 01dfb1e80aec4c2591081f2fb0b90e18
+#: 607692b745024691a4a9ec0289d5df01 chain.mic.MicChain:10
+#: chain.mic.MicChain.get_adc12:10 chain.mic.MicChain.get_adc8:10
+#: chain.mic.MicChain.get_trigger:10 chain.mic.MicChain.get_trigger_interval:10
+#: chain.mic.MicChain.get_trigger_thresh:10 chain.mic.MicChain.set_trigger:11
+#: chain.mic.MicChain.set_trigger_callback:13
+#: chain.mic.MicChain.set_trigger_interval:11
+#: chain.mic.MicChain.set_trigger_thresh:12 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/mic.rst:50 b0f2950f724b41e3bde5dc183d550d6f
+msgid "**API**"
+msgstr "API 参考"
+
+#: ../../source/chain/mic.rst:53 6c0106de2a76467f8db28bfceedeaa18
+msgid "MicChain"
+msgstr "MicChain"
+
+#: 446c2afd28df4e03879a6e8e29e14be6 chain.mic.MicChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "Bases: :py:class:`~chain.key.KeyChain`"
+
+#: c001a25be33c4a00afa0df08cdc76175 chain.mic.MicChain:1 of
+msgid "Mic Chain class for interacting with microphone devices over Chain bus."
+msgstr "用于通过链式总线与麦克风设备交互的 Mic Chain 类。"
+
+#: ../../source/chain/mic.rst 2d1e5121436447b5a9a60430086e3327
+#: chain.mic.MicChain.set_trigger chain.mic.MicChain.set_trigger_callback
+#: chain.mic.MicChain.set_trigger_interval
+#: chain.mic.MicChain.set_trigger_thresh of
+msgid "Parameters"
+msgstr "参数"
+
+#: 640548f5527243e7b4a0a7ad44b64aa8 chain.mic.MicChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 95a8ef188dc84b6b9b793b0ffb65b6d4 chain.mic.MicChain:4 of
+msgid "The device ID of the microphone on the Chain bus."
+msgstr "Chain Bus 上麦克风的设备 ID。"
+
+#: 336c091873384335af429a31c2e61222 chain.mic.MicChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:7 b14963cf57424e6ea5902ed28829eaf0
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/mic.rst:60 232b8c1741d84d1da8583f9beb7db3e7
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: 12ecc6cb31e942e3a56cb15eaedca584 chain.mic.MicChain.get_adc8:1 of
+msgid "Get the 8-bit ADC value of the microphone."
+msgstr "获取麦克风的 8 位 ADC 值。"
+
+#: 51c95661befa4b698c2c8cb8159493b4 chain.mic.MicChain.get_adc12
+#: chain.mic.MicChain.get_adc8 chain.mic.MicChain.get_trigger
+#: chain.mic.MicChain.get_trigger_interval
+#: chain.mic.MicChain.get_trigger_thresh chain.mic.MicChain.set_trigger
+#: chain.mic.MicChain.set_trigger_interval
+#: chain.mic.MicChain.set_trigger_thresh da0ab25aeedf4ade945db0bcd911ad12 of
+msgid "Returns"
+msgstr "返回"
+
+#: 9d29fdd3761d4e1792a430b7cc5c6a55 chain.mic.MicChain.get_adc8:3 of
+msgid "8-bit ADC value (0-255), or None if failed."
+msgstr "8 位 ADC 值（0-255），失败时返回 None。"
+
+#: 5fd7ad93fbfb4880b500f00e1656128f b9637a7f1afd45a482f4c62f328c8608
+#: chain.mic.MicChain.get_adc12 chain.mic.MicChain.get_adc8
+#: chain.mic.MicChain.get_trigger chain.mic.MicChain.get_trigger_interval
+#: chain.mic.MicChain.get_trigger_thresh chain.mic.MicChain.set_trigger
+#: chain.mic.MicChain.set_trigger_callback
+#: chain.mic.MicChain.set_trigger_interval
+#: chain.mic.MicChain.set_trigger_thresh of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 8502085aae5f4663a56afcafd210a87c chain.mic.MicChain.get_adc8:8 of
+msgid "|get_adc8.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:15 a399ac929943405aa2ee7dde285b3eab
+msgid "get_adc8.png"
+msgstr ""
+
+#: 12ecc6cb31e942e3a56cb15eaedca584 chain.mic.MicChain.get_adc12:1 of
+msgid "Get the 12-bit ADC value of the microphone."
+msgstr "获取麦克风的 12 位 ADC 值。"
+
+#: 9d29fdd3761d4e1792a430b7cc5c6a55 chain.mic.MicChain.get_adc12:3 of
+msgid "12-bit ADC value (0-4095), or None if failed."
+msgstr "12 位 ADC 值（0-4095），失败时返回 None。"
+
+#: 8502085aae5f4663a56afcafd210a87c chain.mic.MicChain.get_adc12:8 of
+msgid "|get_adc12.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:16 a399ac929943405aa2ee7dde285b3eab
+msgid "get_adc12.png"
+msgstr ""
+
+#: 22a6ce606001449f80ff206816e94b95 chain.mic.MicChain.set_trigger:1 of
+msgid "Enable or disable threshold-triggered reporting."
+msgstr "启用或禁用阈值触发报告。"
+
+#: 4be41f8df4be4c0591eb21ab7f35b809 chain.mic.MicChain.set_trigger:3 of
+msgid "True to enable threshold-triggered reporting, False to disable it."
+msgstr "True 启用阈值触发报告，False 禁用。"
+
+#: 0a4028a6c2da49d1a0644e20b00fa9ee chain.mic.MicChain.set_trigger:4
+#: chain.mic.MicChain.set_trigger_interval:4
+#: chain.mic.MicChain.set_trigger_thresh:5 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: 46832ab3cf8c49a4b54126e7e1b532cf chain.mic.MicChain.set_trigger:9 of
+msgid "|set_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:13 3be46fd3efa74dddb3e0b1eed8ad946f
+msgid "set_trigger.png"
+msgstr ""
+
+#: 1fa4d17b5689476cafa691f5a6e43bd5 chain.mic.MicChain.get_trigger:1 of
+msgid "Get whether threshold-triggered reporting is enabled."
+msgstr "获取是否启用阈值触发报告。"
+
+#: 16f517026c8f4834ba49294724a291f1 chain.mic.MicChain.get_trigger:3 of
+msgid ""
+"True if threshold-triggered reporting is enabled, False if disabled. "
+"Returns False if failed."
+msgstr ""
+"启用阈值触发报告返回 True，禁用返回 False。失败时返回 False。"
+
+#: 8252c321cb974c30942ed21016ebac6b chain.mic.MicChain.get_trigger:8 of
+msgid "|get_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:12 280ecd5f42e7481f8b6e100af269bc9b
+msgid "get_trigger.png"
+msgstr ""
+
+#: 6ca72c4485524e8b82abda8e3f1e21c6 chain.mic.MicChain.set_trigger_thresh:1 of
+msgid "Set the microphone trigger threshold."
+msgstr "设置麦克风触发阈值。"
+
+#: 350dd2f70d6f49e8b29293b74f417bf7 chain.mic.MicChain.set_trigger_thresh:3 of
+msgid "Threshold value (0-4095)."
+msgstr "阈值（0-4095）。"
+
+#: 96eebb6e8eb64b0d9b0aec215ada11c7 chain.mic.MicChain.set_trigger_thresh:4 of
+msgid "Whether to save the threshold to flash. Default: False."
+msgstr "是否将阈值保存到闪存。默认值：False。"
+
+#: 02bf3ffb5ad24896a0c725f6726ca4ef chain.mic.MicChain.set_trigger_thresh:10 of
+msgid "|set_trigger_thresh.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:11 5ef8f39684df486982134114a2130ed9
+msgid "set_trigger_thresh.png"
+msgstr ""
+
+#: 303b947e193a4130be777c66cc652217 chain.mic.MicChain.get_trigger_thresh:1 of
+msgid "Get the microphone trigger threshold."
+msgstr "获取麦克风触发阈值。"
+
+#: a963250a08bc4883a55d1dee98c1d62f chain.mic.MicChain.get_trigger_thresh:3 of
+msgid "Threshold value (0-4095), or None if failed."
+msgstr "阈值（0-4095），失败时返回 None。"
+
+#: 18184d2c74554d8c9433ffac2dcdaf41 chain.mic.MicChain.get_trigger_thresh:8 of
+msgid "|get_trigger_thresh.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:10 2e8a9b1264ae459e8e1117ac69dd4810
+msgid "get_trigger_thresh.png"
+msgstr ""
+
+#: 4e9d633cadbc491dacfbe4aa9a3cf955 chain.mic.MicChain.set_trigger_interval:1
+#: of
+msgid "Set the minimum trigger interval (debounce time)."
+msgstr "设置最小触发间隔（去抖动时间）。"
+
+#: 6b6d2da1e5994a61867f91cebda0f50a chain.mic.MicChain.set_trigger_interval:3
+#: of
+msgid "Minimum time interval between triggers in milliseconds. Range: 300-1000."
+msgstr "触发之间的最小时间间隔（毫秒）。范围：300-1000。"
+
+#: 6ea003958fb74da0b3ee2ac4be86e68f chain.mic.MicChain.set_trigger_interval:9
+#: of
+msgid "|set_trigger_interval.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:9 efe17a024a764285a08728ba39f3056f
+msgid "set_trigger_interval.png"
+msgstr ""
+
+#: 52496ad577d34a9a935409d96359146c chain.mic.MicChain.get_trigger_interval:1
+#: of
+msgid "Get the minimum trigger interval (debounce time)."
+msgstr "获取最小触发间隔（去抖动时间）。"
+
+#: chain.mic.MicChain.get_trigger_interval:3 e0d2e3c7e7384f19b2eee7b575913fbb
+#: of
+msgid "Minimum trigger interval in milliseconds, or None if failed."
+msgstr "最小触发间隔（毫秒），失败时返回 None。"
+
+#: 7ea42176e2664d2d9b6ab6958ea384d0 chain.mic.MicChain.get_trigger_interval:8
+#: of
+msgid "|get_trigger_interval.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:8 904c185600864f77a7cd3e86c745392f
+msgid "get_trigger_interval.png"
+msgstr ""
+
+#: chain.mic.MicChain.set_trigger_callback:1 df75711412a647a0a2a71c1b639c0b09
+#: of
+msgid "Set callback for microphone trigger events."
+msgstr "设置麦克风触发事件的回调。"
+
+#: 4519065fb5ce4662acfdddb5fc8134cf chain.mic.MicChain.set_trigger_callback:3
+#: of
+msgid ""
+"Trigger type to listen for. Use :attr:`MicChain.TRIGGER_LOW_TO_HIGH` (0) "
+"or :attr:`MicChain.TRIGGER_HIGH_TO_LOW` (1)."
+msgstr ""
+"要监听的触发类型。使用 :attr:`MicChain.TRIGGER_LOW_TO_HIGH` (0) 或 :attr:`MicChain.TRIGGER_HIGH_TO_LOW` (1)。"
+
+#: chain.mic.MicChain.set_trigger_callback:4 de2d248f3692431cb1c45eea7a9b732c
+#: of
+msgid "Callback function that will be called when microphone triggers."
+msgstr "当麦克风触发时将被调用的回调函数。"
+
+#: a9e8fa6c2eb240d6bb504adeb8a19508 chain.mic.MicChain.set_trigger_callback:7
+#: of
+msgid "Chain related methods cannot be called in the callback function."
+msgstr "在回调函数中不能调用链式相关方法。"
+
+#: 3b1d9feeb35342369fde89781141fd42 chain.mic.MicChain.set_trigger_callback:11
+#: of
+msgid "|set_trigger_callback.png|"
+msgstr ""
+
+#: ../../source/refs/chain.mic.ref:14 71fd3c19736e43dcb3d80b5421134c01
+msgid "set_trigger_callback.png"
+msgstr ""
+

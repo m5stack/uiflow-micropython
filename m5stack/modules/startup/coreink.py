@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 # CoreInk startup script
-from startup import Startup
+from startup import Startup, print_access_info
 import M5
 import network
 import widgets
@@ -110,13 +110,14 @@ class FlowApp(AppBase):
         self._wifi = data[0]
         self._ssid = str(data[1]) if len(data[1]) else str(None)
         self._mac = None
-        self._user_id = None
+        self._access_code = ""
+        self._nick_name = ""
         self._cloud_status = 0
         self._sprite = sprite
 
     @staticmethod
     def _get_mac():
-        return binascii.hexlify(machine.unique_id()).upper()
+        return binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
 
     def _get_cloud_status(self):
         _cloud_status = {
@@ -133,39 +134,53 @@ class FlowApp(AppBase):
         if _cloud_status != 1 or _HAS_SERVER is not True:
             return _cloud_status
 
-        if M5Things.status() == 2:
-            _cloud_status = 4
-        else:
-            _cloud_status = 3
-        return _cloud_status
+        try:
+            return 4 if M5Things.status() == 2 else 3
+        except Exception:
+            return 3
 
-    def _get_user_id(self):
-        if _HAS_SERVER:
-            return None if len(M5Things.info()[1]) == 0 else M5Things.info()[1]
-        else:
-            return None
+    @staticmethod
+    def _get_access_code():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.accesscode() or ""
+            except Exception:
+                pass
+        return ""
+
+    @staticmethod
+    def _get_nick_name():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.nick_name() or ""
+            except Exception:
+                pass
+        return ""
 
     def _load_data(self):
         self._mac = self._get_mac()
         self._cloud_status = self._get_cloud_status()
-        self._user_id = self._get_user_id()
+        self._access_code = self._get_access_code()
+        self._nick_name = self._get_nick_name()
+        print_access_info(self._nick_name, self._access_code)
 
     def _update_data(self):
         self._cloud_status = self._get_cloud_status()
-        self._user_id = self._get_user_id()
+        self._access_code = self._get_access_code()
+        self._nick_name = self._get_nick_name()
+        print_access_info(self._nick_name, self._access_code)
 
     def _load_view(self):
-        # bg img
         self._bg_img.set_src(FLOW_BG_IMG)
 
-        # ssid
-        self._mac_label.set_text_color(0x000000, 0xFFFFFF)
+        self._mac_caption_label.set_text("MAC:")
         self._mac_label.set_text(self._mac)
-
-        # user id
-        self._user_id_label.set_text(str(self._user_id))
-
-        # server, wifi
+        self._access_caption_label.set_text("Access code:")
+        self._access_code_label.set_text(self._access_code)
+        self._nick_caption_label.set_text("Nickname:")
+        self._nick_name_label.set_text(self._nick_name)
         if self._cloud_status == 0 or self._cloud_status == 2:
             self._wifi_img.set_src(WIFI_ERR_IMG)
         else:
@@ -180,38 +195,92 @@ class FlowApp(AppBase):
 
     def on_launch(self):
         DEBUG and print("Flow Launch")
-        self._mac = self._get_mac()
-        self._cloud_status = self._get_cloud_status()
-        self._user_id = self._get_user_id()
+        self._load_data()
 
     def on_view(self):
+        text_fg = 0x000000
+        text_bg = 0xFFFFFF
+
+        self._mac_caption_label = widgets.Label(
+            "MAC:",
+            5,
+            34,
+            w=38,
+            h=18,
+            font_align=widgets.Label.LEFT_ALIGNED,
+            fg_color=text_fg,
+            bg_color=text_bg,
+            font=M5.Lcd.FONTS.Montserrat14,
+            parent=self._sprite,
+        )
+
         self._mac_label = widgets.Label(
             str(None),
-            15,
-            63,
-            w=138,
-            h=24,
+            42,
+            34,
+            w=112,
+            h=18,
             font_align=widgets.Label.LEFT_ALIGNED,
-            fg_color=0x000000,
-            bg_color=0xFFFFFF,
-            font=M5.Lcd.FONTS.Montserrat18,
+            fg_color=text_fg,
+            bg_color=text_bg,
+            font=M5.Lcd.FONTS.Montserrat14,
             parent=self._sprite,
         )
         self._mac_label.set_long_mode(widgets.Label.LONG_DOT)
 
-        self._user_id_label = widgets.Label(
-            str(None),
-            15,
-            119,
-            w=138,
-            h=24,
+        self._access_caption_label = widgets.Label(
+            "Access code:",
+            5,
+            55,
+            w=150,
+            h=18,
             font_align=widgets.Label.LEFT_ALIGNED,
-            fg_color=0x000000,
-            bg_color=0xFFFFFF,
+            fg_color=text_fg,
+            bg_color=text_bg,
+            font=M5.Lcd.FONTS.Montserrat14,
+            parent=self._sprite,
+        )
+
+        self._access_code_label = widgets.Label(
+            str(None),
+            5,
+            74,
+            w=150,
+            h=22,
+            font_align=widgets.Label.LEFT_ALIGNED,
+            fg_color=text_fg,
+            bg_color=text_bg,
             font=M5.Lcd.FONTS.Montserrat18,
             parent=self._sprite,
         )
-        self._user_id_label.set_long_mode(widgets.Label.LONG_DOT)
+        self._access_code_label.set_long_mode(widgets.Label.LONG_DOT)
+
+        self._nick_caption_label = widgets.Label(
+            "Nickname:",
+            5,
+            99,
+            w=150,
+            h=18,
+            font_align=widgets.Label.LEFT_ALIGNED,
+            fg_color=text_fg,
+            bg_color=text_bg,
+            font=M5.Lcd.FONTS.Montserrat14,
+            parent=self._sprite,
+        )
+
+        self._nick_name_label = widgets.Label(
+            str(None),
+            5,
+            117,
+            w=150,
+            h=22,
+            font_align=widgets.Label.LEFT_ALIGNED,
+            fg_color=text_fg,
+            bg_color=text_bg,
+            font=M5.Lcd.FONTS.Montserrat18,
+            parent=self._sprite,
+        )
+        self._nick_name_label.set_long_mode(widgets.Label.LONG_DOT)
 
         self._bg_img = widgets.Image(
             use_sprite=False,
@@ -241,29 +310,35 @@ class FlowApp(AppBase):
 
     async def on_run(self):
         while True:
-            t = self._get_cloud_status()
-            if t is not self._cloud_status:
-                self._cloud_status = t
-                self._update_data()
+            cloud_status = self._get_cloud_status()
+            access_code = self._get_access_code()
+            nick_name = self._get_nick_name()
+            if (
+                cloud_status != self._cloud_status
+                or access_code != self._access_code
+                or nick_name != self._nick_name
+            ):
+                self._cloud_status = cloud_status
+                self._access_code = access_code
+                self._nick_name = nick_name
+                print_access_info(self._nick_name, self._access_code)
                 self._load_view()
-                await asyncio.sleep_ms(1000)
-            else:
-                await asyncio.sleep_ms(1000)
+            await asyncio.sleep_ms(1000)
 
     def on_exit(self):
         DEBUG and print("Flow Exit")
         try:
-            del self._mac_label, self._user_id_label
+            del self._mac_caption_label, self._mac_label
+            del self._access_caption_label, self._access_code_label
+            del self._nick_caption_label, self._nick_name_label
         except:
             pass
         del self._bg_img
 
     async def _keycode_enter_event_handler(self, fw):
-        # print("_keycode_enter_event_handler")
         pass
 
     async def _keycode_back_event_handler(self, fw):
-        # print("_keycode_back_event_handler")
         pass
 
     async def _keycode_dpad_down_event_handler(self, fw):

@@ -2,12 +2,10 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import Startup
+from . import Startup, print_access_info
 import M5
 import network
 import widgets
-import os
-import sys
 import gc
 import asyncio
 import esp32
@@ -30,11 +28,9 @@ CHARGE_ICON = "/system/sticks3/CHG.jpg"
 NO_CHARGE_ICON = "/system/sticks3/noCHG.jpg"
 CLOUD_ICON = "/system/sticks3/1a.jpg"
 USB_ICON = "/system/sticks3/1b.jpg"
-APPLIST_ICON = "/system/sticks3/1c.jpg"
 LORACHAT_ICON = "/system/sticks3/1d.jpg"
 SETUP_ICON = "/system/sticks3/1e.jpg"
 USB_IMG = "/system/sticks3/usb.jpg"
-APPLIST_IMG = "/system/sticks3/APPLIST.jpg"
 CLOUD_IMG = "/system/sticks3/a11.jpg"
 NG_IMG = "/system/sticks3/ng.jpg"
 WIFI_OK_IMG = "/system/sticks3/wifi_ok.jpg"
@@ -176,192 +172,6 @@ class UsbApp(AppBase):
 
     async def _keycode_dpad_down_event_handler(self, fw: "Framework") -> None:
         DEBUG and print("_keycode_dpad_down_event_handler")
-
-
-class RunApp(AppBase):
-    def __init__(self) -> None:
-        super().__init__()
-
-    def on_ready(self):
-        M5.Lcd.clear()
-        execfile("main.py", {"__name__": "__main__"})  # noqa: F821
-        raise KeyboardInterrupt
-
-
-class ListApp(AppBase):
-    def __init__(self) -> None:
-        super().__init__()
-
-    def on_launch(self):
-        self._battery_label = widgets.Label(
-            str(None),
-            135 - 14,
-            6,
-            w=135,
-            h=20,
-            font_align=widgets.Label.RIGHT_ALIGNED,
-            fg_color=0x000000,
-            bg_color=0xFFFFFF,
-            font=M5.Lcd.FONTS.Montserrat14,
-        )
-        self._bg_img = widgets.Image(use_sprite=False)
-        self._bg_img.set_x(0)
-        self._bg_img.set_y(0)
-        self._bg_img.set_size(135, 240)
-
-        self._labels = []
-        self._label0 = None
-        self._label1 = None
-        self._label2 = None
-        self._lebals = []
-        self._lebal0 = None
-        self._lebal1 = None
-        self._lebal2 = None
-
-        self._files = []
-        for file in os.listdir("apps"):
-            if file.endswith(".py"):
-                self._files.append(file)
-        self._files_number = len(self._files)
-        self._cursor_pos = 0
-        self._file_pos = 0
-
-    def on_view(self):
-        self._bg_img.set_src(APPLIST_IMG)
-        if self._label0 is None:
-            self._label0 = widgets.Label(
-                "",
-                25,
-                108,
-                w=85,
-                h=22,
-                fg_color=0xFFFFFF,
-                bg_color=0x333333,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._label0.set_long_mode(widgets.Label.LONG_DOT)
-        if self._label1 is None:
-            self._label1 = widgets.Label(
-                "",
-                25,
-                108 + 22 + 5,
-                w=85,
-                h=22,
-                fg_color=0x999999,
-                bg_color=0x000000,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._label1.set_long_mode(widgets.Label.LONG_DOT)
-        if self._label2 is None:
-            self._label2 = widgets.Label(
-                "",
-                25,
-                108 + 22 + 5 + 22 + 5,
-                w=85,
-                h=22,
-                fg_color=0x4D4D4D,
-                bg_color=0x000000,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._label2.set_long_mode(widgets.Label.LONG_DOT)
-
-        if len(self._labels) != 3:
-            self._labels.clear()
-            self._labels.append(self._label0)
-            self._labels.append(self._label1)
-            self._labels.append(self._label2)
-
-        if self._lebal0 is None:
-            self._lebal0 = widgets.Label(
-                "",
-                25,
-                108 - 22 - 5,
-                w=85,
-                h=22,
-                fg_color=0x999999,
-                bg_color=0x000000,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._lebal0.set_long_mode(widgets.Label.LONG_DOT)
-
-        if self._lebal1 is None:
-            self._lebal1 = widgets.Label(
-                "",
-                25,
-                108 - 22 - 5 - 22 - 5,
-                w=85,
-                h=22,
-                fg_color=0x4D4D4D,
-                bg_color=0x000000,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._lebal1.set_long_mode(widgets.Label.LONG_DOT)
-
-        if self._lebal2 is None:
-            self._lebal2 = widgets.Label(
-                "",
-                25,
-                108 - 22 - 5 - 22 - 5 - 22 - 5,
-                w=85,
-                h=22,
-                fg_color=0x333333,
-                bg_color=0x000000,
-                font=M5.Lcd.FONTS.Montserrat18,
-            )
-            self._lebal2.set_long_mode(widgets.Label.LONG_DOT)
-
-        if len(self._lebals) != 3:
-            self._lebals.clear()
-            self._lebals.append(self._lebal0)
-            self._lebals.append(self._lebal1)
-            self._lebals.append(self._lebal2)
-
-        for label, file in zip(self._labels, self._files):
-            # print("file:", file)
-            file and label and label.set_text(file)
-
-    async def on_run(self):
-        while True:
-            # battery
-            self._battery_label.set_text(str(M5.Power.getBatteryLevel()))
-            await asyncio.sleep_ms(1000)
-
-    def on_exit(self):
-        del self._bg_img, self._battery_label, self._labels, self._files, self._lebals
-
-    async def _keycode_enter_event_handler(self, fw: "Framework"):
-        DEBUG and print("_keycode_enter_event_handler")
-        M5.Lcd.clear()
-        execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-        raise KeyboardInterrupt
-
-    async def _keycode_back_event_handler(self, fw: "Framework"):
-        DEBUG and print("_keycode_back_event_handler")
-        self.stop()
-        fw._app_selector.select(fw._launcher)
-        fw._launcher.start()
-
-    async def _keycode_dpad_down_event_handler(self, fw: "Framework"):
-        DEBUG and print("_keycode_dpad_down_event_handler")
-        self._file_pos += 1
-
-        if self._file_pos >= len(self._files):
-            self._file_pos = 0
-
-        for label in self._labels:
-            label.set_text("")
-
-        for label, file in zip(self._labels, self._files[self._file_pos :]):
-            file and label and label.set_text(file)
-
-        for label in self._lebals:
-            label.set_text("")
-
-        files = self._files[: self._file_pos]
-        files.reverse()
-
-        for label, file in zip(self._lebals, files):
-            file and label and label.set_text(file)
 
 
 class LoRaChatApp(AppBase):
@@ -736,10 +546,11 @@ class SetupApp(AppBase):
                     if M5Things.status() < 2:
                         pass
                     if M5Things.status() == 2:
-                        if M5Things.paircode() != "":
+                        if M5Things.accesscode() != "":
                             self._state = self._STATE_SERVER_OK
-                            self._pair_code = M5Things.paircode()
+                            self._access_code = M5Things.accesscode()
                             self._nick_name = M5Things.nick_name()
+                            print_access_info(self._nick_name, self._access_code)
                             self._bg_img.set_src(SETUP_SERVER_OK_IMG)
 
                             self._net_status_img = widgets.Image(use_sprite=False)
@@ -756,10 +567,10 @@ class SetupApp(AppBase):
                             self._server_status_img.set_src(SERVER_OK_IMG)
                             self._server_status = True
 
-                            self._pair_code_label = widgets.Label(
-                                self._pair_code,
+                            self._access_code_label = widgets.Label(
+                                self._access_code,
                                 67,
-                                153,
+                                101,
                                 w=103,
                                 h=29,
                                 font_align=widgets.Label.CENTER_ALIGNED,
@@ -770,7 +581,7 @@ class SetupApp(AppBase):
                             self._nick_name_label = widgets.Label(
                                 self._nick_name,
                                 67,
-                                103,
+                                151,
                                 w=129,
                                 h=29,
                                 font_align=widgets.Label.CENTER_ALIGNED,
@@ -779,7 +590,7 @@ class SetupApp(AppBase):
                                 font=M5.Lcd.FONTS.Montserrat24,
                             )
                             self._nick_name_label.set_long_mode(self._nick_name_label.LONG_DOT)
-                            self._pair_code_label.set_text(self._pair_code)
+                            self._access_code_label.set_text(self._access_code)
                     elif M5Things.status() > 2:
                         self._state = self._STATE_SERVER_NG
                         self._bg_img.set_src(SETUP_SERVER_NG_IMG)
@@ -809,10 +620,12 @@ class SetupApp(AppBase):
                     self._nick_name = t
                     self._nick_name_label.set_text(t)
 
-                t = M5Things.paircode()
-                if t != self._pair_code:
-                    self._pair_code = t
-                    self._pair_code_label.set_text(t)
+                t = M5Things.accesscode()
+                if t != self._access_code:
+                    self._access_code = t
+                    self._access_code_label.set_text(t)
+
+                print_access_info(self._nick_name, self._access_code)
 
             await asyncio.sleep_ms(100)
 
@@ -853,7 +666,7 @@ class CloudApp(AppBase):
         self._wifi_status = False
         self._cloud_status = False
         self._nick_name = ""
-        self._pair_code = ""
+        self._access_code = ""
 
     def _get_wifi_status(self) -> bool:
         return self._wifi.connect_status() == network.STAT_GOT_IP
@@ -883,10 +696,10 @@ class CloudApp(AppBase):
         self._server_status_img.set_size(34, 24)
         self._server_status_img.set_src(NG_IMG)
 
-        self._pair_code_label = widgets.Label(
-            self._pair_code,
+        self._access_code_label = widgets.Label(
+            self._access_code,
             67,
-            153,
+            101,
             w=103,
             h=29,
             font_align=widgets.Label.CENTER_ALIGNED,
@@ -898,7 +711,7 @@ class CloudApp(AppBase):
         self._nick_name_label = widgets.Label(
             self._nick_name,
             67,
-            103,
+            151,
             w=129,
             h=29,
             font_align=widgets.Label.CENTER_ALIGNED,
@@ -911,8 +724,9 @@ class CloudApp(AppBase):
     def on_view(self):
         self._net_status_img.set_src(WIFI_OK_IMG if self._get_wifi_status() else NG_IMG)
         self._server_status_img.set_src(SERVER_OK_IMG if self._get_cloud_status() else NG_IMG)
-        self._pair_code_label.set_text(self._pair_code)
+        self._access_code_label.set_text(self._access_code)
         self._nick_name_label.set_text(self._nick_name)
+        print_access_info(self._nick_name, self._access_code)
 
     async def on_run(self):
         while True:
@@ -932,10 +746,12 @@ class CloudApp(AppBase):
                     self._nick_name = t
                     self._nick_name_label.set_text(t)
 
-                t = M5Things.paircode()
-                if t != self._pair_code:
-                    self._pair_code = t
-                    self._pair_code_label.set_text(t)
+                t = M5Things.accesscode()
+                if t != self._access_code:
+                    self._access_code = t
+                    self._access_code_label.set_text(t)
+
+                print_access_info(self._nick_name, self._access_code)
 
             await asyncio.sleep_ms(1000)
 
@@ -977,7 +793,6 @@ class LauncherApp(AppBase):
         self._icons = (
             CLOUD_ICON,
             USB_ICON,
-            APPLIST_ICON,
             # LORACHAT_ICON,
             SETUP_ICON,
         )
@@ -1065,7 +880,7 @@ class LauncherApp(AppBase):
                 last_battery = M5.Power.getBatteryLevel()
                 self._battery_label.set_text(str(last_battery) + "%")
 
-            await asyncio.sleep_ms(200)
+            await asyncio.sleep_ms(500)
 
     def on_exit(self):
         del self._bg_img, self._icon_selector
@@ -1173,6 +988,7 @@ class StickS3_Startup:
             ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
         )
         M5.Power.setExtOutput(False)
+        M5.Power.setBatteryCharge(True)
         M5.Speaker.setVolume(100)
         M5.Speaker.tone(4000, 50)
 
@@ -1180,7 +996,6 @@ class StickS3_Startup:
 
         cloud_app = CloudApp((self._wifi, ssid))
         usb_app = UsbApp()
-        list_app = ListApp()
         # lorachat_app = LoRaChatApp()
         setup_app = SetupApp(data=self._wifi)
         launcher = LauncherApp(data=cloud_app)
@@ -1190,7 +1005,6 @@ class StickS3_Startup:
         fw.install(launcher)
         fw.install(cloud_app)
         fw.install(usb_app)
-        fw.install(list_app)
         # fw.install(lorachat_app)
         fw.install(setup_app)
         fw.start()

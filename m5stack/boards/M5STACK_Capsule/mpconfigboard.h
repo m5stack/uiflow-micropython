@@ -19,6 +19,7 @@
 #define MICROPY_HW_USB_PID 0x816B
 #define MICROPY_HW_USB_MANUFACTURER_STRING "M5Stack"
 #define MICROPY_HW_USB_PRODUCT_FS_STRING "Capsule(UiFlow2)"
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING "Capsule(UiFlow2)"
 
 // If not enable LVGL, ignore this...
 #include "./../mpconfiglvgl.h"

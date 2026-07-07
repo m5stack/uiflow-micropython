@@ -55,6 +55,9 @@ Touch
 
         Get the current X coordinate of the touch.
 
+        The returned coordinate is automatically adjusted based on the current
+        display rotation set by ``setRotation()``.
+
         :returns: int - The X coordinate.
 
         UiFlow2 Code Block:
@@ -70,6 +73,9 @@ Touch
     .. py:method:: getY()
 
         Get the current Y coordinate of the touch.
+
+        The returned coordinate is automatically adjusted based on the current
+        display rotation set by ``setRotation()``.
 
         :returns: int - The Y coordinate.
 
@@ -128,6 +134,17 @@ Touch
 
         Get the raw touch point coordinates.
 
+        .. warning::
+
+            This method returns **raw hardware coordinates** that are **NOT**
+            adjusted for the current display rotation set by ``setRotation()``.
+            If you have changed the display rotation, you must manually transform
+            the coordinates to match the display orientation.
+
+            For single-touch scenarios, prefer ``getX()`` / ``getY()`` which
+            automatically adjust for rotation. Use ``getTouchPointRaw()`` only
+            when you need multi-touch support.
+
         :param int index: Index of the touch point (default is 0).
         :returns: tuple - A tuple of 4 elements containing raw touch point data:
 
@@ -147,3 +164,33 @@ Touch
             .. code-block:: python
 
                 raw = M5.Touch.getTouchPointRaw(0)
+
+        **Coordinate Transformation for Multi-Touch**
+
+        When the display rotation is changed via ``setRotation()``, the raw
+        coordinates from ``getTouchPointRaw()`` must be manually transformed
+        to match the current screen orientation:
+
+            .. code-block:: python
+
+                def transform_touch(raw_x, raw_y, rotation, raw_w, raw_h):
+                    """Transform raw touch coordinates to match display rotation."""
+                    if rotation == 0:
+                        return raw_x, raw_y
+                    elif rotation == 1:
+                        return raw_y, (raw_w - 1) - raw_x
+                    elif rotation == 2:
+                        return (raw_w - 1) - raw_x, (raw_h - 1) - raw_y
+                    elif rotation == 3:
+                        return (raw_h - 1) - raw_y, raw_x
+                    return raw_x, raw_y
+
+                # Usage:
+                raw = M5.Touch.getTouchPointRaw(0)
+                if raw:
+                    x, y, _, _ = raw
+                    # raw_w, raw_h = physical panel size (before rotation)
+                    sx, sy = transform_touch(x, y, M5.Lcd.getRotation(), 1280, 720)
+
+        For single-touch scenarios, prefer ``getX()`` / ``getY()`` which
+        handle rotation automatically.

@@ -8,6 +8,7 @@ package(
         "__init__.py",
         "ac.py",
         "poe.py",
+        "plc.py",
     ),
     base_path="..",
     opt=2,

@@ -1,0 +1,59 @@
+.. |Chain RGB| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1252/U218_Chain_RGB_main_pictures_01.webp
+    :target: https://docs.m5stack.com/en/products/sku/U218
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/init.png
+
+.. |get_display_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_display_mode.png
+
+.. |set_display_mode.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_display_mode.png
+
+.. |get_display_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_display_buffer.png
+
+.. |set_display_buffer.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_display_buffer.png
+
+.. |get_pixel.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_pixel.png
+
+.. |set_pixel.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_pixel.png
+
+.. |get_pixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_pixels.png
+
+.. |set_pixels.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_pixels.png
+
+.. |set_display_char.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_display_char.png
+
+.. |set_scroll_text.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_scroll_text.png
+
+.. |get_scroll_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_scroll_state.png
+
+.. |set_scroll_state.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_scroll_state.png
+
+.. |get_display_rotation.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_display_rotation.png
+
+.. |set_display_rotation.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_display_rotation.png
+
+.. |get_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_brightness.png
+
+.. |set_brightness.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/set_brightness.png
+
+.. |get_device_uid.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_device_uid.png
+
+.. |get_bootloader_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_bootloader_version.png
+
+.. |get_firmware_version.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_firmware_version.png
+
+.. |get_device_type.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/get_device_type.png
+
+
+
+.. |example.png| image:: https://static-cdn.m5stack.com/mpy_docs/chain/rgb/example.png
+
+.. |basic_chain_rgb_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/chain/rgb/basic_chain_rgb_example.m5f2"
+        target="_blank"
+    >
+        basic_chain_rgb_example.m5f2
+    </a>

@@ -1,0 +1,613 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-09 22:01+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/rgb.rst:2 ../../source/refs/chain.rgb.ref
+#: 0a5aa432a2464b2590e883ab956448aa 0db3456043db4649827b26b76ad8f4b8
+msgid "Chain RGB"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:6 c6ddcd9246114a8ab862237f762f1534
+msgid ""
+"RGBChain is the helper class for Chain RGB display devices on the Chain "
+"bus. It provides methods to control an 8 x 8 RGB display using RGB888 "
+"integer color values, including pixel drawing, full-screen buffer "
+"refresh, ASCII character display, scrolling text, brightness, and "
+"rotation."
+msgstr ""
+"RGBChain 是 Chain 总线上 Chain RGB 显示设备的辅助类。它提供控制 8x8 RGB 显示屏的方法，使用 RGB888 "
+"整数颜色值，支持像素绘制、全屏缓冲区刷新、ASCII 字符显示、滚动文本、亮度和旋转。"
+
+#: ../../source/chain/rgb.rst:11 3189a4e53b1a4dd1b3821df712b4afb4
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/rgb.rst:13 c1229027d6a54c2491c929113a11ef75
+msgid "|Chain RGB|"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:17 91049be52f7647709b9f626aae217ad5
+msgid "Constants"
+msgstr "常量"
+
+#: ../../source/chain/rgb.rst:19 65607fcf14444cf6a82e9a2c88a334ea
+msgid "Display modes use ``RGBChain.MODE_PIXEL`` and ``RGBChain.MODE_SCROLL``."
+msgstr "显示模式使用 ``RGBChain.MODE_PIXEL`` 和 ``RGBChain.MODE_SCROLL``。"
+
+#: ../../source/chain/rgb.rst:21 80704851a3324c30a1129d73de6fd7a1
+msgid ""
+"Scroll directions use ``RGBChain.SCROLL_DIR_LEFT``, "
+"``RGBChain.SCROLL_DIR_RIGHT``, ``RGBChain.SCROLL_DIR_UP``, and "
+"``RGBChain.SCROLL_DIR_DOWN``."
+msgstr ""
+"滚动方向使用 "
+"``RGBChain.SCROLL_DIR_LEFT``、``RGBChain.SCROLL_DIR_RIGHT``、``RGBChain.SCROLL_DIR_UP``"
+" 和 ``RGBChain.SCROLL_DIR_DOWN``。"
+
+#: ../../source/chain/rgb.rst:25 c11f273fc54b4973b2709c461a8211cb
+msgid ""
+"Scroll modes use ``RGBChain.SCROLL_MODE_ONCE``, "
+"``RGBChain.SCROLL_MODE_LOOP``, and ``RGBChain.SCROLL_MODE_BOUNCE``."
+msgstr ""
+"滚动模式使用 ``RGBChain.SCROLL_MODE_ONCE``、``RGBChain.SCROLL_MODE_LOOP`` 和 "
+"``RGBChain.SCROLL_MODE_BOUNCE``。"
+
+#: ../../source/chain/rgb.rst:28 688e92ec34054046bbd68a7e75f32b35
+msgid ""
+"Scroll states use ``RGBChain.SCROLL_STATE_START``, "
+"``RGBChain.SCROLL_STATE_PAUSE``, and ``RGBChain.SCROLL_STATE_RESET``."
+msgstr ""
+"滚动状态使用 ``RGBChain.SCROLL_STATE_START``、``RGBChain.SCROLL_STATE_PAUSE`` 和 "
+"``RGBChain.SCROLL_STATE_RESET``。"
+
+#: ../../source/chain/rgb.rst:31 80704851a3324c30a1129d73de6fd7a1
+msgid ""
+"Display rotation uses ``RGBChain.ROTATION_0``, ``RGBChain.ROTATION_90``, "
+"``RGBChain.ROTATION_180``, and ``RGBChain.ROTATION_270``."
+msgstr ""
+"显示旋转使用 "
+"``RGBChain.ROTATION_0``、``RGBChain.ROTATION_90``、``RGBChain.ROTATION_180``"
+" 和 ``RGBChain.ROTATION_270``。"
+
+#: ../../source/chain/rgb.rst:35 dff4f2c19f8140798b3d4d65dbadf813
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:38 ../../source/chain/rgb.rst:58
+#: 2eabb88ff6464ce0b54513ee8d34cc7f 6de46ec2846b4e8a9c49fffa0b9d6aec
+msgid "Scroll text, rotation, and brightness control"
+msgstr "滚动文本、旋转和亮度控制"
+
+#: ../../source/chain/rgb.rst:40 4487ba155fac46a5a77a98a1b4063687
+msgid "Open the |basic_chain_rgb_example.m5f2| project in UiFlow2."
+msgstr ""
+
+#: ../../source/chain/rgb.rst:42 56729e5eca984d7cbed4e94f9ae098ef
+#, fuzzy
+msgid ""
+"This example initializes Chain RGB in scroll mode and displays the text "
+"``M5STACK`` in cyan. It also shows a simple controller UI on the host "
+"display and uses the hardware buttons to control the Chain RGB module."
+msgstr ""
+"该示例将 Chain RGB 初始化为滚动模式，并以青色显示文本 "
+"``M5STACK``，同时在主机屏幕上显示一个简单的控制界面，并使用硬件按键控制 Chain RGB 模块："
+
+#: ../../source/chain/rgb.rst:46 4298c0bd14c3405b965c780562ae1679
+#: chain.rgb.RGBChain:6 chain.rgb.RGBChain.get_brightness:6
+#: chain.rgb.RGBChain.get_display_buffer:6
+#: chain.rgb.RGBChain.get_display_mode:6
+#: chain.rgb.RGBChain.get_display_rotation:6 chain.rgb.RGBChain.get_pixel:8
+#: chain.rgb.RGBChain.get_pixels:7 chain.rgb.RGBChain.get_scroll_state:6
+#: chain.rgb.RGBChain.set_brightness:8 chain.rgb.RGBChain.set_display_buffer:7
+#: chain.rgb.RGBChain.set_display_char:10 chain.rgb.RGBChain.set_display_mode:7
+#: chain.rgb.RGBChain.set_display_rotation:8 chain.rgb.RGBChain.set_pixel:9
+#: chain.rgb.RGBChain.set_pixels:7 chain.rgb.RGBChain.set_scroll_state:7
+#: chain.rgb.RGBChain.set_scroll_text:11 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/rgb.rst:48 74698f6977994c858074be4602ec4485
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:50 49a7c0e9d05f4000b436d001e2d34872
+#, fuzzy
+msgid "example.png"
+msgstr "示例输出："
+
+#: ../../source/chain/rgb.rst:50 ../../source/chain/rgb.rst:74
+#: 8939a90ab45f458ca4fe435d52edc1d3 8d881976dfe949d4afa8986800fc7af4
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/rgb.rst:52 ../../source/chain/rgb.rst:76
+#: 66574812515144219653a3ae10280025 db73bb59bab34927b988aca166e50ddd
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:55 dff4f2c19f8140798b3d4d65dbadf813
+msgid "MicroPython Examples"
+msgstr "MicroPython 示例"
+
+#: ../../source/chain/rgb.rst:60 56729e5eca984d7cbed4e94f9ae098ef
+msgid ""
+"This example initializes Chain RGB in scroll mode and displays the text "
+"``M5STACK`` in cyan. It also shows a simple controller UI on the host "
+"display and uses the hardware buttons to control the Chain RGB module:"
+msgstr ""
+"该示例将 Chain RGB 初始化为滚动模式，并以青色显示文本 "
+"``M5STACK``，同时在主机屏幕上显示一个简单的控制界面，并使用硬件按键控制 Chain RGB 模块："
+
+#: ../../source/chain/rgb.rst:64 3436323c61c14c5e837f4e154f5e775b
+msgid "``BtnA`` toggles the scroll state between start and pause."
+msgstr "``BtnA`` 在开始和暂停之间切换滚动状态。"
+
+#: ../../source/chain/rgb.rst:65 ab5362f8b76d49239e9a63d1f73c3f6c
+msgid "``BtnB`` cycles the display rotation through 0, 90, 180, and 270 degrees."
+msgstr "``BtnB`` 在 0、90、180、270 度之间循环切换显示旋转。"
+
+#: ../../source/chain/rgb.rst:66 a8e1d668974e486cb2f84a70c7700d71
+msgid "``BtnC`` cycles the display brightness level."
+msgstr "``BtnC`` 循环切换显示亮度等级。"
+
+#: ../../source/chain/rgb.rst:68 chain.rgb.RGBChain:10
+#: chain.rgb.RGBChain.get_brightness:10
+#: chain.rgb.RGBChain.get_display_buffer:10
+#: chain.rgb.RGBChain.get_display_mode:10
+#: chain.rgb.RGBChain.get_display_rotation:10 chain.rgb.RGBChain.get_pixel:12
+#: chain.rgb.RGBChain.get_pixels:11 chain.rgb.RGBChain.get_scroll_state:10
+#: chain.rgb.RGBChain.set_brightness:12
+#: chain.rgb.RGBChain.set_display_buffer:11
+#: chain.rgb.RGBChain.set_display_char:14
+#: chain.rgb.RGBChain.set_display_mode:11
+#: chain.rgb.RGBChain.set_display_rotation:12 chain.rgb.RGBChain.set_pixel:13
+#: chain.rgb.RGBChain.set_pixels:11 chain.rgb.RGBChain.set_scroll_state:11
+#: chain.rgb.RGBChain.set_scroll_text:15 f86482d2b1fd4b3aaf77b89ed57e7d65 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/rgb.rst:79 60a4cade8d824bcc9b0cdc9a9dc4c699
+msgid "**API**"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:82 0190b20552a2472689be40152d95c5be
+msgid "RGBChain"
+msgstr ""
+
+#: 93e706120694430483cf4102a638def4 chain.rgb.RGBChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "基类：:py:class:`~chain.key.KeyChain`"
+
+#: b3fd8fb877a64c739daa8c2c0f4c703b chain.rgb.RGBChain:1 of
+msgid ""
+"RGB Chain class for interacting with 8x8 RGB display devices over Chain "
+"bus."
+msgstr "用于通过 Chain 总线与 8x8 RGB 显示设备交互的 RGB Chain 类。"
+
+#: ../../source/chain/rgb.rst 96b4ddc43413482f9e21678f70fd75b8
+#: chain.rgb.RGBChain.get_pixel chain.rgb.RGBChain.get_pixels
+#: chain.rgb.RGBChain.set_brightness chain.rgb.RGBChain.set_display_buffer
+#: chain.rgb.RGBChain.set_display_char chain.rgb.RGBChain.set_display_mode
+#: chain.rgb.RGBChain.set_display_rotation chain.rgb.RGBChain.set_pixel
+#: chain.rgb.RGBChain.set_pixels chain.rgb.RGBChain.set_scroll_state
+#: chain.rgb.RGBChain.set_scroll_text of
+msgid "Parameters"
+msgstr "参数"
+
+#: 49c00c978b8b4c58a3a216ec6f32367b chain.rgb.RGBChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 48b0bd4415554316b368bca3f8c03b63 chain.rgb.RGBChain:4 of
+msgid "The device ID of the RGB display on the Chain bus."
+msgstr "Chain 总线上 RGB 显示设备的设备 ID。"
+
+#: chain.rgb.RGBChain:8 d89aacb6eb7740fe8ed3cfaaf576f112 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:6 49a7c0e9d05f4000b436d001e2d34872
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/rgb.rst:89 ede98dce5fbf43c9af5eb5d4180ea6d2
+msgid ""
+"For general Chain device methods, please refer to the :class:`ChainKey "
+"<chain.key.KeyChain>` class."
+msgstr "通用 Chain 设备方法请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: b38e1f6df3ee47aaa1d68637cec87071 chain.rgb.RGBChain.set_display_mode:1 of
+msgid "Set the display mode."
+msgstr "设置显示模式。"
+
+#: 65607fcf14444cf6a82e9a2c88a334ea chain.rgb.RGBChain.set_display_mode:3 of
+msgid ""
+"Display mode. Use :attr:`RGBChain.MODE_PIXEL` (0) for pixel mode or "
+":attr:`RGBChain.MODE_SCROLL` (1) for scrolling string mode."
+msgstr ""
+"显示模式。使用 :attr:`RGBChain.MODE_PIXEL` (0) 表示像素模式，使用 "
+":attr:`RGBChain.MODE_SCROLL` (1) 表示字符串滚动模式。"
+
+#: 6c613f8468f24523ac89fdea67f8cf06 chain.rgb.RGBChain.get_brightness
+#: chain.rgb.RGBChain.get_display_buffer chain.rgb.RGBChain.get_display_mode
+#: chain.rgb.RGBChain.get_display_rotation chain.rgb.RGBChain.get_pixel
+#: chain.rgb.RGBChain.get_pixels chain.rgb.RGBChain.get_scroll_state
+#: chain.rgb.RGBChain.set_brightness chain.rgb.RGBChain.set_display_buffer
+#: chain.rgb.RGBChain.set_display_char chain.rgb.RGBChain.set_display_mode
+#: chain.rgb.RGBChain.set_display_rotation chain.rgb.RGBChain.set_pixel
+#: chain.rgb.RGBChain.set_pixels chain.rgb.RGBChain.set_scroll_state
+#: chain.rgb.RGBChain.set_scroll_text of
+msgid "Returns"
+msgstr "返回值"
+
+#: 7c567799abe94c56b858fab4a1957a85 chain.rgb.RGBChain.set_brightness:5
+#: chain.rgb.RGBChain.set_display_buffer:4
+#: chain.rgb.RGBChain.set_display_char:7 chain.rgb.RGBChain.set_display_mode:4
+#: chain.rgb.RGBChain.set_display_rotation:5 chain.rgb.RGBChain.set_pixel:6
+#: chain.rgb.RGBChain.set_pixels:4 chain.rgb.RGBChain.set_scroll_state:4
+#: chain.rgb.RGBChain.set_scroll_text:8 of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: chain.rgb.RGBChain.get_brightness chain.rgb.RGBChain.get_display_buffer
+#: chain.rgb.RGBChain.get_display_mode chain.rgb.RGBChain.get_display_rotation
+#: chain.rgb.RGBChain.get_pixel chain.rgb.RGBChain.get_pixels
+#: chain.rgb.RGBChain.get_scroll_state chain.rgb.RGBChain.set_brightness
+#: chain.rgb.RGBChain.set_display_buffer chain.rgb.RGBChain.set_display_char
+#: chain.rgb.RGBChain.set_display_mode chain.rgb.RGBChain.set_display_rotation
+#: chain.rgb.RGBChain.set_pixel chain.rgb.RGBChain.set_pixels
+#: chain.rgb.RGBChain.set_scroll_state chain.rgb.RGBChain.set_scroll_text
+#: fce16bf39d7f490eaaf88afae3ae7061 of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 7d4e9d74dcfe48d1879a9cb67fc5510d chain.rgb.RGBChain.set_display_mode:9 of
+msgid "|set_display_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:10 50546e3e6d2842f582fdabb98d3c1237
+msgid "set_display_mode.png"
+msgstr ""
+
+#: 436c85a9a7ae4583be48c2af3e46d506 chain.rgb.RGBChain.get_display_mode:1 of
+msgid "Get the display mode."
+msgstr "获取显示模式。"
+
+#: 199fc69ccf0d4d398a5b616686c36922 chain.rgb.RGBChain.get_display_mode:3 of
+msgid ""
+"Display mode. 0 means pixel mode, 1 means scrolling string mode. Returns "
+"None if failed."
+msgstr "显示模式。0 表示像素模式，1 表示字符串滚动模式。失败时返回 None。"
+
+#: 2fa655a4faa24c3d8ba1dbd72a4824b9 chain.rgb.RGBChain.get_display_mode:8 of
+msgid "|get_display_mode.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:8 aa7df2e51bae41f28dc6b5de6dbb5945
+msgid "get_display_mode.png"
+msgstr ""
+
+#: b021ae10fed54db386abbbfce6725df5 chain.rgb.RGBChain.set_pixel:1 of
+msgid "Set one pixel color on the 8x8 display."
+msgstr "设置 8x8 显示屏上单个像素的颜色。"
+
+#: 0f98970af46e45e8b3f3c1e132b10823 chain.rgb.RGBChain.get_pixel:3
+#: chain.rgb.RGBChain.set_pixel:3 of
+msgid "X coordinate, range 0-7."
+msgstr "X 坐标，范围 0-7。"
+
+#: 65de235bb6bd4abaacb84c03d912bacb chain.rgb.RGBChain.get_pixel:4
+#: chain.rgb.RGBChain.set_pixel:4 of
+msgid "Y coordinate, range 0-7."
+msgstr "Y 坐标，范围 0-7。"
+
+#: 7747c7d0e4bb4ebc8aa053449c537cf5 chain.rgb.RGBChain.set_pixel:5 of
+msgid "RGB888 color value in ``0xRRGGBB`` format."
+msgstr "``0xRRGGBB`` 格式的 RGB888 颜色值。"
+
+#: 74698f6977994c858074be4602ec4485 chain.rgb.RGBChain.set_pixel:11 of
+msgid "|set_pixel.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:18 49a7c0e9d05f4000b436d001e2d34872
+msgid "set_pixel.png"
+msgstr ""
+
+#: 20bb781cb06f479080feb7917c5e15ec chain.rgb.RGBChain.set_pixels:1 of
+msgid "Set multiple pixel colors on the 8x8 display."
+msgstr "设置 8x8 显示屏上多个像素的颜色。"
+
+#: 6f1f92afe10947bab3ce82b8bab2c3d5 chain.rgb.RGBChain.set_pixels:3 of
+msgid "Iterable of ``(x, y, color)`` values. Supports 1-64 pixels."
+msgstr "``(x, y, color)`` 值的可迭代对象，支持 1-64 个像素。"
+
+#: 86c925bbd43d4cbea8480c410ca89b6d chain.rgb.RGBChain.set_pixels:9 of
+msgid "|set_pixels.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:22 49a7c0e9d05f4000b436d001e2d34872
+msgid "set_pixels.png"
+msgstr ""
+
+#: 73a63dceb43541ab9b2acacf50c8b764 chain.rgb.RGBChain.get_pixel:1 of
+msgid "Get one pixel RGB888 color from the 8x8 display."
+msgstr "从 8x8 显示屏读取单个像素的 RGB888 颜色。"
+
+#: 112495c92a4d47988a071f62ef7d1b58 chain.rgb.RGBChain.get_pixel:5 of
+msgid "RGB888 color value in 0xRRGGBB format, or None if failed."
+msgstr "``0xRRGGBB`` 格式的 RGB888 颜色值，失败时返回 None。"
+
+#: 241bbd971e7e49f6bb7d7d90e8addbbc chain.rgb.RGBChain.get_pixel:10 of
+msgid "|get_pixel.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:16 49a7c0e9d05f4000b436d001e2d34872
+msgid "get_pixel.png"
+msgstr ""
+
+#: 31d7394af54249f9aa6c33179759e47d chain.rgb.RGBChain.get_pixels:1 of
+msgid "Get multiple pixel RGB888 colors from the 8x8 display."
+msgstr "从 8x8 显示屏读取多个像素的 RGB888 颜色。"
+
+#: 137063ea7228450e9efc3c49a59b6bca chain.rgb.RGBChain.get_pixels:3 of
+msgid "Iterable of ``(x, y)`` coordinates. Supports 1-64 pixels."
+msgstr "``(x, y)`` 坐标的可迭代对象，支持 1-64 个像素。"
+
+#: c9a8c3c92ef14c52b51f2e66e5c68b5d chain.rgb.RGBChain.get_pixels:4 of
+msgid "Tuple of RGB888 color values in 0xRRGGBB format, or None if failed."
+msgstr "由 ``0xRRGGBB`` 格式 RGB888 颜色值组成的元组，失败时返回 None。"
+
+#: chain.rgb.RGBChain.get_pixels:9 e16c82b3f201443bb17da98fd3d04a17 of
+msgid "|get_pixels.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:20 49a7c0e9d05f4000b436d001e2d34872
+msgid "get_pixels.png"
+msgstr ""
+
+#: cdffe55129c24688b28b73ed1a339d9e chain.rgb.RGBChain.set_display_buffer:1 of
+msgid "Refresh the full 8x8 display buffer."
+msgstr "刷新完整的 8x8 显示缓冲区。"
+
+#: chain.rgb.RGBChain.set_display_buffer:3 fc917dbb82ba4a9faa226c9492f5e8a8 of
+msgid ""
+"64 RGB888 color values in 0xRRGGBB format, row-major order, left to right"
+" and top to bottom."
+msgstr "64 个 ``0xRRGGBB`` 格式的 RGB888 颜色值，按行优先顺序从左到右、从上到下排列。"
+
+#: 94efee0d25724315a2a349b57fa335bf chain.rgb.RGBChain.set_display_buffer:9 of
+msgid "|set_display_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:14 74de94905391432d9c923eb1cb3ef6c2
+msgid "set_display_buffer.png"
+msgstr ""
+
+#: cbf555a326624911ab42d1548a1ac689 chain.rgb.RGBChain.get_display_buffer:1 of
+msgid "Get the full 64-color RGB888 display buffer."
+msgstr "获取完整的 64 色 RGB888 显示缓冲区。"
+
+#: 936705c4e8134397b62fbdb1c7feb6d7 chain.rgb.RGBChain.get_display_buffer:3 of
+msgid "Tuple of 64 RGB888 color values in 0xRRGGBB format, or None if failed."
+msgstr "由 64 个 ``0xRRGGBB`` 格式 RGB888 颜色值组成的元组，失败时返回 None。"
+
+#: 5682f708b3524cdfa2f0fad07330c586 chain.rgb.RGBChain.get_display_buffer:8 of
+msgid "|get_display_buffer.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:12 b6292eb0fdaa458bb812128322c31fcc
+msgid "get_display_buffer.png"
+msgstr ""
+
+#: 7377a0cdd563470f9224ae554bf44e54 chain.rgb.RGBChain.set_display_char:1 of
+msgid "Set one ASCII character in pixel mode."
+msgstr "在像素模式下设置单个 ASCII 字符。"
+
+#: chain.rgb.RGBChain.set_display_char:3 dd6e7917a4e2451da9069f684285d58e of
+msgid "Character or ASCII code in range 32-127."
+msgstr "字符或 ASCII 编码，范围 32-127。"
+
+#: 49ad713e1d054184b224b804842eca9b chain.rgb.RGBChain.set_display_char:4 of
+msgid "X offset, range 0-7."
+msgstr "X 偏移，范围 0-7。"
+
+#: 64c71b8df3b6456bb0d28c78e8f8287d chain.rgb.RGBChain.set_display_char:5 of
+msgid "Y offset, range 0-7."
+msgstr "Y 偏移，范围 0-7。"
+
+#: 7747c7d0e4bb4ebc8aa053449c537cf5 chain.rgb.RGBChain.set_display_char:6 of
+#, fuzzy
+msgid "RGB888 color value in 0xRRGGBB format."
+msgstr "``0xRRGGBB`` 格式的 RGB888 颜色值。"
+
+#: 7d4e9d74dcfe48d1879a9cb67fc5510d chain.rgb.RGBChain.set_display_char:12 of
+msgid "|set_display_char.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:24 a5b21d340d924fa28335f84ef6b966f0
+msgid "set_display_char.png"
+msgstr ""
+
+#: chain.rgb.RGBChain.set_scroll_text:1 da8e5dc141084fab92cb2f5f3a672291 of
+msgid "Set the scrolling ASCII text."
+msgstr "设置滚动 ASCII 文本。"
+
+#: 3bade50a800146698120c88a293f7c33 chain.rgb.RGBChain.set_scroll_text:3 of
+msgid "ASCII string or bytes to display. Supports ASCII characters 32-127."
+msgstr "要显示的 ASCII 字符串或字节，支持 ASCII 字符 32-127。"
+
+#: 80704851a3324c30a1129d73de6fd7a1 chain.rgb.RGBChain.set_scroll_text:4 of
+msgid ""
+"Scroll direction. Use :attr:`RGBChain.SCROLL_DIR_LEFT` (0), "
+":attr:`RGBChain.SCROLL_DIR_RIGHT` (1), :attr:`RGBChain.SCROLL_DIR_UP` "
+"(2), or :attr:`RGBChain.SCROLL_DIR_DOWN` (3)."
+msgstr ""
+"滚动方向。使用 :attr:`RGBChain.SCROLL_DIR_LEFT` "
+"(0)、:attr:`RGBChain.SCROLL_DIR_RIGHT` (1)、:attr:`RGBChain.SCROLL_DIR_UP` "
+"(2) 或 :attr:`RGBChain.SCROLL_DIR_DOWN` (3)。"
+
+#: c11f273fc54b4973b2709c461a8211cb chain.rgb.RGBChain.set_scroll_text:5 of
+msgid ""
+"Scroll mode. Use :attr:`RGBChain.SCROLL_MODE_ONCE` (0), "
+":attr:`RGBChain.SCROLL_MODE_LOOP` (1), or "
+":attr:`RGBChain.SCROLL_MODE_BOUNCE` (3)."
+msgstr ""
+"滚动模式。使用 :attr:`RGBChain.SCROLL_MODE_ONCE` "
+"(0)、:attr:`RGBChain.SCROLL_MODE_LOOP` (1) 或 "
+":attr:`RGBChain.SCROLL_MODE_BOUNCE` (3)。"
+
+#: 8d0cf81741cc4f1caf8431efcb8ed8e3 chain.rgb.RGBChain.set_scroll_text:6 of
+msgid "Scroll speed in milliseconds per pixel. Range: 0-65535."
+msgstr "滚动速度，单位为毫秒/像素。范围：0-65535。"
+
+#: chain.rgb.RGBChain.set_scroll_text:7 f8ef53480f3647a389dd446a5894c6d6 of
+msgid ""
+"RGB888 text color in 0xRRGGBB format. 0x000000 enables gradient rainbow "
+"color for scroll text."
+msgstr "``0xRRGGBB`` 格式的 RGB888 文本颜色。对于滚动文本，``0x000000`` 表示启用渐变彩虹色。"
+
+#: 25e99827692e4618884e5652f32200d1 chain.rgb.RGBChain.set_scroll_text:13 of
+msgid "|set_scroll_text.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:26 c302bd1986954193b08b6b406cad61f9
+msgid "set_scroll_text.png"
+msgstr ""
+
+#: 0ee9c68a28a8483594c39782417dab56 chain.rgb.RGBChain.set_scroll_state:1 of
+msgid "Set the scrolling text state."
+msgstr "设置滚动文本状态。"
+
+#: 688e92ec34054046bbd68a7e75f32b35 chain.rgb.RGBChain.set_scroll_state:3 of
+msgid ""
+"Scroll state. Use :attr:`RGBChain.SCROLL_STATE_START` (0), "
+":attr:`RGBChain.SCROLL_STATE_PAUSE` (1), or "
+":attr:`RGBChain.SCROLL_STATE_RESET` (2)."
+msgstr ""
+"滚动状态。使用 :attr:`RGBChain.SCROLL_STATE_START` "
+"(0)、:attr:`RGBChain.SCROLL_STATE_PAUSE` (1) 或 "
+":attr:`RGBChain.SCROLL_STATE_RESET` (2)。"
+
+#: 25e99827692e4618884e5652f32200d1 chain.rgb.RGBChain.set_scroll_state:9 of
+msgid "|set_scroll_state.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:30 39bf5f165d6e4dc8844d1608a110ed20
+msgid "set_scroll_state.png"
+msgstr ""
+
+#: 5caaec902dca49f98929c3bb76fdb82f chain.rgb.RGBChain.get_scroll_state:1 of
+msgid "Get the scrolling text state."
+msgstr "获取滚动文本状态。"
+
+#: 54bd38736c514562aa6884d33e6cf0b2 chain.rgb.RGBChain.get_scroll_state:3 of
+msgid ""
+"Scroll state. 0 means scrolling, 1 means paused, 2 means reset/idle. "
+"Returns None if failed."
+msgstr "滚动状态。0 表示滚动中，1 表示暂停，2 表示复位/空闲。失败时返回 None。"
+
+#: 611a73ca4c534078bc7529f40e161e6d chain.rgb.RGBChain.get_scroll_state:8 of
+msgid "|get_scroll_state.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:28 6cf9524e5aa545c381d856e11ace9636
+msgid "get_scroll_state.png"
+msgstr ""
+
+#: 84e897b161114d1495c084d3e75141ce chain.rgb.RGBChain.set_display_rotation:1
+#: of
+msgid "Set the display rotation."
+msgstr "设置显示旋转。"
+
+#: 6d364998257544d9aa8f84820144302d chain.rgb.RGBChain.set_display_rotation:3
+#: of
+msgid ""
+"Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 "
+"degrees, 3 clockwise 270 degrees."
+msgstr "显示旋转。0 为默认方向，1 为顺时针 90 度，2 为顺时针 180 度，3 为顺时针 270 度。"
+
+#: 4942385b8ccf4bd68dbe0729ee1f747b chain.rgb.RGBChain.set_brightness:4
+#: chain.rgb.RGBChain.set_display_rotation:4 of
+msgid "Whether to save the setting to flash."
+msgstr "是否将设置保存到 Flash。"
+
+#: 15a48081d7734ed48d4e25d0a1e97503 chain.rgb.RGBChain.set_display_rotation:10
+#: of
+msgid "|set_display_rotation.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:34 dd83cd26fa2943dea0aabd5c20c897c0
+msgid "set_display_rotation.png"
+msgstr ""
+
+#: 678783851669446790da1c9ba8a39c3e chain.rgb.RGBChain.get_display_rotation:1
+#: of
+msgid "Get the display rotation."
+msgstr "获取显示旋转。"
+
+#: 0cf22c9b0ba646fe8c073cf942d5c7ee chain.rgb.RGBChain.get_display_rotation:3
+#: of
+msgid ""
+"Display rotation. 0 default, 1 clockwise 90 degrees, 2 clockwise 180 "
+"degrees, 3 clockwise 270 degrees. Returns None if failed."
+msgstr "显示旋转。0 为默认方向，1 为顺时针 90 度，2 为顺时针 180 度，3 为顺时针 270 度。失败时返回 None。"
+
+#: chain.rgb.RGBChain.get_display_rotation:8 ff5c604daa0341ef82709cbf38cdc17f
+#: of
+msgid "|get_display_rotation.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:32 9aec6a93decd416691078f90b88f9d29
+msgid "get_display_rotation.png"
+msgstr ""
+
+#: 1f7a341ef357489e8091c1c20415572c chain.rgb.RGBChain.set_brightness:1 of
+msgid "Set the screen brightness percentage."
+msgstr "设置屏幕亮度百分比。"
+
+#: 7195673abd6a457c9342f7107a949f13 chain.rgb.RGBChain.set_brightness:3 of
+msgid "Brightness percentage. Range: 0-100."
+msgstr "亮度百分比。范围：0-100。"
+
+#: chain.rgb.RGBChain.set_brightness:10 e7a7f3aef1ce432195f9116e5d16216d of
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:38 a8a659147c0b49068a5cb2068f73186f
+msgid "set_brightness.png"
+msgstr ""
+
+#: 2e40d604f0db404ebee650dddc2413ba chain.rgb.RGBChain.get_brightness:1 of
+msgid "Get the screen brightness percentage."
+msgstr "获取屏幕亮度百分比。"
+
+#: 41015ecc57cf44f5993fb809f7afb7a7 chain.rgb.RGBChain.get_brightness:3 of
+msgid "Brightness percentage, range 0-100. Returns None if failed."
+msgstr "亮度百分比，范围 0-100。失败时返回 None。"
+
+#: 95515b2b50ec41d3a514584cfce5ebb7 chain.rgb.RGBChain.get_brightness:8 of
+msgid "|get_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/chain.rgb.ref:36 f1d5108f70464736a0147fec20be5b65
+msgid "get_brightness.png"
+msgstr ""
+

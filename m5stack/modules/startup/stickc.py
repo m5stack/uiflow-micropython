@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-from . import Startup
+from . import Startup, print_access_info
 import M5
 import network
 import widgets
@@ -109,6 +109,11 @@ class AppBase:
 
 
 class DevApp(AppBase):
+    _BLACK = 0x000000
+    _WHITE = 0xFFFFFF
+    _ONLINE = 0x26E66F
+    _OFFLINE = 0xF6D340
+
     def __init__(self, icos: dict, data=None) -> None:
         super().__init__()
 
@@ -117,77 +122,121 @@ class DevApp(AppBase):
 
     def on_launch(self):
         self._mac_text = self._get_mac()
-        self._account_text = self._get_account()
-        self._bg_src = self._get_bg_src()
-        self._avatar_src = self._get_avatar()
+        self._cloud_status = self._is_online()
+        self._nick_name_text = self._get_nick_name()
+        self._access_code_text = self._get_access_code()
+        print_access_info(self._nick_name_text, self._access_code_text)
 
     def on_view(self):
-        self._bg_img = widgets.Image(use_sprite=False)
-        self._bg_img.set_pos(0, 12)
-        self._bg_img.set_size(80, 148)
-        self._bg_img.set_src(self._bg_src)
+        M5.Lcd.fillRect(0, 12, 80, 148, self._BLACK)
+        status_bg = self._ONLINE if self._cloud_status else self._OFFLINE
+        status_x = 16 if self._cloud_status else 13
+        M5.Lcd.fillRect(0, 17, 80, 18, status_bg)
+        self._status_x = status_x
 
-        self._mac_label = widgets.Label(
-            "aabbcc112233",
-            6,
-            68,
-            w=64,
-            h=26,
-            fg_color=0xFFFFFF,
-            bg_color=0x1C1C1E,
-            font=MontserratMedium10_VLW,
-        )
-        self._mac_label.set_text(self._mac_text)
-
-        self._account_label = widgets.Label(
-            "XXABC",
-            6,
-            104,
-            w=64,
-            h=34,
-            fg_color=0xFFFFFF,
-            bg_color=0x1C1C1E,
+        self._status_label = widgets.Label(
+            "",
+            status_x,
+            20,
+            w=60,
+            h=16,
+            fg_color=self._BLACK,
+            bg_color=status_bg,
             font=MontserratMedium12_VLW,
         )
-        self._account_label.set_text(self._account_text)
+        self._status_label.set_text("ONLINE" if self._cloud_status else "OFFLINE")
 
-        self._avatar_img = widgets.Image(use_sprite=False)
-        self._avatar_img.set_pos(24, 20)
-        self._avatar_img.set_size(32, 32)
-        self._avatar_img.set_scale(0.16, 0.16)
-        self._avatar_img.set_src(self._avatar_src)
+        self._mac_caption_label = widgets.Label(
+            "",
+            2,
+            52,
+            w=76,
+            h=12,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium10_VLW,
+        )
+        self._mac_caption_label.set_text("MAC:")
+
+        self._mac_label = widgets.Label(
+            "",
+            2,
+            64,
+            w=76,
+            h=12,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium10_VLW,
+        )
+        self._mac_label.set_long_mode(self._mac_label.LONG_DOT)
+
+        self._access_caption_label = widgets.Label(
+            "",
+            2,
+            82,
+            w=76,
+            h=12,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium10_VLW,
+        )
+        self._access_caption_label.set_text("Access code:")
+
+        self._access_code_label = widgets.Label(
+            "",
+            2,
+            96,
+            w=76,
+            h=16,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium12_VLW,
+        )
+        self._access_code_label.set_long_mode(self._access_code_label.LONG_DOT)
+
+        self._nick_caption_label = widgets.Label(
+            "",
+            2,
+            116,
+            w=76,
+            h=12,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium10_VLW,
+        )
+        self._nick_caption_label.set_text("Nickname:")
+
+        self._nick_name_label = widgets.Label(
+            "",
+            2,
+            130,
+            w=76,
+            h=16,
+            fg_color=self._WHITE,
+            bg_color=self._BLACK,
+            font=MontserratMedium12_VLW,
+        )
+        self._nick_name_label.set_long_mode(self._nick_name_label.LONG_DOT)
+        self._load_view()
 
     def on_ready(self):
         super().on_ready()
 
     async def on_run(self):
-        refresh = False
         while True:
-            t = self._get_bg_src()
-            if t != self._bg_src:
-                self._bg_src = t
-                self._bg_img.set_src(self._bg_src)
-                refresh = True
-
-            refresh and self._mac_label.set_text(self._mac_text)
-
-            t = self._get_account()
-            if t != self._account_text or refresh:
-                self._account_text = t
-                self._account_label.set_text(self._account_text)
-
-            t = self._get_avatar()
-            if t != self._avatar_src:
-                self._avatar_src = t
-                try:
-                    os.stat(self._avatar_src)
-                    self._avatar_img.set_src(self._avatar_src)
-                except OSError:
-                    self._dl_task = asyncio.create_task(self._dl_avatar(self._avatar_src))
-            elif refresh:
-                self._avatar_img._draw(False)
-
-            refresh = False
+            cloud_status = self._is_online()
+            nick_name = self._get_nick_name()
+            access_code = self._get_access_code()
+            if (
+                cloud_status != self._cloud_status
+                or nick_name != self._nick_name_text
+                or access_code != self._access_code_text
+            ):
+                self._cloud_status = cloud_status
+                self._nick_name_text = nick_name
+                self._access_code_text = access_code
+                print_access_info(self._nick_name_text, self._access_code_text)
+                self._load_view()
             await asyncio.sleep_ms(1500)
 
     def on_hide(self):
@@ -195,35 +244,14 @@ class DevApp(AppBase):
 
     def on_exit(self):
         del (
-            self._bg_img,
+            self._status_label,
+            self._mac_caption_label,
             self._mac_label,
-            self._account_label,
+            self._access_caption_label,
+            self._access_code_label,
+            self._nick_caption_label,
+            self._nick_name_label,
         )
-
-    async def _dl_avatar(self, dst):
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            if len(infos[4]) == 0:
-                self._avatar_img.set_src(AVATAR_IMG)
-            else:
-                try:
-                    rsp = requests.get("http://community.m5stack.com" + str(infos[4]))
-                    length = int(rsp.headers["Content-Length"])
-                    block_len = 1024
-                    source = rsp.raw
-                    read = 0
-                    with open(dst, "wb") as f:
-                        # 逐块读取数据
-                        while read < length:
-                            to_read = block_len if (length - read) >= block_len else length - read
-                            buf = source.read(to_read)
-                            read += len(buf)
-                            f.write(buf)
-                    self._avatar_img.set_src(dst)
-                except:
-                    self._avatar_img.set_src(AVATAR_IMG)
-        else:
-            self._avatar_img.set_src(AVATAR_IMG)
 
     async def _keycode_dpad_down_event_handler(self, fw):
         pass
@@ -236,38 +264,63 @@ class DevApp(AppBase):
 
     @staticmethod
     def _get_mac():
-        return binascii.hexlify(machine.unique_id()).upper()
+        return binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
 
     @staticmethod
-    def _get_account():
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            return "None" if len(infos[1]) == 0 else infos[1]
-        else:
-            return "None"
+    def _is_online():
+        if _HAS_SERVER is True:
+            try:
+                return M5Things.status() == 2
+            except Exception:
+                pass
+        return False
 
     @staticmethod
-    def _get_avatar():
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            # print(infos)
-            if len(infos[4]) == 0:
-                return AVATAR_IMG
-            else:
-                return "/flash/res/img/" + str(infos[4]).split("/")[-1]
-        else:
-            return AVATAR_IMG
+    def _get_nick_name():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.nick_name() or ""
+            except Exception:
+                pass
+        return ""
 
     @staticmethod
-    def _get_bg_src():
-        if _HAS_SERVER is True and M5Things.status() == 2:
-            infos = M5Things.info()
-            if infos[0] == 0:
-                return DEVELOP_PRIVATE_IMG
-            elif infos[0] in (1, 2):
-                return DEVELOP_PUBLIC_IMG
+    def _get_access_code():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.accesscode() or ""
+            except Exception:
+                pass
+        return ""
+
+    def _load_view(self):
+        status_bg = self._ONLINE if self._cloud_status else self._OFFLINE
+        status_x = 16 if self._cloud_status else 13
+        M5.Lcd.fillRect(0, 17, 80, 18, status_bg)
+        if status_x != self._status_x:
+            try:
+                del self._status_label
+            except Exception:
+                pass
+            self._status_x = status_x
+            self._status_label = widgets.Label(
+                "",
+                status_x,
+                20,
+                w=60,
+                h=16,
+                fg_color=self._BLACK,
+                bg_color=status_bg,
+                font=MontserratMedium12_VLW,
+            )
         else:
-            return DEVELOP_PRIVATE_IMG
+            self._status_label.set_text_color(self._BLACK, status_bg)
+        self._status_label.set_text("ONLINE" if self._cloud_status else "OFFLINE")
+        self._mac_label.set_text(self._mac_text)
+        self._access_code_label.set_text(self._access_code_text)
+        self._nick_name_label.set_text(self._nick_name_text)
 
 
 class RunApp(AppBase):
@@ -648,11 +701,7 @@ def _charge_ico(icos):
 class MenuApp(AppBase):
     def __init__(self, data=None) -> None:
         self._cloud_app = data
-        self._menus = (
-            (DevApp(None), MENU_DEV_IMG),
-            (RunApp(), MENU_APPRUN_IMG),
-            (ListApp(), MENU_APPLIST_IMG),
-        )
+        self._menus = ((DevApp(None), MENU_DEV_IMG),)
 
     def on_launch(self):
         self._icos = _charge_ico(self._menus)
@@ -682,8 +731,7 @@ class MenuApp(AppBase):
 
     async def _keycode_dpad_down_event_handler(self, fw):
         # print("_keycode_dpad_down_event_handler")
-        self._app, src = next(self._icos)
-        self._status_img.set_src(src)
+        pass
 
 
 class StatusBarApp(AppBase):
@@ -764,7 +812,7 @@ class LauncherApp(AppBase):
     async def _keycode_dpad_down_event_handler(self, fw):
         # print("_keycode_dpad_down_event_handler")
         await fw.unload(self)
-        await fw.load(self._menu_app)
+        await fw.load(DevApp(None))
 
 
 class Framework:

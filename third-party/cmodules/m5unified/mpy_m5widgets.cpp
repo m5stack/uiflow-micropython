@@ -156,7 +156,7 @@ static void m5widgets_label_font_init_helper(widgets_label_obj_t *self, mp_obj_t
         static const lgfx::LVGLfont lv_font_montserrat_12_obj(&lv_font_montserrat_12);
         self->font = &lv_font_montserrat_12_obj;
         #else
-        self->font = &m5gfx::fonts::lv_font_montserrat_12;
+        self->font = &m5gfx::fonts::DejaVu12;
         #endif
     }
 
@@ -422,7 +422,7 @@ static void m5widgets_title_font_init_helper(widgets_title_obj_t *self, mp_obj_t
         static const lgfx::LVGLfont lv_font_montserrat_12_obj(&lv_font_montserrat_12);
         self->font = &lv_font_montserrat_12_obj;
         #else
-        self->font = &m5gfx::fonts::lv_font_montserrat_12;
+        self->font = &m5gfx::fonts::DejaVu12;
         #endif
     }
 

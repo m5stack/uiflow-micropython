@@ -1,0 +1,450 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-05-26 18:34+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/tab5/keyboard.rst:2 4a7afd79e3634f23a636554223ddb936
+msgid "Tab5 Keyboard"
+msgstr "Tab5 Keyboard"
+
+#: ../../source/tab5/keyboard.rst:8 edcf7d0e589f47c78b93bd1595dad021
+msgid ""
+"The `Keyboard` class controls the Tab5 keyboard controller over I2C. It "
+"supports character input callbacks, raw key matrix events, keyboard mode "
+"configuration, backlight brightness, RGB LED settings, and I2C address "
+"management."
+msgstr ""
+"`Keyboard` 类通过 I2C 控制 Tab5 键盘控制器。它支持字符输入回调、原始按键矩阵事件、键盘模式配置、背光亮度、RGB LED 设置和 I2C 地址管理。"
+
+#: ../../source/tab5/keyboard.rst:13 bef575bf4cd04674bc8ea4787fd60060
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/tab5/keyboard.rst:16 ../../source/tab5/keyboard.rst:34
+#: 13eb500568864654a7df558a659fa281 2a332403758042e19c9bab6dd579570e
+msgid "keyboard input"
+msgstr "键盘输入"
+
+#: ../../source/tab5/keyboard.rst:18 e393370e6cc84194a920c4585aefcd3e
+msgid "Open the |tab5_keyboard_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |tab5_keyboard_example.m5f2| 项目。"
+
+#: ../../source/tab5/keyboard.rst:20 ../../source/tab5/keyboard.rst:36
+#: 3f03bd712c184038af39e38624542711 61b1b9cdd3ac4873ac190def0b1cc37e
+msgid ""
+"This example reads character input from the Tab5 keyboard and appends it "
+"to a text area."
+msgstr "该示例演示从 Tab5 键盘读取字符输入，并将其追加到文本区域。"
+
+#: ../../source/tab5/keyboard.rst:22 1c5bb1f256164b2faed35a3fb4b8a8d0
+#: 1cb0da2a42fd4bdaa52d32230fb3b98b 2944e32f16c54f7494aae628ba8cccbd
+#: 2e817f087fcf4f9e8948a5556666bc88 3fc405dd6fce4bc09e92aba36a229c8b
+#: 66d691b8ccf64772ba04d4899fe8dfc8 70ebdabedd3546b8af02a60df280c487
+#: a5ad16acdc95410aa94343e0a1f005bb aabe4fc53b334ae18fbaaa74358015d6
+#: bc1b016de6994bc08aa73c488790dd6e e140a0de650d439a95f7e8e87202e9e0 of
+#: tab5.keyboard.Keyboard:6 tab5.keyboard.Keyboard.get_brightness:6
+#: tab5.keyboard.Keyboard.get_firmware_version:6
+#: tab5.keyboard.Keyboard.get_i2c_address:6
+#: tab5.keyboard.Keyboard.get_rgb_color:7
+#: tab5.keyboard.Keyboard.set_brightness:5
+#: tab5.keyboard.Keyboard.set_i2c_address:7
+#: tab5.keyboard.Keyboard.set_keyboard_mode:5
+#: tab5.keyboard.Keyboard.set_rgb_color:6 tab5.keyboard.Keyboard.set_rgb_mode:5
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/tab5/keyboard.rst:24 fa51fe5566ae442a8a2023cb0852e539
+msgid "|example.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:1 3734b0e3cbf44ce09ac384fd28b66fb7
+msgid "example.png"
+msgstr ""
+
+#: ../../source/tab5/keyboard.rst:26 ../../source/tab5/keyboard.rst:44
+#: 023ecb5645754f7ba93129965cc84e91 3a955281254e4f9fa55705298a936ba1
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/tab5/keyboard.rst:28 ../../source/tab5/keyboard.rst:46
+#: 785b5ef38b564f67a760d47381c3706a ef757a595367492abd4b697068326360
+msgid "None"
+msgstr ""
+
+#: ../../source/tab5/keyboard.rst:31 1b684646bb474a5ea3f3fc44b4bdff42
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/tab5/keyboard.rst:38 229312699b124f57b582bd6462141c89
+#: 33e1a4a860404880887381bc7a8e18f8 38e62691f6ca40d9bfd6ca8538075e91
+#: 72cdeb562ce04641adf8bae1c7393374 85ede67aefe84eab8ec3a50273efafb6
+#: 9e4fce28f34544dbad28ccbff0babe0c 9f80dbfb06154388ae332c7a31e029cc
+#: d7ee452179084111b4a15a63fe6cc874 d818ee42b5584d5ba6b9635fa6be20a7
+#: ece77ccf270240c399746784a17e1310 f53652180ff84fcbb0aca92eb4fa2a82
+#: f5985a3fd9f24a1cb802ba8e87315ceb of tab5.keyboard.Keyboard:10
+#: tab5.keyboard.Keyboard.get_brightness:10
+#: tab5.keyboard.Keyboard.get_firmware_version:10
+#: tab5.keyboard.Keyboard.get_i2c_address:10
+#: tab5.keyboard.Keyboard.get_rgb_color:11
+#: tab5.keyboard.Keyboard.set_brightness:9
+#: tab5.keyboard.Keyboard.set_callback:5
+#: tab5.keyboard.Keyboard.set_i2c_address:11
+#: tab5.keyboard.Keyboard.set_keyboard_mode:9
+#: tab5.keyboard.Keyboard.set_rgb_color:10
+#: tab5.keyboard.Keyboard.set_rgb_mode:9
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/tab5/keyboard.rst:49 aaf1a3dd1dc8427da32f23eb1eefe745
+msgid "**API**"
+msgstr "**API参考**"
+
+#: ../../source/tab5/keyboard.rst:52 bcc00186de234a43ab5837c9eab822cd
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: 40fceb7ef3854ed9a2e1171519a3c972 of tab5.keyboard.Keyboard:1
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: d4a9a271f5324edd83e95705dadcb228 of tab5.keyboard.Keyboard:1
+msgid "Create a Tab5 keyboard controller object."
+msgstr "创建 Tab5 键盘控制器对象。"
+
+#: ../../source/tab5/keyboard.rst 2ba58472c3294df9af498e86e4f16615
+#: 30219c9ff36245a99aa68c9e3c989f34 3095b6d025d7441fb4b0d9d04cf42c5b
+#: 4ede08643204411abe2ff366c6e424e9 83c71ec535f14219b8aeaf2997aadc30
+#: 87c31822c3c5483f8d46a3947a991d84 95d3b49d60dd4978a500b574a120515f
+#: acd3073389c345949a62ecc7594c1548 f19c447b11934750b839968841166569 of
+#: tab5.keyboard.Keyboard.get_rgb_color tab5.keyboard.Keyboard.set_brightness
+#: tab5.keyboard.Keyboard.set_callback tab5.keyboard.Keyboard.set_i2c_address
+#: tab5.keyboard.Keyboard.set_keyboard_mode
+#: tab5.keyboard.Keyboard.set_rgb_color tab5.keyboard.Keyboard.set_rgb_mode
+msgid "Parameters"
+msgstr ""
+
+#: 6931130268984e7885fa1c23472e8bba of tab5.keyboard.Keyboard:3
+msgid "The I2C bus the Tab5 keyboard is connected to."
+msgstr "Tab5 键盘连接到的 I2C 总线。"
+
+#: 9d93a563db924a91a2cc5a709d533fc8 of tab5.keyboard.Keyboard:4
+msgid "The I2C address of the keyboard controller. Default is ``0x6D``."
+msgstr "键盘控制器的 I2C 地址。默认值为 ``0x6D``。"
+
+#: 92c7ab50e7a34fd2a351b71855f26caa of tab5.keyboard.Keyboard:8
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:2 580ce27e515c49d38f6bcc7d95e010b9
+msgid "init.png"
+msgstr ""
+
+#: 6d2bbbf413a245158a80973bd25c81da of tab5.keyboard.Keyboard.available:1
+msgid "Check whether unread keyboard events are queued."
+msgstr "检查是否有未读取的键盘事件排队。"
+
+#: ../../source/tab5/keyboard.rst 01d5ff31afe44bf8801985926025850d
+#: 0283e2d3c100403f995c52c87476b9aa 0dcec763b354463f9b42dffd736a4f57
+#: 0fd8805e175048f3996bd0d6f491043f 3848e7b9c3ac4ae091c72d4fe4f33bc0
+#: 3bceb226019d43c8a5216bb7125f68ef 56f106ecde81423ea03f0d7224a13df6
+#: 63bf22e091524760980eea38fb95ef50 744a23f5e96f4b45ae5b334fb1a87c96
+#: 9be8c24c12b4431e8b775f86723cc22b a413df21efe946b5af61036b1ca9fab8
+#: b315279476dd495787dec06e6fa3fe14 f585391a893942a680de22766bc014bd
+#: f9cc904fe40c4d289b64cdb317ac02aa of tab5.keyboard.Keyboard.get_brightness
+#: tab5.keyboard.Keyboard.get_firmware_version
+#: tab5.keyboard.Keyboard.get_i2c_address tab5.keyboard.Keyboard.get_rgb_color
+#: tab5.keyboard.Keyboard.set_i2c_address
+msgid "Returns"
+msgstr ""
+
+#: 5f2b4461989b4788aed45eb8e8724605 of tab5.keyboard.Keyboard.available:3
+msgid "``True`` if the controller has pending events."
+msgstr "如果控制器有待处理事件，则返回 ``True``。"
+
+#: ../../source/tab5/keyboard.rst 09869fc7110b41239250edee761478d1
+#: 10a97a82192a48b4b1faade67736e9ef 1683577834e24077a2d2435ef15c2546
+#: 2471f43b8b504d70a0f33c778787181a 3233f1ba20e3499ca6b098ade6ae4c9a
+#: 4d8213c83b244f4eb6e50b089a712d92 509ed7ceb7ee485ab0a5aabb4da1bf88
+#: 595b904af35340e4bbcd63eda4109f2e 5cb638f70e934354bb2aad0f0ed03ded
+#: 69c53fcc1f1940dc9ed12cb8b8a03e58 6a42529b9b6a4c859981ea443e654dfd
+#: 895bd0002cbc4235ab060c3210a2f9f7 89d2e8aba1a04e92b94d293412d9af66
+#: a3095081891a44a08bf6c9b9adcd59e2 a92b13f5c17743e2a7d0ad74492c5b9b
+#: b40b2104fad9428ca26c788436afa62b b8bf6dd496a54041a6e44462376c0ab8
+#: d5cbbadb588e46098f5608c7c4f26af5 f4d2394814bb4c1ca99929ee037e2533
+#: fd6f7df103d04c3ead211693c470dd58 of tab5.keyboard.Keyboard.clear_int
+#: tab5.keyboard.Keyboard.get_brightness
+#: tab5.keyboard.Keyboard.get_firmware_version
+#: tab5.keyboard.Keyboard.get_i2c_address tab5.keyboard.Keyboard.get_rgb_color
+#: tab5.keyboard.Keyboard.set_brightness tab5.keyboard.Keyboard.set_i2c_address
+#: tab5.keyboard.Keyboard.set_keyboard_mode
+#: tab5.keyboard.Keyboard.set_rgb_color tab5.keyboard.Keyboard.set_rgb_mode
+msgid "Return type"
+msgstr ""
+
+#: 80cdc1a089194d1283dd6f26d6a7d8bf of tab5.keyboard.Keyboard.set_int_enable:1
+msgid "Enable keyboard interrupt sources."
+msgstr "启用键盘中断源。"
+
+#: 45c943982ac4426d8314995e7b8ea216 of tab5.keyboard.Keyboard.set_int_enable:3
+msgid "Interrupt mask composed from ``INT_NORMAL`` and ``INT_CHAR``."
+msgstr "由 ``INT_NORMAL`` 和 ``INT_CHAR`` 组成的中断掩码。"
+
+#: d7c504aba62d4786ab3b4e6836cda649 of tab5.keyboard.Keyboard.get_int_status:1
+msgid "Get the current keyboard interrupt status."
+msgstr "获取当前键盘中断状态。"
+
+#: e9121151707f4e37a291e61af19b8b44 of tab5.keyboard.Keyboard.get_int_status:3
+msgid "The latched interrupt status bits."
+msgstr "锁存的中断状态位。"
+
+#: 2dc693bdb49f420796d24fa2a0173739 of tab5.keyboard.Keyboard.clear_int:1
+msgid "Clear the current keyboard interrupt status."
+msgstr "清除当前键盘中断状态。"
+
+#: b89c0584eb814829a0359f351fc2786c of tab5.keyboard.Keyboard.get_event_count:1
+msgid "Get the number of unread keyboard events."
+msgstr "获取未读取键盘事件的数量。"
+
+#: 763d0b341f9b4f2aa9a6c3e5b633cb01 of tab5.keyboard.Keyboard.get_event_count:3
+msgid "The number of queued events."
+msgstr "排队事件的数量。"
+
+#: ddb7ac16ca284b1abc44e3e9f6c072e0 of tab5.keyboard.Keyboard.set_brightness:1
+msgid "Set the keyboard backlight brightness."
+msgstr "设置键盘背光亮度。"
+
+#: e4c418aec94c47199cd4ce2e88a41f29 of tab5.keyboard.Keyboard.set_brightness:3
+msgid "Brightness value in the range ``0`` to ``255``."
+msgstr "亮度值范围为 ``0`` 到 ``255``。"
+
+#: 9c2d56fac104419ea6443fc538712907 of tab5.keyboard.Keyboard.set_brightness:7
+msgid "|set_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:3 a25b0f14fdd94dbb8ac82e68ca507a77
+msgid "set_brightness.png"
+msgstr ""
+
+#: 4c4bba52362c4c9b97f9960049710e97 of tab5.keyboard.Keyboard.get_brightness:1
+msgid "Get the keyboard backlight brightness."
+msgstr "获取键盘背光亮度。"
+
+#: 6f91350311f24921a1d29eafe1841f86 of tab5.keyboard.Keyboard.get_brightness:3
+msgid "The current brightness value."
+msgstr "当前亮度值。"
+
+#: 60406afde14f48fd8d5c3ff4395ac347 of tab5.keyboard.Keyboard.get_brightness:8
+msgid "|get_brightness.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:4 c6a88863d0ae4d949ba9f04721c42430
+msgid "get_brightness.png"
+msgstr ""
+
+#: 5dab1676dee54a91b8e46add619ad9cb of
+#: tab5.keyboard.Keyboard.set_keyboard_mode:1
+msgid "Set the keyboard event mode."
+msgstr "设置键盘事件模式。"
+
+#: 47937b6bb24049b7938b769ffc3a0e07 of
+#: tab5.keyboard.Keyboard.set_keyboard_mode:3
+msgid "Event mode such as ``MODE_NORMAL`` or ``MODE_CHAR``."
+msgstr "事件模式，例如 ``MODE_NORMAL`` 或 ``MODE_CHAR``。"
+
+#: 00913a65b21345828d528f582fa337a3 of
+#: tab5.keyboard.Keyboard.set_keyboard_mode:7
+msgid "|set_keyboard_mode.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:5 37725d629df94cff96e0aea27b538e07
+msgid "set_keyboard_mode.png"
+msgstr ""
+
+#: 54c640b20cbd496c9a2e983d66507101 of
+#: tab5.keyboard.Keyboard.get_keyboard_mode:1
+msgid "Get the current keyboard event mode."
+msgstr "获取当前键盘事件模式。"
+
+#: 8b9b4f9cd0a840d5a3e4d222cc5a566d of
+#: tab5.keyboard.Keyboard.get_keyboard_mode:3
+msgid "The current keyboard mode."
+msgstr "当前键盘模式。"
+
+#: 4d68886039cd49c19ef4bd4132bcdb50 of tab5.keyboard.Keyboard.set_rgb_mode:1
+msgid "Set the RGB LED control mode."
+msgstr "设置 RGB LED 控制模式。"
+
+#: a98b34049d2f4009adfbf05d7b73aab6 of tab5.keyboard.Keyboard.set_rgb_mode:3
+msgid "RGB mode such as ``RGB_MODE_BOUND`` or ``RGB_MODE_CUSTOM``."
+msgstr "RGB 模式，例如 ``RGB_MODE_BOUND`` 或 ``RGB_MODE_CUSTOM``。"
+
+#: 2147037640374e7a91531ab7d55c2d19 of tab5.keyboard.Keyboard.set_rgb_mode:7
+msgid "|set_rgb_mode.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:6 f306c0d006c7465786532dd19f419e20
+msgid "set_rgb_mode.png"
+msgstr ""
+
+#: 4d93517e918c4bd1a3d4bb4adf881385 of tab5.keyboard.Keyboard.get_rgb_mode:1
+msgid "Get the RGB LED control mode."
+msgstr "获取 RGB LED 控制模式。"
+
+#: 6b54b2d5c77c4ff0a4dc5955b4ada147 of tab5.keyboard.Keyboard.get_rgb_mode:3
+msgid "The current RGB mode."
+msgstr "当前 RGB 模式。"
+
+#: f0904b7091e34bec9a72ce8e737f219f of tab5.keyboard.Keyboard.read_key_event:1
+msgid "Read one key matrix event."
+msgstr "读取一个按键矩阵事件。"
+
+#: 2ae033e14901420581235a5414b03160 of tab5.keyboard.Keyboard.read_key_event:3
+msgid "A tuple of ``(row, col, pressed)`` or ``None`` when no event is available."
+msgstr "返回 ``(row, col, pressed)`` 元组；无可用事件时返回 ``None``。"
+
+#: b957aa05d5e949558ea56a4799d3e6fd of
+#: tab5.keyboard.Keyboard.get_char_event_length:1
+msgid "Get the byte length of the queued character event."
+msgstr "获取排队字符事件的字节长度。"
+
+#: 9ab2be50876e417fa4d6367be8ce99fc of
+#: tab5.keyboard.Keyboard.get_char_event_length:3
+msgid "The length of the character payload."
+msgstr "字符载荷的长度。"
+
+#: 0b83c7f04c34406f8c800a1dadc8fdff of tab5.keyboard.Keyboard.read_char_event:1
+msgid "Read one decoded character event."
+msgstr "读取一个已解码的字符事件。"
+
+#: 4955163cceaf4948ae688ff8ccadd2d0 of tab5.keyboard.Keyboard.read_char_event:3
+msgid "A tuple of ``(modifier, text)`` or ``None`` when no event is available."
+msgstr "返回 ``(modifier, text)`` 元组；无可用事件时返回 ``None``。"
+
+#: f6743278bcef4a03b45440b4319efc3d of tab5.keyboard.Keyboard.is_pressed:1
+msgid "Check whether the keyboard has pending input."
+msgstr "检查键盘是否有待处理输入。"
+
+#: b6880efca8e445c98c88a3e7f3af22c3 of tab5.keyboard.Keyboard.is_pressed:3
+msgid "``True`` if unread input is available."
+msgstr "如果有未读取输入，则返回 ``True``。"
+
+#: 571aa48df26c468c818c1e59b0569036 of tab5.keyboard.Keyboard.set_callback:1
+msgid "Register the callback used by :meth:`tick`."
+msgstr "注册由 :meth:`tick` 使用的回调函数。"
+
+#: e3f47acf67a542e99a79331a2e7b2b57 of tab5.keyboard.Keyboard.set_callback:3
+msgid "Callback that receives the keyboard event payload."
+msgstr "接收键盘事件载荷的回调函数。"
+
+#: 72438729db3b43b9b7c90f36a137644c of tab5.keyboard.Keyboard.tick:1
+msgid "Dispatch one pending keyboard event to the registered callback."
+msgstr "将一个待处理键盘事件分发给已注册的回调函数。"
+
+#: eaf48d086b4640bfa024cdf439e524bc of tab5.keyboard.Keyboard.set_rgb_color:1
+msgid "Set the color of a keyboard RGB LED."
+msgstr "设置键盘 RGB LED 的颜色。"
+
+#: 397450bf19484974a1243a2d388da4ea of tab5.keyboard.Keyboard.set_rgb_color:3
+msgid "The LED index to update."
+msgstr "要更新的 LED 索引。"
+
+#: a602fe942b704a179dc124b3e15fbf65 ac2101610a05495d9716859296c1cdd9 of
+#: tab5.keyboard.Keyboard.get_rgb_color:4
+#: tab5.keyboard.Keyboard.set_rgb_color:4
+msgid "The 24-bit RGB color value."
+msgstr "24 位 RGB 颜色值。"
+
+#: 7dfc617d565c441b9ca044b86c54d582 of tab5.keyboard.Keyboard.set_rgb_color:8
+msgid "|set_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:7 1ea2d00c42f042c183791c4b41eaae8b
+msgid "set_rgb_color.png"
+msgstr ""
+
+#: d99cd22533f8457eab12fcb592c57d8c of tab5.keyboard.Keyboard.get_rgb_color:1
+msgid "Get the color of a keyboard RGB LED."
+msgstr "获取键盘 RGB LED 的颜色。"
+
+#: 5125d8163e65442a9bde28a8cf02a9fe of tab5.keyboard.Keyboard.get_rgb_color:3
+msgid "The LED index to read."
+msgstr "要读取的 LED 索引。"
+
+#: 9ae4c888410e4fea9c1bd0d943f5e141 of tab5.keyboard.Keyboard.get_rgb_color:9
+msgid "|get_rgb_color.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:8 0dcece29aef84777ac3588af83e6ae59
+msgid "get_rgb_color.png"
+msgstr ""
+
+#: acd0543b40e94346ae540c9ed7bc5112 of
+#: tab5.keyboard.Keyboard.get_firmware_version:1
+msgid "Get the firmware version of the keyboard controller."
+msgstr "获取键盘控制器的固件版本。"
+
+#: b9f888ba9137415985c6bf4bd8b9afe7 of
+#: tab5.keyboard.Keyboard.get_firmware_version:3
+msgid "The firmware version byte."
+msgstr "固件版本字节。"
+
+#: 478b5705d049451d854f0a6ccc603e22 of
+#: tab5.keyboard.Keyboard.get_firmware_version:8
+msgid "|get_firmware_version.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:9 c6ca8b839e1f452ca097a74c1144b028
+msgid "get_firmware_version.png"
+msgstr ""
+
+#: 332f9c8ae57949099c3f0abfef31db65 of tab5.keyboard.Keyboard.set_i2c_address:1
+msgid "Set a new I2C address for the keyboard controller."
+msgstr "为键盘控制器设置新的 I2C 地址。"
+
+#: efe62e4b0963475b983fc9afb58df266 of tab5.keyboard.Keyboard.set_i2c_address:3
+msgid "The new I2C address. Valid range is ``0x08`` to ``0x77``."
+msgstr "新的 I2C 地址。有效范围为 ``0x08`` 到 ``0x77``。"
+
+#: bd50bbb7f9b740f185f1788567148708 of tab5.keyboard.Keyboard.set_i2c_address:4
+msgid "The active I2C address after the update."
+msgstr "更新后的当前 I2C 地址。"
+
+#: 97bf793845624dada7db598a4944a166 of tab5.keyboard.Keyboard.set_i2c_address:9
+msgid "|set_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:10 c39cbd141b5942fc9ff77adaed5e7715
+msgid "set_i2c_address.png"
+msgstr ""
+
+#: 12ff945ea2b244deaa1e6c2b9d884a8a of tab5.keyboard.Keyboard.get_i2c_address:1
+msgid "Get the current I2C address of the keyboard controller."
+msgstr "获取键盘控制器的当前 I2C 地址。"
+
+#: e5efb8db0dd44899810b489c9232e4ac of tab5.keyboard.Keyboard.get_i2c_address:3
+msgid "The current I2C address."
+msgstr "当前 I2C 地址。"
+
+#: 8b76531d551447e99f45f49012255b7f of tab5.keyboard.Keyboard.get_i2c_address:8
+msgid "|get_i2c_address.png|"
+msgstr ""
+
+#: ../../source/refs/tab5.keyboard.ref:11 8a2cdb23fe384f73b2a17ab6375663fe
+msgid "get_i2c_address.png"
+msgstr ""

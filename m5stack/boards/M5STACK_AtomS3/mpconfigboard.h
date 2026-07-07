@@ -20,6 +20,7 @@
 #define MICROPY_HW_USB_PID 0x8120
 #define MICROPY_HW_USB_MANUFACTURER_STRING "M5Stack"
 #define MICROPY_HW_USB_PRODUCT_FS_STRING "AtomS3(UiFlow2)"
+#define MICROPY_HW_USB_CDC_INTERFACE_STRING "AtomS3(UiFlow2)"
 
 // If not enable LVGL, ignore this...
 #include "./../mpconfiglvgl.h"

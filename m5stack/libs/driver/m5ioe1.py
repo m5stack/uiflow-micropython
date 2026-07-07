@@ -69,39 +69,33 @@ class M5ioe1:
 
     def _write_reg8(self, reg, value):
         self.i2c.writeto_mem(self.addr, reg, bytes([value & 0xFF]))
+        return True
 
     def _read_reg16(self, reg_low):
-        data_low = self.i2c.readfrom_mem(self.addr, reg_low, 1)[0]
-        data_high = self.i2c.readfrom_mem(self.addr, reg_low + 1, 1)[0]
-        return (data_high << 8) | data_low
+        data = self.i2c.readfrom_mem(self.addr, reg_low, 2)
+        return (data[1] << 8) | data[0]
 
     def _write_reg16(self, reg_low, value):
-        self.i2c.writeto_mem(self.addr, reg_low, bytes([value & 0xFF]))
-        self.i2c.writeto_mem(self.addr, reg_low + 1, bytes([(value >> 8) & 0xFF]))
+        self.i2c.writeto_mem(self.addr, reg_low, bytes([value & 0xFF, (value >> 8) & 0xFF]))
+        return True
+
+    def _write_bytes(self, reg, data):
+        self.i2c.writeto_mem(self.addr, reg, bytes(data))
+        return True
 
     def _get_pin_registers(self, pin):
-        # convert to hardware pin number (1-14 -> 0-13)
+        # M5IOE1 GPIO L/H registers are adjacent and are treated as one 14-bit bitmap.
+        # External API keeps G1-G14 numbering, so convert to hardware bit 0-13 here.
         hw_pin = pin - 1
-        if hw_pin < 8:
-            return (
-                REG_GPIO_MODE_L,
-                REG_GPIO_OUT_L,
-                REG_GPIO_IN_L,
-                REG_GPIO_PU_L,
-                REG_GPIO_PD_L,
-                REG_GPIO_DRV_L,
-                hw_pin,
-            )
-        else:
-            return (
-                REG_GPIO_MODE_H,
-                REG_GPIO_OUT_H,
-                REG_GPIO_IN_H,
-                REG_GPIO_PU_H,
-                REG_GPIO_PD_H,
-                REG_GPIO_DRV_H,
-                hw_pin - 8,
-            )
+        return (
+            REG_GPIO_MODE_L,
+            REG_GPIO_OUT_L,
+            REG_GPIO_IN_L,
+            REG_GPIO_PU_L,
+            REG_GPIO_PD_L,
+            REG_GPIO_DRV_L,
+            hw_pin,
+        )
 
     def _pin_mode(self, pin, mode, pull=None):
         if pin < 1 or pin > PIN_COUNT:
@@ -179,13 +173,16 @@ class M5ioe1:
             return False
 
         duty = max(0, min(1000, duty))
+        duty12 = duty * 0x0FFF // 1000
+        pwm_data = duty12 & 0x0FFF
+        if duty12:
+            pwm_data |= 1 << 15  # EN bit in PWMx_DUTY_H
         pwm_reg_l = REG_PWM1_DUTY_L + (channel * 2)
-        return self._write_reg16(pwm_reg_l, duty)
+        return self._write_reg16(pwm_reg_l, pwm_data)
 
     def _pwm_frequency(self, freq):
         freq = max(1, min(65535, freq))
-        self._write_reg8(REG_PWM_FREQ_L, freq & 0xFF)
-        return self._write_reg8(REG_PWM_FREQ_H, (freq >> 8) & 0xFF)
+        return self._write_reg16(REG_PWM_FREQ_L, freq)
 
     def _set_leds(self, colors, count=None, auto_refresh=True):
         if count is None:
@@ -217,9 +214,7 @@ class M5ioe1:
             data_low = rgb565 & 0xFF
             data_high = (rgb565 >> 8) & 0xFF
 
-            if not self._write_reg8(reg_addr, data_low):
-                return False
-            if not self._write_reg8(reg_addr + 1, data_high):
+            if not self._write_bytes(reg_addr, (data_low, data_high)):
                 return False
 
         if auto_refresh:
@@ -468,9 +463,7 @@ class RGB:
         data_low = rgb565 & 0xFF
         data_high = (rgb565 >> 8) & 0xFF
 
-        if not self.ioe1._write_reg8(reg_addr, data_low):
-            return False
-        if not self.ioe1._write_reg8(reg_addr + 1, data_high):
+        if not self.ioe1._write_bytes(reg_addr, (data_low, data_high)):
             return False
 
         # 如果需要刷新，触发显示更新

@@ -1,0 +1,315 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-25 22:27+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/chain/pir.rst:2 ../../source/refs/chain.pir.ref
+#: 17fbc4d0f4834d5b87e7e8e495a99fd6 d6209ba5030a498eb2820c1c3f7bbe13
+msgid "Chain PIR"
+msgstr "Chain PIR"
+
+#: ../../source/chain/pir.rst:6 065faa286a0b408cbebe27243b998693
+msgid ""
+"PIRChain is the helper class for PIR (Passive Infrared) sensor devices on"
+" the Chain bus. It provides methods to read IR induction values, "
+"configure trigger delay, and monitor PIR trigger events."
+msgstr ""
+"PIRChain 是链式总线上 PIR（被动红外）传感器设备的辅助类。它提供了读取红外感应值、配置触发延迟以及监控 PIR 触发事件的方法。"
+
+#: ../../source/chain/pir.rst:8 23a8122f901749b6b7d2d31a41c7a5a2
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/chain/pir.rst:10 7d3302d71d054896911dc69b3e7d6d14
+msgid "|Chain PIR|"
+msgstr ""
+
+#: ../../source/chain/pir.rst:13 b91c4490dcab4d6fab1ab171f778908f
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/chain/pir.rst:16 ../../source/chain/pir.rst:34
+#: c3dfbcd825d64071b9b1939564019631 e2fb596687b84d608bc5361af7068770
+msgid "PIR motion detection"
+msgstr "PIR 运动检测"
+
+#: ../../source/chain/pir.rst:18 b92af1cf42194991ad2704b65191dc11
+msgid "Open the |m5core_chain_pir_basic_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |m5core_chain_pir_basic_example.m5f2| 项目。"
+
+#: ../../source/chain/pir.rst:20 ../../source/chain/pir.rst:36
+#: 4a31084786d14315bb03a371eb1b7cf6 fdc6a248048847f7bf9222991240e1b5
+msgid ""
+"This example demonstrates how to use trigger callbacks from the Chain PIR"
+" sensor to update motion status on screen. It enables trigger auto-send, "
+"configures trigger hold time, and counts the detected duration while "
+"motion is active."
+msgstr ""
+"本示例演示如何使用 Chain PIR 传感器的触发回调来更新屏幕上的运动状态。它启用触发自动发送、配置触发保持时间，并在运动激活时统计检测持续时间。"
+
+#: ../../source/chain/pir.rst:22 13360cb3c553447f9feeca9f0dfe7efc
+#: 1d4388a96a34469e84adcc7c10484a4f 30c2663fdd8c4def9f1519a570f50b7c
+#: 4954962226b44de8af34f6b996300d94 677718565e6b4d7dae757d125f3e9e73
+#: 8154f9b769e34bb4aceedcf0a3cf0067 chain.pir.PIRChain:6
+#: chain.pir.PIRChain.get_detect_status:6 chain.pir.PIRChain.get_trigger:6
+#: chain.pir.PIRChain.get_trigger_hold_time:6 chain.pir.PIRChain.set_trigger:7
+#: chain.pir.PIRChain.set_trigger_callback:9
+#: chain.pir.PIRChain.set_trigger_hold_time:8 d8324f3f4d5a43728fe936bc393b6175
+#: d83592d4fdab4086a6ce386669d490ab of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/chain/pir.rst:24 899cbc5fc371439bb43a79c66b26e252
+msgid "|m5core_chain_pir_basic_example.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:14 931321b99e39412682c8823671b25897
+msgid "m5core_chain_pir_basic_example.png"
+msgstr ""
+
+#: ../../source/chain/pir.rst:26 ../../source/chain/pir.rst:44
+#: 07419e212a574c2aa9182f6270c4b14e be51b27e2ceb419d90deaa46ca8f8d92
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/chain/pir.rst:28 ../../source/chain/pir.rst:46
+#: 1ccd7f0545394fd69b0927df330557d3 4d0d009e67ff475a9ec9437f118b889f
+msgid "None"
+msgstr ""
+
+#: ../../source/chain/pir.rst:31 cc53884b61a44e25b136d31f5275d6e1
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/chain/pir.rst:38 0cafe52dbd864a43b6ed396d7c11bf06
+#: 4e8bc8d8106f4e08b1133abd4b20094e 54d4e03ce06b4d87a46b7a62fb9ce0fd
+#: 9e66749503a34b59ad75775b63a6c2ec chain.pir.PIRChain:10
+#: chain.pir.PIRChain.get_detect_status:10 chain.pir.PIRChain.get_trigger:10
+#: chain.pir.PIRChain.get_trigger_hold_time:10
+#: chain.pir.PIRChain.set_trigger:11 chain.pir.PIRChain.set_trigger_callback:13
+#: chain.pir.PIRChain.set_trigger_hold_time:12 ef7d693730c8486d8e498e9d5f5d1cad
+#: f96e6327d63447e38b9d958ff1c3b535 f97d1e14441d43d0ad54a79b185e49bc
+#: fa079c65aaf04bb9b90b4b83178c2a73 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/chain/pir.rst:49 8857ecb8f3424c6eaf5f83fc7a82f339
+msgid "**API**"
+msgstr "API 参考"
+
+#: ../../source/chain/pir.rst:52 912c67e36ed04168a271f2bca4e0dbf1
+msgid "PIRChain"
+msgstr "PIRChain"
+
+#: 6ac6b441265446788a2cac1a05a8722c chain.pir.PIRChain:1 of
+msgid "Bases: :py:class:`~chain.key.KeyChain`"
+msgstr "Bases: :py:class:`~chain.key.KeyChain`"
+
+#: 63051f8cd8144ed6976f5c1431bec1ef chain.pir.PIRChain:1 of
+msgid ""
+"PIR Chain class for interacting with PIR (Passive Infrared) sensor "
+"devices over Chain bus."
+msgstr ""
+"用于通过链式总线与 PIR（被动红外）传感器设备交互的 PIR Chain 类。"
+
+#: ../../source/chain/pir.rst 2067aae28d574758a305e13c8a61e5e8
+#: 2d638915eba74bc89d6e76d7b54b9bb4 ae287516b90a4aff97670e71c4c6e451
+#: chain.pir.PIRChain.set_trigger chain.pir.PIRChain.set_trigger_callback
+#: chain.pir.PIRChain.set_trigger_hold_time dd5d59cc835445b592ad9ddb5a66b3ed of
+msgid "Parameters"
+msgstr "参数"
+
+#: aa9fee77572743989573d74005134931 chain.pir.PIRChain:3 of
+msgid "The Chain bus instance."
+msgstr "Chain 总线实例。"
+
+#: 3ea51400ad2a4b8c968316bedce6ef76 chain.pir.PIRChain:4 of
+msgid "The device ID of the PIR sensor on the Chain bus."
+msgstr "Chain 总线上 PIR 传感器的设备 ID。"
+
+#: 2f9b3fbc8fd240bea253bf5360df6164 chain.pir.PIRChain:8 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:7 e749b73042624deaa3918dc5991e2266
+msgid "init.png"
+msgstr ""
+
+#: ../../source/chain/pir.rst:59 239cadd28c8445cbbbfff789e92c00c1
+msgid ""
+"For other button and some general methods, please refer to the "
+":class:`ChainKey <chain.key.KeyChain>` class."
+msgstr ""
+"其他按钮和一些通用方法，请参考 :class:`ChainKey <chain.key.KeyChain>` 类。"
+
+#: 199911ad6b5949458cf5e376e1c32438 chain.pir.PIRChain.get_detect_status:1 of
+msgid "Get the motion detection status."
+msgstr "获取运动检测状态。"
+
+#: 3538cff47b76402c8262dc7894993492 40f8311a5b9146079453240db32e9316
+#: 8d0ee44cc5e045b49e9dfa753c4d6bc3 cd9ffe8f0da64e7d8fefc174839fbd87
+#: chain.pir.PIRChain.get_detect_status chain.pir.PIRChain.get_trigger
+#: chain.pir.PIRChain.get_trigger_hold_time chain.pir.PIRChain.set_trigger
+#: chain.pir.PIRChain.set_trigger_hold_time f5608f88fd4e4466980806252e36111a of
+msgid "Returns"
+msgstr "返回"
+
+#: 3dfce7ed700d493e976ac7f41cda0c3b chain.pir.PIRChain.get_detect_status:3 of
+msgid ""
+"Motion detection status. True means motion detected, False means motion "
+"ended. Returns False if failed."
+msgstr ""
+"运动检测状态。True 表示检测到运动，False 表示运动结束。失败时返回 False。"
+
+#: 0beb98ce26ab49ee8b364d13968a18f4 28a81e9279d64f7384b565e2af9e4818
+#: 2c30b81363de4ed384831ee929cb251a 7d39e8bcee824e9e87baccaa052ab882
+#: 88dc94a5b42546c7851fbeb32463f53b b7d00990a7b64e59a09228d9692f324f
+#: chain.pir.PIRChain.get_detect_status chain.pir.PIRChain.get_trigger
+#: chain.pir.PIRChain.get_trigger_hold_time chain.pir.PIRChain.set_trigger
+#: chain.pir.PIRChain.set_trigger_callback
+#: chain.pir.PIRChain.set_trigger_hold_time of
+msgid "Return type"
+msgstr "返回类型"
+
+#: 974526385f4b4ffbbc3adbf61b12b629 chain.pir.PIRChain.get_detect_status:8 of
+msgid "|get_detect_status.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:8 c0abd8c1bd5a4b0e9fea70697b9a847e
+msgid "get_detect_status.png"
+msgstr ""
+
+#: 9e2ccc4d51584e06a37da07aff2c44c2 chain.pir.PIRChain.set_trigger:1 of
+msgid "Enable or disable PIR detection reporting."
+msgstr "启用或禁用 PIR 检测报告。"
+
+#: ba77f565ac144e14b2dc5c4f993104e4 chain.pir.PIRChain.set_trigger:3 of
+msgid "True to enable PIR detection reporting, False to disable it."
+msgstr "True 启用 PIR 检测报告，False 禁用。"
+
+#: 92b363fcc0754324981a9684ed8f246f chain.pir.PIRChain.set_trigger:4
+#: chain.pir.PIRChain.set_trigger_hold_time:5 d592c00738a84bcb8401829ac5237171
+#: of
+msgid "True if the operation was successful, False otherwise."
+msgstr "操作成功返回 True，否则返回 False。"
+
+#: b419f1dbb9e8457297938160c8ca167e chain.pir.PIRChain.set_trigger:9 of
+msgid "|set_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:9 b3cef78af3174fb0b40973b8fb3a0774
+msgid "set_trigger.png"
+msgstr ""
+
+#: c795078860e741eca017e8ad500ce518 chain.pir.PIRChain.get_trigger:1 of
+msgid "Get whether PIR detection reporting is enabled."
+msgstr "获取是否启用 PIR 检测报告。"
+
+#: 317d74420f584247ad83c524200fbebc chain.pir.PIRChain.get_trigger:3 of
+msgid ""
+"True if PIR detection reporting is enabled, False if disabled. Returns "
+"False if failed."
+msgstr ""
+"启用 PIR 检测报告返回 True，禁用返回 False。失败时返回 False。"
+
+#: 199589c93146464fbb697634cd3b615a chain.pir.PIRChain.get_trigger:8 of
+msgid "|get_trigger.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:10 74f10e0ecbaf45f3aa310fdd4f18fbb7
+msgid "get_trigger.png"
+msgstr ""
+
+#: chain.pir.PIRChain.set_trigger_hold_time:1 e76e04a58f624668b6f3337f03f4e17b
+#: of
+msgid "Set the hold time before triggering motion ended status."
+msgstr "设置触发运动结束状态前的保持时间。"
+
+#: a7a2979641cf4adc9127867646335987 chain.pir.PIRChain.set_trigger_hold_time:3
+#: of
+msgid "Hold time in seconds. Range: 0-255."
+msgstr "保持时间（秒）。范围：0-255。"
+
+#: ce16e065083f4a26a2f5811e1d831ce8 chain.pir.PIRChain.set_trigger_hold_time:4
+#: of
+msgid "Whether to save the setting to flash. Default: False."
+msgstr "是否将设置保存到闪存。默认值：False。"
+
+#: c3889a7bbaa74347a4e9d82fd97b4c79 chain.pir.PIRChain.set_trigger_hold_time:10
+#: of
+msgid "|set_trigger_hold_time.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:11 5b0d340d7a0249509bcfa2672541775b
+msgid "set_trigger_hold_time.png"
+msgstr ""
+
+#: b275f70e009b4288be63e99ca078b088 chain.pir.PIRChain.get_trigger_hold_time:1
+#: of
+msgid "Get the hold time before triggering motion ended status."
+msgstr "获取触发运动结束状态前的保持时间。"
+
+#: ad90338441a046b6945fd973f9678db6 chain.pir.PIRChain.get_trigger_hold_time:3
+#: of
+msgid "Hold time in seconds, or None if failed."
+msgstr "保持时间（秒），失败时返回 None。"
+
+#: chain.pir.PIRChain.get_trigger_hold_time:8 e1da104ffb2843cb8b3c2450db32fb47
+#: of
+msgid "|get_trigger_hold_time.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:12 fcda88d9fe774c508a74690da71a3417
+msgid "get_trigger_hold_time.png"
+msgstr ""
+
+#: ae1789683a5b47cdbb9afff08fec309e chain.pir.PIRChain.set_trigger_callback:1
+#: of
+msgid "Set callback for PIR motion detection events."
+msgstr "设置 PIR 运动检测事件的回调。"
+
+#: 64025755b89641ceb75abceb320c6d08 chain.pir.PIRChain.set_trigger_callback:3
+#: of
+msgid ""
+"Trigger type to listen for. Use :attr:`PIRChain.TRIGGER_MOTION_DETECTED` "
+"(1) for motion detected or :attr:`PIRChain.TRIGGER_MOTION_ENDED` (0) for "
+"motion ended."
+msgstr ""
+"要监听的触发类型。使用 :attr:`PIRChain.TRIGGER_MOTION_DETECTED` (1) 表示检测到运动，或 :attr:`PIRChain.TRIGGER_MOTION_ENDED` (0) 表示运动结束。"
+
+#: bd1d4465b1ff4c99b3c516cf3635845a chain.pir.PIRChain.set_trigger_callback:4
+#: of
+msgid "Callback function that will be called when PIR motion detection changes."
+msgstr "当 PIR 运动检测状态变化时将被调用的回调函数。"
+
+#: 3940648f05da4270ae7751dc3825f5ef chain.pir.PIRChain.set_trigger_callback:7
+#: of
+msgid "Chain related methods cannot be called in the callback function."
+msgstr "在回调函数中不能调用链式相关方法。"
+
+#: chain.pir.PIRChain.set_trigger_callback:11 ff5a7b0a1b7f45e2abfc01f65950366a
+#: of
+msgid "|set_trigger_callback.png|"
+msgstr ""
+
+#: ../../source/refs/chain.pir.ref:13 c8c300843b5a41748697cfbd3bf58b1d
+msgid "set_trigger_callback.png"
+msgstr ""
+

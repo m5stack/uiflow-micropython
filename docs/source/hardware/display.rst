@@ -14,16 +14,19 @@ A lcd display library
 M5 Series Display Libraries
 ---------------------------
 
-1. Display
-^^^^^^^^^^^
+1. Display (M5.Lcd)
+^^^^^^^^^^^^^^^^^^^
 - A low-level graphics library providing basic screen drawing, text, lines, and color management.
 - Can be used independently, suitable for scenarios that only require drawing graphics or text.
+- **Access via**: ``M5.Lcd.fillRect()``, ``M5.Lcd.drawRect()``, ``M5.Lcd.drawString()``, etc.
 
 2. M5Widgets
 ^^^^^^^^^^^^^
 - A basic UI widget library providing labels, image displays, and other UI controls.
 - Built on top of M5GFX.
 - Suitable for simple interactive UI elements.
+- **Access via**: ``M5.Widgets.Label()``, ``M5.Widgets.Image()``, ``M5.Widgets.Rectangle()``, etc.
+- **Important**: ``M5.Widgets`` provides UI component **classes**, not drawing methods.
 
 3. M5UI
 ^^^^^^^^
@@ -36,6 +39,17 @@ Usage Tips
 - For graphics-only drawing → use M5GFX.
 - For simple interactive widgets → use M5Widgets.
 - For multi-page UI → use M5UI.
+
+Common Mistakes to Avoid
+^^^^^^^^^^^^^^^^^^^^^^^^
+- ❌ **WRONG**: ``Widgets.fillRect()`` or ``Widgets.drawRect()`` - These methods do not exist in Widgets module
+- ✅ **CORRECT**: ``M5.Lcd.fillRect()`` or ``M5.Lcd.drawRect()`` - Use M5.Lcd for drawing methods
+- ❌ **WRONG**: ``from M5 import Widgets; Widgets.fillRect(...)`` - Widgets is for UI components, not drawing
+- ✅ **CORRECT**: ``from M5 import *; M5.Lcd.fillRect(...)`` - M5.Lcd provides all drawing methods
+
+**Key Distinction**:
+- ``M5.Lcd`` = Drawing methods (fillRect, drawRect, drawCircle, drawString, etc.)
+- ``M5.Widgets`` = UI component classes (Label, Image, Rectangle, Circle, etc.)
 
 
 UiFlow2 Example
@@ -412,6 +426,13 @@ Example output:
 
         :param int color: fill color in RGB888 format (default 0)
 
+        .. warning::
+
+            Avoid calling ``clear()`` inside a loop or event handler — it
+            redraws every pixel and causes visible flickering. For dynamic
+            content, use ``fillRect()`` to erase only the changed region,
+            then draw the new content on top.
+
         UiFlow2 Code Block:
 
             |clear.png|
@@ -427,6 +448,13 @@ Example output:
         Fill the entire screen with a specified color.
 
         :param int color: fill color in RGB888 format (default 0)
+
+        .. warning::
+
+            Avoid calling ``fillScreen()`` inside a loop or event handler —
+            it redraws every pixel and causes visible flickering. Draw static
+            backgrounds once during setup. For dynamic updates, use
+            ``fillRect()`` to clear only the changed area.
 
         UiFlow2 Code Block:
 

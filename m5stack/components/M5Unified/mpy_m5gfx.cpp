@@ -6,6 +6,8 @@
 
 #include <M5GFX.h>
 #include <M5Unified.h>
+#include <LGFX_Fonts.hpp>
+#include "mpy_lgfx_lvgl_font.hpp"
 
 #include <ffi.h>
 typedef union {
@@ -1349,194 +1351,122 @@ mp_obj_t gfx_delete(mp_obj_t self) {
 #include "mpy_gfx_stream.c"
 
 // --------------------------- builtin fonts ----------------------------
-#ifndef TINY_FONT
-#if MICROPY_PY_LVGL
-// FONT_MONTSERRAT_12
-extern const lv_font_t lv_font_montserrat_12;
-const lgfx::LVGLfont lv_font_montserrat_12_obj(& ::lv_font_montserrat_12);
-const font_obj_t gfx_font_montserrat_12_obj = {{ &mp_type_object }, &lv_font_montserrat_12_obj };
-
-// FONT_MONTSERRAT_14
-extern const lv_font_t lv_font_montserrat_14;
-const lgfx::LVGLfont lv_font_montserrat_14_obj(& ::lv_font_montserrat_14);
-const font_obj_t gfx_font_montserrat_14_obj = {{ &mp_type_object }, &lv_font_montserrat_14_obj };
-
-// FONT_MONTSERRAT_16
-extern const lv_font_t lv_font_montserrat_16;
-const lgfx::LVGLfont lv_font_montserrat_16_obj(& ::lv_font_montserrat_16);
-const font_obj_t gfx_font_montserrat_16_obj = {{ &mp_type_object }, &lv_font_montserrat_16_obj };
-
-// FONT_MONTSERRAT_18
-extern const lv_font_t lv_font_montserrat_18;
-const lgfx::LVGLfont lv_font_montserrat_18_obj(& ::lv_font_montserrat_18);
-const font_obj_t gfx_font_montserrat_18_obj = {{ &mp_type_object }, &lv_font_montserrat_18_obj };
-
-// FONT_MONTSERRAT_20
-extern const lv_font_t lv_font_montserrat_20;
-const lgfx::LVGLfont lv_font_montserrat_20_obj(& ::lv_font_montserrat_20);
-const font_obj_t gfx_font_montserrat_20_obj = {{ &mp_type_object }, &lv_font_montserrat_20_obj };
-
-// FONT_MONTSERRAT_22
-extern const lv_font_t lv_font_montserrat_22;
-const lgfx::LVGLfont lv_font_montserrat_22_obj(& ::lv_font_montserrat_22);
-const font_obj_t gfx_font_montserrat_22_obj = {{ &mp_type_object }, &lv_font_montserrat_22_obj };
-
-// FONT_MONTSERRAT_24
-extern const lv_font_t lv_font_montserrat_24;
-const lgfx::LVGLfont lv_font_montserrat_24_obj(& ::lv_font_montserrat_24);
-const font_obj_t gfx_font_montserrat_24_obj = {{ &mp_type_object }, &lv_font_montserrat_24_obj };
-
-// FONT_MONTSERRAT_30
-extern const lv_font_t lv_font_montserrat_30;
-const lgfx::LVGLfont lv_font_montserrat_30_obj(& ::lv_font_montserrat_30);
-const font_obj_t gfx_font_montserrat_30_obj = {{ &mp_type_object }, &lv_font_montserrat_30_obj };
-
-// FONT_MONTSERRAT_36
-extern const lv_font_t lv_font_montserrat_36;
-const lgfx::LVGLfont lv_font_montserrat_36_obj(& ::lv_font_montserrat_36);
-const font_obj_t gfx_font_montserrat_36_obj = {{ &mp_type_object }, &lv_font_montserrat_36_obj };
-
-// FONT_MONTSERRAT_40
-extern const lv_font_t lv_font_montserrat_40;
-const lgfx::LVGLfont lv_font_montserrat_40_obj(& ::lv_font_montserrat_40);
-const font_obj_t gfx_font_montserrat_40_obj = {{ &mp_type_object }, &lv_font_montserrat_40_obj };
-
-// FONT_MONTSERRAT_44
-extern const lv_font_t lv_font_montserrat_44;
-const lgfx::LVGLfont lv_font_montserrat_44_obj(& ::lv_font_montserrat_44);
-const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &lv_font_montserrat_44_obj };
-
-// FONT_MONTSERRAT_48
-extern const lv_font_t lv_font_montserrat_48;
-const lgfx::LVGLfont lv_font_montserrat_48_obj(& ::lv_font_montserrat_48);
-const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &lv_font_montserrat_48_obj };
-
-// FONT_ALIBABAPUHUITI_CN24
-extern const lv_font_t AlibabaPuHuiTi_CN24;
-const lgfx::LVGLfont AlibabaPuHuiTi_CN24_obj(&AlibabaPuHuiTi_CN24);
-const font_obj_t gfx_font_AlibabaPuHuiTi_CN24_obj = {{ &mp_type_object }, &AlibabaPuHuiTi_CN24_obj };
-
-// FONT_ALIBABASANS_JA24
-extern const lv_font_t AlibabaSans_JP24;
-const lgfx::LVGLfont AlibabaSans_JP24_obj(&AlibabaSans_JP24);
-const font_obj_t gfx_font_AlibabaSans_JP24_obj = {{ &mp_type_object }, &AlibabaSans_JP24_obj };
-
-// FONT_ALIBABASANS_KR24
-extern const lv_font_t AlibabaSans_KR24;
-const lgfx::LVGLfont AlibabaSans_KR24_obj(&AlibabaSans_KR24);
-const font_obj_t gfx_font_AlibabaSans_KR24_obj = {{ &mp_type_object }, &AlibabaSans_KR24_obj };
+#if BOARD_ID == 25
+const font_obj_t gfx_font_0_obj = {{ &mp_type_object }, &m5gfx::fonts::Font0 };
+const font_obj_t gfx_font_DejaVu9_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu9  };
+const font_obj_t gfx_font_DejaVu12_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu12 };
+const font_obj_t gfx_font_DejaVu18_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu18 };
+const font_obj_t gfx_font_DejaVu24_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu24 };
+const font_obj_t gfx_font_DejaVu40_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu40 };
+const font_obj_t gfx_font_DejaVu56_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu56 };
+const font_obj_t gfx_font_DejaVu72_obj = {{ &mp_type_object }, &m5gfx::fonts::DejaVu72 };
+const font_obj_t gfx_font_efontCN_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontCN_24 };
+const font_obj_t gfx_font_efontJA_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontJA_24 };
+const font_obj_t gfx_font_efontKR_24_obj = {{ &mp_type_object }, &m5gfx::fonts::efontKR_24 };
 #else
-
+#ifndef TINY_FONT
 // FONT_MONTSERRAT_12
-const font_obj_t gfx_font_montserrat_12_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_12 };
+const font_obj_t gfx_font_montserrat_12_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat12 };
 
 // FONT_MONTSERRAT_14
-const font_obj_t gfx_font_montserrat_14_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_14 };
+const font_obj_t gfx_font_montserrat_14_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat14 };
 
 // FONT_MONTSERRAT_16
-const font_obj_t gfx_font_montserrat_16_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_16 };
+const font_obj_t gfx_font_montserrat_16_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat16 };
 
 // FONT_MONTSERRAT_18
-const font_obj_t gfx_font_montserrat_18_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_18 };
+const font_obj_t gfx_font_montserrat_18_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat18 };
 
 // FONT_MONTSERRAT_20
-const font_obj_t gfx_font_montserrat_20_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_20 };
+const font_obj_t gfx_font_montserrat_20_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat20 };
 
 // FONT_MONTSERRAT_22
-const font_obj_t gfx_font_montserrat_22_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_22 };
+const font_obj_t gfx_font_montserrat_22_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat22 };
 
 // FONT_MONTSERRAT_24
-const font_obj_t gfx_font_montserrat_24_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_24 };
+const font_obj_t gfx_font_montserrat_24_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat24 };
 
 // FONT_MONTSERRAT_30
-const font_obj_t gfx_font_montserrat_30_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_30 };
+const font_obj_t gfx_font_montserrat_30_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat30 };
 
 // FONT_MONTSERRAT_36
-const font_obj_t gfx_font_montserrat_36_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_36 };
+const font_obj_t gfx_font_montserrat_36_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat36 };
 
 // FONT_MONTSERRAT_40
-const font_obj_t gfx_font_montserrat_40_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_40 };
+const font_obj_t gfx_font_montserrat_40_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat40 };
 
 // FONT_MONTSERRAT_44
-const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_44 };
+const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat44 };
 
 // FONT_MONTSERRAT_48
-const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &m5gfx::fonts::lv_font_montserrat_48 };
+const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &m5gfx::fonts::lvFontMontserrat48 };
 
 // FONT_ALIBABAPUHUITI_CN24
 extern const lv_font_t AlibabaPuHuiTi_CN24;
-const lgfx::LVGLfont AlibabaPuHuiTi_CN24_obj(&AlibabaPuHuiTi_CN24);
+const M5LvglFont AlibabaPuHuiTi_CN24_obj(&AlibabaPuHuiTi_CN24);
 const font_obj_t gfx_font_AlibabaPuHuiTi_CN24_obj = {{ &mp_type_object }, &AlibabaPuHuiTi_CN24_obj };
 
 // FONT_ALIBABASANS_JA24
 extern const lv_font_t AlibabaSans_JP24;
-const lgfx::LVGLfont AlibabaSans_JP24_obj(&AlibabaSans_JP24);
+const M5LvglFont AlibabaSans_JP24_obj(&AlibabaSans_JP24);
 const font_obj_t gfx_font_AlibabaSans_JP24_obj = {{ &mp_type_object }, &AlibabaSans_JP24_obj };
 
 // FONT_ALIBABASANS_KR24
 extern const lv_font_t AlibabaSans_KR24;
-const lgfx::LVGLfont AlibabaSans_KR24_obj(&AlibabaSans_KR24);
+const M5LvglFont AlibabaSans_KR24_obj(&AlibabaSans_KR24);
 const font_obj_t gfx_font_AlibabaSans_KR24_obj = {{ &mp_type_object }, &AlibabaSans_KR24_obj };
-#endif
 #else // TINY_FONT
 // FONT_MONTSERRAT_12
 extern const lv_font_t Montserrat_1BPP_12;
-const lgfx::LVGLfont lv_font_montserrat_12_obj(&Montserrat_1BPP_12);
+const M5LvglFont lv_font_montserrat_12_obj(&Montserrat_1BPP_12);
 const font_obj_t gfx_font_montserrat_12_obj = {{ &mp_type_object }, &lv_font_montserrat_12_obj };
 
 // FONT_MONTSERRAT_14
 extern const lv_font_t Montserrat_1BPP_14;
-const lgfx::LVGLfont lv_font_montserrat_14_obj(&Montserrat_1BPP_14);
+const M5LvglFont lv_font_montserrat_14_obj(&Montserrat_1BPP_14);
 const font_obj_t gfx_font_montserrat_14_obj = {{ &mp_type_object }, &lv_font_montserrat_14_obj };
 
 // FONT_MONTSERRAT_16
 extern const lv_font_t Montserrat_1BPP_16;
-const lgfx::LVGLfont lv_font_montserrat_16_obj(&Montserrat_1BPP_16);
+const M5LvglFont lv_font_montserrat_16_obj(&Montserrat_1BPP_16);
 const font_obj_t gfx_font_montserrat_16_obj = {{ &mp_type_object }, &lv_font_montserrat_16_obj };
 
 // FONT_MONTSERRAT_18
 extern const lv_font_t Montserrat_1BPP_18;
-const lgfx::LVGLfont lv_font_montserrat_18_obj(&Montserrat_1BPP_18);
+const M5LvglFont lv_font_montserrat_18_obj(&Montserrat_1BPP_18);
 const font_obj_t gfx_font_montserrat_18_obj = {{ &mp_type_object }, &lv_font_montserrat_18_obj };
 
 // FONT_MONTSERRAT_20
-extern const lv_font_t Montserrat_1BPP_20;
-const lgfx::LVGLfont lv_font_montserrat_20_obj(&Montserrat_1BPP_20);
-const font_obj_t gfx_font_montserrat_20_obj = {{ &mp_type_object }, &lv_font_montserrat_20_obj };
+const font_obj_t gfx_font_montserrat_20_obj = {{ &mp_type_object }, &lv_font_montserrat_18_obj };
 
 // FONT_MONTSERRAT_22
-extern const lv_font_t Montserrat_1BPP_22;
-const lgfx::LVGLfont lv_font_montserrat_22_obj(&Montserrat_1BPP_22);
-const font_obj_t gfx_font_montserrat_22_obj = {{ &mp_type_object }, &lv_font_montserrat_22_obj };
+const font_obj_t gfx_font_montserrat_22_obj = {{ &mp_type_object }, &lv_font_montserrat_18_obj };
 
 // FONT_MONTSERRAT_24
 extern const lv_font_t Montserrat_1BPP_24;
-const lgfx::LVGLfont lv_font_montserrat_24_obj(&Montserrat_1BPP_24);
+const M5LvglFont lv_font_montserrat_24_obj(&Montserrat_1BPP_24);
 const font_obj_t gfx_font_montserrat_24_obj = {{ &mp_type_object }, &lv_font_montserrat_24_obj };
 
 // FONT_MONTSERRAT_30
-extern const lv_font_t Montserrat_1BPP_30;
-const lgfx::LVGLfont lv_font_montserrat_30_obj(&Montserrat_1BPP_30);
-const font_obj_t gfx_font_montserrat_30_obj = {{ &mp_type_object }, &lv_font_montserrat_30_obj };
+const font_obj_t gfx_font_montserrat_30_obj = {{ &mp_type_object }, &lv_font_montserrat_24_obj };
 
 // FONT_MONTSERRAT_36
-extern const lv_font_t Montserrat_1BPP_36;
-const lgfx::LVGLfont lv_font_montserrat_36_obj(&Montserrat_1BPP_36);
-const font_obj_t gfx_font_montserrat_36_obj = {{ &mp_type_object }, &lv_font_montserrat_36_obj };
+const font_obj_t gfx_font_montserrat_36_obj = {{ &mp_type_object }, &lv_font_montserrat_24_obj };
 
 // FONT_MONTSERRAT_40
 extern const lv_font_t Montserrat_1BPP_40;
-const lgfx::LVGLfont lv_font_montserrat_40_obj(&Montserrat_1BPP_40);
+const M5LvglFont lv_font_montserrat_40_obj(&Montserrat_1BPP_40);
 const font_obj_t gfx_font_montserrat_40_obj = {{ &mp_type_object }, &lv_font_montserrat_40_obj };
 
 // FONT_MONTSERRAT_44
 extern const lv_font_t Montserrat_1BPP_44;
-const lgfx::LVGLfont lv_font_montserrat_44_obj(&Montserrat_1BPP_44);
+const M5LvglFont lv_font_montserrat_44_obj(&Montserrat_1BPP_44);
 const font_obj_t gfx_font_montserrat_44_obj = {{ &mp_type_object }, &lv_font_montserrat_44_obj };
 
 // FONT_MONTSERRAT_48
 extern const lv_font_t Montserrat_1BPP_48;
-const lgfx::LVGLfont lv_font_montserrat_48_obj(&Montserrat_1BPP_48);
+const M5LvglFont lv_font_montserrat_48_obj(&Montserrat_1BPP_48);
 const font_obj_t gfx_font_montserrat_48_obj = {{ &mp_type_object }, &lv_font_montserrat_48_obj };
 #endif // TINY_FONT
+#endif // BOARD_ID == 25
 }

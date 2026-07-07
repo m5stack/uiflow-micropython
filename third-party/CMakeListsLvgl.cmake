@@ -90,6 +90,19 @@ set(MICROPY_SOURCE_PORT
     ${PROJECT_DIR}/../micropython/ports/esp32/machine_sdcard.c
 )
 
+if(BOARD_TYPE STREQUAL "box3" OR BOARD_TYPE STREQUAL "xiao-s3")
+    # Use M5Stack network hooks and VFS stream helpers for third-party boards that expose access code.
+    list(REMOVE_ITEM MICROPY_SOURCE_PORT
+        ${PROJECT_DIR}/../micropython/ports/esp32/network_lan.c
+        ${PROJECT_DIR}/../micropython/ports/esp32/network_wlan.c
+    )
+    list(APPEND MICROPY_SOURCE_PORT
+        ${PROJECT_DIR}/../m5stack/network_lan.c
+        ${PROJECT_DIR}/../m5stack/network_wlan.c
+        ${PROJECT_DIR}/../m5stack/_vfs_stream.c
+    )
+endif()
+
 if (BOARD_TYPE STREQUAL "cores3" OR BOARD_TYPE STREQUAL "core2")
     LIST(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/machine_hw_spi.c)
 else()
@@ -169,6 +182,11 @@ set(IDF_COMPONENTS
     uiflow_utility
 )
 
+if(MICROPY_BOARD STREQUAL "ESPRESSIF_ESP32_S3_BOX_3" OR MICROPY_BOARD STREQUAL "SEEED_STUDIO_XIAO_ESP32S3")
+    list(APPEND IDF_COMPONENTS mqtt)
+    list(APPEND IDF_COMPONENTS m5things)
+endif()
+
 if(IDF_VERSION_MINOR GREATER_EQUAL 1 OR IDF_VERSION_MAJOR GREATER_EQUAL 5)
     list(APPEND IDF_COMPONENTS esp_netif)
 endif()
@@ -214,6 +232,7 @@ idf_component_register(
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
+        ${PROJECT_DIR}/../m5stack
         ${LV_INCLUDE}
     REQUIRES
         ${IDF_COMPONENTS}

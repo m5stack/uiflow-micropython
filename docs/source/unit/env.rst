@@ -14,11 +14,16 @@ Micropython Example::
 
     import M5
     from M5 import *
+    from hardware import I2C, Pin
     from unit import *
 
     M5.begin()
 
+    # PORT.A on CoreS3 and most S3-based controllers.
     i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=100000)
+
+    # PORT.A on Tough.
+    # i2c0 = I2C(0, scl=Pin(33), sda=Pin(32), freq=100000)
 
     env_0 = ENVUnit(i2c=i2c0, type=1) # ENVUnit
     env2_0 = ENVUnit(i2c=i2c0, type=2) # ENVUnit II
@@ -85,7 +90,7 @@ Methods
 
 .. method:: ENVUnit.read_pressure()
 
-    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is Pa.
+    This method allows to read the atmospheric pressure collected by ENV and returns a floating point value. The unit of measurement is hPa.
 
     UIFLOW2:
 

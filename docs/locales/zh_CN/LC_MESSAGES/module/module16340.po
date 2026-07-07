@@ -1,0 +1,227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-24 11:56+0800\n"
+"PO-Revision-Date: 2026-06-24 11:44+0800\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/module/module16340.rst:2 b1de185e648347e580b147daaf127cd1
+msgid "16340 Module"
+msgstr "16340 模块"
+
+#: ../../source/module/module16340.rst:8 1804b0ff9d784defb72e1e709d5e9d58
+msgid ""
+"``Module16340`` is a power monitor battery module. It uses the onboard "
+"INA226 sensor on the Module I2C bus to read bus voltage, shunt voltage, "
+"current, and power."
+msgstr ""
+"``Module16340`` 是一个电源监测电池模块。它通过 Module I2C 总线访问板载 INA226 "
+"传感器，用于读取总线电压、分流电压、电流和功率。"
+
+#: ../../source/module/module16340.rst:10 4c11825f2d0347a8b2abd7ab3b9a662f
+msgid ""
+"The driver is preconfigured for the Module16340 hardware: it uses I2C "
+"address ``0x45``, a ``0.02`` ohm shunt resistor, 16-sample averaging, "
+"8244 us bus and shunt conversion times, continuous shunt-and-bus voltage "
+"mode, and calibration value ``0x0832``."
+msgstr ""
+
+#: ../../source/module/module16340.rst:13 e91823c1e12b4c69aa5aefc24cf587f6
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/module/module16340.rst:16
+#: ../../source/module/module16340.rst:34 0a9dc7788d5049e88f37ba3c9b792b39
+msgid "Read power monitor values"
+msgstr "读取电源监测数值"
+
+#: ../../source/module/module16340.rst:18 4f1ff8e7cfb84aad8391f1a93c0b9425
+msgid ""
+"This example creates a ``Module16340`` object and reads voltage, current,"
+" and power values from the onboard INA226 sensor."
+msgstr "该示例创建 ``Module16340`` 对象，并从板载 INA226 传感器读取电压、电流和功率值。"
+
+#: ../../source/module/module16340.rst:20 2b4c206e82f1495abe2d36db7707db1a
+msgid "Open the |base16340_cores3_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |base16340_cores3_example.m5f2| 项目。"
+
+#: ../../source/module/module16340.rst:22 812d02db24cf432ba0806909a2bfa538
+#: driver.ina226.INA226.read_bus_voltage:6 driver.ina226.INA226.read_current:6
+#: driver.ina226.INA226.read_power:6 driver.ina226.INA226.read_shunt_voltage:6
+#: module.ina226.INA226:3 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/module/module16340.rst:24 231dc71c8d1d4ae99c515a1d35ca03bc
+#: module.ina226.INA226:5 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/module.module16340.ref:1 9551fd9fd2344331af06c462dfce7f30
+msgid "init.png"
+msgstr ""
+
+#: ../../source/module/module16340.rst:26
+#: ../../source/module/module16340.rst:44 19272cb007504b35b9aa41329b706cad
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/module/module16340.rst:28
+#: ../../source/module/module16340.rst:46 9b9b44c30e644128a2b8d769f300d194
+msgid "None"
+msgstr "None"
+
+#: ../../source/module/module16340.rst:31 8e88362d3c474848944fb4517e7e8766
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/module/module16340.rst:36 139172171e1f4761b8283008152ede5b
+msgid ""
+"This example prints the bus voltage, shunt voltage, current, and power "
+"values."
+msgstr "该示例打印总线电压、分流电压、电流和功率值。"
+
+#: ../../source/module/module16340.rst:38 3f783326867b4653bc51e34384420175
+#: driver.ina226.INA226.calibrate:6 driver.ina226.INA226.read_bus_voltage:10
+#: driver.ina226.INA226.read_current:10 driver.ina226.INA226.read_power:10
+#: driver.ina226.INA226.read_shunt_voltage:10 module.ina226.INA226:7 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/module/module16340.rst:49 4ddbc30e953049ccb45726a1a584f2d6
+msgid "API"
+msgstr "API参考"
+
+#: ../../source/module/module16340.rst:52 d83c464e14214a708179e230693003c9
+msgid "Module16340"
+msgstr "Module16340"
+
+#: 92d1a3f1c5254bfbb787770da4781b78 module.ina226.INA226:1 of
+msgid "Bases: :py:class:`~driver.ina226.INA226`"
+msgstr "Bases: :py:class:`~driver.ina226.INA226`"
+
+#: ceaaf9076777428ba0bf3af4b2e340fd module.ina226.INA226:1 of
+msgid "Create an Module16340 object."
+msgstr "创建 Module16340 对象。"
+
+#: d6f3128f88aa447cbe2f722671e94722 driver.ina226.INA226.calibrate:1 of
+msgid "Calibrate the INA226."
+msgstr "校准 INA226。"
+
+#: 03c9a6827e1b435a82c2712eb739e9d7 driver.ina226.INA226.calibrate of
+msgid "Parameters"
+msgstr "Parameters"
+
+#: driver.ina226.INA226.calibrate:3 fff969a137be479c858419b66a091adc of
+msgid "The maximum expected current in Amperes."
+msgstr "预期最大电流，单位为安培。"
+
+#: 90e237d403494c3ba6623aee45d7ad14 driver.ina226.INA226.calibrate:4 of
+msgid ""
+"The calibration value to use. If None, it will be calculated based on the"
+" maximum expected current and the shunt resistor value."
+msgstr "要使用的校准值。如果为 None，将根据预期最大电流和分流电阻值计算。"
+
+#: 0b109dcb27dc49cab18a81ef38e87358 driver.ina226.INA226.read_bus_voltage:1 of
+msgid "Read the bus voltage in Volts."
+msgstr "读取总线电压，单位为伏特。"
+
+#: c434d2ebf41949fb821e2c8bc3562fed driver.ina226.INA226.read_bus_voltage
+#: driver.ina226.INA226.read_current driver.ina226.INA226.read_power
+#: driver.ina226.INA226.read_shunt_voltage of
+msgid "Returns"
+msgstr "Returns"
+
+#: 315be612ba3a43cfbd37a2cb7f3bcc64 driver.ina226.INA226.read_bus_voltage:3 of
+msgid "The bus voltage in Volts."
+msgstr "总线电压，单位为伏特。"
+
+#: 45ad3780690f46cba4810a7247b0ca5d driver.ina226.INA226.read_bus_voltage
+#: driver.ina226.INA226.read_current driver.ina226.INA226.read_power
+#: driver.ina226.INA226.read_shunt_voltage of
+msgid "Return type"
+msgstr "Return type"
+
+#: 001a192b8e3a4d0489e9b5e55566cd70 driver.ina226.INA226.read_bus_voltage:8 of
+msgid "|read_bus_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/module.module16340.ref:4 3924f3c66d90424ca02c8ef5e089ce07
+msgid "read_bus_voltage.png"
+msgstr ""
+
+#: 7371247c73614e73a128dba9793be3fa driver.ina226.INA226.read_current:1 of
+msgid "Read the current in Amperes."
+msgstr "读取电流，单位为安培。"
+
+#: 0a12d05028df40b2857111988e0caf95 driver.ina226.INA226.read_current:3 of
+msgid "The current in Amperes."
+msgstr "电流，单位为安培。"
+
+#: driver.ina226.INA226.read_current:8 edb7f9f5e25c40f19c9295f452a785d6 of
+msgid "|read_current.png|"
+msgstr ""
+
+#: ../../source/refs/module.module16340.ref:5 12d052b60e544cb49a313698ac11f732
+msgid "read_current.png"
+msgstr ""
+
+#: 050ee2e137c3403f92583eacc1f7da86 driver.ina226.INA226.read_power:1 of
+msgid "Read the power in Watts."
+msgstr "读取功率，单位为瓦特。"
+
+#: 050ee2e137c3403f92583eacc1f7da86 driver.ina226.INA226.read_power:3 of
+msgid "The power in Watts."
+msgstr "功率，单位为瓦特。"
+
+#: 9acb0bef0ca64737abcb877738ca0f0a driver.ina226.INA226.read_power:8 of
+msgid "|read_power.png|"
+msgstr ""
+
+#: ../../source/refs/module.module16340.ref:6 8f2ae6e5758b4e3db7e493dd455e7649
+msgid "read_power.png"
+msgstr ""
+
+#: 8fe63c74858a40d0a91d1dd9494d035f driver.ina226.INA226.read_shunt_voltage:1
+#: of
+msgid "Read the shunt voltage in Volts."
+msgstr "读取分流电压，单位为伏特。"
+
+#: 53f742099e0f4669a1df42304c8a507e driver.ina226.INA226.read_shunt_voltage:3
+#: of
+msgid "The shunt voltage in Volts."
+msgstr "分流电压，单位为伏特。"
+
+#: d7218e405e9f4ddca93206c9baa08cf4 driver.ina226.INA226.read_shunt_voltage:8
+#: of
+msgid "|read_shunt_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/module.module16340.ref:3 a954321960bf4850b8578cc37b5f51e8
+msgid "read_shunt_voltage.png"
+msgstr ""
+
+#~ msgid ""
+#~ "``Module16340`` is an alias of "
+#~ ":class:`module.ina226.INA226`, which inherits "
+#~ ":class:`driver.ina226.INA226`. Create it with "
+#~ "``from module import Module16340``."
+#~ msgstr ""
+#~ "``Module16340`` 是 :class:`module.ina226.INA226` "
+#~ "的别名，该类继承自 :class:`driver.ina226.INA226`。可通过 ``from "
+#~ "module import Module16340`` 创建对象。"
+

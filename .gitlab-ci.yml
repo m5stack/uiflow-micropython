@@ -125,7 +125,7 @@ build-firmware:
           M5STACK_StopWatch
           M5STACK_Tab5
           M5STACK_Core2
-      - SHARD_NAME: ["esp32-list4"] # 9 M5Stack boards + 2 third-party boards
+      - SHARD_NAME: ["esp32-list4"] # 10 M5Stack boards + 2 third-party boards
         BOARD_LIST_M5STACK: >-
           M5STACK_NanoC6
           M5STACK_Unit_C6L
@@ -135,6 +135,7 @@ build-firmware:
           M5STACK_StampS3
           M5STACK_StampS3Bat
           M5STACK_PaperS3
+          M5STACK_PaperColor
           Nesso_N1
         BOARD_LIST_THIRD_PARTY: >-
           ESPRESSIF_ESP32_S3_BOX_3

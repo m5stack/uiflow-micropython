@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-03 16:34+0800\n"
+"POT-Creation-Date: 2026-06-18 12:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -21,149 +21,156 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 
 #: ../../source/hardware/touch.rst:4 ../../source/hardware/touch.rst:50
-#: 4a321bf415de4d36b16242b89e78ad7c ccc1e56bb5a44c6ea758a1debbd193a7
+#: 28683df6e7864f0b8f1db67a9b15cab7 6248b8fbace445f7818736ca1ed09ea9
 msgid "Touch"
 msgstr "触摸"
 
-#: ../../source/hardware/touch.rst:8 dbe72ef44fe84cada8e15d805ae0a09b
+#: ../../source/hardware/touch.rst:8 664337ce9e5540218bd7083f3eb4a323
 msgid ""
 "The ``Touch`` class provides methods for reading touch coordinates, the "
 "number of touch points, and detailed touch information on M5Stack devices"
 " with touch screens."
 msgstr "``Touch`` 类提供用于读取触摸坐标、触点数量以及带触摸屏的 M5Stack 设备上详细触摸信息的方法。"
 
-#: ../../source/hardware/touch.rst:11 19c04396589947638f2c0b505cd4a3a2
+#: ../../source/hardware/touch.rst:11 b2c1b95b96b04606a20d0c46569388b2
 msgid "UiFlow2 Example"
 msgstr "UiFlow2 应用示例"
 
 #: ../../source/hardware/touch.rst:14 ../../source/hardware/touch.rst:32
-#: f1ef68e76d14492faa203b9c708ce12a f92fd0925be14cbe976223a70694a814
+#: d285d99033a3411d9e80cc242eba87b0 fc64761d5575402ea6db938b148e584b
 msgid "Getting Touch Coordinates"
 msgstr "获取触摸坐标"
 
-#: ../../source/hardware/touch.rst:16 20ede1d4197245d6967b4a921b7a54bb
+#: ../../source/hardware/touch.rst:16 f855faafba6845289ab3f26efbc6dfd8
 msgid "Open the |cores3_touch_example.m5f2| project in UiFlow2."
 msgstr "在 UiFlow2 中打开 |cores3_touch_example.m5f2| 工程。"
 
 #: ../../source/hardware/touch.rst:18 ../../source/hardware/touch.rst:34
-#: b581f12150a54462978beba702a47882 c26633c210714afe93dc4414a153df87
+#: 69d5d0bc3af547fa85533f35b5f0b383 7489ccd8b1c7422eab0259fd23871964
 msgid ""
 "This example demonstrates how to obtain the X and Y coordinates of a "
 "touch event and display them on the screen."
 msgstr "该示例演示如何获取触摸事件的 X 和 Y 坐标并将其显示在屏幕上。"
 
-#: ../../source/hardware/touch.rst:20 ../../source/hardware/touch.rst:60
-#: ../../source/hardware/touch.rst:76 ../../source/hardware/touch.rst:92
-#: ../../source/hardware/touch.rst:139 5fe8d28f0f504cf4944150450a1ca459
-#: 65f38fdde14b4d378fc0e7d9a11ff085 8a38edc117c446d686f746f503b5139f
-#: a687815582304f38a64541f7d7526c9f fd4143e7e09d4be087d8c0bc0c288450
+#: ../../source/hardware/touch.rst:20 ../../source/hardware/touch.rst:63
+#: ../../source/hardware/touch.rst:82 ../../source/hardware/touch.rst:98
+#: ../../source/hardware/touch.rst:156 69a884f58360478c8559ac36667a6dbd
+#: 9297e9baf8b3477dac97c961d6e18537 9c745b9ff0244a4cb46f0c5a74c2ac64
+#: b689c032347447cdaee599a2a7942a7a b8d2cf0b9c044fc7a6bb9f453b3bbd2b
 msgid "UiFlow2 Code Block:"
 msgstr "UiFlow2 代码块："
 
-#: ../../source/hardware/touch.rst:22 1ec54f919948408aaf6bfc7dbb99915d
+#: ../../source/hardware/touch.rst:22 94be9675be614c989618673610e3c71d
 msgid "|cores3_touch_example.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:2 954269bec1ee45c684827961081a8961
+#: ../../source/refs/hardware.touch.ref:2 70f0ce8b2fd744a6ba2ed4e70ef86d7e
 msgid "cores3_touch_example.png"
 msgstr ""
 
 #: ../../source/hardware/touch.rst:24 ../../source/hardware/touch.rst:42
-#: 27667526f4ca4b229529d6f74776aad0 7d4e9a437ea745149d7790a0ad47493e
+#: 9c332ffc70e941fea42a93225e1ea793 c287768dd3c94ae7ae6aae106bd13d35
 msgid "Example output:"
 msgstr "示例输出："
 
 #: ../../source/hardware/touch.rst:26 ../../source/hardware/touch.rst:44
-#: 290ad6ed9f904e5ea6db05af00343f44 4064cce4e71a45fbadcce639e5fb8f12
+#: c625cb49bfd849e3af0369dccb66490f d57c6c20b06a4a7dbe8fe0fb222c0c4e
 msgid "Screen displays the current X and Y coordinates of the touch event."
 msgstr "屏幕会显示当前触摸事件的 X 和 Y 坐标。"
 
-#: ../../source/hardware/touch.rst:29 d1bab5bc387e4378b009609a7c6aef80
+#: ../../source/hardware/touch.rst:29 c157dfce7b564a89b48709bab845e87b
 msgid "MicroPython Example"
 msgstr "MicroPython 应用示例"
 
-#: ../../source/hardware/touch.rst:36 ../../source/hardware/touch.rst:64
-#: ../../source/hardware/touch.rst:80 ../../source/hardware/touch.rst:96
-#: ../../source/hardware/touch.rst:121 ../../source/hardware/touch.rst:145
-#: 0cab23c5b69a4cffa707ba644a41b918 17825e45082f48fe929192f6c98fccd6
-#: 2b68c9997f9c4147997b71511003e121 776423779c174b739946d9d4e8902cca
-#: e5e8d9c86aff4b2387f5a2a8196804ac ffc8699111e144e498d6811525b86a44
+#: ../../source/hardware/touch.rst:36 ../../source/hardware/touch.rst:67
+#: ../../source/hardware/touch.rst:86 ../../source/hardware/touch.rst:102
+#: ../../source/hardware/touch.rst:127 ../../source/hardware/touch.rst:162
+#: 319ac69ef2b842e487830aaaaeda379b 34ebdcd97f5245b183a4cd9960b83b4d
+#: 55b7e5bb18a44d178a3a59d3a5029348 8d4ea6aa5d49465eb8f58d67c72d6838
+#: db5e79ba15b84c9f8d705ef32b29af0a f15cf833509d4019898a2364650bca45
 msgid "MicroPython Code Block:"
 msgstr "MicroPython 代码块："
 
-#: ../../source/hardware/touch.rst:47 6f6dfe655b3f48ef974f4ec2014f75f4
+#: ../../source/hardware/touch.rst:47 3e36f2ad01ef493fa186bb5d62089ef1
 msgid "API"
 msgstr "API参考"
 
-#: ../../source/hardware/touch.rst:56 dcfbe6b6eee64d1d9e8cf61f9f07a10c
+#: ../../source/hardware/touch.rst:56 683ffb5d07dd4ccc9d4f5968ccd92ba1
 msgid "Get the current X coordinate of the touch."
 msgstr "获取当前触摸点的 X 坐标。"
 
-#: ../../source/hardware/touch.rst 0115139c897c49e7a66077e01ef122a6
-#: 1a57c139be9749b3a613cca540ca5d3d 7e4278a306674394842bf9d5c939383b
-#: 8bc8d7188c1542c2bd00681704b7b82c ef9019c534ed4a7b81ca3be5412276d4
+#: ../../source/hardware/touch.rst:58 ../../source/hardware/touch.rst:77
+#: 881bc08b6c674f9bab0299f73c8f246e a7c7ccbf884d46d8847a72ee4c911eda
+msgid ""
+"The returned coordinate is automatically adjusted based on the current "
+"display rotation set by ``setRotation()``."
+msgstr ""
+
+#: ../../source/hardware/touch.rst 24a34d9d2c094e7d87f0959b9adf26de
+#: 289cb652749f445ca96e3c77b9a4229d 2e182d2ddd1c419b9fcfd6dfadc3f021
+#: 3f63de123fd74d8ba3dced28891d26ea 73a71543236d4b5da5f21b9acf49c46d
 msgid "Returns"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:58 12ae3a9ab47e4b14a5e62f4c90482368
+#: ../../source/hardware/touch.rst:61 a9263517e711496a9650a8893e1c19d7
 msgid "int - The X coordinate."
 msgstr "int - X 坐标。"
 
-#: ../../source/hardware/touch.rst:62 8e3c73e1a83e49f695eba31b50a51f1e
+#: ../../source/hardware/touch.rst:65 77a63132c17b458d8339bf9f6609cc28
 msgid "|getX.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:7 cecdf3e2a980466aa7af78bf17026687
+#: ../../source/refs/hardware.touch.ref:7 09fe4929d5024612aade7e696914bb0f
 msgid "getX.png"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:72 7d9d7e3d2e764c7ca9f140b6ddd7b00a
+#: ../../source/hardware/touch.rst:75 ac94d495527b45cea8e9c035cebe468f
 msgid "Get the current Y coordinate of the touch."
 msgstr "获取当前触摸点的 Y 坐标。"
 
-#: ../../source/hardware/touch.rst:74 dc799558cd4147f4bd7c4e3326fe67e0
+#: ../../source/hardware/touch.rst:80 e50dc33b29c948eda2cc01fb6e6932b6
 msgid "int - The Y coordinate."
 msgstr "int - Y 坐标。"
 
-#: ../../source/hardware/touch.rst:78 b59b5e14246945db9694da9e80d647b7
+#: ../../source/hardware/touch.rst:84 5af11e1ca18e493e996fd7110ec26d33
 msgid "|getY.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:8 6bc81a958f0a453a944a431a391da58c
+#: ../../source/refs/hardware.touch.ref:8 bbed07a1f4a641e19b48ffda2c1ddb0b
 msgid "getY.png"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:88 1ad825969a33426ca1e4e891ce0438ca
+#: ../../source/hardware/touch.rst:94 0994cda43c164446b246e60fa34855d4
 msgid "Get the number of current touch points."
 msgstr "获取当前触点数量。"
 
-#: ../../source/hardware/touch.rst:90 45998ed298644dc2ba52623d97e7bb11
+#: ../../source/hardware/touch.rst:96 d231f84069ae4a3aab25da838bc8d3db
 msgid "int - Number of active touches (0 if no touch)."
 msgstr "int - 当前有效触点数量（无触摸时为 0）。"
 
-#: ../../source/hardware/touch.rst:94 ced4e83bfc6f4478b1f7e9102c5a7d2a
+#: ../../source/hardware/touch.rst:100 9132e5fc55be4cbb816051f1f231d368
 msgid "|getCount.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:4 52a3b5caf6004a5785ddbddf89eaff71
+#: ../../source/refs/hardware.touch.ref:4 2c3f526e4f184489b8a2b6cbe5abd2e0
 msgid "getCount.png"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:104 e7765ba997564a38819731f1f990b5a1
+#: ../../source/hardware/touch.rst:110 f35c4d0350a74423bf5b6b1fa22da35f
 msgid "Get detailed information about a specific touch point."
 msgstr "获取指定触点的详细信息。"
 
-#: ../../source/hardware/touch.rst 7dad547c3c344437af0e129f0603f3dc
-#: f0d24e20f75f49d993079283f635b567
+#: ../../source/hardware/touch.rst 1df06f2b503049b8b534b8e06abad284
+#: f8afbd9be93f4a4fa275669bd81ed669
 msgid "Parameters"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:106 ../../source/hardware/touch.rst:131
-#: 940aac7805594eb68f0164d322265f07 f39b409c68164b8e99e08e0159ecb170
+#: ../../source/hardware/touch.rst:112 ../../source/hardware/touch.rst:148
+#: 6c9a00cbb4ac49a8b7b211c30a78d1ab d24e9a45505d4eb689e8614d0ead1b0e
 msgid "Index of the touch point (default is 0)."
 msgstr "触点索引（默认值为 0）。"
 
-#: ../../source/hardware/touch.rst:107 14c1001d8e8341ddadcad575a9fceaea
+#: ../../source/hardware/touch.rst:113 5d98872cf5b34d8bba52334867e83eb2
 msgid ""
 "tuple - A tuple of 11 elements containing detailed touch status:  - ``[0]"
 " deltaX`` (int): The X-axis difference since the last measurement. - "
@@ -176,101 +183,141 @@ msgid ""
 "True if currently released. - ``[8] wasReleased`` (bool): True if just "
 "transitioned to released state. - ``[9] isHolding`` (bool): True if "
 "currently being held. - ``[10] wasHold`` (bool): True if it was held."
-msgstr "元组 - 一个包含 11 个元素的元组，提供触摸状态的详细信息：``[0] deltaX`` (int)：自上次测量以来在 X 轴上的位移差；``[1] deltaY`` (int)：自上次测量以来在 Y 轴上的位移差；``[2] distanceX`` (int)：自触摸开始以来在 X 轴上的累计移动距离；``[3] distanceY`` (int)：自触摸开始以来在 Y 轴上的累计移动距离；``[4] isPressed`` (bool)：当前是否处于按下状态；``[5] wasPressed`` (bool)：是否刚刚变为按下状态；``[6] wasClicked`` (bool)：是否刚刚完成一次点击；``[7] isReleased`` (bool)：当前是否处于释放状态；``[8] wasReleased`` (bool)：是否刚刚从按下变为释放状态；``[9] isHolding`` (bool)：当前是否处于长按保持状态；``[10] wasHold`` (bool)：是否曾经处于长按保持状态。"
+msgstr ""
+"元组 - 一个包含 11 个元素的元组，提供触摸状态的详细信息：``[0] deltaX`` (int)：自上次测量以来在 X "
+"轴上的位移差；``[1] deltaY`` (int)：自上次测量以来在 Y 轴上的位移差；``[2] distanceX`` "
+"(int)：自触摸开始以来在 X 轴上的累计移动距离；``[3] distanceY`` (int)：自触摸开始以来在 Y "
+"轴上的累计移动距离；``[4] isPressed`` (bool)：当前是否处于按下状态；``[5] wasPressed`` "
+"(bool)：是否刚刚变为按下状态；``[6] wasClicked`` (bool)：是否刚刚完成一次点击；``[7] isReleased``"
+" (bool)：当前是否处于释放状态；``[8] wasReleased`` (bool)：是否刚刚从按下变为释放状态；``[9] "
+"isHolding`` (bool)：当前是否处于长按保持状态；``[10] wasHold`` (bool)：是否曾经处于长按保持状态。"
 
-#: ../../source/hardware/touch.rst:107 ec60bdc67fe948418140ad1798738ca3
+#: ../../source/hardware/touch.rst:113 d3fd1d804c724fcbae4e449b37a1d6f5
 msgid "tuple - A tuple of 11 elements containing detailed touch status:"
 msgstr "元组 - 一个包含 11 个元素的元组，提供触摸状态的详细信息："
 
-#: ../../source/hardware/touch.rst:109 26d1c13c04b346a38abe75e81f66a788
+#: ../../source/hardware/touch.rst:115 e0355415ebe1464bad9f9cbd13f189d1
 msgid "``[0] deltaX`` (int): The X-axis difference since the last measurement."
 msgstr "``[0] deltaX`` (int)：自上次测量以来在 X 轴上的位移差。"
 
-#: ../../source/hardware/touch.rst:110 1805f9bd43e844d2922e7446785a5059
+#: ../../source/hardware/touch.rst:116 1e886819c3b148148b1bd7bd6ff79ef4
 msgid "``[1] deltaY`` (int): The Y-axis difference since the last measurement."
 msgstr "``[1] deltaY`` (int)：自上次测量以来在 Y 轴上的位移差。"
 
-#: ../../source/hardware/touch.rst:111 10a0d867bf9c48ce92bab61ab9cd3ada
+#: ../../source/hardware/touch.rst:117 e8c65677dd7946f487ff7c894e6d66fc
 msgid "``[2] distanceX`` (int): The total X-axis distance moved since touched."
 msgstr "``[2] distanceX`` (int)：自触摸开始以来在 X 轴上的累计移动距离。"
 
-#: ../../source/hardware/touch.rst:112 693cbbefba3a42dfa8f580fa048fc390
+#: ../../source/hardware/touch.rst:118 69d29e01a56044e2863a28b90da21e57
 msgid "``[3] distanceY`` (int): The total Y-axis distance moved since touched."
 msgstr "``[3] distanceY`` (int)：自触摸开始以来在 Y 轴上的累计移动距离。"
 
-#: ../../source/hardware/touch.rst:113 299a44535129458d84f12eed417ce9c1
+#: ../../source/hardware/touch.rst:119 7910ad12bf2e473ab0a1f67d7815bf77
 msgid "``[4] isPressed`` (bool): True if currently being pressed."
 msgstr "``[4] isPressed`` (bool)：当前是否处于按下状态。"
 
-#: ../../source/hardware/touch.rst:114 e8885e6b268f4d84b4d222710db86711
+#: ../../source/hardware/touch.rst:120 ece3aa7dff01402190cf37fe60298b97
 msgid "``[5] wasPressed`` (bool): True if just transitioned to pressed state."
 msgstr "``[5] wasPressed`` (bool)：是否刚刚变为按下状态。"
 
-#: ../../source/hardware/touch.rst:115 aaf288f73686456dbc52d2cf139b13fc
+#: ../../source/hardware/touch.rst:121 7f358807ea4040aabc59f94180a7b33a
 msgid "``[6] wasClicked`` (bool): True if just clicked."
 msgstr "``[6] wasClicked`` (bool)：是否刚刚完成一次点击。"
 
-#: ../../source/hardware/touch.rst:116 3e621464a0514e9aa500451d3aaf6f30
+#: ../../source/hardware/touch.rst:122 6552c2f1352b4458a5981440acc32fcb
 msgid "``[7] isReleased`` (bool): True if currently released."
 msgstr "``[7] isReleased`` (bool)：当前是否处于释放状态。"
 
-#: ../../source/hardware/touch.rst:117 6ba39a6a69ee49ceb5c46fb3a20b32d8
+#: ../../source/hardware/touch.rst:123 f842b58485a64dcf8de4973fafbdf286
 msgid "``[8] wasReleased`` (bool): True if just transitioned to released state."
 msgstr "``[8] wasReleased`` (bool)：是否刚刚从按下变为释放状态。"
 
-#: ../../source/hardware/touch.rst:118 51f462ebcb6e4bf2b01371a169486ca0
+#: ../../source/hardware/touch.rst:124 68503ce4f39342448d567ac9b52db956
 msgid "``[9] isHolding`` (bool): True if currently being held."
 msgstr "``[9] isHolding`` (bool)：当前是否处于长按保持状态。"
 
-#: ../../source/hardware/touch.rst:119 88b40a041c494a01b3ed23b473808e22
+#: ../../source/hardware/touch.rst:125 e42cd8d82da5477e905e93314a3484eb
 msgid "``[10] wasHold`` (bool): True if it was held."
 msgstr "``[10] wasHold`` (bool)：是否曾经处于长按保持状态。"
 
-#: ../../source/hardware/touch.rst:129 4fbb53533cfd47fc8a67e187f0b78584
+#: ../../source/hardware/touch.rst:135 c019b4e130e74b9580cf9a15d32f17ac
 msgid "Get the raw touch point coordinates."
 msgstr "获取原始触点坐标。"
 
-#: ../../source/hardware/touch.rst:132 216c18d7988d482b9a54cd44b0aa875f
+#: ../../source/hardware/touch.rst:139 db6421879e35446dbbd53ecf453f9e44
+msgid ""
+"This method returns **raw hardware coordinates** that are **NOT** "
+"adjusted for the current display rotation set by ``setRotation()``. If "
+"you have changed the display rotation, you must manually transform the "
+"coordinates to match the display orientation."
+msgstr ""
+
+#: ../../source/hardware/touch.rst:144 39c1229602684a4fb2f54a45fd99b089
+msgid ""
+"For single-touch scenarios, prefer ``getX()`` / ``getY()`` which "
+"automatically adjust for rotation. Use ``getTouchPointRaw()`` only when "
+"you need multi-touch support."
+msgstr ""
+
+#: ../../source/hardware/touch.rst:149 64c3fefcabbf4f0bbc1d20470a8b9c25
 msgid ""
 "tuple - A tuple of 4 elements containing raw touch point data:  - ``[0] "
 "x`` (int): The raw X coordinate. - ``[1] y`` (int): The raw Y coordinate."
 " - ``[2] size`` (int): The size or pressure of the touch point. - ``[3] "
 "id`` (int): The unique identifier for tracking the touch point."
-msgstr "元组 - 一个包含 4 个元素的元组，提供原始触点数据：``[0] x`` (int)：原始 X 坐标；``[1] y`` (int)：原始 Y 坐标；``[2] size`` (int)：触点的大小或压力；``[3] id`` (int)：用于跟踪该触点的唯一标识。"
+msgstr ""
+"元组 - 一个包含 4 个元素的元组，提供原始触点数据：``[0] x`` (int)：原始 X 坐标；``[1] y`` (int)：原始 Y "
+"坐标；``[2] size`` (int)：触点的大小或压力；``[3] id`` (int)：用于跟踪该触点的唯一标识。"
 
-#: ../../source/hardware/touch.rst:132 df69f5dbde2f407e903550bb44478cae
+#: ../../source/hardware/touch.rst:149 264a310101e0435d839da63e53fc2605
 msgid "tuple - A tuple of 4 elements containing raw touch point data:"
 msgstr "元组 - 一个包含 4 个元素的元组，提供原始触点数据："
 
-#: ../../source/hardware/touch.rst:134 def12a302b824f229984c9894c8f7dca
+#: ../../source/hardware/touch.rst:151 b050a35a204143c387ffb5ae133a51c8
 msgid "``[0] x`` (int): The raw X coordinate."
 msgstr "``[0] x`` (int)：原始 X 坐标。"
 
-#: ../../source/hardware/touch.rst:135 1a2b2fa41be64dea89797ff83d8e0791
+#: ../../source/hardware/touch.rst:152 1327fab88f604afebcb8a27fa932a532
 msgid "``[1] y`` (int): The raw Y coordinate."
 msgstr "``[1] y`` (int)：原始 Y 坐标。"
 
-#: ../../source/hardware/touch.rst:136 531c08de693149f9833f747a316c4687
+#: ../../source/hardware/touch.rst:153 62ae2733ec734b64b9ffdd7ca089228b
 msgid "``[2] size`` (int): The size or pressure of the touch point."
 msgstr "``[2] size`` (int)：触点的大小或压力。"
 
-#: ../../source/hardware/touch.rst:137 d606c166358f4ac9b0fee217e993f8c3
+#: ../../source/hardware/touch.rst:154 d5216430f8bf42ff96e22f51fbaf3c91
 msgid "``[3] id`` (int): The unique identifier for tracking the touch point."
 msgstr "``[3] id`` (int)：用于跟踪该触点的唯一标识。"
 
-#: ../../source/hardware/touch.rst:141 83484c8e74a940ea85c5df1431f7a1c2
+#: ../../source/hardware/touch.rst:158 b767f01e47414f4dbcb7e558fa57d116
 msgid "|getTouchPointRaw.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:5 961ce82894b542f483ea75f9a20d17bd
+#: ../../source/refs/hardware.touch.ref:5 2261376f61c34d8db6b2ad0390db46db
 msgid "getTouchPointRaw.png"
 msgstr ""
 
-#: ../../source/hardware/touch.rst:143 97638d5ed7074c35b635312f9785ee0f
+#: ../../source/hardware/touch.rst:160 74fbfa6a42f2401591a54a07785eb890
 msgid "|getTouchPointRaw2.png|"
 msgstr ""
 
-#: ../../source/refs/hardware.touch.ref:6 56ef2cfce5c340d6bebabd7a49d3037a
+#: ../../source/refs/hardware.touch.ref:6 78874365d5714f2bb8405684fe7443c1
 msgid "getTouchPointRaw2.png"
 msgstr ""
 
+#: ../../source/hardware/touch.rst:168 681bd9bd690544b79c88a3af9b28d204
+msgid "**Coordinate Transformation for Multi-Touch**"
+msgstr ""
+
+#: ../../source/hardware/touch.rst:170 779b41320a9d4e49ba20816ffd9a57b8
+msgid ""
+"When the display rotation is changed via ``setRotation()``, the raw "
+"coordinates from ``getTouchPointRaw()`` must be manually transformed to "
+"match the current screen orientation:"
+msgstr ""
+
+#: ../../source/hardware/touch.rst:195 6e3fb62211344a1db189d81a82c2abb0
+msgid ""
+"For single-touch scenarios, prefer ``getX()`` / ``getY()`` which handle "
+"rotation automatically."
+msgstr ""

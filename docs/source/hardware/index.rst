@@ -10,11 +10,11 @@ Hardware
     can.rst
     display.rst
     imu.rst
+    i2c.rst
     ir.rst
     lora.rst
     mic.rst
     pin.rst
-    plcio.rst
     pwr485.rst
     pwrcan.rst
     rotary.rst

@@ -331,6 +331,15 @@ M5Chart
         :param int value: The Y value to set.
         :return: None
 
+        .. tip::
+
+            For real-time data (sensors, audio, etc.), combine
+            ``set_next_value()`` with ``set_update_mode(lv.chart.UPDATE_MODE.SHIFT)``
+            for incremental scrolling. This is much more efficient than
+            replacing the entire series with ``set_series_values()`` every
+            frame, which triggers a full chart redraw and becomes slow with
+            400+ data points.
+
         UiFlow2 Code Block:
 
             |set_next_value.png|

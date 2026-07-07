@@ -3,13 +3,11 @@
 # SPDX-License-Identifier: MIT
 # UnitC6L startup script
 import M5
+from M5 import Widgets
 import time
 import network
 import machine
 import binascii
-import os
-import sys
-import gc
 import asyncio
 import esp32
 from . import Startup
@@ -22,26 +20,48 @@ except ImportError:
     _HAS_SERVER = False
 
 
+_TEXT_FONT = Widgets.FONTS.Montserrat12
+
+
+def _set_text_style(fg_color, bg_color):
+    M5.Lcd.setFont(_TEXT_FONT)
+    M5.Lcd.setTextColor(fg_color, bg_color)
+
+
+def _measure_text(text):
+    if not text:
+        return 0
+    M5.Lcd.setFont(_TEXT_FONT)
+    return M5.Lcd.textWidth(text)
+
+
+def _font_height():
+    M5.Lcd.setFont(_TEXT_FONT)
+    return M5.Lcd.fontHeight()
+
+
 def _draw_textbox(x, y, w, h, r, text, invert=False, is_title=False):
+    text = "" if text is None else str(text)
     max_chars = 8
     if len(text) > max_chars:
         if is_title:
             text = text[:3] + "..." + text[-3:]
         else:
             text = text[:3] + ".." + text[-3:]
-    M5.Lcd.setFont(M5.Lcd.FONTS.Montserrat12)
-    text_w = M5.Lcd.textWidth(text)
+    text_w = _measure_text(text)
     cursor_x = x + (w - text_w) // 2
-    cursor_y = y + (5 if is_title else 3)
-    M5.Lcd.setCursor(cursor_x, cursor_y)
+    cursor_y = y + (h - _font_height()) // 2
     if invert:
         M5.Lcd.fillRoundRect(x, y, w, h, r, M5.Lcd.COLOR.WHITE)
-        M5.Lcd.setTextColor(M5.Lcd.COLOR.BLACK, M5.Lcd.COLOR.WHITE)
+        fg_color = M5.Lcd.COLOR.BLACK
+        bg_color = M5.Lcd.COLOR.WHITE
     else:
         M5.Lcd.fillRoundRect(x, y, w, h, r, M5.Lcd.COLOR.BLACK)
         M5.Lcd.drawRoundRect(x, y, w, h, r, M5.Lcd.COLOR.WHITE)
-        M5.Lcd.setTextColor(M5.Lcd.COLOR.WHITE, M5.Lcd.COLOR.BLACK)
-    M5.Lcd.print(text)
+        fg_color = M5.Lcd.COLOR.WHITE
+        bg_color = M5.Lcd.COLOR.BLACK
+    _set_text_style(fg_color, bg_color)
+    M5.Lcd.drawString(text, cursor_x, cursor_y)
 
 
 def title_set_text(text, invert=False):
@@ -56,335 +76,159 @@ def label2_set_text(text, invert=False):
     _draw_textbox(3, 32, 58, 15, 4, text, invert, is_title=False)
 
 
-class AppBase:
-    def __init__(self) -> None:
-        self._task = None
-
-    def on_launch(self):
-        pass
-
-    def on_view(self):
-        pass
-
-    def on_ready(self):
-        self._task = asyncio.create_task(self.on_run())
-
-    async def on_run(self):
-        while True:
-            await asyncio.sleep_ms(500)
-
-    def on_hide(self):
-        if self._task:
-            self._task.cancel()
-
-    def on_exit(self):
-        pass
-
-    async def _keycode_enter_event_handler(self, fw):
-        pass
-
-    async def _keycode_back_event_handler(self, fw):
-        pass
-
-    async def _keycode_dpad_down_event_handler(self, fw):
-        pass
-
-    def set_internal_mode(self, in_internal: bool):
-        pass
+def _short_row_text(text):
+    text = "" if text is None else str(text)
+    if len(text) > 10:
+        text = text[:4] + ".." + text[-4:]
+    return text
 
 
-# CloudApp - 显示网络连接状态和云服务状态
-class CloudApp(AppBase):
+def _draw_plain_row(text, y, h):
+    text = _short_row_text(text)
+    text_w = _measure_text(text)
+    x = (64 - text_w) // 2
+    text_y = y + (h - _font_height()) // 2
+    _set_text_style(M5.Lcd.COLOR.WHITE, M5.Lcd.COLOR.BLACK)
+    M5.Lcd.drawString(text, x, text_y)
+
+
+def _draw_inverted_header(rows):
+    box_x = 8
+    box_y = -1
+    box_w = 48
+    box_h = 28
+    radius = 8
+    M5.Lcd.fillRect(box_x, box_y, box_w, box_h - radius, M5.Lcd.COLOR.WHITE)
+    M5.Lcd.fillRoundRect(
+        box_x, box_y + box_h - radius * 2, box_w, radius * 2, radius, M5.Lcd.COLOR.WHITE
+    )
+    for index, row in enumerate(rows[:2]):
+        text = _short_row_text(row)
+        text_w = _measure_text(text)
+        x = box_x + (box_w - text_w) // 2
+        text_y = box_y + 3 + index * 14 - (2 if index == 1 else 0)
+        _set_text_style(M5.Lcd.COLOR.BLACK, M5.Lcd.COLOR.WHITE)
+        M5.Lcd.drawString(text, x, text_y)
+
+
+def _draw_split_rows(rows, inverted_header=False):
+    M5.Lcd.fillRect(0, 0, 64, 48, M5.Lcd.COLOR.BLACK)
+    count = len(rows)
+    if count <= 0:
+        return
+    if inverted_header and count >= 2:
+        _draw_inverted_header(rows)
+        rest = rows[2:]
+        rest_count = len(rest)
+        if rest_count <= 0:
+            return
+        rest_y = 30
+        row_h = (48 - rest_y) // rest_count
+        for index, row in enumerate(rest):
+            y = rest_y + index * row_h
+            h = 48 - y if index == rest_count - 1 else row_h
+            _draw_plain_row(row, y, h)
+        return
+    row_h = 48 // count
+    for index, row in enumerate(rows):
+        y = index * row_h
+        h = 48 - y if index == count - 1 else row_h
+        _draw_plain_row(row, y, h)
+
+
+class InfoPages:
+    PAGE_ACCESS = 0
+    PAGE_NICKNAME = 1
+    PAGE_WIFI = 2
+    PAGE_MAC = 3
+    PAGE_COUNT = 4
+
     def __init__(self, wifi, ssid) -> None:
-        super().__init__()
         self._wifi = wifi
-        self._ssid = ssid
-        self._cloud_status = 0
+        self._ssid = ssid or ""
+        self._page = self.PAGE_ACCESS
+        self._last_payload = None
+        self._last_refresh_ms = 0
 
-    def on_launch(self):
-        self._cloud_status = self._get_cloud_status()
-        self._internal = False
-
-    def on_view(self):
-        M5.Lcd.fillRect(0, 0, 64, 48, M5.Lcd.COLOR.BLACK)
-        title_set_text("Cloud", False)
-        label1_set_text(str(self._ssid) if self._ssid else "None", self._internal)
-        status = self._wifi.connect_status()
-        status_text = {
-            network.STAT_GOT_IP: "CONNECTED",
-            network.STAT_CONNECTING: "CONNECTING",
-            network.STAT_NO_AP_FOUND: "NO AP",
-            network.STAT_WRONG_PASSWORD: "WRONG PSK",
-            network.STAT_HANDSHAKE_TIMEOUT: "HANDSHAKE ERR",
-        }.get(status, "DISCONNECTED")
-        label2_set_text(status_text, self._internal)
-
-    async def on_run(self):
-        while True:
-            status = self._wifi.connect_status()
-            if status != self._cloud_status:
-                self._cloud_status = status
-                status_text = {
-                    network.STAT_GOT_IP: "CONNECTED",
-                    network.STAT_CONNECTING: "CONNECTING",
-                    network.STAT_NO_AP_FOUND: "NO AP",
-                    network.STAT_WRONG_PASSWORD: "WRONG PSK",
-                    network.STAT_HANDSHAKE_TIMEOUT: "HANDSHAKE ERR",
-                }.get(status, "DISCONNECTED")
-                label2_set_text(status_text, self._internal)
-            await asyncio.sleep_ms(1000)
-
-    def set_internal_mode(self, in_internal: bool):
-        self._internal = in_internal
-        label1_set_text(str(self._ssid) if self._ssid else "None", self._internal)
-        status = self._wifi.connect_status()
-        status_text = {
-            network.STAT_GOT_IP: "CONNECTED",
-            network.STAT_CONNECTING: "CONNECTING",
-            network.STAT_NO_AP_FOUND: "NO AP",
-            network.STAT_WRONG_PASSWORD: "WRONG PSK",
-            network.STAT_HANDSHAKE_TIMEOUT: "HANDSHAKE ERR",
-        }.get(status, "DISCONNECTED")
-        label2_set_text(status_text, self._internal)
-
-    def _get_cloud_status(self):
-        if self._wifi.connect_status() != network.STAT_GOT_IP:
-            return 0
-        if _HAS_SERVER and M5Things.status() == 2:
-            return 1
-        return 0
-
-
-# RunApp - 显示 main.py 文件信息并提供运行选项
-class RunApp(AppBase):
-    def __init__(self) -> None:
-        super().__init__()
-        self._run_mode = 0  # 0: run once, 1: run always
-
-    def on_launch(self):
-        self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
-
-    def on_view(self):
-        M5.Lcd.fillRect(0, 0, 64, 48, M5.Lcd.COLOR.BLACK)
-        title_set_text("main.py", False)
-        label1_set_text("RUN ONCE", self._run_mode == 0)
-        label2_set_text("ALWAYS", self._run_mode == 1)
-
-    async def _keycode_dpad_down_event_handler(self, fw):
-        self._run_mode = (self._run_mode + 1) % 2
-        self.on_view()
-
-    async def _keycode_enter_event_handler(self, fw):
-        if self._run_mode == 0:
-            # Run once
-            M5.Lcd.clear(0xFFFFFF)
-            execfile("main.py", {"__name__": "__main__"})
-            raise KeyboardInterrupt
-        else:
-            # Run always
-            M5.Lcd.clear(0xFFFFFF)
-            nvs = esp32.NVS("uiflow")
-            nvs.set_u8("boot_option", 2)
-            nvs.commit()
-            machine.reset()
-
-    @staticmethod
-    def _get_file_info(path):
-        mtime = None
-        account = None
-        ver = f"UIFLOW2 {esp32.firmware_info()[3]}"
-
-        try:
-            stat = os.stat(path)
-            mtime = time.localtime(stat[8])
-        except OSError:
-            pass
-
-        if mtime is None or mtime[0] < 2024:
-            mtime = "----/--/--"
-        else:
-            mtime = "{:04d}/{:d}/{:d}".format(mtime[0] - 2000, mtime[1], mtime[2])
-
-        if account is None and _HAS_SERVER and M5Things.status() == 2:
-            infos = M5Things.info()
-            account = "None" if len(infos[1]) == 0 else infos[1]
-        else:
-            account = "None"
-
-        return (mtime, account, ver)
-
-
-# ListApp - 显示 apps 目录下的应用列表
-class ListApp(AppBase):
-    def __init__(self) -> None:
-        super().__init__()
-        self._files = []
-        self._file_pos = 0
-
-    def on_launch(self):
-        self._files = []
-        try:
-            for file in os.listdir("apps"):
-                if file.endswith(".py"):
-                    self._files.append(file)
-        except OSError:
-            pass
-
-    def on_view(self):
-        M5.Lcd.fillRect(0, 0, 64, 48, M5.Lcd.COLOR.BLACK)
-        title_set_text("LIST.APP", False)
-
-        if len(self._files) > 0:
-            current_file = self._files[self._file_pos]
-            if len(current_file) > 8:
-                current_file = current_file[:5] + "..."
-            label1_set_text(current_file, True)
-
-            if len(self._files) > 1:
-                next_file = self._files[(self._file_pos + 1) % len(self._files)]
-                if len(next_file) > 8:
-                    next_file = next_file[:5] + "..."
-                label2_set_text(next_file, False)
-            else:
-                label2_set_text("", False)
-        else:
-            label1_set_text("No Apps", False)
-            label2_set_text("", False)
-
-    async def _keycode_dpad_down_event_handler(self, fw):
-        if len(self._files) > 0:
-            self._file_pos = (self._file_pos + 1) % len(self._files)
-            self.on_view()
-
-    async def _keycode_enter_event_handler(self, fw):
-        if len(self._files) > 0:
-            M5.Lcd.clear(0xFFFFFF)
-            execfile("/".join(["apps/", self._files[self._file_pos]]), {"__name__": "__main__"})  # noqa: F821
-            raise KeyboardInterrupt
-
-
-# 框架类 - 直接管理3个app的切换
-class Framework:
-    def __init__(self, cloud_app, run_app, list_app) -> None:
-        self._apps = [cloud_app, run_app, list_app]
-        self._app_names = ["Cloud", "main.py", "LIST.APP"]
-        self._current_app_index = 0
-        self._current_app = None
-        self._in_app_mode = False  # False: 切换app模式, True: app内部模式
-        self._last_click_time = 0
-        self._click_count = 0
-        # 单击/双击判定
-        self._pending_single = False
-        self._last_click_ms = 0
-        self._double_window_ms = 350
-        # 长按判定
-        self._pressing = False
-        self._press_start_ms = 0
-        self._long_fired = False
+    def draw_start_page(self):
+        self._page = self.PAGE_ACCESS
+        self._draw_current_page(force=True)
 
     async def start(self):
-        """启动框架，显示第一个app"""
-        self._current_app = self._apps[self._current_app_index]
-        self._current_app.on_launch()
-        self._current_app.on_view()
-        self._current_app.on_ready()
-        # 开机默认处于 app 切换模式：单击在三个 app 之间切换
-        self._in_app_mode = False
-        self._update_display()
-        await self.run()
-
-    async def run(self):
+        self._draw_current_page(force=True)
         while True:
             M5.update()
-            now_ms = time.ticks_ms()
             if M5.BtnA.wasClicked():
                 try:
                     M5.Speaker.tone(666, 100)
                 except Exception:
                     pass
-                # 延迟触发单击：先记录第一次点击，窗口内再次点击视为双击
-                if (
-                    self._pending_single
-                    and time.ticks_diff(now_ms, self._last_click_ms) <= self._double_window_ms
-                ):
-                    # 双击：取消单击，执行双击动作
-                    self._pending_single = False
-                    if not self._in_app_mode:
-                        self._in_app_mode = True
-                        self._update_display()
-                        if hasattr(self._current_app, "set_internal_mode"):
-                            try:
-                                self._current_app.set_internal_mode(True)
-                            except Exception:
-                                pass
-                    else:
-                        await self._current_app._keycode_enter_event_handler(self)
-                else:
-                    # 记录首次点击，等待窗口超时来判定单击
-                    self._pending_single = True
-                    self._last_click_ms = now_ms
-
-            # 处理长按事件 - 使用持续按下时间判定，避免与单击冲突
-            if M5.BtnA.isPressed():
-                if not self._pressing:
-                    self._pressing = True
-                    self._press_start_ms = now_ms
-                    self._long_fired = False
-                else:
-                    if (
-                        not self._long_fired
-                        and time.ticks_diff(now_ms, self._press_start_ms) > 700
-                    ):
-                        self._long_fired = True
-                        if self._in_app_mode:
-                            try:
-                                M5.Speaker.tone(666, 200)
-                            except Exception:
-                                pass
-                            self._in_app_mode = False
-                            self._pending_single = False
-                            self._update_display()
-                            if hasattr(self._current_app, "set_internal_mode"):
-                                try:
-                                    self._current_app.set_internal_mode(False)
-                                except Exception:
-                                    pass
+                self._page = (self._page + 1) % self.PAGE_COUNT
+                self._draw_current_page(force=True)
             else:
-                self._pressing = False
-                self._long_fired = False
-
-            # 单击延迟触发：超过双击窗口且仍挂起，则执行单击动作
-            if (
-                self._pending_single
-                and time.ticks_diff(now_ms, self._last_click_ms) > self._double_window_ms
-            ):
-                if not self._in_app_mode:
-                    await self._switch_to_next_app()
-                else:
-                    await self._current_app._keycode_dpad_down_event_handler(self)
-                    self._update_display()
-                self._pending_single = False
-
+                self._refresh_current_page()
             await asyncio.sleep_ms(100)
 
-    async def _switch_to_next_app(self):
-        """切换到下一个app"""
-        if self._current_app:
-            self._current_app.on_hide()
-        self._current_app_index = (self._current_app_index + 1) % len(self._apps)
-        self._current_app = self._apps[self._current_app_index]
-        self._in_app_mode = False
-        self._current_app.on_launch()
-        self._current_app.on_view()
-        self._current_app.on_ready()
+    def _refresh_current_page(self):
+        now = time.ticks_ms()
+        if time.ticks_diff(now, self._last_refresh_ms) < 1500:
+            return
+        self._last_refresh_ms = now
+        self._draw_current_page(force=False)
 
-    def _update_display(self):
-        """更新显示，根据模式显示不同的标题状态"""
-        if self._current_app:
-            if self._in_app_mode:
-                title_set_text(self._app_names[self._current_app_index], True)
-            else:
-                title_set_text(self._app_names[self._current_app_index], False)
+    def _draw_current_page(self, force=False):
+        payload = self._get_page_payload()
+        if not force and payload == self._last_payload:
+            return
+        self._last_payload = payload
+        _draw_split_rows(payload, True)
+
+    def _get_page_payload(self):
+        if self._page == self.PAGE_ACCESS:
+            return ("Access", "code", self._get_access_code() or "None")
+        if self._page == self.PAGE_NICKNAME:
+            return ("Nick", "name", self._get_nick_name() or "None")
+        if self._page == self.PAGE_WIFI:
+            return ("Wi-Fi", self._get_wifi_status_text(), self._ssid or "None")
+        return self._get_mac_rows()
+
+    def _get_wifi_status_text(self):
+        if self._wifi.connect_status() == network.STAT_GOT_IP:
+            return "OK"
+        return "FAIL"
+
+    @staticmethod
+    def _get_version():
+        try:
+            return str(esp32.firmware_info()[3]).lstrip("v")
+        except Exception:
+            return "-.-.-"
+
+    @staticmethod
+    def _get_mac_rows():
+        text = binascii.hexlify(machine.unique_id()).decode("utf-8").upper()
+        mac = ":".join(text[i : i + 2] for i in range(0, len(text), 2))
+        return ("MAC", "Address", mac[:8], mac[9:])
+
+    @staticmethod
+    def _get_access_code():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.accesscode() or ""
+            except Exception:
+                pass
+        return ""
+
+    @staticmethod
+    def _get_nick_name():
+        if _HAS_SERVER is True:
+            try:
+                if M5Things.status() == 2:
+                    return M5Things.nick_name() or ""
+            except Exception:
+                pass
+        return ""
 
 
 # UnitC6L startup menu
@@ -428,13 +272,10 @@ class UnitC6L_Startup(Startup):
         M5.Speaker.begin()
         M5.Speaker.setVolumePercentage(1)
         # 显示启动画面
-        M5.Lcd.fillRect(0, 0, 64, 48, M5.Lcd.COLOR.BLACK)
-        M5.Lcd.setFont(M5.Lcd.FONTS.Montserrat14)
-        M5.Lcd.fillRect(0, 0, 64, 15, M5.Lcd.COLOR.WHITE)
-        M5.Lcd.setTextColor(M5.Lcd.COLOR.BLACK, M5.Lcd.COLOR.WHITE)
-        M5.Lcd.drawCenterString("UiFlow2", 32, 2)
-        M5.Lcd.setTextColor(M5.Lcd.COLOR.WHITE, M5.Lcd.COLOR.BLACK)
-        M5.Lcd.drawCenterString("Unit C6L", 32, 26)
+        _draw_split_rows(("UiFlow2", InfoPages._get_version()))
+        time.sleep_ms(1500)
+        pages = InfoPages(self, ssid)
+        pages.draw_start_page()
         M5.Speaker.tone(888, 200)
         self.show_mac()
         # 连接网络
@@ -478,17 +319,13 @@ class UnitC6L_Startup(Startup):
                 print("Local IP: " + super().local_ip())
         else:
             self.show_error("Not Found", "Use Burner setup")
-        self._start_menu_system(ssid)
+        self._start_menu_system(pages)
 
-    def _start_menu_system(self, ssid):
-        """启动app切换系统"""
+    def _start_menu_system(self, pages):
+        """Start the simple info page switcher."""
         try:
-            cloud_app = CloudApp(self, ssid)
-            run_app = RunApp()
-            list_app = ListApp()
-            fw = Framework(cloud_app, run_app, list_app)
-            asyncio.run(fw.start())
+            asyncio.run(pages.start())
         except KeyboardInterrupt:
             pass
         except Exception as e:
-            print(f"App system error: {e}")
+            print(f"Info page error: {e}")

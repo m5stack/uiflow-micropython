@@ -166,6 +166,34 @@ MAKE_METHOD_0(gfx, endWrite);
 
 static const mp_rom_map_elem_t fonts_member_table[] = {
     /* *FORMAT-OFF* */
+#if BOARD_ID == 25
+    { MP_ROM_QSTR(MP_QSTR_ASCII7),    MP_ROM_PTR(&gfx_font_0_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu9),   MP_ROM_PTR(&gfx_font_DejaVu9_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu12),  MP_ROM_PTR(&gfx_font_DejaVu12_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu18),  MP_ROM_PTR(&gfx_font_DejaVu18_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu24),  MP_ROM_PTR(&gfx_font_DejaVu24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu40),  MP_ROM_PTR(&gfx_font_DejaVu40_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu56),  MP_ROM_PTR(&gfx_font_DejaVu56_obj) },
+    { MP_ROM_QSTR(MP_QSTR_DejaVu72),  MP_ROM_PTR(&gfx_font_DejaVu72_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat12), MP_ROM_PTR(&gfx_font_DejaVu9_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat14), MP_ROM_PTR(&gfx_font_DejaVu12_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat16), MP_ROM_PTR(&gfx_font_DejaVu18_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat18), MP_ROM_PTR(&gfx_font_DejaVu18_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat20), MP_ROM_PTR(&gfx_font_DejaVu18_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat22), MP_ROM_PTR(&gfx_font_DejaVu24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat24), MP_ROM_PTR(&gfx_font_DejaVu24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat30), MP_ROM_PTR(&gfx_font_DejaVu24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat36), MP_ROM_PTR(&gfx_font_DejaVu40_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat40), MP_ROM_PTR(&gfx_font_DejaVu40_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat44), MP_ROM_PTR(&gfx_font_DejaVu56_obj) },
+    { MP_ROM_QSTR(MP_QSTR_Montserrat48), MP_ROM_PTR(&gfx_font_DejaVu72_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontJA24), MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_EFontKR24), MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_AlibabaPuHuiTiCN24), MP_ROM_PTR(&gfx_font_efontCN_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_AlibabaSansJA24),    MP_ROM_PTR(&gfx_font_efontJA_24_obj) },
+    { MP_ROM_QSTR(MP_QSTR_AlibabaSansKR24),    MP_ROM_PTR(&gfx_font_efontKR_24_obj) },
+#else
 #if FONT_MONTSERRAT_12
     { MP_ROM_QSTR(MP_QSTR_Montserrat12), MP_ROM_PTR(&gfx_font_montserrat_12_obj) },
     { MP_ROM_QSTR(MP_QSTR_ASCII7),       MP_ROM_PTR(&gfx_font_montserrat_12_obj) },
@@ -221,6 +249,7 @@ static const mp_rom_map_elem_t fonts_member_table[] = {
 #if FONT_ALIBABASANS_KR24
     { MP_ROM_QSTR(MP_QSTR_AlibabaSansKR24),    MP_ROM_PTR(&gfx_font_AlibabaSans_KR24_obj)    },
     { MP_ROM_QSTR(MP_QSTR_EFontKR24),           MP_ROM_PTR(&gfx_font_AlibabaSans_KR24_obj)    },
+#endif
 #endif
     /* *FORMAT-ON* */
 };

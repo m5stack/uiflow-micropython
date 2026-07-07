@@ -57,9 +57,10 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
-    stackchan.set_servo_power(enable=True)
+    stackchan.set_servo_power(enable=True, settle_ms=500)
     stackchan.set_servo_torque(stackchan.SERVO_ID_X, enable=False)
     stackchan.set_servo_torque(stackchan.SERVO_ID_Y, enable=False)
+    last_time = time.ticks_ms()
 
 
 def loop():

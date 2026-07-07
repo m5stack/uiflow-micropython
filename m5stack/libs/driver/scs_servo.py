@@ -53,6 +53,9 @@ SCSCL_MOVING = 66
 SCSCL_PRESENT_CURRENT_L = 69
 SCSCL_PRESENT_CURRENT_H = 70
 
+SCSCL_POSITION_MIN = 0
+SCSCL_POSITION_MAX = 1000
+
 
 class Scs:
     """SCS protocol layer - basic communication protocol implementation"""
@@ -387,7 +390,7 @@ class ScsSerial(Scs):
         """
         super().__init__(end, level)
         self.uart = uart
-        self.io_timeout = 100  # milliseconds
+        self.io_timeout = 250  # milliseconds
 
     def write_scs(self, data):
         """write data to UART
@@ -554,34 +557,44 @@ class Scscl(ScsSerial):
         :return: success return 0, failure return negative value
         """
         if mode == 1:  # PWM mode
-            self.min_angle[servo_id] = self.read_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L)
-            self.max_angle[servo_id] = self.read_word(servo_id, SCSCL_MAX_ANGLE_LIMIT_L)
+            min_a = self.min_angle[servo_id]
+            max_a = self.max_angle[servo_id]
+            if min_a == 0 and max_a == 0:
+                min_a = self.read_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L)
+                max_a = self.read_word(servo_id, SCSCL_MAX_ANGLE_LIMIT_L)
 
-            if self.min_angle[servo_id] == -1 or self.max_angle[servo_id] == -1:
-                return -3
+                if min_a == -1 or max_a == -1:
+                    return -3
+                if min_a == 0 and max_a == 0:
+                    min_a, max_a = SCSCL_POSITION_MIN, SCSCL_POSITION_MAX
+                self.min_angle[servo_id] = min_a
+                self.max_angle[servo_id] = max_a
 
             if self.pwm_mode(servo_id):
+                time.sleep_ms(200)
                 return 0
             return -1
         else:  # position mode
             min_a = self.min_angle[servo_id]
             max_a = self.max_angle[servo_id]
-            # when PWM branch is not visited, cache is still 0/0, cannot write 0/0 to servo (invalid or equivalent to PWM). change to read current limit.
+            # When the runtime cache is empty, read the current limit first. If the servo
+            # is already in PWM mode after a soft reset, restore the normal SCSCL window.
             if min_a == 0 and max_a == 0:
                 rmin = self.read_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L)
                 rmax = self.read_word(servo_id, SCSCL_MAX_ANGLE_LIMIT_L)
                 if rmin == -1 or rmax == -1:
-                    return -2
-                if rmin == 0 and rmax == 0:
-                    # servo is already in PWM and has no local cache, cannot restore position limit
-                    return -6
-                min_a, max_a = rmin, rmax
+                    min_a, max_a = SCSCL_POSITION_MIN, SCSCL_POSITION_MAX
+                elif rmin == 0 and rmax == 0:
+                    min_a, max_a = SCSCL_POSITION_MIN, SCSCL_POSITION_MAX
+                else:
+                    min_a, max_a = rmin, rmax
                 self.min_angle[servo_id] = min_a
                 self.max_angle[servo_id] = max_a
             if self.write_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L, min_a) != 1:
                 return -4
             if self.write_word(servo_id, SCSCL_MAX_ANGLE_LIMIT_L, max_a) != 1:
                 return -5
+            time.sleep_ms(200)
             return 0
 
     def read_mode(self, servo_id):
@@ -590,12 +603,13 @@ class Scscl(ScsSerial):
         :param servo_id: servo id
         :return: 0=position mode, 1=PWM mode, -1=failure
         """
-        value = self.read_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L)
-        if value == 0:
+        min_value = self.read_word(servo_id, SCSCL_MIN_ANGLE_LIMIT_L)
+        max_value = self.read_word(servo_id, SCSCL_MAX_ANGLE_LIMIT_L)
+        if min_value == -1 or max_value == -1:
+            return -1
+        if min_value == 0 and max_value == 0:
             return 1  # PWM mode
-        elif value > 0:
-            return 0  # position mode
-        return -1
+        return 0  # position mode
 
     def feedback(self, servo_id):
         """feedback servo information (batch read)

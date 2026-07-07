@@ -187,7 +187,7 @@ define pack_fw
 		$(BOARD_TYPE) \
 		$(LVGL_FLAG) \
 		$(BUILD)/uiflow-$(GIT_VERSION).bin \
-		$(BUILD)/uiflow-Sx-$(GIT_VERSION).uf2
+		$(BUILD)/sx-uiflow-$(GIT_VERSION).uf2
 endef
 
 export ADF_PATH=$(abspath ../esp-adf)
@@ -310,6 +310,7 @@ submodules:
 	rm -rf ./components/esp-code-scanner && git submodule update --init ./components/esp-code-scanner
 	rm -rf ./components/esp_zigbee_host && git submodule update --init ./components/esp_zigbee_host
 	rm -rf ./components/M5Unified/M5GFX && git submodule update --init ./components/M5Unified/M5GFX
+	rm -rf ./components/M5Unified/LGFX_Fonts && git submodule update --init ./components/M5Unified/LGFX_Fonts
 	rm -rf ./components/M5Unified/M5Unified && git submodule update --init ./components/M5Unified/M5Unified
 	#git submodule update --init --recursive ./components/lv_bindings
 	rm -rf ./cmodules/lv_binding_micropython && git submodule update --init --recursive ./cmodules/lv_binding_micropython
@@ -353,7 +354,6 @@ M5UNIFIED_PATCH_SERIES = \
 	2007-Support-UnitC6L.patch \
 	2009-fix-SoftI2C.patch \
 	2010-Support-Nesso-N1.patch \
-	2018-fix-Rtc-setAlarmIRQ.patch \
 	2019-fix-touch-sensor.patch
 
 ADF_PATCH_SERIES = \

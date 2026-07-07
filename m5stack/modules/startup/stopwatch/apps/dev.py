@@ -12,6 +12,7 @@ from .. import app_base
 from .. import res
 from ..layout import SCREEN_W, FONT_BIG, FONT_SMALL, draw_page_bg, is_wifi_connected
 from . import status_bar
+from startup import print_access_info
 
 try:
     import M5Things
@@ -113,13 +114,14 @@ class DevApp(app_base.AppBase):
 
         base_y = 188
         self._row_mac = _LabeledSection("Device MAC:", base_y + _ROW_GAP * 0)
-        self._row_nick = _LabeledSection("Nickname:", base_y + _ROW_GAP * 1)
-        self._row_code = _LabeledSection("Access Code:", base_y + _ROW_GAP * 2)
+        self._row_code = _LabeledSection("Access Code:", base_y + _ROW_GAP * 1)
+        self._row_nick = _LabeledSection("Nickname:", base_y + _ROW_GAP * 2)
 
         self._row_mac.set_value(self._format_mac())
         self._set_server_text(self._state.get("server", "-"))
-        self._row_nick.set_value(self._state.get("nick_name", "-"))
-        self._row_code.set_value(self._state.get("pair_code", ""), fallback="")
+        self._row_code.set_value(self._state.get("access_code", ""), fallback="")
+        self._row_nick.set_value(self._state.get("nick_name", ""), fallback="")
+        print_access_info(self._state.get("nick_name", ""), self._state.get("access_code", ""))
 
     def on_ready(self):
         self._status_bar = status_bar.StatusBarApp(None, self._wlan)
@@ -141,12 +143,13 @@ class DevApp(app_base.AppBase):
 
             if new_state["nick_name"] != self._state.get("nick_name"):
                 self._state["nick_name"] = new_state["nick_name"]
-                self._row_nick.set_value(new_state["nick_name"])
+                self._row_nick.set_value(new_state["nick_name"], fallback="")
 
-            if new_state["pair_code"] != self._state.get("pair_code"):
-                self._state["pair_code"] = new_state["pair_code"]
-                self._row_code.set_value(new_state["pair_code"])
+            if new_state["access_code"] != self._state.get("access_code"):
+                self._state["access_code"] = new_state["access_code"]
+                self._row_code.set_value(new_state["access_code"])
 
+            print_access_info(self._state.get("nick_name", ""), self._state.get("access_code", ""))
             self._state["wifi_ok"] = new_state["wifi_ok"]
 
             await asyncio.sleep_ms(1500)
@@ -188,8 +191,9 @@ class DevApp(app_base.AppBase):
         self._server_text = None
         self._set_server_text(self._state.get("server", "-"))
         self._row_mac.refresh(self._format_mac())
-        self._row_nick.refresh(self._state.get("nick_name", "-"))
-        self._row_code.refresh(self._state.get("pair_code", ""), fallback="")
+        self._row_code.refresh(self._state.get("access_code", ""), fallback="")
+        self._row_nick.refresh(self._state.get("nick_name", ""), fallback="")
+        print_access_info(self._state.get("nick_name", ""), self._state.get("access_code", ""))
 
     @staticmethod
     def _get_bg_src(wifi_ok):
@@ -212,19 +216,19 @@ class DevApp(app_base.AppBase):
     def _collect_state(self):
         wifi_ok = is_wifi_connected(self._wlan)
 
-        nick = "-"
+        nick = ""
         code = ""
         if _HAS_SERVER and wifi_ok:
             try:
                 if M5Things.status() == 2:
-                    nick = M5Things.nick_name() or "-"
-                    code = M5Things.paircode() or ""
+                    nick = M5Things.nick_name() or ""
+                    code = M5Things.accesscode() or ""
             except Exception:
                 pass
 
         return {
             "wifi_ok": wifi_ok,
             "nick_name": nick,
-            "pair_code": code,
+            "access_code": code,
             "server": self._get_server(),
         }

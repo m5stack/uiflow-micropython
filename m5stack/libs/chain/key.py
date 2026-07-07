@@ -406,6 +406,24 @@ class KeyChain:
         """
         return self.bus.chainll.get_firmware_version(self.device_id)
 
+    def get_device_type(self) -> int:
+        """get device type.
+
+        :return: Device type. Returns -1 if failed.
+        :rtype: int
+
+        UiFlow2 Code Block:
+
+            |get_device_type.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                device_type = keychain_0.get_device_type()
+        """
+        return self.bus.chainll.get_device_type(self.device_id)
+
     def get_device_uid(self, uid_type: int) -> tuple:
         """get device UID.
 

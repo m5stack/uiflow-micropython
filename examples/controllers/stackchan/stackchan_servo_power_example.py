@@ -83,6 +83,7 @@ def setup():
 
     stackchan = StackChan(i2c=1, uart=1)
     page0.screen_load()
+    last_time = time.ticks_ms()
 
 
 def loop():

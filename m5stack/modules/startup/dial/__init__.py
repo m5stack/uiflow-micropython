@@ -7,8 +7,6 @@ import M5
 from . import framework
 from .apps.settings import SettingsApp, WiFiSetting
 from .apps.dev import DevApp
-from .apps.app_run import RunApp
-from .apps.app_list import ListApp
 
 # from .apps.ezdata import EzDataApp
 import time
@@ -43,14 +41,10 @@ class Dial_Startup:
         wifi_app = WiFiSetting(None, data=self._wlan)
         setting_app = SettingsApp(None, data=self._wlan)
         dev_app = DevApp(None, data=self._wlan)
-        run_app = RunApp(None, data=self._wlan)
-        list_app = ListApp(None, data=self._wlan)
         # ezdata_app = EzDataApp(None, data=self._wlan)
         fw.install_launcher(dev_app)
         fw.install(wifi_app)
         fw.install(setting_app)
         fw.install(dev_app)
-        fw.install(run_app)
-        fw.install(list_app)
         # fw.install(ezdata_app)
         fw.start()

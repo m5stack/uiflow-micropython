@@ -13,22 +13,25 @@ class AppIcon:
         self._app_name = app_name
         self._icon_pos_x = pos_x
 
-        img = lv.image(lv.screen_active())
-        img.set_src(get_hal().get_asset_path("icons/" + icon_name + IMAGE_SUFFIX))
-        img.align(lv.ALIGN.TOP_LEFT, pos_x, pos_y)
-        img.add_flag(lv.obj.FLAG.CLICKABLE)
-        img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
+        self._img = lv.image(lv.screen_active())
+        self._img.set_src(get_hal().get_asset_path("icons/" + icon_name + IMAGE_SUFFIX))
+        self._img.align(lv.ALIGN.TOP_LEFT, pos_x, pos_y)
+        self._img.add_flag(lv.obj.FLAG.CLICKABLE)
+        self._img.add_event_cb(self._on_clicked, lv.EVENT.CLICKED, None)
+
+    def get_img(self):
+        return self._img
 
     def _on_clicked(self, e: lv.event_t):
         get_hal().play_click_sfx()
-        IconIndicator.create_indicator(e.get_target_obj())
+        IconIndicator.create_indicator(self._img)
         AppManager.open_app(self._app_name)
 
 
 class AppDock:
     def __init__(self):
-        # UIFlow app list
-        self._app_app_list = AppIcon(1046, 35, "AppList", "app_list")
+        self._app_develop = AppIcon(1046, 35, "Develop", "develop")
+        IconIndicator.create_indicator(self._app_develop.get_img())
 
         # Tools
         tools = [

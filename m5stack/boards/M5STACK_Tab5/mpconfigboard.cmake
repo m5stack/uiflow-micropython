@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 M5Stack Technology CO LTD
+#
+# SPDX-License-Identifier: MIT
+
 set(IDF_TARGET esp32p4)
 
 # https://github.com/m5stack/m5stack-board-id/blob/main/board.csv#L12
@@ -32,8 +36,8 @@ set(SDKCONFIG_DEFAULTS
     boards/sdkconfig.flash_16mb_omv
     boards/sdkconfig.flash_qio
     boards/sdkconfig.freertos
+    boards/sdkconfig.spiram_hex
     boards/M5STACK_Tab5/sdkconfig.freertos
-    boards/M5STACK_Tab5/sdkconfig.spiram_hex
     boards/M5STACK_Tab5/sdkconfig.adf
     boards/M5STACK_Tab5/sdkconfig.esp_hosted
 )

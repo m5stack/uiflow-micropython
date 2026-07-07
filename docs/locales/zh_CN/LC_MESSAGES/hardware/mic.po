@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-18 15:58+0800\n"
+"POT-Creation-Date: 2026-06-18 12:35+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -20,87 +20,87 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.16.0\n"
 
-#: ../../en/hardware/mic.rst:4 e57f58d27baa4b92b75442a1243a4987
+#: ../../source/hardware/mic.rst:4 1d0429fa90604479a240921e7d960a5c
 msgid "Mic"
 msgstr "Mic"
 
-#: ../../en/hardware/mic.rst:10 8804ce541cd744b8893639092379e1cb
+#: ../../source/hardware/mic.rst:10 499dd368ed8346a3a9f654e5bbcacf1b
 msgid ""
 "Mic is used to control the built-in microphone inside the host device. "
 "Below is the detailed Mic support for the host:"
 msgstr "Mic 用于控制主机内部集成的按键。以下是主机的 Mic 支持详细："
 
-#: ../../en/hardware/mic.rst:18 435bb4ece0574f0a9df1c12790176efe
+#: ../../source/hardware/mic.rst:18 c2afd372b20d477085feea5ec96f90b6
 msgid "Controller"
 msgstr "Controller"
 
-#: ../../en/hardware/mic.rst:18 51189895b5d74a2dae11b218addb6fe6
+#: ../../source/hardware/mic.rst:18 8f381fc43ea643f28c44cc636968f21c
 msgid "SPM1423"
 msgstr "SPM1423"
 
-#: ../../en/hardware/mic.rst:18 2d292262ff8e4837a6122e5f1c374e60
+#: ../../source/hardware/mic.rst:18 fd9689e588654ae79d618985a99f718c
 msgid "ES7210"
 msgstr "ES7210"
 
-#: ../../en/hardware/mic.rst:20 92a685f46b204513b4a8af3b59f338db
+#: ../../source/hardware/mic.rst:20 6bfcece81eb84662bf8618767c89da8e
 msgid "AtomS3"
 msgstr "AtomS3"
 
-#: ../../en/hardware/mic.rst:22 49a5bd5dfb8345df930dd06d14cf49df
+#: ../../source/hardware/mic.rst:22 83d991b8963945ca9230320b96708f3b
 msgid "AtomS3 Lite"
 msgstr "AtomS3 Lite"
 
-#: ../../en/hardware/mic.rst:24 4630ac0ff7d3495d89c16aa20e80fd53
+#: ../../source/hardware/mic.rst:24 1b72ec7a8c104c628a658de3a473be1d
 msgid "AtomS3U"
 msgstr "AtomS3U"
 
-#: ../../en/hardware/mic.rst:24 ../../en/hardware/mic.rst:28
-#: ../../en/hardware/mic.rst:30 0811e2a97ba74b279d82edb5a79c36a1
-#: c4758f6c79e44cb7bdf7e317ccbb01a8
+#: ../../source/hardware/mic.rst:24 ../../source/hardware/mic.rst:28
+#: ../../source/hardware/mic.rst:30 621764d54e4d4c6bbe59f76d9e093316
+#: d069af5b160a4b71b8b272f997014536 fb9c1773152749a39326baf64e0ff306
 msgid "|S|"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:26 0f748011c3b44ca08777250b4dab0620
+#: ../../source/hardware/mic.rst:26 e63d40eaf85c4292b3a4da14164ab502
 msgid "StampS3"
 msgstr "StampS3"
 
-#: ../../en/hardware/mic.rst:28 2e7d678b3e5049128ec76407d9236b95
+#: ../../source/hardware/mic.rst:28 5e5c7154be95431e8f5a0e8b7a253144
 msgid "CoreS3"
 msgstr "CoreS3"
 
-#: ../../en/hardware/mic.rst:30 7c8012408daa4010ac6911801f0786f7
+#: ../../source/hardware/mic.rst:30 d4d6c8bbc74c4f6f9fa347ed876cef32
 msgid "Core2"
 msgstr "Core2"
 
-#: ../../en/hardware/mic.rst:32 84ecc90dcf39499abef5f3e24621c762
+#: ../../source/hardware/mic.rst:32 b4acc72d04a84e1ead9248b45490782e
 msgid "TOUGH"
 msgstr "TOUGH"
 
-#: ../../en/hardware/mic.rst:38 3eeb5c5b50914a33a0fe37ad2a2f4261
+#: ../../source/hardware/mic.rst:38 a0f881d403cb423ba2eb577e927bddb6
 msgid "Micropython Example:"
 msgstr "MicroPython 应用示例："
 
-#: ../../en/hardware/mic.rst:45 b1e15304ee04407eb4ba9be59df2cb60
+#: ../../source/hardware/mic.rst:45 cc33d31aeb884893a60b002b7b87fc83
 msgid "UIFLOW2 Example:"
 msgstr "UiFlow2 应用示例："
 
-#: ../../en/hardware/mic.rst:47 cfe2c5874245433d976e0a06151208a3
+#: ../../source/hardware/mic.rst:47 cfb11091bf6a4b3e98b8c1a6ee097ce9
 msgid "|example.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:24 56fc216b868e4f129b53256e0d69f51d
+#: ../../source/refs/hardware.mic.ref:24 59e780b46f484e9d9583a95bb46a161d
 msgid "example.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:52 4ab03052363f4de0ae81755f3ebf3f70
+#: ../../source/hardware/mic.rst:52 2075085714474203bf35bcc51467b520
 msgid "|cores3_mic_example.m5f2|"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:56 3947c879dc4743e2a88b0b8ca79124d0
+#: ../../source/hardware/mic.rst:56 981edd8f41524eb3a58eb65dacb81514
 msgid "class Mic"
 msgstr "class Mic"
 
-#: ../../en/hardware/mic.rst:60 a62de768b71f4142b5e893acd6502135
+#: ../../source/hardware/mic.rst:60 dca97a357e604f36bdcfe6ee3b108595
 msgid ""
 "Methods of the Mic Class heavily rely on ``M5.begin()`` |M5.begin.png| "
 "and ``M5.update()`` |M5.update.png|."
@@ -108,15 +108,17 @@ msgstr ""
 "Mic Class 的方法严重依赖 ``M5.begin()`` |M5.begin.png| 和 ``M5.update()`` "
 "|M5.update.png|。"
 
-#: ../../en/refs/system.ref:1 1107b7e3d56f4ac592d832f4bb771ce8
+#: ../../source/refs/system.ref:1 4eaba9ffcb7e48cc943acd456cde7c0c
+#: 80df8c76c08147d8976889bc419d0fb0
 msgid "M5.begin.png"
 msgstr ""
 
-#: ../../en/refs/system.ref:3 3d7d7c178ef244839da2a1c5f0bf37d2
+#: ../../source/refs/system.ref:3 145d0cb3848049b69e0956369b291d26
+#: ada8ca63fcf14f25a9c655b272c660dc
 msgid "M5.update.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:62 7e69a120c28c4df29f2dfd1d5bb03fb5
+#: ../../source/hardware/mic.rst:62 36f94f95473f40639a4765d9533e4881
 msgid ""
 "All calls to methods of Mic objects should be placed after ``M5.begin()``"
 " |M5.begin.png|, and ``M5.update()`` |M5.update.png| should be called in "
@@ -125,15 +127,22 @@ msgstr ""
 "对 Mic 对象方法的所有调用都应放在 ``M5.begin()`` |M5.begin.png| 之后，并且应在主循环中调用 "
 "``M5.update()`` |M5.update.png|。"
 
-#: ../../en/hardware/mic.rst:67 8cdf78bd381242a8a2ff89cb9458f101
+#: ../../source/hardware/mic.rst:66 a394a67a38894ccea4c8118a6cd65078
+msgid ""
+"Mic is registered in the ``M5`` module, **not** in the ``hardware`` "
+"module. Use ``from M5 import *`` to make ``Mic`` available. Do not write "
+"``from hardware import Mic``."
+msgstr ""
+
+#: ../../source/hardware/mic.rst:73 0c74fc638d1f4eedbb613336292e8027
 msgid "Methods"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:73 c4f3d866fb1240d19ff53436049c9c08
+#: ../../source/hardware/mic.rst:79 fdc855a4a87b4f099e569547246ac5c4
 msgid "Get or set the parameters of the Mic object."
 msgstr "获取或者设置 Mic 对象的参数。"
 
-#: ../../en/hardware/mic.rst:75 f27c2c547b654930b0555a32bd720a9b
+#: ../../source/hardware/mic.rst:81 f6901d22ac4c49c7bca10ec7467d7dab
 msgid ""
 "When no parameters are passed, it returns an object of "
 ":py:class:`mic_config_t`. When a :py:class:`mic_config_t` object is "
@@ -142,329 +151,338 @@ msgstr ""
 "当不传入任何参数时，会返回 :py:class:`mic_config_t` 的对象。当传入一个 :py:class:`mic_config_t`"
 " 的对象， Mic 会设置 Mic 的所有支持的参数。"
 
-#: ../../en/hardware/mic.rst:78 84b73dcb0ace41e88aedda9d1ff8d3ea
+#: ../../source/hardware/mic.rst:84 2f494d75259e41cda2bf4680c21d768e
 msgid ""
 "When passing parameters from the table below, Mic will get or set the "
 "passed parameters."
 msgstr "当传入下表中的参数， Mic 会对传入的参数进行获取或者设置。"
 
-#: ../../en/hardware/mic.rst:80 613af91298b544579605008c0f4ba212
+#: ../../source/hardware/mic.rst:86 e366f9e960c24f9086a27df3e41cec01
 msgid "The following parameters are supported:"
 msgstr "以下是支持的参数:"
 
-#: ../../en/hardware/mic.rst:83 40ef4d888ed54ab880b4691a0c54ec44
+#: ../../source/hardware/mic.rst:89 253688ee43984f71834120901682bcb6
 msgid "Parameter"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:83 14ddf9a722744601b18b56d5c80cb10c
+#: ../../source/hardware/mic.rst:89 167e5469fede4a78aeb0debb451c3e84
 msgid "Type"
 msgstr "类型"
 
-#: ../../en/hardware/mic.rst:83 7bba60eb30b74f1a96a5fcae425751dc
+#: ../../source/hardware/mic.rst:89 7e957242636a4ea697febd567878e2a7
 msgid "Description"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:85 596e9e7bd34f4e389b48d3c7bf5ea8b2
+#: ../../source/hardware/mic.rst:91 ac81274d76344be88a05332fef3fd8d6
 msgid "pin_data_in"
 msgstr "pin_data_in"
 
-#: ../../en/hardware/mic.rst:85 ../../en/hardware/mic.rst:86
-#: ../../en/hardware/mic.rst:87 ../../en/hardware/mic.rst:88
-#: ../../en/hardware/mic.rst:89 ../../en/hardware/mic.rst:91
-#: ../../en/hardware/mic.rst:92 ../../en/hardware/mic.rst:93
-#: ../../en/hardware/mic.rst:95 ../../en/hardware/mic.rst:96
-#: ../../en/hardware/mic.rst:97 ../../en/hardware/mic.rst:98
-#: ../../en/hardware/mic.rst:99 0119aa441a124857825f6739adcc589e
+#: ../../source/hardware/mic.rst:91 ../../source/hardware/mic.rst:92
+#: ../../source/hardware/mic.rst:93 ../../source/hardware/mic.rst:94
+#: ../../source/hardware/mic.rst:95 ../../source/hardware/mic.rst:97
+#: ../../source/hardware/mic.rst:98 ../../source/hardware/mic.rst:99
+#: ../../source/hardware/mic.rst:101 ../../source/hardware/mic.rst:102
+#: ../../source/hardware/mic.rst:103 ../../source/hardware/mic.rst:104
+#: ../../source/hardware/mic.rst:105 192e9f82895a4937809f700f925984ae
+#: 24bcb15fd38a4dc5809c7d59394ed4c7 27cea2d4f576414682547b2b96535cc8
+#: 3a38d0722fab4986a2f646414c1157be 404b0b7742394bcc85dcd2dd74f86b97
+#: 48690f43c50d441ea43a8bb1a55c93d6 4b44e190e0934fc7ae6889eea858caa5
+#: 536ec5abc31544e0bebfc0706963c08c 7cecaaab80fd4673a80e439acb3e886a
+#: 898d9e59922f4aeda30d2690e20c246b c1b5c9d425824b4b978e6a757d472867
+#: e2ef4444116c46409f4d6180f17286ec f0028acc0b21455eb1ade53a4e0785bb
 msgid "(integer)"
 msgstr "(integer)"
 
-#: ../../en/hardware/mic.rst:85 ../../en/hardware/mic.rst:204
-#: 3bd291db6aa54bad8977481a58ada686
+#: ../../source/hardware/mic.rst:91 ../../source/hardware/mic.rst:210
+#: 52efe580f03847f9a93ecc83d30d9857 55a88678c7284596b7e030a37469909d
 msgid "Serial data line of I2S, representing audio data in binary complement."
 msgstr "I2S 的串行数据线，用二进制补码表示的音频数据。"
 
-#: ../../en/hardware/mic.rst:86 3970ad8279b444fdba2a31651194d95a
+#: ../../source/hardware/mic.rst:92 58f2a07793dc432ba1451147d22e3af9
 msgid "pin_bck"
 msgstr "pin_bck"
 
-#: ../../en/hardware/mic.rst:86 ../../en/hardware/mic.rst:210
-#: fb4ede39ba024aeeb050bfebc85bbc0c
+#: ../../source/hardware/mic.rst:92 ../../source/hardware/mic.rst:216
+#: 0aa409a113894e0ea13583ec5291a13b 58ee2e09ff7646938444ea8d8dfba123
 msgid "Serial clock line of I2S, corresponding to each bit of digital audio data."
 msgstr "I2S 的串行时钟线，对应数字音频的每一位数据。"
 
-#: ../../en/hardware/mic.rst:87 31d7620256b744fda5d9929791469c08
+#: ../../source/hardware/mic.rst:93 fd94855b6f88411ab49e134e66073e92
 msgid "pin_mck"
 msgstr "pin_mck"
 
-#: ../../en/hardware/mic.rst:87 ../../en/hardware/mic.rst:216
-#: 341ba1eac5ca4ec6902f9c3fdee606ec e29ec625497048ee8bf7e13c7b37d740
+#: ../../source/hardware/mic.rst:93 ../../source/hardware/mic.rst:222
+#: 20a93ca2c07242c3b68c53fb81524fbf 3d75ebaae8d4488a938b2b1161174a90
 msgid ""
 "Master clock line of I2S. Generally, to better synchronize between "
 "systems, increase the MCLK signal, MCLK frequency = 256 * sampling "
 "frequency."
 msgstr "I2S 的主时钟线。一般为了使系统间能够更好地同步时增加MCLK信号，MCLK的频率 = 256 * 采样频率。"
 
-#: ../../en/hardware/mic.rst:88 927d23a899be470c9a0e9ea0fb8f3133
+#: ../../source/hardware/mic.rst:94 eac4c9ad6399402084c9ab6f17037b18
 msgid "pin_ws"
 msgstr "pin_ws"
 
-#: ../../en/hardware/mic.rst:88 ../../en/hardware/mic.rst:223
-#: 38b299c561844dd58c9d8c20b8259f22
+#: ../../source/hardware/mic.rst:94 ../../source/hardware/mic.rst:229
+#: 126998b826a74b869b8a6d4ef95660d3 e73904db70054898aeda18d883699dba
 msgid "Frame clock of I2S, used to switch left and right channel data."
 msgstr "I2S 的帧时钟，用于切换左右声道的数据。"
 
-#: ../../en/hardware/mic.rst:89 375f998c6cb44d5f94741a8f0e6f7892
+#: ../../source/hardware/mic.rst:95 14a8db7401e7419caff8d66f790befa8
 msgid "sample_rate"
 msgstr "sample_rate"
 
-#: ../../en/hardware/mic.rst:89 ../../en/hardware/mic.rst:229
-#: b11a480ea12b44879ae25421e1bdf9c9
+#: ../../source/hardware/mic.rst:95 ../../source/hardware/mic.rst:235
+#: 37fbb177241b4421883a41b15f2e8f9b 4fc08403a60b4d57bb73710b0e5b3aae
 msgid "Target sampling rate of input audio."
 msgstr "输入音频的目标采样率。"
 
-#: ../../en/hardware/mic.rst:90 b8aaeb00a9534b1a88d5b2ad1b8c40a6
+#: ../../source/hardware/mic.rst:96 720a2bd5d2804f6bbbcc0d95b0932e3c
 msgid "stereo"
 msgstr "立体声"
 
-#: ../../en/hardware/mic.rst:90 ../../en/hardware/mic.rst:94
-#: c411d48d9d184598a12107123845771d
+#: ../../source/hardware/mic.rst:96 ../../source/hardware/mic.rst:100
+#: 3f3ade6af04843058fe98f8abf237db8 cdffe4423d18403ba955521c8c246657
 msgid "(boolean)"
 msgstr "(boolean)"
 
-#: ../../en/hardware/mic.rst:90 ../../en/hardware/mic.rst:235
-#: f9407dbdca4340f8b6e55465707f05da
+#: ../../source/hardware/mic.rst:96 ../../source/hardware/mic.rst:241
+#: 9e521500f92a4c068d1b550410e85acb e8914e00876d40ba824beb4f227e4184
 msgid "Use stereo output."
 msgstr "使用双声道输出。"
 
-#: ../../en/hardware/mic.rst:91 29cf81e2f4234c1e88b79edacd6978f0
+#: ../../source/hardware/mic.rst:97 7411ebd123234d4c81a770ffeedf7890
 msgid "over_sampling"
 msgstr "过采样"
 
-#: ../../en/hardware/mic.rst:91 ../../en/hardware/mic.rst:247
-#: 23a6b2f078234fc288256173b615f3c7
+#: ../../source/hardware/mic.rst:97 ../../source/hardware/mic.rst:253
+#: 366929ecac084090a9ef4d9766bfa189 dfcf75e4154640aeb0d48f745e607014
 msgid "Number of times to average the sampling."
 msgstr "求平均值的采样次数。"
 
-#: ../../en/hardware/mic.rst:92 df2bb695e12e4e9b837760810af9a319
+#: ../../source/hardware/mic.rst:98 bf65c8a7e26a4733b4dc2041af9d559e
 msgid "magnification"
 msgstr "放大倍数。"
 
-#: ../../en/hardware/mic.rst:92 ../../en/hardware/mic.rst:253
-#: 2a882f822d044a27af89646db4eee352
+#: ../../source/hardware/mic.rst:98 ../../source/hardware/mic.rst:259
+#: 98fb097359024537aa1bb795b1210bd3 b456062a28d941e3ab69b2132fa818a3
 msgid "Multiplier of the input value."
 msgstr "输入值的乘数。"
 
-#: ../../en/hardware/mic.rst:93 9fb79c4e05b74ef7815dd1ca43432b7b
+#: ../../source/hardware/mic.rst:99 256b2c7c0050404cb9f7fb72d7b8cdfe
 msgid "noise_filter_level"
 msgstr "噪声滤波等级"
 
-#: ../../en/hardware/mic.rst:93 ../../en/hardware/mic.rst:259
-#: 91a9553d27444b2aa75d21c75eec7379
+#: ../../source/hardware/mic.rst:99 ../../source/hardware/mic.rst:265
+#: 3b2657202e6944929af01c99613f34f8 d37344c937024a01952cd3a258f8c7af
 msgid "Coefficient of the previous value used for noise filtering."
 msgstr "先前值的系数，用于噪声过滤。"
 
-#: ../../en/hardware/mic.rst:94 201016f7fdb548b48e6a8902535b6482
+#: ../../source/hardware/mic.rst:100 46ab324ee80e4c34b94653bbe51f399a
 msgid "use_adc"
 msgstr "use_adc"
 
-#: ../../en/hardware/mic.rst:94 ../../en/hardware/mic.rst:265
-#: 3f1a3dbe634a4320a077f69e51fb8cad
+#: ../../source/hardware/mic.rst:100 ../../source/hardware/mic.rst:271
+#: 64969df82c0d4beea1872589db8410cd b33bee7855e24feeba2ac4a51cd7c8ed
 msgid "Use analog input microphone (only pin_data_in is needed)."
 msgstr "使用模拟输入麦克风（仅需要 pin_data_in ）。"
 
-#: ../../en/hardware/mic.rst:95 f400bd6141f746a181f49fe03d34ac7b
+#: ../../source/hardware/mic.rst:101 23413444e44743d79d890592d5e65574
 msgid "dma_buf_len"
 msgstr "dma_buf_len"
 
-#: ../../en/hardware/mic.rst:95 ../../en/hardware/mic.rst:271
-#: c8986fce42364e14aee17917750d5e54
+#: ../../source/hardware/mic.rst:101 ../../source/hardware/mic.rst:277
+#: 17bded3e29494e5198603f23a21988e2 58791fb4c5324f2ca9d9c9994d75c9c9
 msgid "DMA buffer length of I2S."
 msgstr "I2S 的DMA缓冲区长度。"
 
-#: ../../en/hardware/mic.rst:96 a1bb48b4c5d24f3ea231e79f55c3b5fd
+#: ../../source/hardware/mic.rst:102 0f4a2d194f2643f09c31cb7bbba2b3c3
 msgid "dma_buf_count"
 msgstr "dma_buf_count"
 
-#: ../../en/hardware/mic.rst:96 ../../en/hardware/mic.rst:277
-#: 2e988b8f38914cbc8b50abd10ef06f9d
+#: ../../source/hardware/mic.rst:102 ../../source/hardware/mic.rst:283
+#: 6fd376031916465c9e4e81c4d5c66890 7d59e8cf6d784bdda9e4339137ddc2ba
 msgid "Number of DMA buffers of I2S."
 msgstr "I2S 的DMA缓冲区数量。"
 
-#: ../../en/hardware/mic.rst:97 5afeeddc37eb4315b6d028c7be04a8a9
+#: ../../source/hardware/mic.rst:103 d04add398a3742df8d38e86f19ad56e3
 msgid "task_priority"
 msgstr "task_priority"
 
-#: ../../en/hardware/mic.rst:97 ../../en/hardware/mic.rst:283
-#: 294bdbc348cf4d00a7b98d0b43d088b3
+#: ../../source/hardware/mic.rst:103 ../../source/hardware/mic.rst:289
+#: 310750ed9bc149e9965a5be2b6c5dfa6 feb629de432349b193820574f34756b1
 msgid "Priority of background tasks."
 msgstr "后台任务优先级。"
 
-#: ../../en/hardware/mic.rst:98 03b4e68a267c4ac39e90c5753943177c
+#: ../../source/hardware/mic.rst:104 2af2b0513d604a1bbe8d5af23df30ff6
 msgid "task_pinned_core"
 msgstr "task_pinned_core"
 
-#: ../../en/hardware/mic.rst:98 ../../en/hardware/mic.rst:289
-#: 8dd1d7000a6b440a877c6c09cc61b583
+#: ../../source/hardware/mic.rst:104 ../../source/hardware/mic.rst:295
+#: 260b1f68f3294fb0aeb7bb6ee5900010 ce6be70e827744e880728da3673092db
 msgid "CPU used by background tasks."
 msgstr "后台任务使用的CPU。"
 
-#: ../../en/hardware/mic.rst:99 4477970f856a404d8a2147d3a8f21861
+#: ../../source/hardware/mic.rst:105 fd0bacdae4e2422aac24579a67371381
 msgid "i2s_port"
 msgstr "i2s_port"
 
-#: ../../en/hardware/mic.rst:99 ../../en/hardware/mic.rst:295
-#: c6ffca80d0de47c7b6b465dd77179609
+#: ../../source/hardware/mic.rst:105 ../../source/hardware/mic.rst:301
+#: f3eef26542994cc4b85a0a7bb3e43337 fa7eef29bb1a49e394456acebbe07d15
 msgid "I2S port."
 msgstr "I2S端口。"
 
-#: ../../en/hardware/mic.rst:102 ../../en/hardware/mic.rst:129
-#: ../../en/hardware/mic.rst:138 ../../en/hardware/mic.rst:147
-#: ../../en/hardware/mic.rst:156 ../../en/hardware/mic.rst:171
-#: ../../en/hardware/mic.rst:180 ../../en/hardware/mic.rst:193
-#: 4f5c13c91acf4616aedadb46ed3b913d
+#: ../../source/hardware/mic.rst:108 ../../source/hardware/mic.rst:135
+#: ../../source/hardware/mic.rst:144 ../../source/hardware/mic.rst:153
+#: ../../source/hardware/mic.rst:162 ../../source/hardware/mic.rst:177
+#: ../../source/hardware/mic.rst:186 ../../source/hardware/mic.rst:199
+#: 12784ca85bb8455c8e4dbcd7aa399e5d 1bbe4fdf84624dc6abf38a35952e7f19
+#: 7455894d49a343f0be1665aa10438d31 bb4ac0dece6644b7993272155fed52a5
+#: e3011d9a1117432e9ddc0ae26df84199 e5c8e692777645b59425ebaf308956db
+#: e8f0c7b57614477ea9618a181f0ec397 ed8ad01726474ed79e08151017c879d0
 msgid "UIFLOW2:"
 msgstr "UIFLOW2："
 
-#: ../../en/hardware/mic.rst:104 ba34712f893b44c187deab1043b9987b
+#: ../../source/hardware/mic.rst:110 d63b30c61bbd49b88440f0ac3f07de43
 msgid "Read property:"
 msgstr "读取属性："
 
-#: ../../en/hardware/mic.rst:106 ../../en/hardware/mic.rst:116
-#: c4a131af25974f8bb50e863e711fc615
+#: ../../source/hardware/mic.rst:112 ../../source/hardware/mic.rst:122
+#: 0af6b696c7654b6daf9ef08769dbf875 1203fdf262274809877b6be44c96bbff
 msgid "Python::"
 msgstr "Python::"
 
-#: ../../en/hardware/mic.rst:110 8ce7b4e6ceb144778a2a07649aa5a939
+#: ../../source/hardware/mic.rst:116 4b46abeb26ef48f8ba14362b05859023
 msgid "|get_config_boolean.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:2 772ff2d4d1564e999f80bf9125cd4581
+#: ../../source/refs/hardware.mic.ref:2 a173a024ac4944b48420d104ea27349c
 msgid "get_config_boolean.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:112 32387f0aec014aa9961d3283e78341d6
+#: ../../source/hardware/mic.rst:118 db453ba2176d4088bd68540454d1499b
 msgid "|get_config_int.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:4 1e1efc81bc3f4bc6a0e64285b53a9bbd
+#: ../../source/refs/hardware.mic.ref:4 8ec145f216bc4cb49af810ac7f37e2b3
 msgid "get_config_int.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:114 51e9ee059de841eca8d253b999d47dfc
+#: ../../source/hardware/mic.rst:120 dfeb1dee70444285966dba159896a805
 msgid "Set property:"
 msgstr "设置属性："
 
-#: ../../en/hardware/mic.rst:120 0b6de19a71de4c4c88d20a1a230bdba0
+#: ../../source/hardware/mic.rst:126 71ea0cdea64b4c07a4a8be1f70b55ad6
 msgid "|set_config_int.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:6 7b720173effb4bb18b754cdf42180059
+#: ../../source/refs/hardware.mic.ref:6 45ab0ae7c3f4411d8467ce19b0d7622a
 msgid "set_config_int.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:122 8bafb1dbdf344c2b928569523f637ac8
+#: ../../source/hardware/mic.rst:128 171e9ab2a97f47979f4ea37b565039d9
 msgid "|set_config_boolean.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:8 2eb5b67e2faa4e30907cb5bbafdab884
+#: ../../source/refs/hardware.mic.ref:8 6c9aa5b8320c4ebba8528efca4ce08c4
 msgid "set_config_boolean.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:127 d8fdadaac4db4d54ab81ce8c54c6f6fa
+#: ../../source/hardware/mic.rst:133 4686056a44394a008940e41f7525ca1e
 msgid "Start the Mic function. Returns True if successful."
 msgstr "启动 Mic 功能。执行成功返回 True 。"
 
-#: ../../en/hardware/mic.rst:131 c39cb4fd9fd64d0399f25563ecc47416
+#: ../../source/hardware/mic.rst:137 b1235fd469c5433eacaf325b10e6a389
 msgid "|begin.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:10 dbf31bca4ddc4f96847e59a58e2884d8
+#: ../../source/refs/hardware.mic.ref:10 7717b08c1b6c4a65bade49f60de08a51
 msgid "begin.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:136 28878b52c2894c10b9790fff33d382c6
+#: ../../source/hardware/mic.rst:142 bb9800c6f7714ba88283fd218f8033e3
 msgid "Stop the Mic function. Returns True if successful."
 msgstr "停止 Mic 功能。若成功则返回 True。"
 
-#: ../../en/hardware/mic.rst:140 9ccab4c9d7204e319f0389c45736927d
+#: ../../source/hardware/mic.rst:146 9bf30bd60e8241d291c85a7a92c66575
 msgid "|end.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:12 c92d98ac20674eee9d13b9e5eb417da3
+#: ../../source/refs/hardware.mic.ref:12 6159cac5f90e466f8f2dc8b4a812bbde
 msgid "end.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:145 484635abd634464fa048bd3e5a428930
+#: ../../source/hardware/mic.rst:151 aafeea61c4fc4258b1a98f5b45f611f5
 msgid "Check if Mic is running. Returns a boolean value."
 msgstr "获取 Mic 是否处于运行状态， 返回bool类型。"
 
-#: ../../en/hardware/mic.rst:149 d1b37267382148de9b07fd8aed13ea0c
+#: ../../source/hardware/mic.rst:155 838af1d9f2d04b968485868da21a90ec
 msgid "|isRunning.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:14 f8d476a4d5a847e1b1f105dde3db598b
+#: ../../source/refs/hardware.mic.ref:14 87fbdb3becb043f08174c0192964a4fe
 msgid "isRunning.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:154 310f58a5826a41f0b29d01c4c11a9477
+#: ../../source/hardware/mic.rst:160 be43b58268464ff69fd6c10cc409cb35
 msgid "Check if Mic is enabled. Returns a boolean value."
 msgstr "获取 Mic 是否处于使能状态， 返回bool类型。"
 
-#: ../../en/hardware/mic.rst:158 08f0b2d56a3d4df3b9d63376a2e891d0
+#: ../../source/hardware/mic.rst:164 595bd42272784a9a94bb45ecb75d89ac
 msgid "|isEnabled.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:16 a0eaf4f8b3ef472fbcdf8a775dba0728
+#: ../../source/refs/hardware.mic.ref:16 4005adc9c7754f1da1dee5e0a8b77cbc
 msgid "isEnabled.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:163 2adf9376137643ba9e4521bf9c9f7985
+#: ../../source/hardware/mic.rst:169 5e8f5b8bdeb64255b5ae2f2c3ed9c0de
 msgid "Check if Mic is recording. Returns an integer value."
 msgstr "获取 Mic 是否处于录音状态， 返回int类型。"
 
-#: ../../en/hardware/mic.rst:165 61a651177b544453bee893a6ae516355
+#: ../../source/hardware/mic.rst:171 8a740ad965204963b78402f06c5b0343
 msgid "Return values:"
 msgstr "返回值："
 
-#: ../../en/hardware/mic.rst:167 17f7e0e6a604437c8cd1ada8ff4f6675
+#: ../../source/hardware/mic.rst:173 bbd83c1e66694def88f2cec9183f90f2
 msgid "0=not recording"
 msgstr "0=未录制"
 
-#: ../../en/hardware/mic.rst:168 43fd3639c7f749a482c065b943fd23fb
+#: ../../source/hardware/mic.rst:174 12fe7be2232847bdad88de609bc097a8
 msgid "1=recording (There's room in the queue)"
 msgstr "1=录音（队列中有空间）"
 
-#: ../../en/hardware/mic.rst:169 fc4a701361344106b19604146a30b5c4
+#: ../../source/hardware/mic.rst:175 aee67e88a6004738a06c6dd9ff32e19a
 msgid "2=recording (There's no room in the queue.)"
 msgstr "2=录制中（队列中没有空间。）"
 
-#: ../../en/hardware/mic.rst:173 7ee7bb2f210e48c793a9e43ae6ac44ce
+#: ../../source/hardware/mic.rst:179 9b03d59794cb447386e7283fc6f19d80
 msgid "|isRecording.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:18 5303cab834b5429ea80b6edd22d90843
+#: ../../source/refs/hardware.mic.ref:18 74374040293146b0b107dadee5aeaac3
 msgid "isRecording.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:178 488b1ea424344d169f6585296d580d7c
+#: ../../source/hardware/mic.rst:184 61f27ea381fa48efa5e3907255baeb98
 msgid ""
 "Set the sampling rate. The parameter sample_rate generally includes 8000,"
 " 11025, 22050, 32000, 44100."
 msgstr "设置采样率。参数 sample_rate 一般有 8000 ， 11025 ，22050 ，32000 ，44100"
 
-#: ../../en/hardware/mic.rst:182 27358e8b217147728618088f6acabab9
+#: ../../source/hardware/mic.rst:188 953b1b57a0cd41e884f88867e646d6ae
 msgid "|setSampleRate.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:20 a463f6b39d3a4e90a78b26c3e2413213
+#: ../../source/refs/hardware.mic.ref:20 c0eb8243900044ed9485548bf6269e92
 msgid "setSampleRate.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:187 51e6f3869af8479185d88938896ad1cd
+#: ../../source/hardware/mic.rst:193 6d6e4a496bb84dddabe407f9fdf73408
 msgid "Record audio data."
 msgstr "录制音频数据。"
 
-#: ../../en/hardware/mic.rst:189 8642bb8b84ab4a3db1edcab9a214273d
+#: ../../source/hardware/mic.rst:195 0203eccf809f441ba7bc758712268bf0
 msgid ""
 "The parameter rec_data requires passing a buffer. The parameter rate "
 "generally includes 8000, 11025, 22050, 32000, 44100, with a default of "
@@ -473,15 +491,15 @@ msgstr ""
 "参数 rec_data 要求传入一个buffer。参数 rate 一般有 8000， 11025，22050，32000，44100， "
 "默认填8000。参数 stereo 传入True或者False。"
 
-#: ../../en/hardware/mic.rst:195 c71644866cbe4d3f802404056d62b049
+#: ../../source/hardware/mic.rst:201 4ea7fa7fc2174adcaeed6face6f58f27
 msgid "|record.png|"
 msgstr ""
 
-#: ../../en/refs/hardware.mic.ref:22 7ce3e8471c5e474a8543781369f725be
+#: ../../source/refs/hardware.mic.ref:22 1f18fef7d7fb44de95891283c90b635f
 msgid "record.png"
 msgstr ""
 
-#: ../../en/hardware/mic.rst:199 25e4e698db37451798841b7f2a2d9744
+#: ../../source/hardware/mic.rst:205 d4c615bda79e46e0ab759b83eadcc16d
 msgid "class mic_config_t"
 msgstr "class mic_config_t"
 
@@ -677,4 +695,3 @@ msgstr "class mic_config_t"
 
 #~ msgid "M5.update.svg"
 #~ msgstr ""
-

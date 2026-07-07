@@ -7,6 +7,21 @@ M5Page
 
 M5Page is a widget that can be used to create pages in the user interface. It can be used to organize other widgets and provide navigation between different pages.
 
+.. important::
+
+    All m5ui widgets (``M5Label``, ``M5Chart``, ``M5Button``, etc.) must be
+    created with ``parent=page0`` (or another ``M5Page`` instance). If
+    ``parent`` is omitted, the widget is attached to the default screen,
+    and calling ``page0.screen_load()`` will load a blank page without
+    those widgets.
+
+    Correct order:
+
+    1. ``m5ui.init()``
+    2. Create ``page0 = M5Page(bg_c=0xFFFFFF)``
+    3. Create widgets with ``parent=page0``
+    4. ``page0.screen_load()``
+
 UiFlow2 Example
 ---------------
 

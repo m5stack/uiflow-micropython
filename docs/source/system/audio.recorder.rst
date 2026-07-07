@@ -34,7 +34,7 @@ Methods
 
     Record audio from microphone to file.
 
-    :param str uri: The uri of the audio file. e.g. "file://flash/test.amr", "file:///sd/test.wav".
+    :param str uri: The uri of the audio file. e.g. "file://flash/test.amr", "file://sd/test.wav".
     :param int time: The duration of the recording, The unit is seconds.
     :param bool sync: Whether to record synchronously.
 

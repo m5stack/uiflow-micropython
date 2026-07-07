@@ -37,6 +37,7 @@ _attrs = {
     "BOOT_YES_IMG": "/system/fire/boot_Yes.png",
     "DEVELOP_SELECTED_IMG": "/system/fire/develop_selected.png",
     "DEVELOP_UNSELECTED_IMG": "/system/fire/develop_unselected.png",
+    "DEVELOP_BG_IMG": "/system/fire/develop_bg.jpg",
     "DEVELOP_PRIVATE_IMG": "/system/fire/developPrivate.png",
     "DEVELOP_PUBLIC_IMG": "/system/fire/developPublic.png",
     "EZDATA_SELECTED_IMG": "/system/fire/ezdata_selected.png",

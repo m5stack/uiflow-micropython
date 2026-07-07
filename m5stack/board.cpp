@@ -71,6 +71,9 @@ extern "C" {
     {
         auto cfg = M5.config();
         cfg.output_power = false;
+#if defined(BOARD_ID) && BOARD_ID == 28
+        cfg.clear_display = false;
+#endif
         M5.begin(cfg);
         M5.In_I2C.release();
         in_i2c_init();

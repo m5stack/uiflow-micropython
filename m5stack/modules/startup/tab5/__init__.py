@@ -11,6 +11,9 @@ from .hal_tab5 import HALTab5
 import m5ui
 
 
+_BOOT_BG_COLOR = 0xFFFFFF
+
+
 class Tab5_Startup:
     def __init__(self) -> None:
         self._wlan = startup.Startup()
@@ -26,6 +29,8 @@ class Tab5_Startup:
         dns: str = "",
         timeout: int = 60,
     ) -> None:
+        self._clear_boot_screen()
+
         self._wlan.connect_network(
             ssid, pswd, protocol=protocol, ip=ip, netmask=netmask, gateway=gateway, dns=dns
         )
@@ -36,9 +41,14 @@ class Tab5_Startup:
 
         self.launcher = Launcher()
 
-    def _init_lvgl(self):
+    def _clear_boot_screen(self):
         M5.Lcd.setRotation(0)
+        M5.Lcd.clear(_BOOT_BG_COLOR)
+
+    def _init_lvgl(self):
+        self._clear_boot_screen()
         M5.Lcd.lvgl_init()
+        M5.Lcd.clear(_BOOT_BG_COLOR)
 
         disp_buf0 = lv.draw_buf_create(
             M5.getDisplay(0).width(), M5.getDisplay(0).height(), lv.COLOR_FORMAT.RGB565, 0
@@ -63,5 +73,8 @@ class Tab5_Startup:
 
         fs_drv = lv.fs_drv_t()
         lv_utils.fs_register(fs_drv, "S", 500)
+
+        screen = lv.screen_active()
+        screen.set_style_bg_color(lv.color_hex(_BOOT_BG_COLOR), lv.PART.MAIN)
 
         m5ui.event_loop()  # start event loop

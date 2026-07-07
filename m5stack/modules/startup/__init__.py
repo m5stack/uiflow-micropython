@@ -27,28 +27,12 @@ _WIFI_STATUS_MAP = {
     network.STAT_BEACON_TIMEOUT: "STAT_BEACON_TIMEOUT",  # Beacon 超时
 }
 
-_M5THINGS_STATUS_MAP = {
-    -2: "SNTP_ERR",
-    -1: "CONNECT_ERR",
-    0: "STANDBY",
-    1: "CONNECTING",
-    2: "CONNECTED",
-    3: "DISCONNECT",
-}
-
-
-_WIFI_STATUS_MAP = {
-    network.STAT_IDLE: "STAT_IDLE",  # 空闲 / 断开连接后
-    network.STAT_CONNECTING: "STAT_CONNECTING",  # 连接中
-    network.STAT_GOT_IP: "STAT_GOT_IP",  # 已连接并获取IP
-    network.STAT_NO_AP_FOUND: "STAT_NO_AP_FOUND",  # 未找到AP
-    network.STAT_NO_AP_FOUND_IN_RSSI_THRESHOLD: "STAT_NO_AP_FOUND_IN_RSSI_THRESHOLD",  # 未找到满足RSSI阈值的AP
-    network.STAT_NO_AP_FOUND_IN_AUTHMODE_THRESHOLD: "STAT_NO_AP_FOUND_IN_AUTHMODE_THRESHOLD",  # 未找到满足认证模式阈值的AP
-    network.STAT_NO_AP_FOUND_W_COMPATIBLE_SECURITY: "STAT_NO_AP_FOUND_W_COMPATIBLE_SECURITY",  # 未找到兼容安全模式的AP
-    network.STAT_WRONG_PASSWORD: "STAT_WRONG_PASSWORD",  # 密码错误
-    network.STAT_ASSOC_FAIL: "STAT_ASSOC_FAIL",  # 关联失败
-    network.STAT_HANDSHAKE_TIMEOUT: "STAT_HANDSHAKE_TIMEOUT",  # 握手超时
-    network.STAT_BEACON_TIMEOUT: "STAT_BEACON_TIMEOUT",  # Beacon 超时
+_ETH_STATUS_MAP = {
+    network.ETH_STARTED: "ETH_STARTED",
+    network.ETH_CONNECTED: "ETH_CONNECTED",
+    network.ETH_DISCONNECTED: "ETH_DISCONNECTED",
+    network.ETH_STOPPED: "ETH_STOPPED",
+    network.ETH_GOT_IP: "ETH_GOT_IP",
 }
 
 _M5THINGS_STATUS_MAP = {
@@ -125,8 +109,28 @@ class Startup:
     def wifi_status_str(self, status):
         return _WIFI_STATUS_MAP.get(status, f"UNKNOWN({status})")
 
+    def eth_status_str(self, status):
+        return _ETH_STATUS_MAP.get(status, f"UNKNOWN({status})")
+
     def m5things_status_str(self, status):
         return _M5THINGS_STATUS_MAP.get(status, f"UNKNOWN({status})")
+
+
+_last_access_info = (None, None)
+
+
+def print_access_info(nick_name, access_code):
+    global _last_access_info
+    nick_name = "" if nick_name is None else str(nick_name)
+    access_code = "" if access_code is None else str(access_code)
+    if nick_name == "" and access_code == "":
+        return
+    info = (nick_name, access_code)
+    if info == _last_access_info:
+        return
+    _last_access_info = info
+    print("Nickname: " + nick_name)
+    print("Access Code: " + access_code)
 
 
 def _is_psram():
@@ -149,7 +153,9 @@ def _apply_boot_button_override(boot_opt, nvs):
 
 
 def _prepare_board(board_id):
-    if board_id != M5.BOARD.M5PaperColor:
+    if board_id == M5.BOARD.M5Tab5:
+        M5.Lcd.clear(0xFFFFFF)
+    elif board_id != M5.BOARD.M5PaperColor:
         M5.Lcd.clear()
     if board_id == M5.BOARD.M5StickCPlus2:
         from machine import Pin
@@ -216,56 +222,32 @@ def startup(boot_opt, timeout: int = 60) -> None:
         pass
     # Show startup menu and connect to network
     elif boot_opt is BOOT_OPT_MENU_NET:
-        if board_id == M5.BOARD.M5AtomS3:
+        if board_id in (M5.BOARD.M5AtomS3, M5.BOARD.M5AtomS3R):
             from .atoms3 import AtomS3_Startup
 
             atoms3 = AtomS3_Startup()
             atoms3.startup(ssid, pswd, timeout=timeout)
         elif board_id in (
             M5.BOARD.M5Atom,
-            M5.BOARD.M5StampPico,
             M5.BOARD.M5AtomU,
             M5.BOARD.M5AtomEcho,
+            M5.BOARD.M5AtomMatrix,
+            M5.BOARD.M5AtomEchoS3R,
+            M5.BOARD.M5AtomS3U,
+            M5.BOARD.M5AtomS3Lite,
+            M5.BOARD.M5AtomS3R_CAM,
+            M5.BOARD.M5StampPico,
+            M5.BOARD.M5StampS3Bat,
+            M5.BOARD.M5StampS3,
+            M5.BOARD.M5StampP4,
+            M5.BOARD.M5NanoC6,
+            M5.BOARD.M5DualKey,
+            M5.BOARD.M5PowerHub,
         ):
-            from .atoms3lite import AtomS3Lite_Startup
+            from .headless import Headless_Startup
 
-            atomlite = AtomS3Lite_Startup()
-            atomlite.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomS3R:
-            from .atoms3r import AtomS3R_Startup
-
-            atoms3r = AtomS3R_Startup()
-            atoms3r.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomS3R_CAM:
-            from .atoms3r_cam import AtomS3R_CAM_Startup
-
-            atoms3r = AtomS3R_CAM_Startup()
-            atoms3r.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomEchoS3R:
-            from .atom_echos3r import AtomEchoS3R_Startup
-
-            atom_echos3r = AtomEchoS3R_Startup()
-            atom_echos3r.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5DualKey:
-            from .dualkey import DualKey_Startup
-
-            dualkey = DualKey_Startup()
-            dualkey.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomMatrix:
-            from .atommatrix import AtomMatrix_Startup
-
-            atommatrix = AtomMatrix_Startup()
-            atommatrix.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomS3Lite:
-            from .atoms3lite import AtomS3Lite_Startup
-
-            atoms3 = AtomS3Lite_Startup()
-            atoms3.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5StampS3:
-            from .stamps3 import StampS3_Startup
-
-            stamps3 = StampS3_Startup()
-            stamps3.startup(ssid, pswd, timeout=timeout)
+            headless = Headless_Startup()
+            headless.startup(net_mode, ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StackCoreS3:
             from .cores3 import CoreS3_Startup
 
@@ -276,15 +258,10 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             core2 = Core2_Startup()
             core2.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5AtomS3U:
-            from .atoms3u import AtomS3U_Startup
-
-            atoms3u = AtomS3U_Startup()
-            atoms3u.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StickCPlus2:
-            from .stickcplus import StickCPlus_Startup
+            from .stickcplus2 import StickCPlus2_Startup
 
-            stickcplus = StickCPlus_Startup()
+            stickcplus = StickCPlus2_Startup()
             stickcplus.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5StickCPlus:
             from .stickcplus import StickCPlus_Startup
@@ -306,7 +283,7 @@ def startup(boot_opt, timeout: int = 60) -> None:
             from .capsule import Capsule_Startup
 
             capsule = Capsule_Startup()
-            capsule.startup(ssid, pswd, timeout=timeout)
+            capsule.startup(net_mode, ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Dial:
             from .dial import Dial_Startup
 
@@ -333,11 +310,6 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             cardputeradv = CardputerADV_Startup()
             cardputeradv.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5NanoC6:
-            from .nanoc6 import NanoC6_Startup
-
-            nanoc6 = NanoC6_Startup()
-            nanoc6.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.M5Paper:
             from .paper import Paper_Startup
 
@@ -389,11 +361,6 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             unit_c6l = UnitC6L_Startup()
             unit_c6l.startup(ssid, pswd, timeout=timeout)
-        elif board_id == M5.BOARD.M5PowerHub:
-            from .powerhub import PowerHub_Startup
-
-            powerhub = PowerHub_Startup()
-            powerhub.startup(ssid, pswd, timeout=timeout)
         elif board_id == M5.BOARD.ArduinoNessoN1:
             from .nesson1 import NessoN1_Startup
 
@@ -414,16 +381,6 @@ def startup(boot_opt, timeout: int = 60) -> None:
 
             unit_poep4 = Unit_PoEP4_Startup()
             unit_poep4.startup(net_mode, ssid, pswd, protocol, ip, netmask, gateway, dns, timeout)
-        elif board_id == M5.BOARD.M5StampS3Bat:
-            from .stamps3bat import StampS3Bat_Startup
-
-            stamps3bat = StampS3Bat_Startup()
-            stamps3bat.startup(net_mode, ssid, pswd, protocol, ip, netmask, gateway, dns, timeout)
-        elif board_id == M5.BOARD.M5StampP4:
-            from .stampp4 import StampP4_Startup
-
-            stampp4 = StampP4_Startup()
-            stampp4.startup(net_mode, ssid, pswd, protocol, ip, netmask, gateway, dns, timeout)
         elif board_id == M5.BOARD.M5StackChan:
             from .stackchan import StackChan_Startup
 

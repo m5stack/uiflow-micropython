@@ -11,13 +11,6 @@ import machine
 import os
 import time
 
-try:
-    import M5Things
-
-    _HAS_SERVER = True
-except ImportError:
-    _HAS_SERVER = False
-
 
 class RunApp(app_base.AppBase):
     def __init__(self, icos: dict, data=None) -> None:
@@ -28,7 +21,7 @@ class RunApp(app_base.AppBase):
         self.descriptor = app_base.Descriptor(x=5 + 62 + 62, y=20 + 4, w=62, h=56)
 
     def on_launch(self):
-        self._mtime_text, self._account_text, self._ver_text = self._get_file_info("main.py")
+        self._mtime_text, self._ver_text = self._get_file_info("main.py")
 
     def on_view(self):
         M5.Lcd.drawImage("/system/tough/Selection/appRun_selected.png", 5 + 62 + 62, 20 + 4)
@@ -56,21 +49,10 @@ class RunApp(app_base.AppBase):
         )
         self._mtime_label.set_text(self._mtime_text)
 
-        self._account_label = widgets.Label(
-            "Account: XXABC",
-            4 + 10 + 8,
-            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18,
-            w=312,
-            fg_color=0x000000,
-            bg_color=0xDCDDDD,
-            font="/system/common/font/Montserrat-Medium-16.vlw",
-        )
-        self._account_label.set_text(self._account_text)
-
         self._ver_label = widgets.Label(
             "Ver: UIFLOW2.0 a18",
             4 + 10 + 8,
-            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18 + 18,
+            (20 + 4 + 56 + 4) + 4 + 20 + 6 + 18,
             w=312,
             fg_color=0x000000,
             bg_color=0xDCDDDD,
@@ -97,7 +79,7 @@ class RunApp(app_base.AppBase):
 
     def on_exit(self):
         M5.Lcd.drawImage("/system/tough/Selection/appRun_unselected.png", 5 + 62 + 62, 20 + 4)
-        del self._name_label, self._mtime_label, self._account_label, self._ver_label
+        del self._name_label, self._mtime_label, self._ver_label
 
     async def _click_event_handler(self, x, y, fw):
         for button in self._buttons:
@@ -117,7 +99,6 @@ class RunApp(app_base.AppBase):
     @staticmethod
     def _get_file_info(path):
         mtime = None
-        account = None
         ver = f"Ver: UIFLOW2 {esp32.firmware_info()[3]}"
 
         try:
@@ -133,19 +114,13 @@ class RunApp(app_base.AppBase):
                 mtime[0], mtime[1], mtime[2], mtime[3], mtime[4], mtime[5]
             )
 
-        with open(path, "r") as f:
-            for line in f:
-                if line.find("Account") != -1:
-                    account = line.split(":")[1].strip()
-                if line.find("Ver") != -1:
-                    ver = line.split(":")[1].strip()
-                if account is not None and ver is not None:
-                    break
+        try:
+            with open(path, "r") as f:
+                for line in f:
+                    if line.find("Ver") != -1:
+                        ver = line.split(":")[1].strip()
+                        break
+        except OSError:
+            pass
 
-        if account is None and _HAS_SERVER and M5Things.status() == 2:
-            infos = M5Things.info()
-            account = "Account: None" if len(infos[1]) == 0 else "Account: {:s}".format(infos[1])
-        else:
-            account = "Account: None"
-
-        return (mtime, account, ver)
+        return (mtime, ver)

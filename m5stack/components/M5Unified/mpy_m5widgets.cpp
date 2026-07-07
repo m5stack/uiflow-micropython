@@ -5,6 +5,8 @@
 */
 
 #include <M5Unified.h>
+#include <LGFX_Fonts.hpp>
+#include "mpy_lgfx_lvgl_font.hpp"
 #include "lgfx/utility/lgfx_tjpgd.h"
 #include "lgfx/v1/LGFXBase.hpp"
 
@@ -159,13 +161,7 @@ static void m5widgets_label_draw_helper(const widgets_label_obj_t *self) {
 static void m5widgets_label_font_init_helper(widgets_label_obj_t *self, mp_obj_t font) {
     if (font == mp_const_none) {
         // set default font to Montserrat 12, keep same style with UIFlow website UI design.
-        #if MICROPY_PY_LVGL
-        extern const lv_font_t lv_font_montserrat_12;
-        static const lgfx::LVGLfont lv_font_montserrat_12_obj(&lv_font_montserrat_12);
-        self->font = &lv_font_montserrat_12_obj;
-        #else
-        self->font = &m5gfx::fonts::lv_font_montserrat_12;
-        #endif
+        self->font = &m5gfx::fonts::lvFontMontserrat12;
     }
 
     if (mp_obj_is_str(font)) {
@@ -436,13 +432,7 @@ static void m5widgets_title_draw_helper(widgets_title_obj_t *self) {
 static void m5widgets_title_font_init_helper(widgets_title_obj_t *self, mp_obj_t font) {
     if (font == mp_const_none) {
         // set default font to Montserrat 12, keep same style with UIFlow website UI design.
-        #if MICROPY_PY_LVGL
-        extern const lv_font_t lv_font_montserrat_12;
-        static const lgfx::LVGLfont lv_font_montserrat_12_obj(&lv_font_montserrat_12);
-        self->font = &lv_font_montserrat_12_obj;
-        #else
-        self->font = &m5gfx::fonts::lv_font_montserrat_12;
-        #endif
+        self->font = &m5gfx::fonts::lvFontMontserrat12;
     }
 
     if (mp_obj_is_str(font)) {

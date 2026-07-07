@@ -4,21 +4,14 @@
 
 _attrs = {
     "LOGO_IMG": "/system/stamplc/boot/boot_logo_1.jpeg",
-    # apprun
-    "RUN_INFO_IMG": "/system/stamplc/apprun/run_info.jpeg",
-    "RUN_ONCE_SELECT_IMG": "/system/stamplc/apprun/run_once_select.jpeg",
-    "RUN_ONCE_UNSELECT_IMG": "/system/stamplc/apprun/run_once_unselect.jpeg",
-    "RUN_ALWAYS_SELECT_IMG": "/system/stamplc/apprun/run_always_select.jpeg",
-    "RUN_ALWAYS_UNSELECT_IMG": "/system/stamplc/apprun/run_always_unselect.jpeg",
     # develop
-    "DEVELOP_PRIVATE_IMG": "/system/stamplc/develop/private.jpeg",
-    "DEVELOP_PUBLIC_IMG": "/system/stamplc/develop/public.jpeg",
+    "DEVELOP_BG_IMG": "/system/stamplc/develop/bg.jpg",
+    "DEVELOP_OFFLINE_IMG": "/system/stamplc/develop/offline.jpg",
+    "DEVELOP_ONLINE_IMG": "/system/stamplc/develop/online.jpg",
     "AVATAR_IMG": "/system/common/img/avatar.jpg",
     # ezdata
     # launcher
-    "APPLIST_ICO": "/system/stamplc/applist.jpeg",
     "DEVELOP_ICO": "/system/stamplc/develop.jpeg",
-    "APPRUN_ICO": "/system/stamplc/apprun.jpeg",
     "EZDATA_ICO": "/system/stamplc/ezdata.jpeg",
     "SETTING_ICO": "/system/stamplc/setting.jpeg",
     "RIGHT_ICO": "/system/stamplc/right.jpeg",

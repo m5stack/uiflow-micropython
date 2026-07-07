@@ -36,9 +36,9 @@ class WiFiSetting(app_base.AppBase):
 
         self._ssid_label = widgets.Label(
             "ssid",
-            self._origin_x + 98,
+            self._origin_x + 56 + 2,
             self._origin_y + 12,
-            w=144,
+            w=180,
             font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
@@ -49,9 +49,9 @@ class WiFiSetting(app_base.AppBase):
 
         self._psk_label = widgets.Label(
             "pwd",
-            self._origin_x + 98,
+            self._origin_x + 56 + 2,
             self._origin_y + 12 + 35,
-            w=144,
+            w=180,
             font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
@@ -65,9 +65,9 @@ class WiFiSetting(app_base.AppBase):
 
         self._server_label = widgets.Label(
             "server",
-            self._origin_x + 98,
+            self._origin_x + 56 + 2,
             self._origin_y + 12 + 35 + 34,
-            w=144,
+            w=190,
             font_align=widgets.Label.LEFT_ALIGNED,
             fg_color=0x000000,
             bg_color=0xFEFEFE,
