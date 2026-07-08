@@ -113,7 +113,10 @@ class StackChan:
         time.sleep_ms(100)
         # rgb led
         self.rgb = RGB(self.ioe1, io=RGB_IO_PIN, n=RGB_LED_COUNT)
-        self.rgb.clear(refresh=True)
+        try:
+            self.rgb.clear(refresh=True)
+        except OSError:
+            pass
         # touch
         self.touch = Si12T(self.i2c)
         # servo
