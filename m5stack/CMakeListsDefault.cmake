@@ -170,6 +170,14 @@ endif()
 # list(TRANSFORM MICROPY_SOURCE_PORT PREPEND ${MICROPY_PORT_DIR}/)
 list(APPEND MICROPY_SOURCE_PORT ${CMAKE_BINARY_DIR}/pins.c)
 
+set(M5STACK_WEBREPL_ENABLE 1)
+if(MICROPY_BOARD STREQUAL "M5STACK_Basic_4MB")
+    set(M5STACK_WEBREPL_ENABLE 0)
+else()
+    list(APPEND MICROPY_SOURCE_PORT ${PROJECT_DIR}/components/webrepl/webrepl.c)
+    list(APPEND MICROPY_INC_WEBREPL ${PROJECT_DIR}/components/webrepl/include)
+endif()
+
 set(MICROPY_SOURCE_M5UNIFIED
     ${PROJECT_DIR}/components/M5Unified/mpy_m5btn.cpp
     ${PROJECT_DIR}/components/M5Unified/mpy_m5gfx.cpp
@@ -260,6 +268,10 @@ if (BOARD_TYPE STREQUAL "unit_poep4")
     )
 endif()
 
+if(M5STACK_WEBREPL_ENABLE)
+    list(APPEND IDF_COMPONENTS esp_websocket_client)
+endif()
+
 if(CONFIG_IDF_TARGET_ESP32 OR CONFIG_IDF_TARGET_ESP32S2 OR CONFIG_IDF_TARGET_ESP32S3)
     list(APPEND IDF_COMPONENTS xtensa)
 endif()
@@ -322,6 +334,7 @@ idf_component_register(
         ${MICROPY_INC_CORE}
         ${MICROPY_INC_USERMOD}
         ${MICROPY_INC_TINYUSB}
+        ${MICROPY_INC_WEBREPL}
         ${MICROPY_PORT_DIR}
         ${MICROPY_BOARD_DIR}
         ${CMAKE_BINARY_DIR}
@@ -354,6 +367,7 @@ target_compile_definitions(${MICROPY_TARGET} PUBLIC
     ${MICROPY_DEF_CORE}
     ${MICROPY_DEF_BOARD}
     ${MICROPY_DEF_TINYUSB}
+    M5STACK_WEBREPL_ENABLE=${M5STACK_WEBREPL_ENABLE}
     MICROPY_VFS_FAT=1
     MICROPY_VFS_LFS2=1
     ESP_PLATFORM=1  # M5GFX platform determine

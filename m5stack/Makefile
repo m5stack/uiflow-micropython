@@ -246,7 +246,9 @@ monitor:
 # Build the NVS partition firmware
 # fixed size 0x6000
 nvs:
-	@$(PYTHON) ./../tools/nvs_partition_gen.py generate partition_nvs.csv $(BUILD)/nvs.bin 0x6000
+	@mkdir -p $(BUILD)
+	@cp partition_nvs.csv $(BUILD)/partition_nvs.csv
+	@$(PYTHON) ./../tools/nvs_partition_gen.py generate $(BUILD)/partition_nvs.csv $(BUILD)/nvs.bin 0x6000
 
 # Build the system and user filesystem firmware
 ifeq ($(TINY_FLAG),1)

@@ -20,3 +20,4 @@ dependencies:
       - if: "target == esp32p4"
     version: "1.4.0"
   espressif/quirc: "1.2.0"
+  espressif/esp_websocket_client: "^1.7.0"
