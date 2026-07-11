@@ -136,14 +136,14 @@ int cpt_scan_files(const char *board, const char *basePath, char (*file_path)[25
             strcmp(ptr->d_name, ".DS_Store") == 0) { // MacOS desktop metadata files
             continue;
         } else if (ptr->d_type == 8) { // file
-            sprintf(&file_path[*file_count][0], "%s/%s", basePath, ptr->d_name);
+            snprintf(&file_path[*file_count][0], 257, "%s/%s", basePath, ptr->d_name);
             *file_count += 1;
             if (*file_count == 255) {
                 printf("[ Cpt Scan ] File count than %d, failed \r\n", 255);
             }
         } else if (ptr->d_type == 4) {
             char path_new[300] = {0x00};
-            sprintf(path_new, "%s/%s", basePath, ptr->d_name);
+            snprintf(path_new, sizeof(path_new), "%s/%s", basePath, ptr->d_name);
             if (strstr(path_new, "system/") != NULL) {
                 if (strstr(path_new, "system/common") == NULL) {
                     // Check for exact board match - ensure board name is either at end or followed by '/'
@@ -158,7 +158,7 @@ int cpt_scan_files(const char *board, const char *basePath, char (*file_path)[25
                     }
                 }
             }
-            sprintf(&file_path[*file_count][0], "%s/.", path_new);
+            snprintf(&file_path[*file_count][0], 257, "%s/.", path_new);
             *file_count += 1;
             cpt_scan_files(board, path_new, file_path, file_count);
         }
@@ -178,7 +178,7 @@ int16_t write_file(lfs2_t *fs, const char *path, const char *data,
     char *split_ptr = NULL;
     uint16_t split_pos = 0;
     char path_dir[256] = {0x00};
-    sprintf(path_dir, "%s", path);
+    snprintf(path_dir, sizeof(path_dir), "%s", path);
 
     for (;;)
     {
