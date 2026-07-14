@@ -14,6 +14,7 @@ package(
         "env.py",
         "finger.py",
         "hat_helper.py",
+        "hat18650c.py",
         "joyc.py",
         "joystick.py",
         "mini_encoder_c.py",

@@ -12,6 +12,7 @@ HAT
     env.rst
     finger.rst
     heart.rst
+    hat18650c.rst
     joyc.rst
     joystick.rst
     mini_encoder.rst

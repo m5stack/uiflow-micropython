@@ -1,0 +1,900 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-14 16:35+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/hat/hat18650c.rst:4 04fd70fa58dd4b51b70332e37ed2cfd4
+msgid "HAT 18650C"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:12 f0d3a1caf433447884389943691ac358
+msgid ""
+"HAT 18650C V1.1 integrates an AW32257 charger and an INA226 power "
+"monitor. It can measure battery voltage, current, and power, control "
+"battery charging, set charge current, read charge status/fault status, "
+"and control the AW32257 Boost/OTG output."
+msgstr "HAT 18650C V1.1 集成 AW32257 充电管理芯片和 INA226 功率监测芯片，可测量电池电压、电流和功率，控制电池充电、设置充电电流、读取充电状态及故障状态，并控制 AW32257 Boost/OTG 输出。"
+
+#: ../../source/hat/hat18650c.rst:17 532963c43a534075a1fa30ab5d768c8c
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/hat/hat18650c.rst:19 64fc501969d24d6aaf4d12a40cfc5979
+msgid "|HAT18650C|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref 2eefe5a80b284a1f8c2d83a1d67e2d19
+msgid "HAT18650C"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:23 10dd57987e4c455a87a712b711c3c96e
+msgid ""
+"With the current hardware direction, charging current is usually negative"
+" and discharging current is usually positive. Charge current and voltage "
+"settings are written through AW32257 register steps, so the actual value "
+"is mapped to a supported gear rather than an arbitrary value."
+msgstr "按照当前硬件的电流方向，充电电流通常为负值，放电电流通常为正值。充电电流和电压通过 AW32257 寄存器档位设置，因此实际值会映射到支持的档位，而不是任意值。"
+
+#: ../../source/hat/hat18650c.rst:27 9b5eabf427b1422f972cb04c0b11719a
+msgid "UiFlow2 Example"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:30 ../../source/hat/hat18650c.rst:65
+#: 08ae3b733420410394d6f8ab25f7278f
+msgid "Charge Test"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:32 cbb8d8af943f4044abd0d509698e3ff7
+msgid "Open the |sticks3_hat18650c_charge_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_hat18650c_charge_example.m5f2| 项目。"
+
+#: ../../source/hat/hat18650c.rst:34 619fce9c33bf47fabcbc053b95ac881d
+msgid ""
+"This example reads battery voltage and current, shows charging state, and"
+" controls Charge ON/OFF with the button on StickS3."
+msgstr "此示例读取电池电压和电流、显示充电状态，并通过 StickS3 按键控制充电开启或关闭。"
+
+#: ../../source/hat/hat18650c.rst:37 ../../source/hat/hat18650c.rst:53
+#: 3c09c02182e34177816a721a696596d3 hat.hat18650c.HAT18650CHat:12
+#: hat.hat18650c.HAT18650CHat.get_battery_current:9
+#: hat.hat18650c.HAT18650CHat.get_battery_power:6
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage:6
+#: hat.hat18650c.HAT18650CHat.get_boost_enable:6
+#: hat.hat18650c.HAT18650CHat.get_boost_fault:6
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code:6
+#: hat.hat18650c.HAT18650CHat.get_charge_current:8
+#: hat.hat18650c.HAT18650CHat.get_charge_enable:6
+#: hat.hat18650c.HAT18650CHat.get_charge_fault:6
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code:6
+#: hat.hat18650c.HAT18650CHat.get_charge_status:6
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code:6
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:8
+#: hat.hat18650c.HAT18650CHat.get_recharge_threshold:5
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:8
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:8
+#: hat.hat18650c.HAT18650CHat.get_termination_current:8
+#: hat.hat18650c.HAT18650CHat.is_charge_done:6
+#: hat.hat18650c.HAT18650CHat.is_charging:6
+#: hat.hat18650c.HAT18650CHat.set_boost_enable:6
+#: hat.hat18650c.HAT18650CHat.set_charge_current:10
+#: hat.hat18650c.HAT18650CHat.set_charge_enable:6
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:10
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold:6
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:9
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:9
+#: hat.hat18650c.HAT18650CHat.set_termination_current:9 of
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/hat/hat18650c.rst:39 a6f33261bdb14f429a6de7f1b927660e
+msgid "|charge_example.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:73 7de951538d0f4ea8a0cd05b0589383fe
+msgid "charge_example.png"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:41 ../../source/hat/hat18650c.rst:57
+#: ../../source/hat/hat18650c.rst:76 ../../source/hat/hat18650c.rst:92
+#: 687ecab5c89d41c4a3a60a7c1943d2b8
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/hat/hat18650c.rst:43 ../../source/hat/hat18650c.rst:59
+#: ../../source/hat/hat18650c.rst:78 ../../source/hat/hat18650c.rst:94
+#: c731d2c4be1a4a00987229820f5bf2a5
+msgid "None"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:46 ../../source/hat/hat18650c.rst:81
+#: 8a0efd7cdce849ffa04b0de3bb2ba68a
+msgid "Output Test"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:48 fd6aac10fe4e4829bee57c2e1d2be25a
+msgid "Open the |sticks3_hat18650c_output_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |sticks3_hat18650c_output_example.m5f2| 项目。"
+
+#: ../../source/hat/hat18650c.rst:50 758719c3059b4190aca2dc4063d68496
+msgid ""
+"This example reads battery voltage and current, shows OTG output state, "
+"and controls OTG Output ON/OFF with the button on StickS3."
+msgstr "此示例读取电池电压和电流、显示 OTG 输出状态，并通过 StickS3 按键控制 OTG 输出开启或关闭。"
+
+#: ../../source/hat/hat18650c.rst:55 059b7931ed77476892923b7837a2834b
+msgid "|output_example.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:75 c9342001c4eb4f919ea949984e3f706d
+msgid "output_example.png"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:62 9b5eabf427b1422f972cb04c0b11719a
+msgid "MicroPython Example"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:67 619fce9c33bf47fabcbc053b95ac881d
+msgid ""
+"Read battery voltage and current, show charging state, and control Charge"
+" ON/OFF with the button on StickS3."
+msgstr "读取电池电压和电流，显示充电状态，并通过 StickS3 按键控制充电开启或关闭。"
+
+#: ../../source/hat/hat18650c.rst:70 ../../source/hat/hat18650c.rst:86
+#: 053bcb8b0f6e49e8b504599df9636aa5 hat.hat18650c.HAT18650CHat:16
+#: hat.hat18650c.HAT18650CHat.get_battery_current:13
+#: hat.hat18650c.HAT18650CHat.get_battery_power:10
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage:10
+#: hat.hat18650c.HAT18650CHat.get_boost_enable:10
+#: hat.hat18650c.HAT18650CHat.get_boost_fault:10
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code:11
+#: hat.hat18650c.HAT18650CHat.get_charge_current:12
+#: hat.hat18650c.HAT18650CHat.get_charge_enable:10
+#: hat.hat18650c.HAT18650CHat.get_charge_fault:10
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code:11
+#: hat.hat18650c.HAT18650CHat.get_charge_status:10
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code:10
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:12
+#: hat.hat18650c.HAT18650CHat.get_recharge_threshold:9
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:12
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:12
+#: hat.hat18650c.HAT18650CHat.get_termination_current:12
+#: hat.hat18650c.HAT18650CHat.is_charge_done:10
+#: hat.hat18650c.HAT18650CHat.is_charging:10
+#: hat.hat18650c.HAT18650CHat.set_boost_enable:10
+#: hat.hat18650c.HAT18650CHat.set_charge_current:14
+#: hat.hat18650c.HAT18650CHat.set_charge_enable:10
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:14
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold:10
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:13
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:13
+#: hat.hat18650c.HAT18650CHat.set_termination_current:13 of
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/hat/hat18650c.rst:83 758719c3059b4190aca2dc4063d68496
+msgid ""
+"Read battery voltage and current, show OTG output state, and control OTG "
+"Output ON/OFF with the button on StickS3."
+msgstr "读取电池电压和电流，显示 OTG 输出状态，并通过 StickS3 按键控制 OTG 输出开启或关闭。"
+
+#: ../../source/hat/hat18650c.rst:97 3b69653f5c9945018898768491a7350f
+msgid "**API**"
+msgstr ""
+
+#: ../../source/hat/hat18650c.rst:100 c8d0af490e404cb285ee249bb7d37a12
+msgid "HAT18650CHat"
+msgstr ""
+
+#: cc2760bf55324dbbac7da5f1d6b9374d hat.hat18650c.HAT18650CHat:1 of
+msgid "Bases: :py:class:`object`"
+msgstr ""
+
+#: ec21edfa2a2e40d7b76f4d5e6579ad6f hat.hat18650c.HAT18650CHat:1 of
+msgid "Create a HAT18650CHat object."
+msgstr "创建 HAT18650CHat 对象。"
+
+#: aa371658c54545b5a58b8aa90598881b hat.hat18650c.HAT18650CHat:3 of
+msgid ""
+"The AW32257 controls battery charging and Boost/OTG output. The INA226 "
+"measures battery bus voltage, current, and power."
+msgstr "AW32257 用于控制电池充电和 Boost/OTG 输出，INA226 用于测量电池总线电压、电流和功率。"
+
+#: ../../source/hat/hat18650c.rst 9c795f799b5c4f22a60f7774d41b671e
+#: hat.hat18650c.HAT18650CHat.set_boost_enable
+#: hat.hat18650c.HAT18650CHat.set_charge_current
+#: hat.hat18650c.HAT18650CHat.set_charge_enable
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage
+#: hat.hat18650c.HAT18650CHat.set_termination_current of
+msgid "Parameters"
+msgstr "参数"
+
+#: d56522fd344d4d4fb8fe297d0de735af hat.hat18650c.HAT18650CHat:6 of
+msgid "I2C bus."
+msgstr "I2C 总线。"
+
+#: d98617739c42459bb751fd5bc914fd9a hat.hat18650c.HAT18650CHat:7 of
+msgid "AW32257 I2C address. Default is 0x6A."
+msgstr "AW32257 I2C 地址，默认为 0x6A。"
+
+#: 7a7b2fede06e4f51ae003a28756edcb5 hat.hat18650c.HAT18650CHat:8 of
+msgid "INA226 I2C address. Default is 0x41."
+msgstr "INA226 I2C 地址，默认为 0x41。"
+
+#: 5e68e5222cda4690b7bed58a4a6171ed hat.hat18650c.HAT18650CHat:9 of
+msgid "INA226 shunt resistor value in ohms. Default is 0.01."
+msgstr "INA226 分流电阻阻值，单位为欧姆，默认为 0.01。"
+
+#: a73288782d9e4023a7cd192f954263f3 hat.hat18650c.HAT18650CHat:10 of
+msgid "Maximum expected current for INA226 calibration in amps. Default is 10."
+msgstr "用于 INA226 校准的最大预期电流，单位为安培，默认为 10。"
+
+#: d4f4a111db024f7a8ef2080d32c07213 hat.hat18650c.HAT18650CHat:14 of
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:6 8ffce5ab555b45e992e77ca7bfd7e1b7
+msgid "init.png"
+msgstr ""
+
+#: 58345833f9cf4a5ab71d855bfab82eed
+#: hat.hat18650c.HAT18650CHat.set_charge_enable:1 of
+msgid "Enable or disable battery charging."
+msgstr "开启或关闭电池充电。"
+
+#: 36ac587e664e456da17817c5abecbb0d
+#: hat.hat18650c.HAT18650CHat.set_charge_enable:3 of
+msgid "True to enable charging, False to disable charging."
+msgstr "True 表示开启充电，False 表示关闭充电。"
+
+#: 78aa933aa66c409d9bd85e4bc05b8e05
+#: hat.hat18650c.HAT18650CHat.get_battery_current
+#: hat.hat18650c.HAT18650CHat.get_battery_power
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage
+#: hat.hat18650c.HAT18650CHat.get_boost_enable
+#: hat.hat18650c.HAT18650CHat.get_boost_fault
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code
+#: hat.hat18650c.HAT18650CHat.get_charge_current
+#: hat.hat18650c.HAT18650CHat.get_charge_enable
+#: hat.hat18650c.HAT18650CHat.get_charge_fault
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code
+#: hat.hat18650c.HAT18650CHat.get_charge_status
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage
+#: hat.hat18650c.HAT18650CHat.get_recharge_threshold
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage
+#: hat.hat18650c.HAT18650CHat.get_termination_current
+#: hat.hat18650c.HAT18650CHat.is_charge_done
+#: hat.hat18650c.HAT18650CHat.is_charging
+#: hat.hat18650c.HAT18650CHat.set_boost_enable
+#: hat.hat18650c.HAT18650CHat.set_charge_current
+#: hat.hat18650c.HAT18650CHat.set_charge_enable
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage
+#: hat.hat18650c.HAT18650CHat.set_termination_current of
+msgid "Return type"
+msgstr "返回类型"
+
+#: a6f33261bdb14f429a6de7f1b927660e
+#: hat.hat18650c.HAT18650CHat.set_charge_enable:8 of
+msgid "|set_charge_enable.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:8 7de951538d0f4ea8a0cd05b0589383fe
+msgid "set_charge_enable.png"
+msgstr ""
+
+#: 0686fcc02bc34623af704cdc37bb0772
+#: hat.hat18650c.HAT18650CHat.get_charge_enable:1 of
+msgid "Get battery charging enable state."
+msgstr "获取电池充电使能状态。"
+
+#: 3bb0f2f76af94958aae087edc35f89b8
+#: hat.hat18650c.HAT18650CHat.get_battery_current
+#: hat.hat18650c.HAT18650CHat.get_battery_power
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage
+#: hat.hat18650c.HAT18650CHat.get_boost_enable
+#: hat.hat18650c.HAT18650CHat.get_boost_fault
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code
+#: hat.hat18650c.HAT18650CHat.get_charge_current
+#: hat.hat18650c.HAT18650CHat.get_charge_enable
+#: hat.hat18650c.HAT18650CHat.get_charge_fault
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code
+#: hat.hat18650c.HAT18650CHat.get_charge_status
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage
+#: hat.hat18650c.HAT18650CHat.get_termination_current
+#: hat.hat18650c.HAT18650CHat.is_charge_done
+#: hat.hat18650c.HAT18650CHat.is_charging of
+msgid "Returns"
+msgstr "返回"
+
+#: 51378daea7c844efbff067ad0cd4b2eb
+#: hat.hat18650c.HAT18650CHat.get_charge_enable:3 of
+msgid "True if charging is enabled, False otherwise."
+msgstr "充电已开启时返回 True，否则返回 False。"
+
+#: 4446a754ef8b4322b2614d0017b445be
+#: hat.hat18650c.HAT18650CHat.get_charge_enable:8 of
+msgid "|get_charge_enable.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:10 a62868046f2d42beb4d2924d4a8fed60
+msgid "get_charge_enable.png"
+msgstr ""
+
+#: 691d925f58214e2d83dbc5af653f0900
+#: hat.hat18650c.HAT18650CHat.set_charge_current:1 of
+msgid "Set fast-charge current."
+msgstr "设置快速充电电流。"
+
+#: 9b368e42994548dab5700320fe6b6934
+#: hat.hat18650c.HAT18650CHat.set_charge_current:3 of
+msgid ""
+"The target current is clamped to the HAT 18650C supported table. The "
+"closest supported table value not greater than the target is used "
+"internally, so the written value may be lower than the requested value."
+msgstr "目标电流会限制在 HAT 18650C 支持的档位表范围内，并使用不大于目标值的最接近档位，因此实际写入值可能低于请求值。"
+
+#: 3b67a6dab7024b5d8066bc66145a84f8
+#: hat.hat18650c.HAT18650CHat.set_charge_current:7 of
+msgid "Target charge current in mA."
+msgstr "目标充电电流，单位为 mA。"
+
+#: ef39636ee30747aab018f7a862121f25
+#: hat.hat18650c.HAT18650CHat.set_charge_current:12 of
+msgid "|set_charge_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:12 d41fa29acc8c42d69eb832afaae3ba95
+msgid "set_charge_current.png"
+msgstr ""
+
+#: c0c69a0ac95f4ac782539eb39d4dbd98
+#: hat.hat18650c.HAT18650CHat.get_charge_current:1 of
+msgid "Get fast-charge current setting."
+msgstr "获取快速充电电流设置。"
+
+#: 48e5f2daf65542c686978d60c31cf682
+#: hat.hat18650c.HAT18650CHat.get_charge_current:3 of
+msgid "Returns the actual selected current-table value."
+msgstr "返回实际选中的电流档位值。"
+
+#: af5d388e9b4b485cb2787c50baa2d2e9
+#: hat.hat18650c.HAT18650CHat.get_charge_current:5 of
+msgid "Charge current setting in mA."
+msgstr "充电电流设置值，单位为 mA。"
+
+#: 6fa1cc8c8bac43098d1a0dddffc4354e
+#: hat.hat18650c.HAT18650CHat.get_charge_current:10 of
+msgid "|get_charge_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:14 ad8da1e944044e0e9ddd5f7c0ca8f770
+msgid "get_charge_current.png"
+msgstr ""
+
+#: 2028d0b89aa54ba39e8e70f62c2a3b29
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:1 of
+msgid "Set charge regulation voltage."
+msgstr "设置充电调节电压。"
+
+#: 2ac5843641bd46908fd083c899eae130
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:3 of
+msgid ""
+"The target voltage is clamped to the valid AW32257 range and rounded to "
+"the nearest register step, so the written value may be only close to the "
+"requested value."
+msgstr "目标电压会限制在 AW32257 的有效范围内，并舍入到最接近的寄存器档位，因此实际写入值只是接近请求值。"
+
+#: 7c8ce56385e042bb9070f0f50920efa5
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:7 of
+msgid "Target charge voltage in volts. Valid range is 3.50V to 4.50V."
+msgstr "目标充电电压，单位为伏特，有效范围为 3.50V 至 4.50V。"
+
+#: e865cdf169a84de8ab2396e938207799
+#: hat.hat18650c.HAT18650CHat.set_charge_voltage:12 of
+msgid "|set_charge_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:16 f91091929643470cb90fe68b9a51b5e6
+msgid "set_charge_voltage.png"
+msgstr ""
+
+#: 04397081560c45b490c940787cf1e0ff
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:1 of
+msgid "Get charge regulation voltage."
+msgstr "获取充电调节电压。"
+
+#: 52db73e2adb84d52a18ec8127bb99d23
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:3 of
+msgid "Returns the actual selected voltage step."
+msgstr "返回实际选中的电压档位。"
+
+#: 2610695dc09a4b04b868d53d6ed5eb50
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:5 of
+msgid "Charge regulation voltage in volts."
+msgstr "充电调节电压，单位为伏特。"
+
+#: bf3f38d23ed1491da705ab626166ae05
+#: hat.hat18650c.HAT18650CHat.get_charge_voltage:10 of
+msgid "|get_charge_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:17 cf15a5c0ddad4c5da6184814d3795345
+msgid "get_charge_voltage.png"
+msgstr ""
+
+#: dcbfa8941841437284ae1b23171e9112
+#: hat.hat18650c.HAT18650CHat.set_termination_current:1 of
+msgid "Set charge termination current."
+msgstr "设置充电终止电流。"
+
+#: 9b8c32c99cf743e58c74a5f0dc5b7efe
+#: hat.hat18650c.HAT18650CHat.set_termination_current:3 of
+msgid ""
+"The target current is rounded to the nearest termination-current table "
+"value supported by AW32257."
+msgstr "目标电流会舍入到 AW32257 支持的最接近终止电流档位。"
+
+#: 1454f12f9fc142209d7378b5f4bf2003
+#: hat.hat18650c.HAT18650CHat.set_termination_current:6 of
+msgid "Target termination current in mA. Options are 62 to 496 mA."
+msgstr "目标终止电流，单位为 mA，可选范围为 62 至 496 mA。"
+
+#: 4e499fd67b1a4d0da97b4cdc81db7f32
+#: hat.hat18650c.HAT18650CHat.set_termination_current:11 of
+msgid "|set_termination_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:20 3723514826344b04a71f85764315b717
+msgid "set_termination_current.png"
+msgstr ""
+
+#: 3923db2631e249458f6063013641f61d
+#: hat.hat18650c.HAT18650CHat.get_termination_current:1 of
+msgid "Get charge termination current setting."
+msgstr "获取充电终止电流设置。"
+
+#: f077bc01a06c44a59f03ec6ff49b2ec7
+#: hat.hat18650c.HAT18650CHat.get_termination_current:3 of
+msgid "Returns the actual selected termination-current table value."
+msgstr "返回实际选中的终止电流档位值。"
+
+#: 7e86020c80154a5eaccf7fc0d6644ada
+#: hat.hat18650c.HAT18650CHat.get_termination_current:5 of
+msgid "Termination current setting in mA."
+msgstr "终止电流设置值，单位为 mA。"
+
+#: 43c8dcd2d6f9417aad0f357f4f7177dc
+#: hat.hat18650c.HAT18650CHat.get_termination_current:10 of
+msgid "|get_termination_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:22 8dbbf499fc6b42b09a372e2ffa25af4d
+msgid "get_termination_current.png"
+msgstr ""
+
+#: e5114c7b1628400481154c00a0bf74e0
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:1 of
+msgid "Set maximum allowed charge current."
+msgstr "设置允许的最大充电电流。"
+
+#: 280654ea8dac4200bc29dd4ed7af5869
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:3 of
+msgid ""
+"The target current is rounded to the nearest charge-current table value "
+"supported by AW32257."
+msgstr "目标电流会舍入到 AW32257 支持的最接近充电电流档位。"
+
+#: c74808f2caa94462893c815a7c5394cd
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:6 of
+msgid "Target safety current in mA. Valid range is 496 to 2480 mA."
+msgstr "目标安全充电电流，单位为 mA，有效范围为 496 至 2480 mA。"
+
+#: f12aa2e70e3346f0ab6a8a61badb48f8
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_current:11 of
+msgid "|set_safety_charge_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:24 b8636654cab6479d86c1e208b25a165c
+msgid "set_safety_charge_current.png"
+msgstr ""
+
+#: f4e4a8489aa04a059763d3dd82fb18e9
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:1 of
+msgid "Get maximum allowed charge current."
+msgstr "获取允许的最大充电电流。"
+
+#: b9935b70c3c74a54a632c3ad3af90f94
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:3 of
+msgid "Returns the actual selected safety-current table value."
+msgstr "返回实际选中的安全充电电流档位值。"
+
+#: d692a9d318a14dd5b385c123e83fa5ce
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:5 of
+msgid "Safety current limit in mA."
+msgstr "安全充电电流限制值，单位为 mA。"
+
+#: a685a84fab83468588ed725605e1e279
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_current:10 of
+msgid "|get_safety_charge_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:26 4504a05d263b4025972dba4da2f7f05f
+msgid "get_safety_charge_current.png"
+msgstr ""
+
+#: 9bdafc50a49244a5bf1d6601ddbdc17b
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:1 of
+msgid "Set maximum allowed charge regulation voltage."
+msgstr "设置允许的最大充电调节电压。"
+
+#: 7822cbb1968a4019b18658701fe38fa7
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:3 of
+msgid ""
+"The target voltage is rounded to the nearest safety-voltage table value "
+"supported by AW32257."
+msgstr "目标电压会舍入到 AW32257 支持的最接近安全电压档位。"
+
+#: 7fdab976f29d4c78bd1c15498761588f
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:6 of
+msgid "Target safety voltage in volts. Valid range is 4.20V to 4.50V."
+msgstr "目标安全电压，单位为伏特，有效范围为 4.20V 至 4.50V。"
+
+#: 41039afd25004631b2129649eeb66b36
+#: hat.hat18650c.HAT18650CHat.set_safety_charge_voltage:11 of
+msgid "|set_safety_charge_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:28 32a69b0d3aed4a31ac97ea316fa63064
+msgid "set_safety_charge_voltage.png"
+msgstr ""
+
+#: 13becb17dc3846f7947af3b45f3dc2a3
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:1 of
+msgid "Get maximum allowed charge regulation voltage."
+msgstr "获取允许的最大充电调节电压。"
+
+#: f23de5170de844adb6c7f6ad6b2b0f5b
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:3 of
+msgid "Returns the actual selected safety-voltage table value."
+msgstr "返回实际选中的安全电压档位值。"
+
+#: 0842f1e3ea5d4b91a6baf1fd3aef716f
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:5 of
+msgid "Safety voltage limit in volts."
+msgstr "安全电压限制值，单位为伏特。"
+
+#: 41916231a99344d5b032ad31f4703803
+#: hat.hat18650c.HAT18650CHat.get_safety_charge_voltage:10 of
+msgid "|get_safety_charge_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:30 ba2337ad5b9c4ae481819bf222f62327
+msgid "get_safety_charge_voltage.png"
+msgstr ""
+
+#: fb32b12aced64e0d91c4c4a635ced672
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold:1 of
+msgid "Set automatic recharge threshold below VOREG."
+msgstr "设置低于 VOREG 的自动再充电阈值。"
+
+#: c944e5ce38c84855b246bf4bf25da93f
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold:3 of
+msgid "Target recharge threshold in mV. Options are 50, 100, 150, and 200."
+msgstr "目标再充电阈值，单位为 mV，可选值为 50、100、150 和 200。"
+
+#: 251330f49852492294bb000075d97c3f
+#: hat.hat18650c.HAT18650CHat.set_recharge_threshold:8 of
+msgid "|set_recharge_threshold.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:32 72f4777df32b4ea781efa5fc6d19f695
+msgid "set_recharge_threshold.png"
+msgstr ""
+
+#: 331d0f27ffb9435b82983bcdf3ef67c2
+#: hat.hat18650c.HAT18650CHat.get_recharge_threshold:1 of
+msgid "Get automatic recharge threshold below VOREG."
+msgstr "获取低于 VOREG 的自动再充电阈值。"
+
+#: 0d7d51198ed14d759c26a8227da06f5a
+#: hat.hat18650c.HAT18650CHat.get_recharge_threshold:7 of
+msgid "|get_recharge_threshold.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:34 b382d335166c4d28aa2c8d573f36f734
+msgid "get_recharge_threshold.png"
+msgstr ""
+
+#: 50668ce27e354247b05d5f5b040d1246
+#: hat.hat18650c.HAT18650CHat.get_charge_status:1 of
+msgid "Get charger status text."
+msgstr "获取充电器状态文本。"
+
+#: bc2874701cce4e4998bdbcfdb17e7926
+#: hat.hat18650c.HAT18650CHat.get_charge_status:3 of
+msgid "Charge status text: ``ready``, ``charging``, ``done``, or ``fault``."
+msgstr "充电状态文本：``ready``、``charging``、``done`` 或 ``fault``。"
+
+#: 2b8bf375bd37458f8e166d0f838a0566
+#: hat.hat18650c.HAT18650CHat.get_charge_status:8 of
+msgid "|get_charge_status.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:42 2f95eb746366410880314d3d91c85599
+msgid "get_charge_status.png"
+msgstr ""
+
+#: 913d80794b194af3b7e04d21967b2aa8
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code:1 of
+msgid "Get charger status code."
+msgstr "获取充电器状态码。"
+
+#: dc139ac476514ddeaf80aa2a349541dc
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code:3 of
+msgid ""
+"One of ``STAT_READY``, ``STAT_CHARGING``, ``STAT_DONE``, or "
+"``STAT_FAULT``."
+msgstr "返回 ``STAT_READY``、``STAT_CHARGING``、``STAT_DONE`` 或 ``STAT_FAULT`` 之一。"
+
+#: 313ec5db91334a698dddc58f2860c60d
+#: hat.hat18650c.HAT18650CHat.get_charge_status_code:8 of
+msgid "|get_charge_status_code.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:45 cd88aafa18e24376bee2a75018a70d14
+msgid "get_charge_status_code.png"
+msgstr ""
+
+#: 1cb6f8fb7da44798b37c49d211648cff hat.hat18650c.HAT18650CHat.is_charging:1 of
+msgid "Check whether charging is in progress."
+msgstr "检查是否正在充电。"
+
+#: ed4e7d4fcefd421bb335c67220891a81 hat.hat18650c.HAT18650CHat.is_charging:3 of
+msgid "True if charging is in progress, False otherwise."
+msgstr "正在充电时返回 True，否则返回 False。"
+
+#: 1748236ca07d4b658b2bfea90694f804 hat.hat18650c.HAT18650CHat.is_charging:8 of
+msgid "|is_charging.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:47 7db07276580244ceb0333d0bf06ee296
+msgid "is_charging.png"
+msgstr ""
+
+#: 4f8329dc72de499b8894f1af4866345d hat.hat18650c.HAT18650CHat.is_charge_done:1
+#: of
+msgid "Check whether charging is complete."
+msgstr "检查充电是否完成。"
+
+#: cb45af47bdf74859b71613f7e680c690 hat.hat18650c.HAT18650CHat.is_charge_done:3
+#: of
+msgid "True if charging is complete, False otherwise."
+msgstr "充电完成时返回 True，否则返回 False。"
+
+#: 96fabf5be8394835bbd6041868aaf231 hat.hat18650c.HAT18650CHat.is_charge_done:8
+#: of
+msgid "|is_charge_done.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:49 24fcbd6bed2042ea97335fab1e9f19d5
+msgid "is_charge_done.png"
+msgstr ""
+
+#: d991dc52e77a4013aea6d52c8b753d6b
+#: hat.hat18650c.HAT18650CHat.get_charge_fault:1 of
+msgid "Get charger fault text."
+msgstr "获取充电器故障文本。"
+
+#: 0fb80997da864b28b6743255cb90c3ba
+#: hat.hat18650c.HAT18650CHat.get_charge_fault:3 of
+msgid "Charge fault text."
+msgstr "充电故障文本。"
+
+#: eeba4151d5d94987803509e6376efdd1
+#: hat.hat18650c.HAT18650CHat.get_charge_fault:8 of
+msgid "|get_charge_fault.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:51 fce2e67876a54dd5a536fbf05b03eeb7
+msgid "get_charge_fault.png"
+msgstr ""
+
+#: 9815d4e8862d413ba6181d369878a57d
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code:1 of
+msgid "Get charger fault code."
+msgstr "获取充电器故障码。"
+
+#: 36fec7d81e21477c95682d04549c972a
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code:3 of
+msgid "Charge fault code. Use ``CHARGE_FAULT_*`` constants for comparison."
+msgstr "充电故障码，使用 ``CHARGE_FAULT_*`` 常量进行比较。"
+
+#: d1dda21646aa4742ac2be9361c25b3c4
+#: hat.hat18650c.HAT18650CHat.get_charge_fault_code:8 of
+msgid "|get_charge_fault_code.png| |charge_fault_code_option.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:55 c02a53e52c194ad6a835e0bc9f7f116f
+msgid "get_charge_fault_code.png"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:53 c02a53e52c194ad6a835e0bc9f7f116f
+msgid "charge_fault_code_option.png"
+msgstr ""
+
+#: c3179949c82d4540997a88e21632aee6
+#: hat.hat18650c.HAT18650CHat.set_boost_enable:1 of
+msgid "Enable or disable AW32257 Boost/OTG mode."
+msgstr "开启或关闭 AW32257 Boost/OTG 模式。"
+
+#: daf837ec11e24268b8182fdd4dc8e4cd
+#: hat.hat18650c.HAT18650CHat.set_boost_enable:3 of
+msgid "True to enable Boost/OTG mode, False to disable it."
+msgstr "True 表示开启 Boost/OTG 模式，False 表示关闭。"
+
+#: 059b7931ed77476892923b7837a2834b
+#: hat.hat18650c.HAT18650CHat.set_boost_enable:8 of
+msgid "|set_boost_enable.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:57 c9342001c4eb4f919ea949984e3f706d
+msgid "set_boost_enable.png"
+msgstr ""
+
+#: 824fe21ff1e34b5eae09d100cb1e0684
+#: hat.hat18650c.HAT18650CHat.get_boost_enable:1 of
+msgid "Get AW32257 Boost/OTG enable state."
+msgstr "获取 AW32257 Boost/OTG 使能状态。"
+
+#: b9e0a779e10c409485679c0e40d316b0
+#: hat.hat18650c.HAT18650CHat.get_boost_enable:3 of
+msgid "True if Boost/OTG mode is enabled, False otherwise."
+msgstr "Boost/OTG 模式已开启时返回 True，否则返回 False。"
+
+#: 1f00f8da89174b2fa8732b6d4e1855d4
+#: hat.hat18650c.HAT18650CHat.get_boost_enable:8 of
+msgid "|get_boost_enable.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:59 20a10d56676c4442be4b7caf9efcc8ec
+msgid "get_boost_enable.png"
+msgstr ""
+
+#: ff513e6bf8f94f08875bd4c645c86907
+#: hat.hat18650c.HAT18650CHat.get_boost_fault:1 of
+msgid "Get Boost/OTG fault text."
+msgstr "获取 Boost/OTG 故障文本。"
+
+#: d85dd4714e814611bb636606cd6fab84
+#: hat.hat18650c.HAT18650CHat.get_boost_fault:3 of
+msgid "Boost/OTG fault text."
+msgstr "Boost/OTG 故障文本。"
+
+#: 17f33b67c59a460e807f7eb8f14cd1b2
+#: hat.hat18650c.HAT18650CHat.get_boost_fault:8 of
+msgid "|get_boost_fault.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:61 e2905bc7a0b447ad845a500ab8fb4acc
+msgid "get_boost_fault.png"
+msgstr ""
+
+#: 6a3fc50d55a74a71962aaa432fd30963
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code:1 of
+msgid "Get Boost/OTG fault code."
+msgstr "获取 Boost/OTG 故障码。"
+
+#: 3d73324555da41fdbe78f4f44e503f67
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code:3 of
+msgid "Boost/OTG fault code. Use ``BOOST_FAULT_*`` constants for comparison."
+msgstr "Boost/OTG 故障码，使用 ``BOOST_FAULT_*`` 常量进行比较。"
+
+#: 0933a52294904e44a2091c850e60ad41
+#: hat.hat18650c.HAT18650CHat.get_boost_fault_code:8 of
+msgid "|get_boost_fault_code.png| |boost_fault_code_option.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:65 3ed16d5752c34b9a9a189b1b3cf1f88a
+msgid "get_boost_fault_code.png"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:63 3ed16d5752c34b9a9a189b1b3cf1f88a
+msgid "boost_fault_code_option.png"
+msgstr ""
+
+#: 8ca7c338561f455ba1c6885daab2801e
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage:1 of
+msgid "Get battery bus voltage from INA226."
+msgstr "通过 INA226 获取电池总线电压。"
+
+#: 7217766229eb451d86c0963f2e3a7336
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage:3 of
+msgid "Battery voltage in volts."
+msgstr "电池电压，单位为伏特。"
+
+#: 69a152f810be4f11ac8133ae73bb77c1
+#: hat.hat18650c.HAT18650CHat.get_battery_voltage:8 of
+msgid "|get_battery_voltage.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:67 cf15a5c0ddad4c5da6184814d3795345
+msgid "get_battery_voltage.png"
+msgstr ""
+
+#: 024bb41600944b37856832fff61bd5ef
+#: hat.hat18650c.HAT18650CHat.get_battery_current:1 of
+msgid "Get battery current from INA226."
+msgstr "通过 INA226 获取电池电流。"
+
+#: c5066d0f91b944ab9c3ff3ee65a6ec6a
+#: hat.hat18650c.HAT18650CHat.get_battery_current:3 of
+msgid ""
+"With the current hardware direction, charging current is usually negative"
+" and discharging current is usually positive."
+msgstr "按照当前硬件的电流方向，充电电流通常为负值，放电电流通常为正值。"
+
+#: 9df2e765ff644b52903e3a02c93228f2
+#: hat.hat18650c.HAT18650CHat.get_battery_current:6 of
+msgid "Battery current in amps."
+msgstr "电池电流，单位为安培。"
+
+#: 5127a4d81ece4e56a59e314abf2ba1b2
+#: hat.hat18650c.HAT18650CHat.get_battery_current:11 of
+msgid "|get_battery_current.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:69 dc94eddddaf64bcaa2dbb4216a9ffebe
+msgid "get_battery_current.png"
+msgstr ""
+
+#: 8594aa01f02d4bb8b54a6e564b9c2464
+#: hat.hat18650c.HAT18650CHat.get_battery_power:1 of
+msgid "Get battery power from INA226."
+msgstr "通过 INA226 获取电池功率。"
+
+#: ea2891e7ac494f09b983304a59c00a46
+#: hat.hat18650c.HAT18650CHat.get_battery_power:3 of
+msgid "Battery power in watts."
+msgstr "电池功率，单位为瓦特。"
+
+#: 6dc623b80b414923be47c97fa2d57e26
+#: hat.hat18650c.HAT18650CHat.get_battery_power:8 of
+msgid "|get_battery_power.png|"
+msgstr ""
+
+#: ../../source/refs/hat.hat18650c.ref:71 d4dc483d3f114b6ba94f816701076125
+msgid "get_battery_power.png"
+msgstr ""
+
+#~ msgid "|get_charge_fault_code.png|"
+#~ msgstr ""
+
+#~ msgid "|get_boost_fault_code.png|"
+#~ msgstr ""

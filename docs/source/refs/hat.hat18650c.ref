@@ -1,0 +1,93 @@
+.. |HAT18650C| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U080-V11
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/init.png
+
+.. |set_charge_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_charge_enable.png
+
+.. |get_charge_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_enable.png
+
+.. |set_charge_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_charge_current.png
+
+.. |get_charge_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_current.png
+
+.. |set_charge_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_charge_voltage.png
+.. |get_charge_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_voltage.png
+
+
+.. |set_termination_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_termination_current.png
+
+.. |get_termination_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_termination_current.png
+
+.. |set_safety_charge_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_safety_charge_current.png
+
+.. |get_safety_charge_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_safety_charge_current.png
+
+.. |set_safety_charge_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_safety_charge_voltage.png
+
+.. |get_safety_charge_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_safety_charge_voltage.png
+
+.. |set_recharge_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_recharge_threshold.png
+
+.. |get_recharge_threshold.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_recharge_threshold.png
+
+
+
+
+
+
+
+.. |get_charge_status.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_status.png
+.. |charge_status_code_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/charge_status_code_option.png
+
+.. |get_charge_status_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_status_code.png
+
+.. |is_charging.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/is_charging.png
+
+.. |is_charge_done.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/is_charge_done.png
+
+.. |get_charge_fault.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_fault.png
+
+.. |charge_fault_code_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/charge_fault_code_option.png
+
+.. |get_charge_fault_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_charge_fault_code.png
+
+.. |set_boost_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/set_boost_enable.png
+
+.. |get_boost_enable.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_boost_enable.png
+
+.. |get_boost_fault.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_boost_fault.png
+
+.. |boost_fault_code_option.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/boost_fault_code_option.png
+
+.. |get_boost_fault_code.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_boost_fault_code.png
+
+.. |get_battery_voltage.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_battery_voltage.png
+
+.. |get_battery_current.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_battery_current.png
+
+.. |get_battery_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/get_battery_power.png
+
+.. |charge_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/charge_example.png
+
+.. |output_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/hat/18650c_v11/output_example.png
+
+.. |sticks3_hat18650c_charge_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hat/hat18650c/sticks3_hat18650c_charge_example.m5f2"
+        target="_blank"
+    >
+        sticks3_hat18650c_charge_example.m5f2
+    </a>
+
+.. |sticks3_hat18650c_output_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/hat/hat18650c/sticks3_hat18650c_output_example.m5f2"
+        target="_blank"
+    >
+        sticks3_hat18650c_output_example.m5f2
+    </a>

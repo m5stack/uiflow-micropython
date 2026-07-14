@@ -70,6 +70,7 @@ package(
         "atgm336h.py",
         "aw9523.py",
         "asr650x.py",
+        "aw32257.py",
         "bh1750.py",
         "bh1750fvi.py",
         "bme68x.py",

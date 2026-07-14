@@ -28,6 +28,7 @@ _attrs = {
     "VibratorHat": "vibrator",
     "YUNHat": "yun",
     "HeartHat": "heart",
+    "HAT18650CHat": "hat18650c",
 }
 
 

@@ -1,0 +1,103 @@
+.. _hat.HAT18650C:
+
+HAT 18650C
+==========
+
+.. py:currentmodule:: hat
+
+.. sku: U080-V11
+
+.. include:: ../refs/hat.hat18650c.ref
+
+HAT 18650C V1.1 integrates an AW32257 charger and an INA226 power monitor. It
+can measure battery voltage, current, and power, control battery charging, set
+charge current, read charge status/fault status, and control the AW32257
+Boost/OTG output.
+
+Support the following products:
+
+    |HAT18650C|
+
+.. note::
+
+    With the current hardware direction, charging current is usually negative and discharging current is usually positive.
+    Charge current and voltage settings are written through AW32257 register steps, so the actual value is mapped to a supported gear rather than an arbitrary value.
+
+UiFlow2 Example
+---------------
+
+Charge Test
+^^^^^^^^^^^
+
+Open the |sticks3_hat18650c_charge_example.m5f2| project in UiFlow2.
+
+This example reads battery voltage and current, shows charging state, and
+controls Charge ON/OFF with the button on StickS3.
+
+UiFlow2 Code Block:
+
+    |charge_example.png|
+
+Example output:
+
+    None
+
+Output Test
+^^^^^^^^^^^
+
+Open the |sticks3_hat18650c_output_example.m5f2| project in UiFlow2.
+
+This example reads battery voltage and current, shows OTG output state, and
+controls OTG Output ON/OFF with the button on StickS3.
+
+UiFlow2 Code Block:
+
+    |output_example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+Charge Test
+^^^^^^^^^^^
+
+Read battery voltage and current, show charging state, and control Charge
+ON/OFF with the button on StickS3.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/hat/hat18650c/sticks3_hat18650c_charge_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+Output Test
+^^^^^^^^^^^
+
+Read battery voltage and current, show OTG output state, and control OTG Output
+ON/OFF with the button on StickS3.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/hat/hat18650c/sticks3_hat18650c_output_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+**API**
+-------
+
+HAT18650CHat
+^^^^^^^^^^^^
+
+.. autoclass:: hat.hat18650c.HAT18650CHat
+    :members:
