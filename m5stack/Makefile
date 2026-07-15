@@ -347,7 +347,8 @@ MICROPYTHON_PATCH_SERIES = \
 	0025-micropython-1.27.0-add-uart-mode.patch \
 	0026-micropython-1.27.0-add-getsockname.patch \
 	0027-micropython-1.27.0-fix-mpnimbleport.patch \
-	0028-micropython-1.27.0-fix-mpy-cross-clang-on-macos.patch
+	0028-micropython-1.27.0-fix-mpy-cross-clang-on-macos.patch \
+	0029-micropython-1.27.0-select-esp32p4-usb-phy.patch
 
 IDF_PATH_PATCH_SERIES = \
 	1005-idf_v5.5_freertos.patch
