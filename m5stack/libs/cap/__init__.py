@@ -6,6 +6,8 @@ _attrs = {
     "LoRa868Cap": "lora868",
     "LoRa1262Cap": "lora1262",
     "GPSCap": "lora868",
+    "CC1101Cap": "cc1101",
+    "NFCCap": "cc1101",
 }
 
 

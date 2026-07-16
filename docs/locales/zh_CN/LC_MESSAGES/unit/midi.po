@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/midi.rst:3 53897f9a1c0943549d9fc5b3ea51d33b
 msgid "MIDI Unit"
-msgstr "MIDI 单元"
+msgstr "MIDI Unit"
 
 #: ../../source/unit/midi.rst:7 3276dc4e6f07469890eba0a184a1bfdf
 msgid "Support the following products:"

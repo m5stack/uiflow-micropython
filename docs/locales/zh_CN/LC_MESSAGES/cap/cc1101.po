@@ -1,0 +1,875 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2016 - 2026 M5Stack Technology Co., Ltd
+# This file is distributed under the same license as the UIFlow2 Programming
+# Guide package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: UIFlow2 Programming Guide \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-16 15:18+0800\n"
+"PO-Revision-Date: 2026-07-16 16:00+0800\n"
+"Last-Translator: M5Stack <support@m5stack.com>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.16.0\n"
+
+#: ../../source/cap/cc1101.rst:2 473839d0da6943dbbb21e81e7a5846ec
+msgid "CC1101 Cap"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:8 03ea688505a84580865d49a124dbe6db
+msgid ""
+"Cap CC1101 is an expansion cap that combines a CC1101 Sub-GHz radio and "
+"an ST25R3916 NFC reader."
+msgstr "Cap CC1101 是一款扩展 Cap，集成了 CC1101 Sub-GHz 射频收发器和 ST25R3916 NFC 读卡器。"
+
+#: ../../source/cap/cc1101.rst:10 dc5a207018fe48d794b6e195fa80d482
+msgid "The MicroPython API is split by function:"
+msgstr "MicroPython API 按功能拆分："
+
+#: ../../source/cap/cc1101.rst:12 abd13dd710fa44de8ec8d1ad64a51d19
+msgid "``CC1101Cap`` for Sub-GHz transmit and receive."
+msgstr "``CC1101Cap`` 用于 Sub-GHz 发送和接收。"
+
+#: ../../source/cap/cc1101.rst:13 6a45927952ff43e2aef22656b9c4993c
+msgid "``NFCCap`` for NFC card detection and read/write operations."
+msgstr "``NFCCap`` 用于 NFC 卡片检测和读写操作。"
+
+#: ../../source/cap/cc1101.rst:15 9f55b0cbde6d44058c531c3520e75af7
+msgid "Support the following products:"
+msgstr "支持以下产品："
+
+#: ../../source/cap/cc1101.rst:17 45ae7457d08f47559816d6618870d7a9
+msgid "|CC1101Cap|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref 1920e72d36174e91933650f3365c1abd
+msgid "CC1101Cap"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:20 a48918d2882c4cb3926bacf657e9bfff
+msgid "Frequency Range"
+msgstr "频率范围"
+
+#: ../../source/cap/cc1101.rst:22 aa08f15d86e545b488f996a5620d98d6
+msgid "``CC1101Cap`` supports the following measured frequency ranges:"
+msgstr "``CC1101Cap`` 支持以下实测频率范围："
+
+#: ../../source/cap/cc1101.rst:28 0ad7968e2e944862b2ca6b6bc072f8cc
+msgid "Range"
+msgstr "范围"
+
+#: ../../source/cap/cc1101.rst:29 4d69a86830d645dbbe334572e3e35e02
+msgid "Band"
+msgstr "频段"
+
+#: ../../source/cap/cc1101.rst:30 13508f5aa2c04bd3a27e59aa0413ab11
+msgid "``315000~348000 kHz``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:31 8101427410c74e0892c63b663b9ff750
+msgid "315MHz band"
+msgstr "315MHz 频段"
+
+#: ../../source/cap/cc1101.rst:32 b8f75d307fb74fbd8e0b0a9e6c6d930c
+msgid "``415000~464000 kHz``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:33 0fb87b2a1601429f901a09f1997c8130
+msgid "433MHz band"
+msgstr "433MHz 频段"
+
+#: ../../source/cap/cc1101.rst:34 5363cdc1c49a485d882f0b8f285aba68
+msgid "``830000~928000 kHz``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:35 d29caf38643e4a1da863f55895818ec8
+msgid "868MHz band"
+msgstr "868MHz 频段"
+
+#: ../../source/cap/cc1101.rst:37 3ef16b51d42944cc81443fc5662a38c4
+msgid "The RF switch is updated automatically when ``freq_khz`` changes."
+msgstr "当 ``freq_khz`` 改变时，会自动更新 RF switch。"
+
+#: ../../source/cap/cc1101.rst:40 69d4a7bf00f644c69d93e27b056108a8
+msgid "UiFlow2 Example"
+msgstr "UiFlow2 应用示例"
+
+#: ../../source/cap/cc1101.rst:43 ../../source/cap/cc1101.rst:91
+#: 3916264148264b1d9b7417f9dac088e8 ee50712cf43d4b568408a102a7b56e59
+msgid "CC1101 RF TX"
+msgstr "CC1101 RF 发送"
+
+#: ../../source/cap/cc1101.rst:45 2c5d1e77bac6463693e8b3e652369da3
+msgid "Open the |cc1101_cap_rf_tx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cc1101_cap_rf_tx_example.m5f2| 项目。"
+
+#: ../../source/cap/cc1101.rst:47 a2f71e5b90d34a5fb26d458cdf84b06a
+msgid ""
+"This example sends a payload once per second at 868MHz and displays "
+"``SEQ``, ``OK`` and ``FAIL`` counters."
+msgstr "此示例在 868MHz 下每秒发送一次 payload，并显示 ``SEQ``、``OK`` 和 ``FAIL`` 计数。"
+
+#: ../../source/cap/cc1101.rst:49 ../../source/cap/cc1101.rst:64
+#: ../../source/cap/cc1101.rst:79 ../../source/cap/cc1101.rst:154
+#: ../../source/cap/cc1101.rst:172 ../../source/cap/cc1101.rst:188
+#: ../../source/cap/cc1101.rst:204 ../../source/cap/cc1101.rst:220
+#: ../../source/cap/cc1101.rst:236 ../../source/cap/cc1101.rst:252
+#: ../../source/cap/cc1101.rst:269 ../../source/cap/cc1101.rst:287
+#: ../../source/cap/cc1101.rst:305 ../../source/cap/cc1101.rst:321
+#: ../../source/cap/cc1101.rst:337 ../../source/cap/cc1101.rst:356
+#: ../../source/cap/cc1101.rst:373 ../../source/cap/cc1101.rst:390
+#: ../../source/cap/cc1101.rst:407 ../../source/cap/cc1101.rst:484
+#: ../../source/cap/cc1101.rst:502 ../../source/cap/cc1101.rst:526
+#: ../../source/cap/cc1101.rst:552 ../../source/cap/cc1101.rst:566
+#: ../../source/cap/cc1101.rst:580 ../../source/cap/cc1101.rst:594
+#: ../../source/cap/cc1101.rst:609 ../../source/cap/cc1101.rst:640
+#: 1442e6f1ded64115b2be603e2abe8b9b 546488d40fdb4684a91c680f181a06f2
+#: 7f60ec9ebe754ad99d9c453aeb24e95f b65fe3545e0940a9a93ff5f490a315aa
+msgid "UiFlow2 Code Block:"
+msgstr "UiFlow2 代码块："
+
+#: ../../source/cap/cc1101.rst:51 722cfbde96c04b1794f731d7cbac6c6c
+msgid "|rf_tx_example.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:35 b44af25190ab4f10b53a616d463f1f8a
+msgid "rf_tx_example.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:53 ../../source/cap/cc1101.rst:68
+#: ../../source/cap/cc1101.rst:83 ../../source/cap/cc1101.rst:101
+#: ../../source/cap/cc1101.rst:116 ../../source/cap/cc1101.rst:131
+#: 32bf206be2f1485aab1a487235b4ce34 382adc96488f4bfa9c87e74a9a3ac2a8
+#: 40ef1b51e3724c63a76993e5862ec3bd 6109599b74af43d5a7903b2f95390629
+#: cb0a60a5a112464a84f35e63cfc35116 e85c18c03f3f40a6a2fde30844a6e5a3
+msgid "Example output:"
+msgstr "示例输出："
+
+#: ../../source/cap/cc1101.rst:55 ../../source/cap/cc1101.rst:70
+#: ../../source/cap/cc1101.rst:85 ../../source/cap/cc1101.rst:103
+#: ../../source/cap/cc1101.rst:118 ../../source/cap/cc1101.rst:133
+#: 120d467a74eb43408a12f391a51009fa 53eb8fa11e4d48caac0b0a44e7d262e9
+#: 60aa6ffb3e6840e09e798e113b53a8ca 949e9f045b664d5a8ef174cc02cab5e8
+#: d7cd76b9c6614e4998b7aed0bbaa17bc fce02b5cc8b14bd9b69596bb426bf4a4
+msgid "None"
+msgstr "无"
+
+#: ../../source/cap/cc1101.rst:58 ../../source/cap/cc1101.rst:106
+#: 4736200f54a44563b2f7f6e0c149bc1c df632647131a4d60b1b852afd742dd55
+msgid "CC1101 RF RX"
+msgstr "CC1101 RF 接收"
+
+#: ../../source/cap/cc1101.rst:60 cde94c20bc1442b59fabe583e4165edd
+msgid "Open the |cc1101_cap_rf_rx_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cc1101_cap_rf_rx_example.m5f2| 项目。"
+
+#: ../../source/cap/cc1101.rst:62 ../../source/cap/cc1101.rst:108
+#: 0ee3a55ee43c4115893119d3df739355 e6c05647ae8348f9aa54091b32057739
+msgid ""
+"This example receives packets at 868MHz and displays payload, RSSI, LQI "
+"and CRC status."
+msgstr "此示例在 868MHz 下接收数据包，并显示 payload、RSSI、LQI 和 CRC 状态。"
+
+#: ../../source/cap/cc1101.rst:66 416a28a345bc43cb95ef558b0eeaea21
+msgid "|rf_rx_example.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:34 845ebbd36e2a42479dbd0882bd335e2a
+msgid "rf_rx_example.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:73 ../../source/cap/cc1101.rst:121
+#: 403c0b0b94cf41ba8836d9f214531f2f b074e6832e4746a280c1d6d1bcb39e12
+msgid "NFC Card Detect"
+msgstr "NFC 卡片检测"
+
+#: ../../source/cap/cc1101.rst:75 a72ba4300f5c49bbbc4c5bceb59288a7
+msgid "Open the |cc1101_cap_nfc_read_id_example.m5f2| project in UiFlow2."
+msgstr "在 UiFlow2 中打开 |cc1101_cap_nfc_read_id_example.m5f2| 项目。"
+
+#: ../../source/cap/cc1101.rst:77 ../../source/cap/cc1101.rst:123
+#: 5722df1724f0448c8931a0355eefa4fd 63fa3d8130464b3c8bcb7c3eed71e9bf
+msgid ""
+"This example scans ISO14443A cards and displays UID, card type and user "
+"memory size."
+msgstr "此示例扫描 ISO14443A 卡片，并显示 UID、卡片类型和用户区容量。"
+
+#: ../../source/cap/cc1101.rst:81 ee1ff187c9e540f3b5996fd77e9fd59e
+msgid "|nfc_read_id_example.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:33 a4606efa800240f797fe21460d544296
+msgid "nfc_read_id_example.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:88 827ad579930a48aba382ecf8be0ebf2c
+msgid "MicroPython Example"
+msgstr "MicroPython 应用示例"
+
+#: ../../source/cap/cc1101.rst:93 c52b374e11e54213a9a6c4f36094f979
+msgid ""
+"This example sends a payload once per second at 868MHz and displays "
+"transmit counters."
+msgstr "此示例在 868MHz 下每秒发送一次 payload，并显示发送计数。"
+
+#: ../../source/cap/cc1101.rst:95 ../../source/cap/cc1101.rst:110
+#: ../../source/cap/cc1101.rst:125 ../../source/cap/cc1101.rst:158
+#: ../../source/cap/cc1101.rst:176 ../../source/cap/cc1101.rst:192
+#: ../../source/cap/cc1101.rst:208 ../../source/cap/cc1101.rst:224
+#: ../../source/cap/cc1101.rst:240 ../../source/cap/cc1101.rst:256
+#: ../../source/cap/cc1101.rst:273 ../../source/cap/cc1101.rst:291
+#: ../../source/cap/cc1101.rst:309 ../../source/cap/cc1101.rst:325
+#: ../../source/cap/cc1101.rst:341 ../../source/cap/cc1101.rst:360
+#: ../../source/cap/cc1101.rst:377 ../../source/cap/cc1101.rst:394
+#: ../../source/cap/cc1101.rst:411 ../../source/cap/cc1101.rst:488
+#: ../../source/cap/cc1101.rst:506 ../../source/cap/cc1101.rst:530
+#: ../../source/cap/cc1101.rst:556 ../../source/cap/cc1101.rst:570
+#: ../../source/cap/cc1101.rst:584 ../../source/cap/cc1101.rst:598
+#: 0d1ea1698510453d965943216bc6b72d 1c1a6acbb8594a7da3df4299f09712f1
+#: 49d32b3d7f9c4ba5ab280fa3f23c2f2e bcda302c29584267afd58805fb68e016
+#: d6cc51e03a20430f95361a7500c6c26e
+msgid "MicroPython Code Block:"
+msgstr "MicroPython 代码块："
+
+#: ../../source/cap/cc1101.rst:136 ba32fecc2d324fc29849cc47cb56a800
+msgid "**API**"
+msgstr "API参考"
+
+#: ../../source/cap/cc1101.rst:139 9c29e9c81254425cbed1f9e26ba27770
+msgid "class CC1101Cap"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:143 82dba24a470f48eca2b427e2448e75af
+msgid "Create a CC1101Cap object for Sub-GHz radio."
+msgstr "创建用于 Sub-GHz 射频通信的 CC1101Cap 对象。"
+
+#: ../../source/cap/cc1101.rst 1a84fc106cef47218cd74824710130a8
+msgid "Parameters"
+msgstr "参数"
+
+#: ../../source/cap/cc1101.rst:145 399400c1270347d0a0512851bf6d764b
+msgid ""
+"CC1101 RF frequency in kHz. Valid ranges: ``315000~348000 kHz``, "
+"``415000~464000 kHz``, ``830000~928000 kHz``."
+msgstr "CC1101 射频频率，单位 kHz。有效范围：``315000~348000 kHz``、``415000~464000 kHz``、``830000~928000 kHz``。"
+
+#: ../../source/cap/cc1101.rst:146 2e9c73bef2b04b37bb420d434baa34b6
+msgid "Data rate in kbps, range from 0.6 to 6.0 kbps."
+msgstr "数据速率，单位 kbps，范围 0.6 到 6.0 kbps。"
+
+#: ../../source/cap/cc1101.rst:147 1926cc81282d49228e08609172238366
+msgid "Frequency deviation in kHz, range from 1.6 to 380 kHz."
+msgstr "频偏，单位 kHz，范围 1.6 到 380 kHz。"
+
+#: ../../source/cap/cc1101.rst:148 834fddde15f54393a1d164d01bea7e95
+msgid "Receiver bandwidth in kHz, range from 58 to 812 kHz."
+msgstr "接收带宽，单位 kHz，范围 58 到 812 kHz。"
+
+#: ../../source/cap/cc1101.rst:149 bfe0beee359b48f2ab9c465027fce49e
+msgid "Output power in dBm, range from -30 to 10 dBm."
+msgstr "输出功率，单位 dBm，范围 -30 到 10 dBm。"
+
+#: ../../source/cap/cc1101.rst:150 1c1bd76f56664e5ca6962c3d77913200
+msgid "Preamble length in bits, options: 16, 24, 32, 48, 64, 96, 128, 192."
+msgstr "前导码长度，单位 bit，可选值：16、24、32、48、64、96、128、192。"
+
+#: ../../source/cap/cc1101.rst:151 ../../source/cap/cc1101.rst:266
+#: 0915144c39a44c339de97848debb0666
+msgid "High byte of sync word (0x00 to 0xFF)."
+msgstr "同步字高字节（0x00 到 0xFF）。"
+
+#: ../../source/cap/cc1101.rst:152 ../../source/cap/cc1101.rst:267
+#: 2b7c3c10909d4694bf6c5614a6ac32c8
+msgid "Low byte of sync word (0x00 to 0xFF)."
+msgstr "同步字低字节（0x00 到 0xFF）。"
+
+#: ../../source/cap/cc1101.rst:156 55f1b50f73ff4938825d1b8592e386b5
+msgid "|init.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:6 3781a7dd166d47818b96a950bd5cf0d9
+msgid "init.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:168 9d2ec305299142f8ae96699f7db0ab4d
+msgid "Set frequency in kHz and update the Cap RF switch automatically."
+msgstr "设置频率，单位 kHz，并自动更新 Cap RF switch。"
+
+#: ../../source/cap/cc1101.rst:170 399400c1270347d0a0512851bf6d764b
+msgid ""
+"Frequency in kHz. Valid ranges: ``315000~348000 kHz``, ``415000~464000 "
+"kHz``, ``830000~928000 kHz``."
+msgstr "频率，单位 kHz。有效范围：``315000~348000 kHz``、``415000~464000 kHz``、``830000~928000 kHz``。"
+
+#: ../../source/cap/cc1101.rst:174 456e1d7dcebf45a393b79e5cf327702f
+msgid "|set_freq.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:15 19c74c79119d416e8cb152c85776edb3
+msgid "set_freq.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:184 5cabfd5bc0974574b9ed5efe18e5e93f
+msgid "Set data rate in kbps."
+msgstr "设置数据速率，单位 kbps。"
+
+#: ../../source/cap/cc1101.rst:186 2e9c73bef2b04b37bb420d434baa34b6
+msgid "Data rate in kbps, range from 0.6 to 6.0."
+msgstr "数据速率，单位 kbps，范围 0.6 到 6.0。"
+
+#: ../../source/cap/cc1101.rst:190 456e1d7dcebf45a393b79e5cf327702f
+msgid "|set_bitrate.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:16 19c74c79119d416e8cb152c85776edb3
+msgid "set_bitrate.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:200 5cabfd5bc0974574b9ed5efe18e5e93f
+msgid "Set frequency deviation in kHz."
+msgstr "设置频偏，单位 kHz。"
+
+#: ../../source/cap/cc1101.rst:202 1926cc81282d49228e08609172238366
+msgid "Frequency deviation in kHz, range from 1.6 to 380."
+msgstr "频偏，单位 kHz，范围 1.6 到 380。"
+
+#: ../../source/cap/cc1101.rst:206 456e1d7dcebf45a393b79e5cf327702f
+msgid "|set_freq_dev.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:17 19c74c79119d416e8cb152c85776edb3
+msgid "set_freq_dev.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:216 834fddde15f54393a1d164d01bea7e95
+msgid "Set receiver bandwidth in kHz."
+msgstr "设置接收带宽，单位 kHz。"
+
+#: ../../source/cap/cc1101.rst:218 834fddde15f54393a1d164d01bea7e95
+msgid "Receiver bandwidth in kHz, range from 58 to 812."
+msgstr "接收带宽，单位 kHz，范围 58 到 812。"
+
+#: ../../source/cap/cc1101.rst:222 456e1d7dcebf45a393b79e5cf327702f
+msgid "|set_rx_bw.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:18 19c74c79119d416e8cb152c85776edb3
+msgid "set_rx_bw.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:232 31ed62eb5b144bf3bd8b98afa2c2976a
+msgid "Set output power in dBm."
+msgstr "设置输出功率，单位 dBm。"
+
+#: ../../source/cap/cc1101.rst:234 bfe0beee359b48f2ab9c465027fce49e
+msgid "Output power in dBm, range from -30 to 10."
+msgstr "输出功率，单位 dBm，范围 -30 到 10。"
+
+#: ../../source/cap/cc1101.rst:238 70c9a869f029469c900e6e1ae5e71679
+msgid "|set_output_power.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:19 19c74c79119d416e8cb152c85776edb3
+msgid "set_output_power.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:248 8efbe10fc35f402c90322d1f86eef832
+msgid "Set preamble length in bits."
+msgstr "设置前导码长度，单位 bit。"
+
+#: ../../source/cap/cc1101.rst:250 1c1bd76f56664e5ca6962c3d77913200
+msgid "Preamble length in bits. Must be one of 16, 24, 32, 48, 64, 96, 128, 192."
+msgstr "前导码长度，单位 bit。必须是 16、24、32、48、64、96、128、192 之一。"
+
+#: ../../source/cap/cc1101.rst:254 871118c2882543fe9cb8200f28f2e110
+msgid "|set_preamble_length.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:20 19c74c79119d416e8cb152c85776edb3
+msgid "set_preamble_length.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:264 149ed4f8d0364264898b612ef259f3ac
+msgid "Set the two-byte sync word."
+msgstr "设置 2 字节同步字。"
+
+#: ../../source/cap/cc1101.rst:271 456e1d7dcebf45a393b79e5cf327702f
+msgid "|set_sync_word.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:21 19c74c79119d416e8cb152c85776edb3
+msgid "set_sync_word.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:281 35cfd15ea6734bb39e2979816dc21f1e
+msgid "Send data."
+msgstr "发送数据。"
+
+#: ../../source/cap/cc1101.rst:283 34510b113a55410e80559b701ab29278
+msgid "Data to send."
+msgstr "要发送的数据。"
+
+#: ../../source/cap/cc1101.rst f9ea0373bddc40748f8815098f474a0c
+msgid "Returns"
+msgstr "返回值"
+
+#: ../../source/cap/cc1101.rst:284 0f9e2727696c4b108519168e47c987a7
+msgid "``True`` if the packet was sent successfully, otherwise ``False``."
+msgstr "数据包发送成功返回 ``True``，否则返回 ``False``。"
+
+#: ../../source/cap/cc1101.rst f9ea0373bddc40748f8815098f474a0c
+msgid "Return type"
+msgstr "返回类型"
+
+#: ../../source/cap/cc1101.rst:289 55f1b50f73ff4938825d1b8592e386b5
+msgid "|send.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:11 3781a7dd166d47818b96a950bd5cf0d9
+msgid "send.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:299 554c17d1bf7447e9b0749984f7432048
+msgid "Receive data."
+msgstr "接收数据。"
+
+#: ../../source/cap/cc1101.rst:301 e741dee2b1b34613ade039eab14b1d29
+msgid "Timeout in milliseconds. ``None`` uses non-blocking polling."
+msgstr "超时时间，单位 ms。``None`` 表示非阻塞轮询。"
+
+#: ../../source/cap/cc1101.rst:302 834fddde15f54393a1d164d01bea7e95
+msgid "Received packet instance or ``None``."
+msgstr "接收到的数据包实例，或 ``None``。"
+
+#: ../../source/cap/cc1101.rst:307 456e1d7dcebf45a393b79e5cf327702f
+msgid "|receive.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:8 19c74c79119d416e8cb152c85776edb3
+msgid "receive.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:319 2f5a24ffb1354dc5acccf5fed0938771
+msgid "Start receive mode."
+msgstr "启动接收模式。"
+
+#: ../../source/cap/cc1101.rst:323 456e1d7dcebf45a393b79e5cf327702f
+msgid "|start_recv.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:7 19c74c79119d416e8cb152c85776edb3
+msgid "start_recv.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:333 f7f32c4241554e9e818fe87ed568d3b3
+msgid "Set the receive interrupt callback."
+msgstr "设置接收中断回调。"
+
+#: ../../source/cap/cc1101.rst:335 bb3f2868dadb465a9b030fdb49bf24ce
+msgid "Callback invoked with a ``CC1101Packet`` when a packet is received."
+msgstr "收到数据包时调用该回调，参数为 ``CC1101Packet``。"
+
+#: ../../source/cap/cc1101.rst:339 0f0e8ee6ef004a2dae12240a179f1079
+msgid "|receive_event.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:10 19c74c79119d416e8cb152c85776edb3
+msgid "receive_event.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:352 c2a6adf70884434d9acbae03baa213a4
+msgid "Set the transmit callback."
+msgstr "设置发送回调。"
+
+#: ../../source/cap/cc1101.rst:354 38fb88f4e021465a9da86ec7d1a310ad
+msgid ""
+"Callback invoked after transmit. On CC1101Cap, GDO2 is used for RF switch"
+" control, so this API is kept mainly for compatibility."
+msgstr "发送完成后调用该回调。在 CC1101Cap 上，GDO2 用于 RF switch 控制，因此该 API 主要用于兼容。"
+
+#: ../../source/cap/cc1101.rst:358 456e1d7dcebf45a393b79e5cf327702f
+msgid "|send_event.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:12 19c74c79119d416e8cb152c85776edb3
+msgid "send_event.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:371 d2d9e3206759491db34e857ef124b822
+msgid "Put CC1101 into standby mode."
+msgstr "使 CC1101 进入 standby 模式。"
+
+#: ../../source/cap/cc1101.rst:375 456e1d7dcebf45a393b79e5cf327702f
+msgid "|standby.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:22 19c74c79119d416e8cb152c85776edb3
+msgid "standby.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:385 d3a4c4fdc17d415da680eb516e8251aa
+msgid "Check whether RX IRQ has triggered."
+msgstr "检查 RX IRQ 是否已触发。"
+
+#: ../../source/cap/cc1101.rst:387 ef69fa3f455742dfaa40b16fa9d271f0
+msgid "``True`` if RX IRQ has triggered, otherwise ``False``."
+msgstr "RX IRQ 已触发返回 ``True``，否则返回 ``False``。"
+
+#: ../../source/cap/cc1101.rst:392 80194bafa41a4c718aa0a05c76d31598
+msgid "|rx_irq_triggered.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:13 19c74c79119d416e8cb152c85776edb3
+msgid "rx_irq_triggered.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:402 e0c07c42c66047eb99a6050f358865b0
+msgid "Check whether TX IRQ has triggered."
+msgstr "检查 TX IRQ 是否已触发。"
+
+#: ../../source/cap/cc1101.rst:404 f2565123f26f4098bead33b9751a33ea
+msgid "``True`` if TX IRQ has triggered, otherwise ``False``."
+msgstr "TX IRQ 已触发返回 ``True``，否则返回 ``False``。"
+
+#: ../../source/cap/cc1101.rst:409 77dd31a8c49c451a9ecb9f84ced97915
+msgid "|tx_irq_triggered.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:14 19c74c79119d416e8cb152c85776edb3
+msgid "tx_irq_triggered.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:419 75b6294c0d094ae99cf2eff91705bb81
+msgid "Get the latest RSSI value."
+msgstr "获取最近一次 RSSI 值。"
+
+#: ../../source/cap/cc1101.rst:421 a24790400d4b45e39072fb83327e713d
+msgid "RSSI in dBm."
+msgstr "RSSI，单位 dBm。"
+
+#: ../../source/cap/cc1101.rst:426 21fd8067b5d744e8855d385d8a20c29f
+msgid "Get the latest Link Quality Indicator value."
+msgstr "获取最近一次链路质量指示值。"
+
+#: ../../source/cap/cc1101.rst:428 2b261d44d89646cda57bb0243f2f3fda
+msgid "LQI value."
+msgstr "LQI 值。"
+
+#: ../../source/cap/cc1101.rst:433 24f49b940def4912bf5ea1fbd33c8f5d
+msgid "Get CC1101 radio status."
+msgstr "获取 CC1101 射频状态。"
+
+#: ../../source/cap/cc1101.rst:435 b607871951f043b994ec448b901a715e
+msgid "Status dictionary containing ``marc_state``, ``rssi`` and ``lqi``."
+msgstr "状态字典，包含 ``marc_state``、``rssi`` 和 ``lqi``。"
+
+#: ../../source/cap/cc1101.rst:440 24f49b940def4912bf5ea1fbd33c8f5d
+msgid "class CC1101Packet"
+msgstr "class CC1101Packet"
+
+#: ../../source/cap/cc1101.rst:445 b89dac5296f5434799d24f1c620b74ed
+msgid "Packet object returned by ``CC1101Cap.recv()`` and RX callbacks."
+msgstr "``CC1101Cap.recv()`` 和 RX 回调返回的数据包对象。"
+
+#: ../../source/cap/cc1101.rst:450 c10646497cc34ca3b3b88e9560035d56
+msgid "Raw packet data."
+msgstr "原始数据包数据。"
+
+#: ../../source/cap/cc1101.rst:455 3ee586754f8641c5b52984477e1f4437
+msgid "Received signal strength in dBm."
+msgstr "接收信号强度，单位 dBm。"
+
+#: ../../source/cap/cc1101.rst:460 742f3b89d2904a35b1f4cedf1bf6247d
+msgid "Link Quality Indicator."
+msgstr "链路质量指示。"
+
+#: ../../source/cap/cc1101.rst:465 d0df133a291f47eeaa298dbb74bddd5b
+msgid "CRC result. ``True`` means the packet passed CRC check."
+msgstr "CRC 结果。``True`` 表示数据包通过 CRC 校验。"
+
+#: ../../source/cap/cc1101.rst:470 c1517b26d4404880b1f6303913ed0e42
+msgid "Decode packet data as UTF-8 string."
+msgstr "将数据包数据按 UTF-8 解码为字符串。"
+
+#: ../../source/cap/cc1101.rst:472 76eaa22b2f63470abd01aa9e046ef181
+msgid "Decoded string."
+msgstr "解码后的字符串。"
+
+#: ../../source/cap/cc1101.rst:476 0d4562dff5e943599f97ab4e338c7ed5
+msgid "class NFCCap"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:480 82dba24a470f48eca2b427e2448e75af
+msgid ""
+"Create an NFCCap object for the ST25R3916 NFC reader on Cap CC1101 "
+"hardware."
+msgstr "创建用于 Cap CC1101 硬件上 ST25R3916 NFC 读卡器的 NFCCap 对象。"
+
+#: ../../source/cap/cc1101.rst:482 ef8cd914fdf646d6966c6574559d07cb
+msgid ""
+"NFCCap uses ST25R3916 in SPI mode internally. The application does not "
+"need to pass an I2C bus or SPI object."
+msgstr "NFCCap 内部以 SPI 模式使用 ST25R3916，应用层不需要传入 I2C 总线或 SPI 对象。"
+
+#: ../../source/cap/cc1101.rst:486 55f1b50f73ff4938825d1b8592e386b5
+msgid "|nfc_init.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:23 3781a7dd166d47818b96a950bd5cf0d9
+msgid "nfc_init.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:498 e19cec5ed5c746a79e1b069cd7a63153
+msgid "Poll for an ISO14443A card."
+msgstr "轮询检测 ISO14443A 卡片。"
+
+#: ../../source/cap/cc1101.rst:500 79af1b3b57c54c92882a6f36e3f0ac6c
+msgid "A ``Card`` object if a card is detected, otherwise ``None``."
+msgstr "检测到卡片时返回 ``Card`` 对象，否则返回 ``None``。"
+
+#: ../../source/cap/cc1101.rst:504 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_detect.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:27 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_detect.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:516 bced64a937d146919ba1ebabd0bcd9a3
+msgid "Read one address unit from the detected card."
+msgstr "从检测到的卡片读取一个地址单元。"
+
+#: ../../source/cap/cc1101.rst:518 b82c8625cb724dc0a73a893b9c24ac48
+msgid ""
+"**MIFARE Classic**: ``index`` is the global block number and the return "
+"value is 16 bytes or ``None``."
+msgstr "**MIFARE Classic**：``index`` 为全局块号，返回值为 16 字节或 ``None``。"
+
+#: ../../source/cap/cc1101.rst:519 5d90572d85054b4b881c91fedfcaf17a
+msgid ""
+"**Type 2 / Ultralight / NTAG**: ``index`` is the page number and the "
+"return value is 4 bytes or ``None``."
+msgstr "**Type 2 / Ultralight / NTAG**：``index`` 为页号，返回值为 4 字节或 ``None``。"
+
+#: ../../source/cap/cc1101.rst:521 ../../source/cap/cc1101.rst:545
+#: 3a65af20b9844ca3a473553345b3eba8 ae1cd22521614264ab8a1ff073ca08f3
+msgid "Card object returned by :meth:`detect`."
+msgstr "由 :meth:`detect` 返回的 Card 对象。"
+
+#: ../../source/cap/cc1101.rst:522 ../../source/cap/cc1101.rst:546
+#: 850f46cb7b59449fa1ad27a5cbcc88c4 a3afa99cfd3e4581b0f6a091730f259e
+msgid "Block index for Classic, or page index for Type 2."
+msgstr "Classic 卡为块索引，Type 2 卡为页索引。"
+
+#: ../../source/cap/cc1101.rst:523 ../../source/cap/cc1101.rst:548
+#: 3280504efc9c47b0aae0e3b295f0c90f 68420a14597e45da897cc89c4d76d0c6
+msgid "MIFARE Classic key. Default is ``FF FF FF FF FF FF``."
+msgstr "MIFARE Classic 密钥。默认值为 ``FF FF FF FF FF FF``。"
+
+#: ../../source/cap/cc1101.rst:524 7a68af133bd74d688f8375eec17126f2
+msgid "``bytes`` or ``None``."
+msgstr "``bytes`` 或 ``None``。"
+
+#: ../../source/cap/cc1101.rst:528 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_read.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:30 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_read.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:538 9929714eb5c64e478c6a1608f49c2550
+msgid "Write one address unit to the detected card."
+msgstr "向检测到的卡片写入一个地址单元。"
+
+#: ../../source/cap/cc1101.rst:540 a62bba8f099b45308b1dcfaaeebff28e
+msgid ""
+"**MIFARE Classic**: ``data`` must be 16 bytes and ``index`` is the global"
+" block number."
+msgstr "**MIFARE Classic**：``data`` 必须为 16 字节，``index`` 为全局块号。"
+
+#: ../../source/cap/cc1101.rst:541 905adcb8b1404fbca5b19f8aea7a28c3
+msgid ""
+"**Type 2 / Ultralight / NTAG**: ``data`` must be 4 bytes and ``index`` is"
+" the page number."
+msgstr "**Type 2 / Ultralight / NTAG**：``data`` 必须为 4 字节，``index`` 为页号。"
+
+#: ../../source/cap/cc1101.rst:543 81c7739abbfe478ca5ccbeaa9f906691
+msgid ""
+"Use writable test cards only. Do not write UID pages, lock bytes, sector "
+"trailers, access-control blocks, payment cards, access cards, or identity"
+" cards."
+msgstr "仅使用可写测试卡。不要写入 UID 页、锁定位、扇区尾块、访问控制块、支付卡、门禁卡或身份卡。"
+
+#: ../../source/cap/cc1101.rst:547 a043dd4120e34080a77db16e055ecf7c
+msgid "Data to write."
+msgstr "要写入的数据。"
+
+#: ../../source/cap/cc1101.rst:549 0ae59d4d79654b309521618f5079f010
+msgid "``True`` on success, otherwise ``False``."
+msgstr "成功返回 ``True``，否则返回 ``False``。"
+
+#: ../../source/cap/cc1101.rst:554 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_write.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:31 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_write.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:564 ec071f99fe9844668b12545370649030
+msgid "Send HLTA to put the Type A card into HALT state."
+msgstr "发送 HLTA，使 Type A 卡片进入 HALT 状态。"
+
+#: ../../source/cap/cc1101.rst:568 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_halt.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:26 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_halt.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:578 19ee402f84784e2eaa6cbbd25f808dee
+msgid "Turn off the NFC RF field."
+msgstr "关闭 NFC RF 场。"
+
+#: ../../source/cap/cc1101.rst:582 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_rf_off.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:25 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_rf_off.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:592 546c33dcbbbf49d2abd1c72138274caf
+msgid "Turn on the NFC RF field."
+msgstr "开启 NFC RF 场。"
+
+#: ../../source/cap/cc1101.rst:596 456e1d7dcebf45a393b79e5cf327702f
+msgid "|nfc_rf_on.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:24 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_rf_on.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:605 4851c74aeb7b47aa88208200fad45439
+msgid "Card Object"
+msgstr "Card 对象"
+
+#: ../../source/cap/cc1101.rst:607 1facc1a500274f83a6b86b87b3a9512f
+msgid ""
+"The ``Card`` object returned by ``NFCCap.detect()`` contains the detected"
+" card information."
+msgstr "``NFCCap.detect()`` 返回的 ``Card`` 对象包含检测到的卡片信息。"
+
+#: ../../source/cap/cc1101.rst:611 16089be3cd8e4b7481337a28ecf00224
+msgid "|nfc_card_attribute.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:28 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_card_attribute.png"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:617 dc642d8f52844c33a5257845b1c363a2
+msgid "Attribute / Method"
+msgstr "属性 / 方法"
+
+#: ../../source/cap/cc1101.rst:618 8132676fe8644427a7bf6c5d985404f9
+msgid "Description"
+msgstr "说明"
+
+#: ../../source/cap/cc1101.rst:619 0468027a28f046a1aec24d2fdf1b228f
+msgid "``uid``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:620 3dc4a914f74d4e4ba2b2f81b53b61526
+msgid "Raw UID bytes."
+msgstr "原始 UID 字节。"
+
+#: ../../source/cap/cc1101.rst:621 8bcaab6a56a34de088bfd1b377f87be1
+msgid "``uid_len``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:622 084b0641c55c486d9e3825e4c73eb15c
+msgid "UID length."
+msgstr "UID 长度。"
+
+#: ../../source/cap/cc1101.rst:623 b4f5b4dc1bcc404295dc654979bc82b4
+msgid "``uid_str``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:624 fb7f87af88f94eabbba211c4c18ad71c
+msgid "Uppercase hexadecimal UID string."
+msgstr "大写十六进制 UID 字符串。"
+
+#: ../../source/cap/cc1101.rst:625 94580de7ad484be39eb27e014c645afb
+msgid "``atqa``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:626 515243879f2641758e61804d55b1d817
+msgid "ISO14443A ATQA value."
+msgstr "ISO14443A ATQA 值。"
+
+#: ../../source/cap/cc1101.rst:627 a7df5d8a1cff4647b58bf18c00ff82f2
+msgid "``sak``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:628 1ee6d2fab9f24aaeb7b5c14184b879df
+msgid "ISO14443A SAK value."
+msgstr "ISO14443A SAK 值。"
+
+#: ../../source/cap/cc1101.rst:629 b258ef8f2f4646769fdfb0e2f9c7548f
+msgid "``type_id``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:630 1175ae44b4854619a942d51f70b4b6aa
+msgid "Card type ID."
+msgstr "卡片类型 ID。"
+
+#: ../../source/cap/cc1101.rst:631 ddd25d5251b84368ae7c1eb118d3b614
+msgid "``type_name``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:632 cf2d083592604d50afd1fb4092dc9a35
+msgid "Card type name."
+msgstr "卡片类型名称。"
+
+#: ../../source/cap/cc1101.rst:633 60b70d01e60242c1992eae4b251ecc85
+msgid "``user_memory``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:634 20ae9f6b8ef9452d92ad96f334bb9108
+msgid "Detected user memory size in bytes."
+msgstr "检测到的用户区容量，单位 byte。"
+
+#: ../../source/cap/cc1101.rst:635 c1266a92014f43ebb3af7e57cd24bd95
+msgid "``is_classic()``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:636 4acdffa014a840cd9608630cd09b926b
+msgid "Return ``True`` for MIFARE Classic family cards."
+msgstr "MIFARE Classic 系列卡片返回 ``True``。"
+
+#: ../../source/cap/cc1101.rst:637 d0126570340d4d30b5d3069f417b5e9a
+msgid "``is_type2_family()``"
+msgstr ""
+
+#: ../../source/cap/cc1101.rst:638 a22e72adb26f48d49b903039e38bea74
+msgid "Return ``True`` for Type 2 / Ultralight / NTAG family cards."
+msgstr "Type 2 / Ultralight / NTAG 系列卡片返回 ``True``。"
+
+#: ../../source/cap/cc1101.rst:642 75804fa33e87467d820b625841f321d3
+msgid "|nfc_card_is_classic.png|"
+msgstr ""
+
+#: ../../source/refs/cap.cc1101.ref:29 19c74c79119d416e8cb152c85776edb3
+msgid "nfc_card_is_classic.png"
+msgstr ""

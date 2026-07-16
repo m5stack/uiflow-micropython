@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/rca.rst:3 b1acd1a27dab46958e16d86a65f61adc
 msgid "RCA Unit"
-msgstr "RCA 单元"
+msgstr "RCA Unit"
 
 #: ../../source/unit/rca.rst:9 bdc11b9f5c5f48f2b57b0f32f1bb0edc
 msgid ""

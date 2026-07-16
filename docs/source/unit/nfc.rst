@@ -7,6 +7,8 @@ NFC Unit
 
 This library drives **Unit NFC** (ST25R3916 on I2C). It discovers ISO14443 Type A tags, resolves chip type (Classic, Ultralight / NTAG family, DESFire, Plus, etc.), 
 and exposes high-level read/write helpers for supported tag kinds.
+The lower-level ``driver.st25r3916.ST25R3916`` transport supports both I2C and SPI. Unit NFC uses I2C; NFCCap and other combo products can pass a pre-built SPI chip object into ``NFCUnit``.
+
 
 Support the following products:
 
@@ -60,6 +62,8 @@ NFCUnit
 
     :param i2c: I2C bus used to talk to the ST25R3916.
 
+    ``NFCUnit`` can also wrap a pre-built ``driver.st25r3916.ST25R3916`` object for SPI mode.
+
     UiFlow2 Code Block:
 
         |init.png|
@@ -73,6 +77,19 @@ NFCUnit
 
             i2c0 = I2C(0, scl=Pin(1), sda=Pin(2), freq=400000)
             nfc = NFCUnit(i2c0)
+
+    SPI products create the ST25R3916 chip first, then wrap it with ``NFCUnit``:
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            import machine
+            from driver.st25r3916 import ST25R3916
+            from unit import NFCUnit
+
+            spi = machine.SPI(1, baudrate=2000000, polarity=0, phase=1)
+            nfc = NFCUnit(chip=ST25R3916(spi=spi, cs=6, irq=4))
 
     .. method:: detect()
 
@@ -97,13 +114,14 @@ NFCUnit
         Write one **address unit**.
 
         .. note::
-            Only MIFARE Classic is supported for now.
+            Use writable test cards only. Do not write UID pages, lock bytes, sector trailers, access-control blocks, or cards used for access/payment/identity.
 
-        ``data`` must be **16** bytes; ``index`` is the block number. Sector trailers and block ``0`` require valid keys/access rules from the card.
-
+        For **MIFARE Classic**, ``data`` must be **16** bytes and ``index`` is the global block number.
+        For **Type 2** tags, ``data`` must be **4** bytes and ``index`` is the page number.
+        Sector trailers, block ``0``, lock bytes, and configuration pages require valid card-specific access rules.
         :param unit.nfc.Card card: Tag from :meth:`detect`.
-        :param int index: Block index.
-        :param bytes data: Exactly 16 bytes for Classic.
+        :param int index: Block index for Classic, or page index for Type 2.
+        :param bytes data: Exactly 16 bytes for Classic, or exactly 4 bytes for Type 2.
         :returns: ``True`` on success, ``False`` otherwise.
 
         UiFlow2 Code Block:

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/kmeter_iso.rst:2 54e331fbbfe74a21b9a199211c2154ca
 msgid "Kmeter ISO Unit"
-msgstr "Kmeter ISO 单位"
+msgstr "Kmeter ISO Unit"
 
 #: ../../source/unit/kmeter_iso.rst:7 9c86c5980ecf4adf98f29c40f041425a
 msgid "Supported Products:"

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/scales.rst:3 028f5276076348bfa6f1b95e7ab163a6
 msgid "Scales Unit"
-msgstr "秤单位"
+msgstr "Scales Unit"
 
 #: ../../source/unit/scales.rst:7 f689cff3beb14dc3abf57549381115a4
 msgid ""

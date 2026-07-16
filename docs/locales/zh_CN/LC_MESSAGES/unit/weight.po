@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/weight.rst:3 07416d3aca2a4f8f9b3415f89e4d0abe
 msgid "Weight Unit"
-msgstr "重量单位"
+msgstr "Weight Unit"
 
 #: ../../source/unit/weight.rst:7 e59457365de84f0e8bd5ed68ce6466e3
 msgid ""

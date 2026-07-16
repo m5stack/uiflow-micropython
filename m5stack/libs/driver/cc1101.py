@@ -32,7 +32,7 @@ class CC1101:
 
     # Constants from C++ implementation
     FIFO_BUFFER_SIZE = const(64)
-    MAX_PACKET_LENGTH = const(61)  # 64 - 3 bytes for length and address
+    MAX_PACKET_LENGTH = const(255)
 
     # Transfer types
     WRITE_SINGLE_BYTE = const(0x00)
@@ -129,9 +129,26 @@ class CC1101:
     SWORRST = const(0x3C)
     SNOP = const(0x3D)
 
+    # GDO mappings
+    GDOX_RX_FIFO_FULL_OR_PKT_END = const(0x01)
+    GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED = const(0x06)
+    GDOX_HIGH_Z = const(0x2E)
+
+    # Packet settings
+    LENGTH_CONFIG_FIXED = const(0x00)
+    LENGTH_CONFIG_VARIABLE = const(0x01)
+    LENGTH_CONFIG_INFINITE = const(0x02)
+    CRC_OFF = const(0x00)
+    CRC_ON = const(0x04)
+    APPEND_STATUS_ON = const(0x04)
+    ADR_CHK_NONE = const(0x00)
+    FIFO_THR_TX_1_RX_64 = const(0x0F)
+    CRC_OK = const(0x80)
+
     # MARC states
     MARCSTATE_IDLE = const(0x01)
     MARCSTATE_RX = const(0x0D)
+    MARCSTATE_FSTXON = const(0x12)
     MARCSTATE_TX = const(0x13)
     MARCSTATE_TXFIFO_UNDERFLOW = const(0x16)
     MARCSTATE_RXFIFO_OVERFLOW = const(0x11)
@@ -163,6 +180,12 @@ class CC1101:
         # Deselect initially
         self.deselect()
 
+        # IRQ can fire immediately after registration if the line is already active.
+        self._rx_callback = None
+        self._tx_callback = None
+        self._last_rx_irq = None
+        self._last_tx_irq = None
+
         # Set up interrupt on GDO0 pin
         # GDO0 triggers on rising edge when packet is received
         self.gdo0.irq(self._radio_rx_isr, machine.Pin.IRQ_RISING)
@@ -189,12 +212,7 @@ class CC1101:
         self.raw_lqi = 0
         self.crc_on = True
         self.promiscuous = False
-
-        # Callback mechanism
-        self._rx_callback = None
-        self._tx_callback = None
-        self._last_rx_irq = None
-        self._last_tx_irq = None
+        self.packet_length_config = self.LENGTH_CONFIG_VARIABLE
 
     def select(self):
         """Select CC1101 chip"""
@@ -232,10 +250,20 @@ class CC1101:
             mask |= 1 << i
 
         # Clear the bits we want to change and set new value
-        new_value = (current & ~mask) | (value & mask)
+        field_mask = (1 << (msb - lsb + 1)) - 1
+        if value & ~field_mask:
+            field_value = value & mask
+        else:
+            field_value = (value & field_mask) << lsb
+        new_value = (current & ~mask) | field_value
 
         # Write back
         self.write_register(address, new_value)
+
+    def get_register_value(self, address, msb=7, lsb=0, register_type=0x80):
+        value = self.read_register(address, register_type)
+        mask = (1 << (msb - lsb + 1)) - 1
+        return (value >> lsb) & mask
 
     def read_register(self, address, register_type=0x80):
         """Read value from configuration or status register"""
@@ -296,25 +324,18 @@ class CC1101:
 
     def _radio_rx_isr(self, _):
         """Radio receive interrupt service routine"""
-        marc_state = self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
-        if marc_state != self.MARCSTATE_RX:
-            return
-
         self._last_rx_irq = time.ticks_ms()
 
         if self._rx_callback:
-            # Check if packet is available
-            if self.check_for_packet():
-                # Read the packet
-                result = self._read_data()
-                if result and len(result) == 2:
-                    packet_data, crc_ok = result
-                    if packet_data:  # Check if we actually got data
-                        # Create packet object
-                        packet = CC1101Packet(packet_data, self.get_rssi(), self.get_lqi(), crc_ok)
-                        # Call the callback
-                        self._rx_callback(packet)
-                # Note: _read_data() already restarts receive mode, so no need to do it here
+            result = self._read_data()
+            if result and len(result) == 2:
+                packet_data, crc_ok = result
+                if packet_data:
+                    packet = CC1101Packet(packet_data, self.get_rssi(), self.get_lqi(), crc_ok)
+                    irq_time = self._last_rx_irq
+                    self.start_receive()
+                    self._last_rx_irq = irq_time
+                    self._rx_callback(packet)
 
     def _radio_tx_isr(self, _):
         """Radio transmit interrupt service routine"""
@@ -533,19 +554,16 @@ class CC1101:
         self.write_command(self.SIDLE)
         self.wait_for_idle()
 
-        # MCSM0: Enable automatic frequency synthesizer calibration (matching RadioLib)
-        # Set FS_AUTOCAL_IDLE_TO_RXTX (bits 5-4) and PIN_CTRL_OFF (bit 1)
+        # MCSM0: enable automatic frequency synthesizer calibration and disable pin control.
         self.set_register_value(self.MCSM0, 0x10, 5, 4)  # FS_AUTOCAL_IDLE_TO_RXTX
         self.set_register_value(self.MCSM0, 0x00, 1, 1)  # PIN_CTRL_OFF
 
         # Set GDOs to Hi-Z initially (matching RadioLib)
-        self.set_register_value(self.IOCFG0, 0x2E, 5, 0)  # GDOX_HIGH_Z
-        self.set_register_value(self.IOCFG2, 0x2E, 5, 0)  # GDOX_HIGH_Z
+        self.set_register_value(self.IOCFG0, self.GDOX_HIGH_Z, 5, 0)
+        self.set_register_value(self.IOCFG2, self.GDOX_HIGH_Z, 5, 0)
 
-        # Configure other basic settings
-        # MCSM1: Set RXOFF_MODE to RX (0x0C) to stay in RX after packet reception
-        # This is crucial for continuous receive mode
-        self.set_register_value(self.MCSM1, 0x0C, 3, 2)  # RXOFF_RX
+        # MCSM1: RadioLib default is RXOFF_IDLE; read_data() will finish and flush RX.
+        self.set_register_value(self.MCSM1, 0x00, 3, 2)
         self.write_register(self.MCSM2, 0x07)  # No RX timeout
 
         # AGC settings
@@ -573,6 +591,8 @@ class CC1101:
         time.sleep_ms(1)
         self.wait_for_idle()
 
+        self.packet_mode()
+
     def start_receive(self):
         """Start reception mode (like RadioLib startReceive)"""
         try:
@@ -585,9 +605,9 @@ class CC1101:
             # Flush RX FIFO
             self.write_command(self.SFRX)
 
-            # Set GDO0 mapping for packet received detection
-            # Use GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED (0x06) for rising edge trigger
-            self.write_register(self.IOCFG0, 0x06)
+            # GDO0 is the reliable packet-end source for CC1101 in packet mode.
+            self.set_register_value(self.IOCFG0, self.GDOX_RX_FIFO_FULL_OR_PKT_END, 5, 0)
+            self.set_register_value(self.FIFOTHR, self.FIFO_THR_TX_1_RX_64, 3, 0)
 
             # Start reception
             self.write_command(self.SRX)
@@ -601,14 +621,8 @@ class CC1101:
     def check_for_packet(self):
         """Check if a packet is available (non-blocking)"""
         try:
-            # Check if GDO0 indicates packet received
-            # GDO0 goes high when packet is received
+            # With RX_FIFO_FULL_OR_PKT_END, GDO0 rises at packet end.
             if self.gdo0.value() == 1:
-                # Wait for packet to complete (with timeout to avoid blocking)
-                timeout = 100  # 100ms timeout
-                while self.gdo0.value() == 1 and timeout > 0:
-                    time.sleep_ms(1)
-                    timeout -= 1
                 return True
             return False
         except Exception as e:
@@ -617,10 +631,12 @@ class CC1101:
 
     def _set_frequency(self, freq_mhz):
         """Set CC1101 frequency"""
+        self.frequency = freq_mhz
         freq2, freq1, freq0 = self.calculate_frequency_regs(freq_mhz)
         self.write_register(self.FREQ2, freq2)
         self.write_register(self.FREQ1, freq1)
         self.write_register(self.FREQ0, freq0)
+        self._set_output_power(self.power)
 
     def _set_bitrate(self, bitrate_kbps):
         """Set CC1101 bitrate"""
@@ -649,12 +665,28 @@ class CC1101:
 
     def _set_variable_packet_length(self):
         """Set CC1101 to variable packet length mode"""
-        # PKTCTRL0: Variable packet length, enable CRC (matching RadioLib)
-        self.set_register_value(self.PKTCTRL0, 0x00, 6, 4)  # WHITE_DATA_OFF | PKT_FORMAT_NORMAL
-        self.set_register_value(self.PKTCTRL0, 0x05, 2, 0)  # CRC_ON | LENGTH_CONFIG_VARIABLE
+        self.variable_packet_length_mode()
 
-        # PKTCTRL1: CRC_AUTOFLUSH_OFF | APPEND_STATUS_ON | ADR_CHK_NONE
-        self.set_register_value(self.PKTCTRL1, 0x04, 3, 0)
+    def packet_mode(self):
+        """Configure packet mode defaults matching RadioLib."""
+        self.set_register_value(self.PKTCTRL1, self.APPEND_STATUS_ON | self.ADR_CHK_NONE, 3, 0)
+        self.set_register_value(self.PKTCTRL0, 0x00, 6, 4)  # white data off, normal packet format
+        self.set_register_value(self.PKTCTRL0, self.CRC_ON | self.packet_length_config, 2, 0)
+        self.crc_on = True
+
+    def set_packet_mode(self, mode, length=MAX_PACKET_LENGTH):
+        if length > self.MAX_PACKET_LENGTH:
+            raise ValueError("Packet length too long")
+        self.set_register_value(self.PKTCTRL0, mode, 1, 0)
+        self.write_register(self.PKTLEN, length)
+        self.packet_length = length
+        self.packet_length_config = mode
+
+    def fixed_packet_length_mode(self, length=MAX_PACKET_LENGTH):
+        self.set_packet_mode(self.LENGTH_CONFIG_FIXED, length)
+
+    def variable_packet_length_mode(self, max_length=MAX_PACKET_LENGTH):
+        self.set_packet_mode(self.LENGTH_CONFIG_VARIABLE, max_length)
 
     def _set_preamble_length(self, preamble_bits):
         """Set CC1101 preamble length"""
@@ -725,12 +757,18 @@ class CC1101:
             else:
                 # Fallback: poll MARCSTATE - wait enter TX then leave TX
                 enter_timeout = 50
+                entered_tx = False
                 while enter_timeout > 0:
                     marc_state = self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
                     if marc_state == self.MARCSTATE_TX:
+                        entered_tx = True
                         break
                     time.sleep_ms(1)
                     enter_timeout -= 1
+                if not entered_tx:
+                    self._finish_transmit()
+                    return False
+
                 leave_timeout = timeout
                 while leave_timeout > 0:
                     marc_state = self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
@@ -740,8 +778,7 @@ class CC1101:
                     leave_timeout -= 1
 
             # Finish transmission
-            self._finish_transmit()
-            return True
+            return self._finish_transmit()
 
         except Exception as e:
             print(f"Transmit error: {e}")
@@ -750,26 +787,49 @@ class CC1101:
     def _start_transmit(self, data_bytes, addr=0):
         """Start transmission (like RadioLib startTransmit)"""
         try:
+            if len(data_bytes) > self.MAX_PACKET_LENGTH:
+                return False
+            if (
+                self.packet_length_config == self.LENGTH_CONFIG_VARIABLE
+                and len(data_bytes) > self.MAX_PACKET_LENGTH - 1
+            ):
+                return False
+
             self._last_tx_irq = None
 
             # Set mode to standby
-            self.write_command(self.SIDLE)
-            self.wait_for_idle()
+            self.standby()
 
             # Flush TX FIFO
             self.write_command(self.SFTX)
 
-            # Set GDO0 mapping for sync word sent or packet received (matching ESP-IDF)
-            self.set_register_value(self.IOCFG0, 0x06, 5, 0)  # GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED
+            # Turn on the frequency synthesizer and wait until it is ready for TX.
+            self.write_command(self.SFSTXON)
+            start = time.ticks_us()
+            while (
+                self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
+            ) != self.MARCSTATE_FSTXON:
+                if time.ticks_diff(time.ticks_us(), start) > 1600:
+                    self.standby()
+                    return False
+                time.sleep_us(10)
 
             # Set GDO2 mapping for TX completion interrupt (if GDO2 is available)
             if self.gdo2:
                 self.set_register_value(
-                    self.IOCFG2, 0x06, 5, 0
-                )  # GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED
+                    self.IOCFG2, self.GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED, 5, 0
+                )
+
+            filter_val = self.get_register_value(self.PKTCTRL1, 1, 0)
 
             # Write packet length (variable length mode)
-            self.write_register(self.FIFO, len(data_bytes))
+            if self.packet_length_config == self.LENGTH_CONFIG_VARIABLE:
+                self.write_register(
+                    self.FIFO, len(data_bytes) + (1 if filter_val != self.ADR_CHK_NONE else 0)
+                )
+
+            if filter_val != self.ADR_CHK_NONE:
+                self.write_register(self.FIFO, addr)
 
             # Write data to FIFO
             self.write_burst(self.FIFO, data_bytes)
@@ -786,6 +846,17 @@ class CC1101:
     def _finish_transmit(self):
         """Finish transmission (like RadioLib finishTransmit)"""
         try:
+            timeout = int((1.0 / self.bitrate) * (self.FIFO_BUFFER_SIZE * 2.0))
+            if timeout < 50:
+                timeout = 50
+            start = time.ticks_ms()
+            while (
+                self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
+            ) != self.MARCSTATE_IDLE:
+                if time.ticks_diff(time.ticks_ms(), start) > timeout:
+                    return False
+                time.sleep_ms(1)
+
             # Set mode to standby
             self.write_command(self.SIDLE)
             self.wait_for_idle()
@@ -793,42 +864,45 @@ class CC1101:
             # Flush TX FIFO
             self.write_command(self.SFTX)
 
-            # Restart receive mode to be ready for next packet
-            self._start_receive()
+            if self.gdo2:
+                self.set_register_value(self.IOCFG2, self.GDOX_HIGH_Z, 5, 0)
+
+            return True
 
         except Exception as e:
             print(f"Finish transmit error: {e}")
+            return False
 
-    def receive(self, data=None, length=0):
+    def receive(self, data=None, length=0, timeout_ms=0):
         """Receive data (like RadioLib receive method) - BLOCKING
 
         :param data: Buffer to store received data (optional)
         :param length: Maximum length to receive (optional)
+        :param int timeout_ms: Timeout in milliseconds. If 0, use RadioLib's derived timeout.
         :return: Received data as bytes, or empty bytes if no data
         """
         try:
-            # Calculate timeout (500 ms + 400 full max-length packets at current bit rate)
-            timeout = 500 + (1.0 / self.bitrate) * (self.MAX_PACKET_LENGTH * 400.0)
+            timeout = timeout_ms
+            if not timeout:
+                # RadioLib default: 500 ms + 400 full max-length packets at current bit rate.
+                timeout = 500 + (1.0 / self.bitrate) * (self.MAX_PACKET_LENGTH * 400.0)
 
             # Start reception
             if not self._start_receive():
                 return b""
 
-            # Wait for packet start or timeout (GDO0 goes from low to high)
+            # RadioLib waits for GDO0 to go low at packet start, then high at packet end.
             start_time = time.ticks_ms()
-            while self.gdo0.value() == 0:  # GDO0 low means waiting for packet
+            while self.gdo0.value() == 1:
                 if time.ticks_diff(time.ticks_ms(), start_time) > timeout:
-                    self.standby()
-                    self.write_command(self.SFRX)
+                    self.finish_receive()
                     return b""
                 time.sleep_ms(1)
 
-            # Wait for packet end or timeout (GDO0 goes from high to low)
             start_time = time.ticks_ms()
-            while self.gdo0.value() == 1:  # GDO0 high means packet in progress
+            while self.gdo0.value() == 0:
                 if time.ticks_diff(time.ticks_ms(), start_time) > timeout:
-                    self.standby()
-                    self.write_command(self.SFRX)
+                    self.finish_receive()
                     return b""
                 time.sleep_ms(1)
 
@@ -863,17 +937,14 @@ class CC1101:
         try:
             self._last_rx_irq = None
 
-            # Set mode to standby
             if not self.standby():
                 return False
 
             # Flush RX FIFO
             self.write_command(self.SFRX)
 
-            # Set GDO0 mapping
-            # GDO0 goes high when packet is received
-            # Use GDOX_SYNC_WORD_SENT_OR_PKT_RECEIVED (0x06) for rising edge trigger
-            self.write_register(self.IOCFG0, 0x06)
+            self.set_register_value(self.IOCFG0, self.GDOX_RX_FIFO_FULL_OR_PKT_END, 5, 0)
+            self.set_register_value(self.FIFOTHR, self.FIFO_THR_TX_1_RX_64, 3, 0)
 
             # Set mode to receive
             self.write_command(self.SRX)
@@ -890,7 +961,9 @@ class CC1101:
             # Get packet length
             packet_length = self._get_packet_length()
             if packet_length == 0:
-                return b""
+                self.packet_length_queried = False
+                self.finish_receive()
+                return b"", False
 
             # Limit length if specified
             if max_length > 0 and max_length < packet_length:
@@ -905,7 +978,8 @@ class CC1101:
             data = self.read_burst(self.FIFO, packet_length)
 
             # Check if status bytes are enabled (default: APPEND_STATUS_ON)
-            is_append_status = ((self.read_register(self.PKTCTRL1) >> 2) & 0x01) == 1
+            is_append_status = self.get_register_value(self.PKTCTRL1, 2, 2) == 1
+            val = self.CRC_OK
 
             if is_append_status:
                 # Read RSSI byte
@@ -916,7 +990,7 @@ class CC1101:
                 self.raw_lqi = val & 0x7F
 
                 # Check CRC
-                if self.crc_on and (val & 0x80) == 0:  # CRC_ERROR (0x80 = CRC_OK bit)
+                if self.crc_on and (val & self.CRC_OK) == 0:
                     self.packet_length_queried = False
                     # CRC error detected, will be returned in crc_ok flag
 
@@ -924,15 +998,12 @@ class CC1101:
             self.packet_length_queried = False
 
             # Flush then standby according to RXOFF_MODE (default: RXOFF_IDLE)
-            if ((self.read_register(self.MCSM1) >> 2) & 0x03) == 0:  # RXOFF_IDLE
-                # Set mode to standby
-                self.standby()
-                # Flush Rx FIFO
-                self.write_command(self.SFRX)
+            if self.get_register_value(self.MCSM1, 3, 2) == 0:
+                self.finish_receive()
 
             # Return data and CRC status
             crc_ok = True
-            if self.crc_on and (val & 0x80) == 0:  # CRC_ERROR
+            if self.crc_on and (val & self.CRC_OK) == 0:
                 crc_ok = False
             return data, crc_ok
 
@@ -962,7 +1033,7 @@ class CC1101:
     def get_marc_state(self):
         """Get current MARC state"""
         try:
-            marc_state = self.read_register(self.MARCSTATE)
+            marc_state = self.read_register(self.MARCSTATE, self.STATUS_REGISTER) & 0x1F
             return marc_state
         except Exception as e:
             print(f"MARC state error: {e}")
@@ -971,9 +1042,19 @@ class CC1101:
     def _get_packet_length(self):
         """Get packet length from FIFO"""
         if not self.packet_length_queried:
-            self.packet_length = self.read_register(self.FIFO)
+            if self.packet_length_config == self.LENGTH_CONFIG_VARIABLE:
+                self.packet_length = self.read_register(self.FIFO)
+            else:
+                self.packet_length = self.read_register(self.PKTLEN)
             self.packet_length_queried = True
         return self.packet_length
+
+    def finish_receive(self):
+        """Go to standby, flush RX FIFO, and reset GDO0 mapping."""
+        state = self.standby()
+        self.write_command(self.SFRX)
+        self.set_register_value(self.IOCFG0, self.GDOX_HIGH_Z, 5, 0)
+        return state
 
     def standby(self):
         """Set module to standby mode"""

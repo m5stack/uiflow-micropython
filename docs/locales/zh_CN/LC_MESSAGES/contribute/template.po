@@ -49,7 +49,7 @@ msgstr "支持以下产品："
 #: ../../en/contribute/template.rst:19 77d39f81534b4330a43c74f11ad87a12
 #: c0e26a1f635a4d69806a29dbf4671fdc
 msgid "xxx Unit"
-msgstr "xxx 单位"
+msgstr "xxx Unit"
 
 #: ../../en/contribute/template.rst:24 8a321c05ab7847459e16909845cbcb8c
 msgid "Below is the detailed support for Speaker on the host:"

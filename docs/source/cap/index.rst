@@ -6,3 +6,4 @@ Cap
 
     lora868.rst
     lora1262.rst
+    cc1101.rst

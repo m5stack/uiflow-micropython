@@ -14,7 +14,7 @@ class CC1101Module:
     :param int pin_cs: (CS) Chip select pin number.
     :param int pin_gdo0: (GDO0) Interrupt pin number.
     :param int pin_gdo2: (GDO2) Optional interrupt pin number.
-    :param float freq_khz: CC1101 RF frequency in kHz, with a range of 855000 kHz to 928000 kHz.
+    :param float freq_khz: CC1101 RF frequency in kHz. Valid ranges: 300000-348000, 387000-464000, 779000-928000.
     :param float bitrate_kbps: Data rate in kbps, range from 0.6 to 6.0 kbps.
     :param float freq_dev_khz: Frequency deviation in kHz, range from 1.6 to 380 kHz.
     :param float rx_bw_khz: Receiver bandwidth in kHz, range from 58 to 812 kHz.
@@ -50,6 +50,7 @@ class CC1101Module:
         preamble_length: int = 16,
         sync_word_h: int = 0x12,
         sync_word_l: int = 0xAD,
+        spi=None,
     ):
         # Valid preamble lengths
         self.PREAMBLE_LENGTHS = (16, 24, 32, 48, 64, 96, 128, 192)
@@ -59,7 +60,9 @@ class CC1101Module:
         self._validate_range(output_power, -30, 10)
 
         # Initialize the CC1101 driver
-        self.driver = CC1101Driver(spi=mbus.spi, ss=pin_cs, gdo0=pin_gdo0, gdo2=pin_gdo2)
+        self.driver = CC1101Driver(
+            spi=mbus.spi if spi is None else spi, ss=pin_cs, gdo0=pin_gdo0, gdo2=pin_gdo2
+        )
 
         # Configuration parameters (store in kHz for consistency, but convert to MHz for driver)
         self.frequency = freq_khz  # Store in kHz
@@ -100,7 +103,7 @@ class CC1101Module:
     def set_freq(self, freq_khz: int = 868000) -> None:
         """Set frequency in kHz.
 
-        :param int freq_khz: Frequency in kHz. Valid ranges: 855000-910000. Default is 868000.
+        :param int freq_khz: Frequency in kHz. Valid ranges: 300000-348000, 387000-464000, 779000-928000.
 
         UiFlow2 Code Block:
 
@@ -112,10 +115,15 @@ class CC1101Module:
 
                 module_cc1101_0.set_freq(868000.0)
         """
-        # Check if frequency is in any of the valid ranges
-        valid = 855000 <= freq_khz <= 910000
+        valid = (
+            300000 <= freq_khz <= 348000
+            or 387000 <= freq_khz <= 464000
+            or 779000 <= freq_khz <= 928000
+        )
         if not valid:
-            raise ValueError(f"Frequency {freq_khz} kHz not in valid ranges (855000-910000)")
+            raise ValueError(
+                f"Frequency {freq_khz} kHz not in valid ranges (300000-348000, 387000-464000, 779000-928000)"
+            )
 
         self.frequency = freq_khz
         # Convert kHz to MHz for driver (driver expects MHz)
@@ -124,7 +132,7 @@ class CC1101Module:
     def set_bitrate(self, bitrate_kbps: float) -> None:
         """Set data rate in kbps.
 
-        :param float bitrate_kbps: Data rate in kbps (1.2 ~ 6.0)
+        :param float bitrate_kbps: Data rate in kbps (0.6 ~ 6.0)
 
         UiFlow2 Code Block:
 
@@ -136,7 +144,7 @@ class CC1101Module:
 
                 module_cc1101_0.set_bitrate(2.4)
         """
-        self._validate_range(bitrate_kbps, 1.2, 6.0)
+        self._validate_range(bitrate_kbps, 0.6, 6.0)
         self.bitrate = bitrate_kbps
         self.driver._set_bitrate(bitrate_kbps)
 
@@ -271,7 +279,7 @@ class CC1101Module:
 
         ok = self.driver.transmit(packet)
         if ok:
-            self._in_rx = True
+            self.start_recv()
         return ok
 
     def recv(self, timeout_ms: int = None) -> CC1101Packet | None:
@@ -303,15 +311,33 @@ class CC1101Module:
         if not self._in_rx:
             self.start_recv()
 
-        # 轮询模式：检查是否有数据包可用
-        if self.driver.check_for_packet():
-            result = self.driver._read_data()
+        if timeout_ms is not None:
+            result = self.driver.receive(timeout_ms=timeout_ms)
+            self._in_rx = False
             if result and len(result) == 2:
                 data, crc_ok = result
                 if data:
-                    return CC1101Packet(
+                    packet = CC1101Packet(
                         data, self.driver.get_rssi(), self.driver.get_lqi(), crc_ok
                     )
+                    self.start_recv()
+                    return packet
+            self.start_recv()
+            return None
+
+        # 轮询模式：检查是否有数据包可用
+        if self.driver.check_for_packet():
+            result = self.driver._read_data()
+            self._in_rx = False
+            if result and len(result) == 2:
+                data, crc_ok = result
+                if data:
+                    packet = CC1101Packet(
+                        data, self.driver.get_rssi(), self.driver.get_lqi(), crc_ok
+                    )
+                    self.start_recv()
+                    return packet
+            self.start_recv()
         return None
 
     def start_recv(self) -> None:

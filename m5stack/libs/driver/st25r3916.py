@@ -2,6 +2,14 @@
 #
 # SPDX-License-Identifier: MIT
 
+"""ST25R3916 ISO14443A reader driver.
+
+The transport layer supports both the original Unit NFC I2C wiring and SPI
+wiring used by NFCCap. Pass ``i2c`` for I2C mode, or pass ``spi`` together with
+``cs`` for SPI mode. The high-level NFC helpers in ``unit.nfc`` can wrap either
+transport through this driver.
+"""
+
 import time
 import random
 
@@ -126,50 +134,22 @@ def _elapsed_ms(t0):
     return time.ticks_diff(time.ticks_ms(), t0)
 
 
-class ST25R3916NFCA:
+class _ST25R3916I2CTransport:
     def __init__(self, i2c, addr=0x50):
         self.i2c = i2c
         self.addr = addr
-        self._mf_c1 = None
 
     def direct_command(self, cmd, payload=None):
         if payload:
             self.i2c.writeto(self.addr, bytes((cmd,)) + payload, True)
         else:
             self.i2c.writeto(self.addr, bytes((cmd,)), True)
-        time.sleep_ms(2)
 
     def read_reg8(self, reg):
         return self.i2c.readfrom_mem(self.addr, reg | OP_READ, 1)[0]
 
     def write_reg8(self, reg, value):
         self.i2c.writeto_mem(self.addr, reg, bytes((value & 0xFF,)))
-
-    def read_reg16_be(self, reg):
-        hi = self.read_reg8(reg)
-        lo = self.read_reg8(reg + 1)
-        return (hi << 8) | lo
-
-    def write_reg16_be(self, reg, value):
-        self.i2c.writeto_mem(
-            self.addr,
-            reg,
-            bytes(((value >> 8) & 0xFF, value & 0xFF)),
-        )
-
-    def write_reg32_be(self, reg, value):
-        self.i2c.writeto_mem(
-            self.addr,
-            reg,
-            bytes(
-                (
-                    (value >> 24) & 0xFF,
-                    (value >> 16) & 0xFF,
-                    (value >> 8) & 0xFF,
-                    value & 0xFF,
-                )
-            ),
-        )
 
     def read_reg8_space_b_addr(self, reg_addr):
         mem = (CMD_SPACE_B << 8) | (OP_READ | (reg_addr & OP_TRAILER_MASK))
@@ -178,6 +158,129 @@ class ST25R3916NFCA:
     def write_reg8_space_b_addr(self, reg_addr, value):
         mem = (CMD_SPACE_B << 8) | (OP_WRITE | (reg_addr & OP_TRAILER_MASK))
         self.i2c.writeto_mem(self.addr, mem, bytes((value & 0xFF,)), addrsize=16)
+
+    def write_fifo(self, payload):
+        self.i2c.writeto(self.addr, bytes((OP_LOAD_FIFO,)) + payload, True)
+
+    def read_fifo(self, n):
+        return self.i2c.readfrom_mem(self.addr, OP_READ_FIFO, n)
+
+    def wait_irq(self, timeout_ms):
+        return False
+
+
+class _ST25R3916SPITransport:
+    def __init__(self, spi, cs, irq=None):
+        import machine
+
+        self.spi = spi
+        self.cs = cs if hasattr(cs, "value") else machine.Pin(cs, machine.Pin.OUT, value=1)
+        self.irq = (
+            irq if hasattr(irq, "value") or irq is None else machine.Pin(irq, machine.Pin.IN)
+        )
+
+    def _transfer(self, tx, rx_len=0):
+        tx = bytes(tx)
+        if hasattr(self.spi, "init"):
+            self.spi.init(baudrate=2000000, polarity=0, phase=1)
+        self.cs.value(0)
+        try:
+            if rx_len:
+                write_buf = bytearray(len(tx) + rx_len)
+                write_buf[: len(tx)] = tx
+                read_buf = bytearray(len(write_buf))
+                self.spi.write_readinto(write_buf, read_buf)
+                return bytes(read_buf[len(tx) :])
+            self.spi.write(tx)
+            return b""
+        finally:
+            self.cs.value(1)
+
+    def direct_command(self, cmd, payload=None):
+        if payload:
+            self._transfer(bytes((cmd,)) + payload)
+        else:
+            self._transfer((cmd,))
+
+    def read_reg8(self, reg):
+        return self._transfer((reg | OP_READ,), 1)[0]
+
+    def write_reg8(self, reg, value):
+        self._transfer((reg & OP_TRAILER_MASK, value & 0xFF))
+
+    def read_reg8_space_b_addr(self, reg_addr):
+        return self._transfer((CMD_SPACE_B, OP_READ | (reg_addr & OP_TRAILER_MASK)), 1)[0]
+
+    def write_reg8_space_b_addr(self, reg_addr, value):
+        self._transfer((CMD_SPACE_B, OP_WRITE | (reg_addr & OP_TRAILER_MASK), value & 0xFF))
+
+    def write_fifo(self, payload):
+        self._transfer(bytes((OP_LOAD_FIFO,)) + payload)
+
+    def read_fifo(self, n):
+        return self._transfer((OP_READ_FIFO,), n)
+
+    def wait_irq(self, timeout_ms):
+        if self.irq is None:
+            return False
+        t0 = time.ticks_ms()
+        while _elapsed_ms(t0) < timeout_ms:
+            if self.irq.value():
+                return True
+            time.sleep_ms(1)
+        return bool(self.irq.value())
+
+
+class ST25R3916NFCA:
+    """ST25R3916 NFC-A driver with selectable I2C/SPI transport.
+
+    ``i2c`` keeps compatibility with Unit NFC. ``spi``/``cs`` selects SPI mode,
+    used by NFCCap where ST25R3916 shares the SPI bus with CC1101.
+    ``transport`` is mainly for tests or board-specific wrappers.
+    """
+
+    def __init__(self, i2c=None, addr=0x50, spi=None, cs=None, irq=None, transport=None):
+        """Create the driver in I2C mode, SPI mode, or with a custom transport."""
+        if transport is not None:
+            self.io = transport
+        elif spi is not None:
+            if cs is None:
+                raise ValueError("cs is required for ST25R3916 SPI mode")
+            self.io = _ST25R3916SPITransport(spi, cs, irq)
+        else:
+            self.io = _ST25R3916I2CTransport(i2c, addr)
+        self._mf_c1 = None
+
+    def direct_command(self, cmd, payload=None):
+        self.io.direct_command(cmd, payload)
+        time.sleep_ms(2)
+
+    def read_reg8(self, reg):
+        return self.io.read_reg8(reg)
+
+    def write_reg8(self, reg, value):
+        self.io.write_reg8(reg, value)
+
+    def read_reg16_be(self, reg):
+        hi = self.read_reg8(reg)
+        lo = self.read_reg8(reg + 1)
+        return (hi << 8) | lo
+
+    def write_reg16_be(self, reg, value):
+        self.write_reg8(reg, (value >> 8) & 0xFF)
+        self.write_reg8(reg + 1, value & 0xFF)
+
+    def write_reg32_be(self, reg, value):
+        self.write_reg8(reg, (value >> 24) & 0xFF)
+        self.write_reg8(reg + 1, (value >> 16) & 0xFF)
+        self.write_reg8(reg + 2, (value >> 8) & 0xFF)
+        self.write_reg8(reg + 3, value & 0xFF)
+
+    def read_reg8_space_b_addr(self, reg_addr):
+        return self.io.read_reg8_space_b_addr(reg_addr)
+
+    def write_reg8_space_b_addr(self, reg_addr, value):
+        self.io.write_reg8_space_b_addr(reg_addr, value)
         time.sleep_us(50)
 
     def write_reg8_space_b(self, reg_low8, value):
@@ -198,11 +301,25 @@ class ST25R3916NFCA:
         self.read_reg8(REG_MAIN_INTERRUPT + 3)
 
     def write_fifo(self, payload):
-        self.i2c.writeto(self.addr, bytes((OP_LOAD_FIFO,)) + payload, True)
+        self.io.write_fifo(payload)
         time.sleep_us(50)
 
     def read_fifo(self, n):
-        return self.i2c.readfrom_mem(self.addr, OP_READ_FIFO, n)
+        return self.io.read_fifo(n)
+
+    def wait_irq(self, timeout_ms):
+        return self.io.wait_irq(timeout_ms)
+
+    def _wait_event_or_sleep(self, t0, timeout_ms):
+        remain = timeout_ms - _elapsed_ms(t0)
+        if remain <= 0:
+            return False
+        wait_ms = min(remain, 5)
+        if self.wait_irq(wait_ms):
+            time.sleep_ms(1)
+            return True
+        time.sleep_ms(1)
+        return False
 
     def read_fifo_size(self):
         s = self.read_reg16_be(REG_FIFO_STATUS_1)
@@ -235,7 +352,7 @@ class ST25R3916NFCA:
             nb, _ = self.read_fifo_size()
             if nb >= need_bytes:
                 return nb
-            time.sleep_ms(1)
+            self._wait_event_or_sleep(t0, timeout_ms)
         return 0
 
     def enable_osc(self):
@@ -248,11 +365,11 @@ class ST25R3916NFCA:
             t0 = time.ticks_ms()
             got = False
             while _elapsed_ms(t0) < 25:
+                self._wait_event_or_sleep(t0, 25)
                 irq = self.read_reg8(REG_MAIN_INTERRUPT)
                 if irq & I_OSC:
                     got = True
                     break
-                time.sleep_ms(1)
             self.set_bits(REG_MASK_MAIN_INTERRUPT, I_OSC)
             if not got:
                 return False
@@ -521,7 +638,7 @@ class ST25R3916NFCA:
                 nb2, _ = self.read_fifo_size()
                 if nb2 == nb:
                     return self.read_fifo(nb2)
-            time.sleep_ms(1)
+            self._wait_event_or_sleep(t0, timeout_ms)
         return None
 
     def _nfca_fifo_rx_stable(self, timeout_ms, min_bytes):
@@ -533,7 +650,7 @@ class ST25R3916NFCA:
                 nb2, bi2 = self.read_fifo_size()
                 if nb2 == nb and bi2 == bi:
                     return nb2, bi2
-            time.sleep_ms(1)
+            self._wait_event_or_sleep(t0, timeout_ms)
         return 0, 0
 
     def nfca_transceive_crc_ack(self, tx, timeout_ms=TIMEOUT_T2_WRITE_MS):
@@ -576,12 +693,8 @@ class ST25R3916NFCA:
         d = bytes(data)
         if len(d) != 4:
             return False
-        p = int(page) & 0xFF
-        if not self.nfca_transceive_crc_ack(
-            bytes((CMD_WRITE_PAGE, p)), timeout_ms=TIMEOUT_T2_WRITE_MS
-        ):
-            return False
-        return self.nfca_transceive_crc_ack(d, timeout_ms=TIMEOUT_T2_WRITE_MS)
+        frame = bytes((CMD_WRITE_PAGE, int(page) & 0xFF)) + d
+        return self.nfca_transceive_crc_ack(frame, timeout_ms=TIMEOUT_T2_WRITE_MS)
 
     def mifare_classic_end_session(self):
         self._mf_c1 = None
@@ -635,7 +748,7 @@ class ST25R3916NFCA:
                     ba = self.read_fifo(4)
                     if len(ba) == 4:
                         break
-            time.sleep_ms(1)
+            self._wait_event_or_sleep(t0, 40)
         if not ba or len(ba) != 4:
             self.mifare_classic_end_session()
             return False
@@ -696,7 +809,7 @@ class ST25R3916NFCA:
                     raw = self.read_fifo(nb2)
                     if len(raw) >= rlen:
                         break
-            time.sleep_ms(1)
+            self._wait_event_or_sleep(t0, timeout_ms)
         if not raw or len(raw) < rlen:
             return None
         rb = bytearray(raw[:rlen])

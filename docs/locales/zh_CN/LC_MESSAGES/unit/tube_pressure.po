@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/tube_pressure.rst:2 8470be6af7f24664b713b309f27a5b51
 msgid "Tube Pressure Unit"
-msgstr "管压单位"
+msgstr "Tube Pressure Unit"
 
 #: ../../source/unit/tube_pressure.rst:8 6e6da04e20f8450f85dc7afe456fd017
 msgid ""

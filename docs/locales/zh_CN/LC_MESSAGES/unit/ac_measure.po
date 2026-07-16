@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/ac_measure.rst:3 e8fede9192c44b5c8964004bf14bf478
 msgid "ACMeasure Unit"
-msgstr "ACMeasure 单元"
+msgstr "ACMeasure Unit"
 
 #: ../../source/unit/ac_measure.rst:7 78321d74cf3644dfb3e311e886417d58
 msgid ""

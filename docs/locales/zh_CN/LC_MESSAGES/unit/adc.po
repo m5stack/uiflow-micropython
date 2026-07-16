@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/adc.rst:2 35d39e41b8e3456ca8f927f5f36f5353
 msgid "ADC Unit"
-msgstr "ADC 单元"
+msgstr "ADC Unit"
 
 #: ../../source/unit/adc.rst:6 009cd9cd546f49d6b8ee3eba9ea5b7c6
 msgid "Support the following products:"

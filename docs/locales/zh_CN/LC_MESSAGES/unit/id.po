@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/id.rst:2 04a9121c92e5488397a3aea0edc14f83
 msgid "ID Unit"
-msgstr "ID 单元"
+msgstr "ID Unit"
 
 #: ../../source/unit/id.rst:6 b73f90ea8ea344788cfdfe2df43b6777
 msgid ""

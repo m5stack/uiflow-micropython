@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/bps.rst:2 dc1371241fab4c649935df2c54677fc6
 msgid "BPS Unit"
-msgstr "BPS 单位"
+msgstr "BPS Unit"
 
 #: ../../source/unit/bps.rst:6 04db295ba5aa457f881ffc35287ce9f4
 msgid ""

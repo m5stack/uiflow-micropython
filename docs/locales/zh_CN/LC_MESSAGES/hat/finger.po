@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../en/hats/finger.rst:2 15662c443fc7427ea57278f664140f0f
 msgid "Finger Hat"
-msgstr "手指帽"
+msgstr "Finger Hat"
 
 #: ../../en/hats/finger.rst:6 bf38f552176d4e9b95e07ac2cf536e0b
 msgid "The following products are supported:"

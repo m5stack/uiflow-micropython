@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/co2.rst:3 1917f553da90477e955eb4edf3ef7aa0
 msgid "CO2 Unit"
-msgstr "CO2 单位"
+msgstr "CO2 Unit"
 
 #: ../../source/unit/co2.rst:7 49991c2edc0f427d9f88c7a4b7b2636d
 msgid ""

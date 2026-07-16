@@ -103,7 +103,7 @@ class CC1101Module
     :param int pin_cs: (CS) Chip select pin number.
     :param int pin_gdo0: (GDO0) Interrupt pin number.
     :param int pin_gdo2: (GDO2) Optional interrupt pin number.
-    :param int freq_khz: CC1101 RF frequency in kHz, with a range of 855000 kHz to 928000 kHz.
+    :param int freq_khz: CC1101 RF frequency in kHz. Valid ranges: 300000~348000 kHz, 387000~464000 kHz, 779000~928000 kHz.
     :param float bitrate_kbps: Data rate in kbps, range from 0.6 to 6.0 kbps.
     :param float freq_dev_khz: Frequency deviation in kHz, range from 1.6 to 380 kHz.
     :param float rx_bw_khz: Receiver bandwidth in kHz, range from 58 to 812 kHz.
@@ -128,7 +128,7 @@ class CC1101Module
 
         Set frequency in kHz.
 
-        :param int freq_khz: Frequency in kHz (855000 ~ 928000), default is 868000.
+        :param int freq_khz: Frequency in kHz. Valid ranges: 300000~348000 kHz, 387000~464000 kHz, 779000~928000 kHz. Default is 868000.
 
         UiFlow2 Code Block:
 
@@ -423,4 +423,3 @@ class CC1101Packet
     .. method:: crc_ok
 
         CRC validity check. Returns True if CRC is valid, False otherwise.
-

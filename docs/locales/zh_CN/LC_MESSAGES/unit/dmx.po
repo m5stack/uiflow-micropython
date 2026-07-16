@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../source/unit/dmx.rst:2 63b741385d414317bb9c012c6bb7a0cc
 msgid "DMX512 Unit"
-msgstr "DMX512 单元"
+msgstr "DMX512 Unit"
 
 #: ../../source/unit/dmx.rst:6 16a4719411fd4e34a28830a8de28fda7
 msgid ""

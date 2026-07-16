@@ -434,11 +434,13 @@ def type2_read_pages(chip, first_page, last_page_exclusive):
 
 
 class NFCUnit:
-    """Unit NFC: pass a pre-built ``I2C`` (e.g. ``SoftI2C``)."""
+    """High-level NFC helper for ST25R3916.
 
-    def __init__(self, i2c):
+    Pass an ``I2C`` bus for Unit NFC, or pass a pre-built ST25R3916 chip for SPI boards such as NFCCap."""
+
+    def __init__(self, i2c=None, chip=None):
         self._i2c = i2c
-        self.chip = ST25R3916(self._i2c)
+        self.chip = chip if chip is not None else ST25R3916(self._i2c)
         self.chip.begin()
 
     def read(self, card, index, key=FACTORY_KEY):

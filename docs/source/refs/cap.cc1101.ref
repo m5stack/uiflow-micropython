@@ -1,0 +1,62 @@
+.. |CC1101Cap| image:: https://m5stack-doc.oss-cn-shenzhen.aliyuncs.com/1145/coming-soon.png
+    :target: https://docs.m5stack.com/en/products/sku/U219
+    :height: 200px
+    :width: 200px
+
+.. |init.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/init.png
+.. |start_recv.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/start_recv.png
+.. |receive.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/receive.png
+.. |recv_data_param.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/recv_data_param.png
+.. |receive_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/receive_event.png
+.. |send.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/send.png
+.. |send_event.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/send_event.png
+.. |rx_irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/rx_irq_triggered.png
+.. |tx_irq_triggered.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/tx_irq_triggered.png
+.. |set_freq.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_freq.png
+.. |set_bitrate.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_bitrate.png
+.. |set_freq_dev.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_freq_dev.png
+.. |set_rx_bw.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_rx_bw.png
+.. |set_output_power.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_output_power.png
+.. |set_preamble_length.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_preamble_length.png
+.. |set_sync_word.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/set_sync_word.png
+.. |standby.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/standby.png
+.. |nfc_init.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_init.png
+.. |nfc_rf_on.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_rf_on.png
+.. |nfc_rf_off.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_rf_off.png
+.. |nfc_halt.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_halt.png
+.. |nfc_detect.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_detect.png
+.. |nfc_card_attribute.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_card_attribute.png
+.. |nfc_card_is_classic.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_card_is_classic.png
+.. |nfc_read.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_read.png
+.. |nfc_write.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_write.png
+
+.. |nfc_read_id_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/nfc_read_id_example.png
+.. |rf_rx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/rf_rx_example.png
+.. |rf_tx_example.png| image:: https://static-cdn.m5stack.com/mpy_docs/cap/cc1101/rf_tx_example.png
+
+.. |cc1101_cap_rf_tx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/cc1101/cc1101_cap_rf_tx_example.m5f2"
+        target="_blank"
+    >
+        cc1101_cap_rf_tx_example.m5f2
+    </a>
+
+.. |cc1101_cap_rf_rx_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/cc1101/cc1101_cap_rf_rx_example.m5f2"
+        target="_blank"
+    >
+        cc1101_cap_rf_rx_example.m5f2
+    </a>
+
+.. |cc1101_cap_nfc_read_id_example.m5f2| raw:: html
+
+    <a
+        href="https://uiflow2.m5stack.com/?example=https://raw.githubusercontent.com/m5stack/uiflow-micropython/develop/examples/cap/cc1101/cc1101_cap_nfc_read_id_example.m5f2"
+        target="_blank"
+    >
+        cc1101_cap_nfc_read_id_example.m5f2
+    </a>

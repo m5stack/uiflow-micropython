@@ -1,0 +1,642 @@
+CC1101 Cap
+==========
+
+.. sku:
+
+.. include:: ../refs/cap.cc1101.ref
+
+Cap CC1101 is an expansion cap that combines a CC1101 Sub-GHz radio and an ST25R3916 NFC reader.
+
+The MicroPython API is split by function:
+
+- ``CC1101Cap`` for Sub-GHz transmit and receive.
+- ``NFCCap`` for NFC card detection and read/write operations.
+
+Support the following products:
+
+    |CC1101Cap|
+
+Frequency Range
+---------------
+
+``CC1101Cap`` supports the following measured frequency ranges:
+
+.. list-table::
+    :widths: 40 60
+    :header-rows: 1
+
+    * - Range
+      - Band
+    * - ``315000~348000 kHz``
+      - 315MHz band
+    * - ``415000~464000 kHz``
+      - 433MHz band
+    * - ``830000~928000 kHz``
+      - 868MHz band
+
+The RF switch is updated automatically when ``freq_khz`` changes.
+
+UiFlow2 Example
+---------------
+
+CC1101 RF TX
+^^^^^^^^^^^^
+
+Open the |cc1101_cap_rf_tx_example.m5f2| project in UiFlow2.
+
+This example sends a payload once per second at 868MHz and displays ``SEQ``, ``OK`` and ``FAIL`` counters.
+
+UiFlow2 Code Block:
+
+    |rf_tx_example.png|
+
+Example output:
+
+    None
+
+CC1101 RF RX
+^^^^^^^^^^^^
+
+Open the |cc1101_cap_rf_rx_example.m5f2| project in UiFlow2.
+
+This example receives packets at 868MHz and displays payload, RSSI, LQI and CRC status.
+
+UiFlow2 Code Block:
+
+    |rf_rx_example.png|
+
+Example output:
+
+    None
+
+NFC Card Detect
+^^^^^^^^^^^^^^^
+
+Open the |cc1101_cap_nfc_read_id_example.m5f2| project in UiFlow2.
+
+This example scans ISO14443A cards and displays UID, card type and user memory size.
+
+UiFlow2 Code Block:
+
+    |nfc_read_id_example.png|
+
+Example output:
+
+    None
+
+MicroPython Example
+-------------------
+
+CC1101 RF TX
+^^^^^^^^^^^^
+
+This example sends a payload once per second at 868MHz and displays transmit counters.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/cap/cc1101/cc1101_cap_rf_tx_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+CC1101 RF RX
+^^^^^^^^^^^^
+
+This example receives packets at 868MHz and displays payload, RSSI, LQI and CRC status.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/cap/cc1101/cc1101_cap_rf_rx_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+NFC Card Detect
+^^^^^^^^^^^^^^^
+
+This example scans ISO14443A cards and displays UID, card type and user memory size.
+
+MicroPython Code Block:
+
+    .. literalinclude:: ../../../examples/cap/cc1101/cc1101_cap_nfc_read_id_example.py
+        :language: python
+        :linenos:
+
+Example output:
+
+    None
+
+**API**
+-------
+
+class CC1101Cap
+^^^^^^^^^^^^^^^
+
+.. class:: cap.cc1101.CC1101Cap(freq_khz=868000, bitrate_kbps=2.4, freq_dev_khz=25.4, rx_bw_khz=58.0, output_power=10, preamble_length=16, sync_word_h=0x12, sync_word_l=0xAD)
+
+    Create a CC1101Cap object for Sub-GHz radio.
+
+    :param int freq_khz: CC1101 RF frequency in kHz. Valid ranges: ``315000~348000 kHz``, ``415000~464000 kHz``, ``830000~928000 kHz``.
+    :param float bitrate_kbps: Data rate in kbps, range from 0.6 to 6.0 kbps.
+    :param float freq_dev_khz: Frequency deviation in kHz, range from 1.6 to 380 kHz.
+    :param float rx_bw_khz: Receiver bandwidth in kHz, range from 58 to 812 kHz.
+    :param int output_power: Output power in dBm, range from -30 to 10 dBm.
+    :param int preamble_length: Preamble length in bits, options: 16, 24, 32, 48, 64, 96, 128, 192.
+    :param int sync_word_h: High byte of sync word (0x00 to 0xFF).
+    :param int sync_word_l: Low byte of sync word (0x00 to 0xFF).
+
+    UiFlow2 Code Block:
+
+        |init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from cap import CC1101Cap
+
+            cap_cc1101 = CC1101Cap(868000, 2.4, 25.4, 58.0, 10, 64, 0x12, 0xAD)
+
+    .. method:: set_freq(freq_khz)
+
+        Set frequency in kHz and update the Cap RF switch automatically.
+
+        :param int freq_khz: Frequency in kHz. Valid ranges: ``315000~348000 kHz``, ``415000~464000 kHz``, ``830000~928000 kHz``.
+
+        UiFlow2 Code Block:
+
+            |set_freq.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_freq(868000)
+
+    .. method:: set_bitrate(bitrate_kbps)
+
+        Set data rate in kbps.
+
+        :param float bitrate_kbps: Data rate in kbps, range from 0.6 to 6.0.
+
+        UiFlow2 Code Block:
+
+            |set_bitrate.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_bitrate(2.4)
+
+    .. method:: set_freq_dev(freq_dev_khz)
+
+        Set frequency deviation in kHz.
+
+        :param float freq_dev_khz: Frequency deviation in kHz, range from 1.6 to 380.
+
+        UiFlow2 Code Block:
+
+            |set_freq_dev.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_freq_dev(25.4)
+
+    .. method:: set_rx_bw(rx_bw_khz)
+
+        Set receiver bandwidth in kHz.
+
+        :param float rx_bw_khz: Receiver bandwidth in kHz, range from 58 to 812.
+
+        UiFlow2 Code Block:
+
+            |set_rx_bw.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_rx_bw(58.0)
+
+    .. method:: set_output_power(output_power)
+
+        Set output power in dBm.
+
+        :param int output_power: Output power in dBm, range from -30 to 10.
+
+        UiFlow2 Code Block:
+
+            |set_output_power.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_output_power(10)
+
+    .. method:: set_preamble_length(preamble_length)
+
+        Set preamble length in bits.
+
+        :param int preamble_length: Preamble length in bits. Must be one of 16, 24, 32, 48, 64, 96, 128, 192.
+
+        UiFlow2 Code Block:
+
+            |set_preamble_length.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_preamble_length(64)
+
+    .. method:: set_sync_word(sync_word_h, sync_word_l)
+
+        Set the two-byte sync word.
+
+        :param int sync_word_h: High byte of sync word (0x00 to 0xFF).
+        :param int sync_word_l: Low byte of sync word (0x00 to 0xFF).
+
+        UiFlow2 Code Block:
+
+            |set_sync_word.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.set_sync_word(0x12, 0xAD)
+
+    .. method:: send(packet)
+
+        Send data.
+
+        :param str | list | tuple | int | bytearray | bytes packet: Data to send.
+        :returns: ``True`` if the packet was sent successfully, otherwise ``False``.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |send.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.send("Hello World")
+
+    .. method:: recv(timeout_ms=None)
+
+        Receive data.
+
+        :param int timeout_ms: Timeout in milliseconds. ``None`` uses non-blocking polling.
+        :returns: Received packet instance or ``None``.
+        :rtype: CC1101Packet | None
+
+        UiFlow2 Code Block:
+
+            |receive.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                packet = cap_cc1101.recv()
+                if packet and packet.crc_ok:
+                    print(packet.decode(), packet.rssi, packet.lqi)
+
+    .. method:: start_recv()
+
+        Start receive mode.
+
+        UiFlow2 Code Block:
+
+            |start_recv.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.start_recv()
+
+    .. method:: set_rx_irq_callback(callback)
+
+        Set the receive interrupt callback.
+
+        :param callback: Callback invoked with a ``CC1101Packet`` when a packet is received.
+
+        UiFlow2 Code Block:
+
+            |receive_event.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def on_rx(packet):
+                    print(packet.decode())
+
+                cap_cc1101.set_rx_irq_callback(on_rx)
+
+    .. method:: set_tx_irq_callback(callback)
+
+        Set the transmit callback.
+
+        :param callback: Callback invoked after transmit. On CC1101Cap, GDO2 is used for RF switch control, so this API is kept mainly for compatibility.
+
+        UiFlow2 Code Block:
+
+            |send_event.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                def on_tx(_):
+                    print("TX done")
+
+                cap_cc1101.set_tx_irq_callback(on_tx)
+
+    .. method:: standby()
+
+        Put CC1101 into standby mode.
+
+        UiFlow2 Code Block:
+
+            |standby.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.standby()
+
+    .. method:: rx_irq_triggered()
+
+        Check whether RX IRQ has triggered.
+
+        :returns: ``True`` if RX IRQ has triggered, otherwise ``False``.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |rx_irq_triggered.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.rx_irq_triggered()
+
+    .. method:: tx_irq_triggered()
+
+        Check whether TX IRQ has triggered.
+
+        :returns: ``True`` if TX IRQ has triggered, otherwise ``False``.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |tx_irq_triggered.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                cap_cc1101.tx_irq_triggered()
+
+    .. method:: get_rssi()
+
+        Get the latest RSSI value.
+
+        :returns: RSSI in dBm.
+        :rtype: float
+
+    .. method:: get_lqi()
+
+        Get the latest Link Quality Indicator value.
+
+        :returns: LQI value.
+        :rtype: int
+
+    .. method:: get_status()
+
+        Get CC1101 radio status.
+
+        :returns: Status dictionary containing ``marc_state``, ``rssi`` and ``lqi``.
+        :rtype: dict
+
+
+class CC1101Packet
+^^^^^^^^^^^^^^^^^^
+
+.. class:: driver.cc1101.CC1101Packet()
+    :no-index:
+
+    Packet object returned by ``CC1101Cap.recv()`` and RX callbacks.
+
+    .. attribute:: data
+        :no-index:
+
+        Raw packet data.
+
+    .. attribute:: rssi
+        :no-index:
+
+        Received signal strength in dBm.
+
+    .. attribute:: lqi
+        :no-index:
+
+        Link Quality Indicator.
+
+    .. attribute:: crc_ok
+        :no-index:
+
+        CRC result. ``True`` means the packet passed CRC check.
+
+    .. method:: decode()
+        :no-index:
+
+        Decode packet data as UTF-8 string.
+
+        :returns: Decoded string.
+        :rtype: str
+
+class NFCCap
+^^^^^^^^^^^^
+
+.. class:: cap.cc1101.NFCCap()
+
+    Create an NFCCap object for the ST25R3916 NFC reader on Cap CC1101 hardware.
+
+    NFCCap uses ST25R3916 in SPI mode internally. The application does not need to pass an I2C bus or SPI object.
+
+    UiFlow2 Code Block:
+
+        |nfc_init.png|
+
+    MicroPython Code Block:
+
+        .. code-block:: python
+
+            from cap import NFCCap
+
+            nfc = NFCCap()
+
+    .. method:: detect()
+
+        Poll for an ISO14443A card.
+
+        :returns: A ``Card`` object if a card is detected, otherwise ``None``.
+
+        UiFlow2 Code Block:
+
+            |nfc_detect.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                card = nfc.detect()
+                if card:
+                    print(card.uid_str, card.type_name, card.user_memory)
+
+    .. method:: read(card, index, key=FACTORY_KEY)
+
+        Read one address unit from the detected card.
+
+        - **MIFARE Classic**: ``index`` is the global block number and the return value is 16 bytes or ``None``.
+        - **Type 2 / Ultralight / NTAG**: ``index`` is the page number and the return value is 4 bytes or ``None``.
+
+        :param card: Card object returned by :meth:`detect`.
+        :param int index: Block index for Classic, or page index for Type 2.
+        :param bytes key: MIFARE Classic key. Default is ``FF FF FF FF FF FF``.
+        :returns: ``bytes`` or ``None``.
+
+        UiFlow2 Code Block:
+
+            |nfc_read.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                data = nfc.read(card, 4)
+
+    .. method:: write(card, index, data, key=FACTORY_KEY)
+
+        Write one address unit to the detected card.
+
+        - **MIFARE Classic**: ``data`` must be 16 bytes and ``index`` is the global block number.
+        - **Type 2 / Ultralight / NTAG**: ``data`` must be 4 bytes and ``index`` is the page number.
+
+        Use writable test cards only. Do not write UID pages, lock bytes, sector trailers, access-control blocks, payment cards, access cards, or identity cards.
+
+        :param card: Card object returned by :meth:`detect`.
+        :param int index: Block index for Classic, or page index for Type 2.
+        :param bytes data: Data to write.
+        :param bytes key: MIFARE Classic key. Default is ``FF FF FF FF FF FF``.
+        :returns: ``True`` on success, otherwise ``False``.
+        :rtype: bool
+
+        UiFlow2 Code Block:
+
+            |nfc_write.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                ok = nfc.write(card, 4, bytes(16))
+
+    .. method:: halt()
+
+        Send HLTA to put the Type A card into HALT state.
+
+        UiFlow2 Code Block:
+
+            |nfc_halt.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                nfc.halt()
+
+    .. method:: rf_off()
+
+        Turn off the NFC RF field.
+
+        UiFlow2 Code Block:
+
+            |nfc_rf_off.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                nfc.rf_off()
+
+    .. method:: rf_on()
+
+        Turn on the NFC RF field.
+
+        UiFlow2 Code Block:
+
+            |nfc_rf_on.png|
+
+        MicroPython Code Block:
+
+            .. code-block:: python
+
+                nfc.rf_on()
+
+Card Object
+^^^^^^^^^^^
+
+The ``Card`` object returned by ``NFCCap.detect()`` contains the detected card information.
+
+UiFlow2 Code Block:
+
+    |nfc_card_attribute.png|
+
+.. list-table::
+    :widths: 35 65
+    :header-rows: 1
+
+    * - Attribute / Method
+      - Description
+    * - ``uid``
+      - Raw UID bytes.
+    * - ``uid_len``
+      - UID length.
+    * - ``uid_str``
+      - Uppercase hexadecimal UID string.
+    * - ``atqa``
+      - ISO14443A ATQA value.
+    * - ``sak``
+      - ISO14443A SAK value.
+    * - ``type_id``
+      - Card type ID.
+    * - ``type_name``
+      - Card type name.
+    * - ``user_memory``
+      - Detected user memory size in bytes.
+    * - ``is_classic()``
+      - Return ``True`` for MIFARE Classic family cards.
+    * - ``is_type2_family()``
+      - Return ``True`` for Type 2 / Ultralight / NTAG family cards.
+
+UiFlow2 Code Block:
+
+    |nfc_card_is_classic.png|

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: UIFlow2 Programming Guide \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-12-19 15:22+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2026-07-16 16:10+0800\n"
+"Last-Translator: M5Stack <support@m5stack.com>\n"
 "Language: zh_CN\n"
 "Language-Team: zh_CN <LL@li.org>\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../en/cap/lora1262.rst:2 9211aa2408a44edca333c4d60a0b9165
 msgid "LoRa1262 Cap"
-msgstr "LoRa1262 电容"
+msgstr "LoRa1262 Cap"
 
 #: ../../en/cap/lora1262.rst:8 2a5f29f9213a48998322fd04069ebfa7
 msgid ""
